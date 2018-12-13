@@ -1,6 +1,6 @@
 ---
-title: Bindungspfad für Xamarin.Forms
-description: In diesem Artikel erläutert das Xamarin.Forms-datenbindungen zu verwenden, um den Zugriff auf untergeordnete Eigenschaften und Member der Auflistung mit der Bindungsklasse die Path-Eigenschaft.
+title: Xamarin.Forms-Bindungspfad
+description: In diesem Artikel wird erläutert, wie über Xamarin.Forms-Datenbindungen mit der Path-Eigenschaft der Bindungsklasse auf untergeordnete Eigenschaften und Collectionmember zugegriffen werden kann.
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
@@ -9,31 +9,31 @@ ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 5ffc167b1e5695663dff6005f3d7e0ba0ea958db
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52172105"
 ---
-# <a name="xamarinforms-binding-path"></a>Bindungspfad für Xamarin.Forms
+# <a name="xamarinforms-binding-path"></a>Xamarin.Forms-Bindungspfad
 
-In allen vorherigen Datenbindung Beispielen die [ `Path` ](xref:Xamarin.Forms.Binding.Path) Eigenschaft der `Binding` Klasse (oder die [ `Path` ](xref:Xamarin.Forms.Xaml.BindingExtension.Path) Eigenschaft der `Binding` Markuperweiterung) festgelegt wurde auf eine einzelne Eigenschaft. Es ist tatsächlich möglich, legen Sie `Path` zu einem *Untereigenschaft* (eine Eigenschaft einer Eigenschaft), oder auf einen Member einer Auflistung.
+In allen vorherigen Datenbindungsbeispielen wurde die [`Path`](xref:Xamarin.Forms.Binding.Path)-Eigenschaft der `Binding`-Klasse (bzw. die [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path)-Eigenschaft der `Binding`-Markuperweiterung) auf eine einzelne Eigenschaft festgelegt. Es ist tatsächlich möglich, `Path` auf eine *untergeordnete Eigenschaft* (die Eigenschaft einer Eigenschaft) oder auf einen Collectionmember festzulegen.
 
-Nehmen wir beispielsweise an, die Ihre Seite enthält eine `TimePicker`:
+Angenommen beispielsweise, Ihre Seite enthält einen `TimePicker`-Wert:
 
 ```xaml
 <TimePicker x:Name="timePicker">
 ```
 
-Die `Time` Eigenschaft `TimePicker` ist vom Typ `TimeSpan`, aber vielleicht möchten Sie eine Datenbindung erstellen, verweist der `TotalSeconds` -Eigenschaft dieses `TimeSpan` Wert. So sieht die Datenbindung aus:
+Die `Time`-Eigenschaft von `TimePicker` ist vom Typ `TimeSpan`. Vielleicht möchten Sie aber eine Datenbindung erstellen, die auf die `TotalSeconds`-Eigenschaft dieses `TimeSpan`-Werts verweist. So sieht die Datenbindung aus:
 
 ```xaml
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
 
-Die `Time` Eigenschaft ist vom Typ `TimeSpan`, die eine `TotalSeconds` Eigenschaft. Die `Time` und `TotalSeconds` Eigenschaften mit einem Punkt verbunden sind. Die Elemente in der `Path` Zeichenfolge verweist immer auf Eigenschaften und nicht auf die Typen dieser Eigenschaften.
+Die Eigenschaft `Time` ist vom Typ `TimeSpan`, der eine Eigenschaft vom Typ `TotalSeconds` aufweist. Die Eigenschaften `Time` und `TotalSeconds` sind einfach durch einen Punkt miteinander verbunden. Die Elemente in der `Path`-Zeichenfolge verweisen immer auf Eigenschaften und nicht auf die Typen dieser Eigenschaften.
 
-Beispiel und verschiedene andere, in angezeigt werden der **Pfad Variationen** Seite:
+Dieses Beispiel wird zusammen mit einigen anderen Beispielen auf der Seite **Path Variations** (Pfadvariationen) angezeigt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,11 +89,11 @@ Beispiel und verschiedene andere, in angezeigt werden der **Pfad Variationen** S
 </ContentPage>
 ```
 
-In der zweiten `Label`, die Bindungsquelle wird die Seite selbst. Die `Content` Eigenschaft ist vom Typ `StackLayout`, die eine `Children` Eigenschaft vom Typ `IList<View>`, die eine `Count` , der angibt, der Anzahl der untergeordneten Eigenschaft.
+Im zweiten `Label`-Element stellt die Seite selbst die Bindungsquelle dar. Die Eigenschaft `Content` ist vom Typ `StackLayout`. Ihr ist eine `Children` Eigenschaft vom Typ `IList<View>` zugeordnet, die eine `Count`-Eigenschaft aufweist. Diese gibt die Anzahl der untergeordneten Eigenschaften an.
 
 ## <a name="paths-with-indexers"></a>Pfade mit Indexer
 
-Die Bindung im dritten `Label` in die **Pfad Variationen** Verweise von Seiten der [ `CultureInfo` ](xref:System.Globalization.CultureInfo) -Klasse in der `System.Globalization` Namespace:
+Die Bindung im dritten `Label`-Element auf der Seite **Path Variations** (Pfadvariationen) verweist auf die [`CultureInfo`](xref:System.Globalization.CultureInfo)-Klasse im Namespace `System.Globalization`:
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -101,9 +101,9 @@ Die Bindung im dritten `Label` in die **Pfad Variationen** Verweise von Seiten d
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-Die Quelle wird festgelegt, an die statische `CultureInfo.CurrentCulture` Eigenschaft, die ein Objekt des Typs `CultureInfo`. Dass die Klasse eine Eigenschaft mit dem Namen definiert `DateTimeFormat` des Typs [ `DateTimeFormatInfo` ](xref:System.Globalization.DateTimeFormatInfo) , enthält eine `DayNames` Auflistung. Der Index wird das vierte Element ausgewählt.
+Die Quelle ist auf die statische `CultureInfo.CurrentCulture`-Eigenschaft festgelegt, bei der es sich um ein Objekt vom Typ `CultureInfo` handelt. Diese Klasse definiert eine Eigenschaft mit dem Namen `DateTimeFormat` vom Typ [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo), die eine `DayNames`-Collection enthält. Der Index wählt das vierte Element aus.
 
-Der vierte `Label` etwas Ähnliches, aber für die Kultur Frankreich zugeordnet ist. Die `Source` -Eigenschaft der Bindung nastaven NA hodnotu `CultureInfo` Objekt mit einem Konstruktor:
+Das vierte `Label`-Element geht ähnlich vor, jedoch für die mit Frankreich assoziierte Kultur. Die Eigenschaft `Source` der Bindung wird mit einem Konstruktor auf das Objekt `CultureInfo` festgelegt:
 
 ```xaml
 <Label>
@@ -122,9 +122,9 @@ Der vierte `Label` etwas Ähnliches, aber für die Kultur Frankreich zugeordnet 
 </Label>
 ```
 
-Finden Sie unter [Konstruktorargument übergeben](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) für Weitere Informationen zum Angeben von Konstruktorargumente in XAML.
+Weitere Einzelheiten zur Angabe von Konstruktorargumenten in XAML finden Sie unter [Übergeben von Konstruktorargumenten](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments).
 
-Schließlich wird im letzte Beispiel ähnlich wie der zweite, mit dem Unterschied, dass sie eine der untergeordneten Elemente verweist die `StackLayout`:
+Das letzte Beispiel ist schließlich mit dem zweiten vergleichbar. Der einzige Unterschied ist, dass auf eines der untergeordneten Elemente von `StackLayout` verwiesen wird:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -132,22 +132,22 @@ Schließlich wird im letzte Beispiel ähnlich wie der zweite, mit dem Unterschie
                       StringFormat='The first Label has {0} characters'}" />
 ```
 
-Dieses untergeordnete Element ist ein `Label`, die eine `Text` Eigenschaft vom Typ `String`, die eine `Length` Eigenschaft. Die erste `Label` Berichte die `TimeSpan` legen Sie in der `TimePicker`, wenn Sie diesen Text ändern, also die endgültige `Label` auch Änderungen.
+Bei diesem untergeordneten Element handelt es sich um ein `Label`-Element, das die Eigenschaft `Text` vom Typ `String` aufweist, der die Eigenschaft `Length` zugeordnet ist. Das erste `Label`-Element meldet die in `TimePicker` festgelegte `TimeSpan`. Wenn dieser Text geändert wird, ändert sich folglich auch das endgültige `Label`-Element.
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![Pfad-Varianten](binding-path-images/pathvariations-small.png "Pfad Variationen")](binding-path-images/pathvariations-large.png#lightbox "Pfad-Varianten")
+[![Pfadvariationen](binding-path-images/pathvariations-small.png "Pfadvariationen")](binding-path-images/pathvariations-large.png#lightbox "Pfadvariationen")
 
-## <a name="debugging-complex-paths"></a>Debuggen von komplexen Pfaden
+## <a name="debugging-complex-paths"></a>Debuggen komplexer Pfade
 
-Definitionen von komplexen Pfad können schwierig sein, zu erstellen: Sie wissen den Typ der einzelnen untergeordneten Eigenschaften oder der Typ der Elemente in der Auflistung, die nächste untergeordnete Eigenschaft ordnungsgemäß hinzugefügt werden müssen, aber die Typen selbst erscheinen nicht im Pfad. Ein gutes Verfahren ist inkrementell, den Pfad zu erstellen, und sehen Sie sich die Zwischenergebnisse. Für dieses letzte Beispiel können Sie sich zunächst keine `Path` Definition gar:
+Die Erstellung komplexer Pfaddefinitionen kann sich als schwierig erweisen: Sie müssen den Typ der einzelnen untergeordneten Eigenschaften oder den Typ der Elemente in der Collection kennen, um die nächste untergeordnete Eigenschaft ordnungsgemäß hinzufügen zu können. Allerdings werden die Typen selbst nicht im Pfad angezeigt. Eine gute Methode besteht darin, den Pfad inkrementell zu erstellen und sich die Zwischenergebnisse anzusehen. Im letzten Beispiel konnten Sie starten, ohne dass für `Path` eine Definition vorhanden war:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
                       StringFormat='{0}'}" />
 ```
 
-Die den Typ der Bindungsquelle, anzeigt oder `DataBindingDemos.PathVariationsPage`. Sie wissen `PathVariationsPage` leitet sich von `ContentPage`, sodass sie verfügt über eine `Content` Eigenschaft:
+Hier wird der Typ der Bindungsquelle oder `DataBindingDemos.PathVariationsPage` angezeigt. Sie wissen, dass das `PathVariationsPage`-Element von `ContentPage` abgeleitet wird. Folglich verfügt es über eine `Content`-Eigenschaft:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -155,15 +155,15 @@ Die den Typ der Bindungsquelle, anzeigt oder `DataBindingDemos.PathVariationsPag
                       StringFormat='{0}'}" />
 ```
 
-Der Typ des der `Content` Eigenschaft jetzt angezeigt wird, sein `Xamarin.Forms.StackLayout`. Hinzufügen der `Children` Eigenschaft, um die `Path` und der Typ ist `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, der eine Klasse, die für Xamarin.Forms, aber natürlich einen Auflistungstyp intern ist. Fügen Sie einen Index, und der Typ ist `Xamarin.Forms.Label`. Auf diese Weise fortgesetzt.
+Als Typ der `Content`-Eigenschaft wird jetzt `Xamarin.Forms.StackLayout` angezeigt. Wenn Sie die `Children`-Eigenschaft zur Eigenschaft `Path` hinzufügen, lautet der Typ `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`. Dies ist eine interne Klasse von Xamarin.Forms, aber natürlich dennoch ein Collectiontyp. Wenn Sie einen Index hinzufügen, lautet der Typ `Xamarin.Forms.Label`. Fahren Sie auf diese Weise fort.
 
-Xamarin.Forms beim Verarbeiten des Bindungspfads installiert eine `PropertyChanged` Handler für jedes Objekt im Pfad, der implementiert die `INotifyPropertyChanged` Schnittstelle. Z. B. die letzte Bindung reagiert auf eine Änderung in der ersten `Label` da die `Text` eigenschaftenänderungen.
+Während Xamarin.Forms den Bindungspfad verarbeitet, wird für jedes Objekt im Pfad ein `PropertyChanged`-Handler installiert, der die Schnittstelle `INotifyPropertyChanged` implementiert. Beispiel: Die endgültige Bindung reagiert auf eine Änderung im ersten `Label`-Element, da sich die Eigenschaft `Text` ändert.
 
-Wenn eine Eigenschaft in den Bindungspfad nicht implementiert `INotifyPropertyChanged`, Änderungen an dieser Eigenschaft werden ignoriert. Einige Änderungen konnte den Bindungspfad vollständig ungültig, daher Sie dieses Verfahren verwenden sollten, nur, wenn die Zeichenfolge der Eigenschaften und die untergeordneten Eigenschaften nie ungültig.
+Wenn eine Eigenschaft im Bindungspfad `INotifyPropertyChanged` nicht implementiert, werden sämtliche an dieser Eigenschaft vorgenommenen Änderungen ignoriert. Durch einige Änderungen könnte der Bindungspfad vollständig ungültig gemacht werden. Daher sollten Sie dieses Verfahren nur dann anwenden, wenn die Zeichenfolge der Eigenschaften und untergeordneten Eigenschaften niemals ungültig wird.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Binden von Daten-Demos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Im Kapitel Daten-Bindung von Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

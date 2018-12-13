@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms kompiliert, Bindungen
-description: In diesem Artikel wird erläutert, wie kompilierte Bindungen verwendet, um die Bindung datenleistung in Xamarin.Forms-Anwendungen zu verbessern.
+title: Kompilierte Xamarin.Forms-Bindungen
+description: In diesem Artikel wird erläutert, wie Sie kompilierte Bindungen verwenden können, um die Leistung der Datenbindung in Xamarin.Forms-Anwendungen zu verbessern.
 ms.prod: xamarin
 ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
 ms.technology: xamarin-forms
@@ -9,38 +9,38 @@ ms.author: dabritch
 ms.date: 10/25/2018
 ms.openlocfilehash: 0b350082c834076a1d69427644259087d64bf26a
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50111524"
 ---
-# <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms kompiliert, Bindungen
+# <a name="xamarinforms-compiled-bindings"></a>Kompilierte Xamarin.Forms-Bindungen
 
-_Kompilierte Bindungen werden schneller als bei klassischen Bindungen, optimieren die Bindung die modellleistung in Xamarin.Forms-Anwendungen aus diesem Grund aufgelöst._
+_Kompilierte Bindungen werden schneller gelöst als klassische Bindungen, wodurch die Leistung der Datenbindung in Xamarin.Forms-Anwendungen verbessert wird._
 
-Zwei Hauptproblemen wird über datenbindungen verfügen:
+Datenbindungen weisen zwei Hauptprobleme auf:
 
-1. Es gibt keine Validierung während der Kompilierung von Bindungsausdrücken. Stattdessen werden die Bindungen zur Laufzeit aufgelöst. Aus diesem Grund sind keine ungültige Bindungen erst zur Laufzeit erkannt, wenn die Anwendung verhält sich nicht wie erwartet oder Fehlermeldungen angezeigt werden.
-1. Sie sind nicht kosteneffizient. Bindungen werden zur Laufzeit mithilfe der allgemeinen objektüberprüfung (Reflektion) aufgelöst, und der Aufwand für die dies variiert je nach Plattform.
+1. Es gibt keine Validierung von Bindungsausdrücken zur Kompilierzeit. Stattdessen werden Bindungen zur Laufzeit aufgelöst. Daher werden ungültige Bindungen erst zur Laufzeit ermittelt, wenn die Anwendung nicht erwartungsgemäß funktioniert oder Fehlermeldungen angezeigt werden.
+1. Sie sind nicht kosteneffizient. Bindungen werden zur Laufzeit mithilfe Universeller Objektüberprüfung (Reflektion) aufgelöst. Der durch diese Methode entstehende Mehraufwand variiert von Plattform zu Plattform.
 
-Kompilierte Bindungen Verbessern der datenleistung über die Bindung in Xamarin.Forms-Anwendungen durch das Auflösen der von Bindungsausdrücken zur Kompilierzeit statt der Runtime. Darüber hinaus kann diese Überprüfung während der Kompilierung von Bindungsausdrücken einen besseren Entwickler, die Benutzeroberfläche zur Problembehandlung, da ungültige Bindungen als Buildfehler gemeldet werden.
+Kompilierte Bindungen verbessern die Datenbindungsleistung in Xamarin.Forms-Anwendungen, indem die Bindungsausdrücke zur Kompilierzeit anstatt zur Laufzeit aufgelöst werden. Darüber hinaus vereinfacht die Validierung von Bindungsausdrücken zur Kompilierzeit die Problembehandlung durch den Entwickler, da ungültige Bindungen als Buildfehler gemeldet werden.
 
-Der Prozess für die Verwendung von kompilierter Bindungen werden:
+Sie können kompilierte Bindungen wie folgt verwenden:
 
-1. Aktivieren der XAML-Kompilierung. Weitere Informationen zu XAML-Kompilierung, finden Sie unter [XAML-Kompilierung](~/xamarin-forms/xaml/xamlc.md).
-1. Legen Sie eine `x:DataType` Attribut eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) in den Typ des Objekts, die `VisualElement` und seine untergeordneten Elemente verbindet sich mit. Beachten Sie, dass dieses Attribut an jedem Ort in einer Hierarchie von Inhaltsansichten neu definiert werden kann.
+1. Aktivieren Sie die XAML-Kompilierung. Weitere Informationen zur XAML-Kompilierung finden Sie unter [XAML Compilation (XAML-Kompilierung)](~/xamarin-forms/xaml/xamlc.md).
+1. Legen Sie ein `x:DataType`-Attribut für ein [`VisualElement`](xref:Xamarin.Forms.VisualElement) auf den Typ des Objekts fest, an das `VisualElement` und dessen untergeordnete Elemente gebunden werden. Beachten Sie, dass dieses Attribut an jeder Position in einer Ansichtshierarchie neu definiert werden kann.
 
 > [!NOTE]
-> Es wird empfohlen, legen Sie die `x:DataType` -Attributs auf der gleichen Ebene in der Hierarchie von Inhaltsansichten als die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) festgelegt ist.
+> Es wird empfohlen, das `x:DataType`-Attribut auf der gleichen Ebene in der Ansichtshierarchie festzulegen, auf der die [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft festgelegt ist.
 
-Zum Zeitpunkt der XAML-Kompilierung werden alle Ausdrücke ungültige Bindung als Buildfehler gemeldet. Der XAML-Compiler meldet jedoch nur einen Buildfehler an, für den ersten Ausdruck für die ungültige Bindung, die es trifft. Gültige Bindung-Ausdrücke, die auf definierten die `VisualElement` oder seine untergeordneten Elemente werden kompilierte, unabhängig davon, ob die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) in XAML oder Code festgelegt ist. Kompilieren von einem Bindungsausdruck generiert kompilierten Code, der einen Wert aus einer Eigenschaft erhält, auf die *Quelle*, und legen Sie ihn für die Eigenschaft auf die *Ziel* , die im Markup angegeben ist. Je nach den Bindungsausdruck, der generierte Code möglicherweise Beachten Sie außerdem Änderungen am Wert von der *Quelle* -Eigenschaft und die Aktualisierung der *Ziel* -Eigenschaft, und kann Änderungen aus der *Ziel* zurück an die *Quelle*.
+Zur Kompilierzeit des XAML-Codes werden jegliche ungültige Bindungsausdrücke als Buildfehler gemeldet. Der XAML-Compiler meldet einen Buildfehler jedoch nur für den ungültigen Bindungsausdruck, der als erstes ermittelt wird. Alle gültigen Bindungsausdrücke, die im `VisualElement`-Element oder in dessen untergeordneten Elemente definiert sind, werden unabhängig davon, ob [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) in der XAML-Datei oder im Code festgelegt ist, kompiliert. Das Kompilieren eines Bindungsausdrucks generiert kompilierten Code, der einen Wert von einer Eigenschaft in der *Quelle* abruft und diesen für die Eigenschaft des *Ziels* festlegt, das im Markup angegeben ist. Je nach Bindungsausdruck wird außerdem der Wert der Eigenschaft *source* geändert und die Eigenschaft *target* aktualisiert. Möglicherweise werden Änderungen vom *Ziel* zurück an die *Quelle* übertragen.
 
 > [!IMPORTANT]
-> Kompilierte Bindungen sind für alle Bindungsausdrücke, die definieren, derzeit deaktiviert die [ `Source` ](xref:Xamarin.Forms.Binding.Source) Eigenschaft. Grund hierfür ist die `Source` Eigenschaft ist immer festgelegt mit der `x:Reference` Markuperweiterung, die zum Zeitpunkt der Kompilierung nicht aufgelöst werden kann.
+> Kompilierte Bindungen sind derzeit für alle Bindungsausdrücke deaktiviert, die die [`Source`](xref:Xamarin.Forms.Binding.Source)-Eigenschaft definieren. Der Grund dafür ist, dass die `Source`-Eigenschaft immer mit der Markuperweiterung `x:Reference` festgelegt wird, die zur Kompilierzeit nicht aufgelöst werden kann.
 
 ## <a name="using-compiled-bindings"></a>Verwenden von kompilierten Bindungen
 
-Die **Farbauswahl kompiliert** Seite veranschaulicht die Verwendung von kompilierter Bindungen zwischen Xamarin.Forms-Ansichten und ViewModel-Eigenschaften:
+Die Seite **Compiled Color Selector** (Kompilierte Farbauswahl) veranschaulicht die Verwendung von kompilierten Bindungen zwischen Xamarin.Forms-Ansichten und ViewModel-Eigenschaften:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -68,26 +68,26 @@ Die **Farbauswahl kompiliert** Seite veranschaulicht die Verwendung von kompilie
 </ContentPage>
 ```
 
-Der Stamm [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) instanziiert die `HslColorViewModel` und initialisiert die `Color` Eigenschaft im Eigenschaftenelement-Tags für die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Eigenschaft. Dieses Stammverzeichnis `StackLayout` definiert auch die `x:DataType` Attribut als der ViewModel-Typ, der angibt, dass alle Bindungsausdrücke im Stammverzeichnis `StackLayout` Hierarchie von Inhaltsansichten kompiliert wird. Dies kann durch Ändern der die Bindungsausdrücke auf eine nicht existierende "ViewModel"-Eigenschaft gebunden, was zu einem Buildfehler führt überprüft werden.
+Der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Stamm instanziiert das `HslColorViewModel`-Objekt und initialisiert die `Color`-Eigenschaft innerhalb der Eigenschaftselementtags für die [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft. Dieser `StackLayout`-Stamm definiert außerdem das `x:DataType`-Attribut als ViewModel-Typ, der angibt, dass jegliche Bindungsausdrücke in der Ansichtshierarchie des `StackLayout`-Stamms kompiliert werden. Dies können Sie überprüfen, indem Sie einen der Bindungsausdrücke so ändern, dass eine nicht vorhandene ViewModel-Eigenschaft gebunden wird, was zu einem Buildfehler führt.
 
 > [!IMPORTANT]
-> Die `x:DataType` Attribut kann zu einem beliebigen Zeitpunkt in eine Hierarchie von Inhaltsansichten neu definiert werden.
+> Das `x:DataType`-Attribut kann jederzeit in einer Ansichtshierarchie neu definiert werden.
 
-Die [ `BoxView` ](xref:Xamarin.Forms.BoxView), [ `Label` ](xref:Xamarin.Forms.Label) Elemente und [ `Slider` ](xref:Xamarin.Forms.Slider) Ansichten erben den Bindungskontext aus der [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Die Sichten befinden sich alle Bindungsziele, die Eigenschaften der Quelle in das "ViewModel" verweisen. Für die [ `BoxView.Color` ](xref:Xamarin.Forms.BoxView.Color) -Eigenschaft, und die [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) -Eigenschaft, die datenbindungen werden `OneWay` – die Eigenschaften in der Ansicht werden von den Eigenschaften in "ViewModel" festgelegt. Allerdings die [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value) -Eigenschaft verwendet einen `TwoWay` Bindung. Dadurch kann jede `Slider` festgelegt werden, aus dem ViewModel sowie für das "ViewModel" aus jedem festzulegende `Slider`.
+Die [`BoxView`](xref:Xamarin.Forms.BoxView)- und [`Label`](xref:Xamarin.Forms.Label)-Elemente sowie die [`Slider`](xref:Xamarin.Forms.Slider)-Ansichten erben den Bindungskontext von [`StackLayout`](xref:Xamarin.Forms.StackLayout). All diese Ansichten sind Bindungsziele, die auf Quelleigenschaften in ViewModel verweisen. Für die Eigenschaften [`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) und [`Label.Text`](xref:Xamarin.Forms.Label.Text) sind die Datenbindungen `OneWay`. Die Eigenschaften in der Ansicht werden mithilfe der Eigenschaften im ViewModel-Objekt festgelegt. Die Eigenschaft [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) verwendet jedoch eine `TwoWay`-Bindung. Dadurch kann jedes `Slider`-Steuerelement über die ViewModel-Klasse festgelegt werden, und die ViewModel-Klasse kann über jedes `Slider`-Steuerelement festgelegt werden.
 
-Wenn die Anwendung zuerst ausgeführt wird, die [ `BoxView` ](xref:Xamarin.Forms.BoxView), [ `Label` ](xref:Xamarin.Forms.Label) Elemente und [ `Slider` ](xref:Xamarin.Forms.Slider) Elemente können aus "ViewModel" basierend auf der ursprüngliche `Color` -Eigenschaft festgelegt wird, wenn das "ViewModel" instanziiert wurde. Dies wird in den folgenden Screenshots gezeigt:
+Wenn die Anwendung zum ersten Mal ausgeführt wird, werden alle [`BoxView`](xref:Xamarin.Forms.BoxView)-, [`Label`](xref:Xamarin.Forms.Label)- und [`Slider`](xref:Xamarin.Forms.Slider)-Elemente basierend auf der ursprünglichen `Color`-Eigenschaft, die bei der Instanziierung von ViewModel festgelegt wurde, über das ViewModel-Objekt festgelegt. Dies wird im folgenden Screenshot veranschaulicht:
 
-[![Kompiliert die Farbauswahl](compiled-bindings-images/compiledcolorselector-small.png "kompiliert Farbauswahl")](compiled-bindings-images/compiledcolorselector-large.png#lightbox "kompiliert Farbauswahl")
+[![Kompilierte Farbauswahl](compiled-bindings-images/compiledcolorselector-small.png "Kompilierte Farbauswahl")](compiled-bindings-images/compiledcolorselector-large.png#lightbox "Kompilierte Farbauswahl")
 
-Wenn der Schieberegler bearbeitet werden, die [ `BoxView` ](xref:Xamarin.Forms.BoxView) und [ `Label` ](xref:Xamarin.Forms.Label) Elemente werden entsprechend aktualisiert.
+Wenn die Schieberegler bewegt werden, werden die Elemente [`BoxView`](xref:Xamarin.Forms.BoxView) und [`Label`](xref:Xamarin.Forms.Label) entsprechend aktualisiert.
 
-Weitere Informationen zu dieser Farbauswahl, finden Sie unter [ViewModels und Benachrichtigungen für Eigenschaftsänderungen](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#viewmodels-and-property-change-notifications).
+Weitere Informationen zu dieser Farbauswahl finden Sie unter [ViewModels and Property-Change Notifications (Benachrichtigungen für Änderungen an ViewModels und Eigenschaften)](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#viewmodels-and-property-change-notifications).
 
-## <a name="using-compiled-bindings-in-a-datatemplate"></a>Verwenden von kompilierten Bindungen in eine DataTemplate-Element
+## <a name="using-compiled-bindings-in-a-datatemplate"></a>Verwenden kompilierter Bindungen in einer DataTemplate-Klasse
 
-Bindungen in eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) im Kontext des Objekts auf Vorlagen basierenden interpretiert werden. Aus diesem Grund, wenn mit kompiliert Bindungen in eine `DataTemplate`, `DataTemplate` muss zur Deklaration des Typs, der die Daten mithilfe der `x:DataType` Attribut.
+Bindungen in einer [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse werden abhängig vom Kontext des Objekts interpretiert, auf dem die Vorlage basiert. Daher muss die `DataTemplate`-Klasse den Typ ihres Datenobjekts mithilfe des `x:DataType`-Attributs deklarieren, wenn kompilierte Bindungen in einer `DataTemplate`-Klasse verwendet werden.
 
-Die **Farbenliste kompiliert** Seite veranschaulicht die Verwendung von kompilierter Bindungen in eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate):
+Die Seite **Compiled Color List** (Kompilierte Farbliste) veranschaulicht die Verwendung kompilierter Bindungen in einer [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -120,21 +120,21 @@ Die **Farbenliste kompiliert** Seite veranschaulicht die Verwendung von kompilie
 </ContentPage>
 ```
 
-Die [ `ListView.ItemsSource` ](xref:Xamarin.Forms.ListView) -Eigenschaftensatz auf die statische `NamedColor.All` Eigenschaft. Die `NamedColor` Klasse verwendet .NET Reflection zum Aufzählen aller statischen öffentlichen Feldes in der [ `Color` ](xref:Xamarin.Forms.Color) Struktur, und sie mit ihren Namen in einer Sammlung zu speichern, die aus der statischen zugänglich ist `All` Eigenschaft. Aus diesem Grund die `ListView` gefüllt mit allen dem `NamedColor` Instanzen. Für jedes Element in der `ListView`, der Bindungskontext für das Element festgelegt ist, um eine `NamedColor` Objekt. Die [ `BoxView` ](xref:Xamarin.Forms.BoxView) und [ `Label` ](xref:Xamarin.Forms.Label) Elemente in der [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) gebunden sind, um `NamedColor` Eigenschaften.
+Für die Eigenschaft [`ListView.ItemsSource`](xref:Xamarin.Forms.ListView) wird die statische Eigenschaft `NamedColor.All` festgelegt. Die `NamedColor`-Klasse nutzt die .NET-Reflektion, um alle statischen öffentlichen Felder in der [`Color`](xref:Xamarin.Forms.Color)-Struktur aufzuführen und sie mitsamt ihrer Namen in einer Sammlung zu speichern, auf die über die statische Eigenschaft `All` zugegriffen werden kann. Aus diesem Grund wird `ListView` mit allen Instanzen von `NamedColor` aufgefüllt. Der Bindungskontext aller Elemente in der `ListView`-Klasse wird auf ein `NamedColor`-Objekt festgelegt. Die Elemente [`BoxView`](xref:Xamarin.Forms.BoxView) und [`Label`](xref:Xamarin.Forms.Label) in der [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Klasse werden an `NamedColor`-Eigenschaften gebunden.
 
-Beachten Sie, dass die [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) definiert die `x:DataType` Attribut der `NamedColor` Typ, der angibt, die von jedem Bindungsausdrücke in die `DataTemplate` Hierarchie von Inhaltsansichten kompiliert wird. Dies kann überprüft werden, durch Ändern der die Bindungsausdrücke zum Binden an eine nicht vorhandene `NamedColor` -Eigenschaft, die zu einem Buildfehler führt.
+Beachten Sie, dass [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) den Typ `NamedColor` für das `x:DataType`-Attribut definiert, d.h., dass alle Bindungsausdrücke in der Ansichtshierarchie `DataTemplate` kompiliert werden. Dies können Sie überprüfen, indem Sie einen der Bindungsausdrücke so ändern, dass eine nicht vorhandene `NamedColor`-Eigenschaft gebunden wird, was zu einem Buildfehler führt.
 
-Wenn die Anwendung zuerst ausgeführt wird, die [ `ListView` ](xref:Xamarin.Forms.ListView) mit aufgefüllt `NamedColor` Instanzen. Wenn ein Element in der `ListView` ausgewählt ist, die [ `BoxView.Color` ](xref:Xamarin.Forms.BoxView.Color) -Eigenschaftensatz auf die Farbe des ausgewählten Elements in der `ListView`:
+Wenn die Anwendung zum ersten Mal ausgeführt wird, wird die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse mit `NamedColor`-Instanzen aufgefüllt. Wenn ein Element in der `ListView`-Klasse ausgewählt wird, wird die Farbe des ausgewählten Elements für die [`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color)-Eigenschaft in der `ListView`-Klasse festgelegt:
 
-[![Kompilierte Farbenliste](compiled-bindings-images/compiledcolorlist-small.png "kompilierte Farbenliste]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "Compiled Color List")
+[![Kompilierte Farbliste](compiled-bindings-images/compiledcolorlist-small.png "Kompilierte Farbliste")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "Compiled Color List")
 
-Auswählen von anderen Elementen in der [ `ListView` ](xref:Xamarin.Forms.BoxView) aktualisiert die Farbe der [ `BoxView` ](xref:Xamarin.Forms.BoxView).
+Wenn andere Elemente in der [`ListView`](xref:Xamarin.Forms.BoxView)-Klasse ausgewählt werden, wird die Farbe der [`BoxView`](xref:Xamarin.Forms.BoxView)-Klasse aktualisiert.
 
-## <a name="combining-compiled-bindings-with-classic-bindings"></a>Kombinieren von kompiliert Bindungen mit klassischen Bindungen
+## <a name="combining-compiled-bindings-with-classic-bindings"></a>Kombinieren kompilierter Bindungen mit klassischen Bindungen
 
-Bindungsausdrücke werden nur kompiliert, für die Hierarchie von Inhaltsansichten, die die `x:DataType` -Attribut auf definiert ist. Im Gegensatz dazu alle Ansichten in einer Hierarchie, die sich auf dem die `x:DataType` Attribut ist nicht definiert klassischen Bindungen verwenden. Es ist daher möglich, kompilierte Bindungen und klassischen Bindungen auf einer Seite zu kombinieren. Beispielsweise im vorherigen Abschnitt die Ansichten im der [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) kompilierten Bindungen, während die [ `BoxView` ](xref:Xamarin.Forms.BoxView) , festgelegt ist, der die Farbe, die im ausgewählten der [ `ListView` ](xref:Xamarin.Forms.ListView) nicht.
+Bindungsausdrücke werden nur für die Ansichtshierarchie kompiliert, für die das Attribut `x:DataType` definiert ist. Im Gegensatz dazu, verwenden alle Ansichten in einer Hierarchie, für die das Attribut `x:DataType` nicht definiert ist, klassische Bindungen. Daher ist es möglich, kompilierte Bindungen und klassische Bindungen auf einer Seite zu kombinieren. Zum Beispiel verwenden die Ansichten in der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse im vorherigen Abschnitt kompilierte Bindungen, während die [`BoxView`](xref:Xamarin.Forms.BoxView)-Klasse, die auf die in [`ListView`](xref:Xamarin.Forms.ListView) ausgewählte Farbe festgelegt ist, klassische Bindungen verwendet.
 
-Eine sorgfältige Strukturierung von `x:DataType` Attribute daher zu einer Seite, die mithilfe von kompilierter und klassischen Bindungen führen können. Alternativ die `x:DataType` Attribut kann zu einem beliebigen Zeitpunkt in eine Hierarchie von Inhaltsansichten, neu definiert sein `null` mithilfe der `x:Null` Markuperweiterung. Dadurch wird angegeben, dass alle Bindungsausdrücke in der Hierarchie von Inhaltsansichten klassischen Bindungen. Die *gemischten Bindungen* Seite veranschaulicht diesen Ansatz:
+Mithilfe sorgfältiger Strukturierung von `x:DataType`-Attributen kann deshalb eine Seite mit kompilierten und klassischen Bindungen erstellt werden. Alternativ kann das Attribut `x:DataType` jederzeit und an beliebiger Position in einer Ansichtshierarchie mithilfe der Markuperweiterung `x:Null` als `null` definiert werden. Dadurch wird impliziert, dass alle Bindungsausdrücke in der Ansichtshierarchie klassische Bindungen nutzen. Die Seite *Mixed Bindings* (Gemischte Bindungen) veranschaulicht diese Vorgehensweise:
 
 ```xaml
 <StackLayout x:DataType="local:HslColorViewModel">
@@ -156,21 +156,21 @@ Eine sorgfältige Strukturierung von `x:DataType` Attribute daher zu einer Seite
 </StackLayout>   
 ```
 
-Der Stamm [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) legt diese fest der `x:DataType` Attribut der `HslColorViewModel` Typ, der angibt, die von jedem Bindungsausdruck im Stammverzeichnis `StackLayout` Hierarchie von Inhaltsansichten kompiliert wird. Allerdings die innere `StackLayout` definiert die `x:DataType` Attribut `null` mit der `x:Null` Markup-Ausdruck. Aus diesem Grund die Bindungsausdrücke in der inneren `StackLayout` klassischen Bindungen verwenden. Nur die [ `BoxView` ](xref:Xamarin.Forms.BoxView), innerhalb des Stamms `StackLayout` Hierarchien, kompiliert verwendet Bindungen anzeigen.
+Der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Stamm legt den Typ `HslColorViewModel` für das Attribut `x:DataType` fest, d.h., dass alle Bindungsausdrücke im `StackLayout`-Stamm der Ansichtshierarchie kompiliert werden. Das Attribut `x:DataType` wird jedoch von der inneren `StackLayout`-Klasse mithilfe des Markupausdrucks `x:Null` mit dem Wert `null` neu definiert. Daher verwenden Bindungsausdrücke in der inneren `StackLayout`-Klasse klassische Bindungen. Nur die [`BoxView`](xref:Xamarin.Forms.BoxView)-Klasse im `StackLayout`-Stamm der Ansichtshierarchie verwendet kompilierte Bindungen.
 
-Weitere Informationen zu den `x:Null` Markup-Ausdruck, finden Sie unter [X: Null Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#null).
+Weitere Informationen über den Markupausdruck `x:Null` finden Sie unter [x:Null Markup Extension (x:Null-Markuperweiterung)](~/xamarin-forms/xaml/markup-extensions/consuming.md#null).
 
 ## <a name="performance"></a>Leistung
 
-Kompilierte Bindungen verbessern die Leistung mit der Leistung Vorteile variieren für die Datenbindung. Zeigt, dass Komponententests:
+Kompilierte Bindungen verbessern die Leistung der Datenbindung mit variierenden Leistungsvorteilen. Unittests zeigen folgende Ergebnisse:
 
-- Einer kompilierten Bindung, die Benachrichtigung für eigenschaftsänderungen verwendet (d. h. eine `OneWay`, `OneWayToSource`, oder `TwoWay` Bindung) ungefähr 8 Mal schneller als eine klassische Bindung aufgelöst wird.
-- Einer kompilierten Bindung, die keine Benachrichtigung für eigenschaftsänderungen verwendet (d. h. eine `OneTime` Bindung) ungefähr 20-Mal schneller als eine klassische Bindung aufgelöst wird.
-- Festlegen der [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) änderungsbenachrichtigung in einer kompilierten Bindung, die Eigenschaft verwendet (d. h. eine `OneWay`, `OneWayToSource`, oder `TwoWay` Bindung) ist ungefähr 5-Mal schneller als das Festlegen der `BindingContext`auf einer klassischen Bindung.
-- Festlegen der [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) änderungsbenachrichtigung in einer kompilierten Bindung, die Eigenschaft nicht verwendet (d. h. eine `OneTime` Bindung) beträgt ca. 7-Mal schneller als die Einstellung der `BindingContext` auf einer klassischen Bindung.
+- Eine kompilierte Bindung, die eine Eigenschaftsänderungsbenachrichtigung verwendet (z.B. eine `OneWay`-, `OneWayToSource`- oder `TwoWay`-Bindung), wird ungefähr achtmal so schnell wie eine klassische Bindung aufgelöst.
+- Eine kompilierte Bindung, die keine Eigenschaftsänderungsbenachrichtigung verwendet (z.B. eine `OneTime`-Bindung) wird ungefähr 20-mal so schnell wie eine klassische Bindung aufgelöst.
+- Das Festlegen der [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft für eine kompilierte Bindung, die eine Eigenschaftsänderungsbenachrichtigung verwendet (z.B. eine `OneWay`-, `OneWayToSource`- oder `TwoWay`-Bindung), wird ungefähr fünfmal so schnell wie eine auf `BindingContext` festgelegte klassische Bindung aufgelöst.
+- Das Festlegen der [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft für eine kompilierte Bindung, die keine Eigenschaftsänderungsbenachrichtigung verwendet (z.B. eine `OneTime`-Bindung), wird ungefähr siebenmal so schnell wie eine auf `BindingContext` festgelegte klassische Bindung aufgelöst.
 
-Diese Leistungsunterschiede können auf mobilen Geräten, die abhängig von der Plattform, die verwendet wird, die Version des Betriebssystems verwendet wird und das Gerät, auf dem die Anwendung ausgeführt wird, vergrößert werden.
+Diese Leistungsunterschiede können bei mobilen Geräten abhängig von der verwendeten Plattform, der Version des verwendeten Betriebssystems und dem Gerät, auf dem die Anwendung ausgeführt wird, gesteigert werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Binden von Daten-Demos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)

@@ -1,6 +1,6 @@
 ---
-title: Binden von Videoquellen an den player
-description: In diesem Artikel erläutert, wie zum Binden von Videoquellen an den Videoplayer, indem Sie xamarin.Forms verwenden.
+title: Binden von Videoquellen an den Player
+description: In diesem Artikel wird erläutert, wie eine Videoquellen mithilfe von Xamarin.Forms an den Videoplayer gebunden werden.
 ms.prod: xamarin
 ms.assetid: 504E0C7E-051A-4AF2-B654-BAB4D0957928
 ms.technology: xamarin-forms
@@ -9,14 +9,14 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: b0efdc1a20f52231f15b7a08eb86962e2079c678
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35240029"
 ---
-# <a name="binding-video-sources-to-the-player"></a>Binden von Videoquellen an den player
+# <a name="binding-video-sources-to-the-player"></a>Binden von Videoquellen an den Player
 
-Wenn die `Source` Eigenschaft von der `VideoPlayer` Ansicht um eine neue Videodatei festgelegt ist, das vorhandene Video beendet die Wiedergabe und neue Videos beginnt. Dies wird dargestellt, indem die **wählen Web Video** auf der Seite der [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) Beispiel. Die Seite enthält eine `ListView` mit dem Titel der drei Videos auf die verwiesen wird die **App.xaml** Datei:
+Das vorhandene Video wird angehalten und das neue Video startet, wenn die `Source`-Eigenschaft der `VideoPlayer`-Ansicht auf eine neue Videodatei festgelegt wird. Dies wird anhand der Seite **Auswählen des Webvideos** des Beispiels [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) veranschaulicht. Die Seite enthält auch eine `ListView`-Klasse mit den Titelnamen der drei Videos, auf die in der Datei **App.xaml** verwiesen wird:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -47,7 +47,7 @@ Wenn die `Source` Eigenschaft von der `VideoPlayer` Ansicht um eine neue Videoda
 </ContentPage>
 ```
 
-Wenn ein Video aktiviert ist, die `ItemSelected` -Ereignishandler im Code-Behind-Datei ausgeführt wird. Der Ereignishandler entfernt alle Leerzeichen und Apostrophe aus den Titel und verwendet, die als Schlüssel definierten Ressourcen Abrufen der **App.xaml** Datei. `UriVideoSource` Objekt legen Sie dann auf die `Source` Eigenschaft von der `VideoPlayer`.
+Wenn ein Video ausgewählt wurde, wird der Ereignishandler `ItemSelected` in der CodeBehind-Datei ausgeführt. Der Handler entfernt alle Leerzeichen und Apostrophen aus dem Titel und nutzt diesen als Schlüssel, um eine der in der Datei **App.xaml** definierten Ressourcen abzurufen. Das `UriVideoSource`-Objekt wird anschließend auf die `Source`-Eigenschaft des `VideoPlayer` festgelegt.
 
 ```csharp
 namespace VideoPlayerDemos
@@ -71,11 +71,11 @@ namespace VideoPlayerDemos
 }
 ```
 
-Beim ersten der Seite laden wird kein Element ausgewählt, der `ListView`, sodass Sie müssen eine für das Video zum Starten der Wiedergabe auswählen:
+Beim erstmaligen Laden der Seite wird in `ListView` kein Element ausgewählt, sodass Sie eines auswählen müssen, damit das Video abgespielt wird:
 
-[![Wählen Sie die Web-Video](source-bindings-images/selectwebvideo-small.png "Web Video auswählen")](source-bindings-images/selectwebvideo-large.png#lightbox "Web Video auswählen")
+[![Auswählen des Webvideos](source-bindings-images/selectwebvideo-small.png "Auswählen des Webvideos")](source-bindings-images/selectwebvideo-large.png#lightbox "Auswählen des Webvideos")
 
-Die `Source` Eigenschaft `VideoPlayer` durch eine bindbare Eigenschaft an, was bedeutet, dass sie das Ziel einer Bindung kann gesichert ist. Dies wird veranschaulicht, durch die **Binden an VideoPlayer** Seite. Das Markup in der **BindToVideoPlayer.xaml** Datei wird durch die folgende Klasse, die einen beliebigen Titel ein Video und einer entsprechenden kapselt unterstützt `VideoSource` Objekt:
+Die `Source`-Eigenschaft von `VideoPlayer` wird durch eine bindbare Eigenschaft gesichert, d.h. sie kann das Ziel einer Datenbindung sein. Dies wird auf der Seite **Bindung an den VideoPlayer** veranschaulicht. Das Markup in der Datei **BindToVideoPlayer.xaml** wird von der folgenden Klasse unterstützt, die einen Titel eines Videos und das dazugehörige `VideoSource`-Objekt kapselt:
 
 ```csharp
 namespace VideoPlayerDemos
@@ -94,7 +94,7 @@ namespace VideoPlayerDemos
 }
 ```
 
-Die `ListView` in der **BindToVideoPlayer.xaml** -Datei enthält ein Array dieser `VideoInfo` Objekte, die jeweils mit einem Videotitel initialisiert und die `UriVideoSource` Objekt aus dem Ressourcenverzeichnis in  **App.XAML**:
+Die `ListView`-Klasse in der Datei **BindToVideoPlayer.xaml** enthält ein Array der `VideoInfo`-Objekte, von denen jedes mit einem Videotitel und dem `UriVideoSource`-Objekt aus dem Ressourcenverzeichnis in der Datei **App.xaml** initialisiert wird:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,11 +133,11 @@ Die `ListView` in der **BindToVideoPlayer.xaml** -Datei enthält ein Array diese
 </ContentPage>
 ```
 
-Die `Source` Eigenschaft der `VideoPlayer` gebunden ist, um die `ListView`. Die `Path` der Bindung wird angegeben als `SelectedItem.VideoSource`, also einen zusammengesetzten Pfad bestehend aus zwei Eigenschaften: `SelectedItem` ist eine Eigenschaft des `ListView`. Das ausgewählte Element ist vom Typ `VideoInfo`, verfügt über eine `VideoSource` Eigenschaft.
+Die `Source`-Eigenschaft von `VideoPlayer` wird an `ListView` gebunden. Die `Path`-Klasse der Bindung wird als `SelectedItem.VideoSource` bestimmt, ein zusammengesetzter Pfad aus zwei Eigenschaften: `SelectedItem` ist eine Eigenschaft von `ListView`. Das ausgewählte Element ist vom Typ `VideoInfo`, der eine `VideoSource`-Eigenschaft aufweist.
 
-Wie bei der ersten **wählen Web Video** Seite ist kein Element ursprünglich ausgewählt aus der `ListView`, daher müssen Sie eines der Videos auswählen, bevor sie die Wiedergabe beginnt.
+Wie bei der ersten Seite **Auswählen des Webvideos** ist anfänglich kein Element aus `ListView` ausgewählt, sodass Sie eines der Videos auswählen müssen, damit es abgespielt wird.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (sample) (Demos für Videoplayer (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

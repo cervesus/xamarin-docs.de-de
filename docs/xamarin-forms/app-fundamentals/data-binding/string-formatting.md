@@ -1,6 +1,6 @@
 ---
-title: Formatieren von Xamarin.Forms-Zeichenfolgen
-description: In diesem Artikel wird erläutert, wie Xamarin.FOrms datenbindungen, die zum Formatieren und Anzeigen von Objekten als Zeichenfolgen verwendet wird. Dies wird erreicht, indem der StringFormat der Bindung auf eine standardmäßige .NET Formatierungszeichenfolge mit Platzhalter.
+title: Zeichenfolgenformatierung in Xamarin.Forms
+description: In diesem Artikel wird erläutert, wie Sie Objekte mithilfe von Xamarin.Forms-Datenbindungen als Zeichenfolgen formatieren und anzeigen. Legen Sie das StringFormat der Bindung dazu auf eine .NET-Standard-Formatierungszeichenfolge mit einem Platzhalter fest.
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
@@ -9,20 +9,20 @@ ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 8efd93204b848113e0ed95c8066a5506eb517ac6
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52170948"
 ---
-# <a name="xamarinforms-string-formatting"></a>Formatieren von Xamarin.Forms-Zeichenfolgen
+# <a name="xamarinforms-string-formatting"></a>Zeichenfolgenformatierung in Xamarin.Forms
 
-Manchmal ist es hilfreich, um datenbindungen zu verwenden, um die Zeichenfolgendarstellung eines Objekts oder den Wert anzuzeigen. Beispielsweise möchten Sie verwenden eine `Label` den aktuellen Wert der anzuzeigenden eine `Slider`. In dieser Datenbindung, die `Slider` ist die Quelle und das Ziel ist die `Text` Eigenschaft der `Label`.
+Manchmal bietet es sich an, Objekte oder Werte mithilfe von Datenbindungen als Zeichenfolgen darzustellen. Sie können den aktuellen Wert eines `Slider` z. B. mithilfe eines `Label` anzeigen lassen. In dieser Datenbindung ist `Slider` die Quelle, und die `Text`-Eigenschaft von `Label` ist das Ziel.
 
-Zum Anzeigen von Zeichenfolgen im Code ist die leistungsfähigste Tool die statische [ `String.Format` ](xref:System.String.Format(System.String,System.Object)) Methode. Die Formatierungszeichenfolge enthält Formatierungscodes für verschiedene Objekttypen spezifisch können, und Sie andere Text zusammen mit den Werten, der formatiert wird. Finden Sie unter den [Formatieren von Typen in .NET](/dotnet/standard/base-types/formatting-types/) Weitere Informationen zur zeichenfolgenformatierung.
+Wenn es darum geht, Zeichenfolgen im Code anzuzeigen, ist die statische [`String.Format`](xref:System.String.Format(System.String,System.Object))-Methode das leistungsstärkste Tool. Die Formatierungszeichenfolge enthält Formatierungscodes, die nur von bestimmten Objekttypen verwendet werden, und Sie können abgesehen von den Werten, die formatiert werden, weiteren Text hineinschreiben. Weitere Informationen zum Formatieren von Zeichenfolgen finden Sie unter [Formatieren von Typen in .NET](/dotnet/standard/base-types/formatting-types/).
 
-## <a name="the-stringformat-property"></a>Der StringFormat-Eigenschaft
+## <a name="the-stringformat-property"></a>Die StringFormat-Eigenschaft
 
-In datenbindungen, die diese Funktion übernommen wird: Festlegen der [ `StringFormat` ](xref:Xamarin.Forms.BindingBase.StringFormat) Eigenschaft `Binding` (oder die [ `StringFormat` ](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) Eigenschaft der `Binding` Markuperweiterung) zu einer Standard .NET Formatierungszeichenfolge mit Platzhalter für ein:
+Die Funktion wird in Datenbindungen übernommen: Sie legen die [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat)-Eigenschaft von `Binding` (oder die [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat)-Eigenschaft der `Binding`-Markuperweiterung) auf eine .NET-Standard-Formatierungszeichenfolge mit einem Platzhalter fest:
 
 ```xaml
 <Slider x:Name="slider" />
@@ -31,13 +31,13 @@ In datenbindungen, die diese Funktion übernommen wird: Festlegen der [ `StringF
                       StringFormat='The slider value is {0:F2}'}" />
 ```
 
-Beachten Sie, dass die Formatierungszeichenfolge durch einfache Anführungszeichen (Apostroph) Zeichen den XAML-Parser vermeiden die geschweiften Klammern als ein anderes XAML-Markuperweiterung behandeln können getrennt wird. Andernfalls Zeichenfolge ohne das einfache Anführungszeichen die gleiche Zeichenfolge ist, Sie zum Anzeigen eines Gleitkommawerts in einem Aufruf von verwenden `String.Format`. Eine Formatierung Spezifikation von `F2` bewirkt, dass den Wert, der mit zwei Dezimalstellen angezeigt werden.
+Beachten Sie, dass die Formatierungszeichenfolge in einfache Anführungszeichen (Apostroph) eingeschlossen ist. So wird vermieden, dass der XAML-Parser die geschweiften Klammern als eine weitere XAML-Markuperweiterung behandelt. Die Zeichenfolge ohne die einfachen Anführungszeichen ist dieselbe, mit der Sie einen Gleitkommawert in einem Aufruf von `String.Format` anzeigen lassen. Eine Formatierungsangabe von `F2` bewirkt, dass der Wert mit zwei Nachkommastellen dargestellt wird.
 
-Die `StringFormat` Eigenschaft ist nur sinnvoll, wenn die Eigenschaft vom Typ `string`, und der Bindungsmodus `OneWay` oder `TwoWay`. Für bidirektionale Bindungen die `StringFormat` gilt nur für Werte, die aus der Quelle zum Ziel übergeben.
+Die `StringFormat`-Eigenschaft ist nur sinnvoll, wenn die Zieleigenschaft vom Typ `string` ist und der Bindungsmodus `OneWay` oder `TwoWay` lautet. Für bidirektionale Bindungen ist `StringFormat` nur bei Werten anwendbar, die von der Quelle an das Ziel übergeben werden.
 
-Wie Sie im nächsten Artikel sehen werden, auf die [Bindungspfad](binding-path.md), datenbindungen können sehr komplex und convoluted werden. Bei diesen datenbindungen zu debuggen, können Sie Hinzufügen einer `Label` in die XAML-Datei mit einer `StringFormat` einige fortgeschrittene Ergebnisse angezeigt werden sollen. Auch wenn Sie es nur zum Anzeigen des Objekttyps verwenden, kann die hilfreich sein.
+Wie Sie im nächsten Artikel zum [Bindungspfad](binding-path.md) erfahren werden, können Datenbindungen sehr komplex sein. Beim Debuggen dieser Datenbindungen können Sie in der XAML-Datei mit einem `StringFormat` ein `Label` hinzufügen, damit einige Zwischenergebnisse angezeigt werden. Selbst wenn Sie damit nur einen Objekttyp anzeigen lassen, kann es hilfreich sein.
 
-Die **Zeichenfolgenformatierung** Seite veranschaulicht verschiedene Verwendungen von der `StringFormat` Eigenschaft:
+Auf der Seite **String Formatting** (Zeichenfolgenformatierung) werden verschiedene Verwendungen der `StringFormat`-Eigenschaft veranschaulicht:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -101,33 +101,33 @@ Die **Zeichenfolgenformatierung** Seite veranschaulicht verschiedene Verwendunge
 </ContentPage>
 ```
 
-Die Bindungen für die `Slider` und `TimePicker` veranschaulichen Sie die Verwendung der Formatangaben speziell für `double` und `TimeSpan` -Datentypen. Die `StringFormat` , anzeigt, dass den Text aus der `Entry` Ansicht veranschaulicht, wie in der Formatierungszeichenfolge, mit der Verwendung von doppelten Anführungszeichen an das `&quot;` HTML-Entität.
+Die Bindungen für `Slider` und `TimePicker` zeigen, wie die für `double`- und `TimeSpan`-Datentypen spezifischen Formatangaben verwendet werden. Das `StringFormat`, das den Text aus der `Entry`-Ansicht anzeigt, veranschaulicht, wie doppelte Anführungszeichen in der Formatierungszeichenfolge mithilfe der HTML-Entität `&quot;` angegeben werden.
 
-Im nächsten Abschnitt in der XAML-Datei werden eine `StackLayout` mit einer `BindingContext` legen Sie auf eine `x:Static` Markuperweiterung, die die statische Verweise `DateTime.Now` Eigenschaft. Die erste Bindung verfügt über keine Eigenschaften:
+Im nächsten Abschnitt der XAML-Datei wird ein `StackLayout` mit einem `BindingContext` auf eine `x:Static`-Markuperweiterung festgelegt, die auf die statische `DateTime.Now`-Eigenschaft verweist. Die erste Bindung verfügt über keine Eigenschaften:
 
 ```xaml
 <Label Text="{Binding}" />
 ```
 
-Dies einfach zeigt die `DateTime` Wert der `BindingContext` mit standardformatierung. Die zweite Bindung zeigt die `Ticks` Eigenschaft `DateTime`, während die anderen beiden Bindungen anzeigen der `DateTime` selbst mit einem bestimmten Format. Beachten Sie, dass dies `StringFormat`:
+Es wird einfach der `DateTime`-Wert von `BindingContext` mit der Standardformatierung angezeigt. Die zweite Bindung zeigt die `Ticks`-Eigenschaft von `DateTime` an, während die anderen beiden Bindungen `DateTime` selbst in einem bestimmten Format anzeigen. Sehen Sie sich dieses `StringFormat` an:
 
 ```xaml
 <Label Text="{Binding StringFormat='The {{0:MMMM}} specifier produces {0:MMMM}'}" />
 ```
 
-Wenn Sie die linke oder rechte geschweifte Klammern in Ihrer Formatierungszeichenfolge anzeigen möchten, verwenden Sie einfach ein paar davon.
+Wenn in Ihrer Formatierungszeichenfolge linke oder rechte geschweifte Klammern angezeigt werden sollen, verwenden Sie sie einfach zweimal.
 
-Im letzten Abschnitt wird die `BindingContext` auf den Wert der `Math.PI` und mit standardformatierung und zwei verschiedene Arten von Formatieren von numerischen Daten angezeigt.
+Im letzten Abschnitt wird `BindingContext` auf den Wert von `Math.PI` festgelegt. Dieser wird dann in der Standardformatierung und zwei verschiedenen numerischen Formatierungstypen angezeigt.
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![Formatierung von Zeichenfolgen](string-formatting-images/stringformatting-small.png "Formatierung von Zeichenfolgen")](string-formatting-images/stringformatting-large.png#lightbox "Formatierung von Zeichenfolgen")
+[![Zeichenfolgenformatierung](string-formatting-images/stringformatting-small.png "String Formatting")](string-formatting-images/stringformatting-large.png#lightbox "String Formatting")
 
-## <a name="viewmodels-and-string-formatting"></a>ViewModels und Formatieren von Zeichenfolgen
+## <a name="viewmodels-and-string-formatting"></a>ViewModels und die Zeichenfolgenformatierung
 
-Bei der Verwendung von `Label` und `StringFormat` um den Wert einer Sicht anzuzeigen, die auch das Ziel eines "ViewModels" ist, können Sie entweder die Bindung aus der Ansicht definieren die `Label` oder über das "ViewModel", um die `Label`. Im Allgemeinen empfiehlt sich beim zweite Ansatz da überprüft wird, dass die Bindungen zwischen Ansicht und ViewModel arbeiten.
+Wenn Sie die Werte einer Ansicht, die auch das Ziel eines ViewModels ist, mithilfe von `Label` und `StringFormat` anzeigen, können Sie entweder die Bindung zwischen Ansicht und `Label` oder zwischen ViewModel und `Label` definieren. Im Allgemeinen empfiehlt sich der zweite Ansatz, da hierbei überprüft wird, ob die Bindungen zwischen View und ViewModel funktionieren.
 
-Dieser Ansatz wird angezeigt, der **besser Farbauswahl** das gleiche "ViewModel" als verwendet Beispiel die **einfache Farbauswahl** Programm in der [ **Binding Mode** ](binding-mode.md) Artikel:
+Dieser Ansatz wird im Beispiel **Better Color Selector** (Bessere Farbauswahl) vorgestellt. Darin wird dasselbe ViewModel wie im Programm **Simple Color Selector** (Einfache Farbauswahl) verwendet, das im Artikel [**Bindungsmodus in Xamarin.Forms**](binding-mode.md) erläutert wird:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -172,18 +172,18 @@ Dieser Ansatz wird angezeigt, der **besser Farbauswahl** das gleiche "ViewModel"
 </ContentPage>    
 ```
 
-Stehen nun drei Paare mit `Slider` und `Label` Elemente, die auf die gleiche gebunden sind source-Eigenschaft in der `HslColorViewModel` Objekt. Der einzige Unterschied besteht darin, die `Label` verfügt über eine `StringFormat` Eigenschaft, um jedes `Slider` Wert.
+Es gibt nun drei Paare von `Slider`- und `Label`-Elementen, die an dieselbe Quelleigenschaft im `HslColorViewModel`-Objekt gebunden sind. Der einzige Unterschied besteht darin, dass `Label` über eine `StringFormat`-Eigenschaft verfügt, mit der jeder `Slider`-Wert angezeigt werden kann.
 
-[![Besser Farbe Selektor](string-formatting-images/bettercolorselector-small.png "besser Farbe Selektor")](string-formatting-images/bettercolorselector-large.png#lightbox "besser Color-Auswahl")
+[![Bessere Farbauswahl](string-formatting-images/bettercolorselector-small.png "Bessere Farbauswahl")](string-formatting-images/bettercolorselector-large.png#lightbox "Bessere Farbauswahl")
 
-Sie Fragen sich vielleicht wie RGB (Rot, Grün, Blau)-Werte im Hexadezimalformat für herkömmliche zweistellige angezeigt werden kann. Diese ganzzahligen Werte nicht direkt zur Verfügung, aus der `Color` Struktur. Eine Lösung wäre zum Berechnen von ganzzahligen Werten Farbkomponenten in "ViewModel", und sie als Eigenschaften verfügbar zu machen. Sie können anschließend formatieren Sie sie mithilfe der `X2` Spezifikation Formatierung.
+Sie fragen sich vielleicht, wie Sie RGB-Werte (Rot, Grün, Blau) im herkömmlichen zweistelligen Hexadezimalformat darstellen können. Diese Integerwerte sind in der `Color`-Struktur nicht direkt verfügbar. Eine Lösung wäre eine Berechnung der Integerwerte der Farbkomponenten im ViewModel. Diese lassen sich anschließend als Eigenschaften verfügbar machen. Anschließend können Sie sie mithilfe der Formatierungsangabe `X2` formatieren.
 
-Ein anderer Ansatz ist allgemeiner: können Sie schreiben eine *Bindung Wertkonverter* wie im Artikel weiter unten erläutert [ **Binden von Wertkonvertern**](converters.md).
+Es gibt einen weiteren, allgemeineren Ansatz: Sie können *Wertkonverter für Bindungen* schreiben. Diese lernen Sie später im Artikel [**Wertkonverter für Bindungen in Xamarin.Forms**](converters.md) kennen.
 
-Im nächste Artikel, jedoch untersucht die [ **Bindungspfad** ](binding-path.md) Weitere ausführliche Informationen, und zeigen, wie Sie es zum Verweisen auf untergeordnete Eigenschaften und Elemente in Auflistungen verwenden können.
+Im nächste Artikel erfahren Sie jedoch zunächst mehr über den [**Bindungspfad**](binding-path.md) und darüber, wie Sie damit auf untergeordnete Eigenschaften und Elemente in Sammlungen verweisen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Binden von Daten-Demos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Im Kapitel Daten-Bindung von Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

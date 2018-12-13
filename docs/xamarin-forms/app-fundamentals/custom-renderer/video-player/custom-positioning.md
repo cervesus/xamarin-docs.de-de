@@ -1,6 +1,6 @@
 ---
-title: Benutzerdefinierte video Positionierung
-description: In diesem Artikel wird erläutert, wie eine benutzerdefinierte Position Leiste in Videoplayer-Anwendungen, wobei Xamarin.Forms implementiert.
+title: Benutzerdefinierte Videopositionierung
+description: In diesem Artikel wird erläutert, wie eine benutzerdefinierte Fortschrittsleiste mithilfe von Xamarin.Forms in eine Videoplayeranwendung implementiert wird.
 ms.prod: xamarin
 ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
 ms.technology: xamarin-forms
@@ -9,20 +9,20 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: b5f3c9dcbaa6ba1a9e86568ccabe38416cc653f2
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35241909"
 ---
-# <a name="custom-video-positioning"></a>Benutzerdefinierte video Positionierung
+# <a name="custom-video-positioning"></a>Benutzerdefinierte Videopositionierung
 
-Die Transport-Steuerelemente, die von jeder Plattform implementiert umfassen einen Balken Position. Diese Leiste ähnelt einem Schieberegler oder Bildlaufleiste und zeigt die aktuelle Position des Videos innerhalb der gesamten Dauer. Darüber hinaus kann der Benutzer die Position Leiste vorwärts oder rückwärts verschieben, um eine neue Position im Video bearbeiten.
+Die von jeder Plattform implementierten Transportsteuerelemente umfassen auch eine Fortschrittsleiste. Diese Leiste ähnelt einem Schieberegler oder einer Scrollleiste und zeigt die aktuelle Zeitposition in der Gesamtdauer des Videos an. Der Benutzer kann die Fortschrittsleiste außerdem ändern, um das Video vor- oder zurückzuspulen.
 
-In diesem Artikel wird gezeigt, wie Sie eigene benutzerdefinierte Position Leiste implementieren können.
+In diesem Artikel wird veranschaulicht, wie Sie Ihre eigene, benutzerdefinierte Fortschrittsleiste implementieren können.
 
 ## <a name="the-duration-property"></a>Die Duration-Eigenschaft
 
-Ein Element der Informationen, die `VideoPlayer` muss eine benutzerdefinierte unterstützen Position Leiste ist die Dauer des Videos. Die `VideoPlayer` definiert ein schreibgeschütztes `Duration` Eigenschaft vom Typ `TimeSpan`:
+Ein Informationselement, das für den `VideoPlayer` erforderlich ist, um benutzerdefinierte Fortschrittsleisten zu unterstützen, ist die Dauer des Videos. Der `VideoPlayer` definiert eine schreibgeschützte `Duration`-Eigenschaft vom Typ `TimeSpan`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -52,7 +52,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-Wie die `Status` Eigenschaft beschrieben werden, der [vorherigen Artikel](custom-transport.md), gibt diese `Duration` Eigenschaft ist schreibgeschützt. Er definiert wird, mit einer privaten `BindablePropertyKey` und kann nur festgelegt werden, durch Verweisen auf die `IVideoPlayerController` -Schnittstelle, die Dies schließt `Duration` Eigenschaft:
+Diese `Duration` Eigenschaft ist wie die im [vorherigen Artikel](custom-transport.md) beschriebene `Status`-Eigenschaft schreibgeschützt. Sie wird mit einer privaten `BindablePropertyKey`-Klasse definiert und kann nur festgelegt werden, indem auf die `IVideoPlayerController`-Schnittstelle verwiesen wird, die folgende `Duration`-Eigenschaft enthält:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -66,15 +66,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-Beachten Sie außerdem den durch geänderte Eigenschaften ausgelöste Handler, der eine Methode mit dem Namen ruft `SetTimeToEnd` weiter unten in diesem Artikel beschrieben wird.
+Beachten Sie außerdem den durch die geänderte Eigenschaft ausgelösten Handler, der eine Methode namens `SetTimeToEnd` aufruft und weiter unten in diesem Artikel beschrieben wird.
 
-Die Dauer eines Videos ist *nicht* verfügbar sofort, nachdem die `Source` Eigenschaft `VideoPlayer` festgelegt ist. Die Videodatei muss teilweise heruntergeladen werden, bevor der zugrunde liegenden Videoplayer seine Dauer bestimmen kann.
+Die Dauer eines Videos ist *nicht* sofort nach der Festlegung der `Source`-Eigenschaft von `VideoPlayer` verfügbar. Die Videodatei muss teilweise heruntergeladen werden, bevor der zugrunde liegende Videoplayer die Dauert ermitteln kann.
 
-Hier wird wie jede Plattform-Renderer die Dauer des Videos erhält:
+Im Folgenden wird erläutert, wie die plattformspezifischen Renderer die Dauer von Videos ermitteln:
 
-### <a name="video-duration-in-ios"></a>Video Dauer in iOS
+### <a name="video-duration-in-ios"></a>Videodauer unter iOS
 
-In iOS, die Dauer eines Videos abgerufen wird, aus der `Duration` Eigenschaft `AVPlayerItem`, jedoch nicht sofort nach der `AVPlayerItem` wird erstellt. Es ist möglich, legen Sie einen iOS-Beobachter für die `Duration` -Eigenschaft, aber die `VideoPlayerRenderer` Ruft die Dauer in der `UpdateStatus` Methode, die 10 Mal pro Sekunde aufgerufen wird:
+Unter iOS wird die Dauer von Videos aus der `Duration`-Eigenschaft von `AVPlayerItem` abgerufen. Dies geschieht jedoch nicht unmittelbar nach der Erstellung der `AVPlayerItem`-Klasse. Es ist möglich einen iOS-Beobachter für die `Duration`-Eigenschaft festzulegen, aber der `VideoPlayerRenderer` ruft die Dauer aus der `UpdateStatus`-Methode ab, die zehn mal pro Sekunde aufgerufen wird:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -102,11 +102,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Die `ConvertTime` Methode konvertiert ein `CMTime` -Objekt an eine `TimeSpan` Wert.
+Die `ConvertTime`-Methode konvertiert ein `CMTime`-Objekt in einen `TimeSpan`-Wert.
 
-### <a name="video-duration-in-android"></a>Video Dauer in Android
+### <a name="video-duration-in-android"></a>Videodauer unter Android
 
-Die `Duration` Eigenschaft von der Android `VideoView` meldet eine gültige Dauer in Millisekunden bei der `Prepared` -Ereignis `VideoView` ausgelöst wird. Die Android `VideoPlayerRenderer` Klasse verwendet dieser Handler zum Abrufen der `Duration` Eigenschaft:
+Die `Duration`-Eigenschaft der `VideoView`-Klasse von Android meldet eine gültige Dauer in Millisekunden an, wenn das `Prepared`-Ereignis von `VideoView` ausgelöst wird. Die `VideoPlayerRenderer`-Klasse von Android verwendet diesen Handler, um die `Duration`-Eigenschaft abzurufen:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -124,9 +124,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="video-duration-in-uwp"></a>Video Dauer in uwp-App
+### <a name="video-duration-in-uwp"></a>Videodauer auf der UWP
 
-Die `NaturalDuration` Eigenschaft `MediaElement` ist ein `TimeSpan` Wert und wird ungültig, wenn `MediaElement` ausgelöst wird die `MediaOpened` Ereignis:
+Die `NaturalDuration`-Eigenschaft von `MediaElement` ist ein `TimeSpan`-Wert, der gültig wird, wenn `MediaElement` das `MediaOpened`-Ereignis auslöst:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -145,7 +145,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="the-position-property"></a>Die Position-Eigenschaft
 
-`VideoPlayer` muss auch ein `Position` -Eigenschaft, die im Bereich von 0 (null), um steigt `Duration` wie die Videowiedergabe. `VideoPlayer` implementiert diese Eigenschaft z. B. die `Position` Eigenschaft in UWP `MediaElement`, dies ist eine normale bindbare Eigenschaft mit öffentlichen `set` und `get` Zugriffsmethoden:
+Für den `VideoPlayer` ist auch eine `Position`-Eigenschaft erforderlich, die von 0 (null) bis zum Wert der `Duration`-Eigenschaft steigt, während das Video wiedergegeben wird. `VideoPlayer` implementiert diese Eigenschaft wie die `Position`-Eigenschaft der `MediaElement`-Klasse der UWP, die einer normalen bindbaren Eigenschaft mit den öffentlichen Zugriffsmethoden `set` und `get` entspricht:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -168,15 +168,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-Die `get` Accessor gibt die aktuelle Position des Videos zurück, wie es wiedergegeben wird, aber die `set` Zugriffsmethode richtet sich so reagieren Sie auf der Benutzer die Manipulation des Balkens Position umgezogen video Position vorwärts oder rückwärts.
+Die `get`-Zugriffsmethode gibt die aktuelle Zeitposition des Videos während der Wiedergabe zurück, die `set`-Zugriffsmethode ist jedoch dafür konzipiert, auf den Eingriff auf die Fortschrittsleiste durch den Benutzer zu reagieren, indem die Zeitposition des Videos vorwärts oder rückwärts bewegt wird.
 
-In iOS und Android, hat die Eigenschaft, die die aktuelle Position erhält nur eine `get` -Accessor und einen `Seek` Methode ist für die zweite Aufgabe verfügbar. Wenn Sie eine Separate Bedenken `Seek` Methode scheint ein vernünftiger Ansatz als ein einzelnes `Position` Eigenschaft. Ein einzelnes `Position` Eigenschaft verfügt über eine inhärenten Problems: als die Wiedergabe der `Position` Eigenschaft muss ständig aktualisiert werden, damit die neue Position wiedergegeben. Sie möchten jedoch nicht die meisten Änderungen an der `Position` Eigenschaft, um den Videoplayer auf eine neue Position im Video verschieben verursachen. In diesem Fall der Videoplayer würde reagieren, indem Sie Suchvorgänge auf den letzten Wert der `Position` -Eigenschaft, und das Video wäre nicht verschieben.
+Unter iOS und Android verfügt die Eigenschaft, die die aktuelle Position abruft, lediglich über eine `get`-Zugriffsmethode. Zum Ausführen der zweiten Aufgabe ist eine `Seek`-Methode verfügbar. Bei näherer Untersuchung erweist sich eine separate `Seek`-Methode im Vergleich zu einer einzelnen `Position`-Eigenschaft als bessere Vorgehensweise. Das Verwenden einer einzelnen `Position`-Eigenschaft bringt von Natur aus ein Problem mit sich: Während der Wiedergabe des Videos muss die `Position`-Eigenschaft kontinuierlich aktualisiert werden, um die neue Zeitposition anzugeben. Sie möchten aber nicht, dass die meisten Änderungen an der `Position`-Eigenschaft die Zeitposition des Videos verschieben. Wenn das passiert, reagiert der Videoplayer darauf, indem er nach dem letzten Wert der `Position`-Eigenschaft sucht, und das Video würde anhalten.
 
-Trotz der Probleme bei der Implementierung einer `Position` Eigenschaft mit dem `set` und `get` Accessoren dieser Ansatz wurde gewählt, weil sie mit UWP konsistent sind `MediaElement`, und es wurde einen großen Vorteil mit Datenbindung: die `Position` Eigenschaft der `VideoPlayer` gebunden werden kann, um den Schieberegler, die sowohl auf die Position anzuzeigen und zu suchende zu einer neuen Position verwendet wird. Allerdings sind einige Vorsichtsmaßnahmen erforderlich, wenn Sie dies implementieren `Position` Eigenschaft, um Feedback Schleifen zu vermeiden.
+Dieser Ansatz wurde trotz der Schwierigkeiten beim Implementieren einer `Position`-Eigenschaft mit den Zugriffsmethoden `set` und `get` ausgewählt, da er mit der `MediaElement`-Klasse der UWP übereinstimmt und einen großen Vorteil bei der Datenbindung mit sich bringt: Die `Position`-Eigenschaft von `VideoPlayer` kann an den Schieberegler gebunden werden, der sowohl zum Anzeigen der Position als auch zum Suchen nach einer neuen Position verwendet wird. Allerdings sind mehrere Vorsichtsmaßnahmen bei der Implementierung dieser `Position`-Eigenschaft erforderlich, um Rückkopplungsschleifen zu vermeiden.
 
-### <a name="setting-and-getting-ios-position"></a>Festlegen und Abrufen von iOS-position
+### <a name="setting-and-getting-ios-position"></a>Festlegen und Abrufen der Position unter iOS
 
-In iOS die `CurrentTime` Eigenschaft von der `AVPlayerItem` Objekt gibt an, die aktuelle Position der Wiedergabe von Videos. IOS `VideoPlayerRenderer` legt die `Position` Eigenschaft in der `UpdateStatus` Handler zur gleichen Zeit, die er festlegt der `Duration` Eigenschaft:
+Die `CurrentTime`-Eigenschaft des `AVPlayerItem`-Objekts gibt die aktuelle Position des wiedergegebenen Videos unter iOS an. Der `VideoPlayerRenderer` von iOS legt die `Position`-Eigenschaft für den `UpdateStatus`-Handler zur gleichen Zeit fest, zu der die `Duration`-Eigenschaft festgelegt wird:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -198,7 +198,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Der Renderer erkennt, wenn die `Position` Eigenschaftensatz aus `VideoPlayer` wurde geändert der `OnElementPropertyChanged` außer Kraft setzen und verwendet diesen neuen Wert aufrufen, eine `Seek` Methode auf der `AVPlayer` Objekt:
+Der Renderer erkennt, wenn der Wert der von `VideoPlayer` festgelegten `Position`-Eigenschaft in der `OnElementPropertyChanged`-Überschreibung geändert wird, und verwendet diesen neuen Wert, um eine `Seek`-Methode für das `AVPlayer`-Objekt aufzurufen:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -224,13 +224,13 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Beachten Sie, dass jedes Mal die `Position` Eigenschaft in `VideoPlayer` festgelegt ist, aus der `OnUpdateStatus` Handler auf, die `Position` Eigenschaft ausgelöst wird eine `PropertyChanged` -Ereignis, das in erkannt wird die `OnElementPropertyChanged` außer Kraft setzen. Für die meisten dieser Änderungen die `OnElementPropertyChanged` Methode nichts tun. Andernfalls würde bei jeder Änderung in der Zeitskala des Videos Position, es an derselben Position verschoben werden, die es nur bei Erreichen!
+Beachten Sie, dass jedes Mal, wenn die `Position`-Eigenschaft in `VideoPlayer` über den `OnUpdateStatus`-Handler festgelegt wird, ein `PropertyChanged`-Ereignis von der `Position`-Eigenschaft ausgelöst wird, was in der `OnElementPropertyChanged`-Überschreibung ermittelt wird. Für die meisten dieser Änderungen sollte die `OnElementPropertyChanged`-Methode nichts unternehmen. Andernfalls würde jede Änderung an der Zeitposition des Videos zur eben erreichten Position verschoben werden.
 
-Um diese Feedbackschleife zu vermeiden der `OnElementPropertyChanged` nur Methodenaufrufe `Seek` bei den Unterschied zwischen der `Position` -Eigenschaft und der aktuellen Position des der `AVPlayer` ist größer als eine Sekunde.
+Die `OnElementPropertyChanged`-Methode ruft `Seek` nur auf, wenn der Unterschied zwischen der `Position`-Eigenschaft und der aktuellen Position von `AVPlayer` größer als eine Sekunde ist, um diese Rückkopplungsschleife zu vermeiden.
 
-### <a name="setting-and-getting-android-position"></a>Festlegen und Abrufen der Android-position
+### <a name="setting-and-getting-android-position"></a>Festlegen und Abrufen der Position unter Android
 
-Wie in der iOS-Renderer, den Android `VideoPlayerRenderer` setzt einen neuen Wert für die `Position` Eigenschaft in der `OnUpdateStatus` Handler. Die `CurrentPosition` Eigenschaft `VideoView` enthält die neue Position in Einheiten von Millisekunden:
+Genau wie der Renderer von iOS, legt die `VideoPlayerRenderer`-Klasse von Android einen neuen Wert für die `Position`-Eigenschaft im `OnUpdateStatus`-Handler fest. Die `CurrentPosition`-Eigenschaft von `VideoView` enthält die neue Position in Millisekunden:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -249,7 +249,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Wie in der iOS-Renderer, ruft der Android-Renderer außerdem der `SeekTo` Methode `VideoView` beim der `Position` -Eigenschaft geändert wurde, jedoch nur, wenn die Änderung mehr als eine Sekunde aus ist der `CurrentPosition` Wert `VideoView`:
+Ebenso wie der iOS-Renderer ruft der Android-Renderer die `SeekTo`-Methode von `VideoView` auf, wenn die `Position`-Eigenschaft geändert wird. Dies geschieht aber nur, wenn die Änderung sich um mindestens eine Sekunde vom `CurrentPosition`-Wert von `VideoView` unterscheidet:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -273,9 +273,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="setting-and-getting-uwp-position"></a>Festlegen und Abrufen von uwp-position
+### <a name="setting-and-getting-uwp-position"></a>Festlegen und Abrufen der Position auf der UWP
 
-UWP `VideoPlayerRenderer` Handles die `Position` auf die gleiche Weise wie IOS- und Android-Renderer, aber da die `Position` Eigenschaft von UWP `MediaElement` ist auch eine `TimeSpan` Wert ist keine Konvertierung erforderlich:
+Der `VideoPlayerRenderer` der UWP verarbeitet die `Position`-Eigenschaft auf die gleiche Weise wie die iOS- und Android-Renderer, da die `Position`-Eigenschaft der `MediaElement`-Klasse von UWP jedoch auch ein `TimeSpan`-Wert ist, ist keine Konvertierung erforderlich:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -306,9 +306,9 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="calculating-a-timetoend-property"></a>Berechnen einer TimeToEnd-Eigenschaft
 
-In einigen Fällen Videoplayer anzeigen, die im Video verbleibende Zeit. Dieser Wert beginnt mit der Zeitskala des Videos Dauer, wann das Video beginnt und auf null verringert werden, wenn das Video endet.
+In einigen Fällen zeigen Videoplayer die verbleibende Zeitspanne des Videos an. Dieser Wert beginnt am Anfang bei der Dauer des Videos und wird bis zum Ende des Videos auf 0 (null) reduziert.
 
-`VideoPlayer` enthält einen schreibgeschützten `TimeToEnd` -Eigenschaft, die sich vollständig innerhalb der Klasse behandelt wird basierend auf Änderungen an der `Duration` und `Position` Eigenschaften:
+`VideoPlayer` enthält eine schreibgeschützte `TimeToEnd`-Eigenschaft, die anhand der Änderungen an den Eigenschaften `Duration` und `Position` vollständig innerhalb der Klasse verarbeitet wird:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -336,11 +336,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Die `SetTimeToEnd` Methode wird aufgerufen, über den Ereignishandler durch geänderte Eigenschaften ausgelöste beider `Duration` und `Position`.
+Die `SetTimeToEnd`-Methode wird von den durch die geänderte Eigenschaft ausgelösten Handlern der Eigenschaften `Duration` und `Position` aufgerufen.
 
-## <a name="a-custom-slider-for-video"></a>Eine benutzerdefinierte Schieberegler Video
+## <a name="a-custom-slider-for-video"></a>Benutzerdefinierte Schieberegler für Videos
 
-Es ist möglich, können Sie ein benutzerdefiniertes Steuerelement für einen Balken Position zu schreiben und verwenden Sie das Xamarin.Forms `Slider` oder eine Klasse, die abgeleitet `Slider`, z. B. die folgenden `PositionSlider` Klasse. Die Klasse definiert zwei neue Eigenschaften, die mit dem Namen `Duration` und `Position` des Typs `TimeSpan` , auf die zwei Eigenschaften mit demselben Namen in datengebundenen werden sollen `VideoPlayer`. Beachten Sie, dass der Bindungsmodus der Standardwert der `Position` Eigenschaft bidirektionale ist:
+Sie können ein benutzerdefiniertes Steuerelement für eine Fortschrittsleiste schreiben oder die `Slider`-Klasse von Xamarin.Forms bzw. eine von `Slider` abgeleitete Klasse verwenden, z.B. die folgende `PositionSlider`-Klasse. Die Klasse definiert zwei neue Eigenschaften vom Typ `TimeSpan` namens `Duration` und `Position`, die für die Datenbindung an die zwei Eigenschaften mit dem gleichen Namen im `VideoPlayer`-Steuerelement konzipiert sind. Beachten Sie, dass der Standardbindungsmodus der `Position`-Eigenschaft bidirektional ist:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -395,11 +395,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Durch geänderte Eigenschaften ausgelöste Handler für die `Duration` Eigenschaftensätze der `Maximum` Eigenschaft des zugrunde liegenden `Slider` auf die `TotalSeconds` Eigenschaft von der `TimeSpan` Wert. Auf ähnliche Weise, die durch geänderte Eigenschaften ausgelöste Handler für `Position` legt die `Value` Eigenschaft von der `Slider`. Auf diese Weise die zugrunde liegende `Slider` verfolgt die Position der `PositionSlider`.
+Der durch die geänderte Eigenschaft ausgelöste Handler für die `Duration`-Eigenschaft legt die `Maximum`-Eigenschaft der zugrunde liegenden `Slider`-Klasse auf die `TotalSeconds`-Eigenschaft des Werts `TimeSpan` fest. Auf ähnliche Weise legt der durch die geänderte Eigenschaft ausgelöste Handler für die `Position`-Eigenschaft die `Value`-Eigenschaft der `Slider`-Klasse fest. So kann die zugrunde liegende `Slider`-Klasse die Position der `PositionSlider`-Klasse verfolgen.
 
-Die `PositionSlider` wird aktualisiert, aus der zugrunde liegenden `Slider` in nur einer Instanz: Wenn der Benutzer bearbeitet die `Slider` , um anzugeben, dass das Video erweitert werden soll, oder zu einer neuen Position umgekehrt. Dies wird erkannt, der `PropertyChanged` im Konstruktor der Handler die `PositionSlider`. Der Handler überprüft, ob eine Änderung in der `Value` -Eigenschaft, und wenn es sich unterscheidet die `Position` -Eigenschaft, die `Position` Eigenschaftensatz wird von der `Value` Eigenschaft.
+Die `PositionSlider`-Klasse wird nur in einem Szenario von der zugrunde liegenden `Slider`-Klasse aktualisiert: Wenn der Benutzer die `Slider`-Klasse bearbeitet, um anzugeben, dass das Video zu einer neuen Position vor- oder zurückgespult werden soll. Dies wird vom `PropertyChanged`-Handler im Konstruktor der `PositionSlider`-Klasse ermittelt. Der Handler prüft nach Änderungen an der `Value`-Eigenschaft. Wenn sie sich von der `Position`-Eigenschaft unterscheidet, wird die `Position`-Eigenschaft über die `Value`-Eigenschaft festgelegt.
 
-In der Theorie der inneren `if` Anweisung wie folgt geschrieben werden konnte:
+Theoretisch könnte die innere `if`-Anweisung wie folgt geschrieben werden:
 
 ```csharp
 if (newPosition.Seconds != Position.Seconds)
@@ -408,15 +408,15 @@ if (newPosition.Seconds != Position.Seconds)
 }
 ```
 
-Allerdings die Android-Implementierung von `Slider` besteht nur 1.000 diskrete Schritten, unabhängig von der `Minimum` und `Maximum` Einstellungen. Die Länge eines Videos ist größer als 1.000 Sekunden, und klicken Sie dann auf zwei verschiedenen `Position` Werte würde die gleiche entsprechen `Value` festlegen, der die `Slider`, und dies `if` Anweisung falsch-positive Werte für einen Benutzer die Bearbeitung von ausgelöst würde die `Slider`. Es ist sicherer, stattdessen überprüfen, dass die neuen und vorhandenen Position größer als die Gesamtdauer Hundertstelsekunde sind.
+Allerdings verfügt die Android-Implementierung der `Slider`-Klasse unabhängig von den `Minimum`- und `Maximum`-Einstellungen über nur 1.000 einzelne Schritte. Wenn die Länge eines Videos 1.000 Sekunden überschreitet, entsprechen zwei verschiedene `Position`-Werte der gleichen `Value`-Einstellung der `Slider`-Klasse, und die `if`-Anweisung löst fälschlicherweise eine Reaktion auf eine Änderung der `Slider`-Klasse durch den Benutzer aus. Stattdessen ist es sicherer, zu überprüfen, ob die neue und die vorhandene Position ein Hundertstel der Gesamtdauer überschreiten.
 
-## <a name="using-the-positionslider"></a>Verwenden die PositionSlider
+## <a name="using-the-positionslider"></a>Verwenden der PositionSlider-Klasse
 
-Dokumentation für die universelle Windows-Plattform [ `MediaElement` ](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) gibt eine Warnung aus, über das Binden an die `Position` Eigenschaft, da die Eigenschaft häufig aktualisiert. Die Dokumentation empfiehlt, dass ein Timer verwendet werden, Abfrage die `Position` Eigenschaft.
+Die Dokumentation für die [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/)-Klasse der UWP warnt vor Bindungen an die `Position`-Eigenschaft, da die Eigenschaft häufig aktualisiert wird. In der Dokumentation wird empfohlen, einen Timer zu verwenden, um die `Position`-Eigenschaft abzufragen.
 
-Dies ist eine gute Empfehlung, aber die drei `VideoPlayerRenderer` Klassen sind bereits indirekt mithilfe eines Zeitgebers zum Aktualisieren der `Position` Eigenschaft. Die `Position` -Eigenschaft geändert wird, in einen Handler für das `UpdateStatus` -Ereignis, das nur 10 Mal pro Sekunde ausgelöst wird.
+Diese Empfehlung ist gut, allerdings verwenden die drei `VideoPlayerRenderer`-Klassen bereits indirekt einen Timer, um die `Position`-Eigenschaft zu aktualisieren. Die `Position`-Eigenschaft wird in einem Handler für das `UpdateStatus`-Ereignis geändert, das zehn mal pro Sekunde ausgelöst wird.
 
-Aus diesem Grund die `Position` Eigenschaft der `VideoPlayer` gebunden werden kann, um die `Position` Eigenschaft der `PositionSlider` ohne Leistungsprobleme, wie in der **benutzerdefinierte Position Leiste** Seite:
+Aus diesem Grund kann die `Position`-Eigenschaft des `VideoPlayer`-Steuerelements wie in der folgenden Seite **Custom Position Bar** gezeigt ohne Leistungseinbußen an die `Position`-Eigenschaft der `PositionSlider`-Klasse gebunden werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -471,12 +471,12 @@ Aus diesem Grund die `Position` Eigenschaft der `VideoPlayer` gebunden werden ka
 </ContentPage>
 ```
 
-Die ersten drei Punkten (· ·) verbirgt die `ActivityIndicator`; er ist der gleiche wie im vorherigen **Custom-Transporteigenschaften** Seite. Beachten Sie die beiden `Label` Elemente anzeigen die `Position` und `TimeToEnd` Eigenschaften. Mit den Auslassungspunkten zwischen diesen beiden `Label` Elemente Blendet Sie aus den beiden `Button` Elemente angezeigt, der **Custom-Transporteigenschaften** Seite für die Wiedergabe, Pause und beenden. Die Code-Behind-Logik entspricht auch der **Custom-Transporteigenschaften** Seite.
+Mit den ersten Auslassungspunkten (···) wird das `ActivityIndicator`-Element ausgeblendet, da es der vorherigen Seite **Benutzerdefinierte Transportsteuerelemente** entspricht. Beachten Sie, dass die `Label`-Elemente die Eigenschaften `Position` und `TimeToEnd` anzeigen. Die Auslassungspunkte zwischen den beiden `Label`-Elementen blenden die zwei `Button`-Elemente aus, die bereits auf der Seite **Benutzerdefinierte Transportsteuerelemente** für Wiedergabe, Pause und Stopp gezeigt wurden. Die CodeBehind-Logik entspricht ebenfalls der Seite **Benutzerdefinierte Transportsteuerelemente**.
 
-[![Benutzerdefinierte Positionierung](custom-positioning-images/custompositioning-small.png "benutzerdefinierte Positionierung")](custom-positioning-images/custompositioning-large.png#lightbox "benutzerdefinierte Positionierung")
+[![Benutzerdefinierte Positionierung](custom-positioning-images/custompositioning-small.png "Benutzerdefinierte Positionierung")](custom-positioning-images/custompositioning-large.png#lightbox "Benutzerdefinierte Positionierung")
 
-Dies schließt die Erläuterung der `VideoPlayer`.
+Damit ist die Erläuterung des `VideoPlayer`-Steuerelements abgeschlossen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

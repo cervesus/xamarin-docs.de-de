@@ -1,6 +1,6 @@
 ---
-title: Erstellen einen Effekt
-description: Auswirkungen die Anpassung eines Steuerelements zu vereinfachen. In diesem Artikel wird veranschaulicht, wie Sie einen Effekt zu erstellen, der die Hintergrundfarbe des Steuerelements Eintrag ändert, wenn das Steuerelement den Fokus erhält.
+title: Erstellen eines Effekts
+description: Durch Effekte können Steuerelemente mühelos angepasst werden. In diesem Artikel wird veranschaulicht, wie Sie einen Effekt erstellen können, der die Hintergrundfarbe des Entry-Steuerelements verändert, wenn das Steuerelement ausgewählt wird.
 ms.prod: xamarin
 ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
 ms.technology: xamarin-forms
@@ -9,44 +9,44 @@ ms.author: dabritch
 ms.date: 10/24/2016
 ms.openlocfilehash: b29d83999724a35293882f7b9efc0158171c4fd2
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998159"
 ---
-# <a name="creating-an-effect"></a>Erstellen einen Effekt
+# <a name="creating-an-effect"></a>Erstellen eines Effekts
 
-_Auswirkungen die Anpassung eines Steuerelements zu vereinfachen. In diesem Artikel wird veranschaulicht, wie Sie einen Effekt zu erstellen, der die Hintergrundfarbe des Steuerelements Eintrag ändert, wenn das Steuerelement den Fokus erhält._
+_Durch Effekte können Steuerelemente mühelos angepasst werden. In diesem Artikel wird veranschaulicht, wie Sie einen Effekt erstellen können, der die Hintergrundfarbe des Entry-Steuerelements verändert, wenn das Steuerelement ausgewählt wird._
 
-Der Prozess zum Erstellen eines Effekts in den einzelnen plattformspezifischen Projekten lautet wie folgt aus:
+Der Prozess zum Erstellen eines Effekts in jedem plattformspezifischen Projekt umfasst folgende Schritte:
 
-1. Erstellen Sie eine Unterklasse von der `PlatformEffect` Klasse.
-1. Überschreiben der `OnAttached` -Methode und Schreiben von Logik zum Anpassen des Steuerelements.
-1. Überschreiben der `OnDetached` -Methode und Schreiben Logik zum Bereinigen die Anpassung von Steuerelementen, falls erforderlich.
-1. Hinzufügen einer [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) -Attribut der Klasse wirksam. Dieses Attribut legt einen große Unternehmen-Namespace für Effekte, verhindern von Konflikten mit anderen Effekten mit dem gleichen Namen fest. Beachten Sie, dass dieses Attribut kann nur einmal pro Projekt angewendet werden.
-1. Hinzufügen einer [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) -Attribut der Klasse wirksam. Dieses Attribut registriert den Effekt mit einer eindeutigen ID, die xamarin.Forms, zusammen mit den Gruppennamen, verwendet wird, um die Auswirkungen vor dem Übernehmen sie für ein Steuerelement zu suchen. Das-Attribut nimmt zwei Parameter: den Typnamen des Effekts, und eine eindeutige Zeichenfolge, die verwendet wird, um die Auswirkungen vor dem Übernehmen sie für ein Steuerelement zu suchen.
+1. Erstellen Sie eine Unterklasse der `PlatformEffect`-Klasse.
+1. Überschreiben Sie die `OnAttached`-Methode, und schreiben Sie Logik, um das Steuerelement anzupassen.
+1. Überschreiben Sie die `OnDetached`-Methode, und schreiben Sie Logik, um die Anpassung des Steuerelements zu bereinigen, falls erforderlich.
+1. Fügen Sie der Effect-Klasse ein [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)-Attribut hinzu. Dieses Attribut legt einen unternehmensweiten Namespace für Effekte fest und verhindert dadurch Konflikte mit anderen Effekten mit dem gleichen Namen. Beachten Sie, dass dieses Attribut nur einmal pro Projekt angewendet werden kann.
+1. Fügen Sie der Effect-Klasse ein [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)-Attribut hinzu. Dieses Attribut registriert den Effekt mit einer eindeutigen ID, die von Xamarin.Forms verwendet wird, und dem Gruppennamen. Dadurch wird nach dem Effekt gesucht, bevor er auf ein Steuerelement angewendet wird. Das Attribut akzeptiert zwei Parameter: den Typnamen des Effekts und eine eindeutige Zeichenfolge, die für die Suche nach dem Effekt vor dessen Anwendung auf ein Steuerelement verwendet wird.
 
-Die Auswirkungen kann dann verwendet werden, indem Sie ihn an das entsprechende Steuerelement anfügen.
+Der Effekt kann dann verwendet werden, indem er an das entsprechende Steuerelement angefügt wird.
 
 > [!NOTE]
-> Dies ist optional, ein Effekts in jedes plattformprojekt bereitstellen. Versucht, einen Effekt zu verwenden, wenn eine nicht registriert ist, gibt einen Wert ungleich Null zurück, der keine Aktionen ausführt.
+> Ein Effekt kann optional in jedem Plattformprojekt bereitgestellt werden. Beim Versuch, einen Effekt bei fehlender Registrierung zu verwenden, wird ein Wert ungleich NULL zurückgegeben, der keine Auswirkungen hat.
 
-Die beispielanwendung zeigt eine `FocusEffect` ändert die Hintergrundfarbe eines Steuerelements, wenn es sich um den Fokus erhält. Das folgende Diagramm veranschaulicht die Verantwortlichkeiten der einzelnen Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
+Die Beispielanwendung zeigt eine `FocusEffect`-Klasse, die die Hintergrundfarbe eines Steuerelements ändert, wenn sie ausgewählt wird. Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](creating-images/focus-effect.png "Fokus Auswirkungen Project-Aufgaben")
+![](creating-images/focus-effect.png "Projektverantwortlichkeiten des Fokuseffekts")
 
-Ein [ `Entry` ](xref:Xamarin.Forms.Entry) control für die `HomePage` angepasst wird, indem die `FocusEffect` Klasse in den einzelnen plattformspezifischen Projekten. Jede `FocusEffect` Klasse leitet sich von der `PlatformEffect` -Klasse für jede Plattform. Dadurch wird die `Entry` steuern, die mit einer plattformspezifischen Hintergrundfarbe, ändert das Steuerelement den Fokus erhält, wie in den folgenden Screenshots gezeigt gerendert wird:
+Ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement im `HomePage`-Element wird in jedem plattformspezifischen Projekt der `FocusEffect`-Klasse angepasst. Jede `FocusEffect`-Klasse wird von der `PlatformEffect`-Klasse für jede Plattform abgeleitet. Dies führt dazu, dass das `Entry`-Steuerelement mit einer plattformspezifischen Hintergrundfarbe gerendert wird, die sich ändert, wenn das Steuerelement ausgewählt wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![](creating-images/screenshots-1.png "Konzentrieren Sie sich die Auswirkungen auf jeder Plattform")
-![](creating-images/screenshots-2.png "Auswirkung auf jeder Plattform konzentrieren")
+![](creating-images/screenshots-1.png "Fokuseffekt auf jeder Plattform")
+![](creating-images/screenshots-2.png "Fokuseffekt auf jeder Plattform")
 
-## <a name="creating-the-effect-on-each-platform"></a>Erstellen die Auswirkungen auf jeder Plattform
+## <a name="creating-the-effect-on-each-platform"></a>Erstellen von Effect-Klassen auf verschiedenen Plattformen
 
-Die folgenden Abschnitte beschreiben die plattformspezifische Implementierung der `FocusEffect` Klasse.
+In den folgenden Abschnitten wird die plattformspezifische Implementierung der `FocusEffect`-Klasse erläutert.
 
-## <a name="ios-project"></a>iOS-Projekts
+## <a name="ios-project"></a>iOS-Projekt
 
-Das folgende Codebeispiel zeigt die `FocusEffect` Implementierung für das iOS-Projekt:
+Im folgenden Codebeispiel wird die Implementierung von `FocusEffect` für das iOS-Projekt veranschaulicht:
 
 ```csharp
 using Xamarin.Forms;
@@ -93,13 +93,13 @@ namespace EffectsDemo.iOS
 }
 ```
 
-Die `OnAttached` Methode wird die `BackgroundColor` Eigenschaft des Steuerelements, das helle Violett, mit der `UIColor.FromRGB` -Methode, und auch diese Farbe in einem Feld gespeichert. Diese Funktion umschlossen ist eine `try` / `catch` block für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine `BackgroundColor` Eigenschaft. Keine Implementierung erfolgt über die `OnDetached` Methode, da kein Cleanup erforderlich ist.
+Die `OnAttached`-Methode legt die `BackgroundColor`-Eigenschaft des Steuerelements mithilfe der `UIColor.FromRGB`-Methode auf „hellviolett“ fest und speichert diese Farbe zusätzlich in einem Feld. Diese Funktion ist in einem `try`/`catch`-Block umschlossen, falls das an den Effekt angefügte Steuerelement über keine `BackgroundColor`-Eigenschaft verfügt. Von der `OnDetached`-Methode wird keine Implementierung bereitgestellt, da keine Bereinigung erforderlich ist.
 
-Die `OnElementPropertyChanged` außer Kraft setzen reagiert auf Änderungen der bindbare Eigenschaften auf der Xamarin.Forms-Steuerelements. Wenn die [ `IsFocused` ](xref:Xamarin.Forms.VisualElement.IsFocused) eigenschaftsänderungen, die `BackgroundColor` -Eigenschaft des Steuerelements in Weiß geändert wird, wenn das Steuerelement den Fokus besitzt, andernfalls wird es in hell Violett geändert. Diese Funktion umschlossen ist eine `try` / `catch` block für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine `BackgroundColor` Eigenschaft.
+Die `OnElementPropertyChanged`-Überschreibung reagiert auf Änderungen bindbarer Eigenschaften des Xamarin.Forms-Steuerelements. Wenn sich die [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)-Eigenschaft ändert, wird die `BackgroundColor`-Eigenschaft des Steuerelements in „weiß“ geändert, falls das Steuerelement ausgewählt ist. Andernfalls ändert sich die Eigenschaft in „hellviolett“. Diese Funktion ist in einem `try`/`catch`-Block umschlossen, falls das an den Effekt angefügte Steuerelement über keine `BackgroundColor`-Eigenschaft verfügt.
 
 ## <a name="android-project"></a>Android-Projekt
 
-Das folgende Codebeispiel zeigt die `FocusEffect` Implementierung für das Android-Projekt:
+Im folgenden Codebeispiel wird die Implementierung von `FocusEffect` für das Android-Projekt veranschaulicht:
 
 ```csharp
 using Xamarin.Forms;
@@ -147,13 +147,13 @@ namespace EffectsDemo.Droid
 }
 ```
 
-Die `OnAttached` Methodenaufrufe der `SetBackgroundColor` Methode, um die Hintergrundfarbe des Steuerelements, das light festzulegen Grün, und speichert auch diese Farbe in einem Feld. Diese Funktion umschlossen ist eine `try` / `catch` block für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine `SetBackgroundColor` Eigenschaft. Keine Implementierung erfolgt über die `OnDetached` Methode, da kein Cleanup erforderlich ist.
+Die `OnAttached`-Methode ruft die `SetBackgroundColor`-Methode auf, um die Hintergrundfarbe des Steuerelements auf „hellgrün“ festzulegen, und speichert diese Farbe zusätzlich in einem Feld. Diese Funktion ist in einem `try`/`catch`-Block umschlossen, falls das an den Effekt angefügte Steuerelement über keine `SetBackgroundColor`-Eigenschaft verfügt. Von der `OnDetached`-Methode wird keine Implementierung bereitgestellt, da keine Bereinigung erforderlich ist.
 
-Die `OnElementPropertyChanged` außer Kraft setzen reagiert auf Änderungen der bindbare Eigenschaften auf der Xamarin.Forms-Steuerelements. Wenn die [ `IsFocused` ](xref:Xamarin.Forms.VisualElement.IsFocused) -Eigenschaft, ändert die Hintergrundfarbe des Steuerelements wird auf Weiß geändert, wenn das Steuerelement den Fokus besitzt, andernfalls wird es in Hellgrün geändert. Diese Funktion umschlossen ist eine `try` / `catch` block für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine `BackgroundColor` Eigenschaft.
+Die `OnElementPropertyChanged`-Überschreibung reagiert auf Änderungen bindbarer Eigenschaften des Xamarin.Forms-Steuerelements. Wenn sich die [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)-Eigenschaft ändert, wird die Hintergrundfarbe des Steuerelements in „weiß“ geändert, falls das Steuerelement ausgewählt ist. Andernfalls ändert sich die Hintergrundfarbe in „hellgrün“. Diese Funktion ist in einem `try`/`catch`-Block umschlossen, falls das an den Effekt angefügte Steuerelement über keine `BackgroundColor`-Eigenschaft verfügt.
 
-## <a name="universal-windows-platform-projects"></a>Universelle Windows Plattform-Projekten
+## <a name="universal-windows-platform-projects"></a>UWP-Projekte (Universelle Windows-Plattform)
 
-Das folgende Codebeispiel zeigt die `FocusEffect` Implementierung für Projekte der universellen Windows-Plattform (UWP):
+Das folgende Codebeispiel zeigt die Implementierung von `FocusEffect` für UWP-Projekte (Universelle Windows-Plattform):
 
 ```csharp
 using Xamarin.Forms;
@@ -185,21 +185,21 @@ namespace EffectsDemo.UWP
 }
 ```
 
-Die `OnAttached` Methode legt die `Background` Eigenschaft des Steuerelements auf Cyanblau und legt die `BackgroundFocusBrush` Eigenschaft weiß. Diese Funktion umschlossen ist eine `try` / `catch` block für den Fall, dass das Steuerelement, das der Effekt angefügt ist, diese Eigenschaften fehlen. Keine Implementierung erfolgt über die `OnDetached` Methode, da kein Cleanup erforderlich ist.
+Die `OnAttached`-Methode legt die `Background`-Eigenschaft des Steuerelements auf „zyanblau“ und die `BackgroundFocusBrush`-Eigenschaft auf „weiß“ fest. Diese Funktion ist in einem `try`/`catch`-Block umschlossen, falls das an den Effekt angefügte Steuerelement nicht über diese Eigenschaften verfügt. Von der `OnDetached`-Methode wird keine Implementierung bereitgestellt, da keine Bereinigung erforderlich ist.
 
-## <a name="consuming-the-effect"></a>Nutzen die Auswirkungen
+## <a name="consuming-the-effect"></a>Nutzen des Effekts
 
-Der Prozess für die Nutzung von eines Effekts aus einer Xamarin.Forms .NET Standard-Bibliothek oder eines Projekts für freigegebene Bibliothek lautet wie folgt aus:
+Der Prozess zur Nutzung eines Effekts aus einer Xamarin.Forms-.NET Standard-Bibliothek oder einem freigegebenen Bibliotheksprojekt umfasst folgende Schritte:
 
 1. Deklarieren Sie ein Steuerelement, das durch den Effekt angepasst wird.
-1. Fügen Sie die Auswirkungen auf das Steuerelement durch Hinzufügen des Steuerelements [ `Effects` ](xref:Xamarin.Forms.Element.Effects) Auflistung.
+1. Fügen Sie den Effekt an das Steuerelement an, indem Sie ihn zur [`Effects`](xref:Xamarin.Forms.Element.Effects)-Collection des Steuerelements hinzufügen.
 
 > [!NOTE]
-> Eine Auswirkung-Instanz kann nur an ein einzelnes Steuerelement angefügt werden. Aus diesem Grund muss ein Effekt aufgelöst werden, zweimal, um es auf zwei Steuerelementen verwenden.
+> Eine Effektinstanz kann nur an ein einziges Steuerelement angefügt werden. Aus diesem Grund muss ein Effekt zweimal aufgelöst werden, damit er für zwei Steuerelemente verwendet werden kann.
 
-## <a name="consuming-the-effect-in-xaml"></a>Nutzen die Auswirkung in XAML
+## <a name="consuming-the-effect-in-xaml"></a>Nutzen des Effekts in XAML
 
-Das folgende XAML-Code-Beispiel zeigt eine [ `Entry` ](xref:Xamarin.Forms.Entry) Steuerelement, auf das die `FocusEffect` angefügt ist:
+Das folgende XAML-Codebeispiel zeigt ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement, an das `FocusEffect` angefügt ist:
 
 ```xaml
 <Entry Text="Effect attached to an Entry" ...>
@@ -210,7 +210,7 @@ Das folgende XAML-Code-Beispiel zeigt eine [ `Entry` ](xref:Xamarin.Forms.Entry)
 </Entry>
 ```
 
-Die `FocusEffect` Klasse in der .NET Standardbibliothek Effekt, Nutzung in XAML unterstützt und ist im folgenden Codebeispiel gezeigt:
+Die `FocusEffect`-Klasse in der .NET Standard-Bibliothek unterstützt die Effektnutzung in XAML und wird im folgenden Beispiel veranschaulicht:
 
 ```csharp
 public class FocusEffect : RoutingEffect
@@ -221,13 +221,13 @@ public class FocusEffect : RoutingEffect
 }
 ```
 
-Die `FocusEffect` Klasse Unterklassen der [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) -Klasse, die einen plattformunabhängigen Effekt darstellt, die einen inneren Effekt einschließt, die in der Regel plattformspezifisch ist. Die `FocusEffect` Klasse ruft der Konstruktor der Basisklasse übergeben eines Parameters, bestehend aus einer Verkettung der Namen der Lösung (angegeben, mit der [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) -Attribut in der Klasse Auswirkungen), und die eindeutige ID, wurde angegeben, mit der [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) -Attribut in der Klasse wirksam. Aus diesem Grund, wenn die [ `Entry` ](xref:Xamarin.Forms.Entry) wird zur Laufzeit eine neue Instanz der initialisiert die `MyCompany.FocusEffect` des Steuerelements hinzugefügt [ `Effects` ](xref:Xamarin.Forms.Element.Effects) Auflistung.
+Die `FocusEffect`-Klasse erstellt Unterklassen der [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect)-Klasse, die einen plattformunabhängigen Effekt darstellt, der einen in der Regel plattformspezifischen inneren Effekt umschließt. Die `FocusEffect`-Klasse ruft den Basisklassenkonstruktor auf, der einen Parameter bestehend aus einer Verkettung des Namens der Auflösungsgruppe (mithilfe des [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)-Attributs der Effect-Klasse angegeben) übergibt, und die eindeutige ID, die mithilfe des [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)-Attributs der Effect-Klasse angegeben wurde. Aus diesem Grund wird bei der Initialisierung von [`Entry`](xref:Xamarin.Forms.Entry) zur Laufzeit eine neue Instanz von `MyCompany.FocusEffect` zur [`Effects`](xref:Xamarin.Forms.Element.Effects)-Collection des Steuerelements hinzugefügt.
 
-Effekte können mithilfe eines Verhaltens auch an Steuerelemente angefügt werden, oder mithilfe von angefügten Eigenschaften. Weitere Informationen zum Anfügen eines Effekts auf ein Steuerelement mithilfe eines Verhaltens finden Sie unter [Wiederverwendbaren EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md). Weitere Informationen zum Anfügen eines Effekts auf ein Steuerelement mithilfe von angefügten Eigenschaften finden Sie unter [übergeben von Parametern in einen Effekt](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md).
+Effekte können auch mithilfe eines Verhaltens oder angefügter Eigenschaften an Steuerelemente angefügt werden. Weitere Informationen zum Anfügen eines Effekts an ein Steuerelement mithilfe eines Verhaltens finden Sie unter [Reusable EffectBehavior (Wiederverwendbares Effektverhalten)](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md). Weitere Informationen zum Anfügen eines Effekts an ein Steuerelement mithilfe angefügter Eigenschaften finden Sie unter [Passing Parameters to an Effect (Übergeben von Parametern an einen Effekt)](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md).
 
-## <a name="consuming-the-effect-in-cnum"></a>Nutzen die Auswirkung in C&num;
+## <a name="consuming-the-effect-in-cnum"></a>Nutzen des Effekts in C&num;
 
-Die entsprechende [ `Entry` ](xref:Xamarin.Forms.Entry) in c# wird im folgenden Codebeispiel dargestellt:
+Das entsprechende [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement in C# wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 var entry = new Entry {
@@ -236,7 +236,7 @@ var entry = new Entry {
 };
 ```
 
-Die `FocusEffect` angefügt ist die `Entry` Instanz, indem Sie die Auswirkungen des Steuerelements hinzufügen [ `Effects` ](xref:Xamarin.Forms.Element.Effects) -Auflistung, wie im folgenden Codebeispiel gezeigt:
+`FocusEffect` wird an die `Entry`-Instanz angefügt, indem der Effekt wie im folgenden Codebeispiel dargestellt zur [`Effects`](xref:Xamarin.Forms.Element.Effects)-Collection des Steuerelements hinzugefügt wird:
 
 ```csharp
 public HomePageCS ()
@@ -247,17 +247,17 @@ public HomePageCS ()
 }
 ```
 
-Die [ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String)) gibt ein [ `Effect` ](xref:Xamarin.Forms.Effect) für den angegebenen Namen, die besteht aus einer Verkettung der Namen der Lösung (angegeben, mit der [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) Attribut der Auswirkungen-Klasse), und die eindeutige ID, die angegeben wurde, mit der [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) -Attribut in der Klasse wirksam. Wenn eine Plattform für den Effekt, bieten nicht die `Effect.Resolve` Methode gibt einen nicht-`null` Wert.
+[`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) gibt für den angegebenen Namen einen [`Effect`](xref:Xamarin.Forms.Effect), eine Verkettung des Namens der Auflösungsgruppe (mithilfe des [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)-Attributs der Effect-Klasse angegeben), und die eindeutige ID zurück, die mithilfe des [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)-Attributs der Effect-Klasse angegeben wurde. Wenn eine Plattform den Effekt nicht bereitstellt, gibt die `Effect.Resolve`-Methode einen Wert ungleich `null` zurück.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel veranschaulicht, wie Sie einen Effekt zu erstellen, die die Farbe des Hintergrunds Ändern der [ `Entry` ](xref:Xamarin.Forms.Entry) steuern, wenn das Steuerelement den Fokus erhält.
+In diesem Artikel wurde veranschaulicht, wie Sie einen Effekt erstellen können, der die Hintergrundfarbe des [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelements verändert, wenn das Steuerelement ausgewählt wird.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Benutzerdefinierte Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Auswirkung](xref:Xamarin.Forms.Effect)
-- [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
-- [Background-Farbe Auswirkungen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/)
-- [Fokus Auswirkungen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)
+- [Effect class (Effect-Klasse)](xref:Xamarin.Forms.Effect)
+- [PlatformEffect (PlatformEffect-Klasse)](xref:Xamarin.Forms.PlatformEffect`2)
+- [Background Color Effect (Hintergrundfarbeneffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/)
+- [Focus Effect (Fokuseffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)

@@ -1,6 +1,6 @@
 ---
-title: Markieren einer Region auf einer Karte
-description: In diesem Artikel wird erläutert, wie eine Karte, um einen Bereich auf der Karte markieren eine Polygon-Überlagerung hinzugefügt. Polygone werden eine geschlossene Form und ihre Innenbereiche ausgefüllt haben.
+title: Hervorheben eines Bereichs auf einer Karte
+description: In diesem Artikel wird beschrieben, wie Sie einer Karte eine polygonale Überlagerung hinzufügen, um einen Bereich auf der Karte hervorzuheben. Polygone sind geschlossene ausgefüllte Formen.
 ms.prod: xamarin
 ms.assetid: E79EB2CF-8DD6-44A8-B47D-5F0A94FB0A63
 ms.technology: xamarin-forms
@@ -9,37 +9,37 @@ ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 0a11e9c25922531727ad2fee3bbed9c8d4e2b80c
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998133"
 ---
-# <a name="highlighting-a-region-on-a-map"></a>Markieren einer Region auf einer Karte
+# <a name="highlighting-a-region-on-a-map"></a>Hervorheben eines Bereichs auf einer Karte
 
-_In diesem Artikel wurde erläutert, wie eine Karte, um einen Bereich auf der Karte markieren eine Polygon-Überlagerung hinzugefügt. Polygone werden eine geschlossene Form und ihre Innenbereiche ausgefüllt haben._
+_In diesem Artikel wurde beschrieben, wie Sie einer Karte eine polygonale Überlagerung hinzufügen, um einen Bereich auf der Karte hervorzuheben. Polygone sind geschlossene ausgefüllte Formen._
 
 ## <a name="overview"></a>Übersicht
 
-Eine Überlagerung ist eine überlappende Grafik auf einer Karte. Überlagerungen unterstützen grafischen Zeichnungsinhalt, die mit der Zuordnung skaliert werden soll, wie es vergrößert wird. Die folgenden Screenshots zeigen das Ergebnis der Addition einer Polygon-Überlagerung zu einer Zuordnung an:
+Eine Überlagerung ist eine überlappende Grafik auf einer Karte. Überlagerungen unterstützen das Zeichnen grafischer Inhalte, die beim Zoomen mit der Karte skaliert werden. Die folgenden Screenshots zeigen polygonale Überlagerungen, die zu einer Karte hinzugefügt wurden:
 
 ![](polygon-map-overlay-images/screenshots.png)
 
-Wenn eine [ `Map` ](xref:Xamarin.Forms.Maps.Map) -Steuerelements von einer Xamarin.Forms-Anwendung unter iOS die `MapRenderer` Klasse instanziiert wird, die instanziiert wiederum eines systemeigenes `MKMapView` Steuerelement. Auf der Android-Plattform die `MapRenderer` Klasse instanziiert ein systemeigenes `MapView` Steuerelement. Auf der universellen Windows-Plattform (UWP), die `MapRenderer` Klasse instanziiert ein systemeigenes `MapControl`. Das Rendern zu erstellt werden kann nutzen plattformspezifische Zuordnung Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für eine `Map` auf jeder Plattform. Der Prozess hierfür lautet wie folgt aus:
+Beim Rendern eines [`Map`](xref:Xamarin.Forms.Maps.Map)-Steuerelements durch eine Xamarin.Forms-App wird in iOS die `MapRenderer`-Klasse instanziiert, wodurch wiederum ein natives `MKMapView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `MapRenderer`-Klasse ein natives `MapView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `MapRenderer`-Klasse eine native `MapControl`-Klasse. Der Renderingprozess kann genutzt werden, um plattformspezifische Kartenanpassungen zu implementieren, indem für eine `Map`-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
-1. [Erstellen Sie](#Creating_the_Custom_Map) einer benutzerdefinierten Xamarin.Forms-Karte.
-1. [Nutzen](#Consuming_the_Custom_Map) die benutzerdefinierte Zuordnung von Xamarin.Forms.
-1. [Anpassen von](#Customizing_the_Map) der Zuordnung durch das Erstellen eines benutzerdefinierten Renderers für die Zuordnung auf jeder Plattform.
+1. [Erstellen](#Creating_the_Custom_Map) Sie eine benutzerdefinierte Xamarin.Forms-Karte.
+1. [Nutzen](#Consuming_the_Custom_Map) Sie die benutzerdefinierte Karte über Xamarin.Forms.
+1. [Passen Sie](#Customizing_the_Map) die Karte durch Erstellen eines benutzerdefinierten Renderers für die Karte auf jeder Plattform an.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) muss vor der Verwendung initialisiert und konfiguriert werden. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
-Informationen zum Anpassen einer Karte mithilfe eines benutzerdefinierten Renderers finden Sie unter [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Weitere Informationen zum Anpassen einer Karte mit einem benutzerdefinierten Renderer finden Sie unter [Customizing a Map Pin (Anpassen einer Kartenstecknadel)](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>Die benutzerdefinierte Karte erstellen
+### <a name="creating-the-custom-map"></a>Erstellen der benutzerdefinierten Karte
 
-Erstellen Sie eine Unterklasse von der [ `Map` ](xref:Xamarin.Forms.Maps.Map) Klasse bereit, die Fügt eine `ShapeCoordinates` Eigenschaft:
+Erstellen Sie eine Unterklasse der [`Map`](xref:Xamarin.Forms.Maps.Map)-Klasse, die eine `ShapeCoordinates`-Eigenschaft hinzufügt:
 
 ```csharp
 public class CustomMap : Map
@@ -53,13 +53,13 @@ public class CustomMap : Map
 }
 ```
 
-Die `ShapeCoordinates` Eigenschaft speichert eine Auflistung von Koordinaten zur Definition der Region hervorgehoben werden.
+Die `ShapeCoordinates`-Eigenschaft speichert eine Sammlung von Koordinaten, die den hervorzuhebenden Bereich definieren.
 
 <a name="Consuming_the_Custom_Map" />
 
-### <a name="consuming-the-custom-map"></a>Nutzen die benutzerdefinierte Karte
+### <a name="consuming-the-custom-map"></a>Nutzen der benutzerdefinierten Karte
 
-Nutzen der `CustomMap` Steuerelement durch deklarieren eine Instanz davon in der XAML-Seite-Instanz:
+Nutzen Sie das `CustomMap`-Steuerelement, indem Sie eine Instanz davon in der XAML-Seiteninstanz deklarieren:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +72,7 @@ Nutzen der `CustomMap` Steuerelement durch deklarieren eine Instanz davon in der
 </ContentPage>
 ```
 
-Verwenden Sie alternativ die `CustomMap` Steuerelement durch deklarieren eine Instanz davon in der C#-Seite-Instanz:
+Alternativ können Sie das `CustomMap`-Steuerelement nutzen, indem Sie eine Instanz davon in der C#-Seiteninstanz deklarieren:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -90,7 +90,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Initialisieren der `CustomMap` nach Bedarf steuern:
+Initialisieren Sie das `CustomMap`-Steuerelement nach Bedarf:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -108,17 +108,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Diese Initialisierung gibt eine Reihe von Breiten- und Längengrad Koordinaten, definieren Sie die Region der Karte hervorgehoben werden. Klicken Sie dann auf die Position der Map-Ansicht mit den [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode, die ändert sich die Position und die Zoomstufe der Karte durch das Erstellen einer [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) aus einer [ `Position` ](xref:Xamarin.Forms.Maps.Position) und [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
+Durch diese Initialisierung werden eine Reihe von Breiten- und Längenkoordinaten bestimmt, um den auf der Karte hervorzuhebenden Bereich zu definieren. Dann wird die Kartenansicht mit der [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*)-Methode positioniert, wodurch sich die Position und der Zoomfaktor der Karte ändern, indem eine [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)-Klasse aus einer [`Position`](xref:Xamarin.Forms.Maps.Position)- und einer [`Distance`](xref:Xamarin.Forms.Maps.Distance)-Struktur erstellt wird.
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>Anpassen der Karte
 
-Ein benutzerdefinierter Renderer muss jetzt jedem Projekt der Anwendung auf das Overlay Polygon zur Karte hinzufügen hinzugefügt werden.
+Ein benutzerdefinierter Renderer muss nun zu jedem Projekt der Anwendung hinzugefügt werden, um die polygonale Überlagerung zur Karte hinzuzufügen.
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen den benutzerdefinierten Renderer für iOS
+#### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen des benutzerdefinierten Renderers unter iOS
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` Methode, um die Polygon-Überlagerung hinzuzufügen:
+Erstellen Sie eine Unterklasse der `MapRenderer`-Klasse, und überschreiben Sie deren `OnElementChanged`-Methode, um die polygonale Überlagerung hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -166,14 +166,14 @@ namespace MapOverlay.iOS
 
 ```
 
-Diese Methode führt die folgende Konfiguration, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist:
+Diese Methode führt die folgende Konfiguration durch, vorausgesetzt der benutzerdefinierte Renderer wurde an ein neues Xamarin.Forms-Element angefügt:
 
-- Die `MKMapView.OverlayRenderer` -Eigenschaftensatz auf einen entsprechenden Delegaten.
-- Die Auflistung der Breiten-und Längenkoordinaten werden abgerufen, von der `CustomMap.ShapeCoordinates` Eigenschaft und als ein Array von gespeichert `CLLocationCoordinate2D` Instanzen.
-- Das Polygon wird erstellt, durch Aufrufen der statischen `MKPolygon.FromCoordinates` -Methode, die den Breiten- und Längengrad der einzelnen Punkten angibt.
-- Das Polygon zur Karte hinzugefügt wird, durch Aufrufen der `MKMapView.AddOverlay` Methode. Diese Methode schließt automatisch das Polygon durch Zeichnen einer Linie, die die ersten und letzten Punkte verbindet.
+- Die Eigenschaft `MKMapView.OverlayRenderer` wird auf einen entsprechenden Delegaten festgelegt.
+- Die Sammlung von Breiten- und Längenkoordinaten wird aus der Eigenschaft `CustomMap.ShapeCoordinates` abgerufen und als Array von `CLLocationCoordinate2D`-Instanzen gespeichert.
+- Das Polygon wird durch Aufrufen der statischen Methode `MKPolygon.FromCoordinates` erstellt, wodurch die Breite und Länge jedes Punkts angegeben wird.
+- Das Polygon wird durch Aufrufen der Methode `MKMapView.AddOverlay` der Karte hinzugefügt. Diese Methode schließt das Polygon automatisch, indem eine Linie gezogen wird, die den ersten und den letzten Punkt miteinander verbindet.
 
-Implementieren Sie anschließend die `GetOverlayRenderer` Methode, um die Wiedergabe der Überlagerung anzupassen:
+Implementieren Sie dann die Methode `GetOverlayRenderer`, um das Rendering der Überlagerung anzupassen:
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -197,9 +197,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Erstellen den benutzerdefinierten Renderer für Android
+#### <a name="creating-the-custom-renderer-on-android"></a>Erstellen des benutzerdefinierten Renderers unter Android
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` und `OnMapReady` Methoden, um die Polygon-Überlagerung hinzuzufügen:
+Erstellen Sie eine Unterklasse der `MapRenderer`-Klasse, und überschreiben Sie deren Methoden `OnElementChanged` und `OnMapReady`, um die polygonale Überlagerung hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -249,11 +249,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-Die `OnElementChanged` Methode ruft die Auflistung der Breiten- und Längenkoordinaten aus der `CustomMap.ShapeCoordinates` Eigenschaft und speichert sie in einer Membervariablen gespeichert. Es ruft dann die `MapView.GetMapAsync` -Methode, die die zugrunde liegende ruft `GoogleMap` , die an die Sicht gebunden ist, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist. Nach der `GoogleMap` Instanz verfügbar ist, die `OnMapReady` Methode wird aufgerufen, und, wo das Polygon durch Instanziierung erstellt wird eine `PolygonOptions` Objekt, das den Breiten- und Längengrad der einzelnen Punkten angibt. Das Polygon wird dann zur Karte hinzugefügt, durch den Aufruf der `NativeMap.AddPolygon` Methode. Diese Methode schließt automatisch das Polygon durch Zeichnen einer Linie, die die ersten und letzten Punkte verbindet.
+Die `OnElementChanged`-Methode ruft die Sammlung der Breiten- und Längenkoordinaten aus der Eigenschaft `CustomMap.ShapeCoordinates` ab und speichert sie in einer Membervariablen. Dann ruft sie die Methode `MapView.GetMapAsync` auf, die die zugrunde liegende `GoogleMap`-Klasse abruft, die an die Ansicht gebunden ist, sofern der benutzerdefinierte Renderer einem neuen Xamarin.Forms-Element angefügt wurde. Sobald die `GoogleMap`-Instanz verfügbar ist, wird die `OnMapReady`-Methode aufgerufen, wobei das Polygon durch Instanziieren eines `PolygonOptions`-Objekts erstellt wird, das die Breite und Länge jedes Punkts angibt. Das Polygon wird anschließend durch Aufrufen der Methode `NativeMap.AddPolygon` der Karte hinzugefügt. Diese Methode schließt das Polygon automatisch, indem eine Linie gezogen wird, die den ersten und den letzten Punkt miteinander verbindet.
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Erstellen den benutzerdefinierten Renderer für die universelle Windows-Plattform
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Erstellen des benutzerdefinierten Renderers auf der Universellen Windows-Plattform
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` Methode, um die Polygon-Überlagerung hinzuzufügen:
+Erstellen Sie eine Unterklasse der `MapRenderer`-Klasse, und überschreiben Sie deren `OnElementChanged`-Methode, um die polygonale Überlagerung hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -293,19 +293,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-Diese Methode führt die folgenden Vorgänge, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist:
+Diese Methode führt die folgenden Vorgänge durch, vorausgesetzt der benutzerdefinierte Renderer wurde an ein neues Xamarin.Forms-Element angefügt:
 
-- Die Auflistung der Breiten-und Längenkoordinaten werden abgerufen, von der `CustomMap.ShapeCoordinates` Eigenschaft und in konvertiert eine `List` von `BasicGeoposition` Koordinaten.
-- Das Polygon wird erstellt, durch die Instanziierung einer `MapPolygon` Objekt. Die `MapPolygon` Klasse wird verwendet, um eine Form mit mehreren Punkten auf der Karte angezeigt, durch Festlegen der `Path` Eigenschaft, um eine `Geopath` -Objekt, das die Koordinaten der Form enthält.
-- Das Polygon auf der Karte gerendert wird, indem sie zum Hinzufügen der `MapControl.MapElements` Auflistung. Beachten Sie, dass das Polygon automatisch geschlossen wird, indem eine Linie, die die ersten und letzten Punkte verbindet.
+- Die Sammlung von Breiten- und Längenkoordinaten wird aus der Eigenschaft `CustomMap.ShapeCoordinates` abgerufen und in eine `List`-Klasse mit `BasicGeoposition`-Koordinaten konvertiert.
+- Das Polygon wird durch Instanziieren eines `MapPolygon`-Objekts erstellt. Die `MapPolygon`-Klasse wird zum Anzeigen einer Multipunktform auf der Karte verwendet, indem deren `Path`-Eigenschaft auf ein `Geopath`-Objekt festgelegt wird, das die Koordinaten der Form enthält.
+- Der Kreis wird auf der Karte durch Hinzufügen zur Sammlung `MapControl.MapElements` gerendert. Das Polygon wird automatisch geschlossen, indem eine Linie gezogen wird, die den ersten und den letzten Punkt miteinander verbindet.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie eine Karte, um einen Bereich der Karte markieren eine Polygon-Überlagerung hinzugefügt. Polygone werden eine geschlossene Form und ihre Innenbereiche ausgefüllt haben.
+In diesem Artikel wurde beschrieben, wie Sie einer Karte eine polygonale Überlagerung hinzufügen, um einen Bereich auf der Karte hervorzuheben. Polygone sind geschlossene ausgefüllte Formen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Polygon Zuordnung überlagern (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
+- [Polygon Map Overlay (sample) (Polygonale Kartenüberlagerung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
 - [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)
+- [Xamarin.Forms.Maps Namespace (Xamarin.Forms.Maps-Namespace)](xref:Xamarin.Forms.Maps)

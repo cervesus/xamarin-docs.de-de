@@ -1,6 +1,6 @@
 ---
-title: Implementieren von Sprachsynthese
-description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms DependencyService-Klasse verwenden, um die einzelnen Plattformen native-Sprach-API aufrufen.
+title: Implementieren von Text-zu-Sprache
+description: In diesem Artikel wird erläutert, wie Sie mit der DependencyService-Klasse von Xamarin.Forms die native Text-zu-Sprache-API jeder Plattform aufrufen.
 ms.prod: xamarin
 ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
 ms.technology: xamarin-forms
@@ -9,30 +9,30 @@ ms.author: dabritch
 ms.date: 09/18/2017
 ms.openlocfilehash: 6d1948214b97a1b536b07b6420c32e4d27124518
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38997542"
 ---
-# <a name="implementing-text-to-speech"></a>Implementieren von Sprachsynthese
+# <a name="implementing-text-to-speech"></a>Implementieren von Text-zu-Sprache
 
-In diesem Artikel führen Sie darüber, wie Sie eine plattformübergreifende app erstellen, verwendet [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) den Zugriff auf native-Sprach-APIs:
+Dieser Artikel führt Sie durch das Erstellen einer plattformübergreifenden App, die mit [`DependencyService`](xref:Xamarin.Forms.DependencyService) auf native Text-zu-Sprache-APIs zugreift:
 
-- **[Zum Erstellen der Schnittstelle](#Creating_the_Interface)**  &ndash; zu verstehen, wie die Schnittstelle in freigegebenem Code erstellt wird.
-- **[iOS-Implementierung](#iOS_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle in nativem Code für iOS zu implementieren.
-- **[Android-Implementierung](#Android_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle für Android in nativem Code zu implementieren.
-- **[UWP-Implementierung](#WindowsImplementation)**  &ndash; erfahren Sie, wie die Schnittstelle in nativem Code für die universelle Windows-Plattform (UWP) zu implementieren.
-- **[In freigegebenem Code implementieren](#Implementing_in_Shared_Code)**  &ndash; erfahren Sie, wie Sie mit `DependencyService` , die native Implementierung von freigegebenem Code aufzurufen.
+- **[Erstellen der Schnittstelle](#Creating_the_Interface)** &ndash; Erfahren Sie, wie die Schnittstelle in freigegebenem Code erstellt wird.
+- **[iOS-Implementierung:](#iOS_Implementation)** Erfahren Sie, wie die Schnittstelle in nativem Code für iOS implementiert wird.
+- **[Android-Implementierung:](#Android_Implementation)** Erfahren Sie, wie die Schnittstelle in nativem Code für Android implementiert wird.
+- **[UWP-Implementierung:](#WindowsImplementation)** Erfahren Sie, wie die Schnittstelle in nativem Code für die Universelle Windows-Plattform implementiert wird.
+- **[Implementieren in freigegebenem Code:](#Implementing_in_Shared_Code)** Erfahren Sie, wie Sie mit `DependencyService` die native Implementierung von freigegebenem Code aufrufen.
 
-Die Anwendung mit `DependencyService` wird die folgende Struktur aufweisen:
+Die App, die `DependencyService` verwendet, hat folgende Struktur:
 
-![](text-to-speech-images/tts-diagram.png "DependencyService Anwendungsstruktur")
+![](text-to-speech-images/tts-diagram.png "Anwendungsstruktur von DependencyService")
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>Erstellen der Schnittstelle
 
-Erstellen Sie zunächst eine Schnittstelle im freigegebenen Code, der die Funktionalität ausdrückt, die Sie implementieren möchten. In diesem Beispiel die Schnittstelle enthält eine einzelne Methode, `Speak`:
+Erstellen Sie als Erstes eine Schnittstelle im freigegebenen Code, die die Funktion ausdrückt, die Sie implementieren möchten. In diesem Beispiel enthält die Schnittstelle die einzelne Methode `Speak`:
 
 ```csharp
 public interface ITextToSpeech
@@ -41,16 +41,16 @@ public interface ITextToSpeech
 }
 ```
 
-Mit der Programmierung für diese Schnittstelle in den freigegebenen Code lässt sich auf die Xamarin.Forms-app auf die Sprach-APIs auf jeder Plattform aus.
+Die Kodierung mit dieser Schnittstelle im freigegebenen Code ermöglicht der Xamarin.Forms-App den Zugriff auf die Sprach-APIs auf jeder Plattform.
 
 > [!NOTE]
-> Klassen, die die Schnittstelle implementieren, müssen einen parameterlosen Konstruktor für die Arbeit mit der `DependencyService`.
+> Klassen, die die Schnittstelle implementieren, müssen einen parameterlosen Konstruktor aufweisen, damit sie mit `DependencyService` funktionieren können.
 
 <a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>iOS-Implementierung
 
-Die Schnittstelle muss in jedem Anwendungsprojekt plattformspezifischen-implementiert werden. Beachten Sie, dass die Klasse über einen parameterlosen Konstruktor hat, damit die `DependencyService` neue Instanzen erstellen können.
+Die Schnittstelle muss in jedem plattformspezifischen App-Projekt implementiert werden. Beachten Sie, dass die Klasse einen parameterlosen Konstruktor aufweist, sodass `DependencyService` neue Instanzen erstellen kann.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -78,13 +78,13 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-Die `[assembly]` Attribut registriert die Klasse als eine Implementierung der `ITextToSpeech` -Schnittstelle, die das bedeutet, dass `DependencyService.Get<ITextToSpeech>()` kann in den freigegebenen Code verwendet werden, um eine Instanz davon erstellen.
+Das Attribut `[assembly]` registriert die Klasse als eine Implementierung der Schnittstelle `ITextToSpeech`, d.h., dass `DependencyService.Get<ITextToSpeech>()` im freigegebenen Code verwendet werden kann, um eine Instanz davon zu erstellen.
 
 <a name="Android_Implementation" />
 
 ## <a name="android-implementation"></a>Android-Implementierung
 
-Die Android-Code ist komplexer als die iOS-Version: Es erfordert, dass die implementierende Klasse das erben von Android-spezifische `Java.Lang.Object` und zum Implementieren der `IOnInitListener` Schnittstelle auch. Darüber hinaus den Zugriff auf die aktuelle Android-Kontext, der verfügbar gemacht werden müssen die `MainActivity.Instance` Eigenschaft.
+Der Android-Code ist komplexer als die iOS-Version: Er erfordert, dass die implementierende Klasse vom Android-spezifischen `Java.Lang.Object` erbt und zudem die Schnittstelle `IOnInitListener` implementiert. Außerdem benötigt sie Zugriff auf den aktuellen Android-Kontext, der durch die Eigenschaft `MainActivity.Instance` verfügbar gemacht wird.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -119,13 +119,13 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-Die `[assembly]` Attribut registriert die Klasse als eine Implementierung der `ITextToSpeech` -Schnittstelle, die das bedeutet, dass `DependencyService.Get<ITextToSpeech>()` kann in den freigegebenen Code verwendet werden, um eine Instanz davon erstellen.
+Das Attribut `[assembly]` registriert die Klasse als eine Implementierung der Schnittstelle `ITextToSpeech`, d.h., dass `DependencyService.Get<ITextToSpeech>()` im freigegebenen Code verwendet werden kann, um eine Instanz davon zu erstellen.
 
 <a name="WindowsImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Implementierung der universellen Windows-Plattform
+## <a name="universal-windows-platform-implementation"></a>UWP-Implementierung
 
-Die universelle Windows-Plattform verfügt über eine Spracheingabe-API in der `Windows.Media.SpeechSynthesis` Namespace. Der einzige Nachteil ist, daran denken müssen, aktivieren Sie die **Mikrofon** -Funktion in das Manifest andernfalls zugreifen, auf die Sprach-APIs werden blockiert.
+Die Universelle Windows-Plattform verfügt über eine Sprach-API im Namespace `Windows.Media.SpeechSynthesis`. Der einzige Nachteil ist, dass Sie daran denken müssen, die Funktion **Mikrofon** im Manifest zu aktivieren. Andernfalls wird der Zugriff auf die Sprach-APIs blockiert.
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -143,13 +143,13 @@ public class TextToSpeechImplementation : ITextToSpeech
 }
 ```
 
-Die `[assembly]` Attribut registriert die Klasse als eine Implementierung der `ITextToSpeech` -Schnittstelle, die das bedeutet, dass `DependencyService.Get<ITextToSpeech>()` kann in den freigegebenen Code verwendet werden, um eine Instanz davon erstellen.
+Das Attribut `[assembly]` registriert die Klasse als eine Implementierung der Schnittstelle `ITextToSpeech`, d.h., dass `DependencyService.Get<ITextToSpeech>()` im freigegebenen Code verwendet werden kann, um eine Instanz davon zu erstellen.
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>In freigegebenem Code implementieren
+## <a name="implementing-in-shared-code"></a>Implementieren in freigegebenem Code
 
-Jetzt können wir schreiben und Testen freigegebenen Code, der die Text-Sprach-Schnittstelle zugreift. Diese einfache Seite enthält eine Schaltfläche, die die Funktion "Sprache" auslöst. Er verwendet die `DependencyService` zum Abrufen einer Instanz von der `ITextToSpeech` Schnittstelle &ndash; zur Laufzeit werden diese Instanz die plattformspezifischen Implementierungen, die uneingeschränkten Zugriff auf das systemeigene SDK verfügt.
+Nun können wir freigegebenen Code schreiben und testen, der auf die Text-zu-Sprache-Schnittstelle zugreift. Diese einfache Seite enthält eine Schaltfläche, die die Sprachfunktion auslöst. Sie verwendet `DependencyService`, um eine Instanz der Schnittstelle `ITextToSpeech` zu erhalten. In der Common Language Runtime ist diese Instanz die plattformspezifische Implementierung, die über Vollzugriff auf das native SDK verfügt.
 
 ```csharp
 public MainPage ()
@@ -166,9 +166,9 @@ public MainPage ()
 }
 ```
 
-Ausführen der Anwendung auf iOS-, Android- oder UWP und auf die Schaltfläche führt in der Anwendung, die Sie mithilfe des systemeigenen Sprach-SDKS auf jeder Plattform sprechen.
+Wenn Sie diese Anwendung unter iOS, Android oder auf der UWP ausführen und die Schaltfläche drücken, wird die Anwendung mit Ihnen sprechen und dabei das native Sprach-SDK auf jeder Plattform verwenden.
 
- ![iOS und Android-Sprach-Schaltfläche](text-to-speech-images/running.png "Sprachsynthese-Beispiel")
+ ![Text-zu-Sprache-Schaltfläche unter iOS und Android](text-to-speech-images/running.png "Beispiel für Text-zu-Sprache")
 
 
 ## <a name="related-links"></a>Verwandte Links

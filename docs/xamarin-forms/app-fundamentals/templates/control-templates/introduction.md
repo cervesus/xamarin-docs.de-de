@@ -1,6 +1,6 @@
 ---
 title: Einführung in Xamarin.Forms-Steuerelementvorlagen
-description: Vorlagen für Xamarin.Forms-Steuerelemente bieten die Möglichkeit, einfache Weise Designs und überarbeitet Anwendungsseiten zur Laufzeit. Dieser Artikel enthält eine Einführung in Steuerelementvorlagen.
+description: Mit Xamarin.Forms-Steuerelementvorlagen können Sie unkompliziert zur Laufzeit Designs für Anwendungsseiten entwerfen und überarbeiten. In diesem Artikel werden Steuerelementvorlagen grundlegend vorgestellt.
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
 ms.technology: xamarin-forms
@@ -9,48 +9,48 @@ ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: 6b7a6c6d9c9c541e1d5e821fc2dac202e98bec62
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38994424"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Einführung in Xamarin.Forms-Steuerelementvorlagen
 
-_Vorlagen für Xamarin.Forms-Steuerelemente bieten die Möglichkeit, einfache Weise Designs und überarbeitet Anwendungsseiten zur Laufzeit. Dieser Artikel enthält eine Einführung in Steuerelementvorlagen._
+_Mit Xamarin.Forms-Steuerelementvorlagen können Sie unkompliziert zur Laufzeit Designs für Anwendungsseiten entwerfen und überarbeiten. In diesem Artikel werden Steuerelementvorlagen grundlegend vorgestellt._
 
-Steuerelemente verfügen über unterschiedliche Eigenschaften, z. B. `BackgroundColor` und `TextColor`, die Aspekte der Darstellung des Steuerelements definieren können. Diese Eigenschaften können festgelegt werden, mithilfe von [Stile](~/xamarin-forms/user-interface/styles/index.md), dem kann geändert werden, zur Laufzeit, um das grundlegende Design zu implementieren. Allerdings Stile keine saubere Trennung zwischen der Darstellung einer Seite und den Inhalt, und die Änderungen, die vorgenommen werden können, indem Sie diese Eigenschaften sind beschränkt.
+Steuerelemente haben unterschiedliche Eigenschaften, z. B. `BackgroundColor` und `TextColor`, mit denen Sie Aspekte ihrer Darstellung definieren können. Diese Eigenschaften können Sie mithilfe von [Formatvorlagen](~/xamarin-forms/user-interface/styles/index.md) festlegen, die zur Laufzeit geändert werden können, um ein grundlegendes Design zu implementieren. Bei Formatvorlagen besteht jedoch keine klare Trennung zwischen dem Erscheinungsbild einer Seite und ihrem Inhalt. Zusätzlich sind die Änderungen, die durch Festlegen dieser Eigenschaften möglich sind, eingeschränkt.
 
-Mit Steuerelementvorlagen eine saubere Trennung zwischen der Darstellung einer Seite und den Inhalt, und ermöglichen somit die Erstellung von Seiten, die problemlos mit Design versehen werden kann. Beispielsweise kann eine Anwendung auf Anwendungsebene Steuerelementvorlagen enthalten, die ein Design "dunkel" und ein helles Design bereitstellen. Jede [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) in der Anwendung kann sein Design durch Anwenden eines die Vorlagen ohne Änderungen des Inhalts von jeder Seite angezeigt wird. Darüber hinaus sind die Designs von Steuerelementvorlagen bereitgestellten nicht darauf beschränkt, zum Ändern der Eigenschaften von Steuerelementen. Sie können auch die Steuerelemente, die zum Implementieren des Designs ändern.
+Steuerelementvorlagen trennen das Aussehen und den Inhalt einer Seite klar voneinander. So erhalten Sie Seiten, die sich leicht designen lassen. Beispielsweise kann eine Anwendung auf Anwendungsebene Steuerelementvorlagen enthalten, die ein helles und ein dunkles Design bereitstellen. Sie können das Design jeder [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse in der Anwendung ändern, indem Sie eine der Steuerelementvorlagen anwenden. Der Inhalt der einzelnen Seiten verändert sich dabei nicht. Darüber hinaus gelten bei Designs. die von Steuerelementvorlagen bereitgestellt werden, keine Einschränkungen beim Ändern der Eigenschaften der Steuerelemente. Auch die Steuerelemente, mit denen das Design implementiert wird, können geändert werden.
 
 ## <a name="creating-a-controltemplate"></a>Erstellen eines ControlTemplate-Objekts
 
-Ein [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) gibt die Darstellung einer Seite oder Ansicht, und enthält ein Root-Layout, und klicken Sie in das Layout an, die Steuerelemente, die die Vorlage zu implementieren. In der Regel eine `ControlTemplate` werden verwendet, die eine [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) markieren, wo der Inhalt von der Seite oder Ansicht angezeigt werden soll angezeigt wird. Der Seite oder Ansicht, die verarbeitet die `ControlTemplate` wird von anzuzeigenden Inhalt definiert die `ContentPresenter`. Das folgende Diagramm veranschaulicht eine `ControlTemplate` für eine Seite, eine Reihe von Steuerelementen enthält, einschließlich, einer `ContentPresenter` durch ein blaues Rechteck markiert:
+Eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse legt die Darstellung einer Seite oder Ansicht fest. Sie enthält ein Stammlayout und darin die Steuerelemente, die die Vorlage implementieren. In der Regel wird für eine `ControlTemplate`-Klasse eine [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)-Klasse verwendet, um die Position des auf der Seite oder Ansicht anzuzeigenden Inhalts anzugeben. Die Seite oder Ansicht, für die die `ControlTemplate`-Klasse gedacht ist, gibt dann den Inhalt vor, der von der `ContentPresenter`-Klasse angezeigt werden soll. Das folgende Diagramm veranschaulicht eine `ControlTemplate`-Klasse für eine Seite mit einer Reihe von Steuerelementen. Zusätzlich abgebildet ist eine `ContentPresenter`-Klasse, hier dargestellt durch ein blaues Rechteck:
 
-![](introduction-images/control-template.png "Die Steuerelementvorlage für eine Seite")
+![](introduction-images/control-template.png "Steuerelementvorlage für eine Seite")
 
-Ein [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) kann auf die folgenden Typen angewendet werden, durch Festlegen ihrer `ControlTemplate` Eigenschaften:
+Sie können die [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse auf die folgenden Typen anwenden, indem Sie die Eigenschaft `ControlTemplate` festlegen:
 
 - [`ContentPage`](xref:Xamarin.Forms.ContentPage)
 - [`ContentView`](xref:Xamarin.Forms.ContentView)
 - [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)
 - [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)
 
-Wenn eine [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) erstellt und zugewiesen auf diese Typen vorhandenen Darstellung durch die Darstellung im definierten ersetzt die `ControlTemplate`. Darüber hinaus sowie das Festlegen von Darstellung mithilfe der `ControlTemplate` Eigenschaft Steuerelement Vorlagen auch angewendet werden, können über Stile zur weiteren Erweitern Design Möglichkeit.
+Wenn Sie eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse erstellt und diesen Typen zugewiesen haben, wird die Darstellung entsprechend der `ControlTemplate`-Klasse angepasst. Zusätzlich zur Festlegung der Darstellung mithilfe der Eigenschaft `ControlTemplate` können Sie auch über Formatvorlagen Steuerelementvorlagen anwenden. So haben Sie noch mehr Designmöglichkeiten.
 
 > [!NOTE]
->  *Was sind die `TemplatedPage` und `TemplatedView` Typen?* `TemplatedPage` ist die Basisklasse für `ContentPage`, und ist der einfachste Typ von Xamarin.Forms bereitgestelltes. Im Gegensatz zu `ContentPage`, `TemplatedPage` verfügt nicht über eine `Content` Eigenschaft. Aus diesem Grund Inhalt kann nicht direkt hinzugefügt werden eine `TemplatedPage` Instanz. Stattdessen Inhalt hinzugefügt wird, indem Sie die Steuerelementvorlage für den `TemplatedPage` Instanz. Auf ähnliche Weise `TemplatedView` ist die Basisklasse für `ContentView`. Im Gegensatz zu `ContentView`, `TemplatedView` verfügt nicht über eine `Content` Eigenschaft. Aus diesem Grund Inhalt kann nicht direkt hinzugefügt werden eine `TemplatedView` Instanz. Stattdessen Inhalt hinzugefügt wird, indem Sie die Steuerelementvorlage für den `TemplatedView` Instanz.
+>  *Was sind `TemplatedPage` und `TemplatedView` für Typen?* `TemplatedPage` ist die Basisklasse für `ContentPage` und der einfachste Seitentyp in Xamarin.Forms. Im Gegensatz zu `ContentPage` hat `TemplatedPage` nicht die Eigenschaft `Content`. Deshalb können Sie einer `TemplatedPage`-Instanz nicht direkt Inhalt hinzufügen. Stattdessen wird der Inhalt durch Festlegen der Steuerelementvorlage für die `TemplatedPage`-Instanz hinzugefügt. Bei `TemplatedView` ist es ähnlich. Dieser Typ ist die Basisklasse für `ContentView`. Im Gegensatz zu `ContentView` hat `TemplatedView` nicht die Eigenschaft `Content`. Deshalb können Sie einer `TemplatedView`-Instanz nicht direkt Inhalt hinzufügen. Stattdessen wird der Inhalt durch Festlegen der Steuerelementvorlage für die `TemplatedView`-Instanz hinzugefügt.
 
-Steuerelementvorlagen können in XAML und C# -Code erstellt werden:
+Steuerelementvorlagen können Sie in XAML und C# erstellen:
 
-- In XAML erstellte Steuerelementvorlagen werden in definiert eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) , zugewiesen ist die [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung einer Seite oder in der Regel um die [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Auflistung von der Anwendung.
-- In c# erstellte Steuerelementvorlagen werden in der Regel definiert, in der Klasse von der Seite oder in eine Klasse, die Global zugegriffen werden kann.
+- In XAML erstellte Steuerelementvorlagen werden in einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) erstellt, das der Sammlung [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) einer Seite oder der Sammlung [`Resources`](xref:Xamarin.Forms.Application.Resources) der Anwendung zugewiesen ist. Letztere Variante wird häufiger verwendet.
+- In C# erstellte Steuerelementvorlagen werden üblicherweise in der Klasse der Seite oder in einer global zugänglichen Klasse definiert.
 
-Auswählen des Installationsorts für das Definieren einer [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) Instanz wirkt sich auf, wo sie verwendet werden kann:
+Die Entscheidung, wo Sie eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Instanz definieren, hat Einfluss darauf, wo Sie sie verwenden können:
 
-- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) Instanzen, die auf der Ebene der Seite definiert, können nur auf der Seite angewendet werden.
-- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) auf der Ebene der Anwendung definierte Instanzen können auf Seiten in der gesamten Anwendung angewendet werden.
+- Eine auf Seitenebene definierte [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Instanz können Sie nur auf die bestimmte Seite anwenden.
+- Eine auf Anwendungsebene definierte [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Instanz können Sie für alle Seiten der Anwendung nutzen.
 
-Steuerelementvorlagen, die weiter unten in der Hierarchie von Inhaltsansichten haben Vorrang vor den definierten höher einrichten. Z. B. eine [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) mit dem Namen `DarkTheme` , definiert ist, auf der Seitenebene Vorrang vor einer gleichnamigen Vorlage, die auf der Ebene der Anwendung definiert. Aus diesem Grund sollten eine Steuerelementvorlage, die ein Design auf jeder Seite in einer Anwendung angewendet werden definiert, auf der Ebene der Anwendung definiert werden.
+Steuerelementvorlagen, die weiter unten in der Hierarchie der Ansichten angeordnet sind, haben Vorrang vor denjenigen, die sich weiter oben befinden. So hat z. B. eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse namens `DarkTheme`, die auf Seitenebene definiert ist, Vorrang gegenüber einer identisch benannten Vorlage auf Anwendungsebene. Deshalb sollte eine Steuerelementvorlage, mit der ein Design auf jede Seite einer Anwendung angewendet werden soll, auf Anwendungsebene definiert sein.
 
 
 ## <a name="related-links"></a>Verwandte Links

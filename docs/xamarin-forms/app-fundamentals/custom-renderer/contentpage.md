@@ -1,6 +1,6 @@
 ---
 title: Anpassen einer ContentPage
-description: Eine ContentPage ist ein visuelles Element, das zeigt eine einzelnen Ansicht und der Großteil des Bildschirms einnimmt. In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer auf der Seite ContentPage ermöglichen Entwicklern, native standarddarstellung mit ihren eigenen plattformspezifische Anpassungen zu überschreiben.
+description: Eine ContentPage ist ein visuelles Element, das eine Ansicht anzeigt, die den Großteil des Bildschirms einnimmt. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für die ContentPage-Seite erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können.
 ms.prod: xamarin
 ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
 ms.technology: xamarin-forms
@@ -9,34 +9,34 @@ ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
 ms.sourcegitcommit: 8888cb7d75f4469f2a1195b9a426a2e1fbf46bd8
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/31/2018
 ms.locfileid: "38995741"
 ---
 # <a name="customizing-a-contentpage"></a>Anpassen einer ContentPage
 
-_Eine ContentPage ist ein visuelles Element, das zeigt eine einzelnen Ansicht und der Großteil des Bildschirms einnimmt. In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer auf der Seite ContentPage ermöglichen Entwicklern, native standarddarstellung mit ihren eigenen plattformspezifische Anpassungen zu überschreiben._
+_Eine ContentPage ist ein visuelles Element, das eine Ansicht anzeigt, die den Großteil des Bildschirms einnimmt. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für die ContentPage-Seite erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können._
 
-Alle Xamarin.Forms-Steuerelements verfügt über eine zugehörige Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) gerendert wird, von einer Xamarin.Forms-Anwendung unter iOS die `PageRenderer` Klasse instanziiert wird, die instanziiert wiederum eines systemeigenes `UIViewController` Steuerelement. Auf der Android-Plattform die `PageRenderer` Klasse instanziiert ein `ViewGroup` Steuerelement. Auf der universellen Windows-Plattform (UWP), die `PageRenderer` Klasse instanziiert ein `FrameworkElement` Steuerelement. Weitere Informationen zu den Renderer und nativen Steuerelements-Klassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und Native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekts durch eine Xamarin.Forms-Anwendung wird in iOS die `PageRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UIViewController`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `PageRenderer`-Klasse ein `ViewGroup`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `PageRenderer`-Klasse ein `FrameworkElement`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) und die entsprechenden systemeigenen Steuerelemente, die sie implementieren:
+Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](contentpage-images/contentpage-classes.png "Beziehung zwischen ContentPage-Klasse und Implementieren von systemeigenen Steuerelementen")
+![](contentpage-images/contentpage-classes.png "Beziehungen zwischen der ContentPage-Klasse und den nativen Steuerelementen, die diese implementieren")
 
-Das Rendern zu kann nutzen erstellt werden, um plattformspezifische Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) auf jeder Plattform. Der Prozess hierfür lautet wie folgt aus:
+Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Der Prozess dafür sieht wie folgt aus:
 
-1. [Erstellen Sie](#Creating_the_Xamarin.Forms_Page) einer Xamarin.Forms-Startseite.
-1. [Nutzen](#Consuming_the_Xamarin.Forms_Page) der Seite von Xamarin.Forms.
-1. [Erstellen Sie](#Creating_the_Page_Renderer_on_each_Platform) der benutzerdefinierte Renderer für die Seite auf jeder Plattform.
+1. [Erstellen](#Creating_the_Xamarin.Forms_Page) Sie eine Xamarin.Forms-Seite.
+1. [Nutzen](#Consuming_the_Xamarin.Forms_Page) Sie die Seite von Xamarin.Forms.
+1. [Erstellen](#Creating_the_Page_Renderer_on_each_Platform) Sie einen benutzerdefinierten Renderer für die Seite auf jeder Plattform.
 
-Jedes Element jetzt erläutert wiederum zum Implementieren einer `CameraPage` , einer live-Kamera und die Möglichkeit, ein Foto aufzunehmen bietet.
+Jedes Element wird nun nacheinander besprochen, um ein `CameraPage`-Element zu implementieren, das ein Livekamerafeed und die Möglichkeit zur Aufnahme eines Fotos bietet.
 
 <a name="Creating_the_Xamarin.Forms_Page" />
 
-## <a name="creating-the-xamarinforms-page"></a>Erstellen das Xamarin.Forms-Startseite
+## <a name="creating-the-xamarinforms-page"></a>Erstellen der Xamarin.Forms-Seite
 
-Eine unveränderte [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) können auf das freigegebene Xamarin.Forms-Projekt hinzugefügt werden, wie in den folgenden XAML-Codebeispiel gezeigt:
+Wenn [`ContentPage`](xref:Xamarin.Forms.ContentPage) unverändert bleibt, kann das Element dem freigegebenen Xamarin.Forms-Projekt hinzugefügt werden, wie im folgenden XAML-Codebeispiel gezeigt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -47,7 +47,7 @@ Eine unveränderte [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) können auf
 </ContentPage>
 ```
 
-Auf ähnliche Weise die Code-Behind-Datei für die [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) sollte auch bleiben unverändert, wie im folgenden Codebeispiel gezeigt:
+Ebenso sollte die CodeBehind-Datei für das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Element ebenfalls unverändert bleiben, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public partial class CameraPage : ContentPage
@@ -60,7 +60,7 @@ public partial class CameraPage : ContentPage
 }
 ```
 
-Im folgenden Codebeispiel wird veranschaulicht, wie die Seite in c# erstellt werden kann:
+Das folgende Codebeispiel veranschaulicht, wie die Seite in C# erstellt werden kann:
 
 ```csharp
 public class CameraPageCS : ContentPage
@@ -71,13 +71,13 @@ public class CameraPageCS : ContentPage
 }
 ```
 
-Eine Instanz von der `CameraPage` wird verwendet, um die live-Kamera auf jeder Plattform anzuzeigen. Anpassung des Steuerelements durchgeführt werden in den benutzerdefinierten Renderer, sodass keine zusätzliche Implementierung erforderlich ist der `CameraPage` Klasse.
+Eine Instanz vom `CameraPage`-Element wird verwendet, um den Livekamerafeed auf jeder Plattform anzuzeigen. Die Anpassung des Steuerelements erfolgt im benutzerdefinierten Renderer, sodass keine zusätzliche Implementierung in der `CameraPage`-Klasse erforderlich ist.
 
 <a name="Consuming_the_Xamarin.Forms_Page" />
 
-## <a name="consuming-the-xamarinforms-page"></a>Nutzen die Xamarin.Forms-Startseite
+## <a name="consuming-the-xamarinforms-page"></a>Nutzen der Xamarin.Forms-Seite
 
-Die leere `CameraPage` muss die Xamarin.Forms-Anwendung angezeigt werden. Dies geschieht, wenn eine Schaltfläche auf der `MainPage` Instanz tippen, das wiederum führt die `OnTakePhotoButtonClicked` Methode, wie im folgenden Codebeispiel gezeigt:
+Das leere `CameraPage`-Element muss von der Xamarin.Forms-Anwendung angezeigt werden. Dies geschieht, wenn Sie auf eine Schaltfläche der `MainPage`-Instanz tippen, die wiederum die `OnTakePhotoButtonClicked`-Methode ausführt, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 async void OnTakePhotoButtonClicked (object sender, EventArgs e)
@@ -86,40 +86,40 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Dieser Code ist einfach navigiert die `CameraPage`, auf welche benutzerdefinierte Renderer die Darstellung der Seite auf jeder Plattform anpassen.
+Dieser Code navigiert einfach zum `CameraPage`-Element, über das benutzerdefinierte Renderer das Erscheinungsbild der Seite für jede Plattform anpassen.
 
 <a name="Creating_the_Page_Renderer_on_each_Platform" />
 
-## <a name="creating-the-page-renderer-on-each-platform"></a>Erstellen die Seiten-Renderer auf jeder Plattform
+## <a name="creating-the-page-renderer-on-each-platform"></a>Erstellen des Seitenrenderers für jede Plattform
 
-Der Prozess zum Erstellen der benutzerdefinierten Renderer-Klasse sieht folgendermaßen aus:
+Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Renderer zu erstellen:
 
-1. Erstellen Sie eine Unterklasse von der `PageRenderer` Klasse.
-1. Überschreiben der `OnElementChanged` -Methode, die native Seite und Write-Logik zum Anpassen der Seite rendert. Die `OnElementChanged` Methode wird aufgerufen, wenn das entsprechende Xamarin.Forms-Steuerelement erstellt wird.
-1. Hinzufügen einer `ExportRenderer` -Attribut auf die Seite Renderer-Klasse, um anzugeben, dass er zum Rendern der Seite "Xamarin.Forms" verwendet wird. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
+1. Erstellen Sie eine Unterklasse der `PageRenderer`-Klasse.
+1. Überschreiben Sie die `OnElementChanged`-Methode, die die native Seite rendert, und schreiben Sie Logik, um die Seite anzupassen. Die `OnElementChanged`-Methode wird aufgerufen, wenn das entsprechende Xamarin.Forms-Steuerelement erstellt wird.
+1. Fügen Sie der Klasse des Seitenrenderers ein `ExportRenderer`-Attribut hinzu, um anzugeben, dass sie zum Rendern der Xamarin.Forms-Seite verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer bei Xamarin.Forms zu registrieren.
 
 > [!NOTE]
-> Dies ist optional, um eine Seite-Renderer in jedem plattformprojekt bereitzustellen. Wenn ein Seite-Renderer nicht registriert ist, wird der Standard-Renderer für die Seite verwendet werden.
+> Dies ist optional, um einen Seitenrenderer in jedem Plattformprojekt bereitzustellen. Wenn kein Seitenrenderer registriert wurde, wird der Standardrenderer für die Seite verwendet.
 
-Das folgende Diagramm veranschaulicht die Verantwortlichkeiten der einzelnen Projekte in der beispielanwendung, zusammen mit der Beziehung zwischen ihnen:
+Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](contentpage-images/solution-structure.png "Zuständigkeiten von CameraPage benutzerdefinierten Renderer-Projekt")
+![](contentpage-images/solution-structure.png "Projektzuständigkeiten beim benutzerdefinierten Steuerelement CameraPage")
 
-Die `CameraPage` plattformspezifische Instanz gerendert wird `CameraPageRenderer` , alle abgeleiteten Klassen der `PageRenderer` Klasse für die betreffende Plattform. Dies führt in jeder `CameraPage` -Instanz mit einem live-Kamera-Feed, gerendert wird, wie in den folgenden Screenshots gezeigt:
+Die `CameraPage`-Instanz wird von plattformspezifischen `CameraPageRenderer`-Klassen gerendert, die alle von der `PageRenderer`-Klasse für diese Plattform abgeleitet werden. Wie in den folgenden Screenshots zu sehen ist, wird folglich jede `CameraPage`-Instanz mit einem Livekamerafeed gerendert:
 
 ![](contentpage-images/screenshots.png "CameraPage auf jeder Plattform")
 
-Die `PageRenderer` -Klasse macht die `OnElementChanged` -Methode, die aufgerufen wird, wenn die Xamarin.Forms-Seite erstellt wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert eine `ElementChangedEventArgs` Parameter mit `OldElement` und `NewElement` Eigenschaften. Diese Eigenschaften repräsentieren die Xamarin.Forms-Element, die den Renderer *wurde* angefügt, und das Xamarin.Forms-Element, die den Renderer *ist* angefügt wird, bzw. In diesem Beispiel die `OldElement` Eigenschaft `null` und `NewElement` Eigenschaft enthält einen Verweis auf die `CameraPage` Instanz.
+Die `PageRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung der Xamarin.Forms-Seite aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CameraPage`-Instanz.
 
-Eine außer Kraft gesetzte Version von der `OnElementChanged` -Methode in der die `CameraPageRenderer` Klasse ist der Ort, an die systemeigene Seite anpassen. Ein Verweis auf die Instanz der Xamarin.Forms-Seite, die gerendert wird erhalten Sie über die `Element` Eigenschaft.
+Die native Seitenanpassung kann in einer überschriebenen Version der `OnElementChanged`-Methode in der `CameraPageRenderer`-Klasse ausgeführt werden. Ein Verweis auf die zu rendernde Instanz der Xamarin.Forms-Seite kann über die `Element`-Eigenschaft bezogen werden.
 
-Mit jeder benutzerdefinierten Renderer-Klasse ergänzt wird ein `ExportRenderer` -Attribut, das den Renderer mit Xamarin.Forms registriert. Das-Attribut nimmt zwei Parameter: der Typname der Xamarin.Forms-Startseite, die gerendert wird, und der Typname des benutzerdefinierten Renderers. Die `assembly` Präfix, das das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
+Jede benutzerdefinierte Rendererklasse ist mit einem `ExportRenderer`-Attribut versehen, das den Renderer bei Xamarin.Forms registriert. Das Attribut benötigt zwei Parameter: den Typnamen der zu rendernden Xamarin.Forms-Seite und den Typnamen des benutzerdefinierten Renderers. Das Präfix `assembly` für das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
 
-Die folgenden Abschnitte beschreiben die Implementierung der `CameraPageRenderer` benutzerdefinierter Renderer für jede Plattform.
+In den folgenden Abschnitten wird die Implementierung des benutzerdefinierten `CameraPageRenderer`-Renderers für die einzelnen Plattformen erläutert.
 
-### <a name="creating-the-page-renderer-on-ios"></a>Erstellen die Seiten-Renderer für iOS
+### <a name="creating-the-page-renderer-on-ios"></a>Erstellen des Seitenrenderers unter iOS
 
-Das folgende Codebeispiel zeigt die Seite-Renderer für die iOS-Plattform:
+Im folgenden Codebeispiel wird der Seitenrenderer für die iOS-Plattform veranschaulicht:
 
 ```csharp
 [assembly:ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -151,13 +151,13 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Der Aufruf der Basisklasse `OnElementChanged` Methode instanziiert ein iOS `UIViewController` Steuerelement. Der live-Kamera-Stream wird nur gerendert werden, vorausgesetzt, dass der Renderer ist nicht mit einem vorhandenen Xamarin.Forms-Element bereits angefügt wurde und vorausgesetzt, dass eine Seiteninstanz vorhanden ist, wird, indem der benutzerdefinierte Renderer gerendert wird.
+Der Aufruf der `OnElementChanged`-Methode der Basisklasse instanziiert ein `UIViewController`-iOS-Steuerelement. Der Livekamerastream wird nur dann gerendert, wenn der Renderer nicht bereits an ein vorhandenes Xamarin.Forms-Element angehängt ist und wenn eine Seiteninstanz existiert, die vom benutzerdefinierten Renderer gerendert wird.
 
-Die Seite wird dann durch eine Reihe von Methoden, mit denen angepasst der `AVCapture` APIs zum Bereitstellen des livestreams von der Kamera und die Möglichkeit, ein Foto aufzunehmen.
+Die Seite wird dann durch eine Reihe von Methoden angepasst, die die `AVCapture`-APIs verwenden, um den Livestream von der Kamera und die Möglichkeit zur Aufnahme eines Fotos bereitzustellen.
 
-### <a name="creating-the-page-renderer-on-android"></a>Erstellen die Seiten-Renderer für Android
+### <a name="creating-the-page-renderer-on-android"></a>Erstellen des Seitenrenderers unter Android
 
-Das folgende Codebeispiel zeigt die Seite-Renderer für die Android-Plattform:
+Im folgenden Codebeispiel wird der Seitenrenderer für die Android-Plattform veranschaulicht:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -195,13 +195,13 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Der Aufruf der Basisklasse `OnElementChanged` Methode instanziiert eine Android `ViewGroup` -Steuerelement, das eine Gruppe von Sichten ist. Der live-Kamera-Stream wird nur gerendert werden, vorausgesetzt, dass der Renderer ist nicht mit einem vorhandenen Xamarin.Forms-Element bereits angefügt wurde und vorausgesetzt, dass eine Seiteninstanz vorhanden ist, wird, indem der benutzerdefinierte Renderer gerendert wird.
+Der Aufruf der `OnElementChanged`-Methode der Basisklasse instanziiert ein `ViewGroup`-Android-Steuerelement, bei dem es sich um eine Gruppe von Ansichten handelt. Der Livekamerastream wird nur dann gerendert, wenn der Renderer nicht bereits an ein vorhandenes Xamarin.Forms-Element angehängt ist und wenn eine Seiteninstanz existiert, die vom benutzerdefinierten Renderer gerendert wird.
 
-Die Seite wird dann durch den Aufruf einer Reihe von Methoden, mit denen angepasst der `Camera` -API zum Bereitstellen des livestreams von der Kamera und ein Foto, vor dem Aufzeichnen der `AddView` Methode wird aufgerufen, um die live-Kamera hinzuzufügen Benutzeroberfläche zum Streamen der `ViewGroup`. Beachten Sie, dass unter Android es auch erforderlich, außer Kraft setzen der `OnLayout` Methode zum Ausführen von Vorgängen von Measures und das Layout für die Sicht. Weitere Informationen finden Sie unter den [ContentPage Renderer Beispiel](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/).
+Die Seite wird dann durch den Aufruf einer Reihe von Methoden angepasst, die die `Camera`-API verwenden, um den Livestream der Kamera und die Möglichkeit zur Aufnahme eines Fotos bereitzustellen. Dies geschieht, bevor die `AddView`-Methode aufgerufen wird, um die Benutzeroberfläche für den Livekamerastream zum `ViewGroup`-Element hinzuzufügen. Beachten Sie, dass es bei Android zudem erforderlich ist, die `OnLayout`-Methode zu überschreiben, um Measure- und Layoutvorgänge für die Ansicht auszuführen. Weitere Informationen finden Sie im [Beispiel zum ContentPage-Renderer](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/).
 
-### <a name="creating-the-page-renderer-on-uwp"></a>Erstellen die Seiten-Renderer für UWP
+### <a name="creating-the-page-renderer-on-uwp"></a>Erstellen des Seitenrenderers auf der UWP
 
-Das folgende Codebeispiel zeigt die Seiten-Renderer für UWP:
+Im folgenden Codebeispiel wird der Seitenrenderer für die UWP veranschaulicht:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -241,16 +241,16 @@ namespace CustomRenderer.UWP
 
 ```
 
-Der Aufruf der Basisklasse `OnElementChanged` Methode instanziiert ein `FrameworkElement` -Steuerelement, auf der Seite gerendert wird. Der live-Kamera-Stream wird nur gerendert werden, vorausgesetzt, dass der Renderer ist nicht mit einem vorhandenen Xamarin.Forms-Element bereits angefügt wurde und vorausgesetzt, dass eine Seiteninstanz vorhanden ist, wird, indem der benutzerdefinierte Renderer gerendert wird. Die Seite wird dann durch den Aufruf einer Reihe von Methoden, mit denen angepasst der `MediaCapture` -API zum Bereitstellen des livestreams von der Kamera und die Möglichkeit, ein Foto aufzunehmen, bevor die benutzerdefinierte Seite hinzugefügt wird die `Children` Auflistung für die Anzeige.
+Der Aufruf der `OnElementChanged`-Methode der Basisklasse instanziiert ein `FrameworkElement`-Steuerelement, für das die Seite gerendert wird. Der Livekamerastream wird nur dann gerendert, wenn der Renderer nicht bereits an ein vorhandenes Xamarin.Forms-Element angehängt ist und wenn eine Seiteninstanz existiert, die vom benutzerdefinierten Renderer gerendert wird. Die Seite wird dann durch den Aufruf einer Reihe von Methoden angepasst, die die `MediaCapture`-API verwenden, um den Livestream der Kamera und die Möglichkeit zur Aufnahme eines Fotos bereitzustellen. Dies geschieht, bevor die angepasste Seite zur `Children`-Sammlung für die Anzeige hinzugefügt wird.
 
-Wenn einen benutzerdefinierten Renderer zu implementieren, die von abgeleitet `PageRenderer` auf UWP, die `ArrangeOverride` Methode sollte auch um die Steuerelemente, anordnen implementiert werden, da die Basis-Renderer wissen nicht, was Sie mit ihnen möglichen Aktionen. Führt dazu, andernfalls eine leere Seite. Aus diesem Grund in diesem Beispiel die `ArrangeOverride` Methodenaufrufe der `Arrange` Methode für die `Page` Instanz.
+Bei der Implementierung eines benutzerdefinierten Renderers, der von `PageRenderer` auf der UWP stammt, sollte auch die `ArrangeOverride`-Methode implementiert werden. Diese ordnet die Seitensteuerelemente an, da der Basisrenderer über keine Informationen zu deren Anordnung verfügt. Andernfalls ist das Ergebnis eine leere Seite. Aus diesem Grund ruft in diesem Beispiel die `ArrangeOverride`-Methode die `Arrange`-Methode auf der `Page`-Instanz auf.
 
 > [!NOTE]
-> Es ist wichtig, zum Stoppen und Verwerfen der Objekte, die Zugriff auf die Kamera in eine UWP-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, den Zugriff auf das Gerät die Kamera. Weitere Informationen finden Sie unter [zeigen die Kameravorschau](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
+> Es ist wichtig, die Objekte, die den Zugriff auf die Kamera ermöglichen, in einer UWP-Anwendung zu stoppen und zu löschen. Wenn dies nicht geschieht, kann dies andere Anwendungen beeinträchtigen, die versuchen, auf die Kamera des Geräts zuzugreifen. Weitere Informationen finden Sie unter [Display the camera preview (Anzeigen der Kameravorschau)](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel wurde beschrieben, wie zum Erstellen eines benutzerdefinierten Renderers für das [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) Seite ermöglichen Entwicklern, native standarddarstellung mit ihren eigenen plattformspezifische Anpassungen zu überschreiben. Ein `ContentPage` ist ein visuelles Element, das zeigt eine einzelnen Ansicht und der Großteil des Bildschirms einnimmt.
+In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für die [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Seite erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können. Ein `ContentPage`-Element ist ein visuelles Element, das eine Ansicht anzeigt, die den Großteil des Bildschirms einnimmt.
 
 
 ## <a name="related-links"></a>Verwandte Links

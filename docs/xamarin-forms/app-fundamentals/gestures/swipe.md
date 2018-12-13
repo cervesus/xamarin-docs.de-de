@@ -1,6 +1,6 @@
 ---
-title: Hinzufügen einer streifbewegung stiftbewegungs-Erkennung
-description: In diesem Artikel wird erläutert, wie Sie eine streifbewegung auf eine Ansicht zu erkennen.
+title: Hinzufügen einer Gestenerkennung für Wischbewegungen
+description: In diesem Artikel wird erläutert, wie eine Wischbewegung auf einer Ansicht erkannt werden kann.
 ms.prod: xamarin
 ms.assetid: 164976C2-1429-49FB-9EB6-621E2681C19B
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 08/14/2018
 ms.openlocfilehash: 95e95d8849824cd2dc31c2019627cc5adbbefeec
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50131524"
 ---
-# <a name="adding-a-swipe-gesture-recognizer"></a>Hinzufügen einer streifbewegung stiftbewegungs-Erkennung
+# <a name="adding-a-swipe-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Wischbewegungen
 
-_Eine streifbewegung tritt auf, wenn ein Finger auf dem Bildschirm in eine Richtung horizontal oder vertikal verschoben wird, und häufig verwendet, um die Navigation durch Inhalte zu initiieren. Die Codebeispiele in diesem Artikel stammen aus der [Streifbewegung](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/) Beispiel._
+_Eine Wischbewegung tritt auf, wenn ein Finger in horizontaler oder vertikaler Richtung über den Bildschirm bewegt wird. Diese Bewegung wird oft genutzt, um durch Inhalte zu navigieren. Die Codebeispiele in diesem Artikel stammen aus dem Beispiel [SwipeGesture](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)._
 
-Vornehmen einer [ `View` ](xref:Xamarin.Forms.View) erkennen Sie eine streifbewegung, erstellen Sie eine [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) Instanz, legen die [ `Direction` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction) Eigenschaft, um eine [ `SwipeDirection` ](xref:Xamarin.Forms.SwipeDirection) Enumerationswert (`Left`, `Right`, `Up`, oder `Down`) und optional die [ `Threshold` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) -Eigenschaft, das Handle der [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) -Ereignis, und fügen Sie der neuen stiftbewegungs-Erkennung, um die [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) Auflistung für die Sicht. Das folgende Codebeispiel zeigt eine `SwipeGestureRecognizer` angefügt, um eine [ `BoxView` ](xref:Xamarin.Forms.BoxView):
+Damit eine [`View`](xref:Xamarin.Forms.View)-Klasse eine Wischbewegung erkennt, erstellen Sie eine [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Instanz, legen die [`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction)-Eigenschaft auf einen [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection)-Enumerationswert (`Left`, `Right`, `Up` oder `Down`) fest, legen optional die [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold)-Eigenschaft fest, bearbeiten das [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)-Ereignis und fügen die neue Gestenerkennung für Wischbewegungen zur [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers)-Collection auf der Ansicht hinzu. Das folgende Codebeispiel zeigt eine `SwipeGestureRecognizer`-Klasse, die an eine [`BoxView`](xref:Xamarin.Forms.BoxView)-Klasse angefügt ist:
 
 ```xaml
 <BoxView Color="Teal" ...>
@@ -28,7 +28,7 @@ Vornehmen einer [ `View` ](xref:Xamarin.Forms.View) erkennen Sie eine streifbewe
 </BoxView>
 ```
 
-Hier ist das Äquivalent C# Code:
+Hier der entsprechende C#-Code:
 
 ```csharp
 var boxView = new BoxView { Color = Color.Teal, ... };
@@ -38,23 +38,23 @@ leftSwipeGesture.Swiped += OnSwiped;
 boxView.GestureRecognizers.Add(leftSwipeGesture);
 ```
 
-Die [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) -Klasse enthält auch eine [ `Threshold` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) Eigenschaft, die optional, um festgelegt werden eine `uint` Wert, der die minimale Wischen Entfernung darstellt, der für erzielt werden muss ein streichen Sie nach, um erkannt zu werden, in geräteunabhängigen Einheiten. Der Standardwert dieser Eigenschaft ist 100, was bedeutet, dass alle Kundenkarte, die weniger als 100 geräteunabhängige Einheiten werden ignoriert.
+Die [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Klasse enthält auch eine [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold)-Eigenschaft, die optional auf einen `uint`-Wert festgelegt werden kann, der in geräteunabhängigen Einheiten die minimale Strecke angibt, die gewischt werden muss, damit eine Bewegung erkannt wird. Der Standardwert dieser Eigenschaft beträgt 100 und bedeutet, dass alle Wischbewegungen mit einer Länge von unter 100 geräteunabhängigen Einheiten ignoriert werden.
 
-## <a name="recognizing-the-swipe-direction"></a>Erkennt die Richtung Wischen
+## <a name="recognizing-the-swipe-direction"></a>Erkennen der Wischrichtung
 
-In den obigen Beispielen die [ `Direction` ](xref:Xamarin.Forms.SwipedEventArgs.Direction) -Eigenschaftensatz auf einzelne einen Wert aus der [ `SwipeDirection` ](xref:Xamarin.Forms.SwipeDirection) Enumeration. Es ist jedoch auch möglich, diese Eigenschaft festzulegen, um mehrere Werte aus der `SwipeDirection` Enumeration, sodass die [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) Ereignis wird ausgelöst, als Reaktion auf ein Wischen nach in beide Richtungen. Die Einschränkung ist jedoch ein einzelnes [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) Kundenkarte, die auftreten, können nur auf der gleichen Achse erkennen. Aus diesem Grund für die Kundenkarte, die auf der horizontalen Achse auftreten, erkannt werden können, durch Festlegen der `Direction` Eigenschaft `Left` und `Right`:
+In den obigen Beispielen wird die [`Direction`](xref:Xamarin.Forms.SwipedEventArgs.Direction)-Eigenschaft auf einen einzelnen Wert aus der [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection)-Enumeration festgelegt. Es ist jedoch auch möglich, diese Eigenschaft auf mehrere Werte aus der `SwipeDirection`-Enumeration festzulegen, sodass das [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)-Ereignis als Antwort auf eine Wischbewegung in mehrere Richtungen ausgelöst wird. Dies wird jedoch dadurch eingeschränkt, dass eine einzelne [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Klasse nur Wischbewegungen erkennen kann, die auf derselben Achse vorkommen. Deshalb können Wischbewegungen auf der horizontalen Achse erkannt werden, indem die `Direction`-Eigenschaft auf `Left` und `Right` festgelegt wird:
 
 ```xaml
 <SwipeGestureRecognizer Direction="Left,Right" Swiped="OnSwiped"/>
 ```
 
-Auf ähnliche Weise für die Kundenkarte, die auf der vertikalen Achse auftreten, erkannt werden können, durch Festlegen der [ `Direction` ](xref:Xamarin.Forms.SwipedEventArgs.Direction) Eigenschaft `Up` und `Down`:
+Auf ähnliche Weise können Wischbewegungen auf der vertikalen Achse erkannt werden, indem die [`Direction`](xref:Xamarin.Forms.SwipedEventArgs.Direction)-Eigenschaft auf `Up` und `Down` festgelegt wird:
 
 ```csharp
 var swipeGesture = new SwipeGestureRecognizer { Direction = SwipeDirection.Up | SwipeDirection.Down };
 ```
 
-Sie können auch eine [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) für jede Wischen Richtung erstellt werden kann, um die Kundenkarte in jede Richtung zu erkennen:
+Alternativ kann eine [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Klasse für jede Wischrichtung erstellt werden, damit Wischbewegungen in alle Richtungen erkannt werden können:
 
 ```xaml
 <BoxView Color="Teal" ...>
@@ -67,7 +67,7 @@ Sie können auch eine [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestu
 </BoxView>
 ```
 
-Hier ist das Äquivalent C# Code:
+Hier der entsprechende C#-Code:
 
 ```csharp
 var boxView = new BoxView { Color = Color.Teal, ... };
@@ -87,11 +87,11 @@ boxView.GestureRecognizers.Add(downSwipeGesture);
 ```
 
 > [!NOTE]
-> In den obigen Beispielen, der denselben Ereignishandler reagiert auf die [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) Auslösen von Ereignissen. Jedoch jede [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) Instanz kann bei Bedarf einen anderer Ereignishandler verwenden.
+> In den obigen Beispielen reagiert derselbe Ereignishandler auf die Auslösung des [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)-Ereignisses. Falls erforderlich kann jedoch jede [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Instanz einen anderen Ereignishandler verwenden.
 
-## <a name="responding-to-the-swipe"></a>Reagieren auf das Wischen
+## <a name="responding-to-the-swipe"></a>Reagieren auf die Wischbewegung
 
-Ein Ereignishandler für die [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) Ereignis wird im folgenden Beispiel gezeigt:
+Ein Ereignishandler für das [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)-Ereignis wird im folgenden Beispiel gezeigt:
 
 ```csharp
 void OnSwiped(object sender, SwipedEventArgs e)
@@ -114,11 +114,11 @@ void OnSwiped(object sender, SwipedEventArgs e)
 }
 ```
 
-Die [ `SwipedEventArgs` ](xref:Xamarin.Forms.SwipedEventArgs) untersucht werden kann, um zu bestimmen, die Richtung des Streifen, benutzerdefinierte Logik, die auf das Wischen nach Bedarf reagieren. Die Richtung des Streifen abgerufen werden kann, aus der [ `Direction` ](xref:Xamarin.Forms.SwipedEventArgs.Direction) Eigenschaft der Ereignisargumente, die auf einen der Werte festgelegt werden, wird die [ `SwipeDirection` ](xref:Xamarin.Forms.SwipeDirection) Enumeration. Darüber hinaus die Ereignisargumente auch haben eine [ `Parameter` ](xref:Xamarin.Forms.SwipedEventArgs.Parameter) -Eigenschaft, die auf den Wert der festgelegt werden, die [ `CommandParameter` ](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter) -Eigenschaft, wenn definiert.
+Die [`SwipedEventArgs`](xref:Xamarin.Forms.SwipedEventArgs)-Klasse kann untersucht werden, um die Richtung der Wischbewegung zu bestimmen, wobei benutzerdefinierte Logik nach Bedarf auf die Wischbewegung reagiert. Die Richtung der Wischbewegung kann aus der [`Direction`](xref:Xamarin.Forms.SwipedEventArgs.Direction)-Eigenschaft der Ereignisargumente abgerufen werden, die auf einen der Werte aus der [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection)-Enumeration festgelegt wird. Darüber hinaus verfügen die Ereignisargumente auch über eine [`Parameter`](xref:Xamarin.Forms.SwipedEventArgs.Parameter)-Eigenschaft, die auf den Wert der [`CommandParameter`](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter)-Eigenschaft festgelegt wird, sofern definiert.
 
-## <a name="using-commands"></a>Mithilfe von Befehlen
+## <a name="using-commands"></a>Verwenden von Befehlen
 
-Die [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) -Klasse enthält auch [ `Command` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Command) und [ `CommandParameter` ](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter) Eigenschaften. Diese Eigenschaften werden in der Regel in Anwendungen verwendet, die die Model-View-ViewModel (MVVM)-Muster verwenden. Die `Command` -Eigenschaft definiert die `ICommand` aufgerufen werden, wenn eine streifbewegung erkannt wird, mit der `CommandParameter` Eigenschaft definieren ein Objekt übergeben werden soll die `ICommand.` im folgenden Codebeispiel wird veranschaulicht, wie zum Binden der `Command` Eigenschaft, um eine `ICommand` im Ansichtsmodell, deren Instanz, wie die Seite festgelegt wird, definiert [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext):
+Die [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Klasse enthält auch [`Command`](xref:Xamarin.Forms.SwipeGestureRecognizer.Command)- und [`CommandParameter`](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter)-Eigenschaften. Diese Eigenschaften werden in der Regel in Anwendungen mit Model View ViewModel (MVVM)-Muster verwendet. Die `Command`-Eigenschaft definiert den `ICommand`, der aufgerufen werden soll, wenn eine Wischbewegung erkannt wurde. Die `CommandParameter`-Eigenschaft definiert dabei ein Objekt, das an den `ICommand.` übergeben werden soll. Im folgenden Codebeispiel wird gezeigt, wie die `Command`-Eigenschaft an einen `ICommand` gebunden wird, der im Ansichtsmodell definiert und dessen Instanz als [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft der Seite festgelegt wurde:
 
 ```csharp
 var boxView = new BoxView { Color = Color.Teal, ... };
@@ -127,7 +127,7 @@ leftSwipeGesture.SetBinding(SwipeGestureRecognizer.CommandProperty, "SwipeComman
 boxView.GestureRecognizers.Add(leftSwipeGesture);
 ```
 
-Der entsprechende XAML-Code ist:
+Der entsprechende XAML-Code lautet wie folgt:
 
 ```xaml
 <BoxView Color="Teal" ...>
@@ -137,11 +137,11 @@ Der entsprechende XAML-Code ist:
 </BoxView>
 ```
 
-`SwipeCommand` ist eine Eigenschaft vom Typ `ICommand` in der Ansicht-Modell-Instanz, die als die Seite "festgelegt ist definiert [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext). Wenn eine streifbewegung erkannt wird, die `Execute` Methode der `SwipeCommand` Objekt ausgeführt wird. Das Argument für die `Execute` Methode ist der Wert der [ `CommandParameter` ](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter) Eigenschaft. Weitere Informationen zu Befehlen finden Sie unter [die Befehlsschnittstelle](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
+`SwipeCommand` ist eine Eigenschaft vom Typ `ICommand`, der in der Ansichtsmodellinstanz definiert und als [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft der Seite festgelegt wurde. Wenn eine Wischbewegung erkannt wurde, wird die `Execute`-Methode des `SwipeCommand`-Objekts ausgeführt. Das Argument an die `Execute`-Methode ist der Wert der [`CommandParameter`](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter)-Eigenschaft. Weitere Informationen zu Befehlen finden Sie unter [The Xamarin.Forms Command Interface (Die Xamarin.Forms-Befehlsschnittstelle)](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
 
-## <a name="creating-a-swipe-container"></a>Erstellen eines Containers Wischen
+## <a name="creating-a-swipe-container"></a>Erstellen eines Wischcontainers
 
-Die `SwipeContainer` -Klasse, die im folgenden Codebeispiel gezeigt wird, ist eine verallgemeinerte Wischen-Erkennung-Klasse, die umschließt eine [ `View` ](xref:Xamarin.Forms.View) Wischen gestenerkennung ausführen:
+Die `SwipeContainer`-Klasse, die im folgenden Codebeispiel gezeigt wird, ist eine verallgemeinerte Klasse zur Erkennung von Wischbewegungen, die eine [`View`](xref:Xamarin.Forms.View)-Klasse umschließen kann, um die Erkennung von Wischbewegungen durchzuführen:
 
 ```csharp
 public class SwipeContainer : ContentView
@@ -165,9 +165,9 @@ public class SwipeContainer : ContentView
 }
 ```
 
-Die `SwipeContainer` -Klasse erstellt [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) von Objekten für alle vier Wischen Richtungen, und fügt `Swipe` -Ereignishandler. Rufen Sie diese Ereignishandler die `Swipe` Ereignisses definiert, durch die `SwipeContainer`.
+Die `SwipeContainer`-Klasse erstellt [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Objekte für alle vier Wischrichtungen und fügt `Swipe`-Ereignishandler an. Diese Ereignishandler rufen das `Swipe`-Ereignis auf, das durch den `SwipeContainer` definiert wird.
 
-Das folgende Beispiel zeigt für die XAML-Code der `SwipeContainer` Klasse umschließen einer [ `BoxView` ](xref:Xamarin.Forms.BoxView):
+Das folgende XAML-Codebeispiel zeigt die Klasse `SwipeContainer`, die ein [`BoxView`](xref:Xamarin.Forms.BoxView)-Element umschließt:
 
 ```xaml
 <ContentPage ...>
@@ -179,7 +179,7 @@ Das folgende Beispiel zeigt für die XAML-Code der `SwipeContainer` Klasse umsch
 </ContentPage>
 ```
 
-Das folgende Codebeispiel zeigt die `SwipeContainer` dient als Wrapper für eine [ `BoxView` ](xref:Xamarin.Forms.BoxView) in eine C# Seite:
+Das folgende Codebeispiel veranschaulicht, wie die Klasse `SwipeContainer` ein [`BoxView`](xref:Xamarin.Forms.BoxView)-Element auf einer C#-Seite umschließt:
 
 ```csharp
 public class SwipeContainerPageCS : ContentPage
@@ -201,10 +201,10 @@ public class SwipeContainerPageCS : ContentPage
 }
 ```
 
-Wenn der [ `BoxView` ](xref:Xamarin.Forms.BoxView) empfängt eine streifbewegung der [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) Ereignis in der [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) ausgelöst wird. Dies erfolgt durch die `SwipeContainer` -Klasse, die eine eigene löst `Swipe` Ereignis. Dies `Swipe` Ereignis erfolgt auf der Seite. Die [ `SwipedEventArgs` ](xref:Xamarin.Forms.SwipedEventArgs) können dann untersucht werden, um zu bestimmen, die Richtung des Streifen, benutzerdefinierte Logik, die auf das Wischen nach Bedarf reagieren.
+Wenn die [`BoxView`](xref:Xamarin.Forms.BoxView)-Klasse eine Wischbewegung empfängt, wird das [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)-Ereignis in der [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Klasse ausgelöst. Dies erfolgt durch die `SwipeContainer`-Klasse, die ihr eigenes `Swipe`-Ereignis auslöst. Dieses `Swipe`-Ereignis wird auf der Seite behandelt. Die [`SwipedEventArgs`](xref:Xamarin.Forms.SwipedEventArgs)-Klasse kann dann untersucht werden, um die Richtung der Wischbewegung zu bestimmen, wobei benutzerdefinierte Logik nach Bedarf auf die Wischbewegung reagiert.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Die Streifbewegung (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)
+- [SwipeGesture (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [SwipeGestureRecognizer](xref:Xamarin.Forms.SwipeGestureRecognizer)

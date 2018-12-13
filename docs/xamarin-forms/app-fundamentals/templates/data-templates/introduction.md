@@ -1,6 +1,6 @@
 ---
 title: Einführung in Xamarin.Forms-Datenvorlagen
-description: Xamarin.Forms-Datenvorlagen bieten die Möglichkeit, die Darstellung von Daten für unterstützte Steuerelemente zu definieren. Dieser Artikel enthält eine Einführung in die Data-Vorlagen, untersuchen, warum sie erforderlich sind.
+description: Mit Xamarin.Forms-Datenvorlagen können Sie die Darstellung von Daten in unterstützten Steuerelementen definieren. In diesem Artikel werden Datenvorlagen grundlegend vorgestellt, und es wird erläutert, warum sie nötig sind.
 ms.prod: xamarin
 ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 129ce7a04b93bfb3cb1b9a1639aee61cd56d09d5
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998913"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Einführung in Xamarin.Forms-Datenvorlagen
 
-_Xamarin.Forms-Datenvorlagen bieten die Möglichkeit, die Darstellung von Daten für unterstützte Steuerelemente zu definieren. Dieser Artikel enthält eine Einführung in die Data-Vorlagen, untersuchen, warum sie erforderlich sind._
+_Mit Xamarin.Forms-Datenvorlagen können Sie die Darstellung von Daten in unterstützten Steuerelementen definieren. In diesem Artikel werden Datenvorlagen grundlegend vorgestellt, und es wird erläutert, warum sie nötig sind._
 
-Erwägen Sie eine [ `ListView` ](xref:Xamarin.Forms.ListView) , die zeigt, dass eine Auflistung von `Person` Objekte. Das folgende Codebeispiel zeigt die Definition der `Person` Klasse:
+Nehmen wir an, Sie haben eine [`ListView`](xref:Xamarin.Forms.ListView)-Klasse, die eine Sammlung von `Person`-Objekten anzeigt. Das folgende Codebeispiel veranschaulicht die Definition der `Person`-Klasse:
 
 ```csharp
 public class Person
@@ -29,7 +29,7 @@ public class Person
 }
 ```
 
-Die `Person` -Klasse definiert `Name`, `Age`, und `Location` Eigenschaften, die dann festgelegt werden, können eine `Person` Objekt erstellt wird. Die [ `ListView` ](xref:Xamarin.Forms.ListView) wird verwendet, um die Auflistung der Anzeige `Person` Objekte, wie in den folgenden XAML-Codebeispiel gezeigt:
+Die `Person`-Klasse definiert die Eigenschaften `Name`, `Age` und `Location`, die Sie beim Erstellen eines `Person`-Objekts festlegen können. Die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse zeigt die Sammlung der `Person`-Objekte wie in diesem XAML-Codebeispiel veranschaulicht:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -54,12 +54,12 @@ Die `Person` -Klasse definiert `Name`, `Age`, und `Location` Eigenschaften, die 
 </ContentPage>
 ```
 
-Elemente werden hinzugefügt, um die [ `ListView` ](xref:Xamarin.Forms.ListView) in XAML durch die Initialisierung der [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) Eigenschaft aus einem Array von `Person` Instanzen.
+Sie können der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse in XAML Elemente hinzufügen, indem Sie die Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) aus einem Array von `Person`-Instanzen heraus initialisieren.
 
 > [!NOTE]
-> Beachten Sie, dass die `x:Array` -Element ist ein `Type` Attribut, der angibt, der des Typs der Elemente im Array.
+> Bedenken Sie, dass Sie für das Element `x:Array` ein `Type`-Attribute benötigen, das die Elementtypen im Array angibt.
 
-Die entsprechende C#-Seite wird angezeigt, in dem folgenden Codebeispiel wird die initialisiert die [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) Eigenschaft, um eine `List` von `Person` Instanzen:
+Die entsprechende C#-Seite ist im folgenden Codebeispiel enthalten, das die Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) für eine Liste (`List`) von`Person`-Instanzen initialisiert:
 
 ```csharp
 public WithoutDataTemplatePageCS()
@@ -86,11 +86,11 @@ public WithoutDataTemplatePageCS()
 }
 ```
 
-Die [ `ListView` ](xref:Xamarin.Forms.ListView) Aufrufe `ToString` beim Anzeigen der Objekte in der Auflistung. Da gibt es keine `Person.ToString` außer Kraft setzen, `ToString` gibt den Typnamen, der jedes Objekt zurück, wie in den folgenden Screenshots gezeigt:
+Die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse ruft beim Anzeigen der Sammlungsobjekte `ToString` auf. Da `Person.ToString` nicht außer Kraft gesetzt wird, wird für `ToString` der Typname jedes einzelnen Objekts zurückgegeben, wie in den folgenden Screenshots gezeigt:
 
-![](introduction-images/no-data-template.png "ListView ohne eine Datenvorlage")
+![](introduction-images/no-data-template.png "ListView ohne Datenvorlage")
 
-Die `Person` Objekt kann außer Kraft setzen der `ToString` Methode, um aussagekräftige Daten anzuzeigen, wie im folgenden Codebeispiel gezeigt:
+Wie im folgenden Codebeispiel gezeigt, kann das Objekt `Person` die `ToString`-Methode überschreiben, damit aussagekräftige Daten angezeigt werden:
 
 ```csharp
 public class Person
@@ -103,38 +103,38 @@ public class Person
 }
 ```
 
-Dadurch wird die [ `ListView` ](xref:Xamarin.Forms.ListView) Anzeigen der `Person.Name` Wert der Eigenschaft für jedes Objekt in der Auflistung, wie in den folgenden Screenshots gezeigt:
+Wie im nachfolgenden Screenshot zu sehen, zeigt dadurch das Element [`ListView`](xref:Xamarin.Forms.ListView) für jedes Objekt in der Sammlung den Wert der Eigenschaft `Person.Name` an:
 
 ![](introduction-images/override-tostring.png "ListView mit einer Datenvorlage")
 
-Die `Person.ToString` außer Kraft setzen kann eine formatierte Zeichenfolge, die mit Zurückgeben der `Name`, `Age`, und `Location` Eigenschaften. Dieser Ansatz bietet jedoch nur eine eingeschränkte Steuerung der Darstellung der einzelnen Elemente der Daten. Zur Erhöhung der Flexibilität eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) können erstellt werden, die die Darstellung der Daten definiert.
+Durch die Außerkraftsetzung von `Person.ToString` kann eine formatierte Zeichenfolge zurückgegeben werden, die aus den Eigenschaften `Name`, `Age` und `Location` besteht. So haben Sie jedoch nur wenig Kontrolle über die Darstellung der einzelnen Daten. Für mehr Flexibilität können Sie eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse erstellen, die die Darstellung der Daten definiert.
 
-## <a name="creating-a-datatemplate"></a>Erstellen ein DataTemplate-Element
+## <a name="creating-a-datatemplate"></a>Erstellen einer Datenvorlage
 
-Ein [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) verwendet, um die Darstellung der Daten anzugeben, und in der Regel die Datenbindung zum Anzeigen von Daten verwendet. Die allgemeinen Verwendungsszenario ist beim Anzeigen von Daten aus einer Auflistung von Objekten in einem [ `ListView` ](xref:Xamarin.Forms.ListView). Z. B., wenn eine `ListView` gebunden ist, auf eine Auflistung von `Person` Objekte, die `ListView.ItemTemplate` Eigenschaft auf festgelegt ein `DataTemplate` , definiert die Darstellung der einzelnen `Person` -Objekt in der `ListView`. Die `DataTemplate` enthält Elemente, die Bindung an Eigenschaftswerte der einzelnen `Person` Objekt. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
+Mit einer [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse legen Sie die Darstellung der Daten fest. Zum Anzeigen der Daten wird für gewöhnlich eine Datenbindung verwendet. Diese Klasse findet häufig Anwendung, wenn Daten aus einer Objektsammlung einer [`ListView`](xref:Xamarin.Forms.ListView)-Klasse angezeigt werden sollen. Ein mögliches Szenario wäre eine `ListView`-Klasse, die an eine Sammlung von `Person`-Objekten gebunden ist. Die `ListView.ItemTemplate`-Eigenschaft wird auf eine `DataTemplate`-Klasse festgelegt, die die Darstellung der einzelnen `Person`-Objekte in der `ListView`-Klasse definiert. Die `DataTemplate`-Klasse enthält Elemente, die an die Eigenschaftswerte der einzelnen `Person` Objekte gebunden sind. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
 
-Ein [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) können als Wert verwendet werden, für die folgenden Eigenschaften:
+Eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse kann als Wert für die folgenden Eigenschaften verwendet werden:
 
 - [`ListView.HeaderTemplate`](xref:Xamarin.Forms.ListView.HeaderTemplate)
 - [`ListView.FooterTemplate`](xref:Xamarin.Forms.ListView.FooterTemplate)
 - [`ListView.GroupHeaderTemplate`](xref:Xamarin.Forms.ListView.GroupHeaderTemplate)
-- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1), die von geerbt wird [ `ListView` ](xref:Xamarin.Forms.ListView).
-- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1), die von geerbt wird [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage), [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage), und [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage).
+- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1), von der [`ListView`](xref:Xamarin.Forms.ListView) erbt
+- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1), von der [`CarouselPage`](xref:Xamarin.Forms.CarouselPage), [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) und [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) erben
 
 > [!NOTE]
-> Beachten Sie, dass, obwohl die [ `TableView` ](xref:Xamarin.Forms.TableView) verwendet [ `Cell` ](xref:Xamarin.Forms.Cell) Objekte aufweist, wird nicht verwendet eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Dies ist, da der datenbindungen, die direkt auf always festgelegt sind `Cell` Objekte.
+> Bedenken Sie Folgendes: Obwohl das [`TableView`](xref:Xamarin.Forms.TableView)-Element [`Cell`](xref:Xamarin.Forms.Cell)-Objekte verwendet, wird kein [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Element verwendet Das liegt daran, dass Datenbindungen immer direkt bei `Cell`-Objekten festgelegt werden.
 
-Ein [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) befindet, die als direkt untergeordnetes Element der oben aufgeführten Eigenschaften als bekannt ist, eine *Inlinevorlage*. Sie können auch eine `DataTemplate` kann als eine Ressource Steuerungsebene, Seiten- oder Anwendungsebene definiert werden. Auswählen des Installationsorts für das Definieren einer [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) wirkt sich auf, wo sie verwendet werden kann:
+Eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse, die den oben aufgelisteten Eigenschaften direkt untergeordnet ist, wird als *Inlinevorlage* bezeichnet. Sie können eine `DataTemplate`-Klasse aber auch als Ressource auf Steuerelement-, Seiten- oder Anwendungsebene definieren. Die Entscheidung, wo Sie eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse definieren, hat Einfluss darauf, wo Sie sie verwenden können:
 
-- Ein [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) definiert an das Steuerelement kann auf Ebene nur für das Steuerelement angewendet werden.
-- Ein [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) definiert auf der Seite Ebene auf mehrere gültige Steuerelemente auf der Seite angewendet werden kann.
-- Ein [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) auf Anwendungsebene definierten gültigen angewendeten Steuerelemente in der gesamten Anwendung werden können.
+- Eine auf Steuerelementebene definierte [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse kann nur auf ein bestimmtes Steuerelement angewendet werden.
+- Eine auf Seitenebene definierte [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse kann auf mehrere gültige Steuerelemente auf einer Seite angewendet werden.
+- Eine auf Anwendungsebene definierte [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse können Sie für alle gültigen Steuerelemente einer Anwendung nutzen.
 
-Weiter unten in der Hierarchie von Inhaltsansichten Datenvorlagen haben Vorrang vor den definierten höher einrichten, bei der Freigabe `x:Key` Attribute. Z. B. eine Datenvorlage auf Anwendungsebene werden in der Vorlage auf Seitenebene Daten überschrieben, und eine Datenvorlage auf Seitenebene wird durch eine Steuerungsebene Datenvorlage oder eine Inlinevorlage für die Daten überschrieben werden.
+Datenvorlagen, die weiter unten in der Hierarchie der Ansichten angeordnet sind, haben Vorrang vor denjenigen, die sich weiter oben befinden. Voraussetzung ist, dass gemeinsame `x:Key`-Attribute vorliegen. So gilt z. B. Folgendes: Eine Datenvorlage auf Anwendungsebene wird von einer Datenvorlage auf Seitenebene außer Kraft gesetzt. Die Datenvorlage auf Seitenebene wiederum kann durch eine Datenvorlage auf Steuerelementebene oder eine Inlinedatenvorlage außer Kraft gesetzt werden.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Darstellung von Zellen](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [Datenvorlagen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
-- [DataTemplate-Element](xref:Xamarin.Forms.DataTemplate)
+- [Data Templates (Datenvorlagen (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+- [DataTemplate](xref:Xamarin.Forms.DataTemplate)

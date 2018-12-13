@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms lokale Datenbanken
-description: Xamarin.Forms unterstützt die Datenbank-gestützten Anwendungen, die die SQLite-Datenbank-Engine, die es ermöglicht, laden und Speichern von Objekten in freigegebenem Code verwenden. In diesem Artikel wird beschrieben, wie Xamarin.Forms-Anwendungen lesen und Schreiben von Daten in eine lokale SQLite-Datenbank, die mithilfe von SQLite.Net können.
+title: Lokale Datenbanken von Xamarin.Forms
+description: Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über die SQLite-Datenbank-Engine. Dadurch ist es möglich, Objekte in freigegebenem Code zu laden und zu speichern. In diesem Artikel wird beschrieben, wie Xamarin.Forms-Apps Daten mithilfe von SQLite.Net in eine lokale SQLite-Datenbank lesen und schreiben können.
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
@@ -9,41 +9,41 @@ ms.author: dabritch
 ms.date: 06/21/2018
 ms.openlocfilehash: 05c77c4c47841a897d0d1de5c3ba004db524ea2d
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "36310139"
 ---
-# <a name="xamarinforms-local-databases"></a>Xamarin.Forms lokale Datenbanken
+# <a name="xamarinforms-local-databases"></a>Lokale Datenbanken von Xamarin.Forms
 
-_Xamarin.Forms unterstützt die Datenbank-gestützten Anwendungen, die die SQLite-Datenbank-Engine, die es ermöglicht, laden und Speichern von Objekten in freigegebenem Code verwenden. In diesem Artikel wird beschrieben, wie Xamarin.Forms-Anwendungen lesen und Schreiben von Daten in eine lokale SQLite-Datenbank, die mithilfe von SQLite.Net können._
+_Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über die SQLite-Datenbank-Engine. Dadurch ist es möglich, Objekte in freigegebenem Code zu laden und zu speichern. In diesem Artikel wird beschrieben, wie Xamarin.Forms-Apps Daten mithilfe von SQLite.Net in eine lokale SQLite-Datenbank lesen und schreiben können._
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Forms-Anwendungen können die [von SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) Paket integrieren Datenbankoperationen in freigegebenen Code durch Verweisen auf die `SQLite` Klassen, die in NuGet ausgeliefert. Datenbankvorgänge können in der .NET Standard Library-Projekts die Xamarin.Forms-Projektmappe definiert werden.
+Xamarin.Forms-Apps können das Paket [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) verwenden, um Datenbankvorgänge in freigegebenen Code zu integrieren, indem auf die `SQLite`-Klassen verwiesen wird, die im NuGet-Paket enthalten sind. Datenbankvorgänge können im Projekt der .NET Standard-Bibliothek der Xamarin.Forms-Projektmappe definiert werden.
 
-Die zugehörigen [beispielanwendung](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) ist eine einfache Aufgabenlisten Anwendung. Die folgenden Screenshots zeigen, wie das Beispiel auf jeder Plattform angezeigt wird:
+Bei der zugehörigen [Beispielanwendung](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) handelt es sich um eine einfache App für To-do-Listen. Auf den folgenden Screenshots wird veranschaulicht, wie das Beispiel auf jeder Plattform angezeigt wird:
 
-[![Xamarin.Forms-Datenbank-Beispielscreenshots](databases-images/todo-list-sml.png "\"Todolist\" erste Page Screenshots")](databases-images/todo-list.png#lightbox "\"Todolist\" erste Page Screenshots") [ ![ Xamarin.Forms-Datenbank-Beispielscreenshots](databases-images/todo-list-sml.png "\"Todolist\" erste Page Screenshots")](databases-images/todo-list.png#lightbox "\"Todolist\" erste Page Screenshots")
+[![Screenshots der Xamarin.Forms-Beispieldatenbank](databases-images/todo-list-sml.png "Screenshots der ersten Seite von TodoList")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite von TodoList") [![Screenshots der Xamarin.Forms-Beispieldatenbank](databases-images/todo-list-sml.png "Screenshots der ersten Seite von TodoList")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite von TodoList")
 
 <a name="Using_SQLite_with_PCL" />
 
-## <a name="using-sqlite"></a>Mithilfe von SQLite
+## <a name="using-sqlite"></a>Verwendung von SQLite
 
-Verwenden Sie die NuGet Search-Funktion zum Hinzufügen der SQLite-Unterstützung in einer Xamarin.Forms .NET Standard-Bibliothek finden **Sqlite-Net-Pcl** und das neueste Paket zu installieren:
+Verwenden Sie zum Hinzufügen des SQLite-Support zu einer .NET Standard-Bibliothek von Xamarin.Forms die Suchfunktion von NuGet, um **sqlite-net-pcl** zu finden und das neueste Paket zu installieren:
 
-![Hinzufügen von NuGet-SQLite.NET PCL-Pakets](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet von SQLite.NET PCL-Paket hinzufügen")
+![Hinzufügen des Pakets von NuGet SQLite.NET PCL](databases-images/vs2017-sqlite-pcl-nuget.png "Hinzufügen des Pakets von NuGet SQLite.NET PCL")
 
-Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen, das richtige Paket verfügt über diese Attribute:
+Es gibt mehrere NuGet-Pakete mit ähnlichen Namen. Das richtige Paket verfügt über folgende Attribute:
 
 - **Erstellt von:** Frank A. Krueger
-- **ID:** Sqlite-Net-Plc
-- **NuGet-Link:** [Sqlite-Net-Plc](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **ID:** sqlite-net-pcl
+- **NuGet-Link:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> Trotz der Paketname, verwenden Sie die **Sqlite-Net-Pcl** NuGet-Paket auch in .NET Standard-Projekte.
+> Verwenden Sie trotz des Paketnamens in .NET Standard-Projekten das NuGet-Paket **sqlite-net-pcl**.
 
-Nachdem der Verweis hinzugefügt wurde, fügen Sie eine Eigenschaft, die `App` Klasse, die einen lokalen Pfad zum Speichern der Datenbank zurückgibt:
+Wenn der Verweis hinzugefügt wurde, fügen Sie eine Eigenschaft zur `App`-Klasse hinzu, die einen lokalen Dateipfad zum Speichern der Datenbank zurückgibt:
 
 ```csharp
 static TodoItemDatabase database;
@@ -62,7 +62,7 @@ public static TodoItemDatabase Database
 }
 ```
 
-Die `TodoItemDatabase` -Konstruktor, der den Pfad für die Datenbankdatei als Argument akzeptiert, wird im folgenden dargestellt:
+Der Konstruktor `TodoItemDatabase`, der den Pfad zur Datenbankdatei als Argument verwendet, wird nachfolgend gezeigt:
 
 ```csharp
 public TodoItemDatabase(string dbPath)
@@ -72,9 +72,9 @@ public TodoItemDatabase(string dbPath)
 }
 ```
 
-Der Vorteil die Datenbank verfügbar zu machen, da ein Singleton ist, dass eine einzelne datenbankverbindung erstellt wird, der beim Ausführen der Anwendung geöffnet gehalten wird ausgeführt wird, aus diesem Grund und ein Datenbankvorgangs vermeidet die Kosten für öffnen und schließen die Datenbankdatei jedes Mal ausgeführt wird.
+Durch das Bereitstellen der Datenbank als Singleton kann eine einzelne Datenbankverbindung erstellt werden, die während der Ausführung der App offen bleibt, sodass der Aufwand für das Öffnen und Schließen der Datenbank beim Ausführen des Datenbankvorgangs vermieden wird.
 
-Der Rest der `TodoItemDatabase` Klasse enthält die SQLite-Abfragen, die plattformübergreifend ausgeführt. Beispielcode für die Abfrage wird unten angezeigt (Weitere Details zur Syntax finden Sie im [Verwenden von SQLite.NET, mit Xamarin.iOS](~/ios/data-cloud/data/using-sqlite-orm.md).
+Der Rest der `TodoItemDatabase`-Klasse enthält SQLite-Abfragen, die plattformübergreifend ausgeführt werden. Nachfolgend wird ein Beispielcode für eine Abfrage angezeigt. Weitere Informationen finden Sie unter [Using SQLite.NET with Xamarin.iOS (Verwenden von SQLite.NET mit Xamarin.iOS)](~/ios/data-cloud/data/using-sqlite-orm.md).
 
 ```csharp
 public Task<List<TodoItem>> GetItemsAsync()
@@ -110,16 +110,16 @@ public Task<int> DeleteItemAsync(TodoItem item)
 ```
 
 > [!NOTE]
-> Der Vorteil der Verwendung der asynchronen von SQLite.Net-API ist diese Datenbank, die Vorgänge in Hintergrundthreads verschoben werden. Darüber hinaus besteht keine Notwendigkeit zum Schreiben von Code behandeln, da die-API es übernimmt Erhöhung der Parallelität zur Verfügung.
+> Durch die Verwendung der asynchronen SQLite.Net-API können Datenbankvorgänge in Hintergrundthreads verschoben werden. Darüber hinaus muss kein zusätzlicher Parallelitätsbearbeitungscode geschrieben werden, da sich die API darum kümmert.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Xamarin.Forms unterstützt die Datenbank-gestützten Anwendungen, die die SQLite-Datenbank-Engine, die es ermöglicht, laden und Speichern von Objekten in freigegebenem Code verwenden.
+Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über die SQLite-Datenbank-Engine. Dadurch ist es möglich, Objekte in freigegebenem Code zu laden und zu speichern.
 
-Dieser Artikel konzentriert sich auf **den Zugriff auf** eine SQLite-Datenbank mithilfe von Xamarin.Forms. Weitere Informationen zum Arbeiten mit von SQLite.Net selbst finden Sie in der [von SQLite.NET unter Android](~/android/data-cloud/data-access/using-sqlite-orm.md) oder [von SQLite.NET unter iOS](~/ios/data-cloud/data/using-sqlite-orm.md) Dokumentation.
+Im Artikel wird hauptsächlich der **Zugriff** auf eine SQLite-Datenbank mit Xamarin.Forms beschrieben. Weitere Informationen über das Arbeiten mit SQLite.Net finden Sie in den Dokumentationen [Using SQLite.NET with Android (Verwenden von SQLite.NET mit Android)](~/android/data-cloud/data-access/using-sqlite-orm.md) oder [Using SQLite.NET with Xamarin.iOS (Verwenden von SQLite.NET mit Xamarin.iOs)](~/ios/data-cloud/data/using-sqlite-orm.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel "TODO"](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
+- [Todo Sample (Todo (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)
 

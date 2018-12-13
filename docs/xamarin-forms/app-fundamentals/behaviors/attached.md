@@ -1,6 +1,6 @@
 ---
 title: Angefügte Verhaltensweisen
-description: Angefügte Verhaltensweisen sind statische Klassen mit einer oder mehreren angefügte Eigenschaften. Dieser Artikel veranschaulicht das Erstellen und nutzen die angefügte Verhaltensweisen.
+description: Angefügte Verhaltensweisen sind statische Klassen mit mindestens einer angefügten Eigenschaft. In diesem Artikel wird veranschaulicht, wie Sie angefügte Verhaltensweisen erstellen und verwenden können.
 ms.prod: xamarin
 ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
 ms.technology: xamarin-forms
@@ -9,29 +9,29 @@ ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: 2c9bd9ad4e7572b9eae6f0073da8a2c8f1e7c9fc
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38995345"
 ---
 # <a name="attached-behaviors"></a>Angefügte Verhaltensweisen
 
-_Angefügte Verhaltensweisen sind statische Klassen mit einer oder mehreren angefügte Eigenschaften. Dieser Artikel veranschaulicht das Erstellen und nutzen die angefügte Verhaltensweisen._
+_Angefügte Verhaltensweisen sind statische Klassen mit mindestens einer angefügten Eigenschaft. In diesem Artikel wird veranschaulicht, wie Sie angefügte Verhaltensweisen erstellen und verwenden können._
 
 ## <a name="overview"></a>Übersicht
 
-Eine angefügte Eigenschaft ist eine besondere Art von bindbare Eigenschaft an. Sie in einer Klasse definiert, aber auf andere Objekte angefügt und eignen sich erkennbaren in XAML als Attribute, die eine Klasse und einen Eigenschaftsnamen, die durch einen Punkt getrennt enthalten.
+Eine angefügte Eigenschaft ist eine besondere Art einer bindbaren Eigenschaft. Sie ist in einer Klasse definiert, jedoch an andere Objekte angefügt, und ist in XAML als Attribut erkennbar, das eine Klasse und einen Eigenschaftsnamen enthält, die durch einen Punkt voneinander getrennt sind.
 
-Eine angefügte Eigenschaft definieren kann eine `propertyChanged` Delegat, der ausgeführt wird, wenn der Wert der Eigenschaft ändert z. B. wenn die Eigenschaft für ein Steuerelement festgelegt ist,. Wenn die `propertyChanged` Delegaten ausführt, die übergeben wurde, eines Verweis auf das Steuerelement auf dem er angefügt wird, und die Parameter, die die alten und neuen Werte für die Eigenschaft enthalten. Dieser Delegat kann verwendet werden, um neue Funktionen für das Steuerelement hinzuzufügen, die die Eigenschaft angefügt ist, durch Bearbeiten des Verweis, der wie folgt, übergeben wird:
+Eine angefügte Eigenschaft kann einen `propertyChanged`-Delegaten definieren, der bei einer Änderung des Eigenschaftswerts ausgeführt wird, z. B. bei Festlegen der Eigenschaft für ein Steuerelement. Wenn der `propertyChanged`-Delegat ausgeführt wird, werden ein Verweis auf das Steuerelement, an das er angefügt ist, und Parameter übergeben, welche die alten und neuen Werte der Eigenschaft enthalten. Mithilfe dieses Delegats können neue Funktionen an das Steuerelement angefügt werden, an das die Eigenschaft angefügt ist, indem der übergebene Verweis wie folgt angepasst wird:
 
-1. Die `propertyChanged` Delegaten wandelt den Steuerelementverweis, der als empfangen wird eine [ `BindableObject` ](xref:Xamarin.Forms.BindableObject), soll, dass der Steuerelementtyp, der das Verhalten um zu verbessern.
-1. Die `propertyChanged` Delegaten ändert die Eigenschaften des Steuerelements ruft Methoden des Steuerelements, oder Register-Ereignishandlern für Ereignisse verfügbar gemacht werden, durch das Steuerelement zum Implementieren der Kernfunktionen Verhalten.
+1. Der `propertyChanged`-Delegat wandelt den Steuerelementverweis, der als [`BindableObject`](xref:Xamarin.Forms.BindableObject) empfangen wird, in den Steuerelementtyp um, der von dem entsprechend entworfenen Verhalten verbessert wird.
+1. Der `propertyChanged`-Delegat ändert Eigenschaften des Steuerelements, ruft Methoden des Steuerelements auf oder erfasst Ereignishandler für Ereignisse, die vom Steuerelement verfügbar gemacht wurden, um das Verhalten der Kernfunktionen zu implementieren.
 
-Ein Problem mit dem angefügten Verhalten ist, in dem sie definiert sind eine `static` -Klasse, mit `static` Eigenschaften und Methoden. Dies erschwert das angefügte Verhaltensweisen zu erstellen, die Zustand aufweisen. Darüber hinaus haben Xamarin.Forms-Verhaltensweisen angefügte Verhaltensweisen als bevorzugten Ansatz zur Erstellung von Verhalten ersetzt. Weitere Informationen zu Xamarin.Forms-Verhaltensweisen, finden Sie unter [Xamarin.Forms-Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/creating.md) und [Wiederverwendbare Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+Ein Problem bei angefügten Verhalten besteht darin, dass sie in der `static`-Klasse mit `static`-Eigenschaften und -Methoden definiert werden. Dadurch wird das Erstellen angefügter Verhalten erschwert, die einen Zustand aufweisen. Darüber hinaus ersetzen Xamarin.Forms-Verhalten angefügte Verhalten als bevorzugten Ansatz zur Erstellung von Verhalten. Weitere Informationen über Xamarin.Forms-Verhaltensweisen finden Sie unter [Xamarin.Forms Behaviors (Xamarin.Forms-Verhaltensweisen)](~/xamarin-forms/app-fundamentals/behaviors/creating.md) und [Reusable Behaviors (Wiederverwendbare Verhaltensweisen)](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
 
-## <a name="creating-an-attached-behavior"></a>Erstellen ein angefügtes Verhalten
+## <a name="creating-an-attached-behavior"></a>Erstellen eines angefügten Verhaltens
 
-Die beispielanwendung veranschaulicht eine `NumericValidationBehavior`, die hervorgehoben, dass die vom Benutzer eingegebenen Wert das in eine [ `Entry` ](xref:Xamarin.Forms.Entry) steuern in Rot angezeigt, wenn er nicht ist eine `double`. Das Verhalten wird im folgenden Codebeispiel gezeigt:
+Die Beispielanwendung veranschaulicht ein `NumericValidationBehavior`-Verhalten, das den Wert rot hervorhebt, der vom Benutzer in ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement eingegeben wird, sofern es sich nicht um einen `double`-Wert handelt. Dies wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public static class NumericValidationBehavior
@@ -78,11 +78,11 @@ public static class NumericValidationBehavior
 }
 ```
 
-Die `NumericValidationBehavior` -Klasse enthält eine angefügte Eigenschaft mit dem Namen `AttachBehavior` mit einem `static` Getter und Setter, die steuert, das Hinzufügen oder Entfernen des Verhaltens, das das Steuerelement, mit der er verknüpft. Diese angefügte Eigenschaft registriert die `OnAttachBehaviorChanged` -Methode, die ausgeführt werden, wenn der Wert der Eigenschaft geändert wird. Diese Methode registriert oder Aufhebung registriert einen Ereignishandler für die [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) Ereignis anhand des Werts, der die `AttachBehavior` angefügte Eigenschaft. Die Kernfunktionen des Verhaltens erfolgt über die `OnEntryTextChanged` -Methode, die den eingegebenen Wert analysiert die [ `Entry` ](xref:Xamarin.Forms.Entry) nach Benutzer und Gruppen die `TextColor` -Eigenschaft auf Rot, wenn der Wert ist kein `double`.
+Die `NumericValidationBehavior`-Klasse enthält eine angefügte Eigenschaft namens `AttachBehavior` mit einem `static`-Getter und -Setter, mit denen das Hinzufügen und Entfernen des Verhaltens aus dem Steuerelement gesteuert wird, an das das Verhalten angefügt wird. Diese angefügte Eigenschaft registriert die `OnAttachBehaviorChanged`-Methode, die ausgeführt wird, wenn der Wert der Eigenschaft geändert wird. Bei dieser Methode wird ein Ereignishandler basierend auf dem Wert der angefügten `AttachBehavior`-Eigenschaft für das Ereignis [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) registriert, oder seine Registrierung wird aufgehoben. Die Kernfunktionalität des Verhaltens wird von der `OnEntryTextChanged`-Methode bereitgestellt, die den vom Benutzer in [`Entry`](xref:Xamarin.Forms.Entry) eingegebenen Wert analysiert und die `TextColor`-Eigenschaft auf rot festlegt, wenn es sich nicht um einen `double`-Wert handelt.
 
-## <a name="consuming-an-attached-behavior"></a>Nutzen ein angefügtes Verhalten
+## <a name="consuming-an-attached-behavior"></a>Verwenden von angefügtem Verhalten
 
-Die `NumericValidationBehavior` Klasse kann verwendet werden, durch das Hinzufügen der `AttachBehavior` angefügten Eigenschaft, um eine [ `Entry` ](xref:Xamarin.Forms.Entry) zu steuern, wie in den folgenden XAML-Codebeispiel veranschaulicht:
+Die `NumericValidationBehavior`-Klasse kann, wie im folgenden XAML-Codebeispiel veranschaulicht, verwendet werden, indem die angefügte `AttachBehavior`-Eigenschaft zu einem [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement hinzugefügt wird:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:WorkingWithBehaviors;assembly=WorkingWithBehaviors" ...>
@@ -92,40 +92,40 @@ Die `NumericValidationBehavior` Klasse kann verwendet werden, durch das Hinzufü
 </ContentPage>
 ```
 
-Die entsprechende [ `Entry` ](xref:Xamarin.Forms.Entry) in c# wird im folgenden Codebeispiel dargestellt:
+Das entsprechende [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement in C# wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, true);
 ```
 
-Zur Laufzeit wird das Verhalten auf Benutzerinteraktion mit dem Steuerelement, entsprechend der verhaltensimplementierung von reagieren. Die folgenden Screenshots veranschaulichen das angefügte Verhalten reagieren auf ungültige Eingabe:
+Bei der Ausführung reagiert das Verhalten gemäß der Verhaltensimplementierung auf die Interaktion mit dem Steuerelement. In den folgenden Screenshots wird die Reaktion des angefügten Verhaltens auf ungültige Eingabe veranschaulicht:
 
-[![](attached-images/screenshots-sml.png "Beispielanwendung mit dem angefügten Verhalten")](attached-images/screenshots.png#lightbox "Beispielanwendung mit dem angefügten Verhalten")
+[![](attached-images/screenshots-sml.png "Beispielanwendung mit angefügtem Verhalten")](attached-images/screenshots.png#lightbox "Beispielanwendung mit angefügtem Verhalten")
 
 > [!NOTE]
-> Angefügte Verhaltensweisen für einen bestimmten Steuerelementtyp (oder eine übergeordnete Klasse, die für viele Steuerelemente angewendet werden kann) geschrieben wurden, und sie sollten nur zu einem kompatiblen-Steuerelement hinzugefügt werden. Unbekannter Verhalten führt und hängt die verhaltensimplementierung möchten, fügen Sie ein Verhalten auf ein Steuerelement nicht kompatibel.
+> Angefügte Verhaltensweisen werden für einen spezifischen Steuerelementtyp (oder eine übergeordnete Klasse, die für mehrere Steuerelemente gelten kann) geschrieben und sollten nur zu kompatiblen Steuerelementen hinzugefügt werden. Der Versuch, ein Verhalten an ein nicht kompatibles Steuerelement anzufügen, führt zu einem unbekannten Verhalten und hängt von der Verhaltensimplementierung ab.
 
-### <a name="removing-an-attached-behavior-from-a-control"></a>Entfernen ein angefügtes Verhalten von einem Steuerelement
+### <a name="removing-an-attached-behavior-from-a-control"></a>Entfernen von angefügtem Verhalten aus einem Steuerelement
 
-Die `NumericValidationBehavior` Klasse kann von einem Steuerelement entfernt werden, durch Festlegen der `AttachBehavior` angefügte Eigenschaft zu `false`, wie in den folgenden XAML-Codebeispiel veranschaulicht:
+Die `NumericValidationBehavior`-Klasse kann, wie im folgenden XAML-Codebeispiel veranschaulicht, entfernt werden, indem die angefügte `AttachBehavior`-Eigenschaft auf `false` festgelegt wird:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" local:NumericValidationBehavior.AttachBehavior="false" />
 ```
 
-Die entsprechende [ `Entry` ](xref:Xamarin.Forms.Entry) in c# wird im folgenden Codebeispiel dargestellt:
+Das entsprechende [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement in C# wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-Zur Laufzeit die `OnAttachBehaviorChanged` Methode ausgeführt, wenn der Wert des der `AttachBehavior` angefügte Eigenschaft festgelegt ist, um `false`. Die `OnAttachBehaviorChanged` Methode wird dann aufheben, registrieren den Ereignishandler für die [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) -Ereignis, um sicherzustellen, dass das Verhalten wird nicht ausgeführt, während der Benutzer mit dem Steuerelement interagiert.
+Zur Laufzeit wird die `OnAttachBehaviorChanged`-Methode ausgeführt, wenn der Wert der angefügten `AttachBehavior`-Eigenschaft auf `false` festgelegt ist. Anschließend wird mit der `OnAttachBehaviorChanged`-Methode die Registrierung des Ereignishandlers für das Ereignis [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) aufgehoben. Dabei wird sichergestellt, dass das Verhalten nicht ausgeführt wird, während der Benutzer mit dem Steuerelement interagiert.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel veranschaulicht das Erstellen und nutzen die angefügte Verhaltensweisen. Angefügte Verhaltensweisen sind `static` Klassen mit einer oder mehreren angefügte Eigenschaften.
+In diesem Artikel wurde veranschaulicht, wie Sie angefügte Verhaltensweisen erstellen und verwenden können. Angefügte Verhaltensweisen sind `static`-Klassen mit mindestens einer angefügten Eigenschaft.
 
 
 ## <a name="related-links"></a>Verwandte Links

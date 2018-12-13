@@ -1,6 +1,6 @@
 ---
 title: Anpassen einer ViewCell
-description: Einer Xamarin.Forms ViewCell ist eine Zelle, die hinzugefügt werden kann, zu einer ListView oder TableView, die eine Entwickler benutzerdefinierte Sicht enthält. In diesem Artikel wird veranschaulicht, wie einen benutzerdefinierten Renderer für einer ViewCell erstellt, die in einem Xamarin.Forms-ListView-Steuerelement gehostet wird.
+description: Eine Xamarin.Forms-ViewCell ist eine Zelle, die einer ListView oder TableView hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für eine ViewCell erstellen können, die in einem Xamarin.Forms-ListView-Steuerelement gehostet wird.
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
@@ -9,34 +9,34 @@ ms.author: dabritch
 ms.date: 12/07/2016
 ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998998"
 ---
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell
 
-_Einer Xamarin.Forms ViewCell ist eine Zelle, die hinzugefügt werden kann, zu einer ListView oder TableView, die eine Entwickler benutzerdefinierte Sicht enthält. In diesem Artikel wird veranschaulicht, wie einen benutzerdefinierten Renderer für einer ViewCell erstellt, die in einem Xamarin.Forms-ListView-Steuerelement gehostet wird. Dies beendet die Xamarin.Forms-layoutberechnungen wird wiederholt aufgerufen, während des Bildlaufs ListView._
+_Eine Xamarin.Forms-ViewCell ist eine Zelle, die einer ListView oder TableView hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für eine ViewCell erstellen können, die in einem Xamarin.Forms-ListView-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in ListView aufgerufen werden._
 
-Alle Xamarin.Forms-Zellen verfügt über eine zugehörige Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) gerendert wird, von einer Xamarin.Forms-Anwendung unter iOS die `ViewCellRenderer` Klasse instanziiert wird, die instanziiert wiederum eines systemeigenes `UITableViewCell` Steuerelement. Auf der Android-Plattform die `ViewCellRenderer` Klasse instanziiert ein systemeigenes `View` Steuerelement. Auf der universellen Windows-Plattform (UWP), die `ViewCellRenderer` Klasse instanziiert ein systemeigenes `DataTemplate`. Weitere Informationen zu den Renderer und nativen Steuerelements-Klassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und Native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Xamarin.Forms-Zelle verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Objekts durch eine Xamarin.Forms-App wird in iOS die `ViewCellRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UITableViewCell`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `ViewCellRenderer`-Klasse ein natives `View`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `ViewCellRenderer`-Klasse eine native `DataTemplate`-Klasse. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) und die entsprechenden systemeigenen Steuerelemente, die sie implementieren:
+Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](viewcell-images/viewcell-classes.png "Beziehung zwischen dem ViewCell-Steuerelement und die implementierenden Native Steuerelemente")
+![](viewcell-images/viewcell-classes.png "Beziehungen zwischen dem ViewCell-Steuerelement und den nativen Steuerelementen, die dieses implementieren")
 
-Das Rendern zu kann nutzen erstellt werden, um plattformspezifische Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für eine [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) auf jeder Plattform. Der Prozess hierfür lautet wie folgt aus:
+Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
-1. [Erstellen Sie](#Creating_the_Custom_Cell) einer benutzerdefinierten Xamarin.Forms-Zelle.
-1. [Nutzen](#Consuming_the_Custom_Cell) die benutzerdefinierte Zelle von Xamarin.Forms.
-1. [Erstellen Sie](#Creating_the_Custom_Renderer_on_each_Platform) der benutzerdefinierte Renderer für die Zelle auf jeder Plattform.
+1. [Erstellen](#Creating_the_Custom_Cell) Sie eine benutzerdefinierte Xamarin.Forms-Zelle.
+1. [Nutzen](#Consuming_the_Custom_Cell) Sie die benutzerdefinierte Xamarin.Forms-Zelle.
+1. [Erstellen](#Creating_the_Custom_Renderer_on_each_Platform) Sie den benutzerdefinierten Renderer für die Zelle auf jeder Plattform.
 
-Jedes Element jetzt erläutert wiederum zum Implementieren einer `NativeCell` Renderer, der ein plattformspezifisches Layout für jede Zelle in einer Xamarin.Forms gehostet nutzt [ `ListView` ](xref:Xamarin.Forms.ListView) Steuerelement. Dadurch wird wiederholt aufgerufen wird, während die Xamarin.Forms-layoutberechnungen beendet `ListView` scrollen.
+Jedes dieser Elemente wird nachfolgend noch genauer für die Implementierung eines `NativeCell`-Renderers erläutert, der ein plattformspezifisches Layout für jede Zelle verwendet, die in einem Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in `ListView` aufgerufen werden.
 
 <a name="Creating_the_Custom_Cell" />
 
-## <a name="creating-the-custom-cell"></a>Erstellen die benutzerdefinierte Zelle
+## <a name="creating-the-custom-cell"></a>Erstellen der benutzerdefinierten Zelle
 
-Ein Steuerelement für die benutzerdefinierte Zelle erstellt werden, indem Unterklassen der [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) Klasse, wie im folgenden Codebeispiel gezeigt:
+Eine benutzerdefinierte Zelle kann erstellt werden, indem Sie die [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Klasse wie in folgendem Codebeispiel als Unterklasse verwenden:
 
 ```csharp
 public class NativeCell : ViewCell
@@ -66,13 +66,13 @@ public class NativeCell : ViewCell
   }
 }
 ```
-Die `NativeCell` -Klasse in .NET Standard Library-Projekt erstellt und definiert die API für die benutzerdefinierte Zelle. Stellt die benutzerdefinierte Zelle `Name`, `Category`, und `ImageFilename` Eigenschaften, die mithilfe von Datenbindung angezeigt werden können. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
+Die Klasse `NativeCell` wird im .NET Standard-Bibliotheksprojekt erstellt und definiert die API für die benutzerdefinierte Zelle. Die benutzerdefinierte Zelle macht die Eigenschaften `Name`, `Category` und `ImageFilename` verfügbar, die über eine Datenbindung angezeigt werden können. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
 
 <a name="Consuming_the_Custom_Cell" />
 
-## <a name="consuming-the-custom-cell"></a>Nutzen die benutzerdefinierte Zelle
+## <a name="consuming-the-custom-cell"></a>Nutzen der benutzerdefinierten Zelle
 
-Die `NativeCell` benutzerdefinierte Zelle kann verwiesen werden in Xaml in .NET Standard Library-Projekt durch deklarieren einen Namespace für den Speicherort und verwenden das Namespacepräfix für die benutzerdefinierte Cell-Element. Das folgende Codebeispiel zeigt die `NativeCell` benutzerdefinierte Zelle kann von einer XAML-Seite verwendet werden:
+Sie können auf die benutzerdefinierte Zelle `NativeCell` in XAML im .NET Standard-Bibliotheksprojekt verweisen, indem Sie einen Namespace für seine Position deklarieren und das Namespacepräfix für das benutzerdefinierte Zellenelement verwenden. Das folgende Codebeispiel veranschaulicht, wie die benutzerdefinierte Zelle `NativeCell` von der XAML-Seite genutzt werden kann:
 
 ```xaml
 <ContentPage ...
@@ -94,9 +94,9 @@ Die `NativeCell` benutzerdefinierte Zelle kann verwiesen werden in Xaml in .NET 
 </ContentPage>
 ```
 
-Die `local` Namespacepräfix kann eine beliebige Bezeichnung. Allerdings die `clr-namespace` und `assembly` -Werte müssen die Details des benutzerdefinierten Steuerelements entsprechen. Sobald der Namespace deklariert wird, wird das Präfix verwendet, auf die benutzerdefinierte Zelle verweisen.
+Das `local`-Namespacepräfix kann beliebig benannt werden. Die Werte `clr-namespace` und `assembly` müssen jedoch mit den Angaben des benutzerdefinierten Steuerelements übereinstimmen. Wenn der Namespace deklariert wurde, wird das Präfix verwendet, um auf die benutzerdefinierte Zelle zu verweisen.
 
-Das folgende Codebeispiel zeigt die `NativeCell` benutzerdefinierte Zelle durch einen C# -Code genutzt werden kann:
+Das folgende Codebeispiel veranschaulicht, wie die benutzerdefinierte Zelle `NativeCell` von einer C#-Seite genutzt werden kann:
 
 ```csharp
 public class NativeCellPageCS : ContentPage
@@ -143,42 +143,42 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Eine Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) Steuerelement wird verwendet, um eine Liste der Daten, anzeigen, die über aufgefüllt wird die [ `ItemSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) Eigenschaft. Die [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) cachingstrategie versucht, die Minimierung der `ListView` Speicherbedarf und die Ausführung zu beschleunigen, durch Wiederverwenden von Listenzellen. Weitere Informationen finden Sie unter [Strategie für die Zwischenspeicherung](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+Ein [`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement von Xamarin.Forms wird zum Anzeigen einer Liste der Daten verwendet, die über die [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)-Eigenschaft aufgefüllt wird. Die [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)-Zwischenspeicherstrategie versucht, den `ListView`-Speicherbedarf sowie die Ausführungsgeschwindigkeit durch die Wiederverwendung von Listenzellen zu minimieren. Weitere Informationen finden Sie unter [Zwischenspeicherstrategie](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
-Jede Zeile in der Liste enthält drei Datenelemente: einen Namen, eine Kategorie und ein Dateiname des Bilds. Das Layout der einzelnen Zeilen in der Liste wird definiert, durch die `DataTemplate` auf den verwiesen wird durch die [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) bindbare Eigenschaft. Die `DataTemplate` definiert, dass jede Zeile der Daten in der Liste werden eine `NativeCell` , anzeigt seine `Name`, `Category`, und `ImageFilename` Eigenschaften mithilfe der Datenbindung. Weitere Informationen zu den `ListView` steuern, finden Sie unter [ListView](~/xamarin-forms/user-interface/listview/index.md).
+Jede Zeile in der Liste enthält drei Datenelemente: einen Namen, eine Kategorie und einen Dateinamen für ein Bild. Das Layout jeder Zeile in der Liste wird durch eine `DataTemplate` definiert, auf die über die bindbare [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)-Eigenschaft verwiesen wird. Die `DataTemplate` definiert, dass jede Datenzeile in der Liste eine `NativeCell` sein wird, die die Eigenschaften `Name`, `Category` und `ImageFilename` über eine Datenbindung darstellt. Weitere Informationen zum `ListView`-Steuerelement finden Sie unter [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
-Ein benutzerdefinierter Renderer kann jetzt jedem Projekt der Anwendung zum Anpassen des Layouts plattformspezifische für jede Zelle hinzugefügt werden.
+Ein benutzerdefinierter Renderer kann nun zu jedem Anwendungsprojekt hinzugefügt werden, um das plattformspezifische Layout für jede Zelle anzupassen.
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
-## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen benutzerdefinierten Renderer auf jeder Plattform
+## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen des benutzerdefinierten Renderers auf jeder Plattform
 
-Der Prozess zum Erstellen der benutzerdefinierten Renderer-Klasse sieht folgendermaßen aus:
+Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Renderer zu erstellen:
 
-1. Erstellen Sie eine Unterklasse von der `ViewCellRenderer` -Klasse, die die benutzerdefinierte Zelle gerendert wird.
-1. Überschreiben Sie die plattformspezifischen-Methode, die die benutzerdefinierte Zelle rendert und Schreiben Sie Logik, um es anzupassen.
-1. Hinzufügen einer `ExportRenderer` -Attribut der benutzerdefinierten Renderer-Klasse, um anzugeben, dass er zum Rendern der benutzerdefinierten Xamarin.Forms-Zelle verwendet wird. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
+1. Erstellen Sie eine Unterklasse der `ViewCellRenderer`-Klasse, die die benutzerdefinierte Zelle rendert.
+1. Überschreiben Sie die plattformspezifische Methode, die die benutzerdefinierte Zelle rendert, und schreiben Sie Logik, um dieses anzupassen.
+1. Fügen Sie der Klasse des benutzerdefinierten Renderers ein `ExportRenderer`-Attribut hinzu, um anzugeben, dass sie zum Rendern der benutzerdefinierten Xamarin.Forms-Zelle verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer bei Xamarin.Forms zu registrieren.
 
 > [!NOTE]
-> Für die meisten Xamarin.Forms-Elemente ist optional, um einen benutzerdefinierten Renderer in jedem plattformprojekt bereitzustellen. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standard-Renderer für die Basisklasse des Steuerelements verwendet werden. Benutzerdefinierte Renderer sind jedoch erforderlich, in dem jedes plattformprojekt beim Rendern einer [ViewCell](xref:Xamarin.Forms.ViewCell) Element.
+> Bei den meisten Xamarin.Forms-Elementen ist das Angeben eines benutzerdefinierten Renderers in jedem Plattformprojekt optional. Wenn kein benutzerdefinierter Renderer registriert wurde, wird der Standardrenderer für die Basisklasse des Steuerelements verwendet. Benutzerdefinierte Renderer sind jedoch in jedem Plattformprojekt erforderlich, wenn ein [ViewCell](xref:Xamarin.Forms.ViewCell)-Element gerendert wird.
 
-Das folgende Diagramm veranschaulicht die Verantwortlichkeiten der einzelnen Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
+Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](viewcell-images/solution-structure.png "Zuständigkeiten von NativeCell benutzerdefinierten Renderer-Projekt")
+![](viewcell-images/solution-structure.png "Projektzuständigkeiten beim benutzerdefinierten NativeCell-Renderer")
 
-Die `NativeCell` benutzerdefinierte Zelle gerendert wird, durch das plattformspezifische, alle abgeleiteten Renderingklassen der `ViewCellRenderer` -Klasse für jede Plattform. Dies führt in jeder `NativeCell` benutzerdefinierte Zelle, die mit Layout mit Ausrichtung von plattformspezifischen gerendert wird, wie in den folgenden Screenshots gezeigt:
+Die benutzerdefinierte Zelle `NativeCell` wird von plattformspezifischen Rendererklassen gerendert, die alle von der `ViewCellRenderer`-Klasse für jede Plattform abgeleitet werden. Das führt dazu, dass jede benutzerdefinierte `NativeCell`-Zelle mit dem plattformspezifischen Layout gerendert wird. Dies wird in folgenden Screenshots veranschaulicht:
 
 ![](viewcell-images/screenshots.png "NativeCell auf jeder Plattform")
 
-Die `ViewCellRenderer` Klasse verfügbar macht, plattformspezifische Methoden für die benutzerdefinierte Zelle zu rendern. Dies ist die `GetCell` Methode für die iOS-Plattform, die `GetCellCore` Methode für die Android-Plattform und die `GetTemplate` Methode für die UWP.
+Die `ViewCellRenderer`-Klasse macht plattformspezifische Methoden zum Rendern der benutzerdefinierten Zelle verfügbar. Auf der iOS-Plattform ist dies die `GetCell`-Methode, auf der Android-Plattform die `GetCellCore`-Methode und auf der UWP die `GetTemplate`-Methode.
 
-Mit jeder benutzerdefinierten Renderer-Klasse ergänzt wird ein `ExportRenderer` -Attribut, das den Renderer mit Xamarin.Forms registriert. Das-Attribut nimmt zwei Parameter: der Typname der Xamarin.Forms-Zelle gerendert wird, und der Typname des benutzerdefinierten Renderers. Die `assembly` Präfix, das das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
+Jede benutzerdefinierte Rendererklasse ist mit einem `ExportRenderer`-Attribut versehen, das den Renderer bei Xamarin.Forms registriert. Das Attribut benötigt zwei Parameter: den Typnamen der zu rendernden Xamarin.Forms-Zelle und den Typnamen des benutzerdefinierten Renderers. Das Präfix `assembly` für das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
 
-Den folgenden Abschnitten werden die Implementierung der einzelnen plattformspezifischen benutzerdefinierten Renderer-Klasse.
+In den folgenden Abschnitten wird die Implementierung jeder plattformspezifischen, benutzerdefinierten Rendererklasse erläutert.
 
-### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen den benutzerdefinierten Renderer für iOS
+### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen des benutzerdefinierten Renderers unter iOS
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für die iOS-Plattform:
+Im folgenden Codebeispiel wird der benutzerdefinierte Renderer für die iOS-Plattform veranschaulicht:
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeCell), typeof(NativeiOSCellRenderer))]
@@ -207,21 +207,21 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Die `GetCell` aufgerufen, um jede Zelle anzuzeigende zu erstellen. Jede Zelle ist eine `NativeiOSCell` -Instanz, die das Layout der Zelle und die Daten definiert. Der Vorgang von der `GetCell` Methode richtet sich nach der [ `ListView` ](xref:Xamarin.Forms.ListView) cachingstrategie:
+Die `GetCell`-Methode wird aufgerufen, sodass jede anzuzeigende Zelle erstellt wird. Jede Zelle ist eine `NativeiOSCell`-Instanz, die das Layout der Zelle und deren Daten definiert. Der Vorgang der `GetCell`-Methode ist von der [`ListView`](xref:Xamarin.Forms.ListView)-Strategie für die Zwischenspeicherung abhängig.
 
-- Wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) cachingstrategie ist [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCell` Methode wird für jede Zelle aufgerufen werden. Ein `NativeiOSCell` Instanz erstellt werden soll, für die einzelnen `NativeCell` -Instanz, die auf dem Bildschirm angezeigt wird. Wenn der Benutzer einen Bildlauf der `ListView`, `NativeiOSCell` Instanzen werden erneut verwendet werden. Weitere Informationen zu iOS Zelle erneut verwenden, finden Sie unter [Zelle wiederverwenden](~/ios/user-interface/controls/tables/populating-a-table-with-data.md).
-
-  > [!NOTE]
-  > Dieser benutzerdefinierten Renderer-Code führt einige Zelle erneut verwenden, auch wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) Zellen beibehalten festgelegt ist.
-
-  Die angezeigten Daten durch jede `NativeiOSCell` -Instanz, ob neu erstellt oder erneut verwendet wird, wird aktualisiert mit den Daten aus jedem `NativeCell` Instanz, indem die `UpdateCell` Methode.
+- Wenn die [`ListView`](xref:Xamarin.Forms.ListView)-Strategie zur Zwischenspeicherung [`RetainElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) lautet, wird die `GetCell`-Methode für jede Zelle aufgerufen. Für jede `NativeCell`-Instanz, die zunächst auf dem Bildschirm angezeigt wird, wird eine `NativeiOSCell`-Instanz erstellt. Wenn der Benutzer durch die `ListView` scrollt, werden `NativeiOSCell`-Instanzen erneut verwendet. Weitere Informationen zum Wiederverwenden von Zellen in iOS finden Sie unter [Auffüllen einer Tabelle mit Daten](~/ios/user-interface/controls/tables/populating-a-table-with-data.md).
 
   > [!NOTE]
-  > Die `OnNativeCellPropertyChanged` Methode werden nie aufgerufen wird, wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) cachingstrategie Zellen beibehalten festgelegt ist.
+  > Dieser benutzerdefinierte Renderercode führt einige Vorgänge zum Wiederverwenden der Zellen durch, auch wenn [`ListView`](xref:Xamarin.Forms.ListView) zum Beibehalten der Zellen festgelegt wurde.
 
-- Wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) cachingstrategie ist [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCell` Methode wird aufgerufen werden, für jede Zelle, die auf dem Bildschirm angezeigt wird. Ein `NativeiOSCell` Instanz erstellt werden soll, für die einzelnen `NativeCell` -Instanz, die auf dem Bildschirm angezeigt wird. Die angezeigten Daten durch jede `NativeiOSCell` Instanz wird aktualisiert mit den Daten aus der `NativeCell` Instanz die `UpdateCell` Methode. Allerdings die `GetCell` Methode wird nicht aufgerufen werden, als der Benutzer einen Bildlauf durch die `ListView`. Stattdessen die `NativeiOSCell` Instanzen werden erneut verwendet werden. `PropertyChanged` Ereignisse werden ausgelöst werden, auf die `NativeCell` Instanz, wenn Sie die Daten geändert werden, und die `OnNativeCellPropertyChanged` Ereignishandler aktualisiert die Daten in den einzelnen wiederverwendet `NativeiOSCell` Instanz.
+  Die von jeder `NativeiOSCell`-Instanz dargestellten Daten – egal, ob es sich um neu erstellte oder wiederverwendete Daten handelt – werden mit den Daten aus jeder `NativeCell`-Instanz mithilfe der `UpdateCell`-Methode aktualisiert.
 
-Das folgende Codebeispiel zeigt die `OnNativeCellPropertyChanged` -Methode, die beim aufgerufen hat eine `PropertyChanged` Ereignis wird ausgelöst:
+  > [!NOTE]
+  > Die `OnNativeCellPropertyChanged`-Methode wird nie aufgerufen, wenn die [`ListView`](xref:Xamarin.Forms.ListView)-Strategie zur Zwischenspeicherung zum Beibehalten von Zellen festgelegt ist.
+
+- Wenn die [`ListView`](xref:Xamarin.Forms.ListView)-Strategie zur Zwischenspeicherung [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) lautet, wird die `GetCell`-Methode für jede Zelle aufgerufen, die ursprünglich auf dem Bildschirm angezeigt wurde. Für jede `NativeCell`-Instanz, die zunächst auf dem Bildschirm angezeigt wird, wird eine `NativeiOSCell`-Instanz erstellt. Die von jeder `NativeiOSCell`-Instanz dargestellten Daten werden mit den Daten aus der `NativeCell`-Instanz mithilfe der `UpdateCell`-Methode aktualisiert. Die `GetCell`-Methode wird allerdings nicht aufgerufen, wenn der Benutzer durch `ListView` scrollt. Stattdessen werden die `NativeiOSCell`-Instanzen wiederverwendet. `PropertyChanged`-Ereignisse werden für die `NativeCell`-Instanz ausgelöst, wenn sich deren Daten ändern, und der `OnNativeCellPropertyChanged`-Ereignishandler aktualisiert die Daten in jeder wiederverwendeten `NativeiOSCell`-Instanz.
+
+Im folgenden Codebeispiel ist die `OnNativeCellPropertyChanged`-Methode dargestellt, die aufgerufen wird, wenn ein `PropertyChanged`-Ereignis ausgelöst wird:
 
 ```csharp
 namespace CustomRenderer.iOS
@@ -250,9 +250,9 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Aktualisiert die Daten, die angezeigt wird, indem Sie für diese Methode erneut verwendet `NativeiOSCell` Instanzen. Überprüft, ob die Eigenschaft, die geändert wird. wird vorgenommen, wie die-Methode mehrere Male aufgerufen werden kann.
+Mit dieser Methode werden die Daten aktualisiert, die durch wiederverwendete `NativeiOSCell`-Instanzen dargestellt werden. Die Eigenschaft, die geändert wird, wird überprüft, da die Methode mehrere Male aufgerufen werden kann.
 
-Die `NativeiOSCell` Klasse definiert das Layout für jede Zelle, und wird im folgenden Codebeispiel dargestellt:
+Die `NativeiOSCell`-Klasse definiert das Layout für jede Zelle und ist im folgenden Codebeispiel dargestellt:
 
 ```csharp
 internal class NativeiOSCell : UITableViewCell, INativeElementView
@@ -315,15 +315,15 @@ internal class NativeiOSCell : UITableViewCell, INativeElementView
 }
 ```
 
-Diese Klasse definiert die Steuerelemente verwendet, um den Inhalt der Zelle, und ihr Layout rendern. Die Klasse implementiert die [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView) -Schnittstelle, die erforderlich, wenn ist die [ `ListView` ](xref:Xamarin.Forms.ListView) verwendet die [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) cachingstrategie. Diese Schnittstelle gibt an, dass die Klasse implementieren muss, die [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element) -Eigenschaft, die die benutzerdefinierte Zellendaten wiederverwendet Zellen zurückgeben soll.
+Diese Klasse definiert die Steuerelemente, die zum Rendern der Inhalte der Zellen sowie deren Layout verwendet werden. Die Klasse implementiert die Schnittstelle [`INativeElementView`](xref:Xamarin.Forms.INativeElementView), die benötigt wird, wenn die [`ListView`](xref:Xamarin.Forms.ListView) die [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)-Strategie zur Zwischenspeicherung verwendet. Diese Schnittstelle gibt an, dass die Klasse die Eigenschaft [`Element`](xref:Xamarin.Forms.INativeElementView.Element) implementieren muss. Diese wiederum muss die benutzerdefinierten Zellendaten für wiederverwendete Zellen zurückgeben.
 
-Die `NativeiOSCell` Konstruktor initialisiert die Darstellung der `HeadingLabel`, `SubheadingLabel`, und `CellImageView` Eigenschaften. Diese Eigenschaften werden verwendet, um die Anzeige der Daten in die `NativeCell` -Instanz mit der `UpdateCell` Methode aufgerufen wird, um den Wert jeder Eigenschaft festzulegen. Darüber hinaus, wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) verwendet die [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) cachingstrategie, die angezeigten Daten durch die `HeadingLabel`, `SubheadingLabel`, und `CellImageView` Eigenschaften können sein aktualisiert die `OnNativeCellPropertyChanged` -Methode in der der benutzerdefinierte Renderer.
+Der `NativeiOSCell`-Konstruktor initialisiert die Darstellung der Eigenschaften `HeadingLabel`, `SubheadingLabel` und `CellImageView`. Diese Eigenschaften werden zum Anzeigen der in der `NativeCell`-Instanz gespeicherten Daten verwendet. Die `UpdateCell`-Methode wird aufgerufen, um den Wert jeder Eigenschaft festzulegen. Wenn die [`ListView`](xref:Xamarin.Forms.ListView) die [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)-Strategie zur Zwischenspeicherung verwendet, können darüber hinaus die Daten, die von den Eigenschaften `HeadingLabel`, `SubheadingLabel` und `CellImageView` dargestellt werden, von der `OnNativeCellPropertyChanged`-Methode im benutzerdefinierten Renderer aktualisiert werden.
 
-Zellenlayout erfolgt durch die `LayoutSubviews` zu überschreiben, wodurch die Koordinaten der `HeadingLabel`, `SubheadingLabel`, und `CellImageView` in der Zelle.
+Das Zellenlayout erfolgt durch die `LayoutSubviews`-Überschreibung, die die Koordinaten von `HeadingLabel`, `SubheadingLabel` und `CellImageView` innerhalb der Zelle festlegt.
 
-### <a name="creating-the-custom-renderer-on-android"></a>Erstellen den benutzerdefinierten Renderer für Android
+### <a name="creating-the-custom-renderer-on-android"></a>Erstellen des benutzerdefinierten Renderers unter Android
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für die Android-Plattform:
+Im folgenden Codebeispiel wird der benutzerdefinierte Renderer für die Android-Plattform veranschaulicht:
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeCell), typeof(NativeAndroidCellRenderer))]
@@ -358,21 +358,21 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Die `GetCellCore` aufgerufen, um jede Zelle anzuzeigende zu erstellen. Jede Zelle ist eine `NativeAndroidCell` -Instanz, die das Layout der Zelle und die Daten definiert. Der Vorgang von der `GetCellCore` Methode richtet sich nach der [ `ListView` ](xref:Xamarin.Forms.ListView) cachingstrategie:
+Die `GetCellCore`-Methode wird aufgerufen, sodass jede anzuzeigende Zelle erstellt wird. Jede Zelle ist eine `NativeAndroidCell`-Instanz, die das Layout der Zelle und deren Daten definiert. Der Vorgang der `GetCellCore`-Methode ist von der [`ListView`](xref:Xamarin.Forms.ListView)-Strategie für die Zwischenspeicherung abhängig.
 
-- Wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) cachingstrategie ist [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCellCore` Methode wird für jede Zelle aufgerufen werden. Ein `NativeAndroidCell` erstellt werden, für die einzelnen `NativeCell` -Instanz, die auf dem Bildschirm angezeigt wird. Wenn der Benutzer einen Bildlauf der `ListView`, `NativeAndroidCell` Instanzen werden erneut verwendet werden. Weitere Informationen zu Android Zelle erneut zu verwenden, finden Sie unter [Zeile View RE-use](~/android/user-interface/layouts/list-view/populating.md).
-
-  > [!NOTE]
-  > Beachten Sie, dass dieser benutzerdefinierten Renderer-Code einige Zelle erneut verwenden führt, auch wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) Zellen beibehalten festgelegt ist.
-
-  Die angezeigten Daten durch jede `NativeAndroidCell` -Instanz, ob neu erstellt oder erneut verwendet wird, wird aktualisiert mit den Daten aus jedem `NativeCell` Instanz, indem die `UpdateCell` Methode.
+- Wenn die [`ListView`](xref:Xamarin.Forms.ListView)-Strategie zur Zwischenspeicherung [`RetainElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) lautet, wird die `GetCellCore`-Methode für jede Zelle aufgerufen. Für jede `NativeCell`-Instanz, die zunächst auf dem Bildschirm angezeigt wird, wird eine `NativeAndroidCell` erstellt. Wenn der Benutzer durch die `ListView` scrollt, werden `NativeAndroidCell`-Instanzen erneut verwendet. Weitere Informationen zur Wiederverwendung der Android-Zelle finden Sie unter [Auffüllen von ListView mit Daten](~/android/user-interface/layouts/list-view/populating.md).
 
   > [!NOTE]
-  > Beachten Sie, dass die `OnNativeCellPropertyChanged` Methode wird aufgerufen, wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) ist festgelegt Zellen beibehalten, es wird nicht aktualisiert die `NativeAndroidCell` Eigenschaftswerte.
+  > Beachten Sie, dass dieser benutzerdefinierte Renderercode einige Vorgänge zum Wiederverwenden der Zellen durchführt, auch wenn [`ListView`](xref:Xamarin.Forms.ListView) zum Beibehalten der Zellen festgelegt wurde.
 
-- Wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) cachingstrategie ist [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCellCore` Methode wird aufgerufen werden, für jede Zelle, die auf dem Bildschirm angezeigt wird. Ein `NativeAndroidCell` Instanz erstellt werden soll, für die einzelnen `NativeCell` -Instanz, die auf dem Bildschirm angezeigt wird. Die angezeigten Daten durch jede `NativeAndroidCell` Instanz wird aktualisiert mit den Daten aus der `NativeCell` Instanz die `UpdateCell` Methode. Allerdings die `GetCellCore` Methode wird nicht aufgerufen werden, als der Benutzer einen Bildlauf durch die `ListView`. Stattdessen die `NativeAndroidCell` Instanzen werden erneut verwendet werden.  `PropertyChanged` Ereignisse werden ausgelöst werden, auf die `NativeCell` Instanz, wenn Sie die Daten geändert werden, und die `OnNativeCellPropertyChanged` Ereignishandler aktualisiert die Daten in den einzelnen wiederverwendet `NativeAndroidCell` Instanz.
+  Die von jeder `NativeAndroidCell`-Instanz dargestellten Daten – egal, ob es sich um neu erstellte oder wiederverwendete Daten handelt – werden mit den Daten aus jeder `NativeCell`-Instanz mithilfe der `UpdateCell`-Methode aktualisiert.
 
-Das folgende Codebeispiel zeigt die `OnNativeCellPropertyChanged` -Methode, die beim aufgerufen hat eine `PropertyChanged` Ereignis wird ausgelöst:
+  > [!NOTE]
+  > Obwohl die `OnNativeCellPropertyChanged`-Methode aufgerufen wird, wenn die [`ListView`](xref:Xamarin.Forms.ListView) zum Beibehalten von Zellen festgelegt wurde, werden darüber keine `NativeAndroidCell`-Eigenschaftswerte aktualisiert.
+
+- Wenn die [`ListView`](xref:Xamarin.Forms.ListView)-Strategie zur Zwischenspeicherung [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) lautet, wird die `GetCellCore`-Methode für jede Zelle aufgerufen, die ursprünglich auf dem Bildschirm angezeigt wurde. Für jede `NativeCell`-Instanz, die zunächst auf dem Bildschirm angezeigt wird, wird eine `NativeAndroidCell`-Instanz erstellt. Die von jeder `NativeAndroidCell`-Instanz dargestellten Daten werden mit den Daten aus der `NativeCell`-Instanz mithilfe der `UpdateCell`-Methode aktualisiert. Die `GetCellCore`-Methode wird allerdings nicht aufgerufen, wenn der Benutzer durch `ListView` scrollt. Stattdessen werden die `NativeAndroidCell`-Instanzen wiederverwendet.  `PropertyChanged`-Ereignisse werden für die `NativeCell`-Instanz ausgelöst, wenn sich deren Daten ändern, und der `OnNativeCellPropertyChanged`-Ereignishandler aktualisiert die Daten in jeder wiederverwendeten `NativeAndroidCell`-Instanz.
+
+Im folgenden Codebeispiel ist die `OnNativeCellPropertyChanged`-Methode dargestellt, die aufgerufen wird, wenn ein `PropertyChanged`-Ereignis ausgelöst wird:
 
 ```csharp
 namespace CustomRenderer.Droid
@@ -401,9 +401,9 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Aktualisiert die Daten, die angezeigt wird, indem Sie für diese Methode erneut verwendet `NativeAndroidCell` Instanzen. Überprüft, ob die Eigenschaft, die geändert wird. wird vorgenommen, wie die-Methode mehrere Male aufgerufen werden kann.
+Mit dieser Methode werden die Daten aktualisiert, die durch wiederverwendete `NativeAndroidCell`-Instanzen dargestellt werden. Die Eigenschaft, die geändert wird, wird überprüft, da die Methode mehrere Male aufgerufen werden kann.
 
-Die `NativeAndroidCell` Klasse definiert das Layout für jede Zelle, und wird im folgenden Codebeispiel dargestellt:
+Die `NativeAndroidCell`-Klasse definiert das Layout für jede Zelle und ist im folgenden Codebeispiel dargestellt:
 
 ```csharp
 internal class NativeAndroidCell : LinearLayout, INativeElementView
@@ -474,11 +474,11 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 }
 ```
 
-Diese Klasse definiert die Steuerelemente verwendet, um den Inhalt der Zelle, und ihr Layout rendern. Die Klasse implementiert die [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView) -Schnittstelle, die erforderlich, wenn ist die [ `ListView` ](xref:Xamarin.Forms.ListView) verwendet die [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) cachingstrategie. Diese Schnittstelle gibt an, dass die Klasse implementieren muss, die [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element) -Eigenschaft, die die benutzerdefinierte Zellendaten wiederverwendet Zellen zurückgeben soll.
+Diese Klasse definiert die Steuerelemente, die zum Rendern der Inhalte der Zellen sowie deren Layout verwendet werden. Die Klasse implementiert die Schnittstelle [`INativeElementView`](xref:Xamarin.Forms.INativeElementView), die benötigt wird, wenn die [`ListView`](xref:Xamarin.Forms.ListView) die [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)-Strategie zur Zwischenspeicherung verwendet. Diese Schnittstelle gibt an, dass die Klasse die Eigenschaft [`Element`](xref:Xamarin.Forms.INativeElementView.Element) implementieren muss. Diese wiederum muss die benutzerdefinierten Zellendaten für wiederverwendete Zellen zurückgeben.
 
-Die `NativeAndroidCell` Konstruktor vergrößert die `NativeAndroidCell` Layout und initialisiert die `HeadingTextView`, `SubheadingTextView`, und `ImageView` Eigenschaften zu den Steuerelementen im Layout zunehmen. Diese Eigenschaften werden verwendet, um die Anzeige der Daten in die `NativeCell` -Instanz mit der `UpdateCell` Methode aufgerufen wird, um den Wert jeder Eigenschaft festzulegen. Darüber hinaus, wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) verwendet die [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) cachingstrategie, die angezeigten Daten durch die `HeadingTextView`, `SubheadingTextView`, und `ImageView` Eigenschaften können sein aktualisiert die `OnNativeCellPropertyChanged` -Methode in der der benutzerdefinierte Renderer.
+Der `NativeAndroidCell`Konstruktor vergrößert das `NativeAndroidCell`-Layout und initialisiert die Eigenschaften `HeadingTextView`, `SubheadingTextView` und `ImageView` der Steuerelemente im vergrößerten Layout. Diese Eigenschaften werden zum Anzeigen der in der `NativeCell`-Instanz gespeicherten Daten verwendet. Die `UpdateCell`-Methode wird aufgerufen, um den Wert jeder Eigenschaft festzulegen. Wenn die [`ListView`](xref:Xamarin.Forms.ListView) die [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)-Strategie zur Zwischenspeicherung verwendet, können darüber hinaus die Daten, die von den Eigenschaften `HeadingTextView`, `SubheadingTextView` und `ImageView` dargestellt werden, von der `OnNativeCellPropertyChanged`-Methode im benutzerdefinierten Renderer aktualisiert werden.
 
-Im folgenden Codebeispiel wird veranschaulicht, die Layoutdefinition für die `NativeAndroidCell.axml` Layoutdatei:
+Im folgenden Codebeispiel ist die Layoutdefinition für die Layoutdatei `NativeAndroidCell.axml` dargestellt:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -518,11 +518,11 @@ Im folgenden Codebeispiel wird veranschaulicht, die Layoutdefinition für die `N
 </RelativeLayout>
 ```
 
-Dieses Layout gibt an, dass zwei `TextView` Steuerelemente und ein `ImageView` Steuerelement werden verwendet, um den Inhalt der Zelle angezeigt. Die beiden `TextView` Steuerelemente sind vertikal ausgerichtet ist, in eine `LinearLayout` Steuerelement alle Steuerelemente, die eigenständig sind innerhalb einer `RelativeLayout`.
+Dieses Layout gibt an, dass zwei `TextView`-Steuerelemente sowie ein `ImageView`-Steuerelement zum Anzeigen des Zelleninhalts verwendet werden. Die zwei `TextView`-Steuerelemente sind innerhalb eines `LinearLayout`-Steuerelements vertikal ausgerichtet, wobei alle Steuerelemente innerhalb einer `RelativeLayout` enthalten sind.
 
-### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen benutzerdefinierten Renderer auf UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen des benutzerdefinierten Renderers auf der UWP
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für UWP:
+Im folgenden Codebeispiel wird der benutzerdefinierte Renderer für die UWP veranschaulicht:
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeCell), typeof(NativeUWPCellRenderer))]
@@ -538,9 +538,9 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Die `GetTemplate` aufgerufen, um die Zelle für jede Zeile der Daten in der Liste gerendert werden zurückgegeben. Erstellt eine `DataTemplate` für jede `NativeCell` -Instanz, die mit auf dem Bildschirm angezeigt wird der `DataTemplate` definieren die Darstellung und Inhalt der Zelle.
+Die `GetTemplate`-Methode wird aufgerufen, um die Zelle zurückzugeben, die für jede Datenzeile in der Liste gerendert werden soll. Für jede `NativeCell`-Instanz wird eine `DataTemplate` erstellt, die auf dem Bildschirm angezeigt wird, und die `DataTemplate` definiert die Darstellung sowie die Inhalte der Zelle.
 
-Die `DataTemplate` befindet sich im Ressourcenverzeichnis auf Anwendungsebene und ist im folgenden Codebeispiel gezeigt:
+Die `DataTemplate` wird im Ressourcenverzeichnis auf Anwendungsebene gespeichert und ist im folgenden Codebeispiel dargestellt:
 
 ```xaml
 <DataTemplate x:Key="ListViewItemTemplate">
@@ -565,11 +565,11 @@ Die `DataTemplate` befindet sich im Ressourcenverzeichnis auf Anwendungsebene un
 </DataTemplate>
 ```
 
-Die `DataTemplate` gibt an, die Steuerelemente verwendet, um den Inhalt der Zelle, und das Layout und die Darstellung anzuzeigen. Zwei `TextBlock` Steuerelemente und ein `Image` Steuerelement zur Anzeige von den Inhalt der Zelle mithilfe der Datenbindung verwendet werden. Darüber hinaus eine Instanz von der `ConcatImageExtensionConverter` wird verwendet, um das Verketten der `.jpg` Dateierweiterung jedes Image-Dateinamen. Dadurch wird sichergestellt, dass die `Image` Steuerelement geladen und der Abbildung dargestellt, bei `Source` festgelegt wird.
+Die `DataTemplate` gibt die zum Anzeigen der Zelleninhalte verwendeten Steuerelemente sowie deren Layout und Darstellung an. Zwei `TextBlock`-Steuerelemente sowie ein `Image`-Steuerelement werden zum Anzeigen des Zelleninhalts über die Datenbindung verwendet. Zusätzlich wird eine Instanz von `ConcatImageExtensionConverter` verwendet, um die Dateierweiterung `.jpg` an jeden Bilddateinamen zu ketten. So wird sichergestellt, dass das Steuerelement `Image` das Bild laden und rendern kann, wenn dessen `Source`-Eigenschaft festgelegt ist.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel wurde beschrieben, wie zum Erstellen eines benutzerdefinierten Renderers für eine [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) , gehostet in einer Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) Steuerelement. Dadurch wird wiederholt aufgerufen wird, während die Xamarin.Forms-layoutberechnungen beendet `ListView` scrollen.
+In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für eine [`ViewCell`](xref:Xamarin.Forms.ViewCell) erstellen können, die in einem Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in `ListView` aufgerufen werden.
 
 
 ## <a name="related-links"></a>Verwandte Links

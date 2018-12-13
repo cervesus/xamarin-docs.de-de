@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms-Trigger
-description: In diesem Artikel wird erläutert, wie Xamarin.Forms-Trigger verwenden, um auf Änderungen an der Benutzeroberfläche mit XAML zu reagieren. Trigger können Sie Aktionen deklarativ in XAML auszudrücken, die die Darstellung von Steuerelementen basierend auf Ereignisse oder eigenschaftenänderungen zu ändern.
+description: In diesem Artikel wird erläutert, wie Xamarin.Forms-Trigger verwendet werden, um auf Änderungen der Benutzeroberfläche mit XAML zu reagieren. Mit Triggern können Sie Aktionen deklarativ in XAML ausdrücken, die die Darstellung von Steuerelementen basierend auf Ereignissen oder Eigenschaftenänderungen ändern.
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -9,33 +9,33 @@ ms.author: dabritch
 ms.date: 07/01/2016
 ms.openlocfilehash: e9ec9288e2b8ea991ef8d41f9b601d0897631b9d
 ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/31/2018
 ms.locfileid: "50675210"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
-Trigger können Sie Aktionen deklarativ in XAML auszudrücken, die die Darstellung von Steuerelementen basierend auf Ereignisse oder eigenschaftenänderungen zu ändern.
+Mit Triggern können Sie Aktionen deklarativ in XAML ausdrücken, die die Darstellung von Steuerelementen basierend auf Ereignissen oder Eigenschaftenänderungen ändern.
 
-Sie können ein Triggers direkt an ein Steuerelement zuweisen oder Hinzufügen einer Ressource auf Seitenebene oder app-Ebene-Wörterbuch, das auf mehrere Steuerelemente angewendet werden.
+Sie können einen Trigger direkt zu einem Steuerelement zuweisen oder zu einem Ressourcenverzeichnis auf Seitenebene oder Anwendungsebene hinzufügen, das auf mehrere Steuerelemente angewendet wird.
 
-Es gibt vier Arten von Triggern:
+Es gibt vier Typen von Triggern:
 
-* [Eigenschaftstrigger](#property) -tritt auf, wenn eine Eigenschaft eines Steuerelements zu einem bestimmten Wert festgelegt ist.
+* [Eigenschaftstrigger:](#property) tritt auf, wenn eine Eigenschaft eines Steuerelements auf einen bestimmten Wert festgelegt wird.
 
-* [Trigger Data](#data) – verwendet Datenbindung, Trigger, die auf Grundlage der Eigenschaften eines anderen Steuerelements.
+* [Datentrigger:](#data) nutzt Datenbindung, um auf Grundlage der Eigenschaften eines anderen Steuerelements auszulösen.
 
-* [Ereignistrigger](#event) -tritt auf, wenn ein Ereignis für das Steuerelement.
+* [Ereignistrigger:](#event) tritt auf, wenn ein Ereignis auf dem Steuerelement auftritt.
 
-* [Mehrere Trigger](#multi) -können mehrere triggerbedingungen festgelegt werden, bevor eine Aktion stattfindet.
+* [Multitrigger:](#multi) ermöglicht das Festlegen mehrerer Triggerbedingungen, unter denen eine Aktion auftritt.
 
 <a name="property" />
 
 ## <a name="property-triggers"></a>Eigenschaftstrigger
 
-Ein einfacher Trigger ausgedrückt werden kann, ausschließlich in XAML, Hinzufügen einer `Trigger` Element eines Steuerelements Collection auslöst.
-Dieses Beispiel zeigt einen Trigger, der sich ändert ein `Entry` Hintergrundfarbe, wenn es den Fokus erhält:
+Ein einfacher Trigger kann ausschließlich in XAML ausgedrückt werden, indem ein `Trigger`-Element in die Triggersammlung eines Steuerelements hinzugefügt wird.
+In diesem Beispiel wird ein Trigger veranschaulicht, der eine `Entry`-Hintergrundfarbe ändert, wenn sie den Fokus erhält:
 
 ```xaml
 <Entry Placeholder="enter name">
@@ -48,21 +48,21 @@ Dieses Beispiel zeigt einen Trigger, der sich ändert ein `Entry` Hintergrundfar
 </Entry>
 ```
 
-Die wichtigen Teile des Triggers Deklaration sind:
+Die folgenden Bestandteile der Deklaration des Triggers sind wichtig:
 
-* **TargetType** : der Steuerelementtyp, der der Trigger angewendet wird.
+* **TargetType:** der Steuerelementtyp, für den der Trigger gilt.
 
-* **Eigenschaft** -die Eigenschaft für das Steuerelement, das überwacht wird.
+* **Property:** die Eigenschaft des Steuerelements, das überwacht wird.
 
-* **Wert** -der Wert tritt für die überwachten Eigenschaft, die Aktivierung des Triggers verursacht.
+* **Value:** der Wert, der die Aktivierung des Triggers auslöst, wenn er bei der überwachten Eigenschaft auftritt.
 
-* **Setter** -eine Auflistung von `Setter` -Elemente hinzugefügt werden können, und wenn die auslöserbedingung erfüllt ist. Sie müssen angeben, die `Property` und `Value` festlegen.
+* **Setter:** eine Sammlung von `Setter`-Elementen kann hinzugefügt werden, wenn die Bedingung des Triggers erfüllt wird. Sie müssen `Property` und `Value` angeben, um diese Eigenschaft festzulegen.
 
-* **Eigenschaftsauslösern und "ExitActions"** (nicht dargestellt): in Code geschrieben sind und kann verwendet werden, zusätzlich zu (oder instead of) `Setter` Elemente. Sie sind [unten beschriebenen](#enterexit).
+* **EnterActions und ExitActions:** werden im Code geschrieben und können zusätzlich zu (oder anstelle von) `Setter`-Elementen verwendet werden (nicht gezeigt). Sie werden [unten beschrieben](#enterexit).
 
-### <a name="applying-a-trigger-using-a-style"></a>Anwenden eines Triggers, der mit einem Stil
+### <a name="applying-a-trigger-using-a-style"></a>Anwenden eines Triggers mit einer Formatvorlage
 
-Trigger können auch hinzugefügt werden, um eine `Style` Deklaration für ein Steuerelement in einer Seite oder einer Anwendung `ResourceDictionary`. Das folgende Beispiel deklariert einen impliziten Stil (d. h. keine `Key` festgelegt ist) was bedeutet, dass gelten für alle `Entry` Steuerelemente auf der Seite.
+Trigger können auch zu einer `Style`-Deklaration in einem Steuerelement, auf einer Seite oder in ein `ResourceDictionary` (Ressourcenverzeichnis) einer Anwendung hinzugefügt werden. In diesem Beispiel wird eine implizite Formatvorlage deklariert (d.h. `Key` ist nicht festgelegt), weshalb sie für alle `Entry`-Steuerelemente auf der Seite gilt.
 
 ```xaml
 <ContentPage.Resources>
@@ -83,10 +83,10 @@ Trigger können auch hinzugefügt werden, um eine `Style` Deklaration für ein S
 
 ## <a name="data-triggers"></a>Datentrigger
 
-Datentrigger verwenden die Datenbindung zum Überwachen von einem anderen Steuerelement, das dazu führen, dass die `Setter`s aufgerufen. Statt die `Property` -Attribut in einem Eigenschaftentrigger, legen die `Binding` Attribut für den angegebenen Wert zu überwachen.
+Datentrigger nutzen die Datenbindung, um ein andere Steuerelement zu überwachen, damit die `Setter`-Elemente aufgerufen werden können. Legen Sie anstelle des `Property`-Attributs in einem Eigenschaftentrigger das Attribut `Binding` fest, um den angegebenen Wert zu überwachen.
 
-Im folgenden Beispiel wird die Syntax zum Binden von Daten `{Binding Source={x:Reference entry}, Path=Text.Length}`
-Das ist wie wir auf ein anderes Steuerelement verweisen. Wenn die Länge des der `entry` 0 (null), wird der Trigger wird aktiviert. In diesem Beispiel wird der Trigger die Schaltfläche deaktiviert, wenn die Eingabe leer ist.
+Im folgenden Beispiel wird die Datenbindungssyntax `{Binding Source={x:Reference entry}, Path=Text.Length}` verwendet,
+um auf die Eigenschaften eines anderen Steuerelements zu verweisen. Wenn die Länge von `entry` 0 (null) ist, wird der Trigger aktiviert. In diesem Beispiel wird die Schaltfläche durch den Trigger deaktiviert, wenn die Eingabe leer ist.
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -109,15 +109,15 @@ Das ist wie wir auf ein anderes Steuerelement verweisen. Wenn die Länge des der
 </Button>
 ```
 
-Tipp: bei der Auswertung von `Path=Text.Length` geben immer einen Standardwert für die Zieleigenschaft (z. b. `Text=""`), da er andernfalls kann `null` und der Trigger funktioniert nicht wie erwartet.
+Tipp: Geben Sie beim Auswerten von `Path=Text.Length` immer einen Standardwert für die Zieleigenschaft an (z.B. `Text=""`), da der Wert sonst `null` wäre und der Trigger nicht erwartungsgemäß funktionieren würde.
 
-Zusätzlich zur Angabe `Setter`s, die Sie auch bieten [ `EnterActions` und `ExitActions` ](#enterexit).
+Zusätzlich zur Angabe von `Setter`-Eigenschaften können Sie auch [`EnterActions` und `ExitActions`](#enterexit) bereitstellen.
 
 <a name="event" />
 
 ## <a name="event-triggers"></a>Ereignistrigger
 
-Die `EventTrigger` -Element ist nur ein `Event` -Eigenschaft, z. B. `"Clicked"` im folgenden Beispiel.
+Für das `EventTrigger`-Element ist wie `"Clicked"` im folgenden Beispiel lediglich eine `Event`-Eigenschaft erforderlich.
 
 ```xaml
 <EventTrigger Event="Clicked">
@@ -125,7 +125,7 @@ Die `EventTrigger` -Element ist nur ein `Event` -Eigenschaft, z. B. `"Clicked"` 
 </EventTrigger>
 ```
 
-Beachten Sie, dass es keine `Setter` Elemente jedoch eher einen Verweis auf eine Klasse, definiert durch `local:NumericValidationTriggerAction` erfordert die `xmlns:local` deklariert werden, auf der Seite des XAML:
+Beachten Sie, dass keine `Setter`-Elemente vorhanden sind. Stattdessen ist ein Verweis auf eine mit `local:NumericValidationTriggerAction` definierte Klasse enthalten, für die `xmlns:local` im XAML-Code der Seite deklariert werden muss:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,15 +133,15 @@ Beachten Sie, dass es keine `Setter` Elemente jedoch eher einen Verweis auf eine
              xmlns:local="clr-namespace:WorkingWithTriggers;assembly=WorkingWithTriggers"
 ```
 
-Implementiert die Klasse selbst `TriggerAction` was bedeutet, dass sollten Geben Sie eine Außerkraftsetzung für die `Invoke` Methode, die aufgerufen wird, wenn dieses Ereignis eintritt.
+Die Klasse selbst implementiert `TriggerAction`, d.h. sie sollte die `Invoke`-Methode überschreiben, die aufgerufen wird, wenn das Triggerereignis auftritt.
 
-Eine Aktion triggerimplementierung sollten Folgendes beachten:
+Eine Implementierung einer Triggeraktion sollte folgende Aktionen durchführen:
 
-* Implementiert die generische `TriggerAction<T>` -Klasse mit den generischen Parameter entspricht, mit dem Typ des Steuerelements auf der Trigger angewendet werden. Sie können eine übergeordnete Klasse wie z. B. `VisualElement` Triggeraktionen zu schreiben, die funktionieren mit einer Vielzahl von Steuerelementen, oder geben Sie ein Steuerelementtyp wie `Entry`.
+* Die generische `TriggerAction<T>`-Klasse mit dem generischen Parameter implementieren, der dem Typ des Steuerelements entspricht, auf das der Trigger angewendet wird. Sie können übergeordnete Klassen wie `VisualElement` verwenden, um Triggeraktionen zu schreiben, die für eine Vielzahl von Steuerelementen funktionieren, oder ein Steuerelementtyp wie `Entry` anzugeben.
 
-* Überschreiben der `Invoke` -Methode: wird dieses aufgerufen, wenn die auslösekriterien erfüllt sind.
+* Die `Invoke`-Methode überschreiben. Diese wird immer dann aufgerufen, wenn die Triggerbedingungen erfüllt werden.
 
-* Optional verfügbar machen Eigenschaften, die in der XAML festgelegt werden können, wenn der Trigger deklariert wird (z. B. `Anchor`, `Scale`, und `Length` in diesem Beispiel).
+* Eigenschaften optional zur Verfügung stellen, die im XAML-Code festgelegt werden können, wenn der Trigger deklariert wird (z.B. `Anchor`, `Scale` und `Length` im folgenden Beispiel).
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -155,7 +155,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-Die Eigenschaften, die von der Triggeraktion verfügbar gemacht werden können wie folgt in der XAML-Deklaration festgelegt werden:
+Die von der Triggeraktion zur Verfügung gestellten Eigenschaften können wie folgt in der XAML-Deklaration festgelegt werden:
 
 ```xaml
 <EventTrigger Event="TextChanged">
@@ -163,17 +163,17 @@ Die Eigenschaften, die von der Triggeraktion verfügbar gemacht werden können w
 </EventTrigger>
 ```
 
-Seien Sie vorsichtig bei der Freigabe von Triggern in einer `ResourceDictionary`, eine Instanz wird zwischen Steuerelementen genutzt werden, wendet auf alle an einem beliebigen Zustand, der einmal konfiguriert ist.
+Passen Sie beim Freigeben von Triggern in einem `ResourceDictionary` auf. Eine Instanz wird unter mehreren Steuerelementen geteilt, also wird jeder Zustand, der einmal konfiguriert wird, auf alle Steuerelemente angewendet.
 
-Beachten Sie, dass nicht Ereignistrigger unterstützen `EnterActions` und `ExitActions` [unten beschriebenen](#enterexit).
+Beachten Sie, dass Ereignistrigger `EnterActions` und `ExitActions` nicht unterstützen ([siehe unten](#enterexit)).
 
 <a name="multi" />
 
-## <a name="multi-triggers"></a>Mehrere Trigger
+## <a name="multi-triggers"></a>Multitrigger
 
-Ein `MultiTrigger` sieht in etwa wie eine `Trigger` oder `DataTrigger` außer können mehr als eine Bedingung vorhanden sein. Alle Bedingungen erfüllt, bevor Sie sein, die `Setter`s ausgelöst werden.
+Ein `MultiTrigger` sieht `Trigger` oder `DataTrigger` ähnlich, mit der Ausnahme, dass sie mehrere Bedingungen aufweisen können. Alle Bedingungen müssen erfüllt werden, bevor `Setter`-Elemente ausgelöst werden.
 
-Es folgt ein Beispiel eines Triggers für eine Schaltfläche, die an zwei verschiedene Eingaben binden (`email` und `phone`):
+Hier finden Sie ein Beispiel für einen Trigger für eine Schaltfläche, die zwei verschiedene Eingaben (`email` und `phone`) bindet:
 
 ```xaml
 <MultiTrigger TargetType="Button">
@@ -191,17 +191,17 @@ Es folgt ein Beispiel eines Triggers für eine Schaltfläche, die an zwei versch
 </MultiTrigger>
 ```
 
-Die `Conditions` Auflistung kann auch enthalten `PropertyCondition` Elemente wie folgt aus:
+Die `Conditions`-Sammlung kann wie folgt auch `PropertyCondition`-Elemente enthalten:
 
 ```xaml
 <PropertyCondition Property="Text" Value="OK" />
 ```
 
-### <a name="building-a-require-all-multi-trigger"></a>Erstellen einen Multi-Trigger "alle erforderlich"
+### <a name="building-a-require-all-multi-trigger"></a>Erstellen eines Multitriggers, der alle Bedingungen erfordert
 
-Der Multi-Trigger aktualisiert das Steuerelement nur, wenn alle Bedingungen erfüllt sind. Tests für "alle Feldlängen 0 (null sind)" (z. B. eine Seite für die Anmeldung, in dem alle Eingaben müssen abgeschlossen sein) ist schwierig, da Sie möchten, dass eine Bedingung ", in denen Text.Length > 0", aber dies kann nicht in XAML ausgedrückt werden.
+Der Multitrigger aktualisiert sein Steuerelement nur, wenn alle Bedingungen erfüllt werden. Das Testen, ob „alle Feldlängen 0 (null) sind“ (z.B. eine Anmeldeseite, bei der alle Eingaben vollständig sein müssen), ist schwierig, da Sie die Bedingung „where Text.Length > 0“ (Textlänge größer als 0 (null)) benötigen, die in XAML nicht ausgedrückt werden kann.
 
-Dies erreichen Sie mit einem `IValueConverter`. Die folgenden Transformationen Konvertercode der `Text.Length` Bindung in eine `bool` , der angibt, ob ein Feld leer oder nicht ist:
+Hierzu können Sie die Schnittstelle `IValueConverter` verwenden. Mit dem folgenden Konvertercode wird die `Text.Length`-Bindung in einen `bool`-Wert transformiert, der angibt, ob ein Feld leer ist oder nicht:
 
 ```csharp
 public class MultiTriggerConverter : IValueConverter
@@ -223,7 +223,7 @@ public class MultiTriggerConverter : IValueConverter
 }
 ```
 
-Für die Verwendung dieser Konverter in einem Trigger mit mehreren zuerst hinzufügen Ressourcenverzeichnis der Seite (zusammen mit einem benutzerdefinierten `xmlns:local` Namespacedefinition):
+Um diesen Konverter in einem Multitrigger zu verwenden, fügen Sie ihn zunächst zum Ressourcenverzeichnis der Seite hinzu (zusammen mit einer benutzerdefinierten `xmlns:local`-Namespacedefinition):
 
 ```xaml
 <ResourceDictionary>
@@ -231,11 +231,11 @@ Für die Verwendung dieser Konverter in einem Trigger mit mehreren zuerst hinzuf
 </ResourceDictionary>
 ```
 
-Die XAML ist unten dargestellt. Beachten Sie die folgenden Unterschiede gegenüber den im ersten Beispiel mit mehreren-Trigger wird:
+Der XAML-Code wird unten veranschaulicht. Beachten Sie die folgenden Unterschiede gegenüber dem ersten Beispiel für einen Multitrigger:
 
-* Die Schaltfläche `IsEnabled="false"` standardmäßig festgelegt.
-* Die Multi-Auslösebedingungen verwenden Sie den Konverter zum Aktivieren der `Text.Length` -Wert in eine `boolean`.
-* Wenn alle Bedingungen sind `true`, der Setter ist der Schaltfläche " `IsEnabled` Eigenschaft `true`.
+* Für die Schaltfläche ist standardmäßig `IsEnabled="false"` festgelegt.
+* Die Bedingungen des Multitriggers verwenden den Konverter, um den Wert `Text.Length` in einen `boolean`-Wert zu konvertieren.
+* Wenn alle Bedingungen den Wert `true` aufweisen, das Setter-Element legt `true` für die `IsEnabled`-Eigenschaft der Schaltfläche fest.
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />
@@ -264,18 +264,18 @@ Die XAML ist unten dargestellt. Beachten Sie die folgenden Unterschiede gegenüb
 </Button>
 ```
 
-Diese Screenshots ist den Unterschied zwischen den beiden mehrere Trigger Beispielen oben dargestellt. Im oberen Teil der Bildschirme, geben Sie Text in nur einem `Entry` reicht aus, aktivieren die **speichern** Schaltfläche.
-Im unteren Bereich der Bildschirme die **Anmeldung** Schaltfläche inaktiv bleibt, bis beide Felder Daten enthalten.
+Im folgenden Screenshot wird der Unterschied zwischen den zwei oben gezeigten Beispielen für Multitrigger dargestellt. Im oberen Teil der Bildschirme genügt die Texteingabe in einem `Entry`-Element, um die Schaltfläche **Save** (Speichern) zu aktivieren.
+Im unteren Teil der Bildschirme bleibt die Schaltfläche **Login** (Anmelden) inaktiv, bis beide Felder Daten enthalten.
 
-![](triggers-images/multi-requireall.png "MultiTrigger-Beispiele")
+![](triggers-images/multi-requireall.png "Beispiele für Multitrigger")
 
 <a name="enterexit" />
 
-## <a name="enteractions-and-exitactions"></a>Eigenschaftsauslösern und "ExitActions"
+## <a name="enteractions-and-exitactions"></a>EnterActions und ExitActions
 
-Eine andere Möglichkeit, Änderungen zu implementieren, wenn ein Trigger wird aktiviert, wird durch Hinzufügen von `EnterActions` und `ExitActions` Sammlungen und Angeben von `TriggerAction<T>` Implementierungen.
+Das Hinzufügen der `EnterActions`- und `ExitActions`-Sammlungen und das Festlegen von `TriggerAction<T>`-Implementierungen stellt eine weitere Möglichkeit zum Implementieren von Änderungen, wenn ein Trigger ausgelöst wird.
 
-Sie können angeben, *sowohl* `EnterActions` und `ExitActions` sowie `Setter`s in einem Trigger, aber denken Sie daran, die die `Setter`s werden sofort aufgerufen (sie nicht warten die `EnterAction` oder `ExitAction` auf Führen Sie). Alternativ können Sie alles, was in den Code ausführen und verwenden Sie nicht `Setter`s überhaupt.
+Sie können die *beiden* Eigenschaften `EnterActions` und `ExitActions` sowie `Setter` in einem Trigger angeben. Achten Sie jedoch darauf, dass `Setter` sofort aufgerufen werden (sie warten nicht auf den Abschluss von `EnterAction` oder `ExitAction`). Alternativ können Sie alles im Code ausführen, anstatt `Setter` überhaupt zu verwenden.
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -295,7 +295,7 @@ Sie können angeben, *sowohl* `EnterActions` und `ExitActions` sowie `Setter`s i
 </Entry>
 ```
 
-Wie immer, wenn eine Klasse in XAML verwiesen wird deklarieren Sie einen Namespace wie z. B. `xmlns:local` wie hier gezeigt:
+Sie sollten wie im folgenden Beispiel gezeigt immer einen Namespace wie `xmlns:local` deklarieren, wenn in XAML auf eine Klasse verwiesen wird:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -303,7 +303,7 @@ Wie immer, wenn eine Klasse in XAML verwiesen wird deklarieren Sie einen Namespa
              xmlns:local="clr-namespace:WorkingWithTriggers;assembly=WorkingWithTriggers"
 ```
 
-Die `FadeTriggerAction` Code wird unten gezeigt:
+Im Folgenden wird der `FadeTriggerAction`-Code dargestellt:
 
 ```csharp
 public class FadeTriggerAction : TriggerAction<VisualElement>
@@ -325,11 +325,11 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 }
 ```
 
-Hinweis: `EnterActions` und `ExitActions` werden auf ignoriert **Ereignistrigger**.
+Hinweis: `EnterActions` und `ExitActions` werden bei **Ereignistriggern** ignoriert.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Trigger-Beispiel](https://developer.xamarin.com/samples/WorkingWithTriggers)
+- [Triggers Sample (Triggerbeispiel)](https://developer.xamarin.com/samples/WorkingWithTriggers)
 - [Xamarin.Forms-API-Dokumentation](xref:Xamarin.Forms.TriggerAction`1)

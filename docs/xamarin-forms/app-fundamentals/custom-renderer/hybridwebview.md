@@ -1,6 +1,6 @@
 ---
-title: Implementieren einer HybridWebView
-description: In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer für ein benutzerdefiniertes HybridWebView-Steuerelement, das zeigt, wie zur Verbesserung der plattformspezifischen Websteuerelemente um C#-Code aufgerufen werden von JavaScript zu ermöglichen.
+title: Implementieren eines HybridWebView-Steuerelements
+description: In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Steuerelement HybridWebView erstellen können. Dadurch wird veranschaulicht, wie Sie plattformspezifische Websteuerelemente erweitern können, sodass diese zulassen, dass C#-Code über JavaScript aufgerufen werden kann.
 ms.prod: xamarin
 ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
@@ -9,36 +9,36 @@ ms.author: dabritch
 ms.date: 10/19/2018
 ms.openlocfilehash: aa060bd16bc0220f6a6026106ff6c8d786daebc1
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50105037"
 ---
-# <a name="implementing-a-hybridwebview"></a>Implementieren einer HybridWebView
+# <a name="implementing-a-hybridwebview"></a>Implementieren eines HybridWebView-Steuerelements
 
-_Xamarin.Forms benutzerdefinierte Steuerelemente der Benutzeroberfläche sollte von der Ansichtsklasse abgeleitet werden, die verwendet wird, Layouts und Steuerelemente auf dem Bildschirm platziert. In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer für ein benutzerdefiniertes HybridWebView-Steuerelement, das zeigt, wie zur Verbesserung der plattformspezifischen Websteuerelemente um C#-Code aufgerufen werden von JavaScript zu ermöglichen._
+_Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der View-Klasse abgeleitet werden, die verwendet wird, um Layout und Steuerelemente einer Anzeige hinzuzufügen. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes HybridWebView-Steuerelement erstellen können. Dadurch wird veranschaulicht, wie Sie plattformspezifische Websteuerelemente erweitern können, sodass diese zulassen, dass C#-Code über JavaScript aufgerufen werden kann._
 
-Alle Xamarin.Forms-Ansicht ist eine begleitende-Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `View` ](xref:Xamarin.Forms.View) einer Xamarin.Forms-Anwendung unter iOS gerendert wird die `ViewRenderer` Klasse instanziiert wird, die instanziiert wiederum eines systemeigenes `UIView` Steuerelement. Auf der Android-Plattform die `ViewRenderer` Klasse instanziiert ein `View` Steuerelement. Auf der universellen Windows-Plattform (UWP), die `ViewRenderer` Klasse instanziiert ein systemeigenes `FrameworkElement` Steuerelement. Weitere Informationen zu den Renderer und nativen Steuerelements-Klassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und Native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`View`](xref:Xamarin.Forms.View)-Objekts durch eine Xamarin.Forms-Anwendung wird in iOS die `ViewRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UIView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `ViewRenderer`-Klasse ein `View`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `ViewRenderer`-Klasse ein natives `FrameworkElement`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `View` ](xref:Xamarin.Forms.View) und die entsprechenden systemeigenen Steuerelemente, die sie implementieren:
+Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`View`](xref:Xamarin.Forms.View)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](hybridwebview-images/view-classes.png "Beziehung zwischen der Ansichtsklasse und seine Implementierung systemeigenen Klassen")
+![](hybridwebview-images/view-classes.png "Beziehungen zwischen der View-Klasse und den nativen Klassen, die diese implementieren")
 
-Das Rendern zu kann verwendet werden, um plattformspezifische Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für eine [ `View` ](xref:Xamarin.Forms.View) auf jeder Plattform. Der Prozess hierfür lautet wie folgt aus:
+Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`View`](xref:Xamarin.Forms.View)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Der Prozess dafür sieht wie folgt aus:
 
-1. [Erstellen Sie](#Creating_the_HybridWebView) der `HybridWebView` benutzerdefiniertes Steuerelement.
-1. [Nutzen](#Consuming_the_HybridWebView) der `HybridWebView`von Xamarin.Forms.
-1. [Erstellen Sie](#Creating_the_Custom_Renderer_on_each_Platform) des benutzerdefinierten Renderers für das `HybridWebView` auf jeder Plattform.
+1. [Erstellen](#Creating_the_HybridWebView) Sie das benutzerdefinierte Steuerelement `HybridWebView`.
+1. [Nutzen](#Consuming_the_HybridWebView) Sie das `HybridWebView`-Objekt von Xamarin.Forms.
+1. [Erstellen](#Creating_the_Custom_Renderer_on_each_Platform) Sie einen benutzerdefinierten Renderer für das `HybridWebView`-Objekt auf jeder Plattform.
 
-Jedes Element jetzt erläutert wiederum zum Implementieren einer `HybridWebView` Renderer an, der verbessert die plattformspezifische Websteuerelemente um C#-Code aufgerufen werden von JavaScript zu ermöglichen. Die `HybridWebView` Instanz wird verwendet, um eine HTML-Seite angezeigt, das den Benutzer auf ihren Namen eingeben. Klicken Sie dann klickt der Benutzer eine HTML-Schaltfläche, JavaScript Aufrufen einer Funktion wird eine C#- `Action` , die ein Popup mit dem Benutzernamen anzeigt.
+Im folgenden wird auf jeden dieser Punkte ausführlicher eingegangen, um zu veranschaulichen, wie Sie einen `HybridWebView`-Renderer implementieren können, der die plattformspezifischen Websteuerelemente erweitert, damit C#-Code über JavaScript aufgerufen werden kann. Die `HybridWebView`-Instanz wird verwendet, um eine HTML-Seite anzuzeigen, die den Benutzer auffordert, seinen Namen einzugeben. Wenn der Benutzer auf die HTML-Schaltfläche klickt, ruft eine JavaScript-Funktion ein C#-`Action`-Objekt auf, das den Benutzernamen enthält.
 
-Weitere Informationen über den Prozess für aufrufende C#-Code in JavaScript finden Sie unter [Aufrufen von c# aus JavaScript](#Invoking_C_from_JavaScript). Weitere Informationen zu der HTML-Seite, finden Sie unter [erstellen die Webseite](#Creating_the_Web_Page).
+Weitere Informationen zum Aufrufen von C#-Code über JavaScript finden Sie im Abschnitt [Aufrufen von C#-Code über JavaScript](#Invoking_C_from_JavaScript). Weitere Informationen zu HTML-Seiten finden Sie im Abschnitt [Erstellen einer Webseite](#Creating_the_Web_Page).
 
 <a name="Creating_the_HybridWebView" />
 
-## <a name="creating-the-hybridwebview"></a>Erstellen die HybridWebView
+## <a name="creating-the-hybridwebview"></a>Erstellen eines HybridWebView-Steuerelements
 
-Die `HybridWebView` benutzerdefiniertes Steuerelement erstellt werden kann, indem Unterklassen der [ `View` ](xref:Xamarin.Forms.View) Klasse, wie im folgenden Codebeispiel gezeigt:
+Das benutzerdefinierte Steuerelement `HybridWebView` kann erstellt werden, indem Sie die [`View`](xref:Xamarin.Forms.View)-Klasse wie in folgendem Codebeispiel als Unterklasse verwenden:
 
 ```csharp
 public class HybridWebView : View
@@ -75,18 +75,18 @@ public class HybridWebView : View
 }
 ```
 
-Die `HybridWebView` benutzerdefiniertes Steuerelement wird in .NET Standard Library-Projekt erstellt und definiert die folgende API für das Steuerelement:
+Das benutzerdefinierte Steuerelement `HybridWebView` wird im .NET Standard-Bibliotheksprojekt erstellt und definiert die folgende API für das Steuerelement:
 
-- Ein `Uri` Eigenschaft, der angibt, die Adresse der Website geladen werden.
-- Ein `RegisterAction` -Methode, die registriert eine `Action` mit dem Steuerelement. Wird die registrierte Aktion aufgerufen werden, aus JavaScript enthalten, die in der HTML-Datei über die `Uri` Eigenschaft.
-- Ein `CleanUp` Methode, die den Verweis auf den registrierten entfernt `Action`.
-- Ein `InvokeAction` -Methode, die den registrierten ruft `Action`. Diese Methode wird ein benutzerdefinierter Renderer in jedem Projekt plattformspezifischen aufgerufen werden.
+- Eine `Uri`-Eigenschaft, die die Adresse der zu ladenden Webseite angibt.
+- Eine `RegisterAction`-Methode, die ein `Action`-Objekt beim Steuerelement registriert. Die registrierte Aktion wird über JavaScript aufgerufen, das in der HTML-Datei enthalten ist, auf die die `Uri`-Eigenschaft verweist.
+- Eine `CleanUp`-Methode, die den Verweis auf das registrierte `Action`-Objekt entfernt.
+- Eine `InvokeAction`-Methode, die das registrierte `Action`-Objekt aufruft. Diese Methode wird von einem benutzerdefinierten Renderer in jedem plattformspezifischen Projekt aufgerufen.
 
 <a name="Consuming_the_HybridWebView" />
 
-## <a name="consuming-the-hybridwebview"></a>Nutzen die HybridWebView
+## <a name="consuming-the-hybridwebview"></a>Nutzen eines HybridWebView-Steuerelements
 
-Die `HybridWebView` benutzerdefiniertes Steuerelement kann verwiesen werden in XAML in .NET Standard Library-Projekt durch deklarieren einen Namespace für den Speicherort und verwenden das Namespacepräfix des benutzerdefinierten Steuerelements. Das folgende Codebeispiel zeigt die `HybridWebView` benutzerdefiniertes Steuerelement kann von einer XAML-Seite verwendet werden:
+Sie können auf das benutzerdefinierte Steuerelement `HybridWebView` in XAML im .NET Standard-Bibliotheksprojekt verweisen, indem Sie einen Namespace für seine Position deklarieren und das Namespacepräfix für das benutzerdefinierte Steuerelement verwenden. Das folgende Codebeispiel veranschaulicht, wie das benutzerdefinierte Steuerelement `HybridWebView` von der XAML-Seite genutzt werden kann:
 
 ```xaml
 <ContentPage ...
@@ -100,9 +100,9 @@ Die `HybridWebView` benutzerdefiniertes Steuerelement kann verwiesen werden in X
 </ContentPage>
 ```
 
-Die `local` Namespacepräfix kann eine beliebige Bezeichnung. Allerdings die `clr-namespace` und `assembly` -Werte müssen die Details des benutzerdefinierten Steuerelements entsprechen. Sobald der Namespace deklariert wird, wird das Präfix verwendet, auf das benutzerdefinierte Steuerelement verweisen.
+Das `local`-Namespacepräfix kann beliebig benannt werden. Die Werte `clr-namespace` und `assembly` müssen jedoch mit den Angaben des benutzerdefinierten Steuerelements übereinstimmen. Wenn der Namespace deklariert wurde, wird das Präfix verwendet, um auf das benutzerdefinierte Steuerelement zu verweisen.
 
-Das folgende Codebeispiel zeigt die `HybridWebView` benutzerdefiniertes Steuerelement durch einen C# -Code genutzt werden kann:
+Das folgende Codebeispiel veranschaulicht, wie das benutzerdefinierte Steuerelement `HybridWebView` von einer C#-Seite genutzt werden kann:
 
 ```csharp
 public class HybridWebViewPageCS : ContentPage
@@ -121,9 +121,9 @@ public class HybridWebViewPageCS : ContentPage
 }
 ```
 
-Die `HybridWebView` Instanz wird verwendet, um ein native Websteuerelement auf jeder Plattform anzuzeigen. Sie verfügt über `Uri` -Eigenschaftensatz auf einer HTML-Datei, in den einzelnen plattformspezifischen Projekten gespeichert, und die durch das native Steuerelement angezeigt. Der gerenderte HTML-Code fordert den Benutzer auf ihren Namen eingeben, mit einer JavaScript-Funktion aufrufen einer C#- `Action` als Reaktion auf einen Klick auf eine HTML-Schaltfläche.
+Die `HybridWebView`-Instanz wird verwendet, um ein natives Websteuerelement auf jeder Plattform anzuzeigen. Deren `Uri`-Eigenschaft wird auf eine HTML-Datei festgelegt, die in jedem plattformspezifischen Projekt gespeichert ist und die vom nativen Websteuerelement angezeigt wird. Die gerenderte HTML-Datei fordert den Benutzer auf, seinen Namen anzugeben. Dabei ruft eine JavaScript-Funktion ein C#-`Action`-Objekt auf, nachdem der Benutzer auf die HTML-Schaltfläche geklickt hat.
 
-Die `HybridWebViewPage` registriert die Aktion, die aus JavaScript aufgerufen werden, wie im folgenden Codebeispiel gezeigt:
+Das `HybridWebViewPage`-Objekt registriert die Aktion, die über JavaScript aufgerufen werden soll. Dies wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 public partial class HybridWebViewPage : ContentPage
@@ -136,36 +136,36 @@ public partial class HybridWebViewPage : ContentPage
 }
 ```
 
-Diese Aktion ruft die [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) Methode, um ein modales Popup anzuzeigen, der den Namen eingegeben haben, in die HTML-Seite angezeigt, enthält die `HybridWebView` Instanz.
+Diese Aktion ruft die [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String))-Methode auf, um ein modale Popupelement anzuzeigen, das den Namen anzeigt, der auf der HTML-Seite eingegeben wurde, die von der `HybridWebView`-Instanz angezeigt wurde.
 
-Ein benutzerdefinierter Renderer kann jetzt jedes Anwendungsprojekt plattformspezifische Websteuerelementen zu verbessern, indem C#-Code aus JavaScript aufgerufen werden können hinzugefügt werden.
+Ein benutzerdefinierter Renderer kann jetzt jedem Anwendungsprojekt hinzugefügt werden, um plattformspezifische Websteuerelemente zu erweitern, sodass diese zulassen, dass C#-Code über JavaScript aufgerufen wird.
 
 <a nane="Creating_the_Custom_Renderer_on_each_Platform" />
 
-## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen benutzerdefinierten Renderer auf jeder Plattform
+## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen des benutzerdefinierten Renderers auf jeder Plattform
 
-Der Prozess zum Erstellen der benutzerdefinierten Renderer-Klasse sieht folgendermaßen aus:
+Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Renderer zu erstellen:
 
-1. Erstellen Sie eine Unterklasse von der `ViewRenderer<T1,T2>` -Klasse, die das benutzerdefinierte Steuerelement rendert. Das erste Argument des Typs muss das benutzerdefinierte Steuerelement, in diesem Fall der Renderer ist `HybridWebView`. Das zweite Typargument muss das native Steuerelement, das die benutzerdefinierte Ansicht implementiert wird.
-1. Überschreiben der `OnElementChanged` -Methode, die benutzerdefinierte Steuerelement und Schreiben-Logik, um es anzupassen rendert. Diese Methode wird aufgerufen, wenn die entsprechenden benutzerdefinierten Xamarin.Forms-Steuerelements erstellt wird.
-1. Hinzufügen einer `ExportRenderer` -Attribut der benutzerdefinierten Renderer-Klasse, um anzugeben, dass es zum Rendern des benutzerdefinierten Xamarin.Forms-Steuerelements verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
+1. Erstellen Sie eine Unterklasse der `ViewRenderer<T1,T2>`-Klasse, die das benutzerdefinierte Steuerelement rendert. Das erste Typargument sollte das benutzerdefinierte Steuerelement sein, für das der Renderer erstellt werden soll. In diesem Fall ist das `HybridWebView`. Das zweite Typargument sollte das native Steuerelement sein, das die benutzerdefinierte Ansicht implementiert.
+1. Überschreiben Sie die `OnElementChanged`-Methode, die das benutzerdefinierte Steuerelement rendert, und schreiben Sie Logik, um dieses anzupassen. Die Methode wird aufgerufen, wenn das entsprechende benutzerdefinierte Xamarin.Forms-Steuerelement erstellt wird.
+1. Fügen Sie der Klasse des benutzerdefinierten Renderers ein `ExportRenderer`-Attribut hinzu, um anzugeben, dass sie zum Rendern des benutzerdefinierten Xamarin.Forms-Steuerelements verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer bei Xamarin.Forms zu registrieren.
 
 > [!NOTE]
-> Für die meisten Xamarin.Forms-Elemente ist optional, um einen benutzerdefinierten Renderer in jedem plattformprojekt bereitzustellen. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standard-Renderer für die Basisklasse des Steuerelements verwendet werden. Benutzerdefinierte Renderer sind jedoch erforderlich, in dem jedes plattformprojekt beim Rendern einer [Ansicht](xref:Xamarin.Forms.View) Element.
+> Bei den meisten Xamarin.Forms-Elementen ist das Angeben eines benutzerdefinierten Renderers in jedem Plattformprojekt optional. Wenn kein benutzerdefinierter Renderer registriert wurde, wird der Standardrenderer für die Basisklasse des Steuerelements verwendet. Benutzerdefinierte Renderer sind jedoch in jedem Plattformprojekt erforderlich, wenn ein [View](xref:Xamarin.Forms.View)-Element gerendert wird.
 
-Das folgende Diagramm veranschaulicht die Verantwortlichkeiten der einzelnen Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
+Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](hybridwebview-images/solution-structure.png "Zuständigkeiten von HybridWebView benutzerdefinierten Renderer-Projekt")
+![](hybridwebview-images/solution-structure.png "Projektzuständigkeiten beim benutzerdefinierten Steuerelement HybridWebView")
 
-Die `HybridWebView` benutzerdefiniertes Steuerelement gerendert wird, durch das plattformspezifische, alle abgeleiteten Renderingklassen der `ViewRenderer` -Klasse für jede Plattform. Dies führt in jeder `HybridWebView` benutzerdefiniertes Steuerelement mit plattformspezifischen Websteuerelemente gerendert wird, wie in den folgenden Screenshots gezeigt:
+Das benutzerdefinierte Steuerelement `HybridWebView` wird von plattformspezifischen Rendererklassen gerendert, die alle von der `ViewRenderer`-Klasse für jede Plattform abgeleitet werden. Das führt dazu, dass jedes benutzerdefinierte `HybridWebView`-Steuerelement mit plattformspezifischen Websteuerelementen gerendert wird. Dies wird in folgenden Screenshots veranschaulicht:
 
 ![](hybridwebview-images/screenshots.png "HybridWebView auf jeder Plattform")
 
-Die `ViewRenderer` -Klasse macht die `OnElementChanged` -Methode, die aufgerufen wird, wenn das benutzerdefinierte Steuerelement mit Xamarin.Forms erstellt wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert eine `ElementChangedEventArgs` Parameter mit `OldElement` und `NewElement` Eigenschaften. Diese Eigenschaften repräsentieren die Xamarin.Forms-Element, die den Renderer *wurde* angefügt, und das Xamarin.Forms-Element, die den Renderer *ist* angefügt wird, bzw. In diesem Beispiel die `OldElement` Eigenschaft `null` und `NewElement` Eigenschaft enthält einen Verweis auf die `HybridWebView` Instanz.
+Die `ViewRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung des benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Websteuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `HybridWebView`-Instanz.
 
-Eine außer Kraft gesetzte Version von der `OnElementChanged` -Methode, in den einzelnen plattformspezifischen rendererklassen an, ist der Ort für die Instanziierung der systemeigenen Web-Steuerelement und die Anpassung auszuführen. Die `SetNativeControl` Methode sollte verwendet werden, um das native Steuerelement zu instanziieren und diese Methode weist auch steuerelementreferenz der `Control` Eigenschaft. Darüber hinaus kann ein Verweis auf das Xamarin.Forms-Steuerelement, das gerendert wird abgerufen werden, über die `Element` Eigenschaft.
+Das native Websteuerelement sollte bei der überschriebenen Version der `OnElementChanged`-Methode in jeder plattformspezifischen Rendererklasse instanziiert und angepasst werden. Mit der `SetNativeControl`-Methode sollte das native Websteuerelement instanziiert und die Steuerelementreferenz der Eigenschaft `Control` zugewiesen werden. Zusätzlich kann ein Verweis auf das zu rendernde Xamarin.Forms-Steuerelement über die `Element`-Eigenschaft abgerufen werden.
 
-In einigen Fällen die `OnElementChanged` -Methode mehrere Male aufgerufen werden kann. Aus diesem Grund, um Speicherverluste zu verhindern, Sorgfalt bei der Instanziierung eines neuen nativen Steuerelements. Im folgenden Codebeispiel ist der Ansatz zu sehen, der beim Instanziieren eines neuen nativen Steuerelements in einem benutzerdefinierten Renderer verwendet werden soll:
+In einigen Fällen kann die `OnElementChanged`-Methode mehrmals aufgerufen werden. Daher müssen Sie bei der Instanziierung eines nativen Steuerelements sorgfältig vorgehen, um Arbeitsspeicherverluste zu vermeiden. Im folgenden Codebeispiel ist der Ansatz zu sehen, der beim Instanziieren eines neuen nativen Steuerelements in einem benutzerdefinierten Renderer verwendet werden soll:
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<NativeListView> e)
@@ -187,17 +187,17 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Ein neues natives Steuerelement sollte nur einmal instanziiert werden, wenn der Wert der Eigenschaft `Control` `null` lautet. Ein Steuerelement sollte nur dann konfiguriert und für Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Dieser Ansatz hilft, einen leistungsfähigen benutzerdefinierten Renderer erstellen, der durch Speicherverluste beeinträchtigt nicht.
+Ein neues natives Steuerelement sollte nur einmal instanziiert werden, wenn der Wert der Eigenschaft `Control` `null` lautet. Ein Steuerelement sollte nur dann konfiguriert und für Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein leistungsstarker benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
 
-Mit jeder benutzerdefinierten Renderer-Klasse ergänzt wird ein `ExportRenderer` -Attribut, das den Renderer mit Xamarin.Forms registriert. Das-Attribut nimmt zwei Parameter: den Typnamen des benutzerdefinierten Xamarin.Forms-Steuerelements gerendert wird, und der Typname des benutzerdefinierten Renderers. Die `assembly` Präfix, das das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
+Jede benutzerdefinierte Rendererklasse ist mit einem `ExportRenderer`-Attribut versehen, das den Renderer bei Xamarin.Forms registriert. Das Attribut benötigt zwei Parameter: den Typnamen des zu rendernden benutzerdefinierten Xamarin.Forms-Steuerelements und den Typnamen des benutzerdefinierten Renderers. Das Präfix `assembly` für das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
 
-Den folgenden Abschnitten werden die Struktur der Webseite, die von jeder systemeigene Websteuerelement, den Prozess zum aufrufenden c# aus JavaScript und der Implementierung in jeder benutzerdefinierten Renderer plattformspezifische Klasse geladen werden.
+In den folgenden Abschnitten wird Folgendes besprochen: die Struktur der Webseite, die von jedem nativen Websteuerelement geladen wird, der Prozess zum Aufrufen von C# über JavaScript und die entsprechende Implementierung in jeder plattformspezifischen benutzerdefinierten Rendererklasse.
 
 <a name="Creating_the_Web_Page" />
 
-### <a name="creating-the-web-page"></a>Erstellen die Webseite
+### <a name="creating-the-web-page"></a>Erstellen der Webseite
 
-Das folgende Codebeispiel zeigt die Webseite, die angezeigt wird, die `HybridWebView` benutzerdefiniertes Steuerelement:
+Das folgende Codebeispiel veranschaulicht die Webseite, die vom benutzerdefinierten Steuerelement `HybridWebView` angezeigt wird:
 
 ```html
 <html>
@@ -231,30 +231,30 @@ function invokeCSCode(data) {
 </html>
 ```
 
-Die Webseite ermöglicht einem Benutzer, deren Namen eingeben einer `input` -Element, und bietet eine `button` -Element, das C#-Code beim Klicken auf aufgerufen wird. Der Prozess hierfür lautet wie folgt aus:
+Auf der Webseite kann ein Benutzer seinen Namen in ein `input`-Element eingeben. Dort steht auch ein `button`-Element zur Verfügung, das C#-Code aufruft, wenn darauf geklickt wird. Der Prozess dafür sieht wie folgt aus:
 
-- Wenn der Benutzer klickt auf die `button` -Element, die `invokeCSCode` JavaScript-Funktion aufgerufen wird, mit dem Wert von der `input` Element an die Funktion übergeben wird.
-- Die `invokeCSCode` Funktionsaufrufe der `log` Funktion zum Anzeigen der Daten, es an der C# sendet- `Action`. Es ruft dann die `invokeCSharpAction` aufzurufende Methode der C#- `Action`, die erhaltene Parameter übergeben wird, die `input` Element.
+- Wenn der Benutzer auf das `button`-Element klickt, wird die JavaScript-Funktion `invokeCSCode` aufgerufen, und der Wert des `input`-Elements wird an die Funktion übergeben.
+- Die `invokeCSCode`-Funktion ruft die `log`-Funktion auf, um die Daten anzuzeigen, die sie an das C#-`Action`-Objekt sendet. Dann ruft sie die `invokeCSharpAction`-Methode auf, um das C#-`Action`-Objekt aufzurufen, und übergibt den Parameter, den sie vom `input`-Element erhalten hat.
 
-Die `invokeCSharpAction` JavaScript-Funktion ist nicht auf der Webseite definiert und wird in diesen jedes benutzerdefinierten Renderers eingefügt werden.
+Die JavaScript-Funktion `invokeCSharpAction` ist auf der Webseite nicht definiert, sondern wird vom jeweiligen benutzerdefinierten Renderer eingefügt.
 
 <a name="Invoking_C_from_JavaScript" />
 
-### <a name="invoking-c-from-javascript"></a>Aufrufen von c# aus JavaScript
+### <a name="invoking-c-from-javascript"></a>Aufrufen von C#-Code über JavaScript
 
-Der Prozess zum aufrufenden c# von JavaScript ist auf jeder Plattform identisch:
+Der Prozess zum Aufrufen von C#-Code über JavaScript ist für jede Plattform gleich:
 
-- Der benutzerdefinierte Renderer erstellt eine systemeigene Websteuerelement und lädt die HTML-Datei, die gemäß der `HybridWebView.Uri` Eigenschaft.
-- Sobald die Webseite geladen wurde, der benutzerdefinierte Renderer fügt die `invokeCSharpAction` JavaScript-Funktion in die Webseite.
-- Wenn der Benutzer klickt auf den HTML-Code und gibt seinen Namen wird `button` -Element, das `invokeCSCode` Funktion wird aufgerufen, die wiederum ruft die `invokeCSharpAction` Funktion.
-- Die `invokeCSharpAction` -Funktion aufruft, eine Methode in der benutzerdefinierte Renderer, der wiederum ruft die `HybridWebView.InvokeAction` Methode.
-- Die `HybridWebView.InvokeAction` Methode ruft den registrierten `Action`.
+- Der benutzerdefinierte Renderer erstellt ein natives Websteuerelement und lädt die HTML-Datei, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird.
+- Sobald die Webseite geladen wurde, fügt der benutzerdefinierte Renderer die JavaScript-Funktion `invokeCSharpAction` auf der Webseite ein.
+- Wenn der Benutzer seinen Namen angibt und auf das HTML-Element `button` klickt, wird die `invokeCSCode`-Funktion aufgerufen, die wiederum die `invokeCSharpAction`-Funktion aufruft.
+- Die `invokeCSharpAction`-Funktion ruft eine Methode im benutzerdefinierten Renderer auf, die wiederum die `HybridWebView.InvokeAction`-Methode aufruft.
+- Die `HybridWebView.InvokeAction`-Methode ruft das registrierte `Action`-Objekt auf.
 
-In den folgenden Abschnitten werden erläutert, wie dieser Prozess auf jeder Plattform implementiert wird.
+In den folgenden Abschnitten wird besprochen, wir dieser Prozess auf der entsprechenden Plattform implementiert wird.
 
-### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen den benutzerdefinierten Renderer für iOS
+### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen des benutzerdefinierten Renderers unter iOS
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für die iOS-Plattform:
+Im folgenden Codebeispiel wird der benutzerdefinierte Renderer für die iOS-Plattform veranschaulicht:
 
 ```csharp
 [assembly: ExportRenderer (typeof(HybridWebView), typeof(HybridWebViewRenderer))]
@@ -299,28 +299,28 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Die `HybridWebViewRenderer` -Klasse lädt die Webseite, die im angegebenen die `HybridWebView.Uri` Eigenschaft in ein systemeigenes [ `WKWebView` ](https://developer.xamarin.com/api/type/WebKit.WKWebView/) -Steuerelement, und die `invokeCSharpAction` JavaScript-Funktion wird in die Webseite eingefügt. Sobald der Benutzer seinen Namen gibt und klickt auf den HTML-Code `button` -Element, das `invokeCSharpAction` JavaScript-Funktion ausgeführt wird, mit der `DidReceiveScriptMessage` Methode aufgerufen wird, nachdem eine Nachricht von der Webseite empfangen wird. Diese Methode wiederum ruft die `HybridWebView.InvokeAction` -Methode, die die registrierte Aktion, um das Popup anzuzeigen aufruft.
+Die `HybridWebViewRenderer`-Klasse lädt die Webseite, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird, in ein natives [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/)-Steuerelement, und die JavaScript-Funktion `invokeCSharpAction` wird auf der Webseite eingefügt. Sobald der Benutzer seinen Namen angibt und auf das HTML-`button`-Element klickt, wird die JavaScript-Funktion `invokeCSharpAction` ausgeführt und die `DidReceiveScriptMessage`-Methode wird aufgerufen, nachdem eine Meldung der Webseite empfangen wurde. Dann ruft diese Methode wiederum die `HybridWebView.InvokeAction`-Methode auf, die die registrierte Aktion aufruft, um das Popupelement anzuzeigen.
 
-Diese Funktion wird wie folgt erreicht:
+Diese Funktionalität erreichen sie folgendermaßen:
 
-- Vorausgesetzt, dass die `Control` Eigenschaft `null`, werden die folgenden Vorgänge ausgeführt:
-  - Ein [ `WKUserContentController` ](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) -Instanz erstellt wird, wodurch Einreihen von Nachrichten und Einfügen von Benutzerskripts, die in einer Webseite.
-  - Ein [ `WKUserScript` ](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) Instanz wird erstellt, um das Einfügen der `invokeCSharpAction` JavaScript-Funktion in die Webseite nach dem Laden der Webseite.
-  - Die [ `WKUserContentController.AddScript` ](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddUserScript/p/WebKit.WKUserScript/) Methode fügt die [ `WKUserScript` ](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) Instanz mit dem Content-Controller.
-  - Die [ `WKUserContentController.AddScriptMessageHandler` ](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddScriptMessageHandler/p/WebKit.IWKScriptMessageHandler/System.String/) Methode fügt einen Skript-Message-Handler mit dem Namen `invokeAction` auf die [ `WKUserContentController` ](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) -Instanz, die die JavaScript-Funktion bewirkt `window.webkit.messageHandlers.invokeAction.postMessage(data)` in allen definiert werden Frames in allen Webansichten, die verwendet wird, werden die `WKUserContentController` Instanz.
-  - Ein [ `WKWebViewConfiguration` ](https://developer.xamarin.com/api/type/WebKit.WKWebViewConfiguration/) Instanz erstellt, mit der [ `WKUserContentController` ](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) Instanz, die als Content Controller festgelegt wird.
-  - Ein [ `WKWebView` ](https://developer.xamarin.com/api/type/WebKit.WKWebView/) -Steuerelement wird instanziiert, und die `SetNativeControl` Methode wird aufgerufen, um die Zuweisung von eines Verweis auf die `WKWebView` die Steuerung an die `Control` Eigenschaft.
-- Vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird:
-  - Die [ `WKWebView.LoadRequest` ](https://developer.xamarin.com/api/member/WebKit.WKWebView.LoadRequest/p/Foundation.NSUrlRequest/) Methode lädt die HTML-Datei, die angegeben wird die `HybridWebView.Uri` Eigenschaft. Der Code gibt an, dass die Datei, in gespeichert wird der `Content` -Ordner des Projekts. Sobald die Webseite angezeigt wird, die `invokeCSharpAction` JavaScript-Funktion wird in die Webseite eingefügt werden.
-- Wenn das Element der Renderer Änderungen zugeordnet ist:
+- Wenn die `Control`-Eigenschaft `null` ist, werden die folgenden Vorgänge durchgeführt:
+  - Eine [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/)-Instanz wird erstellt, durch die das Posten von Meldungen und Einfügen von Benutzerskripts auf der Webseite möglich ist.
+  - Eine [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/)-Instanz wird erstellt, um die JavaScript-Funktion `invokeCSharpAction` auf der Webseite einzufügen, nachdem die Seite geladen wurde.
+  - Die [`WKUserContentController.AddScript`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddUserScript/p/WebKit.WKUserScript/)-Methode fügt dem ContentController-Objekt die [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/)-Instanz hinzu.
+  - Die [`WKUserContentController.AddScriptMessageHandler`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddScriptMessageHandler/p/WebKit.IWKScriptMessageHandler/System.String/)-Methode fügt der [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/)-Instanz einen Skriptmeldungshandler mit dem Namen `invokeAction` hinzu, wodurch die JavaScript-Funktion `window.webkit.messageHandlers.invokeAction.postMessage(data)` in allen Frames in allen Webansichten definiert wird, die die `WKUserContentController`-Instanz verwenden.
+  - Eine [`WKWebViewConfiguration`](https://developer.xamarin.com/api/type/WebKit.WKWebViewConfiguration/)-Instanz wird erstellt, und die [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/)-Instanz wird als ContentController festgelegt.
+  - Ein [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/)-Steuerelement wird instanziiert, und die `SetNativeControl`-Methode wird aufgerufen, um der `Control`-Eigenschaft einen Verweis auf das `WKWebView`-Steuerelement hinzuzufügen.
+- Wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird, werden die folgenden Vorgänge durchgeführt:
+  - Die [`WKWebView.LoadRequest`](https://developer.xamarin.com/api/member/WebKit.WKWebView.LoadRequest/p/Foundation.NSUrlRequest/)-Methode lädt die HTML-Datei, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird. Der Code gibt an, dass die Datei im `Content`-Ordner des Projekts gespeichert wird. Wenn die Webseite angezeigt wird, wird die JavaScript-Funktion `invokeCSharpAction` auf dieser eingefügt.
+- Wenn sich das Element ändert, an das der Renderer angefügt ist, geschieht Folgendes:
   - Ressourcen werden freigegeben.
 
 > [!NOTE]
-> Die `WKWebView` Klasse wird nur in iOS 8 und höher unterstützt.
+> Die `WKWebView`-Klasse wird nur unter iOS 8 oder höher unterstützt.
 
-### <a name="creating-the-custom-renderer-on-android"></a>Erstellen den benutzerdefinierten Renderer für Android
+### <a name="creating-the-custom-renderer-on-android"></a>Erstellen des benutzerdefinierten Renderers unter Android
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für die Android-Plattform:
+Im folgenden Codebeispiel wird der benutzerdefinierte Renderer für die Android-Plattform veranschaulicht:
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
@@ -363,7 +363,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Die `HybridWebViewRenderer` -Klasse lädt die Webseite, die im angegebenen die `HybridWebView.Uri` Eigenschaft in ein systemeigenes [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) -Steuerelement, und die `invokeCSharpAction` JavaScript-Funktion wird in die Webseite eingefügt, nachdem die Webseite verfügt über das Laden beendet, mit der `OnPageFinished` außer Kraft setzen, der `JavascriptWebViewClient` Klasse:
+Die `HybridWebViewRenderer`-Klasse lädt die Webseite, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird, in ein natives [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)-Steuerelement, und die JavaScript-Funktion `invokeCSharpAction` wird auf der Webseite mit der `OnPageFinished`-Überschreibung in der `JavascriptWebViewClient`-Klasse eingefügt, nachdem die Webseite vollständig geladen wurde:
 
 ```csharp
 public class JavascriptWebViewClient : WebViewClient
@@ -383,19 +383,19 @@ public class JavascriptWebViewClient : WebViewClient
 }
 ```
 
-Sobald der Benutzer seinen Namen gibt und klickt auf den HTML-Code `button` -Element, das `invokeCSharpAction` JavaScript-Funktion ausgeführt wird. Diese Funktion wird wie folgt erreicht:
+Wenn der Benutzer seinen Namen eingibt und auf das HTML-`button`-Element klickt, wird die JavaScript-Funktion `invokeCSharpAction` ausgeführt. Diese Funktionalität erreichen sie folgendermaßen:
 
-- Vorausgesetzt, dass die `Control` Eigenschaft `null`, werden die folgenden Vorgänge ausgeführt:
-  - Ein systemeigenes [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) Instanz erstellt wurde, JavaScript, die in das Steuerelement aktiviert ist und ein `JavascriptWebViewClient` Instanz wird festgelegt, wie die Implementierung von `WebViewClient`.
-  - Die `SetNativeControl` aufgerufen, um einen Verweis auf das systemeigene weisen [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) die Steuerung an die `Control` Eigenschaft.
-- Vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird:
-  - Die [ `WebView.AddJavascriptInterface` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) Methode fügt ein neues `JSBridge` Instanz in die Hauptframe der Webansicht-JavaScript-Kontexts, nennen Sie es `jsBridge`. Dadurch können Methoden in der `JSBridge` Klasse über JavaScript zugegriffen werden.
-  - Die [ `WebView.LoadUrl` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) Methode lädt die HTML-Datei, die angegeben wird die `HybridWebView.Uri` Eigenschaft. Der Code gibt an, dass die Datei, in gespeichert wird der `Content` -Ordner des Projekts.
-  - In der `JavascriptWebViewClient` -Klasse, die `invokeCSharpAction` JavaScript-Funktion wird in die Webseite eingefügt, sobald die Seite vollständig geladen wurde.
-- Wenn das Element der Renderer Änderungen zugeordnet ist:
+- Wenn die `Control`-Eigenschaft `null` ist, werden die folgenden Vorgänge durchgeführt:
+  - Eine native [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)-Instanz wird erstellt, JavaScript wird auf dem Steuerelement aktiviert und eine `JavascriptWebViewClient`-Instanz wird als Implementierung von `WebViewClient` festgelegt.
+  - Die `SetNativeControl`-Methode wird aufgerufen, um der `Control`-Eigenschaft einen Verweis auf das native [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)-Steuerelement zuzuweisen.
+- Wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird, werden die folgenden Vorgänge durchgeführt:
+  - Die [`WebView.AddJavascriptInterface`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/)-Methode fügt eine neue `JSBridge`-Instanz im Hauptframe des JavaScript-Kontexts des WebView-Objekts hinzu und nennt diese `jsBridge`. So kann auf Methoden in der `JSBridge`-Klasse über JavaScript zugegriffen werden.
+  - Die [`WebView.LoadUrl`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/)-Methode lädt die HTML-Datei, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird. Der Code gibt an, dass die Datei im `Content`-Ordner des Projekts gespeichert wird.
+  - In der `JavascriptWebViewClient`-Klasse wird die JavaScript-Funktion `invokeCSharpAction` auf der Webseite eingefügt, sobald die Seite vollständig geladen wurde.
+- Wenn sich das Element ändert, an das der Renderer angefügt ist, geschieht Folgendes:
   - Ressourcen werden freigegeben.
 
-Wenn die `invokeCSharpAction` JavaScript-Funktion ausgeführt wird, ruft er wiederum die `JSBridge.InvokeAction` -Methode, die im folgenden Codebeispiel gezeigt wird:
+Wenn die JavaScript-Funktion `invokeCSharpAction` ausgeführt wird, ruft diese wiederum die `JSBridge.InvokeAction`-Methode auf. Dies wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 public class JSBridge : Java.Lang.Object
@@ -421,16 +421,16 @@ public class JSBridge : Java.Lang.Object
 }
 ```
 
-Die Klasse muss von abgeleitet werden `Java.Lang.Object`, und Methoden, die in JavaScript verfügbar gemacht werden versehen werden müssen, mit der `[JavascriptInterface]` und `[Export]` Attribute. Aus diesem Grund, wenn die `invokeCSharpAction` JavaScript-Funktion wird in die Webseite eingefügt und ausgeführt wird, ruft der `JSBridge.InvokeAction` Methode aufgrund ergänzt wird die `[JavascriptInterface]` und `[Export("invokeAction")]` Attribute. Im Gegenzug die `InvokeAction` Methode ruft die `HybridWebView.InvokeAction` Methode wird aufgerufen, die registrierte Aktion aus, um das Popup anzuzeigen.
+Die Klasse muss von der `Java.Lang.Object`-Basisklasse abgeleitet werden, und die Methoden, die für JavaScript verfügbar gemacht werden, müssen mit den Attributen `[JavascriptInterface]` und `[Export]` versehen werden. Deshalb wird die `JSBridge.InvokeAction`-Methode aufgerufen, wenn die JavaScript-Funktion `invokeCSharpAction` auf der Webseite eingefügt und ausgeführt wird, da diese mit den Attributen `[JavascriptInterface]` und `[Export("invokeAction")]` versehen ist. Dann ruft die `InvokeAction`-Methode wiederum die `HybridWebView.InvokeAction`-Methode auf, die die registrierte Aktion aufruft, um das Popupelement anzuzeigen.
 
 > [!NOTE]
-> Projekte, die `[Export]` Attribut muss einen Verweis auf enthalten `Mono.Android.Export`, oder ein Compilerfehler führt.
+> Projekte, die das `[Export]`-Attribut verwenden, müssen einen Verweis auf `Mono.Android.Export` enthalten. Ansonsten kommt es zu einem Compilerfehler.
 
-Beachten Sie, dass die `JSBridge` -Klasse verwaltet eine `WeakReference` auf die `HybridWebViewRenderer` Klasse. Dadurch wird vermieden, erstellen einen Zirkelverweis zwischen den beiden Klassen. Weitere Informationen finden Sie unter [schwache Verweise](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx) auf MSDN.
+Beachten Sie, dass die `JSBridge`-Klasse ein `WeakReference`-Objekt für die `HybridWebViewRenderer`-Klasse enthält. Dadurch wird vermieden, dass es zu einem Zirkelbezug zwischen zwei Klassen kommt. Weitere Informationen finden Sie unter [Schwache Verweise](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx) in der Microsoft-Dokumentation.
 
-### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen benutzerdefinierten Renderer auf UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen des benutzerdefinierten Renderers auf der UWP
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für UWP:
+Im folgenden Codebeispiel wird der benutzerdefinierte Renderer für die UWP veranschaulicht:
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
@@ -478,24 +478,24 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Die `HybridWebViewRenderer` -Klasse lädt die Webseite, die im angegebenen die `HybridWebView.Uri` Eigenschaft in ein systemeigenes `WebView` -Steuerelement, und die `invokeCSharpAction` JavaScript-Funktion wird in die Webseite eingefügt, nachdem die Webseite geladen wurde, mit der `WebView.InvokeScriptAsync` Methode. Sobald der Benutzer seinen Namen gibt und klickt auf den HTML-Code `button` -Element, das `invokeCSharpAction` JavaScript-Funktion ausgeführt wird, mit der `OnWebViewScriptNotify` Methode aufgerufen wird, nachdem eine Benachrichtigung, von der Webseite empfangen wird. Diese Methode wiederum ruft die `HybridWebView.InvokeAction` -Methode, die die registrierte Aktion, um das Popup anzuzeigen aufruft.
+Die `HybridWebViewRenderer`-Klasse lädt die Webseite, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird, in ein natives `WebView`-Steuerelement, und die JavaScript-Funktion `invokeCSharpAction` wird auf der Webseite mit der `WebView.InvokeScriptAsync`-Methode eingefügt, nachdem die Webseite vollständig geladen wurde. Sobald der Benutzer seinen Namen angibt und auf das HTML-`button`-Element klickt, wird die JavaScript-Funktion `invokeCSharpAction` ausgeführt und die `OnWebViewScriptNotify`-Methode wird aufgerufen, nachdem eine Benachrichtigung der Webseite empfangen wurde. Dann ruft diese Methode wiederum die `HybridWebView.InvokeAction`-Methode auf, die die registrierte Aktion aufruft, um das Popupelement anzuzeigen.
 
-Diese Funktion wird wie folgt erreicht:
+Diese Funktionalität erreichen sie folgendermaßen:
 
-- Vorausgesetzt, dass die `Control` Eigenschaft `null`, werden die folgenden Vorgänge ausgeführt:
-  - Die `SetNativeControl` aufgerufen, um eine neue systemeigene instanziieren `WebView` steuern und weisen Sie einen Verweis, um die `Control` Eigenschaft.
-- Vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird:
-  - Ereignishandler für die `NavigationCompleted` und `ScriptNotify` Ereignisse registriert werden. Die `NavigationCompleted` Ereignis wird ausgelöst, wenn entweder das systemeigene `WebView` Steuerelement den aktuellen Inhalt Laden abgeschlossen ist oder wenn die Navigation fehlgeschlagen ist. Die `ScriptNotify` Ereignis wird ausgelöst, wenn der Inhalt in den systemeigenen `WebView` Steuerelement verwendet JavaScript zum Übergeben einer Zeichenfolge an die Anwendung. Der Webseite ausgelöst wird die `ScriptNotify` -Ereignis durch einen Aufruf `window.external.notify` beim Übergeben einer `string` Parameter.
-  - Die `WebView.Source` -Eigenschaftensatz auf den URI der HTML-Datei, die angegeben wird die `HybridWebView.Uri` Eigenschaft. Der Code wird davon ausgegangen, dass die Datei, in gespeichert wird der `Content` -Ordner des Projekts. Sobald die Webseite angezeigt wird, die `NavigationCompleted` Ereignis wird ausgelöst, und die `OnWebViewNavigationCompleted` Methode wird aufgerufen. Die `invokeCSharpAction` JavaScript-Funktion wird dann in die Webseite mit injiziert den `WebView.InvokeScriptAsync` -Methode bereitgestellt, die die Navigation erfolgreich abgeschlossen wurde.
-- Wenn das Element der Renderer Änderungen zugeordnet ist:
-  - Ereignisse sind nicht mehr abonniert.
+- Wenn die `Control`-Eigenschaft `null` ist, werden die folgenden Vorgänge durchgeführt:
+  - Die `SetNativeControl`-Methode wird aufgerufen, um ein neues natives `WebView`-Steuerelement zu instanziieren und der `Control`-Eigenschaft einen Verweis auf dieses Steuerelement zuzuweisen.
+- Wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird, werden die folgenden Vorgänge durchgeführt:
+  - Ereignishandler für die Ereignisse `NavigationCompleted` und `ScriptNotify` werden registriert. Das Ereignis `NavigationCompleted` wird ausgelöst, wenn das native `WebView`-Steuerelement den aktuellen Inhalt vollständig geladen hat oder wenn es beim Navigieren einen Fehler gab. Das Ereignis `ScriptNotify` wird ausgelöst, wenn der Inhalt des nativen `WebView`-Steuerelements JavaScript verwendet, um eine Zeichenfolge an die Anwendung zu übergeben. Die Webseite löst das Ereignis `ScriptNotify` aus, indem sie `window.external.notify` aufruft, während sie einen `string`-Parameter übergibt.
+  - Die `WebView.Source`-Eigenschaft wird auf den URI der HTML-Datei festgelegt, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird. Der Code geht davon aus, dass die Datei im `Content`-Ordner des Projekts gespeichert wird. Wenn die Webseite angezeigt wird, wird das Ereignis `NavigationCompleted` ausgelöst und die `OnWebViewNavigationCompleted`-Methode aufgerufen. Die JavaScript-Funktion `invokeCSharpAction` wird dann mit der `WebView.InvokeScriptAsync`-Methode auf der Webseite eingefügt, wenn die Navigation erfolgreich abgeschlossen wurde.
+- Wenn sich das Element ändert, an das der Renderer angefügt ist, geschieht Folgendes:
+  - Ereignisabonnements werden aufgehoben.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel wurde beschrieben, wie zum Erstellen eines benutzerdefinierten Renderers für eine `HybridWebView` benutzerdefiniertes Steuerelement, das veranschaulicht, wie zur Verbesserung der plattformspezifischen Websteuerelemente um C#-Code aufgerufen werden von JavaScript zu ermöglichen.
+In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes `HybridWebView`-Steuerelement erstellen können. Dadurch wurde veranschaulicht, wie Sie plattformspezifische Websteuerelemente erweitern können, sodass diese zulassen, dass C#-Code über JavaScript aufgerufen werden kann.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [CustomRendererHybridWebView (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
-- [C# -Code aus JavaScript aufrufen.](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
+- [Call C# from JavaScript (Aufrufen von C#-Code über JavaScript)](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)

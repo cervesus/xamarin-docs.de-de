@@ -1,6 +1,6 @@
 ---
 title: Tastaturnavigation
-description: Statt die Standardabfolge der Registerkarte ", ist es manchmal notwendig, um die Benutzeroberfläche durch Angeben der Reihenfolge der Registerkarten mit einer Kombination der Eigenschaften TabIndex und IsTapStop zu optimieren.
+description: Anstatt die Standardreihenfolge der Tabs zu verwenden, ist es manchmal notwendig, Ihre Benutzeroberfläche zu optimieren, indem Sie die Standardreihenfolge für Tabs mithilfe einer Kombination der Eigenschaften „TabIndex“ und „IsTapStop“ angeben.
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 10/15/2018
 ms.openlocfilehash: f703dff56d2947c35a9bc76e0eb909bfe9023bac
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50131554"
 ---
 # <a name="keyboard-navigation-in-xamarinforms"></a>Tastaturnavigation in Xamarin.Forms
 
-Einige Benutzer haben Probleme bei der Verwendung von Anwendungen, die entsprechende Tastenkombination Zugriff nicht bereitstellen. Geben Sie eine Aktivierreihenfolge von Steuerelementen Tastaturnavigation und bereitet die Anwendungsseiten zum Empfangen von Eingaben in einer bestimmten Reihenfolge vor.
+Einige Benutzer haben möglicherweise Probleme mit der Ausführung von Anwendungen, bei denen die Verwendung passender Zugriffstasten nicht möglich ist. Durch das Festlegen einer Aktivierreihenfolge für Steuerelemente wird die Tastaturnavigation aktiviert und Anwendungsseiten werden entsprechend eingerichtet, Eingaben in einer bestimmten Abfolge zu empfangen.
 
-Standardmäßig wird die Aktivierreihenfolge von Steuerelementen der gleichen Reihenfolge, in der sie aufgelistet in XAML, oder eine untergeordnete Auflistung programmgesteuert hinzugefügt. Diese Reihenfolge ist die Reihenfolge, in der die Steuerelemente über mit einer Tastatur navigiert werden soll, und diese Standardreihenfolge ist häufig die optimale Reihenfolge. Allerdings ist die Standardreihenfolge nicht immer identisch mit der erwarteten Reihenfolge wie in den folgenden XAML-Codebeispiel gezeigt:
+Standardmäßig entspricht die Aktivierreihenfolge von Steuerelementen der gleichen Reihenfolge, in der sie in XAML aufgelistet sind, oder in der sie programmgesteuert einer untergeordneten Sammlung hinzugefügt wurden. Diese Reihenfolge ist die Reihenfolge, in der die Steuerelemente mithilfe einer Tastatur navigiert werden, und oft ist diese Standardreihenfolge die beste Reihenfolge. Die Standardreihenfolge entspricht jedoch nicht immer der erwarteten Reihenfolge, wie im folgenden XAML-Codebeispiel zu sehen ist:
 
 ```xaml
 <Grid>
@@ -51,27 +51,27 @@ Standardmäßig wird die Aktivierreihenfolge von Steuerelementen der gleichen Re
 
 Der folgende Screenshot zeigt die Standardaktivierreihenfolge für dieses Codebeispiel:
 
-![](keyboard-images/default-tab-order.png "Standardreihenfolge der Zeile auf der Registerkarte")
+![](keyboard-images/default-tab-order.png "Default Row-based Tab Order (zeilenbasierte Standardaktivierreihenfolge)")
 
-Hier die Aktivierreihenfolge basiert auf der Zeile, und ist die Reihenfolge, in der die Steuerelemente in der XAML aufgeführt sind. Aus diesem Grund Vorname navigiert durch Drücken der Tab-Taste [ `Entry` ](xref:Xamarin.Forms.Entry) -Instanzen, gefolgt von Nachname `Entry` Instanzen. Jedoch wäre eine intuitivere Benutzeroberfläche mit einer Registerkarte "Spalte zuerst"-Navigation, sodass Vorname Nachname Paare durch Drücken der Tab-Taste navigiert werden. Dies kann durch Angabe der Aktivierreihenfolge der Eingabesteuerelemente erreicht werden.
+Die hier gezeigte Aktivierreihenfolge basiert auf Zeilen und entspricht der Reihenfolge, in der die Steuerelemente in XMAL aufgelistet sind. Aus diesem Grund wird durch Drücken der Tab-Taste zuerst durch [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen für „Vorname“ navigiert, anschließend durch `Entry`-Instanzen für „Nachname“. Es wäre jedoch deutlich intuitiver, eine „Spalte zuerst“-Navigation zu verwenden, bei der durch Drücken der Tab-Taste durch „Vorname-Nachname“-Paare navigiert wird. Dies kann durch Angabe der Aktivierreihenfolge der Steuerelemente erreicht werden.
 
 > [!NOTE]
-> Klicken Sie auf der universellen Windows-Plattform können Tastenkombinationen in Visual Studio definiert werden, die eine intuitive Methode für Benutzer schnell navigieren und interagieren mit der Benutzeroberfläche der Anwendung sichtbar über eine Tastatur anstelle von per Touch oder eine Maus bereitstellen. Weitere Informationen finden Sie unter [Einstellung VisualElement Zugriffsschlüssel](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#visualelement-accesskeys).
+> Auf der Universellen Windows-Plattform können Tastenkombinationen festgelegt werden, durch die Benutzer intuitiv und schnell navigieren können und mit denen sie mit der sichtbaren Benutzeroberfläche über eine Tastatur anstelle eines Touchpads oder einer Maus interagieren können. Weitere Informationen finden Sie unter [Festlegen von VisualElement-Zugriffstasten](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#visualelement-accesskeys).
 
 ## <a name="setting-the-tab-order"></a>Festlegen der Aktivierreihenfolge
 
-Die `VisualElement.TabIndex` Eigenschaft wird zum Angeben der Reihenfolge, in der [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Instanzen den Fokus erhalten, wenn der Benutzer durch Steuerelemente navigiert wird, durch Drücken der Tab-Taste. Der Standardwert der Eigenschaft ist 0, und es kann festgelegt werden, um eine `int` Wert.
+Die `VisualElement.TabIndex`-Eigenschaft wird verwendet, um die Reihenfolge anzugeben, in der [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen den Fokus erhalten, wenn der Benutzer durch Drücken der Tab-Taste durch Steuerelemente navigiert wird. Der Standardwert der Eigenschaft ist 0. Er kann auf jeden beliebigen `int`-Wert festgelegt werden.
 
-Die folgenden Regeln gelten, wenn die Standardaktivierreihenfolge verwenden oder die Einstellung der `TabIndex` Eigenschaft:
+Die folgenden Regeln gelten, wenn die Standardaktivierreihenfolge verwendet oder die `TabIndex`-Eigenschaft festgelegt wird:
 
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement) -Instanzen mit einem `TabIndex` gleich 0 werden mit der Tab-Reihenfolge, basierend auf deren Reihenfolge der Deklaration in XAML oder untergeordnete Sammlungen hinzugefügt.
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement) -Instanzen mit einem `TabIndex` größer als 0, bis der Tab-Reihenfolge hinzugefügt werden basierend auf ihren `TabIndex` Wert.
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement) -Instanzen mit einem `TabIndex` kleiner als 0 werden die Tab-Reihenfolge hinzugefügt, und vor einer NULL-Wert angezeigt werden.
- - Konflikt auf ein `TabIndex` werden aufgelöst, indem die Reihenfolge der Deklaration.
+ - [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` gleich 0 werden, basierend auf ihrer Deklarationsreihenfolge in XMAL oder untergeordneten Sammlungen, der Aktivierreihenfolge hinzugefügt.
+ - [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` größer 0 werden, basierend auf ihrem `TabIndex`-Wert, der Aktivierreihenfolge hinzugefügt.
+ - [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` kleiner 0 werden der Aktivierreihenfolge hinzugefügt und werden vor einem NULL-Wert angezeigt.
+ - Konflikte bei einem `TabIndex` werden durch Deklaration der Reihenfolge aufgelöst.
 
-Nach dem Definieren einer Aktivierreihenfolge, drücken die Tab-Taste den Fokus durch Steuerelemente in aufsteigender Zyklus wird `TabIndex` Reihenfolge, um auf den Anfang umschließen, sobald das letzte Steuerelement erreicht ist.
+Nach dem Definieren einer Aktivierreihenfolge, wird durch das Drücken der Tab-Taste eine Fokus-Schleife aktiviert, die Steuerelemente in aufsteigender `TabIndex`-Reihenfolge durchläuft und von vorne beginnt, sobald das letzte Steuerelement erreicht ist.
 
-Das folgende XAML-Beispiel zeigt die `TabIndex` -Eigenschaft auf Benutzereingabe-Steuerelemente festgelegt werden, um die Registerkarte "Spalte zuerst"-Navigation ermöglichen:
+Das folgende XAML-Beispiel zeigt die `TabIndex`-Eigenschaft, die auf Eingabesteuerelemente festgelegt ist, um die „Spalte zuerst“-Navigation zu aktivieren:
 
 ```xaml
 <Grid>
@@ -110,17 +110,17 @@ Der folgende Screenshot zeigt die Aktivierreihenfolge für dieses Codebeispiel:
 
 ![](keyboard-images/correct-tab-order.png "Spaltenbasierte Aktivierreihenfolge")
 
-Die Aktivierreihenfolge hier ist die Spalte-basiert. Aus diesem Grund Nachname-Vorname navigiert durch Drücken der Tab-Taste [ `Entry` ](xref:Xamarin.Forms.Entry) Paare.
+Die Aktivierreihenfolge hier ist spaltenbasiert. Deshalb wird durch Drücken der Tab-Taste durch „Vorname-Nachname“-[`Entry`](xref:Xamarin.Forms.Entry)-Paare navigiert.
 
 ## <a name="excluding-controls-from-the-tab-order"></a>Ausschließen von Steuerelementen aus der Aktivierreihenfolge
 
-Zusätzlich zum Festlegen der Aktivierreihenfolge von Steuerelementen, kann es zum Ausschließen der Aktivierreihenfolge der Steuerelemente notwendig sein. Eine Möglichkeit zu erreichen ist durch Festlegen der [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement) Eigenschaft von Steuerelementen `false`, da deaktivierten Steuerelemente aus der Aktivierreihenfolge ausgeschlossen werden.
+Zusätzlich zum Festlegen der Aktivierreihenfolge von Steuerelementen kann es notwendig sein, Steuerelemente aus der Aktivierreihenfolge auszuschließen. Ein Weg, dies zu erreichen, ist das Festlegen der [`IsEnabled`](xref:Xamarin.Forms.VisualElement)-Eigenschaft der Steuerelemente auf `false`, da deaktivierte Steuerelemente aus der Aktivierreihenfolge ausgeschlossen werden.
 
-Allerdings ist es möglicherweise notwendig, um Steuerelemente aus der Aktivierreihenfolge ausschließen, selbst wenn sie deaktiviert sind nicht. Dies kann erreicht werden, mit der `VisualElement.IsTapStop` Eigenschaft, die angibt, ob eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) in die tabstoppnavigation eingeschlossen ist. Der Standardwert ist `true`, und wenn sein Wert ist `false` des Steuerelements wird durch die tabstoppnavigation Infrastruktur, unabhängig davon ignoriert, wenn eine `TabIndex` festgelegt ist.
+Trotzdem kann es notwendig sein, Steuerelemente aus der Aktivierreihenfolge auszuschließen, obwohl sie nicht deaktiviert sind. Dies kann mit der `VisualElement.IsTapStop`-Eigenschaft erreicht werden, die angibt, ob ein [`VisualElement`](xref:Xamarin.Forms.VisualElement) in der Tabstoppnavigation eingeschlossen ist. Der Standardwert ist `true`, und wenn er `false` ist, wird das Steuerelement von der Infrastruktur der Tabstoppnavigation ignoriert, unabhängig davon, ob ein `TabIndex` festgelegt ist.
 
 ## <a name="supported-controls"></a>Unterstützte Steuerelemente
 
-Die `TabIndex` und `IsTapStop` Eigenschaften werden unterstützt, auf die folgenden Steuerelemente, die Tastatureingaben auf eine oder mehrere Plattformen zu akzeptieren:
+Die `TabIndex`- und `IsTapStop`-Eigenschaften werden bei den folgenden Steuerelementen unterstützt, welche Tastatureingaben auf einer oder mehreren Plattformen akzeptieren:
 
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`DatePicker`](xref:Xamarin.Forms.DatePicker)
@@ -137,8 +137,8 @@ Die `TabIndex` und `IsTapStop` Eigenschaften werden unterstützt, auf die folgen
 - [`TimePicker`](xref:Xamarin.Forms.TimePicker)
 
 > [!NOTE]
-> Jedes dieser Steuerelemente ist nicht die Registerkarte mit Fokus auf jeder Plattform.
+> Jedes dieser Steuerelemente kann möglicherweise nicht auf jeder Plattform Fokus durch Drücken der Tab-Taste erhalten.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Barrierefreiheit (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+- [Accessibility (Barrierefreiheit (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)

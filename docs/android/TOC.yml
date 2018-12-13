@@ -649,13 +649,13 @@ items:
       - name: Verpacken
         href: wear/deploy-test/packaging.md
   - name: Anmerkungen zu dieser Version
-    href: https://developer.xamarin.com/releases/android/
+    href: https://docs.microsoft.com/xamarin/android/release-notes/
   - name: Proben
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 32586284f802f35db4ea558e6f7183173830943d
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: dd20e7ebd9d5384a02a953aba5415fa748f7b7ab
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899147"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267572"

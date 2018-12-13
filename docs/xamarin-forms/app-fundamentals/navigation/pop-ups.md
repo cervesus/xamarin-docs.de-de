@@ -1,6 +1,6 @@
 ---
-title: Anzeigen von Popups
-description: Xamarin.Forms stellt zwei pop-Registrierung-ähnliche Elemente der Benutzeroberfläche – eine Warnung und ein aktionsblatt bereit. In diesem Artikel wird veranschaulicht, wie das Blatt "Warnung" und "Aktion" APIs, Benutzer einfache Fragen stellen und Benutzer durch Aufgaben geführt.
+title: Anzeigen von Popupelementen
+description: 'Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. In diesem Artikel wird die Verwendung der Warnungs- und Aktionsblatt-APIs veranschaulicht, um Benutzer einfache Fragen zu stellen und durch Aufgaben zu führen.'
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
@@ -9,30 +9,30 @@ ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 156c2f9dca47a7755d4f810d7921a05662388ded
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38996713"
 ---
-# <a name="displaying-pop-ups"></a>Anzeigen von Popups
+# <a name="displaying-pop-ups"></a>Anzeigen von Popupelementen
 
-_Xamarin.Forms stellt zwei pop-Registrierung-ähnliche Elemente der Benutzeroberfläche – eine Warnung und ein aktionsblatt bereit. In diesem Artikel wird veranschaulicht, wie das Blatt "Warnung" und "Aktion" APIs, Benutzer einfache Fragen stellen und Benutzer durch Aufgaben geführt._
+_Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. In diesem Artikel wird die Verwendung der Warnungs- und Aktionsblatt-APIs veranschaulicht, um Benutzer einfache Fragen zu stellen und durch Aufgaben zu führen._
 
-Eine Warnung oder den Benutzer aufzufordern, eine Auswahl treffen ist eine häufige benutzeroberflächenaufgabe. Xamarin.Forms verfügt über zwei Methoden für die [ `Page` ](xref:Xamarin.Forms.Page) Klasse für die Interaktion mit dem Benutzer über ein Popup-Fenster: [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) und [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*). Sie werden mit entsprechenden systemeigenen Steuerelementen auf jeder Plattform gerendert.
+Eine Warnung anzuzeigen oder einen Benutzer zu einer Auswahl aufzufordern, ist eine gängige Benutzeroberflächenaufgabe. Xamarin.Forms verfügt über zwei Methoden für die [`Page`](xref:Xamarin.Forms.Page)-Klasse für die Interaktion mit dem Benutzer über ein Popupelement: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) und [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*). Sie werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
 
-## <a name="displaying-an-alert"></a>Eine Warnung
+## <a name="displaying-an-alert"></a>Anzeigen einer Warnung
 
-Alle Plattformen mit Xamarin.Forms-Unterstützung verfügen, um ein modales Popup zu warnen Sie die Benutzer stellen einfache Fragen sie. Um diese Warnungen in Xamarin.Forms anzuzeigen, verwenden Sie die [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) Methode auf einem [ `Page` ](xref:Xamarin.Forms.Page). Die folgende Codezeile zeigt eine einfache Nachricht an dem Benutzer an:
+Alle von Xamarin.Forms unterstützten Plattformen verfügen über ein modales Popupelement, um dem Benutzer eine Warnung anzuzeigen oder einfache Fragen zu stellen. Verwenden Sie die Methode [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) auf einem beliebigen [`Page`](xref:Xamarin.Forms.Page)-Element, um solche Warnungen in Xamarin.Forms anzuzeigen. Mit der folgenden Codezeile wird dem Benutzer eine einfache Meldung angezeigt:
 
 ```csharp
 DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "Dialogfeld \"Warnung\" mit einer Schaltfläche")
+![](pop-ups-images/alert.png "Warnungsdialogfeld mit einer Schaltfläche")
 
-In diesem Beispiel erfasst keine Informationen des Benutzers. Die Warnung zeigt modal, und sobald den Benutzer geschlossen wird fortgesetzt, mit der Anwendung interagieren.
+In diesem Beispiel werden keine Informationen des Benutzers erfasst. Die Warnung wird modal angezeigt und geschlossen, sobald der Benutzer erneut mit der Anwendung interagiert.
 
-Die [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) Methode kann auch verwendet werden, um die Antwort des Benutzers zu erfassen, indem Sie zwei Schaltflächen darstellen und die Rückgabe einer `boolean`. Um eine Antwort von einer Warnung erhalten möchten, geben Sie Text für beide Schaltflächen und `await` der Methode. Nachdem der Benutzer eine der Optionen ausgewählt sind, die die Antwort an den Code zurückgegeben wird. Beachten Sie die `async` und `await` Schlüsselwörter in der folgende Beispielcode:
+Mithilfe der [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)-Methode kann die Antwort des Benutzers erfasst werden, indem zwei Schaltflächen angezeigt werden und ein `boolean`-Wert zurückgegeben wird. Geben Sie Text für beide Schaltflächen und `await` für die Methode an, um eine Antwort von einer Warnung zu erhalten. Wenn der Benutzer eine der Optionen auswählt, wird die Antwort an Ihren Code zurückgegeben. Beachten Sie die Schlüsselwörter `async` und `await` im folgenden Beispielcode:
 
 ```csharp
 async void OnAlertYesNoClicked (object sender, EventArgs e)
@@ -42,13 +42,13 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[!["DisplayAlert"](pop-ups-images/alert2-sml.png "Warnung Dialogfeld mit zwei Schaltflächen")](pop-ups-images/alert2.png#lightbox "Warnung Dialogfeld mit zwei Schaltflächen")
+[![DisplayAlert](pop-ups-images/alert2-sml.png "Warnungsdialogfeld mit zwei Schaltflächen")](pop-ups-images/alert2.png#lightbox "Alert Dialog with Two Buttons")
 
-## <a name="guiding-users-through-tasks"></a>Grundlegende Benutzer Aufgaben
+## <a name="guiding-users-through-tasks"></a>Leiten von Benutzern durch Aufgaben
 
-Die [UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) ist eine allgemeine Benutzeroberflächenelement in iOS. Die Xamarin.Forms [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*) Methode können Sie plattformübergreifende apps, native alternativen in Android und UWP Rendern dieses Steuerelement einschließt.
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) ist ein allgemeines Benutzeroberflächenelement unter iOS. Mithilfe der [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)-Methode von Xamarin.Forms können Sie dieses Steuerelement in plattformübergreifende Apps einfügen, um native Alternativen unter Android und auf der UWP zu rendern.
 
-Um ein aktionsblatt anzuzeigen `await` [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*) in einem [ `Page` ](xref:Xamarin.Forms.Page), die Weitergabe der Nachricht und Schaltfläche Bezeichnungen als Zeichenfolgen. Die Methode gibt die Zeichenfolge Bezeichnung der Schaltfläche, die der Benutzer geklickt hat. Ein einfaches Beispiel ist hier dargestellt:
+Mit `await` [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) in einem beliebigen [`Page`](xref:Xamarin.Forms.Page)-Element werden die Bezeichnungen für die Nachricht und die Schaltfläche als Zeichenfolge übergeben, um ein Aktionsblatt anzuzeigen. Die Methode gibt die Bezeichnung der Zeichenfolge für die Schaltfläche zurück, auf die der Benutzer getippt hat. Hier ist ein einfaches Beispiel:
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -60,7 +60,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 
 ![](pop-ups-images/action.png "ActionSheet-Dialogfeld")
 
-Die `destroy` Schaltfläche anders als die anderen gerendert wird, und belassen werden `null` oder als den dritten Parameter angegeben. Im folgenden Beispiel wird die `destroy` Schaltfläche:
+Die Schaltfläche `destroy` wird anders als die anderen gerendert. Sie kann den Wert `null` aufweisen oder als dritter Zeichenfolgenparameter festgelegt werden. Im folgenden Beispiel wird die `destroy`-Schaltfläche verwendet:
 
 ```csharp
 async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
@@ -70,14 +70,14 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "Aktion Eigenschaftenblatt-Dialogfeld mit der Schaltfläche \"löschen\"")](pop-ups-images/action2.png#lightbox "Aktion Eigenschaftenblatt-Dialogfeld mit der Schaltfläche \"löschen\"")
+[![DisplayActionSheet](pop-ups-images/action2-sml.png "Aktionsblatt-Dialogfeld mit Destroy-Schaltfläche")](pop-ups-images/action2.png#lightbox "Action Sheet Dialog with Destroy Button")
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird gezeigt, verwenden das Blatt "Warnung" und "Aktion" APIs Benutzer einfache Fragen stellen und Benutzer durch Aufgaben geführt. Xamarin.Forms verfügt über zwei Methoden für die [ `Page` ](xref:Xamarin.Forms.Page) Klasse für die Interaktion mit dem Benutzer über ein Popup-Fenster: [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) und [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*), und sie sind sowohl mit den entsprechenden nativen Steuerelementen auf jeder Plattform gerendert.
+In diesem Artikel wurde die Verwendung der Warnungs- und Aktionsblatt-APIs veranschaulicht, um Benutzer einfache Fragen zu stellen und durch Aufgaben zu führen. Xamarin.Forms verfügt über zwei Methoden für die [`Page`](xref:Xamarin.Forms.Page)-Klasse für die Interaktion mit dem Benutzer über ein Popupelement: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) und [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*). Beide werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PopupsSample](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)
+- [Popups (Popupelemente (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)

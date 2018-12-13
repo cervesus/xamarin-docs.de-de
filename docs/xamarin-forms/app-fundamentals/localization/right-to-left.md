@@ -1,6 +1,6 @@
 ---
-title: Rechts-nach-links-Lokalisierung
-description: Rechts-nach-links-Lokalisierung bietet Unterstützung für flussrichtung von rechts-nach-Links zu Xamarin.Forms-Anwendungen.
+title: Lokalisierung von rechts nach links
+description: Durch die Lokalisierung von rechts nach links kann Text in der Leserichtung von rechts nach links in Xamarin.Forms-Anwendungen dargestellt werden.
 ms.prod: xamarin
 ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
 ms.technology: xamarin-forms
@@ -10,39 +10,39 @@ ms.author: dabritch
 ms.date: 05/07/2018
 ms.openlocfilehash: 67b0d90290b18c7a5b55c5e3496b54970a8cfc38
 ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/13/2018
 ms.locfileid: "51617604"
 ---
-# <a name="right-to-left-localization"></a>Rechts-nach-links-Lokalisierung
+# <a name="right-to-left-localization"></a>Lokalisierung von rechts nach links
 
-_Rechts-nach-links-Lokalisierung bietet Unterstützung für flussrichtung von rechts-nach-Links zu Xamarin.Forms-Anwendungen._
+_Durch die Lokalisierung von rechts nach links kann Text in der Leserichtung von rechts nach links in Xamarin.Forms-Anwendungen dargestellt werden._
 
 > [!NOTE]
-> Rechts-nach-links-Lokalisierung ist die Verwendung der API 17 oder höher unter Android und iOS 9 oder höher erforderlich.
+> Für die Lokalisierung von rechts nach links ist iOS 9 oder höher bzw. unter Android API 17 oder höher erforderlich.
 
-Flussrichtung ist die Richtung, in der die Elemente der Benutzeroberfläche auf der Seite vom Auge gescannt werden. Bei einigen Sprachen wie Arabisch und Hebräisch, erfordern, dass UI-Elemente in einer flussrichtung von rechts-nach-links angeordnet werden. Dies kann erreicht werden, durch Festlegen der [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft. Diese Eigenschaft ruft ab oder legt die Richtung fest, in der UI-Elemente-Fluss innerhalb von übergeordneten Elementen, die steuert, der das Layouts und sollte auf eine der festgelegt werden die [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) -Enumerationswerte fest:
+Die Leserichtung ist die Richtung, in der Benutzeroberflächenelemente auf einer Seite vom Auge wahrgenommen werden. In einigen Sprachen wie Arabisch und Hebräisch werden Benutzeroberflächenelemente von rechts nach links geschrieben. Dieses Verhalten wird erreicht, indem Sie die Eigenschaft [`VisualElement.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) festlegen. Diese Eigenschaft ruft die Leserichtung von Benutzeroberflächenelementen ab oder legt diese fest, und zwar innerhalb aller übergeordneten Elemente, die das Layout steuern. Daher muss sie auf einen der [`FlowDirection`](xref:Xamarin.Forms.FlowDirection)-Enumerationswerte festgelegt werden:
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
 - [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-Festlegen der [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft [ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft) für ein Element in der Regel legt die Ausrichtung fest, das Recht, die rechts-nach-Links-Lesefolge und das Layout des Steuerelements aus rechts-nach-links:
+Wenn Sie die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft für ein Element auf [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) festlegen, wird die Ausrichtung in der Regel rechtsseitig und die Leserichtung und das Layout des Steuerelements von rechts nach links festgelegt:
 
-[![TodoItemPage in Arabisch mit einer flussrichtung von rechts-nach-links-](rtl-images/TodoItemPage-Arabic.png "TodoItemPage in Arabisch mit einer flussrichtung von rechts-nach-links-")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "TodoItemPage in Arabisch mit einer flussrichtung von rechts-nach-links")
-
-> [!TIP]
-> Sie sollten nur festlegen, die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft für das anfängliche Layout. Ändern diesen Wert zur Laufzeit bewirkt, dass eine teure Layoutvorgang, wird die Leistung auswirken.
-
-Der Standardwert [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaftswert für ein Element ohne übergeordnetes Element ist [ `LeftToRight` ](xref:Xamarin.Forms.FlowDirection.LeftToRight), zwar standardmäßig `FlowDirection` für ein mit einem übergeordneten Element Element [ `MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent). Aus diesem Grund ein Element erbt die `FlowDirection` Eigenschaftswert von seinem übergeordneten Element in der visuellen Struktur und ein Element kann den Wert von seinem übergeordneten Element wird überschreiben.
+[![TodoItemPage auf Arabisch mit einer Schreibrichtung von rechts nach links](rtl-images/TodoItemPage-Arabic.png "TodoItemPage auf Arabisch mit einer Schreibrichtung von rechts nach links")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "TodoItemPage auf Arabisch mit einer Schreibrichtung von rechts nach links")
 
 > [!TIP]
-> Wenn eine app für rechts-nach-links-Sprachen lokalisieren möchten, legen die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft auf eine Seite oder Root-Layout. Dies bewirkt, dass alle Elemente innerhalb der Seite oder Root-Layout, um angemessen auf die flussrichtung reagieren.
+> Sie sollten nur die Eigenschaft [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) auf das anfängliche Layout festlegen. Wenn dieser Wert zur Laufzeit geändert wird, hat dies einen teuren Layoutvorgang zur Folge, der die Leistung beeinträchtigt.
 
-## <a name="respecting-device-flow-direction"></a>Unter Beachtung der flussrichtung des Geräts
+Der Standardwert der [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft für ein Element ohne übergeordnetes Element lautet [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight), während der Standardwert von `FlowDirection` für ein Element mit übergeordnetem Element [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) ist. Aus diesem Grund erbt ein Element den Wert der `FlowDirection`-Eigenschaft vom übergeordneten Element in der visuellen Struktur, und alle Elemente können den vom übergeordneten Element geerbten Wert auch überschreiben.
 
-Unter Beachtung der flussrichtung des Geräts basierend auf der ausgewählten Sprache und Region ist eine explizite Developer-Option und wird nicht automatisch ausgeführt. Er erzielt werden, indem Sie die Einstellung der [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) -Eigenschaft in einer Seite oder Root-Layout, auf die `static` [ `Device.FlowDirection` ](xref:Xamarin.Forms.Device.FlowDirection) Wert:
+> [!TIP]
+> Wenn Sie eine App für Sprachen mit einer Schreibrichtung von rechts nach links lokalisieren, legen Sie die Eigenschaft [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) für die Seite oder das Rootlayout fest. Dadurch werden alle Elemente auf der Seite oder im Rootlayout der Schreibrichtung entsprechend ausgerichtet.
+
+## <a name="respecting-device-flow-direction"></a>Beachtung der Schreibrichtung des Geräts
+
+Dass die Schreibrichtung auf dem Geräts der ausgewählten Sprache und Region entsprechend beachtet wird, ist eine bewusste Entscheidung der Entwickler und passiert nicht automatisch. Für die richtige Schreibrichtung muss die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft für eine Seite oder ein Rootlayout auf den Wert `static` [`Device.FlowDirection`](xref:Xamarin.Forms.Device.FlowDirection) festgelegt werden:
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
@@ -52,15 +52,15 @@ Unter Beachtung der flussrichtung des Geräts basierend auf der ausgewählten Sp
 this.FlowDirection = Device.FlowDirection;
 ```
 
-Alle untergeordneten Elemente auf der Seite oder Root-Layout werden dann standardmäßig erben die [ `Device.FlowDirection` ](xref:Xamarin.Forms.Device.FlowDirection) Wert.
+Alle untergeordneten Elemente auf der Seite oder im Rootlayout erben in diesem Fall standardmäßig den [`Device.FlowDirection`](xref:Xamarin.Forms.Device.FlowDirection)-Wert.
 
-## <a name="platform-setup"></a>Plattform-setup
+## <a name="platform-setup"></a>Plattformeinrichtung
 
-Bestimmte Plattform-Setup ist erforderlich, um rechts-nach-links-Gebietsschemas zu aktivieren.
+Es ist eine bestimmte Plattformkonfiguration erforderlich, um die Gebietsschemas zu ermöglichen, in denen von rechts nach links gelesen wird.
 
 ### <a name="ios"></a>iOS
 
-Das erforderliche rechts-nach-links-Gebietsschema sollten als einer unterstützten Sprache hinzugefügt werden, auf die Arrayelemente für die `CFBundleLocalizations` -Schlüssels im **"Info.plist"**. Das folgende Beispiel zeigt, dass wurde hinzugefügt, in das Array für Arabisch der `CFBundleLocalizations` Schlüssel:
+Das erforderliche Gebietsschema, in dem von rechts nach links gelesen wird, sollte als unterstützte Sprache zu den Arrayelementen für den `CFBundleLocalizations`-Schlüssel in **Info.plist** hinzugefügt werden. Im folgenden Beispiel wird gezeigt, wie dem Array für den `CFBundleLocalizations`-Schlüssel Arabisch hinzugefügt wurde:
 
 ```xml
 <key>CFBundleLocalizations</key>
@@ -70,18 +70,18 @@ Das erforderliche rechts-nach-links-Gebietsschema sollten als einer unterstützt
 </array>
 ```
 
-![Datei "Info.plist" unterstützt Sprachen](rtl-images/ios-locales.png "\"Info.plist\" unterstützte Sprachen")
+![Unterstützte Sprachen in „Info.plist“](rtl-images/ios-locales.png "Unterstützte Sprachen in „Info.plist“")
 
-Weitere Informationen finden Sie unter [Lokalisierung-Grundlagen in iOS](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios).
+Weitere Informationen finden Sie unter [Grundlagen der Lokalisierung in iOS](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios).
 
-Rechts-nach-links-Lokalisierung kann dann getestet werden, durch ändern die Sprache und Region auf der Gerätesimulator in eine rechts-nach-links-Gebietsschema, das im angegebenen **"Info.plist"**.
+Die Lokalisierung von rechts nach links kann getestet werden, indem Sie die Sprache und die Region auf dem Gerät/Simulator in ein Gebietsschema ändern, in dem von rechts nach links gelesen wird und das in **Info.plist** angegeben wurde.
 
 > [!WARNING]
-> Beachten Sie, dass wenn Sie die Sprache und Region in eine rechts-nach-links-Gebietsschema unter iOS, alle [ `DatePicker` ](xref:Xamarin.Forms.DatePicker) Ansichten werden eine Ausnahme ausgelöst, wenn Sie nicht die erforderlichen Ressourcen für das Gebietsschema verwenden. Z. B., wenn Sie eine app in Arabisch zu testen, die eine `DatePicker`, sicher, dass **Naher Osten** ausgewählt ist, der **Internationalisierung** im Abschnitt der **iOS-Build** Bereich.
+> Beachten Sie, dass beim Ändern der Sprache und der Region in ein Gebietsschema, das von rechts nach links gelesen wird, unter iOS alle [`DatePicker`](xref:Xamarin.Forms.DatePicker)-Ansichten eine Ausnahme auslösen, wenn Sie die für das Gebietsschema erforderlichen Ressourcen nicht einfügen. Wenn Sie z. B. eine App auf Arabisch testen, die eine `DatePicker`-Ansicht hat, sollten Sie sicherstellen, dass **mideast** im Abschnitt **Internationalisierung** des Bereichs **iOS-Build** ausgewählt ist.
 
 ### <a name="android"></a>Android
 
-Der app **"androidmanifest.xml"** Datei aktualisiert werden soll, damit die `<uses-sdk>` Knotengruppen der `android:minSdkVersion` -Attribut auf 17, und die `<application>` Knotengruppen der `android:supportsRtl` Attribut `true`:
+Die Datei **androidmanifest.xml** der App sollte aktualisiert werden, damit der `<uses-sdk>`-Knoten das `android:minSdkVersion`-Attribut auf 17 und der `<application>`-Knoten das `android:supportsRtl`-Attribut auf `true` festlegt:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -92,11 +92,11 @@ Der app **"androidmanifest.xml"** Datei aktualisiert werden soll, damit die `<us
 </manifest>
 ```
 
-Lokalisierung von rechts-nach-links klicken Sie dann getestet werden kann, indem Sie den Geräteemulator zum Verwenden der rechts-nach-links-Sprache ändern, oder durch aktivieren **Force RTL layoutausrichtung** in **Einstellungen > Entwickleroptionen**.
+Die Lokalisierung von rechts nach links lässt sich anschließend testen, indem Sie das Gerät/den Emulator so konfigurieren, dass die Sprache mit Schreibrichtung von rechts nach links verwendet wird. Stattdessen können Sie zum Testen auch unter **Einstellungen > Entwickleroptionen** die Option **Force RTL layout direction** (Richtung des RTL-Layouts erzwingen) aktivieren.
 
 ### <a name="universal-windows-platform-uwp"></a>Universelle Windows-Plattform (UWP)
 
-Die Ressourcen für die erforderliche Sprache sollte angegeben werden, der `<Resources>` Knoten die **"Package.appxmanifest"** Datei. Das folgende Beispiel zeigt, Arabisch hinzugefügt, um die `<Resources>` Knoten:
+Die erforderlichen Sprachressourcen sollten im `<Resources>`-Knoten der Datei **Package.appxmanifest** angegeben sein. Im folgenden Beispiel wird gezeigt, wie auf dem `<Resources>`-Knoten Arabisch hinzugefügt wird:
 
 ```xml
 <Resources>
@@ -106,7 +106,7 @@ Die Ressourcen für die erforderliche Sprache sollte angegeben werden, der `<Res
 </Resources>
 ```
 
-Darüber hinaus erfordert UWP an, dass die Standardkultur der Anwendung explizit in der .NET Standard-Bibliothek definiert ist. Dies kann erreicht werden, durch Festlegen der `NeutralResourcesLanguage` -Attribut im `AssemblyInfo.cs`, oder in einer anderen Klasse, um die Standardkultur:
+Darüber hinaus erfordert die UWP, dass die Standardkultur der Anwendung explizit in der .NET Standard-Bibliothek definiert ist. Legen Sie dazu das `NeutralResourcesLanguage`-Attribut in `AssemblyInfo.cs` oder einer anderen Klasse wie folgt auf die Standardkultur fest:
 
 ```csharp
 using System.Resources;
@@ -114,42 +114,42 @@ using System.Resources;
 [assembly: NeutralResourcesLanguage("en")]
 ```
 
-Rechts-nach-links-Lokalisierung kann dann getestet werden, ändern Sie die Sprache und Region auf dem Gerät zur entsprechenden Gebietsschema-rechts-nach-links.
+Die Lokalisierung von rechts nach links kann getestet werden, indem Sie die Sprache und die Region auf dem Gerät in das richtige Rechts-nach-Links-Gebietsschema ändern.
 
 ## <a name="limitations"></a>Einschränkungen
 
-Xamarin.Forms-rechts-nach-links-Lokalisierung verfügt derzeit über einige Einschränkungen:
+Für die Lokalisierung von rechts nach links gelten in Xamarin.Forms derzeit die folgenden Einschränkungen:
 
-- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) Speicherort der Schaltfläche, Symbolleiste Element Speicherort aus, und übergangsanimation wird gesteuert, durch das Gebietsschema des Geräts, anstatt die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
-- [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) streichen Sie nach Richtung wird nicht gekippt.
-- [`Image`](xref:Xamarin.Forms.Image) Visueller Inhalt wird nicht gekippt.
-- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) und [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) Ausrichtung wird gesteuert, durch das Gebietsschema des Geräts, anstatt die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
-- [`WebView`](xref:Xamarin.Forms.WebView) Inhalt berücksichtigt nicht die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
-- Ein `TextDirection` -Eigenschaft muss hinzugefügt werden, um die textausrichtung zu steuern.
+- Die Platzierung der [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Schaltfläche, die Platzierung der Symbolleistenelemente und die Übergangsanimation werden durch das Gebietsschema des Geräts und nicht durch die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft gesteuert.
+- Die Wischrichtung von [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) wird nicht umgestellt.
+- Der visuelle Inhalt von [`Image`](xref:Xamarin.Forms.Image) wird nicht umgestellt.
+- Die Ausrichtung von [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) und [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) wird durch das Gebietsschema des Geräts gesteuert, nicht durch die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft.
+- Der Inhalt von [`WebView`](xref:Xamarin.Forms.WebView) berücksichtigt nicht die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft.
+- Für die Steuerung der Textausrichtung muss eine `TextDirection`-Eigenschaft hinzugefügt werden.
 
 ### <a name="ios"></a>iOS
 
-- [`Stepper`](xref:Xamarin.Forms.Stepper) Ausrichtung wird gesteuert, durch das Gebietsschema des Geräts, anstatt die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
-- [`EntryCell`](xref:Xamarin.Forms.EntryCell) textausrichtung wird gesteuert, durch das Gebietsschema des Geräts, anstatt die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) Gesten und Ausrichtung werden nicht rückgängig gemacht.
+- Die Ausrichtung von [`Stepper`](xref:Xamarin.Forms.Stepper) wird durch das Gebietsschema des Geräts gesteuert, nicht durch die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft.
+- Die Textausrichtung von [`EntryCell`](xref:Xamarin.Forms.EntryCell) wird durch das Gebietsschema des Geräts gesteuert, nicht durch die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft.
+- Gesten und die Ausrichtung von [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) werden nicht umgekehrt.
 
 ### <a name="android"></a>Android
 
-- [`SearchBar`](xref:Xamarin.Forms.SearchBar) Ausrichtung wird gesteuert, durch das Gebietsschema des Geräts, anstatt die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) Platzierung wird gesteuert, durch das Gebietsschema des Geräts, anstatt die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
+- Die Ausrichtung von [`SearchBar`](xref:Xamarin.Forms.SearchBar) wird durch das Gebietsschema des Geräts gesteuert, nicht durch die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft.
+- Die Platzierung von [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) wird durch das Gebietsschema des Geräts gesteuert, nicht durch die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft.
 
 ### <a name="uwp"></a>UWP
 
-- [`Editor`](xref:Xamarin.Forms.Editor) textausrichtung wird gesteuert, durch das Gebietsschema des Geräts, anstatt die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
-- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft wird nicht von geerbt [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) untergeordneten Elemente.
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) textausrichtung wird gesteuert, durch das Gebietsschema des Geräts, anstatt die [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft.
+- Die Textausrichtung von [`Editor`](xref:Xamarin.Forms.Editor) wird durch das Gebietsschema des Geräts gesteuert, nicht durch die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft.
+- Die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft wird nicht von den untergeordneten [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)-Elementen geerbt.
+- Die Textausrichtung von [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) wird durch das Gebietsschema des Geräts gesteuert, nicht durch die [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)-Eigenschaft.
 
-## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Unterstützung von rechts nach links Sprache mit Xamarin.University
+## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Unterstützung für Sprachen in der Xamarin.University, die von rechts nach links gelesen werden
 
 > [!VIDEO https://youtube.com/embed/f2lQ5yw3iiU]
 
-**Xamarin.Forms-3.0-rechts-nach-Links zu unterstützen, indem [Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 Right-to-Left Support (Rechts-nach-Links-Unterstützung in Xamarin.Forms 3.0), [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TodoLocalizedRTL-Beispiel-App](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
+- [Beispiel-App „TodoLocalizedRTL“](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)

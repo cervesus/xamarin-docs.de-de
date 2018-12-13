@@ -1,6 +1,6 @@
 ---
-title: Fallbacks für Xamarin.Forms-Bindung
-description: In diesem Artikel wird erläutert, wie Bindungen stabiler machen, durch die Definition von fallback-Werte, die verwendet werden, wenn die Bindung fehlschlägt.
+title: Fallbacks für Xamarin.Forms-Bindungen
+description: In diesem Artikel wird erläutert, wie Bindungen stabiler gemacht werden können, indem Fallback-Werte definiert werden, die verwendet werden, wenn der Bindungsprozess fehlschlägt.
 ms.prod: xamarin
 ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
 ms.technology: xamarin-forms
@@ -9,32 +9,32 @@ ms.author: dabritch
 ms.date: 08/16/2018
 ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52171598"
 ---
-# <a name="xamarinforms-binding-fallbacks"></a>Fallbacks für Xamarin.Forms-Bindung
+# <a name="xamarinforms-binding-fallbacks"></a>Fallbacks für Xamarin.Forms-Bindungen
 
-Manchmal datenbindungen, die fehlschlagen, weil die Quelle der Bindung nicht aufgelöst werden kann oder die Bindung erfolgreich ist, jedoch gibt eine `null` Wert. Während dieser Szenarien mit Wertkonverter oder anderen zusätzlichen Code verarbeitet werden können, können von datenbindungen werden robuster gestaltet werden alternative Werte verwenden, wenn die Bindung kann nicht ausgeführt werden. Dies kann erreicht werden, indem Sie definieren die [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) und [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) Eigenschaften in einem Bindungsausdruck. Da diese Eigenschaften im befinden die [ `BindingBase` ](xref:Xamarin.Forms.BindingBase) -Klasse, können sie verwendet werden, mit Bindungen, kompilierte Bindungen, und die `Binding` Markuperweiterung.
+Manchmal schlagen Datenbindungen fehl, weil die Bindungsquelle nicht aufgelöst werden kann oder weil eine erfolgreiche Bindung einen `null`-Wert zurückgibt. Während diese Szenarios mit Wertkonvertern behandelt werden können, oder einem anderen zusätzlichen Code, können Datenbindungen stabiler gemacht werden, indem Fallback-Werte festgelegt werden, die verwendet werden, wenn der Bindungsprozess fehlschlägt. Dies kann erreicht werden, indem die Eigenschaften [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) und [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) in einem Bindungsausdruck definiert werden. Da sich diese Eigenschaften in der [`BindingBase`](xref:Xamarin.Forms.BindingBase)-Klasse befinden, können sie mit Bindungen, kompilierten Bindungen und mit der `Binding`-Markuperweiterung verwendet werden.
 
 > [!NOTE]
-> Verwenden der [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) und [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) Eigenschaften in einem Bindungsausdruck ist optional.
+> Die Verwendung der Eigenschaften [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) und [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) in einem Bindungsausdruck ist optional.
 
-## <a name="defining-a-fallback-value"></a>Definieren einen fallback-Wert
+## <a name="defining-a-fallback-value"></a>Definieren von Fallbackwerten
 
-Die [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) Eigenschaft kann ein fallback definiert werden, die verwendet werden, wenn die Bindung *Quelle* kann nicht aufgelöst werden. Ein häufiges Szenario für das Festlegen dieser Eigenschaft wird beim Binden an Eigenschaften der Quelle, die möglicherweise nicht für alle Objekte in einer bindungsauflistung heterogene Typen vorhanden.
+Durch die Eigenschaft [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) kann ein Fallbackwert definiert werden, der verwendet wird, wenn die Bindung *Quelle* nicht gelöst werden kann. Ein häufiges Szenario zur Einstellung dieser Eigenschaft ist die Bindung an Quelleigenschaften, die möglicherweise nicht für alle Objekte in einer gebundenen Sammlung heterogener Typen vorhanden sind.
 
-Die **MonkeyDetail** Seite veranschaulicht die Einstellung der [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) Eigenschaft:
+Auf der Seite **MonkeyDetail (Affe Details)** wird das Festlegen der [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)-Eigenschaft veranschaulicht:
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue='Population size unknown'}"
        ... />   
 ```
 
-Die Bindung für die [ `Label` ](xref:Xamarin.Forms.Label) definiert eine [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) -Wert, der auf dem Ziel festgelegt wird, wenn die Bindungsquelle nicht aufgelöst werden kann. Deshalb ist der Wert von definiert die `FallbackValue` Eigenschaft wird angezeigt, wenn die `Population` Eigenschaft ist nicht vorhanden, für das gebundene Objekt. Beachten Sie, dass hier die `FallbackValue` Eigenschaftswert durch einfache Anführungszeichen (Apostroph)-Zeichen begrenzt wird.
+Die Bindung auf der [`Label`](xref:Xamarin.Forms.Label) definiert einen [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)-Wert, der auf das Ziel festgelegt wird, wenn die Bindungsquelle nicht gelöst werden kann. Deshalb wird der durch die `FallbackValue`-Eigenschaft definierte Wert angezeigt, falls die `Population`-Eigenschaft nicht auf dem gebundenen Objekt vorhanden ist. Beachten Sie, dass hier der `FallbackValue`-Eigenschaftswert durch einfache Anführungszeichen (Apostrophe) getrennt ist.
 
-Anstatt definieren [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) Eigenschaft Werte Inline, es wird empfohlen, diese als Ressourcen im Definieren einer [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Der Vorteil dieses Ansatzes ist, dass solche Werte in einem zentralen Ort einmal definiert werden, und sind einfacher lokalisierbar. Die Ressourcen können dann abgerufen werden mithilfe der `StaticResource` Markuperweiterung:
+Anstatt [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)-Eigenschaftswerte inline zu definieren, wird empfohlen, diese als Ressourcen in einer [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) zu definieren. Der Vorteil dieses Ansatzes ist, dass solche Werte einmal an einem einzigen Speicherort definiert werden und einfacher lokalisierbar sind. Die Ressourcen können dann mithilfe der `StaticResource`-Markuperweiterung abgerufen werden:
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue={StaticResource populationUnknown}}"
@@ -42,22 +42,22 @@ Anstatt definieren [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackVa
 ```
 
 > [!NOTE]
-> Es ist nicht möglich, Sie legen die `FallbackValue` Eigenschaft mit einem Bindungsausdruck.
+> Es ist nicht möglich, die `FallbackValue`-Eigenschaft mit einem Bindungsausdruck festzulegen.
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-![FallbackValue Bindung](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue-Bindung")
+![FallbackValue Binding](binding-fallbacks-images/bindingunavailable-detail-cropped.png "Fallbackwert-Bindung")
 
-Wenn die `FallbackValue` Eigenschaftensatz wird nicht in einem Bindungsausdruck und des Bindungspfads oder Teil des Pfads nicht aufgelöst, [ `BindableProperty.DefaultValue` ](xref:Xamarin.Forms.BindableProperty.DefaultValue) festgelegt ist, auf dem Ziel. Jedoch, wenn die `FallbackValue` Teil des Pfads nicht behoben bzw.-Eigenschaft festgelegt ist und den Bindungspfad den Wert des der `FallbackValue` Value-Eigenschaft festgelegt ist, auf dem Ziel. Daher auf die **MonkeyDetail** Seite die [ `Label` ](xref:Xamarin.Forms.Label) "Unbekannter Auffüllung Size" angezeigt, da das gebundene Objekt verfügt nicht über eine `Population` Eigenschaft.
+Wenn die `FallbackValue`-Eigenschaft nicht in einem Bindungsausdruck festgelegt ist, und der Bindungspfad oder Teil des Pfads nicht gelöst wurde, wird [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) auf das Ziel festgelegt. Wenn die `FallbackValue`-Eigenschaft jedoch festgesetzt wird und der Bindungspfad oder Teil des Pfads nicht gelöst wurde, wird der Wert der `FallbackValue`-Werteigenschaft auf das Ziel festgelegt. Deshalb wird auf der Seite **MonkeyDetail (Affe Details)** vom [`Label`](xref:Xamarin.Forms.Label) „Population size unknown“ (Populationsgröße unbekannt) angezeigt, weil dem gebundenen Objekt eine `Population`-Eigenschaft fehlt.
 
 > [!IMPORTANT]
-> Ein definierten Wertkonverter wird nicht ausgeführt, in einem Bindungsausdruck bei der [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) festgelegt wird.
+> Ein definierter Wertkonverter wird in einem Bindungsausdruck nicht ausgeführt, wenn die [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)-Eigenschaft festgelegt ist.
 
-## <a name="defining-a-null-replacement-value"></a>Definieren einen null-Ersatzwert
+## <a name="defining-a-null-replacement-value"></a>Definieren von NULL-Ersatzwerten
 
-Die [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) Eigenschaft können Sie einen Ersatzwert definiert werden, die verwendet werden, wenn die Bindung *Quelle* aufgelöst wurde, aber der Wert ist `null`. Ein häufiges Szenario für das Festlegen dieser Eigenschaft wird beim Binden an der Datenquelleneigenschaften, die möglicherweise `null` in einer bindungsauflistung.
+Durch die [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)-Eigenschaft kann ein Ersatzwert definiert werden, der verwendet wird, wenn die Bindung *Quelle* zwar gelöst wurde, der Wert aber `null` ist. Ein häufiges Szenario zum Festlegen dieser Eigenschaft ist die Bindung an Quelleigenschaften, die in einer gebundenen Sammlung `null` sein könnten.
 
-Die **Affen** Seite veranschaulicht die Einstellung der [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) Eigenschaft:
+Die Seite **Monkeys (Affen)** veranschaulicht das Festlegen der [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)-Eigenschaft:
 
 ```xaml
 <ListView ItemsSource="{Binding Monkeys}"
@@ -79,9 +79,9 @@ Die **Affen** Seite veranschaulicht die Einstellung der [ `TargetNullValue` ](xr
 </ListView>
 ```
 
-Die Bindungen für die [ `Image` ](xref:Xamarin.Forms.Image) und [ `Label` ](xref:Xamarin.Forms.Label) beide definieren [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) Werte, die angewendet werden, wenn die Bindungspfad gibt`null`. Aus diesem Grund den vom definierten Werte der `TargetNullValue` Eigenschaften werden für alle Objekte in der Sammlung angezeigt, in denen die `ImageUrl` und `Location` Eigenschaften sind nicht definiert. Beachten Sie, dass hier die `TargetNullValue` Eigenschaftswerte durch einfache Anführungszeichen (Apostroph)-Zeichen getrennt sind.
+Die Bindungen auf den [`Image`](xref:Xamarin.Forms.Image) und [`Label`](xref:Xamarin.Forms.Label) definieren beide [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)-Werte, die angewendet werden, wenn der Bindungspfad `null` zurückgibt. Daher werden die durch die `TargetNullValue`-Eigenschaften definierten Werte für jedes Objekt in der Sammlung angezeigt, bei dem die Eigenschaften `ImageUrl` und `Location` nicht definiert sind. Beachten Sie, dass hier die `TargetNullValue`-Eigenschaftswerte durch einfache Anführungszeichen (Apostrophe) getrennt sind.
 
-Anstatt definieren [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) Eigenschaft Werte Inline, es wird empfohlen, diese als Ressourcen im Definieren einer [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Der Vorteil dieses Ansatzes ist, dass solche Werte in einem zentralen Ort einmal definiert werden, und sind einfacher lokalisierbar. Die Ressourcen können dann abgerufen werden mithilfe der `StaticResource` Markuperweiterung:
+Anstatt [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)-Eigenschaftswerte inline zu definieren, wird empfohlen, diese als Ressourcen in einer [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) zu definieren. Der Vorteil dieses Ansatzes ist, dass solche Werte einmal an einem einzigen Speicherort definiert werden und einfacher lokalisierbar sind. Die Ressourcen können dann mithilfe der `StaticResource`-Markuperweiterung abgerufen werden:
 
 ```xaml
 <Image Source="{Binding ImageUrl, TargetNullValue={StaticResource fallbackImageUrl}}"
@@ -91,17 +91,17 @@ Anstatt definieren [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNu
 ```
 
 > [!NOTE]
-> Es ist nicht möglich, Sie legen die `TargetNullValue` Eigenschaft mit einem Bindungsausdruck.
+> Es ist nicht möglich, die `TargetNullValue`-Eigenschaft mit einem Bindungsausdruck festzulegen.
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![TargetNullValue Bindung](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue Bindung")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue-Bindung")
+[![TargetNullValue Binding](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue Binding")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue Binding")
 
-Bei der `TargetNullValue` Eigenschaftensatz wird nicht in einem Bindungsausdruck, der Quelle den Wert `null` wird konvertiert, wenn Sie ein Wertkonverter formatiert, wenn definiert ist, eine `StringFormat` definiert ist, und klicken Sie dann das Ergebnis auf dem Ziel festgelegt ist. Jedoch, wenn die `TargetNullValue` Eigenschaft festgelegt ist, wird einen Quelle den Wert `null` wird konvertiert werden, wenn ein Wertkonverter definiert ist, und wenn dieser noch `null` nach der Konvertierung den Wert des der `TargetNullValue` Eigenschaft wird festgelegt, auf dem Ziel.
+Wenn die `TargetNullValue`-Eigenschaft nicht in einem Bindungsausdruck festgelegt ist, wird ein Quellwert von `null` konvertiert, falls ein Wertkonverter definiert ist, und formatiert, falls ein `StringFormat` definiert ist. Das Ergebnis wird dann auf das Ziel festgelegt. Wenn die `TargetNullValue`-Eigenschaft festgelegt ist, wird ein Quellwert von `null` konvertiert, falls ein Wertkonverter definiert ist, und wenn dieser nach der Konvertierung immer noch `null` ist, wird der Wert der `TargetNullValue`-Eigenschaft auf das Ziel festgelegt.
 
 > [!IMPORTANT]
-> Formatierung von Zeichenfolgen wird nicht in einem Bindungsausdruck angewendet Wenn die `TargetNullValue` festgelegt wird.
+> Zeichenfolgen werden in einem Bindungsausdruck nicht formatiert, wenn die `TargetNullValue`-Eigenschaft festgelegt ist.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Binden von Daten-Demos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)

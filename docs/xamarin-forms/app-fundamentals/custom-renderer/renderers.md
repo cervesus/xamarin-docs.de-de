@@ -1,6 +1,6 @@
 ---
-title: Renderer-Basisklassen und Native Steuerelemente
-description: Alle Xamarin.Forms-Steuerelements verfügt über eine zugehörige Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Dieser Artikel listet die Renderer und dem nativen Steuerelements-Klassen, die jede Xamarin.Forms-Seite, Layout, Ansicht und Zelle zu implementieren.
+title: Rendererbasisklassen und native Steuerelemente
+description: Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. In diesem Artikel werden die Klassen für Renderer und native Steuerelemente aufgelistet, die eine Xamarin.Forms-Seite, ein Xamarin.Forms-Layout, eine Xamarin.Forms-Ansicht und eine Xamarin.Forms-Zelle implementieren.
 ms.prod: xamarin
 ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
@@ -9,44 +9,44 @@ ms.author: dabritch
 ms.date: 11/19/2018
 ms.openlocfilehash: 56df2f7e6b83ddd4a5780506471cbd32a3aced40
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52171949"
 ---
-# <a name="renderer-base-classes-and-native-controls"></a>Renderer-Basisklassen und Native Steuerelemente
+# <a name="renderer-base-classes-and-native-controls"></a>Rendererbasisklassen und native Steuerelemente
 
-_Alle Xamarin.Forms-Steuerelements verfügt über eine zugehörige Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Dieser Artikel listet die Renderer und dem nativen Steuerelements-Klassen, die jede Xamarin.Forms-Seite, Layout, Ansicht und Zelle zu implementieren._
+_Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. In diesem Artikel werden die Klassen für Renderer und native Steuerelemente aufgelistet, die eine Xamarin.Forms-Seite, ein Xamarin.Forms-Layout, eine Xamarin.Forms-Ansicht und eine Xamarin.Forms-Zelle implementieren._
 
-Mit Ausnahme von der `MapRenderer` -Klasse, die plattformspezifische Renderer finden Sie in den folgenden Namespaces:
+Mit Ausnahme der `MapRenderer`-Klasse finden Sie die plattformspezifischen Renderer in den folgenden Namespaces:
 
-- **iOS** – Xamarin.Forms.Platform.iOS
-- **Android** – Xamarin.Forms.Platform.Android
-- **Android (AppCompat)** – Xamarin.Forms.Platform.Android.AppCompat
-- **Universelle Windows-Plattform (UWP)** : Xamarin.Forms.Platform.UWP
+- **iOS:** Xamarin.Forms.Platform.iOS
+- **Android:** Xamarin.Forms.Platform.Android
+- **Android (AppCompat):** Xamarin.Forms.Platform.Android.AppCompat
+- **Universelle Windows-Plattform (UWP):** Xamarin.Forms.Platform.UWP
 
-Die `MapRenderer` Klasse finden Sie in den folgenden Namespaces:
+Die `MapRenderer`-Klasse finden Sie in den folgenden Namespaces:
 
-- **iOS** – Xamarin.Forms.Maps.iOS
-- **Android** – Xamarin.Forms.Maps.Android
-- **Universelle Windows-Plattform (UWP)** – Xamarin.Forms.Maps.UWP
+- **iOS:** Xamarin.Forms.Maps.iOS
+- **Android:** Xamarin.Forms.Maps.Android
+- **Universelle Windows-Plattform (UWP):** Xamarin.Forms.Maps.UWP
 
 ## <a name="pages"></a>Seiten
 
-Die folgende Tabelle enthält die Renderer und dem nativen Steuerelements-Klassen, die jede Xamarin.Forms implementieren [Seite](~/xamarin-forms/user-interface/controls/pages.md) Typ:
+In der folgenden Tabelle werden die Klassen für Renderer und native Steuerelemente aufgelistet, die jeden [Page](~/xamarin-forms/user-interface/controls/pages.md)-Typ von Xamarin.Forms implementieren.
 
 |Seite|Renderer|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
 |[`ContentPage`](xref:Xamarin.Forms.ContentPage)|[PageRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/contentpage.md)|UIViewController|ViewGroup||FrameworkElement|
-|[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)|PhoneMasterDetailRenderer (iOS-Telefon) TabletMasterDetailPageRenderer (iOS – Tablet), MasterDetailRenderer (Android), MasterDetailPageRenderer (Android AppCompat), MasterDetailPageRenderer (UWP)|UIViewController (Phone), UISplitViewController (Tablet)|DrawerLayout (v4)|DrawerLayout (v4)|"FrameworkElement" (benutzerdefiniertes Steuerelement)|
-|[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)|NavigationRenderer (iOS und Android), NavigationPageRenderer (Android AppCompat), NavigationPageRenderer (UWP)|UIToolbar|ViewGroup|ViewGroup|"FrameworkElement" (benutzerdefiniertes Steuerelement)|
-|[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)|TabbedRenderer (iOS und Android), TabbedPageRenderer (Android AppCompat), TabbedPageRenderer (UWP)|UIView|ViewPager|ViewPager|"FrameworkElement" (PowerPivot)|
+|[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)|PhoneMasterDetailRenderer (iOS – Phone), TabletMasterDetailPageRenderer (iOS – Tablet), MasterDetailRenderer (Android), MasterDetailPageRenderer (Android AppCompat), MasterDetailPageRenderer (UWP)|UIViewController (Phone), UISplitViewController (Tablet)|DrawerLayout (v4)|DrawerLayout (v4)|FrameworkElement (benutzerdefiniertes Steuerelement)|
+|[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)|NavigationRenderer (iOS und Android), NavigationPageRenderer (Android AppCompat), NavigationPageRenderer (UWP)|UIToolbar|ViewGroup|ViewGroup|FrameworkElement (benutzerdefiniertes Steuerelement)|
+|[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)|TabbedRenderer (iOS und Android), TabbedPageRenderer (Android AppCompat), TabbedPageRenderer (UWP)|UIView|ViewPager|ViewPager|FrameworkElement (Pivot)|
 |[`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)|PageRenderer|UIViewController|ViewGroup||FrameworkElement|
-|[`CarouselPage`](xref:Xamarin.Forms.CarouselPage)|CarouselPageRenderer|UIScrollView-Element|ViewPager|ViewPager|"FrameworkElement" (FlipView)|
+|[`CarouselPage`](xref:Xamarin.Forms.CarouselPage)|CarouselPageRenderer|UIScrollView|ViewPager|ViewPager|FrameworkElement (FlipView)|
 
 ## <a name="layouts"></a>Layouts
 
-Die folgende Tabelle enthält die Renderer und dem nativen Steuerelements-Klassen, die jede Xamarin.Forms implementieren [Layout](~/xamarin-forms/user-interface/controls/layouts.md) Typ:
+In der folgenden Tabelle werden die Klassen für Renderer und native Steuerelemente aufgelistet, die jeden [Layout](~/xamarin-forms/user-interface/controls/layouts.md)-Typ von Xamarin.Forms implementieren.
 
 |Layout|Renderer|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
@@ -54,7 +54,7 @@ Die folgende Tabelle enthält die Renderer und dem nativen Steuerelements-Klasse
 |[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|Ansicht|FrameworkElement|
 |[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|Ansicht|FrameworkElement|
 |[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|Rahmen|
-|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView-Element|ScrollView|ScrollViewer|
+|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
 |[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|Ansicht|FrameworkElement|
 |[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|Ansicht|FrameworkElement|
 |[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|Ansicht|FrameworkElement|
@@ -63,7 +63,7 @@ Die folgende Tabelle enthält die Renderer und dem nativen Steuerelements-Klasse
 
 ## <a name="views"></a>Ansichten
 
-Die folgende Tabelle enthält die Renderer und dem nativen Steuerelements-Klassen, die jede Xamarin.Forms implementieren [Ansicht](~/xamarin-forms/user-interface/controls/views.md) Typ:
+In der folgenden Tabelle werden die Klassen für Renderer und native Steuerelemente aufgelistet, die jeden [View](~/xamarin-forms/user-interface/controls/views.md)-Typ von Xamarin.Forms implementieren.
 
 |Ansichten|Renderer|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
@@ -90,20 +90,20 @@ Die folgende Tabelle enthält die Renderer und dem nativen Steuerelements-Klasse
 
 ## <a name="cells"></a>Zellen
 
-Die folgende Tabelle enthält die Renderer und dem nativen Steuerelements-Klassen, die jede Xamarin.Forms implementieren [Zelle](~/xamarin-forms/user-interface/controls/cells.md) Typ:
+In der folgenden Tabelle werden die Klassen für Renderer und native Steuerelemente aufgelistet, die jeden [Cell](~/xamarin-forms/user-interface/controls/cells.md)-Typ von Xamarin.Forms implementieren.
 
 |Zellen|Renderer|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
-|[`EntryCell`](xref:Xamarin.Forms.EntryCell)|EntryCellRenderer|UITableViewCell mit ein UITextField|LinearLayout mit einem TextView und EditText|Mit "TextBox" DataTemplate-Element|
-|[`SwitchCell`](xref:Xamarin.Forms.SwitchCell)|SwitchCellRenderer|UITableViewCell mit einem UISwitch|Schalter|Mit einem Raster mit einem TextBlock und ToggleSwitch DataTemplate-Element|
-|[`TextCell`](xref:Xamarin.Forms.TextCell)|TextCellRenderer|UITableViewCell|LinearLayout mit zwei TextViews|DataTemplate-Element mit einem StackPanel mit zwei TextBlocks|
-|[`ImageCell`](xref:Xamarin.Forms.ImageCell)|ImageCellRenderer|UITableViewCell mit einem UIImage|LinearLayout mit zwei TextViews und eine ImageView|DataTemplate-Element mit einem Raster mit einem Bild und zwei TextBlocks|
-|[`ViewCell`](xref:Xamarin.Forms.ViewCell)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|Ansicht|DataTemplate-Element mit dem ein ContentPresenter-Element|
+|[`EntryCell`](xref:Xamarin.Forms.EntryCell)|EntryCellRenderer|UITableViewCell mit UITextField|LinearLayout mit TextView und EditText|DataTemplate mit TextBox|
+|[`SwitchCell`](xref:Xamarin.Forms.SwitchCell)|SwitchCellRenderer|UITableViewCell mit UISwitch|Schalter|DataTemplate mit einem Raster, das TextBlock und ToggleSwitch enthält|
+|[`TextCell`](xref:Xamarin.Forms.TextCell)|TextCellRenderer|UITableViewCell|LinearLayout mit zwei TextViews|DataTemplate mit StackPanel, das zwei TextBlocks enthält|
+|[`ImageCell`](xref:Xamarin.Forms.ImageCell)|ImageCellRenderer|UITableViewCell mit UIImage|LinearLayout mit zwei TextViews und einem ImageView|DataTemplate mit einem Raster, das ein Image und zwei TextBlocks enthält|
+|[`ViewCell`](xref:Xamarin.Forms.ViewCell)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|Ansicht|DataTemplate mit ContentPresenter|
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel aufgeführten hat die Renderer und dem nativen Steuerelements-Klassen, die jede Xamarin.Forms-Seite, Layout, Ansicht und Zelle zu implementieren. Alle Xamarin.Forms-Steuerelements verfügt über eine zugehörige Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt.
+In diesem Artikel wurden die Klassen für Renderer und native Steuerelemente aufgelistet, die eine Xamarin.Forms-Seite, ein Xamarin.Forms-Layout, eine Xamarin.Forms-Ansicht und eine Xamarin.Forms-Zelle implementieren. Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Benutzerdefinierte Renderer (Xamarin University-Video)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)
+- [Custom Renderers (Xamarin University Video) (Benutzerdefinierte Renderer (Xamarin University-Video))](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)

@@ -1,6 +1,6 @@
 ---
-title: Hinzufügen einer Pinch-stiftbewegungs-Erkennung
-description: In diesem Artikel wird erläutert, wie die Pinch-Geste zum Ausführen von interaktiven Zoom eines Bilds an die Pinch-Speicherort verwendet wird.
+title: Hinzufügen einer Gestenerkennung für Zusammendrückbewegungen
+description: In diesem Artikel wird erläutert, wie Sie die Zusammendrückbewegung verwenden, um den interaktiven Zoom eines Bildes an der Position der Zusammendrückbewegung auszuführen.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: f67cbb136c42a4bc476c1715ea6fd15255d71dc7
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998699"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>Hinzufügen einer Pinch-stiftbewegungs-Erkennung
+# <a name="adding-a-pinch-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Zusammendrückbewegungen
 
-_Die Pinch-Geste wird zum Ausführen von interaktiven Zoom verwendet, und es wird mit der PinchGestureRecognizer-Klasse implementiert. Ein häufiges Szenario für die Pinch-Geste ist zum Ausführen von interaktiven Zoom eines Bilds an der Pinch-Position. Dies wird erreicht, indem Sie den Inhalt des Viewports skalieren und in diesem Artikel gezeigt wird._
+_Die Zusammendrückbewegung wird zum Ausführen des interaktiven Zooms verwendet und mit der Klasse „PinchGestureRecognizer“ implementiert. Allgemein wird die Zusammendrückbewegung verwendet, um einen interaktiven Zoom eines Bildes im Speicherort der Zusammendrückbewegung auszuführen. Dies wird durch Skalierung des Anzeigebereichs erreicht und in diesem Artikel veranschaulicht._
 
-Um ein Element der Benutzeroberfläche mit der Pinch-Geste zoombare machen, erstellen eine [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) -Instanz, behandeln Sie die [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) -Ereignis, und fügen Sie der neuen stiftbewegungs-Erkennung, um die [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) Auflistung in das Benutzeroberflächenelement. Das folgende Codebeispiel zeigt eine `PinchGestureRecognizer` angefügt, um eine [ `Image` ](xref:Xamarin.Forms.Image) Element:
+Erstellen Sie eine Instanz [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer), bearbeiten Sie das Ereignis [`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated), und fügen Sie die neue Funktion zur Gestenerkennung der Sammlung [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) im Benutzeroberflächenelement hinzu, damit ein Benutzeroberflächenelement mit der Zusammendrückbewegung vergrößert werden kann. Das folgende Codebeispiel stellt die Instanz `PinchGestureRecognizer` dar, die an das Element [`Image`](xref:Xamarin.Forms.Image) angefügt ist:
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -28,7 +28,7 @@ pinchGesture.PinchUpdated += (s, e) => {
 image.GestureRecognizers.Add(pinchGesture);
 ```
 
-Dies kann auch in XAML, erreicht werden, wie im folgenden Codebeispiel gezeigt:
+Dies kann auch wie im folgenden Codebeispiel dargestellt in XAML erreicht werden:
 
 ```xaml
 <Image Source="waterfront.jpg">
@@ -38,7 +38,7 @@ Dies kann auch in XAML, erreicht werden, wie im folgenden Codebeispiel gezeigt:
 </Image>
 ```
 
-Der Code für die `OnPinchUpdated` -Ereignishandler wird dann in die CodeBehind-Datei hinzugefügt:
+Der Code für den Ereignishandler `OnPinchUpdated` wird dann zur CodeBehind-Datei hinzugefügt:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -47,9 +47,9 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-## <a name="creating-a-pinchtozoom-container"></a>Erstellen eines Containers PinchToZoom
+## <a name="creating-a-pinchtozoom-container"></a>Erstellen des Containers „PinchToZoom“
 
-Behandlung von der Pinch-Geste, um einem Zoomvorgang auszuführen, erfordert einiger Berechnungen aus, um die Benutzeroberfläche zu transformieren. Dieser Abschnitt enthält eine generalisierte Hilfsklasse zum Ausführen von der Mathematik, die verwendet werden kann, alle Benutzer-Schnittstellenelement interaktiv zu vergrößern. Das folgende Codebeispiel zeigt die `PinchToZoomContainer`-Klasse:
+Für das Verarbeiten der Zusammendrückbewegung zum Ausführen eines Zooms sind Berechnungen erforderlich, um die Benutzeroberfläche zu transformieren. Dieser Abschnitt enthält eine Hilfsprogrammklasse zum Ausführen der Berechnungen, damit jedes Benutzeroberflächenelement interaktiv vergrößert werden kann. Das folgende Codebeispiel zeigt die `PinchToZoomContainer`-Klasse:
 
 ```csharp
 public class PinchToZoomContainer : ContentView
@@ -70,7 +70,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-Diese Klasse kann ein Element der Benutzeroberfläche umbrochen werden, so, dass die Pinch-Geste das umschlossene Benutzeroberflächenelement vergrößert wird. Das folgende Beispiel zeigt für die XAML-Code der `PinchToZoomContainer` umschließen einer [ `Image` ](xref:Xamarin.Forms.Image) Element:
+Diese Klasse kann das Benutzeroberflächenelement umschließen, sodass die Zusammendrückbewegung das umschlossene Benutzeroberflächenelement vergrößert. Das folgende XAML-Codebeispiel stellt die Klasse `PinchToZoomContainer` dar, die ein [`Image`](xref:Xamarin.Forms.Image)-Element umschließt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,7 +89,7 @@ Diese Klasse kann ein Element der Benutzeroberfläche umbrochen werden, so, dass
 </ContentPage>
 ```
 
-Das folgende Codebeispiel zeigt die `PinchToZoomContainer` dient als Wrapper für ein [ `Image` ](xref:Xamarin.Forms.Image) Element in einer C#-Seite:
+Das folgende Codebeispiel veranschaulicht, wie die Klasse `PinchToZoomContainer` ein [`Image`](xref:Xamarin.Forms.Image)-Element auf einer C#-Seite umschließt:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -108,7 +108,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Wenn die [ `Image` ](xref:Xamarin.Forms.Image) Element erhält eine zusammendrückbewegung, das angezeigte Bild wird werden vergrößert im bzw. Der Zoomfaktor wird ausgeführt, indem die `PinchZoomContainer.OnPinchUpdated` -Methode, die im folgenden Codebeispiel gezeigt wird:
+Das angezeigte Bild wird vergrößert oder verkleinert, wenn das [`Image`](xref:Xamarin.Forms.Image)-Element eine Zusammendrückbewegung empfängt. Der Zoom wird von der Methode `PinchZoomContainer.OnPinchUpdated` ausgeführt, die im folgenden Codebeispiel veranschaulicht wird:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -158,7 +158,7 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-Diese Methode aktualisiert die Zoomstufe des umschlossenen Element der Benutzeroberfläche anhand des Benutzers Pinch-Geste. Dies wird erreicht, indem Sie mithilfe der Werte der [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) und [ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) Eigenschaften der [ `PinchGestureUpdatedEventArgs` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) Instanz zum Berechnen des Skalierungsfaktor auf den Ursprung der Pinch-Geste angewendet werden soll. Das umschlossene Benutzer-Element wird durch Festlegen von klicken Sie dann auf den Ursprung der Pinch-Geste vergrößert die [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX), [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY), und [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaften, die die berechneten Werte.
+Diese Methode aktualisiert die Zoomstufe des umschlossenen Benutzeroberflächenelements basierend auf der Zusammendrückbewegung des Benutzers. Durch die Verwendung der Werte der Eigenschaften [`Scale`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [`ScaleOrigin`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) und [`Status`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) der Instanz [`PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) wird der Skalierungsfaktor berechnet, der am Anfang der Zusammendrückbewegung angewendet werden soll. Das umschlossene Benutzeroberflächenelement wird anschließend am Anfang der Zusammendrückbewegung vergrößert, indem die Eigenschaften [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX), [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) und [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) auf die berechneten Werte eingestellt werden.
 
 ## <a name="related-links"></a>Verwandte Links
 

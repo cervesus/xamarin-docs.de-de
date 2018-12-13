@@ -1,6 +1,6 @@
 ---
 title: Zeichenfolgen- und Imagelokalisierung
-description: Xamarin.Forms-apps können mithilfe von .NET Ressourcendateien lokalisiert werden.
+description: Xamarin.Forms-Apps können mithilfe von .NET-Ressourcendateien lokalisiert werden.
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
 ms.technology: xamarin-forms
@@ -9,113 +9,113 @@ ms.author: dabritch
 ms.date: 09/06/2016
 ms.openlocfilehash: 09fe3587e4e435383822e50bd12616747b807f82
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50108456"
 ---
 # <a name="localization"></a>Lokalisierung
 
-_Xamarin.Forms-apps können mithilfe von .NET Ressourcendateien lokalisiert werden._
+_Xamarin.Forms-Apps können mithilfe von .NET-Ressourcendateien lokalisiert werden._
 
 ## <a name="overview"></a>Übersicht
 
-Der integrierte Mechanismus zum Lokalisieren von .NET Applications verwendet [RESX-Dateien](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx) und die Klassen in der `System.Resources` und `System.Globalization` Namespaces. Die RESX-Dateien, die mit der übersetzten Zeichenfolgen werden in der Xamarin.Forms-Assembly zusammen mit einer vom Compiler generierte Klasse eingebettet, die stark typisierten Zugriff auf die Übersetzungen bereitstellt. Der übersetzte Text können Sie dann im Code abgerufen werden.
+Der integrierte Mechanismus zum Lokalisieren von .NET-Anwendungen verwendet [RESX-Dateien](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx) und die Klassen in den Namespaces `System.Resources` und `System.Globalization`. Die RESX-Dateien mit übersetzten Zeichenfolgen werden in die Xamarin.Forms-Assembly gemeinsam mit einer vom Compiler generierten Klasse eingebettet. Diese Klasse ermöglicht stark typisierten Zugriff auf die Übersetzung. Der übersetzte Text kann dann im Code abgerufen werden.
 
 ### <a name="sample-code"></a>Beispielcode
 
-Es gibt zwei Beispiele, die in diesem Dokument zugeordnet:
+Es gibt zwei Beispiele zu dem hier vorliegenden Dokument:
 
-* [UsingResxLocalization](https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingResxLocalization) ist ein sehr einfaches Beispiel der Konzepte erläutert. Die unten gezeigten Codeausschnitte stammen alle vom in diesem Beispiel.
-* [TodoLocalized](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized) ist eine grundlegende funktionierende app, die diese Techniken für die Lokalisierung verwendet.
+* [UsingResxLocalization](https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingResxLocalization) stellt eine sehr einfache Demonstration der erläuterten Konzepte dar. Die später verwendeten Codeausschnitte stammen alle aus diesem Beispiel.
+* Bei [TodoLocalized](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized) handelt es sich um eine einfache funktionierende App, die diese Lokalisierungstechniken verwendet.
 
 #### <a name="shared-projects-are-not-recommended"></a>Freigegebene Projekte werden nicht empfohlen.
 
-Das Beispiel TodoLocalized enthält eine [freigegebenes Projekt Demo](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/) jedoch aufgrund von Beschränkungen des Buildsystems die Ressourcendateien nicht erhalten eine **. "Designer.cs"** generierte Datei, der den Zugriff auf unterbricht übersetzte Zeichenfolgen im Code stark typisiert.
+Das TodoLocalized-Beispiel umfasst zwar eine [Demo für freigegebene Projekte](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/), aber da das Buildsystem eingeschränkt ist, können die Ressourcendateien keine **.designer.cs**-Datei erstellen. Dadurch kann nicht mehr auf stark typisierte übersetzte Zeichenfolgen in Code zugegriffen werden.
 
-Im weiteren Verlauf dieses Dokuments bezieht sich auf Projekte mithilfe der Vorlage für Xamarin.Forms .NET Standard-Bibliothek.
+Der Rest dieses Artikels bezieht sich auf Projekte, in denen die Vorlage für die Xamarin.Forms-.NET Standard-Bibliothek verwendet wird.
 
 ## <a name="globalizing-xamarinforms-code"></a>Globalisieren von Xamarin.Forms-Code
 
-**Globalisieren von** eine Anwendung wird somit "World-Ready". Dies bedeutet, dass das Schreiben von Code, der verschiedene Sprachen angezeigt werden.
+Der Prozess, in dem die Anwendung auf die weltweite Verwendung vorbereitet wird, wird als **Globalisierung** bezeichnet. Das bedeutet, dass Code geschrieben wird, der verschiedene Sprachen anzeigen kann.
 
-Einer der wichtigsten Teile des Globalisieren von einer Anwendung ist die Benutzeroberfläche erstellen, sodass es keine *hartcodierte* Text. Stattdessen soll nichts angezeigt wird, für den Benutzer aus einer Reihe von Zeichenfolgen abgerufen werden, die in ihrer gewählten Sprache übersetzt wurden.
+Ein Hauptbestandteil der Globalisierung einer Anwendung ist das Erstellen einer Benutzeroberfläche ohne *hartcodierten* Text. Stattdessen sollen sämtliche Elemente, die dem Benutzer angezeigt werden, aus verschiedenen Zeichenfolgen abgerufen werden, die in die ausgewählte Sprache übersetzt wurden.
 
-In diesem Dokument untersuchen wir so verwenden Sie RESX-Dateien zum Speichern dieser Zeichenfolgen und für die Anzeige je nach Einstellung des Benutzers abrufen.
+In diesem Dokument wird erläutert, wie RESX-Dateien zum Speichern und Abrufen dieser Zeichenfolgen verwendet werden können, damit sie je nach Einstellung des Benutzers angezeigt werden können.
 
-Die Beispiele als Ziel Sprachen Englisch, Französisch, Spanisch, Deutsch, Chinesisch, Japanisch, Russisch und Portugiesisch (Brasilien). Anwendungen können in möglichst wenige oder beliebig viele Sprachen nach Bedarf übersetzt werden.
+Die Beispiele sind für die folgenden Sprachen verfügbar: Englisch, Französisch, Deutsch, Chinesisch, Japanisch, Russisch und Portugiesisch (Brasilien). Anwendungen können in so viele Sprachen wie nötig übersetzt werden.
 
 > [!NOTE]
-> Für die universelle Windows-Plattform sollte RESW--Dateien für die Lokalisierung der Push-Benachrichtigungen, anstatt in RESX-Dateien verwendet werden. Weitere Informationen finden Sie unter [UWP Lokalisierung](/windows/uwp/design/globalizing/globalizing-portal/).
+> Auf der Universellen Windows-Plattform sollten anstelle von RESX-Dateien RESW-Dateien zur Lokalisierung von Pushbenachrichtigungen verwendet werden. Weitere Informationen finden Sie unter [UWP Localization (UWP-Lokalisierung)](/windows/uwp/design/globalizing/globalizing-portal/).
 
 ### <a name="adding-resources"></a>Hinzufügen von Ressourcen
 
-Der erste Schritt bei der Globalisierung Xamarin.Forms .NET Standard Library-Anwendung ist die RESX-Ressourcendateien hinzufügen, die zum Speichern von des verwendeten Texts in der app verwendet werden. Wir müssen eine RESX-Datei, die die Standardtext enthält, und klicken Sie dann hinzufügen zusätzliche RESX-Dateien für jede Sprache, die wir unterstützen möchten.
+Der erste Schritt der Globalisierung einer .NET Standard-Bibliotheksanwendung mit Xamarin.Forms ist das Hinzufügen einer RESX-Ressourcendatei, in der der gesamte in der App verwendete Text gespeichert werden soll. Fügen Sie erst eine RESX-Datei, die den Standardtext enthält, und anschließend zusätzliche RESX-Dateien für die einzelnen Sprachen hinzu, die unterstützt werden sollen.
 
-#### <a name="base-language-resource"></a>Ausgangssprache-Ressource
+#### <a name="base-language-resource"></a>Basisressourcen für Sprachen
 
-Die Basis-Ressourcendatei (RESX) enthält die Zeichenfolgen der Standardsprache (den Beispielen wird davon ausgegangen, dass Englisch als Standardsprache ist). Das Xamarin.Forms-Projekt der allgemeine Code die Datei hinzugefügt, indem mit der rechten Maustaste auf das Projekt und **hinzufügen > neue Datei...** .
+Die Datei für Basisressourcen (RESX) enthält Zeichenfolgen in den Standardsprachen (in den Beispielen wird von Englisch als der Standardsprache ausgegangen). Fügen Sie die Datei zum Xamarin.Forms-Projekt mit allgemeinem Code hinzu, indem Sie erst mit der rechten Maustaste auf das Projekt und anschließend mit der linken auf **Hinzufügen > Neue Datei...** klicken.
 
-Wählen Sie einen aussagekräftigen Namen wie **AppResources** , und drücken Sie **OK**.
+Wählen Sie einen aussagekräftigen Namen aus, z. B. **AppResources**, und klicken Sie auf **OK**.
 
-[![Fügen Sie Ressourcendatei](text-images/resx-new-file-sml.png "Dialogfeld \"neue Datei\"")](text-images/resx-new-file.png#lightbox "Dialogfeld \"neue Datei\"")
+[![Ressourcendatei hinzufügen](text-images/resx-new-file-sml.png "Dialogfeld „Neue Datei“")](text-images/resx-new-file.png#lightbox "Dialogfeld „Neue Datei“")
 
-Zwei Dateien werden dem Projekt hinzugefügt:
+Dann werden zwei Dateien zum Projekt hinzugefügt:
 
-* **AppResources.resx** Datei, in der übersetzender Text in einem XML-Format gespeichert werden.
-* **AppResources.designer.cs** -Datei, die enthalten Verweise auf alle Elemente in der RESX XML-Datei erstellt eine partielle Klasse deklariert.
+* die **AppResources.resx**-Datei, in der übersetzbare Zeichenfolgen im XML-Format gespeichert werden
+* die **AppResources.designer.cs**, die eine partielle Klasse dahingehend deklariert, dass sie Verweise auf alle in der RESX-XML-Datei erstellten Elemente enthält.
 
-Projektmappenbaum verfügbar, werden die Dateien als verwandte angezeigt. Der RESX-Datei *sollten* bearbeitet werden, um das Hinzufügen neuer übersetzbare Zeichenfolgen; die **. "Designer.cs"** Datei sollte *nicht* bearbeitet werden.
+In der Projektmappenstruktur werden die Dateien miteinander verknüpft. Die RESX-Datei *sollte* bearbeitet werden, damit neue übersetzbare Zeichenfolgen hinzugefügt werden können. Die **.designer.cs**-Datei hingegen sollte *nicht* bearbeitet werden.
 
 ![](text-images/appresources-tree.png "AppResources.resx-Datei")
 
-##### <a name="string-visibility"></a>Zeichenfolge-Sichtbarkeit
+##### <a name="string-visibility"></a>Sichtbarkeit der Zeichenfolgen
 
-Standardmäßig Wenn Verweise auf Zeichenfolgen fester typbindung generiert werden, sie werden `internal` auf die Assembly. Dies ist, da das Standard-Build-Tool für RESX-Dateien generiert die **. designer.cs** -Datei mit `internal` Eigenschaften.
+Wenn stark typisierte Verweise auf Zeichenfolgen erstellt werden, gelten sie standardmäßig für die Assembly als `internal`. Dies liegt daran, dass das Standardbuildtool für RESX-Dateien die **.designer.cs**-Datei zusammen mit `internal`-Eigenschaften erstellt.
 
-Wählen Sie die **AppResources.resx** Datei, und zeigen die **Eigenschaften** Pad klicken, um zu sehen, wobei dieser Build-Tool zu konfigurieren. Der folgende Screenshot zeigt die **benutzerdefiniertes Tool: ResXFileCodeGenerator**.
-
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-[![](text-images/vs-resx-internal-sml.png "Fenster \"Eigenschaften\" für AppResources.Resx")](text-images/vs-resx-internal.png#lightbox)
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-
-[![](text-images/xs-resx-internal-sml.png "Pad \"Eigenschaften\" für AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
-
------
-
-Die stark typisierte Eigenschaften vornehmen `public`, müssen Sie die Konfiguration manuell ändern **benutzerdefiniertes Tool: PublicResXFileCodeGenerator**, wie im folgenden Screenshot gezeigt:
+Wählen Sie die **AppResources.resx**-Datei aus, und rufen Sie das **Eigenschaftenpad** ab, um zu prüfen, an welcher Stelle das Buildtool konfiguriert ist. Auf dem folgenden Screenshot sehen Sie das **benutzerdefinierte ResXFileCodeGenerator-Tool**.
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](text-images/vs-resx-public-sml.png "Fenster \"Eigenschaften\" für AppResources.Resx")](text-images/vs-resx-public.png#lightbox)
+[![](text-images/vs-resx-internal-sml.png "Eigenschaftenfenster für AppResources.Resx")](text-images/vs-resx-internal.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](text-images/xs-resx-internal-sml.png "Pad \"Eigenschaften\" für AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
-
-
-[![](text-images/xs-resx-public-sml.png "Pad \"Eigenschaften\" für AppResources.Resx")](text-images/xs-resx-public.png#lightbox)
+[![](text-images/xs-resx-internal-sml.png "Eigenschaftenpad für AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
 
 -----
 
-Diese Änderung ist optional, und ist nur erforderlich, wenn Sie lokalisierte Zeichenfolgen in anderen Assemblys zu verweisen (z. B., wenn Sie die RESX-Dateien in einer anderen Assembly an Ihrem Code platzieren) möchten. Das Beispiel in diesem Thema bewirkt, dass die Zeichenfolgen `internal` , da sie in der gleichen Assembly mit Xamarin.Forms .NET Standard-Bibliothek definiert sind, denen sie verwendet werden.
+Wenn die stark typisierten Zeichenfolgeneigenschaften `public` sein sollen, müssen Sie die Konfiguration wie auf dem folgenden Screenshot veranschaulicht auf das **benutzerdefinierte PublicResXFileCodeGenerator-Tool** festlegen:
 
-Sie müssen nur das benutzerdefinierte Tool auf der Basis RESX-Datei festlegen, wie oben gezeigt. Sie müssen nicht festzulegende *alle* Buildereignis-Tools für die sprachspezifische RESX-Dateien, die in den folgenden Abschnitten erläutert.
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+[![](text-images/vs-resx-public-sml.png "Eigenschaftenfenster für AppResources.Resx")](text-images/vs-resx-public.png#lightbox)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+
+[![](text-images/xs-resx-internal-sml.png "Eigenschaftenpad für AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
+
+
+[![](text-images/xs-resx-public-sml.png "Eigenschaftenpad für AppResources.Resx")](text-images/xs-resx-public.png#lightbox)
+
+-----
+
+Diese Änderung ist optional und nur erforderlich, wenn Sie Verweise auf lokalisierte Zeichenfolgen für verschiedene Assemblys herstellen möchten (z. B., wenn Sie die RESX-Dateien in eine andere Assembly für Ihren Code verschieben). In dem Beispiel zu diesem Artikel bleiben die Zeichenfolgen `internal`, weil sie in der .NET Standard-Bibliotheksassembly für Xamarin.Forms definiert sind, in der sie auch verwendet werden.
+
+Sie müssen nur das benutzerdefinierte Tool für die RESX-Basisdatei festlegen. Es ist nicht notwendig, dass Sie *ein* Buildtool für die sprachspezifischen RESX-Dateien festlegen, die in den folgenden Abschnitten thematisiert werden.
 
 ##### <a name="editing-the-resx-file"></a>Bearbeiten der RESX-Datei
 
-Leider ist gibt es keine integrierte RESX-Editor in Visual Studio für Mac. Hinzufügen von neuen übersetzbare Zeichenfolgen erfordert das Hinzufügen einer neuen XML- `data` -Element für jede Zeichenfolge. Jede `data` Elements kann Folgendes enthalten:
+Leider gibt es keinen in Visual Studio für Mac integrierten RESX-Editor. Für jede neu hinzugefügte übersetzbare Zeichenfolge muss auch ein neues `data`-Element für die XML hinzugefügt werden. Jedes `data`-Element kann aus den folgenden Bestandteilen bestehen:
 
-* `name` -Attribut (erforderlich) ist der Schlüssel für diese übersetzbarer Zeichenfolge. Es muss ein gültiger C# Eigenschaftennamen - daher keine Leerzeichen oder Sonderzeichen enthalten dürfen.
-* `value` Element (erforderlich), das die tatsächliche Zeichenfolge, die in der Anwendung angezeigt wird.
-* `comment` (optional) Element kann es sich um Anweisungen für das Konvertierungsprogramm enthalten, die erklärt, wie diese Zeichenfolge verwendet wird.
-* `xml:space` Das Attribut ist (optional) zum Steuern, wie Abstände in der Zeichenfolge beibehalten wird.
+* Das `name`-Attribut (erforderlich) ist der Schlüssel für diese übersetzbare Zeichenfolge. Es muss sich dabei um einen gültigen C#-Eigenschaftennamen handeln. Daher sind weder Leerzeichen noch Sonderzeichen zulässig.
+* Das `value`-Element (erforderlich) ist die tatsächliche Zeichenfolge, die in der Anwendung angezeigt wird.
+* Das `comment`-Element (optional) kann Anweisungen für den Übersetzer enthalten, in denen erläutert wird, wie die Zeichenfolge verwendet wird.
+* Das `xml:space`-Attribut (optional) steuert, wie die Abstände in der Zeichenfolge beibehalten werden.
 
-Einige Beispiele für `data` Elemente sind hier dargestellt:
+Einige Beispiele für `data`-Elemente finden Sie im folgenden Codebeispiel:
 
 ```xml
 <data name="NotesLabel" xml:space="preserve">
@@ -131,34 +131,34 @@ Einige Beispiele für `data` Elemente sind hier dargestellt:
 </data>
 ```
 
-Wenn die Anwendung geschrieben werden, jedes Datenelement an den Benutzer angezeigte Text hinzugefügt werden sollen die Basis RESX-Ressourcendatei in einer neuen `data` Element. Es wird empfohlen, die Sie einschließen `comment`so weit wie möglich ist, um sicherzustellen, dass eine Übersetzung von hoher Qualität.
+Während die Anwendung geschrieben wird, sollte jeglicher Text, der dem Benutzer angezeigt werden soll, den RESX-Basisressourcendateien in einem neuen `data`-Element hinzugefügt werden. Es wird empfohlen, dass Sie so viele `comment`-Elemente wie möglich hinzufügen, damit eine qualitativ hochwertige Übersetzung erstellt werden kann.
 
 > [!NOTE]
-> Visual Studio (einschließlich der kostenlosen communityedition) enthält einen grundlegende RESX-Editor. Wenn Sie Zugriff auf einen Windows-Computer verfügen, kann dies eine bequeme Möglichkeit zum Hinzufügen und Bearbeiten von Zeichenfolgen in RESX-Dateien sein.
+> Im Lieferumfang von Visual Studio ist ein einfacher RESX-Editor enthalten. Dies gilt auch für die kostenlose Community Edition. Wenn Sie Zugriff auf einen Windows-Computer haben, können Sie diesen nutzen, um Zeichenfolgen zu RESX-Dateien hinzuzufügen und diese zu bearbeiten.
 
 #### <a name="language-specific-resources"></a>Sprachspezifische Ressourcen
 
-In der Regel nicht die eigentliche Übersetzung die standardtextzeichenfolgen ausgeführt, bis große Teile der Anwendung geschrieben wurden (in diesem Fall die standardmäßige RESX-Datei viele Zeichenfolgen enthalten ist). Es ist immer noch eine gute Idee, frühzeitig im Entwicklungszyklus, die sprachspezifische Ressourcen hinzufügen und füllt optional mit maschinell übersetzter Text, um den Lokalisierungscode zu testen.
+In der Regel werden die Standardtextzeichenfolgen erst übersetzt, wenn bereits ein Großteil der Anwendung geschrieben wurde. In diesem Fall enthält die RESX-Standarddatei mehrere Zeichenfolgen. Trotzdem sollten Sie die sprachspezifischen Ressourcen schon früh im Laufe des Entwicklungszyklus hinzufügen. Optional können Sie diese auch mit maschinell übersetztem Text auffüllen, um den Lokalisierungscode besser testen zu können.
 
-Für jede Sprache, die wir unterstützen möchten, wird eine zusätzliche RESX-Datei hinzugefügt.
-Sprachspezifische Ressourcendateien müssen eine bestimmte Benennungskonvention befolgen: Verwenden Sie den gleichen Dateinamen wie die grundlegenden Ressourcen (z. b. Datei **AppResources**), gefolgt von einem Punkt (.) und der Sprachcode. Einfache Beispiele:
+Für jede Sprache, die unterstützt werden soll, wird eine zusätzliche RESX-Datei hinzugefügt.
+Für sprachspezifische Ressourcendateien muss eine bestimmte Namenskonvention eingehalten werden. Verwenden Sie denselben Dateinamen wie für die Basisressourcendatei (z. B. **AppResources**), und fügen Sie erst einen Punkt (.) und anschließend den Sprachcode hinzu. Hier einige einfache Beispiele:
 
-* **AppResources.fr.resx** -sprachübersetzungen Französisch.
-* **AppResources.es.resx** -Spanischer Sprache-Übersetzungen.
-* **AppResources.de.resx** -deutscher Sprache-Übersetzungen.
-* **AppResources.ja.resx** -Japanischer Sprache-Übersetzungen.
-* **AppResources.zh-Hans.resx** – Chinesisch (vereinfacht)-Sprache-Übersetzungen.
-* **AppResources.zh-Hant.resx** – Chinesisch (traditionell)-Sprache-Übersetzungen.
-* **AppResources.pt.resx** -Portugiesisch Sprache-Übersetzungen.
-* **AppResources.pt BR.resx** -Übersetzungen Portugiesisch (Brasilien).
+* **AppResources.fr.resx:** Übersetzungen ins Französische
+* **AppResources.es.resx:** Übersetzungen ins Spanische
+* **AppResources.de.resx:** Übersetzungen ins Deutsche
+* **AppResources.ja.resx:** Übersetzungen ins Japanische
+* **AppResources.zh-Hans.resx:** Übersetzungen ins Chinesische (vereinfacht)
+* **AppResources.zh-Hant.resx:** Übersetzungen ins Chinesische (traditionell)
+* **AppResources.pt.resx:** Übersetzungen ins Portugiesische
+* **AppResources.pt-BR.resx:** Übersetzungen ins Portugiesische (Brasilien)
 
-Das allgemeine Muster ist die Verwendung von zwei Buchstaben bestehende Sprachcode, aber es gibt einige Beispiele (z. B. Chinesisch), in ein anderes Format verwendet wird, und weitere Beispiele (z. B. Portugiesisch (Brasilien)), wenn ein aus vier Buchstaben bestehende Gebietsschemabezeichner erforderlich ist.
+In der Regel werden die Ländercodes verwendet, die aus zwei Buchstaben bestehen, aber teilweise werden auch andere Formate (wie beim Chinesischen) oder sogar Gebietsschemabezeichner verwendet, die aus vier Zeichen bestehen (wie beim brasilianischen Portugiesisch), um die jeweilige Region anzugeben.
 
-Diese sprachspezifischen Ressourcendateien *nicht* erfordern eine **. "Designer.cs"** partielle Klasse, damit sie als reguläre XML-Dateien mit hinzugefügt werden können die **Buildvorgang: EmbeddedResource**festgelegt. Dieser Screenshot zeigt eine Lösung, die sprachspezifische Ressourcendateien enthält:
+Für diese sprachspezifischen Ressourcendateien ist *keine* partielle **.designer.cs**-Klasse erforderlich. Daher können sie als reguläre XML-Dateien hinzugefügt werden, wenn für den Buildvorgang **EmbeddedResource** festgelegt ist. Auf dem folgenden Screenshot ist eine Projektmappe zu sehen, die sprachspezifische Ressourcendateien enthält:
 
 ![](text-images/appresources-langs.png "Sprachspezifische Ressourcendateien")
 
-Wie eine Anwendung entwickelt wurde, und die Basis RESX-Datei Text hinzugefügt wurde, Sie sollten senden sie Sie an Übersetzer, die jeweils übersetzt `data` Element- und Rückgabe einer sprachspezifischen Ressourcendatei (mit der Benennungskonvention gezeigt), die in der app eingeschlossen werden. Einige Beispiele für die "maschinell übersetzte" werden unten gezeigt:
+Wenn Sie eine Anwendung entwickeln und der RESX-Basisdatei Text hinzufügen, sollten Sie sie an entsprechende Übersetzer senden, die dann alle `data`-Elemente übersetzen und eine sprachspezifische Ressourcendatei liefern, die anhand der bereits erläuterten Namenskonvention benannt wird und zu der App hinzugefügt werden kann. Nachfolgend finden Sie einige Beispiele für maschinell erstellte Übersetzungen:
 
 **AppResources.es.resx (Spanisch)**
 
@@ -187,13 +187,13 @@ Wie eine Anwendung entwickelt wurde, und die Basis RESX-Datei Text hinzugefügt 
 </data>
 ```
 
-Nur die `value` Element muss aktualisiert werden, durch die Translator - die `comment` nicht übersetzt werden soll. Denken Sie daran: beim Bearbeiten von XML-Dateien mit Escapezeichen versehen reservierte Zeichen wie `<`, `>`, `&` mit `&lt;`, `&gt;`, und `&amp;` , wenn sie in stehen die `value` oder `comment`.
+Der Übersetzer muss nur das `value`-Element aktualisieren, das `comment`-Element soll nicht übersetzt werden. Denken Sie beim Bearbeiten von XML-Dateien daran, reservierte Zeichen wie `<`, `>`, `&` mit `&lt;`, `&gt;` und `&amp;` mit Escapezeichen zu versehen, wenn Sie im `value` oder im `comment` angezeigt werden.
 
 <a name="incode" />
 
 ### <a name="using-resources-in-code"></a>Verwenden von Ressourcen in Code
 
-Zeichenfolgen in die RESX-Ressourcendateien stehen für die Verwendung in Ihrer Benutzer Schnittstelle Code mithilfe der `AppResources` Klasse. Die `name` zugewiesen werden, um jede Zeichenfolge in der RESX-Datei wird eine Eigenschaft für diese Klasse, die in Xamarin.Forms-Code verwiesen werden kann, wie unten dargestellt:
+Sie können Zeichenfolgen aus den RESX-Ressourcendateien mithilfe der `AppResources`-Klasse im Code für Ihre Benutzeroberfläche verwenden. Der `name`, der den einzelnen Zeichenfolgen in der RESX-Datei zugewiesen ist, ist dann eine Eigenschaft für diese Klasse, auf die wie im Folgenden gezeigt in Xamarin.Forms-Code verwiesen werden kann:
 
 ```csharp
 var myLabel = new Label ();
@@ -205,7 +205,7 @@ myEntry.Placeholder = AppResources.NotesPlaceholder;
 myButton.Text = AppResources.AddButton;
 ```
 
-Die Benutzeroberfläche für iOS, Android und die universelle Windows-Plattform (UWP) gerendert, als Sie erwarten, mit Ausnahme von heute ist es möglich, die app in mehrere Sprachen übersetzt werden, weil der Text aus einer Ressource geladen wird, anstatt hartcodierte. So sieht dieser Screenshot zeigt die Benutzeroberfläche auf jeder Plattform vor der Übersetzung aus:
+Das Rendering der Benutzeroberfläche unter iOS, Android und auf der Universellen Windows-Plattform (UWP) entspricht allen Erwartungen, allerdings kann die App jetzt in mehrere Sprachen übersetzt werden, weil der Text aus einer anderen Ressource geladen und nicht mehr hartcodiert wird. Auf dem folgenden Screenshot wird die UI auf den einzelnen Plattformen vor der Übersetzung gezeigt:
 
 ![](text-images/simple-example-english.png "Plattformübergreifende Benutzeroberflächen vor der Übersetzung")
 
@@ -213,20 +213,20 @@ Die Benutzeroberfläche für iOS, Android und die universelle Windows-Plattform 
 
 #### <a name="testing-a-specific-language"></a>Testen einer bestimmten Sprache
 
-Es kann schwierig sein, wechseln im Simulator oder auf einem Gerät an verschiedene Sprachen, besonders während der Entwicklung, wenn Sie unterschiedlich schnell testen möchten sein.
+Es kann kompliziert sein, den Simulator oder das Gerät auf verschiedene Sprachen umzustellen. Dies ist vor allem dann der Fall, wenn Sie während der Entwicklung verschiedene Kulturen schnell testen möchten.
 
-Sie können erzwingen, dass eine bestimmte Sprache durch Festlegen von geladen werden die `Culture` wie im folgenden Codeausschnitt gezeigt:
+Sie können erzwingen, dass eine bestimmte Sprache geladen wird, indem Sie die `Culture` wie im folgenden Codeausschnitt gezeigt festlegen:
 
 ```csharp
 // force a specific culture, useful for quick testing
 AppResources.Culture =  new CultureInfo("fr-FR");
 ```
 
-Dieser Ansatz – Festlegen der Kultur direkt auf die `AppResources` Klasse – kann auch zum Implementieren einer Sprachauswahl in Ihrer app (und nicht unter Verwendung des Geräts Gebietsschemas) verwendet werden.
+Sie können diesen Ansatz (also das Festlegen einer Kultur in der `AppResources`-Klasse direkt) auch für die Implementierung einer Sprachauswahl in Ihrer App verwenden anstatt das Gebietsschema eines Geräts zu verwenden.
 
 #### <a name="loading-embedded-resources"></a>Laden von eingebetteten Ressourcen
 
-Der folgende Codeausschnitt ist nützlich, wenn Sie versuchen, die zum Debuggen von Problemen mit dem eingebettete Ressourcen (z. B. RESX-Dateien). Fügen Sie diesen Code zu Ihrer app (früh im Lebenszyklus app), und es werden alle in der Assembly, die vollständige Ressourcen-ID mit eingebetteten Ressourcen aufgelistet:
+Der folgende Codeausschnitt sollte Ihnen beim Beheben von Problemen mit eingebetteten Ressourcen wie RESX-Dateien helfen. Fügen Sie diesen Code in einem frühen Stadium des App-Lebenszyklus zu Ihrer App hinzu. Dann werden alle in die Assembly eingebetteten Ressourcen aufgelistet, indem der vollständige Ressourcenbezeichner angezeigt wird:
 
 ```csharp
 using System.Reflection;
@@ -239,7 +239,7 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-In der **AppResources.Designer.cs** Datei (um *Zeile 33*), die vollständige *-Manager-Ressourcenname* angegeben ist (z. b. `"UsingResxLocalization.Resx.AppResources"`) der folgende Code ähnelt:
+In der **AppResources.Designer.cs**-Datei (ungefähr in *Zeile 33*) wird der vollständige *Ressourcen-Managername* (z. B. `"UsingResxLocalization.Resx.AppResources"`) ähnlich wie im folgenden Code angegeben:
 
 ```csharp
 System.Resources.ResourceManager temp =
@@ -248,27 +248,27 @@ System.Resources.ResourceManager temp =
                 typeof(AppResources).GetTypeInfo().Assembly);
 ```
 
-Überprüfen Sie die **Anwendungsausgabe** für die Ergebnisse der oben gezeigte Debugcode, um zu bestätigen die richtigen Ressourcen sind aufgeführt (d. h. `"UsingResxLocalization.Resx.AppResources"`).
+Gleichen Sie die **Anwendungsausgabe** mit den Ergebnissen des oben dargestellten Debugcodes ab, um zu überprüfen, ob die richtigen Ressourcen aufgelistet werden (d. h. `"UsingResxLocalization.Resx.AppResources"`).
 
-Falls nicht, wird die `AppResources` Klasse werden die Ressourcen konnten nicht geladen werden.
-Überprüfen Sie Folgendes ein, um Probleme zu beheben, in dem die Ressourcen können nicht gefunden werden:
+Wenn dies nicht der Fall ist, kann die `AppResources`-Klasse ihre Ressourcen nicht laden.
+Überprüfen Sie Folgendes, um Probleme zu lösen, bei denen die Ressourcen nicht gefunden werden können:
 
-* Der Standardnamespace des Projekts entspricht, den Stamm-Namespace in der **AppResources.Designer.cs** Datei.
-* Wenn die **AppResources.resx** Datei befindet sich in einem Unterverzeichnis, das der Name des Unterverzeichnisses muss Teil des Namespace *und* Teil des Ressourcenbezeichners.
-* Die **AppResources.resx** Datei **Buildvorgang: EmbeddedResource**.
-* Die **Projektoptionen > Quellcode > .NET Naming Policies > Verwenden von Visual Studio-Format Ressourcen Namen** ist. Sie können dies untick, falls gewünscht, aktualisiert jedoch die Namespaces, die verwendet werden, wenn Sie Ihre Ressourcen RESX verweisen müssen, in der gesamten app.
+* Der Standardnamespace für das Projekt sollte mit dem Stammnamespace in der **AppResources.Designer.cs**-Datei übereinstimmen.
+* Wenn sich die **AppResources.resx**-Datei in einem Unterverzeichnis befindet, sollte der Name dieses Verzeichnisses Teil des Namespace *und* Teil des Ressourcenbezeichners sein.
+* Für die **AppResources.resx**-Datei sollte für den Buildvorgang **EmbeddedResource** festgelegt sein.
+* Das Kontrollkästchen für **Projektoptionen > Quellcode > .NET-Benennungsrichtlinien > Use Visual Studio-style resources names (Ressourcennamen im Format von Visual Studio verwenden)** sollte aktiviert sein. Wenn Sie möchten, können Sie diese Option auch deaktivieren, allerdings müssen dann die Namespaces, die verwendet werden, um einen Verweis auf RESX-Ressourcen herzustellen, für die gesamte App aktualisiert werden.
 
-#### <a name="doesnt-work-in-debug-mode-android-only"></a>Funktioniert nicht im Debugmodus (nur Android)
+#### <a name="doesnt-work-in-debug-mode-android-only"></a>Funktioniert nicht im DEBUG-Modus (gilt nur für Android)
 
-Wenn die übersetzten Zeichenfolgen in Ihre Android-Version-Builds, jedoch nicht während des Debuggens verwenden, rechtsklicken Sie auf die **Android-Projekt** , und wählen Sie **Optionen > Erstellen > Android-Build** und sicherstellen, dass die **Schnelle Assemblybereitstellung** nicht ausgewählt ist. Diese Option führt zu Problemen beim Laden von Ressourcen und sollte nicht verwendet werden, wenn Sie lokalisierte apps testen.
+Wenn die übersetzten Zeichenfolgen zwar in Ihren RELEASE-Builds für Android funktionieren, aber nicht während des Debuggens, klicken Sie mit der rechten Maustaste auf das **Android-Projekt**, navigieren Sie zu **Optionen > Build > Android-Build**, und vergewissern Sie sich, dass das Kontrollkästchen für **Schnelle Assemblybereitstellung** NICHT aktiviert ist. Wenn diese Option aktiviert ist, treten Probleme beim Laden von Ressourcen auf. Sie sollten sie daher nicht verwenden, wenn Sie lokalisierte Apps testen.
 
-### <a name="displaying-the-correct-language"></a>Die richtige Sprache anzeigen
+### <a name="displaying-the-correct-language"></a>Anzeigen der richtigen Sprache
 
-Bisher haben wir untersucht, wie Sie Code schreiben, damit die Übersetzungen bereitgestellt werden können, aber nicht, wie sie angezeigt werden tatsächlich zu machen. Xamarin.Forms-Code kann nutzen. NET Ressourcen, laden Sie die richtige Sprache-Übersetzungen, aber wir müssen zum Abfragen des Betriebssystems auf jeder Plattform aus, um zu bestimmen, welche Sprache der Benutzer ausgewählt hat.
+Bisher wurde in diesem Artikel erläutert, wie Sie Code so schreiben, dass Übersetzungen bereitgestellt werden können. Es wurde allerdings noch nicht erklärt, wie Sie dafür sorgen können, dass die Übersetzungen auch angezeigt werden. Xamarin.Forms-Code kann die Ressourcen von .NET nutzen, um die Übersetzung in der richtigen Sprache anzuzeigen, allerdings ist eine Abfrage des Betriebssystems für die einzelnen Plattformen notwendig, um zu bestimmen, welche Sprache der Benutzer ausgewählt hat.
 
-Da einige plattformspezifischen Code zum Abrufen der Spracheinstellung des Benutzers erforderlich ist, verwenden Sie eine [Abhängigkeitsdienst](~/xamarin-forms/app-fundamentals/dependency-service/index.md) verfügbar machen, Informationen in der Xamarin.Forms-app, und es für jede Plattform implementieren.
+Da in geringem Maße plattformspezifischer Code erforderlich ist, um die Spracheinstellungen des Benutzers abzufragen, sollten Sie einen [Abhängigkeitsdienst](~/xamarin-forms/app-fundamentals/dependency-service/index.md) verwenden, um diese Informationen der Xamarin.Forms-App zur Verfügung zu stellen und für die einzelnen Plattformen zu implementieren.
 
-Zuerst definieren Sie eine Schnittstelle zum Verfügbarmachen von der bevorzugten Kultur des Benutzers, der folgende Code ähnelt:
+Definieren Sie zunächst eine Schnittstelle, um die vom Benutzer bevorzugte Kultur verfügbar zu machen. Nehmen Sie den folgenden Code als Beispiel:
 
 ```csharp
 public interface ILocalize
@@ -278,7 +278,7 @@ public interface ILocalize
 }
 ```
 
-Verwenden Sie zweitens die [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) in der Xamarin.Forms `App` Klasse rufen die Schnittstelle, und legen unsere Kultur der RESX-Ressourcen, auf den richtigen Wert. Beachten Sie, dass wir nicht zum manuell festlegen dieses Werts für die universelle Windows-Plattform, da das Framework für die Ressourcen automatisch brauchen erkennt die ausgewählte Sprache auf diesen Plattformen.
+Verwenden Sie dann das [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)-Konzept in der `App`-Klasse für Xamarin.Forms, um die Schnittstelle aufzurufen und die RESX-Ressourcenkultur auf den richtigen Wert festzulegen. Beachten Sie, dass Sie diesen Wert für die UWP nicht manuell festlegen müssen, weil das Ressourcenframework automatisch die ausgewählte Sprache für diese Plattformen erkennt.
 
 ```csharp
 if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
@@ -289,9 +289,9 @@ if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.And
 }
 ```
 
-Die Ressource `Culture` muss festgelegt werden, wenn die Anwendung zuerst geladen wurde, damit die richtige sprachenzeichenfolgen verwendet werden. Sie können optional diesen Wert entsprechend Clientplattform-spezifische Ereignisse aktualisieren, die unter iOS oder Android ausgelöst werden kann, wenn der Benutzer ihre spracheinstellungen aktualisiert, während die app ausgeführt wird.
+Die Ressource `Culture` muss festgelegt werden, wenn die Anwendung zum ersten Mal geladen wird, damit die richtigen Sprachzeichenfolgen verwendet werden. Optional können Sie auch diesen Wert den plattformspezifischen Ereignissen entsprechend aktualisieren, die unter iOS und Android möglicherweise ausgelöst werden, wenn der Benutzer die Spracheinstellungen ändert, während die App gerade ausgeführt wird.
 
-Die Implementierungen für die `ILocalize` Schnittstelle werden angezeigt, der [plattformspezifischen Code](#Platform-specific_Code) Abschnitt weiter unten. Diese Implementierungen nutzen diesen `PlatformCulture` Helper-Klasse:
+Die Implementierungen für die `ILocalize`-Schnittstelle werden im nächsten Abschnitt ([Plattformspezifischer Code](#Platform-specific_Code)) erläutert. Diese Implementierungen nutzen die folgende `PlatformCulture`-Hilfsprogrammklasse:
 
 ```csharp
 public class PlatformCulture
@@ -328,17 +328,17 @@ public class PlatformCulture
 
 <a name="Platform-specific_Code" />
 
-### <a name="platform-specific-code"></a>Plattformspezifischen Code
+### <a name="platform-specific-code"></a>Plattformspezifischer Code
 
-Der Code zum erkennen, die anzuzeigende Sprache plattformspezifische sein muss, da iOS, Android und UWP alle diese Informationen in anderer Hinsicht verfügbar machen. Der Code für die `ILocalize` Abhängigkeitsdienst dient unten für jede Plattform, zusammen mit zusätzlichen Clientplattform-spezifische Anforderungen, um sicherzustellen, dass lokalisierter Text ordnungsgemäß gerendert wird.
+Der Code, mit dem ermittelt werden kann, welche Sprache angezeigt wird, muss plattformspezifisch sein, weil diese Informationen für iOS, Android und die UWP nicht auf genau die gleiche Weise verfügbar gemacht werden. Den Code für den Abhängigkeitsdienst `ILocalize` finden Sie in den folgenden Abschnitten zu den einzelnen Plattformen. Außerdem werden plattformspezifische Anforderungen aufgeführt, damit gewährleistet wird, dass lokalisierter Text richtig gerendert wird.
 
-Die plattformspezifischen Code muss auch Fälle, in denen das Betriebssystem ermöglicht es den Benutzer, eine Gebietsschema-ID konfigurieren, die von nicht unterstützt wird. NET `CultureInfo` Klasse. In diesen Fällen muss benutzerdefinierter Code geschrieben werden, erkennen nicht unterstützte Gebietsschemas, und Ersetzen Sie die am besten. NET-kompatiblen Gebietsschema.
+Der plattformspezifische Code muss außerdem Fälle handhaben können, in denen das Betriebssystem es den Benutzern ermöglicht, einen Gebietsschemabezeichner zu konfigurieren, der nicht von der `CultureInfo`-Klasse von .NET unterstützt wird. In diesen Fällen muss benutzerdefinierter Code geschrieben werden, um nicht unterstützte Gebietsschemas zu erkennen und die besten mit .NET kompatiblen Gebietsschemas zu ersetzen.
 
 #### <a name="ios-application-project"></a>Anwendungsprojekt für iOS
 
-iOS-Benutzer wählen Sie ihre bevorzugte Sprache separat von Datums- und Uhrzeitangabe Kultur zu formatieren. Laden Sie die richtigen Ressourcen, um eine Xamarin.Forms-app zu lokalisieren, wir nur zum Abfragen müssen, der `NSLocale.PreferredLanguages` Array für das erste Element.
+iOS-Benutzer wählen ihre bevorzugte Sprache getrennt von der Formatierungskultur für Datum und Uhrzeit aus. Damit die richtigen Ressourcen zum Lokalisieren einer Xamarin.Forms-App geladen werden können, muss nur das `NSLocale.PreferredLanguages`-Array für das erste Element abgefragt werden.
 
-Die folgende Implementierung des der `ILocalize` Abhängigkeitsdienst im iOS-Anwendungsprojekt platziert werden soll. Da iOS Unterstriche statt Bindestrichen verwendet (die die .NET standard-Darstellung ist), ersetzt der Code den Unterstrich vor dem Instanziieren der `CultureInfo` Klasse:
+Die folgende Implementierung des `ILocalize`-Abhängigkeitsdienst sollte in dem iOS-Anwendungsprojekt platziert werden. Da unter iOS Unterstriche anstelle von Gedankenstrichen (.NET Standard-Darstellung) verwendet werden, ersetzt der Code den Unterstrich, bevor er die `CultureInfo`-Klasse instanziiert:
 
 ```csharp
 [assembly:Dependency(typeof(UsingResxLocalization.iOS.Localize))]
@@ -422,20 +422,20 @@ public class Localize : UsingResxLocalization.ILocalize
 ```
 
 > [!NOTE]
-> Die `try/catch` , freigegebene Blöcke in der `GetCurrentCultureInfo` Methode in der Regel mit Gebietsschema-Spezifizierer – verwendete werden, wenn die genaue Übereinstimmung nicht nach für eine sehr enge Übereinstimmung nur auf Grundlage der Sprache (erste Block von Zeichen in das Gebietsschema) gefunden wird, dieses Verhalten zu imitieren.
+> Die `try/catch`-Blöcke in der `GetCurrentCultureInfo`-Methode imitieren das Fallbackverhalten, das in der Regel für Gebietsschemabezeichner verwendet wird. Wenn keine genaue Übereinstimmung gefunden wird, suchen Sie nur anhand der Sprache nach einer starken Übereinstimmung (erster Zeichenblock im Gebietsschema).
 >
-> Im Fall von Xamarin.Forms, einigen Gebietsschemas gelten in iOS, jedoch entsprechen nicht auf ein gültiges `CultureInfo` in .NET und der Code oben versucht, dies zu verarbeiten.
+> Im Fall von Xamarin.Forms sind einige Gebietsschemas zwar unter iOS gültig, stimmen aber nicht mit gültiger `CultureInfo` in .NET überein. Der obenstehende Code soll dieses Szenario verarbeiten.
 >
-> Z. B. iOS **Einstellungen > Allgemein Sprache &amp; Region** Bildschirm können Sie Ihr Telefon konfiguriert **Sprache** zu **Englisch** jedoch  **Region** zu **Spanien**, was dazu führt, in einer Gebietsschema `"en-ES"`. Wenn die `CultureInfo` Fehler bei der Erstellung der Code greift auf zurück mit, dass nur die ersten beiden Buchstaben wählen Sie die Anzeigesprache.
+> Beispielsweise können Sie über die Anzeige **Einstellungen > Sprache &amp; Region** unter iOS die **Sprache** für Ihr Smartphone auf **Englisch**, aber die **Region** auf **Spanien** festlegen. Dadurch entsteht die Gebietsschemazeichenfolge `"en-ES"`. Wenn das Erstellen von `CultureInfo` fehlschlägt, verwendet der Code nur die ersten beiden Buchstaben, um die Anzeigesprache auszuwählen.
 >
-> Entwickler sollten ändern, die `iOSToDotnetLanguage` und `ToDotnetFallbackLanguage` Methoden zum Verarbeiten der spezifischen Fälle, die für die unterstützten Sprachen erforderlich sind.
+> Entwickler sollten die Methoden `iOSToDotnetLanguage` und `ToDotnetFallbackLanguage` so ändern, dass sie bestimmte Fälle verarbeiten, die für ihre unterstützten Sprachen erforderlich sind.
 
 
-Es gibt einige systemdefinierte Benutzeroberflächen-Elemente, die automatisch von iOS übersetzt wird, wie z. B. werden die **Fertig** Schaltfläche der `Picker` Steuerelement. Erzwingen von iOS verwenden, um diese Elemente zu übersetzen, müssen wir die Sprachen angeben, in unterstützt, die **"Info.plist"** Datei. Sie können diese Werte über hinzufügen **"Info.plist" > Quelle** wie hier gezeigt:
+Einige vom System definierten Benutzeroberflächenelemente wie die Schaltfläche **Fertig** auf dem `Picker`-Steuerelement werden automatisch von iOS übersetzt. Damit iOS gezwungen ist, diese Elemente zu übersetzen, müssen Sie angeben, welche Sprachen in der **Info.plist**-Datei unterstützt werden. Sie können diese Werte wie auf dem folgenden Screenshot gezeigt über **Info.plist > Quelle** hinzufügen:
 
-![Lokalisierung-Schlüssel in der Datei "Info.plist"](text-images/info-plist.png "Lokalisierung-Schlüssel in der Datei \"Info.plist\"")
+![Lokalisierungsschlüssel in Info.plist](text-images/info-plist.png "Lokalisierungsschlüssel in Info.plist")
 
-Öffnen Sie alternativ die **"Info.plist"** Datei in einem XML-Editor, und bearbeiten Sie die Werte direkt:
+Stattdessen können Sie auch die **Info.plist**-Datei in einem XML-Editor öffnen und die Werte direkt bearbeiten:
 
 ```xml
 <key>CFBundleLocalizations</key>
@@ -454,18 +454,18 @@ Es gibt einige systemdefinierte Benutzeroberflächen-Elemente, die automatisch v
 <string>en</string>
 ```
 
-Sobald Sie den Dependency-Dienst implementiert und aktualisiert haben **"Info.plist"**, die iOS-app wird in der Lage, lokalisierten Text anzeigen.
+Sobald Sie den Abhängigkeitsdienst implementiert und die **Info.plist**-Datei aktualisiert haben, kann die iOS-App lokalisierten Text anzeigen.
 
 > [!NOTE]
-> Beachten Sie, die Apple behandelt Portugiesisch etwas anders als Sie erwarten würden.
-> Von [ihre Docs](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2): _"verwenden (Pacific Time) als die Sprach-ID für Portugiesisch wie es in Brasilien und pt-PT als die Sprach-ID für Portugiesisch verwendet wird, wie sie in Portugal verwendet wird"_.
-> Dies bedeutet, wenn in einem nicht standardmäßigen Gebietsschema, Portugiesisch Sprache ausgewählt ist, der Fallbacksprache werden Portugiesisch (Brasilien) unter iOS ab, Code geschrieben wird, um dieses Verhalten zu ändern (z. B. die `ToDotnetFallbackLanguage` oben).
+> Beachten Sie, dass Apple die portugiesische Sprache anders behandelt als Sie vielleicht erwarten würden.
+> In der [Apple-Dokumentation](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2) heißt es wie folgt: _Verwenden Sie „pt“ als Sprach-ID für brasilianisches Portugiesisch und pt-PT als Sprach-ID für das Portugiesisch, das in Portugal gesprochen wird._
+> D. h., wenn Portugiesisch als Sprache in einem Gebietsschema verwendet wird, das nicht dem Standard entspricht, ist die Fallbacksprache unter iOS brasilianisches Portugiesisch, wenn kein Code geschrieben wurde, um dieses Verhalten zu vermeiden (s. `ToDotnetFallbackLanguage` weiter oben).
 
-Weitere Informationen zu iOS Lokalisierung, finden Sie unter [iOS Lokalisierung](~/ios/app-fundamentals/localization/index.md).
+Weitere Informationen zur iOS-Lokalisierung finden Sie unter [iOS Localization (iOS-Lokalisierung)](~/ios/app-fundamentals/localization/index.md).
 
 #### <a name="android-application-project"></a>Anwendungsprojekt für Android
 
-Android verfügbar macht, das aktuell ausgewählte Gebietsschema über `Java.Util.Locale.Default`, und auch ein Unterstrich als Trennzeichen verwendet, statt einen Bindestrich (die mit dem folgenden Code ersetzt wird). Fügen Sie diese Abhängigkeit dienstimplementierung auf das Projekt für Android-Anwendung hinzu:
+Android macht das zum jeweiligen Zeitpunkt ausgewählte Gebietsschema über `Java.Util.Locale.Default` verfügbar und verwendet ebenfalls einen Unterstrich anstelle eines Gedankenstrichs als Trennzeichen. Dieser wird durch den folgenden Code ersetzt. Fügen Sie die folgende Implementierung des Abhängigkeitsdiensts zum Android-Anwendungsprojekt hinzu:
 
 ```csharp
 [assembly:Dependency(typeof(UsingResxLocalization.Android.Localize))]
@@ -547,44 +547,44 @@ namespace UsingResxLocalization.Android
 ```
 
 > [!NOTE]
-> Die `try/catch` , freigegebene Blöcke in der `GetCurrentCultureInfo` Methode in der Regel mit Gebietsschema-Spezifizierer – verwendete werden, wenn die genaue Übereinstimmung nicht nach für eine sehr enge Übereinstimmung nur auf Grundlage der Sprache (erste Block von Zeichen in das Gebietsschema) gefunden wird, dieses Verhalten zu imitieren.
+> Die `try/catch`-Blöcke in der `GetCurrentCultureInfo`-Methode imitieren das Fallbackverhalten, das in der Regel für Gebietsschemabezeichner verwendet wird. Wenn keine genaue Übereinstimmung gefunden wird, suchen Sie nur anhand der Sprache nach einer starken Übereinstimmung (erster Zeichenblock im Gebietsschema).
 >
-> Im Fall von Xamarin.Forms einigen Gebietsschemas gelten in Android aber sich nicht auf ein gültiges `CultureInfo` in .NET und der Code oben versucht, dies zu verarbeiten.
+> Im Fall von Xamarin.Forms sind einige Gebietsschemas zwar unter Android gültig, stimmen aber nicht mit gültiger `CultureInfo` in .NET überein. Der obenstehende Code soll dieses Szenario verarbeiten.
 >
-> Entwickler sollten ändern, die `iOSToDotnetLanguage` und `ToDotnetFallbackLanguage` Methoden zum Verarbeiten der spezifischen Fälle, die für die unterstützten Sprachen erforderlich sind.
+> Entwickler sollten die Methoden `iOSToDotnetLanguage` und `ToDotnetFallbackLanguage` so ändern, dass sie bestimmte Fälle verarbeiten, die für ihre unterstützten Sprachen erforderlich sind.
 
-Nachdem dieser Code dem Projekt für Android-Anwendung hinzugefügt wurde, werden sie automatisch die übersetzte Zeichenfolgen anzeigen.
+Sobald dieser Code zum Android-Anwendungsprojekt hinzugefügt wurde, können übersetzte Zeichenfolgen automatisch angezeigt werden.
 
 > [!NOTE]
->️ **Warnung:** , wenn die übersetzten Zeichenfolgen in Ihre Android-Version-Builds, jedoch nicht während des Debuggens verwenden, rechtsklicken Sie auf die **Android-Projekt** , und wählen Sie **Optionen > Erstellen > Android Erstellen Sie** und sicherstellen, dass die **schnelle Assemblybereitstellung** nicht ausgewählt ist. Diese Option führt zu Problemen beim Laden von Ressourcen und sollte nicht verwendet werden, wenn Sie lokalisierte apps testen.
+>**WARNUNG:** Wenn die übersetzten Zeichenfolgen zwar in Ihren RELEASE-Builds für Android funktionieren, aber nicht während des Debuggens, klicken Sie mit der rechten Maustaste auf das **Android-Projekt**, navigieren Sie zu **Optionen > Build > Android-Build**, und vergewissern Sie sich, dass das Kontrollkästchen für **Schnelle Assemblybereitstellung** NICHT aktiviert ist. Wenn diese Option aktiviert ist, treten Probleme beim Laden von Ressourcen auf. Sie sollten sie daher nicht verwenden, wenn Sie lokalisierte Apps testen.
 
-Weitere Informationen zu Android Lokalisierung, finden Sie unter [Android Lokalisierung](~/android/app-fundamentals/localization.md).
+Weitere Informationen zur Android-Lokalisierung finden Sie unter [Android Localization (Android-Lokalisierung)](~/android/app-fundamentals/localization.md).
 
 #### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
-Universelle Windows-Plattform (UWP) Projekte erfordern keine Abhängigkeitsdienst. Stattdessen legt dieser Plattform automatisch der Ressource Kultur richtig fest.
+Für UWP-Projekte ist kein Abhängigkeitsdienst erforderlich. Stattdessen legt diese Plattform automatisch die Kultur der Ressource richtig fest.
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
-Erweitern Sie den Knoten "Eigenschaften" im .NET Standard Library-Projekt, und doppelklicken Sie auf die **"AssemblyInfo.cs"** Datei. Fügen Sie die folgende Zeile der Datei, die der neutralen Ressourcensprache für die Assembly auf Englisch festlegen möchten:
+Erweitern Sie den Eigenschaftenknoten im .NET Standard-Bibliotheksprojekt, und doppelklicken Sie auf die **AssemblyInfo.cs**-Datei. Fügen Sie die folgende Zeile zu der Datei hinzu, um die Assemblysprache für die neutralen Ressourcen auf Englisch festzulegen:
 
 ```csharp
 [assembly: NeutralResourcesLanguage("en")]
 ```
 
-Dieser informiert den Ressourcen-Manager der Standardkultur der app, daher sicherstellen, dass die Zeichenfolgen, die in der Language-neutral RESX-Datei definierten (**AppResources.resx**) wird angezeigt, wenn die app in einem der englische Gebietsschemas ausgeführt wird.
+Dann wird der Ressourcen-Manager über die Standardkultur der App informiert, wodurch gewährleistet wird, dass die in der sprachneutralen RESX-Datei (**AppResources.resx**) definierten Zeichenfolgen angezeigt werden, wenn die App in einem der englischen Gebietsschemas ausgeführt wird.
 
 ### <a name="example"></a>Beispiel
 
-Nach dem aktualisieren den plattformspezifischen Projekten wie oben, und das erneute Kompilieren der app mit übersetzten RESX-Dateien, werden aktualisierte Übersetzungen in jeder app zur Verfügung. Hier ist ein Screenshot aus dem Beispielcode in vereinfachtem Chinesisch übersetzt:
+Wenn Sie wie oben dargestellt die plattformspezifischen Projekte aktualisieren und die App mit übersetzten RESX-Dateien erneut kompilieren, sind aktualisierte Übersetzungen in den einzelnen Apps verfügbar. Hier sehen Sie einen Screenshot von der Übersetzung des Beispielcodes ins Chinesische (vereinfacht):
 
-![](text-images/simple-example-hans.png "Plattformübergreifende Benutzeroberflächen übersetzt, Chinesisch (vereinfacht)")
+![](text-images/simple-example-hans.png "Übersetzung der plattformübergreifenden Benutzeroberflächen ins Chinesische (vereinfacht)")
 
-Weitere Informationen zu UWP Lokalisierung, finden Sie unter [UWP Lokalisierung](/windows/uwp/design/globalizing/globalizing-portal/).
+Weitere Informationen zur UWP-Lokalisierung finden Sie unter [UWP Localization (UWP-Lokalisierung)](/windows/uwp/design/globalizing/globalizing-portal/).
 
 ## <a name="localizing-xaml"></a>Lokalisieren von XAML
 
-Beim Erstellen einer Xamarin.Forms-Benutzeroberfläche in XAML, das des Markups etwa wie folgt, mit Zeichenfolgen aussehen würde eingebettet, direkt in der XML-Code:
+Wenn Sie eine Xamarin.Forms-Benutzeroberfläche in XAML erstellen, sollte das Markup in etwa wie folgt aussehen. Zeichenfolgen werden dabei direkt in die XML eingebettet:
 
 ```xaml
 <Label Text="Notes:" />
@@ -592,7 +592,7 @@ Beim Erstellen einer Xamarin.Forms-Benutzeroberfläche in XAML, das des Markups 
 <Button Text="Add to list" />
 ```
 
-Im Idealfall konnte es übersetzt werden Steuerelemente der Benutzeroberfläche direkt in das XAML, die wir, indem Sie erstellen tun können eine *Markuperweiterung*. Der Code für eine Markuperweiterung, die die RESX-Ressourcen, um XAML verfügbar macht, ist unten dargestellt. Diese Klasse sollte für den die allgemeinen Xamarin.Forms-Code (zusammen mit den XAML-Seiten) hinzugefügt werden:
+Im Idealfall können Benutzeroberflächensteuerelemente direkt in die XAML übersetzt werden. Dafür muss nur eine *Markuperweiterung* erstellt werden. Den Code für eine Markuperweiterung, die die RESX-Ressource für XAML verfügbar macht, finden Sie im folgenden Beispiel. Diese Klasse sollte gemeinsam mit den XAML-Seiten zum allgemeinen Xamarin.Forms-Code hinzugefügt werden:
 
 ```csharp
 using System;
@@ -646,20 +646,20 @@ namespace UsingResxLocalization
 }
 ```
 
-In der folgenden Aufzählung werden die wichtigen Elemente im obigen Code erläutert:
+Nachfolgend werden die wichtigen Elemente aus dem obenstehenden Code erläutert:
 
-* Die Klasse `TranslateExtension`, aber gemäß der Konvention, die wir sehen, wird als **übersetzen** in unser Markup.
-* Die Klasse implementiert `IMarkupExtension`, die Xamarin.Forms für diese Arbeit erforderlich ist.
-* `"UsingResxLocalization.Resx.AppResources"` ist der Ressourcenbezeichner für unsere RESX-Ressourcen. Es besteht unsere Standard-Namespace, den Ordner, in dem die Dateien befinden, und den standardmäßigen RESX-Dateinamen.
-* Die `ResourceManager` Klasse wurde mit `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` um zu bestimmen, die aktuelle Assembly beim Laden von Ressourcen aus, und in der statischen zwischengespeicherten `ResMgr` Feld. Er wird erstellt, als eine `Lazy` geben, damit seine Erstellung verzögert wird, bis zur ersten in Verwendung ist die `ProvideValue` Methode.
-* `ci` verwendet den Abhängigkeitsdienst ausgewählte Sprache des Benutzers aus dem systemeigenen Betriebssystem abgerufen.
-* `GetString` ist die Methode, die die tatsächlichen übersetzte Zeichenfolge aus den Ressourcendateien abruft. Für die universelle Windows-Plattform `ci` wird null sein, da die `ILocalize` Schnittstelle ist nicht auf diesen Plattformen implementiert. Dies entspricht dem Aufrufen der `GetString` Methode nur mit dem ersten Parameter. Stattdessen wird das Ressourcen-Framework erkennt automatisch das Gebietsschema und ruft die übersetzte Zeichenfolge aus der entsprechenden RESX-Datei.
-* Fehlerbehandlung eingefügt, um fehlende Ressourcen zu debuggen, indem eine Ausnahme ausgelöst wurde (in `DEBUG` nur im Modus).
+* Die Klasse hat zwar den Namen `TranslateExtension`, aber standardmäßig können Sie mit dem Begriff **Translate** (Übersetzen) in Ihrem Markup auf diese verweisen.
+* Die Klasse implementiert die `IMarkupExtension`. Nur wenn dies geschieht, kann Xamarin.Forms funktionieren.
+* `"UsingResxLocalization.Resx.AppResources"` ist der Ressourcenbezeichner für die RESX-Ressourcen. Dieser besteht aus unserem Standardnamespace, dem Ordner, in dem sich die Ressourcendateien befinden und dem Namen der RESX-Standarddatei.
+* Die `ResourceManager`-Klasse wird mithilfe der `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` erstellt, um die aktuelle Assembly zu bestimmen, aus der Ressourcen geladen werden sollen, und wird im statischen `ResMgr`-Feld zwischengespeichert. Sie wird als `Lazy`-Typ erstellt, wodurch sie erst erstellt wird, wenn sie zum ersten Mal in der `ProvideValue`-Methode verwendet wird.
+* `ci` verwendet den Abhängigkeitsdienst, um die vom Benutzer ausgewählte Sprache aus dem nativen Betriebssystem abzurufen.
+* `GetString` ist die Methode, die die tatsächliche übersetzte Zeichenfolge aus den Ressourcendateien abruft. Auf der Universellen Windows-Plattform hat `ci` den Wert NULL, weil die `ILocalize`-Schnittstelle nicht implementiert wird. Dies entspricht dem Vorgang des Aufrufens einer `GetString`-Methode mit nur dem ersten Parameter. Stattdessen erkennt das Ressourcenframework automatisch das Gebietsschema und ruft die übersetzte Zeichenfolge aus der jeweiligen RESX-Datei ab.
+* Die Fehlerbehandlung wurde hinzugefügt, um den Debugvorgang von fehlenden Ressourcen durch das Auslösen einer Ausnahme zu unterstützen (gilt nur für den `DEBUG`-Modus).
 
-Der folgende XAML-Codeausschnitt zeigt, wie die Markuperweiterung verwendet wird. Es gibt zwei dafür erforderlichen Schritte aus:
+Anhand des folgenden XAML-Ausschnitts sehen Sie, wie die Markuperweiterung verwendet werden soll. Sie müssen dafür zwei Schritte ausführen:
 
-1. Deklarieren Sie die benutzerdefinierte `xmlns:i18n` Namespace im Stammknoten. Die `namespace` und `assembly` müssen die projekteinstellungen genau – in diesem Beispiel sind identisch, jedoch möglicherweise andere in Ihrem Projekt übereinstimmen.
-2. Verwendung `{Binding}` Syntax für Attribute, die normalerweise Text enthält auf Aufrufen der `Translate` Markuperweiterung. Der Ressourcenschlüssel ist der einzige erforderliche Parameter.
+1. Deklarieren Sie den benutzerdefinierten `xmlns:i18n`-Namespace im Stammknoten. `namespace` und `assembly` müssen genau mit den Projekteinstellungen übereinstimmen. In diesem Beispiel sind sie identisch, sie können sich in Ihrem Projekt aber auch unterscheiden.
+2. Verwenden Sie eine `{Binding}`-Syntax für Attribute, die normalerweise Text enthalten, um die Markuperweiterung `Translate` aufzurufen. Der einzige erforderliche Parameter ist der Ressourcenschlüssel.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -675,20 +675,20 @@ Der folgende XAML-Codeausschnitt zeigt, wie die Markuperweiterung verwendet wird
 </ContentPage>
 ```
 
-Die folgende ausführlicher Syntax ist auch für die Markuperweiterung gültig:
+Sie können auch die folgende ausführliche Syntax für die Markuperweiterung verwenden:
 
 ```xaml
 <Button Text="{i18n:TranslateExtension Text=AddButton}" />
 ```
 
-## <a name="localizing-platform-specific-elements"></a>Lokalisieren von plattformspezifischen-Elemente
+## <a name="localizing-platform-specific-elements"></a>Lokalisieren von plattformspezifischen Elementen
 
-Obwohl wir die Übersetzung der Benutzeroberfläche im Xamarin.Forms-Code verarbeiten kann, sind einige Elemente, die in den einzelnen plattformspezifischen Projekten ausgeführt werden müssen. Dieser Abschnitt erläutert, wie Sie lokalisieren:
+Obwohl die Übersetzung der Benutzeroberfläche in Xamarin.Forms-Code abgewickelt werden kann, müssen einige Elemente auf der plattformspezifischen Ebene des Projekts lokalisiert werden. In diesem Abschnitt erfahren Sie, wie Sie die folgenden Elemente lokalisieren:
 
 * Application Name
 * Bilder
 
-Das Beispielprojekt enthält eine lokalisierte Image mit dem Namen **flag.png**, bezieht sich auf C# wie folgt:
+Das Beispielprojekt umfasst ein lokalisiertes Bild mit dem Namen **flag.png**, auf das in C# wie folgt verwiesen wird:
 
 ```csharp
 var flag = new Image();
@@ -704,7 +704,7 @@ switch (Device.RuntimePlatform)
 }
 ```
 
-Das Flag-Image ist auch in der XAML wie folgt verwiesen:
+In der XAML wird wie folgt auf das Flagbild verwiesen:
 
 ```xaml
 <Image>
@@ -717,49 +717,49 @@ Das Flag-Image ist auch in der XAML wie folgt verwiesen:
 </Image>
 ```
 
-Alle Plattformen werden bildreferenzen wie diese auf lokalisierte Versionen der Bilder, automatisch aufgelöst, solange die Projektstrukturen, die unten beschrieben implementiert werden.
+Bildverweise wie diese werden von allen Plattformen automatisch in lokalisierte Versionen der Bilder aufgelöst, wenn die nachfolgend erläuterten Strukturen implementiert werden.
 
 ### <a name="ios-application-project"></a>Anwendungsprojekt für iOS
 
-iOS verwendet einen Benennungsstandard Lokalisierungsprojekte aufgerufen oder **.lproj** Verzeichnisse Image und Zeichenfolgenressourcen enthalten. Diese Verzeichnisse können lokalisierte Versionen von Images, die in der app verwendet enthalten und auch die **InfoPlist.strings** -Datei, die verwendet werden kann, um den Namen der app zu lokalisieren. Weitere Informationen zu iOS Lokalisierung, finden Sie unter [iOS Lokalisierung](~/ios/app-fundamentals/localization/index.md).
+iOS verwendet einen Benennungsstandard, der als Lokalisierungsprojekt- oder **.lproj**-Verzeichnisse bezeichnet wird, in denen Bild- und Zeichenfolgenressourcen enthalten sind. Diese Verzeichnisse können lokalisierte Versionen von Bildern, die in der App verwendet werden, und die **InfoPlist.strings**-Datei enthalten, die zum Lokalisieren des App-Namens verwendet werden kann. Weitere Informationen zur iOS-Lokalisierung finden Sie unter [iOS Localization (iOS-Lokalisierung)](~/ios/app-fundamentals/localization/index.md).
 
 #### <a name="images"></a>Bilder
 
-Dieser Screenshot zeigt die iOS-Beispiel-app mit sprachspezifischen **.lproj** Verzeichnisse. Wird aufgerufen, das Verzeichnis Spanisch **es.lproj**, enthält die lokalisierte Versionen des Standardbilds, als auch **flag.png**:
+Auf dem folgenden Screenshot sehen Sie die Beispiel-App für iOS mit sprachspezifischen **.lproj**-Verzeichnissen. Das **es.lproj**-Verzeichnis für Spanien enthält lokalisierte Versionen des Standardbilds sowie das **flag.png**-Bild:
 
-![](text-images/ios-resources.png "iOS Projektverzeichnissen Lokalisierung")
+![](text-images/ios-resources.png "iOS-Verzeichnisse für Lokalisierungsprojekte")
 
-Jede Sprachverzeichnis enthält eine Kopie des **flag.png**, für die entsprechende Sprache lokalisiert. Wenn kein Bild angegeben ist, standardmäßig das Bild in das Standardverzeichnis für die Sprache des Betriebssystems. Geben Sie für die vollständige Retina-Unterstützung **@2x** und **@3x** Kopien der einzelnen Bilder.
+Jedes Sprachverzeichnis enthält eine entsprechend lokalisierte Kopie des **flag.png**-Bilds. Wenn kein Bild vorhanden ist, wird standardmäßig das Bild verwendet, das im Standardsprachverzeichnis gespeichert ist. Wenn Sie eine vollständige Retina-Unterstützung benötigen, sollten Sie **@2x**- und **@3x**-Kopien jedes Bilds bereitstellen.
 
 #### <a name="app-name"></a>App-Name
 
-Den Inhalt der **InfoPlist.strings** ist nur ein einzelner Schlüssel-Wert, den app-Namen konfigurieren:
+**InfoPlist.strings** besteht nur aus einem Schlüsselwert, mit dem der Name der App konfiguriert wird:
 
 ```csharp
 "CFBundleDisplayName" = "ResxEspañol";
 ```
 
-Wenn die Anwendung ausgeführt wird, werden der Name der app und das Bild beide lokalisiert:
+Wenn die Anwendung ausgeführt wird, werden sowohl der App-Name als auch das Bild lokalisiert:
 
-![](text-images/ios-imageicon.png "iOS-App-Beispieltext und Imagelokalisierung")
+![](text-images/ios-imageicon.png "Übersetzung eines Texts und eines Bilds in der iOS-Beispiel-App")
 
 ### <a name="android-application-project"></a>Anwendungsprojekt für Android
 
-Android folgt ein anderes Schema für die Speicherung von lokalisierter Bilder mit verschiedenen **drawable** und **Zeichenfolgen** Verzeichnisse mit dem Language-Code-Suffix. Wenn ein mit vier Buchstaben bestehenden Gebietsschemacode (z. B. "Zh-TW oder pt-BR) erforderlich ist, beachten Sie, dass Android eine zusätzliche **r** folgenden Dash/vorherigen code des Gebietsschemas (z. b. Zh-rTW oder pt-rBR). Weitere Informationen zu Android Lokalisierung, finden Sie unter [Android Lokalisierung](~/android/app-fundamentals/localization.md).
+Unter Android werden lokalisierte Bilder an anderer Stelle gespeichert. Dafür werden **drawable**- und **strings**-Verzeichnisse mit einem Sprachcode als Suffix verwendet. Wenn ein Gebietsschemacode erforderlich ist, der aus vier Buchstaben besteht (z. B. zh-TW oder pt-BR), muss unter Android ein zusätzliches **r** nach dem Gedankenstrich bzw. nach dem Gebietsschemacode eingefügt werden (z. B. zh-rTW oder pt-rBR). Weitere Informationen zur Android-Lokalisierung finden Sie unter [Android Localization (Android-Lokalisierung)](~/android/app-fundamentals/localization.md).
 
 #### <a name="images"></a>Bilder
 
-Dieser Screenshot zeigt die Android Beispiel mit einer lokalisierten Zeichenfolgen und zeichenbarer Ressourcen:
+Auf dem folgenden Screenshot sehen Sie das Android-Beispiel mit einigen lokalisierten „drawable“- und „strings“-Verzeichnissen:
 
-![](text-images/android-resources.png "Android lokalisierte zeichenbarer Ressourcen und String-Verzeichnisse")
+![](text-images/android-resources.png "Lokalisierte „drawable“- und „strings“-Verzeichnisse unter Android")
 
-Beachten Sie, dass Android keine Zh-Hans verwendet und Zh-Hant-Codes für vereinfacht und Chinesisch (traditionell); Stattdessen wird nur unterstützt länderspezifische Codes Zh-CN und Zh-TW.
+Beachten Sie, dass unter Android nicht die Codes zh-Hans und zh-Hant für vereinfachtes und traditionelles Chinesisch verwendet werden. Stattdessen werden nur länderspezifische Codes wie zh-CN und zh-TW unterstützt.
 
-Zur Unterstützung der Bilder mit einer anderen Auflösung für HD-Bildschirme erstellen Sie zusätzliche sprachordnern mit `-*dpi` Suffixen, z. B. **Drawables-es-Mdpi**, **Drawables-es-Xdpi**, **Drawables-es-Xxdpi**usw. Finden Sie unter [Android Alternative-Ressourcen bereitstellen](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources) für Weitere Informationen.
+Wenn verschiedene Auflösungen von Bildern für HD-Bildschirme unterstützt werden sollen, erstellen Sie zusätzliche Ordner mit `-*dpi`-Suffixen wie **drawables-es-mdpi**, **drawables-es-xdpi** oder **drawables-es-xxdpi**. Weitere Informationen finden Sie unter [Providing Alternative Android Resources (Bereitstellen alternativer Android-Ressourcen)](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
 
 #### <a name="app-name"></a>App-Name
 
-Den Inhalt der **von "Strings.xml"** ist nur ein einzelner Schlüssel-Wert, den app-Namen konfigurieren:
+**strings.xml** besteht nur aus einem Schlüsselwert, mit dem der Name der App konfiguriert wird:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -768,42 +768,42 @@ Den Inhalt der **von "Strings.xml"** ist nur ein einzelner Schlüssel-Wert, den 
 </resources>
 ```
 
-Update der **"mainactivity.cs"** im Android-app-Projekt, damit die `Label` verweist auf die XML-Zeichenfolgen.
+Aktualisieren Sie die **MainActivity.cs**-Datei im Android-App-Projekt, damit das `Label`-Objekt einen Verweis auf die XML der Zeichenfolgen herstellt.
 
 ```csharp
 [Activity (Label = "@string/app_name", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 ```
 
-Die app ordnet nun die app-Namen und das Image. Hier ist ein Screenshot des Ergebnisses (in Spanisch):
+Dann lokalisiert die App den App-Namen und das Bild. Hier sehen Sie einen Screenshot mit dem Ergebnis (für Spanisch):
 
-![](text-images/android-imageicon.png "Beispiel zu Android-App-Text und Imagelokalisierung")
+![](text-images/android-imageicon.png "Übersetzung eines Texts und eines Bilds in der Android-Beispiel-App")
 
-### <a name="universal-windows-platform-application-projects"></a>Universelle Windows Plattform-Anwendungsprojekten
+### <a name="universal-windows-platform-application-projects"></a>UWP-Anwendungsprojekte (Universelle Windows-Plattform)
 
-Die universelle Windows-Plattform verfügt über eine Ressource-Infrastruktur, die die Lokalisierung von Abbildern und den Namen der app vereinfacht. Weitere Informationen zu UWP Lokalisierung, finden Sie unter [UWP Lokalisierung](/windows/uwp/design/globalizing/globalizing-portal/).
+Die Ressourceninfrastruktur der Universellen Windows-Plattform vereinfacht die Lokalisierung von Bildern und des App-Namens. Weitere Informationen zur UWP-Lokalisierung finden Sie unter [UWP Localization (UWP-Lokalisierung)](/windows/uwp/design/globalizing/globalizing-portal/).
 
 #### <a name="images"></a>Bilder
 
-Bilder können in einem Ordner ressourcenspezifischen Ausschnitte lokalisiert werden, wie im folgenden Screenshot gezeigt:
+Bilder können lokalisiert werden, indem sie wie auf dem folgenden Screenshot gezeigt in einem ressourcenspezifischen Ordner platziert werden:
 
-![](text-images/uwp-image-folder-structure.png "Ordnerstruktur für UWP-Image-Lokalisierung")
+![](text-images/uwp-image-folder-structure.png "Ordnerstruktur für die Bildlokalisierung auf der UWP")
 
-Zur Laufzeit wird die Windows-Resource-Infrastruktur das entsprechende Image basierend auf dem Gebietsschema des Benutzers ausgewählt.
+Zur Laufzeit wählt die Windows-Ressourceninfrastruktur anhand des Gebietsschemas des Benutzers ein passendes Bild aus.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Xamarin.Forms-Anwendungen können RESX-Dateien mit .NET Globalisierungsklassen lokalisiert werden. Abgesehen von der eine kleine Menge von plattformspezifischem Code zum Erkennen der verwendeten Sprache, die der Benutzer bevorzugt, ist in der allgemeine Code den meisten Aufwand Lokalisierung zentralisiert.
+Xamarin.Forms-Anwendungen können mithilfe von RESX-Dateien und .NET-Globalisierungsklassen lokalisiert werden. Ein Großteil der Lokalisierung wird durch den allgemeinen Code gehandhabt. Nur ein geringer Teil des Codes, mit dem die vom Benutzer bevorzugte Sprache ermittelt wird, ist plattformspezifisch.
 
-Bilder werden in der Regel auf eine plattformspezifische Weise nutzen zur Unterstützung der mit mehreren Auflösungen in iOS und Android behandelt.
+Bilder werden in der Regel auf plattformspezifischer Ebene gehandhabt. So wird die unter iOS und Android bereitgestellte Unterstützung für mehrere Auflösungen genutzt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [RESX-Lokalisierungsbeispiel](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
-- [TodoLocalized-Beispiel-App](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalized/)
-- [Cross-Platform-Lokalisierung](~/cross-platform/app-fundamentals/localization.md)
-- [iOS-Lokalisierung](~/ios/app-fundamentals/localization/index.md)
-- [Android-Lokalisierung](~/android/app-fundamentals/localization.md)
-- [UWP-Lokalisierung](/windows/uwp/design/globalizing/globalizing-portal/)
+- [RESX Localization Sample (RESX-Lokalisierungsbeispiel)](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
+- [TodoLocalized Sample App (TodoLocalized-Beispiel-App)](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalized/)
+- [Cross-Platform Localization (Plattformübergreifende Lokalisierung)](~/cross-platform/app-fundamentals/localization.md)
+- [iOS Localization (iOS-Lokalisierung)](~/ios/app-fundamentals/localization/index.md)
+- [Android Localization (Android-Lokalisierung)](~/android/app-fundamentals/localization.md)
+- [UWP Localization (UWP-Lokalisierung)](/windows/uwp/design/globalizing/globalizing-portal/)
 - [Verwenden der CultureInfo-Klasse (MSDN)](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
 - [Suchen und Verwenden von Ressourcen für eine bestimmte Kultur (MSDN)](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)

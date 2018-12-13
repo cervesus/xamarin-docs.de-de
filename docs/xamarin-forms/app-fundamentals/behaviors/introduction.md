@@ -1,6 +1,6 @@
 ---
-title: Einführung in die Verhaltensweisen
-description: Verhalten können Sie die Steuerelemente der Benutzeroberfläche ohne Unterklasse diese Funktionalität hinzugefügt. Stattdessen wird die Funktionalität in eine Verhaltensklasse implementiert und an das Steuerelement angefügt werden, als wäre es Teil des Steuerelements selbst. Dieser Artikel enthält eine Einführung in die Verhaltensweisen.
+title: Einführung in Verhalten
+description: Durch Verhalten können Sie Steuerelementen für Benutzeroberflächen Funktionen hinzufügen, ohne Unterklassen erstellen zu müssen. Stattdessen wird die Funktion in einer Verhaltensklasse implementiert und an das Steuerelement angefügt, als wäre sie ein Teil des Steuerelements selbst. In diesem Artikel werden Verhalten grundlegend vorgestellt.
 ms.prod: xamarin
 ms.assetid: 0DF1EF8C-A212-4142-A3C6-DF760A82A757
 ms.technology: xamarin-forms
@@ -9,34 +9,34 @@ ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: 176f41d4b7349af2cf7cc49de8ba0789ad2f8c11
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38995813"
 ---
-# <a name="introduction-to-behaviors"></a>Einführung in die Verhaltensweisen
+# <a name="introduction-to-behaviors"></a>Einführung in Verhalten
 
-_Verhalten können Sie die Steuerelemente der Benutzeroberfläche ohne Unterklasse diese Funktionalität hinzugefügt. Stattdessen wird die Funktionalität in eine Verhaltensklasse implementiert und an das Steuerelement angefügt werden, als wäre es Teil des Steuerelements selbst. Dieser Artikel enthält eine Einführung in die Verhaltensweisen._
+_Durch Verhalten können Sie Steuerelementen für Benutzeroberflächen Funktionen hinzufügen, ohne Unterklassen erstellen zu müssen. Stattdessen wird die Funktion in einer Verhaltensklasse implementiert und an das Steuerelement angefügt, als wäre sie ein Teil des Steuerelements selbst. In diesem Artikel werden Verhalten grundlegend vorgestellt._
 
-Verhalten ermöglichen es, Code zu implementieren, die Sie normalerweise schreiben müsste, als Code-Behind, da sie direkt mit der API des Steuerelements in einer Weise interagiert, dass es deutlicher an das Steuerelement verbunden und für die Wiederverwendung über mehrere Anwendungen verpackt werden kann. Sie können verwendet werden, um eine Vielzahl von Funktionen für Steuerelemente, z. B. bereitzustellen:
+Durch Verhalten können Sie Code implementieren, den Sie normalerweise in eine CodeBehind-Datei schreiben würden, da dieser so direkt mit der API des Steuerelements interagiert, dass er präzise an das Steuerelement angefügt werden und zur Wiederverwendung in mehr als eine App gepackt werden kann. Sie können verwendet werden, um vollständige Funktionen der Steuerelemente bereitzustellen, wie:
 
-- Hinzufügen zu einem Validierungssteuerelement-e-Mail ein [ `Entry` ](xref:Xamarin.Forms.Entry).
-- Erstellen eines bewertungssteuerelements mithilfe einer Tap-stiftbewegungs-Erkennung.
-- Zum Steuern einer Animation aus.
-- Einen Effekt hinzufügen auf ein Steuerelement.
+- Hinzufügen eines Validierungssteuerelement für E-Mails an [`Entry`](xref:Xamarin.Forms.Entry)
+- Erstellen eines Bewertungssteuerelements mithilfe einer Gestenerkennung für Tippbewegungen
+- Steuern einer Animation
+- Hinzufügen eines Effekts zu einem Steuerelement
 
-Verhalten ermöglichen auch komplexere Szenarios. Im Kontext des *Befehle*, Verhalten sind eine nützliche Methode für das Herstellen einer Verbindung eines Steuerelements zu einem Befehl. Darüber hinaus können sie Befehle mit Steuerelementen zuordnen, die nicht entwickelt wurden, für die Interaktion mit Befehlen verwendet werden. Sie können z. B. verwendet werden, zum Aufrufen eines Befehls als Reaktion auf ein Ereignis auslösen.
+Verhalten aktivieren auch fortgeschrittenere Szenarios. Bei *Befehlen* sind Verhalten nützlich, um ein Steuerelement mit einem Befehl zu verbinden. Sie können auch zum Zuordnen von Befehlen zu Steuerelementen verwendet werden, die nicht zum Interagieren mit Befehlen konzipiert sind. Beispielsweise können diese als Reaktion auf ein auslösendes Ereignis zum Aufrufen eines Befehls verwendet werden.
 
-Xamarin.Forms unterstützt zwei verschiedene Formate Verhaltensweisen:
+Xamarin.Forms unterstützen zwei verschiedene Verhalten:
 
-- **Xamarin.Forms-Verhaltensweisen** – abgeleitete Klassen die [ `Behavior` ](xref:Xamarin.Forms.Behavior) oder [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) -Klasse, in denen `T` ist der Typ des Steuerelements, das Verhalten gelten soll. Weitere Informationen zu Xamarin.Forms-Verhaltensweisen, finden Sie unter [Xamarin.Forms-Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/creating.md) und [Wiederverwendbare Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
-- **Angefügte Verhaltensweisen** – `static` Klassen mit einer oder mehreren angefügte Eigenschaften. Weitere Informationen zu angefügten Verhalten, finden Sie unter [angefügte Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/attached.md).
+- **Xamarin.Forms-Verhalten:** Klassen, die von der Klasse [`Behavior`](xref:Xamarin.Forms.Behavior) oder [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) abgeleitet werden, in der `T` der Steuerelementtyp ist, für den Verhalten angewendet werden sollte. Weitere Informationen über Xamarin.Forms-Verhalten finden Sie unter [Xamarin.Forms Behaviors (Xamarin.Forms-Verhalten)](~/xamarin-forms/app-fundamentals/behaviors/creating.md) und [Reusable Behaviors (Wiederverwendbare Verhalten)](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+- **Angefügte Verhalten:** `static`-Klassen mit einer oder mehreren angefügten Eigenschaften. Weitere Informationen zu angefügten Verhalten finden Sie unter [Attached Behaviors (Angefügte Verhalten)](~/xamarin-forms/app-fundamentals/behaviors/attached.md).
 
-Dieser Leitfaden konzentriert sich auf Xamarin.Forms-Verhaltensweisen, da sie den bevorzugten Ansatz zur Erstellung von Verhalten sind.
+In diesem Leitfaden werden vor allem Xamarin.Forms-Verhalten beschrieben, da sie die bevorzugte Herangehensweise für die Verhaltenskonstruktion darstellen.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Verhalten](xref:Xamarin.Forms.Behavior)
-- [Verhalten&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)
+- [Behavior class (Behavior-Klasse)](xref:Xamarin.Forms.Behavior)
+- [Behavior&lt;T&gt; class (Behavior<T>-Klasse)](xref:Xamarin.Forms.Behavior`1)

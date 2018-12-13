@@ -1,6 +1,6 @@
 ---
-title: Erstellen einer Xamarin.Forms-DataTemplateSelector
-description: Dieser Artikel veranschaulicht das Erstellen und nutzen eine DataTemplateSelector, die verwendet werden kann, wählen Sie ein DataTemplate-Element zur Laufzeit anhand des Werts einer datengebundenen Eigenschaft.
+title: Erstellen einer Xamarin.Forms-DataTemplateSelector-Klasse
+description: In diesem Artikel wird veranschaulicht, wie eine DataTemplateSelector-Klasse erstellt und genutzt wird, die zum Auswählen einer DataTemplate-Klasse zur Laufzeit verwendet werden kann, basierend auf dem Wert einer datengebundenen Eigenschaft.
 ms.prod: xamarin
 ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
 ms.technology: xamarin-forms
@@ -9,20 +9,20 @@ ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: a72777c7e51e96a8e123ecd85ad0aa24fc60fc6c
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38994516"
 ---
-# <a name="creating-a-xamarinforms-datatemplateselector"></a>Erstellen einer Xamarin.Forms-DataTemplateSelector
+# <a name="creating-a-xamarinforms-datatemplateselector"></a>Erstellen einer Xamarin.Forms-DataTemplateSelector-Klasse
 
-_Eine DataTemplateSelector kann verwendet werden, wählen Sie ein DataTemplate-Element zur Laufzeit anhand des Werts einer datengebundenen Eigenschaft. Dadurch können mehrere DataTemplates auf den gleichen Typ des Objekts, Anpassen die Darstellung bestimmter Objekte angewendet werden. Dieser Artikel veranschaulicht das Erstellen und eine DataTemplateSelector nutzen._
+_Eine DataTemplateSelector-Klasse kann verwendet werden zum Auswählen einer DataTemplate-Klasse zur Laufzeit, basierend auf dem Wert der datengebundenen Eigenschaft. Dadurch können mehrere DataTemplate-Klassen auf den gleichen Objekttyp angewendet werden, um die Darstellung bestimmter Objekte anzupassen. In diesem Artikel wird veranschaulicht, wie Sie eine DataTemplateSelector-Klasse erstellen und nutzen können._
 
-Eine Datenvorlagenauswahl ermöglicht Szenarien wie z. B. eine [ `ListView` ](xref:Xamarin.Forms.ListView) Binden an eine Auflistung von Objekten, in dem die Darstellung der einzelnen Objekte in der `ListView` kann zur Laufzeit ausgewählt werden, durch die Datenvorlagenauswahl Zurückgeben einer bestimmte [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate).
+Eine Datenvorlagenauswahl ermöglicht Szenarios wie eine [`ListView`](xref:Xamarin.Forms.ListView)-Bindung an eine Sammlung von Objekten, bei der die Darstellung jedes Objekts in der `ListView`-Klasse zur Laufzeit ausgewählt werden kann, indem durch die Datenvorlagenauswahl eine bestimmte [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse zurückgegeben wird.
 
-## <a name="creating-a-datatemplateselector"></a>Erstellen eine DataTemplateSelector
+## <a name="creating-a-datatemplateselector"></a>Erstellen einer DataTemplateSelector-Klasse
 
-Eine Datenvorlagenauswahl wird durch Erstellen einer Klasse, die von Erben implementiert [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector). Die `OnSelectTemplate` Methode wird dann überschrieben, um eine bestimmte zurückzugeben [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate), wie im folgenden Codebeispiel gezeigt:
+Eine Datenvorlagenauswahl wird implementiert durch das Erstellen einer Klasse, die von der [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)-Klasse erbt. Die `OnSelectTemplate`-Methode wird dann überschrieben, um eine bestimmte [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse zurückzugeben, wie im folgenden Codebeispiel zu sehen ist:
 
 ```csharp
 public class PersonDataTemplateSelector : DataTemplateSelector
@@ -37,22 +37,22 @@ public class PersonDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-Die `OnSelectTemplate` Methode gibt zurück, die entsprechende Vorlage basierend auf den Wert der `DateOfBirth` Eigenschaft. Die Vorlage, die zurückgegeben wird der Wert des der `ValidTemplate` Eigenschaft oder das `InvalidTemplate` -Eigenschaft, die festgelegt werden, bei der Nutzung der `PersonDataTemplateSelector`.
+Die `OnSelectTemplate`-Methode gibt, basierend auf dem Wert der `DateOfBirth`-Eigenschaft, die entsprechende Vorlage zurück. Die Vorlage, die zurückgegeben wird, ist der Wert der `ValidTemplate`-Eigenschaft oder der `InvalidTemplate`-Eigenschaft, welche bei der Nutzung der `PersonDataTemplateSelector`-Klasse festgelegt werden.
 
-Eine Instanz der Daten Selector-Klasse können Sie dann auf Eigenschaften von Xamarin.Forms-Steuerelements wie folgt zugewiesen werden [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1). Eine Liste der gültigen Eigenschaften, finden Sie unter [erstellen eine DataTemplate](~/xamarin-forms/app-fundamentals/templates/data-templates/creating.md).
+Eine Instanz der Datenvorlagenauswahl-Klasse kann dann Xamarin.Forms-Steuereigenschaften wie [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) zugewiesen werden. Eine Liste gültiger Eigenschaften finden Sie unter [Erstellen von Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/creating.md).
 
 ### <a name="limitations"></a>Einschränkungen
 
-[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) Instanzen weisen die folgenden Einschränkungen:
+[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)-Instanzen weisen die folgenden Einschränkungen auf:
 
-- Die `DataTemplateSelector` Unterklasse muss immer die gleiche Vorlage für dieselben Daten zurückgeben, wenn mehrere Male abgefragt.
-- Die `DataTemplateSelector` Unterklasse muss nicht zurückgeben, eine andere `DataTemplateSelector` Unterklasse.
-- Die `DataTemplateSelector` Unterklasse muss keine neue Instanzen von Zurückgeben einer `DataTemplate` bei jedem Aufruf. Stattdessen muss die gleiche Instanz zurückgegeben werden. Bei unterlassen einen Speicherverlust erstellt, und es wird die Virtualisierung deaktiviert.
-- Unter Android werden nicht mehr als 20 verschiedene Datenvorlagen pro `ListView`.
+- Die `DataTemplateSelector`-Unterklasse muss bei mehrmaligem Abfragen immer die gleiche Vorlage für dieselben Daten zurückgeben.
+- Die `DataTemplateSelector`-Unterklasse darf keine andere `DataTemplateSelector`-Unterklasse zurückgeben.
+- Die `DataTemplateSelector`-Unterklasse darf bei jedem Aufruf keine neuen Instanzen einer `DataTemplate`-Klasse zurückgeben. Stattdessen muss die gleiche Instanz zurückgegeben werden. Die Unterlassung führt zu einem Arbeitsspeicherverlust und zur Deaktivierung der Benutzeroberflächenvirtualisierung.
+- Unter Android sind nicht mehr als 20 verschiedene Datenvorlagen pro `ListView`-Klasse möglich.
 
-## <a name="consuming-a-datatemplateselector-in-xaml"></a>Nutzen eine DataTemplateSelector in XAML
+## <a name="consuming-a-datatemplateselector-in-xaml"></a>Nutzen einer DataTemplateSelector-Klasse in XAML
 
-In XAML die `PersonDataTemplateSelector` können instanziiert werden, indem deren Deklaration als eine Ressource, wie im folgenden Codebeispiel gezeigt:
+In XAML kann die `PersonDataTemplateSelector`-Klasse instanziiert werden, indem sie als Ressource erklärt wird, wie im folgendem Codebeispiel zu sehen ist:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Selector;assembly=Selector" x:Class="Selector.HomePage">
@@ -77,25 +77,25 @@ In XAML die `PersonDataTemplateSelector` können instanziiert werden, indem dere
 </ContentPage>
 ```
 
-Diese auf Seitenebene [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) definiert zwei [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Instanzen und einem `PersonDataTemplateSelector` Instanz. Die `PersonDataTemplateSelector` Instanz legt seine `ValidTemplate` und `InvalidTemplate` -Eigenschaften auf die entsprechende `DataTemplate` Instanzen mithilfe der `StaticResource` Markuperweiterung. Beachten Sie, dass die Ressourcen in der Seite definiert sind [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), sie können auch auf der Steuerungsebene oder Anwendungsebene definiert werden.
+Diese [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)-Klasse auf Seitenebene definiert zwei [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Instanzen und eine `PersonDataTemplateSelector`-Instanz. Die `PersonDataTemplateSelector`-Instanz legt ihre `ValidTemplate`- und `InvalidTemplate`-Eigenschaften auf die entsprechenden `DataTemplate`-Instanzen fest, indem die `StaticResource`-Markuperweiterung verwendet wird. Beachten Sie, dass die Ressourcen zwar in der [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)-Klasse der Seite definiert werden, sie aber dennoch auch auf Steuerelementebene oder Anwendungsebene definiert werden können.
 
-Die `PersonDataTemplateSelector` Instanz wird durch die Zuweisung zu verbraucht die [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) -Eigenschaft, wie im folgenden Codebeispiel gezeigt:
+Die `PersonDataTemplateSelector`-Instanz wird genutzt, indem sie der [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)-Eigenschaft zugewiesen wird, wie im folgenden Codebeispiel zu sehen ist:
 
 ```xaml
 <ListView x:Name="listView" ItemTemplate="{StaticResource personDataTemplateSelector}" />
 ```
 
-Zur Laufzeit die [ `ListView` ](xref:Xamarin.Forms.ListView) Aufrufe der `PersonDataTemplateSelector.OnSelectTemplate` -Methode für jedes der Elemente in der zugrunde liegenden Auflistung verwendet werden, mit dem Aufruf aus, und übergeben das Objekt als die `item` Parameter. Die [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) das zurückgegeben wird, indem die Methode klicken Sie dann auf das Objekt angewendet.
+Zur Laufzeit ruft die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse die `PersonDataTemplateSelector.OnSelectTemplate`-Methode für jedes Element in der zugrunde liegenden Sammlung. Dabei wird das Datenobjekt als `item`-Parameter übergeben. Die [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse, welche durch die Methode zurückgegeben wird, wird dann auf dieses Objekt angewendet.
 
-Die folgenden Screenshots zeigen das Ergebnis der [ `ListView` ](xref:Xamarin.Forms.ListView) Anwenden der `PersonDataTemplateSelector` für jedes Objekt in der zugrunde liegenden Auflistung:
+Die folgenden Screenshots zeigen das Ergebnis der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse bei Anwendung des `PersonDataTemplateSelector`-Klasse auf jedes Objekt in der zugrunde liegenden Sammlung:
 
-![](selector-images/data-template-selector.png "ListView mit eine Datenvorlagenauswahl")
+![](selector-images/data-template-selector.png "ListView-Klasse mit einer Datenvorlagenauswahl")
 
-Alle `Person` Objekt mit einem `DateOfBirth` Eigenschaftswert größer als oder gleich 1980 wird in grün angezeigt, mit der übrigen Objekte, die in Rot angezeigt wird.
+Jedes `Person`-Objekt, das einen `DateOfBirth`-Eigenschaftswert größer oder gleich 1980 aufweist, wird in grün angezeigt, alle übrigen Objekte werden in rot angezeigt.
 
-## <a name="consuming-a-datatemplateselector-in-cnum"></a>Nutzen eine DataTemplateSelector in C&num;
+## <a name="consuming-a-datatemplateselector-in-cnum"></a>Nutzen einer DataTemplateSelector-Klasse in C&num;
 
-In c# die `PersonDataTemplateSelector` instanziiert und zugewiesen werden können die [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) -Eigenschaft, wie im folgenden Codebeispiel gezeigt:
+In C# kann die `PersonDataTemplateSelector`-Klasse instanziiert und der [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)-Eigenschaft zugewiesen werden, wie im folgenden Codebeispiel zu sehen ist:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -126,14 +126,14 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Die `PersonDataTemplateSelector` Instanz legt die `ValidTemplate` und `InvalidTemplate` -Eigenschaften auf die entsprechende [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) von erstellten Instanzen der `SetupDataTemplates` Methode. Zur Laufzeit die [ `ListView` ](xref:Xamarin.Forms.ListView) Aufrufe der `PersonDataTemplateSelector.OnSelectTemplate` -Methode für jedes der Elemente in der zugrunde liegenden Auflistung verwendet werden, mit dem Aufruf aus, und übergeben das Objekt als die `item` Parameter. Die `DataTemplate` das zurückgegeben wird, indem die Methode klicken Sie dann auf das Objekt angewendet.
+Die `PersonDataTemplateSelector`-Instanz legt ihre `ValidTemplate`- und `InvalidTemplate`-Eigenschaften auf die entsprechenden, durch die `SetupDataTemplates`-Methode erstellten, [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Instanzen fest. Zur Laufzeit ruft die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse die `PersonDataTemplateSelector.OnSelectTemplate`-Methode für jedes Element in der zugrunde liegenden Sammlung. Dabei wird das Datenobjekt als `item`-Parameter übergeben. Die `DataTemplate`-Klasse, welche durch die Methode zurückgegeben wird, wird dann auf dieses Objekt angewendet.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat veranschaulicht das Erstellen und nutzen einen [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector). Ein `DataTemplateSelector` dienen zum Auswählen einer [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) zur Laufzeit anhand des Werts einer datengebundenen Eigenschaft. Dadurch können mehrere `DataTemplate` -Instanzen, die in den gleichen Typ des Objekts, Anpassen die Darstellung bestimmter Objekte angewendet werden.
+In diesem Artikel wurde veranschaulicht, wie eine [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)-Klasse erstellt und genutzt wird. Eine `DataTemplateSelector`-Klasse kann verwendet werden, um eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse zur Laufzeit auszuwählen, basierend auf dem Wert der datengebundenen Eigenschaft. Dadurch können mehrere `DataTemplate`-Instanzen auf den gleichen Objekttyp angewendet werden, um die Darstellung bestimmter Objekte anzupassen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Datenvorlagenauswahl (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplateselector/)
+- [Data Template Selector (Datenvorlagenauswahl (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplateselector/)
 - [DataTemplateSelector](xref:Xamarin.Forms.DataTemplateSelector)
