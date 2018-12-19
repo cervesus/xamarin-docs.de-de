@@ -67,7 +67,7 @@ Eine eindeutige [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) sollte
 
 ### <a name="ios-application-project"></a>Anwendungsprojekt für iOS
 
-Zum Ausführen von Tests unter iOS muss das [Xamarin Test Cloud Agent NuGet package (Xamarin Test Cloud Agent NuGet-Paket)](https://www.nuget.org/packages/Xamarin.TestCloud.Agent/) zu dem Projekt hinzugefügt werden. Wenn dies geschehen ist, kopieren Sie den folgenden Code in die `AppDelegate.FinishedLaunching`-Methode:
+Zum Ausführen von Tests unter iOS muss das [Xamarin Test Cloud Agent NuGet-Paket](https://www.nuget.org/packages/Xamarin.TestCloud.Agent/) zu dem Projekt hinzugefügt werden. Wenn dies geschehen ist, kopieren Sie den folgenden Code in die `AppDelegate.FinishedLaunching`-Methode:
 
 ```csharp
 #if ENABLE_TEST_CLOUD

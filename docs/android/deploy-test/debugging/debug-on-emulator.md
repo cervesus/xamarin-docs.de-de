@@ -131,4 +131,4 @@ Weitere Informationen zur Verwendung des Android-Emulators finden Sie in den fol
 
 -   [Working with Extended Controls, Settings, and Help (Arbeiten mit erweiterten Steuerelementen, Einstellungen und Hilfe)](https://developer.android.com/studio/run/emulator.html#extended)
 
--   [Run the emulator with Quick Boot (Ausführen des Emulators mit Quick Boot)](https://developer.android.com/studio/run/emulator#quickboot)
+-   [Ausführen des Emulators mit Quick Boot](https://developer.android.com/studio/run/emulator#quickboot)

@@ -44,7 +44,7 @@ Xamarin.iOS funktioniert mit dem folgenden Setup:
 
 - Neueste Version von Visual Studio 2017 Community, Professional oder Enterprise unter Windows 10, gekoppelt mit einem Mac-Buildhost, der den oben aufgeführten Spezifikationen entspricht.
 
-Im [Xamarin.iOS Windows Installation guide (Xamarin.iOS Windows-Installationshandbuch)](~/ios/get-started/installation/windows/index.md) finden Sie ausführliche Installationsanweisungen.
+Im [Xamarin.iOS Windows-Installationshandbuch](~/ios/get-started/installation/windows/index.md) finden Sie ausführliche Installationsanweisungen.
 
 ::: zone-end
 
