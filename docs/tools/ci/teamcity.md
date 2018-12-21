@@ -85,7 +85,7 @@ Das Buildskript kann so einfach wie eine Powershell-Datei (unter Windows) oder e
 
 - [**Psake** ](https://github.com/psake/psake) – Dies ist eine Windows Powershell-Bibliothek für die Entwicklung von Software
 
-- [**FALSCHE** ](http://fsharp.github.io/FAKE/) – Hierbei handelt es sich um eine DSL, die basierend auf F# , wodurch auf vorhandene .NET Bibliotheken nutzen zu können, falls erforderlich.
+- [**FAKE** ](http://fsharp.github.io/FAKE/) – Hierbei handelt es sich um eine DSL, die auf F# basiert, wodurch auch vorhandene .NET Bibliotheken benutzt werden können, falls erforderlich.
 
 Welche Skriptsprache verwendet wird, hängt davon ab Ihre Einstellungen und Anforderungen. Die [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) Beispiel enthält ein Beispiel für mithilfe von Rake als eine [Buildskript](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
 
