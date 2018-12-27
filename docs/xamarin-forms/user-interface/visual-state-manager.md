@@ -180,7 +180,7 @@ Sie können nun einfügen, eine oder mehrere `Setter` Objekte zwischen jedem Tab
 
 Jede `Setter` Tag gibt den Wert einer bestimmten Eigenschaft an, wenn dieser Zustand ist. Jede Eigenschaft, die auf eine `Setter` Objekt muss durch eine bindbare Eigenschaft unterstützt werden.
 
-Markup etwa wie folgt, ist die Grundlage für die **VSM %.*ls'-Sicht** auf der Seite die **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** -Beispielprogramm. Die Seite enthält drei `Entry` Ansichten, jedoch nur das zweite Argument ist das VSM Markup angefügt ist:
+Markup etwa wie folgt, ist die Grundlage für die **VSM %.ls'-Sicht** auf der Seite die **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** -Beispielprogramm. Die Seite enthält drei `Entry` Ansichten, jedoch nur das zweite Argument ist das VSM Markup angefügt ist:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
