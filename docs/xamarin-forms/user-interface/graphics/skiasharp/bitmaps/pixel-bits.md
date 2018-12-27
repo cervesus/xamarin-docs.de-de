@@ -789,7 +789,7 @@ public class PosterizePage : ContentPage
 
 Der Code im Konstruktor greift auf jedes Pixel, führt eine bitweise AND-Operation mit dem Wert 0xE0E0E0FF und speichert dann das Ergebnis wieder in der Bitmap. Die Werte 0xE0E0E0FF behält die oberen 3 Bits der einzelnen Komponenten der Farbe und legt die unteren 5 Bits auf 0 fest. Anstatt 2<sup>24</sup> oder 16.777.216 Farben, die Bitmap wird nach einer Verkleinerung auf 2<sup>9</sup> oder 512 Farben:
 
-[![Feste Framerate](pixel-bits-images/Posterize.png "feste Framerate")](pixel-bits-images/feste Framerate-Large.png#lightbox)
+[![Feste Framerate](pixel-bits-images/Posterize.png "feste Framerate")](pixel-bits-images/festeFramerate-Large.png#lightbox)
 
 ## <a name="related-links"></a>Verwandte Links
 
