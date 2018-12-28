@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: 5cb53006d7cc965f378f6e971bfc623f0c4cbd60
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: c40762ad4d165c1e5a29bdf9dc6d3c0fdb8581f7
+ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899107"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53411725"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Erste Schritte mit Xamarin.Essentials
 
@@ -33,7 +33,7 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar, das jedem vorhandenen oder ne
 
 1. Laden Sie [Visual Studio](http://visualstudio.com) mit den [Visual Studio-Tools für Xamarin](~/cross-platform/get-started/installation/index.md) herunter, und installieren Sie die Suite.
 
-2. Öffnen Sie ein vorhandenes Projekt, oder erstellen Sie ein neues Projekt mit der Vorlage „Leere App“ unter **Visual Studio C#** (Android, iPhone & iPad oder plattformübergreifend). **Wichtig**: Überprüfen Sie beim Hinzufügen zu einem UWP-Projekt, ob Build 16299 oder höher in den Projekteigenschaften festgelegt ist.
+2. Öffnen Sie ein vorhandenes Projekt, oder erstellen Sie ein neues Projekt mit der Vorlage „Leere App“ unter **Visual Studio C#** (Android, iPhone & iPad oder plattformübergreifend). **Wichtig:** Überprüfen Sie beim Hinzufügen zu einem UWP-Projekt, ob Build 16299 oder höher in den Projekteigenschaften festgelegt ist.
 
 3. Fügen Sie das NuGet-Paket **Xamarin.Essentials** jedem Projekt hinzu:
 
@@ -47,9 +47,6 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar, das jedem vorhandenen oder ne
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
     Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Hinzufügen > NuGet-Pakete...** aus. Suchen Sie nach **Xamarin.Essentials**, und installieren Sie das Paket in **ALLEN** Projekten, einschließlich der Android-, iOS- und .NET-Standardbibliotheken.
-
-    > [!TIP]
-    > Aktivieren Sie das Kontrollkästchen **Vorabversionspakete anzeigen**, während sich das [NuGet **Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials) in der Vorschau befindet.
 
     -----
 
