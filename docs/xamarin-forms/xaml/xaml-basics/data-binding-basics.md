@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: bd13163b513ea1f6b0381e99e65d0bd727f97735
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 65316bde1d1c709028eae39c19e5dc318821ff70
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055727"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746881"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
 
@@ -22,7 +22,7 @@ _Datenbindungen können Sie Eigenschaften von zwei Objekten, die verknüpft werd
 
 ## <a name="data-bindings"></a>Datenbindungen
 
-Datenbindungen, die connect-Eigenschaften von zwei Objekte, mit dem Namen der *Quelle* und *Ziel*. Im Code sind zwei Schritte erforderlich: die `BindingContext` Eigenschaft des Zielobjekts muss festgelegt werden, mit dem Quellobjekt und die `SetBinding` Methode (wird häufig in Verbindung mit der `Binding` Klasse) muss für das Zielobjekt, binden Sie eine Eigenschaft, die aufgerufen werden Objekt, das eine Eigenschaft des Quellobjekts.
+Datenbindungen, die connect-Eigenschaften von zwei Objekte, mit dem Namen der *Quelle* und *Ziel*. Im Code sind zwei Schritte erforderlich: Die `BindingContext` Eigenschaft des Zielobjekts muss festgelegt werden, mit dem Quellobjekt und die `SetBinding` Methode (wird häufig in Verbindung mit der `Binding` Klasse) muss für das Zielobjekt eine Eigenschaft dieses Objekts an eine Eigenschaft der Quelle binden aufgerufen werden -Objekt.
 
 Die Zieleigenschaft muss eine bindbare Eigenschaft an, was bedeutet, dass das Zielobjekt von abgeleitet werden, muss `BindableObject`. Die Xamarin.Forms-Onlinedokumentation gibt an, welche Eigenschaften bindbare Eigenschaften sind. Eine Eigenschaft des `Label` wie z. B. `Text` bezieht sich auf die bindbare Eigenschaft `TextProperty`.
 
@@ -71,7 +71,7 @@ Die `Slider` enthält ein `x:Name` -Attribut, das die beiden verweist `Label` An
 
 Die `x:Reference` bindungserweiterung definiert eine Eigenschaft namens `Name` , auf den Namen des Elements auf die verwiesen wird, legen Sie in diesem Fall `slider`. Allerdings die `ReferenceExtension` Klasse, die definiert die `x:Reference` Markuperweiterung definiert auch eine `ContentProperty` Attribut für `Name`, was bedeutet, dass sie nicht explizit erforderlich ist. Nur für verschiedene die erste `x:Reference` enthält "Name =" die zweite jedoch nicht:
 
-```csharp
+```xaml
 BindingContext="{x:Reference Name=slider}"
 …
 BindingContext="{x:Reference slider}"
@@ -79,7 +79,7 @@ BindingContext="{x:Reference slider}"
 
 Die `Binding` Markuperweiterung selbst kann verfügen über verschiedene Eigenschaften, wie die `BindingBase` und `Binding` Klasse. Die `ContentProperty` für `Binding` ist `Path`, aber die "Path =" Teil der Markuperweiterung ausgelassen werden, wenn der Pfad in das erste Element ist die `Binding` Markuperweiterung. Im erste Beispiel ist "Path =" im zweite Beispiel lässt es aber:
 
-```csharp
+```xaml
 Rotation="{Binding Path=Value}"
 …
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
@@ -87,7 +87,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 Die Eigenschaften können alle in einer Zeile befinden oder in mehrere Zeilen aufgeteilt:
 
-```csharp
+```xaml
 Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
@@ -96,7 +96,7 @@ Führen Sie an, was praktisch ist.
 
 Beachten Sie, dass die `StringFormat` Eigenschaft in der zweiten `Binding` Markuperweiterung. In Xamarin.Forms Bindungen führen keine implizite typkonvertierungen, und ein nichtzeichenfolgen-Objekt als Zeichenfolge angezeigt werden sollen. Sie müssen einen Typkonverter oder `StringFormat`. Hinter den Kulissen wird die statische `String.Format` Methode dient zum Implementieren `StringFormat`. Das ist möglicherweise ein Problem, da .NET Formatierungsangaben geschweifte Klammern, beinhalten die auch zum Trennen von Markuperweiterungen verwendet werden. Dadurch wird die Gefahr der verwirrend erscheinen des XAML-Parsers erstellt. Um dies zu vermeiden, fügen Sie die gesamte Formatierung Zeichenfolge in einfache Anführungszeichen einschließen:
 
-```csharp
+```xaml
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -117,7 +117,7 @@ Die Lösung für dieses und andere Probleme umfasst die `Mode` -Eigenschaft, die
 
 Das folgende Programm zeigt häufig dazu verwendet die `OneWayToSource` und `TwoWay` Bindungsmodi. Vier `Slider` Sichten dienen der Kontrolle der `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften eine `Label`. Zunächst erscheint es als ob diese vier Eigenschaften der `Label` Datenbindung Ziele sollte sein werden, da jeder von festgelegt wird eine `Slider`. Allerdings die `BindingContext` von `Label` kann nur ein Objekt sein, und es gibt vier verschiedene Schieberegler.
 
-Aus diesem Grund Alle Bindungen in festgelegt sind scheinbar rückwärts Möglichkeiten: die `BindingContext` jedes der vier Schieberegler nastaven NA hodnotu der `Label`, für die Bindungen festgelegt werden die `Value` Eigenschaften der Schieberegler. Mithilfe der `OneWayToSource` und `TwoWay` Modi diese `Value` Eigenschaften können die Datenquelleneigenschaften, die festgelegt die `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften der `Label`:
+Aus diesem Grund Alle Bindungen in festgelegt sind scheinbar rückwärts Möglichkeiten: Die `BindingContext` jedes der vier Schieberegler auf festgelegt ist die `Label`, und die Bindungen festgelegt sind, auf die `Value` Eigenschaften der Schieberegler. Mithilfe der `OneWayToSource` und `TwoWay` Modi diese `Value` Eigenschaften können die Datenquelleneigenschaften, die festgelegt die `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften der `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
