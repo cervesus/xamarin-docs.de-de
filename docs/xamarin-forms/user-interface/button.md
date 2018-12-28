@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 7108b24f73d1f7389bf37fe8640061ae3e077300
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 250b3de2ef41ce488165f3149c72ce28c39e53a3
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054423"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746894"
 ---
 # <a name="xamarinforms-button"></a>Schaltfläche "Xamarin.Forms"
 
@@ -138,7 +138,7 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>Deaktivieren der Schaltfläche
 
-Manchmal ist eine Anwendung einen bestimmten Zustand, bei einer bestimmten `Button` auf ist kein gültiger Vorgang. In diesen Fällen die `Button` sollte deaktiviert werden, indem die `IsEnabled` Eigenschaft `false`. Das klassische Beispiel ist ein `Entry` -Steuerelement für einen Dateinamen, die zusammen mit einer geöffneten Datei `Button`: die `Button` sollte nur aktiviert, wenn Text in eingegeben wurde der `Entry`.
+Manchmal ist eine Anwendung einen bestimmten Zustand, bei einer bestimmten `Button` auf ist kein gültiger Vorgang. In diesen Fällen die `Button` sollte deaktiviert werden, indem die `IsEnabled` Eigenschaft `false`. Das klassische Beispiel ist ein `Entry` -Steuerelement für einen Dateinamen, die zusammen mit einer geöffneten Datei `Button`: Die `Button` sollte nur aktiviert, wenn Text in eingegeben wurde der `Entry`.
 Können Sie eine `DataTrigger` für diesen Task, siehe die [ **Datentrigger** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) Artikel.
 
 ## <a name="using-the-command-interface"></a>Verwenden die Befehlsschnittstelle
@@ -409,7 +409,7 @@ Das Ergebnis ist, die `Label` nur dreht, während es sich bei ein Finger in Kont
 
 [![Drücken Sie die EINGABETASTE, und lassen Sie los](button-images/PressAndReleaseButton.png "drücken und lassen Sie los")](button-images/PressAndReleaseButton-Large.png)
 
-Diese Art von Verhalten hat-Anwendungen für Spiele: ein Finger frei, die auf eine `Button` kann ein auf Bildschirmobjekt, das auf eine bestimmte Richtung zu verschieben.
+Diese Art von Verhalten hat es sich um Anwendungen für Spiele: Ein Finger frei, die auf eine `Button` kann, ein auf Bildschirmobjekt, das auf eine bestimmte Richtung zu verschieben.
 
 <a name="button-appearance" />
 
@@ -573,7 +573,7 @@ Im folgende XAML-Beispiel zeigt, wie definieren Sie einen visuellen Zustand für
 
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-</ImageButton>
+</Button>
 ```
 
 Die `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState) gibt an, dass die [ `Button` ](xref:Xamarin.Forms.Button) befindet, gedrückt wird seine [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) eigenschaftsänderungen werden von der Der Standardwert von 1 auf 0,8. Die `Normal` `VisualState` gibt an, dass die `Button` befindet sich in einem normalen Status, seine `Scale` Eigenschaft wird auf 1 festgelegt werden. Aus diesem Grund der Gesamteffekt besteht, die bei der `Button` ist gedrückt, sie entsprechend neu skaliert etwas kleiner, und wenn die `Button` wird veröffentlicht, wird es auf der Standardgröße angepasst.

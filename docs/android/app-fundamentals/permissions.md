@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1a73896e4f98a6535bcd7ed66f478d168b01157f
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 204dd903586164691d068a956e741c406df10b36
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526883"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746868"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Berechtigungen In Xamarin.Android
 
@@ -139,7 +139,7 @@ else
 
 Es ist eine bewährte Methode, informieren Sie den Benutzer, warum eine Berechtigung für eine Anwendung erforderlich ist, damit eine fundierte Entscheidung getroffen werden kann, zum Erteilen der Berechtigung. Ein Beispiel hierfür wäre eine app, die Fotos und Geo-Tags verwendet werden. Es ist für den Benutzer, dass die Kamera-Berechtigung erforderlich ist, aber möglicherweise nicht klar, warum die app außerdem den Speicherort des Geräts benötigt. Das Grundprinzip sollte angezeigt werden eine Meldung an den Benutzer zu verstehen, warum die speicherortberechtigung ist, wünschenswert und die Kamera-Berechtigung erforderlich ist.
 
-Die `ActivityCompat.ShouldShowRequestPermissionRational` Methode wird verwendet, um zu bestimmen, ob die Gründe für den Benutzer angezeigt werden soll. Diese Methode gibt `true` Wenn die Gründe für eine angegebene Berechtigung angezeigt werden soll. Dieser Screenshot zeigt ein Beispiel für eine Snackbar angezeigt, die von einer Anwendung, die erklärt, warum die app muss den Speicherort des Geräts kennen:
+Die `ActivityCompat.ShouldShowRequestPermissionRationale` Methode wird verwendet, um zu bestimmen, ob die Gründe für den Benutzer angezeigt werden soll. Diese Methode gibt `true` Wenn die Gründe für eine angegebene Berechtigung angezeigt werden soll. Dieser Screenshot zeigt ein Beispiel für eine Snackbar angezeigt, die von einer Anwendung, die erklärt, warum die app muss den Speicherort des Geräts kennen:
 
 ![Gründe für Position](permissions-images/07-rationale-snackbar.png) 
 

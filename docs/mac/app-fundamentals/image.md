@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 8df7e14088486d0eff9a6370303e83c5e69d4484
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8bc319b53e4a93d5cac35c4f8c3263b72dfe45e2
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119099"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746907"
 ---
 # <a name="images-in-xamarinmac"></a>Bilder in Xamarin.Mac
 
@@ -219,22 +219,23 @@ MyIcon.Image = NSImage.ImageNamed ("MessageIcon");
 Fügen Sie die folgenden öffentlichen Funktion in den View-Controller hinzu:
 
 ```csharp
-public NSImage ImageTintedWithColor (NSImage image, NSColor tint)
-{
-    var tintedImage = image.Copy () as NSImage;
-    var frame = new CGRect (0, 0, image.Size.Width, image.Size.Height);
+public NSImage ImageTintedWithColor(NSImage sourceImage, NSColor tintColor)
+    => NSImage.ImageWithSize(sourceImage.Size, false, rect => {
+        // Draw the original source image
+        sourceImage.DrawInRect(rect, CGRect.Empty, NSCompositingOperation.SourceOver, 1f);
 
-    // Apply tint
-    tintedImage.LockFocus ();
-    tint.Set ();
-    NSGraphics.RectFill (frame, NSCompositingOperation.SourceAtop);
-    tintedImage.UnlockFocus ();
-    tintedImage.Template = false;
+        // Apply tint
+        tintColor.Set();
+        NSGraphics.RectFill(rect, NSCompositingOperation.SourceAtop);
 
-    // Return tinted image
-    return tintedImage;
-}
+        return true;
+    });
 ```
+
+> [!IMPORTANT]
+> Insbesondere bei der Einführung des dunklen-Modus in MacOS Mojave, es ist wichtig, um zu vermeiden der `LockFocus` API, die beim e rstellen Benutzerdefiniert Rendern `NSImage` Objekte. Diese Images werden statisch und werden auf Darstellung oder Anzeige Dichte Änderungen werden nicht automatisch aktualisiert.
+>
+> Durch den Einsatz der oben genannte Mechanismus Handler basierendes, erneut zu rendern für dynamische Bedingungen geschieht automatisch bei der `NSImage` gehostet wird, z. B. einer `NSImageView`.
 
 Um eine Vorlagenbild getönt werden soll, rufen Sie anschließend diese Funktion für das Image zum farbigen anzeigen:
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: c2c0e516c864ec4073d5bb54b77754f58064d6b0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f498aab5bfaffc08a22f62a318f8f9f73ab0afca
+ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116744"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53609908"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin.Mac-Tipps zur Problembehandlung
 
@@ -77,7 +77,7 @@ Die **zulassen ausgehender Netzwerkverbindungen (Client)** Berechtigung ist erfo
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: keine Daten steht für die Codierung 437
  
-Wenn 3. Bibliotheken von Drittanbietern in einer Xamarin.Mac-app einschließen möchten, erhalten Sie möglicherweise einen Fehler in der Form "System.NotSupportedException: keine Daten steht für die Codierung 437" beim Versuch, kompilieren und Ausführen der app. Z. B. Bibliotheken, wie z. B. `Ionic.Zip.ZipFile`, kann diese Ausnahme während des Betriebs.
+Wenn 3. Bibliotheken von Drittanbietern in einer Xamarin.Mac-app einschließen möchten, erhalten Sie möglicherweise einen Fehler in der Form "System.NotSupportedException: Keine Daten ist für die Codierung 437" beim Versuch, kompilieren und Ausführen der app verfügbar. Z. B. Bibliotheken, wie z. B. `Ionic.Zip.ZipFile`, kann diese Ausnahme während des Betriebs.
 
 Dies kann gelöst werden, öffnen Sie die Optionen für die Xamarin.Mac-Projekt, das auf **Mac Build** > **Internationalisierung** und die Überprüfung der **West** Internationalisierung:
 
@@ -110,10 +110,6 @@ Für vorhandene Xamarin.Mac-Projekte, müssen Sie manuell erstellen, die **"Enti
 Geben Sie `Entitlements` ein, und klicken Sie auf die **neu** Schaltfläche. Wenn das Projekt zuvor keine Berechtigungsdatei enthalten, werden Sie aufgefordert werden, das Projekt und eine neue Datei hinzufügen:
 
 [![Überprüfen das Überschreiben einer Datei](troubleshooting-images/entitlements04.png "überprüfen das Überschreiben einer Datei")](troubleshooting-images/entitlements04-large.png#lightbox)
-
-## <a name="contacting-support-business-or-enterprise-licenses"></a>Kontaktaufnahme mit dem Support (Business oder Enterprise-Lizenzen)
-
-Wenn Sie eine Business oder Enterprise-Lizenz verfügen, sind Sie berechtigt, die Hilfe direkt von Xamarin-Entwicklern über supporttickets anfordern. Finden Sie unter [xamarin.com/support](http://xamarin.com/support) Details.
 
 ## <a name="community-support-on-the-forums"></a>Unterstützung durch die Community-Foren
 
