@@ -1,26 +1,24 @@
 ---
 title: Speichern und Zugreifen auf Daten in Azure Storage
-description: Azure Storage ist ein skalierbarer Cloud-speicherlösung, die zum Speichern von unstrukturierter und strukturierter Daten verwendet werden kann. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms zum Speichern von Text- und Binärdaten im Azure-Speicher zu verwenden, und die Daten zugreifen.
+description: Azure Storage ist ein skalierbarer Cloud-speicherlösung, die zum Speichern von unstrukturierter und strukturierter Daten verwendet werden kann. In diesem Artikel wird erläutert, wie Xamarin.Forms zum Speichern von Text- und Binärdaten im Azure-Speicher zu verwenden, und die Daten zugreifen.
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2017
-ms.openlocfilehash: 1f920eb36eab3e451b20aa91734f00cee5ba6485
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/28/2018
+ms.openlocfilehash: 4ecffa0902d186b659e7df07dbcf17053e29c818
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059219"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53814010"
 ---
 # <a name="storing-and-accessing-data-in-azure-storage"></a>Speichern und Zugreifen auf Daten in Azure Storage
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
 
 _Azure Storage ist ein skalierbarer Cloud-speicherlösung, die zum Speichern von unstrukturierter und strukturierter Daten verwendet werden kann. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms zum Speichern von Text- und Binärdaten im Azure-Speicher zu verwenden, und die Daten zugreifen._
-
-## <a name="overview"></a>Übersicht
 
 Azure Storage bietet vier Storage-Dienste:
 
@@ -69,9 +67,6 @@ Der Prozess zur Integration von Azure Storage-Konto in einer Xamarin.Forms-Anwen
 1. Hinzufügen der [Azure Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) der Xamarin.Forms-Anwendung.
 1. Konfigurieren Sie die speicherverbindungszeichenfolge. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure Storage](#connecting).
 1. Hinzufügen `using` Direktiven für die `Microsoft.WindowsAzure.Storage` und `Microsoft.WindowsAzure.Storage.Blob` Namespaces, Klassen, die Azure-Speicher zugegriffen werden.
-
-> [!NOTE]
-> Während dieses Beispiel eine Shared Access-Projekt verwendet wird, unterstützt die Azure Storage-Clientbibliothek jetzt auch aus einem Projekt der portablen Klassenbibliothek (PCL) verarbeitet.
 
 <a name="connecting" />
 
@@ -263,15 +258,10 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 Nach dem Abrufen einer Referenz zur Container, ruft die Methode einen Blob-Verweis für das angegebene Blob ab. Das Blob wird dann gelöscht, mit der `DeleteIfExistsAsync` Methode.
 
-## <a name="summary"></a>Zusammenfassung
-
-In diesem Artikel wird gezeigt, wie Xamarin.Forms zum Speichern von Text- und Binärdaten im Azure-Speicher zu verwenden, und die Daten zugreifen. Azure Storage ist ein skalierbarer Cloud-speicherlösung, die zum Speichern von unstrukturierten und strukturierten Daten verwendet werden kann.
-
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [Azure-Speicher (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
 - [Einführung in Storage](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [Gewusst wie: Verwenden des Blobspeichers mit Xamarin](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
 - [Verwenden von Shared Access Signatures (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-- [Windows Azure-Speicher](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [Windows Azure-Speicher (NuGet)](https://www.nuget.org/packages/WindowsAzure.Storage/)
