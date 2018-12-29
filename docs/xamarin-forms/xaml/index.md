@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2018
-ms.openlocfilehash: adebd5fe7e05d6698a7d69cef56a1d4035b6d8e7
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 9924e588808783fe35dbd830bbc9af288f37e7ea
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563070"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53813959"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -29,7 +29,7 @@ _XAML ist eine deklarative Markupsprache, die zum Definieren von Benutzeroberfl�
 
 ## <a name="xaml-basicsxaml-basicsindexmd"></a>[XAML-Grundlagen](xaml-basics/index.md)
 
-XAML ermöglicht Entwicklern, Benutzeroberflächen in Xamarin.Forms-Anwendungen mit Markup statt Code zu definieren. XAML ist nie in einer Xamarin.Forms-Anwendung erforderlich, aber dabei handelt es sich lässt, häufig ist es visuell kohärente und kompaktere als der entsprechende Code. XAML eignet sich besonders gut für die Verwendung mit der beliebten Model-View-ViewModel (MVVM)-Anwendungsarchitektur: XAML definiert die Sicht, die über datenbindungen, die XAML-basierte ViewModel-Code verknüpft ist.
+XAML ermöglicht Entwicklern, Benutzeroberflächen in Xamarin.Forms-Anwendungen mit Markup statt Code zu definieren. XAML ist nie in einer Xamarin.Forms-Anwendung erforderlich, aber dabei handelt es sich lässt, häufig ist es visuell kohärente und kompaktere als der entsprechende Code. XAML eignet sich besonders gut für die Verwendung mit der beliebten Anwendungsarchitektur von Model-View-ViewModel (MVVM): XAML definiert die Sicht, die über datenbindungen, die XAML-basierte ViewModel-Code verknüpft ist.
 
 ## <a name="xaml-compilationxamlcmd"></a>[XAML-Kompilierung](xamlc.md)
 
@@ -66,3 +66,7 @@ Eine angefügte Eigenschaft ist eine besondere Art von bindbare Eigenschaft in e
 ## <a name="resource-dictionariesresource-dictionariesmd"></a>[Ressourcenverzeichnisse](resource-dictionaries.md)
 
 XAML-Ressourcen sind Definitionen der Objekte, die mehr als einmal verwendet werden können. Ein [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) können Ressourcen in einem zentralen Ort definiert und in einer Xamarin.Forms-Anwendung erneut verwendet werden. In diesem Artikel wird veranschaulicht, wie das Erstellen und nutzen einen `ResourceDictionary`, und das Zusammenführen `ResourceDictionary` in eine andere.
+
+## <a name="loading-xaml-at-runtimeruntime-loadmd"></a>[Laden von XAML zur Laufzeit](runtime-load.md)
+
+XAML geladen und zur Laufzeit mit analysiert werden kann, die [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) Erweiterungsmethoden.

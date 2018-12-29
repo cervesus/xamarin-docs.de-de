@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 24d86827ab93dcf7dfc4da39c4a03a0a2805f332
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8c2086025ccb5fe41b3ffddc9cd650c1e0c81fbc
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107429"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53813984"
 ---
 # <a name="creating-a-service"></a>Erstellen eines Diensts
 
@@ -107,7 +107,7 @@ Wie die Absicht weitergeleitet wird, hängt von der Art des Diensts und erläute
 
 ### <a name="creating-an-intent-filter-for-implicit-intents"></a>Erstellen eine Zielfilter für implizite Intents
 
-Um einen Dienst ein impliziter Intent zuzuordnen, muss eine Android-app einige Metadaten zum Identifizieren der Funktionen des Diensts bereitstellen. Diese Metadaten erfolgt über _Beabsichtigter Filter_. Beabsichtigter Filter enthalten einige Informationen, z. B. eine Aktion oder einen Typ von Daten, die in ein Intent-Objekt zum Starten eines Diensts vorhanden sein müssen. In Xamarin.Android wird im Zielfilter registriert **"androidmanifest.xml"** werden, indem einen Dienst mit der [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). Der folgende Code fügt z. B. einen beabsichtigten Filter mit der Aktion zugeordnete `com.xamarin.DemoService`:
+Um einen Dienst mit impliziter Intent zuzuordnen, muss eine Android-app einige Metadaten zum Identifizieren der Funktionen des Diensts bereitstellen. Diese Metadaten erfolgt über _Beabsichtigter Filter_. Beabsichtigter Filter enthalten einige Informationen, z. B. eine Aktion oder einen Typ von Daten, die in ein Intent-Objekt zum Starten eines Diensts vorhanden sein müssen. In Xamarin.Android wird im Zielfilter registriert **"androidmanifest.xml"** werden, indem einen Dienst mit der [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). Der folgende Code fügt z. B. einen beabsichtigten Filter mit der Aktion zugeordnete `com.xamarin.DemoService`:
 
 ```csharp
 [Service]
