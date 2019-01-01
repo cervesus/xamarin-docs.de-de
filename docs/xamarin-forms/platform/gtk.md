@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 132f31f4c9426dfceeef38f464231d1545f4db50
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dcfcf6c29b0a055c59501d6d95d4f97c16475bb3
+ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115171"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "53815229"
 ---
 # <a name="gtk-platform-setup"></a>GTK#-Plattform-Setup
 
@@ -106,7 +106,7 @@ Um eine GTK#-app hinzufügen, die auf dem Windows-Desktop ausgeführt wird, gehe
 
     ![Ändern Sie den Ausgabetyp des Projekts](gtk-images/win/change-project-output-type.png "ändern Sie den Ausgabetyp des Projekts")
 
-13. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das WPF-Projekt, und wählen Sie **als Startprojekt festlegen**. Drücken Sie F5, um das Programm mit Visual Studio-Debugger auf dem Windows-Desktop ausgeführt werden soll:
+13. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das GTK#-Projekt, und wählen Sie **als Startprojekt festlegen**. Drücken Sie F5, um das Programm mit Visual Studio-Debugger auf dem Windows-Desktop ausgeführt werden soll:
 
     ![GTK#-Spiel Leben](gtk-images/win/gtk-gameoflife.png "GTK#-Spiel Leben")
 
