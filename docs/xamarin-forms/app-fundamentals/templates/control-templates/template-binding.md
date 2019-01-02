@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 13730dce5d4698085abe10cb93da5ba50b87ab01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 49f66164c707f91f298b2e5cb09b35f1767186cf
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106428"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051580"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>Bindung von einer Xamarin.Forms-Steuerelementvorlage
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
 
 _Durch Vorlagenbindungen können Steuerelemente in einer Steuerelementvorlage eine Datenbindung zu öffentlichen Eigenschaften herstellen, sodass Eigenschaftswerte von Steuerelementen in der Steuerelementvorlage leicht angepasst werden können. In diesem Artikel wird veranschaulicht, wie Sie mit Vorlagenbindungen Datenbindungen aus einer Steuerelementvorlage herstellen können._
 

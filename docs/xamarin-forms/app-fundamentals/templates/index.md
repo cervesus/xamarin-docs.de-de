@@ -7,27 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/05/2016
-ms.openlocfilehash: 0a67c03a86c66f4264187dc8cb31a9ee9e552779
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 95f4ef1c5690aad9795181eb57448c9d97b44113
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996690"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057985"
 ---
 # <a name="xamarinforms-templates"></a>Xamarin.Forms-Vorlagen
 
 ## <a name="control-templatescontrol-templatesindexmd"></a>[Steuerelementvorlagen](control-templates/index.md)
 
-Mit Xamarin.Forms-Steuerelementvorlagen können Sie auf einfache Weise Designs für Anwendungsseiten zur Laufzeit entwerfen und überarbeiten.
+Mit Xamarin.Forms-Steuerelementvorlagen können Sie unkompliziert zur Laufzeit Designs für Anwendungsseiten entwerfen und überarbeiten.
 
 ## <a name="data-templatesdata-templatesindexmd"></a>[Datenvorlagen](data-templates/index.md)
 
 Mit Xamarin.Forms-Datenvorlagen können Sie die Darstellung von Daten in unterstützten Steuerelementen definieren.
-
-
-## <a name="related-links"></a>Verwandte Links
-
-- [Introduction to Xamarin.Forms (Einführung in Xamarin.Forms)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Xamarin.Forms Gallery (Beispiel)](https://developer.xamarin.com/samples/FormsGallery/)
-- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/tag/Xamarin.Forms/)
-- [Xamarin.Forms-API-Dokumentation](xref:Xamarin.Forms)

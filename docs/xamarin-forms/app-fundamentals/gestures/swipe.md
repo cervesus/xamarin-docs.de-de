@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 95e95d8849824cd2dc31c2019627cc5adbbefeec
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2e28d3e7035eb570b2053d39cec8b8d91dada6f0
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131524"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059417"
 ---
 # <a name="adding-a-swipe-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Wischbewegungen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)
 
 _Eine Wischbewegung tritt auf, wenn ein Finger in horizontaler oder vertikaler Richtung über den Bildschirm bewegt wird. Diese Bewegung wird oft genutzt, um durch Inhalte zu navigieren. Die Codebeispiele in diesem Artikel stammen aus dem Beispiel [SwipeGesture](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)._
 

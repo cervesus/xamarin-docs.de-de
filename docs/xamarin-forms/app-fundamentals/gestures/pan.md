@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 59e9f4c61bda86faa5a55d70ef91411adb14da6d
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 36f01fb309f174e0ed7c709fb77f133b101ef8e0
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38996805"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061092"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Schwenkbewegungen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PanGesture/)
 
 _Die Schwenkbewegung wird verwendet, um die Bewegung von Fingern um den Bildschirm zu erkennen und diese Bewegung auf den Inhalt zu übertragen. Sie wird mit der `PanGestureRecognizer`-Klasse implementiert. Ein häufiges Szenario für die Schwenkbewegung ist das horizontale und vertikale Schwenken eines Bilds, sodass der gesamte Bildinhalt in einem Anzeigebereich angezeigt werden kann, der kleiner als die Bildabmessungen ist. Dies wird durch Bewegen des Bilds innerhalb des Anzeigebereichs erreicht und in diesem Artikel veranschaulicht._
 
@@ -28,7 +30,7 @@ panGesture.PanUpdated += (s, e) => {
 image.GestureRecognizers.Add(panGesture);
 ```
 
-Dies kann auch wie im folgenden Codebeispiel gezeigt in XAML erreicht werden:
+Dies kann auch wie im folgenden Codebeispiel dargestellt in XAML erreicht werden:
 
 ```xaml
 <Image Source="MonoMonkey.jpg">

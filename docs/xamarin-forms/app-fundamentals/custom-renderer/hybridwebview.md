@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/19/2018
-ms.openlocfilehash: aa060bd16bc0220f6a6026106ff6c8d786daebc1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3b8cf7ec8a42ed031699d8f5e02f32c6eb61458
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105037"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053860"
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementieren eines HybridWebView-Steuerelements
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
 
 _Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der View-Klasse abgeleitet werden, die verwendet wird, um Layout und Steuerelemente einer Anzeige hinzuzufügen. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes HybridWebView-Steuerelement erstellen können. Dadurch wird veranschaulicht, wie Sie plattformspezifische Websteuerelemente erweitern können, sodass diese zulassen, dass C#-Code über JavaScript aufgerufen werden kann._
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: c720b9f38d2a34155face10b75f5f054f3313711
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f59a528916d2cc5efd19ba7c35a7b4f041ecbe09
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131517"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056161"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Automatisierungseigenschaften in Xamarin.Forms
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
 _Xamarin.Forms ermöglicht das Festlegen von Barrierefreiheitswerten auf Benutzeroberflächenelemente, indem angefügte Eigenschaften der AutomationProperties-Klasse verwendet werden, die wiederum native Barrierefreiheitswerte festlegen. In diesem Artikel wird erläutert, wie Sie die AutomationProperties-Klasse verwenden, sodass eine Sprachausgabe über die Elemente auf der Seite sprechen kann._
 

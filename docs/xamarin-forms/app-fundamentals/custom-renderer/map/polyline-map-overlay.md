@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 786f050495d4682b719178f2723c482929544678
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 184aa18ac8c0f27ce92a23b06b9dd0364f977abc
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998719"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050883"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>Markieren einer Route auf einer Karte
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
 
 _In diesem Artikel wird erläutert, wie Sie eine Polylinienüberlagerung zu einer Karte hinzufügen. Eine Polylinienüberlagerung ist eine Reihe verbundener Liniensegmente, die in der Regel verwendet werden, um eine Route auf einer Karte anzuzeigen oder eine andere erforderliche Form zu bilden._
 
@@ -24,11 +26,11 @@ Eine Überlagerung ist eine überlappende Grafik auf einer Karte. Überlagerunge
 
 ![](polyline-map-overlay-images/screenshots.png)
 
-Beim Rendern eines [`Map`](xref:Xamarin.Forms.Maps.Map)-Steuerelements durch eine Xamarin.Forms-App wird in iOS die `MapRenderer`-Klasse instanziiert, wodurch wiederum ein natives `MKMapView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `MapRenderer`-Klasse ein natives `MapView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `MapRenderer`-Klasse eine native `MapControl`-Klasse. Der Renderprozess kann genutzt werden, um plattformspezifische Kartenanpassungen zu implementieren, indem für eine `Map`-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
+Beim Rendern eines [`Map`](xref:Xamarin.Forms.Maps.Map)-Steuerelements durch eine Xamarin.Forms-App wird in iOS die `MapRenderer`-Klasse instanziiert, wodurch wiederum ein natives `MKMapView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `MapRenderer`-Klasse ein natives `MapView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `MapRenderer`-Klasse eine native `MapControl`-Klasse. Der Renderingprozess kann genutzt werden, um plattformspezifische Kartenanpassungen zu implementieren, indem für eine `Map`-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
 1. [Erstellen](#Creating_the_Custom_Map) Sie eine benutzerdefinierte Xamarin.Forms-Karte.
 1. [Nutzen](#Consuming_the_Custom_Map) Sie die benutzerdefinierte Karte über Xamarin.Forms.
-1. [Anpassen](#Customizing_the_Map) der Karte durch Erstellen eines benutzerdefinierten Renderers für die Karte auf jeder Plattform.
+1. [Passen Sie](#Customizing_the_Map) die Karte durch Erstellen eines benutzerdefinierten Renderers für die Karte auf jeder Plattform an.
 
 > [!NOTE]
 > [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) muss vor der Verwendung initialisiert und konfiguriert werden. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).

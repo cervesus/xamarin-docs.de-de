@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: 7fea736b0a04a69fd64100ae1d6bcd42c244359f
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.openlocfilehash: 775ef2a38cf423536072358299ac4f30db974d9a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459849"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056995"
 ---
 # <a name="customizing-an-entry"></a>Anpassen eines Eintrags
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/entry/)
 
 _Durch das Xamarin.Forms-Steuerelement „Entry“ kann eine einzelne Textzeile bearbeitet werden. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Entry-Steuerelement erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können._
 

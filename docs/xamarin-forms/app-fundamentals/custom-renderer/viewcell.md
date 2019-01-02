@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 1e7a96b2f33d7dc89c4373ab612ac3d26692f64e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998998"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060458"
 ---
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
 
 _Eine Xamarin.Forms-ViewCell ist eine Zelle, die einer ListView oder TableView hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für eine ViewCell erstellen können, die in einem Xamarin.Forms-ListView-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in ListView aufgerufen werden._
 

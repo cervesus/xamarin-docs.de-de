@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 8ee9926eb3b726673711141e7c75a68b607d02d3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 22392603e337205dcdd4909dc61b6c22ca2f00b9
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994701"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057969"
 ---
 # <a name="implementing-a-view"></a>Implementieren einer Ansicht
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/)
 
 _Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der View-Klasse abgeleitet werden, die verwendet wird, um Layout und Steuerelemente einer Anzeige hinzuzufügen. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen können, mit dem Sie eine Vorschau eines Videostreams von der Kamera des Geräts anzeigen können._
 

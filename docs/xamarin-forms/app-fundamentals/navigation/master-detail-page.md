@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 25f6cf341fcf47d5dc5320f73855bb2a4e29a9e8
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 3bfb8a10eab1a8a75a3f2048de1ce219df9bde66
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675522"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057664"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Die Klasse MasterDetailPage von Xamarin.Forms
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
 
 _Die MasterDetailPage-Klasse ist eine Xamarin.Forms-Seite, die zwei verwandte Seiten mit Informationen verwaltet. Eine davon ist die Masterseite, die Elemente darstellt, und die andere ist eine Detailseite, die Informationen zu Elementen auf der Masterseite darstellt. In diesem Artikel wird erläutert, wie Sie eine MasterDetailPage-Klasse verwenden und zwischen den Seiten mit Informationen navigieren._
 

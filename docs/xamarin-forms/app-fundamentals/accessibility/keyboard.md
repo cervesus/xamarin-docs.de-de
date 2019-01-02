@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/15/2018
-ms.openlocfilehash: f703dff56d2947c35a9bc76e0eb909bfe9023bac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 69fc1cd146227e464e70c347d3e28d250a7f1346
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131554"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050438"
 ---
 # <a name="keyboard-navigation-in-xamarinforms"></a>Tastaturnavigation in Xamarin.Forms
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
 Einige Benutzer haben möglicherweise Probleme mit der Ausführung von Anwendungen, bei denen die Verwendung passender Zugriffstasten nicht möglich ist. Durch das Festlegen einer Aktivierreihenfolge für Steuerelemente wird die Tastaturnavigation aktiviert und Anwendungsseiten werden entsprechend eingerichtet, Eingaben in einer bestimmten Abfolge zu empfangen.
 

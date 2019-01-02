@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 0511cd1a4cf76368623c56ef53cd98323114f98e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38994675"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058989"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 
 _Die NavigationPage-Klasse stellt eine hierarchische Navigation bereit, bei welcher der Benutzer wie gewünscht in der Vorwärts- und in der Rückwärtsrichtung durch Seiten navigieren kann. Die Klasse implementiert die Navigation als LIFO-Stapel (Last-In-First-out) von Page-Objekten. In diesem Artikel wird gezeigt, wie die NavigationPage-Klasse verwendet werden kann, um die Navigation in einem Stapel von Seiten auszuführen._
 
@@ -184,7 +186,7 @@ Durch Festlegen der [`Label.Text`](xref:Xamarin.Forms.Label.Text)-Eigenschaft we
 
 ### <a name="passing-data-through-a-bindingcontext"></a>Übergeben von Daten mithilfe von BindingContext
 
-Ein alternativer Ansatz zum Übergeben von Daten an eine andere Seite während der Navigation ist das Festlegen der [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft der neuen Seite auf die Daten. Dies wird im folgenden Codebeispiel veranschaulicht:
+Ein alternativer Ansatz zum Übergeben von Daten an eine andere Seite während der Navigation ist das Festlegen des [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der neuen Seite auf die Daten. Dies wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 async void OnNavigateButtonClicked (object sender, EventArgs e)
@@ -202,7 +204,7 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Dieser Code legt die [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft der `SecondPage`-Instanz auf die `Contact`-Instanz fest und navigiert dann zur `SecondPage`.
+Dieser Code legt den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der `SecondPage`-Instanz auf die `Contact`-Instanz fest und navigiert dann zur `SecondPage`.
 
 Die `SecondPage` nutzt dann Datenbindung, um die `Contact`-Instanzdaten anzuzeigen, wie im folgenden XAML-Codebeispiel zu sehen ist:
 

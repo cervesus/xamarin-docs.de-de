@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 619469e4c4fd3901491c20d6215ec0a25c49f69d
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 2754e135bee090ce47796dfa1ae39eed2b5f27c5
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171182"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059586"
 ---
 # <a name="accessing-the-devices-video-library"></a>Zugreifen auf die Videobibliothek des Geräts
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Bei den meisten modernen mobilen Geräte und Desktop-Computern ist es möglich, mit der Kamera des Geräts Videos aufzunehmen. Die Videos, die ein Benutzer erstellt, werden dann als Dateien auf dem Gerät gespeichert. Diese Dateien können aus der Bildbibliothek abgerufen und durch die `VideoPlayer`-Klasse wie jedes andere Video abgespielt werden.
 
