@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 8efd93204b848113e0ed95c8066a5506eb517ac6
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 2dd7efb9f295143775961afb97e70b5f241d1337
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52170948"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056122"
 ---
 # <a name="xamarinforms-string-formatting"></a>Zeichenfolgenformatierung in Xamarin.Forms
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 Manchmal bietet es sich an, Objekte oder Werte mithilfe von Datenbindungen als Zeichenfolgen darzustellen. Sie können den aktuellen Wert eines `Slider` z. B. mithilfe eines `Label` anzeigen lassen. In dieser Datenbindung ist `Slider` die Quelle, und die `Text`-Eigenschaft von `Label` ist das Ziel.
 
@@ -178,7 +180,7 @@ Es gibt nun drei Paare von `Slider`- und `Label`-Elementen, die an dieselbe Quel
 
 Sie fragen sich vielleicht, wie Sie RGB-Werte (Rot, Grün, Blau) im herkömmlichen zweistelligen Hexadezimalformat darstellen können. Diese Integerwerte sind in der `Color`-Struktur nicht direkt verfügbar. Eine Lösung wäre eine Berechnung der Integerwerte der Farbkomponenten im ViewModel. Diese lassen sich anschließend als Eigenschaften verfügbar machen. Anschließend können Sie sie mithilfe der Formatierungsangabe `X2` formatieren.
 
-Es gibt einen weiteren, allgemeineren Ansatz: Sie können *Wertkonverter für Bindungen* schreiben. Diese lernen Sie später im Artikel [**Wertkonverter für Bindungen in Xamarin.Forms**](converters.md) kennen.
+Es gibt einen weiteren, allgemeineren Ansatz: Sie können *Wertkonverter für Bindungen* schreiben. Diese lernen Sie später im Artikel [**Binden von Wertkonvertern**](converters.md) kennen.
 
 Im nächste Artikel erfahren Sie jedoch zunächst mehr über den [**Bindungspfad**](binding-path.md) und darüber, wie Sie damit auf untergeordnete Eigenschaften und Elemente in Sammlungen verweisen.
 

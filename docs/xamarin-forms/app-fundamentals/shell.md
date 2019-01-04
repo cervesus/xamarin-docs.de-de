@@ -6,13 +6,13 @@ ms.assetid: 1A674212-72DB-4AA4-B626-A4EC135AD1A0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2018
-ms.openlocfilehash: 933368f7ca1435ece4f20945b2f8e905f7584217
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 12/11/2018
+ms.openlocfilehash: 422311c766584cbd27d0ab0c42adee042e9aac3e
+ms.sourcegitcommit: 408b78dd6eded4696469e316af7922a5991f2211
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899383"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53246294"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms-Shell
 
@@ -50,7 +50,7 @@ Innerhalb jeder `ContentPage` können zusätzliche `ContentPage`-Instanzen zum N
 
 ## <a name="bootstrapping-a-shell-application"></a>Bootstrapping für eine Shell-Anwendung
 
-Der Bootstrap-Vorgang wird für eine Shell-Anwendung durchgeführt, indem die Eigenschaft `MainPage` der `App`-Klasse auf eine neue `Shell`-Instanz festgelegt wird:
+Der Bootstrap-Vorgang wird für eine Shell-Anwendung durchgeführt, indem die Eigenschaft `MainPage` der `App`-Klasse auf eine Instanz einer Shelldatei festgelegt wird:
 
 ```csharp
 namespace TailwindTraders.Mobile
@@ -62,13 +62,13 @@ namespace TailwindTraders.Mobile
             InitializeComponent();
 
             Forms.SetFlags("Shell_Experimental");
-            MainPage = new Shell();
+            MainPage = new TheShell();
         }
     }
 }
 ```
 
-Die `Shell`-Klasse ist ein XAML-Datei, die die visuelle Struktur der Anwendung beschreibt.
+Die `TheShell`-Klasse ist ein XAML-Datei, die die visuelle Struktur der Anwendung beschreibt.
 
 > [!IMPORTANT]
 > Shell ist derzeit experimentell und kann nur verwendet werden, indem `Forms.SetFlags("Shell_Experimental");` entweder zu Ihrer `App`-Klasse hinzugefügt wird, bevor Sie die `Shell`-Instanz erstellen, oder zu Ihrem Plattformprojekt, bevor Sie die `Forms.Init`-Methode aufrufen.
@@ -83,13 +83,13 @@ Eine Shelldatei besteht aus drei hierarchischen Elementen:
 
 Keines dieser Elemente repräsentiert eine Benutzeroberfläche, sondern die Organisation der visuellen Struktur der Anwendung. Shell wird diese Elemente übernehmen und die Benutzeroberfläche für die Navigation der Inhalte erstellen.
 
-Die folgende XAML zeigt ein einfaches Beispiel für eine `Shell`-Datei:
+Die folgende XAML zeigt ein einfaches Beispiel für eine Shelldatei:
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TailwindTraders"
-       x:Class=" TailwindTraders.Shell"
+       xmlns:local="clr-namespace:TailwindTraders.Mobile.Features.Shell"
+       x:Class="TailwindTraders.Mobile.Features.Shell.TheShell"
        Title="TailwindTraders">
     <ShellItem Title="Home">
         <ShellSection>
@@ -97,7 +97,7 @@ Die folgende XAML zeigt ein einfaches Beispiel für eine `Shell`-Datei:
                 <local:HomePage />
             </ShellContent>
         </ShellSection>
-    <ShellItem>
+    </ShellItem>
 </Shell>
 ```
 
@@ -117,8 +117,8 @@ Die Anzahl der Elemente im Flyout kann erhöht werden, indem der Shelldatei weit
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TailwindTraders"
-       x:Class=" TailwindTraders.Shell"
+       xmlns:local="clr-namespace:TailwindTraders.Mobile.Features.Shell"
+       x:Class="TailwindTraders.Mobile.Features.Shell.TheShell"
        Title="TailwindTraders">
     <ShellItem Title="Home">
         <ShellSection>
@@ -349,7 +349,7 @@ Registerkarten können mit XAML-Stilen oder durch die Bereitstellung eines benut
 
 Shell bietet eine URI-basierte Navigation. URIs bieten ein verbessertes Navigationserlebnis, das die Navigation zu jeder Seite in der Anwendung ermöglicht, ohne einer festgelegten Navigationshierarchie folgen zu müssen. Darüber hinaus bietet es auch die Möglichkeit, rückwärts zu navigieren, ohne alle Seiten des Navigationsstapels aufrufen zu müssen.
 
-Diese URI-basierte Navigation wird mit Routen durchgeführt. Dies sind URI-Segmente, die zur Navigation innerhalb der Anwendung verwendet werden. Die `Shell`-Datei muss ein Routenschema, einen Routenhost und eine Route deklarieren:
+Diese URI-basierte Navigation wird mit Routen durchgeführt. Dies sind URI-Segmente, die zur Navigation innerhalb der Anwendung verwendet werden. Die Shelldatei muss ein Routenschema, einen Routenhost und eine Route deklarieren:
 
 ```xaml
 <Shell ...
@@ -362,9 +362,9 @@ Diese URI-basierte Navigation wird mit Routen durchgeführt. Dies sind URI-Segme
 
 In Kombination bilden die Eigenschaftswerte `RouteScheme`, `RouteHost` und `Route` den `app://www.microsoft.com/tailwindtraders`-Stamm-URI.
 
-Jedes Element der `Shell`-Klasse kann auch eine Routeneigenschaft definieren, die für die programmatische Navigation verwendet werden kann.
+Jedes Element der Shelldatei kann auch eine Routeneigenschaft definieren, die für die programmatische Navigation verwendet werden kann.
 
-Im `Shell`-Konstruktor oder an jedem anderen Ort, der vor dem Aufruf einer Route ausgeführt wird, können zusätzliche Routen explizit für alle Seiten registriert werden, die nicht durch ein Shellelement repräsentiert werden (z.B. `MenuItem`-Instanzen):
+Im Shelldatei-Konstruktor oder an jedem anderen Ort, der vor dem Aufruf einer Route ausgeführt wird, können zusätzliche Routen explizit für alle Seiten registriert werden, die nicht durch ein Shellelement repräsentiert werden (z.B. `MenuItem`-Instanzen):
 
 ```csharp
 Routing.RegisterRoute("productcategory", typeof(ProductCategoryPage));
@@ -435,7 +435,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 Die `ShellNavigatingEventArgs`-Klasse bietet folgende Eigenschaften:
 
-| Eigenschaft | Typ | Beschreibung  |
+| Eigenschaft | Typ | Beschreibung |
 |---|---|---|
 | Aktuell | `ShellNavigationState` | Der URI der aktuellen Seite. |
 | Quelle | `ShellNavigationState` | Der URI, der darstellt, woher die Navigation stammt. |
@@ -447,7 +447,7 @@ Darüber hinaus bietet die `ShellNavigatingEventArgs`-Klasse eine `Cancel`-Metho
 
 Die `ShellNavigatedEventArgs`-Klasse bietet folgende Eigenschaften:
 
-| Eigenschaft | Typ | Beschreibung  |
+| Eigenschaft | Typ | Beschreibung |
 |---|---|---|
 | Aktuell | `ShellNavigationState` | Der URI der aktuellen Seite. |
 | Vorheriges| `ShellNavigationState` | Der URI der vorherigen Seite. |

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 0090ec798e8d7b1dfb9bd8e25f09d71ec0353b45
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 69e5d74bf9beea02ca8accf6e1f8eb1ccaa5c9fa
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171910"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061958"
 ---
 # <a name="creating-the-platform-video-players"></a>Erstellen von Plattformen für Videoplayer
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Die [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)-Projektmappe enthält den gesamten Code, der in einen Videoplayer für Xamarin.Forms implementiert werden soll. Außerdem beinhaltet sie mehrere Seiten, auf denen gezeigt wird, wie der Videoplayer innerhalb einer Anwendung zu verwenden ist. Der gesamte `VideoPlayer`-Code und die betreffenden Plattformrenderer sind in einem Projektordner mit dem Namen `FormsVideoLibrary` gespeichert und verwenden den Namespace `FormsVideoLibrary`. Dies vereinfacht das Kopieren der Dateien in Ihre Anwendung sowie das Herstellen von Verweisen auf die Klassen.
 
@@ -460,7 +462,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-Damit das Video abgespielt werden kann, wird eine weitere Eigenschaft benötigt – die wichtige `Source`-Eigenschaft, die auf eine Videodatei verweist. Im nächsten Artikel ([Playing a Web Video (Wiedergeben eines Webvideos)](web-videos.md)) wird beschrieben, wie die `Source`-Eigenschaft implementiert wird.
+Damit das Video abgespielt werden kann, wird eine weitere Eigenschaft benötigt. Dies ist die wichtige `Source`-Eigenschaft, die auf eine Videodatei verweist. Im nächsten Artikel ([Playing a Web Video (Wiedergeben eines Webvideos)](web-videos.md)) wird beschrieben, wie die `Source`-Eigenschaft implementiert wird.
 
 
 ## <a name="related-links"></a>Verwandte Links

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 4ce04f21a3e520fea9da5d538fb7cc0ac098ad31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56284f1d3c5fec479badf91852acba2bf538bddd
+ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119837"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53411738"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>App-Gruppen-Funktionen in Xamarin.iOS
 
@@ -34,12 +34,12 @@ Gehen Sie zum Erstellen einer neuen App-Gruppe wie folgt vor:
 
 1.  Öffnen Sie im  [iOS Developer Center](https://developer.apple.com/account/) von Apple über  **Account**  Ihr Konto, und melden Sie sich an.
 2.  Klicken Sie auf **Certificates, IDs & Profiles** (Zertifikate, Bezeichner & Profile).
-3.  Wählen Sie unter  **Identifier**  (Bezeichner) die Option  **App Groups**  (App-Gruppen) aus, und klicken Sie auf die Schaltfläche  **+** , um eine neue Gruppe zu erstellen.
+3.  Wählen Sie unter **Identifier** (Bezeichner) **App Groups** (App-Gruppen) aus, und klicken Sie auf die Schaltfläche **+**, um eine neue Gruppe erstellen.
 4.  Geben Sie einen  **Namen**  und einen  **Bezeichner**  für die neue Gruppe ein, und klicken Sie auf die Schaltfläche  **Continue**  (Weiter): 
    
     ![Hinzufügen von Details zu App-Gruppen](app-groups-capabilities-images/image52.png)
 
-5.  Klicken Sie zum Erstellen der Gruppe auf die Schaltfläche  **Register**  (Registrieren) und anschließend auf  **Done (Fertig)** , um zur Liste der registrierten App-Gruppen zurückzukehren.
+5.  Klicken Sie zum Erstellen der Gruppe auf die Schaltfläche **Register** (Registrieren) und anschließend auf **Done** (Fertig), um zur Liste der registrierten App-Gruppen zurückzukehren.
 
 ## <a name="configure-an-app-to-use-app-groups"></a>Konfigurieren einer App zur Verwendung mit App-Gruppen
 
@@ -48,15 +48,15 @@ Nach dem Erstellen der App-Gruppe müssen Sie die App-IDs erstellen, durch die A
 Führen Sie folgende Schritte aus:
 
 1.  Melden Sie sich im  [iOS Developer Center](https://developer.apple.com/account/) mit Ihrem Apple-Entwicklerkonto an.
-2.  Klicken Sie im Menü  **Program Resources**  (Programmressourcen) auf  **Certificates, IDs & Profiles** (Zertifikate, Bezeichner & Profile).
-3.  Wählen Sie unter  **Identifier**  (Bezeichner) die Option  **App IDs**  (App-IDs) aus, und klicken Sie auf die Schaltfläche  **+** , um eine neue ID zu erstellen.
+2.  Klicken Sie im Menü **Program Resources** (Programmressourcen) auf **Certificates, IDs & Profiles** (Zertifikate, Bezeichner & Profile).
+3.  Wählen Sie unter **Identifier** (Bezeichner) **App IDs** (App-IDs) aus, und klicken Sie auf die Schaltfläche **+**, um eine neue ID zu erstellen.
 4.  Geben Sie unter „Name“ einen Namen für die App-ID und unter „Explicit App ID“ eine explizite App-ID an.
-5.  Aktivieren Sie unter  **App Services**  (App-Dienste) das Kontrollkästchen  **App Groups** (App-Gruppen), und klicken Sie anschließend auf die Schaltfläche „Continue“ (Weiter):
+5.  Aktivieren Sie unter **App Services** (App-Dienste) das Kontrollkästchen **App Groups** (App-Gruppen), und klicken Sie anschließend auf die Schaltfläche „Continue“ (Weiter):
 
     ![Hinzufügen von App-Diensten zu App-Gruppen](app-groups-capabilities-images/image53.png)
 
 6.  Überprüfen Sie die Einstellungen, und klicken Sie auf die Schaltfläche  **Register**  (Registrieren) zum Erstellen der App-ID.
-7.  Klicken Sie auf die Schaltfläche  **Done**  (Fertig), um zur Liste der registrierten App-IDs zurückzukehren.
+7.  Klicken Sie auf die Schaltfläche **Done** (Fertig), um zur Liste der registrierten App-IDs zurückzukehren.
 8.  Wählen Sie die neu erstellte App-ID aus der Liste aus, und klicken Sie auf die Schaltfläche  **Edit**  (Bearbeiten):
 
     ![Auswählen einer App-ID aus der Liste](app-groups-capabilities-images/image54.png)
@@ -69,7 +69,7 @@ Führen Sie folgende Schritte aus:
 
     ![Hinzufügen von App-Gruppe](app-groups-capabilities-images/image56.png)
 
-11. Klicken Sie zuerst auf die Schaltfläche  **Assign**  (Zuweisen) und anschließend auf  **Done**  (Fertig), um zur Liste der registrierten App-IDs zurückzukehren.
+11. Klicken Sie zuerst auf die Schaltfläche **Assign** (Zuweisen) und anschließend auf **Done** (Fertig), um zur Liste der registrierten App-IDs zurückzukehren.
 12. Wiederholen Sie diese Schritte für alle Apps (oder Erweiterungen), die mit dieser App-Gruppe verwendet werden sollen.
 
 ## <a name="next-steps"></a>Nächste Schritte

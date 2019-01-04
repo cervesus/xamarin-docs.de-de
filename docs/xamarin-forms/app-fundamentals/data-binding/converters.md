@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 28892692133020de1fa5a6eb007bb3f9bcf2612b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4594da09d48a0888a88cbce9ab135a007eb6f4cd
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997479"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054330"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Bindungswertkonverter für Xamarin.Forms
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 Datenbindungen wandeln Daten in der Regel von einer Quelleigenschaft in eine Zieleigenschaft und in einigen Fällen von der Zieleigenschaft in die Quelleigenschaft um. Diese Umwandlung ist einfach, wenn die Quell- und Zieleigenschaften vom gleichen Typ sind oder wenn ein Typ über eine implizite Konvertierung in den anderen Typ konvertiert werden kann. Wenn dies nicht der Fall ist, muss eine Typkonvertierung durchgeführt werden.
 

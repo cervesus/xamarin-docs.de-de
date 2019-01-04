@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 09fe3587e4e435383822e50bd12616747b807f82
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7eea0a4eba201d7332c5e3e5222729bcb5e14a07
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108456"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054060"
 ---
 # <a name="localization"></a>Lokalisierung
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
 
 _Xamarin.Forms-Apps können mithilfe von .NET-Ressourcendateien lokalisiert werden._
 
@@ -73,7 +75,7 @@ In der Projektmappenstruktur werden die Dateien miteinander verknüpft. Die RESX
 
 Wenn stark typisierte Verweise auf Zeichenfolgen erstellt werden, gelten sie standardmäßig für die Assembly als `internal`. Dies liegt daran, dass das Standardbuildtool für RESX-Dateien die **.designer.cs**-Datei zusammen mit `internal`-Eigenschaften erstellt.
 
-Wählen Sie die **AppResources.resx**-Datei aus, und rufen Sie das **Eigenschaftenpad** ab, um zu prüfen, an welcher Stelle das Buildtool konfiguriert ist. Auf dem folgenden Screenshot sehen Sie das **benutzerdefinierte ResXFileCodeGenerator-Tool**.
+Wählen Sie die **AppResources.resx**-Datei aus, und rufen Sie das **Eigenschaftenpad** ab, um zu prüfen, an welcher Stelle das Buildtool konfiguriert ist. Auf dem folgenden Screenshot sehen Sie das **benutzerdefinierte Tool ResXFileCodeGenerator**.
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -86,7 +88,7 @@ Wählen Sie die **AppResources.resx**-Datei aus, und rufen Sie das **Eigenschaft
 
 -----
 
-Wenn die stark typisierten Zeichenfolgeneigenschaften `public` sein sollen, müssen Sie die Konfiguration wie auf dem folgenden Screenshot veranschaulicht auf das **benutzerdefinierte PublicResXFileCodeGenerator-Tool** festlegen:
+Wenn die stark typisierten Zeichenfolgeneigenschaften `public` sein sollen, müssen Sie die Konfiguration manuell auf das **benutzerdefinierte Tool PublicResXFileCodeGenerator** festlegen, wie es im folgenden Screenshot gezeigt ist:
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -556,7 +558,7 @@ namespace UsingResxLocalization.Android
 Sobald dieser Code zum Android-Anwendungsprojekt hinzugefügt wurde, können übersetzte Zeichenfolgen automatisch angezeigt werden.
 
 > [!NOTE]
->**WARNUNG:** Wenn die übersetzten Zeichenfolgen zwar in Ihren RELEASE-Builds für Android funktionieren, aber nicht während des Debuggens, klicken Sie mit der rechten Maustaste auf das **Android-Projekt**, navigieren Sie zu **Optionen > Build > Android-Build**, und vergewissern Sie sich, dass das Kontrollkästchen für **Schnelle Assemblybereitstellung** NICHT aktiviert ist. Wenn diese Option aktiviert ist, treten Probleme beim Laden von Ressourcen auf. Sie sollten sie daher nicht verwenden, wenn Sie lokalisierte Apps testen.
+>️ **WARNUNG:** Wenn die übersetzten Zeichenfolgen zwar in Ihren RELEASE-Builds für Android funktionieren, aber nicht während des Debuggens, klicken Sie mit der rechten Maustaste auf das **Android-Projekt**, navigieren Sie zu **Optionen > Build > Android-Build**, und vergewissern Sie sich, dass das Kontrollkästchen für **Schnelle Assemblybereitstellung** NICHT aktiviert ist. Wenn diese Option aktiviert ist, treten Probleme beim Laden von Ressourcen auf. Sie sollten sie daher nicht verwenden, wenn Sie lokalisierte Apps testen.
 
 Weitere Informationen zur Android-Lokalisierung finden Sie unter [Android Localization (Android-Lokalisierung)](~/android/app-fundamentals/localization.md).
 

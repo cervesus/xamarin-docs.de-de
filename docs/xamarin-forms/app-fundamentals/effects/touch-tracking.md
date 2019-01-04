@@ -6,15 +6,17 @@ ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/01/2017
-ms.openlocfilehash: 0a5e2c1a7a7807da91fd98e617467ea251a25bc0
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 12/14/2018
+ms.openlocfilehash: 9b5150eff0290ef5858198459108699be9f9b273
+ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527403"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53411764"
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen über Effekte
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
 
 _Effekte können Ereignisse definieren und auslösen, die Änderungen in der zugrunde liegenden nativen Ansicht signalisieren. In diesem Artikel wird beschrieben, wie Sie eine umfassende Multitouchverfolgung implementieren und Ereignisse generieren, die eine Touchaktivität signalisieren._
 
@@ -352,6 +354,9 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 
 Die `TouchRecognizer`-Klasse ähnelt der Android-Klasse `TouchEffect` weitestgehend.
 
+> [!IMPORTANT]
+> Bei vielen der Ansichten in `UIKit` ist der Toucheffekt nicht standardmäßig aktiviert. Der Toucheffekt kann aktiviert werden, indem `view.UserInteractionEnabled = true;` zur Überschreibung `OnAttached` in der `TouchEffect`-Klasse im iOS-Projekt hinzugefügt wird. Dies sollte nach dem Abrufen der `UIView` geschehen, die dem Element entspricht, dem der Effekt angefügt wird.
+
 ## <a name="putting-the-touch-effect-to-work"></a>Einsetzen des Toucheffekts
 
 Das [**TouchTrackingEffectDemos**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)-Programm enthält fünf Seiten, die den Touchverfolgungseffekt auf häufig auftretende Tasks untersuchen.
@@ -379,7 +384,7 @@ void AddBoxViewToLayout()
 }
 ```
 
-Der Ereignishandler `TouchAction` verarbeitet zwar alle Touchereignisse für alle `BoxView`-Elemente, muss dabei aber vorsichtig sein. Er kann nicht zwei Finger auf einer `BoxView` zulassen, da das Programm nur Ziehbewegungen implementiert und die beiden Finger einander beeinträchtigen würden. Aus diesem Grund definiert die Seite eine eingebettete Klasse für jeden Finger, der gerade verfolgt wird:
+Der Ereignishandler `TouchAction` verarbeitet zwar alle Touchereignisse für alle `BoxView`-Elemente, muss dabei aber vorsichtig sein: Er kann nicht zwei Finger auf einer `BoxView` zulassen, da das Programm nur Ziehbewegungen implementiert und die beiden Finger einander beeinträchtigen würden. Aus diesem Grund definiert die Seite eine eingebettete Klasse für jeden Finger, der gerade verfolgt wird:
 
 ```csharp
 class DragInfo

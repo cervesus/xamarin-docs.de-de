@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 5ffc167b1e5695663dff6005f3d7e0ba0ea958db
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 0c63e33309802f0945ad94a858af45f6b29b2cc4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172105"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050778"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms-Bindungspfad
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 In allen vorherigen Datenbindungsbeispielen wurde die [`Path`](xref:Xamarin.Forms.Binding.Path)-Eigenschaft der `Binding`-Klasse (bzw. die [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path)-Eigenschaft der `Binding`-Markuperweiterung) auf eine einzelne Eigenschaft festgelegt. Es ist tatsächlich möglich, `Path` auf eine *untergeordnete Eigenschaft* (die Eigenschaft einer Eigenschaft) oder auf einen Collectionmember festzulegen.
 

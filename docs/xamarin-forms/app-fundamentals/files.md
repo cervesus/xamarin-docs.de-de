@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 87084a0ccc2970f56e7ef7a6d2f4c59c49032aa0
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 93218289cefe26c523bf14721202f7ec4743f022
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527364"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057612"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Dateiverarbeitung in Xamarin.Forms
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
 
 _Die Dateiverarbeitung mit Xamarin.Forms kann mit Code in einer .NET Standard-Bibliothek oder mithilfe eingebetteter Ressourcen erfolgen._
 
@@ -62,15 +64,15 @@ Diese Vorgänge werden in der Beispiel-App veranschaulicht, die eine Seite enth�
 
 ## <a name="loading-files-embedded-as-resources"></a>Laden von als Ressourcen eingebetteten Dateien
 
-Wenn Sie eine Datei in eine **.NET Standard**-Assembly einbetten möchten, müssen Sie eine Datei erstellen oder hinzufügen und sicherstellen, dass **Buildaktion** auf „EmbeddedResource“ festgelegt ist.
+Wenn Sie eine Datei in eine **.NET Standard**-Assembly einbetten möchten, müssen Sie eine Datei erstellen oder hinzufügen und sicherstellen, dass für den Buildvorgang **EmbeddedResource** festgelegt ist.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Buildaktion auf „EmbeddedResource“ festlegen](files-images/vs-embeddedresource-sml.png "Buildaktion auf „EmbeddedResource“ festlegen")](files-images/vs-embeddedresource.png#lightbox "Buildaktion auf „EmbeddedResource“ festlegen")
+[![Buildvorgang auf „EmbeddedResource“ festlegen](files-images/vs-embeddedresource-sml.png "Buildvorgang auf „EmbeddedResource“ festlegen")](files-images/vs-embeddedresource.png#lightbox "Buildvorgang auf „EmbeddedResource“ festlegen")
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![In PCL eingebettete Textdatei, Buildaktion auf „EmbeddedResource“ festlegen](files-images/xs-embeddedresource-sml.png "Buildaktion auf „EmbeddedResource“ festlegen")](files-images/xs-embeddedresource.png#lightbox "Buildaktion auf „EmbeddedResource“ festlegen")
+[![In PCL eingebettete Textdatei, Buildvorgang auf „EmbeddedResource“ festlegen](files-images/xs-embeddedresource-sml.png "Buildvorgang auf „EmbeddedResource“ festlegen")](files-images/xs-embeddedresource.png#lightbox "Buildvorgang auf „EmbeddedResource“ festlegen")
 
 -----
 

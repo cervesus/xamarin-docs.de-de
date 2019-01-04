@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 03dbaa36cc1fa4a6a169f9456e0fd5b0fdc0d295
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 0e8b727fb520b6901bf397c9cfb67947897cbc8b
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563939"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056958"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms-Bindungsmodus
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 Im [vorherigen Artikel](basic-bindings.md) hatten die Seiten **Alternative Code Binding** (Alternative Codebindung) und **Alternative XAML Binding** (Alternative XAML-Bindung) ein `Label`, dessen `Scale`-Eigenschaft an die `Value`-Eigenschaft eines `Slider` gebunden war. Da der anfängliche Wert des `Slider` 0 (null) ist, wurde die `Scale`-Eigenschaft des `Label` auf 0 (null) statt auf 1 festgelegt, und das `Label` wurde nicht mehr angezeigt.
 
@@ -112,7 +114,7 @@ Die Seite **Simple Color Selector** (Einfache Farbauswahl) veranschaulicht die V
 
 Die ViewModel-Klasse ist die Datenbindungsquelle. Die ViewModel-Klasse definiert *keine* bindbaren Eigenschaften. Sie implementiert aber einen Benachrichtigungsmechanismus, über den die Bindungsinfrastruktur benachrichtigt wird, wenn sich der Wert einer Eigenschaft ändert. Diese Benachrichtigungsmechanismus ist die [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)-Schnittstelle, die eine einzige Eigenschaft mit dem Namen [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) definiert. Eine Klasse, die diese Schnittstelle implementiert, löst das Ereignis aus, wenn sich der Wert einer ihrer öffentlichen Eigenschaften ändert. Das Ereignis muss nicht ausgelöst werden, wenn sich die Eigenschaft nicht ändert. (Die `INotifyPropertyChanged`-Schnittstelle wird auch von `BindableObject` implementiert, und ein `PropertyChanged`-Ereignis wird ausgelöst, wenn sich der Wert einer bindbaren Eigenschaft ändert.)
 
-Die `HslColorViewModel`-Klasse definiert fünf Eigenschaften: Die Eigenschaften `Hue`, `Saturation`, `Luminosity` und `Color` sind miteinander verwandt. Wenn sich der Wert einer der drei Farbkomponenten ändert, wird die `Color`-Eigenschaft neu berechnet, und für alle vier Eigenschaften werden `PropertyChanged`-Ereignisse werden ausgelöst:
+Die `HslColorViewModel`-Klasse definiert fünf Eigenschaften: Die Eigenschaften `Hue`, `Saturation`, `Luminosity`und `Color` sind miteinander verwandt. Wenn sich der Wert einer der drei Farbkomponenten ändert, wird die `Color`-Eigenschaft neu berechnet, und für alle vier Eigenschaften werden `PropertyChanged`-Ereignisse werden ausgelöst:
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -256,7 +258,7 @@ Die XAML-Datei **Simple Color Selector** (Einfache Farbauswahl) instanziiert die
 </ContentPage>
 ```
 
-Die Ansichten `BoxView`, `Label` und `Slider` erben den Bindungskontext von `Grid`. All diese Ansichten sind Bindungsziele, die auf Quelleigenschaften in ViewModel verweisen. Für die `Color`-Eigenschaften der `BoxView`-Klasse und die `Text`-Eigenschaft des `Label` sind die Datenbindungen `OneWay`: Die Eigenschaften in der Ansicht werden mithilfe der Eigenschaften in der ViewModel-Klasse festgelegt.
+Die Ansichten `BoxView`, `Label` und `Slider` erben den Bindungskontext von `Grid`. All diese Ansichten sind Bindungsziele, die auf Quelleigenschaften in ViewModel verweisen. Für die `Color`-Eigenschaft der `BoxView`-Klasse und die `Text`-Eigenschaft des `Label` sind die Datenbindungen `OneWay`: Die Eigenschaften in der Ansicht werden mithilfe der Eigenschaften in der ViewModel-Klasse festgelegt.
 
 Die `Value`-Eigenschaft des `Slider` ist jedoch `TwoWay`. Dadurch kann jedes `Slider`-Steuerelement über die ViewModel-Klasse festgelegt werden, und die ViewModel-Klasse kann über jedes `Slider`-Steuerelement festgelegt werden.
 
@@ -416,7 +418,7 @@ Jede Anwendungseinstellung ist eine Eigenschaft, die im Xamarin.Forms-Eigenschaf
 
 Die `SetProperty`-Methode in der Klasse macht noch mehr: Sie vergleicht den Wert, auf den die Eigenschaft festgelegt wird, mit dem Wert, der als Feld gespeichert wurde, und ruft `OnPropertyChanged` nur dann auf, wenn die Werte nicht übereinstimmen.
 
-Die `SampleSettingsViewModel`-Klasse definiert zwei Eigenschaften für die Hintergrundfarbe: The `BackgroundNamedColor`-Eigenschaft weist den Typ `NamedColor` auf. Dies ist eine Klasse, die auch im Beispiel **Data Binding Demos** (Demos zur Datenbindung) enthalten ist. Die `BackgroundColor`-Eigenschaft weist den Typ `Color` auf und kann von der `Color`-Eigenschaft des `NamedColor`-Objekts abgerufen werden.
+Die `SampleSettingsViewModel`-Klasse definiert zwei Eigenschaften für die Hintergrundfarbe: Die `BackgroundNamedColor`-Eigenschaft weist den Typ `NamedColor` auf. Dies ist eine Klasse, die auch im Beispiel **Data Binding Demos** (Demos zur Datenbindung) enthalten ist. Die `BackgroundColor`-Eigenschaft weist den Typ `Color` auf und kann von der `Color`-Eigenschaft des `NamedColor`-Objekts abgerufen werden.
 
 Die `NamedColor`-Klasse nutzt die .NET-Reflektion, um alle statischen öffentlichen Felder in der Xamarin.Forms-`Color`-Struktur aufzuführen und sie mitsamt ihrer Namen in einer Collection zu speichern, auf die über die statische Eigenschaft `All` zugegriffen werden kann:
 
