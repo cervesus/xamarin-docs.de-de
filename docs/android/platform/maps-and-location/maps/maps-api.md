@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 8df8a4f5e59675164e7d06b682c61094078edc4f
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: db442f45c615b680264e79262f62062eb6a6bfd5
+ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171039"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012294"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>Verwenden die Google Maps-API in Ihrer Anwendung
 
@@ -45,7 +45,7 @@ Der erste Schritt ist, rufen Sie einen Google Maps-API-Schlüssel (Beachten Sie,
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Die Google Play-Dienste SDK installieren
 
-Google Play Services ist eine Technologie von Google, mit dem Android-Anwendungen auf verschiedenen Google-Features wie z. B. Google +, In-App-Abrechnung und Zuordnungen nutzen zu können. Diese Funktionen sind auf Android-Geräten zugegriffen werden kann, als Hintergrunddienste, f, die in enthalten sind die [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en).
+Google Play Services ist eine Technologie von Google, mit dem Android-Anwendungen auf verschiedenen Google-Features wie z. B. Google +, In-App-Abrechnung und Zuordnungen nutzen zu können. Diese Funktionen sind auf Android-Geräten zugegriffen werden kann, als Hintergrunddienste, die in enthalten sind die [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en).
 
 Android-Anwendungen interagieren Sie mit Google Play-Dienste über die Google Play Services-Clientbibliothek. Diese Bibliothek enthält die Schnittstellen und Klassen für die einzelnen Dienste wie Karten. Das folgende Diagramm zeigt die Beziehung zwischen einem Android-Anwendung und die Google Play-Dienste:
 
@@ -236,7 +236,7 @@ Es gibt fünf verschiedene Typen von Karten über die Google Maps-API verfügbar
 
 Die folgende Abbildung zeigt drei der verschiedenen Typen von Karten, die von links nach rechts (normal, Hybrid, Gelände):
 
-[![Drei Beispielscreenshots zuordnen: Normal, Hybrid- und Gelände](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
+[![Drei zuordnen Beispielscreenshots: Normal oder als Hybrid- bzw. Gelände](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 Die `GoogleMap.MapType` Eigenschaft wird verwendet, um festzulegen oder zu ändern, welcher Typ von Karte angezeigt wird. Der folgende Codeausschnitt zeigt, wie Sie eine Satelliten-Zuordnung anzuzeigen.
 
