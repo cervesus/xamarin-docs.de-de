@@ -1,5 +1,5 @@
 ---
-title: Unterstützung von Xamarin.Mac
+title: Unterstützung für Xamarin.Mac-Erweiterungen
 description: Dieses Dokument beschreibt die Xamarin.Mac-Unterstützung für Finder, Freigabe und heute Erweiterungen. Es werden Einschränkungen und bekannte Probleme, Links zu einer exemplarischen Vorgehensweise und Beispiel-app, und enthält Tipps zum Arbeiten mit Erweiterungen.
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 60b981a764a2656210730ae0602ff32dc580cd0a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0f4d6bb042f8bc8d48b45d7148984a53e3ce3437
+ms.sourcegitcommit: e3e851080e6ea0b77e355487a61348d8e0419b09
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117563"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54060069"
 ---
-# <a name="xamarinmac-extension-support"></a>Unterstützung von Xamarin.Mac
+# <a name="xamarinmac-extension-support"></a>Unterstützung für Xamarin.Mac-Erweiterungen
 
-In der Vorschau von Xamarin.Mac 2.10 wurde Unterstützung für mehrere MacOS-Erweiterungspunkte hinzugefügt:
+In Xamarin.Mac 2.10 wurde Unterstützung für mehrere MacOS-Erweiterungspunkte hinzugefügt:
 
 - Finder
 - Freigeben
@@ -59,10 +59,10 @@ Ein Beispiel für Xamarin.Mac-Projekt mit kleinen, funktionstüchtige Beispiele 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel verfügt über einen kurzen Blick auf die Arbeit mit einem Xamarin.Max Version 2.10 (und höher) der app-Erweiterungen ausgeführt werden.
+In diesem Artikel verfügt über einen kurzen Blick auf die Arbeit mit Erweiterungen in einer Xamarin.Mac-Version 2.10 (und höher)-app erstellt.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
-- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [macOS-Eingaberichtlinien](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)
