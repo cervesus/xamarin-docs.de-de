@@ -6,13 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/06/2018
-ms.openlocfilehash: 070602f05170f7d37a38b184ecd3dbb7864ac73d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 01/08/2018
+ms.openlocfilehash: 3f0156926f8d7a31e2e80318d7b05a909f158653
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118759"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207725"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms-Plattformfeatures
 
@@ -20,11 +20,7 @@ Xamarin.Forms ist erweiterbar und können Sie umfassen plattformspezifischen Fea
 
 ## <a name="androidandroidindexmd"></a>[Android](android/index.md)
 
-Dieses Handbuch beschreibt, wie Sie Material Design zu implementieren, durch die Aktualisierung von vorhandenen Xamarin.Forms-Android-apps.
-
-## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Anwendungsindizierung und Deep Linking](deep-linking.md)
-
-Anwendungsindizierung ermöglicht Anwendungen, die andernfalls vergessen werden würde, nach ein Paar verwendet, um gefragt zu bleiben, indem Sie in den Suchergebnissen angezeigt wird. Deep Links ermöglicht Anwendungen, die auf ein Suchergebnis reagieren, die Anwendungsdaten, in der Regel enthält, navigieren Sie zu einer Seite, auf die über einen deep-Link verwiesen wird.
+Dieses Handbuch beschreibt die Android-Plattform-Besonderheiten von Xamarin.Forms und Material Design zu implementieren, durch die Aktualisierung von vorhandenen Xamarin.Forms-Android-apps bereitgestellt werden.
 
 ## <a name="device-classdevicemd"></a>[Geräteklasse](device.md)
 
@@ -32,15 +28,7 @@ Gewusst wie: Verwenden Sie die `Device` Klasse, um plattformspezifische Verhalte
 
 ## <a name="iosiosindexmd"></a>[iOS](ios/index.md)
 
-Einige iOS-Formatierungen kann ausgeführt werden, über **"Info.plist"** und `UIAppearance` API. Dieses Handbuch enthält Beispiele für iOS 9-Features in der iOS-app von einer Xamarin.Forms-Projektmappe, einschließlich Core Spotlight-Suche integrieren.
-
-## <a name="gtkgtkmd"></a>[GTK#](gtk.md)
-
-Xamarin.Forms verfügt jetzt über eine vorschauunterstützung für GTK#-apps.
-
-## <a name="macmacmd"></a>[Mac](mac.md)
-
-Xamarin.Forms verfügt jetzt über eine vorschauunterstützung für MacOS-apps.
+Dieses Handbuch beschreibt die iOS-Plattform-Besonderheiten von Xamarin.Forms und wie Sie zusätzliche Formatierung, die über iOS ausführen bereitgestellt werden **"Info.plist"** und `UIAppearance` API.
 
 ## <a name="native-formsnative-formsmd"></a>[Native Formulare](native-forms.md)
 
@@ -52,20 +40,8 @@ Native Ansichten in iOS, Android und die universelle Windows-Plattform können d
 
 ## <a name="platform-specificsplatform-specificsindexmd"></a>[Plattformeigenschaften](platform-specifics/index.md)
 
-Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne benutzerdefinierten Renderern und Effekte.
-
-## <a name="pluginspluginsmd"></a>[Plug-Ins](plugins.md)
-
-Ein breites Spektrum an Open-Source-Plug-ins sind verfügbar auf Github, Nuget und die Xamarin Component Store, um Xamarin.Forms-apps zu erweitern.
-
-## <a name="tizentizenmd"></a>[Tizen](tizen.md)
-
-Tizen .NET können Sie zum Erstellen von .NET-Anwendungen mit Xamarin.Forms und Tizen .NET Framework.
+Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne benutzerdefinierten Renderern und Effekte. Darüber hinaus können Hersteller eigene Plattformeigenschaften Auswirkungen erstellen.
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms bietet Unterstützung für die universelle Windows-Plattform (UWP) unter Windows 10. Dieser Artikel beschreibt, wie einer vorhandenen Xamarin.Forms-Lösung ein UWP-Projekt hinzugefügt wird.
-
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Xamarin.Forms verfügt jetzt über eine vorschauunterstützung für Windows Presentation Foundation (WPF)-apps.
+Dieses Handbuch beschreibt die Windows-Plattform-Besonderheiten von Xamarin.Forms und das Hinzufügen ein UWP-Projekts zu einer vorhandenen Xamarin.Forms-Projektmappe bereitgestellt werden.

@@ -1,38 +1,68 @@
 ---
 title: iOS-Plattformfeatures
-description: Hinzufügen von iOS-spezifische Funktionen zu Xamarin.Forms-apps
+description: Hinzufügen einer iOS-spezifische Funktion für Xamarin.Forms-Anwendungen.
 ms.prod: xamarin
 ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/13/2016
-ms.openlocfilehash: e3a85f95deec24e1fe3403146bad57a9739313dd
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.date: 01/07/2018
+ms.openlocfilehash: e5ec152032a068c0c1e83c8df5e6f128bfa30c83
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241291"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207764"
 ---
 # <a name="ios-platform-features"></a>iOS-Plattformfeatures
 
+Entwickeln von Xamarin.Forms-Anwendungen für iOS erfordert Visual Studio. Die [Seite "speicherplatzanforderungen"](~/xamarin-forms/get-started/installation.md) enthält weitere Informationen zu den Voraussetzungen.
+
+## <a name="platform-specifics"></a>Plattformeigenschaften
+
+Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte.
+
+Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichten, Seiten und Layouts unter iOS bereitgestellt:
+
+- Blur-Unterstützung für eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement Blur unter iOS](visualelement-blur.md).
+- Deaktivieren auf einer unterstützten legacy Farbmodus [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement Farbe Legacymodus unter iOS](legacy-color-mode.md).
+- Aktivieren einen Schlagschatten für eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement löschen Shadows unter iOS](visualelement-drop-shadow.md).
+
+Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichten unter iOS bereitgestellt:
+
+- Um sicherzustellen, die eingegebenen Text passt in einen [ `Entry` ](xref:Xamarin.Forms.Entry) durch den Schriftgrad anpassen. Weitere Informationen finden Sie unter [Eintrag Schriftgrad unter iOS](entry-font-size.md).
+- Festlegen der cursorfarbe in einem [ `Entry` ](xref:Xamarin.Forms.Entry). Weitere Informationen finden Sie unter [Eintrag Cursorfarbe unter iOS](entry-cursor-color.md).
+- Festlegen von den Trennzeichenstil für eine [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [ListView Trennzeichenstil unter iOS](listview-separator-style.md).
+- Steuern der bei Auswahl von Listenelementen in tritt auf, eine [ `Picker` ](xref:Xamarin.Forms.Picker). Weitere Informationen finden Sie unter [Auswahl Elementauswahl unter iOS](picker-selection.md).
+- Aktivieren der [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value) festzulegende Eigenschaft durch Tippen auf eine Position auf der [ `Slider` ](xref:Xamarin.Forms.Slider) Balken-und nicht durch Ziehen mit der `Slider` Thumb-Steuerelement. Weitere Informationen finden Sie unter [Schieberegler Thumb-Steuerelement, tippen Sie auf die iOS](slider-thumb.md).
+
+Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Seiten unter iOS bereitgestellt:
+
+- Ausblenden von-Trennzeichens. die Navigation auf einer [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). Weitere Informationen finden Sie unter ["NavigationPage"-Trennzeichens unter iOS](navigation-bar-separator.md).
+- Steuern, ob die Navigationsleiste transparent ist. Weitere Informationen finden Sie unter [Navigation Leiste Durchsichtigkeit unter iOS](navigation-bar-translucent.md).
+- Steuern, ob die Farbe des Statusleiste angezeigte Texts auf einer [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) wird angepasst, um die Helligkeit der Navigationsleiste zu entsprechen. Weitere Informationen finden Sie unter ["NavigationPage" Text Color Leistenmodus für iOS](status-bar-text-color.md).
+- Steuern, ob es sich bei der Seitentitel als große Titel auf der Seite Navigationsleiste angezeigt wird. Weitere Informationen finden Sie unter [große Seitentitel unter iOS](page-large-title.md).
+- Festlegen der Sichtbarkeit der Status für eine [ `Page` ](xref:Xamarin.Forms.Page). Weitere Informationen finden Sie unter [Seite Status Sichtbarkeit unter iOS](page-status-bar-visibility.md).
+- Sicherstellen der Seite Inhalt auf einen Bereich des Bildschirms befindet sich, die für alle iOS-Geräte sicher ist. Weitere Informationen finden Sie unter [abgesicherten Bereich Layoutführungslinie unter iOS](page-safe-area-layout.md).
+- Festlegen der Präsentationsstil der modale Seiten auf einem iPad an. Weitere Informationen finden Sie unter [iPad modale Seite Präsentation Style](ipad-page-presentation-style.md).
+
+Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Layouts unter iOS bereitgestellt:
+
+- Steuern, ob eine [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) behandelt eine Touch-Geste oder übergibt es an seinen Inhalt. Weitere Informationen finden Sie unter [ScrollView Content tangiert iOS](scrollview-content-touches.md).
+
+Die folgende plattformspezifische Funktionalität wird bereitgestellt, für die Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application) Klasse, die unter iOS:
+
+- Aktivieren der Steuerung des Layouts und Rendern von Updates auf dem Hauptthread ausgeführt werden. Weitere Informationen finden Sie unter [Main Thread Steuern von Updates auf iOS](main-thread-updates-ui.md).
+- Aktivieren einer [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) in einer fortlaufenden zu erfassen und freigeben die Bewegung Schwenken mit der Bildlauf angezeigt. Weitere Informationen finden Sie unter [gleichzeitige Pan Gestenerkennung unter iOS](application-pan-gesture.md).
+
 ## <a name="ios-specific-formatting"></a>iOS-spezifische Formatierung
 
-Xamarin.Forms ermöglicht plattformübergreifende Stile der Benutzeroberfläche und Farben festlegen, werden –, aber es gibt andere Optionen für das Design Ihrer iOS-, verwenden plattformspezifische APIs in das iOS-Projekt festlegen.
+Xamarin.Forms ermöglicht plattformübergreifende Stile der Benutzeroberfläche und Farben festlegen, werden –, aber es gibt weitere Optionen zum Festlegen des Designs Ihrer iOS-Plattform-APIs im iOS-Projekt verwenden.
 
-[Erfahren Sie mehr](theme.md) zur Formatierung der Benutzeroberfläche mithilfe von iOS-spezifische APIs, wie z. B. **"Info.plist"** Konfiguration und die `UIAppearance` API.
+[Erfahren Sie mehr](formatting.md) zur Formatierung der Benutzeroberfläche mithilfe von iOS-spezifische APIs, wie z. B. **"Info.plist"** Konfiguration und die `UIAppearance` API.
 
 ![](images/status-white-sml.png "iOS-Design")
 
-## <a name="ios-9-features"></a>iOS 9-Features
+## <a name="other-ios-features"></a>Andere iOS-features
 
-Mithilfe von [benutzerdefinierte Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), und die [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md), es ist möglich, eine Vielzahl von systemeigenen Funktionen in integrieren Xamarin.Forms-apps für iOS.
-
-Die folgenden Anleitungen zeigen, wie iOS 9-Funktionen in der iOS-Teil einer Xamarin.Forms-app zu integrieren:
-
-* [CoreSpotlight](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/core-spotlight-search)
-
-* [NSUserActivity](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/nsuseractivity-search)
-
-![](images/corespotlight.png "iOS Spotlight-Suche")
-
+Mithilfe von [benutzerdefinierte Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), und die [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md), es ist möglich, eine Vielzahl von systemeigenen Funktionen in integrieren Xamarin.Forms-Anwendungen für iOS.

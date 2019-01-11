@@ -1,45 +1,66 @@
 ---
-title: Windows-Plattform-Funktionen
+title: Features der Windows-Plattform
 description: Dieser Artikel beschreibt die Unterstützung der Windows-Plattform, die in Xamarin.Forms verfügbar ist.
 ms.prod: xamarin
 ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/20/2017
-ms.openlocfilehash: 26511f6e3e0ba09830bb85d1ad6ec30072d53866
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 01/08/2018
+ms.openlocfilehash: b1ba6a9f2ee15cf078658b49124c1d9203a3f3d9
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242933"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207946"
 ---
-# <a name="windows-platform-features"></a>Windows-Plattform-Funktionen
+# <a name="windows-platform-features"></a>Features der Windows-Plattform
 
-Anwendungsentwicklung Xamarin.Forms für Windows-Plattformen erfordert Visual Studio. Die [Anforderungsseite](~/xamarin-forms/get-started/installation.md) enthält weitere Informationen über die erforderlichen Komponenten.
+Entwickeln von Xamarin.Forms-Anwendungen für Windows-Plattformen erfordert Visual Studio. Die [Seite "speicherplatzanforderungen"](~/xamarin-forms/get-started/installation.md) enthält weitere Informationen zu den Voraussetzungen.
 
-![](images/allhanselman.png "Xamarin.Forms-Anwendungen unter Windows")
+![](images/allhanselman.png "Xamarin.Forms-Anwendungen, die unter Windows")
+
+## <a name="platform-specifics"></a>Plattformeigenschaften
+
+Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte.
+
+Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichten, Seiten und Layouts für die universelle Windows-Plattform (UWP) bereitgestellt:
+
+- Festlegen einer Zugriffstaste für eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement Zugriffstasten für Windows](#visualelement-accesskeys).
+- Deaktivieren auf einer unterstützten legacy Farbmodus [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement Farbe Legacymodus auf Windows](#legacy-color-mode).
+
+Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichten in UWP bereitgestellt:
+
+- Erkennen von leserichtung von Textinhalt in [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), und [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Weitere Informationen finden Sie unter [InputView Lesefolge auf Windows](#inputview-readingorder).
+- Aktivieren von Tap-gestenunterstützung im eine [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [ListView SelectionMode auf Windows](#listview-selectionmode).
+- Aktivieren einer [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) für die Interaktion mit der Rechtschreibprüfungs-Check-Engine. Weitere Informationen finden Sie unter [SearchBar Rechtschreibprüfung auf Windows](#searchbar-spellcheck).
+- Aktivieren einer [ `WebView` ](xref:Xamarin.Forms.WebView) zum Anzeigen von JavaScript-Warnungen in einem Meldungsdialogfeld UWP. Weitere Informationen finden Sie unter [WebView-JavaScript-Warnungen für Windows](#webview-javascript-alert).
+
+Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Seiten in UWP bereitgestellt:
+
+- Reduzieren der [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Navigationsleiste. Weitere Informationen finden Sie unter [MasterDetailPage Navigationsleiste Windows](#collapsable_navigation_bar).
+- Festlegen von Platzierungsoptionen für die Symbolleiste. Weitere Informationen finden Sie unter [Symbolleiste-Platzierung auf der Seite auf Windows](#toolbar_placement).
+- Aktivieren die Seitensymbole anzuzeigendes eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) Symbolleiste. Weitere Informationen finden Sie unter ["tabbedpage" Symbole für Windows](#tabbedpage-icons).
 
 ## <a name="platform-support"></a>Plattformunterstützung
 
-Die Xamarin.Forms-Vorlagen in Visual Studio verfügbar, enthalten ein Projekt für die universelle Windows-Plattform (UWP).
+Die Xamarin.Forms-Vorlagen in Visual Studio verfügbaren enthalten ein Projekt für universelle Windows-Plattform (UWP).
 
 > [!NOTE]
-> Xamarin.Forms 1.x und 2.x Unterstützung _Silverlight für Windows Phone 8_, _Windows Phone 8.1_, und _Windows 8.1_ Anwendungsentwicklung. Allerdings sind diese Projekttypen veraltet.
+> Xamarin.Forms-Support für 1.x und 2.x _Windows Phone 8 Silverlight_, _Windows Phone 8.1_, und _Windows 8.1_ Anwendungsentwicklung. Allerdings sind diese Projekttypen veraltet.
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Wechseln Sie zu **Datei > Neu > Projekt** in Visual Studio und wählen Sie eines der **plattformübergreifende > leere App (Xamarin.Forms)** Vorlagen, um zu beginnen.
+Wechseln Sie zu **Datei > Neu > Projekt** in Visual Studio, und wählen Sie eines der **Cross-Platform > leere App (Xamarin.Forms)** Vorlagen für den Einstieg.
 
-Ältere Xamarin.Forms-Lösungen oder erstellten auf MacOS, müssen nicht alle oben aufgeführten Windows-Projekte (aber sie müssen manuell hinzugefügt werden).
-Wenn die Windows-Plattform, die Sie abzielen möchten nicht, die sich bereits in der Projektmappe besuchen ist die [setupanweisungen](installation/index.md) Hinzufügen der gewünschten Windows-Projekt Typ/s.
+Xamarin.Forms-Projektmappen, die älter sind oder unter MacOS erstellt müssen nicht alle oben aufgeführten Windows-Projekte (aber sie müssen manuell hinzugefügt werden). Wenn die Windows-Plattform, die gewünschte Zielplattform nicht, die sich bereits in der Projektmappe Vista ist die [Anweisungen zur Einrichtung des](installation/index.md) Hinzufügen der gewünschten Windows-Projekt Typ(en).
 
 ## <a name="samples"></a>Proben
 
-[Die Beispiele sind](https://github.com/xamarin/xamarin-forms-book-preview-2) für Charless Buchs [ *Erstellen mobiler Apps mit Xamarin.Forms* ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) Projekte der universellen Windows-Plattform (für Windows 10) einschließen.
+[Alle Beispiele](https://github.com/xamarin/xamarin-forms-book-preview-2) Book von Charles petzolds [ *Erstellen mobiler Apps mit Xamarin.Forms* ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) universelle Windows-Plattform (für Windows 10)-Projekte enthalten.
 
-Die ["Scott Hanselman" demo-app](https://github.com/jamesmontemagno/Hanselman.Forms) separat verfügbar ist, und weist daneben Apple Watch und tragen Sie Android-Projekte (bzw. mithilfe von Xamarin.iOS und Xamarin.Android, Xamarin.Forms wird nicht ausgeführt auf diesen Plattformen).
+Die ["Scott Hanselman" demo-app](https://github.com/jamesmontemagno/Hanselman.Forms) ist separat erhältlich und umfasst auch Projekte für Apple Watch und Android Wear (mit den entsprechenden Xamarin.iOS und Xamarin.Android, Xamarin.Forms führt nicht auf diesen Plattformen).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Einrichten der Windows-Projekte](~/xamarin-forms/platform/windows/installation/index.md)
+- [Windows-Setup-Projekten](~/xamarin-forms/platform/windows/installation/index.md)

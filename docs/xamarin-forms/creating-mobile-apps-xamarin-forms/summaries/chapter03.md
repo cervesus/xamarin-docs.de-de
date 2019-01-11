@@ -7,12 +7,12 @@ ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: db1ab31249cc40d3496770877e492d652bcfc517
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052594"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207847"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Zusammenfassung der Kapitel 3. Details zu text
 
@@ -28,7 +28,7 @@ Bei der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [
 
 Wenn die `HorizontalOptions` und `VerticalOptions` Eigenschaften nicht auf Werte festgelegt sind `LayoutOptions.Fill`, wird die Größe des der `Label` unterliegt den speicherplatzanforderungen, die zum Rendern von Text, bis die Größe, die für der Container zur Verfügung der `Label`. Die `Label` gilt als *uneingeschränkte* und legt seine eigene Größe fest.
 
-(Hinweis: die Begriffe *eingeschränkte* und *uneingeschränkte* möglicherweise nicht intuitiv, eine uneingeschränkte Sicht im Allgemeinen kleiner als eine eingeschränkte Ansicht ist. Darüber hinaus werden diese Begriffe nicht durchgängig in der ersten Kapitel des Buchs verwendet.)
+(Beachten Sie: Die Begriffe *eingeschränkte* und *uneingeschränkte* möglicherweise nicht intuitiv, eine uneingeschränkte Sicht im Allgemeinen kleiner als eine eingeschränkte Ansicht ist. Darüber hinaus werden diese Begriffe nicht durchgängig in der ersten Kapitel des Buchs verwendet.)
 
 Eine Ansicht z. B. eine `Label` in einer Dimension beschränkt und im anderen uneingeschränkt werden kann. Ein `Label` wird nur auf mehrere Zeilen Text umbrochen, wenn es horizontal beschränkt ist.
 
@@ -100,7 +100,7 @@ Schließlich definieren Sie zwei statische schreibgeschützte Eigenschaften beso
 `Color.Default` Dient zum Erzwingen der Plattform Farbschema aus, und hat daher eine andere Bedeutung in unterschiedlichen Kontexten auf verschiedenen Plattformen. Sind standardmäßig die Farbschemas für die Plattform aus:
 
 - iOS: Dunkel Text auf einem hellen Hintergrund
-- Android: Hell Text auf dunklem Hintergrund (im Buch) "oder" dunkel Text auf einem hellen Hintergrund (für Material Design über AppCompat in die **master** Branch von beispielcoderepository)
+- Android: Helles Text auf dunklem Hintergrund (im Buch) "oder" dunkel Text auf einem hellen Hintergrund (für Material Design über AppCompat in die **master** Branch von beispielcoderepository)
 - UWP: Dunkel Text auf einem hellen Hintergrund
 
 Die `Color.Accent` führt eine plattformspezifische (und manchmal Benutzer ausgewählt werden können) Farbe, die auf einem dunkle oder helle Hintergrund angezeigt wird.
@@ -109,7 +109,7 @@ Die `Color.Accent` führt eine plattformspezifische (und manchmal Benutzer ausge
 
 Die verschiedenen Plattformen haben ein Standardfarbschema, wie in der Liste oben gezeigt.
 
-Wenn Sie Android nutzen zu können, kann zu einem Dark-auf-Light-Schema wechseln, indem Sie ein Design "hell" angeben, in der Datei Android.Manifest.xml oder [hinzufügen AppCompat und Material Design](~/xamarin-forms/platform/android/appcompat.md).
+Wenn Sie Android nutzen zu können, kann zu einem Dark-auf-Light-Schema wechseln, indem Sie ein Design "hell" angeben, in der Datei Android.Manifest.xml oder [hinzufügen AppCompat und Material Design](~/xamarin-forms/platform/android/appcompat-material-design.md).
 
 Für die Windows-Plattformen ist normalerweise das Farbschema "vom Benutzer ausgewählt, aber Sie können Hinzufügen einer `RequestedTheme` -Attributsatz auf `Light` oder `Dark` " App.xaml "-Datei von der Plattform. Standardmäßig enthält die Datei "App.xaml" im UWP-Projekt eine `RequestedTheme` -Attributsatz auf `Light`.
 

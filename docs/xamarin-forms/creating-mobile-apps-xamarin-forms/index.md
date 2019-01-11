@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: a1458d53cb6e57b73317bce77ebdfd5aea64acca
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5dae8f1907b9a61018e335a8fe19ad319d95741d
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061945"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207868"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Erstellen Mobile Apps mit Xamarin.Forms-Buch
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<p><img src="images/cover-sml.png" title="Erstellen von mobilen Apps mit Xamarin.Forms-Buch" align="left" />Das Buch <i>Erstellen mobiler Apps mit Xamarin.Forms</i> von Charles Petzold ist Sie eine Anleitung für das lernen, wie Sie das Xamarin.Forms-Anwendungen zu schreiben. Die einzige Voraussetzung ist die Kenntnis der C# Programmiersprache. Das Buch bietet eine umfassende Untersuchung in der Benutzeroberfläche Xamarin.Forms und deckt auch Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierten Renderern und vieles mehr. 
+<p><img src="images/cover-sml.png" title="Erstellen von mobilen Apps mit Xamarin.Forms-Buch" align="left" />Das Buch <i>Erstellen mobiler Apps mit Xamarin.Forms</i> von Charles Petzold ist Sie eine Anleitung für das lernen, wie Sie das Xamarin.Forms-Anwendungen zu schreiben. Die einzige Voraussetzung ist die Kenntnis der C# Programmiersprache. Das Buch bietet eine umfassende Untersuchung in der Benutzeroberfläche Xamarin.Forms und deckt auch Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierten Renderern und vieles mehr.
 
-Das Buch im Frühjahr 2016 veröffentlicht wurde, und seitdem nicht aktualisiert wurde. Ist viel im Buch, wertvollen bleibt, aber einige der [Material werden veraltete](#ways-in-which-the-book-is-outdated), und einige Themen sind nicht mehr vollständig ordnungsgemäß noch abgeschlossen. 
+Das Buch im Frühjahr 2016 veröffentlicht wurde, und seitdem nicht aktualisiert wurde. Ist viel im Buch, wertvollen bleibt, aber einige der [Material werden veraltete](#ways-in-which-the-book-is-outdated), und einige Themen sind nicht mehr vollständig ordnungsgemäß noch abgeschlossen.
 
 ## <a name="download-ebook-for-free"></a>E-Book kostenlos herunterladen
 
@@ -48,7 +48,7 @@ Kapitelzusammenfassungen stehen in der [Kapitel Tabelle](#download-chapters-and-
 
 - Links zu der API-Dokumentation ausführlichere Beschreibungen der Xamarin.Forms-Klassen, Strukturen, Eigenschaften, Enumerationen und usw.
 
-Diese Zusammenfassungen auch angeben, wann Material im Kapitel sein könnten, [ein wenig veraltet](#ways-in-which-the-book-is-outdated). 
+Diese Zusammenfassungen auch angeben, wann Material im Kapitel sein könnten, [ein wenig veraltet](#ways-in-which-the-book-is-outdated).
 
 ## <a name="download-chapters-and-summaries"></a>Kapitel und Zusammenfassungen herunterladen
 
@@ -85,13 +85,13 @@ Diese Zusammenfassungen auch angeben, wann Material im Kapitel sein könnten, [e
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>Methoden, die in denen das Buch veraltet ist.
 
-Seit der Veröffentlichung der <i>Erstellen mobiler Apps mit Xamarin.Forms</i>, Xamarin.Forms wurden mehrere neue Features hinzugefügt. Diese neuen Features in einzelnen Artikeln beschrieben werden die [Xamarin.Forms](/xamarin/) Dokumentation. 
+Seit der Veröffentlichung der <i>Erstellen mobiler Apps mit Xamarin.Forms</i>, Xamarin.Forms wurden mehrere neue Features hinzugefügt. Diese neuen Features in einzelnen Artikeln beschrieben werden die [Xamarin.Forms](/xamarin/) Dokumentation.
 
 Andere Änderungen wurde ein Teil des Inhalts des Buchs veraltet sein:
 
 ### <a name="net-standard-20-libraries-have-replaced-portable-class-libraries"></a>.NET standard 2.0-Bibliotheken wurden Portable Class Libraries ersetzt.
 
-Eine Xamarin.Forms-Anwendung verwendet in der Regel eine Bibliothek zum Freigeben von Code zwischen den verschiedenen Plattformen. Ursprünglich war dies eine Portable Klassenbibliothek (PCL). Es gibt viele Verweise in das Buch und die kapitelzusammenfassungen PCLs. 
+Eine Xamarin.Forms-Anwendung verwendet in der Regel eine Bibliothek zum Freigeben von Code zwischen den verschiedenen Plattformen. Ursprünglich war dies eine Portable Klassenbibliothek (PCL). Es gibt viele Verweise in das Buch und die kapitelzusammenfassungen PCLs.
 
 Der portablen Klassenbibliothek wurde mit einer Bibliothek .NET Standard 2.0 ersetzt, da in diesem Artikel beschriebenen [.NET Standard 2.0-Unterstützung in Xamarin.Forms](~/xamarin-forms/internals/net-standard.md). Alle der [Beispielcode](https://github.com/xamarin/xamarin-forms-book-samples) aus dem Buch wurde aktualisiert, um .NET Standard 2.0-Bibliotheken verwenden.
 
@@ -101,25 +101,25 @@ Die Bibliothek .NET Standard 2.0 ermöglicht auch Anwendungen von Xamarin.Forms 
 
 ### <a name="the-role-of-xaml-has-been-elevated"></a>Die Rolle des XAML wurde erhöht wurde
 
-<i>Erstellen Mobile Apps mit Xamarin.Forms</i> beginnt mit der beschreibt, wie Xamarin.Forms-Anwendungen mithilfe von c# zu schreiben. Die Extensible Application Markup Language (XAML) ist nicht eingeführt [Kapitel 7. Visual Studio mit XAML. Code](summaries/chapter07.md). 
+<i>Erstellen Mobile Apps mit Xamarin.Forms</i> beginnt mit der beschreibt, wie Xamarin.Forms-Anwendungen mithilfe von c# zu schreiben. Die Extensible Application Markup Language (XAML) ist nicht eingeführt [Kapitel 7. Visual Studio mit XAML. Code](summaries/chapter07.md).
 
 XAML ist nun eine viel größere Rolle im Xamarin.Forms. Die Xamarin.Forms-Projektmappe-Vorlagen mit Visual Studio verteilt erstellen XAML-basierte Auslagerungsdateien. Ein Entwickler, die mit Xamarin.Forms sollten so früh wie möglich mit XAML vertraut sein. Die [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.md) Abschnitt der Dokumentation Xamarin.Forms enthält verschiedene Artikel zur XAML können Sie sofort loslegen.
 
-### <a name="supported-platforms"></a>Unterstützte Plattformen 
+### <a name="supported-platforms"></a>Unterstützte Plattformen
 
-Xamarin.Forms ist nicht mehr unterstützt, Windows 8.1 und Windows Phone 8.1. 
+Xamarin.Forms ist nicht mehr unterstützt, Windows 8.1 und Windows Phone 8.1.
 
 Das Buch wird manchmal auch Verweise auf die _Windows-Runtime_. Dies ist ein Begriff, der die Windows-API in verschiedenen Versionen von Windows und Windows Phone umfasst. Neuere Versionen von Xamarin.Forms beschränkt sich auf unterstützt die universelle Windows-Plattform, die die API für Windows 10 und Windows 10 Mobile.
 
-Eine .NET Standard 2.0-Bibliothek ist eine beliebige Version von Windows 10 Mobile nicht unterstützt. Eine Xamarin.Forms-Anwendung, die mithilfe von .NET Standard-Bibliothek wird daher nicht auf einem Windows 10 Mobile-Gerät ausgeführt werden. Xamarin.Forms-Anwendungen weiterhin auf dem Desktop der Versionen 10.0.16299.0 Windows 10 und höher ausgeführt. 
+Eine .NET Standard 2.0-Bibliothek ist eine beliebige Version von Windows 10 Mobile nicht unterstützt. Eine Xamarin.Forms-Anwendung, die mithilfe von .NET Standard-Bibliothek wird daher nicht auf einem Windows 10 Mobile-Gerät ausgeführt werden. Xamarin.Forms-Anwendungen weiterhin auf dem Desktop der Versionen 10.0.16299.0 Windows 10 und höher ausgeführt.
 
-Xamarin.Forms verfügt über eine vorschauunterstützung für die [Mac](~/xamarin-forms/platform/mac.md), [WPF](~/xamarin-forms/platform/wpf.md), [GTK#-](~/xamarin-forms/platform/gtk.md), und [Tizen](/xamarin-forms/platform/tizen.md) Plattformen.
+Xamarin.Forms verfügt über eine vorschauunterstützung für die [Mac](~/xamarin-forms/platform/other/mac.md), [WPF](~/xamarin-forms/platform/other/wpf.md), [GTK#-](~/xamarin-forms/platform/other/gtk.md), und [Tizen](/xamarin-forms/platform/other/tizen.md) Plattformen.
 
 ### <a name="chapter-summaries"></a>Kapitelzusammenfassungen
 
 Die kapitelzusammenfassungen enthalten Informationen zu Änderungen in Xamarin.Forms, da das Buch geschrieben wurde. Dies sind häufig in Form von Anmerkungen zu dieser Version:
 
-> [!NOTE] 
+> [!NOTE]
 > Anmerkungen zu dieser Version auf jeder Seite Geben Sie an, in denen Xamarin.Forms aus den Informationen im Buch abweichend ist.
 
 ### <a name="samples"></a>Proben

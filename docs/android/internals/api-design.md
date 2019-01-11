@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 53348e15d1ecc74f50cacdd422da5c80af802d1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 54479a7ed66c83d1d97d51cc93e3df3241ec740f
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110714"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207933"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Entwurfsprinzipien für Xamarin.Android-API
 
@@ -322,6 +322,6 @@ Betrachten Sie z. B. [Activity.requestWindowFeature (Int-FeatureID)](http://deve
 In diesen Fällen sich bemühen wir zum Gruppieren verwandter Konstanten in einer .NET-Enumeration, und ordnen die Methode, um die Enumeration stattdessen zu nutzen.
 Auf diese Weise können wir IntelliSense-Auswahl mit möglichen Werten bieten.
 
-Im obige Beispiel wird: [Activity.RequestWindowFeature (WindowFeatures FeatureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/)).
+Im obige Beispiel wird: [Activity.RequestWindowFeature (WindowFeatures FeatureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/).
 
-Beachten Sie, dass dies ein sehr manueller Prozess, um zu ermitteln, welche Konstanten zusammengehören, und die APIs, diese Konstanten nutzen. Melden Sie Fehler für jede Verwendung der Konstanten in der API, die besser als eine Enumeration angegeben sind.
+Beachten Sie, dass dies ein sehr manueller Prozess, um zu ermitteln, welche Konstanten zusammengehören, und die APIs, diese Konstanten nutzen. Melden Sie Fehler für alle Konstanten, die in der API, die besser ausgedrückt als Enumeration verwendet.
