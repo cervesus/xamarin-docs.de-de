@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: d19d8590171e585b6f65b2a63fc9847d7d672a56
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4e2d33276c865695d70abb2d8e00b3b80d446839
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058407"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207985"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Die Xamarin.Forms-Klasse „TabbedPage“
 
@@ -37,7 +37,7 @@ Das Layout einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse und der zu
   > [!NOTE]
   > Beachten Sie, dass die `TabbedRenderer`-Klasse für iOS eine überschreibbare `GetIcon`-Methode enthält, die verwendet werden kann, um Registerkartensymbole aus einer angegebenen Quelle zu laden. Durch diese Überschreibung können Sie SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwenden. Darüber hinaus können die ausgewählte und nicht ausgewählte Versionen eines Symbols zur Verfügung gestellt werden.
 
-- Unter Android wird die Liste der Registerkarten standardmäßig am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Die Liste der Registerkarten kann jedoch mit einem plattformspezifischen Element an den unteren Rand des Bildschirms verschoben werden. Weitere Informationen finden Sie unter [Setting TabbedPage Toolbar Placement and Color (Festlegen der Position und Farbe von TabbedPage-Symbolleisten)](~/xamarin-forms/platform/platform-specifics/consuming/android.md#tabbedpage-toolbar).
+- Unter Android wird die Liste der Registerkarten standardmäßig am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Die Liste der Registerkarten kann jedoch mit einem plattformspezifischen Element an den unteren Rand des Bildschirms verschoben werden. Weitere Informationen finden Sie unter [Setting TabbedPage Toolbar Placement and Color (Festlegen der Position und Farbe von TabbedPage-Symbolleisten)](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md).
 
   > [!NOTE]
   > Beachten Sie, dass für jede Registerkarte ein Symbol angezeigt wird, wenn Sie AppCompat unter Android verwenden. Außerdem enthält `TabbedPageRenderer`-Klasse von AppCompat unter Android eine überschreibbare `GetIconDrawable`-Methode, die verwendet werden kann, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse zu laden. Durch diese Überschreibung können SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwendet werden. Die Bilder funktionieren auf Registerkartenleisten am oberen und am unteren Rand. Alternativ kann die überschreibbare `SetTabIcon`-Methode verwendet werden, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse für Registerkartenleisten am oberen Rand zu laden.

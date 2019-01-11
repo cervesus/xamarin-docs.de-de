@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 0511cd1a4cf76368623c56ef53cd98323114f98e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: f69acd60d7a80607528e4a39ee6a8bfbc19711f5
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058989"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207972"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -344,9 +344,9 @@ Dies führt dazu, dass eine [`Slider`](xref:Xamarin.Forms.Slider)-Klasse in der 
 > [!IMPORTANT]
 > Viele Ansichten werden nicht in der Navigationsleiste angezeigt, es sei denn, die Größe der Ansicht wird mit den Eigenschaften [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) und [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) angegeben. Alternativ kann die Ansicht auch in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse umschlossen werden, wobei die Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) auf die entsprechenden Werte festgelegt sind.
 
-Da die [`Layout`](xref:Xamarin.Forms.Layout)-Klasse von der [`View`](xref:Xamarin.Forms.View)-Klasse abgeleitet wird, kann die angefügte [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)-Eigenschaft festgelegt werden, um eine Layoutklasse anzuzeigen, die mehrere Ansichten enthält. Unter iOS und auf der Universellen Windows-Plattform (UWP) kann die Höhe der Navigationsleiste nicht geändert werden. Wenn die in der Navigationsleiste angezeigte Ansicht also die Standardgröße der Navigationsleiste übersteigt, wird sie abgeschnitten. Die Höhe der Navigationsleiste kann unter Android jedoch geändert werden. Legen Sie dazu die bindbare [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)-Eigenschaft auf die Variable `double` fest, mit der die neue Höhe dargestellt wird. Weitere Informationen finden Sie unter [Setting the Navigation Bar Height on a NavigationPage (Festlegen der Höhe der Navigationsleiste auf eine NavigationPage)](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight).
+Da die [`Layout`](xref:Xamarin.Forms.Layout)-Klasse von der [`View`](xref:Xamarin.Forms.View)-Klasse abgeleitet wird, kann die angefügte [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)-Eigenschaft festgelegt werden, um eine Layoutklasse anzuzeigen, die mehrere Ansichten enthält. Unter iOS und auf der Universellen Windows-Plattform (UWP) kann die Höhe der Navigationsleiste nicht geändert werden. Wenn die in der Navigationsleiste angezeigte Ansicht also die Standardgröße der Navigationsleiste übersteigt, wird sie abgeschnitten. Die Höhe der Navigationsleiste kann unter Android jedoch geändert werden. Legen Sie dazu die bindbare [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)-Eigenschaft auf die Variable `double` fest, mit der die neue Höhe dargestellt wird. Weitere Informationen finden Sie unter [Setting the Navigation Bar Height on a NavigationPage (Festlegen der Höhe der Navigationsleiste auf eine NavigationPage)](~/xamarin-forms/platform/android/navigationpage-bar-height.md).
 
-Alternativ können Sie eine erweiterte Navigationsleiste vorschlagen, indem Sie einige Inhaltselemente in die Navigationsleiste platzieren und einige in eine Ansicht am oberen Rand des Seiteninhalts, für den Sie die Farbe entsprechend der Navigationsleiste anpassen. Zusätzlich können Sie unter iOS die Trennlinie und den Schatten am unteren Rand der Navigationsleiste entfernen, indem Sie die bindbare [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty)-Eigenschaft auf `true` festlegen. Weitere Informationen finden Sie unter [Hiding the Navigation Bar Separator on a NavigationPage (Ausblenden der Trennlinie der Navigationsleiste auf eine NavigationPage)](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar).
+Alternativ können Sie eine erweiterte Navigationsleiste vorschlagen, indem Sie einige Inhaltselemente in die Navigationsleiste platzieren und einige in eine Ansicht am oberen Rand des Seiteninhalts, für den Sie die Farbe entsprechend der Navigationsleiste anpassen. Zusätzlich können Sie unter iOS die Trennlinie und den Schatten am unteren Rand der Navigationsleiste entfernen, indem Sie die bindbare [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty)-Eigenschaft auf `true` festlegen. Weitere Informationen finden Sie unter [Hiding the Navigation Bar Separator on a NavigationPage (Ausblenden der Trennlinie der Navigationsleiste auf eine NavigationPage)](~/xamarin-forms/platform/ios/navigation-bar-separator.md).
 
 > [!NOTE]
 > Die Eigenschaften [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty), [`Title`](xref:Xamarin.Forms.Page.Title), [`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty) und [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) können Werte definieren, die einen Bereich in der Navigationsleiste einnehmen. Obwohl sich die Größe der Navigationsleiste je nach Plattform und Bildschirmgröße unterscheidet, führt das Festlegen all dieser Eigenschaften zu Konflikten, da nicht genügend Platz vorhanden ist. Versuchen Sie also nicht, eine Kombination dieser Eigenschaften zu nutzen, sondern legen Sie nur die `TitleView`-Eigenschaft fest, um Ihr gewünschtes Design für die Navigationsleiste zu realisieren.
@@ -355,7 +355,7 @@ Alternativ können Sie eine erweiterte Navigationsleiste vorschlagen, indem Sie 
 
 Es gibt mehrere Einschränkungen, die Sie beachten sollten, wenn Sie eine [`View`](xref:Xamarin.Forms.View)-Klasse in der Navigationsleiste einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) anzeigen:
 
-- Unter iOS werden Ansichten, die in der Navigationsleiste einer `NavigationPage` platziert sind, an einer anderen Position angezeigt, je nachdem, ob große Titel erlaubt sind. Weitere Informationen zum Aktivieren großer Titel finden Sie unter [Große Titel anzeigen](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title).
+- Unter iOS werden Ansichten, die in der Navigationsleiste einer `NavigationPage` platziert sind, an einer anderen Position angezeigt, je nachdem, ob große Titel erlaubt sind. Weitere Informationen zum Aktivieren großer Titel finden Sie unter [Große Titel anzeigen](~/xamarin-forms/platform/ios/page-large-title.md).
 - Unter Android können Ansichten nur in Apps, die app-compat nutzen, in der Navigationsleiste einer `NavigationPage` platziert werden.
 - Es wird empfohlen, große und komplexe Ansichten wie [`ListView`](xref:Xamarin.Forms.ListView) und [`TableView`](xref:Xamarin.Forms.TableView) in der Navigationsleiste einer `NavigationPage` zu platzieren.
 

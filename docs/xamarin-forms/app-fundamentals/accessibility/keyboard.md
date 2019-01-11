@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/15/2018
-ms.openlocfilehash: 69fc1cd146227e464e70c347d3e28d250a7f1346
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3e3331489c3b437366f4bdcc6990fe282d213a6a
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050438"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207881"
 ---
 # <a name="keyboard-navigation-in-xamarinforms"></a>Tastaturnavigation in Xamarin.Forms
 
@@ -58,7 +58,7 @@ Der folgende Screenshot zeigt die Standardaktivierreihenfolge für dieses Codebe
 Die hier gezeigte Aktivierreihenfolge basiert auf Zeilen und entspricht der Reihenfolge, in der die Steuerelemente in XMAL aufgelistet sind. Aus diesem Grund wird durch Drücken der Tab-Taste zuerst durch [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen für „Vorname“ navigiert, anschließend durch `Entry`-Instanzen für „Nachname“. Es wäre jedoch deutlich intuitiver, eine „Spalte zuerst“-Navigation zu verwenden, bei der durch Drücken der Tab-Taste durch „Vorname-Nachname“-Paare navigiert wird. Dies kann durch Angabe der Aktivierreihenfolge der Steuerelemente erreicht werden.
 
 > [!NOTE]
-> Auf der Universellen Windows-Plattform können Tastenkombinationen festgelegt werden, durch die Benutzer intuitiv und schnell navigieren können und mit denen sie mit der sichtbaren Benutzeroberfläche über eine Tastatur anstelle eines Touchpads oder einer Maus interagieren können. Weitere Informationen finden Sie unter [Festlegen von VisualElement-Zugriffstasten](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#visualelement-accesskeys).
+> Auf der Universellen Windows-Plattform können Tastenkombinationen festgelegt werden, durch die Benutzer intuitiv und schnell navigieren können und mit denen sie mit der sichtbaren Benutzeroberfläche über eine Tastatur anstelle eines Touchpads oder einer Maus interagieren können. Weitere Informationen finden Sie unter [Festlegen von VisualElement-Zugriffstasten](~/xamarin-forms/platform/windows/visualelement-access-keys.md).
 
 ## <a name="setting-the-tab-order"></a>Festlegen der Aktivierreihenfolge
 
