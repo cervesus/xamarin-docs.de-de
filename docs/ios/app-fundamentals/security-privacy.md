@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1c88a5c16dbe5559f0b551a97a27ebb893991187
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 119fd478727a002622861c94462b93b75720a992
+ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120501"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249202"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS-Features für Sicherheit und Datenschutz
 
@@ -27,7 +27,7 @@ Apple hat verschiedene Verbesserungen sowohl Sicherheit und Datenschutz in iOS 1
 Die folgenden allgemeinen Änderungen, die Sicherheit und Datenschutz in iOS 10 wurden:
 
 - Die allgemeine Data Security Architecture (CDSA) API ist veraltet und sollte ersetzt werden, mit der SecKey-API, um asymmetrischen Schlüssel zu generieren.
-- Die neue `NSAllowsArbitraryLoadsInWebContent` Schlüssel können hinzugefügt werden die der app- **"Info.plist"** Datei und ermöglicht die Webseiten ordnungsgemäß geladen werden, während die Apple Transport Security (ATS) Schutz für den Rest der app immer noch aktiviert ist. Weitere Informationen finden Sie unserem [App Transport Security](~/ios/app-fundamentals/ats.md) Dokumentation.
+- Die neue `NSAllowsArbitraryLoadsInWebContent` Schlüssel hinzugefügt werden kann die einer app **"Info.plist"** Datei und ermöglicht die Webseiten ordnungsgemäß geladen werden, während die Apple Transport Security (ATS) Schutz für den Rest der app immer noch aktiviert ist. Weitere Informationen finden Sie unserem [App Transport Security](~/ios/app-fundamentals/ats.md) Dokumentation.
 - Da der neue Zwischenablage in iOS 10 und MacOS Sierra ermöglicht es dem Benutzer zum Kopieren und Einfügen zwischen Geräten, wurde die API erweitert, um ermöglichen eine Zwischenablage, um auf ein bestimmtes Gerät beschränkt, und mit einem Zeitstempel, zu einem bestimmten Zeitpunkt automatisch gelöscht werden sollen. Darüber hinaus werden die benannten Montageflächen werden nicht mehr beibehalten und mit den freigegebenen Montagefläche Containern ersetzt werden soll.
 - Für alle SSL/TLS-Verbindungen ist das symmetrische RC4-Verschlüsselungsverfahren jetzt standardmäßig deaktiviert. Darüber hinaus den sicheren Transport-API unterstützt nicht mehr SSLv3, und es wird empfohlen, dass der Entwickler nicht mehr so bald wie möglich, SHA-1 und 3DES Kryptografie zu verwenden.
 
@@ -51,9 +51,9 @@ Die folgende Datenschutz im Zusammenhang, dass der Schlüssel zur Verfügung ste
 - **Datenschutz – Integritätsaktualisierung** (`NSHealthUpdateUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app des Benutzers integritätsdaten bearbeiten möchte. Weitere Informationen finden Sie unter Apple [HKHealthStore Class Reference](https://developer.apple.com/reference/healthkit/hkhealthstore).
 - **Datenschutz – HomeKit-Nutzungsbeschreibung** (`NSHomeKitUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app, die auf die Daten des Benutzers HomeKit-Konfiguration zugreifen möchte.
 - **Datenschutz – Location Always-Nutzungsbeschreibung** (`NSLocationAlwaysUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app immer auf den Standort des Benutzers zugreifen möchte.
-- [Veraltet] **Datenschutz – Nutzungsbeschreibung für Ortungsdienste** (`NSLocationUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app, die auf den Speicherort der Benutzer zugreifen möchte. *Hinweis: Dieser Schlüssel wurde in iOS 8 (und höher) als veraltet markiert. Verwendung `NSLocationAlwaysUsageDescription` oder `NSLocationWhenInUseUsageDescription` stattdessen.*
+- [Veraltet] **Datenschutz – Nutzungsbeschreibung für Ortungsdienste** (`NSLocationUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app, die auf den Speicherort der Benutzer zugreifen möchte. *HINWEIS: Dieser Schlüssel wurde in iOS 8 (und höher) als veraltet markiert. Verwendung `NSLocationAlwaysUsageDescription` oder `NSLocationWhenInUseUsageDescription` stattdessen.*
 - **Datenschutz – Location beim In Use Usage Description** (`NSLocationWhenInUseUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app Zugriff auf den Standort des Benutzers, während der Ausführung möchte.
-- [Veraltet] **Datenschutz – Nutzungsbeschreibung für Medienbibliothek** -ermöglicht dem Entwickler, die beschreiben, warum die app auf die Medienbibliothek zugreifen möchte. *Hinweis: Dieser Schlüssel wurde in iOS 8 (und höher) als veraltet markiert. Verwendung `NSAppleMusicUsageDescription` stattdessen.*
+- [Veraltet] **Datenschutz – Nutzungsbeschreibung für Medienbibliothek** -ermöglicht dem Entwickler, die beschreiben, warum die app auf die Medienbibliothek zugreifen möchte. *HINWEIS: Dieser Schlüssel wurde in iOS 8 (und höher) als veraltet markiert. Verwendung `NSAppleMusicUsageDescription` stattdessen.*
 - **Datenschutz – Nutzungsbeschreibung für Mikrofon** (`NSMicrophoneUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app das Mikrofon Geräte zugreifen möchte.
 - **Datenschutz – Nutzungsbeschreibung für während der Übertragung** (`NSMotionUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app des Geräts Beschleunigungsmesser zugreifen möchte.
 - **Datenschutz – Nutzungsbeschreibung für Foto** (`NSPhotoLibraryUsageDescription`): ermöglicht dem Entwickler, die beschreiben, warum die app Fotobibliothek des Benutzers zugreifen möchte.

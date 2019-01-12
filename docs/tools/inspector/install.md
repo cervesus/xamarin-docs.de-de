@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2357003e3a855981f053c48a596b932d9ba36d90
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2bbf0bda42b7bce483d9d036ebf39314dcb73072
+ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104952"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249189"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector: Installation und Vorraussetzungen
 
@@ -52,7 +52,7 @@ Die Überprüfung von Live-Apps steht für Enterprise-Kunden zur Verfügung.
 |App-Plattform|IDE-Unterstützung|Hinweise|
 |--- |--- |--- |
 |Mac|Nur unterstützt in Visual Studio für Mac|
-|iOS|Unterstützt in Visual Studio 2017 und Visual Studio für Mac| |
+|iOS|Unterstützt in Visual Studio 2017 und Visual Studio für Mac| Linkerverhalten muss festgelegt werden, um **nicht verknüpfen** (unter **iOS-Build** Projektoptionen) |
 |Android|Unterstützt in Visual Studio 2017 und Visual Studio für Mac|Muss Android mit Version 4.0.3 oder höher anzielen, für die **Fastdev** aktiviert ist.<br />Google-, Visual Studio- oder Xamarin Android-Emulatoren müssen verwendet werden. In Android 7-Emulatoren sind Überprüfungen derzeit womöglich nicht zulässig.|
 |WPF|Nur unterstützt in Visual Studio 2017.|
 
@@ -114,7 +114,7 @@ Für Android und iOS ist es wichtig, dass wir wissen, welches Gerät Sie zum Deb
 
 - Name des in der IDE dargestellten Geräts
 - Die Betriebssystemversion Ihres Geräts
-- Android: Stellen Sie sicher, dass Sie den x86-Emulator verwenden.
+- Android: Stellen Sie sicher, dass die Verwendung von x X86 Emulator
 - Android: Welche Emulatorplattform verwenden Sie? Google-Emulatoren? Visual Studio-Emulator für Android? Xamarin Android Player?
 - Funktioniert die App, die Sie debuggen wollen, ordnungsgemäßauf dem Gerät?
 - Besitzt das Gerät über eine Netzwerkverbindung (Überprüfen über Webbrowser)?
