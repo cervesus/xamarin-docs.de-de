@@ -6,13 +6,13 @@ ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2018
-ms.openlocfilehash: 015a7dfa3d55b411e6626ae2ac70fd2930661e65
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/08/2018
+ms.openlocfilehash: a65946f21f8ced00e9ad64aec590df37acab1528
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898991"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207816"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms-Anwendungsgrundlagen
 
@@ -27,6 +27,10 @@ Die `Application`-Klasse stellt den Startpunkt für Xamarin.Forms dar – jede A
 ## <a name="app-lifecycleapp-lifecyclemd"></a>[App-Lebenszyklus](app-lifecycle.md)
 
 Sie können mit der `Application`-Klasse `OnStart`, `OnSleep` und `OnResume`-Methoden sowie der modalen Navigationsereignisse die Ereignisse des Anwendungslebenszyklus mit benutzerdefiniertem Code behandeln.
+
+## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Anwendungsindizierung und Deep Linking](deep-linking.md)
+
+Mit der Anwendungsindizierung können Anwendungen, die andernfalls nach einigem Gebrauch vergessen würden, relevant bleiben, indem sie in den Suchergebnissen angezeigt werden. Mit Deep Linking können Anwendungen auf ein Suchergebnis reagieren, das Anwendungsdaten enthält, in der Regel durch Navigation zu einer Seite, auf die über einen Deeplink verwiesen wird.
 
 ## <a name="behaviorsbehaviorsindexmd"></a>[Verhalten](behaviors/index.md)
 
@@ -46,7 +50,7 @@ Der `DependencyService` stellt einen einfachen Locator bereit, mit dem Sie Code 
 
 ## <a name="effectseffectsindexmd"></a>[Effekte](effects/index.md)
 
-Durch Effekte können native Steuerelemente auf jeder Plattform angepasst werden. Sie werden normalerweise für kleine stilistische Änderungen verwendet.
+Durch Effekte können native Steuerelemente auf jeder Plattform angepasst werden. Sie werden normalerweise für kleine Formatierungsänderungen verwendet.
 
 ## <a name="filesfilesmd"></a>[Dateien](files.md)
 
@@ -66,7 +70,7 @@ Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über die SQLite-Date
 
 ## <a name="messaging-centermessaging-centermd"></a>[Messaging Center](messaging-center.md)
 
-Das Xamarin.Forms-`MessagingCenter` ermöglicht, dass Anzeigemodelle und andere Komponenten kommunizieren, ohne etwas über die andere Partei wissen zu müssen, außer einen einfachen Nachrichtenvertrag.
+Mit Xamarin.Forms `MessagingCenter` können ViewModels und andere Komponenten kommunizieren, ohne etwas über die andere Partei wissen zu müssen, nur mit einem einfachen Nachrichtenvertrag.
 
 ## <a name="navigationnavigationindexmd"></a>[Navigation](navigation/index.md)
 
