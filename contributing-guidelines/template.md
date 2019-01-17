@@ -165,7 +165,7 @@ Wenn die UID die Sonderzeichen \` und \# enthält, muss der UID-Wert als %60 und
 1. kommt
 1. eine
 1. eingebettete
-    1. Fräulein Gloria
+    1. Frau Gloria
     1. Professor Bloom
 1. geordnete
 1. Liste

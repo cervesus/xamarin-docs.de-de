@@ -4,13 +4,14 @@ description: In diesem Dokument wird die Klasse „Preferences“ in Xamarin.Ess
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 0144cdd4e12d53e0ac82af24a932825491db9e41
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/15/2019
+ms.custom: video
+ms.openlocfilehash: 6d57b5ce9cb61363eef24b230f6cf71894f66198
+ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899083"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317881"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Einstellungen
 
@@ -68,7 +69,7 @@ Die folgenden Datentypen werden in der Klasse **Preferences** unterstützt:
 
 ## <a name="implementation-details"></a>Implementierungsdetails
 
-`DateTime`-Werte werden im 64-Bit-Binärformat (lange ganze Zahl) mithilfe von zwei durch die Klasse `DateTime` definierten Methoden gespeichert: Die Methode [`ToBinary`](xref:System.DateTime.ToBinary) dient zum Codieren des `DateTime`-Werts, und die Methode [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) decodiert den Wert. In der Dokumentation zu diesen Methoden finden Sie eventuell notwendige Anpassungen, die an decodierten Werten vorgenommen werden müssen, wenn ein `DateTime`-Wert gespeichert wird, der kein UTC-Wert (Coordinated Universal Time) ist.
+Werte von `DateTime` befinden sich in einem 64-Bit-Binärdateiformat (langer Integer) mit zwei durch die `DateTime`-Klasse definierten Methoden: Die [`ToBinary`](xref:System.DateTime.ToBinary)-Methode dient zum Codieren des `DateTime`-Werts, und die [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64))-Methode decodiert den Wert. In der Dokumentation zu diesen Methoden finden Sie eventuell notwendige Anpassungen, die an decodierten Werten vorgenommen werden müssen, wenn ein `DateTime`-Wert gespeichert wird, der kein UTC-Wert (Coordinated Universal Time) ist.
 
 ## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
@@ -98,3 +99,9 @@ Beachten Sie beim Speichern einer Zeichenfolge, dass diese API zum Speichern kle
 
 - [Preferences-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
 - [Preferences-API-Dokumentation](xref:Xamarin.Essentials.Preferences)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Preferences-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
