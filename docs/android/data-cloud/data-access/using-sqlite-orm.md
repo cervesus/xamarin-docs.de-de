@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 741e18d84c25bb4479480949a271a5845e99daa1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3c552d97f64b28ed47a9226047862bffcfa8c9e3
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118460"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418685"
 ---
 # <a name="using-sqlitenet-with-android"></a>Verwenden von SQLite.NET mit Android
 
@@ -22,8 +22,8 @@ Um die Bibliothek von SQLite.NET in einer Xamarin-app zu einzuschließen, fügen
 
 - **Paketname:** Sqlite-Net-Plc
 - **Autor:** Frank A. Krueger
-- **ID:** Sqlite-Net-Plc
-- **URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **ID:** sqlite-net-pcl
+- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![Von SQLite.NET NuGet-Paket](using-sqlite-orm-images/image1a-sml.png "von SQLite.NET NuGet-Paket")](using-sqlite-orm-images/image1a.png#lightbox)
 
@@ -136,7 +136,7 @@ Allgemeine Attribute, die Sie anwenden können, auf Ihre Klassen zu steuern, wie
 -   **[MaxLength(value)]**  &ndash; Beschränken Sie die Länge einer Text-Eigenschaft, wenn, dass Sie eine Datenbank einfügen versucht wird. Nutzen von Code sollte überprüfen Sie dies vor dem Einfügen des Objekts, wie dieses Attribut nur 'aktiviert ist' bei Einfüge- oder Updatevorgang versucht wird.
 
 -   **[Ignorieren]**  &ndash; Bewirkt, dass von SQLite.NET, diese Eigenschaft ignoriert werden sollen.
-    Dies ist besonders nützlich für Eigenschaften, die einen Typ aufweisen, der nicht in der Datenbank gespeichert werden, oder Eigenschaften, die Modell-Sammlungen, die nicht automatisch aufgelöst werden können, SQLite sein.
+    Dies ist besonders nützlich für Eigenschaften, die einen Typ aufweisen, der nicht in der Datenbank gespeichert werden, oder Eigenschaften, die Auflistungen zu modellieren, die vom SQLite nicht automatisch aufgelöst werden kann.
 
 -   **[Unique]**  &ndash; Wird sichergestellt, dass die Werte in der zugrunde liegenden Datenbank eindeutig sind.
 
@@ -205,7 +205,7 @@ Sehen Sie sich die `rowcount` , bestätigen, wie viele Zeilen betroffen sind (in
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>Verwenden von SQLite.NET mit mehreren Threads
 
-SQLite unterstützt drei verschiedene threading-Modi: *Singlethread-*, *Multi-Thread*, und *serialisiert*. Wenn Sie die Datenbank von mehreren Threads ohne jegliche Einschränkungen zugreifen möchten, können Sie konfigurieren, dass SQLite verwendet die **serialisiert** threading-Modus. Es ist wichtig, die in diesem Modus einem frühen Zeitpunkt in Ihrer Anwendung einzurichten (z. B. am Anfang der `OnCreate` Methode).
+SQLite unterstützt drei unterschiedliche threading-Modi: *Singlethread-*, *mit mehreren Threads*, und *serialisiert*. Wenn Sie die Datenbank von mehreren Threads ohne jegliche Einschränkungen zugreifen möchten, können Sie konfigurieren, dass SQLite verwendet die **serialisiert** threading-Modus. Es ist wichtig, die in diesem Modus einem frühen Zeitpunkt in Ihrer Anwendung einzurichten (z. B. am Anfang der `OnCreate` Methode).
 
 Um den threading-Modus zu ändern, rufen `SqliteConnection.SetConfig`. Diese Codezeile konfiguriert, SQLite für **serialisiert** Modus: 
 
