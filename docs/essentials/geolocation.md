@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 651da789dcd87810ef6650d87fc2df4f91ce58e1
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 84e0a5d37b757d14750f6bd3119d8695b35d7544
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898926"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841366"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
 
@@ -95,6 +95,10 @@ catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
 }
+catch (FeatureNotEnabledException fneEx)
+{
+    // Handle not enabled on device exception
+}
 catch (PermissionException pEx)
 {
     // Handle permission exception
@@ -123,6 +127,10 @@ try
 catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
+}
+catch (FeatureNotEnabledException fneEx)
+{
+    // Handle not enabled on device exception
 }
 catch (PermissionException pEx)
 {
@@ -189,10 +197,10 @@ Im Folgenden ein Beispiel:
 ```csharp
 Location boston = new Location(42.358056, -71.063611);
 Location sanFrancisco = new Location(37.783333, -122.416667);
-double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnit.Miles);
+double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
 ```
 
-Der `Location`-Konstruktor verfügt über Argumente für Breiten- und Längengrad in dieser Reihenfolge. Positive Breitengradwerte befinden sich nördlich vom Äquator und positive Längengradwerte östlich vom Nullmeridian. Verwenden Sie das letzte Argument für `CalculateDistance`, um Meilen oder Kilometer anzugeben. Die Klasse `Location` definiert außerdem die Methoden `KilometersToMiles` und `MilesToKilometers` zum Konvertieren der beiden Einheiten.
+Der `Location`-Konstruktor verfügt über Argumente für Breiten- und Längengrad in dieser Reihenfolge. Positive Breitengradwerte befinden sich nördlich vom Äquator und positive Längengradwerte östlich vom Nullmeridian. Verwenden Sie das letzte Argument für `CalculateDistance`, um Meilen oder Kilometer anzugeben. Die Klasse `UnitConverters` definiert außerdem die Methoden `KilometersToMiles` und `MilesToKilometers` zum Konvertieren der beiden Einheiten.
 
 ## <a name="api"></a>API
 
