@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 8bc319b53e4a93d5cac35c4f8c3263b72dfe45e2
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 719efc87b8843d0d2fcd2643aab23aa6849d940a
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746907"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841379"
 ---
 # <a name="images-in-xamarinmac"></a>Bilder in Xamarin.Mac
 
@@ -82,7 +82,7 @@ Folgendes sollte berücksichtigt werden bei Verwendung von PDF-Vektorgrafiken in
 - Dies wird nicht vollständige Vektor als PDF-Datei gerasterte zu einer Bitmap zur Kompilierzeit und die Bitmaps, die in der fertigen Anwendung geliefert werden.
 - Sie können nicht die Größe des Bilds anpassen, nachdem er in den Asset-Katalog festgelegt wurde. Wenn Sie, zum Ändern der Bildgröße (entweder im Code oder versuchen durch automatisches Layout mit Größenklassen) wird genau wie jede andere Bitmap das Bild verzerrt werden.
 
-Bei Verwendung einer **Images** in Interface Builder von Xcode, können Sie einfach den Namen des Satzes auswählen, aus der Dropdownliste in der **Attributinspektor**: **
+Bei Verwendung einer **Images** in Interface Builder von Xcode, können Sie einfach den Namen des Satzes auswählen, aus der Dropdownliste in der **Attributinspektor**:
 
 ![Legen Sie mit der Sie ein Bild ausgewählt in Interface Builder von Xcode](image-images/imageset06.png "in Interface Builder von Xcode legen Sie ein Bild ausgewählt")
 
@@ -140,7 +140,7 @@ Alle grafischen Medienobjekt, das Sie einer Xamarin.Mac-Anwendung (Symbole, benu
 
 Wenn Sie die standard und hochauflösenden Version des ein Image erstellen, verwenden Sie die Benennungskonvention für das Image-Paar, wenn sie Ihrem Xamarin.Mac-Projekt hinzufügen:
 
-- **Standardauflösung**  - **ImageName.filename-Extension** (Beispiel: **tags.png**)
+- **Standard-Resolution**  - **ImageName.filename-extension** (Example: **tags.png**)
 - **Mit hoher Auflösung**   -  **ImageName@2x.filename-extension** (Beispiel: **tags@2x.png**)
 
 Wenn zu einem Projekt hinzugefügt, würden sie wie folgt aussehen:
