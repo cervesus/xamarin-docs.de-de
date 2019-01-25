@@ -1,16 +1,17 @@
 ---
 title: Übersicht über die Objective-C-Bindungen
-description: Dieses Dokument enthält eine Übersicht über verschiedene Möglichkeiten zum Erstellen von Bindungen c# für Objective-C-Code, einschließlich der Befehlszeilen-Bindungen, bindungsprojekte und Ziel Sharpie. Es wird auch erläutert, wie die Bindung funktioniert.
+description: Dieses Dokument bietet einen Überblick über verschiedene Möglichkeiten zum Erstellen C# Bindungen für Objective-C-Code, einschließlich der Befehlszeilen-Bindungen, bindungsprojekte und Ziel Sharpie. Es wird auch erläutert, wie die Bindung funktioniert.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 97d0c5b9f61d4dafe144d2b2f22df6d465cbbccb
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.date: 11/25/2015
+ms.openlocfilehash: 3f15eaf9171ac44b870239fb5ffa14edd6210360
+ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855272"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54879302"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Übersicht über die Objective-C-Bindungen
 
@@ -18,14 +19,14 @@ _Details der Funktionsweise des Bindungsvorgangs_
 
 Binden eine Objective-C-Bibliothek für die Verwendung mit Xamarin verwendet drei Schritte:
 
-1. Schreiben einer C# -Code "API-Definition" für beschrieben, wie die systemeigene API ist verfügbar gemacht in .NET, und wie sie die zugrunde liegenden Objective-c zugeordnet Dies erfolgt mithilfe von standardmäßigen C#-Konstrukte wie `interface` und verschiedene Bindung **Attribute** (finden Sie in diesem [einfaches Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Schreiben einer C# "API-Definition" für beschrieben, wie die systemeigene API ist verfügbar gemacht in .NET, und wie sie die zugrunde liegenden Objective-c zugeordnet Dies erfolgt mit standardmäßigen C# Konstrukte wie `interface` und verschiedene Bindung **Attribute** (finden Sie in diesem [einfaches Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
-2. Einmal haben Sie der "API-Definition" in c# geschrieben, kompilieren, um eine "Bindung"-Assembly zu erzeugen. Dies kann erfolgen auf der [ **Befehlszeile** ](#commandline) oder eine [ **bindungsprojekt** ](#bindingproject) in Visual Studio für Mac oder Visual Studio.
+2. Nachdem Sie die "API-Definition", im geschrieben haben C#, Sie kompilieren, um eine "Bindung"-Assembly zu erzeugen. Dies kann erfolgen auf der [ **Befehlszeile** ](#commandline) oder eine [ **bindungsprojekt** ](#bindingproject) in Visual Studio für Mac oder Visual Studio.
 
 3. Die Assembly "Bindung" wird dann an Ihre Xamarin-Application-Projekt hinzugefügt, damit Sie die systemeigene Funktionalität, die mit der API, die Sie definiert zugreifen können.
   Das bindungsprojekt erfolgt unabhängig von der Ihre Anwendungsprojekte.
 
-**Hinweis:** Schritt 1 kann automatisiert werden, mit der Hilfe von [ **Ziel Sharpie**](#objectivesharpie). Er untersucht die Objective-C-API und generiert eine vorgeschlagene c# "API-Definition". Sie können anpassen, die Dateien vom Ziel Sharpie erstellt und sie in einem bindungsprojekt (oder in der Befehlszeile) die bindungsassembly zu erstellen. Objektive Sharpie erstellt keine Bindungen selbst, sondern lediglich ein optionaler Teil eines größeren Prozesses.
+**HINWEIS:** Schritt 1 kann automatisiert werden, mit der Hilfe von [ **Ziel Sharpie**](#objectivesharpie). Er untersucht die Objective-C-API und generiert eine vorgeschlagene C# "API-Definition". Sie können anpassen, die Dateien vom Ziel Sharpie erstellt und sie in einem bindungsprojekt (oder in der Befehlszeile) die bindungsassembly zu erstellen. Objektive Sharpie erstellt keine Bindungen selbst, sondern lediglich ein optionaler Teil eines größeren Prozesses.
 
 Lesen Sie auch weitere technische Details von [Funktionsweise](#howitworks), derer Sie Ihre Bindungen zu schreiben.
 
@@ -33,7 +34,7 @@ Lesen Sie auch weitere technische Details von [Funktionsweise](#howitworks), der
 
 ## <a name="command-line-bindings"></a>Befehls-Line-Bindungen
 
-Sie können die `btouch-native` für Xamarin.iOS (oder `bmac-native` bei Verwendung von Xamarin.Mac) Bindungen direkt zu erstellen. Dies erfolgt durch das Übergeben der c#-API-Definitionen, die Sie manuell erstellt haben (oder Ziel Sharpie), das Befehlszeilentool (`btouch-native` für iOS oder `bmac-native` für Mac).
+Sie können die `btouch-native` für Xamarin.iOS (oder `bmac-native` bei Verwendung von Xamarin.Mac) Bindungen direkt zu erstellen. Dies erfolgt durch das Übergeben der C# -API-Definitionen, die Sie manuell erstellt haben (oder mit der Ziel-Sharpie), das Befehlszeilentool (`btouch-native` für iOS oder `bmac-native` für Mac).
 
 
 Die allgemeine Syntax zum Aufrufen dieser Tools ist:
@@ -75,7 +76,7 @@ Es ist möglich, verwenden Sie die [[registrieren]](https://developer.xamarin.co
 
 Suchen Sie zunächst einen Typ, den Sie binden möchten. Diskussion zu (und Einfachheit), wird eine Bindung wird der [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) Typ (die bereits im gebundenen [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); die nachfolgende Implementierung ist einfach, z. B. Zwecke).
 
-Zweitens müssen wir die c#-Typs zu erstellen. Wir möchten wahrscheinlich dies in einem Namespace platzieren; Da Objective-C-Namespaces nicht unterstützt, müssen wir verwenden die `[Register]` Attribut so ändern Sie den Typnamen, die Xamarin.iOS mit Objective-C-Laufzeit registriert werden. Der C#-Typ muss auch eine Vererbung von [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+Zweitens müssen wir erstellen den C# Typ. Wir möchten wahrscheinlich dies in einem Namespace platzieren; Da Objective-C-Namespaces nicht unterstützt, müssen wir verwenden die `[Register]` Attribut so ändern Sie den Typnamen, die Xamarin.iOS mit Objective-C-Laufzeit registriert werden. Die C# Typ muss auch eine Vererbung von [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
 
 ```csharp
 namespace Example.Binding {
@@ -188,5 +189,5 @@ namespace Example.Binding {
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
