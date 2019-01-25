@@ -74,6 +74,8 @@ items:
         href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
     - name: NuGet-Pakete (Leitfaden)
       href: app-fundamentals/nuget-manual.md
+    - name: Verwenden von C/C++-Bibliotheken in plattformübergreifenden Apps
+      href: cpp/index.md
   - name: Sprachenunterstützung
     href: platform/index.md
     items:
@@ -153,7 +155,7 @@ items:
         href: troubleshooting/questions/pcl-support-libraries.md
       - name: PCL-Reflektions-API
         href: troubleshooting/questions/pcl-reflection.md
-      - name: 'PCL-Fallstudie: Wie kann ich Probleme im Zusammenhang mit System.Diagnostics.Tracing für das NuGet-Paket für den Microsoft-TPL-Datenfluss lösen?'
+      - name: 'PLC-Fallstudie: Wie kann ich Probleme im Zusammenhang mit System.Diagnostics.Tracing für das NuGet-Paket für den Microsoft-TPL-Datenfluss lösen?'
         href: troubleshooting/questions/pcl-case-study.md
       - name: Wie kann ich NuGet aktualisieren?
         href: troubleshooting/questions/nuget-update.md
@@ -190,9 +192,9 @@ items:
   - name: Proben
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 6de69aacc37d17086e49ae1a7571879686168a42
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5eb01503b809979ebbc6598cf1cde985d3431bad
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130240"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841327"
