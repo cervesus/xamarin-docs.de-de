@@ -1,5 +1,5 @@
 ---
-title: Schnellstart für „Hallo, Android“-Multiscreen
+title: 'Hello, Android Multiscreen (Hallo, Android-Multiscreen): Schnellstart'
 description: In diesem zweiteiligen Handbuch wird die Phoneword-Anwendung, um einen zweiten Bildschirm erweitert. Gleichzeitig werden die grundlegenden Bausteine von Android-Anwendungen erläutert und sie erhalten einen tieferen Einblick in die Architektur von Android.
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -9,14 +9,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 774661b36a41e4791207a54892663af13de3b3d3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dcc60243957bb1a7720c08dc7a5ce51caf585ce8
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120488"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418659"
 ---
-# <a name="hello-android-multiscreen-quickstart"></a>Schnellstart für „Hallo, Android“-Multiscreen
+# <a name="hello-android-multiscreen-quickstart"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen): Schnellstart
 
 _In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, um einen zweiten Bildschirm erweitert. Gleichzeitig werden die grundlegenden Bausteine von Android-Anwendungen erläutert, und Sie erhalten einen tieferen Einblick in die Architektur von Android._
 
@@ -143,7 +143,7 @@ translationHistoryButton.Click += (sender, e) =>
 };
 ```
 
-Aktualisieren Sie die Schaltfläche **Übersetzen**, um die Telefonnummer zur Liste `phoneNumbers` hinzuzufügen. Der `Click`-Handler für `TranslateHistoryButton` sollte in etwa dem folgenden Code entsprechen:
+Aktualisieren Sie die Schaltfläche **Übersetzen**, um die Telefonnummer zur Liste `phoneNumbers` hinzuzufügen. Der `Click`-Handler für `translateButton` sollte in etwa dem folgenden Code entsprechen:
 
 ```csharp
 // Add code to translate number

@@ -7,13 +7,14 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 09/06/2018
-ms.openlocfilehash: 67ab5b9bd711cb10a20b1365effea1627d0f7688
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 5618f15d60a26d2ad3d84ff0e3674936c0c01ca3
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526987"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479783"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Verwalten virtueller Geräte mit Android Device Manager
 
@@ -41,7 +42,7 @@ Sie benötigen Folgendes, um Android Device Manager verwenden zu können:
 - Visual Studio-Tools für Xamarin Version 4.9 oder höher.
 
 - Das Android SDK muss installiert sein (siehe [Einrichten des Android SDK für Xamarin.Android](~/android/get-started/installation/android-sdk.md)).
-  Achten Sie darauf, dass Sie Android SDK am Standardspeicherort installieren, wenn das SDK noch nicht installiert ist: **C:\\Programme (x86)\\Android\\android-sdk**.
+  Achten Sie darauf, dass Sie das Android SDK in dessen Standardspeicherort installieren, wenn das SDK noch nicht installiert ist: **C:\\Programme (x86)\\Android\\android-sdk**.
 
 - Die folgenden Pakete müssen (über den [Android SDK-Manager](~/android/get-started/installation/android-sdk.md)) installiert werden: 
     - **Android SDK Tools, Version 26.1.1** oder höher
@@ -388,7 +389,7 @@ Führen Sie die folgenden Schritte aus, um dieses Problem zu umgehen:
 
    ![Speicherort der Protokolldatei von Android Device Manager](device-manager-images/win/30-log-files.png)
 
-2. Doppelklicken Sie auf eine der Protokolldateien, um diese zu öffnen und den **Konfigurationsdateipfad** zu suchen. Zum Beispiel:
+2. Doppelklicken Sie auf eine der Protokolldateien, um diese zu öffnen und den **Konfigurationsdateipfad** zu suchen. Beispiel:
 
    [![Konfigurationsdateipfad in der Protokolldatei](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
@@ -502,3 +503,9 @@ In diesem Handbuch wurde der Android Device Manager vorgestellt, der in Visual S
 - [Anmerkungen zu dieser Version von SDK Tools (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/How-to-Create-and-Manage-Your-Own-Android-Emulators/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

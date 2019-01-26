@@ -6,13 +6,14 @@ ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 02/09/2018
-ms.openlocfilehash: 6e63d60d12a80abb8f229b2daf0767ad54a83314
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 6d64acdcc84c16f33a1f543bf1c9506ae7c8e347
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118902"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479692"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Drahtlose Bereitstellung für Xamarin.iOS- und tvOS-Apps
 
@@ -58,7 +59,7 @@ Der folgende Kopplungsvorgang muss nur einmal pro Gerät durchgeführt werden. X
 
 1. Öffnen Sie Xcode, und wechseln Sie zu **Window > Devices and Simulators** (Fenster > Geräte und Simulatoren).
 2. Schließen Sie Ihr iOS-Gerät über ein Lightning-Kabel an Ihren Mac an. Möglicherweise müssen Sie auf Ihrem Gerät **Diesem Computer vertrauen** auswählen.
-3. Wählen Sie das Gerät aus, und wählen Sie dann das Kontrollkästchen **Connect via network** (Verbindung über Netzwerk herstellen), um Ihr Gerät zu koppeln: ![Fenster mit Geräten und Simulatoren mit der Option zur Verbindungsherstellung über ein Netzwerk](wireless-deployment-images/image2.png)
+3. Wählen Sie Ihr Gerät aus, und aktivieren Sie dann das Kontrollkästchen **Connect via network** (Über Netzwerk verbinden), um Ihr Gerät zu koppeln:  ![Fenster mit Geräten und Simulatoren mit der Option zur Verbindungsherstellung über ein Netzwerk](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>Koppeln von Apple TV mit Xcode
 
@@ -105,3 +106,9 @@ Drahtloses Debuggen wird automatisch nach der drahtlosen Bereitstellung aktivier
 ## <a name="related-links"></a>Verwandte Links
 
 - [Koppeln eines drahtlosen Geräts mit Xcode](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Debug-to-iOS-Devices-Over-Wi-Fi/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
