@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 56f9cbdae565f0d89463742377ec2311d8e375ac
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 75904ad91df7795c538e736eabb6c6000847b449
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235050"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233652"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS-API-Design
 
@@ -92,9 +92,9 @@ Dies ist eine neue Bindung, die speziell für iOS, basierend auf der Erfahrung v
 
 #### <a name="foundation"></a>Foundation
 
-Die [Foundation](https://developer.xamarin.com/api/namespace/Foundation/) -Namespace stellt die grundlegenden Datentypen entworfen, mit dem Objective-C-Foundation-Framework zusammenarbeiten, die Teil des iOS ist und die Basis für objektorientierte Programmierung in Objective-c ist bereit.
+Die [Foundation](xref:Foundation) -Namespace stellt die grundlegenden Datentypen entworfen, mit dem Objective-C-Foundation-Framework zusammenarbeiten, die Teil des iOS ist und die Basis für objektorientierte Programmierung in Objective-c ist bereit.
 
-Xamarin.iOS spiegelt in c# die Hierarchie von Klassen, die in Objective-c Z. B. die Objective-C-Basisklasse [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) ist sowohl in c# über [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/).
+Xamarin.iOS spiegelt in c# die Hierarchie von Klassen, die in Objective-c Z. B. die Objective-C-Basisklasse [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) ist sowohl in c# über [Foundation.NSObject](xref:Foundation.NSObject).
 
 Obwohl dieser Namespace Bindungen für die zugrunde liegenden Objective-C-Foundation-Typen enthält, in einigen Fällen haben wir die zugrunde liegende Typen zu .NET-Typen zugeordnet. Zum Beispiel:
 
@@ -107,13 +107,13 @@ Weitere Informationen zu APIs binden, finden Sie unter den [Xamarin.iOS-Bindung 
 
 ##### <a name="nsobject"></a>NSObject
 
-Die [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) Typ bildet die Grundlage für alle Objective-C-Bindungen. Xamarin.iOS-Typen zu spiegeln zwei Klassen von Typen aus dem iOS-CocoaTouch-APIs: die C-Typen (in der Regel als CoreFoundation Typen bezeichnet) und die Objective-C-Typen (diese alle von der NSObject-Klasse abgeleitet sind).
+Die [NSObject](xref:Foundation.NSObject) Typ bildet die Grundlage für alle Objective-C-Bindungen. Xamarin.iOS-Typen zu spiegeln zwei Klassen von Typen aus dem iOS-CocoaTouch-APIs: die C-Typen (in der Regel als CoreFoundation Typen bezeichnet) und die Objective-C-Typen (diese alle von der NSObject-Klasse abgeleitet sind).
 
-Für jeden Typ, der einen nicht verwalteten Typ entspricht, ist es möglich, das systemeigene Objekt durch Abrufen der [behandeln](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) Eigenschaft.
+Für jeden Typ, der einen nicht verwalteten Typ entspricht, ist es möglich, das systemeigene Objekt durch Abrufen der [behandeln](xref:Foundation.NSObject.Handle) Eigenschaft.
 
 Während Mono Garbagecollection für alle Objekte bereitstellen, wird die `Foundation.NSObject` implementiert die [System.IDisposable](xref:System.IDisposable) Schnittstelle. Dies bedeutet, dass Sie alle angegebenen NSObject die Ressourcen explizit freigeben können, ohne zu warten, bis der Garbage Collector Kick-in. Dies ist wichtig, wenn Sie hohe NSObjects, z. B. UIImages verwenden, die Zeiger auf die große Datenblöcke enthalten kann.
 
-Wenn Ihr Typ deterministische Beendigung ausführen muss, überschreiben die [NSObject.Dispose(bool)-Methode](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose) Parameters Dispose-Methode ist "" bool "verwerfen", und legen Sie es "true" bedeutet, dass die Dispose-Methode aufgerufen wird da der Benutzer explizit aufgerufene Dispose () für das Objekt. Wenn der Wert auf "false" festgelegt ist, bedeutet dies, dass der Finalizer-Thread die Methode Dispose (Bool disposing) vom Finalizer aufgerufen wird. []()
+Wenn Ihr Typ deterministische Beendigung ausführen muss, überschreiben die [NSObject.Dispose(bool)-Methode](xref:Foundation.NSObject.Dispose(System.Boolean)) Parameters Dispose-Methode ist "" bool "verwerfen", und legen Sie es "true" bedeutet, dass die Dispose-Methode aufgerufen wird da der Benutzer explizit aufgerufene Dispose () für das Objekt. Wenn der Wert auf "false" festgelegt ist, bedeutet dies, dass der Finalizer-Thread die Methode Dispose (Bool disposing) vom Finalizer aufgerufen wird. []()
 
 
 ##### <a name="categories"></a>Kategorien
@@ -198,7 +198,7 @@ Sie können dieses Attribut auf alle Member eines Typs oder auf den Typ selbst a
 
 #### <a name="uikit"></a>UIKit
 
-Die [UIKit](https://developer.xamarin.com/api/namespace/UIKit/) -Namespace enthält eine 1: 1-Zuordnung für alle von der UI-Komponenten, aus denen CocoaTouch in Form von Klassen in c# besteht. Die API wurde geändert, um die Konventionen, die in der C#-Sprache verwendet.
+Die [UIKit](xref:UIKit) -Namespace enthält eine 1: 1-Zuordnung für alle von der UI-Komponenten, aus denen CocoaTouch in Form von Klassen in c# besteht. Die API wurde geändert, um die Konventionen, die in der C#-Sprache verwendet.
 
 C#-Delegaten werden für häufige Vorgänge bereitgestellt. Finden Sie unter den [Delegaten](#Delegates) Abschnitt, um weitere Informationen.
 
@@ -283,7 +283,7 @@ Diese Delegaten spielen eine wichtige Rolle bei UIKit und andere CocoaTouch-APIs
 -  Um das Verhalten eines Steuerelements zu steuern.
 
 
-Das programmierschema wurde entwickelt, um die Erstellung von abgeleiteten Klassen zum Ändern des Verhaltens für ein Steuerelement zu minimieren. Diese Lösung ist ähnlich wie im Geiste, was andere GUI-Toolkits im Laufe der Jahre getan haben: GTK#s signalisiert, Qt-Slots "," Windows Forms-Ereignisse "," WPF/Silverlight-Ereignisse und so weiter. Um zu vermeiden, dass Hunderte von Schnittstellen (eine für jede Aktion) oder verlangt von Entwicklern, zu viele Methoden zu implementieren, die sie nicht benötigen, unterstützt Objective-C-Definitionen optional. Dies ist anders als C#-Schnittstellen, die alle Methoden implementiert werden müssen.
+Das programmierschema wurde entwickelt, um die Erstellung von abgeleiteten Klassen zum Ändern des Verhaltens für ein Steuerelement zu minimieren. Diese Lösung sieht etwa wie im Geiste was andere GUI-Toolkits im Laufe der Jahre getan haben: GTK# signalisiert, Qt-Slots "," Windows Forms-Ereignisse "," WPF/Silverlight-Ereignisse und so weiter. Um zu vermeiden, dass Hunderte von Schnittstellen (eine für jede Aktion) oder verlangt von Entwicklern, zu viele Methoden zu implementieren, die sie nicht benötigen, unterstützt Objective-C-Definitionen optional. Dies ist anders als C#-Schnittstellen, die alle Methoden implementiert werden müssen.
 
 In Objective-C-Klassen, sehen Sie, dass Klassen, mit denen dieses Muster Programmierung eine Eigenschaft in der Regel mit dem Namen verfügbar machen `delegate`, dies ist erforderlich, um die erforderliche Teile der Schnittstelle und NULL oder mehr der optionalen Komponenten implementieren.
 
@@ -301,9 +301,9 @@ Betrachten Sie beispielsweise die [UIWebView](http://developer.apple.com/iphone/
 
 Für viele Typen Xamarin.iOS erstellt automatisch einen entsprechenden Delegaten die Weiterleiten der `UIWebViewDelegate` Aufrufe auf C#-Ereignissen. Für `UIWebView`:
 
--  Die [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) -Methode zugeordnet ist, um die [UIWebView.LoadStarted](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadStarted/) Ereignis.
--  Die [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) -Methode zugeordnet ist, um die [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/) Ereignis.
--  Die [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) -Methode zugeordnet ist, um die [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/) Ereignis.
+-  Die [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) -Methode zugeordnet ist, um die [UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted) Ereignis.
+-  Die [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) -Methode zugeordnet ist, um die [UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished) Ereignis.
+-  Die [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) -Methode zugeordnet ist, um die [UIWebView.LoadError](xref:UIKit.UIWebView.LoadError) Ereignis.
 
 Dieses einfache Programm zeichnet z. B. die Start- und Endzeiten, die beim Laden von einer Web anzuzeigen:
 
@@ -339,7 +339,7 @@ Die `UITextField`des `ShouldReturn` Eigenschaft in diesem Fall wird als Argument
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>Über eine Eigenschaft des Delegaten typisiert stark.
 
-Wenn Sie keine Ereignisse verwenden möchten, Sie Ihren eigenen bereitstellen [UIWebViewDelegate](https://developer.xamarin.com/api/type/UIKit.UIWebViewDelegate/) Unterklasse und weisen sie Sie der [UIWebView.Delegate](https://developer.xamarin.com/api/property/UIKit.UIWebView.Delegate/) Eigenschaft. Sobald UIWebView.Delegate zugewiesen wurde, der Ereignismechanismus Dispatch UIWebView funktioniert nicht mehr, und die UIWebViewDelegate-Methoden werden aufgerufen werden, wenn die entsprechenden Ereignisse auftreten.
+Wenn Sie keine Ereignisse verwenden möchten, Sie Ihren eigenen bereitstellen [UIWebViewDelegate](xref:UIKit.UIWebViewDelegate) Unterklasse und weisen sie Sie der [UIWebView.Delegate](xref:UIKit.UIWebView.Delegate) Eigenschaft. Sobald UIWebView.Delegate zugewiesen wurde, der Ereignismechanismus Dispatch UIWebView funktioniert nicht mehr, und die UIWebViewDelegate-Methoden werden aufgerufen werden, wenn die entsprechenden Ereignisse auftreten.
 
 Dieser einfache Typ zeichnet z. B. das lange es, das dauert eine Webansicht zu laden:
 
@@ -368,9 +368,9 @@ web.Delegate = new Notifier ();
 
 Die oben genannten erstellt eine UIWebViewer und wird angewiesen, sie zum Senden von Nachrichten mit einer Instanz von Änderungsbenachrichtigung, eine Klasse, die wir erstellt haben, um auf Nachrichten reagieren.
 
-Dieses Muster wird auch verwendet, um das Verhalten bestimmter Steuerelemente, z. B. im Fall UIWebView steuern die [UIWebView.ShouldStartLoad](https://developer.xamarin.com/api/property/UIKit.UIWebView.ShouldStartLoad/) Eigenschaft ermöglicht die `UIWebView` Instanz, um zu steuern, ob die `UIWebView` lädt ein Seite oder nicht.
+Dieses Muster wird auch verwendet, um das Verhalten bestimmter Steuerelemente, z. B. im Fall UIWebView steuern die [UIWebView.ShouldStartLoad](xref:UIKit.UIWebView.ShouldStartLoad) Eigenschaft ermöglicht die `UIWebView` Instanz, um zu steuern, ob die `UIWebView` lädt ein Seite oder nicht.
 
-Das Muster wird auch verwendet, um die Daten nach Bedarf für einige Steuerelemente bereitzustellen. Z. B. die [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/) Steuerelement ist ein leistungsfähiges Tabelle-Rendering-Steuerelement – und sowohl das Aussehen und den Inhalt von einer Instanz gesteuert werden eine [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
+Das Muster wird auch verwendet, um die Daten nach Bedarf für einige Steuerelemente bereitzustellen. Z. B. die [UITableView](xref:UIKit.UITableView) Steuerelement ist ein leistungsfähiges Tabelle-Rendering-Steuerelement – und sowohl das Aussehen und den Inhalt von einer Instanz gesteuert werden eine [UITableViewDataSource](xref:UIKit.UITableViewDataSource)
 
 <a name="WeakDelegate"/>
 
@@ -379,7 +379,7 @@ Das Muster wird auch verwendet, um die Daten nach Bedarf für einige Steuereleme
 Zusätzlich zu den stark typisierten Eigenschaft gibt es auch ein schwacher typisierter Delegaten, der dem Entwickler erlaubt, Dinge anders zu binden, falls gewünscht.
 Überall ein stark typisiertes `Delegate` -Eigenschaft verfügbar gemacht wird, in der Xamarin.iOS-Bindung, ein entsprechendes `WeakDelegate` -Eigenschaft ist ebenfalls verfügbar.
 
-Bei Verwendung der `WeakDelegate`, Sie sind verantwortlich für ordnungsgemäß durch ergänzen der Klasse mit dem [exportieren](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) Attribut, um die Auswahl anzugeben. Zum Beispiel:
+Bei Verwendung der `WeakDelegate`, Sie sind verantwortlich für ordnungsgemäß durch ergänzen der Klasse mit dem [exportieren](xref:Foundation.ExportAttribute) Attribut, um die Auswahl anzugeben. Zum Beispiel:
 
 ```csharp
 class Notifier : NSObject  {

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 31b4c6e98945cd7b5dd4cea8be6f5e3857444f78
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d4a90ee0b85144269d80815820fe09fa0fcd3c58
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131679"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233153"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Vorläufige Benachrichtigungen in Xamarin.iOS
 
@@ -26,7 +26,7 @@ Sehen Sie sich die [RedGreenNotifications](https://developer.xamarin.com/samples
 
 ## <a name="sending-provisional-notifications"></a>Vorläufige Senden von Benachrichtigungen
 
-Um vorläufige Benachrichtigungen senden, bieten `UNAuthorizationOptions.Provisional` als Option für die [`RequestAuthorization`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.RequestAuthorization/)
+Um vorläufige Benachrichtigungen senden, bieten `UNAuthorizationOptions.Provisional` als Option für die [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
 Methode der `UNUserNotificationCenter`:
 
 ```csharp

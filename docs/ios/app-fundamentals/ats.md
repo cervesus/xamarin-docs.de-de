@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 0645b326576a68c97479bc5b59aabaa104f87ae2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9308d3a746a5a0a43cf47cc5ea809c0f82bbe7b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114261"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233821"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>App-Transportsicherheit in Xamarin.iOS
 
@@ -27,11 +27,11 @@ Wie bereits erwähnt, stellt sicher ATS, dass die gesamte Internetkommunikation 
 
 Für vorhandene apps geben, implementieren die `HTTPS` Protokoll, wann immer möglich. Verwenden Sie für den neuen Xamarin.iOS-apps, `HTTPS` ausschließlich bei der Kommunikation mit Ressourcen im Internet. Darüber hinaus muss die allgemeine Kommunikation zwischen forward Secrecy mit Version 1.2 von TLS verschlüsselt werden.
 
-Verbindung mit [NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/), [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/) oder [NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/) ATS standardmäßig verwendet wird in apps für iOS 9 und OS X 10.11 (El Capitan) erstellt wurden.
+Verbindung mit [NSUrlConnection](xref:Foundation.NSUrlConnection), [CFUrl](xref:CoreFoundation.CFUrl) oder [NSUrlSession](xref:Foundation.NSUrlSession) ATS standardmäßig verwendet wird in apps für iOS 9 und OS X 10.11 (El Capitan) erstellt wurden.
 
 ## <a name="default-ats-behavior"></a>ATS-Standardverhalten
 
-Da ATS, wird standardmäßig in apps aktiviert ist, die für iOS 9 und OS X 10.11 (El Capitan), alle Verbindungen mit [NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/), [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/) oder [NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/) wird vorgenommen werden. ATS-sicherheitsanforderungen. Wenn Ihre Verbindungen diese Anforderung nicht erfüllen, werden sie mit einer Ausnahme fehlschlagen.
+Da ATS, wird standardmäßig in apps aktiviert ist, die für iOS 9 und OS X 10.11 (El Capitan), alle Verbindungen mit [NSUrlConnection](xref:Foundation.NSUrlConnection), [CFUrl](xref:CoreFoundation.CFUrl) oder [NSUrlSession](xref:Foundation.NSUrlSession) wird vorgenommen werden. ATS-sicherheitsanforderungen. Wenn Ihre Verbindungen diese Anforderung nicht erfüllen, werden sie mit einer Ausnahme fehlschlagen.
 
 ### <a name="ats-connection-requirements"></a>Verbindung ATS-Anforderungen
 
@@ -95,7 +95,7 @@ Zum Festlegen der HTTPClient-Implementierung, die von einer iOS-app verwendet, d
 
 Der verwaltete Handler ist der vollständig verwaltete "HttpClient"-Handler, der hat mit früheren Versionen von Xamarin.iOS ausgeliefert wurde, und ist der Standard-Handler.
 
--Experten:
+Pros:
 
 - Es ist die am häufigsten kompatibel mit Microsoft .NET und der älteren Version von Xamarin.
 
@@ -109,7 +109,7 @@ Nachteile:
 
 Der Handler für CFNetwork basierend basiert darauf, dass die systemeigene `CFNetwork` Framework.
 
--Experten:
+Pros:
 
 - Verwendet systemeigenen API für eine bessere Leistung und kleinere ausführbare Datei an.
 - Bietet Unterstützung für neuere Standards wie z. B. TLS 1.2.
@@ -124,7 +124,7 @@ Nachteile:
 
 Der Handler von NSUrlSession basierend basiert darauf, dass die systemeigene `NSUrlSession` API.
 
--Experten:
+Pros:
 
 - Verwendet systemeigenen API für eine bessere Leistung und kleinere ausführbare Datei an.
 - Bietet Unterstützung für neuere Standards wie z. B. TLS 1.2.
@@ -175,7 +175,7 @@ Jeder Schlüssel hat den folgenden Typ und die Bedeutung:
 - **NSAllowsArbitraryLoads** (`Boolean`) – Wenn `YES` ATS für eine beliebige Domäne deaktiviert **nicht** in aufgeführten `NSExceptionDomains`. Für die aufgelisteten Domänen werden die angegebenen Sicherheitseinstellungen verwendet werden.
 - **NSAllowsArbitraryLoadsInWebContent** (`Boolean`) – Wenn `YES` können Webseiten ordnungsgemäß geladen werden, während die Apple Transport Security (ATS) Schutz für den Rest der app immer noch aktiviert ist.
 - **NSExceptionDomains** (`Dictionary`) – eine Auflistung von Domänen, und die Sicherheitseinstellungen, die ATS für eine bestimmte Domäne verwendet werden soll.
-- **< Domain-name-for-exception-as-string >** (`Dictionary`) – eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`).
+- **< Domain-name-for-exception-as-string >** (`Dictionary`) – eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`) angezeigt wird.
 - **NSExceptionMinimumTLSVersion** (`String`) – die TLS-Mindestversion entweder als `TLSv1.0`, `TLSv1.1` oder `TLSv1.2` (Dies ist die Standardeinstellung).
 - **NSExceptionRequiresForwardSecrecy** (`Boolean`) – Wenn `NO` die Domäne muss kein Verschlüsselungsverfahren mit forward-Sicherheit verwenden. Der Standardwert ist `YES`.
 - **NSExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `NO` (the default) all communications with this domain must be in the `HTTPS` protocol.

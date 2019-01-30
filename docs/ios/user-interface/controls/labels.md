@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 7c52ce9fcdd290958a53af7fa91ef93a2caff7b5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cca74ac74e5077822193f6dd97a69f8d9b823561
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108963"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233288"
 ---
 # <a name="labels-in-xamarinios"></a>Bezeichnungen in Xamarin.iOS
 
@@ -20,7 +20,7 @@ Die `UILabel` Steuerelement dient zum Anzeigen von einzelnen und mehrzeilige, nu
 
 ## <a name="implementing-a-label"></a>Implementieren eine Bezeichnung
 
-Eine neue Bezeichnung wird erstellt, durch die Instanziierung einer [ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
+Eine neue Bezeichnung wird erstellt, durch die Instanziierung einer [ `UILabel` ](xref:UIKit.UILabel):
 
 ```csharp
 UILabel label = new UILabel();

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/08/2018
-ms.openlocfilehash: 81375e8c66e5504604d0d4cb3be34afd58f4269d
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 99f2b98614c2b8d558dd8744b31a62b787fc955c
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615147"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233834"
 ---
 # <a name="introduction-to-ios-12"></a>Einführung in iOS 12
 
@@ -80,7 +80,7 @@ In iOS 12 können Drittanbieter-apps Karten und Turn-von-Turn navigationsanweisu
 In iOS 12 hat Apple als veraltet markiert:
 
 - OpenGL-ES, [und Entwickler werden angeregt](https://developer.apple.com/ios/whats-new/) -Metal-Computern zu übernehmen.
-- [`UIWebView`](https://developer.xamarin.com/api/type/UIKit.UIWebView/), [zugunsten des `WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).
+- [`UIWebView`](xref:UIKit.UIWebView), [zugunsten des `WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).
 
 ## <a name="related-links"></a>Verwandte Links
 

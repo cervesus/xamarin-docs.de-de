@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 923eebc2674abdbbd66d9db11bebf9f503928569
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3c46aa1244699671d46560b0029197981a86d005
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107322"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233327"
 ---
 # <a name="search-bars-in-xamarinios"></a>Search-Balken in Xamarin.iOS
 
@@ -84,7 +84,7 @@ Diese Eigenschaften werden im folgenden erläutert:
 
 - **Text und Platzhalter Eingabeaufforderung** – diese Eigenschaften werden zum vorschlagen und anweisen, wie Benutzer auf die Suchleiste verwenden sollten. Beispielsweise wenn Ihre app eine Liste der Speicher angezeigt. können die Prompt-Eigenschaft Sie darauf hinzuweisen, dass der Benutzer "City, Story-Name oder Postleitzahl eingeben können"
 - **Suchen Sie Stil** – Sie können festlegen, dass die Suchleiste, um entweder **Prominent** oder **minimale**. Verwenden die deutliche wird alles auf dem Bildschirm mit Ausnahme der Suchleiste, sodass des Fokus auf die Suchleiste gezeichnet werden getönt werden soll. Die minimale Style-Suchleiste einfügen mit dessen Umgebung.
-- **Funktionen** – aktivieren diese Eigenschaften nur das Element der Benutzeroberfläche angezeigt. Die Funktionalität muss implementiert werden, diese durch das richtige Ereignis wie im Auslösen der [Leiste-Websuche-API-Dokumentation](https://developer.xamarin.com/api/type/UIKit.UISearchBar/)
+- **Funktionen** – aktivieren diese Eigenschaften nur das Element der Benutzeroberfläche angezeigt. Die Funktionalität muss implementiert werden, diese durch das richtige Ereignis wie im Auslösen der [Leiste-Websuche-API-Dokumentation](xref:UIKit.UISearchBar)
     - Suchergebnisse zeigt / Schaltfläche "Lesezeichen" – zeigt ein Symbol "Suchergebnisse" oder "Lesezeichen" auf der Suchleiste
     - Zeigt die Schaltfläche "Abbrechen" – ermöglicht Benutzern bei der Suchfunktion zu beenden. Es wird empfohlen, dass diese Option ausgewählt ist.
     - Zeigt Bereichsleiste – Dies ermöglicht, dass Benutzer, um den Umfang ihrer Suche einzuschränken. Beispielsweise kann bei der Suche in der Musik-app der Benutzer auswählen, ob sie Apple Music oder ihre Bibliothek für einen bestimmten Titel oder Künstler suchen möchten. Um verschiedene Optionen anzuzeigen, fügen Sie ein Array von Titeln zu den **ScopeBarTitles** Eigenschaft.

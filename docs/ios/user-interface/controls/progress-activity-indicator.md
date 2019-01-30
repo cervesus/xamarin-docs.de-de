@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: cb56af300444020a543c16afb0dfb48015fc2153
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d39170d0109d7f81d3f02ec36381ebcd46c0143d
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102593"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233522"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Status- und Aktivitätsindikatoren in Xamarin.iOS
 
@@ -32,7 +32,7 @@ Apple hat die folgenden Vorschläge für die Arbeit mit Aktivitätsindikatoren:
 
 ### <a name="implementing-an-activity-indicator"></a>Implementieren einen Indikator für die Aktivität
 
-Ein Indikator für die Aktivität wird implementiert, über die [ `UIActivityIndictorView` ](https://developer.xamarin.com/api/type/UIKit.UIActivityIndicatorView/) Klasse an, dass eine `UIActivity` stattfindet.
+Ein Indikator für die Aktivität wird implementiert, über die [ `UIActivityIndictorView` ](xref:UIKit.UIActivityIndicatorView) Klasse an, dass eine `UIActivity` stattfindet.
 
 ### <a name="activity-indicators-and-storyboards"></a>Aktivitätsindikatoren und Storyboards
 
@@ -68,7 +68,7 @@ Apple hat die folgenden Vorschläge für die Arbeit mit Statusanzeigen:
 
 ### <a name="implementing-an-progress-bar"></a>Implementieren eine Statusanzeige
 
-Eine Statusanzeige wird erstellt, durch die Instanziierung einer [`UIProgressView`](https://developer.xamarin.com/api/type/UIKit.UIProgressView/)
+Eine Statusanzeige wird erstellt, durch die Instanziierung einer [`UIProgressView`](xref:UIKit.UIProgressView)
 
 ### <a name="progress-bars-and-storyboards"></a>Statusanzeigen und Storyboards
 

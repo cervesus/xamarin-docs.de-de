@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 4f847a86f3f92bcf7168c2e104471e1ca052969c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 699d19228d2dee92f7a730bba4186a3aa5f21b04
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131455"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233236"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>Kritische Warnungen in Xamarin.iOS
 
@@ -28,8 +28,8 @@ Nachdem diese Berechtigung von Apple erhalten und alle zugeordneten Anweisungen 
 
 Der app-Benachrichtigung-autorisierungsanforderung fordert den Benutzer zu erlauben oder verbieten der app-Benachrichtigungen. Wenn die benachrichtigungsanforderung für die Autorisierung für die Berechtigung zum Senden von kritischen Warnungen aufgefordert werden, erhalten die app auch dem Benutzer Gelegenheit, kritische Warnungen aktivieren.
 
-Der folgende Code fordert die Berechtigung zum kritische Warnungen und standard-Benachrichtigungen und Sounds zu senden, indem Sie den entsprechenden übergeben [`UNAuthorizationOptions`](https://developer.xamarin.com/api/type/UserNotifications.UNAuthorizationOptions/)
-Werte [ `RequestAuthorization` ](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.RequestAuthorization/):
+Der folgende Code fordert die Berechtigung zum kritische Warnungen und standard-Benachrichtigungen und Sounds zu senden, indem Sie den entsprechenden übergeben [`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
+Werte [ `RequestAuthorization` ](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*):
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -45,7 +45,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ## <a name="local-critical-alerts"></a>Lokale kritische Warnungen
 
-Um eine lokale kritische Warnung senden, erstellen eine [`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
+Um eine lokale kritische Warnung senden, erstellen eine [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
 und legen Sie dessen `Sound` Eigenschaft entweder:
 
 - `UNNotificationSound.DefaultCriticalSound`, der die Benachrichtigung über wichtige Standardsound verwendet.

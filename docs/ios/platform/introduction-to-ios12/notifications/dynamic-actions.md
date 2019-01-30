@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 8a2755de3dc43ccff88cbdf4dc9c4f9ba2d532c0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ddd3e1e6cc3a3a9b42ddb7a597ed2db0ee495d41
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111629"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233314"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Dynamische Notification-Aktionsschaltflächen in Xamarin.iOS
 
@@ -35,9 +35,9 @@ Erstellen Sie und registrieren Sie Notification-Kategorien aus, während eine An
 Z. B. in der [Beispiel-app](#sample-app-redgreennotifications), `FinishedLaunching` -Methode der `AppDelegate` bewirkt Folgendes:
 
 - Definiert eine Kategorie für rote Benachrichtigungen und eine für Grün Benachrichtigungen
-- Registriert diese Kategorien durch Aufrufen der [`SetNotificationCategories`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.SetNotificationCategories/)
+- Registriert diese Kategorien durch Aufrufen der [`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
 Methode `UNUserNotificationCenter`
-- Fügt eine einzelnen [`UNNotificationAction`](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationAction/)
+- Fügt eine einzelnen [`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
 jeder Kategorie
 
 Der folgende Code zeigt, wie dies funktioniert:
@@ -74,12 +74,12 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Basierend auf diesem Code wird eine Benachrichtigung, deren [`Content.CategoryIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationContent.CategoryIdentifier/)
+Basierend auf diesem Code wird eine Benachrichtigung, deren [`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
 ist "Rot-Kategorie" oder "Green-Kategorie" werden standardmäßig Anzeigen einer **20 Grad drehen** Aktionsschaltfläche.
 
 ## <a name="in-app-handling-of-notification-action-buttons"></a>Behandlung von in-app-Benachrichtigung Aktionsschaltflächen
 
-`UNUserNotificationCenter` verfügt über eine `Delegate` Eigenschaft vom Typ [ `IUNUserNotificationCenterDelegate` ](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenterDelegate_Extensions/).
+`UNUserNotificationCenter` verfügt über eine `Delegate` Eigenschaft vom Typ [ `IUNUserNotificationCenterDelegate` ](xref:UserNotifications.IUNUserNotificationCenterDelegate).
 
 In der Beispiel-app `AppDelegate` richtet sich selbsttätig als Benutzer Notification Center des Delegaten in `FinishedLaunching`:
 
@@ -95,7 +95,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
         // ...
 ```
 
-Klicken Sie dann `AppDelegate` implementiert [`DidReceiveNotificationResponse`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse/)
+Klicken Sie dann `AppDelegate` implementiert [`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
 zum Behandeln der Aktionsschaltfläche tippt:
 
 ```csharp
@@ -125,7 +125,7 @@ Diese Implementierung der `DidReceiveNotificationResponse` behandelt nicht der b
 
 Eine Erweiterung für benachrichtigungsinhalte enthält einen ansichtscontroller, der die benutzerdefinierte Schnittstelle für eine Benachrichtigung definiert.
 
-Diesem ansichtscontroller können die `GetNotificationActions` und `SetNotificationActions` Methoden für die [`ExtensionContext`](https://developer.xamarin.com/api/property/UIKit.UIViewController.ExtensionContext/)
+Diesem ansichtscontroller können die `GetNotificationActions` und `SetNotificationActions` Methoden für die [`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
 Zugreifen auf und ändern die benachrichtigungs Aktionsschaltflächen-Eigenschaft.
 
 In der Beispiel-app ändert die Erweiterung für benachrichtigungsinhalte des ansichtscontrollers die Aktionsschaltflächen, nur, wenn auf ein Tippen auf einen bereits vorhandenen Aktionsschaltfläche reagiert.

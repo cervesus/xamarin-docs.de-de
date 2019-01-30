@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 799d6dd532e530f5ee9c9a974b2d93b6a3be0efb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b2968399279fe3e9d160471bbcae08ae091be93e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122412"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233301"
 ---
 # <a name="search-apis-in-xamarinios"></a>In Xamarin.iOS-Suche-APIs
 
@@ -82,7 +82,7 @@ iOS 10 stellt neue Methoden für die treibende Engagement zu einer app durch den
 - Siri-Interaktionen
 - QuickType Vorschläge 
 
-Eine app macht diese Funktion in das System für eine Sammlung von Technologien wie z. B. über [NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/), Markup im Web, Core Spotlight, MapKit, Media Player und UIKit.
+Eine app macht diese Funktion in das System für eine Sammlung von Technologien wie z. B. über [NSUserActivity](xref:Foundation.NSUserActivity), Markup im Web, Core Spotlight, MapKit, Media Player und UIKit.
 
 Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [proaktive Vorschläge](~/ios/platform/search/proactive-suggestions.md) Guide.
 

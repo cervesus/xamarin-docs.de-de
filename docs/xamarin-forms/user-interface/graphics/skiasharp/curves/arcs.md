@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: fc08824ba973f5d50dbe92950d57c4ea8ecc3147
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 020afef6b2eb3743fd17118b2922bac4d4c32239
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054011"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233990"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen zu zeichnen
 
@@ -38,7 +38,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-Diese Methoden sind identisch mit dem Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) und [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) Methoden. IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) Methode ähnelt aber auf Bögen auf den Umfang eines Kreises beschränkt ist, anstatt in eine Ellipse generalisiert.
+Diese Methoden sind identisch mit dem Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) und [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) Methoden. IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) Methode ähnelt aber auf Bögen auf den Umfang eines Kreises beschränkt ist, anstatt in eine Ellipse generalisiert.
 
 Beide Methoden beginnen mit einem `SKRect` -Wert, der Speicherort und die Größe einer Ellipse definiert:
 
@@ -58,7 +58,7 @@ Die Kurve, die hinzugefügt werden, um den Pfad mit der `AddArc` oder `ArcTo` Me
 
 ![](arcs-images/anglearc.png "Der Winkel Bogen selbst")
 
-Die `startAngle` oder `sweepAngle` Argumente können negativ sein: der Bogen ist für positive Werte, der im Uhrzeigersinn `sweepAngle` und gegen den Uhrzeigersinn für negative Werte.
+Die `startAngle` oder `sweepAngle` Argumente können negativ sein: Der Bogen ist für positive Werte, der im Uhrzeigersinn `sweepAngle` und gegen den Uhrzeigersinn für negative Werte.
 
 Allerdings `AddArc` ist *nicht* definieren eine geschlossene Kontur. Wenn Sie aufrufen `LineTo` nach `AddArc`, eine Zeile am Ende der Bogen gezeichnet wird, zu dem Punkt in der `LineTo` -Methode, und dasselbe gilt für `ArcTo`.
 
@@ -226,7 +226,7 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-Dies `ArcTo` Methode ähnelt der PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (Seite 532)-Funktion und den iOS- [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) Methode.
+Dies `ArcTo` Methode ähnelt der PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (Seite 532)-Funktion und den iOS- [ `AddArcToPoint` ](xref:CoreGraphics.CGPath.AddArcToPoint(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat)) Methode.
 
 Die `ArcTo` Methode umfasst die drei Punkte:
 
@@ -521,7 +521,7 @@ Wenn dieser Geneigter Ellipse dann so, dass es sich um die beiden Punkte berühr
 
 ![](arcs-images/ellipticalarcellipse1.png "Der erste Satz von elliptische Bogen")
 
-Diese zwei Bögen können auf zwei Arten unterschieden werden: der oberste Bogen ist größer als der Bogen unten, und wie die von links nach rechts zu zeichnende Bogen stammt, wird der Bogen mit oben im Uhrzeigersinn gezeichnet, während der untere Bogen in entgegen dem Uhrzeigersinn gezeichnet wird.
+Diese zwei Bögen können auf zwei Arten unterschieden werden: Der Bogen mit oben ist größer als der Bogen unten, und wie die von links nach rechts zu zeichnende Bogen stammt, der oberste Bogen gezeichnet wird im Uhrzeigersinn während der untere Bogen in entgegen dem Uhrzeigersinn gezeichnet wird.
 
 Es ist auch möglich, das die Ellipse zwischen den beiden Punkten auf andere Weise anpassen:
 

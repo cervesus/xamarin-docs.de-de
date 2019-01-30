@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 554c96cdb46041b75a48523cc2952f05d2a7b1db
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 6294d696fe309e1952124caaaace89d40ad24bc6
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564004"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233561"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in Xamarin.iOS
 
@@ -249,7 +249,7 @@ public MainViewController (IntPtr handle) : base (handle)
 ```
 
 
-Wenn Sie ein Storyboard mit dem Designer zu erstellen, wird die IDE automatisch hinzufügen der [[registrieren]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Attribut am Anfang der `designer.cs` Klasse, und übergeben Sie einen Zeichenfolgenbezeichner, die mit der Storyboard-ID, die im angegebenen identisch ist die vorherigen Schritt. Es werden die C# -Code der relevanten Szene im Storyboard verknüpft.
+Wenn Sie ein Storyboard mit dem Designer zu erstellen, wird die IDE automatisch hinzufügen der [[registrieren]](xref:Foundation.RegisterAttribute) Attribut am Anfang der `designer.cs` Klasse, und übergeben Sie einen Zeichenfolgenbezeichner, die mit der Storyboard-ID, die im angegebenen identisch ist die vorherigen Schritt. Es werden die C# -Code der relevanten Szene im Storyboard verknüpft.
 
 Sie möchten eine vorhandene Klasse hinzufügen, die wurde irgendwann **nicht** im Designer erstellt. In diesem Fall würden Sie diese Klasse als normale registrieren:
 
@@ -321,9 +321,9 @@ Bevor wir beginnen, befolgen Sie die Schritte 1 – 8 oben. In den folgenden Sch
 
     - UITextField
         - Name: PasswordTextField
-        - Platzhalter: "das geheime Kennwort eingeben'
+        - Platzhalter: 'Das geheime Kennwort eingeben'
     - UILabel
-        - Text: "Fehler: falsche Kennwort. Sie sollte nicht erfolgreich. "
+        - Text: "Fehler: Falsches Kennwort. Sie sollte nicht erfolgreich. "
         - Farbe: Rot
         - Ausrichtung: Center
         - Zeilen: 2

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/20/2018
-ms.openlocfilehash: b0a5d3e75ebbcd70a60a3e4e76eebe166117d31c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0b3fb7d467ae64e2cbfdb61644b1537bc5ae1161
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131408"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233067"
 ---
 # <a name="using-the-natural-language-framework-with-xamarinios"></a>Mithilfe von natürlicher sprachframework mit Xamarin.iOS
 
@@ -20,7 +20,7 @@ In iOS-12 eingeführt wurde, ermöglicht die natürlichen Sprachen-Framework Ver
 
 Natürlicher Sprachen-Framework kann auch benutzerdefinierte Core ML-Modelle verwenden, zu klassifizieren und Markieren von Text in speziellen Kontexten.
 
-Die [NSLinguisticTagger](https://developer.xamarin.com/api/type/Foundation.NSLinguisticTagger/) -Klasse ist weiterhin verfügbar. Das Framework natürlicher Sprache ist jedoch der bevorzugte Mechanismus für die Verarbeitung natürlicher Sprache verwenden.
+Die [NSLinguisticTagger](xref:Foundation.NSLinguisticTagger) -Klasse ist weiterhin verfügbar. Das Framework natürlicher Sprache ist jedoch der bevorzugte Mechanismus für die Verarbeitung natürlicher Sprache verwenden.
 
 ## <a name="sample-app-xamarinnl"></a>Beispiel-app: XamarinNL
 
@@ -151,7 +151,7 @@ Die **Tokenizer** der Beispiel-app veranschaulicht, wie trennen Sie einen Textbl
 Tippen Sie auf die **Wörter** oder **Sätze** Schaltfläche, um eine Liste der Token abzurufen. Jedes Token ist ein Wort oder Satz im ursprünglichen Text zugeordnet.
 
 `ShowTokens` teilt die Eingabe des Benutzers in Token durch Aufrufen der [`GetTokens`](https://developer.xamarin.com/api/member/NaturalLanguage.NLTokenizer.GetTokens/)
-die Methode von einer `NLTokenizer`. Diese Methode gibt ein Array zurück. [`NSValue`](https://developer.xamarin.com/api/type/Foundation.NSValue/)
+die Methode von einer `NLTokenizer`. Diese Methode gibt ein Array zurück. [`NSValue`](xref:Foundation.NSValue)
 Objekten, die jede umschließen einer `NSRange` Wert, der ein Token im Originaltext entspricht.
 
 ```csharp

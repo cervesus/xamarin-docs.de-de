@@ -6,12 +6,12 @@ ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 88cbce6dbfee4e7aa1a0711d6da74f6f12abd4b7
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 3946a4ba190e1d8ba5c68a2d8ac36cf42900862f
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251211"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233977"
 ---
 # <a name="transport-layer-security-tls-12"></a>Transport Layer Security (TLS) 1.2
 
@@ -70,8 +70,8 @@ Aktualisieren Sie in Visual Studio für Mac, um TLS 1.2 in einer Xamarin.Mac-app
 [![Konfigurieren von "HttpClient" in Visual Studio für Mac](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
 
 > [!WARNING]
-> Die bevorstehende Veröffentlichung von Xamarin.Mac 4.8 unterstützen nur MacOS 10.9 oder höher.
-> Ältere Versionen von Xamarin.Mac unterstützt MacOS 10.7 oder höher, aber diese älteren Versionen von MacOS verfügen nicht über ausreichende TLS-Infrastruktur zur Unterstützung von TLS 1.2. Xamarin.Mac 4.6 oder früher verwenden, um MacOS 10.7 oder MacOS 10.8 als Ziel.
+> Die anstehende Version Xamarin.Mac 4.8 unterstützt nur macOS 10.9 oder höher.
+> Ältere Versionen von Xamarin.Mac unterstützen macOS 10.7 oder höher, aber diese älteren Versionen von MacOS verfügen nicht über ausreichende TLS-Infrastruktur zur Unterstützung von TLS 1.2. Für macOS 10.7 oder macOS 10.8 sollten Sie Xamarin.Mac 4.6 oder niedriger verwenden.
 
 ## <a name="alternative-configuration-options"></a>Alternative Konfiguration-Optionen
 
@@ -133,7 +133,7 @@ Sie sollten aktualisieren Sie die Einstellungen in vorhandenen Anwendungen gemä
 - [System.Net.WebClient](https://msdn.microsoft.com/library/system.net.webclient(v=vs.110).aspx)
 - [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
 - [java.net.URLConnection](http://developer.android.com/reference/java/net/URLConnection.html)
-- [Foundation.CFNetwork](https://developer.xamarin.com/api/type/CoreFoundation.CFNetwork/)
-- [Foundation.NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)
+- [Foundation.CFNetwork](xref:CoreFoundation.CFNetwork)
+- [Foundation.NSUrlConnection](xref:Foundation.NSUrlConnection)
 - [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
 - [HTTP-Client (Beispiel)](https://developer.xamarin.com/samples/monotouch/HttpClient/)

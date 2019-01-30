@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 2f9cc72dcbe506d22c8a986bcf59ddaa6355f043
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: becba36655a5247a11decb7dc54334f9397ecdfc
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103249"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233535"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
@@ -38,7 +38,7 @@ Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [Einführung in 3D 
 
 Neue IOS 9, App Transport Security (ATS) erzwingt die sichere Verbindungen zwischen Ressourcen für Internet (z. B. die app Back-End-Server) und Ihrer app. ATS wird sichergestellt, dass die gesamte Internetkommunikation entsprechen, um die Verbindung secure best Practices und verhindert versehentliche Offenlegung vertraulicher Informationen, die entweder direkt über Ihre app oder eine Bibliothek, die es verwendet.
 
-Da ATS, wird standardmäßig in apps aktiviert ist, die für iOS 9 und OS X 10.11 (El Capitan), alle Verbindungen mit [NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/), [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/) oder [NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/) wird vorgenommen werden. ATS-sicherheitsanforderungen. Wenn Ihre Verbindungen diese Anforderung nicht erfüllen, werden sie mit einer Ausnahme fehlschlagen.
+Da ATS, wird standardmäßig in apps aktiviert ist, die für iOS 9 und OS X 10.11 (El Capitan), alle Verbindungen mit [NSUrlConnection](xref:Foundation.NSUrlConnection), [CFUrl](xref:CoreFoundation.CFUrl) oder [NSUrlSession](xref:Foundation.NSUrlSession) wird vorgenommen werden. ATS-sicherheitsanforderungen. Wenn Ihre Verbindungen diese Anforderung nicht erfüllen, werden sie mit einer Ausnahme fehlschlagen.
 
 Um mehr über ATS erfahren möchten, informieren Sie sich unsere [App Transport Security](~/ios/app-fundamentals/ats.md) Guide.
 
@@ -78,7 +78,7 @@ Weitere Informationen finden Sie unserem [Verbesserungen bei der Suche](~/ios/pl
 
 ## <a name="new-stack-view"></a>Neue Stapelansicht
 
-Die Stack-Steuerelement ([UIStackView](https://developer.xamarin.com/api/type/UIKit.UIStackView/)) nutzt die Leistungsfähigkeit von Automatisches Layout und Größenklassen einen Stapel von Unteransichten (entweder horizontal oder vertikal) zu verwalten, die auf dem iOS-Gerät-Ausrichtung und der Bildschirmgröße Größe dynamisch reagiert.
+Die Stack-Steuerelement ([UIStackView](xref:UIKit.UIStackView) nutzt die Leistungsfähigkeit von Automatisches Layout und Größenklassen einen Stapel von Unteransichten (entweder horizontal oder vertikal) zu verwalten, die auf dem iOS-Gerät-Ausrichtung und der Bildschirmgröße Größe dynamisch reagiert.
 
 Mit Stapelansicht Steuerelement erforderlich, der Umfang der Arbeit zu Layout, die eine Benutzeroberfläche erheblich reduziert wird. Das Layout der alle Unteransichten, die an eine Stapelansicht angefügt werden automatisch basierend auf definierten Developer-Eigenschaften, z. B. Achse "," Verteilungspunkt "," Ausrichtung "und" Abstand verwaltet.
 
@@ -87,7 +87,7 @@ Weitere Informationen finden Sie unserem [Einführung in die Stapelansicht](~/io
 
 ## <a name="collection-view-changes"></a>Änderungen der Auflistung anzeigen
 
-In iOS 9, die Auflistungsansicht ([UICollectionView](https://developer.xamarin.com/api/type/UIKit.UICollectionView/)) unterstützt das Ziehen Sie jetzt neuanordnung von Elementen, die standardmäßig durch Hinzufügen einer neuen Standard stiftbewegungs-Erkennung und mehrere neue unterstützender Methoden.
+In iOS 9, die Auflistungsansicht ([UICollectionView](xref:UIKit.UICollectionView) unterstützt das Ziehen Sie jetzt neuanordnung von Elementen, die standardmäßig durch Hinzufügen einer neuen Standard stiftbewegungs-Erkennung und mehrere neue unterstützender Methoden.
 
 Verwenden diese neuen Methoden, können Sie einfache Implementierung von Drag-zu-neuanordnung in der Ansicht der Auflistung und haben die Möglichkeit zum Anpassen der Darstellung der Elemente jeder Phase des Prozesses Neuordnung von Elementen.
 
@@ -150,9 +150,9 @@ Weitere Informationen finden Sie unserem [Einführung in die Touch ID](~/ios/pla
 
 In iOS 9 hat Apple präsentieren einer gespiegelten Benutzeroberfläche einfacher als je zuvor durch die vollständige Unterstützung für rechts-nach-links-Sprachen. Hierzu gehören folgende Elemente:
 
-- Standard [UIKit](https://developer.xamarin.com/api/namespace/UIKit/) Steuerelemente werden automatisch kippt, rechts-nach-links-basierend auf den iOS-Geräte-Gebietsschema und die Sprache-Einstellungen.
-- Die [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) Klasse enthält Attribute, mit denen Sie definieren, wie eine bestimmte Ansicht angezeigt werden soll, gekippt rechts-nach-links.
-- Die Möglichkeit, programmgesteuert kippen Sie ein Bild mithilfe der [FlipsForRightToLeftLayoutDirection](https://developer.xamarin.com/api/property/UIKit.UIImage.FlipsForRightToLeftLayoutDirection/) Eigenschaft der [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/) Klasse.
+- Standard [UIKit](xref:UIKit) Steuerelemente werden automatisch kippt, rechts-nach-links-basierend auf den iOS-Geräte-Gebietsschema und die Sprache-Einstellungen.
+- Die [UIView](xref:UIKit.UIView) Klasse enthält Attribute, mit denen Sie definieren, wie eine bestimmte Ansicht angezeigt werden soll, gekippt rechts-nach-links.
+- Die Möglichkeit, programmgesteuert kippen Sie ein Bild mithilfe der [FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection) Eigenschaft der [UIImage](xref:UIKit.UIImage) Klasse.
 
 Weitere Informationen finden Sie unter Apple [unterstützen rechts-nach-links-Sprachen](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17) Dokumentation.
 

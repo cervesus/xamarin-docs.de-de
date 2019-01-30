@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 4d5319005b28c5afa0906c44cfa59f0cad40de76
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 7f3c196eafd71e8571ea49a17784e5290e7ef44e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617617"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233601"
 ---
 # <a name="arkit-2-in-xamarinios"></a>ARKit 2 in Xamarin.iOS
 
@@ -25,17 +25,17 @@ ARKit so weit gereift erheblich seit der Einführung des Vorjahres in iOS 11. Zu
 
 ## <a name="recognizing-reference-objects"></a>Reference-Objekte erkennen
 
-Ein Showcase Feature ARKit 2 ist die Möglichkeit zur Erkennung von referenzimages und Objekte. Referenzimages von normalen Bilddateien geladen werden können ([weiter unten erläutert](#more-tracking-configurations)), aber Objekte mit überprüft werden müssen, die auf Entwickler ausgerichteten Verweis [ `ARObjectScanningConfiguration` ](https://developer.xamarin.com/api/type/ARKit.ARObjectScanningConfiguration/).
+Ein Showcase Feature ARKit 2 ist die Möglichkeit zur Erkennung von referenzimages und Objekte. Referenzimages von normalen Bilddateien geladen werden können ([weiter unten erläutert](#more-tracking-configurations)), aber Objekte mit überprüft werden müssen, die auf Entwickler ausgerichteten Verweis [ `ARObjectScanningConfiguration` ](xref:ARKit.ARObjectScanningConfiguration).
 
 ### <a name="sample-app-scanning-and-detecting-3d-objects"></a>Beispiel-app: Überprüfen und Erkennen von 3D-Objekten
 
 Die [Scannen und Erkennen von 3D-Objekten](https://developer.xamarin.com/samples/monotouch/ios12/ScanningAndDetecting3DObjects/) Beispiel ist Bestandteil einer [Apple-Projekt](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?language=objc) veranschaulicht, dass:
 
-* Mithilfe von Application State Management [ `NSNotification` ](https://developer.xamarin.com/api/type/Foundation.NSNotification/) Objekte
+* Mithilfe von Application State Management [ `NSNotification` ](xref:Foundation.NSNotification) Objekte
 * Benutzerdefinierter Visualisierungen
 * Komplexe Gesten
 * Objekt-Überprüfung
-* Speichern einer [`ARReferenceObject`](https://developer.xamarin.com/api/type/ARKit.ARReferenceObject/)
+* Speichern einer [`ARReferenceObject`](xref:ARKit.ARReferenceObject)
 
 Scannen ein Verweisobjekt Akku und prozessorintensiv ist, und ältere Geräte haben oft Probleme beim stabile Überwachung.
 
@@ -55,7 +55,7 @@ Und außerdem wird ein embedded Reihe von Zuständen und geht in `AppState.Scann
 * `Scan.ScanState.Scanning`
 * `Scan.ScanState.AdjustingOrigin`
 
-Die app verwendet eine reaktive Architektur, der Statusübergang Benachrichtigungen sendet [ `NSNotificationCenter` ](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/) und diese Benachrichtigungen abonniert. Das Setup sieht dieser Ausschnitt `ViewController.cs`:
+Die app verwendet eine reaktive Architektur, der Statusübergang Benachrichtigungen sendet [ `NSNotificationCenter` ](xref:Foundation.NSNotificationCenter) und diese Benachrichtigungen abonniert. Das Setup sieht dieser Ausschnitt `ViewController.cs`:
 
 ```csharp
 // Configure notifications for application state changes
@@ -119,11 +119,11 @@ internal void EnterStateTesting()
 
 Die app-zeigt die Low-Level "Punkt-Cloud" des Objekts in einem umgebenden Feld enthalten, die auf eine erkannte horizontale Ebene projiziert wird.
 
-Diese Cloud Punkt steht Entwicklern in der [ `ARFrame.RawFeaturePoints` ](https://developer.xamarin.com/api/property/ARKit.ARFrame.RawFeaturePoints/) Eigenschaft. Die Punkt Cloud effizient zu visualisieren, kann ein gravierendes Problem sein. Durchlaufen die Punkte, würde dann erstellen und platzieren einen neuen SceneKit-Knoten für jeden Punkt die Framerate beenden. Auch wenn asynchron erfolgt, wäre es eine Verzögerung. Das Beispiel verwaltet der Leistung mit einer Strategie für die drei Teilen:
+Diese Cloud Punkt steht Entwicklern in der [ `ARFrame.RawFeaturePoints` ](xref:ARKit.ARFrame.RawFeaturePoints) Eigenschaft. Die Punkt Cloud effizient zu visualisieren, kann ein gravierendes Problem sein. Durchlaufen die Punkte, würde dann erstellen und platzieren einen neuen SceneKit-Knoten für jeden Punkt die Framerate beenden. Auch wenn asynchron erfolgt, wäre es eine Verzögerung. Das Beispiel verwaltet der Leistung mit einer Strategie für die drei Teilen:
 
 * Verwenden von unsicherem Code für das anheften die Daten in platzieren und die Interpretation der Daten Form eines Rohdatenpuffers von Bytes.
-* Konvertieren diesen unformatierten Puffer in eine [ `SCNGeometrySource` ](https://developer.xamarin.com/api/type/SceneKit.SCNGeometrySource/) und erstellen ein "Template" [ `SCNGeometryElement` ](https://developer.xamarin.com/api/type/SceneKit.SCNGeometryElement/) Objekt.
-* Schnell zusammenfügen"" die unformatierten Daten und die Vorlage über [`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](https://developer.xamarin.com/api/member/SceneKit.SCNGeometry.Create/p/SceneKit.SCNGeometrySource[]/SceneKit.SCNGeometryElement[]/)
+* Konvertieren diesen unformatierten Puffer in eine [ `SCNGeometrySource` ](xref:SceneKit.SCNGeometrySource) und erstellen ein "Template" [ `SCNGeometryElement` ](xref:SceneKit.SCNGeometryElement) Objekt.
+* Schnell zusammenfügen"" die unformatierten Daten und die Vorlage über [`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](xref:SceneKit.SCNGeometry.Create(SceneKit.SCNGeometrySource[],SceneKit.SCNGeometryElement[]))
 
 ```csharp
 internal static SCNGeometry CreateVisualization(NVector3[] points, UIColor color, float size)
@@ -251,11 +251,11 @@ Der zweite interessante Aspekt in Bezug auf Aktionen zu erledigende ist die Mög
 
 Jetzt können Sie eine der folgenden als Grundlage für ein mixed Reality-Erfahrung verwenden:
 
-* Nur die Geräte Beschleunigungsmesser ([`AROrientationTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.AROrientationTrackingConfiguration/), iOS 11)
-* Gesichter ([`ARFaceTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARFaceTrackingConfiguration/), iOS 11)
-* Verweisen auf Bilder ([`ARImageTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARImageTrackingConfiguration/), iOS, 12)
-* Scannen 3D-Objekte ([`ARObjectScanningConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARObjectScanningConfiguration/), iOS, 12)
-* Visual eingestellten Odometry ([`ARWorldTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARWorldTrackingConfiguration/), verbesserte in iOS-12)
+* Nur die Geräte Beschleunigungsmesser ([`AROrientationTrackingConfiguration`](xref:ARKit.AROrientationTrackingConfiguration), iOS 11)
+* Gesichter ([`ARFaceTrackingConfiguration`](xref:ARKit.ARFaceTrackingConfiguration), iOS 11)
+* Verweisen auf Bilder ([`ARImageTrackingConfiguration`](xref:ARKit.ARImageTrackingConfiguration), iOS, 12)
+* Scannen 3D-Objekte ([`ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration), iOS, 12)
+* Visual eingestellten Odometry ([`ARWorldTrackingConfiguration`](xref:ARKit.ARWorldTrackingConfiguration), verbesserte in iOS-12)
 
 `AROrientationTrackingConfiguration`, ausführlicher [in diesem Blogbeitrag und F# Beispiel](https://github.com/lobrien/FSharp_Face_AR), die am stärksten begrenzt ist, und bietet eine schlechte mixed Reality-Erfahrung, es wird nur digitale Objekte in Bezug auf das Gerät während der Übertragung, ohne zu versuchen, verknüpfen das Gerät als auch in der realen Welt.
 
@@ -299,8 +299,8 @@ ARKit-2 unterstützt "environmental Texturen", die erfassten Bilder zum Schätze
 
 Um die Umwelt Texturen verwenden:
 
-* Ihre [ `SCNMaterial` ](https://developer.xamarin.com/api/type/SceneKit.SCNMaterial/) Objekte müssen verwenden [ `SCNLightingModel.PhysicallyBased` ](https://developer.xamarin.com/api/property/SceneKit.SCNLightingModel.PhysicallyBased/) und weisen Sie einen Wert im Bereich von 0 bis 1 für [ `Metalness.Contents` ](https://developer.xamarin.com/api/property/SceneKit.SCNMaterial.Metalness/) und [ `Roughness.Contents` ](https://developer.xamarin.com/api/property/SceneKit.SCNMaterialProperty.Contents/) und
-* Legen Sie die Überwachungskonfiguration muss [ `EnvironmentTexturing` ](https://developer.xamarin.com/api/property/ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing/)  =  [AREnvironmentTexturing.Automatic "](https://developer.xamarin.com/api/field/ARKit.AREnvironmentTexturing.Automatic/) :
+* Ihre [ `SCNMaterial` ](xref:SceneKit.SCNMaterial) Objekte müssen verwenden [ `SCNLightingModel.PhysicallyBased` ](xref:SceneKit.SCNLightingModel.PhysicallyBased) und weisen Sie einen Wert im Bereich von 0 bis 1 für [ `Metalness.Contents` ](xref:SceneKit.SCNMaterial.Metalness) und [ `Roughness.Contents` ](xref:SceneKit.SCNMaterialProperty.Contents) und
+* Legen Sie die Überwachungskonfiguration muss [ `EnvironmentTexturing` ](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)  =  [AREnvironmentTexturing.Automatic "](xref:ARKit.AREnvironmentTexturing.Automatic) :
 
 ```csharp
 var sphere = SCNSphere.Create(0.33F);
@@ -323,7 +323,7 @@ Die perfekt reflektierende Textur, die im vorherigen Codeausschnitt gezeigt Spa�
 
 ### <a name="shared-and-persistent-ar-experiences"></a>Freigegebene und beständige AR-Umgebungen
 
-Eine weitere wichtige Neuerung ARKit 2 ist die [ `ARWorldMap` ](https://developer.xamarin.com/api/type/ARKit.ARWorldMap/) -Klasse, die ermöglicht Ihnen das Freigeben oder speichern die World-Überwachungsdaten. Sie erhalten die aktuelle Weltkarte mit [ `ARSession.GetCurrentWorldMapAsync` ](https://developer.xamarin.com/api/member/ARKit.ARSession.GetCurrentWorldMapAsync()/) oder [ `GetCurrentWorldMap(Action<ARWorldMap,NSError>` ](https://developer.xamarin.com/api/member/ARKit.ARSession.GetCurrentWorldMap/p/System.Action%7BARKit.ARWorldMap,Foundation.NSError%7D/) :
+Eine weitere wichtige Neuerung ARKit 2 ist die [ `ARWorldMap` ](xref:ARKit.ARWorldMap) -Klasse, die ermöglicht Ihnen das Freigeben oder speichern die World-Überwachungsdaten. Sie erhalten die aktuelle Weltkarte mit [ `ARSession.GetCurrentWorldMapAsync` ](xref:ARKit.ARSession.GetCurrentWorldMapAsync) oder [ `GetCurrentWorldMap(Action<ARWorldMap,NSError>` ](xref:ARKit.ARSession.GetCurrentWorldMap(System.Action{ARKit.ARWorldMap,Foundation.NSError})) :
 
 ```csharp
 // Local storage
@@ -346,7 +346,7 @@ Zum Freigeben oder Wiederherstellen der Weltkarte:
 
 1. Laden Sie die Daten aus der Datei,
 2. Hochgeladenen ihn in ein `ARWorldMap` Objekt
-3. Verwenden Sie, die als Wert für die [ `ARWorldTrackingConfiguration.InitialWorldMap` ](https://developer.xamarin.com/api/property/ARKit.ARWorldTrackingConfiguration.InitialWorldMap/) Eigenschaft:
+3. Verwenden Sie, die als Wert für die [ `ARWorldTrackingConfiguration.InitialWorldMap` ](xref:ARKit.ARWorldTrackingConfiguration.InitialWorldMap) Eigenschaft:
 
 ```csharp
 var data = NSData.FromArray(File.ReadAllBytes(PersistentWorldController.PersistenWorldPath));
@@ -361,7 +361,7 @@ var configuration = new ARWorldTrackingConfiguration
 };
 ```
 
-Die `ARWorldMap` enthält nur die nicht sichtbaren World-Überwachungsdaten und die [ `ARAnchor` ](https://developer.xamarin.com/api/type/ARKit.ARAnchor/) Objekten, die zwar _nicht_ digitale Ressourcen enthalten. Geometrie oder Bilder freigeben möchten, müssen Sie Ihre eigene Strategie für Ihren Anwendungsfall geeignet zu entwickeln (z. B. durch das Speichern/übertragen nur den Speicherort und die Ausrichtung der Geometrie und deren Anwendung auf statische `SCNGeometry` oder vielleicht durch das Speichern/übertragen serialisierte Objekte). Der Vorteil der `ARWorldMap` besteht darin, dass Ressourcen, nachdem angeordnet, relativ zu einer freigegebenen `ARAnchor`, wird zwischen einzelnen Geräten oder Sitzungen konsistent angezeigt.
+Die `ARWorldMap` enthält nur die nicht sichtbaren World-Überwachungsdaten und die [ `ARAnchor` ](xref:ARKit.ARAnchor) Objekten, die zwar _nicht_ digitale Ressourcen enthalten. Geometrie oder Bilder freigeben möchten, müssen Sie Ihre eigene Strategie für Ihren Anwendungsfall geeignet zu entwickeln (z. B. durch das Speichern/übertragen nur den Speicherort und die Ausrichtung der Geometrie und deren Anwendung auf statische `SCNGeometry` oder vielleicht durch das Speichern/übertragen serialisierte Objekte). Der Vorteil der `ARWorldMap` besteht darin, dass Ressourcen, nachdem angeordnet, relativ zu einer freigegebenen `ARAnchor`, wird zwischen einzelnen Geräten oder Sitzungen konsistent angezeigt.
 
 ### <a name="universal-scene-description-file-format"></a>Universelle Beschreibung der Szene-Dateiformat
 
@@ -371,15 +371,15 @@ Die letzte Überschrift-Funktion von ARKit 2 ist Apple Einführung des Pixar [Un
 
 ### <a name="manual-resource-management"></a>Manuelle ressourcenverwaltung
 
-In ARKit ist es entscheidend, um Ressourcen manuell verwalten. Nicht nur lässt dies zu hohe Frameraten, sondern tatsächlich _erforderlichen_ vermeiden eine verwirrende "Einfrieren des Bildschirms." ARKit Framework wird lazy über einen neuen Frame mit Kamera angeben ([`ARSession.CurrentFrame`](https://developer.xamarin.com/api/property/ARKit.ARSession.CurrentFrame/)). Bis das aktuelle [ `ARFrame` ](https://developer.xamarin.com/api/type/ARKit.ARFrame/) hatte `Dispose()` aufgerufen, ARKit wird nicht Geben Sie einen neuen Frame! Dies bewirkt, dass das Video "eingefroren", obwohl der Rest der app reaktionsfähig ist. Die Lösung besteht darin, immer Zugriff auf `ARSession.CurrentFrame` mit einem `using` blockieren oder manuell aufrufen `Dispose()` darauf.
+In ARKit ist es entscheidend, um Ressourcen manuell verwalten. Nicht nur lässt dies zu hohe Frameraten, sondern tatsächlich _erforderlichen_ vermeiden eine verwirrende "Einfrieren des Bildschirms." ARKit Framework wird lazy über einen neuen Frame mit Kamera angeben ([`ARSession.CurrentFrame`](xref:ARKit.ARSession.CurrentFrame). Bis das aktuelle [ `ARFrame` ](xref:ARKit.ARFrame) hatte `Dispose()` aufgerufen, ARKit wird nicht Geben Sie einen neuen Frame! Dies bewirkt, dass das Video "eingefroren", obwohl der Rest der app reaktionsfähig ist. Die Lösung besteht darin, immer Zugriff auf `ARSession.CurrentFrame` mit einem `using` blockieren oder manuell aufrufen `Dispose()` darauf.
 
 Alle Objekte, die von abgeleiteten `NSObject` sind `IDisposable` und `NSObject` implementiert die [Dispose-Muster](https://docs.microsoft.com/dotnet/standard/design-guidelines/dispose-pattern), sodass Sie, in der Regel befolgen sollten [dieses Muster für die Implementierung `Dispose` auf eine abgeleitete Klasse](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose).
 
 ### <a name="manipulating-transform-matrices"></a>Bearbeiten von Transformation Matrizen
 
-In allen 3D-Anwendungen machen Sie mit 4 x 4-Transformationsmatrizen, die relativ kompakt beschrieben, wie Sie verschieben, drehen und ein Objekt über 3D-Raum Scheren zu tun haben. In SceneKit, sind dies [ `SCNMatrix4` ](https://developer.xamarin.com/api/type/SceneKit.SCNMatrix4/) Objekte.  
+In allen 3D-Anwendungen machen Sie mit 4 x 4-Transformationsmatrizen, die relativ kompakt beschrieben, wie Sie verschieben, drehen und ein Objekt über 3D-Raum Scheren zu tun haben. In SceneKit, sind dies [ `SCNMatrix4` ](xref:SceneKit.SCNMatrix4) Objekte.  
 
-Die [ `SCNNode.Transform` ](https://developer.xamarin.com/api/property/SceneKit.SCNNode.Transform/) -Eigenschaft gibt die `SCNMatrix4` Transformationsmatrix für die [ `SCNNode` ](https://developer.xamarin.com/api/type/SceneKit.SCNNode/) _wie durch gesichert_ der zeilengerichteter `simdfloat4x4` Typ. Also beispielsweise:
+Die [ `SCNNode.Transform` ](xref:SceneKit.SCNNode.Transform) -Eigenschaft gibt die `SCNMatrix4` Transformationsmatrix für die [ `SCNNode` ](xref:SceneKit.SCNNode) _wie durch gesichert_ der zeilengerichteter `simdfloat4x4` Typ. Also beispielsweise:
 
 ```csharp
 var node = new SCNNode { Position = new SCNVector3(2, 3, 4) };  

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 38e71914d9f7f6bb46ebeee8d548968c207d3b16
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 8b3b9a5b110432f33e06edf7ab51c582681e4ea3
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617760"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233730"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Siri-Verknüpfungen in Xamarin.iOS
 
@@ -24,7 +24,7 @@ iOS 12 fügt Siri-Verknüpfungen, sodass alle Arten von apps, deren Funktionalit
 
 Verknüpfungen sollte verwendet werden, um die Fähigkeit eines Benutzers zum Ausführen einer Aufgabe – in vielen Fällen ohne die betreffende Anwendung zu öffnen zu beschleunigen.
 
-## <a name="sample-app-soup-chef"></a>Beispiel-app: mehr Licht bei Chef
+## <a name="sample-app-soup-chef"></a>Beispiel-app: Mehr Licht bei Chef
 
 Um Tastenkombinationen für Siri besser zu verstehen, sehen Sie sich die [mehr Licht bei Chef](https://developer.xamarin.com/samples/monotouch/ios12/SoupChef/) Beispiel-app. Mehr Licht bei Chef können Benutzer Bestellungen von einer imaginären mehr Licht bei Restaurant, ihren Bestellverlauf anzeigen und Ausdrücke zu verwenden, wenn mehr Licht bei Sortierung durch die Interaktion mit Siri zu definieren.
 
@@ -72,9 +72,9 @@ Die **"Info.plist"** -Datei enthält außerdem die folgenden:
 </array>
 ```
 
-Dies `NSUserActivityTypes` Schlüssel/Wert-Paar gibt an, dass mehr Licht bei Chef behandeln kann ein `OrderSoupIntent`, und ein [ `NSUserActivity` ](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/) müssen eine [ `ActivityType` ](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ActivityType/) von "com.xamarin.SoupChef.viewMenu".
+Dies `NSUserActivityTypes` Schlüssel/Wert-Paar gibt an, dass mehr Licht bei Chef behandeln kann ein `OrderSoupIntent`, und ein [ `NSUserActivity` ](xref:Foundation.NSUserActivity) müssen eine [ `ActivityType` ](xref:Foundation.NSUserActivity.ActivityType) von "com.xamarin.SoupChef.viewMenu".
 
-In Aktivitäten und benutzerdefinierte Intents zusammen, die an die app selbst und die Erweiterungen nicht behandelt werden die `AppDelegate` (eine [ `UIApplicationDelegate` ](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)) durch die [ `ContinueUserActivity` ](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.ContinueUserActivity/) Methode.
+In Aktivitäten und benutzerdefinierte Intents zusammen, die an die app selbst und die Erweiterungen nicht behandelt werden die `AppDelegate` (eine [ `UIApplicationDelegate` ](xref:UIKit.UIApplicationDelegate) durch die [ `ContinueUserActivity` ](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*) Methode.
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -89,7 +89,7 @@ Die **"Entitlements.plist"** Datei die **SoupChef** -Projekt enthält die folgen
 <true/>
 ```
 
-Diese Konfiguration gibt an, dass die app die app-Gruppe "group.com.xamarin.SoupChef" verwendet. Die **SoupChefIntents** -app-Erweiterung verwendet diese derselben app-Gruppe, dem die beiden Projekte freigeben kann [`NSUserDefaults`](https://developer.xamarin.com/api/type/Foundation.NSUserDefaults/)
+Diese Konfiguration gibt an, dass die app die app-Gruppe "group.com.xamarin.SoupChef" verwendet. Die **SoupChefIntents** -app-Erweiterung verwendet diese derselben app-Gruppe, dem die beiden Projekte freigeben kann [`NSUserDefaults`](xref:Foundation.NSUserDefaults)
 Daten
 
 Die `com.apple.developer.siri` Schlüssel angegeben, dass die app mit Siri interagiert.
@@ -103,7 +103,7 @@ Um eine Verknüpfung zu erstellen, die eine app, um bestimmte Inhalte anzuzeigen
 
 ### <a name="setting-up-an-nsuseractivity"></a>Das Einrichten einer NSUserActivity
 
-Klicken Sie auf dem Bildschirm "im Menü" `SoupMenuViewController` erstellt eine `NSUserActivity` und weist sie des ansichtscontrollers [ `UserActivity` ](https://developer.xamarin.com/api/property/UIKit.UIResponder.UserActivity/) Eigenschaft:
+Klicken Sie auf dem Bildschirm "im Menü" `SoupMenuViewController` erstellt eine `NSUserActivity` und weist sie des ansichtscontrollers [ `UserActivity` ](xref:UIKit.UIResponder.UserActivity) Eigenschaft:
 
 ```csharp
 public override void ViewDidLoad()
@@ -149,8 +149,8 @@ public static NSUserActivity ViewMenuActivity {
 Beachten Sie insbesondere Folgendes:
 
 - Festlegen von `EligibleForPrediction` zu `true` gibt an, dass Siri kann diese Aktivität vorherzusagen und zeigen es als eine Verknüpfung.
-- Die [ `ContentAttributeSet` ](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ContentAttributeSet/) Array ist ein Standard [ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/) verwendet, um das Einschließen einer `NSUserActivity` in den Suchergebnissen für iOS.
-- [`SuggestedInvocationPhrase`](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.SuggestedInvocationPhrase/) Um einen Ausdruck handelt, den von Siri für den Benutzer als potenzielle Option, beim Zuweisen eines Ausdrucks zu einer Verknüpfung vorgeschlagen wird an.
+- Die [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet) Array ist ein Standard [ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/) verwendet, um das Einschließen einer `NSUserActivity` in den Suchergebnissen für iOS.
+- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase) Um einen Ausdruck handelt, den von Siri für den Benutzer als potenzielle Option, beim Zuweisen eines Ausdrucks zu einer Verknüpfung vorgeschlagen wird an.
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>Behandeln eine Verknüpfung NSUserActivity
 
@@ -517,7 +517,7 @@ Eine Intents-Benutzeroberflächenerweiterung stellt eine benutzerdefinierte Benu
 
 ### <a name="soupchefintentsui--infoplist-and-entitlementsplist"></a>SoupChefIntentsUI – Datei "Info.plist" und "Entitlements.plist"
 
-#### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Datei "Info.plist"
+#### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info.plist
 
 Die **"Info.plist"** in die **SoupChefIntentsUI** Projekt definiert die **Bündel-ID** als `com.xamarin.SoupChef.SoupChefIntentsui`.
 
@@ -600,7 +600,7 @@ public void ConfigureView(
 
 Mehr Licht bei Chef bietet eine-Schnittstelle, um jede Bestellung eine Voice-Tastenkombination zuweisen sodass Reihenfolge mehr Licht bei mit Siri. In der Tat die Schnittstelle zum Aufzeichnen und Voice-Tastenkombinationen zuweisen, wird von iOS bereitgestellten und erfordert wenig benutzerdefinierten Code.
 
-In `OrderDetailViewController`, wenn ein Benutzer der Tabelle tippt **siri hinzufügen** Zeile, die [ `RowSelected` ](https://developer.xamarin.com/api/member/UIKit.UITableViewSource.RowSelected/) Methode stellt einen Bildschirm zum Hinzufügen oder bearbeiten eine Voice-Verknüpfung:
+In `OrderDetailViewController`, wenn ein Benutzer der Tabelle tippt **siri hinzufügen** Zeile, die [ `RowSelected` ](xref:UIKit.UITableViewSource.RowSelected*) Methode stellt einen Bildschirm zum Hinzufügen oder bearbeiten eine Voice-Verknüpfung:
 
 ```csharp
 public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -650,10 +650,10 @@ In der **Certificates, IDs & Profiles** Teil der [Apple Developer Portal](https:
     - App: **com.yourcompanyname.SoupChef**
         - Weisen Sie zu dieser App-ID, die SiriKit und **App-Gruppen** Funktionen.
 
-    - Intents-Erweiterung: **com.yourcompanyname.SoupChef.Intents**
+    - Intents extension: **com.yourcompanyname.SoupChef.Intents**
         - Weisen Sie dieser App-ID, die **App-Gruppen** Funktion.
 
-    - Intents-Benutzeroberflächenerweiterung: **com.yourcompanyname.SoupChef.Intentsui**
+    - Intents UI extension: **com.yourcompanyname.SoupChef.Intentsui**
         - Diese App-ID benötigt keine speziellen Funktionen.
 
 - Bearbeiten Sie nach dem Erstellen der oben aufgeführten App-IDs, die **App-Gruppen** Funktion zugewiesen wird, für die app sowie die Intents-Erweiterung, die bestimmte app-Gruppe angeben, die oben erstellt haben.
@@ -669,8 +669,8 @@ Führen Sie folgende Schritte aus, in Visual Studio für Mac oder Visual Studio 
 - Aktualisieren Sie die verschiedenen **"Info.plist"** Dateien in der Projektmappe. Legen Sie die app, die Intents-Erweiterung und die Intents-Benutzeroberflächenerweiterung **Bündel-ID** für die oben definierte App-IDs:
 
     - App: **com.yourcompanyname.SoupChef**
-    - Intents-Erweiterung: **com.yourcompanyname.SoupChef.Intents**
-    - Intents-Benutzeroberflächenerweiterung: **com.yourcompanyname.SoupChef.Intentsui**
+    - Intents Extension: **com.yourcompanyname.SoupChef.Intents**
+    - Intents UI Extension: **com.yourcompanyname.SoupChef.Intentsui**
 
 - Update der **"Entitlements.plist"** -Datei für die **SoupChef** Projekt:
     - Für die **App-Gruppen** -Funktion die Gruppe auf die oben erstellte neue app-Gruppe festgelegt (im obigen Beispiel war **group.com.yourcompanyname.SoupChef**).

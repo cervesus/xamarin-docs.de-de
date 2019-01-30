@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 25b17dbebebf7bcae92ebdc294c798101d39b987
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d5b7d4a372704079343a357c1d341a5260fcf583
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121619"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233275"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Steuerelemente der Benutzeroberfläche in Xamarin.iOS
 
@@ -60,7 +60,7 @@ iOS bietet die wesentlichen zwei Möglichkeiten zum Anzeigen des Status in Ihrer
 
 Die UISearchBar wird verwendet, um über eine Liste von Werten zu suchen. 
 
-## <a name="sliders-steppers-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[Schieberegler Stepper und segmentierte Steuerelemente](slider-switch-segmented-controls.md)
+## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[Schieberegler, Schalter und segmentierte Steuerelemente](slider-switch-segmented-controls.md)
 
 Das Schieberegler-Steuerelement ermöglicht einfache Auswahl eines numerischen Werts innerhalb eines Bereichs. iOS verwendet die `UISwitch` wie einen booleschen Wert eingeben, die durch ein Optionsfeld auf anderen Plattformen dargestellt werden kann. Ein segmentiertes Steuerelement ist ein organisiert, dass Benutzer mit einer kleinen Anzahl von Optionen interagieren können.
 

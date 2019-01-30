@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 00bf7290d5f7165feb5b67cd91c15a96b7d3eaf8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c409fcc018379401c1ab40573495da12a8220c5a
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118369"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233665"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Benutzerdefinierte Steuerelemente im Xamarin Designer für iOS
 
@@ -24,8 +24,8 @@ Die Xamarin-Designer für iOS ist ein leistungsfähiges Tool für die visuelle D
 
 Ein Steuerelement, das alle folgenden Anforderungen erfüllt, wird auf der Entwurfsoberfläche gerendert werden:
 
-1.  Es ist eine direkte oder indirekte Unterklasse der [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) oder [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller). Andere [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) Unterklassen werden als Symbol auf der Entwurfsoberfläche angezeigt.
-2.  Es wurde eine [RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) , die sie für Objective-c verfügbar machen
+1.  Es ist eine direkte oder indirekte Unterklasse der [UIView](xref:UIKit.UIView) oder [UIViewController](xref:UIKit.UIViewController). Andere [NSObject](xref:Foundation.NSObject) Unterklassen werden als Symbol auf der Entwurfsoberfläche angezeigt.
+2.  Es wurde eine [RegisterAttribute](xref:Foundation.RegisterAttribute) , die sie für Objective-c verfügbar machen
 3.  Sie verfügt über [der erforderliche IntPtr-Konstruktor](~/ios/internals/api-design/index.md).
 4.  Entweder implementiert die [IComponent](xref:System.ComponentModel.IComponent) -Schnittstelle oder verfügt über eine [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute) auf "true" festgelegt.
 
@@ -38,17 +38,17 @@ Der Designer unterstützt das Laden von Objective-C-Bibliotheken von Drittanbiet
 Eine Eigenschaft deklariert, indem ein benutzerdefiniertes Steuerelement wird im Eigenschaftenbereich angezeigt, wenn die folgenden Bedingungen erfüllt sind:
 
 1.  Die Eigenschaft weist einen öffentlichen Getter und Setter.
-1.  Die Eigenschaft weist einen [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) als auch ein [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) auf "true" festgelegt.
-1.  Der Eigenschaftentyp ist ein numerischer Typ, den Enumerationstyp, die Zeichenfolge, die "bool", [SizeF](xref:System.Drawing.SizeF), [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/), oder [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/). Diese Liste der unterstützten Typen kann in Zukunft erweitert werden.
+1.  Die Eigenschaft weist einen [ExportAttribute](xref:Foundation.ExportAttribute) als auch ein [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) auf "true" festgelegt.
+1.  Der Eigenschaftentyp ist ein numerischer Typ, den Enumerationstyp, die Zeichenfolge, die "bool", [SizeF](xref:System.Drawing.SizeF), [UIColor](xref:UIKit.UIColor), oder [UIImage](xref:UIKit.UIImage). Diese Liste der unterstützten Typen kann in Zukunft erweitert werden.
 
 
 Die Eigenschaft kann auch mit ergänzt werden, eine [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) an die Bezeichnung, die Sie im Eigenschaftenbereich angezeigt wird.
 
 ## <a name="initialization"></a>Initialisierung
 
-Für `UIViewController` Unterklassen, verwenden Sie die [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/) -Methode für Code, Sie im Designer erstellten, Ansichten abhängt.
+Für `UIViewController` Unterklassen, verwenden Sie die [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) -Methode für Code, Sie im Designer erstellten, Ansichten abhängt.
 
-Für `UIView` und andere `NSObject` Unterklassen, die ["AwakeFromNib"](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/) Methode ist der empfohlene Platz zum Ausführen der Initialisierung des benutzerdefinierten Steuerelements nach dem sie aus der Layoutdatei geladen wird. Dies ist, da alle benutzerdefinierten Eigenschaften legen Sie in den Eigenschaftenbereich nicht festgelegt werden, wenn es sich bei Konstruktor des Steuerelements ausgeführt wird, aber sie werden festgelegt werden, bevor Sie `AwakeFromNib` aufgerufen wird:
+Für `UIView` und andere `NSObject` Unterklassen, die ["AwakeFromNib"](xref:Foundation.NSObject.AwakeFromNib) Methode ist der empfohlene Platz zum Ausführen der Initialisierung des benutzerdefinierten Steuerelements nach dem sie aus der Layoutdatei geladen wird. Dies ist, da alle benutzerdefinierten Eigenschaften legen Sie in den Eigenschaftenbereich nicht festgelegt werden, wenn es sich bei Konstruktor des Steuerelements ausgeführt wird, aber sie werden festgelegt werden, bevor Sie `AwakeFromNib` aufgerufen wird:
 
 
 ```csharp
@@ -138,7 +138,7 @@ Entweder um die oben genannten Situation zu beheben, Initialisieren der `Counter
 
 Ein benutzerdefiniertes Steuerelement muss auf der Entwurfsoberfläche ein paar Einschränkungen entsprechen:
 
--  App-Bundle-Ressourcen sind nicht verfügbar ist, im Entwurfsmodus befindet. Images sind verfügbar, wenn über geladen [UIImage Methoden](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM) .
+-  App-Bundle-Ressourcen sind nicht verfügbar ist, im Entwurfsmodus befindet. Images sind verfügbar, wenn über geladen [UIImage Methoden](xref:UIKit.UIImage) .
 -  Asynchrone Vorgänge, z. B. webanforderungen, sollte nicht im Entwurfsmodus ausgeführt werden. Die Entwurfsoberfläche unterstützt keine Animationen oder anderen asynchronen Updates für die Benutzeroberfläche des Steuerelements.
 
 
@@ -170,7 +170,7 @@ public class DesignerAwareLabel : UILabel, IComponent {
 Sie sollten immer überprüfen die `Site` -Eigenschaft für `null` bevor Sie eines ihrer Elemente zugreifen. Wenn `Site` ist `null`, es ist sicherer, davon aus, das Steuerelement nicht im Designer ausgeführt wird.
 Im Entwurfsmodus `Site` wird festgelegt, nach dem Ausführen der Konstruktor des Steuerelements und vor dem `AwakeFromNib` aufgerufen wird.
 
-## <a name="debugging"></a>Debugging
+## <a name="debugging"></a>Debuggen
 
 Ein Steuerelement, das die oben genannten Anforderungen erfüllt werden in der Toolbox angezeigt und auf der Oberfläche gerendert werden.
 Wenn ein Steuerelement nicht gerendert wird, überprüfen Sie Fehler in das Steuerelement oder eine ihrer Abhängigkeiten.

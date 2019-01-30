@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: b90c59f09217077262c3aced9ee9e5d07849c25c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2dc56d9c5b63d428663d98bae4c8687c1f621a04
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106584"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233193"
 ---
 # <a name="threading-in-xamarinios"></a>Threading in Xamarin.iOS
 
@@ -35,7 +35,7 @@ In der Regel verwenden Entwickler Threads aus, wenn sie reaktionsfreudige Anwend
 
 ## <a name="developing-responsive-applications"></a>Entwickeln-reaktionsschnelle Anwendungen
 
-Zugriff auf Elemente der Benutzeroberfläche sollte auf dem gleichen Thread beschränkt werden, die die Hauptschleife für Ihre Anwendung ausgeführt wird. Wenn Sie die Benutzeroberfläche von einem anderen Thread ändern möchten, sollten Sie den Code mithilfe von Warteschlange [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/), wie folgt aus:
+Zugriff auf Elemente der Benutzeroberfläche sollte auf dem gleichen Thread beschränkt werden, die die Hauptschleife für Ihre Anwendung ausgeführt wird. Wenn Sie die Benutzeroberfläche von einem anderen Thread ändern möchten, sollten Sie den Code mithilfe von Warteschlange [NSObject.InvokeOnMainThread](xref:Foundation.NSObject), wie folgt aus:
 
 ```csharp
 MyThreadedRoutine ()  

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 39faa4670b17cdf4853bfe24ff104765ca541b9f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 512280e9c298cfbcea6f693b0691236fd1cf5a5f
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106213"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233691"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Generische Unterklassen von NSObject in Xamarin.iOS
 
 ## <a name="using-generics-with-nsobjects"></a>Verwenden von Generika mit NSObjects
 
-Ab Xamarin.iOS 7.2.1 Sie Generika verwenden kann, in Unterklassen der `NSObject` (z. B. [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)).
+Ab Xamarin.iOS 7.2.1 Sie Generika verwenden kann, in Unterklassen der `NSObject` (z. B. [UIView](xref:UIKit.UIView).
 
 Sie können jetzt generische Klassen, wie die folgende erstellen:
 
@@ -42,7 +42,7 @@ In diesem Dokument werden die Einschränkungen bei der eingeschränkten Unterst�
 
 Alle generischen Typargumente in eine Membersignatur verfügbar gemacht werden, mit Objective-C benötigen eine `NSObject` Einschränkung.
 
-**Gute**:
+**Good**:
 
 ```csharp
 class Generic<T> : NSObject where T: NSObject
@@ -54,7 +54,7 @@ class Generic<T> : NSObject where T: NSObject
 }
 ```
 
-**Grund**: der generische Typparameter ist eine `NSObject`, sodass die Auswahl-Signatur für `myMethod:` sicher verfügbar gemacht werden können mit Objective-C (sie werden immer `NSObject` oder eine Unterklasse dieser).
+**Reason**: Der generische Typparameter ist eine `NSObject`, sodass die Auswahl-Signatur für `myMethod:` sicher verfügbar gemacht werden können mit Objective-C (sie werden immer `NSObject` oder eine Unterklasse dieser).
 
 **Ungültige**:
 
@@ -70,7 +70,7 @@ class Generic<T> : NSObject
 
 **Grund**: Es ist nicht möglich, die eine Objective-C-Signatur für die exportierten Elemente zu erstellen, die Objective-C-Code aufrufen kann, da die Signatur, hängt von der genaue Typ des generischen Typs würden, `T`.
 
-**Gute**:
+**Good**:
 
 ```csharp
 class Generic<T> : NSObject
@@ -86,7 +86,7 @@ class Generic<T> : NSObject
 
 **Grund**: Es ist möglich, die generischen Typargumente uneingeschränkt haben, solange sie keinen Teil der Signatur der exportierten Member belegen.
 
-**Gute**:
+**Good**:
 
 ```csharp
 class Generic<T, U> : NSObject where T: NSObject
@@ -151,7 +151,7 @@ class MyClass : NSObject
 }
 ```
 
-**Grund**: Dies ist nicht zulässig, da Xamarin.iOS nicht weiß, welchen Typ, der für das Typargument verwendet `T` Wenn die Methode von Objective-C aufgerufen wird.
+**Reason**: Dies ist nicht zulässig, da Xamarin.iOS nicht weiß, welchen Typ, der für das Typargument verwendet `T` Wenn die Methode von Objective-C aufgerufen wird.
 
 Eine Alternative ist stattdessen exportieren und erstellen Sie eine spezielle Methode:
 
@@ -188,7 +188,7 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**Ursache:** ebenso wie den Xamarin.iOS-laufzeitanforderungen möchte wissen, welcher Typ für das generische Typargument "t". die Verwendung generische Methoden
+**Reason:** Genau wie generische Methoden muss die Xamarin.iOS-Runtime können zu wissen, welcher Typ für die Verwendung für das generische Typargument "t".
 
 Z. B. Elemente, die die Instanz selbst wird verwendet (da es nie eine Instanz generische werden<T>, sie werden immer die generische<SomeSpecificClass>), für statische Member dieser Informationen ist jedoch nicht vorhanden.
 

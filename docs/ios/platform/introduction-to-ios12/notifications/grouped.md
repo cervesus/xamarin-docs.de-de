@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 278986b29e629995a202f474242670f5524c45ff
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2e23bb13ad35e9a7a6386d881fe64f817ca8e216
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111523"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233262"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>Gruppierte Benachrichtigungen in Xamarin.iOS
 
@@ -30,7 +30,7 @@ Codeausschnitte in diesem Handbuch stammen aus dieser Beispiel-app.
 
 ## <a name="request-authorization-and-allow-foreground-notifications"></a>Autorisierung anfordern und Foreground-Benachrichtigungen zulassen
 
-Um eine app lokale Benachrichtigungen senden zu kann, müssen sie die Berechtigung anfordern. In der Beispiel-app [ `AppDelegate` ](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/), [ `FinishedLaunching` ](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.FinishedLaunching/p/UIKit.UIApplication/Foundation.NSDictionary/) Methode fordert diese Berechtigung:
+Um eine app lokale Benachrichtigungen senden zu kann, müssen sie die Berechtigung anfordern. In der Beispiel-app [ `AppDelegate` ](xref:UIKit.UIApplicationDelegate), [ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) Methode fordert diese Berechtigung:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Die [ `Delegate` ](https://developer.xamarin.com/api/property/UserNotifications.UNUserNotificationCenter.Delegate/) (Satz oben) für eine [ `UNUserNotificationCenter` ](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenter/) entscheidet, ob eine eingehende Benachrichtigung durch den Aufruf des abschlusshandlers ,dieaneineVordergrund-appangezeigtwerdensollodernicht[`WillPresentNotification`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification/p/UserNotifications.IUNUserNotificationCenterDelegate/UserNotifications.UNUserNotificationCenter/UserNotifications.UNNotification/System.Action%7BUserNotifications.UNNotificationPresentationOptions%7D/):
+Die [ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) (Satz oben) für eine [ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter) entscheidet, ob eine eingehende Benachrichtigung durch den Aufruf des abschlusshandlers ,dieaneineVordergrund-appangezeigtwerdensollodernicht[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,7 +56,7 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-Die [ `UNNotificationPresentationOptions.Alert` ](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationPresentationOptions/) Parameter gibt an, dass die app soll Warnung anzeigen, aber keines Sounds wiedergeben oder einen Badge zu aktualisieren.
+Die [ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions) Parameter gibt an, dass die app soll Warnung anzeigen, aber keines Sounds wiedergeben oder einen Badge zu aktualisieren.
 
 ## <a name="threaded-notifications"></a>Singlethread-Benachrichtigungen
 
@@ -80,8 +80,8 @@ void StartNewThread()
 Um eine Singlethread-Benachrichtigung, die Beispiel-app zu senden:
 
 - Überprüft, ob die app die Autorisierung zum Senden einer Benachrichtigung.
-- Erstellt ein [`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
--Objekt für die Benachrichtigung, den Inhalt, und legt sie fest seine [`ThreadIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNMutableNotificationContent.ThreadIdentifier/)
+- Erstellt ein [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+-Objekt für die Benachrichtigung, den Inhalt, und legt sie fest seine [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
 der Thread-ID oben erstellt haben.
 - Erstellt eine Anforderung, und plant die Benachrichtigung:
 

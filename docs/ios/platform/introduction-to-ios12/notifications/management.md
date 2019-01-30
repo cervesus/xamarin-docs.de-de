@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: a7a3bb8f720f1c6a2370a2510659693bb28ea09b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 96fce269784ad0ac41fd1685ac7ac6b957932bd8
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111517"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233171"
 ---
 # <a name="notification-management-in-xamarinios"></a>Verwaltung von Benachrichtigungen in Xamarin.iOS
 
@@ -28,8 +28,8 @@ Codeausschnitte in diesem Handbuch stammen aus dieser Beispiel-app.
 
 ## <a name="notification-management-screen"></a>Benachrichtigungs-Bildschirm
 
-In der Beispiel-app `ManageNotificationsViewController` definiert eine Benutzeroberfläche, die unabhängig voneinander aktivieren und Deaktivieren der roten Benachrichtigungen und grünen Benachrichtigungen ermöglicht. Dies ist ein standard [`UIViewController`](https://developer.xamarin.com/api/type/UIKit.UIViewController/)
-mit einem [ `UISwitch` ](https://developer.xamarin.com/api/type/UIKit.UISwitch/) für jeden Benachrichtigungstyp. Umschalten des Schalters für beide Arten von Benachrichtigungen wird gespeichert, in den Standardeinstellungen für Benutzer, die Einstellungen der Benutzer für diese Art von Benachrichtigung:
+In der Beispiel-app `ManageNotificationsViewController` definiert eine Benutzeroberfläche, die unabhängig voneinander aktivieren und Deaktivieren der roten Benachrichtigungen und grünen Benachrichtigungen ermöglicht. Dies ist ein standard [`UIViewController`](xref:UIKit.UIViewController)
+mit einem [ `UISwitch` ](xref:UIKit.UISwitch) für jeden Benachrichtigungstyp. Umschalten des Schalters für beide Arten von Benachrichtigungen wird gespeichert, in den Standardeinstellungen für Benutzer, die Einstellungen der Benutzer für diese Art von Benachrichtigung:
 
 ```csharp
 partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
@@ -41,7 +41,7 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 > [!NOTE]
 > Das Verwaltungsfenster Benachrichtigung überprüft auch, und zwar unabhängig davon, ob der Benutzer die Benachrichtigungen für die app vollständig deaktiviert hat. Wenn dies der Fall ist, blendet sie die Optionen für die einzelnen Benachrichtigungstypen an. Das Verwaltungsfenster für die Benachrichtigung dazu:
 >
-> - Aufrufe [ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync()/) und untersucht die [ `AuthorizationStatus` ](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationSettings.AuthorizationStatus/) Eigenschaft.
+> - Aufrufe [ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync) und untersucht die [ `AuthorizationStatus` ](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus) Eigenschaft.
 > - Blendet die Optionen für die einzelnen Benachrichtigungstypen an, wenn Benachrichtigungen für die app vollständig deaktiviert wurden.
 > - Erneut prüft, ob Benachrichtigungen jedes Mal deaktiviert wurden, um die Anwendung in den Vordergrund verschoben wird, da der Benutzer aktivieren/Benachrichtigungen in iOS-Einstellungen zu einem beliebigen Zeitpunkt deaktivieren kann.
 
@@ -61,7 +61,7 @@ partial void HandleTapRedNotificationButton(UIButton sender)
 iOS deep-Links zu einer app Benachrichtigung-Bildschirm von Mitteilungszentrale und der app-Benachrichtigungseinstellungen in der Einstellungs-app. Um dies zu ermöglichen, müssen eine app aus:
 
 - Um anzugeben, dass ein Benachrichtigung-Bildschirm durch Übergabe verfügbar ist `UNAuthorizationOptions.ProvidesAppNotificationSettings` auf die app Benachrichtigung-autorisierungsanforderung.
-- Implementieren der `OpenSettings` aus [ `IUNUserNotificationCenterDelegate` ](https://developer.xamarin.com/api/type/UserNotifications.IUNUserNotificationCenterDelegate/).
+- Implementieren der `OpenSettings` aus [ `IUNUserNotificationCenterDelegate` ](xref:UserNotifications.IUNUserNotificationCenterDelegate).
 
 ### <a name="authorization-request"></a>Autorisierungsanforderung
 

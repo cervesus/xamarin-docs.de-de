@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 146b05cf7ca2bbd05e952ecc9064fbb9168d179a
-ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
+ms.openlocfilehash: 650ed00557a3dd819ab2920a7646f93199b98b9e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53609934"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233951"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für Xamarin.iOS 
 
@@ -75,7 +75,7 @@ TypeName XXXX {
 
 Die oben genannten Definition wird automatisch generiert von Visual Studio für Mac für alle XIB-Dateien, die Sie in Visual Studio für Mac im Hinzufügen der `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` Datei.
 
-Darüber hinaus werden die Typen, die mit dem obigen Code müssen eine Unterklasse von [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/).  Wenn der enthaltende Typ innerhalb eines Namespace ist, sollten sie außerdem besitzen eine [[registrieren]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Attribut, das einen Namen ohne Namespace enthält (wie Interface Builder Namespaces in Typen unterstützt wird):
+Darüber hinaus werden die Typen, die mit dem obigen Code müssen eine Unterklasse von [NSObject](xref:Foundation.NSObject).  Wenn der enthaltende Typ innerhalb eines Namespace ist, sollten sie außerdem besitzen eine [[registrieren]](xref:Foundation.RegisterAttribute) Attribut, das einen Namen ohne Namespace enthält (wie Interface Builder Namespaces in Typen unterstützt wird):
 
 ```csharp
 namespace Samples.GLPaint {
@@ -144,7 +144,7 @@ Dies geschieht, wenn Sie Folgendes tun:
 
 Das Problem besteht darin, dass Mono OS X-Datei übernommen wird `libsqlite3.dylib`, nicht die iPhoneSimulator des `libsqlite3.dylib` Datei. Ihre app *wird* arbeiten an das Gerät, aber nicht nur Ihre Simulator.
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>Stellen Sie bereit zum Gerät tritt der Fehler "System.Exception": AMDeviceInstallApplication 3892346901 zurückgegeben
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>Stellen Sie bereit zum Gerät tritt der Fehler "System.Exception": AMDeviceInstallApplication returned 3892346901
 
 Dieser Fehler weist darauf hin, dass die Code-signing-Konfiguration für Ihr Zertifikat/Bündel-Id nicht das Bereitstellungsprofil auf dem Gerät installierten übereinstimmt.  Vergewissern Sie sich, Sie haben das richtige Zertifikat ausgewählt, die in den Projektoptionen Bundle-Signierung iPhone ->, und die richtige Paket-Id, die in den Projekteigenschaften angegeben -> iPhone-Anwendung
 
@@ -317,7 +317,7 @@ Führen Sie folgende Schritte aus:
 -  Erstellen Sie eine benutzerdefinierte Datei "Info.plist" für das Projekt, und explizit MinimumOSVersion auf 3.0 darin festgelegt.   Dies überschreibt die MinimumOSVersion 3.2-Wert, der von Xamarin.iOS festgelegt.   Wenn Sie dies nicht tun, wird die app nicht auf einem iPhone ausgeführt werden können.
 -  Neu erstellen "," Zip "und" Upload in iTunes connect.
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>Nicht behandelte Ausnahme: System.Exception: Fehler beim Suchen der Selektor SomeSelector: auf {Type}
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>Ausnahmefehler: System.Exception: Fehler beim Suchen der Selektor SomeSelector: auf {Type}
 
 Diese Ausnahme wird durch eines von drei Dingen verursacht werden:
 

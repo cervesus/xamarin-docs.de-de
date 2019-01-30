@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f892774b4899fcbac46e8cc7bc2b0dd0336cc036
-ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
+ms.openlocfilehash: 10b692099bae6f444474394144eb7e8bb46d749f
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012281"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233925"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>iOS-Erweiterungen in Xamarin.iOS
 
@@ -30,7 +30,7 @@ Alle Erweiterungen werden in Verbindung mit einer app für Container (mit beiden
 |Typ|Beschreibung|Erweiterungspunkt|Host-App|
 |--- |--- |--- |--- |
 |Aktion|Spezialisierten Editor oder für einen bestimmten Medientyp-viewer|`com.apple.ui-services`|Beliebig|
-|Dokument-Anbieter|Ermöglicht der app Store Remotedokumenten verwenden|`com.apple.fileprovider-ui`|Apps mit einer [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|Dokument-Anbieter|Ermöglicht der app Store Remotedokumenten verwenden|`com.apple.fileprovider-ui`|Apps mit einer [UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)|
 |Tastatur|Alternative Tastaturen|`com.apple.keyboard-service`|Beliebig|
 |Foto bearbeiten|Bildbearbeitung und bearbeiten|`com.apple.photo-editing`|Photos.App-editor|
 |Freigeben|Gibt Daten für soziale Netzwerke, messaging usw. frei.|`com.apple.share-services`|Beliebig|
@@ -48,8 +48,8 @@ Die universelle Einschränkungen sind:
 - Erweiterungen können keine [erweiterte hintergrundmodi](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
 - Kameras oder Mikrofon des Geräts Erweiterungen können nicht zugegriffen werden (obwohl sie vorhandene Mediendateien zugreifen können)
 - Erweiterungen können nicht Air & Drop-Daten empfangen werden, (obwohl Daten über die Drop per Funk übertragen werden können)
-- [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/) und [UIAlertView](https://developer.xamarin.com/api/type/UIKit.UIAlertView/) sind nicht verfügbar; Erweiterungen müssen verwenden [UIAlertController](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
-- Mehrere Member der [UIApplication](https://developer.xamarin.com/api/type/UIKit.UIApplication/) sind nicht verfügbar: [UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/), `UIApplication.OpenURL`, `UIApplication.BeginIgnoringInteractionEvents` und `UIApplication.EndIgnoringInteractionEvents`
+- [UIActionSheet](xref:UIKit.UIActionSheet) und [UIAlertView](xref:UIKit.UIAlertView) sind nicht verfügbar; Erweiterungen müssen verwenden [UIAlertController](xref:UIKit.UIAlertController)
+- Mehrere Member der [UIApplication](xref:UIKit.UIApplication) sind nicht verfügbar: [UIApplication.SharedApplication](xref:UIKit.UIApplication.SharedApplication), [UIApplication.OpenUrl](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl)), [UIApplication.BeginIgnoringInteractionEvents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) and [UIApplication.EndIgnoringInteractionEvents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - iOS erzwingt ein 16 MB Limit für arbeitsspeichernutzung zu heutigen-Erweiterungen.
 - Standardmäßig haben Tastatur Erweiterungen keinen Zugriff auf das Netzwerk. Dies wirkt sich auf debugging auf Gerät (die Einschränkung wird im Simulator nicht erzwungen), da für Xamarin.iOS Netzwerkzugriff erforderlich ist, für das Funktionieren des Remotedebuggens. Es ist möglich, den Netzwerkzugriff für die Anforderung, durch Festlegen der `Requests Open Access` Wert in das Projekt die Datei "Info.plist" zu `Yes`. Informieren Sie sich von Apple [benutzerdefinierte Tastatur Handbuch](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) für Weitere Informationen zu Einschränkungen der Tastatur-Erweiterung.
 
@@ -65,11 +65,11 @@ In der Regel wird die Container-app beschreibt die Erweiterung und führt den Be
 
 ## <a name="extension-lifecycle"></a>Erweiterung-Anwendungslebenszyklus
 
-Eine Erweiterung kann so einfach sein wie ein einzelnes [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/) oder komplexere Erweiterungen, die mehreren Bildschirmen der Benutzeroberfläche darstellen. Wenn der Benutzer trifft eine _Erweiterungspunkte_ (z. B. wenn ein Bild freigeben), haben Sie Gelegenheit, wählen Sie die Erweiterungen, die für diesen Punkt Erweiterung registriert. 
+Eine Erweiterung kann so einfach sein wie ein einzelnes [UIViewController](xref:UIKit.UIViewController) oder komplexere Erweiterungen, die mehreren Bildschirmen der Benutzeroberfläche darstellen. Wenn der Benutzer trifft eine _Erweiterungspunkte_ (z. B. wenn ein Bild freigeben), haben Sie Gelegenheit, wählen Sie die Erweiterungen, die für diesen Punkt Erweiterung registriert. 
 
 Wenn sie Ihrer App auswählen, die Erweiterungen, die `UIViewController` instanziiert, und starten Sie den normalen View Controller-Lebenszyklus. Allerdings anders als eine normale app, die angehalten, aber nicht beendet werden, wenn der Benutzer abgeschlossen ist, mit ihnen interagieren, werden Erweiterungen geladen, ausgeführt und wiederholt dann beendet.
 
-Erweiterungen können kommunizieren mit ihren apps Host über eine [NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) Objekt. Einige Erweiterungen verfügen über Vorgänge, die asynchrone Rückrufe mit den Ergebnissen zu erhalten. Diese Rückrufe in Hintergrundthreads ausgeführt, und die Erweiterung muss ist dies zu berücksichtigen; z. B. mithilfe von [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/) , wenn die Benutzeroberfläche aktualisiert werden sollen. Finden Sie unter den [Kommunikation mit der App-Host](#Communicating-with-the-Host-App) Informationen weiter unten im Abschnitt.
+Erweiterungen können kommunizieren mit ihren apps Host über eine [NSExtensionContext](xref:Foundation.NSExtensionContext) Objekt. Einige Erweiterungen verfügen über Vorgänge, die asynchrone Rückrufe mit den Ergebnissen zu erhalten. Diese Rückrufe in Hintergrundthreads ausgeführt, und die Erweiterung muss ist dies zu berücksichtigen; z. B. mithilfe von [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*) , wenn die Benutzeroberfläche aktualisiert werden sollen. Finden Sie unter den [Kommunikation mit der App-Host](#Communicating-with-the-Host-App) Informationen weiter unten im Abschnitt.
 
 Standardmäßig können Erweiterungen und die Container-apps nicht kommunizieren trotz zusammen installiert wird. In einigen Fällen ist die Container-app im Wesentlichen eine leere "shipping"-Container, deren Zweck bereitgestellt wird, sobald die Erweiterung installiert ist. Wenn jedoch Situationen geben, kann der Container-app und die Erweiterung Ressourcen über einen gemeinsamen Wissensbereich freigeben. Darüber hinaus eine **heute-Erweiterung** können anfordern, die Container-app, um eine URL zu öffnen. Dieses Verhalten wird angezeigt, der [weiterentwickeln Widget "Countdown"](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo).
 
@@ -264,11 +264,11 @@ Das neue Widget wird hinzugefügt, die **heute** anzeigen und die Ergebnisse ang
 
 ## <a name="communicating-with-the-host-app"></a>Kommunikation mit dem Host-app
 
-Das Beispiel noch heute die Erweiterung, die Sie soeben haben erstellt, kommuniziert nicht mit der Host-app (die **heute** Bildschirm). Wenn dies der Fall ist, verwenden sie die [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) Eigenschaft der `TodayViewController` oder `CodeBasedViewController` Klassen. 
+Das Beispiel noch heute die Erweiterung, die Sie soeben haben erstellt, kommuniziert nicht mit der Host-app (die **heute** Bildschirm). Wenn dies der Fall ist, verwenden sie die [ExtensionContext](xref:Foundation.NSExtensionContext) Eigenschaft der `TodayViewController` oder `CodeBasedViewController` Klassen. 
 
-Für Erweiterungen, die Daten aus ihren apps Host empfängt, werden die Daten in Form eines Arrays von [NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/) im gespeicherten Objekte die [InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/) Eigenschaft der [ExtensionContext ](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) von der Erweiterungs `UIViewController`.
+Für Erweiterungen, die Daten aus ihren apps Host empfängt, werden die Daten in Form eines Arrays von [NSExtensionItem](xref:Foundation.NSExtensionItem) im gespeicherten Objekte die [InputItems](xref:Foundation.NSExtensionContext.InputItems) Eigenschaft der [ExtensionContext ](xref:Foundation.NSExtensionContext) von der Erweiterungs `UIViewController`.
 
-Andere Erweiterung, z. B. Foto bearbeiten-Erweiterungen kann zwischen dem Benutzer, abgeschlossen oder abgebrochen wird die Nutzung unterscheiden. Dies signalisiert werden zurück an die Host-app über die [CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/) und [CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/) Methoden [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) Eigenschaft.
+Andere Erweiterung, z. B. Foto bearbeiten-Erweiterungen kann zwischen dem Benutzer, abgeschlossen oder abgebrochen wird die Nutzung unterscheiden. Dies signalisiert werden zurück an die Host-app über die [CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*) und [CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*) Methoden [ExtensionContext](xref:Foundation.NSExtensionContext) Eigenschaft.
 
 Weitere Informationen finden Sie unter Apple [Programmierhandbuch für App-Erweiterung](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1).
 

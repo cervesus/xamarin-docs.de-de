@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 3b214833de10848e69a65181cff12e3223a6b24a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a40d0911b7dabc900a4c6e50c692e4f091f22be9
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111843"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233626"
 ---
 # <a name="core-animation-in-xamarinios"></a>Animation "Core" in Xamarin.iOS
 
@@ -49,7 +49,7 @@ In diesem Abschnitt wird erläutert, einschließlich UIKit-Animationsfunktionen:
 
  `UIViewController` bietet integrierte Unterstützung für den Übergang zwischen ansichtscontrollern über die `PresentViewController` Methode. Bei Verwendung `PresentViewController`, der Übergang mit dem zweiten Controller kann optional animiert werden.
 
-Betrachten Sie beispielsweise eine Anwendung mit zwei Controllern, die, in denen durch Berühren einer Schaltfläche in der erste Controller aufruft `PresentViewController` um einen zweiten Controller anzuzeigen. Um zu steuern, welche übergangsanimation verwendet wird, um den zweiten Controller anzuzeigen, legen Sie einfach die [ `ModalTransitionStyle` ](https://developer.xamarin.com/api/type/UIKit.UIModalTransitionStyle/) Eigenschaft wie unten dargestellt:
+Betrachten Sie beispielsweise eine Anwendung mit zwei Controllern, die, in denen durch Berühren einer Schaltfläche in der erste Controller aufruft `PresentViewController` um einen zweiten Controller anzuzeigen. Um zu steuern, welche übergangsanimation verwendet wird, um den zweiten Controller anzuzeigen, legen Sie einfach die [ `ModalTransitionStyle` ](xref:UIKit.UIModalTransitionStyle) Eigenschaft wie unten dargestellt:
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -90,7 +90,7 @@ UIView.Transition (
     completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition` nimmt auch einen `duration` Parameter, der steuert, wie lange die Animation ausgeführt wird, als auch [ `options` ](https://developer.xamarin.com/api/type/UIKit.UIViewAnimationOptions/) Dinge wie z. B. die Animation zu verwenden und die Beschleunigungsfunktion an. Darüber hinaus können Sie einen Abschlusshandler angeben, der aufgerufen wird, wenn die Animation abgeschlossen wird.
+`UIView.Transition` nimmt auch einen `duration` Parameter, der steuert, wie lange die Animation ausgeführt wird, als auch [ `options` ](xref:UIKit.UIViewAnimationOptions) Dinge wie z. B. die Animation zu verwenden und die Beschleunigungsfunktion an. Darüber hinaus können Sie einen Abschlusshandler angeben, der aufgerufen wird, wenn die Animation abgeschlossen wird.
 
 Der Screenshot unten zeigen der animierte Übergang zwischen dem Bild Sichten, wenn `TransitionFlipFromTop` wird verwendet:
 

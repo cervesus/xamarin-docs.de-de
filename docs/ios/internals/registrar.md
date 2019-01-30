@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 8/29/2018
-ms.openlocfilehash: cdd57095b03c24472abec5646ee3a70350770d7c
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: cd9e92e2c96d0a0696633e49869f2661e410d343
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "34786173"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233587"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Typ-Registrierungsstelle für Xamarin.iOS
 
@@ -22,10 +22,10 @@ Dieses Dokument beschreibt die Registrierung-Typsystem, die von Xamarin.iOS verw
 
 Während des Starts werden Xamarin.iOS registrieren:
 
-- -Klassen mit einem [[registrieren]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) -Attribut als Objective-C-Klassen.
-- -Klassen mit einem [[Category]](https://developer.xamarin.com/api/type/CRuntime.CategoryAttribute) -Attribut als Objective-C-Kategorien.
-- Eine Schnittstelle mit einer [[Protocol]](https://developer.xamarin.com/api/type/Foundation.ProtocolAttribute/) -Attribut als Objective-C-Protokolle.
-- Elemente mit einer [[Export]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/), wodurch für Objective-C, um darauf zuzugreifen.
+- -Klassen mit einem [[registrieren]](xref:Foundation.RegisterAttribute) -Attribut als Objective-C-Klassen.
+- -Klassen mit einem [[Category]](xref:ObjCRuntime.CategoryAttribute) -Attribut als Objective-C-Kategorien.
+- Eine Schnittstelle mit einer [[Protocol]](xref:Foundation.ProtocolAttribute) -Attribut als Objective-C-Protokolle.
+- Elemente mit einer [[Export]](xref:Foundation.ExportAttribute), wodurch für Objective-C, um darauf zuzugreifen.
 
 Betrachten Sie beispielsweise die verwaltete `Main` Methode, die häufig in Xamarin.iOS-Anwendungen:
 
