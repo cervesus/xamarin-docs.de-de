@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 42e357c0fbb4b858866e15d638177d6823de0f09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 33f27d2585f4fb4d65181cbfd9211ea87b837e73
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112675"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233886"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Objective-C-Bibliotheken
 
@@ -674,7 +674,7 @@ Informieren Sie sich die [ `[BindAs]` ](~/cross-platform/macios/binding/binding-
 
 ### <a name="binding-notifications"></a>Binden von Benachrichtigungen
 
-Benachrichtigungen sind Nachrichten, die bereitgestellt werden, die `NSNotificationCenter.DefaultCenter` und dienen als Mechanismus zum Senden von Nachrichten von einem Teil der Anwendung in eine andere. Entwickler Abonnieren von Benachrichtigungen, die in der Regel mithilfe der [NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)des [bei AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/) Methode. Wenn eine Anwendung eine Nachricht in der mitteilungszentrale veröffentlicht, in der Regel enthält eine Nutzlast, die in gespeicherten der [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) Wörterbuch. Dieses Wörterbuch ist schwach typisiert und Abrufen von Informationen daraus ist fehleranfällig, wie in der Regel müssen Benutzer in der Dokumentation zu lesen, welche Schlüssel finden Sie auf das Wörterbuch und die Typen der Werte, die im Wörterbuch gespeichert werden können. Das Vorhandensein der manchmal auch als Schlüssel dient als auch einen booleschen Wert.
+Benachrichtigungen sind Nachrichten, die bereitgestellt werden, die `NSNotificationCenter.DefaultCenter` und dienen als Mechanismus zum Senden von Nachrichten von einem Teil der Anwendung in eine andere. Entwickler Abonnieren von Benachrichtigungen, die in der Regel mithilfe der [NSNotificationCenter](xref:Foundation.NSNotificationCenter)des [bei AddObserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification})) Methode. Wenn eine Anwendung eine Nachricht in der mitteilungszentrale veröffentlicht, in der Regel enthält eine Nutzlast, die in gespeicherten der [NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo) Wörterbuch. Dieses Wörterbuch ist schwach typisiert und Abrufen von Informationen daraus ist fehleranfällig, wie in der Regel müssen Benutzer in der Dokumentation zu lesen, welche Schlüssel finden Sie auf das Wörterbuch und die Typen der Werte, die im Wörterbuch gespeichert werden können. Das Vorhandensein der manchmal auch als Schlüssel dient als auch einen booleschen Wert.
 
 Der Xamarin.iOS-Bindung-Generator bietet Support für Entwickler, um Benachrichtigungen zu binden. Zu diesem Zweck legen Sie die [`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
 Attribut für eine Eigenschaft, die auch wurde mit markiert ein [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)
@@ -703,7 +703,7 @@ public class MyClass {
 }
 ```
 
-Benutzer Ihres Codes können dann problemlos Abonnieren von Benachrichtigungen, die bereitgestellt werden, um die [NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/) mithilfe von Code wie folgt:
+Benutzer Ihres Codes können dann problemlos Abonnieren von Benachrichtigungen, die bereitgestellt werden, um die [NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter) mithilfe von Code wie folgt:
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -717,7 +717,7 @@ Der zurückgegebene Wert von `ObserveDidStart` können verwendet werden, um ganz
 token.Dispose ();
 ```
 
-Oder Sie rufen [NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject/) und übergeben Sie das Token. Wenn die Benachrichtigung an den Parameter enthält, sollten Sie angeben, dass eine Hilfsprogramm `EventArgs` Schnittstelle, die wie folgt:
+Oder Sie rufen [NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject)) und übergeben Sie das Token. Wenn die Benachrichtigung an den Parameter enthält, sollten Sie angeben, dass eine Hilfsprogramm `EventArgs` Schnittstelle, die wie folgt:
 
 ```csharp
 interface MyClass {
@@ -740,7 +740,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-Der oben generiert eine `MyScreenChangedEventArgs` -Klasse mit der `ScreenX` und `ScreenY` Eigenschaften, mit denen die Daten abgerufen werden die [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) Wörterbuch mit den Schlüsseln "ScreenXKey" und "ScreenYKey" bzw. und wenden Sie die ordnungsgemäße Konvertierungen. Die `[ProbePresence]` -Attribut für den Generator verwendet, um den Prüfpunkt, wenn der Schlüssel, in festgelegt ist der `UserInfo`, anstatt zu versuchen, den Wert zu extrahieren. Dies ist für Fälle verwendet, in denen das Vorhandensein des Schlüssels den Wert (in der Regel für boolesche Werte) ist.
+Der oben generiert eine `MyScreenChangedEventArgs` -Klasse mit der `ScreenX` und `ScreenY` Eigenschaften, mit denen die Daten abgerufen werden die [NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo) Wörterbuch mit den Schlüsseln "ScreenXKey" und "ScreenYKey" bzw. und wenden Sie die ordnungsgemäße Konvertierungen. Die `[ProbePresence]` -Attribut für den Generator verwendet, um den Prüfpunkt, wenn der Schlüssel, in festgelegt ist der `UserInfo`, anstatt zu versuchen, den Wert zu extrahieren. Dies ist für Fälle verwendet, in denen das Vorhandensein des Schlüssels den Wert (in der Regel für boolesche Werte) ist.
 
 Dadurch können Sie Code wie diesen schreiben:
 
@@ -918,7 +918,7 @@ Die `Volume` Eigenschaft wird als NULL-Werte zulassen "float", definiert, wie di
 
 Zu diesem Zweck müssen Sie einige Punkte beachten:
 
-* Erstellen Sie eine stark typisierte Klasse diese Unterklassen [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) sowie die verschiedenen Getter und Setter für jede Eigenschaft.
+* Erstellen Sie eine stark typisierte Klasse diese Unterklassen [DictionaryContainer](xref:Foundation.DictionaryContainer) sowie die verschiedenen Getter und Setter für jede Eigenschaft.
 * Deklarieren von Überladungen für die Methoden, denen `NSDictionary` wird die neue Version mit starker typbindung.
 
 Sie können die stark typisierte Klasse entweder manuell erstellen oder verwenden Sie den Generator, um die Arbeit für Sie.  Wir untersuchen zunächst, wie Sie dies manuell durchführen, damit Sie verstehen, was passiert, und klicken Sie dann automatisch.
@@ -1404,5 +1404,5 @@ In der Vergangenheit haben wir angefordert, kopieren das Protokoll auf allen Imp
 ## <a name="related-links"></a>Verwandte Links
 
 - [Beispiel einer](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
