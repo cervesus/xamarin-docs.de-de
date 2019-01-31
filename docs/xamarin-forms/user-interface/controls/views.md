@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 13/11/2018
-ms.openlocfilehash: 819eff30f9d9aa9107df3bffaa749a2c078431a5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: f5e3c5dbadeeb3cc1c019707ce7aa106e4946e36
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061118"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292011"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -197,7 +197,6 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Introduction to Xamarin.Forms (Einführung in Xamarin.Forms)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Beispiel für Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/FormsGallery/)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms-API-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

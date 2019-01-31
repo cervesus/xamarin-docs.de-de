@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 05ec368fb0dd0e1adfac3eed88c5ddd50960f9ae
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bef48db93ae76346802b6569080bb1e54e3e51b3
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056583"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291946"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>Stilvererbung in Xamarin.Forms
 
@@ -154,11 +154,6 @@ public class StyleInheritancePageCS : ContentPage
 ```
 
 Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und legt sie fest der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, Festlegen von Werten für zusätzliche bindbare Eigenschaft. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](xref:Xamarin.Forms.Label) Instanzen und [ `Button` ](xref:Xamarin.Forms.Button) Instanz durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften.
-
-## <a name="summary"></a>Zusammenfassung
-
-Stile können andere Stile Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben. Stilvererbung wird ausgeführt, indem die [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) Eigenschaft zu einem vorhandenen [ `Style` ](xref:Xamarin.Forms.Style).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

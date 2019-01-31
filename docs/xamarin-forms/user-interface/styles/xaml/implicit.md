@@ -6,13 +6,13 @@ ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: c30e6c0060407720e0324a3327607100db3960d6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 01/30/2019
+ms.openlocfilehash: 67b8bac62cacb091323d084e1c7cec9accc30844
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056148"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291972"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>Implizite Stile in Xamarin.Forms
 
@@ -20,7 +20,7 @@ ms.locfileid: "53056148"
 
 _Ein impliziter Stil ist, die durch alle Steuerelemente des gleichen TargetType, ohne dass jedes Steuerelement auf den Stil verwendet wird._
 
-## <a name="creating-an-implicit-style-in-xaml"></a>Erstellen einen impliziten Stil in XAML
+## <a name="create-an-implicit-style-in-xaml"></a>Erstellen Sie einen impliziten Stil in XAML
 
 Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Seitenebene, eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) muss hinzugefügt werden, um die Seite, und klicken Sie dann eine oder mehrere `Style` Deklarationen enthalten sein können, der `ResourceDictionary`. Ein `Style` erfolgt *implizite* nicht angegeben ein `x:Key` Attribut. Styl dann angewendet werden, um visuelle Elemente, die entsprechen der `TargetType` genau, jedoch nicht auf Elemente, die abgeleitet sind die `TargetType` Wert.
 
@@ -57,7 +57,7 @@ Die [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) definiert ei
 
 Darüber hinaus die vierte [ `Entry` ](xref:Xamarin.Forms.Entry) überschreibt die [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) und [ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor) Eigenschaften des impliziten Formats, verschiedene `Color`Werte.
 
-### <a name="creating-an-implicit-style-at-the-control-level"></a>Erstellen einen impliziten Stil auf das Steuerelement auf
+### <a name="create-an-implicit-style-at-the-control-level"></a>Erstellen Sie einen impliziten Stil auf die Steuerungsebene
 
 Zusätzlich zur Erstellung *implizite* Formatvorlagen auf Seitenebene, sie können auch erstellt werden auf der Steuerelementebene wie im folgenden Codebeispiel gezeigt:
 
@@ -84,7 +84,7 @@ In diesem Beispiel die *implizite* [ `Style` ](xref:Xamarin.Forms.Style) zugewie
 
 Informationen zum Erstellen von Stilen in einer Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), finden Sie unter [globale Stile](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-implicit-style-in-c35"></a>Erstellen einen impliziten Stil in C&#35;
+## <a name="create-an-implicit-style-in-c35"></a>Erstellen Sie einen impliziten Stil in C&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) Instanzen können einer Seite hinzugefügt werden [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in c# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`Siehe die folgende Codebeispiel:
 
@@ -119,11 +119,40 @@ public class ImplicitStylesPageCS : ContentPage
 
 Der Konstruktor definiert ein einzelnes *implizite* Stil, die auf der Seite [ `Entry` ](xref:Xamarin.Forms.Entry) Instanzen. Die `Style` wird verwendet, um den blauen Text auf ein gelber Hintergrund angezeigt wird, beim Festlegen der auch andere Optionen für die Darstellung. Die `Style` hinzugefügt wird, klicken Sie auf der Seite [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) ohne Angabe einer `key` Zeichenfolge. Aus diesem Grund der `Style` gilt für alle der `Entry` Instanzen implizit, wie sie entsprechen den [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) Eigenschaft der `Style` genau. Allerdings die `Style` gilt nicht für die `CustomEntry` -Instanz, die als eine Unterklasse definiert ist `Entry`.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="apply-a-style-to-derived-types"></a>Anwenden einer Formatvorlage auf abgeleitete Typen
 
-Ein *implizite* Stil ist eine, mit dem alle visuellen Elemente des gleichen [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType), ohne dass jedes Steuerelement auf die Formatvorlage verweisen. Ein `Style` erfolgt *implizite* nicht angegeben ein `x:Key` Attribut. Stattdessen die `x:Key` Attribut wird automatisch der Wert des der [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) Eigenschaft.
+Die [ `Style.ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) Eigenschaft können Sie eine Formatvorlage auf Steuerelemente angewendet werden, die vom verweist Basistyp abgeleitet sind die [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) Eigenschaft. Aus diesem Grund wird diese Eigenschaft auf `true` können Sie ein einzelnes Format mehrere Typen als Ziel, vorausgesetzt, dass die Typen von der im angegebenen Basistyp abgeleitet werden die `TargetType` Eigenschaft.
 
+Das folgende Beispiel zeigt einen impliziten Stil, der die Farbe des Hintergrunds festlegt [ `Button` ](xref:Xamarin.Forms.Button) Instanzen zu Rot:
 
+```xaml
+<Style TargetType="Button"
+       ApplyToDerivedTypes="True">
+    <Setter Property="BackgroundColor"
+            Value="Red" />
+</Style>
+```
+
+Platzieren dieses Format in eine auf Seitenebene [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) führt dazu, dass es angewendet wird, um alle [ `Button` ](xref:Xamarin.Forms.Button) Instanzen auf der Seite sowie alle Steuerelemente, die abgeleitet `Button`. Aber wenn die [ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) Eigenschaft bleibt nicht festgelegt, der der Stil würde nur angewendet werden, um `Button` Instanzen.
+
+Der entsprechende C#-Code ist:
+
+```csharp
+var buttonStyle = new Style(typeof(Button))
+{
+    ApplyToDerivedTypes = true,
+    Setters =
+    {
+        new Setter
+        {
+            Property = VisualElement.BackgroundColorProperty,
+            Value = Color.Red
+        }
+    }
+};
+
+Resources = new ResourceDictionary { buttonStyle };
+```
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 8f84c960f17f56fce2a1bba143a215ce930f6f4e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 6f5af5fde46676cf669e6c02fb83f4aac5d31c46
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996108"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292089"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Einführung in Xamarin.Forms-Stile
 
@@ -45,7 +45,7 @@ Xamarin.Forms-Anwendungen enthalten häufig mehrere Steuerelemente, die eine ide
 </ContentPage>
 ```
 
-Das folgende Codebeispiel zeigt die entsprechende Seite, die in c# erstellt wurde:
+Im folgenden Codebeispiel wird die Erstellung der entsprechenden Seite in C# dargestellt:
 
 ```csharp
 public class NoStylesPageCS : ContentPage
@@ -82,13 +82,13 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-Jede [ `Label` ](xref:Xamarin.Forms.Label) Instanz verfügt über identische Eigenschaftswerte für die Steuerung der Darstellung des Texts angezeigt werden, indem die `Label`. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
+Jede [ `Label` ](xref:Xamarin.Forms.Label) Instanz verfügt über identische Eigenschaftswerte für die Steuerung der Darstellung des Texts angezeigt werden, indem die `Label`. Dies ergibt die in den folgenden Screenshots gezeigte Darstellung:
 
 [![](introduction-images/no-styles.png "Bezeichnung Darstellung ohne Stile")](introduction-images/no-styles-large.png#lightbox "Bezeichnung Darstellung ohne Stile")
 
 Die Darstellung der einzelnen Steuerelemente festlegen kann sein, sich wiederholende und fehleranfällig. Stattdessen kann ein Stil erstellt werden, die definiert die Darstellung, und klicken Sie dann auf die erforderlichen Steuerelemente angewendet.
 
-## <a name="creating-a-style"></a>Erstellen eines Stils
+## <a name="create-a-style"></a>Erstellen eines Stils
 
 Die [ `Style` ](xref:Xamarin.Forms.Style) Klasse gruppiert eine Auflistung von Eigenschaftswerten in ein Objekt, das Sie dann auf mehrere Instanzen für visuelles Element angewendet werden kann. Dies hilft beim Reduzieren von repetitivem Markup und eine Darstellung Anwendungen leichter geändert werden kann.
 
@@ -97,7 +97,7 @@ Obwohl Formate in erster Linie für XAML-basierte Anwendungen entwickelt wurden,
 - [`Style`](xref:Xamarin.Forms.Style) in XAML erstellte Instanzen werden in der Regel definiert, einem [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) , zugewiesen ist die [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung eines Steuerelements, Seite oder die [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Auflistung von der Anwendung.
 - [`Style`](xref:Xamarin.Forms.Style) Instanzen, die in c# erstellt wurde, werden in der Regel definiert, in der Klasse von der Seite oder in eine Klasse, die Global zugegriffen werden kann.
 
-Auswählen des Installationsorts für das Definieren einer [ `Style` ](xref:Xamarin.Forms.Style) wirkt sich auf, wo sie verwendet werden kann:
+Die Entscheidung, wo Sie eine [`Style`](xref:Xamarin.Forms.Style)-Klasse definieren, hat Einfluss darauf, wo Sie sie verwenden können:
 
 - [`Style`](xref:Xamarin.Forms.Style) Instanzen, die auf der Steuerelementebene definiert können nur auf das Steuerelement und seinen untergeordneten Elementen angewendet werden.
 - [`Style`](xref:Xamarin.Forms.Style) auf Seitenebene definierte Instanzen können nur auf der Seite und seinen untergeordneten Elementen angewendet werden.
@@ -134,11 +134,6 @@ Die Artikel in diesem Abschnitt veranschaulichen und erläutern, wie zum Erstell
 > **Was ist StyleId?**
 >
 > Vor dem Xamarin.Forms 2.2 die [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) Eigenschaft zum Identifizieren der einzelnen Elemente in einer Anwendung für die Identifikation in UI-Tests und Design-Engines wie z.B. Pixate verwendet wurde. Xamarin.Forms 2.2 wurde eingeführt, aber die [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId) -Eigenschaft, die ersetzt wird, hat die [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) Eigenschaft. Weitere Informationen finden Sie unter [Tests für automatisieren Xamarin.Forms mit Xamarin.UITest und Test Cloud](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md).
-
-## <a name="summary"></a>Zusammenfassung
-
-Xamarin.Forms-Anwendungen enthalten häufig mehrere Steuerelemente, die eine identische Darstellung. Die Darstellung der einzelnen Steuerelemente festlegen kann sein, sich wiederholende und fehleranfällig. Stattdessen können Stile erstellt werden, die steuerelementdarstellung anpassen, Gruppierung und legt die Eigenschaften für den Steuerelementtyp verfügbar.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

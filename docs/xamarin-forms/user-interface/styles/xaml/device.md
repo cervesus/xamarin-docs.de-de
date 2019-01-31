@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 6c1c7bd12922f127ff7f4eecdc982ede419fc515
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055935"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292232"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Gerätestile in Xamarin.Forms
 
@@ -122,11 +122,6 @@ Die folgenden Screenshots veranschaulichen die gerätestile auf jeder Plattform 
 Die folgenden Screenshots veranschaulichen die gerätestile auf jeder Plattform mit den größten Schriftgrad aus zugegriffen werden kann:
 
 ![](device-images/maximum-size.png "Zugegriffen werden kann, große Gerätestile auf jeder Plattform")
-
-## <a name="summary"></a>Zusammenfassung
-
-Xamarin.Forms umfasst sechs *dynamische* Formatvorlagen, bekannt als *Gerät* Stile, in der [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) Klasse. Alle sechs Formatvorlagen können nur angewendet werden, um [ `Label` ](xref:Xamarin.Forms.Label) Instanzen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

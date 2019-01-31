@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: b1ba6a9f2ee15cf078658b49124c1d9203a3f3d9
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: f14ea52e419ae5d639319f49ae4779de6a2eed31
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207946"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292180"
 ---
 # <a name="windows-platform-features"></a>Features der Windows-Plattform
 
-Entwickeln von Xamarin.Forms-Anwendungen für Windows-Plattformen erfordert Visual Studio. Die [Seite "speicherplatzanforderungen"](~/xamarin-forms/get-started/installation.md) enthält weitere Informationen zu den Voraussetzungen.
+Entwickeln von Xamarin.Forms-Anwendungen für Windows-Plattformen erfordert Visual Studio. Die [Seite "speicherplatzanforderungen"](~/get-started/installation.md) enthält weitere Informationen zu den Voraussetzungen.
 
 ![](images/allhanselman.png "Xamarin.Forms-Anwendungen, die unter Windows")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: b663a7f2a4a67a9c3e18ed474d9935227fe34294
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 749e9bca87b2c9547b9733248d75718a4443ab88
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059560"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292349"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Globale Stile in Xamarin.Forms
 
@@ -20,9 +20,9 @@ ms.locfileid: "53059560"
 
 _Stile können verfügbar Global gemacht werden durch das Ressourcenverzeichnis der Anwendung hinzugefügt. Dadurch wird die um Duplizierung von Formatvorlagen für Seiten oder Steuerelemente zu vermeiden._
 
-## <a name="creating-a-global-style-in-xaml"></a>Erstellen einen globalen Stil in XAML
+## <a name="create-a-global-style-in-xaml"></a>Erstellen Sie einen globalen Stil in XAML
 
-Standardmäßig verwenden alle Xamarin.Forms-Anwendungen, die aus einer Vorlage erstellt die **App** Klasse zum Implementieren der [ `Application` ](xref:Xamarin.Forms.Application) Unterklasse. Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Anwendungsebene, in der Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) mit XAML, der Standardwert **App** Klasse mit einer XAML ersetzt werden muss **App** -Klasse und zugeordnete Code-Behind. Weitere Informationen finden Sie unter [arbeiten mit App-Klasse](~/xamarin-forms/app-fundamentals/application-class.md).
+Standardmäßig verwenden alle Xamarin.Forms-Anwendungen, die aus einer Vorlage erstellt werden, die Klasse **App**. Damit wird die Unterklasse [`Application`](xref:Xamarin.Forms.Application) implementiert. Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Anwendungsebene, in der Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) mit XAML, der Standardwert **App** Klasse mit einer XAML ersetzt werden muss **App** -Klasse und zugeordnete Code-Behind. Weitere Informationen finden Sie unter [arbeiten mit App-Klasse](~/xamarin-forms/app-fundamentals/application-class.md).
 
 Das folgende Codebeispiel zeigt eine [ `Style` ](xref:Xamarin.Forms.Style) auf Anwendungsebene deklariert:
 
@@ -66,7 +66,7 @@ Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
 Informationen zum Erstellen von Stilen einer Seite [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), finden Sie unter [explizite Stile](~/xamarin-forms/user-interface/styles/explicit.md) und [impliziten Stilen](~/xamarin-forms/user-interface/styles/implicit.md).
 
-### <a name="overriding-styles"></a>Überschreiben von Formatvorlagen
+### <a name="override-styles"></a>Überschreiben von Formatvorlagen
 
 Formatvorlagen, die weiter unten in der Hierarchie von Inhaltsansichten haben Vorrang vor den definierten höher einrichten. Z. B. eine [ `Style` ](xref:Xamarin.Forms.Style) festlegt [ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor) zu `Red` in der Anwendung wird von einem Seite-Level-Stil, der festlegt Ebene überschrieben werden `Button.TextColor` zu `Green`. Auf ähnliche Weise wird ein Servicelevel-Seite-Style von einem Steuerelementstil Ebene überschrieben werden. Darüber hinaus, wenn `Button.TextColor` direkt auf einer Steuerelementeigenschaft ist dies Vorrang vor alle Formatvorlagen festgelegt ist. Diese Priorität wird im folgenden Codebeispiel veranschaulicht:
 
@@ -102,7 +102,7 @@ Die ursprüngliche `buttonStyle`, auf Anwendungsebene definiert ist, wird übers
 
 [![](application-images/application-styles-2.png "Überschreiben die Stile Beispiel")](application-images/application-styles-2-large.png#lightbox "überschreiben die Stile-Beispiel")
 
-## <a name="creating-a-global-style-in-c35"></a>Erstellen einen globalen Stil in C&#35;
+## <a name="create-a-global-style-in-c35"></a>Erstellen Sie einen globalen Stil in C&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) Instanzen der Anwendung hinzugefügt werden können [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in c# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`, als Im folgenden Codebeispiel gezeigt:
 
@@ -149,12 +149,6 @@ public class ApplicationStylesPageCS : ContentPage
 ```
 
 Die `buttonStyle` gilt, an die [ `Button` ](xref:Xamarin.Forms.Button) Instanzen durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften und kontrolliert das Erscheinungsbild von der `Button` Instanzen.
-
-## <a name="summary"></a>Zusammenfassung
-
-Stile verfügbar gemacht werden global durch Hinzufügen zu der Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Dadurch wird die um Duplizierung von Formatvorlagen für Seiten oder Steuerelemente zu vermeiden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 5b3d6f486f802fda1a384b7a8e53b104c1251fdd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fcbdeac5ebceccddee68fcca635a3935944ecac8
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058245"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291933"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>Explizite Stile in Xamarin.Forms
 
@@ -20,7 +20,7 @@ ms.locfileid: "53058245"
 
 _Expliziter Stil ist eine, die selektiv auf Steuerelemente angewendet wird, indem die Stileigenschaften._
 
-## <a name="creating-an-explicit-style-in-xaml"></a>Erstellen einen expliziten Stil in XAML
+## <a name="create-an-explicit-style-in-xaml"></a>Erstellen Sie einen expliziten Stil in XAML
 
 Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Seitenebene, eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) muss hinzugefügt werden, um die Seite, und klicken Sie dann eine oder mehrere `Style` Deklarationen enthalten sein können, der `ResourceDictionary`. Ein `Style` erfolgt *explizite* erteilen Sie der Deklaration einer `x:Key` -Attribut, das sie einen beschreibenden Schlüssel, in erhalten der `ResourceDictionary`. *Explizite* Stile müssen dann an bestimmte visuelle Elemente angewendet werden, durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften.
 
@@ -70,7 +70,7 @@ Die [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) definiert dr
 
 Darüber hinaus die endgültige [ `Label` ](xref:Xamarin.Forms.Label) verfügt über eine [ `Style` ](xref:Xamarin.Forms.Style) angewendet wird, aber überschreibt auch die [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) Eigenschaft, um einen anderen `Color`Wert.
 
-### <a name="creating-an-explicit-style-at-the-control-level"></a>Erstellen expliziten Stil für die Ebene an das Steuerelement
+### <a name="create-an-explicit-style-at-the-control-level"></a>Erstellen Sie einen expliziten Stil auf der Steuerelementebene
 
 Zusätzlich zur Erstellung *explizite* Formatvorlagen auf Seitenebene, sie können auch erstellt werden auf der Steuerelementebene wie im folgenden Codebeispiel gezeigt:
 
@@ -97,7 +97,7 @@ In diesem Beispiel die *explizite* [ `Style` ](xref:Xamarin.Forms.Style) Instanz
 
 Informationen zum Erstellen von Stilen in einer Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), finden Sie unter [globale Stile](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-explicit-style-in-c35"></a>Erstellen einen expliziten Stil in C&#35;
+## <a name="create-an-explicit-style-in-c35"></a>Erstellen Sie einen expliziten Stil in C&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) Instanzen können einer Seite hinzugefügt werden [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in c# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`Siehe die folgende Codebeispiel:
 
@@ -180,12 +180,6 @@ public class ExplicitStylesPageCS : ContentPage
 ```
 
 Der Konstruktor definiert drei *explizite* Stile, die auf der Seite angewendet werden [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Jede `Style` dient zum Anzeigen von Text in eine andere Farbe, beim Festlegen von Schriftart auch Optionen für Größe und horizontalen und vertikalen Layout. Jede `Style` wird angewendet auf einen anderen `Label` durch Festlegen seiner [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften. Darüber hinaus die endgültige `Label` verfügt über eine `Style` angewendet wird, aber überschreibt auch die `TextColor` Eigenschaft auf einen anderen `Color` Wert.
-
-## <a name="summary"></a>Zusammenfassung
-
-Ein [ `Style` ](xref:Xamarin.Forms.Style) erfolgt *explizite* erteilen Sie der Deklaration einer `x:Key` Attribut, und das anschließende selektiv anwenden auf Steuerelemente durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 
