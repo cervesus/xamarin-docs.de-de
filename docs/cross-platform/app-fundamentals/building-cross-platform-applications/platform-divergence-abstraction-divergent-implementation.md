@@ -1,19 +1,19 @@
 ---
-title: Teil 4 – Umgang mit mehreren Plattformen
+title: 'Teil 4: Umgang mit mehreren Plattformen'
 description: Dieses Dokument beschreibt, wie Application abweichungen, die basierend auf der Plattform oder der Funktion behandelt wird. Es wird erläutert, Bildschirmgröße, Navigation Metaphern, Touch und Gesten, erste Schritte mit Pushbenachrichtigungen und Schnittstelle-Paradigmen wie z. B. Listen und Registerkarten.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ef224b7410565ae15da7613c04d11e7bd6a44dcb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f4558d5172d7dcbd2e14e6b74a347dd2f1e3a234
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117940"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292128"
 ---
-# <a name="part-4---dealing-with-multiple-platforms"></a>Teil 4 – Umgang mit mehreren Plattformen
+# <a name="part-4---dealing-with-multiple-platforms"></a>Teil 4: Umgang mit mehreren Plattformen
 
 ## <a name="handling-platform-divergence-amp-features"></a>Behandeln von Plattform Abweichungen &amp; Features
 
@@ -95,7 +95,7 @@ Die vor- und Nachteile von Schnittstellen gelten gleichermaßen, Vererbung, mit 
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-Finden Sie unter den [Xamarin.Forms](~/xamarin-forms/get-started/index.md) Dokumentation.
+Finden Sie unter den [Xamarin.Forms](~/get-started/index.md) Dokumentation.
 
 ### <a name="other-cross-platform-libraries"></a>Andere plattformübergreifende Bibliotheken
 
