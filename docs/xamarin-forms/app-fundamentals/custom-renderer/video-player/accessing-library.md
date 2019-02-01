@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2754e135bee090ce47796dfa1ae39eed2b5f27c5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059586"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233509"
 ---
 # <a name="accessing-the-devices-video-library"></a>Zugreifen auf die Videobibliothek des Geräts
 
@@ -40,7 +40,7 @@ Alle Plattformen enthalten eine Klasse mit dem Namen `VideoPicker`, die diese Sc
 
 ### <a name="the-ios-video-picker"></a>Die iOS-Videoauswahl
 
-Die iOS-`VideoPicker`-Klasse verwendet die iOS-[`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)-Klasse, um auf die Bildbibliothek zuzugreifen, wobei angegeben wird, dass der Zugriff auf Videos (bezeichnet als „Filme“) in der iOS-`MediaType`-Eigenschaft begrenzt sein sollte. Beachten Sie, dass die `VideoPicker`-Klasse explizit die `IVideoPicker`-Schnittstelle implementiert. Beachten Sie außerdem das `Dependency`-Attribut, das diese Klasse als einen Abhängigkeitsdienst identifiziert. Dies sind die beiden Anforderungen, damit Xamarin.Forms den Abhängigkeitsdienst im Plattformprojekt ermitteln kann:
+Die iOS-`VideoPicker`-Klasse verwendet die iOS-[`UIImagePickerController`](xref:UIKit.UIImagePickerController)-Klasse, um auf die Bildbibliothek zuzugreifen, wobei angegeben wird, dass der Zugriff auf Videos (bezeichnet als „Filme“) in der iOS-`MediaType`-Eigenschaft begrenzt sein sollte. Beachten Sie, dass die `VideoPicker`-Klasse explizit die `IVideoPicker`-Schnittstelle implementiert. Beachten Sie außerdem das `Dependency`-Attribut, das diese Klasse als einen Abhängigkeitsdienst identifiziert. Dies sind die beiden Anforderungen, damit Xamarin.Forms den Abhängigkeitsdienst im Plattformprojekt ermitteln kann:
 
 ```csharp
 using System;

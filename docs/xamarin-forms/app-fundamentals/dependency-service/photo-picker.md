@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 3452c79621013690f967e065c7afaf0768a50c3f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5c4d43723bc23d8a16be8fec0a895a31ab8bcfdc
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057487"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233964"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Auswählen eines Fotos aus der Bildbibliothek
 
@@ -50,7 +50,7 @@ Diese Schnittstelle ist plattformübergreifend mithilfe von plattformspezifische
 
 ## <a name="ios-implementation"></a>iOS-Implementierung
 
-Bei der iOS-Implementierung der `IPicturePicker`-Schnittstelle wird das [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)-Element wie in der Vorgehensweise unter [**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) (Auswählen eines Fotos aus dem Katalog) und [ Beispielcode](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) beschrieben.
+Bei der iOS-Implementierung der `IPicturePicker`-Schnittstelle wird das [`UIImagePickerController`](xref:UIKit.UIImagePickerController)-Element wie in der Vorgehensweise unter [**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) (Auswählen eines Fotos aus dem Katalog) und [ Beispielcode](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) beschrieben.
 
 Die iOS-Implementierung ist in der [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs)-Klasse im iOS-Projekt des Beispielcodes enthalten. Um diese Klasse für den `DependencyService`-Manager sichtbar zu machen, muss die Klasse mit einem [`assembly`]-Attribut vom Typ `Dependency` identifiziert werden, öffentlich sein und explizit die `IPicturePicker`-Schnittstelle implementieren:
 

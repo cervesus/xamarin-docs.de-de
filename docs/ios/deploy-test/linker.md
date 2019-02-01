@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 667c98d3140d460a6d4b3a26bd898f4c169d6d85
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 04f92988d4d367abd5e6e864d4450aee2e6c1df2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234881"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233795"
 ---
 # <a name="linking-xamarinios-apps"></a>Verknüpfen von Xamarin.iOS-Apps
 
@@ -147,7 +147,7 @@ Benutzer können wählen, ob sie nur die SDK-Assemblys verknüpfen möchten und 
 
 Dies geschieht üblicherweise, weil sie `[Preserve]`-Attribute ihrem Code nicht manuell hinzufügen möchten.  Der Nebeneffekt ist, dass Bibliotheken von Drittanbietern nicht verknüpft werden. Das ist im Allgemeinen eine sinnvolle Standardeinstellung, da es nicht möglich ist zu wissen, ob eine Bibliothek von Drittanbietern linkerfähig ist oder nicht.
 
-Wenn Sie eine Bibliothek in Ihrem Projekt haben oder Entwickler von wiederverwendbaren Bibliotheken sind und möchten, dass der Linker Ihre Assembly als verknüpfbar behandelt, müssen Sie nur das Attribut für die Assembly-Ebene [`LinkerSafe`](https://developer.xamarin.com/api/type/Foundation.LinkerSafeAttribute/) wie folgt hinzufügen:
+Wenn Sie eine Bibliothek in Ihrem Projekt haben oder Entwickler von wiederverwendbaren Bibliotheken sind und möchten, dass der Linker Ihre Assembly als verknüpfbar behandelt, müssen Sie nur das Attribut für die Assembly-Ebene [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute) wie folgt hinzufügen:
 
 ```csharp
 [assembly:LinkerSafe]
