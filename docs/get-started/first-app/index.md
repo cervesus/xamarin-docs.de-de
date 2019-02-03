@@ -8,13 +8,13 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 09/24/2018
-ms.openlocfilehash: d89488e3f6e42f84fc9519eedaa38c99b90ae068
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 02/02/2019
+ms.openlocfilehash: 8adf52d8e08dedeebae8362cf730e5dc3c7c93a9
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293047"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668562"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>Erstellen Ihrer ersten Xamarin.Forms-App
 
@@ -25,6 +25,8 @@ _Sehen Sie sich dieses Video an, und gehen Sie wie gezeigt vor, um Ihre erste mo
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>Exemplarische Vorgehensweise für Windows
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 Führen Sie die folgenden Schritte zum Video oben aus:
 
@@ -40,7 +42,7 @@ Führen Sie die folgenden Schritte zum Video oben aus:
 
 4. Starten Sie den Android-Emulator, indem Sie auf „Debuggen“ klicken (alternativ können Sie auf die Menüelemente **Debuggen > Debuggen starten** klicken).
 
-5. Bearbeiten Sie die Datei **MainPage.xaml**, und fügen Sie den folgenden XAML-Code vor dem Ende von `</StackPanel>` ein:
+5. Bearbeiten Sie die Datei **MainPage.xaml**, und fügen Sie den folgenden XAML-Code vor dem Ende von `</StackLayout>` ein:
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
@@ -71,6 +73,8 @@ Führen Sie die folgenden Schritte zum Video oben aus:
 
 ## <a name="step-by-step-instructions-for-mac"></a>Exemplarische Vorgehensweise für Mac
 
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+
 Führen Sie die folgenden Schritte zum Video oben aus:
 
 1. Klicken Sie auf **Datei > Neue Projektmappe...**, oder klicken Sie auf **Neues Projekt...**, und klicken Sie dann auf **Multi-Plattform > App > Leere Forms-App**:
@@ -87,7 +91,7 @@ Führen Sie die folgenden Schritte zum Video oben aus:
 
 4. Starten Sie den Android-Emulator, indem Sie auf „Debuggen“ klicken (alternativ können Sie auf **Ausführen > Debuggen starten** klicken).
 
-5. Bearbeiten Sie die Datei **MainPage.xaml**, und fügen Sie den folgenden XAML-Code vor dem Ende von `</StackPanel>` ein:
+5. Bearbeiten Sie die Datei **MainPage.xaml**, und fügen Sie den folgenden XAML-Code vor dem Ende von `</StackLayout>` ein:
 
     ```xaml
     <Button Text="Click Me" Clicked="Handle_Clicked" />

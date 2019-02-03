@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 2de21f19e2789c94c02b5d2e9c13fc06963e1a7f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293022"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668549"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms-Formatklassen
 
@@ -206,7 +206,7 @@ In diesem Beispiel ist die erste [ `BoxView` ](xref:Xamarin.Forms.BoxView) forma
 ![](style-class-images/boxviews.png "BoxViews erstellt, in denen Klassen style")
 
 > [!IMPORTANT]
-> Mehrere Klassen von Style können auf ein Steuerelement angewendet werden, da die [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) Eigenschaft ist vom Typ `IList<string>`.
+> Mehrere Klassen von Style können auf ein Steuerelement angewendet werden, da die [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) Eigenschaft ist vom Typ `IList<string>`. In diesem Fall werden Formatklassen in aufsteigender Listenreihenfolge angewendet. Aus diesem Grund, wenn mehrere Formatklassen identische Eigenschaften festgelegt, hat die Eigenschaft in der Style-Klasse, die die höchsten Listenposition wird Vorrang.
 
 Der entsprechende C#-Code ist:
 
