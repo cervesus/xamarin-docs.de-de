@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: f01074823f865b1717920d8364c67828453b6437
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 01c743b4b0eff81bbf4c41e1c2f387e0dc40c067
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617739"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233756"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS-Leistung
 
@@ -25,7 +25,7 @@ Dieses Dokument beschreibt die Techniken, die zum Verbessern der Leistung und Sp
 
 ## <a name="avoid-strong-circular-references"></a>Vermeiden starker Zirkelverweise
 
-In einigen Situationen ist es möglich, starke Verweiszyklen zu erstellen, die Objekte davor schützen, dass ihr Speicher vom Garbage Collector wieder zurückgefordert wird. Betrachten Sie beispielsweise den Fall, in dem eine von [`NSObject`](https://developer.xamarin.com/api/type/Foundation.NSObject/) abgeleitete Unterklasse, wie beispielsweise eine Klasse, die von [`UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/) erbt, zu einem von `NSObject` abgeleiteten Container hinzugefügt und von Objective-C, wie im folgenden Codebeispiel gezeigt, stark referenziert wird:
+In einigen Situationen ist es möglich, starke Verweiszyklen zu erstellen, die Objekte davor schützen, dass ihr Speicher vom Garbage Collector wieder zurückgefordert wird. Betrachten Sie beispielsweise den Fall, in dem eine von [`NSObject`](xref:Foundation.NSObject) abgeleitete Unterklasse, wie beispielsweise eine Klasse, die von [`UIView`](xref:UIKit.UIView) erbt, zu einem von `NSObject` abgeleiteten Container hinzugefügt und von Objective-C, wie im folgenden Codebeispiel gezeigt, stark referenziert wird:
 
 ```csharp
 class Container : UIView
@@ -56,7 +56,7 @@ container.AddSubview (new MyView (container));
 
 Wenn dieser Code die `Container`-Instanz erstellt, enthält das C#-Objekt einen starken Verweis auf ein Objective-C-Objekt. Die `MyView`-Instanz enthält auch einen ähnlichen, starken Verweis auf ein Objective-C-Objekt.
 
-Zudem erhöht der Aufruf von `container.AddSubview` den Verweiszähler für die nicht verwaltete `MyView`-Instanz. In diesem Fall erstellt die Xamarin.iOS-Runtime eine `GCHandle`-Instanz, damit das `MyView`-Objekt in verwaltetem Code aktiv bleibt, da es keine Garantie dafür gibt, dass irgendwelche verwalteten Objekte einen Verweis darauf behalten. Im Hinblick auf den verwalteten Code würde das `MyView`-Objekt nach dem [`AddSubview`](https://developer.xamarin.com/api/member/UIKit.UIView.AddSubview/p/UIKit.UIView/)-Aufruf zurückgefordert werden, wäre da nicht `GCHandle`.
+Zudem erhöht der Aufruf von `container.AddSubview` den Verweiszähler für die nicht verwaltete `MyView`-Instanz. In diesem Fall erstellt die Xamarin.iOS-Runtime eine `GCHandle`-Instanz, damit das `MyView`-Objekt in verwaltetem Code aktiv bleibt, da es keine Garantie dafür gibt, dass irgendwelche verwalteten Objekte einen Verweis darauf behalten. Im Hinblick auf den verwalteten Code würde das `MyView`-Objekt nach dem [`AddSubview`](xref:UIKit.UIView.AddSubview(UIKit.UIView))-Aufruf zurückgefordert werden, wäre da nicht `GCHandle`.
 
 Das nicht verwaltete `MyView`-Objekt verfügt über einen `GCHandle`-Zeiger auf das verwaltete Objekt, bekannt als *starker Link*. Das verwaltete Objekt enthält einen Verweis auf die `Container`-Instanz. Die `Container`-Instanz enthält wiederum einen verwalteten Verweis auf das `MyView`-Objekt.
 
@@ -103,7 +103,7 @@ Hier halt das darin enthaltene Objekt das übergeordnete Element nicht aktiv. Al
 
 Dies kommt auch in den iOS-APIs vor, die den Delegaten oder das Datenquellenmuster verwenden. Dabei enthält eine Peerklasse die Implementierung, z.B. beim Festlegen der Eigenschaften [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/)
 oder [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/)
-in der [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/)-Klasse.
+in der [`UITableView`](xref:UIKit.UITableView)-Klasse.
 
 Bei Klassen, die ausschließlich zum Zweck der Implementierung eines Protokolls erstellt werden, z.B. die [`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/)-Klasse, können Sie, anstatt eine Unterklasse zu erstellen, nur die Schnittstelle in der Klasse implementieren, die Methode überschreiben und `this` die `DataSource`-Eigenschaft zuweisen.
 
@@ -211,7 +211,7 @@ class MyChild : UIView
 ```
 
 Weitere Informationen zum Freigeben von starken Verweisen finden Sie unter [Release IDisposable Resources (Freigeben von IDisposable Ressourcen)](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable).
-Dieser Blogbeitrag enthält eine gute Erläuterung: [Xamarin.iOS, the garbage collector and me (Xamarin.iOS, der Garbage Collector und ich)](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/).
+Auch in diesem Blogbeitrag finden Sie eine gute Erläuterung: [Xamarin.iOS, the garbage collector and me](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/) (Xamarin.iOS, der Garbage Collector und ich).
 
 ### <a name="more-information"></a>Weitere Informationen
 
@@ -219,7 +219,7 @@ Weitere Informationen finden Sie unter [Rules to Avoid Retain Cycles (Regeln zur
 
 ## <a name="optimize-table-views"></a>Optimieren von Tabellenansichten
 
-Benutzer erwarten einen sanften Bildlauf und schnelle Ladezeiten für [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/)-Instanzen. Die Bildlaufleistung kann jedoch beeinträchtigt werden, wenn Zellen tief geschachtelte Ansichtshierarchien oder komplexe Layouts enthalten. Es gibt jedoch Techniken, die verwendet werden können, um eine schlechte `UITableView`-Leistung zu vermeiden:
+Benutzer erwarten einen sanften Bildlauf und schnelle Ladezeiten für [`UITableView`](xref:UIKit.UITableView)-Instanzen. Die Bildlaufleistung kann jedoch beeinträchtigt werden, wenn Zellen tief geschachtelte Ansichtshierarchien oder komplexe Layouts enthalten. Es gibt jedoch Techniken, die verwendet werden können, um eine schlechte `UITableView`-Leistung zu vermeiden:
 
 - Wiederverwenden von Zellen Weitere Informationen finden Sie unter [Reuse Cells (Wiederverwenden von Zellen)](#reusecells).
 - Verringern Sie die Anzahl von Unteransichten.
@@ -228,11 +228,11 @@ Benutzer erwarten einen sanften Bildlauf und schnelle Ladezeiten für [`UITableV
 - Eine Zelle und alle anderen Ansichten undurchsichtig machen
 - Vermeiden von Bildskalierung und Farbverläufen
 
-Gemeinsam können diese Techniken in [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/)-Instanzen zu einem sanften Bildlauf beitragen.
+Gemeinsam können diese Techniken in [`UITableView`](xref:UIKit.UITableView)-Instanzen zu einem sanften Bildlauf beitragen.
 
 ### <a name="reuse-cells"></a>Wiederverwenden von Zellen
 
-Beim Anzeigen von Hunderten von Zeilen in einer [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/)-Instanz wäre es eine Arbeitsspeicherverschwendung, Hunderte von [`UITableViewCell`](https://developer.xamarin.com/api/type/UIKit.UITableViewCell/)-Objekten zu erstellen, wenn nur eine kleine Anzahl von ihnen gleichzeitig auf dem Bildschirm angezeigt werden kann. Stattdessen können auch nur die Zellen, die auf dem Bildschirm sichtbar sind in den Arbeitsspeicher geladen werden, und der **Inhalt** wird in diese wiederverwendeten Zellen geladen. Dies verhindert die Instanziierung Hunderter zusätzlicher Objekte, wodurch sowohl Zeit als auch Arbeitsspeicher gespart werden.
+Beim Anzeigen von Hunderten von Zeilen in einer [`UITableView`](xref:UIKit.UITableView)-Instanz wäre es eine Arbeitsspeicherverschwendung, Hunderte von [`UITableViewCell`](xref:UIKit.UITableViewCell)-Objekten zu erstellen, wenn nur eine kleine Anzahl von ihnen gleichzeitig auf dem Bildschirm angezeigt werden kann. Stattdessen können auch nur die Zellen, die auf dem Bildschirm sichtbar sind in den Arbeitsspeicher geladen werden, und der **Inhalt** wird in diese wiederverwendeten Zellen geladen. Dies verhindert die Instanziierung Hunderter zusätzlicher Objekte, wodurch sowohl Zeit als auch Arbeitsspeicher gespart werden.
 
 Aus diesem Grund kann eine Zelle, wenn sie vom Bildschirm verschwindet in einer Warteschlange für die Wiederverwendung, wie im folgenden Codebeispiel gezeigt, platziert werden:
 
@@ -250,13 +250,13 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-Wenn der Benutzer scrollt, ruft die [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/)-Instanz die `GetCell`-Außerkraftsetzung auf, um die neuen anzuzeigenden Ansichten anzufordern. Diese Außerkraftsetzung ruft dann die [`DequeueReusableCell`](https://developer.xamarin.com/api/member/UIKit.UITableView.DequeueReusableCell/p/Foundation.NSString/)-Methode auf. Wenn eine Zelle zur Wiederverwendung verfügbar ist, wird sie zurückgegeben.
+Wenn der Benutzer scrollt, ruft die [`UITableView`](xref:UIKit.UITableView)-Instanz die `GetCell`-Außerkraftsetzung auf, um die neuen anzuzeigenden Ansichten anzufordern. Diese Außerkraftsetzung ruft dann die [`DequeueReusableCell`](xref:UIKit.UITableView.DequeueReusableCell(Foundation.NSString))-Methode auf. Wenn eine Zelle zur Wiederverwendung verfügbar ist, wird sie zurückgegeben.
 
 Weitere Informationen finden Sie unter [Cell Reuse (Wiederverwenden von Zellen)](~/ios/user-interface/controls/tables/populating-a-table-with-data.md) in [Populating a Table with Data (Befüllen einer Tabelle mit Daten)](~/ios/user-interface/controls/tables/populating-a-table-with-data.md).
 
 ## <a name="use-opaque-views"></a>Verwenden nicht transparenter Ansichten
 
-Stellen Sie sicher, dass bei allen Ansichten, für die keine Transparenz definiert wurde die [`Opaque`](https://developer.xamarin.com/api/property/UIKit.UIView.Opaque/)-Eigenschaft gesetzt wird. Dadurch wird sichergestellt, dass die Ansichten vom Zeichensystem optimal dargestellt werden. Dies ist besonders wichtig, wenn eine Ansicht in ein [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/)-Element eingebettet ist oder Teil einer komplexen Animation ist. Andernfalls setzt das Zeichensystem die Ansichten mit anderem Inhalt zusammen, was deutliche Auswirkungen auf die Leistung haben kann.
+Stellen Sie sicher, dass bei allen Ansichten, für die keine Transparenz definiert wurde die [`Opaque`](xref:UIKit.UIView.Opaque)-Eigenschaft gesetzt wird. Dadurch wird sichergestellt, dass die Ansichten vom Zeichensystem optimal dargestellt werden. Dies ist besonders wichtig, wenn eine Ansicht in ein [`UIScrollView`](xref:UIKit.UIScrollView)-Element eingebettet ist oder Teil einer komplexen Animation ist. Andernfalls setzt das Zeichensystem die Ansichten mit anderem Inhalt zusammen, was deutliche Auswirkungen auf die Leistung haben kann.
 
 ## <a name="avoid-fat-xibs"></a>Vermeiden von FAT XIBs
 
@@ -264,7 +264,7 @@ Zwar sind XIBs größtenteils durch Storyboards ersetzt worden, es gibt jedoch e
 
 ## <a name="optimize-image-resources"></a>Optimieren von Bildressourcen
 
-Bilder gehören zu den speicherintensivsten Ressourcen, die Anwendungen verwenden, und werden häufig in hoher Auflösung aufgenommen. Stellen Sie aus diesem Grund sicher, dass beim Anzeigen eines Bilds aus dem App-Bundle in einer [`UIImageView`](https://developer.xamarin.com/api/type/UIKit.UIImageView/)-Klasse, das Bild und die `UIImageView` dieselbe Größe haben. Das Skalieren von Bildern zur Laufzeit kann ein aufwendiger Vorgang sein, insbesondere, wenn die `UIImageView`-Klasse in eine [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/)-Klasse eingebettet ist.
+Bilder gehören zu den speicherintensivsten Ressourcen, die Anwendungen verwenden, und werden häufig in hoher Auflösung aufgenommen. Stellen Sie aus diesem Grund sicher, dass beim Anzeigen eines Bilds aus dem App-Bundle in einer [`UIImageView`](xref:UIKit.UIImageView)-Klasse, das Bild und die `UIImageView` dieselbe Größe haben. Das Skalieren von Bildern zur Laufzeit kann ein aufwendiger Vorgang sein, insbesondere, wenn die `UIImageView`-Klasse in eine [`UIScrollView`](xref:UIKit.UIScrollView)-Klasse eingebettet ist.
 
 Weitere Informationen finden Sie unter [Optimize Image Resources (Optimieren von Bildressourcen)](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) im Leitfaden [Cross Plattform Performance (Plattformübergreifende Leistung)](~/cross-platform/deploy-test/memory-perf-best-practices.md).
 
