@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 7c19cc0f2d1f72706926d640bb7fad9323a9e17f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 067ff4758ca78f7d706c7be96ffecd10e4e57965
+ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53049455"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712071"
 ---
 # <a name="customizing-listview-cell-appearance"></a>Anpassen der Zellendarstellung ListView
 
@@ -120,6 +120,7 @@ Der obige XAML macht viel. Wir unterteilen:
 - Die benutzerdefinierte Zelle darin geschachtelt ist eine `DataTemplate`, d.h. in `ListView.ItemTemplate`. Dies ist genauso wie mit der eine beliebige andere Zelle.
 - `ViewCell` ist der Typ der benutzerdefinierten Zelle. Das untergeordnete Element die `DataTemplate` Element sein oder vom Typ abgeleitet werden muss `ViewCell`.
 - Beachten Sie, dass dieses innerhalb der `ViewCell`, Layout wird verwaltet, indem eine `StackLayout`. Dieses Layout ermöglicht uns, die die Hintergrundfarbe anpassen. Beachten Sie, dass eine beliebige Eigenschaft des `StackLayout` , bindbare kann innerhalb einer benutzerdefinierten Zelle gebunden werden, obwohl, hier nicht angezeigt werden.
+- In der `ViewCell`, Layout von Xamarin.Forms Layouts verwaltet werden kann. 
 
 ### <a name="cnum"></a>C&num;
 
