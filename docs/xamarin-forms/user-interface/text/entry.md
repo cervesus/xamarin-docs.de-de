@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 39af3b0e28bbbf9397ceece55adc330e364dcc3d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 303cca48defdadd69449edbd6c4c3f5e4410bbbb
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061784"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831962"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms-Eintrag
 
@@ -44,6 +44,18 @@ Um Text zu lesen, Zugriff auf die `Text` Eigenschaft in c#:
 var text = MyEntry.Text;
 ```
 
+### <a name="setting-placeholder-text"></a>Festlegen von Platzhaltertext
+
+Die [ `Entry` ](xref:Xamarin.Forms.Entry) Platzhaltertext angezeigt, wenn es keine Benutzereingaben gespeichert sind, die festgelegt werden können. Dies geschieht durch Festlegen der [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) Eigenschaft, um eine `string`, und wird häufig verwendet, um den Typ des Inhalts anzugeben, dass für die `Entry`. Darüber hinaus kann die Farbe des Textes Platzhalter gesteuert werden, durch Festlegen der [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor) Eigenschaft, um eine [ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
+```
+
+```csharp
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
+```
+
 > [!NOTE]
 > Die Breite des ein `Entry` definiert werden, indem Sie die Einstellung der `WidthRequest` Eigenschaft. Hängen nicht von der Breite des ein `Entry` definiert basierend auf den Wert der `Text` Eigenschaft.
 
@@ -60,6 +72,40 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 Ein [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) der Eigenschaftswert 0 gibt an, dass keine Eingabe zulässig ist, und den Wert `int.MaxValue`, dies ist der Standardwert für eine [ `Entry` ](xref:Xamarin.Forms.Entry), gibt an, dass keine effektive Höchstwert für die Anzahl der Zeichen, die eingegeben werden können.
+
+### <a name="password-fields"></a>Kennwortfelder
+
+`Entry` Stellt die `IsPassword` Eigenschaft. Wenn `IsPassword` ist `true`, den Inhalt des Felds wird als schwarze Kreise angezeigt:
+
+In XAML:
+
+```xaml
+<Entry IsPassword="true" />
+```
+
+In C#:
+
+```csharp
+var MyEntry = new Entry { IsPassword = true };
+```
+
+![](entry-images/password.png "Beispiel für einen Indexeintrag IsPassword")
+
+Platzhalter können verwendet werden, mit Instanzen von `Entry` , der als Kennwortfelder konfiguriert werden:
+
+In XAML:
+
+```xaml
+<Entry IsPassword="true" Placeholder="Password" />
+```
+
+In C#:
+
+```csharp
+var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
+```
+
+![](entry-images/passwordplaceholder.png "Eintrag IsPassword und Platzhalter-Beispiel")
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>Festlegen der Cursorposition und Textlänge-Auswahl
 
@@ -207,52 +253,6 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 
 > [!NOTE]
 > Wenn die [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) -Eigenschaftensatz auf `false`, und eine benutzerdefinierte Tastatur wird nicht verwendet, die Textvorhersage und automatische Text deaktiviert ist. Jedoch, wenn eine [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) wurde festgelegt, Textvorhersage deaktiviert, die `IsTextPredictionEnabled` Eigenschaft wird ignoriert. Aus diesem Grund kann nicht die Eigenschaft verwendet werden, aktivieren Sie die Textvorhersage für eine `Keyboard` , die explizit deaktiviert.
-
-### <a name="setting-placeholder-text"></a>Festlegen von Platzhaltertext
-
-Die [ `Entry` ](xref:Xamarin.Forms.Entry) Platzhaltertext angezeigt, wenn es keine Benutzereingaben gespeichert sind, die festgelegt werden können. Dies geschieht durch Festlegen der [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) Eigenschaft, um eine `string`, und wird häufig verwendet, um den Typ des Inhalts anzugeben, dass für die `Entry`. Darüber hinaus kann die Farbe des Textes Platzhalter gesteuert werden, durch Festlegen der [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor) Eigenschaft, um eine [ `Color` ](xref:Xamarin.Forms.Color):
-
-```xaml
-<Entry Placeholder="Username" PlaceholderColor="Olive" />
-```
-
-```csharp
-var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
-```
-
-### <a name="password-fields"></a>Kennwortfelder
-
-`Entry` Stellt die `IsPassword` Eigenschaft. Wenn `IsPassword` ist `true`, den Inhalt des Felds wird als schwarze Kreise angezeigt:
-
-In XAML:
-
-```xaml
-<Entry IsPassword="true" />
-```
-
-In C#:
-
-```csharp
-var MyEntry = new Entry { IsPassword = true };
-```
-
-![](entry-images/password.png "Beispiel für einen Indexeintrag IsPassword")
-
-Platzhalter können verwendet werden, mit Instanzen von `Entry` , der als Kennwortfelder konfiguriert werden:
-
-In XAML:
-
-```xaml
-<Entry IsPassword="true" Placeholder="Password" />
-```
-
-In C#:
-
-```csharp
-var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
-```
-
-![](entry-images/passwordplaceholder.png "Eintrag IsPassword und Platzhalter-Beispiel")
 
 ### <a name="colors"></a>Farben
 
