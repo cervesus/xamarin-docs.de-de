@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: 85b9297a62cfb90485be2cbd927abfdcfec2f13c
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: be6154631b8b51ec61feb4c713d925ff30505b7d
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563042"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831754"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>XAML-Namespaces in Xamarin.Forms
 
@@ -96,10 +96,11 @@ Der Namespace-Präfix wird dann angegeben, beim Deklarieren einer Instanz eines 
 </ListView>
 ```
 
+Informationen zum Definieren eines benutzerdefinierten Namespaces-Schemas finden Sie unter [benutzerdefinierte XAML-Namespace-Schemas](custom-namespace-schemas.md).
+
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel die Syntax des XAML-Namespace eingeführt und wurde veranschaulicht, wie einen XAML-Namespace auf einen Typ deklariert. XAML verwendet das `xmlns` XML-Attribut für Namespace-Deklarationen und Typen kann in XAML verwiesen werden, indem eine XAML-Namespace mit einem Präfix deklariert.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

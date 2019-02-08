@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 08ac86674e4f10d6bd17d765de2bcdf7c2d3f901
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 79b973784dd978bff15c7a706083c70df83ba1c8
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061758"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831845"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Rechtschreibprüfung mithilfe der Bing-Rechtschreibprüfungs-API
 
@@ -154,6 +154,9 @@ Dieser Code durchläuft die `FlaggedTokens` Auflistung und ersetzt alle falsch g
 ![](spell-check-images/before-spell-check.png "Vor der Rechtschreibprüfung")
 
 ![](spell-check-images/after-spell-check.png "Nach der Rechtschreibprüfung")
+
+> [!NOTE]
+> Im Beispiel oben wird `Replace` aus Gründen der Einfachheit, aber für eine große Menge an Text können sie das falsche Token ersetzen. Die-API bietet die `offset` Wert, der zur Identifizierung des richtigen Speicherorts im Quelltext vorkommen, Durchführen eines Updates in Produktions-apps verwendet werden soll.
 
 ## <a name="summary"></a>Zusammenfassung
 

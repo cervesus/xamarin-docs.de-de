@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/26/2017
-ms.openlocfilehash: df2bd07ad5d91c237320b74d7a81828ba1c062c2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/18/2018
+ms.openlocfilehash: 5bd232293c979566faed2856de7287903da94054
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053272"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831767"
 ---
 # <a name="layouts-in-xamarinforms"></a>Layouts in Xamarin.Forms
 
@@ -27,19 +27,20 @@ Xamarin.Forms verfügt über mehrere Layouts und Funktionen zum Organisieren von
 
 Jedes Layoutsteuerelement ist, sowie weitere Details zur Verarbeitung von Änderungen der bildschirmausrichtung im folgenden beschrieben:
 
-* **[StackLayout](stack-layout.md)**  &ndash; verwendet, um Ansichten linear, anordnen entweder horizontal oder vertikal. Ansichten in einem StackLayout können an das Rechenzentrum, nach links oder rechts des Layouts ausgerichtet werden.
-* **[Von "AbsoluteLayout"](absolute-layout.md)**  &ndash; zum Anordnen von Ansichten durch Festlegen von Koordinaten und Größe in Bezug auf Absolute Werte oder Verhältnisse verwendet. Layer-Ansichten als auch auf der linken Seite, rechtsbündig oder mittig zu verankern, kann von "AbsoluteLayout" verwendet werden.
-* **[RelativeLayout](relative-layout.md)**  &ndash; verwendet, um Ansichten zu anordnen, indem Sie Einschränkungen, die relativ zu ihrer übergeordneten Dimensionen & Position festlegen.
-* **[Raster](grid.md)**  &ndash; verwendet, um die Ansichten in einem Raster anordnen. Zeilen und Spalten können in Bezug auf Absolute Werte oder Verhältnisse angegeben werden.
-* **[FlexLayout](flex-layout.md)**  &ndash; verwendet, um die Ansichten horizontal oder vertikal mit umbrechen anordnen.
-* **[ScrollView](scroll-view.md)**  &ndash; verwendet, um bereitzustellen, scrollen, wenn eine Sicht nicht vollständig innerhalb der Grenzen des Bildschirms geeignet.
-* **[LayoutOptions](layout-options.md)**  &ndash; definieren, Ausrichtung und die Erweiterung für eine Ansicht, relativ zum übergeordneten Element.
-* **[Geben Sie Transparenz](#input_transparency)**  &ndash; gibt an, ob ein Element Eingaben empfängt.
-* **[Ränder und Abstände](margin-and-padding.md)**  &ndash; wird veranschaulicht, wie Layout-Verhalten zu steuern, wenn ein Element in der Benutzeroberfläche gerendert wird.
-* **[Geräteausrichtung](device-orientation.md)**  &ndash; wird erläutert, wie Änderungen an Device-Ausrichtung zu behandeln.
-* **[Layout auf Tablets und Desktopgeräte](tablet.md)**  &ndash; zeigt, wie größere Bildschirme auf jeder Plattform zu optimieren.
-* **[Erstellen eines benutzerdefinierten Layouts](custom.md)**  &ndash; wird erläutert, wie eine benutzerdefiniertes Layout-Klasse zu erstellen.
-* **[Layoutkomprimierung](layout-compression.md)**  &ndash; entfernt den angegebenen Layout aus der visuellen Struktur in um die Leistung des Seitenrenderings zu verbessern.
+* **[StackLayout](stack-layout.md)**  : werden verwendet, linear, Anordnen von Ansichten horizontal oder vertikal. Ansichten in einem StackLayout können an das Rechenzentrum, nach links oder rechts des Layouts ausgerichtet werden.
+* **[Von "AbsoluteLayout"](absolute-layout.md)**  – wird zum Anordnen von Ansichten durch Festlegen von Koordinaten und Größe in Bezug auf Absolute Werte oder Verhältnisse verwendet. Layer-Ansichten als auch auf der linken Seite, rechtsbündig oder mittig zu verankern, kann von "AbsoluteLayout" verwendet werden.
+* **[RelativeLayout](relative-layout.md)**  – verwendet, um Ansichten zu anordnen, indem Sie Einschränkungen, die relativ zu ihrer übergeordneten Dimensionen & Position festlegen.
+* **[Raster](grid.md)**  : werden verwendet, um Ansichten in einem Raster anzuordnen. Zeilen und Spalten können in Bezug auf Absolute Werte oder Verhältnisse angegeben werden.
+* **[FlexLayout](flex-layout.md)**  : werden verwendet, um die Ansichten horizontal oder vertikal mit umbrechen anordnen.
+* **[ScrollView](scroll-view.md)**  : werden verwendet, zu scrollen, wenn eine Sicht nicht vollständig innerhalb der Grenzen des Bildschirms geeignet.
+* **[LayoutOptions](layout-options.md)**  – definieren, Ausrichtung und die Erweiterung für eine Ansicht, relativ zum übergeordneten Element.
+* **[Geben Sie Transparenz](#input_transparency)**  – gibt an, ob ein Element Eingaben empfängt.
+* **[Ränder und Abstände](margin-and-padding.md)**  – veranschaulicht die Layout-Verhalten zu steuern, wenn ein Element in der Benutzeroberfläche gerendert wird.
+* **[Geräteausrichtung](device-orientation.md)**  – wird erläutert, wie Änderungen an Device-Ausrichtung zu behandeln.
+* **[Layout auf Tablets und Desktopgeräte](tablet.md)**  – zeigt, wie größere Bildschirme auf jeder Plattform zu optimieren.
+* **[Bindbare Layouts](bindable-layouts.md)**  – Aktivieren der Layout-Klassen, um ihre Inhalte durch Bindung an eine Auflistung von Elementen zu generieren.
+* **[Erstellen eines benutzerdefinierten Layouts](custom.md)**  – wird erläutert, wie eine benutzerdefiniertes Layout-Klasse zu erstellen.
+* **[Layoutkomprimierung](layout-compression.md)**  – entfernt den angegebenen Layout aus der visuellen Struktur in um die Leistung des Seitenrenderings zu verbessern.
 
 Plattformsteuerelemente können auch verwendet werden, direkt in Xamarin.Forms-Layouts mit [ **Native Einbettung** ](~/xamarin-forms/platform/native-views/index.md) (neu in Xamarin.Forms 2.2), und Sie können [ **erstellen Sie benutzerdefinierte Layouts** ](custom.md) um bestimmte Anforderungen zu erfüllen.
 
@@ -203,6 +204,10 @@ Xamarin.Forms und dessen integrierte Layouts sind Änderungen an der geräteausr
 
 IOS-, Android- und Universal Windows Platform unterstützen alle größeren Bildschirmgrößen auf tablet-Geräte (sowie Laptops und Desktops für Windows). Xamarin.Forms können Sie Ihre app für größere Bildschirme zu optimieren, indem Sie erkennen, Gerätetyp und Anpassen des Seitenlayouts oder eine völlig andere Seite vollständig für größere Bildschirme.
 
+### <a name="bindable-layoutsbindable-layoutsmd"></a>[Bindbare Layouts](bindable-layouts.md)
+
+Die `BindableLayout` -Klasse ermöglicht es, jede abgeleitete Layoutklasse der [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) Klasse, um den Inhalt durch Bindung an eine Auflistung von Elementen, mit der Option, die die Darstellung der einzelnen Elemente in festlegen generieren eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate).
+
 ### <a name="creating-a-custom-layoutcustommd"></a>[Erstellen eines benutzerdefinierten Layouts](custom.md)
 
 Xamarin.Forms definiert vier Klassen für Layout - [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout), [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout), und [ `Grid` ](xref:Xamarin.Forms.Grid), und jedes seiner untergeordneten Elemente auf andere Weise angeordnet. Allerdings manchmal erforderlichen zum Organisieren von Inhalt der Seite, die nicht mit einem Layout von Xamarin.Forms bereitgestelltes. In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layout-Klasse schreiben, und zeigt eine Ausrichtung keine Unterscheidung nach Kanatyp `WrapLayout` -Klasse, ordnet die untergeordneten Elemente horizontal über die Seite und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente auf zusätzliche Zeilen.
@@ -215,7 +220,6 @@ Layoutkomprimierung werden bestimmte Layouts aus der visuellen Struktur Versuch 
 
 Denken Sie daran, dass in den meisten Fällen mehr als eine Layout-Auswahl verwendet werden kann, Sie Ihren gewünschten Entwurf implementieren. Wenn mehrere gültige Optionen vorhanden sind, erwägen Sie, welcher Ansatz der einfachste Weg für Ihre Situation werden.
 Die meisten Entwürfe gefunden mit nur einem Layout, wurde nicht damit Nest Layouts wie erforderlich, um komplexere Entwürfe zu erstellen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

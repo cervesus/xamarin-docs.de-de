@@ -6,24 +6,19 @@ ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 8adac1711271324b70731a085088bd8805391d31
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059456"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831794"
 ---
 # <a name="customizing-listview-appearance"></a>Anpassen der Darstellung der ListView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 
-`ListView` enthält Optionen zum Steuern der Darstellung der gesamten Liste zusätzlich zu den zugrunde liegenden `ViewCell`s. Zu den Optionen gehören:
-
-- [**Gruppieren von** ](#Grouping) &ndash; gruppieren Sie Elemente in ListView für einfachere Navigation und verbesserte Organisation.
-- [**Kopf- und Fußzeilen** ](#Headers_and_Footers) &ndash; Informationen am Anfang und Ende der Ansicht, die mit den anderen Elementen führt einen Bildlauf angezeigt.
-- [**Zeile Trennzeichen** ](#Row_Separators) &ndash; Trennzeichen Linien zwischen den Elementen ein- oder auszublenden.
-- [**Zeilen mit Variablen Höhe** ](#Row_Heights) &ndash; standardmäßig alle Zeilen, die die gleiche Höhe sind, aber dies kann geändert werden, um Zeilen mit unterschiedlichen Größen angezeigt werden können.
+[`ListView`](xref:Xamarin.Forms.ListView) hat die Möglichkeit, die Darstellung der Liste, zusätzlich zum Steuern der [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) Instanzen für jede Zeile in der Liste.
 
 <a name="Grouping" />
 
@@ -83,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-Wir können auch aufrufen, in dem Code oben `Add` Elemente eines `groups`, die Instanzen des Typs sind `PageTypeGroup`. Dies ist möglich, da `PageTypeGroup` erbt `List<PageModel>`. Dies ist ein Beispiel für die Liste der Listen-Muster, die wie oben beschrieben.
+Im obigen Code kann auch rufen wir `Add` Elemente eines `groups`, die Instanzen des Typs sind `PageTypeGroup`. Dies ist möglich, da `PageTypeGroup` erbt `List<PageModel>`. Dies ist ein Beispiel für die Liste der Listen-Muster, die wie oben beschrieben.
 
 Hier ist die XAML zur Anzeige der gruppierten Liste:
 
@@ -205,6 +200,14 @@ Um eine benutzerdefinierte Kopf- und Fußzeile zu erstellen, definieren Sie die 
 ```
 
 ![](customizing-list-appearance-images/header-custom.png "ListView mit benutzerdefinierten Header und Footer")
+
+## <a name="scrollbar-visibility"></a>Sichtbarkeit der Bildlaufleiste
+
+[`ListView`](xref:Xamarin.Forms.ListView) verfügt über `HorizontalScrollBarVisibility` und `VerticalScrollBarVisibility` Eigenschaften, die abrufen oder Festlegen einer [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) -Wert, der darstellt, wenn es sich bei der horizontalen oder vertikalen Schiebeleiste sichtbar ist. Beide Eigenschaften können auf die folgenden Werte festgelegt werden:
+
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt das Scroll-Leiste-Standardverhalten für die Plattform und ist der Standardwert für die `HorizontalScrollBarVisibility` und `VerticalScrollBarVisibility` Eigenschaften.
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt an, dass Bildlaufleisten angezeigt, werden auch verwendet werden, wenn der Inhalt nicht in der Ansicht passt.
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt an, dass Bildlaufleisten nicht sichtbar ist, werden Ereignis, wenn der Inhalt nicht in der Ansicht entspricht.
 
 <a name="Row_Separators" />
 

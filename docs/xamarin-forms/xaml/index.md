@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2018
-ms.openlocfilehash: 9924e588808783fe35dbd830bbc9af288f37e7ea
-ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
+ms.openlocfilehash: 7195d56cfee91544f0626a8f89c886cde36752e5
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53813959"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831716"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -42,6 +42,10 @@ Die [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer.md) rendert eine Livevor
 ## <a name="xaml-namespacesnamespacesmd"></a>[XAML-Namespaces](namespaces.md)
 
 XAML verwendet das `xmlns` XML-Attribut für Namespacedeklarationen. In diesem Artikel stellt die Syntax des XAML-Namespace, und es wird veranschaulicht, wie einen XAML-Namespace auf einen Typ deklariert.
+
+## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[XAML-Namespace mit benutzerdefinierten Schemas](custom-namespace-schemas.md)
+
+Ein XAML-Schema benutzerdefinierten Namespace definiert werden kann, mit der `XmlnsDefinitionAttribute` -Klasse, die eine Zuordnung zwischen einer benutzerdefinierten URL und einen oder mehrere CLR-Namespaces angibt. Das Schema des benutzerdefinierten Namespace können Sie dann in XAML-Namespace-Deklarationen verwendet werden.
 
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[XAML-Markuperweiterungen](markup-extensions/index.md)
 

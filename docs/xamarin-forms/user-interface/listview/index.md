@@ -7,32 +7,26 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 9da3bd65dfb5cc6f9ca6bd0e2930003e6ac3d182
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 967d4ae65bdb47adf824f20f47c7b32e24211f9a
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059258"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831809"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms-ListView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/WorkingWithListview)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/WorkingWithListview)
 
-Ansicht ist eine Ansicht für die Darstellung von Listen mit Daten, besonders lange Listen, die einen Bildlauf erfordern. Diesem Leitfaden erfahren Sie, wie Sie mit ListView:
-
-1. **[Datenquellen](data-and-databinding.md)**  &ndash; eine ListView mit Daten, mit oder ohne Datenbindung zu füllen.
-2. **[Darstellung der Zelle](customizing-cell-appearance.md)**  &ndash; die Darstellung der integrierten Zellen anpassen oder erstellen Sie eigene benutzerdefinierte Zelle.
-3. **[Liste der Darstellung](customizing-list-appearance.md)**  &ndash; Anpassen der Darstellung der ListView. Festlegen von Kopf- und Fußzeilen, Gruppen zu aktivieren, und Ändern der Höhe der Zeilen.
-4. **[Interaktivität](interactivity.md)**  &ndash; behandeln tippen und Auswahl, implementieren Sie zum Aktualisieren ziehen und kontextbezogene Aktionen hinzufügen.
-5. **[Leistung](performance.md)**  &ndash; Leistungsprobleme zu vermeiden.
+[`ListView`](xref:Xamarin.Forms.ListView) ist eine Ansicht für die Darstellung von Listen mit Daten, besonders lange Listen, die einen Bildlauf erfordern.
 
 ## <a name="use-cases"></a>Anwendungsfälle
+
 Stellen Sie sicher, dass die ListView das richtige Steuerelement für Ihre Anforderungen ist. ListView kann in allen Fällen verwendet werden, in dem Sie einen bildlauffähige Listen mit Daten anzeigen möchten. ListViews unterstützt kontextaktionen und Datenbindung.
 
 ListView dürfen nicht verwechselt werden, mit [TableView](~/xamarin-forms/user-interface/tableview.md). Das Steuerelement TableView ist eine bessere Option, wenn Sie eine nicht gebundenen Liste von Optionen oder Daten haben. Beispielsweise eignet sich die iOS-app-Einstellungen, die mit einer größtenteils vordefinierten Satzes von Optionen, besser TableView als ListView verwenden.
 
 Beachten Sie, dass eine ListView am besten geeignet ist ebenfalls geeignet, für homogene Daten &ndash; , also sollte alle Daten vom selben Typ sein. Dies ist, da nur ein Typ der Zelle für jede Zeile in der Liste verwendet werden kann. TableViews kann mehrere Zellentypen unterstützen, damit sie eine bessere Option sind, wenn Sie zum Mischen von Ansichten müssen.
-
 
 ## <a name="components"></a>Komponenten
 ListView verfügt über eine Reihe von Komponenten, führen Sie die systemeigene Funktionalität für jede Plattform zur Verfügung. Jede dieser Komponenten wird im folgenden beschrieben:
@@ -62,7 +56,6 @@ ListView unterstützt eine Anzahl von Interaktion Formatvorlagen, einschließlic
 ![](images/context-default.png "ListView mit Kontextaktionen")
 
 Weitere Informationen zu den Interaktivitätsfunktionen von ListView finden Sie unter [Aktionen auf & Interaktivität mit ListView](interactivity.md).
-
 
 ## <a name="related-links"></a>Verwandte Links
 
