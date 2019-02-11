@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: f1b28c000fbc77a524097ce5a9e7d85d32a40230
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c085b515bf6618d110d95dc5a6456df182fa803f
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109340"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668575"
 ---
 # <a name="get-started-with-xamarinios"></a>Erste Schritte mit Xamarin.iOS
 
@@ -28,6 +28,8 @@ Folgendes wird für das Erstellen für Xamarin.iOS benötigt:
 - macOS High Sierra (10.13) oder höher
 
 Die aktuelle Version von Xcode kann vom [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) (Anmeldung erforderlich) oder über den Mac App Store heruntergeladen werden:
+
+![Screenshot der Xcode-Übersichtsseite im Mac App Store](installation/images/xcode.png "Xcode im Mac App Store")
 
 ## <a name="getting-started-series"></a>Reihe mit den ersten Schritten
 

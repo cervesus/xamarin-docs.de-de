@@ -6,13 +6,13 @@ ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2017
-ms.openlocfilehash: f59a528916d2cc5efd19ba7c35a7b4f041ecbe09
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/18/2018
+ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056161"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831988"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Automatisierungseigenschaften in Xamarin.Forms
 
@@ -138,6 +138,43 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 > [!NOTE]
 > Beachten Sie, dass auch die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode verwendet werden kann, um die angefügte Eigenschaft `AutomationProperties.IsInAccessibleTree` festzulegen – `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`.
+
+## <a name="accessibility-intricacies"></a>Schwierigkeiten beim Zugriff
+
+In den folgenden Abschnitten werden die Schwierigkeiten beim Festlegen von Zugriffswerten auf bestimmten Steuerelementen beschrieben.
+
+### <a name="navigationpage"></a>NavigationPage
+
+Legen Sie unter Android die Eigenschaften `AutomationProperties.Name` und `AutomationProperties.HelpText` auf eine [`Page`](xref:Xamarin.Forms.Page)-Klasse fest, um den Text festzulegen, der von Sprachausgaben für den „Zurück“-Pfeil in der Aktionsleiste in einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse gelesen werden kann. Beachten Sie jedoch, dass dies keine Auswirkungen auf die „Zurück“-Pfeile im Betriebssystem hat.
+
+### <a name="masterdetailpage"></a>MasterDetailPage
+
+Legen Sie unter iOS und auf der Universellen Windows-Plattform (UWP) entweder die Eigenschaften `AutomationProperties.Name` und `AutomationProperties.HelpText` auf die `MasterDetailPage`-Klasse oder auf die Eigenschaft `Icon` der `Master`-Seite fest, um den Text festzulegen, der von Sprachausgaben für die Umschaltfläche auf einer [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)-Klasse gelesen werden kann.
+
+Fügen Sie unter Android dem Android-Projekt Zeichenfolgenressourcen hinzu, um den Text festzulegen, der von Sprachausgaben für die Umschaltfläche auf einer [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) gelesen werden kann:
+
+```xml
+<resources>
+        <string name="app_name">Xamarin Forms Control Gallery</string>
+        <string name="btnMDPAutomationID_open">Open Side Menu message</string>
+        <string name="btnMDPAutomationID_close">Close Side Menu message</string>
+</resources>
+```
+
+Legen Sie anschließend die Eigenschaft `AutomationId` auf die Eigenschaft `Icon` der `Master`-Seite für die entsprechende Zeichenfolge fest:
+
+```csharp
+var master = new ContentPage { ... };
+master.Icon.AutomationId = "btnMDPAutomationID";
+```
+
+### <a name="toolbaritem"></a>ToolbarItem
+
+Unter iOS, Android und UWP lesen Sprachausgaben den `Text`-Eigenschaftswert von [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)-Instanzen, sofern die Werte `AutomationProperties.Name` und `AutomationProperties.HelpText` nicht definiert sind.
+
+Unter iOS und UWP ersetzt der Eigenschaftswert `AutomationProperties.Name` den Eigenschaftswert `Text`, der von der Sprachausgabe gelesen wird.
+
+Unter Android ersetzt der Eigenschaftswert `AutomationProperties.Name` und/oder `AutomationProperties.HelpText` den Eigenschaftswert `Text` vollständig. Dieser ist sichtbar und kann von der Sprachausgabe gelesen werden. Beachten Sie, dass es eine Einschränkung auf weniger als 26 APIs gibt.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,17 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 97b3e5323329d2df024e05f1829b12b239b37299
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 52cd8a15f1b5b232deef62a8e87910b092aad94c
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103048"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831949"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurieren einer App in iTunes Connect
 
 > [!IMPORTANT]
-> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das [iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
+> Apple [hat mitgeteilt](https://developer.apple.com/ios/submit/), dass ab März 2019 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 12.1 SDK oder höher, das in Xcode 10.1 oder höher enthalten ist, erstellt worden sein müssen.
+> Apps müssen ebenso die Bildschirmgrößen des iPhone XS und des iPad Pro in 12,9" unterstützen.
 
 iTunes Connect ist eine Suite von webbasierten Tools, mit denen Sie u.a. Ihre iOS-Anwendungen im App Store verwalten können. Eine Xamarin.iOS-Anwendung muss ordnungsgemäß in iTunes Connect eingerichtet und konfiguriert werden, bevor sie zur Überprüfung an Apple gesendet und schließlich für den Verkauf oder als kostenlose App im App Store veröffentlicht werden kann.
 
@@ -135,7 +136,7 @@ Apple empfiehlt Folgendes bei der Auswahl eines App-Namens:
 - Er soll der Funktionalität der Anwendung entsprechen.
 - Geben Sie für ausländische Märkte gegebenenfalls einen lokalisierten Namen an.
 
-### <a name="description"></a>Beschreibung 
+### <a name="description"></a>Beschreibung
 
 Schreiben Sie eine klare, präzise und informative Beschreibung zur Anwendung und ihren Funktionen. Die ersten Zeilen sind die wichtigsten und bieten Ihnen die Möglichkeit, einen guten ersten Eindruck zu hinterlassen und das Interesse des Benutzers zu wecken. Beschrieben Sie also das Besondere an Ihrer Anwendung gegenüber ähnlichen Apps.
 
@@ -348,7 +349,7 @@ Weitere Informationen zu In-App-Käufen in einer Xamarin.iOS-Anwendung finden Si
 
 ## <a name="viewing-application-reviews"></a>Anzeigen von Benutzerbewertungen
 
-Sobald die Anwendung im App Store veröffentlicht wurde, können Benutzer, die die Anwendung kaufen oder kostenlos herunterladen, die App schriftlich bewerten und Sterne dafür vergeben. In diesem Abschnitt können Sie diese Bewertungen anzeigen lassen. Zum Beispiel:
+Sobald die Anwendung im App Store veröffentlicht wurde, können Benutzer, die die Anwendung kaufen oder kostenlos herunterladen, die App schriftlich bewerten und Sterne dafür vergeben. In diesem Abschnitt können Sie diese Bewertungen anzeigen lassen. Beispiel:
 
 [![](itunesconnect-images/reviews01.png "Anzeigen von Benutzerbewertungen")](itunesconnect-images/reviews01.png#lightbox)
 
@@ -359,7 +360,7 @@ In diesem Artikel wurde beschrieben, wie Sie eine Xamarin.iOS-Anwendung mit iTun
 ## <a name="related-links"></a>Verwandte Links
 
 - [Working with Images (Arbeiten mit Bildern)](~/ios/app-fundamentals/images-icons/index.md)
-- [Anleitung für den iOS-App-Entwicklungsworkflow: Verteilen von Anwendungen](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
+- [iOS App Development Workflow Guide (Leitfaden für den App-Entwicklungsworkflow für iOS) ](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
 - [Tipps für die Übermittlung an den App Store](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [Richtlinien für die Überprüfung im App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [iTunes Connect-Entwicklerleitfaden](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225-CH1-SW1)

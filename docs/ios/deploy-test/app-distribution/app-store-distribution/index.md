@@ -7,19 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: de3af76b8479562ba048c5b62167df0f2b2a51f9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 14cf2910767e9c205e5ddc8f580020505f54ef46
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115132"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55832027"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
 Nachdem eine Xamarin.iOS-Anwendung entwickelt wurde, ist der nächste Schritt im Lebenszyklus der Softwareentwicklung die Verteilung der Anwendung an Benutzer mithilfe des iTunes App Stores. Dies ist die gängigste Methode zum Verteilen von Anwendungen. Indem eine Anwendung im App Store von Apple veröffentlicht wird, kann Sie weltweit für Verbraucher verfügbar gemacht werden.
 
 > [!IMPORTANT]
-> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das [iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
+> Apple [hat mitgeteilt](https://developer.apple.com/ios/submit/), dass ab März 2019 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 12.1 SDK oder höher, das in Xcode 10.1 oder höher enthalten ist, erstellt worden sein müssen.
+> Apps müssen ebenso die Bildschirmgrößen des iPhone XS und des iPad Pro in 12,9" unterstützen.
 
 Das Verteilen einer Anwendung erfordert genau wie das Entwickeln einer Anwendung, dass Anwendungen mit dem entsprechenden *Bereitstellungsprofil* bereitgestellt werden. Bereitstellungsprofile sind Dateien, die Informationen zur Codesignierung sowie die Identität der Anwendung und den beabsichtigten Verteilungsmechanismus enthalten. Sie enthalten auch Informationen darüber, für welche Geräte eine App bereitgestellt wird, wenn die Verteilung nicht über den App Store stattfindet.
 
@@ -63,11 +64,11 @@ Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklu
 
 Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences“ (Einstellungen) in Xcode anzufordern. Führen Sie dazu folgende Schritte aus:
 
-1.   Wählen Sie Ihr Team aus, und klicken Sie auf **Zertifikate verwalten…**: [![](images/selectteam.png "Auswählen des Teams und Anzeigen der Details")](images/selectteam.png#lightbox)
+1.   Wählen Sie das Team aus, und klicken Sie auf **Manage Certificates…** (Zertifikate verwalten...): [![](images/selectteam.png "Auswählen des Teams und Klick auf „Details anzeigen“")](images/selectteam.png#lightbox)
 
-2.   Klicken Sie anschließend auf die Schaltfläche **Erstellen** neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat): [![](images/selectcert.png "Create an iOS Distribution Certificate (Erstellen eines iOS-Verteilungszertifikats)")](images/selectcert.png#lightbox)
+2.   Klicken Sie anschließend auf die Schaltfläche **Create** (Erstellen) neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat): [![](images/selectcert.png "Erstellen eines iOS-Verteilungszertifikats")](images/selectcert.png#lightbox)
 
-3.   Die Signierungsidentität wird wie unten dargestellt abhängig von Ihren Teamberechtigungen generiert. Ansonsten müssen Sie warten, bis ein Team-Agent oder Administrator diese genehmigt: [![](images/generated.png "Die Signierungsidentität wird erstellt und ein Dialogfeld angezeigt")](images/generated.png#lightbox)
+3.   Die Signierungsidentität wird wie unten dargestellt abhängig von Ihren Teamprivilegien generiert, oder Sie müssen warten, bis ein Team-Agent oder Administrator diese genehmigt: [![](images/generated.png "Die Signieridentität wird generiert und ein Dialogfeld angezeigt")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />
