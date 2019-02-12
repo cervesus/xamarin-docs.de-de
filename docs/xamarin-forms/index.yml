@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 95df735c07def5b3f7a0ad2e7e3eb1e114cc5e8f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 00d8e1459501b4643dea12b1d36939534a66833f
+ms.sourcegitcommit: 5405a376fe1b1e08c834eb565aaa5b1849a0fcdc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292245"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986486"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -62,11 +62,11 @@ sections:
     style: cards
     className: cardsB
     items:
-    - href: ~/get-started/quickstarts/index.md
+    - href: ~/get-started/index.md
       html: Tutorials für die ersten Schritte mit Xamarin.Forms. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Xamarin.Forms-Apps.
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/get-started/quickstarts/index.md
+        href: ~/get-started/index.md
       title: Erste Schritte
     - href: ~/xamarin-forms/xaml/
       html: Erstellen Sie Benutzeroberflächen deklarativ, und geben Sie sie für mobile und Desktopplattformen frei.
