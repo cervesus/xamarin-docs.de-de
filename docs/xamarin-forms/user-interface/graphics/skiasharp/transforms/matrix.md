@@ -7,12 +7,12 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: dd38d91a808bed715c92c0fc7d98d6786fc43f67
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 192f0745874b54989ab9070014dae2a5e9e98110
+ms.sourcegitcommit: 605f7c480c3f7b5dd364fdb1bd4d983de8f7ed25
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054647"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56213776"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>Matrixtransformationen in SkiaSharp
 
@@ -64,11 +64,11 @@ Die 1-von-3-Matrix wird dann mit die Transformationsmatrix multipliziert, und da
 
 Verwenden die standardmäßigen Matrixmultiplikation, sind die konvertierte Punkte wie folgt:
 
-x' = x
+`x' = x`
 
-y' = y
+`y' = y`
 
-z' = 1
+`z' = 1`
 
 Dies ist die Standard-Transformation.
 
@@ -90,9 +90,9 @@ Die Multiplikation sieht jetzt wie folgt aus:
 
 Hier sind die Formeln für die Transformation:
 
-X' = X + tx
+`x' = x + tx`
 
-y' = y + Ty
+`y' = y + ty`
 
 Skalierungsfaktoren haben den Standardwert 1. Beim Aufrufen der `Scale` Methode auf einem neuen `SKCanvas` Objekts, die sich ergebende Transformationsmatrix enthält die `sx` und `sy` Argumente in der diagonalen Zellen:
 
@@ -104,9 +104,9 @@ Skalierungsfaktoren haben den Standardwert 1. Beim Aufrufen der `Scale` Methode 
 
 Die Transformation Formeln lauten wie folgt aus:
 
-X' = Sx – x
+`x' = sx · x`
 
-y' = Sy – y
+`y' = sy · y`
 
 Die Transformationsmatrix, die nach dem Aufruf `Skew` enthält die zwei Argumente in den neben der Skalierungsfaktoren Matrixzellen:
 
@@ -118,9 +118,9 @@ Die Transformationsmatrix, die nach dem Aufruf `Skew` enthält die zwei Argument
 
 Die Transformation-Formeln sind:
 
-X' = X + xSkew – y
+`x' = x + xSkew · y`
 
-y' = ySkew – X + y
+`y' = ySkew · x + y`
 
 Für einen Aufruf von `RotateDegrees` oder `RotateRadians` für ein Winkel von α Transformationsmatrix lautet wie folgt:
 
@@ -132,9 +132,9 @@ Für einen Aufruf von `RotateDegrees` oder `RotateRadians` für ein Winkel von �
 
 Hier sind die Formeln für die Transformation:
 
-X' = cos(α) – X - sin(α) – y
+`x' = cos(α) · x - sin(α) · y`
 
-y' = sin(α) – X - cos(α) – y
+`y' = sin(α) · x - cos(α) · y`
 
 Wenn α 0 Grad ist, ist es die Identitätsmatrix. Wenn α um 180 Grad ist, lautet die Transformationsmatrix wie folgt:
 
@@ -228,11 +228,11 @@ Die `Persp0`, `Persp1`, und `Persp2` Zellen werden in diesem Artikel erläuterte
               │ TransX  TransY  1 │
 </pre>
 
-X' = ScaleX – X + SkewX – y + VerschX
+`x' = ScaleX · x + SkewX · y + TransX`
 
-y' = SkewX – X + ScaleY – y + VerschY
+`y' = SkewX · x + ScaleY · y + TransY`
 
-z' = 1
+`z' = 1`
 
 Dies ist die vollständige zweidimensionalen affine Transformation. Die affine Transformation behält die parallele Linien, was bedeutet, dass ein Rechteck nie in etwas anderes als ein Parallelogramm transformiert wird.
 
@@ -259,7 +259,7 @@ SKMatrix.Concat(ref R, ref A, ref B);
 
 Diese führen die folgende Multiplikation:
 
-R = B × EIN
+`R = B × A`
 
 Die anderen Methoden werden nur zwei Parameter aufweisen. Der erste Parameter geändert, und bei der Rückgabe aus dem Aufruf der Methode ist das Produkt von zwei Matrizen enthält. Die beiden `PostConcat` Methoden werden aufgerufen, wie folgt:
 
@@ -271,7 +271,7 @@ SKMatrix.PostConcat(ref A, ref B);
 
 Diese Aufrufe ausführen den folgenden Vorgang:
 
-A = A × B
+`A = A × B`
 
 Die beiden `PreConcat` Methoden ähneln:
 
@@ -283,7 +283,7 @@ SKMatrix.PreConcat(ref A, ref B);
 
 Diese Aufrufe ausführen den folgenden Vorgang:
 
-A = B × EIN
+`A = B × A`
 
 Die Versionen dieser Methoden mit allen `ref` Argumente sind etwas effizienter, in der zugrunde liegende Implementierungen aufrufen, aber es kann unübersichtlich werden, eine Person Ihren Code lesen und vorausgesetzt, dass alles, was eine `ref` Argument wird geändert, indem die Methode. Darüber hinaus ist es häufig sinnvoll, ein Argument zu übergeben, das Ergebnis eines ist die `Make` Methoden, z.B.:
 
@@ -361,7 +361,7 @@ SKMatrix.PostConcat(ref A, C);
 
 Dies ist eine Reihe von aufeinander folgenden Multiplikationen, daher ist das Ergebnis wie folgt:
 
-EINE × B-× C
+`A × B × C`
 
 Die aufeinander folgenden Multiplikation helfen zu verstehen, was bewirkt, dass jede Transformation. Die Skalierungstransformation vergrößert die Pfadkoordinaten um den Faktor 3, damit die Koordinaten von –300 und 300 liegen. Die Drehungstransformation dreht das Sternsymbol, um dessen Ursprung. Die Verschiebungstransformation verschiebt sie anschließend, 300 Pixel, rechts und nach unten, sodass alle die Koordinaten werden positive.
 
