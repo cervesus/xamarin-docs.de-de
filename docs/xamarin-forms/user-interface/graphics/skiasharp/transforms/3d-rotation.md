@@ -7,12 +7,12 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: a4f69287a6f97f3181d88a2d93d308df2676476a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7ac9ec458f16357ef50e23c459a9b0e1f79bdd97
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052688"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240369"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>3D Drehungen in SkiaSharp
 
@@ -63,25 +63,25 @@ In einem System 3D-Grafiken wird ein 3D-Punkts (X, y, Z) um eine 1 x 4-Matrix f�
 
 Entspricht bis 2D, statt in drei Dimensionen umwandelt, 3D-Transformationen befinden sich in vier Dimensionen stattfinden. Der vierten Dimension wird als W bezeichnet, und die 3D-Raum wird davon ausgegangen, dass innerhalb des Bereichs 4D vorhanden sein, in denen W-Koordinaten gleich 1 sind. Die Transformation Formeln lauten wie folgt aus:
 
-X' = M11·x + M21·y + M31·z + M41
+`x' = M11·x + M21·y + M31·z + M41`
 
-y' = M12·x + M22·y + M32·z + M42
+`y' = M12·x + M22·y + M32·z + M42`
 
-Z' = M13·x + M23·y + M33·z + M43
+`z' = M13·x + M23·y + M33·z + M43`
 
-w' = M14·x + M24·y + M34·z + M44
+`w' = M14·x + M24·y + M34·z + M44`
 
 Es ergibt sich aus der Transformation-Formeln, die die Zellen `M11`, `M22`, `M33` Faktoren in X, Y und Z-Richtung, skalieren und `M41`, `M42`, und `M43` Übersetzung Faktoren in Bezug auf das X, Y und Z werden Erfahren Sie, wie.
 
 Diese Koordinaten zurück in die 3D-Raum konvertieren, in denen W ist 1, das "X" gleich ", y', Z' Koordinaten alle durch w unterteilt sind":
 
-x" = x' / w'
+`x" = x' / w'`
 
-y"y =" / w "
+`y" = y' / w'`
 
-Z"Z =" / w "
+`z" = z' / w'`
 
-w"w =" / w "= 1
+`w" = w' / w' = 1`
 
 Dieser Division von w "zeigt die Perspektiven im 3D-Raum. Wenn w' gleich 1 ist, wird keine Perspektive zu durchgeführt.
 
@@ -140,7 +140,7 @@ Der Grund für den Argumentnamen `depth` werden in Kürze offensichtlich. Dieser
 
 Führen Sie die Transformation Formeln in der folgenden Berechnung von w ":
 
-w "– Z = / Tiefe + 1
+`w' = –z / depth + 1`
 
 Dies dient, X und Y-Koordinaten zu reduzieren, wenn Z-Werte sind kleiner als 0 (null) (im Prinzip hinter der XY-Ebene) und die X- und Y-Koordinaten für positive Z-Werte zu erhöhen. Wenn die Z-Koordinate gleich `depth`, klicken Sie dann w "ist 0 (null) und Koordinaten unendlich. Dreidimensionale Grafiksysteme werden erstellt, um eine Kamera Metapher, und die `depth` Wert repräsentiert die Entfernung der Kamera, vom Ursprung des Koordinatensystems. Verfügt ein grafisches Objekt einen Z, koordinieren `depth` Einheiten vom Ursprung der Fokus der Kamera ist im Prinzip berühren und wird unendlich groß.
 
@@ -173,9 +173,9 @@ w' = M14·x + M24·y + M44
 
 Darüber hinaus das Z' Koordinate ist auch hier nicht relevant. Wenn ein 3D-Objekt in einem System 2D-Grafiken angezeigt wird, wird der Wert der Z-Koordinatenwerten zu ignorieren, ein zweidimensionales Objekt reduziert. Die Transformation-Formeln sind eigentlich nur diese beiden:
 
-x" = x' / w'
+`x" = x' / w'`
 
-y"y =" / w "
+`y" = y' / w'`
 
 Dies bedeutet, dass die dritte Zeile *und* dritten Spalte der 4 x 4-Matrix kann ignoriert werden.
 
@@ -208,17 +208,17 @@ Sie können jetzt verwendet werden, einen 2D Punkt zu transformieren:
 
 Die Transformation-Formeln sind:
 
-X' = cos (α) ·x
+`x' = cos(α)·x`
 
-y' = y
+`y' = y`
 
-Z' = (sin (α) / Tiefe) ·x + 1
+`z' = (sin(α)/depth)·x + 1`
 
 Teilen Sie alles, was jetzt durch Z ":
 
-X"= cos (α) ·x / ((sin (α) / Tiefe) ·x + 1)
+`x" = cos(α)·x / ((sin(α)/depth)·x + 1)`
 
-y-= y / ((sin (α) / Tiefe) ·x + 1)
+`y" = y / ((sin(α)/depth)·x + 1)`
 
 Wenn mit einer positiven Winkel um die y-Achse, und klicken Sie dann positive 2D-gedreht werden rücken X-Werte in den Hintergrund und Negative X-Werte, die in den Vordergrund gesetzt werden. Die X-Werte scheinen, näher auf die y-Achse (die den Kosinus-Wert unterliegt) als Koordinaten, die am der Y-Achse dargestellt werden, kleiner oder größer ist, da sie das. der Viewer wechseln oder den Betrachter näher.
 

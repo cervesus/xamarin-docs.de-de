@@ -7,12 +7,12 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 594e98230d4f4bd8aca27f92f4544f8c59b5f0a2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8c86782d5b8b8250049d0ae060ca7bd548c5a4ef
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061454"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240408"
 ---
 # <a name="the-separable-blend-modes"></a>Die trennbare Füllmethoden einheitlich
 
@@ -127,19 +127,21 @@ Die Screenshots von links nach rechts zeigen immer größeren `Slider` Werte, wi
 
 [![Heller und dunkler](separable-images/LightenAndDarken.png "heller und dunkler angezeigt")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-Dieses Programm zeigt die normale Art, in die die trennbare Füllmethoden einheitlich verwendet werden: das Ziel ist ein Bild irgendeiner Art, die sehr häufig eine Bitmap. Die Quelle ist ein Rechteck, das angezeigt wird, mit einer `SKPaint` Objekt mit der `BlendMode` -Eigenschaft auf einen trennbare Blend-Modus festgelegt. Das Rechteck kann eine Volltonfarbe werden (wie es hier der Fall ist) oder einem Farbverlauf. Transparenz ist _nicht_ in der Regel mit der trennbare Füllmethoden einheitlich verwendet.
+Dieses Programm zeigt die übliche Weise, in der die trennbare Füllmethoden einheitlich verwendet werden: Das Ziel ist ein Bild irgendeiner Art, die sehr häufig eine Bitmap. Die Quelle ist ein Rechteck, das angezeigt wird, mit einer `SKPaint` Objekt mit der `BlendMode` -Eigenschaft auf einen trennbare Blend-Modus festgelegt. Das Rechteck kann eine Volltonfarbe werden (wie es hier der Fall ist) oder einem Farbverlauf. Transparenz ist _nicht_ in der Regel mit der trennbare Füllmethoden einheitlich verwendet.
 
 Beim Experimentieren mit diesem Programm werden Sie feststellen, dass diese zwei Füllmethoden einheitlich nicht aufgehellt werden soll, und das Bild gleichmäßig Abdunkeln. Stattdessen die `Slider` scheint einen Schwellenwert für eine Art festzulegen. Erhöhen Sie zum Beispiel die `Slider` für die `Lighten` -Modus die dunkleren Bereiche des Bilds rufen Licht zuerst während der hellere Bereiche unverändert bleiben.
 
 Für die `Lighten` Modus, wenn das Zielpixel den RGB-Farbwert (Dr, GD,-Db), und das Pixel Quelle befindet sich die Farbe (Sr, Sg, Sb), und klicken Sie dann die Ausgabe ist (oder Og, Ob) wie folgt berechnet:
 
- "Oder" = Max (Disaster Recovery, Sr) Og = Max (Verteilergruppe, Sg) Ob = Max ("Db", "Sb")
+ `Or = max(Dr, Sr)` `Og = max(Dg, Sg)`
+ `Ob = max(Db, Sb)`
 
 Für Rot, Grün und Blau ist das Ergebnis, desto größer der Quelle und Ziel. Hierdurch werden die Auswirkungen der Aufhellen zuerst die dunklen Bereiche des Ziels.
 
 Die `Darken` Modus ist ähnlich, außer dass das Ergebnis kleiner als das Ziel und Quelle ist:
 
- "Oder" = min (Disaster Recovery, Sr) Og = min (Verteilergruppe, Sg) Ob = min ("Db", "Sb")
+ `Or = min(Dr, Sr)` `Og = min(Dg, Sg)`
+ `Ob = min(Db, Sb)`
 
 Die Komponenten roten, grünen und blauen sind jeweils separat behandelt diese Modi blend wird als bezeichnet die _trennbare_ Füllmethoden. Aus diesem Grund die Abkürzungen **Dc** und **Sc** kann für das Ziel und die Farben einer Quelle verwendet werden, und es wird davon ausgegangen, dass Berechnungen separat für jede der Komponenten roten, grünen und blauen gelten.
 
@@ -147,9 +149,9 @@ Die folgende Tabelle zeigt die trennbare Blend-Modi mit kurze erläuterungen zu 
 
 | Blend-Modus   | Keine Änderung | Vorgang |
 | ------------ | --------- | --------- |
-| `Plus`       | Schwarz     | Durch Hinzufügen von Farben hellt: Sc + Dc |
-| `Modulate`   | Weiß     | Dunkler wird durch Multiplikation von Farben: Sc· Domänencontroller | 
-| `Screen`     | Schwarz     | Produkt ergänzt ergänzt: Sc + Dc &ndash; Sc· Domänencontroller |
+| `Plus`       | Schwarz     | Hellt durch Hinzufügen von Farben: Sc + Dc |
+| `Modulate`   | Weiß     | Dunkler wird durch Multiplikation von Farben: Sc·Dc | 
+| `Screen`     | Schwarz     | Ergänzt Produkt ergänzt: Sc + Dc &ndash; Sc·Dc |
 | `Overlay`    | Grau      | Quantile `HardLight` |
 | `Darken`     | Weiß     | Mindestanzahl von Farben: min (Sc, Dc) |
 | `Lighten`    | Schwarz     | Maximale von Farben: Max (Sc, Dc) |
@@ -159,7 +161,7 @@ Die folgende Tabelle zeigt die trennbare Blend-Modi mit kurze erläuterungen zu 
 | `SoftLight`  | Grau      | Ähnlich wie bei der Auswirkung der weiche spotlight | 
 | `Difference` | Schwarz     | Subtrahiert von helleren dunkleren: Abs (Dc &ndash; Sc) | 
 | `Exclusion`  | Schwarz     | Ähnlich wie `Difference` jedoch niedrigere Kontrast |
-| `Multiply`   | Weiß     | Dunkler wird durch Multiplikation von Farben: Sc· Domänencontroller |
+| `Multiply`   | Weiß     | Dunkler wird durch Multiplikation von Farben: Sc·Dc |
 
 Ausführlichere Algorithmen finden Sie in der W3C [ **zusammensetzt und auf Ebene1 Blending** ](https://www.w3.org/TR/compositing-1/) -Spezifikation und die Skia [ **SkBlendMode Verweis** ](https://skia.org/user/api/SkBlendMode_Reference), obwohl die Schreibweise in diesen beiden Quellen nicht identisch ist. Beachten Sie, dass `Plus` wird häufig als Mischmodus Porter-Duff, betrachtet und `Modulate` ist nicht Teil der W3C-Spezifikation.
 

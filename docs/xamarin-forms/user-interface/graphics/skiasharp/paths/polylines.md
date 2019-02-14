@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: c6328135e0310c7b10b89bf2e32ce62869b15cfb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e7327deead917f55d1e7ac8af5302b6dccf6fead
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059985"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240356"
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylinien und parametrische Formeln
 
@@ -26,21 +26,21 @@ In der [ **SkiaSharp-Kurven und-Pfade** ](../curves/index.md) Abschnitt dieses H
 
 Im Allgemeinen empfiehlt es sich um eine Kurve in Bezug auf ein Paar von parametrische Formeln zu definieren. Hierbei handelt es sich um Gleichungen, für die X- und Y, die koordiniert eine dritte Variable bezeichnet hängen `t` Zeit. Die folgenden parametrischen Formeln definieren z. B. einen Kreis mit einem Radius von 1, zentriert am Punkt (0, 0) für *t* von 0 bis 1:
 
-X = cos(2πt)
+`x = cos(2πt)`
 
-y = sin(2πt)
+`y = sin(2πt)`
 
  Wenn Sie einen Radius verwenden möchten, die größer als 1, können Sie einfach den Sinus und Cosinus Werte Multiplizieren mit, Radius und wenn Sie die Mitte an einen anderen Speicherort verschieben möchten, fügen diese Werte:
 
-X = xCenter + radius·cos(2πt)
+`x = xCenter + radius·cos(2πt)`
 
-y = yCenter + radius·sin(2πt)
+`y = yCenter + radius·sin(2πt)`
 
 Für eine Ellipse mit der horizontalen und vertikalen Achsen Parallel sind zwei Radien beteiligt:
 
-X = xCenter + xRadius·cos(2πt)
+`x = xCenter + xRadius·cos(2πt)`
 
-y = yCenter + yRadius·sin(2πt)
+`y = yCenter + yRadius·sin(2πt)`
 
 Sie können dann den entsprechenden SkiaSharp-Code in einer Schleife einfügen, die die verschiedenen Punkte berechnet, und fügt diese in einen Pfad. Der folgende SkiaSharp-Code erstellt ein `SKPath` -Objekt für eine Ellipse, die die Anzeigeoberfläche ausfüllt. Die Schleife durchläuft die 360 Grad direkt aus. Das Center ist die Hälfte der Breite und Höhe der Anzeigeoberfläche und deshalb die zwei Radien:
 

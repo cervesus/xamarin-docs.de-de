@@ -4,13 +4,14 @@ description: In diesem Dokument wird die Klasse „Clipboard“ in Xamarin.Essen
 ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 90ede9d0d0fbee9efabcce25c0ae7c3c439d9e69
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 02/12/2019
+ms.custom: video
+ms.openlocfilehash: 3511850391b2be809daf2b70e81fa5b591db8dfa
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898702"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240343"
 ---
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials: Zwischenablage
 
@@ -50,3 +51,9 @@ var text = await Clipboard.GetTextAsync();
 
 - [Clipboard-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Clipboard)
 - [Clipboard-API-Dokumentation](xref:Xamarin.Essentials.Clipboard)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Clipboard-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

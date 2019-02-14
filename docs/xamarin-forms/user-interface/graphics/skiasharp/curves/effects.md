@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: 835663b2d9a9fa8557a31570f91492da95be7a9a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ee1df713315559c076fbfaed6f5a34057940ff36
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059190"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240395"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp-Effekten Pfad
 
@@ -416,13 +416,13 @@ Suchen Sie sehr nahe, und sehen Sie, dass dies tatsächlich Kreise sind nicht. J
 
 Eine Kette oder Kabel des uniform gewichtsverteilung hängt in Form einer Oberleitung. Ein Arch erstellt in Form einer invertierten Oberleitung profitiert von der eine gleichmäßige Verteilung der Druck von das Gewicht ein Arch. Der Oberleitung verfügt über eine scheinbar einfache mathematische Beschreibung:
 
-y = ein – COSH(x / a)
+`y = a · cosh(x / a)`
 
 Die *Cosh* ist die hyperbolische Kosinus-Funktion. Für *x* gleich 0 (null) *Cosh* ist 0 (null) und *y* gleich *eine*. Das ist der Mitte des der Oberleitung. Wie die *Kosinus* -Funktion *Cosh* gilt als *sogar*, was bedeutet, dass *cosh(–x)* gleich *cosh(x)*, und erhöhen Sie die Werte für die Steigerung der positiver oder negativer Arguments. Diese Werte beschreiben die Kurven, die die Seiten der Oberleitung bilden.
 
 Suchen den richtigen Wert von *eine* Anpassen der Oberleitung mit den Abmessungen des Telefons-Seite ist keine direkte Berechnung. Wenn *w* und *h* sind die Breite und Höhe eines Rechtecks, das den optimalen Wert für *eine* erfüllt die folgende Gleichung:
 
-COSH (w/2/a) = 1 + h / a
+`cosh(w / 2 / a) = 1 + h / a`
 
 Die folgende Methode in der [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) Klasse enthält, auf Gleichheit durch einen Verweis auf die beiden Ausdrücke auf der linken Seite und rechts neben dem Gleichheitszeichen als `left` und `right`. Bei kleinen Werten für *eine*, `left` ist größer als `right`; bei großen Werten für *eine*, `left` ist kleiner als `right`. Die `while` Schleife führt zu einer Einschränkung einer optimalen Wert, der *eine*:
 
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-Wenn Sie die Ergebnisse sorgfältig betrachten, sehen Sie sich, dass die rote und blaue schraffurlinien genau auf die abgerundetes Rechteck beschränkt sind nicht. (Dies ist offensichtlich ein Merkmal des zugrunde liegenden Codes Skia.) Wenn dies nicht zufriedenstellend ist, wird ein alternativer Ansatz für die diagonale schraffurlinien in grün angezeigt: abgerundete Rechteck als einen Freistellungspfad verwendet wird und die schraffurlinien auf die gesamte Seite gezeichnet werden.
+Wenn Sie die Ergebnisse sorgfältig betrachten, sehen Sie sich, dass die rote und blaue schraffurlinien genau auf die abgerundetes Rechteck beschränkt sind nicht. (Dies ist offensichtlich ein Merkmal des zugrunde liegenden Codes Skia.) Wenn dies nicht zufriedenstellend ist, ist ein alternativer Ansatz für die diagonale schraffurlinien in grün angezeigt: Abgerundete Rechteck als einen Freistellungspfad verwendet wird, und die schraffurlinien werden auf die gesamte Seite gezeichnet.
 
 Die `PaintSurface` Handler endet mit einem Aufruf von einfach die abgerundete Rechteck zu zeichnen, damit Sie die Abweichung mit dem roten und blauen schraffurlinien sehen können:
 
 [![](effects-images/hatchfill-small.png "Dreifacher Screenshot der Seite ausfüllen Schraffur")](effects-images/hatchfill-large.png#lightbox "dreifachen Screenshot der Seite ausfüllen Schraffur")
 
-Die Android-Bildschirm nicht wirklich, sehen Sie: die Skalierung des Screenshots die schmale rote Linien und thin zu scheinbar breiter roten Linien zusammenfassen, auch größeren Leerzeichen verursacht hat.
+Die Android-Bildschirm aussehen nicht wirklich: Die Skalierung des Screenshots hat die schmale rote Linien und thin zu scheinbar breiter roten Linien zusammenfassen, auch größeren Leerzeichen verursacht.
 
 ## <a name="filling-with-a-path"></a>Füllen mit einem Pfad
 
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 Nur die ersten beiden Argumente erforderlich sind. Die Methode greift auf den Pfad, der auf die verwiesen wird durch die `src` Argument ändert die Pfaddaten, die basierend auf den Stricheigenschaften in der `SKPaint` Objekt (einschließlich der `PathEffect` Eigenschaft), und schreibt dann die Ergebnisse in der `dst` Pfad. Die `resScale` Parameter ermöglicht, verringern Sie die Genauigkeit, um einen kleineren Zielpfad an, zu erstellen und die `cullRect` Argument Konturen außerhalb eines Rechtecks kann ausgeschlossen werden.
 
-Eine grundlegende Verwendung dieser Methode umfasst jedoch nicht das pfadeffekte überhaupt: Wenn die `SKPaint` Objekt verfügt über seine `Style` -Eigenschaft auf festgelegt `SKPaintStyle.Stroke`, und führt *nicht* haben die `PathEffect` festgelegt ist, `GetFillPath` erstellt ein Pfad ein, steht ein *Gliederung* von den Quellpfad, als ob es durch die Eigenschaften für die Paint-Element gezeichnet worden.
+Eine grundlegende Verwendung dieser Methode muss überhaupt keine pfadeffekte werden: Wenn die `SKPaint` Objekt verfügt über seine `Style` -Eigenschaft auf festgelegt `SKPaintStyle.Stroke`, und führt *nicht* haben die `PathEffect` festgelegt ist, `GetFillPath` erstellt einen Pfad, der darstellt ein *Gliederung*von den Quellpfad, als ob es durch die Eigenschaften für die Paint-Element gezeichnet worden.
 
 Z. B. wenn die `src` Pfad ist ein einfacher Kreis RADIUS 500, und die `SKPaint` Objekt gibt an, eine Strichbreite von 100, und klicken Sie dann die `dst` Pfad wird der beiden konzentrischen Kreise, eine mit einem Radius von 450 und der andere mit einem Radius von 550. Die Methode wird aufgerufen, `GetFillPath` , da dies ausfüllen `dst` Pfad entspricht dem Verlauf der `src` Pfad. Aber Sie können auch zeichnen die `dst` Pfades darauf, den Pfad beschreibt.
 
