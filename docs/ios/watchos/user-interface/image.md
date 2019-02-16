@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a9e23f1bfa6099c64a0a60d78ecc3c6283a86a96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6a2b8c99156963ae167aecd29a618d0feeffbdc7
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108085"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321128"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>WatchOS-Image-Steuerelemente in Xamarin
 
-WatchOS bietet eine [`WKInterfaceImage`](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) -Steuerelement zum Anzeigen von Bildern und einfache Animationen. Einige Steuerelemente können auch ein Bild als Hintergrund (z. B. Schaltflächen, Gruppen und Schnittstellencontroller) verfügen.
+WatchOS bietet eine [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) -Steuerelement zum Anzeigen von Bildern und einfache Animationen. Einige Steuerelemente können auch ein Bild als Hintergrund (z. B. Schaltflächen, Gruppen und Schnittstellencontroller) verfügen.
 
 ![](image-images/image-walkway.png "Apple Watch Anzeigen eines Bildes") ![](image-images/image-animation.png "Apple Watch mit einfachen Animation")
  <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
@@ -75,7 +75,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 ```
 
 
-## <a name="animations"></a>Animations
+## <a name="animations"></a>Animationen
 
 Um einen Satz von Bildern zu animieren, sollten sie alle mit dem gleichen Präfix beginnen und ein numerisches Suffix haben.
 

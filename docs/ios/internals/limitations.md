@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: 1ccbea1921b4e0c4189182696c8679d041eea60b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb8aec5a5054c28cf7862d14148e7f2000fa3a35
+ms.sourcegitcommit: c77f84a0686d16de6ac630271fccac719fd9eec4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113026"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56307917"
 ---
 # <a name="limitations-of-xamarinios"></a>Einschränkungen von Xamarin.iOS
 
-Da Anwendungen auf dem iPhone, die unter Verwendung von Xamarin.iOS in statischen Code kompiliert werden, ist es nicht möglich, alle Funktionen verwenden zu können, für die Generierung von Code zur Laufzeit erforderlich.
+Da Anwendungen, die unter Verwendung von Xamarin.iOS in statischen Code kompiliert werden, ist es nicht möglich, alle Funktionen verwenden zu können, für die Generierung von Code zur Laufzeit erforderlich.
 
 Dies sind die Xamarin.iOS-Einschränkungen, die im Vergleich zum Desktop Mono:
 
@@ -48,43 +48,12 @@ class Foo<T> : UIView {
 > Da generische Unterklassen von NSObjects möglich sind, gelten einige Einschränkungen. Lesen der [generische Unterklassen von NSObject](~/ios/internals/api-design/nsobject-generics.md) Dokument Weitere Informationen
 
 
-
-### <a name="pinvokes-in-generic-types"></a>P/Invokes in generischen Typen
-
-P/Invokes in generischen Klassen werden nicht unterstützt:
-
-```csharp
-class GenericType<T> {
-    [DllImport ("System")]
-    public static extern int getpid ();
-}
-```
-
- <a name="Property.SetInfo_on_a_Nullable_Type_is_not_supported" />
-
-
-### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>Property.SetInfo für einen Nullable-Typ wird nicht unterstützt.
-
-Mithilfe der Reflektion Property.SetInfo zum Festlegen des Werts auf einem Nullable&lt;T&gt; wird derzeit nicht unterstützt.
-
- <a name="Value_types_as_Dictionary_Keys" />
-
-
-### <a name="value-types-as-dictionary-keys"></a>Werttypen als Wörterbuchschlüssel
-
-Verwenden einen Werttyp als Wörterbuch&lt;TKey, TValue&gt; Schlüssel ist problematisch, der als Standard Wörterbuch-Konstruktor versucht, EqualityComparer&lt;TKey&gt;. Standardmäßig verwendet. EqualityComparer&lt;TKey&gt;. Standardmäßig versucht wiederum auf die Reflektion verwenden, um einen neuen Typ zu instanziieren, die die IEqualityComparer implementiert&lt;TKey&gt; Schnittstelle.
-
-Dies funktioniert für Verweistypen (wie die Reflektion und erstellen Sie einen neuen Typ Schritt übersprungen), aber nach Wert Typen sie stürzt ab und nutzt recht schnell, sobald Sie versuchen, auf dem Gerät zu verwenden.
-
- **Problemumgehung**: manuell implementieren die [IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1) -Schnittstelle in einen neuen Typ aus, und stellen eine Instanz dieses Typs die [Wörterbuch&lt;TKey, TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1) Konstruktor.
-
-
  <a name="No_Dynamic_Code_Generation" />
 
 
 ## <a name="no-dynamic-code-generation"></a>Keine dynamische Codegenerierung
 
-Da die iPhone-Kernel verhindert, dass eine Anwendung dynamisch generieren von Code unterstützt Mono auf dem iPhone keine Form von dynamische codegenerierung. Dazu gehören:
+Da der iOS-Kernel wird verhindert, eine Anwendung dynamisch generieren von Code dass, wird jede Form von dynamische codegenerierung von Xamarin.iOS nicht unterstützt. Dazu gehören:
 
 -  Die System.Reflection.Emit ist nicht verfügbar.
 -  Keine Unterstützung für System.Runtime.Remoting.
@@ -105,7 +74,7 @@ Das Fehlen von System.Reflection. **Ausgeben** bedeutet, die keinen Code, der vo
 -  Remoting TransparentProxy o. ä., die die Laufzeit zum Generieren von Code dynamisch verursachen würde. 
 
 
- **Wichtig:** ist nicht zu verwechseln **Reflection.Emit** mit **Reflektion**. Reflection.Emit zum Generieren von Code dynamisch ist und dieser Code JIT-kompilierten und zu systemeigen kompilierten Code. Aufgrund der Beschränkungen auf dem iPhone (keine JIT-Kompilierung) ist dies nicht unterstützt.
+ **Wichtig:** Verwechseln Sie nicht **Reflection.Emit** mit **Reflektion**. Reflection.Emit zum Generieren von Code dynamisch ist und dieser Code JIT-kompilierten und zu systemeigen kompilierten Code. Aufgrund von Beschränkungen für iOS (keine JIT-Kompilierung) ist dies nicht unterstützt.
 
 Aber der gesamte Reflektions-API, einschließlich der Type.GetType ("" SomeClass "bereitgestellt"), Auflisten von Methoden, Eigenschaften, auflisten, Abrufen von Attributen und Werten funktioniert problemlos.
 

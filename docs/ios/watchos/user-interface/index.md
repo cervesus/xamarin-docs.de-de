@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2016
-ms.openlocfilehash: a7be193cee60b40f70b3dd4a840e0a26ccb8c3b2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8ef76f24b017f5e3e6bec9d39534f3626e79147
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109002"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321102"
 ---
 # <a name="watchos-user-interface-controls-in-xamarin"></a>WatchOS-Steuerelemente der Benutzeroberfläche in Xamarin
 
@@ -44,4 +44,4 @@ Die programmgesteuerte Namen aller Steuerelemente enthält das Präfix `WKInterf
 ## <a name="related-links"></a>Verwandte Links
 
 - [WatchKitCatalog (Beispiel)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Sehen Sie sich Kit-API-Referenz](https://developer.xamarin.com/api/namespace/WatchKit/)
+- [Sehen Sie sich Kit-API-Referenz](xref:WatchKit)

@@ -8,16 +8,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7bfb0cad8bbc025bc5dba39abe3699ae77ee83ba
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 70ef341c066c77e214761d75c173faef00266e4c
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526480"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321154"
 ---
 # <a name="watchos-troubleshooting"></a>WatchOS Problembehandlung
 
-Diese Seite enthält zusätzliche Informationen und problemumgehungen für Features noch in Entwicklung. Einige der folgenden Vorgehensweisen gelten nur für unsere Preview-Versionen.
+Diese Seite enthält zusätzliche Informationen und problemumgehungen für Probleme, die auftreten können.
 
 - [Bekannte Probleme](#knownissues)
 
