@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: dbee8d3f55edee9c862b4c883b63b55f98972b48
+ms.sourcegitcommit: 0c2745c1593eee3ecb40ab882e854a13ca72bc86
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675093"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56078419"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms-App-Klasse
 
@@ -149,7 +149,6 @@ public class App : Xamarin.Forms.Application
 Diese Klasse wird dann in jedem plattformspezifischen Projekt instanziiert und an die `LoadApplication`-Methode übergeben, wo die `MainPage` geladen und dem Benutzer angezeigt wird.
 Der Code für jede Plattform wird in den folgenden Abschnitten gezeigt. Die neuesten Vorlagen der Xamarin.Forms-Projektmappe enthalten bereits diesen gesamten Code, der für Ihre App vorkonfiguriert wurde.
 
-
 ### <a name="ios-project"></a>iOS-Projekt
 
 Die iOS-`AppDelegate`-Klasse erbt von `FormsApplicationDelegate`. Sie sollte
@@ -196,8 +195,6 @@ public class MainActivity : FormsAppCompatActivity
 
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>UWP-Projekt (Universelle Windows-Plattform) für Windows 10
 
-Informationen zur UWP-Unterstützung in Xamarin.Forms finden Sie unter [Setup Windows Projects (Einrichten von Windows-Projekten)](~/xamarin-forms/platform/windows/installation/index.md).
-
 Die Hauptseite im UWP-Projekt sollte von `WindowsPage` erben:
 
 ```xaml
@@ -222,4 +219,6 @@ public sealed partial class MainPage
  }
 ```
 
-Beachten Sie, dass `Forms.Init()` in **App.xaml.cs** in der Nähe von Zeile 63 aufgerufen werden muss.
+Beachten Sie, dass `Forms.Init()` von **App.xaml.cs** im UWP-Projekt abgerufen werden muss.
+
+Weitere Informationen finden Sie unter [Setup Windows Projects (Einrichten von Windows-Projekten)](~/xamarin-forms/platform/windows/installation/index.md). In diesem Artikel werden Schritte zum Hinzufügen eines UWP-Projekts zu einer vorhandenen Xamarin.Forms-Lösung erläutert, die nicht auf UWP abzielt.
