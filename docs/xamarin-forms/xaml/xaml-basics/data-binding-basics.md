@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 65316bde1d1c709028eae39c19e5dc318821ff70
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 4a24c8dbb9ab4e23afa03de4ae2dbc55ddfb5fa4
+ms.sourcegitcommit: e000cc0765857c1d7f49538df9e62e9d3aa60775
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746881"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56334565"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
 
@@ -114,6 +114,7 @@ Die Lösung für dieses und andere Probleme umfasst die `Mode` -Eigenschaft, die
 - `OneWay` – Werte werden aus der Quelle zum Ziel übertragen
 - `OneWayToSource` – Werte vom Ziel zur Quelle übertragen werden
 - `TwoWay` – Werte werden in beide Richtungen zwischen Quelle und Ziel übertragen
+- `OneTime` – Daten werden von der Quelle zum Ziel, aber nur, wenn die `BindingContext` Änderungen
 
 Das folgende Programm zeigt häufig dazu verwendet die `OneWayToSource` und `TwoWay` Bindungsmodi. Vier `Slider` Sichten dienen der Kontrolle der `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften eine `Label`. Zunächst erscheint es als ob diese vier Eigenschaften der `Label` Datenbindung Ziele sollte sein werden, da jeder von festgelegt wird eine `Slider`. Allerdings die `BindingContext` von `Label` kann nur ein Objekt sein, und es gibt vier verschiedene Schieberegler.
 
