@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5c79ffd824033f528eb65d07581efefcf3895a9b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6f5a5512cef6ad870f60bca397404df450775de3
+ms.sourcegitcommit: ec99e64ee346adc3c338db13e93100bafee75460
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113221"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56331882"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Hardwarebeschleunigung für verbesserte Leistung des Emulators (Hyper-V und HAXM)
 
@@ -31,8 +31,8 @@ Ihnen stehen die folgenden Virtualisierungstechnologien zum Beschleunigen des An
 1. **Microsoft Hyper-V und die Hypervisor-Plattform**
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) ist ein Virtualisierungsfeature von Windows, mit dem virtualisierte Computersysteme auf einem physischen Hostcomputer ausgeführt werden können.
 
-2. **Intel Hardware Accelerated Execution Manager (HAXM)** 
-   Bei [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) handelt es sich um eine Virtualisierungs-Engine für Computer mit Intel-CPUs.
+2. **Intel Hardware Accelerated Execution Manager (HAXM)**
+   Bei HAXM handelt es sich um eine Virtualisierungs-Engine für Computer mit Intel-CPUs.
 
 Für optimale Leistung wird empfohlen, Hyper-V zum Beschleunigen des Android-Emulators zu verwenden. Wenn Hyper-V nicht für Ihren Computer verfügbar ist, können Sie HAXM verwenden. Der Android-Emulator verwendet die Hardwarebeschleunigung automatisch, wenn folgende Kriterien erfüllt sind:
 
@@ -82,7 +82,7 @@ Hyper-V wird auf der Windows Hypervisor-Plattform ausgeführt. Ihr Computer muss
 systeminfo
 ```
 
-Wenn alle Hyper-V-Anforderungen den Wert **Yes** (Ja) aufweisen, wird Hyper-V von Ihrem Computer unterstützt. Zum Beispiel:
+Wenn alle Hyper-V-Anforderungen den Wert **Yes** (Ja) aufweisen, wird Hyper-V von Ihrem Computer unterstützt. Beispiel:
 
 [![Beispielausgabe der Systeminformationen](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -122,7 +122,7 @@ Wenn Ihre Hardware HAXM unterstützt, können Sie überprüfen, ob HAXM bereits 
     sc query intelhaxm
     ```
 
-2. Überprüfen Sie die Ausgabe, um festzustellen, ob der HAXM-Prozess ausgeführt wird. Wenn er ausgeführt wird, wird der Zustand `intelhaxm` in der Ausgabe als `RUNNING` aufgeführt. Zum Beispiel:
+2. Überprüfen Sie die Ausgabe, um festzustellen, ob der HAXM-Prozess ausgeführt wird. Wenn er ausgeführt wird, wird der Zustand `intelhaxm` in der Ausgabe als `RUNNING` aufgeführt. Beispiel:
 
     ![Ausgabe des Befehls „sc query“, wenn HAXM verfügbar ist](hardware-acceleration-images/win/05-sc_query-w158.png)
 
