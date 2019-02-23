@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: fa0ad282fedecec8f5ca4e94e7119c36ef182261
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116016"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666934"
 ---
 # <a name="external-storage"></a>Externen Speicher
 
@@ -80,7 +80,7 @@ Für Geräte, die über mehrere Partitionen von externen Speicher verfügen, wir
 In diesem Dokument wird das Storage-Verzeichnis für Öffentliche Dateien, die auf externen speichern wie finden Sie unter _öffentliche\_externe\_STORAGE_.
 
 
-Android unterstützt auch das Konzept von Verzeichnissen auf _öffentliche\_externe\_STORAGE_. Diese Verzeichnisse sind identisch mit der Anwendung Diretories für `_PRIVATE\_EXTERNAL\_STORAGE_` und werden in der Tabelle im vorherigen Abschnitt beschrieben. Die Methode `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` gibt eine `Java.IO.File` -Objekt, das in ein Verzeichnis für die public-Anwendung zu entsprechen. Die `directoryType` Parameter ist ein obligatorischer Parameter und kann nicht `null`.
+Android unterstützt auch das Konzept von Verzeichnissen auf _öffentliche\_externe\_STORAGE_. Diese Verzeichnisse sind identisch mit den Verzeichnissen für `_PRIVATE\_EXTERNAL\_STORAGE_` und werden in der Tabelle im vorherigen Abschnitt beschrieben. Die Methode `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` gibt eine `Java.IO.File` -Objekt, das in ein Verzeichnis für die public-Anwendung zu entsprechen. Die `directoryType` Parameter ist ein obligatorischer Parameter und kann nicht `null`.
 
 Zum Beispiel der Aufruf `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` gibt eine Zeichenfolge, die ähneln wird:
 
@@ -181,4 +181,4 @@ System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/file
 ## <a name="related-links"></a>Verwandte Links
 
 * [Lokale Dateien von Xamarin.Android-Beispiel auf **Monodroid-Beispiele**](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
-* [Berechtigungen In Xamarin.Android](~/android/app-fundamentals/permissions.md)
+* [Permissions In Xamarin.Android](~/android/app-fundamentals/permissions.md)
