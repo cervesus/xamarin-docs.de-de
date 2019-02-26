@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 1b90a3184b89ba9147525a87b52e048bbb59f5af
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9441522af53a1240707eeb21ff9f583501d2491d
+ms.sourcegitcommit: 16a42b69176a40cde71e177079b11e15d300d042
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061149"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56795445"
 ---
 # <a name="fonts-in-xamarinforms"></a>Schriftarten in Xamarin.Forms
 
@@ -97,27 +97,19 @@ Ist eine gute Quelle für die Schriftartinformationen für iOS [iosfonts.com](ht
 
 ## <a name="setting-the-font-in-xaml"></a>Festlegen der Schrift in XAML
 
-Xamarin.Forms-Steuerelemente, Anzeigetext, die alle verfügen über eine `Font` -Eigenschaft, die in XAML festgelegt werden kann. Die einfachste Möglichkeit zum Festlegen der Schriftart in XAML ist die Verwendung der benannten Größe-Enumerationswerte fest, wie im folgenden Beispiel gezeigt:
+Xamarin.Forms-Steuerelemente, Anzeigetext, die alle verfügen über eine `FontSize` -Eigenschaft, die in XAML festgelegt werden kann. Die einfachste Möglichkeit zum Festlegen der Schriftart in XAML ist die Verwendung der benannten Größe-Enumerationswerte fest, wie im folgenden Beispiel gezeigt:
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-Es ist ein integrierte Konverter für die `Font` -Eigenschaft, die alle Einstellungen für die Systemschriftart in XAML als Zeichenfolge ausgedrückt werden kann. Die folgenden Beispiele zeigen, wie Sie Schriftartattribute und Größe in XAML angeben können:
+Es ist ein integrierte Konverter für die `FontSize` -Eigenschaft, die alle Einstellungen für die Systemschriftart in XAML als Zeichenfolge ausgedrückt werden kann. Darüber hinaus die `FontAttributes` Eigenschaft kann verwendet werden, um die Schriftartattribute angeben:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
 <Label Text="Biggest NamedSize" FontSize="Large" />
 <Label Text="Use size 72" FontSize="72" />
-```
-
-Angeben mehrerer `Font` Einstellungen kombinieren Sie die erforderlichen Einstellungen in einem einzelnen `Font` Attribut-Zeichenfolge. Die Schriftart-Attribut-Zeichenfolge formatiert werden sollen, als `"[font-face],[attributes],[size]"`. Die Reihenfolge der Parameter ist wichtig, alle Parameter sind optional, und mehrere `attributes` kann angegeben werden, z.B.:
-
-```xaml
-<Label Text="Small bold text" Font="Bold, Micro" />
-<Label Text="Medium custom font" Font="MarkerFelt-Thin, 42" />
-<Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
 [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) kann auch in XAML verwendet werden um zu eine andere Schriftart auf jeder Plattform zu rendern. Im folgenden Beispiel wird eine benutzerdefinierte Schriftart unter iOS (<span style="font-family:MarkerFelt-Thin">MarkerFelt-dünn</span>) und gibt nur die Größe/Attribute auf den anderen Plattformen:
