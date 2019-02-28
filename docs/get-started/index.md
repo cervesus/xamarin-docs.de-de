@@ -21,7 +21,7 @@ _Bei Xamarin.Forms handelt es sich um ein plattformübergreifendes Toolkit, mit 
 
 ## <a name="requirementsinstallationmd"></a>[Anforderungen](installation.md)
 
-Hier finden Sie eine Übersicht über die Plattformanforderungen für Apps, welche mit Xamarin.Forms entwickelt wurden, sowie die Mindestsystemanforderungen, für die Entwicklung mit Xamarin.Forms in Visual Studio für Mac und Visual Studio.
+Hier finden Sie eine Übersicht über die Plattformanforderungen für Apps, die mit Xamarin.Forms entwickelt wurden, sowie die Mindestsystemanforderungen für die Entwicklung mit Xamarin.Forms in Visual Studio für Mac und Visual Studio.
 
 ## <a name="installationcross-platformget-startedinstallationindexmd"></a>[Installation](~/cross-platform/get-started/installation/index.md)
 
