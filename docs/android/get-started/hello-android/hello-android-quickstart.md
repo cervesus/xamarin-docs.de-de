@@ -463,7 +463,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-Speichern Sie Ihre Arbeit, und erstellen Sie die Anwendung, indem Sie **Erstellen > Alle erstellen** auswählen (oder durch Drücken von **& #8984; + B**). Wenn die Anwendung kompiliert wird, erhalten Sie eine Erfolgsmeldung am oberen Rand von Visual Studio für Mac:
+Speichern Sie Ihre Arbeit, und erstellen Sie die Anwendung, indem Sie **Erstellen > Alle erstellen** auswählen (oder durch Drücken von **&#8984; + B**). Wenn die Anwendung kompiliert wird, erhalten Sie eine Erfolgsmeldung am oberen Rand von Visual Studio für Mac:
 
 Wenn Fehler auftreten, wiederholen Sie die vorherigen Schritte, und beheben Sie alle Fehler, bis die Anwendung erfolgreich erstellt wird. Wenn Sie einen Buildfehler wie _Resource does not exist in the current context_ (Ressource ist im aktuellen Kontext nicht vorhanden) erhalten, überprüfen Sie, ob der Name des Namespaces in **MainActivity.cs** dem Projektnamen (`Phoneword`) entspricht, und erstellen Sie dann die Projektmappe völlig neu. Wenn weiterhin Buildfehler auftreten, stellen Sie sicher, dass Sie die neuesten Updates für Xamarin.Android und Visual Studio für Mac installiert haben.
 
