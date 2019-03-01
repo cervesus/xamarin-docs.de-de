@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 3bfb8a10eab1a8a75a3f2048de1ce219df9bde66
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057664"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666908"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Die Klasse MasterDetailPage von Xamarin.Forms
 
@@ -48,7 +48,7 @@ Das Verhalten der Navigationsfunktion zwischen Master- und Detailseiten ist plat
 
 - Unter iOS können Sie die Detailseite nach rechts und die Masterseite nach links *schieben*, und der linke Teil der Detailseite bleibt weiterhin sichtbar.
 - Unter Android werden die Detail- und Masterseiten miteinander *überlagert*.
-- Bei der UWP werden die Detail- und Masterseiten *ausgetauscht*.
+- Auf der Universellen Windows-Plattform werden Masterseiten von der linken Seite aus eingeblendet und bedecken die Detailseite teilweise, sofern die Eigenschaft [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) auf `Popover` festgelegt ist. Weitere Informationen finden Sie unter [Steuern des Anzeigeverhaltens der Detailseite](#Controlling_the_Detail_Page_Display_Behavior).
 
 Im Querformat wird ein ähnliches Verhalten angewandt, mit der Ausnahme, dass die Masterseite unter iOS und Android eine ähnliche Breite wie die Masterseite im Hochformat aufweist, weshalb mehr von der Detailseite angezeigt wird.
 
@@ -291,7 +291,6 @@ Allerdings wirkt sich der Wert der [`MasterBehavior`](xref:Xamarin.Forms.MasterD
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde veranschaulicht, wie Sie eine [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)-Klasse verwenden und zwischen den Seiten mit Informationen navigieren. Die `MasterDetailPage`-Klasse ist eine Xamarin.Forms-Seite, die zwei verwandte Seiten mit Informationen verwaltet. Eine davon ist die Masterseite, die Elemente darstellt, und die andere ist eine Detailseite, die Informationen zu Elementen auf der Masterseite darstellt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 
