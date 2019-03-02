@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: aacc63af53d7408b61f01054d49fa2b436588fc7
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 8e466c80468551f8262cfe49556d9527a147de4c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293041"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197549"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Tieferer Einblick in Xamarin.Forms-Schnellstart
 
-In der [Xamarin.Forms-Schnellstart](~/get-started/index.md), die Anmerkungen zu dieser Anwendung erstellt wurde. In diesem Artikel wird dieser Vorgang noch einmal genauer betrachtet, um ein Verständnis für die Funktionsweise von Xamarin.Forms-Anwendungen zu erarbeiten.
+In der [Xamarin.Forms-Schnellstart](~/get-started/index.yml), die Anmerkungen zu dieser Anwendung erstellt wurde. In diesem Artikel wird dieser Vorgang noch einmal genauer betrachtet, um ein Verständnis für die Funktionsweise von Xamarin.Forms-Anwendungen zu erarbeiten.
 
 ::: zone pivot="windows"
 
@@ -373,7 +373,7 @@ Weitere Informationen zur hierarchischen Navigation finden Sie unter [Hierarchic
 
 Datenbindung wird verwendet, um die Vorgänge zu vereinfachen, über die in einer Xamarin.Forms-Anwendung Daten angezeigt werden und interagieren. Sie stellt eine Verbindung zwischen der Benutzeroberfläche und der zugrundeliegenden Anwendung her. Die [`BindableObject`](xref:Xamarin.Forms.BindableObject)-Klasse beinhaltet einen Großteil der Infrastruktur, um die Datenbindung zu unterstützen.
 
-Bei der Datenbindung werden zwei Objekte miteinander verbunden: die *Quelle* und das *Ziel*. Das *Quellobjekt* stellt die Daten bereit. Das *Zielobjekt* verwendet Daten aus dem Quellobjekt (und zeigt diese häufig an). Mit einer [`Editor`](xref:Xamarin.Forms.Editor) (*Zielobjekt*) wird die zugehörige Eigenschaft [`Text`](xref:Xamarin.Forms.Editor.Text) beispielsweise häufig an eine öffentliche Eigenschaft `string` in einem *Quellobjekt* gebunden. Das folgende Diagramm veranschaulicht die Bindungsbeziehung:
+Bei der Datenbindung werden zwei Objekte miteinander verbunden: die *Quelle* und das *Ziel*. Das *Quellobjekt* stellt die Daten bereit. Das *Zielobjekt* verwendet Daten aus dem Quellobjekt (und zeigt diese häufig an). Z. B. eine [ `Editor` ](xref:Xamarin.Forms.Editor) (*Ziel* Objekt) verbindet sich häufig die [ `Text` ](xref:Xamarin.Forms.Editor.Text) an eine öffentliche `string` -Eigenschaft in einem *Quelle* Objekt. Das folgende Diagramm veranschaulicht die Bindungsbeziehung:
 
 ![](deepdive-images/data-binding.png "Datenbindung")
 

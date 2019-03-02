@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 7696ece64da28f05bb15866214de4a7f1103d06f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dddd41f064be5e7840b6b86d86faec8045b476bf
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293017"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197224"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Erstellen Sie eine einzelne Seite Xamarin.Forms-Anwendung
 
@@ -38,7 +38,7 @@ Der Schnellstart erläutert, wie Sie eine plattformübergreifende Xamarin.Forms-
 - Kenntnisse C#.
 - (optional) Einem gekoppelten Mac zum Erstellen der Anwendung unter iOS.
 
-Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren von Xamarin](~/cross-platform/get-started/installation/index.md). Weitere Informationen zum Verbinden von Visual Studio 2017 mit einem Mac-buildhost, finden Sie unter [-Paar, das Mac für Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md). Weitere Informationen zum Verbinden von Visual Studio 2017 mit einem Mac-buildhost, finden Sie unter [-Paar, das Mac für Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 ## <a name="get-started-with-visual-studio"></a>Erste Schritte mit Visual Studio
 
@@ -92,7 +92,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
     </ContentPage>
     ```
 
-    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus einer [`Label`](xref:Xamarin.Forms.Label) zum Anzeigen von Text, einem [`Editor`](xref:Xamarin.Forms.Editor) für die Texteingabe und zwei [`Button`](xref:Xamarin.Forms.Button)-Instanzen besteht, die die Anwendung zum Speichern oder Löschen einer Datei anweisen. Die beiden `Button`-Instanzen sind horizontal in einem [`Grid`](xref:Xamarin.Forms.Grid) angeordnet, wobei die `Label`, `Editor` und `Grid` vertikal in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) angeordnet sind. Weitere Informationen zum Erstellen der Benutzeroberfläche finden Sie unter [Benutzeroberfläche](deepdive.md#user-interface) in die [tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md).
+    Dieser Code definiert deklarativ die Benutzeroberfläche auf der Seite besteht aus einem [ `Label` ](xref:Xamarin.Forms.Label) zum Anzeigen von Text, ein [ `Editor` ](xref:Xamarin.Forms.Editor) für Texteingabe und die beiden [ `Button` ](xref:Xamarin.Forms.Button) -Instanzen, die die Anwendung zu speichern oder Löschen einer Datei zu leiten. Die beiden `Button`-Instanzen sind horizontal in einem [`Grid`](xref:Xamarin.Forms.Grid) angeordnet, wobei die `Label`, `Editor` und `Grid` vertikal in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) angeordnet sind. Weitere Informationen zum Erstellen der Benutzeroberfläche finden Sie unter [Benutzeroberfläche](deepdive.md#user-interface) in die [tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md).
 
     Speichern Sie die Änderungen an **MainPage.xaml**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
@@ -188,7 +188,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 - Xcode (neuestes Release).
 - Kenntnisse C#.
 
-Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren von Xamarin](~/cross-platform/get-started/installation/index.md).
+Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md).
 
 ## <a name="get-started-with-visual-studio-for-mac"></a>Erste Schritte mit Visual Studio für Mac
 
@@ -246,7 +246,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
     </ContentPage>
     ```
 
-    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus einer [`Label`](xref:Xamarin.Forms.Label) zum Anzeigen von Text, einem [`Editor`](xref:Xamarin.Forms.Editor) für die Texteingabe und zwei [`Button`](xref:Xamarin.Forms.Button)-Instanzen besteht, die die Anwendung zum Speichern oder Löschen einer Datei anweisen. Die beiden `Button`-Instanzen sind horizontal in einem [`Grid`](xref:Xamarin.Forms.Grid) angeordnet, wobei die `Label`, `Editor` und `Grid` vertikal in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) angeordnet sind. Weitere Informationen zum Erstellen der Benutzeroberfläche finden Sie unter [Benutzeroberfläche](deepdive.md#user-interface) in die [tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md).
+    Dieser Code definiert deklarativ die Benutzeroberfläche auf der Seite besteht aus einem [ `Label` ](xref:Xamarin.Forms.Label) zum Anzeigen von Text, ein [ `Editor` ](xref:Xamarin.Forms.Editor) für Texteingabe und die beiden [ `Button` ](xref:Xamarin.Forms.Button) -Instanzen, die die Anwendung zu speichern oder Löschen einer Datei zu leiten. Die beiden `Button`-Instanzen sind horizontal in einem [`Grid`](xref:Xamarin.Forms.Grid) angeordnet, wobei die `Label`, `Editor` und `Grid` vertikal in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) angeordnet sind. Weitere Informationen zum Erstellen der Benutzeroberfläche finden Sie unter [Benutzeroberfläche](deepdive.md#user-interface) in die [tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md).
 
     Speichern Sie die Änderungen an **MainPage.xaml**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 

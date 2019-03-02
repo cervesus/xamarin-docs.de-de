@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 48b1c93afa22bf069a2b47b6c9a259641e8ed70f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293035"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197367"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Führen Sie die Navigation in einer mehrseitigen Xamarin.Forms-Anwendung
 
@@ -114,7 +114,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](sin
       </ContentPage>
       ```
 
-      Dieser Code definiert deklarativ die Benutzeroberfläche auf der Seite besteht aus einer [ `Editor` ](xref:Xamarin.Forms.Editor) für Texteingabe und die beiden [ `Button` ](xref:Xamarin.Forms.Button) -Instanzen, die direkte die Anwendung zu speichern oder Löschen einer die Datei. Die beiden `Button` Instanzen horizontal angeordnet wird einem [ `Grid` ](xref:Xamarin.Forms.Grid), mit der `Editor` und `Grid` wird vertikal angeordnet, eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Darüber hinaus die `Editor` verwendet die Datenbindung zum Binden an die `Text` Eigenschaft der `Note` Modell. Weitere Informationen zur Datenbindung finden Sie unter [Datenbindung](deepdive.md#data-binding) in die [tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md).
+      Dieser Code definiert deklarativ die Benutzeroberfläche auf der Seite besteht aus einem [ `Editor` ](xref:Xamarin.Forms.Editor) für Texteingabe und die beiden [ `Button` ](xref:Xamarin.Forms.Button) Instanzen, die die Anwendung zu speichern oder Löschen von weiterleiten eine Datei. Die beiden `Button` Instanzen horizontal angeordnet wird einem [ `Grid` ](xref:Xamarin.Forms.Grid), mit der `Editor` und `Grid` wird vertikal angeordnet, eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Darüber hinaus die `Editor` verwendet die Datenbindung zum Binden an die `Text` Eigenschaft der `Note` Modell. Weitere Informationen zur Datenbindung finden Sie unter [Datenbindung](deepdive.md#data-binding) in die [tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md).
 
       Speichern Sie die Änderungen an **NoteEntryPage.xaml** durch Drücken von **STRG + S**, und schließen Sie die Datei.
 
@@ -399,7 +399,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](sin
       </ContentPage>
       ```
 
-      Dieser Code definiert deklarativ die Benutzeroberfläche auf der Seite besteht aus einer [ `Editor` ](xref:Xamarin.Forms.Editor) für Texteingabe und die beiden [ `Button` ](xref:Xamarin.Forms.Button) -Instanzen, die direkte die Anwendung zu speichern oder Löschen einer die Datei. Die beiden `Button` Instanzen horizontal angeordnet wird einem [ `Grid` ](xref:Xamarin.Forms.Grid), mit der `Editor` und `Grid` wird vertikal angeordnet, eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Darüber hinaus die `Editor` verwendet die Datenbindung zum Binden an die `Text` Eigenschaft der `Note` Modell. Weitere Informationen zur Datenbindung finden Sie unter [Datenbindung](deepdive.md#data-binding) in die [tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md).
+      Dieser Code definiert deklarativ die Benutzeroberfläche auf der Seite besteht aus einem [ `Editor` ](xref:Xamarin.Forms.Editor) für Texteingabe und die beiden [ `Button` ](xref:Xamarin.Forms.Button) Instanzen, die die Anwendung zu speichern oder Löschen von weiterleiten eine Datei. Die beiden `Button` Instanzen horizontal angeordnet wird einem [ `Grid` ](xref:Xamarin.Forms.Grid), mit der `Editor` und `Grid` wird vertikal angeordnet, eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Darüber hinaus die `Editor` verwendet die Datenbindung zum Binden an die `Text` Eigenschaft der `Note` Modell. Weitere Informationen zur Datenbindung finden Sie unter [Datenbindung](deepdive.md#data-binding) in die [tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md).
 
       Speichern Sie die Änderungen an **NoteEntryPage.xaml** dazu **Datei > Speichern** (oder durch Drücken der  **&#8984; + S**), und schließen Sie die Datei.
 
