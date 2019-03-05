@@ -1,0 +1,93 @@
+items:
+- name: Erste Schritte
+  href: index.yml
+  items:
+  - name: Anforderungen
+    href: requirements.md
+  - name: Installation
+    href: installation/index.md
+    items:
+    - name: Installieren von Xamarin unter Windows
+      href: installation/windows.md
+      items:
+      - name: Installieren von Xamarin-Vorschauversionen (Windows)
+        href: installation/windows-preview.md
+    - name: Installieren von Visual Studio für Mac
+      href: /visualstudio/mac/installation/
+      items:
+      - name: Installieren von Xamarin-Vorschauversionen (Mac)
+        href: /visualstudio/mac/update/
+    - name: Xamarin-Firewall-Konfigurationsanleitung
+      href: installation/firewall.md
+    - name: Deinstallieren von Xamarin
+      href: installation/uninstalling-xamarin.md
+  - name: Erste App
+    href: first-app/index.md
+  - name: Schnellstarts
+    href: quickstarts/index.yml
+    items:
+    - name: Datei > Neu
+      href: quickstarts/single-page.md
+    - name: Mehrseitig
+      href: quickstarts/multi-page.md
+    - name: Datenbank
+      href: quickstarts/database.md
+    - name: Format
+      href: quickstarts/styling.md
+    - name: Vertiefung
+      href: quickstarts/deepdive.md
+    expanded: true
+  - name: Tutorials
+    href: tutorials/index.yml
+    items:
+    - name: Stapellayout
+      href: tutorials/stacklayout/index.yml
+    - name: Bezeichnung
+      href: tutorials/label/index.yml
+    - name: Schaltfläche
+      href: tutorials/button/index.yml
+    - name: Texteintrag
+      href: tutorials/entry/index.yml
+    - name: Text-Editor
+      href: tutorials/editor/index.yml
+    - name: Bilder
+      href: tutorials/image/index.yml
+    - name: Rasterlayout
+      href: tutorials/grid/index.yml
+    - name: Listen
+      href: tutorials/listview/index.yml
+    - name: Popupelemente
+      href: tutorials/pop-ups/index.yml
+    - name: App-Lebenszyklus
+      href: tutorials/app-lifecycle/index.yml
+    - name: Lokale Datenbank
+      href: tutorials/local-database/index.yml
+    - name: Webdienste
+      href: tutorials/web-service/index.yml
+    expanded: true
+  - name: Informationen zu Xamarin
+    items:
+    - name: Native Apps
+      href: ~/cross-platform/get-started/introduction-to-mobile-development.md
+    - name: .NET-Entwickler
+      href: ~/cross-platform/desktop/index.md
+    - name: ASP.NET-Entwickler
+      href: ~/cross-platform/desktop/index.md
+    - name: Java-Entwickler
+      href: ~/android/get-started/java-developers.md
+    - name: Swift-Entwickler
+      href: ~/ios/get-started/objective-c-developers/index.md
+    - name: Objective-C-Entwickler
+      href: ~/ios/get-started/objective-c-developers/index.md
+    - name: Azure
+      href: ~/xamarin-forms/data-cloud/index.md
+    expanded: true
+  - name: Anleitung zur Entwicklung
+    href: ~/cross-platform/index.yml
+  expanded: true
+ms.openlocfilehash: 9acbdb260877a0cb835b5f9f05fe6faa0f0a3bb0
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57198506"

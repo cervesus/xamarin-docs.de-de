@@ -1,0 +1,112 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 8df0acd20f07235608520c09897b6faf3e1eb99e
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57198746"
+documentType: LandingData
+title: Xamarin.Forms-Tutorials
+metadata:
+  title: Xamarin.Forms-Tutorials
+  description: Tutorials zur Entwicklung von Xamarin-Apps mit Visual Studio und Visual Studio für Mac.
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 8E3D88AE-923E-4B7C-ABAC-058A25A48BBF
+  ms.technology: xamarin-forms
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 02/14/2018
+abstract:
+  description: Diese Seite enthält Links zu Tutorials, in denen Sie mehr über die Grundlagen bei der Erstellung mobiler Apps mit Xamarin.Forms erfahren. Die vollständige Xamarin.Forms-Dokumentation finden Sie unter <a href="/xamarin/xamarin-forms/">Xamarin.Forms-Dokumentation</a>.
+sections:
+- title: Layouts
+  items:
+  - type: list
+    style: cards
+    className: cardsB
+    items:
+    - href: stacklayout/
+      html: Erfahren Sie, wie Sie Ansichten in einem eindimensionalen Stapel entweder horizontal oder vertikal anordnen.
+      image:
+        src: https://docs.microsoft.com/media/common/i_dashboard.svg
+        href: stacklayout/
+      title: StackLayout
+    - href: grid/
+      html: Erfahren Sie, wie Sie Ansichten in Zeilen und Spalten anordnen, die proportionale oder absolute Abmessungen aufweisen können.
+      image:
+        src: https://docs.microsoft.com/media/common/i_table.svg
+        href: grid/
+      title: Raster
+- title: Ansichten
+  items:
+  - type: list
+    style: cards
+    className: cardsB
+    items:
+    - href: label/
+      html: Erfahren Sie, wie Sie Text einzeilig oder mehrzeilig anzeigen.
+      image:
+        src: ~/media/icons/i_form-label.svg
+        href: label/
+      title: Bezeichnung
+    - href: button/
+      html: Erfahren Sie, wie Sie eine Reaktion auf ein Tippen oder Klicken auf eine Schaltfläche erstellen, über die eine Anwendung eine bestimmte Aufgabe ausführt.
+      image:
+        src: https://docs.microsoft.com/media/common/i_button.svg
+        href: button/
+      title: Schaltfläche
+    - href: entry/
+      html: Erfahren Sie, wie Sie einzeilige Texteingaben akzeptieren.
+      image:
+        src: ~/media/icons/i_form-entry.svg
+        href: entry/
+      title: Eingabe
+    - href: editor/
+      html: Erfahren Sie, wie Sie mehrzeilige Texteingaben akzeptieren.
+      image:
+        src: ~/media/icons/i_form-editor.svg
+        href: editor/
+      title: Editor
+    - href: image/
+      html: Erfahren Sie, wie Sie Bilder auf einer Seite anzeigen.
+      image:
+        src: https://docs.microsoft.com/media/common/i_account-management.svg
+        href: image/
+      title: Bild
+    - href: listview/
+      html: Erfahren Sie, wie Sie Listen mit Daten präsentieren.
+      image:
+        src: https://docs.microsoft.com/media/common/i_sharepoint-list.svg
+        href: listview/
+      title: ListView
+- title: App-Grundlagen
+  items:
+  - type: list
+    style: cards
+    className: cardsB
+    items:
+    - href: pop-ups/
+      html: Erfahren Sie, wie Sie Warnungen und Aktionsblätter mit Xamarin.Forms anzeigen, um Benutzern einfache Fragen zu stellen und durch Aufgaben zu leiten.
+      image:
+        src: https://docs.microsoft.com/media/common/i_alert.svg
+        href: pop-ups/
+      title: Popupelemente
+    - href: app-lifecycle/
+      html: Erfahren Sie mehr zum Lebenszyklus der Xamarin.Forms-App und darüber, wie Sie Daten auch bei Zustandsänderungen des Lebenszyklus beibehalten können.
+      image:
+        src: https://docs.microsoft.com/media/common/i_agile.svg
+        href: app-lifecycle/
+      title: App-Lebenszyklus
+    - href: local-database/
+      html: Erfahren Sie, wie Sie das SQLite.NET-NuGet-Paket einsetzen, um Vorgänge lokaler Datenbanken in eine App einzubinden.
+      image:
+        src: https://docs.microsoft.com/media/common/i_generic-database.svg
+        href: local-database/
+      title: Lokale Datenbank
+    - href: web-service/
+      html: Erfahren Sie, wie Sie REST-basierte Webdienste aus Xamarin.Forms nutzen.
+      image:
+        src: https://docs.microsoft.com/media/common/i_server.svg
+        href: web-service/
+      title: Webdienste

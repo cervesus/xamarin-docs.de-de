@@ -2,29 +2,12 @@ items:
 - name: Plattformübergreifend
   href: index.yml
   items:
-  - name: Erste Schritte
+  - name: Erstellen von mobilen Apps
     href: get-started/index.md
     items:
     - name: Anforderungen
       displayName: System requirements
       href: get-started/requirements.md
-    - name: Installation
-      href: get-started/installation/index.md
-      items:
-      - name: Installieren von Xamarin unter Windows
-        href: get-started/installation/windows.md
-        items:
-        - name: Installieren von Xamarin-Vorschauversionen (Windows)
-          href: get-started/installation/windows-preview.md
-      - name: Installieren von Visual Studio für Mac
-        href: /visualstudio/mac/installation/
-        items:
-        - name: Installieren von Xamarin-Vorschauversionen (Mac)
-          href: /visualstudio/mac/update/
-      - name: Xamarin-Firewall-Konfigurationsanleitung
-        href: get-started/installation/firewall.md
-      - name: Deinstallieren von Xamarin
-        href: get-started/installation/uninstalling-xamarin.md
     - name: Einführung in die Entwicklung mobiler Anwendungen
       href: get-started/introduction-to-mobile-development.md
     - name: Einführung in den mobilen SDLC
@@ -192,9 +175,9 @@ items:
   - name: Proben
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 5eb01503b809979ebbc6598cf1cde985d3431bad
-ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
+ms.openlocfilehash: 083bc3dc1dbd392977b0d4902e37fe0f78513c29
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54841327"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197328"
