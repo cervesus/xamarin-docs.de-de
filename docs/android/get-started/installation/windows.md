@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: c208bae61f425ccdb69e0543c7686891a7add358
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 26865fdbfc1cc6f11a978a70bd768e63771bcd4b
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113182"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197471"
 ---
 # <a name="windows-installation"></a>Windows-Installation
 
@@ -36,7 +36,7 @@ Bis zum Ende dieses Leitfadens werden Sie über eine funktionierende Xamarin.And
 
 ## <a name="installation"></a>Installation
 
-Ausführliche Informationen zum Installieren von Xamarin für die Verwendung mit Visual Studio unter Windows finden Sie im [Installationshandbuch für Windows](~/cross-platform/get-started/installation/windows.md).
+Ausführliche Informationen zum Installieren von Xamarin für die Verwendung mit Visual Studio unter Windows finden Sie im [Installationshandbuch für Windows](~/get-started/installation/windows.md).
 
 
 ## <a name="configuration"></a>Konfiguration
@@ -119,7 +119,7 @@ Im nächsten Schritt schauen Sie sich die [Hallo, Android](~/android/get-started
 ## <a name="related-links"></a>Verwandte Links
 
 - [Herunterladen von Visual Studio](https://visualstudio.microsoft.com/vs/)
-- [Installieren von Visual Studio-Tools für Xamarin](~/cross-platform/get-started/installation/windows.md)
+- [Installieren von Visual Studio-Tools für Xamarin](~/get-started/installation/windows.md)
 - [Systemanforderungen](~/cross-platform/get-started/requirements.md)
 - [Android SDK-Setup](~/android/get-started/installation/android-sdk.md)
 - [Setup von Android-Emulator](~/android/get-started/installation/android-emulator/index.md)

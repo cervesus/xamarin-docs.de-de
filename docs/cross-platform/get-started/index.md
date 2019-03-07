@@ -1,22 +1,17 @@
 ---
 title: Erste Schritte mit Xamarin
-description: In diesem Artikel finden Sie Links zu verschiedenen Leitfäden, in denen beschrieben wird, wie Sie in die Xamarin-Entwicklung einsteigen. In den verlinkten Inhalten erfahren Sie, wie Sie Ihre erste App erstellen, außerdem erhalten Sie eine allgemeine Einführung in die mobile Entwicklung und Informationen zur Weiterbildung mit Xamarin University.
+description: 'In diesem Artikel finden Sie Links zu verschiedenen Leitfäden, in denen beschrieben wird, wie Sie in die Xamarin-Entwicklung einsteigen. In den verlinkten Inhalten erfahren Sie, wie Sie Ihre erste App erstellen, außerdem erhalten Sie eine allgemeine Einführung in die mobile Entwicklung und Informationen zur Weiterbildung mit Xamarin University.'
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 1b98dcb175c7e28e0ae101bea172aa2a98d3502e
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292167"
 ---
-# <a name="get-started-with-xamarin"></a>Erste Schritte mit Xamarin
 
-Sehen Sie sich vor Beginn die [Systemanforderungen](requirements.md) sowie die [Installationsanweisungen](installation/index.md) an, um sicherzustellen, dass alles bereit ist.
+# <a name="building-mobile-apps"></a>Erstellen von mobilen Apps
+
+Sehen Sie sich vor Beginn die [Systemanforderungen](requirements.md) sowie die [Installationsanweisungen](~/get-started/installation/index.md) an, um sicherzustellen, dass alles bereit ist.
 
 ## <a name="build-your-first-app"></a>Erstellen Ihrer ersten App
 
@@ -57,4 +52,4 @@ Erfahren Sie mehr zu Visual Studio für Mac, der integrierten Entwicklungsumgebu
 ## <a name="related-links"></a>Verwandte Links
 
 - [Systemanforderungen](requirements.md)
-- [Installationsanweisungen](~/cross-platform/get-started/installation/index.md)
+- [Installationsanweisungen](~/get-started/installation/index.md)
