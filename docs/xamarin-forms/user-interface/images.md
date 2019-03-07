@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: f6815b54867b47bb32ede41470712dac65b6d410
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 1a08803930eaaa3c2c5c5f8b8aa9561a9a7b8d88
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53062176"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557242"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder in Xamarin.Forms
 
@@ -44,7 +44,7 @@ Die [ `Aspect` ](xref:Xamarin.Forms.Image.Aspect) Eigenschaft bestimmt, wie das 
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -Schneidet das Bild ab, so dass es sich um den Anzeigebereich ausfüllt, und gleichzeitig den Aspekt (d. h. ohne Verzerrung).
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -Letterbox das Bild (falls erforderlich), damit das gesamte Bild in den Anzeigebereich passt, mit Leerzeichen hinzugefügt, die oben/unten oder den Seiten, je nachdem, ob das Bild ist breit oder hoch.
 
-Bilder können aus geladen werden, eine [lokale Datei](#Local_Images), [eingebettete Ressource](#embedded-images), oder [heruntergeladen](#Downloading_Images).
+Bilder können aus geladen werden, eine [lokale Datei](#Local_Images), [eingebettete Ressource](#embedded-images), oder [heruntergeladen](#Downloading_Images). Darüber hinaus können Schriftart Symbole angezeigt werden, indem die [ `Image` ](xref:Xamarin.Forms.Image) Ansicht durch Angabe der Schriftart Symbol-Daten in einem `FontImageSource` Objekt. Weitere Informationen finden Sie unter [Schriftart Symbole anzeigen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) in die [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Guide.
 
 ## <a name="local-images"></a>Lokalen Images
 
@@ -114,11 +114,11 @@ Einige Steuerelemente verfügen über Eigenschaften, die ein Bild, wie z. B. ang
 
 Eingebettete Bilder werden auch mit einer Anwendung (z. B. lokalen Images) geliefert, aber anstatt eine Kopie des Abbilds in jeder Anwendung Dateistruktur das Image-Datei in der Assembly als Ressource eingebettet ist. Dieses Verfahren zum Verteilen von Abbildern wird empfohlen, wenn die identische Images auf jeder Plattform verwendet werden, und eignet sich insbesondere für das Erstellen von Komponenten, wie das Bild mit dem Code im Paket enthalten ist.
 
-Maustaste, um ein Bild in einem Projekt einbetten, um neue Elemente hinzufügen, und wählen Sie die Bild/s, die Sie hinzufügen möchten. Standardmäßig hat das Bild **Buildvorgang: keine**; Dies muss festgelegt werden, um **Buildvorgang: EmbeddedResource**.
+Maustaste, um ein Bild in einem Projekt einbetten, um neue Elemente hinzufügen, und wählen Sie die Bild/s, die Sie hinzufügen möchten. Standardmäßig hat das Bild **Buildvorgang: Keine**; Dies muss festgelegt werden, um **Buildvorgang: EmbeddedResource** festgelegt sein.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](images-images/vs-buildaction.png "Legen Sie Buildaktion: EmbeddedResource")
+![](images-images/vs-buildaction.png "Legen Sie die Buildaktion: EmbeddedResource")
 
 Die **Buildvorgang** angezeigt und geändert werden können die **Eigenschaften** Fenster für eine Datei.
 
@@ -128,7 +128,7 @@ Die IDE hat diese Standardeinstellung generiert, durch die Verkettung der **Stan
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![](images-images/xs-buildaction.png "Legen Sie Buildaktion: EmbeddedResource")
+![](images-images/xs-buildaction.png "Legen Sie die Buildaktion: EmbeddedResource")
 
 **Buildvorgang** auch angezeigt und geändert werden können die **Eigenschaften** Pad für eine Datei.
 Dieses Feld zeigt die **Ressourcen-ID** , auf die Ressource im Code verwendet wird. Im folgenden Screenshot die **Ressourcen-ID** ist **WorkingWithImages.beach.jpg**.
@@ -297,6 +297,8 @@ Festlegen, Symbole und Begrüßungsbildschirme für Xamarin.Forms-apps erfolgt i
 ## <a name="icons"></a>Symbole
 
 Finden Sie unter den [iOS arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md), [Google Ikonographie](http://developer.android.com/design/style/iconography.html), und [Richtlinien für die Kachel "und" Symbol-Objekte](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/) für Weitere Informationen zum Erstellen dieser Anwendungsressourcen.
+
+Darüber hinaus können Schriftart Symbole angezeigt werden, indem die [ `Image` ](xref:Xamarin.Forms.Image) Ansicht durch Angabe der Schriftart Symbol-Daten in einem `FontImageSource` Objekt. Weitere Informationen finden Sie unter [Schriftart Symbole anzeigen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) in die [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Guide.
 
 ## <a name="splash-screens"></a>Begrüßungsbildschirme
 

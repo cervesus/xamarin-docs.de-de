@@ -1,19 +1,14 @@
 ---
 title: Xamarin.Forms-Schnittstelle Benutzeransichten
-description: Dieser Artikel enthält die Steuerelemente und Konzepte, die verwendet werden können, wenn Sie eine Benutzeroberfläche in einer Xamarin.Forms-Anwendung zu erstellen.
+description: 'Dieser Artikel enthält die Steuerelemente und Konzepte, die verwendet werden können, wenn Sie eine Benutzeroberfläche in einer Xamarin.Forms-Anwendung zu erstellen.'
 ms.prod: xamarin
 ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: c3759430ce40397418d2f47794e8ecc555ef3ed4
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292284"
 ---
+
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms-Schnittstelle Benutzeransichten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/FormsGallery/)
@@ -108,9 +103,9 @@ Xamarin.Forms-Designs definieren eine bestimme visuelle darstellen, für die sta
 
 Die `TimePicker` ermöglicht es einem Benutzer auf eine Uhrzeit auswählen. Die Implementierung erfolgt mithilfe der Zeitauswahl unterstützt werden, indem Sie die spezielle Plattform, die die Anwendung ausgeführt wird, auf.
 
-## <a name="visualvisualmd"></a>[Grafisches Element](visual.md)
+## <a name="visualvisualindexmd"></a>[Grafisches Element](visual/index.md)
 
-Dieser Artikel enthält die Ansichten identisch oder weitgehend identisch, unter iOS und Android rendert Xamarin.Forms Visualisierung.
+Xamarin.Forms Visual ermöglicht Renderer selektiv auf anzuwendenden `VisualElement` Objekte ohne Unterklasse Xamarin.Forms-Steuerelemente.
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Manager für den visuellen Zustand](visual-state-manager.md)
 

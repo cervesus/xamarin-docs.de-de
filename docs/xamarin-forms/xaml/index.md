@@ -1,19 +1,14 @@
 ---
 title: eXtensible Application Markup Language (XAML)
-description: XAML ist eine deklarative Markupsprache, die zum Definieren von Benutzeroberflächen verwendet werden kann. Die Benutzeroberfläche wird definiert, in einer XML-Datei die XAML-Syntax, während das Laufzeitverhalten in einer separaten CodeBehind-Datei definiert ist.
+description: 'XAML ist eine deklarative Markupsprache, die zum Definieren von Benutzeroberflächen verwendet werden kann. Die Benutzeroberfläche wird definiert, in einer XML-Datei die XAML-Syntax, während das Laufzeitverhalten in einer separaten CodeBehind-Datei definiert ist.'
 ms.prod: xamarin
 ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/18/2018
-ms.openlocfilehash: 7195d56cfee91544f0626a8f89c886cde36752e5
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831716"
+ms.date: 02/28/2019
 ---
+
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
 _XAML ist eine deklarative Markupsprache, die zum Definieren von Benutzeroberflächen verwendet werden kann. Die Benutzeroberfläche wird definiert, in einer XML-Datei die XAML-Syntax, während das Laufzeitverhalten in einer separaten CodeBehind-Datei definiert ist._
@@ -43,9 +38,13 @@ Die [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer.md) rendert eine Livevor
 
 XAML verwendet das `xmlns` XML-Attribut für Namespacedeklarationen. In diesem Artikel stellt die Syntax des XAML-Namespace, und es wird veranschaulicht, wie einen XAML-Namespace auf einen Typ deklariert.
 
-## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[XAML-Namespace mit benutzerdefinierten Schemas](custom-namespace-schemas.md)
+## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[Schemas für den benutzerdefinierten XAML-Namespace](custom-namespace-schemas.md)
 
 Ein XAML-Schema benutzerdefinierten Namespace definiert werden kann, mit der `XmlnsDefinitionAttribute` -Klasse, die eine Zuordnung zwischen einer benutzerdefinierten URL und einen oder mehrere CLR-Namespaces angibt. Das Schema des benutzerdefinierten Namespace können Sie dann in XAML-Namespace-Deklarationen verwendet werden.
+
+## <a name="xaml-namespace-recommended-prefixescustom-prefixmd"></a>[XAML-Namespace, die Präfixe empfohlen](custom-prefix.md)
+
+Die `XmlnsPrefixAttribute` Klasse kann von Autoren von Steuerelementen verwendet werden, an der ein empfohlenes Präfix, einen XAML-Namespace, für die XAML-Verwendung zugeordnet werden soll.
 
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[XAML-Markuperweiterungen](markup-extensions/index.md)
 

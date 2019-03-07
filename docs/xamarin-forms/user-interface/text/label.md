@@ -6,13 +6,13 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2018
-ms.openlocfilehash: ce1ba235a309e2388bd5eea7d70a1d72852fc615
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/26/2019
+ms.openlocfilehash: e57135c5a9a90ec75ae610ad92cecaa2a9b1e482
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831858"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557037"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms-Bezeichnung
 
@@ -157,10 +157,13 @@ Die `FormattedText` Eigenschaft ist vom Typ [ `FormattedString` ](xref:Xamarin.F
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) – die Größe der Schriftart für den Text in der Spanne.
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) – die Farbe für den Text in der Spanne. Diese Eigenschaft ist veraltet und wurde ersetzt durch die `TextColor` Eigenschaft.
 - [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -Der Multiplikator angewendet, die Standardhöhe der Zeile der Spanne. Weitere Informationen finden Sie unter [Zeilenhöhe](#line-height).
-- [`Style`](xref:Xamarin.Forms.Span.Style) – die Formatvorlage, die für die Spanne gelten.
+- [`Text`](xref:Xamarin.Forms.Span.Text)  – die Formatvorlage, die für die Spanne gelten.
 - [`Text`](xref:Xamarin.Forms.Span.Text) – der Text der Spanne.
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) – die Farbe für den Text in der Spanne.
 - `TextDecorations` -der Ergänzungen, die den Text in der Spanne zuweisen. Weitere Informationen finden Sie unter [Textdekorationen](#text-decorations).
+
+> [!NOTE]
+> Die [ `BackgroundColor` ](xref:Xamarin.Forms.Span.BackgroundColor), [ `Text` ](xref:Xamarin.Forms.Span.Text), und [ `Text` ](xref:Xamarin.Forms.Span.Text) bindbare Eigenschaften haben einen Standardmodus für die Bindung der [ `OneWay` ](xref:Xamarin.Forms.BindingMode). Weitere Informationen zu dieser Bindungsmodus, finden Sie unter [der Standard-Bindungsmodus](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode) in die [Bindungsmodus](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md) Guide.
 
 Darüber hinaus die [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers) Eigenschaft kann verwendet werden, um eine Auflistung von Bewegung Erkennungen definieren, die auf Gesten reagiert, auf die [ `Span` ](xref:Xamarin.Forms.Span).
 

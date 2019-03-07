@@ -6,13 +6,13 @@ ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: ac5ad85f7bdd08b0d071e7c333c959e94dcbc53f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 02/27/2019
+ms.openlocfilehash: fa339d9fd404cf74aa603d853abde5f9128e57b5
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057488"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557307"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms-Schieberegler
 
@@ -38,6 +38,8 @@ Die `Slider` wandelt die `Value` Eigenschaft, damit es zwischen ist `Minimum` un
 `Slider` definiert eine [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) Ereignis, wenn ausgelöst wird, die `Value` ändert, entweder durch Bearbeitung der durch den Benutzer der `Slider` oder wenn die Anwendung setzt die `Value` -Eigenschaft direkt. Ein `ValueChanged` Ereignis wird auch ausgelöst, wenn die `Value` Eigenschaft wird erzwungen, wie im vorherigen Absatz beschrieben.
 
 Die [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) Objekt an, die mit der `ValueChanged` Ereignis verfügt über zwei Eigenschaften, die beide vom Typ `double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) und [ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). Zum Zeitpunkt das Ereignis ausgelöst wird, den Wert der `NewValue` ist identisch mit der `Value` Eigenschaft der `Slider` Objekt.
+
+`Slider` definiert außerdem `DragStarted` und `DragCompleted` Ereignisse, die am Anfang und Ende der Drag-Aktion ausgelöst werden. Im Gegensatz zu den [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) -Ereignis, das `DragStarted` und `DragCompleted` Ereignisse werden nur ausgelöst, durch die Benutzer die Bearbeitung von der `Slider`. Wenn die `DragStarted` Ereignis wird ausgelöst, die `DragStartedCommand`, des Typs `ICommand`, ausgeführt wird. Auf ähnliche Weise, wenn die `DragCompleted` Ereignis wird ausgelöst, die `DragCompletedCommand`, des Typs `ICommand`, ausgeführt wird.
 
 > [!WARNING]
 > Verwenden Sie keine Optionen uneingeschränkte horizontales Layout `Center`, `Start`, oder `End` mit `Slider`. Für Android und UWP die `Slider` reduziert, die in ein Balkendiagramm der Länge Null, und klicken Sie unter iOS, die Leiste ist sehr kurz. Behalten Sie den Standardwert `HorizontalOptions` -Einstellung `Fill`, und verwenden Sie keine Breite von `Auto` beim `Slider` in eine `Grid` Layout.
@@ -203,7 +205,7 @@ Die **Standardbindungen Schieberegler** Seite zeigt, wie ein nahezu gleichwertig
 </ContentPage>
 ```
 
-Die `Rotation` Eigenschaft des ersten `Label` gebunden ist die `Value` Eigenschaft der `Slider`, da die `Text` -Eigenschaft der zweiten `Label` mit einer `StringFormat` Spezifikation. Die **Standardbindungen Schieberegler** Seite Funktionen etwas anders aus den vorherigen zwei Seiten:, wenn die Seite zuerst angezeigt wird, das zweite `Label` zeigt die Textzeichenfolge, mit dem Wert. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der `ValueChanged` Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor.
+Die `Rotation` Eigenschaft des ersten `Label` gebunden ist die `Value` Eigenschaft der `Slider`, da die `Text` -Eigenschaft der zweiten `Label` mit einer `StringFormat` Spezifikation. Die **Standardbindungen Schieberegler** Seite Funktionen etwas anders aus den vorherigen zwei Seiten: Wenn die Seite zuerst angezeigt wird, das zweite `Label` zeigt die Zeichenfolge mit dem Wert an. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der `ValueChanged` Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor.
 
 <a name="precautions" />
 

@@ -6,13 +6,13 @@ ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/14/2018
-ms.openlocfilehash: 939df6cfd17de82e28958363cfa51cd199f928cb
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/27/2019
+ms.openlocfilehash: 1447526ef925431e3cad5f36d4ce7a528c8ab07c
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831690"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557190"
 ---
 # <a name="listview-interactivity"></a>ListView-Interaktivität
 
@@ -34,8 +34,10 @@ Wenn ein Benutzer ein Element tippt, werden zwei Ereignisse ausgelöst:
 - [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) wird ausgelöst, wenn ein neues Element ausgewählt ist.
 - [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) wird ausgelöst, wenn ein Element getippt wird.
 
+Tippen auf das gleiche Element zweimal ausgelöst wird, zwei [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignisse, sondern werden nur Auslösen eines einzelnen [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis.
+
 > [!NOTE]
-> Tippen auf das gleiche Element zweimal ausgelöst wird, zwei [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignisse, sondern werden nur Auslösen eines einzelnen [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis.
+> Die [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs) -Klasse, die die Ereignisargumente für enthält die [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignis hat [ `Group` ](xref:Xamarin.Forms.ItemTappedEventArgs.Group) und [ `Item` ](xref:Xamarin.Forms.ItemTappedEventArgs.Item) Eigenschaften, und ein `ItemIndex` Eigenschaft, deren Wert, den Index in darstellt, die [ `ListView` ](xref:Xamarin.Forms.ListView) von das angetippte Element. Auf ähnliche Weise die [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs) -Klasse, die die Ereignisargumente für enthält die [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis verfügt über eine [ `SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) -Eigenschaft und eine `SelectedItemIndex` Eigenschaft, deren Wert, den Index in darstellt, die `ListView` des ausgewählten Elements.
 
 Wenn die [ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode) -Eigenschaftensatz auf [ `Single` ](xref:Xamarin.Forms.ListViewSelectionMode.Single), Elemente in der [ `ListView` ](xref:Xamarin.Forms.ListView) ausgewählt werden kann, die [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) und [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignisse ausgelöst, und die [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) Eigenschaft wird auf den Wert des ausgewählten Elements festgelegt werden.
 

@@ -6,7 +6,7 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2018
+ms.date: 02/22/2019
 ---
 
 # <a name="ios-platform-features"></a>iOS-Plattformfeatures
@@ -25,8 +25,11 @@ Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichte
 
 Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichten unter iOS bereitgestellt:
 
+- Festlegen der [ `Cell` ](xref:Xamarin.Forms.Cell) Hintergrundfarbe. Weitere Informationen finden Sie unter [Hintergrundfarbe der Zelle unter iOS](cell-background-color.md).
 - Um sicherzustellen, die eingegebenen Text passt in einen [ `Entry` ](xref:Xamarin.Forms.Entry) durch den Schriftgrad anpassen. Weitere Informationen finden Sie unter [Eintrag Schriftgrad unter iOS](entry-font-size.md).
 - Festlegen der cursorfarbe in einem [ `Entry` ](xref:Xamarin.Forms.Entry). Weitere Informationen finden Sie unter [Eintrag Cursorfarbe unter iOS](entry-cursor-color.md).
+- Steuern, ob [ `ListView` ](xref:Xamarin.Forms.ListView) Headerzellen "float" während des Bildlaufs. Weitere Informationen finden Sie unter [ListView-Group-Headerformat unter iOS](listview-group-header-style.md).
+- Steuern, ob die Zeile Animationen deaktiviert sind, wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) Items-Auflistung aktualisiert wird. Weitere Informationen finden Sie unter [ListView-Zeile-Animationen in iOS](listview-row-animations.md).
 - Festlegen von den Trennzeichenstil für eine [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [ListView Trennzeichenstil unter iOS](listview-separator-style.md).
 - Steuern der bei Auswahl von Listenelementen in tritt auf, eine [ `Picker` ](xref:Xamarin.Forms.Picker). Weitere Informationen finden Sie unter [Auswahl Elementauswahl unter iOS](picker-selection.md).
 - Aktivieren der [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value) festzulegende Eigenschaft durch Tippen auf eine Position auf der [ `Slider` ](xref:Xamarin.Forms.Slider) Balken-und nicht durch Ziehen mit der `Slider` Thumb-Steuerelement. Weitere Informationen finden Sie unter [Schieberegler Thumb-Steuerelement, tippen Sie auf die iOS](slider-thumb.md).

@@ -1,19 +1,14 @@
 ---
 title: Text in Xamarin.Forms
-description: Xamarin.Forms verfügt über drei primäre Ansichten zum Arbeiten mit Text, und in diesem Artikel wird erläutert, wie Sie mit, dass sie eingeben und Anzeigen von Text in Xamarin.Forms-Anwendungen.
+description: 'Xamarin.Forms verfügt über drei primäre Ansichten zum Arbeiten mit Text, und in diesem Artikel wird erläutert, wie Sie mit, dass sie eingeben und Anzeigen von Text in Xamarin.Forms-Anwendungen.'
 ms.prod: xamarin
 ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 0563921a59bc698e2360a06b482c7f4994e56f6e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060011"
 ---
+
 # <a name="text-in-xamarinforms"></a>Text in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
@@ -66,7 +61,7 @@ Finden Sie unter den [Editor](editor.md) Weitere Informationen.
 
 ## <a name="fontsfontsmd"></a>[Schriftarten](fonts.md)
 
-Die `Label` -Steuerelement unterstützt andere Einstellungen, die unter Verwendung der integrierten Schriftarten auf jeder Plattform oder benutzerdefinierte Schriftarten, die mit Ihrer app enthalten. Finden Sie unter den [Schriftarten](fonts.md) Artikel Weitere Informationen.
+Viele Steuerelemente unterstützen andere Schriftart-Einstellungen, die unter Verwendung der integrierten Schriftarten auf jeder Plattform oder benutzerdefinierte Schriftarten, die mit Ihrer app enthalten. Finden Sie unter den [Schriftarten](fonts.md) Artikel Weitere Informationen.
 
 <a name="Styles" />
 
