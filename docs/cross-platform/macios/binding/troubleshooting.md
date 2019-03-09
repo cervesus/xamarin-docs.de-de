@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: aaceada84b151856506ede66907274e2457c23d4
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: fcdd712313becd1335479013f44886086dde7bff
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854799"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668061"
 ---
 # <a name="binding-troubleshooting"></a>Binden die Problembehandlung
 
@@ -23,9 +23,9 @@ Während der Xamarin.Mac ein Großteil der Apple-APIs behandelt, manchmal müsse
 
 Wenn Sie mit einer Apple-API arbeiten, ist der erste Schritt, können Sie Xamarin wissen, dass Sie einen Teil der API erreichen, die wir Coverage noch keine besitzen. [Einen Fehler](#reporting-bugs) Beachten Sie die fehlenden-API. Wir verwenden die Berichte von Kunden, um welche APIs zu priorisieren, wir an weiter arbeiten. Darüber hinaus, wenn Sie eine Business oder Enterprise-Lizenz und dieses fehlen einer Bindung wird durch Ihren Fortschritt blockiert, auch anhand der Schritte unter [Unterstützung](http://xamarin.com/support) um ein Ticket. Wir können nicht versprechen, eine Bindung, wurde jedoch in einigen Fällen können Sie eine Arbeit rund um.
 
-Nachdem Sie Xamarin (falls zutreffend) der fehlenden Bindung zu benachrichtigen, besteht der nächste Schritt, berücksichtigt er sich selbst gebunden. Wir haben eine vollständige Anleitung [hier](~/cross-platform/macios/binding/overview.md) und eine inoffizielle Dokumentation [hier](http://brendanzagaeski.appspot.com/xamarin/0002.html) für das Umschließen von Objective-C-Bindungen von Hand. Wenn Sie eine C-API aufrufen, können Sie # P/Invoke-Mechanismus, Dokumentation [hier](http://www.mono-project.com/docs/advanced/pinvoke/).
+Nachdem Sie Xamarin (falls zutreffend) der fehlenden Bindung zu benachrichtigen, besteht der nächste Schritt, berücksichtigt er sich selbst gebunden. Wir haben eine vollständige Anleitung [hier](~/cross-platform/macios/binding/overview.md) und eine inoffizielle Dokumentation [hier](http://brendanzagaeski.appspot.com/xamarin/0002.html) für das Umschließen von Objective-C-Bindungen von Hand. Wenn Sie eine C-API aufrufen, können Sie C#des P/Invoke-Mechanismus, um die Dokumentation ist [hier](https://www.mono-project.com/docs/advanced/pinvoke/).
 
-Wenn Sie sich entscheiden, funktioniert für die Bindung selbst, Bedenken Sie, dass alle möglichen interessanten Abstürzen in der nativen Runtime von Fehlern in der Bindung erstellt werden können. Insbesondere werden Sie sehr sorgfältig, dass Ihre Signatur in c# die native Signatur in Anzahl von Argumenten und die Größe der einzelnen Argumente entspricht. Bei unterlassen kann Speicher und/oder der Stapel beschädigt, und Sie stürzt ab sofort oder zu einem beliebigen Zeitpunkt in der Zukunft oder Daten beschädigt werden könnten.
+Wenn Sie sich entscheiden, funktioniert für die Bindung selbst, Bedenken Sie, dass alle möglichen interessanten Abstürzen in der nativen Runtime von Fehlern in der Bindung erstellt werden können. Insbesondere sehr vorsichtig sein, die Ihre Signatur in C# der Signatur entspricht, systemeigene in Anzahl von Argumenten und die Größe der einzelnen Argumente. Bei unterlassen kann Speicher und/oder der Stapel beschädigt, und Sie stürzt ab sofort oder zu einem beliebigen Zeitpunkt in der Zukunft oder Daten beschädigt werden könnten.
 
 ## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>Argumentausnahmen beim Übergeben von null zu einer Bindung
 
@@ -36,7 +36,7 @@ Wenn ein Fall auftreten, übergeben `null` löst eine `ArgumentNullException` de
 1. Überprüfen Sie die Apple-Dokumentation und/oder Beispielen, um festzustellen, ob Sie Beweis, der diesen akzeptiert `nil`. Wenn Sie mit Objective-C vertraut sind, können Sie ein Programm kleinen Test durch, um sie zu überprüfen schreiben.
 2. [Einen Fehler](#reporting-bugs).
 3. Umgehen Sie können den Fehler? Wenn Sie vermeiden können, Aufrufen der API mit `null`, eine einfache null-Überprüfung, um die Aufrufe, kann eine einfache problemumgehung sein.
-4. Allerdings erfordern einige APIs übergeben von Null ausschalten oder deaktivieren einige Funktionen. In diesen Fällen können Sie umgehen das Problem durch die Einbindung von der Assembly-Browser (finden Sie unter [suchen das C#-Element für einen angegebenen Selektor](~/mac/app-fundamentals/mac-apis.md#finding_selector)), kopieren die Bindung und die Überprüfung auf null löschen. Stellen Sie sicher, einen Fehler (Schritt 2) Wenn Sie dazu, wie die kopierte Bindung wird nicht empfangen, Updates und Korrekturen, die wir in Xamarin.Mac stellen, und dies eine kurzfristige problemumgehung berücksichtigt werden sollte.
+4. Allerdings erfordern einige APIs übergeben von Null ausschalten oder deaktivieren einige Funktionen. In diesen Fällen können Sie umgehen das Problem durch die Einbindung von der Assembly-Browser (finden Sie unter [Suchen der C# Member für einen angegebenen Selektor](~/mac/app-fundamentals/mac-apis.md#finding_selector)), kopieren die Bindung und die Überprüfung auf null löschen. Stellen Sie sicher, einen Fehler (Schritt 2) Wenn Sie dazu, wie die kopierte Bindung wird nicht empfangen, Updates und Korrekturen, die wir in Xamarin.Mac stellen, und dies eine kurzfristige problemumgehung berücksichtigt werden sollte.
 
 <a name="reporting-bugs"/>
 
@@ -59,5 +59,5 @@ Fügen Sie möglichst viele der folgenden Informationen hinzu:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

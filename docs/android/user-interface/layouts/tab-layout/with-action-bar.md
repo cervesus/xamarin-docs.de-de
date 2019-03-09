@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 01ff4426dfb4764b7d9ca22703aa2b1667a90454
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 6ce8099aa4230a11a12f4fe8aeffe850f9ef2ce9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528545"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670999"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Layouts im Registerkartenformat mit ActionBar
 
@@ -31,7 +31,7 @@ Beachten Sie, dass `Toolbar` ist eine neuere und allgemeineres Aktion Leiste-Kom
 
 Alle Xamarin.Android-Anwendung, die Zielversion der API-Ebene 11 (Android 3.0) oder höher verfügt über Zugriff auf die ActionBar-APIs, die im Rahmen der systemeigenen Android-APIs. 
 
-Einige der ActionBar APIs wurden wieder auf API-Ebene 7 (Android 2.1) portiert und können über die [V7 AppCompat-Bibliothek](http://developer.android.com/tools/support-library/features.html#v7-appcompat), die Xamarin.Android-apps zur Verfügung gestellt wird die [Xamarin Android Support-Bibliothek - V7 ](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) Paket.
+Einige der ActionBar APIs wurden wieder auf API-Ebene 7 (Android 2.1) portiert und können über die [V7 AppCompat-Bibliothek](https://developer.android.com/tools/support-library/features.html#v7-appcompat), die Xamarin.Android-apps zur Verfügung gestellt wird die [Xamarin Android Support-Bibliothek - V7 ](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) Paket.
 
 
 
@@ -182,8 +182,8 @@ In diesem Handbuch erläutert die Vorgehensweise: erstellen eine Benutzeroberfl�
 - [ActionBarTabs (Beispiel)](https://developer.xamarin.com/samples/monodroid/UserInterface/ActionBarTabs/)
 - [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md)
 - [Fragmente](~/android/platform/fragments/index.md)
-- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
-- [ActionBarActivity](http://developer.android.com/reference/android/support/v7/app/ActionBarActivity.html)
-- [Muster für Aktionsleiste](http://developer.android.com/design/patterns/actionbar.html)
-- [Android v7 AppCompat](http://developer.android.com/tools/support-library/features.html#v7-appcompat)
+- [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
+- [ActionBarActivity](https://developer.android.com/reference/android/support/v7/app/ActionBarActivity.html)
+- [Muster für Aktionsleiste](https://developer.android.com/design/patterns/actionbar.html)
+- [Android v7 AppCompat](https://developer.android.com/tools/support-library/features.html#v7-appcompat)
 - [Unterstützung von Xamarin.Android Bibliothek v7 AppCompat-NuGet-Paket](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)

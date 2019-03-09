@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
-ms.date: 3/27/2018
-ms.openlocfilehash: a93503762528885dfc7d3b5400bf4ec716ea9fab
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/27/2018
+ms.openlocfilehash: 86abe932e9c244e1a959042cfc995bc184f89cc9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056213"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671285"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. XAML-Markuperweiterungen
 
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 Beachten Sie, dass das Schlüsselwort `clr-namespace` ist, gefolgt von einem Doppelpunkt und dann den Namespacenamen .NET, gefolgt von einem Semikolon, das Schlüsselwort `assembly`, einem Gleichheitszeichen und der Name der Assembly.
 
-Ja, ein Doppelpunkt folgt `clr-namespace` Gleichheitszeichen folgt `assembly`. Die Syntax wurde in dieser Weise absichtlich definiert: die meisten XML-Namespacedeklaration verweisen auf ein URI, der einen URI-Schema-Namen wie z. B. beginnt `http`, das ist immer ein Doppelpunkt folgen. Die `clr-namespace` Teil dieser Zeichenfolge soll dieser Konvention zu imitieren.
+Ja, ein Doppelpunkt folgt `clr-namespace` Gleichheitszeichen folgt `assembly`. Die Syntax wurde in dieser Weise absichtlich definiert: Die meisten XML-Namespacedeklaration verweisen auf ein URI, der ein URI-Schema-Name, z. B. beginnt `http`, die immer durch einen Doppelpunkt gefolgt wird. Die `clr-namespace` Teil dieser Zeichenfolge soll dieser Konvention zu imitieren.
 
 Sowohl diese Namespacedeklarationen befinden sich der **StaticConstantsPage** Beispiel. Beachten Sie, dass die `BoxView` Dimensionen werden festgelegt, um `Math.PI` und `Math.E`, jedoch mit einem Faktor von 100 skalierte:
 
@@ -547,7 +547,7 @@ Im Folgenden ein Beispiel:
 </ContentPage>
 ```
 
-Vielleicht die wichtigste Lektion, Sie in diesem Beispiel ergreifen, wird die Syntax der Markuperweiterung: keine Anführungszeichen müssen innerhalb der geschweiften Klammern einer Markuperweiterung angezeigt werden. Wenn Sie die Markuperweiterung in einer XAML-Datei eingeben, ist es natürlich, die Werte der Eigenschaften in Anführungszeichen gesetzt werden soll. Widerstehen Sie der Versuchung!
+Die wichtigste Lektion, die Sie, in diesem Beispiel ausführen sollten ist vielleicht die Syntax der Markuperweiterung: Keine Anführungszeichen müssen innerhalb der geschweiften Klammern einer Markuperweiterung angezeigt werden. Wenn Sie die Markuperweiterung in einer XAML-Datei eingeben, ist es natürlich, die Werte der Eigenschaften in Anführungszeichen gesetzt werden soll. Widerstehen Sie der Versuchung!
 
 Hier wird das Programm ausgeführt wird:
 

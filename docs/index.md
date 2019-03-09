@@ -3,6 +3,8 @@ layout: HubPage
 hide_bc: true
 title: Xamarin-Dokumentation
 description: 'Xamarin ermöglicht es Ihnen, native Apps für Android, iOS und MacOS mithilfe von .NET-Code und plattformspezifischen Benutzeroberflächen zu erstellen. Mit Xamarin.Forms können Sie native Apps mit freigegebenem Benutzeroberflächencode erstellen, der in C# oder in XAML geschrieben ist.'
+author: conceptdev
+ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
   - clicktale
@@ -735,7 +737,7 @@ Mac</a>
         <h2>Bleiben Sie mit uns in Verbindung</h2>
         <ul class="links">
            <li>
-                <a href="http://blog.xamarin.com/"> Blog </a>
+                <a href="https://blog.xamarin.com/"> Blog </a>
             </li>
             <li>
                 <a href="https://forums.xamarin.com/">Foren </a>

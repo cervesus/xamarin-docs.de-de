@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 22b6fd101c0b983fe7b4a7d0891dc4674a11a02a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121190"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672819"
 ---
 # <a name="homekit-in-xamarinios"></a>HomeKit in Xamarin.iOS
 
@@ -52,7 +52,7 @@ Aufgrund der sicherheitsanforderungen durch HomeKit auferlegt wird muss eine Xam
 
 Führen Sie folgende Schritte aus:
 
-1. Melden Sie sich bei der [Apple-Entwicklerportal](http://developer.apple.com).
+1. Melden Sie sich bei der [Apple-Entwicklerportal](https://developer.apple.com).
 2. Klicken Sie auf **Zertifikate, Bezeichner & Profile**.
 3. Wenn Sie dies noch nicht getan haben, klicken Sie auf **Bezeichner** und erstellen Sie eine ID für Ihre app (z. B. `com.company.appname`), andernfalls bearbeiten Sie Ihre vorhandenen-ID.
 4. Sicherstellen, dass die **HomeKit** Dienst für die angegebene ID überprüft wurden: 
@@ -405,7 +405,7 @@ Die `HMCharacteristicType` Enum bietet eine Reihe von Metadatenwerten Merkmal, d
  - CurrentHorizontalTilt
  - CurrentLightLevel
  - CurrentLockMechanismState
- - currentPosition
+ - CurrentPosition
  - CurrentRelativeHumidity
  - CurrentSecuritySystemState
  - CurrentTemperature
@@ -426,7 +426,7 @@ Die `HMCharacteristicType` Enum bietet eine Reihe von Metadatenwerten Merkmal, d
  - Hersteller
  - Modell
  - MotionDetected
- - Name
+ - name
  - ObstructionDetected
  - OccupancyDetected
  - OutletInUse
@@ -667,7 +667,7 @@ Der Status des Lichts im Simulator HomeKit-Zubehör sollte geändert werden. Wen
 In diesem Artikel wurden die grundlegenden Features für die Arbeit mit HomeKit-Zubehör in einer Xamarin.iOS-app für behandelt. Es gibt jedoch einige erweiterte Features von HomeKit, die in dieser Einführung nicht behandelt werden:
 
 - **Räume** -aktiviert HomeKit-Zubehör können optional in Räume vom Endbenutzer organisiert. Dadurch können HomeKit vorhanden Zubehör auf eine Weise, die einfach für den Benutzer zu verstehen und Arbeiten mit. Weitere Informationen zu erstellen und Verwalten von Räumen, finden Sie unter Apple [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom) Dokumentation.
-- **Zonen** -Räume können optional in Zonen organisiert werden, durch den Endbenutzer. Eine Zone bezieht sich auf eine Auflistung von Räumen, die der Benutzer als einzelne Einheit behandeln kann. Zum Beispiel: sollten, unteren Stock oder Keller. In diesem Fall können HomeKit und Arbeiten mit Zubehör in einer Weise, die für den Endbenutzer Sinn macht. Weitere Informationen zum Erstellen und Verwalten von Zonen finden Sie unter Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone) Dokumentation.
+- **Zonen** -Räume können optional in Zonen organisiert werden, durch den Endbenutzer. Eine Zone bezieht sich auf eine Auflistung von Räumen, die der Benutzer als einzelne Einheit behandeln kann. Zum Beispiel: Sollten, unteren Stock oder Keller. In diesem Fall können HomeKit und Arbeiten mit Zubehör in einer Weise, die für den Endbenutzer Sinn macht. Weitere Informationen zum Erstellen und Verwalten von Zonen finden Sie unter Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone) Dokumentation.
 - **Aktionen und Aktionsmengen** -Aktionen Zubehör Diensteigenschaften ändern und in Gruppen zusammengefasst werden können. Aktion Legt fungieren als Skripts zum Steuern einer Gruppenstatus von Zubehör und ihre Aktionen zu koordinieren. Z. B. ein "Fernsehen" Skript möglicherweise schließen die blenden dim Lichter und dem Fernsehen und das sound-System aktivieren. Weitere Informationen zum Erstellen und Verwalten von Aktionen und Aktion Legt finden Sie unter Apple [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction) und [HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet) Dokumentation.
 - **Trigger** – kann keinen Trigger aktivieren, eine oder mehrere Aktion festlegen, wenn eine bestimmte Gruppe von Bedingungen erfüllt. Beispielsweise wird das Licht Portch aktivieren Sie, und Sperren Sie alle externe Türen zu, wenn es außerhalb dunkel erhält. Weitere Informationen zum Erstellen und Verwalten von Triggern finden Sie unter Apple [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger) Dokumentation.
 
@@ -691,14 +691,14 @@ Apple hat die folgenden Änderungen und Ergänzungen an HomeKit für iOS 9 vorge
 - **Dauerhafte Bezeichner** -alle relevante HomeKit-Klassen enthalten nun einen `UniqueIdentifier` aktiviert Eigenschaft, um ein bestimmtes Element in HomeKit eindeutig zu identifizieren, apps (oder Instanzen der gleichen app).
 - **Benutzerverwaltung** -einen integrierten View-Controller, um benutzerverwaltung Benutzer bereitzustellen, die Zugriff auf die HomeKit-Geräte in der primären Wohnung des Benutzers hinzugefügt.
 - **Benutzeroptionen** – HomeKit-Benutzer haben jetzt eine Gruppe von Berechtigungen, die steuern, welche Funktionen sie in HomeKit verwenden können und HomeKit aktiviert Zubehör. Ihre app sollte relevante Funktionen nur für den aktuellen Benutzer angezeigt werden. Beispielsweise sollte nur einen Administratoren um andere Benutzer verwalten können.
-- **Vordefinierte Szenen** -vordefinierte Szenen für vier allgemeine Ereignisse, die auftreten, für den durchschnittlichen HomeKit-Benutzer erstellt wurden: einzurichten, lassen, zurückgeben, wechseln Sie zu konzentrieren. Diese vordefinierten Szenen können nicht aus einer Startseite nicht gelöscht werden.
+- **Vordefinierte Szenen** -vordefinierte Szenen für vier allgemeine Ereignisse, die auftreten, für den durchschnittlichen HomeKit-Benutzer erstellt wurden: Einrichten lassen, zurückgeben, wechseln Sie zu konzentrieren. Diese vordefinierten Szenen können nicht aus einer Startseite nicht gelöscht werden.
 - **Im Hintergrund und Siri** -Siri hat umfassendere Unterstützung für die Erkennung von Szenen in iOS 9 und kann des Namens jeder Szene in HomeKit definiert. Ein Benutzer kann eine Szene ausführen, indem Sie einfach den Namen in Siri sprechen.
 - **Zubehör Kategorien** -eine Reihe von vordefinierten Kategorien für alle Zubehör und hilft bei der Identifizierung des Typs des Zubehör ein Zuhause hinzugefügt wird hinzugefügt oder aus Ihrer App bearbeitet wurde. Diese neuen Kategorien sind während des Setups von Zubehör verfügbar.
-- **Unterstützung für Apple Watch-** – HomeKit steht jetzt für WatchOS und der Apple Watch-werden HomeKit-fähige Geräte ohne ein iPhone wird in der Nähe der Apple Watch steuern können. HomeKit für WatchOS unterstützt die folgenden Funktionen: Anzeigen von Häusern, Steuern von Zubehör und Szenen ausführen.
+- **Unterstützung für Apple Watch-** – HomeKit steht jetzt für WatchOS und der Apple Watch-werden HomeKit-fähige Geräte ohne ein iPhone wird in der Nähe der Apple Watch steuern können. HomeKit für WatchOS unterstützt die folgenden Funktionen: Anzeigen von Häusern, Steuern von Zubehör und im Hintergrund ausgeführt.
 - **Neuen Trigger-Ereignistyp** : Zusätzlich zu der Typ-Trigger mit Timer unterstützt IOS 8, iOS 9 nun unterstützt Ereignistriggern auf Zubehör Zustand (z. B. Daten von triebwerksensoren) oder Geolocation basieren. Verwenden von Ereignistriggern `NSPredicates` Bedingungen für ihre Ausführung festzulegen.
 - **Remotezugriff** -mit Remotezugriff, die der Benutzer kann nun steuern ihrer HomeKit Startseite Automation Zubehör aktiviert, wenn sie nicht im Haus an einem Remotestandort sind. IOS 8 war dies nur unterstützt, wenn der Benutzer eine 3. Generation Apple TV zu Hause hat. In iOS 9 diese Einschränkung wird aufgehoben, und remote-Zugriff wird über die iCloud und das HomeKit-Zubehör-Protokoll (HAP) unterstützt.
 - **Neue Bluetooth Low Energy (BLE) Fähigkeiten** -HomeKit unterstützt jetzt mehrere Zubehör Typen, die per Bluetooth Low Energy (BLE)-Protokoll kommunizieren können. HAP Secure Tunneling verwenden, kann ein HomeKit-Zubehör verfügbar machen eine andere Bluetooth-Zubehör über Wi-Fi (sofern es sich außerhalb des gültigen Bereichs von Bluetooth ist). In iOS 9 haben BLE-Zubehör vollständige Unterstützung für Benachrichtigungen und Metadaten.
-- **Neue Kategorien für Zubehör** -Apple iOS 9 die folgenden neuen Zubehör-Kategorien hinzugefügt: Fenster aufgeführten, Motor Türen und Windows, Alarmsysteme, Sensoren und programmierbare Switches.
+- **Neue Kategorien für Zubehör** -Apple iOS 9 die folgenden neuen Zubehör-Kategorien hinzugefügt: Im Fenster aufgeführten, Motorroller Türen und Windows, Alarmsysteme, Sensoren und programmierbare Switches.
 
 Weitere Informationen zu den neuen Features der HomeKit in iOS 9, finden Sie unter Apple [HomeKit Index](https://developer.apple.com/homekit/) und [Neuigkeiten in HomeKit](https://developer.apple.com/videos/wwdc/2015/?id=210) video.
 
@@ -713,6 +713,6 @@ In diesem Artikel wurde von Apple HomeKit heimautomatisierung Framework eingefü
 - [iOS 9-Beispiele](https://developer.xamarin.com/samples/ios/iOS9/)
 - [iOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
 - [Was ist neu in iOS 9.0 verfügen](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [HomeKitDeveloper-Handbuch](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
+- [HomeKitDeveloper Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
 - [HomeKit Richtlinien zur Benutzeroberfläche](https://developer.apple.com/homekit/ui-guidelines/)
 - [Referenz zu HomeKit-Framework](https://developer.apple.com/library/ios/home_kit_framework_ref)

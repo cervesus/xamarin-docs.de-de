@@ -6,18 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: f13b716e6ead8db8e0adafd180790c67bb82a6bc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112038"
 ---
+
 # <a name="android-wear-controls"></a>Android Wear-Steuerelemente
 
 Android Wear-apps können viele verwenden die gleichen Steuerelemente bereits in Verwendung für die reguläre Android-apps, einschließlich `Button`, `TextView`, und das image zeichenbarer Ressourcen. Formularlayout-Steuerelemente, einschließlich `ScrollView`, `LinearLayout`, und `RelativateLayout` kann auch verwendet werden.
 
-Diese Seite enthält links zu den Steuerelementen Android Wear-spezifische aus der [tragbare UI-Bibliothek](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary) zur Verfügung, in der Xamarin-Projekte über die [tragbare Unterstützung](http://www.nuget.org/packages/Xamarin.Android.Wear/) NuGet-Paket. Diese Steuerelemente umfassen Folgendes:
+Diese Seite enthält links zu den Steuerelementen Android Wear-spezifische aus der [tragbare UI-Bibliothek](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary) zur Verfügung, in der Xamarin-Projekte über die [tragbare Unterstützung](https://www.nuget.org/packages/Xamarin.Android.Wear/) NuGet-Paket. Diese Steuerelemente umfassen Folgendes:
 
 -   **GridViewPager** &ndash; erstellen Sie eine zweidimensionale Navigationsschnittstelle, in denen der Benutzer einen Bildlauf nach unten und dann auf, um eine Auswahl zu treffen (Weitere Informationen finden Sie unter [GridViewPager](~/android/wear/user-interface/controls/gridviewpager.md)):
 

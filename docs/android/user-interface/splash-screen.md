@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: f21eca052ef13fd0e3d6efa261e1ff70b3b14372
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1a9856a5b6257c82b2072e9eb44be481373abfcf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120709"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671857"
 ---
 # <a name="splash-screen"></a>Begrüßungsbildschirm
 
@@ -52,7 +52,7 @@ Der Begrüßungsbildschirm wird als eine Aktivität, die organisationsspezifisch
 
 Der Begrüßungsbildschirm wird im Hintergrund des Begrüßungsbildschirms Aktivität drawable XML angezeigt. Es ist erforderlich, ein Bitmapbild (z. B. eine PNG- oder JPG) für das Image zu verwenden, um Sie anzuzeigen.
 
-In diesem Leitfaden verwenden wir eine [Ebenenliste](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) zentrieren Sie das Image des Begrüßungsbildschirms in der Anwendung. Der folgende Codeausschnitt zeigt ein Beispiel für eine `drawable` Ressource mit einer `layer-list`:
+In diesem Leitfaden verwenden wir eine [Ebenenliste](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) zentrieren Sie das Image des Begrüßungsbildschirms in der Anwendung. Der folgende Codeausschnitt zeigt ein Beispiel für eine `drawable` Ressource mit einer `layer-list`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,5 +229,5 @@ Dieser Leitfaden erläutert, eine Möglichkeit zum Implementieren eines Begrüß
 ## <a name="related-links"></a>Verwandte Links
 
 - [SplashScreen (Beispiel)](https://developer.xamarin.com/samples/monodroid/SplashScreen)
-- [Layer-List-Drawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
+- [Layer-List-Drawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
 - [ Material Design-Muster – Startbildschirme](https://material.io/design/communication/launch-screen.html#usage)

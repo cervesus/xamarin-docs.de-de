@@ -6,33 +6,34 @@ ms.assetid: EB3BE685-CB72-48E3-89D7-C845E76B9FA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/25/2017
-ms.openlocfilehash: 552ad4d2de6e2560dc4301a9b5cc0ce6a5edb348
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.date: 03/07/2019
+ms.openlocfilehash: f517aaa770fa7b2f1463954638f0afc95168bf65
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197109"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669673"
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android-Buildfehler: Unerwarteter Fehler bei der LinkAssemblies-Aufgabe
 
 Sie können eine Fehlermeldung angezeigt `The "LinkAssemblies" task failed unexpectedly` Forms Wenn ein Xamarin.Android-Projekt erstellen, die verwendet wird. Dies geschieht, wenn der Linker aktiv ist (in der Regel auf ein *Version* Build zum Verringern der Größe des app-Pakets), und es tritt auf, da der Android-Ziele, die neueste Framework nicht aktualisiert werden. (Weitere Informationen: [Xamarin.Forms für Android Anforderungen](~/get-started/requirements.md#android))
 
-Die Lösung des Problems ist, um sicherzustellen, dass Sie die neuesten unterstützten Android SDK-Versionen, und legen Sie die **Zielframework** zu **zuletzt installierte Plattform verwenden**. Es wird empfohlen, dass Sie festlegen, die **Android-Zielversion** zu **Zielframeworkversion verwenden** und **Android-Mindestversion** auf API 15 oder höher. Dies gilt als die unterstützte Konfiguration.
+Die Lösung des Problems ist, um sicherzustellen, dass Sie die neuesten unterstützten Android SDK-Versionen, und legen Sie die **Zielframework** auf die zuletzt installierte Plattform. Es wird empfohlen, dass Sie festlegen, die **Android-Zielversion** auf die zuletzt installierte Plattform und die **Android-Mindestversion** auf API-19 oder höher. Dies gilt als die unterstützte Konfiguration.
 
 ## <a name="setting-in-visual-studio-for-mac"></a>Die Einstellung in Visual Studio für Mac
 
-1.  Klicken Sie mit der rechten Maustaste auf das Android-Projekt.
-2.  Wechseln Sie zu **erstellen > Allgemein > Zielframework**.
-3.  Legen Sie die **Zielframework: Zuletzt installierte Plattform verwenden**.
-4.  Wechseln Sie weiterhin in den Projektoptionen zu **erstellen > Android-Anwendung**.
-5.  Legen Sie die **Minimum Android Version** auf API-Ebene 15 oder höher und dem **Target Android Version** zu **automatisch – Zielframeworkversion verwenden**.
+1.  Klicken Sie mit der rechten Maustaste auf das Android-Projekt, und wählen **Optionen** im Menü.
+2.  In der **Projektoptionen** wechseln Sie zum Dialogfeld **erstellen > Allgemein**.
+3.  Legen Sie die **Kompilieren mit der Android-Version: (Zielframework)**  auf die zuletzt installierte Plattform.
+4.  In der **Projektoptionen** wechseln Sie zum Dialogfeld **erstellen > Android-Anwendung**.
+5.  Legen Sie die **Minimum Android Version** auf API-Ebene 19 oder höher, und die **Target Android Version** auf die zuletzt installierte Plattform Sie ausgewählt, (3 haben).
 
 ## <a name="setting-in-visual-studio"></a>Einstellung in Visual Studio
 
-1.  Klicken Sie mit der rechten Maustaste auf das Android-Projekt.
-2.  Wechseln Sie zu **Anwendung** in den Projektoptionen.
-3.  Legen Sie die **Kompilieren mit der Android-Version** & **Target Android Version** Einstellungen **neueste Plattform verwenden** / **verwenden Kompilieren mit der SDK-Version**.
-4.  Legen Sie die **Android-Mindestversion** festlegen auf API-19 oder höher.
+1.  Klicken Sie mit der rechten Maustaste auf das Android-Projekt, und wählen **Eigenschaften** im Menü.
+2.  Wechseln Sie in den Projekteigenschaften zu **Anwendung**.
+3.  Legen Sie die **Kompilieren mit der Android-Version: (Zielframework)**  auf die zuletzt installierte Plattform.
+4.  Wechseln Sie in den Projekteigenschaften zu **Android-Manifest**.
+5.  Legen Sie die **Minimum Android Version** auf API-Ebene 19 oder höher, und die **Target Android Version** auf die zuletzt installierte Plattform Sie ausgewählt, (3 haben).
 
 Nachdem Sie diese Einstellungen aktualisiert haben, bereinigen Sie Sie und Neuerstellen Sie des Projekts, um sicherzustellen, dass die Änderungen übernommen werden.

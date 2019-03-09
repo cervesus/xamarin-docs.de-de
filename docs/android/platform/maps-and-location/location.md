@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: bc7da76084075b03ca346949b7bb764ae1313c2a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 05a2187a5e8dc010f04e89757b566eaf44cb5fd6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563510"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668938"
 ---
 # <a name="location-services"></a>Ortungsdienste
 
@@ -32,7 +32,7 @@ In Android, unabhängig davon, welche API, die Sie auswählen, für die Arbeit m
 
 Mehrere Technologien werden intern verwendet, um den Standort des Benutzers zu ermitteln. Der verwendeten Hardware abhängt, auf dem Typ des *Ortungsanbieter* für den Auftrag des Sammelns von Daten ausgewählt. Android verwendet drei Location-Anbieter:
 
--   **GPS-Anbieter** &ndash; erhält den genauesten Speicherort, verwendet das größte Leistungspotenzial und funktioniert am besten im freien GPS. Dieser Anbieter verwendet eine Kombination von GPS und persönlicher GPS ([aGPS](http://en.wikipedia.org/wiki/Assisted_GPS)), womit GPS-Daten, die von cellular Towers erfasst.
+-   **GPS-Anbieter** &ndash; erhält den genauesten Speicherort, verwendet das größte Leistungspotenzial und funktioniert am besten im freien GPS. Dieser Anbieter verwendet eine Kombination von GPS und persönlicher GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)), womit GPS-Daten, die von cellular Towers erfasst.
 
 -   **Netzwerk-Anbieter** &ndash; stellt eine Kombination von Wi-Fi "und" Mobiltelefon Daten, einschließlich aGPS-Daten, die von der Zelle Towers erfasst. Weniger Energie als den GPS-Anbieter verwendet, sondern gibt Positionsdaten unterschiedlicher Genauigkeit.
 
@@ -59,7 +59,7 @@ Um die Berechtigungen festgelegt haben, erweitern Sie die **Eigenschaften** Ordn
 Durch Festlegen eines dieser Berechtigungen teilt Android, dass Ihre Anwendung vom Benutzer die Berechtigung zum Zugriff auf die Location-Anbieter benötigt. Geräte, die API-Ebene 22 (Android 5.1) ausführen oder niedriger fordert den Benutzer zum gewähren dieser Berechtigungen jedes Mal, die die app installiert ist. Auf Geräten mit-API-Ebene 23 (Android 6.0) oder höher verwenden, sollte die app eine Laufzeit berechtigungsüberprüfung, bevor eine Anforderung des Ortungsanbieters ausführen. 
 
 > [!NOTE]
->Hinweis: Das Festlegen `ACCESS_FINE_LOCATION` bedeutet den Zugriff auf beide Daten grob gehalten und ist in Ordnung. Sollte nie müssen Sie beide nur über die Berechtigungen, Festlegen der *minimale* Berechtigung der app arbeiten erforderlich.
+>Hinweis: Festlegen von `ACCESS_FINE_LOCATION` bedeutet den Zugriff auf beide Daten grob gehalten und ist in Ordnung. Sollte nie müssen Sie beide nur über die Berechtigungen, Festlegen der *minimale* Berechtigung der app arbeiten erforderlich.
 
 Dieser Codeausschnitt ist ein Beispiel für So prüfen Sie, dass eine app-Berechtigung für die `ACCESS_FINE_LOCATION` Berechtigung:
 
@@ -84,7 +84,7 @@ Die fused-Location-Anbieters ist die bevorzugte Methode für die Android-Anwendu
  
 Die fused Location-Anbieter-API bietet eine Vielzahl von anderen Tools standortbezogenen Anwendungen, einschließlich Geofencing und aktivitätsüberwachung zu ermöglichen. In diesem Abschnitt werden wir den Fokus auf die Grundlagen zum Einrichten der `LocationClient`, Anbieter einrichten und den Standort des Benutzers abrufen.
 
-Die fused Ortungsanbieter ist Teil des [Google Play Services](http://developer.android.com/google/play-services/index.html).
+Die fused Ortungsanbieter ist Teil des [Google Play Services](https://developer.android.com/google/play-services/index.html).
 Das Google Play Services-Paket muss installiert und ordnungsgemäß konfiguriert werden, in der Anwendung für die fused Location-Anbieter-API arbeiten und das Gerät muss das Google Play Services APK installiert haben.
 
 Bevor Sie eine xamarin.Android-Anwendung Anwendung können die fused-Location-Anbieters, es muss Hinzufügen der **Xamarin.GooglePlayServices.Maps** Paket dem Projekt. Zudem können die folgenden `using` Anweisungen, die auf die unten beschriebenen Klassen verweisen Quelldateien hinzugefügt werden sollen:
@@ -231,7 +231,7 @@ Der Speicherortdienst für Android ist eine ältere API für die Nutzung von Sta
 
 Der Speicherortdienst eignet sich optimal für Anwendungen, die auf Geräten ausgeführt werden müssen, die keine Google Play Services installiert haben.
 
-Der Speicherortdienst ist eine besondere Art von [Service](http://developer.android.com/guide/components/services.html) vom System verwaltet. Ein Systemdienst interagiert mit Hardware der Geräte, und es wird immer ausgeführt. Um speicherortaktualisierungen in unserer Anwendung zu nutzen, wir abonnieren speicherortaktualisierungen aus dem System Ortsdienst mithilfe einer `LocationManager` und `RequestLocationUpdates` aufrufen.
+Der Speicherortdienst ist eine besondere Art von [Service](https://developer.android.com/guide/components/services.html) vom System verwaltet. Ein Systemdienst interagiert mit Hardware der Geräte, und es wird immer ausgeführt. Um speicherortaktualisierungen in unserer Anwendung zu nutzen, wir abonnieren speicherortaktualisierungen aus dem System Ortsdienst mithilfe einer `LocationManager` und `RequestLocationUpdates` aufrufen.
 
 Um den Standort des Benutzers mithilfe von Android Ortsdienst erhalten die umfasst mehrere Schritte aus:
 
@@ -357,10 +357,10 @@ Dieses Handbuch behandelt die Position des Benutzers mit der Speicherortdienst f
 
 - [Speicherort (Beispiel)](https://developer.xamarin.com/samples/Location/)
 - [FusedLocationProvider (Beispiel)](https://developer.xamarin.com/samples/FusedLocationProvider/)
-- [Google Play-Dienste](http://developer.android.com/google/play-services/index.html)
+- [Google Play-Dienste](https://developer.android.com/google/play-services/index.html)
 - [Kriterien-Klasse](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [LocationManager-Klasse](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)
 - [LocationListener-Klasse](https://developer.xamarin.com/api/type/Android.Locations.ILocationListener/)
-- [LocationClient API](http://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
-- [LocationListener API](http://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
+- [LocationClient API](https://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
+- [LocationListener API](https://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
 - [LocationRequest API](https://developer.android.com/reference/com/google/android/gms/location/LocationRequest.html)

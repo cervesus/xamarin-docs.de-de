@@ -6,12 +6,13 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: da7064997b8a10d4a4604861a405e13dd23a08cf
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 03/19/2017
+ms.openlocfilehash: f7106c9b23fa71b32043ef8190691d798c36370d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233912"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672572"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Weitere iOS 9-Frameworks Änderungen
 
@@ -195,9 +196,9 @@ Apple hat viele Verbesserungen an mehrere Elemente enthalten die [UIKit](xref:UI
 
 ### <a name="3d-touch-events"></a>3D Touch-Ereignissen
 
-Noch nicht mit iOS 9 und das iPhone 6 s und iPhone 6 s Plus, 3D Touch hinzugefügt Druck vertrauliche Gesten Ihre iOS-apps. Daher, wenn Ihre app unter iOS 9 (oder höher) ausgeführt wird, und das iOS-Gerät ist in der Lage, von der unterstützenden 3D Touch, Änderungen in der speicherauslastung führt dazu, dass die `TouchesMoved` Ereignis ausgelöst wurde. 
+Noch nicht mit iOS 9 und das iPhone 6 s und iPhone 6 s Plus, 3D Touch hinzugefügt Druck vertrauliche Gesten Ihre iOS-apps. Daher, wenn Ihre app unter iOS 9 (oder höher) ausgeführt wird, und das iOS-Gerät ist in der Lage, von der unterstützenden 3D Touch, Änderungen in der speicherauslastung führt dazu, dass die `TouchesMoved` Ereignis ausgelöst wurde.
 
-Aufgrund dieser Änderung im Verhalten Ihrer iOS-apps vorbereitet sein sollte der `TouchesMoved` aufzurufenden Ereignisses häufiger, selbst wenn das X / Y-Koordinaten nicht geändert wurden. 
+Aufgrund dieser Änderung im Verhalten Ihrer iOS-apps vorbereitet sein sollte der `TouchesMoved` aufzurufenden Ereignisses häufiger, selbst wenn das X / Y-Koordinaten nicht geändert wurden.
 
 Weitere Informationen finden Sie unserem [Einführung in 3D Touch](~/ios/platform/3d-touch.md) Guide.
 

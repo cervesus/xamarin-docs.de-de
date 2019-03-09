@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: c68cdc443f11ec6709a9d6fdde8ce10cd9db6733
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 4f08468d08e12ad77cacbac66b55ad8fc6ead433
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233678"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667963"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Übersicht über die Objective-C-Bindungen
 
@@ -74,7 +74,7 @@ Lesen der [Ziel Sharpie-Dokumentation](~/cross-platform/macios/binding/objective
 
 Es ist möglich, verwenden Sie die [[registrieren]](xref:Foundation.RegisterAttribute) Attribut [[Export]](xref:Foundation.ExportAttribute) -Attribut und [manuellen Objective-C-Selektor-Aufruf](~/ios/internals/objective-c-selectors.md) zusammen, um manuell neu (zuvor binden ungebunden) Objective-C-Typen.
 
-Suchen Sie zunächst einen Typ, den Sie binden möchten. Diskussion zu (und Einfachheit), wird eine Bindung wird der [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) Typ (die bereits im gebundenen [Foundation.NSEnumerator](xref:Foundation.NSEnumerator); die nachfolgende Implementierung ist einfach, z. B. Zwecke).
+Suchen Sie zunächst einen Typ, den Sie binden möchten. Diskussion zu (und Einfachheit), wird eine Bindung wird der [NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) Typ (die bereits im gebundenen [Foundation.NSEnumerator](xref:Foundation.NSEnumerator); die nachfolgende Implementierung ist einfach, z. B. Zwecke).
 
 Zweitens müssen wir erstellen den C# Typ. Wir möchten wahrscheinlich dies in einem Namespace platzieren; Da Objective-C-Namespaces nicht unterstützt, müssen wir verwenden die `[Register]` Attribut so ändern Sie den Typnamen, die Xamarin.iOS mit Objective-C-Laufzeit registriert werden. Die C# Typ muss auch eine Vererbung von [Foundation.NSObject](xref:Foundation.NSObject):
 

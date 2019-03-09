@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2017
-ms.openlocfilehash: 18dac665eec1c5d3ac64065c37e73022670c1ba5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 48ef40ce8560fd9fbb842dde70622d968591ab98
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108846"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666904"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Bereitstellen von Abwärtskompatibilität mit dem Paket für Android-Unterstützung
 
-Die Nützlichkeit der Fragmente wäre begrenzen, ohne dass rückwärts Kompatibilität mit vor Android 3.0 (API-Ebene 11) Geräte. Eingeführt, um diese Funktion zu gewährleisten, Google der [Support-Bibliothek](http://developer.android.com/sdk/compatibility-library.html) (ursprünglich die *Android Compatibility Library* wann es veröffentlicht wurde) die Backports einige der APIs aus neueren Versionen von Android auf ältere Versionen von Android. Es ist das Android Support-Paket, das Geräte mit Android 1.6 (API-Ebene 4), Android 2.3.3 ermöglicht. (API-Ebene von 10).
+Die Nützlichkeit der Fragmente wäre begrenzen, ohne dass rückwärts Kompatibilität mit vor Android 3.0 (API-Ebene 11) Geräte. Eingeführt, um diese Funktion zu gewährleisten, Google der [Support-Bibliothek](https://developer.android.com/sdk/compatibility-library.html) (ursprünglich die *Android Compatibility Library* wann es veröffentlicht wurde) die Backports einige der APIs aus neueren Versionen von Android auf ältere Versionen von Android. Es ist das Android Support-Paket, das Geräte mit Android 1.6 (API-Ebene 4), Android 2.3.3 ermöglicht. (API-Ebene von 10).
 
 > [!NOTE]
 > Nur die `ListFragment` und `DialogFragment` über die Android Support-Paket verfügbar sind. Keine der anderen Fragment Unterklassen, z. B. die `PreferenceFragment,` im Android Support-Paket verwendet werden. Sie funktionieren nicht in vor Android 3.0-Anwendungen. 

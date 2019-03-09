@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 8e95e674f52cb23be769473e27dc8eb785a77820
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116042"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668750"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 
@@ -101,7 +101,7 @@ Dokument-Auswahl funktioniert mit einem Benutzer iCloud-Laufwerk, damit der Benu
 
 Die Dokumentauswahl ausführlicher Informationen und erfahren, wie Sie es in einer Xamarin.iOS-Anwendung zu integrieren, finden Sie in der [Einführung in die Dokumentauswahl](~/ios/platform/document-picker.md) Guide.
 
-### <a name="handoff"></a>Übergabe
+### <a name="handoff"></a>Handoff
 
 Übergabe, die Teil der größeren Geschäftskontinuität-Funktion ist, hat es sich um einen weiteren Schritt in Richtung Integration von OS X und iOS. Dies umfasst plattformübergreifende AirDrop, die Fähigkeit, iPhone Anrufe, SMS, auf die iPad- und Mac und Verbesserungen bei der Bindung auf Ihrem iPhone zu werden.
 
@@ -151,7 +151,7 @@ Weitere Informationen finden Sie unserem [SpriteKit](~/ios/platform/gaming/sprit
 ## <a name="other-changes"></a>Weitere Änderungen
 Sowie die wichtigsten Änderungen in iOS 8, die oben beschrieben sind, hat Apple darüber Frameworks für viele vorhandene aktualisiert. Diese werden nachfolgend ausführlich erläutert:
 
-- **[Core-Image](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)**  – Apple hat bei der Image-verarbeitungsframework erweitert werden, indem Sie eine bessere Unterstützung für die Erkennung von rechteckige Bereiche hinzufügen, und QR-codes in Bildern. Mike Bluestein untersucht, dies in seinem Blog post berechtigt [Bilderkennung IOS 8](http://blog.xamarin.com/image-detection-in-ios-8/)
+- **[Core-Image](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)**  – Apple hat bei der Image-verarbeitungsframework erweitert werden, indem Sie eine bessere Unterstützung für die Erkennung von rechteckige Bereiche hinzufügen, und QR-codes in Bildern. Mike Bluestein untersucht, dies in seinem Blog post berechtigt [Bilderkennung IOS 8](https://blog.xamarin.com/image-detection-in-ios-8/)
 
 ## <a name="deprecated-apis"></a>Nicht mehr unterstützte APIs
 Alle Verbesserungen in iOS 8 vorgenommen wurden wurden eine Reihe von APIs als veraltet. Einige davon werden nachfolgend beschrieben.

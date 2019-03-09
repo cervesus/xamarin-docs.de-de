@@ -1,5 +1,5 @@
 ---
-title: Ist es möglich, eine Verbindung mit Android-Emulatoren aus einer Windows-VM auf einem Mac ausgeführt?
+title: Ist es möglich, über eine Windows-VM mit den Android-Emulatoren, die auf einem Mac ausgeführt werden, eine Verbindung herzustellen?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: 6e66bf4edb4269aa0f3b765df4a08b78c128f763
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 35bfdb92ccfffe54f0ca10dc001d8919703a5bd8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115632"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668152"
 ---
-# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Ist es möglich, eine Verbindung mit Android-Emulatoren aus einer Windows-VM auf einem Mac ausgeführt?
+# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Ist es möglich, über eine Windows-VM mit den Android-Emulatoren, die auf einem Mac ausgeführt werden, eine Verbindung herzustellen?
 
 Verwenden Sie zum Verbinden mit dem Android-Emulator auf einem Mac ausführen, von einem virtuellen Windows-Computer die folgenden Schritte aus:
 
@@ -35,7 +35,7 @@ Verwenden Sie zum Verbinden mit dem Android-Emulator auf einem Mac ausführen, v
     emulator6 94105 macuser   21u  IPv4 0xa8dacfb1d845a51f      0t0  TCP localhost:5554 (LISTEN)
     ```
 
-    Der Port mit ungerader Nummer wird für die Verbindung verwendet `adb`. Siehe auch [ http://developer.android.com/tools/devices/emulator.html#emulatornetworking ](http://developer.android.com/tools/devices/emulator.html#emulatornetworking).
+    Der Port mit ungerader Nummer wird für die Verbindung verwendet `adb`. Siehe auch [ https://developer.android.com/tools/devices/emulator.html#emulatornetworking ](https://developer.android.com/tools/devices/emulator.html#emulatornetworking).
 
 4.  _Option 1_: Verwendung [`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
     TCP-Pakete weiterleiten eingehender empfangen extern auf Port 5555 verwendet (oder einen anderen Port gewünscht) auf den Port ungerade der Loopback-Schnittstelle (**127.0.0.1 5555** in diesem Beispiel), und zum Weiterleiten der ausgehenden Pakete an andere Art und Weise sichern:
@@ -95,7 +95,7 @@ Eine kleine Warnung: bei Verwendung von Port `5555` für den lokalen Port, `adb`
 
 ### <a name="alternate-technique-using-adb--h-is-not-yet-supported"></a>Alternative Technik `adb -H` wird noch nicht unterstützt
 
-Theoretisch kann ein anderer Ansatz wäre `adb`die integrierte Funktion für die Verbindung ein `adb` Server, die auf einem Remotecomputer ausgeführt wird (finden Sie z. B. [ http://stackoverflow.com/a/18551325 ](http://stackoverflow.com/a/18551325)).
+Theoretisch kann ein anderer Ansatz wäre `adb`die integrierte Funktion für die Verbindung ein `adb` Server, die auf einem Remotecomputer ausgeführt wird (finden Sie z. B. [ https://stackoverflow.com/a/18551325 ](https://stackoverflow.com/a/18551325)).
 Aber die Xamarin.Android-IDE-Erweiterungen bieten derzeit keine Möglichkeit, diese Option zu konfigurieren.
 
 ## <a name="contact-information"></a>Kontaktinformationen

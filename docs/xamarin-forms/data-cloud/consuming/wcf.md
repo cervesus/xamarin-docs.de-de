@@ -1,22 +1,22 @@
 ---
-title: Verwenden einen Windows Communication Foundation (WCF)-Webdienst
+title: Nutzen Sie einen Windows Communication Foundation (WCF)-Webdienst
 description: In diesem Artikel wird veranschaulicht, wie einen WCF SOAP Simple Object Access Protocol ()-Dienst aus einer Xamarin.Forms-Anwendung genutzt wird.
 ms.prod: xamarin
 ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2016
-ms.openlocfilehash: 7e8acc6e8aaf8b8e0e8cec7d5d0f3e28cf60073a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/08/2019
+ms.openlocfilehash: 600120b6ed8484399cf5fc48638ef4b129e9c406
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055594"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671961"
 ---
-# <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Verwenden einen Windows Communication Foundation (WCF)-Webdienst
+# <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Nutzen Sie einen Windows Communication Foundation (WCF)-Webdienst
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
 
 _WCF ist Microsofts einheitliches Framework zum Erstellen von dienstorientierten Anwendungen. Sie können Entwickler sichere, zuverlässige, transaktionsbasierte und interoperable verteilte Anwendungen erstellen. In diesem Artikel wird veranschaulicht, wie einen WCF SOAP Simple Object Access Protocol ()-Dienst aus einer Xamarin.Forms-Anwendung genutzt wird._
 
@@ -29,9 +29,10 @@ WCF wird einen Dienst mit einer Vielzahl von verschiedene Verträge, die im folg
 
 Es gibt Unterschiede zwischen ASP.NET Web Services (ASMX) und WCF, aber es ist wichtig zu verstehen, dass WCF die gleichen Funktionen, die ASMX bereitgestellt werden: SOAP-Nachrichten über HTTP unterstützt. Weitere Informationen zu einen ASMX-Dienst zu nutzen, finden Sie unter [Nutzung der ASP.NET Web Services (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md).
 
-Die Xamarin-Plattform unterstützt in der Regel die gleiche Client-Side Teilmenge von WCF, die in der Silverlight-Laufzeit enthalten ist. Dies schließt die am häufigsten verwendeten Codierungs- und Protokolldetails Implementierungen von WCF – textcodierten SOAP-Nachrichten über die HTTP-transport-Protokoll der `BasicHttpBinding` Klasse. Unterstützung der WCF erfordert außerdem die Verwendung von Tools, die nur verfügbar, in einer Windows-Umgebung in den Proxy zu generieren.
+> [!IMPORTANT]
+> Die Xamarin-Plattform-Unterstützung für WCF ist gegenüber der Verwendung von HTTP/HTTPS-textcodierten SOAP-Nachrichten auf der `BasicHttpBinding` Klasse. Unterstützung der WCF erfordert außerdem die Verwendung von Tools, die nur verfügbar, in einer Windows-Umgebung in den Proxy zu generieren.
 
-Anweisungen zum Einrichten des WCF-Diensts können in der Readme-Datei gefunden werden, die mit der beispielanwendung. Jedoch beim Ausführen der beispielanwendung wird es verbinden zu einem Xamarin-gehosteten WCF-Dienst, der nur-Lese Zugriff auf Daten bereitstellt wie im folgenden Screenshot gezeigt:
+Die beispielanwendung verwendet einen WCF-Dienst gehostet werden können, die in verfügbar ist die **TodoWCFService** Hauptordner des Beispiels, und wird im folgenden Screenshot dargestellt:
 
 ![](wcf-images/portal.png "Beispielanwendung")
 
@@ -39,7 +40,7 @@ Anweisungen zum Einrichten des WCF-Diensts können in der Readme-Datei gefunden 
 > In iOS 9 und höher erzwingt (App Transport Security, ATS) sichere Verbindungen zwischen der Internet-Ressourcen (z. B. die app Back-End-Server) und die app, und verhindert versehentliche Offenlegung vertraulicher Informationen. Da ATS in apps für iOS 9, die standardmäßig aktiviert ist, werden alle Verbindungen unterliegen ATS-sicherheitsanforderungen. Wenn die Verbindungen nicht über diese Anforderungen erfüllen, werden sie mit einer Ausnahme fehlschlagen.
 > ATS können von entschieden werden, ist dies nicht möglich, verwenden Sie die `HTTPS` -Protokolls und Sichern der Kommunikation für Ressourcen im Internet. Dies kann erreicht werden, durch die Aktualisierung der app **"Info.plist"** Datei. Weitere Informationen finden Sie unter [App Transport Security](~/ios/app-fundamentals/ats.md).
 
-## <a name="consuming-the-web-service"></a>Nutzung des Webdiensts
+## <a name="consume-the-web-service"></a>Nutzen des Webdiensts
 
 Der WCF-Dienst bietet die folgenden Vorgänge:
 
@@ -51,9 +52,6 @@ Der WCF-Dienst bietet die folgenden Vorgänge:
 |DeleteTodoItem|Löschen eines To-Do-Elements|Eine mithilfe von XML serialisierte TodoItem|
 
 Weitere Informationen zu das Datenmodell in der Anwendung verwendet, finden Sie unter [Modellieren der Daten](~/xamarin-forms/data-cloud/walkthrough.md).
-
-> [!NOTE]
-> Die beispielanwendung nutzt den Xamarin-gehosteten WCF-Dienst, der schreibgeschützten Zugriff auf den Webdienst bereitstellt. Aus diesem Grund werden die Vorgänge, die zu erstellen, aktualisieren und Löschen von Daten nicht geändert werden die Daten in der Anwendung genutzt. Eine hostfähigen Version von der ASMX-Dienst ist jedoch verfügbar, in der **TodoWCFService** Ordner in der zugehörigen beispielanwendung. Diese hostfähigen Version von den WCF-Dienst ermöglicht vollständige erstellen, aktualisieren, lesen und löschen den Zugriff auf die Daten.
 
 Ein *Proxy* muss generiert werden, um einen WCF-Dienst nutzen, die der Anwendung ermöglicht, mit dem Dienst herstellen. Der Proxy wird erstellt, indem verarbeitende Dienstmetadaten, die die Methoden und zugeordnete Dienstkonfiguration zu definieren. Diese Metadaten werden in die Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, die vom Webdienst generiert wird. Hinzufügen ein Dienstverweises für den Webdienst in einer .NET Standard-Bibliothek mit den Microsoft WCF Web Service Reference Provider in Visual Studio 2017, kann der Proxy erstellt werden. Eine Alternative zum Erstellen des Proxys verwenden den Microsoft WCF Web Service Reference Provider in Visual Studio 2017 ist das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
 
@@ -67,7 +65,7 @@ Die Task Parallel Library (TPL) vereinfachen kann ein APM begin/End-Methodenpaar
 
 Weitere Informationen zu APM finden Sie unter [asynchronen Programmiermodells](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) auf MSDN.
 
-### <a name="creating-the-todoserviceclient-object"></a>Erstellen des Objekts TodoServiceClient
+### <a name="create-the-todoserviceclient-object"></a>Erstellen Sie das TodoServiceClient-Objekt
 
 Die generierte Proxyklasse enthält die `TodoServiceClient` -Klasse, die Kommunikation mit dem WCF-Dienst über HTTP verwendet wird. Es stellt Funktionen bereit, für das Aufrufen von Webdienstmethoden, wie asynchrone Vorgänge aus einem URI-Dienstinstanz identifiziert. Weitere Informationen zu asynchronen Vorgängen finden Sie unter [Async-Unterstützung (Übersicht)](~/cross-platform/platform/async.md).
 
@@ -93,14 +91,15 @@ Die `TodoServiceClient` -Instanz mit einer Bindung, Informationen und eine Endpu
 
 Weitere Informationen zu den Dienstverweis konfigurieren, finden Sie unter [konfigurieren den Dienstverweis](~/cross-platform/data-cloud/web-services/index.md#wcf).
 
-### <a name="creating-data-transfer-objects"></a>Erstellen von Data Transfer Objects
+### <a name="create-data-transfer-objects"></a>Erstellen von Objekten für die Datenübertragung
 
 Die beispielanwendung verwendet die `TodoItem` Klasse, um die Daten des Modells. Zum Speichern einer `TodoItem` Element in den Webdienst, sie zuerst in den generierten Proxy konvertiert werden müssen `TodoItem` Typ. Dies erfolgt durch die `ToWCFServiceTodoItem` Methode, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 TodoWCFService.TodoItem ToWCFServiceTodoItem (TodoItem item)
 {
-  return new TodoWCFService.TodoItem {
+  return new TodoWCFService.TodoItem
+  {
     ID = item.ID,
     Name = item.Name,
     Notes = item.Notes,
@@ -116,7 +115,8 @@ Auf ähnliche Weise, wenn Daten aus dem Webdienst abgerufen werden, muss er sein
 ```csharp
 static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 {
-  return new TodoItem {
+  return new TodoItem
+  {
     ID = item.ID,
     Name = item.Name,
     Notes = item.Notes,
@@ -128,7 +128,7 @@ static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 
 Diese Methode ruft einfach die Daten ab, aus den generierten Proxy `TodoItem` geben und wird in der neu erstellten `TodoItem` Instanz.
 
-### <a name="retrieving-data"></a>Abrufen von Daten
+### <a name="retrieve-data"></a>Abrufen von Daten
 
 Die `TodoServiceClient.BeginGetTodoItems` und `TodoServiceClient.EndGetTodoItems` Methoden zum Aufrufen der `GetTodoItems` Operation, die vom Webdienst bereitgestellt. Diese asynchronen Methoden in gekapselt sind eine `Task` Objekt, wie im folgenden Codebeispiel gezeigt:
 
@@ -142,7 +142,8 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
     null,
     TaskCreationOptions.None);
 
-  foreach (var item in todoItems) {
+  foreach (var item in todoItems)
+  {
     Items.Add (FromWCFServiceTodoItem (item));
   }
   ...
@@ -153,7 +154,7 @@ Die `Task.Factory.FromAsync` -Methode erstellt eine `Task` , ausgeführt wird di
 
 Die `TodoServiceClient.EndGetTodoItems` Methode gibt ein `ObservableCollection` von `TodoWCFService.TodoItem` -Instanzen, die anschließend in konvertiert wird eine `List` von `TodoItem` Instanzen für die Anzeige.
 
-### <a name="creating-data"></a>Erstellen von Daten
+### <a name="create-data"></a>Erstellen von Daten
 
 Die `TodoServiceClient.BeginCreateTodoItem` und `TodoServiceClient.EndCreateTodoItem` Methoden zum Aufrufen der `CreateTodoItem` Operation, die vom Webdienst bereitgestellt. Diese asynchronen Methoden in gekapselt sind eine `Task` Objekt, wie im folgenden Codebeispiel gezeigt:
 
@@ -176,7 +177,7 @@ Die `Task.Factory.FromAsync` -Methode erstellt eine `Task` , ausgeführt wird di
 
 Löst die Web-Dienst eine `FaultException` Ausfall zum Erstellen der `TodoItem`, die von der Anwendung erfolgt.
 
-### <a name="updating-data"></a>Aktualisieren von Daten
+### <a name="update-data"></a>Aktualisieren von Daten
 
 Die `TodoServiceClient.BeginEditTodoItem` und `TodoServiceClient.EndEditTodoItem` Methoden zum Aufrufen der `EditTodoItem` Operation, die vom Webdienst bereitgestellt. Diese asynchronen Methoden in gekapselt sind eine `Task` Objekt, wie im folgenden Codebeispiel gezeigt:
 
@@ -199,7 +200,7 @@ Die `Task.Factory.FromAsync` -Methode erstellt eine `Task` , ausgeführt wird di
 
 Der Web-Dienst löst eine `FaultException` bei einem Fehler zu suchen, oder Aktualisieren der `TodoItem`, die von der Anwendung erfolgt.
 
-### <a name="deleting-data"></a>Löschen von Daten
+### <a name="delete-data"></a>Löschen von Daten
 
 Die `TodoServiceClient.BeginDeleteTodoItem` und `TodoServiceClient.EndDeleteTodoItem` Methoden zum Aufrufen der `DeleteTodoItem` Operation, die vom Webdienst bereitgestellt. Diese asynchronen Methoden in gekapselt sind eine `Task` Objekt, wie im folgenden Codebeispiel gezeigt:
 
@@ -220,12 +221,8 @@ Die `Task.Factory.FromAsync` -Methode erstellt eine `Task` , ausgeführt wird di
 
 Der Web-Dienst löst eine `FaultException` bei einem Fehler zu suchen, oder Löschen der `TodoItem`, die von der Anwendung erfolgt.
 
-## <a name="summary"></a>Zusammenfassung
-
-In diesem Artikel wurde veranschaulicht, wie ein WCF-SOAP-Webdiensts aus einer Xamarin.Forms-Anwendung. Die Xamarin-Plattform unterstützt in der Regel die gleiche Client-Side Teilmenge von WCF, die in der Silverlight-Laufzeit enthalten ist. Dies schließt die am häufigsten verwendeten Codierungs- und Protokolldetails Implementierungen von WCF – textcodierten SOAP-Nachrichten über die HTTP-transport-Protokoll der `BasicHttpBinding` Klasse. Unterstützung der WCF erfordert außerdem die Verwendung von Tools, die nur verfügbar, in einer Windows-Umgebung in den Proxy zu generieren.
-
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [TodoWCF (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
-- [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult(v=vs.110).aspx)
+- [Vorgehensweise: Erstellen eines Windows Communication Foundation-Clients](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

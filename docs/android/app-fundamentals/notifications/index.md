@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a0778de5dcc7e21ba011fe144be703b3b83b8247
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114040"
 ---
+
 # <a name="notifications-in-xamarinandroid"></a>Benachrichtigungen in Xamarin.Android
 
 
@@ -36,7 +31,7 @@ In dieser exemplarischen Vorgehensweise wird beschrieben, wie lokale Benachricht
 
 [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; Firebase Cloud Messaging (FCM) ist ein Dienst, der ermöglicht, Nachrichten zwischen mobile apps und Server-Anwendungen. Firebase Cloud Messaging dienen zum Implementieren von remotebenachrichtigungen (auch als "Pushbenachrichtigungen" bezeichnet) in Xamarin.Android-Anwendungen.
 
-[Benachrichtigungen](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; Android-Entwickler dieses Thema ist das umfassende Handbuch für die Android-Benachrichtigungen. Es umfasst einen Entwurf Überlegungen-Abschnitt, der Ihnen hilft Ihrer Benachrichtigungen so entwerfen, dass sie die Richtlinien der Android-Benutzeroberfläche entsprechen. Es bietet weitere Hintergrundinformationen zu Preserviing Navigation, beim Starten von einer Aktivitäts, und es wird erläutert, wie Status in einer Benachrichtigung und Steuerelement Wiedergabe von Medien auf dem Sperrbildschirm angezeigt werden soll. 
+[Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; Android-Entwickler dieses Thema ist das umfassende Handbuch für die Android-Benachrichtigungen. Es umfasst einen Entwurf Überlegungen-Abschnitt, der Ihnen hilft Ihrer Benachrichtigungen so entwerfen, dass sie die Richtlinien der Android-Benutzeroberfläche entsprechen. Es bietet weitere Hintergrundinformationen zu Preserviing Navigation, beim Starten von einer Aktivitäts, und es wird erläutert, wie Status in einer Benachrichtigung und Steuerelement Wiedergabe von Medien auf dem Sperrbildschirm angezeigt werden soll. 
 
 [NotificationListenerService](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/) &ndash; dieses Android-Dienst ermöglicht es Ihrer app zum Lauschen auf (und damit interagieren) alle Benachrichtigungen gesendet werden, auf dem Android-Gerät nicht nur die Benachrichtigungen, die auf Ihre app registriert wurde empfangen. Beachten Sie, dass der Benutzer die Berechtigungen für Ihre app, damit es zum Abhören von Benachrichtigungen auf dem Gerät können explizit gewähren muss.
 

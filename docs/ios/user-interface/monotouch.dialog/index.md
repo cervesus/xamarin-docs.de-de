@@ -1,19 +1,14 @@
 ---
 title: Einführung in die MonoTouch.Dialog für Xamarin.iOS
-description: Dieses Dokument beschreibt MonoTouch.Dialog (MT.) (D), ein Framework für die schnelle, deklarativen Entwicklung von Benutzeroberflächen mit Xamarin.iOS. Es wird erläutert, wie Sie mit den MonoTouch.Dialog-APIs erstellen Sie eine Schnittstelle im Code oder in JSON, und Verwenden von Features wie zum Aktualisieren ziehen, Suche, Bild laden im Hintergrund und mehr.
+description: 'Dieses Dokument beschreibt MonoTouch.Dialog (MT.) (D), ein Framework für die schnelle, deklarativen Entwicklung von Benutzeroberflächen mit Xamarin.iOS. Es wird erläutert, wie Sie mit den MonoTouch.Dialog-APIs erstellen Sie eine Schnittstelle im Code oder in JSON, und Verwenden von Features wie zum Aktualisieren ziehen, Suche, Bild laden im Hintergrund und mehr.'
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: c291a440a1937d2b0f1c229e3fa969caedba9ab9
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675457"
 ---
+
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Einführung in die MonoTouch.Dialog für Xamarin.iOS
 
 MonoTouch.Dialog, bezeichnet als MT. D kurz, ist eine schnelle entwicklungstoolkit, die Entwickler Anwendung Bildschirme und Navigation über die Informationen, anstatt den Aufwand zum Erstellen von View Controller, Tabellen usw. erstellen kann. Daher wird eine erhebliche Vereinfachung der Entwicklung und Code Verringerung der Benutzeroberfläche. Betrachten Sie z. B. des folgenden Screenshots aus:
@@ -55,7 +50,7 @@ Jedes Mal, wenn eine Tabelle erforderlich ist, wird z. B. eine Datenquelle erfor
 MT. D vereinfacht, die durch die gesamte Code in eine generische API zum Erstellen der Tabelle zu kapseln. Es zeigt dann eine Abstraktionsebene über diese API, die es ermöglicht eine deklarative Objekt binden die Syntax, die noch einfacher macht. Daher ist es möglich, gibt es zwei APIs im masterziel verfügbar "D:"
 
 -   **Low-Level-Elemente-API** – die *Elemente-API* basiert auf erstellen eine hierarchische Struktur von Elementen, die Bildschirme und deren Komponenten darstellen. Die Elemente-API bietet Entwicklern die Flexibilität und Kontrolle bei der Erstellung von Benutzeroberflächen. Darüber hinaus bietet der Elemente-API-Unterstützung für die deklarative Definition über JSON, erweiterte, also für sowohl unglaublich schnell Deklaration als auch dynamische Benutzeroberfläche-Generierung von einem Server. 
--   **Allgemeine Reflektions-API** – auch bekannt als die *Bindung**API* , in die Klassen mit Benutzeroberflächen-Hinweise, und klicken Sie dann masterziel versehen sind D erstellt Bildschirme, die auf der Grundlage der Objekte automatisch und stellt eine Bindung zwischen dem, was angezeigt (und optional bearbeitet) auf dem Bildschirm, und die zugrunde liegende Objekt sichern.   Das obige Beispiel veranschaulicht die Verwendung der Reflektions-API. Diese API nicht die eine präzisere Kontrolle, die die API-Elemente bieten, aber sie verringert die Komplexität noch einen Schritt weiter, die Hierarchie des Elements basierend auf den Klassenattributen automatisch erstellen. 
+-   **Allgemeine Reflektions-API** – auch bekannt als die *Bindung**API* , in die Klassen mit Benutzeroberflächen-Hinweise, und klicken Sie dann masterziel versehen sind D erstellt Bildschirme, die auf der Grundlage der Objekte automatisch und stellt eine Bindung zwischen dem, was angezeigt (und optional bearbeitet) auf dem Bildschirm, und die zugrunde liegende Objekt sichern. Das obige Beispiel veranschaulicht die Verwendung der Reflektions-API. Diese API nicht die eine präzisere Kontrolle, die die API-Elemente bieten, aber sie verringert die Komplexität noch einen Schritt weiter, die Hierarchie des Elements basierend auf den Klassenattributen automatisch erstellen. 
 
 
 MT. D ist mit einem großen Satz des packed-im UI-Elemente für die Erstellung von Bildschirm erstellt, aber auch die Notwendigkeit, benutzerdefinierte Elemente und erweiterte Bildschirmlayouts erkennt. Daher ist die Erweiterbarkeit, dass eine leistungsstarke mitgelieferten an die API vorgestellt. Entwickler können die vorhandenen Elemente zu erweitern oder neue zu erstellen und dann nahtlos integrieren.
@@ -92,7 +87,7 @@ Ein *DialogViewController*, oder *DVC* kurz, erbt `UITableViewController` und st
 
 Ein *RootElement* ist der Container der obersten Ebene für die Elemente, die in einem DVC aufgenommen. Es enthält Abschnitte, die dann die Elemente enthalten kann. RootElements werden nicht gerendert. Stattdessen sind sie einfach ein Container für was tatsächlich gerendert wird. Eine RootElement eine DVC zugewiesen wird, und klicken Sie dann die DVC rendert die untergeordneten Elemente.
 
-### <a name="section"></a>Bereich
+### <a name="section"></a>Abschnitt
 
 Ein Abschnitt ist eine Gruppe von Zellen in einer Tabelle. Wie bei einer normalen Tabellenabschnitt es optional kann sein eine Kopf- und Fußzeile, die entweder Text oder sogar benutzerdefinierten Ansichten, wie im folgenden Screenshot dargestellt:
 
@@ -263,8 +258,8 @@ Zu jedem Zeitpunkt den Zugriff auf die Value-Eigenschaft der Abrufen des Werts k
 Darüber hinaus die `KeyboardType` Eigenschaft kann zum Zeitpunkt der Erstellung auf der Tastatur Schriftstil gewünscht, für die Dateneingabe festgelegt werden. Dies kann verwendet werden, die mit den Werten der Tastatur konfigurieren `UIKeyboardType` wie im folgenden aufgeführt:
 
 -  Numeric
--  Telefon
--  URL
+-  Phone
+-  Url
 -  E-Mail
 
 
@@ -393,7 +388,7 @@ Die `JsonElement` ist eine Unterklasse von `RootElement` , reicht eine `RootElem
 Die `JsonElement` ist eine `RootElement` , die in zwei Formen instanziiert werden. Erstellt eine Version einer `RootElement` lädt, die den Inhalt nach Bedarf. Diese werden erstellt, mit der `JsonElement` Konstruktoren verwenden, ein zusätzliches Argument am Ende der Url beim Laden des Inhalts von:
 
 ```csharp
-var je = new JsonElement ("Dynamic Data", "http://tirania.org/tmp/demo.json");
+var je = new JsonElement ("Dynamic Data", "https://tirania.org/tmp/demo.json");
 ```
 
 Die andere Form erstellt die Daten aus einer lokalen Datei oder eine vorhandene `System.Json.JsonObject` , die Sie haben bereits so analysiert:
@@ -591,8 +586,8 @@ In diesem Artikel behandelt einen Großteil der Informationen zu MonoTouch.Dialo
 - [Screencast - problemlos iOS Benutzeroberflächen mit MonoTouch.Dialog erstellen](http://youtu.be/j7OC5r8ZkYg)
 - [Exemplarische Vorgehensweise: Erstellen einer Anwendung mithilfe der Elemente-API](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Exemplarische Vorgehensweise: Erstellen einer Anwendung mithilfe der Reflektions-API](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [Exemplarische Vorgehensweise: Erstellen einer Benutzeroberfläche mithilfe eines JSON-Elements](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
+- [Exemplarische Vorgehensweise: Verwenden ein JSON-Element, das eine Benutzeroberfläche erstellen](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [MonoTouch.Dialog-JSON-Markup](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [MonoTouch-Dialogfeld auf Github](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [UITableViewController-Klassenreferenz](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController-Klassenreferenz](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UITableViewController-Klassenreferenz](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [UINavigationController-Klassenreferenz](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

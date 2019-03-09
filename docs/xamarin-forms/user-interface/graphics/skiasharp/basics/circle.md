@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 63379a9a4195bf5128c96caaf8745df8dd0addf3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b4cd84e9134db2b2106af3205f189fbc2a92bdcc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050711"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669446"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in SkiaSharp
 
@@ -108,7 +108,7 @@ Die [ `Style` ](xref:SkiaSharp.SKPaint.Style) Eigenschaft gibt an, dass Sie möc
 
 Die Standardeinstellung ist `Fill`. Verwenden Sie die dritte Option, um die Linie zu zeichnen, und füllen das innere mit der gleichen Farbe.
 
-Legen Sie die [ `Color` ](xref:SkiaSharp.SKPaint.Color) Eigenschaft auf einen Wert vom Typ [ `SKColor` ](xref:SkiaSharp.SKColor). Eine Möglichkeit zum Abrufen einer `SKColor` Wert ist das Konvertieren einer Xamarin.Forms `Color` -Wert in ein `SKColor` Wert mithilfe der Erweiterungsmethode [ `ToSKColor` ](SkiaSharp.Views.Forms.Extensions.ToSKColor*). Die [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions) -Klasse in der `SkiaSharp.Views.Forms` Namespace enthält andere Methoden, die zwischen der Xamarin.Forms-Werte und SkiaSharp-Werte zu konvertieren.
+Legen Sie die [ `Color` ](xref:SkiaSharp.SKPaint.Color) Eigenschaft auf einen Wert vom Typ [ `SKColor` ](xref:SkiaSharp.SKColor). Eine Möglichkeit zum Abrufen einer `SKColor` Wert ist das Konvertieren einer Xamarin.Forms `Color` -Wert in ein `SKColor` Wert mithilfe der Erweiterungsmethode [ `ToSKColor` ](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*). Die [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions) -Klasse in der `SkiaSharp.Views.Forms` Namespace enthält andere Methoden, die zwischen der Xamarin.Forms-Werte und SkiaSharp-Werte zu konvertieren.
 
 Die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft gibt die Stärke der Linie an. Hier wird es auf 25 Pixel festgelegt.
 
@@ -153,7 +153,7 @@ Ein `SKPaint` Objekt ist nicht viel mehr als eine Auflistung von Grafiken, die E
 > [!NOTE]
 > Die `SKPaint` -Klasse definiert ein [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias) in das Rendern von Grafiken Antialiasing zu aktivieren. Anti-Aliasing im Allgemeinen führt visuell weichere Kanten, sollten Sie wahrscheinlich zum Festlegen dieser Eigenschaft auf `true` in den meisten Ihrer `SKPaint` Objekte. Der Einfachheit halber, diese Eigenschaft ist _nicht_ in den meisten die Beispielseiten festgelegt.
 
-Obwohl die Breite der Umriss des Kreises als 25 Pixeln angegeben wird &mdash; oder ein Viertel der den Radius des Kreises &mdash; anscheinend schlankere werden, und es gibt ein guter Grund dafür: halbe Breite der Zeile durch den blauen Kreis verdeckt ist. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
+Obwohl die Breite der Umriss des Kreises als 25 Pixeln angegeben wird &mdash; oder ein Viertel der den Radius des Kreises &mdash; anscheinend schlankere werden, und es gibt ein guter Grund dafür: Halbe Breite der Linie, die durch das blaue Kreis verdeckt wird. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
 
 Im folgenden Beispiel in der [Integrieren von Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) Artikel veranschaulicht dies visuell.
 

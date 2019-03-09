@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 2fa554264578ec626567ef7d28377ac80bde21d3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2b3ba0a0cf31ae2c2d631da8b595390c973957d6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060173"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670676"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Erstellen von Benutzeroberflächen im Code in Xamarin.iOS für iOS
 
@@ -20,7 +20,7 @@ Die Benutzeroberfläche einer iOS-app ist, wie eine Storefront – die Anwendung
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen: 
+Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen:
 
 [![](ios-code-only-images/image9.png "Dieses Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, Ansichten, Unteransichten und View Controller")](ios-code-only-images/image9.png#lightbox)
 
@@ -28,7 +28,7 @@ Diese Hierarchien von Inhaltsansichten können erstellt werden, mithilfe der [Xa
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen: 
+Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen:
 
 [![](ios-code-only-images/image9.png "Dieses Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, Ansichten, Unteransichten und View Controller")](ios-code-only-images/image9.png#lightbox)
 
@@ -65,9 +65,9 @@ Die leere Projektvorlage fügt 4 Dateien dem Projekt hinzu:
 ## <a name="ios-templates"></a>iOS-Vorlagen
 
 
-Visual Studio für Mac bietet keine leere Vorlage. Alle Vorlagen verfügen über Storyboard-Unterstützung, die empfiehlt Apple als vorrangigen Weg zum Erstellen einer Benutzeroberflächenautomatisierungs. Allerdings ist es möglich, die die Benutzeroberfläche vollständig im Code erstellen. 
+Visual Studio für Mac bietet keine leere Vorlage. Alle Vorlagen verfügen über Storyboard-Unterstützung, die empfiehlt Apple als vorrangigen Weg zum Erstellen einer Benutzeroberflächenautomatisierungs. Allerdings ist es möglich, die die Benutzeroberfläche vollständig im Code erstellen.
 
-Die folgenden Schritte führen Sie durch das Storyboard aus einer Anwendung zu entfernen: 
+Die folgenden Schritte führen Sie durch das Storyboard aus einer Anwendung zu entfernen:
 
 
 1. Verwenden Sie die Einzelansicht-App-Vorlage, um ein neues iOS-Projekt zu erstellen:
@@ -291,7 +291,7 @@ Window.RootViewController = navController;
 Wenn die Anwendung lädt nun, die `CustomViewController` in einen navigationscontroller geladen wird:
 
  [![](ios-code-only-images/customvc.png "Die CustomViewController wird in einen navigationscontroller geladen.")](ios-code-only-images/customvc.png#lightbox)
- 
+
 Durch Klicken auf die Schaltfläche wird _Push_ auf den Navigationsstapel eine neue View-Controller:
 
 [![](ios-code-only-images/customvca.png "Eine neue View Controller mithilfe von Push auf den Navigationsstapel übertragen")](ios-code-only-images/customvca.png#lightbox)
@@ -306,7 +306,7 @@ Beispielsweise ermöglicht das Bearbeiten der `CustomViewController` um einen An
 
 ### <a name="adding-the-text-fields"></a>Fügen Sie die Textfelder
 
-Entfernen Sie zunächst die Schaltfläche und ein Ereignishandler, die in hinzugefügt wurde die [Initialisieren der Ansicht](#Initializing_the_View) Abschnitt. 
+Entfernen Sie zunächst die Schaltfläche und ein Ereignishandler, die in hinzugefügt wurde die [Initialisieren der Ansicht](#initializing-the-view) Abschnitt. 
 
 Fügen Sie ein Steuerelement für den Benutzernamen durch Erstellen und initialisieren eine `UITextField` , und klicken Sie dann auf die Hierarchie von Inhaltsansichten hinzugefügt, wie unten dargestellt:
 
@@ -359,7 +359,7 @@ public class CustomViewController : UIViewController
             SecureTextEntry = true
         };
 
-      View.AddSubview(usernameField); 
+      View.AddSubview(usernameField);
       View.AddSubview(passwordField);
    }
 }
@@ -414,7 +414,7 @@ Mit diesen Änderungen wird die Ansicht wie folgt aussehen:
 iOS bietet die Möglichkeit, mehrere Ansichten mit der Hierarchie von Inhaltsansichten hinzufügen `AddSubviews`.
 
 ```csharp
-View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton }); 
+View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 ```
 
 ## <a name="adding-button-functionality"></a>Hinzufügen von Schaltflächenfunktionen
@@ -610,12 +610,12 @@ Weitere Informationen zum Erstellen eines Bildschirms zu starten finden Sie in d
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Erstellen ein startbilds, das für vor iOS 8-Anwendungen
 
-Zusätzlich zu einer XIB oder Storyboard-Startbildschirm kann ein statisches Bild verwendet werden, wenn Ihre Anwendung mit Versionen vor iOS 8 ausgerichtet ist. 
+Zusätzlich zu einer XIB oder Storyboard-Startbildschirm kann ein statisches Bild verwendet werden, wenn Ihre Anwendung mit Versionen vor iOS 8 ausgerichtet ist.
 
 Diese statische Bilder kann in der Datei "Info.plist" oder als ein Asset-Katalog (für iOS 7) in Ihrer Anwendung festgelegt werden. Sie benötigen separate Abbilder für jeden GeräteGröße (320 x 480, 640 960 x 640 x 1136) bereitstellen, die Ihre Anwendung ausgeführt werden kann. Weitere Informationen zu den Größen der Startbildschirm Anzeigen der [Bildschirm Startbilder](~/ios/app-fundamentals/images-icons/launch-screens.md) Handbuch.
 
 > [!IMPORTANT]
-> Wenn Ihre app keine Startbildschirm aufweist, werden Sie feststellen, dass sie nicht vollständig den Bildschirm passt. Wenn dies der Fall ist, Sie sollten sicherstellen sollen, oder zumindest eine 640 x 1136-Image mit dem Namen `Default-568@2x.png` zu Ihrer Datei "Info.plist". 
+> Wenn Ihre app keine Startbildschirm aufweist, werden Sie feststellen, dass sie nicht vollständig den Bildschirm passt. Wenn dies der Fall ist, Sie sollten sicherstellen sollen, oder zumindest eine 640 x 1136-Image mit dem Namen `Default-568@2x.png` zu Ihrer Datei "Info.plist".
 
 ## <a name="summary"></a>Zusammenfassung
 

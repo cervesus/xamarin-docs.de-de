@@ -6,12 +6,12 @@ ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 6445d595c9d8ca47e187fdcd158cd5a801a96407
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 42034261c374183346c8072eb42014f43a4fe22c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103204"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667606"
 ---
 # <a name="entities-in-cocossharp"></a>Entitäten in CocosSharp
 
@@ -37,7 +37,7 @@ Das Spiel beendet wird wie folgt aussehen:
 
 Spiele Entitäten sind Klassen, die Objekte, der Rendering "," Konflikt "," Physik "oder" künstliche Intelligenz Logik benötigen definieren. Zum Glück, entsprechen die Entitäten, die vorhanden Codebasis des Spiels häufig der konzeptionellen Objekte in einem Spiel. Wenn dies zutrifft, kann das Identifizieren der Entitäten in einem Spiel benötigt leichter erreicht werden. 
 
-Angenommen, ein Leerzeichen, die mit Design [dafür mag Sie Arbeitsweise](http://en.wikipedia.org/wiki/Shoot_%27em_up) kann die folgenden Entitäten enthalten:
+Angenommen, ein Leerzeichen, die mit Design [dafür mag Sie Arbeitsweise](https://en.wikipedia.org/wiki/Shoot_%27em_up) kann die folgenden Entitäten enthalten:
 
  - `PlayerShip`
  - `EnemyShip`

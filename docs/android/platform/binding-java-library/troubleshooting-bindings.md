@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f54da980834b44bbca7dc8619943769f8f429a7a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0bb7cbb6160865af5b1e40d40c7b999a8bd5ebc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115288"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668516"
 ---
 # <a name="troubleshooting-bindings"></a>Problembehandlung von Bindungen
 
@@ -79,7 +79,7 @@ In diesem Abschnitt werden einige der allgemeinen Fehlermeldungen oder Symptome 
 Manchmal Typen nicht generiert werden, oder unerwarteten Abstürze auftreten, da Sie verwenden entweder eine neuere oder frühere Version von Java, die im Vergleich zu, was die Bibliothek mit kompiliert wurde. Kompilieren Sie die Android-Bibliothek mit der gleichen Version des JDK, die Ihrem Xamarin.Android-Projekt verwendet wird.
 
 
-### <a name="problem-at-least-one-java-library-is-required"></a>Problem: mindestens Java-Clientbibliothek ist erforderlich
+### <a name="problem-at-least-one-java-library-is-required"></a>Problem: Mindestens eine Java-Clientbibliothek ist erforderlich
 
 Sie erhalten den Fehler "mindestens eine Java-Clientbibliothek ist erforderlich,", obwohl ein. JAR-Datei wurde hinzugefügt.
 
@@ -88,7 +88,7 @@ Sie erhalten den Fehler "mindestens eine Java-Clientbibliothek ist erforderlich,
 Stellen Sie sicher, dass der Buildvorgang nastaven NA hodnotu `EmbeddedJar`. Da es sich um mehrere Buildaktionen für. JAR-Dateien (z. B. `InputJar`, `EmbeddedJar`, `ReferenceJar` und `EmbeddedReferenceJar`), der Generator für die Bindung kann nicht automatisch erraten, welcher Typ in der Standardeinstellung verwendet. Weitere Informationen zu den Buildvorgängen, finden Sie unter [erstellen Aktionen](~/android/platform/binding-java-library/index.md).
 
 
-### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>Problem: Binden von Tools kann nicht geladen werden die. JAR-Bibliothek
+### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>Problem: Binden die Tools kann nicht geladen werden die. JAR-Bibliothek
 
 Die Bindung-Bibliothek-Generator kann nicht geladen der. JAR-Bibliothek.
 
@@ -142,7 +142,7 @@ Xamarin.Android enthält eine Reihe von Java-Felder, die Enumerationen in zugeor
 
 #### <a name="possible-causes"></a>Mögliche Ursachen:
 
-Die wahrscheinlichste Ursache für diesen Fehler ist, dass das Anwendungsprojekt hinzugefügt werden, eine erforderliche Java-Bibliothek muss (**csproj**). . JAR-Dateien werden nicht automatisch aufgelöst. Eine Java-Bibliothek-Bindung ist nicht immer generiert für eine Benutzerassembly, die in dem Gerät oder Emulator nicht vorhanden ist (z. B. Google Maps **maps.jar**). Dies ist nicht der Fall für die Bibliothek für Android-projektunterstützung, die der Typbibliothek. JAR-Datei wird in der Library-Dll eingebettet. Zum Beispiel: [Fehler 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
+Die wahrscheinlichste Ursache für diesen Fehler ist, dass das Anwendungsprojekt hinzugefügt werden, eine erforderliche Java-Bibliothek muss (**csproj**). . JAR-Dateien werden nicht automatisch aufgelöst. Eine Java-Bibliothek-Bindung ist nicht immer generiert für eine Benutzerassembly, die in dem Gerät oder Emulator nicht vorhanden ist (z. B. Google Maps **maps.jar**). Dies ist nicht der Fall für die Bibliothek für Android-projektunterstützung, die der Typbibliothek. JAR-Datei wird in der Library-Dll eingebettet. Zum Beispiel: [Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
 
 ### <a name="problem-duplicate-custom-eventargs-types"></a>Problem: Doppelte benutzerdefinierte EventArgs-Typen
 
@@ -182,7 +182,7 @@ Dies ist beabsichtigt, damit an, dass lange Namen auf Ereignisargumenttypen verm
         name="argsType">DialogClickEventArgs</attr>
 ```
 
-### <a name="problem-class-does-not-implement-interface-method"></a>Problem: Klasse Schnittstellenmethode nicht implementiert
+### <a name="problem-class-does-not-implement-interface-method"></a>Problem: Klasse implementiert die Schnittstellenmethode nicht
 
 Gibt an, dass es sich bei eine generierte Klasse eine Methode nicht implementiert, die für eine Schnittstelle erforderlich ist, die die von die generierte Klasse implementiert eine Fehlermeldung ausgegeben. Allerdings sehen möchten den generierten Code, Sie, dass die Methode implementiert wird.
 
@@ -253,7 +253,7 @@ In diesem Artikel werden allgemeine Fragen, die zur Problembehandlung in Zusamme
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Library-Projekten](http://developer.android.com/tools/projects/index.html#LibraryProjects)
+- [Library-Projekten](https://developer.android.com/tools/projects/index.html#LibraryProjects)
 - [Arbeiten mit JNI](~/android/platform/java-integration/working-with-jni.md)
 - [Aktivieren Sie die Diagnoseausgabe](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)
 - [Xamarin für Android-Entwickler](~/android/get-started/java-developers.md)

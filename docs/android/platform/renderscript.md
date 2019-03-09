@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 5369542552a41100443c5e91ceca9e110c5c7c3c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8364310d23739c05ff97ea8aa8fa4c56f89ea40c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108729"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670726"
 ---
 # <a name="an-introduction-to-renderscript"></a>Eine Einführung in die Renderscript
 
@@ -20,7 +20,7 @@ _Dieses Handbuch stellt Renderscript, und es wird erläutert, wie die systeminte
 
 ## <a name="overview"></a>Übersicht
 
-RenderScript ist ein Programmierframework zum Verbessern der Leistung des Android-Anwendungen, die umfangreiche Compute-Ressourcen erfordern von Google entwickelt. Es ist eine low-Level, high-Performance-API basierend auf [C99](http://en.wikipedia.org/wiki/C99). Da es sich um eine niedrige Sicherheitsstufe API, die auf CPUs oder GPUs DSPs ausgeführt wird handelt, ist Renderscript gut geeignet für Android-apps, die möglicherweise eine der folgenden ausführen:
+RenderScript ist ein Programmierframework zum Verbessern der Leistung des Android-Anwendungen, die umfangreiche Compute-Ressourcen erfordern von Google entwickelt. Es ist eine low-Level, high-Performance-API basierend auf [C99](https://en.wikipedia.org/wiki/C99). Da es sich um eine niedrige Sicherheitsstufe API, die auf CPUs oder GPUs DSPs ausgeführt wird handelt, ist Renderscript gut geeignet für Android-apps, die möglicherweise eine der folgenden ausführen:
 
 * Grafik
 * Bildverarbeitung
@@ -158,7 +158,7 @@ In diesem Leitfaden wurden Renderscript und wie Sie es in einer Xamarin.Android-
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android.Renderscripts-namespace](https://developer.xamarin.com/api/namespace/Android.Renderscripts/)
+- [Android.Renderscripts namespace](https://developer.xamarin.com/api/namespace/Android.Renderscripts/)
 - [Ein Bild mit Renderscript Blur](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript)
 - [Renderscript](https://developer.android.com/guide/topics/renderscript/compute.html)
 - [Tutorial: Erste Schritte mit Renderscript](https://software.intel.com/en-us/articles/renderscript-basic-sample-for-android-os)

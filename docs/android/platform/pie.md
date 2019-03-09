@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 49e3a0189d0887343f2636d6931a00cc819800c0
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: fa41affc57714254a12623f79da3dc1396ecd009
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267637"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670137"
 ---
 # <a name="android-pie-features"></a>Android Kreis-Funktionen
 
@@ -34,7 +34,7 @@ In der folgende Liste ist erforderlich, Android Kreis-Features in Xamarin-basier
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 oder höher muss installiert sein, mit Visual Studio (Xamarin.Android wird automatisch installiert, als Teil der **Mobile Entwicklung mit .NET** Workload).
 
--   **Java Developer Kit** &ndash; Entwicklung mit Xamarin Android 9.0 erfordert [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (oder Sie können versuchen, die Vorschau von Microsoft Verteilung der [OpenJDK](~/android/get-started/installation/openjdk.md)). JDK8 wird automatisch installiert, als Teil der **Mobile Entwicklung mit .NET** arbeitsauslastung.
+-   **Java Developer Kit** &ndash; Entwicklung mit Xamarin Android 9.0 erfordert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (oder Sie können versuchen, die Vorschau von Microsoft Verteilung der [OpenJDK](~/android/get-started/installation/openjdk.md)). JDK8 wird automatisch installiert, als Teil der **Mobile Entwicklung mit .NET** arbeitsauslastung.
 
 -   **Android SDK** &ndash; Android SDK-API-28 oder höher muss über den Android SDK Manager installiert werden.
 

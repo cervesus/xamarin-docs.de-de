@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1a08803930eaaa3c2c5c5f8b8aa9561a9a7b8d88
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 5c1d73acfef7a4384db7220daf7319251eb61f85
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557242"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670986"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder in Xamarin.Forms
 
@@ -44,7 +44,7 @@ Die [ `Aspect` ](xref:Xamarin.Forms.Image.Aspect) Eigenschaft bestimmt, wie das 
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -Schneidet das Bild ab, so dass es sich um den Anzeigebereich ausfüllt, und gleichzeitig den Aspekt (d. h. ohne Verzerrung).
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -Letterbox das Bild (falls erforderlich), damit das gesamte Bild in den Anzeigebereich passt, mit Leerzeichen hinzugefügt, die oben/unten oder den Seiten, je nachdem, ob das Bild ist breit oder hoch.
 
-Bilder können aus geladen werden, eine [lokale Datei](#Local_Images), [eingebettete Ressource](#embedded-images), oder [heruntergeladen](#Downloading_Images). Darüber hinaus können Schriftart Symbole angezeigt werden, indem die [ `Image` ](xref:Xamarin.Forms.Image) Ansicht durch Angabe der Schriftart Symbol-Daten in einem `FontImageSource` Objekt. Weitere Informationen finden Sie unter [Schriftart Symbole anzeigen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) in die [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Guide.
+Bilder können aus geladen werden, eine [lokale Datei](#local-images), [eingebettete Ressource](#embedded-images), oder [heruntergeladen](#downloading-images). Darüber hinaus können Schriftart Symbole angezeigt werden, indem die [ `Image` ](xref:Xamarin.Forms.Image) Ansicht durch Angabe der Schriftart Symbol-Daten in einem `FontImageSource` Objekt. Weitere Informationen finden Sie unter [Schriftart Symbole anzeigen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) in die [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Guide.
 
 ## <a name="local-images"></a>Lokalen Images
 
@@ -92,7 +92,7 @@ Die bevorzugte Methode zum Verwalten von Images, da iOS 9 ist, das Bilder für j
 
 Vor iOS 9, Retina-Versionen des Images platziert werden konnte, der **Ressourcen** Ordner - 2 und 3 Mal die Auflösung mit einem **@2x** oder **@3x**Suffixe für den Dateinamen vor der Dateierweiterung (z. b. **myimage@2x.png**). Allerdings ist diese Methode für die Arbeit mit Bildern in einer iOS-app von Apple veraltet. Weitere Informationen finden Sie unter [Bildgrößen und Dateinamen](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
-Bilder mit Android alternativen Auflösung platziert werden soll, im [speziell benannte Verzeichnisse](http://developer.android.com/guide/practices/screens_support.html) im Android-Projekt, wie im folgenden Screenshot gezeigt:
+Bilder mit Android alternativen Auflösung platziert werden soll, im [speziell benannte Verzeichnisse](https://developer.android.com/guide/practices/screens_support.html) im Android-Projekt, wie im folgenden Screenshot gezeigt:
 
 [![Android mehrere Auflösung Imagespeicherort](images-images/xs-highdpisolution-sml.png "Android mehrere Auflösung Imagespeicherort")](images-images/xs-highdpisolution.png#lightbox "Android mehrere Auflösung Imagespeicherort")
 
@@ -296,7 +296,7 @@ Festlegen, Symbole und Begrüßungsbildschirme für Xamarin.Forms-apps erfolgt i
 
 ## <a name="icons"></a>Symbole
 
-Finden Sie unter den [iOS arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md), [Google Ikonographie](http://developer.android.com/design/style/iconography.html), und [Richtlinien für die Kachel "und" Symbol-Objekte](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/) für Weitere Informationen zum Erstellen dieser Anwendungsressourcen.
+Finden Sie unter den [iOS arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md), [Google Ikonographie](https://developer.android.com/design/style/iconography.html), und [Richtlinien für die Kachel "und" Symbol-Objekte](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/) für Weitere Informationen zum Erstellen dieser Anwendungsressourcen.
 
 Darüber hinaus können Schriftart Symbole angezeigt werden, indem die [ `Image` ](xref:Xamarin.Forms.Image) Ansicht durch Angabe der Schriftart Symbol-Daten in einem `FontImageSource` Objekt. Weitere Informationen finden Sie unter [Schriftart Symbole anzeigen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) in die [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Guide.
 
@@ -316,5 +316,5 @@ Application-Symbol und Bilder des Begrüßungsbildschirms werden eingerichtet un
 
 - [WorkingWithImages (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
 - [iOS arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md)
-- [Android Ikonographie](http://developer.android.com/design/style/iconography.html)
+- [Android Ikonographie](https://developer.android.com/design/style/iconography.html)
 - [Richtlinien für die Kachel "und" Symbol-Objekte](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

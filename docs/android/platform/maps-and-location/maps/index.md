@@ -1,19 +1,14 @@
 ---
 title: 'Gewusst wie: Verwenden von Google Maps und den Speicherort, die mit Xamarin.Android'
-description: In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen.
+description: 'In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen.'
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: fa7fff86e9a7e23bf332f2d62c3ec1a6ed3c54e1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117129"
 ---
+
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Gewusst wie: Verwenden von Google Maps und den Speicherort, die mit Xamarin.Android
 
 _In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen._
@@ -35,5 +30,5 @@ Erklären Sie sie zuerst, wie Sie integrierte Karten von Android-Anwendung nutze
 - [MapsAndLocationDemo_v3 (Beispiel)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
 - [Aktivitätslebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Abrufen eines API-Schlüssels für Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Intents-Liste: Aufrufen von Google-Anwendungen auf Android-Geräten](http://developer.android.com/guide/appendix/g-app-intents.html)
-- [Position und Karten](http://developer.android.com/guide/topics/location/index.html)
+- [Intents-Liste: Aufrufen von Google-Anwendungen auf Android-Geräten](https://developer.android.com/guide/appendix/g-app-intents.html)
+- [Position und Karten](https://developer.android.com/guide/topics/location/index.html)

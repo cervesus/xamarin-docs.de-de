@@ -1,19 +1,14 @@
 ---
 title: Binden einer Java-Bibliothek
-description: Die Android-Community hat viele Java-Bibliotheken, die Sie in Ihrer app verwenden möchten. Dieses Handbuch wird erläutert, wie Java-Bibliotheken in Ihre Xamarin.Android-Anwendung zu integrieren, indem Sie eine Bibliothek Bindungen erstellen.
+description: 'Die Android-Community hat viele Java-Bibliotheken, die Sie in Ihrer app verwenden möchten. Dieses Handbuch wird erläutert, wie Java-Bibliotheken in Ihre Xamarin.Android-Anwendung zu integrieren, indem Sie eine Bibliothek Bindungen erstellen.'
 ms.prod: xamarin
 ms.assetid: B39FF1D5-69C3-8A76-D268-C227A23C9485
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c41aecf5f8c65ad5bfba5361b77d7c7fc047cda4
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171611"
 ---
+
 # <a name="binding-a-java-library"></a>Binden einer Java-Bibliothek
 
 _Die Android-Community hat viele Java-Bibliotheken, die Sie in Ihrer app verwenden möchten. Dieses Handbuch wird erläutert, wie Java-Bibliotheken in Ihre Xamarin.Android-Anwendung zu integrieren, indem Sie eine Bibliothek Bindungen erstellen._
@@ -145,5 +140,5 @@ Die folgenden Anleitungen zu Szenarien Bindung können Sie eine Java-Bibliothek 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Arbeiten mit JNI](~/android/platform/java-integration/working-with-jni.md)
-- [GAPI-Metadaten](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [GAPI-Metadaten](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
 - [Verwenden nativer Bibliotheken](~/android/platform/native-libraries.md)

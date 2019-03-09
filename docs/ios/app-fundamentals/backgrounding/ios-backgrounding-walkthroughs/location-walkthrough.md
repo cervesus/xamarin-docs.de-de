@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d6dac02ac82b74c9b0e33f5fff0b82223df1f47
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b857ee97951f0abfdf8e082ca9a826d5580d24ab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108677"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669192"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>Exemplarische Vorgehensweise – Hintergrundposition in Xamarin.iOS
 
@@ -103,7 +103,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, einige wichtige Konzept
 
     Es gibt einige wichtige Punkte, die in dieser Methode geschieht. Führen Sie es zuerst überprüft, ob die Anwendung den Zugriff auf Daten auf dem Gerät. Wir überprüfen dies durch den Aufruf `LocationServicesEnabled` auf die `CLLocationManager`. Diese Methode gibt **"false"** , wenn der Benutzer den Anwendungszugriff auf Standortinformationen verweigert hat.
 
-1. Danach fest, dass der Quellspeicherort-Manager für Häufigkeit aktualisiert. `CLLocationManager` bietet viele Optionen zum Filtern und Daten, einschließlich der Häufigkeit von Updates zu konfigurieren. In diesem Beispiel legen Sie die `DesiredAccuracy` zum Aktualisieren von einer Änderung die Position. Weitere Informationen zum Konfigurieren der aktualisierungshäufigkeit der Speicherort und andere Einstellungen finden Sie in der [CLLocationManager Class Reference](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) in der Apple-Dokumentation.
+1. Danach fest, dass der Quellspeicherort-Manager für Häufigkeit aktualisiert. `CLLocationManager` bietet viele Optionen zum Filtern und Daten, einschließlich der Häufigkeit von Updates zu konfigurieren. In diesem Beispiel legen Sie die `DesiredAccuracy` zum Aktualisieren von einer Änderung die Position. Weitere Informationen zum Konfigurieren der aktualisierungshäufigkeit der Speicherort und andere Einstellungen finden Sie in der [CLLocationManager Class Reference](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) in der Apple-Dokumentation.
 
 1. Rufen Sie zum Schluss `StartUpdatingLocation` auf die `CLLocationManager` Instanz. Dies weist die Quellspeicherort-Manager an eine erste Lösung auf der aktuellen Position und Senden von Updates zu starten
 

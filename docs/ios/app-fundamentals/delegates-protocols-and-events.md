@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: 83f9651fa7fd20709c620258833ae4a152ffd0eb
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 5ccefdb5e527e67338714896905734c74278d00a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563666"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671876"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Ereignisse, Protokolle und Delegaten in Xamarin.iOS
 
@@ -64,7 +64,7 @@ Nachdem Sie ein Standort ausgewählt ist, eine neue Methode erstellt und wired o
 
 [![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "Eine Nachricht wird an die Konsole geschrieben werden, wenn die Schaltfläche geklickt wird")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
-Weitere Informationen über das iOS-Ziel-Action-Muster finden Sie im Abschnitt Ziel-Aktion [Anwendung Kernkompetenzen für iOS](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) in Apple iOS-Entwicklerbibliothek.
+Weitere Informationen über das iOS-Ziel-Action-Muster finden Sie im Abschnitt Ziel-Aktion [Anwendung Kernkompetenzen für iOS](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) in Apple iOS-Entwicklerbibliothek.
 
 Weitere Informationen zur Verwendung des iOS-Designers mit Xamarin.iOS finden Sie unter den [iOS Designer Overview](~/ios/user-interface/designer/index.md) Dokumentation.
 
@@ -388,6 +388,6 @@ Als Nächstes wir haben die Objective-C-Protokolle, einschließlich, wie sie sic
 - [Protokolle, Delegaten und Ereignissen (Beispiel)](https://developer.xamarin.com/samples/Protocols_Delegates_Events/)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Binden von Objective-C-Typen](~/ios/platform/binding-objective-c/index.md)
-- [Die Objective-C-Programmiersprache](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
-- [Entwerfen von Benutzeroberflächen in Xcode 4](http://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
-- [Anwendung Kernkompetenzen für iOS](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)
+- [Die Objective-C-Programmiersprache](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
+- [Entwerfen von Benutzeroberflächen in Xcode 4](https://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
+- [Anwendung Kernkompetenzen für iOS](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)

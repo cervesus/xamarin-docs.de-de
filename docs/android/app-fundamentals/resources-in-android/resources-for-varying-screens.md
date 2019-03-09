@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: df8ee3da8a1341cd1dd879e8e70687d9fbd9957b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63cbe556783ffe22512ff5312817d522120bd15e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117433"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670570"
 ---
 # <a name="creating-resources-for-varying-screens"></a>Erstellen von Ressourcen für unterschiedliche Bildschirme
 
@@ -50,7 +50,7 @@ Allerdings ist es möglich, dass die Skalierung Bitmaps unscharf angezeigt bewir
 
 ### <a name="declare-the-supported-screen-size"></a>Deklarieren Sie die unterstützten Bildschirmgröße
 
-Deklarieren die Größe des Bildschirms wird sichergestellt, dass nur unterstützte Geräte die Anwendung herunterladen können. Dies geschieht durch Festlegen der [unterstützt-Bildschirme](http://developer.android.com/guide/topics/manifest/supports-screens-element.html) Element in der **"androidmanifest.xml"** Datei. Dieses Element wird verwendet, um anzugeben, welche Bildschirmgrößen, von der Anwendung unterstützt werden. Ein vorhandener Bildschirm gilt unterstützt werden, wenn die Anwendung ordnungsgemäß die Layouts, um den Bildschirm ausfüllen platziert werden kann. Mit diesem manifestelement können die Anwendung nicht angezeigt [ *Google Play* ](https://play.google.com/) für Geräte, die die Bildschirm-Spezifikationen nicht entsprechen. Die Anwendung auf Geräten mit nicht unterstützten Bildschirmen immer noch ausgeführt wird, jedoch die Layouts möglicherweise unscharf angezeigt und verpixelt dargestellt.
+Deklarieren die Größe des Bildschirms wird sichergestellt, dass nur unterstützte Geräte die Anwendung herunterladen können. Dies geschieht durch Festlegen der [unterstützt-Bildschirme](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) Element in der **"androidmanifest.xml"** Datei. Dieses Element wird verwendet, um anzugeben, welche Bildschirmgrößen, von der Anwendung unterstützt werden. Ein vorhandener Bildschirm gilt unterstützt werden, wenn die Anwendung ordnungsgemäß die Layouts, um den Bildschirm ausfüllen platziert werden kann. Mit diesem manifestelement können die Anwendung nicht angezeigt [ *Google Play* ](https://play.google.com/) für Geräte, die die Bildschirm-Spezifikationen nicht entsprechen. Die Anwendung auf Geräten mit nicht unterstützten Bildschirmen immer noch ausgeführt wird, jedoch die Layouts möglicherweise unscharf angezeigt und verpixelt dargestellt.
 
 Unterstützte Bildschirm Sixes deklariert werden, der **Properites/AndroidManifest.xml** -Datei der Lösung:
 
@@ -64,7 +64,7 @@ Unterstützte Bildschirm Sixes deklariert werden, der **Properites/AndroidManife
 
 -----
 
-Bearbeiten Sie **"androidmanifest.xml"** sollen [unterstützt-Bildschirme](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+Bearbeiten Sie **"androidmanifest.xml"** sollen [unterstützt-Bildschirme](https://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -178,7 +178,7 @@ Diese Website hilft bei der Erstellung von Bitmaps, die die vier allgemeine bild
 
 Android wird auf eine verwirrende Anzahl von Geräten, und die Kombination von Bildschirmgrößen und bildschirmdichten mag überwältigend scheinen. Die folgenden Tipps können den Aufwand erforderlich, um unterschiedliche Geräte unterstützen zu minimieren:
 
-- **Nur entwerfen und entwickeln Sie für die tatsächlich benötigte** &ndash; es gibt es viele verschiedene Geräte vorhanden, jedoch einige in seltenen geräteausführungen, die zu entwerfen und Entwickeln für dauern. Die [ **Bildschirmgröße und Dichte** ](http://developer.android.com/resources/dashboard/screens.html) Dashboard ist eine Seite, die von Google, die Daten, auf die Aufschlüsselung der Bildschirm Bildschirmgrößen/Dichte Matrix bereitstellt bereitgestellt wird. Aufteilung bietet einen Einblick zum Entwicklungsarbeit auf die Unterstützung von Bildschirmen.
+- **Nur entwerfen und entwickeln Sie für die tatsächlich benötigte** &ndash; es gibt es viele verschiedene Geräte vorhanden, jedoch einige in seltenen geräteausführungen, die zu entwerfen und Entwickeln für dauern. Die [ **Bildschirmgröße und Dichte** ](https://developer.android.com/resources/dashboard/screens.html) Dashboard ist eine Seite, die von Google, die Daten, auf die Aufschlüsselung der Bildschirm Bildschirmgrößen/Dichte Matrix bereitstellt bereitgestellt wird. Aufteilung bietet einen Einblick zum Entwicklungsarbeit auf die Unterstützung von Bildschirmen.
 
 - **Verwenden Sie DPs anstelle von Pixel** -Pixel, werden als Bildschirm Dichte wird problematischen. Keine hartkodierung für Pixelwerte. Vermeiden Sie Pixel zugunsten von dp (Dichte unabhängigen Pixeln).
 

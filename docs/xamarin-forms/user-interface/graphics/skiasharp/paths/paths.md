@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 006e4c2b2de56fef96c561e788992649f6582d24
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 833e24e91a37b92eb5025aacdc9509f092b823cd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054937"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672085"
 ---
 # <a name="path-basics-in-skiasharp"></a>Grundlagen zu Pfaden in SkiaSharp
 
@@ -28,26 +28,26 @@ Ein Grafikpfad gekapselt ist, durch die [ `SKPath` ](xref:SkiaSharp.SKPath) Obje
 
 Eine Kontur beginnt gewöhnlich mit einem Aufruf an die folgende Methode der `SKPath`:
 
-- [`MoveTo`](SkiaSharp.SKPath.MoveTo*) Um eine neue Kontur zu beginnen.
+- [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*) Um eine neue Kontur zu beginnen.
 
 Das Argument an diese Methode ist ein einzelner Punkt, mit denen Sie, entweder als Ausdrücken können eine `SKPoint` Wert oder als separate X- und Y-Koordinaten. Die `MoveTo` Aufruf wird einen Punkt, an den Anfang der Kontur und die anfängliche *aktuellen Punkt*. Sie können die folgenden Methoden zum Fortfahren der Kontur mit einer Zeile oder die Kurve, die vom aktuellen Punkt an einem Punkt in der Methode, die dann den neuen aktuellen Punkt wird angegeben, aufrufen:
 
-- [`LineTo`](SkiaSharp.SKPath.LineTo*) der Pfad einer geraden Linie hinzu
-- [`ArcTo`](SkiaSharp.SKPath.ArcTo*) hinzuzufügende einen Bogen, der eine Zeile in der Umfang eines Kreises oder einer ellipse
-- [`CubicTo`](SkiaSharp.SKPath.CubicTo*) Hinzufügen ein kubische Bezier-Splines
-- [`QuadTo`](SkiaSharp.SKPath.QuadTo*) hinzufügen einen quadratischen Bezier-spline
-- [`ConicTo`](SkiaSharp.SKPath.ConicTo*) ein rationales Quadratisches Bezier-Spline hinzufügen, das genau Conic Abschnitte (Ellipsen, Parabeln und Hyperbeln) gerendert werden kann
+- [`LineTo`](xref:SkiaSharp.SKPath.LineTo*) der Pfad einer geraden Linie hinzu
+- [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) hinzuzufügende einen Bogen, der eine Zeile in der Umfang eines Kreises oder einer ellipse
+- [`CubicTo`](xref:SkiaSharp.SKPath.CubicTo*) Hinzufügen ein kubische Bezier-Splines
+- [`QuadTo`](xref:SkiaSharp.SKPath.QuadTo*) hinzufügen einen quadratischen Bezier-spline
+- [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo*) ein rationales Quadratisches Bezier-Spline hinzufügen, das genau Conic Abschnitte (Ellipsen, Parabeln und Hyperbeln) gerendert werden kann
 
 Keine dieser fünf Methoden enthalten alle Informationen, die erforderlich sind, die Linien- oder Kurvensegmente beschreiben. Jede dieser fünf Methoden funktioniert in Verbindung mit dem aktuellen Punkt hergestellt, indem der Aufruf der Methode unmittelbar vorausgeht. Z. B. die `LineTo` Methode fügt eine gerade Linie mit der Kontur basierend auf dem aktuellen Zeitpunkt, also den Parameter, um `LineTo` ist auf ein bestimmten Punkt.
 
 Die `SKPath` Klasse definiert auch Methoden, die den gleichen wie diese sechs Methoden jedoch Namen eine `R` am Anfang:
 
-- [`RMoveTo`]((SkiaSharp.SKPath.RMoveTo*))
-- [`RLineTo`](SkiaSharp.SKPath.RLineTo*)
-- [`RArcTo`](SkiaSharp.SKPath.RArcTo*)
-- [`RCubicTo`](SkiaSharp.SKPath.RCubicTo*)
-- [`RQuadTo`](SkiaSharp.SKPath.RQuadTo*)
-- [`RConicTo`](SkiaSharp.SKPath.RConicTo*)
+- [`RMoveTo`](xref:SkiaSharp.SKPath.RMoveTo*)
+- [`RLineTo`](xref:SkiaSharp.SKPath.RLineTo*)
+- [`RArcTo`](xref:SkiaSharp.SKPath.RArcTo*)
+- [`RCubicTo`](xref:SkiaSharp.SKPath.RCubicTo*)
+- [`RQuadTo`](xref:SkiaSharp.SKPath.RQuadTo*)
+- [`RConicTo`](xref:SkiaSharp.SKPath.RConicTo*)
 
 Die `R` steht für *relative*. Diese Methoden verfügen über die gleiche Syntax wie die entsprechenden Methoden ohne das `R` aber relativ zum aktuellen Zeitpunkt sind. Diese Tools sind praktisch, für das Zeichnen von ähnlicher Teile eines Pfads in einer Methode, die mehrere Male aufgerufen werden.
 

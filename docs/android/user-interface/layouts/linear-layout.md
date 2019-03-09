@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: d8ee5f867c9a4d724c54c14b5afdd005f1b805d3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3d0394f6b2388918f728bd5a25e9e809a832ca6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115769"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670973"
 ---
 # <a name="linearlayout"></a>LinearLayout
 
-[`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) ist ein [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
+[`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) is a [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
 die untergeordnete anzeigt [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
 Elemente in einer linearen Richtung, entweder vertikal oder horizontal.
 
@@ -126,7 +126,7 @@ Führen Sie die Anwendung aus. Sie sollte Folgendes angezeigt werden:
 
 [![Screenshot der app, die erste LinearLayout horizontal angeordnet, die zweite vertikal](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
-Beachten Sie, wie die XML-Attribute jeder Ansicht Verhalten definieren. Experimentieren mit verschiedenen Werten für `android:layout_weight` basierend auf die Gewichtung der einzelnen Elemente finden Sie unter wie Bildschirmfläche verteilt wird. Finden Sie unter den [allgemeine Layoutobjekte](http://developer.android.com/guide/topics/ui/declaring-layout.html) Dokument Weitere Informationen [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+Beachten Sie, wie die XML-Attribute jeder Ansicht Verhalten definieren. Experimentieren mit verschiedenen Werten für `android:layout_weight` basierend auf die Gewichtung der einzelnen Elemente finden Sie unter wie Bildschirmfläche verteilt wird. Finden Sie unter den [allgemeine Layoutobjekte](https://developer.android.com/guide/topics/ui/declaring-layout.html) Dokument Weitere Informationen [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
 verarbeitet die `android:layout_weight` Attribut.
 
 

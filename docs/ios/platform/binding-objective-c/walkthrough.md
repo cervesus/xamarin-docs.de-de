@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: a4cdb76ac1ecea3ee21e7b74314b6d3bfae09719
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118993"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669270"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek
 
@@ -81,11 +81,11 @@ Sie müssen eine der folgenden Methoden verwenden, um die Tools zu installieren:
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - Werden Sie aufgefordert, die Befehlszeilentools installieren, klicken Sie auf die **installieren** Schaltfläche: [ ![](walkthrough-images/xcode01.png "Installieren von Tools über die Befehlszeile")](walkthrough-images/xcode01.png#lightbox)
+    - Werden Sie aufgefordert, die Befehlszeilentools installieren, klicken Sie auf die **installieren** Schaltfläche:   [![](walkthrough-images/xcode01.png "Installieren von Tools über die Befehlszeile")](walkthrough-images/xcode01.png#lightbox)
 
-    - Die Tools heruntergeladen und installiert, die von Apple Servern: [ ![](walkthrough-images/xcode02.png "Herunterladen von Tools")](walkthrough-images/xcode02.png#lightbox)
+    - Die Tools heruntergeladen und installiert, die von Apple Servern:   [![](walkthrough-images/xcode02.png "Herunterladen von tools")](walkthrough-images/xcode02.png#lightbox)
 
-- **Downloads für Apple-Entwickler** -das Befehlszeilentools-Paket steht die [Downloads für Apple-Entwickler]() Webseite. Melden Sie sich mit Ihrer Apple-ID, und klicken Sie dann zu suchen und Laden Sie die Befehlszeilentools: [ ![](walkthrough-images/xcode03.png "suchen die Befehlszeilentools")](walkthrough-images/xcode03.png#lightbox)
+- **Downloads für Apple-Entwickler** -das Befehlszeilentools-Paket steht die [Downloads für Apple-Entwickler](https://developer.apple.com/downloads/index.action) Webseite. Melden Sie sich mit Ihrer Apple-ID, und klicken Sie dann suchen Sie und Laden Sie die Befehlszeilentools: [![](walkthrough-images/xcode03.png "Suchen die Befehlszeilentools")](walkthrough-images/xcode03.png#lightbox)
 
 Mit der Befehlszeilentools installiert sind sind wir bereit, mit der exemplarischen Vorgehensweise fortzufahren.
 
@@ -184,7 +184,7 @@ Erstellen eine Fat binary ist drei Schritten:
 
 Während dieser drei Schritte recht einfach sind, und es erforderlich sein kann, sie in der Zukunft wiederholen, wenn die Bibliothek für Objective-C-Updates erhält oder Fehlerbehebungen ist erforderlich. Wenn Sie diese Schritte automatisieren möchten, vereinfachen sie die künftige Wartung und die Unterstützung des iOS-Projekts Bindung.
 
-Es gibt viele Tools zur Automatisierung solcher Aufgaben – ein Shellskript [Rake](http://rake.rubyforge.org/), [Xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), und [stellen](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Wenn wir die Xcode-Befehlszeilentools installiert haben, installiert es auch stellen, sodass das Buildsystem, die in dieser exemplarischen Vorgehensweise verwendet werden. Hier ist ein **Makefile** , mit denen Sie können eine freigegebene Bibliothek von Multi-Architektur zu erstellen, die auf einem iOS-Gerät und der Simulator für die alle Bibliotheken funktionieren:
+Es gibt viele Tools zur Automatisierung solcher Aufgaben – ein Shellskript [Rake](http://rake.rubyforge.org/), [Xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/), und [stellen](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Wenn wir die Xcode-Befehlszeilentools installiert haben, installiert es auch stellen, sodass das Buildsystem, die in dieser exemplarischen Vorgehensweise verwendet werden. Hier ist ein **Makefile** , mit denen Sie können eine freigegebene Bibliothek von Multi-Architektur zu erstellen, die auf einem iOS-Gerät und der Simulator für die alle Bibliotheken funktionieren:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -326,7 +326,7 @@ Um die Bibliothek hinzuzufügen, gehen Sie wie folgt vor:
 
 1. Navigieren Sie zu der `libInfColorPickerSDK.a` , und drücken Sie die **hinzufügen** Schaltfläche:
 
-    ![](walkthrough-images/bind05vs.png "Hinzufügen von libInfColorPickerSDK.a")
+    ![](walkthrough-images/bind05vs.png "Adding libInfColorPickerSDK.a")
 
 1. Die Datei wird im Projekt enthalten sein.
 
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**Behandeln der ColorPickerControllerDidFinish: Nachricht** – im Falle der `ViewController` ist abgeschlossen ist, iOS sendet die Nachricht `colorPickerControllerDidFinish:` auf die `WeakDelegate`. Müssen wir erstellen eine C# -Methode, die diese Nachricht verarbeiten kann. Zu diesem Zweck erstellen wir eine C# Methode und verzieren klicken Sie dann mit der `ExportAttribute`. Bearbeiten Sie `ViewController`, und fügen Sie der Klasse die folgende Methode hinzu:
+**Handle der ColorPickerControllerDidFinish: Nachricht** – im Falle der `ViewController` ist abgeschlossen ist, iOS sendet die Nachricht `colorPickerControllerDidFinish:` auf die `WeakDelegate`. Müssen wir erstellen eine C# -Methode, die diese Nachricht verarbeiten kann. Zu diesem Zweck erstellen wir eine C# Methode und verzieren klicken Sie dann mit der `ExportAttribute`. Bearbeiten Sie `ViewController`, und fügen Sie der Klasse die folgende Methode hinzu:
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -733,6 +733,6 @@ In diesem Artikel wurde erläutert, wie der Prozess zum Erstellen und verwenden 
 - [Informationen zu](~/cross-platform/macios/binding/overview.md)
 - [Bindung Typen – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Xamarin für Objective-C-Entwickler](~/ios/get-started/objective-c-developers/index.md)
-- [Frameworkentwurfsrichtlinien](http://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Frameworkentwurfsrichtlinien](https://msdn.microsoft.com/library/ms229042.aspx)
+- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 84c4b699ba2c046eeb70963f3df71ca9a4760f3b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61b3fee9009afb86ccd3fd0e16d7812a8e90feb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104179"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672793"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Steuerelemente der manuellen Kamera in Xamarin.iOS
 
@@ -276,7 +276,7 @@ Mit diesem Code werden kann den Kamerasteuerelemente manuelle problemlos zum exp
 
 Dadurch, dass der Endbenutzer direkt zu Steuerelemente den Fokus, bieten eine Anwendung veranlagten Kontrolle über die Abbildung stammt.
 
-Z. B. Weichzeichnen berufsfotografin kann sich ein Bild, das zu erreichen einer [Bokeh Auswirkungen](http://en.wikipedia.org/wiki/Bokeh):
+Z. B. Weichzeichnen berufsfotografin kann sich ein Bild, das zu erreichen einer [Bokeh Auswirkungen](https://en.wikipedia.org/wiki/Bokeh):
 
 [![](intro-to-manual-camera-controls-images/image2.png "Ein Bokeh-Effekt")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
@@ -517,7 +517,7 @@ Ehe wir näher auf die Details der Steuern der Bereitstellung in einer IOS 8-Anw
 Die drei grundlegenden Elemente, die zusammenkommen, um die Datenfreigabe zu kontrollieren, sind:
 
 -  **Geschwindigkeit Auslöser** – Dies ist die Zeitspanne, die der Auslöser Licht auf den Kamerasensor können geöffnet ist. Je kürzer die Uhrzeit, die der Verschluss geöffnet ist, wird, das Licht weniger lassen und die schärfere das Image ist (weniger Motion-Weichzeichner). Je länger der Verschluss geöffnet ist, mehr Licht ist in und desto motion Unschärfe, das auftritt, können.
--  **Zuordnen von ISO** – Dies ist ein Begriff aus dem Filmfotografie übernommen und bezieht sich auf die Vertraulichkeit der Chemikalien im Film als Licht. Niedrig-ISO-Werte im Film haben weniger Granularität und eine Farbe Vervielfältigung ist. Niedrige Werte von ISO auf digitalen Sensoren haben weniger Störungen Sensor, aber weniger Helligkeit an. Je höher der ISO-Wert, der hellere das Bild jedoch weitere Sensor Störungen. "ISO" auf einem digitalen Sensor ist ein Maß [elektronische Gewinn](http://en.wikipedia.org/wiki/Gain), kein physischer Feature. 
+-  **Zuordnen von ISO** – Dies ist ein Begriff aus dem Filmfotografie übernommen und bezieht sich auf die Vertraulichkeit der Chemikalien im Film als Licht. Niedrig-ISO-Werte im Film haben weniger Granularität und eine Farbe Vervielfältigung ist. Niedrige Werte von ISO auf digitalen Sensoren haben weniger Störungen Sensor, aber weniger Helligkeit an. Je höher der ISO-Wert, der hellere das Bild jedoch weitere Sensor Störungen. "ISO" auf einem digitalen Sensor ist ein Maß [elektronische Gewinn](https://en.wikipedia.org/wiki/Gain), kein physischer Feature. 
 -  **Fokus Aperture** – Dies ist die Größe der Fokus beim Öffnen. Auf allen iOS-Geräten ist die Blende fest, daher sind die nur zwei Werte, die verwendet werden können, um Offenlegung anzupassen Verschluss Geschwindigkeit und ISO.
 
 
@@ -817,7 +817,7 @@ Der neuen iOS 8 ermöglicht Offenlegung-API der Anwendung, übernehmen Sie die K
 
 Ehe wir näher auf die Details der weißen Lastenausgleich in einer IOS 8-Anwendung steuern. Werfen wir einen kurzen Blick auf wie weiß Saldo funktioniert:
 
-Bei der Wahrnehmung der Farbe die [CIE 1931 RGB Farbe, Speicherplatz und CIE 1931 XYZ-Farbraum](http://en.wikipedia.org/wiki/CIE_1931_color_space) sind die erste mathematisch Farbräume definiert. Sie wurden von der International-Kommission auf Beleuchtung (CIE) 1931 erstellt.
+Bei der Wahrnehmung der Farbe die [CIE 1931 RGB Farbe, Speicherplatz und CIE 1931 XYZ-Farbraum](https://en.wikipedia.org/wiki/CIE_1931_color_space) sind die erste mathematisch Farbräume definiert. Sie wurden von der International-Kommission auf Beleuchtung (CIE) 1931 erstellt.
 
 [![](intro-to-manual-camera-controls-images/image17.png "Die CIE 1931 RGB-Farbspektrum und CIE 1931 XYZ-Farbraum")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
@@ -825,7 +825,7 @@ Das obige Diagramm zeigt uns alle Farben sichtbar für das menschliche Auge, aus
 
 Als im Diagramm sichtbar ist stehen X- und Y-Werte, die im Diagramm dargestellt werden können, die außerhalb des Bereichs der menschlichen maschinelles sehen und daher diese Farben können nicht durch eine Kamera reproduziert werden kann.
 
-Die kleineren Kurve im obigen Diagramm wird aufgerufen, die [Planckian Ursprung](http://en.wikipedia.org/wiki/Planckian_locus), die drückt der Farbtemperatur (in Grad Kelvin), auf der blauen Seite (warm) bei einer höheren und niedrigeren Zahlen seitens des roten (kälter). Dies sind besonders für typische Beleuchtung.
+Die kleineren Kurve im obigen Diagramm wird aufgerufen, die [Planckian Ursprung](https://en.wikipedia.org/wiki/Planckian_locus), die drückt der Farbtemperatur (in Grad Kelvin), auf der blauen Seite (warm) bei einer höheren und niedrigeren Zahlen seitens des roten (kälter). Dies sind besonders für typische Beleuchtung.
 
 In gemischten Lichtverhältnissen müssen die weißen Saldo Anpassungen von den Ursprung Planckian, um die erforderlichen Änderungen vorzunehmen abweichen. In diesen Fällen müssen die Anpassung werden verschoben, entweder auf die grüne aus, oder rot/Magenta neben der CIE skalieren.
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 42ec5ddb6846ccf733f2bf18812f43e7afd45f34
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058571"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672546"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Senden von Pushbenachrichtigungen von Azure Mobile Apps
 
@@ -58,7 +58,7 @@ Weitere Informationen zu Azure Notification Hubs, finden Sie unter [Azure Notifi
 Der Prozess für die Integration von Azure Notification Hub in eine Azure Mobile Apps-Instanz lautet wie folgt aus:
 
 1. Erstellen Sie eine Azure Mobile Apps-Instanz. Weitere Informationen finden Sie unter [Nutzung von Azure Mobile Apps](~/xamarin-forms/data-cloud/consuming/azure.md).
-1. Konfigurieren eines Notification Hubs. Weitere Informationen finden Sie unter [Konfigurieren eines Notification Hubs](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#create-hub).
+1. Konfigurieren eines Notification Hubs. Weitere Informationen finden Sie unter [Konfigurieren eines Notification Hubs](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-hub).
 1. Aktualisieren Sie die Azure Mobile Apps-Instanz, um Pushbenachrichtigungen zu senden. Weitere Informationen finden Sie unter [Aktualisieren des Serverprojekts zum Senden von Pushbenachrichtigungen](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#update-the-server-project-to-send-push-notifications).
 1. Registrieren Sie bei einzelnen Pushbenachrichtigungsdienste.
 1. Konfigurieren Sie den Notification Hub für die Kommunikation mit einzelnen Pushbenachrichtigungsdienste.

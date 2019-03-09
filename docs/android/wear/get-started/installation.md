@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ed6d3c1cfc14bd0dece5ffe494cc02fd8f608b1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: af9be54b4509f7202618d9d68210eb534f63ccbf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117277"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671636"
 ---
 # <a name="setup-and-installation"></a>Setup und Installation
 
@@ -28,9 +28,9 @@ Folgendes ist erforderlich, um die Xamarin-basierte Android Wear-apps zu erstell
 
 -   **Android SDK** -Android SDK 5.0.1 (API 21) oder höher muss installiert sein über den Android SDK Manager.
 
--   **Java Developer Kit** &ndash; Xamarin Android-Entwicklung erfordert [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) Wenn Sie die Entwicklung für API-Ebene 24 oder höher sind (JDK 1.8 unterstützt auch API-Ebenen älter als 24).
+-   **Java Developer Kit** &ndash; Xamarin Android-Entwicklung erfordert [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) Wenn Sie die Entwicklung für API-Ebene 24 oder höher sind (JDK 1.8 unterstützt auch API-Ebenen älter als 24).
 
-Sie können weiterhin verwenden [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Wenn Sie die Entwicklung von speziell für die API-Ebene 23 oder früher sind.
+Sie können weiterhin verwenden [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Wenn Sie die Entwicklung von speziell für die API-Ebene 23 oder früher sind.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 5bb2349f141629478eb2dce995c7cbff5a954069
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9d9bef6d1a0817abc12b5a9bd266b1e1e7d38348
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114612"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667543"
 ---
 # <a name="actionbar"></a>ActionBar
 
@@ -156,4 +156,4 @@ Das Bild im obigen Codebeispiel als Ressource mit der Anwendung enthalten ist, u
 - [Hallo Registerkarten ICS (Beispiel)](https://developer.xamarin.com/samples/HelloTabsICS/)
 - [ShareActionProvider-Demo (Beispiel)](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)
 - [Einführung in die Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0-Plattform](http://developer.android.com/sdk/android-4.0.html)
+- [Android 4.0 Platform](https://developer.android.com/sdk/android-4.0.html)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 634131025b322b64e89ece3b4c9d092e6b17a373
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.openlocfilehash: 1f3e6dcc81c75d12a1dbba8fefc62a85178c8c24
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579816"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670662"
 ---
 # <a name="android-localization"></a>Android-Lokalisierung
 
@@ -32,7 +32,7 @@ Das aktuelle Gebietsschema abgefragt werden kann, über des aktuellen Kontexts `
 var lang = Resources.Configuration.Locale; // eg. "es_ES"
 ```
 
-Dieser Wert wird eine Gebietsschema-ID sein, das ein Sprachcode und einem Code des Gebietsschemas, getrennt durch einen Unterstrich enthält. Zu Referenzzwecken hier ist ein [Liste der Gebietsschemas, Java](http://www.oracle.com/technetwork/java/javase/locales-137662.html) und [Android unterstützte Gebietsschemas über StackOverflow](http://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android).
+Dieser Wert wird eine Gebietsschema-ID sein, das ein Sprachcode und einem Code des Gebietsschemas, getrennt durch einen Unterstrich enthält. Zu Referenzzwecken hier ist ein [Liste der Gebietsschemas, Java](https://www.oracle.com/technetwork/java/javase/locales-137662.html) und [Android unterstützte Gebietsschemas über StackOverflow](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android).
 
 Gängige Beispiele:
 
@@ -190,7 +190,7 @@ Gültige `quantity` Switches sind:
 * many
 * andere
 
-Ausführlicher beschrieben die [Android-Dokumentation](http://developer.android.com/guide/topics/resources/string-resource.html#Plurals). Wenn eine bestimmte Sprache keine benötigt "spezielle" behandeln, bei denen `quantity` Zeichenfolgen ignoriert werden (z. B. Englisch verwendet nur `one` und `other`; die Angabe einer `zero` Zeichenfolge hat keine Auswirkungen, es wird nicht verwendet werden).
+Ausführlicher beschrieben die [Android-Dokumentation](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals). Wenn eine bestimmte Sprache keine benötigt "spezielle" behandeln, bei denen `quantity` Zeichenfolgen ignoriert werden (z. B. Englisch verwendet nur `one` und `other`; die Angabe einer `zero` Zeichenfolge hat keine Auswirkungen, es wird nicht verwendet werden).
 
 ### <a name="images"></a>Bilder
 
@@ -209,7 +209,7 @@ Sie können auch andere Arten von Alternativ sprachspezifische Ressourcen, einsc
 
 Android 4.2 führte die Unterstützung für [von rechts nach links (RTL) Sprachen](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html) setzen Sie die anwendungseinstellung `android:supportsRtl="true"`. Die ressourcenqualifizierer `"ldrtl"` kann in den Namen eines Verzeichnisses, um benutzerdefinierte Layouts enthalten, die entwickelt wurden, für die Anzeige von RNL eingeschlossen werden.
 
-Weitere Informationen zu Resource Directory-Namen und Fallback, finden Sie in der Android-Dokumentation [Bereitstellen alternativer Ressourcen](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
+Weitere Informationen zu Resource Directory-Namen und Fallback, finden Sie in der Android-Dokumentation [Bereitstellen alternativer Ressourcen](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
 
 
 ### <a name="app-name"></a>App-name
@@ -252,7 +252,7 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ### <a name="device-testing"></a>Gerätetests
 
 Um auf einem Gerät zu testen, ändern Sie die Sprache in der **Einstellungen** app.
-**Tipp:** machen Sie sich die Symbole und den Speicherort der Menüelemente, damit Sie die Sprache, die die ursprüngliche Einstellung wiederherstellen können.
+**Tipp:** Stellen Sie sich die Symbole und den Speicherort der Menüelemente, damit Sie die Sprache, die die ursprüngliche Einstellung wiederherstellen können.
 
 
 ## <a name="summary"></a>Zusammenfassung
@@ -264,7 +264,7 @@ Dieser Artikel behandelt die Grundlagen der Android-Anwendungen mit der integrie
 ## <a name="related-links"></a>Verwandte Links
 
 - [Tasky (im Code lokalisiert) (Beispiel)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
-- [Lokalisieren von Ressourcen von Android](http://developer.android.com/guide/topics/resources/localization.html)
+- [Lokalisieren von Ressourcen von Android](https://developer.android.com/guide/topics/resources/localization.html)
 - [Übersicht über die plattformübergreifende Lokalisierung](~/cross-platform/app-fundamentals/localization.md)
 - [Xamarin.Forms-Lokalisierung](~/xamarin-forms/app-fundamentals/localization/index.md)
-- [iOS-Lokalisierung](~/ios/app-fundamentals/localization/index.md)
+- [iOS Localization (iOS-Lokalisierung)](~/ios/app-fundamentals/localization/index.md)

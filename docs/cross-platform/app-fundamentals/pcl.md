@@ -6,14 +6,14 @@ ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: 83b1da5cd10a46b8480b0755eeb16bf7434a5906
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: a1e7152ca0f24d1ac660742e97907ea9300df9a7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270088"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666878"
 ---
-# <a name="portable-class-libraries-pcl"></a>Portable Klassenbibliotheken (PCL)
+# <a name="portable-class-libraries-pcl"></a>Portable Klassenbibliotheken
 
 > [!WARNING]
 > Portable Klassenbibliotheken (PCLs) gelten, in die neuesten Versionen von Visual Studio als veraltet markiert.
@@ -41,7 +41,7 @@ Die folgende Tabelle zeigt einige der Features, die von .NET Plattform unterschi
 |---|---|---|---|---|---|
 |Kernspeicher|J|J|J|J|J|
 |LINQ|J|J|J|J|J|
-|IQueryable|J|J|J|7.5 und höher|J|
+|IQueryable|J|J|J|7.5 +|J|
 |Serialisierung|J|J|J|J|J|
 |Datenanmerkungen|4.0.3 +|J|J||J|
 
@@ -54,7 +54,7 @@ Dies umfasst Profile, die Kombinationen aus:
 - Windows Phone 8
 - UWP-Apps
 
-Erfahren Sie mehr über die verschiedenen Profile-Funktionen auf [Microsoft Website](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx) und finden Sie unter einem anderen Communitymitglied [PCL-Profil Zusammenfassung](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) darunter Framework Informationen und andere Hinweise unterstützt.
+Erfahren Sie mehr über die verschiedenen Profile-Funktionen auf [Microsoft Website](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx) und finden Sie unter einem anderen Communitymitglied [PCL-Profil Zusammenfassung](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) darunter Framework Informationen und andere Hinweise unterstützt.
 
 **Vorteile**
 

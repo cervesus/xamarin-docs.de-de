@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4d79988fc2900f1fe58774657344f19fab90f3e4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 267dac5b6aec263f1d8b69d81f34f732118c1802
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105089"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671983"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Grundlagen von in-App-Käufe und-Konfiguration in Xamarin.iOS
 
@@ -46,7 +46,7 @@ Sie können keine Preis für Ihr Produkt auswählen – Sie können nur einen "T
 
 ## <a name="configuration"></a>Konfiguration
 
-Vor dem Erwerb in-app-Code schreiben müssen Sie Setup Arbeit in iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) und den iOS-Bereitstellungsportal ( [developer.apple.com/iOS](http://developer.apple.com/iOS)).
+Vor dem Erwerb in-app-Code schreiben müssen Sie Setup Arbeit in iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) und den iOS-Bereitstellungsportal ( [developer.apple.com/iOS](https://developer.apple.com/iOS)).
 
 Diese drei Schritte sollten ausgeführt werden, bevor Sie Code schreiben:
 
@@ -109,8 +109,8 @@ Klicken Sie auf **In-App-Käufe** erstellen oder bearbeiten Ihre Produkte zum Ve
 
 Der Prozess zum Hinzufügen neuer Produkte umfasst zwei Schritte:
 
-1.   Wählen Sie den Product: [![](in-app-purchase-basics-and-configuration-images/image8.png "wählen Sie die Product-Typs")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   Geben Sie das Produkt Attribute, einschließlich der Produkt-Id, Tarif und lokalisierten Beschreibungen: [![](in-app-purchase-basics-and-configuration-images/image9.png "Eingabe der Products-Attribute")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   Wählen Sie die Produkttyp: [![](in-app-purchase-basics-and-configuration-images/image8.png "Wählen Sie den Produkttyp")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Geben Sie den produktanforderungen Attribute, einschließlich der Produkt-Id, den Tarif und lokalisierte Beschreibungen: [![](in-app-purchase-basics-and-configuration-images/image9.png "Die Attribute für die Produkte eingeben")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Die Felder für jedes Produkt in app-Käufe erforderlich werden nachfolgend beschrieben:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4b9c39a0ced9a264f501d78142c3bdfd556593ed
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: ff94211086956e36da377445d90359789b62fc60
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "30771319"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668321"
 ---
 # <a name="material-theme"></a>Materialdesign
 
@@ -45,7 +45,7 @@ Folgendes ist erforderlich, um die neue Android 5.0 Material Design-Features in 
 
 -  **Android SDK** &ndash; Android 5.0 (API 21) oder höher muss installiert sein über den Android SDK Manager.
 
--  **Java JDK 1.8** &ndash; JDK 1.7 kann verwendet werden, wenn Sie speziell für die API-Ebene 23 und früher sind. JDK 1.8 steht [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+-  **Java JDK 1.8** &ndash; JDK 1.7 kann verwendet werden, wenn Sie speziell für die API-Ebene 23 und früher sind. JDK 1.8 steht [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
 Vorgehensweise: Konfigurieren Sie ein Android 5.0-app-Projekt finden Sie unter [sich ein Android 5.0-Projekt](~/android/platform/lollipop.md).
 

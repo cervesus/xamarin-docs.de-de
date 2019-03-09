@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: d40c932c560b3827cccacd4f9bafa155dcf26056
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 68375dfc5b7baa4726739d40eb77c1fcb7500fb4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113325"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668880"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Über die iCloud mit Xamarin.iOS
 
@@ -45,7 +45,7 @@ Anwendungen müssen konfiguriert werden, zur Verwendung von iCloud in die [Apple
 
 Um eine Anwendung auf iCloud ordnungsgemäß zu konfigurieren:
 
--   **Suchen Ihrer TeamID** -melden Sie sich [developer.apple.com](http://developer.apple.com) , und besuchen Sie die **Member Center > Your Account > Developer Account Summary** wurde Ihr Team-ID (oder einzelne-ID für einzelne Entwickler ). Sie werden eine 10-stellige Zeichenfolge ( **A93A5CM278** z. B.) – Dies ist Teil der Bezeichner"Container".
+-   **Suchen Ihrer TeamID** -melden Sie sich [developer.apple.com](https://developer.apple.com) , und besuchen Sie die **Member Center > Your Account > Developer Account Summary** wurde Ihr Team-ID (oder einzelne-ID für einzelne Entwickler ). Sie werden eine 10-stellige Zeichenfolge ( **A93A5CM278** z. B.) – Dies ist Teil der Bezeichner"Container".
 
 -   **Erstellen Sie eine neue App-ID** : Informationen zum Erstellen einer App-ID, befolgen die Schritte der [Bereitstellung für Store-Technologien-Abschnitt des Handbuchs Gerätebereitstellung](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md), und sehen Sie sich **iCloud** als ein zulässige-Dienst:
 
@@ -417,7 +417,7 @@ Benutzer erhalten auch andere Warnungen, wenn sie versuchen, eine iCloud-fähige
 ## <a name="icloud-backup"></a>iCloud-Sicherung
 
 Während der Sicherung in iCloud ein Feature nicht, die direkt von Entwicklern zugegriffen wird, kann die Möglichkeit, die Sie Ihre Anwendung entwerfen, die benutzerfreundlichkeit auswirken.
-Apple bietet [iOS Daten Speicherrichtlinien](http://developer.apple.com/icloud/documentation/data-storage/) für Entwickler, damit Sie in ihre iOS-Anwendungen ausführen.
+Apple bietet [iOS Daten Speicherrichtlinien](https://developer.apple.com/icloud/documentation/data-storage/) für Entwickler, damit Sie in ihre iOS-Anwendungen ausführen.
 
 Der wichtigste Aspekt ist, gibt an, ob Ihre app umfangreiche Dateien gespeichert werden, die nicht benutzergeneriertem (z. B. einer magazine Reader-Anwendung, die Inhalt pro Problem hundred-plus MB speichert) sind. Apple bevorzugt, dass Sie nicht speichern, sollten diese Art von Daten, wo sie wird werden Sicherung in iCloud und füllen Sie das Kontingent des Benutzers iCloud unnötig.
 
@@ -437,6 +437,6 @@ Schließlich enthalten sie eine kurze Erläuterung zur wie das Hinzufügen von i
 
 - [Einführung zu iCloud (Beispiel)](https://developer.xamarin.com/samples/monotouch/IntroductionToiCloud)
 - [iCloud-Seminar-Beispielcode](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
-- [iCloud-Seminar Folien](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
+- [iCloud-Seminar Folien](https://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
-- [iCloud-Speicher](http://support.apple.com/kb/HT4847)
+- [iCloud-Speicher](https://support.apple.com/kb/HT4847)

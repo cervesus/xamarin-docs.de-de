@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f4a21e25f418cc81d5f210098ded648b3d70ae14
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c15e9205b96a02caa182e47b71c6d36c8bff1aa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116731"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671051"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Tests auf der Apple Watch-Geräte
 
@@ -93,7 +93,7 @@ Nachdem Sie Ihre Geräte, App-IDs und Bereitstellungsprofile konfiguriert haben,
 
 Bei einem bei der Verwendung der Bereitstellung Fehler der **Ansicht > Bereiche > Geräteprotokoll** um weitere Informationen zum Fehler anzuzeigen. Im folgenden sind einige Fehler und deren Ursachen aufgeführt:
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>Fehler-MT3001: Konnte nicht AOT der assembly
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>Fehler-MT3001: Konnte kein AOT der assembly
 
 Dies kann auftreten, wenn für die Erstellung im DEBUGMODUS befinden, um auf einem Apple Watch-Gerät bereitstellen.
 
@@ -152,7 +152,7 @@ Wenn die **Anwendungsausgabe** Fenster bleibt anzeigen
 waiting for debugger to connect
 ```
 
-Überprüfen Sie, ob eines der NuGet-Pakete, die in Ihrem Projekt hinzugefügt wurden Abhängigkeiten bestehen **Microsoft.Bcl.Build**. Dies wird automatisch hinzugefügt, und einige Microsoft veröffentlichten Bibliotheken, darunter die gängigen [Microsoft Http Client Libraries](http://www.nuget.org/packages/Microsoft.Net.Http/).
+Überprüfen Sie, ob eines der NuGet-Pakete, die in Ihrem Projekt hinzugefügt wurden Abhängigkeiten bestehen **Microsoft.Bcl.Build**. Dies wird automatisch hinzugefügt, und einige Microsoft veröffentlichten Bibliotheken, darunter die gängigen [Microsoft Http Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http/).
 
 Die **Microsoft.Bcl.Build.targets** -Datei, die hinzugefügt wird die **csproj** kann mit der paketerstellung während der Bereitstellung von iOS-Erweiterungen beeinträchtigen. Sie können verfolgen, die [Fehler](https://bugzilla.xamarin.com/show_bug.cgi?id=29912).
 Eine mögliche problemumgehung besteht darin, auf die CSPROJ-Datei bearbeiten und verschieben Sie manuell die **Microsoft.Bcl.Build.targets** auf das letzte Element sein.

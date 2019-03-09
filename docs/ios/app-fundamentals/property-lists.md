@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 7056f7beb623bee32c767a3f2827efa6eb2a6136
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 87015163eca9fdb2fb8cee35e74d5031314fd42e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118798"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670823"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Arbeiten mit Eigenschaftenlisten in Xamarin.iOS
 
@@ -110,7 +110,7 @@ Der erweiterte Bereich steuert die Dokumenttypen und URL-Schemas, die die Anwend
 
 Für Anwendungen, die Unterstützung für das Öffnen bestimmter Dateien iOS bietet die `CFBundleDocumentTypes` Schlüssel. Wenn wir unsere Anwendung bestimmte bekannte Dateitypen – z. B. PDF-Dateien – unterstützen soll würden wir den PDF-Wert des Schlüssels hinzufügen. Dieser Abschnitt enthält eine einfache Möglichkeit, die Daten einzugeben, die in gespeichert werden, die `CFBundleDocumentTypes` -Schlüssel in der `Info.plist` Datei.
 
-Finden Sie in der Dokumentation unter [die Typen Ihrer App unterstützt Registrierung](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) ausführliche Anleitungen, um diese Werte zu konfigurieren.
+Finden Sie in der Dokumentation unter [die Typen Ihrer App unterstützt Registrierung](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) ausführliche Anleitungen, um diese Werte zu konfigurieren.
 
 ## <a name="utis"></a>UTIs
 
@@ -146,7 +146,7 @@ Visual Studio für Mac erkennt auch den Typ der Eigenschaft, wie gezeigt:
 
  [![](property-lists-images/image33.png "Die verfügbaren Eigenschaftentypen")](property-lists-images/image33.png#lightbox)
 
-Überprüfen Sie die Apple [verwandte App-Ressourcen](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) Links, um weitere Informationen zu optionalen Eigenschaften.
+Überprüfen Sie die Apple [verwandte App-Ressourcen](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) Links, um weitere Informationen zu optionalen Eigenschaften.
 
  <a name="Entitlements" />
 
@@ -158,7 +158,7 @@ In diesem Artikel wird gezeigt, mit den grafischen und erweiterte plist-Editoren
 ## <a name="related-links"></a>Verwandte Links
 
 - [IDE](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide)
-- [App-Ressourcen](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
-- [Registrieren die Datei Typen Ihrer App unterstützt](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
+- [App-Ressourcen](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
+- [Registrieren die Datei Typen Ihrer App unterstützt](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
 - [Implementieren von benutzerdefinierten URL-Schemas](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
 - [Referenz zu Überwachungsprotokollformaten Asset-Katalog](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/index.html#//apple_ref/doc/uid/TP40015170-CH18-SW1)

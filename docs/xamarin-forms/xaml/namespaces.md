@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: be6154631b8b51ec61feb4c713d925ff30505b7d
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: d307c128826775e6d4f7129c79e17522e7e05d6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831754"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671571"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>XAML-Namespaces in Xamarin.Forms
 
@@ -50,6 +50,9 @@ Der folgenden Tabelle werden die `x` Namespaceattribute von Xamarin.Forms unters
 |`x:TypeArguments`|Gibt die generischen Typargumente an den Konstruktor eines generischen Typs an.|
 
 Weitere Informationen zu den `x:DataType` Attribut, finden Sie unter [kompiliert Bindungen](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md). Weitere Informationen zu den `x:FieldModifier` Attribut, finden Sie unter [Feldmodifizierern](~/xamarin-forms/xaml/field-modifiers.md). Weitere Informationen zu den `x:Arguments`, `x:FactoryMethod`, und `x:TypeArguments` Attribute finden Sie unter [übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md).
+
+> [!NOTE]
+> Neben den oben aufgeführten Namespaceattributen, Xamarin.Forms enthält auch Markuperweiterungen, die über genutzt werden, können die `x` Namespacepräfix. Weitere Informationen finden Sie unter [Nutzen von XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/consuming.md).
 
 In XAML erben Namespacedeklarationen vom übergeordneten Element an untergeordnete Element ein. Aus diesem Grund, erben alle Elemente innerhalb dieser Datei bei der Definition eines Namespaces in das Stammelement einer XAML-Datei die Namespacedeklaration.
 

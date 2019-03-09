@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 2dc56d9c5b63d428663d98bae4c8687c1f621a04
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 7dbb0044f09d5bc00f2393eb647efba05a061c3f
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233193"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669543"
 ---
 # <a name="threading-in-xamarinios"></a>Threading in Xamarin.iOS
 
@@ -20,7 +20,7 @@ Die Xamarin.iOS-Runtime bietet Entwicklern Zugriff auf die .NET threading-APIs, 
 
 
 
-Xamarin empfiehlt dringend die Verwendung der [Task Parallel Library](http://msdn.microsoft.com/library/dd460717.aspx) (TPL) zum Erstellen von Anwendungen für verschiedene Gründe haben:
+Xamarin empfiehlt dringend die Verwendung der [Task Parallel Library](https://msdn.microsoft.com/library/dd460717.aspx) (TPL) zum Erstellen von Anwendungen für verschiedene Gründe haben:
 -  Der Standard-Scheduler TPL delegiert Ausführung der Aufgabe an den Threadpool, die wiederum dynamisch, die Anzahl der Threads, die nicht benötigt ausgeweitet wird, da der Vorgang stattfindet und zugleich ein Szenario, in denen zu viele Threads CPU-Zeit konkurrieren letztlich. 
 -  Es ist einfacher zu bedenken, Vorgänge in Bezug auf die TPL-Tasks. Sie können ganz einfach bearbeiten diese, Planen sie, ihre Ausführung Serialisieren oder viele parallel mithilfe eines umfangreichen Satzes von APIs zu starten. 
 -  Es ist die Grundlage für die Programmierung mit den neuen c# Async spracherweiterungen. 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
-ms.openlocfilehash: be96683a2e63ed802169543dcee55a3431e42130
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528805"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668893"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Remotebenachrichtigungen mit Google Cloud Messaging
 
@@ -657,7 +657,7 @@ Beim Öffnen der Komponentenleiste Benachrichtigung, um Benachrichtigungen anzuz
 
 Herzlichen Glückwunsch! Ihre app hat seine erste remote-Benachrichtigung erhalten.
 
-Beachten Sie, dass es sich bei GCM nicht mehr empfangen werden sollen, wenn die app-Force-beendet wird. Um Benachrichtigungen nach der ein Force Hand fortzusetzen, muss die app manuell neu gestartet werden. Weitere Informationen zu dieser Android-Richtlinie finden Sie unter [Steuerelemente auf die beendete Anwendungen starten](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) und [stack Overflow-Beitrag](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
+Beachten Sie, dass es sich bei GCM nicht mehr empfangen werden sollen, wenn die app-Force-beendet wird. Um Benachrichtigungen nach der ein Force Hand fortzusetzen, muss die app manuell neu gestartet werden. Weitere Informationen zu dieser Android-Richtlinie finden Sie unter [Steuerelemente auf die beendete Anwendungen starten](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) und [stack Overflow-Beitrag](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
 
  
 ## <a name="summary"></a>Zusammenfassung

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 858f1e5c0bd2af85b419bb9a1cffb7d484f3f7e4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ce9bf0293b846299cc7cd06773ce936f725715fa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113403"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669894"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
@@ -77,7 +77,7 @@ Ermöglicht, fahren Sie mit diskutieren **Metadata.xml** im Detail.
 ## <a name="metadataxml-transform-file"></a>Metadata.XML-Transform-Datei
 
 Wie wir haben bereits gesehen haben, die Datei **Metadata.xml** von den Bindungen-Generator verwendet, um die Erstellung der bindungsassembly beeinflussen.
-Im Metadaten-Format [XPath](https://www.w3.org/TR/xpath/) Syntax und ist nahezu identisch mit der *GAPI Metadaten* beschriebenen [GAPI Metadaten](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata) Guide. Diese Implementierung ist beinahe eine vollständige Implementierung von XPath 1.0 und unterstützt daher in der standard 1.0-Elemente. Diese Datei ist ein leistungsstarker Mechanismus für XPath-Basis zu ändern, hinzufügen, ausblenden oder Verschieben jedes Element oder Attribut in der API-Datei. Alle Elemente der Regel in der Spezifikation für die Metadaten enthalten ein Path-Attribut, um den Knoten zu identifizieren, für den die Regel angewendet wird. Die Regeln werden in der folgenden Reihenfolge angewendet:
+Im Metadaten-Format [XPath](https://www.w3.org/TR/xpath/) Syntax und ist nahezu identisch mit der *GAPI Metadaten* beschriebenen [GAPI Metadaten](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata) Guide. Diese Implementierung ist beinahe eine vollständige Implementierung von XPath 1.0 und unterstützt daher in der standard 1.0-Elemente. Diese Datei ist ein leistungsstarker Mechanismus für XPath-Basis zu ändern, hinzufügen, ausblenden oder Verschieben jedes Element oder Attribut in der API-Datei. Alle Elemente der Regel in der Spezifikation für die Metadaten enthalten ein Path-Attribut, um den Knoten zu identifizieren, für den die Regel angewendet wird. Die Regeln werden in der folgenden Reihenfolge angewendet:
 
 * **Hinzufügen von Knoten** &ndash; Fügt einen untergeordneten Knoten auf den Knoten, die durch den Path-Attribut angegeben.
 * **Attr** &ndash; legt den Wert eines Attributs für das durch den Path-Attribut angegebene Element fest.
@@ -219,11 +219,11 @@ Das folgende Beispiel veranschaulicht einen XPath-Ausdruck für die Methode umbe
     name="managedName">NewMethodName</attr>
 ```
 
-### <a name="managedtype"></a>"ManagedType"
+### <a name="managedtype"></a>managedType
 
 `managedType` wird verwendet, um den Rückgabetyp einer Methode ändern. In einigen Situationen folgert den Generator Bindungen nicht ordnungsgemäß den Rückgabetyp einer Java-Methode, was zu einem Fehler zur Kompilierzeit führt. Eine mögliche Lösung in diesem Fall ist den Rückgabetyp der Methode ändern.
 
-Der Generator Bindungen beispielsweise davon ausgeht, die die Java-Methode `de.neom.neoreadersdk.resolution.compareTo()` zurückgeben soll ein `int`, was dazu führt, in der Fehlermeldung **Fehler CS0535: "DE. Neom.Neoreadersdk.Resolution' ist nicht implementiert den Schnittstellenmember "Java.Lang.IComparable.CompareTo(Java.Lang.Object)"**. Der folgende Codeausschnitt zeigt, wie Sie den Rückgabetyp der generierten ändern C# Methode aus einem `int` auf eine `Java.Lang.Object`: 
+Der Generator Bindungen beispielsweise davon ausgeht, die die Java-Methode `de.neom.neoreadersdk.resolution.compareTo()` zurückgeben sollte ein `int`, was dazu führt, in der Fehlermeldung **Fehler CS0535: ' DE. Neom.Neoreadersdk.Resolution' ist nicht implementiert den Schnittstellenmember "Java.Lang.IComparable.CompareTo(Java.Lang.Object)"**. Der folgende Codeausschnitt zeigt, wie Sie den Rückgabetyp der generierten ändern C# Methode aus einem `int` auf eine `Java.Lang.Object`: 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -347,4 +347,4 @@ In diesem Artikel beschrieben, wie Xamarin.Android zum Transformieren einer API-
 
 - [Arbeiten mit JNI](~/android/platform/java-integration/working-with-jni.md)
 - [Binden einer Java-Bibliothek](~/android/platform/binding-java-library/index.md)
-- [GAPI-Metadaten](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [GAPI-Metadaten](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)

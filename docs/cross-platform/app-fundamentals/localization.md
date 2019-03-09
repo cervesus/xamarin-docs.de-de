@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 85e4e98cfbc96936c19642a200885b54cf745aa4
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 4799d6aaa095127e242c5e0750db686519d0c21d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617513"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670791"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -111,7 +111,7 @@ Wenn die Daten von der app-Benutzer eingegeben werden, analysieren sie mit der e
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-Finden Sie unter den [analysieren numerischer Zeichenfolgen](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) und [Analysieren von Zeichenfolgen für Datum und Uhrzeit](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) MSDN-Artikel Weitere Informationen.
+Finden Sie unter den [analysieren numerischer Zeichenfolgen](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) und [Analysieren von Zeichenfolgen für Datum und Uhrzeit](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) MSDN-Artikel Weitere Informationen.
 
 <a name="rtl" />
 
@@ -131,7 +131,7 @@ IOS und Android unterstützt rechts-nach-links-Layouts und Schriftart-Rendering 
 
 Verschiedene Sprachen definieren die Sortierreihenfolge von ihrem Alphabet unterschiedlich, auch wenn sie den gleichen Zeichensatz verwenden.
 
-Finden Sie unter den [Details der Zeichenfolgenvergleich](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) in [bewährte Methoden für die Verwendung von Zeichenfolgen in .NET Framework](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx) ein Beispiel, in denen Sprache (CultureInfo) wirkt sich auf die Sortierreihenfolge.
+Finden Sie unter den [Details der Zeichenfolgenvergleich](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) in [bewährte Methoden für die Verwendung von Zeichenfolgen in .NET Framework](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx) ein Beispiel, in denen Sprache (CultureInfo) wirkt sich auf die Sortierreihenfolge.
 
 Es ist unwahrscheinlich, dass die integrierte Datenbank-Funktionen auf den mobilen Plattformen unterstützen sprachspezifische sortieren, die Reihenfolge, also Sie möglicherweise zusätzlichen Code in der Geschäftslogik zu implementieren müssen.
 
@@ -213,7 +213,7 @@ und dann versuchen, die richtige Ausdruck auf dynamisch im Code mithilfe von zei
 
 Einige Programmiersprachen erfordern zusätzliche Syntax zum Angeben der Reihenfolge von Parametern in einer Zeichenfolge, aber .NET bereits also das Konzept der nummerierte Platzhalter unterstützt
 
-**Gute**:
+**Good**:
 
 ```csharp
 "a {0} b {1} cde {3}"
@@ -232,7 +232,7 @@ und die Token werden als das Konvertierungsprogramm soll sortiert werden. Achten
 
 Vermeiden Sie Zeichenfolgen wie `"You have {0} message/s."` Zeichenfolgen für die einzelnen Zustände verwenden, um eine bessere benutzererfahrung bereitzustellen:
 
-**Gute**:
+**Good**:
 
 ```csharp
 "You have no messages."
@@ -250,7 +250,7 @@ Lateinische Sprachen verwenden gelegentlich andere Wörtern abhängig von das Ge
 
 Es gibt auch weitere offensichtliche Fall auch in Englisch, Zeichenfolgen, in dem für einen bestimmten Benutzer oder die Benutzer Ihrer App zu verweisen. Beispielsweise einige Websites angezeigt wie `"Bob commented on his post"` benötigen Sie Zeichenfolgen für eine Geschlecht "Male", "female", und nicht-Binärdaten oder unbekannt:
 
-**Gute**:
+**Good**:
 
 ```csharp
 "{0} commented on his post"
@@ -284,7 +284,7 @@ Um Übersetzungsfunktionen in Ihrer app zu erstellen, sollten Sie die [Textüber
 Zu Testzwecken können eines der vielen online-Übersetzungstools Sie lokalisierten Text in Ihrer app während der Entwicklung umfassen:
 
 - [Bing-Übersetzer](https://www.bing.com/translator/)
-- [Übersetzen von Google](http://translate.google.com/)
+- [Google Translate](http://translate.google.com/)
 
 Es gibt noch viele andere verfügbar. Die Qualität der maschinellen Übersetzung ist nicht in der Regel gut genug, um eine Anwendung freigeben betrachtet, ohne zuerst überprüft und von professionellen Übersetzer oder Muttersprache getestet.
 
@@ -312,5 +312,5 @@ Fahren Sie mit technischen Details für die Plattform, die, der Sie interessiert
 ## <a name="related-links"></a>Verwandte Links
 
 - [Übersicht über die Apple-Lokalisierung](https://developer.apple.com/internationalization/)
-- [Checkliste für die Lokalisierung von Android](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [Bewährte Methoden für die Entwicklung weltweit einsatzfähiger Anwendungen (MSDN)](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)
+- [Checkliste für die Lokalisierung von Android](https://developer.android.com/distribute/tools/localization-checklist.html)
+- [Bewährte Methoden für die Entwicklung weltweit einsatzfähiger Anwendungen (MSDN)](https://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

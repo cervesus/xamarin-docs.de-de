@@ -1,17 +1,17 @@
 ---
 title: Erste Schritte mit objektive Sharpie
-description: Dieses Dokument enthält eine allgemeine Übersicht über Objective Sharpie, das Tool verwendet, um die Erstellung von c#-Bindungen mit Objective-C-Code zu automatisieren.
+description: Dieses Dokument enthält eine allgemeine Übersicht über Objective Sharpie, das Tool verwendet, um die Erstellung von automatisieren C# -Bindungen mit Objective-C-Code.
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: da8c51c4ba4df74afac950bbff867221e7307d6e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854778"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670115"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>Erste Schritte mit objektive Sharpie
 
@@ -36,7 +36,7 @@ Führen Sie das Installationsprogramm aus, und befolgen Sie alle die aufforderun
 
 ## <a name="basic-walkthrough"></a>Einfache Exemplarische Vorgehensweise
 
-Objektive Sharpie ist ein Befehlszeilentool, bereitgestellt von Xamarin, die bei der Erstellung hilft die Definitionen erforderlich sind, um eine 3rd Party Objective-C-Bibliothek in c# zu binden.
+Objektive Sharpie ist ein Befehlszeilentool, das von Xamarin, der dabei hilft, erstellen die Definitionen, die zum Binden einer 3rd Party Objective-C-Bibliothek in erforderliche bereitgestellten C#.
 Auch wenn Objective Sharpie, den Entwickler verwenden *wird* müssen die generierten Dateien zu ändern, nachdem Ziel Sharpie abgeschlossen ist, um Probleme zu beheben, die vom Tool nicht automatisch verarbeitet werden konnte.
 
 Nach Möglichkeit Ziel Sharpie wird mit einer Anmerkung versehen APIs, die mit dem sie eine unsichere hat, auf wie ordnungsgemäß gebunden (viele Konstrukte in systemeigenen Code sind nicht eindeutig).
@@ -48,7 +48,7 @@ Die Ausgabe des Ziel-Sharpie ist ein Dateipaar - [ `ApiDefinition.cs` und `Struc
 > Objektive Sharpie ist mit einem **wichtigen** Regel für die richtige Verwendung: müssen Sie unbedingt übergeben sie die richtige Clang Compiler-Befehlszeilenargumente um sicherzustellen, dass der richtige analysieren. Dies liegt daran die Ziel-Sharpie Analyse einfaches Tool [implementiert, die für die Clang-Libtooling API](http://clang.llvm.org/docs/LibTooling.html).
 
 Dies bedeutet, dass das Ziel Sharpie hat das volle Potenzial von Clang (der C/Objective-C/C++-Compiler, die tatsächlich die native Bibliothek kompiliert, die Sie binden soll) und alle internen sein Wissen um die Headerdateien für die Bindung.
-Anstatt das analysierte übersetzen [AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree) in Objektcode, Ziel Sharpie übersetzt die AST, um eine C#-Bindung "Scaffold" geeignet, für die Eingabe, die `bmac` und `btouch` Tools für Xamarin-Bindung.
+Anstelle von übersetzt den analysierten [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) in Objektcode, Ziel Sharpie übersetzt die AST zu einer C# binden "erstellen" für die Eingabe geeignet ist die `bmac` und `btouch` Tools für Xamarin-Bindung.
 
 Wenn Objective Sharpie Fehler auftreten, während der Analyse, es, Clang, die während der fehlerhaften bedeutet Analysieren von der phase die AST erstellen möchten, und Sie müssen herausfinden, warum.
 
@@ -61,5 +61,5 @@ Wenn die Bibliothek, der Sie interessiert sind als ein CocoaPod verfügbar ist, 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

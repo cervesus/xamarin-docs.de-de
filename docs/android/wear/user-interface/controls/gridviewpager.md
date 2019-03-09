@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 1cb71fa2c73b9ab151555559b22def4be1cf5c73
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 81bb4e302f81b58eec91ea2a2aef985adbf72e2c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112766"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670921"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
@@ -19,7 +19,7 @@ Die [GridViewPager](https://developer.xamarin.com/samples/GridViewPager/) Beispi
 
 ![Beispielscreenshot der GridViewPager auf einem quadratischen display](gridviewpager-images/gridviewpager.png)
 
-Fügen Sie zuerst die [Xamarin Android Wear-Unterstützung](http://www.nuget.org/packages/Xamarin.Android.Wear/) NuGet-Paket Ihrem Projekt.
+Fügen Sie zuerst die [Xamarin Android Wear-Unterstützung](https://www.nuget.org/packages/Xamarin.Android.Wear/) NuGet-Paket Ihrem Projekt.
 
 Das Layout XML sieht so aus:
 
@@ -31,8 +31,8 @@ Das Layout XML sieht so aus:
     android:keepScreenOn="true" />
 ```
 
-Erstellen Sie eine [`GridPagerAdapter`](http://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
-(oder wie z. B.-Unterklasse [`FragmentGridPagerAdapter`](http://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
+Erstellen Sie eine [`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
+(oder wie z. B.-Unterklasse [`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
 zum Bereitstellen von Ansichten auf als der Benutzer navigiert.
 
 Die [beispieladapter](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs) veranschaulicht das Implementieren Sie der erforderlichen Methoden, einschließlich Außerkraftsetzungen für `RowCount`, `GetColumnCount`, `GetBackground`, und `GetFragment`

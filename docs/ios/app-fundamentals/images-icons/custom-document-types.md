@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/23/2017
-ms.openlocfilehash: 51abd00f9a21b702811bb3897f273deff54f7d01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 155847b4f5f6b3e6070f1afb6219db2d3789a075
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110484"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668464"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Benutzerdefinierte Dokumenteigenschaften-Symbole in Xamarin.iOS
 
@@ -44,11 +44,11 @@ Klicken Sie auf die **Dokumenttyp hinzufügen** Schaltfläche, und füllen Sie d
 -----
 
 
-Weitere Informationen zu Typen von Dokumenten, finden Sie in der Apple [Uniform Typverweis Bezeichner](http://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) und [Interaktion Programmierung Dokumentthemen für iOS](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html).
+Weitere Informationen zu Typen von Dokumenten, finden Sie in der Apple [Uniform Typverweis Bezeichner](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) und [Interaktion Programmierung Dokumentthemen für iOS](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html).
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Arbeiten mit Bildern (Beispiel)](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hallo iPhone](~/ios/get-started/hello-ios/index.md)
-- [Benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [Benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

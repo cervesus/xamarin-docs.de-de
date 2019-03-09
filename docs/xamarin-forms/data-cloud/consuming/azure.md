@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 1ac68992d36627eb5d6aee0d4d19564ce63a3936
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8bd77ec4975fae3cc7245c5adc2b5ef18568b9e1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052134"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667581"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Verwenden einer Azure-Mobile-App
 
@@ -21,7 +21,7 @@ ms.locfileid: "53052134"
 _Azure Mobile Apps können Sie zum Entwickeln von apps mit skalierbaren Back-Ends in Azure App Service gehostet wird, mit Unterstützung für mobile Authentifizierung, offlinesynchronisierung und Pushbenachrichtigungen. In diesem Artikel, der nur für Azure Mobile Apps, die eine Node.js-Back-End verwenden, wird erläutert, wie zum Abfragen, einfügen, aktualisieren und Löschen von Daten in einer Tabelle in einer Azure Mobile Apps-Instanz gespeichert werden._
 
 > [!NOTE]
-> Ab dem 30. Juni, werden alle neuen Azure Mobile Apps mit TLS 1.2 standardmäßig erstellt werden. Darüber hinaus, es wird außerdem empfohlen, dass für vorhandene Azure Mobile Apps neu konfiguriert werden, um die Verwendung von TLS 1.2. Informationen zum Erzwingen von TLS 1.2 in Azure Mobile Apps finden Sie unter [Erzwingen von TLS 1.2](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112). Informationen zum Konfigurieren von Xamarin-Projekte zur Verwendung von TLS 1.2 finden Sie unter [Transport Layer Security (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md).
+> Ab dem 30. Juni, werden alle neuen Azure Mobile Apps mit TLS 1.2 standardmäßig erstellt werden. Darüber hinaus, es wird außerdem empfohlen, dass für vorhandene Azure Mobile Apps neu konfiguriert werden, um die Verwendung von TLS 1.2. Informationen zum Erzwingen von TLS 1.2 in Azure Mobile Apps finden Sie unter [Erzwingen von TLS-Versionen](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-versions). Informationen zum Konfigurieren von Xamarin-Projekte zur Verwendung von TLS 1.2 finden Sie unter [Transport Layer Security (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md).
 
 Weitere Informationen zum Erstellen einer Azure Mobile Apps-Instanz, die von Xamarin.Forms genutzt werden können, finden Sie unter [erstellen eine Xamarin.Forms-app](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/). Nach folgenden Anweisungen, herunterladbare Anwendung für die Nutzung der Azure Mobile Apps-Instanz durch Festlegen von konfiguriert werden kann die `Constants.ApplicationURL` an die URL der Azure Mobile Apps-Instanz. Klicken Sie dann beim Ausführen der beispielanwendung wird es auf die Azure Mobile Apps-Instanz, eine Verbindung herstellen wie im folgenden Screenshot gezeigt:
 

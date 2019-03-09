@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 5468495885e3af2afa2692ccad9191b669fa3328
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: f2db5f4acd57cbf887d9955d9ea61fce4427c1c3
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066506"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672403"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Einführung in Continuous Integration mit Xamarin
 
@@ -39,10 +39,6 @@ Mobile apps stellen besondere Herausforderungen für die kontinuierliche Integra
 Die [App Center Test](https://docs.microsoft.com/appcenter/test-cloud) löst dieses bestimmte Problem durch das Testen von apps direkt auf Hunderten von physischen Geräten. Entwickler schreiben automatisierter Annahme-Tests, die leistungsstarke UI-Tests zu ermöglichen. Nachdem diese Tests in App Center hochgeladen wurden, kann der CI-Server werden automatisch im Rahmen eines CI-Prozesses ausführen wie im folgenden Diagramm dargestellt:
 
 [![](intro-to-ci-images/intro02-small.png "Nachdem diese Tests in App Center hochgeladen wurden, kann der CI-Server diese automatisch im Rahmen eines CI-Prozesses wie in diesem Diagramm gezeigt ausführen")](intro-to-ci-images/intro02.png#lightbox)
-
-# <a name="components-of-continuous-integration"></a>Komponenten der fortlaufenden Integration
-
-Es ist einem umfangreichen Ökosystem aus kommerziellen und Open-Source-Tools entwickelt, um Unterstützung für CI. In diesem Abschnitt wird erläutert, nur einige der am häufigsten verwendeten Seiten.
 
 ## <a name="version-control"></a>Quellcodeverwaltung
 
@@ -92,8 +88,8 @@ Mit Visual Studio Team Services erstellen eine separate Builddefinition für jed
 
 Mit Team Foundation Server konfigurieren Sie einen Buildcomputer für bestimmte Zielplattformen wie folgt aus:
 
-- **Android und Windows:** Installieren von Visual Studio und Xamarin-tools (für Android und Windows beide), und mit Ihrem Xamarin-Lizenzen konfigurieren. Es ist auch notwendig ist, verschieben, dass das Android SDK an einem freigegebenen Speicherort auf dem Server, in dem TFS--Agent Build-gefunden werden kann. Weitere Informationen finden Sie unter [Konfigurieren von TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview).
-- **iOS und Xamarin:** Installieren von Visual Studio und Xamarin-Tools auf dem Windows-Server mit der entsprechenden Lizenz. Danach installieren Sie Visual Studio für Mac, auf ein Netzwerk zugänglich Mac OS X-Computer, der dient als buildhost für und der endgültigen app-Paket für iOS-APP für OS X erstellen.
+- **Android und Windows:** Installieren von Visual Studio und die Xamarin-Tools (für Android und Windows beide), und konfigurieren Sie mit Ihrem Xamarin-Lizenzen. Es ist auch notwendig ist, verschieben, dass das Android SDK an einem freigegebenen Speicherort auf dem Server, in dem TFS--Agent Build-gefunden werden kann. Weitere Informationen finden Sie unter [Konfigurieren von TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview).
+- **iOS und Xamarin:** Installieren Sie Visual Studio und die Xamarin-Tools auf dem Windows-Server mit der entsprechenden Lizenz an. Danach installieren Sie Visual Studio für Mac, auf ein Netzwerk zugänglich Mac OS X-Computer, der dient als buildhost für und der endgültigen app-Paket für iOS-APP für OS X erstellen.
 
 Das folgende Diagramm veranschaulicht diese Topografie:
 
@@ -115,7 +111,3 @@ Eine andere allgemeine CI-Umgebung kann vollständig OS X-basiert sein. Dieses S
 
 > [!IMPORTANT]
 > **Jenkins ist [nicht von Microsoft unterstützt](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md).**
-
-# <a name="summary"></a>Zusammenfassung
-
-In diesem Dokument wurde eingeführt, das Konzept der continuous Integration und die Vorteile, die für die Software-Entwicklungsteams bietet. Die Wichtigkeit der Versionskontrolle wurde zusammen mit den Rollen und Verantwortlichkeiten des Buildservers erläutert. Das Dokument hat sich auf einige der Tools behandelt, die für die quellcodeverwaltung verwendet werden können, und erstellen Server klicken Sie dann auf. Wir haben außerdem wird die App Center Test, wodurch Entwickler großartige apps zu veröffentlichen, durch Ausführen von automatisierten Tests, die die Qualität und Funktionalität ihrer Apps bestätigen werden eingeführt. Dokumentation zum Übermitteln von apps und Tests in App Center finden Sie ausführlichere [hier](https://docs.microsoft.com/appcenter/test-cloud). Schließlich, um zu erfahren, wie alle diese Tools und Komponenten miteinander verbunden sind, erläutert es mehrere verschiedene CI-Umgebungen, die Organisationen für die kontinuierliche Integration herstellen können. Weitere Informationen zur Verwendung von Visual Studio Team Services und Team Foundation Server mit Xamarin-Projekte, finden Sie unter [Konfigurieren von TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview/) und [Continuous Integration-Einführung](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer/). Auch wenn Sie Jenkins verwenden, finden Sie unter [mithilfe von Jenkins mit Xamarin](~/tools/ci/jenkins-walkthrough.md) ausführliche Informationen zum Einrichten einer continuous Integration.

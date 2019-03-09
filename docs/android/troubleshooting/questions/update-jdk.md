@@ -1,5 +1,5 @@
 ---
-title: Wie aktualisiere ich die Java Development Kit (JDK) Version?
+title: Wie aktualisiere ich die Java Development Kit-Version (JDK)?
 description: In diesem Artikel wird veranschaulicht, wie zum Aktualisieren der Java Development Kit (JDK) Version unter Windows und Mac.
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -8,14 +8,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: aa04d944f803dded0e9448de27ed7d5ced2efb54
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 290a7deef4fdc10163bdb09881382f011b0dcd32
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109184"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670849"
 ---
-# <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Wie aktualisiere ich die Java Development Kit (JDK) Version?
+# <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Wie aktualisiere ich die Java Development Kit-Version (JDK)?
 
 _In diesem Artikel wird veranschaulicht, wie zum Aktualisieren der Java Development Kit (JDK) Version unter Windows und Mac._
 
@@ -27,7 +27,7 @@ Um auf der Microsoft Mobile OpenJDK aktualisieren, finden Sie unter [Microsoft M
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Laden Sie JDK 8 (1.8) herunter, aus der [Oracle-Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html):
+1.  Laden Sie JDK 8 (1.8) herunter, aus der [Oracle-Website](https://www.oracle.com/technetwork/java/javase/downloads/index.html):
 
     ![Screenshot des JDK-download-Seite auf der Oracle-website](update-jdk-images/image1.png)
 
@@ -47,7 +47,7 @@ Achten Sie darauf, dass Visual Studio neu starten, nach dem Aktualisieren des Sp
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1.  Laden Sie JDK 8 (1.8) herunter, aus der [Oracle-Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html):
+1.  Laden Sie JDK 8 (1.8) herunter, aus der [Oracle-Website](https://www.oracle.com/technetwork/java/javase/downloads/index.html):
 
     ![Screenshot des JDK-download-Seite auf der Oracle-website](update-jdk-images/image1.png)
 

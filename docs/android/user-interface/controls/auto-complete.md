@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: 134b8e93279dd60f860e44a444e75e0200e66b99
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: cf2221380e5ddbd8278cc2d387c6eb185d990c1a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "30764449"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671897"
 ---
 # <a name="auto-complete"></a>Automatische Vervollständigung
 
@@ -22,7 +22,7 @@ ms.locfileid: "30764449"
 ## <a name="overview"></a>Übersicht
 
 Verwenden Sie zum Erstellen eines Text-Eintrag-Widgets, die automatische Vervollständigung Vorschläge unterbreitet der [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-Widget. Vorschläge werden aus einer Auflistung von Zeichenfolgen, die das Widget über zugeordnete empfangen ein [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/).
+widget. Vorschläge werden aus einer Auflistung von Zeichenfolgen, die das Widget über zugeordnete empfangen ein [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/).
 
 In diesem Tutorial erstellen Sie eine [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
 Widgets, die Vorschläge für einen Ländernamen.
@@ -46,7 +46,7 @@ Widgets, die Vorschläge für einen Ländernamen.
 ```
 
 Die [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) ist eine Bezeichnung, die eingeführt werden die [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-Widget.
+widget.
 
 
 ## <a name="tutorial"></a>Lernprogramm
@@ -160,7 +160,7 @@ static string[] COUNTRIES = new string[] {
 ```
 
 Dies ist die Liste mit Vorschlägen, die in einer Dropdown-Liste bereitgestellt wird, wenn der Benutzer, in eingibt der [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-Widget.
+widget.
 
 Führen Sie die Anwendung aus. Wenn Sie eingeben, sehen Sie etwa wie folgt:
 
@@ -171,7 +171,7 @@ Führen Sie die Anwendung aus. Wenn Sie eingeben, sehen Sie etwa wie folgt:
 ## <a name="more-information"></a>Weitere Informationen
 
 Beachten Sie, dass eine hartcodierte Zeichenfolgen-Array nicht empfohlener Entwurf Methode handelt, da Ihr Anwendungscode, auf das Verhalten, die nicht damit zufrieden konzentrieren sollten. Anwendungsinhalte, z. B. Zeichenfolgen sollte extern ausgelagert werden, aus der Code zum Vereinfachen von Änderungen an den Inhalt und die Lokalisierung des Inhalts zu ermöglichen. Die hartcodierte Zeichenfolgen werden in diesem Tutorial verwendet, nur für einfache und den Schwerpunkt auf der [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-Widget. Stattdessen sollte Ihre Anwendung solche Zeichenfolgen-Arrays in eine XML-Datei deklarieren. Dies erreichen Sie mit einem `<string-array>` Ressource in Ihrem Projekt `res/values/strings.xml` Datei. Zum Beispiel:
+widget. Stattdessen sollte Ihre Anwendung solche Zeichenfolgen-Arrays in eine XML-Datei deklarieren. Dies erreichen Sie mit einem `<string-array>` Ressource in Ihrem Projekt `res/values/strings.xml` Datei. Zum Beispiel:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -205,5 +205,5 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 
 *Teile dieser Seite werden Änderungen, die basierend auf der Arbeit erstellt und freigegeben werden, indem Sie das Android Open Source-Projekt, und gemäß den Bedingungen, die in beschriebenen verwendet die* 
  [ *Creative Commons 2.5 Attribution-Lizenz* ](http://creativecommons.org/licenses/by/2.5/) *. Dieses Tutorial basiert auf der* 
- [ *Android automatische vollständige Tutorial*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
+ [ *Android automatische vollständige Tutorial*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
  *.*

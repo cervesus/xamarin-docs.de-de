@@ -6,12 +6,12 @@ ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 60386b3629e8ed9d2fd1ff165cd2c04d9571b51a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ac84d5b28b0f211dccb1697a4b3dbbc9cedf81e9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106233"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670157"
 ---
 # <a name="2d-math-with-cocossharp"></a>2D-Mathematik mit CocosSharp
 
@@ -24,7 +24,7 @@ Zu positionieren, und verschieben Sie Objekte mit Code die ist ein wesentlicher 
  - Drehen von Objekten mit CocosSharp
  - Drehung verwenden mit Geschwindigkeit
 
-Entwickler, die nicht über einen starken Math-Hintergrund oder haben, die diese Themen aus der Schule, Long-Wert-vergessen, müssen keine Gedanken machen – in diesem Dokument wird unterteilen Konzepte in kleinen Größe Teile und werden theoretische Erklärungen mit praktischen Beispielen begleitet. Kurz gesagt, wird in diesem Artikel die uralte mathematische Student-Frage beantwortet: "Wenn eigentlich muss ich diese Dinge zu verwenden?"
+Entwickler, die nicht über einen starken Math-Hintergrund oder haben, die diese Themen aus der Schule, Long-Wert-vergessen, müssen keine Gedanken machen – in diesem Dokument wird unterteilen Konzepte in kleinen Größe Teile und werden theoretische Erklärungen mit praktischen Beispielen begleitet. In diesem Artikel wird kurz gesagt, die uralte Math "Student" Frage beantworten: "Wenn eigentlich muss ich diese Dinge zu verwenden?"
 
 
 ## <a name="requirements"></a>Anforderungen
@@ -266,7 +266,7 @@ Dieser Code führt zu folgendem Verhalten:
 
 Beachten Sie, dass der obige Code dem Y-Parameter zunächst den X-Parameter dann beim Aufrufen übergibt der `Atan2` Methode. Dies ist rückwärts von den üblichen X, Y-Reihenfolge von Positionskoordinaten. Weitere Informationen [finden Sie in der Dokumentation "ATAN2"](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
 
-Es ist auch erwähnenswert, dass der Rückgabewert von `Atan2` ist im Bogenmaß im Bereich einer anderen Einheit verwendet, um Winkel zu messen. Dieses Handbuch behandelt die Details im Bogenmaß nicht, aber denken Sie daran, alle trigonometrischen Funktionen in der `System.Math` Namespace verwenden von Radians, damit alle Werte in Grad konvertiert werden müssen, bevor Sie für CocosSharp-Objekte verwendet werden. Weitere Informationen zu Bogenmaß finden [in der Wikipedia-Seite Radiant](http://en.wikipedia.org/wiki/Radian).
+Es ist auch erwähnenswert, dass der Rückgabewert von `Atan2` ist im Bogenmaß im Bereich einer anderen Einheit verwendet, um Winkel zu messen. Dieses Handbuch behandelt die Details im Bogenmaß nicht, aber denken Sie daran, alle trigonometrischen Funktionen in der `System.Math` Namespace verwenden von Radians, damit alle Werte in Grad konvertiert werden müssen, bevor Sie für CocosSharp-Objekte verwendet werden. Weitere Informationen zu Bogenmaß finden [in der Wikipedia-Seite Radiant](https://en.wikipedia.org/wiki/Radian).
 
 #### <a name="forward-angle"></a>Forward-Winkel
 

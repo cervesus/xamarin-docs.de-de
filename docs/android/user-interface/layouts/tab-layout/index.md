@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 5d88ffb44d12ee142314c74ca8e749164cbfe3b9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105960"
 ---
+
 # <a name="tabbed-layouts"></a>Layouts im Registerkartenformat
 
 
@@ -34,6 +29,6 @@ Registerkarten sind eine beliebte User Interface-Antimuster in mobilen Anwendung
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Material Design - Registerkarten](https://material.io/guidelines/components/tabs.html)- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [Material Design - Registerkarten](https://material.io/guidelines/components/tabs.html)- [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
 - [NuGet-Paket für Android-Unterstützung Bibliothek v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
-- [V7 Appcompat-Bibliothek](http://developer.android.com/tools/support-library/features.html#v7-appcompat)
+- [V7 Appcompat-Bibliothek](https://developer.android.com/tools/support-library/features.html#v7-appcompat)

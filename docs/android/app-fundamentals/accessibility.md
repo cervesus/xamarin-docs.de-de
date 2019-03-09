@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3cce3270b9df2aad0037b1ab96f169cc4b564766
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: d004b753c89f3995e8dc511877bd115a894396fc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528129"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671623"
 ---
 # <a name="accessibility-on-android"></a>Eingabehilfen unter Android
 
@@ -174,12 +174,12 @@ Der Vorteil von Text in einer separaten Datei gespeichert ist, dass mehrere spra
 
 ## <a name="testing-accessibility"></a>Testen der Barrierefreiheit
 
-Führen Sie [folgendermaßen](http://developer.android.com/training/accessibility/testing.html#how-to) So aktivieren Sie TalkBack und Durchsuchen von Touch, um Zugriff auf Android-Geräten zu testen.
+Führen Sie [folgendermaßen](https://developer.android.com/training/accessibility/testing.html#how-to) So aktivieren Sie TalkBack und Durchsuchen von Touch, um Zugriff auf Android-Geräten zu testen.
 
 Müssen Sie möglicherweise installieren [TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) aus Google Play erscheint es nicht in **Einstellungen > Barrierefreiheit**.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Cross-Platform-Barrierefreiheit](~/cross-platform/app-fundamentals/accessibility.md)
-- [Zugriff auf Android-APIs](http://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [Cross-platform Accessibility (Plattformübergreifende Barrierefreiheit)](~/cross-platform/app-fundamentals/accessibility.md)
+- [Zugriff auf Android-APIs](https://developer.android.com/guide/topics/ui/accessibility/index.html)

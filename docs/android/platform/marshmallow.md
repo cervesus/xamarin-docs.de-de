@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 0393b9a994c1fd62f51cff01a88aa73f71019d53
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a396f4fe59db36b134843d2538bcb470a452a85b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113455"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668581"
 ---
 # <a name="marshmallow-features"></a>Marshmallow-Funktionen
 
@@ -23,10 +23,10 @@ In diesem Artikel bietet einen Überblick über die neuen Features in Android 6.
 
 ## <a name="overview"></a>Übersicht
 
-[Android 6.0 Marshmallow](http://developer.android.com/about/versions/marshmallow/index.html), ist die nächste wichtige Android Version nach Android Lollipop.
+[Android 6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html), ist die nächste wichtige Android Version nach Android Lollipop.
 Xamarin.Android unterstützt Android Marshmallow und umfasst:
 
--   **API-23/Android 6.0 Bindungen** &ndash; Android 6.0 fügt viele neue APIs für die neuen Features, die unten beschriebenen; diese APIs sind für Xamarin.Android-apps verfügbar, wenn Sie die API-Ebene 23 abzielen. Weitere Informationen zu Android 6.0-APIs, finden Sie unter [Android 6.0-APIs](http://developer.android.com/preview/api-overview.html). 
+-   **API-23/Android 6.0 Bindungen** &ndash; Android 6.0 fügt viele neue APIs für die neuen Features, die unten beschriebenen; diese APIs sind für Xamarin.Android-apps verfügbar, wenn Sie die API-Ebene 23 abzielen. Weitere Informationen zu Android 6.0-APIs, finden Sie unter [Android 6.0-APIs](https://developer.android.com/preview/api-overview.html). 
 
 [![Hero-Abbilder von Tablets und Smartphones Marshmallow ausführen](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
@@ -66,9 +66,9 @@ Folgendes ist erforderlich, um die neuen Features für Android Marshmallow in Xa
 
 -   **Android SDK** &ndash; Android SDK-6.0 (API 23) oder höher muss installiert sein über den Android SDK Manager.
 
--   **Java Developer Kit** &ndash; Xamarin.Android erfordert [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher, wenn Sie für API-Ebene 24 entwickeln oder größer (JDK 1.8 unterstützt auch API-Ebenen älter als 24, einschließlich Marshmallow). Die 64-Bit-Version des JDK 1.8 ist erforderlich, wenn Sie benutzerdefinierte Steuerelemente oder die Forms-Vorschau verwenden.
+-   **Java Developer Kit** &ndash; Xamarin.Android erfordert [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher, wenn Sie für API-Ebene 24 entwickeln oder größer (JDK 1.8 unterstützt auch API-Ebenen älter als 24, einschließlich Marshmallow). Die 64-Bit-Version des JDK 1.8 ist erforderlich, wenn Sie benutzerdefinierte Steuerelemente oder die Forms-Vorschau verwenden.
 
-Sie können weiterhin verwenden [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Wenn Sie die Entwicklung von speziell für die API-Ebene 23 oder früher sind. 
+Sie können weiterhin verwenden [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Wenn Sie die Entwicklung von speziell für die API-Ebene 23 oder früher sind. 
 
 
 ## <a name="getting-started"></a>Erste Schritte
@@ -104,7 +104,7 @@ Um ein Xamarin.Android-Projekt für Android Marshmallow zu erstellen, müssen Si
     [![Auswählen von Android 6.0-SDK-Pakete im Android SDK-Manager](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
 
 Müssen Sie den Android SDK Tools-Revision 24.3.4 installieren oder höher.
-Weitere Informationen zur Verwendung von Android SDK-Manager zum Installieren von Android 6.0 SDK finden Sie unter [SDK-Manager](http://developer.android.com/tools/help/sdk-manager.html).
+Weitere Informationen zur Verwendung von Android SDK-Manager zum Installieren von Android 6.0 SDK finden Sie unter [SDK-Manager](https://developer.android.com/tools/help/sdk-manager.html).
 
 
 
@@ -128,7 +128,7 @@ Beispielsweise wird der dieses virtuelle Gerät zum Emulieren von Nexus 5 konfig
 
 [![Konfigurieren ein AVD mit Nexus 5-Geräte, Android 6.0-Ziel und Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
-Wenn Sie ein physisches Gerät, z. B. einem Nexus 5 verwenden, können Sie ein Vorschaubild der Android Marshmallow bei 6 oder 9, installieren. Weitere Informationen zum Aktualisieren von Ihrem Geräts auf Android Marshmallow finden Sie unter [Hardware-Systemimages](http://developer.android.com/preview/download.html#images).
+Wenn Sie ein physisches Gerät, z. B. einem Nexus 5 verwenden, können Sie ein Vorschaubild der Android Marshmallow bei 6 oder 9, installieren. Weitere Informationen zum Aktualisieren von Ihrem Geräts auf Android Marshmallow finden Sie unter [Hardware-Systemimages](https://developer.android.com/preview/download.html#images).
 
 
 
@@ -143,7 +143,7 @@ Viele der Änderungen in Android Marshmallow konzentrieren uns auf die Verbesser
 Das Android-Berechtigungen-System wurde wesentlich optimiert und vereinfacht, da Android Lollipop. In Android Marshmallow erteilen Sie Benutzern, dass die Berechtigungen für von Fall zu Fall zur Laufzeit statt zur installieren. Um dieses Feature für Android Marshmallow oder höher unterstützen, Entwerfen Sie Ihre app vom Benutzer Berechtigungen zur Laufzeit (in Kontext, in dem die Berechtigungen erforderlich sind). Diese Änderung erleichtert es für Benutzer beim Einstieg in Ihre app unmittelbar, da es das Installieren und aktualisieren Ihre app vereinfacht. 
 
 Finden Sie unter [Anfordern von Laufzeitberechtigungen in Android Marshmallow](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/) für weitere Details (einschließlich Codebeispiele) zum Implementieren von Laufzeitberechtigungen in Xamarin.Android-apps.
-Xamarin bietet auch eine Beispiel-app, die zeigt, wie die Common Language Runtime-Berechtigungen auf Android Marshmallow (und höher) funktionieren: [RuntimePermissions](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions).
+Xamarin bietet außerdem eine Beispiel-app, die zeigt, wie die Common Language Runtime-Berechtigungen auf Android Marshmallow (und höher) funktionieren: [RuntimePermissions](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions).
 
 Diese Beispiel-app veranschaulicht Folgendes:
 
@@ -170,12 +170,12 @@ Android Marshmallow enthält zwei Verbesserungen der Authentifizierung, die dabe
 Die Links und als Nächstes beschriebenen Beispiel-apps können Sie vertraute mit diesen neuen Features.
 
 
-#### <a name="fingerprint-authentication"></a>Authentifizierung per Fingerabdruck
+#### <a name="fingerprint-authentication"></a>Fingerabdruckauthentifizierung
 
 Auf Geräten, die mittels fingerabdruckscan Hardware unterstützen, können Sie die neue `FingerPrintManager` Klasse, um einen Benutzer zu authentifizieren.
 Weitere Informationen zu dem fingerabdruckfeature für die Authentifizierung in Android Marshmallow, finden Sie unter [Authentifizierung per Fingerabdruck](https://developer.android.com/preview/api-overview.html#fingerprint-authentication).
 
-Xamarin bietet eine Beispiel-app, das veranschaulicht, wie Sie registrierte Fingerabdrücke verwenden, um einen Benutzer in Ihrer app authentifizieren: [FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog).
+Xamarin bietet eine Beispiel-app, die veranschaulicht, wie Sie registrierte Fingerabdrücke verwenden, um einen Benutzer in Ihrer app authentifizieren: [FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog).
 
 So verwenden Sie diese Beispiel-app
 
@@ -192,7 +192,7 @@ Diese app speichert Ihr Fingerabdruck (oder Ihr Kennwort) nicht.
 Die neue Interaktionen per Sprache-Funktion, die in Android Marshmallow eingeführte ermöglicht Ihrer App verwenden Sie ihre Stimme, um Aktionen zu bestätigen, und wählen Sie aus einer Liste von Optionen. Weitere Informationen zu Interaktionen per Sprache, finden Sie unter [Überblick über die Sprach-API Interaktion](https://developers.google.com/voice-actions/interaction/). 
 
 Finden Sie unter [fügen Sie eine Konversation zu Ihrer Android-App mit Interaktionen per Sprache](https://blog.xamarin.com/add-a-conversation-to-your-android-app-with-voice-interactions/) für weitere Details (einschließlich Codebeispiele) zum Implementieren von Interaktionen per Sprache in Xamarin.Android-apps.
-Eine Beispiel-app ist verfügbar, die veranschaulicht, wie der Voice-Interaktion-API in einer Xamarin.Android-app: [Sprachinteraktionen](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
+Eine Beispiel-app ist verfügbar, die veranschaulicht, wie die Sprach-Interaktion-API in einer Xamarin.Android-app verwenden: [Voice-Interaktionen](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
 
 
 
@@ -201,7 +201,7 @@ Eine Beispiel-app ist verfügbar, die veranschaulicht, wie der Voice-Interaktion
 Mit dem neuen *Anmeldeinformationen bestätigen* Funktion von Android Marshmallow können Benutzer zu merken, und geben app-spezifische Kennwörter durch authentifizieren sie nach, wie lange das Gerät entsperrt wurde freigegeben.
 Zu diesem Zweck verwenden Sie die neue `SetUserAuthenticationValidityDurationSeconds` Methode der `KeyGenerator`. Verwenden der `KeyGuardManager`des `CreateConfirmDeviceCredentialIntent` Methode, um den Benutzer in Ihrer app erneut zu authentifizieren. Weitere Informationen zu diesem neuen Feature in Android Marshmallow, finden Sie unter [Anmeldeinformationen bestätigen](https://developer.android.com/preview/api-overview.html#confirm-credential).
 
-Xamarin bietet eine Beispiel-app, das veranschaulicht, wie Sie die Anmeldeinformationen des Geräts (z. B. PIN, Muster und Kennwort) in Ihrer app zu verwenden: [ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
+Xamarin bietet eine Beispiel-app, die veranschaulicht, wie Sie mit die Anmeldeinformationen des Geräts (z. B. PIN, Muster und Kennwort) in Ihrer app an: [ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
 
 So verwenden Sie diese Beispiel-app
 
@@ -247,7 +247,7 @@ Android Lollipop eingeführt [Material Design](http://www.google.com/design/spec
 
 -   **Material Registerkarten** &ndash; neuen `TabLayout` Widget enthält ein horizontales Layout für das Anzeigen von Registerkarten als Möglichkeit zur Navigation auf oberster Ebene in Ihrer app zu implementieren.
 
-Nutzen der [Design-Unterstützungsbibliothek](http://developer.android.com/tools/support-library/features.html#design) in Ihrer Xamarin.Android-app herunterladen und installieren Sie den Xamarin [Bibliotheksentwurf für Xamarin-Unterstützung](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) NuGet-Paket.
+Nutzen der [Design-Unterstützungsbibliothek](https://developer.android.com/tools/support-library/features.html#design) in Ihrer Xamarin.Android-app herunterladen und installieren Sie den Xamarin [Bibliotheksentwurf für Xamarin-Unterstützung](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) NuGet-Paket.
 
 Finden Sie unter [ansprechende Material Design mit der Android-Unterstützung Entwurf Bibliothek](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/) für weitere Details (einschließlich Codebeispiele) zur Verwendung der Material Design-Support-Bibliothek in Xamarin.Android-apps.
 Xamarin bietet eine Beispiel-app, die die neue Android-Design-Bibliothek für Xamarin.Android demos &ndash; [Cheesesquare](https://developer.xamarin.com/samples/monodroid/android5.0/Cheesesquare).
@@ -267,7 +267,7 @@ Weitere Informationen über die Design-Bibliothek finden Sie unter [Android Desi
 
 Zusätzlich zum Android Marshmallow hat Google die entsprechenden Updates für verschiedene Android-Kernbibliotheken angekündigt. Xamarin bietet Xamarin.Android-Unterstützung für diese Updates über mehrere Preview-Release-NuGet-Pakete: 
 
--   [Google Play Services](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; die neueste Version von Google Play Services umfasst die neue *App Invites* -Funktion, die Benutzer ihre app für Freunde freigeben kann. Weitere Informationen zu diesem Feature finden Sie unter [Ihrer Anwendung erweitern die Reichweite mit Google App Invites](http://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/). 
+-   [Google Play Services](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; die neueste Version von Google Play Services umfasst die neue *App Invites* -Funktion, die Benutzer ihre app für Freunde freigeben kann. Weitere Informationen zu diesem Feature finden Sie unter [Ihrer Anwendung erweitern die Reichweite mit Google App Invites](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/). 
 
 -   [Android-Unterstützungsbibliotheken](https://www.nuget.org/packages?q=xamarin+support+library) &ndash; diese NuGet-Pakete bieten Funktionen, die nur für das Bibliotheks-APIs verfügbar und bietet gleichzeitig Abwärtskompatibilität-Versionen von Android-Framework-APIs sind. 
 
@@ -281,10 +281,10 @@ In diesem Artikel Android Marshmallow eingeführt und wurde erläutert, wie zum 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android 6.0 Marshmallow](http://developer.android.com/about/versions/marshmallow/index.html)
+- [Android 6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)
 - [Abrufen des Android SDK](https://developer.android.com/sdk/index.html#Other)
 - [Übersicht über Features](https://developer.android.com/preview/api-overview.html)
 - [Anmerkungen zu dieser Version](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1.99/)
 - [RuntimePermissions (Beispiel)](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions)
 - [ConfirmCredential (Beispiel)](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential)
-- [FingerprintDialog (Beispiel)](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog)
+- [FingerprintDialog (sample)](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog)

@@ -1,19 +1,19 @@
 ---
-title: Verwenden des Contentprovider für Kontakte
+title: Verwenden des ContentProvider für Kontakte
 ms.prod: xamarin
 ms.assetid: 21C5D1B4-3783-6090-33AB-78A484E65925
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/22/2018
-ms.openlocfilehash: 95d11ef692ec8b43c128cb55a21d0973151cd24a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 48bb334e7e400d57e7eddc23b0b4ff183a7eba9b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120436"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669413"
 ---
-# <a name="using-the-contacts-contentprovider"></a>Verwenden des Contentprovider für Kontakte
+# <a name="using-the-contacts-contentprovider"></a>Verwenden des ContentProvider für Kontakte
 
 Code, der verwendet Daten, die verfügbar gemacht werden, indem Sie Zugriff auf eine `ContentProvider` nicht erfordern einen Verweis auf die `ContentProvider` überhaupt Klasse. Stattdessen wird ein Uri verwendet, zum Erstellen eines Cursors für die Daten, die verfügbar gemacht werden, indem die `ContentProvider`. Android, die den Uri verwendet, um das System für die Anwendung zu suchen, die verfügbar macht eine `ContentProvider` mit diesem Bezeichner. Der Uri ist eine Zeichenfolge, in der Regel in einem Reverse-DNS-Format, z. B. `com.android.contacts/data`.
 
@@ -108,7 +108,7 @@ var cursor = (ICursor)loader.LoadInBackground();
 
 Die `CursorLoader` wird sichergestellt, dass alle Cursorvorgänge werden in einem Hintergrundthread ausgeführt, und können auf intelligente Weise erneut einen vorhandenen Cursor für Aktivitätsinstanzen eine Aktivität (z. B. aufgrund einer konfigurationsänderung) anstatt neu gestartet wird, die die Daten erneut zu laden.
 
-Frühere Android-Versionen können Sie auch die `CursorLoader` Klasse, indem die [v4-Unterstützungsbibliotheken](http://developer.android.com/tools/support-library/index.html).
+Frühere Android-Versionen können Sie auch die `CursorLoader` Klasse, indem die [v4-Unterstützungsbibliotheken](https://developer.android.com/tools/support-library/index.html).
 
 
 

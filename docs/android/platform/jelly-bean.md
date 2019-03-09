@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9e83c9a8c1e2740596a981598cafbbfb65e2caf2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 24fc14b0342591c56f5bf91862b0d94759a42834
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119240"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670102"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean Features
 
@@ -44,7 +44,7 @@ Zum Entwickeln von Xamarin.Android-Anwendungen mithilfe von Jelly Bean erfordert
 
 
 
-### <a name="animations"></a>Animations
+### <a name="animations"></a>Animationen
 
 Aktivitäten können gestartet werden, mithilfe von Zoom-Animationen oder benutzerdefinierte Animationen mithilfe der `ActivityOptions` Klasse. Die folgenden neuen Methoden werden bereitgestellt, um diese Animationen zu unterstützen:
 
@@ -79,7 +79,7 @@ Als die `TimeAnimator` wird ausgeführt, es wird aufgerufen `ITimeAnimator.ITime
 
 ### <a name="application-stack-navigation"></a>Stack Anwendungsnavigation
 
-Android 4.1 profitiert von der Anwendung Stack Navigation, die in Android 3.0 eingeführt wurde. Durch Angabe der `ParentName` Eigenschaft der `ActivityAttribute`, Android kann die richtige übergeordnete Aktivität öffnen, wenn der Benutzer drückt die [Schaltfläche](http://developer.android.com/design/patterns/navigation.html#up-vs-back) in der Aktionsleiste - Android instanziiert die Aktivität, die gemäß der `ParentName`Eigenschaft. Dadurch können Anwendungen für die Hierarchie von Aktivitäten zu erhalten, die eine bestimmte Aufgabe zu machen.
+Android 4.1 profitiert von der Anwendung Stack Navigation, die in Android 3.0 eingeführt wurde. Durch Angabe der `ParentName` Eigenschaft der `ActivityAttribute`, Android kann die richtige übergeordnete Aktivität öffnen, wenn der Benutzer drückt die [Schaltfläche](https://developer.android.com/design/patterns/navigation.html#up-vs-back) in der Aktionsleiste - Android instanziiert die Aktivität, die gemäß der `ParentName`Eigenschaft. Dadurch können Anwendungen für die Hierarchie von Aktivitäten zu erhalten, die eine bestimmte Aufgabe zu machen.
 
 Für die meisten Anwendungen, die Einstellung der `ParentName` für die Aktivität ist genügend Informationen für Android, um das richtige Verhalten bereitzustellen, für die Navigation in den Anwendungsstapel Android werden die erforderlichen BackStack künstlich herzustellen, erstellen Sie eine Reihe von Intents für jede übergeordnete Aktivität. Da es sich um ein künstliches Anwendungsstapel handelt, wird aktivitätsspezifischen synthetische müssen jedoch nicht den gespeicherten Zustand, den eine natürliche Aktivität hätte. Eine Aktivität kann zum gespeicherten Zustand, um eine synthetische übergeordnete Aktivität bereitstellen möchten, überschreiben die `OnPrepareNavigationUpTaskStack` Methode. Diese Methode empfängt einen `TaskStackBuilder` -Instanz, die eine Auflistung von Absicht hat-Objekten, die zum Erstellen von des BackStack Android verwenden. Die Aktivität kann diese Intent-Elemente ändern, damit, wie die synthetische Aktivität erstellt wurde, Informationen über den richtigen Zustand empfangen wird.
 
@@ -95,7 +95,7 @@ Für komplexere Szenarien sind es neue Methoden in der Activity-Klasse, die verw
 
 
 
-### <a name="camera"></a>Kamera
+### <a name="camera"></a>Camera
 
 Es gibt eine neue Schnittstelle, `Camera.IAutoFocusMoveCallback`, die können verwendet werden, zu erkennen, wann die Autofokus wurde gestartet oder beendet wird, verschieben. Ein Beispiel für diese neue Schnittstelle kann in den folgenden Codeausschnitt angezeigt werden:
 
@@ -149,7 +149,7 @@ mediaActionPlayer.Release();
 
 
 
-#### <a name="android-beam"></a>Android-Funktionen
+#### <a name="android-beam"></a>Android Beam
 
 Android-Funktionen ist eine Grundlage NFC-Technologie, die zwei Android-Geräte, die miteinander kommunizieren kann. Android 4.1 bietet bessere Unterstützung für die Übertragung großer Dateien. Bei Verwendung der neuen Methode `NfcAdapter.SetBeamPushUris()` Android wird zwischen alternativen Transportmechanismen (z. B. Bluetooth) wechseln, um eine schnelle Übertragung Geschwindigkeit zu erreichen.
 
@@ -284,6 +284,6 @@ In diesem Artikel dann führen Sie die Updates in Benachrichtigungen passiert un
 ## <a name="related-links"></a>Verwandte Links
 
 - [Animation Uhrzeitbeispiel (Beispiel)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
-- [Android 4.1 APIs](http://developer.android.com/about/versions/android-4.1.html)
-- [Aufgaben und Back-Stapel](http://developer.android.com/guide/components/tasks-and-back-stack.html)
-- [Navigation mit "zurück" und nach-oben](http://developer.android.com/design/patterns/navigation.html)
+- [Android 4.1 APIs](https://developer.android.com/about/versions/android-4.1.html)
+- [Aufgaben und Back-Stapel](https://developer.android.com/guide/components/tasks-and-back-stack.html)
+- [Navigation mit "zurück" und nach-oben](https://developer.android.com/design/patterns/navigation.html)

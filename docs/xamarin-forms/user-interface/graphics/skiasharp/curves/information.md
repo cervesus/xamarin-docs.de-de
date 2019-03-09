@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/12/2017
-ms.openlocfilehash: 98975d51c31b8e8c52d184c631194388cd6cfa87
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b5d32f486b45005534adc8929caf6158d1c62a4b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053899"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671402"
 ---
 # <a name="path-information-and-enumeration"></a>Pfadinformationen und -enumeration
 
@@ -24,7 +24,7 @@ Die [ `SKPath` ](xref:SkiaSharp.SKPath) -Klasse definiert verschiedene Eigenscha
 
 Manchmal ist es sinnvoll, um zu bestimmen, die gesamte Länge aller Linien und Kurven, die einen Pfad zu bilden. Berechnet die Länge ist keine algorithmisch einfache Aufgabe, also eine ganze Klasse mit dem Namen [ `PathMeasure` ](xref:SkiaSharp.SKPathMeasure) verwendet wird, in es.
 
-Außerdem ist es manchmal sinnvoll, erhalten alle zeichnen-Vorgänge und Punkte, die einen Pfad zu bilden. Zunächst diese Funktion mag unnötig: Wenn Ihr Programm den Pfad erstellt hat, weiß das Programm bereits den Inhalt. Allerdings haben Sie gesehen, dass es sich bei Pfaden auch erstellt werden können [pfadeffekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) und durch umwandeln [Zeichenfolgen in Pfade](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Sie erhalten auch alle zeichnen-Vorgänge und Punkte, die diese Pfade bilden. Eine Möglichkeit besteht darin, auf die Punkte, z. B. eine algorithmische Transformation anwenden, um den Textfluss um eine Hemisphäre:
+Außerdem ist es manchmal sinnvoll, erhalten alle zeichnen-Vorgänge und Punkte, die einen Pfad zu bilden. Zunächst mag diese Funktion nicht erforderlich: Wenn Ihr Programm den Pfad erstellt hat, weiß die Anwendung bereits den Inhalt. Allerdings haben Sie gesehen, dass es sich bei Pfaden auch erstellt werden können [pfadeffekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) und durch umwandeln [Zeichenfolgen in Pfade](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Sie erhalten auch alle zeichnen-Vorgänge und Punkte, die diese Pfade bilden. Eine Möglichkeit besteht darin, auf die Punkte, z. B. eine algorithmische Transformation anwenden, um den Textfluss um eine Hemisphäre:
 
 ![](information-images/pathenumerationsample.png "Text in eine Hemisphäre eingeschlossen")
 
@@ -140,7 +140,7 @@ Die **Einrad halb-Pipe** Seite erstellt eine Animation ein Strichmännchen auf e
 
 [![](information-images/unicyclehalfpipe-small.png "Dreifacher Screenshot der Seite Einrad halb-Pipe")](information-images/unicyclehalfpipe-large.png#lightbox "dreifachen Screenshot der Seite Einrad halb-Pipe")
 
-Die `SKPaint` für Kontur zuweisen, sowohl die Hälfte Pipes als auch die Einrad verwendete Objekt ist definiert als Feld in der [ `UnicycleHalfPipePage` ]() Klasse. Wird definiert auch die `SKPath` -Objekt für die Einrad:
+Die `SKPaint` für Kontur zuweisen, sowohl die Hälfte Pipes als auch die Einrad verwendete Objekt ist definiert als Feld in der `UnicycleHalfPipePage` Klasse. Wird definiert auch die `SKPath` -Objekt für die Einrad:
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -253,7 +253,7 @@ Manchmal ist es wünschenswert sein, eine algorithmische anwenden transformiert 
 
 Die meisten dieser Buchstaben bestehen aus geraden, aber diese geraden haben offensichtlich in Kurven Verdrehte wurde. Wie ist dies möglich?
 
-Der Schlüssel ist, dass die ursprünglichen geraden Linien in eine Reihe von kleineren geraden beeinträchtigt werden. Diese einzelnen geraden Linien an kleinere können klicken Sie dann auf unterschiedliche Weisen für die form einer Kurve bearbeitet werden. 
+Der Schlüssel ist, dass die ursprünglichen geraden Linien in eine Reihe von kleineren geraden beeinträchtigt werden. Diese einzelnen geraden Linien an kleinere können klicken Sie dann auf unterschiedliche Weisen für die form einer Kurve bearbeitet werden.
 
 Zur Unterstützung dieses Vorgangs die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel enthält eine statische [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) -Klasse mit einer `Interpolate` -Methode, die unterteilt ein die gerade in zahlreichen kurze Zeilen, die nur eine Einheit lang sind. Darüber hinaus enthält die Klasse mehrere Methoden, die die drei Typen von Bézierkurven in eine Reihe von kleinen gerade Linien konvertieren, die die Kurve annähern. (Die parametrischen Formeln wurden in diesem Artikel präsentiert [ **drei Typen von Bézierkurven**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) Dieser Prozess heißt _vereinfachen_ Kurve:
 

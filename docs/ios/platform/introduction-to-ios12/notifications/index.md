@@ -6,13 +6,7 @@ ms.assetid: 137C719D-6D97-4D5B-9877-F6F35BF85FF0
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: f4abc3c87a4c38da8863347fa08f198dece791a8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111630"
+ms.date: 09/04/2018
 ---
 # <a name="notifications-in-ios-12"></a>Benachrichtigungen in iOS 12
 
@@ -20,12 +14,12 @@ ms.locfileid: "50111630"
 
 iOS 12 ermöglicht es, kritische Warnungen zu senden. Kritische Warnungen Wiedergeben eines Sounds unabhängig davon, ob nicht stören aktiviert ist, oder der ruftonschalter ist deaktiviert.
 
-## <a name="dynamic-notification-action-buttonsdynamic-actionsmd"></a>[Dynamische Benachrichtigung Aktionsschaltflächen](dynamic-actions.md)
+## <a name="dynamic-notification-action-buttonsdynamic-actionsmd"></a>[Aktionsschaltflächen für die dynamische Benachrichtigung](dynamic-actions.md)
 
 In iOS 12 können Benachrichtigungen jetzt die Aktionsschaltflächen zur Laufzeit ändern.
 Auf diese Weise ermöglicht es, Aktionen, die die Benachrichtigung und die Interaktion des Benutzers mit relevanter für den Inhalt anzuzeigen.
 
-## <a name="grouped-notificationsgroupedmd"></a>[Gruppierte Benachrichtigungen](grouped.md)
+## <a name="grouped-notificationsgroupedmd"></a>[Gruppierte Benachrichtigung](grouped.md)
 
 Um dabei zu helfen Benutzern, die viele Benachrichtigungen zu verwalten, die sie erhalten, können iOS-12-App oder durch Thread Benachrichtigungen gruppieren.
 
@@ -33,7 +27,7 @@ Um dabei zu helfen Benutzern, die viele Benachrichtigungen zu verwalten, die sie
 
 In iOS 12 kann eine Benachrichtigung, die benutzerdefinierte Benutzeroberfläche interaktive Steuerelemente enthalten.
 
-## <a name="notification-managementmanagementmd"></a>[Benachrichtigung management](management.md)
+## <a name="notification-managementmanagementmd"></a>[Benachrichtigungsverwaltung](management.md)
 
 iOS-12 kann deep-Link zu einer app Benachrichtigung-Bildschirm, erleichtert Ihnen die für Benutzer aktivieren oder Deaktivieren bestimmter Benachrichtigungen.
 

@@ -7,12 +7,12 @@ ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: f326d0434fd2565c30890dea0838168c9d8b4287
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 076e9f5155492e5a69d906c587b24495fe39d3f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054740"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672637"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Zusammenfassung der Kapitel 10. XAML-Markuperweiterungen
 
@@ -40,7 +40,7 @@ Diese vier XAML-Markuperweiterungen werden von vielen Implementierungen von XAML
 
 - `StaticResource` unterstützt von [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)
 - `DynamicResource` unterstützt von [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension)
-- `Binding` unterstützt von [ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension) &mdash;ausführlicher [Kapitel 16. Datenbindung](#chapter16)
+- `Binding` unterstützt von [ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension) &mdash;ausführlicher [Kapitel 16. Datenbindung](chapter16.md)
 - `TemplateBinding` unterstützt von [ `TemplateBindingExtension` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) &mdash;nicht im Buch behandelt.
 
 Eine zusätzliche Erweiterung des XAML-Markup befindet sich in Xamarin.Forms in Verbindung mit [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout):

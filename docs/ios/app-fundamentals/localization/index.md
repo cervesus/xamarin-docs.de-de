@@ -1,19 +1,14 @@
 ---
 title: Lokalisierung in Xamarin.iOS
-description: Dieses Dokument beschreibt die iOS-Lokalisierungsfeatures und wie Sie diese Funktionen in Xamarin.iOS-apps verwenden. Es wird erläutert, Sprache, Gebietsschema, Zeichenfolgen-Dateien, startbilder und mehr.
+description: 'Dieses Dokument beschreibt die iOS-Lokalisierungsfeatures und wie Sie diese Funktionen in Xamarin.iOS-apps verwenden. Es wird erläutert, Sprache, Gebietsschema, Zeichenfolgen-Dateien, startbilder und mehr.'
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 906489aa3947df24662cbbd0473333caccc032c7
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527260"
 ---
+
 # <a name="localization-in-xamarinios"></a>Lokalisierung in Xamarin.iOS
 
 _Dieses Dokument behandelt die Lokalisierungsfeatures von iOS-SDK und wie Sie sie mit Xamarin zugreifen._
@@ -22,11 +17,11 @@ Finden Sie in der [Internationalisierungscodierungen](encodings.md) Anleitungen,
 
 ## <a name="ios-platform-features"></a>iOS-Plattformfeatures
 
-Dieser Abschnitt beschreibt einige der Lokalisierungsfeatures in iOS. Fahren Sie mit der [nächsten Abschnitt](#basics) zu spezifischen Code und Beispiele finden Sie unter.
+Dieser Abschnitt beschreibt einige der Lokalisierungsfeatures in iOS. Fahren Sie mit der [nächsten Abschnitt](#Localization-basics-in-iOS) zu spezifischen Code und Beispiele finden Sie unter.
 
 ### <a name="language"></a>Sprache
 
-Benutzer wählen die Sprache in der **Einstellungen** app. Diese Einstellung wirkt sich auf die Zeichenfolgen in einer Sprache und Bildern, die vom Betriebssystem und in apps angezeigt. 
+Benutzer wählen die Sprache in der **Einstellungen** app. Diese Einstellung wirkt sich auf die Zeichenfolgen in einer Sprache und Bildern, die vom Betriebssystem und in apps angezeigt.
 
 Um zu bestimmen, die Sprache, die in einer app verwendet wird, erhalten Sie das erste Element der `NSBundle.MainBundle.PreferredLocalizations`:
 
@@ -59,7 +54,7 @@ Der erste Wert kann durch das Betriebssystem zwischengespeichert werden und dahe
 > [!NOTE]
 > Mono (die .NET Runtime, die auf die Xamarin.iOS basiert) und Apple iOS-APIs unterstützen keine identische Kopien von Kombinationen von Sprache/Region.
 > Aus diesem Grund ist es möglich, wählen Sie eine Sprache/Region-Kombination in der iOS- **Einstellungen** -app, die nicht in einen gültigen Wert in Mono zugeordnet ist. Festlegen von einem iPhone die Sprache auf Englisch und die Region auf Spanien verursacht z. B. die folgenden APIs, um unterschiedliche Werte zu erhalten:
-> 
+>
 > - `CurrentThead.CurrentCulture`: En-US (Mono-API)
 > - `CurrentThread.CurrentUICulture`: En-US (Mono-API)
 > - `NSLocale.CurrentLocale.LocaleIdentifier`: En_ES (Apple-API)
@@ -76,14 +71,14 @@ Die folgenden Funktionen von iOS werden in Xamarin zum Bereitstellen von lokalis
 
 ### <a name="specifying-default-and-supported-languages-in-infoplist"></a>Angeben der Standardsprache sowie unterstützte Sprachen in "Info.plist"
 
-In [technischen Fragen und Antworten eine QA1828: wie iOS die Sprache für Ihre App ermittelt](https://developer.apple.com/library/content/qa/qa1828/_index.html), Apple wird beschrieben, wie iOS eine Sprache für die Verwendung in einer app auswählt. Die folgenden Faktoren auswirken, welche Sprache angezeigt wird:
+In [technischen Fragen und Antworten eine QA1828: Wie iOS die Sprache für Ihre App ermittelt](https://developer.apple.com/library/content/qa/qa1828/_index.html), Apple wird beschrieben, wie iOS eine Sprache für die Verwendung in einer app auswählt. Die folgenden Faktoren auswirken, welche Sprache angezeigt wird:
 
 - Der Benutzer die bevorzugte Sprachen (finden Sie in der **Einstellungen** app)
 - Die lokalisierten Versionen zusammen mit der app (.lproj Ordner)
 - `CFBundleDevelopmentRegion` (**"Info.plist"** Wert, der die Standardsprache für die app angibt)
 - `CFBundleLocalizations` (**"Info.plist"** Array gibt alle unterstützte lokalisierungen)
 
-Wie in der technischen Fragen und Antworten, `CFBundleDevelopmentRegion` einer app Standardregion und Sprache darstellt. Wenn die app explizit eine der bevorzugten Sprachen eines Benutzers nicht unterstützt, wird die nach diesem Feld angegebene Sprache verwendet. 
+Wie in der technischen Fragen und Antworten, `CFBundleDevelopmentRegion` einer app Standardregion und Sprache darstellt. Wenn die app explizit eine der bevorzugten Sprachen eines Benutzers nicht unterstützt, wird die nach diesem Feld angegebene Sprache verwendet.
 
 > [!IMPORTANT]
 > iOS 11 wendet diesen Auswahlmechanismus Sprache strenger als in vorherige Versionen des Betriebssystems. Daher jede iOS 11-app, die die unterstützten lokalisierungen – einschließlich .lproj Ordner oder Festlegen eines Werts für nicht explizit deklarieren `CFBundleLocalizations` – zeigt möglicherweise eine andere Sprache in iOS 11 als in iOS 10 aufweisen.
@@ -255,7 +250,7 @@ iOS enthält eine Reihe von Funktionen zum Erstellen von RTL-fähige apps:
 
 Die folgenden Screenshots zeigen die [lokalisierte Tasky Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Arabisch und Hebräisch (obwohl Englisch in die Felder eingegeben wurde):
 
-[![](images/rtl-ar-sml.png "Lokalisierung in Arabisch")](images/rtl-ar.png#lightbox "Arabic") 
+[![](images/rtl-ar-sml.png "Lokalisierung in Arabisch")](images/rtl-ar.png#lightbox "Arabic")
 
 [![](images/rtl-he-sml.png "Lokalisierung – Hebräisch")](images/rtl-he.png#lightbox "Hebrew")
 
@@ -345,8 +340,8 @@ Im Beispiel **Mainstoryboard.strings** unten sehen Sie `UITextField`s haben eine
 ```
 
 > [!IMPORTANT]
-> Verwenden ein Storyboard mit Größenklassen führen Übersetzungen, die nicht in der Anwendung angezeigt werden. [Apple Xcode-Anmerkungen zu dieser Version](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html) anzugeben, dass ein Storyboard oder eine XIB nicht richtig lokalisiert werden wenn drei Punkte erfüllt sind: Größenklassen verwendet, die Basis Lokalisierung und das Build-Ziel auf Universal festgelegt und der Build ausgerichtet ist, iOS 7.0. Die Korrektur besteht darin, Ihre Storyboarddatei für Zeichenfolgen in zwei identische Dateien zu duplizieren: **MainStoryboard~iphone.strings** und **MainStoryboard~ipad.strings**, wie im folgenden Screenshot gezeigt:
-> 
+> Verwenden ein Storyboard mit Größenklassen führen Übersetzungen, die nicht in der Anwendung angezeigt werden. [Apple Xcode-Anmerkungen zu dieser Version](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html) anzugeben, dass ein Storyboard oder eine XIB nicht richtig lokalisiert werden wenn drei Punkte erfüllt sind: Größenklassen verwendet, die Basis Lokalisierung und das Build-Ziel auf Universal festgelegt und der Build ausgerichtet ist, iOS 7.0. Die Lösung besteht darin, Ihre Storyboarddatei für Zeichenfolgen in zwei identische Dateien zu duplizieren: **MainStoryboard~iphone.strings** und **MainStoryboard~ipad.strings**, wie im folgenden Screenshot gezeigt:
+>
 > ![](images/xs-dup-strings.png "Zeichenfolgen-Dateien")
 
 <a name="appstore" />
@@ -368,4 +363,4 @@ Finden Sie weitere Informationen zu i18n und L10n für iOS, Android und plattfor
 - [Lokalisierung Apple-Handbuch](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)
 - [Übersicht über die plattformübergreifende Lokalisierung](~/cross-platform/app-fundamentals/localization.md)
 - [Xamarin.Forms-Lokalisierung](~/xamarin-forms/app-fundamentals/localization/index.md)
-- [Android-Lokalisierung](~/android/app-fundamentals/localization.md)
+- [Android Localization (Android-Lokalisierung)](~/android/app-fundamentals/localization.md)

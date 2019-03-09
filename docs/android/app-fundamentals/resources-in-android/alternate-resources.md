@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 16ef0d5a309281767f0fff27436dd5bec322169d
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: e71e79b58d912ecb697576e92ae921a848f24f4c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527390"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671165"
 ---
 # <a name="alternate-resources"></a>Alternative Ressourcen
 
 Alternative Ressourcen sind Ressourcen, die ein bestimmtes Gerät oder einen Laufzeit-Konfiguration, z. B. die aktuelle Sprache, die bestimmten Bildschirmgröße und die Pixeldichte. Wenn Android eine Ressource werden, die für ein bestimmtes Gerät oder der Konfiguration spezifischer als der Standardressource ist verglichen kann, wird diese Ressource stattdessen verwendet werden. Wenn sie nicht mit eine andere Ressource, die die aktuelle Konfiguration entspricht findet, werden die Standardressourcen geladen werden. Wie Android entscheidet, wird welche Ressourcen von einer Anwendung verwendet werden ausführlicher unten im Abschnitt Ressourcenspeicherort abgedeckt werden
 
-Alternative Ressourcen sind als ein Unterverzeichnis im Ordner "Ressourcen" gemäß den Ressourcentyp, genau wie Standardressourcen organisiert. Der Name des Unterverzeichnisses alternativen Ressource wird in der Form: _ResourceType_-_Qualifizierer_
+Alternative Ressourcen sind als ein Unterverzeichnis im Ordner "Ressourcen" gemäß den Ressourcentyp, genau wie Standardressourcen organisiert. Der Name des Unterverzeichnisses alternativen Ressource ist in der Form: _ResourceType_-_Qualifier_
 
 *Qualifizierer* ist ein Name, der eine bestimmte Gerätekonfiguration identifiziert.
 Es gibt möglicherweise mehr als einem Qualifizierer in einen Namen ein, jeweils getrennt durch einen Bindestrich. Der folgende Screenshot zeigt beispielsweise ein einfaches Projekt, das alternative Ressourcen für verschiedene Konfigurationen wie z. B. Gebietsschema, Bildschirm Dichte, Bildschirmgröße und-Ausrichtung sind:
@@ -43,10 +43,10 @@ Wenn Sie einen Ressourcentyp Qualifizierer hinzufügen, gelten die folgenden Reg
 
 Die möglichen Qualifizierer sind zu Referenzzwecken im folgenden aufgeführt:
 
-- **MCC und MNC** &ndash; der [Ländercode für Mobilgerät](http://en.wikipedia.org/wiki/List_of_mobile_country_codes) (MCC) und optional die [Netzwerkcode](http://en.wikipedia.org/wiki/Mobile_Network_Code) (MNC). Die SIM-Karte bietet die MCC, während das Netzwerk aus, dem das Gerät, um verbunden ist die MNC bereitstellt. Obwohl es möglich, Ziel-Gebietsschemas, verwenden den Ländercode für Mobilgerät ist, ist der empfohlene Ansatz, den unten angegebenen sprachqualifizierer verwenden. Um beispielsweise Zielressourcen in Deutschland, wäre der Qualifizierer `mcc262`. Um die Zielressourcen für T-Mobile-Geräte in den USA der Qualifizierer ist `mcc310-mnc026`.
+- **MCC und MNC** &ndash; der [Ländercode für Mobilgerät](https://en.wikipedia.org/wiki/List_of_mobile_country_codes) (MCC) und optional die [Netzwerkcode](https://en.wikipedia.org/wiki/Mobile_Network_Code) (MNC). Die SIM-Karte bietet die MCC, während das Netzwerk aus, dem das Gerät, um verbunden ist die MNC bereitstellt. Obwohl es möglich, Ziel-Gebietsschemas, verwenden den Ländercode für Mobilgerät ist, ist der empfohlene Ansatz, den unten angegebenen sprachqualifizierer verwenden. Um beispielsweise Zielressourcen in Deutschland, wäre der Qualifizierer `mcc262`. Um die Zielressourcen für T-Mobile-Geräte in den USA der Qualifizierer ist `mcc310-mnc026`.
   Eine vollständige Liste der mobilen Ländercodes und mobiles Netzwerk-Fehlercodes finden Sie unter <http://mcc-mnc.com/>.
 
-- **Sprache** &ndash; kleingeschriebener zweibuchstabiger [Code nach ISO 639-1-Sprache](http://en.wikipedia.org/wiki/ISO_639-1) und optional gefolgt von den zwei Buchstaben bestehenden [ISO-3166-Alpha-2-Regionscode](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). 
+- **Sprache** &ndash; kleingeschriebener zweibuchstabiger [Code nach ISO 639-1-Sprache](https://en.wikipedia.org/wiki/ISO_639-1) und optional gefolgt von den zwei Buchstaben bestehenden [ISO-3166-Alpha-2-Regionscode](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). 
   Wenn beide Qualifizierer werden bereitgestellt, sie werden getrennt von einem `-r`. Z. B. zum Ziel französischsprachige Gebietsschemas wird der Qualifizierer der `fr` verwendet wird. Kanadischen Französisch Gebietsschemas als Ziel der `fr-rCA` eingesetzt werden. Eine vollständige Liste von Sprachcodes und Landes-/Regionscodes, finden Sie unter [Codes für die Darstellung der Namen von Sprachen](http://www.loc.gov/standards/iso639-2/php/English_list.php) und [Ländernamen und Codeelemente](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm).
 
 - **Kleinste Stärke** &ndash; gibt die kleinste Bildschirmbreite, die die Anwendung zum Ausführen dient auf. Ausführlicher behandelt [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
@@ -123,7 +123,7 @@ Die möglichen Qualifizierer sind zu Referenzzwecken im folgenden aufgeführt:
 -  **Plattformversion (API-Ebene)** &ndash; die API-Ebene, die vom Gerät im Format V unterstützten*N*, wobei *N* ist die API-Ebene, die als Ziel festgelegt ist. Z. B. v11 wird ein API-Zielebene 11 (Android 3.0) Geräte.
 
 
-Weitere Informationen zur Ressource Qualifizierer finden Sie unter [Bereitstellen von Ressourcen](http://developer.android.com/guide/topics/resources/providing-resources.html) auf der Android-Entwickler-Website.
+Weitere Informationen zur Ressource Qualifizierer finden Sie unter [Bereitstellen von Ressourcen](https://developer.android.com/guide/topics/resources/providing-resources.html) auf der Android-Entwickler-Website.
 
 
 ## <a name="how-android-determines-what-resources-to-use"></a>Wie Android bestimmt, auf welche Ressourcen zum Verwenden
@@ -176,7 +176,7 @@ Zunächst werden die französischen Ressourcen entfernt, wie sie mit dem Gebiets
     drawable-port-ldpi
     drawable-port-notouch-12key
 
-Als Nächstes der ersten Qualifizierer ausgewählt ist, aus der obigen Tabelle Qualifizierer: MCC und MNC. Es gibt keine Ressourcenverzeichnisse aus, die dieser Qualifizierer enthalten, sodass der Code MCC/MNC ignoriert wird.
+Als Nächstes wird der erste Qualifizierer aus der obigen Tabelle Qualifizierer ausgewählt: MCC und MNC. Es gibt keine Ressourcenverzeichnisse aus, die dieser Qualifizierer enthalten, sodass der Code MCC/MNC ignoriert wird.
 
 Der nächste Qualifizierer ist ausgewählt, die Sprache ist. Es sind Ressourcen, die den Sprachcode entsprechen. Alle Ressourcenverzeichnisse, die nicht den Sprachcode des entsprechen `en` abgelehnt werden, damit, dass die Liste der Ressourcen ist:
 

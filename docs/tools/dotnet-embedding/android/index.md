@@ -5,13 +5,8 @@ ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
 author: lobrien
 ms.author: laobri
 ms.date: 06/15/2018
-ms.openlocfilehash: 5c8d493bf54ee1a8a1e7d4b3266451c78a4aa51e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123682"
 ---
+
 # <a name="net-embedding-on-android"></a>.NET für Android einbetten
 
 In einigen Fällen können Sie eine Bibliothek für .NET von Xamarin zu einem vorhandenen systemeigenen Android-Projekt hinzufügen möchten. Zu diesem Zweck können Sie die [Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/) Tool, um Ihre .NET Bibliothek in eine systemeigene Bibliothek zu verwandeln, die in eine native Java-basierte Android-app integriert werden können.
@@ -26,7 +21,7 @@ Für Xamarin.Android zum Einbetten von .NET arbeiten benötigen Sie Folgendes:
 
 -   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/) or later must be installed.
 
--   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher muss installiert sein.
+-   **Java Developer Kit** &ndash; [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher muss installiert sein.
 
 
 ## <a name="using-embeddinator-4000"></a>Verwenden von Embeddinator-4000
@@ -62,9 +57,9 @@ Für Xamarin.Android zum Einbetten von .NET arbeiten benötigen Sie Folgendes:
 
 -   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/) or later must be installed.
 
--   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher muss installiert sein.
+-   **Java Developer Kit** &ndash; [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher muss installiert sein.
 
--   **Mono** &ndash; [Mono 5.0](http://www.mono-project.com/download/) oder höher muss installiert sein (Mono wird mit Visual Studio für Mac installiert).
+-   **Mono** &ndash; [Mono 5.0](https://www.mono-project.com/download/) oder höher muss installiert sein (Mono wird mit Visual Studio für Mac installiert).
 
 
 ## <a name="using-embeddinator-4000"></a>Verwenden von Embeddinator-4000
@@ -95,7 +90,7 @@ Um eine .NET Bibliothek in ein systemeigenes Android-Projekt nutzen zu können, 
 Nutzung und über die Befehlszeile Optionen werden beschrieben, der [Embeddinator-4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c) Dokumentation.
 
 
-## <a name="callbacks"></a>Rückrufe
+## <a name="callbacks"></a>Callbacks
 
 Erfahren Sie mehr über [Aufrufe zwischen C# und Java](callbacks.md).
 

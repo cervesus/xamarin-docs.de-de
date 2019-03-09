@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 322bb630194f973d37d7ca27a0ca9fe1b548b240
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f8fae79af654339b54a8df0d2ea32eef38f34adb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107210"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668451"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – Problembehandlung
 
@@ -24,7 +24,7 @@ Xamarin.IOS-Designer unterstützt noch keine Xcode 7-Features. Storyboards könn
 
 iOS-Designer-Unterstützung für Xcode 7-Features ist für die bevorstehende Veröffentlichung des Zyklus 6-Feature vorgesehen. Die Vorschauversion des Zyklus 6 ist derzeit in der Alpha-Kanal verfügbar und bietet eingeschränkte Unterstützung für die neuen Xcode 7-Features.
 
-Partielle problemumgehung für Visual Studio für Mac: mit der rechten Maustaste in des Storyboards aus, und wählen Sie **Öffnen mit** > **Xcode Interface Builder**.
+Partielle problemumgehung für Visual Studio für Mac: Mit der rechten Maustaste in des Storyboards aus, und wählen Sie **Öffnen mit** > **Xcode Interface Builder**.
 
 ## <a name="where-are-the-ios-8-simulators"></a>Wo befinden sich die iOS 8-Simulatoren?
 
@@ -42,23 +42,23 @@ In iOS 8 (und früher), Benutzeroberflächenelemente in Storyboards mithilfe ein
 
 Wenn das gleiche Storyboard im unter iOS 9 ausgeführt wird, führt dies zu einer Ausnahme in der folgenden Form:
 
-> Beenden app aufgrund einer nicht abgefangenen Ausnahme "NSInvalidArgumentException", Grund: "*** + [NSLayoutConstraint ConstraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]: eine Einschränkung kann nicht vorgenommen werden, zwischen einem führende/nachgestellte -Attribut und ein Attribut des Links bzw. rechts. Führende/nachgestellte für beide oder keines von beiden verwenden. "
+> Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** +[NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]: Eine Einschränkung kann nicht zwischen einem führende/nachgestellte-Attribut und ein Attribut des Links bzw. rechts vorgenommen werden. Führende/nachgestellte für beide oder keines von beiden verwenden. "
 
 iOS 9 erzwingt Layouts für die Verwendung **rechts** & **Links** _oder_ **führende**  &   **Nachfolgende** Attribute jedoch *nicht* beide. Um dieses Problem zu beheben, ändern Sie alle Layout-Einschränkungen, um die gleichen Attribute in Ihre Storyboarddatei zu verwenden.
 
-Weitere Informationen finden Sie unter den [iOS 9-Einschränkungsfehler](http://stackoverflow.com/questions/32692841/ios-9-constraint-error) Diskussion auf Stack Overflow.
+Weitere Informationen finden Sie unter den [iOS 9-Einschränkungsfehler](https://stackoverflow.com/questions/32692841/ios-9-constraint-error) Diskussion auf Stack Overflow.
 
-## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>Fehler ITMS-90535: Unerwarteter CFBundleExecutable-Schlüssel
+## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>ERROR ITMS-90535: Unerwarteter CFBundleExecutable-Schlüssel
 
 Von einer app verwendet nach der Umstellung auf iOS 9 3.-Komponenten (insbesondere unserer vorhandenen Komponente von Google Maps), die kompiliert und ausgeführt wurde beim Versuch, den neuen Build in iTunes Connect, die Sie eine Fehlermeldung erhalten können, in der Form senden unter iOS 8 (oder früher):
 
-> Fehler ITMS-90535: Unerwarteter CFBundleExecutable-Taste. Das Paket unter "Payload/app-name.app/component.bundle" enthält keine Paket-exe-Datei...
+> ERROR ITMS-90535: Unerwarteter CFBundleExecutable-Schlüssel. Das Paket unter "Payload/app-name.app/component.bundle" enthält keine Paket-exe-Datei...
 
 Diese Probleme können in der Regel werden gelöst, indem das benannte Paket im Projekt suchen dann – genau wie die Fehlermeldung vorgeschlagen - bearbeitet die `Info.plist` , die sich in das Paket durch das Entfernen der `CFBundleExecutable` Schlüssel. Die `CFBundlePackageType` Schlüssel sollte festgelegt werden, um `BNDL` ebenfalls.
 
 Nach diesen Änderungen durchführen, ist eine saubere, und das gesamte Projekt neu erstellen. Sie sollten in iTunes Connect ohne Probleme zu übermitteln, nach diesen Änderungen durchführen können.
 
-Weitere Informationen finden Sie in diesem [Stack Overflow](http://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key) Diskussion.
+Weitere Informationen finden Sie in diesem [Stack Overflow](https://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key) Diskussion.
 
 ## <a name="cfnetwork-sslhandshake-failed--9824-error"></a>CFNetwork SSLHandshake Fehler (-9824)
 
@@ -90,7 +90,7 @@ Finden Sie in unserer [Informationen zur Kompatibilität mit iOS 9](~/ios/platfo
 
 ## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell.ContentView ist Null in Konstruktoren
 
-**Ursache:** In iOS 9 die `initWithFrame:` Konstruktor ist jetzt erforderlich ist, aufgrund der verhaltensänderungen in iOS 9 als die [UICollectionView Dokumentation Zustände](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath). Wenn Sie eine Klasse für den angegebenen Bezeichner registriert, und eine neue Zelle erstellt werden muss, wird die Zelle nun durch den Aufruf initialisiert seine `initWithFrame:` Methode.
+**Reason:** In iOS 9 die `initWithFrame:` Konstruktor ist jetzt erforderlich ist, aufgrund der verhaltensänderungen in iOS 9 als die [UICollectionView Dokumentation Zustände](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath). Wenn Sie eine Klasse für den angegebenen Bezeichner registriert, und eine neue Zelle erstellt werden muss, wird die Zelle nun durch den Aufruf initialisiert seine `initWithFrame:` Methode.
 
 **Fix:** Hinzufügen der `initWithFrame:` Konstruktor wie folgt:
 
@@ -102,15 +102,15 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-Beziehen Sie Beispiele: [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb), [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+Verwandte Beispiele: [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb), [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 <a name="UIView-fails-to-Init-with-Coder-when-Loading-a-View-from-a-Xib/Nib" />
 
 ## <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView an Init mit Programmierer schlägt fehl, wenn es sich bei eine Ansicht aus einer Xib/Nib laden
 
-**Ursache:** der `initWithCoder:` Konstruktor wird aufgerufen, wenn eine Sicht aus einer Interface Builder Xib-Datei zu laden. Wenn dieser Konstruktor nicht exportiert wird kann nicht in nicht verwalteten Code unserem verwalteten Version aufrufen. Zuvor (z. b. In iOS 8) das `IntPtr` Konstruktor wurde aufgerufen, um die Ansicht zu initialisieren.
+**Reason:** Die `initWithCoder:` Konstruktor wird aufgerufen, wenn eine Sicht aus einer Interface Builder Xib-Datei zu laden. Wenn dieser Konstruktor nicht exportiert wird kann nicht in nicht verwalteten Code unserem verwalteten Version aufrufen. Zuvor (z. b. In iOS 8) das `IntPtr` Konstruktor wurde aufgerufen, um die Ansicht zu initialisieren.
 
-**Fix:** erstellen und Exportieren der `initWithCoder:` Konstruktor wie folgt:
+**Fix:** Erstellen und Exportieren der `initWithCoder:` Konstruktor wie folgt:
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -122,7 +122,7 @@ public YourClassName (NSCoder coder) : base (coder)
 
 Beispiel: [Chat](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-## <a name="dyld-message-no-cache-image-with-name"></a>Dyld-Meldung: Kein Cache-Image mit dem Namen...
+## <a name="dyld-message-no-cache-image-with-name"></a>Dyld-Meldung: Kein Cachebild mit dem Namen...
 
 Sie können einen Absturz mit den folgenden Informationen im Anwendungsprotokoll auftreten:
 
@@ -131,7 +131,7 @@ Dyld Error Message:
 Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**Ursache:** Dies ist ein Fehler in der Apple nativen Linker, der Fall, wenn sie ein privates Framework öffentlich machen (JavaScriptCore wurde in iOS 7, öffentlich vor, dass es sich um ein privates Framework war), und das Bereitstellungsziel der app für eine iOS-Version bei der Framework ist privat. In diesem Fall wird von Apple-Linker mit der privaten Version von Framework anstelle der öffentlichen Version verknüpfen.
+**Reason:** Dies ist ein Fehler in der Apple nativen Linker, der Fall, wenn sie ein privates Framework öffentlich machen (JavaScriptCore wurde in iOS 7, öffentlich vor, dass es sich um ein privates Framework war), und das Bereitstellungsziel der app für eine iOS-Version, wenn das Framework privat ist. In diesem Fall wird von Apple-Linker mit der privaten Version von Framework anstelle der öffentlichen Version verknüpfen.
 
 **Fix:** Dies wird für iOS 9 behoben werden, aber es gibt eine einfache Lösung, die Sie selbst in der Zwischenzeit anwenden können: nur höhere iOS-Version als Ziel in Ihrem Projekt (Sie können versuchen, iOS 7 in diesem Fall). Andere Frameworks möglicherweise ähnliche Probleme aufweisen, z. B. das WebKit-Framework wurde in iOS 8 öffentlich (und, für iOS 7 zu diesem Fehler; daher sollten Sie als Ziel iOS 8 WebKit in Ihrer app verwenden).
 
@@ -177,7 +177,7 @@ Schließlich muss Ihre app verwenden Sie eine Storyboard-Datei für die Startbil
 
 Beim Kompilieren und Ausführen einer vorhandenen Xamarin.iOS-app für iOS 9 erhalten Sie möglicherweise einen Fehler in der Form:
 
-> Objective-C-Ausnahme ausgelöst wird.  Name: NSInternalInconsistencyException Ursache: Anwendungsfenster werden erwartet, einem stammansichtscontroller am Ende der Anwendungsstart
+> Objective-C-Ausnahme ausgelöst wird.  Name: NSInternalInconsistencyException Ursache: Anwendungsfenster werden erwartet, einem stammansichtscontroller am Ende der Anwendung starten
 
 Dies ist die Fehler, da app Windows voraussichtlich eine Root View Controller am Ende der Anwendungsstart haben und Ihre vorhandene app nicht ausgelöst wird.
 

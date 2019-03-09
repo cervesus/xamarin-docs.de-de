@@ -1,5 +1,5 @@
 ---
-title: Android-Audio
+title: Android Audio
 description: Android-Betriebssystems bietet umfangreiche Unterstützung für Multimedia, umfasst, Audio und Video verwendet wird. Dieser Leitfaden konzentriert sich auf Audiodaten in Android und deckt wiedergeben und Aufzeichnen von Audio mithilfe der integrierten Audioplayer und Recorder Klassen als auch die Low-Level-audio-API. Hierin sind auch arbeiten mit Audio-Ereignissen, die von anderen Anwendungen übertragen werden, damit Entwickler kaum Anwendungen erstellen können.
 ms.prod: xamarin
 ms.assetid: 646ED563-C34E-256D-4B56-29EE99881C27
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 9b7e9354250881074fc6f0db5d97dc83e4d3fa77
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a1a9dd06fb3cd6899dd3a564072bb63e413edf22
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114664"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667550"
 ---
-# <a name="android-audio"></a>Android-Audio
+# <a name="android-audio"></a>Android Audio
 
 _Android-Betriebssystems bietet umfangreiche Unterstützung für Multimedia, umfasst, Audio und Video verwendet wird. Dieser Leitfaden konzentriert sich auf Audiodaten in Android und deckt wiedergeben und Aufzeichnen von Audio mithilfe der integrierten Audioplayer und Recorder Klassen als auch die Low-Level-audio-API. Hierin sind auch arbeiten mit Audio-Ereignissen, die von anderen Anwendungen übertragen werden, damit Entwickler kaum Anwendungen erstellen können._
 
@@ -124,7 +124,7 @@ Aufzeichnen von Audio, mit der `MediaRecorder` erfordert die folgenden Schritte 
 
 2. Geben Sie die Hardwaregerät zum Erfassen der Audioeingabe, über die [SetAudioSource](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetAudioSource/p/Android.Media.AudioSource/) Methode.
 
-3. Legen Sie die Ausgabe Audioformat mithilfe der [SetOutputFormat](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetOutputFormat/p/Android.Media.OutputFormat/) Methode. Eine Liste der unterstützten audio-Typen finden Sie unter [Android unterstützt Medium formatiert](http://developer.android.com/guide/appendix/media-formats.html).
+3. Legen Sie die Ausgabe Audioformat mithilfe der [SetOutputFormat](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetOutputFormat/p/Android.Media.OutputFormat/) Methode. Eine Liste der unterstützten audio-Typen finden Sie unter [Android unterstützt Medium formatiert](https://developer.android.com/guide/appendix/media-formats.html).
 
 4. Rufen Sie die [SetAudioEncoder](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetAudioEncoder/p/Android.Media.AudioEncoder/) Methode, um das Audio Codierungstyp festzulegen.
 
@@ -210,7 +210,7 @@ Audio liegt der Fokus einen ähnlichen Ansatz und verhindert, dass mehr als eine
 
 Audio Fokus möglicherweise sofort, erteilt oder anfänglich verweigert und später gewährt werden. Wenn eine Anwendung Anforderungen audio Fokus beim tätigen des Anrufs, z. B. wird abgelehnt, aber den Fokus kann auch nach Abschluss des Anrufs erteilt werden. In diesem Fall wird ein Listener registriert, um entsprechend reagieren kann, wenn audio Fokus sofort ausgeführt wird. Anfordern von audio Fokus wird verwendet, um zu bestimmen, ob sie OK zum Wiedergeben oder Audio aufzeichnen.
 
-Weitere Informationen zu audio konzentrieren, finden Sie unter [Audio Fokus verwalten](http://developer.android.com/training/managing-audio/audio-focus.html).
+Weitere Informationen zu audio konzentrieren, finden Sie unter [Audio Fokus verwalten](https://developer.android.com/training/managing-audio/audio-focus.html).
 
 
 
@@ -429,6 +429,6 @@ Android-Betriebssystems bietet ein leistungsfähiges Framework für die Wiederga
 - [Arbeiten mit Audio (Beispiel)](https://developer.xamarin.com/samples/Example_WorkingWithAudio/)
 - [MediaPlayer](https://developer.xamarin.com/api/type/Android.Media.MediaPlayer/)
 - [Medien-Aufzeichnung](https://developer.xamarin.com/api/type/Android.Media.MediaRecorder/)
-- [Audio-Manager](https://developer.xamarin.com/api/type/Android.Media.AudioManager/)
+- [Audio Manager](https://developer.xamarin.com/api/type/Android.Media.AudioManager/)
 - [Audiospur](https://developer.xamarin.com/api/type/Android.Media.AudioTrack/)
-- [Audio-Aufzeichnung](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/)
+- [Audio Recorder](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/)

@@ -1,19 +1,14 @@
 ---
 title: Einführung in Storyboards in Xamarin.iOS
-description: Dieses Dokument enthält eine Einführung in Storyboards in Xamarin.iOS. Es wird beschrieben, wie ein Storyboard verwendet wird, um eine Benutzeroberfläche zu definieren, Übergänge, und wie Sie iOS-Designer verwenden, um Storyboard-Dateien zu bearbeiten.
+description: 'Dieses Dokument enthält eine Einführung in Storyboards in Xamarin.iOS. Es wird beschrieben, wie ein Storyboard verwendet wird, um eine Benutzeroberfläche zu definieren, Übergänge, und wie Sie iOS-Designer verwenden, um Storyboard-Dateien zu bearbeiten.'
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 6294d696fe309e1952124caaaace89d40ad24bc6
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233561"
 ---
+
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in Xamarin.iOS
 
 In diesem Handbuch wird erläutert, welche ein Storyboard ist, und überprüfen Sie einige der wichtigsten Komponenten – z. B. segues beschrieben. Betrachten wir wie Storyboards erstellt und verwendet wird, werden können und welche Vorteile sie haben für einen Entwickler.
@@ -84,7 +79,7 @@ Jede Anwendung, der Größenklassen verwendet auch das neue [ *Adaptive Segues*]
 
 |Segue|Beschreibung|
 |--- |--- |
-|Anzeigen|Dies ist sehr ähnlich ein Push-segue, jedoch berücksichtigt den Inhalt des Bildschirms.|
+|Einblenden|Dies ist sehr ähnlich ein Push-segue, jedoch berücksichtigt den Inhalt des Bildschirms.|
 |Details anzeigen|Wenn die app eine Master- und Detailtabelle anzeigen (z. B. in einem Controller für geteilte Ansicht auf einem iPad) angezeigt wird, ersetzt der Inhalt die Detailansicht. Wenn die app nur die Master oder Detail angezeigt wird, ersetzt der Inhalt der Anfang des Stapels Controller anzeigen.|
 |Präsentation|Dies ist vergleichbar mit der modale Segue und ermöglicht die Auswahl des Präsentation und Übergang.|
 |Im Popover Präsentation|Dies stellt die Inhalte als ein popover|
@@ -492,5 +487,5 @@ Dieser Artikel führt das Konzept von Storyboards und wie sie bei der Entwicklun
 
 - [Manuelle Storyboard (Beispiel)](https://developer.xamarin.com/samples/ManualStoryboard/)
 - [Einführung in iOS-Designer](~/ios/user-interface/designer/introduction.md)
-- [Konvertieren von Storyboards](http://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
+- [Konvertieren von Storyboards](https://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
 - [UIStoryboard-Klassenreferenz](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)

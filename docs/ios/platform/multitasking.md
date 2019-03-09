@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 78f9aa47cce2fe0059bd7f4d4ff637d14fb8c669
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 68c2ae6eace2669d2ea6c77d72f4476d767c0a7d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112519"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672442"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Multitasking für iPad im Xamarin.iOS
 
@@ -127,7 +127,7 @@ Auf iPads, die Folie über "und" geteilte Ansicht unterstützen, können Sie die
 
 | **Ausrichtung** | **Primären App** | **Sekundäre App** |
 |--- |--- |--- |
-| **Hochformat** |75 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
+| **Portrait** |75 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 | **Querformat** |75 % des Bildschirms<br />Reguläre Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 | **Querformat** |50 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|50 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 
@@ -197,7 +197,7 @@ Wenn das Ausführen dieser app auf einem iPad mit einem Hardwaretastatur und der
 
 [![](multitasking-images/keyboard03.png "Die Pop-up mit Tastenkombinationen")](multitasking-images/keyboard03.png#lightbox)
 
-Informieren Sie sich das Beispiel [Multitasking app](http://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) eine beispielimplementierung.
+Informieren Sie sich das Beispiel [Multitasking app](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) eine beispielimplementierung.
 
 <a name="Resource-Management-Considerations" />
 

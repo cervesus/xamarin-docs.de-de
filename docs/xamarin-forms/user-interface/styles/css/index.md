@@ -1,5 +1,5 @@
 ---
-title: Formatieren von Xamarin.Forms-Apps, die mithilfe von Cascading Stylesheets (CSS)
+title: 'Formatieren von Xamarin.Forms-Apps, die mithilfe von Cascading Stylesheets (CSS)'
 description: Xamarin.Forms unterstützt visuelle Stile-Elemente mithilfe von Cascading Stylesheets (CSS).
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -8,12 +8,6 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: f84a6dac64300eb17a45576ae83f9b94208f5732
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831923"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von Xamarin.Forms-apps, die mithilfe von Cascading Stylesheets (CSS)
 
@@ -466,7 +460,7 @@ Einem, zwei, drei oder vier `thickness` Werte werden unterstützt, die jeweils d
 - Vier Werte geben an, oben, und klicken Sie dann rechts, unten und dann linken Stärke.
 
 > [!NOTE]
-> CSS `thickness` Werte unterscheiden sich von XAML [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/) Werte. Z. B. in XAML ein zweiwertiger `Thickness` gibt die horizontale und vertikale Stärke, während ein vier-Wert an `Thickness` gibt an, nach rechts und Links, dann oben nach unten Stärke. Darüber hinaus XAML `Thickness` Werte sind durch Kommas getrennt.
+> CSS `thickness` Werte unterscheiden sich von XAML [ `Thickness` ](xref:Xamarin.Forms.Thickness) Werte. Z. B. in XAML ein zweiwertiger `Thickness` gibt die horizontale und vertikale Stärke, während ein vier-Wert an `Thickness` gibt an, nach rechts und Links, dann oben nach unten Stärke. Darüber hinaus XAML `Thickness` Werte sind durch Kommas getrennt.
 
 ### <a name="namedsize"></a>NamedSize
 

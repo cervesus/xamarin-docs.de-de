@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 3f8e9e2e8608467367af6523c8b89bd8f757d491
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: c2caf1583e3099903cb0b05628ed6b2984a954d9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899056"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671415"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Taschenlampe
 
@@ -44,7 +44,7 @@ Alternativ können Sie das Android-Manifest aktualisieren:
 
 Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie unter **Android-Manifest** den Bereich **Erforderliche Berechtigungen:**, und aktivieren Sie die Berechtigungen **FLASHLIGHT** (Taschenlampe) und **CAMERA** (Kamera). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
 
-Durch das Hinzufügen dieser Berechtigungen [filtert Google Play automatisch die Geräte heraus](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features), die keine spezifische Hardware aufweisen. Sie können dies umgehen, indem Sie Folgendes der Datei „AssemblyInfo.cs“ in Ihrem Android-Projekt hinzufügen:
+Durch das Hinzufügen dieser Berechtigungen [filtert Google Play automatisch die Geräte heraus](https://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features), die keine spezifische Hardware aufweisen. Sie können dies umgehen, indem Sie Folgendes der Datei „AssemblyInfo.cs“ in Ihrem Android-Projekt hinzufügen:
 
 ```csharp
 [assembly: UsesFeature("android.hardware.camera", Required = false)]

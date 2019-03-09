@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: dcfcf6c29b0a055c59501d6d95d4f97c16475bb3
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 6243f7d90b921207f4dd406a1f33f4d7af40ecfb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209225"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668365"
 ---
 # <a name="gtk-platform-setup"></a>GTK#-Plattform-Setup
 
@@ -27,7 +27,7 @@ Bevor Sie beginnen, einer neuen Xamarin.Forms-Projektmappe erstellen, oder eine 
 
 ## <a name="adding-a-gtk-app"></a>Hinzufügen einer GTK#-App
 
-GTK#-für MacOS und Linux installiert ist, als Teil des [Mono](http://www.mono-project.com/download/stable/). GTK#-für .NET installiert werden kann Windows mit der [GTK#-Installer](http://www.mono-project.com/download/stable/#download-win).
+GTK#-für MacOS und Linux installiert ist, als Teil des [Mono](https://www.mono-project.com/download/stable/). GTK#-für .NET installiert werden kann Windows mit der [GTK#-Installer](https://www.mono-project.com/download/stable/#download-win).
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -220,6 +220,6 @@ vbox.PackEnd(settingsView, true, true, 0);
 
 Weitere Informationen zu systemeigenen Formen finden Sie unter [Native Formulare](~/xamarin-forms/platform/native-forms.md).
 
-## <a name="issues"></a>Schwierigkeiten
+## <a name="issues"></a>Probleme
 
 Dies ist eine Vorschau, damit Sie erwarten, dass nicht alles bereit für die Produktion. Der aktuelle Implementierungsstatus finden Sie unter [Status](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md), und die aktuell bekannte Probleme finden Sie unter [ausstehende und bekannten Probleme](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md).

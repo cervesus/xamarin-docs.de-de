@@ -1,19 +1,19 @@
 ---
-title: Die Verwendung nativer Bibliotheken
+title: Verwenden nativer Bibliotheken
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 0df39dc51cf17e1b9ecfd2279d047020f0237cb6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1195685db9e85e7fba006272ef300e22d47d1fa6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123090"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666362"
 ---
-# <a name="using-native-libraries"></a>Die Verwendung nativer Bibliotheken
+# <a name="using-native-libraries"></a>Verwenden nativer Bibliotheken
 
 Xamarin.Android unterstützt die Verwendung von systemeigenen Bibliotheken mithilfe der standardmäßigen PInvoke-Mechanismus. Sie können auch zusätzliche native Bibliotheken bündeln, die nicht Teil des Betriebssystems in Ihrem apk-Datei sind.
 
@@ -40,7 +40,7 @@ Alternativ können Sie Ihrer Projektdatei, um explizit anzugeben, die ABI mit be
 </ItemGroup>
 ```
 
-Weitere Informationen zur Verwendung von systemeigenen Bibliotheken finden Sie unter [Interop mit systemeigenen Bibliotheken](http://www.mono-project.com/docs/advanced/pinvoke/).
+Weitere Informationen zur Verwendung von systemeigenen Bibliotheken finden Sie unter [Interop mit systemeigenen Bibliotheken](https://www.mono-project.com/docs/advanced/pinvoke/).
 
 ## <a name="debugging-native-code-with-visual-studio-2017"></a>Debuggen von nativem Code mit Visual Studio 2017
 
@@ -59,5 +59,5 @@ Visual Studio C++-Entwickler können finden Sie unter der [SanAngeles_NativeDebu
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SanAngeles_NativeDebug (Beispiel)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [SanAngeles_NativeDebug (sample)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
 - [Entwickeln nativer Xamarin Android-Anwendungen](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

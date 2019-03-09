@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 10b692099bae6f444474394144eb7e8bb46d749f
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233925"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667814"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>iOS-Erweiterungen in Xamarin.iOS
 
@@ -45,7 +45,7 @@ Erweiterungen haben eine Reihe von Einschränkungen, von denen einige gelten fü
 Die universelle Einschränkungen sind:
 
 - Die [Integrität Kit](~/ios/platform/healthkit.md) und [Ereignis Kit UI](~/ios/platform/eventkit.md) Frameworks sind nicht verfügbar
-- Erweiterungen können keine [erweiterte hintergrundmodi](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
+- Erweiterungen können keine [erweiterte hintergrundmodi](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
 - Kameras oder Mikrofon des Geräts Erweiterungen können nicht zugegriffen werden (obwohl sie vorhandene Mediendateien zugreifen können)
 - Erweiterungen können nicht Air & Drop-Daten empfangen werden, (obwohl Daten über die Drop per Funk übertragen werden können)
 - [UIActionSheet](xref:UIKit.UIActionSheet) und [UIAlertView](xref:UIKit.UIAlertView) sind nicht verfügbar; Erweiterungen müssen verwenden [UIAlertController](xref:UIKit.UIAlertController)
@@ -71,11 +71,11 @@ Wenn sie Ihrer App auswählen, die Erweiterungen, die `UIViewController` instanz
 
 Erweiterungen können kommunizieren mit ihren apps Host über eine [NSExtensionContext](xref:Foundation.NSExtensionContext) Objekt. Einige Erweiterungen verfügen über Vorgänge, die asynchrone Rückrufe mit den Ergebnissen zu erhalten. Diese Rückrufe in Hintergrundthreads ausgeführt, und die Erweiterung muss ist dies zu berücksichtigen; z. B. mithilfe von [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*) , wenn die Benutzeroberfläche aktualisiert werden sollen. Finden Sie unter den [Kommunikation mit der App-Host](#Communicating-with-the-Host-App) Informationen weiter unten im Abschnitt.
 
-Standardmäßig können Erweiterungen und die Container-apps nicht kommunizieren trotz zusammen installiert wird. In einigen Fällen ist die Container-app im Wesentlichen eine leere "shipping"-Container, deren Zweck bereitgestellt wird, sobald die Erweiterung installiert ist. Wenn jedoch Situationen geben, kann der Container-app und die Erweiterung Ressourcen über einen gemeinsamen Wissensbereich freigeben. Darüber hinaus eine **heute-Erweiterung** können anfordern, die Container-app, um eine URL zu öffnen. Dieses Verhalten wird angezeigt, der [weiterentwickeln Widget "Countdown"](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo).
+Standardmäßig können Erweiterungen und die Container-apps nicht kommunizieren trotz zusammen installiert wird. In einigen Fällen ist die Container-app im Wesentlichen eine leere "shipping"-Container, deren Zweck bereitgestellt wird, sobald die Erweiterung installiert ist. Wenn jedoch Situationen geben, kann der Container-app und die Erweiterung Ressourcen über einen gemeinsamen Wissensbereich freigeben. Darüber hinaus eine **heute-Erweiterung** können anfordern, die Container-app, um eine URL zu öffnen. Dieses Verhalten wird angezeigt, der [weiterentwickeln Widget "Countdown"](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo).
 
 ## <a name="creating-an-extension"></a>Erstellen einer Erweiterung
 
-Erweiterungen (und ihre Container-apps) muss 64-Bit-Binärdateien und erstellt mithilfe der Xamarin.iOS [Unified-APIs](http://developer.xamarin.com/guides/cross-platform/macios/unified). Wenn Sie eine Erweiterung entwickeln zu können, enthält Ihre Lösungen über mindestens zwei Projekte: der Container-app und ein Projekt für jede Erweiterung des Containers enthält. 
+Erweiterungen (und ihre Container-apps) muss 64-Bit-Binärdateien und erstellt mithilfe der Xamarin.iOS [Unified-APIs](https://developer.xamarin.com/guides/cross-platform/macios/unified). Wenn Sie eine Erweiterung entwickeln zu können, enthält Ihre Lösungen über mindestens zwei Projekte: der Container-app und ein Projekt für jede Erweiterung des Containers enthält. 
 
 ### <a name="container-app-project-requirements"></a>Anforderungen für Container-app-Projekts
 

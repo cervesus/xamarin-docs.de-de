@@ -1,20 +1,15 @@
 ---
 redirect_url: /xamarin/xamarin-forms/user-interface/graphics/skiasharp/
 title: Direct2D-Zeichnung mit SkiaSharp
-description: Dieses Dokument enthält einen Überblick über die plattformübergreifende 2D-mit SkiaSharp zeichnen. Es enthält links zu verschiedenen Anleitungen, die SkiaSharp beschreiben und die verschiedenen APIs.
+description: 'Dieses Dokument enthält einen Überblick über die plattformübergreifende 2D-mit SkiaSharp zeichnen. Es enthält links zu verschiedenen Anleitungen, die SkiaSharp beschreiben und die verschiedenen APIs.'
 ms.prod: xamarin
 ms.techonology: xamarin-skiasharp
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 95f259ce054b14a2301bb9549f809d5e4f407884
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109899"
 ---
+
 # <a name="2d-drawing-with-skiasharp"></a>Zeichnen mit SkiaSharp 2D
 
 SkiaSharp bietet eine leistungsfähige C#-API für die 2D-Grafiken. Es basiert auf [Skia-Bibliothek von Google](http://skia.org), der gleichen Bibliothek, die Google Chrome, Firefox und Android-Grafik Stapel zugrunde liegen.
@@ -39,8 +34,8 @@ Diese Seite beschreibt die setupanweisungen für SkiaSharp auf verschiedenen Pla
 
 Sie können Durchsuchen der [-API-Dokumentation](https://docs.microsoft.com/dotnet/api/skiasharp) für SkiaSharp.
 
-## <a name="work-in-progress"></a>Aktuelle Arbeiten
+## <a name="work-in-progress"></a>In Bearbeitung
 
 SkiaSharp ist noch In Bearbeitung, die wir in unserer Community gemeinsam nutzen. Während wir die wichtigen Teile der API Skia gebunden haben, bleibt viel Arbeit ausgeführt werden. Verwenden wir die stabile C-API von Skia eingeblendet, und unser Plan besteht darin beitragen unserer Arbeit für die C-Bindungen von Skia volle Abdeckung für die APIs bereitstellen.
 
-Können wir unsere bemühungen Bindung geführt, hinterlassen Sie Kommentare oder Vorschläge als Probleme auf dem GitHub-Repository [ http://github.com/mono/SkiaSharp ](http://github.com/mono/SkiaSharp).
+Können wir unsere bemühungen Bindung geführt, hinterlassen Sie Kommentare oder Vorschläge als Probleme auf dem GitHub-Repository [ https://github.com/mono/SkiaSharp ](https://github.com/mono/SkiaSharp).

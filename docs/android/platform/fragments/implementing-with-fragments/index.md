@@ -1,6 +1,6 @@
 ---
 title: Implementieren von Fragmenten – Exemplarische Vorgehensweise
-description: In diesem Artikel erläutert, wie Fragmente zum Entwickeln von Xamarin.Android-Anwendungen verwenden.
+description: 'In diesem Artikel erläutert, wie Fragmente zum Entwickeln von Xamarin.Android-Anwendungen verwenden.'
 ms.topic: tutorial
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
@@ -8,13 +8,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: b068169ee3f44932f8ee13d2546804f7b2d2a645
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103061"
 ---
+
 # <a name="implementing-fragments---walkthrough"></a>Implementieren von Fragmenten – Exemplarische Vorgehensweise
 
 _Fragmente sind eigenständige, modulare Komponenten, mit deren Hilfe können die Komplexität der Android-apps zu beheben, die Geräte mit einer Vielzahl von Bildschirmgrößen abzielen. Dieser Artikel führt durch das Erstellen und verwenden Sie Fragmente, bei der Entwicklung von Xamarin.Android-Anwendungen._
@@ -52,5 +47,5 @@ Die [zweiter Teil dieser exemplarischen Vorgehensweise](./walkthrough-landscape.
 
 - [FragmentsWalkthrough (Beispiel)](https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/)
 - [Übersicht über Designer](~/android/user-interface/android-designer/index.md)
-- [Implementieren von Fragmenten](http://developer.android.com/guide/topics/fundamentals/fragments.html)
-- [Supportpaket](http://developer.android.com/sdk/compatibility-library.html)
+- [Implementieren von Fragmenten](https://developer.android.com/guide/topics/fundamentals/fragments.html)
+- [Supportpaket](https://developer.android.com/sdk/compatibility-library.html)

@@ -7,16 +7,16 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2c3ded2233810ff4e903596d65f64097aa3b0445
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ee4b39aed64d7339bd561cccc49a2959a6daba5c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118226"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668308"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Wo finde ich meine Versionsinformationen und Protokolle?
 
-## <a name="outline"></a>Gliederung
+## <a name="outline"></a>Umriss
 
 - [Versionsinformationen](#version-information)
     - Windows-Versionsinformationen
@@ -100,7 +100,7 @@ Hierbei handelt es sich um die Protokolle aus der `XamarinInstaller.exe` Install
 msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 ```
 
-Referenz: [Befehlszeilenoptionen](http://msdn.microsoft.com/library/aa367988.aspx)
+Referenz: [Befehlszeilenoptionen](https://msdn.microsoft.com/library/aa367988.aspx)
 
 #### <a name="a-idvisual-studio-startup-verbose-logs-namevisual-studio-startup-verbose-logs-visual-studio-startup-verbose-logs"></a><a id="visual-studio-startup-verbose-logs" name="visual-studio-startup-verbose-logs" />Start von Visual Studio, ausführliche Protokolle
 
@@ -108,7 +108,7 @@ Referenz: [Befehlszeilenoptionen](http://msdn.microsoft.com/library/aa367988.asp
 devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 ```
 
-Referenz:  [ /Log (devenv.exe)](http://msdn.microsoft.com/library/ms241272.aspx)
+Referenz:  [ /Log (devenv.exe)](https://msdn.microsoft.com/library/ms241272.aspx)
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Mac-Protokolle
 
@@ -160,7 +160,7 @@ Hierbei handelt es sich um die Protokolle aus der `XamarinInstaller.dmg` Install
 
 **Ansicht > Ausgabe > Ausgabe anzeigen von: Debuggen**
 
-### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](http://developer.android.com/tools/help/adb.html) Logcat-Protokolle
+### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](https://developer.android.com/tools/help/adb.html) Logcat-Protokolle
 
 Nach dem Ausführen der `adb` Befehl ein, und schließen Sie Back der **android_logcat.txt** Datei von Ihrem Desktop. Diese Anweisungen setzen voraus, dass Sie nur ein Gerät angeschlossen haben.
 
@@ -194,7 +194,7 @@ Siehe auch die [Android-Debugprotokoll](~/android/deploy-test/debugging/android-
 
 #### <a name="xcode"></a>Xcode
 
-**Fenster > Geräte > ${DeviceName}**
+**Window > Devices > ${DeviceName}**
 
 Berichte zu Abstürzen finden Sie unter den **Gerät in den Protokollen** Schaltfläche. Das Systemprotokoll auf dem Gerät wird am unteren Rand des Fensters unter den Abwärtspfeil angezeigt.
 

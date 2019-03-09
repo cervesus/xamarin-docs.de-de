@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: ea037aaaac97d9f326f1a2fbcb28d97c9d8a9b45
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8d5c1394bee2ca2419904b077522fac9d03d825
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110250"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669442"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implementieren von SiriKit in Xamarin.iOS
 
@@ -209,7 +209,7 @@ Da die strikte Sicherheit, die Apple rund um die SiriKit-Framework, einer Xamari
 
 Führen Sie auf Ihrem Mac Folgendes ein:
 
-1. Wechseln Sie in einem Webbrowser zu [ http://developer.apple.com ](http://developer.apple.com) und melden Sie sich bei Ihrem Konto.
+1. Wechseln Sie in einem Webbrowser zu [ https://developer.apple.com ](https://developer.apple.com) und melden Sie sich bei Ihrem Konto.
 2. Klicken Sie auf **Zertifikate**, **Bezeichner** und **Profile**.
 3. Wählen Sie **Bereitstellungsprofile** , und wählen Sie **App-IDs**, klicken Sie dann auf die **+** Schaltfläche.
 4. Geben Sie einen **Namen** für das neue Profil.

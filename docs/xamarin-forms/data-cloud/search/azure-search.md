@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 81e6cbb39a522a471e739e7e9bbb8a0f451a38cd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 640d50a45b4b7f61113b609fa6a5e4a04566b360
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052890"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667541"
 ---
 # <a name="searching-data-with-azure-search"></a>Suchen von Daten mit Azure Search
 
@@ -156,7 +156,7 @@ static void UploadDataToSearchIndex()
 }
 ```
 
-Daten für den Import in den Index als gepackt ein `IndexBatch` -Objekt, das eine Auflistung von kapselt `IndexAction` Objekte. Jede `IndexAction` Instanz enthält, ein Dokument, und eine Eigenschaft, die Azure Search mitteilt, welche Aktion Sie für das Dokument ausgeführt. Im obigen Codebeispiel wird die `IndexAction.Upload` Aktion wird angegeben, wodurch das Dokument in den Index eingefügt wird, wenn es neu ist, ist oder ersetzt werden, wenn sie bereits vorhanden ist. Die `IndexBatch` Objekt wird dann gesendet, die dem Index durch Aufrufen der `Documents.Index` Methode für die `SearchIndexClient` Objekt. Weitere Informationen zu anderen Indizierung Aktionen finden Sie unter [entscheiden, welche indizierungsaktion verwendet](/azure/search/search-import-data-dotnet#ii-decide-which-indexing-action-to-use).
+Daten für den Import in den Index als gepackt ein `IndexBatch` -Objekt, das eine Auflistung von kapselt `IndexAction` Objekte. Jede `IndexAction` Instanz enthält, ein Dokument, und eine Eigenschaft, die Azure Search mitteilt, welche Aktion Sie für das Dokument ausgeführt. Im obigen Codebeispiel wird die `IndexAction.Upload` Aktion wird angegeben, wodurch das Dokument in den Index eingefügt wird, wenn es neu ist, ist oder ersetzt werden, wenn sie bereits vorhanden ist. Die `IndexBatch` Objekt wird dann gesendet, die dem Index durch Aufrufen der `Documents.Index` Methode für die `SearchIndexClient` Objekt. Weitere Informationen zu anderen Indizierung Aktionen finden Sie unter [entscheiden, welche indizierungsaktion verwendet](/azure/search/search-import-data-dotnet#decide-which-indexing-action-to-use).
 
 > [!NOTE]
 > Nur 1000 Dokumente können in einer einzigen indizierungsanforderung enthalten sein.

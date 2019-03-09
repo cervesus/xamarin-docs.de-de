@@ -6,13 +6,13 @@ ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 8/29/2018
-ms.openlocfilehash: cd9e92e2c96d0a0696633e49869f2661e410d343
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 08/29/2018
+ms.openlocfilehash: 83340ce2d5db145c29166d90d3a5180b1767d7ca
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233587"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672494"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Typ-Registrierungsstelle für Xamarin.iOS
 
@@ -144,7 +144,7 @@ Im folgenden finden Sie einige Beispiele für die Fehler, die von der neuen Regi
 
     ```csharp
     [Register]
-    class MyDemo : NSObject 
+    class MyDemo : NSObject
     {
         [Export ("foo:")]
         void Foo (NSString str);
@@ -178,7 +178,7 @@ Im folgenden finden Sie einige Beispiele für die Fehler, die von der neuen Regi
 
 Einige Aspekte im Hinblick auf die neue Registrierungsstelle zu:
 
-- Einige Drittanbieter-Bibliotheken müssen aktualisiert werden, um die Arbeit mit der neuen Registrierung-Systems. Finden Sie unter [erforderlichen Änderungen](#required_modifications) unten Weitere Informationen.
+- Einige Drittanbieter-Bibliotheken müssen aktualisiert werden, um die Arbeit mit der neuen Registrierung-Systems. Finden Sie unter [erforderlichen Änderungen](#required-modifications) unten Weitere Informationen.
 
 - Ein kurzfristige Nachteil ist auch Clang muss verwendet werden, wenn das Framework für die Konten verwendet wird (Grund hierfür ist, von Apple **accounts.h** Header kann nur kompiliert werden, indem Clang). Hinzufügen `--compiler:clang` auf die weitere Mtouch-Argumente Clang verwenden, wenn Sie Xcode 4.6 oder früher verwenden (Xamarin.iOS wählt automatisch Clang in Xcode 5.0 oder höher.)
 
@@ -203,6 +203,8 @@ Das alte Registrierungssystem hat die folgenden Nachteile:
 - Sie können zwei Methoden, mit der gleichen Signatur von Objective-C exportieren. Erneut zufällige wurde die von Objective-C aufgerufen werden sollen (jedoch dieses Problem nicht so häufig wie das vorherige Beispiel, war, hauptsächlich deshalb, weil die einzige Möglichkeit, diesen Fehler tatsächlich auftreten, die weniger verwaltete Methode überschreiben wurde).
 - Der Satz von Methoden, der exportiert wurde, war geringfügig zwischen dynamischen und statischen Builds.
 - Es funktioniert nicht ordnungsgemäß beim Exportieren von generischer Klassen (die genaue generische Implementierung zur Laufzeit ausgeführt wäre zufällig, wodurch effektiv unbestimmten Verhalten).
+
+<a name="required-modifications" />
 
 ## <a name="new-registrar-required-changes-to-bindings"></a>Neue Registrierung: erforderliche Änderungen für Bindungen
 

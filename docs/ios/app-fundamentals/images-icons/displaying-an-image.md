@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 325f4e99e70f88ccf642253720f4229142a169ec
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 69952b0bac884fe8b14edcbb87aa8fad47594880
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526559"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670701"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Anzeigen eines Bilds in Xamarin.iOS
 
@@ -213,7 +213,7 @@ Alle anderen Abbildformat enthalten Sie die Erweiterung mit dem Namen. Zum Beisp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 ```
 
-Weitere Informationen über Symbole und Bilder, finden Sie unter der Apple-Dokumentation auf [benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html).
+Weitere Informationen über Symbole und Bilder, finden Sie unter der Apple-Dokumentation auf [benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html).
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>Anzeigen eines Bilds in einen storyboards
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 019d89261687d1139ebced9400afbdf5eaf7a128
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109197"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670648"
 ---
 # <a name="cardview"></a>CardView
 
@@ -37,7 +37,7 @@ Folgendes ist erforderlich, um die neue Android 5.0 und höher Funktionen verwen
 
 -  **Android SDK** &ndash; Android 5.0 (API 21) oder höher muss installiert sein über den Android SDK Manager.
 
--  **Java JDK 1.8** &ndash; JDK 1.7 kann verwendet werden, wenn Sie speziell für die API-Ebene 23 und früher sind. JDK 1.8 steht [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+-  **Java JDK 1.8** &ndash; JDK 1.7 kann verwendet werden, wenn Sie speziell für die API-Ebene 23 und früher sind. JDK 1.8 steht [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
 Ihre app muss außerdem enthalten die `Xamarin.Android.Support.v7.CardView` Paket. Hinzufügen der `Xamarin.Android.Support.v7.CardView` Paket in Visual Studio für Mac:
 
@@ -56,7 +56,7 @@ Hinzufügen der `Xamarin.Android.Support.v7.CardView` Paket in Visual Studio:
 3. Wenn **Xamarin-Support-Bibliothek v7 CardView-** angezeigt wird, klicken Sie auf **installieren**.
 
 Vorgehensweise: Konfigurieren Sie ein Android 5.0-app-Projekt finden Sie unter [sich ein Android 5.0-Projekt](~/android/platform/lollipop.md).
-Weitere Informationen zum Installieren von NuGet-Pakete finden Sie unter [Exemplarische Vorgehensweise: Einschließen eines NuGet in Ihrem Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+Weitere Informationen zum Installieren von NuGet-Pakete finden Sie unter [Exemplarische Vorgehensweise: Einschließen ein NuGet in Ihr Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
 
 ## <a name="introducing-cardview"></a>Einführung in CardView
@@ -173,7 +173,7 @@ Jedes Attribut kann auch geändert werden, dynamisch durch den Aufruf einer Ents
 Beachten Sie, dass diese Attribute (mit Ausnahme der Hintergrundfarbe) eine Dimensionswert angegeben werden,. dieser ist eine Dezimalzahl übernehmen, gefolgt von der Einheit. Z. B. `11.5dp` 11,5 Dichte unabhängigen Pixeln angibt.
 
 
-#### <a name="padding"></a>Textabstand
+#### <a name="padding"></a>Abstand
 `
 CardView` bietet fünf Textabstandsattribute um Inhalt auf der Karte zu positionieren. Sie können sie festlegen, in dem Layout-XML oder Sie können analoge Methoden in Ihrem Code aufrufen:
 

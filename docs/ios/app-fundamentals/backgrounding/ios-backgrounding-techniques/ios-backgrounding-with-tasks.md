@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 48859afe2c988c1afe67d5c4350cef734f879fdf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120995"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669829"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Hintergrundverarbeitung mit Aufgaben
 
@@ -67,7 +67,7 @@ public override void DidEnterBackground (UIApplication application) {
 Wir beginnen, indem das Überschreiben der `DidEnterBackground` -Methode in der die `AppDelegate`, bei dem wir unsere Aufgabe über registrieren `BeginBackgroundTask` wie im vorherigen Beispiel. Als Nächstes einen neuen Thread erzeugen und unsere lang andauernden Task ausführen. Beachten Sie, dass die `EndBackgroundTask` wird jetzt aufgerufen von innerhalb der lang andauernden Task, da die `DidEnterBackground` Methode wird bereits zurückgegeben hat.
 
 > [!IMPORTANT]
-> iOS verwendet eine [watchdog-Mechanismus](http://developer.apple.com/library/ios/qa/qa1693/_index.html) , stellen Sie sicher, dass Benutzeroberfläches einer Anwendung reaktionsfähig bleibt. Eine Anwendung, die zu viel Zeit in verbringt `DidEnterBackground` reagieren nicht mehr in der Benutzeroberfläche. Aufgaben im Hintergrund ausgeführt. daher kann `DidEnterBackground` rechtzeitig, die Benutzeroberfläche reaktionsfähig halten, und verhindert, dass des Watchdogs beenden die Anwendung zurückgegeben.
+> iOS verwendet eine [watchdog-Mechanismus](https://developer.apple.com/library/ios/qa/qa1693/_index.html) , stellen Sie sicher, dass Benutzeroberfläches einer Anwendung reaktionsfähig bleibt. Eine Anwendung, die zu viel Zeit in verbringt `DidEnterBackground` reagieren nicht mehr in der Benutzeroberfläche. Aufgaben im Hintergrund ausgeführt. daher kann `DidEnterBackground` rechtzeitig, die Benutzeroberfläche reaktionsfähig halten, und verhindert, dass des Watchdogs beenden die Anwendung zurückgegeben.
 
 
 ## <a name="handling-background-task-time-limits"></a>Behandlung von Hintergrund Task-Zeitlimits

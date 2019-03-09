@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/04/2019
-ms.openlocfilehash: fc989ef73c9248bd359c9b1d35aaa9bdde846690
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557051"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669556"
 ---
 # <a name="fonts-in-xamarinforms"></a>Schriftarten in Xamarin.Forms
 
@@ -140,7 +140,7 @@ Die für jede Plattform erforderlichen Schritte werden unten beschrieben. Wenn S
 ### <a name="ios"></a>iOS
 
 Es ist möglich, zeigen eine benutzerdefinierte Schriftart, indem zunächst sichergestellt, dass es geladen wird, und verweisen auf diese Namen in der Xamarin.Forms `Font` Methoden.
-Befolgen Sie die Anweisungen in [in diesem Blogbeitrag](http://blog.xamarin.com/custom-fonts-in-ios/):
+Befolgen Sie die Anweisungen in [in diesem Blogbeitrag](https://blog.xamarin.com/custom-fonts-in-ios/):
 
 1. Fügen Sie die Schriftartdatei mit **Buildvorgang: BundleResource**, und
 2. Update der **"Info.plist"** Datei (**von Anwendung bereitgestellte Schriftarten**, oder `UIAppFonts`Schlüssel), klicken Sie dann

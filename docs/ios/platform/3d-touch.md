@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 60751437b891579c97acee0e032defcca2b510f6
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 6a12d157b3de7c3841f5d69d209c01fbc612f79b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233860"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668737"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Einführung in 3D Touch in Xamarin.iOS
 
@@ -86,7 +86,7 @@ Wenn der Benutzer schwieriger klickt, werden sie der regulären Nachrichtenansic
 
 ### <a name="checking-for-3d-touch-availability"></a>Überprüfen für die Verfügbarkeit von 3D Touch
 
-Bei der Arbeit mit einem [UIViewController]() können Sie den folgenden Code verwenden, um festzustellen, ob die app ausgeführt wird, auf das iOS-Gerät 3D Touch unterstützt:
+Bei der Arbeit mit einem `UIViewController` können Sie den folgenden Code verwenden, um festzustellen, ob die app ausgeführt wird, auf das iOS-Gerät 3D Touch unterstützt:
 
 ```csharp
 public override void TraitCollectionDidChange(UITraitCollection previousTraitCollection)
@@ -101,7 +101,7 @@ public override void TraitCollectionDidChange(UITraitCollection previousTraitCol
         ...
 ```
 
-Diese Methode kann aufgerufen werden, bevor *oder nach* `ViewDidLoad()`. 
+Diese Methode kann aufgerufen werden, bevor *oder nach* `ViewDidLoad()`.
 
 ### <a name="handling-peek-and-pop"></a>Behandlung von Peek "und" Pop
 
@@ -281,7 +281,7 @@ Hier definieren wir zwei statische Schnellaktions-Elemente mit den folgenden Sch
 * `UIApplicationShortcutItemType` -Ist ein Zeichenfolgenwert, den wir zum Identifizieren des Elements in unserer app verwenden. Weitere Informationen finden Sie in folgendem Abschnitt.
 
 > [!IMPORTANT]
-> Schnelle Aktion Kontextmenü Elemente, die auf die `Info.plist` Datei kann nicht zugegriffen werden, mit der `Application.ShortcutItems` Eigenschaft. Sie werden nur übergeben, um die `HandleShortcutItem` -Ereignishandler. 
+> Schnelle Aktion Kontextmenü Elemente, die auf die `Info.plist` Datei kann nicht zugegriffen werden, mit der `Application.ShortcutItems` Eigenschaft. Sie werden nur übergeben, um die `HandleShortcutItem` -Ereignishandler.
 
 
 

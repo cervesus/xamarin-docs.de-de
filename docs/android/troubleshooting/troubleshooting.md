@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: ccf5d97ff553fd304c4a3af158085d490bb665b7
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: b2f11bd09e1b1b3fd7af29a026229494a081ad11
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267598"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668555"
 ---
 # <a name="troubleshooting-tips"></a>Hinweise zur Fehlerbehebung
 
@@ -77,7 +77,7 @@ Visual Studio für Mac schreibt immer Bereitstellungsprotokolle des Geräts. Es 
 ## <a name="android-debug-log-output"></a>Protokollausgabe für Android-Debugprotokoll
 
 Android schreiben viele Nachrichten an die [Android-Debugprotokoll](~/android/deploy-test/debugging/android-debug-log.md).
-Xamarin.Android verwendet Android-Systemeigenschaften, um die Generierung von zusätzliche Nachrichten in das Android-Debug-Protokoll zu steuern. Android-Systemeigenschaften können festgelegt werden, über die *Setprop* Befehl innerhalb der [Android Debug Bridge (Adb)](http://developer.android.com/guide/developing/tools/adb.html):
+Xamarin.Android verwendet Android-Systemeigenschaften, um die Generierung von zusätzliche Nachrichten in das Android-Debug-Protokoll zu steuern. Android-Systemeigenschaften können festgelegt werden, über die *Setprop* Befehl innerhalb der [Android Debug Bridge (Adb)](https://developer.android.com/guide/developing/tools/adb.html):
 
 ```shell
 adb shell setprop PROPERTY_NAME PROPERTY_VALUE
@@ -91,28 +91,28 @@ Systemeigenschaften werden während des Prozessstarts gelesen, und daher müssen
 
 Xamarin.Android unterstützt die folgenden Systemeigenschaften:
 
--   *Debug.Mono.Debug*: Wenn eine nicht leere Zeichenfolge ist, dies entspricht dem `*mono-debug*`.
+-   *debug.mono.debug*: Wenn eine nicht leere Zeichenfolge ist, dies entspricht dem `*mono-debug*`.
 
--   *Debug.Mono.env*: Eine durch senkrechte Striche getrennte ("*|*") Liste von Umgebungsvariablen, die während des Anwendungsstarts exportieren *vor* Mono initialisiert wurde. Dies ermöglicht das Festlegen von Umgebungsvariablen, mono Protokollierung.
+-   *debug.mono.env*: Eine durch senkrechte Striche getrennte ("*|*") Liste von Umgebungsvariablen, die während des Anwendungsstarts exportieren *vor* Mono initialisiert wurde. Dies ermöglicht das Festlegen von Umgebungsvariablen, mono Protokollierung.
 
-    - *Beachten Sie*: Da der Wert ist "*|*'-getrennt wird und der Wert muss enthalten eine zusätzliche Stufe der Anführungszeichen, als die \` *Adb-Shell* \` Befehl entfernt einen Satz von Anführungszeichen.
+    - *Hinweis:* Da der Wert ist "*|*'-getrennt wird und der Wert muss enthalten eine zusätzliche Stufe der Anführungszeichen, als die \` *Adb-Shell* \` Befehl entfernt einen Satz von Anführungszeichen.
 
-    - *Beachten Sie*: Android-System-Eigenschaftswerte können nicht länger als 92 Zeichen lang sein.
+    - *Hinweis:* Android-System-Eigenschaftswerte können nicht länger als 92 Zeichen lang sein.
 
     - Beispiel:
 
             adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
--   *Debug.Mono.log*: Eine durch Trennzeichen getrennte ("*,*") Liste von Komponenten, die zusätzliche Nachrichten an das Android Debugprotokoll gedruckt werden sollen. In der Standardeinstellung ist "nothing" festgelegt. Komponenten umfassen Folgendes:
+-   *debug.mono.log*: Eine durch Trennzeichen getrennte ("*,*") Liste von Komponenten, die zusätzliche Nachrichten an das Android Debugprotokoll gedruckt werden sollen. In der Standardeinstellung ist "nothing" festgelegt. Komponenten umfassen Folgendes:
 
-    -   *alle*: Alle Nachrichten zu drucken
-    -   *GC*: Drucken Sie Nachrichten GC in Verbindung stehen.
-    -   *Gref*: Drucken Sie die Belegung und Freigabe-Meldungen ("schwache", "global") zu verweisen.
-    -   *Lref*: Drucken Sie belegen und freigeben Nachrichten von lokalen Verweis.
+    -   *all*: Alle Nachrichten zu drucken
+    -   *gc*: Drucken Sie Nachrichten GC in Verbindung stehen.
+    -   *gref*: Drucken Sie die Belegung und Freigabe-Meldungen ("schwache", "global") zu verweisen.
+    -   *lref*: Drucken Sie belegen und freigeben Nachrichten von lokalen Verweis.
 
     *Beachten Sie*: Hierbei handelt es sich *extrem* ausführlich. Aktivieren Sie, wenn unbedingt erforderlich nicht.
 
--   *Debug.Mono.Trace*: Ermöglicht das Festlegen der [Mono--Trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` festlegen.
+-   *debug.mono.trace*: Ermöglicht das Festlegen der [Mono--Trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` festlegen.
 
 
 

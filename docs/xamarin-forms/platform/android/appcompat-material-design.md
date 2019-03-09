@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: cade72aaad60c30993f6b11e98704addd218ffae
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209315"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667489"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Hinzufügen von AppCompat und Material Design
 
@@ -50,7 +50,7 @@ Erstellen Sie die folgenden drei Dateien in Ihrem Android-Projekt, und fügen Si
 </resources>
 ```
 
-**Resources/Values/Style.Xml**
+**Resources/values/style.xml**
 
 ```xml
 <resources>
@@ -68,7 +68,7 @@ Erstellen Sie die folgenden drei Dateien in Ihrem Android-Projekt, und fügen Si
 
 Ein zusätzlicher Stil enthalten sein muss, der **Werte-v21** Ordner, um spezifische Eigenschaften anwenden, bei der Ausführung auf Android Lollipop und höher.
 
-**Resources/Values-v21/Style.Xml**
+**Resources/values-v21/style.xml**
 
 ```xml
 <resources>
@@ -80,7 +80,7 @@ Ein zusätzlicher Stil enthalten sein muss, der **Werte-v21** Ordner, um spezifi
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. Aktualisieren Sie die Datei "androidmanifest.xml"
+### <a name="4-update-androidmanifestxml"></a>4. Update AndroidManifest.xml
 
 Um sicherzustellen, dass das neue Design Informationen verwendet wird, legen Design sind die **AndroidManifest** Datei `android:theme="@style/MyTheme"` (lassen Sie den Rest des XML-aus, wie es der Fall war).
 
@@ -114,7 +114,7 @@ Erstellen Sie **Tabbar.axml** und **Toolbar.axml** Dateien in die **Ressourcen/L
 ```
 
 Einige Eigenschaften für die Registerkarten der Registerkarte Schwerkraft, einschließlich festgelegt wurden `fill` Modus für die `fixed`.
-Wenn Sie viele Registerkarten verfügen Sie möglicherweise diese wechseln möchten, bildlauffähigen - Android lesen [TabLayout Dokumentation](http://developer.android.com/reference/android/support/design/widget/TabLayout.html) um mehr zu erfahren.
+Wenn Sie viele Registerkarten verfügen Sie möglicherweise diese wechseln möchten, bildlauffähigen - Android lesen [TabLayout Dokumentation](https://developer.android.com/reference/android/support/design/widget/TabLayout.html) um mehr zu erfahren.
 
 **Resources/layout/Toolbar.axml**
 

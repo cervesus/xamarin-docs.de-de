@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 54479a7ed66c83d1d97d51cc93e3df3241ec740f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207933"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668490"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Entwurfsprinzipien für Xamarin.Android-API
 
@@ -76,13 +76,13 @@ Die Bindungen für die Android-Plattform befinden sich die `Mono.Android.dll` As
 
 Die Android-APIs nutzen die java.util Sammlungen sehr häufig, um Listen, Sätze und Zuordnungen zu ermöglichen. Wir machen diese Elemente mithilfe der [System.Collections.Generic](xref:System.Collections.Generic) Schnittstellen in der Bindung. Die grundlegenden Zuordnungen sind:
 
--   [java.util.Set<E> ](http://developer.android.com/reference/java/util/Set.html) Systemtyp ordnet [ICollection<T>](xref:System.Collections.Generic.ICollection`1), Hilfsklasse [Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/).
+-   [java.util.Set<E> ](https://developer.android.com/reference/java/util/Set.html) Systemtyp ordnet [ICollection<T>](xref:System.Collections.Generic.ICollection`1), Hilfsklasse [Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/).
 
--   [java.util.List<E> ](http://developer.android.com/reference/java/util/List.html) Systemtyp ordnet [IList<T>](xref:System.Collections.Generic.IList`1), Hilfsklasse [Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/).
+-   [java.util.List<E> ](https://developer.android.com/reference/java/util/List.html) Systemtyp ordnet [IList<T>](xref:System.Collections.Generic.IList`1), Hilfsklasse [Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/).
 
--   [java.util.Map < K, V >](http://developer.android.com/reference/java/util/Map.html) Systemtyp ordnet [IDictionary < TKey, TValue >](xref:System.Collections.Generic.IDictionary`2), Hilfsklasse [Android.Runtime.JavaDictionary < K, V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/).
+-   [java.util.Map < K, V >](https://developer.android.com/reference/java/util/Map.html) Systemtyp ordnet [IDictionary < TKey, TValue >](xref:System.Collections.Generic.IDictionary`2), Hilfsklasse [Android.Runtime.JavaDictionary < K, V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/).
 
--   [java.util.Collection<E> ](http://developer.android.com/reference/java/util/Collection.html) Systemtyp ordnet [ICollection<T>](xref:System.Collections.Generic.ICollection`1), Hilfsklasse [Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/).
+-   [java.util.Collection<E> ](https://developer.android.com/reference/java/util/Collection.html) Systemtyp ordnet [ICollection<T>](xref:System.Collections.Generic.ICollection`1), Hilfsklasse [Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/).
 
 Wir haben Hilfsklassen, um schneller copyless Marshallen dieser Typen zu ermöglichen, bereitgestellt. Wenn möglich, es wird empfohlen, diese Auflistungen anstelle der bereitgestellte Framework-Implementierung bereitgestellt, wie [ `List<T>` ](xref:System.Collections.Generic.List`1) oder [ `Dictionary<TKey, TValue>` ](xref:System.Collections.Generic.Dictionary`2). Die [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/) Implementierungen eine systemeigene Java-Auflistung intern zu nutzen und benötigen daher keine kopieren in und aus eine systemeigene-Auflistung, bei der Übergabe an ein Android-API-Element.
 
@@ -240,11 +240,11 @@ Geschachtelte Typen werden "verschoben" als gleichgeordnete Elemente der einschl
 
 Betrachten Sie beispielsweise die [android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/) Schnittstelle.
 Die *Parcelable* Schnittstelle enthält Methoden, geschachtelte Typen und Konstanten. Die *Parcelable* Schnittstellenmethoden befinden sich in der [Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/) Schnittstelle.
-Die *Parcelable* Schnittstelle Konstanten befinden sich in der [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/) Typ. Die geschachtelte [android.os.Parcelable.ClassLoaderCreator <t> </t> ](http://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html) und [android.os.Parcelable.Creator <t> </t> ](http://developer.android.com/reference/android/os/Parcelable.Creator.html) Typen sind derzeit nicht aufgrund der Einschränkungen für unsere Unterstützung von Generika; Wenn sie unterstützt wurden, werden als die *Android.OS.IParcelableClassLoaderCreator* und *Android.OS.IParcelableCreator* Schnittstellen. Z. B. den geschachtelten [android.os.IBinder.DeathRecpient](http://developer.android.com/reference/android/os/IBinder.DeathRecipient.html) Schnittstelle gebunden ist, als die [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/) Schnittstelle.
+Die *Parcelable* Schnittstelle Konstanten befinden sich in der [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/) Typ. Die geschachtelte [android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html) und [android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html) Typen sind derzeit nicht aufgrund der Einschränkungen für unsere Unterstützung von Generika; Wenn sie unterstützt wurden, werden als die *Android.OS.IParcelableClassLoaderCreator* und *Android.OS.IParcelableCreator* Schnittstellen. Z. B. den geschachtelten [android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html) Schnittstelle gebunden ist, als die [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/) Schnittstelle.
 
 
 > [!NOTE]
-> Ab Xamarin.Android 1.9 können Java-Schnittstelle Konstanten sind <em>dupliziert</em> code zu Portieren von Java zu vereinfachen. Portieren von Java-Code zu verbessern, die verwendet werden dadurch [android Anbieter](http://developer.android.com/reference/android/provider/package-summary.html) Schnittstelle Konstanten.
+> Ab Xamarin.Android 1.9 können Java-Schnittstelle Konstanten sind <em>dupliziert</em> code zu Portieren von Java zu vereinfachen. Portieren von Java-Code zu verbessern, die verwendet werden dadurch [android Anbieter](https://developer.android.com/reference/android/provider/package-summary.html) Schnittstelle Konstanten.
 
 Zusätzlich zu den oben genannten Typen gibt es vier weitere Änderungen:
 
@@ -257,9 +257,9 @@ Zusätzlich zu den oben genannten Typen gibt es vier weitere Änderungen:
 1. Die *Kosten* Typ ist jetzt veraltet.
 
 
-Für die *android.os.Parcelable* -Schnittstelle, dies bedeutet, dass es wird nun ein [ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/) Typ die Konstanten enthalten. Z. B. die [Parcelable.CONTENTS_FILE_DESCRIPTOR](http://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR) Konstante gebunden werden wird, als die [ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/) Konstanten, statt als die  *ParcelableConsts.ContentsFileDescriptor* Konstanten.
+Für die *android.os.Parcelable* -Schnittstelle, dies bedeutet, dass es wird nun ein [ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/) Typ die Konstanten enthalten. Z. B. die [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR) Konstante gebunden werden wird, als die [ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/) Konstanten, statt als die  *ParcelableConsts.ContentsFileDescriptor* Konstanten.
 
-Für Schnittstellen, die Konstanten, die mit anderen Schnittstellen noch weitere Konstanten enthält, wird die Union aller Konstanten generiert. Z. B. die [android.provider.MediaStore.Video.VideoColumns](http://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html) -Schnittstelle implementiert die [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/) Schnittstelle. Allerdings vor 1.9 die [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/) Typ hat keine Möglichkeit für den Zugriff auf die Konstanten, die auf [Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/).
+Für Schnittstellen, die Konstanten, die mit anderen Schnittstellen noch weitere Konstanten enthält, wird die Union aller Konstanten generiert. Z. B. die [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html) -Schnittstelle implementiert die [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/) Schnittstelle. Allerdings vor 1.9 die [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/) Typ hat keine Möglichkeit für den Zugriff auf die Konstanten, die auf [Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/).
 Als Ergebnis der Java-Ausdruck *MediaStore.Video.VideoColumns.TITLE* muss auf den C#-Ausdruck gebunden werden *MediaStore.Video.MediaColumnsConsts.Title* dies nur schwer ermitteln ohne lesen Viele der Java-Dokumentation. In 1.9, werden der entsprechende C#-Ausdruck [ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/).
 
 Darüber hinaus sollten Sie die [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) Typ, der implementiert das Java *Parcelable* Schnittstelle. Da die Schnittstelle implementiert, alle Konstanten, die auf dieser Schnittstelle können Sie "über" der Bundle-Typ, z. B. *Bundle.CONTENTS_FILE_DESCRIPTOR* ist ein absolut gültiger Java-Ausdruck.
@@ -270,8 +270,8 @@ Abschließend Typen mit einem *Kosten* suffix wie z. B. *Android.OS.ParcelableCo
 
 ## <a name="resources"></a>Ressourcen
 
-Bilder, Layout, Beschreibungen, binäre Blobs und zeichenfolgenwörterbücher in Ihrer Anwendung enthalten sein können [Ressourcendateien](http://developer.android.com/guide/topics/resources/providing-resources.html).
-Verschiedene Android-APIs dienen zur [ausgeführt werden, auf die Ressourcen-IDs](http://developer.android.com/guide/topics/resources/accessing-resources.html) anstelle der Umgang mit Bildern, Zeichenfolgen oder binäre blobs direkt.
+Bilder, Layout, Beschreibungen, binäre Blobs und zeichenfolgenwörterbücher in Ihrer Anwendung enthalten sein können [Ressourcendateien](https://developer.android.com/guide/topics/resources/providing-resources.html).
+Verschiedene Android-APIs dienen zur [ausgeführt werden, auf die Ressourcen-IDs](https://developer.android.com/guide/topics/resources/accessing-resources.html) anstelle der Umgang mit Bildern, Zeichenfolgen oder binäre blobs direkt.
 
 Z. B. eine Android-beispielanwendung, die ein Layout für die Benutzeroberfläche enthält ( `main.axml`), eine Zeichenfolge der Internationalisierung-Tabelle ( `strings.xml`) und einige Symbole ( `drawable-*/icon.png`) behalten ihre Ressourcen im Verzeichnis "Resources" der Anwendung:
 
@@ -317,11 +317,11 @@ Verwenden Sie dann `Resource.Drawable.icon` zu verweisen die `drawable/icon.png`
 
 Die Native Android-APIs haben die viele Methoden, die übernehmen oder eine ganze Zahl, die zugeordnet werden muss, um ein konstantes Feld, um zu bestimmen, was bedeutet, dass der int-Wert zurückgeben. Um diese Methoden zu verwenden, muss der Benutzer, die in der Dokumentation, um festzustellen, welche Konstanten entsprechenden Werte ein, sind die andere als ideal ist.
 
-Betrachten Sie z. B. [Activity.requestWindowFeature (Int-FeatureID)](http://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int)).
+Betrachten Sie z. B. [Activity.requestWindowFeature (Int-FeatureID)](https://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int)).
 
 In diesen Fällen sich bemühen wir zum Gruppieren verwandter Konstanten in einer .NET-Enumeration, und ordnen die Methode, um die Enumeration stattdessen zu nutzen.
 Auf diese Weise können wir IntelliSense-Auswahl mit möglichen Werten bieten.
 
-Im obige Beispiel wird: [Activity.RequestWindowFeature (WindowFeatures FeatureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/).
+Im obige Beispiel wird: [Activity.RequestWindowFeature(WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/).
 
 Beachten Sie, dass dies ein sehr manueller Prozess, um zu ermitteln, welche Konstanten zusammengehören, und die APIs, diese Konstanten nutzen. Melden Sie Fehler für alle Konstanten, die in der API, die besser ausgedrückt als Enumeration verwendet.

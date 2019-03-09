@@ -1,20 +1,15 @@
 ---
-title: Authentifizierung per Fingerabdruck
-description: Dieser Leitfaden erläutert, wie Sie die Authentifizierung per Fingerabdruck, eingeführt in Android 6.0 zu einer Xamarin.Android-Anwendung hinzufügen.
+title: Fingerabdruckauthentifizierung
+description: 'Dieser Leitfaden erläutert, wie Sie die Authentifizierung per Fingerabdruck, eingeführt in Android 6.0 zu einer Xamarin.Android-Anwendung hinzufügen.'
 ms.prod: xamarin
 ms.assetid: 6742D874-4988-4516-A946-D5C714B20A10
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: cdb18cd916ddd5daab7db9839bb15ebb098d0c09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123311"
 ---
-# <a name="fingerprint-authentication"></a>Authentifizierung per Fingerabdruck
+
+# <a name="fingerprint-authentication"></a>Fingerabdruckauthentifizierung
 
 _Dieser Leitfaden erläutert, wie Sie die Authentifizierung per Fingerabdruck, eingeführt in Android 6.0 zu einer Xamarin.Android-Anwendung hinzufügen._
 
@@ -25,7 +20,7 @@ Der Eingang Fingerabdruckscanner auf Android-Geräten bietet Anwendungen eine Al
 
 Die FingerprintManager-APIs mit einem Fingerabdruck-Scanner-Zielgeräte und API-Ebene 23 (Android 6.0) ausgeführt werden oder höher. Die APIs befinden sich die `Android.Hardware.Fingerprints` Namespace. Die Bibliothek für Android-Unterstützung v4 enthält den Fingerabdruck-APIs vorgesehen, die für ältere Versionen von Android-Versionen. Die Kompatibilität APIs finden Sie in der `Android.Support.v4.Hardware.Fingerprint` -Namespace über verteilt werden die [Xamarin.Android.Support.v4 NuGet-Paket](https://www.nuget.org/packages/Xamarin.Android.Support.v4/).
 
-Die [FingerprintManager](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (und sein Gegenstück Unterstützungsbibliothek [FingerprintManagerCompat](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) ist die primäre Klasse für die Verwendung von der Hardware mittels fingerabdruckscan. Diese Klasse ist ein Android SDK-Wrapper für die Ebene Systemdienst, die Interaktionen mit der Hardware selbst verwaltet. Er ist verantwortlich für das Starten des fingerabdruckscanners und für die Reaktion auf Feedback von der Überprüfung. Diese Klasse verfügt über eine Schnittstelle ziemlich einfach, mit nur drei Member:
+Die [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (und sein Gegenstück Unterstützungsbibliothek [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) ist die primäre Klasse für die Verwendung von der Hardware mittels fingerabdruckscan. Diese Klasse ist ein Android SDK-Wrapper für die Ebene Systemdienst, die Interaktionen mit der Hardware selbst verwaltet. Er ist verantwortlich für das Starten des fingerabdruckscanners und für die Reaktion auf Feedback von der Überprüfung. Diese Klasse verfügt über eine Schnittstelle ziemlich einfach, mit nur drei Member:
 
 * **`Authenticate`** &ndash; Diese Methode wird die Überprüfung von Hardware zu initialisieren und starten Sie den Dienst im Hintergrund, warten, bis des Benutzers ihren Fingerabdruck scannen.
 * **`EnrolledFingerprints`** &ndash; Diese Eigenschaft gibt `true` , wenn der Benutzer eine oder mehrere Fingerabdrücke mit dem Gerät registriert wurde.
@@ -61,8 +56,8 @@ Ein Fingerabdruck muss bereits mit dem Gerät für die einzelnen Benutzer regist
 
 - [Fingerabdruck-Guide-Beispiel-App](https://developer.xamarin.com/samples/monodroid/FingerprintGuide/)
 - [Beispiel der Fingerprint-Dialogfeld](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
-- [Anfordern von Berechtigungen zur Laufzeit](http://developer.android.com/training/permissions/requesting.html)
-- [android.hardware.fingerprint](http://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
-- [Android.Support.v4.Hardware.Fingerprint](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)
+- [Anfordern von Berechtigungen zur Laufzeit](https://developer.android.com/training/permissions/requesting.html)
+- [android.hardware.fingerprint](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
+- [android.support.v4.hardware.fingerprint](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)
 - [Android.Content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)
 - [Fingerabdruck und Zahlungen-API (Video)](https://youtu.be/VOn7VrTRlA4)

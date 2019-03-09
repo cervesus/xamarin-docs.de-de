@@ -1,19 +1,14 @@
 ---
 title: Fragmente
-description: Fragmente, die zeigt, wie eine flexiblere Entwürfe für viele verschiedene Bildschirmgrößen finden Sie auf Smartphones und Tablets zu unterstützen, Android 3.0 eingeführt. Dieser Artikel behandelt wie Fragmente verwenden, um Xamarin.Android-Anwendungen zu entwickeln, und wie Fragmente auf vor Android 3.0 (API-Ebene 11)-Geräten unterstützt.
+description: 'Fragmente, die zeigt, wie eine flexiblere Entwürfe für viele verschiedene Bildschirmgrößen finden Sie auf Smartphones und Tablets zu unterstützen, Android 3.0 eingeführt. Dieser Artikel behandelt wie Fragmente verwenden, um Xamarin.Android-Anwendungen zu entwickeln, und wie Fragmente auf vor Android 3.0 (API-Ebene 11)-Geräten unterstützt.'
 ms.prod: xamarin
 ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: bc4441c7ee0c36af990297bad1b0c2f0e77123f3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113286"
 ---
+
 # <a name="fragments"></a>Fragmente
 
 _Fragmente, die zeigt, wie eine flexiblere Entwürfe für viele verschiedene Bildschirmgrößen finden Sie auf Smartphones und Tablets zu unterstützen, Android 3.0 eingeführt. Dieser Artikel behandelt wie Fragmente verwenden, um Xamarin.Android-Anwendungen zu entwickeln, und wie Fragmente auf vor Android 3.0 (API-Ebene 11)-Geräten unterstützt._
@@ -63,6 +58,6 @@ Es ist möglich, Fragmente in älteren Versionen von Android unter Verwendung de
 ## <a name="related-links"></a>Verwandte Links
 
 - [Honeycomb-Katalog (Beispiel)](https://developer.xamarin.com/samples/monodroid/HoneycombGallery)
-- [Fragmente](http://developer.android.com/guide/topics/fundamentals/fragments.html)
-- [Supportpaket](http://developer.android.com/sdk/compatibility-library.html)
+- [Fragmente](https://developer.android.com/guide/topics/fundamentals/fragments.html)
+- [Supportpaket](https://developer.android.com/sdk/compatibility-library.html)
 - [MOTODEV-Webinar: Einführung in Fragmenten](http://motodev.adobeconnect.com/p9h1aqk3ttn/)

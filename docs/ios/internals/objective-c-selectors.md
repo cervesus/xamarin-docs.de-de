@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: 5d3c8b6bd8f7f788a1de74feddf7fcb378fa5818
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cf39d548dc83fae67e8703d42e9387b8f19504e6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233639"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669752"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Objective-C-Selektoren in Xamarin.iOS
 
 Die Objective-C-Sprache basiert auf *Selektoren*. Auswahl wird eine Meldung, die auf ein Objekt gesendet werden kann oder ein *Klasse*. [Xamarin.iOS](~/ios/internals/api-design/index.md) Zuordnungen Selektoren in Instanzmethoden-Instanz und Klasse Selektoren auf statische Methoden.
 
-Im Gegensatz zu normalen C#-Funktionen (und wie die C++-Memberfunktionen) Sie nicht direkt aufrufen, eine Auswahl mit [P/Invoke](http://www.mono-project.com/docs/advanced/pinvoke/) stattdessen Selektoren gesendet werden, auf ein Objective-C-Klasse oder Instanz mithilfe der [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
+Im Gegensatz zu normalen C#-Funktionen (und wie die C++-Memberfunktionen) Sie nicht direkt aufrufen, eine Auswahl mit [P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/) stattdessen Selektoren gesendet werden, auf ein Objective-C-Klasse oder Instanz mithilfe der [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 -Funktion.
 
 Weitere Informationen zu Meldungen, die in Objective-C, sehen Sie sich von Apple [arbeiten mit Objekten](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2) Guide.

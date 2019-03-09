@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 650ed00557a3dd819ab2920a7646f93199b98b9e
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 1a98cf854ffdd1d4904981f85fd8e33ad486743c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233951"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672747"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für Xamarin.iOS 
 
@@ -396,7 +396,7 @@ Wenn Sie einen Absturz zur Laufzeit (SIGSEGV) innerhalb der Simulator sowie eine
 Dies kann auftreten, wenn der Anwendungsnamen enthalten, eine "." (Punkt) in ihrem Namen.
 Dies wird als den Namen der ausführbaren Datei in CFBundleExecutable - ist unzulässig, auch wenn es funktioniert in vielen Fällen (z. B. Geräte) können.
 
- * "Sollte der Wert keine Erweiterungen auf den Namen enthalten." - [http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ * "Sollte der Wert keine Erweiterungen auf den Namen enthalten." - [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>Fehler: "0 x 43 Typ des benutzerdefinierten Attributs wird nicht unterstützt" beim Doppelklicken auf XIB-Dateien
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 79547277b00ae1f1d9b035d5fb08685562cefc79
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bc50f3567135d5b1dc805fa691cdd95acadf34f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052581"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667542"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Nutzen eine Azure Cosmos DB-Dokumentdatenbank
 
@@ -41,7 +41,7 @@ Weitere Informationen zu Azure Cosmos DB finden Sie unter den [Dokumentation fü
 
 Der Prozess für die Integration einer Azure Cosmos DB-dokumentdatenbank in einer Xamarin.Forms-Anwendung lautet wie folgt aus:
 
-1. Erstellen Sie ein Cosmos DB-Konto an. Weitere Informationen finden Sie unter [erstellen Sie ein Azure Cosmos DB-Konto](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
+1. Erstellen Sie ein Cosmos DB-Konto an. Weitere Informationen finden Sie unter [erstellen Sie ein Azure Cosmos DB-Konto](/azure/cosmos-db/sql-api-dotnetcore-get-started#create-an-azure-cosmos-account).
 1. Hinzufügen der [Azure Cosmos DB .NET Standard-Clientbibliothek](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) NuGet-Paket auf den Platform-Projekten in der Xamarin.Forms-Lösung.
 1. Hinzufügen `using` Direktiven für die `Microsoft.Azure.Documents`, `Microsoft.Azure.Documents.Client`, und `Microsoft.Azure.Documents.Linq` Namespaces, Klassen, die Cosmos DB-Konto zugegriffen werden.
 

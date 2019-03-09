@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 107877d0e92d3a46101812b78bc0b414c0fbb320
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3e0430b8ed9c42030441021e71c3b08b1ddccc57
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105466"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670544"
 ---
 # <a name="managing-fragments"></a>Verwalten von Fragmenten
 
@@ -40,7 +40,7 @@ fragmentTx.Commit();
 
 Wenn Sie nach dem Commit einer Transaktion wird `Activity.OnSaveInstanceState()` wird aufgerufen, wird eine Ausnahme ausgelöst werden. Dies liegt daran, wenn die Aktivität den Zustand speichert, Android auch den Status der gehosteten Fragmente speichert. Wenn nach diesem Punkt Fragment Transaktionen ein Commit ausgeführt werden, wird der Status dieser Transaktionen verloren, wenn es sich bei die Aktivität wiederhergestellt wird.
 
-Es ist möglich, die Fragment-Transaktionen in der Aktivitäts zu speichern [BackStack](http://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html) von einem Aufruf an `FragmentTransaction.AddToBackStack()`. Dadurch kann der Benutzer über rückwärts navigieren Fragment wird geändert, wenn die **wieder** gedrückt wird. Fragmente, die entfernt werden, ohne einen Aufruf dieser Methode zerstört, und ist nicht verfügbar, wenn der Benutzer über die Aktivität zurück navigiert.
+Es ist möglich, die Fragment-Transaktionen in der Aktivitäts zu speichern [BackStack](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html) von einem Aufruf an `FragmentTransaction.AddToBackStack()`. Dadurch kann der Benutzer über rückwärts navigieren Fragment wird geändert, wenn die **wieder** gedrückt wird. Fragmente, die entfernt werden, ohne einen Aufruf dieser Methode zerstört, und ist nicht verfügbar, wenn der Benutzer über die Aktivität zurück navigiert.
 
 Das folgende Beispiel zeigt, wie Sie mit der `AddToBackStack` Methode eine `FragmentTransaction` ein Fragment, bei der Beibehaltung des Status, der das erste Fragment im Rückwärtsstapel ersetzen:
 

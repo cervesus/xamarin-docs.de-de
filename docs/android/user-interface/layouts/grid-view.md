@@ -6,23 +6,23 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9ec27402aefd28ded4cf53e7e9fa52eedd2b86b6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63164d90419f3a49d9eb52a52d02e05fbee43dbf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103009"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667619"
 ---
 # <a name="gridview"></a>GridView
 
-[`GridView`](https://developer.xamarin.com/api/type/Android.Widget.GridView/) ist ein [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
+[`GridView`](https://developer.xamarin.com/api/type/Android.Widget.GridView/) is a [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
 die Elemente in einem zweidimensionalen, bildlauffähigen Datenblatt anzeigt. Die Rasterelemente werden automatisch eingefügt, mit dem Layout ein [ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/).
 
 In diesem Tutorial erstellen Sie ein Raster mit Miniaturansichten. Wenn ein Element ausgewählt ist, wird eine eingeblendeten Nachricht, die Position des Bilds angezeigt.
 
 Starten Sie ein neues Projekt namens **HelloGridView**.
 
-Finden Sie einige Fotos, die Sie verwenden möchten oder [Herunterladen dieser Beispielbilder](http://developer.android.com/shareables/sample_images.zip). Hinzufügen der Bilddateien des Projekts **Ressourcen/Drawable** Verzeichnis. In der **Eigenschaften** legen die Build-Aktion für jedes **AndroidResource**.
+Finden Sie einige Fotos, die Sie verwenden möchten oder [Herunterladen dieser Beispielbilder](https://developer.android.com/shareables/sample_images.zip). Hinzufügen der Bilddateien des Projekts **Ressourcen/Drawable** Verzeichnis. In der **Eigenschaften** legen die Build-Aktion für jedes **AndroidResource**.
 
 Öffnen der **Resources/Layout/Main.axml** Datei, und fügen Sie Folgendes:
 
@@ -130,7 +130,7 @@ public class ImageAdapter : BaseAdapter
 ```
 
 Dadurch wird zunächst einige erforderliche von geerbten Methoden implementiert [ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/). Der Konstruktor und die [ `Count` ](https://developer.xamarin.com/api/property/Android.Widget.BaseAdapter.Count/) Eigenschaft sind selbsterklärend. In der Regel [`GetItem(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItem/)
-sollte das eigentliche Objekt an der angegebenen Position im Adapter zurückgeben, aber in diesem Beispiel wird ignoriert. Ebenso [`GetItemId(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItemId/)
+sollte das eigentliche Objekt an der angegebenen Position im Adapter zurückgeben, aber in diesem Beispiel wird ignoriert. Likewise, [`GetItemId(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItemId/)
 sollte die Zeilen-Id des Elements zurückgeben, aber es ist nicht erforderlich, hier.
 
 Die erste Methode, die erforderlich ist [ `GetView()` ](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetView/).

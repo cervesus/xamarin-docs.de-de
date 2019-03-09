@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: eb636c3b7a41adbab9162e192ead65def377a1a0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5e6d7b4bdfdf7ea48d26537cb41c763656b050e0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118980"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669649"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android-Designer Material Design-features
 
@@ -20,7 +20,7 @@ _Dieses Thema beschreibt die Designer-Funktionen, die für Entwickler zum Erstel
 
 > [!Video https://youtube.com/embed/E3_ZjIOzVzY]
 
-**Weiterentwicklung 2016: Alle Benutzer kann ansprechende Apps Material Design erstellen**
+**Weiterentwicklung 2016: Alle Benutzer kann ansprechende Apps Material Design erstellen.**
 
 ## <a name="overview"></a>Übersicht
 
@@ -90,7 +90,7 @@ Wie im folgenden Beispiel gezeigt die **erben** Registerkarte aufgelistet, die s
 [![Registerkarte "erben](material-design-features-images/vs/06-inherit-tab-w158-sml.png)](material-design-features-images/vs/06-inherit-tab-w158.png#lightbox)
 
 In diesem Beispiel die **Design "Standard"** erbt ein Format, das verwendet `@color/background_material_light` , aber überschreibt es mit `color/material_grey_50`, Code den Farbwert IValidator.h `#fffafafa`.
-Weitere Informationen zu stilvererbung, finden Sie unter [Formatvorlagen und Designs](http://developer.android.com/guide/topics/ui/themes.html#Inheritance).
+Weitere Informationen zu stilvererbung, finden Sie unter [Formatvorlagen und Designs](https://developer.android.com/guide/topics/ui/themes.html#Inheritance).
 
 ### <a name="color-picker"></a>Farbauswahl
 
@@ -271,7 +271,7 @@ Wie im folgenden Beispiel gezeigt die **erben** Registerkarte aufgelistet, die s
 [![Registerkarte "erben](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
 In diesem Beispiel die **Design "Standard"** erbt ein Format, das verwendet `@color/background_material_dark` , aber überschreibt es mit `color/material_grey_850`, Code den Farbwert IValidator.h `#ff303030`.
-Weitere Informationen zu stilvererbung, finden Sie unter [Formatvorlagen und Designs](http://developer.android.com/guide/topics/ui/themes.html#Inheritance).
+Weitere Informationen zu stilvererbung, finden Sie unter [Formatvorlagen und Designs](https://developer.android.com/guide/topics/ui/themes.html#Inheritance).
 
 ### <a name="color-picker"></a>Farbauswahl
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: ef8e694bc3c617774035ad5cf7902ca3f5b06813
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 51ccf3faa2524035a30b26af6652959699663e24
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118512"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672533"
 ---
 # <a name="application-icons-in-xamarinios"></a>Anwendungssymbole in Xamarin.iOS
 
@@ -44,53 +44,53 @@ Die folgenden Asset Bildgrößen und Lösungen sind erforderlich zur Unterstütz
 
 - **iPhone: iOS 9 und 10 (iPhone 6 und 7 Plus)**
 
-    ||3 x|
+    ||3x|
     |---|---|
-    |Anwendungssymbol|180 x 180|
+    |Anwendungssymbol|180x180|
     |Spotlight|120x120|
-    |Einstellungen|87 x 87|
+    |Einstellungen|87x87|
 
-- **iPhone: iOS 7 und 8**
+- **iPhone: iOS 7 & 8**
 
     ||1 x|2x|
     |---|---|---|
     |Anwendungssymbol|60x60<sup>1</sup>|120x120|
-    |Spotlight|40 x 40<sup>2</sup>|80 x 80|
+    |Spotlight|40x40<sup>2</sup>|80x80|
     |Einstellungen|-|-|
 
-- **iPhone: iOS 5 und 6**
+- **iPhone: iOS 5 & 6**
 
     ||1 x|2x|
     |---|---|---|
-    |Anwendungssymbol|57x57|114 x 114|
-    |Spotlight|29x29|58 x 58|
-    |Einstellungen|29 x 29<sup>3, 4</sup>|58 x 58<sup>3, 4</sup>|
+    |Anwendungssymbol|57x57|114x114|
+    |Spotlight|29x29|58x58|
+    |Einstellungen|29x29<sup>3, 4</sup>|58x58<sup>3, 4</sup>|
 
 ### <a name="ipad-icon-sizes"></a>iPad Symbolgrößen
 
-- **iPad: iOS 9 und 10**
+- **iPad: iOS 9 & 10**
 
-    ||2 x (iPad Pro)|
+    ||2x (iPad Pro)|
     |---|---|
     |Anwendungssymbol|167x167<sup>6</sup>|
-    |Spotlight|120 x 120<sup>6</sup>|
-    |Einstellungen|58 x 58<sup>5</sup>|
+    |Spotlight|120x120<sup>6</sup>|
+    |Einstellungen|58x58<sup>5</sup>|
 
-- **iPad: iOS 7 und 8**
+- **iPad: iOS 7 & 8**
 
     ||1 x|2x|
     |---|---|---|
-    |Anwendungssymbol|76x76|152 x 152|
-    |Spotlight|40x40|80 x 80|
+    |Anwendungssymbol|76x76|152x152|
+    |Spotlight|40x40|80x80|
     |Einstellungen|-|-|
 
-- **iPad: iOS 5 und 6**
+- **iPad: iOS 5 & 6**
 
     ||1 x|2x|
     |---|---|---|
-    |Anwendungssymbol|72x72|144 x 144|
-    |Spotlight|50x50|100 x 100|
-    |Einstellungen|29 x 29<sup>3, 5</sup>|58 x 58<sup>3, 5</sup>|
+    |Anwendungssymbol|72x72|144x144|
+    |Spotlight|50x50|100x100|
+    |Einstellungen|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
 
  1. Sowohl Visual Studio für Mac und Xcode unterstützt nicht mehr 1 X-Abbild für iOS 7 festlegen.
  2. Eine 1 X-Abbild für iOS 7 festlegen wird nicht unterstützt, wenn Ressourcenkataloge verwenden.
@@ -212,4 +212,4 @@ Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 
 - [Arbeiten mit Bildern (Beispiel)](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hallo iPhone](~/ios/get-started/hello-ios/index.md)
-- [Benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))
+- [Benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))

@@ -1,19 +1,14 @@
 ---
 title: Erstellen Mobile Apps mit Xamarin.Forms-Buch
-description: Erfahren Sie, Xamarin.Forms-Anwendungsentwicklung mit der elektronische Version Erstellen mobiler Apps mit Xamarin.Forms Book von Charles Petzold.
+description: 'Erfahren Sie, Xamarin.Forms-Anwendungsentwicklung mit der elektronische Version Erstellen mobiler Apps mit Xamarin.Forms Book von Charles Petzold.'
 ms.prod: xamarin
 ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 5dae8f1907b9a61018e335a8fe19ad319d95741d
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207868"
 ---
+
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Erstellen Mobile Apps mit Xamarin.Forms-Buch
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples)
@@ -113,7 +108,7 @@ Das Buch wird manchmal auch Verweise auf die _Windows-Runtime_. Dies ist ein Beg
 
 Eine .NET Standard 2.0-Bibliothek ist eine beliebige Version von Windows 10 Mobile nicht unterstützt. Eine Xamarin.Forms-Anwendung, die mithilfe von .NET Standard-Bibliothek wird daher nicht auf einem Windows 10 Mobile-Gerät ausgeführt werden. Xamarin.Forms-Anwendungen weiterhin auf dem Desktop der Versionen 10.0.16299.0 Windows 10 und höher ausgeführt.
 
-Xamarin.Forms verfügt über eine vorschauunterstützung für die [Mac](~/xamarin-forms/platform/other/mac.md), [WPF](~/xamarin-forms/platform/other/wpf.md), [GTK#-](~/xamarin-forms/platform/other/gtk.md), und [Tizen](/xamarin-forms/platform/other/tizen.md) Plattformen.
+Xamarin.Forms verfügt über eine vorschauunterstützung für die [Mac](~/xamarin-forms/platform/other/mac.md), [WPF](~/xamarin-forms/platform/other/wpf.md), [GTK#-](~/xamarin-forms/platform/other/gtk.md), und [Tizen](~/xamarin-forms/platform/other/tizen.md) Plattformen.
 
 ### <a name="chapter-summaries"></a>Kapitelzusammenfassungen
 

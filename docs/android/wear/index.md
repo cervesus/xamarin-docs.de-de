@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: 75b78f27fd6b3a726de9075ce36364168401ec60
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171471"
 ---
+
 # <a name="android-wear"></a>Android Wear
 
 Android Wear ist eine Version von Android, die für tragbare Geräte wie intelligente Überwachungen entwickelt wurde. Dieser Abschnitt enthält Anweisungen zum Installieren und Konfigurieren von Tools, die für eine schrittweise Anleitung zum Erstellen Ihrer ersten Wear-Gerät und eine Liste mit Beispielen, die Sie verweisen können, um für die Erstellung einer eigenen apps Wear Wear-Entwicklung erforderlich.
@@ -64,7 +59,7 @@ Sehen Sie sich diese Videos, Links, in denen erörtert Xamarin.Android mit Wear-
 
 |Beschreibung|Bildschirmabbildung|
 |--- |--- |
-|[Android L und vieles mehr](http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; die Entwicklervorschau für Android L eingeführt, eine Vielzahl der neuen APIs für Entwickler zu nutzen, einschließlich Material Design, Benachrichtigungen und neue Animationen, um nur einige zu nennen.|![Bildschirmabbildung von Video der Präsentation](images/video-android-l.png)|
+|[Android L und vieles mehr](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; die Entwicklervorschau für Android L eingeführt, eine Vielzahl der neuen APIs für Entwickler zu nutzen, einschließlich Material Design, Benachrichtigungen und neue Animationen, um nur einige zu nennen.|![Bildschirmabbildung von Video der Präsentation](images/video-android-l.png)|
 |[C#ist in meinem Ohren und Augen: Google Glass und Android Wear](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash; tragbare computing mag etwas aus der Zukunft (oder eine Folge von Inspektor-Minianwendung), aber viele Benutzer sehen die Zukunft noch heute! C#Entwickler wissen und bereits über die Tools und Fähigkeiten nutzen, die Leistungsfähigkeit von tragbare Geräte (von Evolve 2014) verfügen.|![Bildschirmabbildung von Video der Präsentation](images/video-eyes-ears.png)|
 |[Was ist neu in Xamarin.Android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L, Android Wear, Android TV, Android Auto, Material Design und Grafiken; diese Meinung nach als Xamarin-Entwickler? von Evolve 2014.|![Bildschirmabbildung von Video der Präsentation](Images/video-whats-new.png)|
 
@@ -72,13 +67,13 @@ Sehen Sie sich diese Videos, Links, in denen erörtert Xamarin.Android mit Wear-
 <!--
 
 March 18
-http://blog.xamarin.com/android-wear/
+https://blog.xamarin.com/android-wear/
 
 August 14
-http://blog.xamarin.com/android-l-developer-preview-android-wear-support/
+https://blog.xamarin.com/android-l-developer-preview-android-wear-support/
 
 August 27
-http://blog.xamarin.com/tips-for-your-first-android-wear-app/
+https://blog.xamarin.com/tips-for-your-first-android-wear-app/
 
 Watch Face
 https://github.com/Redth/Xamarin.Wear.WatchFace

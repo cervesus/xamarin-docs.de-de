@@ -1,18 +1,13 @@
 ---
 title: Einführung in die Entwicklung von Spielen mit Xamarin
-description: Dieses Dokument enthält einen allgemeinen Überblick über die Entwicklung von Spielen mithilfe von Xamarin, beschreibt, wie Spiele vorgenommen werden und eine Stichprobe der Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android zur Verfügung stehen.
+description: 'Dieses Dokument enthält einen allgemeinen Überblick über die Entwicklung von Spielen mithilfe von Xamarin, beschreibt, wie Spiele vorgenommen werden und eine Stichprobe der Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android zur Verfügung stehen.'
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: d6e9fd03025e00da5cff5ed284bdc5f0f268a22b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122607"
 ---
+
 # <a name="introduction-to-game-development-with-xamarin"></a>Einführung in die Entwicklung von Spielen mit Xamarin
 
 Entwickeln von Spielen kann sehr aufregend insbesondere in Anbetracht wie einfach es sein kann, um Ihre Arbeit auf mobilen Plattformen zu veröffentlichen. In diesem Artikel erläutert die Begriffe aus, und Technologien, die im Zusammenhang mit der Entwicklung von Spielen, mit denen Sie erstellen Spiele, ob das Ziel ist es, um eine qualitativ hochwertige AAA Spiel oder eine so zum Spaß-Programm zu erstellen.
@@ -25,12 +20,12 @@ In diesem Artikel werden die folgenden Themen behandelt:
 - **Spielen entwicklungstechnologie** – hier führen wir einige der plattformübergreifenden Technologien zur Verfügung, die Ihre Produktivität als Entwickler von Spielen verbessern können.
 
 
-# <a name="game-vs-non-game-programming-concepts"></a>Spiel im Vergleich zu Nicht-Game-Programmierkonzepte
+## <a name="game-vs-non-game-programming-concepts"></a>Spiel im Vergleich zu Nicht-Game-Programmierkonzepte
 
 Programmierer, die in der Entwicklung von Spielen verschoben werden häufig mit neuen Konzepte und den Entwicklungsmustern konfrontiert. In diesem Abschnitt werden eine allgemeine Ansicht der einige dieser Konzepte.
 
 
-## <a name="the-game-loop"></a>Die Spielschleife
+### <a name="the-game-loop"></a>Die Spielschleife
 
 Ein normales Spiel erfordert Konstante verschieben oder ändern, sodass Sie auf dem Bildschirm als Reaktion auf Benutzerinteraktion und automatische Spiellogik sowohl passiert. Hierzu wird in der Regel als bezeichnet ein *spielschleife*. Eine Spiele-Schleife ist eine Art von Schleife Anweisung (z. B. eine While-Schleife), die sehr häufig, z. B. 30 oder 60 ausgeführt wird *Frames pro Sekunde*.
 
@@ -54,7 +49,7 @@ Allgemeine Logik, die möglicherweise ausgeführten every-Frame gehören:
 Sollten Sie bedenken, dass viele der oben aufgeführten Aktivitäten den Status der in der gesamten Anwendung ändern können, während viele nicht-Game-apps weisen tendenziell statusänderung als Reaktion auf Ereignisse, die ausgelöst wird.
 
 
-## <a name="content-loading-and-unloading"></a>Inhalt laden und entladen
+### <a name="content-loading-and-unloading"></a>Inhalt laden und entladen
 
 Manuell laden und Entladen (oder freigegeben) Inhalt kann erforderlich sein, je nachdem welche Technologie Sie bei der Entwicklung verwenden. Manuell laden und Entladen von Ressourcen können eine Reihe von Gründen erforderlich sein:
 
@@ -65,7 +60,7 @@ Manuell laden und Entladen (oder freigegeben) Inhalt kann erforderlich sein, je 
 Benutzerdefinierte Dateiformate möglicherweise Verarbeitung zur Ladezeit benutzerdefinierte Laden Code erfordern.
 
 
-## <a name="math"></a>Mathematik
+### <a name="math"></a>Mathematik
 
 Viele Spiele erfordern mehr Mathematik als nicht-Game-Anwendungen. Die Ebene der mathematischen hängt natürlich die Komplexität des Spiels. Im Allgemeinen benötigt 3D-Spiele Weitere mathematische als 2D. Zum Glück Sie immer Einstieg in einfache Spiele und erfahren Sie, wie Sie fortfahren. Entwicklung von Spielen kann es sich um eine hervorragende Möglichkeit, erfahren, Mathematik sein!
 
@@ -82,14 +77,14 @@ Trigonometrische Funktionen (z. B. Sinus und Kosinus) werden häufig in 2D-Spiel
 Wenn Sie beabsichtigen, für das Erstellen eines 3D-Spiels wahrscheinlich müssen Sie mit den Konzepten von lineare Algebra (für Rotation und Verschieben von Daten in 3D-Bereich) sowie einige berechnen (für die Implementierung von Acceleration) vertraut sein.
 
 
-## <a name="content-pipelines"></a>Inhaltspipelines
+### <a name="content-pipelines"></a>Inhaltspipelines
 
 Der Begriff *Pipeline für Bildinhalte* bezieht sich auf den Prozess, der eine Datei verwendet, um aus dem Format, die beim Erstellen von (z. B. eine PNG-Bilddatei) zu erhalten, in das endgültige Format, wenn in einem Spiel verwendet. Das abschließende Format hängt ab, auf dem Typ des Inhalts verwendet wird sowie die Technologie verwendet wird, um den Inhalt darstellen.
 
 Einige inhaltspipelines können sehr schnell sein und keinen manuellen Aufwand erfordern. Beispielsweise können die meisten Spiele-Engines und APIs das PNG-Dateiformat in das nicht verarbeitete Format geladen werden. Auf der anderen Seite möglicherweise mehr komplizierte Formate (z. B.-3D-Modelle) in ein anderes Format verarbeitet werden, bevor Sie geladen wird, und diese Verarbeitung kann je nach Größe und Komplexität des Medienobjekts einige Zeit dauern.
 
 
-# <a name="game-development-teams"></a>Entwicklung von Spielen-Teams
+## <a name="game-development-teams"></a>Entwicklung von Spielen-Teams
 
 Entwicklung von Spielen führt neue Rollen und Titel für Einzelpersonen, die der Prozess an. Die meisten Spiele-Entwickler sind nicht erfüllen die Vielzahl von Fähigkeiten erforderlich, um eine vollständige Spiel, freigeben, sodass der eine Anzahl von Disziplinen vorhanden. Bedenken Sie, dass es sich nicht um eine vollständige Liste der Bereiche der Entwicklung – nur einige der häufigeren handelt.
 
@@ -100,7 +95,7 @@ Entwicklung von Spielen führt neue Rollen und Titel für Einzelpersonen, die de
 - **Klingt Designer** – Sound Designer für eine audio spielobjekt verantwortlich sind. Einige Teams möglicherweise unterscheiden zwischen Personen, die verantwortlich für das Erstellen von Soundeffekte und Komponisten, während kleinere Teams eine einzelne Person, die für alle Audio verantwortlich sein können.
 
 
-# <a name="creating-a-game-idea"></a>Erstellen eine Spielidee in Angriff
+## <a name="creating-a-game-idea"></a>Erstellen eine Spielidee in Angriff
 
 Entwerfen eines Spiels scheint sich ganz einfach – schließlich die einzige Anforderung ist "etwas lustiges stellen". Leider viele Entwickler finden sich selbst mit Verlust bei Zeit, erstellen eine Vorstellung von der Entwicklung zu starten.
 
@@ -115,12 +110,12 @@ Ein weiteres Verfahren zum Generieren von neuen Ideen ist zu einem bestimmten Ge
 Die Neugestaltung der vorhandene Spiele ist auch eine Bildungseinrichtung-Erfahrung, obwohl dies dem Endprodukt kommerziellen Lebensfähigkeit eingeschränkt werden kann. Das Verfahren zum Erstellen eines Spiels, selbst eine wird eine genaue klonen, bietet es sich um eine wertvolle Bildungseinrichtungen Erfahrung.
 
 
-# <a name="game-development-technology"></a>Entwicklung von Spielen-Technologie
+## <a name="game-development-technology"></a>Entwicklung von Spielen-Technologie
 
 Entwickler, die mit Xamarin.Android und Xamarin.iOS haben eine Vielzahl von Technologien, die ihnen bei der Entwicklung von Spielen zur Verfügung. In diesem Abschnitt werden einige der am häufigsten verwendeten plattformübergreifende Lösungen erläutert.
 
 
-## <a name="cocossharp"></a>CocosSharp
+### <a name="cocossharp"></a>CocosSharp
 
 CocosSharp ist ein Open Source- und plattformübergreifende Version die Cocos-2D-Spiele-Engine. Die Engine bietet Zugriff auf Android-, iOS-, Mac OS X, Windows-Desktop, Windows RT und Windows Phone.
 
@@ -135,7 +130,7 @@ Das Spiel verärgerter Ninjas mit CocosSharp erstellt, und es kann ein guter Aus
 Sie können es herunterladen und erhalten Sie weitere Informationen unter den [AngryNinjas-Github-Seite](https://github.com/xamarin/AngryNinjas).
 
 
-## <a name="monogame"></a>MonoGame
+### <a name="monogame"></a>MonoGame
 
 MonoGame ist ein Open-Source, cross-Platform-Version von Microsoft XNA-API. MonoGame kann verwendet werden, um Spiele für iOS, Android, Mac OS X, Linux, Windows, Windows RT, PS4, PSVita, Xbox One und Switch zu erstellen.
 
@@ -149,14 +144,14 @@ FEZ:
 
 ![](images/image7.png "FEZ")
 
-Geschützte:
+Bastion:
 
-![](images/image8.jpg "Geschützte")
+![](images/image8.jpg "Bastion")
 
 Zum Arbeiten mit MonoGame, navigieren Sie zum unsere [MonoGame Handbücher](~/graphics-games/monogame/index.md).
 
 
-## <a name="urhosharp"></a>UrhoSharp
+### <a name="urhosharp"></a>UrhoSharp
 
 Von UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D- und 2D-spielen-Engine, die zum Erstellen von animierten im Hintergrund, 2D und 3D für Ihre Anwendungen mit Geometrien, Materialien, Lichter und Kameras verwendet werden kann.
 
@@ -164,18 +159,13 @@ Von UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D- und 2D-spiele
 
 Sehen Sie sich die [von UrhoSharp Handbücher](~/graphics-games/urhosharp/index.md) für den Einstieg.
 
-## <a name="additional-technology"></a>Zusätzliche Technologie
+### <a name="additional-technology"></a>Zusätzliche Technologie
 
 Die oben hervorgehobenen Technologien ist nur ein Beispiel für die Technologien zur Verfügung stehen. Andere wichtigen Technologien gehören:
 
-- **Spritekit** : Xamarin bietet Unterstützung für Apple Spritekit game-Framework, das Sie Zugriff auf alle Funktionen der systemeigenen API erhalten. Spritekit-Technologie von Apple erstellt ist, bietet umfassende Integration in den Rest des iOS-Ökosystems. Spritekit ist natürlich nicht plattformübergreifende, damit es unter Android verwendet werden kann. Weitere Informationen zur Verwendung von Spritekit Siehe diesen Beitrag:  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Szene Kit** : Xamarin bietet auch Unterstützung für Apple Szene Kit Framework vereinfacht die Implementierung von 3D-Grafiken in iOS-apps. Szene Kit ist auch die Technologie, die von Apple bereitgestellt werden, es gelten somit die Integration und plattformspezifischen Überlegungen für Spritekit erwähnt. Weitere Informationen zu Szene Kit Siehe diesen Beitrag: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **Spritekit** : Xamarin bietet Unterstützung für Apple Spritekit game-Framework, das Sie Zugriff auf alle Funktionen der systemeigenen API erhalten. Spritekit-Technologie von Apple erstellt ist, bietet umfassende Integration in den Rest des iOS-Ökosystems. Spritekit ist natürlich nicht plattformübergreifende, damit es unter Android verwendet werden kann. Weitere Informationen zur Verwendung von Spritekit Siehe diesen Beitrag:  [https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Szene Kit** : Xamarin bietet auch Unterstützung für Apple Szene Kit Framework vereinfacht die Implementierung von 3D-Grafiken in iOS-apps. Szene Kit ist auch die Technologie, die von Apple bereitgestellt werden, es gelten somit die Integration und plattformspezifischen Überlegungen für Spritekit erwähnt. Weitere Informationen zu Szene Kit Siehe diesen Beitrag: [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
 - **OpenTK –** OpenTK (die für das Öffnen Tool Kit steht) stellt Low-Level OpenGL-Zugriff auf iOS, Mac und Apple Hardware. Weitere Informationen zu OpenTK finden Sie unter der Hauptseite auf:  [http://www.opentk.com/](http://www.opentk.com/)
-
-
-# <a name="summary"></a>Zusammenfassung
-
-Dieser Artikel behandelt die wichtigsten Konzepte der Entwicklung von Spielen und erläutert, wie Sie beginnen, sodass Ihr erste Spiel. Nachdem Sie in diesem Artikel abgeschlossen haben, sind in den nächsten Schritten Ihre Technologie wählen und das Starten über unsere Reihe von Tutorials, die in den entsprechenden Abschnitten oben genannten verknüpft.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: f9d6775b5d31aa98087b8b8cb6aa1401429afd96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7f66c97ce4b7880d32dfd87aec0691a26a08cfd2
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120683"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669426"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Verwenden von Jenkins mit Xamarin
 
@@ -142,7 +142,7 @@ Dieser Abschnitt ist erforderlich, wenn Sie TFS für die quellcodeverwaltung fü
 In der Reihenfolge für eine MacOS-Arbeitsstation für die Interaktion mit einem TFS-Server, [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) muss auf der Arbeitsstation installiert sein. Team Explorer Everywhere ist ein Satz von Tools von Microsoft, plattformübergreifenden Befehlszeilenclient für den Zugriff auf TFS enthält. Team Explorer Everywhere kann in drei Schritten von Microsoft heruntergeladen und installiert werden:
 
 1. Entzippen Sie die Archivdatei in ein Verzeichnis, das dem Benutzerkonto zugegriffen werden kann. Sie können z. B. Entpacken Sie die Datei zu **~/tee**.
-2. Konfigurieren Sie die Shell oder Ihren Systempfad zum Ordner einschließen, der die Dateien enthält, die im Schritt oben extrahiert wurden. Beispiel:
+2. Konfigurieren Sie die Shell oder Ihren Systempfad zum Ordner einschließen, der die Dateien enthält, die im Schritt oben extrahiert wurden. Ein auf ein Objekt angewendeter
 
     ```
     echo export PATH~/tee/:$PATH' >> ~/.bash_profile
@@ -153,7 +153,7 @@ In der Reihenfolge für eine MacOS-Arbeitsstation für die Interaktion mit einem
     ```
     $ tf
     Team Explorer Everywhere Command Line Client (version 11.0.0.201306181526)
-    
+
     Available commands and their options:
     ```
 
@@ -230,7 +230,7 @@ Die erste Aufgabe wie Jenkins ist den Quellcode aus dem Quellcodeverwaltungssyst
 
 #### <a name="using-git-for-source-code-control"></a>Mithilfe von Git für die Quellcodeverwaltung
 
-Bei Verwendung von TFS für quellcodeverwaltung [überspringen](#Using_TFS_for_Source_Code_Management) diesen Abschnitt, und fahren Sie mit dem nächsten Abschnitt unter Verwendung von TFS.
+Bei Verwendung von TFS für quellcodeverwaltung [überspringen](#Using-TFS-for-Source-Code-Management) diesen Abschnitt, und fahren Sie mit dem nächsten Abschnitt unter Verwendung von TFS.
 
 Jenkins unterstützt Git von der – es sind keine zusätzlichen Plug-Ins erforderlich sind. Um Git verwenden, klicken Sie auf die **Git** Optionsfeld aus, und geben Sie die URL des Git-Repositorys wie im folgenden Screenshot gezeigt:
 

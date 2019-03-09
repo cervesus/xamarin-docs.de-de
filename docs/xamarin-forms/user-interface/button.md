@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 250b3de2ef41ce488165f3149c72ce28c39e53a3
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 3b23a1a07741cd048ea034b2b39b5f9cde902dc6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746894"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672767"
 ---
 # <a name="xamarinforms-button"></a>Schaltfläche "Xamarin.Forms"
 
@@ -150,7 +150,7 @@ Es ist möglich, dass eine Anwendung auf reagieren `Button` Taps ohne Behandlung
 
 Dieser Ansatz eignet sich besonders im Zusammenhang mit Datenbindung und insbesondere dann, wenn die Model-View-ViewModel (MVVM)-Architektur zu implementieren. In diesen Themen werden in den Artikeln erläutert [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md), [von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), und [MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
 
-In einer MVVM-Anwendung, definiert das "ViewModel" Eigenschaften des Typs `ICommand` klicken Sie dann das XAML angeschlossenen `Button` Elemente mit datenbindungen. Xamarin.Forms definiert auch [ `Command` ]((xref:Xamarin.Forms.Command`1)) und [ `Command<T>` ](xref:Xamarin.Forms.Command`1) Klassen, in denen die `ICommand` Schnittstelle, und bei der Definition von Eigenschaften des Typs "ViewModel"`ICommand`.
+In einer MVVM-Anwendung, definiert das "ViewModel" Eigenschaften des Typs `ICommand` klicken Sie dann das XAML angeschlossenen `Button` Elemente mit datenbindungen. Xamarin.Forms definiert auch [ `Command` ]((xref:Xamarin.Forms.Command)) und [ `Command<T>` ](xref:Xamarin.Forms.Command`1) Klassen, in denen die `ICommand` Schnittstelle, und bei der Definition von Eigenschaften des Typs "ViewModel"`ICommand`.
 
 Befehle in diesem Artikel ausführlicher beschrieben wird [ **die Befehlsschnittstelle** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) jedoch **grundlegende Schaltflächenbefehl** auf der Seite die [  **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel zeigt die grundlegende Vorgehensweise.
 

@@ -1,19 +1,14 @@
 ---
 title: Bilder und Symbole in Xamarin.iOS
-description: Dieser Abschnitt enthält eine Vielzahl von Artikeln, die Arbeit mit Bildern in einer Xamarin.iOS-app, wie z. B. die Verwendung als Symbole behandelt, Startbildschirme oder einschließlich werden in Steuerelemente und Symbole für benutzerdefinierte Dokumenttypen.
+description: 'Dieser Abschnitt enthält eine Vielzahl von Artikeln, die Arbeit mit Bildern in einer Xamarin.iOS-app, wie z. B. die Verwendung als Symbole behandelt, Startbildschirme oder einschließlich werden in Steuerelemente und Symbole für benutzerdefinierte Dokumenttypen.'
 ms.prod: xamarin
 ms.assetid: 0AB8CC07-11E4-0D75-4119-AED1A1252424
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 09afcac8dcecd5a1d05961c2981c0940fff00a01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102359"
 ---
+
 # <a name="images-and-icons-in-xamarinios"></a>Bilder und Symbole in Xamarin.iOS
 
 _Dieser Abschnitt enthält eine Vielzahl von Artikeln, die Arbeit mit Bildern in einer Xamarin.iOS-app, wie z. B. die Verwendung als Symbole behandelt, Startbildschirme oder einschließlich werden in Steuerelemente und Symbole für benutzerdefinierte Dokumenttypen._
@@ -66,4 +61,4 @@ Dieser Artikel behandelt, einschließlich und Verwalten von ein Bildobjekt in ei
 
 - [Arbeiten mit Bildern (Beispiel)](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hallo iPhone](~/ios/get-started/hello-ios/index.md)
-- [Benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [Benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

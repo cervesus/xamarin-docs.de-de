@@ -1,18 +1,13 @@
 ---
 title: Erste Schritte mit Java
-description: Dieses Dokument beschreibt, wie die ersten Schritte mit Java mit Einbetten von .NET. Es wird erläutert, Systemanforderungen, Installation und unterstützte Plattformen.
+description: 'Dieses Dokument beschreibt, wie die ersten Schritte mit Java mit Einbetten von .NET. Es wird erläutert, Systemanforderungen, Installation und unterstützte Plattformen.'
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
-ms.openlocfilehash: 74146378d2ee534b357abd73ff7e1563a49a7e4a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121749"
 ---
+
 # <a name="getting-started-with-java"></a>Erste Schritte mit Java
 
 Dies ist die ersten Schritte Seite für Java, das die Grundlagen für alle unterstützten Plattformen behandelt.
@@ -22,7 +17,7 @@ Dies ist die ersten Schritte Seite für Java, das die Grundlagen für alle unter
 Einbetten von .NET mit Java verwenden, die Sie benötigen:
 
 * Java 1.8 oder höher
-* [Mono 5.0](http://www.mono-project.com/download/)
+* [Mono 5.0](https://www.mono-project.com/download/)
 
 Für Mac:
 
