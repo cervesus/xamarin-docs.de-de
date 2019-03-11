@@ -1,19 +1,14 @@
 ---
 title: Android-Ressourcen
-description: Dieser Artikel führt das Konzept der Android-Ressourcen in Xamarin.Android und wird deren Verwendung zu dokumentieren. Es wird beschrieben, wie Ressourcen in Ihrer Android-Anwendung verwenden, um anwendungslokalisierung und mehrere Geräte aus unterschiedlichen Bildschirmgrößen und dichten zu unterstützen.
+description: 'Dieser Artikel führt das Konzept der Android-Ressourcen in Xamarin.Android und wird deren Verwendung zu dokumentieren. Es wird beschrieben, wie Ressourcen in Ihrer Android-Anwendung verwenden, um anwendungslokalisierung und mehrere Geräte aus unterschiedlichen Bildschirmgrößen und dichten zu unterstützen.'
 ms.prod: xamarin
 ms.assetid: C0DCC856-FA36-04CD-443F-68D26075649E
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: d9cd6bf3ae51c6e27be88481e412995bd4113c17
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117257"
 ---
+
 # <a name="android-resources"></a>Android-Ressourcen
 
 _Dieser Artikel führt das Konzept der Android-Ressourcen in Xamarin.Android und wird deren Verwendung zu dokumentieren. Es wird beschrieben, wie Ressourcen in Ihrer Android-Anwendung verwenden, um anwendungslokalisierung und mehrere Geräte aus unterschiedlichen Bildschirmgrößen und dichten zu unterstützen._
@@ -71,6 +66,6 @@ In diesem Artikel übernimmt einen umfassenden Überblick über die Verwendung v
 ## <a name="related-links"></a>Verwandte Links
 
 - [Verwenden von Android-Ressourcen](~/android/app-fundamentals/resources-in-android/android-assets.md)
-- [Application Fundamentals (Anwendungsgrundlagen)](http://developer.android.com/guide/topics/fundamentals.html)
-- [Anwendungsressourcen](http://developer.android.com/guide/topics/resources/index.html)
-- [Unterstützung von mehreren Bildschirmen](http://developer.android.com/guide/practices/screens_support.html)
+- [Application Fundamentals (Anwendungsgrundlagen)](https://developer.android.com/guide/topics/fundamentals.html)
+- [Anwendungsressourcen](https://developer.android.com/guide/topics/resources/index.html)
+- [Unterstützung von mehreren Bildschirmen](https://developer.android.com/guide/practices/screens_support.html)

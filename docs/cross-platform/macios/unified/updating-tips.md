@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: ce5c8f7cf30407e64464c412359263b52e134675
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: a5083e1d31377caece1b8fb4faf33b6e3ff88202
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267390"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672455"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>Tipps zum Aktualisieren von Code für Unified API
 
@@ -88,7 +88,7 @@ Einige Dinge, die möglicherweise manuell behoben werden müssen, gehören:
 
  * `NSAction` wurde [ersetzt](~/cross-platform/macios/unified/overview.md#NSAction) mit der Starndard .NET `Action`. Wurden einige einfache (einzelne Parameter) Delegaten auch durch ersetzt `Action<T>`.
 
-Schließlich finden Sie unter den [Klassisch V Unified API-Unterschiede](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) , um Änderungen an APIs in Ihrem Code zu suchen. Suche [auf dieser Seite](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) hilft finden Sie klassischen APIs und was sie auf aktualisiert haben.
+Schließlich finden Sie unter den [Klassisch V Unified API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) , um Änderungen an APIs in Ihrem Code zu suchen. Suche [auf dieser Seite](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) hilft finden Sie klassischen APIs und was sie auf aktualisiert haben.
 
 **Hinweis:** der `MonoTouch.Dialog` Namespace bleibt nach der Migration. Wenn Ihr Code verwendet **MonoTouch.Dialog** sollten Sie weiterhin nach diesen Namespace – übernehmen *nicht* ändern `MonoTouch.Dialog` zu `Dialog`!
 
@@ -120,7 +120,7 @@ nfloat scale = (nfloat)Math.Min(rect.Width, rect.Height);
 
 Fix: Ändern von Instanzen, um `RectangleF` zu `CGRect`, `SizeF` zu `CGSize`, und `PointF` zu `CGPoint`. Der Namespace `using System.Drawing;` sollte ersetzt werden durch `using CoreGraphics;` (sofern er nicht bereits vorhanden ist).
 
-**Fehler CS1502: Die beste überladene Übereinstimmung für die Methode "CoreGraphics.CGContext.SetLineDash (System.nfloat, System.nfloat[])" weist einige ungültige Argumente**
+**Fehler CS1502: The best overloaded method match for 'CoreGraphics.CGContext.SetLineDash(System.nfloat, System.nfloat[])' has some invalid arguments**
 
 Fix: Ändern der Arraytyp `nfloat[]` und explizit umwandeln `Math.PI`.
 
@@ -136,7 +136,7 @@ Fix: Ändern Sie die Rückgabetypen für Wert und Parameter zum `nint`. Dieser h
 public override nint RowsInSection (UITableView tableview, nint section) {
 ```
 
-**Fehler-CS0508: `WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be 'System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView) "**
+**Fehler-CS0508: `WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be 'System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'**
 
 Fix: Wenn der Rückgabetyp geändert wird, um `nint`, wandeln Sie den Rückgabewert in `nint`.
 
@@ -147,7 +147,7 @@ public override nint NumberOfSections (UITableView tableView)
 }
 ```
 
-**Fehler-CS1061: Typ "CoreGraphics.CGPath" enthält keine Definition für "AddElipseInRect"**
+**Error CS1061: Typ "CoreGraphics.CGPath" enthält keine Definition für "AddElipseInRect"**
 
 Fix: Korrigieren Sie die Schreibweise in `AddEllipseInRect`. Andere Namensänderungen umfassen Folgendes:
 
@@ -170,7 +170,7 @@ Wenn Sie eine benutzerdefinierte Anmerkung zu erstellen, durch Ableitung von Unt
 * Überschreiben Sie die SetCoordinate-Methode, und legen Sie das Feld
 * Rufen Sie in Ihrer "ctor" mit der übergebenen Koordinatenparameter SetCoordinate
 
-Es sollte etwa wie folgt aussehen:
+Der Inhalt sollte Folgendem ähnlich sehen:
 
 ```csharp
 class BasicPinAnnotation : MKAnnotation

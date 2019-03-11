@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: c674112f629f2054f81d72ee2b71268836e48b7a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8ad2dde701814c0977e25e6e58272c0aa01ca4ca
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106714"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672845"
 ---
 # <a name="working-with-jni"></a>Arbeiten mit JNI
 
@@ -86,7 +86,7 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 ```
 
 
-### <a name="implementation-details"></a>Details zur Implementierung
+### <a name="implementation-details"></a>Implementierungsdetails
 
 *Im weiteren Verlauf dieses Artikels bietet Details zur Implementierung können ohne Vorankündigung geändert* (und wird nur verwendet werden, da Entwickler möglicherweise neugierig, was hinter den Kulissen passiert hier angezeigt).
 
@@ -156,7 +156,7 @@ Xamarin.Android generiert in der Regel automatisch den Java-Code, der der Inhalt
 
 -   Android unterstützt Aktionsnamen im Layout-XML-Attribute, z. B. die [Android: OnClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML-Attribut. Wenn es angegeben wird, versucht die vergrößerte Ansicht-Instanz, um die Java-Methode zu suchen.
 
--   Die [java.io.Serializable](http://developer.android.com/reference/java/io/Serializable.html) Schnittstelle erfordert `readObject` und `writeObject` Methoden. Da es keine Member dieser Schnittstelle, macht unsere entsprechende verwaltete Implementierung dieser Methoden zu Java-Code.
+-   Die [java.io.Serializable](https://developer.android.com/reference/java/io/Serializable.html) Schnittstelle erfordert `readObject` und `writeObject` Methoden. Da es keine Member dieser Schnittstelle, macht unsere entsprechende verwaltete Implementierung dieser Methoden zu Java-Code.
 
 -   Die [android.os.Parcelable](https://developer.xamarin.com/api/type/Android.Os.Parcelable/) Schnittstelle erwartet, dass eine Implementierungsklasse ein statisches Feld haben muss `CREATOR` des Typs `Parcelable.Creator`. Der generierte Java-Code erfordert einige explicit-Feld. Mit diesem standard Szenario besteht keine Möglichkeit, Ausgabefeld in Java-Code aus verwaltetem Code zur Verfügung.
 
@@ -248,12 +248,12 @@ Finden Sie unter den [JNI-Typverweise](#_JNI_Type_References) Abschnitt ausführ
 
 ### <a name="binding-fields"></a>Binden von Feldern
 
-Java-Felder werden verfügbar gemacht, als C# Eigenschaften, z. B. das Java-Feld [java.lang.System.in](http://developer.android.com/reference/java/lang/System.html#in) gebunden ist, als die C# Eigenschaft [Java.Lang.JavaSystem.In](https://developer.xamarin.com/api/property/Java.Lang.JavaSystem.In/).
+Java-Felder werden verfügbar gemacht, als C# Eigenschaften, z. B. das Java-Feld [java.lang.System.in](https://developer.android.com/reference/java/lang/System.html#in) gebunden ist, als die C# Eigenschaft [Java.Lang.JavaSystem.In](https://developer.xamarin.com/api/property/Java.Lang.JavaSystem.In/).
 Darüber hinaus da JNI zwischen Feldern in statische und Instanzfelder unterscheidet, verschiedene Methoden verwendet werden, wenn Sie die Eigenschaften zu implementieren.
 
 Feld Bindung umfasst drei Sätze von Methoden an:
 
-1.  Die *Feld-Id abrufen* Methode. Die *Feld-Id abrufen* Methode ist verantwortlich für die Rückgabe ein Felds zu behandeln, die die *erhalten Feldwert* und *Feldwert festgelegt* Methoden verwenden. Die Feld-Id abrufen muss bekannt sein, die deklarieren, geben Sie den Namen des Felds, und die [JNI-Typsignatur](#_JNI_Type_Signatures) des Felds.
+1.  Die *Feld-Id abrufen* Methode. Die *Feld-Id abrufen* Methode ist verantwortlich für die Rückgabe ein Felds zu behandeln, die die *erhalten Feldwert* und *Feldwert festgelegt* Methoden verwenden. Die Feld-Id abrufen muss bekannt sein, die deklarieren, geben Sie den Namen des Felds, und die [JNI-Typsignatur](#JNI_Type_Signatures) des Felds.
 
 1.  Die *erhalten Feldwert* Methoden. Diese Methoden erfordern Feldhandle und sind zuständig für das Lesen der Wert des Felds aus Java.
     Die zu verwendende Methode hängt von der Typ des Felds ab.
@@ -280,7 +280,7 @@ public static System.IO.Stream In
 }
 ```
 
-Hinweis: Wir verwenden [InputStreamInvoker.FromJniHandle](https://developer.xamarin.com/api/member/Android.Runtime.InputStreamInvoker.FromJniHandle/(System.IntPtr%2cAndroid.Runtime.JniHandleOwnership)) konvertieren die JNI-verweisen in einem `System.IO.Stream` -Instanz, und wir verwenden `JniHandleOwnership.TransferLocalRef` da [JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/) Gibt einen lokalen Verweis.
+Hinweis: Verwenden wir [InputStreamInvoker.FromJniHandle](https://developer.xamarin.com/api/member/Android.Runtime.InputStreamInvoker.FromJniHandle/(System.IntPtr%2cAndroid.Runtime.JniHandleOwnership)) konvertieren die JNI-verweisen in einem `System.IO.Stream` -Instanz, und wir verwenden `JniHandleOwnership.TransferLocalRef` da [JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/) gibt ein lokaler Verweis.
 
 Viele der [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/) Typen `FromJniHandle` Methoden, die einer JNI konvertiert in den gewünschten Typ zu verweisen.
 
@@ -288,11 +288,11 @@ Viele der [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.
 
 ### <a name="method-binding"></a>Methode-Bindung
 
-Java-Methoden werden verfügbar gemacht, als C# Methoden und als C# Eigenschaften. Zum Beispiel die Java-Methode ["java.lang.Runtime.runFinalizersOnExit"](http://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean)) Methode gebunden ist, als die ["java.lang.Runtime.runFinalizersOnExit"](https://developer.xamarin.com/api/member/Java.Lang.Runtime.RunFinalizersOnExit/) -Methode, und die [java.lang.Object.getClass ](http://developer.android.com/reference/java/lang/Object.html#getClass) Methode gebunden ist, als die ["java.lang.Object.Class"](https://developer.xamarin.com/api/property/Java.Lang.Object.Class/) Eigenschaft.
+Java-Methoden werden verfügbar gemacht, als C# Methoden und als C# Eigenschaften. Zum Beispiel die Java-Methode ["java.lang.Runtime.runFinalizersOnExit"](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean)) Methode gebunden ist, als die ["java.lang.Runtime.runFinalizersOnExit"](https://developer.xamarin.com/api/member/Java.Lang.Runtime.RunFinalizersOnExit/) -Methode, und die [java.lang.Object.getClass ](https://developer.android.com/reference/java/lang/Object.html#getClass) Methode gebunden ist, als die ["java.lang.Object.Class"](https://developer.xamarin.com/api/property/Java.Lang.Object.Class/) Eigenschaft.
 
 Methodenaufruf ist ein zweistufiger Prozess:
 
-1.  Die *Methoden-Id abrufen* für die aufzurufende Methode. Die *Methoden-Id abrufen* Methode ist verantwortlich für die Rückgabe einer Methodenhandle, die Methoden der Methode verwendet werden. Die Methoden-Id abrufen muss bekannt sein, die deklarieren, geben Sie den Namen der Methode, und die [JNI-Typsignatur](#_JNI_Type_Signatures) der Methode.
+1.  Die *Methoden-Id abrufen* für die aufzurufende Methode. Die *Methoden-Id abrufen* Methode ist verantwortlich für die Rückgabe einer Methodenhandle, die Methoden der Methode verwendet werden. Die Methoden-Id abrufen muss bekannt sein, die deklarieren, geben Sie den Namen der Methode, und die [JNI-Typsignatur](#JNI_Type_Signatures) der Methode.
 
 1.  Rufen Sie die Methode auf.
 
@@ -308,7 +308,7 @@ Bindung der Methode ist möglicherweise mehr als nur-Methodenaufruf. Methode Bin
 
 #### <a name="static-methods"></a>Statische Methoden
 
-Binden eine statische Methode umfasst die Verwendung `JNIEnv.GetStaticMethodID` zum Abrufen eines Methode-Handles, und klicken Sie dann mit der entsprechenden `JNIEnv.CallStatic*Method` -Methode, abhängig vom Rückgabetyp der Methode. Folgendes ist ein Beispiel für eine Bindung für die [Runtime.getRuntime](http://developer.android.com/reference/java/lang/Runtime.html#getRuntime()) Methode:
+Binden eine statische Methode umfasst die Verwendung `JNIEnv.GetStaticMethodID` zum Abrufen eines Methode-Handles, und klicken Sie dann mit der entsprechenden `JNIEnv.CallStatic*Method` -Methode, abhängig vom Rückgabetyp der Methode. Folgendes ist ein Beispiel für eine Bindung für die [Runtime.getRuntime](https://developer.android.com/reference/java/lang/Runtime.html#getRuntime()) Methode:
 
 ```csharp
 static IntPtr id_getRuntime;
@@ -388,7 +388,7 @@ Für Klasse Bindungen kann dies das richtige Verhalten sein, wenn es sich bei de
 1.  Wenn der aktuelle Laufzeittyp identisch mit dem deklarierenden Typ ist, klicken Sie dann den Java-Konstruktor aufrufen und verwenden Sie [Object.SetHandle](https://developer.xamarin.com/api/member/Java.Lang.Object.SetHandle/(System.IntPtr%2cAndroid.Runtime.JniHandleOwnership)) zum Speichern des von zurückgegebenen Handles `JNIEnv.NewInstance` .
 
 
-Betrachten Sie beispielsweise die [java.lang.Integer(int)](http://developer.android.com/reference/java/lang/Integer.html#Integer(int)) Konstruktor. Dies wird als gebunden:
+Betrachten Sie beispielsweise die [java.lang.Integer(int)](https://developer.android.com/reference/java/lang/Integer.html#Integer(int)) Konstruktor. Dies wird als gebunden:
 
 ```csharp
 // Cache the constructor's method handle for later use
@@ -807,7 +807,7 @@ Ist dies nicht erforderlich: Wir können gebunden wurde, eine C# `int[]`, oder e
 
 Die `Invoker` Typdefinition muss erben `Java.Lang.Object`, die entsprechende Schnittstelle implementieren und geben Sie alle Verbindungsmethoden, die auf die in der Schnittstellendefinition. Es gibt weitere empfohlen, die von einer Klasse Bindung abweicht: die `class_ref` Feld und Methode IDs muss ein Instanzmember, nicht statische Member.
 
-Der Grund für die Bevorzugung von Instanzmembern besteht in `JNIEnv.GetMethodID` Verhalten in der Android-Laufzeit. (Dies ist möglicherweise auch die Java-Verhalten, es noch nicht getestet wurde.) `JNIEnv.GetMethodID` gibt null zurück, wenn eine Methode suchen, die aus einer implementierten Schnittstelle und nicht der deklarierte Schnittstelle stammen. Betrachten Sie die ["java.util.SortedMap"&lt;K, V&gt; ](http://developer.android.com/reference/java/util/SortedMap.html) Java-Schnittstelle, die implementiert die [java.util.Map&lt;K, V&gt; ](http://developer.android.com/reference/java/util/Map.html) Schnittstelle. Map enthält eine [löschen](http://developer.android.com/reference/java/util/Map.html#clear()) -Methode, also eine scheinbar berechtigte `Invoker` Definition für SortedMap wäre:
+Der Grund für die Bevorzugung von Instanzmembern besteht in `JNIEnv.GetMethodID` Verhalten in der Android-Laufzeit. (Dies ist möglicherweise auch die Java-Verhalten, es noch nicht getestet wurde.) `JNIEnv.GetMethodID` gibt null zurück, wenn eine Methode suchen, die aus einer implementierten Schnittstelle und nicht der deklarierte Schnittstelle stammen. Betrachten Sie die ["java.util.SortedMap"&lt;K, V&gt; ](https://developer.android.com/reference/java/util/SortedMap.html) Java-Schnittstelle, die implementiert die [java.util.Map&lt;K, V&gt; ](https://developer.android.com/reference/java/util/Map.html) Schnittstelle. Map enthält eine [löschen](https://developer.android.com/reference/java/util/Map.html#clear()) -Methode, also eine scheinbar berechtigte `Invoker` Definition für SortedMap wäre:
 
 ```csharp
 // Fails at runtime. DO NOT FOLLOW
@@ -1125,7 +1125,7 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 Um ein Feld oder eine Methode in der JNI suchen zu können, muss der deklarierende Typ für das Feld oder eine Methode zuerst angesehen werden. Die [Android.Runtime.JNIEnv.FindClass(string)](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.FindClass/(System.String)) Methode wird verwendet, um Java-Typen zu suchen. Der Parameter ist der *vereinfacht Typverweis* oder *vollständige Typverweis* für den Java-Typ. Finden Sie unter den [Typverweise JNI-Abschnitt](#_JNI_Type_References) ausführliche Informationen zum vereinfachten und vollständige Typverweise.
 
-Hinweis: im Gegensatz zu allen anderen `JNIEnv` -Methode die Objektinstanz zurückgibt `FindClass` gibt einen globalen Verweis, nicht auf einen lokalen Verweis zurück.
+Hinweis: Im Gegensatz zu allen anderen `JNIEnv` -Methode die Objektinstanz zurückgibt `FindClass` gibt einen globalen Verweis, nicht auf einen lokalen Verweis zurück.
 
 <a name="_Instance_Fields" />
 
@@ -1391,7 +1391,7 @@ Die Signatur der JNI-Typ wäre:
 (ILjava/lang/String;[I)J
 ```
 
-Im Allgemeinen ist es *stark* empfohlen, verwenden die `javap` Befehl aus, um die JNI-Signaturen zu bestimmen. Z. B. die JNI Typsignatur der [java.lang.Thread.State.valueOf(String)](http://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String)) Methode ist "(Ljava/Lang/String); Ljava/Lang / $Threadzustand;", während die JNI geben die Signatur des der [ java.lang.Thread.State.values](http://developer.android.com/reference/java/lang/Thread.State.html#values) Methode ist "() [Ljava/Lang / $Threadzustand;". Achten Sie für die nachfolgende Semikolons; Diese *sind* Teil der Signatur der JNI-Typ.
+Im Allgemeinen ist es *stark* empfohlen, verwenden die `javap` Befehl aus, um die JNI-Signaturen zu bestimmen. Z. B. die JNI Typsignatur der [java.lang.Thread.State.valueOf(String)](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String)) Methode ist "(Ljava/Lang/String); Ljava/Lang / $Threadzustand;", während die JNI geben die Signatur des der [ java.lang.Thread.State.values](https://developer.android.com/reference/java/lang/Thread.State.html#values) Methode ist "() [Ljava/Lang / $Threadzustand;". Achten Sie für die nachfolgende Semikolons; Diese *sind* Teil der Signatur der JNI-Typ.
 
 <a name="_JNI_Type_References" />
 
@@ -1400,7 +1400,7 @@ Im Allgemeinen ist es *stark* empfohlen, verwenden die `javap` Befehl aus, um di
 Verweise auf die JNI-Typen unterscheiden sich von der Verweise auf die Java-Typen. Sie können keine vollqualifizierte Namen der Java-Typ wie z. B. `java.lang.String` mit JNI, verwenden Sie stattdessen die JNI-Varianten `"java/lang/String"` oder `"Ljava/lang/String;"`, je nach Kontext; Weitere Informationen siehe unten.
 Es gibt vier Arten von Typverweisen JNI:
 
--  **Integrierte**
+-  **built-in**
 -  **simplified**
 -  **Typ**
 -  **array**
@@ -1433,12 +1433,12 @@ Es gibt zwei Möglichkeiten, um ein vereinfachtes Typverweis abgeleitet werden:
 1.  Lesen die Ausgabe des `'unzip -l android.jar | grep JavaName'` .
 
 
-Eine der beiden in der Java-Typ führt [java.lang.Thread.State](http://developer.android.com/reference/java/lang/Thread.State.html) zugeordnet wird, um die vereinfachte Typverweis `java/lang/Thread$State`.
+Eine der beiden in der Java-Typ führt [java.lang.Thread.State](https://developer.android.com/reference/java/lang/Thread.State.html) zugeordnet wird, um die vereinfachte Typverweis `java/lang/Thread$State`.
 
 
 ### <a name="type-references"></a>Verweise auf Typen
 
-Ein Typverweis ist ein integrierter Typ-Verweis oder einen vereinfachten Typverweis mit einer `'L'` Präfix und einem `';'` Suffix. Für den Java-Typ [java.lang.String](http://developer.android.com/reference/java/lang/String.html), ist der vereinfachte Typverweis `"java/lang/String"`, während der Typverweis `"Ljava/lang/String;"`.
+Ein Typverweis ist ein integrierter Typ-Verweis oder einen vereinfachten Typverweis mit einer `'L'` Präfix und einem `';'` Suffix. Für den Java-Typ [java.lang.String](https://developer.android.com/reference/java/lang/String.html), ist der vereinfachte Typverweis `"java/lang/String"`, während der Typverweis `"Ljava/lang/String;"`.
 
 Verweise auf Typen werden mit Array-Typverweisen und mit JNI-Signaturen verwendet werden.
 
@@ -1491,7 +1491,7 @@ Z. B. `int[]` ist `"[I"`, `int[][]` ist `"[[I"`, und `java.lang.Object[]` ist `"
 *Die meisten* der Zeit, wie durch JNI, Java-Generika *nicht vorhanden sind*.
 Es gibt einige "Falten", aber diese Falten befinden sich in der Interaktion von Java mit Generika, nicht mit wie JNI sucht und generische Member aufruft.
 
-Bei der Interaktion mit JNI besteht kein Unterschied zwischen einen generischen Typ oder Member und einen nicht generischen Typ oder Member. Z. B. den generischen Typ [java.lang.Class&lt;T&gt; ](http://developer.android.com/reference/java/lang/Class.html) ist auch der "rohes" generische Typ `java.lang.Class`, die jeweils des gleichen vereinfachte Typverweis `"java/lang/Class"`.
+Bei der Interaktion mit JNI besteht kein Unterschied zwischen einen generischen Typ oder Member und einen nicht generischen Typ oder Member. Z. B. den generischen Typ [java.lang.Class&lt;T&gt; ](https://developer.android.com/reference/java/lang/Class.html) ist auch der "rohes" generische Typ `java.lang.Class`, die jeweils des gleichen vereinfachte Typverweis `"java/lang/Class"`.
 
 
 ## <a name="java-native-interface-support"></a>Java Native Interface-Unterstützung

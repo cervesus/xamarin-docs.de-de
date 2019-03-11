@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 63f0d4d7ce5f056d8e1db6bc297258c6bc070086
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675548"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672746"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,7 @@ Android bietet Unterstützung für Metadaten von abfragebenachrichtigungen auf, 
 
 -   **Kategorie** &ndash; informiert das System wie verarbeitet die Benachrichtigung in verschiedenen Situationen, z. B. wenn das Gerät wird *nicht stören* Modus.
 
-**Hinweis:** **Sichtbarkeit** und **Kategorie** wurden eingeführt, in Android 5.0 und in früheren Versionen von Android nicht verfügbar sind. Ab Android 8.0 [benachrichtigungskanäle](#notif-chan) werden verwendet, um zu steuern, wie Benachrichtigungen, die dem Benutzer angezeigt werden.
+**Hinweis**: **Sichtbarkeit** und **Kategorie** wurden eingeführt, in Android 5.0 und in früheren Versionen von Android nicht verfügbar sind. Ab Android 8.0 [benachrichtigungskanäle](#notif-chan) werden verwendet, um zu steuern, wie Benachrichtigungen, die dem Benutzer angezeigt werden.
 
 
 ### <a name="expanded-layouts"></a>Erweiterte layouts
@@ -113,7 +113,7 @@ Android unterstützt drei erweiterten Layout-Stile für Single-ereignisbenachric
 
 Ab Android 8.0 (Oreo), können Sie die *benachrichtigungskanäle* Funktion, um einen anpassbaren Kanal für jeden Typ der Benachrichtigung zu erstellen, die Sie anzeigen möchten. Benachrichtigungskanäle erleichtern möglich, dass Sie die Gruppe Benachrichtigungen, damit alle Benachrichtigungen zu einem Kanal Anhang gesendet, das gleiche Verhalten. Beispielsweise müssen Sie möglicherweise einen Kanal, der für Benachrichtigungen vorgesehen ist, die sofortige Aufmerksamkeit erfordern, und einen separaten "ruhigerer" Kanal, der für informationsmeldungen verwendet wird.
 
-Die **YouTube** -app, die mit Android Oreo installiert wird, führt zwei Benachrichtigungskategorien: **herunterladen Benachrichtigungen** und **allgemeine Benachrichtigungen**:
+Die **YouTube** -app, die mit Android Oreo installiert wird, führt zwei Benachrichtigungskategorien: **Herunterladen von Benachrichtigungen** und **allgemeine Benachrichtigungen**:
 
 [![Benachrichtigungs-Bildschirme für YouTube in Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
@@ -219,7 +219,7 @@ Sie müssen mindestens die folgende Informationen für jede Benachrichtigung ang
 
 -   Der Text der Benachrichtigung
 
-Im folgenden Codebeispiel wird veranschaulicht, wie Sie mit `NotificationCompat.Builder` eine einfache Benachrichtigung generiert. Beachten Sie, dass `NotificationCompat.Builder` Methoden unterstützen [methodenverkettung](http://en.wikipedia.org/wiki/Method_chaining); d. h. gibt jede Methode das Builder-Objekt zurück, damit Sie das Ergebnis der dem letzten Methodenaufruf zum Aufrufen des nächsten Aufrufs der Methode verwenden können:
+Im folgenden Codebeispiel wird veranschaulicht, wie Sie mit `NotificationCompat.Builder` eine einfache Benachrichtigung generiert. Beachten Sie, dass `NotificationCompat.Builder` Methoden unterstützen [methodenverkettung](https://en.wikipedia.org/wiki/Method_chaining); d. h. gibt jede Methode das Builder-Objekt zurück, damit Sie das Ergebnis der dem letzten Methodenaufruf zum Aufrufen des nächsten Aufrufs der Methode verwenden können:
 
 ```csharp
 // Instantiate the builder and set notification elements:
@@ -332,7 +332,7 @@ Eine Benachrichtigung bleibt sichtbar, bis eines von drei Dingen erfolgt:
 
 -   Ruft die Anwendung `NotificationManager.CancelAll`.
 
-Weitere Informationen zum Aktualisieren von Android-Benachrichtigungen, finden Sie unter [ändern Sie eine Benachrichtigung](http://developer.android.com/training/notify-user/managing.html#Updating).
+Weitere Informationen zum Aktualisieren von Android-Benachrichtigungen, finden Sie unter [ändern Sie eine Benachrichtigung](https://developer.android.com/training/notify-user/managing.html#Updating).
 
 
 ### <a name="starting-an-activity-from-a-notification"></a>Starten Sie eine Aktivität von einer Benachrichtigung
@@ -375,7 +375,7 @@ Dieser Code ähnelt stark der Benachrichtigungscode im vorherigen Abschnitt, au�
 
 Tippen Sie auf diese Benachrichtigung wird der Benutzer zurück zur ursprünglichen Aktivität.
 
-In einer Produktions-app muss Ihre app behandeln die *BackStack* Wenn der Benutzer drückt die **wieder** innerhalb der Benachrichtigungsaktivität (Wenn Sie nicht mit Android-Aufgaben und den Backstack vertraut sind, finden Sie unter [ Aufgaben und BackStack](http://developer.android.com/guide/components/tasks-and-back-stack.html)).
+In einer Produktions-app muss Ihre app behandeln die *BackStack* Wenn der Benutzer drückt die **wieder** innerhalb der Benachrichtigungsaktivität (Wenn Sie nicht mit Android-Aufgaben und den Backstack vertraut sind, finden Sie unter [ Aufgaben und BackStack](https://developer.android.com/guide/components/tasks-and-back-stack.html)).
 In den meisten Fällen sollte die Rückwärts navigieren, aus der Benachrichtigungsaktivität den Benutzer der app abmelden und dann wieder auf den Home-Bildschirm zurückgeben. Zum Verwalten von des BackStack, Ihre app verwendet die [TaskStackBuilder](https://developer.xamarin.com/api/type/Android.App.TaskStackBuilder/) -Klasse zur Erstellung einer `PendingIntent` mit einen BackStack.
 
 Ein weiterer Aspekt der realen Welt ist, dass die ursprüngliche Aktivität zum Senden von Daten an die Benachrichtigungsaktivität möglicherweise. Z. B. möglicherweise die Benachrichtigung, dass eine SMS-Nachricht angekommen ist, und die Benachrichtigungsaktivität (eine Nachricht Bildschirm anzeigen), erfordert die ID der Nachricht, die die Nachricht an den Benutzer anzuzeigen. Die Aktivität, die erstellt die `PendingIntent` können die [Intent.PutExtra](https://developer.xamarin.com/api/member/Android.Content.Intent.PutExtra/p/System.String/System.String/) Methode, um Daten (z. B. eine Zeichenfolge) zum Intent hinzuzufügen, damit diese Daten an die Benachrichtigungsaktivität übergeben werden.
@@ -770,7 +770,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 
 In diesem Artikel wurde erläutert, wie lokale Benachrichtigungen unter Android zu erstellen. Es wurde beschrieben, den Aufbau einer Benachrichtigung gesendet wird, es wurde erklärt, wie mit `NotificationCompat.Builder` zum Erstellen von Benachrichtigungen, wie Style-Benachrichtigungen in große Symbole *Big Text*, *Image* und *Posteingang*  Formate, Benachrichtigung über Metadateneinstellungen wie z. B. Sichtbarkeit, Priorität und Kategorie festlegen und wie Sie eine Aktivität aus einer Benachrichtigung zu starten. Außerdem wird in diesem Artikel beschrieben, wie diese Benachrichtigungseinstellungen mit der neuen Heads-Up, Sperrbildschirm, funktionieren und *nicht stören* Features, die in Android 5.0 eingeführt wurde. Schließlich haben Sie gelernt, verwenden Sie `NotificationCompat.Builder` Notification-Kompatibilität mit früheren Versionen von Android zu verwalten.
 
-Richtlinien zum Entwerfen von Benachrichtigungen für Android, finden Sie unter [Benachrichtigungen](http://developer.android.com/guide/topics/ui/notifiers/notifications.html).
+Richtlinien zum Entwerfen von Benachrichtigungen für Android, finden Sie unter [Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 
 
 ## <a name="related-links"></a>Verwandte Links
@@ -778,7 +778,7 @@ Richtlinien zum Entwerfen von Benachrichtigungen für Android, finden Sie unter 
 - [NotificationsLab (Beispiel)](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
 - [LocalNotifications (Beispiel)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
 - [Lokale Benachrichtigungen In Android exemplarischen Vorgehensweise](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
-- [Benachrichtigung des Benutzers](http://developer.android.com/training/notify-user/index.html)
+- [Benachrichtigung des Benutzers](https://developer.android.com/training/notify-user/index.html)
 - [Benachrichtigung](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)
 - [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)

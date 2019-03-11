@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: cd80154602cc22668768fe217da7371b77ded003
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fa32783617fce99514560677184f17be904cd42d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112378"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670321"
 ---
 # <a name="launching-the-maps-application"></a>Starten die Maps-Anwendung
 
@@ -42,7 +42,7 @@ Der obige Code verwendet die Geo-Schema, um einen URI zu erstellen. Dieser URI-S
 
 -   `geo:latitude,longitude` &ndash; Öffnet die Maps-Anwendung, die am Lon Lat/zentriert. 
 
--   `geo:latitude,longitude?z=zoom` &ndash; Öffnet die Zuordnungen Anwendung Lon Lat/zentriert und vergrößert, auf die angegebene Stufe. Die Zoomstufe Prioritätswerte liegen zwischen 1 und 23: 1 zeigt die gesamte Erde und 23, wird die nächste Zoomstufe.
+-   `geo:latitude,longitude?z=zoom` &ndash; Öffnet die Zuordnungen Anwendung Lon Lat/zentriert und vergrößert, auf die angegebene Stufe. Die Zoomstufe reichen von 1 bis 23: 1 zeigt die gesamte Erde und 23, wird die nächste Zoomstufe.
 
 -   `geo:0,0?q=my+street+address` &ndash; Öffnet die Maps-Anwendung auf den Speicherort der eine Straße und Hausnummer. 
 
@@ -55,7 +55,7 @@ Die Versionen des URIS, die eine Abfrage (d. h. die Straßen suchen oder die Adr
 
 
 
-Weitere Informationen über Geo-URI-Schemas finden Sie unter [Anzeigen von einem Speicherort auf einer Karte](http://developer.android.com/guide/components/intents-common.html#Maps).
+Weitere Informationen über Geo-URI-Schemas finden Sie unter [Anzeigen von einem Speicherort auf einer Karte](https://developer.android.com/guide/components/intents-common.html#Maps).
 
 
 ## <a name="street-view"></a>Straße anzeigen

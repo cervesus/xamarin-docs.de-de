@@ -6,12 +6,13 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 4b19d060bd8adf1c2b09bb18b7ff608381a35231
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 03/19/2017
+ms.openlocfilehash: 899e40460371933a3e1cb694618c7d33a124e76c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116666"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672702"
 ---
 # <a name="handoff-in-xamarinios"></a>Die Übergabe in Xamarin.iOS
 
@@ -109,24 +110,24 @@ Aufgrund der sicherheitsanforderungen durch Übergabe auferlegt wird muss eine X
 
 Führen Sie folgende Schritte aus:
 
-1. Melden Sie sich bei der [Apple-Entwicklerportal](http://developer.apple.com).
+1. Melden Sie sich bei der [Apple-Entwicklerportal](https://developer.apple.com).
 2. Klicken Sie auf **Zertifikate, Bezeichner & Profile**.
 3. Wenn Sie dies noch nicht getan haben, klicken Sie auf **Bezeichner** und erstellen Sie eine ID für Ihre app (z. B. `com.company.appname`), andernfalls bearbeiten Sie Ihre vorhandenen-ID.
-4. Sicherstellen, dass die **iCloud** Dienst für die angegebene ID überprüft wurden: 
+4. Sicherstellen, dass die **iCloud** Dienst für die angegebene ID überprüft wurden:
 
     [![](handoff-images/provision01.png "Aktivieren Sie den iCloud-Dienst für die angegebene ID")](handoff-images/provision01.png#lightbox)
 5. Speichern Sie die Änderungen.
-4. Klicken Sie auf **Bereitstellungsprofile** > **Entwicklung** und erstellen Sie ein Bereitstellungsprofil für Sie Neuentwicklungen-app: 
+4. Klicken Sie auf **Bereitstellungsprofile** > **Entwicklung** und erstellen Sie ein Bereitstellungsprofil für Sie Neuentwicklungen-app:
 
     [![](handoff-images/provision02.png "Erstellen Sie ein neues entwicklungsbereitstellungsprofil für die app")](handoff-images/provision02.png#lightbox)
 5. Herunterladen Sie und installieren Sie das neue Bereitstellungsprofil oder verwenden Sie Xcode herunterladen und installieren das Profil.
-6. Bearbeiten Sie die Optionen der Xamarin.iOS-Projekt, und stellen Sie sicher, dass Sie das Bereitstellungsprofil verwenden, das Sie gerade erstellt haben: 
+6. Bearbeiten Sie die Optionen der Xamarin.iOS-Projekt, und stellen Sie sicher, dass Sie das Bereitstellungsprofil verwenden, das Sie gerade erstellt haben:
 
     [![](handoff-images/provision03.png "Wählen Sie das soeben erstellte Bereitstellungsprofil")](handoff-images/provision03.png#lightbox)
-7. Als Nächstes bearbeiten Ihrer **"Info.plist"** Datei, und stellen Sie sicher, dass Sie die App-ID verwenden, die verwendet wurde, um das Bereitstellungsprofil zu erstellen: 
+7. Als Nächstes bearbeiten Ihrer **"Info.plist"** Datei, und stellen Sie sicher, dass Sie die App-ID verwenden, die verwendet wurde, um das Bereitstellungsprofil zu erstellen:
 
     [![](handoff-images/provision04.png "Legen Sie die App-ID")](handoff-images/provision04.png#lightbox)
-8. Scrollen Sie zu der **Background Modes** Abschnitt, und überprüfen Sie die folgenden Elemente: 
+8. Scrollen Sie zu der **Background Modes** Abschnitt, und überprüfen Sie die folgenden Elemente:
 
     [![](handoff-images/provision05.png "Die erforderliche hintergrundmodi aktivieren")](handoff-images/provision05.png#lightbox)
 9. Speichern Sie die Änderungen auf alle Dateien an.
@@ -463,7 +464,7 @@ Diese JSON-Datei enthält ein Wörterbuch, das eine Liste von app-IDs in der For
 }
 ```
 
-Zum Signieren der JSON-Datei (so, dass sie den richtigen `Content-Type` von `application/pkcs7-mime`), verwenden Sie die **Terminal** app und eine `openssl` Befehl mit einem Zertifikat und Schlüssel, die von einer Zertifizierungsstelle vertrauenswürdig iOS ausgegeben (finden Sie unter [ http://support.apple.com/kb/ht5012 ](http://support.apple.com/kb/ht5012) eine Liste). Zum Beispiel:
+Zum Signieren der JSON-Datei (so, dass sie den richtigen `Content-Type` von `application/pkcs7-mime`), verwenden Sie die **Terminal** app und eine `openssl` Befehl mit einem Zertifikat und Schlüssel, die von einer Zertifizierungsstelle vertrauenswürdig iOS ausgegeben (finden Sie unter [ https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012) eine Liste). Zum Beispiel:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -606,7 +607,7 @@ Die erfolgreiche Implementierung die nahtlose Fortsetzung eine Benutzeraktivitä
 
 ## <a name="example-handoff-app"></a>Übergabe-Beispiel-App
 
-Als ein Beispiel für die Übergabe in einer Xamarin.iOS-app verwenden, haben wir enthalten die [ **MonkeyBrowser** ](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/) Beispiel-app mit diesem Handbuch. Die app verfügt über vier Registerkarten, mit denen der Benutzer im Web, jeweils mit einer bestimmten Aktivitätstyp zu durchsuchen: Weather "," Favoriten "," Kaffeepause "und" arbeiten.
+Als ein Beispiel für die Übergabe in einer Xamarin.iOS-app verwenden, haben wir enthalten die [ **MonkeyBrowser** ](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/) Beispiel-app mit diesem Handbuch. Die app verfügt über vier Registerkarten, mit denen der Benutzer im Web, jeweils mit einer bestimmten Aktivitätstyp zu durchsuchen: Weather "," Favoriten "," Kaffeepause "und" Arbeit ".
 
 Auf eine beliebige Registerkarte, wenn der Benutzer, eine neue URL und Taps eingibt der **wechseln** eine neue Schaltfläche `NSUserActivity` für diese Registerkarte, die die URL enthält, die der Benutzer zurzeit navigiert wird erstellt:
 
@@ -634,6 +635,6 @@ In diesem Artikel erhält eine Einführung in die Übergabe-Framework verwendet,
 - [MonkeyBrowser-Beispiel](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)
 - [iOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
 - [Was ist neu in iOS 9.0 verfügen](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [HomeKitDeveloper-Handbuch](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
+- [HomeKitDeveloper Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
 - [HomeKit Richtlinien zur Benutzeroberfläche](https://developer.apple.com/homekit/ui-guidelines/)
 - [Referenz zu HomeKit-Framework](https://developer.apple.com/library/ios/home_kit_framework_ref)
