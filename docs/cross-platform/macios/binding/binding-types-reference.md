@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 9c5a3cdbc8a8d5a046db90ffa48b12709359da98
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d460bf867ce09e614be76d0a4a7ffef01420cf82
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55234029"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669478"
 ---
 # <a name="binding-types-reference-guide"></a>Handbuch für Verweistypen Bindung
 
@@ -1851,7 +1851,7 @@ Die `SmartLink` Eigenschaft sollte festgelegt werden, auf "true", können Sie Xa
 
 Die `WeakFrameworks` Eigenschaft funktioniert genauso wie die `Frameworks` -Eigenschaft, außer dass zum Zeitpunkt der Verknüpfung, die `-weak_framework` Spezifizierer an Gcc übergeben wird, für jeden der aufgelisteten Frameworks.
 
-`WeakFrameworks` ermöglicht es Bibliotheken und Anwendungen schwache Verknüpfung mit dem Webplattform-Frameworks, damit sie optional diese verwenden können, wenn sie verfügbar sind, aber nicht für harte Abhängigkeiten zwischen ihnen dies nützlich nehmen ist, wenn Ihre Bibliothek vorgesehen ist, um zusätzliche Features hinzuzufügen neuere iOS-Versionen. Weitere Informationen zur schwache Verknüpfung finden Sie in Apple Dokumentation auf [schwache Verknüpfung](http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html).
+`WeakFrameworks` ermöglicht es Bibliotheken und Anwendungen schwache Verknüpfung mit dem Webplattform-Frameworks, damit sie optional diese verwenden können, wenn sie verfügbar sind, aber nicht für harte Abhängigkeiten zwischen ihnen dies nützlich nehmen ist, wenn Ihre Bibliothek vorgesehen ist, um zusätzliche Features hinzuzufügen neuere iOS-Versionen. Weitere Informationen zur schwache Verknüpfung finden Sie in Apple Dokumentation auf [schwache Verknüpfung](https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html).
 
 Es wäre gut für eine schwache Verknüpfung `Frameworks` Konten wie `CoreBluetooth`, `CoreImage`, `GLKit`, `NewsstandKit` und `Twitter` , da sie nur in iOS 5 verfügbar sind.
 

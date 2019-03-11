@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: f3315563725da7c54febd852298c60003eb056a4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2ed14752cc5906b68d277b4f492875f7e281b053
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104894"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671454"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Schieberegler, Schalter und segmentierte Steuerelemente in Xamarin.iOS
 
@@ -50,7 +50,7 @@ Der benutzerdefinierte Schieberegler sieht folgendermaßen aus:
  [![](slider-switch-segmented-controls-images/image27a.png "Benutzerdefinierte Schieberegler")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> Es gibt derzeit ein [Fehler](http://stackoverflow.com/a/19496179) verursacht die `ThumbTint` nicht zur Laufzeit gerendert wird, wie erwartet. Sie können die folgende Codezeile hinzufügen **vor** Code über dieses Problem zu umgehen. [[Quelle](http://stackoverflow.com/a/21396794)]:
+> Es gibt derzeit ein [Fehler](https://stackoverflow.com/a/19496179) verursacht die `ThumbTint` nicht zur Laufzeit gerendert wird, wie erwartet. Sie können die folgende Codezeile hinzufügen **vor** Code über dieses Problem zu umgehen. [Quelle](https://stackoverflow.com/a/21396794)]:
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
