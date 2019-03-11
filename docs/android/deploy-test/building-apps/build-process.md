@@ -6,20 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/03/2018
-ms.openlocfilehash: ae005b487e13ab4d2d39b26b10c7ca08e263ef67
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 99b5798e8d3cd5723f99aa2483d5d1c0eff8d57c
+ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899173"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57305645"
 ---
 # <a name="build-process"></a>Buildprozess
-
 
 ## <a name="overview"></a>Übersicht
 
 Der Xamarin.Android-Buildprozess ist dafür verantwortlich, alles zusammenzufügen: [Generieren von `Resource.designer.cs`](~/android/internals/api-design.md), Unterstützen von `AndroidAsset`, `AndroidResource` und anderen [Buildaktionen](#Build_Actions), Generieren von [Wrappern, die von Android aufgerufen werden können](~/android/platform/java-integration/android-callable-wrappers.md), und Generieren einer `.apk`-Datei für die Ausführung auf Android-Geräten.
-
 
 ## <a name="application-packages"></a>Anwendungspakete
 
@@ -43,7 +41,7 @@ Die Shared Runtime kann in Debugbuilds deaktiviert werden, indem die `$(AndroidU
 
 Die *schnelle Bereitstellung* arbeitet mit der Shared Runtime zusammen, um die Größe des Android-Anwendungspakets weiter zu verringern. Dies wird dadurch erreicht, dass die Assemblys der App nicht innerhalb des Pakets gebündelt werden. Stattdessen werden sie über `adb push` in das Ziel kopiert. Dieser Prozess beschleunigt den Build-/Bereitstellungs-/Debugzyklus, denn wenn *nur* Assemblys geändert werden, wird das Paket nicht erneut installiert. Stattdessen werden nur die aktualisierten Assemblys mit dem Zielgerät erneut synchronisiert. 
 
-Es ist bekannt, dass die schnelle Bereitstellung auf Geräten fehlschlägt, die die Synchronisierung von `adb` mit dem Verzeichnis `/data/data/@PACKAGE_NAME@/files/.__override__` blockieren. 
+Es ist bekannt, dass die schnelle Bereitstellung auf Geräten fehlschlägt, die die Synchronisierung von `adb` mit dem Verzeichnis `/data/data/@PACKAGE_NAME@/files/.__override__` blockieren.
 
 Die schnelle Bereitstellung ist standardmäßig aktiviert und kann in Debugbuilds deaktiviert werden, indem die `$(EmbedAssembliesIntoApk)`-Eigenschaft auf `True` festgelegt wird.
 
@@ -88,13 +86,13 @@ MSBuild-Eigenschaften steuern das Verhalten der Ziele. Sie werden in der Projekt
 
 -   **DebugType** &ndash; Gibt den [Typ von Debugsymbolen](https://docs.microsoft.com/visualstudio/msbuild/csc-task) an, die als Teil des Builds generiert werden sollen. Dies wirkt sich ebenfalls darauf aus, ob die Anwendung debuggt werden kann. Mögliche Werte:
 
-    - **Full**: Vollständige Symbole werden generiert. Wenn die MSBuild-Eigenschaft `DebugSymbols` ebenfalls den Wert `True` aufweist, kann das Anwendungspaket debuggt werden.
+    - **Full:** Vollständige Symbole werden generiert. Wenn die MSBuild-Eigenschaft `DebugSymbols` ebenfalls den Wert `True` aufweist, kann das Anwendungspaket debuggt werden.
 
-    - **PdbOnly**: Es werden PDB-Symbole generiert. Das Anwendungspaket kann *nicht* debuggt werden.
+    - **PdbOnly:** PDB-Symbole werden generiert. Das Anwendungspaket kann *nicht* debuggt werden.
 
     Wenn `DebugType` nicht festgelegt wurde oder die leere Zeichenfolge ist, steuert die `DebugSymbols`-Eigenschaft, ob die Anwendung debuggt werden kann.
 
-    - **AndroidGenerateLayoutBindings** &ndash; Ermöglicht die Generierung von [layout code-behind](https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/LayoutCodeBehind.md), wenn auf `true` festgelegt, oder deaktiviert es vollständig, wenn auf `false` festgelegt. Der Standardwert ist `false`.
+    - **AndroidGenerateLayoutBindings** &ndash; Ermöglicht die Generierung von [layout code-behind](https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/LayoutCodeBehind.md), wenn auf `true` festgelegt, oder deaktiviert es vollständig, wenn auf `false` festgelegt. Der Standardwert ist `false`sein.
     
 ### <a name="install-properties"></a>Installationseigenschaften
 
@@ -117,7 +115,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 -   **AndroidApkSigningAlgorithm**: Ein Zeichenfolgenwert, der den mit `jarsigner -sigalg` zu verwendenden Signaturalgorithmus angibt.
 
-    Der Standardwert ist `md5withRSA`.
+    Der Standardwert ist `md5withRSA`sein.
 
     Hinzugefügt in Xamarin.Android 8.2.
 
@@ -176,11 +174,11 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 -   **AndroidFastDeploymentType** &ndash; Eine durch Doppelpunkte (`:`) getrennte Liste von Werten zum Steuern, welche Typen im [Verzeichnis für schnelle Bereitstellung](#Fast_Deployment) auf dem Zielgerät bereitgestellt werden können, wenn die MSBuild-Eigenschaft `$(EmbedAssembliesIntoApk)` den Wert `False` aufweist. Wenn eine Ressource schnell bereitgestellt wird, ist sie *nicht* in die generierte `.apk`-Datei eingebettet, was die Bereitstellungszeiten beschleunigen kann. (Je mehr schneller bereitgestellt wird, desto seltener muss die `.apk`-Datei neu erstellt werden, und der Installationsprozess kann schneller ablaufen.) Gültige Werte sind:
 
-    - `Assemblies`: Bereitstellen von Anwendungsassemblys.
+    - `Assemblies`: Anwendungsassemblys werden bereitgestellt.
 
-    - `Dexes`: Bereitstellen von `.dex`-Dateien, Android-Ressourcen und Android-Objekten. **Dieser Wert kann *nur* auf Geräten mit Android 4.4 oder höher (API-19) verwendet werden.**
+    - `Dexes`: `.dex`-Dateien, Android-Ressourcen und Android-Objekte werden bereitgestellt. **Dieser Wert kann *nur* auf Geräten mit Android 4.4 oder höher (API-19) verwendet werden.**
 
-    Der Standardwert ist `Assemblies`.
+    Der Standardwert ist `Assemblies`sein.
 
     **Experimentell**. In Xamarin.Android 6.1 hinzugefügt.
 
@@ -192,30 +190,30 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 -   **AndroidHttpClientHandlerType**: Steuert die standardmäßige Implementierung von `System.Net.Http.HttpMessageHandler`, die vom `System.Net.Http.HttpClient`-Standardkonstruktor verwendet wird. Der Wert ist ein Name mit Assemblyqualifikation einer `HttpMessageHandler`-Unterklasse und eignet sich für die Verwendung mit [`System.Type.GetType(string)`](/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_).
 
-    Der Standardwert ist `System.Net.Http.HttpClientHandler, System.Net.Http`.
+    Der Standardwert ist `System.Net.Http.HttpClientHandler, System.Net.Http`sein.
 
     Der Wert kann mit `Xamarin.Android.Net.AndroidClientHandler` überschrieben werden, der die Android Java-APIs verwendet, um Netzwerkanforderungen auszuführen. Dies ermöglicht den Zugriff auf TLS 1.2-URLs, wenn die zugrunde liegende Android-Version TLS 1.2 unterstützt.  
     Nur Android 5.0 und höhere Versionen stellen zuverlässige TLS 1.2-Unterstützung durch Java bereit.
 
-    *Hinweis*: Wenn TLS 1.2-Unterstützung in Android-Versionen vor 5.0 erforderlich ist, *oder* wenn TLS 1.2-Unterstützung mit dem `System.Net.WebClient` und zugehörigen APIs benötigt wird, sollte `$(AndroidTlsProvider)` verwendet werden.
+    *Hinweis:* Wenn TLS 1.2-Unterstützung in Android-Versionen vor 5.0 erforderlich ist *oder* TLS 1.2-Unterstützung mit dem `System.Net.WebClient` und zugehörigen APIs benötigt wird, sollte `$(AndroidTlsProvider)` verwendet werden.
 
-    *Hinweis*: Die Unterstützung für diese Eigenschaft funktioniert durch Festlegen der [`XA_HTTP_CLIENT_HANDLER_TYPE`-Umgebungsvariable](~/android/deploy-test/environment.md).
+    *Hinweis:* Die Unterstützung für diese Eigenschaft wird durch Festlegen der [`XA_HTTP_CLIENT_HANDLER_TYPE`-Umgebungsvariable](~/android/deploy-test/environment.md) konfiguriert.
     Wenn in einer Datei ein `$XA_HTTP_CLIENT_HANDLER_TYPE`-Wert mit einer `@(AndroidEnvironment)`-Buildaktion gefunden wird, hat dieser Wert Vorrang.
 
     In Xamarin.Android 6.1 hinzugefügt.
 
 -   **AndroidTlsProvider** &ndash; Ein Zeichenfolgenwert, der angibt, welcher TLS-Anbieter in einer Anwendung verwendet werden soll. Dabei sind folgende Werte möglich:
 
-    - `btls`: Verwendet [BoringSSL](https://boringssl.googlesource.com/boringssl) für die TLS-Kommunikation mit [HttpWebRequest](xref:System.Net.HttpWebRequest).
+    - `btls`: [Boring SSL](https://boringssl.googlesource.com/boringssl) wird für die TLS-Kommunikation mit [HttpWebRequest](xref:System.Net.HttpWebRequest) verwendet.
       Dies ermöglicht die Verwendung von TLS 1.2 in allen Android-Versionen.
 
-    - `legacy`: Verwendet die historisch verwaltete SSL-Implementierung für die Netzwerkinteraktion. Dies unterstützt TLS 1.2 *nicht*.
+    - `legacy`: Die verwaltete Legacy-SSL-Implementierung wird für die Netzwerkinteraktion verwendet. Dies unterstützt TLS 1.2 *nicht*.
 
-    - `default`: Gestatten Sie *Mono* die Auswahl des TLS-Standardanbieters.
+    - `default`: Der TLS-Standardanbieter kann von *Mono* ausgewählt werden.
       Dies entspricht `legacy`, auch in Xamarin.Android 7.3.  
-      *Hinweis*: Dieser Wert wird wahrscheinlich nicht in `.csproj`-Werten angezeigt, da der „Standardwert“ der IDE zu einer*Entfernung* der `$(AndroidTlsProvider)`-Eigenschaft führt.
+      *Hinweis:* Dieser Wert wird wahrscheinlich nicht in `.csproj`-Werten angezeigt, da der Standardwert der IDE dazu führt, dass die `$(AndroidTlsProvider)`-Eigenschaft *entfernt* wird.
 
-    - Nicht festgelegt oder leere Zeichenfolge: In Xamarin.Android 7.1 entspricht dies `legacy`.  
+    - Gelöschte/leere Zeichenfolge: In Xamarin.Android 7.1 entspricht dies `legacy`.  
       In Xamarin.Android 7.3 entspricht dies `btls`.
 
     Der Standardwert ist die leere Zeichenfolge.
@@ -224,11 +222,11 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 -   **AndroidLinkMode** &ndash; Gibt an, welcher Typ von [Verknüpfung](~/android/deploy-test/linker.md) für Assemblys ausgeführt werden soll, die im Android-Paket enthalten sind. Wird nur in Android-Anwendungsprojekten verwendet. Der Standardwert ist *SdkOnly*. Gültige Werte sind:
 
-    - **Keiner**: Es wird keine Verknüpfung versucht.
+    - **None:** Es wird keine Verknüpfung durchgeführt.
 
-    - **SdkOnly**: Verknüpfung wird nur für die Basisklassenbibliotheken ausgeführt, nicht für die Assemblys des Benutzers.
+    - **SdkOnly:** Die Verknüpfung wird nur für die Basisklassenbibliotheken ausgeführt, nicht für die Assemblys des Benutzers.
 
-    - **Full**: Verknüpfung wird für die Basisklassenbibliotheken und die Assemblys des Benutzers ausgeführt. **Hinweis:** Die Verwendung eines `AndroidLinkMode`-Werts von *Full* führt häufig zu fehlerhaften Apps, insbesondere wenn Reflektion verwendet wird. Vermeiden Sie diesen Wert (es sei denn, Sie wissen *wirklich*, was Sie tun).
+    - **Full:** Die Verknüpfung wird für die Basisklassenbibliotheken und die Assemblys des Benutzers ausgeführt. **Hinweis**: Die Verwendung des `AndroidLinkMode`-Werts *Full* führt häufig zu fehlerhaften Apps, insbesondere beim Einsatz von Reflektion. Vermeiden Sie diesen Wert (es sei denn, Sie wissen *wirklich*, was Sie tun).
 
     ```xml
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
@@ -244,7 +242,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
 
--   **LinkerDumpDependencies** &ndash; Eine boolesche Eigenschaft, die das Generieren von Linker-Abhängigkeitsdateien ermöglicht. Diese Datei kann als Eingabe für das [Illinkanalyzer](https://github.com/mono/linker/tree/master/analyzer)-Tool verwendet werden.
+-   **LinkerDumpDependencies** &ndash; Eine boolesche Eigenschaft, die das Generieren von Linker-Abhängigkeitsdateien ermöglicht. Diese Datei kann als Eingabe für das [Illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md)-Tool verwendet werden.
 
     Der Standardwert ist „False“.
 
@@ -268,8 +266,8 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     -   `armeabi-v7a`
     -   `x86`
-    -   `arm64-v8a`: Erfordert Xamarin.Android 5.1 oder höher.
-    -   `x86_64`: Erfordert Xamarin.Android 5.1 oder höher.
+    -   `arm64-v8a`: Xamarin.Android 5.1 oder höher wird benötigt.
+    -   `x86_64`: Xamarin.Android 5.1 oder höher wird benötigt.
 
 -   **AndroidUseSharedRuntime** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob die *Shared Runtime-Pakete* erforderlich sind, um die Anwendung auf dem Zielgerät auszuführen. Durch die Verwendung der Shared Runtime-Pakete kann das Anwendungspaket kleiner werden, wodurch der Vorgang der Paketerstellung und -bereitstellung beschleunigt wird, was zu einem schnelleren Verarbeitungszyklus für Build/Bereitstellung/Debuggen führt.
 
@@ -317,19 +315,19 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 -   **MandroidI18n** &ndash; Gibt die Internationalisierungsunterstützung an, die in der Anwendung enthalten ist, wie z.B. Sortierung und Sortieren von Tabellen. Der Wert ist eine durch Kommas oder Semikolons getrennte Liste von mindestens einem der folgenden Werte, für den nicht zwischen Groß-/Kleinschreibung unterschieden wird:
 
-    -   **Keiner**: Keine zusätzliche Codierung einbeziehen.
+    -   **None:** Keine zusätzlichen Codierungen werden einbezogen.
 
-    -   **All**: Alle verfügbaren Codierungen einschließen.
+    -   **All:** Alle verfügbaren Codierungen werden einbezogen.
 
-    -   **CJK**: Chinesische, japanische und koreanische Codierungen einschließen, z.B. *Japanisch (EUC)* \[enc-jp, CP51932\], *Japanisch (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\], *Japanisch (JIS)* \[CP50220\], *Chinesisch vereinfacht (GB2312)* \[gb2312, CP936\], *Koreanisch (UHC)* \[ks\_c\_5601-1987, CP949\], *Koreanisch (EUC)* \[euc-kr, CP51949\], *Chinesisch traditionell (Big5)* \[big5, CP950\] und *Chinesisch vereinfacht (GB18030)* \[GB18030, CP54936\].
+    -   **CJK:** Chinesische, japanische und koreanische Codierungen werden einbezogen, z.B. *Japanisch (EUC)* \[enc-jp, CP51932\], *Japanisch (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\], *Japanisch (JIS)* \[CP50220\], *Chinesisch vereinfacht (GB2312)* \[gb2312, CP936\], *Koreanisch (UHC)* \[ks\_c\_5601-1987, CP949\], *Koreanisch (EUC)* \[euc-kr, CP51949\], *Chinesisch traditionell (Big5)* \[big5, CP950\] und *Chinesisch vereinfacht (GB18030)* \[GB18030, CP54936\].
 
-    -   **MidEast**: Codierungen des Nahen Ostens einschließen, z.B. *Türkisch (Windows)* \[iso-8859-9, CP1254\], *Hebräisch (Windows)* \[windows-1255, CP1255\], *Arabisch (Windows)* \[windows-1256, CP1256\], *Arabisch (ISO)* \[iso-8859-6, CP28596\], *Hebräisch (ISO)* \[iso-8859-8, CP28598\], *Lateinisch 5 (ISO)* \[iso-8859-9, CP28599\] und *Hebräisch (Iso Alternative)* \[iso-8859-8, CP38598\].
+    -   **MidEast:** Codierungen des Nahen Ostens werden einbezogen, z.B. *Türkisch (Windows)* \[iso-8859-9, CP1254\], *Hebräisch (Windows)* \[windows-1255, CP1255\], *Arabisch (Windows)* \[windows-1256, CP1256\], *Arabisch (ISO)* \[iso-8859-6, CP28596\], *Hebräisch (ISO)* \[iso-8859-8, CP28598\], *Lateinisch 5 (ISO)* \[iso-8859-9, CP28599\] und *Hebräisch (ISO-Alternative)* \[iso-8859-8, CP38598\].
 
-    -   **Other**: Andere Codierungen einschließen, z.B. *Kyrillisch (Windows)* \[CP1251\], *Baltisch (Windows)* \[iso-8859-4, CP1257\], *Vietnamesisch (Windows)* \[CP1258\], *Kyrillisch (KOI8-R)* \[koi8-r, CP1251\], *Ukrainisch (KOI8-U)* \[koi8-u, CP1251\], *Baltisch (ISO)* \[iso-8859-4, CP1257\], *Kyrillisch (ISO)* \[iso-8859-5, CP1251\], *ISCII Davenagari* \[x-iscii-de, CP57002\], *ISCII Bangla* \[x-iscii-be, CP57003\], *ISCII Tamil* \[x-iscii-ta, CP57004\], *ISCII Telegu* \[x-iscii-te, CP57005\], *ISCII Assamesisch* \[x-iscii-as, CP57006\], *ISCII Odia* \[x-iscii-or, CP57007\], *ISCII Kannada* \[x-iscii-ka, CP57008\], *ISCII Malayalam* \[x-iscii-ma, CP57009\], *ISCII Gujarati* \[x-iscii-gu, CP57010\], *ISCII Punjabi* \[x-iscii-pa, CP57011\] und *Thailändisch (Windows)* \[CP874\].
+    -   **Other:** Andere Codierungen werden einbezogen, z.B. *Kyrillisch (Windows)* \[CP1251\], *Baltisch (Windows)* \[iso-8859-4, CP1257\], *Vietnamesisch (Windows)* \[CP1258\], *Kyrillisch (KOI8-R)* \[koi8-r, CP1251\], *Ukrainisch (KOI8-U)* \[koi8-u, CP1251\], *Baltisch (ISO)* \[iso-8859-4, CP1257\], *Kyrillisch (ISO)* \[iso-8859-5, CP1251\], *ISCII Devanagari* \[x-iscii-de, CP57002\], *ISCII Bangla* \[x-iscii-be, CP57003\], *ISCII Tamil* \[x-iscii-ta, CP57004\], *ISCII Telugu* \[x-iscii-te, CP57005\], *ISCII Assamesisch* \[x-iscii-as, CP57006\], *ISCII Odia* \[x-iscii-or, CP57007\], *ISCII Kannada* \[x-iscii-ka, CP57008\], *ISCII Malayalam* \[x-iscii-ma, CP57009\], *ISCII Gujarati* \[x-iscii-gu, CP57010\], *ISCII Punjabi* \[x-iscii-pa, CP57011\] und *Thailändisch (Windows)* \[CP874\].
 
-    -   **Rare**: Seltene Codierungen einschließen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\]*, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
+    -   **Rare:** Seltene Codierungen werden einbezogen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\]*, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
 
-    -   **West**: Westliche Codierungen einschließen, z.B. *Westeuropäisch (Mac)* \[macintosh, CP10000\], *Isländisch (Mac)* \[x-mac-icelandic, CP10079\], *Zentraleuropäisch (Windows)* \[iso-8859-2, CP1250\], *Westeuropäisch (Windows)* \[iso-8859-1, CP1252\], *Griechisch (Windows)* \[iso-8859-7, CP1253\], *Zentraleuropäisch (ISO)* \[iso-8859-2, CP28592\], *Lateinisch 3 (ISO)* \[iso-8859-3, CP28593\], *Griechisch (ISO)* \[iso-8859-7, CP28597\], *Lateinisch 9 (ISO)* \[iso-8859-15, CP28605\], *OEM USA* \[CP437\], *Westeuropäisch (DOS)* \[CP850\], *Portugiesisch (DOS)* \[CP860\], *Isländisch (DOS)* \[CP861\], *Französisch, Kanada (DOS)* \[CP863\] und *Nordisch (DOS)* \[CP865\].
+    -   **West:** Westliche Codierungen werden einbezogen, z.B. *Westeuropäisch (Mac)* \[macintosh, CP10000\], *Isländisch (Mac)* \[x-mac-icelandic, CP10079\], *Zentraleuropäisch (Windows)* \[iso-8859-2, CP1250\], *Westeuropäisch (Windows)* \[iso-8859-1, CP1252\], *Griechisch (Windows)* \[iso-8859-7, CP1253\], *Zentraleuropäisch (ISO)* \[iso-8859-2, CP28592\], *Lateinisch 3 (ISO)* \[iso-8859-3, CP28593\], *Griechisch (ISO)* \[iso-8859-7, CP28597\], *Lateinisch 9 (ISO)* \[iso-8859-15, CP28605\], *OEM USA* \[CP437\], *Westeuropäisch (DOS)* \[CP850\], *Portugiesisch (DOS)* \[CP860\], *Isländisch (DOS)* \[CP861\], *Französisch, Kanada (DOS)* \[CP863\] und *Nordisch (DOS)* \[CP865\].
 
 
     ```xml
@@ -421,7 +419,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 - **AndroidGenerateJniMarshalMethodsAdditionalArguments** &ndash; Eine Zeichenfolgeneigenschaft, die verwendet werden kann, um zusätzliche Parameter zum `jnimarshalmethod-gen.exe`-Aufruf hinzuzufügen.  Dies ist hilfreich beim Debuggen, sodass Optionen wie z.B. `-v`, `-d`, oder `--keeptemp` verwendet werden können.
 
-   Der Standardwert ist eine leere Zeichenfolge. Er kann in der csproj-Datei oder in der Befehlszeile festgelegt werden. Zum Beispiel:
+   Der Standardwert ist eine leere Zeichenfolge. Er kann in der csproj-Datei oder in der Befehlszeile festgelegt werden. Beispiel:
 
     ```xml
     <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
@@ -456,10 +454,10 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
 
 -   **AndroidClassParser** &ndash; Eine Zeichenfolgeneigenschaft, die steuert, wie `.jar`-Dateien analysiert werden. Mögliche Werte:
 
-    - **class-parse**: Verwendet `class-parse.exe`, um Java-Bytecode direkt (ohne Unterstützung durch eine JVM) zu analysieren. Dieser Wert ist experimentell. 
+    - **class-parse:** `class-parse.exe` wird verwendet, um Java-Bytecode direkt (ohne Unterstützung durch eine JVM) zu analysieren. Dieser Wert ist experimentell. 
 
 
-    - **jar2xml**: Verwendet `jar2xml.jar`, um Java-Reflektion zu verwenden, um Typen und Member aus einer `.jar`-Datei zu extrahieren.
+    - **jar2xml:** `jar2xml.jar` wird verwendet, um Java-Reflektion zu verwenden, um Typen und Member aus einer `.jar`-Datei zu extrahieren.
 
     `class-parse` besitzt die folgenden Vorteile im Vergleich zu `jar2xml`:
 
@@ -469,15 +467,15 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
 
     **Experimentell**. Hinzugefügt in Xamarin.Android 6.0.
 
-    Der Standardwert ist `jar2xml`.
+    Der Standardwert ist `jar2xml`sein.
 
     Der Standardwert wird sich in einem zukünftigen Release ändern.
 
 -   **AndroidCodegenTarget** &ndash; Eine Zeichenfolgeneigenschaft, die die Codegenerierungsziel-ABI steuert. Mögliche Werte:
 
-    - **XamarinAndroid**: Verwendet die JNI-Bindungs-API, die seit Mono für Android 1.0 vorhanden ist. Bindungsassemblys, die mit Xamarin.Android 5.0 oder höher erstellt wurden, können nur unter Xamarin.Android 5.0 oder höher (API-/ABI-Erweiterungen) ausgeführt werden, aber die *Quelle* ist kompatibel mit früheren Produktversionen.
+    - **XamarinAndroid:** Die JNI-Bindungs-API, die seit Mono für Android 1.0 vorhanden ist, wird verwendet. Bindungsassemblys, die mit Xamarin.Android 5.0 oder höher erstellt wurden, können nur unter Xamarin.Android 5.0 oder höher (API-/ABI-Erweiterungen) ausgeführt werden, aber die *Quelle* ist kompatibel mit früheren Produktversionen.
 
-    - **XAJavaInterop1**: Verwendet Java.Interop für JNI-Aufrufe. Bindungsassemblys, die `XAJavaInterop1` verwenden, können nur mit Xamarin.Android 6.1 oder höher erstellt und ausgeführt werden. Xamarin.Android 6.1 oder höher bindet `Mono.Android.dll` mit diesem Wert.
+    - **XAJavaInterop1:** Java.Interop wird für JNI-Aufrufe verwendet. Bindungsassemblys, die `XAJavaInterop1` verwenden, können nur mit Xamarin.Android 6.1 oder höher erstellt und ausgeführt werden. Xamarin.Android 6.1 oder höher bindet `Mono.Android.dll` mit diesem Wert.
 
       Die Vorteile von `XAJavaInterop1` umfassen Folgendes:
 
@@ -487,7 +485,7 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
 
       - `jmethodID`-Zwischenspeicherung von durch Java aufrufbare Wrapperkonstruktoren für verwaltete Unterklassen.
 
-    Der Standardwert ist `XAJavaInterop1`.
+    Der Standardwert ist `XAJavaInterop1`sein.
 
 
 ### <a name="resource-properties"></a>Ressourceneigenschaften
@@ -500,7 +498,7 @@ Ressourceneigenschaften steuern die Generierung der `Resource.designer.cs`-Datei
 
 -   **MonoAndroidResourcePrefix** &ndash; Gibt ein *Pfadpräfix* an, das am Anfang von Dateinamen mit einer Buildaktion von `AndroidResource` entfernt wird. Damit soll ermöglicht werden, den Speicherort von Ressourcen zu ändern.
 
-    Der Standardwert ist `Resources`. Ändern Sie diese Option für die Java-Projektstruktur in `res`.
+    Der Standardwert ist `Resources`sein. Ändern Sie diese Option für die Java-Projektstruktur in `res`.
 
 -   **AndroidExplicitCrunch** &ndash; Wenn Sie eine App mit einer sehr großen Anzahl lokaler zeichenbarer Ressourcen erstellen, kann ein anfänglicher Buildprozess (oder erneuter Buildprozess) mehrere Minuten dauern. Um den Buildprozess zu beschleunigen, versuchen Sie, diese Eigenschaft einzuschließen und auf `True` festzulegen. Wenn diese Eigenschaft festgelegt ist, verarbeitet der Buildprozess PNG-Dateien vorab.
 
@@ -615,7 +613,7 @@ Alle Dateien mit einer *AndroidResource*-Buildaktion werden während des Buildpr
 </ItemGroup>
 ```
 
-Fortgeschrittene Benutzer wünschen sich vielleicht, dass verschiedene Ressourcen in verschiedenen Konfigurationen, aber mit demselben effektiven Pfad verwendet werden. Dies kann erreicht werden, indem mehrere Ressourcenverzeichnisse und Dateien mit den gleichen relativen Pfaden innerhalb dieser verschiedenen Verzeichnisse vorhanden sind und MSBuild-Bedingungen verwendet werden, um bedingt verschiedene Dateien in verschiedenen Konfigurationen einzubinden. Zum Beispiel:
+Fortgeschrittene Benutzer wünschen sich vielleicht, dass verschiedene Ressourcen in verschiedenen Konfigurationen, aber mit demselben effektiven Pfad verwendet werden. Dies kann erreicht werden, indem mehrere Ressourcenverzeichnisse und Dateien mit den gleichen relativen Pfaden innerhalb dieser verschiedenen Verzeichnisse vorhanden sind und MSBuild-Bedingungen verwendet werden, um bedingt verschiedene Dateien in verschiedenen Konfigurationen einzubinden. Beispiel:
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">

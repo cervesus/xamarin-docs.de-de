@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e8b1fdd933d026875ae10e76894120c8c4504769
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123335"
 ---
+
 # <a name="publishing-to-google-play"></a>Veröffentlichung in Google Play
 
 Obwohl es eine Reihe von App-Märkten für das Vertreiben von Anwendungen gibt, ist Google Play bei Weitem der weltweit größte und am häufigsten besuchte Store für Android-Apps. Google Play bietet eine einzelne Plattform zum Verteilen, für die Ankündigung, den Verkauf und die Analyse der Verkäufe einer Android-Anwendung.
@@ -143,7 +138,7 @@ Unter [Creating a New Certificate (Erstellen eines neuen Zertifikats)](~/android
 5. Signieren Sie die Anwendung mit Ihrem Zertifikat.
 6. Veröffentlichen Sie Ihre signierte App in Google Play.
 
-Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/index.md#archive) stellte das Dialogfeld **Verteilungskanal** zwei Möglichkeiten für die Verteilung dar: **Ad-hoc** und **Google Play**. Wenn das Dialogfeld **Signierungsidentität** stattdessen angezeigt wird, klicken Sie auf **Zurück**, um zum Dialogfeld **Verteilungskanal** zurückzukehren. Wählen Sie **Google Play**, und klicken Sie auf **Weiter**:
+Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/index.md#archive) standen im Dialogfeld **Verteilungskanal** zwei Möglichkeiten für die Verteilung zur Auswahl: **Ad-hoc** und **Google Play**. Wenn das Dialogfeld **Signierungsidentität** stattdessen angezeigt wird, klicken Sie auf **Zurück**, um zum Dialogfeld **Verteilungskanal** zurückzukehren. Wählen Sie **Google Play**, und klicken Sie auf **Weiter**:
 
 [![Dialogfeld „Verteilungskanal“](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -163,7 +158,7 @@ Im nächsten Abschnitt wird erläutert, wie ein neues Google API-Projekt erstell
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Visual Studio für Mac umfasst einen integrierten Workflow für die Veröffentlichung von Apps in Google Play. Wenn Sie eine Xamarin Studi-Version vor 5.9 verwenden, müssen Sie Ihre Android-Anwendungspaket über die Google Play-Entwicklerkonsole manuell hochladen. Verwenden Sie anschließend das Dialogfeld **In Google Play veröffentlichen** für weiter APK-Updates. Es muss auch mindestens ein APK bereits hochgeladen sein, bevor Sie **In Google Play veröffentlichen** nutzen können. Wenn Sie Ihr erstes Android-Anwendungspaket noch nicht hochgeladen haben, müssen Sie dies manuell tun. Weitere Informationen zum manuellen Hochladen eines Android-Anwendungspakets finden Sie unter [Manually Uploading the APK (Manuelles Hochladen eines Android-Anwendungspakets)](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md).
+Visual Studio für Mac umfasst einen integrierten Workflow für die Veröffentlichung von Apps in Google Play.
 
 Unter [Creating a New Certificate (Erstellen eines neuen Zertifikats)](~/android/deploy-test/signing/index.md#newcert) wurde das Erstellen eines neuen Zertifikats für die Signierung von Android-Apps erläutert. Die folgenden Schritte gliedern auf, wie eine Xamarin.Android-App in Google Play veröffentlicht wird:
 

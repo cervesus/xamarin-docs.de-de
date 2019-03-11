@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 0e8b727fb520b6901bf397c9cfb67947897cbc8b
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 1a8611e5dd0be77eeef065d546f6a0642f384b00
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056958"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557281"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms-Bindungsmodus
 
@@ -101,10 +101,7 @@ Dies liegt daran, dass eine Bindung der `SelectedItem`-Eigenschaft dazu führen 
 
 ### <a name="one-time-bindings"></a>Einmalige Bindungen
 
-Mehrere Eigenschaften weisen den Standardbindungsmodus `OneTime` auf. Diese lauten wie folgt:
-
-- die `IsTextPredictionEnabled`-Eigenschaft von `Entry`
-- die Eigenschaften `Text`, `BackgroundColor` und `Style` von `Span`
+Einige Eigenschaften wie `IsTextPredictionEnabled` von `Entry` nutzen den Standardbindungsmodus `OneTime`.
 
 Zieleigenschaften mit dem Bindungsmodus `OneTime` werden nur dann aktualisiert, wenn der Bindungskontext sich ändert. Für Bindungen dieser Zieleigenschaften vereinfacht das die Bindungsinfrastruktur, weil es nicht erforderlich ist, die Änderungen der Quelleigenschaften zu überwachen.
 
