@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 142c22cd239d6b66e5139346b45994ef2f20bdc8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831988"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672559"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Automatisierungseigenschaften in Xamarin.Forms
 
@@ -36,7 +36,7 @@ Jede Plattform verfügt über eine andere Sprachausgabe, die die Barrierefreihei
 
 - iOS verfügt über VoiceOver. Weitere Informationen finden Sie unter [Test Accessibility on Your Device with VoiceOver (Testen der Barrierefreiheit auf Ihrem Gerät mit VoiceOver)](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) auf developer.apple.com.
 - Android verfügt über TalkBack. Weitere Informationen finden Sie unter [Testing Your App's Accessibility (Testen der Barrierefreiheit Ihrer App)](https://developer.android.com/training/accessibility/testing.html#talkback) auf developer.android.com.
-- Windows verfügt über Narrator. Weitere Informationen finden Sie unter [Verify main app scenarios by using Narrator (Überprüfen der wichtigsten App-Szenarios mit Narrator)](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/).
+- Windows verfügt über Narrator. Weitere Informationen finden Sie unter [Verify main app scenarios by using Narrator (Überprüfen der wichtigsten App-Szenarios mit Narrator)](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator).
 
 Das genaue Verhalten einer Sprachausgabe hängt jedoch von der Software und deren Konfiguration durch den Benutzer ab. Die meisten Sprachausgaben lesen zum Beispiel den einem Steuerelement zugeordneten Text, wenn dieses fokussiert wird. So können sich Benutzer orientieren, wenn sie zwischen den Steuerelementen auf der Seite wechseln. Einige Sprachausgaben lesen auch die komplette Benutzeroberfläche der Anwendung, wenn eine Seite angezeigt wird. Dadurch kann der Benutzer alle auf der Seite verfügbaren Informationsinhalte erhalten, bevor er darin navigiert.
 

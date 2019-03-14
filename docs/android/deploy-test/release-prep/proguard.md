@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 998232119159c5dc3a284dd51d55dc381271a4e0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f6f3377c4fdeedefa3277d05012ec868f6626c41
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117394"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669998"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -192,7 +192,7 @@ Die folgenden Optionen werden von Xamarin.Android *ignoriert*:
 
 Wenn Sie ProGuard mit Android 7.0 oder höher verwenden möchten, müssen Sie eine neuere Version von ProGuard herunterladen, da das Android SDK nicht über eine neue Version verfügt, die mit JDK 1.8 kompatibel ist.
 
-Sie können dieses [NuGet-Paket](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0) verwenden, um eine neuere `proguard.jar`-Version zu installieren. Weitere Informationen zum Aktualisieren des Standard-Android SDKs `proguard.jar`, finden Sie in dieser [Stack Overflow](http://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706)-Erläuterung.
+Sie können dieses [NuGet-Paket](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0) verwenden, um eine neuere `proguard.jar`-Version zu installieren. Weitere Informationen zum Aktualisieren des Standard-Android SDKs `proguard.jar`, finden Sie in dieser [Stack Overflow](https://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706)-Erläuterung.
 
 Sie finden alle Versionen von ProGuard auf der [SourceForge-Seite](https://sourceforge.net/projects/proguard/files/). 
 
@@ -341,7 +341,7 @@ Die ProGuard-Seite [Problembehandlung](https://stuff.mit.edu/afs/sipb/project/an
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Leitfaden erläutert, wie ProGuard in Xamarin.Android funktioniert, wie Sie das Tool in Ihrem Anwendungsprojekt aktivieren und konfigurieren. Er stellt ProGuard-Beispielkonfigurationen bereit, und beschreibt Lösungen für häufig auftretende Probleme. Weitere Informationen zum ProGuard-Tool und Android finden Sie unter [Verkleinern des Codes und der Ressourcen](http://developer.android.com/tools/help/proguard.html). 
+Dieser Leitfaden erläutert, wie ProGuard in Xamarin.Android funktioniert, wie Sie das Tool in Ihrem Anwendungsprojekt aktivieren und konfigurieren. Er stellt ProGuard-Beispielkonfigurationen bereit, und beschreibt Lösungen für häufig auftretende Probleme. Weitere Informationen zum ProGuard-Tool und Android finden Sie unter [Verkleinern des Codes und der Ressourcen](https://developer.android.com/tools/help/proguard.html). 
 
 
 ## <a name="related-links"></a>Verwandte Links

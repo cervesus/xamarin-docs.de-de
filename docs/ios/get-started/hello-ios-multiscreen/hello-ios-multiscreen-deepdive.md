@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: e8b3881db99d569008ce1290f81891f1b3b183d7
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 953f626774c02a2861d0d9b3be1f1234f181c622
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563809"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670596"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Ausführliche Erläuterungen: Hallo, iOS Multiscreen
 
@@ -206,5 +206,5 @@ Erfahren Sie nun mehr über das Erstellen von plattformübergreifenden Anwendung
 ## <a name="related-links"></a>Verwandte Links
 
 - [Hallo, iOS (Beispiel)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS-Eingaberichtlinien](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [iOS-Eingaberichtlinien](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS-Bereitstellungsportal](https://developer.apple.com/ios/manage/overview/index.action)

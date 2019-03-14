@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/03/2018
-ms.openlocfilehash: 99b5798e8d3cd5723f99aa2483d5d1c0eff8d57c
-ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
+ms.openlocfilehash: 86e2380a2931517b021162a6cecadc7d6d5b4c43
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305645"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669391"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -98,7 +98,7 @@ MSBuild-Eigenschaften steuern das Verhalten der Ziele. Sie werden in der Projekt
 
 Installationseigenschaften steuern das Verhalten der `Install`- und `Uninstall`-Ziele.
 
--   **AdbTarget** &ndash; Gibt das Android-Zielgerät an, auf dem das Android-Paket installiert oder entfernt werden soll. Der Wert dieser Eigenschaft ist identisch mit der [-`adb`Zielgerätoption](http://developer.android.com/tools/help/adb.html#issuingcommands):
+-   **AdbTarget** &ndash; Gibt das Android-Zielgerät an, auf dem das Android-Paket installiert oder entfernt werden soll. Der Wert dieser Eigenschaft ist identisch mit der [-`adb`Zielgerätoption](https://developer.android.com/tools/help/adb.html#issuingcommands):
 
     ```bash
     # Install package onto emulator via -e
@@ -145,7 +145,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Standardmäßig ist diese Eigenschaft `False`.
 
--   **AndroidEnableSGenConcurrent** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob der [gleichzeitige GC-Collector](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen) von Mono verwendet wird.
+-   **AndroidEnableSGenConcurrent** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob der [gleichzeitige GC-Collector](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen) von Mono verwendet wird.
 
     Unterstützung für diese Eigenschaft wurde in Xamarin.Android 7.2 hinzugefügt.
 
@@ -293,7 +293,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Diese Eigenschaft wird ignoriert, wenn die MSBuild-Eigenschaft `$(AotAssemblies)` nicht den Wert `True` aufweist.
 
--   **EnableProguard** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob [proguard](http://developer.android.com/tools/help/proguard.html) als Teil des Paketerstellungsprozesses ausgeführt wird, um Java-Code zu verknüpfen.
+-   **EnableProguard** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob [proguard](https://developer.android.com/tools/help/proguard.html) als Teil des Paketerstellungsprozesses ausgeführt wird, um Java-Code zu verknüpfen.
 
     Unterstützung für diese Eigenschaft wurde in Xamarin.Android 5.1 hinzugefügt.
 

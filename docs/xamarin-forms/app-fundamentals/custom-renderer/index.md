@@ -1,19 +1,14 @@
 ---
 title: Benutzerdefinierte Xamarin.Forms-Renderer
-description: Mithilfe benutzerdefinierter Renderer können Entwickler das Standardrendering der nativen Steuerelemente auf jeder Plattform „überschreiben“, um so die Darstellung und das Verhalten von Xamarin.Forms-Steuerelementen anzupassen.
+description: 'Mithilfe benutzerdefinierter Renderer können Entwickler das Standardrendering der nativen Steuerelemente auf jeder Plattform „überschreiben“, um so die Darstellung und das Verhalten von Xamarin.Forms-Steuerelementen anzupassen.'
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: c7ae25688b2f8635a9a89318e0b307e58add7a5a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998742"
 ---
+
 # <a name="xamarinforms-custom-renderers"></a>Benutzerdefinierte Xamarin.Forms-Renderer
 
 _Xamarin.Forms-Benutzeroberflächen werden mit den nativen Steuerelementen der Zielplattform gerendert. Dadurch können Anwendungen von Xamarin.Forms das Erscheinungsbild der einzelnen Plattformen beibehalten. Durch benutzerdefinierte Renderer können Entwickler diesen Prozess außer Kraft setzen, um die Darstellung und das Verhalten von Xamarin.Forms-Steuerelementen auf jeder Plattform anzupassen._
@@ -62,5 +57,4 @@ In diesem Artikel wird veranschaulicht, wie Sie Renderer schreiben können, die 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Benutzerdefinierte Renderer (Xamarin University-Video)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)
-- [Beispiel: Benutzerdefinierte Renderer (Xamarin University-Video)](http://bit.ly/xf-customrenderer)
+- [Custom Renderers (Xamarin University Video) (Benutzerdefinierte Renderer (Xamarin University-Video))](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)

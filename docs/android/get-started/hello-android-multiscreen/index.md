@@ -1,6 +1,6 @@
 ---
-title: Hello, Android Multiscreen (Hallo, Android-Multiscreen)
-description: In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hello, Android“ (Hallo, Android) erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Der Leitfaden enthält eine Einführung in die grundlegenden Android-Anwendungsbausteine und detaillierte Informationen zur Android-Architektur, bei der Sie ein besseres Verständnis der Struktur und Funktionalität der Android-Anwendung entwickeln.
+title: 'Hello, Android Multiscreen (Hallo, Android-Multiscreen)'
+description: 'In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hello, Android“ (Hallo, Android) erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Der Leitfaden enthält eine Einführung in die grundlegenden Android-Anwendungsbausteine und detaillierte Informationen zur Android-Architektur, bei der Sie ein besseres Verständnis der Struktur und Funktionalität der Android-Anwendung entwickeln.'
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D82EC193-2CB7-44C3-8688-0CEBDF60C3D6
@@ -8,18 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: f6c544a9a4955ad24cc4ba1992aff4605f43af97
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111823"
 ---
+
 # <a name="hello-android-multiscreen"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen)
 
 _In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hello, Android“ (Hallo, Android) erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Der Leitfaden enthält eine Einführung in die grundlegenden Android-Anwendungsbausteine und detaillierte Informationen zur Android-Architektur, bei der Sie ein besseres Verständnis der Struktur und Funktionalität der Android-Anwendung entwickeln._
 
-##  <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[Part 1: Quickstart (Teil 1: Schnellstart)](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
+##  <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[Teil 1: Schnellstart](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
 Im ersten Teil dieses Leitfadens fügen Sie einen zweiten Bildschirm zur Phoneword-Anwendung hinzu, um mithilfe der App den Verlauf der aufgerufenen Nummern nachzuverfolgen. Die endgültige App zeigt einen zweiten Bildschirm an, auf dem der Anrufverlauf aufgelistet wird.
 
@@ -30,6 +25,6 @@ Im zweiten Teil dieses Dokuments können Sie das Erstellte überprüfen. Zudem w
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Erste Schritte für Android](http://developer.android.com/training/index.html)
+- [Erste Schritte für Android](https://developer.android.com/training/index.html)
 - [Debuggen in Visual Studio](https://docs.microsoft.com/visualstudio/debugger/)
 - [Visual Studio für Mac-Anleitungen: Debuggen](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 6f12670dd463471ba1e337802453c775adbe16a7
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 31992c7d9219289847ebc3e9c8af755d54dc18ab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666947"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672715"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -22,7 +22,7 @@ _Xamarin.Forms-Apps können mithilfe von .NET-Ressourcendateien lokalisiert werd
 
 ## <a name="overview"></a>Übersicht
 
-Der integrierte Mechanismus zum Lokalisieren von .NET-Anwendungen verwendet [RESX-Dateien](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx) und die Klassen in den Namespaces `System.Resources` und `System.Globalization`. Die RESX-Dateien mit übersetzten Zeichenfolgen werden in die Xamarin.Forms-Assembly gemeinsam mit einer vom Compiler generierten Klasse eingebettet. Diese Klasse ermöglicht stark typisierten Zugriff auf die Übersetzung. Der übersetzte Text kann dann im Code abgerufen werden.
+Der integrierte Mechanismus zum Lokalisieren von .NET-Anwendungen verwendet [RESX-Dateien](https://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx) und die Klassen in den Namespaces `System.Resources` und `System.Globalization`. Die RESX-Dateien mit übersetzten Zeichenfolgen werden in die Xamarin.Forms-Assembly gemeinsam mit einer vom Compiler generierten Klasse eingebettet. Diese Klasse ermöglicht stark typisierten Zugriff auf die Übersetzung. Der übersetzte Text kann dann im Code abgerufen werden.
 
 ### <a name="sample-code"></a>Beispielcode
 
@@ -761,7 +761,7 @@ Auf dem folgenden Screenshot sehen Sie das Android-Beispiel mit einigen lokalisi
 
 Beachten Sie, dass unter Android nicht die Codes zh-Hans und zh-Hant für vereinfachtes und traditionelles Chinesisch verwendet werden. Stattdessen werden nur länderspezifische Codes wie zh-CN und zh-TW unterstützt.
 
-Wenn verschiedene Auflösungen von Bildern für HD-Bildschirme unterstützt werden sollen, erstellen Sie zusätzliche Ordner mit `-*dpi`-Suffixen wie **drawables-es-mdpi**, **drawables-es-xdpi** oder **drawables-es-xxdpi**. Weitere Informationen finden Sie unter [Providing Alternative Android Resources (Bereitstellen alternativer Android-Ressourcen)](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
+Wenn verschiedene Auflösungen von Bildern für HD-Bildschirme unterstützt werden sollen, erstellen Sie zusätzliche Ordner mit `-*dpi`-Suffixen wie **drawables-es-mdpi**, **drawables-es-xdpi** oder **drawables-es-xxdpi**. Weitere Informationen finden Sie unter [Providing Alternative Android Resources (Bereitstellen alternativer Android-Ressourcen)](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
 
 #### <a name="app-name"></a>App-Name
 
@@ -811,5 +811,5 @@ Bilder werden in der Regel auf plattformspezifischer Ebene gehandhabt. So wird d
 - [iOS Localization (iOS-Lokalisierung)](~/ios/app-fundamentals/localization/index.md)
 - [Android Localization (Android-Lokalisierung)](~/android/app-fundamentals/localization.md)
 - [UWP Localization (UWP-Lokalisierung)](/windows/uwp/design/globalizing/globalizing-portal/)
-- [Verwenden der CultureInfo-Klasse (MSDN)](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
-- [Suchen und Verwenden von Ressourcen für eine bestimmte Kultur (MSDN)](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
+- [Verwenden der CultureInfo-Klasse (MSDN)](https://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
+- [Suchen und Verwenden von Ressourcen für eine bestimmte Kultur (MSDN)](https://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)

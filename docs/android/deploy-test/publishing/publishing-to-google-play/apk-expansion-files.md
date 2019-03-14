@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 38568fa9258c7e3de2c3333cdca5dc7d5867319c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56c5aa7f0f8db746fbc6d7f8b5409f7d6c0f5d0d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117097"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666891"
 ---
 # <a name="apk-expansion-files"></a>APK-Erweiterungsdateien
 
@@ -73,7 +73,7 @@ Wenn eine Anwendung über Google Play installiert wird, sollten die Erweiterungs
 
 [![APK-Erweiterungsflussdiagramm](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
-Wenn eine Anwendung gestartet wird, sollte überprüft werden, ob die entsprechenden Erweiterungsdateien auf dem aktuellen Gerät vorhanden sind. Wenn dies nicht der Fall ist, muss die Anwendung eine Anforderung der [Anwendungslizenzierung](http://developer.android.com/google/play/licensing/index.html) von Google Play stellen. Diese Überprüfung erfolgt mithilfe der *License Verification Library (LVL)*, und sie muss für kostenlose und lizenzierte Anwendungen erfolgen. Die LVL wird hauptsächlich von kostenpflichtigen Anwendungen verwendet, um Lizenzbeschränkungen zu erzwingen. Google hat die LVL jedoch erweitert, sodass sie ebenfalls mit den Erweiterungsbibliotheken verwendet werden kann. Kostenlose Anwendungen müssen die LVL-Überprüfung ausführen, können aber die Lizenzeinschränkungen ignorieren. Die Anforderung der LVL ist verantwortlich für die Bereitstellung der folgenden Informationen zu den Erweiterungsdateien, die die Anwendung erfordert: 
+Wenn eine Anwendung gestartet wird, sollte überprüft werden, ob die entsprechenden Erweiterungsdateien auf dem aktuellen Gerät vorhanden sind. Wenn dies nicht der Fall ist, muss die Anwendung eine Anforderung der [Anwendungslizenzierung](https://developer.android.com/google/play/licensing/index.html) von Google Play stellen. Diese Überprüfung erfolgt mithilfe der *License Verification Library (LVL)*, und sie muss für kostenlose und lizenzierte Anwendungen erfolgen. Die LVL wird hauptsächlich von kostenpflichtigen Anwendungen verwendet, um Lizenzbeschränkungen zu erzwingen. Google hat die LVL jedoch erweitert, sodass sie ebenfalls mit den Erweiterungsbibliotheken verwendet werden kann. Kostenlose Anwendungen müssen die LVL-Überprüfung ausführen, können aber die Lizenzeinschränkungen ignorieren. Die Anforderung der LVL ist verantwortlich für die Bereitstellung der folgenden Informationen zu den Erweiterungsdateien, die die Anwendung erfordert: 
 
 -   **Dateigröße**: Die Größe der Erweiterungsdateien dienen als Teil der Überprüfung, die bestimmt, ob die richtigen Erweiterungsdateien bereits heruntergeladen wurden oder nicht.
 -   **Dateinamen**: Dies ist der Dateiname (auf dem aktuellen Gerät), in dem die Erweiterungspakete gespeichert werden müssen.

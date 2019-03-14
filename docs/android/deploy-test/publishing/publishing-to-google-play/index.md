@@ -185,7 +185,7 @@ Im nächsten Abschnitt wird erläutert, wie ein neues Google API-Projekt erstell
 #### <a name="create-a-google-api-project"></a>Erstellen eines Google API-Projekts
 
 Melden Sie sich zunächst bei Ihrem [Google Play Developer-Konto](https://play.google.com/apps/publish) an.
-Wenn Sie nicht bereits über ein Google Play Developer-Konto verfügen, gehen Sie unter [Einführung](http://developer.android.com/distribute/googleplay/start.html).
+Wenn Sie nicht bereits über ein Google Play Developer-Konto verfügen, gehen Sie unter [Einführung](https://developer.android.com/distribute/googleplay/start.html).
 Die Google Play Developer API [Getting Started (Erste Schritte)](https://developers.google.com/android-publisher/getting_started) erklärt auch, wie die Google Play Developer-API verwendet wird. Nachdem Sie sich in der Google Play Developer-Konsole angemeldet haben, klicken Sie auf **Einstellungen**:
 
 [![Symbol „Einstellungen“](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)

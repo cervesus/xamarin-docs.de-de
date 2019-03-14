@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 26865fdbfc1cc6f11a978a70bd768e63771bcd4b
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 0053bf97dbcc98c5ffbd6fbddb1e40f884810e60
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197471"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670752"
 ---
 # <a name="windows-installation"></a>Windows-Installation
 
@@ -47,7 +47,7 @@ Xamarin.Android verwendet das Java Development Kit (JDK) und das Android SDK fü
 
 Diese Standardspeicherorte funktionieren für die meisten Benutzer, ohne dass weitere Änderungen erforderlich sind. Sie müssen Visual Studio jedoch möglicherweise mit benutzerdefinierten Speicherorten für diese Tools konfigurieren (z.B., wenn Sie das Java JDK, Android SDK oder NDK an einem anderen Speicherort installiert haben). Klicken Sie neben einem Pfad, den Sie ändern möchten, auf **Ändern**, und navigieren Sie anschließend zu dem neuen Speicherort.
 
-Xamarin.Android verwendet [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), was erforderlich ist, wenn Sie für die API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch API-Ebenen älter als 24). Sie können weiterhin [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
+Xamarin.Android verwendet [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), was erforderlich ist, wenn Sie für die API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch API-Ebenen älter als 24). Sie können weiterhin [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.
