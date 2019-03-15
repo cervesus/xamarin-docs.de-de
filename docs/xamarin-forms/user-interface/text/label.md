@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: e57135c5a9a90ec75ae610ad92cecaa2a9b1e482
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: e220abc575270f483c0a822ae01f979966691432
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557037"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972675"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms-Bezeichnung
 
@@ -356,7 +356,7 @@ Die `TapCommand` führt die `OpenBrowser` Methode auf und übergibt die [ `TapGe
 
 ### <a name="creating-a-reusable-hyperlink-class"></a>Erstellen einer wiederverwendbaren Hyperlink-Klasse
 
-Der vorherige Ansatz zum Erstellen eines Links erfordert das Schreiben von sich wiederholenden Code jedes Mal, wenn Sie einen Link in Ihre Anwendung benötigen. Jedoch sowohl die [ `Label` ](xref:Xamarin.Forms.Label) und [ `Span` ](xref:Xamarin.Forms.Span) Klassen möglich, erstellen Sie ein untergeordnetes `HyperlinkLabel` und `HyperlinkSpan` Klassen, mit dem stiftbewegungs-Erkennung und Formatieren von Text Code wird es hinzugefügt.
+Der vorherige Ansatz zum Erstellen eines Links erfordert das Schreiben von sich wiederholenden Code jedes Mal, wenn Sie einen Link in Ihre Anwendung benötigen. Jedoch sowohl die [ `Label` ](xref:Xamarin.Forms.Label) und [ `Span` ](xref:Xamarin.Forms.Span) können Klassen zum Erstellen als Unterklasse definiert werden `HyperlinkLabel` und `HyperlinkSpan` Klassen, mit dem stiftbewegungs-Erkennung und der Text, die Formatierung von Code es hinzugefügt wird.
 
 Im folgenden Codebeispiel wird, stammt aus der [Hyperlink Demos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos) Beispiel zeigt eine `HyperlinkSpan` Klasse:
 

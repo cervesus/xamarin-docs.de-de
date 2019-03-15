@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cf04c3e89e3effdd317fa98beb46f9075a1defcd
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233808"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972662"
 ---
 # <a name="native-views-in-xaml"></a>Native Ansichten in XAML
 
@@ -325,7 +325,7 @@ Die Seite enthält eine [ `Label` ](xref:Xamarin.Forms.Label) , die vom Benutzer
 
 Diese Seite enthält auch eine native Picker-Ansicht für jede Plattform. Jede systemeigene Ansicht zeigt die Auflistung der Früchte durch die Bindung der `ItemSource` Eigenschaft, um die `SubclassedNativeControlsPageViewModel.Fruits` Auflistung. Dies ermöglicht dem Benutzer eine Frucht ist, wählen Sie, wie in den folgenden Screenshots gezeigt:
 
-![](xaml-images/sub-classed.png "Untergeordnetes Native Ansichten")
+![](xaml-images/sub-classed.png "Unterklassen Native Ansichten")
 
 Unter iOS und Android verwenden die nativen Sammlern Methoden zum Einrichten der Steuerelemente. Daher müssen diese Datumsauswahl in Unterklassen unterteilt werden zum Verfügbarmachen von Eigenschaften, um die XAML-freundliche zu. Auf der universellen Windows-Plattform (UWP), die `ComboBox` bereits XAML-freundliche, und daher keine Unterklassen erforderlich.
 

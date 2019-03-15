@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831794"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972649"
 ---
 # <a name="customizing-listview-appearance"></a>Anpassen der Darstellung der ListView
 
@@ -206,8 +206,8 @@ Um eine benutzerdefinierte Kopf- und Fußzeile zu erstellen, definieren Sie die 
 [`ListView`](xref:Xamarin.Forms.ListView) verfügt über `HorizontalScrollBarVisibility` und `VerticalScrollBarVisibility` Eigenschaften, die abrufen oder Festlegen einer [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) -Wert, der darstellt, wenn es sich bei der horizontalen oder vertikalen Schiebeleiste sichtbar ist. Beide Eigenschaften können auf die folgenden Werte festgelegt werden:
 
 - [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt das Scroll-Leiste-Standardverhalten für die Plattform und ist der Standardwert für die `HorizontalScrollBarVisibility` und `VerticalScrollBarVisibility` Eigenschaften.
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt an, dass Bildlaufleisten angezeigt, werden auch verwendet werden, wenn der Inhalt nicht in der Ansicht passt.
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt an, dass Bildlaufleisten nicht sichtbar ist, werden Ereignis, wenn der Inhalt nicht in der Ansicht entspricht.
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt an, dass Bildlaufleisten angezeigt, werden auch verwendet werden, wenn der Inhalt in der Ansicht entspricht.
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt an, dass Bildlaufleisten nicht sichtbar ist, auch wenn der Inhalt nicht in der Ansicht passt.
 
 <a name="Row_Separators" />
 

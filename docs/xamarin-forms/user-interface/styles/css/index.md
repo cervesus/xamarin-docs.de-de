@@ -181,7 +181,7 @@ stacklayout {
 Diese Auswahl identifiziert alle [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Elementen auf Seiten, die das Stylesheet nutzen und ihre Ränder festgelegt, um eine einheitliche Breite von 20.
 
 > [!NOTE]
-> Die `element` Auswahl gibt nicht an untergeordnete Klassen vom angegebenen Typ.
+> Die `element` Selektor identifiziert keine Unterklassen des angegebenen Typs.
 
 ### <a name="selecting-elements-by-base-class"></a>Auswählen von Elementen durch Basisklasse
 
@@ -336,7 +336,7 @@ Die folgenden CSS-Selektoren werden von Xamarin.Forms unterstützt:
 |`.class`|`.header`|Wählt alle Elemente mit den `StyleClass` Eigenschaft, die "Header" enthält. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung beachtet wird.|
 |`#id`|`#email`|Wählt alle Elemente mit `StyleId` festgelegt `email`. Wenn `StyleId` nicht festgelegt ist, um alternative `x:Name`. Bei Verwendung von XAML, `x:Name` vorzuziehen ist `StyleId`. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung beachtet wird.|
 |`*`|`*`|Wählt alle Elemente aus.|
-|`element`|`label`|Wählt alle Elemente des Typs `Label`, aber nicht von untergeordneten Klassen. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
+|`element`|`label`|Wählt alle Elemente des Typs `Label`, aber keine Unterklassen. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
 |`^base`|`^contentpage`|Wählt alle Elemente mit `ContentPage` als Basisklasse, einschließlich `ContentPage` selbst. Beachten Sie, dass diese Auswahl wird die Groß-/Kleinschreibung und ist nicht Teil der CSS-Spezifikation.|
 |`element,element`|`label,button`|Wählt alle `Button` Elemente und alle `Label` Elemente. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
 |`element element`|`stacklayout label`|Wählt alle `Label` Elemente innerhalb einer `StackLayout`. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
