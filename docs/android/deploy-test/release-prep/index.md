@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: dff57b142745729d5d38db4cce892bb1d55796a6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059729"
 ---
+
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
 Nachdem eine Anwendung codiert und getestet wurde, ist es erforderlich, ein Paket zur Verteilung vorzubereiten. Die erste Aufgabe bei der Vorbereitung dieses Pakets liegt darin, die Anwendung für die Veröffentlichung zu erstellen, was hauptsächlich mit dem Festlegen einiger Anwendungsattribute verbunden ist.
@@ -153,7 +148,7 @@ Wenn **Enable ProGuard** (ProGuard aktivieren) ausgewählt ist, führt Xamarin.A
 
 -----
 
-ProGuard ist standardmäßig deaktiviert. Die Option **ProGuard aktivieren** ist nur dann verfügbar, wenn sich das Projekt im Modus **Release** befindet. Alle Buildvorgänge von ProGuard werden ignoriert, wenn **ProGuard** deaktiviert ist. Die ProGuard-Konfiguration „Xamarin.Android“ verschleiert das APK nicht. Zudem ist es nicht möglich, die Obfuskation zu aktivieren, auch nicht mit benutzerdefinierten Konfigurationsdateien. Wenn Sie von der Obfuskation Gebrauch machen möchten, finden Sie unter [Application Protection with Dotfuscator (Anwendungsschutz mit Dotfuscator)](~/android/deploy-test/release-prep/index.md#dotfuscator) mehr Informationen. 
+ProGuard ist standardmäßig deaktiviert. Die Option **ProGuard aktivieren** ist nur dann verfügbar, wenn sich das Projekt im Modus **Release** befindet. Alle Buildaktionen von ProGuard werden ignoriert, wenn **ProGuard** deaktiviert ist. Die ProGuard-Konfiguration „Xamarin.Android“ verschleiert das APK nicht. Zudem ist es nicht möglich, die Obfuskation zu aktivieren, auch nicht mit benutzerdefinierten Konfigurationsdateien. Wenn Sie von der Obfuskation Gebrauch machen möchten, finden Sie unter [Application Protection with Dotfuscator (Anwendungsschutz mit Dotfuscator)](~/android/deploy-test/release-prep/index.md#dotfuscator) mehr Informationen. 
 
 Ausführlichere Informationen zur Verwendung des ProGuard-Tools finden Sie unter [ProGuard](~/android/deploy-test/release-prep/proguard.md).
 
@@ -222,7 +217,7 @@ Beachten Sie, dass die Option **Assemblys in nativem Code bündeln** *nicht* bed
 
 Die Option **AOT Kompilierung** (unter [Packaging Properties (Paketeigenschaften)](#Set_Packaging_Properties)) aktiviert die Ahead-of-Time-Kompilierung von Assemblys. Wenn diese Option aktiviert ist, wird der Mehraufwand eines Just-In-Time-Starts minimiert, indem Assemblys vor dem Ausführen vorkompiliert werden. Der native Code, der sich daraus ergibt, ist genauso wie die nicht kompilierten Assemblys im APK enthalten. Dadurch wird zwar einerseits die Startzeit verringert, andererseits sind jedoch die APK etwas größer.
 
-Um die Option **AOT-Kompilierung** ausführen zu können, müssen Sie mindestens über eine Enterprise-Lizenz verfügen. Die **AOT Kompilierung** ist nur verfügbar, wenn das Projekt für den Releasemodus konfiguriert ist. Sie ist standardmäßig deaktiviert. Weitere Informationen über die AOT-Kompilierung finden Sie unter [AOT](http://www.mono-project.com/docs/advanced/aot/).
+Um die Option **AOT-Kompilierung** ausführen zu können, müssen Sie mindestens über eine Enterprise-Lizenz verfügen. Die **AOT Kompilierung** ist nur verfügbar, wenn das Projekt für den Releasemodus konfiguriert ist. Sie ist standardmäßig deaktiviert. Weitere Informationen über die AOT-Kompilierung finden Sie unter [AOT](https://www.mono-project.com/docs/advanced/aot/).
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM-Optimierungscompiler
 
@@ -266,7 +261,7 @@ Wenn die Option **Multi-Dex aktivieren** aktiviert ist, werden die Android SDK T
 
 Es ist möglich, dass eine App nicht jede Methode in jeder Bibliothek verwendet, auf die verwiesen wird. Daher ist es möglich, dass ein Tool wie ProGuard (siehe oben) die nicht verwendeten Methoden aus dem Code entfernen kann. Die bewährte Methode ist, die Option **Multi-Dex aktivieren** nur zu aktivieren, wenn dies unbedingt notwendig ist. D.h., dass die App selbst nach der Verwendung von ProGuard noch auf mehr als 65K Java-Methoden verweist.
 
-Weitere Informationen zu Multi-Dex finden Sie unter [Configure Apps with Over 64K Methods (Konfigurieren von Apps, die mehr als 65535 Methoden enthalten)](http://developer.android.com/tools/building/multidex.html).
+Weitere Informationen zu Multi-Dex finden Sie unter [Configure Apps with Over 64K Methods (Konfigurieren von Apps, die mehr als 65535 Methoden enthalten)](https://developer.android.com/tools/building/multidex.html).
 
 <a name="Compile" />
 
@@ -374,6 +369,6 @@ Hier können Sie den Vertriebskanal auswählen:
 
 - [Geräte mit mehreren Kernen und Xamarin.Android](~/android/deploy-test/multicore-devices.md)
 - [CPU-Architekturen](~/android/app-fundamentals/cpu-architectures.md)
-- [AOT](http://www.mono-project.com/docs/advanced/aot/)
-- [Verkleinern des Codes und der Ressourcen](http://developer.android.com/tools/help/proguard.html)
-- [Konfigurieren von Apps, die mehr als 65535 Methoden enthalten](http://developer.android.com/tools/building/multidex.html)
+- [AOT](https://www.mono-project.com/docs/advanced/aot/)
+- [Verkleinern des Codes und der Ressourcen](https://developer.android.com/tools/help/proguard.html)
+- [Konfigurieren von Apps, die mehr als 65535 Methoden enthalten](https://developer.android.com/tools/building/multidex.html)

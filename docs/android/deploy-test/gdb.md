@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 84e99849e3b3d925747df59ffcde242c145dbe74
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c64714974f6467bcd7e0e4705a1426c83aa691b5
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111381"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667589"
 ---
 # <a name="gdb"></a>GDB
 
@@ -155,7 +155,7 @@ Das App-Debuggen kann durch das Festlegen der benutzerdefinierten Attributeigens
 
 Wie Sie ein zugängliches `gdbserver` gewährleisten, wird im Abschnitt [Debugbuilds ohne Fast Deployment](#Debug_Builds_without_Fast_Deployment) beschrieben.
 
-Ein Nachteil: Das `_Gdb`-MSBuild-Ziel bricht alle vorher ausgeführten App-Instanzen ab. Dies funktioniert nicht auf Zielen vor Android V4.0.
+Der Nachteil: Das `_Gdb`-MSBuild-Ziel bricht alle vorher ausgeführten App-Instanzen ab. Dies funktioniert nicht auf Zielen vor Android V4.0.
 
 <a name="Troubleshooting" />
 
@@ -163,7 +163,7 @@ Ein Nachteil: Das `_Gdb`-MSBuild-Ziel bricht alle vorher ausgeführten App-Insta
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` funktioniert nicht
 
-Die Funktion `mono_pmip` (nützlich zum [Abrufen verwalteter Stackframes](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)) wird von `libmonosgen-2.0.so` exportiert, was das `_Gdb`-Ziel momentan noch nicht lädt. (Dies wird in einem kommenden Release behoben.)
+Die Funktion `mono_pmip` (nützlich zum [Abrufen verwalteter Stackframes](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)) wird von `libmonosgen-2.0.so` exportiert, was das `_Gdb`-Ziel momentan noch nicht lädt. (Dies wird in einem kommenden Release behoben.)
 
 Um das Abrufen von Funktionen in `libmonosgen-2.0.so` zu ermöglichen, kopieren Sie es vom Zielgerät in das `gdb-symbols`-Verzeichnis:
 

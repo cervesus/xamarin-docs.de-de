@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 870a9cb20ea962b3c1a342e7222c5e9322537dd1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4f545893ca4cde441cd05fc3d8e52ecf0f6aae98
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109210"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669491"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Verwenden von mtouch zum Bündeln von Xamarin.iOS-Apps
 
@@ -84,7 +84,7 @@ $ mtouch --sdkroot /Applications/Xcode.app -launchsim Hello.app
 
 Wenn das `--sdkroot`-Flag nicht festgelegt ist, wird standardmäßig der Pfad „xcode-select“ festgelegt, und folgende Warnung ausgegeben:
 
-> eg: warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+> Beispiel: warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer (Warnung MT0061: Keine Xcode.app angegeben  (using --sdkroot). Es wird Xcode verwendet, wie durch 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer gemeldet) 
 
 Die Ausgabe der oben stehenden Befehlszeile sieht in etwa so aus:
 
@@ -110,7 +110,7 @@ Wenn Ihre Anwendung fehlschlägt, werden Ihnen die Ausgabe und der Fehler angeze
 
 ### <a name="deploying-to-a-device"></a>Bereitstellen auf einem Gerät
 
-Für eine Bereitstellung auf ein Gerät müssen Sie Ihr Gerät wie im Apple-Dokument [Managing Devices (Verwalten von Geräten)](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html) beschrieben bereitstellen. Sobald Ihr Gerät ordnungsgemäß bereitgestellt wurde, können Sie den mtouch-Befehl verwenden, um eine kompilierte „.app“ auf Ihrem Gerät bereitzustellen. Dazu verwenden Sie folgenden Befehl:
+Für eine Bereitstellung auf ein Gerät müssen Sie Ihr Gerät wie im Apple-Dokument [Managing Devices (Verwalten von Geräten)](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html) beschrieben bereitstellen. Sobald Ihr Gerät ordnungsgemäß bereitgestellt wurde, können Sie den mtouch-Befehl verwenden, um eine kompilierte „.app“ auf Ihrem Gerät bereitzustellen. Dazu verwenden Sie folgenden Befehl:
 
 ```bash
 $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
@@ -118,7 +118,7 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 
 Wenn das `--sdkroot`-Flag nicht festgelegt ist, wird standardmäßig der Pfad „xcode-select“ festgelegt, und folgende Warnung ausgegeben:
 
-> eg: warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+> Beispiel: warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer (Warnung MT0061: Keine Xcode.app angegeben  (using --sdkroot). Es wird Xcode verwendet, wie durch 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer gemeldet) 
 
 Diese Schritte werden in der Regel von Visual Studio für Mac ausgeführt.
 

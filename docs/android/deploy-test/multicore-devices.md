@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 1a2739d1a3848303b3086c23c0a28a889250ee2e
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: b89f5329430fed0387443bf923c45cd40181b22e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675509"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668386"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Multi-Core-Geräte und Xamarin.Android
 
@@ -53,7 +53,7 @@ Jede von Android unterstützte ABI wird durch einen eindeutigen Namen identifizi
 
 Dies ist der Name einer EABI für ARM-basierte CPUs, die mindestens den ARMv5TE-Befehlssatz unterstützen. Android folgt der Little-Endian-ARM-GNU-/Linux-ABI. Diese ABI unterstützt keine hardwareunterstützten Gleitkommaberechnungen. Alle FP-Vorgänge werden von Softwarehilfsfunktionen ausgeführt, die aus der statischen `libgcc.a`-Bibliothek des Compilers stammen. SMP-Geräte werden von `armeabi` nicht unterstützt.
 
-**Anmerkung**: Der `armeabi`-Code von Xamarin.Android ist nicht threadsicher und sollte nicht auf Multi-CPU-`armeabi-v7a`-Geräten verwendet werden (siehe Beschreibung weiter unten). Das Verwenden von `aremabi`-Code auf einem `armeabi-v7a`-Einzelkerngerät ist sicher.
+**Hinweis:** Der `armeabi`-Code von Xamarin.Android ist nicht threadsicher und sollte nicht auf Multi-CPU-`armeabi-v7a`-Geräten verwendet werden (siehe Beschreibung weiter unten). Das Verwenden von `aremabi`-Code auf einem `armeabi-v7a`-Einzelkerngerät ist sicher.
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
@@ -74,7 +74,7 @@ Dies ist der Name einer ABI für CPUs, die den Befehlssatz unterstützen, der ü
 - Zusätzliche SSE3-Erweiterung (SSSE3).
 - Eine Variante von SSE4.
 
-**Hinweis:** Google TV wird vom Android NDK nicht unterstützt (obwohl die Anwendung unter x86 ausgeführt wird).
+**Hinweis**: Google TV wird vom Android NDK nicht unterstützt, obwohl die Anwendung unter x86 ausgeführt wird.
 
 #### <a name="x8664"></a>x86_64
 
@@ -84,7 +84,7 @@ Dies ist der Name einer ABI für CPUs, die den 64-Bit-x86-Befehlssatz unterstüt
 
 Dies ist der Name einer EABI für MIPS-basierte CPUs, die mindestens den `MIPS32r1`-Befehlssatz unterstützen. Weder MIPS 16 noch `micromips` werden von Android unterstützt.
 
-**Hinweis:** MIPS Geräte werden zurzeit nicht von Xamarin.Android unterstützt. Dies wird jedoch in einer zukünftigen Version der Fall sein.
+**Hinweis**: MIPS Geräte werden zurzeit nicht von Xamarin.Android unterstützt. Dies wird jedoch in einer zukünftigen Version der Fall sein.
 
 #### <a name="apk-file-format"></a>APK-Dateiformat
 
@@ -177,7 +177,7 @@ $APP/lib/libone.so
 $APP/lib/libtwo.so
 ```
 
-Leider ist dieses Verhalten von der Reihenfolge abhängig, wie im folgenden Dokument beschrieben wird: [Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn sowohl armeabi als auch armeabi-v7a in der APK-Datei enthalten sind](http://code.google.com/p/android/issues/detail?id=25321).
+Leider hängt dieses Verhalten wie im folgenden Dokument beschrieben von der Reihenfolge ab: [Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk (Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn armeabi und armeabi-v7a in der APK-Datei enthalten sind)](http://code.google.com/p/android/issues/detail?id=25321).
 
 Die nativen Bibliotheken werden „in der jeweiligen Reihenfolge“ verarbeitet (z.B. wie durch unzip aufgelistet), und die *erste Übereinstimmung* wird extrahiert. Da die `.apk`-Datei die Versionen `armeabi` und `armeabi-v7a` von `libtwo.so` enthält und `armeabi` zuerst aufgelistet wird, wird die `armeabi`-Version extrahiert, *nicht* die `armeabi-v7a`-Version:
 
@@ -257,6 +257,6 @@ Anschließend wurde erläutert, wie die ABI-Unterstützung in einer Xamarin.Andr
 
 - [MIPS-Architektur](http://www.mips.com/products/product-materials/processor/mips-architecture)
 - [ABI für die ARM-Architektur (PDF-Datei)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
-- [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
+- [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [Problem 9089: Nexus One: Es werden KEINE nativen Bibliotheken aus armeabi geladen, wenn mindestens eine Bibliothek unter armeabi-v7a vorhanden ist.](http://code.google.com/p/android/issues/detail?id=9089)
-- [Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn armeabi und armeabi-v7a in der APK-Datei enthalten sind.](http://code.google.com/p/android/issues/detail?id=25321)
+- [Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk (Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn armeabi und armeabi-v7a in der APK-Datei enthalten sind)](http://code.google.com/p/android/issues/detail?id=25321).

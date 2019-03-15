@@ -1,5 +1,5 @@
 ---
-title: 'Hallo, Android: Ausführliche Erläuterungen'
+title: 'Hello, Android: Ausführliche Erläuterungen'
 description: In diesem zweiteiligen Leitfaden erstellen Sie Ihre erste Xamarin.Android-Anwendung. Außerdem entwickeln Sie ein Verständnis für die grundlegenden Aspekte der Entwicklung von Android-Anwendungen mit Xamarin. Währenddessen werden Ihnen die Tools, Konzepte und Schritte vorgestellt, die zum Erstellen und Bereitstellen einer Xamarin.Android-Anwendung erforderlich sind.
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -9,14 +9,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: cdd0a792a76fa411fdc010c3d662a3d1acc2f373
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3d34ce3d5cb6e8e4931eafcc7cd82d141f5db8d7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108811"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670180"
 ---
-# <a name="hello-android-deep-dive"></a>Hallo, Android: Ausführliche Erläuterungen
+# <a name="hello-android-deep-dive"></a>Hello, Android: Ausführliche Erläuterungen
 
 _In diesem zweiteiligen Leitfaden erstellen Sie Ihre erste Xamarin.Android-Anwendung. Außerdem entwickeln Sie ein Verständnis für die grundlegenden Aspekte der Entwicklung von Android-Anwendungen mit Xamarin. Währenddessen werden Ihnen die Tools, Konzepte und Schritte vorgestellt, die zum Erstellen und Bereitstellen einer Xamarin.Android-Anwendung erforderlich sind._
 
@@ -113,7 +113,7 @@ Das Verzeichnis **Ressourcen** enthält drei Ordner namens **drawable**, **layou
 
 Diese Elemente werden in der folgenden Tabelle zusammengefasst:
 
-- **drawable**: Die Verzeichnisse „drawable“ enthalten [drawable resources (zeichenbare Ressourcen)](http://developer.android.com/guide/topics/resources/drawable-resource.html) wie Bilder und Bitmaps.
+- **drawable**: Die Verzeichnisse „drawable“ enthalten [drawable resources (zeichenbare Ressourcen)](https://developer.android.com/guide/topics/resources/drawable-resource.html) wie Bilder und Bitmaps.
 
 - **mipmap** &ndash; Das mipmap-Verzeichnis enthält zeichenbare Dateien für verschiedene Dichten von Startprogrammsymbolen. In der Standardvorlage enthält das Verzeichnis „drawable“ die Anwendungssymboldatei, **Icon.png**.
 

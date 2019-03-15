@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: ce102f189321cbd49b37e7718c1f3d478c322f55
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: e009ec60abc5afd06e43122424c325bbb1bf42ac
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526688"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668867"
 ---
 # <a name="set-up-device-for-development"></a>Einrichten eines Geräts für die Entwicklung
 
@@ -77,7 +77,7 @@ Führen Sie die Anwendung **android.bat** im Verzeichnis **[Installationspfad de
 ### <a name="download-the-usb-drivers"></a>Herunterladen der USB-Treiber
 
 Google Nexus-Geräte (mit Ausnahme des Galaxy Nexus) erfordern den Google-USB-Treiber. Der Treiber für das Galaxy Nexus wird [von Samsung verteilt](http://www.samsung.com/us/support/downloads/).
-Alle anderen Android-Geräte sollten den [USB-Treiber des jeweiligen Herstellers](http://developer.android.com/tools/extras/oem-usb.html#Drivers) verwenden.
+Alle anderen Android-Geräte sollten den [USB-Treiber des jeweiligen Herstellers](https://developer.android.com/tools/extras/oem-usb.html#Drivers) verwenden.
 
 Installieren Sie das **Google-USB-Treiberpaket**, indem Sie wie im folgenden Screenshot gezeigt den Android SDK-Manager starten und den Ordner **Extras** erweitern:
 
@@ -144,7 +144,7 @@ Der letzte Schritt ist das Verbinden des Geräts mit dem Computer. Hierfür gibt
 
 ### <a name="connecting-over-wifi"></a>Herstellen einer Verbindung über WLAN
 
-[Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (*ADB*) wird standardmäßig so konfiguriert, dass die Kommunikation mit einem Android-Gerät über USB erfolgt. Es ist möglich, ADB neu zu konfigurieren, damit TCP/IP statt USB verwendet wird. Zu diesem Zweck müssen sich sowohl das Gerät als auch der Computer im gleichen WLAN-Netzwerk befinden. Um Ihre Umgebung für das Debuggen über WLAN einzurichten, führen Sie die folgenden Schritte über die Befehlszeile aus:
+[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) wird standardmäßig so konfiguriert, dass die Kommunikation mit einem Android-Gerät über USB erfolgt. Es ist möglich, ADB neu zu konfigurieren, damit TCP/IP statt USB verwendet wird. Zu diesem Zweck müssen sich sowohl das Gerät als auch der Computer im gleichen WLAN-Netzwerk befinden. Um Ihre Umgebung für das Debuggen über WLAN einzurichten, führen Sie die folgenden Schritte über die Befehlszeile aus:
 
 1.  Bestimmen Sie die IP-Adresse Ihres Android-Geräts. Eine Möglichkeit, die IP-Adresse herauszufinden, liegt darin, unter **Einstellungen > WLAN** nachzusehen und dann auf das WLAN-Netzwerk zu tippen, mit dem das Gerät verbunden ist. Dadurch erscheint ein Bildschirm mit Einstellungen, auf dem wie auf dem nachstehenden Screenshot Informationen zur Netzwerkverbindung angezeigt werden:
 
@@ -184,9 +184,9 @@ In diesem Artikel wurde erläutert, wie ein Android-Gerät für die Entwicklung 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android Debug Bridge](http://developer.android.com/tools/help/adb.html)
-- [Using Hardware Devices (Verwenden von Hardwaregeräten)](http://developer.android.com/tools/device.html)
+- [Android Debug Bridge](https://developer.android.com/tools/help/adb.html)
+- [Using Hardware Devices (Verwenden von Hardwaregeräten)](https://developer.android.com/tools/device.html)
 - [Samsung Driver Downloads (Samsung-Treiberdownloads)](http://www.samsung.com/us/support/downloads/)
-- [OEM USB Drivers (OEM-USB-Treiber)](http://developer.android.com/tools/extras/oem-usb.html#Drivers)
-- [Google-USB-Treiber](http://developer.android.com/sdk/win-usb.html)
-- [XDA-Entwickler: Windows 8 – ADB-/Fastboot-Treiberproblem gelöst](http://forum.xda-developers.com/showthread.php?t=1583801)
+- [OEM USB Drivers (OEM-USB-Treiber)](https://developer.android.com/tools/extras/oem-usb.html#Drivers)
+- [Google-USB-Treiber](https://developer.android.com/sdk/win-usb.html)
+- [XDA-Entwickler: Windows 8 – ADB/fastboot driver problem solved (ADB-/Fastboot-Treiberproblem gelöst)](http://forum.xda-developers.com/showthread.php?t=1583801)

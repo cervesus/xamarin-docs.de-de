@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 6e45f87b3c64abb9de22e09150935e3e5065fea4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5ce778d0e6c2d023362ca5c9c691d77548dd7383
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103412"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672598"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Arbeiten mit Berechtigungen in Xamarin.iOS
 
@@ -68,7 +68,7 @@ Um die Berechtigung in Visual Studio zu konfigurieren, führen Sie Folgendes aus
 
     ![](entitlements-images/servicevs02.png "Bearbeiten der Berechtigungen")
 
-    Alternativ wird nach dem Doppelklicken auf die **entitlements.plist**-Datei der XML-Quell-Editor geöffnet, in dem Sie die Eigenschaft „Entitlement“ und den Schlüsselwert festlegen können. Dies wird unten im Abschnitt [Referenz zu Berechtigungen](#keyreference) genauer beschrieben.
+    Alternativ wird nach dem Doppelklicken auf die **entitlements.plist**-Datei der XML-Quell-Editor geöffnet, in dem Sie die Eigenschaft „Entitlement“ und den Schlüsselwert festlegen können. Dies wird unten im Abschnitt [Referenz zu Berechtigungsschlüsseln](#entitlement-key-reference) genauer beschrieben.
 
 5. Die Berechtigungen für Ihre Xamarin.iOS-Anwendung müssen so ausgewählt und konfiguriert werden, dass sie mit den Einstellungen übereinstimmen, die Sie beim Erstellen der App-ID festgelegt haben.
 6. Speichern Sie die Änderungen an der **entitlements.plist**-Datei.
@@ -94,7 +94,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 ### <a name="wallet"></a>Wallet
 
-*   **Beschreibung**: Früher „Passbook“. Wallet ist eine App in der Pässe und Tickets gespeichert und verwaltet werden. Diese Pässe können Kreditkarten, Kundenkarten, Bordkarten oder Tickets sein.
+*   **Beschreibung:** Wallet (früher als „Passbook“ bekannt) ist eine App, in der Pässe und Tickets gespeichert und verwaltet werden. Diese Pässe können Kreditkarten, Kundenkarten, Bordkarten oder Tickets sein.
 
     - **Passtypbezeichner**
         * **Schlüssel**: com.apple.developer.pass-type-identifiers
@@ -109,7 +109,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 ### <a name="icloud"></a>iCloud
 
-*   **Beschreibung**: iCloud stellt iOS-Benutzern einen praktischen und einfachen Weg bereit, um ihre Inhalte zu speichern und diese zwischen Geräten freizugeben. Es gibt vier Möglichkeiten, wie Entwickler iCloud verwenden können, um ihren Benutzern Speicher bereitzustellen: Schlüssel-Wert-Speicher, UIDocument-Speicher, CoreData und das direkte Verwenden von CloudKit für das Bereitstellen von Speicher für einzelne Dateien und Verzeichnisse. Weitere Informationen dazu finden Sie im Handbuch „Introduction to iCloud (Einführung in iCloud)“.
+*   **Beschreibung**: iCloud stellt iOS-Benutzern einen praktischen und einfachen Weg bereit, um ihre Inhalte zu speichern und diese zwischen Geräten freizugeben. Entwicklern stehen vier Methoden zur Verwendung von iCloud zur Verfügung, um ihren Benutzern eine Speichermöglichkeit bereitzustellen: Der Key-Value-Speicher, der UIDocument-Speicher, CoreData und die direkte Verwendung von CloudKit, um Speicher für einzelne Dateien und Verzeichnisse bereitzustellen. Weitere Informationen dazu finden Sie im Handbuch „Introduction to iCloud (Einführung in iCloud)“.
 
     - **iCloud-Dokumente & CloudKit**
         - **Schlüssel**: com.apple.developer.ubiquity-container-identifiers
@@ -128,7 +128,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 ### <a name="app-groups"></a>App-Gruppen
 
-- **Beschreibung**: Durch eine App-Gruppe können unterschiedliche Anwendungen (oder eine Anwendung und ihre Erweiterungen) auf einen freigegebenen Dateispeicherort zugreifen.
+- **Beschreibung:** Durch eine App-Gruppe können unterschiedliche Anwendungen (oder eine Anwendung und ihre Erweiterungen) auf einen freigegebenen Dateispeicherort zugreifen.
 
     - **Schlüssel**: com.apple.security.application-groups
     - **Zeichenfolge**: group.$(CFBundleIdentifier)
@@ -137,7 +137,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 ### <a name="apple-pay"></a>Apple Pay
 
-- **Beschreibung**: Apple Pay ermöglicht Benutzern das Bezahlen physischer Produkte über Ihr iOS-Gerät.
+- **Beschreibung:** Apple Pay ermöglicht Benutzern das Bezahlen physischer Güter über das iOS-Gerät.
     - **Schlüssel**: com.apple.developer.in-app-payments
     - **Zeichenfolge**: merchant.your.mechantid
 
@@ -148,7 +148,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 ### <a name="siri"></a>Siri
 
-- **Beschreibung**: Durch SiriKit kann eine iOS-App Dienste bereitstellen, auf die die Apps „Siri“ und „Karten“ auf einem iOS-Gerät mit App-Erweiterungen und den neuen Intents- und Intents UI-Frameworks zugreifen können. Weitere Informationen dazu finden Sie im Handbuch „Introduction to iCloud (Einführung in SiriKit)“.
+- **Beschreibung:** Durch SiriKit kann eine iOS-App Dienste bereitstellen, auf die die Apps „Siri“ und „Karten“ auf einem iOS-Gerät mit App-Erweiterungen und den neuen Intents- und Intents UI-Frameworks zugreifen können. Weitere Informationen dazu finden Sie im Handbuch „Introduction to iCloud (Einführung in SiriKit)“.
     - **Schlüssel**: com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>Persönliches VPN
@@ -158,49 +158,49 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 ### <a name="keychain-sharing"></a>Keychain-Freigabe
 
-- **Beschreibung**: Durch die Freigabe mit Keychain können App-Entwickler Kennwörter für andere vom selben Team entwickelten Apps freigeben, die auf dem Gerät in Keychain gespeichert sind. Der Zugriff kann eingeschränkt werden, indem Sie eine Gruppen-ID für den Zugriff auf Keychain in der Zeichenfolge übergeben.
+- **Beschreibung:** Durch die Freigabe mit Keychain können App-Entwickler Kennwörter für andere vom selben Team entwickelten Apps freigeben, die auf dem Gerät in Keychain gespeichert sind. Der Zugriff kann eingeschränkt werden, indem Sie eine Gruppen-ID für den Zugriff auf Keychain in der Zeichenfolge übergeben.
     - **Schlüssel**: keychain-access-groups
     - **Zeichenfolge**: $(AppIdentifierPrefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>Inter-App-Audio
 
-- **Beschreibung**: Mit Inter-App-Audio können Entwickler Audio zwischen Apps streamen.
+- **Beschreibung:** Mit Inter-App-Audio können Entwickler Audio zwischen Apps streamen.
     - **Schlüssel**: inter-app-audio
-    - **Boolescher Wert**: YES
+    - **Boolesch**: YES
 
 ### <a name="associated-domains"></a>Zugehörige Domänen
 
-- **Beschreibung**: Zugehörige Domänen, die als universelle Links behandelt werden sollen, sollten mit dieser Berechtigung übergeben werden. Universelle Links können implementiert werden, um Deep Linking zwischen Ihrer App und Ihrer Website zu ermöglichen. Sie sollten einen Eintrag für jede Domäne bereitstellen, die Ihre App unterstützt. Dabei sollte jeder Eintrag mit `applinks:` beginnen.
+- **Beschreibung:** Zugehörige Domänen, die als universelle Links behandelt werden sollen, sollten mit dieser Berechtigung übergeben werden. Universelle Links können implementiert werden, um Deep Linking zwischen Ihrer App und Ihrer Website zu ermöglichen. Sie sollten einen Eintrag für jede Domäne bereitstellen, die Ihre App unterstützt. Dabei sollte jeder Eintrag mit `applinks:` beginnen.
     - **Schlüssel**: com.apple.developer.associated-domains
     - **Zeichenfolge**: webcredentials:example.com
 
 ### <a name="data-protection"></a>Schutz von Daten
 
-- **Beschreibung**: Beim Aktivieren des Schutzes von Daten wird die integrierte Verschlüsselungshardware verwendet, um sensible Daten zu speichern, die in Ihrer App in verschlüsseltem Format verwendet werden. Die Standardschutzebene ist auf vollständigen Schutz festgelegt. Dabei kann nur auf Dateien zugegriffen werden, wenn das Gerät entsperrt ist.
+- **Beschreibung:** Beim Aktivieren des Schutzes von Daten wird die integrierte Verschlüsselungshardware verwendet, um sensible Daten zu speichern, die in Ihrer App in verschlüsseltem Format verwendet werden. Die Standardschutzebene ist auf vollständigen Schutz festgelegt. Dabei kann nur auf Dateien zugegriffen werden, wenn das Gerät entsperrt ist.
     - **Schlüssel**: com.apple.developer.default-data-protection
-    - **Zeichenfolge**: NSFileProtectionComplete
+    - **Zeichenfolge:** NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
-- **Beschreibung**: Das HomeKit-Framework bietet eine Plattform zum Einrichten, Konfigurieren und Verwalten unterstützter Heimautomatisierungsgeräte – und das alles von einem iOS-Gerät aus. Weitere Informationen zu HomeKit finden Sie im Leitfaden „Introduction to HomeKit (Einführung in HomeKit)“.
+- **Beschreibung:** Das HomeKit-Framework bietet eine Plattform zum Einrichten, Konfigurieren und Verwalten unterstützter Heimautomatisierungsgeräte – und das alles von einem iOS-Gerät aus. Weitere Informationen zu HomeKit finden Sie im Leitfaden „Introduction to HomeKit (Einführung in HomeKit)“.
     - **Schlüssel**: com.apple.developer.homekit
-    - **Boolescher Wert**: YES
+    - **Boolesch**: YES
 
 ### <a name="healthkit"></a>HealthKit
 
-- **Beschreibung**: HealthKit ist ein mit iOS 8 eingeführtes Framework, das einen zentralisierten, koordinierten und sicheren Datenspeicher für Informationen bietet, die mit der Integrität der App in Verbindung stehen. Weitere Informationen zu HomeKit finden Sie im Leitfaden „Introduction to HealthKit (Einführung in HealthKit)“.
+- **Beschreibung:** HealthKit ist ein mit iOS 8 eingeführtes Framework, das einen zentralisierten, koordinierten und sicheren Datenspeicher für Informationen bietet, die mit der Integrität der App in Verbindung stehen. Weitere Informationen zu HomeKit finden Sie im Leitfaden „Introduction to HealthKit (Einführung in HealthKit)“.
     - **Schlüssel**: com.apple.developer.healthkit
-    - **Boolescher Wert**: YES
+    - **Boolesch**: YES
 
 ### <a name="wireless-accessory-configuration"></a>Konfiguration für drahtloses Zubehör
 
-- **Beschreibung**: Konfiguration für drahtloses Zubehör ermöglicht Ihrer Anwendung die Konfiguration von MFi-WLAN-Zubehör.
+- **Beschreibung:** Die Konfiguration für drahtloses Zubehör ermöglicht Ihrer Anwendung die Konfiguration von MFi-WLAN-Zubehör.
     - **Schlüssel**: com.apple.external-accessory.wireless-configuration
-    - **Boolescher Wert**: YES
+    - **Boolesch**: YES
 
 ### <a name="classkit"></a>ClassKit
 
-- **Beschreibung**: ClassKit ermöglicht es Lehrkräften, den Fortschritt der Schüler und Studenten bei den zugewiesenen Aktivitäten in der App anzuzeigen.
+- **Beschreibung:** ClassKit ermöglicht es Lehrkräften, den Fortschritt der Schüler und Studenten bei den zugewiesenen Aktivitäten in der App anzuzeigen.
     - **Schlüssel**: com.apple.developer.ClassKit-environment
     - **Zeichenfolge**: `development` oder `production`
 

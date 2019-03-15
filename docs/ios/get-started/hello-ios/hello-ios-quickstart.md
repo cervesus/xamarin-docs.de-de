@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 0ec24e49e03237829474515a9abe9b014d10014f
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 336f1ec4e4406d2ab40c5e8aea247bd3be9ed765
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527117"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672728"
 ---
 # <a name="hello-ios--quickstart"></a>Schnellstart: Hallo, iOS
 
@@ -274,7 +274,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 
 In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung namens Phoneword erstellen, die eine alphanumerische Telefonnummer in eine numerische Telefonnummer übersetzt.
 
-**Hinweis**: In dieser exemplarischen Vorgehensweise wird Visual Studio Enterprise 2017 auf einem virtuellen Computer mit Windows 10 verwendet. Ihre Einrichtung kann sich davon unterscheiden, solange sie die oben genannten Anforderungen erfüllt, aber beachten Sie, dass einige Screenshots sich von Ihrer Einrichtung unterscheiden können.
+**Hinweis:** In dieser exemplarischen Vorgehensweise wird Visual Studio Enterprise 2017 auf einem virtuellen Computer mit Windows 10 verwendet. Ihre Einrichtung kann sich davon unterscheiden, solange sie die oben genannten Anforderungen erfüllt, aber beachten Sie, dass einige Screenshots sich von Ihrer Einrichtung unterscheiden können.
 
 > [!NOTE]
 > Bevor Sie mit dieser exemplarischen Vorgehensweise fortfahren, müssen Sie bereits eine Verbindung von Visual Studio zu Ihrem Mac hergestellt haben. Dies liegt daran, dass Xamarin.iOS auf die Apple-Tools zum Erstellen und Starten des iOS Designers und der Anwendungen zurückgreift. Führen Sie zur Einrichtung die Schritte im Leitfaden [Durchführen einer Kopplung mit einem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) aus.
@@ -496,5 +496,5 @@ Erfahren Sie jetzt mehr über die Tools und Fähigkeiten, die Sie in diesem Hand
 
 - [Xamarin App-Symbole und Startbilder (Beispiel)](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
 - [Hallo, iOS (Beispiel)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS-Eingaberichtlinien](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [iOS-Eingaberichtlinien](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS-Bereitstellungsportal](https://developer.apple.com/ios/manage/overview/index.action)

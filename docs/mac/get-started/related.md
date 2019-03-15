@@ -1,18 +1,18 @@
 ---
 title: 'Xamarin.Mac: Verwandte Dokumentationen'
-description: Dieses Dokument enthält Links zu Dokumentationen, die für Xamarin.Mac-Entwickler relevant sind, z.B. zur Xamarin.iOS-Dokumentation, zum Mac Developer Center von Apple sowie zu verschiedenen Leitfäden, in denen das Erstellen von Benutzeroberflächen mit Xamarin.Mac beschrieben wird.
+description: 'Dieses Dokument enthält Links zu Dokumentationen, die für Xamarin.Mac-Entwickler relevant sind: Xamarin.iOS-Dokumentation, Mac Developer Center von Apple sowie verschiedene Leitfäden, in denen das Erstellen von Benutzeroberflächen mit Xamarin.Mac beschrieben wird.'
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 745328aeb884031863d8d85caca1e4a6563fc916
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 87987e79fce2bd5277f8092d09752fe715e2f2ce
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526948"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667651"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac: Verwandte Dokumentationen
 
@@ -22,7 +22,7 @@ Zusätzlich zum Mac-Bereich auf [developer.xamarin.com](~/mac/get-started/index.
 
 - **Das [Mac Developer Center](https://developer.apple.com/devcenter/mac/) von Apple**: Häufig können Beispiele der aufzurufenden APIs in Objective-C unkompliziert in C# konvertiert werden. Weitere Informationen dazu finden Sie unter [Understanding Mac APIs (Grundlegendes zu Mac-APIs)](~/mac/app-fundamentals/mac-apis.md).
 
-- [**Stack Overflow**](http://stackoverflow.com/): eine praktische Ressource für einfache, einmalige Fragen wie die folgende: [Wie kann ich alle Knoten in NSOutlineView automatisch erweitern?](http://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes). Diese Beispiele sind oft in Objective-C geschrieben und müssen in C# konvertiert werden. Es gibt jedoch auch einige Antworten in C#.
+- [**Stack Overflow**](https://stackoverflow.com/): eine praktische Ressource für einfache, einmalige Fragen wie die folgende: [Wie kann ich alle Knoten in NSOutlineView automatisch erweitern?](https://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes). Diese Beispiele sind oft in Objective-C geschrieben und müssen in C# konvertiert werden. Es gibt jedoch auch einige Antworten in C#.
 
 ## <a name="user-interface"></a>Benutzeroberfläche
 

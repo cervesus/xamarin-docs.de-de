@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b8f36ef407c3acc9b3472539735816649e13b7db
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782332"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672663"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Einführung in den Lebenszyklus der mobilen Softwareentwicklung
 
@@ -19,7 +19,7 @@ Das Erstellen mobiler Anwendungen kann so einfach sein: Öffnen Sie die IDE, sch
 
 Dieses Dokument enthält eine gründliche, einführende Erläuterung für das Erstellen von mobilen Anwendungen, einschließlich Folgendem:
 
-1.   **Prozess**: Der Prozess der Softwareentwicklung wird als Lebenszyklus der Softwareentwicklung (Software Development Lifecycle, SDLC) bezeichnet. Die Phasen des SDLC werden in Bezug auf die Entwicklung mobiler Anwendungen untersucht, einschließlich der Inspiration, des Entwurfs, der Entwicklung, Stabilisierung, Bereitstellung und Wartung.
+1.   **Prozess**: Der Prozess der Softwareentwicklung wird als Lebenszyklus der Softwareentwicklung (Software Development Lifecycle, SDLC) bezeichnet. Wir erläutern alle Phasen des SDLC in Bezug auf die Entwicklung mobiler Anwendungen, einschließlich Inspiration, Entwurf, Entwicklung, Stabilisierung, Bereitstellung und Wartung.
 1.   **Überlegungen**: Es gibt einige Überlegungen zum Erstellen mobiler Anwendung, insbesondere im Gegensatz zu herkömmlichen Web- oder Desktopanwendungen. Diese Überlegungen und ihre Auswirkungen auf die Entwicklung mobiler Anwendungen werden untersucht.
 
 Dieses Dokument richtet sich sowohl an neue als auch an erfahrene Anwendungsentwickler und soll grundlegende Fragen über die Entwicklung mobiler Apps beantworten. Die meisten Konzepte, denen Sie während des gesamten Lebenszyklus der Softwareentwicklung (SDLC) begegnen, werden umfassend vorgestellt. Dieses Dokument ist jedoch nicht für jeden geeignet. Wenn Sie direkt mit dem Erstellen von Anwendungen beginnen möchten, wird empfohlen, direkt mit dem Leitfaden [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md) weiter zu machen und später zu diesem Dokument zurückzukehren.
@@ -58,7 +58,7 @@ Zusätzlich sollten Apps im Kontext des mobilen Formfaktors überprüft werden:
 -   **Wert**: Welchen Wert hat die App für die Benutzer? Wie werden sie sie verwenden?
 -   **Form/Mobilität**: Wie arbeitet diese App in einem mobilen Formfaktor? Wie kann ich den Wert durch das Verwenden von mobilen Technologien wie z.B. die Ortserkennung, Kamera usw. erhöhen?
 
-Für das Entwerfen der Funktionalität einer App kann es hilfreich sein, Akteure und [Anwendungsfälle](http://en.wikipedia.org/wiki/Use_case) zu definieren. Akteure sind Rollen innerhalb einer Anwendung, die häufig von Benutzern eingenommen werden. Anwendungsfälle sind in der Regel Aktionen oder Absichten.
+Für das Entwerfen der Funktionalität einer App kann es hilfreich sein, Akteure und [Anwendungsfälle](https://en.wikipedia.org/wiki/Use_case) zu definieren. Akteure sind Rollen innerhalb einer Anwendung, die häufig von Benutzern eingenommen werden. Anwendungsfälle sind in der Regel Aktionen oder Absichten.
 
 Eine Anwendung für die Nachverfolgung von Aufgaben kann beispielsweise zwei Akteure besitzen: *Benutzer* und *Freund*. Ein Benutzer kann *eine Aufgabe erstellen* und *eine Aufgabe freigeben* für einen Freund. In diesem Fall sind das Erstellen und Freigeben einer Aufgabe zwei verschiedene Anwendungsfälle, die Sie zusammen mit den Akteuren darüber informieren, welche Bildschirme Sie erstellen sowie welche Geschäftsentitäten und Logiken entwickelt werden müssen.
 
@@ -77,7 +77,7 @@ Die Benutzererfahrung (UX) wird üblicherweise mit Drahtmodellen oder Modellen m
 Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzeroberfläche für die verschiedenen Zielplattformen der App zu berücksichtigen. Die App sollte den Anforderungen der verschiedenen Plattformen entsprechen. Die verschiedenen offiziellen Entwurfsrichtlinien für die jeweiligen Plattformen finden Sie unter:
 
 1.   **Apple**: -  [Human Interface Guidelines (Eingaberichtlinien)](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
-1.   **Android**:[Design Guidelines (Entwurfsrichtlinien)](http://developer.android.com/design/index.html)
+1.   **Android**:[Design Guidelines (Entwurfsrichtlinien)](https://developer.android.com/design/index.html)
 1.   **UWP**: [UWP Design basics (Grundlagen des UWP-Entwurfs)](https://docs.microsoft.com/windows/uwp/design/basics/)
 
 Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den einzelnen Abschnitten einer Anwendung wechseln kann. Bei iOS ist die Registerkartenleiste im unteren Bereich des Bildschirms platziert, bei Android im oberen Bereich, während bei UWP eine Ansicht mit [Pivots und Registerkarten](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) verwendet wird.
@@ -108,7 +108,7 @@ In den restlichen Tutorials konzentrieren wir uns hauptsächlich auf die Entwick
 
 ### <a name="stabilization"></a>Stabilisierung
 
-Im Rahmen der Stabilisierung sollten Sie sich auf das Finden von Fehlern in Ihrer App konzentrieren. Dabei geht es nicht nur um Funktionalität (z.B. „Die App stürzt ab, wenn man auf eine bestimmte Taste drückt“), sondern auch um Nutzbarkeit und Leistung. Am besten beginnen Sie bereits früh während der Entwicklung mit der Stabilisierung, damit Sie Kurskorrekturen vornehmen können, bevor hohe Kosten entstehen. In der Regel durchlaufen Anwendungen folgende Phasen: *Prototyp*, *Alpha*, *Beta* und *Release Candidate*. Es gibt zwar verschiedene Definitionen für diese Phasen, aber sie folgen für gewöhnlich folgendem Muster:
+Im Rahmen der Stabilisierung sollten Sie sich auf das Finden von Fehlern in Ihrer App konzentrieren. Dabei geht es nicht nur um Funktionalität (z. B. „Die App stürzt ab, wenn ich auf eine bestimmte Taste drückt“), sondern auch um Nutzbarkeit und Leistung. Am besten beginnen Sie bereits früh während der Entwicklung mit der Stabilisierung, damit Sie Kurskorrekturen vornehmen können, bevor hohe Kosten entstehen. In der Regel durchlaufen Anwendungen folgende Phasen: *Prototyp*, *Alpha*, *Beta* und *Release Candidate*. Es gibt zwar verschiedene Definitionen für diese Phasen, aber sie folgen für gewöhnlich folgendem Muster:
 
 1.   **Prototyp**: Die App befindet sich noch in der sogenannten Proof-of-Concept-Phase und nur die Kernfunktionalitäten bzw. nur bestimmte Teile der Anwendung funktionieren. Es gibt noch große Fehler.
 1.   **Alpha**: Die Kernfunktionalitäten sind für gewöhnlich Code Complete, d.h. sie wurden erstellt, aber noch nicht vollständig getestet. Es gibt immer noch große Fehler, und möglicherweise sind noch keine äußeren Funktionen vorhanden.
@@ -227,7 +227,7 @@ Aufgrund der starken Fragmentierung von Android-Geräten, entscheiden sich die m
 #### <a name="security-considerations"></a>Sicherheitsüberlegungen
 
 Anwendungen unter Android werden alle unter einer eindeutigen und isolierten Identität mit eingeschränkten Berechtigungen ausgeführt. Standardmäßig haben Anwendungen nur sehr wenige Berechtigungen. Beispielsweise kann eine Anwendung ohne spezielle Berechtigungen keine Textnachrichten senden, nicht den Status des Telefons bestimmen oder sie haben noch nicht einmal Zugriff zum Internet. Damit die Anwendung Zugriff auf diese Funktionen erhält, muss in der Anwendungsmanifestdatei angegeben werden, welche Berechtigungen die Anwendung haben soll, und wenn sie dann installiert wird, liest das Betriebssystem diese Berechtigungen aus, benachrichtigt den Benutzer, dass die Anwendung diese Berechtigungen anfordert, und gibt ihm dann die Möglichkeit, mit der Installation entweder fortzufahren oder diese abzubrechen.
-Dies ist ein entscheidender Schritt im Verteilungsmodell von Android. Es handelt sich um ein offenes App Store-Modell, da Anwendungen nicht wie beispielsweise bei iOS geprüft werden. Eine Liste mit Anwendungsberechtigungen finden Sie unter [Manifest Permissions (Bekannte Berechtigungen)](http://developer.android.com/reference/android/Manifest.permission.html) in der Android-Dokumentation.
+Dies ist ein entscheidender Schritt im Verteilungsmodell von Android. Es handelt sich um ein offenes App Store-Modell, da Anwendungen nicht wie beispielsweise bei iOS geprüft werden. Eine Liste mit Anwendungsberechtigungen finden Sie unter [Manifest Permissions (Bekannte Berechtigungen)](https://developer.android.com/reference/android/Manifest.permission.html) in der Android-Dokumentation.
 
 ### <a name="windows-considerations"></a>Überlegungen zu Windows
 
@@ -253,5 +253,5 @@ In diesem Leitfaden wurde der Lebenszyklus der Softwareentwicklung im Zusammenha
 
 - [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hallo, Android](http://developer.xamarin.com/get-started-droid/)
+- [Hallo, Android](https://developer.xamarin.com/get-started-droid/)
 - [Application Fundamentals (Anwendungsgrundlagen)](~/cross-platform/app-fundamentals/index.md)

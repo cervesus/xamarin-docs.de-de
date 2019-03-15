@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 7f03df796c338380a776f9af26563af2e60e59a1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242406"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672650"
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
@@ -257,7 +257,7 @@ Weitere Informationen finden Sie unter [Async Support Overview (Übersicht über
 
 Verwaltete Sprachen wie C# verwenden die Garbage Collection, um Speicher freizugeben, der nicht mehr genutzten Objekten zugewiesen ist. Die beiden von der Xamarin-Plattform genutzten Garbage Collectors sind:
 
-- [**SGen**](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/): Dies ist ein generationeller Garbage Collector und der Standard für die Xamarin-Plattform.
+- [**SGen**](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/): Dies ist ein generationeller Garbage Collector und der Standard für die Xamarin-Plattform.
 - [**Boehm**](http://www.hboehm.info/gc/): Dies ist ein konservativer, nicht generationeller Garbage Collector und der Standard für Xamarin.iOS-Anwendungen, die die Classic API verwenden.
 
 SGen nutzt einen dieser drei Heaps, um Objekten Speicher zuzuweisen:
@@ -334,7 +334,7 @@ Anhand der folgenden Schritte können Sie die Größe ausführbarer Anwendungsda
 - Reduzieren Sie die Größe des verwalteten Anwendungscodes. Sie erreichen dies, indem Sie den Linker für jede Assembly aktivieren (*Alle verknüpfen* für iOS-Projekte und *Alle Assemblys verknüpfen* für Android-Projekte).
 
 Android-Apps können auch für jede ABI („Architektur“) in ein separates APK aufgeteilt werden.
-Weitere Informationen finden Sie im Blogbeitrag [How To Keep Your Android App Size Down (So verhindern Sie, dass sich Ihre Android-App vergrößert)](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down).
+Weitere Informationen finden Sie in diesem Blogbeitrag: [How To Keep Your Android App Size Down (So halten Sie die Größe Ihrer Android-App gering)](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down).
 
 <a name="optimizeimages" />
 
