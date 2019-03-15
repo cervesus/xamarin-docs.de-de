@@ -483,11 +483,11 @@ _Aufgelistet nach dem primären Standort, Bereitstellen viele Partner Dienste, �
 |[AGILUX](https://agilux.lu)|Pommerloch, Luxemburg|Agilux ist ein Computer consulting-Unternehmen die Integration von IT-Lösungen für die kommerzielle Verwaltung spezialisiert und Berücksichtigung KMU, Entwicklung von Websites, e-Commerce- und mobilen Anwendungen|
 
 
-## <a name="macedonia"></a>Mazedonien, ehemalige jugoslawische Republik
+## <a name="macedonia"></a>Nordmazedonien
 
 | Partner | Speicherorte | Beschreibung |
 | --- | --- | --- |
-|[Code Chemie](http://www.codechem.com)|Skopje, Mazedonien, ehemalige jugoslawische Republik|Code Chemie bietet Softwareentwicklung, Projektmanagement und consulting Services. |
+|[Code Chemie](http://www.codechem.com)|Skopje, Nordmazedonien|Code Chemie bietet Softwareentwicklung, Projektmanagement und consulting Services. |
 
 
 ## <a name="mexico"></a>Mexiko
