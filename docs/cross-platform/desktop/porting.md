@@ -5,12 +5,12 @@ description: Eine einfache Erklärung der Vorgehensweise zum Entkoppeln von vorh
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 3d3af9c78b7486e7ebfb063a3cb00fabdbd0f5b7
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 4bf1dea170bd6b63209693963d54cc2e16163eea
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617539"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071098"
 ---
 # <a name="desktop-app-porting-guidance"></a>Portierungsleitfadens Desktop-app
 
@@ -26,7 +26,7 @@ Für Windows Forms und WPF-Anwendungen mit C# (oder Visual Basic.NET) überrasch
 
 ## <a name="net-portability-analyzer"></a>.NET Portability Analyzer
 
-Visual Studio 2015 und 2017 – Unterstützung der [.NET Portability Analyzer](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([für Windows herunterladen](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) die untersuchen Sie Ihre vorhandenen Anwendungen und informiert Sie, wie viel Code portiert werden kann "wie besehen" für andere Plattformen . Mehr darüber erfahren Sie aus diesem [Channel 9-Video](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer).
+Visual Studio 2017 und höher, unterstützt die [.NET Portability Analyzer](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([für Windows herunterladen](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) die können Ihre vorhandenen Anwendungen zu untersuchen und teilt Ihnen mit wie viel Code portiert werden kann, "wie besehen" an andere Plattformen. Mehr darüber erfahren Sie aus diesem [Channel 9-Video](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer).
 
 Es gibt auch ein Befehlszeilentool kann heruntergeladen werden [Portability Analyzer auf GitHub](https://github.com/Microsoft/dotnet-apiport) und verwendet, um die gleichen Berichte bereitzustellen.
 

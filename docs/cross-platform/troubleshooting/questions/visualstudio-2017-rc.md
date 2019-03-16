@@ -7,60 +7,11 @@ ms.assetid: 8E752F36-F73A-4EFC-9F82-4E18FDE1C9E2
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4c93653793c7c8cce0d2257107097c89f73fc726
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3f83bd394ff631ebe3991a0c3e72240c979454ca
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33946719"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070786"
 ---
-# <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>Kann ich Visual Studio 2017 Release Candidate mit Xamarin verwenden?
-
-## <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>Kann ich Visual Studio 2017 Release Candidate mit Xamarin verwenden?
-
-Ja. Sie sind über Visual Studio 2017 Release Candidate Xamarin nutzen können. Beachten Sie jedoch, dass derzeit früheren Versionen von Xamarin in Visual Studio 2015/2013 installiert Installieren von Xamarin für Visual Studio 2017 RC deinstalliert wird. Xamarin für Visual Studio-2017 kann nicht zur gleichen Zeit wie Xamarin für Visual Studio 2015/2013 als Ergebnis der Visual Studio 2017 Verschieben von MSI-Paket in Richtung der Auslastung des Systems Installer für Visual Studio installiert werden.
-
-Während das Team derzeit in Möglichkeiten sucht, dieses Verhalten zu umgehen, wir empfehlen, ihre Entwicklungsumgebung, die je nach ihren Anforderungen auszuwählen. 
-
-> [!IMPORTANT]
-> Wenn Sie Xamarin.iOS Projekte erstellen, stellen Sie sicher, dass Visual Studio für Mac in Ihrem paarweise zugeordneten Mac-System auf die gleiche Version von Xamarin.iOS Kanal ist.
-
-## <a name="how-do-i-install-xamarin-to-visual-studio-2017-release-candidate"></a>Wie installiere ich Xamarin in Visual Studio 2017 Release Candidate?
-
-### <a name="installing-during-the-visual-studio-2017-rc-installer"></a>Während der 2017 RC Installer für Visual Studio installieren
-
-* Wählen Sie die **Xamarin** -Komponente als Teil der neuen **Installer für Visual Studio**
-
-  [![](visualstudio-2017-rc-images/install1-sml.png "Visual Studio 2017 RC Installer-Bildschirm")](visualstudio-2017-rc-images/install1-orig.png#lightbox)
-
-Hiermit wird der Visual Studio-Erweiterung für die Entwicklung von Xamarin.iOS und Xamarin.Android installiert.
-
-### <a name="installing-or-reinstalling-xamarin-in-an-existing-installation-of-visual-studio-2017-rc"></a>Installieren oder eine erneute Installation von Xamarin in einer vorhandenen Installation von Visual Studio 2017 RC
-
-#### <a name="using-the-visual-studio-installer"></a>Verwenden die Visual Studio-Installer:
-
-1. Suchen Sie nach der Installer für Visual Studio-Anwendung
-
-  [![](visualstudio-2017-rc-images/reinstall1-sml.png "Suchergebnisse für Visual Studio Installer-Anwendung")](visualstudio-2017-rc-images/reinstall1-orig.png#lightbox)
-
-2. Wählen Sie: ein. **Mobile Entwicklung mit .NET (Vorschau)** auf der Registerkarte Arbeitslasten oder
-
-  [![](visualstudio-2017-rc-images/reinstall2-sml.png "Registerkarte \"Visual Studio Installer-Arbeitslasten\"") ](visualstudio-2017-rc-images/reinstall2-orig.png#lightbox) b. **Xamarin** in der **Einzelkomponenten** Registerkarte
-
-  [![](visualstudio-2017-rc-images/reinstall3-sml.png "Registerkarte \"Visual Studio Installer-Komponenten\"")](visualstudio-2017-rc-images/reinstall3-orig.png#lightbox)
-
-#### <a name="using-the-visual-studio-installer-within-visual-studio"></a>Verwenden den Installer für Visual Studio innerhalb von Visual Studio:
-1. Navigieren Sie zu Visual Studio 2017-Startseite
-2. Klicken Sie auf **mehr Projektvorlagen** unter der **neues Projekt** Abschnitt
-
-    [![](visualstudio-2017-rc-images/reinstall4-sml.png "Visual Studio-Startseite")](visualstudio-2017-rc-images/reinstall4-orig.png#lightbox)
-3. Klicken Sie auf `Open Visual Studio Installer` im linken Bereich
-
-    [![](visualstudio-2017-rc-images/reinstall5-sml.png "Bildschirm \"Neues Projekt\"")](visualstudio-2017-rc-images/reinstall5-orig.png#lightbox)
-4. Wählen Sie Folgendes aus:
-    
-    a. **Mobile Entwicklung mit .NET (Vorschau)** auf der Registerkarte Arbeitslasten oder
-
-    [![](visualstudio-2017-rc-images/reinstall2-sml.png "Registerkarte \"Visual Studio Installer-Arbeitslasten\"") ](visualstudio-2017-rc-images/reinstall2-orig.png#lightbox) b. **Xamarin** in der **Einzelkomponenten** Registerkarte
-
-    [![](visualstudio-2017-rc-images/reinstall3-sml.png "Registerkarte \"Visual Studio Installer-Komponenten\"")](visualstudio-2017-rc-images/reinstall3-orig.png#lightbox)
+Beachten Sie für Editoren: Dieser Inhalt wurde absichtlich gelöscht und umgeleitet. Diese Umleitung mit anderen umleitungen zentralisiert werden soll, und diese Datei entfernt werden soll.

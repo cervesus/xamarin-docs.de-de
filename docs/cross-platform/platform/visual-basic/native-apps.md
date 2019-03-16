@@ -6,12 +6,12 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 55c08c1bd0d82f8458e0c07b4202b6275600ff38
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: f62d3cb076019ba49303f2c82f009975d9fbdc50
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671103"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070968"
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Visual Basic.NET in Xamarin.IOS und Android
 
@@ -284,18 +284,6 @@ Um sicherzustellen, dass Ihr Versionskontrollsystem die PCL-Assemblyausgabe spei
 2. Hinzufügen einer _Postbuild_ -Skript, das die Ausgabe-DLL aus dem Projekt in das Stammverzeichnis des Projekts kopiert (die befindet sich außerhalb der **/bin /**). Je nach Konfiguration der Zugriffssteuerung für Ihre Version sollte die DLL nun zur quellcodeverwaltung hinzugefügt werden können.
 
   [![](native-apps-images/image6-vs-sml.png "Buildereignisse Post-Build-Skript zum Kopieren von VB-DLL")](native-apps-images/image6-vs.png#lightbox)
-
-#### <a name="visual-studio-2015"></a>Visual Studio 2015
-
-1.  Mit der rechten Maustaste auf das Projekt, und wählen Sie **Eigenschaften > Kompilieren** , stellen Sie sicher, alle Konfigurationen in der oberen linken Kamm-Feld ausgewählt ist. Klicken Sie auf die **Buildereignisse...**  -Schaltfläche in der unteren rechten Ecke.
-
-    [![](native-apps-images/image6.png "Kompilieren Sie die Projekteigenschaften im Abschnitt")](native-apps-images/image6.png#lightbox)
-
-1.  Hinzufügen eines Postbuild-Skripts, die die Ausgabe-DLL aus dem Projekt in das Stammverzeichnis des Projekts kopiert (Dies ist außerhalb des **/bin /** ). Je nach Konfiguration der Zugriffssteuerung für Ihre Version sollte die DLL nun zur quellcodeverwaltung hinzugefügt werden können.
-
-    [![](native-apps-images/image7.png "Erstellen von Ereignisfenster")](native-apps-images/image7.png#lightbox)
-
-#### <a name="all-versions"></a>Alle Versionen
 
 Beim nächsten Erstellen Sie das Projekt, die Portable Class Library-Assembly kopiert werden, um das Stammverzeichnis des Projekts, und wann Sie Check-in/Commits/pushes Ihre Änderungen die DLL können gespeichert wird (sodass sie auf einem Mac mit Visual Studio für Mac heruntergeladen werden kann).
 

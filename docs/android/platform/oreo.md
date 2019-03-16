@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 765494b5d9a55aedd9c9b3f0ea29ea389346ae3c
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: c34d81feee48caca94989973a67ba783a0139a90
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267624"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071068"
 ---
 # <a name="oreo-features"></a>Oreo-Features
 
@@ -65,8 +65,6 @@ Um Visual Studio Android Oreo-Unterstützung hinzuzufügen, führen Sie folgende
     1. Update für Visual Studio 2017 Version 15.7 oder höher (finden Sie unter [Aktualisieren von Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/update-visual-studio)).
 
     2. Verwenden der [SDK-Manager](~/android/get-started/installation/android-sdk.md) , API-Ebene 26.0 oder höher zu installieren.
-
--   Wenn Sie Visual Studio 2015 verwenden, empfehlen wir die Herabstufung SDK Tools auf 25 und die Verwendung des alten Google Emulator Managers GUI. SDK-Tools 25 können zusammen mit der API 26, 27 und neuere, weiterhin verwendet werden und keine Auswirkungen auf in die Entwicklung für neue Plattformen. Diese erhalten Schnittstelle Sie für die Verwaltung Ihres Android-SDK für ältere Versionen von Visual Studio.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -270,7 +268,7 @@ Weitere Informationen zum Herunterladen von Schriftarten finden Sie in der Andro
 
 
 
-### <a name="autofill"></a>AutoAusfüllen:
+### <a name="autofill"></a>Autofill
 
 Die neue _AutoAusfüllen_ -Framework in Android Oreo erleichtert es Benutzern, sich wiederholende Aufgaben wie z. B. Anmeldenamen, dem kontoerstellung und Kreditkartentransaktionen zu behandeln. Benutzer verbringen weniger Zeit mit dem erneuten eingeben von Informationen (was zur Eingabe von Fehlern führen kann). Bevor Ihre app mit dem Autofill Framework arbeiten kann, muss ein AutoAusfüllen-Dienst in den Systemeinstellungen aktiviert sein (Benutzer können aktivieren oder Deaktivieren von AutoAusfüllen).
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: ce9bf0293b846299cc7cd06773ce936f725715fa
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 06a7a3b00934b7a2f3eeb4fcfa6fc90071901ba0
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669894"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070903"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
@@ -246,7 +246,10 @@ Der Generator Bindungen beispielsweise davon ausgeht, die die Java-Methode `de.n
 
 ### <a name="obfuscated"></a>verborgen
 
-Tools, mit denen Verschleiern von Java-Bibliotheken der Generator für die Xamarin.Android-Bindung und die Möglichkeit zum Generieren beeinträchtigen C# Wrapperklassen. Merkmale der verborgenen Klassen enthalten: * enthält den Namen der Klasse eine **$**, d. h. **eine$ .class** * den Namen der Klasse von Kleinbuchstaben, d. h. vollständig gefährdet  **a.Class**
+Tools, mit denen Verschleiern von Java-Bibliotheken der Generator für die Xamarin.Android-Bindung und die Möglichkeit zum Generieren beeinträchtigen C# Wrapperklassen. Merkmale der verborgenen Klassen umfassen: 
+
+* Enthält den Namen der Klasse eine **$**, d. h. **eine$ .class**
+* Den Namen der Klasse von Kleinbuchstaben, d. h. vollständig gefährdet **a.class**
 
 Dieser Codeausschnitt ist ein Beispiel zum Generieren einer "nicht verborgenen" C# Typ:
 

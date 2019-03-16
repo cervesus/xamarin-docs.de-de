@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 0401c2c05677c719bbe4914cc7e008b650fdd198
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 98504c9d5f210d55a2be4c85c52d4bc1418fc223
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526240"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070825"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>Verwenden benutzerdefinierter Steuerelemente im IOS-Designer
 
 ## <a name="requirements"></a>Anforderungen
 
-Xamarin für iOS Designer ist in Visual Studio für Mac und Visual Studio 2015 und 2017 unter Windows verfügbar.
+Xamarin für iOS Designer ist in Visual Studio für Mac und Visual Studio 2017 und höher auf Windows verfügbar.
 
 Dieses Handbuch setzt voraus, Vertrautheit mit dem Inhalt in behandelt die [Einstieg führt](~/ios/get-started/index.md).
 

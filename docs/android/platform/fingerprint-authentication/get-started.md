@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/17/2018
-ms.openlocfilehash: 731aeaf0ad89a44211072962bf9891851a44ffcc
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 3082dfcd6d0ffbc6404a89a10819e60b57b9c61c
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667723"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070708"
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>Erste Schritte mit Authentifizierung per Fingerabdruck
 
@@ -25,7 +25,7 @@ Zunächst lassen Sie uns zunächst wird beschrieben, wie ein Xamarin.Android-Pro
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Eine Android-Anwendung muss Anfordern der `USE_FINGERPRINT` -Berechtigung für das Manifest. Der folgende Screenshot zeigt, wie die Anwendung in Visual Studio 2015 durch diese Berechtigung hinzugefügt:
+Eine Android-Anwendung muss Anfordern der `USE_FINGERPRINT` -Berechtigung für das Manifest. Der folgende Screenshot zeigt, wie Sie diese Berechtigung für die Anwendung in Visual Studio hinzufügen:
 
 [![Aktivieren der Verwendung\_FINGERABDRUCK auf dem Android-Manifest](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png#lightbox) 
 

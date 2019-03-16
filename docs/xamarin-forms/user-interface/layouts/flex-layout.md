@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: b37070ca627e535f9470916e9f84cdf55bb2aed3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7626c49b2267cbd087a16c310f1b85aea7139823
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056135"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981730"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Die Xamarin.Forms-FlexLayout
 
@@ -393,7 +393,7 @@ Sie können experimentieren mit den fünf verbleibenden bindbare Eigenschaften, 
 
 Beim Starten des Programms um fünf `Picker` Ansichten anzeigen, die Standardwerte für diese fünf `FlexLayout` Eigenschaften. Die `FlexLayout` im unteren Bereich des Bildschirms enthält drei untergeordnete Elemente:
 
-[![Die Seite "Experiment": Default](flex-layout-images/ExperimentDefault.png "Experimentseite - Standard")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![Die Seite "Experiment": Standard](flex-layout-images/ExperimentDefault.png "Experimentseite - Standard")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 Jede der `Label` Ansichten besitzt einen grauen Hintergrund, die den Speicherplatz auf, zeigt `Label` innerhalb der `FlexLayout`. Der Hintergrund der `FlexLayout` selbst Aliceblau ist. Es nimmt den gesamten unteren Bereich der Seite mit Ausnahme von einer kleinen Rand auf die Links und rechts.
 
@@ -447,7 +447,7 @@ Die [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) Eigenscha
 
 Diese Eigenschaft gibt an, wie die Elemente auf der Hauptachse verteilt sind, die der horizontalen Achse in diesem Beispiel ist:
 
-[![Der Seite "Experiment": Inhalt zu rechtfertigen](flex-layout-images/ExperimentJustifyContent.png "Experimentseite - rechtfertigen Inhalt")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
+[![Die Seite "Experiment": Ausrichten von Inhalt](flex-layout-images/ExperimentJustifyContent.png "Experimentseite - rechtfertigen Inhalt")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
 In allen drei Screenshots die `Wrap` -Eigenschaftensatz auf `Wrap`. Die `Start` standardmäßig in den vorherigen Screenshot für Android angezeigt wird. Hier der iOS-Screenshot zeigt die `Center` Option: alle Elemente in die Mitte verschoben werden. Drei weitere Optionen ab, mit dem Wort `Space` den zusätzlichen Speicherplatz belegt wird nicht von den Elementen zuzuordnen. `SpaceBetween` Ordnet den gleichmäßig zwischen den Elementen; `SpaceAround` Puts gleich Abstands um jedes Element, während `SpaceEvenly` Puts gleich Leerzeichen zwischen den einzelnen Elementen, und vor dem ersten Element und nach dem letzten Element in der Zeile.
 
@@ -490,7 +490,7 @@ Wie `AlignItems`, `AlignContent` Eigenschaft auch untergeordnete Elemente auf de
 
 Sind in der iOS-Screenshot beide Zeilen am Anfang; in der Android-Screenshot sind sie in der Mitte; und in der UWP-Screenshot sind am unteren Rand. Die Zeilen können auch auf verschiedene Weise verteilt werden:
 
-[![Die Seite "Experiment": Ausrichten von Inhalt 2](flex-layout-images/ExperimentAlignContent2.png "Experimentseite - ausrichten Content 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![Die Seite "Experiment":  Ausrichten von Inhalt 2](flex-layout-images/ExperimentAlignContent2.png "Experimentseite - ausrichten Content 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
 Die `AlignContent` hat keine Auswirkungen, wenn nur eine Zeile oder Spalte vorhanden ist.
 
@@ -517,13 +517,13 @@ Für ein einzelnes untergeordnetes Element der `FlexLayout`, diese Eigenschaft f
 Für eine `Label` Element mit dem Namen `label` (oder Beispiel), Sie können festlegen, die `AlignSelf` Eigenschaft im Code wie folgt:
 
 ```csharp
-FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
+FlexLayout.SetAlignSelf(label, FlexAlignSelf.Center);
 ```
 
 Beachten Sie, dass es ist kein Verweis auf die `FlexLayout` übergeordnete Element der `Label`. In XAML legen Sie die Eigenschaft wie folgt aus:
 
 ```xaml
-<Label ... FlexAlign.AlignSelf="Center" ... />
+<Label ... FlexLayout.AlignSelf="Center" ... />
 ```
 
 ### <a name="the-order-property"></a>Der Order-Eigenschaft
@@ -580,7 +580,7 @@ Die **Basis experimentieren** auf der Seite die **[FlexLayoutDemos](https://deve
 
 [![Die Basis experimentieren Seite](flex-layout-images/BasisExperiment.png "Grundlage experimentieren Seite")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-Der iOS-Screenshot auf der linken Seite zeigt die beiden `Label` Elemente wird Höhe in geräteunabhängigen Einheiten angegeben. Der Android-Bildschirm zeigt ihnen wird die Höhe, die einem Bruchteil der Gesamthöhe des angegebenen die `FlexLayout`. Wenn die `Basis` bei 100 % festgelegt ist, und klicken Sie dann das untergeordnete Element die Höhe des ist der `FlexLayout`, und umschließen der nächsten Spalte und die gesamte Höhe der Spalte, belegen, wie der UWP-Screenshot veranschaulicht wird: Es scheint, als ob die fünf untergeordnete Elemente in einer Zeile angeordnet sind , jedoch sind tatsächlich in fünf Spalten angeordnet.
+Der iOS-Screenshot auf der linken Seite zeigt die beiden `Label` Elemente wird Höhe in geräteunabhängigen Einheiten angegeben. Der Android-Bildschirm zeigt ihnen wird die Höhe, die einem Bruchteil der Gesamthöhe des angegebenen die `FlexLayout`. Wenn die `Basis` bei 100 % festgelegt ist, und klicken Sie dann das untergeordnete Element die Höhe des ist der `FlexLayout`, und umschließen der nächsten Spalte und die gesamte Höhe der Spalte, belegen, wie der UWP-Screenshot veranschaulicht wird: Es wird angezeigt, die fünf untergeordnete Elemente werden in einer Zeile angeordnet, wobei jedoch sind tatsächlich in fünf Spalten angeordnet.
 
 ### <a name="the-grow-property"></a>Die Vergrößerung der Eigenschaft
 

@@ -1,30 +1,27 @@
 ---
-title: Fehlende Visual Studio-Erweiterungen nach der installation
+title: Fehlende Visual Studio-Erweiterungen nach der Installation
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2017
-ms.openlocfilehash: 7b1f96807d77d9db0a892c5e78124eb3a9890edc
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 3e3d426e7b00725eafeba139de5bc46d416c368a
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40250956"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070890"
 ---
-# <a name="missing-visual-studio-extensions-after-installation"></a>Fehlende Visual Studio-Erweiterungen nach der installation
+# <a name="missing-visual-studio-extensions-after-installation"></a>Fehlende Visual Studio-Erweiterungen nach der Installation
 
 ## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>Fehlermeldung: Dieses Projekt ist nicht kompatibel mit der aktuellen Edition von Visual Studio
 
-Stellen Sie sicher, dass eine kompatible Version von Visual Studio installiert ist:
-
--   Visual Studio 2017 (Community, Professional oder Enterprise)
--   Visual Studio 2015 (Community, Professional oder Enterprise)
+Sicherstellen von Visual Studio 2017 (Community, Professional oder Enterprise) oder höher installiert ist.
 
 Siehe auch die [Windows Anforderungen](~/cross-platform/get-started/requirements.md#windows-requirements).
 
-## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>Mögliche Fix 1: Ändern Sie die Installation aus, um sicherzustellen, dass Visual Studio-Erweiterungen installiert sind
+## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>Mögliche Lösung 1: Ändern Sie die Installation aus, um sicherzustellen, dass Visual Studio-Erweiterungen installiert sind
 
 In bestimmten Situationen möglicherweise die Xamarin-Installers deaktivieren Sie automatisch die Installationsoptionen für die Visual Studio-Erweiterungen. Wenn dies die Ursache des Problems ist, installieren Sie die fehlenden Visual Studio-Erweiterungen, die unter Verwendung des Installationsprogramms **Änderung** Befehl. Geben Sie beispielsweise Folgendes ein, um die Erweiterungen für Visual Studio 2013 installieren:
 
@@ -40,7 +37,7 @@ In bestimmten Situationen möglicherweise die Xamarin-Installers deaktivieren Si
 
 5. Fahren Sie mit der Rest des Installations-Assistenten fort.
 
-## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>Mögliche Lösung 2: Stellen Sie Visual Studio, um das Erweiterungen erneut einrichten
+## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>Mögliche Lösung 2: Bitten Sie Visual Studio, um das Erweiterungen erneut einrichten
 
 1. Überprüfen Sie, ob die Xamarin-Erweiterungen in den Visual Studio-Extensions-Ordner kopiert wurden:
 
@@ -55,7 +52,7 @@ In bestimmten Situationen möglicherweise die Xamarin-Installers deaktivieren Si
 
     `"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /setup`
 
-## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>Mögliche Lösung 3: Versuchen Sie es eine neue Neuinstallation von Xamarin
+## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>Das Update 3 möglich: Versuchen Sie eine neue Neuinstallation von Xamarin
 
 1.  Deinstallieren Sie keines der folgenden, die vorhanden sind, in der Windows-Systemsteuerung:
 
@@ -99,7 +96,7 @@ In bestimmten Situationen möglicherweise die Xamarin-Installers deaktivieren Si
 
 10.  Installieren Sie die aktuelle stabile Version von Xamarin von [visualstudio.com](https://visualstudio.com/xamarin).
 
-## <a name="possible-fix-4-repair-visual-studio-installation"></a>Möglich Update 4: Reparieren Sie Visual Studio-installation
+## <a name="possible-fix-4-repair-visual-studio-installation"></a>Das Update 4 möglich: Reparieren Sie Visual Studio-installation
 
 1.  Öffnen Sie die Windows **Programme und Funktionen** Systemsteuerung.
 

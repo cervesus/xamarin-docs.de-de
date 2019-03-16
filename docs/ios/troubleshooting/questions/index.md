@@ -1,5 +1,5 @@
 ---
-title: Häufig gestellte Fragen (FAQs)
+title: Xamarin.iOS-häufig gestellte Fragen
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 65E04188-185D-493D-BA3C-A89711CB6CAF
@@ -7,14 +7,9 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d2d0af5a69920f392eba1cd655f1d8ab74971be6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107507"
 ---
-# <a name="frequently-asked-questions"></a>Häufig gestellte Fragen (FAQs)
+
+# <a name="ios-frequently-asked-questions"></a>iOS-häufig gestellte Fragen
 
 ## <a name="general-questions"></a>Allgemeine Fragen
 
@@ -58,7 +53,7 @@ Ja, es ist möglich, aber es ist in der Regel erforderlich, wenn Sie sich erneut
 ### <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studiocreate-xcarchivemd"></a>[Ist es möglich, ein xcarchive-Archivs in Visual Studio zu erstellen?](create-xcarchive.md)
 Ab Xamarin 4, ist es jetzt möglich, erstellen Sie eine `.xcarchive` von Windows durch Festlegen der `ArchiveOnBuild` Eigenschaft `true`.
 
-### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[Warum schlägt meine App-Übermittlung fehl mit: „Unzulässige Pfade (iTunesMetadata.plist) in ...“?](itunesmetadata-disallowed-paths.md)
+### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[Warum schlägt meine App-Übermittlung wie folgt fehl: "Disallowed paths ( "iTunesMetadata.plist" ) found at ..." (Nicht zulässige Pfade ( "iTunesMetadata.plist" ) unter...)](itunesmetadata-disallowed-paths.md)
 Dieser Fehler ist das Ergebnis einer Änderung im Apple App Store-Überprüfungsprozess. Dieser Fehler _nicht_ im Zusammenhang mit der bestimmten Version von Xamarin, die Sie installiert haben, wird also ein Downgrade _nicht_ helfen. Dieses Handbuch enthält Links zu weiteren Informationen dazu, wie zum Beheben des Problems.
 
 
@@ -70,10 +65,10 @@ Fehler bei `RegisterServicePort` und ähnliche Fehlermeldungen wie oben sind hä
 ### <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychainno-codesigning-keysmd"></a>[Warum schlägt mein iOS-Build fehl mit: Keine gültigen iPhone-Codesignaturschlüssel in Keychain gefunden?](no-codesigning-keys.md)
 Diese Fehlermeldung tritt auf, wenn das betreffende Projekt gültige Anmeldeinformationen im Code-signing sucht jedoch nicht zu finden. Signieren von Code ist für Tests und Bereitstellungen auf physischen iOS-Geräten erforderlich. als auch Ad-hoc- und App Builds zu speichern.
 
-### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[Warum schlägt meine iOS 9-App fehl mit: System.Exception: Fehler beim Marshallen des Objective-C-Objekts?](exception-marshal-obj-c.md)
+### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[Warum schlägt meine iOS 9-App wie folgt fehl: System.Exception: Failed to marshal the Objective-C object (Das Objective-C-Objekt konnte nicht gemarshallt werden.)](exception-marshal-obj-c.md)
 API-Änderungen in iOS 9 erfordern, dass ein Rückruf-Konstruktor verwendet werden, beim Aufrufen von nicht verwalteten Codes, als die zugrunde liegende API jetzt erwartet.
 
-### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[Laufzeitfehler: Die Assembly „mscorlib.dll“ wurde nicht gefunden oder konnte nicht geladen werden.](error-mscorlib-not-found.md)
+### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[Laufzeitfehler: The assembly mscorlib.dll was not found or could not be loaded (Die Assembly „mscorlib.dll“ wurde nicht gefunden oder konnte nicht geladen werden).](error-mscorlib-not-found.md)
 Dieses Problem tritt auf, wenn die *ausgeblendete* `.monotouch-32` und `.monotouch-64` Ordner fehlen die `.xcarchive` zum Signieren / IPA-Datei erstellen, die Laufzeitfehler ausgelöst.
 
 ## <a name="deprecated"></a>Als veraltet markiert
