@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cfb684df89bf800a0d32607b119d1bd3fc297c58
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 41a9ec90b4b734dde7a982ac3d4b2e7b2082321c
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123738"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070865"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatisches Layout mit dem Xamarin-Designer für iOS
 
@@ -22,7 +22,7 @@ In diesem Leitfaden führen wir Einschränkungen und wie Sie in der Xamarin.IOS-
 
 ## <a name="requirements"></a>Anforderungen
 
-Xamarin für iOS Designer ist in Visual Studio für Mac in Visual Studio 2015 und 2017 für Windows verfügbar.
+Xamarin für iOS Designer ist in Visual Studio für Mac in Visual Studio 2017 und höher auf Windows verfügbar.
 
 Dieses Handbuch setzt Kenntnisse der Designer Komponenten unter den [Einführung in iOS Designer](~/ios/user-interface/designer/introduction.md) Guide.
 
@@ -56,11 +56,11 @@ Standardmäßig sind keine Einschränkungen erstellt oder auf der Oberfläche an
 
 Die Symbolleiste für Einschränkungen aktualisiert wurde, und es besteht nun aus zwei Hauptkomponenten:
 
-- **Eine Schaltfläche Umschalten Einschränkungen**: zuvor eingegebenen der einschränkungsmodus durch erneutes Klicken auf eine ausgewählte Ansicht auf der Entwurfsoberfläche angezeigt. Sie sollten jetzt in der Leiste Einschränkungen diese Umschaltfläche verwenden:
+- **Eine Schaltfläche Umschalten Einschränkungen**: Bisher haben Sie durch erneutes Klicken auf eine ausgewählte Ansicht auf der Entwurfsoberfläche der einschränkungsmodus eingegeben. Sie sollten jetzt in der Leiste Einschränkungen diese Umschaltfläche verwenden:
 
   ![Einschränkungen Modi umschalten](designer-auto-layout-images/constraints.png)
 
-- **Eine Schaltfläche "Update-Einschränkungen":** es ist wichtig zu beachten, dass die Änderungen, je nachdem, ob Einschränkungen, die im Bearbeitungsmodus ist.
+- **Eine Schaltfläche "Update-Einschränkungen":** Es ist wichtig zu beachten, dass die Änderungen, je nachdem, ob Einschränkungen, die im Bearbeitungsmodus ist.
   - Im Bearbeitungsmodus Einschränkung wird diese Schaltfläche, die Einschränkungen den Element-Frame entsprechend angepasst.
   - Im Bearbeitungsmodus Frame passt diese Schaltfläche, die Element-Frame entsprechend die Position, die die Einschränkungen definieren.
 

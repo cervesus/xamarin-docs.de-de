@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/31/2018
-ms.openlocfilehash: 8622c40e41071d6c05b05abbe2d5d8a8a844ebde
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
+ms.openlocfilehash: 2c6409410ecba7df8559c07c3231f5e493c98897
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285585"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071077"
 ---
 # <a name="ios-designer-basics"></a>iOS-Designer-Grundlagen
 
 _Dieser Leitfaden beschreibt die Xamarin-Designer für iOS. Es wird veranschaulicht, wie Sie iOS-Designer zu verwenden, um das visuelle Layout von Steuerelementen, wie Sie diese Steuerelemente im Code zugreifen und wie Eigenschaften bearbeitet._
 
-Der Xamarin-Designer für iOS ist eine visuelle Schnittstelle ähnelt Interface Builder von Xcode und dem Android Designer. Einige seiner zahlreichen Features umfassen nahtlose Integration in Visual Studio für Mac und Visual Studio 2015 und 2017, Drag & Drop-Bearbeitung, eine Schnittstelle für das Einrichten von Ereignishandlern und die Möglichkeit, benutzerdefinierte Steuerelemente darzustellen.
+Der Xamarin-Designer für iOS ist eine visuelle Schnittstelle ähnelt Interface Builder von Xcode und dem Android Designer. Einige seiner zahlreichen Features umfassen nahtlose Integration in Visual Studio für Windows und Mac, Drag & Drop-Bearbeitung, eine Schnittstelle für das Einrichten von Ereignishandlern und die Möglichkeit, benutzerdefinierte Steuerelemente darzustellen.
 
 ## <a name="requirements"></a>Anforderungen
 
-IOS ist Designer, die auf Windows in Visual Studio für Mac und Visual Studio 2015 und 2017 verfügbar. In Visual Studio 2015 oder 2017 erfordert der iOS-Designer eine Verbindung mit einem ordnungsgemäß konfigurierten Mac-buildhost, wenn Xcode nicht ausgeführt werden muss.
+IOS ist Designer in Visual Studio für Mac und Visual Studio 2017 und höher auf Windows verfügbar. In Visual Studio für Windows erfordert der iOS-Designer eine Verbindung mit einem ordnungsgemäß konfigurierten Mac-buildhost, wenn Xcode nicht ausgeführt werden muss.
 
 Dieses Handbuch setzt voraus, Vertrautheit mit dem Inhalt in behandelt die [Einstieg führt](~/ios/get-started/index.md).
 
@@ -151,7 +151,7 @@ Xamarin.iOS-Projekte, die mit Visual Studio für Mac erstellt enthalten ein Stor
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Die meisten Xamarin.iOS-Projekte, die mit Visual Studio 2015 oder 2017 erstellt wurden, enthalten ein Storyboard. Um den Inhalt eines Storyboards anzuzeigen, doppelklicken Sie auf die Storyboard-Datei in die **Projektmappen-Explorer**:
+Die meisten Xamarin.iOS-Projekte, die mit Visual Studio erstellt wurden, enthalten ein Storyboard. Um den Inhalt eines Storyboards anzuzeigen, doppelklicken Sie auf die Storyboard-Datei in die **Projektmappen-Explorer**:
 
 [![Öffnen Sie ein Storyboard in der iOS Designer](introduction-images/7-storyboardopen-vs.png "öffnen Sie ein Storyboard im iOS-Designer")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
