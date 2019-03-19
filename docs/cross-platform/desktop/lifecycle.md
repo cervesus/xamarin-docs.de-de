@@ -1,18 +1,18 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
-title: WPF im Vergleich zu. Xamarin.Forms-App-Lebenszyklus
+title: WPF im Vergleich zu. Lebenszyklus der Xamarin.Forms-App
 description: In diesem Dokument werden die ähnlichkeiten und Unterschiede zwischen den Lebenszyklus der Anwendung für Xamarin.Forms und WPF-Anwendungen verglichen. Er untersucht außerdem die visuelle Struktur, Grafiken, Ressourcen und Stile.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 653e2f849a74948d3636f594eae91cdeabfae138
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526792"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175225"
 ---
-# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF im Vergleich zu. Xamarin.Forms-App-Lebenszyklus
+# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF im Vergleich zu. Lebenszyklus der Xamarin.Forms-App
 
 Xamarin.Forms hat viele Leitfaden zum Design aus der XAML-basierte Frameworks, die davor, besonders in WPF bereitgestellt wurde. Allerdings abweicht auf andere Weise es erheblich die möglicherweise eine Kurznotiz Punkt für Personen, die beim Migrieren. Dieses Dokument versucht, einige dieser Probleme zu identifizieren und Orientierungshilfen möglichst an die Bridge WPF-Kenntnisse in Xamarin.Forms.
 
@@ -81,12 +81,12 @@ Xamarin.Forms ist in erster Linie für mobile Szenarien ausgerichtet. Anwendunge
 
 | Zweck | WPF-Methode | Xamarin.Forms-Methode |
 |--- |--- |--- |
-|Erste Aktivierung|"ctor" + Window.OnLoaded|"ctor" + Page.OnStart|
+|Erste Aktivierung|ctor + Window.OnLoaded|ctor + Page.OnStart|
 |Angezeigt|Window.IsVisibleChanged|Page.Appearing|
 |Hidden|Window.IsVisibleChanged|Page.Disappearing|
 |Anhalten/Verlust-Fokus|Window.OnDeactivated|Page.OnSleep|
 |Aktiviert/erhalten konzentrieren|Window.OnActivated|Page.OnResume|
-|Geschlossen|Window.OnClosing + Window.OnClosed|n/v|
+|Closed|Window.OnClosing + Window.OnClosed|n/v|
 
 
 Beide auch untergeordnete Steuerelemente anzeigen/ausblenden-Unterstützung in WPF es ist eine drei-Status-Eigenschaft `IsVisible` (sichtbar, ausgeblendet, und reduziert). In Xamarin.Forms, es ist nur sichtbar oder ausgeblendet, über die `IsVisible` Eigenschaft.
@@ -111,8 +111,8 @@ Darüber hinaus verfügen die meisten Elemente der Eigenschaften, die beeinfluss
 
 | WPF | Xamarin.Forms | Zweck |
 |--- |--- |--- |
-|"HorizontalAlignment"|HorizontalOptions|Links/Center/rechts/Stretch-Optionen|
-|Vertikale Ausrichtung|Eigenschaften "verticaloptions"|Top/Center/nach unten/Stretch-Optionen|
+|HorizontalAlignment|HorizontalOptions|Links/Center/rechts/Stretch-Optionen|
+|VerticalAlignment|VerticalOptions|Top/Center/nach unten/Stretch-Optionen|
 
 > [!NOTE]
 > Die eigentliche Interpretation dieser Eigenschaften hängt von den übergeordneten Container ab.
@@ -137,7 +137,7 @@ Verwenden Sie beide Plattformen _angefügte Eigenschaften_ untergeordnete Elemen
 
 ### <a name="rendering"></a>Rendern
 
-Die Rendering-Mechanismen für WPF und Xamarin.Forms unterscheiden sich grundlegend. In WPF Rendern die Steuerelemente, die Sie direkt erstellen Inhalt Pixel auf dem Bildschirm. WPF verwaltet zwei Objektdiagramme (_Strukturen_) folgendermaßen aus: Darstellen der _logische Struktur_ gemäß Definition im Code oder XAML, die Steuerelemente darstellt und die _visuelle Struktur_ stellt der eigentliche Rendering, das auf dem Bildschirm auftritt, handelt es sich entweder direkt über das visuelle Element (über eine virtuelle Draw-Methode), ausgeführt oder über eine XAML-definierten `ControlTemplate` diese ersetzt oder angepasst werden. Die visuelle Struktur ist in der Regel komplexer, wenn sie dies z. B. einen Rahmen-Steuerelemente, die Bezeichnungen für implizite Inhalte usw. enthält. WPF umfasst eine Reihe von APIs (`LogicalTreeHelper` und `VisualTreeHelper`) überprüfen diese zwei Objektdiagramme.
+Die Rendering-Mechanismen für WPF und Xamarin.Forms unterscheiden sich grundlegend. In WPF Rendern die Steuerelemente, die Sie direkt erstellen Inhalt Pixel auf dem Bildschirm. WPF verwaltet zwei Objektdiagramme (_Strukturen_) folgendermaßen aus: Darstellen der _logische Struktur_ gemäß Definition im Code oder XAML, die Steuerelemente darstellt und die _visuelle Struktur_ stellt der eigentliche Rendering, das auf dem Bildschirm auftritt, handelt es sich entweder direkt über das visuelle Element (über eine virtuelle Draw-Methode), ausgeführt oder über eine XAML-definierten `ControlTemplate` diese ersetzt oder angepasst werden. Die visuelle Struktur ist in der Regel komplexer, wenn sie z. B. einen Rahmen-Steuerelemente, die Bezeichnungen für implizite Inhalte usw. enthält. WPF umfasst eine Reihe von APIs (`LogicalTreeHelper` und `VisualTreeHelper`) überprüfen diese zwei Objektdiagramme.
 
 In Xamarin.Forms, die Steuerelemente definieren Sie einem `Page` sind eigentlich nur einfache Datenobjekte. Sie sind vergleichbar mit Ihrer Darstellung in der logischen Struktur, jedoch nie Inhalt selbst zu rendern. Stattdessen sind sie der _Datenmodell_ die wirkt sich auf das Rendern von Elementen. Die eigentliche Rendering erfolgt durch eine [trennen Satz von _visual Renderer_ werden die für jeden Steuerelementtyp zugeordnet](~/xamarin-forms/app-fundamentals/custom-renderer/index.md). Diese Renderer werden in den einzelnen plattformspezifischen Projekten von plattformspezifischen Xamarin.Forms-Assemblys registriert. Sie sehen eine Liste [hier](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md). Zusätzlich zu ersetzen oder erweitern den Renderer, Xamarin.Forms bietet auch Unterstützung für [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md) die verwendet werden können, um die native Rendern auf einer Basis pro Plattform zu beeinflussen.
 
@@ -151,7 +151,7 @@ Xamarin.Forms enthält kein Grafiksystem für primitive Typen über ein einfache
 
 ## <a name="resources"></a>Ressourcen
 
-WPF und Xamarin.Forms haben beide das Konzept der Ressourcen und Ressourcenwörterbücher. Sie können einen beliebigen Objekttyp in Platzieren einer `ResourceDictionary` mit einem Schlüssel, und suchen sie sich mit `{StaticResource}` für einige Elemente, die nicht geändert werden, oder `{DynamicResource}` für Dinge, die im Wörterbuch zur Laufzeit ändern können. Die Nutzung und die Mechanismen sind identisch mit einem Unterschied: Xamarin.Forms erfordert, dass Sie definieren die `ResourceDictionary` Zuweisen der `Resources` Eigenschaft während WPF vorab erstellt und diese für Sie weist.
+WPF und Xamarin.Forms haben beide das Konzept der Ressourcen und Ressourcenwörterbücher. Sie können einen beliebigen Objekttyp in Platzieren einer `ResourceDictionary` mit einem Schlüssel, und suchen sie sich mit `{StaticResource}` für einige Elemente, die nicht geändert werden, oder `{DynamicResource}` für Dinge, die im Wörterbuch zur Laufzeit ändern können. Die Verwendung und die Mechanismen sind identisch mit einem Unterschied: Xamarin.Forms ist erforderlich, die Sie definieren die `ResourceDictionary` Zuweisen der `Resources` Eigenschaft während WPF vorab erstellt und diese für Sie weist.
 
 Beispielsweise finden Sie in der folgenden Definition:
 

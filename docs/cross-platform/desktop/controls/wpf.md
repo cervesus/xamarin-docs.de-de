@@ -5,12 +5,12 @@ description: In diesem Dokument verglichen und gegenübergestellt von WPF in Xam
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: d3e772c270f6003d01e3e7b487f69f682fec2d61
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 990253cbd31ad79bc47f086dc5bd2b99233f2032
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617591"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175238"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF im Vergleich zu. Xamarin.Forms: Ähnlichkeiten und Unterschiede
 
@@ -152,9 +152,9 @@ Darüber hinaus sind sie nicht so flexibel wie ihre WPF-Entsprechung.
 2. Data-Trigger werden in einer Datenvorlage vollständig unterstützt, müssen jedoch enthalten eine `DataType` Eigenschaft gibt den Typ der Eigenschaft, die der Trigger zugeordnet ist.
 3. `DataTemplateSelector` wird auch unterstützt, aber leitet sich von `DataTemplate` und daher nur erhält direkt an die `ItemTemplate` Eigenschaft (im Vergleich zu `ItemTemplateSelector` in WPF).
 
-## <a name="itemscontrol"></a>ItemsControl-Element
+## <a name="itemscontrol"></a>ItemsControl
 
-Es gibt keine integrierte Equivelent auf eine `ItemsControl` in Xamarin.Forms; es gibt jedoch eine [benutzerdefinierte eine für Xamarin.Forms verfügbar hier](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs).
+Es gibt keine integrierte Entsprechung auf ein `ItemsControl` in Xamarin.Forms; es gibt jedoch eine [benutzerdefinierte eine für Xamarin.Forms verfügbar hier](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs).
 
 ## <a name="user-controls"></a>Benutzersteuerelemente
 
@@ -168,12 +168,12 @@ Für Phone-Geräte, die verschiedene _Bildschirme_ sind häufig die Lösung und 
 
 | Navigationsstil | Seitentyp |
 |--- |--- |
-|Stapelbasierte (Push/Pop)|"NavigationPage"|
-|Master/Detail-|MasterDetailPage|
+|Stapelbasierte (Push/Pop)|NavigationPage|
+|Master/Detail|MasterDetailPage|
 |Registerkarten|"Tabbedpage"|
 |Streichen Sie nach links/rechts|CarouselView|
 
-Die `NavigationPage` der gängigste Ansatz ist, und jede Seite hat eine `Navigation` Eigenschaft, die mithilfe von Push übertragen oder pop-Seiten, die ein- und Ausschalten der Navigationsstapel verwendet werden kann. Dies ist die nächste Equivelent zu den `NavigationService` finden Sie in WPF.
+Die `NavigationPage` der gängigste Ansatz ist, und jede Seite hat eine `Navigation` Eigenschaft, die mithilfe von Push übertragen oder pop-Seiten, die ein- und Ausschalten der Navigationsstapel verwendet werden kann. Dies entspricht dem am nächsten an der `NavigationService` finden Sie in WPF.
 
 ### <a name="url-navigation"></a>URL-navigation
 
