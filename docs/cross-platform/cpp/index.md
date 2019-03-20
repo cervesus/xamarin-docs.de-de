@@ -153,8 +153,8 @@ Diese Phase erfordert die [vorkompilierte Bibliotheken](https://github.com/xamar
 
 11. Von **Projektmappen-Explorer**, doppelklicken Sie auf die **MathFuncs.Standard** Projekt.
 12. Navigieren Sie zu **Main Einstellungen**, aktualisieren Sie dann **Default Namespace** zu **MathFuncs**.
-13. Navigieren Sie zu der **Ausgabe** Aktualisieren der Einstellungen, klicken Sie dann **Assemblyname** zu **MathFuncs** klicken Sie dann auf **OK**.
-14. Navigieren Sie zu der **Compiler** -Einstellungen, die **Konfiguration** zu **Version**wird durch das Festlegen **Debuginformationen** zu  **Nur Symbole**.
+13. Navigieren Sie zu der **Ausgabe** Aktualisieren der Einstellungen, klicken Sie dann **Assemblyname** zu **MathFuncs**.
+14. Navigieren Sie zu der **Compiler** -Einstellungen, die **Konfiguration** zu **Version**wird durch das Festlegen **Debuginformationen** zu  **Nur Symbole** klicken Sie dann auf **OK**.
 15. Löschen Sie **Class1.cs/Getting Schritte** aus dem Projekt (falls eine davon als Teil der Vorlage enthalten war).
 16. **Strg + Klick** auf das Projekt **Abhängigkeiten/References** Ordner, wählen Sie dann **Verweise bearbeiten**.
 17. Wählen Sie **MathFuncs.Shared** aus der **Projekte** Registerkarte, und klicken Sie dann **OK**.
