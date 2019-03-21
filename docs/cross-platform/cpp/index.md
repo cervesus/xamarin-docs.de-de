@@ -4,7 +4,7 @@ title: Verwenden von C/C++-Bibliotheken mit Xamarin
 description: 'Visual Studio für Mac kann zum Erstellen und Integrieren von plattformübergreifenden C/C++-Code in mobilen apps für Android und iOS mit Xamarin und C#. In diesem Artikel erläutert das Einrichten und das Debuggen ein C++-Projekt in einer Xamarin-app.'
 author: mikeparker104
 ms.author: miparker
-ms.date: 12/17/20178
+ms.date: 12/17/2018
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Verwenden von C/C++-Bibliotheken mit Xamarin
 
