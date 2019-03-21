@@ -1,17 +1,12 @@
 ---
 title: Xamarin.Essentials
-description: Dieses Dokument verweist auf verschiedene Anleitungen für Xamarin.Essentials, womit Entwicklern plattformübergreifende APIs für ihre mobilen Anwendungen bereitgestellt werden.
+description: 'Dieses Dokument verweist auf verschiedene Anleitungen für Xamarin.Essentials, womit Entwicklern plattformübergreifende APIs für ihre mobilen Anwendungen bereitgestellt werden.'
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898640"
 ---
+
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
 Xamarin.Essentials stellt Entwicklern plattformübergreifende APIs für ihre mobilen Anwendungen bereit.
@@ -31,8 +26,10 @@ Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anw
 * [Barometer](barometer.md?context=xamarin/xamarin-forms): Überwachung des Barometers auf Druckveränderungen
 * [Akku](battery.md?context=xamarin/xamarin-forms): Einfache Erkennung von Akkustand, -quelle und -status
 * [Zwischenablage](clipboard.md?context=xamarin/xamarin-forms): Schnelles und einfaches Festlegen oder Lesen von Text in der Zwischenablage
+* [Farbkonverter:](color-converters.md?context=xamarin/xamarin-forms) Hilfsmethoden für System.Drawing.Color
 * [Kompass](compass.md?context=xamarin/xamarin-forms): Überwachungskompass für Änderungen
 * [Konnektivität](connectivity.md?context=xamarin/xamarin-forms): Überprüfung des Konnektivitätsstatus und Erkennung von Änderungen
+* [Erkennen einer Schüttelbewegung:](detect-shake.md?context=xamarin/xamarin-forms) Erkennung von Schütteln des Geräts
 * [Informationen zur Gerätanzeige](device-display.md?context=xamarin/xamarin-forms): Informationen zur Metrik und Ausrichtung des Gerätebildschirms
 * [Geräteinformationen](device-information.md?context=xamarin/xamarin-forms): Schneller Überblick über das Gerät
 * [E-Mail](email.md?context=xamarin/xamarin-forms): Einfaches Versenden von E-Mails
@@ -48,11 +45,13 @@ Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anw
 * [Browser öffnen](open-browser.md?context=xamarin/xamarin-forms): Schnelles Öffnen des Browsers für eine bestimmte Website
 * [Ausrichtungssensor](orientation-sensor.md?context=xamarin/xamarin-forms): Abrufen der Geräteausrichtung im dreidimensionalen Raum
 * [Wählhilfe](phone-dialer.md?context=xamarin/xamarin-forms): Öffnen der Wählhilfe
+* [Plattformerweiterungen:](platform-extensions.md?context=xamarin/xamarin-forms) Hilfsmethoden zum Konvertieren der Parameter „Rect“, „Size“ und „Point“
 * [Einstellungen](preferences.md?context=xamarin/xamarin-forms): Schnelles Hinzufügen persistenter Einstellungen
 * [Sicherer Speicher](secure-storage.md?context=xamarin/xamarin-forms): Sichere Speicherung von Daten
-* [Datenübertragung](share.md?context=xamarin/xamarin-forms): Senden von Text und Website-URIs an andere Apps
+* [Datenübertragung:](share.md?context=xamarin/xamarin-forms) Senden von Text und Website-URIs an andere Apps
 * [SMS](sms.md?context=xamarin/xamarin-forms): Erstellen von SMS zum Versenden
 * [Text-to-Speech](text-to-speech.md?context=xamarin/xamarin-forms): Sprechen von Text auf dem Gerät
+* [Einheitenkonverter:](unit-converters.md?context=xamarin/xamarin-forms) Hilfsmethoden zum Konvertieren von Einheiten
 * [Versionsnachverfolgung](version-tracking.md?context=xamarin/xamarin-forms): Nachverfolgung der Anwendungs- Buildnummerversion
 * [Vibration](vibrate.md?context=xamarin/xamarin-forms): Vibration des Geräts
 

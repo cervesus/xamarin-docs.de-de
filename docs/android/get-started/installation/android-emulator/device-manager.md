@@ -109,7 +109,7 @@ Befolgen Sie diese Schritte, um ein neues Gerät im Bildschirm **Neues Gerät** 
 
    [![Auswählen der Android-Version](device-manager-images/win/13-android-version-w158-sml.png)](device-manager-images/win/13-android-version-w158.png#lightbox)
 
-   Wenn Sie eine Android-API-Ebene auswählen, die noch nicht installiert wurde, zeigt der Geräte-Manager die Meldung **A new device image will be downloaded (Ein neues Geräteimage wird heruntergeladen)** am unteren Rand des Bildschirms an. Während das neue virtuelle Gerät erstellt wird, werden die erforderlichen Dateien heruntergeladen und installiert:
+   Wenn Sie eine Android-API-Ebene auswählen, die noch nicht installiert wurde, zeigt der Geräte-Manager die Meldung **A new device image will be downloaded (Ein neues Geräteimage wird heruntergeladen)** am unteren Rand des Bildschirms  an. Während das neue virtuelle Gerät erstellt wird, werden die erforderlichen Dateien heruntergeladen und installiert:
 
    ![Ein neues Geräteimage wird heruntergeladen](device-manager-images/win/14-automatic-download-w158.png)
 
@@ -284,7 +284,7 @@ Befolgen Sie diese Schritte, um ein neues Gerät im Bildschirm **Neues Gerät** 
 
    [![Auswählen der Android-Version](device-manager-images/mac/14-android-screenshot-m76-sml.png)](device-manager-images/mac/14-android-screenshot-m76.png#lightbox)
 
-   Wenn Sie eine Android-API-Ebene auswählen, die noch nicht installiert wurde, zeigt der Geräte-Manager die Meldung **A new device image will be downloaded (Ein neues Geräteimage wird heruntergeladen)** am unteren Rand des Bildschirms an. Während das neue virtuelle Gerät erstellt wird, werden die erforderlichen Dateien heruntergeladen und installiert:
+   Wenn Sie eine Android-API-Ebene auswählen, die noch nicht installiert wurde, zeigt der Geräte-Manager die Meldung **A new device image will be downloaded (Ein neues Geräteimage wird heruntergeladen)** am unteren Rand des Bildschirms  an. Während das neue virtuelle Gerät erstellt wird, werden die erforderlichen Dateien heruntergeladen und installiert:
 
    ![Ein neues Geräteimage wird heruntergeladen](device-manager-images/mac/15-automatic-download-m76.png)
 

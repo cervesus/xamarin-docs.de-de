@@ -293,7 +293,7 @@ Um nachvollziehen zu können, woher die Größe der ausführbaren Datei einer An
 - Android-Anwendungen werden in der IL kompiliert und mit MonoVM und der Just-in-Time-Kompilierung verpackt. Nicht verwendete Framework-Klassen werden nur dann entfernt, wenn die entsprechende Linkeroption aktiviert ist.
 - Windows Phone-Anwendungen werden in der IL kompiliert und von der integrierten Runtime ausgeführt.
 
-Wenn eine Anwendung außerdem Generika umfassend verwendet, wird die endgültige Größe der ausführbaren Datei weiter steigen, da sie nativ kompilierte Versionen der generischen Möglichkeiten enthält.
+Wenn eine Anwendung außerdem Generics umfassend verwendet, wird die endgültige Größe der ausführbaren Datei weiter steigen, da sie nativ kompilierte Versionen der generischen Möglichkeiten enthält.
 
 Um die Größe von Anwendungen zu verringern, ist in den Build-Tools der Xamarin-Plattform ein Linker enthalten. Dieser ist standardmäßig deaktiviert und muss in den Projektoptionen für die Anwendung aktiviert werden. Zur Buildzeit führt er statische Analysen der Anwendung aus, um zu bestimmen, welche Typen und Member tatsächlich von der Anwendung verwendet werden. Anschließend entfernt er alle nicht verwendeten Typen und Methoden aus der Anwendung.
 

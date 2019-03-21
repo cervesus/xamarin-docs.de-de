@@ -1,22 +1,17 @@
 ---
 title: Xamarin für Objective-C-Entwickler
-description: In diesem Dokument wird Xamarin.iOS für Objective-C-Entwickler erläutert. Es enthält Links zu Leitfaden, die den Übergang von Objective-C zu C#, das Einbinden einer Objective-C-Bibliothek für die Verwendung in C# und das Erstellen einer plattformübergeifenden mobilen App beschreiben.
+description: 'In diesem Dokument wird Xamarin.iOS für Objective-C-Entwickler erläutert. Es enthält Links zu Leitfaden, die den Übergang von Objective-C zu C#, das Einbinden einer Objective-C-Bibliothek für die Verwendung in C# und das Erstellen einer plattformübergeifenden mobilen App beschreiben.'
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 415a888a61b4c4ca9164166aadb1983df2d828dd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107338"
 ---
+
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin für Objective-C-Entwickler
 
-Xamarin bietet einen Pfad für Entwickler, die iOS ansteuern, um ihren Code für die Benutzeroberfläche zu der plattformagnostischen Programmiersprache C# zu verschieben. So kann er überall verwendet werden, wo C# verfügbar ist, einschließlich Android über Xamarin.Android und den verschiedenen Arten von Windows. Nur weil Sie C# mit Xamarin verwenden, bedeutet dies nicht, dass Sie nicht die vorhandenen Fähigkeiten und den Objective-C-Code nutzen können. Wenn Sie Objective-C kennen, macht Sie dies in der Tat zu einem besseren Xamarin.iOS-Entwickler, da Xamarin alle bekannten nativen iOS- und OS X-Plattform-APIs verfügbar macht, wie UIKit, Core Animation, Core Foundation und Core Graphics, um nur einige zu nennen. Darüber hinaus erhalten Sie die Leistung der C#-Sprache, einschließlich Features wie LINQ und Generika sowie umfangreiche Bibliotheken der .NET-Basisklasse, die Sie in Ihren nativen Anwendungen verwenden können.
+Xamarin bietet einen Pfad für Entwickler, die iOS ansteuern, um ihren Code für die Benutzeroberfläche zu der plattformagnostischen Programmiersprache C# zu verschieben. So kann er überall verwendet werden, wo C# verfügbar ist, einschließlich Android über Xamarin.Android und den verschiedenen Arten von Windows. Nur weil Sie C# mit Xamarin verwenden, bedeutet dies nicht, dass Sie nicht die vorhandenen Fähigkeiten und den Objective-C-Code nutzen können. Wenn Sie Objective-C kennen, macht Sie dies in der Tat zu einem besseren Xamarin.iOS-Entwickler, da Xamarin alle bekannten nativen iOS- und OS X-Plattform-APIs verfügbar macht, wie UIKit, Core Animation, Core Foundation und Core Graphics, um nur einige zu nennen. Darüber hinaus erhalten Sie die Leistung der C#-Sprache, einschließlich Features wie LINQ und Generics sowie umfangreiche Bibliotheken der .NET-Basisklasse, die Sie in Ihren nativen Anwendungen verwenden können.
 
 Außerdem erlaubt es Xamarin, vorhandene Objective-C-Ressourcen mithilfe einer Technologie zu nutzen, die als Bindung bezeichnet wird. Sie erstellen einfach eine statische Bibliothek in Objective-C und machen ihn wie im folgenden Diagramm gezeigt über die Bindung für C# verfügbar:
 

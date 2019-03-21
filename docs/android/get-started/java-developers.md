@@ -33,7 +33,7 @@ Viele Schlüsselmerkmale von Java finden sich in C#:
 
 -   Unterstützung für Schnittstellen
 
--   Generika
+-   Generics
 
 -   Garbage Collection
 
@@ -144,9 +144,9 @@ Diese Anweisungen importieren Funktionalität aus den Namespaces `System`, `Andr
 
 
 
-### <a name="generics"></a>Generika
+### <a name="generics"></a>Generics
 
-Sowohl Java als auch C# unterstützen *Generika*. Dabei handelt es sich um Platzhalter, mit denen Sie verschiedene Typen zur Kompilierungszeit einbinden können. Generika funktionieren jedoch in C# etwas anders. In Java stellt [Type Erasure](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) Typinformationen nur zur Kompilierungszeit, nicht aber zur Laufzeit zur Verfügung. Im Gegensatz dazu bietet die .NET-CLR (Common Language Runtime) explizite Unterstützung für generische Typen. Dies bedeutet, dass C# zur Laufzeit Zugriff auf Typinformationen besitzt. In der täglichen Xamarin.Android-Entwicklung ist die Wichtigkeit dieser Unterscheidung häufig nicht offensichtlich, aber wenn Sie [Reflektion](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection) verwenden, sind Sie von diesem Feature abhängig, um zur Laufzeit auf Typinformationen zuzugreifen.
+Sowohl Java als auch C# unterstützen *Generics*. Dabei handelt es sich um Platzhalter, mit denen Sie verschiedene Typen zur Kompilierungszeit einbinden können. Generics funktionieren jedoch in C# etwas anders. In Java stellt [Type Erasure](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) Typinformationen nur zur Kompilierungszeit, nicht aber zur Laufzeit zur Verfügung. Im Gegensatz dazu bietet die .NET-CLR (Common Language Runtime) explizite Unterstützung für generische Typen. Dies bedeutet, dass C# zur Laufzeit Zugriff auf Typinformationen besitzt. In der täglichen Xamarin.Android-Entwicklung ist die Wichtigkeit dieser Unterscheidung häufig nicht offensichtlich, aber wenn Sie [Reflektion](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection) verwenden, sind Sie von diesem Feature abhängig, um zur Laufzeit auf Typinformationen zuzugreifen.
 
 In Xamarin.Android wird Ihnen auffallen, dass häufig die generische Methode `FindViewById` verwendet wird, um einen Verweis auf ein Layoutsteuerelement zu erhalten. Diese Methode akzeptiert einen generischen Typparameter, der den Typ des Steuerelements angibt, der nachgeschlagen werden soll. Zum Beispiel:
 
@@ -156,7 +156,7 @@ TextView label = FindViewById<TextView> (Resource.Id.Label);
 
 In diesem Codebeispiel ruft `FindViewById` einen Verweis auf das `TextView`-Steuerelement ab, das im Layout als **Bezeichnung** definiert ist, und gibt es dann als `TextView`-Typ zurück.
 
-Weitere Informationen zu Generika finden Sie im Artikel [Generika](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index).
+Weitere Informationen zu Generics finden Sie im Artikel [Generics](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index).
 Beachten Sie, dass es einige Einschränkungen in der Unterstützung von Xamarin.Android für generische C#-Klassen gibt. Weitere Informationen finden Sie unter [Einschränkungen](~/android/internals/limitations.md).
 
 
@@ -503,7 +503,7 @@ Wenn Sie bereit sind, Ihr erstes Xamarin.Android-Projekt in C# in Angriff zu neh
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde eine Einführung in die C#-Programmierumgebung Xamarin.Android aus der Sicht eines Java-Entwicklers bereitgestellt. Die Ähnlichkeiten zwischen C# und Java wurde gezeigt, und ihre praktischen Unterschiede wurden erläutert. Assemblys und Namespaces wurden vorgestellt, der Import externer Typen wurde erläutert und ein Überblick über die Unterschiede bei Zugriffsmodifizierern ermöglicht. Außerdem wurden Informationen zu Generika, Klassenableitung, Aufruf von Methoden der Basisklasse, Methodenüberschreibung und Ereignisbehandlung bereitgestellt. Der Artikel hat C#-Funktionen vorgestellt, die in Java nicht verfügbar sind (z.B. Eigenschaften) sowie asynchrone `async`/`await`-Programmierung, Lambdaausdrücke, C#-Delegaten und das C#-Ereignisverarbeitungssystem erläutert. Er enthält Tabellen mit wichtigen C#-Schlüsselwörtern, beschreibt, wie die Interaktion mit vorhandenen Java-Bibliotheken erfolgt, und bietet Links zu verwandter Dokumentation für weitere Studien.
+In diesem Artikel wurde eine Einführung in die C#-Programmierumgebung Xamarin.Android aus der Sicht eines Java-Entwicklers bereitgestellt. Die Ähnlichkeiten zwischen C# und Java wurde gezeigt, und ihre praktischen Unterschiede wurden erläutert. Assemblys und Namespaces wurden vorgestellt, der Import externer Typen wurde erläutert und ein Überblick über die Unterschiede bei Zugriffsmodifizierern ermöglicht. Außerdem wurden Informationen zu Generics, Klassenableitung, Aufruf von Methoden der Basisklasse, Methodenüberschreibung und Ereignisbehandlung bereitgestellt. Der Artikel hat C#-Funktionen vorgestellt, die in Java nicht verfügbar sind (z.B. Eigenschaften) sowie asynchrone `async`/`await`-Programmierung, Lambdaausdrücke, C#-Delegaten und das C#-Ereignisverarbeitungssystem erläutert. Er enthält Tabellen mit wichtigen C#-Schlüsselwörtern, beschreibt, wie die Interaktion mit vorhandenen Java-Bibliotheken erfolgt, und bietet Links zu verwandter Dokumentation für weitere Studien.
 
 
 ## <a name="related-links"></a>Verwandte Links
