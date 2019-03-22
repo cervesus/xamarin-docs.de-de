@@ -38,7 +38,7 @@ Es wird dringend empfohlen, für jede Xamarin.Android-Anwendung ein Anwendungssy
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-In Visual Studio 2015 und höher geben Sie das Anwendungssymbol über den Bereich **Android-Manifest** der **Eigenschaften** des Projekts an, wie im folgenden Screenshot gezeigt:
+Geben Sie in Visual Studio 2017 und höher wie im folgenden Screenshot gezeigt das Anwendungssymbol über den Bereich **Android-Manifest** der **Eigenschaften** des Projekts an:
 
 [![Anwendungssymbol festlegen](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
@@ -186,7 +186,8 @@ Beachten Sie, dass Debugbuilds automatisch manche Berechtigungen festlegen, um d
 Auch mit der Einstellung [Debugging deaktiviert](#Disable_Debugging) ist es möglich, dass Angreifer Anwendungen erneut verpacken oder Konfigurationsoptionen bzw. -berechtigungen hinzufügen oder entfernen. Auf diese Weise können sie Anwendungen zurückentwickeln, debuggen oder manipulieren.
 Sie können [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) verwenden, um verwalteten Code zu verbergen und Laufzeitcode zur Erkennung des Sicherheitsstatus zur Buildzeit in eine Xamarin.Android-App einzufügen, um zu entdecken, ob die App auf einem Gerät mit entfernten Nutzungsbeschränkungen ausgeführt wird und darauf zu antworten.
 
-Dotfuscator CE ist im Lieferumfang von Visual Studio enthalten, jedoch weist nur Visual Studio 2015 Update 3 (und höher) die richtige Version auf, um mit Xamarin.Android verwendet werden zu können. Wenn Sie Dotfuscator verwenden möchten, klicken Sie auf **Tools > Präemptiver Schutz - Dotfuscator**.
+Dotfuscator CE ist in Visual Studio 2017 enthalten.
+Wenn Sie Dotfuscator verwenden möchten, klicken Sie auf **Tools > Präemptiver Schutz - Dotfuscator**.
 
 Informationen zum Konfigurieren von Dotfuscator CE finden Sie unter [Using Dotfuscator Community Edition with Xamarin (Verwenden von Dotfuscator Community Edition mit Xamarin)](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator).
 Nach der Konfiguration schützt Dotfuscator CE automatisch jeden erstellten Build.

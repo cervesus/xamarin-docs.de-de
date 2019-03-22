@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: c43b3f3204cba890cb2fa9c4cfc33a23250e0550
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b6b95f730b966ef5edaabbe7b0f333c2cacf5bc5
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112051"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58070838"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>Installieren von NUnit 2.6.4 mithilfe von NuGet
 
@@ -25,7 +25,7 @@ In diesem Leitfaden wird beschrieben, wie NUnit 2.6.4 mithilfe von NuGet für Vi
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-In dieser Anleitung wird beschrieben, wie NUnit 3.0 mithilfe von NuGet in Visual Studio 2015 auf NUnit 2.6.4 herabgestuft wird.
+In dieser Anleitung wird beschrieben, wie NUnit 3.0 mithilfe von NuGet in Visual Studio 2015 und höher auf NUnit 2.6.4 herabgestuft werden kann.
 
 -----
 
@@ -62,7 +62,7 @@ Dieser Leitfaden erläutert, wie NUnit 3.0 in Visual Studio für Mac mithilfe de
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>Installieren von NUnit 2.6.4 in Visual Studio
 
-Dieser Abschnitt konzentriert sich auf die Verwendung der _NuGet Paket-Manager-Konsole_ in Visual Studio 2015 zur Deinstallation von NUnit 3.0 und anschließenden Installation von NUnit 2.6.4.
+In diesem Abschnitt wird die Verwendung der _NuGet Paket-Manager-Konsole_ in Visual Studio 2015 und höher zur Deinstallation von NUnit 3.0 und anschließenden Installation von NUnit 2.6.4 behandelt.
 
 
 1. **NuGet-Paket-Manager-Konsole starten**: Wählen Sie **Tools > NuGet-Paket-Manager > Paket-Manager-Konsole** aus:
@@ -105,7 +105,7 @@ Wenn NUnit 3.0 oder höher angezeigt wird, müssen Sie auf NUnit 2.6.4 herabstuf
     
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Leitfaden erläutert, wie NUnit 3.0 in Visual Studio 2015 mithilfe der Paket-Manager-Konsole auf NUnit 2.6.4 herabgestuft wird.
+In diesem Leitfaden wird erläutert, wie NUnit 3.0 in Visual Studio 2015 und höher mithilfe der Paket-Manager-Konsole auf NUnit 2.6.4 herabgestuft werden kann.
 
 -----
 
