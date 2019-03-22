@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/13/2018
-ms.openlocfilehash: da7d63f43a431d2a31428d28e81e8b6abfed838e
-ms.sourcegitcommit: 4c97f5d73be7eb2da153a85183be4258b6b11ca6
+ms.date: 03/21/2019
+ms.openlocfilehash: e165e6c713028517d69fee92916c94bbf0e46f33
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58288588"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329234"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -170,11 +170,11 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 
 ## <a name="views-that-display-collections"></a>Ansichten, die Auflistungen anzeigen.
 
-### <a name="picker"></a>Zeitauswahl
+### <a name="collectionview"></a>CollectionView
 
 |     |     |
 | --- | --- |
-| [`Picker`](xref:Xamarin.Forms.Picker) Zeigt ein ausgewähltes Element aus einer Liste von Textzeichenfolgen und ermöglicht die Auswahl dieses Elements, wenn die Ansicht angetippt wird. Legen Sie die [ `Items` ](xref:Xamarin.Forms.Picker.Items) Eigenschaft, um eine Liste von Zeichenfolgen, oder die [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) Eigenschaft, um eine Auflistung von Objekten. Die [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) Ereignis wird ausgelöst, wenn ein Element ausgewählt ist.<br /><br />Die `Picker` zeigt die Liste der Elemente nur, wenn diese Option ausgewählt ist. Verwenden einer [ `ListView` ](#listView) oder [ `TableView` ](#tableView) eine bildlauffähige Liste, die auf der Seite verbleibt.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Picker) / [Handbuch](~/xamarin-forms/user-interface/picker/index.md) / [Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/) | [![Beispiel für die Auswahl](views-images/Picker.png "Auswahl Beispiel")](views-images/Picker-Large.png#lightbox "Picker-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PickerDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml.cs) |
+| `CollectionView` Zeigt eine bildlauffähige Liste der auswählbaren Datenelemente, die mit anderen Layout-Spezifikationen. Es zielt darauf ab, die eine flexiblere, bereitstellen und leistungsfähige Alternative zu [ `ListView` ](xref:Xamarin.Forms.ListView). Legen Sie die `ItemsSource` Eigenschaft, um eine Auflistung von Objekten, und legen Sie die `ItemTemplate` Eigenschaft, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) beschreiben, wie die Elemente zu formatierende Objekt. Die `SelectionChanged` Ereignis signalisiert, dass eine Auswahl getroffen wurde, die als verfügbar ist, die `SelectedItem` Eigenschaft.<br /><br />[Handbuch](~/xamarin-forms/user-interface/collectionview/index.md) / [Beispiel](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/) | [![Beispiel für CollectionView](views-images/CollectionView.png "CollectionView Beispiel")](views-images/CollectionView-Large.png#lightbox "CollectionView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />
@@ -184,6 +184,13 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 |     |     |
 | --- | --- |
 | [`ListView`](xref:Xamarin.Forms.ListView) leitet sich von [ `ItemsView[Cell]` ](xref:Xamarin.Forms.ItemsView`1) und eine bildlauffähige Liste der auswählbaren Datenelemente angezeigt. Legen Sie die [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) Eigenschaft, um eine Auflistung von Objekten, und legen Sie die [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) Eigenschaft, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Objekt beschreibt, wie die Elemente werden formatiert werden. Die [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis signalisiert, dass eine Auswahl getroffen wurde, die als verfügbar ist, die [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) Eigenschaft.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ListView) / [Handbuch](~/xamarin-forms/user-interface/listview/index.md) / [Beispiel](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView-Beispiel](views-images/ListView.png "ListView-Beispiel")](views-images/ListView-Large.png#lightbox "ListView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+|     |     |
+
+### <a name="picker"></a>Zeitauswahl
+
+|     |     |
+| --- | --- |
+| [`Picker`](xref:Xamarin.Forms.Picker) Zeigt ein ausgewähltes Element aus einer Liste von Textzeichenfolgen und ermöglicht die Auswahl dieses Elements, wenn die Ansicht angetippt wird. Legen Sie die [ `Items` ](xref:Xamarin.Forms.Picker.Items) Eigenschaft, um eine Liste von Zeichenfolgen, oder die [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) Eigenschaft, um eine Auflistung von Objekten. Die [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) Ereignis wird ausgelöst, wenn ein Element ausgewählt ist.<br /><br />Die `Picker` zeigt die Liste der Elemente nur, wenn diese Option ausgewählt ist. Verwenden einer [ `ListView` ](#listView) oder [ `TableView` ](#tableView) eine bildlauffähige Liste, die auf der Seite verbleibt.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Picker) / [Handbuch](~/xamarin-forms/user-interface/picker/index.md) / [Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/) | [![Beispiel für die Auswahl](views-images/Picker.png "Auswahl Beispiel")](views-images/Picker-Large.png#lightbox "Picker-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PickerDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml.cs) |
 |     |     |
 
 <a name="tableView" />
