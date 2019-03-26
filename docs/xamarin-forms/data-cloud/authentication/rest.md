@@ -6,21 +6,17 @@ ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: e2ab6c053901ad6c1668c5ae5be9ab04d9d05e8a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 01/22/2018
+ms.openlocfilehash: d3f07a72ee26d6be4fafa72137dc9b6c3a724e00
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050335"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477342"
 ---
 # <a name="authenticating-a-restful-web-service"></a>Die Authentifizierung eines RESTful-Web-Diensts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
-
 _HTTP unterstützt die Verwendung mehrere Authentifizierungsmechanismen zum Steuern des Zugriffs auf Ressourcen. Die Standardauthentifizierung bietet Zugriff auf Ressourcen auf ausschließlich Clients, die die richtigen Anmeldeinformationen verfügen. In diesem Artikel veranschaulicht die Standardauthentifizierung zu verwenden, um den Zugriff auf RESTful-Web-Service-Ressourcen zu schützen._
-
-Die begleitende Xamarin.Forms-beispielanwendung verwendet einen Xamarin-gehosteten REST-Dienst, der schreibgeschützten Zugriff auf den Webdienst bereitstellt. Aus diesem Grund werden die Vorgänge, die zu erstellen, aktualisieren und Löschen von Daten nicht geändert werden die Daten in der Anwendung genutzt. Eine hostfähigen Version der REST-Dienst ist jedoch verfügbar, in der *TodoRESTService* Ordner in der beispielanwendung, und Anweisungen zum Einrichten des Diensts finden Sie es. Diese hostfähigen Version der REST-Dienst bietet vollständige erstellen, aktualisieren, lesen und Löschen der Zugriff auf die Daten.
 
 > [!NOTE]
 > In iOS 9 und höher erzwingt (App Transport Security, ATS) sichere Verbindungen zwischen der Internet-Ressourcen (z. B. die app Back-End-Server) und die app, und verhindert versehentliche Offenlegung vertraulicher Informationen. Da ATS in apps für iOS 9, die standardmäßig aktiviert ist, werden alle Verbindungen unterliegen ATS-sicherheitsanforderungen. Wenn die Verbindungen nicht über diese Anforderungen erfüllen, werden sie mit einer Ausnahme fehlschlagen.
@@ -59,7 +55,7 @@ Die `HttpClient` -Klasse festgelegt kann die `Authorization` Headerwert mit der 
 ```csharp
 public class RestService : IRestService
 {
-  HttpClient client;
+  HttpClient _client;
   ...
 
   public RestService ()
@@ -67,9 +63,8 @@ public class RestService : IRestService
     var authData = string.Format ("{0}:{1}", Constants.Username, Constants.Password);
     var authHeaderValue = Convert.ToBase64String (Encoding.UTF8.GetBytes (authData));
 
-    client = new HttpClient ();
-    ...
-    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue ("Basic", authHeaderValue);
+    _client = new HttpClient ();
+    _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue ("Basic", authHeaderValue);
   }
   ...
 }
@@ -78,25 +73,18 @@ public class RestService : IRestService
 Und dann die Anforderung mit, wenn eine Anforderung an einen Webdienstvorgang erfolgt signiert wird die `Authorization` -Header, der angibt, ob der Benutzer über die Berechtigung zum Aufrufen des Vorgangs verfügt.
 
 > [!NOTE]
-> Während der Beispiel – REST-Dienst als Konstanten Anmeldeinformationen gespeichert werden, sollten sie in einem unsicheren Format in eine veröffentlichte Anwendung nicht gespeichert werden. Die [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet bietet Funktionen zum sicheren Speichern von Anmeldeinformationen. Weitere Informationen finden Sie unter [speichern und Abrufen von Informationen auf Geräten](~/xamarin-forms/data-cloud/authentication/oauth.md).
-
+> Während dieser Code als Konstanten Anmeldeinformationen gespeichert werden, sollten sie in einem unsicheren Format in eine veröffentlichte Anwendung nicht gespeichert werden. Die [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet bietet Funktionen zum sicheren Speichern von Anmeldeinformationen. Weitere Informationen finden Sie unter [speichern und Abrufen von Informationen auf Geräten](~/xamarin-forms/data-cloud/authentication/oauth.md).
 
 ## <a name="processing-the-authorization-header-server-side"></a>Verarbeiten von der Serverseite der Authorization-Header
 
-Die begleitende Beispiel – REST-Dienst ergänzt jede Aktion wird mit der `[BasicAuthentication]` Attribut. Dieses Attribut wird implementiert, indem die `BasicAuthenticationAttribute` -Klasse in der Projektmappe, und wird verwendet, um das Analysieren der `Authorization` Header und zu bestimmen, ob die base64-codierte Anmeldeinformationen gültig sind, durch einen Vergleich mit Werten, die in gespeicherten *"Web.config"*. Während dieser Ansatz für den Beispieldienst geeignet ist, ist die Erweiterung für einen Webdienst öffentlich zugänglichen erforderlich.
+Ergänzen Sie der REST-Dienst sollte jede Aktion wird mit der `[BasicAuthentication]` Attribut. Dieses Attribut wird verwendet, um das Analysieren der `Authorization` Header und zu bestimmen, ob die base64-codierte Anmeldeinformationen gültig sind, durch einen Vergleich mit Werten, die in gespeicherten *"Web.config"*. Während dieser Ansatz für ein Beispieldienst geeignet ist, ist die Erweiterung für einen Webdienst öffentlich zugänglichen erforderlich.
 
 Im basic-Authentifizierung-Modul von IIS verwendet wird werden Benutzer anhand ihrer Windows-Anmeldeinformationen authentifiziert. Aus diesem Grund müssen Benutzer über Konten in der Domäne des Servers verfügen. Allerdings kann das Modell für die Standardauthentifizierung konfiguriert werden, um benutzerdefinierte Authentifizierung zu ermöglichen, in denen Benutzerkonten für eine externe Quelle, z. B. eine Datenbank authentifiziert. Weitere Informationen finden Sie unter [grundlegenden Authentifizierung in ASP.NET Web-API](http://www.asp.net/web-api/overview/security/basic-authentication) auf der ASP.NET-Website.
 
 > [!NOTE]
 > Standardauthentifizierung wurde nicht entwickelt, um durch die Abmeldung zu verwalten. Daher ist der standard-Standardauthentifizierung Ansatz für die Abmeldung zum Beenden der Sitzung.
 
-## <a name="summary"></a>Zusammenfassung
-
-In diesem Artikel wurde veranschaulicht, wie Hinzufügen von Standardauthentifizierung zu Anforderungen, die von einer Xamarin.Forms-Anwendung mithilfe der `HttpClient` Klasse. Die Standardauthentifizierung bietet Zugriff auf Ressourcen auf ausschließlich Clients, die die richtigen Anmeldeinformationen verfügen. Informationen zur Verwendung von [Xamarin.Auth](https://www.nuget.org/packages/Xamarin.Auth/) um des Authentifizierungsprozesses in einer Xamarin.Forms-Anwendung, damit Benutzer ein Back-End gemeinsam nutzen können, während Sie nur Zugriff auf ihre Daten zu verwalten, finden Sie unter [Authentifizieren von Benutzern Bei einem Identitätsanbieter](~/xamarin-forms/data-cloud/authentication/oauth.md).
-
-
 ## <a name="related-links"></a>Verwandte Links
 
-- [TodoREST (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
 - [Verwenden eines RESTful-Web-Diensts](~/xamarin-forms/data-cloud/consuming/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/18/2018
-ms.openlocfilehash: e78c224bae3a0e2c2dfcfded30a4bf2c4794e255
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 370867b52ec09d0c3ad0f801b6a75c356d806734
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112012"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477394"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Verwenden von SQLite.NET mit Xamarin.iOS
 
@@ -27,8 +27,8 @@ Um die Bibliothek von SQLite.NET in einer Xamarin-app zu einzuschließen, fügen
 
 - **Paketname:** Sqlite-Net-Plc
 - **Autor:** Frank A. Krueger
-- **ID:** Sqlite-Net-Plc
-- **URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **ID:** sqlite-net-pcl
+- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![Von SQLite.NET NuGet-Paket](using-sqlite-orm-images/image1a-sml.png "von SQLite.NET NuGet-Paket")](using-sqlite-orm-images/image1a.png#lightbox)
 
@@ -196,11 +196,13 @@ Sehen Sie sich die `rowcount` , bestätigen, wie viele Zeilen betroffen sind (in
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>Verwenden von SQLite.NET mit mehreren Threads
 
-SQLite unterstützt drei verschiedene threading-Modi: *Singlethread-*, *Multi-Thread*, und *serialisiert*. Wenn Sie die Datenbank von mehreren Threads ohne jegliche Einschränkungen zugreifen möchten, können Sie konfigurieren, dass SQLite verwendet die **serialisiert** threading-Modus. Es ist wichtig, die in diesem Modus einem frühen Zeitpunkt in Ihrer Anwendung einzurichten (z. B. am Anfang der `OnCreate` Methode).
+SQLite unterstützt drei unterschiedliche threading-Modi: *Singlethread-*, *mit mehreren Threads*, und *serialisiert*. Wenn Sie die Datenbank von mehreren Threads ohne jegliche Einschränkungen zugreifen möchten, können Sie konfigurieren, dass SQLite verwendet die **serialisiert** threading-Modus. Es ist wichtig, die in diesem Modus einem frühen Zeitpunkt in Ihrer Anwendung einzurichten (z. B. am Anfang der `OnCreate` Methode).
 
-Um den threading-Modus zu ändern, rufen `SqliteConnection.SetConfig`. Diese Codezeile konfiguriert, SQLite für **serialisiert** Modus:
+Um den threading-Modus zu ändern, rufen `SqliteConnection.SetConfig` dieser befindet sich in der `Mono.Data.Sqlite` Namespace. Diese Codezeile konfiguriert, SQLite für **serialisiert** Modus:
 
 ```csharp
+using Mono.Data.Sqlite;
+...
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
