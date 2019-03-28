@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4e2d33276c865695d70abb2d8e00b3b80d446839
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 0f0c2e9f3e0a2309db1ad96ff286d6ac17f78bc5
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207985"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329298"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Die Xamarin.Forms-Klasse „TabbedPage“
 
@@ -115,7 +115,7 @@ Weitere Informationen zum Layout einer [`NavigationPage`](xref:Xamarin.Forms.Nav
 
 #### <a name="navigation-inside-a-tab"></a>Navigation auf einer Registerkarte
 
-Die Navigation kann auf der zweiten Registerkarte durchgeführt werden, indem die [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)-Methode in der [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation)-Eigenschaft der [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Instanz aufgerufen wird. Dies wird in folgendem Codebeispiel veranschaulicht:
+Die Navigation kann auf der zweiten Registerkarte durchgeführt werden, indem die [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)-Methode in der [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation)-Eigenschaft der [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Instanz aufgerufen wird. Dies wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)

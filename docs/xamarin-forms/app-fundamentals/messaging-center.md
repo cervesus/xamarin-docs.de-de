@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 2e87142594da8f028323b5dc81afb0e9f8021028
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 6af392988b8ffa5f01ef07f81be53ea8f82e8fb5
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667054"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477329"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -35,7 +35,7 @@ Es gibt zwei Teile von `MessagingCenter`:
 -  **Abonnieren:** Lauschen auf Nachrichten mit einer bestimmten Signatur und Ausführen einiger Aktionen, wenn sie empfangen werden. Mehrere Abonnenten können auf dieselbe Nachricht warten.
 -  **Senden:** Veröffentlichen einer Nachricht für Zuhörer, um entsprechend zu handeln. Wenn eine Nachricht von keinem Zuhörer abonniert wurde, wird sie ignoriert.
 
-`MessagingService` ist eine statische Klasse mit `Subscribe`- und `Send`-Methoden, die bei dieser Lösung verwendet werden.
+`MessagingCenter` ist eine statische Klasse mit `Subscribe`- und `Send`-Methoden, die bei dieser Lösung verwendet werden.
 
 Nachrichten besitzen einen `message`-Zeichenfolgenparameter, der verwendet wird, um Nachrichten zu *adressieren*. Die Methoden `Subscribe` und `Send` verwenden generische Parameter, um weiter zu steuern, wie Nachrichten geliefert werden. Zwei Nachrichten mit demselben `message`-Text aber unterschiedlichen generischen Typargumenten werden nicht an denselben Abonnenten geliefert.
 

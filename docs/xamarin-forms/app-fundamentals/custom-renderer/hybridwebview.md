@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: b88226dda14e2ae5cd21bb066e107fb4bcad78f6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0b91aae1456827625526d7568176a07e7e61f225
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672520"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507122"
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementieren eines HybridWebView-Steuerelements
 
@@ -30,7 +30,7 @@ Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu
 
 1. [Erstellen](#Creating_the_HybridWebView) Sie das benutzerdefinierte Steuerelement `HybridWebView`.
 1. [Nutzen](#Consuming_the_HybridWebView) Sie das `HybridWebView`-Objekt von Xamarin.Forms.
-1. [Erstellen](#Creating_the_Custom_Renderer_on_each_Platform) Sie einen benutzerdefinierten Renderer für das `HybridWebView`-Objekt auf jeder Plattform.
+1. [Erstellen](#creating-the-custom-renderer-on-each-platform) Sie einen benutzerdefinierten Renderer für das `HybridWebView`-Objekt auf jeder Plattform.
 
 Im folgenden wird auf jeden dieser Punkte ausführlicher eingegangen, um zu veranschaulichen, wie Sie einen `HybridWebView`-Renderer implementieren können, der die plattformspezifischen Websteuerelemente erweitert, damit C#-Code über JavaScript aufgerufen werden kann. Die `HybridWebView`-Instanz wird verwendet, um eine HTML-Seite anzuzeigen, die den Benutzer auffordert, seinen Namen einzugeben. Wenn der Benutzer auf die HTML-Schaltfläche klickt, ruft eine JavaScript-Funktion ein C#-`Action`-Objekt auf, das den Benutzernamen enthält.
 
@@ -141,8 +141,6 @@ public partial class HybridWebViewPage : ContentPage
 Diese Aktion ruft die [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String))-Methode auf, um ein modale Popupelement anzuzeigen, das den Namen anzeigt, der auf der HTML-Seite eingegeben wurde, die von der `HybridWebView`-Instanz angezeigt wurde.
 
 Ein benutzerdefinierter Renderer kann jetzt jedem Anwendungsprojekt hinzugefügt werden, um plattformspezifische Websteuerelemente zu erweitern, sodass diese zulassen, dass C#-Code über JavaScript aufgerufen wird.
-
-<a nane="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen des benutzerdefinierten Renderers auf jeder Plattform
 

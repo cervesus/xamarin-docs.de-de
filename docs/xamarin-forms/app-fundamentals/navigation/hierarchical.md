@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: f69acd60d7a80607528e4a39ee6a8bfbc19711f5
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: c5eeb00d4dc5992666a7ba5f9fef2685d5056447
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207972"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329272"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -28,7 +28,7 @@ Um zu vorherigen Seite zurückzukehren, entfernt die Anwendung die aktuelle Seit
 
 ![](hierarchical-images/popping.png "Eine Seite per Pop aus dem Navigationsstapel entfernen")
 
-Navigationsmethoden werden von der Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) für einen beliebigen [`Page`](xref:Xamarin.Forms.Page)-Typ verfügbar gemacht. Diese Methoden bieten die Möglichkeit, Seiten per Push auf den Navigationsstapel zu übertragen, Seiten per Pop aus dem Navigationsstapel zu entfernen und die Stapelbearbeitung durchzuführen.
+Navigationsmethoden werden von der Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) für einen beliebigen [`Page`](xref:Xamarin.Forms.Page)-Typ verfügbar gemacht. Diese Methoden bieten die Möglichkeit, Seiten per Push auf den Navigationsstapel zu übertragen, Seiten per Pop aus dem Navigationsstapel zu entfernen und die Stapelbearbeitung durchzuführen.
 
 <a name="Performing_Navigation" />
 
@@ -69,7 +69,7 @@ Dies bewirkt, dass die `Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPag
 
 ### <a name="pushing-pages-to-the-navigation-stack"></a>Pushen von Seiten auf den Navigationsstapel
 
-Für die Navigation zur `Page2Xaml` muss die [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)-Methode für die Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) der aktuellen Seite aufgerufen werden. Dies wird im folgenden Codebeispiel veranschaulicht:
+Für die Navigation zur `Page2Xaml` muss die [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)-Methode für die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) der aktuellen Seite aufgerufen werden. Dies wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -114,7 +114,7 @@ Dadurch wird die `Page2Xaml`-Instanz von dem Navigationsstapel entfernt, und die
 
 Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
 
-Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) jeder Seite stellt zusätzlich zu den [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)- und [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync)-Methoden eine [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync)-Methode bereit, wie im folgenden Codebeispiel dargestellt:
+Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) jeder Seite stellt zusätzlich zu den [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)- und [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync)-Methoden eine [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync)-Methode bereit, wie im folgenden Codebeispiel dargestellt:
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -127,7 +127,7 @@ Diese Methode entfernt alle Klassen außer die [`Page`](xref:Xamarin.Forms.Page)
 
 ### <a name="animating-page-transitions"></a>Animieren von Seitenübergängen
 
-Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) jeder Seite bietet auch überschriebene Push- und Pop-Methoden, die einen `boolean`-Parameter beinhalten, der steuert, ob eine Seitenanimation während des Navigierens angezeigt wird. Dies wird im folgenden Codebeispiel veranschaulicht:
+Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) jeder Seite bietet auch überschriebene Push- und Pop-Methoden, die einen `boolean`-Parameter beinhalten, der steuert, ob eine Seitenanimation während des Navigierens angezeigt wird. Dies wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -276,7 +276,7 @@ Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/
 
 ## <a name="manipulating-the-navigation-stack"></a>Bearbeiten des Navigationsstapels
 
-Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) macht die Eigenschaft [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) verfügbar, über welche die Seiten im Navigationsstapel abgerufen werden können. Während Xamarin.Forms den Zugriff auf den Navigationsstapel verwaltet, stellt die `Navigation`-Eigenschaft die [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*)- und [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*)-Methoden zum Bearbeiten des Stapels bereit, indem Seiten eingefügt oder entfernt werden.
+Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) macht die Eigenschaft [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) verfügbar, über welche die Seiten im Navigationsstapel abgerufen werden können. Während Xamarin.Forms den Zugriff auf den Navigationsstapel verwaltet, stellt die `Navigation`-Eigenschaft die [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*)- und [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*)-Methoden zum Bearbeiten des Stapels bereit, indem Seiten eingefügt oder entfernt werden.
 
 Die Methode [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) fügt eine angegebene Seite noch vor einer vorhandenen angegebenen Seite in den Navigationsstapel ein, so wie in diesem Diagramm gezeigt:
 

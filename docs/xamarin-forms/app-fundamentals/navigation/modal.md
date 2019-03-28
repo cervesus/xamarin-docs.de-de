@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 32d0775baa75b70ebc118457945efc0f6c0acec2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: c84995e210d61e735d12a089f40bf9afa720acb5
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057060"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329285"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms-modale Seiten
 
@@ -39,9 +39,9 @@ Um zu vorherigen Seite zurückzukehren, entfernt die Anwendung die aktuelle Seit
 
 ## <a name="performing-navigation"></a>Ausführen der Navigation
 
-Modale Navigationsmethoden werden von der Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) für einen beliebigen [`Page`](xref:Xamarin.Forms.Page)-Typ verfügbar gemacht. Diese Methode ermöglicht das [Übertragen von modalen Seiten per Push](#Pushing_Pages_to_the_Modal_Stack) auf den modalen Stapel und das [Entfernen von modalen Seiten per Pop](#Popping_Pages_from_the_Modal_Stack) aus dem modalen Stapel.
+Modale Navigationsmethoden werden von der Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) für einen beliebigen [`Page`](xref:Xamarin.Forms.Page)-Typ verfügbar gemacht. Diese Methode ermöglicht das [Übertragen von modalen Seiten per Push](#Pushing_Pages_to_the_Modal_Stack) auf den modalen Stapel und das [Entfernen von modalen Seiten per Pop](#Popping_Pages_from_the_Modal_Stack) aus dem modalen Stapel.
 
-Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) macht zudem die Eigenschaft [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) verfügbar, über welche die modalen Seiten im modalen Stapel abgerufen werden können. Es gibt jedoch kein Konzept für die modale Stapelbearbeitung oder das Entfernen per Pop, um bei der modalen Navigation zur Stammseite zurückzukehren. Grund dafür ist, dass diese Vorgänge auf den zugrunde liegenden Plattformen nicht allgemein unterstützt werden.
+Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) macht zudem die Eigenschaft [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) verfügbar, über welche die modalen Seiten im modalen Stapel abgerufen werden können. Es gibt jedoch kein Konzept für die modale Stapelbearbeitung oder das Entfernen per Pop, um bei der modalen Navigation zur Stammseite zurückzukehren. Grund dafür ist, dass diese Vorgänge auf den zugrunde liegenden Plattformen nicht allgemein unterstützt werden.
 
 > [!NOTE]
 > Für die Durchführung einer modalen Seitennavigation ist keine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Instanz erforderlich.
@@ -50,7 +50,7 @@ Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) mach
 
 ### <a name="pushing-pages-to-the-modal-stack"></a>Übertragen von Seiten per Push auf den modalen Stapel
 
-Wenn Sie zur `ModalPage` navigieren möchten, muss die [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*)-Methode für die Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) der aktuellen Seite aufgerufen werden. Dies wird im folgenden Codebeispiel veranschaulicht:
+Wenn Sie zur `ModalPage` navigieren möchten, muss die [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*)-Methode für die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) der aktuellen Seite aufgerufen werden. Dies wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -107,7 +107,7 @@ Unter Android kann der Benutzer jederzeit zur vorherigen Seite zurückkehren, in
 
 ### <a name="animating-page-transitions"></a>Animieren von Seitenübergängen
 
-Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) jeder Seite bietet auch überschriebene Push- und Pop-Methoden, die einen `boolean`-Parameter beinhalten, der steuert, ob eine Seitenanimation während des Navigierens angezeigt wird. Dies wird im folgenden Codebeispiel veranschaulicht:
+Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) jeder Seite bietet auch überschriebene Push- und Pop-Methoden, die einen `boolean`-Parameter beinhalten, der steuert, ob eine Seitenanimation während des Navigierens angezeigt wird. Dies wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)

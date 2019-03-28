@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
-ms.openlocfilehash: f05de5185f224f8606f38011d8f307ed62d64541
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112870"
 ---
+
 # <a name="signing-the-android-application-package"></a>Signieren des Android-Anwendungspakets
 
 Unter [Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md) wurde der **Archiv-Manager** verwendet, um die App zu erstellen und zum Signieren und Veröffentlichen in ein Archiv abzulegen. In diesem Abschnitt wird erklärt, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt werden und die archivierte App *ad hoc* auf dem Datenträger veröffentlicht wird. Das resultierende APK kann ohne Verwendung eines App Stores auf Android-Geräten quergeladen werden.
@@ -42,7 +37,7 @@ Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/inde
 
 Nachdem **Ad-Hoc** ausgewählt wurde, öffnet Visual Studio wie im nächsten Screenshot gezeigt die Seite **Signierungsidentität** des Dialogfelds. Um das .APK zu veröffentlichen, muss es zunächst mithilfe eines Signaturschlüssels (auch als Zertifikat bezeichnet) signiert werden.
 
-Ein vorhandenes Zertifikat kann verwendet werden, indem Sie auf die Schaltfläche **Importieren** klicken und dann mit [APK signieren](#signapkvs) fortfahren. Andernfalls klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen:
+Ein vorhandenes Zertifikat kann verwendet werden, indem Sie auf die Schaltfläche **Importieren** klicken und dann mit [APK signieren](#sign-the-apk) fortfahren. Andernfalls klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen:
 
 [![Ad-Hoc-Signierungsidentität](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
@@ -69,7 +64,7 @@ Weitere Informationen zur Keystore-Datei finden Sie unter [Finding your Keystore
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Nachdem Sie auf **Ad-hoc** geklickt haben, öffnet Visual Studio für Mac das Dialogfeld **Android-Signierungsidentität**, wie im nachfolgenden Screenshot gezeigt. Um das .APK zu veröffentlichen, muss es zunächst mithilfe eines Signaturschlüssels (auch als Zertifikat bezeichnet) signiert werden. Wenn ein Zertifikat bereits vorhanden ist, klicken Sie auf die Schaltfläche **Vorhandenen Schlüssel importieren**, um es zu importieren. Fahren Sie dann damit fort, [das APK auf andere Weise zu signieren](#signapkxs), und klicken Sie auf die Schaltfläche **Neuen Schlüssel erstellen**, um ein neues Zertifikat zu erstellen: 
+Nachdem Sie auf **Ad-hoc** geklickt haben, öffnet Visual Studio für Mac das Dialogfeld **Android-Signierungsidentität**, wie im nachfolgenden Screenshot gezeigt. Um das .APK zu veröffentlichen, muss es zunächst mithilfe eines Signaturschlüssels (auch als Zertifikat bezeichnet) signiert werden. Wenn ein Zertifikat bereits vorhanden ist, klicken Sie auf die Schaltfläche **Vorhandenen Schlüssel importieren**, um es zu importieren. Fahren Sie dann damit fort, [das APK auf andere Weise zu signieren](#sign-the-apk), und klicken Sie auf die Schaltfläche **Neuen Schlüssel erstellen**, um ein neues Zertifikat zu erstellen:
 
 [![Dialogfeld „Android-Signierungsidentität“](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
 
@@ -92,8 +87,6 @@ Die oben genannten Schritte können z.B. einen neuen Signaturschlüssel an folge
 Weitere Informationen zur Keystore-Datei finden Sie unter [Finding your Keystore's MD5 or SHA1 Signature (Suchen der MD5- oder SHA1-Signatur Ihrer Keystore-Datei)](~/android/deploy-test/signing/keystore-signature.md).
 
 -----
-
-<a name="signapkvs" />
 
 ## <a name="sign-the-apk"></a>Signieren des APKs
 
@@ -137,7 +130,7 @@ Das Dialogfeld **APK-Ausgabedatei** speichert das APK am angegebenen Pfad. Klick
 
 ![Dialogfeld „APK-Ausgabedatei“](images/xs/06-output-apk-file.png)
 
-Als Nächstes geben Sie das Kennwort für das Zertifikat (das Kennwort, das im Dialogfeld **Neues Zertifikat erstellen** verwendet wurde) ein, und klicken Sie auf **OK**: 
+Als Nächstes geben Sie das Kennwort für das Zertifikat (das Kennwort, das im Dialogfeld **Neues Zertifikat erstellen** verwendet wurde) ein, und klicken Sie auf **OK**:
 
 ![Eingeben des Kennwort des Zertifikats](images/xs/07-signing-certificate.png)
 
