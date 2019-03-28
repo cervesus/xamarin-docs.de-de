@@ -1,18 +1,18 @@
 ---
 title: Erstellen eines Xamarin.Forms-Visual-Renderers
-description: Xamarin.Forms Visual ermöglicht Renderer selektiv auf VisualElement Objekte angewendet werden, ohne Unterklasse Xamarin.Forms-Ansichten.
+description: Erstellen von Xamarin.Forms-Visualisierungen, selektiv auf VisualElement Objekte angewendet werden, ohne dass Unterklasse Xamarin.Forms-Ansichten.
 ms.prod: xamarin
 ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 1bd56d09932c97508dd0a05fbc0eb2bad3af3f0e
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.openlocfilehash: a11c2045fa6119d0689834c35794bc8913c80bd6
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972584"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58506966"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>Erstellen eines Xamarin.Forms-Visual-Renderers
 
@@ -25,7 +25,7 @@ Xamarin.Forms Visual ermöglicht Renderer erstellt und selektiv auf angewendet w
 
 Der Prozess zum Erstellen und nutzen einen Xamarin.Forms-Visual-Renderer ist:
 
-1. Plattform-Renderer für die gewünschte Ansicht zu erstellen. Weitere Informationen finden Sie unter [Renderer erstellen](#create-platfomr-renderers).
+1. Plattform-Renderer für die gewünschte Ansicht zu erstellen. Weitere Informationen finden Sie unter [Renderer erstellen](#create-platform-renderers).
 1. Erstellen Sie einen Typ, die von abgeleitet `IVisual`. Weitere Informationen finden Sie unter [erstellen Sie einen Typ IVisual](#create-an-ivisual-type).
 1. Registrieren der `IVisual` Typ als Teil der `ExportRendererAttribute` , die die Renderer ergänzt. Weitere Informationen finden Sie unter [den Typ zu registrieren IVisual](#register-the-ivisual-type).
 1. Nutzen Sie die Visual-Renderer durch Festlegen der [ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual) Eigenschaft für die Sicht auf die `IVisual` Name. Weitere Informationen finden Sie unter [nutzen den Visual-Renderer](#consume-the-visual-renderer).

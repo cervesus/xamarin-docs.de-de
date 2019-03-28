@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/15/2019
-ms.openlocfilehash: 70b241944376782ec4c9446878ee2a19dcee2bbd
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 57012202d981b96dba42f3017a19f2e32e4982ec
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329937"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507187"
 ---
 # <a name="populate-xamarinforms-collectionview-with-data"></a>Xamarin.Forms-CollectionView mit Daten auffüllen
 
@@ -76,7 +76,7 @@ In der Standardeinstellung `CollectionView` Zeigt Elemente in einer vertikalen L
 
 [![Screenshot der CollectionView, Textelemente, in iOS- und Android enthält](populate-data-images/text.png "Textelemente in einem CollectionView")](populate-data-images/text-large.png#lightbox "Textelemente in einem CollectionView")
 
-Informationen zum Ändern der `CollectionView` Layout finden Sie unter [Geben Sie ein Layout](layout.md). Informationen dazu, wie die Darstellung der einzelnen Elemente im Definieren der `CollectionView`, finden Sie unter [definieren die Darstellung von Listen-Element](#define-list-item-appearance).
+Informationen zum Ändern der `CollectionView` Layout finden Sie unter [Geben Sie ein Layout](layout.md). Informationen dazu, wie die Darstellung der einzelnen Elemente im Definieren der `CollectionView`, finden Sie unter [Element Darstellung definieren](#define-item-appearance).
 
 ### <a name="data-binding"></a>Datenbindung
 

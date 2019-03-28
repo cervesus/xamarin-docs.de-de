@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: 7f66c97ce4b7880d32dfd87aec0691a26a08cfd2
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2e6a75fa3c4c63e8dea402c6761f8ef753908540
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669426"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507200"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Verwenden von Jenkins mit Xamarin
 
@@ -230,7 +230,7 @@ Die erste Aufgabe wie Jenkins ist den Quellcode aus dem Quellcodeverwaltungssyst
 
 #### <a name="using-git-for-source-code-control"></a>Mithilfe von Git für die Quellcodeverwaltung
 
-Bei Verwendung von TFS für quellcodeverwaltung [überspringen](#Using-TFS-for-Source-Code-Management) diesen Abschnitt, und fahren Sie mit dem nächsten Abschnitt unter Verwendung von TFS.
+Bei Verwendung von TFS für quellcodeverwaltung [überspringen](#using-tfs-for-source-code-management) diesen Abschnitt, und fahren Sie mit dem nächsten Abschnitt unter Verwendung von TFS.
 
 Jenkins unterstützt Git von der – es sind keine zusätzlichen Plug-Ins erforderlich sind. Um Git verwenden, klicken Sie auf die **Git** Optionsfeld aus, und geben Sie die URL des Git-Repositorys wie im folgenden Screenshot gezeigt:
 

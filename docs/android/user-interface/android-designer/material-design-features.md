@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 5e6d7b4bdfdf7ea48d26537cb41c763656b050e0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 59c61cc637a435f8107256ddcd6bfacfb0466867
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669649"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507018"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android-Designer Material Design-features
 
@@ -145,9 +145,9 @@ Wenn eine Farbressource geändert wird, wird eine Meldung angezeigt mit der Meld
 
 Die **Hintergrund** Farbe im Designer auf die neue Farbe Auswahl geändert hat, aber diese Änderung wurde noch nicht gespeichert. An diesem Punkt können Sie eine der folgenden Aktionen ausführen:
 
--   Klicken Sie auf **Änderungen verwerfen** verwerfen die neue Farbe Ihrer Wahl (oder Auswahl) und das Design auf den ursprünglichen Zustand wiederherstellen. 
+-   Klicken Sie auf **Änderungen verwerfen** verwerfen die neue Farbe Ihrer Wahl (oder Auswahl) und das Design auf den ursprünglichen Zustand wiederherstellen.
 
--   Drücken Sie <kbd>STRG + S</kbd> zum Speichern der Änderungen, die derzeit Design. 
+-   Drücken Sie <kbd>STRG + S</kbd> zum Speichern der Änderungen, die derzeit Design.
 
 Im folgenden Beispiel <kbd>STRG + S</kbd> gedrückt wurde, damit die Änderungen gespeichert wurden, um **AppTheme**:
 
@@ -300,7 +300,7 @@ Mithilfe der **Ressourcen** Registerkarte wird Ihre Auswahl auf dieser Liste von
 
 ### <a name="material-palette"></a>Materialpalette
 
-Die **Material Palette** Registerkarte geöffnet wird die **Material Design-Farbpalette** beschrieben [früheren](#material_palette). Wählen Sie einen Farbwert aus dieser Palette schränkt Ihre Farbauswahl, damit sie mit den materialentwurfsrichtlinien konsistent sind.
+Die **Material Palette** Registerkarte geöffnet wird die **Material Design-Farbpalette** beschrieben [früheren](#material-design-color-palette). Wählen Sie einen Farbwert aus dieser Palette schränkt Ihre Farbauswahl, damit sie mit den materialentwurfsrichtlinien konsistent sind.
 
 [![Materialpalette](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png#lightbox)
 
@@ -316,9 +316,9 @@ Wenn eine Farbressource geändert wird, wird eine Meldung angezeigt mit der Meld
 
 Die Änderung der Farbe im Designer durchgeführt wurde, aber diese Änderung wurde noch nicht gespeichert. An diesem Punkt können Sie eine der folgenden Aktionen ausführen:
 
--   Klicken Sie auf **Änderungen verwerfen** verwerfen die neue Farbe Ihrer Wahl (oder Auswahl) und das Design auf den ursprünglichen Zustand wiederherstellen. 
+-   Klicken Sie auf **Änderungen verwerfen** verwerfen die neue Farbe Ihrer Wahl (oder Auswahl) und das Design auf den ursprünglichen Zustand wiederherstellen.
 
--   Drücken Sie  **&#8984; + S** wird aufgerufen, um die Änderungen speichern, um ein neues Design **benutzerdefinierte**. 
+-   Drücken Sie  **&#8984; + S** wird aufgerufen, um die Änderungen speichern, um ein neues Design **benutzerdefinierte**.
 
 
 ## <a name="summary"></a>Zusammenfassung

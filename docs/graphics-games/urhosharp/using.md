@@ -6,12 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7d07733ebf62e6e12ccee05f9b72eaf1a74afad2
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 5e5c4f1545d39befde6574338ec4c1ca4037ad8b
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34784038"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507161"
 ---
 # <a name="using-urhosharp-to-build-a-3d-game"></a>Verwenden von UrhoSharp zum Erstellen eines 3D-Spiels
 
@@ -23,7 +23,7 @@ Bevor Sie Ihr erste Spiel schreiben, möchten Sie mit den Grundlagen vertraut zu
 
 Das Modell für die Szene kann als szenengraph komponentenbasierter beschrieben werden. Die Szene besteht aus einer Hierarchie von Szenenknoten, beginnend mit den Stammknoten, der auch die gesamte Szene darstellt. Jede [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/) verfügt über eine 3D-Transformation (Position, Drehung und Skalierung), einen Namen, eine ID sowie eine beliebige Anzahl von Komponenten.  Komponenten stellen eines Knotens zum Leben, sie können eine visuelle Darstellung hinzufügen ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)), können sie Sound ausgeben ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource)), können sie eine Kollision Grenze usw. bieten.
 
-Sie können Ihre Szenen und die Setup-Knoten, die mit erstellen die [Urho Editor](#UrhoEditor), oder Sie können Aktionen von c#-Code.  In diesem Dokument wird alles mithilfe von Code erläutert, wie sie zeigen, dass die Elemente, die erforderlichen Aufgaben auf dem Bildschirm angezeigt werden
+Sie können Ihre Szenen und die Setup-Knoten, die mit erstellen die [Urho Editor](#urhoeditor), oder Sie können Aktionen von c#-Code.  In diesem Dokument wird alles mithilfe von Code erläutert, wie sie zeigen, dass die Elemente, die erforderlichen Aufgaben auf dem Bildschirm angezeigt werden
 
 Zusätzlich zu Ihrer Szene eingerichtet haben, müssen Sie Setup eine [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/), dadurch wird bestimmt, was dem Benutzer angezeigt erhalten wird.
 

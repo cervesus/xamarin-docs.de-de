@@ -6,12 +6,12 @@ ms.assetid: 1F71F3E8-2397-4C6A-8163-6731ECFB7E03
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c1c03e0ec17ade57536b4ed121469e3ae2274e75
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 235166b78dfbd4998086a2925a54137f1922f5d1
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668971"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507005"
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame GamePad-Referenz
 
@@ -113,7 +113,7 @@ Seit der Touch-Oberfläche verschieben wird gelesen, über die `DPad` Eigenschaf
 
 ### <a name="apple-tv-game-controller"></a>Apple TV-Gamecontroller
 
-Gamecontroller für Apple TV Verhalten sich identisch, Gamecontroller für iOS-apps. Weitere Informationen finden Sie unter den [iOS Game Controller-Abschnitt](#iOS-game-controller). 
+Gamecontroller für Apple TV Verhalten sich identisch, Gamecontroller für iOS-apps. Weitere Informationen finden Sie unter den [iOS Game Controller](#ios-game-controller) Abschnitt. 
 
 ## <a name="xbox-one"></a>Xbox One
 

@@ -21,21 +21,21 @@ Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer besti
 
 Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichten, Seiten und Layouts für die universelle Windows-Plattform (UWP) bereitgestellt:
 
-- Festlegen einer Zugriffstaste für eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement Zugriffstasten für Windows](#visualelement-accesskeys).
-- Deaktivieren auf einer unterstützten legacy Farbmodus [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement Farbe Legacymodus auf Windows](#legacy-color-mode).
+- Festlegen einer Zugriffstaste für eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement Zugriffstasten für Windows](visualelement-access-keys.md).
+- Deaktivieren auf einer unterstützten legacy Farbmodus [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [VisualElement Farbe Legacymodus auf Windows](legacy-color-mode.md).
 
 Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichten in UWP bereitgestellt:
 
-- Erkennen von leserichtung von Textinhalt in [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), und [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Weitere Informationen finden Sie unter [InputView Lesefolge auf Windows](#inputview-readingorder).
-- Aktivieren von Tap-gestenunterstützung im eine [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [ListView SelectionMode auf Windows](#listview-selectionmode).
-- Aktivieren einer [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) für die Interaktion mit der Rechtschreibprüfungs-Check-Engine. Weitere Informationen finden Sie unter [SearchBar Rechtschreibprüfung auf Windows](#searchbar-spellcheck).
-- Aktivieren einer [ `WebView` ](xref:Xamarin.Forms.WebView) zum Anzeigen von JavaScript-Warnungen in einem Meldungsdialogfeld UWP. Weitere Informationen finden Sie unter [WebView-JavaScript-Warnungen für Windows](#webview-javascript-alert).
+- Erkennen von leserichtung von Textinhalt in [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), und [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Weitere Informationen finden Sie unter [InputView Lesefolge auf Windows](inputview-reading-order.md).
+- Aktivieren von Tap-gestenunterstützung im eine [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [ListView SelectionMode auf Windows](listview-selectionmode.md).
+- Aktivieren einer [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) für die Interaktion mit der Rechtschreibprüfungs-Check-Engine. Weitere Informationen finden Sie unter [SearchBar Rechtschreibprüfung auf Windows](searchbar-spell-check.md).
+- Aktivieren einer [ `WebView` ](xref:Xamarin.Forms.WebView) zum Anzeigen von JavaScript-Warnungen in einem Meldungsdialogfeld UWP. Weitere Informationen finden Sie unter [WebView-JavaScript-Warnungen für Windows](webview-javascript-alert.md).
 
 Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Seiten in UWP bereitgestellt:
 
-- Reduzieren der [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Navigationsleiste. Weitere Informationen finden Sie unter [MasterDetailPage Navigationsleiste Windows](#collapsable_navigation_bar).
-- Festlegen von Platzierungsoptionen für die Symbolleiste. Weitere Informationen finden Sie unter [Symbolleiste-Platzierung auf der Seite auf Windows](#toolbar_placement).
-- Aktivieren die Seitensymbole anzuzeigendes eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) Symbolleiste. Weitere Informationen finden Sie unter ["tabbedpage" Symbole für Windows](#tabbedpage-icons).
+- Reduzieren der [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Navigationsleiste. Weitere Informationen finden Sie unter [MasterDetailPage Navigationsleiste Windows](masterdetailpage-navigation-bar.md).
+- Festlegen von Platzierungsoptionen für die Symbolleiste. Weitere Informationen finden Sie unter [Symbolleiste-Platzierung auf der Seite auf Windows](page-toolbar-placement.md).
+- Aktivieren die Seitensymbole anzuzeigendes eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) Symbolleiste. Weitere Informationen finden Sie unter ["tabbedpage" Symbole für Windows](tabbedpage-icons.md).
 
 ## <a name="platform-support"></a>Plattformunterstützung
 
