@@ -1,19 +1,14 @@
 ---
 title: Plattformeigenschaften
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie zu nutzen, und Erstellen von Plattformeigenschaften wird.
+description: 'Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie zu nutzen, und Erstellen von Plattformeigenschaften wird.'
 ms.prod: xamarin
 ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 44d0cf3a257c00b448a6c70064af2f8e3ba63f69
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207790"
 ---
+
 # <a name="platform-specifics"></a>Plattformeigenschaften
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
@@ -43,10 +38,10 @@ Anbieter können ihre eigenen Plattformeigenschaften mit Effekte erstellen. Ein 
 Der Prozess zum Erstellen einer plattformspezifischen lautet wie folgt aus:
 
 1. Implementieren Sie die spezifische Funktionalität als einen Effekt. Weitere Informationen finden Sie unter [erstellen einen Effekt](~/xamarin-forms/app-fundamentals/effects/creating.md).
-1. Erstellen Sie eine plattformspezifische-Klasse, die den Effekt verfügbar macht. Weitere Informationen finden Sie unter [Erstellen einer plattformspezifischen Klasse](#creating).
-1. Implementieren Sie in der plattformspezifischen-Klasse einer angefügten Eigenschaft, damit die plattformspezifischen über XAML verwendet werden kann. Weitere Informationen finden Sie unter [Hinzufügen einer angefügten Eigenschaft](#attached_property).
-1. Implementieren Sie in der Klasse plattformspezifische Erweiterungsmethoden bereit, um die plattformspezifischen über eine fluent API-Code genutzt werden können. Weitere Informationen finden Sie unter [Erweiterungsmethoden hinzufügen](#extension_methods).
-1. Ändern Sie die Implementierung der Effekt, sodass die Auswirkungen nur angewendet, wenn die plattformspezifischen auf derselben Plattform wie der Effekt aufgerufen wurde. Weitere Informationen finden Sie unter [erstellen die Auswirkungen](#creating_the_effect).
+1. Erstellen Sie eine plattformspezifische-Klasse, die den Effekt verfügbar macht. Weitere Informationen finden Sie unter [Erstellen einer plattformspezifischen Klasse](#creating-a-platform-specific-class).
+1. Implementieren Sie in der plattformspezifischen-Klasse einer angefügten Eigenschaft, damit die plattformspezifischen über XAML verwendet werden kann. Weitere Informationen finden Sie unter [Hinzufügen einer angefügten Eigenschaft](#adding-an-attached-property).
+1. Implementieren Sie in der Klasse plattformspezifische Erweiterungsmethoden bereit, um die plattformspezifischen über eine fluent API-Code genutzt werden können. Weitere Informationen finden Sie unter [Erweiterungsmethoden hinzufügen](#adding-extension-methods).
+1. Ändern Sie die Implementierung der Effekt, sodass die Auswirkungen nur angewendet, wenn die plattformspezifischen auf derselben Plattform wie der Effekt aufgerufen wurde. Weitere Informationen finden Sie unter [erstellen die Auswirkungen](#creating-the-effect).
 
 Das Ergebnis ein Effekts als eine plattformspezifische verfügbar zu machen ist, dass die Auswirkung einfacher über die XAML und über eine fluent API-Code genutzt werden kann.
 
