@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: fda8c08cdbdab01f5d68b7f349d5f28f31316290
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
+ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55832001"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58641438"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
@@ -115,7 +115,7 @@ Alle diese Eigenschaften sind bindbar.
 [`EntryCell`](xref:Xamarin.Forms.EntryCell) ist nützlich, wenn Sie müssen zum Anzeigen von Textdaten, die der Benutzer bearbeiten können. Es definiert die folgenden Eigenschaften:
 
 - `Keyboard` – Die Tastatur, um während der Bearbeitung angezeigt werden soll. Es gibt Optionen für Dinge wie numerische Werte, e-Mail-Adresse, Telefonnummern usw. ein. [Finden Sie in der API-Dokumentation](xref:Xamarin.Forms.Keyboard).
-- `Label` – Der Bezeichnungstext, die rechts neben dem Texteingabefeld angezeigt werden soll.
+- `Label` – Der Bezeichnungstext, auf der linken Seite des Textfelds Eintrag angezeigt werden soll.
 - `LabelColor` – Die Farbe des Bezeichnungstexts.
 - `Placeholder` – Text, der im Eingabefeld angezeigt wird, wenn der Wert null oder leer ist. Dieser Text wird ausgeblendet, wenn der Eingabe von Text beginnt.
 - `Text` – Der Text im Eingabefeld.
