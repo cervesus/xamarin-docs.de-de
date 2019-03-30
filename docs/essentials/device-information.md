@@ -5,12 +5,12 @@ ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: b78c04d30871552f9b1e18a42c871e24464c4802
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: a7868277cd5e924d55ad688df1e8e07c81c5f074
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898952"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329324"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Geräteinformationen
 
@@ -53,18 +53,18 @@ var idiom = DeviceInfo.Idiom;
 var deviceType = DeviceInfo.DeviceType;
 ```
 
-## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[Plattformen](xref:Xamarin.Essentials.DeviceInfo.Platforms)
+## <a name="platforms"></a>Plattformen
 
-`DeviceInfo.Platform` entspricht einer konstanten Zeichenfolge, die dem Betriebssystem zugeordnet ist. Die Werte können mit der `DevicePlatform`-Struktur überprüft werden:
+[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform) korreliert mit einer konstanten Zeichenfolge, die dem Betriebssystem zugeordnet ist. Die Werte können mit der `DevicePlatform`-Struktur überprüft werden:
 
 - **DevicePlatform.iOS**: iOS
 - **DevicePlatform.Android**: Android
 - **DevicePlatform.UWP**: UWP
 - **DevicePlatform.Unknown**: Unbekannt
 
-## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[Idioms](xref:Xamarin.Essentials.DeviceInfo.Idioms)
+## <a name="idioms"></a>Idioms
 
-`DeviceInfo.Idiom` entspricht einer konstanten Zeichenfolge, die dem Typ des Geräts zugeordnet ist, auf dem die Anwendung ausgeführt wird. Die Werte können mit der `DeviceIdiom`-Struktur überprüft werden:
+[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom) korreliert mit einer konstanten Zeichenfolge, die dem Typ des Geräts zugeordnet ist, auf dem die Anwendung ausgeführt wird. Die Werte können mit der `DeviceIdiom`-Struktur überprüft werden:
 
 - **DeviceIdiom.Phone**: Mobiltelefon
 - **DeviceIdiom.Tablet**: Tablet
@@ -81,7 +81,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-iOS macht für Entwickler keine API verfügbar, um den Namen des bestimmten iOS-Geräts abzurufen. Stattdessen wird eine Hardware-ID (z. B. _iPhone10,6_) zurückgegeben, die auf das iPhone X verweist. Eine Zuordnung dieser Kennungen wird von Apple nicht bereitgestellt, kann jedoch in [The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models) (eine nicht offizielle Quellcode-Quelle) gefunden werden.
+iOS macht für Entwickler keine API verfügbar, um den Namen des bestimmten iOS-Geräts abzurufen. Stattdessen wird eine Hardware-ID (z. B. _iPhone10,6_) zurückgegeben, die auf das iPhone X verweist. Eine Zuordnung dieser Kennungen wird von Apple nicht bereitgestellt, kann jedoch in [The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models) (eine nicht offizielle Quelle) gefunden werden.
 
 --------------
 
