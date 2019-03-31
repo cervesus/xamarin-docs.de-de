@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a8b31d9f2e9c8921420b1fd50c4092273962f54b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3e7fc3d627b5d7a1dc73caa395a9181efb0b5f08
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105895"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678001"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Arbeiten mit TvOS Tabellenansichten in Xamarin
 
@@ -101,7 +101,7 @@ Um zu beginnen, machen Sie Folgendes:
 1. Für jede **Prototyp Zelle**, wählen Sie ihn, und weist eine eindeutige **Bezeichner** in die **Widget** Registerkarte die **Eigenschaften-Explorer**. Dieser Schritt ist _sehr wichtig_ , wie Sie diesen Bezeichner später benötigen, wenn Sie füllen Sie die Tabelle. Z. B. `AttrCell`: 
 
     [![](table-views-images/table12.png "Die Registerkarte \"Widget\"")](table-views-images/table12.png#lightbox)
-1. Sie können auch auswählen, zur Darstellung der Zelle als eines der [Standard Zelle Tabellensichttypen](#Table-View-Cell-Types) über die **Stil** Dropdownliste oder legen ihn auf **benutzerdefinierte** und verwenden Sie die Entwurfsoberfläche, das Layout der Zelle durch Ziehen in andere UI-Widgets aus dem **Toolbox**: 
+1. Sie können auch auswählen, zur Darstellung der Zelle als eines der [Standard Zelle Tabellensichttypen](#table-view-cell-types) über die **Stil** Dropdownliste oder legen ihn auf **benutzerdefinierte** und verwenden Sie die Entwurfsoberfläche, das Layout der Zelle durch Ziehen in andere UI-Widgets aus dem **Toolbox**: 
 
     [![](table-views-images/table13.png "Das Zellenlayout")](table-views-images/table13.png#lightbox)
 1. Weist eine eindeutige **Namen** auf jedes Element der Benutzeroberfläche beim Entwurf Prototyp Zelle in der **Widget** Registerkarte die **Eigenschaften-Explorer** damit Sie sie später unter zugreifen können C# Code: 
@@ -142,7 +142,7 @@ Um zu beginnen, machen Sie Folgendes:
 1. Für jede **Prototyp Zelle**, wählen Sie ihn, und weist eine eindeutige **Bezeichner** in die **Widget** Registerkarte die **Eigenschaften-Explorer**. Dieser Schritt ist _sehr wichtig_ , wie Sie diesen Bezeichner später benötigen, wenn Sie füllen Sie die Tabelle. Z. B. `AttrCell`: 
 
     [![](table-views-images/table12-vs.png "Zuweisen eines Bezeichners")](table-views-images/table12-vs.png#lightbox)
-1. Sie können auch auswählen, zur Darstellung der Zelle als eines der [Standard Zelle Tabellensichttypen](#Table-View-Cell-Types) über die **Stil** Dropdownliste oder legen ihn auf **benutzerdefinierte** und verwenden Sie die Entwurfsoberfläche, das Layout der Zelle durch Ziehen in andere UI-Widgets aus dem **Toolbox**: 
+1. Sie können auch auswählen, zur Darstellung der Zelle als eines der [Standard Zelle Tabellensichttypen](#table-view-cell-types) über die **Stil** Dropdownliste oder legen ihn auf **benutzerdefinierte** und verwenden Sie die Entwurfsoberfläche, das Layout der Zelle durch Ziehen in andere UI-Widgets aus dem **Toolbox**: 
 
     [![](table-views-images/table13-vs.png "Der stildropdownliste")](table-views-images/table13-vs.png#lightbox)
 1. Weist eine eindeutige **Namen** auf jedes Element der Benutzeroberfläche beim Entwurf Prototyp Zelle in der **Widget** Registerkarte die **Eigenschaften-Explorer** damit Sie sie später unter zugreifen können C# Code: 

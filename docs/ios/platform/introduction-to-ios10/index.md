@@ -1,19 +1,14 @@
 ---
 title: Einführung in iOS 10
-description: Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen verfügbar sind, unter iOS 10 für Xamarin.iOS-Entwickler.
+description: 'Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen verfügbar sind, unter iOS 10 für Xamarin.iOS-Entwickler.'
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: f2a612eea39a3447cae03e2d7b675a46c47aad52
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233743"
 ---
+
 # <a name="introduction-to-ios-10"></a>Einführung in iOS 10
 
 _Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen verfügbar sind, unter iOS 10 für Xamarin.iOS-Entwickler._
@@ -49,7 +44,7 @@ Apple hat mehrere neue Erweiterungspunkte unter iOS 10 bereitgestellt werden:
 
 - Rufen Sie Verzeichnis
 - Intents und Intents UI
-- Mitteilungen
+- Meldungen
 - Benachrichtigungsinhalt
 - Notification Services
 - Aufkleber Pack
@@ -231,7 +226,7 @@ Die folgenden APIs verfügen unter iOS 10 als veraltet markiert:
 - [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/) Symbole, die im Zusammenhang mit der weit verbreitete Inhalte sind veraltet.
 - `ADBannerView`, `ADInterstitialAd` und zugehörigen Symbole in der [UIViewController](xref:UIKit.UIViewController) Klasse sind veraltet.
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform) Symbole, die im Zusammenhang mit Gleitkommawerte sind veraltet.
-- Die `UILocalNotification`, `UIMutableUserNotificationAction`, `UIMutableUserNotificationCategory`, `UIUserNotificationAction`, `UIUserNotificationCategory` und `UIUserNotificationSettings` Klassen von UIKit sind veraltet. Verwenden der [Benutzerbenachrichtigungen](#User-Notifications) Framework stattdessen.
+- Die `UILocalNotification`, `UIMutableUserNotificationAction`, `UIMutableUserNotificationCategory`, `UIUserNotificationAction`, `UIUserNotificationCategory` und `UIUserNotificationSettings` Klassen von UIKit sind veraltet. Verwenden der [Benutzerbenachrichtigungen](#user-notifications) Framework stattdessen.
 - Die `HandleActionForLocalNotification`, `HandleActionForRemoteNotification`, `DidReceiveLocalNotification` und `DidReceiveRemoteNotification` WatchKit-Methoden sind veraltet. Verwenden der `HandleActionForNotification` und `DidReceiveNotification` Methoden stattdessen.
 - Die `DidReceiveLocalNotification` und `DidReceiveRemoteNotification` Methoden der [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate) sind veraltet. Erstellen Sie eine Instanz des ["unusernotificationcenterdelegate"](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate) , die die entsprechenden Methoden implementiert, und weisen sie Sie der `Delegate` Eigenschaft der [mit dem UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter) Objekt.
 - Die **Game Center-App** als veraltet markiert und aus iOS entfernt wurde. Wenn die app GameKit, verwendet es _müssen_ eine eigene Benutzeroberfläche zum Anzeigen von GameKit Features wie Bestenlisten usw. vorhanden.

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: c8d5c1394bee2ca2419904b077522fac9d03d825
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2c3bddc89348b46c9bba277580071cb8ac3d6943
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669442"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678053"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implementieren von SiriKit in Xamarin.iOS
 
@@ -635,7 +635,7 @@ Um eine Intents-Erweiterung der Projektmappe hinzuzufügen, führen Sie folgende
     
 -----
 
-Wiederholen Sie diese Schritte für die Anzahl der Intent-Erweiterungen (basierend auf [Architektur der App für Erweiterungen](#Architecting-the-App-for-Extensions) weiter oben), die die app benötigt.
+Wiederholen Sie diese Schritte für die Anzahl der Intent-Erweiterungen (basierend auf [Architektur der App für Erweiterungen](#architecting-the-app-for-extensions) weiter oben), die die app benötigt.
 
 ### <a name="configuring-the-infoplist"></a>Konfigurieren die Datei "Info.plist"
 
