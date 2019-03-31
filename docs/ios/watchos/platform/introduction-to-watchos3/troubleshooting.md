@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 497ce4f0ecbd5e4d49d2ff88855ff68dd9a63e43
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d2aaf12bd6c45f6268cf87a77d2ee03a9d7a888
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123216"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677728"
 ---
 # <a name="watchos-3-troubleshooting"></a>WatchOS 3 zur Problembehandlung
 
@@ -84,7 +84,7 @@ Bei der Arbeit mit `https://` URLs, die beide `NSURLSession` und `NSURLConnectio
 - **-1200 [3:-9824]** -HTTP-Fehler beim Laden des.
 - **-1200**  -  `NSURLConnection` wurde mit Fehlern abgeschlossen.
 
-Seit WatchOS 3 wird SSL/TLS-verbindungssicherheit streng von Apple erzwungen wird. Betroffene Dienste und apps sollten Webserver verwenden Sie die neuesten Versionen der TLS-Protokoll aktualisiert. Finden Sie unter [NSURLConnection](#NSURLConnection) über weitere Informationen.
+Seit WatchOS 3 wird SSL/TLS-verbindungssicherheit streng von Apple erzwungen wird. Betroffene Dienste und apps sollten Webserver verwenden Sie die neuesten Versionen der TLS-Protokoll aktualisiert. Finden Sie unter [NSURLConnection](#nsurlconnection) über weitere Informationen.
 
 ## <a name="snapshots"></a>Momentaufnahmen
 

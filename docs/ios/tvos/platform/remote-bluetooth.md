@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 14c62051afd7489389f154c21b3a76b9aad3f32e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 79022f7a454ea423fa3112a4c4ade2bcd471fbb8
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115535"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677949"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri Remote- und Bluetooth-Controller für TvOS in Xamarin
 
@@ -36,7 +36,7 @@ Die Herausforderung dabei als ein TvOS-app-Entwickler ist das Erstellen einer sc
 
 Siri Remote verfügt über die folgenden Features und die erwartete Verwendung innerhalb Ihrer TvOS-app:
 
-|Funktion|Allgemeine App-Nutzung|Spiele-App-Nutzung|
+|Feature|Allgemeine App-Nutzung|Spiele-App-Nutzung|
 |---|---|---|
 |**Touch-Oberfläche**<br />Streichen Sie nach, um zu navigieren, drücken Sie die EINGABETASTE, um auszuwählen, und speichern für Kontextmenüs.|**Tippen Sie auf/Wischen**<br />UI-Navigation zwischen den Fokus erhalten kann.<br /><br />**Klicken Sie auf**<br />Aktiviert die ausgewählte (bildschärfenmodus)-Element.|**Tippen Sie auf/Wischen**<br />Hängt Spiel Entwurf und kann als ein Steuerkreuz durch Tippen auf die Ränder verwendet werden.<br /><br />**Klicken Sie auf**<br />Führen Sie die Funktion der primären Schaltfläche.|
 |**Menü**<br />Drücken Sie EINGABETASTE, um zum vorherigen Bildschirm oder im Menü zurückzukehren.|Kehrt zum vorherigen Bildschirm zurück und beendet die Haupt-app-Bildschirm auf Apple TV-Startbildschirm.|Anhalten und Fortsetzen von Gaming, kehrt zur vorherigen Bildschirm zurück und wird beendet, Apple TV-Startbildschirm aus dem Haupt-app-Bildschirm.|
@@ -280,7 +280,7 @@ Gamecontroller können verwendet werden, verbessern Spiele, und geben Sie einen 
 
 Ein Game Controller verfügt über die folgenden Features und die erwartete Verwendung innerhalb Ihrer TvOS-app:
 
-|Funktion|Allgemeine App-Nutzung|Spiele-App-Nutzung|
+|Feature|Allgemeine App-Nutzung|Spiele-App-Nutzung|
 |---|---|---|
 |**D-Pad**|Durch die Elemente der Benutzeroberfläche (den Fokus) navigiert.|Hängt von dem Spiel.|
 |**A**|Aktiviert das ausgewählte (bildschärfenmodus)-Element.|Führt die Funktion der primären Schaltfläche und Dialogfeldaktionen bestätigt.|
@@ -288,9 +288,9 @@ Ein Game Controller verfügt über die folgenden Features und die erwartete Verw
 |**X**|Startet die Wiedergabe von Medien oder anhaltevorgängen und Fortsetzungen Wiedergabe.|Hängt von dem Spiel.|
 |**Y**|n/v|Hängt von dem Spiel.|
 |**Menü**|Kehrt zum vorherigen Bildschirm zurück, oder klicken Sie auf der Startseite wird beendet, wenn es sich um die app Hauptbildschirm.|Fortsetzen Sie anhalten/Gaming, kehrt zur vorherigen Bildschirm zurück oder beendet wird, klicken Sie auf der Startseite auf die app Hauptbildschirm.|
-|**Linken Schulter-Schaltfläche**|Navigiert nach links.|Hängt von dem Spiel.|
-|**Linken Trigger**|Navigiert nach links.|Hängt von dem Spiel.|
-|**Schaltfläche "rechts Schulter"**|Navigiert rechts.|Hängt von dem Spiel.|
+|**Linken Schulter-Schaltfläche**|Navigates Left.|Hängt von dem Spiel.|
+|**Linken Trigger**|Navigates Left.|Hängt von dem Spiel.|
+|**Schaltfläche "rechts Schulter"**|Navigates Right.|Hängt von dem Spiel.|
 |**Richtige Trigger**|Wechselt von rechts|Hängt von dem Spiel.|
 |**Linken Ministick**|Durch die Elemente der Benutzeroberfläche (den Fokus) navigiert.|Hängt von dem Spiel.|
 |**Ministick rechts**|n/v|Hängt von dem Spiel.|
@@ -310,7 +310,7 @@ Wie bereits erwähnt, zusätzlich zu den Standard, Siri Remote, die bereitgestel
 Wenn Ihre app die Low-Level-Controller-Eingabe erforderlich, können Sie von Apple verwendet [Game Controller-Framework](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276) IValidator.h für tvos verwendet. die folgenden Änderungen:
 
 - Das controllerprofil der Micro-Spiel (`GCMicroGamepad`) Siri Remote Ziel hinzugefügt wurde.
-- Die neue `GCEventViewController` Klasse kann verwendet werden, um Gamecontroller Ereignisse über Ihre app weitergeleitet. Finden Sie unter den [bestimmen Game Controller Eingabe](#Determining-Game-Controller-Input) Informationen weiter unten im Abschnitt.
+- Die neue `GCEventViewController` Klasse kann verwendet werden, um Gamecontroller Ereignisse über Ihre app weitergeleitet. Finden Sie unter den [bestimmen Game Controller Eingabe](#determining-game-controller-input) Informationen weiter unten im Abschnitt.
 
 <a name="Game-Controller-Support-Requirements" />
 

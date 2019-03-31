@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b7564e3b94062c2294919121f32c4f830346bda
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb6b47f7936745b00e2b7e6095662a7e8273e1bd
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105336"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677897"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Einführung in die proaktive Vorschläge in Xamarin.iOS
 
@@ -397,7 +397,7 @@ namespace MonkeyNotification
 }
 ```
 
-Betrachten diesen Code im Detail, wird erstellt und füllt eine Instanz der `NSUserActivity` (siehe die [Erstellen einer Aktivität](#Creating-an-Activity) weiter oben). Als Nächstes erstellt er eine Instanz des `INSendMessageIntent` (erbt von `INIntent`) und füllt sie mit den Details der Nachricht gesendet werden:
+Betrachten diesen Code im Detail, wird erstellt und füllt eine Instanz der `NSUserActivity` (siehe die [Erstellen einer Aktivität](#creating-an-activity) weiter oben). Als Nächstes erstellt er eine Instanz des `INSendMessageIntent` (erbt von `INIntent`) und füllt sie mit den Details der Nachricht gesendet werden:
 
 ```csharp
 var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
@@ -481,7 +481,7 @@ Wenn der Benutzer diese Seite in Safari besucht, und klicken Sie dann in einer a
 Safari wird alles auf einer Webseite extrahiert, die die folgenden Eigenschaften für Schema entspricht:
 
 - **PostalAddress**
-- **Karten**
+- **GeoCoordinates**
 - Eine Telefon-Eigenschaft.
 
 Weitere Informationen finden Sie unter unserem [Suche mit Webmarkup](~/ios/platform/search/web-markup.md) Guide.

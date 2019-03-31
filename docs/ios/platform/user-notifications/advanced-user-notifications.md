@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: b0571f826101576b402368923c2147e35aa9299e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4472654064812142e3281374754ace0042b542bf
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116328"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677754"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Erweiterte benutzerbenachrichtigungen in Xamarin.iOS
 
@@ -375,7 +375,7 @@ Um diesen Effekt zu entfernen, bearbeiten die `Info.plist` Datei für die Erweit
 
 ### <a name="using-media-attachments-in-custom-ui"></a>Verwenden von medienanhänge in benutzerdefinierten Benutzeroberfläche
 
-Da Medienanhänge (wie in der [Medienanhänge hinzufügen](#Adding-Media-Attachments) weiter oben) sind Teil der Nutzlast der Benachrichtigung, die sie Zugriff auf und in der Erweiterung für Benachrichtigungsinhalte angezeigt wird, wie sie in der standardmäßigen wäre werden Benachrichtigung über die Benutzeroberfläche.
+Da Medienanhänge (wie in der [Medienanhänge hinzufügen](#adding-media-attachments) weiter oben) sind Teil der Nutzlast der Benachrichtigung, die sie Zugriff auf und in der Erweiterung für Benachrichtigungsinhalte angezeigt wird, wie sie in der standardmäßigen wäre werden Benachrichtigung über die Benutzeroberfläche.
 
 Beispielsweise, wenn die benutzerdefinierte Benutzeroberfläche, die oben genannten enthalten eine `UIImageView` , die für verfügbar gemacht wurde C# den folgenden code, Code verwendet werden, um es aus mit der Media-Anlage zu füllen:
 

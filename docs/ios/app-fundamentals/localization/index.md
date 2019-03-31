@@ -17,7 +17,7 @@ Finden Sie in der [Internationalisierungscodierungen](encodings.md) Anleitungen,
 
 ## <a name="ios-platform-features"></a>iOS-Plattformfeatures
 
-Dieser Abschnitt beschreibt einige der Lokalisierungsfeatures in iOS. Fahren Sie mit der [nächsten Abschnitt](#Localization-basics-in-iOS) zu spezifischen Code und Beispiele finden Sie unter.
+Dieser Abschnitt beschreibt einige der Lokalisierungsfeatures in iOS. Fahren Sie mit der [nächsten Abschnitt](#localization-basics-in-ios) zu spezifischen Code und Beispiele finden Sie unter.
 
 ### <a name="language"></a>Sprache
 

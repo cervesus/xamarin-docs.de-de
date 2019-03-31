@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: d04ce6827f6695163c7d9a8d34acc3891d854c8d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d5be72a9329675a65b0d6873d13894b314b50e7
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122672"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677845"
 ---
 # <a name="stack-views-in-xamarinios"></a>Stack-Ansichten in Xamarin.iOS
 
@@ -34,7 +34,7 @@ Dieses Dokument besteht aus zwei Teilen: einen schnellen Einstieg in die Sie unt
 
 > [!VIDEO https://youtube.com/embed/p3po6507Ip8]
 
-**UIStackView, [Xamarin University](https://university.xamarin.com/)**
+**UIStackView, by [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="uistackview-quickstart"></a>UIStackView-Schnellstart
 
@@ -50,7 +50,7 @@ In der **Attributinspektor**, die folgenden Optionen festlegen:
 
 [![](uistackview-images/quick02.png "Festlegen der Optionen Stapelansicht")](uistackview-images/quick02.png#lightbox)
 
-Wobei:
+Ort:
 
 - **Achse** – bestimmt, ob die Stapelansicht die Unteransichten entweder ordnet **horizontal** oder **vertikal**.
 - **Ausrichtung** – steuert, wie die Unteransichten innerhalb der Stapelansicht ausgerichtet werden.
@@ -233,7 +233,7 @@ Es gibt mehrere Eigenschaften, die steuern, wie ein Stapel-Ansicht ihrer Auflist
 - **Baseline relativ** – Wenn `true`, der vertikale Abstand der einzelnen Unteransicht von seinem Baseline abgeleitet werden.
 - **Layout Ränder Relative** – platziert die Unteransichten relativ zu den Rändern Standardlayout.
 
-In der Regel verwenden Sie einen Stapel-Ansicht um eine kleine Anzahl von Unteransichten anzuordnen. Komplexere Benutzeroberflächen erstellt werden, indem Sie eine oder mehrere Stack Ansichten ineinander schachteln (wie der [UIStackView Quickstart](#UIStackView-Quickstart) oben).
+In der Regel verwenden Sie einen Stapel-Ansicht um eine kleine Anzahl von Unteransichten anzuordnen. Komplexere Benutzeroberflächen erstellt werden, indem Sie eine oder mehrere Stack Ansichten ineinander schachteln (wie der [UIStackView Quickstart](#uistackview-quickstart) oben).
 
 Sie können die Darstellung von Benutzeroberflächen weiter optimieren, durch das Hinzufügen von zusätzlicher Einschränkungen, die Unteransichten (z. B. um die Höhe oder Breite-Steuerelement). Allerdings sollte darauf geachtet werden, nicht in Konflikt stehenden Einschränkungen auf solche, die selbst von der Sicht Stack aufzunehmen.
 

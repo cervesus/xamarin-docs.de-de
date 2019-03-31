@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 40d4a6cbd3bb8e3bd4c55c50c69f85f91d94feac
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.openlocfilehash: 6db9ff0085c17f07d07a7591f5d735793bfbc5f9
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459927"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678040"
 ---
 # <a name="callkit-in-xamarinios"></a>CallKit in Xamarin.iOS
 
@@ -278,7 +278,7 @@ namespace MonkeyCall
 }
 ```
 
-Die `CallHandleFromURL` und `CallHandleFromActivity` Klassen im appdelegate-Element verwendet, um das Handle wenden Sie sich an die Person, die aufgerufen wird, in einen ausgehenden Anruf erhalten. Weitere Informationen finden Sie unter den [ausgehende Anrufe verarbeiten](#Handling-Outgoing-Calls) Abschnitt weiter unten.
+Die `CallHandleFromURL` und `CallHandleFromActivity` Klassen im appdelegate-Element verwendet, um das Handle wenden Sie sich an die Person, die aufgerufen wird, in einen ausgehenden Anruf erhalten. Weitere Informationen finden Sie unter den [ausgehende Anrufe verarbeiten](#handling-outgoing-calls) Abschnitt weiter unten.
 
 ### <a name="the-activecallmanager-class"></a>Die ActiveCallManager-Klasse
 
@@ -392,7 +392,7 @@ namespace MonkeyCall
 }
 ```
 
-Erneut, da dies nur eine Simulation der `ActiveCallManager` nur verwaltet eine Auflistung von `ActiveCall` Objekte und verfügt über eine Routine für die Suche nach einem bestimmten Aufruf durch die `UUID` Eigenschaft. Darüber hinaus Methoden zum Starten, beenden, und Ändern des Zustands gesperrte einen ausgehenden Anruf. Weitere Informationen finden Sie unter den [ausgehende Anrufe verarbeiten](#Handling-Outgoing-Calls) Abschnitt weiter unten.
+Erneut, da dies nur eine Simulation der `ActiveCallManager` nur verwaltet eine Auflistung von `ActiveCall` Objekte und verfügt über eine Routine für die Suche nach einem bestimmten Aufruf durch die `UUID` Eigenschaft. Darüber hinaus Methoden zum Starten, beenden, und Ändern des Zustands gesperrte einen ausgehenden Anruf. Weitere Informationen finden Sie unter den [ausgehende Anrufe verarbeiten](#handling-outgoing-calls) Abschnitt weiter unten.
 
 ### <a name="the-providerdelegate-class"></a>Die ProviderDelegate-Klasse
 
@@ -728,7 +728,7 @@ namespace MonkeyCall
 }
 ```
 
-Die `OpenUrl` und `ContinueUserActivity` außer Kraft setzen, die Methoden werden verwendet, wenn die app einen ausgehenden Aufruf verarbeitet wird. Weitere Informationen finden Sie unter den [ausgehende Anrufe verarbeiten](#Handling-Outgoing-Calls) Abschnitt weiter unten.
+Die `OpenUrl` und `ContinueUserActivity` außer Kraft setzen, die Methoden werden verwendet, wenn die app einen ausgehenden Aufruf verarbeitet wird. Weitere Informationen finden Sie unter den [ausgehende Anrufe verarbeiten](#handling-outgoing-calls) Abschnitt weiter unten.
 
 ## <a name="handling-incoming-calls"></a>Verarbeiten eingehende Anrufe
 
@@ -945,9 +945,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-Hier die `CallHandleFromActivity` Methode der Hilfsklasse `StartCallRequest` wird verwendet, um das Handle abrufen, an der Person, die aufgerufen wird (finden Sie unter [die StartCallRequest Klasse](#The-StartCallRequest-Class) oben). 
+Hier die `CallHandleFromActivity` Methode der Hilfsklasse `StartCallRequest` wird verwendet, um das Handle abrufen, an der Person, die aufgerufen wird (finden Sie unter [die StartCallRequest Klasse](#the-startcallrequest-class) oben).
 
-Die `PerformStartCallAction` Methode der [ProviderDelegate Klasse](#The-ProviderDelegate-Class) wird verwendet, um schließlich den tatsächlichen ausgehenden Aufruf starten, und das System des Lebenszyklus informieren:
+Die `PerformStartCallAction` Methode der [ProviderDelegate Klasse](#the-providerdelegate-class) wird verwendet, um schließlich den tatsächlichen ausgehenden Aufruf starten, und das System des Lebenszyklus informieren:
 
 ```csharp
 public override void PerformStartCallAction (CXProvider provider, CXStartCallAction action)
@@ -1034,7 +1034,7 @@ In diesem Abschnitt werden einige zusätzliche Details behandelt, die Entwickler
 - Konfiguration des Anbieters
 - Aktionsfehler
 - Systemeinschränkungen
-- VOIP-Audio
+- VOIP Audio
 
 ### <a name="provider-configuration"></a>Konfiguration des Anbieters
 

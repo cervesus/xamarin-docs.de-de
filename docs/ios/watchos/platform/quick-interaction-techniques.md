@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6a8e74860efd606ae6dd565ea7e3f67884eefc11
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5086724b565fb95274c4988ca1b6e4bb11064575
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103217"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677936"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Schnelle Interaktionstechniken für WatchOS 3 in Xamarin
 
@@ -299,7 +299,7 @@ Darüber hinaus können sowohl für SpriteKit SceneKit mit standard WatchKit-UI-
 
 ## <a name="simple-navigation"></a>Einfache Navigation
 
-WatchOS 3 bietet mehrere Möglichkeiten, ein Entwickler die Navigation innerhalb ihrer WatchOS-apps, beispielsweise auf den neuen vereinfachen kann wie [vertikale Paging](#Vertical-Paging), [Erkennung Stiftbewegungserkennung](#Gesture-Recognizer-Support) und [digitale Krone Drehung](#Digital-Crown-Rotation) Features, die oben aufgeführten.
+WatchOS 3 bietet mehrere Möglichkeiten, ein Entwickler die Navigation innerhalb ihrer WatchOS-apps, beispielsweise auf den neuen vereinfachen kann wie [vertikale Paging](#vertical-paging), [Erkennung Stiftbewegungserkennung](#gesture-recognizer-support) und [digitale Krone Drehung](#digital-crown-rotation) Features, die oben aufgeführten.
 
 Die digitale Crown gilt nur für die Apple Watch und kann in viele verschiedene Möglichkeiten zur Vereinfachung der Navigation verwendet werden. Z. B. können eine Timer-Anwendung die digitale Crown um über die verfügbaren Timer Längen zu bereinigen.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e114f39a01c2243889c53c855acd7fa8061ed09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f57f2a2bc17690b7a1e0a72c583b0e94519ca4db
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114729"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677988"
 ---
 # <a name="collection-views-in-xamarinios"></a>Auflistungsansichten in Xamarin.iOS
 
@@ -189,7 +189,7 @@ In diesem Fall durch die Registrierung der `AnimalCell` Klasse iOS erstellt eine
  <a name="Delegate" />
 
 
-### <a name="delegate"></a>Delegat
+### <a name="delegate"></a>delegate
 
 Die `UICollectionView` Klasse verwendet einen Delegaten vom Typ `UICollectionViewDelegate` zur Unterstützung der Interaktion mit Inhalt in die `UICollectionView`. Dies ermöglicht das Steuern von:
 
@@ -443,7 +443,7 @@ In diesem Artikel werden wir sehen uns die Implementierung von Drag-zu-neuanordn
     - [Einfaches Beispiel für die Neuordnung von Elementen](#Simple-Reordering-Example)
     - [Verwenden eine benutzerdefinierte Stiftbewegungs-Erkennung](#Using-a-Custom-Gesture-Recognizer)
     - [Benutzerdefinierte Layouts und neuanordnung von Spalten](#Custom-Layouts-and-Reording)
-- [Änderungen der Auflistung anzeigen](#Collection-View-Changes)
+- [Änderungen der Auflistung anzeigen](#collection-view-changes)
 
 <a name="Easy-Reordering-of-Items" />
 
@@ -472,10 +472,10 @@ Als kurzes Beispiel, starten Sie ein neues Xamarin.iOS-Projekt, und Bearbeiten d
 
 Wählen Sie die Auflistungsansicht (es kann am einfachsten, diesen Vorgang durchführen, die dokumentgliederung sein). Legen Sie in der Registerkarte "Layout" des Eigenschaftenpads die folgenden Größen, wie im folgenden Screenshot dargestellt:
 
-- **Größe der Zelle**: Breite: 60 | Height – 60
-- **Größe des Headers**: Breite: 0 | Height – 0
-- **Fußzeilengröße**: Breite: 0 | Height – 0
-- **Min-Abstand**: für Zellen – 8 | Für Zeilen – 8
+- **Größe der Zelle**: Width – 60 | Height – 60
+- **Größe des Headers**: Width – 0 | Height – 0
+- **Fußzeilengröße**: Width – 0 | Height – 0
+- **Min-Abstand**: Für Zellen – 8 | Für Zeilen – 8
 - **Im Abschnitt Abstände**: Top – 16 | Unten – 16 | Left – 16 | Rechts: 16
 
 [![](uicollectionview-images/quick04.png "Legen Sie die Auflistungsansicht-Größen")](uicollectionview-images/quick04.png#lightbox)

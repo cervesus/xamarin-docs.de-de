@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b21bf4da7cf862bd32e71708f9e3657f577682c2
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667814"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677923"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>iOS-Erweiterungen in Xamarin.iOS
 
@@ -69,7 +69,7 @@ Eine Erweiterung kann so einfach sein wie ein einzelnes [UIViewController](xref:
 
 Wenn sie Ihrer App auswählen, die Erweiterungen, die `UIViewController` instanziiert, und starten Sie den normalen View Controller-Lebenszyklus. Allerdings anders als eine normale app, die angehalten, aber nicht beendet werden, wenn der Benutzer abgeschlossen ist, mit ihnen interagieren, werden Erweiterungen geladen, ausgeführt und wiederholt dann beendet.
 
-Erweiterungen können kommunizieren mit ihren apps Host über eine [NSExtensionContext](xref:Foundation.NSExtensionContext) Objekt. Einige Erweiterungen verfügen über Vorgänge, die asynchrone Rückrufe mit den Ergebnissen zu erhalten. Diese Rückrufe in Hintergrundthreads ausgeführt, und die Erweiterung muss ist dies zu berücksichtigen; z. B. mithilfe von [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*) , wenn die Benutzeroberfläche aktualisiert werden sollen. Finden Sie unter den [Kommunikation mit der App-Host](#Communicating-with-the-Host-App) Informationen weiter unten im Abschnitt.
+Erweiterungen können kommunizieren mit ihren apps Host über eine [NSExtensionContext](xref:Foundation.NSExtensionContext) Objekt. Einige Erweiterungen verfügen über Vorgänge, die asynchrone Rückrufe mit den Ergebnissen zu erhalten. Diese Rückrufe in Hintergrundthreads ausgeführt, und die Erweiterung muss ist dies zu berücksichtigen; z. B. mithilfe von [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*) , wenn die Benutzeroberfläche aktualisiert werden sollen. Finden Sie unter den [Kommunikation mit der App-Host](#communicating-with-the-host-app) Informationen weiter unten im Abschnitt.
 
 Standardmäßig können Erweiterungen und die Container-apps nicht kommunizieren trotz zusammen installiert wird. In einigen Fällen ist die Container-app im Wesentlichen eine leere "shipping"-Container, deren Zweck bereitgestellt wird, sobald die Erweiterung installiert ist. Wenn jedoch Situationen geben, kann der Container-app und die Erweiterung Ressourcen über einen gemeinsamen Wissensbereich freigeben. Darüber hinaus eine **heute-Erweiterung** können anfordern, die Container-app, um eine URL zu öffnen. Dieses Verhalten wird angezeigt, der [weiterentwickeln Widget "Countdown"](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo).
 

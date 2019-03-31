@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: fd677aa802adf32ac81396f81c67264d88639967
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 02db7dce6ba38b6c1e943ff189ff69efb7cc1c08
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528779"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677832"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>WatchOS-Trainings-Apps in Xamarin
 
@@ -636,7 +636,7 @@ Optional kann die app zu berechnen und erstellen eine kleinere Teilmenge von Bei
 
 ## <a name="workouts-and-ios-10"></a>Training und iOS 10
 
-Jede WatchOS 3 Trainings-app besitzt eine übergeordnete iOS 10 basierend Trainings-app und für iOS-10, neue dieses iOS-app kann verwendet werden, um eine Herausforderung zu starten, platzieren die Apple Watch im Trainings-Modus (ohne Benutzereingriff) und WatchOS-app im Hintergrund ausführen ausgeführt wird (finden Sie unter [zu im Hintergrund ausgeführten](#About-Background-Running) oben Weitere Details).
+Jede WatchOS 3 Trainings-app besitzt eine übergeordnete iOS 10 basierend Trainings-app und für iOS-10, neue dieses iOS-app kann verwendet werden, um eine Herausforderung zu starten, platzieren die Apple Watch im Trainings-Modus (ohne Benutzereingriff) und WatchOS-app im Hintergrund ausführen ausgeführt wird (finden Sie unter [zu im Hintergrund ausgeführten](#about-background-running) oben Weitere Details).
 
 Während die WatchOS-app ausgeführt wird, können sie WatchConnectivity für messaging und Kommunikation mit der übergeordneten iOS-app verwenden.
 
@@ -649,7 +649,7 @@ Sehen Sie sich die Funktionsweise dieses Prozesses:
 3. Verwenden das übergebene in Trainings-Konfiguration, die WatchOS 3-app startet eine neue Trainings-Sitzung (`HKWorkoutSession`).
 
 > [!IMPORTANT]
-> In der Reihenfolge für die übergeordnete iPhone-app zu einer Herausforderung auf der Apple Watch muss die app WatchOS 3 Hintergrund ausgeführt wird, aktiviert sein. Informieren Sie sich [Hintergrund aktivieren ausgeführt wird.](#Enabling-Background-Running) über weitere Details.
+> In der Reihenfolge für die übergeordnete iPhone-app zu einer Herausforderung auf der Apple Watch muss die app WatchOS 3 Hintergrund ausgeführt wird, aktiviert sein. Informieren Sie sich [Hintergrund aktivieren ausgeführt wird.](#enabling-background-running) über weitere Details.
 
 Dieser Prozess ist sehr ähnlich ist, an den Prozess des Trainings-Sitzung direkt in der WatchOS 3-app zu starten. Verwenden Sie auf dem iPhone den folgenden Code:
 
