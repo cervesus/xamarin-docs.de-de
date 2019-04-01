@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cfa51b8e5434480d7d15fbf23d78f8b8735f16a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3cb8d1c1d92146e70056c6cf562f2fa1cb028e7c
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112586"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677871"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Arbeiten mit TvOS Navigation und Fokus in Xamarin
 
@@ -25,7 +25,7 @@ Dieser Artikel behandelt das Konzept der [Fokus](#Focus-and-Selection) und wie d
 
 Als Nächstes müssen wir uns das ansehen an, wie der Fokus mit verwendet werden kann [Parallax](#Focus-and-Parallax) und *Layered Images* um visuelle Hinweise für den aktuellen Status der Navigation für den Endbenutzer bereitzustellen.
 
-Abschließend betrachten wir arbeiten mit [Fokus](#Working-with-Focus), [Fokus Updates](#Working-with-Focus-Updates), [Fokus Handbücher](#Working-with-Focus-Guides), [Fokus in Sammlungen](#Working-with-Focus-in-Collections) und [ Aktivieren von Parallax](#Enabling-Parallax) für Image-Ansichten in Ihren apps Xamarin.tvOS.
+Abschließend betrachten wir arbeiten mit [Fokus](#Working-with-Focus), [Fokus Updates](#Working-with-Focus-Updates), [Fokus Handbücher](#Working-with-Focus-Guides), [Fokus in Sammlungen](#Working-with-Focus-in-Collections) und [ Aktivieren von Parallax](#enabling-parallax) für Image-Ansichten in Ihren apps Xamarin.tvOS.
 
 <a name="Navigation" />
 
