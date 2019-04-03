@@ -1,14 +1,19 @@
 ---
 title: Benutzerdefinierte Xamarin.Forms-Renderer
-description: 'Mithilfe benutzerdefinierter Renderer können Entwickler das Standardrendering der nativen Steuerelemente auf jeder Plattform „überschreiben“, um so die Darstellung und das Verhalten von Xamarin.Forms-Steuerelementen anzupassen.'
+description: Mithilfe benutzerdefinierter Renderer können Entwickler das Standardrendering der nativen Steuerelemente auf jeder Plattform „überschreiben“, um so die Darstellung und das Verhalten von Xamarin.Forms-Steuerelementen anzupassen.
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
+ms.openlocfilehash: 3a59cbb8385fe201d7eef086092c9b393a21cc71
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666357"
 ---
-
 # <a name="xamarinforms-custom-renderers"></a>Benutzerdefinierte Xamarin.Forms-Renderer
 
 _Xamarin.Forms-Benutzeroberflächen werden mit den nativen Steuerelementen der Zielplattform gerendert. Dadurch können Anwendungen von Xamarin.Forms das Erscheinungsbild der einzelnen Plattformen beibehalten. Durch benutzerdefinierte Renderer können Entwickler diesen Prozess außer Kraft setzen, um die Darstellung und das Verhalten von Xamarin.Forms-Steuerelementen auf jeder Plattform anzupassen._
