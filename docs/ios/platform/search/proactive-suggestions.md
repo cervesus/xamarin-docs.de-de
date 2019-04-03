@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bb6b47f7936745b00e2b7e6095662a7e8273e1bd
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677897"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870403"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Einführung in die proaktive Vorschläge in Xamarin.iOS
 
@@ -51,7 +51,7 @@ Z. B., wenn der Benutzer Text in einem Textfeld markiert eingibt `UITextContentT
 
 ## <a name="media-based-suggestions"></a>Media-basierte Vorschläge
 
-Wenn die app Medien verwenden, spielt die [MPPlayableContentManager](https://developer.xamarin.com/api/type/MediaPlayer.MPPlayableContentManager/) -API, iOS 10 kann Benutzer das Albumcover anzeigen und Wiedergeben von Medien über die app auf dem Sperrbildschirm angezeigt.
+Wenn die app Medien verwenden, spielt die [MPPlayableContentManager](xref:MediaPlayer.MPPlayableContentManager) -API, iOS 10 kann Benutzer das Albumcover anzeigen und Wiedergeben von Medien über die app auf dem Sperrbildschirm angezeigt.
 
 ## <a name="contextual-siri-reminders"></a>Kontextbezogene Siri Erinnerungen
 
@@ -63,12 +63,12 @@ Ermöglicht der app Kontakte (und verwandte Kontaktinformationen) in angezeigt w
 
 ## <a name="ride-sharing-based-suggestions"></a>Tour Freigabe basierende Vorschläge
 
-Wenn eine app carsharinganbietern verwendet die [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) -API, iOS 10 bietet es als Option in der app-Switcher gelegentlich verwendet werden, wenn der Benutzer soll eine Fahrt wahrscheinlich ist. Die app muss auch als carsharinganbietern-app registriert werden, durch Angabe der `MKDirectionsModeRideShare` für die [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html) -Schlüssel in der `Info.plist` Datei.
+Wenn eine app carsharinganbietern verwendet die [MKDirectionsRequest](xref:MapKit.MKDirectionsRequest) -API, iOS 10 bietet es als Option in der app-Switcher gelegentlich verwendet werden, wenn der Benutzer soll eine Fahrt wahrscheinlich ist. Die app muss auch als carsharinganbietern-app registriert werden, durch Angabe der `MKDirectionsModeRideShare` für die [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html) -Schlüssel in der `Info.plist` Datei.
 
 Wenn die app nur bei Stromausfällen freigeben unterstützt, würde der Vorschlag System beginnen, mit *"Eine Tour zum Abrufen..."*, wenn andere Typen von routing Richtung (z. B. Walking "oder" Bike ") unterstützt werden, verwendet das System *"Anweisungen zum Abrufen..."*
 
 > [!IMPORTANT]
-> Die [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/) -Objekt, das die app erhält möglicherweise keine Längen- und Breitengrad-Informationen und geocodierung benötigen.
+> Die [MKMapItem](xref:MapKit.MKMapItem) -Objekt, das die app erhält möglicherweise keine Längen- und Breitengrad-Informationen und geocodierung benötigen.
 
 ## <a name="implementing-proactive-suggestions"></a>Proaktive Vorschläge
 

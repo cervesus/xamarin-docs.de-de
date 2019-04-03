@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: becba36655a5247a11decb7dc54334f9397ecdfc
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233535"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870195"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
@@ -58,7 +58,7 @@ Um mehr über die neuen Multitasking-Funktionen von iOS 9 zu suchen, finden Sie 
 
 ## <a name="new-contacts-and-contacts-ui-frameworks"></a>Neue Kontakte und Kontakte-Benutzeroberflächen-Frameworks
 
-Apple hat mit der Einführung von iOS 9 sind zwei neue Frameworks vorgestellt, [Kontakte](https://developer.xamarin.com/api/namespace/Contacts/) und [ContactsUI](https://developer.xamarin.com/api/namespace/ContactsUI/), das Ersetzen der vorhandenen Adressbuch und Adressbuch Benutzeroberflächen-Frameworks von iOS 8 und früher verwendeten.
+Apple hat mit der Einführung von iOS 9 sind zwei neue Frameworks vorgestellt, [Kontakte](xref:Contacts) und [ContactsUI](xref:ContactsUI), das Ersetzen der vorhandenen Adressbuch und Adressbuch Benutzeroberflächen-Frameworks von iOS 8 und früher verwendeten.
 
 Diese neue, objektorientierte Frameworks bieten Folgendes:
 
@@ -103,7 +103,7 @@ Weitere Informationen finden Sie unserem [Spiel Verbesserungen](~/ios/platform/g
 
 ## <a name="homekit-framework-changes"></a>HomeKit-Frameworkänderungen
 
-Die [HomeKit](https://developer.xamarin.com/api/namespace/HomeKit/) , iOS 8 eingeführtes Framework bietet die Möglichkeit zum Einrichten und verschiedene aktiviert HomeKit-Zubehör (z.B. automatisierte Beleuchtung, Türschlösser und Türöffnern für Garagen) aus einer Xamarin.iOS-app zu steuern. Einfache Einrichtung und Konfiguration, sondern können HomeKit-Zubehör gesprochenen Siri-Befehle gesteuert werden.
+Die [HomeKit](xref:HomeKit) , iOS 8 eingeführtes Framework bietet die Möglichkeit zum Einrichten und verschiedene aktiviert HomeKit-Zubehör (z.B. automatisierte Beleuchtung, Türschlösser und Türöffnern für Garagen) aus einer Xamarin.iOS-app zu steuern. Einfache Einrichtung und Konfiguration, sondern können HomeKit-Zubehör gesprochenen Siri-Befehle gesteuert werden.
 
 In iOS 9 hat Apple vereinfacht das Setup, erweitert die Typen von Zubehör unterstützt und weitere Zubehör Interaktionen (z. B. das Steuern von Zubehör Remote über die iCloud) bereitgestellt.
 

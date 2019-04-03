@@ -1,14 +1,19 @@
 ---
 title: Einführung in iOS 10
-description: 'Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen verfügbar sind, unter iOS 10 für Xamarin.iOS-Entwickler.'
+description: Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen verfügbar sind, unter iOS 10 für Xamarin.iOS-Entwickler.
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
+ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870247"
 ---
-
 # <a name="introduction-to-ios-10"></a>Einführung in iOS 10
 
 _Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen verfügbar sind, unter iOS 10 für Xamarin.iOS-Entwickler._
@@ -221,9 +226,9 @@ Um mehr zu erfahren, informieren Sie sich unsere [zusätzliche-Frameworkänderun
 
 Die folgenden APIs verfügen unter iOS 10 als veraltet markiert:
 
-- Die `CKDiscoverAllContactsOperation`, `CKDiscoveredUserInfo`, `CKDiscoverUserInfosOperation` und `CKFetchRecordChangesOperation` Klassen wurden in CloudKit für iOS 10 eingestellt. Verwenden der [CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/), [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/) und [CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/) Klassen (die Unterstützung von Datensatz freigeben) stattdessen.
-- Mehrere [CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) APIs (z. B. Zone und Abfrage-basierten Abonnements) sind veraltet. Verwenden der [CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/) und [CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) APIs stattdessen.
-- [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/) Symbole, die im Zusammenhang mit der weit verbreitete Inhalte sind veraltet.
+- Die `CKDiscoverAllContactsOperation`, `CKDiscoveredUserInfo`, `CKDiscoverUserInfosOperation` und `CKFetchRecordChangesOperation` Klassen wurden in CloudKit für iOS 10 eingestellt. Verwenden der [CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation), [CKUserIdentity](xref:CloudKit.CKUserIdentity) und [CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) Klassen (die Unterstützung von Datensatz freigeben) stattdessen.
+- Mehrere [CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) APIs (z. B. Zone und Abfrage-basierten Abonnements) sind veraltet. Verwenden der [CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription) und [CKQuerySubscription](xref:CloudKit.CKQuerySubscription) APIs stattdessen.
+- [NSPersistentStoreCoordnator](xref:CoreData.NSPersistentStoreCoordinator) Symbole, die im Zusammenhang mit der weit verbreitete Inhalte sind veraltet.
 - `ADBannerView`, `ADInterstitialAd` und zugehörigen Symbole in der [UIViewController](xref:UIKit.UIViewController) Klasse sind veraltet.
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform) Symbole, die im Zusammenhang mit Gleitkommawerte sind veraltet.
 - Die `UILocalNotification`, `UIMutableUserNotificationAction`, `UIMutableUserNotificationCategory`, `UIUserNotificationAction`, `UIUserNotificationCategory` und `UIUserNotificationSettings` Klassen von UIKit sind veraltet. Verwenden der [Benutzerbenachrichtigungen](#user-notifications) Framework stattdessen.

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
-ms.openlocfilehash: 42cf10e592a37f9a979d05d7784553059923646c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7ed8fc18624f46abd4a9fc293d8c33a1722da7dd
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667320"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870260"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>Verweisen auf systemeigene Bibliotheken in Xamarin.iOS
 
@@ -122,8 +122,7 @@ Um einer der definierten Methoden zuzugreifen, verwenden Sie [Mono P/Invoke-Funk
 -  Bestimmen Sie die Bibliothek, die es befindet sich in
 -  Schreiben Sie die entsprechende P/Invoke-Deklaration
 
-
-Bei der Verwendung von P/Invoke müssen Sie den Pfad der Bibliothek an, die Sie eine Verknüpfung mit herstellen. Beim iOS gemeinsam Bibliotheken genutzte, Sie den Pfad hart codieren können oder können Sie der Einfachheit halber-Konstanten, die in der wir definiert haben unsere [konstantenklasse](https://developer.xamarin.com/api/type/Constants/), diese Konstanten, die freigegebenen iOS-Bibliotheken abgedeckt werden soll.
+Bei der Verwendung von P/Invoke müssen Sie den Pfad der Bibliothek an, die Sie eine Verknüpfung mit herstellen. Beim iOS gemeinsam Bibliotheken genutzte, Sie den Pfad hart codieren können oder können Sie der Einfachheit halber-Konstanten, die in der wir definiert haben unsere `Constants`, diese Konstanten, die freigegebenen iOS-Bibliotheken abgedeckt werden soll.
 
 Wenn Sie möchten, dass Sie die UIRectFrameUsingBlendMode aus UIKit-Bibliothek für Apple Methodenaufruf, die diese Signatur in "c:" hat z. B.
 

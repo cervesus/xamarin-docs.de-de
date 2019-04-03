@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 3b5eae4d218fdc66f7f99f0aab8aa32af3cbabf4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: df50b4280335001f2d27ff23a91e4098eed3ba99
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667361"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870208"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>Assemblys unterstützt von Xamarin für tvos verwendet.
 
@@ -28,7 +28,7 @@ Dies ist eine Liste der Assemblys von Xamarin, die für Ihre Xamarin.tvOS-apps u
 |Mono.Security.dll|1.0|Kryptografie-APIs.|
 |monotouch.dll|1.0|Diese Assembly enthält die [C#-Bindung an die API CocoaTouch](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8).|
 |mscorlib.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|OpenTK.dll|1.0|APIs, die OpenGL/OpenAL objektorientierten [erweitert, um die Unterstützung der iPhone-Geräte bieten](https://developer.xamarin.com/api/namespace/OpenGLES/).|
+|OpenTK.dll|1.0|APIs, die OpenGL/OpenAL objektorientierten [erweitert, um die Unterstützung der iPhone-Geräte bieten](xref:OpenGLES).|
 |System.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx), sowie Typen aus den folgenden Namespaces: <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.ComponentModel.Design</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>System.Net.Cache</li> <li>System.Net.Mail</li> <li>System.Net.Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>System.Timers</li></ul>|
 |System.Core.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |System.Data.dll|1.2|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx), [mit einigen Funktionen entfernt](~/ios/data-cloud/system.data.md).|

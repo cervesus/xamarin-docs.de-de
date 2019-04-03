@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/15/2018
-ms.openlocfilehash: 2d62e42e755a0d3088283adb863dfd684ddeae28
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 50d59f0b6ff2133c5870d84a1d740547768116e0
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617578"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869727"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>Core ML 2 in Xamarin.iOS
 
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for-Schleife
 
-Die `for` Schleife Version des Tests durchläuft naiv die angegebene Anzahl von Eingaben Aufrufen [ `GetPrediction` ](https://developer.xamarin.com/api/member/CoreML.MLModel.GetPrediction/) für jeden und das Ergebnis wird verworfen. Die Methode Timeout an, wie lange es dauert, um die Vorhersagen zu treffen:
+Die `for` Schleife Version des Tests durchläuft naiv die angegebene Anzahl von Eingaben Aufrufen [ `GetPrediction` ](xref:CoreML.MLModel.GetPrediction*) für jeden und das Ergebnis wird verworfen. Die Methode Timeout an, wie lange es dauert, um die Vorhersagen zu treffen:
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -94,7 +94,7 @@ async Task FetchNonBatchResults(int num)
 
 ## <a name="getpredictions-new-batch-api"></a>GetPredictions (neues Batch-API)
 
-Die Batch-Version des Tests erstellt eine `MLArrayBatchProvider` Objekt aus dem Eingabearray (da dies ein erforderlicher Eingabeparameter für ist das `GetPredictions` Methode), erstellt ein [`MLPredictionOptions`](https://developer.xamarin.com/api/type/CoreML.MLPredictionOptions/)
+Die Batch-Version des Tests erstellt eine `MLArrayBatchProvider` Objekt aus dem Eingabearray (da dies ein erforderlicher Eingabeparameter für ist das `GetPredictions` Methode), erstellt ein [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
 Objekt, das verhindert, dass Vorhersage Berechnungen für die CPU beschränkt und verwendet die `GetPredictions` -API, um die Vorhersagen, verwerfen erneut das Ergebnis abzurufen:
 
 ```csharp

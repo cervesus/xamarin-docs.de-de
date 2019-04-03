@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: 4f08468d08e12ad77cacbac66b55ad8fc6ead433
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: d29239d986ebfe153381915dbe0f4bfbbe738007
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667963"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870338"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Übersicht über die Objective-C-Bindungen
 
@@ -88,7 +88,7 @@ namespace Example.Binding {
 }
 ```
 
-Drittens: Überprüfen Sie die Objective-C-Dokumentation und erstellen Sie [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) Instanzen für jede Auswahl, die Sie verwenden möchten. Platzieren Sie diese in den Text der Klasse:
+Drittens: Überprüfen Sie die Objective-C-Dokumentation und erstellen Sie [ObjCRuntime.Selector](xref:ObjCRuntime.Selector) Instanzen für jede Auswahl, die Sie verwenden möchten. Platzieren Sie diese in den Text der Klasse:
 
 ```csharp
 static Selector selInit       = new Selector("init");
@@ -116,7 +116,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Fünfter, geben Sie, dass die Methoden für jede der Selektoren in Schritt 3 deklariert. Verwendet diese `objc_msgSend()` die Auswahl für das systemeigene Objekt aufzurufende. Beachten Sie die Verwendung von [Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr)) konvertieren eine `IntPtr` in einem ordnungsgemäß typisierten `NSObject` (Sub)-Typ. Wenn Sie möchten, dass die Methode, die in Objective-C-Code, der Member aufgerufen werden können *müssen* werden **virtuellen**.
+Fünfter, geben Sie, dass die Methoden für jede der Selektoren in Schritt 3 deklariert. Verwendet diese `objc_msgSend()` die Auswahl für das systemeigene Objekt aufzurufende. Beachten Sie die Verwendung von [Runtime.GetNSObject()](xref:ObjCRuntime.Runtime.GetNSObject*) konvertieren eine `IntPtr` in einem ordnungsgemäß typisierten `NSObject` (Sub)-Typ. Wenn Sie möchten, dass die Methode, die in Objective-C-Code, der Member aufgerufen werden können *müssen* werden **virtuellen**.
 
 ```csharp
 [Export("nextObject")]

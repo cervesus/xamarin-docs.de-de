@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: cf39d548dc83fae67e8703d42e9387b8f19504e6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 15db59945f482728f760006095e294bc5628c8bd
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669752"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870173"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Objective-C-Selektoren in Xamarin.iOS
 
@@ -137,15 +137,15 @@ Aufrufen einer Auswahl umfasst drei Schritte:
 
 ### <a name="selector-targets"></a>Selector-Ziele
 
-Ein Ziel für die Auswahl ist eine Instanz oder eine Objective-C-Klasse. Wenn das Ziel eine Instanz ist und stammt von einer Xamarin.iOS-Typ gebunden wird, verwenden Sie die [ `ObjCRuntime.INativeObject.Handle` ](https://developer.xamarin.com/api/property/ObjCRuntime.INativeObject.Handle/) Eigenschaft.
+Ein Ziel für die Auswahl ist eine Instanz oder eine Objective-C-Klasse. Wenn das Ziel eine Instanz ist und stammt von einer Xamarin.iOS-Typ gebunden wird, verwenden Sie die [ `ObjCRuntime.INativeObject.Handle` ](xref:ObjCRuntime.INativeObject.Handle) Eigenschaft.
 
-Wenn das Ziel einer Klasse ist, verwenden Sie [ `ObjCRuntime.Class` ](https://developer.xamarin.com/api/type/ObjCRuntime.Class/) verwenden, um einen Verweis auf die Instanz der Klasse zu erhalten, klicken Sie dann die [ `Class.Handle` ](https://developer.xamarin.com/api/property/ObjCRuntime.Class.Handle/) Eigenschaft.
+Wenn das Ziel einer Klasse ist, verwenden Sie [ `ObjCRuntime.Class` ](xref:ObjCRuntime.Class) verwenden, um einen Verweis auf die Instanz der Klasse zu erhalten, klicken Sie dann die [ `Class.Handle` ](xref:ObjCRuntime.Class.Handle) Eigenschaft.
 
 ### <a name="selector-names"></a>Auswahlnamen
 
 Selector-Namen werden in der Apple Dokumentation aufgeführt. Z. B. [ `NSString` ](https://developer.apple.com/documentation/foundation/nsstring?language=objc) enthält [ `sizeWithFont:` ](https://developer.apple.com/documentation/foundation/nsstring/1619917-sizewithfont?language=objc) und [ `sizeWithFont:forWidth:lineBreakMode:` ](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont?language=objc) Selektoren. Die eingebetteten und nachfolgende Doppelpunkte sind Teil des Namens der Auswahl und können nicht ausgelassen werden.
 
-Wenn Sie einen Auswahlnamen haben, können Sie erstellen eine [ `ObjCRuntime.Selector` ](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) Instanz dafür.
+Wenn Sie einen Auswahlnamen haben, können Sie erstellen eine [ `ObjCRuntime.Selector` ](xref:ObjCRuntime.Selector) Instanz dafür.
 
 ### <a name="calling-objcmsgsend"></a>Aufrufen von objc_msgSend
 

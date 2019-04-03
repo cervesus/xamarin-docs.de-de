@@ -6,18 +6,18 @@ ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
 author: conceptdev
 ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: 7d67b924253dfea66781f16b5f83007811de5909
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f1aa805b9b7a16ad1e8af573cf4170f885eb0197
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119032"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870351"
 ---
 # <a name="build-optimizations"></a>Build-Optimierungen
 
 Dieses Dokument erläutert die verschiedenen Optimierungen, die zur Buildzeit für Xamarin.iOS- und Xamarin.Mac-apps angewendet werden.
 
-## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>Entfernen Sie UIApplication.EnsureUIThread / NSApplication.EnsureUIThread
+## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>Remove UIApplication.EnsureUIThread / NSApplication.EnsureUIThread
 
 Entfernt die Aufrufe von [UIApplication.EnsureUIThread] [ 1] (für Xamarin.iOS) oder `NSApplication.EnsureUIThread` (für xamarin.Mac erläutert).
 
@@ -46,9 +46,9 @@ Erstellt standardmäßig, die sie für die Veröffentlichung aktiviert ist.
 
 Das Standardverhalten kann überschrieben werden, indem übergeben `--optimize=[+|-]remove-uithread-checks` zum Mtouch/Mmp.
 
-[1]: https://developer.xamarin.com/api/member/UIKit.UIApplication.EnsureUIThread/
+[1]: https://docs.microsoft.com/dotnet/api/UIKit.UIApplication.EnsureUIThread
 
-## <a name="inline-intptrsize"></a>Inline-IntPtr.Size
+## <a name="inline-intptrsize"></a>Inline IntPtr.Size
 
 Wird der Konstante Wert des `IntPtr.Size` entsprechend der Zielplattform.
 
@@ -80,7 +80,7 @@ Wenn mehrere Architekturen verwenden zu können, wird diese Optimierung verschie
 
 Das Standardverhalten kann überschrieben werden, indem übergeben `--optimize=[+|-]inline-intptr-size` zum Mtouch/Mmp.
 
-## <a name="inline-nsobjectisdirectbinding"></a>Inline-NSObject.IsDirectBinding
+## <a name="inline-nsobjectisdirectbinding"></a>Inline NSObject.IsDirectBinding
 
 `NSObject.IsDirectBinding` ist eine Instanzeigenschaft, der bestimmt, ob eine bestimmte Instanz eines Typs Wrapper oder nicht (ein Wrappertyp ist ein verwalteter Typ, der in einen systemeigenen Typ zugeordnet, für die verwaltete Instanz `UIKit.UIView` Zuordnungen auf den systemeigenen Typ `UIView` Typ – das Gegenteil ist ein Benutzertyp in diesem Fall `class MyUIView : UIKit.UIView` Benutzertyp wäre).
 
@@ -200,7 +200,7 @@ if (true) {
 }
 ```
 
-in:
+into:
 
 ```csharp
 Console.WriteLine ("Doing this");
@@ -291,7 +291,7 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-in:
+into:
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)

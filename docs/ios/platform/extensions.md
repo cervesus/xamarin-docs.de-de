@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: b21bf4da7cf862bd32e71708f9e3657f577682c2
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 25b27765a35310c5cdbaf5ae19902b1d19eff6ea
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677923"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870273"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>iOS-Erweiterungen in Xamarin.iOS
 
@@ -99,7 +99,7 @@ Darüber hinaus hat die Erweiterung des Projekts die folgenden Anforderungen:
 
     ![](extensions-images/registerandprincipalclass.png)
 
-Bestimmte Arten von Erweiterungen möglicherweise zusätzliche Anforderungen. Z. B. eine **heute** oder **Mitteilungszentrale** Erweiterung für eine Klasse implementieren muss [INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/).
+Bestimmte Arten von Erweiterungen möglicherweise zusätzliche Anforderungen. Z. B. eine **heute** oder **Mitteilungszentrale** Erweiterung für eine Klasse implementieren muss [INCWidgetProviding](xref:NotificationCenter.INCWidgetProviding).
 
 > [!IMPORTANT]
 > Wenn Sie Ihr Projekt mit einem die Vorlagen Erweiterungen von Visual Studio für Mac starten, werden die meisten (wenn nicht alle) diese Anforderungen bereitgestellt und erfüllt, damit Sie automatisch von der Vorlage.

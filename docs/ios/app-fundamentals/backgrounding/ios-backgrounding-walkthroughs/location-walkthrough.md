@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: b857ee97951f0abfdf8e082ca9a826d5580d24ab
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fa8a48e165764a449af4bc5414d2e66aecea8269
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669192"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870143"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>Exemplarische Vorgehensweise – Hintergrundposition in Xamarin.iOS
 
@@ -72,7 +72,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, einige wichtige Konzept
     }
     ```
 
-    Der obige Code legt eine Reihe von Eigenschaften und Berechtigungen auf die [CLLocationManager](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/) Klasse:
+    Der obige Code legt eine Reihe von Eigenschaften und Berechtigungen auf die [CLLocationManager](xref:CoreLocation.CLLocationManager) Klasse:
 
     - `PausesLocationUpdatesAutomatically` – Dies ist ein boolescher Wert, der festgelegt werden kann, je nachdem, ob das System speicherortaktualisierungen anhalten darf. Auf manchen Geräten wird standardmäßig `true`, wodurch das Gerät nicht mehr erhalten Hintergrund speicherortaktualisierungen nach ca. 15 Minuten.
     - `RequestAlwaysAuthorization` – Sie sollten diese Methode, um den Speicherort im Hintergrund erfolgen darf, geben Sie dem app-Benutzer übergeben. `RequestWhenInUseAuthorization` kann auch übergeben werden, wenn Sie möchten die Benutzer bieten die Möglichkeit, können den Speicherort zugegriffen werden kann, nur, wenn die app im Vordergrund ist.

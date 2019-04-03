@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 7f3c196eafd71e8571ea49a17784e5290e7ef44e
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 559ef9cc9a3e5ace7a4023e81363825c6861f6d4
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233601"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870312"
 ---
 # <a name="arkit-2-in-xamarinios"></a>ARKit 2 in Xamarin.iOS
 
@@ -394,7 +394,7 @@ In Xamarin, ist der allgemeine Typ zum Bearbeiten von Transformationsmatrizen `N
 
 ![zeilengerichteter Vs Spaltengröße](images/arkit_row_vs_column.png)
 
-Mit der Auswahl der Interpretation der Matrix konsistent ist entscheidend für das ordnungsgemäße Verhalten. Da 3D-Transformation Matrizen 4 x 4 sind, erzeugen Konsistenz Fehler keine Art von während der Kompilierung oder sogar ein Laufzeit-Ausnahme: Es ist einfach, dass Vorgänge unerwartet reagieren werden. Wenn Ihre SceneKit / ARKit Objekte hängen bleiben, fliegen entfernt oder jitter scheinen, wird eine falsche Transformationsmatrix ist eine gute Möglichkeit. Die Lösung ist einfach: [ `NMatrix4.Transpose` ](https://developer.xamarin.com/api/member/OpenTK.NMatrix4.Transpose) führt eine direkte Umsetzung von Elementen.
+Mit der Auswahl der Interpretation der Matrix konsistent ist entscheidend für das ordnungsgemäße Verhalten. Da 3D-Transformation Matrizen 4 x 4 sind, erzeugen Konsistenz Fehler keine Art von während der Kompilierung oder sogar ein Laufzeit-Ausnahme: Es ist einfach, dass Vorgänge unerwartet reagieren werden. Wenn Ihre SceneKit / ARKit Objekte hängen bleiben, fliegen entfernt oder jitter scheinen, wird eine falsche Transformationsmatrix ist eine gute Möglichkeit. Die Lösung ist einfach: [ `NMatrix4.Transpose` ](xref:OpenTK.NMatrix4.Transpose*) führt eine direkte Umsetzung von Elementen.
 
 ## <a name="related-links"></a>Verwandte Links
 

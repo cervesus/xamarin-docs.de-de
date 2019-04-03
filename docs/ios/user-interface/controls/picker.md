@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
-ms.openlocfilehash: 525ddf3c8cfc457738099c3afbb162fd3fb9239b
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 946cba08e1e504962c093f67e336d72b654a3a41
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233574"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870000"
 ---
 # <a name="picker-control-in-xamarinios"></a>Datumsauswahl-Steuerelement in Xamarin.iOS
 
@@ -131,7 +131,7 @@ Verwenden Sie zum Angeben der Anzahl der Komponenten in einer Auswahl der [`GetC
 
 ### <a name="customizing-a-pickers-appearance"></a>Anpassen der Darstellung von einer Auswahl
 
-Verwenden Sie zum Anpassen der Darstellung einer Auswahl der [`UIPickerView.UIPickerViewAppearance`](https://developer.xamarin.com/api/type/UIKit.UIPickerView+UIPickerViewAppearance/)
+Verwenden Sie zum Anpassen der Darstellung einer Auswahl der [`UIPickerView.UIPickerViewAppearance`](xref:UIKit.UIPickerView.UIPickerViewAppearance)
 Klasse oder außer Kraft setzen der [ `GetView` ](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView)) und [ `GetRowHeight` ](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint)) Methoden in der `UIPickerViewModel`.
 
 ## <a name="uidatepicker"></a>UIDatePicker

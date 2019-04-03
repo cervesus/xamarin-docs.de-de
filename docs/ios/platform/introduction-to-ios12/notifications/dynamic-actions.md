@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: edaf9d90e019729f69f721c0a92826c0148db8df
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 5611d673ecc7af896fd3a9e566e184e408b6b367
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669626"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870091"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Dynamische Notification-Aktionsschaltflächen in Xamarin.iOS
 
@@ -131,15 +131,15 @@ Zugreifen auf und ändern die benachrichtigungs Aktionsschaltflächen-Eigenschaf
 In der Beispiel-app ändert die Erweiterung für benachrichtigungsinhalte des ansichtscontrollers die Aktionsschaltflächen, nur, wenn auf ein Tippen auf einen bereits vorhandenen Aktionsschaltfläche reagiert.
 
 > [!NOTE]
-> Eine Benachrichtigung inhaltserweiterung kann dann Antworten, eine Aktion Knopfdruck in der des ansichtscontrollers [ `DidReceiveNotificationResponse` ](https://developer.xamarin.com/api/member/UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse/) Methode, die als Teil des deklarierten [IUNNotificationContentExtension](https://developer.xamarin.com/api/type/UserNotificationsUI.IUNNotificationContentExtension/).
+> Eine Benachrichtigung inhaltserweiterung kann dann Antworten, eine Aktion Knopfdruck in der des ansichtscontrollers [ `DidReceiveNotificationResponse` ](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*) Methode, die als Teil des deklarierten [IUNNotificationContentExtension](xref:UserNotificationsUI.IUNNotificationContentExtension).
 >
 > Obwohl es sich um einen Namen mit teilt die `DidReceiveNotificationResponse` Methode [oben beschriebenen](#in-app-handling-of-notification-action-buttons), dies ist eine andere Methode.
 >
-> Nach Abschluss eine Erweiterung für benachrichtigungsinhalte Verarbeitung berühren einer Schaltfläche können sie, ob die hauptanwendung, behandeln dieses gleiche fingertipp auf eine Schaltfläche zu informieren. Zu diesem Zweck müssen sie einen passender Wert von übergeben [UNNotificationContentExtensionResponseOption](https://developer.xamarin.com/api/type/UserNotificationsUI.UNNotificationContentExtensionResponseOption/) zu seinem Abschluss-Ereignishandler:
+> Nach Abschluss eine Erweiterung für benachrichtigungsinhalte Verarbeitung berühren einer Schaltfläche können sie, ob die hauptanwendung, behandeln dieses gleiche fingertipp auf eine Schaltfläche zu informieren. Zu diesem Zweck müssen sie einen passender Wert von übergeben [UNNotificationContentExtensionResponseOption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption) zu seinem Abschluss-Ereignishandler:
 >
-> - [`Dismiss`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.Dismiss/) Gibt an, dass der Benachrichtigungsschnittstelle geschlossen werden soll, und die Haupt-app, nicht unbedingt die fingertipp auf eine Schaltfläche zu behandeln.
-> - [`DismissAndForwardAction`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.DismissAndForwardAction/) Gibt an, dass der Benachrichtigungsschnittstelle geschlossen werden soll, und tippen Sie auf die Schaltfläche auch in die Haupt-app verarbeiten soll.
-> - [`DoNotDismiss`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.DoNotDismiss/) Gibt an, dass die Schnittstelle für Benachrichtigungen nicht geschlossen werden soll, und die Haupt-app, nicht unbedingt die fingertipp auf eine Schaltfläche zu behandeln.
+> - `Dismiss` Gibt an, dass der Benachrichtigungsschnittstelle geschlossen werden soll, und die Haupt-app, nicht unbedingt die fingertipp auf eine Schaltfläche zu behandeln.
+> - `DismissAndForwardAction` Gibt an, dass der Benachrichtigungsschnittstelle geschlossen werden soll, und tippen Sie auf die Schaltfläche auch in die Haupt-app verarbeiten soll.
+> - `DoNotDismiss` Gibt an, dass die Schnittstelle für Benachrichtigungen nicht geschlossen werden soll, und die Haupt-app, nicht unbedingt die fingertipp auf eine Schaltfläche zu behandeln.
 
 Die inhaltserweiterung `DidReceiveNotificationResponse` Methode bestimmt, welche Aktionsschaltfläche angetippt wurde, wird das Bild in die benachrichtigungs Schnittstelle, und zeigt, oder blendet Sie aus einer **zurücksetzen** Aktionsschaltfläche:
 

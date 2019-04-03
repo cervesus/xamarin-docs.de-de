@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f7106c9b23fa71b32043ef8190691d798c36370d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 5156259f8178da69595464f75a10cd8f41965519
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672572"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870325"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Weitere iOS 9-Frameworks Änderungen
 
@@ -24,7 +24,7 @@ Zusätzlich zu den wichtigsten Änderungen an IOS-hat Apple Änderungen und Verb
 
 ## <a name="avfoundation-framework-additions"></a>AVFoundation Framework-Erweiterungen
 
-Im Framework AVFoundation der [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/) Klasse nun können Sie eine Stimme Bezeichner neben der Sprache angeben.
+Im Framework AVFoundation der [AVSpeechSynthesisVoice](xref:AVFoundation.AVSpeechSynthesisVoice) Klasse nun können Sie eine Stimme Bezeichner neben der Sprache angeben.
 
 Der folgende Code ruft beispielsweise eine Liste mit allen verfügbaren stimmen:
 
@@ -32,15 +32,15 @@ Der folgende Code ruft beispielsweise eine Liste mit allen verfügbaren stimmen:
 var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 ```
 
-Anschließend können Sie eine der stimmen zurück, die aus der Liste durch Festlegung als die `Voice` Eigenschaft einer Instanz von der [AVSpeachUtterance](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechUtterance/) Klasse.
+Anschließend können Sie eine der stimmen zurück, die aus der Liste durch Festlegung als die `Voice` Eigenschaft einer Instanz von der [AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance) Klasse.
 
-Die [AVQueuePlayer](https://developer.xamarin.com/api/type/AVFoundation.AVQueuePlayer/) -Klasse unterstützt nun eine Mischung aus Internet-streaming und dateibasierte Medien in der Warteschlange. Frühere Versionen konnte nur Warteschlange Medien desselben Typs.
+Die [AVQueuePlayer](xref:AVFoundation.AVQueuePlayer) -Klasse unterstützt nun eine Mischung aus Internet-streaming und dateibasierte Medien in der Warteschlange. Frühere Versionen konnte nur Warteschlange Medien desselben Typs.
 
 Weitere Informationen finden Sie unter Apple [AVSpeechSynthesisVoice Verweis](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/cl/AVSpeechSynthesisVoice).
 
 ## <a name="avkit-framework-additions"></a>AVKit Framework-Erweiterungen
 
-Um mit dem neuen Feature für den Bild-im-Bild (PIP) zu arbeiten, das AVKit-Framework beinhaltet die neue `AVPictureInPictureController` und [AVPlayerViewController](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/) Klassen:
+Um mit dem neuen Feature für den Bild-im-Bild (PIP) zu arbeiten, das AVKit-Framework beinhaltet die neue `AVPictureInPictureController` und [AVPlayerViewController](xref:AVKit.AVPlayerViewController) Klassen:
 
 - **AVPictureInPictureController** – diese Klasse ermöglicht eine iOS 9-app, auf den Benutzer beim Starten der Wiedergabe eines Videos in eine Gleitkommazahl, in der Größe veränderbaren PIP-Fenster auf einem iPad zu reagieren.
 - **AVPlayerViewController** -verwaltet eine `AVPlayer` Controller verwendet, um ein Video in eine Gleitkommazahl, in der Größe veränderbaren PIP-Fenster auf einem iPad zu präsentieren.
@@ -117,7 +117,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 
 ## <a name="healthkit-framework-changes"></a>HealthKit-Frameworkänderungen
 
-Apple enthalten die folgenden Änderungen an der [HealthKit](https://developer.xamarin.com/api/namespace/HealthKit/) -Framework in iOS 9:
+Apple enthalten die folgenden Änderungen an der [HealthKit](xref:HealthKit) -Framework in iOS 9:
 
 - Unterstützung für massenlöschung und nachverfolgung von Löschen von Einträgen in der Datenbank HealthKit. Finden Sie unter Apple [HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject), [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery) und [HKHealthStore Class Reference](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708) für Weitere Informationen.
 - Neue Nachverfolgungskategorien und Eigenschaften hinzugefügt wurden die `HKQuantityTypeIdentifier` Klasse (z. B. `UVExposure`) und die `HKCategoryTypeIdentifier` Klasse (z. B. `OvulationTestResult`). Finden Sie unter Apple [HealthKit Konstanten Verweis](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710) für Weitere Informationen.
@@ -126,9 +126,9 @@ Informieren Sie sich unsere [Einführung in HealthKit](~/ios/platform/healthkit.
 
 ## <a name="local-authentication-framework-changes"></a>Lokale Authentifizierung-Frameworkänderungen
 
-Apple enthalten die folgenden Änderungen an der [lokale Authentifizierung](https://developer.xamarin.com/api/namespace/LocalAuthentication/) -Framework in iOS 9:
+Apple enthalten die folgenden Änderungen an der [lokale Authentifizierung](xref:LocalAuthentication) -Framework in iOS 9:
 
-- Mithilfe der `EvaluateAccessControl` und `EvaluatePolicy` Methoden der [LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/) -Klasse, Sie haben jetzt die Wiederverwendung von Touch ID, aus der vorherigen erfolgreichen entsperren übereinstimmt versucht.
+- Mithilfe der `EvaluateAccessControl` und `EvaluatePolicy` Methoden der [LAContext](xref:LocalAuthentication.LAContext) -Klasse, Sie haben jetzt die Wiederverwendung von Touch ID, aus der vorherigen erfolgreichen entsperren übereinstimmt versucht.
 - Die Fähigkeit, eine Liste der derzeit registrierten Finger zu erhalten.
 - Unterstützung für die nachverfolgung, wenn ein Finger hinzugefügt oder von der Authentifizierung entfernt.
 - Die Möglichkeit, _Authentifizierungskontext_ in Keychain-Aufrufe und Support für Ihre Evaluierung von Keychain-Access Control werden aufgelistet.
@@ -138,7 +138,7 @@ Informieren Sie sich unsere [Einführung in die Touch ID](~/ios/platform/touchid
 
 ### <a name="lacontext-changes"></a>LAContext Änderungen
 
-Die folgenden Änderungen wurden an die [LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/) -Klasse für iOS 9:
+Die folgenden Änderungen wurden an die [LAContext](xref:LocalAuthentication.LAContext) -Klasse für iOS 9:
 
 - **TouchIdAuthenticationMaximumAllowableReuseDuration** - Returns the maximum amount of time that a touch ID authentication can be reused.
 - **EvaluatedPolicyDomainState** : Ruft ab oder legt den Zustand einer ausgewertete Richtlinie fest.
@@ -153,17 +153,17 @@ Informieren Sie sich von Apple [LAContext Verweis](https://developer.apple.com/l
 
 ## <a name="mapkit-framework-changes"></a>MapKit-Frameworkänderungen
 
-Apple enthalten die folgenden Änderungen an der [MapKit](https://developer.xamarin.com/api/namespace/MapKit/) -Framework in iOS 9:
+Apple enthalten die folgenden Änderungen an der [MapKit](xref:MapKit) -Framework in iOS 9:
 
-- MapKit bietet jetzt Unterstützung für den Start der Karten-app direkt in der Übertragung Anweisungen und zum Abfragen von während der Übertragung geschätzte Zeit der Ankunft (ETA) Verwendung der [MKLaunchOptions](https://developer.xamarin.com/api/type/MapKit.MKLaunchOptions/) und [MKDirections](https://developer.xamarin.com/api/type/MapKit.MKLaunchOptions/) Klassen.
-- Die Suchergebnisse von MapKit zurückgegeben und die [CLGeocoder](https://developer.xamarin.com/api/type/CoreLocation.CLGeocoder/) Klasse kann auch das Ergebnis der Zeitzone angeben.
-- Sie können jetzt vollständig anpassen, Map-Anmerkungen, präsentiert von Ihrer iOS-app über die `DetailCalloutAccessoryView` Eigenschaft der [MKAnnotationView](https://developer.xamarin.com/api/type/MapKit.MKAnnotationView/) Klasse.
+- MapKit bietet jetzt Unterstützung für den Start der Karten-app direkt in der Übertragung Anweisungen und zum Abfragen von während der Übertragung geschätzte Zeit der Ankunft (ETA) Verwendung der [MKLaunchOptions](xref:MapKit.MKLaunchOptions) und [MKDirections](xref:MapKit.MKLaunchOptions) Klassen.
+- Die Suchergebnisse von MapKit zurückgegeben und die [CLGeocoder](xref:CoreLocation.CLGeocoder) Klasse kann auch das Ergebnis der Zeitzone angeben.
+- Sie können jetzt vollständig anpassen, Map-Anmerkungen, präsentiert von Ihrer iOS-app über die `DetailCalloutAccessoryView` Eigenschaft der [MKAnnotationView](xref:MapKit.MKAnnotationView) Klasse.
 
 Informieren Sie sich unsere [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md) und [Exemplarische Vorgehensweise: Untersuchen von Anmerkungen und Überlagerungen in MapKit](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md) Dokumentation für Weitere Informationen zum Arbeiten mit Karten und Anmerkungen in Xamarin.iOS- und Apple [CLGeocoder Verweis](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder) für Weitere Informationen.
 
 ## <a name="passkit-framework-additions"></a>PassKit-Framework-Erweiterungen
 
-Apple enthalten die folgenden Änderungen an der [PassKit](https://developer.xamarin.com/api/namespace/PassKit/) -Framework in iOS 9:
+Apple enthalten die folgenden Änderungen an der [PassKit](xref:PassKit) -Framework in iOS 9:
 
 - Apple Pay unterstützt jetzt sowohl für Speicher soll-als auch für Kreditkarten zusammen mit der Discover-Karten. Finden Sie unter den **Zahlung Netzwerke** Abschnitt des Apple [PKPaymentRequest Class Reference](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/doc/uid/TP40014832) für Weitere Informationen.
 - Von können direkt in einer Xamarin.iOS-app, Sie jetzt Zahlung-Netzwerken und belastungsrisiken Apple Pay hinzufügen. Finden Sie unter Apple [PKAddPaymentPassViewController Class Reference](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/doc/uid/TP40016116) Weitere Details.
@@ -172,15 +172,15 @@ Informieren Sie sich unsere [Einführung in PassKit](~/ios/platform/passkit.md) 
 
 ## <a name="safari-services-framework-additions"></a>Safari Services Framework-Erweiterungen
 
-Apple enthalten die folgenden Änderungen an der [Safari Services](https://developer.xamarin.com/api/namespace/SafariServices/) -Framework in iOS 9:
+Apple enthalten die folgenden Änderungen an der [Safari Services](xref:SafariServices) -Framework in iOS 9:
 
-- Nun können Sie die neue [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) Klasse, um Webinhalt in einer Xamarin.iOS-app anzuzeigen. Es bietet die Möglichkeit, die Websitedaten und Cookies für die Safari-app freigeben und mehrere von Safari-Features (z. B. "Reader" und "AutoAusfüllen") enthält. [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) Funktionen eine **Fertig** Schaltfläche, die Benutzer auf Ihre app zurückgegeben wird, wenn sie nach dem Anzeigen der Inhalt des Webserver sind.
+- Nun können Sie die neue [SFSafariViewController](xref:SafariServices.SFSafariViewController) Klasse, um Webinhalt in einer Xamarin.iOS-app anzuzeigen. Es bietet die Möglichkeit, die Websitedaten und Cookies für die Safari-app freigeben und mehrere von Safari-Features (z. B. "Reader" und "AutoAusfüllen") enthält. [SFSafariViewController](xref:SafariServices.SFSafariViewController) Funktionen eine **Fertig** Schaltfläche, die Benutzer auf Ihre app zurückgegeben wird, wenn sie nach dem Anzeigen der Inhalt des Webserver sind.
 
-Da die [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) Klasse für die Anzeige einer einzelnen Seite des Web-Inhalte angepasst wird, sollten Sie verwenden, ersetzen [WKWebKit](xref:WebKit.WKWebView) oder [UIWebView](xref:UIKit.UIWebView)Steuerelemente in Ihre vorhandenen Xamarin.iOS-apps.
+Da die [SFSafariViewController](xref:SafariServices.SFSafariViewController) Klasse für die Anzeige einer einzelnen Seite des Web-Inhalte angepasst wird, sollten Sie verwenden, ersetzen [WKWebKit](xref:WebKit.WKWebView) oder [UIWebView](xref:UIKit.UIWebView)Steuerelemente in Ihre vorhandenen Xamarin.iOS-apps.
 
 ### <a name="displaying-a-website"></a>Anzeigen von einer Website
 
-Der folgende Code ist ein Beispiel eines Aufrufs einer [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) aus in einer anderen ansichtscontroller:
+Der folgende Code ist ein Beispiel eines Aufrufs einer [SFSafariViewController](xref:SafariServices.SFSafariViewController) aus in einer anderen ansichtscontroller:
 
 ```csharp
 // Create an instance of the Safari Services View Controller
