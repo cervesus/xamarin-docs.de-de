@@ -7,19 +7,19 @@ ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 author: conceptdev
 ms.author: crdun
 ms.date: 08/01/2018
-ms.openlocfilehash: f20740ff1e16187be3d3703b3da07329f6f52daf
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: 1224d38a2230fa2f5c7ca08f6e33c5468886c206
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514337"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855210"
 ---
 # <a name="when-and-how-should-i-file-a-bug-report"></a>Wann und wie sollte ich einen Fehlerbericht speichern?
 
 > [!TIP]
 > Verwenden der **Melden eines Problems** Menüelement in Visual Studio &ndash; sendet diese Diagnoseinformationen zusammen mit den Problembericht, um das Problem zu beheben.
 >
-> Es gibt ausführliche Informationen zur [Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017) und [Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem).
+> Es gibt ausführliche Informationen zur [2019 für Visual Studio oder Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio) und [Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem).
 >
 > Sie können für vorhandene Berichte suchen, auf die [Visual Studio Developer Community](https://developercommunity.visualstudio.com/) Website.
 
@@ -47,7 +47,7 @@ Sie können die sichtbare Symptome des Problems sorgfältig beschreiben, insbeso
 
 ## <a name="additional-details"></a>Weitere Informationen
 
-1. <a name="note-1" />[*^*](#ref-1) Im Idealfall sollte die Beschreibung der Symptome"sichtbar" genügend Details dazu enthalten, so dass andere Kunden bestätigen können, ob sie das gleiche Problem auftritt (gleichen Fehlermeldungen, gleiche leistungsbeeinträchtigung, gleiche stapelüberwachung aus einem Absturz _usw.._ ). "Genau unter Bedingungen", ein gutes Beispiel wäre, wenn Sie etwa sagen können: "klicke ich auf das Problem normalerweise 75 % der Zeit, aber wenn ich ändern, dass diese eine Sache ich können verhindern, das Problem vollständig." Ähnlich wie ein weiteres Beispiel für eine Situation"präzise" ist, wenn das Problem ein Downgrade auf eine frühere Version von Xamarin beendet werden.
+1. <a name="note-1" />[*^*](#ref-1) Im Idealfall sollte die Beschreibung der Symptome"sichtbar" genügend Details dazu enthalten, so dass andere Kunden bestätigen können, ob sie das gleiche Problem auftritt (gleichen Fehlermeldungen, gleiche leistungsbeeinträchtigung, gleiche stapelüberwachung aus einem Absturz _usw.._ ). "Genau unter Bedingungen" wäre ein gutes Beispiel, wenn Sie etwa sagen können: "Klicke ich auf das Problem normalerweise 75 % der Zeit, aber wenn ich ändern, dass diese eine Sache ich können verhindern, das Problem vollständig." Ähnlich wie ein weiteres Beispiel für eine Situation"präzise" ist, wenn das Problem ein Downgrade auf eine frühere Version von Xamarin beendet werden.
 
 1. <a name="note-2" />[*^*](#ref-2) Wie zu erwarten ist, werden Ausschnitte Fehler (oder jeder anderen eindeutig beschreibenden Text) in der Regel die beste Suchbegriffe. Wenn der vorhandene Fehlerbericht nicht vollständig ist, sind Sie zum Hinzufügen von Details oder eine neue Datei besser Fehlerbericht Willkommen.
 

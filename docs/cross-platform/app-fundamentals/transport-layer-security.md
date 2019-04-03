@@ -1,17 +1,17 @@
 ---
 title: Transport Layer Security (TLS) 1.2
-description: In diesem Dokument wird beschrieben, wie zum Aktivieren von TLS 1.2 für Xamarin.iOS, Xamarin.Android und Xamarin.Mac-Projekte. Es wird veranschaulicht, wie das geht in Visual Studio 2017 und Visual Studio für Mac.
+description: In diesem Dokument wird beschrieben, wie zum Aktivieren von TLS 1.2 für Xamarin.iOS, Xamarin.Android und Xamarin.Mac-Projekte. Es wird veranschaulicht, wie das geht in Visual Studio-2019 und Visual Studio für Mac.
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 889eaf2b2f87b22010315f5e92dcfd1cd4c7c446
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 26870ae0e84a84a7b78f7766a8e134ecfc7b223e
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668269"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855002"
 ---
 # <a name="transport-layer-security-tls-12"></a>Transport Layer Security (TLS) 1.2
 
@@ -31,17 +31,17 @@ Update der **HttpClient-Implementierung** und **SSL/TLS-Implementierung** Option
 > [!NOTE]
 > Ist Android 5.0 oder höher erforderlich.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 Diese Einstellungen befinden sich **Projekteigenschaften > Android-Optionen** und dann auf die **erweitert** Schaltfläche:
 
-[![Konfigurieren von "HttpClient" und TLS in Visual Studio](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
+[![CKonfigurieren von "HttpClient" and TLS in Visual Studio](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 Diese Einstellungen befinden sich **Projektoptionen > Erstellen > Android-Build** Registerkarte:
 
-[![Konfigurieren von "HttpClient" und TLS in Visual Studio für Mac](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
+[![CKonfigurieren von "HttpClient" and TLS in Visual Studio für Mac](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
 
 -----
 
@@ -49,17 +49,17 @@ Diese Einstellungen befinden sich **Projektoptionen > Erstellen > Android-Build*
 
 Update der **HttpClient-Implementierung** Option aus, um die Sicherheit von TSL 1.2 zu aktivieren.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 Mit dieser Einstellung finden Sie in **Projekteigenschaften > iOS-Build**:
 
-[![Konfigurieren von "HttpClient" und TLS in Visual Studio](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+[![CKonfigurieren von "HttpClient" and TLS in Visual Studio](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 Mit dieser Einstellung finden Sie in **Projektoptionen > Erstellen > iOS-Build** Registerkarte:
 
-[![Konfigurieren von "HttpClient" in Visual Studio für Mac](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
+[![CKonfigurieren Sie "HttpClient" in Visual Studio für Mac](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
 
 -----
 
@@ -67,7 +67,7 @@ Mit dieser Einstellung finden Sie in **Projektoptionen > Erstellen > iOS-Build**
 
 Aktualisieren Sie in Visual Studio für Mac, um TLS 1.2 in einer Xamarin.Mac-app zu aktivieren, die **HttpClient-Implementierung** option **Projektoptionen > Erstellen > Mac Build**:
 
-[![Konfigurieren von "HttpClient" in Visual Studio für Mac](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
+[![CKonfigurieren Sie "HttpClient" in Visual Studio für Mac](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
 
 > [!WARNING]
 > Die anstehende Version Xamarin.Mac 4.8 unterstützt nur macOS 10.9 oder höher.
@@ -120,7 +120,7 @@ Sie sollten aktualisieren Sie die Einstellungen in vorhandenen Anwendungen gemä
 ## <a name="related-links"></a>Verwandte Links
 
 - [App-Transportsicherheit](~/ios/app-fundamentals/ats.md)
-- [Xamarin.Android Environment](~/android/deploy-test/environment.md)
+- [Xamarin.Android-Umgebung](~/android/deploy-test/environment.md)
 - [Xamarin Cycle 9 (Februar 2017)](https://releases.xamarin.com/stable-release-cycle-9/)
 - [TLS (Wikipedia)](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 - [Mono 4.8-Versionsanmerkungen - TLS 1.2-Unterstützung](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support)

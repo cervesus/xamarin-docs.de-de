@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 6243f7d90b921207f4dd406a1f33f4d7af40ecfb
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668365"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854872"
 ---
 # <a name="gtk-platform-setup"></a>GTK#-Plattform-Setup
 
@@ -29,11 +29,11 @@ Bevor Sie beginnen, einer neuen Xamarin.Forms-Projektmappe erstellen, oder eine 
 
 GTK#-für MacOS und Linux installiert ist, als Teil des [Mono](https://www.mono-project.com/download/stable/). GTK#-für .NET installiert werden kann Windows mit der [GTK#-Installer](https://www.mono-project.com/download/stable/#download-win).
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 Um eine GTK#-app hinzufügen, die auf dem Windows-Desktop ausgeführt wird, gehen Sie wie folgt vor:
 
-1. Visual Studio 2017, mit der Maustaste auf den Projektmappennamen im **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Projekt...** .
+1. Visual Studio-2019, mit der Maustaste auf den Projektmappennamen im **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Projekt...** .
 
 2. In der **neues Projekt** Fenster auf der linken Select **Visual C#-** und **Klassischer Windows-Desktop**. Wählen Sie in der Liste der Projekttypen, **Class-Bibliothek ((.NET Framework)**, und stellen sicher, dass die **Framework** Dropdown-Liste auf ein Minimum von .NET Framework 4.7 festgelegt ist.
 
@@ -110,7 +110,7 @@ Um eine GTK#-app hinzufügen, die auf dem Windows-Desktop ausgeführt wird, gehe
 
     ![GTK#-Spiel Leben](gtk-images/win/gtk-gameoflife.png "GTK#-Spiel Leben")
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 Um eine GTK#-app hinzufügen, die auf dem Mac-Desktop ausgeführt wird, gehen Sie wie folgt vor:
 

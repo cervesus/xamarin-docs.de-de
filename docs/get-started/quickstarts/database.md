@@ -1,5 +1,5 @@
 ---
-title: Store-Daten in einer lokalen von SQLite.NET-Datenbank
+title: Speichern von Daten in einer lokalen SQLite.NET-Datenbank
 description: In diesem Artikel wird erläutert, wie Daten in einer lokalen von SQLite.NET-Datenbank gespeichert.
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -8,17 +8,17 @@ ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/02/2019
-ms.openlocfilehash: 3cea41aa3c021dbb03f851a4deb443ee86fcad25
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 04/01/2019
+ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293058"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854989"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Daten in einer lokalen Datenbank für die von SQLite.NET Store
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 
 In dieser schnellstartanleitung erfahren Sie, wie Sie:
 
@@ -44,19 +44,19 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](mul
 
     ![](database-images/vs/add-nuget-packages.png "Hinzufügen von NuGet-Paketen")    
 
-3. In der **NuGet Package Manager**, wählen die **Durchsuchen** Registerkarte, suchen Sie nach der **Sqlite-Net-Pcl** NuGet-Paket auszuwählen, und klicken Sie auf die **Installieren**, um es dem Projekt hinzuzufügen:
+3. Klicken Sie im **NuGet-Paket-Manager** auf die Registerkarte **Durchsuchen**, suchen Sie nach dem NuGet-Paket **sqlite-net-pcl**, wählen Sie es aus, und klicken Sie auf die Schaltfläche **Installieren**, um es dem Projekt hinzuzufügen:
 
     ![](database-images/vs/add-package.png "Paket hinzufügen")
 
     > [!NOTE]
-    > Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über diese Attribute:
-    > - **Autoren kenne:** Frank A. Krueger
+    > Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über die folgenden Attribute:
+    > - **Autor(en):** Frank A. Krueger
     > - **ID:** sqlite-net-pcl
     > - **NuGet-Link:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
-    > Trotz der Paketname kann dieses NuGet-Paket in .NET Standard-Projekte verwendet werden.
+    > Trotz des Paketnamens kann dieses NuGet-Paket in .NET Standard-Projekten verwendet werden.
 
-    Datenbankvorgänge in der Anwendung zu integrieren, wird dieses Paket verwendet werden.
+    Mit diesem Paket können Datenbankvorgänge in der Anwendung verwendet werden.
 
 4. In **Projektmappen-Explorer**in die **Anmerkungen zu dieser** -Projekt, öffnen **Note.cs** in die **Modelle** Ordner, und Ersetzen Sie den vorhandenen code, mit der folgender Code:
 
@@ -139,7 +139,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](mul
     }
     ```
 
-    Diese Klasse enthält Code, um die Datenbank erstellen, Daten daraus zu lesen, Schreiben von Daten, und Daten daraus zu löschen. Der Code verwendet die asynchronen von SQLite.NET-APIs, die Datenbankvorgänge in Hintergrundthreads zu verschieben. Darüber hinaus die `NoteDatabase` Konstruktor akzeptiert den Pfad der Datenbankdatei als Argument. Dieser Pfad erfolgt durch die `App` Klasse im nächsten Schritt.
+    Diese Klasse enthält Code, um die Datenbank erstellen, Daten daraus zu lesen, Schreiben von Daten, und Daten daraus zu löschen. Im Code werden asynchrone SQLite.NET-APIs verwendet, mit denen Datenbankvorgänge in Hintergrundthreads verschoben werden. Außerdem akzeptiert der `NoteDatabase`-Konstruktor den Pfad der Datenbankdatei als Argument. Dieser Pfad erfolgt durch die `App` Klasse im nächsten Schritt.
 
     Speichern Sie die Änderungen an **NoteDatabase.cs** durch Drücken von **STRG + S**, und schließen Sie die Datei.
 
@@ -152,10 +152,8 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](mul
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     using Notes.Data;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -249,19 +247,19 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](mul
 
     ![](database-images/vsmac/add-nuget-packages.png "Hinzufügen von NuGet-Paketen")    
 
-3. In der **Pakete hinzufügen** Fenster, und suchen Sie die **Sqlite-Net-Pcl** NuGet-Paket auszuwählen, und klicken Sie auf die **Paket hinzufügen** , um es dem Projekt hinzuzufügen:
+3. Suchen Sie im Fenster **Pakete hinzufügen** nach dem NuGet-Paket **sqlite-net-pcl**, wählen Sie es aus, und klicken Sie auf **Paket hinzufügen**, um es dem Projekt hinzuzufügen:
 
     ![](database-images/vsmac/add-package.png "Paket hinzufügen")
 
     > [!NOTE]
-    > Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über diese Attribute:
+    > Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über die folgenden Attribute:
     > - **Autor:** Frank A. Krueger
     > - **ID:** sqlite-net-pcl
     > - **NuGet-Link:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
-    > Trotz der Paketname kann dieses NuGet-Paket in .NET Standard-Projekte verwendet werden.
+    > Trotz des Paketnamens kann dieses NuGet-Paket in .NET Standard-Projekten verwendet werden.
 
-    Datenbankvorgänge in der Anwendung zu integrieren, wird dieses Paket verwendet werden.
+    Mit diesem Paket können Datenbankvorgänge in der Anwendung verwendet werden.
 
 4. In der **Lösungspad**in die **Anmerkungen zu dieser** -Projekt, öffnen **Note.cs** in die **Modelle** Ordner, und Ersetzen Sie den vorhandenen Code durch Folgendes Code:
 
@@ -344,7 +342,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](mul
     }
     ```
 
-    Diese Klasse enthält Code, um die Datenbank erstellen, Daten daraus zu lesen, Schreiben von Daten, und Daten daraus zu löschen. Der Code verwendet die asynchronen von SQLite.NET-APIs, die Datenbankvorgänge in Hintergrundthreads zu verschieben. Darüber hinaus die `NoteDatabase` Konstruktor akzeptiert den Pfad der Datenbankdatei als Argument. Dieser Pfad erfolgt durch die `App` Klasse im nächsten Schritt.
+    Diese Klasse enthält Code, um die Datenbank erstellen, Daten daraus zu lesen, Schreiben von Daten, und Daten daraus zu löschen. Im Code werden asynchrone SQLite.NET-APIs verwendet, mit denen Datenbankvorgänge in Hintergrundthreads verschoben werden. Außerdem akzeptiert der `NoteDatabase`-Konstruktor den Pfad der Datenbankdatei als Argument. Dieser Pfad erfolgt durch die `App` Klasse im nächsten Schritt.
 
     Speichern Sie die Änderungen an **NoteDatabase.cs** dazu **Datei > Speichern** (oder durch Drücken der  **&#8984; + S**), und schließen Sie die Datei.
 
@@ -357,10 +355,8 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](mul
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     using Notes.Data;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -455,9 +451,9 @@ In dieser schnellstartanleitung haben Sie gelernt, wie Sie:
 Um die Anwendung mit XAML-Formatvorlagen zu formatieren, weiterhin mit dem nächsten Schnellstart fortfahren.
 
 > [!div class="nextstepaction"]
-> [Nächste](styling.md)
+> [Weiter](styling.md)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Notes (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+- [Anmerkungen zu dieser Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 - [Tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md)

@@ -1,5 +1,5 @@
 ---
-title: Führen Sie die Navigation in einer Xamarin.Forms-Anwendung auf mehreren Seiten
+title: Navigieren in einer Xamarin.Forms-App mit mehreren Seiten
 description: In diesem Artikel erläutert das Aktivieren der einseitigen Anwendung, kann das Speichern von einer einzelnen Notiz, in einer Anwendung auf mehreren Seiten, die mehrere Notizen speichern kann.
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -8,17 +8,17 @@ ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/02/2019
-ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.date: 04/01/2019
+ms.openlocfilehash: 855962560897789dadba535f69c4a7da42bb4742
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197367"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854976"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Führen Sie die Navigation in einer mehrseitigen Xamarin.Forms-Anwendung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 
 In dieser schnellstartanleitung erfahren Sie, wie Sie:
 
@@ -39,7 +39,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](sin
 
 ## <a name="update-the-app-with-visual-studio"></a>Aktualisieren der App mit Visual Studio
 
-1. Starten Sie Visual Studio. Klicken Sie auf der Startseite auf **geöffneten Projekt / Projektmappe**, und klicken Sie in der **geöffneten Projekt** Dialogfeld Wählen Sie die Projektmappendatei für das Projekt für die Anmerkungen zu dieser Version:
+1. Starten Sie Visual Studio. Klicken Sie im Startfenster auf die **Anmerkungen zu dieser** -Lösung in der Liste der zuletzt verwendeten Projekte und Projektmappen, oder klicken Sie auf **öffnet ein Projekt oder Projektmappe**, und klicken Sie in der **Projekt/Projektmappe öffnen** Dialogfeld Wählen Sie die Projektmappendatei für das Projekt für die Anmerkungen zu dieser Version:
 
     ![](multi-page-images/vs/open-solution.png "Projekt öffnen")
 
@@ -285,9 +285,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](sin
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -324,7 +322,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](sin
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>Aktualisieren der App mit Visual Studio für Mac
 
-1. Starten Sie Visual Studio für Mac. Klicken Sie auf der Startseite auf **öffnen...** , und wählen Sie im Dialogfeld die Projektmappendatei für das Projekt für die Anmerkungen zu dieser Version:
+1. Starten Sie Visual Studio für Mac. Klicken Sie im Startfenster auf **öffnen**, und wählen Sie im Dialogfeld die Projektmappendatei für das Projekt für die Anmerkungen zu dieser Version:
 
     ![](multi-page-images/vsmac/open-solution.png "Projektmappe öffnen")
 
@@ -570,9 +568,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](sin
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -617,9 +613,9 @@ In dieser schnellstartanleitung haben Sie gelernt, wie Sie:
 Um die Anwendung zu ändern, damit sie ihre Daten in einer lokalen von SQLite.NET-Datenbank speichert, weiterhin mit dem nächsten Schnellstart fortfahren.
 
 > [!div class="nextstepaction"]
-> [Nächste](database.md)
+> [Weiter](database.md)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Notes (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+- [Anmerkungen zu dieser Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 - [Tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md)

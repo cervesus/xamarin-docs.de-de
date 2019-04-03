@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666934"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854898"
 ---
 # <a name="external-storage"></a>Externen Speicher
 
@@ -140,17 +140,17 @@ Alle Android-apps müssen deklarieren Sie eine der beiden Berechtigungen für de
 > [!NOTE]
 > Wenn der Benutzer erteilt `WRITE_EXTERNAL_STORAGE`, klicken Sie dann `READ_EXTERNAL_STORAGE` ist auch implizit erteilt. Es ist nicht erforderlich, um beide Berechtigungen in **"androidmanifest.xml"**.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 Die Berechtigungen können auch hinzugefügt werden, mithilfe der **Android-Manifest** Registerkarte die **Projektmappeneigenschaften**:
 
-![Projektmappen-Explorer - erforderlichen Berechtigungen für Visual Studio 2017](./images/required-permissions.w157.png)
+![Projektmappen-Explorer - erforderlichen Berechtigungen für Visual Studio](./images/required-permissions.w157.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 Die Berechtigungen können auch hinzugefügt werden, mithilfe der **Android-Manifest** auf der Registerkarte die **Lösung Pad "Eigenschaften"**:
 
-[![Projektmappenpad - erforderlichen Berechtigungen für Visual Studio für Mac](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
+[![SErforderliche Berechtigungen für Visual Studio für Mac rojektmappe Pad](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
 -----
 

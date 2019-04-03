@@ -6,18 +6,59 @@ ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: eb9d758d72febe0fc0b705d66246c99ade1fc80f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109691"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855262"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Problembehandlung bei Xamarin Live Player
 
 ![Feature (Vorschau)](~/media/shared/preview.png)
 
-Dieser Artikel erläutert einige der häufigsten Probleme, und es enthält die Schritte zum beheben.
+> [!NOTE]
+> Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
+
+Dieser Artikel beschreibt die Einschränkungen von Live Player und einige der häufigsten Probleme mit den Schritten zu beheben.
+
+## <a name="limitations-of-xamarin-live-player"></a>Einschränkungen von Xamarin Live Player
+
+### <a name="ide-requirements"></a>IDE-Anforderungen
+
+Der Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
+
+### <a name="device-requirements"></a>Anforderungen für Geräte
+
+Die Xamarin Live Player-app unterstützt folgende Android-Geräte:
+
+- Android 4.2 oder höher.
+- ARM-v7a, ARM-v8a "," ARM64-v8a, x 86- oder x86_64-Prozessor.
+
+### <a name="ios-limitations"></a>iOS-Einschränkungen
+
+Live Player ist nicht verfügbar für iOS.
+
+### <a name="xamarinforms-limitations"></a>Xamarin.Forms-Einschränkungen
+
+- Benutzerdefinierte Renderer werden nicht unterstützt.
+- Effekte werden nicht unterstützt.
+- Benutzerdefinierte Steuerelemente mit benutzerdefinierten bindbare Eigenschaften werden nicht unterstützt.
+- Eingebettete Ressourcen werden nicht unterstützt (d. h. Einbetten von Bildern oder anderen Ressourcen in einer PCL).
+- MVVM-Frameworks von Drittanbietern werden (d. h. nicht unterstützt. Prism, Mvvm Cross, Mvvm Light usw.).
+
+### <a name="other-project-type-limitations"></a>Weitere Einschränkungen der Projekt-Typ
+
+- Live Player dient nicht für native Android-Projekte (die Android XML für die Benutzeroberfläche zu verwenden).
+
+### <a name="miscellaneous-limitations"></a>Verschiedene Einschränkungen
+
+- Eingeschränkte Unterstützung für die Reflektion (derzeit einige beliebte NuGet-Pakete, z. B. SQLite und Json.NET betrifft). Andere NuGet-Pakete werden möglicherweise immer noch unterstützt.
+- Einige Systemklassen können nicht überschrieben werden (z. B. eine Unterklasse kann nicht implementiert werden).
+- Einige Features der Plattform, für die Bereitstellung erforderlich können nicht funktionieren, in die Xamarin Live Player-app (jedoch sie bei allgemeinen Vorgängen, z. B. Photo Gallery-Zugriff konfiguriert wurde).
+- Benutzerdefinierte Ziele und Schritte werden ignoriert. Beispielsweise können keine Tools wie Fody, einpassen, AutoFac und AutoMapper integriert werden.
+- F#Projekte werden nicht unterstützt.
+- Erweiterte Szenarien mit benutzerdefinierten generische Klassen und Schnittstellen werden möglicherweise nicht unterstützt.
 
 ## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobiler Geräte wird nicht nach Scan Barcode (oder Eingeben von Code) eine Verbindung herstellen.
 
@@ -30,7 +71,7 @@ Tritt auf, wenn das mobile Gerät, das Ausführen von Xamarin Live Player nicht 
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>"Fehler beim Bereitstellen von"-Nachricht in der IDE
 
-**"IOException: kann nicht zum Lesen von Daten aus der transportverbindung: nicht blockierenden Socket Vorgang würde blockieren."**
+**"IOException: kann nicht zum Lesen von Daten aus der transportverbindung: Vorgang auf Socket nicht blockierend würde blockieren."**
 
 Dieser Fehler häufig auftritt, wenn das mobile Gerät, das Ausführen von Xamarin Live Player nicht im gleichen Netzwerk wie der Computer mit Visual Studio ist; Dies geschieht häufig, wenn auf einem Gerät eine Verbindung herstellen, die zuvor erfolgreich zugeordnet wurde.
 
@@ -43,7 +84,7 @@ Dieser Fehler häufig auftritt, wenn das mobile Gerät, das Ausführen von Xamar
 
 Wenn Sie nicht auf Ihr Gerät über WLAN verbinden können können Sie versuchen, Ihr Gerät über die XML-Konfigurationsdatei mit den folgenden Schritten manuell zu konfigurieren:
 
-**Schritt 1: Öffnen der Konfigurationsdatei**
+**Schritt 1: Konfigurationsdatei öffnen**
 
 Navigieren Sie zum Anwendungsordner für Daten:
 
@@ -52,21 +93,21 @@ Navigieren Sie zum Anwendungsordner für Daten:
 
 In diesem Ordner finden Sie **PlayerDeviceList.xml** , wenn er nicht vorhanden ist, müssen zum Erstellen.
 
-**Schritt 2: Abrufen der IP-Adresse**
+**Schritt 2: IP-Adresse abrufen**
 
 Wechseln Sie in der Xamarin Live Player-app zu **über > Verbindungstest > Verbindungstest starten**.
 
 Notieren Sie sich die IP-Adresse, benötigen Sie die IP-Adresse aufgelistet, wenn Sie Ihr Gerät zu konfigurieren.
 
-**Schritt 3: Abrufen der Kopplung von code**
+**Schritt 3: Abrufen von Kopplungscode**
 
 In den Xamarin Live Player-Tap **Paar** oder **Paar erneut**, drücken Sie dann die **manuell eingeben**. Ein numerischer Code wird angezeigt werden die müssen Sie die Konfigurationsdatei aktualisieren.
 
-**Schritt 4: Generieren von GUID**
+**Schritt 4: GUID zu generieren**
 
 Wechseln Sie zu: https://www.guidgenerator.com/online-guid-generator.aspx und generiert eine neue Guid und sicherzustellen, dass Großbuchstaben auf.
 
-**Schritt 5: Konfigurieren von Gerät**
+**Schritt 5: Gerät konfigurieren**
 
 Öffnen Sie die **PlayerDeviceList.xml** in einem Editor wie z. B. Visual Studio oder Visual Studio Code einrichten. Sie müssen Ihr Gerät in dieser Datei manuell zu konfigurieren. Standardmäßig sollte die Datei den folgenden leeren enthalten `Devices` XML-Element:
 
@@ -110,7 +151,7 @@ Einige "System"-Klassen nicht möglich, z. B. überschrieben werden:
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"" Mainactivity.cs ":"Resource.Layout"enthält keine Definition für 'Main'"
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs: "Resource.Layout" enthält keine Definition für 'Main' "
 
 Dieser Fehler tritt auf, für Android-Projekte mit Benutzeroberflächen in AXML-Dateien definiert.
 AXML-Dateien werden in Xamarin Live Player derzeit nicht unterstützt.
@@ -119,9 +160,7 @@ AXML-Dateien werden in Xamarin Live Player derzeit nicht unterstützt.
 
 Xamarin.Forms-Android-Projekte müssen "Toolbar.axml" und "Tabbar.axml" für die Namen der relevanten Layoutdateien verwenden. Die Standardvorlage verwendet diesen Namen. Umbenennen wird Renderingprobleme verursachen.
 
-Melden Sie Probleme mit zusätzlichen auf [Bugzilla](https://aka.ms/live-player-report-issue).
-
 ## <a name="related-links"></a>Verwandte Links
 
-- [Einschränkungen](~/tools/live-player/limitations.md)
-- [Setup (Einrichtung)](~/tools/live-player/install.md)
+- [Setup](~/tools/live-player/install.md)
+- [Beispiele für die Verwendung mit Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

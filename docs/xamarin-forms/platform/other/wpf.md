@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
-ms.openlocfilehash: cdf115c4ea6d6613a1da2d0d2cfa14ed500086f8
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 2bef13e7f465dd213649f88deb572eb661895250
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209185"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854807"
 ---
 # <a name="wpf-platform-setup"></a>WPF-Plattform-Setup
 
@@ -21,7 +21,7 @@ ms.locfileid: "54209185"
 
 Xamarin.Forms verfügt jetzt über eine vorschauunterstützung für die Windows Presentation Foundation (WPF). In diesem Artikel wird veranschaulicht, wie eine Xamarin.Forms-Projektmappe ein WPF-Projekt hinzugefügt wird.
 
-Bevor Sie beginnen, erstellen eine neue Xamarin.Forms-Projektmappe in Visual Studio 2017 oder eine vorhandene Xamarin.Forms-Lösung zu, z.B. verwenden [ **BoxViewClock**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/). Sie können einer Xamarin.Forms-Lösung in Windows nur WPF-apps hinzufügen.
+Bevor Sie beginnen, erstellen eine neue Xamarin.Forms-Projektmappe in Visual Studio-2019, oder eine vorhandene Xamarin.Forms-Projektmappe, z. B. verwenden [ **BoxViewClock**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/). Sie können einer Xamarin.Forms-Lösung in Windows nur WPF-apps hinzufügen.
 
 ## <a name="add-a-wpf-project-to-a-xamarinforms-app-with-xamarinuniversity"></a>Fügen Sie ein WPF-Projekt zu einer Xamarin.Forms-app mit Xamarin.University
 
@@ -33,7 +33,7 @@ Bevor Sie beginnen, erstellen eine neue Xamarin.Forms-Projektmappe in Visual Stu
 
 Um eine WPF-app hinzufügen, die auf den Windows 7, 8 und 10-Desktops ausgeführt wird, gehen Sie wie folgt vor:
 
-1. Visual Studio 2017, mit der Maustaste auf den Namen der Projektmappe in die **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Projekt...** .
+1. Visual Studio-2019, mit der Maustaste auf den Namen der Projektmappe in die **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Projekt...** .
 
 2. In der **neues Projekt** Fenster auf der linken Select **Visual C#-** und **Klassischer Windows-Desktop**. Wählen Sie in der Liste der Projekttypen, **WPF-App ((.NET Framework)**. 
 
@@ -149,7 +149,7 @@ Sie können die ursprüngliche Größe des Fensters in WPF-Anwendungen anpassen 
 Title="BoxViewClock" Height="450" Width="800"
 ```
 
-## <a name="issues"></a>Schwierigkeiten
+## <a name="issues"></a>Probleme
 
 Dies ist eine Vorschau, damit Sie erwarten, dass nicht alles bereit für die Produktion. Nicht alle NuGet-Pakete für Xamarin.Forms für WPF bereit sind, und einige Features möglicherweise nicht vollständig ausgeführt.
 

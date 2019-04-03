@@ -6,16 +6,19 @@ ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
-ms.openlocfilehash: fdd602da932e0c36cadade50476babba51d67398
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113168"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855197"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player-App
 
 ![Feature (Vorschau)](~/media/shared/preview.png)
+
+> [!NOTE]
+> Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
 
 Nachdem Sie die app auf Ihrem Telefon installiert haben, führen Sie die [Anweisungen zur Einrichtung des](~/tools/live-player/install.md) zur Verbindung mit Ihrem Computers. Führen Sie eine der der [Beispiel-apps](~/tools/live-player/samples.md) wieder funktioniert.
 
@@ -35,7 +38,7 @@ Wenn die Verbindung erfolgreich ist, der Code sollte auf dem Gerät ausgeführt 
 
 Drücken Sie die Schaltfläche "Information" **(i)** am unteren Rand der app zum Anzeigen der **Optionen** Menü:
 
-[![Screenshot, der das Menü "Optionen"](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![SCreenshot, der das Menü "Optionen"](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>Protokolle
 
@@ -47,13 +50,13 @@ Anzeigen von Protokollen, um Probleme zu diagnostizieren.
 - Versionsinformationen.
 - Senden Sie Feedback.
 
-[![Screenshot der Einstellungen](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![SCreenshot Einstellungen](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>Verwalten von Geräten
 
 Um ein Gerät zum ersten Mal zu verbinden, folgen Sie den Anweisungen im [Datenbankanforderungen & Setup](~/tools/live-player/install.md). Sie können mehrere Geräte gekoppelt und über die IDE verwalten.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 Wählen Sie in Visual Studio **Tools > Xamarin Live Player > Geräte verwalten...**
 
@@ -67,7 +70,7 @@ In diesem Fenster können Sie die folgenden Schritte ausführen:
 
 Sie können dieses Fenster auch aus der Liste der Geräte zugreifen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 Wählen Sie in Visual Studio für Mac **Tools > Verwalten von Geräten (Xamarin Live Player)...**
 
@@ -91,6 +94,5 @@ Wenn Sie feststellen, dass alle Probleme finden Sie unter [Einschränkungen und 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Einschränkungen](~/tools/live-player/limitations.md)
 - [Problembehandlung](~/tools/live-player/troubleshooting.md)
-- [Xamarin Live Player-Beispiele](samples.md)
+- [Beispiele für die Verwendung mit Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

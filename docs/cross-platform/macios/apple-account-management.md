@@ -1,17 +1,17 @@
 ---
 title: Apple-Kontoverwaltung
-description: Dieses Dokument beschreibt, wie Sie die Apple-Konto-Verwaltungsfunktionen in Visual Studio für Mac und Visual Studio 2017 verwenden.
+description: Dieses Dokument beschreibt, wie Sie die Apple-Konto-Verwaltungsfunktionen in Visual Studio für Mac und Visual Studio-2019 verwenden.
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 1e353aceaf0e2c0525b82c0ccb7e7bcb73df3075
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106064"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855054"
 ---
 # <a name="apple-account-management"></a>Apple-Kontoverwaltung
 
@@ -33,7 +33,7 @@ Sie können auch die automatische Bereitstellung von Tools für die iOS automati
 
 ## <a name="requirements"></a>Anforderungen
 
-Apple-kontoverwaltung finden Sie in Visual Studio für Mac und Visual Studio 2017 (Version 15.7 und höher)
+Apple-kontoverwaltung ist in Visual Studio für Mac, 2019 für Visual Studio und Visual Studio 2017 (Version 15.7 und höher) verfügbar.
 
 Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weitere Informationen zum Apple-entwicklerkonten steht in der [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) Guide.
 
@@ -44,7 +44,7 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
 
 ## <a name="adding-an-apple-developer-account"></a>Hinzufügen einer Apple-Entwicklerkonto
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 1. Dialogfeld für die kontoverwaltung öffnen wechseln Sie zu **Visual Studio > Einstellungen > Apple-Entwicklerkonto**:
 
@@ -64,13 +64,13 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
 
     ![Apple Developer-Konto-Dialogfeld mit Konten hinzugefügt](apple-account-management-images/image5.png)
 
-7. Wählen Sie alle Teams, und drücken Sie die **Details anzeigen...** Bilderstellungsschaltfläche (...). Dies zeigt eine Liste aller von Signierungsidentitäten und Bereitstellungsprofile, die auf Ihrem Computer installiert sind:
+7. Wählen Sie alle Teams, und drücken Sie die **Details anzeigen...** Schaltfläche. Dies zeigt eine Liste aller von Signierungsidentitäten und Bereitstellungsprofile, die auf Ihrem Computer installiert sind:
 
     ![Ansicht Details Bildschirm, mit dem codesignieridentitäten und bereitstellungsprofile auf Ihrem Computer](apple-account-management-images/image6.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. Bevor Sie beginnen, Ihre Apple-ID für Visual Studio 2017 hinzufügen, stellen Sie sicher, dass Ihre Entwicklungsumgebung [gekoppelt mit einem Mac-buildhost](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+1. Bevor Sie beginnen, Ihre Apple-ID 2019 für Visual Studio hinzufügen, stellen Sie sicher, dass Ihre Entwicklungsumgebung [gekoppelt mit einem Mac-buildhost](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 1. Um die Konto-Management-Fenster öffnen, wechseln Sie zu **Tools > Optionen > Xamarin > Apple-Konten**:
 
@@ -82,7 +82,7 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
 
 1. Sobald Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie sich Ihre Apple-ID und alle Teams, denen Ihre Apple-ID gehört.
  
-1. Wählen Sie alle Teams, und drücken Sie die **Details anzeigen...** Bilderstellungsschaltfläche (...). Dies zeigt eine Liste aller von Signierungsidentitäten und Bereitstellungsprofile, die auf Ihrem Computer installiert sind:
+1. Wählen Sie alle Teams, und drücken Sie die **Details anzeigen...** Schaltfläche. Dies zeigt eine Liste aller von Signierungsidentitäten und Bereitstellungsprofile, die auf Ihrem Computer installiert sind:
 
     ![Dialogfeld "UserName" und "Kennwort"](apple-account-management-images/prov2.png)
 
@@ -109,11 +109,11 @@ Um eine neue signierungsidentität erstellen möchten, wählen die **Create Cert
 
 Wenn eine Option in der Dropdownliste abgeblendet und deaktiviert, bedeutet dies, dass Sie nicht das richtige Team zum Erstellen dieser Art des Zertifikats berechtigt sind.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 ![Create Certificate-Optionen](apple-account-management-images/image8.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ![Create Certificate-Optionen](apple-account-management-images/prov3.png)
 
@@ -123,11 +123,11 @@ Wenn eine Option in der Dropdownliste abgeblendet und deaktiviert, bedeutet dies
 
 Das Team-Dialogfeld "Details" zeigt außerdem eine Liste aller provisioning Profile, die mit Ihrem Developer-Konto verbunden. Sie können alle bereitstellungsprofile auf Ihrem lokalen Computer herunterladen, durch Drücken der **alle Profile herunterladen** Schaltfläche
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 ![Abschnitt der provisioning Profile herunterladen](apple-account-management-images/image9.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ![Abschnitt der provisioning Profile herunterladen](apple-account-management-images/prov4.png)
 

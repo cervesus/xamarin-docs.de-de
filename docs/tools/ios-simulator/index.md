@@ -1,30 +1,30 @@
 ---
 title: iOS-Remotesimulator für Windows
-description: Den remoten iOS-Simulator für Windows können Sie Ihre apps auf einem iOS-Simulator angezeigt, die in Windows mit Visual Studio 2017 testen.
+description: Den remoten iOS-Simulator für Windows können Sie Ihre apps auf einem iOS-Simulator angezeigt, die in Windows zusammen mit Visual Studio-2019 testen.
 ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: lobrien
 ms.author: laobri
-ms.date: 11/14/2018
-ms.openlocfilehash: 4a45d4fb7aaad504c7bb5628f1e521a39463b06f
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 04/02/2019
+ms.openlocfilehash: b962390d5a5a365ada93d1778e3efb65839f41c5
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899069"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854950"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>iOS-Remotesimulator für Windows
 
-Den remoten iOS-Simulator für Windows können Sie Ihre apps auf einem iOS-Simulator angezeigt, die in Windows mit Visual Studio 2017 testen.
+Den remoten iOS-Simulator für Windows können Sie Ihre apps auf einem iOS-Simulator angezeigt, die in Windows zusammen mit Visual Studio-2019 und Visual Studio 2017 testen.
 
-[![](images/hero-sml.png "iOS-Simulator unter Windows")](images/hero.png#lightbox)
+[![iBetriebssystem-Simulator unter Windows](images/hero-sml.png "iOS-Simulator unter Windows")](images/hero.png#lightbox)
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Der Remote-iOS-Simulator für Windows wird automatisch als Teil von Xamarin in Visual Studio 2017 installiert werden. Gehen Sie folgendermaßen vor, um es zu verwenden:
+Der Remote-iOS-Simulator für Windows wird automatisch als Teil von Xamarin in Visual Studio-2019 und Visual Studio 2017 installiert werden. Gehen Sie folgendermaßen vor, um es zu verwenden:
 
-1. [Koppeln Sie Visual Studio 2017 auf einem Mac Build Host](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
-2. Debuggen Sie in Visual Studio 2017 ein IOS- oder TvOS-Projekt. Der Remote-iOS-Simulator für Windows wird auf Ihrem Windows-Computer angezeigt.
+1. [Koppeln Visual 2019 auf einem Mac Build Host](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Debuggen Sie in Visual Studio ein IOS- oder TvOS-Projekt. Der Remote-iOS-Simulator für Windows wird auf Ihrem Windows-Computer angezeigt.
 
 Sehen Sie sich [in diesem Video](deploy.md) eine schrittweise Anleitung.
 
@@ -38,13 +38,13 @@ Auf die Symbolleiste am oberen Rand des Simulators überein Fensters enthält ei
 - [**Einstellungen** ](#settings) – zeigt an, Tastatur, Speicherort und andere Einstellungen.
 - [**Andere Optionen** ](#other-options) – bringt verschiedene Simulator-Optionen wie Drehung, Schütteln Gesten und Touch ID.
 
-    [![](images/maps-app-sml.png "iOS-Simulator zuordnet, Beispiel")](images/maps-app.png#lightbox)
+    [![iBetriebssystem-Simulator ordnet Beispiel](images/maps-app-sml.png "iOS-Simulator zuordnet, Beispiel")](images/maps-app.png#lightbox)
 
 ## <a name="settings"></a>Einstellungen
 
 Klicken Sie auf der Symbolleiste auf die Zahnradsymbol öffnet die **Einstellungen** Fenster:
 
-[![](images/settings-sml.png "Einstellungen für iOS-simulator")](images/settings.png#lightbox)
+[![iSimulator-betriebssystemeinstellungen](images/settings-sml.png "Einstellungen für iOS-Simulator")](images/settings.png#lightbox)
 
 Diese Einstellungen können Sie die Hardwaretastatur aktivieren, wählen Sie einen Speicherort an, die das Gerät sollte Bericht (statische und dynamische Speicherorte werden beide unterstützt), aktivieren Sie Touch ID und Zurücksetzen von Inhalt und alle Einstellungen für den Simulator.
 
@@ -52,7 +52,7 @@ Diese Einstellungen können Sie die Hardwaretastatur aktivieren, wählen Sie ein
 
 Der Symbolleiste auf die Schaltfläche zeigen, andere Optionen wie Drehung, Schütteln Gesten und neu gestartet wird. Diese dieselben Optionen können als Liste angezeigt werden, mit der rechten Maustaste an einer beliebigen Stelle im Fenster "des Simulators überein":
 
-[![](images/more-sml.png "zusätzliche Einstellungen für iOS-simulator")](images/more.png#lightbox)
+[![iZusätzliche Einstellungen der OS-Simulator](images/more-sml.png "zusätzliche Einstellungen für iOS-Simulator")](images/more.png#lightbox)
 
 ## <a name="touchscreen-support"></a>Unterstützung für Touchscreen
 
@@ -64,6 +64,6 @@ Auf ähnliche Weise behandelt den remoten iOS-Simulator für Windows Windows nas
 
 Um den remoten iOS-Simulator für Windows zu deaktivieren, navigieren Sie zu **Tools > Optionen > Xamarin > iOS-Einstellungen** , und deaktivieren Sie **Simulator Remote auf Windows**.
 
-[![](images/options-sml.png "Kontrollkästchen, um den Simulator verwenden.")](images/options.png#lightbox)
+[![cHeckbox Simulator verwenden](images/options-sml.png "Kontrollkästchen, um den Simulator verwenden.")](images/options.png#lightbox)
 
 Mit dieser Option deaktiviert ist, öffnet Debuggen buildhost im iOS-Simulator auf dem verbundenen Mac.
