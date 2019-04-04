@@ -7,16 +7,16 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: a67a2e12a12039755970a78739ea2ca3d2ffae08
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053489"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870234"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Zusammenfassung der Kapitel 14. Absolutes layout
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
+[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 
 Wie `StackLayout`, [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout) leitet sich von `Layout<View>` und erbt einen `Children` Eigenschaft. `AbsoluteLayout` implementiert eine Layoutsystem, das den Programmierer, geben Sie die Positionen der untergeordneten Elemente und optional ihre Größe erfordert. Die Position wird angegeben, indem die linke obere Ecke des untergeordneten Elements relativ zur oberen linken Ecke des der `AbsoluteLayout` in geräteunabhängigen Einheiten. `AbsoluteLayout` implementiert außerdem eine proportionale Positionierung und größenanpassung-Funktion aus.
 
@@ -26,7 +26,7 @@ In diesem Kapitel führt auch die wichtige Funktion von *angefügten bindbare Ei
 
 ## <a name="absolutelayout-in-code"></a>Von "AbsoluteLayout" im code
 
-Können Sie ein untergeordnetes Element zum Hinzufügen der `Children` Auflistung von eine `AbsoluteLayout` mit dem Standard [ `Add` ](xref:System.Collections.Generic.ICollection`1.Add*) -Methode, aber `AbsoluteLayout` bietet auch eine erweiterte [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/) Methode, die Sie angeben kann eine [ `Rectangle` ](xref:Xamarin.Forms.Rectangle). Eine andere [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/) Methode erfordert nur eine [ `Point` ](xref:Xamarin.Forms.Point), in diesem Fall das untergeordnete Element ist, uneingeschränkte und passt sich.
+Können Sie ein untergeordnetes Element zum Hinzufügen der `Children` Auflistung von eine `AbsoluteLayout` mit dem Standard [ `Add` ](xref:System.Collections.Generic.ICollection`1.Add*) -Methode, aber `AbsoluteLayout` bietet auch eine erweiterte [ `Add` ](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*) Methode, die Sie angeben kann eine [ `Rectangle` ](xref:Xamarin.Forms.Rectangle). Eine andere [ `Add` ](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*) Methode erfordert nur eine [ `Point` ](xref:Xamarin.Forms.Point), in diesem Fall das untergeordnete Element ist, uneingeschränkte und passt sich.
 
 Können Sie erstellen eine `Rectangle` Wert mit einer [Konstruktor](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double)) , erfordert vier Werte &mdash; die ersten beiden, der angibt, der der Position der linken oberen Ecke des untergeordneten Elements relativ zum übergeordneten Element und die zweiten beiden, der angibt, die die Größe des untergeordneten Elements. Oder Sie können eine [Konstruktor](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size)) erfordert, dass eine `Point` und [ `Size` ](xref:Xamarin.Forms.Size) Wert.
 

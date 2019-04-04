@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 8674ef47867acf3bca4d05fd6628a58e2f9ad90e
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329363"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855015"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Tieferer Einblick in Xamarin.Forms-Schnellstart
 
@@ -80,6 +80,7 @@ Das Projekt besteht aus mehreren Dateien:
 - **Models\Note.cs** – diese Klasse definiert eine `Note` Modell, mit deren Instanzen werden Daten über jeden Hinweis in der Anwendung speichern.
 - **App.xaml**: Das XAML-Markup für die `App`-Klasse, die ein Ressourcenverzeichnis für die Anwendung definiert
 - **App.xaml.cs**: Das CodeBehind-Modell für die `App`-Klasse, das die erste Seite instanziiert, die von der Anwendung auf jeder Plattform angezeigt wird, und für die Behandlung von Ereignissen im App-Lebenszyklus zuständig ist
+- **Datei "AssemblyInfo.cs"** – diese Datei enthält ein Application-Attribut für das Projekt, das auf Assemblyebene angewendet wird.
 - **NotesPage.xaml** – die XAML-Markup für die `NotesPage` -Klasse, die die Benutzeroberfläche für die Seite angezeigt, wenn die Anwendung startet definiert.
 - **NotesPage.xaml.cs** – der Code-Behind für die `NotesPage` -Klasse, die die Geschäftslogik, die ausgeführt wird enthält, wenn der Benutzer mit der Seite interagiert.
 - **NoteEntryPage.xaml** – die XAML-Markup für die `NoteEntryPage` -Klasse, die die Benutzeroberfläche für die Seite angezeigt, wenn der Benutzer eine Notiz gibt definiert.
@@ -106,9 +107,7 @@ Um die Wiederverwendung von Startcode zu maximieren, haben Xamarin.Forms-Anwendu
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Notes
 {
     public partial class App : Application
@@ -123,7 +122,17 @@ namespace Notes
 }
 ```
 
-Dieser Code legt fest der `MainPage` Eigenschaft der `App` -Klasse eine [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) -Instanz, deren Inhalt eine `NotesPage` Instanz. Außerdem aktiviert das [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)-Attribut den XAML-Compiler, sodass XAML direkt in der Zwischensprache kompiliert wird. Weitere Informationen finden Sie unter [XAML Compilation (XAML-Kompilierung)](~/xamarin-forms/xaml/xamlc.md).
+Dieser Code legt fest der `MainPage` Eigenschaft der `App` -Klasse eine [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) -Instanz, deren Inhalt eine `NotesPage` Instanz.
+
+Darüber hinaus die **"AssemblyInfo.cs"** -Datei enthält eine einzelne Anwendung Attribut, die auf der Assemblyebene angewendet wird:
+
+```csharp
+using Xamarin.Forms.Xaml;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+```
+
+Die [ `XamlCompilation` ](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) Attribut aktiviert den XAML-Compiler, sodass XAML direkt in der Zwischensprache kompiliert wird. Weitere Informationen finden Sie unter [XAML Compilation (XAML-Kompilierung)](~/xamarin-forms/xaml/xamlc.md).
 
 ## <a name="launching-the-application-on-each-platform"></a>Starten der Anwendung auf jeder Plattform
 
@@ -412,7 +421,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 In der `OnNoteAddedClicked` -Methode, die ausgeführt wird, wenn die Anwendung eine neue Notiz hinzugefügt wird, die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) von `NoteEntryPage` festgelegt ist, um ein neues `Note` Instanz. In der `OnListViewItemSelected` -Methode, die ausgeführt wird, wenn eine vorhandene Anmerkung ausgewählt ist die [ `ListView` ](xref:Xamarin.Forms.ListView), `BindingContext` von der `NoteEntryPage` ist, die dem ausgewählten `Note` -Instanz, die über zugegriffen wird die [ `e.SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) Eigenschaft.
 
 > [!IMPORTANT]
-> Die Eigenschaft [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der einzelnen *Zielobjekte* kann einzeln festgelegt werden, dies ist jedoch nicht erforderlich. `BindingContext` ist eine spezielle Eigenschaft, die von allen zugehörigen untergeordneten Elementen geerbt wird. Aus diesem Grund, wenn die `BindingContext` auf die [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) nastaven NA hodnotu eine `Note` Instanz, die alle untergeordneten Elemente von der `ContentPage` verfügen über denselben `BindingContext`, und können eine Bindung an öffentliche Eigenschaften des der `Note`Objekt.
+> Die Eigenschaft [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der einzelnen *Zielobjekte* kann einzeln festgelegt werden, dies ist jedoch nicht erforderlich. `BindingContext` ist eine spezielle Eigenschaft, die von seinen untergeordneten Elementen geerbt wird. Aus diesem Grund, wenn die `BindingContext` auf die [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) nastaven NA hodnotu eine `Note` Instanz, die alle untergeordneten Elemente von der `ContentPage` verfügen über denselben `BindingContext`, und können eine Bindung an öffentliche Eigenschaften des der `Note`Objekt.
 
 Die [ `Editor` ](xref:Xamarin.Forms.Editor) in `NoteEntryPage` bindet dann an die `Text` Eigenschaft der `Note` Objekt:
 
@@ -530,4 +539,4 @@ Alternativ enthält das Buch [_Creating Mobile Apps with Xamarin.Forms_](~/xamar
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Beispiele für die ersten Schritte](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/)
 - [Xamarin.Forms-API-Referenz](xref:Xamarin.Forms)
-- [Free Self-Guided Learning (Kostenloses eigenständiges Lernen) (Video)](https://university.xamarin.com/self-guided/)
+- [Kostenlose Kurzvorträgen (Video)](https://university.xamarin.com/self-guided/)

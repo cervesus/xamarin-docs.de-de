@@ -1,14 +1,19 @@
 ---
 title: Xamarin.iOS-API-Design
-description: 'Dieses Dokument beschreibt einige grundlegende Prinzipien, mit dem Entwerfen der Xamarin.iOS-APIs und diese Beziehung zum Objective-c'
+description: Dieses Dokument beschreibt einige grundlegende Prinzipien, mit dem Entwerfen der Xamarin.iOS-APIs und diese Beziehung zum Objective-c
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
+ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870364"
 ---
-
 # <a name="xamarinios-api-design"></a>Xamarin.iOS-API-Design
 
 Zusätzlich zu den Basisklassenbibliotheken, die Teil von Mono, [Xamarin.iOS](http://www.xamarin.com/iOS) im Lieferumfang von Bindungen für verschiedene iOS-APIs, um Entwicklern das Erstellen von native iOS-Anwendungen mit Mono zu ermöglichen.
@@ -26,7 +31,7 @@ Dies sind einige unserer Entwurfsprinzipien für die Xamarin.iOS-Bindungen (gelt
 
   - Von einer vorhandenen Klasse abgeleitet werden
   - Eine Verkettung der Basiskonstruktor aufrufen.
-  - Überschreiben von Methoden sollte mit # außer Kraft setzen-System ausgeführt werden
+  - Überschreiben von Methoden mit durchgeführt werden soll C#des Systems zu überschreiben
   - Unterklassen sollten mit C#-standard-Konstrukte verwendet werden.
 
 - Machen Sie nicht die Entwickler Objective-C-Selektoren
@@ -57,7 +62,7 @@ Dies sind einige unserer Entwurfsprinzipien für die Xamarin.iOS-Bindungen (gelt
 
 - Systemeigene C#-Typen:
 
-  - [`NSString` wird `string`](~/ios/internals/api-design/nsstring.md)
+  - [`NSString` Vervollständigung `string`](~/ios/internals/api-design/nsstring.md)
   - Aktivieren Sie `int` und `uint` Parameter, die Enumerationen in C#-Enumerationen und C#-Enumerationen mit wurden sollten `[Flags]` Attribute
   - Anstelle von Typ neutrale `NSArray` Objekte verfügbar machen, Arrays als stark typisierte Arrays.
   - Bieten Sie für Ereignisse und Benachrichtigungen Benutzern die Möglichkeit, zwischen:
@@ -80,7 +85,7 @@ Xamarin.iOS enthält eine Reihe von Assemblys, die bilden die *Xamarin.iOS Profi
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
-Die [ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/) Namespace ermöglicht den Entwicklern, die Welt zwischen c# und Objective-c zu überbrücken.
+Die [ObjCRuntime](xref:ObjCRuntime) Namespace ermöglicht den Entwicklern, die Welt zwischen c# und Objective-c zu überbrücken.
 Dies ist eine neue Bindung, die speziell für iOS, basierend auf der Erfahrung von Cocoa- und GTK#-entworfen wurde.
 
 <a name="MonoTouch.Foundation" />
@@ -201,13 +206,13 @@ C#-Delegaten werden für häufige Vorgänge bereitgestellt. Finden Sie unter den
 
 #### <a name="opengles"></a>OpenGLES
 
-Für OpenGLES, wir Verteilen einer [Version geändert](https://developer.xamarin.com/api/namespace/OpenTK/) von der [OpenTK](http://www.opentk.com/) -API, eine objektorientierte-Bindung mit OpenGL, die geändert wurde, um CoreGraphics-Datentypen und-Strukturen verwendet, als auch nur verfügbar zu machen die die Funktionalität, die unter iOS verfügbar ist.
+Für OpenGLES, wir Verteilen einer [Version geändert](xref:OpenTK) von der [OpenTK](http://www.opentk.com/) -API, eine objektorientierte-Bindung mit OpenGL, die geändert wurde, um CoreGraphics-Datentypen und-Strukturen verwendet, als auch nur verfügbar zu machen die die Funktionalität, die unter iOS verfügbar ist.
 
-OpenGLES-1.1-Funktion wird über den Typ ES11.GL dokumentiert [hier](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES11.GL/) Typ.
+OpenGLES-1.1-Funktion wird über den Typ ES11.GL dokumentiert [hier](xref:OpenTK.Graphics.ES11.GL) Typ.
 
-OpenGLES-2.0-Funktion wird über den Typ ES20.GL dokumentiert [hier](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES20.GL/) Typ.
+OpenGLES-2.0-Funktion wird über den Typ ES20.GL dokumentiert [hier](xref:OpenTK.Graphics.ES20.GL) Typ.
 
-OpenGLES-3.0-Funktion wird über den Typ ES30.GL dokumentiert [hier](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/) Typ.
+OpenGLES-3.0-Funktion wird über den Typ ES30.GL dokumentiert [hier](xref:OpenTK.Graphics.ES30.GL) Typ.
 
 
 ### <a name="binding-design"></a>Design binden

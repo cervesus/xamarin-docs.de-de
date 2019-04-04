@@ -7,16 +7,16 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: dc9d57c0edf50f7fe5a7241e64cc727413004252
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050896"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869987"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Zusammenfassung der Kapitel 17. Optimieren des Rasters
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
 Die [ `Grid` ](xref:Xamarin.Forms.Grid) ist ein leistungsstarke Layout-Mechanismus, der ordnet seine untergeordneten Elemente in Zeilen und Spalten von Zellen. Im Gegensatz zu HTML-Code ähnlich `table` -Element, das `Grid` ist ausschließlich für Zwecke der Präsentation, anstatt Layout.
 
@@ -68,11 +68,11 @@ Die `RowDefinitions` und `ColumnDefinitions` Auflistungen sind nicht unbedingt e
 
 ### <a name="the-grid-in-code"></a>Das Raster im code
 
-Die [ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo) Beispiel veranschaulicht, wie zum Erstellen und Auffüllen einer `Grid` im Code. Sie können die angefügten Eigenschaften festlegen, für jedes untergeordnete Element direkt oder indirekt durch Aufrufen von zusätzlichen `Add` Methoden, z. B. [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) von definiert die [Grid.IGridList<T> ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid+IGridList%3CT%3E/) -Schnittstelle.
+Die [ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo) Beispiel veranschaulicht, wie zum Erstellen und Auffüllen einer `Grid` im Code. Sie können die angefügten Eigenschaften festlegen, für jedes untergeordnete Element direkt oder indirekt durch Aufrufen von zusätzlichen `Add` Methoden, z. B. [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*) von definiert die [Grid.IGridList<T> ](xref:Xamarin.Forms.Grid.IGridList`1) -Schnittstelle.
 
 ### <a name="the-grid-bar-chart"></a>Das Raster-Balkendiagramm
 
-Die [ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart) Beispiel zeigt, wie mehrere hinzuzufügende `BoxView` Elementen, die eine `Grid` mit der massenbearbeitungsfunktion [ `AddHorizontal` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.AddHorizontal/p/System.Collections.Generic.IEnumerable%7BXamarin.Forms.View%7D/) Methode. Standardmäßig diese `BoxView` Elemente haben dieselbe Breite. Die Höhe der einzelnen `BoxView` kann dann gesteuert werden, um ein Balkendiagramm zu entsprechen.
+Die [ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart) Beispiel zeigt, wie mehrere hinzuzufügende `BoxView` Elementen, die eine `Grid` mit der massenbearbeitungsfunktion [ `AddHorizontal` ](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*) Methode. Standardmäßig diese `BoxView` Elemente haben dieselbe Breite. Die Höhe der einzelnen `BoxView` kann dann gesteuert werden, um ein Balkendiagramm zu entsprechen.
 
 Die `Grid` in die **GridBarChart** Freigaben Beispiel einer `AbsoluteLayout` übergeordnetes Element mit einem anfänglich unsichtbar `Frame`. Legt auch fest, das Programm eine `TapGestureRecognizer` auf jedem `BoxView` verwenden die `Frame` Informationen zu der diese Leiste angezeigt.
 

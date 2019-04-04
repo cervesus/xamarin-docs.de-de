@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: bcca7bc7ac56b745945b6d7daef3c4ddd634b486
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059404"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870416"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Zusammenfassung der Kapitel 28. Position und Karten
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
+[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
 > Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
@@ -62,7 +62,7 @@ Die [ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-
 
 #### <a name="the-ios-location-manager"></a>Der Quellspeicherort-Manager für iOS
 
-Die iOS-Implementierung von `ILocationTracker` ist eine [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/LocationTracker.cs) Klasse, mit der, Verwendung des iOS [ `CLLocationManager` ](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/).
+Die iOS-Implementierung von `ILocationTracker` ist eine [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/LocationTracker.cs) Klasse, mit der, Verwendung des iOS [ `CLLocationManager` ](xref:CoreLocation.CLLocationManager).
 
 #### <a name="the-android-location-manager"></a>Der Speicherort von Android-manager
 
@@ -146,7 +146,7 @@ Ein Programm erhalten dem aktuellen Bereich, der die `Map` angezeigt, über die 
 
 `VisibleRegion` ist vom Typ [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan), eine Klasse mit vier schreibgeschützte Eigenschaften:
 
-- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) Der Typ [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) vom Typ [`Position`](xref:Xamarin.Forms.Maps.Position)
 - [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) Der Typ `double`, der angibt, der der Höhe des angezeigten Bereich der Karte
 - [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) Der Typ `double`, der angibt, der Breite des angezeigten Bereich der Karte
 - [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) Der Typ [ `Distance` ](xref:Xamarin.Forms.Maps.Distance), der angibt, der Größe des größten runden Fläche auf der Karte angezeigt.

@@ -7,16 +7,16 @@ ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db837ac8bfa1b7a946ee606e9481f9feb2a8a31f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050118"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870221"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>Zusammenfassung der Kapitel 18. MVVM
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 Eine der besten Möglichkeiten zum Entwerfen einer Anwendungs durch die Trennung der Benutzeroberfläche aus der zugrunde liegende Code, der manchmal auch aufgerufen wird, wird die *Geschäftslogik*. Verschiedene Methoden vorhanden sind, aber diejenige, die für XAML-basierten Umgebungen zugeschnitten ist, wird als Model-View-ViewModel "oder" MVVM bezeichnet.
 
@@ -87,7 +87,7 @@ Die `Button` Elemente können ganz einfach durch ersetzt werden `TapGestureRecog
 
 ### <a name="a-calculator-almost"></a>Ein Rechner, fast
 
-Die [ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) Beispiel wird sowohl die `Execute` und `CanExecute` Methoden `ICommand`. Er verwendet eine [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) Bibliothek. Das ViewModel enthält sechs Eigenschaften des Typs `ICommand`. Diese werden initialisiert, aus der [ `Command` Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action)) und [ `Command` Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean})) von `Command` und [ `Command<T>` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command%3CT%3E.Command%3CT%3E/p/System.Action%7BT%7D/System.Func%7BT,System.Boolean%7D/) der `Command<T>`. Die numerischen Tasten, der die Rechenmaschine gebunden sind, die Eigenschaft, die mit initialisiert wird `Command<T>`, und ein `string` Argument `Execute` und `CanExecute` identifiziert den bestimmten Schlüssel.
+Die [ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) Beispiel wird sowohl die `Execute` und `CanExecute` Methoden `ICommand`. Er verwendet eine [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) Bibliothek. Das ViewModel enthält sechs Eigenschaften des Typs `ICommand`. Diese werden initialisiert, aus der [ `Command` Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action)) und [ `Command` Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean})) von `Command` und [ `Command<T>` Konstruktor](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__) der `Command<T>`. Die numerischen Tasten, der die Rechenmaschine gebunden sind, die Eigenschaft, die mit initialisiert wird `Command<T>`, und ein `string` Argument `Execute` und `CanExecute` identifiziert den bestimmten Schlüssel.
 
 ## <a name="viewmodels-and-the-application-lifecycle"></a>ViewModels und den Lebenszyklus der Anwendung
 
