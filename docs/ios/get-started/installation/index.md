@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 67f43c0ac6cfac2a7b58afa7046875059529500b
-ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
+ms.openlocfilehash: 24aa6dae3767255155c6b739e50174214a28d3d8
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55668588"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855249"
 ---
 # <a name="xamarinios-installation"></a>Installation von Xamarin.iOS
 
@@ -32,7 +32,6 @@ Die aktuelle Version von Xcode kann vom [iOS Developer Center](https://developer
 
 Weitere Anweisungen zum Installieren von Xamarin.iOS auf einem Mac finden Sie im Handbuch [Mac Installation (Mac-Installation)](https://docs.microsoft.com/visualstudio/mac/installation).
 
-
 ## <a name="windows-installation"></a>Windows-Installation
 
 Weitere Anweisungen zum Installieren von Xamarin.iOS auf einem Windows-Computer finden Sie im Handbuch [Windows Installation (Windows-Installation)](~/ios/get-started/installation/windows/index.md).
@@ -41,5 +40,5 @@ Weitere Anweisungen zum Installieren von Xamarin.iOS auf einem Windows-Computer 
 
 Sobald Sie Xamarin.iOS erfolgreich installiert haben, sollten Sie mehr über das Bereitstellen Ihres iOS-Geräts erfahren, damit Sie Xamarin.iOS-Anwendungen auf dem Gerät entwickeln und testen können.
 
-* [Set Up Device for Development (Einrichten eines Geräts für die Entwicklung)](device-provisioning/index.md)
-* [Free Provisioning (Kostenlose Bereitstellung)](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+* [Einrichten eines Geräts für die Entwicklung](device-provisioning/index.md)
+* [Kostenlose Bereitstellung](~/ios/get-started/installation/device-provisioning/free-provisioning.md)

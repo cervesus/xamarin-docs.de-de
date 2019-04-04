@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 1f7f2af19c6faad32f94d82dbc58f140f45dea5d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2cacf429efb11c5dd19276d62b997acae767516e
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671117"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870390"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS-Leistung
 
@@ -101,11 +101,11 @@ container.AddSubview (new MyView (container));
 
 Hier halt das darin enthaltene Objekt das übergeordnete Element nicht aktiv. Allerdings hält das übergeordnete Element das untergeordnete Element während des erfolgten `container.AddSubView` Aufrufs aktiv.
 
-Dies kommt auch in den iOS-APIs vor, die den Delegaten oder das Datenquellenmuster verwenden. Dabei enthält eine Peerklasse die Implementierung, z.B. beim Festlegen der Eigenschaften [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/)
-oder [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/)
+Dies kommt auch in den iOS-APIs vor, die den Delegaten oder das Datenquellenmuster verwenden. Dabei enthält eine Peerklasse die Implementierung, z.B. beim Festlegen der Eigenschaften [`Delegate`](xref:UIKit.UITableView.Delegate*)
+oder [`DataSource`](xref:UIKit.UITableView.DataSource*)
 in der [`UITableView`](xref:UIKit.UITableView)-Klasse.
 
-Bei Klassen, die ausschließlich zum Zweck der Implementierung eines Protokolls erstellt werden, z.B. die [`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/)-Klasse, können Sie, anstatt eine Unterklasse zu erstellen, nur die Schnittstelle in der Klasse implementieren, die Methode überschreiben und `this` die `DataSource`-Eigenschaft zuweisen.
+Bei Klassen, die ausschließlich zum Zweck der Implementierung eines Protokolls erstellt werden, z.B. die [`IUITableViewDataSource`](xref:UIKit.IUITableViewDataSource)-Klasse, können Sie, anstatt eine Unterklasse zu erstellen, nur die Schnittstelle in der Klasse implementieren, die Methode überschreiben und `this` die `DataSource`-Eigenschaft zuweisen.
 
 #### <a name="weak-attribute"></a>Weak-Attribut
 
@@ -278,7 +278,7 @@ Der Simulator kann z.B. nicht die CPU- oder Arbeitsspeichereinschränkungen eine
 
 Spiele verwenden oft enge Schleifen, um die Spiellogik auszuführen und den Bildschirm zu aktualisieren. Typische Bildfrequenzen reichen von 30 bis 60 Bildern pro Sekunde. Einige Entwickler denken, dass sie den Bildschirm so oft wie möglich pro Sekunde aktualisieren sollten. Sie kombinieren ihre Spielsimulation mit Aktualisierungen des Bildschirms und sind so versucht, die Anzeige mehr als sechzig Mal pro Sekunde zu aktualisieren.
 
-Allerdings erlaubt der Bildschirmserver nicht mehr als 60 Bilder pro Sekunde. Daher können Versuche, den Bildschirm häufiger zu aktualisieren, zu Screen Tearing und Micro-Stuttering führen. Sie sollten den Code so strukturieren, dass Änderungen auf dem Bildschirm mit der Aktualisierung der Anzeige synchronisiert werden. Dies kann durch die [`CoreAnimation.CADisplayLink`](https://developer.xamarin.com/api/type/CoreAnimation.CADisplayLink/)-Klasse erreicht werden, die mit 60 Bildern pro Sekunde ausgeführt wird und einen Timer darstellt, der für die Visualisierung und für Spiele geeignet ist.
+Allerdings erlaubt der Bildschirmserver nicht mehr als 60 Bilder pro Sekunde. Daher können Versuche, den Bildschirm häufiger zu aktualisieren, zu Screen Tearing und Micro-Stuttering führen. Sie sollten den Code so strukturieren, dass Änderungen auf dem Bildschirm mit der Aktualisierung der Anzeige synchronisiert werden. Dies kann durch die [`CoreAnimation.CADisplayLink`](xref:CoreAnimation.CADisplayLink)-Klasse erreicht werden, die mit 60 Bildern pro Sekunde ausgeführt wird und einen Timer darstellt, der für die Visualisierung und für Spiele geeignet ist.
 
 ## <a name="avoid-core-animation-transparency"></a>Vermeiden von Transparenz bei der Kernanimation
 
