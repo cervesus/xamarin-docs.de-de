@@ -1,14 +1,19 @@
 ---
 title: Einführung in die MonoTouch.Dialog für Xamarin.iOS
-description: 'Dieses Dokument beschreibt MonoTouch.Dialog (MT.) (D), ein Framework für die schnelle, deklarativen Entwicklung von Benutzeroberflächen mit Xamarin.iOS. Es wird erläutert, wie Sie mit den MonoTouch.Dialog-APIs erstellen Sie eine Schnittstelle im Code oder in JSON, und Verwenden von Features wie zum Aktualisieren ziehen, Suche, Bild laden im Hintergrund und mehr.'
+description: Dieses Dokument beschreibt MonoTouch.Dialog (MT.) (D), ein Framework für die schnelle, deklarativen Entwicklung von Benutzeroberflächen mit Xamarin.iOS. Es wird erläutert, wie Sie mit den MonoTouch.Dialog-APIs erstellen Sie eine Schnittstelle im Code oder in JSON, und Verwenden von Features wie zum Aktualisieren ziehen, Suche, Bild laden im Hintergrund und mehr.
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
+ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670138"
 ---
-
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Einführung in die MonoTouch.Dialog für Xamarin.iOS
 
 MonoTouch.Dialog, bezeichnet als MT. D kurz, ist eine schnelle entwicklungstoolkit, die Entwickler Anwendung Bildschirme und Navigation über die Informationen, anstatt den Aufwand zum Erstellen von View Controller, Tabellen usw. erstellen kann. Daher wird eine erhebliche Vereinfachung der Entwicklung und Code Verringerung der Benutzeroberfläche. Betrachten Sie z. B. des folgenden Screenshots aus:

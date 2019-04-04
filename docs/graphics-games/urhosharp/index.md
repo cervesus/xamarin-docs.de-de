@@ -1,11 +1,17 @@
 ---
 title: Von UrhoSharp - 3D/2D-Engine
-description: 'Von UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D- und 2D-spielen-Engine, die zum Erstellen von animierten im Hintergrund, 2D und 3D für Ihre Anwendungen mit Geometrien, Materialien, Lichter und Kameras verwendet werden kann.'
+description: Von UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D- und 2D-spielen-Engine, die zum Erstellen von animierten im Hintergrund, 2D und 3D für Ihre Anwendungen mit Geometrien, Materialien, Lichter und Kameras verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
+ms.openlocfilehash: c008711a12729779312ae41388495e2058b4f27b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670271"
 ---
 # <a name="urhosharp---3d2d-engine"></a>Von UrhoSharp - 3D/2D-Engine
 

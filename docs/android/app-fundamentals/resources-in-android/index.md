@@ -1,14 +1,19 @@
 ---
 title: Android-Ressourcen
-description: 'Dieser Artikel führt das Konzept der Android-Ressourcen in Xamarin.Android und wird deren Verwendung zu dokumentieren. Es wird beschrieben, wie Ressourcen in Ihrer Android-Anwendung verwenden, um anwendungslokalisierung und mehrere Geräte aus unterschiedlichen Bildschirmgrößen und dichten zu unterstützen.'
+description: Dieser Artikel führt das Konzept der Android-Ressourcen in Xamarin.Android und wird deren Verwendung zu dokumentieren. Es wird beschrieben, wie Ressourcen in Ihrer Android-Anwendung verwenden, um anwendungslokalisierung und mehrere Geräte aus unterschiedlichen Bildschirmgrößen und dichten zu unterstützen.
 ms.prod: xamarin
 ms.assetid: C0DCC856-FA36-04CD-443F-68D26075649E
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
+ms.openlocfilehash: f14b3fd31fdda200f51f429367465677d389b1ca
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666361"
 ---
-
 # <a name="android-resources"></a>Android-Ressourcen
 
 _Dieser Artikel führt das Konzept der Android-Ressourcen in Xamarin.Android und wird deren Verwendung zu dokumentieren. Es wird beschrieben, wie Ressourcen in Ihrer Android-Anwendung verwenden, um anwendungslokalisierung und mehrere Geräte aus unterschiedlichen Bildschirmgrößen und dichten zu unterstützen._

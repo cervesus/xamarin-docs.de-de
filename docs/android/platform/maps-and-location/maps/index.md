@@ -1,14 +1,19 @@
 ---
 title: 'Gewusst wie: Verwenden von Google Maps und den Speicherort, die mit Xamarin.Android'
-description: 'In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen.'
+description: In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen.
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
+ms.openlocfilehash: 78908e1b1ad6d3f572ce45c8189d8f4ee48ad6ee
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666360"
 ---
-
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Gewusst wie: Verwenden von Google Maps und den Speicherort, die mit Xamarin.Android
 
 _In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen._

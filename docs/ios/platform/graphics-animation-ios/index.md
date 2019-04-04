@@ -1,14 +1,19 @@
 ---
 title: Grafiken und Animationen in iOS
-description: 'Dieses Dokument enthält Links zu verschiedenen Leitfäden, die wie die Core-Image und Core Graphics Core Animation-Frameworks in Xamarin.iOS verwendet werden kann.'
+description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die wie die Core-Image und Core Graphics Core Animation-Frameworks in Xamarin.iOS verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
+ms.openlocfilehash: c553bd6d81e43913b6322b2ff85972a81b87f6cf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666410"
 ---
-
 # <a name="graphics-and-animation-in-ios"></a>Grafiken und Animationen in iOS
 
 ![Images/00_final_app.PNG](images/00-final-app.png "eine Beispiel-app-Ausführung")

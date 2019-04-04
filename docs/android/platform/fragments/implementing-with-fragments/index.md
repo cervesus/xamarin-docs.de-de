@@ -1,6 +1,6 @@
 ---
 title: Implementieren von Fragmenten – Exemplarische Vorgehensweise
-description: 'In diesem Artikel erläutert, wie Fragmente zum Entwickeln von Xamarin.Android-Anwendungen verwenden.'
+description: In diesem Artikel erläutert, wie Fragmente zum Entwickeln von Xamarin.Android-Anwendungen verwenden.
 ms.topic: tutorial
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
+ms.openlocfilehash: 2ff4729e68497391d41521da26917571c146b541
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667264"
 ---
-
 # <a name="implementing-fragments---walkthrough"></a>Implementieren von Fragmenten – Exemplarische Vorgehensweise
 
 _Fragmente sind eigenständige, modulare Komponenten, mit deren Hilfe können die Komplexität der Android-apps zu beheben, die Geräte mit einer Vielzahl von Bildschirmgrößen abzielen. Dieser Artikel führt durch das Erstellen und verwenden Sie Fragmente, bei der Entwicklung von Xamarin.Android-Anwendungen._

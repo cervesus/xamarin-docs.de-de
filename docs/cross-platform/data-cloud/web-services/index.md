@@ -1,13 +1,18 @@
 ---
 title: Einführung in Webdienste
-description: 'Diese Anleitung veranschaulicht, wie andere webdiensttechnologien genutzt wird. Die behandelten Themen umfassen die Kommunikation mit REST-Diensten, SOAP-Dienste und Windows Communication Foundation-Dienste.'
+description: Diese Anleitung veranschaulicht, wie andere webdiensttechnologien genutzt wird. Die behandelten Themen umfassen die Kommunikation mit REST-Diensten, SOAP-Dienste und Windows Communication Foundation-Dienste.
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
+ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672390"
 ---
-
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
 _Diese Anleitung veranschaulicht, wie andere webdiensttechnologien genutzt wird. Die behandelten Themen umfassen die Kommunikation mit REST-Diensten, SOAP-Dienste und Windows Communication Foundation-Dienste._

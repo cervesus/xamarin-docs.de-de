@@ -1,14 +1,19 @@
 ---
 title: Text in Xamarin.Forms
-description: 'Xamarin.Forms verfügt über drei primäre Ansichten zum Arbeiten mit Text, und in diesem Artikel wird erläutert, wie Sie mit, dass sie eingeben und Anzeigen von Text in Xamarin.Forms-Anwendungen.'
+description: Xamarin.Forms verfügt über drei primäre Ansichten zum Arbeiten mit Text, und in diesem Artikel wird erläutert, wie Sie mit, dass sie eingeben und Anzeigen von Text in Xamarin.Forms-Anwendungen.
 ms.prod: xamarin
 ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
+ms.openlocfilehash: 8754f6573b00334fd228b1c9bd094cd91565976c
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557089"
 ---
-
 # <a name="text-in-xamarinforms"></a>Text in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)

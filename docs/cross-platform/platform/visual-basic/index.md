@@ -1,13 +1,18 @@
 ---
 title: Portable Visual Basic.NET
-description: 'Dieses Handbuch wird erläutert, wie Visual Basic zum Schreiben von portablen Klassenbibliothek (PCL)-Projekte, die verwendet werden können in Lösungen, die für Xamarin.iOS und Xamarin.Android verwendet werden kann.'
+description: Dieses Handbuch wird erläutert, wie Visual Basic zum Schreiben von portablen Klassenbibliothek (PCL)-Projekte, die verwendet werden können in Lösungen, die für Xamarin.iOS und Xamarin.Android verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
+ms.openlocfilehash: e4c8c43b4df1a7bfc5436f14564c6d0164216c46
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669244"
 ---
-
 # <a name="portable-visual-basicnet"></a>Portable Visual Basic.NET
 
 Xamarin.IOS und Android-Projekte unterstützen nicht systemintern Visual Basic. jedoch können Entwickler portabler Klassenbibliotheken zum Migrieren von vorhandenen Visual Basic-Codes für iOS und Android, oder Schreiben von großen Teil der Anwendungslogik in Visual Basic verwenden. Xamarin.Forms-Anwendungen können vollständig in Visual Basic (mit Ausnahme von benutzerdefinierten Renderern und abhängigkeitsdiensten XAML-Codebehind) erstellt werden.

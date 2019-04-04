@@ -1,13 +1,18 @@
 ---
 title: Xamarin Profiler
-description: 'Dieses Handbuch beschreibt die wichtigsten Features von der Xamarin Profiler. Sie sehen an Profiler, profilerstellung und wann sie verwendet werden sollen und an einen Standardworkflow, für die profilerstellung von Xamarin-Anwendungen.'
+description: Dieses Handbuch beschreibt die wichtigsten Features von der Xamarin Profiler. Sie sehen an Profiler, profilerstellung und wann sie verwendet werden sollen und an einen Standardworkflow, für die profilerstellung von Xamarin-Anwendungen.
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
+ms.openlocfilehash: 15739ff191953e4730d44c6ad9f63dccb9a0017e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668412"
 ---
-
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
 _Dieses Handbuch beschreibt die wichtigsten Features von der Xamarin Profiler. Sie sehen an Profiler, profilerstellung und wann sie verwendet werden sollen und an einen Standardworkflow, für die profilerstellung von Xamarin-Anwendungen._

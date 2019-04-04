@@ -1,13 +1,18 @@
 ---
 title: Erste Schritte mit Java
-description: 'Dieses Dokument beschreibt, wie die ersten Schritte mit Java mit Einbetten von .NET. Es wird erläutert, Systemanforderungen, Installation und unterstützte Plattformen.'
+description: Dieses Dokument beschreibt, wie die ersten Schritte mit Java mit Einbetten von .NET. Es wird erläutert, Systemanforderungen, Installation und unterstützte Plattformen.
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
+ms.openlocfilehash: 79a483743946c4f7509833867f2afe4b1e055183
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667177"
 ---
-
 # <a name="getting-started-with-java"></a>Erste Schritte mit Java
 
 Dies ist die ersten Schritte Seite für Java, das die Grundlagen für alle unterstützten Plattformen behandelt.

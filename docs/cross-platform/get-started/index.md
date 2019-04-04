@@ -1,14 +1,19 @@
 ---
 title: Erste Schritte mit Xamarin
-description: 'In diesem Artikel finden Sie Links zu verschiedenen Leitfäden, in denen beschrieben wird, wie Sie in die Xamarin-Entwicklung einsteigen. In den verlinkten Inhalten erfahren Sie, wie Sie Ihre erste App erstellen, außerdem erhalten Sie eine allgemeine Einführung in die mobile Entwicklung und Informationen zur Weiterbildung mit Xamarin University.'
+description: In diesem Artikel finden Sie Links zu verschiedenen Leitfäden, in denen beschrieben wird, wie Sie in die Xamarin-Entwicklung einsteigen. In den verlinkten Inhalten erfahren Sie, wie Sie Ihre erste App erstellen, außerdem erhalten Sie eine allgemeine Einführung in die mobile Entwicklung und Informationen zur Weiterbildung mit Xamarin University.
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
+ms.openlocfilehash: b9b48d83199f83c69a42785d4d0c4008a5c6a5e1
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197393"
 ---
-
 # <a name="building-mobile-apps"></a>Erstellen von mobilen Apps
 
 Sehen Sie sich vor Beginn die [Systemanforderungen](requirements.md) sowie die [Installationsanweisungen](~/get-started/installation/index.md) an, um sicherzustellen, dass alles bereit ist.

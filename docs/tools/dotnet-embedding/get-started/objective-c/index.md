@@ -1,13 +1,18 @@
 ---
 title: Erste Schritte mit Objective-C
-description: 'In diesem Dokument wird beschrieben, wie erste Schritte mit .NET einbetten, mit Objective-c Es erläutert die Anforderungen, die über NuGet und unterstützten Plattformen installieren Einbetten von .NET.'
+description: In diesem Dokument wird beschrieben, wie erste Schritte mit .NET einbetten, mit Objective-c Es erläutert die Anforderungen, die über NuGet und unterstützten Plattformen installieren Einbetten von .NET.
 ms.prod: xamarin
 ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
+ms.openlocfilehash: 92b11db2ee566bcd9f3f8a3ee3771e163a47589b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670219"
 ---
-
 # <a name="getting-started-with-objective-c"></a>Erste Schritte mit Objective-C
 
 Dies ist die Seite "Erste Schritte", für Objective-C, die die Grundlagen für alle unterstützten Plattformen abdeckt.
