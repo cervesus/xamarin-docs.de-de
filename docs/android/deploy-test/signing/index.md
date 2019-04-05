@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
+ms.openlocfilehash: 5bdd95409e71955b4f1549eece42b15cee38131a
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58506992"
 ---
-
 # <a name="signing-the-android-application-package"></a>Signieren des Android-Anwendungspakets
 
 Unter [Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md) wurde der **Archiv-Manager** verwendet, um die App zu erstellen und zum Signieren und Veröffentlichen in ein Archiv abzulegen. In diesem Abschnitt wird erklärt, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt werden und die archivierte App *ad hoc* auf dem Datenträger veröffentlicht wird. Das resultierende APK kann ohne Verwendung eines App Stores auf Android-Geräten quergeladen werden.

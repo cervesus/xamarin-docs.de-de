@@ -1,14 +1,19 @@
 ---
 title: Lokalisierung in Xamarin.iOS
-description: 'Dieses Dokument beschreibt die iOS-Lokalisierungsfeatures und wie Sie diese Funktionen in Xamarin.iOS-apps verwenden. Es wird erläutert, Sprache, Gebietsschema, Zeichenfolgen-Dateien, startbilder und mehr.'
+description: Dieses Dokument beschreibt die iOS-Lokalisierungsfeatures und wie Sie diese Funktionen in Xamarin.iOS-apps verwenden. Es wird erläutert, Sprache, Gebietsschema, Zeichenfolgen-Dateien, startbilder und mehr.
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
+ms.openlocfilehash: 11926d3cf0c3954c97cdd1e92283626067c9623f
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678014"
 ---
-
 # <a name="localization-in-xamarinios"></a>Lokalisierung in Xamarin.iOS
 
 _Dieses Dokument behandelt die Lokalisierungsfeatures von iOS-SDK und wie Sie sie mit Xamarin zugreifen._

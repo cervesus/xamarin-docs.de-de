@@ -1,14 +1,19 @@
 ---
 title: Einführung in Storyboards in Xamarin.iOS
-description: 'Dieses Dokument enthält eine Einführung in Storyboards in Xamarin.iOS. Es wird beschrieben, wie ein Storyboard verwendet wird, um eine Benutzeroberfläche zu definieren, Übergänge, und wie Sie iOS-Designer verwenden, um Storyboard-Dateien zu bearbeiten.'
+description: Dieses Dokument enthält eine Einführung in Storyboards in Xamarin.iOS. Es wird beschrieben, wie ein Storyboard verwendet wird, um eine Benutzeroberfläche zu definieren, Übergänge, und wie Sie iOS-Designer verwenden, um Storyboard-Dateien zu bearbeiten.
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
+ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071111"
 ---
-
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in Xamarin.iOS
 
 In diesem Handbuch wird erläutert, welche ein Storyboard ist, und überprüfen Sie einige der wichtigsten Komponenten – z. B. segues beschrieben. Betrachten wir wie Storyboards erstellt und verwendet wird, werden können und welche Vorteile sie haben für einen Entwickler.

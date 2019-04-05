@@ -1,14 +1,19 @@
 ---
 title: Bereitstellen und Testen von Xamarin.Forms
-description: 'In diesem Handbuch wird erläutert, wie Xamarin.Forms-Anwendungen durch das Optimieren der Leistung und das Automatisieren der Tests mit Xamarin.UITest und App Center stabilisiert werden können.'
+description: In diesem Handbuch wird erläutert, wie Xamarin.Forms-Anwendungen durch das Optimieren der Leistung und das Automatisieren der Tests mit Xamarin.UITest und App Center stabilisiert werden können.
 ms.prod: xamarin
 ms.assetid: 705c9fa4-12ef-4ee0-ab3e-8319ee9944c5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/04/2019
+ms.openlocfilehash: e290c52b2f6ed6a7fc194dea6a9155b57bea3d4b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669582"
 ---
-
 # <a name="xamarinforms-deployment-and-testing"></a>Bereitstellen und Testen von Xamarin.Forms
 
 ## <a name="publishing-ios-appsiosdeploy-testapp-distributionindexmd"></a>[Veröffentlichung von iOS-Apps](~/ios/deploy-test/app-distribution/index.md)

@@ -1,14 +1,19 @@
 ---
 title: Erste Schritte mit TvOS in Xamarin
-description: 'Dieses Dokument beschreibt, wie Sie die TvOS-apps mit Xamarin zu entwickeln. Verknüpft ein Installationshandbuch und eine kurzanleitung.'
+description: Dieses Dokument beschreibt, wie Sie die TvOS-apps mit Xamarin zu entwickeln. Verknüpft ein Installationshandbuch und eine kurzanleitung.
 ms.prod: xamarin
 ms.assetid: 1A3D8211-A689-41D9-BCFE-AF8398992031
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
+ms.openlocfilehash: 1d7f6f3939d79c9ad28701bb89eb75256503a977
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070631"
 ---
-
 # <a name="getting-started-with-tvos-in-xamarin"></a>Erste Schritte mit TvOS in Xamarin
 
 Diese Reihe wird die Grundlagen der Entwicklung mit Xamarin.tvOS. Es wird Unterstützung für TvOS zu starten, entwerfen, Programmieren und Ausführen einer app zu installieren. Dabei erfahren sie die Fähigkeiten und Toolsets, die auf eine beliebige Xamarin.tvOS-app benötigt werden.

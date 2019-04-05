@@ -6,13 +6,13 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/28/2019
-ms.openlocfilehash: fa93cb86867cb8539fb7ce4db45ad4751bfe6e04
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.date: 04/03/2019
+ms.openlocfilehash: 1f6bdfb1aed87f8a2dabdc0efcea3a1b8bf2ecf2
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58854223"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019346"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -24,6 +24,10 @@ _XAML ist eine deklarative Markupsprache, die zum Definieren von Benutzeroberfl�
 
 > [!NOTE]
 > Testen Sie die [XAML-Standard (Vorschau)](standard/index.md)
+
+## [<a name="xaml-controls"></a>XAML-Steuerelemente](xaml-controls.md)
+
+Alle Ansichten, die in Xamarin.Forms definiert sind, kann von XAML-Dateien verwiesen werden.
 
 <a name="xaml" />
 
@@ -43,11 +47,11 @@ Die [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer/index.md) rendert eine L
 
 XAML verwendet das `xmlns` XML-Attribut für Namespacedeklarationen. In diesem Artikel stellt die Syntax des XAML-Namespace, und es wird veranschaulicht, wie einen XAML-Namespace auf einen Typ deklariert.
 
-## [<a name="xaml-custom-namespace-schemas"></a>XAML-Namespace mit benutzerdefinierten Schemas](custom-namespace-schemas.md)
+## [<a name="xaml-custom-namespace-schemas"></a>Schemas für den benutzerdefinierten XAML-Namespace](custom-namespace-schemas.md)
 
 Ein XAML-Schema benutzerdefinierten Namespace definiert werden kann, mit der `XmlnsDefinitionAttribute` -Klasse, die eine Zuordnung zwischen einer benutzerdefinierten URL und einen oder mehrere CLR-Namespaces angibt. Das Schema des benutzerdefinierten Namespace können Sie dann in XAML-Namespace-Deklarationen verwendet werden.
 
-## [<a name="xaml-namespace-recommended-prefixes"></a>XAML-Namespace, die Präfixe empfohlen](custom-prefix.md)
+## [<a name="xaml-namespace-recommended-prefixes"></a>Empfohlene Präfixe für den XAML-Namespace](custom-prefix.md)
 
 Die `XmlnsPrefixAttribute` Klasse kann von Autoren von Steuerelementen verwendet werden, an der ein empfohlenes Präfix, einen XAML-Namespace, für die XAML-Verwendung zugeordnet werden soll.
 
@@ -55,7 +59,7 @@ Die `XmlnsPrefixAttribute` Klasse kann von Autoren von Steuerelementen verwendet
 
 XAML umfasst Markuperweiterungen für das Festlegen von Attributen auf Werte oder Objekte außerhalb, einfache Zeichenfolgen ausgedrückt werden kann. Dazu gehören das Verweisen auf Konstanten, statische Eigenschaften und Felder, Ressourcenverzeichnisse und datenbindungen.
 
-## [<a name="field-modifiers"></a>Feldmodifizierern](field-modifiers.md)
+## [<a name="field-modifiers"></a>Feldmodifizierer](field-modifiers.md)
 
 Die `x:FieldModifier` Namespace-Attribut gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente.
 

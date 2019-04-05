@@ -1,6 +1,6 @@
 ---
-title: 'Hello, Android Multiscreen (Hallo, Android-Multiscreen)'
-description: 'In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hello, Android“ (Hallo, Android) erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Der Leitfaden enthält eine Einführung in die grundlegenden Android-Anwendungsbausteine und detaillierte Informationen zur Android-Architektur, bei der Sie ein besseres Verständnis der Struktur und Funktionalität der Android-Anwendung entwickeln.'
+title: Hello, Android Multiscreen (Hallo, Android-Multiscreen)
+description: In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hello, Android“ (Hallo, Android) erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Der Leitfaden enthält eine Einführung in die grundlegenden Android-Anwendungsbausteine und detaillierte Informationen zur Android-Architektur, bei der Sie ein besseres Verständnis der Struktur und Funktionalität der Android-Anwendung entwickeln.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D82EC193-2CB7-44C3-8688-0CEBDF60C3D6
@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
+ms.openlocfilehash: c67d2be3d0bb1a159d234e815b16a988b93087d4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670888"
 ---
-
 # <a name="hello-android-multiscreen"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen)
 
 _In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hello, Android“ (Hallo, Android) erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Der Leitfaden enthält eine Einführung in die grundlegenden Android-Anwendungsbausteine und detaillierte Informationen zur Android-Architektur, bei der Sie ein besseres Verständnis der Struktur und Funktionalität der Android-Anwendung entwickeln._

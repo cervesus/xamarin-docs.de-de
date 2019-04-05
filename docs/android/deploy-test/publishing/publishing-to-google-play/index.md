@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
+ms.openlocfilehash: 8ba0d14fff22d38d9e1a1d062fcce3f9ace88dea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668854"
 ---
-
 # <a name="publishing-to-google-play"></a>Veröffentlichung in Google Play
 
 Obwohl es eine Reihe von App-Märkten für das Vertreiben von Anwendungen gibt, ist Google Play bei Weitem der weltweit größte und am häufigsten besuchte Store für Android-Apps. Google Play bietet eine einzelne Plattform zum Verteilen, für die Ankündigung, den Verkauf und die Analyse der Verkäufe einer Android-Anwendung.

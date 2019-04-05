@@ -1,14 +1,19 @@
 ---
 title: Formatieren von Xamarin.Forms-Apps
-description: 'Dieses Handbuch wird erläutert, wie Xamarin.Forms-Anwendungen mithilfe von XAML-Stile und mithilfe von Cascading Stylesheets zu formatieren.'
+description: Dieses Handbuch wird erläutert, wie Xamarin.Forms-Anwendungen mithilfe von XAML-Stile und mithilfe von Cascading Stylesheets zu formatieren.
 ms.prod: xamarin
 ms.assetid: EABF5072-B89B-4356-B7B3-1C6B40358926
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/28/2018
+ms.openlocfilehash: 75de62017c01c14ef4d2bab6d458336484d5cd69
+ms.sourcegitcommit: 4c97f5d73be7eb2da153a85183be4258b6b11ca6
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58288614"
 ---
-
 # <a name="styling-xamarinforms-apps"></a>Formatieren von Xamarin.Forms-Apps
 
 ## <a name="styling-xamarinforms-apps-using-xaml-stylesxamlindexmd"></a>[Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](xaml/index.md)
