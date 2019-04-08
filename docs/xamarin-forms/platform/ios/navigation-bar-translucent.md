@@ -29,7 +29,7 @@ Dieses iOS-Plattform-spezifische wird verwendet, so ändern Sie die Transparenz 
 </NavigationPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

@@ -32,7 +32,7 @@ Dieses iOS-Plattform-spezifische steuert bei Auswahl von Listenelementen in trit
 </ContentPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

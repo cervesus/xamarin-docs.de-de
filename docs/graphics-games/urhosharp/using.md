@@ -23,7 +23,7 @@ Bevor Sie Ihr erste Spiel schreiben, möchten Sie mit den Grundlagen vertraut zu
 
 Das Modell für die Szene kann als szenengraph komponentenbasierter beschrieben werden. Die Szene besteht aus einer Hierarchie von Szenenknoten, beginnend mit den Stammknoten, der auch die gesamte Szene darstellt. Jede [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/) verfügt über eine 3D-Transformation (Position, Drehung und Skalierung), einen Namen, eine ID sowie eine beliebige Anzahl von Komponenten.  Komponenten stellen eines Knotens zum Leben, sie können eine visuelle Darstellung hinzufügen ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)), können sie Sound ausgeben ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource)), können sie eine Kollision Grenze usw. bieten.
 
-Sie können Ihre Szenen und die Setup-Knoten, die mit erstellen die [Urho Editor](#urhoeditor), oder Sie können Aktionen von c#-Code.  In diesem Dokument wird alles mithilfe von Code erläutert, wie sie zeigen, dass die Elemente, die erforderlichen Aufgaben auf dem Bildschirm angezeigt werden
+Sie können Ihre Szenen und die Setup-Knoten, die mit erstellen die [Urho Editor](#urhoeditor), oder Sie können Aktionen von C#-Code.  In diesem Dokument wird alles mithilfe von Code erläutert, wie sie zeigen, dass die Elemente, die erforderlichen Aufgaben auf dem Bildschirm angezeigt werden
 
 Zusätzlich zu Ihrer Szene eingerichtet haben, müssen Sie Setup eine [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/), dadurch wird bestimmt, was dem Benutzer angezeigt erhalten wird.
 
@@ -138,7 +138,7 @@ Knoten und Komponenten können von der Szene Update ausgeschlossen werden, indem
 
 Die beste Möglichkeit, Ihr Spiel Struktur ist, stellen eine eigene Komponente, die ein Akteur oder ein Element auf Ihr Spiel zu kapseln.  Dadurch wird die Funktion als eigenständige, über die Ressourcen, um das Verhalten angezeigt.
 
-Die einfachste Möglichkeit zum Hinzufügen des Verhaltens zu einer Komponente ist die Verwendung von Aktionen, die Anweisungen sind, können Sie in die Warteschlange und kombinieren Sie dies mit c# Async-Programmierung.  Dadurch können das Verhalten für die Komponente, sehr hohe sein und ist es einfacher zu verstehen, was passiert.
+Die einfachste Möglichkeit zum Hinzufügen des Verhaltens zu einer Komponente ist die Verwendung von Aktionen, die Anweisungen sind, können Sie in die Warteschlange und kombinieren Sie dies mit C# Async-Programmierung.  Dadurch können das Verhalten für die Komponente, sehr hohe sein und ist es einfacher zu verstehen, was passiert.
 
 Alternativ können Sie steuern, was genau an die Komponente geschieht durch Aktualisieren Ihrer Komponenteneigenschaften auf die einzelnen Frames (im Abschnitt framebasierte Verhalten erläutert).
 

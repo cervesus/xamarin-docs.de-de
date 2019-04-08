@@ -49,7 +49,7 @@ Im Gegensatz zu herkömmlichen Tabellen `Grid` leitet nicht die Anzahl und Grö�
 
 Zeilen-und Spalteninformationen befindet sich in `Grid`des `RowDefinitions`  &  `ColumnDefinitions` Eigenschaften, die einzelnen Sammlungen sind der [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) und [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)-Objekten. `RowDefinition` verfügt über eine einzelne Eigenschaft `Height`, und `ColumnDefinition` verfügt über eine einzelne Eigenschaft `Width`. Die Optionen für die Höhe und Breite sind wie folgt aus:
 
-- **Automatische** &ndash; automatisch Größen an den Inhalt in der Zeile oder Spalte. Als angegebenen [ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) in c# oder als `Auto` in XAML.
+- **Automatische** &ndash; automatisch Größen an den Inhalt in der Zeile oder Spalte. Als angegebenen [ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) in C# oder als `Auto` in XAML.
 - **Proportional(*)** &ndash; Größen von Zeilen und Spalten als Proportion des verbleibenden Speicherplatzes. Als Wert angegeben und `GridUnitType.Star` in C# geschrieben und als `#*` in XAML, mit `#` wird von den gewünschten Wert. Angeben einer Zeile/Spalte und `*` bewirkt, dass sie den verfügbaren Platz auszufüllen.
 - **Absolute** &ndash; Größen der Spalten und Zeilen mit bestimmten festen Höhe und Breite Werten. Als Wert angegeben und `GridUnitType.Absolute` in C# geschrieben und als `#` in XAML, mit `#` wird von den gewünschten Wert.
 
@@ -190,7 +190,7 @@ Beachten Sie, dass die Schaltfläche "0" zwei Spalten, genau wie integrierte Rec
 <Button Text = "0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
 ```
 
-Und in c#:
+Und in C#:
 
 ```csharp
 Button zeroButton = new Button { Text = "0" };

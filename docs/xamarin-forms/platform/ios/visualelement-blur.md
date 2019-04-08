@@ -32,7 +32,7 @@ Dieses iOS-Plattform-spezifische wird verwendet, um den Inhalt, die darunter lie
 </ContentPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

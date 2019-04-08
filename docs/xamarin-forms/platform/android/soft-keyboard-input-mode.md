@@ -28,7 +28,7 @@ Dieses Android-Plattform-spezifische wird verwendet, um den Betriebsmodus für e
 </Application>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

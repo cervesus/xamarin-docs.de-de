@@ -39,7 +39,7 @@ Ein impliziter Timer wird immer dann ausgelöst, wenn eine Touch-Geste in beginn
 </MasterDetailPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

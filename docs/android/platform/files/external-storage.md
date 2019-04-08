@@ -172,7 +172,7 @@ $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STOR
 
 ## <a name="deleting-files"></a>Löschen von Dateien
 
-Standardmäßige c#-APIs werden, zum Löschen einer Datei aus dem externen Speicher, z. B. verwendet kann [ `System.IO.File.Delete` ](xref:System.IO.File.Delete*). Es ist auch möglich, die Java-APIs auf Kosten der Codeportabilität verwenden. Zum Beispiel:
+Standardmäßige C#-APIs werden, zum Löschen einer Datei aus dem externen Speicher, z. B. verwendet kann [ `System.IO.File.Delete` ](xref:System.IO.File.Delete*). Es ist auch möglich, die Java-APIs auf Kosten der Codeportabilität verwenden. Zum Beispiel:
 
 ```csharp
 System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/files/count.txt");

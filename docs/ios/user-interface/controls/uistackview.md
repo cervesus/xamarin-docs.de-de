@@ -28,7 +28,7 @@ Das Layout der alle Unteransichten, die an eine Stapelansicht angefügt werden v
 
 [![](uistackview-images/stacked01.png "Stapel anzeigen Layout für Diagramm")](uistackview-images/stacked01.png#lightbox)
 
-Bei Verwendung einer `UIStackView` in einer Xamarin.iOS-app kann der Entwickler die Unteransichten entweder in einem Storyboard in der iOS-Designer oder durch Hinzufügen und Entfernen von Unteransichten in c#-Code entweder definieren.
+Bei Verwendung einer `UIStackView` in einer Xamarin.iOS-app kann der Entwickler die Unteransichten entweder in einem Storyboard in der iOS-Designer oder durch Hinzufügen und Entfernen von Unteransichten in C#-Code entweder definieren.
 
 Dieses Dokument besteht aus zwei Teilen: einen schnellen Einstieg in die Sie unterstützen, implementieren, die Ihre erste Stack anzeigen, und klicken Sie dann weitere technische Details dazu, wie es funktioniert.
 

@@ -86,7 +86,7 @@ Informationen zum Erstellen von Stilen in einer Anwendung [ `ResourceDictionary`
 
 ## <a name="create-an-implicit-style-in-c35"></a>Erstellen Sie einen impliziten Stil in C&#35;
 
-[`Style`](xref:Xamarin.Forms.Style) Instanzen können einer Seite hinzugefügt werden [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in c# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`Siehe die folgende Codebeispiel:
+[`Style`](xref:Xamarin.Forms.Style) Instanzen können einer Seite hinzugefügt werden [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in C# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`Siehe die folgende Codebeispiel:
 
 ```csharp
 public class ImplicitStylesPageCS : ContentPage

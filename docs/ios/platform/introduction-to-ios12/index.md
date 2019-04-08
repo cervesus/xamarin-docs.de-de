@@ -1,6 +1,6 @@
 ---
 title: Einführung in iOS 12
-description: Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-12-APIs, die für die Xamarin Preview Release c#-Bindungen bietet.
+description: Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-12-APIs, die für die Xamarin Preview Release C#-Bindungen bietet.
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
@@ -16,7 +16,7 @@ ms.locfileid: "55233834"
 ---
 # <a name="introduction-to-ios-12"></a>Einführung in iOS 12
 
-Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-12-APIs, die für die Xamarin Preview Release c#-Bindungen bietet.
+Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-12-APIs, die für die Xamarin Preview Release C#-Bindungen bietet.
 
 Informationen zum Einstieg 12-iOS-apps mit Xamarin erstellen, finden Sie unter den [Handbuch mit ersten Schritten](get-started.md)
 

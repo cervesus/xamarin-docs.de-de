@@ -18,7 +18,7 @@ ms.locfileid: "53054235"
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
 
-Jeder C#-Programmierer ist mit c# vertraut *Eigenschaften*. Eigenschaften enthalten eine *festgelegt* Accessor und/oder einen *erhalten* Accessor. Sie werden häufig aufgerufen *CLR-Eigenschaften* für die Common Language Runtime.
+Jeder C#-Programmierer ist mit C# vertraut *Eigenschaften*. Eigenschaften enthalten eine *festgelegt* Accessor und/oder einen *erhalten* Accessor. Sie werden häufig aufgerufen *CLR-Eigenschaften* für die Common Language Runtime.
 
 Xamarin.Forms definiert eine erweiterte Eigenschaftsdefinition, die mit dem Namen eine *bindbare Eigenschaft* gekapselt durch den [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Klasse und von unterstützt die [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)Klasse. Diese Klassen sind ähnliche, aber recht unterschiedliche: die `BindableProperty` wird verwendet, um die Eigenschaft selbst definieren `BindableObject` ähnelt `object` , es ist eine Basisklasse für Klassen, die bindbare Eigenschaften definieren.
 

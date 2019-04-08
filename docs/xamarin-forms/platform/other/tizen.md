@@ -28,7 +28,7 @@ Weitere Informationen zur Vorgehensweise beim Hinzufügen von Tizen .NET-Projekt
 
 ## <a name="documentation"></a>Dokumentation
 
-- [Xamarin.Forms-Dokumentation](~/xamarin-forms/index.yml) &ndash; Vorgehensweise das Erstellen von plattformübergreifenden Anwendungen mit c# und Xamarin.Forms.
+- [Xamarin.Forms-Dokumentation](~/xamarin-forms/index.yml) &ndash; Vorgehensweise das Erstellen von plattformübergreifenden Anwendungen mit C# und Xamarin.Forms.
 - [**Developer.tizen.org** ](https://developer.tizen.org/development) &ndash; Dokumentationen und Videos können Sie die Tizen Anwendungen erstellen und bereitstellen.
 
 ## <a name="samples"></a>Proben

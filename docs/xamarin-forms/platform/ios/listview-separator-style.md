@@ -31,7 +31,7 @@ Dieses iOS-Plattform-spezifische steuert, ob das Trennzeichen zwischen den in Ze
 </ContentPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

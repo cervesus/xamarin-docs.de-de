@@ -352,7 +352,7 @@ Mehrere Xamarin.Android-Beispiele sind verfügbar, Sie veranschaulichen, wie Sie
 
 > [!VIDEO https://youtube.com/embed/OuvEcaMO-Ho]
 
-**Android 8.0 Oreo-Entwicklung in c#**
+**Android 8.0 Oreo-Entwicklung in C#**
 
 
 ## <a name="summary"></a>Zusammenfassung

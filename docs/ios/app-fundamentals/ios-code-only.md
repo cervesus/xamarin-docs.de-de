@@ -42,7 +42,7 @@ Diese Hierarchien von Inhaltsansichten können erstellt werden, mithilfe der [Xa
 
 ## <a name="ios-blank-project-template"></a>leere iOS-Projektvorlage
 
-Erstellen Sie zunächst ein iOS-Projekt in Visual Studio mithilfe der **Datei > Neues Projekt > Visual c# > iPhone & iPad > iOS-App (Xamarin)** Projekt unten:
+Erstellen Sie zunächst ein iOS-Projekt in Visual Studio mithilfe der **Datei > Neues Projekt > Visual C# > iPhone & iPad > iOS-App (Xamarin)** Projekt unten:
 
 [![Dialogfeld "Neues Projekt"](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 

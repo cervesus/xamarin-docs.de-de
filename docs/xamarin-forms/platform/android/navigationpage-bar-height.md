@@ -28,7 +28,7 @@ Dieses Android-Plattform-spezifische legt die Höhe der Navigationsleiste auf ei
 </NavigationPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

@@ -28,7 +28,7 @@ Dieses Handbuch setzt voraus, Vertrautheit mit dem Inhalt in behandelt die [Eins
 > Beginnen in xamarin.Studio die Datei Exchange 5.5, ist die Möglichkeit, die in der benutzerdefinierten Steuerelemente erstellt werden Unterschied zu früheren Versionen. Um ein benutzerdefiniertes Steuerelement erstellen die `IComponent` Schnittstelle ist erforderlich (mit den zugehörigen Implementierungsmethoden) oder die Klasse kann angemerkt werden, mit `[DesignTimeVisible(true)]`. Die zweite Methode wird im folgenden Beispiel für die exemplarische Vorgehensweise verwendet.
 
 
-1. Erstellen einer neuen Projektmappe aus der **iOS > App > Single View Application > c#** Vorlage, nennen Sie sie `ScratchTicket`, und durchlaufen Sie den Assistenten für neue Projekte:
+1. Erstellen einer neuen Projektmappe aus der **iOS > App > Single View Application > C#** Vorlage, nennen Sie sie `ScratchTicket`, und durchlaufen Sie den Assistenten für neue Projekte:
 
     [![](ios-designable-controls-walkthrough-images/01new.png "Erstellen einer neuen Projektmappe")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 

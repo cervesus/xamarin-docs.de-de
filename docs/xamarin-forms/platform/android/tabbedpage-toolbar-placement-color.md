@@ -30,7 +30,7 @@ Diese Plattformeigenschaften werden verwendet, um die Position und die Farbe der
 </TabbedPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus C# mithilfe der fluent-API genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

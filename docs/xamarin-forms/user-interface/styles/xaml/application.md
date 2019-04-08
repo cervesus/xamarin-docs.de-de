@@ -104,7 +104,7 @@ Die ursprüngliche `buttonStyle`, auf Anwendungsebene definiert ist, wird übers
 
 ## <a name="create-a-global-style-in-c35"></a>Erstellen Sie einen globalen Stil in C&#35;
 
-[`Style`](xref:Xamarin.Forms.Style) Instanzen der Anwendung hinzugefügt werden können [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in c# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`, als Im folgenden Codebeispiel gezeigt:
+[`Style`](xref:Xamarin.Forms.Style) Instanzen der Anwendung hinzugefügt werden können [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in C# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`, als Im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public class App : Application

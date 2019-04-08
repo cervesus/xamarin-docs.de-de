@@ -35,7 +35,7 @@ Dieses Android-Plattform-spezifische wird verwendet, um schnell einen Bildlauf d
 </ContentPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

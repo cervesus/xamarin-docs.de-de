@@ -96,7 +96,7 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ### <a name="reverse-callbacks"></a>Rückrufe umkehren
 
-In standard Mono ist es möglich, Instanzen für c#-Delegaten zu nicht verwaltetem Code durch einen Funktionszeiger übergeben. Die Laufzeit würde in der Regel dieser Funktionszeiger in einen kleinen Thunk umgewandelt werden, die nicht verwalteten Code für den Rückruf in verwaltetem Code ermöglicht wird.
+In standard Mono ist es möglich, Instanzen für C#-Delegaten zu nicht verwaltetem Code durch einen Funktionszeiger übergeben. Die Laufzeit würde in der Regel dieser Funktionszeiger in einen kleinen Thunk umgewandelt werden, die nicht verwalteten Code für den Rückruf in verwaltetem Code ermöglicht wird.
 
 In Mono diesen Bridges implementiert werden, durch den Just-in-Time-Compiler. Wenn mit dem ahead-of-Time-Compiler das iPhone erforderlich, dass es an diesem Punkt sind zwei wichtige Einschränkungen:
 
