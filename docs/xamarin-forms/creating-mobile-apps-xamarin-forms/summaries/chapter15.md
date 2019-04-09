@@ -7,16 +7,16 @@ ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6b519b15199373762965a8eeee6c9ae73f125cf3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060432"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870117"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Zusammenfassung der Kapitel 15. Die interaktive Schnittstelle
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
+[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
 
 In diesem Kapitel werden acht `View` ableitungen, die Interaktion mit dem Benutzer ermöglichen.
 
@@ -24,12 +24,12 @@ In diesem Kapitel werden acht `View` ableitungen, die Interaktion mit dem Benutz
 
 Xamarin.Forms enthält 20 instanziiert werden von abgeleiteten Klassen `View` , nicht jedoch `Layout`. Diese sechs haben in den vorangegangenen Kapiteln beschrieben wurde:
 
-- `Label`: [ **Kapitel 2. Aufbau einer app**](chapter02.md)
-- `BoxView`: [ **Kapitel 3. Scrollen im Stapel**](chapter03.md)
-- `Button`: [ **Kapitel 6. Schaltflächenklicks**](chapter06.md)
-- `Image`: [ **Kapitel 13. Bitmaps**](chapter13.md)
-- `ActivityIndicator`: [ **Kapitel 13. Bitmaps**](chapter13.md)
-- `ProgressBar`: [ **Kapitel 14. Von "AbsoluteLayout"**](chapter14.md)
+- `Label`: [**Kapitel 2. Aufbau einer app**](chapter02.md)
+- `BoxView`: [**Kapitel 3. Scrollen im Stapel**](chapter03.md)
+- `Button`: [**Kapitel 6. Schaltflächenklicks**](chapter06.md)
+- `Image`: [**Kapitel 13. Bitmaps**](chapter13.md)
+- `ActivityIndicator`: [**Kapitel 13. Bitmaps**](chapter13.md)
+- `ProgressBar`: [**Kapitel 14. Von "AbsoluteLayout"**](chapter14.md)
 
 Die acht Ansichten in diesem Kapitel ermöglichen effektiv den Benutzer für die Interaktion mit .NET Grunddatentypen:
 
@@ -44,12 +44,12 @@ Sie können diese Sichten als visuelle, interaktive Darstellungen der zugrunde l
 
 Die verbleibenden sechs Ansichten werden in den folgenden Kapiteln erläutert:
 
-- `WebView`: [ **Kapitel 16. Datenbindung**](chapter16.md)
-- `Picker`: [ **Kapitel 19. Auflistungsansichten**](chapter19.md)
-- `ListView`: [ **Kapitel 19. Auflistungsansichten**](chapter19.md)
-- `TableView`: [ **Kapitel 19. Auflistungsansichten**](chapter19.md)
-- `Map`: [ **Kapitel 28. Position und Karten**](chapter28.md)
-- `OpenGLView`: Nicht behandelt, die in diesem Buch (und keine Unterstützung für Windows-Plattformen)
+- `WebView`: [**Kapitel 16. Datenbindung**](chapter16.md)
+- `Picker`: [**Kapitel 19. Auflistungsansichten**](chapter19.md)
+- `ListView`: [**Kapitel 19. Auflistungsansichten**](chapter19.md)
+- `TableView`: [**Kapitel 19. Auflistungsansichten**](chapter19.md)
+- `Map`: [**Kapitel 28. Position und Karten**](chapter28.md)
+- `OpenGLView`: Nicht abgedeckt, die in diesem Buch (und keine Unterstützung für Windows-Plattformen)
 
 ## <a name="slider-and-stepper"></a>Schieberegler und zugeordnetem
 
@@ -65,8 +65,8 @@ Die [ `Slider` ](xref:Xamarin.Forms.Slider) ein horizontalen Balken, der einen B
 
 Die bindbaren Eigenschaften, die diese Eigenschaften zurück. Stellen Sie sicher, dass sie konsistent sind:
 
-- Für alle drei Eigenschaften die [ `coerceValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+CoerceValueDelegate/) Methode, die für die bindbare Eigenschaft sichergestellt, dass wird angegebene `Value` zwischen `Minimum` und `Maximum`.
-- Die [ `validateValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+ValidateValueDelegate/) Methode `MinimumProperty` gibt `false` Wenn `Minimum` wird festgelegt auf einen Wert größer als oder gleich `Maximum`, und Ähnliches gilt für `MaximumProperty`. Zurückgeben von `false` aus der `validateValue` Methode bewirkt, dass ein `ArgumentException` ausgelöst werden soll.
+- Für alle drei Eigenschaften die [ `coerceValue` ](xref:Xamarin.Forms.BindableProperty.CoerceValueDelegate) Methode, die für die bindbare Eigenschaft sichergestellt, dass wird angegebene `Value` zwischen `Minimum` und `Maximum`.
+- Die [ `validateValue` ](xref:Xamarin.Forms.BindableProperty.ValidateValueDelegate) Methode `MinimumProperty` gibt `false` Wenn `Minimum` wird festgelegt auf einen Wert größer als oder gleich `Maximum`, und Ähnliches gilt für `MaximumProperty`. Zurückgeben von `false` aus der `validateValue` Methode bewirkt, dass ein `ArgumentException` ausgelöst werden soll.
 
 `Slider` wird ausgelöst der [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) Ereignis mit der eine [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) Argument bei der `Value` eigenschaftsänderungen, entweder programmgesteuert oder wenn der Benutzer bearbeitet der `Slider`.
 
@@ -245,7 +245,7 @@ Die [ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/
 
 - [Kapitel 15 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
 - [Kapitel 15-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
-- [Schieberegler](~/xamarin-forms/user-interface/slider.md)
+- [Slider](~/xamarin-forms/user-interface/slider.md)
 - [Eingabe](~/xamarin-forms/user-interface/text/entry.md)
 - [Editor](~/xamarin-forms/user-interface/text/editor.md)
 - [DatePicker](~/xamarin-forms/user-interface/datepicker.md)
