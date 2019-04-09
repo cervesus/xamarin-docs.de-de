@@ -36,7 +36,7 @@ Diese plattformspezifischen kann in XAML verwendet werden, durch Festlegen der [
 </Application>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
