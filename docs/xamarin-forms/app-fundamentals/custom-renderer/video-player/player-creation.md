@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2679756cd9a9a60c2d7ab637678ff1d8262b2403
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 4bfbd065c9b17ce402c5a15289c7ff608eb58b23
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669985"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870013"
 ---
 # <a name="creating-the-platform-video-players"></a>Erstellen von Plattformen für Videoplayer
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![Download Sample (Beispiel herunterladen)](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Die [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)-Projektmappe enthält den gesamten Code, der in einen Videoplayer für Xamarin.Forms implementiert werden soll. Außerdem beinhaltet sie mehrere Seiten, auf denen gezeigt wird, wie der Videoplayer innerhalb einer Anwendung zu verwenden ist. Der gesamte `VideoPlayer`-Code und die betreffenden Plattformrenderer sind in einem Projektordner mit dem Namen `FormsVideoLibrary` gespeichert und verwenden den Namespace `FormsVideoLibrary`. Dies vereinfacht das Kopieren der Dateien in Ihre Anwendung sowie das Herstellen von Verweisen auf die Klassen.
 
@@ -43,7 +43,7 @@ Jede Plattform enthält eine Klasse mit dem Namen `VideoPlayerRenderer`, die den
 
 ### <a name="the-ios-player-view-controller"></a>Der Ansichtscontroller für den iOS-Player
 
-Es sind mehrere Klassen an der Implementierung eines Videoplayers in iOS beteiligt. Die Anwendung erstellt zunächst einen [`AVPlayerViewController`](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/) und legt dann die [`Player`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.Player/)-Eigenschaft auf ein Objekt vom Typ [`AVPlayer`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayer/) fest. Wenn der Player einer Videoquelle zugewiesen wird, sind weitere Klassen erforderlich.
+Es sind mehrere Klassen an der Implementierung eines Videoplayers in iOS beteiligt. Die Anwendung erstellt zunächst einen [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController) und legt dann die [`Player`](xref:AVKit.AVPlayerViewController.Player*)-Eigenschaft auf ein Objekt vom Typ [`AVPlayer`](xref:AVFoundation.AVPlayer) fest. Wenn der Player einer Videoquelle zugewiesen wird, sind weitere Klassen erforderlich.
 
 Wie alle anderen Renderer auch enthält der iOS-[`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs) ein `ExportRenderer`-Attribut, das die `VideoPlayer`-Ansicht mit dem Renderer in Verbindung bringt:
 
@@ -318,7 +318,7 @@ In den folgenden Abschnitten wird erläutert, wie die `AreTransportControlsEnabl
 
 ### <a name="ios-playback-controls"></a>iOS-Wiedergabesteuerelemente
 
-Die Eigenschaft des iOS-`AVPlayerViewController`, die die Anzeige der Transportsteuerlemente steuert, lautet [`ShowsPlaybackControls`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.ShowsPlaybackControls/). Die Eigenschaft wird wie folgt im iOS-`VideoViewRenderer` festgelegt:
+Die Eigenschaft des iOS-`AVPlayerViewController`, die die Anzeige der Transportsteuerlemente steuert, lautet [`ShowsPlaybackControls`](xref:AVKit.AVPlayerViewController.ShowsPlaybackControls*). Die Eigenschaft wird wie folgt im iOS-`VideoViewRenderer` festgelegt:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -467,4 +467,4 @@ Damit das Video abgespielt werden kann, wird eine weitere Eigenschaft benötigt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Videoplayerdemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 0062c5da4db206a9fe4dc0030a104ec034ab97f1
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 296284b7f9a8eac26817e76a97bf35b03d591532
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197159"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855327"
 ---
 # <a name="introduction-to-mobile-development"></a>Einführung in die Entwicklung mobiler Anwendungen
 
@@ -33,19 +33,15 @@ Xamarin ist einzigartig, da in ihr alle Funktionen der nativen Plattformen kombi
 
 1.   **Vollständige Bindung für die zugrundeliegenden SDKs**: Xamarin enthält Bindungen für fast alle zugrundeliegenden Plattform SDKs unter iOS und Android. Zusätzlich dazu sind diese Bindungen stark typisiert. So bieten sie einfach Navigation, lassen sich leicht nutzen und sorgen während der Entwicklung für eine stabile Typüberprüfung zur Kompilierzeit und während der Entwicklung. Dies führt zu weniger Runtimefehlern und zu Anwendungen mit höherer Qualität.
 1.   **Objective-C, Java, C und C++ Interop**: Xamarin stellt Funktionen zum direkten Aufrufen von Bibliotheken mit Objective-C, Java, C und C++ bereit, sodass Sie verschiedenen Drittanbietercode verwenden können, der bereits erstellt wurde. Dadurch können Sie die vorhandenen iOS- und Android-Bibliotheken verwenden, die in Objective-C, Java oder C/C++ geschrieben sind. Darüber hinaus bietet Xamarin Bindungsprojekte an, mit denen Sie ganz einfach native Objective-C- und Java-Bibliotheken binden können, indem Sie eine deklarative Syntax verwenden.
-1.   **Moderne Sprachkonstrukte**: Xamarin-Anwendungen werden in C# geschrieben, eine modernen Sprache, die gegenüber Objective-C und Java bedeutende Verbesserungen beinhaltet, z.B. *dynamische Sprachfunktionen*, *funktionale Konstrukte* wie *Lambdas* und *LINQ*, Funktionen für die *parallele Programmierung*, anspruchsvolle *Generika* und viele mehr.
+1.   **Moderne Sprachkonstrukte**: Xamarin-Anwendungen werden in C# geschrieben, eine modernen Sprache, die gegenüber Objective-C und Java bedeutende Verbesserungen beinhaltet, z.B. *dynamische Sprachfunktionen*, *funktionale Konstrukte* wie *Lambdas* und *LINQ*, Funktionen für die *parallele Programmierung*, anspruchsvolle *Generics* und viele mehr.
 1.   //**Überzeugende Basisklassenbibliothek (Base Class Library, BCL)**: Xamarin-Anwendungen verwenden die .NET-BCL, eine große Sammlung von Klassen, die über umfassende und optimierte Funktionen verfügen, wie das leistungsstarke XML, Datenbanken, Serialisierung, E/A, die Zeichenfolge und die Netzwerkunterstützung, um nur ein paar zu nennen. Darüber hinaus kann der C#-Code für die Verwendung in einer Anwendung kompiliert werden, wodurch Sie Zugriff auf tausende Bibliotheken erhalten, mit denen Sie Aufgaben ausführen können, die in der BCL nicht vorhanden sind.
 1.   **Moderne integrierte Entwicklungsumgebung (IDE)**: Xamarin verwendet Visual Studio für Mac unter Mac OS X und Visual Studio unter Windows. Beides sind moderne IDEs, die unter anderem folgende Funktionen enthalten: automatische Codevervollständigung, ein anspruchsvolles Projekt- und Projektmappenverwaltungssystem, eine umfassende Projektvorlagenbibliothek, eine integrierte Quellcodeverwaltung und viele mehr.
 1.   **Mobiler plattformübergreifender Support**: Xamarin bietet einen ausgeklügelten, plattformübergreifenden Support für die drei mobilen Hauptplattformen iOS, Android und Windows Phone an. Bis zu 90 % des Codes einer Anwendung können wiederverwendet werden, und unsere Xamarin.Mobile-Bibliothek bietet eine einheitliche API, um von allen drei Plattformen aus auf allgemeine Ressourcen zuzugreifen. Dadurch können Entwickler, die für die drei beliebtesten mobilen Plattformen entwickeln, signifikant Entwicklungskosten einsparen und die Anwendungen schneller auf den Markt bringen.
 
-
 Durch die leistungsstarken und umfassenden Funktionen von Xamarin wird eine Lücke für Anwendungsentwickler ausgefüllt, die eine moderne Sprache und Plattform verwenden möchten, um plattformübergreifende mobile Anwendungen zu entwickeln.
-
 
 > [!NOTE]
 > In der Reihe „Erste Schritte“ werden die ersten Schritte beim Erstellen von iOS- und Android-Anwendungen beleuchtet. Microsoft stellt Informationen zur [UWP-Entwicklung (Universelle Windows-Plattform)](https://docs.microsoft.com/windows/uwp/develop/) für Tablets und Desktop-PCs zur Verfügung. Weitere Informationen zur plattformübergreifenden Entwicklung mit Xamarin (einschließlich UWP-Anwendungen für Windows) finden Sie in der Anleitung zum [Erstellen plattformübergreifender Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md).
-
-
 
 ## <a name="how-does-xamarin-work"></a>Wie funktioniert Xamarin?
 
@@ -54,8 +50,6 @@ Xamarin bietet zwei kommerzielle Produkte an: Xamarin.iOS und Xamarin.Android. B
 Unter iOS kompiliert der *Ahead-of-Time-Compiler* (*AOT*) die Xamarin.iOS-Anwendungen direkt in nativen ARM-Assemblycode. Unter Android kompiliert der Compiler von Xamarin in die *Zwischensprache* (*IL*), welche dann beim Start der Anwendung *Just-In-Time* (*JIT*) in eine native Assembly kompiliert wird.
 
 In beiden Fällen verwenden die Xamarin-Anwendungen eine Runtime, die automatisch Aufgaben handhabt, wie die Speicherbelegung, die automatische Speicherbereinigung, die zugrundeliegende Technologie der Plattform-Interop usw.
-
-
 
 ### <a name="xamariniosdll-and-monoandroiddll"></a>Xamarin.iOS.dll und Mono.Android.dll
 
@@ -69,27 +63,10 @@ Zusätzlich zur BCL enthalten diese .dlls Wrapper für nahezu das gesamte iOS SD
 
 Wenn Xamarin-Anwendungen kompiliert werden, entsteht ein Anwendungspaket – entweder eine APP-Datei unter iOS oder eine APK-Datei unter Android. Diese Dateien lassen sich nicht von den Anwendungspaketen unterscheiden, die mit den Standard-IDEs der Plattform erstellt wurden, und sie können auf die gleiche Art und Weise bereitgestellt werden.
 
-## <a name="getting-started"></a>Erste Schritte
+## <a name="next-steps"></a>Nächste Schritte
 
-Nun, da Sie ein wenig über die Funktionsweise von Xamarin wissen, wird es Zeit für weitere Schritte.
+Sie haben nun etwas dazu erfahren, wie Xamarin funktioniert. Beginnen Sie nun als nächsten Schritt mit der Erstellung einer App mithilfe einer dieser Leitfäden:
 
-Beginnen Sie als Nächstes mithilfe einer dieser Anleitungen mit der Erstellung einer App:
-
-* [**Hallo, iOS**](~/ios/get-started/hello-ios/index.md)
-
-![](introduction-to-mobile-development-images/ios.png "Hallo, iOS")
-
-* [**Hallo, Android**](~/android/get-started/hello-android/index.md)
-
-![](introduction-to-mobile-development-images/android.png "Hallo, Android")
-
-* [**Erste Schritte mit Xamarin.Forms**](~/get-started/index.yml)
-
-## <a name="summary"></a>Zusammenfassung
-
-Dieses Dokument dient lediglich der Einführung in die Xamarin-Plattform. Der Spaß beginnt erst richtig, wenn Sie Ihre erste App erfolgreich erstellt haben. Sehen Sie sich dazu die Anleitungen [Hallo, iOS](~/ios/get-started/hello-ios/index.md), [Hallo, Android](~/android/get-started/hello-android/index.md) und [Erste Schritte mit Xamarin.Forms](~/get-started/index.yml) an.
-
-## <a name="related-links"></a>Verwandte Links
-
-- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hallo, Android](~/android/get-started/hello-android/index.md)
+- [**Erste Schritte mit Xamarin.Forms**](~/get-started/index.yml)
+- [**Erste Schritte mit Xamarin.iOS**](~/ios/get-started/hello-ios/index.md)
+- [**Erste Schritte mit Xamarin.Android**](~/android/get-started/hello-android/index.md)

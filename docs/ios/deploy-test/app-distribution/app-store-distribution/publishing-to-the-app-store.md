@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: babfc85de645b285812421d453d51d5be6dceb1c
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: a00b157940cfde8021b92004fe27a4d52bac5e0c
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831936"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855158"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Veröffentlichen von Xamarin.iOS-Apps im App Store
 
@@ -67,8 +67,8 @@ Wenn Sie eine App an Apple übermitteln, achten Sie darauf, dass sie einen Resso
 
 Eine App wird nur dann von Apple im App Store veröffentlicht, wenn sie entsprechende Symbole und Startbildschirme für alle iOS-Geräte aufweist, auf denen sie ausgeführt werden kann. Weitere Informationen zum Einrichten von App-Symbolen und Startbildschirmen finden Sie in den folgenden Leitfäden:
 
-- [Anwendungssymbole in Xamarin.iOS](~/ios/app-fundamentals/images-icons/app-icons.md)
-- [Startbildschirme für Xamarin.iOS-Apps](~/ios/app-fundamentals/images-icons/launch-screens.md)
+- [Application icons in Xamarin.iOS (Anwendungssymbole in Xamarin.iOS)](~/ios/app-fundamentals/images-icons/app-icons.md)
+- [Launch screens for Xamarin.iOS apps (Startbildschirme für Xamarin.iOS-Apps)](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 ## <a name="create-and-install-an-app-store-provisioning-profile"></a>Erstellen und Bereitstellen eines App Store-Bereitstellungsprofils
 
@@ -90,7 +90,7 @@ Eine ausführliche Anleitung finden Sie unter [Manuelle Bereitstellung für Xama
 
 Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debuggen** und **Release** ein. Führen Sie die folgenden Schritte durch, um einen **Releasebuild** zu konfigurieren:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 1. Öffnen Sie **Info.plist** über den **Lösungspad**. Klicken Sie auf **Manuelle Bereitstellung**. Speichern und schließen Sie die Datei.
 2. Klicken Sie mit der rechten Maustaste auf den **Projektnamen** im **Lösungspad**, wählen Sie **Optionen** aus, und navigieren Sie dann zur Registerkarte **iOS-Build**.
@@ -120,9 +120,9 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
 15. Klicken Sie auf **OK**, um die Änderungen an den Projekteigenschaften zu speichern.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. Stellen Sie sicher, dass Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+1. Stellen Sie sicher, dass Visual Studio 2019 oder Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen**, und wählen Sie **Eigenschaften**.
 3. Navigieren Sie zur Registerkarte **iOS-Build**, und legen Sie **Konfiguration** auf **Release** und **Plattform** auf **iPhone** fest.
 4. Wählen Sie ein SDK aus der **SDK-Versionsliste** aus, um den Build mit einem spezifischen iOS-SDK durchzuführen. Behalten Sie andernfalls den **Standardwert** bei.
@@ -172,7 +172,7 @@ Im Leitfaden [Konfigurieren einer App in iTunes Connect](~/ios/deploy-test/app-d
 
 Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes Connect auf Ihre Übermittlung wartet, können Sie Ihre App erstellen und an Apple übermitteln.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 1. Wählen Sie in Visual Studio für Mac die Buildkonfiguration **Release** und ein Gerät (keinen Simulator) aus, für das Sie den Build durchführen möchten.
 
@@ -231,12 +231,12 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
     >
     > In [diesem Post auf Xamarin Forums](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) wird beschrieben, wie Sie diesen Fehler umgehen können.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 > [!NOTE]
 > Visual Studio 2017 unterstützt aktuell den Workflow **Für die Veröffentlichung archivieren** in Visual Studio für Mac nicht.
 
-1. Stellen Sie sicher, dass Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+1. Stellen Sie sicher, dass Visual Studio 2019 oder Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Wählen Sie im Dropdownmenü **Projektmappenkonfigurationen** in Visual Studio 2017 **Release** und aus dem Dropdownmenü **Projektmappenplattformen** **iPhone** aus.
 
     ![Buildkonfiguration und Auswahl der Plattform](publishing-to-the-app-store-images/chooseConfig-w157.png "Build configuration and platform selection")
@@ -246,8 +246,8 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
     > [!NOTE]
     > Im Abschnitt [Aktualisieren der Buildkonfiguration „Release“](#update-the-release-build-configuration) in diesem Artikel haben Sie die Buildeinstellungen der App konfiguriert, sodass eine IPA-Datei für jeden **Releasebuild** erstellt wird.
 
-4. Klicken Sie mit der rechten Maustaste auf den Namen des Xamarin.iOS-Projekts im Visual Studio 2017-**Projektmappen-Explorer**, und wählen Sie **Ordner in Datei-Explorer öffnen** aus, um die IPA-Datei auf einem Windows-Computer zu finden. Navigieren Sie dann im gerade geöffneten Windows-**Datei-Explorer** zum Unterverzeichnis **bin/iPhone/Release**. Wenn Sie [den Ausgabespeicherort der IPA-Datei nicht angepasst haben](#customize-the-ipa-location), sollte sich die Datei in diesem Verzeichnis befinden.
-5. Klicken Sie mit der rechten Maustaste auf den Namen des Xamarin.iOS-Projekts im Visual Studio 2017-**Projektmappen-Explorer** (unter Windows), und wählen Sie **IPA-Datei auf Buildserver anzeigen** aus, um stattdessen die IPA-Datei auf dem Mac-Buildhost anzuzeigen. Dadurch wird ein **Finder**-Fenster auf dem Mac-Buildhost mit ausgewählter IPA-Datei geöffnet.
+4. Klicken Sie mit der rechten Maustaste auf den Namen des Xamarin.iOS-Projekts im Visual Studio 2019- oder im Visual Studio 2017-**Projektmappen-Explorer**, und wählen Sie **Ordner in Datei-Explorer öffnen** aus, um die IPA-Datei auf einem Windows-Computer zu finden. Navigieren Sie dann im gerade geöffneten Windows-**Datei-Explorer** zum Unterverzeichnis **bin/iPhone/Release**. Wenn Sie [den Ausgabespeicherort der IPA-Datei nicht angepasst haben](#customize-the-ipa-location), sollte sich die Datei in diesem Verzeichnis befinden.
+5. Klicken Sie mit der rechten Maustaste auf den Namen des Xamarin.iOS-Projekts im Visual Studio 2019-**Projektmappen-Explorer** (unter Windows), und wählen Sie **IPA-Datei auf Buildserver anzeigen** aus, um stattdessen die IPA-Datei auf dem Mac-Buildhost anzuzeigen. Dadurch wird ein **Finder**-Fenster auf dem Mac-Buildhost mit ausgewählter IPA-Datei geöffnet.
 6. Öffnen Sie **Application Loader** auf dem Mac-Buildhost. Wählen Sie in Xcode **Xcode > Open Developer Tool (Entwicklertool öffnen) > Application Loader** aus.
 
     > [!NOTE]
@@ -352,6 +352,6 @@ In diesem Artikel wird die Konfiguration, das Erstellen und das Übermitteln ein
 - [Arbeiten mit Funktionen in Xamarin.iOS](~/ios/deploy-test/provisioning/capabilities/index.md)
 - [Arbeiten mit Berechtigungen in Xamarin.iOS](~/ios/deploy-test/provisioning/entitlements.md)
 - [Konfigurieren einer App in iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Anwendungssymbole in Xamarin.iOS](~/ios/app-fundamentals/images-icons/app-icons.md)
-- [Startbildschirme für Xamarin.iOS-Apps](~/ios/app-fundamentals/images-icons/launch-screens.md)
+- [Application icons in Xamarin.iOS (Anwendungssymbole in Xamarin.iOS)](~/ios/app-fundamentals/images-icons/app-icons.md)
+- [Launch screens for Xamarin.iOS apps (Startbildschirme für Xamarin.iOS-Apps)](~/ios/app-fundamentals/images-icons/launch-screens.md)
 - [Dokumentation von Application Loader (Apple)](https://help.apple.com/itc/apploader/#/apdS673accdb)

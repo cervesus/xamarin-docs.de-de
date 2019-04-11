@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 12fcf6ff1b289c773e0dce03be4ac62105f6acd4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7f40671cd37ba88834698dea8cdaba267c96600c
+ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669465"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751262"
 ---
 # <a name="hello-ios--deep-dive"></a>Hallo, iOS – Ausführliche Erläuterungen
 
@@ -310,7 +310,7 @@ Weitere Informationen zum Arbeiten mit Ansichtscontrollern finden Sie im [Progra
 
 Die wichtigste Rolle des Ansichtscontrollers ist die Reaktion auf Benutzerinteraktionen, z.B. das Klicken auf eine Schaltfläche, die Navigation und mehr. Die einfachste Möglichkeit zur Verarbeitung von Benutzerinteraktionen ist die Verbindung mit einem Steuerelement, um Benutzereingaben zu überwachen und einen Ereignishandler hinzuzufügen, der auf die Eingabe reagiert. Eine Schaltfläche könnte beispielsweise so eingerichtet werden, dass sie wie in der Phoneword-Anwendung veranschaulicht auf ein Touchereignis reagiert.
 
-Da Sie nun über ein tieferes Verständnis der Ansichten und des Ansichtscontrollers verfügen, untersuchen Sie im Folgenden die Funktionsweise.
+Sehen Sie sich genauer an, wie das funktioniert.
 Im `Phoneword_iOS`-Projekt wurde eine Schaltfläche namens `TranslateButton` zur Hierarchie von Inhaltsansichten hinzugefügt:
 
 [![](hello-ios-deepdive-images/image1.png "Es wurde eine Schaltfläche namens TranslateButton zur Hierarchie von Inhaltsansichten hinzugefügt.")](hello-ios-deepdive-images/image1.png#lightbox)

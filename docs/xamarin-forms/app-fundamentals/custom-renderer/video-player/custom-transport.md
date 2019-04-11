@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e687a724c8455d954969f83b8ee48c87ca9dbb09
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: c6aa4aed134667f25b3822c7604b85e27a404a3a
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669777"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870156"
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte Transportsteuerelemente für Videos
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![Download Sample (Beispiel herunterladen)](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Die Transportsteuerelemente eines Videoplayers umfassen die Schaltflächen für Funktionen wie **Wiedergabe**, **Pause** und **Stopp**. In der Regel werden diese Schaltflächen mit bekannten Symbolen anstelle von Text dargestellt, und die Funktionen **Wiedergabe** und **Pause** werden in eine Schaltfläche kombiniert.
 
@@ -360,7 +360,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Auf zwei Eigenschaften von `AVPlayer` muss zugegriffen werden: Die [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/)-Eigenschaft vom Typ `AVPlayerStatus` und die [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/)-Eigenschaft vom Typ `AVPlayerTimeControlStatus`. Beachten Sie, dass die `Element`-Eigenschaft (d.h. der `VideoPlayer`) in `IVideoPlayerController` umgewandelt werden muss, um die `Status`-Eigenschaft festzulegen.
+Auf zwei Eigenschaften von `AVPlayer` muss zugegriffen werden: Die [`Status`](xref:AVFoundation.AVPlayer.Status*)-Eigenschaft vom Typ `AVPlayerStatus` und die [`TimeControlStatus`](xref:AVFoundation.AVPlayer.TimeControlStatus*)-Eigenschaft vom Typ `AVPlayerTimeControlStatus`. Beachten Sie, dass die `Element`-Eigenschaft (d.h. der `VideoPlayer`) in `IVideoPlayerController` umgewandelt werden muss, um die `Status`-Eigenschaft festzulegen.
 
 ### <a name="the-android-status-setting"></a>Die Statuseinstellung unter Android
 
@@ -540,7 +540,7 @@ Dieses wird für jede Plattform mit dem Nachteil unterstützt, dass es sich um e
 
 Dies wird im unten gezeigten Markup verwendet. Unter iOS erhält das Symbol für **Wiedergabe** die gleiche dreidimensionale Darstellung wie die Schaltflächen **Pause** und **Stopp**, diese Variante funktioniert jedoch nicht unter Android und auf der UWP.
 
-Die Seite **Custom Transport** (Benutzerdefinierte Transportsteuerelemente) legt die Eigenschaft **AreTransportControlsEnabled** auf **FALSE** fest, fügt ein `ActivityIndicator`-Element, was angezeigt wird, wenn das Video lädt, sowie zwei Schaltflächen ein. `DataTrigger`-Objekte werden dazu verwendet, das `ActivityIndicator`-Element und die zwei Schaltflächen zu aktivieren und zu deaktivieren und die erste Schaltfläche zwischen **Wiedergabe** und **Pause** zu wechseln:
+Die Seite **Custom Transport** (Benutzerdefinierte Transportsteuerelemente) legt die Eigenschaft **AreTransportControlsEnabled** auf **FALSE** fest, fügt ein `ActivityIndicator`-Element, was angezeigt wird, wenn das Video lädt, sowie zwei Schaltflächen ein. `DataTrigger` -Objekte werden dazu verwendet, die Klasse `ActivityIndicator` und die Schaltflächen zu aktivieren und zu deaktivieren und die erste Schaltfläche zwischen **Wiedergabe** und **Pause** zu wechseln:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -660,4 +660,4 @@ In einer Produktionsanwendung sollten Sie Ihre eigenen Bitmap-Bilder für die Sc
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Videoplayerdemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

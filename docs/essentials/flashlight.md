@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: c2caf1583e3099903cb0b05628ed6b2984a954d9
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671415"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870104"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Taschenlampe
 
@@ -22,7 +22,7 @@ Mit der Klasse **Flashlight** können Sie das Blitzlicht der Gerätekamera aktiv
 
 Für den Zugriff auf die **Taschenlampen**-Funktion ist die folgende plattformspezifische Einrichtung erforderlich.
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 Die Berechtigungen „Flashlight“ und „Camera“ sind erforderlich und müssen im Android-Projekt konfiguriert werden. Das Hinzufügen erfolgt folgendermaßen:
 
@@ -51,11 +51,11 @@ Durch das Hinzufügen dieser Berechtigungen [filtert Google Play automatisch die
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 Es ist kein zusätzliches Setup erforderlich.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
 Es ist kein zusätzliches Setup erforderlich.
 
@@ -96,7 +96,7 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
-### <a name="androidtabandroid"></a>[Android](#tab/android)
+### [<a name="android"></a>Android](#tab/android)
 
 Die Klasse „Flashlight“ wurde auf Basis des Betriebssystems des Geräts optimiert.
 
@@ -108,11 +108,11 @@ Auf neueren API-Ebenen wird der [TorchMode](https://developer.android.com/refere
 
 Zum Aktivieren oder Deaktivieren des `FlashMode` (Blitzlichtmodus) der Kameraeinheit wird eine Kameraoberflächentextur erstellt. 
 
-### <a name="iostabios"></a>[iOS](#tab/ios)
+### [<a name="ios"></a>iOS](#tab/ios)
 
-[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) wird verwendet, um den Taschenlampen- und Blitzlichtmodus des Geräts zu aktivieren bzw. zu deaktivieren.
+[AVCaptureDevice](xref:AVFoundation.AVCaptureDevice) wird verwendet, um den Taschenlampen- und Blitzlichtmodus des Geräts zu aktivieren bzw. zu deaktivieren.
 
-### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+### [<a name="uwp"></a>UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) wird verwendet, um die erste Lampe auf der Rückseite des Geräts zu erkennen und zu aktivieren bzw. zu deaktivieren.
 
@@ -120,5 +120,5 @@ Zum Aktivieren oder Deaktivieren des `FlashMode` (Blitzlichtmodus) der Kameraein
 
 ## <a name="api"></a>API
 
-- [Flashlight-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
-- [Flashlight-API-Dokumentation](xref:Xamarin.Essentials.Flashlight)
+- [Taschenlampen-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
+- [Taschenlampen-API-Dokumentation](xref:Xamarin.Essentials.Flashlight)

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 336f1ec4e4406d2ab40c5e8aea247bd3be9ed765
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ed59f32711bae56672d1d7f114fbb80a906d67ce
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672728"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855288"
 ---
 # <a name="hello-ios--quickstart"></a>Schnellstart: Hallo, iOS
 
@@ -42,7 +42,7 @@ Im [Xamarin.iOS Mac Installation guide (Xamarin.iOS Mac-Installationsleitfaden)]
 
 Xamarin.iOS funktioniert mit dem folgenden Setup:
 
-- Neueste Version von Visual Studio 2017 Community, Professional oder Enterprise unter Windows 10, gekoppelt mit einem Mac-Buildhost, der den oben aufgeführten Spezifikationen entspricht.
+- Neueste Version von Visual Studio 2019 oder Visual Studio 2017 Community, Professional oder Enterprise unter Windows 10, gekoppelt mit einem Mac-Buildhost, der den oben aufgeführten Spezifikationen entspricht.
 
 Im [Xamarin.iOS Windows-Installationshandbuch](~/ios/get-started/installation/windows/index.md) finden Sie ausführliche Installationsanweisungen.
 

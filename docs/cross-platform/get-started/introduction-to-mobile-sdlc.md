@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: b8f36ef407c3acc9b3472539735816649e13b7db
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672663"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855236"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Einführung in den Lebenszyklus der mobilen Softwareentwicklung
 
@@ -68,11 +68,11 @@ Sobald eine geeignete Anzahl von Anwendungsfällen und Akteuren erfasst wurde, i
 
 Sobald die Funktionen und Funktionalitäten der App bestimmt sind, sollten Sie sich im nächsten Schritt mit der Benutzererfahrung (UX) befassen.
 
-#### <a name="ux-design"></a>Entwurf der UX
+#### <a name="ux-design"></a>Entwurf der Benutzeroberfläche
 
 Die Benutzererfahrung (UX) wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von [einem von vielen verfügbaren Entwurfstoolkits](https://docs.microsoft.com/windows/uwp/design/downloads/) entworfen. Durch UX-Modelle kann die UX entworfen werden, ohne den tatsächlichen UI-Entwurf berücksichtigen zu müssen:
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "Die Benutzererfahrung wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von Tools wie Balsamiq entworfen")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "Die Benutzeroberfläche wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von Tools wie Balsamiq entworfen")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzeroberfläche für die verschiedenen Zielplattformen der App zu berücksichtigen. Die App sollte den Anforderungen der verschiedenen Plattformen entsprechen. Die verschiedenen offiziellen Entwurfsrichtlinien für die jeweiligen Plattformen finden Sie unter:
 
@@ -151,7 +151,7 @@ Dadurch haben die Entwickler Zugang zu einem Verteilungskanal für ihre Anwendun
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="uwp"></a>UWP 
+#### <a name="uwp"></a>UWP
 
 UWP-Anwendungen werden über den Microsoft Store an die Benutzer verteilt. Entwickler senden ihre Apps zur Genehmigung an das Windows Phone Dev Center. Weitere Informationen zum Veröffentlichen von Windows-Apps finden Sie in der [UWP-Dokumentation zum Veröffentlichen](https://docs.microsoft.com/windows/uwp/publish/).
 
@@ -233,7 +233,7 @@ Dies ist ein entscheidender Schritt im Verteilungsmodell von Android. Es handelt
 
 #### <a name="multitasking"></a>Multitasking
 
-Multitasking bei UWP besteht aus zwei Teilen: dem Lebenszyklus für Seiten und Anwendungen einerseits und Hintergrundprozessen andererseits. Jede Ansicht in einer Anwendung ist eine Seitenklasseninstanz, bei der Ereignisse entweder aktiv oder inaktiv sind (dabei gibt es spezielle Regeln zur Verarbeitung eines inaktiven Zustands bzw. für den Tombstone-Zustand). 
+Multitasking bei UWP besteht aus zwei Teilen: dem Lebenszyklus für Seiten und Anwendungen einerseits und Hintergrundprozessen andererseits. Jede Ansicht in einer Anwendung ist eine Seitenklasseninstanz, bei der Ereignisse entweder aktiv oder inaktiv sind (dabei gibt es spezielle Regeln zur Verarbeitung eines inaktiven Zustands bzw. für den Tombstone-Zustand).
 
 Der zweite Teil des Multitasking besteht daraus, Hintergrund-Agents zur Verarbeitung von Aufgaben zur Verfügung zu stellen, wenn die App nicht im Vordergrund ausgeführt wird. 
 
@@ -249,9 +249,8 @@ Weitere Informationen zu wichtigen Sicherheitsfaktoren bei UWP finden Sie in der
 
 In diesem Leitfaden wurde der Lebenszyklus der Softwareentwicklung im Zusammenhang mit der mobilen Entwicklung vorgestellt. Allgemeine Überlegungen zum Erstellen von mobilen Anwendungen wurden erläutert, und eine Reihe von plattformspezifischen Überlegungen u.a. zum Entwerfen, Testen und zur Bereitstellung wurden untersucht.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="next-steps"></a>Nächste Schritte
 
-- [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md)
-- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hallo, Android](https://developer.xamarin.com/get-started-droid/)
-- [Application Fundamentals (Anwendungsgrundlagen)](~/cross-platform/app-fundamentals/index.md)
+- [Einführung in die Entwicklung mobiler Anwendungen](~/cross-platform/get-started/introduction-to-mobile-development.md)
+- [Erste Schritte mit Xamarin](~/get-started/index.yml)
+- [Sharing code across platforms (Codefreigabe auf verschiedenen Plattformen)](~/cross-platform/app-fundamentals/index.md)

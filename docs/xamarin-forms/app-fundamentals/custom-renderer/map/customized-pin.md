@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 15cba21eed510ec13bfa3dc3f176fce30fb4ed68
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 54509d0a1133d86727317366b0d229bc218cb263
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059378"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870299"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartenstecknadel
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+[![Download Sample (Beispiel herunterladen)](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
 
 _In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Map-Steuerelement erstellen, der eine native Karte mit einer benutzerdefinierten Stecknadel und einer benutzerdefinierten Ansicht der Stecknadeldaten auf jeder Plattform anzeigt._
 
@@ -225,9 +225,9 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Die `OnElementChanged`-Methode führt die folgende Konfiguration der [`MKMapView`](https://developer.xamarin.com/api/type/MapKit.MKMapView/)-Instanz durch, wenn der benutzerdefinierte Renderer einem neuen Xamarin.Forms-Element angefügt wurde:
+Die `OnElementChanged`-Methode führt die folgende Konfiguration der [`MKMapView`](xref:MapKit.MKMapView)-Instanz durch, wenn der benutzerdefinierte Renderer einem neuen Xamarin.Forms-Element angefügt wurde:
 
-- Die [`GetViewForAnnotation`](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/)-Eigenschaft wird auf die `GetViewForAnnotation`-Methode festgelegt. Diese Methode wird aufgerufen, wenn die [Position der Anmerkung auf der Karte angezeigt wird](#Displaying_the_Annotation). Sie wird dann verwendet, um die Anmerkung anzupassen, bevor sie angezeigt wird.
+- Die [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*)-Eigenschaft wird auf die `GetViewForAnnotation`-Methode festgelegt. Diese Methode wird aufgerufen, wenn die [Position der Anmerkung auf der Karte angezeigt wird](#Displaying_the_Annotation). Sie wird dann verwendet, um die Anmerkung anzupassen, bevor sie angezeigt wird.
 - Ereignishandler für die Ereignisse `CalloutAccessoryControlTapped`, `DidSelectAnnotationView` und `DidDeselectAnnotationView` werden registriert. Diese Ereignisse werden ausgelöst, wenn der Benutzer auf das [rechte zusätzliche Element in der Legende tippt](#Tapping_on_the_Right_Callout_Accessory_View) und wenn der Benutzer die Anmerkung [auswählt](#Selecting_the_Annotation) bzw. die [Auswahl aufhebt](#Deselecting_the_Annotation). Das Abonnement der Ereignisse werden nur gekündigt, wenn das Element, dem der Renderer angefügt ist, geändert wird.
 
 <a name="Displaying_the_Annotation" />
@@ -236,8 +236,8 @@ Die `OnElementChanged`-Methode führt die folgende Konfiguration der [`MKMapView
 
 Die `GetViewForAnnotation`-Methode wird aufgerufen, wenn die Position der Anmerkung auf der Karte angezeigt wird. Sie wird dann verwendet, um die Anmerkung anzupassen, bevor sie angezeigt wird. Eine Anmerkung besteht aus zwei Teilen:
 
-- `MkAnnotation`: enthält den Titel, Untertitel und die Position der Anmerkung
-- `MkAnnotationView`: enthält das Bild, das für die Darstellung der Anmerkung verwendet wird, und optional eine Legende, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt
+- `MkAnnotation` – enthält den Titel, Untertitel und die Position der Anmerkung
+- `MkAnnotationView` – enthält das Bild, das für die Darstellung der Anmerkung verwendet wird, und optional eine Legende, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt
 
 Die `GetViewForAnnotation`-Methode akzeptiert eine `IMKAnnotation`-Schnittstelle, die die Daten der Anmerkung enthält und eine `MKAnnotationView`-Klasse für die Darstellung der Karte zurückgibt. Dies wird im folgenden Codebeispiel veranschaulicht:
 
@@ -273,7 +273,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 Durch diese Methode wird sichergestellt, dass die Anmerkung als benutzerdefiniertes Bild statt als systemdefinierte Stecknadel angezeigt wird und dass eine Legende angezeigt wird, wenn der Benutzer auf die Anmerkung tippt, die zusätzliche Inhalte rechts und links vom Titel und der Adresse der Anmerkung anzeigt. Dies kann folgendermaßen erreicht werden:
 
 1. Die `GetCustomPin`-Methode wird aufgerufen, um die benutzerdefinierten Stecknadeldaten für die Anmerkung zurückzugeben.
-1. Die Ansicht der Anmerkung wird für die Wiederverwendung mit einem Aufruf von [`DequeueReusableAnnotation`](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/) gepoolt, um Arbeitsspeicher zu sparen.
+1. Die Ansicht der Anmerkung wird für die Wiederverwendung mit einem Aufruf von [`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*) gepoolt, um Arbeitsspeicher zu sparen.
 1. Die `CustomMKAnnotationView`-Klasse erweitert die `MKAnnotationView`-Klasse mit `Id`- und `Url`-Eigenschaften, die den identischen Eigenschaften in der `CustomPin`-Instanz entsprechen. Eine neue Instanz von `CustomMKAnnotationView` wird erstellt, wenn die Anmerkung `null` ist:
     - Die `CustomMKAnnotationView.Image`-Eigenschaft wird auf das Bild festgelegt, das die Anmerkung auf der Karte darstellen soll.
     - Die `CustomMKAnnotationView.CalloutOffset`-Eigenschaft wird auf eine `CGPoint`-Struktur festgelegt, die angibt, dass die Legende über der Anmerkung zentriert wird.
@@ -281,7 +281,7 @@ Durch diese Methode wird sichergestellt, dass die Anmerkung als benutzerdefinier
     - Die `CustomMKAnnotationView.RightCalloutAccessoryView`-Eigenschaft wird auf eine *Informationsschaltfläche* festgelegt, die rechts von Titel und Adresse der Anmerkung angezeigt wird.
     - Die `CustomMKAnnotationView.Id`-Eigenschaft wird auf die `CustomPin.Id`-Eigenschaft festgelegt, die von der `GetCustomPin`-Methode zurückgegeben wird. Dadurch kann die Anmerkung identifiziert und die [Legende weiter angepasst](#Selecting_the_Annotation) werden (falls gewünscht).
     - Die `CustomMKAnnotationView.Url`-Eigenschaft wird auf die `CustomPin.Url`-Eigenschaft festgelegt, die von der `GetCustomPin`-Methode zurückgegeben wird. Zu dieser URL wird navigiert, wenn der Benutzer [auf die Schaltfläche tippt, die in der rechten zusätzlichen Ansicht der Legende angezeigt wird](#Tapping_on_the_Right_Callout_Accessory_View).
-1. Die [`MKAnnotationView.CanShowCallout`](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/)-Eigenschaft wird auf `true` festgelegt, sodass die Legende angezeigt wird, wenn die Anmerkung angetippt wird.
+1. Die [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*)-Eigenschaft wird auf `true` festgelegt, sodass die Legende angezeigt wird, wenn die Anmerkung angetippt wird.
 1. Die Anmerkung wird zurückgegeben, um auf der Karte angezeigt werden zu können.
 
 <a name="Selecting_the_Annotation" />
@@ -403,8 +403,8 @@ Wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefüg
 
 Die `CustomMapRenderer`-Klasse implementiert die `GoogleMap.IInfoWindowAdapter`-Schnittstelle, um [das Infofenster anzupassen](#Customizing_the_Info_Window). Diese Schnittstelle gibt an, dass folgende Methoden implementiert werden müssen:
 
-- `public Android.Views.View GetInfoWindow(Marker marker)`: Diese Methode wird aufgerufen, um ein benutzerdefiniertes Infofenster für eine Markierung zurückzugeben. Wenn `null` zurückgegeben wird, wird das Fenster standardmäßig gerendert. Wenn `View` zurückgegeben wird, wird `View` im Rahmen des Infofensters platziert.
-- `public Android.Views.View GetInfoContents(Marker marker)`: Diese Methode wird aufgerufen, um eine `View`-Klasse zurückzugeben, die den Inhalt des Infofensters enthält. Diese wird nur aufgerufen, wenn die `GetInfoWindow`-Methode `null` zurückgibt. Wenn `null` zurückgegeben wird, wird der Inhalt des Infofensters standardmäßig gerendert.
+- `public Android.Views.View GetInfoWindow(Marker marker)` – Diese Methode wird aufgerufen, um ein benutzerdefiniertes Infofenster für einen Marker zurückzugeben. Wenn `null` zurückgegeben wird, wird das Fenster standardmäßig gerendert. Wenn `View` zurückgegeben wird, wird `View` im Rahmen des Infofensters platziert.
+- `public Android.Views.View GetInfoContents(Marker marker)` – Diese Methode wird aufgerufen, um eine `View`-Klasse zurückzugeben, die den Inhalt des Infofensters enthält. Die Klasse wird nur aufgerufen, wenn die `GetInfoWindow`-Methode `null` zurückgibt. Wenn `null` zurückgegeben wird, wird der Inhalt des Infofensters standardmäßig gerendert.
 
 In der Beispielanwendung wird nur der Inhalt des Infofensters angepasst. Hierfür gibt die `GetInfoWindow`-Methode `null` zurück.
 
@@ -663,4 +663,4 @@ In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Rende
 - [Maps Control (Kartensteuerelement)](~/xamarin-forms/user-interface/map.md)
 - [Maps in Xamarin.iOS (Karten in Xamarin.iOS)](~/ios/user-interface/controls/ios-maps/index.md)
 - [Karten-API](~/android/platform/maps-and-location/maps/maps-api.md)
-- [Customized Pin (Benutzerdefinierte Stecknadel (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+- [Customized Pin (sample) (Benutzerdefinierte Stecknadel (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)

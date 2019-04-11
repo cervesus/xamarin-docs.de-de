@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 06b95c40b12aa93b79f25c3adf12b74bda232267
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bb58866a0fc0ddb542c0a40eb7a0bd9b37562776
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056625"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869665"
 ---
 # <a name="playing-a-web-video"></a>Wiedergeben eines Webvideos
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![Download Sample (Beispiel herunterladen)](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Die `VideoPlayer`-Klasse definiert eine `Source`-Eigenschaft, die zum Festlegen der Quelle der Videodatei verwendet wird, sowie eine `AutoPlay`-Eigenschaft. `AutoPlay` verfügt über die Standardeinstellung `true`, d.h., das Video sollte automatisch abgespielt werden, nachdem `Source` festgelegt wurde:
 
@@ -225,7 +225,7 @@ namespace FormsVideoLibrary.iOS
 
 Später, wenn die `Source`-Eigenschaft geändert wird, wird die `OnElementPropertyChanged`-Methode mit einer `PropertyName`-Eigenschaft mit dem Wert „Source“ aufgerufen, und `SetSource` wird erneut aufgerufen.
 
-Zuerst wird ein Objekt vom Typ [`AVAsset`](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/) zum Kapseln der Videodatei erstellt, die dann zum Erstellen einer [`AVPlayerItem`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/)-Klasse wird, die wiederum an das `AVPlayer`-Objekt übergeben wird, um eine Videodatei unter iOS wiederzugeben. Im Folgenden wird veranschaulicht, wie die `SetSource`-Methode die `Source`-Eigenschaft verarbeitet, wenn sie den Typ `UriVideoSource` aufweist:
+Zuerst wird ein Objekt vom Typ [`AVAsset`](xref:AVFoundation.AVAsset) zum Kapseln der Videodatei erstellt, die dann zum Erstellen einer [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem)-Klasse wird, die wiederum an das `AVPlayer`-Objekt übergeben wird, um eine Videodatei unter iOS wiederzugeben. Im Folgenden wird veranschaulicht, wie die `SetSource`-Methode die `Source`-Eigenschaft verarbeitet, wenn sie den Typ `UriVideoSource` aufweist:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -525,4 +525,4 @@ Alternativ können Sie die `Source`-Eigenschaft einer Videodatei wie im nächste
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Videoplayerdemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

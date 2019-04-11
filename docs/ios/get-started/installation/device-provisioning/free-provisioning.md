@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 503dae8253b3c0bb82038dd54b5d97ff632b439b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 533ab09a73116402e39da65933f26b8f3065357c
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115034"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855067"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Kostenlose Bereitstellung für Xamarin.iOS-Apps
 
@@ -22,10 +22,10 @@ Das Testen in Simulatoren ist wichtig und praktisch, aber es ist dennoch essenti
 So verwenden Sie die kostenlose Bereitstellung zum Bereitstellen einer App auf einem Gerät:
 
 - Verwenden Sie Xcode zum Erstellen der erforderlichen *Signierungsidentität* (Entwicklerzertifikat und privater Schlüssel) und des erforderlichen *Bereitstellungsprofils* (das eine explizite App-ID und die UDID des verbundenen iOS-Geräts enthält).
-- Verwenden Sie die Signierungsidentät und das Bereitstellungsprofil, die von Xcode erstellt wurden, in Visual Studio für Mac oder Visual Studio 2017 zum Bereitstellen von Xamarin.iOS-Anwendungen.
+- Verwenden Sie die Signierungsidentität und das Bereitstellungsprofil, die von Xcode erstellt wurden, in Visual Studio für Mac oder Visual Studio 2019 zum Bereitstellen von Xamarin.iOS-Anwendungen.
 
 > [!IMPORTANT]
-> Durch die [automatische Bereitstellung](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) kann Visual Studio für Mac oder Visual Studio 2017 automatisch ein Gerät zum Testen für den Entwickler einrichten. Die automatische Bereitstellung ist bei der kostenlosen Bereitstellung nicht möglich. Um die automatische Bereitstellung nutzen zu können, müssen Sie über ein kostenpflichtiges Apple Developer Program-Konto verfügen.
+> Durch die [automatische Bereitstellung](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) kann Visual Studio für Mac oder Visual Studio 2019 automatisch ein Gerät zum Testen für den Entwickler einrichten. Die automatische Bereitstellung ist bei der kostenlosen Bereitstellung nicht möglich. Um die automatische Bereitstellung nutzen zu können, müssen Sie über ein kostenpflichtiges Apple Developer Program-Konto verfügen.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -87,7 +87,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 
 ### <a name="deploy-your-xamarinios-app"></a>Bereitstellen Ihrer Xamarin.iOS-App
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 1. Verbinden Sie Ihr iOS-Gerät via USB oder [drahtlos](~/ios/deploy-test/wireless-deployment.md) mit dem Mac-Buildhost.
 2. Doppelklicken Sie im **Lösungspad** von Visual Studio für Mac auf **Info.plist**.
@@ -106,11 +106,11 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 9. Klicken Sie auf **OK**, um die **Projektoptionen** zu speichern und zu schließen.
 10. Wählen Sie Ihr iOS-Gerät, und führen Sie die App aus.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. Stellen Sie sicher, dass Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+1. Stellen Sie sicher, dass Visual Studio 2019 oder Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Verbinden Sie Ihr iOS-Gerät via USB oder [drahtlos](~/ios/deploy-test/wireless-deployment.md) mit dem Mac-Buildhost.
-3. Klicken Sie im Visual Studio 2017-**Projektmappen-Explorer** mit der rechten Maustaste auf das Xamarin.iOS-Projekt, und wählen Sie dann **Eigenschaften** aus.
+3. Klicken Sie im Visual Studio 2019- oder Visual Studio 2017-**Projektmappen-Explorer** mit der rechten Maustaste auf das Xamarin.iOS-Projekt, und wählen Sie dann **Eigenschaften** aus.
 4. Navigieren Sie zu **iOS-Bündelsignierung**.
 5. Wählen Sie **Debug** als **Konfiguration**.
 6. Wählen Sie **iPhone** als **Plattform**.
@@ -121,7 +121,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
     ![Signierungsidentität und Bereitstellungsprofil festlegen](free-provisioning-images/setprofile-w157.png "Set the signing identity and provisioning profile")
 
     > [!TIP]
-    > Xcode hat eine Signierungsidentität und ein Bereitstellungsprofil erstellt und diese auf Ihrem Mac-Buildhost gespeichert. Visual Studio 2017 kann darauf zugreifen, weil es mit dem Mac-Buildhost [gekoppelt](~/ios/get-started/installation/windows/connecting-to-mac/index.md) wurde. Wenn sie nicht angezeigt werden, müssen Sie Visual Studio 2017 vermutlich neu starten.
+    > Xcode hat eine Signierungsidentität und ein Bereitstellungsprofil erstellt und diese auf Ihrem Mac-Buildhost gespeichert. Visual Studio 2019 oder Visual Studio 2017 können darauf zugreifen, weil es mit dem Mac-Buildhost [gekoppelt](~/ios/get-started/installation/windows/connecting-to-mac/index.md) wurde. Wenn sie nicht angezeigt werden, müssen Sie Visual Studio 2019 oder Visual Studio 2017 vermutlich neu starten.
 
 10. Speichern und schließen Sie die Projekteigenschaften.
 11. Wählen Sie Ihr iOS-Gerät, und führen Sie die App aus.
@@ -143,5 +143,5 @@ In diesem Leitfaden wurden die Vorteile und Einschränkungen der kostenlosen Ber
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md)
+- [Gerätebereitstellung für Xamarin.iOS](~/ios/get-started/installation/device-provisioning/index.md)
 - [Bereitstellung für Anwendungsdienste](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)

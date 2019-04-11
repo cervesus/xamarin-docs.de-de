@@ -4,14 +4,14 @@ description: Die Share-Klasse in Xamarin.Essentials ermöglicht einer Anwendung 
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 02/12/2019
+ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: ad56a626133e03c1ca75b1db26b0904d5df7fea3
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175329"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869376"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials: Freigeben
 
@@ -61,26 +61,52 @@ Benutzeroberfläche zur Freigabe für eine externe Anwendung, die beim Senden de
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
-* Die Eigenschaft `Subject` wird für den gewünschten Betreff einer Nachricht verwendet.
+* `Subject` Die Eigenschaft wird für den gewünschten Betreff einer Nachricht verwendet.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
-* `Subject` nicht verwendet.
-* `Title` nicht verwendet.
+* `Subject` Nicht verwendet.
+* `Title` Nicht verwendet.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
-* Als `Title` wird standardmäßig der Anwendungsname verwendet, wenn kein Titel festgelegt wurde.
-* `Subject` nicht verwendet.
+* `Title` Hier wird standardmäßig der Anwendungsname verwendet, wenn kein Titel festgelegt wurde.
+* `Subject` Nicht verwendet.
 
 -----
 
+## <a name="files"></a>Dateien
+
+![Feature der Vorschauversion](~/media/shared/preview.png)
+
+Das Freigeben von Dateien steht in einer experimentellen Vorschauversion in der Xamarin.Essentials-Version 1.1.0 zur Verfügung. Mithilfe dieses Features kann eine App Dateien für andere Anwendungen auf dem Gerät freigeben. Wenn Sie dieses Feature aktivieren möchten, legen Sie die folgende Eigenschaft im Startcode Ihrer App fest:
+
+```csharp
+ExperimentalFeatures.Enable(ExperimentalFeatures.ShareFileRequest);
+```
+
+Nach der Aktivierung des Features kann jede Datei freigegeben werden. Xamarin.Essentials erkennt automatisch den Dateityp (MIME) und fordert eine Dateifreigabe an. Jede Plattform unterstützt möglicherweise nur bestimmte Dateierweiterungen.
+
+Hier sehen Sie ein Beispiel, wie Text auf einen Datenträger geschrieben wird und für andere Apps freigegeben wird:
+
+```csharp
+var fn =  "Attachment.txt";
+var file = Path.Combine(FileSystem.CacheDirectory, fn);
+File.WriteAllText(file, "Hello World");
+
+await Share.RequestAsync(new ShareFileRequest
+{
+    Title = Title,
+    File = new ShareFile(file)
+});
+```
+
 ## <a name="api"></a>API
 
-- [Share-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
-- [Share-API-Dokumentation](xref:Xamarin.Essentials.Share)
+- [Quellcode der Freigabe](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
+- [Freigabe-API-Dokumentation](xref:Xamarin.Essentials.Share)
 
 ## <a name="related-video"></a>Zugehörige Videos
 

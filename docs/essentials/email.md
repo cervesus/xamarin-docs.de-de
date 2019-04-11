@@ -4,13 +4,13 @@ description: Die Klasse „Email“ in Xamarin.Essentials ermöglicht einer Anwe
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: d7d2536fca32fe3ae9f9692031645c42edb4ea61
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 04/02/2019
+ms.openlocfilehash: 06b4f4b612d0cb44e467a9da6dbee3194338027d
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898660"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869961"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: E-Mail
 
@@ -62,21 +62,51 @@ public class EmailTest
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 Nicht alle E-Mail-Clients für Android unterstützen `Html`. Da es keine Möglichkeit gibt, dies zu erkennen, wird beim Versenden von E-Mails die Verwendung von `PlainText` empfohlen.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 Keine Plattformunterschiede.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
 Unterstützt nur `PlainText`, da die Ausnahme `FeatureNotSupportedException` ausgelöst wird, wenn `BodyFormat` versucht, `Html` zu senden.
 
 -----
 
+## <a name="file-attachments"></a>Dateianlagen
+
+![Feature der Vorschauversion](~/media/shared/preview.png)
+
+Das Versenden von Dateien per E-Mail steht in einer experimentellen Vorschauversion in der Xamarin.Essentials-Version 1.1.0 zur Verfügung. Mithilfe dieses Features kann eine App Dateien in E-Mail-Clients auf dem Gerät per E-Mail versenden. Wenn Sie dieses Feature aktivieren möchten, legen Sie die folgende Eigenschaft im Startcode Ihrer App fest:
+
+```csharp
+ExperimentalFeatures.Enable(ExperimentalFeatures.EmailAttachments);
+```
+
+Nach der Aktivierung des Features kann jede Datei per E-Mail versendet werden. Xamarin.Essentials erkennt automatisch den Dateityp (MIME) und fordert an, dass die Datei als Anlage hinzugefügt wird. Jeder E-Mail-Client ist anders und unterstützt möglicherweise nur bestimmte Dateierweiterungen oder überhaupt keine.
+
+Hier sehen Sie ein Beispiel, wie Text auf einen Datenträger geschrieben wird und als E-Mail-Anlage hinzugefügt wird:
+
+```csharp
+var message = new EmailMessage
+{
+    Subject = "Hello",
+    Body = "World",
+};
+
+var fn = "Attachment.txt";
+var file = Path.Combine(FileSystem.CacheDirectory, fn);
+File.WriteAllText(file, "Hello World");
+
+message.Attachments.Add(new EmailAttachment(file));
+
+await Email.ComposeAsync(message);
+```
+
 ## <a name="api"></a>API
 
-- [Email-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
-- [Email-API-Dokumentation](xref:Xamarin.Essentials.Email)
+- [E-Mail-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
+- [E-Mail-API-Dokumentation](xref:Xamarin.Essentials.Email)

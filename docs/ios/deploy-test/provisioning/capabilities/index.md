@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f051becad7b6ef329d57417214eb976589386970
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120943"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855028"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Arbeiten mit Funktionen in Xamarin.iOS
 
-_Um Funktionen einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert._
+_Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert._
 
 Apple stellt Entwicklern _Funktionen_, häufig auch _App-Dienste_ genannt, als Werkzeug zur Erweiterung der Funktionen und des Verwendungsspielraums von iOS-Apps zur Verfügung. Mit diesen Funktionen können Entwickler ihrer Anwendung eine umfassendere Integration von Plattformfunktionen hinzufügen, wie z.B. das Einleiten finanzieller Transaktionen in der App, weitere Gerätedienste wie Siri und viele mehr.
 Diese Funktionen können mit Xamarin.iOS-Projekten verwendet werden. Die vollständige Liste der Dienste lautet wie folgt:
@@ -44,14 +44,13 @@ Diese Funktionen können mit Xamarin.iOS-Projekten verwendet werden. Die vollst�
 * Multipfad
 * Lesen von NFC-Tags
 
-
-Funktionen können entweder über Visual Studio für Mac und Visual Studio 2017 oder manuell im Apple Developer Portal aktiviert werden. Bestimmte Funktionen, wie z.B. Wallet, Apple Pay und iCloud, erfordern eine zusätzliche Konfiguration der App-IDs.
+Funktionen können entweder über Visual Studio für Mac und Visual Studio 2019 oder manuell im Apple Developer Portal aktiviert werden. Bestimmte Funktionen, wie z.B. Wallet, Apple Pay und iCloud, erfordern eine zusätzliche Konfiguration der App-IDs.
 
 In diesem Leitfaden wird erläutert, wie Sie jeden dieser App-Dienste in Ihrer Anwendung automatisch in Visual Studio und manuell im Developer Center aktivieren können. Außerdem werden alle möglicherweise erforderlichen zusätzlichen Einstellungen beschrieben. 
 
 ## <a name="adding-app-services"></a>Hinzufügen von App-Diensten
 
-Damit die App die Funktionen verwenden kann, muss sie über ein gültiges Bereitstellungsprofil mit einer App-ID verfügen, in dem der richtige Dienst aktiviert ist. Sie können dieses Bereitstellungsprofil entweder automatisch in Visual Studio für Mac und Visual Studio 2017 oder manuell im Apple Developer Center erstellen.
+Damit die App die Funktionen verwenden kann, muss sie über ein gültiges Bereitstellungsprofil mit einer App-ID verfügen, in dem der richtige Dienst aktiviert ist. Sie können dieses Bereitstellungsprofil entweder automatisch in Visual Studio für Mac und Visual Studio 2019 oder manuell im Apple Developer Center erstellen.
 
 In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von Visual Studio oder das Developer Center zur Aktivierung der meisten Funktionen verwenden können. Einige Funktionen, wie z.B. Wallet, iCloud, Apple Pay und App-Gruppen, erfordern zusätzliche Konfigurationsschritte. Diese werden in den benachbarten Handbüchern ausführlich erläutert.
 
@@ -73,7 +72,7 @@ In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von
 
 ## <a name="using-the-ide"></a>Verwenden von IDE
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
 
 Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hinzugefügt. Um Funktionen hinzuzufügen, führen Sie die folgenden Schritte aus:
 
@@ -93,11 +92,11 @@ Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hin
 
     ![Hinzufügen von Funktionen zur Datei „entitlements.plist“](images/image18.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-Funktionen werden der Datei **Entitlements.plist** hinzugefügt. Um Funktionen in Visual Studio 2017 hinzuzufügen, führen Sie die folgenden Schritte aus:
+Funktionen werden der Datei **Entitlements.plist** hinzugefügt. Wenn Sie Funktionen in Visual Studio 2019 hinzufügen möchten, führen Sie die folgenden Schritte aus:
 
-1. Koppeln Sie Visual Studio 2017 mit einem Mac, wie im Handbuch [Koppeln mit dem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) beschrieben.
+1. Koppeln Sie Visual Studio 2019 mit einem Mac, wie im Leitfaden [Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md) erläutert.
 
 2. Öffnen Sie die Bereitstellungsoptionen, indem Sie **Projekt > Bereitstellungseigenschaften...** auswählen.
 
@@ -142,7 +141,7 @@ Die Verwendung des Developer Centers besteht aus zwei Schritten: Erstellen einer
     ![Auswahl der App-Dienste](images/image8.png)
 
 7.  Klicken Sie auf **Weiter**.
-8.  Bestätigen Sie Ihre App-ID. Jeder Dienst befindet sich wie unten gezeigt in einem der folgenden Zustände: **Aktiviert**, **Deaktiviert** oder **Konfigurierbar**. Ist der Dienst **Aktiviert**, können Sie ihn in einem Bereitstellungsprofil verwenden. Ist er **Konfigurierbar**, sind für diese Funktion weitere Konfigurationsschritte erforderlich. Die zusätzlichen Konfigurationsschritte werden in nachfolgenden Abschnitten ausführlicher beschrieben.
+8.  Bestätigen Sie Ihre App-ID. Jeder Dienst kann einen der folgenden Status aufweisen: **Aktiviert**, **Deaktiviert** oder **Konfigurierbar**, wie oben angezeigt. Ist der Dienst **Aktiviert**, können Sie ihn in einem Bereitstellungsprofil verwenden. Ist er **Konfigurierbar**, sind für diese Funktion weitere Konfigurationsschritte erforderlich. Die zusätzlichen Konfigurationsschritte werden in nachfolgenden Abschnitten ausführlicher beschrieben.
 
     ![Bestätigung der App-ID](images/image9.png)
 
