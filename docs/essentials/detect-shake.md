@@ -5,12 +5,12 @@ ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: f1482de3fd1c3e550ac9739d0f815092f7fe753d
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 2a14d739806fef353472a5186a9dbedd8e218662
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58176045"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019307"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Erkennen einer Schüttelbewegung
 
@@ -28,14 +28,14 @@ Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 using Xamarin.Essentials;
 ```
 
-Zum Erkennen von Schüttelbewegungen des Geräts müssen Sie die Beschleunigungsmesserfunktionalität verwenden, indem Sie die Methoden `Start` und `Stop` aufrufen, um auf Änderungen an der Beschleunigung zu lauschen und das Schütteln zu erkennen. Jedes Mal, wenn eine Schüttelbewegung erkannt wird, wird ein `ShakeDetected `-Ereignis ausgelöst. Sie können sie z.B. wie folgt verwenden:
+Zum Erkennen von Schüttelbewegungen des Geräts müssen Sie die Beschleunigungsmesserfunktionalität verwenden, indem Sie die Methoden `Start` und `Stop` aufrufen, um auf Änderungen an der Beschleunigung zu lauschen und das Schütteln zu erkennen. Jedes Mal, wenn eine Schüttelbewegung erkannt wird, wird ein `ShakeDetected `-Ereignis ausgelöst. Es wird empfohlen, `Game` oder schneller für die `SensorSpeed` zu verwenden. Sie können sie z.B. wie folgt verwenden:
 
 ```csharp
 
 public class DetectShakeTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.UI;
+    SensorSpeed speed = SensorSpeed.Game;
 
     public DetectShakeTest()
     {
@@ -77,5 +77,5 @@ Die API zum Erkennen von Schüttelbewegungen verwendet unformatierte Messwerte v
 
 ## <a name="api"></a>API
 
-- [Quellcode für einen Beschleunigungsmesser](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [Dokumentation für Beschleunigungsmesser-API](xref:Xamarin.Essentials.Accelerometer)
+- [Beschleunigungsmesser-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Beschleunigungsmesser-API-Dokumentation](xref:Xamarin.Essentials.Accelerometer)

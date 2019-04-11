@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 5e47799e704dfbe2c4088016d7055fc616215ea2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8c831dfa45c5028e4f1422467bf3be9210452335
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056463"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019372"
 ---
 # <a name="reusable-effectbehavior"></a>Wiederverwendbare EffectBehavior-Klasse
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+[![D(Beispiel herunterladen)(~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
 
 _Verhalten sind ein nützlicher Ansatz, um Effekte zu einem Steuerelement hinzuzufügen. Dadurch wird standardmäßig genutzter Effektbehandlungscode von Codebehind-Dateien verwendet. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens dargestellt, um einem Steuerelement einen Effekt hinzuzufügen._
 
@@ -170,5 +170,5 @@ In diesem Artikel wurde veranschaulicht, wie einem Steuerelement mithilfe eines 
 
 - [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [Effect Behavior (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
-- [Behavior-Klasse](xref:Xamarin.Forms.Behavior)
-- [Behavior<T>-Klasse<T>](xref:Xamarin.Forms.Behavior`1)
+- [Verhalten](xref:Xamarin.Forms.Behavior)
+- [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)
