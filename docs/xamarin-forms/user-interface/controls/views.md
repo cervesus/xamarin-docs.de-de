@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
-ms.openlocfilehash: e165e6c713028517d69fee92916c94bbf0e46f33
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 5b2e58901d4a850863f68b26ce41e1aa4e8daee4
+ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329234"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509901"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/FormsGallery/)
+[![D(Beispiel herunterladen)(~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms-Ansichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen._
 
@@ -183,10 +183,10 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 
 |     |     |
 | --- | --- |
-| [`ListView`](xref:Xamarin.Forms.ListView) leitet sich von [ `ItemsView[Cell]` ](xref:Xamarin.Forms.ItemsView`1) und eine bildlauffähige Liste der auswählbaren Datenelemente angezeigt. Legen Sie die [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) Eigenschaft, um eine Auflistung von Objekten, und legen Sie die [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) Eigenschaft, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Objekt beschreibt, wie die Elemente werden formatiert werden. Die [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis signalisiert, dass eine Auswahl getroffen wurde, die als verfügbar ist, die [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) Eigenschaft.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ListView) / [Handbuch](~/xamarin-forms/user-interface/listview/index.md) / [Beispiel](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView-Beispiel](views-images/ListView.png "ListView-Beispiel")](views-images/ListView-Large.png#lightbox "ListView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+| [`ListView`](xref:Xamarin.Forms.ListView) leitet sich von [ `ItemsView` ](xref:Xamarin.Forms.ItemsView`1) und eine bildlauffähige Liste der auswählbaren Datenelemente angezeigt. Legen Sie die [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) Eigenschaft, um eine Auflistung von Objekten, und legen Sie die [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) Eigenschaft, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Objekt beschreibt, wie die Elemente werden formatiert werden. Die [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis signalisiert, dass eine Auswahl getroffen wurde, die als verfügbar ist, die [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) Eigenschaft.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ListView) / [Handbuch](~/xamarin-forms/user-interface/listview/index.md) / [Beispiel](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView-Beispiel](views-images/ListView.png "ListView-Beispiel")](views-images/ListView-Large.png#lightbox "ListView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
 |     |     |
 
-### <a name="picker"></a>Zeitauswahl
+### <a name="picker"></a>Auswahl
 
 |     |     |
 | --- | --- |

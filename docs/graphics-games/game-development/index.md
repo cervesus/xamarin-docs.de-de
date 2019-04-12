@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 2fa40925b67e60c5e03e3059c7c369f2a53ce540
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 314bedcb6bb2d7ebf9d8f98428b6a7cad059f73b
+ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672429"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509952"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Einführung in die Entwicklung von Spielen mit Xamarin
 
@@ -24,11 +24,9 @@ In diesem Artikel werden die folgenden Themen behandelt:
 - **Erstellen eine spielidee in Angriff** – in diesem Abschnitt können Sie eine neue spielidee in Angriff zu erstellen – der erste Schritt bei der Erstellung eines neuen Spiels.
 - **Spielen entwicklungstechnologie** – hier führen wir einige der plattformübergreifenden Technologien zur Verfügung, die Ihre Produktivität als Entwickler von Spielen verbessern können.
 
-
 ## <a name="game-vs-non-game-programming-concepts"></a>Spiel im Vergleich zu Nicht-Game-Programmierkonzepte
 
 Programmierer, die in der Entwicklung von Spielen verschoben werden häufig mit neuen Konzepte und den Entwicklungsmustern konfrontiert. In diesem Abschnitt werden eine allgemeine Ansicht der einige dieser Konzepte.
-
 
 ### <a name="the-game-loop"></a>Die Spielschleife
 
@@ -53,7 +51,6 @@ Allgemeine Logik, die möglicherweise ausgeführten every-Frame gehören:
 
 Sollten Sie bedenken, dass viele der oben aufgeführten Aktivitäten den Status der in der gesamten Anwendung ändern können, während viele nicht-Game-apps weisen tendenziell statusänderung als Reaktion auf Ereignisse, die ausgelöst wird.
 
-
 ### <a name="content-loading-and-unloading"></a>Inhalt laden und entladen
 
 Manuell laden und Entladen (oder freigegeben) Inhalt kann erforderlich sein, je nachdem welche Technologie Sie bei der Entwicklung verwenden. Manuell laden und Entladen von Ressourcen können eine Reihe von Gründen erforderlich sein:
@@ -63,7 +60,6 @@ Manuell laden und Entladen (oder freigegeben) Inhalt kann erforderlich sein, je 
  - Spiele müssen möglicherweise mehr Ressourcen als in den Arbeitsspeicher passen anzuzeigen. "Open World" Spiele enthalten häufig große Umgebungen, die der Spieler können nahtlos durch Navigieren –, die keine Bildschirme geladen ist. In diesem Fall müssen Sie zum Erstellen eines benutzerdefinierten System für die streaming-Inhalten in und zum Verwalten von speicherauslastung.
 
 Benutzerdefinierte Dateiformate möglicherweise Verarbeitung zur Ladezeit benutzerdefinierte Laden Code erfordern.
-
 
 ### <a name="math"></a>Mathematik
 
@@ -77,17 +73,13 @@ Wenn Sie mit der kartesischen Ebene – vertraut sind, die verwendet X und Y-Koo
 > Einige Engines/APIs verwenden ein Koordinatensystem, in dem Y-Werts eines Objekts zu erhöhen sie nach unten, wechselt während andere Systeme auf einem Koordinatensystem verwenden, in denen positive Y aktiv ist. Beachten Sie, dass wenn Sie zwischen Systemen.
 Trigonometrische Funktionen (z. B. Sinus und Kosinus) werden häufig in 2D-Spiele verwendet, die jede Art von Rotation zu implementieren.
 
-
-
 Wenn Sie beabsichtigen, für das Erstellen eines 3D-Spiels wahrscheinlich müssen Sie mit den Konzepten von lineare Algebra (für Rotation und Verschieben von Daten in 3D-Bereich) sowie einige berechnen (für die Implementierung von Acceleration) vertraut sein.
-
 
 ### <a name="content-pipelines"></a>Inhaltspipelines
 
 Der Begriff *Pipeline für Bildinhalte* bezieht sich auf den Prozess, der eine Datei verwendet, um aus dem Format, die beim Erstellen von (z. B. eine PNG-Bilddatei) zu erhalten, in das endgültige Format, wenn in einem Spiel verwendet. Das abschließende Format hängt ab, auf dem Typ des Inhalts verwendet wird sowie die Technologie verwendet wird, um den Inhalt darstellen.
 
 Einige inhaltspipelines können sehr schnell sein und keinen manuellen Aufwand erfordern. Beispielsweise können die meisten Spiele-Engines und APIs das PNG-Dateiformat in das nicht verarbeitete Format geladen werden. Auf der anderen Seite möglicherweise mehr komplizierte Formate (z. B.-3D-Modelle) in ein anderes Format verarbeitet werden, bevor Sie geladen wird, und diese Verarbeitung kann je nach Größe und Komplexität des Medienobjekts einige Zeit dauern.
-
 
 ## <a name="game-development-teams"></a>Entwicklung von Spielen-Teams
 
@@ -98,7 +90,6 @@ Entwicklung von Spielen führt neue Rollen und Titel für Einzelpersonen, die de
 - **3D Künstler** – 3D Künstler sind verantwortlich für das Erstellen von *3D-Objekten*. Dazu gehören 3D-Modelle für Umgebungen, Zeichen und Eigenschaftendateien (Möbel, Pflanzen und andere Objekte einem Informationstechnologie-(IT-)Unternehmen). Einige Teams unterscheiden zwischen 3D Interpreten und 3D-Animatoren abhängig von der Größe des Teams. Finden Sie kostenlose 3D Art für Ihr Spiel auf [ http://opengameart.org/ ](http://opengameart.org/) .
 - **Spielen Sie Designer** – Spiele Designer sind dafür verantwortlich zu definieren, wie das Spiel gespielt wird. Dazu gehören allgemeine Entscheidungen wie z. B. die Einstellung des Spiels, das Gesamtziel des Spiels, und wie sich ein Spieler das Spiel durch, wechselt. Spiele-Designern können auch sehr detaillierte Entscheidungen wie z. B. die Zuordnung von Eingabe auf Aktionen, beteiligt sein, definieren die Koeffizienten für das Verschieben oder auf Sicherungen und den Entwurf von Level-Layout. Beachten Sie, dass der Begriff *Designer* bezieht sich möglicherweise auf eine Spiele-Designer oder einem visuellen Designer je nach Kontext.
 - **Klingt Designer** – Sound Designer für eine audio spielobjekt verantwortlich sind. Einige Teams möglicherweise unterscheiden zwischen Personen, die verantwortlich für das Erstellen von Soundeffekte und Komponisten, während kleinere Teams eine einzelne Person, die für alle Audio verantwortlich sein können.
-
 
 ## <a name="creating-a-game-idea"></a>Erstellen eine Spielidee in Angriff
 
@@ -114,11 +105,9 @@ Ein weiteres Verfahren zum Generieren von neuen Ideen ist zu einem bestimmten Ge
 
 Die Neugestaltung der vorhandene Spiele ist auch eine Bildungseinrichtung-Erfahrung, obwohl dies dem Endprodukt kommerziellen Lebensfähigkeit eingeschränkt werden kann. Das Verfahren zum Erstellen eines Spiels, selbst eine wird eine genaue klonen, bietet es sich um eine wertvolle Bildungseinrichtungen Erfahrung.
 
-
 ## <a name="game-development-technology"></a>Entwicklung von Spielen-Technologie
 
 Entwickler, die mit Xamarin.Android und Xamarin.iOS haben eine Vielzahl von Technologien, die ihnen bei der Entwicklung von Spielen zur Verfügung. In diesem Abschnitt werden einige der am häufigsten verwendeten plattformübergreifende Lösungen erläutert.
-
 
 ### <a name="cocossharp"></a>CocosSharp
 
@@ -133,7 +122,6 @@ Das Spiel verärgerter Ninjas mit CocosSharp erstellt, und es kann ein guter Aus
 ![](images/image3.png "Das Spiel erstellten verärgerter Ninjas mit CocosSharp")
 
 Sie können es herunterladen und erhalten Sie weitere Informationen unter den [AngryNinjas-Github-Seite](https://github.com/xamarin/AngryNinjas).
-
 
 ### <a name="monogame"></a>MonoGame
 
@@ -154,7 +142,6 @@ Bastion:
 ![](images/image8.jpg "Bastion")
 
 Zum Arbeiten mit MonoGame, navigieren Sie zum unsere [MonoGame Handbücher](~/graphics-games/monogame/index.md).
-
 
 ### <a name="urhosharp"></a>UrhoSharp
 
