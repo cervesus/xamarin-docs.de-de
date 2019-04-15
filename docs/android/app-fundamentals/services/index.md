@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: dfc0e1cb7239381ef2f495b0f9774d390b0dc82e
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 4ae86ca5fa47169bb5d78eb9d1116e419c23ed6d
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527195"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574805"
 ---
 # <a name="creating-android-services"></a>Erstellen von Android-Dienste
 
@@ -22,7 +22,7 @@ _Dieses Handbuch behandelt die Xamarin.Android-Dienste, die Android-Komponenten 
 
 Mobile apps sind nicht wie desktop-apps. Desktops besitzen umfangreiche Mengen von Ressourcen wie z. B. Bildschirmfläche, Arbeitsspeicher, Speicherplatz und eine verbundene Stromversorgung, mobile Geräte nicht. Diese Einschränkungen erzwingen, dass mobile apps unterschiedlich Verhalten. Beispielsweise bedeutet, dass der kleine Bildschirm auf einem mobilen Gerät in der Regel, dass diese nur eine app (d. h.-Aktivität) zu einem Zeitpunkt angezeigt wird. Andere Aktivitäten sind in den Hintergrund verschoben und in einem angehaltenen Zustand, in dem Ausführen jeglicher arbeiten kann nicht, übertragen. Allerdings nur, weil in eine Android-Anwendung ist bedeutet der Hintergrund nicht, dass es für die app weiterhin nicht möglich ist. 
 
-Android-Anwendungen bestehen aus mindestens einer der folgenden vier Hauptkomponenten: _Aktivitäten_, _Broadcast Receiver_, _Inhaltsanbieter_, und _Services_. Aktivitäten bilden den Eckpfeiler der viele hervorragende Android-Anwendungen, da sie auf die Benutzeroberfläche, die einem Benutzer ermöglicht bereitstellen, mit der Anwendung interagieren. Beim gleichzeitigen ausführen oder von Hintergrundaufgaben betrifft, sind jedoch Aktivitäten nicht immer die beste Wahl.
+Android-Anwendungen bestehen aus mindestens eines der folgenden vier Hauptkomponenten: _Aktivitäten_, _Broadcast Receiver_, _Inhaltsanbieter_, und _Services_. Aktivitäten bilden den Eckpfeiler der viele hervorragende Android-Anwendungen, da sie auf die Benutzeroberfläche, die einem Benutzer ermöglicht bereitstellen, mit der Anwendung interagieren. Beim gleichzeitigen ausführen oder von Hintergrundaufgaben betrifft, sind jedoch Aktivitäten nicht immer die beste Wahl.
  
 Der primäre Mechanismus für die Verarbeitung im Hintergrund in Android ist die _Service_. Ein Android-Dienst ist eine Komponente, die entwickelt wurde, ohne Benutzeroberfläche ausgeführt werden. Ein Dienst möglicherweise Herunterladen einer Datei, Musik spielen oder Anwenden eines Filters zu einem Bild. Dienste können auch verwendet werden, für die prozessübergreifende Kommunikation (_IPC_) zwischen der Android-Anwendungen. Beispielsweise könnte eine Android-app verwenden die Musik-Player-Dienst, der von einer anderen app ist, oder kann in eine app-Daten (z. B. Kontaktinformationen für eine Person) an andere apps über einen Dienst verfügbar machen. 
 
@@ -68,7 +68,7 @@ Ab Android 8.0 (API-Ebene 26), einer Android-Anwendung nicht mehr haben die Mög
 Es gibt einige Situationen, auch wenn eine app im Hintergrund ist, Android wird reaktiviert, die app und entspannen Sie sich diese Einschränkungen für ein paar Minuten, ermöglicht es der app einige Aufgaben ausführen:
 * Eine hohe Priorität Firebase Cloud-Nachrichten, die von der app empfangen wird.
 * Die app empfängt eine Übertragung an. 
-* Die Anwendung empfängt eine führt eine `PendingIntent` als Reaktion auf eine Benachrichtigung.
+* Die Anwendung empfängt und führt eine `PendingIntent` als Reaktion auf eine Benachrichtigung.
 
 Vorhandene Xamarin.Android-Anwendungen möglicherweise ändern, ihre Leistung Hintergrundaufgaben, um Probleme zu vermeiden, die unter Android 8.0 auftreten können. Hier sind einige praktischen Alternativen zu einer Android-Dienst:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 476f1c50a2f1a4199dfaf1996fc9c16615b40598
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2978f0b2bcbdd463876784a9addd7dec055b8af9
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116796"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574818"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>File Storage sowie den Zugriff, die mit Xamarin.Android
 
@@ -66,14 +66,13 @@ Zur Maximierung der Freigabe von Code Xamarin.Android-apps (oder eine Xamarin.Fo
 
 | System.Environment.SpecialFolder | Pfad  |
 |----------------------|---|
-| `ApplicationData` | **_INTERNE\_STORAGE_/.config** |
+| `ApplicationData` | **_INTERNAL\_STORAGE_/.config** |
 | `Desktop` | **_INTERNE\_STORAGE_  /Desktop** |
 | `LocalApplicationData` | **_INTERNE\_STORAGE_/.local/share** |
-| `MyComputer` | **_INTERNE\_STORAGE_/.local/share** |
 | `MyDocuments` | **_INTERNE\_SPEICHER_** |
-| `MyMusic` | **_INTERNE\_STORAGE_/Music** |
-| `MyPictures` | **_INTERNE\_STORAGE_/Music** |
-| `MyVideos` | **_INTERNE\_STORAGE_/Videos** |
+| `MyMusic` | **_INTERNAL\_STORAGE_/Music** |
+| `MyPictures` | **_INTERNE\_STORAGE_  /Pictures** |
+| `MyVideos` | **_INTERNAL\_STORAGE_/Videos** |
 | `Personal` | **_INTERNE\_SPEICHER_** |
 
 
