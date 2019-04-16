@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: c6aa4aed134667f25b3822c7604b85e27a404a3a
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/15/2019
 ms.locfileid: "58870156"
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte Transportsteuerelemente für Videos
 
-[![Download Sample (Beispiel herunterladen)](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Die Transportsteuerelemente eines Videoplayers umfassen die Schaltflächen für Funktionen wie **Wiedergabe**, **Pause** und **Stopp**. In der Regel werden diese Schaltflächen mit bekannten Symbolen anstelle von Text dargestellt, und die Funktionen **Wiedergabe** und **Pause** werden in eine Schaltfläche kombiniert.
 
@@ -540,7 +540,7 @@ Dieses wird für jede Plattform mit dem Nachteil unterstützt, dass es sich um e
 
 Dies wird im unten gezeigten Markup verwendet. Unter iOS erhält das Symbol für **Wiedergabe** die gleiche dreidimensionale Darstellung wie die Schaltflächen **Pause** und **Stopp**, diese Variante funktioniert jedoch nicht unter Android und auf der UWP.
 
-Die Seite **Custom Transport** (Benutzerdefinierte Transportsteuerelemente) legt die Eigenschaft **AreTransportControlsEnabled** auf **FALSE** fest, fügt ein `ActivityIndicator`-Element, was angezeigt wird, wenn das Video lädt, sowie zwei Schaltflächen ein. `DataTrigger` -Objekte werden dazu verwendet, die Klasse `ActivityIndicator` und die Schaltflächen zu aktivieren und zu deaktivieren und die erste Schaltfläche zwischen **Wiedergabe** und **Pause** zu wechseln:
+Die Seite **Custom Transport** (Benutzerdefinierte Transportsteuerelemente) legt die Eigenschaft **AreTransportControlsEnabled** auf **FALSE** fest, fügt ein `ActivityIndicator`-Element, was angezeigt wird, wenn das Video lädt, sowie zwei Schaltflächen ein. `DataTrigger`-Objekte werden dazu verwendet, das `ActivityIndicator`-Element und die zwei Schaltflächen zu aktivieren und zu deaktivieren und die erste Schaltfläche zwischen **Wiedergabe** und **Pause** zu wechseln:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -660,4 +660,4 @@ In einer Produktionsanwendung sollten Sie Ihre eigenen Bitmap-Bilder für die Sc
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Videoplayerdemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

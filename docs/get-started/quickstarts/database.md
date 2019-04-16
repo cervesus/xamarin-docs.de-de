@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/16/2019
 ms.locfileid: "58854989"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Daten in einer lokalen Datenbank für die von SQLite.NET Store
 
-[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 
 In dieser schnellstartanleitung erfahren Sie, wie Sie:
 
@@ -451,9 +451,9 @@ In dieser schnellstartanleitung haben Sie gelernt, wie Sie:
 Um die Anwendung mit XAML-Formatvorlagen zu formatieren, weiterhin mit dem nächsten Schnellstart fortfahren.
 
 > [!div class="nextstepaction"]
-> [Weiter](styling.md)
+> [Nächste](styling.md)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Anmerkungen zu dieser Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+- [Notes (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 - [Tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md)
