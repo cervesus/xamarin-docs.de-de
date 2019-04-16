@@ -1,19 +1,19 @@
 ---
-title: Grundlagen der Android-Ressourcen
+title: Grundlagen zu Android-Ressourcen
 ms.prod: xamarin
 ms.assetid: ED32E7B5-D552-284B-6385-C3EDDCC30A4B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: 2673021fae2f0a0b45761bf4ed619c92fb826b13
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0f747c37362997563a35d9b94f8e677d4104ee1
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110133"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59587763"
 ---
-# <a name="android-resource-basics"></a>Grundlagen der Android-Ressourcen
+# <a name="android-resource-basics"></a>Grundlagen zu Android-Ressourcen
 
 Fast alle Android-Anwendungen enthalten eine Art von Ressource, zumindest besitzen sie oft die Layouts der Benutzeroberfläche in Form von XML-Dateien. Beim Erstellen einer Xamarin.Android-Anwendung werden Standardressourcen durch die Xamarin.Android-Projektvorlage eingerichtet:
 
@@ -96,8 +96,8 @@ Dadurch können die Datei **Icon.png** im Code verwiesen werden `Resource.Drawab
 
 Beim Verweisen auf Ressourcen, programmgesteuert (im Code), können sie über die Klassenhierarchie Ressourcen zugegriffen werden die folgende Syntax verwendet:
 
-```xml
-@[<PackageName>.]Resource.<ResourceType>.<ResourceName>
+```csharp
+[<PackageName>.]Resource.<ResourceType>.<ResourceName>
 ```
 
 -  **Paketname** &ndash; das Paket, das die Ressource bereitstellt und ist nur erforderlich, wenn Ressourcen von anderen Paketen verwendet werden.
@@ -112,7 +112,7 @@ Beim Verweisen auf Ressourcen, programmgesteuert (im Code), können sie über di
 Ressourcen in eine XML-Datei werden aufgerufen, indem ein eine spezielle Syntax:
 
 ```xml
-@[<PackageName>:]<ResourceType>/<ResourceName>.
+@[<PackageName>:]<ResourceType>/<ResourceName>
 ```
 
 -  **Paketname** &ndash; das Paket, das die Ressource bereitstellt und ist nur erforderlich, wenn Ressourcen von anderen Paketen verwendet werden.
@@ -136,8 +136,7 @@ Z. B. den Inhalt einer Datei Layout **Main.axml**, lauten wie folgt:
 </LinearLayout>
 ```
 
-Dieses Beispiel besteht aus einem [ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview) , erfordert eine drawable-Ressource mit dem Namen **Flag**. Die `ImageView` hat seine `src` -Attributsatz auf **@drawable/flag**. Wenn die Aktivität gestartet wird, sieht Android innerhalb des Verzeichnisses **Ressource/Drawable** für eine Datei namens **flag.png** (die Dateierweiterung ist möglicherweise ein anderes Bildformat, z. B. **flag.jpg**) Diese Datei zu laden und Anzeigen der Daten in die `ImageView`.
+Dieses Beispiel besteht aus einem [ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview) , erfordert eine drawable-Ressource mit dem Namen **Flag**. Die `ImageView` hat seine `src` -Attributsatz auf `@drawable/flag`. Wenn die Aktivität gestartet wird, sieht Android innerhalb des Verzeichnisses **Ressource/Drawable** für eine Datei namens **flag.png** (die Dateierweiterung ist möglicherweise ein anderes Bildformat, z. B. **flag.jpg**) Diese Datei zu laden und Anzeigen der Daten in die `ImageView`.
 Wenn diese Anwendung ausgeführt wird, würde dies etwa der folgenden Abbildung aussehen:
 
 ![Lokalisierte ImageView](android-resource-basics-images/03-localized-screenshot.png)
-
