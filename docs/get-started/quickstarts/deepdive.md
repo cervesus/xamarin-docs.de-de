@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
 ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855015"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Tieferer Einblick in Xamarin.Forms-Schnellstart
@@ -421,7 +421,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 In der `OnNoteAddedClicked` -Methode, die ausgeführt wird, wenn die Anwendung eine neue Notiz hinzugefügt wird, die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) von `NoteEntryPage` festgelegt ist, um ein neues `Note` Instanz. In der `OnListViewItemSelected` -Methode, die ausgeführt wird, wenn eine vorhandene Anmerkung ausgewählt ist die [ `ListView` ](xref:Xamarin.Forms.ListView), `BindingContext` von der `NoteEntryPage` ist, die dem ausgewählten `Note` -Instanz, die über zugegriffen wird die [ `e.SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) Eigenschaft.
 
 > [!IMPORTANT]
-> Die Eigenschaft [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der einzelnen *Zielobjekte* kann einzeln festgelegt werden, dies ist jedoch nicht erforderlich. `BindingContext` ist eine spezielle Eigenschaft, die von seinen untergeordneten Elementen geerbt wird. Aus diesem Grund, wenn die `BindingContext` auf die [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) nastaven NA hodnotu eine `Note` Instanz, die alle untergeordneten Elemente von der `ContentPage` verfügen über denselben `BindingContext`, und können eine Bindung an öffentliche Eigenschaften des der `Note`Objekt.
+> Die Eigenschaft [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der einzelnen *Zielobjekte* kann einzeln festgelegt werden, dies ist jedoch nicht erforderlich. `BindingContext` ist eine spezielle Eigenschaft, die von allen zugehörigen untergeordneten Elementen geerbt wird. Aus diesem Grund, wenn die `BindingContext` auf die [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) nastaven NA hodnotu eine `Note` Instanz, die alle untergeordneten Elemente von der `ContentPage` verfügen über denselben `BindingContext`, und können eine Bindung an öffentliche Eigenschaften des der `Note`Objekt.
 
 Die [ `Editor` ](xref:Xamarin.Forms.Editor) in `NoteEntryPage` bindet dann an die `Text` Eigenschaft der `Note` Objekt:
 
@@ -539,4 +539,4 @@ Alternativ enthält das Buch [_Creating Mobile Apps with Xamarin.Forms_](~/xamar
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Beispiele für die ersten Schritte](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/)
 - [Xamarin.Forms-API-Referenz](xref:Xamarin.Forms)
-- [Kostenlose Kurzvorträgen (Video)](https://university.xamarin.com/self-guided/)
+- [Free Self-Guided Learning (Kostenloses eigenständiges Lernen) (Video)](https://university.xamarin.com/self-guided/)

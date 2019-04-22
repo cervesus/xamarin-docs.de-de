@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 54509d0a1133d86727317366b0d229bc218cb263
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870299"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartenstecknadel
 
-[![Download Sample (Beispiel herunterladen)](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
 
 _In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Map-Steuerelement erstellen, der eine native Karte mit einer benutzerdefinierten Stecknadel und einer benutzerdefinierten Ansicht der Stecknadeldaten auf jeder Plattform anzeigt._
 
@@ -236,8 +236,8 @@ Die `OnElementChanged`-Methode führt die folgende Konfiguration der [`MKMapView
 
 Die `GetViewForAnnotation`-Methode wird aufgerufen, wenn die Position der Anmerkung auf der Karte angezeigt wird. Sie wird dann verwendet, um die Anmerkung anzupassen, bevor sie angezeigt wird. Eine Anmerkung besteht aus zwei Teilen:
 
-- `MkAnnotation` – enthält den Titel, Untertitel und die Position der Anmerkung
-- `MkAnnotationView` – enthält das Bild, das für die Darstellung der Anmerkung verwendet wird, und optional eine Legende, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt
+- `MkAnnotation`: enthält den Titel, Untertitel und die Position der Anmerkung
+- `MkAnnotationView`: enthält das Bild, das für die Darstellung der Anmerkung verwendet wird, und optional eine Legende, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt
 
 Die `GetViewForAnnotation`-Methode akzeptiert eine `IMKAnnotation`-Schnittstelle, die die Daten der Anmerkung enthält und eine `MKAnnotationView`-Klasse für die Darstellung der Karte zurückgibt. Dies wird im folgenden Codebeispiel veranschaulicht:
 
@@ -403,8 +403,8 @@ Wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefüg
 
 Die `CustomMapRenderer`-Klasse implementiert die `GoogleMap.IInfoWindowAdapter`-Schnittstelle, um [das Infofenster anzupassen](#Customizing_the_Info_Window). Diese Schnittstelle gibt an, dass folgende Methoden implementiert werden müssen:
 
-- `public Android.Views.View GetInfoWindow(Marker marker)` – Diese Methode wird aufgerufen, um ein benutzerdefiniertes Infofenster für einen Marker zurückzugeben. Wenn `null` zurückgegeben wird, wird das Fenster standardmäßig gerendert. Wenn `View` zurückgegeben wird, wird `View` im Rahmen des Infofensters platziert.
-- `public Android.Views.View GetInfoContents(Marker marker)` – Diese Methode wird aufgerufen, um eine `View`-Klasse zurückzugeben, die den Inhalt des Infofensters enthält. Die Klasse wird nur aufgerufen, wenn die `GetInfoWindow`-Methode `null` zurückgibt. Wenn `null` zurückgegeben wird, wird der Inhalt des Infofensters standardmäßig gerendert.
+- `public Android.Views.View GetInfoWindow(Marker marker)`: Diese Methode wird aufgerufen, um ein benutzerdefiniertes Infofenster für eine Markierung zurückzugeben. Wenn `null` zurückgegeben wird, wird das Fenster standardmäßig gerendert. Wenn `View` zurückgegeben wird, wird `View` im Rahmen des Infofensters platziert.
+- `public Android.Views.View GetInfoContents(Marker marker)`: Diese Methode wird aufgerufen, um eine `View`-Klasse zurückzugeben, die den Inhalt des Infofensters enthält. Diese wird nur aufgerufen, wenn die `GetInfoWindow`-Methode `null` zurückgibt. Wenn `null` zurückgegeben wird, wird der Inhalt des Infofensters standardmäßig gerendert.
 
 In der Beispielanwendung wird nur der Inhalt des Infofensters angepasst. Hierfür gibt die `GetInfoWindow`-Methode `null` zurück.
 
@@ -663,4 +663,4 @@ In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Rende
 - [Maps Control (Kartensteuerelement)](~/xamarin-forms/user-interface/map.md)
 - [Maps in Xamarin.iOS (Karten in Xamarin.iOS)](~/ios/user-interface/controls/ios-maps/index.md)
 - [Karten-API](~/android/platform/maps-and-location/maps/maps-api.md)
-- [Customized Pin (sample) (Benutzerdefinierte Stecknadel (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+- [Customized Pin (Benutzerdefinierte Stecknadel (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)

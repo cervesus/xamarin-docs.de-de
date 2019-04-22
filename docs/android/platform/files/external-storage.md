@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
 ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854898"
 ---
 # <a name="external-storage"></a>Externen Speicher
@@ -140,17 +140,17 @@ Alle Android-apps müssen deklarieren Sie eine der beiden Berechtigungen für de
 > [!NOTE]
 > Wenn der Benutzer erteilt `WRITE_EXTERNAL_STORAGE`, klicken Sie dann `READ_EXTERNAL_STORAGE` ist auch implizit erteilt. Es ist nicht erforderlich, um beide Berechtigungen in **"androidmanifest.xml"**.
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Die Berechtigungen können auch hinzugefügt werden, mithilfe der **Android-Manifest** Registerkarte die **Projektmappeneigenschaften**:
 
 ![Projektmappen-Explorer - erforderlichen Berechtigungen für Visual Studio](./images/required-permissions.w157.png)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Die Berechtigungen können auch hinzugefügt werden, mithilfe der **Android-Manifest** auf der Registerkarte die **Lösung Pad "Eigenschaften"**:
 
-[![SErforderliche Berechtigungen für Visual Studio für Mac rojektmappe Pad](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
+[![Projektmappenpad - erforderlichen Berechtigungen für Visual Studio für Mac](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
 -----
 
@@ -172,7 +172,7 @@ $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STOR
 
 ## <a name="deleting-files"></a>Löschen von Dateien
 
-Standardmäßige C#-APIs werden, zum Löschen einer Datei aus dem externen Speicher, z. B. verwendet kann [ `System.IO.File.Delete` ](xref:System.IO.File.Delete*). Es ist auch möglich, die Java-APIs auf Kosten der Codeportabilität verwenden. Zum Beispiel:
+Standardmäßige c#-APIs werden, zum Löschen einer Datei aus dem externen Speicher, z. B. verwendet kann [ `System.IO.File.Delete` ](xref:System.IO.File.Delete*). Es ist auch möglich, die Java-APIs auf Kosten der Codeportabilität verwenden. Zum Beispiel:
 
 ```csharp
 System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/files/count.txt");

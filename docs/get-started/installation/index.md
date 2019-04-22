@@ -9,15 +9,15 @@ ms.author: crdun
 ms.custom: video
 ms.date: 04/02/2019
 ms.openlocfilehash: 642f66e068f021e76402c9dcc6f167bb74283aaa
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854846"
 ---
 # <a name="installing-xamarin"></a>Installieren von Xamarin
 
-_Informationen zum Einrichten von Visual Studio und Xamarin mit dem Erstellen von mobilen Apps mit .NET._
+_Erfahren Sie, wie Sie Visual Studio und Xamarin einrichten, um mit der Erstellung von mobilen Apps mit .NET zu beginnen._
 
 ::: zone pivot="windows"
 
@@ -55,5 +55,5 @@ Zusätzlich zu diesem Video gibt es eine [Schrittanleitung für die Installation
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Deinstallieren von Xamarin](~/get-started/installation/uninstalling-xamarin.md)
-- [Xamarin-Firewall-Konfigurationsanleitung](firewall.md)
+- [Uninstalling Xamarin (Deinstallieren von Xamarin)](~/get-started/installation/uninstalling-xamarin.md)
+- [Xamarin Firewall Configuration Instructions (Xamarin-Firewall-Konfigurationsanweisungen)](firewall.md)

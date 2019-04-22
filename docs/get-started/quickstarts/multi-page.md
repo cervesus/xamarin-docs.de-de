@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 855962560897789dadba535f69c4a7da42bb4742
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854976"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Führen Sie die Navigation in einer mehrseitigen Xamarin.Forms-Anwendung
 
-[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 
 In dieser schnellstartanleitung erfahren Sie, wie Sie:
 
@@ -613,9 +613,9 @@ In dieser schnellstartanleitung haben Sie gelernt, wie Sie:
 Um die Anwendung zu ändern, damit sie ihre Daten in einer lokalen von SQLite.NET-Datenbank speichert, weiterhin mit dem nächsten Schnellstart fortfahren.
 
 > [!div class="nextstepaction"]
-> [Weiter](database.md)
+> [Nächste](database.md)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Anmerkungen zu dieser Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+- [Notes (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 - [Tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md)

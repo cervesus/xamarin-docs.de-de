@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
 ms.openlocfilehash: e08324d5a905639e7ecd59bc4c7a5c0f02d0adfe
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854716"
 ---
 # <a name="android-pie-features"></a>Android Kreis-Funktionen
@@ -43,7 +43,7 @@ In der folgende Liste ist erforderlich, Android Kreis-Features in Xamarin-basier
 
 Informationen zum Einstieg mit Xamarin.Android Android Pie-apps entwickeln, müssen Sie herunterladen und die neuesten Tools und SDK-Pakete installieren, bevor Sie Ihr erste Android Kreis-Projekt erstellen können:
 
-1. Visual Studio-2019 wird empfohlen. Wenn Sie Visual Studio 2017 verwenden, aktualisieren Sie auf [Visual Studio 2017 Version 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) oder höher. Wenn Sie Visual Studio für Mac verwenden, aktualisieren Sie auf [Visual Studio 2017 für Mac, Version 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) oder höher.
+1. Visual Studio 2019 wird empfohlen. Wenn Sie Visual Studio 2017 verwenden, aktualisieren Sie auf [Visual Studio 2017 Version 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) oder höher. Wenn Sie Visual Studio für Mac verwenden, aktualisieren Sie auf [Visual Studio 2017 für Mac, Version 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) oder höher.
 
 2. Installieren Sie **Android Pie (API-28)** -Pakete und Tools über den SDK-Manager.
 
@@ -67,11 +67,11 @@ Zum Erstellen eines Projekts mit Xamarin.Android 9.0, müssen Sie zuerst den And
 
 2. Klicken Sie in der unteren rechten Ecke, klicken Sie auf das Zahnradsymbol, und wählen Sie **Repository > Google (nicht unterstützt)**:
 
-    [![SSkala-Einstellung das Google-Repository](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [![Das Repository festlegen an Google](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
 3. Installieren der **Android Kreis** SDK-Pakete, die als aufgelistet sind **Android SDK Platform-28** in die **Plattformen** Registerkarte (Weitere Informationen zur Verwendung des SDK-Managers finden Sie unter [ Android SDK-Installation](~/android/get-started/installation/android-sdk.md)):
 
-    [![Installieren Android Kreis Pakete](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [![Installieren von Paketen für Android Kreis](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. Wenn Sie einen Emulator verwenden, erstellen Sie ein virtuelles Gerät, unterstützt **-API-Ebene 28**. Weitere Informationen zum Erstellen von virtuellen Geräten finden Sie unter [Verwalten von virtuellen Geräten mit Android-Geräte-Manager](~/android/get-started/installation/android-emulator/device-manager.md).
 
@@ -111,7 +111,7 @@ In den folgenden Abschnitten markieren diese Funktionen und angeben, dass die Nu
 Viele neuere Android-Geräte mit Edge-to-Edge-Bildschirme sind eine *Ausschnitt anzeigen* (oder "Kerbe") am oberen Rand der Anzeige der Kamera und hält Vorträge.
 Der folgende Screenshot enthält ein Beispiel für Emulator einen Ausschnitt:
 
-[![ANdroid-Emulator simuliert einen Ausschnitt](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
+[![Android-Emulator simuliert einen Ausschnitt](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
 Um zu verwalten wie Ihre app-Fenster seinen Inhalt auf Geräten mit einem Display-Ausschnitt zeigt, Android Kreis wurde hinzugefügt, ein neues [LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode) Fenster Layout-Attribut. Dieses Attribut kann auf einen der folgenden Werte festgelegt werden:
 
@@ -130,7 +130,7 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 Die folgenden Beispiele enthalten Beispiele für diesen Ausschnitt-Modi. Der erste Screenshot auf der linken Seite ist für die app im nicht-Vollbildmodus. Im Screenshot Center ist die app wechselt Vollbild-mit `LayoutInDisplayCutoutMode` festgelegt `LayoutInDisplayCutoutModeShortEdges`. Beachten Sie, dass es sich bei der app weißer Hintergrund in den Anzeigebereich der Ausschnitt erweitert:
 
-[![E(Beispiel) Anzeigemodi Ausschnitt im Emulator](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[![Beispiel Anzeigemodi Ausschnitt im emulator](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
 Im letzten Screenshot (oben auf der rechten Seite), `LayoutInDisplayCutoutMode` nastaven NA hodnotu `LayoutInDisplayCutoutModeShortNever` vor zum Vollbildmodus gewechselt wird.
 Beachten Sie, dass der app weißer Hintergrund darf nicht auf den Anzeigebereich der Ausschnitt erweitert.
@@ -155,7 +155,7 @@ Android Kreis führt die folgenden Verbesserungen messaging verbessern:
 
 Das folgende Beispiel veranschaulicht, wie Sie die neuen APIs verwenden, um eine Benachrichtigung generieren, die ein Bild enthält. In den folgenden Screenshots eine SMS-Benachrichtigung gesendet wird und eine Benachrichtigung mit der ein eingebettetes Bild folgt. Die zweite Benachrichtigung wird vergrößert, wenn die Benachrichtigungen erweitert werden, (wie auf der rechten Seite dargestellt), wird der Text von der ersten Benachrichtigung angezeigt, und das Bild in eingebetteten:
 
-[![E(Beispiel) die Benachrichtigung mit Bild](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[![Beispiel-Benachrichtigung mit Bild](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
 Das folgende Beispiel veranschaulicht, wie Sie ein Bild in einer Benachrichtigung Android Kreis enthalten, und es veranschaulicht die Verwendung der neuen `Person` Klasse:
 
@@ -211,7 +211,7 @@ Weitere Informationen zum Erstellen von Benachrichtigungen finden Sie unter [lok
 
 Android Kreis bietet Unterstützung für IEEE 802.11mc (auch bekannt als _WiFi Round-Trip-Zeit_ oder _WiFi RTT_), wodurch es möglich, für apps, um die Entfernung zu einem zu erkennen oder weitere Wi-Fi-Zugriffspunkte. Mithilfe dieser Informationen kann für Ihre app nutzen *ruhiges Positionierung* mit einer Genauigkeit von ein bis zwei Verbrauchseinheiten. Auf Android-Geräten, die für IEEE 801.11mc Hardware unterstützen, kann Ihre app Navigationsfunktionen, z. B. standortbasierte-Steuerelement von smarten Geräten über autonomes oder Turn-von-Turn-Anweisungen über eine Store anbieten:
 
-[![E(Beispiel) ruhiges Navigation über WiFi RTT](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[![Beispiel für ruhiges Navigation, die über WiFi RTT](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 Die neue [WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager) Klasse und mehrere Hilfsklassen, bietet die Möglichkeit zum Messen der Entfernung für Wi-Fi-Geräte. Weitere Informationen zu den ruhiges positionierungs-APIs, die in Android P eingeführt wurden, finden Sie unter [Android.Net.Wifi.Rtt](https://developer.android.com/reference/android/net/wifi/rtt/package-summary).
 
@@ -267,4 +267,4 @@ Sie enthalten Links zur Dokumentation der API und erste Schritte mit Android Dev
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android 9 Pie](https://developer.android.com/about/versions/pie/)
+- [Android 9 Kreis](https://developer.android.com/about/versions/pie/)

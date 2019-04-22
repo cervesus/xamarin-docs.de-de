@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869823"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Siri-Verknüpfungen in Xamarin.iOS
@@ -227,8 +227,7 @@ Beim Erstellen des Xcode-Projekts, enthält diese benutzerdefinierte beabsichtig
 Dieser generierte Code anzeigen zu können:
 
 - Open **"appdelegate.m"**.
-- Fügen Sie einen Import in die benutzerdefinierte Absicht-Headerdatei hinzu:
-`#import "OrderSoupIntent.h"`
+- Fügen Sie einen Import in die benutzerdefinierte Absicht-Headerdatei hinzu: `#import "OrderSoupIntent.h"`
 - Fügen Sie in einer beliebigen Methode in der Klasse, die einen Verweis auf `OrderSoupIntent`.
 - Mit der rechten Maustaste auf `OrderSoupIntent` , und wählen Sie **fahren Sie mit der Definition**.
 - Mit der rechten Maustaste in der Datei neu geöffnete **OrderSoupIntent.h**, und wählen Sie **im Finder anzeigen**.

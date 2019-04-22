@@ -9,24 +9,24 @@ ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: 4d4c9980dd4c7be4ed18f1b6ce015d73b3caf836
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855171"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
-_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieser Leitfaden erläutert die Verwendung der Option „Automatische Signatur“, um Entwicklungszertifikate und -profile anzufordern._
+_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“, um Entwicklungszertifikate und -profile anzufordern._
 
 ## <a name="requirements"></a>Anforderungen
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 - Visual Studio für Mac 7.3 oder höher
 - Xcode 9 oder höher
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 - Visual Studio 2019
 - Visual Studio 2017 Version 15.7 (oder höher)
@@ -55,7 +55,7 @@ Bevor Sie den automatischen Signierprozess starten, vergewissern Sie sich, dass 
 
 Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf einem iOS-Gerät zu signieren:
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Öffnen Sie in Visual Studio für Mac ein iOS-Projekt.
 
@@ -73,9 +73,9 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 
     Wenn das automatische Signieren fehlschlägt, wird im Abschnitt **Automatische Signatur** die Ursache des Fehlers angezeigt.
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Koppeln Sie Visual Studio 2019 mit einem Mac, wie im Leitfaden [Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md) beschrieben.
+1. Koppeln Sie Visual Studio 2019 mit einem Mac, wie im Leitfaden [Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md) erläutert.
 
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Eigenschaften** aus. Navigieren Sie zur Registerkarte **iOS-Bundlesignierung**.
 
@@ -132,10 +132,10 @@ Wenn Ihre App eine dieser Berechtigungen verwendet, versucht Visual Studio für 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Kostenlose Bereitstellung](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [Free Provisioning (Kostenlose Bereitstellung)](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [App-Verteilung](~/ios/deploy-test/app-distribution/index.md)
 - [Problembehandlung](~/ios/deploy-test/troubleshooting.md)
-- [Apple – Leitfaden zur App-Verteilung](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+- [Apple: Leitfaden zur App-Verteilung](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
 
 ## <a name="related-video"></a>Zugehörige Videos
 

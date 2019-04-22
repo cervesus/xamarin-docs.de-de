@@ -8,15 +8,15 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
 ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855028"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Arbeiten mit Funktionen in Xamarin.iOS
 
-_Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert._
+_Um Funktionen einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert._
 
 Apple stellt Entwicklern _Funktionen_, häufig auch _App-Dienste_ genannt, als Werkzeug zur Erweiterung der Funktionen und des Verwendungsspielraums von iOS-Apps zur Verfügung. Mit diesen Funktionen können Entwickler ihrer Anwendung eine umfassendere Integration von Plattformfunktionen hinzufügen, wie z.B. das Einleiten finanzieller Transaktionen in der App, weitere Gerätedienste wie Siri und viele mehr.
 Diese Funktionen können mit Xamarin.iOS-Projekten verwendet werden. Die vollständige Liste der Dienste lautet wie folgt:
@@ -72,7 +72,7 @@ In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von
 
 ## <a name="using-the-ide"></a>Verwenden von IDE
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hinzugefügt. Um Funktionen hinzuzufügen, führen Sie die folgenden Schritte aus:
 
@@ -92,7 +92,7 @@ Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hin
 
     ![Hinzufügen von Funktionen zur Datei „entitlements.plist“](images/image18.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Funktionen werden der Datei **Entitlements.plist** hinzugefügt. Wenn Sie Funktionen in Visual Studio 2019 hinzufügen möchten, führen Sie die folgenden Schritte aus:
 

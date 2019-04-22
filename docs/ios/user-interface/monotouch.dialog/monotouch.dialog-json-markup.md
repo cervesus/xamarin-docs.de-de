@@ -8,10 +8,10 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: 2bd45c5482a8f0367bffa21f301bb631c3429a21
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870130"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog-JSON-Markup
@@ -153,7 +153,7 @@ Der Abschnitt enthält:
 
 -  `header` (optional)
 -  `footer` (optional)
--  `elements` array
+-  `elements`-Array
 
 
  <a name="header" />

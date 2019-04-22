@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 59df461c52cd01187ca3a9fc25fe741342910061
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854534"
 ---
 # <a name="debugging-xamarinios-apps"></a>Debuggen von Xamarin.iOS-Apps
@@ -32,27 +32,27 @@ Der Xamarin.iOS-Debugger verwendet den [Mono Soft-Debugger](https://www.mono-pro
 
 Wenn Sie bereit sind, das Debuggen der Anwendung zu beginnen, legen Sie im ersten Schritt [Haltepunkte für die Anwendung fest](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Dies erfolgt durch Klicken in den Randbereich des Editors neben die Zeilennummer des Codes, den Sie unterbrechen möchten:
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging1.png "Setzen von Breakpoints")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging1.png "Haltepunkte setzen")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging1a.png "Setzen von Breakpoints")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging1a.png "Haltepunkte setzen")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
 Sie können sich alle festgelegten Haltepunkte in Ihrem Code anzeigen lassen, indem Sie zum **Pad für Haltepunkte** navigieren:
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/image0a.png "Das Pad „Breakpoints“")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image0a.png "Das Pad „Haltepunkte“")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Wenn das Pad für Haltepunkte nicht automatisch angezeigt wird, können Sie es sichtbar machen, indem Sie Folgendes auswählen: _Ansicht > Debuggen > Fenster > Haltepunkte_
  
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/image0.png "Das Pad „Breakpoints“")](debugging-in-xamarin-ios-images/image0.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image0.png "Das Pad „Haltepunkte“")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  Wenn das Pad für Haltepunkte nicht automatisch angezeigt wird, können Sie es sichtbar machen, indem Sie folgendes auswählen: _Debuggen > Fenster > Haltepunkte_
  
@@ -60,12 +60,12 @@ Sie können sich alle festgelegten Haltepunkte in Ihrem Code anzeigen lassen, in
 
 Bevor Sie das Debuggen einer Anwendung beginnen, stellen Sie immer sicher, dass die Konfiguration auf **Debuggen** festgelegt wurde. Dies enthält einen hilfreichen Satz von Tools zum Unterstützen des Debugvorgangs, z.B. Haltepunkte, Datenschnellansichten und eine Anzeige der Aufrufliste:
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging7.png "Im Simulator debuggen")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
 [![](debugging-in-xamarin-ios-images/debugging7a.png "Auf einem physischen Gerät debuggen")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging7c.png "Im Simulator debuggen")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
 [![](debugging-in-xamarin-ios-images/debugging7d.png "Auf einem physischen Gerät debuggen")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
@@ -75,13 +75,13 @@ Bevor Sie das Debuggen einer Anwendung beginnen, stellen Sie immer sicher, dass 
 ## <a name="start-debugging"></a>Debugging starten
 Wählen Sie zum Starten des Debuggens das Zielgerät oder Ähnliches in Ihrer IDE:
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7b.png "Auswählen des Zielgeräts")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7b.png "Zielgerät auswählen")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7e.png "Auswählen des Zielgeräts")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7e.png "Zielgerät auswählen")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
@@ -95,35 +95,35 @@ Wenn Sie einen Haltepunkt erreichen, wird der Code gelb hervorgehoben:
 
 Debugtools wie zum Beispiel das, was zur Überprüfung der Werte eines Objekts verwendet wurde, können an dieser Stelle verwendet werden, um weitere Informationen zu den Vorgängen in Ihrem Code zu erhalten:
 
-[![](debugging-in-xamarin-ios-images/image3.png "Anzeigen des Farbwerts")](debugging-in-xamarin-ios-images/image3.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image3.png "Farbwert anzeigen")](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>Bedingte Haltepunkte
 
 Sie können auch Regeln festlegen, durch die die Umstände bestimmt werden, unter denen ein Haltepunkt auftreten soll. Dies wird als das Hinzufügen eines *bedingten Haltepunkts* bezeichnet.
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Greifen Sie auf das **Fenster für Haltepunkteigenschaften** zu, um einen bedingten Haltepunkt festzulegen. Dazu gibt es zwei Möglichkeiten:
 
 
 - Um einen neuen bedingten Haltepunkt hinzuzufügen, klicken Sie mit der rechten Maustaste links der Zeilennummer des Codes, an der Sie einen Haltepunkt setzen möchten, auf den Rand des Editors, und wählen Sie „Neuer Haltepunkt“:
 
-    [![](debugging-in-xamarin-ios-images/image4.png "Auswählen der Option „Neuer Haltepunkt“")](debugging-in-xamarin-ios-images/image4.png#lightbox)
+    [![](debugging-in-xamarin-ios-images/image4.png "„Neuer Haltepunkt“ auswählen")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - Klicken Sie mit der rechten Maustaste auf den Haltepunkt, und klicken Sie auf **Haltepunkteigenschaften**, oder wählen Sie im **Pad für Haltepunkte** die unten dargestellte Schaltfläche „Einstellungen“ aus, um eine Bedingung zu einem bestehenden Haltepunkt hinzuzufügen.
 
-    [![](debugging-in-xamarin-ios-images/image5.png "Das Pad „Breakpoints“")](debugging-in-xamarin-ios-images/image5.png#lightbox)
+    [![](debugging-in-xamarin-ios-images/image5.png "Das Pad „Haltepunkte“")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 
 Anschließend können Sie die Bedingung eingeben, unter der der Haltepunkt auftreten soll:
 
-[![](debugging-in-xamarin-ios-images/image6.png "Angeben der Bedingung für den erwarteten Breakpoint")](debugging-in-xamarin-ios-images/image6.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image6.png "Bedingung für den erwarteten Haltepunkt angeben")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Legen Sie zum Festlegen eines bedingten Breakpoints in Visual Studio zunächst [einen normalen Breakpoint fest](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Klicken Sie mit der rechten Maustaste auf den Haltepunkt, um das Kontextmenü anzuzeigen:
 
- [![](debugging-in-xamarin-ios-images/image4vs.png "Das Kontextmenü des Breakpoints")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
+ [![](debugging-in-xamarin-ios-images/image4vs.png "Das Kontextmenü des Haltepunkts")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
 Wählen Sie **Bedingungen...** aus, um das Menü _Haltepunkteinstellungen_ anzuzeigen:
 
@@ -139,7 +139,7 @@ Weitere Informationen zum Verwenden von Haltepunktbedingungen in früheren Versi
 
 Wenn ein Haltepunkt erreicht wird, gewähren Ihnen die Debugtools die Kontrolle über die Ausführung des Programms. Die IDE zeigt vier Schaltflächen an, die es Ihnen ermöglichen, den Code auszuführen oder Schritt für Schritt zu durchzugehen.
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 In Visual Studio für Mac sehen diese wie folgt aus:
 
@@ -152,7 +152,7 @@ Diese lauten wie folgt:
 - **Einzelschritt**: Dadurch wird ebenfalls die nächste Codezeile ausgeführt. Wenn die nächste Zeile ein Funktionsaufruf ist, wird der Einzelschritt in der ersten Zeile der Funktion anhalten, wodurch Sie die Funktion dann Zeile für Zeile debuggen können. Wenn die nächste Zeile keine Funktion ist, funktioniert diese Schaltfläche genauso wie der Prozedurschritt.
 - **Rücksprung**: Dadurch wird zu der Zeile zurückgekehrt, in der die aktuelle Funktion aufgerufen wurde.
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 In Visual Studio sehen diese wie folgt aus:
 
@@ -217,20 +217,20 @@ Für Visual Studio-Benutzer stehen einige Protokolle im Ausgabefenster zur Verf�
 
 Xamarin.iOS enthält den Quellcode für die Mono-Klassenbibliotheken, die Sie verwenden können, um in einem einzigen Schritt vom Debugger zu einer Überprüfung der Vorgänge im Hintergrund zu gelangen.
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Da dieses Feature während des Debuggens mehr Arbeitsspeicher benötigt, ist es standardmäßig deaktiviert.
 
 
 Um dieses Feature zu aktivieren, stellen Sie sicher, dass die Option **Nur Projektcode debuggen, keinen Einzelschritt in Frameworkcode ausführen** im Menü _Visual Studio für Mac > Einstellungen > Debugger_ deaktiviert ist, wie unten gezeigt:
 
-[![](debugging-in-xamarin-ios-images/debugging6.png "Debuggen der Mono-Klassenbibliotheken")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging6.png "Mono-Klassenbibliotheken debuggen")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Sie müssen zum Debuggen von Klassenbibliotheken in Visual Studio **Nur eigenen Code** im Menü _Debuggen > Optionen_ deaktivieren. Deaktivieren Sie im Knoten _Debugging > Allgemein_ das Kontrollkästchen **Nur meinen Code aktivieren**:
 
-[![](debugging-in-xamarin-ios-images/debugging6vs.png "Debuggen der Mono-Klassenbibliotheken")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging6vs.png "Mono-Klassenbibliotheken debuggen")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 
@@ -240,7 +240,7 @@ Sobald Sie dies tun, können Sie Ihre Anwendung und einen Einzelschritt in belie
 ## <a name="related-links"></a>Verwandte Links
 
 - [Debuggen mit Xamarin](/visualstudio/mac/debugging/)
-- [Datenvisualisierungen](/visualstudio/mac/data-visualizations/)
+- [Data Visualizations (Datenvisualisierungen)](/visualstudio/mac/data-visualizations/)
 - [Festlegen eines Haltepunkts](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
 - [Schritt-für-Schritt-Ausführung des Codes](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)
-- [Von Ausgabeinformationen zu Protokollfenster](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)
+- [Von Ausgabeinformationen zum Protokollfenster](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)

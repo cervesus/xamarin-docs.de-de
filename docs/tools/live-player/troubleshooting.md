@@ -7,15 +7,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855262"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Problembehandlung bei Xamarin Live Player
 
-![Feature (Vorschau)](~/media/shared/preview.png)
+![Feature der Vorschauversion](~/media/shared/preview.png)
 
 > [!NOTE]
 > Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
@@ -162,5 +162,5 @@ Xamarin.Forms-Android-Projekte müssen "Toolbar.axml" und "Tabbar.axml" für die
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Setup](~/tools/live-player/install.md)
+- [Setup (Einrichtung)](~/tools/live-player/install.md)
 - [Beispiele für die Verwendung mit Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

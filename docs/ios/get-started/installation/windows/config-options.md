@@ -8,15 +8,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/16/2018
 ms.openlocfilehash: eb6be5cd77dddad553376d18808092c6566021bc
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854677"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>Konfigurieren von Visual Studio für die iOS-Entwicklung
 
-_In diesem Artikel werden verschiedene Xamarin.iOS-Konfigurationsoptionen für Visual Studio erläutert._
+_In diesem Artikel werden verschiedene Xamarin.iOS-Konfigurationsoptionen für Visual Studio beschrieben._
 
 ## <a name="using-matching-xamarinios-versions"></a>Verwenden übereinstimmender Xamarin.iOS Versionen
 

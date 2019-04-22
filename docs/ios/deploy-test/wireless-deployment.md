@@ -9,10 +9,10 @@ ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854833"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Drahtlose Bereitstellung für Xamarin.iOS- und tvOS-Apps
@@ -27,14 +27,14 @@ Die drahtlose Bereitstellung steht als Feature sowohl in Visual Studio für Mac 
 
 Für die drahtlose Bereitstellung benötigen Sie Folgendes:
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 - macOS 10.12.4
 - Die aktuelle Version von Visual Studio für Mac
 - Xcode 9.0 oder höher
 - Ein Gerät mit iOS 11.0 oder tvOS 11.0 und höher
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 - Die aktuelle Version von Visual Studio
 - Ein Gerät mit iOS 11.0 oder tvOS 11.0 und höher

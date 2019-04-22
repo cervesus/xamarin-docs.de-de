@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870416"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Zusammenfassung der Kapitel 28. Position und Karten
 
-[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
 > Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
@@ -146,7 +146,7 @@ Ein Programm erhalten dem aktuellen Bereich, der die `Map` angezeigt, über die 
 
 `VisibleRegion` ist vom Typ [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan), eine Klasse mit vier schreibgeschützte Eigenschaften:
 
-- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) vom Typ [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) Der Typ [`Position`](xref:Xamarin.Forms.Maps.Position)
 - [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) Der Typ `double`, der angibt, der der Höhe des angezeigten Bereich der Karte
 - [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) Der Typ `double`, der angibt, der Breite des angezeigten Bereich der Karte
 - [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) Der Typ [ `Distance` ](xref:Xamarin.Forms.Maps.Distance), der angibt, der Größe des größten runden Fläche auf der Karte angezeigt.

@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
 ms.openlocfilehash: 2f67983addd03a065383a2940d6e6dfc7076f2be
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854312"
 ---
 # <a name="getting-started-with-f35"></a>Erste Schritte mit F#&#35;
@@ -50,8 +50,8 @@ Sehen Sie sich die [Liste von Beispielen](~/cross-platform/platform/fsharp/sampl
 
 Eine Fülle von Informationen zum Abrufen von Beschleunigung mit online ist die F# Sprache deckt alle dabei geht es um. Nachfolgend sind einige der unsere Empfehlungen:
 
--  [F#Software Foundation](http://fsharp.org)
--  [Visual F#-Entwicklungsportal](http://go.microsoft.com/fwlink/?LinkID=234174)
+-  [F# Software Foundation](http://fsharp.org)
+-  [Visual F# Entwicklungs-Portal](http://go.microsoft.com/fwlink/?LinkID=234174)
 -  [Visual F# -Codegalerie](http://go.microsoft.com/fwlink/?LinkID=124614)
 -  [Visual F# mathematische/Stats-Programmierung](http://go.microsoft.com/fwlink/?LinkId=235173)
 -  [Visual F# Diagrammerstellung](http://go.microsoft.com/fwlink/?LinkId=235176)

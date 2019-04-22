@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869376"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials: Freigeben
@@ -61,19 +61,19 @@ Benutzeroberfläche zur Freigabe für eine externe Anwendung, die beim Senden de
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
-* `Subject` Die Eigenschaft wird für den gewünschten Betreff einer Nachricht verwendet.
+* Die Eigenschaft `Subject` wird für den gewünschten Betreff einer Nachricht verwendet.
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
-* `Subject` Nicht verwendet.
-* `Title` Nicht verwendet.
+* `Subject` nicht verwendet.
+* `Title` nicht verwendet.
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* `Title` Hier wird standardmäßig der Anwendungsname verwendet, wenn kein Titel festgelegt wurde.
-* `Subject` Nicht verwendet.
+* Als `Title` wird standardmäßig der Anwendungsname verwendet, wenn kein Titel festgelegt wurde.
+* `Subject` nicht verwendet.
 
 -----
 
@@ -105,8 +105,8 @@ await Share.RequestAsync(new ShareFileRequest
 
 ## <a name="api"></a>API
 
-- [Quellcode der Freigabe](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
-- [Freigabe-API-Dokumentation](xref:Xamarin.Essentials.Share)
+- [Share-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
+- [Share-API-Dokumentation](xref:Xamarin.Essentials.Share)
 
 ## <a name="related-video"></a>Zugehörige Videos
 

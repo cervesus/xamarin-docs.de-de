@@ -9,10 +9,10 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: db243a9c8dcb25f51bc7926a7aa239531e9c24f6
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58859010"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>XAML-Vorschau für Xamarin.Forms
@@ -31,7 +31,7 @@ Die XAML-Vorschau erfahren Sie, wie Ihre Xamarin.Forms-XAML-Seite unter iOS und 
 
 Sie können die XAML-Vorschau öffnen, indem Sie auf die Pfeile auf den geteilten Ansichtsbereich. Wenn Sie ändern möchten, teilen der Standardwert Ansicht Verhalten, verwenden Sie die **Tools > Optionen > Xamarin > Forms Previewer** Dialogfeld. In diesem Dialogfeld können Sie die Standardansicht für das Dokument und die Ausrichtung der geteilten auswählen.
 
-[![XAmarin. Forms-Vorschau-Optionen in Visual Studio](xaml-previewer-images/xamlp-options-vs-sm.png "Xamarin.Forms-Vorschau \"Optionen\" in Visual Studio")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
+[![Xamarin.Forms-Vorschau "Optionen" in Visual Studio](xaml-previewer-images/xamlp-options-vs-sm.png "Xamarin.Forms-Vorschau \"Optionen\" in Visual Studio")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
 Wenn Sie eine XAML-Datei öffnen, wird der Editor öffnen, vergrößern oder Weiter, um die Vorschau, basierend auf den Einstellungen, die im ausgewählten der **Tools > Optionen > Xamarin > Forms Previewer** Dialogfeld. Die Aufteilung kann jedoch für jede Datei im Editor-Fenster geändert werden.
 
@@ -39,11 +39,11 @@ Wenn Sie eine XAML-Datei öffnen, wird der Editor öffnen, vergrößern oder Wei
 
 Wählen Sie, ob Sie Ihren Code, die XAML-Vorschau anzeigen möchten, oder beides durch Auswahl dieser Schaltflächen für die Teilung Bereich anzuzeigen. Die mittlere Schaltfläche vertauscht, welche Seite der Previewer und Ihren Code auf befinden:
 
-[![XAmarin. Forms-Vorschau Steuerelemente entwerfen, Quelle und geteilten Ansicht im Visual Studio wechseln](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Xamarin.Forms-Vorschau-Steuerelemente zum Wechseln zwischen den Entwurf, Quelle und geteilten Ansicht im Visual Studio")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
+[![Xamarin.Forms-Vorschau zum Wechseln zwischen den Entwurf, Quelle und geteilten Ansicht im Visual Studio steuert](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Xamarin.Forms-Vorschau-Steuerelemente zum Wechseln zwischen den Entwurf, Quelle und geteilten Ansicht im Visual Studio")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
 
 Sie können ändern, ob der Bildschirm vertikal oder horizontal geteilt wird oder einen Bereich vollständig reduzieren:
 
-[![XAmarin. Forms-Vorschau Bereich Ausrichtung-Steuerelementen in Visual Studio](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Xamarin.Forms-Vorschau Bereich Ausrichtung Steuerelemente in Visual Studio")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+[![Xamarin.Forms-Vorschau Bereich Ausrichtung Steuerelemente in Visual Studio](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Xamarin.Forms-Vorschau Bereich Ausrichtung Steuerelemente in Visual Studio")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -52,7 +52,7 @@ Sie können ändern, ob der Bildschirm vertikal oder horizontal geteilt wird ode
 
 Die **Vorschau** Schaltfläche wird im Editor angezeigt, wenn Sie eine XAML-Seite zu öffnen. Anzeigen oder ausblenden die Vorschau durch Drücken der **Vorschau** Schaltfläche in der oberen rechten Ecke von einem beliebigen XAML-Dokument-Fenster:
 
-[![XAmarin. Forms-Vorschau in Visual Studio für Mac](xaml-previewer-images/xamlp-list-sml.png "Xamarin.Forms-Vorschau in Visual Studio für Mac")](xaml-previewer-images/xamlp-list.png#lightbox)
+[![Xamarin.Forms-Vorschau in Visual Studio für Mac](xaml-previewer-images/xamlp-list-sml.png "Xamarin.Forms-Vorschau in Visual Studio für Mac")](xaml-previewer-images/xamlp-list.png#lightbox)
 
 ::: zone-end
 

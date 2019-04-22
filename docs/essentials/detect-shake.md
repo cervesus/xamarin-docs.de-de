@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 2a14d739806fef353472a5186a9dbedd8e218662
-ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59019307"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Erkennen einer Schüttelbewegung
@@ -77,5 +77,5 @@ Die API zum Erkennen von Schüttelbewegungen verwendet unformatierte Messwerte v
 
 ## <a name="api"></a>API
 
-- [Beschleunigungsmesser-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [Beschleunigungsmesser-API-Dokumentation](xref:Xamarin.Essentials.Accelerometer)
+- [Quellcode für einen Beschleunigungsmesser](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Dokumentation für Beschleunigungsmesser-API](xref:Xamarin.Essentials.Accelerometer)

@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 7b13ab5a4cc0d8e66e260329b5a53397778cb179
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855119"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Erstellen Sie eine einzelne Seite Xamarin.Forms-Anwendung
 
-[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 
 In dieser schnellstartanleitung erfahren Sie, wie Sie:
 
@@ -160,7 +160,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
     ![](single-page-images/vs/android-start.png "Android-Symbolleiste in Visual Studio")
 
-    [![](single-page-images/vs/notes-android.png "Notes im Android-Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "Anmerkungen zu dieser Version im Android-Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     Geben Sie eine Notiz ein, und drücken Sie auf die Schaltfläche **Speichern**.
 
@@ -310,7 +310,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
     ![](single-page-images/vs/android-start.png "Android-Symbolleiste in Visual Studio")
 
-    [![](single-page-images/vs/notes-android.png "Notes im Android-Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "Anmerkungen zu dieser Version im Android-Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     Geben Sie eine Notiz ein, und drücken Sie auf die Schaltfläche **Speichern**.
 
@@ -480,7 +480,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
 5. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten Android-Emulator zu starten:
 
-      [![](single-page-images/vsmac/notes-android.png "Notes im Android-Emulator")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
+      [![](single-page-images/vsmac/notes-android.png "Anmerkungen zu dieser Version im Android-Emulator")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     Geben Sie eine Notiz ein, und drücken Sie auf die Schaltfläche **Speichern**.
 
@@ -499,9 +499,9 @@ In dieser schnellstartanleitung haben Sie gelernt, wie Sie:
 Um diese Einzelseiten-Anwendung in einer Anwendung auf mehreren Seiten zu deaktivieren, weiterhin mit dem nächsten Schnellstart fortfahren.
 
 > [!div class="nextstepaction"]
-> [Weiter](multi-page.md)
+> [Nächste](multi-page.md)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Anmerkungen zu dieser Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+- [Notes (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 - [Tieferer Einblick in Xamarin.Forms-Schnellstart](deepdive.md)

@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
 ms.openlocfilehash: 533ab09a73116402e39da65933f26b8f3065357c
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855067"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Kostenlose Bereitstellung für Xamarin.iOS-Apps
@@ -87,7 +87,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 
 ### <a name="deploy-your-xamarinios-app"></a>Bereitstellen Ihrer Xamarin.iOS-App
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Verbinden Sie Ihr iOS-Gerät via USB oder [drahtlos](~/ios/deploy-test/wireless-deployment.md) mit dem Mac-Buildhost.
 2. Doppelklicken Sie im **Lösungspad** von Visual Studio für Mac auf **Info.plist**.
@@ -106,7 +106,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 9. Klicken Sie auf **OK**, um die **Projektoptionen** zu speichern und zu schließen.
 10. Wählen Sie Ihr iOS-Gerät, und führen Sie die App aus.
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Stellen Sie sicher, dass Visual Studio 2019 oder Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Verbinden Sie Ihr iOS-Gerät via USB oder [drahtlos](~/ios/deploy-test/wireless-deployment.md) mit dem Mac-Buildhost.
@@ -143,5 +143,5 @@ In diesem Leitfaden wurden die Vorteile und Einschränkungen der kostenlosen Ber
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Gerätebereitstellung für Xamarin.iOS](~/ios/get-started/installation/device-provisioning/index.md)
+- [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md)
 - [Bereitstellung für Anwendungsdienste](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)

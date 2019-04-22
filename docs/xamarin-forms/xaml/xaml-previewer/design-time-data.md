@@ -8,10 +8,10 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58866357"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeitdaten zu benötigen mit dem XAML-Vorschau
@@ -36,7 +36,7 @@ Beispielsweise können Sie Text in eine Bezeichnung hinzufügen, die an sie gebu
 <Label Text={Binding Name} d:Text="Name" />
 ```
 
-[![Dent Zeitdaten mit Text in eine Bezeichnung](xaml-previewer-images/designtimedata-label-sm.png "Design time Daten mit eine Bezeichnung")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![Entwerfen von Uhrzeitdaten mit Text in eine Bezeichnung](xaml-previewer-images/designtimedata-label-sm.png "Design time Daten mit eine Bezeichnung")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
  In diesem Beispiel ohne `d:Text`, die XAML-Vorschau wird mit "nothing" für die Bezeichnung angezeigt. Stattdessen zeigt es "Name", wird die Bezeichnung um echte Daten zur Laufzeit zur Verfügung.
 
@@ -46,7 +46,7 @@ Sie können `d:` mit einem beliebigen Attribut für eine Xamarin.Forms-Steuerele
 <d:Button Text="Design Time Button" />
 ```
 
-[![Dent Zeitdaten mit einem Schaltflächen-Steuerelement](xaml-previewer-images/designtimedata-controls-sm.png "Entwerfen von Uhrzeitdaten mit einem Schaltflächen-Steuerelement")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![Entwerfen von Uhrzeitdaten mit einem Schaltflächen-Steuerelement](xaml-previewer-images/designtimedata-controls-sm.png "Entwerfen von Uhrzeitdaten mit einem Schaltflächen-Steuerelement")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 In diesem Beispiel wird die Schaltfläche nur zur Entwurfszeit angezeigt. Mit dieser Methode können Sie einen Platzhalter in für put ein [benutzerdefiniertes Steuerelement, die nicht von der XAML-Vorschau unterstützt](render-custom-controls.md).
 
@@ -57,7 +57,7 @@ Sie können eine Entwurfszeit-Quelle für Images festlegen, die auf der Seite ge
 ```csharp
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
-[![Dent Zeitdaten mit Bildern](xaml-previewer-images/designtimedata-image-sm.png "Zeitdaten mit Iamges entwerfen")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[![Entwerfen von Uhrzeitdaten mit Bildern](xaml-previewer-images/designtimedata-image-sm.png "Zeitdaten mit Iamges entwerfen")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Die Entwurfszeitdaten für ListViews
 
@@ -83,7 +83,7 @@ Listenansichten sind ein beliebtes Verfahren zum Anzeigen von Daten in einer mob
 </StackLayout>
 ```
 
-[![Dent Zeitdaten mit einer ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "entwerfen Zeitdaten mit einer ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![Entwerfen von Uhrzeitdaten mit einer ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "entwerfen Zeitdaten mit einer ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
 In diesem Beispiel wird eine von drei TextCells ListView, in der XAML-Vorschau angezeigt. Sie können ändern, `x:String` zu einem vorhandenen Datenmodell in Ihrem Projekt.
 

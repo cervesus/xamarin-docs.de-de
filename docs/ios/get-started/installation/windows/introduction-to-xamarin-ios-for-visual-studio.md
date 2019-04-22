@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: e6f95713fdf3dbe8983c9f51554df7165637fc9a
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855132"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Einführung in Xamarin.iOS für Visual Studio
@@ -38,7 +38,7 @@ Es stehen einige Konfigurationsoptionen zur Verfügung. Sie können sich also en
 Führen Sie in beiden Fällen die folgenden Schritte aus:
 
 - [Installieren von Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation)
-- [Installieren Sie Xamarin-Tools unter Windows.](~/get-started/installation/windows.md)
+- [Installieren Sie Xamarin-Tools unter Windows](~/get-started/installation/windows.md)
 
 ## <a name="connecting-to-the-mac"></a>Herstellen einer Verbindung mit dem Mac
 
@@ -91,7 +91,7 @@ Der unten stehende Screenshot zeigt die verfügbaren Ausgabefenster, die sich je
 
 Andere Standardausgabebereiche von Visual Studio, wie z.B. Debug und Build, sind immer noch über die Ausgabeansicht verfügbar. Sie werden für die Debugging- und MSBuild-Ausgabe verwendet:
 
-- **Debug**
+- **Debuggen**
 
   [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugausgabe")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
@@ -147,9 +147,9 @@ Um Ihrer Ansicht Objekte hinzuzufügen, fügen Sie über den Bereich **Toolbox**
 
 In Visual Studio 2017 wurden die Android- und iOS-Protokollpads vereinheitlicht.
 
-Mit dem neuen Toolfenster „Geräteprotokoll“ für Visual Studio können Sie Protokolle für Android- und iOS-Geräte anzeigen. Es kann angezeigt werden, indem Sie einen der folgenden Befehle ausführen:
+Mit dem neuen Toolfenster „Geräteprotokoll“ für Visual Studio können Sie Protokolle für Android- und iOS-Geräte anzeigen. Dies erreichen Sie mit jedem der folgenden Befehle:
 
-- **Ansicht > Weitere Fenster > Geräteprotokoll**
+- **Ansicht > Andere Fenster > Geräteprotokoll**
 - **Tools > iOS > Geräteprotokoll**
 - **iOS-Symbolleiste > Geräteprotokoll**
 
@@ -181,7 +181,7 @@ In diesem Artikel wurde beschrieben, wie Sie Xamarin.iOS für Visual Studio verw
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Installation von Xamarin.iOS](~/ios/get-started/installation/windows/index.md)
-- [Bereitstellung von Geräten](~/ios/get-started/installation/device-provisioning/index.md)
+- [Xamarin.iOS-Installation](~/ios/get-started/installation/windows/index.md)
+- [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md)
 - [Erstellen von iOS-UI in Code](~/ios/app-fundamentals/ios-code-only.md)
-- [Connecting a Mac to your Visual Studio environment with XMA (video) (Herstellen einer Verbindung zwischen einem Mac und der Visual Studio-Umgebung mit XMA (Video))](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)
+- [Connecting a Mac to your Visual Studio environment with XMA (Herstellen einer Verbindung zwischen einem Mac und der Visual Studio-Umgebung mit XMA) (Video)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)

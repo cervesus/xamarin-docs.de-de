@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
 ms.openlocfilehash: 5d9f91300194eb45c5f5f3c52403660cf4898a19
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58853975"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Installieren von Xamarin in Visual Studio-2019
@@ -42,16 +42,16 @@ Installieren von Xamarin in Visual Studio-2019 können Sie mit dem Schreiben von
 Weitere ausführliche Informationen finden Sie im Handbuch [Installieren von Xamarin.iOS unter Windows](~/ios/get-started/installation/windows/index.md). 
 
 1. [Installieren von Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation)
-2. [Verbinden von Visual Studio mit Ihrem Mac-buildhost](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+2. [Connecting Visual Studio to your Mac build host (Herstellen einer Verbindung von Visual Studio mit Ihrem Mac-Buildhost)](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 3. [iOS-Entwickler-Setup](~/ios/get-started/installation/device-provisioning/index.md) (zum Ausführen Ihrer Anwendung auf dem Gerät erforderlich).
-5. [iOS-Remotesimulator](~/tools/ios-simulator/index.md)
+5. [Remoted iOS Simulator (iOS-Remotesimulator)](~/tools/ios-simulator/index.md)
 6. [Einführung in Xamarin.iOS für Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 
 ### <a name="android"></a>Android
 
 Weitere ausführliche Informationen finden Sie im Handbuch [Installieren von Xamarin.Android unter Windows](~/android/get-started/installation/windows.md).
 
-1. [Xamarin.Android Configuration](~/android/get-started/installation/windows.md#configuration)
-2. [Verwenden den Xamarin Android SDK-Manager](~/android/get-started/installation/android-sdk.md?ide=vs)
+1. [Xamarin.Android Configuration (Xamarin.Android-Konfiguration)](~/android/get-started/installation/windows.md#configuration)
+2. [Using the Xamarin Android SDK Manager (Verwenden des Xamarin.Android SDK-Managers)](~/android/get-started/installation/android-sdk.md?ide=vs)
 3. [Android SDK-Emulator](~/android/get-started/installation/android-emulator/index.md)
-4. [Einrichten eines Geräts für die Entwicklung](~/android/get-started/installation/set-up-device-for-development.md)
+4. [Set Up Device for Development (Einrichten eines Geräts für die Entwicklung)](~/android/get-started/installation/set-up-device-for-development.md)

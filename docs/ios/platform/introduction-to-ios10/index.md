@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
 ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870247"
 ---
 # <a name="introduction-to-ios-10"></a>Einführung in iOS 10
@@ -103,7 +103,7 @@ Darüber hinaus bietet der CallKit-API die Fähigkeit zum Erstellen von App-Erwe
 
 Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [Callkit – Einführung](~/ios/platform/callkit.md) Guide.
 
-## <a name="message-app-integration"></a>Integration von Apps
+## <a name="message-app-integration"></a>Integration von Nachrichten-Apps
 
 iOS 10 ermöglicht die Einbeziehung einer Nachrichten-App-Erweiterung in der Xamarin.iOS-Projektmappe, die integriert werden, die **Nachrichten** -app und stellt neue Funktionen für den Benutzer. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden. Es stehen zwei Arten von Nachrichten-App-Erweiterung:
 
@@ -116,7 +116,7 @@ Um mehr zu erfahren, informieren Sie sich unsere [Message-App-Integration](~/ios
 
 Mit iOS 10 wird die Apple zulassen von wichtigen Zeitschriften und neue Unternehmen Blogger und unabhängiger Herausgeber zu registrieren und Produkt und Übermitteln von Inhalten an Apple News-app. Weitere Informationen finden Sie unter Apple [News Ressourcen](https://newsresources.apple.com/) Dokumentation.
 
-## <a name="providing-haptic-feedback"></a>Übermitteln von Haptischem Feedback
+## <a name="providing-haptic-feedback"></a>Übermitteln von haptischem Feedback
 
 Auf dem iPhone 7 und das iPhone hat 7 und Apple enthalten neue Haptics-Antworten, die weitere Möglichkeiten, die sich physisch in Verbindung setzen den Benutzer bereitstellen. Verwenden Sie die neue praktisch Feedbackoptionen, die Aufmerksamkeit des Benutzers zu erhalten, und vertiefen ihre Aktionen.
 
@@ -139,7 +139,7 @@ Eine app macht diese Funktion in das System für eine Sammlung von Technologien 
 
 Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [Einführung in die proaktive Vorschläge](~/ios/platform/search/proactive-suggestions.md) Guide.
 
-## <a name="request-app-review"></a>App Review anfordern
+## <a name="request-app-review"></a>Anfordern der App-Prüfung
 
 Noch nicht mit iOS 10.3, die `RequestReview()` Methode ermöglicht eine iOS-app, um den Benutzer zu bewerten, oder Überprüfen sie. Während dieser Methode zu einem beliebigen Zeitpunkt aufgerufen werden kann, wo es sinnvoll, auf der Benutzeroberfläche ist, ist der Überprüfungsprozess gesteuert und vom App Store-Richtlinie verarbeitet. Daher diese Methode kann eine Warnung kann nicht angezeigt und sollte nie aufgerufen werden, als Reaktion auf eine Benutzeraktion, z. B. auf eine Schaltfläche tippen.
 

@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
 ms.openlocfilehash: 9ce56891eeab73f661a9c22cc047c4d0bcb10337
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854794"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Installieren der Xamarin-Vorschauversion unter Windows
@@ -38,7 +38,7 @@ Der folgende Screenshot des **Vorschauversionsinstallers** zeigt sowohl Optionen
 
 Wie im Folgenden dargestellt, kann während der Installation ein **Installationsspitzname** für die parallele Installation festgelegt werden (sodass diese im Startmenü voneinander unterschieden werden können):
 
-[![eSpitzname der DIT-Datenbank vor der Installation](windows-images/vs2017-nickname-sml.png "bearbeiten Spitzname vor der Installation")](windows-images/vs2017-nickname.png#lightbox)
+[![Spitzname vor der Installation bearbeiten](windows-images/vs2017-nickname-sml.png "edit nickname before installing")](windows-images/vs2017-nickname.png#lightbox)
 
 ### <a name="uninstalling-visual-studio-2019-preview"></a>Deinstallieren von Visual Studio 2019 Preview
 

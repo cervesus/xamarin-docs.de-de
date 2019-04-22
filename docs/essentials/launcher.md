@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 26ab3687e9bcfecbd003ddd0a97f3e46a0cd92b2
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870052"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Startprogramm
@@ -44,11 +44,11 @@ public class LauncherTest
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 Die von `CanOpenAsync` zurückgegebene Aufgabe wird sofort abgeschlossen.
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 Wenn die Zielanwendung auf diesem Gerät noch nie von `OpenAsync` aus Ihrer Anwendung geöffnet wurde, fordert iOS den Benutzer einmal auf, Ihrer Anwendung das Öffnen zu erlauben.
 
@@ -56,7 +56,7 @@ Die von `CanOpenAsync` zurückgegebene Aufgabe wird sofort abgeschlossen.
 
 Weitere Informationen zur iOS-Implementierung [finden Sie hier](xref:UIKit.UIApplication.CanOpenUrl*).
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 Keine Plattformunterschiede.
 
@@ -64,5 +64,5 @@ Keine Plattformunterschiede.
 
 ## <a name="api"></a>API
 
-- [Startprogramm-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
-- [Startprogramm-API-Dokumentation](xref:Xamarin.Essentials.Launcher)
+- [Launcher-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
+- [Launcher-API-Dokumentation](xref:Xamarin.Essentials.Launcher)

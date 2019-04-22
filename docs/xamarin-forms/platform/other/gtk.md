@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
 ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854872"
 ---
 # <a name="gtk-platform-setup"></a>GTK#-Plattform-Setup
@@ -29,7 +29,7 @@ Bevor Sie beginnen, einer neuen Xamarin.Forms-Projektmappe erstellen, oder eine 
 
 GTK#-für MacOS und Linux installiert ist, als Teil des [Mono](https://www.mono-project.com/download/stable/). GTK#-für .NET installiert werden kann Windows mit der [GTK#-Installer](https://www.mono-project.com/download/stable/#download-win).
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Um eine GTK#-app hinzufügen, die auf dem Windows-Desktop ausgeführt wird, gehen Sie wie folgt vor:
 
@@ -110,7 +110,7 @@ Um eine GTK#-app hinzufügen, die auf dem Windows-Desktop ausgeführt wird, gehe
 
     ![GTK#-Spiel Leben](gtk-images/win/gtk-gameoflife.png "GTK#-Spiel Leben")
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Um eine GTK#-app hinzufügen, die auf dem Mac-Desktop ausgeführt wird, gehen Sie wie folgt vor:
 

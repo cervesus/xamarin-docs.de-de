@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870221"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>Zusammenfassung der Kapitel 18. MVVM
 
-[![Downloadliste Beispiel](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 Eine der besten Möglichkeiten zum Entwerfen einer Anwendungs durch die Trennung der Benutzeroberfläche aus der zugrunde liegende Code, der manchmal auch aufgerufen wird, wird die *Geschäftslogik*. Verschiedene Methoden vorhanden sind, aber diejenige, die für XAML-basierten Umgebungen zugeschnitten ist, wird als Model-View-ViewModel "oder" MVVM bezeichnet.
 

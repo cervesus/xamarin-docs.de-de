@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.openlocfilehash: 06b4f4b612d0cb44e467a9da6dbee3194338027d
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869961"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: E-Mail
@@ -62,15 +62,15 @@ public class EmailTest
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 Nicht alle E-Mail-Clients für Android unterstützen `Html`. Da es keine Möglichkeit gibt, dies zu erkennen, wird beim Versenden von E-Mails die Verwendung von `PlainText` empfohlen.
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 Keine Plattformunterschiede.
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 Unterstützt nur `PlainText`, da die Ausnahme `FeatureNotSupportedException` ausgelöst wird, wenn `BodyFormat` versucht, `Html` zu senden.
 
@@ -108,5 +108,5 @@ await Email.ComposeAsync(message);
 
 ## <a name="api"></a>API
 
-- [E-Mail-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
-- [E-Mail-API-Dokumentation](xref:Xamarin.Essentials.Email)
+- [Email-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
+- [Email-API-Dokumentation](xref:Xamarin.Essentials.Email)
