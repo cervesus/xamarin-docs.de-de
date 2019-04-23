@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f0c07199a8f839d8dc9d334ae06c96a9b363c36e
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388811"
+---
 REST-Anforderungen erfolgen über HTTP mit den gleichen HTTP-Verben, mit denen Webbrowser Seiten abrufen und Daten an Server senden. In dieser Übung erstellen Sie eine Klasse, die mit dem GET-Verb Daten aus der Web-API [OpenWeatherMap](https://openweathermap.org/) abruft. Diese Web-API kann zum Abrufen von Wettervorhersagedaten für einen bestimmten Standort verwendet werden. Diese Web-API erfordert, dass Sie sich für einen API-Schlüssel registrieren.
 
 > [!div class="nextstepaction"]

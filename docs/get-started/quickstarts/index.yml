@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: fddfe37d306273f10d8f46531f403719119e325a
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57198286"
 documentType: LandingData
 title: Xamarin.Forms-Schnellstarts
 metadata:
@@ -18,41 +12,41 @@ metadata:
   ms.author: dabritch
   ms.date: 02/15/2018
 abstract:
-  description: Diese Seite enthält Links zu Schnellstarts, in denen Sie erfahren, wie mobile Apps mit Xamarin.Forms erstellt werden. Die vollständige Xamarin.Forms-Dokumentation finden Sie unter <a href="/xamarin/xamarin-forms/">Xamarin.Forms-Dokumentation</a>.
+  description: 'Diese Seite enthält Links zu Schnellstarts, in denen Sie erfahren, wie mobile Apps mit Xamarin.Forms erstellt werden. Die vollständige Xamarin.Forms-Dokumentation finden Sie unter <a href="/xamarin/xamarin-forms/">Xamarin.Forms-Dokumentation</a>.'
 sections:
-- title: Schnellstarts
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+  - title: Schnellstarts
     items:
-    - href: single-page.md
-      html: Erfahren Sie, wie Sie eine einfache plattformübergreifende Xamarin.Forms-App erstellen, mit der Sie eine Notiz eingeben und auf dem Gerät speichern können.
-      image:
-        src: ~/media/icons/i_xaml-forms.svg
-        href: single-page.md
-      title: Erstellen einer Xamarin.Forms-App mit einer Seite
-    - href: multi-page.md
-      html: Erfahren Sie, wie Sie eine einseitige App, in der Sie eine einzige Notiz speichern können, in eine mehrseitige App zum Speichern mehrerer Notizen umwandeln.
-      image:
-        src: https://docs.microsoft.com/media/common/i_class.svg
-        href: multi-page.md
-      title: Navigieren in einer Xamarin.Forms-App mit mehreren Seiten
-    - href: database.md
-      html: Erfahren Sie, wie Sie Daten in einer lokalen SQLite.NET-Datenbank speichern.
-      image:
-        src: https://docs.microsoft.com/media/common/i_generic-database.svg
-        href: database.md
-      title: Speichern von Daten in einer lokalen SQLite.NET-Datenbank
-    - href: styling.md
-      html: Erfahren Sie, wie Sie eine plattformübergreifende Xamarin.Forms-App mit XAML-Formatvorlagen formatieren.
-      image:
-        src: ~/media/icons/i_user-interface.svg
-        href: styling.md
-      title: Formatieren einer plattformübergreifenden Xamarin.Forms-App
-    - href: deepdive.md
-      html: Informieren Sie sich über die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms, deren Schwerpunkt auf der in den Schnellstarts entwickelten App liegt.
-      image:
-        src: https://docs.microsoft.com/media/common/i_overview.svg
-        href: deepdive.md
-      title: Schnellstart für die Vertiefung
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: single-page.md
+            html: 'Erfahren Sie, wie Sie eine einfache plattformübergreifende Xamarin.Forms-App erstellen, mit der Sie eine Notiz eingeben und auf dem Gerät speichern können.'
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: single-page.md
+            title: Erstellen einer Xamarin.Forms-App mit einer Seite
+          - href: multi-page.md
+            html: 'Erfahren Sie, wie Sie eine einseitige App, in der Sie eine einzige Notiz speichern können, in eine mehrseitige App zum Speichern mehrerer Notizen umwandeln.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_class.svg'
+              href: multi-page.md
+            title: Navigieren in einer Xamarin.Forms-App mit mehreren Seiten
+          - href: database.md
+            html: 'Erfahren Sie, wie Sie Daten in einer lokalen SQLite.NET-Datenbank speichern.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_generic-database.svg'
+              href: database.md
+            title: Speichern von Daten in einer lokalen SQLite.NET-Datenbank
+          - href: styling.md
+            html: 'Erfahren Sie, wie Sie eine plattformübergreifende Xamarin.Forms-App mit XAML-Formatvorlagen formatieren.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: styling.md
+            title: Formatieren einer plattformübergreifenden Xamarin.Forms-App
+          - href: deepdive.md
+            html: 'Informieren Sie sich über die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms, deren Schwerpunkt auf der in den Schnellstarts entwickelten App liegt.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
+              href: deepdive.md
+            title: Schnellstart für die Vertiefung

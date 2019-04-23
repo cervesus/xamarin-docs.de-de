@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: d6dbc82e56959399c2befb6a12f0a2cf3793ee5b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382516"
+---
 Die Größe und Position untergeordneter Ansichten innerhalb einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse hängen von den Werten der Eigenschaften [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) und [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) der untergeordneten Ansichten ab sowie den Werten der Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions).
 
 Die Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) können auf Felder der [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions)-Struktur festgelegt werden, die zwei Layouteinstellungen kapselt:

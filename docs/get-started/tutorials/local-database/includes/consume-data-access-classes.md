@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 7fbd2a81c30726bc6c38586186e9334ddd4ea282
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61193265"
+---
 In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten Datenzugriffsklassen zu verwenden.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

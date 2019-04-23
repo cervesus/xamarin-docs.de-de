@@ -7,76 +7,70 @@ metadata:
   ms.author: crdun
   ms.date: 02/20/2018
   ms.topic: sample
-  ms.openlocfilehash: 58c8cf15dc196071268172980279cb19f269cc4a
-  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 04/04/2018
-  ms.locfileid: "30762687"
 abstract:
-  description: Xamarin Android-Beispiel-Apps und -Code-Demos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin.
+  description: 'Xamarin Android-Beispiel-Apps und -Code-Demos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin.'
   menu:
     items:
-    - href: https://developer.xamarin.com/samples/android/all/
-      text: Alle Xamarin.Android-Beispiele
+      - href: 'https://developer.xamarin.com/samples/android/all/'
+        text: Alle Xamarin.Android-Beispiele
 sections:
-- title: 
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+  - title: null
     items:
-    - href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
-      html: Dieses Beispiel veranschaulicht die neuen Material Design-APIs in Android Lollipop.
-      image:
-        src: images/material-design.png
-        href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
-      title: Material Design
-    - href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
-      html: Diese Lösung verwendet Xamarin Google Play Services NuGet, um einige Anwendungsbereiche der Karten-API zu veranschaulichen.
-      image:
-        src: images/gps.png
-        href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
-      title: Google Play Services
-    - href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
-      html: Dieses Beispiel veranschaulicht, wie ViewPager und PagerTabStrip zusammen verwendet werden, um eine App zu implementieren, mit der eine Reihe von Mathematikaufgaben auf Speicherkarten dargestellt wird.
-      image:
-        src: images/flash.png
-        href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
-      title: FlashCardPager
-    - href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      html: Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann.
-      image:
-        src: images/fragments.png
-        href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      title: Fragmente
-    - href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
-      html: App zum farbigen Malen mit Fingern mithilfe der Nachverfolgung von Multitoucheingaben auf Android-Geräten.
-      image:
-        src: images/fingerpaint.png
-        href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
-      title: FingerPaint
-    - href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
-      html: Verwenden Sie dieses Beispiel, um zu erfahren, wie Sie die neuen CardView- und RecyclerView-Widgets in Android 5.0 Lollipop verwenden können.
-      image:
-        src: images/recycler.png
-        href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
-      title: RecyclerViewer
-    - href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
-      html: Android-Beispiel, das die ActionBar durch die neue ToolBar in Android 5.0 Lollipop ersetzt.
-      image:
-        src: images/toolbar.png
-        href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
-      title: Symbolleiste
-    - href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
-      html: Erläutert, wie Sie ein benutzerdefiniertes Android Wear-Zifferblatt implementieren.
-      image:
-        src: images/watchface.png
-        href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
-      title: WatchFace
-    - href: https://developer.xamarin.com/samples/android/all/
-      html: Alle Xamarin.Android-Beispiel-Apps und -Code-Demos.
-      image:
-        src: ~/media/shared/sample-download.svg
-        href: https://developer.xamarin.com/samples/android/all/
-      title: Alle Xamarin.Android-Beispiele
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/'
+            html: Dieses Beispiel veranschaulicht die neuen Material Design-APIs in Android Lollipop.
+            image:
+              src: images/material-design.png
+              href: 'https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/'
+            title: Material Design
+          - href: 'https://developer.xamarin.com/samples/monodroid/GooglePlayServices/'
+            html: 'Diese Lösung verwendet Xamarin Google Play Services NuGet, um einige Anwendungsbereiche der Karten-API zu veranschaulichen.'
+            image:
+              src: images/gps.png
+              href: 'https://developer.xamarin.com/samples/monodroid/GooglePlayServices/'
+            title: Google Play Services
+          - href: 'https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/'
+            html: 'Dieses Beispiel veranschaulicht, wie ViewPager und PagerTabStrip zusammen verwendet werden, um eine App zu implementieren, mit der eine Reihe von Mathematikaufgaben auf Speicherkarten dargestellt wird.'
+            image:
+              src: images/flash.png
+              href: 'https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/'
+            title: FlashCardPager
+          - href: 'https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/'
+            html: 'Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann.'
+            image:
+              src: images/fragments.png
+              href: 'https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/'
+            title: Fragmente
+          - href: 'https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/'
+            html: App zum farbigen Malen mit Fingern mithilfe der Nachverfolgung von Multitoucheingaben auf Android-Geräten.
+            image:
+              src: images/fingerpaint.png
+              href: 'https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/'
+            title: FingerPaint
+          - href: 'https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/'
+            html: 'Verwenden Sie dieses Beispiel, um zu erfahren, wie Sie die neuen CardView- und RecyclerView-Widgets in Android 5.0 Lollipop verwenden können.'
+            image:
+              src: images/recycler.png
+              href: 'https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/'
+            title: RecyclerViewer
+          - href: 'https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/'
+            html: 'Android-Beispiel, das die ActionBar durch die neue ToolBar in Android 5.0 Lollipop ersetzt.'
+            image:
+              src: images/toolbar.png
+              href: 'https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/'
+            title: Symbolleiste
+          - href: 'https://developer.xamarin.com/samples/monodroid/wear/WatchFace/'
+            html: 'Erläutert, wie Sie ein benutzerdefiniertes Android Wear-Zifferblatt implementieren.'
+            image:
+              src: images/watchface.png
+              href: 'https://developer.xamarin.com/samples/monodroid/wear/WatchFace/'
+            title: WatchFace
+          - href: 'https://developer.xamarin.com/samples/android/all/'
+            html: Alle Xamarin.Android-Beispiel-Apps und -Code-Demos.
+            image:
+              src: ~/media/shared/sample-download.svg
+              href: 'https://developer.xamarin.com/samples/android/all/'
+            title: Alle Xamarin.Android-Beispiele

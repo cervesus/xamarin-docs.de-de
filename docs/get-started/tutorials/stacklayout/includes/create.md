@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: a7b23e47269ecca4d36a344ce3589443a4a85e31
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382506"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Starten Sie Visual Studio, und erstellen Sie eine neue leere Xamarin.Forms-App namens **StackLayoutTutorial**. Stellen Sie sicher, dass die App .NET Standard als Mechanismus für freigegebenen Code verwendet.

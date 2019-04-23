@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384490"
+---
 Plattformprojekten lassen sich Bilddateien hinzufügen, auf die mit freigegebenem Code in Xamarin.Forms verwiesen werden kann. Diese Vorgehensweise ist zum Verteilen plattformspezifischer Bilder erforderlich. Beispielsweise kann es vorkommen, dass auf verschiedenen Plattformen unterschiedliche Auflösungen oder geringfügig abweichende Designs verwendet werden.
 
 In dieser Übung passen Sie die Projektmappe **ImageTutorial** so an, dass anstelle eines Bilds, das über einen URI heruntergeladen wird, ein lokales Bild verwendet wird. Dieses ist das Xamarin-Logo, das Sie mit einem Klick auf die unten gezeigte Schaltfläche herunterladen sollten.

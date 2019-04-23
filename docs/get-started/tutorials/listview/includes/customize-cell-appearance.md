@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037630"
+---
 Zuvor wurde die [`ListView`](xref:Xamarin.Forms.ListView) mithilfe von Datenbindung mit Daten gefüllt. Trotz Datenbindung zu einer Auflistung, in der jedes Objekt der Auflistung mehrere Datenelemente definiert hat, wurde nur ein Datenelement pro Objekt angezeigt (die `Name`-Eigenschaft des `Monkey`-Objekts).
 
 In dieser Übung ändern Sie das **ListViewTutorial**-Projekt, damit die [`ListView`](xref:Xamarin.Forms.ListView) mehrere Datenelemente in einer Zeile anzeigt.

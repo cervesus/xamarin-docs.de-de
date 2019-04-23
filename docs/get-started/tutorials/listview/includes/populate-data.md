@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: a13426f4213d7c306c0de6922d336d4bb7723d72
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037591"
+---
 Eine [`ListView`](xref:Xamarin.Forms.ListView)-Klasse wird unter Verwendung der Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource), die vom Typ `IEnumerable` ist, mit Daten aufgefüllt. Im vorherigen Schritt wurde die `ListView`-Klasse in XAML mit einem Zeichenfolgenarray aufgefüllt. Eine `ListView`-Klasse wird jedoch üblicherweise mit Daten aus einer Sammlung aufgefüllt, die im CodeBehind definiert ist, der `IEnumerable` implementiert.
 
 In dieser Übung ändern Sie das Projekt **ListViewTutorial** so, dass die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse mit Daten aus einer Sammlung von Objekten aufgefüllt wird, die in einer `List`-Klasse gespeichert ist.

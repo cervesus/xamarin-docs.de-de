@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: effebf02a7fb84ef955f4dcfda75d5273ef96b29
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384681"
+---
 
 Xamarin.Forms verfügt über ein modales Popupelement – auch bekannt als Aktionsblatt –, das dazu verwendet werden kann, Benutzer durch eine Aufgabe zu führen. In dieser Übung verwenden Sie die [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)-Methode aus der [`Page`](xref:Xamarin.Forms.Page)-Klasse, um ein Aktionsblatt anzuzeigen, das Benutzer durch eine Aufgabe führt.
 

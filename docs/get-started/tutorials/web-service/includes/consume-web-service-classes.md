@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: fe38e13ff4b6c89905769d5ef0e5163a538e1e86
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388819"
+---
 In dieser Übung erstellen Sie eine Benutzeroberfläche, um die `RestService`-Klasse zu verwenden, die wiederum Daten aus der Web-API [OpenWeatherMap](https://openweathermap.org/) abruft.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

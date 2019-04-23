@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: ba9ad162730150111c397667df24030fcd0e2c67
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61343446"
+---
 In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 > [!div class="checklist"]
@@ -14,7 +22,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2017 u
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
 
 - Den Schnellstart [Erstellen Ihrer ersten Xamarin.Forms-App](~/get-started/first-app/index.md)
-- Tutorial [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
+- Das Tutorial zu [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -25,4 +33,4 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
 
 - Den Schnellstart [Erstellen Ihrer ersten Xamarin.Forms-App](~/get-started/first-app/index.md)
-- Tutorial [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
+- Das Tutorial zu [StackLayout](~/get-started/tutorials/stacklayout/index.yml)

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: fac79ed98868c6c6c500ac60d71b89ee64090c72
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896680"
+---
 In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 > [!div class="checklist"]
@@ -20,7 +28,7 @@ Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolg
 
 ### <a name="prerequisites"></a>Erforderliche Komponenten
 
-Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio für Mac mit Plattformunterstützung für iOS und Android. Zudem ist Xcode (neuestes Release) erforderlich. Weitere Informationen zur Installation der Xamarin-Plattform finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md).
+Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mit Plattformunterstützung für iOS und Android. Zudem ist Xcode (neuestes Release) erforderlich. Weitere Informationen zur Installation der Xamarin-Plattform finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md).
 
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
 

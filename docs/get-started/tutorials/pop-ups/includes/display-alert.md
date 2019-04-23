@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: cff466025306ee5d23b5245e625eba23c5448c15
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384692"
+---
 Xamarin.Forms verfügt über ein modales Popupelement, das als „Warnung“ bezeichnet wird, um dem Benutzer eine Warnung anzuzeigen oder einfache Fragen zu stellen. In dieser Übung verwenden Sie die [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)-Methode aus der [`Page`](xref:Xamarin.Forms.Page)-Klasse, um dem Benutzer eine Warnung anzuzeigen und eine einfache Frage zu stellen.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
