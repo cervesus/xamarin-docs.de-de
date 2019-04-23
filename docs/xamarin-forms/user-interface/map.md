@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
-ms.openlocfilehash: 20b09ab44eaaaa21535d50b947449e253652cc62
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ddc9d18b57eac099331f0814b5963fb207840380
+ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672481"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59893243"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms-Karte
 
@@ -128,6 +128,15 @@ Einige davon werden im folgenden Screenshot dargestellt:
 ![Die erforderlichen Berechtigungen für Android](map-images/android-map-permissions.png "erforderliche Berechtigungen für Android")
 
 Die beiden letzten sind erforderlich, da Anwendungen eine Netzwerkverbindung zum Herunterladen der Sitemap-Daten erforderlich sind. Erfahren Sie mehr über Android [Berechtigungen](https://developer.android.com/reference/android/Manifest.permission.html) um mehr zu erfahren.
+
+Darüber hinaus Android 9 wurde die Apache-HTTP-Clientbibliothek aus dem Bootclasspath entfernt, und es ist nicht verfügbar, für Anwendungen, die Ziel-API-28 oder höher. Muss die folgende Zeile hinzugefügt werden die `application` Knoten Ihre **"androidmanifest.xml"** Datei weiterhin den Apache-HTTP-Client in Anwendungen, die Ziel-API-28 oder höher verwenden:
+
+```xml
+<application ...>
+    ...
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />    
+</application>
+```
 
 ### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 

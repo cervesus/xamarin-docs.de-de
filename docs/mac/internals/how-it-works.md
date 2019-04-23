@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/25/2017
-ms.openlocfilehash: cd5371cde1dfcbe3cb1aea5dbdf8439816d66d95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0635e110cb2aa7bc00234d3d06df57e0fd6f966e
+ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111316"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59893230"
 ---
 # <a name="how-xamarinmac-works"></a>Funktionsweise von Xamarin.Mac
 
 In den meisten Fällen der Entwickler wird nie Gedanken über die interne "magische" von Xamarin.Mac, machen jedoch müssen Sie einen groben Überblick darüber, wie Dinge funktioniert im Hintergrund in beiden testinterpretation vorhandenen Dokumentation hilft eine C# Fokus und Debuggen Probleme bei deren Auftreten informieren.
 
-Xamarin.Mac, verbindet eine Anwendung zwei Welten: die Objective-C-basierten Laufzeit, die Instanzen von systemeigenen Klassen vorhanden ist (`NSString`, `NSApplication`usw.) und die C# Common Language Runtime, die Instanzen von verwalteten Klassen (`System.String` `HttpClient`usw.). Zwischen diesen beiden Umgebungen, Xamarin.Mac erstellt eine zwei-Wege-Brücke, damit eine app in Objective-C-Methoden (Selektoren) aufgerufen werden kann (z. B. `NSApplication.Init`) und Objective-C kann der app Aufrufen C# Methoden (z. B. die Methoden auf einen app-Delegaten) zurück. Im Allgemeinen Aufrufe in Objective-C erfolgt transparent über **P/Invokes** und einige Laufzeitcode Xamarin bietet.
+Xamarin.Mac verbindet eine Anwendung zwei Welten: Es gibt die Objective-C-basierte-Runtime, die Instanzen von systemeigenen Klassen (`NSString`, `NSApplication`usw.) und es gibt die C# Common Language Runtime, die Instanzen von verwalteten Klassen (`System.String`, `HttpClient`usw.). Zwischen diesen beiden Umgebungen, Xamarin.Mac erstellt eine zwei-Wege-Brücke, damit eine app in Objective-C-Methoden (Selektoren) aufgerufen werden kann (z. B. `NSApplication.Init`) und Objective-C kann der app Aufrufen C# Methoden (z. B. die Methoden auf einen app-Delegaten) zurück. Im Allgemeinen Aufrufe in Objective-C erfolgt transparent über **P/Invokes** und einige Laufzeitcode Xamarin bietet.
 
 <a name="exposing-classes" />
 
@@ -120,7 +120,7 @@ Es gibt mehrere Möglichkeiten, die beim Aktivieren der AOT-Kompilierung für ei
 - `core` -AOT kompiliert die `Xamarin.Mac`, `System` und `mscorlib` Assemblys.
 - `sdk` -AOT kompiliert die `Xamarin.Mac` und Base Class Libraries (BCL)-Assemblys.
 - `|hybrid` : Diese Option, um eine der oben genannten Optionen aktiviert hybrides AOT, was IL-stripping ermöglicht, jedoch wird zu längeren kompilierzeiten führen Mal hinzufügen.
-- `+` : Enthält eine einzelne for AOT-Kompilierung.
+- `+` : Enthält eine einzelne Datei für die AOT-Kompilierung.
 - `-` : Entfernt eine einzelne Datei aus der AOT-Kompilierung.
 
 Z. B. `--aot:all,-MyAssembly.dll` AOT-Kompilierung für alle Assemblys in der MonoBundle ermöglicht _außer_ `MyAssembly.dll` und `--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll` Hybrid ermöglichen würde, AOT-Code enthalten die `MyOtherAssembly.dll` und die ausschließen`mscorlib.dll`.
