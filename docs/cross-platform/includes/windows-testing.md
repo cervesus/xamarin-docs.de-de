@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: eeccded35a1fc776b89e1c96da81d6904d0e11ac
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303302"
+---
 ||Hinweise zu Tests|
 |---|---|
 |**Xamarin.iOS**|<ul><li>Am einfachsten ist der Einstieg mit dem iPhone, dem iPad, der Apple Watch und den Apple TV-Simulatoren, die in Xcode enthalten sind. Sie können während des Debuggens mit Visual Studio auf die Simulatoren auf dem verbundenen Mac zugreifen.</li> <li>Führen Sie <a href="~/ios/get-started/installation/device-provisioning/index.md">diese Anweisungen</a>, um ein Gerät für Tests zu konfigurieren (die meisten Schritte müssen auf dem verbundenen Mac-Computer ausgeführt werden).</li></ul>|

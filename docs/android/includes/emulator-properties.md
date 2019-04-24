@@ -1,4 +1,12 @@
-|Eigenschaft|Beschreibung |Optionen|
+---
+ms.openlocfilehash: b39fb6157c247416c85846d4d8e63e6e1b7c6028
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60956864"
+---
+|Eigenschaft|Beschreibung|Optionen|
 |--- |--- |--- |
 |`abi.type`|**ABI-Typ** &ndash; Gibt den ABI-Typ (Application Binary Interface) des emulierten Geräts an. Die Option **x86** gilt für den Anweisungssatz, der üblicherweise als „x86“ oder „IA-32“ bezeichnet wird. Die Option **x86_64** gilt für die 64-Bit-Anweisungen „x86“. Die Option **armeabi-v7a** gilt für den ARM-Anweisungssatz mit den ARM-Erweiterungen „v7-a“. Die Option **arm64-v8a** gilt für den ARM-Anweisungssatz, der AArch64 unterstützt.|x86, x86_64, armeabi-v7a, arm64-v8a|
 |`disk.cachePartition`|**Cachepartition** &ndash; Bestimmt, ob das emulierte Gerät eine **/cache**-Partition auf dem Gerät verwendet. Die **/cache**-Partition (anfänglich leer) stellt den Speicherort dar, an dem Android häufig verwendete Daten und App-Komponenten speichert. Wenn der Wert auf **no** festgelegt wird, verwendet der Emulator keine **/cache**-Partition, und die anderen Einstellungen von `disk.cache` werden ignoriert.|yes, no|
@@ -30,7 +38,7 @@
 |`hw.gsmModem`|**Unterstützung von GSM-Modems** &ndash; Bestimmt, ob das emulierte Gerät ein Modem enthält, das GSM (Global System for Mobile Communications) für Mobilfunknetze unterstützt.|yes, no|
 |`hw.initialOrientation`|**Ursprüngliche Bildschirmausrichtung** &ndash; Konfiguriert die ursprüngliche Ausrichtung des Bildschirms auf dem emulierten Gerät (Hoch- oder Querformat). Im Hochformat ist der Bildschirm höher als er breit ist. Im Querformat ist der Bildschirm breiter als er hoch ist. Wenn das emulierte Gerät ausgeführt wird, können Sie die Ausrichtung ändern, wenn Hoch- und Querformat im Geräteprofil unterstützt werden.|portrait, landscape|
 |`hw.keyboard`|**Tastaturunterstützung** &ndash; Bestimmt, ob das emulierte Gerät eine QWERTY-Tastatur unterstützt.|yes, no|
-|`hw.keyboard.charmap`|**Name der Zeichentabelle für die Tastatur** &ndash; Der Name der Hardwarezeichentabelle für dieses Gerät. HINWEIS: Dieser sollte immer dem Standard **qwerty2** entsprechen, wenn Sie das Systemimage nicht entsprechend geändert haben. Dieser Name wird zur Startzeit an den Kernel gesendet. Das Verwenden eines falschen Namens führt dazu, dass das virtuelle Gerät nicht verwendbar ist.||
+|`hw.keyboard.charmap`|**Name der Zeichentabelle für die Tastatur** &ndash; Der Name der Hardwarezeichentabelle für dieses Gerät. HINWEIS: Dieser sollte immer dem Standard (**qwerty2**) entsprechen, wenn Sie das Systemimage nicht entsprechend geändert haben. Dieser Name wird zur Startzeit an den Kernel gesendet. Das Verwenden eines falschen Namens führt dazu, dass das virtuelle Gerät nicht verwendbar ist.||
 |`hw.keyboard.lid`|**Unterstützung für das Ein-/Ausblenden der Tastatur** &ndash; Wenn die Tastaturunterstützung aktiviert ist, bestimmt diese Einstellung, ob die QWERTY-Tastatur geschlossen/ausgeblendet oder geöffnet/angezeigt werden kann. Diese Einstellung wird ignoriert, wenn „hw.keyboard“ auf „false“ festgelegt ist. HINWEIS: Der Standardwert ist „false“, wenn das emulierte Gerät auf die API-Ebene 12 oder höher ausgerichtet ist.|yes, no|
 |`hw.lcd.backlight`|**LCD-Hintergrundbeleuchtung** &ndash; Bestimmt, ob eine LCD-Hintergrundbeleuchtung vom emulierten Gerät simuliert wird.|yes, no|
 |`hw.lcd.density`|**LCD-Dichte** &ndash; Die Dichte der emulierten LCD-Anzeige, die in von der Dichte unabhängigen Pixeln oder „dp“ (bei „dp“ handelt es sich um eine virtuelle Pixeleinheit) gemessen wird. Wenn die Einstellung auf 160 dp festgelegt wird, entspricht jedes dp einem physischen Pixel. Zur Laufzeit verwendet Android diesen Wert, um die entsprechenden Ressourcen bzw. Objekte auszuwählen und für das richtige Rendering der Anzeige zu skalieren.|120, 160, 240, 213, 320|
