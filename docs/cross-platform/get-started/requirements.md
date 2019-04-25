@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
 ms.openlocfilehash: c03e9782fe80a88c70df6b7780c43778f673d10d
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854560"
 ---
 # <a name="system-requirements"></a>Systemanforderungen
@@ -83,6 +83,6 @@ Dort finden Sie auch zusätzliche Informationen über [Xamarin.Forms-Anforderung
 ## <a name="related-links"></a>Verwandte Links
 
 - [Xamarin herunterladen](https://visualstudio.microsoft.com/xamarin/)
-- [Xamarin.Forms release notes (Xamarin.Forms-Versionshinweise)](/xamarin/xamarin-forms/release-notes/)
-- [Xamarin.Android release notes (Xamarin.Android-Versionshinweise)](/xamarin/android/release-notes/)
-- [Xamarin.iOS release notes (Xamarin.iOS-Versionshinweise)](/xamarin/ios/release-notes/)
+- [Xamarin.Forms-Versionshinweise](/xamarin/xamarin-forms/release-notes/)
+- [Xamarin.Android-Versionshinweise](/xamarin/android/release-notes/)
+- [Xamarin.iOS-Versionshinweise](/xamarin/ios/release-notes/)

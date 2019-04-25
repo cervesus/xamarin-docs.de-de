@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
 ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855236"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Einführung in den Lebenszyklus der mobilen Softwareentwicklung
@@ -72,7 +72,7 @@ Sobald die Funktionen und Funktionalitäten der App bestimmt sind, sollten Sie s
 
 Die Benutzererfahrung (UX) wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von [einem von vielen verfügbaren Entwurfstoolkits](https://docs.microsoft.com/windows/uwp/design/downloads/) entworfen. Durch UX-Modelle kann die UX entworfen werden, ohne den tatsächlichen UI-Entwurf berücksichtigen zu müssen:
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "Die Benutzeroberfläche wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von Tools wie Balsamiq entworfen")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "Die Benutzererfahrung wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von Tools wie Balsamiq entworfen")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzeroberfläche für die verschiedenen Zielplattformen der App zu berücksichtigen. Die App sollte den Anforderungen der verschiedenen Plattformen entsprechen. Die verschiedenen offiziellen Entwurfsrichtlinien für die jeweiligen Plattformen finden Sie unter:
 
@@ -251,6 +251,6 @@ In diesem Leitfaden wurde der Lebenszyklus der Softwareentwicklung im Zusammenha
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-- [Einführung in die Entwicklung mobiler Anwendungen](~/cross-platform/get-started/introduction-to-mobile-development.md)
+- [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Erste Schritte mit Xamarin](~/get-started/index.yml)
-- [Sharing code across platforms (Codefreigabe auf verschiedenen Plattformen)](~/cross-platform/app-fundamentals/index.md)
+- [Codefreigabe auf verschiedenen Plattformen](~/cross-platform/app-fundamentals/index.md)

@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
 ms.openlocfilehash: 9456686157f10d81e36b908cb0a2441e64d47663
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855145"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
@@ -130,7 +130,7 @@ Wenn ein bestimmter Mac nicht im Dialogfeld **Mit Mac koppeln** aufgeführt wird
 
     - Öffnen Sie **Systemeinstellungen > Freigaben > Entfernte Anmeldung** auf Ihrem Mac:
 
-        [![The Mac's IP address in System Preferences > Sharing (Die IP-Adresse des Macs unter „Systemeinstellungen“ > „Freigabe“)](images/sharing-ipaddress.png "Die IP-Adresse des Macs unter „Systemeinstellungen“ > „Freigabe“")](images/sharing.png#lightbox)
+        [![Die IP-Adresse des Macs unter „Systemeinstellungen“ > „Freigaben“](images/sharing-ipaddress.png "The Mac's IP address in System Preferences > Sharing")](images/sharing.png#lightbox)
 
     - Alternativ können Sie auch die Befehlszeile verwenden. Führen Sie im Terminal den folgenden Befehl aus: 
 
@@ -143,7 +143,7 @@ Wenn ein bestimmter Mac nicht im Dialogfeld **Mit Mac koppeln** aufgeführt wird
 
 2. Klicken Sie in Visual Studio 2019 im Dialogfeld **Mit Mac koppeln** auf **Mac hinzufügen...**:
 
-    [![The Add Mac button in the Pair to Mac dialog (Die Schaltfläche „Mac hinzufügen...“ im Dialogfeld „Mit Mac koppeln“)](images/addtomac.png "Die Schaltfläche „Mac hinzufügen...“ im Dialogfeld „Mit Mac koppeln“")](images/addtomac-large.png#lightbox)
+    [![Schaltfläche „Mac hinzufügen...“ im Dialogfeld „Mit Mac koppeln“](images/addtomac.png "The Add Mac button in the Pair to Mac dialog")](images/addtomac-large.png#lightbox)
 
 3. Geben Sie die IP-Adresse des Macs ein, und klicken Sie anschließend auf **Hinzufügen**:
 
@@ -177,7 +177,7 @@ In mehreren Eingabeaufforderungen wird der Status angezeigt. Dies ist auf den fo
 
 ||Überprüfung auf vorhandene Installation|Ausgeführter Downloadvorgang|Installation
 |---|---|---|---|
-|Mono|[![Missing Mono installation (Mono-Installation fehlt)](images/mono-missing.png "Mono-Installation fehlt")](images/mono-missing-large.png#lightbox)|[![Downloading Mono (Mono herunterladen)](images/mono-downloading.png "Mono herunterladen")](images/mono-downloading-large.png#lightbox)|[![Installing Mono (Mono installieren)](images/mono-installing.png "Mono installieren")](images/mono-installing-large.png#lightbox)|
+|Mono|[![Mono-Installation nicht vorhanden](images/mono-missing.png "Missing Mono installation")](images/mono-missing-large.png#lightbox)|[![Herunterladen von Mono](images/mono-downloading.png "Downloading Mono")](images/mono-downloading-large.png#lightbox)|[![Installieren von Mono](images/mono-installing.png "Installing Mono")](images/mono-installing-large.png#lightbox)|
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
@@ -192,7 +192,7 @@ In mehreren Eingabeaufforderungen wird der Status angezeigt. Dies ist auf den fo
 
 ||Überprüfung auf vorhandene Installation|Ausgeführter Downloadvorgang|Installation
 |---|---|---|---|
-|Xamarin.iOS|[![Missing Xamarin.iOS installation (Xamarin.iOS-Installation fehlt)](images/xamios-missing.png "Xamarin.iOS-Installation fehlt")](images/xamios-missing-large.png#lightbox)|[![Downloading Xamarin.iOS (Xamarin.iOS herunterladen)](images/xamios-downloading.png "Xamarin.iOS herunterladen")](images/xamios-downloading-large.png#lightbox)|[![Installing Xamarin.iOS (Xamarin.iOS installieren)](images/xamios-installing.png "Xamarin.iOS installieren")](images/xamios-installing-large.png#lightbox)|
+|Xamarin.iOS|[![Xamarin.iOS-Installation nicht vorhanden](images/xamios-missing.png "Missing Xamarin.iOS installation")](images/xamios-missing-large.png#lightbox)|[![Herunterladen von Xamarin.iOS](images/xamios-downloading.png "Downloading Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![Installieren von Xamarin.iOS](images/xamios-installing.png "Installing Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
 
 ### <a name="xcode-tools-and-license"></a>Xcode-Tools und -Lizenz
 
@@ -200,7 +200,7 @@ Das Feature „Mit Mac koppeln“ überprüft auch, ob Xcode installiert wurde u
 
 ||Überprüfung auf vorhandene Installation|Zustimmung zur Lizenz|
 |---|---|---|
-|Xcode|[![Missing Xcode installation (Xcode-Installation fehlt)](images/xcode-missing.png "Xcode-Installation fehlt")](images/xcode-missing-large.png#lightbox)|[![Xcode license (Xcode-Licenz)](images/xcode-license.png "Xcode-Licenz")](images/xcode-license-large.png#lightbox)|
+|Xcode|[![Xcode-Installation nicht vorhanden](images/xcode-missing.png "Missing Xcode installation")](images/xcode-missing-large.png#lightbox)|[![Xcode-Lizenz](images/xcode-license.png "Xcode license")](images/xcode-license-large.png#lightbox)|
 
 Zusätzlich installiert oder aktualisiert das Feature „Mit Mac koppeln“ verschiedene Pakete, die mit Xcode verteilt werden. Beispiel:
 
@@ -228,10 +228,10 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 
 Die im obigen Beispiel an `msbuild` übergebenen Parameter sind:
 
-- `ServerAddress` – die IP-Adresse des Mac-Buildhosts
-- `ServerUser` – der Benutzername, der zur Anmeldung beim Mac-Buildhost verwendet wird
+- `ServerAddress`: die IP-Adresse des Mac-Buildhosts.
+- `ServerUser`: der Benutzername, der zur Anmeldung bei dem Mac-Buildhost verwendet wird.
   Verwenden Sie Ihren Systembenutzernamen anstelle des vollständigen Namens.
-- `ServerPassword` – das Kennwort, das zur Anmeldung beim Mac-Buildhost verwendet wird
+- `ServerPassword`: das Kennwort, das zur Anmeldung bei dem Mac-Buildhost verwendet wird.
 
 > [!NOTE]
 > Visual Studio 2019 speichert `msbuild` im folgenden Verzeichnis: **C:\Programme (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin**
@@ -247,7 +247,7 @@ In diesem Artikel wurde erläutert, wie mit dem Feature „Mit Mac koppeln“ Vi
 ## <a name="next-steps"></a>Nächste Schritte
 
 - [Problembehandlung bei der Verbindung](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
-- [Xamarin Mac Build Agent – Rob Gibbens – Xamarin University Lightning Lecture (Xamarin Mac-Build-Agent – Rob Gibbens – Xamarin University-Kurzvorstellung)](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Xamarin Mac Build Agent - Xamarin University Lightning Lecture (Xamarin Mac-Build-Agent: Xamarin University-Kurzvorstellung)](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
 - [Einführung in Xamarin.iOS für Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 - [iOS-Remotesimulator für Windows](~/tools/ios-simulator/index.md)
 - [Drahtlose Bereitstellung](~/ios/deploy-test/wireless-deployment.md)
