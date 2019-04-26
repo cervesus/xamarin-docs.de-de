@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 7a162d632c98b4e412fa1b7b0c0c40ac945ff09f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945783"
 ---
 # <a name="net-embedding-limitations"></a>Einbetten von .NET-Einschränkungen
 
@@ -23,7 +23,7 @@ Dieses Dokument beschreibt die Einschränkungen für das Einbetten von .NET und 
 
 Es ist nicht möglich, dass zwei Mono Laufzeiten, die in der gleichen Anwendung koexistieren. Dies bedeutet, dass Sie nicht zwei verschiedene Einbetten von .NET generierter Bibliotheken in der gleichen Anwendung verwenden können.
 
-**Problemumgehung:** können Sie den Generator um eine einzelne Bibliothek zu erstellen, die mehrere Assemblys (von verschiedenen Projekten) enthält.
+**Problemumgehung:** Sie können den Generator verwenden, eine einzelne Bibliothek erstellen, die mehrere Assemblys (von verschiedenen Projekten) enthält.
 
 ### <a name="subclassing"></a>Erstellen von Unterklassen für
 

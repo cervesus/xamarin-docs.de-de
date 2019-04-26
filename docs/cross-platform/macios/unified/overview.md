@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: 1d159d280bd3b8855c32e3e437dfdefcbe0463cb
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261128"
 ---
 # <a name="unified-api-overview"></a>Übersicht über Unified API
 
@@ -40,8 +40,8 @@ Unabhängig davon, welche Anwendungen Sie migrieren, sehen Sie sich [diese Tipps
 
 Ab diesem Zeitpunkt wird unsere APIs auf zwei Arten angezeigt werden:
 
--  **Klassische-API:** auf 32-Bit (nur) beschränkt und verfügbar gemacht, in der `monotouch.dll` und `XamMac.dll` Assemblys.
--  **Einheitliche API:** unterstützt 32- und 64-Bit-Entwicklung mit einer einzelnen API zur Verfügung, in der `Xamarin.iOS.dll` und `Xamarin.Mac.dll` Assemblys.
+-  **Klassische-API:** Beschränkt auf 32-Bit (nur) und verfügbar gemacht werden, der `monotouch.dll` und `XamMac.dll` Assemblys.
+-  **Einheitliche API:** Unterstützt 32- und 64-Bit-Entwicklung mit einer einzelnen API zur Verfügung, in der `Xamarin.iOS.dll` und `Xamarin.Mac.dll` Assemblys.
 
 Dies bedeutet, dass für Enterprise-Entwickler (nicht abzielt den App Store), können Sie weiterhin verwenden die vorhandenen klassischen APIs, wie wir sie unbegrenzt, oder Sie Verwaltung beibehalten wird auf die neuen APIs aktualisieren können.
 
@@ -55,8 +55,8 @@ Wir werden das Präfix "MonoTouch" von unserer iOS-Produkt- und "MonoMac" aus un
 
 Dies erleichtert das Freigeben von Code zwischen den Mac- und iOS-Plattformen ohne zurückzugreifen, für die bedingte Kompilierung und reduziert die Komplexität oben auf der Ihre Quellcodedateien.
 
--  **Klassische-API:** Namespaces verwenden `MonoTouch.` oder `MonoMac.` Präfix.
--  **Einheitliche API:** kein Namespace-Präfix
+-  **Klassische-API:** Verwenden von Namespaces `MonoTouch.` oder `MonoMac.` Präfix.
+-  **Einheitliche API:** Kein Namespace-Präfix
 
 ## <a name="runtime-defaults"></a>Runtime-Standardeinstellungen
 
@@ -287,7 +287,7 @@ Aber diese Methode funktioniert nur, wenn die Instanz NSCoding-Protokoll entspri
 
 Auf der Unified API haben wir dieses Problem behoben.  Die neuen Assemblys haben nur die `.ctor(NSCoder)` , wenn der Typ entspricht `NSCoding`. Solche Typen auch inzwischen eine `Encode(NSCoder)` -Methode die entspricht der `INSCoding` Schnittstelle.
 
-Nur geringe Auswirkungen: In den meisten Fällen wird nicht durch diese Änderung Anwendungen beeinträchtigen, da die alten, entfernten, Konstruktoren nicht verwendet werden konnte.
+Nur geringe Auswirkungen: In den meisten Fällen wird nicht diese Änderung sich auf Anwendungen auswirken, wie die alten, entfernten, Konstruktoren nicht verwendet werden konnte.
 
 ## <a name="further-tips"></a>Weitere Tipps
 

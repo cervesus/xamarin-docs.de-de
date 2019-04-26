@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: a3e14ebca961e828fc578035adaca5ba2a809438
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34783554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61288521"
 ---
 # <a name="an-introduction-to-urhosharp"></a>Eine Einführung in die von UrhoSharp
 
@@ -38,7 +38,7 @@ Von UrhoSharp ist eine Spiele-Engine mit einer Vielzahl von Funktionen zur Verf�
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Von UrhoSharp wird als bequem verteilt eine [NuGet-Paket](https://www.nuget.org/) und hinzugefügt werden, Ihre C#- oder f#-Projekte die Zielplattform Windows, Mac, Android oder iOS.  NuGet enthält sowohl die Bibliotheken benötigt, um das Programm auszuführen, als auch die grundlegende Ressourcen (CoreData), die von der Engine verwendet.
+Von UrhoSharp wird als bequem verteilt eine [NuGet-Paket](https://www.nuget.org/) und es kann hinzugefügt werden, um Ihre C# oder F# Projekten, Windows, Mac, Android oder iOS ausgerichtet, sind.  NuGet enthält sowohl die Bibliotheken benötigt, um das Programm auszuführen, als auch die grundlegende Ressourcen (CoreData), die von der Engine verwendet.
 
 ### <a name="urho-as-a-portable-class-library"></a>Urho als Portable Klassenbibliothek
 

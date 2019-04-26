@@ -1,5 +1,5 @@
 ---
-title: Abrufen Maps eines Google-API-Schlüssel
+title: Abrufen eines API-Schlüssels für Google Maps
 description: Abrufen eines Google Maps-API-Schlüssels für das Hinzufügen von Zuordnungen Funktionen zu Ihrer app.
 ms.prod: xamarin
 ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
 ms.openlocfilehash: bfeb9d8fa2a0b5a9b18ab8266500586e2e3b6c68
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61155362"
 ---
-# <a name="obtaining-a-google-maps-api-key"></a>Abrufen Maps eines Google-API-Schlüssel
+# <a name="obtaining-a-google-maps-api-key"></a>Abrufen eines API-Schlüssels für Google Maps
 
 Um die Funktionalität von Google Maps in Android zu verwenden, müssen Sie für einen Karten-API-Schlüssel mit Google registrieren. Bis Sie dies tun, sehen Sie nur ein leeres Raster anstelle einer Karte in Ihren Anwendungen. Sie benötigen einen Google Maps-Android-API-Schlüssel v2 - Schlüssel aus der älteren Version 1 Google Maps Android-API-Schlüssel funktioniert nicht.
 
@@ -48,7 +48,7 @@ Finden in der Standardeinstellung des Keystores, der zum Signieren von Debugvers
 
 Durch das Ausführen des Befehls `keytool` über das JDK erhalten Sie Informationen zu einem Keystore. Dieses Tool befindet sich in der Regel im Verzeichnis "bin" Java:
 
-**/System/Library/Java/JavaVirtualMachines/[Version].JDK/Contents/Home/bin/keytool**
+**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
 
 -----
 

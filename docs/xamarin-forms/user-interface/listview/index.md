@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
 ms.openlocfilehash: 540e787b476fc2b249bfbe487e45ac61f2e7405a
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61320002"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms-ListView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/WorkingWithListview)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/WorkingWithListview)
 
 [`ListView`](xref:Xamarin.Forms.ListView) ist eine Ansicht für die Darstellung von Listen mit Daten, besonders lange Listen, die einen Bildlauf erfordern.
 

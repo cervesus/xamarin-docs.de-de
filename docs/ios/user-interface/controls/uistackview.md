@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 6d5be72a9329675a65b0d6873d13894b314b50e7
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61088079"
 ---
 # <a name="stack-views-in-xamarinios"></a>Stack-Ansichten in Xamarin.iOS
 
@@ -28,7 +28,7 @@ Das Layout der alle Unteransichten, die an eine Stapelansicht angefügt werden v
 
 [![](uistackview-images/stacked01.png "Stapel anzeigen Layout für Diagramm")](uistackview-images/stacked01.png#lightbox)
 
-Bei Verwendung einer `UIStackView` in einer Xamarin.iOS-app kann der Entwickler die Unteransichten entweder in einem Storyboard in der iOS-Designer oder durch Hinzufügen und Entfernen von Unteransichten in C#-Code entweder definieren.
+Bei Verwendung einer `UIStackView` in einer Xamarin.iOS-app kann der Entwickler die Unteransichten entweder in einem Storyboard in der iOS-Designer oder durch Hinzufügen und Entfernen von Unteransichten in c#-Code entweder definieren.
 
 Dieses Dokument besteht aus zwei Teilen: einen schnellen Einstieg in die Sie unterstützen, implementieren, die Ihre erste Stack anzeigen, und klicken Sie dann weitere technische Details dazu, wie es funktioniert.
 

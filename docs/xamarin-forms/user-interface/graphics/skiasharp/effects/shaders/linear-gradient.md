@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61158545"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp linearen Farbverlaufs
 
@@ -27,7 +27,7 @@ Die einfachste Form des Farbverlaufs ist eine _lineare_ Farbverlauf. Die Mischun
 Diese Methoden geben ein Objekt des Typs zurück [ `SKShader` ](xref:SkiaSharp.SKShader) , die Sie festlegen, um die [ `Shader` ](xref:SkiaSharp.SKPaint.Shader) Eigenschaft `SKPaint`. Wenn die `Shader` -Eigenschaft ungleich Null ist, überschreibt es die `Color` Eigenschaft. Jede Zeile, die mit Strichen gezeichnet wird oder andere Bereiche, die mit diesem gefüllt ist `SKPaint` -Objekts basiert auf der Volltonfarbe entspricht, anstatt den Farbverlauf.
 
 > [!NOTE]
-> Die `Shader` Eigenschaft wird ignoriert, wenn Sie enthalten eine `SKPaint` -Objekt in ein `DrawBitmap` aufrufen. Können Sie die `Color` Eigenschaft `SKPaint` Grad der Transparenz für die Anzeige einer Bitmap festlegen (in diesem Artikel beschriebenen [SkiaSharp Anzeigen von Bitmaps](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)), kann jedoch nicht die `Shader` Eigenschaft für die Anzeige von eine Bitmap mit einem Farbverlauf Transparenz. Andere Methoden stehen zum Anzeigen von Bitmaps mit Farbverlauf Transparenz: Diese werden in den Artikeln beschrieben [SkiaSharp zirkuläre Farbverläufe](circular-gradients.md#radial-gradients-for-masking) und [SkiaSharp-Zusammensetzung und Blend-Modi](../blend-modes/porter-duff.md#gradient-transparency-and-transitions).
+> Die `Shader` Eigenschaft wird ignoriert, wenn Sie enthalten eine `SKPaint` -Objekt in ein `DrawBitmap` aufrufen. Können Sie die `Color` Eigenschaft `SKPaint` Grad der Transparenz für die Anzeige einer Bitmap festlegen (in diesem Artikel beschriebenen [SkiaSharp Anzeigen von Bitmaps](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)), kann jedoch nicht die `Shader` Eigenschaft für die Anzeige von eine Bitmap mit einem Farbverlauf Transparenz. Andere Techniken sind zum Anzeigen von Bitmaps mit Farbverlauf Transparenz verfügbar: Diese werden in den Artikeln beschrieben [SkiaSharp zirkuläre Farbverläufe](circular-gradients.md#radial-gradients-for-masking) und [SkiaSharp-Zusammensetzung und Blend-Modi](../blend-modes/porter-duff.md#gradient-transparency-and-transitions).
 
 ## <a name="corner-to-corner-gradients"></a>Ecke-zu-Ecke Farbverläufe
 
@@ -477,7 +477,7 @@ public class GradientAnimationPage : ContentPage
 
 Die `OnTimerTick` Methode berechnet einen `angle` -Wert, der von 0 zu 2π alle 3 Sekunden animiert wird. 
 
-Hier ist eine Möglichkeit, um den Farbverlauf zwei Punkten zu berechnen. Ein `SKPoint` Wert mit dem Namen `vector` errechnet sich aus der Mitte der Canvas mit einem Punkt der Radius des Kreises zu erweitern. Die Richtung dieses Vektors basiert auf den Werten Sinus und Cosinus des Winkels. Die beiden umgekehrter Farbverlauf Punkte werden dann berechnet: ein Punkt wird berechnet, indem Sie diesem Vektor vom Mittelpunkt subtrahiert und weiterer Punkt wird berechnet, indem Sie den Mittelpunkt den Vektor hinzugefügt:
+Hier ist eine Möglichkeit, um den Farbverlauf zwei Punkten zu berechnen. Ein `SKPoint` Wert mit dem Namen `vector` errechnet sich aus der Mitte der Canvas mit einem Punkt der Radius des Kreises zu erweitern. Die Richtung dieses Vektors basiert auf den Werten Sinus und Cosinus des Winkels. Die beiden umgekehrter Farbverlauf Punkte werden dann berechnet: Ein Punkt wird durch Subtrahieren von diesem Vektor vom Mittelpunkt berechnet, und weiterer Punkt wird berechnet, indem Sie den Mittelpunkt den Vektor hinzugefügt:
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -617,7 +617,7 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-Die beiden Farbverlauf Punkte in der `CreateLinearGradient` Methode basieren auf zwei Punkte, die diesen Pfad zu definieren: beide Punkte werden in der Nähe der oberen linken Ecke. Die erste ist, auf den oberen Rand des Zeichenbereichs, und die zweite ist am linken Rand des Zeichenbereichs. Hier ist das Ergebnis:
+Die beiden Farbverlauf Punkte in der `CreateLinearGradient` Methode basieren auf zwei Punkte, die diesen Pfad zu definieren: Beide Punkte sind in der Nähe der oberen linken Ecke. Die erste ist, auf den oberen Rand des Zeichenbereichs, und die zweite ist am linken Rand des Zeichenbereichs. Hier ist das Ergebnis:
 
 [![Rainbow Farbverlauf fehlerhafte](linear-gradient-images/RainbowGradientFaulty.png "Rainbow Farbverlauf fehlerhaft")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 

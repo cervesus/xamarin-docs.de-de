@@ -1,5 +1,5 @@
 ---
-title: Einführung in WatchOS 4
+title: Einführung in watchOS 4
 description: Dieses Dokument enthält eine allgemeine Einführung in WatchOS 4, beschreiben die neuen Features, die nun Xamarin-Entwickler zur Verfügung stehen.
 ms.prod: xamarin
 ms.assetid: 753A9993-A951-40A2-9270-37F000A01BC9
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
 ms.openlocfilehash: ca922840b47899b62615bded852e66fe81b3371c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61223969"
 ---
-# <a name="introduction-to-watchos-4"></a>Einführung in WatchOS 4
+# <a name="introduction-to-watchos-4"></a>Einführung in watchOS 4
 
 Zugriff auf neue Funktionen von WatchOS 4 in Ihren apps:
 

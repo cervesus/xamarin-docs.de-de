@@ -8,11 +8,11 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61415555"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Einführung in die MonoTouch.Dialog für Xamarin.iOS
 
@@ -463,7 +463,7 @@ ImageLoader-Klasse macht eine löschen-Methode, die Sie aufrufen können, wenn a
 
 ## <a name="using-linq-to-create-element-hierarchy"></a>Erstellen Sie die Hierarchie der Elemente mithilfe von LINQ
 
-Über die intelligente Verwendung von LINQ und # Initialization-Syntax kann LINQ verwendet werden, um eine Hierarchie der Elemente zu erstellen. Beispielsweise der folgende Code erstellt einen Bildschirm von einigen Zeichenfolgen-Arrays und des Handles-Auswahl über eine anonyme Funktion, die in jede übergeben wird `StringElement`:
+Über die intelligente Verwendung von LINQ und C#die Syntax für die Initialisierung, LINQ kann verwendet werden, um eine Hierarchie der Elemente zu erstellen. Beispielsweise der folgende Code erstellt einen Bildschirm von einigen Zeichenfolgen-Arrays und des Handles-Auswahl über eine anonyme Funktion, die in jede übergeben wird `StringElement`:
 
 ```csharp
 var rootElement = new RootElement ("LINQ root element") {

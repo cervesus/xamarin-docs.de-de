@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 05f1017f8c4b306996d3e8e165511ff9062a1026
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61047611"
+---
 
 Die folgende Befehlszeile zum Angeben eines Releasebuilds der Lösung **SOLUTION_FILE.sln** für das iPhone. Der Speicherort der IPA kann festgelegt werden, durch Angabe der `IpaPackageDir` Eigenschaft in der Befehlszeile:
 

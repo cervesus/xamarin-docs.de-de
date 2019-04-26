@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: a8b7fa53d3384821d028e4a88ba22071a17e5bd9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61311568"
 ---
 # <a name="viewpager-with-views"></a>ViewPager mit Ansichten
 
@@ -29,7 +29,7 @@ Obwohl `ViewPager`-Basis apps werden häufig implementiert, mit `Fragment`s, es 
 
 ## <a name="start-an-app-project"></a>Starten Sie ein App-Projekt
 
-Erstellen Sie ein neues Android-Projekt namens **TreePager** (finden Sie unter [Hallo, Android](~/android/get-started/hello-android/hello-android-quickstart.md) für Weitere Informationen zum Erstellen von neuen Android-Projekte). Als Nächstes starten Sie den NuGet-Paket-Manager. (Weitere Informationen zum Installieren von NuGet-Pakete finden Sie unter [Exemplarische Vorgehensweise: Einschließen eines NuGet in Ihrem Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Suchen und Installieren von **Android Support-Bibliothek v4**: 
+Erstellen Sie ein neues Android-Projekt namens **TreePager** (finden Sie unter [Hallo, Android](~/android/get-started/hello-android/hello-android-quickstart.md) für Weitere Informationen zum Erstellen von neuen Android-Projekte). Als Nächstes starten Sie den NuGet-Paket-Manager. (Weitere Informationen zum Installieren von NuGet-Pakete finden Sie unter [Exemplarische Vorgehensweise: Einschließen ein NuGet in Ihr Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Suchen und Installieren von **Android Support-Bibliothek v4**: 
 
 [![Screenshot der Unterstützung v4 Nuget in der NuGet-Paket-Manager ausgewählt](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 

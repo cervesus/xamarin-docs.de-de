@@ -1,5 +1,5 @@
 ---
-title: Einführung in WatchOS 3
+title: Einführung in watchOS 3
 description: Dieser Artikel enthält alle neuen und geänderten APIs und Features, die in WatchOS 3 verfügbar ist, für die Xamarin-Entwickler.
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
 ms.openlocfilehash: 0428a0df157e359ab34a6a71dbba31bdeb6962fa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224061"
 ---
-# <a name="introduction-to-watchos-3"></a>Einführung in WatchOS 3
+# <a name="introduction-to-watchos-3"></a>Einführung in watchOS 3
 
 _Dieser Artikel enthält alle neuen und geänderten APIs und Features, die in WatchOS 3 verfügbar ist, für die Xamarin-Entwickler._
 
@@ -151,7 +151,7 @@ WatchOS 3 enthält verschiedene Verbesserungen für das WatchKit-Framework, eins
 - Die app kann den Status der digitalen Crown abrufen mithilfe der neuen [WKCrownSequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer) Klasse und Updates erhalten, wenn der Benutzer die Crown mit dreht das [WKCrownDelegate](https://developer.apple.com/reference/watchkit/wkcrowndelegate) Klasse.
 - Die [WKExtension](https://developer.apple.com/reference/watchkit/wkextension) -Klasse enthält nun die `ApplicationState` Methode und [WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate) -Konstante, die die app verwenden können, um den Laufzeitstatus der app zu verfolgen. `WKExtension` Außerdem bietet zwei neue Methoden, die zum Planen von Aufgaben im Hintergrund verwendet werden können.
 - Die [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate) enthält jetzt den neuen `ApplicationWillEnterForeground`, `ApplicationDidEnterBackground` und `HandleBackgroundTasks` Methoden, um Änderungen an den Status der Anwendung überwachen und Behandeln von Updates für die Hintergrundfarbe.
-- Ein neues [WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer) -Klasse wurde hinzugefügt, um die folgenden Typen von gestenerkennung für die Watch-apps bereitzustellen: [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer), [WKPanGestureRecognizer ](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer), [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) und [WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer).
+- Ein neues [WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer) -Klasse wurde hinzugefügt, um die folgenden Typen von gestenerkennung für die Watch-apps bereitzustellen: [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer), [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer), [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) and [WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer).
 - Die neue [WKinterfaceHMCamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera) Klasse stellt eine Schnittstelle für alle HomeKit IP-Kamera angefügt.
 - Die neue [WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie) Klasse ermöglicht der app, einen Film "Poster", die durch den ausgeführten Film ersetzt wird, wenn der Benutzer, es tippt anzuzeigen.
 - Die neue [WKInterfacePaymentButton](https://developer.apple.com/reference/watchkit/wkinterfacepaymentbutton) Klasse ermöglicht der app, die eine Schaltfläche "Apple Pay" in der Benutzeroberfläche vorhanden, die eine Zahlungsaufforderung beim Tippen auf initiieren.

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 7c12136a0dad0165c46f1559e7a2d61abaf7af1e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331486"
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Authentifizieren von Benutzern mit Azure Active Directory B2C
 
@@ -35,8 +35,8 @@ Azure Active Directory B2C ist ein identitätsverwaltungsdienst für kundenorien
 Der Prozess für die Integration der Azure Active Directory B2C-Identity-Management-Dienst in einer mobilen Anwendung lautet wie folgt aus:
 
 1. Erstellen eines Azure Active Directory B2C-Mandanten. Weitere Informationen finden Sie unter [Erstellen eines Azure Active Directory B2C-Mandanten im Azure-Portal](/azure/active-directory-b2c/active-directory-b2c-get-started/).
-1. Registrieren Sie Ihre mobile Anwendung mit dem Azure Active Directory B2C-Mandanten an. Während der Registrierung weist eine **Anwendungs-ID** , die Ihre Anwendung eindeutig identifiziert und **Umleitungs-URL** , der zum Umleiten von Antworten zurück an Ihre Anwendung verwendet werden kann. Weitere Informationen finden Sie unter [Azure Active Directory B2C: Registrieren Ihrer Anwendung](/azure/active-directory-b2c/active-directory-b2c-app-registration/).
-1. Erstellen einer Richtlinie für Registrierung und Anmeldung. Diese Richtlinie wird definiert, die Benutzeroberflächen, die Kunden während der Registrierung und Anmeldung durchlaufen, und gibt auch den Inhalt der Token die Anwendung erhält erfolgreich Registrierungs- oder Anmelderichtlinie. Weitere Informationen finden Sie unter [Azure Active Directory B2C: integrierte Richtlinien](/azure/active-directory-b2c/active-directory-b2c-reference-policies/).
+1. Registrieren Sie Ihre mobile Anwendung mit dem Azure Active Directory B2C-Mandanten an. Während der Registrierung weist eine **Anwendungs-ID** , die Ihre Anwendung eindeutig identifiziert und **Umleitungs-URL** , der zum Umleiten von Antworten zurück an Ihre Anwendung verwendet werden kann. Weitere Informationen finden Sie unter [Azure Active Directory B2C: Registrieren Sie Ihre Anwendung](/azure/active-directory-b2c/active-directory-b2c-app-registration/).
+1. Erstellen einer Richtlinie für Registrierung und Anmeldung. Diese Richtlinie wird definiert, die Benutzeroberflächen, die Kunden während der Registrierung und Anmeldung durchlaufen, und gibt auch den Inhalt der Token die Anwendung erhält erfolgreich Registrierungs- oder Anmelderichtlinie. Weitere Informationen finden Sie unter [Azure Active Directory B2C: Integrierte Richtlinien](/azure/active-directory-b2c/active-directory-b2c-reference-policies/).
 1. Verwenden der [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) in Ihre mobile Anwendung um einen authentifizierungsworkflow bei Ihrem Azure Active Directory B2C-Mandanten zu initiieren.
 
 > [!NOTE]
@@ -55,7 +55,7 @@ Gibt an, jede Anforderung, die mit einem Azure Active Directory B2C-Mandanten ge
 - Inhalt der Seite für die Registrierung.
 - Tokenansprüche, die die mobile Anwendung empfängt, wenn die Richtlinie ausgeführt wurde.
 
-Azure Active Directory-Mandanten kann mehrere Richtlinien verschiedener Typen enthalten, die in Ihrer Anwendung nach Bedarf verwendet werden können. Darüber hinaus können Richtlinien für Anwendungen, sodass Sie definieren und Ändern der kundenidentität ohne Änderung des Codes, wiederverwendet werden. Weitere Informationen zu Richtlinien finden Sie unter [Azure Active Directory B2C: integrierte Richtlinien](/azure/active-directory-b2c/active-directory-b2c-reference-policies/).
+Azure Active Directory-Mandanten kann mehrere Richtlinien verschiedener Typen enthalten, die in Ihrer Anwendung nach Bedarf verwendet werden können. Darüber hinaus können Richtlinien für Anwendungen, sodass Sie definieren und Ändern der kundenidentität ohne Änderung des Codes, wiederverwendet werden. Weitere Informationen zu Richtlinien finden Sie unter [Azure Active Directory B2C: Integrierte Richtlinien](/azure/active-directory-b2c/active-directory-b2c-reference-policies/).
 
 ## <a name="setup"></a>Setup
 

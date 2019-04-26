@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 3ea05563ecbca95d26d692d5424c30e961229ac5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021197"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp Füllmethoden einheitlich
 
@@ -46,13 +46,13 @@ Die 29 Mitglieder der `SKBlendMode` Enumeration kann in drei Kategorien untertei
 
 Die Namen dieser drei Kategorien dauert mehr Bedeutung in den Diskussionen bemerkt, die folgen. Die Reihenfolge, in der hier aufgeführten Elemente ist der gleiche wie in der Definition der `SKBlendMode` Enumeration. In der ersten Spalte der 13 Enumerationsmember haben die ganzzahligen Werte 0 bis 12. Die zweite Spalte sind Enumerationsmember, die zu einer ganzen Zahl 13 bis 24 entsprechen, und die Elemente in der dritten Spalte haben Werte 25, 28.
 
-Diese Modi finden Sie im Blend _ungefähr_ der gleichen Reihenfolge, in der W3C **zusammensetzt und auf Ebene1 Blending** Dokument, es gibt jedoch einige Unterschiede: die `Src` Modus hat die Bezeichnung _Kopie_ im W3C-Dokument und `Plus` heißt _heller_. Das W3C-Dokument definiert eine _Normal_ Blendingmodus, der nicht in enthalten ist `SKBlendModes` da wäre es identisch `SrcOver`. Die `Modulate` Blend-Modus (am oberen Rand der ersten Spalte) nicht in der W3C-Dokument und eine Erläuterung der enthalten die `Multiply` Modus steht `Screen`.
+Diese Modi finden Sie im Blend _ungefähr_ der gleichen Reihenfolge, in der W3C **zusammensetzt und auf Ebene1 Blending** Dokument, es gibt jedoch einige Unterschiede: Die `Src` Modus hat die Bezeichnung _Kopie_ im W3C-Dokument und `Plus` heißt _heller_. Das W3C-Dokument definiert eine _Normal_ Blendingmodus, der nicht in enthalten ist `SKBlendModes` da wäre es identisch `SrcOver`. Die `Modulate` Blend-Modus (am oberen Rand der ersten Spalte) nicht in der W3C-Dokument und eine Erläuterung der enthalten die `Multiply` Modus steht `Screen`.
 
 Da die `Modulate` Blend-Modus für Skia eindeutig ist, werden als eine zusätzliche Porter-Duff-Modus und einem trennbare Modus behandelt werden.
 
 ## <a name="the-importance-of-transparency"></a>Die Bedeutung von Transparenz
 
-In der Vergangenheit wurde Zusammensetzung entwickelt, in Verbindung mit dem Konzept der _alpha-Kanal_. In der Anzeige einer Oberfläche wie z. B. die `SKCanvas` Objekt oder eine Bitmap für die Farbe, besteht jedes Pixel aus 4 Bytes: 1 Byte jeder für die Komponenten roten, grünen und blauen und einer zusätzlichen Byte für Transparenz. Diese alpha-Komponente ist 0 für vollständige Transparenz und 0xFF für vollständige Deckkraft mit unterschiedlichen Transparenz zwischen diesen Werten.
+In der Vergangenheit wurde Zusammensetzung entwickelt, in Verbindung mit dem Konzept der _alpha-Kanal_. In der Anzeige einer Oberfläche wie z. B. die `SKCanvas` Objekt oder eine Bitmap für die Farbe, jedes Pixels 4 Bytes besteht aus: 1 Byte jeder für die Komponenten roten, grünen und blauen und einer zusätzlichen Byte für Transparenz. Diese alpha-Komponente ist 0 für vollständige Transparenz und 0xFF für vollständige Deckkraft mit unterschiedlichen Transparenz zwischen diesen Werten.
 
 Viele der Füllmethoden einheitlich basieren auf der Transparenz. In der Regel, wenn ein `SKCanvas` wird zuerst abgerufen, eine `PaintSurface` Handler auf, oder wenn ein `SKCanvas` wird erstellt, um eine Bitmap zu zeichnen, ist der erste Schritt dieses Aufrufs:
 

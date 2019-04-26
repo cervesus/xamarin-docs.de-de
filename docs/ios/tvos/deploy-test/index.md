@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 72f3a80cbea4edd3b5db40dd7b4b2c652824f4d5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61207605"
 ---
 # <a name="deploying-and-testing-tvos-apps-in-xamarin"></a>Bereitstellen und Testen von TvOS-Apps in Xamarin
 
@@ -22,7 +22,7 @@ In diesem Artikel veranschaulicht das Konfigurieren, erstellen und Veröffentlic
 
 - Apple TV App Store-Verteilung.
 - Interne Verteilung (Enterprise)-Verteilung.
-- Ad-hoc-Verteilung.
+- Ad Hoc Distribution.
 
 Wenn Sie beim Übermitteln der Xamarin.tvOS-app an das Apple TV App Store Probleme auftreten, finden Sie unsere [Problembehandlung](~/ios/tvos/troubleshooting.md) Guide. Sie enthält mehrere bekannte Probleme, die auftreten können und wie Sie sie in der Xamarin.tvOS lösen.
 

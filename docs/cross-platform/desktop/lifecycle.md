@@ -6,11 +6,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
 ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269324"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF im Vergleich zu. Lebenszyklus der Xamarin.Forms-App
 
@@ -126,7 +126,7 @@ WPF und Xamarin.Forms verwenden Layout-Steuerelemente, um untergeordnete Element
 |StackPanel|StackLayout|Stapeln von links nach rechts oder oben-nach-unten-unendlich|
 |Raster|Raster|Tabellenformat (Zeilen und Spalten)|
 |DockPanel|n/v|An den Rändern des Fensters Andocken|
-|Canvas|Von "AbsoluteLayout"|Positionieren von Pixelkoordinate /|
+|Canvas|AbsoluteLayout|Positionieren von Pixelkoordinate /|
 |WrapPanel|n/v|Wrapping-stack|
 |n/v|RelativeLayout|Relative regelbasierte Positionierung|
 

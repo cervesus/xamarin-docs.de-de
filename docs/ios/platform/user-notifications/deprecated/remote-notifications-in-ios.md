@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087046"
 ---
 # <a name="push-notifications-in-ios"></a>Senden von Pushbenachrichtigungen in iOS
 
@@ -22,7 +22,7 @@ ms.locfileid: "50110016"
 Erste Schritte mit Pushbenachrichtigungen sollte kurz gehalten werden und nur genügend Daten für der mobilen Anwendung zu benachrichtigen, dass sie die Server-Anwendung nach einem Update wenden. Z. B., wenn neue e-Mail eingeht, würde die Server-Anwendung nur die mobile Anwendung benachrichtigen, die neue e-Mail angekommen ist. Die Benachrichtigung würde die neue e-Mail selbst nicht enthalten. Die mobile Anwendung würde der neuen e-Mails klicken Sie dann vom Server abgerufen werden, während sie die entsprechenden war
 
 In der Mitte des Push-Benachrichtigungen unter iOS ist die *Apple Push Notification-Gateway-Dienst (APNS)*. Dies ist ein Dienst von Apple, die für das routing von Benachrichtigungen von einem Anwendungsserver auf iOS-Geräten zuständig ist.
-Das folgende Bild zeigt die Push Notification-Topologie für iOS: ![](remote-notifications-in-ios-images/image4.png "dieses Bild zeigt die Push Notification-Topologie für iOS")
+Die folgende Abbildung veranschaulicht die Topologie des Push-Benachrichtigung für iOS: ![](remote-notifications-in-ios-images/image4.png "Diese Abbildung zeigt die Push-Benachrichtigung-Topologie für iOS")
 
 Remotebenachrichtigungen selbst sind JSON-formatierte Zeichenfolgen, die das Format entsprechen, und Protokolle, die im angegebenen [die Benachrichtigungsnutzlast](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) Teil der [lokalen und Push Notification Programming Guide](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)in die [iOS-Entwicklerdokumentation](https://developer.apple.com/devcenter/ios/index.action).
 

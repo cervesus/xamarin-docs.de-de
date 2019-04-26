@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/29/2018
 ms.openlocfilehash: 83340ce2d5db145c29166d90d3a5180b1767d7ca
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036395"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Typ-Registrierungsstelle für Xamarin.iOS
 

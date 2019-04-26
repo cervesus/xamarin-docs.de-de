@@ -1,5 +1,5 @@
 ---
-title: Hallo, Wear
+title: Hello, Wear
 description: Erstellen Sie Ihrer ersten Android Wear-app, und führen Sie es auf einem Wear-Emulator oder Gerät. Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen von eines kleinen Projekts Android Wear, das auf eine Schaltfläche verarbeitet und zeigt einen Indikator klicken Sie auf dem Wear-Gerät. Es wird erläutert, wie zum Debuggen der app mit einem Wear-Emulator oder auf einem Wear-Gerät, das auf einem Android-Telefon über Bluetooth verbunden ist. Darüber hinaus eine Reihe von Tipps zum Debuggen für Android Wear.
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
 ms.openlocfilehash: a8e27063040ff91f72a1cbf932b1b277a5dee63d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61277393"
 ---
-# <a name="hello-wear"></a>Hallo, Wear
+# <a name="hello-wear"></a>Hello, Wear
 
 _Erstellen Sie Ihrer ersten Android Wear-app, und führen Sie es auf einem Wear-Emulator oder Gerät. Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen von eines kleinen Projekts Android Wear, das auf eine Schaltfläche verarbeitet und zeigt einen Indikator klicken Sie auf dem Wear-Gerät. Es wird erläutert, wie zum Debuggen der app mit einem Wear-Emulator oder auf einem Wear-Gerät, das auf einem Android-Telefon über Bluetooth verbunden ist. Darüber hinaus eine Reihe von Tipps zum Debuggen für Android Wear._
 

@@ -1,37 +1,37 @@
 ---
 title: Zugreifen auf die Graph-API
-description: Dieses Dokument beschreibt, wie eine mobile Anwendung mit Xamarin erstellten Azure Active Directory-Authentifizierung hinzugefügt.
+description: In diesem Dokument wird beschrieben, wie eine mobile Anwendung mit Xamarin erstellten Azure Active Directory-Authentifizierung hinzugefügt.
 ms.prod: xamarin
 ms.assetid: F94A9FF4-068E-4B71-81FE-46920745380D
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: c43dfa79831f22e55490b27c3c360602ae717627
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61189966"
 ---
 # <a name="accessing-the-graph-api"></a>Zugreifen auf die Graph-API
 
-Gehen Sie zum Verwenden der Graph-API aus in einer Xamarin-Anwendung wie folgt vor:
+Um die Graph-API aus, in einer Xamarin-Anwendung verwenden, gehen Sie wie folgt vor:
 
-1. [Registrieren bei Azure Active Directory](~/cross-platform/data-cloud/active-directory/get-started/register.md) auf die *windowsazure.com* Portal klicken Sie dann
+1. [Registrieren bei Azure Active Directory](~/cross-platform/data-cloud/active-directory/get-started/register.md) auf die *windowsazure.com* Portal, klicken Sie dann
 2. [Konfigurieren von Diensten](~/cross-platform/data-cloud/active-directory/get-started/configure.md).
 
 ## <a name="step-3-adding-active-directory-authentication-to-an-app"></a>Schritt 3 Hinzufügen von Active Directory-Authentifizierung zu einer app
 
-Fügen Sie in der Anwendung einen Verweis auf **Azure Active Directory-Authentifizierungsbibliothek (Azure ADAL)** mithilfe des NuGet-Paket-Managers in Visual Studio oder Visual Studio für Mac.
-Stellen Sie sicher, dass die Auswahl **Vorabversion Pakete anzeigen, die** dieses Paket eingeschlossen werden, da er noch in der Vorschau ist.
+Fügen Sie in Ihrer Anwendung einen Verweis auf **Azure Active Directory-Authentifizierungsbibliothek (Azure ADAL)** mit den NuGet-Paket-Manager in Visual Studio oder Visual Studio für Mac.
+Stellen Sie sicher, dass Sie **vorabversionspakete anzeigen** dieses Paket eingeschlossen werden, da es sich noch in der Vorschauphase ist.
 
 > [!IMPORTANT]
-> Hinweis: Azure ADAL 3.0 ist zurzeit eine Vorschaufunktion und möglicherweise gibt es wichtige Änderungen vor der endgültigen Version veröffentlicht wird. 
+> Hinweis: Azure ADAL 3.0 ist derzeit eine Vorschauversion, und möglicherweise Änderungen, bevor die endgültige Version veröffentlicht wird. 
 
 
-![](graph-images/06.-adal-nuget-package.jpg "Hinzufügen eines Verweises auf Azure Active Directory-Authentifizierungsbibliothek (Azure ADAL)")
+![](graph-images/06.-adal-nuget-package.jpg "Hinzufügen eines Verweises auf Azure Active Directory-Authentifizierungsbibliothek (ADAL für Azure)")
 
-In der Anwendung müssen Sie jetzt die folgenden Variablen auf Klassenebene hinzufügen, die für den Authentifizierungsablauf erforderlich sind.
+In Ihrer Anwendung müssen Sie jetzt die folgenden Variablen auf Klassenebene hinzufügen, die für den Authentifizierungsablauf erforderlich sind.
 
 ```csharp
 //Client ID
@@ -46,11 +46,11 @@ public static string graphApiVersion = "2013-11-08";
 AuthenticationResult authResult = null;
 ```
 
-Beachten Sie, sieht `commonAuthority`. Wenn der authentifizierungsendpunkt ist `common`, wird Ihre app **mit mehreren Mandanten**, was bedeutet, dass jeder Benutzer Anmeldung mit den Anmeldeinformationen ihres Active Directory verwenden kann. Nach der Authentifizierung dieser Benutzer funktioniert im Kontext der Active Directory – d. h. es werden Details im Zusammenhang mit seinen Active Directory angezeigt.
+Dabei ist zu beachten: `commonAuthority`. Wenn der authentifizierungsendpunkt ist `common`, wird Ihre app **mit mehreren Mandanten**, was bedeutet, dass jeder Benutzer mit ihren Active Directory-Anmeldeinformationen Anmeldung verwenden kann. Nach der Authentifizierung dieses Benutzers funktioniert im Kontext von eigenen Active Directory – also sehen die Details im Zusammenhang mit seinen Active Directory aus.
 
-### <a name="write-method-to-acquire-access-token"></a>Write-Methode zum Abrufen von Zugriffstoken
+### <a name="write-method-to-acquire-access-token"></a>Write-Methode, um Zugriffstoken zu erhalten.
 
-Der folgende Code (für Android) startet die Authentifizierung und weisen Sie nach dem Abschluss das Ergebnis in `authResult`. IOS- und Windows Phone-Implementierungen unterscheiden sich geringfügig: der zweite Parameter (`Activity`) unterscheidet sich für iOS und abwesende auf Windows Phone.
+Der folgende Code (für Android) starten Sie die Authentifizierung wird, und weisen Sie nach Abschluss die Ergebnisse im `authResult`. IOS- und Windows Phone-Implementierungen unterscheiden sich geringfügig: zweiten Parameter (`Activity`) unterscheidet sich unter iOS und fehlt auf Windows Phone.
 
 ```csharp
 public static async Task<AuthenticationResult> GetAccessToken
@@ -64,13 +64,13 @@ public static async Task<AuthenticationResult> GetAccessToken
 }  
 ```
 
-Im obigen Code die `AuthenticationContext` ist verantwortlich für die Authentifizierung mit CommonAuthority. Es wurde ein `AcquireTokenAsync` -Methode, die Parameter als Ressource zu verwenden, der in diesem Fall zugegriffen werden, muss `graphResourceUri`, `clientId`, und `returnUri`. Die app wird nun wieder die `returnUri` wenn Authentifizierung abgeschlossen wurde. Dieser Code weiterhin dem für alle Plattformen, aber der letzte Parameter `AuthorizationParameters`, weicht auf verschiedenen Plattformen und ist zuständig für die Verwaltung der Authentifizierungsablauf.
+Im obigen Code der `AuthenticationContext` ist verantwortlich für die Authentifizierung mit CommonAuthority. Es wurde ein `AcquireTokenAsync` -Methode, die Parameter als Ressource verwenden, die in diesem Fall zugegriffen werden, muss `graphResourceUri`, `clientId`, und `returnUri`. Die app wird nun wieder die `returnUri` wenn Authentifizierung abgeschlossen ist. Dieser Code bleibt unverändert für alle Plattformen, jedoch den letzten Parameter `AuthorizationParameters`, unterscheiden sich auf verschiedenen Plattformen und ist verantwortlich für die Verwaltung der Ablauf der Authentifizierung.
 
-Im Fall von Android oder iOS, übergeben wir `this` Parameter `AuthorizationParameters(this)` den Kontext freigeben, während in Windows ohne Parameter als neue Übergabe `AuthorizationParameters()`.
+Im Fall von Android- oder iOS, übergeben wir `this` Parameter `AuthorizationParameters(this)` den Kontext, freigeben, während Windows es ohne Parameter als neue übergeben wird, `AuthorizationParameters()`.
 
 ### <a name="handle-continuation-for-android"></a>Behandeln von Fortsetzung für Android
 
-Nach abgeschlossener Authentifizierung, sollte der Datenfluss zur app zurückzukehren. Im Fall von Android, es durch folgenden Code erfolgt, der hinzugefügt werden sollen **MainActivity.cs**:
+Nach der Authentifizierung abgeschlossen ist, sollte der Flow zur app zurückzukehren. Im Fall von Android, es durch folgenden Code erfolgt, der hinzugefügt werden sollen **"mainactivity.cs"**:
 
 
 ```csharp
@@ -85,7 +85,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ### <a name="handle-continuation-for-windows-phone"></a>Behandeln von Fortsetzung für Windows Phone
 
-Für Windows Phone-Ändern der `OnActivated` Methode in der **App.xaml.cs** -Datei mit den folgenden Code:
+Ändern Sie für Windows Phone die `OnActivated` -Methode in der die **"App.Xaml.cs"** -Datei mit den folgenden Code:
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs args)
@@ -101,15 +101,15 @@ protected override void OnActivated(IActivatedEventArgs args)
 ```
 
 Nun, wenn Sie die Anwendung ausführen, sollte ein Authentifizierungsdialogfeld angezeigt werden.
-Bei erfolgreicher Authentifizierung kann fragt sie Ihre Berechtigungen für die Ressourcen (in unserem Fall Graph-API) zugreifen:
+Nach der erfolgreichen Authentifizierung werden sie Ihre Berechtigungen für den Zugriff auf die Ressourcen (in unserem Fall Graph-API) gefragt:
 
-![](graph-images/08.-authentication-flow.jpg "Bei erfolgreicher Authentifizierung kann fragt sie, Ihren Berechtigungen den Zugriff auf die Ressourcen in unserem Fall Graph-API")
+![](graph-images/08.-authentication-flow.jpg "Nach der erfolgreichen Authentifizierung werden sie Ihre Berechtigungen für den Zugriff auf die Ressourcen in unserem Fall Graph-API gefragt.")
 
-Wenn die Authentifizierung erfolgreich ist und Sie haben die app Zugriff auf die Ressourcen berechtigt, erhalten Sie eine `AccessToken` und `RefreshToken` Kombinationsfeld in `authResult`. Diese Token sind erforderlich, für weitere API-Aufrufe und für die Autorisierung mit Azure Active Directory im Hintergrund.
+Wenn die Authentifizierung erfolgreich ist und Sie haben die app Zugriff auf die Ressourcen autorisiert, sollten Sie eine `AccessToken` und `RefreshToken` Kombinationsfeld in `authResult`. Diese Token werden für weitere API-Aufrufe und für die Autorisierung mit Azure Active Directory hinter den Kulissen erforderlich.
 
-![](graph-images/07.-access-token-for-authentication.jpg "Diese Token sind erforderlich, für weitere API-Aufrufe und für die Autorisierung mit Azure Active Directory im Hintergrund")
+![](graph-images/07.-access-token-for-authentication.jpg "Diese Tokens sind für weitere API-Aufrufe und für die Autorisierung mit Azure Active Directory hinter den Kulissen erforderlich")
 
-Beispielsweise können mit der folgenden Code Benutzer eine Liste von Active Directory abgerufen. Sie können die Web-API-URL durch Ihre Web-API ersetzen, die durch Azure AD geschützt ist.
+Beispielsweise können mit der folgenden Code Ihnen eine Benutzerliste aus Active Directory abzurufen. Sie können die Web-API-URL mit Ihrer Web-API ersetzen, die von Azure AD geschützt wird.
 
 ```csharp
 var client = new HttpClient();

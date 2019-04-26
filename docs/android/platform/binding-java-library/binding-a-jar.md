@@ -1,5 +1,5 @@
 ---
-title: Bindung ein. JAR-DATEI
+title: Binden einer JAR-Datei
 description: Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen einer Xamarin.Android-Java-Bindungsbibliothek von Android. JAR-Datei.
 ms.prod: xamarin
 ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
 ms.openlocfilehash: 3c84b29807fd4a181ed867095645005bf9ba4df0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957335"
 ---
-# <a name="binding-a-jar"></a>Bindung ein. JAR-DATEI
+# <a name="binding-a-jar"></a>Binden einer JAR-Datei
 
 _Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen einer Xamarin.Android-Java-Bindungsbibliothek von Android. JAR-Datei._
 

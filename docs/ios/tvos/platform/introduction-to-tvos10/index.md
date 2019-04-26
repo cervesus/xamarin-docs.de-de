@@ -1,5 +1,5 @@
 ---
-title: Einführung in TvOS 10
+title: Einführung in tvOS 10
 description: Dieser Artikel enthält alle neuen und geänderten APIs und in TvOS 10 verfügbaren Features für Entwickler mit Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 260d01d6aa8344dd3cf107f1ffc34167c457a491
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269310"
 ---
-# <a name="introduction-to-tvos-10"></a>Einführung in TvOS 10
+# <a name="introduction-to-tvos-10"></a>Einführung in tvOS 10
 
 _Dieser Artikel enthält alle neuen und geänderten APIs und in TvOS 10 verfügbaren Features für Entwickler mit Xamarin.tvOS._
 

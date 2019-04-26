@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: ff94211086956e36da377445d90359789b62fc60
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 512775864f5ad55ddfedd53b83dd02d7b0e1d1f8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61309094"
 ---
 # <a name="material-theme"></a>Materialdesign
 
@@ -52,7 +52,7 @@ Vorgehensweise: Konfigurieren Sie ein Android 5.0-app-Projekt finden Sie unter [
 
 ## <a name="using-the-built-in-themes"></a>Verwenden von integrierten Designs
 
-Die einfachste Möglichkeit zum Verwenden von Material Design ist so konfigurieren Sie Ihre app, um eine integrierte Design ohne Anpassung verwenden. Wenn Sie nicht explizit ein Design konfigurieren möchten, Ihre app wird standardmäßig `Theme.Material` (das dunkle Design). Wenn Ihre Anwendung nur eine Aktivität verfügt, können Sie ein Design auf Anwendungsebene konfigurieren. Wenn Ihre app mehrere Aktivitäten aufweist, können Sie ein Design auf Anwendungsebene konfigurieren, damit dasselbe Design in allen Aktivitäten verwendet, oder Sie verschiedene Designs, um verschiedene Aktivitäten zuweisen können. In den folgenden Abschnitten wird erläutert, wie Designs auf app-Ebene und auf der Aktivitätsebene konfigurieren.
+Die einfachste Möglichkeit zum Verwenden von Material Design ist so konfigurieren Sie Ihre app, um eine integrierte Design ohne Anpassung verwenden. Wenn Sie nicht explizit ein Design konfigurieren möchten, Ihre app wird standardmäßig `Theme.Material` (das dunkle Design). Wenn Ihre Anwendung nur eine Aktivität verfügt, können Sie ein Design auf der Aktivitätsebene konfigurieren. Wenn Ihre app mehrere Aktivitäten aufweist, können Sie ein Design auf Anwendungsebene konfigurieren, damit dasselbe Design in allen Aktivitäten verwendet, oder Sie verschiedene Designs, um verschiedene Aktivitäten zuweisen können. In den folgenden Abschnitten wird erläutert, wie Designs auf app-Ebene und auf der Aktivitätsebene konfigurieren.
 
 
 ### <a name="theming-an-application"></a>Design einer Anwendung

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
 ms.openlocfilehash: add73360ea98d8c516e413f0cc0264f68c58d79d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024456"
 ---
 # <a name="cocossharp-2d-game-engine"></a>CocosSharp 2D-Spiele-Engine
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
 ms.openlocfilehash: 0d5df986caa01bba69b03d6502682889e78ecbc7
-ms.sourcegitcommit: ee464f165eee7b4485266c11f167be557a0bacb2
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58222314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61300821"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms-Raster
 
@@ -54,7 +54,7 @@ Zeilen-und Spalteninformationen befindet sich in `Grid`des `RowDefinitions`  &  
 - **Absolute** &ndash; Größen der Spalten und Zeilen mit bestimmten festen Höhe und Breite Werten. Als Wert angegeben und `GridUnitType.Absolute` in C# geschrieben und als `#` in XAML, mit `#` wird von den gewünschten Wert.
 
 > [!NOTE]
-> Die Breitenwerte für Spalten werden als festgelegt `*` wird standardmäßig in Xamarin.Forms, die sicherstellt, dass es sich bei die Spalte den verfügbaren Platz ausfüllt. Die Höhenwerte für Zeilen werden auch als festgelegt `*` standardmäßig. 
+> Die Breitenwerte für Spalten werden als festgelegt `*` wird standardmäßig in Xamarin.Forms, die sicherstellt, dass es sich bei die Spalte den verfügbaren Platz ausfüllt. Die Höhenwerte für Zeilen werden auch als festgelegt `*` standardmäßig.
 
 Betrachten Sie eine app, die drei Zeilen und zwei Spalten aus. Die untere Zeile muss genau randleistenabschnitt 200 Pixel hoch sein, und die oberste Zeile zweimal so groß wie die mittlere Zeile werden muss. Die linke Spalte muss für den Inhalt ausreichend sein, und die rechte Spalte muss den verbleibenden Platz auszufüllen.
 
@@ -164,8 +164,8 @@ Gibt an, der folgende XAML ein `Grid` mit zwei Spalten und eine Zeile 5 Pixel de
 ```xaml
 <Grid ColumnSpacing="5">
   <Grid.ColumnDefinitions>
-    <ColumnDefinitions Width="*" />
-    <ColumnDefinitions Width="*" />
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
   </Grid.ColumnDefinitions>
 </Grid>
 ```

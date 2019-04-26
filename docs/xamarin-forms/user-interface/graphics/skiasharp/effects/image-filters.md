@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
 ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290203"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp-Bildfilter
 
@@ -28,7 +28,7 @@ Dieser Artikel veranschaulicht auch, einen Image-Filter verwenden, um einen Scha
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>Weichzeichner Vektorgrafiken und bitmaps
 
-Weichzeichnereffekts erstellt die [ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*) statische Methode hat einen deutlicher Vorteil gegenüber den Blur-Methoden in der [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) Klasse: der Abbildfilter kann eine gesamte Bitmap Weichzeichner. Die Methode hat die folgende Syntax:
+Weichzeichnereffekts erstellt die [ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*) statische Methode hat einen deutlicher Vorteil gegenüber den Blur-Methoden in der [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) Klasse: Der-Abbildfilter kann eine gesamte Bitmap Weichzeichner. Die Methode hat die folgende Syntax:
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -427,7 +427,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-Das erste Argument von `SKImageFilter.CreateDistantLitDiffuse` ist die Richtung des Lichts. Die positive X und Y Koordinaten anzugeben, dass das Licht zeigt nach rechts und nach unten. Positive Z-Koordinaten Punkt in die Anzeige. Die XAML-Datei können Sie negative Z-Werte, aber das ist, damit Sie sehen können, was passiert: negative Z-Koordinaten dazu vom Konzept her führen, dass das Licht aus dem Bildschirm heraus verweisen. Andere kleinere negative Werte und funktioniert für alle Elemente die Beleuchtung Auswirkungen mehr.
+Das erste Argument von `SKImageFilter.CreateDistantLitDiffuse` ist die Richtung des Lichts. Die positive X und Y Koordinaten anzugeben, dass das Licht zeigt nach rechts und nach unten. Positive Z-Koordinaten Punkt in die Anzeige. Die XAML-Datei können Sie negative Z-Werte, aber das ist, damit Sie sehen können, was geschieht: Im Prinzip dazu führen, dass negative Z-Koordinaten das Licht aus dem Bildschirm heraus verweisen. Andere kleinere negative Werte und funktioniert für alle Elemente die Beleuchtung Auswirkungen mehr.
 
 Die `surfaceScale` Argument kann zwischen – 1 und 1 liegen. (Höhere oder niedrigere Werte haben keine weitere Auswirkung.) Dies sind die relativen Werte in der Z-Achse, die angeben, die Verschiebung des grafischen Objekts (in diesem Fall die Textzeichenfolge) aus der Canvas-Oberfläche. Verwenden Sie negative Werte zum Auslösen der Textzeichenfolge oberhalb der Fläche im Zeichenbereich und positive Werte, die sie in den Zeichenbereich drücken.
 
@@ -439,7 +439,7 @@ Diese Faktoren können abgewogen werden, um eine Geprägte erhalten wirksam, wen
 
 Der Android-Screenshot verfügt über eine Z-Wert, der 0, was bedeutet, dass das Licht nur nach unten und nach rechts zeigt. Der Hintergrund ist nicht beleuchtet und die Oberfläche der Textzeichenfolge beleuchtet ist nicht beide. Das Licht wirkt sich nur der Rand des Texts für einen kleinen Effekt.
 
-Eine alternative Methode zum Geprägte und Gravur Text wurde in diesem Artikel gezeigt [das Übersetzen transformieren](../transforms/translate.md): die Textzeichenfolge wird zweimal mit verschiedenen Farben, die ausgeglichen werden, leicht voneinander angezeigt.
+Eine alternative Methode zum Geprägte und Gravur Text wurde in diesem Artikel gezeigt [das Übersetzen transformieren](../transforms/translate.md): Die Textzeichenfolge wird zweimal mit verschiedenen Farben, die ausgeglichen werden, leicht voneinander angezeigt.
 
 ## <a name="related-links"></a>Verwandte Links
 

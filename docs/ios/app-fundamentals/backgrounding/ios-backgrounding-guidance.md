@@ -1,5 +1,5 @@
 ---
-title: iOS-Hintergrundverarbeitung Anleitungen
+title: Leitfaden für die iOS-Hintergrundverarbeitung
 description: Diese Diagramme angezeigt, die in diesem Dokument bieten Anleitungen dazu, welche der iOS viele backgrounding Optionen für eine bestimmte Anforderungen gewählt werden sollte.
 ms.prod: xamarin
 ms.assetid: BC629536-F179-4EC2-AD72-8F45081F8EE0
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/05/2018
 ms.openlocfilehash: f2ccd7cd531dba8e5fcf6d4e3d1970a9ebf3e84d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169687"
 ---
-# <a name="ios-backgrounding-guidance"></a>iOS-Hintergrundverarbeitung Anleitungen
+# <a name="ios-backgrounding-guidance"></a>Leitfaden für die iOS-Hintergrundverarbeitung
 
 Finden Sie in das folgende Diagramm und eine backgrounding Technik in iOS 6 auswählen:
 

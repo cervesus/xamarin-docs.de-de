@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: c8f92e55648dff469227cc3bad981ad5f6e6d0ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019159"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>Exemplarische Vorgehensweise: Speichern des Aktivitätsstatus
 
@@ -182,4 +182,4 @@ In dieser exemplarischen Vorgehensweise haben wir Ihrer Kenntnisse der Aktivitä
 
 - [ActivityLifecycle (Beispiel)](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)
 - [Aktivitätslebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
-- [Android-Aktivität](https://developer.xamarin.com/api/type/Android.App.Activity/)
+- [Android Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)

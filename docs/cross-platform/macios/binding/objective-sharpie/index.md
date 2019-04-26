@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
 ms.openlocfilehash: 53fcbbc408ae147405a3285d9391457051d6e16e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261195"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>Erstellen von Bindungen mit objektive Sharpie
 
@@ -44,10 +44,10 @@ Ziel-Sharpie ist jedoch ein sehr fortschrittlichen Tool, das erfordert erweitert
 ## <a name="related-links"></a>Verwandte Links
 
 - [Objektive Sharpie-download](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
-- [Exemplarische Vorgehensweise: Bindung einer Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Exemplarische Vorgehensweise: Binden eine Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Informationen zu](~/cross-platform/macios/binding/overview.md)
 - [Bindung Typen – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Xamarin für Objective-C-Entwickler](~/ios/get-started/objective-c-developers/index.md)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

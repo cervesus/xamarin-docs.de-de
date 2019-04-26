@@ -8,11 +8,11 @@ ms.workload:
 - xamarin
 ms.date: 10/23/2018
 ms.openlocfilehash: de7cb0d3cce97f251fe6d9625fb1373e6aac7a67
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293686"
 ---
 # <a name="devops-with-xamarin"></a>DevOps mit Xamarin
 
@@ -26,11 +26,11 @@ In den folgenden Tabellen wird beschrieben, welche DevOps-Features in Visual Stu
 
 ## <a name="agile-tools"></a>Agile-Tools
 
-Verweislink: **[Informationen zu Agile-Tools und Agile-Projektverwaltung](/azure/devops/boards/backlogs/overview?view=vsts)**
+Referenzlink: **[Informationen zu Agile-Tools und Agile-projektverwaltung](/azure/devops/boards/backlogs/overview?view=vsts)**
 
 Allgemeiner Kommentar: alle Planungs- und Nachverfolgungsfunktionen sind vom Projekttyp und den Programmiersprachen unabhängig.
 
-|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Verwalten von Rückständen und Sprints|Ja||
 |Arbeitsüberwachung|Ja||
@@ -40,11 +40,11 @@ Allgemeiner Kommentar: alle Planungs- und Nachverfolgungsfunktionen sind vom Pro
 
 ## <a name="modeling"></a>Modellierung
 
-Verweislink: **[Analyse und Modellarchitektur](/visualstudio/modeling/analyze-and-model-your-architecture)**
+Referenzlink: **[Analyze and model architecture (Analysieren und Modellieren der Architektur)](/visualstudio/modeling/analyze-and-model-your-architecture)**
 
 Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funktionieren mit .NET-Sprachen wie C#. Mit Code zusammenhängende Aspekte finden Sie unter [Rollen von Architektur- und Modellierungsdiagrammen in der Softwareentwicklung](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools).
 
-|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Sequenzdiagramme|Ja||
 |Abhängigkeitsdiagramme|Ja||
@@ -57,7 +57,7 @@ Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funkti
 
 ## <a name="code"></a>Code
 
-|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |[Verwenden der Team Foundation-Versionskontrolle (TFVC)](/azure/devops/repos/tfvc/overview?view=vsts) oder Azure Repos|Ja||
 |[Erste Schritte mit Git in Azure Repos](/azure/devops/repos/git/gitquickstart?view=vsts&tabs=visual-studio)|Ja||
@@ -65,11 +65,11 @@ Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funkti
 |[Ermitteln von Änderungen am Code und andere Verläufe](/visualstudio/ide/find-code-changes-and-other-history-with-codelens)|Ja|Außer über plattformspezifische Grenzen hinweg, in denen die Implementierung bis zur Laufzeit nicht aufgelöst wird.|
 |[Verwenden von Code Maps zum Debuggen von Anwendungen](/visualstudio/modeling/use-code-maps-to-debug-your-applications)|Ja||
 
-## <a name="build"></a>Erstellen
+## <a name="build"></a>Build
 
 Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
-|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Lokaler TFS-Server|Ja|Auf Buildcomputern muss Xamarin installiert sein, und sie können mit einem OSX-Computer verknüpft werden, um Builds für iOS zu erstellen. Siehe [Verwenden von TFVC](/azure/devops/repos/tfvc/overview?view=vsts).|
 |Lokaler Buildserver mit Verbindung zu Azure Pipelines|Ja|Anweisungen finden Sie unter [Build and release agents (Build- und Release-Agents)](/azure/devops/pipelines/agents/agents?view=vsts).|
@@ -79,7 +79,7 @@ Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
 ## <a name="test"></a>Test
 
-|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Planen von Tests, Erstellen von Testfällen und Organisieren von Testauflistungen|Ja||
 |Manuelle Tests|Ja||
@@ -90,9 +90,9 @@ Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
 ## <a name="improve-code-quality"></a>Verbessern der Codequalität
 
-Verweislink: **[Verbessern der Codequalität](/visualstudio/test/improve-code-quality)**
+Referenzlink: **[Verbessern der Codequalität](/visualstudio/test/improve-code-quality)**
 
-|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |[Analysieren der Qualität von verwaltetem Code](/visualstudio/code-quality/analyzing-managed-code-quality-by-using-code-analysis)|Ja||
 |[Suchen von doppeltem Code mit der Codeklonerkennung](https://msdn.microsoft.com/library/hh205279.aspx)|Ja||
@@ -102,9 +102,9 @@ Verweislink: **[Verbessern der Codequalität](/visualstudio/test/improve-code-qu
 
 ## <a name="release-management"></a>Release Management:
 
-Referenzlink: **[Build und Release in Azure Pipelines und TFS](/azure/devops/pipelines/overview?view=vsts)**
+Referenzlink: **[Build und release in Azure-Pipelines und TFS](/azure/devops/pipelines/overview?view=vsts)**
 
-|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Verwalten von Releaseprozessen|Ja||
 |Bereitstellen auf Servern für das Sideloading über Skripts|Ja||
@@ -112,8 +112,8 @@ Referenzlink: **[Build und Release in Azure Pipelines und TFS](/azure/devops/pip
 
 ## <a name="monitor-with-hockeyapp"></a>Überwachen mit HockeyApp
 
-Verweislink: **[Überwachen mit HockeyApp](https://www.hockeyapp.net/features/)**
+Referenzlink: **[Monitor with HockeyApp (Überwachen mit HockeyApp)](https://www.hockeyapp.net/features/)**
 
-|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Absturzanalysen, Telemetrie und Betaverteilung|Ja||

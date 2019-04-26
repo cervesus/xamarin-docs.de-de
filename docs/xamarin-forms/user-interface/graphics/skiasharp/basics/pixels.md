@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
 ms.openlocfilehash: c1e4a76a70dcac3414d384469f25bad7908ae77f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019949"
 ---
 # <a name="pixels-and-device-independent-units"></a>Pixel und geräteunabhängige Einheiten
 
@@ -55,7 +55,7 @@ public SurfaceSizePage()
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-Sie geben die Zeichenfolge, die die X- und Y-Koordinaten, in dem der Text ist, um zu beginnen, und ein `SKPaint` Objekt. Gibt an, die X-Koordinate, in der linken Seite des Texts positioniert ist, aber sehen Sie sich,: Gibt an, die Y-Koordinate der Position des der *Baseline* des Texts. Wenn Sie jemals von Hand auf unterstrichenen Papier geschrieben haben, ist die Baseline der Zeile, auf welche Zeichen-Konto, und klicken Sie unterhalb der Unterlängen (z. B. auf den Buchstaben g, p, Q und y) abgeleitet werden.
+Sie geben die Zeichenfolge, die die X- und Y-Koordinaten, in dem der Text ist, um zu beginnen, und ein `SKPaint` Objekt. Die X-Koordinate gibt an, wo der linken Seite des Texts positioniert ist, aber Achten Sie auf: Gibt an, die Y-Koordinate der Position des der *Baseline* des Texts. Wenn Sie jemals von Hand auf unterstrichenen Papier geschrieben haben, ist die Baseline der Zeile, auf welche Zeichen-Konto, und klicken Sie unterhalb der Unterlängen (z. B. auf den Buchstaben g, p, Q und y) abgeleitet werden.
 
 Die `SKPaint` Objekt können Sie die Farbe des Texts, die die Schriftfamilie und die Textgröße anzugeben. In der Standardeinstellung die [ `TextSize` ](xref:SkiaSharp.SKPaint.TextSize) Eigenschaft hat den Wert 12, was in kleinen Text auf Geräten wie Smartphones mit hoher Auflösung führt. Im Prinzip die einfachsten Anwendungen benötigen Sie auch einige Informationen über die Größe des Texts, die Sie anzeigen. Die `SKPaint` -Klasse definiert eine [ `FontMetrics` ](xref:SkiaSharp.SKPaint.FontMetrics) Eigenschaft und mehrere [ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String)) Methoden, aber weniger originelle Anforderungen, die [ `FontSpacing` ](xref:SkiaSharp.SKPaint.FontSpacing) Eigenschaft stellt einen empfohlenen Wert für Abstand aufeinander folgende Textzeilen.
 

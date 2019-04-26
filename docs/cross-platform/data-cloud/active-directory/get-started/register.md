@@ -1,40 +1,40 @@
 ---
-title: Schritt 1. Registrieren einer app zur Verwendung von Azure Active Directory
-description: Dieses Dokument beschreibt, wie eine Azure-Anwendung mit Azure Active Directory registrieren, sodass es von mobilen Clients sicher zugegriffen werden kann.
+title: Schritt 1. Registrieren einer app zum Azure Active Directory verwenden
+description: Dieses Dokument beschreibt, wie Sie eine Azure-Anwendung in Azure Active Directory zu registrieren, sodass es von mobilen Clients sicher zugegriffen werden kann.
 ms.prod: xamarin
 ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: 7f1e743eea81edc0aa45b49f6acb6a9fd461bc80
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61188258"
 ---
-# <a name="step-1-register-an-app-to-use-azure-active-directory"></a>Schritt 1. Registrieren einer app zur Verwendung von Azure Active Directory
+# <a name="step-1-register-an-app-to-use-azure-active-directory"></a>Schritt 1. Registrieren einer app zum Azure Active Directory verwenden
 
-1. Navigieren Sie zu [windowsazure.com](https://manage.windowsazure.com) und melden Sie sich mit Ihrem Microsoft-Account oder Organisations-Konto im Azure-Portal. Wenn Sie nicht über ein Azure-Abonnement verfügen, erhalten Sie eine Testversion von [azure.com](http://www.azure.com)
+1. Navigieren Sie zu [windowsazure.com](https://manage.windowsazure.com) und melden Sie sich mit Ihrem Microsoft Account oder Organisations-Konto im Azure-Portal. Wenn Sie nicht über ein Azure-Abonnement verfügen, erhalten Sie eine Testversion von [azure.com](http://www.azure.com)
 
-2. Nach der Anmeldung, wechseln Sie zu der **Active Directory** Abschnitt (1), und wählen Sie das Verzeichnis, in dem die Anwendung (2) zu registrieren werden sollen,
+2. Nach der Anmeldung finden Sie unter den **Active Directory** Abschnitt (1), und wählen Sie das Verzeichnis, in der Anwendung (2)
 
-  [ ![](register-images/01.-active-directory-in-azure-portal-sml.jpg "im Abschnitt, und wählen Sie das Verzeichnis, in dem die Anwendung registriert werden sollen")](register-images/01.-active-directory-in-azure-portal.jpg#lightbox)
+  [ ![](register-images/01.-active-directory-in-azure-portal-sml.jpg "Abschnitt, und wählen Sie das Verzeichnis, in dem Sie die Anwendung registrieren möchten")](register-images/01.-active-directory-in-azure-portal.jpg#lightbox)
 
-3. Klicken Sie auf **hinzufügen** um die neue Anwendung erstellt haben, und wählen Sie dann **eine von meinem Unternehmen entwickelte Anwendung hinzufügen**
+3. Klicken Sie auf **hinzufügen** um die neue Anwendung erstellen, und wählen Sie dann **eine von meinem Unternehmen entwickelte Anwendung hinzufügen**
 
   [ ![](register-images/02.-add-new-application-sml.jpg "Fügen Sie eine von meinem Unternehmen entwickelte Anwendung hinzu")](register-images/02.-add-new-application.jpg#lightbox)
 
-4. Geben Sie auf dem nächsten Bildschirm Ihre app einen Namen (z. b. XAM-DEMO).
-  Stellen Sie sicher, dass die Auswahl **systemeigene Clientanwendung** als Typ der Anwendung.
+4. Geben Sie auf dem nächsten Bildschirm der app einen Namen (z. b. XAM-DEMO).
+  Stellen Sie sicher, dass Sie **systemeigene Clientanwendung** als den Typ der Anwendung.
 
-  ![](register-images/03.-app-name.jpg "Stellen Sie sicher, dass Sie systemeigene Clientanwendung mit dem Typ der Anwendung auswählen")
+  ![](register-images/03.-app-name.jpg "Stellen Sie sicher, dass Sie eine systemeigene Clientanwendung mit dem Typ der Anwendung auswählen")
 
-5. Geben Sie auf der letzten Seite eine **Umleitungs-URI* , die für Ihre Anwendung eindeutig ist, wie es beim Abschluss der Authentifizierung an diesen URI zurückgegeben werden sollen.
+5. Geben Sie auf der letzten Seite, ein **Umleitungs-URI* , die für Ihre Anwendung eindeutig ist, wie sie an diesen URI zurückgibt, wenn es sich bei Authentifizierung abgeschlossen ist.
 
-  ![](register-images/04.-app-redirect.jpg "Geben Sie auf der letzten Seite eine Umleitungs-URI, die für Ihre Anwendung eindeutig ist, da es an diesen URI zurückgegeben wird, wenn Authentifizierung abgeschlossen ist.")
+  ![](register-images/04.-app-redirect.jpg "Geben Sie auf der letzten Seite ein Umleitungs-URI, der für Ihre Anwendung eindeutig ist, wie sie an diesen URI zurückgibt, wenn es sich bei Authentifizierung abgeschlossen ist")
 
-6. Sobald die app erstellt wurde, navigieren Sie zu der **konfigurieren** Registerkarte. Notieren Sie sich die **Clientkennung** das in der vorliegenden Anwendung später verwendet wird. Sie können auch auf diesem Bildschirm übergeben Ihren mobilen Anwendungszugriff auf Active Directory oder Hinzufügen von einer anderen Anwendung wie Web-API oder Office 365, der nach Abschluss der Authentifizierung von mobilen Anwendung verwendet werden kann.
+6. Sobald die app erstellt wurde, navigieren Sie zu der **konfigurieren** Registerkarte. Notieren Sie sich die **Client-ID** die wir in unserer Anwendung später verwenden werden. Sie können auch auf diesem Bildschirm erhalten Ihre mobile Anwendungszugriff auf Active Directory oder Hinzufügen einer anderen Anwendung wie Web-API oder Office 365, die durch die Verwaltungsrichtlinie für mobile Anwendungen verwendet werden kann, nachdem die Authentifizierung abgeschlossen ist.
 
     ![](register-images/05.-configure.jpg "Darüber hinaus auf diesem Bildschirm können Sie Ihre mobile Anwendungszugriff auf Active Directory gewähren oder Hinzufügen einer anderen Anwendung wie Web-API oder Office 365")
 

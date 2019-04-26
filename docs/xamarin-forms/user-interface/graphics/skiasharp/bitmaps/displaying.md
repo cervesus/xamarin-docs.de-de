@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 73fdccf1f6ccee4f6610c1078f5aab14c2be3d78
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61204802"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>Anzeigen von SkiaSharp-bitmaps
 
@@ -73,7 +73,7 @@ catch
 
 Beachten Sie, dass die `Stream` -Objekts vom `GetStreamAsync` in kopiert eine `MemoryStream`. Android lässt nicht zu den `Stream` aus `HttpClient` durch den Hauptthread in asynchronen Methoden außer verarbeitet werden. 
 
-Die [ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) ist sehr viel Arbeit: die `Stream` übergebenes Objekt verweist auf einen Speicherblock, der eine gesamte Bitmap in einem von der allgemeinen Bitmapformate-Datei, in der Regel JPEG, PNG oder GIF enthält. Die `Decode` Methode bestimmen Sie das Format muss, und die Bitmapdatei klicken Sie dann in SkiaSharps-interne Bitmap-Format zu decodieren.
+Die [ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) ist sehr viel Arbeit: Die `Stream` übergebenes Objekt verweist auf einen Speicherblock, der eine gesamte Bitmap in einem von der allgemeinen Bitmapformate-Datei, in der Regel JPEG, PNG oder GIF enthält. Die `Decode` Methode bestimmen Sie das Format muss, und die Bitmapdatei klicken Sie dann in SkiaSharps-interne Bitmap-Format zu decodieren.
 
 Nach dem der Code ruft `SKBitmap.Decode`, es werden möglicherweise ungültig. die `CanvasView` , damit die `PaintSurface` Handler kann anzeigen, die neu geladene Bitmap.
 

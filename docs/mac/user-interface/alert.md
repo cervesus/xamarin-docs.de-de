@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 6545b1423b809e42293302baf3eba9521848edc1
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61237659"
 ---
 # <a name="alerts-in-xamarinmac"></a>Warnungen in Xamarin.Mac
 
@@ -78,7 +78,7 @@ Apple bietet mehrere Eigenschaften, die verwendet werden können, um eine Warnun
 
 <a name="Displaying_an_Alert" />
 
-## <a name="displaying-an-alert"></a>Eine Warnung
+## <a name="displaying-an-alert"></a>Anzeigen einer Warnung
 
 Es gibt zwei Möglichkeiten, eine Warnung angezeigt, der nicht typisierte werden kann oder als eine Tabelle. Der folgende Code zeigt eine Warnung als ist:
 
@@ -130,7 +130,7 @@ var result = alert.RunModal ();
 
 Die erste Schaltfläche, die hinzugefügt werden. die _Schaltfläche Standard_ , wird aktiviert, wenn der Benutzer die EINGABETASTE drückt. Der zurückgegebene Wert wird eine ganze Zahl, welche Schaltfläche der Benutzer, die gedrückt werden. In diesem Fall werden die folgenden Werte zurückgegeben werden:
 
-- **OK** – 1000.
+- **OK** - 1000.
 - **Abbrechen** : 1001.
 - **Vielleicht** : 1002.
 

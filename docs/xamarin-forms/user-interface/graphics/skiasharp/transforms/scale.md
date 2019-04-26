@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
 ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61189237"
 ---
 # <a name="the-scale-transform"></a>Die Skalierungstransformation
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Sie Fragen sich vielleicht: wie wirken sich die Skalierungsfaktoren auf den Rückgabewert aus der `MeasureText` -Methode der `SKPaint`? Die Antwort lautet: überhaupt nicht. `Scale` ist eine Methode `SKCanvas`. Es hat keine Auswirkungen auf Alles was Sie tun, mit einem `SKPaint` Objekt, bis Sie das Objekt verwenden, um etwas auf der Leinwand zu rendern.
+Sie Fragen sich vielleicht: Wie wirken sich die Skalierungsfaktoren auf den Rückgabewert aus der `MeasureText` -Methode der `SKPaint`? Die Antwort ist: Nein. `Scale` ist eine Methode `SKCanvas`. Es hat keine Auswirkungen auf Alles was Sie tun, mit einem `SKPaint` Objekt, bis Sie das Objekt verwenden, um etwas auf der Leinwand zu rendern.
 
 Wie Sie alle Elemente, die nach dem sehen können die `Scale` erhöht sich proportional aufrufen:
 
@@ -251,7 +251,7 @@ Die `pathBounds` Rechteck am oberen Rand dieser Code abgerufen, und klicken Sie 
 
 [![](scale-images/anisotropicscaling-small.png "Dreifacher Screenshot der Seite anisotrope Skalierung")](scale-images/anisotropicscaling-large.png#lightbox "dreifachen Screenshot der Seite anisotrope Skalierung")
 
-Eine weitere Möglichkeit kann man die `Scale` und `Translate` aufrufen wird, um die Auswirkungen in umgekehrter Reihenfolge zu: die `Translate` Aufruf wechselt den Pfad aus, damit er vollständig sichtbar ist, jedoch in der oberen linken Ecke der Leinwand ausgerichtet wird. Die `Scale` Methode dann vornimmt, Stern größere relativ zur oberen linken Ecke.
+Eine weitere Möglichkeit kann man die `Scale` und `Translate` aufrufen wird, um den Effekt in umgekehrter Reihenfolge zu bestimmen: Die `Translate` Aufruf wechselt den Pfad aus, damit er vollständig sichtbar ist, jedoch in der oberen linken Ecke der Leinwand ausgerichtet wird. Die `Scale` Methode dann vornimmt, Stern größere relativ zur oberen linken Ecke.
 
 Tatsächlich wird es angezeigt, dass das Sternchen ein bisschen größer als die Leinwand ist. Das Problem ist die Strichbreite. Die `Bounds` Eigenschaft `SKPath` gibt an, die Dimensionen der Koordinaten codiert, in dem Pfad, und was die Anwendung verwendet, um sie zu skalieren. Wenn der Pfad mit einer Strichbreite von bestimmten gerendert wird, ist der gerenderte Pfad größer als der Leinwand.
 

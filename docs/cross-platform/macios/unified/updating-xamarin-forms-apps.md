@@ -1,38 +1,38 @@
 ---
 title: Aktualisieren von vorhandenen Xamarin.Forms-Apps
-description: Dieses Dokument beschreibt die Schritte, die zum Aktualisieren einer Xamarin.Forms-app aus der klassischen-API an die API Unified befolgt werden müssen.
+description: Dieses Dokument beschreibt die Schritte, die beachtet werden müssen, um eine Xamarin.Forms-app von der klassischen API, die Unified API zu aktualisieren.
 ms.prod: xamarin
 ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: d5c16b034b07d3e9875412f041c16b293557438a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61211855"
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Aktualisieren von vorhandenen Xamarin.Forms-Apps
 
-_Führen Sie diese Schritte zum Aktualisieren einer vorhandenen Xamarin.Forms-app die einheitliche API, und aktualisieren Sie auf Version 1.3.1_
+_Führen Sie diese Schritte zum Aktualisieren einer vorhandenen Xamarin.Forms-app verwenden Sie die Unified API und ein update auf Version 1.3.1_
 
 > [!IMPORTANT]
-> Da Xamarin.Forms 1.3.1 das erste Release, das die einheitliche API unterstützt handelt, sollten die gesamte Projektmappe aktualisiert werden, um die neueste Version zur gleichen Zeit wie das Migrieren der iOS-app auf einheitliche verwenden. Dies bedeutet, dass zusätzlich zum Aktualisieren der iOS-Projekt für die Unterstützung für Unified, außerdem Sie Code in bearbeiten müssen _alle_ Projekte in der Projektmappe.
+> Da Xamarin.Forms 1.3.1 die erste Version, die die Unified API unterstützt ist, sollte die gesamte Lösung aktualisiert werden, um die neueste Version zur gleichen Zeit wie die Migration von der iOS-app zu Unified verwenden. Dies bedeutet, dass zusätzlich zum Aktualisieren des iOS-Projekts für Unified-Support, außerdem Sie Code in bearbeiten müssen _alle_ die Projekte in der Projektmappe.
 
-Das Update wird in zwei Schritten ausgeführt:
+Die Aktualisierung erfolgt in zwei Schritten:
 
-1. Migrieren Sie die iOS-app auf die einheitliche API, die mit Visual Studio für Mac Build-Migrationstools.
+1. Migrieren Sie die iOS-app an die Unified API mit Visual Studio für Mac Build-Migrationstools kennen.
 
     - Verwenden Sie das Migrationstool, um das Projekt automatisch aktualisiert.
 
-    - Update iOS systemeigene APIs, wie in den Anweisungen, um [Aktualisieren von iOS-apps](~/cross-platform/macios/unified/updating-ios-apps.md) (insbesondere in benutzerdefinierten Renderer oder Abhängigkeit Dienstcode).
+    - Update iOS Native APIs wie in den Anweisungen, um [Aktualisieren von iOS-apps](~/cross-platform/macios/unified/updating-ios-apps.md) (insbesondere in benutzerdefinierten Renderer oder eine Abhängigkeit Dienstcode).
 
-2. Aktualisieren Sie die gesamte Projektmappe in Xamarin.Forms Version 1.3.
+2. Aktualisieren Sie die gesamte Lösung in Xamarin.Forms-Version 1.3.
 
-    1. Installieren Sie das Xamarin.Forms 1.3.1 NuGet-Paket.
+    1. Installieren Sie das Xamarin.Forms 1.3.1-NuGet-Paket.
 
-    2. Update der `App` Klasse in den gemeinsam verwendeten Code.
+    2. Update der `App` Klasse in den freigegebenen Code.
 
     3. Update der `AppDelegate` im iOS-Projekt.
 
@@ -40,55 +40,55 @@ Das Update wird in zwei Schritten ausgeführt:
 
     5. Update der `MainPage` im Windows Phone-Projekt.
 
-## <a name="1-ios-app-unified-migration"></a>1. iOS-App (Unified Migration)
+## <a name="1-ios-app-unified-migration"></a>1. iOS-App (Unified-Migration)
 
-Bei der Migration erfordert ein Upgrade Xamarin.Forms auf Version 1.3, die die einheitliche API unterstützt. Damit die richtigen Assemblyverweise erstellt werden kann müssen wir zunächst die iOS-Projekt zum Verwenden der API Unified zu aktualisieren.
+Bei der Migration erfordert das Aktualisieren von Xamarin.Forms auf Version 1.3, die die Unified API unterstützt. In der Reihenfolge für die richtige Assembly-Verweise erstellt werden soll müssen wir zuerst das iOS-Projekt zum Verwenden der Unified API aktualisieren.
 
 ### <a name="migration-tool"></a>Migrationstool
 
-Klicken Sie auf das iOS-Projekt so, dass es aktiviert ist, wählen Sie dann **Projekt > Migrate to Xamarin.iOS einheitliche API...**  und akzeptieren Sie die Warnmeldung, die angezeigt wird.
+Klicken Sie auf das iOS-Projekt, damit es aktiviert ist, wählen Sie dann **Projekt > migrieren zur vereinheitlichten Xamarin.iOS-API...**  und akzeptieren Sie die Warnmeldung, die angezeigt wird.
 
-![](updating-xamarin-forms-apps-images/beta-tool1.png "Wählen Sie Projekt > Migrieren nach Xamarin.iOS einheitliche API..., und akzeptieren Sie die Warnmeldung, die angezeigt wird")
+![](updating-xamarin-forms-apps-images/beta-tool1.png "Projekt auswählen > zu vereinheitlichten Xamarin.iOS-API migrieren... und akzeptieren Sie die Warnmeldung, die angezeigt wird")
 
 Damit wird automatisch:
 
- - Ändern Sie den Projekttyp, um die einheitliche 64-Bit-API unterstützen.
- - Ändern Sie den frameworkverweis zu **Xamarin.iOS** (ersetzen die alten **Monotouch** Verweis).
- - Ändern Sie die Namespaceverweise in der Code zum Entfernen der `MonoTouch` Präfix.
- - Update der **Csproj** Datendatei an der richtigen Build-Ziele für die einheitliche API verwendet.
+ - Ändern Sie den Projekttyp aus, um die einheitliche 64-Bit-API zu unterstützen.
+ - Ändern Sie den frameworkverweis um **Xamarin.iOS** (die alte **Monotouch** Verweis).
+ - Ändern Sie die Namespaceverweise in den Code zum Entfernen der `MonoTouch` Präfix.
+ - Update der **Csproj** Datei, die die richtigen Build-Ziele für die Unified API verwendet.
 
-**Fehlerfreie** und **erstellen** des Projekts, um sicherzustellen, dass es sind keine weiteren Fehler zu beheben. Sollte ist keine weitere Aktion erforderlich. Diese Schritte werden ausführlicher in den [einheitliche API Docs](~/cross-platform/macios/unified/updating-ios-apps.md).
+**Bereinigen** und **erstellen** das Projekt, um sicherzustellen, dass keine weiteren Fehler zu beheben. Keine weiteren Aktionen sollten erforderlich sein. Diese Schritte werden ausführlicher in den [Unified API-Dokumentation](~/cross-platform/macios/unified/updating-ios-apps.md).
 
-### <a name="update-native-ios-apis-if-required"></a>Aktualisieren von systemeigenen iOS-APIs (falls erforderlich)
+### <a name="update-native-ios-apis-if-required"></a>Aktualisieren Sie native iOS-APIs (falls erforderlich)
 
-Wenn Sie zusätzliche iOS systemeigenem Code (z. B. benutzerdefinierte Renderer "oder" Abhängigkeitsdienste ") hinzugefügt haben, müssen Sie zusätzliche manuelle Codekorrekturen durchführen. Erneut kompilieren Sie Ihre app und beziehen sich auf die [Aktualisieren von vorhandenen iOS-Apps Anweisungen](~/cross-platform/macios/unified/updating-ios-apps.md) zusätzliche Informationen zu Änderungen, die möglicherweise erforderlich sind. [Diese Tipps](~/cross-platform/macios/unified/updating-tips.md) hilft auch Änderungen zu identifizieren, die erforderlich sind.
+Wenn Sie zusätzliche iOS systemeigenem Code (z. B. benutzerdefinierte Renderer "oder" Abhängigkeitsdienste ") hinzugefügt haben, müssen Sie für zusätzliche manuelle Codekorrekturen durchführen. Kompilieren Sie Ihre app erneut, und beziehen sich auf die [Aktualisieren von vorhandenen iOS-Apps-Anweisungen](~/cross-platform/macios/unified/updating-ios-apps.md) Weitere Informationen zu Änderungen, die möglicherweise erforderlich sind. [Diese Tipps](~/cross-platform/macios/unified/updating-tips.md) hilft auch dabei Änderungen zu identifizieren, die erforderlich sind.
 
-## <a name="2-xamarinforms-131-update"></a>2. Xamarin.Forms 1.3.1 Update
+## <a name="2-xamarinforms-131-update"></a>2. Xamarin.Forms 1.3.1-Update
 
-Sobald die iOS-app auf die einheitliche API aktualisiert wurde, muss der Rest der Lösung in Xamarin.Forms Version 1.3.1 aktualisiert werden. Dies umfasst Folgendes:
+Nach die iOS-app der Unified API aktualisiert wurde, muss der Rest der Lösung auf Xamarin.Forms-Version 1.3.1 aktualisiert werden. Dies umfasst Folgendes:
 
- - Aktualisieren das Xamarin.Forms-NuGet-Paket in jedem Projekt angelegt.
- - Ändern den Code, um die neue Xamarin.Forms verwenden `Application`, `FormsApplicationDelegate` (iOS), `FormsApplicationActivity` (Android) und `FormsApplicationPage` Klassen (Windows Phone).
+ - Aktualisieren das Xamarin.Forms-NuGet-Paket in jedem Projekt.
+ - Ändern den Code, um die neue Xamarin.Forms verwendet `Application`, `FormsApplicationDelegate` (iOS) `FormsApplicationActivity` (Android), und `FormsApplicationPage` (Windows Phone)-Klassen.
 
 Diese Schritte werden im folgenden erläutert:
 
-### <a name="21-update-nuget-in-all-projects"></a>2.1-Update von NuGet in allen Projekten
+### <a name="21-update-nuget-in-all-projects"></a>2.1 Aktualisieren von NuGet in allen Projekten
 
-Aktualisieren Sie Xamarin.Forms auf 1.3.1 Vorabversion mithilfe des NuGet-Paket-Managers für alle Projekte in der Projektmappe: PCL (falls vorhanden), iOS, Android und Windows Phone. Es wird empfohlen, die Sie **löschen und erneut hinzufügen** die Xamarin.Forms-NuGet-Paket zum Aktualisieren von Version 1.3.
+Aktualisieren Sie Xamarin.Forms, um 1.3.1 Vorabversionen mithilfe des NuGet-Paket-Managers für alle Projekte in der Projektmappe: PCL (falls vorhanden), iOS, Android und Windows Phone. Es wird empfohlen, die Sie **löschen und erneut hinzufügen** das Xamarin.Forms-NuGet-Paket zum Aktualisieren auf Version 1.3.
 
-**Hinweis:** Xamarin.Forms Version 1.3.1 befindet sich derzeit im *Vorabversion*. Dies bedeutet, Sie müssen auswählen, die **Vorabversion** option NuGet über (ein Tick-Feld in Visual Studio für Mac) oder einer Drop-Dropdownliste in Visual Studio auf die neueste Version der Vorabversion finden Sie unter.
+**HINWEIS:** Xamarin.Forms-Version 1.3.1 befindet sich derzeit in *Vorabversion*. Dies bedeutet, Sie müssen auswählen, die **Vorabversion** option NuGet über (ein Tick-Feld in Visual Studio für Mac) oder eine Drop-Down-Liste in Visual Studio auf die neueste Vorabversion finden Sie unter.
 
 > [!IMPORTANT]
-> Wenn Sie Visual Studio verwenden, stellen Sie sicher, dass die neueste Version des NuGet-Paket-Manager installiert ist. Ältere Versionen von NuGet in Visual Studio werden die einheitliche Version des Xamarin.Forms 1.3.1 nicht korrekt installieren. Wechseln Sie zu **Tools > Erweiterungen und Updates...**  , und klicken Sie auf die **installiert** Liste überprüfen, ob die **NuGet-Paket-Manager für Visual Studio** ist mindestens Version 2.8.5. Wenn sie älter ist, klicken Sie auf die **Updates** Liste aus, um die neueste Version herunterzuladen.
+> Wenn Sie Visual Studio verwenden, stellen Sie sicher, dass die neueste Version des NuGet Paket-Managers installiert ist. Ältere Versionen von NuGet in Visual Studio werden die einheitliche-Version von Xamarin.Forms 1.3.1 nicht ordnungsgemäß installiert. Wechseln Sie zu **Tools > Erweiterungen und Updates...**  und klicken Sie auf die **installiert** Liste überprüfen, ob die **NuGet-Paket-Manager für Visual Studio** ist mindestens Version 2.8.5. Wenn sie älter ist, klicken Sie auf die **Updates** Liste aus, um die neueste Version herunterladen.
 
-Nachdem Sie das NuGet-Paket in Xamarin.Forms 1.3.1 aktualisiert haben, nehmen Sie die folgenden Änderungen in jedem Projekt so aktualisieren Sie auf die neue `Xamarin.Forms.Application` Klasse.
+Nachdem Sie das NuGet-Paket in Xamarin.Forms 1.3.1 aktualisiert haben, nehmen Sie die folgenden Änderungen in jedes Projekt, um das upgrade auf die neue `Xamarin.Forms.Application` Klasse.
 
 ### <a name="22-portable-class-library-or-shared-project"></a>2.2 portable Klassenbibliothek (oder ein freigegebenes Projekt)
 
-Ändern der **App.cs** Datei so, dass:
+Ändern der **"App.cs"** Datei, damit:
 
- - Die `App` Klasse erbt jetzt von `Application`.
- - Die `MainPage` Eigenschaftensatz wird auf der ersten Seite Inhalt angezeigt werden sollen.
+ - Die `App` Klasse erbt nun von `Application`.
+ - Die `MainPage` -Eigenschaftensatz auf der ersten Seite Inhalt Sie anzeigen möchten.
 
 ```csharp
 public class App : Application // superclass new in 1.3
@@ -100,15 +100,15 @@ public class App : Application // superclass new in 1.3
     }
 ```
 
-Es vollständig entfernt haben die `GetMainPage` -Methode, und legen Sie stattdessen die `MainPage` *Eigenschaft* auf die `Application` Unterklasse.
+Wurde vollständig entfernt die `GetMainPage` -Methode, und legen Sie stattdessen die `MainPage` *Eigenschaft* auf die `Application` Unterklasse.
 
-Diese neue `Application` Basisklasse unterstützt auch die `OnStart`, `OnSleep`, und `OnResume` Außerkraftsetzungen zur einfacheren Verwaltung des Lebenszyklus Ihrer Anwendung.
+Diese neue `Application` Basisklasse unterstützt auch die `OnStart`, `OnSleep`, und `OnResume` , überschreibungen, um den Lebenszyklus einer Anwendung verwalten.
 
-Die `App` Klasse übergeben, ein neues `LoadApplication` Methode in jeder app-Projekt, wie unten beschrieben:
+Die `App` Klasse wird dann an einen neuen übergeben `LoadApplication` -Methode in jedem app-Projekt, wie im folgenden beschrieben:
 
-### <a name="23-ios-app"></a>2.3 iOS-App
+### <a name="23-ios-app"></a>2.3-iOS-App
 
-Ändern der **AppDelegate.cs** Datei so, dass:
+Ändern der **Datei "appdelegate.cs"** Datei, damit:
 
  - Die Klasse erbt von `FormsApplicationDelegate` (anstelle von `UIApplicationDelegate` zuvor).
  - `LoadApplication` wird aufgerufen, durch eine neue Instanz der `App`.
@@ -131,7 +131,7 @@ public partial class AppDelegate :
 
 ### <a name="23-android-app"></a>2.3 android-App
 
-Ändern der **MainActivity.cs** Datei so, dass:
+Ändern der **"mainactivity.cs"** Datei, damit:
 
  - Die Klasse erbt von `FormsApplicationActivity` (anstelle von `FormsActivity` zuvor).
  - `LoadApplication` wird aufgerufen, wobei eine neue Instanz der `App`
@@ -155,14 +155,14 @@ public class MainActivity :
 
 ### <a name="24-windows-phone-app"></a>2.4 Windows Phone-App
 
-Wir aktualisieren müssen die **MainPage** -XAML und das Codebehind.
+Wir müssen Aktualisieren der **"MainPage"** – sowohl die XAML und Codebehind.
 
-Ändern der **"MainPage.xaml"** Datei so, dass:
+Ändern der **"MainPage.xaml"** Datei, damit:
 
- - Die Verwendung von XAML-Stammelement muss `winPhone:FormsApplicationPage`.
- - Die `xmlns:phone` Attribut muss *geändert* an `xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"`
+ - Das XAML-Stammelement muss `winPhone:FormsApplicationPage`.
+ - Die `xmlns:phone` Attribut sollte sein, *geändert* auf `xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"`
 
-Ein aktualisiertes Beispiel unten – Sie müssen nur in diese Dinge bearbeiten (der Rest der Attribute muss unverändert bleiben):
+Ein aktualisiertes Beispiel wird unten angezeigt – Sie sollten nur verwenden, um Folgendes zu bearbeiten (die restlichen Attribute sollte identisch sein):
 
 ```xml
 <winPhone:FormsApplicationPage
@@ -172,10 +172,10 @@ Ein aktualisiertes Beispiel unten – Sie müssen nur in diese Dinge bearbeiten 
 </winPhone:FormsApplicationPage>
 ```
 
-Ändern der **"MainPage.Xaml.cs"** Datei so, dass:
+Ändern der **"MainPage.Xaml.cs"** Datei, damit:
 
  - Die Klasse erbt von `FormsApplicationPage` (anstelle von `PhoneApplicationPage` zuvor).
- - `LoadApplication` wird aufgerufen, durch eine neue Instanz von der Xamarin.Forms `App` Klasse. Möglicherweise müssen Sie diesen Verweis vollständig zu qualifizieren, da Windows Phone hat seinem eigenen `App` Klasse bereits definiert.
+ - `LoadApplication` wird aufgerufen, durch eine neue Instanz von der Xamarin.Forms `App` Klasse. Möglicherweise müssen Sie diesen Verweis vollständig zu qualifizieren, da Windows Phone hat eigene `App` Klasse bereits definiert.
 
 ```csharp
 public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage // superclass new in 1.3
@@ -193,11 +193,11 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 ### <a name="troubleshooting"></a>Problembehandlung
 
-Gelegentlich sehen Sie die Fehler, die etwa wie folgt nach dem Aktualisieren des Xamarin.Forms-NuGet-Pakets. Es tritt auf, wenn es sich bei der NuGet-Updater Verweise auf älteren Versionen von nicht vollständig entfernt die **Csproj** Dateien.
+Gelegentlich sehen Sie einen Fehler, die etwa wie folgt nach dem Aktualisieren des Xamarin.Forms-NuGet-Pakets. Es tritt auf, wenn der NuGet-Updater Verweise auf ältere Versionen von nicht vollständig entfernt Ihre **Csproj** Dateien.
 
->IHRE\_PROJECT.csproj: Fehler: dieses Projekt verweist auf NuGet-Pakete, die auf diesem Computer nicht vorhanden sind. Aktivieren Sie das NuGet-Paketwiederherstellung herunterladen.  Weitere Informationen finden Sie unter http://go.microsoft.com/fwlink/?LinkID=322105. Die fehlende Datei ist... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets. (IHR\_PROJEKT)
+>YOUR\_PROJECT.csproj: Fehler: Dieses Projekt verweist auf NuGet-Pakete, die auf diesem Computer fehlen. Aktivieren Sie das NuGet-Paketwiederherstellung, sie herunterzuladen.  Weitere Informationen finden Sie unter http://go.microsoft.com/fwlink/?LinkID=322105. Die fehlende Datei ist... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets. (IHRE\_PROJEKT)
 
-Um diese Fehler zu beheben, öffnen Sie die **Csproj** Datei in einem Text-Editor, und suchen Sie nach `<Target` Elemente, die auf älteren Versionen von Xamarin.Forms, z. B. die unten dargestellte-Element verweisen. Löschen Sie manuell dieses gesamte Element aus der **Csproj** von Dateien und speichern Sie die Änderungen.
+Um diese Fehler zu beheben, öffnen Sie die **Csproj** -Datei in einem Texteditor, und suchen Sie nach `<Target` Elemente, die auf älteren Versionen von Xamarin.Forms, z. B. die unten gezeigten Element verweisen. Sie sollten diese gesamte Element aus manuell löschen der **Csproj** Datei, und speichern Sie die Änderungen.
 
 ```csharp
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -208,34 +208,34 @@ Um diese Fehler zu beheben, öffnen Sie die **Csproj** Datei in einem Text-Edito
   </Target>
 ```
 
-Das Projekt sollte erfolgreich erstellt, sobald diese alte Verweise entfernt werden.
+Das Projekt sollte erfolgreich erstellt, nachdem diese alten Verweise entfernt wurden.
 
 ## <a name="considerations"></a>Weitere Überlegungen
 
-Folgendes sollte beim Konvertieren eines vorhandenen Xamarin.Forms-Projekts von der klassische API an die neue einheitliche API, wenn die app-Komponente oder NuGet-Paket verwendet berücksichtigt werden.
+Die folgenden Aspekte sollten bei der Konvertierung eines vorhandenen Xamarin.Forms-Projekts von der klassischen API auf die neue einheitliche API, wenn diese app mindestens eine Komponente oder NuGet-Paket benötigt berücksichtigt werden.
 
 ### <a name="components"></a>Komponenten
 
-Jede Komponente, die Sie in Ihrer Anwendung aufgenommen haben, müssen auch die einheitliche API aktualisiert werden, oder Sie erhalten einen Konflikt auf, wenn Sie versuchen, zu kompilieren. Für eine beliebige Komponente enthalten eine neue Version aus dem Speicher der Xamarin-Komponente, die die einheitliche API unterstützt die aktuelle Version ersetzt, und führen Sie einen bereinigten Build aus. Jede Komponente, die noch nicht vom Autor konvertiert wurde, wird eine Warnung nur in der Komponentenspeicher 32-Bit angezeigt.
+Jede Komponente, die Sie in Ihrer Anwendung aufgenommen haben, müssen auch die Unified API aktualisiert werden, oder Sie erhalten einen Konflikt auf, wenn Sie versuchen, zu kompilieren. Ersetzen Sie die aktuelle Version mit einer neuen Version von der Xamarin Component Store, die die Unified API unterstützt, und führen Sie einen bereinigten Build, für eine beliebige Komponente enthalten. Jede Komponente, die noch nicht vom Autor, konvertiert wurde, wird eine 32-Bit nur im Komponentenspeicher Warnung angezeigt.
 
 ### <a name="nuget-support"></a>NuGet-Unterstützung
 
-Während es Änderungen zu NuGet zur Bearbeitung der einheitliche API-Unterstützung beigetragen hat, hat nicht stattgefunden eine neue Version von NuGet, damit wir das NuGet erkennt die neuen APIs zu evaluieren.
+Während wir Änderungen an NuGet mit der Unified API-Unterstützung funktioniert hat, wurde keine neue Version von NuGet, damit wir zum Abrufen von NuGet, um die neuen APIs erkennt auswerten.
 
-Bis zu diesem Zeitpunkt wird genau wie die Komponenten müssen Sie wechseln alle NuGet-Paket, das Sie in Ihrem Projekt auf eine Version aufgenommen haben, die Unified-APIs unterstützt, und führen Sie anschließend einen bereinigten Build.
+Bis zu diesem Zeitpunkt an, wie die Komponenten müssen Sie zum Wechseln von alle NuGet-Paket, das Sie in Ihrem Projekt auf eine Version aufgenommen haben, die Unified-APIs unterstützt, und führen anschließend einen bereinigten Build.
 
 > [!IMPORTANT]
-> Wenn Sie einen Fehler in der Form aufweisen _"Fehler 3 kann nicht im selben Projekt Xamarin.iOS"monotouch.dll"und"Xamarin.iOS.dll"enthalten – explizit"Xamarin.iOS.dll"verwiesen wird, während"monotouch.dll"verwiesen wird" Xxx, Version = 0.0.000, Culture = Neutral, PublicKeyToken = Null'"_ nach dem Konvertieren der anwendungskennworts an die Unified-APIs, es liegt in der Regel müssen eine Komponente oder die NuGet-Paket in das Projekt, das nicht auf die einheitliche API aktualisiert wurde. Sie müssen die vorhandene Komponente/NuGet entfernen, update auf eine Version, die Unified-APIs unterstützt, und führen Sie einen bereinigten Build.
+> Wenn Sie einen Fehler in der Form haben _"Fehler 3 kann nicht sowohl"monotouch.dll"und"Xamarin.iOS.dll"im gleichen Xamarin.iOS-Projekt enthalten – explizit 'Xamarin.iOS.dll' verwiesen wird, solange"monotouch.dll"verwiesen wird" Xxx "," Version = 0.0.000, Kultur = Neutral, PublicKeyToken = Null'"_ nach der Konvertierung Ihrer Anwendung auf die Unified-APIs, es liegt in der Regel müssen entweder eine Komponente oder ein NuGet-Paket im Projekt, das nicht der Unified API aktualisiert wurde. Sie müssen zum Entfernen des vorhandenen Komponente/NuGet-Pakets, ein update auf eine Version, die Unified-APIs unterstützt, und führen Sie einen bereinigten Build.
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Aktivieren die 64-Bit-Builds von Xamarin.iOS-Apps
 
-Für eine Xamarin.iOS mobile Anwendung, die in die einheitliche API konvertiert wurde, muss der Entwickler noch die Erstellung der Anwendung für 64-Bit-Computer aus der app-Optionen zu aktivieren. Finden Sie unter der **aktivieren 64 Bit-erstellt von Xamarin.iOS Apps** von der [32/64-Bit-Plattform Überlegungen](~/cross-platform/macios/32-and-64/index.md#enable-64) Dokument Weitere ausführliche Anweisungen zur Aktivierung von 64-Bit erstellt.
+Für eine mobile Xamarin.iOS-Anwendung, die in der Unified API konvertiert wurde, muss der Entwickler weiterhin das Erstellen der Anwendung für 64-Bit-Computer aus der app-Optionen zu aktivieren. Finden Sie unter den **Aktivieren von 64 Bit Builds von Xamarin.iOS-Apps** von der [32/64 Bit Platform Considerations](~/cross-platform/macios/32-and-64/index.md#enable-64) Dokument für detaillierte Anweisungen zum Aktivieren von 64-Bit-builds.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Die Xamarin.Forms-Anwendung sollte jetzt aktualisiert werden, auf Version 1.3.1 und iOS-app auf die einheitliche API (der 64-Bit-Architekturen auf iOS-Plattform unterstützt) migriert.
+Die Xamarin.Forms-Anwendung sollte jetzt auf Version 1.3.1 aktualisiert werden, und die iOS-app migriert wird, der Unified API (die 64-Bit-Architekturen für die iOS-Plattform unterstützt).
 
-Wie zuvor erwähnt, wenn Ihre app Xamarin.Forms systemeigenen Code, z. B. benutzerdefinierte Renderer enthält oder Abhängigkeit Dienste, und klicken Sie dann diese auch möglicherweise aktualisiert werden, um die neuen Datentypen verwenden, [eingeführt, die in der API Unified](~/cross-platform/macios/index.md).
+Wie zuvor erwähnt werden, wenn Dependency services, und klicken Sie dann diese auch möglicherweise aktualisiert, um die neuen Datentypen verwenden oder Ihre Xamarin.Forms-app systemeigenen Code wie benutzerdefinierten Renderern enthält [eingeführt, die in der Unified API](~/cross-platform/macios/index.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
@@ -243,4 +243,4 @@ Wie zuvor erwähnt, wenn Ihre app Xamarin.Forms systemeigenen Code, z. B. benutz
 - [Aktualisieren von iOS-Apps](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [Arbeiten mit nativen Typen in plattformübergreifenden Apps](~/cross-platform/macios/native-types-cross-platform.md)
 - [Aktualisieren von Tipps](~/cross-platform/macios/unified/updating-tips.md)
-- [Klassische Vs einheitliche API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Klassischen Vs Unified API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

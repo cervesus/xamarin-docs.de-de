@@ -1,5 +1,5 @@
 ---
-title: Einführung in TvOS 9
+title: Einführung in tvOS 9
 description: Dieser Artikel enthält alle neuen und geänderten APIs und in TvOS 9 verfügbaren Features für Entwickler mit Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: dda197f71b2a2ab3e0d61a838ab85d79b7a078c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61270348"
 ---
-# <a name="introduction-to-tvos-9"></a>Einführung in TvOS 9
+# <a name="introduction-to-tvos-9"></a>Einführung in tvOS 9
 
 _Dieser Artikel enthält alle neuen und geänderten APIs und in TvOS 9 verfügbaren Features für Entwickler mit Xamarin.tvOS._
 
@@ -75,7 +75,7 @@ Neue Apple TV hat die folgenden Hardwarespezifikationen:
 
 ### <a name="siri-remote"></a>Siri-Remote
 
-Basierend auf der Region, das angegebene Apple TV-Remote kommen in Konfigurationen mit einem: Siri Remote oder Apple TV-Remoteserver.
+Basierend auf der Region, werden das angegebene Apple TV-Remote in Konfigurationen mit einem gesendet: Siri-Remote- oder Apple TV-Remote.
 
 Siri Remote ist in den folgenden Ländern zurzeit verfügbar:
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 26aeaa3d230a5c104014edd899b8d9231ced31e9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61430215"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in Xamarin.iOS
 
@@ -91,7 +91,7 @@ Alle vorherigen Zustände werden eingeschlossen in einem Container, auf die Appl
 
 Merkmal Umgebungen sind eine neue Schnittstelle IOS 8 und können zum Zurückgeben einer Auflistung Merkmal für die folgenden Objekte:
 
--  Bildschirme ( `UIScreens` ).
+-  Screens ( `UIScreens` ).
 -  Windows ( `UIWindows` ).
 -  Anzeigen von Controllern ( `UIViewController` ).
 -  Sichten ( `UIView` ).
@@ -118,7 +118,7 @@ Im folgenden finden eine typische-Merkmal-Auflistung, die der Entwickler möglic
 |--- |--- |
 |`HorizontalSizeClass`|Komprimieren|
 |`VerticalSizeClass`|Regulär|
-|`UserInterfaceIdom`|Telefon|
+|`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
 Haben würden eine vollständig qualifizierte Merkmal Sammlung darstellen, wie sie Werte für alle zugehörigen Eigenschaften für die Eigenschaft enthält.
@@ -625,7 +625,7 @@ Finden Sie im Abschnitt "Size Class" in diesem Artikel Weitere Informationen auf
 
 ### <a name="adaptive-segue-types"></a>Adaptive Segue Typen
 
-Wenn der Entwickler hat Storyboards, bevor Sie verwendet, sie werden mit den vorhandenen Segue vertraut **Push**, **modale** und **Popover**. Wenn auf eine einheitliche Storyboarddatei Größenklassen aktiviert sind, werden die folgenden adaptiven Segue Typen (die die neue View Controller-API aus, die weiter oben erläuterten entsprechen) zur Verfügung gestellt: **anzeigen** und **Detail anzeigen** .
+Wenn der Entwickler hat Storyboards, bevor Sie verwendet, sie werden mit den vorhandenen Segue vertraut **Push**, **modale** und **Popover**. Wenn auf eine einheitliche Storyboarddatei Größenklassen aktiviert sind, werden die folgenden adaptiven Segue Typen (die die neue View Controller-API aus, die weiter oben erläuterten entsprechen) zur Verfügung gestellt: **Anzeigen** und **zeigen Details**.
 
 > [!IMPORTANT]
 > Wenn Größenklassen aktiviert sind, alle vorhandenen Übergänge werden in die neuen Typen konvertiert werden.

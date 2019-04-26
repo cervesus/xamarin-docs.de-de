@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
 ms.openlocfilehash: d1c640bef41e875b3bb427d657c9c239e4c3e16d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61192367"
 ---
 # <a name="passkit-in-xamarinios"></a>PassKit in Xamarin.iOS
 
@@ -87,16 +87,16 @@ Eine Pass-Datei ist eigentlich ein ZIP-Archiv mit einem **.pkpass** , enthält e
 -   **Pass.JSON** : erforderlich. Enthält alle Informationen für den Lauf.
 -   **"Manifest.JSON"** : erforderlich. Enthält die SHA1-Hashwerte für jede Datei in den Durchlauf mit Ausnahme der Signaturdatei und diese Datei ("Manifest.JSON").
 -   **Signatur** : erforderlich. Durch Signieren erstellt die `manifest.json` Datei mit dem Zertifikat, das in der iOS-Bereitstellungsportal generiert.
--  **"Logo.png"** – optional.
+-  **logo.png** – optional.
 -  **Background.PNG** – optional.
--  **Icon.PNG** – optional.
+-  **icon.png** – optional.
 -  **Dateien von lokalisierbaren Zeichenfolgen** – optional.
 
 Verzeichnisstruktur einer Pass-Datei wird unten angezeigt (Dies ist der Inhalt der ZIP-Archiv):
 
  [![](passkit-images/image4.png "Verzeichnisstruktur einer Pass-Datei wird hier angezeigt.")](passkit-images/image4.png#lightbox)
 
-### <a name="passjson"></a>Pass.JSON
+### <a name="passjson"></a>pass.json
 
 JSON ist das Format aus, da übergibt, in der Regel auf einem Server erstellt werden – dies bedeutet, dass der Code für die Cloudplattform agnostisch ist auf dem Server. Die drei wichtigen Bereichen der Informationen in jedem Durchlauf werden:
 
@@ -169,7 +169,7 @@ Es ist eine große Anzahl von anderen JSON-Schlüssel in jedem Durchlauf, nachfo
 
 ### <a name="barcodes"></a>Barcodes
 
-Nur 2D-Formate werden unterstützt: PDF417, Aztec, QR. Apple behauptet, dass 1D Barcodes Scannen auf einen smartphonebildschirm beleuchtet auferlegte sind.
+Nur es werden 2D-Formate unterstützt: PDF417, Aztec, QR. Apple behauptet, dass 1D Barcodes Scannen auf einen smartphonebildschirm beleuchtet auferlegte sind.
 
 Alternativer Text unterhalb des Barcodes angezeigt wird, ist optional: einige Ladenbesitzer Lese-/manuell Typ möglich sein soll.
 
@@ -225,9 +225,9 @@ Um die folgenden Passtyp-ID nicht zu erstellen.
 
 Der erste Schritt ist das Einrichten einer Passtyp-ID für jedes einzelne _Typ_ Pass unterstützt werden müssen. Die Pass-ID (oder Typbezeichner übergeben) wird einen eindeutigen Bezeichner für den Lauf erstellt. Wir werden diese ID verwenden, um den Durchlauf mit Ihrem Developer-Konto mit einem Zertifikat zu verknüpfen.
 
-1. In der [Zertifikate, Bezeichner und Profile im Abschnitt der iOS-Bereitstellungsportal](https://developer.apple.com/account/overview.action), navigieren Sie zu **Bezeichner** , und wählen Sie **Typ-IDs übergeben,** . Wählen Sie dann die **+** klicken, um einen neuen Pass-Typ zu erstellen: [ ![](passkit-images/passid.png "erstellen Sie einen neuen Pass-Typ")](passkit-images/passid.png#lightbox)
+1. In der [Zertifikate, Bezeichner und Profile im Abschnitt der iOS-Bereitstellungsportal](https://developer.apple.com/account/overview.action), navigieren Sie zu **Bezeichner** , und wählen Sie **Typ-IDs übergeben,** . Wählen Sie dann die **+** klicken, um einen neuen Pass-Typ zu erstellen: [![](passkit-images/passid.png "Erstellen Sie einen neuen Pass-Typ")](passkit-images/passid.png#lightbox)
 
-2.   Geben Sie einen **Beschreibung** (Name) und **Bezeichner** (eindeutige Zeichenfolge) für den Lauf. Beachten Sie, die alle übergeben Typ-IDs, mit der Zeichenfolge beginnen muss `pass.` In diesem Beispiel wir verwenden `pass.com.xamarin.coupon.banana` : [ ![](passkit-images/register.png "Geben Sie eine Beschreibung und einen Bezeichner")](passkit-images/register.png#lightbox)
+2.   Geben Sie einen **Beschreibung** (Name) und **Bezeichner** (eindeutige Zeichenfolge) für den Lauf. Beachten Sie, die alle übergeben Typ-IDs, mit der Zeichenfolge beginnen muss `pass.` In diesem Beispiel wir verwenden `pass.com.xamarin.coupon.banana` : [![](passkit-images/register.png "Geben Sie eine Beschreibung und einen Bezeichner")](passkit-images/register.png#lightbox)
 
 
 3.   Bestätigen Sie die ID übergeben, indem er die **registrieren** Schaltfläche.
@@ -236,7 +236,7 @@ Der erste Schritt ist das Einrichten einer Passtyp-ID für jedes einzelne _Typ_ 
 
 Führen Sie folgende Schritte aus, um ein neues Zertifikat für diese Passtyp-ID zu erstellen:
 
-1.  Wählen Sie die neu erstellte übergeben-ID aus der Liste aus, und klicken Sie auf **bearbeiten** : [ ![](passkit-images/pass-done.png "wählen Sie die ID des neuen übergeben, aus der Liste")](passkit-images/pass-done.png#lightbox)
+1.  Wählen Sie die neu erstellte übergeben-ID aus der Liste aus, und klicken Sie auf **bearbeiten** : [![](passkit-images/pass-done.png "Wählen Sie die ID des neuen übergeben, aus der Liste")](passkit-images/pass-done.png#lightbox)
 
     Wählen Sie dann **Create Certificate...** :
 
@@ -403,7 +403,7 @@ Wo `pass.$(CFBundleIdentifier)` ist die Pass-ID, die erstellt wurde [oben](~/ios
 
 -----
 
-### <a name="debugging"></a>Debugging
+### <a name="debugging"></a>Debuggen
 
 Bereitstellen der Anwendung Probleme auftreten, überprüfen Sie, ob die richtige Verwendung von **Bereitstellungsprofil** und die `Entitlements.plist` ausgewählt ist, als die **benutzerdefinierte Berechtigungen** -Datei in die **iPhone Bundle-Signierung** Optionen.
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61283154"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Dialogfelder in Xamarin.Mac
 
@@ -87,7 +87,7 @@ Oder er kann als Tabelle angezeigt werden:
 
 ### <a name="save-dialogs"></a>Speichern Sie die Dialogfelder
 
-Das Dialogfeld "Speichern" bietet Benutzern eine konsistente Weise Element in einer Anwendung zu speichern. Das Dialogfeld "Speichern" verfügt über zwei Zustände: **minimale** (auch bekannt als reduzierten):
+Das Dialogfeld "Speichern" bietet Benutzern eine konsistente Weise Element in einer Anwendung zu speichern. Das Dialogfeld "Speichern" verfügt über zwei Zustände: **Minimale** (auch bekannt als reduzierten):
 
 [![](dialog-images/save01.png "Ein Dialogfeld \"Speichern\"")](dialog-images/save01.png#lightbox)
 
@@ -754,7 +754,7 @@ namespace SourceWriter
 }
 ```
 
-Beachten Sie, dass diese Klasse zwei Dinge geschehen: als Erstes ist eine Hilfsprogramm `App` Eigenschaft, um den Zugriff auf die **AppDelegate** einfacher. Zweitens wird die `Preferences` Eigenschaft verfügbar macht, die globale **AppPreferences** -Klasse für die Datenbindung mit UI-Steuerelementen in dieser Ansicht platziert.
+Beachten Sie, dass diese Klasse zwei Dinge geschehen: Als Erstes ist eine Hilfsprogramm `App` Eigenschaft, um den Zugriff auf die **AppDelegate** einfacher. Zweitens wird die `Preferences` Eigenschaft verfügbar macht, die globale **AppPreferences** -Klasse für die Datenbindung mit UI-Steuerelementen in dieser Ansicht platziert.
 
 Als Nächstes Doppelklicken klicken Sie auf die Storyboard-Datei, um erneut in Interface Builder öffnen (und nur über vorgenommenen Änderungen sehen). Ziehen Sie die UI-Steuerelementen erforderlich, um die Einstellungen-Schnittstelle in die Ansicht zu erstellen. Für jedes Steuerelement, wechseln Sie zu der **Bindung Inspektor** und Binden an die einzelnen Eigenschaften der **AppPreference** Klasse:
 

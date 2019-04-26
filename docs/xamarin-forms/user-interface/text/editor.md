@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
 ms.openlocfilehash: 3131963efa3d4ba4de9ff63c741c276a62e9d12d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61229744"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms-Editor
 
@@ -41,7 +41,7 @@ In C#:
 var MyEditor = new Editor { Text = "I am an Editor" };
 ```
 
-Um Text zu lesen, Zugriff auf die `Text` Eigenschaft in c#:
+Um Text zu lesen, Zugriff auf die `Text` Eigenschaft in C#:
 
 ```csharp
 var text = MyEditor.Text;

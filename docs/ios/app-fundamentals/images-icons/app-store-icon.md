@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/26/2017
 ms.openlocfilehash: 53e25ae9f4650254f2aaaa03dc8727fae674c9f0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61258090"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>App-Store-Symbole in Xamarin.iOS
 
@@ -46,7 +46,7 @@ Zum Hinzufügen ein App-Store-Symbols folgendermaßen vor:
 
 2. Scrollen Sie zu der **App Store** Symbol in der Liste:
 
-    ![App-Store-Symbol](app-store-icon-images/image2.png)
+    ![App Store-Symbol](app-store-icon-images/image2.png)
 
 3. Klicken Sie auf das Symbol, und suchen Sie nach Ihrem 1024 x 1024 Pixel großes Bild. Speichern Sie den Asset-Katalog.
 

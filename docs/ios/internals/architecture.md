@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036131"
 ---
 # <a name="ios-app-architecture"></a>iOS-App-Architektur
 
@@ -22,7 +22,7 @@ Das folgende Diagramm zeigt eine grundlegende Übersicht über diese Architektur
 
 [ ![](architecture-images/ios-arch-small.png "Dieses Diagramm zeigt eine grundlegende Übersicht über die Architektur der nun der Zeitpunkt (AOT)-Kompilierung")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>Systemeigenen und verwalteten Code: eine Erläuterung
+## <a name="native-and-managed-code-an-explanation"></a>Systemeigenen und verwalteten Code: Eine Erläuterung
 
 Bei der Entwicklung für Xamarin die Begriffe *systemeigenen und verwalteten* Code werden häufig verwendet. [Verwalteter Code](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) ist Code, der die Ausführung von verwalteten hat die [.NET Framework Common Language Runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), oder in die Xamarin Fall: der Mono-Laufzeit. Dies ist eine Zwischensprache nennen wir.
 
@@ -69,7 +69,7 @@ Der folgende Pseudocode zeigt ein Beispiel ist dies:
  }
 ```
 
-**Objective-c:**
+**Objective-C:**
 
 ```objectivec
 @interface MyViewController : UIViewController { }

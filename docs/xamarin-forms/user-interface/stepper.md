@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/17/2018
 ms.openlocfilehash: a224d82ed7bb993f51be6cca6ccf09b5331cfac0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61250584"
 ---
 # <a name="xamarinforms-stepper"></a>Xamarin.Forms zugeordnetem
 
@@ -182,7 +182,7 @@ Die **Standardbindungen zugeordnetem** Seite zeigt, wie Sie eine nahezu gleichwe
 </ContentPage>
 ```
 
-Die [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) Eigenschaft des ersten [ `Label` ](xref:Xamarin.Forms.Label) gebunden ist die [ `Value` ](xref:Xamarin.Forms.Stepper.Value) Eigenschaft der [ `Stepper` ](xref:Xamarin.Forms.Stepper), da die [ `Text` ](xref:Xamarin.Forms.Label.Text) -Eigenschaft der zweiten `Label` mit einem `StringFormat` Spezifikation. Die **Standardbindungen zugeordnetem** Seite Funktionen etwas anders aus den vorherigen zwei Seiten:, wenn die Seite zuerst angezeigt wird, das zweite `Label` zeigt die Textzeichenfolge, mit dem Wert. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der [ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged) Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor .
+Die [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) Eigenschaft des ersten [ `Label` ](xref:Xamarin.Forms.Label) gebunden ist die [ `Value` ](xref:Xamarin.Forms.Stepper.Value) Eigenschaft der [ `Stepper` ](xref:Xamarin.Forms.Stepper), da die [ `Text` ](xref:Xamarin.Forms.Label.Text) -Eigenschaft der zweiten `Label` mit einem `StringFormat` Spezifikation. Die **Standardbindungen zugeordnetem** Seite Funktionen etwas anders aus den vorherigen zwei Seiten: Wenn die Seite zuerst angezeigt wird, das zweite `Label` zeigt die Zeichenfolge mit dem Wert an. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der [ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged) Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor .
 
 ## <a name="precautions"></a>Vorsichtsmaßnahmen bei der
 

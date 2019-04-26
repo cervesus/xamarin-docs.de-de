@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 ms.openlocfilehash: 7de2c903da40c186560085d61b94fd38ffe9d219
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61361163"
 ---
 # <a name="tabbedpage-page-swiping-on-android"></a>Wischen auf Android "tabbedpage"-Seite
 
@@ -29,7 +29,7 @@ Dieses Android-Plattform-spezifische wird verwendet, um ermöglichen ein Leseger
 </TabbedPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

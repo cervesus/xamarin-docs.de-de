@@ -1,5 +1,5 @@
 ---
-title: Einführung in WatchOS 5
+title: Einführung in watchOS 5
 description: Dieses Dokument enthält eine allgemeine Beschreibung der einige WatchOS-5-APIs für Xamarin.
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: 5df751f683c530ee9f7ec58d9d6393d9f089314d
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61222857"
 ---
-# <a name="introduction-to-watchos-5"></a>Einführung in WatchOS 5
+# <a name="introduction-to-watchos-5"></a>Einführung in watchOS 5
 
 Dieses Dokument enthält eine allgemeine Beschreibung der einige WatchOS 5 APIs.
 

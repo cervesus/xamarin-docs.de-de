@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
 ms.openlocfilehash: 086ed765781d9297f07574519d2cbc9cf93ac4dd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61344802"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
@@ -203,9 +203,9 @@ Die `ContentPage.Content` Tags heißen *Property-Element* Tags. `Content` ist ei
 
 Beachten Sie auch, dass eine `Title` Attribut für das Stamm-Tag festgelegt wurde.
 
-Zu diesem Zeitpunkt sollte die Beziehung zwischen Klassen, Eigenschaften und XML-offensichtlich sein: ein Xamarin.Forms-Klasse (z. B. `ContentPage` oder `Label`) in der XAML-Datei als ein XML-Element angezeigt wird. Eigenschaften dieser Klasse – einschließlich `Title` auf `ContentPage` und sieben Eigenschaften der `Label`– in der Regel als XML-Attribute angezeigt werden.
+Zu diesem Zeitpunkt sollten die Beziehung zwischen Klassen, Eigenschaften und XML-offensichtlich sein: Eine Xamarin.Forms-Klasse (z. B. `ContentPage` oder `Label`) in der XAML-Datei als ein XML-Element angezeigt wird. Eigenschaften dieser Klasse – einschließlich `Title` auf `ContentPage` und sieben Eigenschaften der `Label`– in der Regel als XML-Attribute angezeigt werden.
 
-Viele Verknüpfungen vorhanden sein, um die Werte dieser Eigenschaften festzulegen. Einige Eigenschaften sind die grundlegenden Datentypen: Z. B. die `Title` und `Text` Eigenschaften sind vom Typ `String`, `Rotation` ist vom Typ `Double`, und `IsVisible` (d.h. `true` standardmäßig festgelegt und ist hier nur Abbildung) ist vom Typ `Boolean`.
+Viele Verknüpfungen vorhanden sein, um die Werte dieser Eigenschaften festzulegen. Einige Eigenschaften sind die grundlegenden Datentypen: Z. B. die `Title` und `Text` Eigenschaften sind vom Typ `String`, `Rotation` ist vom Typ `Double`, und `IsVisible` (d.h. `true` standardmäßig und wird hier nur zur Veranschaulichung festgelegt) ist vom Typ `Boolean`.
 
 Die `HorizontalTextAlignment` Eigenschaft ist vom Typ `TextAlignment`, eine Enumeration. Für die Eigenschaft ein Enumerationstyp Supply benötigen Sie lediglich einen Elementnamen.
 

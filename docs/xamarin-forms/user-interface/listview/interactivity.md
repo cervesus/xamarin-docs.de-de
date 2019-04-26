@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
 ms.openlocfilehash: 1447526ef925431e3cad5f36d4ce7a528c8ab07c
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386683"
 ---
 # <a name="listview-interactivity"></a>ListView-Interaktivität
 
@@ -69,7 +69,7 @@ Häufig möchten Benutzer Aktion auf ein Element in einem `ListView`. Betrachten
 
 ![](interactivity-images/context-default.png "ListView mit Kontextaktionen")
 
-Kontextaktionen können in c# und XAML implementiert werden. Im folgenden finden Sie spezifische Anleitungen für beide aber zuerst sehen wir sehen Sie sich einige wichtige Implementierungsdetails für beide.
+Kontextaktionen können in C# und XAML implementiert werden. Im folgenden finden Sie spezifische Anleitungen für beide aber zuerst sehen wir sehen Sie sich einige wichtige Implementierungsdetails für beide.
 
 Kontextaktionen werden mit erstellt `MenuItem`s. Tippen Sie auf Ereignisse für MenuItems werden durch die "MenuItem" selbst, nicht die ListView ausgelöst. Dies unterscheidet sich von wie die Tap-Ereignisse für Zellen, behandelt werden, in denen die ListView die Zelle, statt das Ereignis auslöst. Da die ListView das Ereignis ausgelöst wird, erhält ihr Ereignishandler Schlüsselinformationen wie das Element aktiviert oder angetippt wurde.
 

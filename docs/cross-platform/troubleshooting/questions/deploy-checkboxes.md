@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
 ms.openlocfilehash: 35efb00a721062ad3217300f7e3a5430b1bd1560
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357751"
 ---
 # <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>Kontrollkästchen für die Bereitstellung in Configuration Manager deaktiviert
 
@@ -23,4 +23,4 @@ Aus diesem Grund die **bereitstellen** Kontrollkästchen sind absichtlich im Vis
 
 Diese Änderung schließt einen Fehler, der in früheren Versionen von Xamarin (Version 3.3 und früher) angezeigt werden kann, wenn das Xamarin.iOS-app-Projekt nicht, zum Bereitstellen festgelegt wurde:
 
-![](deploy-checkboxes-images/error.png "Dialogfeld \"Fehler\": die Projekt-iPhoneApp1 muss bereitgestellt werden, bevor es gestartet werden kann. Stellen Sie sicher, dass das Projekt im Projektmappenkonfigurations-Manager bereitgestellt werden, ausgewählt ist.")
+![](deploy-checkboxes-images/error.png "Dialogfeld \"Fehler: Das Projekt iPhoneApp1 muss bereitgestellt werden, bevor es gestartet werden kann. Stellen Sie sicher, dass das Projekt im Projektmappenkonfigurations-Manager bereitgestellt werden, ausgewählt ist.")

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
 ms.openlocfilehash: 58cf11b2a88e0c399ee197e9c8365d7deafd0f39
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61229629"
 ---
 # <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
@@ -22,7 +22,7 @@ _Erfahren Sie, wie SkiaSharp, die zum Rendern von kubische, quadratischen und ko
 
 Die Bézierkurve ist nach Pierre Bézier (1910: 1999), einem französischen Engineer bei der Automobilhersteller Renault, mit dem Namen, die die Kurve für den Computer-gestützten Entwurf Car-Nachrichtentexte verwendet.
 
-Bézierkurven werden für die sich gut für die interaktive Design bezeichnet: werden verhaltenden &mdash; heißt, es sind nicht Singularitäten, die dazu führen, die Kurve dass wird unendlich oder schwer verwaltbar erweist &mdash; und sie sind im Allgemeinen ästhetisch ansprechende :
+Bézierkurven sind für die sich gut für die interaktive Design bekannt: Sie sind verhaltenden &mdash; heißt, es sind nicht Singularitäten, die dazu führen, die Kurve dass wird unendlich oder schwer verwaltbar erweist &mdash; und sie sind im Allgemeinen ästhetisch ansprechende:
 
 ![](beziers-images/beziersample.png "Ein Beispiel Bezier-Kurve")
 
@@ -493,7 +493,7 @@ Es ist sehr einfach, den Kontrollpunkt und die zu verwendende seitengewichtung, 
 
 ![](beziers-images/conicarc.png "Eine Darstellung konischen Bogen ein Kreisbogensegment")
 
-Sie können trigonometrische verwenden, um zu bestimmen, die Entfernung des Steuerungspunkts für das von den Mittelpunkt: den Radius des Kreises geteilt durch den Kosinus der Hälfte der Winkel α ist. Um einen Kreisbogen zwischen den Start- und Endpunkt zu zeichnen, legen Sie die Gewichtung dieses gleiche Kosinus der Hälfte der Winkel aus. Beachten Sie, dass wenn der Winkel um 180 Grad ist, klicken Sie dann die Tangenten nie erfüllen und die Gewichtung ist 0 (null). Aber für Winkel ist kleiner als 180 Grad, wird die mathematischen Grundlagen von gut funktioniert.
+Sie können trigonometrische verwenden, um die Entfernung des Steuerungspunkts für das von den Mittelpunkt zu bestimmen: Es handelt sich um den Radius des Kreises geteilt durch den Kosinus der Hälfte der Winkel α. Um einen Kreisbogen zwischen den Start- und Endpunkt zu zeichnen, legen Sie die Gewichtung dieses gleiche Kosinus der Hälfte der Winkel aus. Beachten Sie, dass wenn der Winkel um 180 Grad ist, klicken Sie dann die Tangenten nie erfüllen und die Gewichtung ist 0 (null). Aber für Winkel ist kleiner als 180 Grad, wird die mathematischen Grundlagen von gut funktioniert.
 
 Die **konischen Kreisbogen** Seite veranschaulicht dies. Die [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) Datei instanziiert ein `Slider` für die Auswahl des Winkels. Die `PaintSurface` Ereignishandler in der [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) Code-Behind-Datei wird berechnet, der Kontrollpunkt und die Gewichtung:
 

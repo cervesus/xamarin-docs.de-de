@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/07/2017
 ms.openlocfilehash: 7e895dc2865880ec2789a40f8cdf047a20f8693b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400303"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>SiriKit-Updates in iOS 11
 
@@ -118,7 +118,7 @@ Fügen Sie ein neues Erweiterungsprojekt dann zu Ihrer app zur Verarbeitung von 
 
 1. Mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **hinzufügen > Neues Projekt hinzufügen...** .
 2. Wählen Sie die **iOS > Erweiterung > Intents-Erweiterung** Vorlage.
-3. Zwei neue Projekte hinzugefügt werden: Intents und IntentUI. Anpassen der Benutzeroberfläche ist optional, damit das Beispiel nur Code in enthält die **Absicht** Projekt.
+3. Zwei neue Projekte werden hinzugefügt: Zweck und IntentUI. Anpassen der Benutzeroberfläche ist optional, damit das Beispiel nur Code in enthält die **Absicht** Projekt.
 
 Das Erweiterungsprojekt ist, in dem alle SiriKit-Anforderungen verarbeitet werden. Als separate Erweiterung ist automatisch keine Möglichkeit, die mit Ihrer Haupt-app – zu kommunizieren, dies in der Regel aufgelöst wird, durch die Implementierung von freigegebenen File Storage mithilfe von app-Gruppen.
 

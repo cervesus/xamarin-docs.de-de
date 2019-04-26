@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 58d3b3ae067913a85c3ada5f5b35e64511523ff8
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334678"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Zusammenfassung der Kapitel 1. Wie Funktion hat xamarin.Forms?
 

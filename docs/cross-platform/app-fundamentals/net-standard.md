@@ -8,11 +8,11 @@ ms.author: crdun
 ms.custom: video
 ms.date: 07/18/2018
 ms.openlocfilehash: d07b248b36feee909db9c863eb17f1a900f58e60
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61191311"
 ---
 # <a name="net-standard-library-code-sharing"></a>Freigeben von Code in .NET standard-Bibliothek
 
@@ -36,7 +36,7 @@ Sie können eine .NET Standard-Bibliothek zu Ihrer Projektmappe mit den folgende
 
 2. Wählen Sie auf dem nächsten Bildschirm das Zielframework - **.NET Standard 2.0** wird empfohlen:
 
-    [![Wählen Sie .NET Standard 2.0](net-standard-images/vsm01a-m157-sml.png)](net-standard-images/vsm01a-m157.png#lightbox)
+    [![Choose .NET Standard 2.0](net-standard-images/vsm01a-m157-sml.png)](net-standard-images/vsm01a-m157.png#lightbox)
 
 3. Geben Sie auf dem letzten Bildschirm, den Projektnamen, und klicken Sie auf **erstellen**.
 
@@ -52,7 +52,7 @@ Die Einstellungen der .NET Standard-Bibliothek können angezeigt und geändert w
 
 Dort können Sie Ihre Version von `netstandard` durch Ändern des Dropdown-Werts `Target Framework` anpassen.
 
-**Darüber hinaus gilt:** Sie können die `.csproj`-Datei zum Ändern des Werts direkt bearbeiten.
+**Darüber hinaus gilt:** Sie können Bearbeiten der `.csproj` direkt zum Ändern dieses Werts.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -78,7 +78,7 @@ Die Einstellungen für die .NET Standard-Bibliothek angezeigt und geändert werd
 
 ![Bearbeiten von .NET Standard-Zielframeworks in Projekteigenschaften](net-standard-images/vs03-w157.png "Bearbeiten Sie die Version des .NET Standard-Zielframeworks in den Projekteigenschaften")
 
-**Darüber hinaus gilt:** können Sie bearbeiten die `.csproj` direkt so bearbeiten Sie die `TargetFramework` Element, und ändern, welche Version verwendet wird, als Ziel verwendet (z. b. `<TargetFramework>netstandard2.0</TargetFramework>`).
+**Darüber hinaus gilt:** Können Sie bearbeiten die `.csproj` direkt so bearbeiten Sie die `TargetFramework` Element, und ändern, welche Version verwendet wird, als Ziel verwendet (z. b. `<TargetFramework>netstandard2.0</TargetFramework>`) angezeigt wird.
 
 ### <a name="using-a-net-standard-library-project"></a>Mithilfe eines .NET Standard Library-Projekts
 

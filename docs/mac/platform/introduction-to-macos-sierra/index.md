@@ -1,5 +1,5 @@
 ---
-title: Einführung in MacOS Sierra
+title: Einführung in macOS Sierra
 description: Dieser Artikel enthält alle neuen und geänderten APIs und Features in MacOS Sierra verfügbar für Xamarin.Mac-Entwickler.
 ms.prod: xamarin
 ms.assetid: 71A8A737-F310-4320-BD23-743AA1E9033C
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 5a944fd8f7dcfdcbb3f025c92b4afac35673416f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031504"
 ---
-# <a name="introduction-to-macos-sierra"></a>Einführung in MacOS Sierra
+# <a name="introduction-to-macos-sierra"></a>Einführung in macOS Sierra
 
 Mit der neuen MacOS Sierra kann Entwickler neue APIs nutzen, mit denen der Endbenutzer mit ihren apps und Websites auf zuvor nicht verfügbar Weise interagieren können. Beispielsweise kann Apple jetzt Websites Kunden die Möglichkeit, bezahlen sich sicher über Apple Pay und Verbesserungen an der Boost-Metal-Framework der app-Grafiken und computing bieten mögliche. 
 
@@ -48,7 +48,7 @@ Weitere Informationen finden Sie unter Apple [ApplePay JS-Framework](https://dev
 
 <a name="Building-Modern-macOS-Apps" />
 
-### <a name="building-modern-macos-apps"></a>Erstellen moderner MacOS-Apps
+### <a name="building-modern-macos-apps"></a>Erstellen moderner macOS-Apps
 
 Moderner MacOS-apps wie z. B. Apple Safari-Webbrowser, Seiten-Textverarbeitung und Zahlen Spread-Tabelle verwenden, die viele neue Technologien, die eine einheitliche, kontextabhängige-Benutzeroberfläche anzeigen, die sofort mit herkömmlichen UI-Elementen, z. B. unverankerte Bereiche und mehrere öffnen Windows.
 

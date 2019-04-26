@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: b2a9e757e8a3407bbb19ae0580e5788eabe84cf0
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61188920"
 ---
 # <a name="understanding-sirikit-concepts"></a>Grundlegendes zu SiriKit-Konzepten
 
@@ -66,31 +66,31 @@ Es gibt viele Möglichkeiten, dass der Benutzer möglicherweise eine Interaktion
 Z. B. wenn der Benutzer zum Senden einer Nachricht an ihre Freund Bobo, muss er die folgende Konversation mit Siri möglicherweise:
 
 _Benutzer: Hallo Siri, senden Sie eine Nachricht MonkeyChat._<br />
-_Siri: um die?_<br />
+_Siri: Zu wem?_<br />
 _Benutzer: Bobo._<br />
 _Siri: Was möchten Sie für Bobo ein?_<br />
-_Benutzer: Bitte senden Sie weitere Bananen._<br />
+_Benutzer: Senden Sie weitere Bananen._<br />
 
 Eine andere Person erstellt möglicherweise die gleiche Anforderung mit einem anderen Gespräch:
 
 _Benutzer: Senden einer Nachricht an Bobo auf MonkeyChat._<br />
 _Siri: Was möchten Sie für Bobo ein?_<br />
-_Benutzer: Bitte senden Sie weitere Bananen._<br />
+_Benutzer: Senden Sie weitere Bananen._<br />
 
 Und ein anderer Benutzer kann eine noch kürzere anfordern:
 
-_Benutzer: MonkeyChat Bobo senden Sie weitere Bananen._<br />
-_Siri: Ok, senden Nachrichten senden Sie weitere Bananen an Bobo auf Monkeychat._<br />
+_Benutzer: MonkeyChat Bobo und senden Sie weitere Bananen aus._<br />
+_Siri: OK, senden Nachrichten senden Sie weitere Bananen an Bobo auf Monkeychat._<br />
 
 Oder stellen Sie die gleiche Anforderung auch in einer anderen Sprache:
 
-_Benutzer: MonkeyChat Bobo s'il Vous Plaît Envoyer plus de Bananes._<br />
-_Siri: Oui, Envoi Nachricht s'il Vous Plaît Envoyer plus de Bananes Kenntnis Bobo Sur Monkeychat._<br />
+_Benutzer: MonkeyChat Bobo s’il vous plaît envoyer plus de bananes._<br />
+_Siri: Oui, envoi message s’il vous plaît envoyer plus de bananes à Bobo sur Monkeychat._<br />
 
 Noch sehr ausführlich in die Konversation möglicherweise ein anderer Benutzer:
 
-_Benutzer: Hallo Siri, können Sie Sie tun Sie mir einen gefallen und starten Sie die app MonkeyChat senden eine SMS mit der Nachricht senden Weitere Bananen._<br />
-_Siri: um die?_<br />
+_Benutzer: Hallo Siri, können Sie Sie tun Sie mir einen gefallen und starten Sie die app MonkeyChat, um eine SMS mit der Nachricht zu senden. senden Sie eine weitere Bananen._<br />
+_Siri: Zu wem?_<br />
 _Benutzer: Meine bewährte Pal Bobo._<br />
 
 Darüber hinaus stehen viele Möglichkeiten, die Siri reagieren kann, auf eine Anforderung, einige basierend auf wie die Anforderung gestellt wurde:
@@ -125,7 +125,7 @@ Wenn die obige Informationen, untersuchen Sie, wie die folgende Konversation mit
 
 _Benutzer: Hallo Siri, Senden einer Nachricht an Bobo auf MonkeyChat._<br />
 _Siri: Was möchten Sie für Bobo ein?_<br />
-_Benutzer: Bitte senden Sie weitere Bananen._<br />
+_Benutzer: Senden Sie weitere Bananen._<br />
 
 Die erste Rolle, die die app in der Konversation verwendet, besteht darin, können Siri, die der Benutzer die Spracheingabe zu verstehen:
 
@@ -133,7 +133,7 @@ Die erste Rolle, die die app in der Konversation verwendet, besteht darin, könn
 
 Siri verfügt nicht über den Namen "Bobo" in der Datenbank, aber die app ist und für Sie freigegeben hat diese Informationen Siri über des Vokabulars. Die app hilft auch Siri erkennen, dass Bobo einen Empfänger an, ist, da sie siri wie angegeben ein *wenden Sie sich an*.
 
-Siri weiß, dass weitere ist erforderlich, um eine Nachricht als nur einen Empfänger an, zu senden, damit wird schnell überprüft, mit der App-Erweiterung, um festzustellen, ob eine Nachricht Inhalt erforderlich ist. Da MonkeyChat der Fall ist, antwortet Siri für den Benutzer mit der Frage: *"Was möchten Sie sagen zu Bobo?"*
+Siri weiß, dass weitere ist erforderlich, um eine Nachricht als nur einen Empfänger an, zu senden, damit wird schnell überprüft, mit der App-Erweiterung, um festzustellen, ob eine Nachricht Inhalt erforderlich ist. Da MonkeyChat der Fall ist, antwortet Siri, für den Benutzer mit der Frage: *"Was möchten Sie sagen zu Bobo?"*
 
 Im obigen Beispiel hat der Benutzer geantwortet, *"Senden Sie weitere Bananen"*, die Siri in eine strukturierte bündeln wird **Absicht**:
 
@@ -141,10 +141,10 @@ Im obigen Beispiel hat der Benutzer geantwortet, *"Senden Sie weitere Bananen"*,
 
 Die strukturierte Absicht enthält die folgende Informationen:
 
-- **Domäne:** Nachrichten
+- **Domäne:** Meldungen
 - **Zweck:** SendMessage
 - **Empfänger:** Bobo
-- **Inhalt:** senden Sie eine weitere Bananen
+- **Inhalt:** Senden Sie eine weitere Bananen
 
 Jede Domäne verfügt, als Satz von wissen *Aktionen* , kann darin ausgeführt werden und basierend auf der Domäne und die Aktion, 0 (null), die zu viele Parameter in der Absicht eingeschlossen werden können, an die app gesendet.
 
@@ -290,7 +290,7 @@ Der App-spezifische Programmierterminologie definiert die bestimmte Wörter und 
 
 Es gibt mehrere Teile eines Vokabulars `AppIntentVocabulary.plist` Datei:
 
-- **Beispiel-App verwendet** – diese bieten eine Reihe von gängigen Anwendungsfällen, für die Anforderungen, die der Benutzer der app vornehmen können. Zum Beispiel: *"Thema mit MonkeyFit starten".*
+- **Beispiel-App verwendet** – diese bieten eine Reihe von gängigen Anwendungsfällen, für die Anforderungen, die der Benutzer der app vornehmen können. Zum Beispiel: *"Starten einer Herausforderung mit MonkeyFit".*
 - **Parameter** – diese bieten eine Reihe von nicht standardmäßigen Parametertypen, die speziell auf die app. Z. B. Trainings Namen für die MonkeyFit-app. Diese bestehen aus:
     - **Ausdruck** -ermöglicht der app, die eindeutigen Begriffe für die app zu definieren. Zum Beispiel: der Typ "Bananarific" Trainings, für die MonkeyFit-app. 
     - **Aussprache** -Aussprache Hinweise siri als eine einfache lautrechtschreibung nach einem bestimmten Ausdruck zu erhalten. Beispiel: "Ba Nana ri Einzelschritt".

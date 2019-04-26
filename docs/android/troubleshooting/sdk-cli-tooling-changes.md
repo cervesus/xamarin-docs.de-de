@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
 ms.openlocfilehash: dbd3287e7c646be7fd969699eab685906a1c6c1a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093933"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Änderungen an den Tools von Android SDK
 
@@ -48,13 +48,13 @@ Alternativ können Sie CLI-Tools zum Verwalten und aktualisieren Sie die Emulato
 
 #### <a name="sdkmanager"></a>sdkmanager
 
-**Hinzugefügt In:** Android SDK Tools 25.2.3 (November 2016) und höher.
+**Hinzugefügt:** Android SDK Tools 25.2.3 (November 2016) und höher.
 
 Es gibt ein neues Programm namens **Sdkmanager** in die **Tools/Bin** Ordner Ihres Android-SDK. Dieses Tool wird verwendet, um das Android-SDK in der Befehlszeile zu verwalten. Weitere Informationen zur Verwendung dieses Tools finden Sie unter [Sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html).
 
 #### <a name="avdmanager"></a>avdmanager
 
-**Hinzugefügt In:** Android SDK Tools 25.3.0 (März 2017) und höher.
+**Hinzugefügt:** Android SDK Tools 25.3.0 (März 2017) und höher.
 
 Es gibt ein neues Programm namens **Avdmanager** in die **Tools/Bin** Ordner Ihres Android-SDK. Dieses Tool wird verwendet, um die AVDs für Android-Emulator zu gewährleisten. Weitere Informationen zur Verwendung dieses Tools finden Sie unter [Avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
 
@@ -70,7 +70,7 @@ Sie können weiterhin die ursprüngliche grafische Benutzeroberfläche verwenden
 ## <a name="related-links"></a>Verwandte Links
 
 - [Android SDK-Setup](~/android/get-started/installation/android-sdk.md)
-- [Android-Geräte-Manager](~/android/get-started/installation/android-emulator/device-manager.md)
+- [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)
 - [Verstehen von Android API-Ebenen](~/android/app-fundamentals/android-api-levels.md)
 - [Anmerkungen zu dieser Version von SDK Tools (Google)](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

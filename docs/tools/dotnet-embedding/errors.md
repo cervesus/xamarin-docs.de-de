@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/11/2018
 ms.openlocfilehash: 5c3dd406f1132f51a86ddf574ab7ad0b279bc9ec
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61215340"
 ---
 # <a name="net-embedding-errors"></a>Einbetten von .NET Fehler
 
@@ -35,7 +35,7 @@ Die einfachste Möglichkeit zum Abrufen von Informationen zur genauen Version is
 
 <a name="EM0001" />
 
-### <a name="em0001-could-not-create-output-directory-x"></a>EM0001: Die Ausgabe-Verzeichnis konnte nicht erstellt werden. `X`
+### <a name="em0001-could-not-create-output-directory-x"></a>EM0001: Ausgabeverzeichnis konnte nicht erstellt werden. `X`
 
 Der Verzeichnisname gemäß `-o=DIR` ist nicht vorhanden und konnte nicht erstellt werden. Ein ungültiger Name für das Dateisystem möglicherweise.
 
@@ -71,7 +71,7 @@ Das Tool wurde nicht gefunden, die aktuell ausgewählten Xcode-Speicherort, mit 
 
 <a name="EM0007" />
 
-### <a name="em0007-could-not-get-the-sdk-version-for-sdk"></a>EM0007: Die Sdk-Version für "{Sdk}" konnte nicht abgerufen werden.
+### <a name="em0007-could-not-get-the-sdk-version-for-sdk"></a>EM0007: Die Sdk-Version konnte für "{Sdk}" nicht abgerufen werden.
 
 Das Tool konnte nicht abgerufen werden die SDK-Version mithilfe der `xcrun --show-sdk-version --sdk {sdk}` Befehl. Stellen Sie sicher, dass dieser Befehl ist erfolgreich, und die SDK-Version zurückgegeben.
 
@@ -89,7 +89,7 @@ Dies ist ein bekanntes Problem, das wir in einer zukünftigen Version des Genera
 
 <a name="EM0010" />
 
-### <a name="em0010-cant-merge-the-frameworks-simulatorframework-and-deviceframework-because-the-file-file-exists-in-both"></a>EM0010: Kann nicht die Frameworks '{SimulatorFramework}' und '{DeviceFramework}' nicht zusammengeführt werden, weil die Datei "{File}" in beiden vorhanden ist.
+### <a name="em0010-cant-merge-the-frameworks-simulatorframework-and-deviceframework-because-the-file-file-exists-in-both"></a>EM0010: Die Frameworks '{SimulatorFramework}' und '{DeviceFramework}' können nicht zusammengeführt werden, da die Datei "{File}" in beiden vorhanden ist.
 
 Das Tool konnten nicht die Frameworks, die in der Fehlermeldung genannten zusammengeführt, da eine allgemeine Datei zwischen ihnen vorhanden ist.
 
@@ -111,25 +111,25 @@ Die wahrscheinlichste Ursache ist, dass eine Assembly auf die Befehlszeilenargum
 
 <a name="EM0013" />
 
-### <a name="em0013-cant-find-the-assembly-x-referenced-by-y"></a>EM0013: Wurde nicht gefunden für die Assembly 'X', 'Y' verweist.
+### <a name="em0013-cant-find-the-assembly-x-referenced-by-y"></a>EM0013: Die Assembly 'X', 'Y' verweist, wurde nicht gefunden.
 
 Das Tool wurde die Assembly 'X', auf die verwiesen wird durch die Assembly 'Y' nicht gefunden werden. Stellen Sie sicher, dass alle referenzierten Assemblys im gleichen Verzeichnis wie die Assembly gebunden werden soll.
 
 <a name="EM0014" />
 
-### <a name="em0014-could-not-find-product-product-minversion-is-required"></a>EM0014: {Product} nicht gefunden ({Product} {Min_version} erforderlich ist).
+### <a name="em0014-could-not-find-product-product-minversion-is-required"></a>EM0014: {Product} wurde nicht gefunden ({Product} {Min_version} erforderlich ist).
 
 Die Abhängigkeit, die in der Fehlermeldung genannten konnte auf dem System nicht gefunden werden.
 
 <a name="EM0015" />
 
-### <a name="em0015-could-not-find-a-valid-version-of-product-found-version-but-at-least-minversion-is-required"></a>EM0015: Eine gültige Version von {Product} nicht gefunden ({Version}, gefunden jedoch mindestens {Min_version} ist erforderlich).
+### <a name="em0015-could-not-find-a-valid-version-of-product-found-version-but-at-least-minversion-is-required"></a>EM0015: Eine gültige Version von {Product} wurde nicht gefunden ({Version}, gefunden jedoch mindestens {Min_version} ist erforderlich).
 
 Die Abhängigkeit, die im Fehler genannt werden, Nachricht wurde auf dem System gefunden, aber es ist zu alt. Aktualisieren Sie auf eine neuere Version.
 
 <a name="EM0016" />
 
-### <a name="em0016-could-not-create-symlink-file---target-error-number"></a>EM0016: Konnte nicht erstellt die symbolische Verknüpfung "{file}" -> "{target}": Fehler beim {Number}
+### <a name="em0016-could-not-create-symlink-file---target-error-number"></a>EM0016: "Symlink" konnte nicht erstellt werden "{file}" -> "{target}": Fehler beim {Number}
 
 Die symbolische Verknüpfung, die in der Fehlermeldung genannten konnte nicht erstellt werden.
 
@@ -149,19 +149,19 @@ Gibt einen Fehler in das Einbetten von .NET. Melden Sie bitte einen Fehlerberich
 
 <!-- 1xxx: code processing -->
 
-## <a name="em1xxx-code-processing"></a>EM1xxx: Die Verarbeitung der Code
+## <a name="em1xxx-code-processing"></a>EM1xxx: Verarbeitung der Code
 
 <a name="EM1010" />
 
-### <a name="em1010-type-t-is-not-generated-because-x-are-not-supported"></a>EM1010: Geben Sie `T` wird nicht generiert werden, da `X` werden nicht unterstützt.
+### <a name="em1010-type-t-is-not-generated-because-x-are-not-supported"></a>EM1010: Typ `T` wird nicht generiert werden, da `X` werden nicht unterstützt.
 
 Dies ist eine **Warnung** , die den Typ `T` ignoriert werden (d. h. "nothing" generiert werden), da er verwendet `X`, ein Feature, das nicht unterstützt wird.
 
-Hinweis: Der unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
+Hinweis: Unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
 
 <a name="EM1011" />
 
-### <a name="em1011-type-t-is-not-generated-because-it-lacks-marshaling-code-with-a-native-counterpart"></a>EM1011: Geben Sie `T` wird nicht generiert werden, weil Marshallingcode mit einem systemeigenen Gegenstück fehlt.
+### <a name="em1011-type-t-is-not-generated-because-it-lacks-marshaling-code-with-a-native-counterpart"></a>EM1011: Typ `T` wird nicht generiert werden, weil Marshallingcode mit einem systemeigenen Gegenstück fehlt.
 
 Dies ist eine **Warnung** , die den Typ `T` ignoriert werden (d. h. "nothing" generiert.) da es etwas von .NET Framework verfügbar macht, die zusätzliche Marshalling erforderlich sind.
 
@@ -175,7 +175,7 @@ Dies ist eine **Warnung** , die den Konstruktor `C` werden ignoriert (d. h. "not
 
 Geben Sie eine Warnung zu eine früheren mit weiteren Informationen, warum sollte `T` wird nicht unterstützt.
 
-Hinweis: Der unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
+Hinweis: Unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
 
 <a name="EM1021" />
 
@@ -200,7 +200,7 @@ Dies ist eine **Warnung** , die die Methode `M` werden ignoriert (d. h. "nothing
 
 Geben Sie eine Warnung zu eine früheren mit weiteren Informationen, warum sollte `T` wird nicht unterstützt.
 
-Hinweis: Der unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
+Hinweis: Unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
 
 <a name="EM1031" />
 
@@ -210,7 +210,7 @@ Dies ist eine **Warnung** , die die Methode `M` werden ignoriert (d. h. "nothing
 
 Geben Sie eine Warnung zu eine früheren mit weiteren Informationen, warum sollte `T` wird nicht unterstützt.
 
-Hinweis: Der unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
+Hinweis: Unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
 
 <a name="EM1032" />
 
@@ -247,7 +247,7 @@ Dies ist eine **Warnung** , die die Eigenschaft `P` werden ignoriert (d. h. "not
 
 Geben Sie eine Warnung zu eine früheren mit weiteren Informationen, warum sollte `T` wird nicht unterstützt.
 
-Hinweis: Der unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
+Hinweis: Unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
 
 <a name="EM1041" />
 
@@ -263,7 +263,7 @@ Dies ist eine **Warnung** , die das Feld `F` werden ignoriert (d. h. "nothing" g
 
 Geben Sie eine Warnung zu eine früheren mit weiteren Informationen, warum sollte `T` wird nicht unterstützt.
 
-Hinweis: Der unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
+Hinweis: Unterstützte Funktionen werden mit neuen Versionen des Tools entwickeln.
 
 <a name="EM1051" />
 
@@ -273,7 +273,7 @@ Dies ist eine **Warnung** , die das Element `E` generiert werden stattdessen als
 
 Selektoren auf die [NSObjectProtocol](https://developer.apple.com/reference/objectivec/1418956-nsobject?language=objc) haben wichtige Bedeutung in Objective-c und muss sorgfältig überschrieben werden.
 
-Hinweis: Die Liste der reservierten Selektoren mit neuen Versionen des Tools weiterentwickelt.
+Hinweis: Die Liste der reservierten Selektoren wird mit neuen Versionen des Tools entwickeln.
 
 <a name="EM1052" />
 
@@ -293,7 +293,7 @@ Entfernen Sie ggf. Ihre `--target` Parameter oder Pass `--target=framework` stat
 
 <!-- 2xxx: code generation -->
 
-## <a name="em2xxx-code-generation"></a>EM2xxx: Codegenerierung
+## <a name="em2xxx-code-generation"></a>EM2xxx: Codeerzeugung
 
 <!-- 3xxx: reserved -->
 <!-- 4xxx: reserved -->

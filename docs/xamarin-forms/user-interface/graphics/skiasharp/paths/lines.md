@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: 85d863b19c3bf0302464e371738a2926cc80e8ce
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290779"
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
@@ -30,7 +30,7 @@ Für das Zeichnen von Linien, `SKCanvas` definiert eine einfache [ `DrawLine` ](
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-In der Standardeinstellung die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0 (null) und denselben Effekt wie der Wert 1 hat in beim Rendern einer Zeile von einem Pixel im Stärke. Dies scheint sehr dünne auf Geräten wie Smartphones, mit hoher Auflösung, sollten Sie wahrscheinlich zum Festlegen der `StrokeWidth` auf einen höheren Wert. Aber sobald Sie das Zeichnen von Linien mit einer beträchtliche Dicke starten, ein weiteres Problem auslöst: wie den Beginn und Ende diese dicken Zeilen gerendert werden soll?
+In der Standardeinstellung die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0 (null) und denselben Effekt wie der Wert 1 hat in beim Rendern einer Zeile von einem Pixel im Stärke. Dies scheint sehr dünne auf Geräten wie Smartphones, mit hoher Auflösung, sollten Sie wahrscheinlich zum Festlegen der `StrokeWidth` auf einen höheren Wert. Aber sobald Sie eine beträchtliche Dicke Zeichnen von Linien starten, ein weiteres Problem auslöst: Wie soll der beginnt und am Ende diese dicken Zeilen werden gerendert?
 
 Die Darstellung der den Beginn und Ende von Zeilen wird aufgerufen, eine *Linienende* oder Skia, eine *Stroke Cap*. Das Wort "Obergrenze" in diesem Kontext bezieht sich auf eine Art von Hat &mdash; etwas, das auf das Ende der Zeile befindet. Festlegen der [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) Eigenschaft der `SKPaint` -Objekts auf einen der folgenden Elemente von der [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) Enumeration:
 

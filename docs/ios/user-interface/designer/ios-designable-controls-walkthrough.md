@@ -1,5 +1,5 @@
 ---
-title: Verwenden benutzerdefinierter Steuerelemente im IOS-Designer
+title: Verwenden benutzerdefinierter Steuerelemente im iOS-Designer
 description: Dieses Dokument beschreibt, wie Sie ein benutzerdefiniertes Steuerelement erstellen und verwenden sie für iOS mit Xamarin-Designer. Es zeigt, wie das Steuerelement in der iOS-Designer-Toolbox verfügbar zu machen, das Steuerelement zu implementieren, damit sie richtig gerendert und Entwerfen von Zeit und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 98504c9d5f210d55a2be4c85c52d4bc1418fc223
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61154428"
 ---
-# <a name="using-custom-controls-with-the-ios-designer"></a>Verwenden benutzerdefinierter Steuerelemente im IOS-Designer
+# <a name="using-custom-controls-with-the-ios-designer"></a>Verwenden benutzerdefinierter Steuerelemente im iOS-Designer
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -28,7 +28,7 @@ Dieses Handbuch setzt voraus, Vertrautheit mit dem Inhalt in behandelt die [Eins
 > Beginnen in xamarin.Studio die Datei Exchange 5.5, ist die Möglichkeit, die in der benutzerdefinierten Steuerelemente erstellt werden Unterschied zu früheren Versionen. Um ein benutzerdefiniertes Steuerelement erstellen die `IComponent` Schnittstelle ist erforderlich (mit den zugehörigen Implementierungsmethoden) oder die Klasse kann angemerkt werden, mit `[DesignTimeVisible(true)]`. Die zweite Methode wird im folgenden Beispiel für die exemplarische Vorgehensweise verwendet.
 
 
-1. Erstellen einer neuen Projektmappe aus der **iOS > App > Single View Application > C#** Vorlage, nennen Sie sie `ScratchTicket`, und durchlaufen Sie den Assistenten für neue Projekte:
+1. Erstellen einer neuen Projektmappe aus der **iOS > App > Single View Application > c#** Vorlage, nennen Sie sie `ScratchTicket`, und durchlaufen Sie den Assistenten für neue Projekte:
 
     [![](ios-designable-controls-walkthrough-images/01new.png "Erstellen einer neuen Projektmappe")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 

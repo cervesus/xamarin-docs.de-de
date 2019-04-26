@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61317635"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 

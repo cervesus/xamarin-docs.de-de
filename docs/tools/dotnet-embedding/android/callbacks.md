@@ -6,11 +6,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: c6eaf4dd90b172053b4b87e3427cfe35213c6727
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61215877"
 ---
 # <a name="callbacks-on-android"></a>Rückrufe, die unter Android
 
@@ -157,7 +157,7 @@ Ausführliche Informationen zu Java-Interop, finden Sie unter den praktischen [X
 
 ## <a name="interfaces"></a>Schnittstellen
 
-Schnittstellen sind ähnlich wie abstrakte Klassen, mit Ausnahme von ein Detail: Xamarin.Android generiert Java nicht für sie. Das liegt vor dem Einbetten von .NET sind nicht viele Szenarios, bei denen Java implementiert würde, eine C# Schnittstelle.
+Schnittstellen sind ähnlich wie abstrakte Klassen, mit Ausnahme von ein Detail: Xamarin.Android wird Java nicht für sie generiert werden. Das liegt vor dem Einbetten von .NET sind nicht viele Szenarios, bei denen Java implementiert würde, eine C# Schnittstelle.
 
 Angenommen, wir haben die folgenden C# Schnittstelle:
 

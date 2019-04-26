@@ -1,6 +1,6 @@
 ---
 title: Authentifizieren des Zugriffs auf Webdienste
-description: Dieses Handbuch wird erläutert, wie zum Integrieren von Authentifizierungsdienste in einer Xamarin.Forms-Anwendung von Benutzern ein Back-End-freigeben, während Sie den Zugriff auf ihre eigenen Daten nur eine aktiviert werden.
+description: Dieses Handbuch wird erläutert, wie Authentifizierungsdienste in einer Xamarin.Forms-Anwendung, damit Benutzer auf eine Back-End zu verwenden, während Sie nur den Zugriff auf ihre eigenen Daten können zu integrieren.
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
@@ -8,35 +8,35 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
 ms.openlocfilehash: d598a9b3de31ea6823530f911c3544bf3cebb37f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331181"
 ---
 # <a name="authenticating-access-to-web-services"></a>Authentifizieren des Zugriffs auf Webdienste
 
-_Dieses Handbuch wird erläutert, wie zum Integrieren von Authentifizierungsdienste in einer Xamarin.Forms-Anwendung von Benutzern ein Back-End-freigeben, während Sie den Zugriff auf ihre eigenen Daten nur eine aktiviert werden. Zu den behandelten Themen gehören unter Verwendung der Standardauthentifizierung mit einem REST-Dienst, mithilfe der Komponente zur Xamarin.Auth zum Authentifizieren beim OAuth-Identitätsanbieter, und mithilfe der integrierten Authentifizierungsmechanismen von unterschiedlichen Anbietern angeboten._
+_Dieses Handbuch wird erläutert, wie Authentifizierungsdienste in einer Xamarin.Forms-Anwendung, damit Benutzer auf eine Back-End zu verwenden, während Sie nur den Zugriff auf ihre eigenen Daten können zu integrieren. Behandelten Themen gehören die unter Verwendung der Standardauthentifizierung mit einem REST-Dienst, mit die Xamarin.Auth-Komponente zum OAuth-Identitätsanbieter authentifizieren, und die integrierten Authentifizierungsmechanismen mit Angeboten von anderen Anbietern._
 
-## <a name="authenticating-a-restful-web-servicerestmd"></a>[Authentifizieren von RESTful-Webdienst](rest.md)
+## <a name="authenticating-a-restful-web-servicerestmd"></a>[Die Authentifizierung eines RESTful-Web-Diensts](rest.md)
 
-HTTP unterstützt die Verwendung von mehreren Authentifizierungsmechanismen zum Steuern des Zugriffs auf Ressourcen. Standardauthentifizierung bietet Zugriff auf Ressourcen, um nur die Clients, die über die richtigen Anmeldeinformationen verfügen. In diesem Artikel veranschaulicht die Standardauthentifizierung verwenden, um den Zugriff auf Ressourcen von RESTful-Web-Dienst zu schützen.
+HTTP unterstützt die Verwendung mehrere Authentifizierungsmechanismen zum Steuern des Zugriffs auf Ressourcen. Die Standardauthentifizierung bietet Zugriff auf Ressourcen auf ausschließlich Clients, die die richtigen Anmeldeinformationen verfügen. In diesem Artikel veranschaulicht die Standardauthentifizierung zu verwenden, um den Zugriff auf RESTful-Web-Service-Ressourcen zu schützen.
 
 ## <a name="authenticating-users-with-an-identity-provideroauthmd"></a>[Authentifizieren von Benutzern mit einem Identitätsanbieter](oauth.md)
 
-Xamarin.Auth ist eine plattformübergreifende-SDK für die Authentifizierung von Benutzern und speichern ihre Konten. Es umfasst OAuth-Authentifikatoren, die Unterstützung für die Nutzung der Identitätsanbieter z. B. Google, Microsoft, Facebook und Twitter. In diesem Artikel erläutert die Xamarin.Auth verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung zu verwalten.
+Xamarin.Auth ist ein Plattform-SDK für die Authentifizierung von Benutzern, und speichern ihre Konten an. Es enthält die OAuth-Authentifikatoren, die Unterstützung bieten, für die Nutzung von Identitätsanbietern wie Google, Microsoft, Facebook und Twitter. In diesem Artikel wird erläutert, wie Xamarin.Auth zum Verwalten des Authentifizierungsprozesses in einer Xamarin.Forms-Anwendung verwendet wird.
 
 ## <a name="authenticating-users-with-azure-mobile-appsazuremd"></a>[Authentifizieren von Benutzern mit Azure Mobile Apps](azure.md)
 
-Azure Mobile Apps verwenden eine Vielzahl von externen Identitätsanbieter zum Authentifizieren und Autorisieren von Benutzern zu unterstützen. Berechtigungen können klicken Sie dann auf Tabellen festgelegt werden, um Zugriff auf nur durch authentifizierte Benutzer zu beschränken. In diesem Artikel wird erläutert, wie Azure Mobile Apps zu verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung verwalten.
+Mit Azure Mobile Apps verwenden eine Vielzahl externer Identitätsanbieter zum Authentifizieren und Autorisieren von Benutzern der Anwendung zu unterstützen. Klicken Sie dann können Berechtigungen für Tabellen festgelegt werden, um Zugriff auf nur authentifizierte Benutzer beschränken. In diesem Artikel wird erläutert, wie Sie Azure Mobile Apps zu verwenden, um die Verwaltung des Authentifizierungsprozesses in einer Xamarin.Forms-Anwendung ermöglichen.
 
 ## <a name="authenticating-users-with-azure-active-directory-b2cazure-ad-b2cmd"></a>[Authentifizieren von Benutzern mit Azure Active Directory B2C](azure-ad-b2c.md)
 
-Azure Active Directory B2C ist eine Cloud-identitätsverwaltungslösung für kundenorientierten Web- und mobilen Anwendungen. Dieser Artikel veranschaulicht, wie Microsoft Authentication Library (MSAL) und Azure Active Directory B2C Consumer identitätsverwaltung in einer Xamarin.Forms-Anwendung integriert.
+Azure Active Directory B2C ist eine Cloudlösung für die Verwaltung von Identitäten für kundenorientierte Web- und mobile Anwendungen. In diesem Artikel wird veranschaulicht, wie Microsoft Authentication Library (MSAL) und Azure Active Directory B2C verwenden, um die Verwaltung von Kundenidentitäten in einer Xamarin.Forms-Anwendung zu integrieren.
 
 ## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[Integrieren von Azure Active Directory B2C in Azure Mobile Apps](azure-ad-b2c-mobile-app.md)
 
-Azure Active Directory B2C kann zum Verwalten der Authentifizierung für Azure-Mobile-Apps verwendet werden. Bei diesem Ansatz die Verwaltungsoberfläche für die Identität ist vollständig in der Cloud definiert und kann ohne Änderung des Codes für die mobile Anwendung geändert werden. Dieser Artikel veranschaulicht, wie Azure Active Directory B2C-Authentifizierung und Autorisierung mit einer Instanz von Azure Mobile Apps mit Xamarin.Forms bereitstellen.
+Azure Active Directory B2C kann verwendet werden, um den Workflow der Authentifizierung für Azure Mobile Apps zu verwalten. Bei diesem Ansatz die Verwaltungsoberfläche für die Identität ist in der Cloud vollständig definiert und geändert werden kann, ohne Ihren mobilen Anwendungscode ändern zu müssen. In diesem Artikel wird veranschaulicht, wie Sie Azure Active Directory B2C zum Bereitstellen von Authentifizierung und Autorisierung mit einer Instanz von Azure Mobile Apps mit Xamarin.Forms zu verwenden.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
 ms.openlocfilehash: 45886d787ecc40c9e11ce0c713ffa22819e29db2
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227485"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>WatchOS Hintergrundaufgaben in Xamarin
 
@@ -543,7 +543,7 @@ Während eine app im Hintergrund ist, erzwingt das System mehrere Einschränkung
 
 - Es erhält nur wenige Sekunden, um eine bestimmte Aufgabe abzuschließen. Das System berücksichtigt nicht nur die Menge an Zeit vergangen ist, sondern auch wie viel CPU-Leistung der app verbraucht ist, um diese Beschränkung abzuleiten.
 - Jede app, die die Grenzwerte überschreitet, wird mit der folgenden Fehlercodes beendet werden:
-    - **CPU** -0xc51bad01
+    - **CPU** - 0xc51bad01
     - **Zeit** -0xc51bad02
 - Das System bedeuten verschiedene Grenzwerte, die basierend auf den Typ der Hintergrundaufgabe, die sie die app ausführen gestellt hat. Z. B. `WKApplicationRefreshBackgroundTask` und `WKURLSessionRefreshBackgroundTask` Aufgaben erhalten etwas längere Laufzeiten gegenüber anderen Typen von Hintergrundaufgaben.
 

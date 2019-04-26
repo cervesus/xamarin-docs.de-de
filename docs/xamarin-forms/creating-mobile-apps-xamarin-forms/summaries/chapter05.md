@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: fd6694de756938ff564bed0923427fe62153116a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334396"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Zusammenfassung der Kapitel 5. Umgang mit Größen
 
@@ -80,7 +80,7 @@ Die [ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples
 
 ## <a name="accessibility-issues"></a>Probleme mit der Barrierefreiheit
 
-Die **EstimatedFontSize** Programm und die **FitToSizeClock** Programm beide enthalten einen geringfügigen Fehler: Wenn der Benutzer Einstellungen für die Barrierefreiheit des Telefons auf Android oder Windows 10 Mobile, das Programm nicht mehr ändert. können basierend auf den Schriftgrad schätzen wie groß der Text gerendert wird. Die [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) Beispiel veranschaulicht das Problem.
+Die **EstimatedFontSize** Programm und die **FitToSizeClock** Programm beide enthalten einen geringfügigen Fehler: Wenn der Benutzer die Einstellungen für die Barrierefreiheit des Telefons auf Android oder Windows 10 Mobile ändert, kann das Programm nicht mehr schätzen, wie groß der Text gerendert wird basierend auf der Größe der Schriftart. Die [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) Beispiel veranschaulicht das Problem.
 
 ## <a name="empirically-fitting-text"></a>Empirisch Einpassen von text
 

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 11/16/2017
 ms.openlocfilehash: c004fb7717f78750e7ac1e8dc1856a32ba808638
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227673"
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>Wo kann ich meine Android SDK-Speicherorte festlegen?
 
@@ -34,7 +34,7 @@ Der Standardspeicherort für jeden Pfad lautet wie folgt aus:
 
 - Android NDK-Speicherort: 
 
-    **"C:"\\ProgramData\\Microsoft\\AndroidNDK64\\Android-Ndk-r13b**
+    **C:\\ProgramData\\Microsoft\\AndroidNDK64\\android-ndk-r13b**
 
 Beachten Sie, dass die Versionsnummer des das NDK variieren kann. Beispielsweise anstelle von **Android-Ndk-r13b**, möglicherweise eine frühere Version wie z. B. **Android-Ndk-r10e**.
 
@@ -59,7 +59,7 @@ Der Standardspeicherort für jeden Pfad lautet wie folgt aus:
 
 - Der Speicherort der Java-SDK (JDK): 
 
-    **"/ usr"**
+    **/usr**
 
 Beachten Sie, dass die Versionsnummer des das NDK variieren kann. Beispielsweise anstelle von **Android-Ndk-r14b**, möglicherweise eine frühere Version wie z. B. **Android-Ndk-r10e**.
 

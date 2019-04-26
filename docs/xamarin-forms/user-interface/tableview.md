@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
 ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
-ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58641438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61194581"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TableView)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TableView)
 
 [`TableView`](xref:Xamarin.Forms.TableView) ist eine Ansicht zum Anzeigen von bildlauffähigen Listen mit Daten oder Ihren Optionen angezeigt, die Zeilen, die die gleiche Vorlage gemeinsam verwenden, nicht vorhanden sind. Im Gegensatz zu [ListView](~/xamarin-forms/user-interface/listview/index.md), `TableView` verfügt nicht über das Konzept einer `ItemsSource`, sodass Elemente als untergeordnete Elemente manuell hinzugefügt werden müssen.
 

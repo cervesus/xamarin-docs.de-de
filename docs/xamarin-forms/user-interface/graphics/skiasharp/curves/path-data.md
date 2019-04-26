@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
 ms.openlocfilehash: 690d3c15d7ad2aad06be5b499bae1a94107414f4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019540"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in SkiaSharp
 
@@ -361,7 +361,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Die [ **Punkte und Gedankenstriche** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Artikel wurde erläutert, wie Sie verwenden können die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*) Methode, um eine gestrichelte Linie zu erstellen. Das erste Argument ist ein `float` Array, das in der Regel zwei Elemente vorhanden sind: das erste Element ist die Länge der Bindestriche aus, und das zweite Element ist die Lücke zwischen der Bindestriche. Wenn die `StrokeCap` -Eigenschaftensatz auf `SKStrokeCap.Round`, und klicken Sie dann die abgerundeten Enden des Strichs effektiv die Dash Länge durch die Strichbreite auf beiden Seiten des Strichs verlängern. Wenn das erste Arrayelement auf 0 erstellt daher eine gestrichelte Linie.
+Die [ **Punkte und Gedankenstriche** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Artikel wurde erläutert, wie Sie verwenden können die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*) Methode, um eine gestrichelte Linie zu erstellen. Das erste Argument ist ein `float` Array, das in der Regel über zwei Elemente verfügt: Das erste Element ist die Länge der Bindestriche aus, und das zweite Element ist die Lücke zwischen der Bindestriche. Wenn die `StrokeCap` -Eigenschaftensatz auf `SKStrokeCap.Round`, und klicken Sie dann die abgerundeten Enden des Strichs effektiv die Dash Länge durch die Strichbreite auf beiden Seiten des Strichs verlängern. Wenn das erste Arrayelement auf 0 erstellt daher eine gestrichelte Linie.
 
 Die Entfernung zwischen diesen Punkten wird durch das zweite Arrayelement bestimmt. Wie Sie diese in Kürze, zwei sehen werden `SKPaint` Objekte dienen zum Zeichnen der Kreise mit einem Radius von 90 Einheiten. Der Umfang dieser Kreises ist daher 180π, was bedeutet, dass die 60-Minuten-Markierungen jeder 3π Einheiten angezeigt werden müssen, dies ist der zweite Wert in der `float` im array `minuteMarkPaint`. Die 12-Stunden-Markierungen müssen angezeigt werden alle Einheiten 15π, dies ist der Wert in der zweiten `float` Array.
 

@@ -7,17 +7,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
 ms.openlocfilehash: be473580b24dba6b4f08384771e2097d368f8dc8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61276605"
 ---
 # <a name="radiobutton"></a>RadioButton
 
 In diesem Abschnitt erstellen Sie zwei sich gegenseitig ausschließende Optionsfelder (Aktivieren einer deaktiviert die andere), mithilfe der [`RadioGroup`](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)
 Und [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-Widgets. Wenn entweder Optionsfeld gedrückt wird, wird eine eingeblendeten Nachricht angezeigt werden.
+widgets. Wenn entweder Optionsfeld gedrückt wird, wird eine eingeblendeten Nachricht angezeigt werden.
 
 
 Öffnen der **Resources/layout/Main.axml** -Datei und fügen Sie zwei [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s, die in geschachtelten eine [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (innerhalb der [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
@@ -70,7 +70,7 @@ Hierbei werden zusammengefasst, jede der [ `RadioButton` ](https://developer.xam
 
 Führen Sie die Anwendung aus.
 
-**Tipp:** Wenn Sie den Status zu ändern müssen (z. B. beim Laden eine gespeicherte [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)), verwenden Sie die [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
+**Tipp:** Wenn Sie den Status selbst ändern möchten (z. B. beim Laden eine gespeicherte [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)), verwenden Sie die [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
 Eigenschaften-Setter oder [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
 -Methode.
 

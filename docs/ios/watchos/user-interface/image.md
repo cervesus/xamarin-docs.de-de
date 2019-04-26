@@ -8,18 +8,18 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 6a2b8c99156963ae167aecd29a618d0feeffbdc7
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228984"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>WatchOS-Image-Steuerelemente in Xamarin
 
 WatchOS bietet eine [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) -Steuerelement zum Anzeigen von Bildern und einfache Animationen. Einige Steuerelemente können auch ein Bild als Hintergrund (z. B. Schaltflächen, Gruppen und Schnittstellencontroller) verfügen.
 
-![](image-images/image-walkway.png "Apple Watch Anzeigen eines Bildes") ![](image-images/image-animation.png "Apple Watch mit einfachen Animation")
- <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
+![](image-images/image-walkway.png "Apple Watch Anzeigen eines Bildes") ![](image-images/image-animation.png "Apple Watch mit einfache Animation")
+<!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Verwenden Sie Asset-Katalog-Images, um Bilder Watch-Kit-apps hinzufügen.
 Nur **@2x** Versionen sind erforderlich, da alle Geräte Retina wird ansehen.

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61407672"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
 
@@ -41,7 +41,7 @@ Die Vorschau hat einige vorgefertigte Datenquellen, die für die Verwendung zur 
 
 * **JsonDataSource**
 * **AzureDataSource** (trennen Sie Nuget)
-* **AzureEasyTableDataSource** (trennen Sie Nuget)
+* **AzureEasyTableDataSource** (separate Nuget)
 
 Finden Sie unter den [Handbuch mit ersten Schritten](get-started.md) ein Beispiel mit einem `JsonDataSource`.
 

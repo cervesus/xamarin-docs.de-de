@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 015c1e315b6070777542a8f8c5871c00cf336b5c
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61236111"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Erstellen von benutzerdefinierten Steuerelementen in Xamarin.Mac
 
@@ -212,7 +212,7 @@ Wir werden werden anpassen die visuelle Darstellung des Steuerelements, wenn des
 
 ### <a name="responding-to-user-input"></a>Reagieren auf Benutzereingabe
 
-Es gibt zwei einfache Möglichkeit, dass wir die Benutzereingaben an das benutzerdefinierte Steuerelement hinzufügen können: **überschreiben Maus behandeln Routinen** oder **Geste Erkennungen**. Welche Methode, die wir verwenden, wird auf Grundlage der Funktionalität, die erforderlich sind, indem Sie das Steuerelement.
+Es gibt zwei einfache Möglichkeit, dass wir die Benutzereingaben an das benutzerdefinierte Steuerelement hinzufügen können: **Überschreiben Sie die Maus, die Anwendungsroutinen zur Fehlerbehandlung** oder **Gestenerkennungsfunktionen**. Welche Methode, die wir verwenden, wird auf Grundlage der Funktionalität, die erforderlich sind, indem Sie das Steuerelement.
 
 > [!IMPORTANT]
 > Für jedes benutzerdefinierten Steuerelements, das Sie erstellen, sollten Sie verwenden entweder **Methoden außer Kraft setzen** _oder_ **Geste Erkennungen**, aber nicht beide zur gleichen Zeit wie sie miteinander in Konflikt stehen.

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61205559"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter-Duff Füllmethoden einheitlich
 
@@ -279,7 +279,7 @@ Es gibt möglicherweise Versuchung, ersetzen Sie die Bitmaps in der **Porter-Duf
 
 ## <a name="using-mattes-with-porter-duff"></a>Verwenden von Masken mit Porter-Duff
 
-Die **Durchbruch Zusammensetzung** Seite zeigt ein Beispiel für eine Aufgabe klassischen zusammensetzen: muss ein Bild zusammengestellt werden, in mehrere Stücke aufgeteilt, einschließlich einer Bitmap mit einem Hintergrund, die entfernt werden muss. Hier ist die **SeatedMonkey.jpg** Bitmap mit den problematischen Hintergrund:
+Die **Durchbruch Zusammensetzung** Seite zeigt ein Beispiel für eine Aufgabe klassischen zusammensetzen: Ein Bild muss zusammengestellt werden, in mehrere Stücke aufgeteilt, einschließlich einer Bitmap mit einem Hintergrund, der entfernt werden muss. Hier ist die **SeatedMonkey.jpg** Bitmap mit den problematischen Hintergrund:
 
 ![Sitzen Monkey](porter-duff-images/SeatedMonkey.jpg "sitzen Monkey-Objekt")
 

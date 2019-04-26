@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 5086724b565fb95274c4988ca1b6e4bb11064575
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61082267"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Schnelle Interaktionstechniken für WatchOS 3 in Xamarin
 
@@ -96,7 +96,7 @@ Apple wird Folgendes empfohlen, bei der Verwendung von Gesten Erkennungen in Wat
 - Fügen Sie die Bewegung Freihanderkennung so gruppieren Sie Elemente anstelle von individuellen Steuerelementen hinzu. Da der Apple Watch-eine kleinere Größe des physischen Bildschirms aufweist, Gruppieren von Elementen sind meist größer und einfacher Ziele für den Benutzer erreicht wird. Darüber hinaus kann die Bewegung Freihanderkennung Konflikt mit integrierten Gesten bereits in der nativen UI-Steuerelemente.
 - Legen Sie abhängigkeitsbeziehungen, die in der Watch-app-Storyboard an.
 - Einige Geste haben Vorrang vor anderen Dateitypen Bewegung, z. B.:
-    - Durchführen eines Bildlaufs
+    - Scrollen
     - Force Touch
  
 ### <a name="digital-crown-rotation"></a>Digitale Crown Drehung
@@ -179,7 +179,7 @@ Genau wie alle anderen Elemente der Benutzeroberfläche hat die digitale Crown d
 
 Beispielsweise könnte eines der folgenden Steuerelemente den Fokus von der digitalen Crown stehlen:
 
-- Zeitauswahl
+- Auswahl
 - Slider
 - Durchführen eines Bildlaufs Controller
 

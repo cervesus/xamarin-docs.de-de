@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 81e6cfe1e532bcfa7616e35adb28b314587bafc8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61161585"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Arbeiten mit TvOS Navigationsleisten in Xamarin
 
@@ -36,7 +36,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Navigationsleisten in einer Xamarin
 1. In der **Lösungspad**, doppelklicken Sie auf `Main.storyboard` und öffnen Sie sie für die Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** und legen Sie sie in der Ansicht am oberen Rand des Bildschirms: 
 
-    [![](navigation-bars-images/navbar02.png "Eine Navigationsleiste")](navigation-bars-images/navbar02.png#lightbox)
+    [![](navigation-bars-images/navbar02.png "A Navigation Bar")](navigation-bars-images/navbar02.png#lightbox)
 1. Doppelklicken Sie auf die **Navigationsleiste** auswählen **Navigationselement**. In der **Widget** Registerkarte die **Pad "Eigenschaften"**, Sie können festlegen, die **Titel**: 
 
     [![](navigation-bars-images/navbar03.png "Legen Sie den Titel")](navigation-bars-images/navbar03.png#lightbox)
@@ -55,7 +55,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Navigationsleisten in einer Xamarin
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf `Main.storyboard` und öffnen Sie sie für die Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** und legen Sie sie in der Ansicht am oberen Rand des Bildschirms: 
 
-    [![](navigation-bars-images/navbar02-vs.png "Eine Navigationsleiste")](navigation-bars-images/navbar02-vs.png#lightbox)
+    [![](navigation-bars-images/navbar02-vs.png "A Navigation Bar")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. Doppelklicken Sie auf die **Navigationsleiste** auswählen **Navigationselement**. In der **Widget** Registerkarte die **Eigenschaften-Explorer**, Sie können festlegen, die **Titel**: 
 
     [![](navigation-bars-images/navbar03-vs.png "Legen Sie den Titel")](navigation-bars-images/navbar03-vs.png#lightbox)

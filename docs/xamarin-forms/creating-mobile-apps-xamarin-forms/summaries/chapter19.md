@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 795478805b582b956ee491bdfecd84485c1bc30e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334490"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Zusammenfassung der Kapitel 19. Auflistungsansichten
 
@@ -113,7 +113,7 @@ Die Bestimmung der Systemgröße für alle Plattformen kann knifflig sein. Die [
 
 ### <a name="grouping-the-listview-items"></a>Die ListView-Elemente zu gruppieren
 
-`ListView` unterstützt die Gruppierung von Elementen und zum Navigieren zwischen diesen Gruppen. Die `ItemsSource` Eigenschaft muss festgelegt werden, um eine Auflistung von Auflistungen: das Objekt, `ItemsSource` nastaven NA hodnotu muss implementieren `IEnumerable`, und jedes Element in der Auflistung muss auch implementieren `IEnumerable`. Jede Gruppe sollte zwei Eigenschaften enthalten: eine textbeschreibung der Gruppe und eine drei Buchstaben bestehende Abkürzung.
+`ListView` unterstützt die Gruppierung von Elementen und zum Navigieren zwischen diesen Gruppen. Die `ItemsSource` Eigenschaft muss auf eine Auflistung von Auflistungen festgelegt werden: Das Objekt, das `ItemsSource` nastaven NA hodnotu muss implementieren `IEnumerable`, und jedes Element in der Auflistung muss auch implementieren `IEnumerable`. Jede Gruppe sollte zwei Eigenschaften enthalten: eine textbeschreibung der Gruppe und eine drei Buchstaben bestehende Abkürzung.
 
 Die [ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek erstellt sieben Gruppen von `NamedColor` Objekte. Die [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) Beispiel veranschaulicht, wie diese Gruppen mit den [ `IsGroupingEnabled` ](xref:Xamarin.Forms.ListView.IsGroupingEnabled) Eigenschaft `ListView` festgelegt `true`, und die [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding) und [ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding) Eigenschaften gebunden, um Eigenschaften in jeder Gruppe.
 

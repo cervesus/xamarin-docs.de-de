@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 232fcd1d369eba1daad170986f2e2c4c913a3649
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61307862"
 ---
 # <a name="debug-on-a-wear-device"></a>Debuggen Sie auf einem Wear-Gerät
 
@@ -77,7 +77,7 @@ Verwenden Sie die folgenden Schritte aus, um Ihr Wear-Gerät an Ihr Telefon zu v
 
     Wenn Port 4444 nicht verfügbar ist, können Sie einen beliebigen anderen verfügbaren Port auf dem Sie Zugriff haben. 
 
-    **Beachten Sie**: Wenn Sie Visual Studio oder Visual Studio für Mac neu starten, müssen Sie diese Befehle erneut aus, um eine Verbindung mit dem Wear-Gerät einrichten ausführen.
+    **Hinweis:** Wenn Sie Visual Studio oder Visual Studio für Mac neu starten, führen Sie diese Befehle erneut aus, um eine Verbindung mit dem Wear-Gerät einzurichten.
 
 5.  Wenn die Wear-Gerät aufgefordert werden, vergewissern Sie sich, dass Sie die erlauben **ADB Debuggen**. In der Android Wear-app sehen Sie den Status zu ändern:
 

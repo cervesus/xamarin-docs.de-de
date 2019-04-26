@@ -1,35 +1,35 @@
 ---
 title: Schritt 2 Konfigurieren des Service-Zugriffs für Mobile Anwendung
-description: Dieses Dokument beschreibt, wie Sie eine Xamarin-Anwendung mit Zugriff auf eine Azure-Anwendung mit Azure Active Directory gesichert bereitstellen.
+description: In diesem Dokument wird beschrieben, wie zu einer Xamarin-Anwendung mit Zugriff auf eine Azure-Anwendung durch Azure Active Directory gesichert wird.
 ms.prod: xamarin
 ms.assetid: 8A14A457-F72E-4B08-B4B6-801F7619F893
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: 2a9baab9215ae2d30e4daf6800a116c95165da42
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61188268"
 ---
 # <a name="step-2-configure-service-access-for-mobile-application"></a>Schritt 2 Konfigurieren des Service-Zugriffs für Mobile Anwendung
 
-Wenn Ressource, z. B. die Webanwendung, Webdienst usw. von Azure Active Directory gesichert werden muss, muss sie registriert werden. Die sichere Anwendungen oder Dienste können unter betrachtet werden **Anwendungen** Registerkarte. Hier können Sie die Anwendung auswählen, der von der mobilen Anwendung darauf zugegriffen werden und für den Zugriff darauf muss.
+Wenn alle Ressourcen, z. B. die Webanwendung, Webdienst usw. muss durch Azure Active Directory gesichert wird, muss sie registriert werden. Alle Anwendungen oder Dienste finden Sie unter **Anwendungen** Registerkarte. Hier können Sie die Anwendung auswählen, die von der mobilen Anwendung darauf zugegriffen werden und Zugriff darauf gewähren muss.
 
 1. Auf der **konfigurieren** Registerkarte **Berechtigungen für andere Anwendungen** Abschnitt:
 
-  ![](configure-images/2.1-configure.png "Suchen Sie auf der Registerkarte \"konfigurieren\" \"Berechtigungen für andere Anwendungen\"")
+  ![](configure-images/2.1-configure.png "Suchen Sie auf der Registerkarte \"konfigurieren\" Berechtigungen für andere Anwendungen im Abschnitt")
 
-2.  Klicken Sie auf **Anwendung hinzufügen** Schaltfläche. Auf dem nächsten Bildschirm Popup sollte Liste aller Anwendungen angezeigt werden, die von Azure Active Directory geschützt sind. Wählen Sie die Anwendungen, die von der mobilen Anwendung zugegriffen werden muss.
+2.  Klicken Sie auf **Anwendung hinzufügen** Schaltfläche. Auf dem nächsten Bildschirm Popupfenster sehen Sie die Liste aller Anwendungen die von Azure Active Directory gesichert werden. Wählen Sie die Anwendungen, die aus der mobilen Anwendung zugegriffen werden muss.
 
   ![](configure-images/2.2-add-application.png "Wählen Sie die Anwendungen, die von der mobilen Anwendung zugegriffen werden muss")
 
-3. Nach der Auswahl der Anwendung, und wählen Sie erneut die neu hinzugefügte Anwendung in **Berechtigungen für andere Anwendungen** Abschnitt, und geben Sie die erforderlichen Rechte verfügt.
+3. Wählen Sie nach dem Auswählen der Anwendung erneut die neu hinzugefügten Anwendung im **Berechtigungen für andere Anwendungen** aus, und geben Sie die entsprechende Berechtigungen.
 
-  ![](configure-images/2.3-permissions.png "Nach der Auswahl der Anwendung, erneut wählen Sie die Anwendung neu hinzugefügten in \"Berechtigungen für andere Anwendungen\" und geben Sie die entsprechenden Rechte")
+  ![](configure-images/2.3-permissions.png "Nach dem Auswählen der Anwendung wieder wählen Sie die neu hinzugefügten Anwendung in Berechtigungen für andere Anwendungen im Abschnitt und geben Sie die entsprechenden Rechte")
 
-4. Schließlich **speichern** der Konfiguration. Diese Dienste sollten jetzt in mobilen Anwendungen zur Verfügung!
+4. Zum Schluss **speichern** der Konfiguration. Diese Dienste sollte jetzt in mobilen Anwendungen verfügbar sein!
 
 
 

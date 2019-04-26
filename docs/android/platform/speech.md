@@ -1,5 +1,5 @@
 ---
-title: Android-Sprache
+title: Android Speech
 description: Dieser Artikel behandelt die Grundlagen der Verwendung des leistungsstarken von Android.Speech-Namespaces. Seit seiner Einführung wurde Android Sprache erkennen und die Ausgabe als Text speichern können. Es ist ein relativ einfacher Prozess. Für Text-zu-Sprache, jedoch ist der Vorgang komplizierter, da nicht nur die spracherkennungs-Engine, berücksichtigt werden muss, aber auch die Sprachen verfügbaren und installierten aus dem System Text To Speech (TTS).
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2018
 ms.openlocfilehash: e88f6e24cbf4c8b2f0c0486c6408e234e87066cc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228581"
 ---
-# <a name="android-speech"></a>Android-Sprache
+# <a name="android-speech"></a>Android Speech
 
 _Dieser Artikel behandelt die Grundlagen der Verwendung des leistungsstarken von Android.Speech-Namespaces. Seit seiner Einführung wurde Android Sprache erkennen und die Ausgabe als Text speichern können. Es ist ein relativ einfacher Prozess. Für Text-zu-Sprache, jedoch ist der Vorgang komplizierter, da nicht nur die spracherkennungs-Engine, berücksichtigt werden muss, aber auch die Sprachen verfügbaren und installierten aus dem System Text To Speech (TTS)._
 

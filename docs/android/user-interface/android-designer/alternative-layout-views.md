@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
 ms.openlocfilehash: 03b80d3fb1ed7c8db108f86b3b3923c20e1d908f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61089817"
 ---
 # <a name="alternative-layout-views"></a>Alternative Layoutansichten
 
@@ -79,7 +79,7 @@ Beim Klicken auf die **Standard** Layout an, die `TextView` Textzeichenfolge nas
 
 ## <a name="handling-conflicts"></a>Behandeln von Konflikten 
 
-Wenn Sie sich entscheiden, so ändern Sie die Farbe des Texts in der **Standard** Layout in Grün, sehen Sie ein Warnsymbol in der verknüpften Layout angezeigt werden. Durch Klicken auf das Layout wird das Layout, um den Konflikt anzuzeigen. Das Widget, das den Konflikt verursacht hat, wird mit einem roten Rahmen hervorgehoben und die folgende Meldung angezeigt: *kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
+Wenn Sie sich entscheiden, so ändern Sie die Farbe des Texts in der **Standard** Layout in Grün, sehen Sie ein Warnsymbol in der verknüpften Layout angezeigt werden. Durch Klicken auf das Layout wird das Layout, um den Konflikt anzuzeigen. Das Widget, das den Konflikt verursacht hat, wird mit einem roten Rahmen hervorgehoben, und die folgende Meldung angezeigt: *Kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
 
 [![In Konflikt stehende Änderung](alternative-layout-views-images/vs/11-conflicting-change-sml.png "in Konflikt stehende Änderung")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
@@ -101,7 +101,7 @@ Wenn eine `CheckBox` hinzugefügt wird die **Standard** Layout mit Ausrichtung v
 
 [![Kontrollkästchen-Konflikt](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "Kontrollkästchen-Konflikt")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
-Klicken auf die **große Flächen** Layout zeigt den Konflikt. Die folgende Meldung angezeigt: *kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*: 
+Klicken auf die **große Flächen** Layout zeigt den Konflikt. Folgende Meldung wird angezeigt: *Kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*: 
 
 [![ALT-Layout-Konflikt](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt Layout-Konflikt")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
 
@@ -179,7 +179,7 @@ Beim Klicken auf die **Standard** Layout an, die `TextView` Textzeichenfolge nas
 
 ## <a name="handling-conflicts"></a>Behandeln von Konflikten 
 
-Wenn Sie sich entscheiden, so ändern Sie die Farbe des Texts in der **Standard** Layout in Grün, sehen Sie ein Warnsymbol in der verknüpften Layout angezeigt werden. Durch Klicken auf das Layout wird das Layout, um den Konflikt anzuzeigen. Das Widget, das den Konflikt verursacht hat, wird mit einem roten Rahmen hervorgehoben und die folgende Meldung angezeigt: *kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
+Wenn Sie sich entscheiden, so ändern Sie die Farbe des Texts in der **Standard** Layout in Grün, sehen Sie ein Warnsymbol in der verknüpften Layout angezeigt werden. Durch Klicken auf das Layout wird das Layout, um den Konflikt anzuzeigen. Das Widget, das den Konflikt verursacht hat, wird mit einem roten Rahmen hervorgehoben, und die folgende Meldung angezeigt: *Kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
 
 [![In Konflikt stehende Änderung](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
 
@@ -201,7 +201,7 @@ Wenn eine `CheckBox` hinzugefügt wird die **Standard** Layout mit Ausrichtung v
 
 [![Kontrollkästchen-Konflikt](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
-Klicken auf die **große Flächen** Layout zeigt den Konflikt. Die folgende Meldung angezeigt: *kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
+Klicken auf die **große Flächen** Layout zeigt den Konflikt. Folgende Meldung wird angezeigt: *Kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
 
 [![ALT-Layout-Konflikt](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  
