@@ -1,23 +1,23 @@
 ---
 title: Einbetten von .NET
-description: Einbetten von .NET können Ihre vorhandenen .NET Code (c#, f# und andere) von in anderen Programmiersprachen geschriebenen Code genutzt werden soll.
+description: Einbetten von .NET können Ihre vorhandenen .NET Code (C#, F#, usw.) von in anderen Programmiersprachen geschriebenen Code genutzt werden soll.
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 23233ea8b06e0db580ba99edf2705e3dae5b931f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61363470"
 ---
 # <a name="net-embedding"></a>Einbetten von .NET
 
 ![Vorschau](~/media/shared/preview.png)
 
-Einbetten von .NET können Ihre vorhandenen .NET Code (c#, f# und andere) von anderen Programmiersprachen und in verschiedenen Umgebungen verwendet werden.
+Einbetten von .NET können Ihre vorhandenen .NET Code (C#, F#, usw.) von anderen Programmiersprachen und in verschiedenen Umgebungen verwendet werden.
 
 Dies bedeutet, dass wenn Sie eine Bibliothek für .NET, die Sie aus Ihrer vorhandenen iOS-app verwenden möchten verfügen, können Sie dies tun.   Oder wenn Sie es mit einem systemeigenen C++-Bibliothek verknüpfen möchten, ist auch möglich, die.   Oder nutzen Sie .NET Code von Java.
 

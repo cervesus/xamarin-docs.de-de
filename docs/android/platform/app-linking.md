@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: dd4ba236df8e5993c7f7ed86393eb66ce01db595
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60956152"
 ---
 # <a name="app-linking-in-android"></a>App-Verknüpfung unter Android
 
@@ -198,5 +198,5 @@ Dieser Leitfaden erläutert, wie app-Verknüpfung funktioniert in Android 6.0. S
 - [Finden der MD5- oder SHA1-Signatur Ihres Keystores](~/android/deploy-test/signing/keystore-signature.md)
 - [Aktivitäten und Intents zusammen](https://university.xamarin.com/classes#4)
 - [AppLinks](http://applinks.org/)
-- [Google-digitale Objekte-Links](https://developers.google.com/digital-asset-links/)
+- [Google Digital Assets Links](https://developers.google.com/digital-asset-links/)
 - [Anweisung Liste-Generator und Tester](https://developers.google.com/digital-asset-links/tools/generator)

@@ -1,5 +1,5 @@
 ---
-title: Wie führe ich durch eine gründliche für Xamarin für Visual Studio deinstallieren?
+title: Wie führe ich eine gründliche Deinstallation von Xamarin für Visual Studio aus?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
@@ -7,13 +7,13 @@ author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
 ms.openlocfilehash: 99fde9330498ee62d3cf6b5910c2cbfae39cfdeb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33917667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61159622"
 ---
-# <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>Wie führe ich durch eine gründliche für Xamarin für Visual Studio deinstallieren?
+# <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>Wie führe ich eine gründliche Deinstallation von Xamarin für Visual Studio aus?
 
 
 1.  Deinstallieren Sie keines der folgenden, die vorhanden sind, in der Windows-Systemsteuerung:
@@ -24,19 +24,19 @@ ms.locfileid: "33917667"
     -   Xamarin.iOS
     -   Xamarin für Visual Studio
 
-2.  Löschen Sie alle übrigen Dateien im Explorer von Xamarin für Visual Studio-Erweiterungsordner (alle Versionen einschließlich beide _Programmdateien_ und _Programmdateien (x86)_):
+2.  Löschen Sie im Explorer alle verbleibenden Dateien aus den Xamarin Visual Studio-Erweiterungsordnern (alle Versionen einschließlich _Programmdateien_ und _Programmdateien (x86)_):
 
     _"C:"\\Programmdateien\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\Erweiterungen\\Xamarin_
 
-3.  Visual Studio MEF-Komponente Cacheverzeichnis sowie zu löschen:
+3.  Visual Studio MEF-Komponente Cacheverzeichnis ebenfalls zu löschen:
 
-    _%LocalAppData%\\Microsoft\\VisualStudio\\1\*.0\\ComponentModelCache_
+    _%LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*.0\\ComponentModelCache_
 
-    Diesen Schritt selbst ist häufig ausreichend, um Fehler zu beheben, z. B.:
+    Tatsächlich ist dieser Schritt allein oft ausreichend, um Fehler zu beheben, z. B.:
 
-    -   "Das Paket"XamarinShellPackage"wurde nicht ordnungsgemäß geladen"
+    -   "Das Paket 'XamarinShellPackage' wurde nicht ordnungsgemäß geladen"
 
-    -   "... Die Projektdatei kann nicht geöffnet werden. Es besteht ein fehlender Projektuntertyp"
+    -   "Die Projektdatei... kann nicht geöffnet werden. Es gibt einem Projektuntertyp fehlt"
 
     -   "Objektverweis nicht auf eine Instanz eines Objekts festgelegt.  at Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"
 
@@ -44,17 +44,17 @@ ms.locfileid: "33917667"
 
     -   "LegacySitePackage Fehler für Paket" (in Visual Studio _ActivityLog.xml_)
 
-    (Siehe auch die [MEF-Komponente-Cache leeren](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd) Visual Studio-Erweiterung.  Und finden Sie unter [Fehler 40781 Kommentar 19](https://bugzilla.xamarin.com/show_bug.cgi?id=40781#c19) etwas mehr Kontext zu diesem upstream Problem in Visual Studio, die diese Fehler verursachen können.)
+    (Siehe auch die [löschen MEF-Komponentencache](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd) Visual Studio-Erweiterung.  Und [Fehler 40781, Kommentar 19](https://bugzilla.xamarin.com/show_bug.cgi?id=40781#c19) für ein wenig mehr Kontext zu einem upstream-Problem in Visual Studio, die diese Fehler verursachen können.)
 
-4.  Überprüfen Sie auch der _VirtualStore_ Directory, um festzustellen, ob Windows eine u. u. bei gespeicherten überlagern Sie die Dateien für die _Erweiterungen\\Xamarin_ oder _ComponentModelCache_Verzeichnisse vorhanden:
+4.  Überprüfen Sie auch der _VirtualStore_ Directory, um festzustellen, ob Windows eine u. u. bei gespeicherten überlagerungsdateien für die _Erweiterungen\\Xamarin_ oder _ComponentModelCache_Verzeichnisse vorhanden:
 
-    _%LocalAppData%\\VirtualStore_
+    _%LOCALAPPDATA%\\VirtualStore_
 
 5.  Öffnen Sie den Registrierungs-Editor (`regedit`).
 
-6.  Suchen Sie nach dem folgenden Schlüssel:
+6.  Suchen Sie nach den folgenden Schlüssel:
 
-    _HKEY\_lokale\_Computer\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
+    _HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
 
 7.  Suchen und löschen Sie alle Einträge, die diesem Muster entsprechen:
 
@@ -62,9 +62,9 @@ ms.locfileid: "33917667"
 
 8.  Suchen Sie nach diesem Schlüssel:
 
-    _HKEY\_aktuelle\_Benutzer\\Software\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager ab\\PendingDeletions_
+    _HKEY\_CURRENT\_USER\\Software\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager\\PendingDeletions_
 
-9.  Löschen Sie alle Einträge, die zu Xamarin gehören könnten.  Beispielsweise verwendet es folgt eine, die in früheren Versionen von Xamarin Probleme verursachen:
+9.  Löschen Sie alle Einträge, die zu Xamarin gehören könnten.  Beispielsweise verwendet hier ein, um Probleme in früheren Versionen von Xamarin zu verursachen:
 
     _Mono.VisualStudio.Shell,1.0_
 
@@ -77,20 +77,20 @@ ms.locfileid: "33917667"
 
 11. Starten Sie den Computer neu.
 
-12. Installieren Sie die aktuelle stabile Version des Xamarin mithilfe von [visualstudio.com](https://visualstudio.com/xamarin/).
+12. Installieren Sie die aktuelle stabile Version von Xamarin unter Verwendung von [visualstudio.com](https://visualstudio.com/xamarin/).
 
-## <a name="additional-troubleshooting-steps-for-package-did-not-load-correctly"></a>Weitere Schritte zur Fehlerbehebung für "Paket nicht ordnungsgemäß geladen wurden"
+## <a name="additional-troubleshooting-steps-for-package-did-not-load-correctly"></a>Zusätzliche Schritte zur Problembehandlung für "Paket nicht ordnungsgemäß geladen"
 
 Hier sind einige zusätzliche Schritte, um zu versuchen, in Fällen, in denen die oben genannten Schritte nicht den Fehler "Paket wurde nicht ordnungsgemäß geladen" beheben.
 
 1.  Erstellen Sie ein neues Windows-Benutzerkonto an.
 
-2.  Überprüfen Sie, ob die Xamarin für Visual Studio-Erweiterungen ohne Fehler für den neuen Benutzer laden.
+2.  Überprüfen Sie, ob Xamarin Visual Studio-Erweiterungen ohne Fehler für den neuen Benutzer laden.
 
-3.  Wenn die Erweiterungen ordnungsgemäß geladen werden, ist das Problem wahrscheinlich durch einige der gespeicherten Einstellungen für den ursprünglichen Benutzer verursacht:
+3.  Wenn die Erweiterungen nicht ordnungsgemäß geladen, wird das Problem wahrscheinlich durch einige der gespeicherten Einstellungen für den ursprünglichen Benutzer ausgelöst:
 
     -   **Im Explorer** – _%LocalAppData%\\Microsoft\\VisualStudio\\1\*.0_
-    -   **Klicken Sie in Regedit** – _HKEY\_aktuelle\_Benutzer\\Software\\Microsoft\\VisualStudio\\1\*.0_
-    -   **Klicken Sie in Regedit** – _HKEY\_aktuelle\_Benutzer\\Software\\Microsoft\\VisualStudio\\1\*.0\_Config_
+    -   **Im Registrierungs-Editor** – _HKEY\_aktuelle\_Benutzer\\Software\\Microsoft\\VisualStudio\\1\*.0_
+    -   **Im Registrierungs-Editor** – _HKEY\_aktuelle\_Benutzer\\Software\\Microsoft\\VisualStudio\\1\*.0\_Config_
 
-4.  Wenn diese gespeicherte Einstellungen tatsächlich das Problem zu sein scheinen, können Sie versuchen, sie sichern und löschen sie.
+4.  Wenn diese gespeicherte Einstellungen tatsächlich das Problem angezeigt werden, können Sie versuchen, sie sichern, und klicken Sie dann löschen.

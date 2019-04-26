@@ -1,5 +1,5 @@
 ---
-title: Wie kann ich die Android-Unterstützungsbibliotheken erforderlich, die für die Xamarin.Android.Support-Pakete manuell installieren?
+title: Wie kann ich die Android-Unterstützungsbibliotheken, die für die Xamarin.Android.Support-Pakete erforderlich sind, manuell installieren?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A9CB8CA8-8A6D-405E-B84C-A16CE452C0F7
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 84ee33fe174c01656144e55bc3cbba7c773950fd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153433"
 ---
-# <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>Wie kann ich die Android-Unterstützungsbibliotheken erforderlich, die für die Xamarin.Android.Support-Pakete manuell installieren?
+# <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>Wie kann ich die Android-Unterstützungsbibliotheken, die für die Xamarin.Android.Support-Pakete erforderlich sind, manuell installieren?
 
 ## <a name="example-steps-for-xamarinandroidsupportv4"></a>Beispielschritte für Xamarin.Android.Support.v4 
 
@@ -55,7 +55,7 @@ F16A3455987DBAE5783F058F19F7FCDF
 
 Kopie **android\_m2repository.zip** in die **%LocalAppData%\\Xamarin\\zips\\**  Ordner. Benennen Sie die Datei, um die MD5-Hash aus dem vorherigen Schritt berechnen MD5-Hash entscheiden. Zum Beispiel:
 
-**%LocalAppData%\\Xamarin\\zips\\F16A3455987DBAE5783F058F19F7FCDF.zip**
+**%LOCALAPPDATA%\\Xamarin\\zips\\F16A3455987DBAE5783F058F19F7FCDF.zip**
 
 (Optional) Entzippen Sie die Datei in **%LocalAppData%\\Xamarin\\Xamarin.Android.Support.v4\\23.4.0.0\\Inhalt\\**  (Erstellen einer **Inhalt\\m2repository** Unterverzeichnis). Wenn Sie diesen Schritt überspringen, klicken Sie dann dauert der erste Build, der die Bibliothek verwendet ein wenig länger, da sie benötigen, um diesen Schritt abzuschließen.
 Die Versionsnummer für das Unterverzeichnis (**23.4.0.0** in diesem Beispiel) ist nicht ganz dasselbe wie das NuGet-Paket-Version. Sie können `ildasm` finden Sie die richtige Versionsnummer:

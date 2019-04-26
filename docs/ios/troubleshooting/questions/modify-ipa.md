@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61420877"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Kann ich Dateien hinzufügen oder Entfernen von Dateien aus einer IPA-Datei nach der Erstellung in Visual Studio?
 
@@ -46,7 +46,7 @@ In diesem Beispiel wird davon ausgegangen, dass der Name des Xamarin.iOS-Projekt
 
 9.  Löschen Sie die gewünschten Dateien aus dem `.ipa`. Sie können entweder in den Papierkorb, die mit dem Finder verschieben oder löschen Sie sie in der Befehlszeile mit `Terminal.app`. Zum Anzeigen des Inhalts der `Payload/iPhone` im Finder zeigen, Strg + Klick die Datei und wählen Sie **Paketinhalt anzeigen**.
 
-10.  Mit den gleichen allgemeinen Ansatz, wie in Schritt 3, suchen Sie nach der Protokolldatei unter `~/Library/Logs/Xamarin/MonoTouchVS/` , die beide den Namen des Projekts ist und die `generated session id` im Namen: ![](modify-ipa-images/build-log.png "finden Sie im Finder zeigen das Buildprotokoll für Projekt")
+10.  Mit den gleichen allgemeinen Ansatz, wie in Schritt 3, suchen Sie nach der Protokolldatei unter `~/Library/Logs/Xamarin/MonoTouchVS/` , die beide den Namen des Projekts ist und die `generated session id` im Namen: ![](modify-ipa-images/build-log.png "Suchen Sie das Projekt Buildprotokoll im Finder zeigen")
 
 11.  Öffnen Sie das Buildprotokoll aus Schritt 10, z. B. indem Sie darauf doppelklicken.
 
@@ -88,4 +88,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 Und der App Store-Überprüfungsprozess meldet eine ähnliche Fehlermeldung angezeigt:
 
-> Fehler ITMS-90035: "Ungültige Signatur. Eine versiegelte Ressource ist nicht vorhanden oder ungültig. Die Binärdatei im Pfad [iPhoneApp1.app/iPhoneApp1] enthält eine ungültige Signatur. Stellen Sie sicher, dass Sie Ihre Anwendung ein verteilungszertifikat, nicht auf ein ad-hoc-Zertifikat oder ein Entwicklungszertifikat angemeldet haben. Stellen Sie sicher, dass die Einstellungen für die Codesignatur in Xcode auf der Zielebene (die alle Werte auf Projektebene außer Kraft setzen) korrekt sind. Darüber hinaus stellen Sie sicher, dass das Paket, das Sie hochladen erstellt wurde, verwenden ein Ziel für die Veröffentlichung in Xcode kein simulatorziel. Wenn Sie sicher, dass Ihre Einstellungen für die Codesignatur korrekt sind sind, wählen Sie "Clean All" in Xcode, löschen Sie das Verzeichnis "Build" im Finder und erstellen Sie Ihr Ziel Version neu. Weitere Informationen finden Sie in [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> ERROR ITMS-90035: "Ungültige Signatur. Eine versiegelte Ressource ist nicht vorhanden oder ungültig. Die Binärdatei im Pfad [iPhoneApp1.app/iPhoneApp1] enthält eine ungültige Signatur. Stellen Sie sicher, dass Sie Ihre Anwendung ein verteilungszertifikat, nicht auf ein ad-hoc-Zertifikat oder ein Entwicklungszertifikat angemeldet haben. Stellen Sie sicher, dass die Einstellungen für die Codesignatur in Xcode auf der Zielebene (die alle Werte auf Projektebene außer Kraft setzen) korrekt sind. Darüber hinaus stellen Sie sicher, dass das Paket, das Sie hochladen erstellt wurde, verwenden ein Ziel für die Veröffentlichung in Xcode kein simulatorziel. Wenn Sie sicher, dass Ihre Einstellungen für die Codesignatur korrekt sind sind, wählen Sie "Clean All" in Xcode, löschen Sie das Verzeichnis "Build" im Finder und erstellen Sie Ihr Ziel Version neu. Weitere Informationen finden Sie in [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

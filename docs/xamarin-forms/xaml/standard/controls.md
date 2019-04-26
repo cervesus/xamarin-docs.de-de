@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/15/2017
 ms.openlocfilehash: b9bf0e1ba14f4e8584bfd8492776ac7c8668df87
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61175177"
 ---
 # <a name="xaml-standard-preview-controls"></a>Steuerelemente für XAML-Standard (Vorschau)
 
@@ -24,10 +24,10 @@ Es gibt auch eine Liste der Steuerelemente, die neue Namen von Eigenschaften und
 
 ## <a name="controls"></a>Steuerelemente
 
-|Xamarin.Forms|XAML-Standard|
+|Xamarin.Forms|XAML Standard|
 |--- |--- |
 |Frame|Rahmen|
-|Zeitauswahl|ComboBox|
+|Auswahl|ComboBox|
 |ActivityIndicator|ProgressRing|
 |StackLayout|StackPanel|
 |Bezeichnung|TextBlock|
@@ -40,14 +40,14 @@ Es gibt auch eine Liste der Steuerelemente, die neue Namen von Eigenschaften und
 
 |Xamarin.Forms-Steuerelemente mit aktualisierten Eigenschaften|Xamarin.Forms-Eigenschaft oder eine Enumerationsklasse|XAML-Standard entspricht.|
 |--- |--- |--- |
-|Schaltfläche ", Eintrag, Label," DatePicker ", Editor, SearchBar, TimePicker|TextColor|Vordergrund|
+|Button, Entry, Label, DatePicker, Editor, SearchBar, TimePicker|TextColor|Vordergrund|
 |VisualElement|BackgroundColor|Hintergrund *|
 |Auswahl, Schaltfläche|BorderColor, OutlineColor|BorderBrush|
 |Schaltfläche|BorderWidth|BorderThickness|
 |ProgressBar|Status|Wert|
-|Schaltfläche ", Eintrag, Label, -Editor, SearchBar, Spanne, Schriftart|FontAttributesBold, kursiv, keine|FontStyleItalic, Normal|
+|Schaltfläche ", Eintrag, Label, -Editor, SearchBar, Spanne, Schriftart|FontAttributesBold, Italic, None|FontStyleItalic, Normal|
 |Schaltfläche ", Eintrag, Label, -Editor, SearchBar, Spanne, Schriftart|FontAttributes|FontWeights * fett, Normal|
-|InputView|KeyboardDefault "," Url "," Number "," Telefon "," Text-Chat, per E-Mail|InputScopeNameValue * Standard-Url, Anzahl, "telephoneNumber", Text, Chat, EmailNameOrAddress|
+|InputView|KeyboardDefault, Url, Number, Telephone, Text, Chat, Email|InputScopeNameValue *Default, Url, Number, TelephoneNumber, Text, Chat, EmailNameOrAddress|
 |StackPanel|StackOrientation|Ausrichtung *|
 
 > [!IMPORTANT]

@@ -1,5 +1,5 @@
 ---
-title: System.Exception AMDeviceNotificationSubscribe zurückgegeben...
+title: System.Exception AMDeviceNotificationSubscribe zurückgegeben ...
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7E4ACC7E-F4FB-46C1-8837-C7FBAAFB2DC7
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 4fb0712366422e8810a2db60d40c3b85d9f4cd82
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421943"
 ---
-# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe zurückgegeben...
+# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe zurückgegeben ...
 
 > [!IMPORTANT]
 > In früheren Versionen von Xamarin hat dieses Problem behoben wurde. Jedoch, wenn das Problem auf die neueste Version der Software auftritt, melden Sie bitte eine [neuer Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) erstellen Sie mit der Ihre vollständige versionsverwaltung Informationen "und" vollständig "Protokollausgabe.
@@ -63,4 +63,4 @@ Basierend auf den Fehler `system.log` er angezeigt wird, dass dieses Problem mit
 
 ## <a name="references"></a>Verweise
 
-*   [Fehler 11789 - MonoTouch.MobileDevice.MobileDeviceException: AMDeviceNotificationSubscribe zurückgegeben: 0xe8000063 [KEINEANTWORT gelöst]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)
+*   [Fehler 11789 - MonoTouch.MobileDevice.MobileDeviceException: AMDeviceNotificationSubscribe zurückgegeben: 0XE8000063 [AUFGELÖST NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)

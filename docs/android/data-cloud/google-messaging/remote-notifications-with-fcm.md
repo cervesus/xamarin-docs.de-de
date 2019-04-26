@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
 ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
-ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53814036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61018944"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Remotebenachrichtigungen mit Firebase Cloud Messaging
 
@@ -182,7 +182,7 @@ Der nächste Schritt besteht, zum Hinzufügen der **Google-services.json** Datei
 
 2.  Hinzufügen **Google-services.json** mit der app-Projekt.
 
-3.  Mit der rechten Maustaste **Google-services.json**.
+3.  Right-click **google-services.json**.
 
 4.  Legen Sie die **Buildvorgang** zu **GoogleServicesJson**:
 

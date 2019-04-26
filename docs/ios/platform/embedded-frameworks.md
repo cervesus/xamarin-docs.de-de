@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/05/2018
 ms.openlocfilehash: b59fd7c1a9e5f528878b90e1a76fabe5a79bab81
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946822"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Eingebettete Frameworks in Xamarin.iOS
 
@@ -70,7 +70,7 @@ Apps ohne Erweiterungen werden weiterhin mit dem Mono-Laufzeit statisch verknüp
 
 Dieses Verhalten kann vom app-Entwickler, überschrieben werden, indem Sie Folgendes als eine weitere Mtouch-Argument in iOS-Buildoptionen des Projekts hinzufügen:
 
-- `--mono:static`: Mit dem Mono-Laufzeit verknüpft statisch.
+- `--mono:static`: Verknüpft statisch mit der Mono-Laufzeit.
 - `--mono:framework`: Links mit dem Mono-Laufzeit als Framework.
 
 Ein Szenario für die Verknüpfung mit der Mono-Laufzeit als auch für apps ohne Erweiterungen Framework ist, verringern die Größe der ausführbaren Datei, um alle größeneinschränkungen zu meistern, die von die Apple für die ausführbare Datei erzwingt. Zu Referenzzwecken fügt die Mono-Laufzeit ungefähr 1,7 MB pro Architektur (da der Xamarin.iOS-8.12, jedoch seinen zwischen Versionen und auch zwischen apps unterschiedlich ist). Das Mono-Framework fügt ungefähr 2.3MB pro Architektur, die bedeutet, für eine einzelne-Architecture-app ohne Erweiterungen dass, sodass den app-Link ein Framework wird die ausführbare Datei von ~1.7MB verkleinern, aber ein ~2.3MB Framework hinzufügen, was Sie mit der Mono-Laufzeit in einer größeren app-zusammen für ~0.6MB.

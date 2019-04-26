@@ -9,11 +9,11 @@ ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
 ms.openlocfilehash: 21ff09f2af93ee46578b959111bf744ba05a74d7
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384918"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live neu laden (Vorschau)
 
@@ -119,25 +119,25 @@ Nein. In der Tat können sogar starten Sie alle Ihre unterstützten Anwendungszi
 * Erneutes Laden der gesamten app-Ressourcen (z. B. **"App.xaml"** oder freigegebenen Ressourcenverzeichnisse), app-Navigation wird zurückgesetzt. 
 * Erneutes Laden der ContentView derzeit erfordert die enthaltende Seite erneut zu laden.
 * Elemente, die AutomationId möglicherweise einen Fehler erneut laden.
-* Bearbeiten von XAML beim Debuggen von UWP einen Absturz zur Laufzeit verursachen. Problemumgehung: Verwenden Sie **Starten ohne Debuggen (STRG + F5)** anstelle von **starten (F5) Debuggen**.
+* Bearbeiten von XAML beim Debuggen von UWP einen Absturz zur Laufzeit verursachen. Problemumgehung: Verwendung **Starten ohne Debuggen (STRG + F5)** anstelle von **starten (F5) Debuggen**.
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
 ### <a name="error-codes"></a>Fehlercodes
 
-* **XLR001**: *das aktuelle Projekt verweist auf die "Xamarin.LiveReload" NuGet-Paket-Version [VERSION], aber die Xamarin Live Reload-Erweiterung erfordert Version [VERSION].*
+* **XLR001**: *Das aktuelle Projekt verweist auf die "Xamarin.LiveReload" NuGet-Paket-Version [VERSION], aber die Xamarin Live Reload-Erweiterung erfordert Version [VERSION].*
 
   Um eine schnelle Iteration und Weiterentwicklung von Live Reload-Funktion zu ermöglichen, müssen das Nuget-Paket und die Visual Studio-Erweiterung genau übereinstimmen. Aktualisieren Sie Ihr Nuget-Paket, auf die gleiche Version der Erweiterung, die Sie installiert haben.
 
-* **XLR002**: *Live Reload erfordert mindestens die Eigenschaft "MqttHostname" Wenn Sie über die Befehlszeile zu erstellen. Alternativ festlegen Sie 'EnableLiveReload' auf 'False', um das Feature deaktivieren.*
+* **XLR002**: *Live neu laden erfordert mindestens die Eigenschaft "MqttHostname" Wenn Sie über die Befehlszeile zu erstellen. Alternativ festlegen Sie 'EnableLiveReload' auf 'False', um das Feature deaktivieren.*
 
   Die Live Reload erforderlichen Eigenschaften sind nicht verfügbar, beim Erstellen von der Befehlszeile aus (oder in der continuous Integration) und muss daher explizit angegeben werden. 
 
-* **XLR003**: *Live Reload-Nuget-Paket erfordert die Installation von Xamarin Live Reload Visual Studio-Erweiterung.*
+* **XLR003**: *Live neu laden, die Nuget-Paket erfordert die Installation von Xamarin Live Reload Visual Studio-Erweiterung an.*
 
   Es wurde versucht, ein Projekt erstellen, die auf das Nuget-Paket für Live neu laden, aber die Erweiterung für Visual ist nicht installiert.  
 
-* *Ausnahme beim Laden von Assemblys: System.IO.FileNotFoundException: Assembly konnte nicht geladen "Xamarin.Live.Reload, Version = 0.3.27.0, Culture = Neutral, PublicKeyToken =".*
+* *Ausnahme beim Laden von Assemblys: System.IO.FileNotFoundException: Could not load assembly 'Xamarin.Live.Reload, Version=0.3.27.0, Culture=neutral, PublicKeyToken='.*
 
   Das Hostprojekt verwenden soll `PackageReference` anstelle von `packages.config`
 

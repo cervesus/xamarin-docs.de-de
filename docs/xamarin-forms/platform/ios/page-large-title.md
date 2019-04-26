@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: ad1c7f94467c6f32b9108ab7f6abe85d31679d3a
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60952121"
 ---
 # <a name="large-page-titles-on-ios"></a>Große Seitentitel unter iOS
 
@@ -30,7 +30,7 @@ Dieses iOS-Plattform-spezifische wird verwendet, um den Seitentitel als große T
 </NavigationPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -54,7 +54,7 @@ Vorausgesetzt, dass große Titel aktiviert sind, auf die [ `NavigationPage` ](xr
 </ContentPage>
 ```
 
-Alternativ kann das Seitenverhalten in c# mithilfe der fluent-API überschrieben werden:
+Alternativ kann das Seitenverhalten in C# mithilfe der fluent-API überschrieben werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

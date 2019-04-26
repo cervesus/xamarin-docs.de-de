@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: f14014b257ee5061b6dd074719c3ca27577c6013
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60854939"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>VisualElement Zugriffstasten für Windows
 
@@ -49,7 +49,7 @@ Diese plattformspezifischen UWP wird verwendet, um Geben Sie eine Zugriffstaste 
 </TabbedPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

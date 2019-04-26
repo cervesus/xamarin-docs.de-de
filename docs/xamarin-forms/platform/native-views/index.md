@@ -1,6 +1,6 @@
 ---
-title: Systemeigene Ansichten in Xamarin.Forms
-description: Systemeigene Ansichten von iOS, Android und die universelle Windows-Plattform (UWP) können direkt von Xamarin.Forms verwiesen werden, und können sie mit Xamarin.Forms Sichten interagieren.
+title: Native Ansichten in Xamarin.Forms
+description: Native Ansichten von iOS, Android und die universelle Windows-Plattform (UWP) können direkt von Xamarin.Forms verwiesen werden, und sie können mit Xamarin.Forms-Ansichten interagieren.
 ms.prod: xamarin
 ms.assetid: 2294a023-d763-41de-a9da-c2bfc239a132
 ms.technology: xamarin-forms
@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
 ms.openlocfilehash: b2ce371767b5f22af421ab99cdb291b2dbcf1143
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290530"
 ---
-# <a name="native-views-in-xamarinforms"></a>Systemeigene Ansichten in Xamarin.Forms
+# <a name="native-views-in-xamarinforms"></a>Native Ansichten in Xamarin.Forms
 
-_Systemeigene Ansichten von iOS, Android und die universelle Windows-Plattform (UWP) können direkt von Xamarin.Forms verwiesen werden. Eigenschaften und Ereignishandler für systemeigene Sichten festgelegt werden können, und sie können mit Xamarin.Forms Sichten interagieren._
+_Native Ansichten von iOS, Android und die universelle Windows-Plattform (UWP) können direkt von Xamarin.Forms verwiesen werden. Eigenschaften und Ereignishandler für native Ansichten festgelegt werden können, und sie können mit Xamarin.Forms-Ansichten interagieren._
 
 ## <a name="native-views-in-xamlxamlmd"></a>[Native Ansichten in XAML](xaml.md)
 
-Systemeigene Ansichten von iOS-, Android- und uwp-können direkt von Xamarin.Forms-Seiten, die mit XAML erstellt verwiesen werden.
+Native Ansichten von iOS-, Android- und UWP können direkt von Xamarin.Forms-Seiten, die mit XAML erstellt verwiesen werden.
 
 ## <a name="native-views-in-ccodemd"></a>[Native Ansichten in C#](code.md)
 
-Systemeigene Ansichten von iOS-, Android- und uwp-können direkt von Xamarin.Forms-Seiten, die erstellt wurden, mithilfe von c# verwiesen werden.
+Native Ansichten von iOS-, Android- und UWP können direkt von Xamarin.Forms-Seiten, die mit c# erstellte verwiesen werden.
 
 
 ## <a name="related-links"></a>Verwandte Links

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 13c5ae3fac76ec1ec1a0ade135d5919403066226
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61409833"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Arbeiten mit TvOS-Warnungen in Xamarin
 
@@ -59,7 +59,7 @@ Apple hat die folgenden Vorschläge für das Hinzufügen von Schaltflächen zu e
 
 <a name="Displaying-an-Alert" />
 
-## <a name="displaying-an-alert"></a>Eine Warnung
+## <a name="displaying-an-alert"></a>Anzeigen einer Warnung
 
 Um eine Warnung angezeigt wird, erstellen Sie eine Instanz von der `UIAlertViewController` und konfigurieren Sie sie durch Hinzufügen von Aktionen (Schaltflächen), und wählen den Stil der Warnung. Der folgende Code zeigt z. B. eine Warnung OK/Abbrechen:
 

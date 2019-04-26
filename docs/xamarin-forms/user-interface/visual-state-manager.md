@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
 ms.openlocfilehash: 10d62ea050296eb6d36c9861b757ca44d3a2e452
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61026135"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Die Xamarin.Forms visuellen Zustands-Manager
 
@@ -253,17 +253,17 @@ Markup etwa wie folgt, ist die Grundlage für die **VSM %.ls'-Sicht** auf der Se
 
 Beachten Sie, dass die zweite `Entry` verfügt auch über eine `DataTrigger` als Teil seiner `Trigger` Auflistung. Dies bewirkt, dass die `Entry` deaktiviert werden soll, bis etwas in die dritte eingegeben wird `Entry`. So sieht die Seite beim Start, die unter iOS, Android und die universelle Windows-Plattform (UWP):
 
-[![VSM %.*ls'-Sicht: deaktiviert](vsm-images/VsmOnViewDisabled.png "VSM auf Ansicht – Profiler-deaktiviert")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
+[![VSM für Sicht: Deaktiviert](vsm-images/VsmOnViewDisabled.png "VSM auf Ansicht – Profiler-deaktiviert")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
 Der aktuelle visuelle Zustand ist "Disabled" also den Hintergrund des zweiten `Entry` wird auf IOS- und Android-Bildschirme rosa. Die UWP-Implementierung von `Entry` lässt kein Festlegen von Hintergrund Farbe, wenn die `Entry` ist deaktiviert. 
 
 Wenn Sie Text eingeben, in die dritte `Entry`, die zweite `Entry` Schalter in den Zustand "Normal", und der Hintergrund ist jetzt Gelbgrün:
 
-[![VSM %.*ls'-Sicht: Normal](vsm-images/VsmOnViewNormal.png "VSM auf Ansicht – normal")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
+[![VSM für Sicht: Normale](vsm-images/VsmOnViewNormal.png "VSM auf Ansicht – normal")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
 Wenn Sie die zweite berühren `Entry`, es den Eingabefokus erhält. Er wechselt in den Zustand "Fokussiert" und zweimal Höhe erweitert:
 
-[![VSM %.*ls'-Sicht: mit Fokus](vsm-images/VsmOnViewFocused.png "VSM auf Ansicht – mit Fokus")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
+[![VSM für Sicht: Schwerpunkt](vsm-images/VsmOnViewFocused.png "VSM auf Ansicht – mit Fokus")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
 Beachten Sie, dass die `Entry` Gelbgrün Hintergrund wird nicht beibehalten werden, wenn es den Eingabefokus erhält. Wie der Visual State Manager zwischen visuellen Zuständen wechselt, sind die Eigenschaften, die festlegen, indem der vorherige Status nicht festgelegt. Denken Sie daran, die das visuelle Zustände schließen sich gegenseitig aus. Der Zustand "Normal" bedeutet nicht nur, dass die `Entry` aktiviert ist. Dies bedeutet, dass die `Entry` aktiviert ist und keine Eingabefokus. 
 
@@ -426,7 +426,7 @@ VisualStateManager.GoToState(this, "Focused");
 
 Dies ist der einzige Visual State-Manager-Code, die Sie in finden der `VisualElement` Klasse. Da `GoToState` für jedes Objekt, das basierend auf jede abgeleitete Klasse heißt `VisualElement`, können Sie mit der Visual State Manager `VisualElement` Objekt auf diese Änderungen reagieren.
 
-Interessanterweise, der Namen des der visuellen Zustandsgruppe "CommonStates" wird nicht explizit verwiesen `VisualElement`. Der Gruppenname ist nicht Teil der API für den visuellen Status-Manager. In einem der zwei-Beispielprogramm, das bisher gezeigt können Sie den Namen der Gruppe aus "CommonStates" zu einem anderen ändern, und das Programm weiterhin funktionieren. Der Gruppenname ist lediglich eine allgemeine Beschreibung der Zustände in der Gruppe. Es ist implizit klar, dass die visuellen Zustände in einer beliebigen Gruppe sich gegenseitig ausschließende sind: ein Zustand, und nur ein Status ist dem neuesten Stand zu einem beliebigen Zeitpunkt.
+Interessanterweise, der Namen des der visuellen Zustandsgruppe "CommonStates" wird nicht explizit verwiesen `VisualElement`. Der Gruppenname ist nicht Teil der API für den visuellen Status-Manager. In einem der zwei-Beispielprogramm, das bisher gezeigt können Sie den Namen der Gruppe aus "CommonStates" zu einem anderen ändern, und das Programm weiterhin funktionieren. Der Gruppenname ist lediglich eine allgemeine Beschreibung der Zustände in der Gruppe. Es wird implizit davon ausgegangen, dass die visuellen Zustände in einer beliebigen Gruppe sich gegenseitig ausschließende sind: Ein Zustand, und nur ein Status ist der aktuelle zu einem beliebigen Zeitpunkt.
 
 Wenn Sie eigene visuelle Zustände implementieren möchten, müssen Sie zum Aufrufen `VisualStateManager.GoToState` von Code. Den meisten Fällen stellen Sie diesen Aufruf aus der CodeBehind-Datei der Page-Klasse.
 
@@ -492,11 +492,11 @@ VSM Markup angefügt ist, mit dem zweiten `Label` (mit dem Namen `helpLabel`) un
 
 Wenn die `Entry` enthält keine gültige Telefonnummer an, und klicken Sie dann der aktuelle Status "Ungültig" ist, und damit die zweite `Label` sichtbar ist und die `Button` deaktiviert ist:
 
-[![VSM-Überprüfung: Ungültiger Status](vsm-images/VsmValidationInvalid.png "VSM-Überprüfung: Ungültiger")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
+[![VSM-Überprüfung: Ungültiger](vsm-images/VsmValidationInvalid.png "VSM-Überprüfung: Ungültiger")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
 Wenn eine gültige Telefonnummer eingegeben wird, klicken Sie dann der aktuelle Status ist "Gültig". Die zweite `Entry` nicht mehr angezeigt wird und die `Button` ist jetzt aktiviert:
 
-[![VSM-Überprüfung: Kontostände](vsm-images/VsmValidationValid.png "VSM-Überprüfung: ungültig")](vsm-images/VsmValidationValid-Large.png#lightbox)
+[![VSM-Überprüfung: Gültige Status](vsm-images/VsmValidationValid.png "VSM-Überprüfung: ungültig")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
 Die Code-Behind-Datei wird ermittelt, für die Behandlung der `TextChanged` Ereignis aus der `Entry`. Der Handler verwendet einen regulären Ausdruck, um festzustellen, ob die Eingabezeichenfolge gültig ist. Die Methode in der CodeBehind-Datei mit dem Namen `GoToState` Ruft die statische `VisualStateManager.GoToState` -Methode für beide `helpLabel` und `submitButton`:
 
@@ -529,7 +529,7 @@ Beachten Sie auch, dass die `GoToState` Methode wird vom Konstruktor initialisie
 
 Beachten Sie, dass die Code-Behind-Datei berücksichtigen muss jedes Objekt auf der Seite, die betroffen sind diese visuelle Zustände, und rufen Sie `VisualStateManager.GoToState` für jedes dieser Objekte. In diesem Beispiel ist es nur zwei Objekte (die `Label` und `Button`), es kann jedoch einige weitere.
 
-Vielleicht fragen Sie sich: Wenn die Code-Behind-Datei jedes Objekt auf der Seite verweisen muss, die von dieser visuellen Zustände betroffen ist, warum kann nicht Code-Behind-Datei einfach Zugriff auf die Objekte direkt? Sie könnten sicherlich. Der Vorteil der Verwendung der VSM ist jedoch, dass Sie, wie visuelle Elemente steuern können in anderen Zustand vollständig in XAML, dadurch alle von den UI-Entwurf an einem Ort bleibt reagieren. Dadurch wird die visuelle Darstellung der Einstellung durch den Zugriff auf visuelle Elemente direkt aus der CodeBehind-vermieden.
+Sie Fragen sich vielleicht: Wenn die Code-Behind-Datei jedes Objekt auf der Seite verweisen muss, die von dieser visuellen Zustände betroffen ist, zugreifen kann nicht warum Code-Behind-Datei einfach die Objekte direkt? Sie könnten sicherlich. Der Vorteil der Verwendung der VSM ist jedoch, dass Sie, wie visuelle Elemente steuern können in anderen Zustand vollständig in XAML, dadurch alle von den UI-Entwurf an einem Ort bleibt reagieren. Dadurch wird die visuelle Darstellung der Einstellung durch den Zugriff auf visuelle Elemente direkt aus der CodeBehind-vermieden.
 
 Es kann verlockend sein, erwägen eine Ableitung von einer Klasse von `Entry` und vielleicht Definieren einer Eigenschaft, die Sie an eine externe Überprüfungsfunktion festlegen können. Die abgeleitete Klasse `Entry` kann dann aufrufen, die `VisualStateManager.GoToState` Methode. Dies funktioniert gut, aber nur, wenn die `Entry` das einzige Objekt, das die verschiedenen visuellen Zustände betroffen wurden. In diesem Beispiel eine `Label` und `Button` sind ebenfalls betroffen sein. Es gibt keine Möglichkeit für VSM Markup angefügt ein `Entry` zum Steuern von anderen Objekten auf der Seite und keine Möglichkeit, für VSM Markup auf andere Objekte, um eine Änderung in den visuellen Zustand aus einem anderen Objekt zu verweisen angefügt.
 

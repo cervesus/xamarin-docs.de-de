@@ -1,5 +1,5 @@
 ---
-title: Erstellen moderner MacOS-Apps
+title: Erstellen moderner macOS-Apps
 description: Dieser Artikel behandelt einige Tipps, Funktionen und Techniken, mit denen ein Entwickler eine moderner MacOS-app in Xamarin.Mac zu erstellen.
 ms.prod: xamarin
 ms.assetid: F20EE590-246E-40EB-B309-D9D8C090C7F1
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 53bfc9f147b6cf369b8f5ce8d1257dbaf6b0f807
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032828"
 ---
-# <a name="building-modern-macos-apps"></a>Erstellen moderner MacOS-Apps
+# <a name="building-modern-macos-apps"></a>Erstellen moderner macOS-Apps
 
 _Dieser Artikel behandelt einige Tipps, Funktionen und Techniken, mit denen ein Entwickler eine moderner MacOS-app in Xamarin.Mac zu erstellen._
 

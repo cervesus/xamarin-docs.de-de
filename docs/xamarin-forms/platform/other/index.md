@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
 ms.openlocfilehash: 6fa7d0136e4ecc4563da32f28db1b38aead6baaa
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023634"
 ---
 # <a name="xamarinforms-other-platforms"></a>Xamarin.Forms andere Plattformen
 
 Xamarin.Forms unterstützt zusätzliche Plattformen über iOS-, Android- und Windows.
 
-## <a name="gtkgtkmd"></a>[GTK#](gtk.md)
+## <a name="gtkgtkmd"></a>[GTK](gtk.md)
 
 Xamarin.Forms verfügt jetzt über eine vorschauunterstützung für GTK#-apps.
 

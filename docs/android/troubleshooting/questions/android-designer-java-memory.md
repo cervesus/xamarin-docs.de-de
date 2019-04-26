@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
 ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946737"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Anpassen der Java-Speicherparameter für Android Designer
 
@@ -24,9 +24,9 @@ Beginnend mit Xamarin Studio 5.7.2.7 (und höher, Visual Studio für Mac) und Vi
 
 Die folgenden Eigenschaftennamen entsprechen, zu dem angegebenen Java [Befehlszeilenoption](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html)
 
-- **AndroidDesignerJavaRendererMinMemory** Xms -
+- **AndroidDesignerJavaRendererMinMemory** -Xms
 
-- **AndroidDesignerJavaRendererMaxMemory** - Xmx
+- **AndroidDesignerJavaRendererMaxMemory** -Xmx
 
 - **AndroidDesignerJavaRendererPermSize** -XX:MaxPermSize
 
@@ -73,7 +73,7 @@ Die folgenden Eigenschaftennamen entsprechen, zu dem angegebenen Java [Befehlsze
 
 4.  Bearbeiten der `.userprefs` -Datei in einem Text-Editor.
 
-5.  Suchen Sie das vorhandene XML-Element mit dem folgenden Format ein. Der letzte Teil der Name dieses Elements wird dem Namen des Projekts entsprechen: "AndroidApplication1" in diesem Beispiel:
+5.  Suchen Sie das vorhandene XML-Element mit dem folgenden Format ein. Der letzte Teil der Name dieses Elements wird mit dem Namen des Projekts übereinstimmen: "AndroidApplication1" in diesem Beispiel:
 
     ```xml
     <MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >

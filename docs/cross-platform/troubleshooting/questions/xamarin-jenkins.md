@@ -8,11 +8,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 06/05/2018
 ms.openlocfilehash: c2e409b796d5ef2525079e02aafdd0c6e8db5d81
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61158935"
 ---
 # <a name="why-isnt-jenkins-supported-by-microsoft"></a>Warum wird Jenkins nicht von Microsoft unterstützt?
 
@@ -32,7 +32,7 @@ Während der oben genannten Jenkins Probleme direkt von unserem Team nicht unter
 
 Die Fehlermeldung für dieses Problem lautet etwa wie folgt:
 
-> Fehler XA5205: der Android SDK-Verzeichnis wurde nicht gefunden. Legen Sie über /p:AndroidSdkDirectory
+> error XA5205: Android SDK-Verzeichnis konnte nicht gefunden werden. Legen Sie über /p:AndroidSdkDirectory
 
 Die Optionen zum Festlegen der SDK-Speicherorts variieren je nach den genauen Android für Jenkins-Plug-in, die Sie verwenden; eine gute Möglichkeit zum Konfigurieren dieses gesucht ist im Handbuch-Plug-in. Beispiel: die [-Plug-In für Android-Emulator](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration) sucht automatisch nach dem SDK, aber wenn es nicht gefunden werden; der Speicherort kann auch über die Systemkonfiguration der Jenkins-Seite,-Plug-in festgelegt werden. 
 
@@ -51,6 +51,6 @@ Die Fehlermeldungen für dieses Problem sind in der Regel etwa
 
 oder
 
-> Fehler: Die Starter Edition von Xamarin.iOS unterstützt kein erstellen, die außerhalb von Xamarin Studio 
+> Fehler: Erstellen von außerhalb von Xamarin Studio unterstützt die Starter Edition von Xamarin.iOS nicht. 
 
 Die häufigste Ursache für dieses Szenario ist die Verwendung von Jenkins, indem Sie sich mit einem Benutzerkonto nicht Ihre Xamarin-Lizenz zugeordnet. Die einfachste Möglichkeit zum Auflösen von diesem ist Jenkins direkt über das Benutzerkonto, das als app installiert. Dieser Prozess und einige zusätzliche Aspekte berücksichtigt werden hier beschrieben: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)

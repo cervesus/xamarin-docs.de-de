@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
 ms.openlocfilehash: 4cb3e13ebbe3d9e8aed153528a35ab16c92e2145
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153323"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>Wie löse ich einen PathTooLongException-Fehler?
 
@@ -22,7 +22,7 @@ ms.locfileid: "50108703"
 Generierte Pfadnamen in eine Xamarin.Android-Projekt können ziemlich lang sein.
 Beispielsweise kann ein Pfad wie folgt während eines Builds generiert:
 
-**"C:"\\einige\\Directory\\Lösung\\Projekt\\Obj\\Debuggen\\__Library_projects__ \\ Xamarin.Forms.Platform.Android\\Library_project_imports\\Assets**
+**C:\\Some\\Directory\\Solution\\Project\\obj\\Debug\\__library_projects__\\Xamarin.Forms.Platform.Android\\library_project_imports\\assets**
 
 Auf Windows (die maximale Länge für einen Pfad, in denen ist [260 Zeichen](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx)), eine **PathTooLongException** konnte beim Erstellen des Projekts, ein generierter Pfad überschreitet die maximale Länge erstellt werden. 
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/03/2017
 ms.openlocfilehash: 85b0c9b0688e9fb310a8f427018a02fe629404bb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61225542"
 ---
 # <a name="watchos-complications-in-xamarin"></a>WatchOS Komplikationen in Xamarin
 
@@ -24,7 +24,7 @@ Beachten Sie, dass jede WatchOS-Anwendung eine Schwierigkeit besteht nur aufweis
 
 Lesen Sie zunächst [Apple Dokumentation](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html) zu bestimmen, ob Ihre app für eine Komplikation geeignet ist. Es gibt 5 `CLKComplicationFamily` Typen von Anzeigen zur Auswahl:
 
-[![](complications-images/all-complications-sml.png "Die 5 CLKComplicationFamily-Typen: zirkuläre klein, Modular Small, Modular Large, kleine Schritte über diese Zweckmäßigkeit, zweckmäßigen Groß")](complications-images/all-complications.png#lightbox)
+[![](complications-images/all-complications-sml.png "Die 5 CLKComplicationFamily-Typen, die verfügbar ist: Zirkulär Small Modular Small, modulare große, zweckmäßigen kleine, große zweckmäßigen")](complications-images/all-complications.png#lightbox)
 
 Apps können nur eine Art oder alle fünf, je nach den angezeigten Daten implementieren.
 Sie können auch Zeitreise, geben Sie Werte für vergangenen oder zukünftigen Zeiten an, wie der Benutzer die digitale Crown unterstützen.

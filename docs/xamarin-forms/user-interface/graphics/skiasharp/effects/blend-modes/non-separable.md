@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 9b94db14a197ca31be42e8712c2170fd66b86579
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61162409"
 ---
 # <a name="the-non-separable-blend-modes"></a>Die nicht trennbare Füllmethoden einheitlich
 
@@ -28,7 +28,7 @@ Um die nicht trennbare Füllmethoden einheitlich zu verstehen, ist es erforderli
 
 Das Modell der HSL-Farbe wurde in diesem Artikel erläuterten [ **Integrieren von Xamarin.Forms** ](../../basics/integration.md) und ein Beispielprogramm in diesem Artikel ermöglicht das Experimentieren mit HSL-Farben. Sie erstellen eine `SKColor` -Wert mithilfe der Werte für Farbton, Sättigung und Helligkeit mit der statischen [ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*) Methode.
 
-Der Farbton stellt die vorherrschende Wellenlänge der Farbe dar. Hue Werte zwischen 0 und 360 liegen, und durchlaufen Sie die primärstandorte additiv und Subtraktive: Red ist der Wert 0 (null) Gelb ist 60, Grün ist 120, Cyan ist 180, Blau ist 240 Magenta ist 300 und der Zyklus wird wieder in Rot auf 360.
+Der Farbton stellt die vorherrschende Wellenlänge der Farbe dar. Hue Werte zwischen 0 und 360 liegen und die primärstandorte additiv und Subtraktive durchlaufen: Red ist der Wert 0 (null) Gelb ist 60, Grün ist 120, Cyan ist 180, Blau ist 240 Magenta ist 300 und der Zyklus wird wieder in Rot auf 360.
 
 Es ist keine dominanten Farbe &mdash; ist z. B. die Farbe Weiß oder Schwarz oder eine grauschattierung &mdash; der Farbton ist nicht definiert und in der Regel auf 0 festgelegt. 
 
@@ -198,7 +198,7 @@ Die `SKBlendModes.Color` Mischmodus behält die Helligkeit des Ziels verwendet j
 
 Eine Anwendung dieses Blend-Modus wird in Kürze angezeigt werden.
 
-Zum Schluss die `SKBlendModes.Luminosity` Blend-Modus ist das Gegenteil von `SKBlendModes.Color`. Er behält die Hue und die Sättigung des Ziels jedoch die Helligkeit der Quelle verwendet. Die `Luminosity` Blendingmodus ist die am häufigsten mysteriöse des Batches: der Farbton und Sättigung Schieberegler Auswirkungen auf das Bild, aber auch auf die mittlere Helligkeit, das Image ist nicht eindeutig:
+Zum Schluss die `SKBlendModes.Luminosity` Blend-Modus ist das Gegenteil von `SKBlendModes.Color`. Er behält die Hue und die Sättigung des Ziels jedoch die Helligkeit der Quelle verwendet. Die `Luminosity` Blendingmodus ist die am häufigsten mysteriöse des Batches: Der Farbton und Sättigung Schieberegler Auswirkungen auf das Bild, aber auch auf die mittlere Helligkeit, das Image ist nicht eindeutig:
 
 [![Nicht trennbare Füllmethoden einheitlich - Helligkeit](non-separable-images/NonSeparableBlendModes-Luminosity.png "nicht trennbare Füllmethoden einheitlich - Helligkeit")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 

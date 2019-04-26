@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 465b4a34d54dbee92461669b16c3b8a13188bbde
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61378342"
 ---
 # <a name="databases-in-xamarinmac"></a>Datenbanken in Xamarin.Mac
 
@@ -1907,7 +1907,7 @@ EmployeeSelector.StringValue = DataSource.ValueForIndex (0);
 Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 ```
 
-## <a name="sqlitenet-orm"></a>Von SQLite.NET ORM
+## <a name="sqlitenet-orm"></a>SQLite.NET ORM
 
 Wie oben angegeben, mit der open Source [von SQLite.NET](http://www.sqlite.org) Objekt Beziehung Manager (ORM), wir können die erforderliche Menge an Code zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank erheblich reduzieren. Dies möglicherweise nicht die beste Route an, die beim Binden von Daten aufgrund von mehreren Anforderungen, die Schlüssel / Wert-Codierung und der Datenbindung für ein Objekt zu platzieren.
 
@@ -2235,4 +2235,4 @@ In diesem Artikel wird eine ausführliche Übersicht über das Arbeiten mit Date
 - [Einführung in den Themen zur Programmierung Cocoa-Bindungen](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
 - [Einführung in die Referenz für Cocoa-Bindungen](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
-- [MacOS Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS-Eingaberichtlinien](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

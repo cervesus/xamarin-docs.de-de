@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
 ms.openlocfilehash: fd48c7148aadd8d156544113e2d719295294bf40
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261272"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>Für iOS/MacOS "HttpClient" und SSL/TLS-Implementierungsauswahl
 
@@ -30,7 +30,7 @@ Anpassen der `HttpClient` , die von Ihrer app verwendet wird:
 
 1. Doppelklicken Sie auf die **Projektname** in die **Projektmappen-Explorer** um Optionen für das Projekt zu öffnen.
 2. Wechseln Sie zu der **erstellen** Einstellungen für Ihr Projekt (z. B. **iOS-Build** für eine Xamarin.iOS-app).
-3. Von der **HttpClient-Implementierung** Dropdownliste, wählen die `HttpClient` Geben Sie als eine der folgenden: **NSUrlSession** (empfohlen), **CFNetwork**, oder  **Verwaltete**.
+3. Von der **HttpClient-Implementierung** Dropdownliste, wählen die `HttpClient` Geben Sie als eine der folgenden: **Von NSUrlSession** (empfohlen), **CFNetwork**, oder **verwaltete**.
 
 [![Wählen Sie die HttpClient-Implementierung aus verwaltet, CFNetwork und von NSUrlSession](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
@@ -42,7 +42,7 @@ Anpassen der `HttpClient` , die von Ihrer app verwendet wird:
 Die `NSURLSession`-Basis Handler basiert darauf, dass die systemeigene `NSURLSession` Framework in iOS 7 und höher verfügbar. 
 **Dies ist die empfohlene Einstellung.**
 
-#### <a name="pros"></a>Experten
+#### <a name="pros"></a>Pros
 
 - Systemeigene APIs verwendet für eine bessere Leistung als auch kleinere Größe der ausführbaren Datei.
 - Unterstützung für die aktuelle Standards wie z. B. TLS 1.2.
@@ -56,7 +56,7 @@ Die `NSURLSession`-Basis Handler basiert darauf, dass die systemeigene `NSURLSes
 
 Die `CFNetwork`-Basis Handler basiert darauf, dass die systemeigene `CFNetwork` Framework in iOS 6 und höher verfügbar.
 
-#### <a name="pros"></a>Experten
+#### <a name="pros"></a>Pros
 
 - Systemeigene APIs verwendet für eine bessere Leistung als auch kleinere Größe der ausführbaren Datei.
 - Unterstützung für neuere Standards wie z. B. TLS 1.2.
@@ -71,7 +71,7 @@ Die `CFNetwork`-Basis Handler basiert darauf, dass die systemeigene `CFNetwork` 
 
 Der verwaltete Handler ist der vollständig verwaltete Handler für "HttpClient", der mit früheren Version von Xamarin geliefert wurde.
 
-#### <a name="pros"></a>Experten
+#### <a name="pros"></a>Pros
 
 - Sie verfügt über die kompatibelste Featuregruppe mit Microsoft .NET und ältere Versionen von Xamarin.
 
@@ -104,8 +104,8 @@ Dadurch können Sie einen anderen `HttpMessageHandler` aus, was in deklariert wi
 SSL (Secure Sockets Layer) und sein Nachfolger TLS (Transport Layer Security), bieten Unterstützung für HTTP und andere Netzwerkverbindungen über `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS oder des Xamarin.Mac `System.Net.Security.SslStream` Implementierung wird von Apple native SSL/TLS-Implementierung anstatt die verwaltete Implementierung von Mono aufrufen. Native Implementierung von Apple unterstützt TLS 1.2.
 
 > [!WARNING]
-> Die bevorstehende Veröffentlichung von Xamarin.Mac 4.8 unterstützen nur MacOS 10.9 oder höher.
-> Ältere Versionen von Xamarin.Mac unterstützt MacOS 10.7 oder höher, aber diese älteren Versionen von MacOS verfügen nicht über ausreichende TLS-Infrastruktur zur Unterstützung von TLS 1.2. Xamarin.Mac 4.6 oder früher verwenden, um MacOS 10.7 oder MacOS 10.8 als Ziel.
+> Die anstehende Version Xamarin.Mac 4.8 unterstützt nur macOS 10.9 oder höher.
+> Ältere Versionen von Xamarin.Mac unterstützen macOS 10.7 oder höher, aber diese älteren Versionen von MacOS verfügen nicht über ausreichende TLS-Infrastruktur zur Unterstützung von TLS 1.2. Für macOS 10.7 oder macOS 10.8 sollten Sie Xamarin.Mac 4.6 oder niedriger verwenden.
 
 ## <a name="app-transport-security"></a>App-Transportsicherheit
 

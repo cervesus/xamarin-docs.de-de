@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
 ms.openlocfilehash: cf6ab8266b0798ccbf29078313bbc7454125a1af
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61026790"
 ---
 # <a name="xamarinforms-material-visual"></a>Xamarin.Forms-Material Visual
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VisualDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VisualDemos/)
 
 [Materialdesign](https://material.io) ist ein wertendes Design-System, das von Google, das vorschreibt, die Größe, Farbe, Abstand und andere Aspekte der wie Ansichten und Layouts Aussehen und Verhalten soll, erstellt.
 

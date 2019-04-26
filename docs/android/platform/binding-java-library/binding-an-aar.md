@@ -1,5 +1,5 @@
 ---
-title: Bindung ein. ZUSÄTZLICH ZUM AAR
+title: Binden einer AAR-Datei
 description: Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen einer Xamarin.Android-Java-Bindungsbibliothek von Android. Zusätzlich zum AAR-Datei.
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
 ms.openlocfilehash: 7f71ccf4ff61c176e73be6d3855136697a5c2130
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60958106"
 ---
-# <a name="binding-an-aar"></a>Bindung ein. ZUSÄTZLICH ZUM AAR
+# <a name="binding-an-aar"></a>Binden einer AAR-Datei
 
 _Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen einer Xamarin.Android-Java-Bindungsbibliothek von Android. Zusätzlich zum AAR-Datei._
 

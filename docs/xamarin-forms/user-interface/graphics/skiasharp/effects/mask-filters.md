@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
 ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61289114"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp-Maske-Filter
 
@@ -180,9 +180,9 @@ Alle in den Screenshots bis jetzt wurde gezeigt, Weichzeichnungseffekt erstellt,
 
 [![Maskieren Blur-Experiment](mask-filters-images/MaskBlurExperiment.png "maskieren Blur-Experiment")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-Der iOS-Screenshot zeigt die `Solid` Style: Textzeichen immer noch als durchgehende schwarze Striche vorhanden sind, und dieser Text Zeichen außerhalb des Weichzeichnens hinzugefügt wird. 
+Der iOS-Screenshot zeigt die `Solid` Stil: Die Textzeichen werden weiterhin als durchgehende schwarze Striche vorhanden, und dieser Text Zeichen außerhalb des Weichzeichnens hinzugefügt wird. 
 
-Der Android-Screenshot im mittleren zeigt die `Outer` Style: Striche Zeichen selbst werden entfernt (wie die Bitmap) und des Weichzeichnens umgibt den leeren Bereich, in denen die Textzeichen Mal vorkam. 
+Der Android-Screenshot im mittleren zeigt die `Outer` Stil: Die Zeichen Striche selbst werden entfernt (wie die Bitmap) und des Weichzeichnens umgibt den leeren Bereich, in denen die Textzeichen Mal vorkam. 
 
 Die UWP-Screenshot, auf die richtigen zeigt die `Inner` Stil. Die Unschärfe ist auf des Bereichs, der normalerweise durch die Textzeichen beschränkt.
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
 ms.openlocfilehash: c6351f2c25f8e31181c761aea1b471315a8a05e8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400203"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>Visuelle Designupdates in iOS 11
 
@@ -55,7 +55,7 @@ NavigationItem.SearchController = searchController;
 
 Abhängig von den Funktionen Ihrer App können Sie oder sollten sich nicht auf die Suchleiste ausblenden, wenn ein Benutzer eine Liste einen Bildlauf. Sie können anpassen, dies mithilfe der `HidesSearchBarWhenScrolling` Eigenschaft.
 
-## <a name="margins"></a>Ränder
+## <a name="margins"></a>Seitenränder
 
 Apple hat eine neue Eigenschaft: `directionalLayoutMargins` –, die verwendet werden kann, um den Abstand zwischen den Ansichten und Unteransichten festzulegen. Verwendung `directionalLayoutMargins` mit `leading` oder `trailing` Abstände. Unabhängig davon, ob das System einer links-nach-rechts- bzw. rechts-nach-links-Sprache ist wird der Abstand in Ihrer app nach iOS-entsprechend festlegen.
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/05/2017
 ms.openlocfilehash: 167d6ac421bdd2652e7f8474e1ea21bd9040723f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075089"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Ausnahme in Xamarin.iOS-Marshalling
 
@@ -263,16 +263,16 @@ Die folgenden Modi sind verfügbar:
 
 - `Default`: Der Standardwert hängt von der Plattform. Es ist `ThrowObjectiveCException` im kooperativen-Modus (WatchOS), ist der Garbage Collector und `UnwindNativeCode` andernfalls (iOS / WatchOS / MacOS). Der Standardwert kann in der Zukunft ändern.
 - `UnwindNativeCode`: Dies ist das vorherige Verhalten für die (nicht definiert). Dies ist nicht verfügbar, wenn der Garbage Collector im kooperativen Modus verwendet (Dies ist die einzige Option in WatchOS, daher Dies ist keine gültige Option für WatchOS), aber es ist die Standardoption für alle anderen Plattformen.
-- `ThrowObjectiveCException`: Die verwaltete Ausnahme in eine Objective-C-Ausnahme konvertieren, und die Objective-C-Ausnahme auslösen. Dies ist die Standardeinstellung für WatchOS.
-- `Abort`: Den Prozess abgebrochen.
-- `Disable`: Deaktiviert die Ausnahme abfangen, damit es nicht sinnvoll, diesen Wert im Ereignishandler festzulegen, aber wenn das Ereignis ausgelöst wird, zu spät wird um zu deaktivieren. In jedem Fall, wenn festgelegt, es als Verhalten `UnwindNativeCode`.
+- `ThrowObjectiveCException`: Konvertieren Sie die verwaltete Ausnahme in eine Objective-C-Ausnahme aus, und lösen Sie die Objective-C-Ausnahme aus. Dies ist die Standardeinstellung für WatchOS.
+- `Abort`: Den Prozess wird abgebrochen.
+- `Disable`: Die Ausnahme abfangen, deaktiviert, sodass es nicht sinnvoll, diesen Wert im Ereignishandler festzulegen, sobald das Ereignis ausgelöst wird es jedoch zu spät um zu deaktivieren. In jedem Fall, wenn festgelegt, es als Verhalten `UnwindNativeCode`.
 
 Für das Marshalling von Objective-C-Ausnahmen in verwalteten Code, stehen die folgenden Modi:
 
 - `Default`: Der Standardwert hängt von der Plattform. Es ist `ThrowManagedException` im kooperativen-Modus (WatchOS), ist der Garbage Collector und `UnwindManagedCode` andernfalls (iOS / TvOS / MacOS). Der Standardwert kann in der Zukunft ändern.
 - `UnwindManagedCode`: Dies ist das vorherige Verhalten für die (nicht definiert). Dies ist nicht verfügbar, wenn der Garbage Collector im kooperativen Modus verwendet (Dies ist der einzige gültige GC-Modus auf WatchOS, daher Dies ist keine gültige Option für WatchOS), aber es ist die Standardeinstellung für alle anderen Plattformen.
 - `ThrowManagedException`: Die Objective-C-Ausnahme in eine verwaltete Ausnahme konvertieren, und der verwaltete Ausnahme ausgelöst. Dies ist die Standardeinstellung für WatchOS.
-- `Abort`: Den Prozess abgebrochen.
+- `Abort`: Den Prozess wird abgebrochen.
 - `Disable`: Deaktiviert die Ausnahme abfangen, damit es sinnvoll, legen Sie nicht diesen Wert im Ereignis-Handler, aber sobald das Ereignis ausgelöst wird, ist es zu spät um zu deaktivieren. In jedem Fall, wenn festgelegt, es den Prozess abgebrochen wird.
 
 Daher können jedes Mal, wenn eine Ausnahme gemarshallt wird, erhalten Sie so vorgehen:

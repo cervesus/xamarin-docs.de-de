@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2018
 ms.openlocfilehash: 04a07d5b7f37222515136e5592f31a4583b02fe3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157363"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>Welche Android SDK-Pakete sollte ich installieren?
 
@@ -50,5 +50,5 @@ Diese sind nur erforderlich, wenn Sie die Out-of-the-Box-Android-Emulatoren von 
 Der Android SDK-Extras sind in der Regel nicht erforderlich. Es ist jedoch hilfreich, aufmerksam zu werden, da sie je nach Ihren Anwendungsfall erforderlich sein können.
 
 ## <a name="further-reading"></a>Weiterführende Themen
-Der folgende Leitfaden behandelt diese Optionen und bietet weitere Informationen zu den verschiedenen Paketen im SDK-Manager verfügt über verfügbare: [Android SDK-Manager-Installationshandbuch](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)
+Der folgende Leitfaden behandelt diese Optionen und bietet weitere Informationen zu den verschiedenen Paketen im SDK-Manager ist verfügbar: [Android SDK-Manager-Installationshandbuch](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)
 

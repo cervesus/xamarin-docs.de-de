@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
 ms.openlocfilehash: fff6620732ffcaccd13dde7ae31ab03a5106da16
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364409"
 ---
 # <a name="ios-platform-features"></a>iOS-Plattformfeatures
 
@@ -102,7 +102,7 @@ Neue IOS 10, integriert eine Nachrichten-App-Erweiterung der **Nachrichten** -ap
 
 ## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[Multitasking für iPad](~/ios/platform/multitasking.md)
 
-iOS 9 fügt Multitasking-Unterstützung für die Ausführung von zwei apps gleichzeitig auf bestimmte iPad-Hardware. Multitasking für iPad werden über die folgenden Funktionen unterstützt: Folie für geteilte Ansicht und Picture in Picture.
+iOS 9 fügt Multitasking-Unterstützung für die Ausführung von zwei apps gleichzeitig auf bestimmte iPad-Hardware. Multitasking für iPad wird über die folgenden Funktionen unterstützt: Folie über "," geteilte Ansicht "und" Picture in Picture ".
 
 ## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
 

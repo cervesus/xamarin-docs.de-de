@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61174581"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Teil 5. Von Datenbindungen zu MVVM
 
@@ -35,7 +35,7 @@ Das Programm verwenden kann `x:Static` zum aktuellen Datum und Uhrzeit aus der s
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` ist eine sehr spezielle Eigenschaft: beim Festlegen der `BindingContext` auf ein Element, wird es von den untergeordneten Elementen dieses Elements geerbt. Dies bedeutet, dass alle untergeordneten Elemente der `StackLayout` haben diese gleiche `BindingContext`, und sie können einfache Bindung an Eigenschaften dieses Objekts enthalten.
+`BindingContext` ist eine sehr spezielle Eigenschaft: Beim Festlegen der `BindingContext` auf ein Element, wird es von den untergeordneten Elementen dieses Elements geerbt. Dies bedeutet, dass alle untergeordneten Elemente der `StackLayout` haben diese gleiche `BindingContext`, und sie können einfache Bindung an Eigenschaften dieses Objekts enthalten.
 
 In der **One-Shot "DateTime"** Programm zwei untergeordnete Knoten enthalten die Bindung an Eigenschaften, `DateTime` Wert, aber zwei andere untergeordnete Elemente enthalten Bindungen, die fehlen ein Bindungspfad erscheinen. Dies bedeutet, dass die `DateTime` Wert selbst wird verwendet, für die `StringFormat`:
 
@@ -298,7 +298,7 @@ Die Bindung auf den einzelnen `Label` ist die Standardeinstellung `OneWay`. Es m
 
 ## <a name="commanding-with-viewmodels"></a>Befehle mit ViewModels
 
-In vielen Fällen ist das MVVM-Muster an der Bearbeitung von Datenelementen beschränkt: Objekte der Benutzeroberfläche in der Ansicht parallele Datenobjekte in "ViewModel".
+In vielen Fällen ist das MVVM-Muster beschränkt ist, an der Bearbeitung von Datenelementen: Objekte der Benutzeroberfläche in der Ansicht parallele Datenobjekte in "ViewModel".
 
 Allerdings muss manchmal die Ansicht Schaltflächen enthalten, die verschiedene Aktionen in "ViewModel" auslösen. Aber das "ViewModel" darf keinen `Clicked` Ereignishandler für die Schaltflächen da, die das "ViewModel" ein Paradigmenwechsel zu bestimmten Benutzeroberfläche gebunden würde.
 

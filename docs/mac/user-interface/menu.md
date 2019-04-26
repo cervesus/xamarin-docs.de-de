@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 0a14e3e3eb58b264d1909b6576bbbc4f7e8f4068
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61166595"
 ---
 # <a name="menus-in-xamarinmac"></a>Menüs in Xamarin.Mac
 
@@ -1051,7 +1051,7 @@ Erstellen Sie eine benutzerdefinierte Popup-Schaltfläche für die Anwendung nun
 1. Bearbeiten der **"Main.Storyboard"** -Datei in Xcode, und ziehen Sie eine **Popup-Schaltfläche** aus der **Bibliotheksinspektor** auf die **Bereich** wir erstellt, im haben Fenster die [Kontextmenüs](#Contextual_Menus) Abschnitt: 
 
     [![Hinzufügen einer Schaltfläche Popup](menu-images/popup01.png "eine Popup-Schaltfläche hinzufügen")](menu-images/popup01-large.png#lightbox)
-2. Fügen Sie ein neues Menüelement hinzu und legen Sie den Titel der Elemente im Popupfenster auf: **Adresse**, **Datum**, **Begrüßung**, und **Signatur** 
+2. Fügen Sie ein neues Menüelement hinzu, und legen Sie den Titel der Elemente in das Popup auf: **Adresse**, **Datum**, **Begrüßung**, und **Signatur** 
 
     [![Konfigurieren die Menüelemente](menu-images/popup02.png "Menüelemente konfigurieren")](menu-images/popup02-large.png#lightbox)
 3. Als Nächstes verbinden wir unsere neue Menüelemente, die vorhandenen Aktionen, die wir für unsere benutzerdefinierten Menüs in erstellt die [hinzufügen, bearbeiten und Löschen von Menüs](#Adding,_Editing_and_Deleting_Menus) weiter oben. Wechseln Sie zu der **Verbindung Inspektor** , und wählen Sie die **erste Beantworter** in die **Schnittstellenhierarchie**. Scrollen Sie nach unten, und suchen die `phraseAddress:` Aktion. Ziehen Sie eine Linie von der Kreis für diese Aktion die **Adresse** Menüelements: 

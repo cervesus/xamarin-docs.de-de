@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
 ms.openlocfilehash: 98212483481b2ce60c73a40c014816ee3c3f110c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386572"
 ---
 # <a name="listview-performance"></a>ListView-Leistung
 
@@ -133,7 +133,7 @@ Dies hat dieselbe Wirkung wie das Festlegen des Arguments Strategie für die Zwi
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>Festlegen der Strategie für die Zwischenspeicherung in ein untergeordnetes ListView
 
-Festlegen der `CachingStrategy` Attribut in XAML für ein untergeordnetes [ `ListView` ](xref:Xamarin.Forms.ListView) erzeugt nicht das gewünschte Verhalten, da gibt es keine `CachingStrategy` Eigenschaft `ListView`. Darüber hinaus, wenn [XAMLC](~/xamarin-forms/xaml/xamlc.md) ist aktiviert, wird die folgende Fehlermeldung erzeugt: **keine Eigenschaft, bindbare Eigenschaft oder das Ereignis für 'CachingStrategy' gefunden.**
+Festlegen der `CachingStrategy` Attribut in XAML für ein untergeordnetes [ `ListView` ](xref:Xamarin.Forms.ListView) erzeugt nicht das gewünschte Verhalten, da gibt es keine `CachingStrategy` Eigenschaft `ListView`. Darüber hinaus, wenn [XAMLC](~/xamarin-forms/xaml/xamlc.md) ist aktiviert, wird die folgende Fehlermeldung erzeugt: **Keine Eigenschaft, bindbare Eigenschaft oder das Ereignis für 'CachingStrategy' gefunden.**
 
 Die Lösung für dieses Problem besteht darin, einen Konstruktor zu spezifizieren, auf den Unterklassen [ `ListView` ](xref:Xamarin.Forms.ListView) , akzeptiert eine [ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy) Parameter und übergibt ihn an die Basisklasse der Klasse:
 

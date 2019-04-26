@@ -1,5 +1,5 @@
 ---
-title: iPad modale Seite Präsentation Style
+title: 'iPad: Präsentationsformat für modale Seiten'
 description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die iOS-Plattform-spezifische legt den Presentation-Stil, der eine modale Seite auf einem iPad genutzt wird.
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: b99898301ed6469b6e0d62ae0077b96aa9c4f3eb
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896915"
 ---
-# <a name="ipad-modal-page-presentation-style"></a>iPad modale Seite Präsentation Style
+# <a name="ipad-modal-page-presentation-style"></a>iPad: Präsentationsformat für modale Seiten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 

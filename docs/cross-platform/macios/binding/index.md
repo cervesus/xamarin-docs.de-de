@@ -1,21 +1,21 @@
 ---
 title: Binden von Objective-C
-description: Dieses Dokument enthält Links zu verschiedenen Anleitungen, die beschreiben, wie zum Erstellen von C#-Bindungen in Objective-C-Code ermöglicht es Entwicklern, die sofort einsetzbare Bibliotheken in Xamarin-Anwendungen zu nutzen.
+description: Dieses Dokument enthält Links zu verschiedenen Anleitungen, die beschreiben, wie Sie erstellen C# -Bindungen mit Objective-C-Code ermöglicht es Entwicklern, die sofort einsetzbare Bibliotheken in Xamarin-Anwendungen zu nutzen.
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
 ms.openlocfilehash: 3f1e1ce324e849c0c939d936eb6ee1470cf24a3b
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266607"
 ---
 # <a name="binding-objective-c"></a>Binden von Objective-C
 
-Dieser Abschnitt enthält eine Vielzahl von Dokumenten Erstellen von Bindungen für Objective-C-Bibliotheken, damit sie von c#-Anwendungen, die mit Xamarin.iOS oder Xamarin.Mac erstellten aufgerufen werden können.
+Dieser Abschnitt enthält eine Reihe von Dokumenten Erstellen von Bindungen für Objective-C-Bibliotheken, damit sie von aufgerufen werden können C# Anwendungen, die mit Xamarin.iOS oder Xamarin.Mac erstellt wurden.
 
 ##  <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[Übersicht](~/cross-platform/macios/binding/overview.md)
 
@@ -23,7 +23,7 @@ Dieses Dokument enthält einige der die Interna der wie eine Bindung durchgefüh
 
 ##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
 
-Dieses Dokument beschreibt den Prozess zum Erstellen von c#-Bindungen von Objective-C-APIs und wie die Ausdrücke in .NET verwendet, die Ausdrücke in Objective-C zugeordnet werden.
+Dieses Dokument beschreibt den Prozess zum Erstellen C# Bindungen von Objective-C-APIs und wie die Ausdrücke in .NET verwendet, die Ausdrücke in Objective-C zugeordnet werden.
 Wenn Sie nur die C-APIs binden, sollten Sie den Standardmechanismus für .NET dafür das P/Invoke-Framework verwenden.
 
 ##  <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[Bindung Definition – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
@@ -39,7 +39,7 @@ Objektive Sharpie ist ein Befehlszeilentool können Sie das erste Element des ei
 
 Die [iOS Bindung Seite](~/ios/platform/binding-objective-c/index.md) Links zurück in diese gemeinsamen Ressourcen für die Bindung zusätzlich zu den Beispielen weiter unten.
 
-### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[Exemplarische Vorgehensweise: Bindung einer Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
+### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[Exemplarische Vorgehensweise: Binden eine Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
 
 Dieser Artikel enthält eine schrittweise Anleitung zum Erstellen einer Bindung-Projekts mithilfe des open Source [InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective-C-Projekt als Beispiel. Die InfColorPicker-Bibliothek bietet es sich um einen wieder verwendbaren View-Controller, mit denen den Benutzer eine Farbe basierend auf seiner HSB-Darstellung, sodass Farbauswahl Benutzerfreundlicher auswählen können. Objektive Sharpie dienen zur Unterstützung des Bindungsvorgangs.
 
@@ -57,5 +57,5 @@ In der Vergangenheit [Mac Bindung](~/mac/platform/binding.md) wurde ein sehr man
 
 - [iOS binden](~/ios/platform/binding-objective-c/index.md)
 - [Mac-Bindung](~/mac/platform/binding.md)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

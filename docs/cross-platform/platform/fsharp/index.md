@@ -1,38 +1,38 @@
 ---
-title: Verwenden von F# mit Xamarin
-description: F# ist eine stark typisierte funktionale Programmiersprache, die für die Ausführung auf .NET entwickelt wurde. Dieses Dokument enthält eine allgemeine Übersicht über seine Funktionen und Links zu Beispielen, die mit F# erstellt.
+title: Mithilfe von F# mit Xamarin
+description: F# ist eine stark typisierte funktionale Programmiersprache, die für die Ausführung auf .NET entwickelt wurde. Dieses Dokument enthält eine allgemeine Übersicht über die Funktionen und Links zu Beispielen, die mit erstellten F#.
 ms.prod: xamarin
 ms.assetid: 506410BD-F89C-4FEB-8915-760FE250A206
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
 ms.openlocfilehash: 2a6c666878c16cbb4aca6fbaa3c9f8d0c656d0bc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036470"
 ---
-# <a name="using-f-with-xamarin"></a>Verwenden von F# mit Xamarin
+# <a name="using-f-with-xamarin"></a>Mithilfe von F# mit Xamarin
 
-F# ist eine Open-Source, plattformübergreifende, funktionsorientierte Programmiersprache für .NET.
+F#ist ein Open Source, plattformübergreifende, funktionsorientierte Sprache für .NET programmieren.
 
-F#-kombiniert die Succinctness expressivität und Composability der funktionalen Programmierung Typ abgeleitet, die Sicherheit während der Kompilierung des Codes stark typisierte und die Common Language Runtime-Unterstützung, Bibliotheken, Interoperabilität, Tools und Objektmodell von .NET.
+F#kombiniert die Succinctness, ausdrucksfähigkeit und zusammensetzbarkeit von funktionale Programmierung Typ abgeleitet, die Sicherheit während der Kompilierung von stark typisierten Code, und die Runtime-Unterstützung, Bibliotheken, Interoperabilität, Tools und das Objektmodell von .NET.
 
-F# ist als einer Programmiersprache Ihrer Wahl für Xamarin-Benutzer auf alle von der Xamarin-unterstützte Plattformen verfügbar: iOS, Android und MacOS.
+F#ist als Programmiersprache für Xamarin-Benutzer auf alle Xamarin-unterstützten Plattformen verfügbar: Android, MacOS und iOS.
 
 - [Leitfaden für F#](https://docs.microsoft.com/dotnet/fsharp/)
-- [Erste Schritte mit F#- und Xamarin](overview.md)
-- [F#-Mobile-Beispiele](samples.md)
+- [Erste Schritte mit F# und Xamarin](overview.md)
+- [F#Beispiele für Mobile Lösungen](samples.md)
 
-## <a name="f-features-in-visual-studio-for-mac"></a>F#-Funktionen in Visual Studio für Mac
+## <a name="f-features-in-visual-studio-for-mac"></a>F#Funktionen in Visual Studio für Mac
 
-F# ist eine unterstützte Sprache in Visual Studio für Mac. Unterstützt Funktionen gehören:
+F#wird von eine unterstützte Sprache in Visual Studio für Mac. Unterstützt Funktionen gehören:
 
-- Unterstützung für F#-4.1
-- Unterstützung für F# PCL und .NET Standard
-- Unterstützung für F# freigegebenes Projekt
+- F#4.1-Unterstützung
+- F#PCL und .NET Standard-support
+- F#Shared-projektunterstützung
 - Codenavigation
 - Syntaxhervorhebung in F# Interactive
-- F#-Vorlagen für Xamarin.Forms, iOS und Android
-- [*und vieles mehr...*](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements)
+- F#Vorlagen für Xamarin.Forms, iOS und Android
+- [*Und vieles mehr...*](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements)

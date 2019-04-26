@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61407639"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Essential XAML Syntax
 
@@ -143,7 +143,7 @@ Eigenschaftenelement Syntax wird jedoch wichtig, wenn der Wert einer Eigenschaft
 </Label>
 ```
 
-Ein weiteres Beispiel: die `Grid` verfügt über zwei Eigenschaften, die mit dem Namen `RowDefinitions` und `ColumnDefinitions`. Diese beiden Eigenschaften sind vom Typ `RowDefinitionCollection` und `ColumnDefinitionCollection`, der es sich um Auflistungen von `RowDefinition` und `ColumnDefinition` Objekte. In diesem Fall müssen Sie eine Eigenschaftenelement-Syntax zu verwenden, um diese Sammlungen festzulegen.
+Ein weiteres Beispiel: Die `Grid` verfügt über zwei Eigenschaften, die mit dem Namen `RowDefinitions` und `ColumnDefinitions`. Diese beiden Eigenschaften sind vom Typ `RowDefinitionCollection` und `ColumnDefinitionCollection`, der es sich um Auflistungen von `RowDefinition` und `ColumnDefinition` Objekte. In diesem Fall müssen Sie eine Eigenschaftenelement-Syntax zu verwenden, um diese Sammlungen festzulegen.
 
 Hier ist der Anfang der XAML-Datei für eine `GridDemoPage` -Klasse, mit dem Eigenschaftenelement-Tags für die `RowDefinitions` und `ColumnDefinitions` Sammlungen:
 
@@ -351,7 +351,7 @@ Sie können sicherlich einschließen der `Content` und `Children` Eigenschaften 
 </ContentPage>
 ```
 
-Ist die einzig wichtige Frage: Warum diese Eigenschaftenelemente sind *nicht* in der XAML-Datei erforderlich?
+Die einzig wichtige Frage ist: Warum sind von dieser Eigenschaftenelemente *nicht* in der XAML-Datei erforderlich?
 
 Dürfen Elemente, die für die Verwendung in XAML in Xamarin.Forms definiert eine Eigenschaft, die in gekennzeichnet haben die `ContentProperty` -Attribut in der Klasse. Wenn Sie Nachschlagen der `ContentPage` Klasse in der Onlinedokumentation für die Xamarin.Forms, sehen Sie dieses Attribut:
 

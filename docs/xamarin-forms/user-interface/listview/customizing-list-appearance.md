@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
 ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169883"
 ---
 # <a name="customizing-listview-appearance"></a>Anpassen der Darstellung der ListView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 
 [`ListView`](xref:Xamarin.Forms.ListView) hat die Möglichkeit, die Darstellung der Liste, zusätzlich zum Steuern der [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) Instanzen für jede Zeile in der Liste.
 

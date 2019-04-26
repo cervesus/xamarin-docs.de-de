@@ -1,7 +1,15 @@
+---
+ms.openlocfilehash: cb29cf52401e7ba8246fc424f65368a38f7e4254
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024058"
+---
 
-|name|Version|API-Ebene|Freigegeben|Erstellen Sie Code von Version|
+|Name|Version|API-Ebene|Freigegeben|Erstellen Sie Code von Version|
 |--- |--- |--- |--- |--- |
-|Segment|9.0|28|August 2018|`BuildVersionCodes.P`|
+|Kreis|9.0|28|August 2018|`BuildVersionCodes.P`|
 |Oreo|8.1|27|Dezember 2017|`BuildVersionCodes.OMr1`|
 |Oreo|8.0|26|August 2017|`BuildVersionCodes.O`|
 |Nougat|7.1|25|Dezember 2016|`BuildVersionCodes.NMr1`|
@@ -27,6 +35,6 @@
 |Eclair|2.0|5|November 2009|`BuildVersionCodes.Eclair`|
 |Ringdiagramm|1.6|4|September 2009|`BuildVersionCodes.Donut`|
 |Cupcake|1.5|3|Mai 2009|`BuildVersionCodes.Cupcake`|
-|Basis|1.1|2|Februar 2009|`BuildVersionCodes.Base11`|
-|Basis|1.0|1|Oktober 2008|`BuildVersionCodes.Base`|
+|Base|1.1|2|Februar 2009|`BuildVersionCodes.Base11`|
+|Base|1.0|1|Oktober 2008|`BuildVersionCodes.Base`|
 

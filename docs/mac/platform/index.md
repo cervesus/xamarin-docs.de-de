@@ -1,6 +1,6 @@
 ---
 title: MacOS-Plattformfeatures
-description: 'In diesem Dokument links zu Leitfäden, die wichtige MacOS und Xamarin.Mac-Plattformfeatures beschreiben: OpenTK, Storyboards, Extensions und mehr.'
+description: 'Dieses Dokument enthält Links zu Leitfäden, die wichtige MacOS und Xamarin.Mac-Plattformfeatures beschreiben: OpenTK, Storyboards, Extensions und mehr.'
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: 7e91645fb92814c88c3711645ea294ac701b67ac
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032552"
 ---
 # <a name="macos-platform-features"></a>MacOS-Plattform-Funktionen
 

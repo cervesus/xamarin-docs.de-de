@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: a30256722647bbea482970d0c4a751954810d99e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170799"
 ---
 # <a name="listview"></a>ListView
 
@@ -35,7 +35,7 @@ Zuerst ein kurzes Lernprogramm führt die `ListView` anhand eines Beispiels für
 
 ## <a name="listview-tutorial"></a>ListView-Tutorial
 
-[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) ist ein [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
+[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) is a [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
 eine Liste von bildlauffähigen Elementen erstellt. Listenelemente werden automatisch eingefügt, um die Liste mit einem [ `IListAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.IListAdapter/).
 
 In diesem Tutorial erstellen Sie eine Übersicht der Ländernamen, die aus einem Zeichenfolgenarray gelesen werden. Wenn ein Listenelement ausgewählt ist, wird eine Popup-Nachricht die Position des Elements in der Liste angezeigt.
@@ -164,7 +164,7 @@ Führen Sie die Anwendung aus. Können die Liste Scrollen oder eingeben, um es z
 [![Beispielscreenshot von ListView mit Ländernamen](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
 Beachten Sie, dass mit einem hartcodierten Zeichenfolgen-Array nicht die bewährte Methode für den Entwurf. Einer wird in diesem Tutorial der Einfachheit halber verwendet, um zu veranschaulichen die [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-Widget. Empfohlen wird, auf ein Zeichenfolgenarray, das von einer externen Ressource, z. B. mit definiert eine `string-array` Ressource in Ihrem Projekt **Resources/Values/Strings.xml** Datei. Zum Beispiel:
+widget. Empfohlen wird, auf ein Zeichenfolgenarray, das von einer externen Ressource, z. B. mit definiert eine `string-array` Ressource in Ihrem Projekt **Resources/Values/Strings.xml** Datei. Zum Beispiel:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -234,7 +234,7 @@ Diese Themensammlung eingeführt `ListView` und einige Beispiele zur Verwendung 
 - [CustomRowView (Beispiel)](https://developer.xamarin.com/samples/CustomRowView/)
 - [FastScroll (Beispiel)](https://developer.xamarin.com/samples/FastScroll/)
 - [SectionIndex (Beispiel)](https://developer.xamarin.com/samples/SectionIndex/)
-- [SimpleCursorTableAdapter (Beispiel)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
+- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
 - [CursorTableAdapter (Beispiel)](https://developer.xamarin.com/samples/CursorTableAdapter/)
 - [Aktivität-Lebenszyklus (Lernprogramm)](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Arbeiten mit Tabellen und Zellen (Xamarin.iOS)](~/ios/user-interface/controls/tables/index.md)

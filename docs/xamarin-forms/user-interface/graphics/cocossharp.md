@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
 ms.openlocfilehash: 55e5627a492636efaa6eeb6b8c302d143b08e2cc
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400709"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Verwenden von CocosSharp in Xamarin.Forms
 
@@ -22,7 +22,7 @@ _CocosSharp kann verwendet werden, um die genaue Form, Bild und Rendern von Text
 
 > [!VIDEO https://youtube.com/embed/eYCx63FeqVU]
 
-**Weiterentwicklung 2016: Cocos -Code in Xamarin.Forms**
+**Weiterentwicklung 2016: Die Cocos-in Xamarin.Forms**
 
 ## <a name="overview"></a>Übersicht
 
@@ -30,7 +30,7 @@ CocosSharp ist eine flexible, leistungsstarke Technologie für die Anzeige von G
 
 * [Was ist CocosSharp?](#what)
 * [Die CocosSharp-Nuget-Pakete hinzufügen](#nuget)
-* [Exemplarische Vorgehensweise: Hinzufügen von CocosSharp in einer Xamarin.Forms-app](#add)
+* [Exemplarische Vorgehensweise: Hinzufügen von CocosSharp zu einer Xamarin.Forms-app](#add)
 
 <a name="what" />
 
@@ -74,7 +74,7 @@ Wiederholen Sie die oben genannten Schritte für plattformspezifische Projekte (
 
 <a name="add" />
 
-## <a name="walkthrough-adding-cocossharp-to-a-xamarinforms-app"></a>Exemplarische Vorgehensweise: Hinzufügen von CocosSharp in einer Xamarin.Forms-app
+## <a name="walkthrough-adding-cocossharp-to-a-xamarinforms-app"></a>Exemplarische Vorgehensweise: Hinzufügen von CocosSharp zu einer Xamarin.Forms-app
 
 Um eine einfache CocosSharp-Ansicht zu einer Xamarin.Forms-app hinzuzufügen, gehen Sie wie folgt vor:
 

@@ -1,5 +1,5 @@
 ---
-title: Konfigurieren Sie Ihrer TvOS-App in iTunes Connect
+title: Konfigurieren Ihrer tvOS-App in iTunes Connect
 description: Dieser Artikel bietet eine zusätzliche Anleitung für den iOS-Konfigurieren der App in iTunes Connect für den speziellen Konfigurationen für TvOS.
 ms.prod: xamarin
 ms.assetid: 86C7C5BD-C97D-4F1D-B611-A7694557BFDF
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 3f4ef00cfe990de2d5afd461d7a110d32bc4a236
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61413237"
 ---
-# <a name="configure-your-tvos-app-in-itunes-connect"></a>Konfigurieren Sie Ihrer TvOS-App in iTunes Connect
+# <a name="configure-your-tvos-app-in-itunes-connect"></a>Konfigurieren Ihrer tvOS-App in iTunes Connect
 
 _Dieser Artikel bietet eine zusätzliche Anleitung für den iOS-Konfigurieren der App in iTunes Connect für den speziellen Konfigurationen für TvOS._
 

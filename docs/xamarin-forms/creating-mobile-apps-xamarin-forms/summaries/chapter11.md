@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: f9e3326c0f55469cfa84a019a674679d82dfc007
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334367"
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>Zusammenfassung der Kapitel 11. Die bindbare Infrastruktur
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
 
-Jeder C#-Programmierer ist mit C# vertraut *Eigenschaften*. Eigenschaften enthalten eine *festgelegt* Accessor und/oder einen *erhalten* Accessor. Sie werden häufig aufgerufen *CLR-Eigenschaften* für die Common Language Runtime.
+Jeder C#-Programmierer ist mit c# vertraut *Eigenschaften*. Eigenschaften enthalten eine *festgelegt* Accessor und/oder einen *erhalten* Accessor. Sie werden häufig aufgerufen *CLR-Eigenschaften* für die Common Language Runtime.
 
-Xamarin.Forms definiert eine erweiterte Eigenschaftsdefinition, die mit dem Namen eine *bindbare Eigenschaft* gekapselt durch den [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Klasse und von unterstützt die [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)Klasse. Diese Klassen sind ähnliche, aber recht unterschiedliche: die `BindableProperty` wird verwendet, um die Eigenschaft selbst definieren `BindableObject` ähnelt `object` , es ist eine Basisklasse für Klassen, die bindbare Eigenschaften definieren.
+Xamarin.Forms definiert eine erweiterte Eigenschaftsdefinition, die mit dem Namen eine *bindbare Eigenschaft* gekapselt durch den [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Klasse und von unterstützt die [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)Klasse. Diese Klassen sind ähnliche, aber recht unterschiedliche: Die `BindableProperty` wird verwendet, um die Eigenschaft selbst definieren `BindableObject` ähnelt `object` , es ist eine Basisklasse für Klassen, die bindbare Eigenschaften definieren.
 
 ## <a name="the-xamarinforms-class-hierarchy"></a>Die Xamarin.Forms-Klassenhierarchie
 

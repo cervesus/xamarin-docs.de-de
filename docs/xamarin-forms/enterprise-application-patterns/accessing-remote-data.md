@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61277970"
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
@@ -68,7 +68,7 @@ public override async Task InitializeAsync(object navigationData)
 }
 ```
 
-Diese Methode ruft die `GetCatalogAsync` Methode der `CatalogService` -Instanz, die in eingefügt wurde die `CatalogViewModel` von Autofac. Das folgende Codebeispiel zeigt die `GetCatalogAsync` Methode:
+Diese Methode ruft die `GetCatalogAsync` Methode der `CatalogService` -Instanz, die in eingefügt wurde die `CatalogViewModel` von Autofac. Die `GetCatalogAsync`-Methode wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
@@ -298,7 +298,7 @@ Verteilte Anwendungen sollten wie z. B. die eShopOnContainers-Anwendung verweise
 -   Einen freigegebenen Cache, die von mehreren Prozessen oder Computern zugegriffen werden kann.
 -   Eines privaten Caches, in dem Daten lokal auf dem Gerät, das Ausführen der app gespeichert wird.
 
-Die eShopOnContainers-mobile-app verwendet einen privaten Cache, in dem Daten lokal auf dem Gerät befindet, die eine Instanz der app ausgeführt wird. Weitere Informationen zu den Cache, die von der referenzanwendung "eshoponcontainers" verwendet, finden Sie unter [.NET Microservices: Architektur für .NET-containeranwendungen](https://aka.ms/microservicesebook).
+Die eShopOnContainers-mobile-app verwendet einen privaten Cache, in dem Daten lokal auf dem Gerät befindet, die eine Instanz der app ausgeführt wird. Weitere Informationen zu den Cache, die von der referenzanwendung "eshoponcontainers" verwendet, finden Sie unter [.NET Microservices: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
 
 > [!TIP]
 > Stellen Sie sich den Cache als vorübergehende Datenspeicher, der jederzeit entfernt werden konnte. Stellen Sie sicher, dass Daten in den ursprünglichen Datenspeicher als auch für den Cache erhalten bleibt. Die Wahrscheinlichkeit eines Datenverlusts werden dann minimiert werden, wenn der Cache nicht verfügbar ist.
@@ -380,7 +380,7 @@ Wenn eine Anforderung immer noch nach einer Anzahl von Wiederholungen fehlschlä
 
 Die mobile app von eShopOnContainers implementiert des Wiederholungsmusters, das bei RESTful-Web-Anforderungen nicht aktuell. Allerdings die `CachedImage` Kontrolle, durch die [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) Bibliothek unterstützt die Behandlung vorübergehender Fehler durch eine Wiederholung Bild laden. Wenn Sie laden ein Fehler auftritt, weitere Versuche erfolgen. Die Anzahl der Versuche wird angegeben, durch die `RetryCount` -Eigenschaft und Wiederholungen erfolgt nach einer Verzögerung, die gemäß der `RetryDelay` Eigenschaft. Wenn diese Eigenschaftswerte werden nicht explizit festgelegt, ihren standardmäßigen Werte gelten – 3 für die `RetryCount` -Eigenschaft und 250ms für die `RetryDelay` Eigenschaft. Weitere Informationen zu den `CachedImage` steuern, finden Sie unter [Zwischenspeichern von Bildern](#caching_images).
 
-Die referenzanwendung "eshoponcontainers" wird das Wiederholungsmuster implementiert. Weitere Informationen, einschließlich einer Erläuterung der kombinieren des Wiederholungsmusters, das mit der `HttpClient` Klasse, finden Sie unter [.NET Microservices: Architektur für .NET-containeranwendungen](https://aka.ms/microservicesebook).
+Die referenzanwendung "eshoponcontainers" wird das Wiederholungsmuster implementiert. Weitere Informationen, einschließlich einer Erläuterung der kombinieren des Wiederholungsmusters, das mit der `HttpClient` Klasse, finden Sie unter [.NET Microservices: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
 
 Weitere Informationen zu des Wiederholungsmusters, finden Sie unter den [wiederholen](/azure/architecture/patterns/retry/) Muster.
 
@@ -397,7 +397,7 @@ Trennschalter-Musters kann eine app wiederholt versucht einen Vorgang auszuführ
 
 Ein Trennschalter fungiert als Proxy für Vorgänge, die möglicherweise Fehler auftreten. Der Proxy sollte Überwachen der Anzahl der letzten Fehler, die aufgetreten sind, und anhand dieser Informationen entscheiden, können Sie den Vorgang, um den Vorgang fortzusetzen, oder eine Ausnahme sofort zurückgegeben.
 
-Die eShopOnContainers-mobile-app implementiert derzeit nicht das Circuit-Breaker-Muster. Allerdings ist die "eshoponcontainers". Weitere Informationen finden Sie unter [.NET Microservices: Architektur für .NET-containeranwendungen](https://aka.ms/microservicesebook).
+Die eShopOnContainers-mobile-app implementiert derzeit nicht das Circuit-Breaker-Muster. Allerdings ist die "eshoponcontainers". Weitere Informationen finden Sie unter [.NET Microservices: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
 
 > [!TIP]
 > Kombinieren Sie die Wiederholung und Circuit-Breaker-Muster. Eine app kann die Wiederholung und Circuit-Breaker-Muster kombinieren, mithilfe des Wiederholungsmusters, einen Vorgang über einen Trennschalter aufzurufen. Die Wiederholungslogik sollte jedoch alle Ausnahmen, die durch den Trennschalter zurückgegeben werden, und Wiederholungsversuche Abbrechen, wenn der Trennschalter anzeigt, dass es sich bei ein Fehler nicht vorübergehend ist.

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Android-Datenzugriff
+title: Xamarin.Android Data Access
 description: Die meisten Anwendungen müssen einige Anforderungen, um Daten auf dem Gerät lokal zu speichern. Wenn die Menge der Daten unbedeutend klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten.  Android hat die SQLite-Datenbank-Engine, die "integriert" und den Zugriff auf das Speichern und Abrufen von Daten durch die Xamarin Plattform vereinfacht. Dieses Dokument veranschaulicht, wie plattformübergreifende eine SQLite-Datenbank zuzugreifen.
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61011354"
 ---
-# <a name="xamarinandroid-data-access"></a>Xamarin.Android-Datenzugriff
+# <a name="xamarinandroid-data-access"></a>Xamarin.Android Data Access
 
 _Die meisten Anwendungen müssen einige Anforderungen, um Daten auf dem Gerät lokal zu speichern. Wenn die Menge der Daten unbedeutend klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten.  Android hat die SQLite-Datenbank-Engine, die "integriert" und den Zugriff auf das Speichern und Abrufen von Daten durch die Xamarin Plattform vereinfacht. Dieses Dokument veranschaulicht, wie plattformübergreifende eine SQLite-Datenbank zuzugreifen._
 

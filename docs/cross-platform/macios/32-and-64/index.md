@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 31eb0bfae58ecdca40548e46d1d9d95828be67b4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61347838"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64-Bit-Plattform-Überlegungen
 
@@ -79,7 +79,7 @@ Bei Apple-Umstellung von 32-Bit zu 64-Bit-iOS werden apps auf 32-Bit- und 64-Bit
 Auf 32-Bit- und 64-Bit-Architekturen erhöht sich erheblich auf die Größe einer Anwendung aus. Dadurch können jedoch so neuere Geräte optimierten Code ausgeführt wird, unterstützt aber weiterhin die ältere Geräte.
 
 > [!IMPORTANT]
-> Wenn Sie die folgende Meldung angezeigt, wenn Sie eine iOS-Anwendung zu iTunes App Store, übermitteln _"Warnung ITMS-9000: 64-Bit-Unterstützung fehlen. Ab dem 1. Februar 2015, neue iOS-apps in der App-Store hochgeladen müssen 64-Bit-Unterstützung einschließen und mit iOS 8-SDK in Xcode 6 oder höher erstellt werden. So aktivieren Sie in Ihrem Projekt die 64-Bit es wird empfohlen, Xcode Buildeinstellung "Standard-Architekturen" standardmäßig eine einzelne Binärdatei mit 32-Bit- und 64-Bit-Code zu erstellen. "_ Sie müssen die unterstützten Architekturen ein Wechsel zu einer der verfügbaren **ARM64** Kombination aus (siehe oben), Neukompilierung und erneute senden.
+> Wenn Sie die folgende Meldung angezeigt, wenn Sie eine iOS-Anwendung zu iTunes App Store, übermitteln _"Warnung ITMS-9000: Fehlende 64-Bit-Unterstützung. Ab dem 1. Februar 2015, neue iOS-apps in der App-Store hochgeladen müssen 64-Bit-Unterstützung einschließen und mit iOS 8-SDK in Xcode 6 oder höher erstellt werden. So aktivieren Sie in Ihrem Projekt die 64-Bit es wird empfohlen, Xcode Buildeinstellung "Standard-Architekturen" standardmäßig eine einzelne Binärdatei mit 32-Bit- und 64-Bit-Code zu erstellen. "_ Sie müssen die unterstützten Architekturen ein Wechsel zu einer der verfügbaren **ARM64** Kombination aus (siehe oben), Neukompilierung und erneute senden.
 
 ## <a name="mac"></a>Mac
 

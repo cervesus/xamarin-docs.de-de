@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381873"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>Kommunikation zwischen lose gekoppelten Komponenten
 
@@ -55,16 +55,16 @@ Weitere Informationen zu [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCente
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) Nachrichten sind Zeichenfolgen, die verwendet werden, um Nachrichten zu identifizieren. Das folgende Codebeispiel zeigt die Nachrichten in der mobilen app für "eshoponcontainers" definiert:
 
 ```csharp
-public class MessengerKeys  
+public class MessengerKeys  
 {  
-    // Add product to basket  
-    public const string AddProduct = "AddProduct";  
+    // Add product to basket  
+    public const string AddProduct = "AddProduct";  
 
-    // Filter  
-    public const string Filter = "Filter";  
+    // Filter  
+    public const string Filter = "Filter";  
 
-    // Change selected Tab programmatically  
-    public const string ChangeTab = "ChangeTab";  
+    // Change selected Tab programmatically  
+    public const string ChangeTab = "ChangeTab";  
 }
 ```
 
@@ -75,7 +75,7 @@ In diesem Beispiel werden Nachrichten mithilfe von Konstanten definiert. Der Vor
 Herausgeber benachrichtigen Abonnenten einer Nachricht mit einem der [ `MessagingCenter.Send` ](xref:Xamarin.Forms.MessagingCenter.Send*) Überladungen. Im folgenden Codebeispiel wird veranschaulicht, Veröffentlichung der `AddProduct` Nachricht:
 
 ```csharp
-MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 ```
 
 In diesem Beispiel die [ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*) Methode gibt drei Argumente:
@@ -94,12 +94,12 @@ Die [ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*) Veröffentlichungsmetho
 Abonnenten können zum Empfangen einer Meldung, die mit einer der Registrieren der [ `MessagingCenter.Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*) Überladungen. Im folgenden Codebeispiel wird veranschaulicht, wie die "eshoponcontainers" mobile app abonniert und verarbeitet, die `AddProduct` Nachricht:
 
 ```csharp
-MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
-    this, MessageKeys.AddProduct, async (sender, arg) =>  
+MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
+    this, MessageKeys.AddProduct, async (sender, arg) =>  
 {  
-    BadgeCount++;  
+    BadgeCount++;  
 
-    await AddCatalogItemAsync(arg);  
+    await AddCatalogItemAsync(arg);  
 });
 ```
 
@@ -115,7 +115,7 @@ Ein Abonnent müssen nicht jede Instanz einer veröffentlichten Nachricht zu ver
 Abonnenten können von Nachrichten wieder abmelden, die sie nicht mehr erhalten möchten. Dies erfolgt mit einem der [ `MessagingCenter.Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) überlädt, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
 ```
 
 In diesem Beispiel die [ `Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) Methodensyntax spiegelt wider, die Typargumente angegeben wird, abonnieren Sie den Empfang der `AddProduct` Nachricht.

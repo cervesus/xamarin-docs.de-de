@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 835dccaea79467582f56fd4b8b6b3b8f42acd632
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61392350"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>Aktualisieren einer Xamarin.iOS-App im Hintergrund
 
@@ -162,4 +162,4 @@ Allerdings können APNs automatische Benachrichtigungen "Programme" zusammen mit
 
 In diesem Abschnitt haben wir verschiedene Optionen für das Aktualisieren von Inhalt im Hintergrund zu Ausführen von Aufgaben, die nicht passen, in einer Kategorie Hintergrund-erforderlichen behandelt. Nun sehen wir uns einige dieser APIs in Aktion.
 
- [Nächster Schritt: Teil 4 – iOS-Hintergrundverarbeitung Exemplarische Vorgehensweisen](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+ [Weiter: Teil 4 – iOS-Hintergrundverarbeitung Exemplarische Vorgehensweisen](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)

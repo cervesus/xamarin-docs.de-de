@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
 ms.openlocfilehash: 4f8b6b7ea0db8d46886c3391f1aef3ba20a5be44
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085969"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Schneiden mit Pfaden und Regionen
 
@@ -24,7 +24,7 @@ Manchmal ist es erforderlich, um das Rendern von Grafiken auf einem bestimmten B
 
 ![](clipping-images/clippingsample.png "Monkey-Objekt über eine keyhole")
 
-Die *Clippingbereichs* ist der Bereich des Bildschirms in der Grafik gerendert werden. Alle Elemente, die außerhalb des Clippingbereichs angezeigt wird, wird nicht gerendert. Clippingbereichs in der Regel durch ein Rechteck definiert ist oder ein [ `SKPath` ](xref:SkiaSharp.SKPath) -Objekt, aber Sie können alternativ definieren ein Clipping mithilfe einer [ `SKRegion` ](xref:SkiaSharp.SKRegion) Objekt. Diese beiden Arten von Objekten an scheint zunächst Verwandte, da Sie eine Region aus einem Pfad erstellen können. Allerdings kann nicht, erstellen Sie einen Pfad aus einer Region, und sie unterscheiden sich stark intern: ein Pfads umfasst eine Reihe von Linien und Kurven, während eine Region durch eine Reihe von Zeilen definiert wird.
+Die *Clippingbereichs* ist der Bereich des Bildschirms in der Grafik gerendert werden. Alle Elemente, die außerhalb des Clippingbereichs angezeigt wird, wird nicht gerendert. Clippingbereichs in der Regel durch ein Rechteck definiert ist oder ein [ `SKPath` ](xref:SkiaSharp.SKPath) -Objekt, aber Sie können alternativ definieren ein Clipping mithilfe einer [ `SKRegion` ](xref:SkiaSharp.SKRegion) Objekt. Diese beiden Arten von Objekten an scheint zunächst Verwandte, da Sie eine Region aus einem Pfad erstellen können. Allerdings kann nicht, erstellen Sie einen Pfad aus einer Region, und sie unterscheiden sich stark intern: Ein Pfad umfasst eine Reihe von Linien und Kurven, während eine Region durch eine Reihe von Zeilen definiert wird.
 
 In der Abbildung oben wurde erstellt, indem die **Monkey-Objekt über Keyhole** Seite. Die [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) -Klasse definiert einen Pfad mit SVG-Daten und wird der Konstruktor verwendet, um eine Bitmap aus Programmressourcen zu laden:
 
@@ -366,7 +366,7 @@ Um die Gründe für diesen Unterschied zu verstehen, ist es hilfreich zu versteh
 
 Dieser Auftrag wird erheblich vereinfacht, wenn jeder Pfad in eine Reihe von Zeilen, z. B. in altmodischen Vakuum Tube TVs reduziert wird. Jede Scanzeile ist einfach eine horizontale Linie mit einem Start- und Endpunkt. Beispielsweise kann ein Kreis mit einem Radius von 10 Pixel in 20 Zeilen, zerlegt werden, von denen jedes an den linken Teil des Kreises beginnt, und endet mit den rechten Teil. Kombinieren von zwei Kreise mit jeder Region-Vorgang wird sehr einfach, da sie lediglich die Anfangs- und Endkoordinaten der einzelnen Zeilen der entsprechenden Überprüfung untersucht wird.
 
-Hierfür gibt es ein Bereich ist: eine Reihe von Zeilen, die einen Bereich zu definieren.
+Hierfür gibt es ein Bereich ist: Eine Reihe von Zeilen, die einen Bereich zu definieren.
 
 Aber wenn ein Bereich in eine Reihe von Scan reduziert wird Zeilen, diese Überprüfung aus, auf denen ein bestimmtes Pixel Dimension Zeilen basieren. Genau genommen ist die Region kein Vector Graphics-Objekt. Es ähnelt in der Art, eine komprimierte monochrome Bitmap als einem Pfad. Daher können nicht Regionen skaliert oder rotiert ohne Verlust der Genauigkeit und aus diesem Grund, die sie nicht transformiert werden, wenn für Clipping-Bereiche verwendet werden.
 

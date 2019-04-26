@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: b2f4cc71c1993e51ed55b51edd7c50d393e60873
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61412925"
 ---
 # <a name="working-with-watchos-screen-sizes-in-xamarin"></a>Arbeiten mit WatchOS Bildschirmgrößen in Xamarin
 
@@ -32,7 +32,7 @@ Wird standardmäßig der Visual Studio für Mac-Designer angezeigt wird. sehen S
 
 ![](screen-sizes-images/screen-any-sml.png "Der Designer zeigt ansehen Schnittstellencontroller an beliebige Apple Watch")
 
-Verwenden Sie das Menü für die Größe, bearbeiten und Vorschau das Storyboard an eines der verfügbaren Bildschirmgrößen: **38mm** oder **42mm**:
+Verwenden Sie das Menü "Größe", um bearbeiten und Vorschau das Storyboard an eines der verfügbaren Bildschirmgrößen: **38mm** oder **42mm**:
 
 ![](screen-sizes-images/screen-menu-sml.png "Die Größe 38mm oder -42mm auswählen")
 

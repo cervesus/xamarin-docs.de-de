@@ -1,5 +1,5 @@
 ---
-title: Datumsauswahl
+title: Auswahl
 description: Verwenden von integrierten Android Dialogfelder zum Abfragen von des Benutzers für Datum und Uhrzeit
 ms.prod: xamarin
 ms.assetid: 57C86933-3F04-47DD-9839-72D522D73330
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
 ms.openlocfilehash: af6e71e83f90be720db75887553e24a99966720c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153556"
 ---
-# <a name="pickers"></a>Datumsauswahl
+# <a name="pickers"></a>Auswahl
 
 
 *Datumsauswahl* sind Elemente der Benutzeroberfläche, mit denen den Benutzer ein Datum oder eine Uhrzeit auswählen, durch die Verwendung von Dialogen an, die von Android bereitgestellt werden können:

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087858"
 ---
 # <a name="touch-id-in-xamarinios"></a>Touch-ID in Xamarin.iOS
 
@@ -52,8 +52,8 @@ Ab iOS 8 ist jetzt eine neue Richtlinie für Benutzer vorhanden, `SecAccessContr
 
 |Gerätekonfiguration|Richtlinienauswertung|Mechanismus für Sicherungen|
 |--- |--- |--- |
-|Gerät ohne Kennung|Kein Zugriff|Keine|
-|Gerät mit der Kennung|Erfordert die Kennung|Keine|
+|Gerät ohne Kennung|Kein Zugriff|Keiner|
+|Gerät mit der Kennung|Erfordert die Kennung|Keiner|
 |Gerät mit Touch ID|Touch ID bevorzugt|Ermöglicht der Kennung|
 
 Alle Vorgänge in der sicheren Enclave können voneinander als vertrauenswürdig eingestuft. Dies bedeutet, dass wir das Authentifizierungsergebnis Touch ID verwenden können, um die Entschlüsselung der Keychain-Element zu autorisieren. Die sichere Enclave speichert auch einen Zähler des fehlgeschlagenen Übereinstimmungen von Touch ID, in denen Fall einen Benutzer wieder mit der Kennung aufweist.
@@ -63,7 +63,7 @@ Ein neues Framework in iOS 8 namens _lokale Authentifizierung_, unterstützt die
 
 Wie wir im vorherigen Abschnitt eingerichtet haben, können Anwendungen für die lokale Authentifizierung zum Authentifizieren des Benutzers in die Einhaltung der Sicherheitsrichtlinie, die auf dem Gerät eingerichtet wurde.
 
-Die API bietet derzeit nur zwei Funktionen: Erstens unterstützt Sie die vorhandenen Keychain-Dienste durch die Verwendung von neuen Keychain Zugriffssteuerungslisten (ACLs). Keychain-Daten können mit der erfolgreichen Authentifizierung eines Fingerabdrucks Benutzer entsperrt werden.
+Die API bietet derzeit nur zwei Funktionen: Erstens unterstützt er die vorhandenen Keychain-Dienste durch die Verwendung von neuen Keychain Zugriffssteuerungslisten (ACLs). Keychain-Daten können mit der erfolgreichen Authentifizierung eines Fingerabdrucks Benutzer entsperrt werden.
 
 Zweitens LocalAuthentication zwei stellt Methoden bereit, um die Anwendung lokal zu authentifizieren. Entwickler sollten verwenden `CanEvaluatePolicy` zu bestimmen, ob das Gerät Touch ID akzeptieren kann, und klicken Sie dann `EvaluatePolicy` , starten Sie den Authentifizierungsvorgang.
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: a40d0911b7dabc900a4c6e50c692e4f091f22be9
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61206262"
 ---
 # <a name="core-animation-in-xamarinios"></a>Animation "Core" in Xamarin.iOS
 
@@ -25,7 +25,7 @@ Die Core Animation und Core Graphics-Frameworks zusammenarbeiten, um erstellen S
 
 <a name="Using_Core_Animation" />
 
-## <a name="core-animation"></a>Core-Animation
+## <a name="core-animation"></a>Core Animation
 
 iOS verwendet das Framework Core Animation, zum Erstellen von Animationseffekten, z. B. Übergang zwischen den Ansichten, gleitend Menüs und Durchführen eines Bildlaufs Effekte, um nur einige zu nennen. Es gibt zwei Möglichkeiten zum Arbeiten mit Animation:
 

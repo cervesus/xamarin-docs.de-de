@@ -1,5 +1,5 @@
 ---
-title: Arbeiten mit Tabellen in der iOS-Designer
+title: Arbeiten mit Tabellen im iOS-Designer
 description: In den vorherigen Abschnitten vorgestellt, die mit der Tabellen-Entwicklung. In diesem Abschnitt fünfte und letzte wir aggregieren, was wir bisher gelernt haben und eine Aufgabenliste-basisanwendung mit einem Storyboard zu erstellen.
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 303c96ae6cdbc9f5b327c971f962d6eac75a6fa1
-ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50983613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227552"
 ---
-# <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen in der iOS-Designer
+# <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen im iOS-Designer
 
 Storyboards sind eine WYSIWYG-Möglichkeit zum Erstellen von iOS-Anwendungen und innerhalb von Visual Studio für Mac und Windows verwendet werden. Weitere Informationen zu Storyboards, finden Sie in der [Einführung zu Storyboards](~/ios/user-interface/storyboards/index.md) Dokument. Storyboards können Sie so bearbeiten Sie die Zelle Layouts außerdem *in* die Tabelle, die vereinfacht die Entwicklung mit Tabellen und Zellen
 
-Beim Konfigurieren der Eigenschaften einer Tabellenansicht im iOS-Designer, es gibt zwei Arten von Inhalt der Zelle können Sie auswählen: **dynamische** oder **statische** Prototyp-Inhalt.
+Beim Konfigurieren der Eigenschaften einer Tabellenansicht im iOS-Designer, gibt es zwei Arten von Inhalt für die Zelle, die Sie auswählen können: **Dynamische** oder **statische** Prototyp-Inhalt.
 
 <a name="Prototype_Content" />
 
@@ -79,11 +79,11 @@ Die erste Änderung an das Storyboard ist das Löschen der vorhandenen Detailans
 
 5. Als Nächstes konfigurieren Sie die beiden Ansichten für die Tabelle, indem Sie sie auswählen und das Pad "Eigenschaften". Achten Sie darauf, wählen Sie die Ansicht und nicht die View-Controller – Sie können die Dokumentgliederung verwenden, um Unterstützung bei der Auswahl.
 
-6.  Ändern der Root View Controller als **Inhalt: dynamische Prototypen** (die Ansicht auf der Entwurfsoberfläche wird bezeichnet **Prototyp Content** ):
+6.  Ändern der Root View Controller als **Inhalt: Dynamische Prototypen** (die Ansicht auf der Entwurfsoberfläche wird bezeichnet **Prototyp Content** ):
 
     [![Die Content-Eigenschaft wird auf dynamische Prototypen festlegen.](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7.  Ändern Sie die neue **UITableViewController** sein **Inhalt: statische Zellen**. 
+7.  Ändern Sie die neue **UITableViewController** sein **Inhalt: Statische Zellen**. 
 
 
 8. Die neue UITableViewController müssen die Klassennamen und einen Bezeichner festgelegt. Wählen Sie den Ansichtscontroller und den Typ _TaskDetailViewController_ für die **Klasse** in die **Pad "Eigenschaften"** – Hiermit wird ein neues `TaskDetailViewController.cs` Datei in der Projektmappe Pad. Geben Sie die **StoryboardID** als _Detail_, wie im folgenden Beispiel dargestellt. Dies wird später verwendet, laden diese Ansicht in C# Code:  
@@ -115,7 +115,7 @@ Auf diese Weise müssen Sie als Nächstes erstellen eine Schaltfläche, die neue
 Führen Sie folgende Schritte aus: 
 
 -  Ziehen Sie eine **Schaltflächenelement** aus der Toolbox an die _der Navigationsleiste rechts_.
--  In der **Pad "Eigenschaften"** unter **Leiste Schaltflächenelement** wählen **Bezeichner: Hinzufügen** (zu vereinfachen ein *+* plus Schaltfläche). 
+-  In der **Pad "Eigenschaften"** unter **Leiste Schaltflächenelement** wählen **Bezeichner: Hinzufügen** (dialogfeldbasiert eine *+* plus Schaltfläche). 
 -  Benennen Sie es, damit es zu einem späteren Zeitpunkt im Code identifiziert werden kann. Beachten Sie, dass Sie der Root View Controller-Klasse benennen müssen (z. B. **ItemViewController**), sodass Sie Balken Schaltfläche den Namen des Elements festlegen können.
 
 
@@ -130,9 +130,9 @@ Sind die Schritte, um das vollständige Layout zu erstellen:
 Wählen Sie die Tabellenansicht, und öffnen Sie die **Pad "Eigenschaft"**. Aktualisieren Sie die folgenden Eigenschaften:
 
 -  **Abschnitte**: _2_ 
--  **Stil**: _gruppiert_
--  **Trennzeichen**: _keine_
--  **Auswahl**: _keine Auswahl_
+-  **Stil**: _Gruppiert_
+-  **Trennzeichen**: _Keine_
+-  **Auswahl**: _Keine Auswahl_
 
 Wählen Sie im oberen Abschnitt und unter **Eigenschaften > Tabelle "im Abschnitt"** ändern **Zeilen** zu _3_, wie unten gezeigt:
 
@@ -141,7 +141,7 @@ Wählen Sie im oberen Abschnitt und unter **Eigenschaften > Tabelle "im Abschnit
 
 Für jede Zelle öffnen die **Pad "Eigenschaften"** und festlegen:
 
--  **Stil**: _benutzerdefinierte_
+-  **Stil**:  _Benutzerdefiniert_
 -  **Bezeichner**: Wählen Sie einen eindeutigen Bezeichner für jede Zelle (z. b. "_Titel_","_Anmerkungen zu dieser_","_Fertig_").
 -  Ziehen Sie die erforderlichen Steuerelemente, um das Layout im Screenshot gezeigten zu erzeugen (platzieren Sie **UILabel**, **UITextField** und **UISwitch** auf die richtigen Zellen, und legen Sie die Bezeichnungen entsprechend, d. h. Titel, Hinweise und abgeschlossen).
 
@@ -149,7 +149,7 @@ Für jede Zelle öffnen die **Pad "Eigenschaften"** und festlegen:
 Legen Sie im zweiten Abschnitt **Zeilen** zu _1_ und klicken Sie auf den unteren Ziehpunkt der Zelle, die sie höher zu machen.
 
 -  **Legen Sie den Bezeichner**: in einen eindeutigen Wert (z. b. "Speichern Sie"). 
--  **Festlegen des Hintergrunds**: _Löschen der Farbe_ .
+-  **Festlegen des Hintergrunds**:  _Löschen der Farbe_ .
 -  Ziehen Sie zwei Schaltflächen in der Zelle, und legen Sie deren Titel entsprechend fest (d. h. _speichern_ und _löschen_), wie unten gezeigt:
 
    [![Festlegen von zwei Schaltflächen im unteren Abschnitt](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)

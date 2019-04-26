@@ -1,5 +1,5 @@
 ---
-title: iOS Hintergrundverarbeitung mit Aufgaben
+title: iOS-Hintergrundverarbeitung mit Aufgaben
 description: Dieses Dokument beschreibt, wie Sie Aufgaben im Hintergrund zu verwenden, um lang andauernden Aufgaben auszuführen, nachdem eine Anwendung im Hintergrund platziert wird.
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170680"
 ---
-# <a name="ios-backgrounding-with-tasks"></a>iOS Hintergrundverarbeitung mit Aufgaben
+# <a name="ios-backgrounding-with-tasks"></a>iOS-Hintergrundverarbeitung mit Aufgaben
 
 Die einfachste Möglichkeit zum Ausführen der hintergrundverarbeitung in iOS ist Ihre backgrounding Anforderungen in Aufgaben unterteilen und die Aufgaben im Hintergrund ausgeführt. Aufgaben eine strenge zeitliche Begrenzung unterliegen, und erhalten in der Regel ca. 600 Sekunden (10 Minuten) der Verarbeitungszeit, nachdem eine Anwendung in den Hintergrund, unter iOS 6 verschoben wurde und weniger als 10 Minuten unter iOS 7 und höher.
 

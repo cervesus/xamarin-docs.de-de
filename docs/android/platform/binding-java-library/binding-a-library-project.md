@@ -1,5 +1,5 @@
 ---
-title: Binden eine Eclipse-Bibliotheksprojekts
+title: Binden eines Eclipse-Bibliotheksprojekts
 description: In dieser exemplarischen Vorgehensweise wird erläutert, wie Xamarin.Android-Projektvorlagen verwenden eine Eclipse-Android-Bibliotheksprojekt gebunden wird.
 ms.prod: xamarin
 ms.assetid: CEE90F8A-164B-4155-813A-7537A665A7E7
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: a5887748eda8af89b9215e3e121db592dfa73935
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957628"
 ---
-# <a name="binding-an-eclipse-library-project"></a>Binden eine Eclipse-Bibliotheksprojekts
+# <a name="binding-an-eclipse-library-project"></a>Binden eines Eclipse-Bibliotheksprojekts
 
 _In dieser exemplarischen Vorgehensweise wird erläutert, wie Xamarin.Android-Projektvorlagen verwenden eine Eclipse-Android-Bibliotheksprojekt gebunden wird._
 

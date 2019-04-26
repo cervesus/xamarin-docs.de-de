@@ -1,5 +1,5 @@
 ---
-title: 'Warum schlägt mein iOS-Build fehl mit: keine gültigen iPhone-codesignierungsschlüssel in Keychain gefunden?'
+title: 'Warum schlägt mein iOS-Build fehl mit: Keine gültigen iPhone-Codesignaturschlüssel in Keychain gefunden?'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9DF24C46-D521-4112-9B21-52EA4E8D90D0
@@ -8,20 +8,20 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: fe267db1f83695b3d0e8f3d828f91e01b56ba8ee
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61419664"
 ---
-# <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>Warum schlägt mein iOS-Build fehl mit: keine gültigen iPhone-codesignierungsschlüssel in Keychain gefunden?
+# <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>Warum schlägt mein iOS-Build fehl mit: Keine gültigen iPhone-Codesignaturschlüssel in Keychain gefunden?
 
 ## <a name="cause-of-the-error"></a>Ursache des Fehlers
 Diese Fehlermeldung tritt auf, wenn das betreffende Projekt gültige Anmeldeinformationen im Code-signing sucht jedoch nicht zu finden. Signieren von Code ist für Tests und Bereitstellungen auf physischen iOS-Geräten erforderlich. als auch Ad-hoc- und App Builds zu speichern. 
 
 
 ### <a name="provisioning-devices"></a>Bereitstellung von Geräten
-Wenn Sie ein iOS-Gerät, bevor Sie bereitgestellt haben, der folgende Leitfaden gelangen Sie durch den Prozess der vollständiges schrittweises: [Bereitstellung für Geräte](~/ios/get-started/installation/device-provisioning/index.md)
+Wenn Sie ein iOS-Gerät, bevor Sie bereitgestellt haben, wird der folgende Leitfaden Sie durch den Prozess der vollständiges Schrittweises Ausführen: [Bereitstellung für Geräte](~/ios/get-started/installation/device-provisioning/index.md)
 
 
 ## <a name="bug-when-using-ios-simulator"></a>Fehler bei Verwendung von iOS-Simulator
@@ -35,7 +35,7 @@ Gab es ein Fehler in Xamarin.Visual Studio Version 3.11 der verursacht das iOS-P
 ### <a name="how-to-fix"></a>Gewusst wie: beheben
 Sie können die Umgehung des Problems durch das Entfernen der `<CodesignEntitlements>` Flag aus der Debug-builds in die CSPROJ-Datei. Sie können dies wie folgt tun:
 
-*Warnung: Fehler in der CSPROJ-Dateien können Ihrem Projekt, unterbrechen, daher ist es ratsam, Ihre Dateien zu sichern, bevor Sie versuchen, dies.*
+*Warnung: Fehler in der CSPROJ-Dateien können Ihrem Projekt unterbrechen, daher ist es ratsam, Ihre Dateien zu sichern, bevor Sie es erneut versuchen.*
 
 1. Klicken Sie mit der rechten Maustaste auf das iOS-Projekt im projektmappenbereich, und wählen Sie **Projekt entladen**
 2. Erneut rechten Maustaste auf das Projekt, und wählen Sie **[Projektname] .csproj bearbeiten**

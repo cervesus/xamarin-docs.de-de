@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
 ms.openlocfilehash: a12553cf0b7b9584bb8ff7bc04ed326ad4a7ad2a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61281596"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>Steuerelemente der Benutzeroberfläche in Xamarin.Mac macOS
 
@@ -38,7 +38,7 @@ Dieser Artikel behandelt die Arbeit mit Warnungen in einer Xamarin.Mac-Anwendung
 
 ## <a name="menusmacuser-interfacemenumd"></a>[Menüs](~/mac/user-interface/menu.md)
 
-Menüs sind in verschiedenen Teilen der Benutzeroberfläche einer Mac-Anwendung verwendet. Hauptmenü der Anwendung am oberen Bildschirmrand, um Popup-Menüs und Kontextmenüs, die an einer beliebigen Stelle in einem Fenster angezeigt werden können. Menüs sind ein wesentlicher Bestandteil der Benutzeroberfläche einer Mac-Anwendung. Dieser Artikel behandelt die Arbeit mit Cocoa-Menüs in einer Xamarin.Mac-Anwendung.
+Menüs sind in verschiedenen Teilen der Benutzeroberfläche einer Mac-Anwendung verwendet. Hauptmenü der Anwendung am oberen Bildschirmrand, um Popup-Menüs und Kontextmenüs, die an einer beliebigen Stelle in einem Fenster angezeigt werden können. Menüs sind ein integraler Bestandteil einer Mac-Anwendungsumgebung. Dieser Artikel behandelt die Arbeit mit Cocoa-Menüs in einer Xamarin.Mac-Anwendung.
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[Standardsteuerelemente](~/mac/user-interface/standard-controls.md)
 
@@ -74,4 +74,4 @@ Darüber hinaus wird empfohlen ein Blick auf die [Mac Samples Gallery](https://d
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacOS Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS-Eingaberichtlinien](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

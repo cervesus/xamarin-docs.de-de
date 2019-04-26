@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 98a770d05014e0498b805ed9ffa0c84314efc765
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61374998"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Arbeiten mit TvOS segmentierte Steuerelemente in Xamarin
 
@@ -210,7 +210,7 @@ Wo `UIControlState` gibt den Zustand des Steuerelements, das Sie das Image für 
 - hervorgehoben
 - Deaktiviert
 - Ausgewählt
-- Focused (Mit Fokus)
+- Focused
 
 Und `UIBarMetrics` gibt an, die Metriken, die als verwendet:
 

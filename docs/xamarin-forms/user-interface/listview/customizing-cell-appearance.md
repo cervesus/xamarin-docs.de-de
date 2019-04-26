@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
 ms.openlocfilehash: 1e57764dacf7ae0599df46f13bd4f5505c4cc4a2
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61370751"
 ---
 # <a name="customizing-listview-cell-appearance"></a>Anpassen der Zellendarstellung ListView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 
 [`ListView`](xref:Xamarin.Forms.ListView) bildlauffähige Listen, auf die durch die Verwendung von angepasst werden können, stellt `ViewCell`s. `ViewCells` kann für Anzeigen von Text und Bilder an, einen True/False-Status und Empfangen von Benutzereingaben verwendet werden.
 

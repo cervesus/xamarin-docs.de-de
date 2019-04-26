@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
 ms.openlocfilehash: 5b1c9ff709022d6bcae51597a03fe2a71097cd2d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61076670"
 ---
 # <a name="resource-dictionaries"></a>Ressourcenverzeichnisse
 
@@ -149,7 +149,7 @@ Die ursprüngliche `PageBackgroundColor` und `NormalTextColor` Instanzen, die au
 
 Beachten Sie jedoch, dass der Hintergrund-Leiste des der [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) weiterhin Gelb ist, da die [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) -Eigenschaftensatz auf den Wert des der `PageBackgroundColor` Ressource, die in der Anwendung definiert Ebene `ResourceDictionary`.
 
-Hier ist eine andere Möglichkeit, sich vorzustellen `ResourceDictionary` Vorrang vor: Wenn die XAML-Parser erkennt eine `StaticResource`, es sucht nach einem übereinstimmenden Schlüssel, indem Sie sich über die visuelle Struktur zurücklegen, die erste Übereinstimmung findet. Wenn es sich bei dieser Suche wird beendet, auf der Seite, und der Schlüssel können weiterhin wurde nicht gefunden wurde, sucht der XAML-Parser die `ResourceDictionary` angefügt, um die `App` Objekt. Wenn der Schlüssel nicht gefunden wird, wird eine Ausnahme ausgelöst.
+Hier ist eine andere Möglichkeit, sich vorzustellen `ResourceDictionary` Vorrang vor: Wenn der XAML-Parser erkennt eine `StaticResource`, es sucht nach einem übereinstimmenden Schlüssel, indem Sie sich über die visuelle Struktur zurücklegen, die erste Übereinstimmung findet. Wenn es sich bei dieser Suche wird beendet, auf der Seite, und der Schlüssel können weiterhin wurde nicht gefunden wurde, sucht der XAML-Parser die `ResourceDictionary` angefügt, um die `App` Objekt. Wenn der Schlüssel nicht gefunden wird, wird eine Ausnahme ausgelöst.
 
 ## <a name="stand-alone-resource-dictionaries"></a>Eigenständige Ressourcenverzeichnisse
 
@@ -195,7 +195,7 @@ Instanziieren Sie `MyResourceDictionary` Wenn man diese Anwendungen zwischen ein
 
 Eine Instanz von `MyResourceDictionary` nastaven NA hodnotu der `Resources` Eigenschaft der `ContentPage` Objekt.
 
-Dieser Ansatz hat jedoch einige Einschränkungen: der `Resources` Eigenschaft der `ContentPage` verweist auf nur diese eine `ResourceDictionary`. In den meisten Fällen soll die Möglichkeit, einschließlich anderer `ResourceDictionary` Instanzen und möglicherweise andere Ressourcen als auch.
+Dieser Ansatz hat jedoch einige Einschränkungen: Die `Resources` Eigenschaft der `ContentPage` verweist auf nur diese eine `ResourceDictionary`. In den meisten Fällen soll die Möglichkeit, einschließlich anderer `ResourceDictionary` Instanzen und möglicherweise andere Ressourcen als auch.
 
 Diese Aufgabe erfordert zusammengeführte Ressourcenwörterbücher.
 

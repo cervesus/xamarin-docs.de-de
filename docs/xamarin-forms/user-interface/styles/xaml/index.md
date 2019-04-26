@@ -1,5 +1,5 @@
 ---
-title: Formatieren von Xamarin.Forms-Apps, die mithilfe von XAML-Stile
+title: Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen
 description: Dieses Handbuch wird erläutert, wie die Darstellung einer Xamarin.Forms-Anwendung mithilfe von XAML-Stile anpassen.
 ms.prod: xamarin
 ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
 ms.openlocfilehash: ec41955ac15ab23579a5e63b9e17eed61a74e86f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55291985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61393726"
 ---
-# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Formatieren von Xamarin.Forms-Apps, die mithilfe von XAML-Stile
+# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen
 
 ## <a name="introductionintroductionmd"></a>[Introduction (Einführung)](introduction.md)
 
@@ -44,6 +44,6 @@ Stile nicht reagieren auf Änderungen der Eigenschaften, und für die Dauer eine
 
 Xamarin.Forms umfasst sechs *dynamische* Formatvorlagen, bekannt als *Gerät* Stile, in der [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) Klasse. Alle sechs Formatvorlagen können angewendet werden, um [ `Label` ](xref:Xamarin.Forms.Label) nur Instanzen.
 
-## <a name="style-classesstyle-classmd"></a>[Style-Klassen](style-class.md)
+## <a name="style-classesstyle-classmd"></a>[Formatklassen](style-class.md)
 
 Xamarin.Forms-Formatklassen aktivieren mehrere Formate, die an ein Steuerelement angewendet werden, ohne auf stilvererbung zurückzugreifen.

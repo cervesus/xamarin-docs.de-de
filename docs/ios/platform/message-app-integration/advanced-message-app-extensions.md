@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: baceb59116dd907918b34eca4f44293051190954
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61155570"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Advance Message-App-Erweiterungen in Xamarin.iOS
 
@@ -181,7 +181,7 @@ Sobald der neue Inhalt für das Feld für die Eingabe ist, kann der Benutzer zum
 
 Eine Nachrichten-App-Erweiterung kann in einem der zwei unterschiedliche Ansichtsmodi angezeigt werden:
 
-[![](advanced-message-app-extensions-images/interactive08.png "Eine Nachrichten-App-Erweiterung in zwei unterschiedliche Ansichtsmodi angezeigt: Compact & erweitert")](advanced-message-app-extensions-images/interactive08.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive08.png "Eine Nachrichten-App-Erweiterung in zwei unterschiedliche Ansichtsmodi angezeigt: Kompakte und erweiterte")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** – Dies ist der Standardmodus, in denen die unteren 25 %, der die Ansicht "Nachricht" beansprucht die Nachrichten-App-Erweiterung. In Komprimierungsmodus besitzt die app Zugriff auf die Tastatur, horizontalen Bildlauf oder Streifen Geste Erkennungen nicht. Die app verfügt über Zugriff auf das Feld für die Eingabe und Aufrufe von `InsertMessage` wird sofort, die es dem Benutzer angezeigt werden.
 - **Erweitert** -App-Erweiterung für die Nachricht füllt die gesamte Nachricht-Ansicht. Es hat keinen Zugriff auf das Feld für die Eingabe, aber keinen Zugriff auf die Tastatur, horizontales scrollen und Wischen Geste Erkennungen.
@@ -594,7 +594,7 @@ Auf WatchOS-Nachrichten-app können Handoff auf einem angeschlossenen iOS-Gerät
 Die neue Nachrichten-API hat Unterstützung für ein Fallback auf älteren Apple-Plattformen wird der interaktive Nachricht empfangen:
 
 - WatchOS 2 und höher
-- OS X 10.11 UND HÖHER
+- OS X 10.11 +
 - iOS 9 +
 
 Sie werden in einem fallback-Format als zwei separate Nachrichten übermittelt werden:

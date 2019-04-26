@@ -1,5 +1,5 @@
 ---
-title: Einführung in TvOS 12
+title: Einführung in tvOS 12
 description: Dieses Dokument enthält eine allgemeine Übersicht der neuen und aktualisierten Funktionen in TvOS 12 für die Xamarin Preview-Version aktuell c#-Bindungen enthält.
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60932540"
 ---
-# <a name="introduction-to-tvos-12"></a>Einführung in TvOS 12
+# <a name="introduction-to-tvos-12"></a>Einführung in tvOS 12
 
 Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte TvOS 12.
 

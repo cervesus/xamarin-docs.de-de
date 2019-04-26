@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 7696c820ab6fdf19bdef46db31061fb5914e6cf4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60880685"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>WatchOS-Menu-Steuerelement (Force Touch) in Xamarin
 
@@ -40,7 +40,7 @@ Bis zu vier Menü können das Menüsteuerelement Elemente hinzugefügt werden. S
 
 - Titel, und
 - Benutzerdefiniertes Image oder
-- Ein Systemabbild: akzeptieren "," Add "," Block "," Ablehnen "," Info, vielleicht mehr Stummschaltung, anhalten, spielen, wiederholen "," fortsetzen "," Freigabe "," Shuffle "," Speaker "," Papierkorb.
+- Ein Systemabbild: Akzeptieren, hinzufügen "," Block "," Ablehnen "," Info, vielleicht mehr Stummschaltung, anhalten, spielen, wiederholen "," fortsetzen "," Freigabe "," Shuffle "," Speaker "," Papierkorb.
 
 Erstellen einer `Action` durch Auswählen der **Ereignisse** Teil der **Eigenschaften** Auffüllzeichen, und geben Sie den Namen für die Aktionsmethode. Eine partielle Methode wird im Code erstellt werden, die in der Schnittstelle Controller-Klasse wie folgt implementiert werden können:
 

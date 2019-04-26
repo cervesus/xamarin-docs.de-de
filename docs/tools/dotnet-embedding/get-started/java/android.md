@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
 ms.openlocfilehash: e60892edfcf73f3e7cada8923e16bcc1be2c203e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876901"
 ---
 # <a name="getting-started-with-android"></a>Erste Schritte mit Android
 
@@ -105,7 +105,7 @@ if exist %E4K_OUTPUT% rmdir /S /Q %E4K_OUTPUT%
 
 Dadurch wird die AAR-Datei kopiert, in ein neues Modul mit dem Namen **Hello_from_csharp**.
 
-![Android Studio-Projekt](android-images/androidstudioproject.png)
+![Android Studio Project](android-images/androidstudioproject.png)
 
 Verwenden Sie das neue Modul aus Ihrem **app**mit der rechten Maustaste auf, und wählen Sie **Moduleinstellungen öffnen**. Auf der **Abhängigkeiten** Registerkarte, fügen Sie einen neuen **Modul Abhängigkeit** , und wählen Sie **: Hello_from_csharp**.
 

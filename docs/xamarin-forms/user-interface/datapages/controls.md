@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38866521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61161766"
 ---
 # <a name="datapages-controls-reference"></a>Steuerelementreferenz DataPages
 
@@ -49,7 +49,7 @@ Die `HeroImage` Steuerelement verfügt über vier Eigenschaften:
 
 * Text
 * Detail
-* "ImageSource"
+* ImageSource
 * Aspekt
 
 ```xaml
@@ -79,7 +79,7 @@ Es gibt fünf Eigenschaften:
 
 * Titel
 * Detail
-* "ImageSource"
+* ImageSource
 * PlaceholdImageSource
 * Aspekt
 
@@ -112,7 +112,7 @@ Es werden drei Eigenschaften enthalten:
 
 * Text
 * Detail
-* "ImageSource"
+* ImageSource
 
 Das Ziel ist ein benutzerdefiniertes Steuerelement, das den folgenden Code aussehen (Beachten Sie, dass ein benutzerdefiniertes `xmlns:local` ist erforderlich, die auf die aktuelle Assembly verweist):
 

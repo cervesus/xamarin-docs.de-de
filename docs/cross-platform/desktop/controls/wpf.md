@@ -6,11 +6,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
 ms.openlocfilehash: 990253cbd31ad79bc47f086dc5bd2b99233f2032
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61272661"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF im Vergleich zu. Xamarin.Forms: Ähnlichkeiten und Unterschiede
 
@@ -170,7 +170,7 @@ Für Phone-Geräte, die verschiedene _Bildschirme_ sind häufig die Lösung und 
 |--- |--- |
 |Stapelbasierte (Push/Pop)|NavigationPage|
 |Master/Detail|MasterDetailPage|
-|Registerkarten|"Tabbedpage"|
+|Registerkarten|TabbedPage|
 |Streichen Sie nach links/rechts|CarouselView|
 
 Die `NavigationPage` der gängigste Ansatz ist, und jede Seite hat eine `Navigation` Eigenschaft, die mithilfe von Push übertragen oder pop-Seiten, die ein- und Ausschalten der Navigationsstapel verwendet werden kann. Dies entspricht dem am nächsten an der `NavigationService` finden Sie in WPF.

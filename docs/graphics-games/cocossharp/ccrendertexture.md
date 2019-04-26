@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 95227689303a8367785202956a6aaef921c1c593
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085202"
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>Leistung und visuelle Effekte mit CCRenderTexture
 
@@ -67,7 +67,7 @@ Im Beispiel wird codiert, um zwei Probleme verfügbar zu machen, die auftreten k
 
 ### <a name="card-draw-calls"></a>Karte Draw-Aufrufe
 
-Eine Vereinfachung des was in einer vollständigen zu finden sind, ist der Code *sammelbare Kartenspiel* (CCG) wie z. B. "Magic-Befehl: das Sammeln von" oder "Hearthstone". Unser Spiel nur drei Karten auf einmal angezeigt und verfügt über eine kleine Anzahl von möglichen Einheiten (Blau, Grün und Orange). Im Gegensatz dazu ein vollständiger Spiel möglicherweise mehr als 20 Karten auf dem Bildschirm zu einem bestimmten Zeitpunkt und Spieler möglicherweise Hunderte von Karten auswählen, wenn ihre Decks zu erstellen. Auch wenn unser Spiel nicht aktuell von Leistungsproblemen der Fall ist, kann ein vollständiger Spiel mit gleicher Implementierung.
+Eine Vereinfachung des was in einer vollständigen zu finden sind, ist der Code *sammelbare Kartenspiel* (CCG) wie z. B. "Magic-Befehl: Die Erfassung"oder"Hearthstone". Unser Spiel nur drei Karten auf einmal angezeigt und verfügt über eine kleine Anzahl von möglichen Einheiten (Blau, Grün und Orange). Im Gegensatz dazu ein vollständiger Spiel möglicherweise mehr als 20 Karten auf dem Bildschirm zu einem bestimmten Zeitpunkt und Spieler möglicherweise Hunderte von Karten auswählen, wenn ihre Decks zu erstellen. Auch wenn unser Spiel nicht aktuell von Leistungsproblemen der Fall ist, kann ein vollständiger Spiel mit gleicher Implementierung.
 
 CocosSharp bietet ein Einblick in die Leistung beim Rendern durch Verfügbarmachen von den Draw-Aufrufen pro-Frame ausgeführt. Unsere `GameLayer.AddedToScene` Methode legt die `GameView.Stats.Enabled` zu `true`, wodurch Leistungsinformationen auf der unteren linken Ecke des Bildschirms angezeigt:
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
 ms.openlocfilehash: daea27472ac7c0578c1cfd79ebd96428212fafb3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61165589"
 ---
 # <a name="cloudkit-in-xamarinios"></a>CloudKit in Xamarin.iOS
 
@@ -114,7 +114,7 @@ iCloud.com.company-name.application-name
 
 Während der Container, in der Standardeinstellung gebunden 1: 1 für eine bestimmte Anwendung sind, können sie zwischen Anwendungen freigegeben werden. Damit mehrere Anwendungen auf einem einzelnen Container koordinieren können. Eine einzelne Anwendung kann auch mit mehreren Containern sprechen.
 
-### <a name="databases"></a>Datenbanken
+### <a name="databases"></a>Databases
 
 Eine der Hauptfunktionen CloudKit ist Datenmodell einer Anwendung und die Replikation dieses Modell bis zu der iCloud-Server. Einige Informationen richtet sich des Benutzers, die sie erstellt haben, Weitere Informationen sind öffentliche Daten, die von einem Benutzer für die öffentliche Verwendung (z. B. eine Restaurantkritik) erstellt werden konnte oder möglicherweise Informationen, die der Entwickler für die Anwendung veröffentlicht hat. In beiden Fällen die Zielgruppe ist nicht nur einen einzelnen Benutzer, jedoch ist eine Community von Benutzern.
 
@@ -151,9 +151,9 @@ Hier sind die Unterschiede zwischen der Datenbank-Datentypen:
 ||Öffentliche Datenbank|Private-Datenbank|
 |---|--- |--- |
 |**Datentyp**|Freigegebene Daten|Daten des aktuellen Benutzers|
-|**Kontingent**|Klicken Sie auf der Entwickler Kontingent berücksichtigt|Klicken Sie auf das Kontingent des Benutzers berücksichtigt|
+|**Quota**|Klicken Sie auf der Entwickler Kontingent berücksichtigt|Klicken Sie auf das Kontingent des Benutzers berücksichtigt|
 |**Standardberechtigungen**|World lesbar|Benutzer lesbar|
-|**Berechtigungen bearbeiten**|iCloud-Dashboard-Rollen über eine Benutzerdatensatz-Klasse Ebene|N/V|
+|**Berechtigungen bearbeiten**|iCloud-Dashboard-Rollen über eine Benutzerdatensatz-Klasse Ebene|Nicht zutreffend|
 
 ### <a name="records"></a>Datensätze
 

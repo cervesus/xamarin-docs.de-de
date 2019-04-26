@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
 ms.openlocfilehash: 9e9fa1e2651661670f89baac7fcd438b3d14bfb3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200913"
 ---
 # <a name="replacing-the-action-bar"></a>Ersetzen der Aktionsleiste
 
@@ -283,7 +283,7 @@ Wenn die app nicht ordnungsgemäß ein benutzerdefiniertes Design verwenden konf
 
 ![Fehler, die auftreten können, wenn benutzerdefiniertes Design nicht verwendet wird](replacing-the-action-bar-images/03-theme-not-defined.png)
 
-Darüber hinaus eine Fehlermeldung wie im folgenden erstellt werden kann: _Java.Lang.IllegalStateException: Diese Aktivität ist bereits eine Aktionsleiste der Fenster Decor vom._ 
+Darüber hinaus kann eine Fehlermeldung wie die folgende erstellt werden: _Java.Lang.IllegalStateException: Diese Aktivität ist bereits eine Aktionsleiste der Fenster Decor vom._ 
 
 Um diesen Fehler zu beheben, überprüfen, ob die `android:theme` -Attribut für das benutzerdefinierte Design hinzugefügt wird `<application>` (in **Properties/Androidmanifest.XML**) wie zuvor im Abschnitt [Anwenden der benutzerdefinierten Designs](#apply-the-custom-theme). Darüber hinaus, dass dieser Fehler kann verursacht werden, wenn die `Toolbar` Layout oder eines benutzerdefinierten Designs ist nicht ordnungsgemäß konfiguriert.
 

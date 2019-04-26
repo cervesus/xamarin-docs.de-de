@@ -1,5 +1,5 @@
 ---
-title: Matrix der Xamarin.Android-Fehler
+title: Xamarin.Android Errors Matrix
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7EBE4C01-8EFC-4B7E-97BA-D879994F59AB
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
 ms.openlocfilehash: f3721ad661f4b817375b0d625c9b5cc293e6d44c
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945304"
 ---
-# <a name="xamarinandroid-errors-matrix"></a>Matrix der Xamarin.Android-Fehler
+# <a name="xamarinandroid-errors-matrix"></a>Xamarin.Android Errors Matrix
 
 ## <a name="errors-reference"></a>Referenz zu Fehlern
 
@@ -58,7 +58,7 @@ Dieses Dokument enthält einige Informationen auf die verschiedenen Fehlercodes 
 |XA0020|Mandroid-Pfad konnte nicht ermittelt werden.|
 |XA0100|EmbeddedNativeLibrary "{0}' ist ungültig. in der Android-Anwendungsprojekt. Verwenden Sie stattdessen AndroidNativeLibrary.|
 
-### <a name="xa1xxx-errors"></a>XA1xxx-Fehler
+### <a name="xa1xxx-errors"></a>XA1xxx Errors
 
 |Fehlercode|Beschreibung|
 |--- |--- |
@@ -78,7 +78,7 @@ Dieses Dokument enthält einige Informationen auf die verschiedenen Fehlercodes 
 |XA1103|Konnte nicht getrennt werden.|
 |XA1104|Paket konnte nicht gesendet: {0}.|
 |XA1105|Unerwarteter Antworttyp.|
-|XA1106|Liste der Anwendungen konnte nicht auf dem Gerät abgerufen werden: Timeout bei Anforderung.|
+|XA1106|Liste der Anwendungen konnte auf dem Gerät nicht abgerufen werden: Timeout bei der Anforderung.|
 |XA1107|Anwendung konnte nicht gestartet.|
 |XA1201|Den Simulator konnte nicht geladen werden: {0}.|
 |XA1301|Native Bibliothek '{0}"({1}) wurde ignoriert, da sie nicht den aktuellen Build Architecture(s) übereinstimmt ({2}).|
@@ -114,7 +114,7 @@ Hierbei handelt es sich um Code schemagenerierung aufgetretenen Fehler.
 |XA4001|Die Hauptvorlage konnte nicht auf expansed "{0}".|
 |XA4101|Die Registrierungsstelle eine Signatur für den Typ kann nicht erstellt werden kann '{0}".|
 |XA4102|Die Registrierungsstelle finden Sie einen ungültigen Typ "{0}"in der Signatur für die Methode"{2}". Mit "{1}" stattdessen.|
-|XA4103|Die Registrierungsstelle finden Sie einen ungültigen Typ "{0}"in der Signatur für die Methode"{2}': der Typ INativeObject implementiert, jedoch verfügt nicht über einen Konstruktor, der zwei übernimmt (IntPtr, Bool) Argumente.|
+|XA4103|Die Registrierungsstelle finden Sie einen ungültigen Typ "{0}"in der Signatur für die Methode"{2}": Der Typ INativeObject implementiert, jedoch verfügt nicht über einen Konstruktor, der zwei übernimmt (IntPtr, Bool) Argumente.|
 |XA4104|Die Registrierungsstelle nicht marshallen kann den Rückgabewert für Typ '{0}"in der Signatur für die Methode"{1}".|
 |XA4105|Die Registrierungsstelle nicht marshallen den Parameter vom Typ "{0}"in der Signatur für die Methode"{1}".|
 |XA4106|Die Registrierungsstelle nicht marshallen kann den Rückgabewert für Struktur '{0}"in der Signatur für die Methode"{1}".|
@@ -175,22 +175,22 @@ Diese Fehlercodes handelt es sich um lizenzierungs- und aktivierungsprozessen Fe
 
  **Ursache:** Lizenz abgelaufen
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|WARNUNG|WARNUNG|WARNUNG|WARNUNG|WARNUNG|
+|WARNING|WARNING|WARNING|WARNING|WARNING|
 
 
 #### <a name="xa9001"></a>XA9001
 
- **Ursache:** Testversion ist abgelaufen
+ **Ursache:** Die Testversion ist abgelaufen
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|WARNUNG|WARNUNG|WARNUNG|WARNUNG|WARNUNG|
+|WARNING|WARNING|WARNING|WARNING|WARNING|
 
 
 
@@ -198,66 +198,66 @@ Diese Fehlercodes handelt es sich um lizenzierungs- und aktivierungsprozessen Fe
 
  **Ursache:** AndroidJavaSource
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|OK|OK|OK|OK|
+|ERROR|OK|OK|OK|OK|
 
  **Ursache:** AndroidJavaLibrary
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|OK|OK|OK|OK|
+|ERROR|OK|OK|OK|OK|
 
  **Wenn eine bindungsassembly die JAR-Datei eingebettet ist, wird dies zum Zeitpunkt der Paketerstellung nicht Buildzeit abgefangen.**
 
  **Ursache:** AndroidNativeLibrary
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|OK|OK|OK|OK|
+|ERROR|OK|OK|OK|OK|
 
 
 #### <a name="xa9003"></a>XA9003
 
  **Ursache:** System.Runtime.Serialization
 
- **Während überprüft:** Paket
+ **Während überprüft wird:** Package
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|OK|OK|OK|
+|ERROR|ERROR|OK|OK|OK|
 
  **Ursache:** System.ServiceModel.Web
 
- **Während überprüft:** Paket
+ **Während überprüft wird:** Package
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|OK|OK|OK|
+|ERROR|ERROR|OK|OK|OK|
 
  **Ursache:** Mono.Data.Tds
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|OK|OK|OK|
+|ERROR|ERROR|OK|OK|OK|
 
  **Dies ist "System.Data.dll", verweist dies zulässig ist**
 
  **Ursache:** Mono.Android.Export
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|OK|OK|OK|OK|
+|ERROR|OK|OK|OK|OK|
 
 
 
@@ -265,23 +265,23 @@ Diese Fehlercodes handelt es sich um lizenzierungs- und aktivierungsprozessen Fe
 
  **Ursache:** – profilerstellung
 
- **Während überprüft:** Paket
+ **Während überprüft wird:** Package
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|OK|OK|OK|
+|ERROR|ERROR|OK|OK|OK|
 
 
 
 #### <a name="xa9005"></a>XA9005
 
- **Ursache:** größenbeschränkung (32 kb).
+ **Ursache:** Maximale Größe (32kb).
 
- **Während überprüft:** Paket
+ **Während überprüft wird:** Package
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|OK|-|-|-|
+|ERROR|OK|-|-|-|
 
 
 
@@ -289,44 +289,44 @@ Diese Fehlercodes handelt es sich um lizenzierungs- und aktivierungsprozessen Fe
 
  **Ursache:** Namespace "System.Data.SqlClient".
 
- **Während überprüft:** Paket
+ **Während überprüft wird:** Package
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|OK|OK|OK|
+|ERROR|ERROR|OK|OK|OK|
 
 
 #### <a name="xa9008"></a>XA9008
 
- **Ursache:** über Befehlszeile erstellen.
+ **Ursache:** Erstellen von Befehlszeilen.
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|OK|OK|OK|
+|ERROR|ERROR|OK|OK|OK|
 
 
 #### <a name="xa9009"></a>XA9009
 
- **Ursache:** Seriennummer fehlt.
+ **Ursache:** Die Seriennummer ist nicht vorhanden.
 
- **Während überprüft:** testable
+ **Während überprüft wird:** Testable
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|FEHLER|FEHLER|FEHLER|
+|ERROR|ERROR|ERROR|ERROR|ERROR|
 
 
 #### <a name="xa9010"></a>XA9010
 
- **Ursache:** ungültige "ProductID".
+ **Ursache:** Ungültige "ProductID".
 
- **Während überprüft:** erstellen
+ **Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|FEHLER|FEHLER|FEHLER|
+|ERROR|ERROR|ERROR|ERROR|ERROR|
 
 Äquivalent zu XA9018.
 
@@ -336,63 +336,63 @@ Diese Fehlercodes handelt es sich um lizenzierungs- und aktivierungsprozessen Fe
 
  **Ursache:** Fehler beim Aktualisieren der Lizenzdatei (für den neuen Dateiformat vor).
 
- **Während überprüft:** Aktivierung
+ **Während überprüft wird:** Aktivierung
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|FEHLER|FEHLER|FEHLER|
+|ERROR|ERROR|ERROR|ERROR|ERROR|
 
 #### <a name="xa9012"></a>XA9012
 
- **Ursache:** kein Internet
+ **Ursache:** Keine Internetverbindung
 
- **Während überprüft:** Aktivierung
+ **Während überprüft wird:** Aktivierung
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|FEHLER|FEHLER|FEHLER|
+|ERROR|ERROR|ERROR|ERROR|ERROR|
 
 
 #### <a name="xa9013"></a>XA9013
 
- **Ursache:** Unbekannter Fehler
+ **Ursache:** Unbekannter Fehler.
 
- **Während überprüft:** Aktivierung
+ **Während überprüft wird:** Aktivierung
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|FEHLER|FEHLER|FEHLER|
+|ERROR|ERROR|ERROR|ERROR|ERROR|
 
 
 #### <a name="xa9014"></a>XA9014
 
  **Ursache:** Ungültige Gültigkeitsdauer des Aktivierungscodes
 
- **Während überprüft:** Aktivierung
+ **Während überprüft wird:** Aktivierung
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|FEHLER|FEHLER|FEHLER|
+|ERROR|ERROR|ERROR|ERROR|ERROR|
 
 
 #### <a name="xa9017"></a>XA9017
 
- **Ursache:** Aktivierungsserver eine gültige Lizenz nicht zurückgeben kann.
+ **Ursache:** Aktivierungsserver nicht über eine gültige Lizenz zurück.
 
- **Während überprüft:** Aktivierung
+ **Während überprüft wird:** Aktivierung
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|FEHLER|FEHLER|FEHLER|FEHLER|FEHLER|
+|ERROR|ERROR|ERROR|ERROR|ERROR|
 
 
 #### <a name="xa9018"></a>XA9018
 
-**Ursache:** ungültige Lizenz
+**Ursache:** Ungültige Lizenz
 
-**Während überprüft:** erstellen
+**Während überprüft wird:** Build
 
 |Starter|Indie|Business(Trial)|Geschäftlich|Enterprise|
 |--- |--- |--- |--- |--- |
-|-|-|FEHLER|-|-|
+|-|-|ERROR|-|-|
 

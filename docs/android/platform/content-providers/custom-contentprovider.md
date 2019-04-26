@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
 ms.openlocfilehash: da8aacac1f282fefb6b8d0e84cae168cf3a7148b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953362"
 ---
 # <a name="creating-a-custom-contentprovider"></a>Erstellen eines benutzerdefinierten ContentProvider
 
@@ -62,7 +62,7 @@ Die folgenden drei Schritte zum Erstellen und nutzen eine benutzerdefinierte `Co
 Wie bereits erwähnt, `ContentProviders` genutzt werden können, von Anwendungen, in dem sie definiert sind. In diesem Beispiel die Daten in der gleichen Anwendung verwendet werden, aber denken Sie daran, die andere Anwendungen auch darauf zugreifen können, solange sie wissen, den Uri und die Informationen zum Schema (die in der Regel als Konstante Werte bereitgestellt wird).
 
 
-## <a name="create-a-database"></a>Erstellen Sie eine Datenbank
+## <a name="create-a-database"></a>Erstellen einer Datenbank
 
 Die meisten `ContentProvider` Implementierungen werden auf Grundlage einer `SQLite` Datenbank. Der Beispielcode für die Datenbank in **SimpleContentProvider/VegetableDatabase.cs** eine sehr einfache Datenbank zwei Spalten erstellt, wie dargestellt:
 

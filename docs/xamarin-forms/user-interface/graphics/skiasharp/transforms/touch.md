@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/14/2018
 ms.openlocfilehash: d525725b58a961afb9c4c5d80962d05f8d08b83e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876849"
 ---
 # <a name="touch-manipulations"></a>Manipulationen durch Toucheingaben
 
@@ -273,7 +273,7 @@ Die **Bitmap Drehen** Seite können Sie zwei Finger für Drehung oder kugelstrah
 
 Der erste große Unterschied in diesem Programm ist die Treffertest-Logik. Die vorherigen Programme verwendet, die `Contains` -Methode der `SKRect` zu bestimmen, ob die Touch-Punkt innerhalb des Rechtecks transformiert wird, das die Bitmap entspricht. Aber wie der Benutzer die Bitmap bearbeitet, die Bitmap gedreht, und `SKRect` ein gedrehtes Rechteck nicht ordnungsgemäß darstellen. Sie können Angst haben, dass die Treffertests Logik in diesem Fall recht komplexen analytische Geometrie zu implementieren muss.
 
-Allerdings ist eine Verknüpfung zur Verfügung: bestimmen, ob ein Punkt innerhalb der Grenzen eines transformierten Rechtecks liegt entspricht dem bestimmen, ob ein umgekehrter transformierte Punkt innerhalb der Grenzen des Rechtecks untransformierten liegt. Dies ist eine viel einfachere Berechnung und die Logik kann weiterhin die komfortable `Contains` Methode:
+Es ist jedoch eine Verknüpfung zur Verfügung: Bestimmen, ob ein Punkt innerhalb der Grenzen eines transformierten Rechtecks liegt ist identisch mit bestimmen, ob ein umgekehrter transformierte Punkt innerhalb der Grenzen des Rechtecks untransformierten liegt. Dies ist eine viel einfachere Berechnung und die Logik kann weiterhin die komfortable `Contains` Methode:
 
 ```csharp
 public partial class BitmapRotationPage : ContentPage
@@ -703,7 +703,7 @@ class TouchManipulationBitmap
 
 In der `Moved` und `Released` Ereignisse, die Methodenaufrufe `Manipulate`. Derzeit wird die `touchDictionary` enthält ein oder mehrere `TouchManipulationInfo` Objekte. Wenn die `touchDictionary` enthält mindestens ein Element, ist es wahrscheinlich, die die `PreviousPoint` und `NewPoint` Werte ungleich sind, und stellen die Bewegung des Fingers. Wenn mehrere Finger berühren sich die Bitmap, das Wörterbuch mehr als ein Element enthält, aber nur eines dieser Elemente andere gelten `PreviousPoint` und `NewPoint` Werte. Die restlichen haben gleich `PreviousPoint` und `NewPoint` Werte.
 
-Dies ist wichtig: die `Manipulate` Methode kann davon ausgehen, dass die Verschiebung von nur einem Finger verarbeitet wird. Zum Zeitpunkt des Aufrufs keine anderen Finger verschieben sind, und wenn sie wirklich (wie wahrscheinlich ist) verschieben, werden dieser Verschiebungen in zukünftigen Aufrufen von verarbeitet `Manipulate`.
+Das ist wichtig: Die `Manipulate` Methode kann davon ausgehen, dass die Verschiebung von nur einem Finger verarbeitet wird. Zum Zeitpunkt des Aufrufs keine anderen Finger verschieben sind, und wenn sie wirklich (wie wahrscheinlich ist) verschieben, werden dieser Verschiebungen in zukünftigen Aufrufen von verarbeitet `Manipulate`.
 
 Die `Manipulate` Methode kopiert zunächst das Wörterbuch in ein Array der Einfachheit halber. Etwas anderes als die ersten beiden Einträge werden ignoriert. Wenn mehr als zwei Finger versuchen, die Bearbeitung der Bitmap, werden die anderen ignoriert. `Manipulate` ist das letzte Mitglied `TouchManipulationBitmap`:
 

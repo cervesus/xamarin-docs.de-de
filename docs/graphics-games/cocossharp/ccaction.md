@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
 ms.openlocfilehash: c486bb2e78579360e0f935219cd82958fedee34b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357706"
 ---
 # <a name="animating-with-ccaction"></a>Animieren mit CCAction
 
@@ -245,7 +245,7 @@ castedTarget.Width = startWidth + deltaWidth * 1;
 Die `time` Wert wird in der Regel zwischen 0 und 1 – aber nicht immer – und `Update` Implementierungen sollten diese Grenzen nicht angenommen. Einige Ads-Methoden (z. B. `CCEaseBackIn` und `CCEaseBackOut`) bietet einen Time-Wert außerhalb des Bereichs 0 bis 1.
 
 
-## <a name="conclusion"></a>Schlussfolgerung
+## <a name="conclusion"></a>Schlussbemerkung
 
 Zeichenfolgeninterpolation und vereinfachen der sind ein wichtiger Bestandteil beim Erstellen eines Spiels ansprechenden, besonders beim Erstellen von Benutzeroberflächen. Diesem Leitfaden wird beschrieben, wie Sie mit `CCActions` Standardwerte wie z. B. die Position und Drehung sowie benutzerdefinierten Werten interpolieren. Die `LineWidthState` und `LineWidthAction` Klassen gezeigt, wie eine benutzerdefinierte Aktion implementiert.
 

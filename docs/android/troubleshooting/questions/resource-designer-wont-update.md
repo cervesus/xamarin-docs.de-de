@@ -1,5 +1,5 @@
 ---
-title: Meine Datei "Android Resource.designer.cs" wird nicht aktualisiert werden.
+title: Meine Android-Datei „Resource.designer.cs“ wird nicht aktualisiert
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3F7376E3-59CC-4722-AEED-BB50E4D952AA
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2017
 ms.openlocfilehash: ba3c2b07e7f35bf9fd84d10b74d034a02ca6a73d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153283"
 ---
-# <a name="my-android-resourcedesignercs-file-will-not-update"></a>Meine Datei "Android Resource.designer.cs" wird nicht aktualisiert werden.
+# <a name="my-android-resourcedesignercs-file-will-not-update"></a>Meine Android-Datei „Resource.designer.cs“ wird nicht aktualisiert
 
 > [!NOTE]
 > In Xamarin Studio 5.1.4 und höheren Versionen hat dieses Problem behoben wurde. Jedoch, wenn das Problem in Visual Studio für Mac auftritt, melden Sie bitte eine [neuer Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) erstellen Sie mit der Ihre vollständige versionsverwaltung Informationen "und" vollständig "Protokollausgabe.

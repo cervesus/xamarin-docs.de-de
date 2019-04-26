@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 79022f7a454ea423fa3112a4c4ade2bcd471fbb8
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60932996"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri Remote- und Bluetooth-Controller für TvOS in Xamarin
 
@@ -51,7 +51,7 @@ Siri Remote verfügt über die folgenden Features und die erwartete Verwendung i
 
 Die Siri Remotes Touch-Oberfläche kann eine Vielzahl von Single-Finger-Bewegungen zu erkennen, die Sie in Ihrer app Xamarin.tvOS reagieren können:
 
-|Wischen|Klicken|Tippen Sie auf|
+|Wischen|Klicken|Tippen|
 |---|---|---|
 |![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
 |Auswahl (Fokus) zwischen UI-Elemente auf dem Bildschirm verschoben (nach oben, unten links, rechts). Ein Lesegerät kann verwendet werden, einen Bildlauf durch große Listen von Inhalten schnell mit Trägheit.|Das ausgewählte (bildschärfenmodus)-Element aktiviert oder verhält sich wie die primäre Maustaste in einem Spiel. Durch Klicken auf, und speichern können Kontextmenüs oder sekundären Funktionen aktivieren.|Geringfügig auf die Touch-Oberfläche, auf die Ränder verhält sich wie die entsprechenden Schaltflächen auf einer Steuerkreuz, verschieben den Fokus nach oben, unten, links oder rechts je nach Bereich getippt. Abhängig von der app kann verwendet werden, um ausgeblendete Steuerelemente anzuzeigen.|

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/26/2018
 ms.openlocfilehash: 69e8b919c5cc925be813cf1f768833ccfd948ada
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61311276"
 ---
 # <a name="tizen-net"></a>Tizen .NET
 
@@ -28,7 +28,7 @@ Weitere Informationen zur Vorgehensweise beim Hinzufügen von Tizen .NET-Projekt
 
 ## <a name="documentation"></a>Dokumentation
 
-- [Xamarin.Forms-Dokumentation](~/xamarin-forms/index.yml) &ndash; Vorgehensweise das Erstellen von plattformübergreifenden Anwendungen mit C# und Xamarin.Forms.
+- [Xamarin.Forms-Dokumentation](~/xamarin-forms/index.yml) &ndash; Vorgehensweise das Erstellen von plattformübergreifenden Anwendungen mit c# und Xamarin.Forms.
 - [**Developer.tizen.org** ](https://developer.tizen.org/development) &ndash; Dokumentationen und Videos können Sie die Tizen Anwendungen erstellen und bereitstellen.
 
 ## <a name="samples"></a>Proben

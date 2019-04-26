@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 96af7fab366c3fd3493cf5adbf183d80b7c1ee26
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61418194"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit TvOS Symbole und Bilder in Xamarin
 
@@ -40,7 +40,7 @@ Startbilder nicht Gelegenheit für Werbung oder künstlerische Ausdruck, sie die
 
 |Starten Sie die Größe des Abbilds|Hinweise|
 |---|---|
-|1920 × 1080 Pixel|Nur die Ebenen nicht PNG-Dateien|
+|1920x1080px|Nur die Ebenen nicht PNG-Dateien|
 
 Apple stellt die folgenden Vorschläge für das Entwerfen von Startbildgruppe Ihrer app:
 

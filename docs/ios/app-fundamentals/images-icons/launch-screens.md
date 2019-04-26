@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087535"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Startbildschirme für Xamarin.iOS-Apps
 
@@ -231,4 +231,4 @@ Führen Sie folgende Schritte aus, um das neue Storyboard als einen Startbildsch
 - [iOS-Designer-Grundlagen](~/ios/user-interface/designer/index.md)
 - [Hinzufügen von Bildern zu einem Bild, Asset-Katalog festlegen](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
 - [Automatisches Layout mit dem Xamarin-Designer für iOS](~/ios/user-interface/designer/designer-auto-layout.md)
-- [Human Interface Guidelines: Starten des Bildschirms](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [Human Interface Guidelines: Startbildschirm](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
 ms.openlocfilehash: b0e2d5e3c7923e5c3cf2adcc1dd104a97b78e727
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55832245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61321559"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>Bindbare Layouts in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindableLayouts/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindableLayouts/)
 
 Bindbare Layouts können jede abgeleitete Layoutklasse der [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) Klasse, um den Inhalt durch Bindung an eine Auflistung von Elementen, mit der Option, die die Darstellung der einzelnen Elemente in festlegen generieren eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Bindbare Layouts werden bereitgestellt, durch die `BindableLayout` -Klasse, die die folgenden angefügten Eigenschaften aufweist:
 
@@ -85,7 +85,7 @@ In diesem Beispiel wird jedes Element in der `TopFollowers` Sammlung angezeigt, 
 
 ![Bindbare Layout mit einem DataTemplate](bindable-layouts-images/top-followers.png "bindbare Layout mit einer Datenvorlage")
 
-Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
+Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
 ## <a name="choosing-item-appearance-at-runtime"></a>Auswählen der Element-Darstellung zur Laufzeit
 

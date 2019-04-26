@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 58b3787b71cff9b78f1c6b577be6c320367f1cee
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60952147"
 ---
 # <a name="listview-group-header-style-on-ios"></a>ListView-Group-Headerformat unter iOS
 
@@ -31,7 +31,7 @@ Diese iOS-Plattform-spezifische steuert, ob [ `ListView` ](xref:Xamarin.Forms.Li
 </ContentPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

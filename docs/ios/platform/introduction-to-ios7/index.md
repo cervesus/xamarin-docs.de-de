@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: db2ce779962947e2121ff03280544a080e193e2e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037295"
 ---
 # <a name="introduction-to-ios-7"></a>Einführung in iOS 7
 
@@ -220,7 +220,7 @@ Mit diesem Verhalten vorhanden ist springt der Bildansicht mehr, wenn sie mit de
 
 Zusätzlich zu den neuen UIKit-APIs wie UIKit Dynamics, Übergänge von Ansichtscontrollern und verbesserte UIView-Animationen, die oben beschriebenen führt die iOS 7 eine Vielzahl von visuellen Änderungen an der Benutzeroberfläche und die zugehörigen API-Änderungen für die verschiedenen Ansichten und Steuerelementen. Weitere Informationen finden Sie unter den [iOS 7 Übersicht über die Benutzeroberfläche](~/ios/platform/introduction-to-ios7/ios7-ui.md).
 
-## <a name="text-kit"></a>Text-Kit
+## <a name="text-kit"></a>Text Kit
 
 Text-Kit ist eine neue API, die leistungsstarke Text Layout- und Renderingaufgaben Features bietet. Es basiert auf niedriger Ebene Text des Core-Framework und ist viel einfacher zu verwenden als Core Text.
 
