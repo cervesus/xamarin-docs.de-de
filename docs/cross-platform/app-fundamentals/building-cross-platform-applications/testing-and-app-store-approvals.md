@@ -1,147 +1,147 @@
 ---
-title: 'Teil 6: Testen und App-Store Genehmigungen'
-description: Dieses Dokument beschreibt, wie Sie ein Gerät plattformübergreifende Anwendung testen, Verwalten von Testfällen, Tests zu automatisieren, Ausführen von Komponententests und arbeiten Sie durch die Einreichung app.
+title: 'Teil 6: Testen und App Store-Genehmigungen'
+description: In diesem Dokument wird beschrieben, wie Sie eine plattformübergreifende Anwendung im Gerät zu testen, Verwalten von Testfällen, automatisieren Sie Tests, Ausführen von Komponententests und mehr über die app senden.
 ms.prod: xamarin
 ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: 0faf7c9e4ff7c96cdfd25ab6d6658726ef247b32
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61275406"
 ---
-# <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App-Store Genehmigungen
+# <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App Store-Genehmigungen
 
 ## <a name="testing"></a>Test
 
-Viele apps (auch Android-apps für einige Niederlassungen) müssen Sie einen Genehmigungsprozess übergeben werden, bevor sie veröffentlicht werden; Daher testen unerlässlich, um sicherzustellen Ihrer app den Markt erreicht (ganz zu schweigen von erfolgreich ausgeführt wird, mit Ihren Kunden). Testen kann viele Formen annehmen, Developer-Ebene Komponententests für die Verwaltung über eine Vielzahl von Hardware Betatests dauern.
+Viele Anwendungen (auch Android-apps in einigen Stores) müssen Sie einen Genehmigungsprozess zu übergeben, bevor sie veröffentlicht werden; Daher testen, um sicherzustellen, dass kritische ist Ihrer app erreicht den Markt (ganz zu schweigen von erfolgreich ausgeführt wird, mit Ihren Kunden). Tests kann viele Formen, vom Entwickler auf Komponententests, die für die Verwaltung von beta-Tests auf einer Vielzahl verschiedener Hardware annehmen.
 
 ### <a name="test-on-all-platforms"></a>Testen auf allen Plattformen
 
-Es gibt geringfügige Unterschiede zwischen der Art der Unterstützung durch .NET für Windows Phone, Tablet und Desktopgeräte sowie Einschränkungen für iOS, die verhindern, dass dynamische Code dynamisch generiert werden soll. Entweder planen, testen den Code auf mehreren Plattformen entwickeln, oder planen Zeit für die Umgestaltung und aktualisieren die Modellteil der Anwendung am Ende des Projekts.
+Es gibt jedoch geringfügige Unterschiede zwischen was .NET unterstützt, auf Windows Phone, Tablet und desktop-Geräte, sowie Einschränkungen für iOS, die verhindern, dass dynamische Code dynamisch generiert werden soll. Entweder auf den Code auf mehreren Plattformen testen, entwickeln, oder planen Zeit für das Umgestalten und aktualisieren den Modellteil Ihrer Anwendung am Ende des Projekts planen.
 
-Es ist immer empfiehlt sich, den Simulator-Emulator verwenden, um mehrere Versionen des Betriebssystems und auch andere Gerätekonfigurationen/Funktionen zu testen.
+Es ist immer empfiehlt sich, den Simulator-Emulator verwenden, um mehrere Versionen des Betriebssystems und auch verschiedene Gerätekonfigurationen/Funktionen zu testen.
 
-Sie sollten außerdem Testen auf so viele verschiedene physische Hardwaregeräten wie möglich.
+Sie sollten auch auf so viele unterschiedliche physische Hardwaregeräte können Sie testen.
 
 #### <a name="devices-in-cloud"></a>Geräte in der cloud
 
-Die mobile Smartphone- und Tablet-Ökosystem wächst ständig, machen es unmöglich, die ständig zunehmenden Anzahl der verfügbaren Geräte zu testen. Um dieses Problem zu lösen, das eine Reihe von Diensten die Möglichkeit bieten, vielen verschiedene Geräten Remote zu steuern, sodass Anwendungen installiert und ohne direkt in viele Hardware investieren müssen getestet werden können.
+Das mobile Ökosystem für Smartphone und Tablet wächst immer wieder kann zum Testen der stetig wachsende Anzahl von Geräten, die zur Verfügung. Zur Lösung dieses Problems eine Reihe von Diensten die Möglichkeit bieten, die vielen verschiedene Geräten Remote zu steuern, sodass Anwendungen installiert und ohne dass Sie direkt in viele Hardware investieren müssen getestet werden können.
 
-[Testen der App Mitte](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) bietet eine einfache Möglichkeit zum Testen von IOS- und Android-Apps auf Hunderten von verschiedenen Geräten.
+[App Center Test](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) bietet ein einfaches Verfahren, um IOS- und Android-Anwendungen auf Hunderten von verschiedenen Geräten zu testen.
 
 ### <a name="test-management"></a>Testverwaltung
 
-Beim Testen von Anwendungen in Ihrer Organisation und Verwaltung von einem Betaprogramm mit externen Benutzern stehen zwei Herausforderungen:
+Beim Testen von Anwendungen innerhalb Ihrer Organisation oder ein Beta-Programm für externe Benutzer verwalten, gibt es zwei Herausforderungen:
 
-- **Verteilung** – Verwaltung im Rahmen des Bereitstellungsprozesses (insbesondere für iOS-Geräte) und Abrufen von aktualisierten Versionen der Software an die Tester.
-- **Feedback** – Erfassen von Informationen zur Anwendungsverwendung und ausführliche Informationen zu Fehlern, die auftreten können.
+- **Verteilung** – Verwalten des Bereitstellungsprozesses (insbesondere bei iOS-Geräte) und aktualisierte Versionen der Software an die Tester.
+- **Feedback** – Sammeln von Informationen zu Verwendung und ausführliche Informationen zu Fehlern, die auftreten können.
 
 
-Es gibt eine Reihe von Diensten Hilfe ', um diese Probleme zu beheben, durch Bereitstellen der Infrastruktur, die in der Anwendung zu sammeln und Berichte zur Verwendung und Fehler integriert ist, und auch Optimierung im Rahmen des Bereitstellungsprozesses Hilfe registrieren und Verwalten von Testern und ihre Geräte .
+Es gibt eine Reihe von Services – Hilfe zum Beheben dieser Probleme durch Bereitstellen der Infrastruktur, die in Ihrer Anwendung zu sammeln und Berichte auf Nutzung und Fehlern basiert, und auch Optimierung im Rahmen des Bereitstellungsprozesses, um zu registrieren und zu verwalten, Tester und deren Geräte .
 
-[Visual Studio-App Center](/appcenter/) bietet eine Lösung für diese Probleme, die Version testverteilung, Absturzberichte und Informationen zur Anwendungsverwendung anspruchsvolle bereitstellen.
+[Visual Studio App Center](/appcenter/) bietet eine Lösung für diese Probleme, die Bereitstellung von Test-Version Verteilung, Absturzberichte und Nutzungsinformationen von komplexen Anwendungen.
 
-### <a name="test-automation"></a>Testautomatisierung
+### <a name="test-automation"></a>Automatisierung von Tests
 
-Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) können verwendet werden, um die Benutzeroberfläche mit automatisierten Testskripts erstellen, die lokal ausgeführt werden oder in hochgeladen werden können [App Center Testen](https://docs.microsoft.com/appcenter/test-cloud/).
+Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) können verwendet werden, um die Benutzeroberfläche mit automatisierten Testskripts erstellen, die lokal oder in hochgeladen werden können [App Center Testen](https://docs.microsoft.com/appcenter/test-cloud/).
 
 ## <a name="unit-testing"></a>Unittests
 
 ### <a name="touchunit"></a>Touch.Unit
 
-Xamarin.iOS umfasst eine Komponententestframework Touch.Unit an das JUnit/NUnit-Format, das Schreiben von Tests aufgerufen.
+Xamarin.iOS enthält ein Komponententestframework Touch.Unit an den JUnit/NUnit-Stil, der zum Schreiben von Tests aufgerufen.
 
-Finden Sie in unserem [Komponententests mit Xamarin.iOS](~/ios/deploy-test/touch.unit.md) Dokumentation ausführliche Tests schreiben und Ausführen von Touch.Unit.
+Finden Sie in unserem [Komponententests mit Xamarin.iOS](~/ios/deploy-test/touch.unit.md) Dokumentation zum Schreiben von Tests und Touch.Unit ausgeführt.
 
 ### <a name="andrunit"></a>Andr.Unit
 
-Es ist ein Open Source-Äquivalent Touch.Unit für Android Andr.Unit aufgerufen. Sie können es von herunterladen [Github](https://github.com/spouliot/Andr.Unit) und erfahren Sie über das Tool auf [ @spouliotBlog](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/).
+Es ist eine Open-Source-Entsprechung des Touch.Unit für Android Andr.Unit aufgerufen. Sie können es von [Github](https://github.com/spouliot/Andr.Unit) und erfahren Sie, das Tool auf [ @spouliotBlog](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/).
 
-## <a name="app-store-approvals"></a>App-Store Genehmigungen
+## <a name="app-store-approvals"></a>App-Store-Genehmigungen
 
-Apple und Microsoft Betrieb den einzigen Speicher für ihre Plattformen: die App Store "und" Marketplace bzw. Sowohl ihre Geräte gesperrt, und implementieren Sie einen strenge app Review-Prozess, um zu steuern, die Qualität der Anwendungen, die für den download verfügbaren. Öffnen des Android-Art bedeutet, dass es eine Reihe von Store-Optionen im Bereich von Google Play, weit verbreitet und keine Review-Prozess, der Amazon-App Store für Android und Hardware-spezifischen bemühungen wie Samsung Apps, die Verteilung auf stärker eingeschränkt haben Darüber hinaus einen Genehmigungsprozess implementiert.
+Betrieb von Apple und Microsoft den einzigen Speicher auf ihren Plattformen: die App Store und den Marketplace bzw. Beide Sperren Sie ihre Geräte und Implementieren einer strengen app-Prüfung, um zu steuern, die Qualität der Anwendungen, die zum download zur Verfügung. Öffnen von Android-Art bedeutet, dass es eine Reihe von Store-Optionen, die im Bereich von Google Play, die allgemein verfügbar und verfügt über keine Reviewprozess, auf der Amazon Appstore für Android und hardwarespezifischen bemühungen wie Samsung-Apps, die weitere Verteilung eingeschränkter und implementieren Sie einen Genehmigungsprozess.
 
-Warten auf eine app, die geprüft werden kann sehr verkraftet - Business-Druck bedeuten, dass Anwendungen mit wenig Rand für Fehler, vor einem Datum "Ziel" Launch zur Genehmigung gesendet werden. Der Prozess selbst kann bis zu zwei Wochen dauern und ist nicht notwendigerweise transparent: beschränkt Feedback zum Status der Anwendung vorhanden ist, bis er schließlich abgelehnt oder genehmigt wird. Ablehnung kann bedeuten fehlende ein marketing Fenster Verkaufschancen, besonders, wenn es mehr als einmal auftritt und Wochen zwischen des ursprünglichen Start Datums übergeben, und wenn die app schließlich genehmigt wird.
+Warten auf eine app, die überprüft werden kann sehr anstrengend sein - Business-Druck, häufig bedeutet, dass Anwendungen mit sehr geringem Rand für Fehler, die vor einem Datum "Ziel" Launch zur Genehmigung übermittelt werden. Der Prozess selbst kann bis zu zwei Wochen dauern, und nicht unbedingt transparent: beschränkt Feedback auf den Status der Anwendung vorhanden ist, bis er schließlich abgelehnt oder genehmigt wird. Ablehnung kann bedeuten eine marketing einzigartige Gelegenheit, fehlen, insbesondere dann, wenn es mehr als einmal passiert, und übergeben Sie Wochen, zwischen Ihrer ursprünglichen Start Date, und wenn die app schließlich genehmigt wurde.
 
-### <a name="be-prepared"></a>Darauf vorbereitet sein
+### <a name="be-prepared"></a>Seien Sie darauf vorbereitet
 
-Der erste Teil der Empfehlung: Planen Sie Ihre app-Start auch im voraus, und stellen Sie Zertifikate für einen möglichen Ablehnung und erneute Übermittlung. Jedes Geschäft erfordert, dass Sie ein Konto erstellen, bevor Sie übermitteln der app – dazu so früh wie möglich.
-Während der Anmeldung mit Google-Play nur ein paar Minuten dauert, wenn Ihre apps zur Verfügung stehen, ruft der Prozess viel komplizierter, wenn sie verkaufen und Bankgeschäfte angeben und Steuerinformationen müssen. Apple und im Microsoft Prozesse sind sowohl deutlich komplizierter als das Google, könnte es dauern, einer Woche oder mehr, um Ihr Konto genehmigt verlagern also diesmal in Ihre Pläne starten.
+Der erste Teil Rat: Planen Ihrer app-Start auch im voraus und Beschränkungen für eine mögliche Ablehnung und eine erneute Übermittlung. Jedes Geschäft müssen Sie zum Erstellen eines Kontos vor dem übermitteln der app – dazu so früh wie möglich.
+Während der Anmeldung bei Google Play nur ein paar Minuten dauert, wenn Ihre apps kostenlos sind, ruft den Prozess sehr viel komplizierter ab, wenn Sie sie verkaufen und geben Sie eine Banking und Steuerinformationen müssen. Apple und Microsoft Prozesse sind beide viel komplizierter als das von Google, kann es dauern, eine Woche oder mehr auf Ihr Konto genehmigt dieses Mal also in Ihre Planung starten berücksichtigen.
 
-Sobald Ihr Konto genehmigt wurde, können Sie keine app übermitteln. Der tatsächliche Prozess zum Übermitteln von apps fällt in der folgenden Dokumentation:
+Nachdem Ihr Konto genehmigt wurde, können Sie eine app zu senden. Der tatsächliche Prozess zum Übermitteln von apps wird die folgende Dokumentation behandelt:
 
-- [Veröffentlichen in Apple iOS App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
-- [Vorbereiten einer app auf Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)
-- Windows-Entwickler sollten besuchen Sie die [Windows Dev Center](https://developer.microsoft.com/windows/windows-apps) senden ihre apps informieren.
+- [Apple iOS App Store veröffentlichen](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [Vorbereiten einer app für Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)
+- Windows-Entwickler sollten finden Sie auf die [Windows Dev Center](https://developer.microsoft.com/windows/windows-apps) , erfahren Sie mehr über ihre apps übermitteln.
 
-Der übrige Teil dieses Abschnitts wird erläutert, Dinge, die Sie berücksichtigt werden sollten, um sicherzustellen, dass die app ohne Unterbrechungen genehmigt wird.
+Der übrige Teil dieses Abschnitts wird erläutert, Dinge, die Sie berücksichtigt werden sollten, um sicherzustellen, dass Ihre app ohne Unterbrechungen genehmigt wird.
 
 ### <a name="quality"></a>Qualität
 
-Klingt offensichtlich, aber Anwendungen werden häufig zurückgewiesen, weil sie nicht über ein gewisses Maß an Qualität erfüllen: Nachdem alle Dies ist der Grund, warum die umfassendes Speicher über einen Genehmigungsprozess ursprünglich!
+Hört sich offensichtlich, aber Anwendungen werden häufig abgelehnt, da sie nicht über ein gewisses Maß an Qualität treffen: Dies ist der Grund, warum die geordneten einen Genehmigungsprozess im vornherein haben!
 
-Abstürze (crashes) sind eine häufige Ursache für die Ablehnung. Stellen Ihre app-Abstürze zu einfach ist, ist sichergestellt, dass abgelehnt werden. Die meisten Entwickler senden nicht ihre apps unter der Annahme, die sie werde stürzt ab, aber häufig der Fall. Testen Sie Ihre app gründlich, vor dem Senden des Updategrams, Schwerpunkt nicht nur sicherstellen, dass alles funktioniert, sondern auch, die Sie allgemeine mobile Fehlerszenarien wie Netzwerkprobleme und ressourceneinschränkungen z. B. Arbeitsspeicher oder Speicherplatz behandeln. Sowohl die physische Geräte der Simulator zum Testen verwenden – unabhängig davon, wie gut Code in einem Simulator ausgeführt wird, kann nur auf einem Gerät eine echte appleistung veranschaulichen. Verwenden von wie vielen verschiedenen Geräten, die beim Suchen und ein Team von Testern Beta eintragen, wenn Sie können - Dienste von Drittanbietern Beta-Verteilung und Feedback zu verwalten können.
+Abstürze sind ein häufiger Grund für Ablehnung. Wenn sie auch ganz einfach Ihre app abgestürzt ist, wird er sind garantiert abgelehnt werden. Die meisten Entwickler senden nicht ihre apps unter der Annahme, die sie abstürzen werden, aber häufig der Fall. Testen Sie Ihre app gründlich, vor der Übermittlung und konzentriert Sie sich, nicht nur auf und stellen Sie sicher, dass alles funktioniert, sondern auch, dass mobile-Fehler wie z. B. Netzwerkprobleme und ressourcenbeschränkungen wie Arbeitsspeicher oder ein Speicherplatz Standardszenarien. Verwenden Sie den Simulator und physische Geräte um zu testen – unabhängig davon, wie gut Code in einem Simulator ausgeführt wird, kann nur ein Gerät tatsächliche Leistung der app darstellen. Verwenden Sie so viele verschiedene Geräte können Sie suchen, und ein Team von Beta-Tester eintragen, wenn Sie - Diensten von Drittanbietern die Beta-Verteilung und Feedback zu verwalten können.
 
-Alle mobilen Betriebssystemen wird eine Anwendung beenden, die nicht schnell genug gestartet. Die Länge der zulässigen Zeit variiert, aber im Allgemeinen apps sollte darauf abzielen, werden in ein paar Sekunden reagiert und Verwenden von Hintergrundaufgaben, die keine Aktionen ausführt, die länger dauern würde. Apps, die zu lange Ladezeiten oder antwortet nicht genug reguläre verwendet werden, werden zurückgewiesen. Immer bereitstellen Sie Benutzerfeedback, wenn etwas im Hintergrund geschieht oder die app angezeigt wird, abgestürzt und noch einmal: Abrufen von abgelehnt.
+Alle mobilen Betriebssystemen wird eine Anwendung beenden, die nicht schnell genug beginnt. Die Länge der zulässigen Zeit variiert, aber im Allgemeinen sollten apps versuchen, seine Reaktionsfähigkeit in wenigen Sekunden, und verwenden Aufgaben im Hintergrund Schritte erforderlich, die länger dauern würde. Apps, die beim Laden zu lange dauert oder reagiert nicht genug regulären verwendet werden, werden abgelehnt. Geben Sie immer Feedback der Benutzer auf, wenn etwas, im Hintergrund passiert ist oder die app angezeigt wird, ist ein Prozess abgestürzt und wieder abrufen abgelehnt.
 
 ### <a name="check-your-edge-cases"></a>Überprüfen Sie Ihre Grenzfälle
 
-Eine allgemeine Trap für Entwickler Fehler bei der Adresse Grenzfälle, insbesondere solche, die erfordern, Neukonfigurieren ihre Simulator oder ein Gerät, um ordnungsgemäß zu testen. Es kann leicht vergessen, dass nicht jeder Kunde auf "Zulassen" wird die app auf ihren Speicherort zugreifen, da nach der Entwickler einmal akzeptiert hat, er nie erneut aufgefordert werden. Berechtigungen und die Auslastung der sind speziell auf während der Genehmigungsprozess Projekte Dies bedeutet, dass eine kleine Aufsicht in den folgenden Bereichen Ablehnung führen kann.
+Eine allgemeine Trap für Entwickler, tritt ein Fehler auf Edge-Fälle, insbesondere über diejenigen, die erfordern, erneut zu konfigurieren, ihre Simulator oder ein Gerät, um ordnungsgemäß zu testen. Es kann sein leicht vergessen, dass nicht jeder Kunde auf "Zulassen" wird Ihre app auf ihrem Speicherort zugreifen, da nachdem der Entwickler die Anforderung nach akzeptiert, sie nicht erneut aufgefordert werden. Berechtigungen und Netzwerkauslastung sind speziell auf während des Genehmigungsprozesses, lag Dies bedeutet, dass die Ablehnung einer kleinen Aufsicht in diesen Bereichen führen kann.
 
-In der folgenden Liste ist ein guter Ausgangspunkt für die Überprüfung der Grenzfälle, die ggf. übersehen wurden:
+In der folgende Liste ist ein guter Ausgangspunkt für die Überprüfung der Grenzfälle, die möglicherweise ausgelassene:
 
-- **Kunden können möglicherweise den Zugriff auf Dienste "Ablehnen"** – insbesondere in iOS, den Zugriff auf Daten, z. B. GeoLocation-Informationen nur bereitgestellt werden, wenn der Benutzer die Berechtigung für die Anwendung erteilt. -Anwendungstester sollte häufig die Anwendung in ihren ursprünglichen Zustand erneut installieren und unterbinden, um sicherzustellen, dass die Anwendung ordnungsgemäß verhält sich alle Anforderungen für die Berechtigungen. Schalten Sie Berechtigung auf, und deaktivieren Sie, um das richtige Verhalten zu überprüfen, wie Kunden ihre Meinung ändern.
-- **Kunden werden überall** – nicht davon ausgehen, dass eine app nur verwendet werden wird, in dem Ort oder das Land, in dem entwickelt wurde. Code, der mit GPS-Koordinaten, Datums-und Uhrzeitwerte und Währungen arbeitet, kann alle nach Position und den gebietsschemaeinstellungen des Kunden betroffen. Alle Plattformen bieten einen Emulator, mit denen Sie unterschiedliche Speicherorte und Gebietsschemas - angeben kann, verwenden Sie diese Speicherorte in anderen Halbkugel und mit Kulturen, die unterschiedlich Formatieren von Datumsangaben und Währungen getestet. Breiten- und Längengrad Werte können positiv oder negativ sein, ein Punkt oder ein Komma als Dezimaltrennzeichen verwendet möglicherweise und können formatierte Datumsangaben zahllose Arten - Umgang mit!
-- **Langsame Netzwerkverbindungen** – app-Entwickler arbeiten häufig in einer "idealen Welt" schnelle, immer arbeiten, die nicht der Fall, in der realen Welt offensichtlich ist Netzwerkkonnektivität. Testen mit langsamen Netzwerkverbindung (z. B. eine schlechte 3 G-Verbindung) sowie kein Zugriff auf das Netzwerk ist entscheidend, um sicherzustellen, dass Sie eine fehlerhafte app liefern nicht. Der Genehmigungsprozess wird immer einen Test mit dem Gerät in flugzeugmodus einschließen, müssen Sie sicherstellen, dass Sie, die für sich selbst getestet haben.
-- **Hardware variiert** – Denken Sie daran, auf die älteste langsamste Hardware zu testen, die Sie unterstützen möchten. Es gibt zwei Aspekte, die Ihre app betreffen können: Leistung zu erzielen, die möglicherweise auf eine ältere Geräte und Unterstützung für Hardware-Features, z. B. einer Kamera, Mikrofon, GPS, Gyroskop oder andere optionale Komponente unbrauchbar. Anwendungen sollten beeinträchtigen ordnungsgemäß (und nicht eines Absturzes) Wenn eine Komponente ist nicht verfügbar.
+- **Kunden können den Zugriff auf Dienste "Ablehnen"** – insbesondere in iOS, den Zugriff auf Daten, z. B. GeoLocation-Informationen nur bereitgestellt wird, wenn der Benutzer die Berechtigung für Ihre Anwendung erteilt. -Anwendungstester sollte häufig die Anwendung in seinen ursprünglichen Zustand erneut installieren und verweigert alle berechtigungsanforderungen, um sicherzustellen, dass die Anwendung richtig verhält. Aktivieren Sie die Berechtigung ein, und deaktivieren Sie, um das richtige Verhalten zu überprüfen, wie Kunden ihre Meinung ändern.
+- **Kunden sind überall verfügbar** – nicht davon ausgehen, dass eine app nur verwendet werden wird, in der Stadt oder Land, in denen es entwickelt wurde. Code, der mit GPS-Koordinaten, Datums-und Uhrzeitwerte und Währungen arbeitet kann alle von Speicherort und den gebietsschemaeinstellungen des Kunden betroffen. Alle Plattformen bieten einen Simulator, mit denen Sie die verschiedenen Speicherorten und Gebietsschemas - angeben, die damit teststandorte, andere hemisphären und Kulturen, die Datumsangaben und Währungen unterschiedlich zu formatieren können. Breitengrad-und längengradwerte können positiv oder negativ sein, ein Punkt oder ein Komma als Dezimaltrennzeichen verwendet möglicherweise und können formatierte Datumsangaben zahllose Möglichkeiten – Umgang mit!
+- **Langsame Netzwerkverbindungen** – app-Entwickler häufig zu arbeiten, in einer "idealen Welt" für die schnelle, immer mit der Arbeit Netzwerkverbindung getrennt wird, die offensichtlich nicht der Fall, in der Praxis ist. Testen mit langsamen Netzwerkverbindungen (z. B. einer schlechten Verbindung mit 3 G) sowie kein Netzwerkzugriff ist entscheidend, um sicherzustellen, dass Sie eine fehlerhafte app nicht zusammen. Der Genehmigungsprozess immer einen Test mit dem Gerät in den flugzeugmodus umfasst, müssen Sie sicherstellen, dass Sie selbst, die getestet haben.
+- **Hardware variiert** : Denken Sie daran, die auf der ältesten, langsamste Hardware zu testen, die Sie unterstützen möchten. Es gibt zwei Aspekte, die Ihre app auswirken können: Leistung, die möglicherweise auf einem älteren Gerät sowie Unterstützung für Hardwarefeatures wie z. B. eine Kamera, Mikrofon, GPS, Gyroskop oder anderen optionalen Komponenten unbrauchbar. Anwendungen sollten beeinträchtigt ordnungsgemäß (und nicht Absturz) Wenn eine Komponente ist nicht verfügbar.
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>Richtlinien sind mehr als nur eine "Anleitung"
 
-Apple ist für die strenge zur Einhaltung ihrer menschlichen Richtlinien zur Benutzeroberfläche wird, wie eine der wichtigsten Vorteile von ihrer Plattform Konsistenz (und die wahrgenommene Erhöhung der benutzerfreundlichkeit) ist. Microsoft hat einen ähnlichen Ansatz mit Windows-Anwendungen implementieren die Benutzeroberfläche im Metro-Stil übernommen. Der Genehmigungsprozess für beide Plattformen wird Ihre app, die für die Einhaltung der relevanten Entwurfsphilosophie ausgewertet wird umfassen.
+Apple ist berühmt für wird zur Einhaltung ihrer Human Interface Guidelines strict, da eine der Stärken von ihrer Plattform Konsistenz (und die wahrgenommene Erhöhung der benutzerfreundlichkeit) ist. Microsoft verfügt über einen ähnlichen Ansatz mit Windows-Anwendungen, die Implementierung der Benutzeroberflächenautomatisierungs im Metro-Stil verwendet. Der Genehmigungsprozess für beide Plattformen muss Ihre app für die Einhaltung der relevanten Designphilosophie ausgewertet wird.
 
-Die nicht zu sagen, dass Benutzer Schnittstelle Innovation wird nicht unterstützt oder empfohlen, jedoch sind bestimmte Punkte, die Sie "nur tun darf nicht" oder die app abgelehnt.
+Die nicht zu sagen, dass Innovationen für Benutzer-Schnittstelle nicht unterstützt oder empfohlen, aber es bestimmte Dinge, die Sie gibt "nur tun sollte nicht" oder Ihre app abgelehnt.
 
-IOS schließt dies missbraucht integrierte Symbole oder mithilfe von anderen Bereich etablierten Metaphern nicht konsistent; verwenden z. B. das Symbol "erstellen" für etwas anderes als das Erstellen von neuen Inhalt.
+Unter iOS schließt dies integrierte Symbole verwendet oder mithilfe von anderen gut etablierten Metaphern nicht konsistent; verwenden das Symbol "compose" z. B. für etwas anderes als das Erstellen neuer Inhalte.
 
-Windows-Entwickler sollten ebenso vorsichtig sein; Ein häufiger Fehler ist nicht ordnungsgemäß Hardware wieder Schaltfläche gemäß Microsoft Richtlinien unterstützen.
+Windows-Entwickler sollten ebenso vorsichtig sein; Ein häufiger Fehler ist nicht ordnungsgemäß die Hardware wieder Schaltfläche gemäß Microsoft Richtlinien unterstützen.
 
-Fordern Sie die Designern zu lesen und befolgen die Entwurfsrichtlinien für jede Plattform.
+Empfehlen Sie Ihren Entwicklern zu lesen und befolgen die Entwurfsrichtlinien für jede Plattform.
 
-### <a name="implementing-platform-specific-features"></a>Implementieren von Clientplattform-spezifische Funktionen
+### <a name="implementing-platform-specific-features"></a>Implementieren von plattformspezifischen Features
 
-Folgende Dinge sind etwas strengere, wenn es darum geht, Implementieren von plattformspezifischen-Diensten, insbesondere für iOS. Um automatische-Ablehnung von Apple zu vermeiden, gibt es einige Regeln mit den folgenden iOS-Funktionen zu befolgen:
+Dinge sind ein wenig strengere, wenn es darum geht, implementieren plattformspezifische Dienste, insbesondere unter iOS. Um automatische-Ablehnung von Apple zu vermeiden, gibt es einige Regeln mit den folgenden iOS-Features zu befolgen:
 
-- **In App-Käufe** – Anwendungen müssen nicht implementieren externer Zahlung Mechanismen für die digitale Produkte, einschließlich Währung Spiels, Anwendungsfunktionen, Magazin Abonnements und vieles mehr. iOS-apps müssen von Apple iTunes-basierten Dienst für diese Art von Funktion verwenden. Es ist eine Lücke - apps, wie der Reader Kindle und einige Abonnement-basierte apps können Sie die Inhalte an anderer Stelle zu erwerben, die ruft an ein "Konto" klicken Sie dann über die app zugreifen können, jedoch in diesem Fall die app nicht enthalten darf, links oder Verweise auf die Out-des-app-Prozess kaufen (oder müssen noch einmal: abgelehnt werden).
-- **iCloud-Sicherung** – durch die Einführung der iCloud, Apple Bearbeiter stehen erheblich strikter wie apps Speicher (um sicherzustellen, dass Kunden remote backup Erfahrung angenehmeren) verwenden. Apps, die Sicherung kann Speicherplatz verschwendet zurückgewiesen abrufen kann, daher sollten Sie Cacheordner für die entsprechend, und führen Sie Apple des anderen speicherbezogene Richtlinien.
-- **Newsstand** – "Zeitung" und magazine apps sind hervorragend für Apple Newsstand, jedoch mindestens eine automatische Erneuerung Abonnement- und Support im Hintergrund um zu genehmigenden Herunterladen von apps implementiert werden müssen.
-- **Ordnet** – es ist immer häufiger, dass mobile Maps Overlays und andere Funktionen hinzugefügt haben, jedoch Achten Sie nicht die Zuordnung verdecken "Guthaben" Informationen (z. B. das Google-Logo in iOS5) wie auf diese Weise Ablehnung führt.
+- **In-App-Käufe** – Anwendungen müssen externe Zahlung-Mechanismen zum digitalen Produkten wie z.B. in-Game-Währung Anwendungsfeatures, magazine-Abonnements und viel mehr nicht implementiert. iOS-apps müssen von Apple iTunes-basierten Dienst für diese Art von Funktionalität verwenden. Es gibt eine Sicherheitslücke - apps, wie der Reader Kindle und einige Abonnement-basierte apps können Sie die Inhalte an anderer Stelle zu erwerben, die zugeordnet, ein "Konto" die Sie dann über die app zugreifen können, jedoch in diesem Fall die app nicht enthalten darf, links oder Verweise auf die Out-of-app-Prozess kaufen (oder wieder werden abgelehnt werden).
+- **iCloud-Sicherung** – durch die Einführung von iCloud, Apple Prüfer sind wesentlich strenger in Bezug auf die apps wie Speicher verwenden (um sicherzustellen, dass der remote-Sicherung kundenerfahrung angenehme). Apps, die Sicherung kann Speicherplatz verschwendet abgelehnt abrufen kann, also verwenden den Cacheordner entsprechend ein, und führen Sie die Apple der anderen speicherbezogenen Richtlinien.
+- **Zeitungskiosk** – Zeitungs- und magazine apps eignen sich hervorragend für den Apple Zeitungskiosk, jedoch mindestens eine automatische Erneuerung das Abonnement und Hintergrund um zu genehmigenden Herunterladen von apps implementiert werden müssen.
+- **Ordnet** – es ist immer häufiger, dass das Hinzufügen von Überlagerungen und andere Funktionen zu mobilen Zuordnungen können jedoch eine sorgfältige nicht verdecken die Zuordnung "-Gutschrift in Höhe" Informationen (z. B. das Google-Logo in iOS5) wie auf diese Weise Ablehnung geführt haben.
 
 ### <a name="manage-your-metadata"></a>Verwalten von Metadaten
 
-Zusätzlich zu den offensichtlichen technischen Problemen, die in einer Anwendung, die zurückgewiesen auftreten können, sind einige subtilere Aspekte Ihrer Einsendung, die in der Ablehnung, vor allem um die Metadaten (Beschreibung, Schlüsselwörter und marketing Bilder), die Sie führen können Senden Sie mit der Anwendung für die Anzeige in der App Store oder Marketplace.
+Zusätzlich zu den offensichtlichen technischen Problemen, die in einer Anwendung, die zurückgewiesen führen können, sind einige Subtiler Aspekte Ihrer Übermittlung an, die in der Ablehnung, insbesondere um die Metadaten (Beschreibung, Schlüsselwörter und marketing-Images), die Sie führen können übermitteln Sie mit Ihrer Anwendung für die Anzeige in der App Store oder den Marketplace.
 
-- **Bilder** – Richtlinien für die Plattform für Anwendungssymbolen und Bilder zu speichern. Verwenden Sie keine markenrechtlich Bilder, kennen gelernt haben, dass apps zurückgewiesen abrufen, weil die Symbole Zeichnung iPhone Funktionsumfang!
-- **Marken** – Marken als Ihren eigenen verwenden. Apps haben erwähnen Marken in der app-Beschreibung oder sogar in die Schlüsselwörter Apple App Store verweigert wurde.
-- **Beschreibung** – nicht verwenden Sie das Wort "Beta" oder in irgendeiner Weise anzugeben, dass die app nicht für Primzahlen bereit. Erwähnen Sie nicht anderen mobilen Plattformen (selbst wenn Ihre app plattformübergreifend ist). Stellen Sie am wichtigsten ist, sicher, dass die app wird genau wie Sie sagen, dass dies der Fall ist. Wenn Sie eine Reihe von Funktionen in der Beschreibung aufzulisten, es wäre besser offensichtlich wie diese Funktionen verwenden oder Sie erhalten eine Ablehnung "Feature gemäß der Beschreibung der Anwendung ist nicht implementiert".
+- **Bilder** – befolgen Sie die Richtlinien von der Plattform für Symbole und Bilder zu speichern. Verwenden Sie keine markenrechtlich geschützten Bilder, wir haben gesehen, dass apps mein Beitrag abgelehnt, da die Symbole mit eine Zeichnung eines iPhones wichtige!
+- **Marken** – verwenden Sie Marken als Ihren eigenen. Apps wurde verweigert, Marken, die in die app-Beschreibung oder sogar in den Schlüsselwörtern auf Apple App Store erwähnen.
+- **Beschreibung** – verwenden Sie das Wort "Beta" oder in keiner Weise anzugeben, dass die app nicht bereit für eine. Erwähnen Sie nicht andere mobilen Plattformen (auch wenn Ihre app plattformübergreifend ist). Stellen Sie wichtiger ist, sicher, dass die app leistet genau was Sie sagen, dass dies der Fall ist. Wenn Sie eine Reihe von Funktionen in der Beschreibung auflisten, es wäre besser offensichtlich wie für jede dieser Funktionen verwendet werden, oder Sie erhalten eine Ablehnung "die Funktion, die in der Anwendung Beschreibung erwähnt ist nicht implementiert".
 
-Fügen Sie so viel Aufwand in die Anwendung Metadaten wie in der Entwicklung und Tests. Anwendungen daher entsprechend Zeit, um sie richtig machen ist für kleinere Verstöße in den Metadaten abgelehnt.
+Fügen Sie so viel Aufwand in der Anwendung Metadaten wie in der Entwicklung und Tests. Anwendungen für kleinere Verstöße in den Metadaten abgelehnt zu erhalten, daher ist es sinnvoll, befassen Sie sich für eine Korrektur.
 
-### <a name="app-stores-not-for-everyone"></a>App-Stores: Nicht für "Jeder"
+### <a name="app-stores-not-for-everyone"></a>App-Stores: Nicht für alle Benutzer
 
-Consumer Verteilung - die Möglichkeit, wie viele Kunden möglichst erreichen wird schwerpunktmäßig der Speicher auf jeder Plattform. Gelten jedoch nicht alle Anwendungen zu Consumer, besteht eine schnell wachsende Basis des internen und extranet-ähnliche Anwendungen, die Mitarbeitern, Lieferanten oder Kunden eingeschränkten Verteilung erforderlich ist. Diese apps "für den Verkauf" nicht und Genehmigung, seit der Verteilung des Entwickler-Steuerelemente auf einer geschlossenen Benutzergruppe nicht erforderlich.
+Der primäre Fokus von der Speicher auf jeder Plattform ist die Consumer-Distribution - die Möglichkeit, wie viele Kunden wie möglich zu erreichen. Gelten jedoch nicht alle Anwendungen im Consumer ist ein schnell wachsender Basis intern und extranet-ähnliche Anwendungen, die eingeschränkten Verteilung Mitarbeiter, Lieferanten oder Kunden zu erfordern. Diese apps sind nicht "für den Verkauf" und nicht genehmigt haben, da die Verteilung des Entwickler-Steuerelemente in einer geschlossenen Benutzergruppe erforderlich.
 Unterstützung für diese Art der Bereitstellung variieren je nach Plattform.
 
-Android bietet die größte Flexibilität in dieser Hinsicht: Anwendungen können direkt aus einer URL oder e-Mail-Anlage (solange das Gerät Konfiguration hinauszögern) installiert werden. Dies bedeutet, dass es sehr einfach zu erstellen und Verteilen von internen unternehmensanwendungen oder Anwendungen veröffentlichen, um bestimmte Kunden und Lieferanten.
+Android bietet die größte Flexibilität in dieser Hinsicht: Anwendungen können direkt aus einer URL oder e-Mail-Anlage (sofern die Gerätekonfiguration in der es erlaubt) installiert werden. Dies bedeutet, dass es sehr einfach zu erstellen und interne unternehmensanwendungen zu verteilen oder Veröffentlichen von Anwendungen für bestimmte Kunden oder Lieferanten.
 
-Apple bietet eine interne Bereitstellungsoption für Entwickler, die registriert wird, in der iOS Developer Enterprise Program, umgeht die Store-App-Genehmigungsprozess und ermöglicht es Unternehmen, interne apps an Mitarbeiter zu verteilen.
-Diese Lizenz befasst sich leider nicht auf die Notwendigkeit der extranet-ähnliche app-Verteilung für andere geschlossenen Gruppen von Kunden oder Lieferanten aus. [Enterprise (und Ad-hoc-) Bereitstellung](~/ios/deploy-test/app-distribution/ipa-support.md)
+Apple bietet eine Option für die interne Bereitstellung für Entwickler, die in der iOS Developer Enterprise Program, die den App Store-Genehmigungsprozess umgeht und ermöglicht es Unternehmen, interne apps an ihre Mitarbeiter verteilen registriert.
+Diese Lizenz befasst sich leider nicht auf die Notwendigkeit der extranet-ähnliche app-Verteilung auf andere geschlossenen Gruppen von Kunden oder Lieferanten aus. [Enterprise (und Ad-hoc-) Bereitstellung](~/ios/deploy-test/app-distribution/ipa-support.md)
 
 ### <a name="app-store-summary"></a>App-Store-Zusammenfassung
 
-Review-Prozess kann schwierig sein, aber wie der Rest des Entwicklungszyklus können Sie sicherstellen einige Planung und Details genau beachtet werden erfolgreich ausgeführt. Kommt es zu wenigen einfachen Schritten: gelesen und verstanden haben die Richtlinien zur Benutzeroberfläche müssen Sie befolgen, den Regeln entsprechen, wenn Sie Clientplattform-spezifische Funktionen implementieren, gründlich testen, (anschließend testen einen weiteren) und schließlich die Metadaten für die Anwendung stellen Sie sicher richtig ist, bevor Sie senden.
+Der Überprüfungsprozess kann sinnvoll sein, allerdings wie der Rest des Entwicklungslebenszyklus können Sie sicherstellen Erfolg mit etwas planungs- und Aufmerksamkeit für Details. Kommt es, einige einfache Schritte: Lesen und Verstehen der Richtlinien zur Benutzeroberfläche müssen Sie einhalten, den Regeln entsprechen, wenn Sie plattformspezifischen Features implementieren, sehr gründlich zu testen (dann testen noch mehr) und schließlich Ihre Anwendungsmetadaten stellen Sie sicher ist richtig, vor dem übermitteln.
 
-Eine letzte Wort Ratschläge für Entwickler, die auf Google Play veröffentlichen: Ihre Arbeit leichter - kann ist das Fehlen der Genehmigungsprozess mag, aber Ihre Kunden werden noch mehr anspruchsvollen als ein Team überprüfen. Befolgen Sie diese Richtlinien, wie wenn Ihre app abgelehnt abrufen konnte, andernfalls er Ihre Kunden, die auf diese Weise die ablehnen kann.
+Eine Zusammenfassung der Ratschläge, die Entwickler, die auf Google Play veröffentlichen: Ihres Auftrags - vereinfacht, ist der Mangel an den Prozess mag Ihren Kunden werden jedoch als ein reviewteam sogar noch mehr anfordern. Beachten Sie Folgendes ein, wie wenn Ihre app abgelehnt abrufen konnte, andernfalls Ihre Kunden die Ablehnung.

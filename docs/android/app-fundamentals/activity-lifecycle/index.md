@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024270"
 ---
 # <a name="activity-lifecycle"></a>Aktivitätslebenszyklus
 
@@ -244,7 +244,7 @@ Das folgende Diagramm veranschaulicht, wie diese Methoden verwendet werden:
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
-[OnSaveInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnSaveInstanceState/p/Android.OS.Bundle/) wird aufgerufen, wenn die Aktivität beendet wird. Sie erhalten einen Paket-Parameter, dem die Aktivität ihren Status in speichern kann. Wenn ein Gerät eine konfigurationsänderung auftritt, können eine Aktivität die `Bundle` -Objekt, das übergeben wird, um den Status der Aktivität durch Überschreiben beibehalten `OnSaveInstanceState`. Beachten Sie z. B. folgenden Code:
+[OnSaveInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnSaveInstanceState/p/Android.OS.Bundle/) wird aufgerufen, wenn die Aktivität beendet wird. Sie erhalten einen Paket-Parameter, dem die Aktivität ihren Status in speichern kann. Wenn ein Gerät eine konfigurationsänderung auftritt, können eine Aktivität die `Bundle` -Objekt, das übergeben wird, um den Status der Aktivität durch Überschreiben beibehalten `OnSaveInstanceState`. Beachten Sie z. B. folgenden Code:
 
 ```csharp
 int c;
@@ -488,4 +488,4 @@ Der Lebenszyklus der Android-Aktivität bietet ein leistungsfähiges Framework f
 ## <a name="related-links"></a>Verwandte Links
 
 - [Verarbeiten der Drehung](~/android/app-fundamentals/handling-rotation.md)
-- [Android-Aktivität](https://developer.xamarin.com/api/type/Android.App.Activity/)
+- [Android Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)

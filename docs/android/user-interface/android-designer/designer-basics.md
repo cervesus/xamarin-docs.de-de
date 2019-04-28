@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Android-Designer-Grundlagen
+title: Xamarin.Android Designer Basics
 description: In diesem Thema werden Xamarin.Android-Designer-Funktionen erläutert, wird erläutert, wie Sie den Designer zu starten, wird beschrieben, die Entwurfsoberfläche und erläutert, wie Sie den Bereich "Eigenschaften" zu verwenden, um das Widgeteigenschaften zu bearbeiten.
 ms.prod: xamarin
 ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
 ms.openlocfilehash: fe909d72f3c6d6733318b5dcbd1858a1a9e28b37
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61165487"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Xamarin.Android-Designer-Grundlagen
 
@@ -237,7 +237,7 @@ Befindet sich diese Änderung im daraufhin angezeigten Widget `text` Eigenschaft
 Wenn Sie eine neue Zeichenfolge eingegeben werden, drücken Sie <kbd>UMSCHALT</kbd> +
 <kbd>EINGABETASTE</kbd> des eingegebenen Texts automatisch mit einer neuen Ressource zu verknüpfen.
 
-### <a name="margin"></a>Margin
+### <a name="margin"></a>Rand
 
 Wenn Sie ein Widget auswählen, zeigt der Designer Handles, die Ihnen ermöglichen, die Größe oder den Rand des Widgets interaktiv zu ändern. Auf das Widget aus, während Sie diese Option ausgewählt ist, schaltet zwischen Rand Textbearbeitungsmodus "und" Größe Bearbeitungsmodus.
 
@@ -461,7 +461,7 @@ Befindet sich diese Änderung im daraufhin angezeigten Widget `text` Eigenschaft
 Wenn Sie eine neue Zeichenfolge eingegeben werden, drücken Sie <kbd>UMSCHALT</kbd> +
 <kbd>EINGABETASTE</kbd> des eingegebenen Texts automatisch mit einer neuen Ressource zu verknüpfen.
 
-### <a name="margin"></a>Margin
+### <a name="margin"></a>Rand
 
 Wenn Sie ein Widget auswählen, zeigt der Designer Handles, die Ihnen ermöglichen, die Größe oder den Rand des Widgets interaktiv zu ändern. Auf das Widget aus, während Sie diese Option ausgewählt ist, schaltet zwischen Rand Textbearbeitungsmodus "und" Größe Bearbeitungsmodus.
 

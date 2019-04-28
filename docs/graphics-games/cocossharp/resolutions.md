@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 6803dc2668b89ee2d037da8b34e202191dd5465d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61307744"
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Verarbeiten mehrerer Auflösungen in CocosSharp
 
@@ -25,8 +25,8 @@ Das Standardverhalten für die Auflösung von CocosSharp ist physische Pixel im 
 | **Gerät** | **Bildschirmauflösung** | **Beispielscreenshot** |
 |--- | --- |--- |
 |Gewünschte Anzeige|368 x 240 Pixel (mit schwarz gefüllten Balken für Seitenverhältnis)| ![368 x 240 Pixel (mit schwarz gefüllten Balken für Seitenverhältnis)](resolutions-images/image1.png) |
-|iPhone 4s|960 x 640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
-|iPhone 6 Plus|1920 x 1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
+|iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
 
 In diesem Dokument wird beschrieben, wie mit CocosSharp zum Beheben des Problems in der Tabelle oben gezeigt wird. Wie Sie von jedem Gerät zu rendern, wie in der ersten Zeile – unabhängig von der Auflösung des Telefonbildschirms angezeigt, also wird behandelt.
 
@@ -277,7 +277,7 @@ Beim Ausführen des Spiels wird die Textur 1000 x 1000 jetzt vollständig sichtb
 ![](resolutions-images/image12.png "Jetzt beim Ausführen des Spiels wird die Textur 1000 x 1000 vollständig sichtbar sein")
 
 
-### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio-details
+### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio details
 
 Die `DefaultTexelToContentSizeRatio` Eigenschaft `static,` was bedeutet, dass alle Sprites in der Anwendung gemeinsam den gleichen Wert. Der typische Ansatz für Spiele mit Ressourcen, die für verschiedene Auflösungen vorgenommen ist, einen vollständigen Satz von Ressourcen für jede Kategorie Lösung enthalten. Standardmäßig CocosSharp von Visual Studio für Mac-Vorlagen bereitstellen **%ld** und **hd** Ordner für Ressourcen, die nützlich für Spiele, die zwei Sätze von Texturen zu unterstützen. Ein Beispielordner mit Inhalt mit Inhalt aussehen kann:
 

@@ -1,17 +1,17 @@
 ---
 title: Übersicht über das Freigeben von Code
-description: 'In diesem Dokument werden die verschiedenen Methoden des Verwendung gemeinsamen Codes in plattformübergreifenden Projekten verglichen: freigegebene Projekte, Portable Class Libraries und .NET Standard, einschließlich der Vorteile und Nachteile.'
+description: 'In diesem Dokument werden die verschiedenen Methoden des Verwendung gemeinsamen Codes in plattformübergreifenden Projekten verglichen: Freigegebene Projekte, Portable Class Libraries und .NET Standard, einschließlich der Vorteile und Nachteile.'
 ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
 ms.date: 08/06/2018
 ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
-ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39520284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228041"
 ---
 # <a name="sharing-code-overview"></a>Übersicht über das Freigeben von code
 

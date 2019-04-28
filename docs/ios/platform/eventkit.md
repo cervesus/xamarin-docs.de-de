@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: ea03c8b382e2de29bd20ab1d696d7abb7733e182
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61369247"
 ---
 # <a name="eventkit-in-xamarinios"></a>EventKit in Xamarin.iOS
 
@@ -127,7 +127,7 @@ Darüber hinaus der Abschlusshandler in einem separaten (nicht-UI) Thread aufger
 
 ### <a name="ekspan"></a>EKSpan
 
-*EKSpan* ist eine Enumeration, der die Spanne der Ereignisse aus, wenn Ereignisse zu ändern, die wiederholt werden kann, und verfügt über zwei Werte beschreibt: *ThisEvent* und *FutureEvents*. `ThisEvent` bedeutet, dass Änderungen nur auf das bestimmte Ereignis in der Reihe, die verwiesen wird, Vorkommen werden, während `FutureEvents` wirkt sich dieses Ereignisses und alle zukünftigen Wiederholungen.
+*EKSpan* ist eine Enumeration, die beschreibt, die Spanne der Ereignisse aus, wenn Ereignisse, die wiederholt werden kann, und verfügt über zwei Werte zu ändern: *ThisEvent* und *FutureEvents*. `ThisEvent` bedeutet, dass Änderungen nur auf das bestimmte Ereignis in der Reihe, die verwiesen wird, Vorkommen werden, während `FutureEvents` wirkt sich dieses Ereignisses und alle zukünftigen Wiederholungen.
 
 ## <a name="tasks"></a>Aufgaben
 

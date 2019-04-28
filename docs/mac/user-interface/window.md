@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61240844"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows in Xamarin.Mac
 
@@ -744,14 +744,14 @@ In der **Attributinspektor**, Sie haben die folgenden Optionen, die bestimmten B
 
 [![](window-images/panel03.png "Attribute Inspector")](window-images/panel03.png#lightbox)
 
-- **Stil** -können Sie das Format des Bereichs von anpassen: reguläre Bereich (sieht wie ein Standardfenster), Utility Bereich (hat eine kleinere Titelleiste), HUD-Bereich (lichtdurchlässiger ist und die Titelleiste ist Teil des Hintergrunds).
+- **Stil** -können Sie das Format des Bereichs von anpassen: Reguläre Bereich (sieht wie ein Standardfenster), Utility Bereich (hat eine kleinere Titelleiste), HUD-Bereich (transparent ist und die Titelleiste ist Teil des Hintergrunds).
 - **Nicht aktiviert** -bestimmt in der Bereich zum wichtigsten Fenster wird.
 - **Dokumentieren Sie modale** -wenn Dokument modales, im Bereich wird nur "float" oberhalb der Anwendung Windows, ansonsten gleitet sie überzeugt.
 
 
 Um einen neuen Bereich hinzuzufügen, führen Sie folgende Schritte aus:
 
-1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei..** .
+1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei...** .
 2. Wählen Sie in das Dialogfeld "neue Datei" **Xamarin.Mac** > **Cocoa-Fenster mit Controller**:
 
     [![](window-images/panels00.png "Hinzufügen eines neuen Fensters-Controllers")](window-images/panels00.png#lightbox)

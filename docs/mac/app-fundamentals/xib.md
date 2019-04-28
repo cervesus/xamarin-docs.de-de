@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 45eeee745b133646aef0f775bc879fa6a5d867c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61062911"
 ---
 # <a name="xib-files-in-xamarinmac"></a>XIB-Dateien in Xamarin.Mac
 
@@ -595,4 +595,4 @@ Dieser Artikel hat es sich um einen detaillierten Einblick in die Arbeit mit XIB
 - [Menüs](~/mac/user-interface/menu.md)
 - [Dialogfelder](~/mac/user-interface/dialog.md)
 - [Arbeiten mit Bildern](~/mac/app-fundamentals/image.md)
-- [MacOS Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS-Eingaberichtlinien](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

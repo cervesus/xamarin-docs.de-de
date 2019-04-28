@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: a4cf63b84d0686bc28b02b18a6266908251bdf6f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61154011"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Erstellen von Benutzeroberflächenobjekten in Xamarin.iOS
 
@@ -42,7 +42,7 @@ Um Ihre Benutzeroberfläche erstellen, in der iOS-Designer zu starten, doppelkli
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "Pad \"Toolbox\"")](creating-ui-objects-images/image2b.png#lightbox)
+ [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
  
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -93,7 +93,7 @@ Weitere Informationen dazu, wie Interface Builder von Xcode in Visual Studio fü
 Wenn Sie programmgesteuert erstellen ein Objekt mit User Interface C# (in einer Sicht oder der View-Controller, z. B.), gehen Sie folgendermaßen vor:
 
 -  Deklarieren Sie ein Klassenfeld-Ebene für das Benutzerobjekt-Schnittstelle. Erstellen Sie das Steuerelement selbst einmal im `ViewDidLoad` z. B. Das Objekt kann dann in der gesamten die Lebenszyklusmethoden der View-Controller (z.B.) verwiesen werden
-`ViewWillAppear`).
+`ViewWillAppear`) angezeigt wird.
 -  Erstellen Sie eine `CGRect` , die den Rahmen des Steuerelements (der X- und Y-Koordinaten auf dem Bildschirm "" sowie die Breite und Höhe) definiert. Sie müssen sicherstellen, dass eine `using CoreGraphics` für diese Direktive.
 -  Rufen Sie den Konstruktor zum Erstellen, und weisen Sie das Steuerelement.
 -  Legen Sie Eigenschaften oder Ereignishandler.

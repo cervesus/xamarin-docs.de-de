@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61218186"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>Die zirkuläre SkiaSharp-Farbverläufe
 
@@ -140,7 +140,7 @@ Dieser Code erstellt einen Farbverlauf mit Schwarz, zentriert, um 100 Pixel aus 
 
 [![Radialen Farbverlauf](circular-gradients-images/RadialGradient.png "Radialer Farbverlauf")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-In allen drei Fällen füllt der Farbverlauf für den Zeichenbereich. Der Farbverlauf außerhalb der Radius wird auf dem Bildschirm "iOS" auf der linken Seite die letzte Farbe an, die weiß ist fortgesetzt. Das ist das Ergebnis der `SKShaderTileMode.Clamp`. Die Android-Bildschirm zeigt die Auswirkungen der `SKShaderTileMode.Repeat`: unter 100 Pixel von der Mitte des Farbverlaufs beginnt erneut mit der ersten Farbe, die Schwarz ist. Der Farbverlauf wird jeder 100 Pixel von Radius wiederholt. 
+In allen drei Fällen füllt der Farbverlauf für den Zeichenbereich. Der Farbverlauf außerhalb der Radius wird auf dem Bildschirm "iOS" auf der linken Seite die letzte Farbe an, die weiß ist fortgesetzt. Das ist das Ergebnis der `SKShaderTileMode.Clamp`. Die Android-Bildschirm zeigt die Auswirkungen der `SKShaderTileMode.Repeat`: Von 100 Pixel von der Mitte beginnt der Gradient erneut mit der ersten Farbe, die Schwarz ist. Der Farbverlauf wird jeder 100 Pixel von Radius wiederholt. 
 
 Die universelle Windows-Plattform-Bildschirm auf die richtige wie `SKShaderTileMode.Mirror` bewirkt, dass die Gradienten an, die alternative Richtungen. Der erste Farbverlauf liegt zwischen Schwarz, zentriert und weiß, an einen Radius von 100 Pixel. Das nächste ist von den Radius von 100 Pixel auf Schwarz festgelegt, an einen Radius von 200 Pixel weiß, und weiter Farbverlaufs wieder rückgängig gemacht.
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 83f5fd233c004271169a4d00d0a65e70aa925b95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61369107"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>Transaktionen und Überprüfung in Xamarin.iOS
 
@@ -111,7 +111,7 @@ Die beiden Beispiele in diesem Dokument `NSUserDefaults` Einkäufe nachverfolgt:
 
 Mithilfe von `NSUserDefaults` beibehalten des Beispiels den Code einfach, aber die bietet keiner sehr sicheren Lösung, da es möglicherweise technisch orientierte Benutzer zum Aktualisieren der Einstellungen (den Zahlungsverkehrsmechanismus wird dadurch umgangen).   
    
-Hinweis: Der realen Anwendungen sollten Übernehmen eines sicheren Mechanismus zum Speichern von erworbenen Inhalt, der kein Benutzer leichter manipuliert ist. Dies kann die Verschlüsselung bzw. andere Techniken, einschließlich Remote-Server-Authentifizierung umfassen.   
+Hinweis: Realen Anwendungen sollten beachten, einen sicheren Mechanismus zum Speichern von erworbenen Inhalt, der kein Benutzer leichter manipuliert ist. Dies kann die Verschlüsselung bzw. andere Techniken, einschließlich Remote-Server-Authentifizierung umfassen.   
    
  Der Mechanismus sollten auch die integrierten Features Sicherung und Wiederherstellung von iOS-, iTunes und iCloud nutzen entworfen werden. Dadurch wird sichergestellt, nachdem ein Benutzer eine Sicherung wiederhergestellt wird ihre vorherige Einkäufe sofort zur Verfügung stehen.   
    
