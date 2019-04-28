@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: a1027b1fd738c80cf5917effc66957f77a337ecf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 56f7a5308d15425bdedd7d9098882a072d90d1f7
+ms.sourcegitcommit: 864f47c4f79fa588b65ff7f721367311ff2e8f8e
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61304753"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "64347060"
 ---
 # <a name="creating-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
 
@@ -380,27 +380,36 @@ Untergeordnete Elemente können anschließend hinzugefügt werden, um die `WrapL
 ```csharp
 protected override async void OnAppearing()
 {
-  base.OnAppearing();
+    base.OnAppearing();
 
-  var images = await GetImageListAsync();
-  foreach (var photo in images.Photos)
-  {
-    var image = new Image
+    var images = await GetImageListAsync();
+    if (images != null)
     {
-      Source = ImageSource.FromUri(new Uri(photo + string.Format("?width={0}&height={0}&mode=max", Device.RuntimePlatform == Device.UWP ? 120 : 240)))
-    };
-    wrapLayout.Children.Add(image);
-  }
+        foreach (var photo in images.Photos)
+        {
+            var image = new Image
+            {
+                Source = ImageSource.FromUri(new Uri(photo))
+            };
+            wrapLayout.Children.Add(image);
+        }
+    }
 }
 
 async Task<ImageList> GetImageListAsync()
 {
-  var requestUri = "https://docs.xamarin.com/demo/stock.json";
-  using (var client = new HttpClient())
-  {
-    var result = await client.GetStringAsync(requestUri);
-    return JsonConvert.DeserializeObject<ImageList>(result);
-  }
+    try
+    {
+        string requestUri = "https://raw.githubusercontent.com/xamarin/docs-archive/master/Images/stock/small/stock.json";
+        string result = await _client.GetStringAsync(requestUri);
+        return JsonConvert.DeserializeObject<ImageList>(result);
+    }
+    catch (Exception ex)
+    {
+        Debug.WriteLine($"\tERROR: {ex.Message}");
+    }
+
+    return null;
 }
 ```
 
@@ -415,11 +424,6 @@ Die folgenden Screenshots zeigen die `WrapLayout` nachdem es Querformat gedreht 
 ![](custom-images/landscape-uwp.png " UWP-Anwendung im Querformat-Beispielscreenshot:")
 
 Die Anzahl der Spalten in jeder Zeile hängt davon ab, die Größe des Fotos, die Bildschirmbreite und die Anzahl der Pixel pro geräteunabhängige Einheit. Die [ `Image` ](xref:Xamarin.Forms.Image) Elemente asynchron geladen, die Fotos, und daher die `WrapLayout` Klasse erhalten häufig Aufrufe an die [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) -Methode, wie jede `Image` Element erhält eine neue Größe basierend auf dem Foto geladen.
-
-## <a name="summary"></a>Zusammenfassung
-
-In diesem Artikel wurde erläutert, wie eine benutzerdefinierte Layout-Klasse schreiben, und veranschaulicht ein Ausrichtung keine Unterscheidung nach Kanatyp `WrapLayout` -Klasse, ordnet die untergeordneten Elemente horizontal über die Seite und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente auf zusätzliche Zeilen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 
