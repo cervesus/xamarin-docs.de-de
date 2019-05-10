@@ -1,27 +1,24 @@
 ---
-title: Führen Sie ein Element in der Ansicht einen Bildlauf
+title: Xamarin.Forms-CollectionView Durchführen eines Bildlaufs
 description: Wenn ein Benutzer Kundenkarte ein Scrollen zu initiieren, kann die Endposition des Bildlaufs gesteuert werden, damit Elemente vollständig angezeigt werden. CollectionView definiert außerdem zwei ScrollTo-Methoden, die Elemente programmgesteuert in der Ansicht zu scrollen.
 ms.prod: xamarin
 ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/19/2019
-ms.openlocfilehash: da7f379076b8e193deddc99e9004f051ba006cbb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 888b4f369f67a7d8566640927ba2ae3a395d68d8
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367662"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048165"
 ---
-# <a name="scroll-an-item-into-view"></a>Führen Sie ein Element in der Ansicht einen Bildlauf
+# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms-CollectionView Durchführen eines Bildlaufs
 
-![Vorschau](~/media/shared/preview.png)
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> Die `CollectionView` ist derzeit eine Vorschauversion und verfügt nicht über einen Teil der geplanten Funktionen. Darüber hinaus kann die API ändern, wie die Implementierung abgeschlossen ist.
 
 `CollectionView` definiert zwei `ScrollTo` Methoden, die Elemente in der Ansicht zu scrollen. Eine der Überladungen führt einen Bildlauf durch das Element am angegebenen Index in der Ansicht, während die andere das angegebene Element in der Ansicht einen Bildlauf durchführt. Beide Überladungen haben zusätzliche Argumente, die angegeben werden können, um die genaue Position des Elements anzugeben, nach dem Abschluss des Bildlaufs und angibt, ob das Scrollen zu animieren.
 

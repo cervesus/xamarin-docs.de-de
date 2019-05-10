@@ -1,27 +1,24 @@
 ---
-title: Geben Sie Xamarin.Forms CollectionView Layout
+title: Xamarin.Forms CollectionView Layout
 description: Standardmäßig wird ein CollectionView seine Elemente in einer vertikalen Liste angezeigt. Allerdings können vertikale und horizontale Listen und Raster angegeben werden.
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/15/2019
-ms.openlocfilehash: 8ed365ed41ac31c66d41f1a32a7a16929cdc6770
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 5543bcc93f3c38b56a4a6caa0ea23b8ccf434e1c
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367604"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048240"
 ---
-# <a name="specify-xamarinforms-collectionview-layout"></a>Geben Sie Xamarin.Forms CollectionView Layout
+# <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView Layout
 
-![Vorschau](~/media/shared/preview.png)
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> Die `CollectionView` ist derzeit eine Vorschauversion und verfügt nicht über einen Teil der geplanten Funktionen. Darüber hinaus kann die API ändern, wie die Implementierung abgeschlossen ist.
 
 `CollectionView` definiert die folgenden Eigenschaften, die Layout steuern:
 
@@ -43,7 +40,7 @@ Diese Layouts können angegeben werden, indem die `ItemsLayout` Eigenschaft, um 
 - `SnapPointsAlignment`, des Typs `SnapPointsAlignment`, gibt an, wie Elemente Ausrichtungspunkte ausgerichtet sind.
 - `SnapPointsType`, des Typs `SnapPointsType`, gibt das Verhalten der Ausrichtungspunkte an, beim Durchführen eines Bildlaufs.
 
-Diese Eigenschaften verfügen über [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Objekte, was bedeutet, dass die Eigenschaften, Ziele von datenbindungen werden können. Weitere Informationen zu Ausrichtungspunkte, finden Sie unter [Snap-Points](scrolling.md#snap-points) in die [führen Sie ein Element in der Ansicht einen Bildlauf](scrolling.md) Guide.
+Diese Eigenschaften verfügen über [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Objekte, was bedeutet, dass die Eigenschaften, Ziele von datenbindungen werden können. Weitere Informationen zu Ausrichtungspunkte, finden Sie unter [Snap-Points](scrolling.md#snap-points) in die [Xamarin.Forms CollectionView Bildlauf](scrolling.md) Guide.
 
 Die `ItemsLayoutOrientation` Enumeration definiert die folgenden Elemente:
 
@@ -344,7 +341,7 @@ In der Standardeinstellung jedem Element im eine `CollectionView` jeweils gemess
 - `MeasureFirstItem` – nur das erste Element wird gemessen, mit allen nachfolgenden Elementen wird die gleiche Größe wie das erste Element angegeben.
 
 > [!IMPORTANT]
-> Die `MeasureFirstItem` Strategie für die größenanpassung in Situationen, in denen die Größe des Artikels über alle Elemente hinweg einheitlich sein soll, und führt zu höhere Leistung, verwendet werden soll.
+> Die `MeasureFirstItem` Strategie für die größenanpassung führt zu höhere Leistung bei der Verwendung in Situationen, in denen die Größe des Artikels über alle Elemente hinweg einheitlich sein soll.
 
 Das folgende Codebeispiel zeigt die Einstellung der `ItemSizingStrategy` Eigenschaft:
 
@@ -365,8 +362,11 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
+> [!NOTE]
+> Das Element, das Festlegen der Strategie für die Größe ist derzeit nur auf implementierten iOS.
+
 ## <a name="related-links"></a>Verwandte Links
 
 - [CollectionView (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [Rechts-nach-links-Lokalisierung](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [Führen Sie ein Element in der Ansicht einen Bildlauf](scrolling.md)
+- [Xamarin.Forms-CollectionView Durchführen eines Bildlaufs](scrolling.md)

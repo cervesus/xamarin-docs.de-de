@@ -1,32 +1,30 @@
 ---
-title: Legen Sie Xamarin.Forms CollectionView Auswahlmodus
+title: Xamarin.Forms CollectionView-Auswahl
 description: CollectionView Auswahl ist standardmäßig deaktiviert. Allerdings kann die Auswahl von einzelnen und mehreren aktiviert werden.
 ms.prod: xamarin
 ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/18/2019
-ms.openlocfilehash: 441afb9348a85de61d35574bb9121c7de713a897
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 1ffed60253889491636fa105dd444ced9c2bedf5
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367774"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048209"
 ---
-# <a name="set-collectionview-selection-mode"></a>Festlegen des Auswahlmodus CollectionView
+# <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView-Auswahl
 
-![Vorschau](~/media/shared/preview.png)
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> Die `CollectionView` ist derzeit eine Vorschauversion und verfügt nicht über einen Teil der geplanten Funktionen. Darüber hinaus kann die API ändern, wie die Implementierung abgeschlossen ist.
 
 `CollectionView` definiert die folgenden Eigenschaften, die Auswahl von Listenelementen zu steuern:
 
 - `SelectionMode`, des Typs `SelectionMode`, den Auswahlmodus.
 - `SelectedItem`, des Typs `object`, das ausgewählte Element in der Liste. Diese Eigenschaft verfügt über eine `null` Wert, wenn kein Element ausgewählt ist.
+- `SelectedItems`, des Typs `IList<object>`, die Elemente in der Liste ausgewählt. Diese Eigenschaft ist schreibgeschützt und verfügt über eine `null` Wert, wenn keine Elemente ausgewählt sind.
 - `SelectionChangedCommand`, des Typs `ICommand`, die ausgeführt wird, wenn das ausgewählte Element geändert wird.
 - `SelectionChangedCommandParameter`, des Typs `object`, dies ist der Parameter, der an die `SelectionChangedCommand`.
 
@@ -38,7 +36,7 @@ In der Standardeinstellung `CollectionView` Auswahl ist deaktiviert. Allerdings 
 - `Single` – Gibt an, dass ein einzelnes Element ausgewählt werden kann, mit dem ausgewählten Element hervorgehoben wird.
 - `Multiple` – Gibt an, dass mehrere Elemente ausgewählt werden können, mit der ausgewählten Elemente werden hervorgehoben.
 
-`CollectionView` definiert eine `SelectionChanged` Ereignis, wenn ausgelöst, wird, die `SelectedItem` eigenschaftsänderungen, entweder weil der Benutzer ein Element ausgewählt wird, oder in der Liste, wenn eine Anwendung die Eigenschaft festlegt. Die `SelectionChangedEventArgs` Objekt an, die mit der `SelectionChanged` Ereignis verfügt über zwei Eigenschaften, die beide vom Typ `IReadOnlyList<object>`:
+`CollectionView` definiert eine `SelectionChanged` Ereignis, wenn ausgelöst, wird, die `SelectedItem` eigenschaftsänderungen, entweder weil der Benutzer ein Element ausgewählt wird, oder in der Liste, wenn eine Anwendung die Eigenschaft festlegt. Darüber hinaus wird auch ausgelöst, wenn die `SelectedItems` eigenschaftenänderungen. Die `SelectionChangedEventArgs` Objekt an, die mit der `SelectionChanged` Ereignis verfügt über zwei Eigenschaften, die beide vom Typ `IReadOnlyList<object>`:
 
 - `PreviousSelection` – die Liste der Elemente, die ausgewählt wurden, bevor Sie die Auswahl geändert wurde,.
 - `CurrentSelection` – die Liste der Elemente, die ausgewählt werden, nachdem die Änderung der Auswahl.
@@ -73,8 +71,8 @@ In diesem Codebeispiel wird die `OnCollectionViewSelectionChanged` -Ereignishand
 ```csharp
 void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
 {
-    string previous = (previousSelectedItems.FirstOrDefault() as Monkey)?.Name;
-    string current = (currentSelectedItems.FirstOrDefault() as Monkey)?.Name;
+    string previous = (e.PreviousSelection.FirstOrDefault() as Monkey)?.Name;
+    string current = (e.CurrentSelection.FirstOrDefault() as Monkey)?.Name;
     ...
 }
 ```
@@ -86,7 +84,50 @@ Die folgenden Screenshots zeigen einzelne Elementauswahl in einem `CollectionVie
 
 [![Screenshot von einer vertikalen Liste der CollectionView mit Einfachauswahl, unter iOS und Android](selection-images/single-selection.png "CollectionView vertikale Liste mit Einfachauswahl")](selection-images/single-selection-large.png#lightbox "CollectionView vertikale Liste mit einzelnen Auswahl")
 
-## <a name="pre-selection"></a>Vor der Auswahl
+## <a name="multiple-selection"></a>Mehrfachauswahl
+
+Wenn die `SelectionMode` -Eigenschaftensatz auf `Multiple`, mehrere Elemente der `CollectionView` ausgewählt werden kann. Wenn Elemente ausgewählt sind, die `SelectedItems` Eigenschaft wird auf die ausgewählten Elemente festgelegt werden. Wenn diese Eigenschaft geändert, die `SelectionChangedCommand` ausgeführt wird (mit dem Wert von der `SelectionChangedCommandParameter` übergeben wird, um die `ICommand`), und die `SelectionChanged` Ereignis wird ausgelöst.
+
+Das folgende XAML-Beispiel zeigt eine `CollectionView` , die auf der Auswahl mehrerer Elemente reagieren kann:
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                SelectionMode="Multiple"
+                SelectionChanged="OnCollectionViewSelectionChanged">
+    ...
+</CollectionView>
+```
+
+Der entsprechende C#-Code ist:
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    SelectionMode = SelectionMode.Multiple
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
+```
+
+In diesem Codebeispiel wird die `OnCollectionViewSelectionChanged` -Ereignishandler ausgeführt wird bei der `SelectionChanged` Ereignis wird ausgelöst, mit dem Ereignishandler, der zuvor ausgewählten Elementen und den derzeit ausgewählten Elementen abrufen:
+
+```csharp
+void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var previous = e.PreviousSelection;
+    var current = e.CurrentSelection;
+    ...
+}
+```
+
+> [!IMPORTANT]
+> Die `SelectionChanged` Ereignis kann ausgelöst werden, durch die Änderungen, die Folge der Änderung auftreten der `SelectionMode` Eigenschaft.
+
+Die folgenden Screenshots zeigen die Auswahl des mehrerer Elemente in einem `CollectionView`:
+
+[![Screenshot von einer vertikalen Liste der CollectionView mit Mehrfachauswahl unter iOS und Android](selection-images/multiple-selection.png "CollectionView vertikale Liste mit Mehrfachauswahl")](selection-images/multiple-selection-large.png#lightbox "CollectionView vertikale Liste mit Mehrfachauswahl")
+
+## <a name="single-pre-selection"></a>Einzelne vor der Auswahl
 
 Wenn die `SelectionMode` -Eigenschaftensatz auf `Single`, ein einzelnes Element in der `CollectionView` durch Festlegen von vorab ausgewählt werden kann die `SelectedItem` Eigenschaft, um das Element. Das folgende XAML-Beispiel zeigt eine `CollectionView` , bei dem ein einzelnes Element bereits ausgewählt:
 
@@ -145,6 +186,43 @@ public class MonkeysViewModel : INotifyPropertyChanged
 Aus diesem Grund, wenn die `CollectionView` angezeigt wird, wird das vierte Element in der Liste vorab ausgewählt ist:
 
 [![Screenshot einer CollectionView vertikale Liste mit einzelnen vor der Auswahl, unter iOS und Android](selection-images/single-pre-selection.png "CollectionView vertikale Liste mit einzelnen vor der Auswahl")](selection-images/single-pre-selection-large.png#lightbox "CollectionView vertikale Liste mit einzelnen vor der Auswahl")
+
+## <a name="multiple-pre-selection"></a>Mehrere vor der Auswahl
+
+Wenn die `SelectionMode` -Eigenschaftensatz auf `Multiple`, mehrere Elemente der `CollectionView` vorab ausgewählt werden kann. Das folgende XAML-Beispiel zeigt eine `CollectionView` wird, die vor der Auswahl mehrerer Elemente ermöglichen:
+
+```xaml
+<CollectionView x:Name="collectionView"
+                ItemsSource="{Binding Monkeys}"
+                SelectionMode="Multiple">
+    ...
+</CollectionView>
+```
+
+Der entsprechende C#-Code ist:
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    SelectionMode = SelectionMode.Multiple
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+Mehrere Elemente der `CollectionView` durch Hinzufügen der Benutzer zur vorab ausgewählt werden kann die `SelectedItems` Eigenschaft:
+
+```csharp
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(1).FirstOrDefault());
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(3).FirstOrDefault());
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
+```
+
+> [!NOTE]
+> Die `SelectedItems` Eigenschaft ist schreibgeschützt, und es ist daher nicht möglich, eine bidirektionale Datenbindung Vorauswahl von Elementen zu verwenden.
+
+Aus diesem Grund, wenn die `CollectionView` angezeigt wird, der zweite viertes und fünfte Elemente in der Liste vorab ausgewählt sind:
+
+[![Screenshot von einer vertikalen Liste der CollectionView mit mehreren vor der Auswahl, unter iOS und Android](selection-images/multiple-pre-selection.png "CollectionView vertikale Liste mit mehreren vor der Auswahl")](selection-images/multiple-pre-selection-large.png#lightbox "CollectionView vertikal Liste mit mehreren vor der Auswahl")
 
 ## <a name="change-selected-item-color"></a>Farbe des ausgewählten Elements ändern
 

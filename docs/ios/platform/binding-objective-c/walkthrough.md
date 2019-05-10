@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c8adc7ec7f717cf0004f79e3b71123d6daeaee86
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61392015"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978443"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek
 
@@ -734,5 +734,3 @@ In diesem Artikel wurde erläutert, wie der Prozess zum Erstellen und verwenden 
 - [Bindung Typen – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Xamarin für Objective-C-Entwickler](~/ios/get-started/objective-c-developers/index.md)
 - [Frameworkentwurfsrichtlinien](https://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 3f1e1ce324e849c0c939d936eb6ee1470cf24a3b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61266607"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978460"
 ---
 # <a name="binding-objective-c"></a>Binden von Objective-C
 
@@ -45,17 +45,13 @@ Dieser Artikel enthält eine schrittweise Anleitung zum Erstellen einer Bindung-
 
 ### <a name="binding-sampleshttpsgithubcommonomonotouch-bindings"></a>[Beispiele für Bindungen](https://github.com/mono/monotouch-bindings)
 
-Eine Auflistung von Drittanbieter-Bindungen, die sein können einen Verweis zurück, der beim Binden von Projekten neu erstellen verwendet wurde.
+Eine Auflistung von Drittanbieter-Bindungen, die als Verweis verwendet werden kann, bei der Bindung von Projekten neu zu erstellen.
 
 ## <a name="mac"></a>Mac
 
 In der Vergangenheit [Mac Bindung](~/mac/platform/binding.md) wurde ein sehr manueller Prozess. Es gibt derzeit ein [herunterladbare Vorschau](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview) Binden von Mac-Projekt Unterstützung für eine zukünftige Version von Visual Studio für Mac.
 
-
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [iOS binden](~/ios/platform/binding-objective-c/index.md)
 - [Mac-Bindung](~/mac/platform/binding.md)
-- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

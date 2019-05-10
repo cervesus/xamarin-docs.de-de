@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3a59cbb8385fe201d7eef086092c9b393a21cc71
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666357"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978127"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Benutzerdefinierte Xamarin.Forms-Renderer
 
@@ -58,8 +58,6 @@ In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Render
 
 In diesem Artikel wird veranschaulicht, wie Sie Renderer schreiben können, die ein benutzerdefiniertes `VideoPlayer`-Steuerelement implementieren, das Webvideos, als Anwendungsressourcen eingebettete Videos oder Videos aus der Videogalerie des Geräts abspielen können. Es werden mehrere Vorgehensweisen demonstriert, u.a. das Implementieren von Methoden und schreibgeschützten, bindbaren Eigenschaften.
 
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Custom Renderers (Xamarin University Video) (Benutzerdefinierte Renderer (Xamarin University-Video))](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)

@@ -6,27 +6,26 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 04/12/2018
-ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/02/2019
+ms.openlocfilehash: 7f7afacaf8154cd425fcd1c1638a512d5bc32ffd
+ms.sourcegitcommit: 53480ed32a126f88eec82e8c8ee5ed8d30616c44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012751"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65017699"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Remotebenachrichtigungen mit Google Cloud Messaging
 
-_Diese exemplarische Vorgehensweise enthält eine schrittweise Erklärung der Vorgehensweise für die Google Cloud Messaging verwenden, um remotebenachrichtigungen (auch als "Pushbenachrichtigungen" bezeichnet) implementieren in einer Xamarin.Android-Anwendung. Es wird beschrieben, die verschiedene Klassen, die Sie implementieren müssen, um die Kommunikation mit Google Cloud Messaging (GCM), es wird erläutert, wie zum Festlegen von Berechtigungen im Android-Manifest für den Zugriff auf den GCM und End-to-End-messaging mit einem Beispiel-Test-Programm veranschaulicht._
+> [!WARNING]
+> Google veraltet GCM ab 10. April 2018. Die folgenden Dokumente und die Beispielprojekte möglicherweise nicht mehr verwaltet werden. Von Google GCM-Server und Client-APIs werden so bald wie 29 Mai 2019 entfernt. Google empfiehlt, die Migration von GCM-apps zu Firebase Cloud Messaging (FCM). Weitere Informationen zu den GCM-Einstellung und Migration, finden Sie unter [Google Cloud Messaging - veraltet](https://developers.google.com/cloud-messaging/).
+>
+> Um den ersten Schritten mit Remotebenachrichtigungen mit Firebase Cloud Messaging mit Xamarin finden Sie unter [Remotebenachrichtigungen bei FCM](remote-notifications-with-fcm.md).
 
-> [!NOTE]
-> GCM wurde ersetzt wurde, indem [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM).
-> GCM-Server und Client-APIs [sind veraltet](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html) und wird nicht mehr zur Verfügung so schnell wie vom 11. April 2019.
+_Diese exemplarische Vorgehensweise enthält eine schrittweise Erklärung der Vorgehensweise für die Google Cloud Messaging verwenden, um remotebenachrichtigungen (auch als "Pushbenachrichtigungen" bezeichnet) implementieren in einer Xamarin.Android-Anwendung. Es wird beschrieben, die verschiedene Klassen, die Sie implementieren müssen, um die Kommunikation mit Google Cloud Messaging (GCM), es wird erläutert, wie zum Festlegen von Berechtigungen im Android-Manifest für den Zugriff auf den GCM und End-to-End-messaging mit einem Beispiel-Test-Programm veranschaulicht._
 
 ## <a name="gcm-notifications-overview"></a>Übersicht über die GCM-Benachrichtigungen
 
 In dieser exemplarischen Vorgehensweise erstellen wir eine Xamarin.Android-Anwendung, die Google Cloud Messaging (GCM) verwendet, um remotebenachrichtigungen zu implementieren (auch bekannt als *Pushbenachrichtigungen*). Implementieren wir die verschiedenen Intents und -Listener-Dienste, die GCM für remote-messaging verwenden, und wir unsere Implementierung mit einem Befehlszeilenprogramm, das einen Anwendungsserver simuliert testen. 
-
-Beachten Sie, dass Firebase Cloud Messaging (FCM) die neue Version von GCM &ndash; Google empfiehlt dringend, statt FCM GCM. Wenn Sie derzeit GCM verwenden, wird empfohlen, ein Upgrade auf FCM. Weitere Informationen zu FCM, finden Sie unter [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md). 
 
 Bevor Sie mit dieser exemplarischen Vorgehensweise fortfahren können, müssen Sie die erforderlichen Anmeldeinformationen zum Verwenden Googles GCM-Server abrufen; Dieser Prozess wird erläutert, [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md). Insbesondere müssen Sie eine *API-Schlüssel* und *Absender-ID* zum Einfügen in den Beispielcode in dieser exemplarischen Vorgehensweise angezeigt. 
 

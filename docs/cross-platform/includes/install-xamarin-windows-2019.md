@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: 0270f4a5ddab593372eb6687650e24d627f97c62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2ab71fa96be44168a52e5dde24967136e9a06fb
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61264195"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64992202"
 ---
 Xamarin kann installiert werden, als Teil einer _neue_ 2019 für Visual Studio-Installation, die folgenden Schritte aus:
 
@@ -21,7 +21,7 @@ Xamarin kann installiert werden, als Teil einer _neue_ 2019 für Visual Studio-I
 
     ![Schaltfläche „Installieren“](~/get-started/installation/windows-images/vs2019-click-install.png)
 
-   Je nachdem, welche Edition von Visual Studio-2019 Sie installieren kann während des Installationsvorgangs eine viel Zeit in Anspruch nehmen. Sie können die Installation über die Statusleisten überwachen:
+   Verwenden Sie die Statusanzeigen, um die Installation zu überwachen:
 
     ![Statusleisten während der Installation](~/get-started/installation/windows-images/vs2019-progress-bars.png)
 

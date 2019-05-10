@@ -6,25 +6,26 @@ ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 04/12/2018
-ms.openlocfilehash: c2ca567ffcb247622d1b3e8f3e0136c453723b96
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/02/2019
+ms.openlocfilehash: 46de067e52ff141ea30a097562874ff4b2fa1c01
+ms.sourcegitcommit: 53480ed32a126f88eec82e8c8ee5ed8d30616c44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61017680"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65017706"
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
+
+> [!WARNING]
+> Google veraltet GCM ab 10. April 2018. Die folgenden Dokumente und die Beispielprojekte möglicherweise nicht mehr verwaltet werden. Von Google GCM-Server und Client-APIs werden so bald wie 29 Mai 2019 entfernt. Google empfiehlt, die Migration von GCM-apps zu Firebase Cloud Messaging (FCM). Weitere Informationen zu den GCM-Einstellung und Migration, finden Sie unter [Google veraltet Cloud Messaging](https://developers.google.com/cloud-messaging/).
+>
+> Um Xamarin mit Firebase Cloud Messaging zu starten, finden Sie unter [Firebase Cloud Messaging](firebase-cloud-messaging.md).
 
 _Google Cloud Messaging (GCM) ist ein Dienst, der ermöglicht, Nachrichten zwischen mobile apps und Server-Anwendungen. Dieser Artikel bietet einen Überblick über die Funktionsweise von GCM, und es wird erläutert, wie Google-Dienste konfigurieren, damit Ihre app GCM verwenden kann._
 
 [![Google Cloud Messaging-logo](google-cloud-messaging-images/preview-sml.png)](google-cloud-messaging-images/preview.png#lightbox)
 
 Dieses Thema enthält einen allgemeinen Überblick darüber, wie der Google Cloud Messaging-Nachrichten zwischen Ihrer app und eines app-Servers weitergeleitet, und es enthält ein schrittweises Verfahren zum Abrufen von Anmeldeinformationen, damit Ihre app GCM-Dienste verwenden kann.
-
-> [!NOTE]
-> GCM wurde ersetzt wurde, indem [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM).
-> GCM-Server und Client-APIs [sind veraltet](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html) und wird nicht mehr zur Verfügung so schnell wie vom 11. April 2019.
 
 ## <a name="overview"></a>Übersicht
 

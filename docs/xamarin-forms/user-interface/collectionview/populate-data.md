@@ -1,27 +1,24 @@
 ---
-title: Xamarin.Forms-CollectionView mit Daten auffüllen
+title: Xamarin.Forms CollectionView Daten
 description: Eine CollectionView wird mit Daten aufgefüllt durch Festlegen der ItemsSource-Eigenschaft auf eine beliebige Sammlung, die IEnumerable implementiert.
 ms.prod: xamarin
 ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/15/2019
-ms.openlocfilehash: 57012202d981b96dba42f3017a19f2e32e4982ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 1350d5a5a0845029b7ef6a06647ad4c56f0f8135
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61366865"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048265"
 ---
-# <a name="populate-xamarinforms-collectionview-with-data"></a>Xamarin.Forms-CollectionView mit Daten auffüllen
+# <a name="xamarinforms-collectionview-data"></a>Xamarin.Forms CollectionView Daten
 
-![Vorschau](~/media/shared/preview.png)
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> Die `CollectionView` ist derzeit eine Vorschauversion und verfügt nicht über einen Teil der geplanten Funktionen. Darüber hinaus kann die API ändern, wie die Implementierung abgeschlossen ist.
 
 `CollectionView` definiert die folgenden Eigenschaften, die definieren, die Daten angezeigt werden, und sein aussehen:
 
@@ -188,8 +185,66 @@ Die folgenden Screenshots zeigen dem Ergebnis der Vorlagen jedes Element in der 
 
 Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
+## <a name="choose-item-appearance-at-runtime"></a>Wählen Sie die Element-Darstellung zur Laufzeit
+
+Die Darstellung jedes Elements in der `CollectionView` kann ausgewählt werden, zur Laufzeit basierend auf dem Elementwert, durch Festlegen der `CollectionView.ItemTemplate` Eigenschaft, um eine [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector) Objekt:
+
+```xaml
+<ContentPage ...
+             xmlns:controls="clr-namespace:CollectionViewDemos.Controls">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AmericanMonkeyTemplate">
+            ...
+        </DataTemplate>
+
+        <DataTemplate x:Key="OtherMonkeyTemplate">
+            ...
+        </DataTemplate>
+
+        <controls:MonkeyDataTemplateSelector x:Key="MonkeySelector"
+                                             AmericanMonkey="{StaticResource AmericanMonkeyTemplate}"
+                                             OtherMonkey="{StaticResource OtherMonkeyTemplate}" />
+    </ContentPage.Resources>
+
+    <CollectionView ItemsSource="{Binding Monkeys}"
+                    ItemTemplate="{StaticResource MonkeySelector}" />
+</ContentPage>
+```
+
+Der entsprechende C#-Code ist:
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ItemTemplate = new MonkeyDataTemplateSelector { ... }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+Die `ItemTemplate` -Eigenschaftensatz auf eine `MonkeyDataTemplateSelector` Objekt. Das folgende Beispiel zeigt die `MonkeyDataTemplateSelector` Klasse:
+
+```csharp
+public class MonkeyDataTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate AmericanMonkey { get; set; }
+    public DataTemplate OtherMonkey { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+    {
+        return ((Monkey)item).Location.Contains("America") ? AmericanMonkey : OtherMonkey;
+    }
+}
+```
+
+Die `MonkeyDataTemplateSelector` -Klasse definiert `AmericanMonkey` und `OtherMonkey` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Eigenschaften, die auf verschiedene Datenvorlagen festgelegt sind. Die `OnSelectTemplate` überschreiben, gibt die `AmericanMonkey` Vorlage, die das Monkey-Namen und den Speicherort in Blaugrün, anzeigt, wenn der Name des Monkey "Amerika" enthält. Wenn der Name des Monkey "Amerika", enthalten nicht die `OnSelectTemplate` überschreiben, gibt die `OtherMonkey` Vorlage, die das Monkey-Namen und den Speicherort im Silver anzeigt:
+
+[![Screenshot der CollectionView Runtime Element Vorlagenauswahl, unter iOS und Android](populate-data-images/datatemplateselector.png "Runtime Vorlage Elementauswahl in einem CollectionView")](populate-data-images/datatemplateselector-large.png#lightbox "Runtime Elementauswahl Vorlage in eine CollectionView")
+
+Weitere Informationen zu Daten Vorlage Selektoren, finden Sie unter [Erstellen einer Xamarin.Forms-DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
+
 ## <a name="related-links"></a>Verwandte Links
 
 - [CollectionView (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Erstellen einer Xamarin.Forms-DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

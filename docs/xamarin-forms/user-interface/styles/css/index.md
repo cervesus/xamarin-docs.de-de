@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2018
-ms.openlocfilehash: ca87e5997fa05e014be56f85087ce3e7ffe1ab12
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 04/11/2019
+ms.openlocfilehash: 7dc9a0c0d7330588dc4a6d3f3dedd4b72211f019
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250821"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048025"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von Xamarin.Forms-apps, die mithilfe von Cascading Stylesheets (CSS)
 
@@ -417,6 +417,19 @@ Die folgenden CSS-Eigenschaften werden von Xamarin.Forms unterstützt (in der **
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial `|`visibility: hidden;`|
 |`width`|`VisualElement`|_Double-Wert_ \| `initial`|`min-width: 320;`|
 
+> [!NOTE]
+> `initial` ist ein gültiger Wert für alle Eigenschaften. Es löscht den Wert (den Standardwert zurückgesetzt), der von einem anderen Stil festgelegt wurde.
+
+Die folgenden Eigenschaften werden derzeit nicht unterstützt:
+
+- `all: initial`.
+- Layout-Eigenschaften (Feld oder Raster).
+- Kompakteigenschaften, z. B. `font`, und `border`.
+
+Darüber hinaus besteht keine `inherit` Wert und daher Vererbung wird nicht unterstützt. Legen Sie daher nicht möglich ist, z. B. die `font-size` Eigenschaft für ein Layout und erwarten, dass alle der [ `Label` ](xref:Xamarin.Forms.Label) -Instanzen in das Layout, das den Wert erben. Die einzige Ausnahme ist die `direction` -Eigenschaft, die einen Standardwert besitzt der `inherit`.
+
+### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms-spezifische Eigenschaften
+
 Die folgenden Xamarin.Forms bestimmten CSS-Eigenschaften werden ebenfalls unterstützt. (in der **Werte** Spalte Typen sind _Kursiv_, während Zeichenfolgenliterale sind `gray`):
 
 |Eigenschaft|Betrifft|Werte|Beispiel|
@@ -434,16 +447,23 @@ Die folgenden Xamarin.Forms bestimmten CSS-Eigenschaften werden ebenfalls unters
 |`-xf-thumb-color`|`Slider`|_Farbe_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-spacing`|`StackLayout`|_Double-Wert_ \| `initial` |`-xf-spacing: 8;`|
 
-> [!NOTE]
-> `initial` ist ein gültiger Wert für alle Eigenschaften. Es löscht den Wert (den Standardwert zurückgesetzt), der von einem anderen Stil festgelegt wurde.
+### <a name="xamarinforms-shell-specific-properties"></a>Bestimmte Eigenschaften von Xamarin.Forms-Shell
 
-Die folgenden Eigenschaften werden derzeit nicht unterstützt:
+Die folgenden Xamarin.Forms-Shell bestimmten CSS-Eigenschaften werden ebenfalls unterstützt. (in der **Werte** Spalte Typen sind _Kursiv_, während Zeichenfolgenliterale sind `gray`):
 
-- `all: initial`.
-- Layout-Eigenschaften (Feld oder Raster).
-- Kompakteigenschaften, z. B. `font`, und `border`.
-
-Darüber hinaus besteht keine `inherit` Wert und daher Vererbung wird nicht unterstützt. Legen Sie daher nicht möglich ist, z. B. die `font-size` Eigenschaft für ein Layout und erwarten, dass alle der [ `Label` ](xref:Xamarin.Forms.Label) -Instanzen in das Layout, das den Wert erben. Die einzige Ausnahme ist die `direction` -Eigenschaft, die einen Standardwert besitzt der `inherit`.
+|Eigenschaft|Betrifft|Werte|Beispiel|
+|---|---|---|---|
+|`-xf-flyout-background`|`Shell`|_Farbe_ \| `initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_Farbe_ \| `initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_Farbe_ \| `initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_Farbe_ \| `initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_Farbe_ \| `initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_Farbe_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_Farbe_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_Farbe_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_Farbe_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_Farbe_ \| `initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_Farbe_ \| `initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>Farbe
 
@@ -484,7 +504,7 @@ Die genaue Bedeutung der einzelnen `namedsize` Wert ist plattformabhängig und a
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms 3.0 CSS, [Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 CSS-video**
 
 ## <a name="related-links"></a>Verwandte Links
 

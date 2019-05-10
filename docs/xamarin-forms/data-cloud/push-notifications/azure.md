@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2cfb15222c33309101366273d5bc9c42db68b436
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61327473"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978118"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Senden von Pushbenachrichtigungen von Azure Mobile Apps
 
@@ -23,7 +23,7 @@ _Azure Notification Hubs bietet eine skalierbare pushinfrastruktur für mobile P
 
 > [!VIDEO https://youtube.com/embed/le2lDY22xwM]
 
-**Azure Notification Hubs und Push Xamarin.Forms durch [Xamarin University](https://university.xamarin.com/)**
+**Azure Notification Hub mithilfe von Push übertragen und Xamarin.Forms-video**
 
 Eine Pushbenachrichtigung wird zum Übermitteln von Informationen, z. B. eine Nachricht von einem Back-End-System zu einer Anwendung auf einem mobilen Gerät auf die Anwendung Engagement und Nutzung zu erhöhen. Die Benachrichtigung kann jederzeit und an gesendet werden, selbst wenn der Benutzer die entsprechende Anwendung nicht aktiv verwendet wird.
 

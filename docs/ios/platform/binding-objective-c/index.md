@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: e599d4f99877e24e06de2c26ed2cafe48526f6f5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8c4dcbe0baf74479e94f8663280e7654b4d58a9d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61346930"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978155"
 ---
 # <a name="binding-ios-libraries"></a>Binden von iOS-Bibliotheken
 
@@ -38,15 +38,13 @@ Objektive Sharpie 3.0 wurde die Möglichkeit, direkte Binden von Cocoapods einge
 Diese Seite enthält eine schrittweise Anleitung zum Erstellen einer iOS-Bindung-Projekts mithilfe des open Source [ **InfColorPicker** ](https://github.com/InfinitApps/InfColorPicker) Objective-C-Projekt als Beispiel. Die **InfColorPicker** -Bibliothek bietet einen wieder verwendbaren View-Controller, mit denen den Benutzer eine Farbe basierend auf seiner HSB-Darstellung, sodass Farbauswahl Benutzerfreundlicher auswählen können.
 Objektive Sharpie dienen zur Unterstützung des Bindungsvorgangs.
 
-## <a name="xamarin-university-lightning-lecture"></a>Xamarin University Lightning Lecture
+## <a name="video"></a>Video
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 
-**iOS-Bindungen in C/C++ durch [Xamarin University](https://university.xamarin.com/)**
+**iOS-Bindungen in C /C++ video**
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Binden von Objective-C](~/cross-platform/macios/binding/index.md)
 - [Mac-Bindung](~/mac/platform/binding.md)
-- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

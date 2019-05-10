@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 25b27765a35310c5cdbaf5ae19902b1d19eff6ea
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 971effc34716596ec6be3708ac9da4e68d7bdfee
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61322069"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978592"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>iOS-Erweiterungen in Xamarin.iOS
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 
-**Erstellen von Erweiterungen in iOS durch [Xamarin University](https://university.xamarin.com/)**
+**Erstellen von Erweiterungen in iOS-video**
 
 Erweiterungen in iOS 8 eingeführten sind speziell `UIViewControllers` , sind präsentiert von iOS in standard-Kontexten z. B. wie in der **Mitteilungszentrale**, wie spezielle selbstdefinierten Typen, die vom Benutzer angefordert wird, ausführen Eingabe oder eine andere Kontexte wie bearbeiten ein Foto, in dem die Erweiterung Spezialeffekt Filter bereitstellen kann.
 

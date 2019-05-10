@@ -6,12 +6,12 @@ ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 718b5104ddc4593d080b88b062c42d371d9e8e2e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 51a0b81204b743824e24cfed83bd73308fa8d506
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261167"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977661"
 ---
 # <a name="objective-sharpie-tools--commands"></a>Objektive Sharpie Tools und Befehle
 
@@ -85,8 +85,3 @@ Bevor wir den Bindungsprozess beginnen können, müssen wir Informationen über 
 <span class="terminal-blue">sdk:</span> watchos2.0      <span class="terminal-green">arch:</span> armv7</pre>
 
 Von oben sehen wir, dass wir haben die `iphoneos9.1` SDK auf dem Computer installiert und kann `arm64` Architektur unterstützt. Wir werden diesen Wert für alle Beispiele in diesem Abschnitt verwenden. Mit diesen Informationen vorhanden, wir möchten Sie ein Objective-C-Bibliothek-Header-Dateien in den ersten zu analysieren sind `ApiDefinition.cs` und `StructsAndEnums.cs` für das Projekt für die Bindung.
-
-## <a name="related-links"></a>Verwandte Links
-
-- [Xamarin University-Kurs: Erstellen eine Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University-Kurs: Erstellen Sie eine Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
