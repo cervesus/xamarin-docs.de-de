@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6dd55f5c4316ed8f1d4f16d9e282cc2647350518
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9bde539286b69569b4928bc28b20faecee0f5209
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61245363"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557384"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Arbeiten mit UI-Thread in Xamarin.iOS
 
@@ -61,7 +61,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-Müssen Sie nicht verwenden, die für den Rest der Beispiele in diesem Dokument, aber es ist ein wichtiges Konzept zu beachten, wenn Ihre app netzwerkanforderungen stellt werden verwendet, die mitteilungszentrale oder andere Methoden, die einen Abschlusshandler erfordern, die auf einem anderen ausgeführt wird Thread.
+Sie müssen nicht dies für den Rest der Beispiele in diesem Dokument verwenden, aber es ist ein wichtiger Konzept zu beachten, wenn Ihre app netzwerkanforderungen stellt verwendet Notification Center oder andere Methoden, die einen Abschlusshandler erfordern, die auf einem anderen ausgeführt wird Thread.
 
  <a name="Async_Await_Example" />
 

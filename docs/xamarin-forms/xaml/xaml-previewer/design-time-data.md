@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 60074c3c1b69a57d313ad0243246ba6db93dde3d
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60876327"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557432"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeitdaten zu benötigen mit dem XAML-Vorschau
 
@@ -22,7 +22,7 @@ _Einige Layouts sind schwierig, ohne Daten zu visualisieren. Verwenden Sie diese
 
 Entwurfszeitdaten ist gefälschten Daten, die Sie festlegen, um die Steuerelemente zur Visualisierung in der XAML-Vorschau zu erleichtern. Fügen Sie zunächst mit dem Header der XAML-Seite die folgenden Codezeilen hinzu:
 
-```csharp
+```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
@@ -32,17 +32,17 @@ Sie können nach dem Hinzufügen von Namespaces, Ablegen `d:` vor jedes Attribut
 
 Beispielsweise können Sie Text in eine Bezeichnung hinzufügen, die an sie gebundene Daten in der Regel verfügt.
 
-```csharp
-<Label Text={Binding Name} d:Text="Name" />
+```xaml
+<Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
 [![Entwerfen von Uhrzeitdaten mit Text in eine Bezeichnung](xaml-previewer-images/designtimedata-label-sm.png "Design time Daten mit eine Bezeichnung")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
- In diesem Beispiel ohne `d:Text`, die XAML-Vorschau wird mit "nothing" für die Bezeichnung angezeigt. Stattdessen zeigt es "Name", wird die Bezeichnung um echte Daten zur Laufzeit zur Verfügung.
+In diesem Beispiel ohne `d:Text`, die XAML-Vorschau wird mit "nothing" für die Bezeichnung angezeigt. Stattdessen zeigt es "Name". in dem die Bezeichnung um echte Daten zur Laufzeit hat.
 
 Sie können `d:` mit einem beliebigen Attribut für eine Xamarin.Forms-Steuerelements, wie Farben und Schriftgrade Ihren Bedürfnissen entsprechend Abstand. Sie können auch auf das Steuerelement selbst hinzufügen:
 
-```csharp
+```xaml
 <d:Button Text="Design Time Button" />
 ```
 
@@ -54,7 +54,7 @@ In diesem Beispiel wird die Schaltfläche nur zur Entwurfszeit angezeigt. Mit di
 
 Sie können eine Entwurfszeit-Quelle für Images festlegen, die auf der Seite gebunden oder dynamisch geladen werden. Fügen Sie im Android-Projekt, das Bild, das Sie in der XAML-Vorschau zum anzeigen möchten die **Ressourcen > Drawable** Ordner. Fügen Sie in Ihrem iOS-Projekt, das Bild, das die **Ressourcen** Ordner. Sie können dieses Image dann in der XAML-Vorschau zur Entwurfszeit anzeigen:
 
-```csharp
+```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 [![Entwerfen von Uhrzeitdaten mit Bildern](xaml-previewer-images/designtimedata-image-sm.png "Zeitdaten mit Iamges entwerfen")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
@@ -63,7 +63,7 @@ Sie können eine Entwurfszeit-Quelle für Images festlegen, die auf der Seite ge
 
 Listenansichten sind ein beliebtes Verfahren zum Anzeigen von Daten in einer mobilen app. Sie sind jedoch schwierig, ohne sich um echte Daten zu visualisieren. Um Entwurfszeitdaten mit ihnen zu verwenden, müssen Sie ein Design Time Array die Verwendung als ItemsSource zu erstellen. Die XAML-Vorschau zeigt an, was in diesem Array in Ihre ListView zur Entwurfszeit ist.
 
-```csharp
+```xaml
 <StackLayout>
     <ListView ItemsSource="{Binding Items}">
         <d:ListView.ItemsSource>
@@ -87,8 +87,7 @@ Listenansichten sind ein beliebtes Verfahren zum Anzeigen von Daten in einer mob
 
 In diesem Beispiel wird eine von drei TextCells ListView, in der XAML-Vorschau angezeigt. Sie können ändern, `x:String` zu einem vorhandenen Datenmodell in Ihrem Projekt.
 
-Finden Sie unter [montemagnoss Hanselman.Forms app](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L36-L57) für ein etwas komplexeres Beispiel.
-
+Finden Sie unter [montemagnoss Hanselman.Forms app](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47) für ein etwas komplexeres Beispiel.
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>Alternative: Hartcodierung einer statischen "ViewModel"
 
