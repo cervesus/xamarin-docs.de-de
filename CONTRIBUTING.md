@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 63ddc7d34d0bcca4e86cb03b08a6040d20f8f037
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f0e2c93c4a6be0e83c9c4f1607b125b8d240ccc1
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60857634"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557206"
 ---
 # <a name="contributing"></a>Beitragen
 
@@ -24,7 +24,7 @@ Sie können auf jeder Seite auf **Bearbeiten** klicken und die GitHub-Website ve
 
 2. Erstellen Sie einen `branch` für Ihre Änderungen.
 
-3. Schreiben Sie Ihren Inhalt. Halten Sie sich dabei an die [Vorlage](../contributing-guidelines/template.md) und an den [Styleguide](../contributing-guidelines/voice-tone.md).
+3. Schreiben Sie Ihren Inhalt. Halten Sie sich dabei an die [Vorlage](contributing-guidelines/template.md) und an den [Styleguide](contributing-guidelines/voice-tone.md).
 
 4. Übermitteln Sie einen Pull Request (PR) von Ihrem Branch an `MicrosoftDocs/xamarin-docs/live`.
 
