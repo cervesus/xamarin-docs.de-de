@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: cf04c3e89e3effdd317fa98beb46f9075a1defcd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
+ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61301941"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65731523"
 ---
 # <a name="native-views-in-xaml"></a>Native Ansichten in XAML
 
@@ -37,8 +37,8 @@ So betten Sie einen einheitlichen Einblick in einer Xamarin.Forms-XAML-Datei ein
 1. Hinzufügen einer `xmlns` Namespacedeklaration in der XAML-Datei für den Namespace, die einheitliche Ansicht enthält.
 1. Erstellen Sie eine Instanz der einheitlichen Ansicht, in der XAML-Datei.
 
-> [!NOTE]
-> XAMLC muss für alle XAML-Seiten deaktiviert werden, die native Ansichten verwenden.
+> [!IMPORTANT]
+> Kompilierte XAML muss für alle XAML-Seiten deaktiviert werden, die native Ansichten verwenden. Dies kann erreicht werden, werden, indem die CodeBehind-Klasse für die XAML-Seite mit den `[XamlCompilation(XamlCompilationOptions.Skip)]` Attribut. Weitere Informationen zu XAML-Kompilierung, finden Sie unter [XAML-Kompilierung in Xamarin.Forms](~/xamarin-forms/xaml/xamlc.md).
 
 Um auf eine einheitliche Ansicht aus einer CodeBehind-Datei verweisen, verwenden Sie eine freigegebene Asset Projekt (SAP) und umschließen Sie den plattformspezifischen Code mit bedingten Kompilierungsdirektiven. Weitere Informationen finden Sie unter [verweisen auf Native Ansichten aus Code](#native_view_code).
 

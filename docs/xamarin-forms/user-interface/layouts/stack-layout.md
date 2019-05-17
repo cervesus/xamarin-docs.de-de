@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: bdc03721569682cd5b4f72908fcab1e4a567b83c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e462346c2c0130c972d098aa2c988bdd61fc360
+ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61370634"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65804899"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
-`StackLayout` Sichten in einer eindimensionalen Linie ("Stapel"), organisiert, entweder horizontal oder vertikal. Ansichten in einer `StackLayout` basierend auf den Speicherplatz im Layout mit Layoutoptionen vergrößert werden kann. Positionierung wird durch die Reihenfolge bestimmt, die das Layout und die Layoutoptionen Ansichten Ansichten hinzugefügt wurden.
+[StackLayout](xref:Xamarin.Forms.StackLayout) Sichten in einer eindimensionalen Linie ("Stapel"), organisiert, entweder horizontal oder vertikal. Ansichten in einer `StackLayout` basierend auf den Speicherplatz im Layout mit Layoutoptionen vergrößert werden kann. Positionierung wird durch die Reihenfolge bestimmt, die das Layout und die Layoutoptionen Ansichten Ansichten hinzugefügt wurden.
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms-Layouts")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms-Layouts")
 
