@@ -1,18 +1,18 @@
 ---
 title: Erste Schritte mit Xamarin
-description: In diesem Artikel finden Sie Links zu verschiedenen Leitfäden, in denen beschrieben wird, wie Sie in die Xamarin-Entwicklung einsteigen. In den verlinkten Inhalten erfahren Sie, wie Sie Ihre erste App erstellen, außerdem erhalten Sie eine allgemeine Einführung in die mobile Entwicklung und Informationen zur Weiterbildung mit Xamarin University.
+description: In diesem Artikel finden Sie Links zu verschiedenen Leitfäden, in denen beschrieben wird, wie Sie in die Xamarin-Entwicklung einsteigen. In den verlinkten Inhalten erfahren Sie, wie Sie Ihre erste App erstellen. Außerdem erhalten Sie eine allgemeine Einführung in die mobile Entwicklung.
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: b9b48d83199f83c69a42785d4d0c4008a5c6a5e1
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: da2c927bc7d6943066b6b2541d9af98a560c40b5
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197393"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978437"
 ---
 # <a name="building-mobile-apps"></a>Erstellen von mobilen Apps
 
@@ -48,11 +48,11 @@ Wenn Sie sich für Xamarin entscheiden und bei der Entwicklung Ihrer mobilen Anw
 
 Erfahren Sie mehr zu Visual Studio für Mac, der integrierten Entwicklungsumgebung (IDE) für macOS.
 
-## <a name="get-started-with-xamarin-university"></a>Erste Schritte mit Xamarin University
+## <a name="get-started-video"></a>Video „Erste Schritte“
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
-**Erstellen Sie Ihre erste Xamarin.Forms-App mit Xamarin für Visual Studio mit der Hilfe von [Xamarin University](https://university.xamarin.com)**
+**Erstellen Ihrer ersten Xamarin.Forms-App mit Xamarin für Visual Studio**
 
 ## <a name="related-links"></a>Verwandte Links
 

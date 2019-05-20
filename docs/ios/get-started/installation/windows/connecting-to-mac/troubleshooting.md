@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: cfc4ecc5bf7ebc5e4c4dae8094fe3eb4ece34068
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f56f2c58195e51e9294948dad85a475e181f99b2
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112498"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978534"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 
@@ -124,7 +124,7 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
 Bekannte Ursachen:
 
-- **Einschränkung**: Dieser Fehler kann bei dem Versuch auftreten, sich im Buildhost mit dem Konto _Vollständiger Name_ anzumelden, wenn der Name ein Zeichen mit Akzent enthält. Dies ist eine Einschränkung der [SSH.NET-Bibliothek](https://sshnet.codeplex.com/), die Xamarin für die SSH-Verbindung verwendet. **Problemumgehung**: Siehe Schritt 5 oben.
+- **Einschränkung**: Dieser Fehler kann bei dem Versuch auftreten, sich im Buildhost mit dem Konto _Vollständiger Name_ anzumelden, wenn der Name ein Zeichen mit Akzent enthält. Dies ist eine Einschränkung der [SSH.NET-Bibliothek](https://sshnet.codeplex.com/), die Xamarin für die SSH-Verbindung verwendet. **Problemumgehung:** Siehe Schritt 5 oben.
 
 #### <a name="unable-to-authenticate-with-ssh-keys-please-try-to-log-in-with-credentials-first"></a>„Die Authentifizierung kann mit den SSH-Schlüsseln nicht ausgeführt werden. Versuchen Sie zuerst die Anmeldung mit den Anmeldeinformationen"
 
@@ -134,7 +134,7 @@ Bekannte Ursachen:
 
 #### <a name="trying-to-connect-never-completes"></a>„Es wird versucht, eine Verbindung herzustellen...“ wird nicht abgeschlossen
 
-- **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**: Dieses Problem kann bei Xamarin 4.1 auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen &gt; Benutzer &amp; Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. (Ab Xamarin 4.2 führt dieses Szenario stattdessen zur Fehlermeldung „Verbindung konnte nicht hergestellt werden“.) **Problemumgehung**: Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
+- **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**: Dieses Problem kann bei Xamarin 4.1 auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen &gt; Benutzer &amp; Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. (Ab Xamarin 4.2 führt dieses Szenario stattdessen zur Fehlermeldung „Verbindung konnte nicht hergestellt werden“.) **Problemumgehung:** Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
 
 <a name="tryagain" />
 
@@ -150,7 +150,7 @@ Gemeldete Ursachen:
 
 - **Fehler [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)**: Diese Meldung wird bei Xamarin 4.0 angezeigt, wenn die **$HOME/.bashrc**-Datei auf dem Mac einen Fehler enthält. (Ab Xamarin 4.1 wirken sich Fehler in der **BASHRC**-Datei nicht mehr auf den Verbindungsprozess aus.) **Problemumgehung**: Verschieben Sie die **BASHRC**-Datei an einen Sicherungsspeicherort (oder löschen Sie sie, wenn Sie wissen, dass Sie sie nicht benötigen).
 
-- **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**: Dieser Fehler kann auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen > Benutzer und Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. **Problemumgehung**: Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
+- **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**: Dieser Fehler kann auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen > Benutzer und Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. **Problemumgehung:** Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
 
 - **Einschränkung**: Dieser Fehler kann auftreten, wenn der Mac-Buildhost mit einem Router verbunden ist, der keinen Internetzugriff hat (oder wenn der Mac einen DNS-Server verwendet, bei dem ein Timeout auftritt, wenn nach der Reverse-DNS-Suche des Windows-Computers gefragt wird). Visual Studio benötigt zum Abrufen des SSH-Fingerabdrucks ungefähr 30 Sekunden und kann möglicherweise keine Verbindung herstellen.
 
@@ -377,4 +377,4 @@ Wenn Sie eine Problembehandlung für einen Build durchführen und sicher stellen
 ## <a name="related-links"></a>Verwandte Links
 
 - [Durchführen einer Kopplung mit einem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
-- [Xamarin Mac Build Agent - Xamarin University Lightning Lecture (Xamarin Mac-Build-Agent: Xamarin University-Kurzvorstellung)](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Video zum Xamarin Mac-Build-Agent](https://www.youtube.com/watch?v=MBAPBtxkjFQ)

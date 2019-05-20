@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 1a8611e5dd0be77eeef065d546f6a0642f384b00
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 4583b703d6c6b15105d60a98e7a1064e6a2e9263
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557281"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977778"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms-Bindungsmodus
 
@@ -109,7 +109,7 @@ Zieleigenschaften mit dem Bindungsmodus `OneTime` werden nur dann aktualisiert, 
 
 Die Seite **Simple Color Selector** (Einfache Farbauswahl) veranschaulicht die Verwendung einer einfachen ViewModel-Klasse. Durch Datenbindungen kann ein Benutzer die Farbe über drei `Slider`-Elemente für den Farbton, die Sättigung und die Helligkeit auswählen.
 
-Die ViewModel-Klasse ist die Datenbindungsquelle. Die ViewModel-Klasse definiert *keine* bindbaren Eigenschaften. Sie implementiert aber einen Benachrichtigungsmechanismus, über den die Bindungsinfrastruktur benachrichtigt wird, wenn sich der Wert einer Eigenschaft ändert. Diese Benachrichtigungsmechanismus ist die [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)-Schnittstelle, die eine einzige Eigenschaft mit dem Namen [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) definiert. Eine Klasse, die diese Schnittstelle implementiert, löst das Ereignis aus, wenn sich der Wert einer ihrer öffentlichen Eigenschaften ändert. Das Ereignis muss nicht ausgelöst werden, wenn sich die Eigenschaft nicht ändert. (Die `INotifyPropertyChanged`-Schnittstelle wird auch von `BindableObject` implementiert, und ein `PropertyChanged`-Ereignis wird ausgelöst, wenn sich der Wert einer bindbaren Eigenschaft ändert.)
+Die ViewModel-Klasse ist die Datenbindungsquelle. Die ViewModel-Klasse definiert *keine* bindbaren Eigenschaften. Sie implementiert aber einen Benachrichtigungsmechanismus, über den die Bindungsinfrastruktur benachrichtigt wird, wenn sich der Wert einer Eigenschaft ändert. Diese Benachrichtigungsmechanismus ist die [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)-Schnittstelle, die ein einziges Ereignis mit dem Namen [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) definiert. Eine Klasse, die diese Schnittstelle implementiert, löst das Ereignis aus, wenn sich der Wert einer ihrer öffentlichen Eigenschaften ändert. Das Ereignis muss nicht ausgelöst werden, wenn sich die Eigenschaft nicht ändert. (Die `INotifyPropertyChanged`-Schnittstelle wird auch von `BindableObject` implementiert, und ein `PropertyChanged`-Ereignis wird ausgelöst, wenn sich der Wert einer bindbaren Eigenschaft ändert.)
 
 Die `HslColorViewModel`-Klasse definiert fünf Eigenschaften: Die Eigenschaften `Hue`, `Saturation`, `Luminosity`und `Color` sind miteinander verwandt. Wenn sich der Wert einer der drei Farbkomponenten ändert, wird die `Color`-Eigenschaft neu berechnet, und für alle vier Eigenschaften werden `PropertyChanged`-Ereignisse werden ausgelöst:
 
@@ -677,7 +677,7 @@ Der iOS-Screenshot auf der linken Seite zeigt das Programm bei der ersten Ausfü
 
 [![Beispieleinstellungen](binding-mode-images/samplesettings-small.png "Beispieleinstellungen")](binding-mode-images/samplesettings-large.png#lightbox "Beispieleinstellungen")
 
-Auf den anderen beiden Screenshots sehen Sie angepasste Einstellungen. Denken Sie daran, das Programm auf dem ausgeführten Gerät oder Emulator in den Energiesparmodus zu versetzen oder es zu beenden, wenn Sie mit dieser Seite experimentieren. Wenn Sie das Programm über den Visual Studio-Debugger beenden, wird die `OnSleep`-Überschreibung in der `App`-Klasse nicht aufgerufen.
+Der andere Screenshot zeigt die geänderten Einstellungen. Denken Sie daran, das Programm auf dem ausgeführten Gerät oder Emulator in den Energiesparmodus zu versetzen oder es zu beenden, wenn Sie mit dieser Seite experimentieren. Wenn Sie das Programm über den Visual Studio-Debugger beenden, wird die `OnSleep`-Überschreibung in der `App`-Klasse nicht aufgerufen.
 
 Im nächsten Artikel erfahren Sie, wie Sie die [**Zeichenfolgenformatierung**](string-formatting.md) von Datenbindungen festlegen, die auf der `Text`-Eigenschaft des `Label` festgelegt sind.
 
