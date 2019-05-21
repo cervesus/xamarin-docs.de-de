@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 252f3271c7247f7070df66712035938be651e7f4
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61345524"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924794"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Gerätestile in Xamarin.Forms
 
@@ -29,7 +29,7 @@ Die *Gerät* Stile sind:
 - [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
 - [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-Alle sechs Formatvorlagen können nur angewendet werden, um [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Z. B. eine `Label` anzeigt, die den Text eines Absatzes festlegen kann seine [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaft [ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle).
+Alle sechs Formatvorlagen können nur angewendet werden, um [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Z. B. eine `Label` anzeigt, die den Text eines Absatzes festlegen kann seine [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaft [ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle).
 
 Das folgende Codebeispiel veranschaulicht die Verwendung der *Gerät* Stilen in einer XAML-Seite:
 
@@ -109,7 +109,7 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-Die [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaft der einzelnen [ `Label` ](xref:Xamarin.Forms.Label) Instanz wird festgelegt, auf die entsprechende Eigenschaft aus der [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) Klasse.
+Die [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaft der einzelnen [ `Label` ](xref:Xamarin.Forms.Label) Instanz wird festgelegt, auf die entsprechende Eigenschaft aus der [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) Klasse.
 
 ## <a name="accessibility"></a>Zugriff
 
