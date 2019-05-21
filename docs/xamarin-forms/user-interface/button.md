@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 3b23a1a07741cd048ea034b2b39b5f9cde902dc6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bab38ebbef7083fa55e9942ad6826566e3ea5fdb
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61020135"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971085"
 ---
 # <a name="xamarinforms-button"></a>Schaltfläche "Xamarin.Forms"
 
@@ -429,7 +429,7 @@ Die `Button` erbt oder definiert mehrere Eigenschaften, die die Darstellung ausw
 > [!NOTE]
 > Die `Button` -Klasse verfügt auch über [ `Margin` ](xref:Xamarin.Forms.View.Margin) und [ `Padding` ](xref:Xamarin.Forms.Button.Padding) Eigenschaften zum Steuern der Layoutverhalten der `Button`. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
-Die Auswirkungen von sechs dieser Eigenschaften (mit Ausnahme `FontFamily` und `FontAttributes`) werden veranschaulicht die **Darstellung Schaltfläche** Seite. Eine andere Eigenschaft, [ `Image` ](xref:Xamarin.Forms.Button.Image), wird im Abschnitt erläuterten [ **mithilfe von Bitmaps mit der Schaltfläche**](#image-button).
+Die Auswirkungen von sechs dieser Eigenschaften (mit Ausnahme `FontFamily` und `FontAttributes`) werden veranschaulicht die **Darstellung Schaltfläche** Seite. Eine andere Eigenschaft, [ `Image` ](xref:Xamarin.Forms.Button.ImageSource), wird im Abschnitt erläuterten [ **mithilfe von Bitmaps mit der Schaltfläche**](#image-button).
 
 Alle Ansichten und Bindungen in der **Darstellung Schaltfläche** Seite in der XAML-Datei definiert sind:
 
@@ -748,9 +748,9 @@ So sieht das Programm ausgeführt wird, auf iOS-, Android- und UWP aus:
 
 ## <a name="using-bitmaps-with-buttons"></a>Mithilfe von Bitmaps mit Schaltflächen
 
-Die `Button` -Klasse definiert ein [ `Image` ](xref:Xamarin.Forms.Button.Image) -Eigenschaft, die Ihnen ermöglicht, die auf ein Bitmapbild Anzeigen der `Button`, entweder allein oder in Kombination mit dem Text. Sie können auch angeben, wie dem Text und Bild angeordnet sind.
+Die `Button` -Klasse definiert ein [ `ImageSource` ](xref:Xamarin.Forms.Button.Image) -Eigenschaft, die Ihnen ermöglicht, die auf ein Bitmapbild Anzeigen der `Button`, entweder allein oder in Kombination mit dem Text. Sie können auch angeben, wie dem Text und Bild angeordnet sind.
 
-Die `Image` Eigenschaft ist vom Typ [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), was bedeutet, dass die Bitmaps, die als Ressourcen in die einzelnen Plattformprojekte und nicht in .NET Standard Library-Projekt gespeichert werden müssen.
+Die `ImageSource` Eigenschaft ist vom Typ [ `ImageSource` ](xref:Xamarin.Forms.ImageSource), was bedeutet, dass die Bitmaps aus einer Datei, die eingebettete Ressource, die URI oder die Stream geladen werden kann.
 
 Jeder von Xamarin.Forms unterstützte Plattform können Images in mehreren Größen für unterschiedliche Pixel-Lösungen von verschiedenen Geräten gespeichert werden, die auf die Anwendung möglicherweise ausgeführt. Diese, die mehrerer Bitmaps werden mit dem Namen oder so, dass das Betriebssystem die beste Übereinstimmung auswählen kann, für das Gerät Bild des gespeicherten, Bildschirmauflösung.
 
@@ -781,7 +781,7 @@ In der UWP-Projekt Bitmaps können gespeichert werden an einer beliebigen Stelle
 
 Sie wurden alle übergeben eine **Buildvorgang** von **Content**.
 
-Können Sie angeben, wie die `Text` und `Image` Eigenschaften angeordnet sind, auf die `Button` mithilfe der [ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout) Eigenschaft `Button`. Diese Eigenschaft ist vom Typ [ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout), dies ist in eine eingebettete Klasse `Button`. Die [Konstruktor](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double)) weist zwei Argumente:
+Können Sie angeben, wie die `Text` und `ImageSource` Eigenschaften angeordnet sind, auf die `Button` mithilfe der [ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout) Eigenschaft `Button`. Diese Eigenschaft ist vom Typ [ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout), dies ist in eine eingebettete Klasse `Button`. Die [Konstruktor](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double)) weist zwei Argumente:
 
 - Ein Mitglied der [ `ImagePosition` ](xref:Xamarin.Forms.Button.ButtonContentLayout.ImagePosition) Enumeration: `Left`, `Top`, `Right`, oder `Bottom` , der angibt, wie die Bitmap relativ zum Text angezeigt wird.
 - Ein `double` Wert für den Abstand zwischen der Bitmap und dem Text.
@@ -794,7 +794,7 @@ Erstellen Sie im Code eine `Button` und legen Sie die `ContentLayout` Eigenschaf
 Button button = new Button
 {
     Text = "button text",
-    Image = new FileImageSource
+    ImageSource = new FileImageSource
     {
         File = "image filename"
     },
@@ -806,7 +806,7 @@ In XAML müssen Sie nur den Enumerationsmember oder den Abstand angeben, oder be
 
 ```xaml
 <Button Text="button text"
-        Image="image filename"
+        ImageSource="image filename"
         ContentLayout="Right, 20" />
 ```
 
@@ -816,22 +816,22 @@ Die erste `Button` auf die **Image Schaltflächendemo** Seite legt die `Image` E
 
 ```xaml
 <Button>
-    <Button.Image>
+    <Button.ImageSource>
         <OnPlatform x:TypeArguments="FileImageSource">
             <On Platform="iOS, Android" Value="MonkeyFace.png" />
             <On Platform="UWP" Value="Assets/MonkeyFace.png" />
         </OnPlatform>
-    </Button.Image>
+    </Button.ImageSource>
 </Button>
 ```
 
 Wenn die Bitmaps für UWP im Stammverzeichnis des Projekts gespeichert sind, kann dieses Markup erheblich vereinfacht werden:
 
 ```xaml
-<Button Image="MonkeyFace.png" />
+<Button ImageSource="MonkeyFace.png" />
 ```
 
-Um viele wiederkehrende Markup zu vermeiden der **ImageButtonDemo.xaml** -Datei, eine implizite `Style` entsprechend definiert die `Image` Eigenschaft. Dies `Style` wird automatisch auf anderen fünf angewendet `Button` Elemente. Hier ist die vollständige XAML-Datei ein:
+Um viele wiederkehrende Markup zu vermeiden der **ImageButtonDemo.xaml** -Datei, eine implizite `Style` entsprechend definiert die `ImageSource` Eigenschaft. Dies `Style` wird automatisch auf anderen fünf angewendet `Button` Elemente. Hier ist die vollständige XAML-Datei ein:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -844,7 +844,7 @@ Um viele wiederkehrende Markup zu vermeiden der **ImageButtonDemo.xaml** -Datei,
 
         <FlexLayout.Resources>
             <Style TargetType="Button">
-                <Setter Property="Image">
+                <Setter Property="ImageSource">
                     <OnPlatform x:TypeArguments="FileImageSource">
                         <On Platform="iOS, Android" Value="MonkeyFace.png" />
                         <On Platform="UWP" Value="Assets/MonkeyFace.png" />
@@ -854,12 +854,12 @@ Um viele wiederkehrende Markup zu vermeiden der **ImageButtonDemo.xaml** -Datei,
         </FlexLayout.Resources>
 
         <Button>
-            <Button.Image>
+            <Button.ImageSource>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS, Android" Value="MonkeyFace.png" />
                     <On Platform="UWP" Value="Assets/MonkeyFace.png" />
                 </OnPlatform>
-            </Button.Image>
+            </Button.ImageSource>
         </Button>
 
         <Button Text="Default" />

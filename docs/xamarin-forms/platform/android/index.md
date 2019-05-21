@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2018
-ms.openlocfilehash: 3bd606ae87c524202fd5ea7c141223042e90ec1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dc02fdc8754db4ae97c29ba2a496804b2263abdc
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363012"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970729"
 ---
 # <a name="android-platform-features"></a>Android-Plattformfeatures
 
@@ -34,6 +34,7 @@ Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Ansichte
 - Aktivieren einen Schlagschatten für eine `ImageButton`. Weitere Informationen finden Sie unter [ImageButton löschen Shadows unter Android](imagebutton-drop-shadow.md).
 - Aktivieren schnelle Bildläufe einer [ `ListView` ](xref:Xamarin.Forms.ListView) Weitere Informationen finden Sie unter [ListView schnellen scrollen, unter Android](listview-fast-scrolling.md).
 - Steuern, ob eine [ `WebView` ](xref:Xamarin.Forms.WebView) gemischte Inhalte anzeigen können. Weitere Informationen finden Sie unter [WebView gemischten Inhalt unter Android](webview-mixed-content.md).
+- Aktivieren Zoom auf eine [ `WebView` ](xref:Xamarin.Forms.WebView). Weitere Informationen finden Sie unter [auf Android WebView-Zoom](webview-zoom-controls.md).
 
 Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Seiten unter Android bereitgestellt:
 

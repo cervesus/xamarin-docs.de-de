@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
-ms.openlocfilehash: 471e09f236be505190ad2c08169bd445dcfca0a3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365673"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971018"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>iOS-Plattformfeatures in Xamarin.Forms
 
@@ -45,6 +45,7 @@ Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Seiten u
 - Steuern, ob die Navigationsleiste transparent ist. Weitere Informationen finden Sie unter [Navigation Leiste Durchsichtigkeit unter iOS](navigation-bar-translucent.md).
 - Steuern, ob die Farbe des Statusleiste angezeigte Texts auf einer [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) wird angepasst, um die Helligkeit der Navigationsleiste zu entsprechen. Weitere Informationen finden Sie unter ["NavigationPage" Text Color Leistenmodus für iOS](status-bar-text-color.md).
 - Steuern, ob es sich bei der Seitentitel als große Titel auf der Seite Navigationsleiste angezeigt wird. Weitere Informationen finden Sie unter [große Seitentitel unter iOS](page-large-title.md).
+- Festlegen der Sichtbarkeit des Indikators, home auf eine [ `Page` ](xref:Xamarin.Forms.Page). Weitere Informationen finden Sie unter [Startseite Indikator Sichtbarkeit unter iOS](page-home-indicator.md).
 - Festlegen der Sichtbarkeit der Status für eine [ `Page` ](xref:Xamarin.Forms.Page). Weitere Informationen finden Sie unter [Seite Status Sichtbarkeit unter iOS](page-status-bar-visibility.md).
 - Sicherstellen der Seite Inhalt auf einen Bereich des Bildschirms befindet sich, die für alle iOS-Geräte sicher ist. Weitere Informationen finden Sie unter [abgesicherten Bereich Layoutführungslinie unter iOS](page-safe-area-layout.md).
 - Festlegen der Präsentationsstil der modale Seiten auf einem iPad an. Weitere Informationen finden Sie unter [iPad modale Seite Präsentation Style](ipad-page-presentation-style.md).

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 540e787b476fc2b249bfbe487e45ac61f2e7405a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ec988508aaff1b433008add0bfbf0f2ad5f2dcf3
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61320002"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970940"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms-ListView
 
@@ -21,7 +21,7 @@ ms.locfileid: "61320002"
 [`ListView`](xref:Xamarin.Forms.ListView) ist eine Ansicht für die Darstellung von Listen mit Daten, besonders lange Listen, die einen Bildlauf erfordern.
 
 > [!IMPORTANT]
-> `CollectionView` ist eine Ansicht für die Darstellung von Listen mit Daten anderes Layout-Spezifikationen verwenden. Es zielt darauf ab, die eine flexiblere, bereitstellen und leistungsfähige Alternative zu [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md).
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) ist eine Ansicht für die Darstellung von Listen mit Daten anderes Layout-Spezifikationen verwenden. Es zielt darauf ab, die eine flexiblere, bereitstellen und leistungsfähige Alternative zu [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md).
 
 ## <a name="use-cases"></a>Anwendungsfälle
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 5c1d73acfef7a4384db7220daf7319251eb61f85
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 996e6469347a50523964a5b855804b0041ff8d21
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61041039"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970984"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder in Xamarin.Forms
 
@@ -102,13 +102,13 @@ UWP-Bilddateinamen [können mit dem Suffix werden `.scale-xxx` vor der Dateierwe
 
 Einige Steuerelemente verfügen über Eigenschaften, die ein Bild, wie z. B. angezeigt:
 
-- [`Page`](xref:Xamarin.Forms.Page) -Jede Seite von abgeleiteter Typ `Page` hat [ `Icon` ](xref:Xamarin.Forms.Page.Icon) und [ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage) Eigenschaften, die einen lokale Dateiverweis zugewiesen werden können. Unter bestimmten Umständen, z. B. wenn ein [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) zeigt eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), das Symbol wird angezeigt, wenn von der Plattform unterstützt.
+- [`Page`](xref:Xamarin.Forms.Page) -Jede Seite von abgeleiteter Typ `Page` hat [ `IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource) und [ `BackgroundImageSource` ](xref:Xamarin.Forms.Page.BackgroundImageSource) Eigenschaften, die eine Datei, die eingebettete Ressource, die URI oder die Stream zugewiesen werden können. Unter bestimmten Umständen, z. B. wenn ein [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) zeigt eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), das Symbol wird angezeigt, wenn von der Plattform unterstützt.
 
   > [!IMPORTANT]
-  > Unter iOS die [ `Page.Icon` ](xref:Xamarin.Forms.Page.Icon) Eigenschaft kann nicht aus einem Image in einem Satz für Asset-Katalog-Image nicht aufgefüllt werden. Stattdessen laden Symbolbilder für die `Page.Icon` Eigenschaft aus der **Ressourcen** Ordner im iOS-Projekt.
+  > Unter iOS die [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource) Eigenschaft kann nicht aus einem Image in einem Satz für Asset-Katalog-Image nicht aufgefüllt werden. Stattdessen laden Symbolbilder für die `Page.IconImageSource` Eigenschaft aus einer Datei, den eingebettete Ressource, den URI oder den Stream.
 
-- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) – Verfügt über eine [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon) -Eigenschaft, die auf einen lokalen Verweis festgelegt werden kann.
-- [`ImageCell`](xref:Xamarin.Forms.ImageCell) – Verfügt über eine [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource) -Eigenschaft, die zu einem Bild festgelegt werden, kann von einer lokalen Datei, einer eingebetteten Ressource oder einen URI abgerufen.
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) – Verfügt über eine [ `IconImageSource` ](xref:Xamarin.Forms.MenuItem.IconImageSource) -Eigenschaft, die zu einem Bild festgelegt werden kann, die aus einer Datei, die eingebettete Ressource, die URI oder die Stream geladen wird.
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) – Verfügt über eine [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource) -Eigenschaft, die zu einem Bild festgelegt werden, kann aus einer Datei, die eingebettete Ressource, die URI oder die Stream abgerufen.
 
 ## <a name="embedded-images"></a>Eingebettete Bilder
 

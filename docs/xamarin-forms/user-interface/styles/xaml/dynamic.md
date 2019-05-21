@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 574f4cb5541a12525fb0d160599d4d2f13653cf0
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: b9ec52f65df4a21eb91a7f96f647b480bf97b33d
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926934"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971167"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Dynamische Stile in Xamarin.Forms
 
@@ -25,7 +25,7 @@ Die `DynamicResource` Markuperweiterung ähnelt der `StaticResource` -Markuperwe
 Im folgenden Codebeispiel wird veranschaulicht, *dynamische* Stilen in einer XAML-Seite:
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesPage" Title="Dynamic" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesPage" Title="Dynamic" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="baseStyle" TargetType="View">
@@ -131,7 +131,7 @@ Ableiten eines Stils in einer dynamischen Stil nicht erreicht werden, mithilfe d
 Im folgenden Codebeispiel wird veranschaulicht, *dynamische* formatieren Sie Vererbung in einer XAML-Seite:
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesInheritancePage" Title="Dynamic Inheritance" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesInheritancePage" Title="Dynamic Inheritance" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="baseStyle" TargetType="View">

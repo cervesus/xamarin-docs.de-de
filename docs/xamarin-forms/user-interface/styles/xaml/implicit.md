@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 67b8bac62cacb091323d084e1c7cec9accc30844
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0be5c788b5be3d01234cc9a3124fa6a01ded2394
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61394339"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971131"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>Implizite Stile in Xamarin.Forms
 
@@ -27,7 +27,7 @@ Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Seitenebene, eine [ `R
 Das folgende Codebeispiel zeigt eine *implizite* Stil, die in XAML in einer Seite deklarierten `ResourceDictionary`, und klicken Sie auf der Seite angewendet [ `Entry` ](xref:Xamarin.Forms.Entry) Instanzen:
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Entry">
@@ -62,7 +62,7 @@ Darüber hinaus die vierte [ `Entry` ](xref:Xamarin.Forms.Entry) überschreibt d
 Zusätzlich zur Erstellung *implizite* Formatvorlagen auf Seitenebene, sie können auch erstellt werden auf der Steuerelementebene wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <StackLayout.Resources>

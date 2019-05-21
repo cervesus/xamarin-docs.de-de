@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 665f5d1653b74997519149cef68e0882f476179d
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 7b13a192f883ea667977f4d9ae3eea41d8c65e24
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924606"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971171"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Globale Stile in Xamarin.Forms
 
@@ -49,7 +49,7 @@ Dies [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) definiert e
 Das folgende Codebeispiel zeigt ein XAML-Seite anwenden der `buttonStyle` auf der Seite [ `Button` ](xref:Xamarin.Forms.Button) Instanzen:
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <Button Text="These buttons" Style="{StaticResource buttonStyle}" />
@@ -71,7 +71,7 @@ Informationen zum Erstellen von Stilen einer Seite [ `ResourceDictionary` ](xref
 Formatvorlagen, die weiter unten in der Hierarchie von Inhaltsansichten haben Vorrang vor den definierten höher einrichten. Z. B. eine [ `Style` ](xref:Xamarin.Forms.Style) festlegt [ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor) zu `Red` in der Anwendung wird von einem Seite-Level-Stil, der festlegt Ebene überschrieben werden `Button.TextColor` zu `Green`. Auf ähnliche Weise wird ein Servicelevel-Seite-Style von einem Steuerelementstil Ebene überschrieben werden. Darüber hinaus, wenn `Button.TextColor` direkt auf einer Steuerelementeigenschaft ist dies Vorrang vor alle Formatvorlagen festgelegt ist. Diese Priorität wird im folgenden Codebeispiel veranschaulicht:
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="buttonStyle" TargetType="Button">

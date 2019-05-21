@@ -7,16 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 329c139d1f38946527e565980492060e4dc9683e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ad96fa84a9d60aeeaef1cf568a4971f5ffe7a13f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926429"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970622"
 ---
 # <a name="tabbedpage-toolbar-placement-and-color-on-android"></a>Platzierung von "tabbedpage" Symbolleiste und die Farbe für Android
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+
+> [!IMPORTANT]
+> Die Plattformeigenschaften, die die Farbe der Symbolleiste für Festlegen einer [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) sind jetzt veraltet und wurden durch ersetzt die [ `SelectedTabColor` ](xref:Xamarin.Forms.TabbedPage.SelectedTabColor) und [ `UnselectedTabColor` ](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor)Eigenschaften. Weitere Informationen finden Sie unter [Erstellen einer "tabbedpage"](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md#creating-a-tabbedpage).
 
 Diese Plattformeigenschaften werden verwendet, um die Position und die Farbe der Symbolleiste für Festlegen einer [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Durch Festlegen von in XAML verwendet werden die [ `TabbedPage.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.ToolbarPlacementProperty) angefügte Eigenschaft auf den Wert der [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) Enumeration, und die [ `TabbedPage.BarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarItemColorProperty) und [ `TabbedPage.BarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarSelectedItemColorProperty) angefügte Eigenschaften zu einem [ `Color` ](xref:Xamarin.Forms.Color):
 

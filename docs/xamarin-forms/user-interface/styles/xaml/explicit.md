@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 12420f0559d27becb839307d6a1ed4489c895e7d
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 7a149a41a6e50d3b18da166d9c7cb61e36f2d0e7
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926886"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970458"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>Explizite Stile in Xamarin.Forms
 
@@ -27,7 +27,7 @@ Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Seitenebene, eine [ `R
 Das folgende Codebeispiel zeigt *explizite* Stile, die in XAML in einer Seite deklarierten `ResourceDictionary` , und klicken Sie auf der Seite angewendet [ `Label` ](xref:Xamarin.Forms.Label) Instanzen:
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="labelRedStyle" TargetType="Label">
@@ -75,7 +75,7 @@ Darüber hinaus die endgültige [ `Label` ](xref:Xamarin.Forms.Label) verfügt �
 Zusätzlich zur Erstellung *explizite* Formatvorlagen auf Seitenebene, sie können auch erstellt werden auf der Steuerelementebene wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <StackLayout.Resources>

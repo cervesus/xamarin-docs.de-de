@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 0f4ec3cfd7c154e43db9f8e123259317c0d17e21
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 016ac7269f334f6df7fba9635897b9608f459284
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60957440"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970215"
 ---
 # <a name="binding-a-java-library"></a>Binden einer Java-Bibliothek
 
@@ -70,7 +70,7 @@ Wenn Sie eine vorhandene Android-Bibliothek zu binden, ist es erforderlich, die 
 
 * **Gibt es keine externen Abhängigkeiten für die Bibliothek?** &ndash; Alle Java-Abhängigkeiten, die erforderlich sind, von der Android-Bibliothek enthalten sein müssen, in das Xamarin.Android-Projekt als eine **ReferenceJar** oder als ein **EmbeddedReferenceJar**. Alle systemeigenen Assemblys müssen hinzugefügt werden, für das bindungsprojekt "als eine **EmbeddedNativeLibrary**.  
 
-* **Welche Version der Android-API ist, wird das Ziel Android-Bibliothek?** &ndash; Es ist nicht möglich, die Android-API-Ebene "heruntergestuft" Stellen Sie sicher, dass die Bindung Xamarin.Android-Projekt die gleiche API (oder höher) als Ziel verwendet als die Android-Bibliothek.
+* **Welche der Android-API-Version die Android ist bibliotheksziel?** &ndash; Es ist nicht möglich, die Android-API-Ebene "heruntergestuft" Stellen Sie sicher, dass die Bindung Xamarin.Android-Projekt die gleiche API (oder höher) als Ziel verwendet als die Android-Bibliothek.
 
 * **Welche Version des JDK wurde verwendet, um die Bibliothek zu kompilieren?** &ndash; Bindungsfehler kann auftreten, wenn die Android-Bibliothek mit einer anderen Version des JDK als in der Verwendung von Xamarin.Android erstellt wurde. Wenn möglich, kompilieren Sie erneut mit der Android-Bibliothek mit derselben Version des JDK, die durch die Installation von Xamarin.Android verwendet wird.
 

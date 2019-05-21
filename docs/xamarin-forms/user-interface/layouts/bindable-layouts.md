@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: b0e2d5e3c7923e5c3cf2adcc1dd104a97b78e727
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 28846e6e9590d2adf56114fce8bc6056c0112ac1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61321559"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970966"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>Bindbare Layouts in Xamarin.Forms
 
@@ -31,8 +31,10 @@ Diese Eigenschaften angefügt werden können, um die [ `AbsoluteLayout` ](xref:X
 
 Die `Layout<T>` -Klasse macht eine [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) Auflistung, die die untergeordneten Elemente eines Layouts hinzugefügt werden. Bei der `BinableLayout.ItemsSource` Eigenschaft ist auf eine Auflistung von Elementen festgelegt und an der eine [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-abgeleiteten Klasse, die jedes Element in der Auflistung hinzugefügt wird die `Layout<T>.Children` Auflistung für die Anzeige nach dem Layout. Die `Layout<T>`-abgeleiteten Klasse wird seine untergeordneten Ansichten aktualisiert, wenn die zugrunde liegende Auflistung ändert. Weitere Informationen zu den Zyklus der Xamarin.Forms-Layouts, finden Sie unter [Erstellen eines benutzerdefinierten Layouts](~/xamarin-forms/user-interface/layouts/custom.md).
 
+Bindbare Layouts sollte nur verwendet werden, wenn die Auflistung von Elementen, die angezeigt werden, klein ist und Durchführen eines Bildlaufs und Auswahl ist nicht erforderlich. Beim Durchführen eines Bildlaufs bereitgestellt werden kann, durch das wrapping bindbare Layouts in einer [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), dies wird nicht empfohlen, da bindbare Layouts UI-Virtualisierung fehlt. Wenn das Durchführen eines Bildlaufs erforderlich ist, eine bildlauffähige Ansicht, die Virtualisierung der Benutzeroberfläche, z. B. enthält [ `ListView` ](xref:Xamarin.Forms.ListView) oder [ `CollectionView` ](xref:Xamarin.Forms.CollectionView), verwendet werden soll. Fehler beim beobachten von diese Empfehlung kann zu Leistungsproblemen führen.
+
 > [!IMPORTANT]
-> Bindbare Layouts sollte nur verwendet werden, wenn die Auflistung von Elementen, die angezeigt werden, klein ist und Durchführen eines Bildlaufs und Auswahl ist nicht erforderlich. Beim Durchführen eines Bildlaufs bereitgestellt werden kann, durch das wrapping bindbare Layouts in einer [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), dies wird nicht empfohlen, da bindbare Layouts UI-Virtualisierung fehlt. Wenn das Durchführen eines Bildlaufs erforderlich ist, eine bildlauffähige Ansicht, die Virtualisierung der Benutzeroberfläche, z. B. enthält [ `ListView` ](xref:Xamarin.Forms.ListView) oder `CollectionView`, verwendet werden soll. Fehler beim beobachten von diese Empfehlung kann zu Leistungsproblemen führen.
+>Es ist zwar technisch möglich ist, eine bindbare Layout einer beliebigen Klasse Layout anfügen, die von abgeleitet der [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) -Klasse, es ist nicht immer praktikabel zu diesem Zweck, insbesondere für die [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout) , [ `Grid` ](xref:Xamarin.Forms.Grid), und [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Klassen. Betrachten Sie beispielsweise das Szenario entwickelt, die zum Anzeigen einer Auflistung von Daten in einem [ `Grid` ](xref:Xamarin.Forms.Grid) mit bindbaren Layout, wobei jedes Element in der Auflistung ein Objekt ist, die mehrere Eigenschaften enthält. Jede Zeile in der `Grid` sollte angezeigt werden ein Objekt aus der Auflistung, in der jede Spalte in der `Grid` eine der Eigenschaften des Objekts anzeigen. Da die [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) für das bindbare Layout nur ein einzelnes Objekt enthalten kann, ist es erforderlich, für dieses Objekt eine Layoutklasse, die mit mehreren Ansichten an, dass jede eine der Eigenschaften des Objekts in einer bestimmten angezeigtwerden`Grid` Spalte. Obwohl dieses Szenario mit bindbaren Layouts realisiert werden kann, führt dies zu einem übergeordneten Element `Grid` , enthält ein untergeordnetes Element `Grid` für jedes Element in die gebundene Auflistung, die die ist eine äußerst ineffiziente und problematische Verwendung der `Grid` Layout.
 
 ## <a name="populating-a-bindable-layout-with-data"></a>Eine bindbare Layout mit Daten auffüllen
 

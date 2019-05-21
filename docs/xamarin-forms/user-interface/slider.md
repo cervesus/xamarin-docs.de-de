@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: fa339d9fd404cf74aa603d853abde5f9128e57b5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6e65124df4b20a50091ad93e18621f8e6707ebbe
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250791"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970554"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms-Schieberegler
 
@@ -49,10 +49,10 @@ Die `Slider` definiert außerdem mehrere Eigenschaften, die die Darstellung ausw
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) ist die Leiste Farbe auf der linken Seite des Ziehpunkts.
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) ist die Leiste Farbe auf der rechten Seite des Ziehpunkts.
 - [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) ist die Farbe des Thumb-Steuerelement.
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) ist das Image für das Thumb-Steuerelement des Typs [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource).
+- [`ThumbImageSource`](xref:Xamarin.Forms.Slider.ThumbImageSourceProperty) ist das Image für das Thumb-Steuerelement des Typs [ `ImageSource` ](xref:Xamarin.Forms.ImageSource).
 
 > [!NOTE]
-> Die `ThumbColor` und `ThumbImage` Eigenschaften schließen sich gegenseitig. Wenn beide Eigenschaften festgelegt werden, die `ThumbImage` -Eigenschaft Vorrang.
+> Die `ThumbColor` und `ThumbImageSource` Eigenschaften schließen sich gegenseitig. Wenn beide Eigenschaften festgelegt werden, die `ThumbImageSource` -Eigenschaft Vorrang.
 
 ## <a name="basic-slider-code-and-markup"></a>Grundlegende Schieberegler-Code und markup
 
