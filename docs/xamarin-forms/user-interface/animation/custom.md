@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 157e044fd96cdeff87d8fb56029fe625b7312bf4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 012fd6e5d9650a58018ccb7456ce48dcc0048405
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61345739"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925011"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>Benutzerdefinierte Animationen in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Custom/)
 
 _Die Animation-Klasse ist der Baustein von alle Xamarin.Forms-Animationen, mit der Erweiterungsmethoden in der ViewExtensions-Klasse, die ein oder mehrere Animation-Objekte erstellen. In diesem Artikel wird veranschaulicht, wie die Animation-Klasse erstellt und Abbrechen von Animationen, mehrere Animationen zu synchronisieren, und erstellen benutzerdefinierte Animationen, das Animieren von Eigenschaften, die durch die vorhandenen Methoden für die Animation animiert werden nicht wird._
 
@@ -184,6 +184,6 @@ In diesem Artikel veranschaulicht, wie Sie mit der [ `Animation` ](xref:Xamarin.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Benutzerdefinierte Animationen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
+- [Benutzerdefinierte Animationen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Custom/)
 - [Animation](xref:Xamarin.Forms.Animation)
 - [AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)

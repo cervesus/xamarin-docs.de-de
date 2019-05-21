@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: ad1c7f94467c6f32b9108ab7f6abe85d31679d3a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 01c5e4f449a1aed84a73b0284ba15e0c03deeed7
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60952121"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925784"
 ---
 # <a name="large-page-titles-on-ios"></a>Große Seitentitel unter iOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 Dieses iOS-Plattform-spezifische wird verwendet, um den Seitentitel als große Titel auf der Navigationsleiste des Anzeigen einer [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage), für Geräte, iOS 11 oder höher verwenden. Ein große Titel wird links ausgerichtet und wird von einer größeren Schrift und geht in einen standard-Titel, wie der Benutzer beginnt, Scrollen von Inhalt, sodass Bildschirmfläche effizient verwendet wird. Allerdings wird im Querformat, der Titel in der Mitte des der Navigationsleiste Inhaltslayout optimieren zurück. Es ist in XAML verwendet, durch Festlegen der `NavigationPage.PrefersLargeTitles` angefügten Eigenschaft, um eine `boolean` Wert:
 
@@ -101,6 +101,6 @@ Das Ergebnis ist, die einem angegebenen `LargeTitleDisplayMode` gilt, an die [ `
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: bef48db93ae76346802b6569080bb1e54e3e51b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c0b38453c5e573a13a51b6c001d3324936a8b7fb
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61394011"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926866"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>Stilvererbung in Xamarin.Forms
 
@@ -62,7 +62,7 @@ Der folgende Code veranschaulicht *explizite* formatieren Sie Vererbung in einer
 </ContentPage>
 ```
 
-Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und legt sie fest der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, Festlegen von Werten für zusätzliche bindbare Eigenschaft. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](xref:Xamarin.Forms.Label) Instanzen und [ `Button` ](xref:Xamarin.Forms.Button) Instanz durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
+Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und legt sie fest der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, Festlegen von Werten für zusätzliche bindbare Eigenschaft. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](xref:Xamarin.Forms.Label) Instanzen und [ `Button` ](xref:Xamarin.Forms.Button) Instanz durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
@@ -110,7 +110,7 @@ In diesem Beispiel `labelStyle` und `buttonStyle` sind Ressourcen der Ebene, wä
 
 ## <a name="style-inheritance-in-c35"></a>Style-Vererbung in C&#35;
 
-Der entsprechende C#-Seite, in denen [ `Style` ](xref:Xamarin.Forms.Style) Instanzen direkt zugewiesen sind die [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften der Steuerelemente erforderlich, wird im folgenden Codebeispiel wird angezeigt:
+Der entsprechende C#-Seite, in denen [ `Style` ](xref:Xamarin.Forms.Style) Instanzen direkt zugewiesen sind die [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften der Steuerelemente erforderlich, wird im folgenden Codebeispiel wird angezeigt:
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -153,7 +153,7 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und legt sie fest der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, Festlegen von Werten für zusätzliche bindbare Eigenschaft. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](xref:Xamarin.Forms.Label) Instanzen und [ `Button` ](xref:Xamarin.Forms.Button) Instanz durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften.
+Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und legt sie fest der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, Festlegen von Werten für zusätzliche bindbare Eigenschaft. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](xref:Xamarin.Forms.Label) Instanzen und [ `Button` ](xref:Xamarin.Forms.Button) Instanz durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 1baad2e2edfb661fff9f3ef0ccf52c9922e9f351
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b00452d348072060ab0e31a64fdb8cd4eb177471
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178155"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926980"
 ---
 # <a name="passing-arguments-in-xaml"></a>Übergeben von Argumenten in XAML
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
 
 _In diesem Artikel wird veranschaulicht, wie die XAML-Attribute, die verwendet werden können, um Argumente an nicht standardmäßige Konstruktoren, die zum Aufrufen der Factorymethoden, und geben Sie ein generisches Argument übergeben._
 
@@ -173,5 +173,5 @@ In diesem Artikel wird gezeigt, mithilfe der XAML-Attribute, die verwendet werde
 ## <a name="related-links"></a>Verwandte Links
 
 - [XAML-Namespaces](~/xamarin-forms/xaml/namespaces.md)
-- [Übergeben von Argumenten-Konstruktor (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+- [Übergeben von Argumenten-Konstruktor (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
 - [Aufrufen der Factorymethoden (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/callingfactorymethods/)

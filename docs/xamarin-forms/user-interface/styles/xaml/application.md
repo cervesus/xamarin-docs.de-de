@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 749e9bca87b2c9547b9733248d75718a4443ab88
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 665f5d1653b74997519149cef68e0882f476179d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160741"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924606"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Globale Stile in Xamarin.Forms
 
@@ -148,7 +148,7 @@ public class ApplicationStylesPageCS : ContentPage
 }
 ```
 
-Die `buttonStyle` gilt, an die [ `Button` ](xref:Xamarin.Forms.Button) Instanzen durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften und kontrolliert das Erscheinungsbild von der `Button` Instanzen.
+Die `buttonStyle` gilt, an die [ `Button` ](xref:Xamarin.Forms.Button) Instanzen durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften und kontrolliert das Erscheinungsbild von der `Button` Instanzen.
 
 ## <a name="related-links"></a>Verwandte Links
 

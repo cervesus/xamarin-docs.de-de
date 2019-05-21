@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 98eba6dea1fb528aa15a1fb242b0fb0eb7dada56
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 66bd6c1ca2ccc3e5335a790950cbf1a792a7df82
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61258610"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925399"
 ---
 # <a name="page-status-bar-visibility-on-ios"></a>Seite Status Sichtbarkeit unter iOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 Dieses iOS-Plattform-spezifische wird verwendet, um die Sichtbarkeit der Statusleiste für Festlegen einer [ `Page` ](xref:Xamarin.Forms.Page), sowie die Möglichkeit zum Steuern, wie die Statusleiste eintritt oder dieses verlässt die `Page`. Er wird genutzt, in XAML durch Festlegen der `Page.PrefersStatusBarHidden` angefügte Eigenschaft auf einen Wert von der `StatusBarHiddenMode` -Enumeration und optional die `Page.PreferredStatusBarUpdateAnimation` angefügte Eigenschaft auf einen Wert von der `UIStatusBarAnimation` Enumeration:
 
@@ -53,6 +53,6 @@ Die `Page.SetPreferredStatusBarUpdateAnimation` Methode wird verwendet, um festz
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

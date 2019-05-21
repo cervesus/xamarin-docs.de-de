@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 1e9c46fe9535c313581d6d0053559a28aa327887
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b57718038c43f7bc2a9e27e780a0624eb50a54fe
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359894"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926421"
 ---
 # <a name="tabbedpage-page-transition-animations-on-android"></a>Seite "TabbedPage" Übergangsanimationen unter Android
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 Dieses Android-Plattform-spezifische wird verwendet, um Übergangsanimationen zu deaktivieren, wenn Sie über Seiten entweder programmgesteuert navigieren oder bei Verwendung der Registerkartenleiste in einem [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Es ist in XAML verwendet, durch Festlegen der `TabbedPage.IsSmoothScrollEnabled` bindbare Eigenschaft `false`:
 
@@ -46,7 +46,7 @@ Die `TabbedPage.On<Android>` Methode gibt an, dass diese plattformspezifischen n
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

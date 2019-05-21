@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 7f6ec13b1b21a1526bb53f260c4d80e881e7feba
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 19a683fbd4aeb7060d97406a89c1e9308fb56b03
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60952229"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925999"
 ---
 # <a name="scrollview-content-touches-on-ios"></a>Inhalt ScrollView-Workflows unter iOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 Ein impliziter Timer wird immer dann ausgelöst, wenn eine Touch-Geste in beginnt eine [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) unter iOS und die `ScrollView` entscheidet, basierend auf die Aktion innerhalb der Spanne Timer, sollte die Aktion verarbeiten oder übergeben Sie es an seinen Inhalt. Standardmäßig wird der iOS `ScrollView` Verzögerungen bei der Content-Workflows, aber dadurch können Probleme auftreten, in einigen Fällen kann es bei der `ScrollView` Inhalt ausschlaggebende nicht die Aktion aus, wenn dies erforderlich ist. Aus diesem Grund diese plattformspezifischen steuert, ob eine `ScrollView` behandelt eine Touch-Geste oder übergibt es an seinen Inhalt. Es ist in XAML verwendet, durch Festlegen der `ScrollView.ShouldDelayContentTouches` angefügten Eigenschaft, um eine `boolean` Wert:
 
@@ -61,6 +61,6 @@ Das Ergebnis ist, eine [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) können d
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

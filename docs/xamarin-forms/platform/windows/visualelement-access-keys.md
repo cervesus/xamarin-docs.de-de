@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: f14014b257ee5061b6dd074719c3ca27577c6013
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c480f398c37ce43b634e0ec1c955b965466757f1
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60854939"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926843"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>VisualElement Zugriffstasten für Windows
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 Zugriffsschlüssel werden Tastenkombinationen aufgeführt, die Verbesserung der gebrauchstauglichkeit sowie der Barrierefreiheit von apps für die universelle Windows-Plattform (UWP) durch die Bereitstellung einer intuitiven Methode für Benutzer schnell navigieren und interagieren mit der Benutzeroberfläche der Anwendung sichtbar über eine Tastatur anstelle von per touch oder eine Maus. Sie sind Kombinationen aus die Alt-Taste und einen oder mehrere alphanumerische Schlüssel, die in der Regel nacheinander aufgerufen. Tastenkombinationen in Visual Studio werden automatisch für Zugriffsschlüssel unterstützt, die ein einzelnes alphanumerisches Zeichen verwenden.
 
@@ -104,6 +104,6 @@ Weitere Informationen zu Zugriffsschlüsseln finden Sie unter [Zugriffsschlüsse
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

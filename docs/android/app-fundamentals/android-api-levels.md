@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 8690be7551046a26339f58029da5f3f58e18cd15
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1f88525fefb83c92d5e5dda2176d3622bb67c78d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024065"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924960"
 ---
 # <a name="understanding-android-api-levels"></a>Android API-Ebenen
 
@@ -46,7 +46,7 @@ Auf der **Android-Manifest** Seite, legen Sie die Version des Android-Mindestver
 
 [![Minimum "und" Target Android Version, die auf die Zielframeworkversion festgelegt](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
-Wenn Sie möchten die Abwärtskompatibilität mit einer früheren Version von Android, legen Sie **Minimum Android Version als Ziel** die älteste Version von Android, dass Sie Ihre app unterstützen soll. (Beachten Sie, dass API-Ebene 14 für erforderliche minimale API-Ebene [Google Play-Dienste und Support für Firebase](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).) Die folgende Beispielkonfiguration unterstützt Android-Versionen von API-Ebene 14 bis API-Ebene 25:
+Wenn Sie möchten die Abwärtskompatibilität mit einer früheren Version von Android, legen Sie **Minimum Android Version als Ziel** die älteste Version von Android, dass Sie Ihre app unterstützen soll. (Beachten Sie, dass API-Ebene 14 für erforderliche minimale API-Ebene [Google Play-Dienste und Support für Firebase](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).) Die folgende Beispielkonfiguration unterstützt Android-Versionen von API-Ebene 14 über API-Ebene 25:
 
 [![Kompilieren mit der API-Ebene 25 Nougat "," Minimum Android Version, die auf API-Ebene 14 festgelegt](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 

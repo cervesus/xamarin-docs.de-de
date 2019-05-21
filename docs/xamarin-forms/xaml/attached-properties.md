@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 130f4e3efdd7b3792f6458ad28fc85654e6e38c8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c1fb596abb580cf42edda21ab71f2c70de59a547
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60857431"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924563"
 ---
 # <a name="attached-properties"></a>Angefügte Eigenschaften
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
 
 _Eine angefügte Eigenschaft ist eine besondere Art von bindbare Eigenschaft in einer Klasse definiert, aber mit anderen Objekten verbunden und in XAML als Attribut erkannt, die eine Klasse enthält, und ein Eigenschaftennamen an, die durch einen Punkt getrennt. Dieser Artikel bietet eine Einführung in angefügte Eigenschaften und veranschaulicht das Erstellen und deren Nutzung._
 
@@ -126,7 +126,7 @@ Angefügte Eigenschaften können auch durch einen Stil auf ein Steuerelement hin
 </Style>
 ```
 
-Die [ `Style` ](xref:Xamarin.Forms.Style) angewendet werden können, um eine [ `Label` ](xref:Xamarin.Forms.Label) durch Festlegen der [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaft, um die `Style` -Instanz unter Verwendung der `StaticResource`Markuperweiterung, wie im folgenden Codebeispiel gezeigt:
+Die [ `Style` ](xref:Xamarin.Forms.Style) angewendet werden können, um eine [ `Label` ](xref:Xamarin.Forms.Label) durch Festlegen der [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaft, um die `Style` -Instanz unter Verwendung der `StaticResource`Markuperweiterung, wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
 <Label Text="Label Shadow Effect" Style="{StaticResource ShadowEffectStyle}" />
@@ -147,6 +147,6 @@ Dieser Artikel enthält eine Einführung in angefügte Eigenschaften und veransc
 
 - [Bindbare Eigenschaften](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML-Namespaces](~/xamarin-forms/xaml/namespaces.md)
-- [Schatteneffekt (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+- [Schatteneffekt (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

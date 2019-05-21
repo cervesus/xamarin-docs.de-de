@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3ef0f96bcc955dcac4231f9eb9cf1ab16ee61aa
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277801"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925287"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms-Formatklassen
 
@@ -180,7 +180,7 @@ Resources = new ResourceDictionary
 
 ## <a name="consume-style-classes"></a>Style-Klassen nutzen
 
-Formatklassen können genutzt werden, durch Festlegen der [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) Eigenschaft des Steuerelements, das vom Typ `IList<string>`, um eine Liste der Style-Klassennamen. Die Style-Klassen ausgeglichen werden, vorausgesetzt, dass der Typ des Steuerelements entspricht der [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) der Style-Klassen.
+Formatklassen können genutzt werden, durch Festlegen der [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass) Eigenschaft des Steuerelements, das vom Typ `IList<string>`, um eine Liste der Style-Klassennamen. Die Style-Klassen ausgeglichen werden, vorausgesetzt, dass der Typ des Steuerelements entspricht der [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) der Style-Klassen.
 
 Das folgende Beispiel zeigt drei [ `BoxView` ](xref:Xamarin.Forms.BoxView) Instanzen jeweils anderen Stil Klassen festgelegt:
 
@@ -206,7 +206,7 @@ In diesem Beispiel ist die erste [ `BoxView` ](xref:Xamarin.Forms.BoxView) forma
 ![](style-class-images/boxviews.png "BoxViews erstellt, in denen Klassen style")
 
 > [!IMPORTANT]
-> Mehrere Klassen von Style können auf ein Steuerelement angewendet werden, da die [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) Eigenschaft ist vom Typ `IList<string>`. In diesem Fall werden Formatklassen in aufsteigender Listenreihenfolge angewendet. Aus diesem Grund, wenn mehrere Formatklassen identische Eigenschaften festgelegt, hat die Eigenschaft in der Style-Klasse, die die höchsten Listenposition wird Vorrang.
+> Mehrere Klassen von Style können auf ein Steuerelement angewendet werden, da die [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass) Eigenschaft ist vom Typ `IList<string>`. In diesem Fall werden Formatklassen in aufsteigender Listenreihenfolge angewendet. Aus diesem Grund, wenn mehrere Formatklassen identische Eigenschaften festgelegt, hat die Eigenschaft in der Style-Klasse, die die höchsten Listenposition wird Vorrang.
 
 Der entsprechende C#-Code ist:
 
