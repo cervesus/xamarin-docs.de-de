@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b2f32f6695fffa27068fce9d8c12f4ecd9157bc2
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: bd328c307ef5ad243569c294a7256ae9bdb3806a
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970540"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005260"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms-CollectionView Durchführen eines Bildlaufs
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert zwei [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden, die Elemente in der Ansicht zu scrollen. Eine der Überladungen führt einen Bildlauf durch das Element am angegebenen Index in der Ansicht, während die andere das angegebene Element in der Ansicht einen Bildlauf durchführt. Beide Überladungen haben zusätzliche Argumente, die angegeben werden können, um die genaue Position des Elements anzugeben, nach dem Abschluss des Bildlaufs und angibt, ob das Scrollen zu animieren.
 
@@ -272,4 +274,4 @@ Wenn ein Benutzer Kundenkarte ein Scrollen zu initiieren, wird das Element nach 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [CollectionView (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
-ms.openlocfilehash: 779b39441893324e38843e036614484443e37574
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: b70a842a2f677bf0343ea7db1e9627fa2087bf71
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971291"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005334"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -174,7 +174,7 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 
 |     |     |
 | --- | --- |
-| [`CollectionView`](xref:Xamarin.Forms.CollectionView) Zeigt eine bildlauffähige Liste der auswählbaren Datenelemente, die mit anderen Layout-Spezifikationen. Es zielt darauf ab, die eine flexiblere, bereitstellen und leistungsfähige Alternative zu [ `ListView` ](xref:Xamarin.Forms.ListView). Legen Sie die `ItemsSource` Eigenschaft, um eine Auflistung von Objekten, und legen Sie die `ItemTemplate` Eigenschaft, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) beschreiben, wie die Elemente zu formatierende Objekt. Die `SelectionChanged` Ereignis signalisiert, dass eine Auswahl getroffen wurde, die als verfügbar ist, die `SelectedItem` Eigenschaft.<br /><br />[Handbuch](~/xamarin-forms/user-interface/collectionview/index.md) / [Beispiel](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/) | [![Beispiel für CollectionView](views-images/CollectionView.png "CollectionView Beispiel")](views-images/CollectionView-Large.png#lightbox "CollectionView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
+| [`CollectionView`](xref:Xamarin.Forms.CollectionView) Zeigt eine bildlauffähige Liste der auswählbaren Datenelemente, die mit anderen Layout-Spezifikationen. Es zielt darauf ab, die eine flexiblere, bereitstellen und leistungsfähige Alternative zu [ `ListView` ](xref:Xamarin.Forms.ListView). Legen Sie die `ItemsSource` Eigenschaft, um eine Auflistung von Objekten, und legen Sie die `ItemTemplate` Eigenschaft, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) beschreiben, wie die Elemente zu formatierende Objekt. Die `SelectionChanged` Ereignis signalisiert, dass eine Auswahl getroffen wurde, die als verfügbar ist, die `SelectedItem` Eigenschaft.<br /><br />[Handbuch](~/xamarin-forms/user-interface/collectionview/index.md) / [Beispiel](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/) | [![Beispiel für CollectionView](views-images/CollectionView.png "CollectionView Beispiel")](views-images/CollectionView-Large.png#lightbox "CollectionView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />
