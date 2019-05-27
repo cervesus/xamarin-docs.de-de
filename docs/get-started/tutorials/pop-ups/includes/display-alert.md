@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cff466025306ee5d23b5245e625eba23c5448c15
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1e7b4b2ce4b7592c2350af20cf516436e244d95f
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384692"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193802"
 ---
 Xamarin.Forms verfügt über ein modales Popupelement, das als „Warnung“ bezeichnet wird, um dem Benutzer eine Warnung anzuzeigen oder einfache Fragen zu stellen. In dieser Übung verwenden Sie die [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)-Methode aus der [`Page`](xref:Xamarin.Forms.Page)-Klasse, um dem Benutzer eine Warnung anzuzeigen und eine einfache Frage zu stellen.
 
@@ -67,7 +67,7 @@ Xamarin.Forms verfügt über ein modales Popupelement, das als „Warnung“ bez
 
     Sie können sehen, dass die Antwort als Ausgabe im **Ausgabefenster** von Visual Studio angezeigt wird, nachdem eine Antwort für die Frage ausgewählt wurde.
 
-    Weitere Informationen zum Anzeigen von Warnungen finden Sie unter [Anzeigen einer Warnung](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#displaying-an-alert) in [Anzeigen von Popupelementen](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md).
+    Weitere Informationen zum Anzeigen von Warnungen finden Sie unter [Anzeigen einer Warnung](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert) im Leitfaden [Anzeigen von Popupelementen](~/xamarin-forms/user-interface/pop-ups.md).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -128,4 +128,4 @@ Xamarin.Forms verfügt über ein modales Popupelement, das als „Warnung“ bez
 
     Sie können sehen, dass die Antwort als Ausgabe im **Ausgabefenster** von Visual Studio für Mac angezeigt wird, nachdem eine Antwort für die Frage ausgewählt wurde.
 
-    Weitere Informationen zum Anzeigen von Warnungen finden Sie unter [Anzeigen einer Warnung](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#displaying-an-alert) in [Anzeigen von Popupelementen](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md).
+    Weitere Informationen zum Anzeigen von Warnungen finden Sie unter [Anzeigen einer Warnung](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert) im Leitfaden [Anzeigen von Popupelementen](~/xamarin-forms/user-interface/pop-ups.md).

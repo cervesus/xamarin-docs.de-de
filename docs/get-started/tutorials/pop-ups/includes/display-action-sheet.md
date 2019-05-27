@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: effebf02a7fb84ef955f4dcfda75d5273ef96b29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384681"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193826"
 ---
 
 Xamarin.Forms verfügt über ein modales Popupelement – auch bekannt als Aktionsblatt –, das dazu verwendet werden kann, Benutzer durch eine Aufgabe zu führen. In dieser Übung verwenden Sie die [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)-Methode aus der [`Page`](xref:Xamarin.Forms.Page)-Klasse, um ein Aktionsblatt anzuzeigen, das Benutzer durch eine Aufgabe führt.
@@ -41,7 +41,7 @@ Xamarin.Forms verfügt über ein modales Popupelement – auch bekannt als Aktio
 
     Berücksichtigen Sie nach der Auswahl einer Alternative im Dialogfeld „Aktionsblatt“, dass die Auswahl an das **Ausgabe**-Fenster in Visual Studio ausgegeben wird.
 
-    Weitere Informationen zum Anzeigen von Aktionsblättern finden Sie unter [Leiten von Benutzern durch Aufgaben](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#guiding-users-through-tasks) im Artikel [Anzeigen von Popupelementen](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md).
+    Weitere Informationen zum Anzeigen von Aktionsblättern finden Sie unter [Führen von Benutzern durch Aufgaben](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks) im Leitfaden [Anzeigen von Popupelementen](~/xamarin-forms/user-interface/pop-ups.md).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -75,4 +75,4 @@ Xamarin.Forms verfügt über ein modales Popupelement – auch bekannt als Aktio
 
     Berücksichtigen Sie nach der Auswahl einer Alternative im Dialogfeld „Aktionsblatt“, dass die Auswahl an das **Anwendungsausgabe**-Fenster in Visual Studio für Mac ausgegeben wird.
 
-    Weitere Informationen zum Anzeigen von Aktionsblättern finden Sie unter [Leiten von Benutzern durch Aufgaben](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#guiding-users-through-tasks) im Artikel [Anzeigen von Popupelementen](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md).
+    Weitere Informationen zum Anzeigen von Aktionsblättern finden Sie unter [Führen von Benutzern durch Aufgaben](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks) im Leitfaden [Anzeigen von Popupelementen](~/xamarin-forms/user-interface/pop-ups.md).
