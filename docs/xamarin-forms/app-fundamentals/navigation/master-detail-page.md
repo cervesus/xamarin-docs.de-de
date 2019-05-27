@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: c60eecd5ebd0f518514cd77d8dd963568d1a1d43
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666908"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970913"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Die Klasse MasterDetailPage von Xamarin.Forms
 
@@ -111,7 +111,7 @@ Im folgenden XAML-Codebeispiel wird die Deklaration des `MasterPage`-Objekts gez
              xmlns:local="using:MasterDetailPageNavigation"
              x:Class="MasterDetailPageNavigation.MasterPage"
              Padding="0,40,0,0"
-             Icon="hamburger.png"
+             IconImageSource="hamburger.png"
              Title="Personal Organiser">
     <StackLayout>
         <ListView x:Name="listView" x:FieldModifier="public">
@@ -145,7 +145,7 @@ Die Seite besteht aus einer [`ListView`](xref:Xamarin.Forms.ListView)-Klasse, di
 
 Der Eigenschaft [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) wird eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse zugewiesen, um alle `MasterPageItem`-Instanzen anzuzeigen. Die `DataTemplate`-Klasse enthält eine [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Klasse, die aus den Klassen [`Image`](xref:Xamarin.Forms.Image) und [`Label`](xref:Xamarin.Forms.Label) besteht. Für jede `MasterPageItem`-Instanz zeigt die [`Image`](xref:Xamarin.Forms.Image)-Klasse den Eigenschaftswert `IconSource` und die [`Label`](xref:Xamarin.Forms.Label)-Klasse den Eigenschaftswert `Title` an.
 
-Die [`Title`](xref:Xamarin.Forms.Page.Title)- und [`Icon`](xref:Xamarin.Forms.Page.Icon)-Eigenschaften der Seite sind festgelegt. Das Symbol wird auf der Detailseite angezeigt, wenn sie über eine Titelleiste verfügt. Unter iOS muss dies aktiviert werden, indem Sie die Detailseiteninstanz mit einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Instanz umschließen.
+Die [`Title`](xref:Xamarin.Forms.Page.Title)- und [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource)-Eigenschaften der Seite sind festgelegt. Das Symbol wird auf der Detailseite angezeigt, wenn sie über eine Titelleiste verfügt. Unter iOS muss dies aktiviert werden, indem Sie die Detailseiteninstanz mit einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Instanz umschließen.
 
 > [!NOTE]
 > Die [`Title`](xref:Xamarin.Forms.Page.Title)-Eigenschaft der [`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master)-Seite muss festgelegt sein, da sonst eine Ausnahme ausgelöst wird.
@@ -198,7 +198,7 @@ public class MasterPageCS : ContentPage
       SeparatorVisibility = SeparatorVisibility.None
     };
 
-    Icon = "hamburger.png";
+    IconImageSource = "hamburger.png";
     Title = "Personal Organiser";
     Content = new StackLayout
     {
@@ -239,7 +239,7 @@ public partial class MainPage : MasterDetailPage
 
 Die `OnItemSelected`-Methode führt die folgenden Aktionen aus:
 
-- Sofern sie nicht den Wert `null` aufweist, ruft sie das [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)-Element aus der [`ListView`](xref:Xamarin.Forms.ListView)-Instanz ab und legt die Detailseite auf eine neue Instanz des Seitentyps fest, der in der `TargetType`-Eigenschaft der `MasterPageItem`-Klasse enthalten ist. Der Seitentyp wird in einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Instanz umschlossen, um sicherzustellen, dass das Symbol, auf das mit der [`Icon`](xref:Xamarin.Forms.Page.Icon)-Eigenschaft von `MasterPage` verwiesen wird, unter iOS auf der Detailseite angezeigt wird.
+- Sofern sie nicht den Wert `null` aufweist, ruft sie das [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)-Element aus der [`ListView`](xref:Xamarin.Forms.ListView)-Instanz ab und legt die Detailseite auf eine neue Instanz des Seitentyps fest, der in der `TargetType`-Eigenschaft der `MasterPageItem`-Klasse enthalten ist. Der Seitentyp wird in einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Instanz umschlossen, um sicherzustellen, dass das Symbol, auf das mit der [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource)-Eigenschaft von `MasterPage` verwiesen wird, unter iOS auf der Detailseite angezeigt wird.
 - Für das in der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse ausgewählte Element wird `null` festgelegt, um sicherzustellen, dass keines der `ListView`-Elemente beim nächsten Mal ausgewählt wird, wenn `MasterPage` angezeigt wird.
 - Die Detailseite wird dem Benutzer angezeigt, indem die [`MasterDetailPage.IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented)-Eigenschaft auf `false` festgelegt wird. Diese Eigenschaft steuert, ob die Master- oder die Detailseite angezeigt wird. Sie sollte auf `true` festgelegt werden, um die Masterseite anzuzeigen, oder auf `false`, um die Detailseite anzuzeigen.
 

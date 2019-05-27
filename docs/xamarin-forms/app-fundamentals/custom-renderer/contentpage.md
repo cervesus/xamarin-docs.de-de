@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e310726ae4ad72d10e8e2890e9fbf07dda9bc48e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 290cd36f36d86d161b7fc124f8961888ade41955
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052328"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925953"
 ---
 # <a name="customizing-a-contentpage"></a>Anpassen einer ContentPage
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)
 
 _Eine ContentPage ist ein visuelles Element, das eine Ansicht anzeigt, die den Großteil des Bildschirms einnimmt. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für die ContentPage-Seite erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können._
 
@@ -199,7 +199,7 @@ namespace CustomRenderer.Droid
 
 Der Aufruf der `OnElementChanged`-Methode der Basisklasse instanziiert ein `ViewGroup`-Android-Steuerelement, bei dem es sich um eine Gruppe von Ansichten handelt. Der Livekamerastream wird nur dann gerendert, wenn der Renderer nicht bereits an ein vorhandenes Xamarin.Forms-Element angehängt ist und wenn eine Seiteninstanz existiert, die vom benutzerdefinierten Renderer gerendert wird.
 
-Die Seite wird dann durch den Aufruf einer Reihe von Methoden angepasst, die die `Camera`-API verwenden, um den Livestream der Kamera und die Möglichkeit zur Aufnahme eines Fotos bereitzustellen. Dies geschieht, bevor die `AddView`-Methode aufgerufen wird, um die Benutzeroberfläche für den Livekamerastream zum `ViewGroup`-Element hinzuzufügen. Beachten Sie, dass es bei Android zudem erforderlich ist, die `OnLayout`-Methode zu überschreiben, um Measure- und Layoutvorgänge für die Ansicht auszuführen. Weitere Informationen finden Sie im [Beispiel zum ContentPage-Renderer](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/).
+Die Seite wird dann durch den Aufruf einer Reihe von Methoden angepasst, die die `Camera`-API verwenden, um den Livestream der Kamera und die Möglichkeit zur Aufnahme eines Fotos bereitzustellen. Dies geschieht, bevor die `AddView`-Methode aufgerufen wird, um die Benutzeroberfläche für den Livekamerastream zum `ViewGroup`-Element hinzuzufügen. Beachten Sie, dass es bei Android zudem erforderlich ist, die `OnLayout`-Methode zu überschreiben, um Measure- und Layoutvorgänge für die Ansicht auszuführen. Weitere Informationen finden Sie im [Beispiel zum ContentPage-Renderer](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Erstellen des Seitenrenderers auf der UWP
 
@@ -257,4 +257,4 @@ In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Rende
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [CustomRendererContentPage (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/)
+- [CustomRendererContentPage (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)

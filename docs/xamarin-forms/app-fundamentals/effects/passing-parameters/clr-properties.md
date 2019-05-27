@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 71d38cf0408af9f52a675aa381c8187ebfe9cc85
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9f3d95b3901295c29c2276bfdd85579b321f9795
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051902"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925432"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Übergeben von Effect-Parametern als Eigenschaften der Common Language Runtime
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
 
 _CLR-Eigenschaften können verwendet werden, um Effect-Parameter zu definieren, die nicht auf Änderungen der Runtimeeigenschaften reagieren. In diesem Artikel wird veranschaulicht, wie CLR-Eigenschaften verwendet werden, um Parameter an einen Effekt zu übergeben._
 
@@ -245,4 +245,4 @@ In diesem Artikel wurde veranschaulicht, wie CLR-Eigenschaften verwendet werden,
 - [Effect class (Effect-Klasse)](xref:Xamarin.Forms.Effect)
 - [PlatformEffect (PlatformEffect-Klasse)](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect Class (RoutingEffect-Klasse)](xref:Xamarin.Forms.RoutingEffect)
-- [Shadow Effect (Schatteneffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+- [Shadow Effect (Schatteneffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)

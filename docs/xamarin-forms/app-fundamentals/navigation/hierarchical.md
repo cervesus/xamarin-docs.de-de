@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: c5eeb00d4dc5992666a7ba5f9fef2685d5056447
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 01bb3d19b5e79a6ce9942447b5ddd4afb04574cc
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329272"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978596"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -366,6 +366,5 @@ Es gibt mehrere Einschränkungen, die Sie beachten sollten, wenn Sie eine [`View
 - [PassingData (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
 - [TitleView (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
-- [How to Create a Sign In Screen Flow in Xamarin.Forms (Xamarin University Video) (Erstellen eines Anmeldebildschirmflows in Xamarin.Forms (Video von Xamarin University): Beispiel)](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
-- [How to Create a Sign In Screen Flow in Xamarin.Forms (Xamarin University Video) (Erstellen eines Anmeldebildschirmflows in Xamarin.Forms (Video von Xamarin University))](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
+- [Video zum Erstellen eines Anmeldebildschirmflows in Xamarin.Forms](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: b54dce66e234807a3f03251461f8f8c868ce95e9
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970960"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178076"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms-Schnittstelle Benutzeransichten
 
@@ -51,6 +51,10 @@ DataPages Geben Sie eine API, um schnell und einfach zu eine Datenquelle mit vor
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
 Die `DatePicker` ermöglicht es einem Benutzer ein Datum in einem angegebenen Bereich auswählen. Die Implementierung erfolgt mithilfe der Datumsauswahl unterstützt durch die spezielle Plattform, die die Anwendung ausgeführt wird.
+
+## <a name="display-pop-upspop-upsmd"></a>[Anzeigen von Popups](pop-ups.md)
+
+Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. Diese Elemente der Benutzeroberfläche können verwendet werden, die Dialogfelder angezeigt, die einfache Fragen von Benutzern und den Benutzern Hinweise, durch die Aufgaben stellen zu können.
 
 ## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[Grafiken mit SkiaSharp](graphics/skiasharp/index.md)
 

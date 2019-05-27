@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 8c831dfa45c5028e4f1422467bf3be9210452335
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 840fa1b40858ccf3bff15f7027735ce98081d23c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59019372"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925126"
 ---
 # <a name="reusable-effectbehavior"></a>Wiederverwendbare EffectBehavior-Klasse
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)
 
 _Verhalten sind ein nützlicher Ansatz, um Effekte zu einem Steuerelement hinzuzufügen. Dadurch wird standardmäßig genutzter Effektbehandlungscode von Codebehind-Dateien verwendet. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens dargestellt, um einem Steuerelement einen Effekt hinzuzufügen._
 
@@ -32,7 +32,7 @@ Die folgenden Verhaltenseigenschaften müssen für die Verwendung des Verhaltens
 Weitere Informationen zu Effekten finden Sie unter [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 > [!NOTE]
-> `EffectBehavior` ist eine benutzerdefinierte Klasse, die in [Effect Behavior sample (Effekt-Verhaltensbeispiel)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/) gefunden werden kann. Allerdings ist sie nicht Teil von Xamarin.Forms.
+> `EffectBehavior` ist eine benutzerdefinierte Klasse, die in [Effect Behavior sample (Effekt-Verhaltensbeispiel)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/) gefunden werden kann. Allerdings ist sie nicht Teil von Xamarin.Forms.
 
 ## <a name="creating-the-behavior"></a>Erstellen des Verhaltens
 
@@ -169,6 +169,6 @@ In diesem Artikel wurde veranschaulicht, wie einem Steuerelement mithilfe eines 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Effect Behavior (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+- [Effect Behavior (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)
 - [Behavior class (Behavior-Klasse)](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt; class (Behavior<T>-Klasse)](xref:Xamarin.Forms.Behavior`1)

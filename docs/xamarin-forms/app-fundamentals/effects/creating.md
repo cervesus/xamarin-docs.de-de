@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 0d9f3c9e0608e87258b7f53af3c567155da824d1
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: d0b109e03938fde3225c893bc8309448e543944b
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58782486"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925548"
 ---
 # <a name="creating-an-effect"></a>Erstellen eines Effekts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Effects/FocusEffect/)
 
 _Durch Effekte können Steuerelemente mühelos angepasst werden. In diesem Artikel wird veranschaulicht, wie Sie einen Effekt erstellen können, der die Hintergrundfarbe des Entry-Steuerelements verändert, wenn das Steuerelement ausgewählt wird._
 
@@ -262,4 +262,4 @@ In diesem Artikel wurde veranschaulicht, wie Sie einen Effekt erstellen können,
 - [Effect class (Effect-Klasse)](xref:Xamarin.Forms.Effect)
 - [PlatformEffect (PlatformEffect-Klasse)](xref:Xamarin.Forms.PlatformEffect`2)
 - [Background Color Effect (Hintergrundfarbeneffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/)
-- [Focus Effect (Fokuseffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)
+- [Focus Effect (Fokuseffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Effects/FocusEffect/)

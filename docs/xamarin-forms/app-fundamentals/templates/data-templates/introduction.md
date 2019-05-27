@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: bcea44688a64e741868e7ad2adf6c4dc65a5071a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: c547a851d9e042f0289ac5c3a2d20ff97f681551
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052276"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926956"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Einführung in Xamarin.Forms-Datenvorlagen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 
 _Mit Xamarin.Forms-Datenvorlagen können Sie die Darstellung von Daten in unterstützten Steuerelementen definieren. In diesem Artikel werden Datenvorlagen grundlegend vorgestellt, und es wird erläutert, warum sie nötig sind._
 
@@ -138,5 +138,5 @@ Datenvorlagen, die weiter unten in der Hierarchie der Ansichten angeordnet sind,
 ## <a name="related-links"></a>Verwandte Links
 
 - [Darstellung von Zellen](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [Data Templates (Datenvorlagen (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+- [Data Templates (Datenvorlagen (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

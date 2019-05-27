@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 642a4a63ca2c451c6a085f0e99cebd93babe078d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fbc5ccda4e798b818b4c21dd459bab6b467cba31
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058755"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925439"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Übergeben von Effect-Parametern als angefügte Eigenschaften
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
 
 _Angefügte Eigenschaften können verwendet werden, um Effect-Parameter zu definieren, die auf Änderungen der Runtimeeigenschaften reagieren. In diesem Artikel wird veranschaulicht, wie Sie angefügte Eigenschaften verwenden können, um Parameter an einen Effekt zu übergeben, und wie Sie einen Parameter zur Laufzeit anpassen können._
 
@@ -174,7 +174,7 @@ Effect-Klassen können genutzt werden, indem Sie angefügte Eigenschaften zu ein
 </Style>
 ```
 
-Die [`Style`](xref:Xamarin.Forms.Style)-Klasse kann auf eine [`Label`](xref:Xamarin.Forms.Label)-Klasse angewendet werden, indem ihre [`Style`](xref:Xamarin.Forms.VisualElement.Style)-Eigenschaft wie im folgenden Codebeispiel gezeigt mithilfe der Markuperweiterung `StaticResource` für die `Style`-Instanz festgelegt wird:
+Die [`Style`](xref:Xamarin.Forms.Style)-Klasse kann auf eine [`Label`](xref:Xamarin.Forms.Label)-Klasse angewendet werden, indem ihre [`Style`](xref:Xamarin.Forms.NavigableElement.Style)-Eigenschaft wie im folgenden Codebeispiel gezeigt mithilfe der Markuperweiterung `StaticResource` für die `Style`-Instanz festgelegt wird:
 
 ```xaml
 <Label Text="Label Shadow Effect" ... Style="{StaticResource ShadowEffectStyle}" />
@@ -440,4 +440,4 @@ In diesem Artikel wurde veranschaulicht, wie Sie angefügte Eigenschaften verwen
 - [Effect class (Effect-Klasse)](xref:Xamarin.Forms.Effect)
 - [PlatformEffect (PlatformEffect-Klasse)](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect Class (RoutingEffect-Klasse)](xref:Xamarin.Forms.RoutingEffect)
-- [Shadow Effect (Schatteneffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
+- [Shadow Effect (Schatteneffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 0374d37027546c41305c8cd5f27de593c226fcaa
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: dee45f9788360326ddb393305e9a52627264a671
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233769"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926292"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Erstellen eines Xamarin.Forms-DataTemplate-Objekts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 
 _Datenvorlagen können inline erstellt werden, z.B. in einem ResourceDictionary-Objekt oder über einen benutzerdefinierten Typ oder geeigneten Xamarin.Forms-Zellentyp. In diesem Artikel werden alle Methoden erläutert._
 
@@ -293,5 +293,5 @@ In diesem Artikel wurde beschrieben, wie Sie Datenvorlagen auf unterschiedliche 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Darstellung von Zellen](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [Data Templates (Datenvorlagen (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+- [Data Templates (Datenvorlagen (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 142c22cd239d6b66e5139346b45994ef2f20bdc8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 634ba351d419b1d18dcc5d5bdbf5e248f510329d
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672559"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971248"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Automatisierungseigenschaften in Xamarin.Forms
 
@@ -149,7 +149,7 @@ Legen Sie unter Android die Eigenschaften `AutomationProperties.Name` und `Autom
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
 
-Legen Sie unter iOS und auf der Universellen Windows-Plattform (UWP) entweder die Eigenschaften `AutomationProperties.Name` und `AutomationProperties.HelpText` auf die `MasterDetailPage`-Klasse oder auf die Eigenschaft `Icon` der `Master`-Seite fest, um den Text festzulegen, der von Sprachausgaben für die Umschaltfläche auf einer [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)-Klasse gelesen werden kann.
+Legen Sie unter iOS und auf der Universellen Windows-Plattform (UWP) entweder die Eigenschaften `AutomationProperties.Name` und `AutomationProperties.HelpText` auf die `MasterDetailPage`-Klasse oder auf die Eigenschaft `IconImageSource` der `Master`-Seite fest, um den Text festzulegen, der von Sprachausgaben für die Umschaltfläche auf einer [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)-Klasse gelesen werden kann.
 
 Fügen Sie unter Android dem Android-Projekt Zeichenfolgenressourcen hinzu, um den Text festzulegen, der von Sprachausgaben für die Umschaltfläche auf einer [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) gelesen werden kann:
 
@@ -161,11 +161,11 @@ Fügen Sie unter Android dem Android-Projekt Zeichenfolgenressourcen hinzu, um d
 </resources>
 ```
 
-Legen Sie anschließend die Eigenschaft `AutomationId` auf die Eigenschaft `Icon` der `Master`-Seite für die entsprechende Zeichenfolge fest:
+Legen Sie anschließend die Eigenschaft `AutomationId` auf die Eigenschaft `IconImageSource` der `Master`-Seite für die entsprechende Zeichenfolge fest:
 
 ```csharp
 var master = new ContentPage { ... };
-master.Icon.AutomationId = "btnMDPAutomationID";
+master.IconImageSource.AutomationId = "btnMDPAutomationID";
 ```
 
 ### <a name="toolbaritem"></a>ToolbarItem

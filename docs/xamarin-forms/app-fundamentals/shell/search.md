@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: acaa847b61443eff480e2b39e388f5df9de06e42
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: e97dbb993cb108245636ae459a572e18b13d6817
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054420"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005198"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms-Shell
 
-![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
-
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Die integrierte Suchfunktionalität in der Xamarin.Forms-Shell wird von der `SearchHandler`-Klasse bereitgestellt. Sie können einer Seite die Suchfunktion hinzufügen, indem Sie die angefügte `Shell.SearchHandler`-Eigenschaft auf ein untergeordnetes `SearchHandler`-Objekt festlegen. Dadurch wird am oberen Rand der Seite ein Suchfeld hinzugefügt:
 
@@ -240,5 +238,5 @@ Das folgende Beispiel zeigt, wie Sie das Suchfeld ausblenden:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Navigation in der Xamarin.Forms-Shell](navigation.md)

@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: 489d2a76e6eff661360b24d1872ed1343c74b85e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 847566feec2069dea924bcd2a18abf2b3ddb250b
+ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261180"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213289"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>Arbeiten mit nativen Typen in plattformübergreifenden Apps
 
@@ -36,9 +36,9 @@ Gemäß der [Sharing Code Options](~/cross-platform/app-fundamentals/code-sharin
 
 ### <a name="portable-class-library-projects"></a>Portable Class Library-Projekten
 
-Eine Portable Klassenbibliothek (PCL) können Sie für die Plattformen, die Sie verwenden möchten, unterstützen, und verwenden Schnittstellen, um plattformspezifische Funktionalität bereitzustellen.
+Eine Portable Klassenbibliothek (PCL) können Sie die Plattformen, die Sie verwenden möchten, unterstützen, und verwenden Schnittstellen, um plattformspezifische Funktionalität bereitzustellen.
 
-Da der Typ der PCL-Projekt kompiliert wird, nach unten zu einer `.DLL` und hat keinen Sinn der Unified API, Sie werden dazu gebracht werden, weiterhin die vorhandenen Datentypen verwenden (`int`, `uint`, `float`) in der PCL-Quellcode, und geben die Aufrufe an die PCLs umgewandelt Klassen und Methoden in den Front-End-Anwendungen. Beispiel:
+Da der Typ der PCL-Projekt nach unten zum kompiliert wird eine `.DLL` und hat keinen Sinn der Unified API, Sie werden dazu gebracht werden, weiterhin die vorhandenen Datentypen verwenden (`int`, `uint`, `float`) in der PCL-Quellcode, und geben die Aufrufe an die PCL umgewandelt Klassen und Methoden in den Front-End-Anwendungen. Zum Beispiel:
 
 ```csharp
 using NativePCL;
@@ -52,7 +52,7 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 Der Typ des freigegebenen Projekts können Sie Ihren Quellcode in einem separaten Projekt, das dann enthalten und kompiliert abruft in den einzelnen plattformspezifischen Front-End-apps zu organisieren und `#if` Compiler-Direktiven, die nach Bedarf verwalten Clientplattform-spezifische Anforderungen an.
 
-Die Größe und Komplexität der im Vordergrund, beenden Sie mobile Anwendungen, die verbrauchen freigegebener Code zusammen mit der Größe und die Komplexität des Codes gemeinsam genutzt, bei der Auswahl der Unterstützung für systemeigene Daten plattformübergreifend mit Typen berücksichtigt werden muss die Freigegebene Ressourcenprojekt-Typ.
+Die Größe und Komplexität der mobile-Front-End-Anwendungen, die verbrauchen freigegebener Code zusammen mit der Größe und die Komplexität des Codes gemeinsam genutzt, bei der Auswahl der Methode der Unterstützung für systemeigene Datentypen in eine plattformübergreifende berücksichtigt werden muss Freigegebene Asset-Projekt.
 
 Basierend auf diesen Faktoren, die folgenden Arten von Lösungen implementiert werden könnte mithilfe der `if __UNIFIED__ ... #endif` Compiler-Direktiven, die bestimmten Unified API-Änderungen an den Code zu behandeln.
 
@@ -103,7 +103,7 @@ Im obigen Code da die `CalculateArea` Routine ist sehr einfach, wir haben für d
 
 #### <a name="using-method-overloads"></a>Überladungen mit-Methode
 
-Die Lösung in diesem Fall wäre, erstellen Sie eine Version der Überladung der Methoden, die 32-Bit-Datentypen verwenden, so dass sie jetzt benötigen `CGRect` als Parameter und/oder Rückgabewert, konvertieren Sie diesen Wert auf eine `RectangleF` (zu wissen, dass die Umwandlung von `nfloat` zu `float` ist eine Konvertierung verlustbehaftete), und rufen Sie die ursprüngliche Version der Routine, um die eigentliche Arbeit leisten. Zum Beispiel:
+Die Lösung in diesem Fall wäre, erstellen Sie eine Überladung-Version, der die Methoden mit 32-Bit-Datentypen, so dass sie jetzt benötigen `CGRect` als Parameter und/oder einen Rückgabewert, konvertieren Sie diesen Wert auf eine `RectangleF` (zu wissen, dass die Umwandlung von `nfloat` auf `float` ist eine Konvertierung verlustbehaftete), und rufen Sie die ursprüngliche Version der Routine, um die eigentliche Arbeit leisten. Zum Beispiel:
 
 ```csharp
 using System;
@@ -127,8 +127,8 @@ namespace NativeShared
         #if __UNIFIED__
             public static nfloat CalculateArea(CGRect rect) {
 
-            // Call original routine to calculate area
-            return (nfloat)CalculateArea((RectangleF)rect);
+                // Call original routine to calculate area
+                return (nfloat)CalculateArea((RectangleF)rect);
 
             }
         #endif
@@ -173,12 +173,12 @@ using System;
 using System.Drawing;
 
 #if __UNIFIED__
-    // Mappings Unified CoreGraphic classes to MonoTouch classes
+    // Map Unified CoreGraphic classes to MonoTouch classes
     using RectangleF = global::CoreGraphics.CGRect;
     using SizeF = global::CoreGraphics.CGSize;
     using PointF = global::CoreGraphics.CGPoint;
 #else
-    // Mappings Unified types to MonoTouch types
+    // Map Unified types to MonoTouch types
     using nfloat = global::System.Single;
     using nint = global::System.Int32;
     using nuint = global::System.UInt32;
@@ -207,14 +207,14 @@ namespace NativeShared
 }
 ```
 
-Beachten Sie, dass auch hier haben wir geändert der `CalculateArea` -Methodenrückgabe eine `nfloat` anstelle des standardmäßigen `float`. Dies erfolgte, damit wir einen Kompilierungsfehler, die versuchen, nicht abgerufen werden sollen _implizit_ konvertieren die `nfloat` Ergebnis der Berechnung (da sind beide Werte multiplizierende `nfloat`) in eine `float` Rückgabewert.
+Beachten Sie, dass auch hier haben wir geändert der `CalculateArea` -Methode zur Rückgabe einer `nfloat` anstelle des standardmäßigen `float`. Dies erfolgte, damit wir einen Kompilierungsfehler, die versuchen, nicht abgerufen werden sollen _implizit_ konvertieren die `nfloat` Ergebnis der Berechnung (da sind beide Werte, die multipliziert wird vom Typ `nfloat`) in einer `float` Wert zurückgeben.
 
 Wenn der Code kompiliert ist, und auf einem Gerät nicht Unified API führen die `using nfloat = global::System.Single;` zugeordnet der `nfloat` auf eine `Single` konvertiert der implizit in eine `float` die verarbeitende Front-End-Anwendung aufrufen, sodass die `CalculateArea` -Methode ohne Änderung.
 
 
 #### <a name="using-type-conversions-in-the-front-end-app"></a>Verwenden von Typkonvertierungen in der Front-End-App
 
-Falls Ihre Front-End-Anwendungen, die nur eine Reihe von Aufrufen Ihrer Bibliothek freigegebener Code vornehmen, wird eine andere Lösung wäre die Bibliothek, die unverändert zu lassen, und geben Sie in der Xamarin.iOS oder Xamarin.Mac-Anwendung die Umwandlung beim Aufrufen der vorhandenen Routine. Beispiel:
+Falls Ihre Front-End-Anwendungen, die nur eine Reihe von Aufrufen Ihrer Bibliothek freigegebener Code vornehmen, wird eine andere Lösung wäre die Bibliothek, die unverändert zu lassen, und geben Sie in der Xamarin.iOS oder Xamarin.Mac-Anwendung die Umwandlung beim Aufrufen der vorhandenen Routine. Zum Beispiel:
 
 ```csharp
 using NativeShared;
@@ -236,13 +236,13 @@ Folgendes ist erforderlich, um Xamarin.Forms für plattformübergreifende Benutz
 - Die gesamte Lösung muss Version 1.3.1 verwenden (oder höher) das Xamarin.Forms-NuGet-Pakets.
 - Verwenden Sie für alle benutzerdefinierten Xamarin.iOS-rendert dieselbe Art von Lösungen, die oben aufgeführten basierend auf wie die UI-Code freigegeben (freigegebenes Projekt oder PCL) wurde.
 
-Wie in einer plattformübergreifenden Standardanwendungen sollten die vorhandenen 32-Bit-Datentypen in gemeinsam genutzter, plattformübergreifenden Code für die meisten alle Situationen verwendet werden. Die neuen systemeigenen Datentypen sollte nur verwendet werden, bei einem Aufruf einer Mac oder iOS-API unterstützt, in dem Architektur-fähigen Typen erforderlich sind.
+Wie bei einer standardanwendung für die plattformübergreifende sollte die vorhandenen 32-Bit-Datentypen in gemeinsam genutzter, plattformübergreifenden Code für die meisten Situationen verwendet werden. Die neuen systemeigenen Datentypen sollte nur verwendet werden, wenn ein Aufruf an ein Mac oder iOS-API, in denen für Architektur unterstützenden Typen unterstützen erforderlich ist.
 
 Weitere Informationen finden Sie unserem [Aktualisieren von vorhandenen Xamarin.Forms-Apps](https://developer.xamarin.com/guides/cross-platform/macios/updating-xamarin-forms-apps/) Dokumentation.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel haben wir finden Sie, wenn wir die systemeigene Datentypen in einer vereinheitlichten-API-Anwendung und ihre Auswirkungen auf die plattformübergreifende verwenden sollten. Wir haben mehrere Lösungen angezeigt, die in Situationen verwendet werden kann, in denen die neuen systemeigenen Datentypen in plattformübergreifende Bibliotheken verwendet werden müssen. Und wir haben gesehen, dass eine kurze Einführung in Unified-APIs in plattformübergreifende Xamarin.Forms-Anwendungen unterstützen.
+In diesem Artikel haben wir die systemeigene Datentypen in einer vereinheitlichten-API-Anwendung und ihre Auswirkungen auf die plattformübergreifende Verwendung erläutert. Wir haben mehrere Lösungen angezeigt, die in Situationen verwendet werden kann, in denen die neuen systemeigenen Datentypen in plattformübergreifende Bibliotheken verwendet werden müssen. Darüber hinaus haben wir gesehen, eine kurze Einführung in Unified-APIs in plattformübergreifende Xamarin.Forms-Anwendungen unterstützen.
 
 
 

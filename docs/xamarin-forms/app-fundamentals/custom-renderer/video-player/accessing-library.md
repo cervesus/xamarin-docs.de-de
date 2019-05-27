@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 6845a08a531305468b861a3205e978b379f242bf
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233509"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926156"
 ---
 # <a name="accessing-the-devices-video-library"></a>Zugreifen auf die Videobibliothek des Geräts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
 Bei den meisten modernen mobilen Geräte und Desktop-Computern ist es möglich, mit der Kamera des Geräts Videos aufzunehmen. Die Videos, die ein Benutzer erstellt, werden dann als Dateien auf dem Gerät gespeichert. Diese Dateien können aus der Bildbibliothek abgerufen und durch die `VideoPlayer`-Klasse wie jedes andere Video abgespielt werden.
 
@@ -188,7 +188,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Die Ergänzungen zum `MainActivity`-Objekt sind der einzige Code in der [**Video Player Demos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)-Projektmappe, während normaler Anwendungscode geändert werden muss, um die `FormsVideoLibrary`-Klassen zu unterstützen.
+Die Ergänzungen zum `MainActivity`-Objekt sind der einzige Code in der [**Video Player Demos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)-Projektmappe, während normaler Anwendungscode geändert werden muss, um die `FormsVideoLibrary`-Klassen zu unterstützen.
 
 ### <a name="the-uwp-video-picker"></a>Die UWP-Videoauswahl
 
@@ -229,7 +229,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>Aufrufen des Abhängigkeitsdiensts
 
-Die Seite **Play Library Video** des [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)-Programms zeigt, wie der Videoauswahl-Abhängigkeitsdienst verwendet wird. Die XAML-Datei enthält eine `VideoPlayer`-Instanz und einen `Button` mit der Bezeichnung **Videobibliothek anzeigen**:
+Die Seite **Play Library Video** des [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)-Programms zeigt, wie der Videoauswahl-Abhängigkeitsdienst verwendet wird. Die XAML-Datei enthält eine `VideoPlayer`-Instanz und einen `Button` mit der Bezeichnung **Videobibliothek anzeigen**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -390,5 +390,5 @@ Auf allen Plattformen wird das Videos fast unmittelbar nach dem Festlegen der Vi
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 - [Auswählen eines Fotos aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

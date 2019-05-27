@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: 6f5aca57dd14810b998253f9d0baf576bfbae154
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.topic: include
+ms.openlocfilehash: 5accc38667d9dc565c8bfeae48310561063aab4b
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855368"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64987048"
 ---
 ||macOS|Windows|
 |---|---|---|
@@ -12,6 +13,6 @@ ms.locfileid: "58855368"
 |**Xamarin.iOS**|Ja|Ja (mit Macintosh-Computer)|
 |**Xamarin.Android**|Ja|Ja|
 |**Xamarin.Forms** ^|iOS und Android|Android, Windows/UWP (iOS mit Mac-Computer)|
-|**Xamarin.Mac**|Ja|[Nur Projekt öffnen und kompilieren](https://developer.xamarin.com/releases/vs/xamarin.vs_4/xamarin.vs_4.2/#Xamarin.Mac_minimum_support.)|
+|**Xamarin.Mac**|Ja|Nur Projekt öffnen und kompilieren|
 
-_^ [Andere Plattformen](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support) sind ebenfalls verfügbar.
+_^ [Andere Plattformen](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support) sind ebenfalls verfügbar._

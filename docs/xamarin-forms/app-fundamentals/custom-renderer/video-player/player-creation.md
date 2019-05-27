@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 4bfbd065c9b17ce402c5a15289c7ff608eb58b23
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 21a707ebd189e9cbfa6735b233a6c0af65138e0c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870013"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926644"
 ---
 # <a name="creating-the-platform-video-players"></a>Erstellen von Plattformen für Videoplayer
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
-Die [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)-Projektmappe enthält den gesamten Code, der in einen Videoplayer für Xamarin.Forms implementiert werden soll. Außerdem beinhaltet sie mehrere Seiten, auf denen gezeigt wird, wie der Videoplayer innerhalb einer Anwendung zu verwenden ist. Der gesamte `VideoPlayer`-Code und die betreffenden Plattformrenderer sind in einem Projektordner mit dem Namen `FormsVideoLibrary` gespeichert und verwenden den Namespace `FormsVideoLibrary`. Dies vereinfacht das Kopieren der Dateien in Ihre Anwendung sowie das Herstellen von Verweisen auf die Klassen.
+Die [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)-Projektmappe enthält den gesamten Code, der in einen Videoplayer für Xamarin.Forms implementiert werden soll. Außerdem beinhaltet sie mehrere Seiten, auf denen gezeigt wird, wie der Videoplayer innerhalb einer Anwendung zu verwenden ist. Der gesamte `VideoPlayer`-Code und die betreffenden Plattformrenderer sind in einem Projektordner mit dem Namen `FormsVideoLibrary` gespeichert und verwenden den Namespace `FormsVideoLibrary`. Dies vereinfacht das Kopieren der Dateien in Ihre Anwendung sowie das Herstellen von Verweisen auf die Klassen.
 
 ## <a name="the-video-player"></a>Der Videoplayer
 
@@ -467,4 +467,4 @@ Damit das Video abgespielt werden kann, wird eine weitere Eigenschaft benötigt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: cdca5294ea12bf8907ea5f6242efea00f384e77e
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 3db4b5f37eb58f71d3b522693ab2c75a7b5f8919
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329337"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970885"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>Rendererbasisklassen und native Steuerelemente
 
@@ -30,6 +30,9 @@ Die `MapRenderer`-Klasse finden Sie in den folgenden Namespaces:
 - **iOS:** Xamarin.Forms.Maps.iOS
 - **Android:** Xamarin.Forms.Maps.Android
 - **Universelle Windows-Plattform (UWP):** Xamarin.Forms.Maps.UWP
+
+> [!NOTE]
+> Weitere Informationen zum Erstellen von benutzerdefinierten Renderern für Shell-Anwendungen finden Sie unter [Benutzerdefinierte Xamarin.Forms-Shell-Renderer](~/xamarin-forms/app-fundamentals/shell/customrenderers.md).
 
 ## <a name="pages"></a>Seiten
 
@@ -70,7 +73,7 @@ In der folgenden Tabelle werden die Klassen für Renderer und native Steuereleme
 |[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS und Android), BoxViewRenderer (UWP)|UIView|ViewGroup||Rechteck|
 |[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|Schaltfläche|AppCompatButton|Schaltfläche|
-|`CollectionView`|CollectionViewRenderer|UICollectionView||RecyclerView||
+|[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView||
 |[`DatePicker`](xref:Xamarin.Forms.DatePicker)|DatePickerRenderer|UITextField|EditText||DatePicker|
 |[`Editor`](xref:Xamarin.Forms.Editor)|EditorRenderer|UITextView|EditText||TextBox|
 |[`Entry`](xref:Xamarin.Forms.Entry)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||TextBox|
@@ -104,7 +107,3 @@ In der folgenden Tabelle werden die Klassen für Renderer und native Steuereleme
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die Klassen für Renderer und native Steuerelemente aufgelistet, die eine Xamarin.Forms-Seite, ein Xamarin.Forms-Layout, eine Xamarin.Forms-Ansicht und eine Xamarin.Forms-Zelle implementieren. Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt.
-
-## <a name="related-links"></a>Verwandte Links
-
-- [Custom Renderers (Xamarin University Video) (Benutzerdefinierte Renderer (Xamarin University-Video))](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)

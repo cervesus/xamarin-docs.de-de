@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: dc26084b94956ea9bc87384e5fdb79695bc8c2b5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 86e10f068af14e65b55885488252af756a90652e
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051781"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926961"
 ---
 # <a name="creating-a-controltemplate"></a>Erstellen eines ControlTemplate-Objekts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
 
 _Steuerelementvorlagen können auf Anwendungsebene oder auf Seitenebene definiert werden. In diesem Artikel wird veranschaulicht, wie Sie Steuerelementvorlagen erstellen und verwenden._
 
@@ -216,7 +216,7 @@ In diesem Artikel haben Sie gelernt, wie Sie Steuerelementvorlagen erstellen und
 ## <a name="related-links"></a>Verwandte Links
 
 - [Stile](~/xamarin-forms/user-interface/styles/index.md)
-- [Simple Theme (Beispieldesign)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
+- [Simple Theme (Beispieldesign)](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
 - [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
 - [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)
 - [ContentView](xref:Xamarin.Forms.ContentView)
