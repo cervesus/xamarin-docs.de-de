@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: e8bfb01c6f5aa22332d226b8b2768f56a2904a7d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: ca9c71d5bdac1900c4f0e5d07898e65b06cdcf90
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978505"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925570"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Anwendungsindizierung und Deep Linking
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/deeplinking/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DeepLinking/)
 
 _Mit der Anwendungsindizierung können Anwendungen, die andernfalls nach einigem Gebrauch vergessen würden, relevant bleiben, indem sie in den Suchergebnissen angezeigt werden. Mit Deep Linking können Anwendungen auf ein Suchergebnis reagieren, das Anwendungsdaten enthält, in der Regel durch die Navigation zu einer Seite, auf die über einen Deep-Link verwiesen wird. In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen können._
 
@@ -248,7 +248,7 @@ In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Dee
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Deep Linking (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/deeplinking/)
+- [Deep Linking (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/DeepLinking/)
 - [Such-APIs in Xamarin.iOS](~/ios/platform/search/index.md)
 - [App-Verknüpfung in Android 6.0](~/android/platform/app-linking.md)
 - [AppLinkEntry](xref:Xamarin.Forms.AppLinkEntry)
