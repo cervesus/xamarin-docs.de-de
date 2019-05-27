@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 0f0c2e9f3e0a2309db1ad96ff286d6ac17f78bc5
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 8926813e8efae72efa9af2221318d6f1ff1e344f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329298"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970922"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Die Xamarin.Forms-Klasse „TabbedPage“
 
@@ -44,9 +44,18 @@ Das Layout einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse und der zu
 
 - Bei Formfaktoren für Windows-Tablets werden die Registerkarten nicht immer angezeigt, und die Benutzer müssen nach unten wischen (oder mit der rechten Maustaste klicken, wenn eine Maus angeschlossen ist), um die Registerkarten in einer `TabbedPage`-Klasse anzuzeigen (siehe unten).
 
-![](tabbed-page-images/windows-tabs.png "TabbedPage-Registerkarten unter Windows")
+    ![](tabbed-page-images/windows-tabs.png "TabbedPage-Registerkarten unter Windows")
 
 ## <a name="creating-a-tabbedpage"></a>Erstellen einer TabbedPage-Klasse
+
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) definiert die folgenden Eigenschaften:
+
+- [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor) vom Typ [`Color`](xref:Xamarin.Forms.Color), die Hintergrundfarbe der Registerkartenleiste
+- [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor) vom Typ [`Color`](xref:Xamarin.Forms.Color), die Textfarbe auf der Registerkartenleiste
+- [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor) vom Typ [`Color`](xref:Xamarin.Forms.Color), die Registerkartenfarbe, sofern ausgewählt
+- [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor) vom Typ [`Color`](xref:Xamarin.Forms.Color), die Registerkartenfarbe, wenn nicht ausgewählt
+
+Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften formatiert werden können und die Ziele von Datenverbindungen sein können.
 
 Es gibt zwei Ansätze zum Erstellen einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse:
 
@@ -70,7 +79,7 @@ Im folgenden XAML-Codebeispiel wird eine [`TabbedPage`](xref:Xamarin.Forms.Tabbe
             xmlns:local="clr-namespace:TabbedPageWithNavigationPage;assembly=TabbedPageWithNavigationPage"
             x:Class="TabbedPageWithNavigationPage.MainPage">
     <local:TodayPage />
-    <NavigationPage Title="Schedule" Icon="schedule.png">
+    <NavigationPage Title="Schedule" IconImageSource="schedule.png">
         <x:Arguments>
             <local:SchedulePage />
         </x:Arguments>
@@ -86,7 +95,7 @@ public class MainPageCS : TabbedPage
   public MainPageCS ()
   {
     var navigationPage = new NavigationPage (new SchedulePageCS ());
-    navigationPage.Icon = "schedule.png";
+    navigationPage.IconImageSource = "schedule.png";
     navigationPage.Title = "Schedule";
 
     Children.Add (new TodayPageCS ());
@@ -148,7 +157,7 @@ Das folgende XAML-Codebeispiel zeigt eine [`TabbedPage`](xref:Xamarin.Forms.Tabb
   </TabbedPage.Resources>
   <TabbedPage.ItemTemplate>
     <DataTemplate>
-      <ContentPage Title="{Binding Name}" Icon="monkeyicon.png">
+      <ContentPage Title="{Binding Name}" IconImageSource="monkeyicon.png">
         <StackLayout Padding="5, 25">
           <Label Text="{Binding Name}" Font="Bold,Large" HorizontalOptions="Center" />
           <Image Source="{Binding PhotoUrl}" WidthRequest="200" HeightRequest="200" />
@@ -204,7 +213,7 @@ public class TabbedPageDemoPageCS : TabbedPage
       ...
 
       var contentPage = new ContentPage {
-        Icon = "monkeyicon.png",
+        IconImageSource = "monkeyicon.png",
         Content = new StackLayout {
           Padding = new Thickness (5, 25),
           Children = {

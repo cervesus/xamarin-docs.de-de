@@ -1,26 +1,26 @@
 ---
-title: Tastaturnavigation
-description: Anstatt die Standardreihenfolge der Tabs zu verwenden, ist es manchmal notwendig, Ihre Benutzeroberfläche zu optimieren, indem Sie die Standardreihenfolge für Tabs mithilfe einer Kombination der Eigenschaften „TabIndex“ und „IsTapStop“ angeben.
+title: Barrierefreiheit der Tastatur
+description: Anstatt die Standardreihenfolge der Tabs zu verwenden, ist es manchmal notwendig, die Barrierefreiheit Ihrer Benutzeroberfläche zu optimieren, indem Sie die Standardreihenfolge für Tabs mithilfe einer Kombination der Eigenschaften „TabIndex“ und „IsTapStop“ angeben.
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/15/2018
-ms.openlocfilehash: 3e3331489c3b437366f4bdcc6990fe282d213a6a
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 05/09/2019
+ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207881"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971265"
 ---
-# <a name="keyboard-navigation-in-xamarinforms"></a>Tastaturnavigation in Xamarin.Forms
+# <a name="keyboard-accessibility-in-xamarinforms"></a>Barrierefreiheit der Tastatur in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
-Einige Benutzer haben möglicherweise Probleme mit der Ausführung von Anwendungen, bei denen die Verwendung passender Zugriffstasten nicht möglich ist. Durch das Festlegen einer Aktivierreihenfolge für Steuerelemente wird die Tastaturnavigation aktiviert und Anwendungsseiten werden entsprechend eingerichtet, Eingaben in einer bestimmten Abfolge zu empfangen.
+Benutzer, die Sprachausgaben verwenden oder Mobilitätseinschränkungen haben, können bei der Nutzung von Anwendungen Probleme haben, bei denen die Verwendung passender Zugriffstasten nicht möglich ist. Für Xamarin.Forms-Anwendungen kann eine erwartete Aktivierreihenfolge angegeben sein, um die Nutzbarkeit und Barrierefreiheit zu optimieren. Durch das Festlegen einer Aktivierreihenfolge für Steuerelemente wird die Tastaturnavigation aktiviert, und Anwendungsseiten werden entsprechend eingerichtet, Eingaben in einer bestimmten Abfolge zu empfangen. Zudem kann die Sprachausgabe dem Benutzer fokussierbare Elemente vorlesen.
 
-Standardmäßig entspricht die Aktivierreihenfolge von Steuerelementen der gleichen Reihenfolge, in der sie in XAML aufgelistet sind, oder in der sie programmgesteuert einer untergeordneten Sammlung hinzugefügt wurden. Diese Reihenfolge ist die Reihenfolge, in der die Steuerelemente mithilfe einer Tastatur navigiert werden, und oft ist diese Standardreihenfolge die beste Reihenfolge. Die Standardreihenfolge entspricht jedoch nicht immer der erwarteten Reihenfolge, wie im folgenden XAML-Codebeispiel zu sehen ist:
+Standardmäßig entspricht die Aktivierreihenfolge von Steuerelementen der gleichen Reihenfolge, in der sie in XAML aufgelistet sind, oder in der sie programmgesteuert einer untergeordneten Sammlung hinzugefügt wurden. In dieser Reihenfolge wird mit der Tastatur durch Steuerelemente navigiert, und diese werden von der Sprachausgabe gelesen. Diese Standardreihenfolge ist meist die beste Lösung. Die Standardreihenfolge entspricht jedoch nicht immer der erwarteten Reihenfolge, wie im folgenden XAML-Codebeispiel zu sehen ist:
 
 ```xaml
 <Grid>
@@ -113,6 +113,9 @@ Der folgende Screenshot zeigt die Aktivierreihenfolge für dieses Codebeispiel:
 ![](keyboard-images/correct-tab-order.png "Spaltenbasierte Aktivierreihenfolge")
 
 Die Aktivierreihenfolge hier ist spaltenbasiert. Deshalb wird durch Drücken der Tab-Taste durch „Vorname-Nachname“-[`Entry`](xref:Xamarin.Forms.Entry)-Paare navigiert.
+
+> [!IMPORTANT]
+> Sprachausgaben unter iOS und Android berücksichtigen das `TabIndex`-Attribut einer [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Klasse, wenn die Elemente auf dem Bildschirm gelesen werden, auf die zugegriffen werden kann.
 
 ## <a name="excluding-controls-from-the-tab-order"></a>Ausschließen von Steuerelementen aus der Aktivierreihenfolge
 

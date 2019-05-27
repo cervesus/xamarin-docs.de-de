@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 20d9fb79d03990824dd884b62138a3e29b3ee04f
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: f6662f20485c6671edcb5a1654569cdd8498607e
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054480"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005207"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms-Shell
 
-![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
-
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Die Xamarin.Forms-Shell reduziert die Komplexität der Entwicklung mobiler Anwendungen, indem es die grundlegenden Features bereitstellt, die die meisten mobilen Anwendungen benötigen, einschließlich:
 
@@ -30,48 +28,7 @@ Die Xamarin.Forms-Shell reduziert die Komplexität der Entwicklung mobiler Anwen
 Darüber hinaus profitieren Shell-Anwendungen von einer höheren Renderinggeschwindigkeit und einer geringeren Arbeitsspeichernutzung.
 
 > [!IMPORTANT]
-> Bestehende iOS- und Android-Anwendungen können die Shell übernehmen und sofort von Verbesserungen bei Navigation, Leistung und Erweiterbarkeit profitieren.
-
-Shell ist derzeit experimentell und kann nur verwendet werden, indem `Forms.SetFlags("Shell_Experimental");` zu Ihrem Plattformprojekt hinzugefügt wird, bevor die `Forms.Init`-Methode aufgerufen wird.
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-```csharp
-public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-{
-    protected override void OnCreate(Bundle savedInstanceState)
-    {
-        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
-
-        TabLayoutResource = Resource.Layout.Tabbar;
-        ToolbarResource = Resource.Layout.Toolbar;
-
-        base.OnCreate(savedInstanceState);
-
-        global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-        LoadApplication(new App());
-    }
-}
-```
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-```csharp
-public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
-{
-    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-    {
-        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
-
-        global::Xamarin.Forms.Forms.Init();
-        LoadApplication(new App());
-
-        return base.FinishedLaunching(app, options);
-    }
-}
-```
-
-----
+> Die Xamarin.Forms-Shell ist nur unter iOS und Android verfügbar. Bestehende iOS- und Android-Anwendungen können die Shell übernehmen und sofort von Verbesserungen bei Navigation, Leistung und Erweiterbarkeit profitieren.
 
 ## <a name="shell-navigation-experience"></a>Shell-Navigationsoberfläche
 
@@ -181,11 +138,11 @@ In diesem Beispiel ist die `AppShell`-Klasse eine XAML-Datei, die von der `Shell
 
 Die `Shell`-Klasse definiert die folgenden Eigenschaften, die die Darstellung einer Shell-Anwendung steuern:
 
-- `ShellBackgroundColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Hintergrundfarbe im Shell-Chrom definiert. Die Farbe wird hinter dem Shell-Inhalt nicht ausgefüllt.
-- `ShellDisabledColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe zum Schattieren von Text und deaktivierten Symbolen definiert.
-- `ShellForegroundColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe zum Schattieren von Text und Symbolen definiert.
-- `ShellTitleColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe für den Titel der aktuellen Seite definiert.
-- `ShellUnselectedColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe für nicht ausgewählten Text und Symbole im Shell-Chrom definiert.
+- `BackgroundColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Hintergrundfarbe im Shell-Chrom definiert. Die Farbe wird hinter dem Shell-Inhalt nicht ausgefüllt.
+- `DisabledColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe zum Schattieren von Text und deaktivierten Symbolen definiert.
+- `ForegroundColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe zum Schattieren von Text und Symbolen definiert.
+- `TitleColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe für den Titel der aktuellen Seite definiert.
+- `UnselectedColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe für nicht ausgewählten Text und Symbole im Shell-Chrom definiert.
 
 Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Datenverbindungen sein können.
 
@@ -196,7 +153,6 @@ Darüber hinaus können diese Eigenschaften mithilfe von Cascading Stylesheets (
 Die `Shell`-Klasse definiert die folgenden Eigenschaften, die das Layout einer Shell-Anwendung beeinflussen:
 
 - `NavBarIsVisible` vom Typ`boolean`, eine angefügte Eigenschaft, die definiert, ob die Navigationsleiste eingeblendet werden soll, wenn eine Seite angezeigt wird. Diese Eigenschaft sollte auf einer Seite festgelegt werden, und der Standardwert ist `true`.
-- `SetPaddingInsets` vom Typ `bool`, eine angefügte Eigenschaft, die steuert, ob Seiteninhalt unter jede Shell-Chrom fließt. Diese Eigenschaft sollte auf einer Seite festgelegt werden, und der Standardwert ist `false`.
 - `TabBarIsVisible` vom Typ `bool`, eine angefügte Eigenschaft, die definiert, ob die Registerkartenleiste sichtbar sein soll, wenn eine Seite angezeigt wird. Diese Eigenschaft sollte auf einer Seite festgelegt werden, und der Standardwert ist `true`.
 - `TitleView` vom Typ `View`, eine angefügte Eigenschaft, die die `TitleView` für eine Seite definiert. Diese Eigenschaft sollte auf einer Seite festgelegt werden.
 
@@ -204,5 +160,5 @@ Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.Bi
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Spezifische Eigenschaften der Xamarin.Forms-Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

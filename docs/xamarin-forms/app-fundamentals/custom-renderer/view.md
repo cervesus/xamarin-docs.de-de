@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 22392603e337205dcdd4909dc61b6c22ca2f00b9
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 88be56cae52e881792ec7a187ef7e158790e8a1b
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057969"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926593"
 ---
 # <a name="implementing-a-view"></a>Implementieren einer Ansicht
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)
 
 _Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der View-Klasse abgeleitet werden, die verwendet wird, um Layout und Steuerelemente einer Anzeige hinzuzufügen. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen können, mit dem Sie eine Vorschau eines Videostreams von der Kamera des Geräts anzeigen können._
 
@@ -56,13 +56,13 @@ public class CameraPreview : View
 }
 ```
 
-Das benutzerdefinierte Steuerelement `CameraPreview` wird im portablen Klassenbibliotheksprojekt erstellt und definiert die API für das Steuerelement. Das benutzerdefinierte Steuerelement stellt eine `Camera`-Eigenschaft zur Verfügung, die verwendet wird, um zu steuern, ob der Videostream der vorderen oder hinteren Kamera des Geräts angezeigt werden soll. Wenn bei der Erstellung des Steuerelements kein Wert für die `Camera`-Eigenschaft angegeben ist, wird standardmäßig die hintere Kamera festgelegt.
+Das benutzerdefinierte Steuerelement `CameraPreview` wird im .NET Standard-Bibliotheksprojekt erstellt und definiert die API für das Steuerelement. Das benutzerdefinierte Steuerelement stellt eine `Camera`-Eigenschaft zur Verfügung, die verwendet wird, um zu steuern, ob der Videostream der vorderen oder hinteren Kamera des Geräts angezeigt werden soll. Wenn bei der Erstellung des Steuerelements kein Wert für die `Camera`-Eigenschaft angegeben ist, wird standardmäßig die hintere Kamera festgelegt.
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Nutzen des benutzerdefinierten Steuerelements
 
-Sie können in XAML auf das benutzerdefinierte Steuerelement `CameraPreview` im portablen Klassenbibliotheksprojekt verweisen, indem Sie einen Namespace für seine Position deklarieren und das Namespacepräfix für das benutzerdefinierte Steuerelement verwenden. Im folgenden Codebeispiel wird veranschaulicht, wie das benutzerdefinierte Steuerelement `CameraPreview` von der XAML-Seite genutzt werden kann:
+Sie können auf das benutzerdefinierte Steuerelement `CameraPreview` in XAML im .NET Standard-Bibliotheksprojekt verweisen, indem Sie einen Namespace für seine Position deklarieren und das Namespacepräfix für das benutzerdefinierte Steuerelement verwenden. Das folgende Codebeispiel veranschaulicht, wie das benutzerdefinierte Steuerelement `CameraPreview` von der XAML-Seite genutzt werden kann:
 
 ```xaml
 <ContentPage ...
@@ -334,4 +334,4 @@ In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Rende
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [CustomRendererView (CustomRendererView (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/)
+- [CustomRendererView (CustomRendererView (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)

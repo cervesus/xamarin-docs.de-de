@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: b9838ddb9771cb6ce757a4080520a5edd720531a
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: e0bc4b988905f03edbc66a252cc47a05c441f2c9
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574740"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925833"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Sicherer Speicher
 
@@ -51,7 +51,7 @@ Die automatische Sicherung lässt sich konfigurieren, um bestimmte Inhalte davon
     </application>
     ```
 
-2. Erstellen Sie eine neue XML-Datei mit dem Namen **auto_backup_rules.xml** im Verzeichnis **Resources/xml**. Legen Sie dann den folgenden Inhalt fest, der alle freigegebenen Einstellungen mit Ausnahme von `SecureStorage` enthält:
+2. Erstellen Sie eine neue XML-Datei mit dem Namen **auto_backup_rules.xml** mit dem Buildvorgang **AndroidResource** im Verzeichnis **Resources/xml**. Legen Sie dann den folgenden Inhalt fest, der alle freigegebenen Einstellungen mit Ausnahme von `SecureStorage` enthält:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -132,7 +132,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Der [Android-KeyStore](https://developer.android.com/training/articles/keystore.html) wird verwendet, um den Chiffrierschlüssel zu speichern, mit dem der Wert verschlüsselt wurde, bevor er in einer [freigegebenen Einstellung](https://developer.android.com/training/data-storage/shared-preferences.html) mit einem Dateinamen von **[YOUR-APP-PACKAGE-ID].xamarinessentials** gespeichert wird.  Der in der freigegebenen Einstellungsdatei verwendete Schlüssel ist ein _MD5-Hash_ des Schlüssels, der an die `SecureStorage`-APIs übergeben wird.
+Der [Android-KeyStore](https://developer.android.com/training/articles/keystore.html) wird verwendet, um den Chiffrierschlüssel zu speichern, mit dem der Wert verschlüsselt wurde, bevor er in einer [freigegebenen Einstellung](https://developer.android.com/training/data-storage/shared-preferences.html) mit einem Dateinamen von **[YOUR-APP-PACKAGE-ID].xamarinessentials** gespeichert wird.  Der in der freigegebenen Einstellungsdatei verwendete Schlüssel (kein kryptografischer Schlüssel, sondern der _Schlüssel_ für den _Wert_) ist ein _MD5-Hash_ des Schlüssels, der an die `SecureStorage`-APIs übergeben wird.
 
 ## <a name="api-level-23-and-higher"></a>API-Ebene 23 und höher
 

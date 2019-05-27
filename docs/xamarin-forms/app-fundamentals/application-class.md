@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: dbee8d3f55edee9c862b4c883b63b55f98972b48
-ms.sourcegitcommit: 0c2745c1593eee3ecb40ab882e854a13ca72bc86
+ms.openlocfilehash: 85e420933cfeffd00f686b0eea537cd0ad2f4ca5
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56078419"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971217"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms-App-Klasse
 
@@ -32,7 +32,9 @@ Je nachdem, welche Vorlage Sie ausgewählt haben, kann die `App`-Klasse auf eine
 Zum Erstellen einer **App**-Klasse mit XAML muss die Standard-**App**-Klasse durch eine XAML-**App**-Klasse und die dazugehörige CodeBehind-Datei ersetzt werden, wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Photos.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Photos.App">
 
 </Application>
 ```
@@ -111,9 +113,7 @@ Mit Xamarin.Forms 1.4 wurde die zusätzliche Methode `SavePropertiesAsync()` in 
 
 Verweise zur Verwendung des `Properties`-Wörterbuchs finden Sie in den Kapiteln [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) und [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) des Buchs **Creating Mobile Apps with Xamarin.Forms (Erstellen mobiler Apps mit Xamarin.Forms)** und in den zugehörigen [Beispielen](https://github.com/xamarin/xamarin-forms-book-preview-2).
 
-
-
-## <a name="the-application-class"></a>Die Application-Klasse
+## <a name="the-application-class"></a>Die Anwendungsklasse
 
 Eine vollständige Implementierung der `Application`-Klasse wird unten zur Referenz gezeigt:
 
@@ -143,7 +143,6 @@ public class App : Xamarin.Forms.Application
         Debug.WriteLine ("OnResume");
     }
 }
-
 ```
 
 Diese Klasse wird dann in jedem plattformspezifischen Projekt instanziiert und an die `LoadApplication`-Methode übergeben, wo die `MainPage` geladen und dem Benutzer angezeigt wird.

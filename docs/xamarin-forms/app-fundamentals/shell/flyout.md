@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 05ce2536c04306c2881ccc5dfa5e2016c9025b11
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: a64e96e1ee3804cd7aefd9834486613ba8d09d5f
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054490"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005227"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms-Shell-Flyout
 
-![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
-
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Das Flyout ist das Hauptmenü für eine Shell-Anwendung, und der Zugriff erfolgt über ein Symbol oder durch Wischen von einer Seite des Bildschirms. Das Flyout besteht aus einem optionalen Header, Flyout-Elementen und optionalen Menüelementen:
 
@@ -183,8 +181,8 @@ Shell verfügt über implizite Konvertierungsoperatoren, die es ermöglichen, di
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
-    <views:CatsPage Icon="cat.png" />
-    <views:DogsPage Icon="dog.png" />
+    <views:CatsPage IconImageSource="cat.png" />
+    <views:DogsPage IconImageSource="dog.png" />
 </Shell>
 ```
 
@@ -360,23 +358,18 @@ Menüelemente werden optional auf dem Flyout unterhalb der Flyout-Elemente angez
 > [!NOTE]
 > Die `MenuItem`-Klasse verfügt über ein [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked)-Ereignis und eine [`Command`](xref:Xamarin.Forms.MenuItem.Command)-Eigenschaft. Daher ermöglichen `MenuItem`-Objekte Szenarien, die eine Aktion als Reaktion auf das Antippen eines `MenuItem`-Objekts ausführen. Diese Szenarien sind beispielsweise das Navigieren und das Öffnen eines Webbrowsers auf einer bestimmten Webseite.
 
-Die `Shell.MenuItems`-Sammlung definiert die Liste der [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekte, die auf dem Flyout angezeigt werden. Diese Sammlung kann mit `MenuItem`-Objekten gefüllt werden, wie im folgenden Beispiel gezeigt:
+[`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekte können wie im folgenden Beispiel gezeigt dem Flyout hinzugefügt werden:
 
 ```xaml
-<Shell ...
-       x:Name="self">
+<Shell ...>
     ...            
-    <Shell.MenuItems>
-        <MenuItem Text="Random"
-                  Icon="random.png"
-                  BindingContext="{x:Reference self}"
-                  Command="{Binding RandomPageCommand}" />
-        <MenuItem Text="Help"
-                  Icon="help.png"
-                  BindingContext="{x:Reference self}"
-                  Command="{Binding HelpCommand}"
-                  CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
-    </Shell.MenuItems>    
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />    
 </Shell>
 ```
 
@@ -384,7 +377,10 @@ Dieser Code fügt zwei [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekte zum Fly
 
 [![Screenshot des Flyouts mit MenuItem-Objekten unter IOS und Android](flyout-images/flyout.png "Shell-Flyout mit MenuItem-Objekten")](flyout-images/flyout-large.png#lightbox "Shell-Flyout mit MenuItem-Objekten")
 
-Das erste [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekt führt einen `ICommand` namens `RandomPageCommand` aus, der zu einer zufälligen Seite in der Anwendung navigiert. Das zweite `MenuItem`-Objekt führt einen `ICommand` namens `HelpCommand` aus, der die durch die Eigenschaft `CommandParameter` angegebene URL in einem Webbrowser öffnet. Das [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) jedes `MenuItem`-Objekts wird auf das über Unterklassen verfügende `Shell`-Objekt festgelegt.
+Das erste [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekt führt einen `ICommand` namens `RandomPageCommand` aus, der zu einer zufälligen Seite in der Anwendung navigiert. Das zweite `MenuItem`-Objekt führt einen `ICommand` namens `HelpCommand` aus, der die durch die Eigenschaft `CommandParameter` angegebene URL in einem Webbrowser öffnet.
+
+> [!NOTE]
+> Das [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) jedes `MenuItem`-Objekts wird von dem über Unterklassen verfügende `Shell`-Objekt geerbt.
 
 ## <a name="define-menuitem-appearance"></a>Definieren der Darstellung des MenuItem-Objekts
 
@@ -415,8 +411,8 @@ Dieses Beispiel stellt die Titel der einzelnen `MenuItem`-Objekte in Kursivschri
 [![Screenshot der auf Vorlagen basierenden MenuItem-Objekte unter IOS- und Android](flyout-images/menuitem-templated.png "Auf Vorlagen basierende Shell-MenuItem-Objekte")](flyout-images/menuitem-templated-large.png#lightbox "Auf Vorlagen basierende Shell-MenuItem-Objekte")
 
 > [!NOTE]
-> Die Shell stellt die Eigenschaften [`Text`](xref:Xamarin.Forms.MenuItem.Text) und [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) für den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der `MenuItemTemplate` zur Verfügung.
+> Die Shell stellt die Eigenschaften [`Text`](xref:Xamarin.Forms.MenuItem.Text) und [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) für den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der `MenuItemTemplate` zur Verfügung.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)

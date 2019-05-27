@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: d1e43d211f639c422bbed3a6afad9f2136551071
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: a2b69152ab616e74761d9acf6a74d30144fe43b3
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59690289"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925053"
 ---
 # <a name="set-up-device-for-development"></a>Einrichten eines Geräts für die Entwicklung
 
@@ -135,7 +135,7 @@ Der letzte Schritt ist das Verbinden des Geräts mit dem Computer. Hierfür gibt
 
 ### <a name="connecting-over-wifi"></a>Herstellen einer Verbindung über WLAN
 
-[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) wird standardmäßig so konfiguriert, dass die Kommunikation mit einem Android-Gerät über USB erfolgt. Es ist möglich, ADB neu zu konfigurieren, damit TCP/IP statt USB verwendet wird. Zu diesem Zweck müssen sich sowohl das Gerät als auch der Computer im gleichen WLAN-Netzwerk befinden. Um Ihre Umgebung für das Debuggen über WLAN einzurichten, führen Sie die folgenden Schritte über die Befehlszeile aus:
+[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) wird standardmäßig so konfiguriert, dass die Kommunikation mit einem Android-Gerät über USB erfolgt. Es ist möglich, ADB neu zu konfigurieren, damit TCP/IP statt USB verwendet wird. Zu diesem Zweck müssen sich sowohl das Gerät als auch der Computer im gleichen WLAN-Netzwerk befinden. Führen Sie die folgenden Schritte über die Befehlszeile aus, um Ihre Umgebung für das Debuggen über WLAN einzurichten:
 
 1. Bestimmen Sie die IP-Adresse Ihres Android-Geräts. Eine Möglichkeit, die IP-Adresse herauszufinden, liegt darin, unter **Einstellungen > WLAN** nachzusehen und dann auf das WLAN-Netzwerk zu tippen, mit dem das Gerät verbunden ist. Dadurch erscheint ein Bildschirm mit Einstellungen, auf dem wie auf dem nachstehenden Screenshot Informationen zur Netzwerkverbindung angezeigt werden:
 

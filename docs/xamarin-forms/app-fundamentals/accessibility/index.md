@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/15/2018
-ms.openlocfilehash: ac0ffbdce6b0c55e8ad9d774d80e3d9b8bf84089
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 20ea72e588e2e3b1d575bd593446bf6724d73d8c
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116445"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971060"
 ---
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms-Barrierefreiheit
 
@@ -24,7 +24,7 @@ Die Leitfäden [Eingabehilfen unter Android](~/android/app-fundamentals/accessib
 
 Xamarin.Forms verfügt derzeit nicht über *integrierte* Unterstützung für alle Barrierefreiheits-APIs, die auf jeder zugrunde liegenden Plattform verfügbar sind. Jedoch wird die Erstellung von Automatisierungseigenschaften auf Benutzeroberflächenelementen unterstützt, um somit Hilfstools für die Sprachausgabe und Navigation zu unterstützen, was einen der wichtigsten Teile der Erstellung von barrierefreien Anwendungen darstellt. Weitere Informationen finden Sie unter [Automatisierungseigenschaften](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md).
 
-Für Xamarin.Forms-Anwendungen kann auch die Aktivierreihenfolge der Steuerelemente angegeben werden. Weitere Informationen finden Sie unter [Tastaturnavigation](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md).
+Für Xamarin.Forms-Anwendungen kann ebenso die Aktivierreihenfolge der Steuerelemente angegeben sein, um die Nutzbarkeit und Barrierefreiheit zu optimieren. Weitere Informationen finden Sie unter [Barrierefreiheit der Tastatur](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md).
 
 Andere Barrierefreiheits-APIs (z. B. [PostNotification on iOS](~/ios/app-fundamentals/accessibility.md)) sind unter Umständen besser für ein [`DependencyService`](~/xamarin-forms/app-fundamentals/dependency-service/index.md)-Konzept oder die Implementierung eines [benutzerdefinierten Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) geeignet. Diese werden jedoch nicht in diesem Leitfaden behandelt.
 
