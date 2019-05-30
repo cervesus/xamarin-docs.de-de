@@ -1,25 +1,25 @@
 ---
-title: 'Teil 3: Einrichten einer plattformübergreifenden Xamarin-Lösung'
-description: Dieses Dokument beschreibt das Einrichten einer plattformübergreifenden Lösung in Xamarin. Es Erörtern Sie verschiedene für die Codefreigabe Strategien wie z. B. freigegebene Projekte "und".NET Standard.
+title: Teil 3 – Einrichten einer plattformübergreifenden Xamarin-Lösung
+description: Dieses Dokument beschreibt das Einrichten einer plattformübergreifenden Lösung in Xamarin. Es wird erläutert, verschiedene Strategien wie z. B. freigegebene Projekte "und".NET Standard für die Codefreigabe.
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: f802e31d851915d33cb6dbf5866f8cba3ab90303
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d20275bab4e4ce90f902a5e72321701d94b1d416
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276623"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354074"
 ---
-# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Teil 3: Einrichten einer plattformübergreifenden Xamarin-Lösung
+# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Teil 3 – Einrichten einer plattformübergreifenden Xamarin-Lösung
 
 Unabhängig davon, welche Plattformen verwendet werden, verwenden Sie Xamarin-Projekte, die alle der gleichen Projektmappe-Dateiformat (Visual Studio **sln** -Dateiformat). Lösungen können für entwicklungsumgebungen, freigegeben werden, selbst wenn einzelne Projekte (z. B. ein Windows-Projekt in Visual Studio für Mac) können nicht geladen werden.
 
 
 
-Wenn Sie ein neues cross-Platform-Anwendung erstellen, ist der erste Schritt, um eine leere Projektmappe zu erstellen. In diesem Abschnitt, was als Nächstes geschieht: die Projekte für das Erstellen von plattformübergreifenden mobilen apps einrichten.
+Wenn Sie eine neue plattformübergreifende Anwendung zu erstellen, ist der erste Schritt, um eine leere Projektmappe zu erstellen. In diesem Abschnitt wird erläutert, was als Nächstes geschieht: die Projekte für das Erstellen von plattformübergreifenden mobilen apps einrichten.
 
  <a name="Sharing_Code" />
 
@@ -33,7 +33,7 @@ Finden Sie in der [Code Sharing Options](~/cross-platform/app-fundamentals/code-
 
 ### <a name="shared-projects"></a>Freigegebene Projekte
 
-Der einfachste Ansatz zum Freigeben von Codedateien ist die Verwendung einer [freigegebenes Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
+Die einfachste Methode zur Freigabe von Codedateien verwendet ein [freigegebenes Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Dieser Methode können Sie den gleichen Code für verschiedene Plattformprojekte freigeben und verwenden Compiler-Direktiven, um verschiedene, plattformspezifischen Codepfade enthalten.
 

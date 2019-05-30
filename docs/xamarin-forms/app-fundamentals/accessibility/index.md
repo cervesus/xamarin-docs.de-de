@@ -6,13 +6,14 @@ ms.assetid: 99B8A8E8-6F5E-46BC-9639-1C4A6D301049
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/15/2018
-ms.openlocfilehash: 20ea72e588e2e3b1d575bd593446bf6724d73d8c
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 2aaa61400d3775c4d622b805d24ff0b338017de5
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971060"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354046"
 ---
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms-Barrierefreiheit
 
@@ -32,12 +33,18 @@ Andere Barrierefreiheits-APIs (z. B. [PostNotification on iOS](~/ios/app-fundam
 
 Xamarin.Forms-Anwendungen sind in der Regel für mehrere Plattformen konzipiert, das bedeutet, dass die Barrierefreiheitsfunktionen entsprechend der Plattform getestet werden. Folgen Sie diesen Links, um zu erfahren, wie Sie die Barrierefreiheit auf der jeweiligen Plattform testen können:
 
-- [**iOS Testing (Tests unter iOS)**](~/ios/app-fundamentals/accessibility.md)
-- [**Android Testing (Tests unter Android)**](~/android/app-fundamentals/accessibility.md)
-- [**Windows AccScope (MSDN)**](https://msdn.microsoft.com/library/windows/desktop/dn433239)
+- [**iOS Testing (Tests unter iOS)** ](~/ios/app-fundamentals/accessibility.md)
+- [**Android Testing (Tests unter Android)** ](~/android/app-fundamentals/accessibility.md)
+- [**Windows AccScope (MSDN)** ](https://msdn.microsoft.com/library/windows/desktop/dn433239)
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Cross-platform Accessibility (Plattformübergreifende Barrierefreiheit)](~/cross-platform/app-fundamentals/accessibility.md)
 - [Automatisierungseigenschaften](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)
 - [Barrierefreiheit der Tastatur](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Making-Mobile-Apps-Accessible/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

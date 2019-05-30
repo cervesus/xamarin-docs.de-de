@@ -8,13 +8,13 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 04/02/2019
-ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/23/2019
+ms.openlocfilehash: 3b25be2c929e0f072af2ff563d49ceaf07cae058
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61351957"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252342"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>Erstellen Ihrer ersten Xamarin.Forms-App
 
@@ -22,7 +22,7 @@ _Sehen Sie sich dieses Video an, und gehen Sie wie gezeigt vor, um Ihre erste mo
 
 ::: zone pivot="windows"
 
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-Android-App-with-Visual-Studio-2019-and-Xamarin/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>Exemplarische Vorgehensweise für Windows
 
@@ -74,6 +74,12 @@ Führen Sie die folgenden Schritte zum Video oben aus:
     > [!TIP]
     > Es ist möglich, die iOS-App mit einem Mac-Computer im Netzwerk über Visual Studio zu erstellen und zu debuggen. Weitere Informationen finden Sie in den [Setupanweisungen](~/ios/get-started/installation/windows/index.md).
 
+## <a name="build-an-ios-app-in-visual-studio-2019"></a>Erstellen einer iOS-app in Visual Studio-2019
+
+In diesem Video wird der Vorgang erstellen und Testen von iOS-Apps mit Visual Studio-2019 auf Windows beschrieben:
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-iOS-App-with-Visual-Studio-2019-and-Xamarin/player]
+
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
@@ -85,7 +91,7 @@ Führen Sie die folgenden Schritte zum Video oben aus:
 
 Führen Sie die folgenden Schritte zum Video oben aus:
 
-1. Klicken Sie auf **Datei > Neu > Projekt...**, oder klicken Sie auf die Schaltfläche **Neues Projekt erstellen...**, und klicken Sie dann auf **Visual C# > Plattformübergreifend >Mobile App (Xamarin.Forms)**:
+1. Klicken Sie auf **Datei > Neu > Projekt...** , oder klicken Sie auf die Schaltfläche **Neues Projekt erstellen...** , und klicken Sie dann auf **Visual C# > Plattformübergreifend >Mobile App (Xamarin.Forms)** :
 
     [![Mobile App (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
@@ -132,7 +138,7 @@ Führen Sie die folgenden Schritte zum Video oben aus:
 
 Führen Sie die folgenden Schritte zum Video oben aus:
 
-1. Klicken Sie auf **Datei > Neue Projektmappe...**, oder klicken Sie auf **Neues Projekt...**, und klicken Sie dann auf **Multi-Plattform > App > Leere Forms-App**:
+1. Klicken Sie auf **Datei > Neue Projektmappe...** , oder klicken Sie auf **Neues Projekt...** , und klicken Sie dann auf **Multi-Plattform > App > Leere Forms-App**:
 
     [![Leere Forms-App](images/01-sml.png)](images/01.png#lightbox)
 

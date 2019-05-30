@@ -4,13 +4,14 @@ description: Mit der Klasse „VersionTracking“ in Xamarin.Essentials können 
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7d3877577523ed17c78fd5d2ad02923bd3d821e2
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 3728a209c99712fad6b3dbf9bc59a2c1a3c7bcd5
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898830"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354126"
 ---
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Versionsnachverfolgung
 
@@ -80,3 +81,9 @@ Alle Versionsinformationen werden mithilfe der [Preferences](preferences.md)-API
 
 - [VersionTracking-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
 - [VersionTracking-API-Dokumentation](xref:Xamarin.Essentials.VersionTracking)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Version-Tracking-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

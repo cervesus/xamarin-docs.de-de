@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 2536e123cb4bdfd194c573802a91cba7a8c1208d
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855028"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178126"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Arbeiten mit Funktionen in Xamarin.iOS
 
@@ -131,7 +131,7 @@ Die Verwendung des Developer Centers besteht aus zwei Schritten: Erstellen einer
 
     ![Auswahl „App-IDs“ im Developer Center](images/image6.png)
 
-4.  Klicken Sie zum Erstellen einer neuen App-ID auf die **+**-Schaltfläche in der oberen rechten Ecke.
+4.  Klicken Sie zum Erstellen einer neuen App-ID auf die **+** -Schaltfläche in der oberen rechten Ecke.
 5.  Geben Sie eine Beschreibung der App-ID ein, wählen Sie „Eindeutige App-ID“ aus, und geben Sie eine Bündel-ID im Format `com.domain.appname` ein. Diese Bündel-ID sollte mit der Bündel-ID in Ihrem Projekt übereinstimmen:
 
     ![Hinzufügen von App-ID-Details](images/image7.png)
@@ -158,7 +158,7 @@ Erstellen Sie nun ein Bereitstellungsprofil, das diese App-ID enthält. Führen 
 
     ![Abschnitt „Bereitstellungsprofil“](images/image10.png)
 
-2.  Klicken Sie zum Erstellen eines neuen Bereitstellungsprofils auf die **+**-Schaltfläche in der oberen rechten Ecke.
+2.  Klicken Sie zum Erstellen eines neuen Bereitstellungsprofils auf die **+** -Schaltfläche in der oberen rechten Ecke.
 3.  Wählen Sie den Bereitstellungsprofiltyp aus, den Sie benötigen, und klicken Sie auf **Weiter**:
 
     ![Auswahl des Bereitstellungsprofils](images/image11.png)
@@ -205,12 +205,12 @@ Wenn eine Funktion auf der Serverseite aktiviert wurde, sind weitere Schritte er
 
 In der folgenden Liste werden einige der häufigsten Probleme aufgeführt, die zu Hindernissen bei der Entwicklung einer App mit einem aktivierten App-Dienst führen können:
 
--   Stellen Sie sicher, dass die richtige ID ordnungsgemäß erstellt und im Abschnitt  **Certificates, IDs & Profiles** (Zertifikate, Bezeichner und Profile) im Apple Developer Portal registriert wurde.
--   Stellen Sie sicher, dass der Dienst der App-ID (oder der Erweiterungs-ID) hinzugefügt wurde und dass er für die Verwendung der zuvor erstellten App-Gruppe/Händler-ID/Container unter  **Certificates, IDs & Profiles**  (Zertifikate, Bezeichner und Profile) im Apple Developer Portal konfiguriert wurde.
--   Stellen Sie sicher, dass die Bereitstellungsprofile und App-IDs installiert wurden und dass die Datei  **Info.plist**  der App (im Xamarin-Projekt) eine der zuvor konfigurierten App-IDs verwendet.
--   Stellen Sie sicher, dass für die Datei  **Entitlements.plist**  der App (im Xamarin-Projekt) der richtige Dienst aktiviert wurde.
+-   Stellen Sie sicher, dass die richtige ID ordnungsgemäß erstellt und im Abschnitt **Zertifikate, Bezeichner und Profile** des Apple Developer Portal registriert wurde.
+-   Stellen Sie sicher, dass der Dienst der App-ID (oder der Erweiterungs-ID) hinzugefügt wurde und dass er für die Verwendung der zuvor erstellten App-Gruppe/Händler-ID/Container unter **Zertifikate, Bezeichner und Profile** des Apple Developer Portal konfiguriert wurde.
+-   Stellen Sie sicher, dass die Bereitstellungsprofile und App-IDs installiert wurden und dass die Datei **Info.plist** der App (im Xamarin-Projekt) eine der zuvor konfigurierten App-IDs verwendet.
+-   Stellen Sie sicher, dass für die Datei **Entitlements.plist** der App (im Xamarin-Projekt) der richtige Dienst aktiviert wurde.
 -   Stellen Sie sicher, dass die Datenschutzschlüssel in der Datei „Info.plist“ entsprechend festgelegt sind.
--   Stellen Sie im Bereich  **iOS-Bundle-Signierung** der App sicher, dass  **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich  _nicht_  um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
+-   Stellen Sie im Bereich **iOS-Bündelsignierung** der App sicher, dass **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich _nicht_ um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
 
 <a name="summary" />
 

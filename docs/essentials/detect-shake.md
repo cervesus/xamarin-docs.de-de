@@ -4,17 +4,18 @@ description: Mit der Klasse „Accelerometer“ von Xamarin.Essentials können S
 ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 2a14d739806fef353472a5186a9dbedd8e218662
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 8aa1062c7948a57a21d59a785d6359056351245d
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59019307"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354054"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Erkennen einer Schüttelbewegung
 
-Mit der **[Accelerometer](accelerometer.md)**-Klasse können Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt. Außerdem können Sie Ereignisse einrichten, die ausgelöst werden, wenn der Benutzer das Gerät schüttelt.
+Mit der **[Accelerometer](accelerometer.md)** -Klasse können Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt. Außerdem können Sie Ereignisse einrichten, die ausgelöst werden, wenn der Benutzer das Gerät schüttelt.
 
 ## <a name="get-started"></a>Erste Schritte
 
@@ -79,3 +80,9 @@ Die API zum Erkennen von Schüttelbewegungen verwendet unformatierte Messwerte v
 
 - [Quellcode für einen Beschleunigungsmesser](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
 - [Dokumentation für Beschleunigungsmesser-API](xref:Xamarin.Essentials.Accelerometer)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Detect-Shake-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

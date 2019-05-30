@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 202f044ebd7dd5b110b94d2aa60eeb7151150607
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f67ab15466da118d12c280d597972d2d11f8e600
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994727"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178115"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms-Navigation
 
@@ -39,7 +39,3 @@ Die [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) von Xamarin.Forms ist eine
 ## <a name="modal-pagesmodalmd"></a>[Modale Seiten](modal.md)
 
 Xamarin.Forms bietet auch Unterstützung für modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde.
-
-## <a name="displaying-pop-upspop-upsmd"></a>[Anzeigen von Popups](pop-ups.md)
-
-Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. Diese Schnittstellenelemente können verwendet werden, um Benutzern einfache Fragen zu stellen und sie durch Aufgaben zu leiten.
