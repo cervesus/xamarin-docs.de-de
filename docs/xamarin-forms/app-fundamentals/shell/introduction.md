@@ -6,13 +6,13 @@ ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: f6662f20485c6671edcb5a1654569cdd8498607e
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 05/24/2019
+ms.openlocfilehash: 38553b3b30388bc64fd97a7ac96a671279d20bc5
+ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005207"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213345"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms-Shell
 
@@ -32,7 +32,7 @@ Darüber hinaus profitieren Shell-Anwendungen von einer höheren Renderinggeschw
 
 ## <a name="shell-navigation-experience"></a>Shell-Navigationsoberfläche
 
-Die Shell bietet eine Benutzeroberfläche mit zahlreichen Optionen für die Navigation, basierend auf Flyouts und Registerkarten. Die oberste Ebene der Navigation in Shell-Anwendung ist ein Flyout:
+Die Shell bietet eine Benutzeroberfläche mit zahlreichen Optionen für die Navigation, basierend auf Flyouts und Registerkarten. Die oberste Ebene der Navigation in einer Shell-Anwendung ist entweder ein Flyout oder eine untere Registerkartenleiste, je nach den Navigationsanforderungen der Anwendung. Das folgende Beispiel zeigt eine Anwendung, in der die oberste Ebene der Navigation ein Flyout ist:
 
 [![Screenshot eines Shell-Flyouts, unter iOS und Android](introduction-images/flyout.png "Shell-Flyout")](introduction-images/flyout-large.png#lightbox "Shell-Flyout")
 
@@ -41,7 +41,7 @@ Die Auswahl eines Flyoutelements führt zu der unteren Registerkarte, die das au
 [![Screenshot der unteren Registerkarten der Shell, unter iOS und Android](introduction-images/monkeys.png "untere Registerkarten der Shell")](introduction-images/monkeys-large.png#lightbox "untere Registerkarten der Shell")
 
 > [!NOTE]
-> Wenn der Flyout nicht geöffnet ist, wird die untere Registerkartenleiste als oberste Ebene der Navigation in der Anwendung betrachtet.
+> Wenn der Flyout nicht geöffnet ist, kann die untere Registerkartenleiste als oberste Ebene der Navigation in der Anwendung betrachtet werden.
 
 Jede Registerkarte zeigt eine [`ContentPage`](xref:Xamarin.Forms.ContentPage) an. Wenn eine untere Registerkarte mehr als eine Seite enthält, sind die Seiten jedoch über die obere Registerkartenleiste navigierbar:
 
@@ -51,114 +51,6 @@ Innerhalb jeder Registerkarte kann zu zusätzlichen [`ContentPage`](xref:Xamarin
 
 [![Screenshot der Shell-Seitennavigation unter iOS and Android](introduction-images/cat-details.png "Shell-App-Navigation")](introduction-images/cat-details-large.png#lightbox "Shell-App-Navigation")
 
-## <a name="subclassing-the-shell-class"></a>Erstellen von Unterklassen für die Shell-Klasse
-
-Ein `Shell`-Objekt mit Unterklassen beschreibt die visuelle Hierarchie einer Shell-Anwendung und besteht aus drei hierarchischen Hauptobjekten:
-
-- `FlyoutItem`: Stellt ein oder mehrere Elemente im Flyout dar. Jedes `FlyoutItem`-Objekt ist ein untergeordnetes Objekt des `Shell`-Objekts.
-- `Tab`: Stellt gruppierten Inhalt dar, der über die unteren Registerkarten navigierbar ist. Jedes `Tab`-Objekt ist ein untergeordnetes Objekt eines `FlyoutItem`-Objekts.
-- `ShellContent`: Stellt die `ContentPage`-Objekte in Ihrer Anwendung dar. Jedes `ShellContent`-Objekt ist ein untergeordnetes Objekt eines `Tab`-Objekts. Wenn mehr als ein `ShellContent`-Objekt in einem `Tab`-Objekt vorhanden ist, sind die Objekte über obere Registerkarten navigierbar.
-
-Keines dieser Objekte repräsentiert eine Benutzeroberfläche, sondern die Organisation der visuellen Struktur der Hierarchie. Shell wird diese Objekte übernehmen und die Benutzeroberfläche für die Navigation der Inhalte erstellen.
-
-> [!NOTE]
-> Die `FlyoutItem`-Klasse ist ein Alias für die `ShellItem`-Klasse, und die `Tab`-Klasse ist ein Alias für die `ShellSection`-Klasse. Diese Aliase dienen dazu, die-API benutzerfreundlicher zu machen.
-
-Die folgende XAML zeigt ein Beispiel für ein `Shell`-Objekt mit Unterklassen:
-
-```xaml
-<Shell xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell">
-    ...
-    <FlyoutItem Title="Animals"
-                FlyoutDisplayOptions="AsMultipleItems">
-        <Tab Title="Domestic"
-             Icon="paw.png">
-            <ShellContent Title="Cats"
-                          Icon="cat.png">
-                <views:CatsPage />
-            </ShellContent>
-            <ShellContent Title="Dogs"
-                          Icon="dog.png">
-                <views:DogsPage />
-            </ShellContent>
-        </Tab>
-        <ShellContent Title="Monkeys"
-                      Icon="monkey.png">
-            <views:MonkeysPage />
-        </ShellContent>
-        <ShellContent Title="Elephants"
-                      Icon="elephant.png">  
-            <views:ElephantsPage />
-        </ShellContent>
-        <ShellContent Title="Bears"
-                      Icon="bear.png">
-            <views:BearsPage />
-        </ShellContent>
-    </FlyoutItem>
-    ...
-</Shell>
-```
-
-Wird dieses Beispiel ausgeführt, zeigt die XAML die `CatsPage` an, da sie das erste Element des im `Shell`-Objekt mit Unterklassen deklarierten Inhalts ist:
-
-[![Screenshot einer Shell-App unter iOS und Android](introduction-images/cats.png "Shell-App")](introduction-images/cats-large.png#lightbox "Shell-App")
-
-Wird auf das Hamburger-Symbol gedrückt oder von links gewischt, wird das Flyout angezeigt:
-
-[![Screenshot eines Shell-Flyouts, unter iOS und Android](introduction-images/flyout-reduced.png "Shell-Flyout")](introduction-images/flyout-reduced-large.png#lightbox "Shell-Flyout")
-
-> [!IMPORTANT]
-> In einer Shell-Anwendung wird jedes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt, das ein untergeordnetes Element eines `ShellContent`-Objekts ist, während des Anwendungsstarts erstellt. Hinzufügen weiterer `ShellContent`-Objekte mit diesem Ansatz führt dazu, dass zusätzliche Seiten während des Anwendungsstarts erstellt werden, was zu einer schlechten Starterfahrung führen kann. Mit der Shell können Seiten jedoch auch nach Bedarf als Reaktion auf die Navigation erstellt werden. Weitere Informationen finden Sie unter [Effizientes Laden von Seiten](tabs.md#efficient-page-loading) im Handbuch über die [Registerkarten der Xamarin.Forms-Shell](tabs.md).
-
-## <a name="bootstrapping-a-shell-application"></a>Bootstrapping für eine Shell-Anwendung
-
-Der Bootstrapvorgang wird für eine Shell-Anwendung durchgeführt, indem die [`MainPage`](xref:Xamarin.Forms.Application.MainPage)-Eigenschaft der `App`-Klasse auf ein `Shell`-Objekt mit Unterklassen festgelegt wird:
-
-```csharp
-namespace Xaminals
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-            MainPage = new AppShell();
-        }
-        ...
-    }
-}
-```
-
-In diesem Beispiel ist die `AppShell`-Klasse eine XAML-Datei, die von der `Shell`-Klasse abgeleitet ist, die die visuelle Hierarchie der Anwendung beschreibt.
-
-## <a name="shell-appearance"></a>Shell-Darstellung
-
-Die `Shell`-Klasse definiert die folgenden Eigenschaften, die die Darstellung einer Shell-Anwendung steuern:
-
-- `BackgroundColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Hintergrundfarbe im Shell-Chrom definiert. Die Farbe wird hinter dem Shell-Inhalt nicht ausgefüllt.
-- `DisabledColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe zum Schattieren von Text und deaktivierten Symbolen definiert.
-- `ForegroundColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe zum Schattieren von Text und Symbolen definiert.
-- `TitleColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe für den Titel der aktuellen Seite definiert.
-- `UnselectedColor` vom Typ `Color`, eine angefügte Eigenschaft, die die Farbe für nicht ausgewählten Text und Symbole im Shell-Chrom definiert.
-
-Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Datenverbindungen sein können.
-
-Darüber hinaus können diese Eigenschaften mithilfe von Cascading Stylesheets (CSS) festgelegt werden. Weitere Informationen finden Sie unter [Spezifische Eigenschaften der Xamarin.Forms-Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
-
-## <a name="shell-content-layout"></a>Shell-Inhaltslayout
-
-Die `Shell`-Klasse definiert die folgenden Eigenschaften, die das Layout einer Shell-Anwendung beeinflussen:
-
-- `NavBarIsVisible` vom Typ`boolean`, eine angefügte Eigenschaft, die definiert, ob die Navigationsleiste eingeblendet werden soll, wenn eine Seite angezeigt wird. Diese Eigenschaft sollte auf einer Seite festgelegt werden, und der Standardwert ist `true`.
-- `TabBarIsVisible` vom Typ `bool`, eine angefügte Eigenschaft, die definiert, ob die Registerkartenleiste sichtbar sein soll, wenn eine Seite angezeigt wird. Diese Eigenschaft sollte auf einer Seite festgelegt werden, und der Standardwert ist `true`.
-- `TitleView` vom Typ `View`, eine angefügte Eigenschaft, die die `TitleView` für eine Seite definiert. Diese Eigenschaft sollte auf einer Seite festgelegt werden.
-
-Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Datenverbindungen sein können.
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
-- [Spezifische Eigenschaften der Xamarin.Forms-Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
