@@ -115,6 +115,7 @@
 #### [Erstellen einer Shellanwendung](app-fundamentals/shell/create.md)
 #### [Flyout](app-fundamentals/shell/flyout.md)
 #### [Registerkarten](app-fundamentals/shell/tabs.md)
+#### [Seitenkonfiguration](app-fundamentals/shell/configuration.md)
 #### [Navigation](app-fundamentals/shell/navigation.md)
 #### [Suchen](app-fundamentals/shell/search.md)
 #### [Benutzerdefinierte Renderer](app-fundamentals/shell/customrenderers.md)
