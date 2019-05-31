@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1b6e1c8ce91eaad46e779527c5ba12e2187cad24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 748443352c106fbad88f8eda895cde097ce14a45
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61038409"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394714"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager mit Fragmenten
 
@@ -86,7 +86,7 @@ using Android.Support.V4.View;
 using Android.Support.V4.App;
 ```
 
-Ändern der `MainActivity` -Klassendeklaration so, dass es von abgeleitet ist `AppCompatActivity`:
+Ändern der `MainActivity` -Klassendeklaration so, dass es von abgeleitet ist `FragmentActivity`:
 
 ```csharp
 public class MainActivity : FragmentActivity
@@ -349,7 +349,7 @@ Beim der `ViewPager` rendert die `Fragment` an `position`, zeigt der `TextBox` m
 
 ## <a name="add-the-adapter-to-the-viewpager"></a>Hinzufügen des Adapters zu dem ViewPager
 
-Nachdem der `FlashCardDeckAdapter` wird implementiert, ist es Zeit, die sie zum Hinzufügen der `ViewPager`. In **"mainactivity.cs"**, fügen Sie die folgende Codezeile am Ende der `OnCreate` Methode:
+Nachdem der `FlashCardDeckAdapter` wird implementiert, ist es Zeit, die sie zum Hinzufügen der `ViewPager`. In **"mainactivity.cs"** , fügen Sie die folgende Codezeile am Ende der `OnCreate` Methode:
 
 ```csharp
 FlashCardDeckAdapter adapter =

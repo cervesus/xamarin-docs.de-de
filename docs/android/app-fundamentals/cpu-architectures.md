@@ -6,13 +6,13 @@ ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 03/01/2018
-ms.openlocfilehash: f2865858552d4445dff95c85767c41849c19cc29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/30/2019
+ms.openlocfilehash: 46e628700771864c6a4b99edea550af694bf3a62
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018265"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394679"
 ---
 # <a name="cpu-architectures"></a>CPU-Architekturen
 
@@ -49,6 +49,9 @@ Xamarin.Android unterstützt die folgenden Architekturen:
 
 -   **Armeabi** &ndash; ARM-basierte CPUs, die mindestens den ARMv5TE-Befehlssatz unterstützen. Beachten Sie, dass `armeabi` ist nicht threadsicher und sollte nicht für Multi-CPU-Geräte verwendet werden.
 
+> [!NOTE]
+> Als [Xamarin.Android 9.2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture), `armeabi` wird nicht mehr unterstützt.
+
 -   **Armeabi-v7a** &ndash; ARM-basierte CPUs mit Hardware-gleitkommavorgänge und mehrere CPU-(SMP) Geräte. Beachten Sie, dass `armeabi-v7a` Computercode nicht auf ARMv5 Geräten ausgeführt werden.
 
 -   **arm64-v8a** &ndash; basieren auf der ARMv8-Architektur von 64-Bit-CPUs.
@@ -66,7 +69,7 @@ Um mehrere CPU-Architekturen als Ziel verwenden, können Sie mehr als eine ABI (
 Sie müssen keine wählen **arm64-v8a** oder **x86_64** 64-Bit-Geräten als Ziel 64-Bit-Unterstützung ist nicht erforderlich, um die Anwendung auf 64-Bit-Hardware auszuführen. Z. B. die 64-Bit-ARM-Geräte (z. B. die [Nexus 9](http://www.google.com/nexus/9/)) können apps, die für konfigurierte ausführen `armeabi-v7a`. Der wichtigste Vorteil von 64-Bit-Unterstützung aktiviert ist und es für Ihre app aus, um mehr Arbeitsspeicher zu beheben.
 
 > [!NOTE]
-> 64-Bit-Runtime-Unterstützung ist derzeit ein experimentelles Feature. Denken Sie daran, dass 64-Bit-Laufzeiten sind *nicht* erforderlich, um Ihre Anwendung auf 64-Bit-Geräten auszuführen. 
+> Ab August 2018 sind neue Apps erforderlich, um auf API-Ebene 26 abzielen, und ab August 2019 sind Apps [zum Bereitstellen von 64-Bit-Versionen erforderlich](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html), zusätzlich zu der 32-Bit-Version.
 
 ## <a name="additional-information"></a>Zusätzliche Informationen
 
