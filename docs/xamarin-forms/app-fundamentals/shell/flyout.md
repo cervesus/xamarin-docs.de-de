@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: a64e96e1ee3804cd7aefd9834486613ba8d09d5f
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 05/23/2019
+ms.openlocfilehash: 51d8764854db2fb62a412fab6e1e48c8beabbf1f
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005227"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178058"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms-Shell-Flyout
 
@@ -133,7 +133,9 @@ Das folgende Beispiel zeigt, wie der Flyout-Header beim Durchblättern der Eleme
 
 ## <a name="flyout-items"></a>Flyout-Elemente
 
-Jedes `Shell`-Objekt mit Unterklassen muss ein oder mehrere `FlyoutItem`-Objekte enthalten, wobei jedes `FlyoutItem`-Objekt ein Element auf dem Flyout darstellt. Das folgende Beispiel erstellt ein Flyout, das einen Flyout-Header und zwei Flyout-Elemente enthält:
+Wenn das Navigationsmuster für eine Anwendung einen Flyout enthält, muss das `Shell`-Objekt mit Unterklassen ein oder mehrere `FlyoutItem`-Objekte enthalten, wobei jedes `FlyoutItem`-Objekt ein Element auf dem Flyout darstellt. Jedes `FlyoutItem`-Objekt muss ein untergeordnetes Element des `Shell`-Objekts sein.
+
+Das folgende Beispiel erstellt ein Flyout, das einen Flyout-Header und zwei Flyout-Elemente enthält:
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -170,7 +172,7 @@ In diesem Beispiel kann jedes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Ob
 > [!NOTE]
 > Wenn kein Flyout-Header vorhanden ist, werden Flyout-Elemente ganz oben im Flyout angezeigt. Andernfalls werden sie unterhalb des Headers Flyout angezeigt.
 
-Shell verfügt über implizite Konvertierungsoperatoren, die es ermöglichen, die visuelle Hierarchie der Shell zu vereinfachen, ohne zusätzliche Ansichten in die visuelle Struktur einzufügen. Dies ist möglich, weil ein `Shell`-Objekt mit Unterklassen immer nur `FlyoutItem`-Objekte enthalten darf, die immer nur `Tab`-Objekte enthalten dürfen, die immer nur `ShellContent`-Objekte enthalten dürfen. Diese impliziten Konvertierungsoperatoren können verwendet werden, um die Objekte `FlyoutItem`, `Tab` und `ShellContent` aus dem vorherigen Beispiel zu entfernen:
+Shell verfügt über implizite Konvertierungsoperatoren, die es ermöglichen, die visuelle Hierarchie der Shell zu vereinfachen, ohne zusätzliche Ansichten in die visuelle Struktur einzufügen. Dies ist möglich, weil ein `Shell`-Objekt mit Unterklassen immer nur `FlyoutItem`-Objekte oder ein `TabBar`-Objekt enthalten darf, die immer nur `Tab`-Objekte enthalten dürfen, die wiederum immer nur `ShellContent`-Objekte enthalten dürfen. Diese impliziten Konvertierungsoperatoren können verwendet werden, um die Objekte `FlyoutItem`, `Tab` und `ShellContent` aus dem vorherigen Beispiel zu entfernen:
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -193,11 +195,11 @@ Diese implizite Konvertierung umschließt jedes [`ContentPage`](xref:Xamarin.For
 
 ### <a name="flyoutitem-class"></a>FlyoutItem-Klasse
 
-Die `FlyoutItem`-Klasse umfasst die folgenden Eigenschaften, die ihre Darstellung und ihr steuern:
+Die `FlyoutItem`-Klasse umfasst die folgenden Eigenschaften, die die Darstellung und das Verhalten des Flyoutelements steuern:
 
-- `FlyoutDisplayOptions` vom Typ `FlyoutDisplayOptions` definiert, wie das Element und seine untergeordneten Elemente im Flyout angezeigt werden. Der Standardwert ist `AsSingleItem`sein.
+- `FlyoutDisplayOptions` vom Typ `FlyoutDisplayOptions`: Definiert, wie das Element und seine untergeordneten Elemente im Flyout angezeigt werden. Der Standardwert ist `AsSingleItem`sein.
 - `CurrentItem` vom Typ `Tab`: das ausgewählte Element.
-- `Items` vom Typ `ShellSectionCollection`: Definiert alle Registerkarten in einem `FlyoutItem`-Objekt.
+- `Items` vom Typ `IList<Tab>`: Definiert alle Registerkarten in einem `FlyoutItem`-Objekt.
 - `FlyoutIcon` vom Typ `ImageSource`: das für das Element verwendete Symbol. Wenn diese Eigenschaft nicht festgelegt ist, wird der `Icon`-Eigenschaftswert verwendet.
 - `Icon` vom Typ `ImageSource`: Definiert das Symbol, das in Teilen des Chroms angezeigt wird, die nicht das Flyout sind.
 - `IsChecked` vom Typ `boolean`: Definiert, ob das Element im Flyout derzeit ausgewählt ist.
@@ -268,7 +270,7 @@ Durch Festlegen der `FlyoutItem.FlyoutDisplayOptions`-Eigenschaft auf `AsMultipl
 </Shell>
 ```
 
-In diesem Beispiel werden Flyout-Elemente für das `Tab`-Objekt, das ein untergeordnetes Element des `FlyoutItem`-Objekts ist, und die `Shellontent`-Objekte, die untergeordnete Elemente des `FlyoutItem`-Objekts sind, erstellt. Grund hierfür ist, dass jedes `ShellContent`-Objekt, das ein untergeordnetes Element des `FlyoutItem`-Objekts ist, automatisch in ein `Tab`-Objekt umschlossen wird. Darüber hinaus wird ein Flyout-Element für das endgültige `ShellContent`-Objekt erstellt, das in ein `Tab`-Objekt und dann in ein `FlyoutItem`-Objekt umschlossen wird.
+In diesem Beispiel werden Flyout-Elemente für das `Tab`-Objekt, das ein untergeordnetes Element des `FlyoutItem`-Objekts ist, und die `ShellContent`-Objekte, die untergeordnete Elemente des `FlyoutItem`-Objekts sind, erstellt. Grund hierfür ist, dass jedes `ShellContent`-Objekt, das ein untergeordnetes Element des `FlyoutItem`-Objekts ist, automatisch in ein `Tab`-Objekt umschlossen wird. Darüber hinaus wird ein Flyout-Element für das endgültige `ShellContent`-Objekt erstellt, das in ein `Tab`-Objekt und dann in ein `FlyoutItem`-Objekt umschlossen wird.
 
 Dies führt zu folgenden Flyout-Elementen:
 
@@ -276,7 +278,7 @@ Dies führt zu folgenden Flyout-Elementen:
 
 ## <a name="define-flyoutitem-appearance"></a>Definieren der FlyoutItem-Darstellung
 
-Die Darstellung jedes `FlyoutItem` kann angepasst werden, indem die `Shell.ItemTemplate`-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) festgelegt wird:
+Die Darstellung jedes `FlyoutItem` kann angepasst werden, indem die angefügte `Shell.ItemTemplate`-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) festgelegt wird:
 
 ```xaml
 <Shell ...>
@@ -288,7 +290,7 @@ Die Darstellung jedes `FlyoutItem` kann angepasst werden, indem die `Shell.ItemT
                     <ColumnDefinition Width="0.2*" />
                     <ColumnDefinition Width="0.8*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="{Binding Icon}"
+                <Image Source="{Binding FlyoutIcon}"
                        Margin="5"
                        HeightRequest="45" />
                 <Label Grid.Column="1"
@@ -306,7 +308,7 @@ Dieses Beispiel stellt die Titel der einzelnen `FlyoutItem`-Objekte in Kursivsch
 [![Screenshot der auf Vorlagen basierenden FlyoutItem-Objekte unter IOS- und Android](flyout-images/flyoutitem-templated.png "Auf Vorlagen basierende Shell-FlyoutItem-Objekte")](flyout-images/flyoutitem-templated-large.png#lightbox "Auf Vorlagen basierende Shell-FlyoutItem-Objekte")
 
 > [!NOTE]
-> Die Shell stellt die Eigenschaften `Title` und `Icon` für den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der `ItemTemplate` zur Verfügung.
+> Die Shell stellt die Eigenschaften `Title` und `FlyoutIcon` für den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der `ItemTemplate` zur Verfügung.
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem-Aktivierreihenfolge
 
@@ -353,7 +355,7 @@ Shell.Current.CurrentItem = aboutItem;
 
 ## <a name="menu-items"></a>Menüelemente
 
-Menüelemente werden optional auf dem Flyout unterhalb der Flyout-Elemente angezeigt. Jedes Menüelement wird durch ein [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekt dargestellt.
+Menüelemente können optional zum Flyout hinzugefügt werden, und jedes Menüelement wird durch ein [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekt dargestellt. Die Position von `MenuItem`-Objekten auf dem Flyout hängt von der Deklarationsreihenfolge in der visuellen Shell-Hierarchie ab. Daher werden alle `MenuItem`-Objekte, die vor `FlyoutItem`-Objekten deklariert wurden, oben im Flyout, und alle `MenuItem`-Objekte, die nach `FlyoutItem`-Objekten deklariert wurden, unten im Flyout angezeigt.
 
 > [!NOTE]
 > Die `MenuItem`-Klasse verfügt über ein [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked)-Ereignis und eine [`Command`](xref:Xamarin.Forms.MenuItem.Command)-Eigenschaft. Daher ermöglichen `MenuItem`-Objekte Szenarien, die eine Aktion als Reaktion auf das Antippen eines `MenuItem`-Objekts ausführen. Diese Szenarien sind beispielsweise das Navigieren und das Öffnen eines Webbrowsers auf einer bestimmten Webseite.
@@ -373,7 +375,7 @@ Menüelemente werden optional auf dem Flyout unterhalb der Flyout-Elemente angez
 </Shell>
 ```
 
-Dieser Code fügt zwei [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekte zum Flyout hinzu:
+Dieser Code fügt zwei unter allen Flyout-Elementen [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekte zum Flyout hinzu:
 
 [![Screenshot des Flyouts mit MenuItem-Objekten unter IOS und Android](flyout-images/flyout.png "Shell-Flyout mit MenuItem-Objekten")](flyout-images/flyout-large.png#lightbox "Shell-Flyout mit MenuItem-Objekten")
 
@@ -384,34 +386,84 @@ Das erste [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekt führt einen `IComman
 
 ## <a name="define-menuitem-appearance"></a>Definieren der Darstellung des MenuItem-Objekts
 
-Die Darstellung jedes `MenuItem` kann angepasst werden, indem die `Shell.MenuItemTemplate`-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) festgelegt wird:
+Die Darstellung jedes `MenuItem` kann angepasst werden, indem die angefügte `Shell.MenuItemTemplate`-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) festgelegt wird:
 
 ```xaml
-<Shell.MenuItemTemplate>
-    <DataTemplate>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*" />
-                <ColumnDefinition Width="0.8*" />
-            </Grid.ColumnDefinitions>
-            <Image Source="{Binding Icon}"
-                   Margin="5"
-                   HeightRequest="45" />
-            <Label Grid.Column="1"
-                   Text="{Binding Text}"
-                   FontAttributes="Italic"
-                   VerticalTextAlignment="Center" />
-        </Grid>
-    </DataTemplate>
-</Shell.MenuItemTemplate>
+<Shell ...>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    ...
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />  
+</Shell>
 ```
 
-Dieses Beispiel stellt die Titel der einzelnen `MenuItem`-Objekte in Kursivschrift dar:
+In diesem Beispiel wird jedem `MenuItem`-Objekt die `MenuItemTemplate` auf Shell-Ebene hinzugefügt, wodurch die Titel der einzelnen `MenuItem`-Objekte in Kursivschrift angezeigt werden:
 
 [![Screenshot der auf Vorlagen basierenden MenuItem-Objekte unter IOS- und Android](flyout-images/menuitem-templated.png "Auf Vorlagen basierende Shell-MenuItem-Objekte")](flyout-images/menuitem-templated-large.png#lightbox "Auf Vorlagen basierende Shell-MenuItem-Objekte")
 
 > [!NOTE]
 > Die Shell stellt die Eigenschaften [`Text`](xref:Xamarin.Forms.MenuItem.Text) und [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) für den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der `MenuItemTemplate` zur Verfügung.
+
+Da `Shell.MenuItemTemplate` eine angefügte Eigenschaft ist, können verschiedene Vorlagen an bestimmte `MenuItem`-Objekte angefügt werden:
+
+```xaml
+<Shell ...>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    ...
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              Icon="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell">
+        <Shell.MenuItemTemplate>
+            <DataTemplate>
+                ...
+            </DataTemplate>
+        </Shell.MenuItemTemplate>
+    </MenuItem>
+</Shell>
+```
+
+In diesem Beispiel wird die `MenuItemTemplate` der Shell-Ebene an das erste `MenuItem`-Objekt und die Inline-`MenuItemTemplate` an das zweite `MenuItem`-Objekt angefügt.
 
 ## <a name="related-links"></a>Verwandte Links
 
