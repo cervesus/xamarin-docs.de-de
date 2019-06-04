@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 4cccf0660e306cb0dc466f5376d74411fa6c4ba1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b861993f0d9661a5c9f5c5983020fa0d275ff78c
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61029541"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469482"
 ---
 # <a name="controls-reference"></a>Steuerelementreferenz
 
@@ -31,9 +31,9 @@ Die vier hauptsteuerelementgruppen, um die Benutzeroberfläche einer Xamarin.For
 
 Eine Xamarin.Forms-Startseite nimmt in der Regel den gesamten Bildschirm ein. Diese Seite enthält in der Regel ein Layout, die Ansichten und möglicherweise anderer Layouts enthält. Zellen sind spezielle Komponenten, die in Verbindung mit verwendet [ `TableView` ](views.md#tableView) und [ `ListView` ](views.md#listView).
 
-In den vier Artikeln auf [ **Seiten**](pages.md), [ **Layouts**](layouts.md), [ **Ansichten** ](views.md), und [ **Zellen**](cells.md), jeder Typ von Steuerelement wird mit Links zu ihrer API-Dokumentation, einen Artikel beschreiben die Verwendung (falls vorhanden) und eine oder mehrere Beispielprogramme (sofern vorhanden) beschrieben. Jeder Typ von Steuerelement umfasst auch dieser Screenshot zeigt eine Seite aus der [ **FormsGallery** ](https://developer.xamarin.com/samples/FormsGallery/) Beispiel, die Ausführung auf iOS, Android und UWP-Geräten. Im folgenden einzelnen Screenshots finden Sie Links auf den Quellcode für die C#-Seite der entsprechenden XAML-Seite, und (wenn geeignet) die C#-Code-Behind-Datei für die XAML-Seite.
+In den vier Artikeln auf [ **Seiten**](pages.md), [ **Layouts**](layouts.md), [ **Ansichten** ](views.md), und [ **Zellen**](cells.md), jeder Typ von Steuerelement wird mit Links zu ihrer API-Dokumentation, einen Artikel beschreiben die Verwendung (falls vorhanden) und eine oder mehrere Beispielprogramme (sofern vorhanden) beschrieben. Jeder Typ von Steuerelement umfasst auch dieser Screenshot zeigt eine Seite aus der [ **FormsGallery** ](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/) Beispiel, die Ausführung auf iOS, Android und UWP-Geräten. Im folgenden einzelnen Screenshots finden Sie Links auf den Quellcode für die C#-Seite der entsprechenden XAML-Seite, und (wenn geeignet) die C#-Code-Behind-Datei für die XAML-Seite.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel für Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/FormsGallery/)
+- [Beispiel für Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [API-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

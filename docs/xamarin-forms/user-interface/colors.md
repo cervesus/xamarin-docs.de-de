@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 43854929cfc232b24cad18e276b3ba51d1e5dece
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b07bfd9f9ecbde66dbac3854bdbb611ad89e0ee2
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153499"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469522"
 ---
 # <a name="colors-in-xamarinforms"></a>Farben in Xamarin.Forms
 
@@ -25,7 +25,7 @@ In diesem Artikel werden die verschiedenen Möglichkeiten der `Color` Klasse kan
 Die `Color` Klasse bietet eine Reihe von Methoden, um eine Farbe-Instanz erstellen
 
 -  **Mit dem Namen Farben** -eine Auflistung von allgemeinen benannte Farben, einschließlich `Red`, `Green`, und `Blue`.
--  **FromHex** -string-Wert, der in HTML, z. B. "00FF00" verwendeten Syntax ähnelt. Alpha ist optional als das erste Paar von Zeichen ("CC00FF00") angegeben werden.
+-  **FromHex** -string-Wert, der in HTML, z. B. "00FF00" verwendeten Syntax ähnelt. Alpha kann optional als das erste Paar von Zeichen ("CC00FF00") angegeben werden.
 -  **FromHsla** -Farbton, Sättigung und Helligkeit `double` Werte, mit einem optionalen alpha-Wert (0,0-1,0).
 -  **FromRgb** – Rot, Grün und Blau `int` Werte (0-255).
 -  **FromRgba** – Rot, Grün, Blau und Alpha `int` Werte (0-255).
