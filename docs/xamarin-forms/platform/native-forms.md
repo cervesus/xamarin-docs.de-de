@@ -6,19 +6,17 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/09/2018
-ms.openlocfilehash: e02c04afe656b0eca3b7ae12b8b30f35836b9368
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/03/2019
+ms.openlocfilehash: f0ad4e3271ac8c1f8d30a0440b38d8a46c57783e
+ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954907"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687115"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms in Xamarin Native-Projekten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
-
-_Native Formulare können Xamarin.Forms-ContentPage abgeleitete Seiten von systemeigenen Projekten für Xamarin.iOS, Xamarin.Android und universelle Windows-Plattform (UWP) genutzt werden. Systemeigene Projekte können Seiten ContentPage abgeleitete nutzen, die direkt auf das Projekt oder von einer .NET Standard-Bibliothek, eine .NET Standard-Bibliothek oder ein freigegebenes Projekt hinzugefügt werden. Dieser Artikel beschreibt, wie Seiten ContentPage abgeleitete nutzen, die direkt auf systemeigene Projekte hinzugefügt werden, und zwischen ihnen zu navigieren._
 
 In der Regel eine Xamarin.Forms-Anwendung enthält eine oder mehrere Seiten, die von abgeleitet [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), und für diese Seiten werden alle Plattformen in einer .NET Standard Library-Projekt oder ein freigegebenes Projekt freigegeben. Native Formulare können jedoch `ContentPage`-abgeleitete Seiten direkt in systemeigenen Xamarin.iOS, Xamarin.Android und UWP-Anwendungen hinzugefügt werden. Im Vergleich zu, müssen das systemeigene Projekt nutzen `ContentPage`-abgeleitete Seiten aus einer .NET Standard Library-Projekt oder ein freigegebenes Projekt, den Vorteil, Hinzufügen von Seiten direkt in systemeigenen Projekten ist, dass die Seiten mit nativer Sichten erweitert werden können. Native Ansichten können dann den Namen in XAML mit `x:Name` und im Code-Behind verwiesen wird. Weitere Informationen zu systemeigenen Ansichten finden Sie unter [nativer Sichten](~/xamarin-forms/platform/native-views/index.md).
 
@@ -45,6 +43,8 @@ Unter iOS die `FinishedLaunching` außer Kraft setzen, der `AppDelegate` Klasse 
 [Register("AppDelegate")]
 public class AppDelegate : UIApplicationDelegate
 {
+    public static string FolderPath { get; private set; }
+
     public static AppDelegate Instance;
 
     UIWindow _window;
@@ -62,8 +62,9 @@ public class AppDelegate : UIApplicationDelegate
             TextColor = UIColor.Black
         });
 
-        var mainPage = new PhonewordPage().CreateViewController();
-        mainPage.Title = "Phoneword";
+        FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
+        UIViewController mainPage = new NotesPage().CreateViewController();
+        mainPage.Title = "Notes";
 
         _navigation = new UINavigationController(mainPage);
         _window.RootViewController = _navigation;
@@ -80,40 +81,44 @@ Die `FinishedLaunching` Methode führt die folgenden Aufgaben:
 - Xamarin.Forms wird initialisiert, durch den Aufruf der `Forms.Init` Methode.
 - Ein Verweis auf die `AppDelegate` Klasse befindet sich in der `static` `Instance` Feld. Dies ist einen Mechanismus für andere Klassen in definierte Methoden aufrufen, bieten die `AppDelegate` Klasse.
 - Die `UIWindow`, d.h. der Hauptcontainer für Ansichten in native iOS-Anwendungen wird erstellt.
-- Die `PhonewordPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `UIViewController` mithilfe der `CreateViewController` -Erweiterungsmethode.
+- Die `FolderPath` Eigenschaft wird initialisiert, um einen Pfad auf dem Gerät, in denen sich Daten gespeichert werden.
+- Die `NotesPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `UIViewController` mithilfe der `CreateViewController` -Erweiterungsmethode.
 - Die `Title` Eigenschaft der `UIViewController` festgelegt ist, wird auf angezeigt werden die `UINavigationBar`.
 - Ein `UINavigationController` wird zum Verwalten von hierarchischen Navigation erstellt. Die `UINavigationController` Klasse verwaltet einen Stapel von View-Controller, und die `UIViewController` übergebenen Konstruktor angezeigt ursprünglich bei der `UINavigationController` geladen wird.
 - Die `UINavigationController` Instanz wird festgelegt, als der obersten Ebene `UIViewController` für die `UIWindow`, und die `UIWindow` ist als die wichtigsten Fenster für die Anwendung festgelegt und sichtbar gemacht wird.
 
-Sobald die `FinishedLaunching` Methode ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `PhonewordPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
+Sobald die `FinishedLaunching` Methode ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `NotesPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
-[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "iOS PhonewordPage")
+[![Screenshot einer Xamarin.iOS-Anwendung, die eine Benutzeroberfläche verwendet, die in XAML definierten](native-forms-images/ios-notespage.png "Xamarin.iOS-app mit einer XAML-UI")](native-forms-images/ios-notespage-large.png#lightbox "Xamarin.iOS-app mit einer XAML-UI")
 
-Interaktion mit der Benutzeroberfläche, z. B. durch Tippen auf eine [ `Button` ](xref:Xamarin.Forms.Button), führt in den Ereignishandlern in die `PhonewordPage` Code-Behind ausgeführt. Wenn beispielsweise ein Benutzer tippt der **Anrufliste** Schaltfläche den folgenden Ereignishandler ausgeführt wird:
+Interaktion mit der Benutzeroberfläche, z. B. durch Klicken auf die **+** [ `Button` ](xref:Xamarin.Forms.Button), führt zu den folgenden Ereignishandler in der `NotesPage` Code-Behind ausgeführt:
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    AppDelegate.Instance.NavigateToCallHistoryPage();
+    AppDelegate.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-Die `static` `AppDelegate.Instance` Feld ermöglicht es dem `AppDelegate.NavigateToCallHistoryPage` -Methode aufgerufen werden soll, die im folgenden Codebeispiel gezeigt wird:
+Die `static` `AppDelegate.Instance` Feld ermöglicht es dem `AppDelegate.NavigateToNoteEntryPage` -Methode aufgerufen werden soll, die im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    var callHistoryPage = new CallHistoryPage().CreateViewController();
-    callHistoryPage.Title = "Call History";
-    _navigation.PushViewController(callHistoryPage, true);
+    UIViewController noteEntryPage = new NoteEntryPage
+    {
+        BindingContext = note
+    }.CreateViewController();
+    noteEntryPage.Title = "Note Entry";
+    _navigation.PushViewController(noteEntryPage, true);
 }
 ```
 
-Die `NavigateToCallHistoryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, um eine `UIViewController` mit der `CreateViewController` Erweiterungsmethode, und legt die `Title` Eigenschaft der `UIViewController`. Die `UIViewController` klicken Sie dann zu leisten ist `UINavigationController` durch die `PushViewController` Methode. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `CallHistoryPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
+Die `NavigateToNoteEntryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, um eine `UIViewController` mit der `CreateViewController` Erweiterungsmethode, und legt die `Title` Eigenschaft der `UIViewController`. Die `UIViewController` klicken Sie dann zu leisten ist `UINavigationController` durch die `PushViewController` Methode. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `NoteEntryPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
-[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "iOS CallHistoryPage")
+[![Screenshot einer Xamarin.iOS-Anwendung, die eine Benutzeroberfläche verwendet, die in XAML definierten](native-forms-images/ios-noteentrypage.png "Xamarin.iOS-app mit einer XAML-UI")](native-forms-images/ios-noteentrypage-large.png#lightbox "Xamarin.iOS-app mit einer XAML-UI")
 
-Bei der `CallHistoryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil angezeigt der `UIViewController` für die `CallHistoryPage` -Klasse aus der `UINavigationController`, Zurückgeben des Benutzers die `UIViewController` für die `PhonewordPage` Klasse.
+Bei der `NoteEntryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil angezeigt der `UIViewController` für die `NoteEntryPage` -Klasse aus der `UINavigationController`, Zurückgeben des Benutzers die `UIViewController` für die `NotesPage` Klasse.
 
 ## <a name="android"></a>Android
 
@@ -122,6 +127,8 @@ Unter Android die `OnCreate` außer Kraft setzen, der `MainActivity` Klasse ist 
 ```csharp
 public class MainActivity : AppCompatActivity
 {
+    public static string FolderPath { get; private set; }
+
     public static MainActivity Instance;
 
     protected override void OnCreate(Bundle bundle)
@@ -134,9 +141,10 @@ public class MainActivity : AppCompatActivity
         SetContentView(Resource.Layout.Main);
         var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
         SetSupportActionBar(toolbar);
-        SupportActionBar.Title = "Phoneword";
+        SupportActionBar.Title = "Notes";
 
-        var mainPage = new PhonewordPage().CreateSupportFragment(this);
+        FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
+        Android.Support.V4.App.Fragment mainPage = new NotesPage().CreateSupportFragment(this);
         SupportFragmentManager
             .BeginTransaction()
             .Replace(Resource.Id.fragment_frame_layout, mainPage)
@@ -153,45 +161,49 @@ Die `OnCreate` Methode führt die folgenden Aufgaben:
 - Ein Verweis auf die `MainActivity` Klasse befindet sich in der `static` `Instance` Feld. Dies ist einen Mechanismus für andere Klassen in definierte Methoden aufrufen, bieten die `MainActivity` Klasse.
 - Die `Activity` Inhalt aus einer layoutressource festgelegt ist. In diesem Beispiel, das Layout besteht aus einem `LinearLayout` , enthält eine `Toolbar`, und ein `FrameLayout` fungieren als Fragmentcontainer.
 - Die `Toolbar` abgerufen wird, und legen Sie als der Aktionsleiste für die `Activity`, und der Titel der Aktion Leiste festgelegt ist.
-- Die `PhonewordPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `Fragment` mithilfe der `CreateSupportFragment` -Erweiterungsmethode.
-- Die `SupportFragmentManager` Klasse erstellt und führt einen Commit für eine Transaktion, die ersetzt die `FrameLayout` -Instanz mit der `Fragment` für die `PhonewordPage` Klasse.
+- Die `FolderPath` Eigenschaft wird initialisiert, um einen Pfad auf dem Gerät, in denen sich Daten gespeichert werden.
+- Die `NotesPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `Fragment` mithilfe der `CreateSupportFragment` -Erweiterungsmethode.
+- Die `SupportFragmentManager` Klasse erstellt und führt einen Commit für eine Transaktion, die ersetzt die `FrameLayout` -Instanz mit der `Fragment` für die `NotesPage` Klasse.
 
 Weitere Informationen zu Fragmenten finden Sie unter [Fragmente](~/android/platform/fragments/index.md).
 
-Sobald die `OnCreate` Methode ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `PhonewordPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
+Sobald die `OnCreate` Methode ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `NotesPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
-[![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png#lightbox "Android PhonewordPage")
+[![Screenshot von einer Xamarin.Android-Anwendung, die eine Benutzeroberfläche verwendet, die in XAML definierten](native-forms-images/android-notespage.png "Xamarin.Android-app mit einer XAML-UI")](native-forms-images/android-notespage-large.png#lightbox "Xamarin.Android-app mit einer XAML-UI")
 
-Interaktion mit der Benutzeroberfläche, z. B. durch Tippen auf eine [ `Button` ](xref:Xamarin.Forms.Button), führt in den Ereignishandlern in die `PhonewordPage` Code-Behind ausgeführt. Wenn beispielsweise ein Benutzer tippt der **Anrufliste** Schaltfläche den folgenden Ereignishandler ausgeführt wird:
+Interaktion mit der Benutzeroberfläche, z. B. durch Klicken auf die **+** [ `Button` ](xref:Xamarin.Forms.Button), führt zu den folgenden Ereignishandler in der `NotesPage` Code-Behind ausgeführt:
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    MainActivity.Instance.NavigateToCallHistoryPage();
+    MainActivity.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-Die `static` `MainActivity.Instance` Feld ermöglicht es dem `MainActivity.NavigateToCallHistoryPage` -Methode aufgerufen werden soll, die im folgenden Codebeispiel gezeigt wird:
+Die `static` `MainActivity.Instance` Feld ermöglicht es dem `MainActivity.NavigateToNoteEntryyPage` -Methode aufgerufen werden soll, die im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    var callHistoryPage = new CallHistoryPage().CreateSupportFragment(this);
+    Android.Support.V4.App.Fragment noteEntryPage = new NoteEntryPage
+    {
+        BindingContext = note
+    }.CreateSupportFragment(this);
     SupportFragmentManager
         .BeginTransaction()
         .AddToBackStack(null)
-        .Replace(Resource.Id.fragment_frame_layout, callHistoryPage)
+        .Replace(Resource.Id.fragment_frame_layout, noteEntryPage)
         .Commit();
 }
 ```
 
-Der `NavigateToCallHistoryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite, um abgeleitete eine `Fragment` mit der `CreateSupportFragment` -Erweiterungsmethode, und fügt die `Fragment` dem Fragment Rückwärtsstapel. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `CallHistoryPage` wird angezeigt, wie im folgenden Screenshot gezeigt:
+Der `NavigateToNoteEntryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite, um abgeleitete eine `Fragment` mit der `CreateSupportFragment` -Erweiterungsmethode, und fügt die `Fragment` dem Fragment Rückwärtsstapel. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `NoteEntryPage` wird angezeigt, wie im folgenden Screenshot gezeigt:
 
-[![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "Android CallHistoryPage")
+[![Screenshot von einer Xamarin.Android-Anwendung, die eine Benutzeroberfläche verwendet, die in XAML definierten](native-forms-images/android-noteentrypage.png "Xamarin.Android-app mit einer XAML-UI")](native-forms-images/android-noteentrypage-large.png#lightbox "Xamarin.Android-app mit einer XAML-UI")
 
-Bei der `CallHistoryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil angezeigt der `Fragment` für die `CallHistoryPage` aus dem BackStack Fragment, Zurückgeben von dem Benutzer die `Fragment` für die `PhonewordPage` Klasse.
+Bei der `NoteEntryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil angezeigt der `Fragment` für die `NoteEntryPage` aus dem BackStack Fragment, Zurückgeben von dem Benutzer die `Fragment` für die `NotesPage` Klasse.
 
-### <a name="enabling-back-navigation-support"></a>Aktivieren der Unterstützung für die Rückwärtsnavigation
+### <a name="enable-back-navigation-support"></a>Unterstützung für die Rückwärtsnavigation aktivieren
 
 Die `SupportFragmentManager` -Klasse verfügt über eine `BackStackChanged` -Ereignis, das ausgelöst wird, wenn der Inhalt des Fragments BackStack geändert. Die `OnCreate` -Methode in der die `MainActivity` -Klasse enthält einen anonymes Ereignis-Handler für dieses Ereignis:
 
@@ -201,7 +213,7 @@ SupportFragmentManager.BackStackChanged += (sender, e) =>
     bool hasBack = SupportFragmentManager.BackStackEntryCount > 0;
     SupportActionBar.SetHomeButtonEnabled(hasBack);
     SupportActionBar.SetDisplayHomeAsUpEnabled(hasBack);
-    SupportActionBar.Title = hasBack ? "Call History" : "Phoneword";
+    SupportActionBar.Title = hasBack ? "Note Entry" : "Notes";
 };
 ```
 
@@ -228,7 +240,7 @@ Wenn eine Anwendung mehrere Aktivitäten besteht [ `ContentPage` ](xref:Xamarin.
 - Der Wert des `Xamarin.Forms.Color.Accent` entnommen werden die `Activity` , aufgerufen der `Forms.Init` Methode.
 - Der Wert des `Xamarin.Forms.Application.Current` zugeordnet wird der `Activity` , mit dem Namen der `Forms.Init` Methode.
 
-### <a name="choosing-a-file"></a>Auswählen einer Datei
+### <a name="choose-a-file"></a>Wählen Sie eine Datei
 
 Beim Einbetten von einer [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die verwendet eine [ `WebView` ](xref:Xamarin.Forms.WebView) benötigt, die zur Unterstützung von HTML "Choose File" Schaltfläche, die `Activity` außer Kraft setzen müssen die `OnActivityResult` Methode:
 
@@ -251,12 +263,15 @@ public sealed partial class MainPage : Page
 {
     public static MainPage Instance;
 
+    public static string FolderPath { get; private set; }
+
     public MainPage()
     {
         this.InitializeComponent();
         this.NavigationCacheMode = NavigationCacheMode.Enabled;
         Instance = this;
-        this.Content = new Phoneword.UWP.Views.PhonewordPage().CreateFrameworkElement();
+        FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
+        this.Content = new Notes.UWP.Views.NotesPage().CreateFrameworkElement();
     }
     ...
 }
@@ -266,37 +281,41 @@ Die `MainPage` Konstruktor führt die folgenden Aufgaben:
 
 - Zwischenspeichern auf der Seite aktiviert ist, damit ein neues `MainPage` wird nicht erstellt werden, wenn ein Benutzer zurück zur Seite navigiert.
 - Ein Verweis auf die `MainPage` Klasse befindet sich in der `static` `Instance` Feld. Dies ist einen Mechanismus für andere Klassen in definierte Methoden aufrufen, bieten die `MainPage` Klasse.
-- Die `PhonewordPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `FrameworkElement` mithilfe der `CreateFrameworkElement` Erweiterungsmethode, und legen Sie dann als Inhalt des der `MainPage` Klasse.
+- Die `FolderPath` Eigenschaft wird initialisiert, um einen Pfad auf dem Gerät, in denen sich Daten gespeichert werden.
+- Die `NotesPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `FrameworkElement` mithilfe der `CreateFrameworkElement` Erweiterungsmethode, und legen Sie dann als Inhalt des der `MainPage` Klasse.
 
-Sobald die `MainPage` Konstruktor ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `PhonewordPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
+Sobald die `MainPage` Konstruktor ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `NotesPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
-[![](native-forms-images/uwp-phonewordpage.png "UWP-PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "UWP PhonewordPage")
+[![Screenshot einer UWP-Anwendung, die eine Benutzeroberfläche verwendet, die mit Xamarin.Forms XAML definiert](native-forms-images/uwp-notespage.png "UWP-app mit einer Xamarin.Forms-XAML-UI")](native-forms-images/uwp-notespage-large.png#lightbox "UWP-app mit einer Xamarin.Forms-XAML-UI")
 
-Interaktion mit der Benutzeroberfläche, z. B. durch Tippen auf eine [ `Button` ](xref:Xamarin.Forms.Button), führt in den Ereignishandlern in die `PhonewordPage` Code-Behind ausgeführt. Wenn beispielsweise ein Benutzer tippt der **Anrufliste** Schaltfläche den folgenden Ereignishandler ausgeführt wird:
+Interaktion mit der Benutzeroberfläche, z. B. durch Klicken auf die **+** [ `Button` ](xref:Xamarin.Forms.Button), führt zu den folgenden Ereignishandler in der `NotesPage` Code-Behind ausgeführt:
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    Phoneword.UWP.MainPage.Instance.NavigateToCallHistoryPage();
+    MainPage.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-Die `static` `MainPage.Instance` Feld ermöglicht es dem `MainPage.NavigateToCallHistoryPage` -Methode aufgerufen werden soll, die im folgenden Codebeispiel gezeigt wird:
+Die `static` `MainPage.Instance` Feld ermöglicht es dem `MainPage.NavigateToNoteEntryPage` -Methode aufgerufen werden soll, die im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    this.Frame.Navigate(new CallHistoryPage());
+    this.Frame.Navigate(new NoteEntryPage
+    {
+        BindingContext = note
+    });
 }
 ```
 
-Navigation im UWP erfolgt in der Regel mit der `Frame.Navigate` Methode, die akzeptiert eine `Page` Argument. Xamarin.Forms definiert eine `Frame.Navigate` -Erweiterungsmethode, die akzeptiert eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seiteninstanz abgeleitet. Aus diesem Grund, wenn die `NavigateToCallHistoryPage` Methode ausgeführt wird, die Benutzeroberfläche, die in der Xamarin.Forms definiert `CallHistoryPage` wird angezeigt, wie im folgenden Screenshot gezeigt:
+Navigation im UWP erfolgt in der Regel mit der `Frame.Navigate` Methode, die akzeptiert eine `Page` Argument. Xamarin.Forms definiert eine `Frame.Navigate` -Erweiterungsmethode, die akzeptiert eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seiteninstanz abgeleitet. Aus diesem Grund, wenn die `NavigateToNoteEntryPage` Methode ausgeführt wird, die Benutzeroberfläche, die in der Xamarin.Forms definiert `NoteEntryPage` wird angezeigt, wie im folgenden Screenshot gezeigt:
 
-[![](native-forms-images/uwp-callhistorypage.png "UWP-CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "UWP CallHistoryPage")
+[![Screenshot einer UWP-Anwendung, die eine Benutzeroberfläche verwendet, die mit Xamarin.Forms XAML definiert](native-forms-images/uwp-noteentrypage.png "UWP-app mit einer Xamarin.Forms-XAML-UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "UWP-app mit einer Xamarin.Forms-XAML-UI")
 
-Bei der `CallHistoryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil wird angezeigt. die `FrameworkElement` für die `CallHistoryPage` aus dem BackStack von in-app Zurückgeben des Benutzers die `FrameworkElement` für die `PhonewordPage` Klasse.
+Bei der `NoteEntryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil wird angezeigt. die `FrameworkElement` für die `NoteEntryPage` aus dem BackStack von in-app Zurückgeben des Benutzers die `FrameworkElement` für die `NotesPage` Klasse.
 
-### <a name="enabling-back-navigation-support"></a>Aktivieren der Unterstützung für die Rückwärtsnavigation
+### <a name="enable-back-navigation-support"></a>Unterstützung für die Rückwärtsnavigation aktivieren
 
 Auf UWP müssen Anwendungen Navigationsverlauf zurück für alle Hardware- und Back-Schaltflächen, auf verschiedenen geräteausführungen aktivieren. Dies kann erreicht werden, indem Sie registrieren einen Ereignishandler für die `BackRequested` -Ereignis, das ausgeführt werden kann die `OnLaunched` -Methode in der systemeigenen `App` Klasse:
 
@@ -331,9 +350,9 @@ void OnBackRequested(object sender, BackRequestedEventArgs e)
 }
 ```
 
-Die `OnBackRequested` -Ereignishandler ruft die `GoBack` Methode im Bereich "Root" der Anwendung, und legt die `BackRequestedEventArgs.Handled` Eigenschaft `true` das Ereignis als behandelt markieren. Fehler bei das Ereignis als behandelt markieren kann das System verlassen zu müssen die Anwendung (auf die mobile-Gerätefamilie) oder ignorieren das Ereignis (auf der desktop-Gerät-Familie) führen.
+Die `OnBackRequested` -Ereignishandler ruft die `GoBack` Methode im Bereich "Root" der Anwendung, und legt die `BackRequestedEventArgs.Handled` Eigenschaft `true` das Ereignis als behandelt markieren. Fehler bei das Ereignis als behandelt markieren verursachen in dieser ignoriert wird.
 
-Die Anwendung basiert auf eine vom System bereitgestellte-zurück-Schaltfläche auf einem Smartphone, aber Sie entscheiden, ob eine zurück-Schaltfläche auf der Titelleiste auf desktop-Geräte angezeigt. Dies wird erreicht, indem die `AppViewBackButtonVisibility` Eigenschaft eines der `AppViewBackButtonVisibility` -Enumerationswerte fest:
+Die Anwendung entscheidet, ob eine zurück-Schaltfläche in der Titelleiste angezeigt. Dies wird erreicht, indem die `AppViewBackButtonVisibility` Eigenschaft eines der `AppViewBackButtonVisibility` -Enumerationswerte fest:
 
 ```csharp
 void OnNavigated(object sender, NavigationEventArgs e)
@@ -346,11 +365,6 @@ void OnNavigated(object sender, NavigationEventArgs e)
 Die `OnNavigated` -Ereignishandler, die Ausführung als Antwort auf die `Navigated` das Auslösen von Ereignissen aktualisiert der Sichtbarkeit der Schaltfläche "zurück" in der Titelzeile aus, wenn die Seite navigiert wird. Dadurch wird sichergestellt, dass der Back-Titelleistenschaltfläche angezeigt wird, wenn der in-app-Back-Stapel nicht leer ist oder über die Titelleiste entfernt werden, wenn der in-app-Back-Stapel leer ist.
 
 Weitere Informationen zur Unterstützung der Rückwärtsnavigation in UWP finden Sie unter [Navigationsverlauf und Abwärtskompatibilität Navigation für UWP-apps](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/).
-
-## <a name="summary"></a>Zusammenfassung
-
-Native Formulare können Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seiten zur Nutzung durch systemeigene Projekte für Xamarin.iOS, Xamarin.Android und universelle Windows-Plattform (UWP) abgeleitet. Systemeigene Projekte können nutzen `ContentPage`-abgeleitet, die direkt auf das Projekt oder eine .NET Standard-Bibliotheksprojekts oder ein freigegebenes Projekt hinzugefügt werden. In diesem Artikel wurde erläutert, wie nutzen `ContentPage`-abgeleitet, die direkt auf systemeigene Projekte sowie die Navigation zwischen ihnen hinzugefügt werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 
