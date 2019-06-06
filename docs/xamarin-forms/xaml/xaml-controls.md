@@ -8,16 +8,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/03/2019
-ms.openlocfilehash: a8a61ac505eab8c458c49bde9184d6e96583d37f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8217c6436cc8cfe8f4b9c6cc3445157319e8c0bf
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61222529"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741113"
 ---
 # <a name="xaml-controls"></a>XAML-Steuerelemente
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/FormsGallery/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 
 Ansichten sind Benutzeroberflächenobjekte wie Bezeichnungen, Schaltflächen und Schieberegler an, die häufig als bekanntermaßen *Steuerelemente* oder *Widgets* in andere grafische programmierumgebungen. Die Ansichten von Xamarin.Forms alle abgeleitet unterstützt die [ `View` ](xref:Xamarin.Forms.View) Klasse.
 
@@ -82,6 +82,6 @@ Alle Ansichten, die in Xamarin.Forms definiert sind, kann von XAML-Dateien verwi
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel für Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/FormsGallery/)
+- [Beispiel für Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms-API-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

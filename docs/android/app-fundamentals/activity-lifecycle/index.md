@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 48ff30397b2592dd2c4dbd445987392d78ced6f3
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024270"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740777"
 ---
 # <a name="activity-lifecycle"></a>Aktivitätslebenszyklus
 
@@ -62,12 +62,12 @@ Diese Zustände können wie folgt in 4 Hauptgruppen unterteilt werden:
 
 Um spielt eine Rolle, die komplizierter machen, löst Android eine weitere Schraubenschlüsselsymbol in der Mischung wird aufgerufen, Änderungen an der Konfiguration. Änderungen an der Konfiguration werden schnelle Aktivität Zerstörung/erneute-creation Zyklen, die auftreten, wenn die Konfiguration einer Aktivität ändert z. B. wenn das Gerät ist, [gedreht](~/android/app-fundamentals/handling-rotation.md) (und die Aktivität im Querformat oder Hochformat neu erstellt werden muss Modus), wenn die angezeigt wird (und die Aktivität ist eine Möglichkeit zum Ändern der Größe selbst angezeigt), oder wenn das Gerät in ein Dock, u. a. platziert wird.
 
-Konfigurationsänderungen verursachen weiterhin die gleichen Aktivitätszustand Änderungen, die beim Beenden und Neustarten einer Aktivitäts auftreten würden. Um sicherzustellen, dass eine Anwendung ist mit der Reaktionsfähigkeit und auch bei Änderungen an der Konfiguration führt, ist es jedoch wichtig, dass sie so schnell wie möglich verarbeitet werden. Aus diesem Grund bietet Android eine bestimmte API, die verwendet werden kann, um den Zustand beizubehalten, während Änderungen an der Konfiguration.
+Konfigurationsänderungen verursachen weiterhin die gleichen Aktivitätszustand Änderungen, die beim Beenden und Neustarten einer Aktivitäts auftreten würden. Um sicherzustellen, dass eine Anwendung ist mit der Reaktionsfähigkeit und auch bei Änderungen an der Konfiguration führt, ist es jedoch wichtig, dass sie so schnell wie möglich behandelt werden. Aus diesem Grund bietet Android eine bestimmte API, die verwendet werden kann, um den Zustand beizubehalten, während Änderungen an der Konfiguration.
 Ich werde Dies wird später in der [Zustand während der Lebenszyklus verwalten](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle) Abschnitt.
 
 ### <a name="activity-lifecycle-methods"></a>Aktivität Lebenszyklusmethoden
 
-Das Android SDK und durch Erweiterung der Xamarin.Android-Framework, geben Sie ein leistungsfähiges Modell für die Verwaltung des Status von Aktivitäten innerhalb einer Anwendung. Bei einer Aktivität Zustand sich ändert, wird die Aktivität vom Betriebssystem benachrichtigt, die bestimmte Methoden auf die Aktivität aufruft. Das folgende Diagramm veranschaulicht diese Methoden in Beziehung zu der Aktivitätslebenszyklus an:
+Das Android SDK und durch Erweiterung der Xamarin.Android-Framework, geben Sie ein leistungsfähiges Modell für die Verwaltung des Status von Aktivitäten innerhalb einer Anwendung. Bei einer Aktivität Zustand sich ändert, wird die Aktivität vom Betriebssystem benachrichtigt, die bestimmte Methoden auf die Aktivität aufruft. Das folgende Diagramm veranschaulicht diese Methoden in Bezug auf der Aktivitätslebenszyklus an:
 
 [![Aktivität-Lifecycle-Flussdiagramm](images/image2-sml.png)](images/image2.png#lightbox)
 
@@ -117,7 +117,7 @@ Einmal `OnCreate` wurde fertig gestellt wurde, Android ruft `OnStart`.
 Das System ruft [OnResume](https://developer.xamarin.com/api/member/Android.App.Activity.OnResume/) Wenn die Aktivität ist mit der Interaktion mit dem Benutzer beginnen.
 Aktivitäten sollten diese Methode, um Aufgaben wie z. B. überschreiben:
 
--  Langsame Frameraten (eine häufige Aufgabe Spiele erstellen)
+-  Langsame Frameraten (Entwicklung von spielen eine häufige Aufgabe)
 -  Starten von Animationen
 -  Lauschen auf GPS-updates
 -  Alle relevanten Warnungen oder Dialogfelder anzeigen

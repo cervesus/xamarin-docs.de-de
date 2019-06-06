@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 3c525178b5ed1e62774d032c0d317d43cd3f94c1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 84ebe6b12e34a5e84c03b095c3909945e84a17f8
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61377405"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741091"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms-Layouts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/FormsGallery/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 
 _Xamarin.Forms-Layouts werden verwendet, um Benutzeroberflächen-Steuerelemente in visual Strukturen zu erstellen._
 
@@ -116,6 +116,6 @@ Diese Klassen werden aus [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel für Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/FormsGallery/)
+- [Beispiel für Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms-API-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

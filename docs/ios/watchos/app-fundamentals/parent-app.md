@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 74b9243b1b985cba6d815a673d1abed054eda234
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b3a6f45d78c0febb2aacf4f7693bc6e328c3ec0
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61409864"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740957"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Arbeiten mit dem WatchOS übergeordnete Anwendung in Xamarin
 
@@ -35,7 +35,7 @@ Die übergeordnete-App wird manchmal auch als der Container-App bezeichnet.
 
 ## <a name="run-code"></a>Ausführen von Code
 
-Kommunikation zwischen eine Watch-Erweiterung und der übergeordneten iPhone-app wird veranschaulicht, der [GpsWatch Beispiel](https://developer.xamarin.com/samples/GpsWatch).
+Kommunikation zwischen eine Watch-Erweiterung und der übergeordneten iPhone-app wird veranschaulicht, der [GpsWatch Beispiel](https://developer.xamarin.com/samples/monotouch/WatchKit/GpsWatch/).
 Die Watch-Erweiterung kann anfordern, dass die übergeordnete iOS-app können Sie einige Verarbeitungsschritte auf seinen Namen mithilfe der `OpenParentApplication` Methode.
 
 Dies ist besonders nützlich für lang andauernde Aufgaben (einschließlich netzwerkanforderungen): nur das übergeordnete iOS-app nutzen kann, der hintergrundverarbeitung um führen diese Aufgaben aus, und speichern die abgerufenen Daten an einem Speicherort auf der Watch-Erweiterung zugreifen kann.

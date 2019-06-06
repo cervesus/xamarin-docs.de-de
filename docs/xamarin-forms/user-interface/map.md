@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
-ms.openlocfilehash: ddc9d18b57eac099331f0814b5963fb207840380
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 166927f2168015cb4786502d841e01b2faeb0c51
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169563"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741002"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms-Karte
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/WorkingWithMaps/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 
 _Xamarin.Forms nutzt die native APIs-Zuordnung auf jeder Plattform._
 
 Xamarin.Forms.Maps verwendet die systemeigenen Zuordnungs-APIs auf jeder Plattform. Dies bietet eine schnelle, vertraute Maps-Oberfläche für Benutzer, aber das bedeutet, dass einige Konfigurationsschritte erforderlich sind, um die einzelnen Plattformen-API-Anforderungen erfüllen.
 Nach der Konfiguration, die `Map` funktionieren genauso wie alle anderen Xamarin.Forms-Elemente im gemeinsamen Code zu steuern.
 
-Wurde das Map-Steuerelement verwendet die [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) Beispiel unten dargestellt ist.
+Wurde das Map-Steuerelement verwendet die [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/) Beispiel unten dargestellt ist.
 
  [![Karten in diesem Beispiel MobileCRM](map-images/maps-zoom-sml.png "Steuerelement Beispiel")](map-images/maps-zoom.png#lightbox "Map-Steuerelement-Beispiel")
 
@@ -70,7 +70,7 @@ Auf einigen Plattformen sind zusätzliche Konfigurationsschritte erforderlich, b
 
 ### <a name="ios"></a>iOS
 
-Für den Zugriff auf Standortdienste unter iOS, müssen Sie die folgenden Schlüssel in festlegen **"Info.plist"**:
+Für den Zugriff auf Standortdienste unter iOS, müssen Sie die folgenden Schlüssel in festlegen **"Info.plist"** :
 
 - iOS 11
     - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – für die Verwendung von ortungsdienste, wenn die app verwendet wird
@@ -298,6 +298,6 @@ Die folgenden Screenshots zeigen eine [ `Map` ](xref:Xamarin.Forms.Maps.Map) Anz
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)
+- [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 - [Zuordnen von benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)

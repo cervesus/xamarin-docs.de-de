@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 81bb4e302f81b58eec91ea2a2aef985adbf72e2c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 12e7e31cda9818a3cb2e2efc331a0be5d0c334e5
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285290"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740850"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
-Die [GridViewPager](https://developer.xamarin.com/samples/GridViewPager/) Beispiel veranschaulicht, wie das Direct2D-Auswahl-navigationsmuster für Android Wear zu implementieren.
+Die [GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/) Beispiel veranschaulicht, wie das Direct2D-Auswahl-navigationsmuster für Android Wear zu implementieren.
 
 ![Beispielscreenshot der GridViewPager auf einem quadratischen display](gridviewpager-images/gridviewpager.png)
 
@@ -49,4 +49,4 @@ pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
 
 - [Google 2D-Auswahl-doc](https://developer.android.com/training/wearables/ui/2d-picker.html)
 - [Android.Support.wearable-Dokumentation](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-- [GridViewPager (Beispiel)](https://developer.xamarin.com/samples/GridViewPager/)
+- [GridViewPager (Beispiel)](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f087e4ce8fac2d86d45b6a27dc00c3fe4ad18db
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 264bdcc9a7a0d73ebe3385246ee6dfae3d9a850f
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61412749"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740997"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>Arbeiten mit WatchOS zur Navigation in Xamarin
 
@@ -53,7 +53,7 @@ Präsentiert von Szenen wie einen Stapel, der über zurück navigiert, ähnlich 
 
 Navigieren wie bei iOS, eine links-Edge-wischgeste wieder an den übergeordneten Controller in einem Stapel für die hierarchische Navigation.
 
-Sowohl die [WatchKitCatalog](https://developer.xamarin.com/samples/WatchKitCatalog) und [WatchTables](https://developer.xamarin.com/samples/WatchTables) Beispiele umfassen die hierarchische Navigation.
+Sowohl die [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) und [WatchTables](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/) Beispiele umfassen die hierarchische Navigation.
 
 ### <a name="pushing-and-popping-in-code"></a>Mithilfe von Push übertragen und entfernt wurde, im Code
 
