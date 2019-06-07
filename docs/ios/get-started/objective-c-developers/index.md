@@ -1,14 +1,19 @@
 ---
 title: Xamarin für Objective-C-Entwickler
-description: 'In diesem Dokument wird Xamarin.iOS für Objective-C-Entwickler erläutert. Es enthält Links zu Leitfaden, die den Übergang von Objective-C zu C#, das Einbinden einer Objective-C-Bibliothek für die Verwendung in C# und das Erstellen einer plattformübergeifenden mobilen App beschreiben.'
+description: In diesem Dokument wird Xamarin.iOS für Objective-C-Entwickler erläutert. Es enthält Links zu Leitfaden, die den Übergang von Objective-C zu C#, das Einbinden einer Objective-C-Bibliothek für die Verwendung in C# und das Erstellen einer plattformübergeifenden mobilen App beschreiben.
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
+ms.openlocfilehash: 949958387ab710cb671cd9874bb9062227f3e3b8
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394668"
 ---
-
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin für Objective-C-Entwickler
 
 Xamarin bietet einen Pfad für Entwickler, die iOS ansteuern, um ihren Code für die Benutzeroberfläche zu der plattformagnostischen Programmiersprache C# zu verschieben. So kann er überall verwendet werden, wo C# verfügbar ist, einschließlich Android über Xamarin.Android und den verschiedenen Arten von Windows. Nur weil Sie C# mit Xamarin verwenden, bedeutet dies nicht, dass Sie nicht die vorhandenen Fähigkeiten und den Objective-C-Code nutzen können. Wenn Sie Objective-C kennen, macht Sie dies in der Tat zu einem besseren Xamarin.iOS-Entwickler, da Xamarin alle bekannten nativen iOS- und OS X-Plattform-APIs verfügbar macht, wie UIKit, Core Animation, Core Foundation und Core Graphics, um nur einige zu nennen. Darüber hinaus erhalten Sie die Leistung der C#-Sprache, einschließlich Features wie LINQ und Generics sowie umfangreiche Bibliotheken der .NET-Basisklasse, die Sie in Ihren nativen Anwendungen verwenden können.
@@ -24,7 +29,7 @@ Dies beschränkt sich nicht nur auf Nicht-Benutzeroberflächencode. Bindungen k�
 Auf unserer Dokumentationsseite finden Sie viele Informationen, die Ihnen den Übergang zu Xamarin erleichtern sollen und zeigen, wie Sie mit Ihrem vorhandenen Wissen C#-Code integrieren. Zu Beginn ein paar Highlights:
 
 -   [C# Primer for Objective-C Developers (Einführung in C# für Objective-C-Entwickler:)](primer.md) Eine kurze Einführung für Objective-C-Entwickler, die zu Xamarin und zur C#-Sprache wechseln möchten. 
--   [Walkthrough: Binding an Objective-C Library (Exemplarische Vorgehensweise: Bindung einer Objective-C-Bibliothek:)](~/ios/platform/binding-objective-c/walkthrough.md) Eine ausführliche Anleitung zur Wiederverwendung von existierendem Objective-C-Code in einer Anwendung von Xamarin.iOS. 
+-   [Exemplarische Vorgehensweise: Bindung einer Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md): Eine Schrittanleitung zur Wiederverwendung von vorhandenem Objective-C-Code in einer Xamarin.iOS-Anwendung. 
 
 
 ## <a name="binding-objective-c"></a>Binden von Objective-C
@@ -33,4 +38,4 @@ Sobald Sie den Vergleich von C# mit Objective-C verstanden und sich durch die ob
 
 ## <a name="cross-platform-development"></a>Plattformübergreifende Entwicklung
 
-Nachdem Sie zu Xamarin.iOS gewechselt sind, sollten Sie die plattformübergreifende Anleitung ausprobieren, die auch Fallstudien von Referenzanwendungen enthalten, die wir entwickelt haben. Zudem finden Sie bewährte Methoden für das Erstellen von wiederverwendbarem plattformübergreifendem Code im Abschnitt [Building Cross Platform Applications section (Erstellen von plattformübergreifenden Anwendungen)](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md).
+Nach dem Wechsel zu Xamarin.iOS sollten Sie sich die plattformübergreifende Anleitung ansehen. Diese enthält auch Fallstudien mit von uns entwickelten Referenzanwendungen sowie bewährte Methoden für das Erstellen von wiederverwendbarem plattformübergreifendem Code im Abschnitt [Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md).
