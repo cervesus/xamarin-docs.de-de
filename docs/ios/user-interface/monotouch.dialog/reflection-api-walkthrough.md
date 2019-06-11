@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ecbda48ac7b175503701aa64f001c0138cfb423a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2ac828c8efca3a1a5c54d4dcdaf175ebfc63fdc2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61217398"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827305"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Erstellen einer Xamarin.iOS-Anwendung mithilfe der Reflektions-API
 
@@ -148,9 +148,7 @@ Dieser Artikel enthält eine exemplarische Vorgehensweise für die Reflektions-A
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MTDReflectionWalkthrough (sample)](https://developer.xamarin.com/samples/MTDReflectionWalkthrough/)
-- [Screencast - Miguel de Icaza erstellt ein iOS-Anmeldebildschirm mit MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [Screencast - problemlos iOS Benutzeroberflächen mit MonoTouch.Dialog erstellen](http://youtu.be/j7OC5r8ZkYg)
+- [MTDReflectionWalkthrough (sample)](https://developer.xamarin.com/samples/monotouch/MTDReflectionWalkthrough/)
 - [Einführung in MonoTouch-Dialogfeld](~/ios/user-interface/monotouch.dialog/index.md)
 - [Exemplarische Vorgehensweise Elemente-API](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Exemplarische Vorgehensweise JSON-Element](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)

@@ -6,12 +6,12 @@ ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 84f825c19aa1ac08fbcf3e732077304218768bcc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2227e2f56071b92c209c5d9fda994faa5a97a03d
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61371223"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827772"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Mithilfe des Tools MonoGame-Pipeline
 
@@ -69,7 +69,7 @@ Nachdem das Projekt erstellt wurde, führen wir sie, um sicherzustellen, dass er
 
 ## <a name="creating-a-content-project"></a>Erstellen ein Inhaltsprojekt.
 
-Nun, da wir ein Spiele-Projekt haben, können wir ein MonoGame-Pipeline-Projekt erstellen. Dazu in der Select MonoGame Pipelinetool **Datei > neu...**  und navigieren Sie zum Ordner "Content" Ihres Projekts. Für Android, befindet sich der Ordner unter **[Projekt root]\BouncingGame.Android\Assets\Content\\**. Für iOS, befindet sich der Ordner unter **[Projekt root]\BouncingGame.iOS\Content\\**.
+Nun, da wir ein Spiele-Projekt haben, können wir ein MonoGame-Pipeline-Projekt erstellen. Dazu in der Select MonoGame Pipelinetool **Datei > neu...**  und navigieren Sie zum Ordner "Content" Ihres Projekts. Für Android, befindet sich der Ordner unter **[Projekt root]\BouncingGame.Android\Assets\Content\\** . Für iOS, befindet sich der Ordner unter **[Projekt root]\BouncingGame.iOS\Content\\** .
 
 Ändern der **Dateiname** zu **ContentProject** , und klicken Sie auf die **speichern** Schaltfläche:
 
@@ -127,7 +127,7 @@ Wir können .spritefont-Datei über das Tool der MonoGame-Pipeline erstellen. Co
 
 ![](walkthrough-images/browsetofonts.png "Navigieren Sie zu dem Inhaltsordner ein, und wählen Sie den Ordner für die Schriftarten, und klicken Sie auf OK")
 
-Um eine neue .sprintefont Datei hinzuzufügen, mit der rechten Maustaste auf den Ordner Schriftarten, und wählen Sie **hinzufügen > Neues Element...**, wählen die **SpriteFont Beschreibung** aus, geben Sie den Namen **arial 36**, und klicken Sie auf **Ok**. CocosSharp erfordert spezifische Benennung von Schriftartdateien – sie muss im Format [FontType]-[FontSize]. Wenn eine Schriftart dieses Namensformat nicht übereinstimmt, wird es nicht von CocosSharp zur Laufzeit geladen werden.
+Um eine neue .sprintefont Datei hinzuzufügen, mit der rechten Maustaste auf den Ordner Schriftarten, und wählen Sie **hinzufügen > Neues Element...** , wählen die **SpriteFont Beschreibung** aus, geben Sie den Namen **arial 36**, und klicken Sie auf **Ok**. CocosSharp erfordert spezifische Benennung von Schriftartdateien – sie muss im Format [FontType]-[FontSize]. Wenn eine Schriftart dieses Namensformat nicht übereinstimmt, wird es nicht von CocosSharp zur Laufzeit geladen werden.
 
 ![](walkthrough-images/image15.png "Wenn eine Schriftart nicht dieses Namensformat übereinstimmt, die sie nicht von CocosSharp zur Laufzeit geladen werden")
 
@@ -169,7 +169,7 @@ Zunächst fügen wir die Dateien zu Ihrem Projekt. In Visual Studio für Mac erw
 
 ### <a name="adding-gamescenecs"></a>Hinzufügen von **GameScene.cs**
 
-Wir erstellen eine Klasse namens `GameScene,` unsere Objekte Sprite und den Text enthält. Zu diesem Zweck mit der Maustaste auf die **BouncingGame** (nicht BouncingGame.Android) Projekt, und wählen Sie **hinzufügen > neuen Datei...**. Wählen Sie die **allgemeine** Kategorie der **leere Klasse** aus, und geben Sie den Namen **GameScene**.
+Wir erstellen eine Klasse namens `GameScene,` unsere Objekte Sprite und den Text enthält. Zu diesem Zweck mit der Maustaste auf die **BouncingGame** (nicht BouncingGame.Android) Projekt, und wählen Sie **hinzufügen > neuen Datei...** . Wählen Sie die **allgemeine** Kategorie der **leere Klasse** aus, und geben Sie den Namen **GameScene**.
 
 Nach der Erstellung ändern wir die `GameScene.cs` -Datei den folgenden Code:
 
@@ -243,5 +243,5 @@ In dieser exemplarischen Vorgehensweise wurde gezeigt, wie Sie mit, dass das Pip
 
 - [MonoGame-Downloads](http://www.monogame.net/downloads/)
 - [MonoGame-Pipeline-Dokumentation](http://www.monogame.net/documentation/?page=Pipeline)
-- [BouncingGame-Projekt für Android (Beispiel) starten](https://developer.xamarin.com/samples/BouncingGameCompleteAndroid/)
+- [BouncingGame-Projekt für Android (Beispiel) starten](https://developer.xamarin.com/samples/monodroid/BouncingGameCompleteAndroid/)
 - [ball.png Graphic (sample)](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/ball.png?raw=true)

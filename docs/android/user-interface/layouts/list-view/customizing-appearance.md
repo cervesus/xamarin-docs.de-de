@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: fef81fb5e5d2de79508b43a5612bf56af68d0772
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c8a6e7a9abf9e8430253b9402d69f43744bf93c0
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178434"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827669"
 ---
 # <a name="customizing-a-listviews-appearance"></a>Anpassen einer ListView-Darstellung
 
@@ -387,6 +387,6 @@ Android versucht wird, zur Verbesserung der Leistung von `ListView` Durchführen
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [BuiltInViews (Beispiel)](https://developer.xamarin.com/samples/BuiltInViews/)
-- [AccessoryViews (Beispiel)](https://developer.xamarin.com/samples/AccessoryViews/)
-- [CustomRowView (Beispiel)](https://developer.xamarin.com/samples/CustomRowView/)
+- [BuiltInViews (Beispiel)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
+- [AccessoryViews (Beispiel)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
+- [CustomRowView (Beispiel)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)

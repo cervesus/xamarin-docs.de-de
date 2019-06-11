@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 05a2187a5e8dc010f04e89757b566eaf44cb5fd6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 76f98f1e660f22ec25c48407f2e87cec60ff12ef
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61181272"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827684"
 ---
 # <a name="location-services"></a>Ortungsdienste
 
@@ -52,7 +52,7 @@ Es gibt zwei Berechtigungen verfügbar &ndash; je nach den Anforderungen Ihrer A
 
 Für apps, die Ziel-API-Version 21 (Android 5.0 Lollipop) oder höher verwenden, können Sie aktivieren `ACCESS_FINE_LOCATION` und auf Geräten, die keine GPS-Hardware weiterhin ausgeführt. Wenn Ihre app GPS-Hardware erforderlich ist, sollten Sie explizit Hinzufügen einer `android.hardware.location.gps` `uses-feature` Element, das Android-Manifest. Weitere Informationen finden Sie im Android [verwendet-Feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) Elementverweis.
 
-Um die Berechtigungen festgelegt haben, erweitern Sie die **Eigenschaften** Ordner in der **Lösungspad** und doppelklicken Sie auf **"androidmanifest.xml"**. Die Berechtigungen werden er unter **erforderliche Berechtigungen**:
+Um die Berechtigungen festgelegt haben, erweitern Sie die **Eigenschaften** Ordner in der **Lösungspad** und doppelklicken Sie auf **"androidmanifest.xml"** . Die Berechtigungen werden er unter **erforderliche Berechtigungen**:
 
 [![Screenshot der Einstellungen für Android-Manifest erforderliche Berechtigungen](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
@@ -355,8 +355,8 @@ Dieses Handbuch behandelt die Position des Benutzers mit der Speicherortdienst f
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Speicherort (Beispiel)](https://developer.xamarin.com/samples/Location/)
-- [FusedLocationProvider (Beispiel)](https://developer.xamarin.com/samples/FusedLocationProvider/)
+- [Speicherort (Beispiel)](https://developer.xamarin.com/samples/monodroid/Location/)
+- [FusedLocationProvider (Beispiel)](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
 - [Google Play-Dienste](https://developer.android.com/google/play-services/index.html)
 - [Kriterien-Klasse](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [LocationManager-Klasse](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)

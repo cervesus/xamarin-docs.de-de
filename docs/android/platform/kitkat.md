@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f957bd5b361d7287353542186916c7f934ee0490
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60950129"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827782"
 ---
 # <a name="kitkat-features"></a>KitKat-Funktionen
 
@@ -564,7 +564,7 @@ class HceService : HostApduService
 }
 ```
 
-Der oben aufgeführten Dienst bietet eine Möglichkeit der NFC-Reader, der mit der Anwendung interagieren, aber der NFC-Reader wurde noch keine Möglichkeit, zu wissen, ob dieser Dienst die NFC-Karte emuliert wird, die er suchen muss. Damit können den NFC-Reader, der den Dienst zu identifizieren, wir können weist dem Dienst eine eindeutige *Anwendung-ID (AID)*. Wir geben Sie die Hilfe, zusammen mit anderen Metadaten über den HCE-Dienst, in einer XML-Ressourcendatei registriert mit der `MetaData` Attribut (Siehe obigen Codebeispiel). Diese Ressourcendatei gibt einen oder mehrere AID - Bezeichner-Zeichenfolgen im Hexadezimalformat, die die Unterstützung von Lesegeräten, eine oder mehrere NFC entsprechen:
+Der oben aufgeführten Dienst bietet eine Möglichkeit der NFC-Reader, der mit der Anwendung interagieren, aber der NFC-Reader wurde noch keine Möglichkeit, zu wissen, ob dieser Dienst die NFC-Karte emuliert wird, die er suchen muss. Damit können den NFC-Reader, der den Dienst zu identifizieren, wir können weist dem Dienst eine eindeutige *Anwendung-ID (AID)* . Wir geben Sie die Hilfe, zusammen mit anderen Metadaten über den HCE-Dienst, in einer XML-Ressourcendatei registriert mit der `MetaData` Attribut (Siehe obigen Codebeispiel). Diese Ressourcendatei gibt einen oder mehrere AID - Bezeichner-Zeichenfolgen im Hexadezimalformat, die die Unterstützung von Lesegeräten, eine oder mehrere NFC entsprechen:
 
 ```xml
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
@@ -713,6 +713,6 @@ In diesem Artikel einige der neuen APIs zur Verfügung, in Android 4.4 (API-Eben
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [KitKat-Beispiel](https://developer.xamarin.com/samples/KitKat/)
+- [KitKat-Beispiel](https://developer.xamarin.com/samples/monodroid/KitKat/)
 - [Android 4.4 APIs](https://developer.android.com/about/versions/android-4.4.html)
 - [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

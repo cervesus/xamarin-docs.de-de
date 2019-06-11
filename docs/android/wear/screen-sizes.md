@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 9fc22a3c08b60a8474b006f1c9225155b9705507
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a9b71fb069a428d9bec03481c986f4deb4c904ea
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285822"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827732"
 ---
 # <a name="working-with-screen-sizes"></a>Arbeiten mit Bildschirmen
 
@@ -27,7 +27,7 @@ Beachten Sie, dass einige der anderen Clientbibliotheks-Steuerelemente unterstü
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-Finden Sie unter den [WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/) sehen Sie, wie Bildschirmtyps erkennen und ein anderes Layout für die einzelnen Typen angezeigt.
+Finden Sie unter den [WatchViewStub](https://developer.xamarin.com/samples/monodroid/wear/WatchViewStub/) sehen Sie, wie Bildschirmtyps erkennen und ein anderes Layout für die einzelnen Typen angezeigt.
 
 Die wichtigsten Layoutdatei enthält eine `android.support.wearable.view.WatchViewStub` das verweist verschiedene Layouts für rechteckige und runden Bildschirme, die mithilfe der `app:rectLayout` und `app:roundLayout` Attribute:
 

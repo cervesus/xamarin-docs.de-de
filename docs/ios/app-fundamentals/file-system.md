@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
-ms.openlocfilehash: 09e05fcfe10a994e14aa605b203ea67efae80d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 10f4f53e71a47521076538bf9eb12b86c1e478a6
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61393614"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827515"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Dateisystemzugriff in Xamarin.iOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/FileSystemSampleCode/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
 
 Können Sie Xamarin.iOS und `System.IO` Klassen in der *.NET Basisklassenbibliothek (BCL)* auf das iOS-Dateisystem zugreifen. Mithilfe der `File`-Klasse können Sie Dateien erstellen, löschen und lesen, und mit der `Directory`-Klasse können Sie den Inhalt der Verzeichnisse erstellen, löschen oder auflisten. Sie können auch `Stream` Unterklassen, die ein höheres Maß an Kontrolle über Dateioperationen (z. B. Komprimierung oder Position Suchen innerhalb einer Datei) bereitstellen können.
 
@@ -319,7 +319,7 @@ Da App-Erweiterungen als Teil einer hostanwendung (im Gegensatz zu ihren enthalt
 
 ### <a name="configure-an-app-group"></a>Konfigurieren Sie eine App-Gruppe
 
-Der freigegebene Speicherort erfolgt über eine [App-Gruppe](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19), die konfiguriert wird, der **Zertifikate, Bezeichner & Profile** im Abschnitt [iOS Developer Center](https://developer.apple.com/devcenter/ios/). Dieser Wert muss außerdem in jedem Projekt auf die verwiesen werden **"Entitlements.plist"**.
+Der freigegebene Speicherort erfolgt über eine [App-Gruppe](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19), die konfiguriert wird, der **Zertifikate, Bezeichner & Profile** im Abschnitt [iOS Developer Center](https://developer.apple.com/devcenter/ios/). Dieser Wert muss außerdem in jedem Projekt auf die verwiesen werden **"Entitlements.plist"** .
 
 Informationen zum Erstellen und konfigurieren eine App-Gruppe finden Sie in der [App-Gruppen-Funktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Guide.
 
@@ -356,6 +356,6 @@ In diesem Artikel haben, dass Dateisystemvorgänge mit Xamarin.iOS an eine belie
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Dateisystem-Beispielcode](https://developer.xamarin.com/samples/FileSystemSampleCode/)
+- [Dateisystem-Beispielcode](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
 - [Programmierhandbuch für Datei-System](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
 - [Registrieren die Datei Typen Ihrer App unterstützt](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

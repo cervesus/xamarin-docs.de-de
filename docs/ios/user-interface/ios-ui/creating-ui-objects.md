@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c24b2c2f0742ee2c6814d9821f3c0603c6e48a96
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: 65ebbddfa1a315a478ceb43162b3c80eba2d8cc1
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804930"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827802"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Erstellen von Benutzeroberflächenobjekten in Xamarin.iOS
 
@@ -80,7 +80,7 @@ Beim Entwerfen der Benutzeroberflächenautomatisierungs mit Interface Builder m�
 
  [![](creating-ui-objects-images/image6a.png "Assistenten-Editor-Schaltfläche")](creating-ui-objects-images/image6a.png#lightbox)
 
-Klicken Sie auf ein Benutzerobjekt-Schnittstelle. Klicken Sie dann **Steuerelement Drag &** in der h-Datei. Um **Steuerelement Drag &**, halten Sie die STRG-Taste und halten Sie über die Benutzer-Schnittstellenobjekts, das Sie für den Ausgang (oder die Aktion) erstellen. Halten Sie gedrückt halten Sie die STRG-Taste und Sie in der Headerdatei ziehen. "Fertig stellen" unten ziehen die `@interface` Definition. Mit einer Beschriftung einfügen Outlet oder Outlet-Auflistung, sollte eine blaue Linie angezeigt werden, wie im folgenden Screenshot dargestellt.
+Klicken Sie auf ein Benutzerobjekt-Schnittstelle. Klicken Sie dann **Steuerelement Drag &** in der h-Datei. Um **Steuerelement Drag &** , halten Sie die STRG-Taste und halten Sie über die Benutzer-Schnittstellenobjekts, das Sie für den Ausgang (oder die Aktion) erstellen. Halten Sie gedrückt halten Sie die STRG-Taste und Sie in der Headerdatei ziehen. "Fertig stellen" unten ziehen die `@interface` Definition. Mit einer Beschriftung einfügen Outlet oder Outlet-Auflistung, sollte eine blaue Linie angezeigt werden, wie im folgenden Screenshot dargestellt.
 
 Wenn Sie die auf freigeben, Sie aufgefordert werden, einen Namen für die Outlet angeben, die verwendet werden wird, zum Erstellen, einer C# -Eigenschaft, die im Code verwiesen werden kann:
 
@@ -173,4 +173,4 @@ Wenn der Benutzeroberflächenobjekte programmgesteuert hinzugefügt werden eine 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Steuerelemente (Beispiel)](https://developer.xamarin.com/samples/Controls/)
+- [Steuerelemente (Beispiel)](https://developer.xamarin.com/samples/monotouch/Controls/)

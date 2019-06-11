@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5d1bb5ab636cd7527a560332a9890e9907fac454
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 35bac91e54181753bd1f3fd8b4cf0b851bfa1882
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61295759"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827495"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>Änderungen an StoreKit unter iOS 6
 
@@ -522,7 +522,7 @@ In diesem Artikel wurden zwei neue Features des Store Kit in iOS6: kaufen, iTune
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [StoreKit (Beispiel)](https://developer.xamarin.com/samples/StoreKit/)
+- [StoreKit (Beispiel)](https://developer.xamarin.com/samples/monotouch/StoreKit/)
 - [In-App-Käufe](~/ios/platform/in-app-purchasing/index.md)
 - [Frameworkverweis StoreKit](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController-Klassenreferenz](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)

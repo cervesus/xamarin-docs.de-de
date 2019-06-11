@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 3b81ba51a0fbdf4c684ca602cb083f8da08c7d6a
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977982"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827482"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Objective-C-Bibliotheken
 
@@ -44,7 +44,7 @@ Sie können dazu in Visual Studio für Mac auswählen des Projekttyps **iOS > Bi
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Die einfachste Möglichkeit zum Erstellen einer Bindung ist einer Xamarin.iOS-Bindung-Projekt zu erstellen.
-Sie können dazu Visual Studio unter Windows durch Auswählen des Projekttyps **Visual C# > iOS > Bindungsbibliothek (iOS)**:
+Sie können dazu Visual Studio unter Windows durch Auswählen des Projekttyps **Visual C# > iOS > Bindungsbibliothek (iOS)** :
 
 [![](objective-c-libraries-images/00vs-sml.png "iOS-Bindungsbibliothek iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
@@ -1403,4 +1403,4 @@ In der Vergangenheit haben wir angefordert, kopieren das Protokoll auf allen Imp
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel einer](https://developer.xamarin.com/samples/BindingSample/)
+- [Beispiel einer](https://developer.xamarin.com/samples/monotouch/BindingSample/)

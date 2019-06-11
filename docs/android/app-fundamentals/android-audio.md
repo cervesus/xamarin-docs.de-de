@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: a1a9dd06fb3cd6899dd3a564072bb63e413edf22
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f34a76879c2a38ec8253d8f3dd3230f03d9af32e
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61022615"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827321"
 ---
 # <a name="android-audio"></a>Android Audio
 
@@ -38,7 +38,7 @@ Android bietet umfangreiche Unterstützung für Multimedia. In diesem Artikel un
 
 Für diesen Leitfaden benötigen Android 2.0 (API-Ebene-5) oder höher. Beachten Sie, dass Audio auf Android-Debuggen auf einem Gerät erfolgen muss.
 
-Es ist erforderlich, die Anforderung der `RECORD_AUDIO` Berechtigungen in **"androidmanifest.xml"**:
+Es ist erforderlich, die Anforderung der `RECORD_AUDIO` Berechtigungen in **"androidmanifest.xml"** :
 
 ![Erforderliche Abschnitt "Berechtigungen" des Android-Manifest mit Datensatz\_AUDIO aktiviert](android-audio-images/image01.png)
 
@@ -426,7 +426,7 @@ Android-Betriebssystems bietet ein leistungsfähiges Framework für die Wiederga
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Arbeiten mit Audio (Beispiel)](https://developer.xamarin.com/samples/Example_WorkingWithAudio/)
+- [Arbeiten mit Audio (Beispiel)](https://developer.xamarin.com/samples/monodroid/Example_WorkingWithAudio/)
 - [MediaPlayer](https://developer.xamarin.com/api/type/Android.Media.MediaPlayer/)
 - [Medien-Aufzeichnung](https://developer.xamarin.com/api/type/Android.Media.MediaRecorder/)
 - [Audio Manager](https://developer.xamarin.com/api/type/Android.Media.AudioManager/)
