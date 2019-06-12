@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 2ed14752cc5906b68d277b4f492875f7e281b053
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7b66005ff64763d68dc6101985e514fa56cf896d
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61029926"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827376"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Schieberegler, Schalter und segmentierte Steuerelemente in Xamarin.iOS
 
@@ -95,5 +95,5 @@ Anzumerken ist, dass die segmentierte Steuerelementstil in iOS7 veraltet ist und
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Steuerelemente (Beispiel)](https://developer.xamarin.com/samples/Controls/)
+- [Steuerelemente (Beispiel)](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [Warnungscontroller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)
