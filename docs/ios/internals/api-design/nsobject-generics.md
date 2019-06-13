@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 512280e9c298cfbcea6f693b0691236fd1cf5a5f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: becdd842f46cc7100bd7d9a6fd7347b541685c35
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036473"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039630"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Generische Unterklassen von NSObject in Xamarin.iOS
 
@@ -107,7 +107,7 @@ Instanziierung von generischen Typen von Objective-C ist nicht zulässig. Dies t
 
 Betrachten Sie diese Klassendefinition, die einen Konstruktor verfügbar macht, die akzeptiert eine `IntPtr` (die Methode zum Erstellen von Xamarin.iOS ein C# Objekt von einer nativen Objective-C-Instanz):
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}
@@ -121,7 +121,7 @@ Ist dies liegt daran, dass Objective-C kein Konzept für generische Typen hat un
 
 Dieses Problem kann umgangen werden, indem Sie eine spezielle Unterklasse des generischen Typs erstellen.   Zum Beispiel:
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}

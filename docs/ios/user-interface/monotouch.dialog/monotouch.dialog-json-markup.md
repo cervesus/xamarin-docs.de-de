@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 2bd45c5482a8f0367bffa21f301bb631c3429a21
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bc6842871a2f59c9851e90adbc6609707a7ecd1f
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61395156"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039661"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog-JSON-Markup
 
@@ -20,58 +20,58 @@ Diese Seite beschreibt das Json-Markup, das von der MonoTouch.Dialog akzeptiert 
 
 Lassen Sie uns mit einem Beispiel starten. Im folgenden finden eine vollständige Json-Datei, die an JsonElement übergeben werden kann.
 
-```csharp
+```json
 {     
-  "title": "Json Sample",
-  "sections": [ 
-      {
-          "header": "Booleans",
-          "footer": "Slider or image-based",
-          "id": "first-section",
-          "elements": [
-              { 
-                  "type" : "boolean",
-                  "caption" : "Demo of a Boolean",
-                  "value"   : true
-              }, {
-                  "type": "boolean",
-                  "caption" : "Boolean using images",
-                  "value"   : false,
-                  "on"      : "favorite.png",
-                  "off"     : "~/favorited.png"
-              }, {
-                      "type": "root",
-                      "title": "Tap for nested controller",
-                      "sections": [ {
-                         "header": "Nested view!",
-                         "elements": [
-                           {
-                             "type": "boolean",
-                             "caption": "Just a boolean",
-                             "id": "the-boolean",
-                             "value": false
-                           },
-                           {
-                             "type": "string",
-                             "caption": "Welcome to the nested controller"
-                           }
-                         ]
-                       }
-                     ]
-                   }
-          ]
-      }, {
-          "header": "Entries",
-          "elements" : [
-              {
-                  "type": "entry",
-                  "caption": "Username",
-                  "value": "",
-                  "placeholder": "Your account username"
-              }
-          ]
-      }
-  ]
+    "title": "Json Sample",
+    "sections": [ 
+        {
+            "header": "Booleans",
+            "footer": "Slider or image-based",
+            "id": "first-section",
+            "elements": [
+                { 
+                    "type": "boolean",
+                    "caption": "Demo of a Boolean",
+                    "value": true
+                }, {
+                    "type": "boolean",
+                    "caption": "Boolean using images",
+                    "value": false,
+                    "on": "favorite.png",
+                    "off": "~/favorited.png"
+                }, {
+                    "type": "root",
+                    "title": "Tap for nested controller",
+                    "sections": [
+                        {
+                            "header": "Nested view!",
+                            "elements": [
+                                {
+                                    "type": "boolean",
+                                    "caption": "Just a boolean",
+                                    "id": "the-boolean",
+                                    "value": false
+                                }, {
+                                    "type": "string",
+                                    "caption": "Welcome to the nested controller"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, {
+            "header": "Entries",
+            "elements" : [
+                {
+                    "type": "entry",
+                    "caption": "Username",
+                    "value": "",
+                    "placeholder": "Your account username"
+                }
+            ]
+        }
+    ]
 }
 ```
 
@@ -86,7 +86,7 @@ var jsonElement = JsonElement.FromFile ("demo.json");
 
 var firstSection = jsonElement ["first-section"] as Section;
 
-var theBoolean = jsonElement ["the-boolean"] as BooleanElement
+var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 ```
 
  <a name="Root_Element_Syntax" />
@@ -192,38 +192,38 @@ Zeichenfolgenelementen können verwendet werden als Schaltflächen durch die Ber
 
 Die Rendern von Elementen basieren auf der C# StringElement und StyledStringElement und sie können Informationen auf verschiedene Weise zu rendern, und es ist möglich, Berichte auf verschiedene Weise zu rendern. Die einfachste Elemente können wie folgt erstellt werden:
 
-```csharp
+```json
 {
-        "type": "string",
-        "caption": "Json Serializer",
+    "type": "string",
+    "caption": "Json Serializer"
 }
 ```
 
 Dadurch sehen Sie eine einfache Zeichenfolge mit allen Standardeinstellungen: Schriftart, Hintergrund, Textfarbe und Ergänzungen. Es ist möglich, Aktionen, die diese Elemente einbinden und machen sie das Verhalten wie Schaltflächen durch Festlegen der `"ontap"` Eigenschaft oder das `"onaccessorytap"` Eigenschaften:
 
-```csharp
+```json
 {
-    "type":    "string",
-        "caption": "View Photos",
-        "ontap:    "Acme.PhotoLibrary.ShowPhotos"
+    "type": "string",
+    "caption": "View Photos",
+    "ontap": "Acme.PhotoLibrary.ShowPhotos"
 }
 ```
 
 Die oben genannten wird die Methode "ShowPhotos" in der Klasse "Acme.PhotoLibrary" aufgerufen. Die `"onaccessorytap"` ist ähnlich, aber es werden nur aufgerufen, wenn der Benutzer auf die Zugriffsmethode anstatt zu tippen auf die Zelle tippt. Um dies zu ermöglichen, müssen Sie auch die Zugriffsmethode festlegen:
 
-```csharp
+```json
 {
-    "type":     "string",
-        "caption":  "View Photos",
-        "ontap:     "Acme.PhotoLibrary.ShowPhotos",
-        "accessory: "detail-disclosure",
-        "onaccessorytap": "Acme.PhotoLibrary.ShowStats"
+    "type": "string",
+    "caption": "View Photos",
+    "ontap": "Acme.PhotoLibrary.ShowPhotos",
+    "accessory": "detail-disclosure",
+    "onaccessorytap": "Acme.PhotoLibrary.ShowStats"
 }
 ```
 
 Rendern von Elementen kann zwei Zeichenfolgen gleichzeitig angezeigt, eine ist die Beschriftung und einem anderen ist der Wert. Wie diese Zeichenfolgen gerendert werden abhängig von den Stil, können Sie dies mithilfe der `"style"` Eigenschaft. Standardmäßig wird die Beschriftung auf der linken Seite, und der Wert auf der rechten Seite angezeigt. Stil für Weitere Informationen finden Sie im Abschnitt. Farben werden codiert mit dem '#'-Symbol, gefolgt von Hexadezimalzahlen, die die Werte für die roten, grünen, blauen und vielleicht alpha-Werte darstellen. Die Inhalte können in Kurzform (3 oder 4 hexadeximale Zahlen) codiert werden, die RGB oder RGBA-Werte darstellt. Oder die Langform (6 oder 8 Ziffern) die RGB oder RGBA-Werte darstellen. Die Kurzversion ist eine Kurzform, auf das gleiche hexadezimale Zeichen doppelt schreiben. Daher ist die Konstante "#1bc"-Markierungen Rot = 0x11, Grün = 0xbb und Blau = 0xcc. Wenn der alpha-Wert nicht vorhanden ist, ist die Farbe nicht transparent. Einige Beispiele:
 
-```csharp
+```json
 "background": "#f00"
 "background": "#fa08f880"
 ```
@@ -364,19 +364,19 @@ Der sekundäre Wert, der Rendering-Element angezeigt werden soll. Das Layout der
 
 Boolesche Elementen sollten legen Sie den Typ auf `"bool"`, darf eine `"caption"` zum Anzeigen und die `"value"` auf "true" oder "false" festgelegt ist. Wenn die `"on"` und `"off"` Eigenschaften festgelegt werden, sie wird angenommen, dass Images. Die Images sind relativ zum aktuellen Arbeitsverzeichnis in der Anwendung aufgelöst. Wenn Sie Relative Paket-Dateien verweisen möchten, können Sie mithilfe der `"~"` als Verknüpfung zu das Verzeichnis für Anwendungspaket darstellen. Z. B. `"~/favorite.png"` werden die favorite.png, die in der Paketdatei enthalten ist. Zum Beispiel:
 
-```csharp
+```json
 { 
-    "type" : "boolean",
-    "caption" : "Demo of a Boolean",
-    "value"   : true
+    "type": "boolean",
+    "caption": "Demo of a Boolean",
+    "value": true
 },
 
 {
     "type": "boolean",
-    "caption" : "Boolean using images",
-    "value"   : false,
-    "on"      : "favorite.png",
-    "off"     : "~/favorited.png"
+    "caption": "Boolean using images",
+    "value": false,
+    "on": "favorite.png",
+    "off": "~/favorited.png"
 }
 ```
 
@@ -394,30 +394,30 @@ Typ kann festgelegt werden entweder `"boolean"` oder `"checkbox"`. Wenn festgele
 
 Sie verwenden die Elemente, damit der Benutzer Daten eingeben kann. Ist der Typ Eintragselemente `"entry"` oder `"password"`. Die `"caption"` -Eigenschaftensatz auf den Text auf der rechten Seite angezeigt und die `"value"` auf den ursprünglichen Wert festgelegt ist, auf den Eintrag festgelegt werden soll. Die `"placeholder"` wird verwendet, um einen Hinweis für dem Benutzer für leere Einträge anzuzeigen (es wird dargestellt ausgegraut). Hier einige Beispiele:
 
-```csharp
+```json
 {
-        "type": "entry",
-        "caption": "Username",
-        "value": "",
-        "placeholder": "Your account username"
+    "type": "entry",
+    "caption": "Username",
+    "value": "",
+    "placeholder": "Your account username"
 }, {
-        "type": "password",
-        "caption": "Password",
-        "value": "",
-        "placeholder": "You password"
+    "type": "password",
+    "caption": "Password",
+    "value": "",
+    "placeholder": "You password"
 }, {
-        "type": "entry",
-        "caption": "Zip Code",
-        "value": "01010",
-        "placeholder": "your zip code",
-        "keyboard": "numbers"
+    "type": "entry",
+    "caption": "Zip Code",
+    "value": "01010",
+    "placeholder": "your zip code",
+    "keyboard": "numbers"
 }, {
-        "type": "entry",
-        "return-key": "route",
-        "caption": "Entry with 'route'",
-        "placeholder": "captialization all + no corrections",
-        "capitalization": "all",
-        "autocorrect": "no"
+    "type": "entry",
+    "return-key": "route",
+    "caption": "Entry with 'route'",
+    "placeholder": "captialization all + no corrections",
+    "capitalization": "all",
+    "autocorrect": "no"
 }
 ```
 
@@ -515,22 +515,22 @@ Darüber hinaus, wenn ein Wert, für festgelegt ist die `"group"` -Eigenschaft d
 
 Die Elementtypen `"datetime"`, `"date"` und `"time"` zum Rendern von Datumsangaben mit Uhrzeiten, Datumsangaben oder Uhrzeiten verwendet werden. Diese Elemente werden als Parameter eine Beschriftung und einem Wert. Der Wert kann in einem beliebigen von der Funktion DateTime.Parse von .NET unterstützten Format geschrieben werden. Beispiel:
 
-```csharp
+```json
 "header": "Dates and Times",
 "elements": [
-        {
-                "type": "datetime",
-                "caption": "Date and Time",
-                "value": "Sat, 01 Nov 2008 19:35:00 GMT"
-        }, {
-                "type": "date",
-                "caption": "Date",
-                "value": "10/10"
-        }, {
-                "type": "time",
-                "caption": "Time",
-                "value": "11:23"
-                }                       
+    {
+        "type": "datetime",
+        "caption": "Date and Time",
+        "value": "Sat, 01 Nov 2008 19:35:00 GMT"
+    }, {
+        "type": "date",
+        "caption": "Date",
+        "value": "10/10"
+    }, {
+        "type": "time",
+        "caption": "Time",
+        "value": "11:23"
+    }                       
 ]
 ```
 
@@ -541,10 +541,10 @@ Die Elementtypen `"datetime"`, `"date"` und `"time"` zum Rendern von Datumsangab
 
 Sie können eine Zelle erstellen, die beim Tippen auf ein, das den Inhalt der angegebenen URL, rendert UIWebView einbetten entweder lokal oder remote mithilfe der `"html"` Typ. Nur zwei Eigenschaften für dieses Element `"caption"` und `"url"`:
 
-```csharp
+```json
 {
-        "type": "html",
-        "caption": "Miguel's blog",
-        "url": "https://tirania.org/blog" 
+    "type": "html",
+    "caption": "Miguel's blog",
+    "url": "https://tirania.org/blog" 
 }
 ```
