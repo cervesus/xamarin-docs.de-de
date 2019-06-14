@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 07f1fbae6c4fbfcfad45fc96970339e34b5de040
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3f22556948fc87dc604870f5a8625b80a4a0b29d
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102840"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827197"
 ---
 # <a name="linking-on-android"></a>Verknüpfung unter Android
 
 Xamarin.Android-Anwendungen verwenden einen *Linker*, um die Größe der Anwendung zu minimieren. Der Linker verwendet die statische Analyse Ihrer Anwendung, um zu bestimmen, welche Assemblys, Typen und Member tatsächlich verwendet werden. Der Linker verhält sich daraufhin wie ein *Garbage Collector* und sucht ständig nach Assemblys, Typen und Membern, auf die verwiesen wird, bis der gesamte Abschluss von Assemblys, Typen und Membern, auf die verwiesen wird, gefunden wird. Alles außerhalb dieses Abschlusses wird anschließend *verworfen*.
 
-Wie z.B. das [Hallo, Android](https://developer.xamarin.com/samples/HelloM4A/)-Beispiel:
+Wie z.B. das [Hallo, Android](https://developer.xamarin.com/samples/monodroid/HelloM4A/)-Beispiel:
 
 |Konfiguration|Größe 1.2.0|Größe 4.0.1|
 |---|---|---|
@@ -90,7 +90,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>Beibehalten von Code
 
-Der Linker entfernt manchmal Code, den Sie beibehalten möchten. Zum Beispiel:
+Der Linker entfernt manchmal Code, den Sie beibehalten möchten. Beispiel:
 
 -   Sie verfügen möglicherweise über Code, den Sie dynamisch über `System.Reflection.MemberInfo.Invoke` aufrufen können.
 

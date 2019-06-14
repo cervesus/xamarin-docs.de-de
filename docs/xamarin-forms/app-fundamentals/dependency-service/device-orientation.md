@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a63d0d4c90bff36e55d98b731217133fe5958c1f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: d8763c6fe8e330181c836bc8d10923ea676a07c1
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051470"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740946"
 ---
 # <a name="checking-device-orientation"></a>Überprüfen der Geräteausrichtung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/UsingDependencyService)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 
 In diesem Artikel wird erläutert, wie Sie [`DependencyService`](xref:Xamarin.Forms.DependencyService) mithilfe der nativen APIs für jede Plattform für die Überprüfung der Geräteausrichtung über freigegebenen Code verwenden können. Diese exemplarische Vorgehensweise basiert auf dem vorhandenen `DeviceOrientation`-Plugin von Ali Özgür. Weitere Informationen finden Sie im [GitHub-Repository](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation).
 
@@ -224,6 +224,6 @@ Durch das Ausführen dieser App unter iOS, Android, auf den Windows-Plattformen 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Verwenden von DependencyService (Beispiel)](https://developer.xamarin.com/samples/UsingDependencyService)
-- [DependencyService (sample) (DependencyService (Beispiel))](https://developer.xamarin.com/samples/DependencyService/DependencyServiceSample/)
+- [Verwenden von DependencyService (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+- [DependencyService (sample) (DependencyService (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)
