@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 0b063619387d9984e24f6987234605b626289e2d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 5fbe711cb8ad4902da047a2027fc05e9956de863
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978302"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039721"
 ---
 # <a name="hello-ios--quickstart"></a>Schnellstart: Hallo, iOS
 
@@ -283,7 +283,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 
     ![](hello-ios-quickstart-images/image001-.png "Der Startbildschirm")
 
-    Erstellen Sie eine neue Xamarin.iOS-Projektmappe, indem Sie **Datei > Neu > Projekt... > Visual C# > iPhone & iPad > iOS-App (Xamari)** auswählen:
+    Erstellen Sie eine neue Xamarin.iOS-Projektmappe, indem Sie **Datei > Neu > Projekt > Visual C# > iPhone & iPad > iOS-App (Xamarin)** auswählen:
 
     ![Wählen Sie den iOS-App (Xamarin)-Projekttyp aus](hello-ios-quickstart-images/image002.w157.png "Wählen Sie den iOS-App (Xamarin)-Projekttyp aus")
 
