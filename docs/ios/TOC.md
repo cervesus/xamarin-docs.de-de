@@ -240,7 +240,8 @@
 ### [Vibrieren](~/essentials/vibrate.md?context=xamarin/ios)
 ### [Problembehandlung](~/essentials/troubleshooting.md?context=xamarin/ios)
 
-## [Daten und Clouddienste](data-cloud/index.md)
+## Daten und Clouddienste
+### [Übersicht](data-cloud/index.md)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/ios)
 #### [Erste Schritte](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/ios)
 ##### [Schritt 1. Registrieren](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/ios)
@@ -258,7 +259,8 @@
 ### [CloudKit](data-cloud/intro-to-cloudkit.md)
 
 ### [Einführung in Webdienste](~/cross-platform/data-cloud/web-services/index.md?context=xamarin/ios)
-## [Bereitstellung und Testen](deploy-test/index.md)
+## Bereitstellung und Testen
+### [Übersicht](deploy-test/index.md)
 ### [App-Verteilung](deploy-test/app-distribution/index.md)
 #### [App Store-Verteilung](deploy-test/app-distribution/app-store-distribution/index.md)
 ##### [Konfigurieren Ihrer App in iTunes Connect](deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
@@ -292,7 +294,8 @@
 ### [Exemplarische Vorgehensweise: Verwenden des Apple-Tools Instruments](deploy-test/walkthrough-apples-instrument.md)
 ### [Leistung](deploy-test/performance.md)
 ### [Problembehandlung](deploy-test/troubleshooting.md)
-## [Apple-Plattform](~/cross-platform/macios/index.md?context=xamarin/ios)
+## Apple-Plattform
+### [Übersicht für iOS und macOS](~/cross-platform/macios/index.md?context=xamarin/ios)
 ### [Apple-Kontoverwaltung](~/cross-platform/macios/apple-account-management.md?context=xamarin/ios)
 ### [Unified API](~/cross-platform/macios/unified/index.md?context=xamarin/ios)
 #### [Übersicht](~/cross-platform/macios/unified/overview.md?context=xamarin/ios)
@@ -326,7 +329,8 @@
 ### [Arbeiten mit nativen Typen in plattformübergreifenden Apps](~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/ios)
 ### [HttpClient- und SSL/TLS-Implementierungsauswahl](~/cross-platform/macios/http-stack.md?context=xamarin/ios)
 ### [Build-Optimierungen](~/cross-platform/macios/optimizations.md?context=xamarin/ios)
-## [Weiterführende Konzepte und Interna](internals/index.md)
+## Weiterführende Konzepte und Interna
+### [Übersicht](internals/index.md)
 ### [API](internals/api.md)
 ### [API-Entwurf](internals/api-design/index.md)
 #### [NSString](internals/api-design/nsstring.md)
@@ -339,8 +343,10 @@
 ### [Neuer refcount](internals/newrefcount.md)
 ### [Objective-C-Selektoren](internals/objective-c-selectors.md)
 ### [Registrierungsstelle](internals/registrar.md)
-## [Problembehandlung](troubleshooting/index.md)
+## Problembehandlung
+### [Übersicht](troubleshooting/index.md)
 ### [Tipps zur Problembehandlung](troubleshooting/troubleshooting.md)
+### [Xcode 11-Vorschauversion](~/ios/platform/ios13/troubleshooting/index.md)
 ### [Regeln für die Xamarin.iOS-Analyse](troubleshooting/xamarin-ios-analysis.md)
 ### [Fehlermeldungen (mtouch)](troubleshooting/mtouch-errors.md)
 ### [Häufig gestellte Fragen](troubleshooting/questions/index.md)
@@ -368,7 +374,8 @@
 #### [System.Exception AMDeviceNotificationSubscribe zurückgegeben ...](troubleshooting/questions/exception-amddevicenotificationsubscribe.md)
 #### [„MDocArchiveToMsxDocConverter.exe“ nicht gefunden. rver.BaseCommand.OnRequest](troubleshooting/questions/mdocarchivetomsxdocconverter-not-found.md)
 #### [Wie richte ich Mono-Runtime-Umgebungsvariablen für iOS-Projekte in Xamarin Studio ein?](troubleshooting/questions/xs-mono-runtime.md)
-## [watchOS](watchos/index.md)
+## watchOS
+### [Übersicht](watchos/index.md)
 ### [Erste Schritte](watchos/get-started/index.md)
 #### [Einführung in watchOS](watchos/get-started/intro-to-watchos.md)
 #### [Setup und Installation](watchos/get-started/installation.md)
@@ -405,7 +412,8 @@
 #### [Apple Watch](watchos/deploy-test/device.md)
 #### [App Store](watchos/deploy-test/appstore.md)
 ### [Problembehandlung](watchos/troubleshooting.md)
-## [tvOS](tvos/index.md)
+## tvOS
+### [Übersicht](tvos/index.md)
 ### [Erste Schritte](tvos/get-started/index.md)
 #### [Installieren von tvOS-Unterstützung](tvos/get-started/installation.md)
 #### [Hello, tvOS – Schnellstartanleitung](tvos/get-started/hello-tvos.md)
