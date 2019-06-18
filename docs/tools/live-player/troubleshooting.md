@@ -5,20 +5,23 @@ ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2018
-ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: bf0186b55b14d9797397b98390f4d825d669d0f4
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61175395"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157686"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Problembehandlung bei Xamarin Live Player
 
 ![Feature der Vorschauversion](~/media/shared/preview.png)
 
-> [!NOTE]
-> Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
+> [!WARNING]
+> Die Xamarin Live Player-Vorschauversion wurde beendet. Die app ist nicht mehr verfügbar. Die folgenden Anweisungen sind für Kunden, die Sie weiterhin die Vorschau mit Visual Studio 2017 verwenden bereitgestellt...
+
+> [!TIP]
+> Sie können die [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer/index.md) in 2019 für Visual Studio oder Visual Studio für Mac Ihre Entwürfe Bildschirm anzuzeigen, wie Sie sie bearbeiten.
 
 Dieser Artikel beschreibt die Einschränkungen von Live Player und einige der häufigsten Probleme mit den Schritten zu beheben.
 
@@ -163,4 +166,3 @@ Xamarin.Forms-Android-Projekte müssen "Toolbar.axml" und "Tabbar.axml" für die
 ## <a name="related-links"></a>Verwandte Links
 
 - [Setup (Einrichtung)](~/tools/live-player/install.md)
-- [Beispiele für die Verwendung mit Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

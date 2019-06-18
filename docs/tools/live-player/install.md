@@ -1,41 +1,33 @@
 ---
-title: Die Installation von Xamarin Live Player
-description: Dieses Dokument beschreibt, wie Sie Xamarin Live Player einrichten und verwenden, um live-Änderungen an einer ausgeführten Anwendung vornehmen.
+title: Xamarin Live Player-Visual-Studio-Konfiguration
+description: Dieses Dokument beschreibt, wie Sie mit dem Xamarin Live Player live Änderungen an einer ausgeführten Anwendung vornehmen.
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2018
-ms.openlocfilehash: f9cfc69c2cd711460233e609d63bcbb8eb172ccf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: a29a637526c2829b44ae89d505dac37a648dee77
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61405106"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157742"
 ---
-# <a name="xamarin-live-player-setup"></a>Die Installation von Xamarin Live Player
-
-Xamarin Live Player können Sie die live-Änderungen an Ihrer app vornehmen und diese Änderungen wiederzugeben live auf dem Gerät. Ihr Code ausgeführt wird, in der Xamarin Live Player-app – müssen Sie keine Emulatoren einrichten oder mit Kabel bereitstellen! Dieser Artikel beschreibt, wie Sie Xamarin Live Player einrichten.
+# <a name="xamarin-live-player-visual-studio-configuration"></a>Xamarin Live Player-Visual-Studio-Konfiguration
 
 ![Feature der Vorschauversion](~/media/shared/preview.png)
 
-> [!NOTE]
-> Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
+> [!WARNING]
+> Die Xamarin Live Player-Vorschauversion wurde beendet. Die app ist nicht mehr verfügbar. Die folgenden Anweisungen dienen für Kunden, die Sie weiterhin die Vorschau mit Visual Studio 2017 verwenden.
 
-## <a name="1-get-the-android-app"></a>1. Abrufen der Android-Apps
+> [!TIP]
+> Sie können die [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer/index.md) in 2019 für Visual Studio oder Visual Studio für Mac Ihre Entwürfe Bildschirm anzuzeigen, wie Sie sie bearbeiten.
 
-Xamarin Live Player ist verfügbar für Android durch installieren wollte direkt aus [HockeyApp](https://aka.ms/xlp-hockeyapp).
+# <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+## <a name="using-xamarin-live-player"></a>Mithilfe von Xamarin Live Player
 
-## <a name="2-get-visual-studio-2017"></a>2. Abrufen von Visual Studio 2017
-
-Xamarin Live Player sind erforderlich:
-
-- Visual Studio 2017, Version 15.4 oder höher.
-- Visual Studio-Computer und ein Gerät sich im gleichen WLAN-Netzwerk.
-
-## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3. Verwenden zum ersten Mal Xamarin Live Player
+Sie müssen die Xamarin Live Player-app bereits auf Ihrem Gerät verfügen. Es ist nicht mehr zum download zur Verfügung.
 
 1. Open **Visual Studio 2017**.
 2. Wechseln Sie zu **Tools > Optionen...**  , und wählen Sie die **Xamarin > andere** Registerkarte.
@@ -68,15 +60,9 @@ Xamarin Live Player sind erforderlich:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="2-get-visual-studio-for-mac"></a>2. Visual Studio für Mac herunterladen
+## <a name="using-xamarin-live-player"></a>Mithilfe von Xamarin Live Player
 
-Xamarin Live Player sind erforderlich:
-
-- OS X 10.11, MacOS Sierra 10.12 oder höher
-- Visual Studio für Mac
-- Einen Mac und ein Gerät sich im gleichen WLAN-Netzwerk
-
-## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3. Verwenden zum ersten Mal Xamarin Live Player
+Sie müssen die Xamarin Live Player-app bereits auf Ihrem Gerät verfügen. Es ist nicht mehr zum download zur Verfügung.
 
 1. Open **Visual Studio für Mac**.
 2. Wechseln Sie zu **Visual Studio > Einstellungen...**  , und wählen Sie die **Projekte > Xamarin Live Player (Vorschauversion)** Registerkarte.
@@ -117,5 +103,4 @@ Wenn Sie Probleme auftreten oder keine Verbindung herstellen können, finden Sie
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für die Verwendung mit Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
 - [Problembehandlung](~/tools/live-player/troubleshooting.md)

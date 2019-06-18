@@ -5,22 +5,23 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2017
-ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: fce0eeae4ef5776842ea1b45c36163118042dc49
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279418"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157736"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player-App
 
 ![Feature der Vorschauversion](~/media/shared/preview.png)
 
-> [!NOTE]
-> Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
+> [!WARNING]
+> Die Xamarin Live Player-Vorschauversion wurde beendet. Die app ist nicht mehr verfügbar. Die folgenden Anweisungen dienen für Kunden, die Sie weiterhin die Vorschau mit Visual Studio 2017 verwenden.
 
-Nachdem Sie die app auf Ihrem Telefon installiert haben, führen Sie die [Anweisungen zur Einrichtung des](~/tools/live-player/install.md) zur Verbindung mit Ihrem Computers. Führen Sie eine der der [Beispiel-apps](~/tools/live-player/samples.md) wieder funktioniert.
+> [!TIP]
+> Sie können die [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer/index.md) in 2019 für Visual Studio oder Visual Studio für Mac Ihre Entwürfe Bildschirm anzuzeigen, wie Sie sie bearbeiten.
 
 Klicken Sie auf Start sieht die Xamarin Live Player-app folgendermaßen aus:
 
@@ -56,7 +57,7 @@ Anzeigen von Protokollen, um Probleme zu diagnostizieren.
 
 Um ein Gerät zum ersten Mal zu verbinden, folgen Sie den Anweisungen im [Datenbankanforderungen & Setup](~/tools/live-player/install.md). Sie können mehrere Geräte gekoppelt und über die IDE verwalten.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
 Wählen Sie in Visual Studio **Tools > Xamarin Live Player > Geräte verwalten...**
 
@@ -95,4 +96,4 @@ Wenn Sie feststellen, dass alle Probleme finden Sie unter [Einschränkungen und 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Problembehandlung](~/tools/live-player/troubleshooting.md)
-- [Beispiele für die Verwendung mit Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+
