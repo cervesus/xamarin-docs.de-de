@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0e2c93c4a6be0e83c9c4f1607b125b8d240ccc1
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557206"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194940"
 ---
 # <a name="contributing"></a>Beitragen
 
@@ -70,13 +70,13 @@ Alle Commits werden in einem bestimmten Rhythmus per Push aus dem Masterbranch a
 Es folgt eine kurze Liste mit Anleitungsregeln, die Sie beachten sollten, wenn Sie an der .NET-Dokumentation mitwirken.
 
 - **NEIN**: Überraschen Sie uns nicht mit umfangreichen Pull Requests. Eröffnen Sie stattdessen ein Ticket, und starten Sie eine Diskussion, damit wir uns auf eine Richtung einigen können, bevor Sie sehr viel Zeit investieren.
-- **JA** Lesen Sie den [Styleguide](../contributing-guidelines/template.md) und die Richtlinien bezüglich [Sprache und Schreibstil](../contributing-guidelines/voice-tone.md).
-- **JA** Verwenden Sie die [Vorlagendatei](../contributing-guidelines/template.md) als Ausgangspunkt für Ihre Arbeit.
+- **JA** Lesen Sie den [Styleguide](contributing-guidelines/template.md) und die Richtlinien bezüglich [Sprache und Schreibstil](contributing-guidelines/voice-tone.md).
+- **JA** Verwenden Sie die [Vorlagendatei](contributing-guidelines/template.md) als Ausgangspunkt für Ihre Arbeit.
 - **JA** Erstellen Sie einen separaten Branch in Ihrer Verzweigung, bevor Sie an den Artikeln arbeiten.
 - **JA** Folgen Sie dem [GitHub-Flow-Workflow](https://guides.github.com/introduction/flow/).
 - **JA** Schreiben Sie häufig Blogs und Tweets (oder was auch immer) über Ihre Beiträge!
 
 > [!NOTE]
-> Sie stellen möglicherweise fest, dass sich derzeit einige der Themen nicht nach allen hier und im [Styleguide](./contributing-guidelines/template.md) definierten Richtlinien richten. Wir arbeiten daran, auf der gesamten Website Konsistenz zu erzielen. 
+> Sie stellen möglicherweise fest, dass sich derzeit einige der Themen nicht nach allen hier und im [Styleguide](contributing-guidelines/template.md) definierten Richtlinien richten. Wir arbeiten daran, auf der gesamten Website Konsistenz zu erzielen. 
 
 

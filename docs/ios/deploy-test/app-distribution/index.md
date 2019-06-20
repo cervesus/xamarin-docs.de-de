@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 6141b84af56d7680e2b294317ba97fb6943e17c5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1bd61474daedd8bd330c0370948d6dee6f8ea50e
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106051"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194953"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Übersicht über die Xamarin.iOS-App-Verteilung
 
@@ -37,7 +37,8 @@ Für jedes dieser Szenarios müssen Anwendungen mit dem entsprechenden *Bereitst
 ## <a name="app-store-distribution"></a>App Store-Verteilung
 
 > [!IMPORTANT]
-> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das [iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
+> Apple [hat mitgeteilt](https://developer.apple.com/ios/submit/), dass ab März 2019 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 12.1 SDK oder höher, das in Xcode 10.1 oder höher enthalten ist, erstellt worden sein müssen.
+> Apps müssen ebenso die Bildschirmgrößen des iPhone XS und des iPad Pro in 12,9" unterstützen.
 
 Dies ist die wichtigste Methode zur Verteilung von iOS-Anwendungen an Benutzer mit iOS-Geräten. Alle Apps, die im App Store eingereicht werden, müssen von Apple genehmigt werden.
 

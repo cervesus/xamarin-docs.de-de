@@ -42,8 +42,8 @@ sections:
             html: Verwendung von ContactsUI-Ansichtscontrollern und -Eigenschaften.
             image:
               src: images/contacts.png
-              href: 'https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/'
-            title: QuickContacts
+              href: 'https://developer.xamarin.com/samples/monotouch/Contacts/'
+            title: Kontaktpersonen
           - href: 'https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/'
             html: 'UI-Steuerelementsuite, die in watchOS verfügbar ist.'
             image:
