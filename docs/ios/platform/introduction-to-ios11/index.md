@@ -7,19 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 5e75a7872081d82c289db0312bbc7d84bce77b4e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1542ae5d7dbdf008dd5b300dfb5820c3f04ae682
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61171140"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268896"
 ---
 # <a name="introduction-to-ios-11"></a>Einführung in iOS 11
-
-_Wiederholen Sie die neue iOS 11-APIs mit Xamarin._
-
-> [!NOTE]
-> Bevor Sie beginnen, überprüfen Sie die [Einstieg](get-started.md) Seite Anweisungen zum Installieren von Xcode 9.
 
 ![ARKit-Beispiel](images/arkit.png) ![Platzieren von AR-Objekte](images/arkit2.png) ![CoreML-Beispiel](images/coreml.png) ![MapKit-Beispiel](images/mapkit.png) ![Vision Rechtecke-Beispiel](images/vision1.png) ![Vision Gesichter-Beispiel](images/vision2.png) ![Drag & Drop-Beispiel](images/drag-drop.png) ![Drag & Drop-Beispiel](images/drag-drop2.png) ![SiriKit-Beispiel](images/sirikit.png)
 
@@ -86,12 +81,6 @@ Es gibt eine Reihe von c# [Beispiele](https://developer.xamarin.com/samples/ios/
 * [PDKFit Widgets-Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/PDFAnnotationWidgetsAdvanced)
 * [PDFKit Wasserzeichen-Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/PDFDocumentWatermark)
 
-## <a name="more-information"></a>Weitere Informationen
-
-Weitere Informationen zu iOS 11, finden Sie auf Apple [in iOS 11 Neuigkeiten](https://developer.apple.com/ios/) Dokumentation.
-
-
 ## <a name="related-links"></a>Verwandte Links
 
-- [Was ist neu in iOS 11 (Apple)](https://developer.apple.com/ios/)
 - [Xamarin iOS 11-Beispiele](https://developer.xamarin.com/samples/ios/iOS11/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2018
-ms.openlocfilehash: 77589d0d644c366fc0feacd874929c7456b4ae30
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 71799e4299f01a881c6bc265baa7ad721ec5fc79
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61398797"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268884"
 ---
 # <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>Erste Schritte mit iOS 12, 12-TvOS und WatchOS 5
 
@@ -26,7 +26,7 @@ In diesem Dokument wird beschrieben, wie mit dem Erstellen von Xamarin-apps, die
 
 3. **Aktualisieren von Visual Studio für Mac und Visual Studio 2017** – sicherzustellen, dass Sie die neueste stabile Version von Xamarin.
 
-4. _(optional)_  **IOS 12 auf iOS-Geräten installieren** :
+4. _(optional) _ **IOS 12 auf iOS-Geräten installieren** :
 
    Für Apps, die die Xcode-10 APIs eingeführt, mit dem Test des Geräts, registrierten Apple-Entwickler können [herunterladen](https://developer.apple.com/download) und das Betriebssystem auf ihren Geräten installieren.
 
@@ -40,4 +40,4 @@ In diesem Dokument wird beschrieben, wie mit dem Erstellen von Xamarin-apps, die
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xcode 10 herunterladen](https://developer.apple.com/download/)
+- [Xcode herunterladen](https://developer.apple.com/download/)

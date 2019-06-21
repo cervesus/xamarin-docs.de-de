@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
-ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 120bbfe0d5fa91e632fc56ee05431f5555653360
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61248516"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268596"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Grundlagen der Xamarin.iOS-Anwendung
 
@@ -33,6 +33,10 @@ Hintergrund zu verarbeiten oder hintergrundverarbeitung ist der Prozess dadurch,
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[Erstellen von iOS-Anwendungen in code](~/ios/app-fundamentals/ios-code-only.md)
 
 In diesem Artikel wird untersucht, wie zum Erstellen von iOS-Anwendungen vollständig in Code mithilfe von Visual Studio und Visual Studio für Mac. Es veranschaulicht, wie über eine leere Projektvorlage aus, um einem Anwendungsbildschirm in einem Controller zu erstellen, durch das Erstellen einer Hierarchie von Ansichten aus UIKit starten. Klicken Sie dann, es wird erläutert, wie benutzerdefinierte Ansichten erstellen, die geladen werden können in einem Controller.
+
+## <a name="exception-marshalingiosplatformexception-marshalingmd"></a>[Ausnahme beim marshaling](~/ios/platform/exception-marshaling.md)
+
+Beschreibt, wie Objective-C und verwaltete Ausnahmen zwischen nativen und verwalteten Frames gemarshallt werden.
 
 ## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[Ereignisse, Protokolle und Delegaten](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 

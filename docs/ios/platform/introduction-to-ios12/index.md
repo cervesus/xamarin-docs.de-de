@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/08/2018
-ms.openlocfilehash: 99f2b98614c2b8d558dd8744b31a62b787fc955c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5ac19571bc1f1163539a48ea2689c743445d8047
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035965"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268875"
 ---
 # <a name="introduction-to-ios-12"></a>Einführung in iOS 12
 
@@ -42,7 +42,7 @@ Benutzerdefinierte Benutzeroberflächen und dynamische Aktionsschaltflächen erm
 
 Natürlicher Sprachen-Framework ermöglicht Anwendungen das Ausführen von verschiedenen Arten von sprachanalyse. Sie können beispielsweise Wortarten zu identifizieren und bestimmt die Sprache, die durch einen Textblock dargestellt.
 
-## <a name="vision-framework"></a>Maschinelles sehen-framework
+## <a name="vision-frameworkiosplatformintroduction-to-ios11visionmd"></a>[Maschinelles sehen-framework](~/ios/platform/introduction-to-ios11/vision.md)
 
 Das Vision Framework enthält eine verbesserte gesichtserkennung, die in verschiedenen Ausrichtungen Gesichter erkennen kann. Anforderung Revisionen können auch bestimmte Vision Framework Algorithmusrevision auswählen.
 
@@ -81,7 +81,3 @@ In iOS 12 hat Apple als veraltet markiert:
 
 - OpenGL-ES, [und Entwickler werden angeregt](https://developer.apple.com/ios/whats-new/) -Metal-Computern zu übernehmen.
 - [`UIWebView`](xref:UIKit.UIWebView), [zugunsten des `WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).
-
-## <a name="related-links"></a>Verwandte Links
-
-- [Machen Sie sich bereit für iOS-12 (Apple)](https://developer.apple.com/ios/)

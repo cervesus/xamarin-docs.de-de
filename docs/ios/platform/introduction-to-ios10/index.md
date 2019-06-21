@@ -7,18 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e84f5acdd1660633521d1a99325155b614b87e1b
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402402"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268906"
 ---
 # <a name="introduction-to-ios-10"></a>Einführung in iOS 10
-
-_Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen verfügbar sind, unter iOS 10 für Xamarin.iOS-Entwickler._
-
-## <a name="introducing-ios-10"></a>Einführung in iOS 10
 
 Mit dem neuen iOS hat 10 SDK, Apple enthalten neue APIs und Dienste, die den Entwickler zum Erstellen von neuer Kategorien von apps und Features zu ermöglichen. Eine iOS-app kann nun erweitern, der Meldungen "," Siri "," Telefon "und" Karten-apps, um komplexe und beeindruckende Funktionalität für den Endbenutzer bereitzustellen, die zuvor nicht verfügbar waren.
 
@@ -27,7 +23,6 @@ Weitere Informationen zu iOS 10, finden Sie unter Apple [iOS + Apps](https://dev
 ## <a name="whats-new-in-ios-10"></a>Was ist neu unter iOS 10
 
 Apple hat verschiedene neue APIs und Dienste unter iOS 10 sowie zahlreiche Verbesserungen an vorhandenen Funktionen, einschließlich hinzugefügt:
-
 
 ## <a name="adapting-to-the-true-tone-display"></a>Anpassen der Anzeige von "true" Ton
 
@@ -41,8 +36,6 @@ Die folgenden Werte sind verfügbar:
 - `UIWhitePointAdaptivityStyleVideo` : Wird für Video ausgerichtete apps verwendet.
 - `UIWhitePointAdaptivityStylePhoto` – Verwendet für Fotografie ausgerichtete apps Farbtreue wichtiger als die Umwelt Weißpunkt Anpassungen.
 
-<a name="app-extensions" />
-
 ## <a name="app-extensions"></a>App-Erweiterungen
 
 Apple hat mehrere neue Erweiterungspunkte unter iOS 10 bereitgestellt werden:
@@ -54,7 +47,7 @@ Apple hat mehrere neue Erweiterungspunkte unter iOS 10 bereitgestellt werden:
 - Notification Services
 - Aufkleber Pack
 
-3. Tastatur App-Erweiterungen von Drittanbietern verfügen darüber hinaus die folgenden Verbesserungen:
+3\. Tastatur App-Erweiterungen von Drittanbietern verfügen darüber hinaus die folgenden Verbesserungen:
 
 - Die neue `DocumentInputMode` Eigenschaft der `UITextDocumentProxy` Klasse können Sie bestimmen die Eingabesprache eines Dokuments und ermöglichen die Tastatur-Erweiterung, die dieser Sprache entsprechen.
 - Die neue `HandleInputModeList` -Methode können Sie die Tastatur Erweiterung Menü zur Auswahl des Systems Tastatur als Reaktion auf der ganzen Welt Schlüssel getippt wird angezeigt.
@@ -87,13 +80,12 @@ Um mehr zu erfahren, informieren Sie sich unsere [Apple Zahlen Verbesserungen](~
 
 Apple hat mehrere Erweiterungen auf iOS 10.3 hinzugefügt, mit denen eine app zum Verwalten von das entsprechende Symbols:
 
- - `ApplicationIconBadgeNumber` -Ruft ab oder legt den Badge, der das app-Symbol in der Springboard-Reihe.
- - `SupportsAlternateIcons` -If `true` die app verfügt über eine Alternative Gruppe von Symbolen.
- - `AlternateIconName` -Gibt den Namen des aktuell ausgewählten alternativen Symbols zurück oder `null` Wenn das primäre Symbol verwenden.
- - `SetAlternameIconName` – Verwenden Sie diese Methode, um das Symbol der app in der angegebenen alternativen Symbol wechseln.
+- `ApplicationIconBadgeNumber` -Ruft ab oder legt den Badge, der das app-Symbol in der Springboard-Reihe.
+- `SupportsAlternateIcons` -If `true` die app verfügt über eine Alternative Gruppe von Symbolen.
+- `AlternateIconName` -Gibt den Namen des aktuell ausgewählten alternativen Symbols zurück oder `null` Wenn das primäre Symbol verwenden.
+- `SetAlternameIconName` – Verwenden Sie diese Methode, um das Symbol der app in der angegebenen alternativen Symbol wechseln.
 
 Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [alternative App-Symbole](~/ios/app-fundamentals/images-icons/alternate-app-icons.md) Guide.
-
 
 ## <a name="introduction-to-callkit"></a>Einführung in die CallKit
 
@@ -133,7 +125,7 @@ iOS 10 stellt neue Methoden für die treibende Engagement zu einer app durch den
 - CarPlay
 - Karten
 - Siri-Interaktionen
-- QuickType Vorschläge 
+- QuickType Vorschläge
 
 Eine app macht diese Funktion in das System für eine Sammlung von Technologien wie z. B. über [NSUserActivity](xref:Foundation.NSUserActivity), Markup im Web, Core Spotlight, MapKit, Media Player und UIKit.
 
@@ -228,7 +220,7 @@ Die folgenden APIs verfügen unter iOS 10 als veraltet markiert:
 
 - Die `CKDiscoverAllContactsOperation`, `CKDiscoveredUserInfo`, `CKDiscoverUserInfosOperation` und `CKFetchRecordChangesOperation` Klassen wurden in CloudKit für iOS 10 eingestellt. Verwenden der [CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation), [CKUserIdentity](xref:CloudKit.CKUserIdentity) und [CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) Klassen (die Unterstützung von Datensatz freigeben) stattdessen.
 - Mehrere [CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) APIs (z. B. Zone und Abfrage-basierten Abonnements) sind veraltet. Verwenden der [CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription) und [CKQuerySubscription](xref:CloudKit.CKQuerySubscription) APIs stattdessen.
-- [NSPersistentStoreCoordnator](xref:CoreData.NSPersistentStoreCoordinator) Symbole, die im Zusammenhang mit der weit verbreitete Inhalte sind veraltet.
+- [NSPersistentStoreCoordinator](xref:CoreData.NSPersistentStoreCoordinator) Symbole, die im Zusammenhang mit der weit verbreitete Inhalte sind veraltet.
 - `ADBannerView`, `ADInterstitialAd` und zugehörigen Symbole in der [UIViewController](xref:UIKit.UIViewController) Klasse sind veraltet.
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform) Symbole, die im Zusammenhang mit Gleitkommawerte sind veraltet.
 - Die `UILocalNotification`, `UIMutableUserNotificationAction`, `UIMutableUserNotificationCategory`, `UIUserNotificationAction`, `UIUserNotificationCategory` und `UIUserNotificationSettings` Klassen von UIKit sind veraltet. Verwenden der [Benutzerbenachrichtigungen](#user-notifications) Framework stattdessen.
@@ -238,9 +230,6 @@ Die folgenden APIs verfügen unter iOS 10 als veraltet markiert:
 
 Finden Sie unter Apple [iOS 9.3 verwenden, um die API-Unterschiede iOS 10.0](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html) Dokumentation für eine vollständige Liste der veralteten.
 
-
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [iOS 10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)
-- [Neuigkeiten in iOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)
