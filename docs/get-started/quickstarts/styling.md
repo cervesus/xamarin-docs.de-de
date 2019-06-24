@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 56f8632c9cc7d170b4c6594fd51e6aa3e92ad02b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 53d2a0aae3398ea31676fbc3dab95d500dfe2104
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61191236"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309506"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>Formatieren einer plattformübergreifenden Xamarin.Forms-Anwendung
 
@@ -120,7 +120,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](dat
 
     Speichern Sie die Änderungen an **NotesPage.xaml** durch Drücken von **STRG + S**, und schließen Sie die Datei.
 
-5. In der **Lösungspad**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NoteEntryPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+5. In **Projektmappen-Explorer**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NoteEntryPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -222,7 +222,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](dat
 
     Speichern Sie die Änderungen an **"App.xaml"** dazu **Datei > Speichern** (oder durch Drücken der  **&#8984; + S**), und schließen Sie die Datei.
 
-3. In **Projektmappen-Explorer**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NotesPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+3. In der **Lösungspad**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NotesPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -261,7 +261,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](dat
 
     Speichern Sie die Änderungen an **NotesPage.xaml** dazu **Datei > Speichern** (oder durch Drücken der  **&#8984; + S**), und schließen Sie die Datei.
 
-5. In **Projektmappen-Explorer**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NoteEntryPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+5. In der **Lösungspad**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NoteEntryPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>

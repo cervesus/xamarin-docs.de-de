@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407639"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309510"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Essential XAML Syntax
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-Sie können auch in XAML verwenden etwas Ähnliches Durchführen der `OnPlatform` und `On` Klassen. Erster eingeschlossen Eigenschaftenelemente für die `Padding` Eigenschaft am oberen Rand der Seite:
+Sie können auch in XAML verwenden etwas Ähnliches Durchführen der [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) und [ `On` ](xref:Xamarin.Forms.On) Klassen. Erster eingeschlossen Eigenschaftenelemente für die `Padding` Eigenschaft am oberen Rand der Seite:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -523,11 +523,12 @@ Dies ist die Standardmethode zum legen Sie einer plattformabhängige `Padding` -
 </ContentPage>
 ```
 
+> [!NOTE]
+> Die `OnPlatform` Markuperweiterung kann auch in XAML verwendet werden, um UI-Darstellung individuell für jede Plattform anzupassen. Es bietet die gleiche Funktionalität wie die `OnPlatform` und `On` Klassen, jedoch eine präzisere Darstellung. Weitere Informationen finden Sie unter [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
+
 ## <a name="summary"></a>Zusammenfassung
 
 Property-Elemente und angefügte Eigenschaften wurde ein Großteil der grundlegenden XAML-Syntax hergestellt. Allerdings müssen gelegentlich zum Festlegen von Eigenschaften zu Objekten auf indirekte Weise, z. B. aus einem Ressourcenverzeichnis. Dieser Ansatz wird im nächsten Teil Teil behandelt [3. XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md).
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 
