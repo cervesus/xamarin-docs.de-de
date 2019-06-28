@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/17/2019
-ms.openlocfilehash: db44e09e9caa5c35a5e107cfed80d1d30fd7eb7d
-ms.sourcegitcommit: 864f47c4f79fa588b65ff7f721367311ff2e8f8e
+ms.openlocfilehash: 06f5716c8decb21de39fd46abe734b5fdcd6bd43
+ms.sourcegitcommit: 0f78ec17210b915b43ddab75937de8063e472c70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64347127"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67417938"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>Authentifizieren von Benutzern mit Azure Active Directory B2C
 
@@ -65,7 +65,7 @@ Microsoft Authentication Library erwartet, dass die **Umleitungs-URL** für Ihre
 
 ![Benutzerdefinierte Umleitungs-URI in der Eigenschaftenansicht Azure-Anwendung](azure-ad-b2c-images/azure-redirect-uri.png)
 
-Die URL wird weiter unten in der sowohl die Android **"ApplicationManifest.xml"** und den iOS- **"Info.plist"**.
+Die URL wird weiter unten in der sowohl die Android **"ApplicationManifest.xml"** und den iOS- **"Info.plist"** .
 
 Bearbeiten Sie in das Beispielprojekt der **"Constants.cs"** Datei Festlegen der `clientId` Feld Ihre **Anwendungs-ID**. Der folgende Code zeigt wie dieser Wert festgelegt werden soll, wenn Ihre Anwendungs-ID ist `1234abcd`:
 
@@ -103,19 +103,26 @@ public static class Constants
 
 ## <a name="use-the-microsoft-authentication-library-msal-for-authentication"></a>Verwenden Sie die Microsoft Authentication Library (MSAL) für die Authentifizierung
 
-Das Microsoft Authentication Library (MSAL) NuGet-Paket muss die freigegebene .NET Standard-Projekt und die Plattformprojekte in einer Xamarin.Forms-Projektmappe hinzugefügt werden. MSAL bietet eine `PublicClientApplication` zum Vereinfachen der Authentifizierung mit Azure Active Directory B2C. In den Code für das Beispielprojekt **"App.xaml"** definiert statische Eigenschaften für ein `AuthenticationClient` und `UiParent` und instanziiert die `AuthenticationClient` im Konstruktor. Der zweite Parameter bereitgestellt, um die `PublicClientApplication` ist die Standardeinstellung **Autorität**, oder der Richtlinie, die zum Authentifizieren von Benutzern verwendet werden. Im folgende Beispiel wird veranschaulicht, wie zum Instanziieren der `PublicClientApplication`:
+Das Microsoft Authentication Library (MSAL) NuGet-Paket muss die freigegebene .NET Standard-Projekt und die Plattformprojekte in einer Xamarin.Forms-Projektmappe hinzugefügt werden. MSAL umfasst eine `PublicClientApplicationBuilder` -Klasse, die konstruiert ein Objekt, die Einhaltung der `IPublicClientApplication` Schnittstelle. Nutzt MSAL `With` -Klauseln verwenden, um zusätzliche Parameter an die Methoden-Konstruktor und die Authentifizierung angeben.
+
+In den Code für das Beispielprojekt **"App.xaml"** definiert statische Eigenschaften, die mit dem Namen `AuthenticationClient` und `UIParent`, und instanziiert die `AuthenticationClient` Objekt im Konstruktor. Die `WithIosKeychainSecurityGroup` -Klausel stellt ein Name der Sicherheitsgruppe für iOS-Anwendungen bereit. Die `WithB2CAuthority` -Klausel stellt den Standardwert **Autorität**, oder der Richtlinie, die zum Authentifizieren von Benutzern verwendet werden. Im folgende Beispiel wird veranschaulicht, wie zum Instanziieren der `PublicClientApplication`:
 
 ```csharp
 public partial class App : Application
 {
-    public static PublicClientApplication AuthenticationClient { get; private set; }
+    public static IPublicClientApplication AuthenticationClient { get; private set; }
 
-    public static UIParent UiParent { get; set; } = null;
+    public static object UIParent { get; set; } = null;
 
     public App()
     {
         InitializeComponent();
-        AuthenticationClient = new PublicClientApplication(Constants.ClientId, Constants.AuthoritySignin);
+
+        AuthenticationClient = PublicClientApplicationBuilder.Create(Constants.ClientId)
+            .WithIosKeychainSecurityGroup(Constants.IosKeychainSecurityGroups)
+            .WithB2CAuthority(Constants.AuthoritySignin)
+            .Build();
+
         MainPage = new NavigationPage(new LoginPage());
     }
 
@@ -133,11 +140,13 @@ public partial class LoginPage : ContentPage
     {
         try
         {
+            // Look for existing account
             IEnumerable<IAccount> accounts = await App.AuthenticationClient.GetAccountsAsync();
 
-            AuthenticationResult result = await App.AuthenticationClient.AcquireTokenSilentAsync(
-                Constants.Scopes,
-                accounts.FirstOrDefault());
+            AuthenticationResult result = await App.AuthenticationClient
+                .AcquireTokenSilent(Constants.Scopes, accounts.FirstOrDefault())
+                .ExecuteAsync();
+
             await Navigation.PushAsync(new LogoutPage(result));
         }
         catch
@@ -163,12 +172,12 @@ public partial class LoginPage : ContentPage
         AuthenticationResult result;
         try
         {
-            result = await App.AuthenticationClient.AcquireTokenAsync(
-                Constants.Scopes,
-                string.Empty,
-                UIBehavior.SelectAccount,
-                string.Empty,
-                App.UiParent);
+            result = await App.AuthenticationClient
+                .AcquireTokenInteractive(Constants.Scopes)
+                .WithPrompt(Prompt.SelectAccount)
+                .WithParentActivityOrWindow(App.UIParent)
+                .ExecuteAsync();
+    
             await Navigation.PushAsync(new LogoutPage(result));
         }
         catch (MsalException ex)
@@ -199,15 +208,12 @@ public partial class LoginPage : ContentPage
     {
         try
         {
-            return await App.AuthenticationClient.AcquireTokenAsync(
-                Constants.Scopes,
-                string.Empty,
-                UIBehavior.SelectAccount,
-                string.Empty,
-                null,
-                Constants.AuthorityPasswordReset,
-                App.UiParent
-                );
+            return await App.AuthenticationClient
+                .AcquireTokenInteractive(Constants.Scopes)
+                .WithPrompt(Prompt.SelectAccount)
+                .WithParentActivityOrWindow(App.UIParent)
+                .WithB2CAuthority(Constants.AuthorityPasswordReset)
+                .ExecuteAsync();
         }
         catch (MsalException)
         {
@@ -241,7 +247,7 @@ public partial class LogoutPage : ContentPage
 
 ### <a name="ios"></a>iOS
 
-Unter iOS, muss die benutzerdefinierte URL-Schema, die mit Azure Active Directory B2C registriert wurde im registriert werden **"Info.plist"**. MSAL erwartet, dass das URL-Schema entsprechen einem bestimmten Muster, die im zuvor beschriebenen [registrieren Sie Ihre mobile Anwendung mit Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). Der folgende Screenshot zeigt die benutzerdefinierte URL-Schema in **"Info.plist"**.
+Unter iOS, muss die benutzerdefinierte URL-Schema, die mit Azure Active Directory B2C registriert wurde im registriert werden **"Info.plist"** . MSAL erwartet, dass das URL-Schema entsprechen einem bestimmten Muster, die im zuvor beschriebenen [registrieren Sie Ihre mobile Anwendung mit Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). Der folgende Screenshot zeigt die benutzerdefinierte URL-Schema in **"Info.plist"** .
 
 !["Registrieren eines benutzerdefinierten URL-Schemas unter iOS"](azure-ad-b2c-images/customurl-ios.png)
 
@@ -271,7 +277,7 @@ namespace TodoAzure.iOS
 
 ### <a name="android"></a>Android
 
-Unter Android, muss die benutzerdefinierte URL-Schema, die mit Azure Active Directory B2C registriert wurde in registriert werden die **"androidmanifest.xml"**. MSAL erwartet, dass das URL-Schema entsprechen einem bestimmten Muster, die im zuvor beschriebenen [registrieren Sie Ihre mobile Anwendung mit Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). Das folgende Beispiel zeigt die benutzerdefinierte URL-Schema in der **"androidmanifest.xml"**.
+Unter Android, muss die benutzerdefinierte URL-Schema, die mit Azure Active Directory B2C registriert wurde in registriert werden die **"androidmanifest.xml"** . MSAL erwartet, dass das URL-Schema entsprechen einem bestimmten Muster, die im zuvor beschriebenen [registrieren Sie Ihre mobile Anwendung mit Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). Das folgende Beispiel zeigt die benutzerdefinierte URL-Schema in der **"androidmanifest.xml"** .
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -290,7 +296,7 @@ Unter Android, muss die benutzerdefinierte URL-Schema, die mit Azure Active Dire
 </manifest>
 ```
 
-Die `MainActivity` Klasse muss geändert werden, um zu ermöglichen die `UiParent` an die Anwendung während der `OnCreate` aufrufen. Wenn Azure Active Directory B2C die autorisierungsanforderung abgeschlossen ist, leitet Sie der registrierten URL-Schema aus der **"androidmanifest.xml"**. Das registrierte URI-Schema führt Android Aufrufen `OnActivityResult` mit der URL als Parameter starten, in dem vom verarbeitet die `SetAuthenticationContinuationEventArgs`.
+Die `MainActivity` Klasse muss geändert werden, zum Bereitstellen der `UIParent` Objekt, das die Anwendung während der die `OnCreate` aufrufen. Wenn Azure Active Directory B2C die autorisierungsanforderung abgeschlossen ist, leitet Sie der registrierten URL-Schema aus der **"androidmanifest.xml"** . Das registrierte URI-Schema führt Android Aufrufen der `OnActivityResult` Methode mit der URL als Parameter starten, in dem sie vom verarbeitet wird die `SetAuthenticationContinuationEventArgs` Methode.
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -304,7 +310,7 @@ public class MainActivity : FormsAppCompatActivity
 
         Forms.Init(this, bundle);
         LoadApplication(new App());
-        App.UiParent = new UIParent(this);
+        App.UIParent = this;
     }
 
     protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
