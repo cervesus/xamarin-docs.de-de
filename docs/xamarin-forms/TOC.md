@@ -336,6 +336,7 @@
 #### [Azure Search](data-cloud/search/azure-search.md)
 ### [Serverlose Anwendungen](data-cloud/serverless/index.md)
 #### [Azure Functions](data-cloud/serverless/azure-functions.md)
+#### [Azure SignalR Service mit Xamarin.Forms](data-cloud/serverless/azure-signalr.md)
 ### [Speichern von Daten in einer Dokumentdatenbank](data-cloud/cosmosdb/index.md)
 #### [Verwenden einer Azure Cosmos DB-Dokumentdatenbank](data-cloud/cosmosdb/consuming.md)
 #### [Authentifizieren von Benutzern bei einer Azure Cosmos DB-Dokumentdatenbank](data-cloud/cosmosdb/authentication.md)
