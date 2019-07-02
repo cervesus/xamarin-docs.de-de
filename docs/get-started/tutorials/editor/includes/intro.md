@@ -1,11 +1,16 @@
 ---
-ms.openlocfilehash: f0a7a0f66f78739ce191c257de91e4770e65282c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ab8d29e876b96049cd4cfeb734b33724cba30624
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61373381"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277241"
 ---
+Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
+
+- Den Schnellstart [Erstellen Ihrer ersten Xamarin.Forms-App](~/get-started/first-app/index.md)
+- Das Tutorial zu [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
+
 In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 > [!div class="checklist"]
@@ -13,24 +18,6 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 > - Darauf reagieren, dass sich Text im `Editor` ändert
 > - Anpassen des Verhaltens des `Editor`-Elements
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+Sie verwenden Visual Studio 2019 oder Visual Studio für Mac, um eine einfache Anwendung zu erstellen, die zeigt, wie Sie das Verhalten eines [`Editor`](xref:Xamarin.Forms.Editor) anpassen können. Die folgenden Screenshots zeigen die finale Anwendung:
 
-### <a name="prerequisites"></a>Erforderliche Komponenten
-
-Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2017 und die Workload **Mobile-Entwicklung mit .NET**. Außerdem müssen Sie über einen gekoppelten Mac verfügen, um die Tutorial-App unter iOS zu kompilieren. Informationen zur Installation der Xamarin-Plattform finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md). Informationen zum Verbinden von Visual Studio 2017 mit einem Mac-Buildhost finden Sie unter [Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
-
-Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
-
-- Den Schnellstart [Erstellen Ihrer ersten Xamarin.Forms-App](~/get-started/first-app/index.md)
-- Das Tutorial zu [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>Erforderliche Komponenten
-
-Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mit Plattformunterstützung für iOS und Android. Zudem ist Xcode (neuestes Release) erforderlich. Weitere Informationen zur Installation der Xamarin-Plattform finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md).
-
-Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
-
-- Den Schnellstart [Erstellen Ihrer ersten Xamarin.Forms-App](~/get-started/first-app/index.md)
-- Das Tutorial zu [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
+[![Screenshot: Editor mit automatischer Größenanpassung unter iOS und Android](../images/customize-behavior.png "Editor mit automatischer Größenanpassung")](../images/customize-behavior-large.png#lightbox "Editor mit automatischer Größenanpassung")
