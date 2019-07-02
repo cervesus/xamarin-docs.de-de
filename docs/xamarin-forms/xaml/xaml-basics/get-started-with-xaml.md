@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 086ed765781d9297f07574519d2cbc9cf93ac4dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 855bbc61fb5e4e653dbd39ddf05fac3e2fb42d8c
+ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61344802"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67493356"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
@@ -74,15 +74,15 @@ Es sei denn, Sie zum Schreiben von plattformspezifischem Code, der gemeinsam ver
 
 In der **XamlSamples** .NET Standard-Bibliothek sind ein Paar von Dateien mit den folgenden Namen:
 
-- **"App.xaml"**, die XAML-Datei und
-- **Datei "App.Xaml.cs"**, C# *CodeBehind* Datei, die der XAML-Datei zugeordnet.
+- **"App.xaml"** , die XAML-Datei und
+- **Datei "App.Xaml.cs"** , C# *CodeBehind* Datei, die der XAML-Datei zugeordnet.
 
 Sie müssen auf den Pfeil neben klicken **"App.xaml"** zum Code-Behind-Datei finden Sie unter.
 
 Beide **"App.xaml"** und **"App.Xaml.cs"** tragen zu einer Klasse namens `App` abgeleitet, die `Application`. Die meisten anderen Klassen mit XAML-Dateien auf eine abgeleitete Klasse beitragen `ContentPage`; diese Dateien, die XAML verwenden, um den visuellen Inhalt, der eine ganze Seite zu definieren. Dies gilt für die anderen beiden Dateien in die **XamlSamples** Projekt:
 
-- **"MainPage.xaml"**, die XAML-Datei und
-- **Datei "MainPage.Xaml.cs"**, C# Code-Behind-Datei.
+- **"MainPage.xaml"** , die XAML-Datei und
+- **Datei "MainPage.Xaml.cs"** , C# Code-Behind-Datei.
 
 Die **"MainPage.xaml"** Datei sieht folgendermaßen aus (obwohl die Formatierung ein wenig anders sein kann):
 
@@ -102,7 +102,7 @@ Die **"MainPage.xaml"** Datei sieht folgendermaßen aus (obwohl die Formatierung
 </ContentPage>
 ```
 
-Die beiden XML-Namespace ( `xmlns`) Deklarationen URIs, die erste scheinbar auf Xamarins-Website und die zweite in von Microsoft finden Sie unter. Sie einfach keinen, welchem Punkt die URIs zu überprüfen. Es ist nichts vorhanden. Sie einfach die URIs, die im Besitz von Xamarin und Microsoft sind, und sie funktionieren im Wesentlichen als Versions-IDs.
+Die beiden XML-Namespace (`xmlns`) Deklarationen URIs, die erste scheinbar auf Xamarins-Website und die zweite in von Microsoft finden Sie unter. Sie einfach keinen, welchem Punkt die URIs zu überprüfen. Es ist nichts vorhanden. Sie einfach die URIs, die im Besitz von Xamarin und Microsoft sind, und sie funktionieren im Wesentlichen als Versions-IDs.
 
 Die erste XML-Namespacedeklaration bedeutet, dass es sich bei Tags, die in der XAML-Datei ohne Präfix definiert z. B. Klassen, die in Xamarin.Forms finden Sie `ContentPage`. Die zweite Namespacedeklaration definiert ein Präfix des `x`. Hiermit wird für mehrere Elemente und Attribute, die für XAML systemintern sind selbst und die von anderen Implementierungen von XAML unterstützt werden. Allerdings sind diese Elemente und Attribute variieren, je nachdem das Jahr im URI eingebetteten. Xamarin.Forms wird unterstützt, die XAML 2009-Spezifikation, aber nicht für alle.
 
@@ -149,13 +149,13 @@ Für weitere interessante Visualisierungen, ist alles, was Sie benötigen weiter
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Hinzufügen von anderen XAML-basierte `ContentPage` Klassen zu Ihrem Projekt, wählen Sie die **XamlSamples** .NET Standard-Bibliothek Projekt, und rufen Sie die **Projekt > Neues Element hinzufügen** Menüelement. Am linken Rand der **neues Element hinzufügen** wählen Sie im Dialogfeld **Visual C#**  und **Xamarin.Forms**. Wählen Sie aus der Liste **Inhaltsseite** (nicht **Inhaltsseite (C#)**, eine Seite nur mit Code erstellt oder **Ansicht "Inhalt"**, dies ist keiner Seite). Geben Sie der Seite einen Namen, z. B. **HelloXamlPage.xaml**:
+Hinzufügen von anderen XAML-basierte `ContentPage` Klassen zu Ihrem Projekt, wählen Sie die **XamlSamples** .NET Standard-Bibliothek Projekt, und rufen Sie die **Projekt > Neues Element hinzufügen** Menüelement. Am linken Rand der **neues Element hinzufügen** wählen Sie im Dialogfeld **Visual C#**  und **Xamarin.Forms**. Wählen Sie aus der Liste **Inhaltsseite** (nicht **Inhaltsseite (C#)** , eine Seite nur mit Code erstellt oder **Ansicht "Inhalt"** , dies ist keiner Seite). Geben Sie der Seite einen Namen, z. B. **HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Dialogfeld \"Neues Element\" hinzufügen")
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Hinzufügen von anderen XAML-basierte `ContentPage` Klassen zu Ihrem Projekt, wählen Sie die **XamlSamples** .NET Standard-Bibliothek Projekt, und rufen Sie die **Datei > neue Datei** Menüelement. Am linken Rand der **neue Datei** wählen Sie im Dialogfeld **Forms** auf der linken Seite und **Forms-ContentPage Xaml** (nicht **Formular-ContentPage**, erstellt eine Seite nur mit Code oder **Ansicht "Inhalt"**, dies ist keiner Seite). Geben Sie der Seite einen Namen, z. B. **HelloXamlPage**:
+Hinzufügen von anderen XAML-basierte `ContentPage` Klassen zu Ihrem Projekt, wählen Sie die **XamlSamples** .NET Standard-Bibliothek Projekt, und rufen Sie die **Datei > neue Datei** Menüelement. Am linken Rand der **neue Datei** wählen Sie im Dialogfeld **Forms** auf der linken Seite und **Forms-ContentPage Xaml** (nicht **Formular-ContentPage**, erstellt eine Seite nur mit Code oder **Ansicht "Inhalt"** , dies ist keiner Seite). Geben Sie der Seite einen Namen, z. B. **HelloXamlPage**:
 
 ![](get-started-with-xaml-images/mac/newfiledialog.png "Dialogfeld \"neue Datei\"")
 
