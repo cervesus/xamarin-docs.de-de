@@ -7,12 +7,12 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 56c4345dffe71f79e9d89c64478a9c6c38fc1d84
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61335265"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513017"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Zusammenfassung der Kapitel 21. Transformiert
 
@@ -39,7 +39,7 @@ Transformationen werden unterstützt, mit acht Eigenschaften vom Typ `double` vo
 - [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 - [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
-Alle diese Eigenschaften werden von bindbare Eigenschaften unterstützt. Sie können die Ziele der Datenbindung und Stil. [**Kapitel 22. Animation** ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md) wird veranschaulicht, wie diese Eigenschaften animiert werden können, aber einige Beispiele in diesem Kapitel zu zeigen, wie Sie mithilfe der Xamarin.Forms animieren können [Timer](~/xamarin-forms/platform/device.md#Device_StartTimer).
+Alle diese Eigenschaften werden von bindbare Eigenschaften unterstützt. Sie können die Ziele der Datenbindung und Stil. [**Kapitel 22. Animation** ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md) wird veranschaulicht, wie diese Eigenschaften animiert werden können, aber einige Beispiele in diesem Kapitel zu zeigen, wie Sie mithilfe der Xamarin.Forms animieren können [Timer](~/xamarin-forms/platform/device.md#devicestarttimer).
 
 Transformieren Sie die Eigenschaften beeinflussen nur, wie das Element gerendert wird, und führen *nicht* beeinflussen, wie das Element im Layout angesehen wird.
 

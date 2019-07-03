@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: a3704552c8fc147588919ecdde2813e831237d89
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e6d8ccea7331f53d2e7262630689075a8b9a1ff1
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019346"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522964"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient-Stapel und SSL/TLS-Implementierungsauswahl für Android
 
@@ -112,7 +112,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
-> Das zugrunde liegende Android-Gerät muss (d. h. TLS 1.2 unterstützen. Android 4.1 und höher)
+> Das zugrunde liegende Android-Gerät muss (d. h. TLS 1.2 unterstützen. Android 4.1 und höher). Beachten Sie, dass die offizielle Unterstützung für TLS 1.2 in Android 5.0 und höher ist. Einige Geräte unterstützen jedoch die TLS 1.2 in Android 4.1 und höher.
 
 
 ## <a name="ssltls-implementation-build-option"></a>Buildoption SSL/TLS-Implementierung
@@ -135,7 +135,7 @@ Zum Beispiel:
 var client = new HttpClient();
 ```
 
-Wenn die Implementierung von "HttpClient", um festgelegt wurde **verwaltet** und die TLS-Implementierung wurde festgelegt, um **natives TLS 1.2 +**, und klicken Sie dann die `client` Objekt würde automatisch verwenden Sie das verwaltete `HttpClientHandler` und TLS 1.2 (bereitgestellt von der Bibliothek BoringSSL) für die HTTP-Anforderungen.
+Wenn die Implementierung von "HttpClient", um festgelegt wurde **verwaltet** und die TLS-Implementierung wurde festgelegt, um **natives TLS 1.2 +** , und klicken Sie dann die `client` Objekt würde automatisch verwenden Sie das verwaltete `HttpClientHandler` und TLS 1.2 (bereitgestellt von der Bibliothek BoringSSL) für die HTTP-Anforderungen.
 
 Jedoch wenn die **HttpClient-Implementierung** nastaven NA hodnotu `AndroidHttpClient`, klicken Sie dann alle `HttpClient` verwenden Objekte die zugrunde liegenden Java-Klasse `java.net.URLConnection` und nicht betroffen von der **TLS/SSL-Implementierung** Wert. `WebRequest` Objekte, würde die BoringSSL-Bibliothek verwenden.
 

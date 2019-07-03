@@ -6,13 +6,13 @@ ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/04/2019
-ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/28/2019
+ms.openlocfilehash: de77be818abbe1250946ee2ce1599235b79d8c01
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61093705"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512978"
 ---
 # <a name="fonts-in-xamarinforms"></a>Schriftarten in Xamarin.Forms
 
@@ -50,18 +50,7 @@ Die `FontSize` Eigenschaft kann auf einen double-Wert, für die Instanz festgele
 label.FontSize = 24;
 ```
 
-Sie können auch die `NamedSize` Enumeration, die vier integrierten Optionen; Xamarin.Forms wählt die optimale Größe für jede Plattform.
-
--  **Micro**
--  **Kleine**
--  **Mittel**
--  **Große**
-
-Die `NamedSize` Enumeration möglich verwendet, wo eine `FontSize` kann angegeben werden, mithilfe der `Device.GetNamedSize` Methode, um den Wert konvertiert werden soll eine `double`:
-
-```csharp
-label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
-```
+Xamarin.Forms definiert auch die Felder in der [ `NamedSize` ](xref:Xamarin.Forms.NamedSize) Enumeration, der bestimmte Schriftgrade Ihren Bedürfnissen entsprechend darstellt. Weitere Informationen zu benannten Schriftgraden, finden Sie unter [mit dem Namen Schriftgrade Ihren Bedürfnissen entsprechend](#named-font-sizes).
 
 <a name="FontAttributes" />
 
@@ -111,7 +100,7 @@ Es ist ein integrierte Konverter für die `FontSize` -Eigenschaft, die alle Eins
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) kann auch in XAML verwendet werden um zu eine andere Schriftart auf jeder Plattform zu rendern. Im folgenden Beispiel wird eine benutzerdefinierte Schriftart unter iOS (<span style="font-family:MarkerFelt-Thin">MarkerFelt-dünn</span>) und gibt nur die Größe/Attribute auf den anderen Plattformen:
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) kann auch in XAML verwendet werden um zu eine andere Schriftart auf jeder Plattform zu rendern. Im folgenden Beispiel wird eine benutzerdefinierte Schriftart unter iOS (<span style="font-family:MarkerFelt-Thin">MarkerFelt-dünn</span>) und gibt nur die Größe/Attribute auf den anderen Plattformen:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -126,6 +115,32 @@ Es ist ein integrierte Konverter für die `FontSize` -Eigenschaft, die alle Eins
 ```
 
 Wenn Sie eine benutzerdefinierte Schriftart angeben, es ist immer eine gute Idee, `OnPlatform`, da es schwierig, eine Schriftart zu finden, die auf allen Plattformen verfügbar ist.
+
+## <a name="named-font-sizes"></a>Benannte Schriftgrade Ihren Bedürfnissen entsprechend
+
+Xamarin.Forms definiert die Felder in der [ `NamedSize` ](xref:Xamarin.Forms.NamedSize) Enumeration, der bestimmte Schriftgrade Ihren Bedürfnissen entsprechend darstellt. Die folgende Tabelle zeigt die `NamedSize` Elemente und deren Standardgrößen unter iOS, Android und die universelle Windows-Plattform (UWP):
+
+| Member | iOS | Android | UWP |
+| --- | --- | --- | --- |
+| `Default` | 16 | 14 | 14 |
+| `Micro` | 11 | 10 | 15.667 |
+| `Small` | 13 | 14 | 18.667 |
+| `Medium` | 16 | 17 | 22.667 |
+| `Large` | 20 | 22 | 32 |
+| `Body` | 17 | 16 | 14 |
+| `Header` | 17 | 96 | 46 |
+| `Title` | 28 | 24 | 24 |
+| `Subtitle` | 22 | 16 | 20 |
+| `Caption` | 12 | 12 | 12 |
+
+Benannte Schriftgrade Ihren Bedürfnissen entsprechend können über XAML und Code festgelegt werden. Darüber hinaus die `Device.GetNamedSize` Methode aufgerufen werden, um das Zurückgeben einer `double` , die benannte Schriftgrad darstellt:
+
+```csharp
+label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+```
+
+> [!NOTE]
+> Unter iOS und Android werden benannte Schriftgrade für die automatische Skalierung basierend auf Betriebssystem-Optionen zur Barrierefreiheit. Dieses Verhalten kann auf iOS mit einer plattformspezifischen deaktiviert werden. Weitere Informationen finden Sie unter [Zugriff Schriftgraden unter iOS mit dem Namen Skalierung](~/xamarin-forms/platform/ios/named-font-size-scaling.md).
 
 <a name="Using_a_Custom_Font" />
 
@@ -185,7 +200,7 @@ Der allgemeine Code für die Anwendung ist damit fertiggestellt. Nun wird plattf
 
 ### <a name="xaml"></a>XAML
 
-Sie können auch [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values) in XAML, um eine benutzerdefinierte Schriftart zu rendern:
+Sie können auch [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads) in XAML, um eine benutzerdefinierte Schriftart zu rendern:
 
 ```xaml
 <Label Text="Hello Forms with XAML">

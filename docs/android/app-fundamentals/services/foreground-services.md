@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: df917896f901060a5518076afa859d34a03f4d6d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b1cc043ac94fb48e3e7fe6b7ba647cfb19a4c7eb
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012346"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522938"
 ---
 # <a name="foreground-services"></a>Vordergrunddienste
 
@@ -22,7 +22,7 @@ Um ein Foreground-Dienst zu starten, muss die app einen Intent verteilen, die mi
 Diese C#-Erweiterungsmethode ist ein Beispiel zum Starten eines Diensts Vordergrund. Unter Android 8.0 und höher verwendet die `StartForegroundService` Methode, die andernfalls die ältere `StartService` verwendet wird.  
 
 ```csharp
-public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
+public static void StartForegroundServiceCompat<T>(this Context context, Bundle args = null) where T : Service
 {
     var intent = new Intent(context, typeof(T));
     if (args != null) 

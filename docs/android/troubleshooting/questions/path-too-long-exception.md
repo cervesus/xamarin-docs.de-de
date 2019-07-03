@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 4cb3e13ebbe3d9e8aed153528a35ab16c92e2145
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 443c3cc742ceb919e64a781e18c5a97c342abb44
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153323"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522922"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>Wie löse ich einen PathTooLongException-Fehler?
 
@@ -28,12 +28,12 @@ Auf Windows (die maximale Länge für einen Pfad, in denen ist [260 Zeichen](htt
 
 ## <a name="fix"></a>Korrektur
 
-Xamarin.Android 8.0, ab der `UseShortFileNames` MSBuild-Eigenschaft kann festgelegt werden, um diesen Fehler zu umgehen. Wenn diese Eigenschaft auf festgelegt ist `True` (der Standardwert ist `False`), verwendet der Buildprozess kürzere Pfadnamen reduzieren die Wahrscheinlichkeit, dass erzeugt eine **PathTooLongException**.
+Die `UseShortFileNames` MSBuild-Eigenschaft auf festgelegt ist `True` standardmäßig diesen Fehler zu umgehen. Wenn diese Eigenschaft auf festgelegt ist `True`, verwendet der Buildprozess kürzere Pfadnamen reduzieren die Wahrscheinlichkeit, dass erzeugt eine **PathTooLongException**.
 Z. B. wenn `UseShortFileNames` nastaven NA hodnotu `True`, oben angegebenen Pfad wird verkürzt, Pfad, der dem folgenden ähnelt:
 
 **"C:"\\einige\\Directory\\Lösung\\Projekt\\Obj\\Debuggen\\Lp\\1\\Jl\\Assets**
 
-Um diese Eigenschaft festzulegen, fügen Sie die folgende MSBuild-Eigenschaft für das Projekt **csproj** Datei:
+Um diese Eigenschaft manuell festlegen möchten, fügen Sie die folgende MSBuild-Eigenschaft für das Projekt **csproj** Datei:
 
 ```xml
 <PropertyGroup>

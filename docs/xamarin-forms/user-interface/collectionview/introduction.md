@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 889c78ea6849cdd094d34ed0cf74ceebd33ce51d
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: 456c83808ff685a8c2199cf80c96d63b9334675e
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005138"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512737"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Einführung in die Xamarin.Forms-CollectionView
 
@@ -31,7 +31,7 @@ Forms.SetFlags("CollectionView_Experimental");
 ```
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) ist nur unter iOS und Android verfügbar.
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) für iOS und Android verfügbar ist, ist jedoch nur teilweise auf der universellen Windows-Plattform zur Verfügung.
 
 ## <a name="collectionview-and-listview-differences"></a>Unterschiede zwischen CollectionView und ListView
 

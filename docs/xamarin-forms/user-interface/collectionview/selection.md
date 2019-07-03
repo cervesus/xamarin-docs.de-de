@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b026bd181571d689d3e19f2a815a52406f6f9da4
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: dc01cf6bea9fe614cbfb53dcc4417ffb0e602c6f
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005301"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512757"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView-Auswahl
 
@@ -23,8 +23,8 @@ ms.locfileid: "66005301"
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert die folgenden Eigenschaften, die Auswahl von Listenelementen zu steuern:
 
 - [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode), des Typs [ `SelectionMode` ](xref:Xamarin.Forms.SelectionMode), den Auswahlmodus.
-- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem), des Typs `object`, das ausgewählte Element in der Liste. Diese Eigenschaft verfügt über eine `null` Wert, wenn kein Element ausgewählt ist.
-- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems), des Typs `IList<object>`, die Elemente in der Liste ausgewählt. Diese Eigenschaft ist schreibgeschützt und verfügt über eine `null` Wert, wenn keine Elemente ausgewählt sind.
+- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem), des Typs `object`, das ausgewählte Element in der Liste. Diese Eigenschaft verfügt über einen Standardmodus für die Bindung der `TwoWay`, und verfügt über eine `null` Wert, wenn kein Element ausgewählt ist.
+- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems), des Typs `IList<object>`, die Elemente in der Liste ausgewählt. Diese Eigenschaft verfügt über einen Standardmodus für die Bindung der `OneWay`, und verfügt über eine `null` Wert, wenn keine Elemente ausgewählt sind.
 - [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand), des Typs `ICommand`, die ausgeführt wird, wenn das ausgewählte Element geändert wird.
 - [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter), des Typs `object`, dies ist der Parameter, der an die `SelectionChangedCommand`.
 
@@ -134,7 +134,7 @@ Wenn die [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMod
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
                 SelectionMode="Single"
-                SelectedItem="{Binding SelectedMonkey, Mode=TwoWay}">
+                SelectedItem="{Binding SelectedMonkey}">
     ...
 </CollectionView>
 ```
@@ -147,10 +147,13 @@ CollectionView collectionView = new CollectionView
     SelectionMode = SelectionMode.Single
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
-collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMonkey", BindingMode.TwoWay);
+collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMonkey");
 ```
 
-Die [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) Eigenschaftendaten bindet an die `SelectedMonkey` Eigenschaft des verbundenen Ansichtsmodell, das vom Typ `Monkey`. Ein `TwoWay` Bindung wird verwendet, damit, auch wenn der Benutzer das ausgewählte Element den Wert der ändert die `SelectedMonkey` Eigenschaft wird festgelegt, die dem ausgewählten `Monkey` Objekt. Die `SelectedMonkey` Eigenschaft wird definiert, der `MonkeysViewModel` Klasse, und klicken Sie auf das vierte Element der festgelegt ist die `Monkeys` Auflistung:
+> [!NOTE]
+> Die [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) Eigenschaft verfügt über einen Standardmodus für die Bindung der `TwoWay`.
+
+Die [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) Eigenschaftendaten bindet an die `SelectedMonkey` Eigenschaft des verbundenen Ansichtsmodell, das vom Typ `Monkey`. Standardmäßig eine `TwoWay` Bindung wird verwendet, daher ändert sich, auch wenn der Benutzer das ausgewählte Element den Wert des der `SelectedMonkey` Eigenschaft wird festgelegt, die dem ausgewählten `Monkey` Objekt. Die `SelectedMonkey` Eigenschaft wird definiert, der `MonkeysViewModel` Klasse, und klicken Sie auf das vierte Element der festgelegt ist die `Monkeys` Auflistung:
 
 ```csharp
 public class MonkeysViewModel : INotifyPropertyChanged
@@ -194,7 +197,8 @@ Wenn die [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMod
 ```xaml
 <CollectionView x:Name="collectionView"
                 ItemsSource="{Binding Monkeys}"
-                SelectionMode="Multiple">
+                SelectionMode="Multiple"
+                SelectedItems="{Binding SelectedMonkeys}">
     ...
 </CollectionView>
 ```
@@ -207,22 +211,56 @@ CollectionView collectionView = new CollectionView
     SelectionMode = SelectionMode.Multiple
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
-```
-
-Mehrere Elemente der [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) durch Hinzufügen der Benutzer zur vorab ausgewählt werden kann die [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) Eigenschaft:
-
-```csharp
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(1).FirstOrDefault());
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(3).FirstOrDefault());
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
+collectionView.SetBinding(SelectableItemsView.SelectedItemsProperty, "SelectedMonkeys");
 ```
 
 > [!NOTE]
-> Die [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) Eigenschaft ist schreibgeschützt, und es ist daher nicht möglich, eine bidirektionale Datenbindung Vorauswahl von Elementen zu verwenden.
+> Die [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) Eigenschaft verfügt über einen Standardmodus für die Bindung der `OneWay`.
+
+Die [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) Eigenschaftendaten bindet an die `SelectedMonkeys` Eigenschaft des verbundenen Ansichtsmodell, das vom Typ `ObservableCollection<object>`. Die `SelectedMonkeys` Eigenschaft wird definiert, der `MonkeysViewModel` Klasse, und auf der zweiten, vierte und fünfte festgelegt ist Elemente in der `Monkeys` Auflistung:
+
+```csharp
+namespace CollectionViewDemos.ViewModels
+{
+    public class MonkeysViewModel : INotifyPropertyChanged
+    {
+        ...
+        ObservableCollection<object> selectedMonkeys;
+        public ObservableCollection<object> SelectedMonkeys
+        {
+            get
+            {
+                return selectedMonkeys;
+            }
+            set
+            {
+                if (selectedMonkeys != value)
+                {
+                    selectedMonkeys = value;
+                }
+            }
+        }
+
+        public MonkeysViewModel()
+        {
+            ...
+            SelectedMonkeys = new ObservableCollection<object>()
+            {
+                Monkeys[1], Monkeys[3], Monkeys[4]
+            };
+        }
+        ...
+    }
+}
+```
 
 Aus diesem Grund, wenn die [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) angezeigt wird, der zweite viertes und fünfte Elemente in der Liste vorab ausgewählt sind:
 
 [![Screenshot von einer vertikalen Liste der CollectionView mit mehreren vor der Auswahl, unter iOS und Android](selection-images/multiple-pre-selection.png "CollectionView vertikale Liste mit mehreren vor der Auswahl")](selection-images/multiple-pre-selection-large.png#lightbox "CollectionView vertikal Liste mit mehreren vor der Auswahl")
+
+## <a name="clearing-selections"></a>Auswahl löschen
+
+Die [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) und [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) Eigenschaften können gelöscht werden, durch Festlegen von Optionen oder die Objekte, die sie an, zu `null`.
 
 ## <a name="change-selected-item-color"></a>Farbe des ausgewählten Elements ändern
 

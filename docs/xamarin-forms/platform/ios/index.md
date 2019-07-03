@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
-ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7aa9d298c2219dff60ca8ca1f917c72194ad21ca
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971018"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512675"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>iOS-Plattformfeatures in Xamarin.Forms
 
@@ -56,6 +56,7 @@ Die folgende plattformspezifischen Funktionen werden für Xamarin.Forms-Layouts 
 
 Die folgende plattformspezifische Funktionalität wird bereitgestellt, für die Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application) Klasse, die unter iOS:
 
+- Die Deaktivierung der Barrierefreiheit, die für die benannte Schriftgrade Ihren Bedürfnissen entsprechend skalieren. Weitere Informationen finden Sie unter [Zugriff Schriftgraden unter iOS mit dem Namen Skalierung](named-font-size-scaling.md).
 - Aktivieren der Steuerung des Layouts und Rendern von Updates auf dem Hauptthread ausgeführt werden. Weitere Informationen finden Sie unter [Main Thread Steuern von Updates auf iOS](main-thread-updates-ui.md).
 - Aktivieren einer [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) in einer fortlaufenden zu erfassen und freigeben die Bewegung Schwenken mit der Bildlauf angezeigt. Weitere Informationen finden Sie unter [gleichzeitige Pan Gestenerkennung unter iOS](application-pan-gesture.md).
 

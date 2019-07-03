@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/21/2019
-ms.openlocfilehash: 258468b836a4c1243b9123022ebbf1d55430321e
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 06/11/2019
+ms.openlocfilehash: 6fbe1104d238929d0c6c6978a9145cd51d52cb6c
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740974"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513097"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -90,6 +90,13 @@ Ansichten sind Benutzeroberflächenobjekte wie Bezeichnungen, Schaltflächen und
 |     |     |
 
 ## <a name="views-for-setting-values"></a>Ansichten für das Festlegen von Werten
+
+### <a name="checkbox"></a>CheckBox
+
+|     |     |
+| --- | --- |
+| `CheckBox` ermöglicht dem Benutzer auf einen booleschen Wert, der eine Art von Schaltfläche, die entweder geprüft werden kann oder leer sein. Die `IsChecked` Eigenschaft ist der Zustand der `CheckBox`, und die `CheckedChanged` Ereignis wird ausgelöst, wenn der Zustand geändert.<br /><br />API-Dokumentation / [Handbuch](~/xamarin-forms/user-interface/checkbox.md) / [Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CheckBoxDemos) | [![Beispiel für Kontrollkästchen](views-images/CheckBox.png "Kontrollkästchen Beispiel")](views-images/CheckBox-Large.png#lightbox "Beispiel für Kontrollkästchen")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxDemoPage.xaml) |
+|     |     |
 
 ### <a name="slider"></a>Slider
 

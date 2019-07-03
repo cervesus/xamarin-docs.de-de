@@ -6,13 +6,13 @@ ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2018
-ms.openlocfilehash: 4ba4bd7528b635d099868f093268d2d83e44dae0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/12/2019
+ms.openlocfilehash: 671abb0f61a5582a99165aa16c6b99db2ee8b1ee
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359881"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512876"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms-Device-Klasse
 
@@ -20,9 +20,7 @@ ms.locfileid: "61359881"
 
 Die [ `Device` ](xref:Xamarin.Forms.Device) Klasse enthält eine Reihe von Eigenschaften und Methoden für Entwickler, die Layout und die Funktionen auf einer Basis pro Plattform anpassen können.
 
-Neben den Methoden und Eigenschaften zum Code des ereignisdateiziels auf bestimmte Hardwaretypen und Größen der `Device` Klasse enthält die [BeginInvokeOnMainThread](#Device_BeginInvokeOnMainThread) Methode, die verwendet werden sollen, bei der Interaktion mit UI-Steuerelemente Hintergrundthreads.
-
-<a name="providing-platform-values" />
+Neben den Methoden und Eigenschaften zum Code des ereignisdateiziels auf bestimmte Hardwaretypen und Größen der `Device` Klasse enthält Methoden, die für die Interaktion mit UI-Steuerelemente von Hintergrundthreads verwendet werden können. Weitere Informationen finden Sie unter [interagieren mit der Benutzeroberfläche von Hintergrundthreads](#interact-with-the-ui-from-background-threads).
 
 ## <a name="providing-platform-specific-values"></a>Clientplattform-spezifische Werte bereitstellen
 
@@ -68,8 +66,6 @@ Die [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) -Klasse ist eine generisch
 > Bereitstellen eines falschen `Platform` -Attributwert in der `On` Klasse führt nicht zu einem Fehler. Stattdessen führt der Code ohne den plattformspezifischen-Wert, der angewendet wird.
 
 Sie können auch die `OnPlatform` Markuperweiterung in XAML verwendet werden kann, zum Anpassen der Darstellung der Benutzeroberfläche auf einer Basis pro Plattform. Weitere Informationen finden Sie unter [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
-
-<a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>"Device.Idiom"
 
@@ -135,8 +131,6 @@ this.FlowDirection = Device.FlowDirection;
 
 Weitere Informationen zu Richtung des Inhaltsflusses, finden Sie unter [rechts-nach-links-Lokalisierung](~/xamarin-forms/app-fundamentals/localization/right-to-left.md).
 
-<a name="Device_Styles" />
-
 ## <a name="devicestyles"></a>Device.Styles
 
 Die [ `Styles` Eigenschaft](~/xamarin-forms/user-interface/styles/index.md) enthält integrierte Formatdefinitionen, die auf einige Steuerelemente angewendet werden können (z. B. `Label`) `Style` Eigenschaft. Die verfügbaren Formate sind:
@@ -147,8 +141,6 @@ Die [ `Styles` Eigenschaft](~/xamarin-forms/user-interface/styles/index.md) enth
 * ListItemTextStyle
 * SubtitleStyle
 * TitleStyle
-
-<a name="Device_GetNamedSize" />
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 
@@ -163,8 +155,6 @@ someLabel.FontSize = Device.OnPlatform (
 );
 ```
 
-<a name="Device_OpenUri" />
-
 ## <a name="deviceopenuri"></a>Device.OpenUri
 
 Die `OpenUri` Methode kann zum Auslösen von Vorgängen auf die zugrunde liegende Plattform, z. B. eine URL öffnen, in das native Webbrowser verwendet werden (**Safari** unter iOS oder **Internet** unter Android).
@@ -176,8 +166,6 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 Die [WebView Beispiel](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs) enthält ein Beispiel mit `OpenUri` URLs öffnen und außerdem lösen Telefonanrufe.
 
 Die [Beispiel Maps](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs) verwendet auch `Device.OpenUri` zum Anzeigen von Karten und wegbeschreibungen mithilfe der systemeigenen **ordnet** apps auf IOS- und Android.
-
-<a name="Device_StartTimer" />
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
@@ -192,26 +180,31 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 Wenn der Code in den Timer mit der Benutzeroberfläche interagiert (z. B. das Festlegen des Texts des eine `Label` oder eine Warnung) sollte in erfolgen eine `BeginInvokeOnMainThread` Ausdruck (siehe unten).
 
-<a name="Device_BeginInvokeOnMainThread" />
+## <a name="interact-with-the-ui-from-background-threads"></a>Interagieren Sie mit der Benutzeroberfläche von Hintergrundthreads
 
-## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
+Die meisten Betriebssysteme, einschließlich iOS, Android und der universellen Windows-Plattform verwenden ein Single-threading-Modell für Code, die im Zusammenhang mit der Benutzeroberfläche. Dieser Thread wird häufig aufgerufen, die *Hauptthread* oder *UI-Thread*. Eine Folge dieses Modells ist, dass sämtlicher Code, der Elemente der Benutzeroberfläche greift auf Hauptthread der Anwendung ausgeführt werden muss.
 
-Elemente der Benutzeroberfläche sollten niemals von Hintergrundthreads, z. B. Code für einen Timer oder einen Abschlusshandler für asynchrone Vorgänge wie webanforderungen zugegriffen werden. Alle Hintergrund-Code, der zum Aktualisieren der Benutzeroberfläche muss sollten umhüllt [ `BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)). Dies ist die Entsprechung der `InvokeOnMainThread` unter iOS, `RunOnUiThread` unter Android und `Dispatcher.RunAsync` für die universelle Windows-Plattform.
+Anwendungen verwenden manchmal Hintergrundthreads möglicherweise langer Vorgänge, wie das Abrufen von Daten von einem Webdienst ausführen. Wenn Code, die in einem Hintergrundthread ausgeführt wird, auf Benutzeroberflächenelemente zugreifen muss, müssen sie diesen Code auf dem Hauptthread ausführen.
 
-Der Xamarin.Forms-Code ist:
+Die `Device` Klasse enthält die folgenden `static` Methoden, die verwendet werden können, für die Interaktion mit Benutzer-Schnittstellenelemente von Hintergrund-Threads:
+
+| Methode | Argumente | Rückgabe | Zweck |
+|---|---|---|---|
+| `BeginInvokeOnMainThread` | `Action` | `void` | Ruft eine `Action` im Hauptthread, und nicht dessen Abschluss warten. |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Ruft eine `Func<T>` auf dem Hauptthread, und klicken Sie auf seinen Abschluss wartet. |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | Ruft eine `Action` auf dem Hauptthread, und klicken Sie auf seinen Abschluss wartet. |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Ruft eine `Func<Task<T>>` auf dem Hauptthread, und klicken Sie auf seinen Abschluss wartet. |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Ruft eine `Func<Task>` auf dem Hauptthread, und klicken Sie auf seinen Abschluss wartet. |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | Gibt die `SynchronizationContext` für den Hauptthread. |
+
+Der folgende Code zeigt ein Beispiel der Verwendung der `BeginInvokeOnMainThread` Methode:
 
 ```csharp
-Device.BeginInvokeOnMainThread ( () => {
-  // interact with UI elements
+Device.BeginInvokeOnMainThread (() =>
+{
+    // interact with UI elements
 });
 ```
-
-Beachten Sie, dass Methoden, die mit `async/await` müssen nicht mit `BeginInvokeOnMainThread` würden sie aus dem Hauptbenutzeroberflächen-Thread ausgeführt werden.
-
-## <a name="summary"></a>Zusammenfassung
-
-Die Xamarin.Forms `Device` -Klasse ermöglicht eine präzisere Kontrolle über Funktionen und Layouts individuell für jede Plattform – sogar gemeinsamen Code (.NET Standard Library-Projekten oder freigegebene Projekte).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/14/2018
-ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.date: 06/11/2019
+ms.openlocfilehash: c98e1cd9f4095e8310150ceeebd994af2c9b7f87
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178076"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512931"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms-Schnittstelle Benutzeransichten
 
@@ -31,6 +31,10 @@ Die `BoxView` ist nur ein einfaches farbiges Rechteck, aber für dekorative Elem
 ## <a name="buttonbuttonmd"></a>[Button](button.md) (Schaltfläche)
 
 Die `Button` reagiert auf ein tippen oder klicken Sie auf, die eine Anwendung, um eine bestimmte Aufgabe durchzuführen weiterleitet.
+
+## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
+
+Die `CheckBox` ist eine Art von Schaltfläche, die können entweder überprüfte oder leer sein. Wenn ein Kontrollkästchen aktiviert ist, gilt dies als auf. Wenn ein Kontrollkästchen leer ist, gilt dies als deaktiviert werden.
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
@@ -52,7 +56,7 @@ DataPages Geben Sie eine API, um schnell und einfach zu eine Datenquelle mit vor
 
 Die `DatePicker` ermöglicht es einem Benutzer ein Datum in einem angegebenen Bereich auswählen. Die Implementierung erfolgt mithilfe der Datumsauswahl unterstützt durch die spezielle Plattform, die die Anwendung ausgeführt wird.
 
-## <a name="display-pop-upspop-upsmd"></a>[Anzeigen von Popups](pop-ups.md)
+## <a name="display-pop-upspop-upsmd"></a>[Anzeigen von Popupelementen](pop-ups.md)
 
 Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. Diese Elemente der Benutzeroberfläche können verwendet werden, die Dialogfelder angezeigt, die einfache Fragen von Benutzern und den Benutzern Hinweise, durch die Aufgaben stellen zu können.
 

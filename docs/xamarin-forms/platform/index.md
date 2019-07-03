@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 3f0156926f8d7a31e2e80318d7b05a909f158653
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cc19e2a4ea85391f585120f85b222b95ef63543f
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359160"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512849"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms-Plattformfeatures
 
@@ -24,7 +24,7 @@ Dieses Handbuch beschreibt die Android-Plattform-Besonderheiten von Xamarin.Form
 
 ## <a name="device-classdevicemd"></a>[Geräteklasse](device.md)
 
-Gewusst wie: Verwenden Sie die `Device` Klasse, um plattformspezifische Verhalten im freigegebenen Code und die Benutzeroberfläche (einschließlich der Verwendung von XAML) zu erstellen. Behandelt auch `BeginInvokeOnMainThread` ist wichtig, beim Benutzeroberflächen-Steuerelemente von Hintergrundthreads zu ändern.
+Dieses Handbuch erläutert, wie die `Device` Klasse, um plattformspezifische Verhalten in freigegebenem Code und die Benutzeroberfläche (einschließlich der Verwendung von XAML) und Interaktion mit UI-Steuerelemente von Hintergrundthreads zu erstellen.
 
 ## <a name="iosiosindexmd"></a>[iOS](ios/index.md)
 
