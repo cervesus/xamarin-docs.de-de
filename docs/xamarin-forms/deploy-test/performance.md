@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 347d0eebf7340bb8dc7234275d0f58acf7ab16c6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b445c1f8d3d440ecf609d5f3c1b7cc7147343fe0
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061030"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268605"
 ---
 # <a name="xamarinforms-performance"></a>Leistung von Xamarin.Forms
 
@@ -300,21 +300,23 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 {
   base.OnElementChanged (e);
 
-  if (Control == null) {
-    // Instantiate the native control
-  }
-
   if (e.OldElement != null) {
     // Unsubscribe from event handlers and cleanup any resources
   }
 
   if (e.NewElement != null) {
+    if (Control == null) {
+      // Instantiate the native control
+    }
     // Configure the control and subscribe to event handlers
   }
 }
 ```
 
-Ein neues natives Steuerelement sollte nur einmal instanziiert werden, wenn der Wert der Eigenschaft `Control` `null` lautet. Ein Steuerelement sollte nur dann konfiguriert und für Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein gut funktionierender benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
+Ein neues natives Steuerelement sollte nur einmal instanziiert werden, wenn der Wert der Eigenschaft `Control` `null` lautet. Ein Steuerelement sollte außerdem nur dann erstellt, konfiguriert und vom Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein gut funktionierender benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
+
+> [!IMPORTANT]
+> Die `SetNativeControl`-Methode sollte nur aufgerufen werden, wenn `e.NewElement` nicht `null` ist.
 
 Weitere Informationen zu benutzerdefinierten Renderern finden Sie unter [Customizing Controls on Each Platform (Anpassen von Steuerelementen auf den einzelnen Plattformen)](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 

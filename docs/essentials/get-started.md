@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: d8562cd74b661b5f72f373151b9aa0acc36f8477
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 7aa918a1aa70910cd05b17916e060e65ca5404bd
+ms.sourcegitcommit: 17376f0e54467d826b8928a11965fd0c879704f2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869753"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131981"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Erste Schritte mit Xamarin.Essentials
 
@@ -35,7 +35,7 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar, das jedem vorhandenen oder ne
 
 2. Öffnen Sie ein vorhandenes Projekt, oder erstellen Sie ein neues Projekt mit der Vorlage „Leere App“ unter **Visual Studio C#** (Android, iPhone & iPad oder plattformübergreifend). **Wichtig:** Überprüfen Sie beim Hinzufügen zu einem UWP-Projekt, ob Build 16299 oder höher in den Projekteigenschaften festgelegt ist.
 
-3. Fügen Sie das NuGet-Paket **Xamarin.Essentials** jedem Projekt hinzu:
+3. Fügen Sie das NuGet-Paket [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) jedem Projekt hinzu:
 
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

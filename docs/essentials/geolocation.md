@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 93abf62e5d0b1df48606e4515fca6747146c7777
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 4ac6344165730bc8c348c16fe8f3a932d4ac3548
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175355"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268619"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
 
@@ -48,19 +48,19 @@ Alternativ können Sie das Android-Manifest aktualisieren:
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie im **Android-Manifest** nach dem Bereich **Erforderliche Berechtigungen:**, und aktivieren Sie die Berechtigung **ACCESS_COARSE_LOCATION** (Standortzugriff (grob)) und **ACCESS_FINE_LOCATION** (Standortzugriff (fein)). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
+Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie im **Android-Manifest** nach dem Bereich **Erforderliche Berechtigungen:** , und aktivieren Sie die Berechtigung **ACCESS_COARSE_LOCATION** (Standortzugriff (grob)) und **ACCESS_FINE_LOCATION** (Standortzugriff (fein)). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 Die Datei **Info.plist** Ihrer App muss den `NSLocationWhenInUseUsageDescription`-Schlüssel enthalten, damit Sie auf den Gerätestandort zugreifen können.
 
-Öffnen Sie den Plist-Editor, fügen Sie die Eigenschaft **Datenschutz – Beschreibung der Nutzung der Ortserkennung** hinzu, und geben Sie einen Wert ein, um den Benutzer anzuzeigen.
+Öffnen Sie den Plist-Editor, fügen Sie die Eigenschaft **Datenschutz – Beschreibung der Nutzung der Ortserkennung** hinzu, und geben Sie einen Wert ein, der dem Benutzer angezeigt werden soll.
 
-Oder bearbeiten Sie die Datei manuell, und fügen Sie Folgendes hinzu:
+Oder bearbeiten Sie die Datei manuell. Fügen Sie Folgendes hinzu, und aktualisieren Sie die Begründung:
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
-<string>This app needs access location when open.</string>
+<string>Fill in a reason why your app needs access to location.</string>
 ```
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
