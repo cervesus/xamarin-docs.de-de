@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9848d2b832990032bc7eb7f2e3a93c896457134c
+ms.sourcegitcommit: e95296f9e516975f5f32d822c323a71fd84007b9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381873"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67538697"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>Kommunikation zwischen lose gekoppelten Komponenten
 
@@ -43,7 +43,7 @@ Die eShopOnContainers-mobile app verwendet die [ `MessagingCenter` ](xref:Xamari
 > [!NOTE]
 > Während der [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) Klasse ermöglicht die Kommunikation zwischen lose gekoppelten Klassen, die er bietet nicht nur die Lösung für dieses Problem. Beispielsweise kann die Kommunikation zwischen einem View Model und eine Ansicht auch durch die Bindungs-Engine und über Benachrichtigungen über eigenschaftsänderungen erreicht werden. Kommunikation zwischen zwei Ansichtsmodelle kann darüber hinaus auch erreicht werden, indem Daten während der Navigation übergeben.
 
-In der mobilen app "eshoponcontainers"[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) dient zum Aktualisieren der Benutzeroberfläche als Reaktion auf eine Aktion, die in einer anderen Klasse auftreten. Aus diesem Grund werden die Nachrichten mit Abonnenten empfangen der Nachricht auf dem gleichen Thread der UI-Thread veröffentlicht.
+In der mobilen app "eshoponcontainers" [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) dient zum Aktualisieren der Benutzeroberfläche als Reaktion auf eine Aktion, die in einer anderen Klasse auftreten. Aus diesem Grund werden die Nachrichten mit Abonnenten empfangen der Nachricht auf dem gleichen Thread der UI-Thread veröffentlicht.
 
 > [!TIP]
 > Beim Ausführen von UI-updates zum UI-Thread zu marshallen. Wenn eine Nachricht, die aus einem Hintergrundthread gesendet wird zur Aktualisierung der Benutzeroberfläche erforderlich ist, verarbeitet die Nachricht im UI-Thread auf dem Abonnenten durch Aufrufen der [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) Methode.
