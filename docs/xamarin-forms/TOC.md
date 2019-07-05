@@ -231,6 +231,7 @@
 #### [WebView-Zoom](platform/android/webview-zoom-controls.md)
 ### [Geräteklasse](platform/device.md)
 ### [iOS](platform/ios/index.md)
+#### [Skalierung mit benannten Schriftgraden zur Bereitstellung von Barrierefreiheit](platform/ios/named-font-size-scaling.md)
 #### [Zellhintergrundfarbe](platform/ios/cell-background-color.md)
 #### [Farbe für Eingabecursor](platform/ios/entry-cursor-color.md)
 #### [Schriftgrad für Einträge](platform/ios/entry-font-size.md)

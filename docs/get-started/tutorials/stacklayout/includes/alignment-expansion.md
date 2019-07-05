@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d6dbc82e56959399c2befb6a12f0a2cf3793ee5b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382516"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67559998"
 ---
 Die Größe und Position untergeordneter Ansichten innerhalb einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse hängen von den Werten der Eigenschaften [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) und [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) der untergeordneten Ansichten ab sowie den Werten der Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions).
 
@@ -124,3 +124,8 @@ Die Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOption
     > Wenn der gesamte Platz in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse belegt ist, haben Einstellungen für die Erweiterung keine Auswirkungen.
 
     Weitere Informationen zur Ausrichtung und Erweiterung finden Sie unter [Layoutoptionen in Xamarin.Forms](~/xamarin-forms/user-interface/layouts/layout-options.md).
+
+-----
+
+> [!div class="nextstepaction"]
+> [Es ist ein Problem aufgetreten](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+3+Feedback&template=tutorial_template.md)

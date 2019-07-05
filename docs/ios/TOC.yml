@@ -244,6 +244,14 @@
       items:
         - name: Übersicht
           href: platform/index.md
+        - name: iOS 13-Vorschau
+          items:
+            - name: Einführung in iOS 13
+              href: platform/ios13/index.md
+            - name: Erste Schritte
+              href: platform/ios13/get-started.md
+            - name: Problembehandlung
+              href: platform/ios13/troubleshooting/index.md
         - name: iOS 12
           items:
             - name: Einführung in iOS 12
@@ -776,8 +784,6 @@
           href: troubleshooting/index.md
         - name: Hinweise zur Fehlerbehebung
           href: troubleshooting/troubleshooting.md
-        - name: Xcode 11-Vorschauversion
-          href: ~/ios/platform/ios13/troubleshooting/index.md
         - name: Regeln für die Xamarin.iOS-Analyse
           href: troubleshooting/xamarin-ios-analysis.md
         - name: Fehlermeldungen (mtouch)

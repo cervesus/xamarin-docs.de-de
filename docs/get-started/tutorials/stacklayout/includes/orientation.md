@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a7c2aa15521b89e4930746dc5421ce67fa26b2b9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5a464196c08220158432219d96bf82578789d8e5
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382526"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67559997"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -47,3 +47,8 @@ ms.locfileid: "61382526"
     [![Screenshot: Eine horizontal ausgerichtete Ansicht der untergeordneten Elemente in einer StackLayout-Klasse, auf iOS und Android](../images/orientation.png "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")](../images/orientation-large.png#lightbox "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")
 
     Wie Sie sehen können, sind die [`Label`](xref:Xamarin.Forms.Label)-Instanzen in der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse jetzt horizontal anstatt vertikal ausgerichtet.
+
+-----
+
+> [!div class="nextstepaction"]
+> [Es ist ein Problem aufgetreten](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+2+Feedback&template=tutorial_template.md)
