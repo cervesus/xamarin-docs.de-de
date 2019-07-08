@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a667f952eead5bed8305f4c9f4201fd6235b883a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ee8d6966b9eac2dad6a36c215bf7aa5bdf79a867
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239970"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512993"
 ---
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms-Steuerelementvorlagen
 
@@ -20,9 +20,9 @@ _Steuerelementvorlagen trennen das Aussehen und den Inhalt einer Seite klar von 
 
 ## <a name="introductionintroductionmd"></a>[Introduction (Einführung)](introduction.md)
 
-Mit Xamarin.Forms-Steuerelementvorlagen können Sie auf einfache Weise Designs für Anwendungsseiten zur Laufzeit entwerfen und überarbeiten. In diesem Artikel werden Steuerelementvorlagen grundlegend vorgestellt.
+Mit Xamarin.Forms-Steuerelementvorlagen können Sie unkompliziert zur Laufzeit Designs für Anwendungsseiten entwerfen und überarbeiten. In diesem Artikel werden Steuerelementvorlagen grundlegend vorgestellt.
 
-## <a name="creating-a-controltemplatecreatingmd"></a>[Erstellen einer Steuerelementvorlage](creating.md)
+## <a name="create-a-controltemplatecreatingmd"></a>[Erstellen einer ControlTemplate](creating.md)
 
 Steuerelementvorlagen können auf Anwendungsebene oder auf Seitenebene definiert werden. In diesem Artikel wird veranschaulicht, wie Sie eine Steuerelementvorlagen erstellen und verwenden können.
 

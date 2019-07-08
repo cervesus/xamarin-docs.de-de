@@ -1,26 +1,26 @@
 ---
-title: Erstellen eines ControlTemplate-Objekts
-description: Steuerelementvorlagen können auf Anwendungsebene oder auf Seitenebene definiert werden. In diesem Artikel wird veranschaulicht, wie Sie Steuerelementvorlagen erstellen und verwenden.
+title: Erstellen einer ControlTemplate
+description: Steuerelementvorlagen können auf Anwendungs- oder auf Seitenebene definiert werden. In diesem Artikel wird veranschaulicht, wie Sie Steuerelementvorlagen erstellen und verwenden.
 ms.prod: xamarin
 ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 86e10f068af14e65b55885488252af756a90652e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.date: 06/14/2019
+ms.openlocfilehash: 0642f304589d30284bc8d3577c0383099e349033
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926961"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513045"
 ---
-# <a name="creating-a-controltemplate"></a>Erstellen eines ControlTemplate-Objekts
+# <a name="create-a-controltemplate"></a>Erstellen einer ControlTemplate
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
 
 _Steuerelementvorlagen können auf Anwendungsebene oder auf Seitenebene definiert werden. In diesem Artikel wird veranschaulicht, wie Sie Steuerelementvorlagen erstellen und verwenden._
 
-## <a name="creating-a-controltemplate-in-xaml"></a>Erstellen einer Steuerelementvorlage in XAML
+## <a name="create-a-controltemplate-in-xaml"></a>Erstellen einer ControlTemplate in XAML
 
 Zum Definieren der [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse auf Anwendungsebene, müssen Sie der Klasse `App` ein [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) hinzufügen. Standardmäßig verwenden alle Xamarin.Forms-Anwendungen, die aus einer Vorlage erstellt werden, die Klasse **App**. Damit wird die Unterklasse [`Application`](xref:Xamarin.Forms.Application) implementiert. Zum Deklarieren der `ControlTemplate`-Klasse auf Anwendungsebene muss bei `ResourceDictionary` in der Anwendung mithilfe von XAML die**App**-Standardklasse durch die XAML-**App**-Klasse und die dazugehörige CodeBehind-Datei ersetzt werden. Hier ein Codebeispiel:
 
@@ -104,7 +104,7 @@ Diese Methode ersetzt die aktive [`ControlTemplate`-](xref:Xamarin.Forms.Control
 > [!NOTE]
 > Für eine `ContentPage`-Klasse können Sie die Eigenschaft `Content` zuweisen und auch die Eigenschaft `ControlTemplate` festlegen. Wenn Sie das tun und die `ControlTemplate`-Instanz eine `ContentPresenter`-Instanz enthält, präsentiert `ContentPresenter` in `ControlTemplate` den Inhalt, der der `Content`-Eigenschaft zugewiesen ist.
 
-### <a name="setting-a-controltemplate-with-a-style"></a>Festlegen von Steuerelementvorlagen mit einer Formatvorlagen
+### <a name="set-a-controltemplate-with-a-style"></a>Festlegen einer ControlTemplate mit einer Formatvorlage
 
 Sie können eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse auch mithilfe einer [`Style`](xref:Xamarin.Forms.Style)-Klasse anwenden, um die Designmöglichkeiten noch weiter zu erhöhen. Dazu erstellen Sie im [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) eine *implizite* oder *explizite* Formatvorlage für die Zielansicht und legen in der [`Style`](xref:Xamarin.Forms.Style)-Instanz die `ControlTemplate`-Eigenschaft für die Zielansicht fest. Im folgenden Codebeispiel sehen Sie eine *implizite* Formatvorlage, die der Anwendungsebene [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) hinzugefügt wurde:
 
@@ -126,7 +126,7 @@ Da die [`Style`](xref:Xamarin.Forms.Style)-Instanz *implizit* ist, wird sie bei 
 
 Weitere Informationen zu Formatvorlagen finden Sie unter [Styles (Formatvorlagen)](~/xamarin-forms/user-interface/styles/index.md).
 
-### <a name="creating-a-controltemplate-at-page-level"></a>Erstellen einer Steuerelementvorlage auf Seitenebene
+### <a name="create-a-controltemplate-at-page-level"></a>Erstellen einer ControlTemplate auf Seitenebene
 
 Sie können [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Instanzen nicht nur auf Anwendungsebene, sondern auch auf Seitenebene erstellen. Hier ein sehen Sie ein entsprechendes Codebeispiel:
 
@@ -150,7 +150,7 @@ Sie können [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Instanzen ni
 
 Beim Hinzufügen einer [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse auf Seitenebene wird ein [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) zur [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse hinzugefügt. Anschließend werden die `ControlTemplate`-Instanzen in das `ResourceDictionary` aufgenommen.
 
-## <a name="creating-a-controltemplate-in-c35"></a>Erstellen einer Steuerelementvorlage in C&#35;
+## <a name="create-a-controltemplate-in-c35"></a>Erstellen einer ControlTemplate in C&#35;
 
 Zum Definieren einer [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse auf Anwendungsebene müssen Sie eine Klasse (`class`) erstellen, die die `ControlTemplate`-Klasse repräsentiert. Die Klasse sollte aus dem für die Vorlage verwendeten Layout ([layout](~/xamarin-forms/user-interface/layouts/index.md)) stammen, wie im folgenden Codebeispiel gezeigt:
 
@@ -208,10 +208,43 @@ Sie erstellen die [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Instan
 
 Die [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content)-Eigenschaft ist auf ein [`StackLayout`](xref:Xamarin.Forms.StackLayout) festgelegt. Damit wird der Inhalt für die [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse definiert. Dieser Inhalt wird mithilfe der [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)-Klasse im `TealTemplate` angezeigt. Nutzen Sie für den Wechsel zum Design `AquaTheme` während der Laufzeit die bereits vorher beschriebene Vorgehensweise.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="get-a-named-element-from-a-template"></a>Abrufen eines benannten Elements aus einer Vorlage
 
-In diesem Artikel haben Sie gelernt, wie Sie Steuerelementvorlagen erstellen und verwenden. Steuerelementvorlagen können auf Anwendungs- oder auf Seitenebene definiert werden.
+Benannte Elemente innerhalb einer Steuerelementvorlage können abgerufen werden, nachdem die Vorlage instanziiert wurde. Dies kann mit der `GetTemplateChild`-Methode erreicht werden, die das benannte Element in der instanziierten visuellen [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Struktur zurückgibt.
 
+Nachdem eine Steuerelementvorlage instanziiert wurde, wird die `OnApplyTemplate`-Methode der Vorlage aufgerufen. Die `GetTemplateChild`-Methode sollte deshalb von der `OnApplyTemplate`-Außerkraftsetzung in einer abgeleiteten [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)-Seite wie z.B. [`ContentPage`](xref:Xamarin.Forms.ContentPage) oder einer abgeleiteten [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)-Ansicht wie z.B. [`ContentView`](xref:Xamarin.Forms.ContentView) aufgerufen werden.
+
+> [!IMPORTANT]
+> Die `GetTemplateChild`-Methode sollte nur nach dem Aufruf der `OnApplyTemplate`-Methode aufgerufen werden.
+
+Das folgende Beispiel zeigt die Steuerelementvorlage für ein benutzerdefiniertes Steuerelement:
+
+```xaml
+<controls:MyCustomControl ...>
+    <controls:MyCustomControl.ControlTemplate>
+         <ControlTemplate>
+              <Label x:Name="myLabel" />
+         </ControlTemplate>
+    <controls:MyCustomControl.ControlTemplate>
+</controls:MyCustomControl>
+```
+
+Das [`Label`](xref:Xamarin.Forms.Label)-Element ist benannt und kann als solches in der CodeBehind-Datei für das benutzerdefinierte Steuerelement abgerufen werden. Dies wird durch einen Aufruf der `GetTemplateChild`-Methode aus der `OnApplyTemplate`-Außerkraftsetzung für das benutzerdefinierte Steuerelement erreicht:
+
+```csharp
+class MyCustomControl : ContentView
+{
+    Label myLabel;
+
+    protected override OnApplyTemplate()
+    {  
+        myLabel = GetTemplateChild("myLabel");
+    }
+    //...
+}
+```
+
+In diesem Beispiel wird das [`Label`](xref:Xamarin.Forms.Label)-Objekt namens `myLabel` abgerufen. `myLabel` kann anschließend von der `MyCustomControl`-Klasse aufgerufen und bearbeitet werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
