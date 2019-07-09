@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7fbd2a81c30726bc6c38586186e9334ddd4ea282
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61193265"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659811"
 ---
 In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten Datenzugriffsklassen zu verwenden.
 
@@ -76,7 +76,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten
 
     [![Screenshot: Lokale Datenpersistenz der SQLite.NET-Datenbankdaten, auf iOS und Android](../images/consume-data-access-classes.png "Lokale Datenbankdatenpersistenz")](../images/consume-data-access-classes-large.png#lightbox "Lokale Datenbankdatenpersistenz")
 
-    Weitere Informationen zu lokalen Datenbanken in Xamarin.Forms finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md).
+    Weitere Informationen zu lokalen Datenbanken in Xamarin.Forms finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -146,4 +146,4 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten
 
     [![Screenshot: Lokale Datenpersistenz der SQLite.NET-Datenbankdaten, auf iOS und Android](../images/consume-data-access-classes.png "Lokale Datenbankdatenpersistenz")](../images/consume-data-access-classes-large.png#lightbox "Lokale Datenbankdatenpersistenz")
 
-    Weitere Informationen zu lokalen Datenbanken in Xamarin.Forms finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md).
+    Weitere Informationen zu lokalen Datenbanken in Xamarin.Forms finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md).
