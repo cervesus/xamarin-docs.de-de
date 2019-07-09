@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: ac44981c3b82f0fbec6b18396e15502428b9d62f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f12efdbc0d5bf43a7515603a67fedd180cd87587
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013121"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649653"
 ---
 # <a name="configuration"></a>Konfiguration
 
@@ -70,4 +70,4 @@ Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.) sollt
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Rezepte für Android-Daten](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)

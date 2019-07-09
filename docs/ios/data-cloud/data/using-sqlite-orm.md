@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/18/2018
-ms.openlocfilehash: 370867b52ec09d0c3ad0f801b6a75c356d806734
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 253c67ef5c46c83884df05d265613305dd5837f5
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277840"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650168"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Verwenden von SQLite.NET mit Xamarin.iOS
 
@@ -196,7 +196,7 @@ Sehen Sie sich die `rowcount` , bestätigen, wie viele Zeilen betroffen sind (in
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>Verwenden von SQLite.NET mit mehreren Threads
 
-SQLite unterstützt drei unterschiedliche threading-Modi: *Singlethread-*, *mit mehreren Threads*, und *serialisiert*. Wenn Sie die Datenbank von mehreren Threads ohne jegliche Einschränkungen zugreifen möchten, können Sie konfigurieren, dass SQLite verwendet die **serialisiert** threading-Modus. Es ist wichtig, die in diesem Modus einem frühen Zeitpunkt in Ihrer Anwendung einzurichten (z. B. am Anfang der `OnCreate` Methode).
+SQLite unterstützt drei unterschiedliche threading-Modi: *Singlethread-* , *mit mehreren Threads*, und *serialisiert*. Wenn Sie die Datenbank von mehreren Threads ohne jegliche Einschränkungen zugreifen möchten, können Sie konfigurieren, dass SQLite verwendet die **serialisiert** threading-Modus. Es ist wichtig, die in diesem Modus einem frühen Zeitpunkt in Ihrer Anwendung einzurichten (z. B. am Anfang der `OnCreate` Methode).
 
 Um den threading-Modus zu ändern, rufen `SqliteConnection.SetConfig` dieser befindet sich in der `Mono.Data.Sqlite` Namespace. Diese Codezeile konfiguriert, SQLite für **serialisiert** Modus:
 
@@ -210,4 +210,4 @@ SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: bf7a1461a26a860c77a913edabb94d76b4ca2a6a
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 97bb5ec954f36e48d8ae115baf8738862e5a8358
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493347"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649543"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms-Editor
 
@@ -264,7 +264,7 @@ Stellen Sie sicher, dass die Hintergrund- und Textfarben können auf jeder Platt
 
 ### <a name="completed"></a>Abgeschlossen
 
-Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit reagieren ein `Editor`. `Completed` wird ausgelöst, wenn der Benutzer Eingaben mit einem Feld beendet, indem Sie die return-Taste auf der Tastatur eingeben. Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
+Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit reagieren ein `Editor`. `Completed` wird ausgelöst, wenn der Benutzer durch die return-Taste auf der Tastatur eingeben (oder durch Drücken der Tab-Taste in UWP) Eingabe mit einem Feld beendet. Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6858e290d93007d6054ba0ef63dce86e6e2e53e3
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61011354"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649620"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android Data Access
 
@@ -35,7 +35,7 @@ Der Großteil des Codes in diesem Abschnitt ist plattformübergreifend und ohne 
 
 Sowohl vollständige, gepackte Anwendungen enthalten, iOS und Android-Beispiel-Anwendungsprojekte.
 
-Xamarin.Forms-Anwendungen finden Sie in [arbeiten mit Datenbanken](~/xamarin-forms/app-fundamentals/databases.md) das Arbeiten mit SQLite in einer PCL-Bibliothek mit Xamarin.Forms erläutert.
+Xamarin.Forms-Anwendungen finden Sie in [arbeiten mit Datenbanken](~/xamarin-forms/data-cloud/data/databases.md) das Arbeiten mit SQLite in einer PCL-Bibliothek mit Xamarin.Forms erläutert.
 
 In die Themen in diesem Abschnitt erläutern den Datenzugriff in Xamarin.Android mithilfe von SQLite als die Datenbank-Engine. Die Datenbank "direkt" mithilfe von ADO.NET-Syntax zugegriffen werden kann oder Sie enthalten die von SQLite.NET ORM und Ausführen von Datenvorgängen in C# geschrieben.
 
@@ -49,4 +49,4 @@ Weitere Beispiele für plattformübergreifende Datenzugriff finden Sie in unsere
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Rezepte für Android-Daten](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)

@@ -1,27 +1,27 @@
 ---
 title: Erstellen von HTML-Ansichten mit Razor-Vorlagen
-description: " Verwenden einer Vollbild-Webseite zum Rendern von HTML kann eine einfache und effektive Möglichkeit zum Rendern komplexer Formatierung auf eine Weise plattformübergreifende, insbesondere dann, wenn Sie die HTML, Javascript und CSS aus einem Websiteprojekt noch sein."
+description: " Verwenden einer Vollbild-Webseite zum Rendern von HTML kann eine einfache und effektive Möglichkeit zum Rendern komplexer Formatierung auf eine Weise plattformübergreifende, insbesondere dann, wenn Sie die HTML, JavaScript und CSS aus einem Websiteprojekt noch sein."
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: 7e569aaddef912d9534e98f2f987ad5dfca8a5a6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 539f59b9835cab6281327bcd1a37482ef82b62cc
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61168008"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650178"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Erstellen von HTML-Ansichten mit Razor-Vorlagen
 
 In der Entwicklung für mobile Geräte-Welt bezieht sich die Begriff "Hybrid-app" in der Regel zu einer Anwendung, die einige oder alle der Bildschirme als HTML-Seiten in einem gehosteten Web-Viewer-Steuerelement darstellt.
 
-Es gibt einige entwicklungsumgebungen, mit denen Sie erstellen Ihrer mobilen app vollständig in HTML und Javascript, aber diese apps Leistungsprobleme beim Versuch Leiden können, die komplexe Verarbeitung oder Benutzeroberflächeneffekte ausführen und sind auch auf der Plattform eingeschränkt Features, die sie zugreifen können.
+Es gibt einige entwicklungsumgebungen, mit denen Sie erstellen Ihrer mobilen app vollständig in HTML und JavaScript, aber diese apps Leistungsprobleme beim Versuch Leiden können, die komplexe Verarbeitung oder Benutzeroberflächeneffekte ausführen und sind auch auf der Plattform eingeschränkt Features, die sie zugreifen können.
 
-Xamarin bietet das beste aus beiden Welten, insbesondere, wenn die Razor-HTML-Vorlagen-Engine nutzen. Mit Xamarin können Sie flexibel plattformübergreifende auf Vorlagen basierenden HTML-Ansichten zu erstellen, die Javascript und CSS, aber haben zudem vollständigen Zugriff auf die zugrunde liegenden Plattform-APIs und die schnelle Verarbeitung, die mithilfe von c#.
+Xamarin bietet das beste aus beiden Welten, insbesondere, wenn die Razor-HTML-Vorlagen-Engine nutzen. Mit Xamarin können Sie flexibel plattformübergreifende auf Vorlagen basierenden HTML-Ansichten zu erstellen, die JavaScript und CSS, aber auch haben vollständigen Zugriff auf die zugrunde liegenden Plattform-APIs und schnelle Verarbeitung mit C#.
 
-Dieses Dokument erläutert, wie Sie mit der Razor-Vorlagen-Engine erstellen, HTML und Javascript + CSS-Sichten, die auf mobilen Plattformen mit Xamarin verwendet werden können.
+Dieses Dokument erläutert, wie Sie die Razor-Vorlagenmodul zu verwenden, um HTML und JavaScript + CSS-Ansichten zu erstellen, die auf mobilen Plattformen mit Xamarin verwendet werden kann.
 
 ## <a name="using-web-views-programmatically"></a>Programmgesteuertes Verwenden von Webansichten
 
@@ -51,7 +51,7 @@ Anzeigen von HTML in einem WebView-Steuerelement, das mithilfe von Xamarin.Andro
 // webView is declared in an AXML layout file
 var webView = FindViewById<WebView> (Resource.Id.webView);
 
-// enable Javascript execution in your html view so you can provide "alerts" and other js
+// enable JavaScript execution in your html view so you can provide "alerts" and other js
 webView.SetWebChromeClient(new WebChromeClient());
 
 var html = "<html><h1>Hello</h1><p>World</p></html>";
@@ -70,7 +70,7 @@ Es gibt einen Parameter, der angibt, das Basisverzeichnis für die HTML-Seite, a
 <script type="text/javascript" src="jscript.js">
 ```
 
-Diese Dateien finden Sie unter: **"Style.CSS"**, **monkey.jpg** und **jscript.js**. Die Basisverzeichnis-Einstellung weist der Webansicht, wo sich diese Dateien befinden, damit sie auf der Seite geladen werden können.
+Diese Dateien finden Sie unter: **"Style.CSS"** , **monkey.jpg** und **jscript.js**. Die Basisverzeichnis-Einstellung weist der Webansicht, wo sich diese Dateien befinden, damit sie auf der Seite geladen werden können.
 
 #### <a name="ios"></a>iOS
 
@@ -104,7 +104,7 @@ Der Buildvorgang für alle Dateien mit statischem Inhalt muss **AndroidAsset**.
 
  ![Android-Projekt-Build-Aktion: AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>Aufrufen von c# aus HTML und Javascript
+### <a name="calling-c-from-html-and-javascript"></a>Aufrufen von C# von HTML und JavaScript
 
 Wenn eine html-Seite in eine Webansicht geladen wird, wird er behandelt die Links und Forms, als wäre die Seite geladen wurde, von einem Server. Dies bedeutet, dass wenn der Benutzer klickt auf einen Link oder ein Formular übermittelt die Webansicht versucht, auf das angegebene Ziel zu navigieren.
 
@@ -127,7 +127,7 @@ Formularaktionen folgen derselben Regel.
 <form method="get" action="somepage.html"></form>
 ```
 
-Sie wollen keinen Webserver, auf dem Client hosten; Allerdings können Sie verwenden die gleichen Server Kommunikation Verfahren, die in der heutigen reaktionsfähiges Design Patterns eingesetzt zum Aufrufen von Diensten über HTTP-GET und asynchron verarbeiten von Antworten durch das Ausgeben von Javascript (oder aufrufende Javascript ist bereits in der Webansicht gehostet). Dadurch können Sie problemlos Daten aus den HTML-Code in C#-Code für die Verarbeitung dann anzuzeigen, die die Ergebnisse der HTML-Seite zurück übergeben.
+Sie wollen keinen Webserver, auf dem Client hosten; Allerdings können Sie verwenden die gleichen Server Kommunikation Verfahren, die in der heutigen reaktionsfähiges Design Patterns eingesetzt zum Aufrufen von Diensten über HTTP-GET und asynchron verarbeiten von Antworten durch das Ausgeben von JavaScript (oder aufrufende JavaScript ist bereits in der Webansicht gehostet). Dadurch können Sie problemlos Daten aus den HTML-Code in C#-Code für die Verarbeitung dann anzuzeigen, die die Ergebnisse der HTML-Seite zurück übergeben.
 
 Geben einen Mechanismus zum Anwendungscode, um diese Navigationsereignisse abfangen, damit app-Code reagieren kann (falls erforderlich), iOS und Android. Dieses Feature ist entscheidend für die Erstellung von Hybrid-apps, da sie nativen Code mit der Webansicht interagieren können.
 
@@ -167,13 +167,13 @@ ein, und legen Sie dann den Client für die Webansicht:
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>Aufrufen von Javascript in c#
+### <a name="calling-javascript-from-c"></a>Aufrufen von JavaScript ausC#
 
-C#-Code kann weisen eine Webansicht, um eine neue HTML-Seite zu laden, Javascript auch in der aktuell angezeigten Seite ausführen. Gesamte Javascript-Code-Blöcken mit c#-Zeichenfolgen erstellt und ausgeführt werden können, oder Sie können die Methodenaufrufe an bereits verfügbar ist, auf der Seite über Javascript erstellen `script` Tags.
+Zusätzlich zur weisen einer Webansicht für eine neue HTML-Seite laden C# Code kann auch JavaScript innerhalb der aktuell angezeigten Seite ausgeführt. Gesamte JavaScript-Code-Blöcken können erstellt werden, mithilfe von C# Zeichenfolgen und ausgeführt, oder Sie können die Methodenaufrufe an bereits verfügbar ist, auf der Seite über JavaScript erstellen `script` Tags.
 
 #### <a name="android"></a>Android
 
-Erstellen Sie die Javascript-Code ausgeführt werden, und klicken Sie dann mit Präfix "Javascript:" und weisen Sie die Webansicht, um diese Zeichenfolge zu laden:
+Erstellen Sie die JavaScript-Code ausgeführt werden, und klicken Sie dann mit Präfix "Javascript:" und weisen Sie die Webansicht, um diese Zeichenfolge zu laden:
 
 ```csharp
 var js = "alert('test');";
@@ -182,7 +182,7 @@ webView.LoadUrl ("javascript:" + js);
 
 #### <a name="ios"></a>iOS
 
-iOS-Webansichten bieten eine Methode speziell für Javascript aufrufen:
+iOS-Webansichten bieten eine Methode speziell für JavaScript aufrufen:
 
 ```csharp
 var js = "alert('test');";
@@ -194,9 +194,9 @@ webView.EvaluateJavascript (js);
 In diesem Abschnitt wurden die Funktionen von der Web-Steuerelemente für Android und iOS, mit denen uns die hybridanwendungen mit Xamarin, einschließlich:
 
 -  Die Möglichkeit zum Laden von HTML aus Zeichenfolgen, die in Code generiert werden soll,
--  Die Möglichkeit, lokale Dateien (CSS, Javascript, Bilder oder andere HTML-Dateien) zu verweisen.
+-  Die Möglichkeit, lokale Dateien (CSS, JavaScript, Bilder oder andere HTML-Dateien) zu verweisen.
 -  Die Möglichkeit, das Abfangen von navigationsanforderungen, die in C#-Code,
--  Die Fähigkeit, Javascript aus c#-Code aufgerufen werden soll.
+-  Die Möglichkeit zum Aufrufen von JavaScript aus C# Code.
 
 
 Im nächste Abschnitt wird eingeführt, Razor, dadurch wird es einfach, den HTML-Code verwendet in Hybrid-apps zu erstellen.
@@ -205,7 +205,7 @@ Im nächste Abschnitt wird eingeführt, Razor, dadurch wird es einfach, den HTML
 
 Razor ist einer Vorlagen-Engine, die mit ASP.NET MVC, ursprünglich zum Ausführen auf dem Server und zum Generieren von HTML an Webbrowser verarbeitet eingeführt wurde.
 
-Die Razor-Vorlagen-Engine erweitert die standard-HTML-Syntax mit c#, damit Sie das Layout Express und CSS-Stylesheets und Javascript einfach integrieren können. Die Vorlage kann eine Modellklasse verweisen, was kann einen beliebigen benutzerdefinierten Typ, und, dessen Eigenschaften zugegriffen werden können, direkt aus der Vorlage. Eines der wichtigsten Vorteile ist die Möglichkeit, HTML und c#-Syntax problemlos zu kombinieren.
+Die Razor-Vorlagen-Engine erweitert die standard-HTML-Syntax mit C# , damit Sie das Layout Express und CSS-Stylesheets und JavaScript einfach integrieren können. Die Vorlage kann eine Modellklasse verweisen, was kann einen beliebigen benutzerdefinierten Typ, und, dessen Eigenschaften zugegriffen werden können, direkt aus der Vorlage. Eines der wichtigsten Vorteile ist die Möglichkeit, HTML und c#-Syntax problemlos zu kombinieren.
 
 Razor-Vorlagen sind nicht auf eine serverseitige Verwendung beschränkt, sie können auch in Xamarin-apps enthalten sein. Mit Razor-Vorlagen zusammen mit der Möglichkeit für die programmgesteuerte Arbeit mit Web-Ansichten kann komplexe plattformübergreifenden Hybrid-Anwendungen mit Xamarin erstellt werden sollen.
 
@@ -369,7 +369,7 @@ Die Ausgabe der obigen Vorlage ist dargestellt, auf dem iOS-Simulator und Androi
 
  ![Rupert X Monkey](images/image9_520x277.png)
 
-In diesem Abschnitt wurden die Grundlagen der Verwendung von Razor-Vorlagen zum Rendern von Ansichten für einfache nur-Lese behandelt. Im nächste Abschnitt erläutert das vollständige apps, die mithilfe von Razor erstellen, die Benutzereingaben akzeptieren und Zusammenwirken von Javascript in der HTML-Ansicht und c#.
+In diesem Abschnitt wurden die Grundlagen der Verwendung von Razor-Vorlagen zum Rendern von Ansichten für einfache nur-Lese behandelt. Im nächste Abschnitt wird erläutert, wie Sie vollständige apps, die mithilfe von Razor zu erstellen, die Benutzereingaben akzeptieren und Zusammenwirken von JavaScript in der HTML-Ansicht und C#.
 
 ## <a name="using-razor-templates-with-xamarin"></a>Verwenden von Razor-Vorlagen mit Xamarin
 
@@ -391,7 +391,7 @@ Der Inhalt der Standard-Lösung für iPhone und Android-Projekte werden unten an
 
  ![iPhone und Android-Vorlagen](images/image10_428x310.png)
 
-Die Vorlagen bieten Ihnen sofort umgehend Anwendungsinfrastruktur, laden eine Razor-Vorlage mit einer Data Model-Objekts, Benutzereingaben zu verarbeiten und an den Benutzer über Javascript kommunizieren.
+Die Vorlagen bieten Ihnen sofort umgehend Anwendungsinfrastruktur, laden eine Razor-Vorlage mit einer Data Model-Objekts, Benutzereingaben zu verarbeiten und an den Benutzer über JavaScript kommunizieren.
 
 Die wichtigen Teile der Lösung sind:
 
@@ -405,7 +405,7 @@ Im folgende Abschnitt wird erläutert, wie die Projekte funktionieren.
 
 ### <a name="static-content"></a>Statischer Inhalt
 
-Statischer Inhalte enthält CSS-Stylesheets, Bilder, Javascript-Dateien oder andere Inhalte, die verknüpft oder verweist auf eine HTML-Datei wird in einer Webansicht angezeigt werden kann.
+Statischer Inhalte enthält CSS-Stylesheets, Bilder, JavaScript-Dateien oder andere Inhalte, die verknüpft oder verweist auf eine HTML-Datei wird in einer Webansicht angezeigt werden kann.
 
 Die Vorlagenprojekte enthalten einen minimalen Stylesheet veranschaulichen wie statischen Inhalte in der Hybrid-app eingeschlossen werden. Die CSS-Stylesheet wird in der Vorlage wie folgt verwiesen:
 
@@ -413,11 +413,11 @@ Die Vorlagenprojekte enthalten einen minimalen Stylesheet veranschaulichen wie s
 <link rel="stylesheet" href="style.css" />
 ```
 
-Sie können beliebige Stylesheet und die Javascript-Dateien, die Sie, einschließlich Frameworks wie JQuery benötigen hinzufügen.
+Sie können beliebige Stylesheet und die JavaScript-Dateien, die Sie, einschließlich Frameworks wie JQuery benötigen hinzufügen.
 
 ### <a name="razor-cshtml-templates"></a>Razor-Cshtml-Vorlagen
 
-Die Vorlage enthält eine Razor **.cshtml** -Datei, die bereits Code aus, um die Kommunikation von Daten zwischen der HTML-/Javascript und C# -Code geschrieben hat. Auf diese Weise können Sie Builds, die komplexe Hybrid-apps, die nicht nur schreibgeschützte Daten aus dem Modell anzeigen, aber auch im HTML-Code Benutzereingaben akzeptieren und übergeben sie an der C#-Code zur Verarbeitung oder Speicherung.
+Die Vorlage enthält eine Razor **.cshtml** -Datei, die Code aus, um die Kommunikation zwischen der HTML-/JavaScript hat bereits geschrieben und C#. Auf diese Weise können Sie Builds, die komplexe Hybrid-apps, die nicht nur schreibgeschützte Daten aus dem Modell anzeigen, aber auch im HTML-Code Benutzereingaben akzeptieren und übergeben sie an der C#-Code zur Verarbeitung oder Speicherung.
 
 #### <a name="rendering-the-template"></a>Rendern von der Vorlage
 
@@ -435,7 +435,7 @@ Ein Beispiel kann in der Behandlung RazorViews-Schaltfläche angezeigt werden. D
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-Die `InvokeCSharpWithFormValues` Javascript-Funktion liest alle Werte aus dem HTML-Formular und legt die `location.href` für die Webansicht:
+Die `InvokeCSharpWithFormValues` JavaScript-Funktion liest alle Werte aus dem HTML-Formular und legt die `location.href` für die Webansicht:
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
@@ -467,13 +467,13 @@ Nach dem Verarbeiten der URL, bricht die Methode, damit die Webansicht nicht ver
 
 #### <a name="manipulating-the-template-from-c"></a>Bearbeiten die Vorlage über c#
 
-Kommunikation mit einer gerenderten HTML-Web-Ansicht von C# -Code erfolgt durch Aufrufen von Javascript in der Webansicht. Unter iOS, dies erfolgt durch Aufrufen von `EvaluateJavascript` auf die UIWebView:
+Kommunikation mit einer gerenderten HTML-Web-Ansicht von C# erfolgt durch Aufrufen von JavaScript in der Webansicht. Unter iOS, dies erfolgt durch Aufrufen von `EvaluateJavascript` auf die UIWebView:
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-Unter Android Javascript aufgerufen werden, die Webansicht Laden Sie den JavaScript-Code als eine URL mit der `"javascript:"` URL-Schema:
+Unter Android JavaScript aufgerufen werden, die Webansicht Laden Sie den JavaScript-Code als eine URL mit der `"javascript:"` URL-Schema:
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
@@ -483,7 +483,7 @@ webView.LoadUrl ("javascript:" + js);
 
 Diese Vorlagen nehmen Sie keine von systemeigenen Steuerelementen auf jeder Plattform verwenden – der gesamte Bildschirm mit einer einzelnen Web-Ansicht gefüllt ist.
 
-HTML kann sich hervorragend für die Erstellung von Prototypen, und die verschiedene Möglichkeiten zur Anzeige im Web optimiert ist z. B. rich-Text und zum dynamischen Layout. In HTML und Javascript – Durchführen eines Bildlaufs durch lange Listen mit Daten, jedoch nicht alle Tasks geeignet sind führt z. B. unter Android mit nativen UI-Steuerelemente wie z. B. (unter iOS UITableView) oder der ListView.
+HTML kann sich hervorragend für die Erstellung von Prototypen, und die verschiedene Möglichkeiten zur Anzeige im Web optimiert ist z. B. rich-Text und zum dynamischen Layout. In HTML und JavaScript – Durchführen eines Bildlaufs durch lange Listen mit Daten, jedoch nicht alle Tasks geeignet sind führt z. B. unter Android mit nativen UI-Steuerelemente wie z. B. (unter iOS UITableView) oder der ListView.
 
 Die Webansichten in der Vorlage können problemlos mit plattformspezifischen Steuerelementen – einfach bearbeiten verbessert werden die **MainStoryboard.storyboard** in der iOS-Designer oder der **Resources/layout/Main.axml** unter Android.
 

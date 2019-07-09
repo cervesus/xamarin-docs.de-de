@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 44e45d38ecd98be6f75c619125f9c14ce707b251
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 48dd2e1f2f5dd9ffdad0b726c5066a9a968d2396
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61207435"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650537"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Einführung in Continuous Integration mit Xamarin
 
@@ -19,7 +19,7 @@ _Continuous Integration ist eine Software-Engineering-Methode in der ein automat
 
 Es ist häufig bei Softwareprojekten für Entwickler gleichzeitig arbeiten. An einem gewissen Punkt ist es erforderlich, alle diese Integration parallele Datenströme mit der Arbeit in einer Codebasis, aus denen das endgültige Produkt besteht. In den Anfängen der Softwareentwicklung erfolgt diese Integration am Ende eines Projekts, das war ein schwieriger und riskanten Prozess.
 
-Continuous Integration (CI) vermeiden eine solche Komplexität, indem Sie die Codebasis auf kontinuierlicher Basis jedes Entwicklers Änderungen zusammenführen, in der Regel, wenn alle Entwickler checkt freigegebene Änderungen des Projekts Code-Repository. Jedes Eincheckvorgangs in einen automatisierten Buildvorgang auslöst, und führt automatisierte Tests aus, um sicherzustellen, dass der neu eingeführte Code kein vorhandenen Code beeinträchtigt haben.  Auf diese Weise CI deckt Fehler und Probleme sofort und stellt sicher, dass alle Teammitglieder auf dem neuesten Stand mit anderer Arbeit bleiben. Dies führt zu einer kohärenteren und stabile Codebasis.
+Continuous Integration (CI) vermeiden eine solche Komplexität, indem Sie die Codebasis auf kontinuierlicher Basis jedes Entwicklers Änderungen zusammenführen, in der Regel, wenn alle Entwickler checkt freigegebene Änderungen des Projekts Code-Repository. Jedes Eincheckvorgangs in einen automatisierten Buildvorgang auslöst, und führt automatisierte Tests aus, um sicherzustellen, dass der neu eingeführte Code kein vorhandenen Code beeinträchtigt haben.  Auf diese Weise CI deckt Fehler und Probleme sofort und stellt sicher, dass alle Teammitglieder mit jeweils anderen auf dem neuesten Stand bleiben. Dies führt zu einer kohärenteren und stabile Codebasis.
 
 Continuous Integration-Systeme haben zwei Hauptkomponenten:
 
@@ -36,7 +36,7 @@ Das folgende Diagramm veranschaulicht diesen Prozess:
 
 Mobile apps stellen besondere Herausforderungen für die kontinuierliche Integration vor. Apps unter Umständen Sensoren, z. B. GPS- oder Kamera, die nur auf physischen Geräten verfügbar sind. Darüber hinaus Simulatoren oder Emulatoren sind nur eine Näherung der Hardware zu verbergen oder Probleme verdecken. Letztlich ist es zum Testen einer mobilen app auf echter Hardware, um sicher zu sein, dass es sich um echte Kunden bereit ist.
 
-Die [App Center Test](https://docs.microsoft.com/appcenter/test-cloud) löst dieses bestimmte Problem durch das Testen von apps direkt auf Hunderten von physischen Geräten. Entwickler schreiben automatisierter Annahme-Tests, die leistungsstarke UI-Tests zu ermöglichen. Nachdem diese Tests in App Center hochgeladen wurden, kann der CI-Server werden automatisch im Rahmen eines CI-Prozesses ausführen wie im folgenden Diagramm dargestellt:
+Die [App Center Test](https://docs.microsoft.com/appcenter/test-cloud) löst dieses bestimmte Problem durch das Testen von apps direkt auf Hunderten von physischen Geräten. Entwickler schreiben automatisierten Akzeptanztests wird getestet, die für leistungsstarke UI-Tests zu ermöglichen. Nachdem diese Tests in App Center hochgeladen wurden, kann der CI-Server werden automatisch im Rahmen eines CI-Prozesses ausführen wie im folgenden Diagramm dargestellt:
 
 [![](intro-to-ci-images/intro02-small.png "Nachdem diese Tests in App Center hochgeladen wurden, kann der CI-Server diese automatisch im Rahmen eines CI-Prozesses wie in diesem Diagramm gezeigt ausführen")](intro-to-ci-images/intro02.png#lightbox)
 
@@ -50,7 +50,7 @@ Es ist einem umfangreichen Ökosystem aus kommerziellen und Open-Source-Tools en
 
 [Azure DevOps](https://azure.microsoft.com/services/devops/) und [Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) werden die Zusammenarbeit von Microsoft-Tools für continuous Integration Services, nachverfolgung von Aufgaben, agile Planung und Berichterstellungstools, und Versionskontrolle erstellen. Mit Versionskontrolle kann Azure DevOps und TFS mit seinem eigenen System (Team Foundation-Versionskontrolle oder TFVC) oder mit Projekten, die auf GitHub gehostet verwendet werden.
 
-- Visual Studio Team Services stellt die Dienste über die Cloud bereit. Der wichtigste Vorteil ist, dass es keine dedizierte Hardware oder die Infrastruktur erfordert und zugegriffen werden kann von überall über Webbrowser und gängige Entwicklungstools wie Visual Studio, das Produkt attraktiver für Teams, die geografisch liegen verteilt. Es ist kostenlos für Teams aus fünf Entwicklern oder weniger nach der weiteren Lizenzen erworben werden können, die zur Aufnahme Team weiter wächst.
+- Azure DevOps stellt Dienste über die Cloud bereit. Ihr primäre Vorteil ist, dass es keine dedizierte Hardware oder die Infrastruktur erfordert und zugegriffen werden kann von überall über Webbrowser und gängige Entwicklungstools wie Visual Studio, das Produkt attraktiver für Teams, die geografisch verteilt sind . Es ist kostenlos für Teams aus fünf Entwicklern oder weniger nach der weiteren Lizenzen erworben werden können, die zur Aufnahme Team weiter wächst.
 - TFS ist für lokalen Windows-Servern entworfen und erfolgt über ein lokales Netzwerk oder eine VPN-Verbindung mit diesem Netzwerk. Ihr primäre Vorteil ist, dass Sie vollständig steuern die Konfiguration der Buildserver und installieren Sie können beliebige zusätzliche Software oder Dienste erforderlich sind. TFS verfügt über eine kostenlose auf Einstiegsebene Express-Edition für kleine Teams.
 
 Sowohl TFS als auch Azure DevOps sind eng in Visual Studio integriert und ermöglichen es Entwicklern, viele Versionskontrolle und CI-Aufgaben aus, in dem Komfort von einer einzigen IDE ausführen. Der Team Explorer Everywhere-Plug-In für Eclipse (siehe unten) ist ebenfalls verfügbar. Visual Studio für Mac verfügt über [eine Vorschau der TFVC verfügbaren](/visualstudio/mac/tf-version-control/).
@@ -61,15 +61,15 @@ Eine vollständige Zusammenfassung der alle Funktionen von Application Lifecycle
 
 #### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) bringt die Leistungsfähigkeit von Team Foundation Server und Visual Studio Team Services für Teams, die außerhalb von Visual Studio entwickeln. Sie ermöglicht Entwicklern, die Verbindung zu Teamprojekten lokal oder in der Cloud über Eclipse oder den plattformübergreifenden Befehlszeilenclient für OS X und Linux. Team Explorer Everywhere, die bietet umfassenden Zugriff auf Arbeitsaufgaben in die Versionskontrolle (einschließlich Git), sowie auf Buildfunktionen für nicht-Windows-Plattformen.
+[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) bringt die Leistungsfähigkeit von Team Foundation Server und Azure DevOps für Teams, die außerhalb von Visual Studio entwickeln. Sie ermöglicht Entwicklern, die Verbindung zu Teamprojekten lokal oder in der Cloud über Eclipse oder den plattformübergreifenden Befehlszeilenclient für OS X und Linux. Team Explorer Everywhere, die bietet umfassenden Zugriff auf Arbeitsaufgaben in die Versionskontrolle (einschließlich Git), sowie auf Buildfunktionen für nicht-Windows-Plattformen.
 
 #### <a name="git"></a>Git
 
 [Git](http://git-scm.com) ist eine beliebte open-Source-Version-Steuerelement-Lösung, die ursprünglich entwickelt wurde, um den Quellcode für den Linux-Kernel zu verwalten. Es ist ein sehr schnelle, flexible System, das häufig bei Softwareprojekten jeglicher Größe verwendet wird. Skalierung erfolgt einfach von einzelnen Entwicklern mit einer schlechten Internetzugriff auf große Teams, die die ganze Welt umspannen. Git ist auch eine Verzweigung sehr einfach, mit denen wiederum parallele Datenströme mit der Entwicklung mit minimalem Risiko empfehlen kann.
 
-Git kann ausgeführt werden, ausschließlich mit einem Webbrowser oder über [GUI Clients](http://git-scm.com/downloads/guis) , die unter Linux, Mac OS x und Windows ausgeführt. Es ist kostenlos für öffentlichen Repositorys. Private Repositorys erfordern eine [kostenpflichtigen Plan](https://github.com/pricing).
+Git kann ausschließlich über Webbrowser ausgeführt werden oder [GUI Clients](http://git-scm.com/downloads/guis) , die unter Linux, Mac OS x und Windows ausgeführt. Es ist kostenlos für öffentlichen Repositorys. Private Repositorys erfordern eine [kostenpflichtigen Plan](https://github.com/pricing).
 
-Aktuelle Versionen von Visual Studio für Windows und Mac bieten systemeigenen Unterstützung für Git. Microsoft bietet eine [herunterladbare-Erweiterung für Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c) für ältere Versionen von Visual Studio. Wie bereits erwähnt, können Visual Studio Team Services und TFS Git für anstelle von TFVC-Versionskontrolle verwenden.
+Aktuelle Versionen von Visual Studio für Windows und Mac bieten systemeigenen Unterstützung für Git. Microsoft bietet eine [herunterladbare-Erweiterung für Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c) für ältere Versionen von Visual Studio. Wie bereits erwähnt, können Azure DevOps und TFS Git für anstelle von TFVC-Versionskontrolle verwenden.
 
 #### <a name="subversion"></a>Subversion
 
@@ -80,15 +80,15 @@ Aktuelle Versionen von Visual Studio für Windows und Mac bieten systemeigenen U
 Das Einrichten einer Umgebung mit kontinuierlicher Integration bedeutet, dass ein System zur Versionskontrolle mit einem Builddienst kombinieren.  Im letzteren Fall sind die zwei häufigsten Gründe:
 
 - [Azure-Pipelines](https://docs.microsoft.com/azure/devops/pipelines/) ist das Buildsystem von Azure DevOps und TFS. Er arbeitet eng mit Visual Studio, welche macht es für Entwickler zum Auslösen erstellt wurde, automatisch Tests ausführen und die Ergebnisse angezeigt.
-- Jenkins ist ein Open-Source-CI-Server, die mit einem umfangreichen Ökosystem mit unterstützen alle Arten der Entwicklung von Software-Plug-Ins. Es wird auf Windows und Mac OS X. Jenkins nicht in eine beliebige spezifische IDE integriert ist. Es wird stattdessen konfiguriert und die über eine Weboberfläche verwaltet. Jenkins CI ist auch einfach zu installieren und konfigurieren, die es attraktiv, die kleinen Teams ermöglicht.
+- Jenkins ist ein Open-Source-CI-Server mit einem umfangreichen Ökosystem mit unterstützen alle Arten der Entwicklung von Software-Plug-Ins. Es wird auf Windows und Mac OS X. Jenkins nicht in eine beliebige spezifische IDE integriert ist. Es wird stattdessen konfiguriert und die über eine Weboberfläche verwaltet. Jenkins CI ist auch einfach zu installieren und konfigurieren, die es attraktiv, die kleinen Teams ermöglicht.
 
 Können Sie TFS/Azure DevOps selbst, oder Sie können Jenkins in Kombination mit TFS/Azure DevOps oder Git verwenden, wie in den folgenden Abschnitten beschrieben.
 
-#### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services und Team Foundation Server
+#### <a name="azure-devops-and-team-foundation-server"></a>Azure DevOps und Team Foundation Server
 
-Wie bereits erwähnt, bietet Visual Studio Team Services und Team Foundation Server sowohl Version steuern und Erstellung von Diensten. Builddienste erfordern immer eine Xamarin Business oder Enterprise-Lizenz für jede Zielplattform.
+Wie bereits erwähnt, bietet Azure DevOps und Team Foundation Server sowohl Version steuern und Erstellung von Diensten. Builddienste erfordern immer eine Xamarin Business oder Enterprise-Lizenz für jede Zielplattform.
 
-Mit Visual Studio Team Services erstellen eine separate Builddefinition für jede Zielplattform und geben Sie die entsprechende Lizenz vorhanden. Sobald konfiguriert ist, Azure DevOps wird ausführen erstellt, und Sie werden in der Cloud testet. Finden Sie unter [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/) Weitere Details.
+Mit Azure DevOps erstellen eine separate Builddefinition für jede Zielplattform und geben Sie die entsprechende Lizenz vorhanden. Sobald konfiguriert ist, Azure DevOps wird ausführen erstellt, und Sie werden in der Cloud testet. Finden Sie unter [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/) Weitere Details.
 
 Mit Team Foundation Server konfigurieren Sie einen Buildcomputer für bestimmte Zielplattformen wie folgt aus:
 
@@ -99,19 +99,19 @@ Das folgende Diagramm veranschaulicht diese Topografie:
 
 [![](intro-to-ci-images/intro03-small.png "Dieses Diagramm veranschaulicht diese Topografie")](intro-to-ci-images/intro03.png#lightbox)
 
-Es ist auch möglich, verknüpfen einen lokalen TFS-Server mit einem Visual Studio Team Services-Projekt, damit Azure DevOps-builds werden auf dem lokalen Server delegiert. Weitere Informationen finden Sie unter [Build und release Agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/).
+Es ist auch möglich, einen lokalen TFS-Server zu einem Azure DevOps-Projekt verknüpfen, sodass Azure DevOps-Builds auf dem lokalen Server delegiert werden. Weitere Informationen finden Sie unter [Build und release Agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/).
 
-#### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services und Jenkins
+#### <a name="azure-devops-and-jenkins"></a>Azure DevOps und Jenkins
 
-Wenn Sie Jenkins verwenden, um Ihre apps zu erstellen, können Sie Speichern von Code in Visual Studio Team Services oder Team Foundation Server und weiterhin Jenkins für die CI-Builds zu verwenden. Sie können einen Jenkins-Build auslösen, wenn Sie Code, der das Teamprojekt Git-Repository oder wenn Sie Code in TFVC Einchecken übertragen. Weitere Informationen finden Sie unter [Jenkins mit Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins).
+Wenn Sie Jenkins verwenden, um Ihre apps zu erstellen, können Sie Code in Azure DevOps oder Team Foundation Server speichern und weiterhin Jenkins für die CI-Builds zu verwenden. Sie können einen Jenkins-Build auslösen, wenn Sie Code, der das Teamprojekt Git-Repository oder wenn Sie Code in TFVC Einchecken übertragen. Weitere Informationen finden Sie unter [Jenkins mit Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins).
 
-[![](intro-to-ci-images/intro04-small.png "Wenn Sie Jenkins verwenden, um Ihre apps zu erstellen, können Sie Speichern von Code in Visual Studio Team Services oder Team Foundation Server und verwenden Sie Jenkins für die CI-Builds weiterhin")](intro-to-ci-images/intro04.png#lightbox)
+[![](intro-to-ci-images/intro04-small.png "Wenn Sie Jenkins verwenden, um Ihre apps zu erstellen, können Sie Speichern von Code in Azure DevOps oder Team Foundation Server und weiterhin Jenkins für die CI-builds")](intro-to-ci-images/intro04.png#lightbox)
 
 #### <a name="git-and-jenkins"></a>Git und Jenkins
 
-Eine andere allgemeine CI-Umgebung kann vollständig OS X-basiert sein. Dieses Szenario beinhaltet die Verwendung von Git für die quellcodeverwaltung und Jenkins für den Buildserver. Beide werden auf einem einzelnen Mac OS X-Computer mit Visual Studio für Mac installiert ausgeführt werden. Dies ist sehr ähnlich ist, auf Visual Studio Team Services und Jenkins-Umgebung, die im vorherigen Abschnitt erläutert:
+Eine andere allgemeine CI-Umgebung kann vollständig OS X-basiert sein. Dieses Szenario beinhaltet die Verwendung von Git für die quellcodeverwaltung und Jenkins für den Buildserver. Beide werden auf einem einzelnen Mac OS X-Computer mit Visual Studio für Mac installiert ausgeführt werden. Dies ist sehr ähnlich, in die Azure DevOps + Jenkins-Umgebung, die im vorherigen Abschnitt erläutert:
 
-[![](intro-to-ci-images/intro05-small.png "Dies ist sehr ähnlich ist, auf Visual Studio Team Services und Jenkins-Umgebung, die im vorherigen Abschnitt erläuterten")](intro-to-ci-images/intro05.png#lightbox)
+[![](intro-to-ci-images/intro05-small.png "Dies ist sehr ähnlich, in die Azure DevOps + Jenkins-Umgebung, die im vorherigen Abschnitt erläuterten")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Jenkins ist [nicht von Microsoft unterstützt](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md).**

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: c9be74bcc6e5d149856e06c98d3bef9a841d4bab
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 238ba1853df523ee275de628ebdbd138a6d1d1bf
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61230233"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649612"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms-Eintrag
 
@@ -327,7 +327,7 @@ Eintrag macht zwei Ereignisse:
 
 ### <a name="completed"></a>Abgeschlossen
 
-Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit einem Eintrag zu reagieren. `Completed` wird ausgelöst, wenn der Benutzer die Eingabe mit einem Feld durch Drücken der EINGABETASTE auf der Tastatur beendet. Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
+Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit einem Eintrag zu reagieren. `Completed` wird ausgelöst, wenn der Benutzer durch Drücken der EINGABETASTE auf der Tastatur drücken (oder durch Drücken der Tab-Taste in UWP) Eingabe mit einem Feld beendet. Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)

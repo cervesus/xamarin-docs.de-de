@@ -1,5 +1,5 @@
 ---
-title: Die Authentifizierung eines RESTful-Web-Diensts
+title: Authentifizieren eines RESTful-Webdiensts
 description: Die Standardauthentifizierung bietet Zugriff auf Ressourcen auf ausschließlich Clients, die die richtigen Anmeldeinformationen verfügen. In diesem Artikel erläutert die Standardauthentifizierung zu verwenden, um den Zugriff auf RESTful-Web-Service-Ressourcen zu schützen.
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: d3f07a72ee26d6be4fafa72137dc9b6c3a724e00
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bf334c7fde8433b7bbe45c8caaf962705c39320d
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61330644"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650398"
 ---
-# <a name="authenticating-a-restful-web-service"></a>Die Authentifizierung eines RESTful-Web-Diensts
+# <a name="authenticate-a-restful-web-service"></a>Authentifizieren eines RESTful-Webdiensts
 
 _HTTP unterstützt die Verwendung mehrere Authentifizierungsmechanismen zum Steuern des Zugriffs auf Ressourcen. Die Standardauthentifizierung bietet Zugriff auf Ressourcen auf ausschließlich Clients, die die richtigen Anmeldeinformationen verfügen. In diesem Artikel veranschaulicht die Standardauthentifizierung zu verwenden, um den Zugriff auf RESTful-Web-Service-Ressourcen zu schützen._
 
@@ -77,7 +77,7 @@ Und dann die Anforderung mit, wenn eine Anforderung an einen Webdienstvorgang er
 
 ## <a name="processing-the-authorization-header-server-side"></a>Verarbeiten von der Serverseite der Authorization-Header
 
-Ergänzen Sie der REST-Dienst sollte jede Aktion wird mit der `[BasicAuthentication]` Attribut. Dieses Attribut wird verwendet, um das Analysieren der `Authorization` Header und zu bestimmen, ob die base64-codierte Anmeldeinformationen gültig sind, durch einen Vergleich mit Werten, die in gespeicherten *"Web.config"*. Während dieser Ansatz für ein Beispieldienst geeignet ist, ist die Erweiterung für einen Webdienst öffentlich zugänglichen erforderlich.
+Ergänzen Sie der REST-Dienst sollte jede Aktion wird mit der `[BasicAuthentication]` Attribut. Dieses Attribut wird verwendet, um das Analysieren der `Authorization` Header und zu bestimmen, ob die base64-codierte Anmeldeinformationen gültig sind, durch einen Vergleich mit Werten, die in gespeicherten *"Web.config"* . Während dieser Ansatz für ein Beispieldienst geeignet ist, ist die Erweiterung für einen Webdienst öffentlich zugänglichen erforderlich.
 
 Im basic-Authentifizierung-Modul von IIS verwendet wird werden Benutzer anhand ihrer Windows-Anmeldeinformationen authentifiziert. Aus diesem Grund müssen Benutzer über Konten in der Domäne des Servers verfügen. Allerdings kann das Modell für die Standardauthentifizierung konfiguriert werden, um benutzerdefinierte Authentifizierung zu ermöglichen, in denen Benutzerkonten für eine externe Quelle, z. B. eine Datenbank authentifiziert. Weitere Informationen finden Sie unter [grundlegenden Authentifizierung in ASP.NET Web-API](http://www.asp.net/web-api/overview/security/basic-authentication) auf der ASP.NET-Website.
 
@@ -86,5 +86,5 @@ Im basic-Authentifizierung-Modul von IIS verwendet wird werden Benutzer anhand i
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Verwenden eines RESTful-Web-Diensts](~/xamarin-forms/data-cloud/consuming/rest.md)
+- [Verwenden eines RESTful-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

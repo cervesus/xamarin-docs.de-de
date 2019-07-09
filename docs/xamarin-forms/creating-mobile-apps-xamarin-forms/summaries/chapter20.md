@@ -7,12 +7,12 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 7d9630840983b36204214927136e0c9efe07d840
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cf870cebfdd29e679b767728d1bea723f9310b17
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333720"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650463"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Zusammenfassung der Kapitel 20. Asynchrone Verarbeitung und Datei-e/a
 
@@ -83,7 +83,7 @@ Allerdings bei der Suche für diese `System.IO` Klassen in einer Xamarin.Forms-P
 Dies bedeutet, dass Sie verwenden, müssen die [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (zuerst in beschriebenen [ **Kapitel 9. Clientplattform-spezifische API-Aufrufe** ](chapter09.md) Datei-e/a zu implementieren.
 
 > [!NOTE]
-> Portable Bibliotheken der Klasse durch .NET Standard 2.0-Bibliotheken ersetzt wurden, und unterstützt .NET Standard 2.0 [ `System.IO` ](xref:System.IO) Typen für alle Xamarin.Forms-Plattformen. Es ist nicht mehr erforderlich, verwenden eine `DependencyService` für die meisten e/a-Aufgaben. Finden Sie unter [Dateibehandlung in Xamarin.Forms](~/xamarin-forms/app-fundamentals/files.md) einen moderneren Ansatz für Datei e/a.
+> Portable Bibliotheken der Klasse durch .NET Standard 2.0-Bibliotheken ersetzt wurden, und unterstützt .NET Standard 2.0 [ `System.IO` ](xref:System.IO) Typen für alle Xamarin.Forms-Plattformen. Es ist nicht mehr erforderlich, verwenden eine `DependencyService` für die meisten e/a-Aufgaben. Finden Sie unter [Dateibehandlung in Xamarin.Forms](~/xamarin-forms/data-cloud/data/files.md) einen moderneren Ansatz für Datei e/a.
 
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>Eine erste Abschlag Cross-Platform-Datei-e/a
 
@@ -173,4 +173,4 @@ Die [ `WebRequest` ](xref:System.Net.WebRequest) Klasse zur Verwendung in einige
 
 - [Kapitel 20 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)
 - [Kapitel 20-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
-- [Working with Files (Arbeiten mit Dateien)](~/xamarin-forms/app-fundamentals/files.md)
+- [Working with Files (Arbeiten mit Dateien)](~/xamarin-forms/data-cloud/data/files.md)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 7ecf7244fb2ccbe0e4163c89941f9de5138ba713
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 10b5a1696b0416bfda115627f7c7b8c2fbd20fcb
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018520"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649582"
 ---
 # <a name="using-adonet-with-android"></a>Verwendung von ADO.NET mit Android
 
@@ -220,4 +220,4 @@ Die `ExecuteScalar` ist der Rückgabetyp der Methode `object` &ndash; sollten Si
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Rezepte für Android-Daten](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)

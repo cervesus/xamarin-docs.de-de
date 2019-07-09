@@ -1,5 +1,5 @@
 ---
-title: Authentifizieren von Benutzern mit einem Identitätsanbieter
+title: AuthenticateUsers mit einem Identitätsanbieter
 description: In diesem Artikel wird erläutert, wie Xamarin.Auth zum Verwalten des Authentifizierungsprozesses in einer Xamarin.Forms-Anwendung verwendet wird.
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 786f1503fcc0cc07f76a7cdc55731d341607429f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 006e403b50a452265a40a0e95d17769fa0446a1a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331115"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650413"
 ---
-# <a name="authenticating-users-with-an-identity-provider"></a>Authentifizieren von Benutzern mit einem Identitätsanbieter
+# <a name="authenticate-users-with-an-identity-provider"></a>Authentifizieren von Benutzern mit einem Identitätsanbieter
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 
@@ -60,7 +60,7 @@ Ein Projekt für die Google-API-Konsole muss erstellt werden, um Google-Anmeldun
 
 1. Wechseln Sie zu der [Google-API-Konsole](http://console.developers.google.com) Website, und melden Sie sich mit Anmeldeinformationen von Google-Konto an.
 1. Wählen Sie aus den Projekt-Dropdown-Pfeil ein vorhandenes Projekt oder erstellen Sie eine neue.
-1. Wählen Sie in der Randleiste unter "API-Manager" **Anmeldeinformationen**, und wählen Sie dann die **OAuth Consent Bildschirmregisterkarte**. Wählen Sie eine **e-Mail-Adresse**, geben Sie eine **Produktnamen, die Benutzern angezeigt wird,**, und drücken Sie die **speichern**.
+1. Wählen Sie in der Randleiste unter "API-Manager" **Anmeldeinformationen**, und wählen Sie dann die **OAuth Consent Bildschirmregisterkarte**. Wählen Sie eine **e-Mail-Adresse**, geben Sie eine **Produktnamen, die Benutzern angezeigt wird,** , und drücken Sie die **speichern**.
 1. In der **Anmeldeinformationen** Registerkarte die **Anmeldeinformationen erstellen** Dropdown-Liste aus, und wählen Sie **OAuth-Client-ID**.
 1. Klicken Sie unter **Anwendungstyp**, wählen Sie die Plattform, die die mobile Anwendung ausgeführt wird (**iOS** oder **Android**).
 1. Geben Sie die erforderlichen Details ein, und wählen Sie die **erstellen** Schaltfläche.
@@ -146,7 +146,7 @@ Der Mechanismus zum Registrieren eines benutzerdefinierten URL-Schemas mit dem B
 
 #### <a name="ios"></a>iOS
 
-Unter iOS, wird ein benutzerdefiniertes URL-Schema in registriert **"Info.plist"**, wie im folgenden Screenshot gezeigt:
+Unter iOS, wird ein benutzerdefiniertes URL-Schema in registriert **"Info.plist"** , wie im folgenden Screenshot gezeigt:
 
 ![](oauth-images/info-plist.png "URL-Schema-Registrierung")
 
