@@ -15,7 +15,7 @@ abstract:
       - href: ~/xamarin-forms/samples/
         text: Xamarin.Forms Samples (Beispiele für Xamarin.Forms)
       - href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
-        text: Versionshinweise
+        text: Versionsinformationen
       - href: /visualstudio/
         text: Visual Studio
 sections:
@@ -28,7 +28,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: Setup
+            text: Einrichtung
             href: ~/get-started/requirements.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
@@ -50,7 +50,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
             text: 'Schnellstart: Formatierung'
             href: ~/get-started/quickstarts/styling.md
-  - title: Führungslinien
+  - title: Anleitungen
     items:
       - type: list
         style: cards
@@ -87,11 +87,11 @@ sections:
               href: ~/essentials/index.md?context=xamarin/xamarin-forms
             title: Xamarin.Essentials
           - href: ~/xamarin-forms/data-cloud/
-            html: Speicherung und Abruf von lokalen und Remotedaten sowie andere cloudbasierte Dienste.
+            html: Speicherung und Abruf von lokalen und Remotedaten sowie andere cloudbasierte Azure-Dienste.
             image:
               src: ~/media/icons/i_data-cloud.svg
               href: ~/xamarin-forms/data-cloud/
-            title: Daten und Clouddienste
+            title: Daten und Azure Cloud Services
           - href: ~/xamarin-forms/deploy-test/
             html: 'Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen!'
             image:
@@ -104,7 +104,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
               href: ~/xamarin-forms/internals/
             title: Weiterführende Konzepte und Interna
-  - title: Referenz
+  - title: Verweis
     items:
       - type: list
         style: cards
@@ -112,7 +112,7 @@ sections:
         items:
           - title: API
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-forms">Xamarin.Forms-API-Dokumentation</a></p>'
-          - title: Proben
+          - title: Beispiele
             html: '<p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms Samples (Beispiele für Xamarin.Forms)</a></p>'
           - title: Bücher
             html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">E-Book über das Erstellen mobiler Apps</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">E-Book zu Mustern von Unternehmensanwendungen</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">SkiaSharp-Grafiken in Xamarin.Forms-E-Book</a></p>

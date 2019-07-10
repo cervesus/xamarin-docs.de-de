@@ -14,7 +14,7 @@ abstract:
       - href: 'https://visualstudio.com/'
         text: Visual Studio
       - href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
-        text: Versionshinweise
+        text: Versionsinformationen
 sections:
   - title: Tools
     items:
@@ -60,7 +60,7 @@ sections:
         items:
           - title: Xamarin.Forms
             href: ~/xamarin-forms/index.md
-            html: <p><a href="~/get-started/quickstarts/index.md">Erste Schritte</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">App-Grundlagen</a><br /><a href="~/xamarin-forms/user-interface/index.md">Benutzeroberfläche</a><br /><a href="~/xamarin-forms/platform/index.md">Plattformfeatures</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Bereitstellung und Testen</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Daten und Clouddienste</a><br /><a href="~/xamarin-forms/internals/index.md">Weiterführende Konzepte und Interna</a></p>
+            html: <p><a href="~/get-started/quickstarts/index.md">Erste Schritte</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">App-Grundlagen</a><br /><a href="~/xamarin-forms/user-interface/index.md">Benutzeroberfläche</a><br /><a href="~/xamarin-forms/platform/index.md">Plattformfeatures</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Bereitstellung und Testen</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Daten und Azure Cloud Services</a><br /><a href="~/xamarin-forms/internals/index.md">Weiterführende Konzepte und Interna</a></p>
           - title: Android
             href: ~/android/index.md
             html: <p><a href="~/android/get-started/index.md">Erste Schritte</a><br /><a href="~/android/app-fundamentals/index.md">App-Grundlagen</a><br /><a href="~/android/user-interface/index.md">Benutzeroberfläche</a><br /><a href="~/android/platform/index.md">Plattformfeatures</a><br /><a href="~/android/deploy-test/index.md">Bereitstellung und Testen</a><br /><a href="~/android/data-cloud/index.md">Daten und Clouddienste</a><br /><a href="~/android/internals/index.md">Weiterführende Konzepte und Interna</a></p>
