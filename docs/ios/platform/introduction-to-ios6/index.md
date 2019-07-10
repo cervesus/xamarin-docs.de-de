@@ -1,19 +1,24 @@
 ---
 title: Einführung in iOS 6
-description: 'Dieses Dokument enthält Links zu Leitfäden, die in iOS 6 eingeführte Features beschrieben. Auflistungsansichten, PassKit, bei dem soziale Framework, und Änderungen an StoreKit werden alle erläutert.'
+description: Dieses Dokument enthält Links zu Leitfäden, die in iOS 6 eingeführte Features beschrieben. Auflistungsansichten, PassKit, bei dem soziale Framework, und Änderungen an StoreKit werden alle erläutert.
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
+ms.openlocfilehash: be017103c5a3a2c890f49e4a510d20fcd0c03094
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675100"
 ---
-
 # <a name="introduction-to-ios-6"></a>Einführung in iOS 6
 
 _iOS 6 enthält eine Reihe von neuen Technologien für die Entwicklung von apps, die Xamarin.iOS-6 bringt C# Entwickler._
 
-[ ![](images/ios6-large.jpg "Das iOS 6-logo")](images/ios6-large.jpg#lightbox)
+[![](images/ios6-large.jpg "Das iOS 6-logo")](images/ios6-large.jpg#lightbox)
 
 Mit iOS 6 und Xamarin.iOS-6 verfügen Entwickler jetzt über eine Fülle von Funktionen zum Erstellen von iOS-Anwendungen, einschließlich jener, Ziel-iPhone 5 orchestrierungsmöglichkeiten.
 Dieses Dokument listet einige der Links zu Artikeln, die für jedes Thema und weitere interessante neue Features, die verfügbar sind. Darüber hinaus betrifft es auf ein paar Änderungen, die wichtig, da Entwickler mit iOS 6 und die neue Auflösung iPhone 5 wechseln.
