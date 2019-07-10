@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0a14e3e3eb58b264d1909b6576bbbc4f7e8f4068
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1f2b0c9ee46634ad7395fadfb770dd2da796ada2
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61166595"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675156"
 ---
 # <a name="menus-in-xamarinmac"></a>Menüs in Xamarin.Mac
 
@@ -862,7 +862,7 @@ FormattingCommands.Add (Headings);
 FormattingCommands.Add(new LanguageFormatCommand ());
 FormattingCommands.Add(new LanguageFormatCommand("Link","[","]()"));
 FormattingCommands.Add(new LanguageFormatCommand("Image","![](",")"));
-FormattingCommands.Add(new LanguageFormatCommand("Image Link","[ ![](",")](LinkImageHere)"));
+FormattingCommands.Add(new LanguageFormatCommand("Image Link","[![](",")](LinkImageHere)"));
 ```
 
 Dieser Sammlung zum Übergeben der `AssembleMenu` Funktion (mit der **Format** Menü als Basis festgelegt), würden die folgenden dynamischen Menüs und Menüelemente erstellt werden:

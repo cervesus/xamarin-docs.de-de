@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 42cbc6f50da34cbbc594dfef1dec49619202c191
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 7b99e876c666160bdfd4392915901ea6535e68e1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741066"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674825"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms-Seiten
 
@@ -22,7 +22,7 @@ _Xamarin.Forms-Seiten stellen die Bildschirme für plattformübergreifende mobil
 
 Alle Seitentypen, die nachfolgend beschriebenen abgeleitet von der Xamarin.Forms [ `Page` ](xref:Xamarin.Forms.Page) Klasse. Diese visuellen Elemente umfassen alle oder die meisten des Bildschirms. Ein `Page` -Objekt stellt eine `ViewController` in iOS und ein `Page` in die universelle Windows-Plattform. Unter Android, verbraucht jede Seite dem Bildschirm, z.B. eine `Activity`, Xamarin.Forms-Seiten sind jedoch *nicht* `Activity` Objekte.
 
-[ ![](pages-images/pages-sml.png "Typen von Xamarin.Forms-Startseite")](pages-images/pages.png#lightbox "Typen von Xamarin.Forms-Startseite")
+[![](pages-images/pages-sml.png "Typen von Xamarin.Forms-Startseite")](pages-images/pages.png#lightbox "Typen von Xamarin.Forms-Startseite")
 
 ## <a name="pages"></a>Seiten
 

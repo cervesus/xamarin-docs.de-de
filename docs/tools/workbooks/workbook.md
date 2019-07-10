@@ -6,12 +6,12 @@ ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 71f46535ffd0a99ad78acb8f0e3bbc5870abf33e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a900d427ad6ac2a0e211ef4f00d2f014b13e5d1c
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61197944"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674419"
 ---
 # <a name="interactive-workbooks"></a>Interaktive Arbeitsmappen
 
@@ -27,7 +27,7 @@ Arbeitsmappen gespeichert, und es später noch Mal in der Anwendung geöffnet we
 
 Der Code-Bearbeitungsfenster bietet codevervollständigung, farbige syntaxmarkierung, Inline-live-Diagnose und Unterstützung für mehrzeilige Anweisung.
 
-[ ![](workbook-images/inspector-0.6.0-repl-small.png "Der Code-Bearbeitungsfenster bietet codevervollständigung, farbige syntaxmarkierung, Inline-live-Diagnose und Unterstützung für mehrzeilige Anweisung")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![](workbook-images/inspector-0.6.0-repl-small.png "Der Code-Bearbeitungsfenster bietet codevervollständigung, farbige syntaxmarkierung, Inline-live-Diagnose und Unterstützung für mehrzeilige Anweisung")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
 Xamarin Workbooks werden gespeichert, eine `.workbook` -Datei, die eine CommonMark-Datei mit Metadaten oben ist (finden Sie unter [Arbeitsmappen Dateitypen](#workbooks-files-types) Weitere Einzelheiten, wie die Arbeitsmappen gespeichert werden können).
 

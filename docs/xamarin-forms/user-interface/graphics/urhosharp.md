@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: b251fa13c4b436a837f71b5362ae85dffd245092
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc316a9e6ab4261eaa956a987b47aeaf546344a2
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408844"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675270"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Verwenden von UrhoSharp in Xamarin.Forms
 
@@ -124,7 +124,7 @@ public class UrhoPage : ContentPage
 
 ### <a name="3-build-a-urho-application"></a>3. Erstellen einer Anwendung Urho
 
-Finden Sie in der `Charts` -Klasse für die Implementierung der Urho 3D-Grafiken, die in diesem Beispiel verwendet. Die Kontur der basic-Code wird angezeigt. im folgenden – Beachten Sie, dass die Klasse implementiert `Urho.Application` unterscheidet, die `Xamarin.Forms.Application` -Klasse, die in implementiert wird **"App.cs"**.
+Finden Sie in der `Charts` -Klasse für die Implementierung der Urho 3D-Grafiken, die in diesem Beispiel verwendet. Die Kontur der basic-Code wird angezeigt. im folgenden – Beachten Sie, dass die Klasse implementiert `Urho.Application` unterscheidet, die `Xamarin.Forms.Application` -Klasse, die in implementiert wird **"App.cs"** .
 
 ```csharp
 using Urho;
@@ -218,7 +218,7 @@ selectedBarSlider = new Slider(0, 5, 2.5);
 selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 ```
 
-Die Animationen an die [Seitenanfang](#) zeigen Sie das Beispiel ausführen.
+Die Animationen an die [Seitenanfang](#what-is-urhosharp) zeigen Sie das Beispiel ausführen.
 
 ## <a name="summary"></a>Zusammenfassung
 

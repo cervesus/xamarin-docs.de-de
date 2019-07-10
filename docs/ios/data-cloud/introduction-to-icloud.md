@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: 009e061726f655999c08192b5839a5c962d35e24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c30b5d0b3a02223a8808e57f5d0cdc5e7000e156
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61091439"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674881"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Über die iCloud mit Xamarin.iOS
 
@@ -55,7 +55,7 @@ Um eine Anwendung auf iCloud ordnungsgemäß zu konfigurieren:
 
 - **Fügen Sie den Bezeichner des Containers zu "Entitlements.plist"** -Format für die Container-ID ist `TeamID.BundleID`. Weitere Informationen finden Sie in der [arbeiten mit Berechtigungen](~/ios/deploy-test/provisioning/entitlements.md) Guide.
 
-- **Konfigurieren Sie die Projekteigenschaften** – In der Datei "Info.plist" Datei stellen Sie sicher die **Bündel-ID** entspricht der **Bündel-ID** festgelegt, wenn [erstellen eine App-ID ](~/ios/deploy-test/provisioning/capabilities/index.md); IOS Bundle-Signierung verwendet eine **Bereitstellungsprofil** , die eine App-ID mit der iCloud-App Service enthalten und die **benutzerdefinierte Berechtigungen** Datei ausgewählt. Dies kann alle in Visual Studio unter dem Bereich der Projekt-Eigenschaften erfolgen.
+- **Konfigurieren Sie die Projekteigenschaften** – In der Datei "Info.plist" Datei stellen Sie sicher die **Bündel-ID** entspricht der **Bündel-ID** festgelegt, wenn [erstellen eine App-ID](~/ios/deploy-test/provisioning/capabilities/index.md); IOS Bundle-Signierung verwendet eine **Bereitstellungsprofil** , die eine App-ID mit der iCloud-App Service enthalten und die **benutzerdefinierte Berechtigungen** Datei ausgewählt. Dies kann alle in Visual Studio unter dem Bereich der Projekt-Eigenschaften erfolgen.
 
 - **Aktivieren von iCloud auf Ihrem Gerät** : Wechseln Sie zu **Einstellungen > iCloud** und stellen Sie sicher, dass das Gerät angemeldet ist.
 Wählen Sie aus, und aktivieren Sie die **Dokumente und Daten** Option.

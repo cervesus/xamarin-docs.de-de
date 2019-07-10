@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a35cb82f4f6d20e91f45a782c73d3ef811947c3a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 57a521df5fdede2bd92a6b1432f698c822a2b06f
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61284196"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674571"
 ---
 # <a name="introduction-to-android-wear"></a>Einführung in Android Wear
 
@@ -113,7 +113,7 @@ Android Wear 2.0 führt zu einer Vielzahl von neuen Features und Funktionen, z. 
 
 ### <a name="install-wear-20-packages"></a>Wear-2.0-Pakete installieren
 
-Sie müssen zum Erstellen einer 2.0 Wear-app, die mit Xamarin.Android Hinzufügen der **Xamarin.Android.Wear v2. 0** Paket Ihrem Projekt (klicken Sie auf die **Registerkarte "Durchsuchen"**):
+Sie müssen zum Erstellen einer 2.0 Wear-app, die mit Xamarin.Android Hinzufügen der **Xamarin.Android.Wear v2. 0** Paket Ihrem Projekt (klicken Sie auf die **Registerkarte "Durchsuchen"** ):
 
 [![Xamarin.Android.Wear v2. 0](intro-to-wear-images/wear-nuget-2.0-sml.png "Installieren von NuGet das Xamarin.Android.Wear-v2. 0")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
 
@@ -198,7 +198,7 @@ Sehen Sie sich Googles Android Wear-Dokumentation:
 
 * [Informationen zu Android Wear](http://www.android.com/wear/)
 * [Android Wear-App-Design](https://developer.android.com/design/wear/index.html)
-* [android.support.wearable library ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+* [android.support.wearable library](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 * [Android Wear 2.0](https://developer.android.com/wear/preview/index.html)
 
 

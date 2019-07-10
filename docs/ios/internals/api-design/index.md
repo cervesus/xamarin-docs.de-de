@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5417050daa84197dd7dc2a270ae054a3a73fd3bc
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037459"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675077"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS-API-Design
 
@@ -113,7 +113,7 @@ Für jeden Typ, der einen nicht verwalteten Typ entspricht, ist es möglich, das
 
 Während Mono Garbagecollection für alle Objekte bereitstellen, wird die `Foundation.NSObject` implementiert die [System.IDisposable](xref:System.IDisposable) Schnittstelle. Dies bedeutet, dass Sie alle angegebenen NSObject die Ressourcen explizit freigeben können, ohne zu warten, bis der Garbage Collector Kick-in. Dies ist wichtig, wenn Sie hohe NSObjects, z. B. UIImages verwenden, die Zeiger auf die große Datenblöcke enthalten kann.
 
-Wenn Ihr Typ deterministische Beendigung ausführen muss, überschreiben die [NSObject.Dispose(bool)-Methode](xref:Foundation.NSObject.Dispose(System.Boolean)) Parameters Dispose-Methode ist "" bool "verwerfen", und legen Sie es "true" bedeutet, dass die Dispose-Methode aufgerufen wird da der Benutzer explizit aufgerufene Dispose () für das Objekt. Wenn der Wert auf "false" festgelegt ist, bedeutet dies, dass der Finalizer-Thread die Methode Dispose (Bool disposing) vom Finalizer aufgerufen wird. []()
+Wenn Ihr Typ deterministische Beendigung ausführen muss, überschreiben die [NSObject.Dispose(bool)-Methode](xref:Foundation.NSObject.Dispose(System.Boolean)) Parameters Dispose-Methode ist "" bool "verwerfen", und legen Sie es "true" bedeutet, dass die Dispose-Methode aufgerufen wird da der Benutzer explizit aufgerufene Dispose () für das Objekt. Wenn der Wert auf "false" festgelegt ist, bedeutet dies, dass der Finalizer-Thread die Methode Dispose (Bool disposing) vom Finalizer aufgerufen wird.
 
 
 ##### <a name="categories"></a>Kategorien

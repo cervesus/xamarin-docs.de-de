@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: d42cec1ee0939bead9ede83a042f5b6cbb5298cd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 518c13aea431a8e973579768cc70b8281a31acac
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153577"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674729"
 ---
 # <a name="edit-text"></a>Text bearbeiten
 
@@ -38,7 +38,7 @@ Open **Resources/layout/activity_main.axml** und Hinzufügen der [EditText](http
 In diesem Codebeispiel wird die `EditText` Attribut `android:imeOptions` nastaven NA hodnotu `actionGo`. Diese Einstellung ändert den Standard [durchgeführt](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) Aktion aus, um die [wechseln Sie](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) Aktion, damit durch Tippen auf die **EINGABETASTE** Schlüssel Trigger die `KeyPress` eingabehandler.
 (In der Regel `actionGo` wird verwendet, damit die **EINGABETASTE** Schlüssel wird der Benutzer auf das Ziel eine URL, die in eingegeben wird.)
 
-Um Text Benutzereingaben zu behandeln, fügen Sie den folgenden Code am Ende der [OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/) -Methode in der **"mainactivity.cs"**:
+Um Text Benutzereingaben zu behandeln, fügen Sie den folgenden Code am Ende der [OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/) -Methode in der **"mainactivity.cs"** :
 
 ```csharp
 EditText edittext = FindViewById<EditText>(Resource.Id.edittext);

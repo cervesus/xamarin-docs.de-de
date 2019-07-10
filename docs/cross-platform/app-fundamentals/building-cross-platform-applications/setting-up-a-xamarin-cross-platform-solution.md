@@ -6,12 +6,12 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: d20275bab4e4ce90f902a5e72321701d94b1d416
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: 2117eb91f25f2fb890b419fa7c4235b8f646729d
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354074"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675027"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Teil 3 – Einrichten einer plattformübergreifenden Xamarin-Lösung
 
@@ -104,7 +104,7 @@ Die plattformspezifischen Projekten müssen implementieren:
 
 Die Anwendungsarchitektur ist in diesem Diagramm dargestellt:
 
- [ ![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "Die Anwendungsarchitektur wird in diesem Diagramm dargestellt.")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
+ [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "Die Anwendungsarchitektur wird in diesem Diagramm dargestellt.")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
 Dieser Screenshot zeigt ein Projektmappen-Setup mit der freigegebenen Core-Projekts, iOS und Android-Anwendungsprojekten. Das freigegebene Projekt enthält Code, die in Bezug auf die einzelnen Architekturebenen (Business "," Dienst "," Daten "und" Data Access Code):
 

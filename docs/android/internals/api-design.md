@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c10935f4623fd4455ec5cf8a80c6473c0f69d9b9
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954284"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674686"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Entwurfsprinzipien für Xamarin.Android-API
 
@@ -160,7 +160,7 @@ C#-Ereignissen oder Eigenschaften werden nur automatisch generiert, wenn die Reg
 1. Akzeptiert nur einen Parameter, der Parametertyp ist eine Schnittstelle, die Schnittstelle verfügt über nur eine Methode und der Schnittstellenname endet auf `Listener` , z. B. [View.OnClick *Listener*](https://developer.xamarin.com/api/type/Android.Views.View+IOnClickListener/).
 
 
-Darüber hinaus, wenn der Listener Methode Schnittstelle hat den Rückgabetyp **booleschen** anstelle von **"void"**, klicken Sie dann die generierte *EventArgs* Unterklasse enthält eine *Behandelt* Eigenschaft. Der Wert des der *behandelt* Eigenschaft wird verwendet, als der Rückgabewert für die *Listener* -Methode, und es standardmäßig `true`.
+Darüber hinaus, wenn der Listener Methode Schnittstelle hat den Rückgabetyp **booleschen** anstelle von **"void"** , klicken Sie dann die generierte *EventArgs* Unterklasse enthält eine *Behandelt* Eigenschaft. Der Wert des der *behandelt* Eigenschaft wird verwendet, als der Rückgabewert für die *Listener* -Methode, und es standardmäßig `true`.
 
 Zum Beispiel der Android [View.setOnKeyListener()](https://developer.xamarin.com/api/member/Android.Views.View.SetOnKeyListener/p/Android.Views.View+IOnKeyListener/) -Methode akzeptiert die [View.OnKeyListener](https://developer.xamarin.com/api/type/Android.Views.View+IOnKeyListener) -Schnittstelle, und die [View.OnKeyListener.onKey ("View", "Int", "KeyEvent")](https://developer.xamarin.com/api/member/Android.Views.View+IOnKeyListener.OnKey/p/Android.Views.View/Android.Views.Keycode/Android.Views.KeyEvent/) Methode hat einen Rückgabetyp boolean. Xamarin.Android generiert einen entsprechenden [View.KeyPress](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/) -Ereignis, das ist ein [EventHandler&lt;View.KeyEventArgs&gt;](https://developer.xamarin.com/api/type/Android.Views.View+KeyEventArgs/).
 Die *KeyEventArgs* Klasse wiederum verfügt über eine [View.KeyEventArgs.Handled](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/) -Eigenschaft, die verwendet wird, als der Rückgabewert für die *View.OnKeyListener.onKey()* Methode.
@@ -240,7 +240,7 @@ Geschachtelte Typen werden "verschoben" als gleichgeordnete Elemente der einschl
 
 Betrachten Sie beispielsweise die [android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/) Schnittstelle.
 Die *Parcelable* Schnittstelle enthält Methoden, geschachtelte Typen und Konstanten. Die *Parcelable* Schnittstellenmethoden befinden sich in der [Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/) Schnittstelle.
-Die *Parcelable* Schnittstelle Konstanten befinden sich in der [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/) Typ. Die geschachtelte [android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html) und [android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html) Typen sind derzeit nicht aufgrund der Einschränkungen für unsere Unterstützung von Generika; Wenn sie unterstützt wurden, werden als die *Android.OS.IParcelableClassLoaderCreator* und *Android.OS.IParcelableCreator* Schnittstellen. Z. B. den geschachtelten [android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html) Schnittstelle gebunden ist, als die [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/) Schnittstelle.
+Die *Parcelable* Schnittstelle Konstanten befinden sich in der [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/) Typ. Die geschachtelte [android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html) und [android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html) Typen sind derzeit nicht aufgrund der Einschränkungen für unsere Unterstützung von Generika; Wenn sie unterstützt wurden, werden als die *Android.OS.IParcelableClassLoaderCreator* und *Android.OS.IParcelableCreator* Schnittstellen. Z. B. den geschachtelten [android.os.IBinder.DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html) Schnittstelle gebunden ist, als die [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/) Schnittstelle.
 
 
 > [!NOTE]
@@ -260,7 +260,7 @@ Zusätzlich zu den oben genannten Typen gibt es vier weitere Änderungen:
 Für die *android.os.Parcelable* -Schnittstelle, dies bedeutet, dass es wird nun ein [ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/) Typ die Konstanten enthalten. Z. B. die [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR) Konstante gebunden werden wird, als die [ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/) Konstanten, statt als die  *ParcelableConsts.ContentsFileDescriptor* Konstanten.
 
 Für Schnittstellen, die Konstanten, die mit anderen Schnittstellen noch weitere Konstanten enthält, wird die Union aller Konstanten generiert. Z. B. die [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html) -Schnittstelle implementiert die [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/) Schnittstelle. Allerdings vor 1.9 die [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/) Typ hat keine Möglichkeit für den Zugriff auf die Konstanten, die auf [Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/).
-Als Ergebnis der Java-Ausdruck *MediaStore.Video.VideoColumns.TITLE* muss auf den C#-Ausdruck gebunden werden *MediaStore.Video.MediaColumnsConsts.Title* dies nur schwer ermitteln ohne lesen Viele der Java-Dokumentation. In 1.9, werden der entsprechende C#-Ausdruck [ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/).
+Als Ergebnis der Java-Ausdruck *MediaStore.Video.VideoColumns.TITLE* muss auf den C#-Ausdruck gebunden werden *MediaStore.Video.MediaColumnsConsts.Title* dies nur schwer ermitteln ohne lesen Viele der Java-Dokumentation. In 1.9, die entsprechende C# Ausdruck werden [ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/).
 
 Darüber hinaus sollten Sie die [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) Typ, der implementiert das Java *Parcelable* Schnittstelle. Da die Schnittstelle implementiert, alle Konstanten, die auf dieser Schnittstelle können Sie "über" der Bundle-Typ, z. B. *Bundle.CONTENTS_FILE_DESCRIPTOR* ist ein absolut gültiger Java-Ausdruck.
 Zuvor So portieren Sie diesen Ausdruck als C# müssten Sie alle Schnittstellen betrachten, die implementiert werden, aus welchen Typ die *CONTENTS_FILE_DESCRIPTOR* stammt. Ab Xamarin.Android 1.9 können Klassen implementieren die Java-Schnittstellen, die Konstanten enthalten, verfügen über eine geschachtelte *InterfaceConsts* Typ, der alle Konstanten geerbte Schnittstelle enthalten soll. Dadurch wird übersetzen *Bundle.CONTENTS_FILE_DESCRIPTOR* zu [ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/).

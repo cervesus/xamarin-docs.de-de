@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 05/23/2019
-ms.openlocfilehash: 474398922bf00e3a430166d8b2e073d200e6ed6e
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: fb2f108ba115690ca181738486fd8310f26bb909
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659327"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674516"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Senden und Empfangen von Pushbenachrichtigungen mit Azure Notification Hubs und Xamarin.Forms
 
@@ -538,7 +538,7 @@ public static class DispatcherConstants
 }
 ```
 
-Sie müssen konfigurieren, die **DispatcherConstants.cs** entsprechend der Konfiguration von Azure Notification Hub entsprechen. Der Wert des der `SubscriptionTags` Eigenschaft sollte mit den Werten übereinstimmen, die in die Client-apps verwendet. Die `NotificationHubName` Eigenschaft ist der Name der Azure Notification Hub-Instanz. Die `FullAccessConnectionString` -Eigenschaft ist der Zugriffsschlüssel finden Sie in Ihrem Notification Hub **Zugriffsrichtlinien**. Der folgende Screenshot zeigt den Speicherort der `NotificationHubName` und `FullAccessConnectionString` Eigenschaften im Azure-Portal:
+Sie müssen konfigurieren, die **DispatcherConstants.cs** entsprechend die Konfiguration von Azure Notification Hub. Der Wert des der `SubscriptionTags` Eigenschaft sollte mit den Werten übereinstimmen, die in die Client-apps verwendet. Die `NotificationHubName` Eigenschaft ist der Name der Azure Notification Hub-Instanz. Die `FullAccessConnectionString` -Eigenschaft ist der Zugriffsschlüssel finden Sie in Ihrem Notification Hub **Zugriffsrichtlinien**. Der folgende Screenshot zeigt den Speicherort der `NotificationHubName` und `FullAccessConnectionString` Eigenschaften im Azure-Portal:
 
 ![Screenshot der Azure Notification Hub-Namen und FullAccessConnectionString](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure Notification Hub-Namen und FullAccessConnectionString")
 

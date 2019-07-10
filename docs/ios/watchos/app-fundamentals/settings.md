@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 36164e1e9f92b5a5520d10f769f3953cfa2ceb85
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a8fe2c2765676db52c23fd7c475f218f14697caf
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61412848"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675227"
 ---
 # <a name="working-with-watchos-settings-in-xamarin"></a>Arbeiten mit WatchOS-Einstellungen in Xamarin
 
@@ -36,7 +36,7 @@ In der **iPhone-app** in der Projektmappe (*nicht* der Watch-app oder die Erweit
 
 3. Fügen Sie einen neuen Schlüssel `ApplicationGroupContainerIdentifier` auf die **"Root.plist"** mit dem Wert, legen Sie auf die app-Gruppe, die Sie, (z. b konfiguriert haben. `group.com.xamarin.WatchSettings` Im Beispiel):
 
-   [ ![](settings-images/settings-appgroup-sml.png "Fügen Sie einen ApplicationGroupContainerIdentifier-Schlüssel in der \"Root.plist\"")](settings-images/settings-appgroup.png#lightbox)
+   [![](settings-images/settings-appgroup-sml.png "Fügen Sie einen ApplicationGroupContainerIdentifier-Schlüssel in der \"Root.plist\"")](settings-images/settings-appgroup.png#lightbox)
 
 4. Bearbeiten der **Settings-Watch.bundle/Root.plist** Optionen enthalten soll: die Vorlagendatei enthält eine Gruppe.
   TextField, Umschalter und Schieberegler in der Standardeinstellung (die Sie löschen und Ersetzen Sie dies durch Ihre eigenen Einstellungen können):

@@ -7,16 +7,16 @@ ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
-ms.openlocfilehash: 5d6cf6b36d4f454d3124a33ab9cb289e40e0e1ed
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ed80a423506f96972ddf80075379ed6e6dccd0a1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160611"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675129"
 ---
 # <a name="skiasharp-platform-specific-notes"></a>SkiaSharp-Plattform-spezifische Notizen
 
-Die folgenden Beispielen weisen Sie manuell die Image-Spaltenpuffern, dies geschieht, um ein allgemeines Muster für die Plattform zu veranschaulichen, der zum Zeichnen in einem vorhandenen RBGA-Puffer, die von der Plattform bereitgestellt wird.
+Die folgenden Beispielen weisen Sie manuell die Image-Spaltenpuffern, dies geschieht, um ein allgemeines Muster für die Plattform zu veranschaulichen, der zum Zeichnen in einem vorhandenen RGBA-Puffer, die von der Plattform bereitgestellt wird.
 
 Sie müssen nicht diese Sprache verwenden, wenn Sie nicht möchten.  Es gibt eine Überladung, die erstellt und den Hintergrundspeicher für Ihr Image für Sie verwaltet.
 

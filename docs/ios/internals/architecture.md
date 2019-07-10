@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 426c5ef5cc32877546ebb88cb485a81723816e6e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036131"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675068"
 ---
 # <a name="ios-app-architecture"></a>iOS-App-Architektur
 
@@ -20,7 +20,7 @@ Xamarin.iOS-Anwendungen in die Mono-ausführungsumgebung ausgeführt, und verwen
 
 Das folgende Diagramm zeigt eine grundlegende Übersicht über diese Architektur:
 
-[ ![](architecture-images/ios-arch-small.png "Dieses Diagramm zeigt eine grundlegende Übersicht über die Architektur der nun der Zeitpunkt (AOT)-Kompilierung")](architecture-images/ios-arch.png#lightbox)
+[![](architecture-images/ios-arch-small.png "Dieses Diagramm zeigt eine grundlegende Übersicht über die Architektur der nun der Zeitpunkt (AOT)-Kompilierung")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>Systemeigenen und verwalteten Code: Eine Erläuterung
 
