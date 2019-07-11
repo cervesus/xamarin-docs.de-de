@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: ca9c71d5bdac1900c4f0e5d07898e65b06cdcf90
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: e7b8ae57f127b4c9397ab4e5f7e097fa330e827a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925570"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650656"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Anwendungsindizierung und Deep Linking
 
@@ -34,7 +34,7 @@ In dieser Beispielanwendung wird eine Anwendung mit Aufgabenlisten (ToDoList) ve
 
 Jede vom Benutzer erstellte `TodoItem`-Instanz wird indiziert. Anschließend kann die plattformspezifische Suche zum Auffinden der indizierten Daten aus der Anwendung verwendet werden. Wenn der Benutzer in den Suchergebnissen auf ein Element für die Anwendung tippt, wird die Anwendung gestartet, die Seite `TodoItemPage` wird aufgerufen, und die `TodoItem`-Instanz, auf die der Deep-Link verweist, wird angezeigt.
 
-Weitere Informationen zur Verwendung einer SQLite-Datenbank finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md).
+Weitere Informationen zur Verwendung einer SQLite-Datenbank finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md).
 
 > [!NOTE]
 > Die Funktion „Anwendungsindizierung und Deep Linking“ von Xamarin.Forms ist nur auf iOS- und Android-Plattformen verfügbar und setzt mindestens iOS 9 bzw. API 23 voraus.

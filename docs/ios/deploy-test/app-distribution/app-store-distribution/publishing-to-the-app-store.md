@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: a00b157940cfde8021b92004fe27a4d52bac5e0c
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: c81c84b8b32bdde6949918f3a31f171983007f39
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855158"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675222"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Veröffentlichen von Xamarin.iOS-Apps im App Store
 
@@ -53,7 +53,7 @@ Jede iOS-App hat eine eindeutige App-ID, die wiederum verknüpfte Anwendungsdien
 Öffnen Sie das [Apple Developer-Portal](https://developer.apple.com/account/), und führen Sie die folgenden Schritt durch, um eine App-ID zu erstellen und erforderliche Berechtigungen auszuwählen:
 
 1. Wählen Sie im Abschnitt **Certificates, IDs & Profiles** (Zertifikate, Bezeichner und Profile) die Option **Bezeichner > App-IDs** aus.
-2. Klicken Sie auf die **+**-Schaltfläche, und stellen Sie einen **Namen** und eine **Bündel-ID** für die neue Anwendung bereit.
+2. Klicken Sie auf die **+** -Schaltfläche, und stellen Sie einen **Namen** und eine **Bündel-ID** für die neue Anwendung bereit.
 3. Scrollen Sie zum unteren Ende des Bildschirms, und wählen Sie die **App Services** aus, die für Ihre Xamarin.iOS-Anwendung erforderlich sein sollen. App-Dienste werden im Leitfaden [Arbeiten mit Funktionen in Xamarin.iOS](~/ios/deploy-test/provisioning/capabilities/index.md) weiter beschrieben.
 4. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und folgen Sie den Anweisungen auf dem Bildschirm, um die neue App-ID zu erstellen.
 
@@ -78,7 +78,7 @@ Führen Sie die folgenden Schritte durch, um ein App Store-Bereitstellungsprofil
 
 1. Melden Sie sich beim [Apple Developer-Portal](https://developer.apple.com/account/) an.
 2. Navigieren Sie unter **Certificates, IDs & Profiles** (Zertifikate, Bezeichner und Profile) zu **Bereitstellungsprofile > Verteilung**.
-3. Klicken Sie auf **+**, wählen Sie **App Store** aus, und klicken Sie anschließend auf **Continue** (Weiter).
+3. Klicken Sie auf **+** , wählen Sie **App Store** aus, und klicken Sie anschließend auf **Continue** (Weiter).
 4. Wählen Sie die **App-ID** Ihrer App aus der Liste aus, und klicken Sie auf **Weiter**.
 5. Wählen Sie ein Signaturzertifikat aus, und klicken Sie auf **Weiter**.
 6. Geben Sie einen **Profilnamen** ein, und klicken Sie auf **Weiter**, um das Profil zu erstellen.
@@ -186,7 +186,7 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
     > [!NOTE]
     > Standardmäßig zeigt die Ansicht **Archive** nur die Archive für die geöffnete Projektmappe an. Aktivieren Sie das Kontrollkästchen **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen. Es empfiehlt sich, alle Archive beizubehalten, damit die darin enthaltenen Debuginformationen verwendet werden können, um Absturzberichte bei Bedarf durch Symbole zu ersetzen.
 
-4. Klicken Sie auf **Signieren und verteilen...**, um den Veröffentlichungs-Assistenten zu öffnen.
+4. Klicken Sie auf **Signieren und verteilen...** , um den Veröffentlichungs-Assistenten zu öffnen.
 5. Wählen Sie als Verteilungskanal den **App Store** aus. Klicken Sie auf **Weiter**.
 
     ![Auswahl des Verteilungskanals](publishing-to-the-app-store-images/distChannel-m157.png "Distribution channel selection")

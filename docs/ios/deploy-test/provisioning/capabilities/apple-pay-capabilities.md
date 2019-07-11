@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: c7a2d347970d4edfe713edab264647fb644ff74a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b9a5b70b46447ab6eb7143322dd0d2e5dc55200d
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112343"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675147"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Apple Pay-Funktionen in Xamarin.iOS
 
@@ -56,13 +56,13 @@ Eine Händler-ID wird verwendet, um Apple Pay wissen zu lassen, dass Sie Zahlung
     
     ![Auswählen der App-ID im Developer Center](apple-pay-capabilities-images/image6.png)
 
-2.  Wählen Sie die **+**-Schaltfläche zum Hinzufügen einer neuen App-ID aus: 
+2.  Wählen Sie die **+** -Schaltfläche zum Hinzufügen einer neuen App-ID aus: 
    
     ![Hinzufügen einer neuen App-ID-Schaltfläche](apple-pay-capabilities-images/image27.png)
 
 3.  Geben Sie einen Namen für die App-ID und eine explizite App-ID an:    
    
-    ![Bildschirm „App-ID-Details“ ](apple-pay-capabilities-images/image35.png)
+    ![Bildschirm „App-ID-Details“](apple-pay-capabilities-images/image35.png)
 
 4.  Wählen Sie unter App-Dienste Apple Pay aus:    
   
@@ -138,7 +138,7 @@ Führen Sie die folgenden Schritte aus, um ein Zertifikat zu erstellen:
 
      ![Hochladen von CSR in Developer Center](apple-pay-capabilities-images/image50.png)
 
-10. Klicken Sie auf **Datei auswählen...**, um die CSR auszuwählen, und auf **Fortfahren**, um sie in das Entwicklerportal hochzuladen: 
+10. Klicken Sie auf **Datei auswählen...** , um die CSR auszuwählen, und auf **Fortfahren**, um sie in das Entwicklerportal hochzuladen: 
 
      ![Hochladen der CSR in Developer Center](apple-pay-capabilities-images/image51.png)
 
