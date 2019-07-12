@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a50a2014e28becacb2c9f4965b7f3377be57ab16
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018944"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830321"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Remotebenachrichtigungen mit Firebase Cloud Messaging
 
@@ -520,7 +520,7 @@ Versuchen Sie es löschen, wenn Sie eine Nachricht nicht erhalten, die **FCMClie
 
 Im vorherigen Beispiel wird das Symbol "Benachrichtigung" auf das Symbol der Anwendung festgelegt. Das folgende XML wird ein benutzerdefinierter Standardsymbol für Benachrichtigungen konfiguriert. Android zeigt dieser benutzerdefinierte Standardsymbol für alle benachrichtigungsmeldungen, in dem das Symbol "Benachrichtigungen" nicht explizit festgelegt wurde.
 
-Ein benutzerdefinierter Standardwert Symbol hinzuzufügen, fügen Ihre Symbol, um die **Ressourcen/drawable** Verzeichnis bearbeiten **"androidmanifest.xml"**, und fügen Sie die folgenden `<meta-data>` Element in der `<application>`Abschnitt:
+Ein benutzerdefinierter Standardwert Symbol hinzuzufügen, fügen Ihre Symbol, um die **Ressourcen/drawable** Verzeichnis bearbeiten **"androidmanifest.xml"** , und fügen Sie die folgenden `<meta-data>` Element in der `<application>`Abschnitt:
 
 ```xml
 <meta-data
@@ -682,6 +682,7 @@ using System.Collections.Generic;
 Fügen Sie die folgende Methode `MyFirebaseMessagingService`:
 
 <a name="sendnotification-method"></a>
+
 ```csharp
 void SendNotification(string messageBody, IDictionary<string, string> data)
 {
@@ -711,7 +712,7 @@ void SendNotification(string messageBody, IDictionary<string, string> data)
 
 Um diese Benachrichtigung von Hintergrund-Benachrichtigungen zu unterscheiden, markiert diesen Code Benachrichtigungen mit einem Symbol, das das Symbol der Anwendung unterscheidet. Fügen Sie die Datei [ic\_Stat\_ic\_notification.png](remote-notifications-with-fcm-images/ic-stat-ic-notification.png) zu **Ressourcen/drawable** und nehmen Sie diese in die **FCMClient** Projekt .
 
-Die `SendNotification` -Methode verwendet ` NotificationCompat.Builder` So erstellen Sie die Benachrichtigung und `NotificationManagerCompat` verwendet, um die Benachrichtigung zu starten. Die Benachrichtigung enthält eine `PendingIntent` ermöglichen, die der Benutzer, öffnen Sie die app, und zeigen Sie den Inhalt der übergebenen Zeichenfolge `messageBody`. Weitere Informationen zu `NotificationCompat.Builder`, finden Sie unter [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md).
+Die `SendNotification` -Methode verwendet `NotificationCompat.Builder` So erstellen Sie die Benachrichtigung und `NotificationManagerCompat` verwendet, um die Benachrichtigung zu starten. Die Benachrichtigung enthält eine `PendingIntent` ermöglichen, die der Benutzer, öffnen Sie die app, und zeigen Sie den Inhalt der übergebenen Zeichenfolge `messageBody`. Weitere Informationen zu `NotificationCompat.Builder`, finden Sie unter [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md).
 
 Rufen Sie die `SendNotification` Methode am Ende der `OnMessageReceived` Methode:
 
@@ -771,7 +772,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-Löschen Sie zum Aufheben der Registrierung des Geräts FCM vollständig aus die Instanz-ID durch Aufrufen der [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) Methode für die [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) Klasse. Zum Beispiel:
+Löschen Sie zum Aufheben der Registrierung des Geräts FCM vollständig aus die Instanz-ID durch Aufrufen der [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) Methode für die [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) Klasse. Beispiel:
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();

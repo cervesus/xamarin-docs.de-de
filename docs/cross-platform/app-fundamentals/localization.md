@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4799d6aaa095127e242c5e0750db686519d0c21d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a1218d836aad827390d9f5e70de189a869b7c6b8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61226527"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830999"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -36,12 +36,12 @@ Internationalisierung, die sie häufig auf i18n: Kurzform für 18 Buchstaben zwi
 In diesem Dokument werden, die Konzepte, die Internationalisierung und Lokalisierung und deren Entwicklung mobiler Anwendungen im Allgemeinen Anwendung zugeordnet wird.
 Beim Entwerfen und Erstellen einer Anwendung, Schritte, die Sie zuvor möglicherweise hart codiert, aber die müssen parametrisiert werden, für die Lokalisierung enthalten:
 
--   Layouts für Startbildschirm und dem Fehlertext
--   Symbole, Grafiken und Farben
--   Video- und Audiodateien,
--   Dynamischer Text und Text-Formatierung (z. B. Zahlen, Währung und Datumsangaben)
- - Änderungen am Layout für Sprachen für rechts-nach-links (RTL), und
--   Sortieren von Daten.
+- Layouts für Startbildschirm und dem Fehlertext
+- Symbole, Grafiken und Farben
+- Video- und Audiodateien,
+- Dynamischer Text und Text-Formatierung (z. B. Zahlen, Währung und Datumsangaben)
+- Änderungen am Layout für Sprachen für rechts-nach-links (RTL), und
+- Sortieren von Daten.
 
 Unabhängig davon, welche hilft mobile Plattformen, die Ihre app diese Tipps ausgerichtet ist Ihnen eine qualitativ hochwertige lokalisierte app erstellen.
 
@@ -81,9 +81,9 @@ Schreiben Sie die Validierungsregeln mit Internationalisierung Denken Sie daran:
 Nicht jedes Bild muss so ändern Sie basierend auf Ihrer Wahl eines Benutzers. Viele Symbole oder Fotos wird für alle Benutzer geeignet ist, spielt keine Rolle, welche Sprache sprechen.
 Sinnvoll, einige Ressourcen So lokalisieren Sie jedoch, wie z. B.:
 
- - Bilder mit Personen oder bestimmte Speicherorte – Ihre app fühlen sich möglicherweise für Benutzer relevantere lokalen Personen/Standorte angezeigt.
- - Symbole – kann einige ikonographie kulturspezifische und Sie können die app einfacher zu verwenden von der Lokalisierung der Bilder entsprechend der lokalen Grundlegendes zu machen.
- - Farben – einige Kulturen Farben anders – verstehen kann Rot bedeuten, Warnung, die in einer Region, aber viel Glück in einem anderen. Wenden Sie Muttersprache beim Entwerfen Ihrer app zu bestimmen, ob Sie einen Mechanismus zum Lokalisieren von Farben erstellen soll.
+- Bilder mit Personen oder bestimmte Speicherorte – Ihre app fühlen sich möglicherweise für Benutzer relevantere lokalen Personen/Standorte angezeigt.
+- Symbole – kann einige ikonographie kulturspezifische und Sie können die app einfacher zu verwenden von der Lokalisierung der Bilder entsprechend der lokalen Grundlegendes zu machen.
+- Farben – einige Kulturen Farben anders – verstehen kann Rot bedeuten, Warnung, die in einer Region, aber viel Glück in einem anderen. Wenden Sie Muttersprache beim Entwerfen Ihrer app zu bestimmen, ob Sie einen Mechanismus zum Lokalisieren von Farben erstellen soll.
 
 
 ### <a name="videos-and-sound"></a>Videos und Sound
@@ -120,10 +120,10 @@ Finden Sie unter den [analysieren numerischer Zeichenfolgen](https://msdn.micros
 Einige Sprachen wie Arabisch und Hebräisch Urdu werden (z. B.), von rechts nach links gelesen werden.
 Anwendungen, die diese Sprachen zu unterstützen, sollten Bildschirm Entwürfe verwenden, die für rechts-nach-links-Reader an, z. B. anpassen:
 
- - Rechts ausgerichtete sollte angezeigt werden.
- - Bezeichnungen sollten rechts neben den Eingabefeldern angezeigt werden.
- - Befehlsschaltflächen-Platzierung der Standard ist in der Regel rückgängig gemacht werden.
- - Wischen hierarchische Navigation und Animation (und andere Navigation Metaphern und Animationen) verwenden, die Richtung, für Kontext auch umgekehrt werden soll.
+- Rechts ausgerichtete sollte angezeigt werden.
+- Bezeichnungen sollten rechts neben den Eingabefeldern angezeigt werden.
+- Befehlsschaltflächen-Platzierung der Standard ist in der Regel rückgängig gemacht werden.
+- Wischen hierarchische Navigation und Animation (und andere Navigation Metaphern und Animationen) verwenden, die Richtung, für Kontext auch umgekehrt werden soll.
 
 IOS und Android unterstützt rechts-nach-links-Layouts und Schriftart-Rendering mit integrierten Features, mit denen Sie die oben aufgeführten Anpassungen vornehmen. Xamarin.Forms unterstützt keine derzeit automatisch RTL-Rendering.
 
@@ -139,10 +139,10 @@ Es ist unwahrscheinlich, dass die integrierte Datenbank-Funktionen auf den mobil
 
 Stellen Sie sicher, schreiben und Testen Sie Ihre Suchalgorithmus mit mehreren Sprachen, denken Sie daran. Zu berücksichtigende Aspekte umfassen:
 
- - Automatische Vervollständigung – Wenn Sie eine AutoVervollständigen-Funktion erstellt haben, stellen Sie sicher, dass sie Vorschläge für die Sprache des Benutzers relevanten Datenquellen.
- - Übereinstimmende Abfrage zu Daten – werden Suchabfragen eingegeben haben, in einer bestimmten Sprache nur Inhalte, die in dieser Sprache geschrieben wurde, oder für alle Inhalte in Ihrer app ausgeführt werden?
- - Wortstammerkennung – Wenn die Suche erstellt wird, um ähnliche Wörter suchen, Word Stämme und andere Optimierungen suchen, suchen, sind diese Optimierungen, die für alle Sprachen, die Sie unterstützen erstellt?
- - Sortierung – stellen Sie sicher, dass die Sortierung der Ergebnisse ordnungsgemäß (siehe oben).
+- Automatische Vervollständigung – Wenn Sie eine AutoVervollständigen-Funktion erstellt haben, stellen Sie sicher, dass sie Vorschläge für die Sprache des Benutzers relevanten Datenquellen.
+- Übereinstimmende Abfrage zu Daten – werden Suchabfragen eingegeben haben, in einer bestimmten Sprache nur Inhalte, die in dieser Sprache geschrieben wurde, oder für alle Inhalte in Ihrer app ausgeführt werden?
+- Wortstammerkennung – Wenn die Suche erstellt wird, um ähnliche Wörter suchen, Word Stämme und andere Optimierungen suchen, suchen, sind diese Optimierungen, die für alle Sprachen, die Sie unterstützen erstellt?
+- Sortierung – stellen Sie sicher, dass die Sortierung der Ergebnisse ordnungsgemäß (siehe oben).
 
 
 ### <a name="data-from-external-sources"></a>Daten aus externen Quellen
@@ -151,9 +151,9 @@ Viele Anwendungen Herunterladen von Daten aus externen Quellen, von Twitter und 
 
 Es gibt einige Strategien, die Sie verwenden können, versuchen Sie es aus, und stellen Sie sicher, dass Ihre app relevanten Daten für den Benutzer anzeigt:
 
- - Unterschiedliche Quellen – kann Ihre Anwendung die Daten aus einer anderen Quelle abhängig von Sprache oder Gebietsschema des Benutzers herunterladen. Gebietsschema News, Wetter und Stock Preise möglicherweise sinnvoller als etwas von einem nordamerikanischen Feed heruntergeladen.
- - Lokalisierte anzeigen – wenn Sie eine Twitter oder Foto-feed angezeigt werden Sie sollte anzeigen, die Metadaten (z.B. die angefallene Zeit) in sein eigenes Sprache, selbst wenn der Inhalt selbst in der ursprünglichen Sprache bleibt.
- - Übersetzung: könnten Sie eine Übersetzungsoption in Ihre app eine maschinelle Übersetzung der eingehenden Daten erstellen. Dies kann Automatic oder Ermessen des Benutzers – Achten Sie nur auf den Benutzer zu benachrichtigen, wenn dies stattfindet, da Computer Übersetzungen nie perfekt sind!
+- Unterschiedliche Quellen – kann Ihre Anwendung die Daten aus einer anderen Quelle abhängig von Sprache oder Gebietsschema des Benutzers herunterladen. Gebietsschema News, Wetter und Stock Preise möglicherweise sinnvoller als etwas von einem nordamerikanischen Feed heruntergeladen.
+- Lokalisierte anzeigen – wenn Sie eine Twitter oder Foto-feed angezeigt werden Sie sollte anzeigen, die Metadaten (z.B. die angefallene Zeit) in sein eigenes Sprache, selbst wenn der Inhalt selbst in der ursprünglichen Sprache bleibt.
+- Übersetzung: könnten Sie eine Übersetzungsoption in Ihre app eine maschinelle Übersetzung der eingehenden Daten erstellen. Dies kann Automatic oder Ermessen des Benutzers – Achten Sie nur auf den Benutzer zu benachrichtigen, wenn dies stattfindet, da Computer Übersetzungen nie perfekt sind!
 
 Videos – beim Entwerfen Ihrer Anwendung im Voraus planen Sie für die Ermittlung werden übersetzt, Inhalt oder sicherstellen, dass Benutzer von der Benutzeroberfläche angemessen informiert werden, wenn der Inhalt nicht in angezeigt wird bzw. externe Links zu den Audiospuren auch Auswirkungen auf ihre die Sprache.
 
@@ -162,10 +162,10 @@ Videos – beim Entwerfen Ihrer Anwendung im Voraus planen Sie für die Ermittlu
 
 Einige Zeichenfolgen in Ihrer app möglicherweise nicht benötigen, übersetzen oder benötigen zumindest die besondere Aufmerksamkeit vom Übersetzer. Beispiele:
 
- - URLs – Wenn Sie eine URL auflisten möglicherweise oder kann nicht nach Sprache angepasst werden müssen. Z. B. erforderlich keine facebook.com Übersetzung, die es erkennt automatisch-Sprache am zentralen Standort. Gebietsschemaspezifische-Inhalte für andere Standorte haben, und Sie eine andere URL ein, z. B. yahoo.com im Vergleich zu yahoo.fr oder yahoo.it anbieten möchten.
- - Telefonnummern – vor allem solche mit verschiedenen Ländercodes oder Zahlen für Aufrufer, die eine bestimmte Sprache zu sprechen.
- - Details für sicherheitskontakt – Adressen und andere Informationen unterscheiden sich von Sprache oder Gebietsschema.
- - Marken & aus Produktnamen besteht – nicht einige Zeichenfolgen erforderlich, übersetzen, weil sie immer in derselben Sprache geschrieben werden.
+- URLs – Wenn Sie eine URL auflisten möglicherweise oder kann nicht nach Sprache angepasst werden müssen. Z. B. erforderlich keine facebook.com Übersetzung, die es erkennt automatisch-Sprache am zentralen Standort. Gebietsschemaspezifische-Inhalte für andere Standorte haben, und Sie eine andere URL ein, z. B. yahoo.com im Vergleich zu yahoo.fr oder yahoo.it anbieten möchten.
+- Telefonnummern – vor allem solche mit verschiedenen Ländercodes oder Zahlen für Aufrufer, die eine bestimmte Sprache zu sprechen.
+- Details für sicherheitskontakt – Adressen und andere Informationen unterscheiden sich von Sprache oder Gebietsschema.
+- Marken & aus Produktnamen besteht – nicht einige Zeichenfolgen erforderlich, übersetzen, weil sie immer in derselben Sprache geschrieben werden.
 
 Schließlich müssen Sie detaillierte Anweisungen für das Konvertierungsprogramm einschließen, wenn bestimmte Zeichenfolgen besondere Behandlung erfordern.
 
@@ -264,16 +264,16 @@ Oder genauer gesagt keine Zeichenfolgen wiederverwenden, nur weil sie ähnlich s
 
 Zum Beispiel: Angenommen, Sie haben eine Ein-/Ausschalter in Ihrer app und das Switch-Steuerelement ist des Texts für 'on' und 'off' lokalisiert werden soll. Sie zeigt auch den Wert dieser Einstellung an anderer Stelle in der app in einer textbezeichnung. Verwenden Sie verschiedene Zeichenfolgen für die Switch-Anzeige und des Switches Status (auch wenn sie die gleiche Zeichenfolge in die Standardsprache sind) – zum Beispiel:
 
--   "On" – auf dem Switch selbst angezeigt.
--   "Off": auf dem Switch selbst angezeigt.
--   "On" – in einer Bezeichnung angezeigt.
--   "Off" – in einer Bezeichnung angezeigt.
+- "On" – auf dem Switch selbst angezeigt.
+- "Off": auf dem Switch selbst angezeigt.
+- "On" – in einer Bezeichnung angezeigt.
+- "Off" – in einer Bezeichnung angezeigt.
 
 Dies bietet maximale Flexibilität für das Konvertierungsprogramm:
 
--   Aus Gründen der Entwurf vielleicht der Switch auch Kleinbuchstaben "on" und "off" verwendet die Bezeichnung für die Anzeige verwendet jedoch Großbuchstaben "On" und "Off".
--   Einige Sprachen möglicherweise den Schalterwert abgekürzt werden soll, in das Benutzeroberflächensteuerelement, angepasst werden, während die wortvervollständigung (übersetzte) in der Bezeichnung angezeigt werden kann.
--   Alternativ kann das Rendering des Switches für einige Sprachen sein "I" und "O" kulturellen vertraut zu machen, aber Sie sollten immer noch die Bezeichnung "On" oder "Off" zu lesen.
+- Aus Gründen der Entwurf vielleicht der Switch auch Kleinbuchstaben "on" und "off" verwendet die Bezeichnung für die Anzeige verwendet jedoch Großbuchstaben "On" und "Off".
+- Einige Sprachen möglicherweise den Schalterwert abgekürzt werden soll, in das Benutzeroberflächensteuerelement, angepasst werden, während die wortvervollständigung (übersetzte) in der Bezeichnung angezeigt werden kann.
+- Alternativ kann das Rendering des Switches für einige Sprachen sein "I" und "O" kulturellen vertraut zu machen, aber Sie sollten immer noch die Bezeichnung "On" oder "Off" zu lesen.
 
 ### <a name="translation-services"></a>Übersetzungsdienste
 

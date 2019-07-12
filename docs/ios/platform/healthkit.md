@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: df0b0e8dd57129917f2d8dab07115551ca675acf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8dcb478b303c4c73f7e73dc018ad56b1301389c8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61163322"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830047"
 ---
 # <a name="healthkit-in-xamarinios"></a>HealthKit in Xamarin.iOS
 
@@ -142,7 +142,7 @@ Mit diesem Artikel bereitgestellte beispielanwendung enthält eine vorkonfigurie
 
 Der Health-Kit-Datenspeicher ist ein privates, benutzerspezifische-Datenspeicher, der von den apps gemeinsam verwendet wird. Da Integritätsinformationen so vertraulich ist, muss der Benutzer eine positive Schritte zum Datenzugriff ausführen. Dieser Zugriff ist möglicherweise teilweise (schreiben, aber nicht lesen, die Zugriff für einige Arten von Daten, aber in anderen, usw.) und kann jederzeit widerrufen werden. Integrität Kit Anwendungen sollten defensiv, unter der Voraussetzung geschrieben werden, dass viele Benutzer zögern, zu deren integritätsbezogene Informationen gespeichert werden.
 
-Kit integritätsdaten ist auf Apple angegeben. Diese Typen sind streng definiert: einige, z. B. Typ hat, sind beschränkt auf die bestimmte Werte einer Enumeration ist Apple angegeben, während andere eine Größe mit einer Maßeinheit (z. B. Gramm, Kalorien und Liter) kombinieren. Sogar Daten, die gemeinsam eine kompatible Maßeinheit unterscheiden sich durch ihre `HKObjectType`; z. B. das Typsystem fängt einen falschen Versuch zum Speichern einer `HKQuantityTypeIdentifier.NumberOfTimesFallen` Wert, der ein Feld erwartet eine `HKQuantityTypeIdentifier.FlightsClimbed` , obwohl beide verwenden die` HKUnit.Count` die Maßeinheit an.
+Kit integritätsdaten ist auf Apple angegeben. Diese Typen sind streng definiert: einige, z. B. Typ hat, sind beschränkt auf die bestimmte Werte einer Enumeration ist Apple angegeben, während andere eine Größe mit einer Maßeinheit (z. B. Gramm, Kalorien und Liter) kombinieren. Sogar Daten, die gemeinsam eine kompatible Maßeinheit unterscheiden sich durch ihre `HKObjectType`; z. B. das Typsystem fängt einen falschen Versuch zum Speichern einer `HKQuantityTypeIdentifier.NumberOfTimesFallen` Wert, der ein Feld erwartet eine `HKQuantityTypeIdentifier.FlightsClimbed` , obwohl beide verwenden die `HKUnit.Count` die Maßeinheit an.
 
 Die Typen, die in den Health-Kit-Datenspeicher gespeichert sind, alle Unterklassen von `HKObjectType`. `HKCharacteristicType` Speichern von Objekten biologischen Geschlecht und Blut Typ Geburtsdatum. Gängiger sind jedoch `HKSampleType` -Objekte, die Daten darstellen, die zu einem bestimmten Zeitpunkt oder über einen Zeitraum entnommen werden. 
 

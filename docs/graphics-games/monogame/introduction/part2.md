@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 941b88f9109cf2f3a3485311c52b1250bd08e53f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c9e0cf2f29d304f042bc56ee91029adadcaba570
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61162169"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832500"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Teil 2 – Implementieren von WalkingGame
 
@@ -53,7 +53,7 @@ Als Nächstes zeichnen wir eine einzelne Sprites auf dem Bildschirm, um zu zeige
 
 ### <a name="creating-a-texture2d"></a>Erstellen ein Texture2D
 
-Müssen wir erstellen eine `Texture2D` Instanz zur Verwendung beim Rendern von unserem Sprite. Alle Spiele Inhalt befindet sich letztlich in einem Ordner namens **Inhalt** im plattformspezifischen Projekt befindet. MonoGame freigegebenen Projekte können keinen Inhalt, enthalten, wie der Inhalt auf Buildvorgänge, die spezifisch für die Plattform verwenden muss. CocosSharp-Entwickler findet den Ordner "Content" ein Konzept vertraut sind – sie befinden sich am selben Ort in CocosSharp und MonoGame Projekten. Der Ordner "Content" finden Sie im iOS-Projekt, und klicken Sie im Ordner "Assets" in der Android-Projekt.
+Müssen wir erstellen eine `Texture2D` Instanz zur Verwendung beim Rendern von unserem Sprite. Alle Spiele Inhalt befindet sich letztlich in einem Ordner namens **Inhalt** im plattformspezifischen Projekt befindet. MonoGame freigegebenen Projekte können keinen Inhalt, enthalten, wie der Inhalt auf Buildvorgänge, die spezifisch für die Plattform verwenden muss. Der Ordner "Content" finden Sie im iOS-Projekt, und klicken Sie im Ordner "Assets" in der Android-Projekt.
 
 Zum Hinzufügen des Spiels Inhalt mit der Maustaste auf die **Inhalt** Ordner, und wählen **hinzufügen > Dateien hinzufügen...** Navigieren Sie zum Speicherort, in denen die content.zip-Datei extrahiert wurde, und wählen Sie die **charactersheet.png** Datei. Wenn Sie gefragt werden, dazu, wie Sie die Datei zu Ordner hinzufügen, wählen wir die **Kopie** Option:
 
@@ -548,7 +548,7 @@ Wenn der Benutzer den Bildschirm berührt, werden wir das Zeichen für die erste
         desiredVelocity.Y = touchCollection [0].Position.Y - this.Y;
 ```
 
-Im folgenden finden etwas Mathematik, die das Verschieben von Zeichen mit derselben Geschwindigkeit erhalten bleiben. Um zu erklären, warum dies wichtig ist, sehen Sie sich eine Situation, in denen der Benutzer den Bildschirm 500 Pixel berührt von auf dem sich das Zeichen befindet. Die erste Zeile Where `desiredVelocity.X` wird den Wert 500 würden zuzuweisen. Jedoch, wenn der Benutzer den Bildschirm in einer Entfernung von nur 100 Einheiten aus dem Zeichen berühren wurden die `desiredVelocity.X `würde auf 100 festgelegt sein. Das Ergebnis wäre, dass die Bewegung Geschwindigkeit des Zeichens, wie weit entfernt reagieren würden, dass die Touch-Punkt vom Zeichen ist. Da wir das Zeichen, das immer mit derselben Geschwindigkeit verschieben möchten, müssen wir die DesiredVelocity zu ändern.
+Im folgenden finden etwas Mathematik, die das Verschieben von Zeichen mit derselben Geschwindigkeit erhalten bleiben. Um zu erklären, warum dies wichtig ist, sehen Sie sich eine Situation, in denen der Benutzer den Bildschirm 500 Pixel berührt von auf dem sich das Zeichen befindet. Die erste Zeile Where `desiredVelocity.X` wird den Wert 500 würden zuzuweisen. Jedoch, wenn der Benutzer den Bildschirm in einer Entfernung von nur 100 Einheiten aus dem Zeichen berühren wurden die `desiredVelocity.X` würde auf 100 festgelegt sein. Das Ergebnis wäre, dass die Bewegung Geschwindigkeit des Zeichens, wie weit entfernt reagieren würden, dass die Touch-Punkt vom Zeichen ist. Da wir das Zeichen, das immer mit derselben Geschwindigkeit verschieben möchten, müssen wir die DesiredVelocity zu ändern.
 
 Die `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)` Anweisung überprüft, wenn die Geschwindigkeit nicht-0 (null) – mit anderen Worten ist, um sicherzustellen, dass der Benutzer nicht die gleichen Position wie die aktuelle Position des Zeichens berührt überprüfen. Wenn nicht der Fall, dann wir das Zeichen, die Geschwindigkeit konstant, unabhängig davon, wie weit entfernt sein. Legen Sie die Fingereingabe müssen ist. Dies erreichen wir durch Normalisieren des Geschwindigkeitsvektors, was davon eine Länge von 1 führt. Ein Vektor der Geschwindigkeit von 1 bedeutet, dass das Zeichen bei 1 Pixel pro Sekunde verschoben wird. Wir werden dies beschleunigen, indem der Wert multipliziert wird durch die gewünschte Geschwindigkeit von 200.
 

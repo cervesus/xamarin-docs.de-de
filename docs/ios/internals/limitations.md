@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 86f41bf227b97ef24651f482ff133a065226ee14
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035879"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830400"
 ---
 # <a name="limitations-of-xamarinios"></a>Einschränkungen von Xamarin.iOS
 
@@ -74,7 +74,8 @@ Das Fehlen von System.Reflection. **Ausgeben** bedeutet, die keinen Code, der vo
 -  Remoting TransparentProxy o. ä., die die Laufzeit zum Generieren von Code dynamisch verursachen würde. 
 
 
- **Wichtig:** Verwechseln Sie nicht **Reflection.Emit** mit **Reflektion**. Reflection.Emit zum Generieren von Code dynamisch ist und dieser Code JIT-kompilierten und zu systemeigen kompilierten Code. Aufgrund von Beschränkungen für iOS (keine JIT-Kompilierung) ist dies nicht unterstützt.
+  > [!IMPORTANT]
+  > Verwechseln Sie nicht **Reflection.Emit** mit **Reflektion**. Reflection.Emit zum Generieren von Code dynamisch ist und dieser Code JIT-kompilierten und zu systemeigen kompilierten Code. Aufgrund von Beschränkungen für iOS (keine JIT-Kompilierung) ist dies nicht unterstützt.
 
 Aber der gesamte Reflektions-API, einschließlich der Type.GetType ("" SomeClass "bereitgestellt"), Auflisten von Methoden, Eigenschaften, auflisten, Abrufen von Attributen und Werten funktioniert problemlos.
 

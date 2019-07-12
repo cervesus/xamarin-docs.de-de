@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 22ac6a3776e5fa5de2fc238efe90c435190e8005
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087046"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832075"
 ---
 # <a name="push-notifications-in-ios"></a>Senden von Pushbenachrichtigungen in iOS
 
@@ -21,7 +21,7 @@ ms.locfileid: "61087046"
 
 Erste Schritte mit Pushbenachrichtigungen sollte kurz gehalten werden und nur genügend Daten für der mobilen Anwendung zu benachrichtigen, dass sie die Server-Anwendung nach einem Update wenden. Z. B., wenn neue e-Mail eingeht, würde die Server-Anwendung nur die mobile Anwendung benachrichtigen, die neue e-Mail angekommen ist. Die Benachrichtigung würde die neue e-Mail selbst nicht enthalten. Die mobile Anwendung würde der neuen e-Mails klicken Sie dann vom Server abgerufen werden, während sie die entsprechenden war
 
-In der Mitte des Push-Benachrichtigungen unter iOS ist die *Apple Push Notification-Gateway-Dienst (APNS)*. Dies ist ein Dienst von Apple, die für das routing von Benachrichtigungen von einem Anwendungsserver auf iOS-Geräten zuständig ist.
+In der Mitte des Push-Benachrichtigungen unter iOS ist die *Apple Push Notification-Gateway-Dienst (APNS)* . Dies ist ein Dienst von Apple, die für das routing von Benachrichtigungen von einem Anwendungsserver auf iOS-Geräten zuständig ist.
 Die folgende Abbildung veranschaulicht die Topologie des Push-Benachrichtigung für iOS: ![](remote-notifications-in-ios-images/image4.png "Diese Abbildung zeigt die Push-Benachrichtigung-Topologie für iOS")
 
 Remotebenachrichtigungen selbst sind JSON-formatierte Zeichenfolgen, die das Format entsprechen, und Protokolle, die im angegebenen [die Benachrichtigungsnutzlast](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) Teil der [lokalen und Push Notification Programming Guide](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)in die [iOS-Entwicklerdokumentation](https://developer.apple.com/devcenter/ios/index.action).
@@ -67,7 +67,7 @@ Ihr eigenes Zertifikat für jede der im vorherigen Abschnitt erwähnten Umgebung
 
     [![](remote-notifications-in-ios-images/image10new.png "Erstellen Sie das Zertifikat für die app-ID")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4.  Wählen Sie, ob Sie ein Zertifikat für Entwicklung oder Produktion verwenden möchten:
+4. Wählen Sie, ob Sie ein Zertifikat für Entwicklung oder Produktion verwenden möchten:
 
     [![](remote-notifications-in-ios-images/image11new.png "Wählen Sie ein Zertifikat für Entwicklung oder Produktion")](remote-notifications-in-ios-images/image11new.png#lightbox)
 

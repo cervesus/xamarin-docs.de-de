@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 1c5b2635dca6aa74fd0dfb92d7e62e6da3140538
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9a34cfab0c3ed045968f48ac6c67b2f4b66990cc
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60902839"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832453"
 ---
 # <a name="xamarinforms-themes"></a>Xamarin.Forms-Designs
 
@@ -26,7 +26,8 @@ Ein Design wird zu einer Xamarin.Forms-Anwendung hinzugefügt, durch Einschließ
 
 Finden Sie in der [Design "hell"](light.md) und [Design "dunkel"](dark.md) Seiten für Anweisungen zum Hinzufügen einer app, oder sehen Sie sich die [Beispiel benutzerdefiniertes Design](custom.md).
 
-**WICHTIG:** Sie sollten auch die Schritte zum [Design-Assemblys (siehe unten) laden](#loadtheme) durch Hinzufügen von Bausteincode für den iOS- `AppDelegate` und Android `MainActivity`. Dies wird in einer kommenden Vorschau-Version verbessert werden.
+> [!IMPORTANT]
+> Sie sollten auch die Schritte zum [Design-Assemblys (siehe unten) laden](#loadtheme) durch Hinzufügen von Bausteincode für den iOS- `AppDelegate` und Android `MainActivity`. Dies wird in einer kommenden Vorschau-Version verbessert werden.
 
 
 ## <a name="control-appearance"></a>Steuerelementdarstellung

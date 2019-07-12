@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c51960a24e1277b3faec0905da3b9a5986359681
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61236922"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830669"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandkasten einer Xamarin.Mac-app
 
@@ -226,7 +226,7 @@ Abgesehen von der Ressource blockiert gibt es drei Arten mitteilen, ob es sich b
 
 ### <a name="debugging-a-sandboxed-app"></a>Debuggen einer Sandbox-app
 
-Der Debugger eine Verbindung herstellt, Xamarin.Mac-Apps über TCP, das bedeutet, dass standardmäßig beim Sandkasten, aktivieren sie für die app eine Verbindung herstellen kann, sodass, wenn Sie versuchen, die app ausführen, ohne die richtigen Berechtigungen, die aktiviert, Sie einen Fehler erhalten *"kann nicht für die Verbindung der Debugger"*. 
+Der Debugger eine Verbindung herstellt, Xamarin.Mac-Apps über TCP, das bedeutet, dass standardmäßig beim Sandkasten, aktivieren sie für die app eine Verbindung herstellen kann, sodass, wenn Sie versuchen, die app ausführen, ohne die richtigen Berechtigungen, die aktiviert, Sie einen Fehler erhalten *"kann nicht für die Verbindung der Debugger"* . 
 
 [![Festlegen der erforderlichen Optionen](sandboxing-images/debug01.png "Festlegen von Optionen")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -460,7 +460,7 @@ Damit können die Apple signierte Version der Xamarin.Mac-app ausführen, führe
 
 1. Öffnen Sie die Terminal-app (in `/Applications/Utilities`).
 2. Öffnen Sie ein Finder auf die Apple signierte Version der Xamarin.Mac-app.
-3. Typ `asctl container acl add -file ` in die Terminal-Fenster.
+3. Typ `asctl container acl add -file` in die Terminal-Fenster.
 4. Ziehen Sie die Xamarin.Mac-app-Symbol aus dem Finder-Fenster, und legen Sie sie in der Terminal-Fenster.
 5. Der Befehl im Terminal wird der vollständige Pfad zur Datei hinzugefügt werden.
 6. Drücken Sie **EINGABETASTE** zum Ausführen des Befehls.

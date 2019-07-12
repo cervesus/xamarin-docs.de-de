@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: ec173c0ed7881439ecbe2b5cf83c8f5484c7e5aa
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 93f90d2dad140f021c7e575afed44da1c5351eda
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977629"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830518"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Übersicht über die Objective-C-Bindungen
 
@@ -24,9 +24,10 @@ Binden eine Objective-C-Bibliothek für die Verwendung mit Xamarin verwendet dre
 2. Nachdem Sie die "API-Definition", im geschrieben haben C#, Sie kompilieren, um eine "Bindung"-Assembly zu erzeugen. Dies kann erfolgen auf der [ **Befehlszeile** ](#commandline) oder eine [ **bindungsprojekt** ](#bindingproject) in Visual Studio für Mac oder Visual Studio.
 
 3. Die Assembly "Bindung" wird dann an Ihre Xamarin-Application-Projekt hinzugefügt, damit Sie die systemeigene Funktionalität, die mit der API, die Sie definiert zugreifen können.
-  Das bindungsprojekt erfolgt unabhängig von der Ihre Anwendungsprojekte.
+   Das bindungsprojekt erfolgt unabhängig von der Ihre Anwendungsprojekte.
 
-**HINWEIS:** Schritt 1 kann automatisiert werden, mit der Hilfe von [ **Ziel Sharpie**](#objectivesharpie). Er untersucht die Objective-C-API und generiert eine vorgeschlagene C# "API-Definition". Sie können anpassen, die Dateien vom Ziel Sharpie erstellt und sie in einem bindungsprojekt (oder in der Befehlszeile) die bindungsassembly zu erstellen. Objektive Sharpie erstellt keine Bindungen selbst, sondern lediglich ein optionaler Teil eines größeren Prozesses.
+   > [!NOTE]
+   > Schritt 1 kann automatisiert werden, mit der Hilfe von [ **Ziel Sharpie**](#objectivesharpie). Er untersucht die Objective-C-API und generiert eine vorgeschlagene C# "API-Definition". Sie können anpassen, die Dateien vom Ziel Sharpie erstellt und sie in einem bindungsprojekt (oder in der Befehlszeile) die bindungsassembly zu erstellen. Objektive Sharpie erstellt keine Bindungen selbst, sondern lediglich ein optionaler Teil eines größeren Prozesses.
 
 Lesen Sie auch weitere technische Details von [Funktionsweise](#howitworks), derer Sie Ihre Bindungen zu schreiben.
 

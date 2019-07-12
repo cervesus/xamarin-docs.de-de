@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d145a8a3cd8bc321f0fce76a8831fca681ad29a0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61077875"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830574"
 ---
 # <a name="cardview"></a>CardView
 
@@ -45,7 +45,7 @@ Ihre app muss außerdem enthalten die `Xamarin.Android.Support.v7.CardView` Pake
 
 2. In der **Pakete hinzufügen** Dialogfeld, und suchen Sie **CardView**.
 
-3. Wählen Sie **Xamarin-Support-Bibliothek v7 CardView-**, klicken Sie dann auf **Paket hinzufügen**.
+3. Wählen Sie **Xamarin-Support-Bibliothek v7 CardView-** , klicken Sie dann auf **Paket hinzufügen**.
 
 Hinzufügen der `Xamarin.Android.Support.v7.CardView` Paket in Visual Studio:
 
@@ -174,8 +174,8 @@ Beachten Sie, dass diese Attribute (mit Ausnahme der Hintergrundfarbe) eine Dime
 
 
 #### <a name="padding"></a>Abstand
-`
-CardView` bietet fünf Textabstandsattribute um Inhalt auf der Karte zu positionieren. Sie können sie festlegen, in dem Layout-XML oder Sie können analoge Methoden in Ihrem Code aufrufen:
+
+`CardView` bietet fünf Textabstandsattribute um Inhalt auf der Karte zu positionieren. Sie können sie festlegen, in dem Layout-XML oder Sie können analoge Methoden in Ihrem Code aufrufen:
 
 [![Diagramm der CardView padding Attribute](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 

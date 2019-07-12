@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: c2f727b55b21dc3bd976f0b41c71b794841cfca4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b894c245a4391064746a08816dfa63a1148d436d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421995"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831251"
 ---
 # <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool-Fehler: Der Vorgang konnte nicht abgeschlossen werden.
 
@@ -48,7 +48,7 @@ Angenommen, Ihre ursprüngliche `.csproj` -Datei enthält den folgenden Eintrag:
 
 `<BundleResource Include="Resources\Images\image.png" />`
 
-Sie können dieses Element zu ändern und Hinzufügen einer `LogicalName` , damit das Image stattdessen auf der obersten Ebene der kopiert werden sollen die `.app `Bundle:
+Sie können dieses Element zu ändern und Hinzufügen einer `LogicalName` , damit das Image stattdessen auf der obersten Ebene der kopiert werden sollen die `.app` Bundle:
 
 ```xml
 <BundleResource Include="Resources\Images\image.png">

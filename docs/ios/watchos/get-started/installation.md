@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: 13fd84d8e23c18606696532b1c6e8db301b52f3c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb8aabb3649da3818c1b020508b78a03f513963b
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218389"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830684"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>Installieren und Verwenden von WatchOS in Xamarin
 
@@ -144,7 +144,7 @@ Sie können die Watch-apps im Simulator mit der Visual Studio für Mac oder Visu
 
 Es gibt zwei Modi für die eine WatchKit-app starten:
 
- - normale app-Modus (Standard), und
+- normale app-Modus (Standard), und
 - [Benachrichtigungen](~/ios/watchos/platform/notifications.md) (erfordert eine Test-Notification-Nutzlast im JSON-Format).
 
 ### <a name="xcode-8-support"></a>Xcode 8-Unterstützung
@@ -178,8 +178,9 @@ Standardmäßig wird eine Watch-app im normalen beginnt **app** Modus (Modus "ni
 
 Bei Verwendung von Xcode 6, nur das iPhone 5, iPhone 5, iPhone 6 und iPhone 6 Plus kann aktivieren, die externe Anzeige entweder **Apple Watch - 38mm** oder **Apple Watch - 42mm** , sodass die Anwendungen überwachen können angezeigt.
 
-**Hinweis**: Denken Sie daran, dass auf der Bildschirm sehen Sie sich im iOS-Simulator nicht automatisch angezeigt wird, wenn Sie Xcode 6 verwenden.
-Verwenden der **Hardware > externe zeigt** Menü zeigt der Bildschirm sehen Sie sich an.
+> [!NOTE]
+> Denken Sie daran, dass auf der Bildschirm sehen Sie sich im iOS-Simulator nicht automatisch angezeigt wird, wenn Sie Xcode 6 verwenden.
+> Verwenden der **Hardware > externe zeigt** Menü zeigt der Bildschirm sehen Sie sich an.
 
 <a name="custommodes" />
 
@@ -212,8 +213,8 @@ Denken Sie daran, eine Benachrichtigung JSON-Datei angeben beim Debuggen im Modu
 
 ![](installation-images/debug-sml.png "Dieser Screenshot zeigt einen Haltepunkt erreicht wird, in eine Watch-app")
 
-Nach dem Ausführen der Anweisungen zum Starten Sie werden letztlich die Watch-app unter der **iOS-Simulator (Überwachung)**.
-Wählen Sie für den Benachrichtigungsmodus **Debuggen > System-Protokoll öffnen** (**CMD + /**) und `Console.WriteLine` in Ihrem Code.
+Nach dem Ausführen der Anweisungen zum Starten Sie werden letztlich die Watch-app unter der **iOS-Simulator (Überwachung)** .
+Wählen Sie für den Benachrichtigungsmodus **Debuggen > System-Protokoll öffnen** (**CMD + /** ) und `Console.WriteLine` in Ihrem Code.
 
 ### <a name="debugging-lifecycle-event-handlers"></a>Lebenszyklus-Ereignishandler Debuggen
 

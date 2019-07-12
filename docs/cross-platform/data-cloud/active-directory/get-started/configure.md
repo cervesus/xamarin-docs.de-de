@@ -6,12 +6,12 @@ ms.assetid: 8A14A457-F72E-4B08-B4B6-801F7619F893
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 2a9baab9215ae2d30e4daf6800a116c95165da42
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6135740095395d5cd7bde9abc1cbbab1e1072161
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61188268"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832239"
 ---
 # <a name="step-2-configure-service-access-for-mobile-application"></a>Schritt 2 Konfigurieren des Service-Zugriffs für Mobile Anwendung
 
@@ -21,7 +21,7 @@ Wenn alle Ressourcen, z. B. die Webanwendung, Webdienst usw. muss durch Azure Ac
 
   ![](configure-images/2.1-configure.png "Suchen Sie auf der Registerkarte \"konfigurieren\" Berechtigungen für andere Anwendungen im Abschnitt")
 
-2.  Klicken Sie auf **Anwendung hinzufügen** Schaltfläche. Auf dem nächsten Bildschirm Popupfenster sehen Sie die Liste aller Anwendungen die von Azure Active Directory gesichert werden. Wählen Sie die Anwendungen, die aus der mobilen Anwendung zugegriffen werden muss.
+2. Klicken Sie auf **Anwendung hinzufügen** Schaltfläche. Auf dem nächsten Bildschirm Popupfenster sehen Sie die Liste aller Anwendungen die von Azure Active Directory gesichert werden. Wählen Sie die Anwendungen, die aus der mobilen Anwendung zugegriffen werden muss.
 
   ![](configure-images/2.2-add-application.png "Wählen Sie die Anwendungen, die von der mobilen Anwendung zugegriffen werden muss")
 

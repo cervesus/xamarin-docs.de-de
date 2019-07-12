@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283154"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832517"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Dialogfelder in Xamarin.Mac
 
@@ -413,7 +413,7 @@ Wenn wir die Anwendung auszuführen und das Blatt zu öffnen, wird es an das Fen
 
 ## <a name="creating-a-preferences-dialog"></a>Erstellen ein Dialogfeld "Einstellungen"
 
-Bevor wir den Entwurf, um die Ansicht "Einstellungen" in Interface Builder müssen wir einen benutzerdefinierten Segue-Typ zum Behandeln der Wechsel von den Einstellungen hinzufügen. Fügen Sie dem Projekt eine neue Klasse und nenne `ReplaceViewSeque `. Bearbeiten Sie die Klasse, und stellen sie wie folgt aussehen:
+Bevor wir den Entwurf, um die Ansicht "Einstellungen" in Interface Builder müssen wir einen benutzerdefinierten Segue-Typ zum Behandeln der Wechsel von den Einstellungen hinzufügen. Fügen Sie dem Projekt eine neue Klasse und nenne `ReplaceViewSeque`. Bearbeiten Sie die Klasse, und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;

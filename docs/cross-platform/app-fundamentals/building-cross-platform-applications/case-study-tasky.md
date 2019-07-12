@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 15b4154ad6e95aabb5e88784660a93bb53c0b252
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 7bea80c22f6931858d0629382f6882203dfd374f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650208"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829936"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Plattformübergreifende App-Fallstudie: Tasky
 
@@ -29,9 +29,9 @@ Ist es ratsam, erstellen Sie eine der Wegweiser für das, was Sie erreichen, bev
 
 Der erste Schritt beim Entwerfen einer Anwendung ist auf die gewünschte Funktionen zu identifizieren. Dabei kann es sich um allgemeine Ziele oder Anwendungsfälle. Tasky hat einfache funktionsbezogenen Anforderungen:
 
- -  Anzeigen einer Liste von Aufgaben
- -  Hinzufügen, bearbeiten und Löschen von Aufgaben
- -  Festlegen Sie Status einer Aufgabe, auf "Fertig"
+-  Anzeigen einer Liste von Aufgaben
+-  Hinzufügen, bearbeiten und Löschen von Aufgaben
+-  Festlegen Sie Status einer Aufgabe, auf "Fertig"
 
 Sie sollten die Verwendung von plattformspezifischen Features berücksichtigen.  Kann Tasky Geofencing für iOS oder Windows Phone-Live-Kacheln nutzen? Auch wenn Sie in der ersten Version nicht plattformspezifischen Features verwenden, sollten Sie voraus planen, um sicherzustellen, dass Ihr Unternehmen & Datenebenen aufnehmen können.
 
@@ -52,9 +52,9 @@ Zu wissen, welche Daten müssen gespeichert werden können Sie bestimmen die per
 
 Tasky benötigt, um drei Eigenschaften für jede "TaskItem" zu speichern:
 
- -  **Namen** – Zeichenfolge
- -  **Anmerkungen zu dieser** – Zeichenfolge
- -  **Fertig** – Boolesch
+- **Namen** – Zeichenfolge
+- **Anmerkungen zu dieser** – Zeichenfolge
+- **Fertig** – Boolesch
 
  <a name="Core_Functionality" />
 
@@ -62,11 +62,11 @@ Tasky benötigt, um drei Eigenschaften für jede "TaskItem" zu speichern:
 
 Erwägen Sie die API, die die Benutzeroberfläche verwenden, um die Anforderungen erfüllen muss. Eine to-Do-Liste muss die folgenden Funktionen:
 
- -   **Auflisten aller Aufgaben** : Anzeige die Hauptbildschirm-Liste aller verfügbaren Tasks
- -  **Erhalten Sie eine Aufgabe** – Wenn eine Aufgabenzeile livekomponententests wird
- -  **Speichern Sie eine Aufgabe** – Wenn eine Aufgabe bearbeitet wird
- -  **Löschen Sie eine Aufgabe** – Wenn eine Aufgabe gelöscht wird
- -  **Erstellen von leeren Task** : Wenn Sie eine neue Aufgabe erstellt wird
+- **Auflisten aller Aufgaben** : Anzeige die Hauptbildschirm-Liste aller verfügbaren Tasks
+- **Erhalten Sie eine Aufgabe** – Wenn eine Aufgabenzeile livekomponententests wird
+- **Speichern Sie eine Aufgabe** – Wenn eine Aufgabe bearbeitet wird
+- **Löschen Sie eine Aufgabe** – Wenn eine Aufgabe gelöscht wird
+- **Erstellen von leeren Task** : Wenn Sie eine neue Aufgabe erstellt wird
 
 Um die Wiederverwendung von Code zu erreichen, diese API sollte ein Mal implementiert werden der *Portable Class Library*.
 
@@ -76,10 +76,10 @@ Um die Wiederverwendung von Code zu erreichen, diese API sollte ein Mal implemen
 
 Nachdem Sie der Anwendungsentwurf bei geeinigt haben, erwägen Sie, wie sie als Cross-Platform-Anwendung implementiert werden kann. Dadurch werden die Architektur der Anwendung. Anhand der Anweisungen in der [Building Cross-Platform Applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) Dokument der Anwendungscode muss unterbrochen werden nach unten in den folgenden Teilen:
 
- -   **Gemeinsamer Code** – ein gemeinsames Projekt, die enthält aktionsentwicklung Code zum Speichern der Aufgabendaten verfügbar machen, eine Modellklasse und eine API zum Verwalten von speichern und Laden von Daten.
- -   **Plattformspezifischen Code** – plattformspezifischen Projekte, die eine native Benutzeroberfläche für jedes Betriebssystem, mit der allgemeine Code als "Back-End" implementieren.
+- **Gemeinsamer Code** – ein gemeinsames Projekt, die enthält aktionsentwicklung Code zum Speichern der Aufgabendaten verfügbar machen, eine Modellklasse und eine API zum Verwalten von speichern und Laden von Daten.
+- **Plattformspezifischen Code** – plattformspezifischen Projekte, die eine native Benutzeroberfläche für jedes Betriebssystem, mit der allgemeine Code als "Back-End" implementieren.
 
- [![](case-study-tasky-images/taskypro-architecture.png "Plattformspezifischen Projekten implementiert, eine native Benutzeroberfläche für jedes Betriebssystem, mit der allgemeine Code als Back-end")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![](case-study-tasky-images/taskypro-architecture.png "Plattformspezifischen Projekten implementiert, eine native Benutzeroberfläche für jedes Betriebssystem, mit der allgemeine Code als Back-end")](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 Diese beiden Teile werden in den folgenden Abschnitten beschrieben.
 
@@ -280,8 +280,8 @@ In diesem Projekt verwenden diese Verweise werden die Anwendungsschicht sowie di
 
 Die Anwendungsschicht enthält plattformspezifischen Klassen erforderlich, um "binden Sie die Objekte, die von der PCL, an der Benutzeroberfläche verfügbar gemacht werden". Die iOS-spezifische Anwendung besteht aus zwei Klassen, um Tasks anzuzeigen:
 
- -   **EditingSource** – diese Klasse wird verwendet, um Listen mit Aufgaben an die Benutzeroberfläche zu binden. Da `MonoTouch.Dialog` wurde verwendet, für die Aufgabenliste, müssen wir implementieren dieses Hilfsprogramm zum Aktivieren von Wischen-zu-Delete-Funktionen in der `UITableView` . Wischen-zu-Delete ist häufig bei iOS, jedoch keine Android- oder Windows Phone, also das bestimmte iOS-Projekt die einzige, die sie implementiert.
- -   **' TaskDialog ' muss** – diese Klasse wird verwendet, um eine einzelne Aufgabe an der Benutzeroberfläche zu binden. Er verwendet den `MonoTouch.Dialog` Reflektions-API "umschlossen" die `TaskItem` Objekt mit einer Klasse mit den richtigen Attributen damit dem Eingabebildschirm ordnungsgemäß formatiert werden kann.
+- **EditingSource** – diese Klasse wird verwendet, um Listen mit Aufgaben an die Benutzeroberfläche zu binden. Da `MonoTouch.Dialog` wurde verwendet, für die Aufgabenliste, müssen wir implementieren dieses Hilfsprogramm zum Aktivieren von Wischen-zu-Delete-Funktionen in der `UITableView` . Wischen-zu-Delete ist häufig bei iOS, jedoch keine Android- oder Windows Phone, also das bestimmte iOS-Projekt die einzige, die sie implementiert.
+- **' TaskDialog ' muss** – diese Klasse wird verwendet, um eine einzelne Aufgabe an der Benutzeroberfläche zu binden. Er verwendet den `MonoTouch.Dialog` Reflektions-API "umschlossen" die `TaskItem` Objekt mit einer Klasse mit den richtigen Attributen damit dem Eingabebildschirm ordnungsgemäß formatiert werden kann.
 
 Die `TaskDialog` -Klasse `MonoTouch.Dialog` Attribute zum Erstellen eines Bildschirms basierend auf einer Klasse Eigenschaften. Die Klasse sieht folgendermaßen aus:
 
@@ -389,9 +389,9 @@ Es muss auch das PCL-Projekt (z.B.) verweisen TaskyPortableLibrary) auf der allg
 
 Der Android-app UI-Schicht ist eine Kombination aus Code und XML-Markup.
 
- -   **Ressourcen/Layout** – Bildschirmlayouts und die Zeile der Zelle Entwurf als AXML-Dateien implementiert. Die AXML kann manuell geschrieben oder visuell mit dem Xamarin-UI-Designer für Android gelayoutet sein.
- -   **Ressourcen/Drawable** – Bilder (Symbole) und benutzerdefinierte Schaltfläche.
- -   **Bildschirme** – Aktivität-Unterklassen, die jeder Bildschirm und sein Verhalten definieren. Verbindet die Benutzeroberfläche mit Anwendungsschicht-Klassen und die allgemeine API (`TaskItemManager`).
+- **Ressourcen/Layout** – Bildschirmlayouts und die Zeile der Zelle Entwurf als AXML-Dateien implementiert. Die AXML kann manuell geschrieben oder visuell mit dem Xamarin-UI-Designer für Android gelayoutet sein.
+- **Ressourcen/Drawable** – Bilder (Symbole) und benutzerdefinierte Schaltfläche.
+- **Bildschirme** – Aktivität-Unterklassen, die jeder Bildschirm und sein Verhalten definieren. Verbindet die Benutzeroberfläche mit Anwendungsschicht-Klassen und die allgemeine API (`TaskItemManager`).
 
  <a name="Home_Screen" />
 

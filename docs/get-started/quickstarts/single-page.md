@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 7b13ab5a4cc0d8e66e260329b5a53397778cb179
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 83c71962ceb4a30c2e05d44fffe4d64b54e4883d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61194362"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831946"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Erstellen Sie eine einzelne Seite Xamarin.Forms-Anwendung
 
@@ -38,7 +38,7 @@ Der Schnellstart erläutert, wie Sie eine plattformübergreifende Xamarin.Forms-
 - Kenntnisse C#.
 - (optional) Einem gekoppelten Mac zum Erstellen der Anwendung unter iOS.
 
-Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md). Weitere Informationen zum Verbinden von Visual Studio-2019 mit einem Mac-buildhost, finden Sie unter [-Paar, das Mac für Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md). Informationen zum Verbinden von Visual Studio 2019 mit einem Mac-Buildhost finden Sie unter [Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 ## <a name="get-started-with-visual-studio-2019"></a>Erste Schritte mit Visual Studio-2019
 
@@ -65,7 +65,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
 5. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **Notes** auf die Datei **MainPage.xaml**, um sie zu öffnen:
 
-    ![](single-page-images/vs/open-mainpage-xaml.png "„MainPage.xaml“ öffnen")
+    ![](single-page-images/vs/open-mainpage-xaml-2019.png "„MainPage.xaml“ öffnen")
 
 6. Entfernen Sie in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -102,7 +102,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
 7. Erweitern Sie **MainPage.xaml** im **Projektmappen-Explorer** im Projekt **Notes**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen:
 
-    ![](single-page-images/vs/open-mainpage-codebehind.png "„MainPage.xaml.cs“ öffnen")
+    ![](single-page-images/vs/open-mainpage-codebehind-2019.png "„MainPage.xaml.cs“ öffnen")
 
 8. Entfernen Sie in **MainPage.xaml.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -186,13 +186,13 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 - Visual Studio 2017 mit dem **Mobile Entwicklung mit .NET** arbeitsauslastung installiert.
 - Kenntnisse C#.
 - (optional) Einem gekoppelten Mac zum Erstellen der Anwendung unter iOS.
 
-Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md). Weitere Informationen zum Verbinden von Visual Studio-2019 mit einem Mac-buildhost, finden Sie unter [-Paar, das Mac für Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren von Xamarin](~/get-started/installation/index.md). Informationen zum Verbinden von Visual Studio 2019 mit einem Mac-Buildhost finden Sie unter [Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 ## <a name="get-started-with-visual-studio-2017"></a>Erste Schritte mit Visual Studio 2017
 
@@ -336,7 +336,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 - Visual Studio für Mac (neuestes Release) mit iOS und Android-plattformunterstützung installiert.
 - Xcode (neuestes Release).

@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 9f39580d282defed354f3b9e5cbe4eb1cdec4796
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7db73759cb4a1b1a8d7fe40426b03a163c3ebdc4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61161146"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831059"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>Erstellen eines MonoGame UWP-Projekts
 
@@ -90,9 +90,9 @@ Die MonoGame-Vorlage für Xbox One der sicheren Bereich berücksichtigt und stel
 
 ## <a name="referencing-content-in-uwp-projects"></a>Verweisen auf Inhalt in UWP-Projekten
 
-Inhalte in MonoGame-Projekten verwiesen werden kann, direkt aus der Datei oder über die [Pipeline für Bildinhalte MonoGame](~/graphics-games/cocossharp/content-pipeline/index.md). Kleine-Spiel-Projekte profitieren möglicherweise von der Einfachheit beim Laden einer Datei. Größere Projekte profitieren von der Verwendung von der Pipeline für Bildinhalte zum Optimieren von Inhalten zu verkleinern und zu laden. Im Gegensatz zu XNA auf der Xbox 360 die `System.IO.File` -Klasse ist für Xbox One-UWP-apps verfügbar.
+Inhalte in MonoGame-Projekten verwiesen werden kann, direkt aus der Datei oder über die [Pipeline für Bildinhalte MonoGame](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md). Kleine-Spiel-Projekte profitieren möglicherweise von der Einfachheit beim Laden einer Datei. Größere Projekte profitieren von der Verwendung von der Pipeline für Bildinhalte zum Optimieren von Inhalten zu verkleinern und zu laden. Im Gegensatz zu XNA auf der Xbox 360 die `System.IO.File` -Klasse ist für Xbox One-UWP-apps verfügbar.
 
-Weitere Informationen zum Laden von Inhalt mithilfe der Pipeline für Bildinhalte finden Sie unter den [Content Pipeline Handbuch](~/graphics-games/cocossharp/content-pipeline/index.md).
+Weitere Informationen zum Laden von Inhalt mithilfe der Pipeline für Bildinhalte finden Sie unter den [Content Pipeline Handbuch](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md).
 
 ### <a name="loading-content-from-file"></a>Laden Inhalte aus Datei
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c36b31e28011bea287903ee0681a316209abd22d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61021819"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829999"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,8 @@ Android bietet Unterstützung für Metadaten von abfragebenachrichtigungen auf, 
 
 -   **Kategorie** &ndash; informiert das System wie verarbeitet die Benachrichtigung in verschiedenen Situationen, z. B. wenn das Gerät wird *nicht stören* Modus.
 
-**Hinweis**: **Sichtbarkeit** und **Kategorie** wurden eingeführt, in Android 5.0 und in früheren Versionen von Android nicht verfügbar sind. Ab Android 8.0 [benachrichtigungskanäle](#notif-chan) werden verwendet, um zu steuern, wie Benachrichtigungen, die dem Benutzer angezeigt werden.
+> [!NOTE]
+> **Sichtbarkeit** und **Kategorie** wurden eingeführt, in Android 5.0 und in früheren Versionen von Android nicht verfügbar sind. Ab Android 8.0 [benachrichtigungskanäle](#notif-chan) werden verwendet, um zu steuern, wie Benachrichtigungen, die dem Benutzer angezeigt werden.
 
 
 ### <a name="expanded-layouts"></a>Erweiterte layouts
@@ -303,7 +304,7 @@ In diesem Beispiel bewirkt, dass das Gerät Vibrieren, wenn die Benachrichtigung
 
 ### <a name="updating-a-notification"></a>Aktualisieren eine Benachrichtigung
 
-Wenn Sie möchten den Inhalt einer Benachrichtigung zu aktualisieren, nachdem es veröffentlicht wurde, können Sie wiederverwenden, die vorhandene `NotificationCompat.Builder` Objekt, das ein neues Benachrichtigungsobjekt erstellen und veröffentlichen diese Benachrichtigung mit der ID der letzten Benachrichtigung. Zum Beispiel:
+Wenn Sie möchten den Inhalt einer Benachrichtigung zu aktualisieren, nachdem es veröffentlicht wurde, können Sie wiederverwenden, die vorhandene `NotificationCompat.Builder` Objekt, das ein neues Benachrichtigungsobjekt erstellen und veröffentlichen diese Benachrichtigung mit der ID der letzten Benachrichtigung. Beispiel:
 
 ```csharp
 // Update the existing notification builder content:
@@ -450,7 +451,7 @@ Benachrichtigungen standardmäßig einen einfachen Basislayout-Format in Android
 
 ### <a name="large-icon-format"></a>Große Symbole an
 
-Android-Benachrichtigungen ein Symbol in der Regel der ursprünglichen app (auf der linken Seite der Benachrichtigung). Benachrichtigungen können jedoch anzeigen, ein Bild oder ein Foto (eine *"große Symbole"*) anstelle des standardmäßigen kleinen Symbols an. Beispielsweise konnte ein Foto des Absender statt auf das Symbol der app eine messaging-app angezeigt werden.
+Android-Benachrichtigungen ein Symbol in der Regel der ursprünglichen app (auf der linken Seite der Benachrichtigung). Benachrichtigungen können jedoch anzeigen, ein Bild oder ein Foto (eine *"große Symbole"* ) anstelle des standardmäßigen kleinen Symbols an. Beispielsweise konnte ein Foto des Absender statt auf das Symbol der app eine messaging-app angezeigt werden.
 
 Hier ist ein Beispiel einer einfachen Android 5.0-Benachrichtigung &ndash; nur die kleine app-Symbol angezeigt:
 
@@ -462,7 +463,7 @@ Und hier ist ein Screenshot, der die Benachrichtigung nach der Änderung ein gro
 
 Beachten Sie, dass das Symbol "kleine app" als einen Badge auf der unteren rechten Ecke des großes Symbol angezeigt wird, wenn große Symbole an eine Benachrichtigung angezeigt wird, ein.
 
-Um ein Bild als ein großes Symbol in einer Benachrichtigung verwenden möchten, rufen Sie der Benachrichtigung des Entwicklers [SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/) -Methode und übergeben Sie eine Bitmap des Bildes. Im Gegensatz zu `SetSmallIcon`, `SetLargeIcon` akzeptiert nur eine Bitmap. Um eine Bilddatei in eine Bitmap zu konvertieren, verwenden Sie die [BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/) Klasse. Zum Beispiel:
+Um ein Bild als ein großes Symbol in einer Benachrichtigung verwenden möchten, rufen Sie der Benachrichtigung des Entwicklers [SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/) -Methode und übergeben Sie eine Bitmap des Bildes. Im Gegensatz zu `SetSmallIcon`, `SetLargeIcon` akzeptiert nur eine Bitmap. Um eine Bilddatei in eine Bitmap zu konvertieren, verwenden Sie die [BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/) Klasse. Beispiel:
 
 ```csharp
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
@@ -521,7 +522,7 @@ Wenn der Benutzer zieht nach unten auf der *Image* Benachrichtigung wird erweite
 
 Beachten Sie, dass wenn die Benachrichtigung in einem komprimierten Format angezeigt wird, zeigt er die Benachrichtigungstext (der Text, der der Benachrichtigung des Entwicklers an `SetContentText` Methode, wie weiter oben gezeigt). Wenn die Benachrichtigung erweitert wird, um das Bild anzuzeigen, zeigt er jedoch Zusammenfassungstext oberhalb des Bilds an.
 
-Zum Erstellen einer *Image* Notification, instanziieren Sie ein `NotificationCompat.Builder` wie zuvor, und klicken Sie dann zu erstellen und fügen eine [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/) -Objekt in der `NotificationCompat.Builder` Objekt. Zum Beispiel:
+Zum Erstellen einer *Image* Notification, instanziieren Sie ein `NotificationCompat.Builder` wie zuvor, und klicken Sie dann zu erstellen und fügen eine [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/) -Objekt in der `NotificationCompat.Builder` Objekt. Beispiel:
 
 ```csharp
 // Instantiate the Image (Big Picture) style:
@@ -632,7 +633,7 @@ Xamarin.Android definiert die folgenden Enumerationen zum Festlegen der Benachri
 
 -   `NotificationPriority.Min` &ndash; Weitere Hintergrundinformationen, dass der Benutzer nur, wenn Benachrichtigungen Anzeigen von Benachrichtigungen (z. B. Speicherort oder Wetter-Informationen).
 
-Rufen Sie zum Festlegen der Priorität einer Benachrichtigung die [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/) Methode der `NotificationCompat.Builder` Objekts und übergibt dabei die Prioritätsstufe. Zum Beispiel:
+Rufen Sie zum Festlegen der Priorität einer Benachrichtigung die [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/) Methode der `NotificationCompat.Builder` Objekts und übergibt dabei die Prioritätsstufe. Beispiel:
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -711,7 +712,7 @@ Ab Android 5.0 sind vordefinierte Kategorien für das Zuweisen von Rängen und F
 
 -   `Notification.CategoryStatus` &ndash; Informationen zum Gerät.
 
-Die benachrichtigungs Priorität hat Vorrang vor allen die kategorieeinstellung für die, wenn Benachrichtigungen sortiert sind, ist. Eine wichtige Benachrichtigung werden z. B. als Heads-Up angezeigt werden, auch wenn er gehört die `Promo` Kategorie. Wenn die Kategorie einer Benachrichtigung festlegen möchten, rufen Sie die `SetCategory` Methode der `NotificationCompat.Builder` Objekts und übergibt dabei die kategorieeinstellung. Zum Beispiel:
+Die benachrichtigungs Priorität hat Vorrang vor allen die kategorieeinstellung für die, wenn Benachrichtigungen sortiert sind, ist. Eine wichtige Benachrichtigung werden z. B. als Heads-Up angezeigt werden, auch wenn er gehört die `Promo` Kategorie. Wenn die Kategorie einer Benachrichtigung festlegen möchten, rufen Sie die `SetCategory` Methode der `NotificationCompat.Builder` Objekts und übergibt dabei die kategorieeinstellung. Beispiel:
 
 ```csharp
 builder.SetCategory (Notification.CategoryCall);
@@ -752,7 +753,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 }
 ```
 
-In diesem Beispiel ist die app die **Zielframework** auf Android 5.0 festgelegt ist und die **Android-Mindestversion** nastaven NA hodnotu **Android 4.1 (API Level 16)**. Da `SetCategory` ist in der API-Ebene 21 und höher verfügbar – dieser Beispielcode ruft `SetCategory` nur, wenn es verfügbar ist &ndash; nicht aufrufen `SetCategory` bei API-Ebene ist weniger als 21.
+In diesem Beispiel ist die app die **Zielframework** auf Android 5.0 festgelegt ist und die **Android-Mindestversion** nastaven NA hodnotu **Android 4.1 (API Level 16)** . Da `SetCategory` ist in der API-Ebene 21 und höher verfügbar – dieser Beispielcode ruft `SetCategory` nur, wenn es verfügbar ist &ndash; nicht aufrufen `SetCategory` bei API-Ebene ist weniger als 21.
 
 
 ### <a name="lock-screen-visibility"></a>Sichtbarkeit der Sperre-Bildschirm

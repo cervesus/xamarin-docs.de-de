@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 8c8bf3f86091f49633913b37ef5108ddbae6d276
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951588"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832478"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, TvOS – Kurzanleitung
 
@@ -28,7 +28,7 @@ Dieses Handbuch, erhalten eine Einführung in die Arbeit mit TvOS in einer Xamar
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.tvOS können Sie vollständig native Apple TV-apps in entwickeln C# und mit dem gleichen OS X-Bibliotheken und Steuerelemente der Benutzeroberfläche, die verwendet werden, bei der Entwicklung in .NET *Swift* (oder *Objective-C-*) und  *Xcode*.
+Xamarin.tvOS können Sie vollständig native Apple TV-apps in entwickeln C# und mit dem gleichen OS X-Bibliotheken und Steuerelemente der Benutzeroberfläche, die verwendet werden, bei der Entwicklung in .NET *Swift* (oder *Objective-C-* ) und  *Xcode*.
 
 Darüber hinaus seit Xamarin.tvOS-apps geschrieben sind C# und .NET, verwendeter und Back-End-Code mit Xamarin.iOS, Xamarin.Android und Xamarin.Mac-apps freigegeben werden kann. und liefert so eine systemeigene Erfahrung auf jeder Plattform.
 
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Müssen wir verwenden `ViewDidLoad `, statt einer anderen Methode wie z. B. `Initialize`, da `ViewDidLoad ` heißt *nach* das Betriebssystem geladen und instanziiert die Benutzeroberfläche aus hat die `.storyboard` Datei. Wenn wir versuchen, das Label-Steuerelement, bevor Sie den Zugriff auf die `.storyboard` Datei vollständig geladen und instanziiert wurde, erhalten wir eine `NullReferenceException` Fehler, da das Bezeichnungssteuerelement noch nicht erstellt werden sollen.
+Müssen wir verwenden `ViewDidLoad`, statt einer anderen Methode wie z. B. `Initialize`, da `ViewDidLoad` heißt *nach* das Betriebssystem geladen und instanziiert die Benutzeroberfläche aus hat die `.storyboard` Datei. Wenn wir versuchen, das Label-Steuerelement, bevor Sie den Zugriff auf die `.storyboard` Datei vollständig geladen und instanziiert wurde, erhalten wir eine `NullReferenceException` Fehler, da das Bezeichnungssteuerelement noch nicht erstellt werden sollen.
 
 Als Nächstes müssen wir den Code, um Antworten an den Benutzer, die Sie auf die Schaltfläche hinzufügen. Fügen Sie Folgendes, um partielle Klasse an, dass wir erstellt haben:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fb225349b9ffb1c950486a817897b3c26c6ffbe4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b95ccb3e756f02c945adc63b9e173a9f9e0226
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300268"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832685"
 ---
 # <a name="dependency-injection"></a>Dependency Injection
 
@@ -139,7 +139,8 @@ _container = builder.Build();
 
 Aufrufen der `Build` Methode für die `ContainerBuilder` Instanz erstellt einen neuen Dependency Injection-Container, der die Registrierungen enthält, die vorgenommen wurden.
 
->💡 **Tipp**: Erwägen Sie eine `IContainer` als unveränderlich. Zwar Autofac bietet ein `Update` -Methode zum Aktualisieren von Registrierungen in einem vorhandenen Container, die das Aufrufen dieser Methode sollte möglichst vermieden werden. Es gibt und die Risiken für einen Container nach der sie erstellt wurde, geändert, insbesondere dann, wenn der Container verwendet wurde. Weitere Informationen finden Sie unter [sollten Sie einen Container als unveränderlich](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable) auf readthedocs.io.
+> [!TIP]
+> Erwägen Sie eine `IContainer` als unveränderlich. Zwar Autofac bietet ein `Update` -Methode zum Aktualisieren von Registrierungen in einem vorhandenen Container, die das Aufrufen dieser Methode sollte möglichst vermieden werden. Es gibt und die Risiken für einen Container nach der sie erstellt wurde, geändert, insbesondere dann, wenn der Container verwendet wurde. Weitere Informationen finden Sie unter [sollten Sie einen Container als unveränderlich](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable) auf readthedocs.io.
 
 <a name="resolution" />
 

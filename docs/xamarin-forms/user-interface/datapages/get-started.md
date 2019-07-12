@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e3256787c0bc0852275f663772b8a91a6825a0dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a77ebd8a6c64d2ee44011e8d51977adf88b52be9
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250679"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832440"
 ---
 # <a name="getting-started-with-datapages"></a>Erste Schritte mit DataPages
 
@@ -51,7 +51,8 @@ In der **"App.xaml"** hinzufügen ein benutzerdefinierten `xmlns:mytheme` für d
 </Application>
 ```
 
-**WICHTIG:** Sie sollten auch die Schritte zum [Design-Assemblys (siehe unten) laden](#loadtheme) durch Hinzufügen von Bausteincode für den iOS- `AppDelegate` und Android `MainActivity`. Dies wird in einer kommenden Vorschau-Version verbessert werden.
+> [!IMPORTANT]
+> Sie sollten auch die Schritte zum [Design-Assemblys (siehe unten) laden](#loadtheme) durch Hinzufügen von Bausteincode für den iOS- `AppDelegate` und Android `MainActivity`. Dies wird in einer kommenden Vorschau-Version verbessert werden.
 
 
 ## <a name="3-add-a-xaml-page"></a>3. Fügen Sie eine XAML-Seite
@@ -98,7 +99,8 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 Löschen der `Content` Element, und Ersetzen Sie ihn mit einer `p:ListDataPage.DataSource` auf die Seite mit Daten aufzufüllen. Im Beispiel unten eine remote-Json ist-Datendatei aus einer URL geladen wird.
 
-**Hinweis:** die Vorschau *erfordert* eine `StyleClass` Attribut, der Renderinghinweise für die Datenquelle angeben. Die `StyleClass="Events"` bezieht sich auf einem Layout, das ist in der Vorschau vordefiniert und enthält die Stile *hartcodiert* entsprechend die JSON-Datenquelle verwendet wird.
+> [!NOTE]
+> Die Vorschau *erfordert* eine `StyleClass` Attribut, der Renderinghinweise für die Datenquelle angeben. Die `StyleClass="Events"` bezieht sich auf einem Layout, das ist in der Vorschau vordefiniert und enthält die Stile *hartcodiert* entsprechend die JSON-Datenquelle verwendet wird.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: e9c18920386cb58f152d7631c52240b4b5b72ff9
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 88496452595f308c97d26d0f27fae305baef894f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977844"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830827"
 ---
 # <a name="stack-views-in-xamarinios"></a>Stack-Ansichten in Xamarin.iOS
 
@@ -197,16 +197,16 @@ Während die Stapelansicht vollständige Kontrolle über das Layout der alle Unt
 
 Im Allgemeinen bedeutet dies, mindestens zwei Kanten der Sicht ein Stapel, Erweiterung und Verkleinerung, definieren daher seine Position anheften. Ohne zusätzlichen Einschränkungen werden die Stapelansicht automatische größenanpassung werden alle zugehörigen Unteransichten wie folgt:
 
- - Die Größe entlang der `Axis` wird die Summe der Größen für alle Unteransicht und eine beliebige Stelle, die zwischen einzelnen Unteransicht definiert wurde.
- - Wenn die `LayoutMarginsRelativeArrangement` Eigenschaft `true`, die Größe des Stapels Ansichten umfasst auch Raum für Ränder.
- - Die senkrecht zur Größe der `Axis` wird auf die größten Unteransicht in der Auflistung festgelegt werden.
+- Die Größe entlang der `Axis` wird die Summe der Größen für alle Unteransicht und eine beliebige Stelle, die zwischen einzelnen Unteransicht definiert wurde.
+- Wenn die `LayoutMarginsRelativeArrangement` Eigenschaft `true`, die Größe des Stapels Ansichten umfasst auch Raum für Ränder.
+- Die senkrecht zur Größe der `Axis` wird auf die größten Unteransicht in der Auflistung festgelegt werden.
 
 Darüber hinaus können Sie Einschränkungen angeben, für die Stapelansicht **Höhe** und **Breite**. In diesem Fall die Unteransichten angeordnet werden (Größe) den Platz gemäß der Stapelansicht gemäß der `Distribution` und `Alignment` Eigenschaften.
 
 Wenn die `BaselineRelativeArrangement` Eigenschaft `true`, die Unteransichten angeordnet werden basierend auf der ersten oder letzten Unteransicht Baseline, anstatt die **oben**, **unten** oder **Center** -  **Y** Position. Diese werden in die Stapelansicht Inhalt wie folgt berechnet:
 
- - Einem vertikalen Stapel-Ansicht wird der erste Unteransicht für die erste Baseline und der letzte für die letzte zurückgegeben. Wenn eine der folgenden Unteransichten selbst Stack Ansichten sind, wird die erste oder letzte Baseline verwendet werden.
- - Einem horizontalen Stapel-Ansicht wird der höchste Unteransicht für die erste und letzte Baseline verwendet werden. Wenn der höchste Ansicht auch ein Stapel ist, wird als Grundlage des höchsten Unteransicht verwendet.
+- Einem vertikalen Stapel-Ansicht wird der erste Unteransicht für die erste Baseline und der letzte für die letzte zurückgegeben. Wenn eine der folgenden Unteransichten selbst Stack Ansichten sind, wird die erste oder letzte Baseline verwendet werden.
+- Einem horizontalen Stapel-Ansicht wird der höchste Unteransicht für die erste und letzte Baseline verwendet werden. Wenn der höchste Ansicht auch ein Stapel ist, wird als Grundlage des höchsten Unteransicht verwendet.
 
 > [!IMPORTANT]
 > Baseline-Ausrichtung funktioniert nicht für gestreckt oder komprimiert Unteransicht Größen, wie die Baseline der falschen Position berechnet werden sollen. Für Baseline-Ausrichtung, sicherstellen, dass der Unteransicht des **Höhe** entspricht der systeminterne Inhaltsansicht **Höhe**.
@@ -216,9 +216,9 @@ Wenn die `BaselineRelativeArrangement` Eigenschaft `true`, die Unteransichten an
 Es gibt mehrere Typen aus dem Layout, die gut mit Stapelansicht Steuerelemente funktionieren. Hier sind einige der häufigeren Verwendungsarten, gemäß den Apple:
 
 - **Definieren Sie die Größe entlang der Achse** – durch Anheften von beide Ränder entlang der Stapelansicht `Axis` und einen der angrenzenden Ränder die Position im Stapel festlegen Ansicht wächst die Achse von untergeordneten Ansichten definierte Raum zu passen.
- -  **Definieren Sie die Unteransicht des Position** – durch anheften an benachbarte Ränder Stack Ansicht, um die übergeordnete Ansicht, wächst die Stapelansicht in beiden Dimensionen des enthaltenden Unteransichten anpassen.
+- **Definieren Sie die Unteransicht des Position** – durch anheften an benachbarte Ränder Stack Ansicht, um die übergeordnete Ansicht, wächst die Stapelansicht in beiden Dimensionen des enthaltenden Unteransichten anpassen.
 - **Definieren Sie die Größe und Position des Stapels** – durch Anheften von allen vier Kanten der Stack Ansicht für die übergeordnete Ansicht, ordnet die Stapelansicht die Unteransichten basierend auf den Speicherplatz, der in die Stapelansicht definiert.
- -  **Definieren der Größe senkrecht der Achse** – beide Ränder senkrecht an den Stapel-Ansicht anheften `Axis` und einen der Ränder auf der Achse, um die Position im Stapel festzulegen Ansicht senkrecht zur Achse wächst von definierte Raum zu passen die Unteransichten.
+- **Definieren der Größe senkrecht der Achse** – beide Ränder senkrecht an den Stapel-Ansicht anheften `Axis` und einen der Ränder auf der Achse, um die Position im Stapel festzulegen Ansicht senkrecht zur Achse wächst von definierte Raum zu passen die Unteransichten.
 
 ### <a name="managing-the-appearance"></a>Verwalten Sie die Darstellung von
 
@@ -241,14 +241,14 @@ Sie können die Darstellung von Benutzeroberflächen weiter optimieren, durch da
 
 Die Stapelansicht stellt sicher, dass die `ArrangedSubviews` Eigenschaft ist immer eine Teilmenge der `Subviews` Eigenschaft mithilfe der folgenden Regeln:
 
- - Wenn eine Unteransicht hinzugefügt wird die `ArrangedSubviews` -Auflistung, er wird automatisch hinzugefügt werden die `Subviews` Auflistung (sofern es bereits Teil dieser Sammlung darstellt).
- - Wenn aus eine Unteransicht entfernt wird die `Subviews` Auflistung (aus der Anzeige entfernt), wird er auch aus entfernt die `ArrangedSubviews` Auflistung.
- - Entfernen einer Unteransicht aus der `ArrangedSubviews` Auflistung wird nicht entfernt, von der `Subviews` Auflistung. Also nicht mehr von der Stapel-Ansicht angeordnet, sondern werden weiterhin auf dem Bildschirm angezeigt.
+- Wenn eine Unteransicht hinzugefügt wird die `ArrangedSubviews` -Auflistung, er wird automatisch hinzugefügt werden die `Subviews` Auflistung (sofern es bereits Teil dieser Sammlung darstellt).
+- Wenn aus eine Unteransicht entfernt wird die `Subviews` Auflistung (aus der Anzeige entfernt), wird er auch aus entfernt die `ArrangedSubviews` Auflistung.
+- Entfernen einer Unteransicht aus der `ArrangedSubviews` Auflistung wird nicht entfernt, von der `Subviews` Auflistung. Also nicht mehr von der Stapel-Ansicht angeordnet, sondern werden weiterhin auf dem Bildschirm angezeigt.
 
 Die `ArrangedSubviews` Auflistung ist immer eine Teilmenge der `Subview` -Auflistung, jedoch die Reihenfolge der einzelnen Unteransichten in jeder Sammlung getrennt und kontrollierten folgendermaßen ist:
 
- - Die Reihenfolge der Unteransichten innerhalb der `ArrangedSubviews` Auflistung bestimmen der angezeigten Reihenfolge innerhalb des Stapels.
- - Die Reihenfolge der Unteransichten innerhalb der `Subview` Auflistung bestimmt die Z-Reihenfolge (oder Schichten) in der Ansicht in den Vordergrund zurück.
+- Die Reihenfolge der Unteransichten innerhalb der `ArrangedSubviews` Auflistung bestimmen der angezeigten Reihenfolge innerhalb des Stapels.
+- Die Reihenfolge der Unteransichten innerhalb der `Subview` Auflistung bestimmt die Z-Reihenfolge (oder Schichten) in der Ansicht in den Vordergrund zurück.
 
 ### <a name="dynamically-changing-content"></a>Inhalt dynamisch ändern
 

@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: d9c73dfcee6321ecb314ca229db407c6d0438977
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4a72effc85657b4722b17eae486e81db5992a1da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342537"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832258"
 ---
 # <a name="using-the-model-class"></a>Verwenden der Modellklasse
 
@@ -44,7 +44,7 @@ Bevor wir fortfahren sollte überprüfen, ob das Projekt geöffnet wird und ordn
 
 Das Dateiformat .xnb ist eine standard-Erweiterung für den erstellten Inhalt (Inhalt, der von der Erstellung der [MonoGame Pipelinetool](http://www.monogame.net/documentation/?page=Pipeline)). Alle erstellten Inhalte verfügt über eine Quelldatei (die eine Datei .fbx im Fall von unserem Modell) und eine Zieldatei (.xnb-Datei). Das .fbx-Format ist ein gängiges 3D-Modell-Format, die von Anwendungen wie z. B. erstellt werden kann [Maya](http://www.autodesk.com/products/maya/overview) und [Blender](http://www.blender.org/). 
 
-Die `Model` Klasse konstruiert werden kann, laden Sie eine .xnb-Datei von einem Datenträger, die 3D-Geometrie Daten enthält.   Diese .xnb-Datei wird durch einen Content-Projekt erstellt. Monogame-Vorlagen enthalten einen Content-Projekt (mit der Erweiterung .mgcp) automatisch in unserer Ordner "Content". Ausführliche Informationen zum Tool MonoGame-Pipeline, finden Sie unter den [Pipeline für Bildinhalte Handbuch](~/graphics-games/cocossharp/content-pipeline/index.md).
+Die `Model` Klasse konstruiert werden kann, laden Sie eine .xnb-Datei von einem Datenträger, die 3D-Geometrie Daten enthält.   Diese .xnb-Datei wird durch einen Content-Projekt erstellt. Monogame-Vorlagen enthalten einen Content-Projekt (mit der Erweiterung .mgcp) automatisch in unserer Ordner "Content". Ausführliche Informationen zum Tool MonoGame-Pipeline, finden Sie unter den [Pipeline für Bildinhalte Handbuch](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md).
 
 In diesem Handbuch übersprungen wird, über die MonoGame Pipeline mit Tools und verwendet die. Hier enthaltenen XNB-Dateien. Beachten Sie, dass die. XNB Dateien unterscheiden sich pro Plattform durchgeführt, seien Sie sicher, dass den richtigen Satz von XNB-Dateien für den beliebigen Plattform verwenden, mit denen Sie arbeiten werden.
 
@@ -54,7 +54,7 @@ Die beiden Dateien sollte Teil unseres Projekts aussehen:
 
 ![Projektmappen-Explorer-Inhaltsordner Xnb-Dateien](part1-images/xnbsinxs.png)
 
-Visual Studio für Mac kann nicht automatisch den Buildvorgang für neu hinzugefügte XNBs festgelegt werden. IOS, mit der rechten Maustaste auf jede der Dateien, und wählen **BundleResource-Build Action >**. Android, mit der rechten Maustaste auf jede der Dateien, und wählen **AndroidAsset-Build Action >**.
+Visual Studio für Mac kann nicht automatisch den Buildvorgang für neu hinzugefügte XNBs festgelegt werden. IOS, mit der rechten Maustaste auf jede der Dateien, und wählen **BundleResource-Build Action >** . Android, mit der rechten Maustaste auf jede der Dateien, und wählen **AndroidAsset-Build Action >** .
 
 ## <a name="rendering-a-3d-model"></a>Rendern eines 3D-Modells
 

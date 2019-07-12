@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a4c58139b0ddbaaedf5769eeac6585bac4c013e4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277970"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832114"
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
@@ -154,7 +154,7 @@ Diese Methode ruft die Katalogdaten aus der SQL-Datenbank mithilfe von EntityFra
 
 #### <a name="making-a-post-request"></a>Eine POST-Anforderung
 
-Die `BasketService` Klasse wird verwendet, um das Abrufen von Daten zu verwalten und den Aktualisierungsvorgang mit Warenkorb-Microservice. In der `RegisterDependencies` -Methode in der die `ViewModelLocator` -Klasse, die `BasketService` Klasse wird als eine Typzuordnung für registriert die `IBasketService` Typ mit dem Container für Abhängigkeitsinjektion Autofac. Klicken Sie dann, wenn eine Instanz von der `BasketViewModel` Klasse wird erstellt, die ihr Konstruktor nimmt eine `IBasketService` eingeben, die Autofac aufgelöst wird, Zurückgeben von einer Instanz von der `BasketService `Klasse. Weitere Informationen zur Abhängigkeitsinjektion finden Sie unter [Einführung in Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+Die `BasketService` Klasse wird verwendet, um das Abrufen von Daten zu verwalten und den Aktualisierungsvorgang mit Warenkorb-Microservice. In der `RegisterDependencies` -Methode in der die `ViewModelLocator` -Klasse, die `BasketService` Klasse wird als eine Typzuordnung für registriert die `IBasketService` Typ mit dem Container für Abhängigkeitsinjektion Autofac. Klicken Sie dann, wenn eine Instanz von der `BasketViewModel` Klasse wird erstellt, die ihr Konstruktor nimmt eine `IBasketService` eingeben, die Autofac aufgelöst wird, Zurückgeben von einer Instanz von der `BasketService` Klasse. Weitere Informationen zur Abhängigkeitsinjektion finden Sie unter [Einführung in Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
 Abbildung 10-2 zeigt die Interaktion von Klassen, die die Warenkorb angezeigten Daten durch Senden der `BasketView`, mit dem warenkorbmicroservice.
 

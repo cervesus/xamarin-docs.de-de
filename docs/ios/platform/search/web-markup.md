@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a9cf3dab9c112bf7ff99cbc0dd9541c3c1e35142
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076579"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830143"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Suche mit Markup im Web in Xamarin.iOS
 
@@ -63,7 +63,7 @@ Neue IOS 9, universelle Links geben Sie eine bessere Alternative als intelligent
 
 ## <a name="using-twitter-cards"></a>Verwendung von Twitter-Karten
 
-Sie können deep-Links zu Ihrer app-Inhalte, die mithilfe einer Twitter-Karte angeben. Zum Beispiel:
+Sie können deep-Links zu Ihrer app-Inhalte, die mithilfe einer Twitter-Karte angeben. Beispiel:
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -75,7 +75,7 @@ Weitere Informationen finden Sie unter der Twitter [Twitter-Karte Protokoll](htt
 
 ## <a name="using-facebook-app-links"></a>Mithilfe von Facebook-App-Links
 
-Sie können deep-Links zu den Inhalt Ihrer app mit einer Facebook-App-Link bereitstellen. Zum Beispiel:
+Sie können deep-Links zu den Inhalt Ihrer app mit einer Facebook-App-Link bereitstellen. Beispiel:
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -87,7 +87,7 @@ Weitere Informationen finden Sie unter Facebook [App Links](http://applinks.org)
 
 ## <a name="opening-deep-links"></a>Öffnen Deep-Links
 
-Sie müssen zum Hinzufügen der Unterstützung für das Öffnen und Anzeigen von Deep-Links in Ihrer Xamarin.iOS-app. Bearbeiten der **Datei "appdelegate.cs"** Datei, und überschreiben die `OpenURL` Methode, um das benutzerdefinierte URL-Format zu verarbeiten. Zum Beispiel:
+Sie müssen zum Hinzufügen der Unterstützung für das Öffnen und Anzeigen von Deep-Links in Ihrer Xamarin.iOS-app. Bearbeiten der **Datei "appdelegate.cs"** Datei, und überschreiben die `OpenURL` Methode, um das benutzerdefinierte URL-Format zu verarbeiten. Beispiel:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -121,7 +121,7 @@ Durch Einschließen von strukturierten Daten Markup können Sie umfassende Suche
 
 Umfassende Ergebnisse sind viel ansprechender und verbessert die Rangfolge in der Cloud anhand einer verlockenden mehr Benutzer zur Interaktion Search-Index.
 
-Eine Option für die Bereitstellung von strukturierten Daten Markup ist die Verwendung von Open Graph. Zum Beispiel:
+Eine Option für die Bereitstellung von strukturierten Daten Markup ist die Verwendung von Open Graph. Beispiel:
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -131,7 +131,7 @@ Eine Option für die Bereitstellung von strukturierten Daten Markup ist die Verw
 
 Weitere Informationen finden Sie unter den [Open Graph](http://ogp.me) Website.
 
-Ein anderes gängiges Format für strukturierte Daten Markup ist die Schema.org-Mikrodaten-Format. Zum Beispiel:
+Ein anderes gängiges Format für strukturierte Daten Markup ist die Schema.org-Mikrodaten-Format. Beispiel:
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -158,14 +158,14 @@ Der folgende Code zeigt ein Beispiel Metadaten auf Ihrer Website, die umfassende
 
 Apple unterstützt derzeit die folgenden Schematypen schema.org:
 
- - AggregateRating
- - ImageObject
- - InteractionCount
- - Angebote
- - Organisation
- - PriceRange
- - Anleitung
- - SearchAction
+- AggregateRating
+- ImageObject
+- InteractionCount
+- Angebote
+- Organization
+- PriceRange
+- Anleitung
+- SearchAction
 
 Weitere Informationen zu diesen Schemas finden Sie unter [schema.org](http://schema.org).
 
@@ -173,9 +173,9 @@ Weitere Informationen zu diesen Schemas finden Sie unter [schema.org](http://sch
 
 Bestimmte Typen von strukturierten Daten lässt sich auf ein Suchergebnis vom Endbenutzer reagiert werden. Derzeit werden die folgenden Aktionen unterstützt:
 
- - Wählen eine Telefonnummer ein.
- - Abrufen von Map-Richtung, in einer bestimmten Adresse.
- - Wiedergeben einer Audio- oder video-Datei an.
+- Wählen eine Telefonnummer ein.
+- Abrufen von Map-Richtung, in einer bestimmten Adresse.
+- Wiedergeben einer Audio- oder video-Datei an.
 
 Definieren eine Aktion, um eine Telefonnummer zu wählen könnte beispielsweise wie folgt aussehen:
 

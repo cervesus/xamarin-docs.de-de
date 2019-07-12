@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 02aeedd5498c47950e2fbc0d218de05bc0bb3204
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d83cdce7076eac5a022863b583ecb01346ae440a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61298987"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831087"
 ---
 # <a name="unit-testing-enterprise-apps"></a>Unit-Testing Unternehmens-Apps
 
@@ -170,7 +170,8 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 
 Testet dieser Komponententest wird eine Ausnahme ausgelöst, da die [ `ListView` ](xref:Xamarin.Forms.ListView) -Steuerelement verfügt nicht über ein Ereignis namens `OnItemTapped`. Die `Assert.Throws<T>` Methode ist eine generische Methode, in denen `T` ist der Typ der erwarteten Ausnahme. Das Argument zu übergeben, um die `Assert.Throws<T>` Methode ist ein Lambda-Ausdruck, der die Ausnahme ausgelöst wird. Aus diesem Grund der Komponententest wird bestanden, vorausgesetzt, dass der Lambda-Ausdruck löst einen `ArgumentException`.
 
->💡 **Tipp**: Vermeiden Sie das Schreiben von Komponententests, die Zeichenfolgen für Ausnahme zu untersuchen. Zeichenfolgen für Ausnahme im Laufe der Zeit ändern können, und Komponententests, die auf ihr Vorhandensein beruhen daher gelten als anfälligen.
+> [!TIP]
+> Vermeiden Sie das Schreiben von Komponententests, die Zeichenfolgen für Ausnahme zu untersuchen. Zeichenfolgen für Ausnahme im Laufe der Zeit ändern können, und Komponententests, die auf ihr Vorhandensein beruhen daher gelten als anfälligen.
 
 ### <a name="testing-validation"></a>Testen der Validierung
 

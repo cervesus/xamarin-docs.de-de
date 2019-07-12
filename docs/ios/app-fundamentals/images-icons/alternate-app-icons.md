@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: cc5052c8988a27605cf7680a3853f80e7afd38b7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc4ef6eb16893cc1df0d980d27af8589a280e933
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61171009"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832426"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Alternative App-Symbole in Xamarin.iOS
 
@@ -20,10 +20,10 @@ _Dieser Artikel befasst sich mit anderen app-Symbole in Xamarin.iOS._
 
 Apple hat mehrere Erweiterungen auf iOS 10.3 hinzugefügt, mit denen eine app zum Verwalten von das entsprechende Symbols:
 
- - `ApplicationIconBadgeNumber` -Ruft ab oder legt den Badge, der das app-Symbol in der Springboard-Reihe.
- - `SupportsAlternateIcons` -If `true` die app verfügt über eine Alternative Gruppe von Symbolen.
- - `AlternateIconName` -Gibt den Namen des aktuell ausgewählten alternativen Symbols zurück oder `null` Wenn das primäre Symbol verwenden.
- - `SetAlternameIconName` – Verwenden Sie diese Methode, um das Symbol der app in der angegebenen alternativen Symbol wechseln.
+- `ApplicationIconBadgeNumber` -Ruft ab oder legt den Badge, der das app-Symbol in der Springboard-Reihe.
+- `SupportsAlternateIcons` -If `true` die app verfügt über eine Alternative Gruppe von Symbolen.
+- `AlternateIconName` -Gibt den Namen des aktuell ausgewählten alternativen Symbols zurück oder `null` Wenn das primäre Symbol verwenden.
+- `SetAlternameIconName` – Verwenden Sie diese Methode, um das Symbol der app in der angegebenen alternativen Symbol wechseln.
 
 ![](alternate-app-icons-images/icons04.png "Eine beispielwarnung, wenn eine app auf das Symbol ändert")
 
@@ -111,7 +111,7 @@ Oder wie diesen, wenn, die in einem Text-Editor geöffnet:
 
 Mit der Symbolbilder enthalten im Xamarin.iOS-Projekt und die **"Info.plist"** Datei ordnungsgemäß konfiguriert ist, der Entwickler mithilfe einer der vielen neuen Features in iOS 10.3 auf das Symbol der app steuern.
 
-Die `SupportsAlternateIcons` Eigenschaft der `UIApplication` -Klasse kann der Entwickler, um festzustellen, ob eine app alternativen-Symbole unterstützt. Zum Beispiel:
+Die `SupportsAlternateIcons` Eigenschaft der `UIApplication` -Klasse kann der Entwickler, um festzustellen, ob eine app alternativen-Symbole unterstützt. Beispiel:
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +119,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-Die `ApplicationIconBadgeNumber` Eigenschaft der `UIApplication` Klasse kann der Entwickler zum Abrufen oder Festlegen der aktuellen Badge-Anzahl von app-Symbol in der Springboard-Reihe. Der Standardwert ist 0 (null). Zum Beispiel:
+Die `ApplicationIconBadgeNumber` Eigenschaft der `UIApplication` Klasse kann der Entwickler zum Abrufen oder Festlegen der aktuellen Badge-Anzahl von app-Symbol in der Springboard-Reihe. Der Standardwert ist 0 (null). Beispiel:
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-Die `AlternateIconName` Eigenschaft der `UIApplication` Klasse ermöglicht dem Entwickler, die den Namen des Symbols, das aktuell ausgewählte alternative app abzurufen, oder sie gibt `null` , wenn die app das erste Symbol verwendet. Zum Beispiel:
+Die `AlternateIconName` Eigenschaft der `UIApplication` Klasse ermöglicht dem Entwickler, die den Namen des Symbols, das aktuell ausgewählte alternative app abzurufen, oder sie gibt `null` , wenn die app das erste Symbol verwendet. Beispiel:
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-Die `SetAlternameIconName` Eigenschaft der `UIApplication` Klasse ermöglicht dem Entwickler, die das Symbol der app zu ändern. Übergeben Sie den Namen des Symbols auswählen oder `null` auf das Symbol "primäre" zurückgegeben. Zum Beispiel:
+Die `SetAlternameIconName` Eigenschaft der `UIApplication` Klasse ermöglicht dem Entwickler, die das Symbol der app zu ändern. Übergeben Sie den Namen des Symbols auswählen oder `null` auf das Symbol "primäre" zurückgegeben. Beispiel:
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)

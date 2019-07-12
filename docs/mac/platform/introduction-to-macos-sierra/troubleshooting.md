@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/22/2016
-ms.openlocfilehash: 1b379bef98e498df4c58ba7209aa46b0b2542fe1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 322acff3279d0513266c7d9883726cac726334f7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031420"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830558"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac - MacOS Sierra-Problembehandlung
 
@@ -52,7 +52,7 @@ Ein falsche Ablauf Datums- oder Sicherheit-Code (CW) eingegeben, wird beim Hinzu
 Bekannte Probleme:
 
 - Aufrufen von `NSObject.ValueForKey` wird eine `null` Schlüssel führt zu einer Ausnahme.
-- Beide `NSURLSession` und NSURLConnection` no longer RC4 cipher suites during the TLS handshake for `http://' URLs.
+- Beide `NSURLSession` und `NSURLConnection` mehr RC4-Verschlüsselungssammlungen während des TLS-Handshakes für `http://` URLs.
 - Apps können hängen bleiben, wenn sie eine Benachrichtigungen für die eine Geometrie in entweder zum Ändern der `ViewWillLayoutSubviews` oder `LayoutSubviews` Methoden.
 - Für alle SSL/TLS-Verbindungen ist das symmetrische RC4-Verschlüsselungsverfahren jetzt standardmäßig deaktiviert. Darüber hinaus den sicheren Transport-API unterstützt nicht mehr SSLv3, und es wird empfohlen, dass die app mithilfe von SHA-1 und 3DES Kryptografie so bald wie möglich zu beenden.
 

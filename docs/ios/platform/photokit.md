@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: d59cac9403a244ce553d84e0590b8a9c3d4d2f30
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 78646a0a420820218a8c61ea34ecc5db4438a91d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365869"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832742"
 ---
 # <a name="photokit-in-xamarinios"></a>PhotoKit in Xamarin.iOS
 
@@ -71,9 +71,9 @@ Dies ist das Durchführen von Abfragen und Lesen von Daten. Sie können die Änd
     
 Um tatsächlich Änderungen wieder in Ihrer Anwendung zu schreiben, erstellen Sie einen Change Request. Jede der ViewModel-Klassen verfügt über eine ihr verbundenen Change Request-Klasse. Um eine PHAsset zu ändern, erstellen Sie z. B. eine PHAssetChangeRequest. Die Schritte zum Durchführen von Änderungen, die in der Fotobibliothek zurückgeschrieben und an die Beobachter wie oben gesendet werden:
 
--   Führen Sie die Bearbeitung des.
--   Speichern Sie die gefilterte Image-Daten in eine PHContentEditingOutput-Instanz ein.
--   Stellen Sie eine änderungsanforderung, um dem Formular für die Änderungen die Bearbeitung Ausgabe veröffentlichen.
+- Führen Sie die Bearbeitung des.
+- Speichern Sie die gefilterte Image-Daten in eine PHContentEditingOutput-Instanz ein.
+- Stellen Sie eine änderungsanforderung, um dem Formular für die Änderungen die Bearbeitung Ausgabe veröffentlichen.
 
 Hier ist ein Beispiel, das wieder eine Änderung zu einem Bild schreibt, die einen Core-Image Noir Filter angewendet wird:
 

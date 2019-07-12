@@ -7,18 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: fa53d7253862e696d23289fe3c57f215b29da6c5
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649566"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831097"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms-Schnittstelle Benutzeransichten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Gewusst wie: Verwenden Sie die Ansichten von Xamarin.Forms bereitgestelltes_
+
+## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
+
+Die `ActivityIndicator` ist ein animiertes-Steuerelement, das Benutzern zeigt an, dass die Anwendung in einer langen Aktivität beteiligt ist, ohne dass darauf ausgeführt.
 
 ## <a name="animationanimationindexmd"></a>[Animation](animation/index.md)
 
@@ -87,6 +91,10 @@ Hinzufügen von Zuordnungen erfordert eine zusätzliche NuGet-Paket herunterlade
 ## <a name="pickerpickerindexmd"></a>[Auswahl](picker/index.md)
 
 Die [ `Picker` ](xref:Xamarin.Forms.Picker) Ansicht ist ein Steuerelement für ein Element mit Text aus einer Liste von Daten ausgewählt.
+
+## <a name="progressbarprogressbarmd"></a>[ProgressBar](progressbar.md)
+
+Die [ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar) ist ein Steuerelement, die visuelle Bearbeitung als horizontalen Balken, der gefüllt ist, und basierend auf einer "float"-Eigenschaft darstellt.
 
 ## <a name="sliderslidermd"></a>[Schieberegler](slider.md)
 

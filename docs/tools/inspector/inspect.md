@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2bd68def0a29d4bb94f8cc66c8cbfa00add1700d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2def0a01bdd28af5eefb76afc19a0e49fd1df355
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60948154"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831551"
 ---
 # <a name="inspecting-live-applications"></a>Überprüfen von Live-Anwendungen
 
@@ -46,8 +46,8 @@ Die aktive visuelle Struktur ist auch sehr nützlich. Es stellt die aktuelle Mom
 
 ## <a name="known-limitations"></a>Bekannte Einschränkungen
 
- - Auswahl der Ansicht wird nur auf Ihre wichtigsten Anzeige unterstützt.
- - Eigenschaftenbearbeitung Raster ist nicht verfügbar für Mac, und für Windows ist auf einige Datentypen beschränkt. Verwenden Sie die Repl-Umgebung für eine leistungsfähigere Bearbeitung.
- - Solange die Inspector-Add-In-/-Erweiterung installiert und in der IDE aktiviert, werden wir injizieren von Code in Ihrer app jedes Mal, wenn es im Debugmodus gestartet. Wenn Sie auf ungewöhnliche Verhaltensweisen in Ihrer app feststellen, wenden Sie Sie deaktivieren oder deinstallieren die Inspector-Add-In/Erweiterung, Neustart der IDE und anderen. Und Sie [senden Sie Fehlerinformationen](~/tools/inspector/install.md#reporting-bugs) auf uns zu informieren!
- - Wenn ein Element der Benutzeroberfläche überprüft in trotzdem ändern wird, nehmen Sie [Teilen Sie uns](~/tools/inspector/install.md#reporting-bugs), da dies einen Fehler hinweisen.
+- Auswahl der Ansicht wird nur auf Ihre wichtigsten Anzeige unterstützt.
+- Eigenschaftenbearbeitung Raster ist nicht verfügbar für Mac, und für Windows ist auf einige Datentypen beschränkt. Verwenden Sie die Repl-Umgebung für eine leistungsfähigere Bearbeitung.
+- Solange die Inspector-Add-In-/-Erweiterung installiert und in der IDE aktiviert, werden wir injizieren von Code in Ihrer app jedes Mal, wenn es im Debugmodus gestartet. Wenn Sie auf ungewöhnliche Verhaltensweisen in Ihrer app feststellen, wenden Sie Sie deaktivieren oder deinstallieren die Inspector-Add-In/Erweiterung, Neustart der IDE und anderen. Und Sie [senden Sie Fehlerinformationen](~/tools/inspector/install.md#reporting-bugs) auf uns zu informieren!
+- Wenn ein Element der Benutzeroberfläche überprüft in trotzdem ändern wird, nehmen Sie [Teilen Sie uns](~/tools/inspector/install.md#reporting-bugs), da dies einen Fehler hinweisen.
 

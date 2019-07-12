@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 60b54ffdce5f6bda2324c08bd3159eefeb5bc7f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6830df267aa0b9c4f12fbd53520206ea94fc8a38
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270237"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831898"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Problembehandlung für TvOS-apps mit Xamarin
 
@@ -40,7 +40,7 @@ Den folgenden Abschnitten werden einige bekannte Probleme, die Verwendung von Tv
 
 ### <a name="invalid-executable---the-executable-does-not-contain-bitcode"></a>Ungültige ausführbare Datei: die ausführbare Datei Bitcode enthält nicht
 
-Wenn beim Versuch, eine Xamarin.tvOS-app an das Apple TV App Store übermitteln, erhalten Sie möglicherweise eine Fehlermeldung in der Form _"Ungültige ausführbare Datei: die ausführbare Datei enthält keine Bitcode"_.
+Wenn beim Versuch, eine Xamarin.tvOS-app an das Apple TV App Store übermitteln, erhalten Sie möglicherweise eine Fehlermeldung in der Form _"Ungültige ausführbare Datei: die ausführbare Datei enthält keine Bitcode"_ .
 
 Um dieses Problem zu beheben, führen Sie folgende Schritte aus:
 
@@ -80,7 +80,7 @@ Section
 
 Sie müssen sicherstellen, dass statische Dritter (`.a`) Bibliotheken, die Sie verwenden für TvOS-Bibliotheken (nicht-iOS-Bibliotheken) erstellt wurden und sie gibt außerdem Aufschluss Bitcode.
 
-Für apps oder Bibliotheken, die gültige Bitcode enthalten die `size` ist größer als 1 sein. Es gibt einige Situationen, in denen eine Bibliothek kann die Markierung Bitcode, noch über keine gültige Bitcode enthalten. Zum Beispiel:
+Für apps oder Bibliotheken, die gültige Bitcode enthalten die `size` ist größer als 1 sein. Es gibt einige Situationen, in denen eine Bibliothek kann die Markierung Bitcode, noch über keine gültige Bitcode enthalten. Beispiel:
 
 **Ungültige Bitcode**
 
@@ -184,7 +184,7 @@ Beim Versuch, eine Portable Klassenbibliothek (PCL) in ein Xamarin.tvOS-Projekt 
 
 _Inkompatibles Zielframework:. NetPortable, Version = 4.5 "," Profile = Profile78_
 
-Um dieses Problem zu beheben, fügen Sie eine XML-Datei mit dem Namen ` Xamarin.TVOS.xml` mit folgendem Inhalt:
+Um dieses Problem zu beheben, fügen Sie eine XML-Datei mit dem Namen `Xamarin.TVOS.xml` mit folgendem Inhalt:
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>

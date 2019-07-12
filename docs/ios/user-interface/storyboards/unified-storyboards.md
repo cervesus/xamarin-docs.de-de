@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 26aeaa3d230a5c104014edd899b8d9231ced31e9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c9d98d9d3052f52dc7860ba513756e3a33d1dc58
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61430215"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831922"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in Xamarin.iOS
 
@@ -264,7 +264,7 @@ In diesem Abschnitt werden wir sehen Sie sich wie diese Methoden in iOS 8 tatsä
 
  [![](unified-storyboards-images/gettargetforaction.png "Die neue GetTargetForAction-Methode")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-Diese Methode führt die Hierarchiekette, bis der richtige Container-View-Controller gefunden wird. Zum Beispiel:
+Diese Methode führt die Hierarchiekette, bis der richtige Container-View-Controller gefunden wird. Beispiel:
 
 1.  Wenn eine `ShowViewController` -Methode aufgerufen wird, den ersten Ansichtscontroller, in der Kette, die diese Methode implementiert wird der Navigationscontroller, damit sie als übergeordnetes Element der neuen Ansicht verwendet wird.
 1.  Wenn eine `ShowDetailViewController` Methode wurde aufgerufen, stattdessen wird der Controller für geteilte Ansicht den ersten Ansichtscontroller, implementieren, damit sie als übergeordnetes Element verwendet wird.
@@ -300,7 +300,7 @@ Bei der Ausführung der Anwendung Adaptive Fotos auf einem iPhone, wenn der Benu
 
  [![](unified-storyboards-images/rotation.png "Der Controller für geteilte Ansicht zeigt sowohl den Master und Details anzuzeigen, wie hier zu sehen")](unified-storyboards-images/rotation.png#lightbox)
 
-Dies erfolgt durch Überschreiben der `UpdateConstraintsForTraitCollection` -Methode der Ansichtscontroller und passen die Einschränkungen basierend auf den Wert der `VerticalSizeClass`. Zum Beispiel:
+Dies erfolgt durch Überschreiben der `UpdateConstraintsForTraitCollection` -Methode der Ansichtscontroller und passen die Einschränkungen basierend auf den Wert der `VerticalSizeClass`. Beispiel:
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -356,7 +356,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>Hinzufügen von Übergangsanimationen
 
-Wenn der Controller für geteilte Ansicht auf die Anwendung von wechselt Adaptive Fotos zu erweiterten reduziert, Animationen werden hinzugefügt, die standardanimationen indem überschreiben die `WillTransitionToTraitCollection` Methode des ansichtscontrollers. Zum Beispiel:
+Wenn der Controller für geteilte Ansicht auf die Anwendung von wechselt Adaptive Fotos zu erweiterten reduziert, Animationen werden hinzugefügt, die standardanimationen indem überschreiben die `WillTransitionToTraitCollection` Methode des ansichtscontrollers. Beispiel:
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -693,12 +693,12 @@ Neue IOS 8, kann der Entwickler erstellen Sie eine einzelne, unteilbare `.xib` -
 
 Dynamische Startbildschirme haben die folgenden Überlegungen und Einschränkungen:
 
- - Verwenden Sie nur `UIKit` Klassen.
- - Verwenden Sie eine einzelnen Stamm-Sicht, ist eine `UIView` oder `UIViewController` Objekt.
- - Nehmen Sie keine Verbindungen mit den Code der Anwendung nicht (Fügen Sie nicht **Aktionen** oder **Outlets**).
- - Fügen Sie nicht `UIWebView` Objekte.
- - Verwenden Sie keine benutzerdefinierten Klassen.
- - Verwenden Sie keine Common Language Runtime-Attribute.
+- Verwenden Sie nur `UIKit` Klassen.
+- Verwenden Sie eine einzelnen Stamm-Sicht, ist eine `UIView` oder `UIViewController` Objekt.
+- Nehmen Sie keine Verbindungen mit den Code der Anwendung nicht (Fügen Sie nicht **Aktionen** oder **Outlets**).
+- Fügen Sie nicht `UIWebView` Objekte.
+- Verwenden Sie keine benutzerdefinierten Klassen.
+- Verwenden Sie keine Common Language Runtime-Attribute.
 
 Mit den oben aufgeführten Richtlinien beachten Sie wir sehen uns eine dynamische Startbildschirm zu einem vorhandenen Xamarin-iOS 8-Projekt hinzufügen.
 

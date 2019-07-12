@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 206379b162c7778663ee2baf64dfeb1d33666ab4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827482"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831469"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Objective-C-Bibliotheken
 
@@ -267,7 +267,7 @@ string Text { get; [NullAllowed] set; }
 Die folgenden Einschränkungen sollten berücksichtigt werden, wenn Sie die Bindung für ein benutzerdefiniertes Steuerelement einrichten:
 
 1. **Binden der Eigenschaften muss statisch sein** : Wenn die Bindung der Eigenschaften definieren die [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) Attribut muss verwendet werden.
- 2. **Eigenschaftsnamen müssen exakt** -muss der Namen, binden Sie die Eigenschaft den Namen der Eigenschaft in das benutzerdefinierte Steuerelement genau entsprechen.
+2. **Eigenschaftsnamen müssen exakt** -muss der Namen, binden Sie die Eigenschaft den Namen der Eigenschaft in das benutzerdefinierte Steuerelement genau entsprechen.
 3. **Eigenschaftentypen müssen genau übereinstimmen** : der Variablentyp verwendet, um die Eigenschaft binden muss den Typ der Eigenschaft in das benutzerdefinierte Steuerelement genau entsprechen.
 4. **Haltepunkte und dem Getter/Setter** : Haltepunkte platziert werden, in der Getter oder Setter-Methoden von der Eigenschaft werden nie erreicht werden.
 5. **Beobachten Sie Rückrufe** – Sie müssen Beobachtung-Rückrufe verwenden, um die Änderungen in den Eigenschaftswerten von benutzerdefinierten Steuerelementen benachrichtigt zu werden.
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>Binden von Objective-C-Argumentlisten
 
-Objective-C unterstützt die Variadic-Argumente. Zum Beispiel:
+Objective-C unterstützt die Variadic-Argumente. Beispiel:
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ Manchmal möchten Sie die öffentlichen Felder zugreifen, die in einer Bibliothe
 
 In der Regel enthalten diese Felder Zeichenketten oder Integer-Werte, die auf die verwiesen werden müssen. Sie werden häufig verwendet, als Zeichenfolge, die eine bestimmte Benachrichtigung darstellt und als Schlüssel in Wörterbüchern.
 
-Um ein Feld zu binden, fügen Sie eine Eigenschaft, um Ihre Benutzeroberflächen-Definitionsdatei, und ergänzen Sie die Eigenschaft mit dem [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) Attribut. Dieses Attribut nimmt einen Parameter: den C-Namen des Symbols für die Suche. Zum Beispiel:
+Um ein Feld zu binden, fügen Sie eine Eigenschaft, um Ihre Benutzeroberflächen-Definitionsdatei, und ergänzen Sie die Eigenschaft mit dem [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) Attribut. Dieses Attribut nimmt einen Parameter: den C-Namen des Symbols für die Suche. Beispiel:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ Die [ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#Bi
 Sie können die Methoden (Rückgabewert), Parameter und Eigenschaften mit ergänzen [ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute). Die einzige Einschränkung gehört, die Ihre **darf nicht** innerhalb einer [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 oder [ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) Schnittstelle.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ Intern werden wir die `bool?`  <->  `NSNumber` und `CGRect`  <->  `NSValue` Konv
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) Außerdem unterstützt Arrays mit `NSNumber` `NSValue` und `NSString`(Enumerationen).
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -682,7 +682,7 @@ Attribut für eine Eigenschaft, die auch wurde mit markiert ein [`[Field]`](~/cr
 
 Dieses Attribut kann verwendet werden, ohne Argumente für Benachrichtigungen, die keine Nutzlast enthalten, oder Sie können angeben, ein `System.Type` , die auf einer anderen Schnittstelle in der API-Definition in der Regel verweist, mit dem Namen "EventArgs" enden. Der Generator wandeln der Schnittstelle in einer Klasse, Unterklassen `EventArgs` und enthält alle Eigenschaften aufgeführt. Die [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Attribut sollte in der EventArgs-Klasse verwendet werden, den Namen des Schlüssels verwendet, um die Objective-C-Wörterbuch, das Abrufen des Werts zu suchen.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 interface MyClass {
@@ -1337,7 +1337,7 @@ Xamarin.iOS darüber informieren, wie Ihre Bibliotheken verknüpft werden müsse
 Im Beispiel oben werden verknüpft `libMyLibrary.a`, `libSystemLibrary.dylib` und `CFNetwork` Frameworkbibliothek in Ihre endgültige ausführbare Datei.
 
 Oder profitieren Sie von auf Assemblyebene [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), die in Ihren Vertragsdateien eingebettet werden können (z. B. `AssemblyInfo.cs`).
-Bei Verwendung der [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), Sie müssen Ihre native Bibliothek, die zum Zeitpunkt verfügen, Sie stellen Ihre Bindung, da dies die native Bibliothek mit der Anwendung eingebettet wird. Zum Beispiel:
+Bei Verwendung der [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), Sie müssen Ihre native Bibliothek, die zum Zeitpunkt verfügen, Sie stellen Ihre Bindung, da dies die native Bibliothek mit der Anwendung eingebettet wird. Beispiel:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:

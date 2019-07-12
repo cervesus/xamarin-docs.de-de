@@ -6,12 +6,12 @@ ms.assetid: 6205E430-1036-4CC3-8E97-AA5554E3D468
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 46330fb16be4f3b7be60e1bf72eb6a36fafefe77
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e52afe94e7890ca995107e2bfa50471cb9102b57
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364414"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830633"
 ---
 # <a name="urhosharp-platform-support"></a>Unterstützung von UrhoSharp
 
@@ -36,4 +36,3 @@ Anweisungen zum Einrichten von Windows und Funktionen.
 ## <a name="xamarinformsgraphics-gamesurhosharpplatformxamarin-formsmd"></a>[Xamarin.Forms](~/graphics-games/urhosharp/platform/xamarin-forms.md)
 
 Xamarin.Forms-Setup-Anweisungen und ein Beispiel.
-

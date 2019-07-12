@@ -6,12 +6,12 @@ ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 00a02973d6016ad63e4317279515acc2b4e2e81b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4be010448d963462ccf06c263ddfad7ba1d9feae
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61267205"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832036"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>Erstellen neue Projekte der plattformspezifischen Bibliothek für NuGet
 
@@ -27,33 +27,33 @@ Mehrere Assemblys erstellt und in einem einzelnen NuGet-Paket integriert. NuGet-
 
 2. Wählen Sie **Multi-Plattform-Bibliothek** aus der **Multi-Plattform > Bibliothek** Abschnitt:
 
-  [![](platform-specific-images/mulitplatform-library-sml.png "Konfigurieren von Multi-Plattform-Bibliothek für einer einzigen Codebasis")](platform-specific-images/multiplatform-library.png#lightbox)
+    [![](platform-specific-images/mulitplatform-library-sml.png "Konfigurieren von Multi-Plattform-Bibliothek für einer einzigen Codebasis")](platform-specific-images/multiplatform-library.png#lightbox)
 
 3. Geben Sie einen **Namen** und **Beschreibung**, und wählen Sie **plattformspezifischen**:
 
-  [![](platform-specific-images/specific-configure-sml.png "Konfigurieren der plattformspezifischen Bibliothek für iOS und Android")](platform-specific-images/specific-configure.png#lightbox)
+    [![](platform-specific-images/specific-configure-sml.png "Konfigurieren der plattformspezifischen Bibliothek für iOS und Android")](platform-specific-images/specific-configure.png#lightbox)
 
 4. Durchlaufen Sie den Assistenten. Die folgenden Projekte werden der Projektmappe hinzugefügt:
 
-  - **Android-Projekt** – Android-spezifischem Code kann optional an diesem Projekt hinzugefügt werden.
-  - **iOS-Projekts** – iOS-spezifischem Code kann optional an diesem Projekt hinzugefügt werden.
-  - **NuGet-Projekt** – kein Code zu diesem Projekt hinzugefügt. Es verweist auf die anderen Projekte, und die Metadatenkonfiguration für die Ausgabe der NuGet-Paket enthält.
-  - **Freigegebenes Projekt** – gemeinsamer Code einschließlich der plattformspezifischen Code in diesem Projekt hinzugefügt werden sollen `#if` Compiler-Direktiven.
+    - **Android-Projekt** – Android-spezifischem Code kann optional an diesem Projekt hinzugefügt werden.
+    - **iOS-Projekts** – iOS-spezifischem Code kann optional an diesem Projekt hinzugefügt werden.
+    - **NuGet-Projekt** – kein Code zu diesem Projekt hinzugefügt. Es verweist auf die anderen Projekte, und die Metadatenkonfiguration für die Ausgabe der NuGet-Paket enthält.
+    - **Freigegebenes Projekt** – gemeinsamer Code einschließlich der plattformspezifischen Code in diesem Projekt hinzugefügt werden sollen `#if` Compiler-Direktiven.
 
 5. Mit der rechten Maustaste auf das NuGet-Projekt, und wählen Sie **Optionen**, und öffnen Sie dann die **NuGet-Pakets > Metadaten** aus, und geben Sie die [erforderlichen Metadaten](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) (als sowie alle optional die Metadaten):
 
-  [![](platform-specific-images/specific-metadata-sml.png "Geben Sie die erforderlichen Metadaten")](platform-specific-images/specific-metadata.png#lightbox)
+    [![](platform-specific-images/specific-metadata-sml.png "Geben Sie die erforderlichen Metadaten")](platform-specific-images/specific-metadata.png#lightbox)
 
 6. Auch in der **Projektoptionen** geöffnete Fenster die **Verweisassemblys** aus, und wählen Sie die PCL-Profilen, die die freigegebene Bibliothek per "lockvogel" unterstützt:
 
-  ![](platform-specific-images/specific-reference-assemblies.png "Öffnen Sie im Fenster \"Projektoptionen\" den Abschnitt der Referenz-Assemblys außerdem wählen Sie die PCL-Profilen, die die freigegebene Bibliothek über lockvogel unterstützt werden")
+    ![](platform-specific-images/specific-reference-assemblies.png "Öffnen Sie im Fenster \"Projektoptionen\" den Abschnitt der Referenz-Assemblys außerdem wählen Sie die PCL-Profilen, die die freigegebene Bibliothek über lockvogel unterstützt werden")
 
-  > [!NOTE]
-> "Lockvogel" bedeutet, dass die PCL-Assemblys nur enthalten, werden die API, die von der Bibliothek (es kann keine der plattformspezifischen Code enthalten) verfügbar gemacht werden. Wenn NuGet ein Xamarin-Projekt hinzugefügt wird, gemeinsam genutzte Bibliotheken für die PCL kompiliert werden, aber die plattformspezifische Assemblys enthalten den Code, der tatsächlich von den IOS- oder Android-Projekt verwendet wird.
+    > [!NOTE]
+    > "Lockvogel" bedeutet, dass die PCL-Assemblys nur enthalten, werden die API, die von der Bibliothek (es kann keine der plattformspezifischen Code enthalten) verfügbar gemacht werden. Wenn NuGet ein Xamarin-Projekt hinzugefügt wird, gemeinsam genutzte Bibliotheken für die PCL kompiliert werden, aber die plattformspezifische Assemblys enthalten den Code, der tatsächlich von den IOS- oder Android-Projekt verwendet wird.
 
 7. Mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Paket erstellen** (oder erstellen oder Bereitstellen der Lösung) und die **NUPKG-Datei** NuGet-Paket-Datei wird gespeichert der **/bin /** Ordner ( einer Debug- oder Releasekonfiguration, je nach Konfiguration).
 
-  ![](platform-specific-images/create-nuget-package.png "NuGet-Paket-Datei wird im Ordner \"Bin\" einer Debug- oder Releasekonfiguration, je nach Konfiguration gespeichert werden")
+    ![](platform-specific-images/create-nuget-package.png "NuGet-Paket-Datei wird im Ordner \"Bin\" einer Debug- oder Releasekonfiguration, je nach Konfiguration gespeichert werden")
 
 
 ## <a name="verifying-the-output"></a>Überprüfen Sie die Ausgabe

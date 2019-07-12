@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a93de9d60a515b6089b35a64eb8832c456c96557
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 890c11908b11b18d6ca626820f1a835d817870da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827343"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829863"
 ---
 # <a name="collection-views-in-xamarinios"></a>Auflistungsansichten in Xamarin.iOS
 
@@ -453,7 +453,7 @@ Wie bereits erwähnt, war einer der wichtigsten Änderungen an der Auflistungsan
 
 In iOS 9 die schnellste Möglichkeit zum Hinzufügen einer Ansicht der Auflistung Neuanordnen von ist die Verwendung einer `UICollectionViewController`.
 Der Auflistung-View-Controller verfügt jetzt über eine `InstallsStandardGestureForInteractiveMovement` -Eigenschaft, die einen Standard fügt *Geste Erkennung* , die Sie ziehen, um Elemente in der Auflistung Neuanordnen unterstützt.
-Da der Standardwert ist `true`, haben nur implementieren die `MoveItem` -Methode der der `UICollectionViewDataSource` Klasse zur Unterstützung von Drag-zu-neuanordnung. Zum Beispiel:
+Da der Standardwert ist `true`, haben nur implementieren die `MoveItem` -Methode der der `UICollectionViewDataSource` Klasse zur Unterstützung von Drag-zu-neuanordnung. Beispiel:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -693,7 +693,7 @@ Bearbeiten der **"Main.Storyboard"** -Datei erneut, und wählen Sie die Auflistu
 
 Speichern Sie die Änderungen, die Sie an der Benutzeroberfläche vorgenommen, und führen Sie die app.
 Wenn der Benutzer ein Element aus der Liste wählt und es in einem neuen Speicherort zieht, werden automatisch die anderen Elemente animieren, wie sie aus dem Weg des Elements verschoben.
-Wenn der Benutzer das Element an einer neuen Position ablegt, wird es zu diesem Speicherort vorhanden sein. Zum Beispiel:
+Wenn der Benutzer das Element an einer neuen Position ablegt, wird es zu diesem Speicherort vorhanden sein. Beispiel:
 
 [![](uicollectionview-images/intro01.png "Ein Beispiel für ein Element an eine neue Position ziehen")](uicollectionview-images/intro01.png#lightbox)
 
@@ -701,7 +701,7 @@ Wenn der Benutzer das Element an einer neuen Position ablegt, wird es zu diesem 
 
 ### <a name="using-a-custom-gesture-recognizer"></a>Verwenden eine benutzerdefinierte Stiftbewegungs-Erkennung
 
-In Fällen, in dem können keine `UICollectionViewController` und müssen eine regulären `UIViewController`, oder wenn Sie mehr Kontrolle über die Drag & Drop-Geste nutzen möchten, erstellen Sie eigene benutzerdefinierte Stiftbewegungs-Erkennung und die Auflistungsansicht hinzufügen, wenn das Laden der Ansicht. Zum Beispiel:
+In Fällen, in dem können keine `UICollectionViewController` und müssen eine regulären `UIViewController`, oder wenn Sie mehr Kontrolle über die Drag & Drop-Geste nutzen möchten, erstellen Sie eigene benutzerdefinierte Stiftbewegungs-Erkennung und die Auflistungsansicht hinzufügen, wenn das Laden der Ansicht. Beispiel:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -739,10 +739,10 @@ public override void ViewDidLoad ()
 
 Hier verwenden wir mehrere neue Methoden hinzugefügt, um die Auflistungsansicht zu implementieren und steuern den Ziehvorgang entsteht:
 
- - `BeginInteractiveMovementForItem` – Kennzeichnet den Anfang eines Verschiebevorgangs.
- - `UpdateInteractiveMovementTargetPosition` -Wird gesendet, wie die Position des Elements aktualisiert wird.
- - `EndInteractiveMovement` : Markiert das Ende der Verschiebung eines Elements.
- - `CancelInteractiveMovement` : Den Benutzer den Vorgang abgebrochen markiert.
+- `BeginInteractiveMovementForItem` – Kennzeichnet den Anfang eines Verschiebevorgangs.
+- `UpdateInteractiveMovementTargetPosition` -Wird gesendet, wie die Position des Elements aktualisiert wird.
+- `EndInteractiveMovement` : Markiert das Ende der Verschiebung eines Elements.
+- `CancelInteractiveMovement` : Den Benutzer den Vorgang abgebrochen markiert.
 
 Wenn die Anwendung ausgeführt wird, funktioniert der Ziehvorgang genau so, wie der Standardwert ziehen stiftbewegungs-Erkennung, die die Auflistungsansicht gehört.
 
@@ -1217,78 +1217,78 @@ In den folgenden Abschnitten werden wir einen detaillierten Einblick in die Änd
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionView` -Klasse für iOS 9:
 
- - `BeginInteractiveMovementForItem` – Kennzeichnet den Anfang eines Ziehvorgangs.
- - `CancelInteractiveMovement` – Informiert Sie die Auflistung anzeigen, dass der Benutzer einen Ziehvorgang abgebrochen wurde.
- - `EndInteractiveMovement` – Informiert Sie die Auflistung anzeigen, dass der Benutzer einen Ziehvorgang beendet wurde.
- - `GetIndexPathsForVisibleSupplementaryElements` – Gibt die `indexPath` einer Kopf-oder Fußzeile in einem Abschnitt der Auflistung anzeigen.
- - `GetSupplementaryView` – Gibt die angegebene Kopf- oder Fußzeile.
- - `GetVisibleSupplementaryViews` – Gibt eine Liste aller sichtbaren Kopf- und Fußzeilen zurück.
- - `UpdateInteractiveMovementTargetPosition` – Informiert Sie die Auflistung anzeigen, dass der Benutzer verschoben wurde oder verschoben wurde, ein Element bei einem Ziehvorgang.
+- `BeginInteractiveMovementForItem` – Kennzeichnet den Anfang eines Ziehvorgangs.
+- `CancelInteractiveMovement` – Informiert Sie die Auflistung anzeigen, dass der Benutzer einen Ziehvorgang abgebrochen wurde.
+- `EndInteractiveMovement` – Informiert Sie die Auflistung anzeigen, dass der Benutzer einen Ziehvorgang beendet wurde.
+- `GetIndexPathsForVisibleSupplementaryElements` – Gibt die `indexPath` einer Kopf-oder Fußzeile in einem Abschnitt der Auflistung anzeigen.
+- `GetSupplementaryView` – Gibt die angegebene Kopf- oder Fußzeile.
+- `GetVisibleSupplementaryViews` – Gibt eine Liste aller sichtbaren Kopf- und Fußzeilen zurück.
+- `UpdateInteractiveMovementTargetPosition` – Informiert Sie die Auflistung anzeigen, dass der Benutzer verschoben wurde oder verschoben wurde, ein Element bei einem Ziehvorgang.
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewController` Klasse in iOS 9:
 
- - `InstallsStandardGestureForInteractiveMovement` – If `true` der neuen Stiftbewegungs-Erkennung, die Drag-zu-neuanordnung automatisch unterstützt verwendet werden.
- - `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
- - `GetTargetContentOffset` – Wird verwendet, um den Offset eines Elements der angegebenen Auflistung Ansicht zu erhalten.
- - `GetTargetIndexPathForMove` – Ruft die `indexPath` eines angegebenen Elements für einen Ziehvorgang.
- - `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
+- `InstallsStandardGestureForInteractiveMovement` – If `true` der neuen Stiftbewegungs-Erkennung, die Drag-zu-neuanordnung automatisch unterstützt verwendet werden.
+- `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
+- `GetTargetContentOffset` – Wird verwendet, um den Offset eines Elements der angegebenen Auflistung Ansicht zu erhalten.
+- `GetTargetIndexPathForMove` – Ruft die `indexPath` eines angegebenen Elements für einen Ziehvorgang.
+- `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
 
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewDataSource` Klasse in iOS 9:
 
- - `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
- - `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
+- `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
+- `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
 
 ### <a name="uicollectionviewdelegate"></a>UICollectionViewDelegate
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewDelegate` Klasse in iOS 9:
 
- - `GetTargetContentOffset` – Wird verwendet, um den Offset eines Elements der angegebenen Auflistung Ansicht zu erhalten.
- - `GetTargetIndexPathForMove` – Ruft die `indexPath` eines angegebenen Elements für einen Ziehvorgang.
+- `GetTargetContentOffset` – Wird verwendet, um den Offset eines Elements der angegebenen Auflistung Ansicht zu erhalten.
+- `GetTargetIndexPathForMove` – Ruft die `indexPath` eines angegebenen Elements für einen Ziehvorgang.
 
 ### <a name="uicollectionviewflowlayout"></a>UICollectionViewFlowLayout
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewFlowLayout` Klasse in iOS 9:
 
- - `SectionFootersPinToVisibleBounds` : Der angemeldete der Fußzeilen im Abschnitt zu den Grenzen des sichtbaren Auflistung anzeigen.
- - `SectionHeadersPinToVisibleBounds` : Der angemeldete die Abschnittsheader zu den Grenzen des sichtbaren Auflistung anzeigen.
+- `SectionFootersPinToVisibleBounds` : Der angemeldete der Fußzeilen im Abschnitt zu den Grenzen des sichtbaren Auflistung anzeigen.
+- `SectionHeadersPinToVisibleBounds` : Der angemeldete die Abschnittsheader zu den Grenzen des sichtbaren Auflistung anzeigen.
 
 ### <a name="uicollectionviewlayout"></a>UICollectionViewLayout
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewLayout` Klasse in iOS 9:
 
- - `GetInvalidationContextForEndingInteractiveMovementOfItems` – Gibt die invalidierung Kontext am Ende des Ziehvorgangs zurück, wenn der Benutzer das Ziehen abgeschlossen oder wird abgebrochen.
- - `GetInvalidationContextForInteractivelyMovingItems` – Gibt den Kontext invalidierung am Anfang eines Ziehvorgangs.
- - `GetLayoutAttributesForInteractivelyMovingItem` – Ruft die Layout-Attribute für ein bestimmtes Element beim Ziehen eines Elements.
- - `GetTargetIndexPathForInteractivelyMovingItem` – Gibt die `indexPath` des Elements, das am angegebenen Punkt befindet, beim Ziehen eines Elements.
+- `GetInvalidationContextForEndingInteractiveMovementOfItems` – Gibt die invalidierung Kontext am Ende des Ziehvorgangs zurück, wenn der Benutzer das Ziehen abgeschlossen oder wird abgebrochen.
+- `GetInvalidationContextForInteractivelyMovingItems` – Gibt den Kontext invalidierung am Anfang eines Ziehvorgangs.
+- `GetLayoutAttributesForInteractivelyMovingItem` – Ruft die Layout-Attribute für ein bestimmtes Element beim Ziehen eines Elements.
+- `GetTargetIndexPathForInteractivelyMovingItem` – Gibt die `indexPath` des Elements, das am angegebenen Punkt befindet, beim Ziehen eines Elements.
 
 ### <a name="uicollectionviewlayoutattributes"></a>UICollectionViewLayoutAttributes
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewLayoutAttributes` Klasse in iOS 9:
 
- - `CollisionBoundingPath` – Gibt den Pfad der Kollision von zwei Elementen während eines Ziehvorgangs.
- - `CollisionBoundsType` – Gibt den Typ eines Konflikts zurück (wie eine `UIDynamicItemCollisionBoundsType`), die während eines Ziehvorgangs aufgetreten.
+- `CollisionBoundingPath` – Gibt den Pfad der Kollision von zwei Elementen während eines Ziehvorgangs.
+- `CollisionBoundsType` – Gibt den Typ eines Konflikts zurück (wie eine `UIDynamicItemCollisionBoundsType`), die während eines Ziehvorgangs aufgetreten.
 
 ### <a name="uicollectionviewlayoutinvalidationcontext"></a>UICollectionViewLayoutInvalidationContext
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewLayoutInvalidationContext` Klasse in iOS 9:
 
- - `InteractiveMovementTarget` – Gibt das Zielelement eines Ziehvorgangs.
- - `PreviousIndexPathsForInteractivelyMovingItems` – Gibt die `indexPaths` anderer Elemente beteiligt ein Ziehvorgang, Vorgang neu anzuordnen.
- - `TargetIndexPathsForInteractivelyMovingItems` – Gibt die `indexPaths` von Elementen, die als Ergebnis einer Operation Drag-zu-neuanordnung neu angeordnet werden werden.
+- `InteractiveMovementTarget` – Gibt das Zielelement eines Ziehvorgangs.
+- `PreviousIndexPathsForInteractivelyMovingItems` – Gibt die `indexPaths` anderer Elemente beteiligt ein Ziehvorgang, Vorgang neu anzuordnen.
+- `TargetIndexPathsForInteractivelyMovingItems` – Gibt die `indexPaths` von Elementen, die als Ergebnis einer Operation Drag-zu-neuanordnung neu angeordnet werden werden.
 
 ### <a name="uicollectionviewsource"></a>UICollectionViewSource
 
 Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewSource` Klasse in iOS 9:
 
- - `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
- - `GetTargetContentOffset` – Gibt die Offsets der Elemente, die über eine Drag-zu-neuordnungsvorgang verschoben werden.
- - `GetTargetIndexPathForMove` – Gibt die `indexPath` eines Elements, die während eines Drag-zu-neuanordnung verschoben werden.
- - `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
+- `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
+- `GetTargetContentOffset` – Gibt die Offsets der Elemente, die über eine Drag-zu-neuordnungsvorgang verschoben werden.
+- `GetTargetIndexPathForMove` – Gibt die `indexPath` eines Elements, die während eines Drag-zu-neuanordnung verschoben werden.
+- `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
 
 ## <a name="summary"></a>Zusammenfassung
 

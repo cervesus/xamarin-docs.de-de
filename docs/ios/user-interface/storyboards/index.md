@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61429086"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831701"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in Xamarin.iOS
 
@@ -68,7 +68,7 @@ Es gibt verschiedene Arten von Übergängen, jedes haben Kontrolle darüber, wie
 
 -  **Ein- / mithilfe von Push übertragen werden** – ein Push segue Navigationsstapel des View Controller hinzugefügt. Es wird davon ausgegangen, dass der ansichtscontroller, die den Push stammen Teil der gleichen navigationscontroller als ansichtscontroller ist, die auf dem Stapel hinzugefügt wird. Dies ist dasselbe wie `pushViewController` , und wird im Allgemeinen verwendet, wenn eine Beziehung zwischen den Daten auf dem Bildschirm vorhanden ist. Mit den Push-segue erhalten Sie den Luxus, dass eine Navigationsleiste mit einer Schaltfläche "zurück" und der Titel jeder Ansicht auf dem Stapel, sodass Drilldown Navigation durch die Hierarchie von Inhaltsansichten hinzugefügt.
 -  **Modale** : eine modale Segue Erstellen einer Beziehung zwischen jeder zwei View-Controller im Projekt, durch die Möglichkeit, einen animierten Übergang, der angezeigt wird. Der untergeordnete-View-Controller wird den übergeordneten ansichtscontroller, wenn in der Ansicht vollständig verdecken. Im Gegensatz zu einem Push segue, die eine zurück-Schaltfläche für uns hinzufügt; Wenn eine modale mit segue `DismissViewController` muss verwendet werden, um auf den vorherigen View-Controller zurückzugeben.
--  **Benutzerdefinierte** – einem beliebigen benutzerdefinierten Segue kann erstellt werden, wenn eine Unterklasse von ` UIStoryboardSegue`.
+-  **Benutzerdefinierte** – einem beliebigen benutzerdefinierten Segue kann erstellt werden, wenn eine Unterklasse von `UIStoryboardSegue`.
 -  **Entladen** – eine Entladung segue können verwendet werden, um das Navigieren durch ein Push- oder modale segue – beispielsweise durch Schließen des ansichtscontrollers mit modal angezeigt. Darüber hinaus können Sie über nicht nur eine entladen, aber eine Reihe von Push- und modale segues und wechseln Sie zurück, dass mehrere Schritte in Ihrer Navigationshierarchie mit einer einzelnen Aktion entladen. Um zu verstehen, wie Sie mit der eine Entladung segue im iOS-, lesen Sie die [erstellen Segues entladen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) Anleitung.
 -  **Sourceless** – ein sourceless Segue gibt an, der Szene, die den ersten ansichtscontroller enthält und daher die anzeigen, dass des Benutzers als erstes angezeigt wird. Es wird durch die Segue unten dargestellt:  
 
@@ -135,7 +135,7 @@ Gelegentlich müssen Sie ein Storyboard zu einer zuvor nicht-Storyboard-Datei hi
     
     [![](images/new-storyboard-xs.png "Das neue Dialogfeld \"Datei\"")](images/new-storyboard-xs.png#lightbox)
 
-2. Fügen Sie den Namen Ihres Storyboards, um die **Hauptschnittstelle** Teil der **"Info.plist"**, wie unten dargestellt:
+2. Fügen Sie den Namen Ihres Storyboards, um die **Hauptschnittstelle** Teil der **"Info.plist"** , wie unten dargestellt:
     
     [![](images/infoplist.png "Die Datei \"Info.plist\"-editor")](images/infoplist.png#lightbox)
     
@@ -199,7 +199,7 @@ Der folgende Screenshot zeigt, dass zwei ansichtscontrollern auf unsere Entwurfs
 
 4. Später müssen wir unsere ansichtscontroller aus dem Storyboard instanziieren und verwenden Sie die Storyboard-ID wird auf sie in unserem Code verweisen. Festlegen der ID "Wiederherstellung" entsprechend der Storyboard-ID wird sichergestellt, dass der ansichtscontroller ordnungsgemäß neu erstellt Ruft, wenn der Zustand wiederhergestellt werden muss.
 
-5. Wir stellen Ihnen derzeit nur ein View-Controller. Ziehen Sie eine andere ansichtscontroller, auf die Entwurfsoberfläche. In der **Pad "Eigenschaft"**, unter der Identität, legen Sie die Klasse und ein Storyboard-ID, `PinkViewController`, wie unten gezeigt:
+5. Wir stellen Ihnen derzeit nur ein View-Controller. Ziehen Sie eine andere ansichtscontroller, auf die Entwurfsoberfläche. In der **Pad "Eigenschaft"** , unter der Identität, legen Sie die Klasse und ein Storyboard-ID, `PinkViewController`, wie unten gezeigt:
 
     [![](images/pinkvcnew.png "Das Pad \"Eigenschaft\"")](images/pinkvcnew.png#lightbox)
     

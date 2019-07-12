@@ -7,13 +7,13 @@ ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/03/2019
-ms.openlocfilehash: 8217c6436cc8cfe8f4b9c6cc3445157319e8c0bf
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 07/10/2019
+ms.openlocfilehash: dc903cf4ff8eaced18df3271e5e4dbdde6845b6a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741113"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832636"
 ---
 # <a name="xaml-controls"></a>XAML-Steuerelemente
 
@@ -47,9 +47,10 @@ Alle Ansichten, die in Xamarin.Forms definiert sind, kann von XAML-Dateien verwi
 
 |     |     |
 | --- | --- |
+| <h3>CheckBox</h3>Ermöglicht die Auswahl des eine `boolean` Wert.<p align="center">![Screenshot eines Kontrollkästchens](xaml-controls-images/CheckBox.png "Kontrollkästchen")</p> [Anleitung](~/xamarin-forms/user-interface/checkbox.md) | <p valign="center"><pre>&lt;CheckBox IsChecked="true"<br />          HorizontalOptions="Center"<br />          VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>Slider</h3>Ermöglicht die Auswahl des eine `double` Wert aus einen durchgehenden Bereich.<p align="center">![Screenshot eines Schiebereglers](xaml-controls-images/Slider.png "Schieberegler")</p>[API](xref:Xamarin.Forms.Slider) / [Handbuch](~/xamarin-forms/user-interface/slider.md) | <p valign="center"><pre>&lt;Slider Minimum="0"<br />        Maximum="100"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>Stepper</h3>Ermöglicht die Auswahl des eine `double` Wert aus einem inkrementellen Bereich.<p align="center">![Screenshot des eine zugeordnetem](xaml-controls-images/Stepper.png "zugeordnetem")</p>[API](xref:Xamarin.Forms.Stepper) / [Handbuch](~/xamarin-forms/user-interface/stepper.md) | <p valign="center"><pre>&lt;Stepper Minimum="0"<br />         Maximum="10"<br />         Increment="0.1"<br />         HorizontalOptions="Center"<br />         VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>Schalter</h3>Ermöglicht die Auswahl des eine `boolean` Wert.<p align="center">![Screenshot eines Schalters](xaml-controls-images/Switch.png "Switch")</p>[API](xref:Xamarin.Forms.Switch) | <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>Schalter</h3>Ermöglicht die Auswahl des eine `boolean` Wert.<p align="center">![Screenshot eines Schalters](xaml-controls-images/Switch.png "Switch")</p>[API](xref:Xamarin.Forms.Switch) / [Handbuch](~/xamarin-forms/user-interface/switch.md)| <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>DatePicker</h3>Ermöglicht die Auswahl eines Datums.<p align="center">![Screenshot, der eine "DatePicker"](xaml-controls-images/DatePicker.png "\"DatePicker\"")</p>[API](xref:Xamarin.Forms.DatePicker) / [Handbuch](~/xamarin-forms/user-interface/datepicker.md) | <p valign="center"><pre>&lt;DatePicker Format="D"<br/>            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>TimePicker</h3>Ermöglicht die Auswahl ein.<p align="center">![Screenshot des ein TimePicker](xaml-controls-images/TimePicker.png "TimePicker")</p>[API](xref:Xamarin.Forms.TimePicker) / [Handbuch](~/xamarin-forms/user-interface/timepicker.md) | <p valign="center"><pre>&lt;TimePicker Format="T"<br />            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 |     |     |

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3815790cfb73f93f399c14d3da44aa3210725388
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97cfe7220f8b351ec30a9f2c7a7347d318378fbc
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60932437"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830487"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Problembehandlung für TvOS 10 Apps mit Xamarin erstellt wurde
 
@@ -32,8 +32,8 @@ Den folgenden Abschnitten werden einige bekannte Probleme, die Verwendung von Tv
 
 Bekannte Probleme:
 
- - Wenn In-App-Käufe in der sandboxumgebung zu testen, kann das Dialogfeld "Authentifizierung" zweimal angezeigt.
- - Wenn Sie In-App-Einkäufe mit gehosteten Inhalt in der sandboxumgebung zu testen, wird das Dialogfeld "Kennwort" angezeigt, jedes Mal, wenn die app in den Vordergrund gesetzt wird, bis der Download des Inhalte abgeschlossen ist.
+- Wenn In-App-Käufe in der sandboxumgebung zu testen, kann das Dialogfeld "Authentifizierung" zweimal angezeigt.
+- Wenn Sie In-App-Einkäufe mit gehosteten Inhalt in der sandboxumgebung zu testen, wird das Dialogfeld "Kennwort" angezeigt, jedes Mal, wenn die app in den Vordergrund gesetzt wird, bis der Download des Inhalte abgeschlossen ist.
 
 <a name="Binary-Compatibility" />
 
@@ -41,11 +41,11 @@ Bekannte Probleme:
 
 Bekannte Probleme:
 
- - Aufrufen von `NSObject.ValueForKey` wird eine `null` Schlüssel führt zu einer Ausnahme.
- - Verweisen auf eine Schriftart anhand des Namens, beim Aufrufen von `UIFont.WithName` wird einen Absturz verursachen.
- - Beide `NSURLSession` und NSURLConnection` no longer RC4 cipher suites during the TLS handshake for `http://' URLs.
- - Apps können hängen bleiben, wenn sie eine Benachrichtigungen für die eine Geometrie in entweder zum Ändern der `ViewWillLayoutSubviews` oder `LayoutSubviews` Methoden.
- - Für alle SSL/TLS-Verbindungen ist das symmetrische RC4-Verschlüsselungsverfahren jetzt standardmäßig deaktiviert. Darüber hinaus den sicheren Transport-API unterstützt nicht mehr SSLv3, und es wird empfohlen, dass die app mithilfe von SHA-1 und 3DES Kryptografie so bald wie möglich zu beenden.
+- Aufrufen von `NSObject.ValueForKey` wird eine `null` Schlüssel führt zu einer Ausnahme.
+- Verweisen auf eine Schriftart anhand des Namens, beim Aufrufen von `UIFont.WithName` wird einen Absturz verursachen.
+- Beide `NSURLSession` und `NSURLConnection` mehr RC4-Verschlüsselungssammlungen während des TLS-Handshakes für `http://` URLs.
+- Apps können hängen bleiben, wenn sie eine Benachrichtigungen für die eine Geometrie in entweder zum Ändern der `ViewWillLayoutSubviews` oder `LayoutSubviews` Methoden.
+- Für alle SSL/TLS-Verbindungen ist das symmetrische RC4-Verschlüsselungsverfahren jetzt standardmäßig deaktiviert. Darüber hinaus den sicheren Transport-API unterstützt nicht mehr SSLv3, und es wird empfohlen, dass die app mithilfe von SHA-1 und 3DES Kryptografie so bald wie möglich zu beenden.
 
 <a name="CFNetwork-HTTP-Protocol" />
 
@@ -77,12 +77,12 @@ Nach einer Übergabe die `UserInfo` Eigenschaft eine `NSUserActivity` Objekt kan
 
 Bekannte Probleme:
 
- - Änderungen an der Darstellung des Hintergrunds `UINavigationBar`, `UITabBar` oder `UIToolBar` möglicherweise an einem Layoutdurchlauf, um das neue Erscheinungsbild zu beheben. Versucht, diese Darstellungen in der ein `LayoutSubviews`, `UpdateConstraints`, `WillLayoutSubviews` oder `DidUpdateSubviews` Ereignis kann dazu führen, eine unbegrenzte Layout-Schleife.
- - In TvOS 10 Aufrufen der `RemoveGestureRecognizer` Methode eine `UIView` Objekt explizit bricht alle in Bearbeitung befindlichen Stiftbewegungs-Erkennung.
- - Angegebene View-Controller kann nun die Darstellung der Statusleiste beeinträchtigen.
- - TvOS 10 verlangt vom Entwickler rufen `base.AwakeFromNib` beim Erstellen von Unterklassen für `UIViewController` und überschreiben die `AwakeFromNib` Methode.
- - Apps mit benutzerdefinierten `UIView` Unterklassen, die außer Kraft setzen `LayoutSubviews` und das Layout vor dem Aufruf modifizierte `base.LayoutSubviews` kann eine unbegrenzte Layout-Schleife in TvOS 10 ausgelöst werden.
- - Richtung-spezifische oder flippable Images-Ressourcen sind kein Kippen verwendet, wenn zugewiesen `UIButton` Objekte.
+- Änderungen an der Darstellung des Hintergrunds `UINavigationBar`, `UITabBar` oder `UIToolBar` möglicherweise an einem Layoutdurchlauf, um das neue Erscheinungsbild zu beheben. Versucht, diese Darstellungen in der ein `LayoutSubviews`, `UpdateConstraints`, `WillLayoutSubviews` oder `DidUpdateSubviews` Ereignis kann dazu führen, eine unbegrenzte Layout-Schleife.
+- In TvOS 10 Aufrufen der `RemoveGestureRecognizer` Methode eine `UIView` Objekt explizit bricht alle in Bearbeitung befindlichen Stiftbewegungs-Erkennung.
+- Angegebene View-Controller kann nun die Darstellung der Statusleiste beeinträchtigen.
+- TvOS 10 verlangt vom Entwickler rufen `base.AwakeFromNib` beim Erstellen von Unterklassen für `UIViewController` und überschreiben die `AwakeFromNib` Methode.
+- Apps mit benutzerdefinierten `UIView` Unterklassen, die außer Kraft setzen `LayoutSubviews` und das Layout vor dem Aufruf modifizierte `base.LayoutSubviews` kann eine unbegrenzte Layout-Schleife in TvOS 10 ausgelöst werden.
+- Richtung-spezifische oder flippable Images-Ressourcen sind kein Kippen verwendet, wenn zugewiesen `UIButton` Objekte.
 
 ## <a name="related-links"></a>Verwandte Links
 

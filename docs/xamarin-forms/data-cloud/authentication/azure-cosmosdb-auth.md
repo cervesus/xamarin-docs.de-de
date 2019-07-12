@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 52f4e33e051c99b7002120c055c79036828d60dd
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 6e55b3b9b0f204992de684ba09f3d9ff2552ce00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658867"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832363"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Authentifizieren von Benutzern mit einem Azure Cosmos DB-Dokumentdatenbank und Xamarin.Forms
 
@@ -96,9 +96,9 @@ Der Prozess zum Erstellen einer Facebook-app für die Authentifizierung lautet w
 1. Erstellen einer Facebook-app. Weitere Informationen finden Sie unter [registrieren und Konfigurieren einer App](https://developers.facebook.com/docs/apps/register) im Facebook Developer Center.
 1. Die app das Facebook-Anmeldung Produkt hinzufügen. Weitere Informationen finden Sie unter [Hinzufügen von Facebook-Anmeldung für Ihre App oder Website](https://developers.facebook.com/docs/facebook-login) im Facebook Developer Center.
 1. Konfigurieren Sie die Facebook-Anmeldung wie folgt:
-  - Aktivieren Sie die Client-OAuth-Anmeldung.
-  - Aktivieren Sie die Web-OAuth-Anmeldung.
-  - Legen Sie die gültige OAuth-umleitungs-URI an den URI der App Service-Web-app mit `/.auth/login/facebook/callback` angefügt.
+   - Aktivieren Sie die Client-OAuth-Anmeldung.
+   - Aktivieren Sie die Web-OAuth-Anmeldung.
+   - Legen Sie die gültige OAuth-umleitungs-URI an den URI der App Service-Web-app mit `/.auth/login/facebook/callback` angefügt.
 
   Der folgende Screenshot veranschaulicht diese Konfiguration:
 
@@ -114,12 +114,12 @@ Der Prozess für die Konfiguration einfach App Service-Authentifizierung lautet 
 
 1. Navigieren Sie im Azure-Portal zu der App Service-Web-app.
 1. Öffnen Sie im Azure-Portal, die Authentifizierung / Autorisierung auf dem Blatt, und führen Sie die folgende Konfiguration:
-  - App Service-Authentifizierung sollte aktiviert sein.
-  - Die Aktion an, wenn eine Anforderung nicht authentifiziert ist sollte festgelegt werden, um **melden Sie sich mit Facebook**.
+    - App Service-Authentifizierung sollte aktiviert sein.
+    - Die Aktion an, wenn eine Anforderung nicht authentifiziert ist sollte festgelegt werden, um **melden Sie sich mit Facebook**.
 
-  Der folgende Screenshot veranschaulicht diese Konfiguration:
+    Der folgende Screenshot veranschaulicht diese Konfiguration:
 
-  [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service-Web-App-Authentifizierungseinstellungen")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service-Web-App-Authentifizierungseinstellungen")
+    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service-Web-App-Authentifizierungseinstellungen")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service-Web-App-Authentifizierungseinstellungen")
 
 Die App Service-Web-app sollte auch für die Kommunikation mit der Facebook-app So aktivieren Sie den Authentifizierungsablauf konfiguriert werden. Dies kann erreicht werden, von der Facebook-Identitätsanbieter auswählen und Eingeben der **App-ID** und **App-Geheimnis** Werte aus den Facebook-app-Einstellungen für das Facebook Developer Center. Weitere Informationen finden Sie unter [Hinzufügen von Facebook-Informationen für Ihre Anwendung](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 
@@ -131,10 +131,10 @@ Der Prozess zum Konfigurieren der Xamarin.Forms-Beispiel-Anwendung lautet wie fo
 
 1. Öffnen Sie die Xamarin.Forms-Projektmappe.
 1. Open `Constants.cs` und aktualisieren Sie die Werte der folgenden Konstanten:
-  - `EndpointUri` – der Wert sollte die URL des Cosmos DB-Konto über das Blatt "Schlüssel" Cosmos DB-Konto sein.
-  - `DatabaseName` – der Wert sollte der Name der dokumentdatenbank sein.
-  - `CollectionName` – der Wert sollte der Name der Datenbank-Dokumentsammlung sein (in diesem Fall `UserItems`).
-  - `ResourceTokenBrokerUrl` – der Wert sollte die URL der Resource token Broker Web-app aus dem Blatt "Übersicht" der App Service-Konto sein.
+    - `EndpointUri` – der Wert sollte die URL des Cosmos DB-Konto über das Blatt "Schlüssel" Cosmos DB-Konto sein.
+    - `DatabaseName` – der Wert sollte der Name der dokumentdatenbank sein.
+    - `CollectionName` – der Wert sollte der Name der Datenbank-Dokumentsammlung sein (in diesem Fall `UserItems`).
+    - `ResourceTokenBrokerUrl` – der Wert sollte die URL der Resource token Broker Web-app aus dem Blatt "Übersicht" der App Service-Konto sein.
 
 ## <a name="initiating-login"></a>Anmeldung wird initiiert.
 

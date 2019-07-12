@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a0efc30fd9814e4da858c4e3e4e99990eccf102e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7ac4d0effc1067b065bad114160dc8648e998dad
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61164293"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830781"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Arbeiten mit TvOS Registerkarte Leiste Controller in Xamarin
 
@@ -111,7 +111,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Registerkartenleisten in einer Xama
 -----
 
 > [!IMPORTANT]
-> Es ist zwar möglich, weisen Sie Ereignisse wie z. B. `TouchUpInside` für ein Benutzeroberflächenelement (wie z. B. eine `UIButton`) in der iOS-Designer, niemals aufgerufen wird da Apple TV besitzt eine Fingereingabe Bildschirm oder Touch-Ereignissen zu unterstützen. Verwenden Sie immer die `Primary Action ` Ereignis aus, wenn der Ereignishandler für tvos verwendet. die Elemente der Benutzeroberfläche erstellen.
+> Es ist zwar möglich, weisen Sie Ereignisse wie z. B. `TouchUpInside` für ein Benutzeroberflächenelement (wie z. B. eine `UIButton`) in der iOS-Designer, niemals aufgerufen wird da Apple TV besitzt eine Fingereingabe Bildschirm oder Touch-Ereignissen zu unterstützen. Verwenden Sie immer die `Primary Action` Ereignis aus, wenn der Ereignishandler für tvos verwendet. die Elemente der Benutzeroberfläche erstellen.
 
 Weitere Informationen zum Arbeiten mit Storyboards, informieren Sie sich unsere [Hello, TvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md). 
 

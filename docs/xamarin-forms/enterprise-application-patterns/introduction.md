@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fbb4047b95fd70f829cd79e4ea26b2958273297
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61299979"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831178"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Einführung in die Entwicklung von Unternehmens-Apps
 
@@ -72,7 +72,7 @@ Die beispielanwendung im Lieferumfang von drei Client-apps:
 -   Eine Single-Page Application (SPA) entwickelt, Typescript mit Angular 2. Dieser Ansatz für Webanwendungen wird vermieden, einen Roundtrip zum Server mit jedem Vorgang ausführen.
 -   Eine mobile app entwickelt, mit Xamarin.Forms, mit dem iOS, Android und die universelle Windows-Plattform (UWP) unterstützt.
 
-Weitere Informationen über die Webanwendungen finden Sie unter [entwerfen und entwickeln moderner Webanwendungen mit ASP.NET Core und Microsoft Azure](http://aka.ms/WebAppEbook).
+Weitere Informationen über die Webanwendungen finden Sie unter [entwerfen und entwickeln moderner Webanwendungen mit ASP.NET Core und Microsoft Azure](https://aka.ms/WebAppEbook).
 
 Die beispielanwendung enthält die folgenden Back-End-Dienste:
 

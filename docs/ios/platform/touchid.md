@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 25ace6d7febe495164378b3633f06371806e2f82
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087858"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832307"
 ---
 # <a name="touch-id-in-xamarinios"></a>Touch-ID in Xamarin.iOS
 
@@ -52,8 +52,8 @@ Ab iOS 8 ist jetzt eine neue Richtlinie für Benutzer vorhanden, `SecAccessContr
 
 |Gerätekonfiguration|Richtlinienauswertung|Mechanismus für Sicherungen|
 |--- |--- |--- |
-|Gerät ohne Kennung|Kein Zugriff|Keiner|
-|Gerät mit der Kennung|Erfordert die Kennung|Keiner|
+|Gerät ohne Kennung|Kein Zugriff|None|
+|Gerät mit der Kennung|Erfordert die Kennung|None|
 |Gerät mit Touch ID|Touch ID bevorzugt|Ermöglicht der Kennung|
 
 Alle Vorgänge in der sicheren Enclave können voneinander als vertrauenswürdig eingestuft. Dies bedeutet, dass wir das Authentifizierungsergebnis Touch ID verwenden können, um die Entschlüsselung der Keychain-Element zu autorisieren. Die sichere Enclave speichert auch einen Zähler des fehlgeschlagenen Übereinstimmungen von Touch ID, in denen Fall einen Benutzer wieder mit der Kennung aufweist.
@@ -81,10 +81,10 @@ ACL verwenden, sollten wir verwenden, die `SecAccessControl` Richtlinie, und akt
 
 Es gibt viele Dinge, die wir bedenken sollten, wenn die Keychain ACL mit ein, und einige davon sind unten aufgeführt:
 
--   Verwenden Sie nur mit Vordergrundanwendung – Wenn Sie jeden Keychain-Vorgang in einem Hintergrundthread aufrufen, die der Aufruf fehl.
--   Hinzufügen und Aktualisieren von Keychain-Elementen können eine Authentifizierung erforderlich ist.
--   Wenn eine Anforderung mehrere übereinstimmende Elemente in der Keychain zurückgibt, kann die Authentifizierung erforderlich sein.
--   ACL geschützte Elemente sind nur für Geräte, und daher nicht synchronisiert oder gesichert werden.
+- Verwenden Sie nur mit Vordergrundanwendung – Wenn Sie jeden Keychain-Vorgang in einem Hintergrundthread aufrufen, die der Aufruf fehl.
+- Hinzufügen und Aktualisieren von Keychain-Elementen können eine Authentifizierung erforderlich ist.
+- Wenn eine Anforderung mehrere übereinstimmende Elemente in der Keychain zurückgibt, kann die Authentifizierung erforderlich sein.
+- ACL geschützte Elemente sind nur für Geräte, und daher nicht synchronisiert oder gesichert werden.
 
 ### <a name="using-local-authentication-without-keychain-services"></a>Mithilfe der lokalen Authentifizierung ohne Keychain-Dienste
 

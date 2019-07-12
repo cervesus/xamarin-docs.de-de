@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1f3e6dcc81c75d12a1dbba8fefc62a85178c8c24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f6a7f8859340dcc8e48b6a4e6f56847168f4b71e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019237"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829765"
 ---
 # <a name="android-localization"></a>Android-Lokalisierung
 
@@ -108,7 +108,7 @@ Entsprechend den üblichen XML-Regeln, mit Escapezeichen versehen werden sollen 
 </resources>
 ```
 
-Das Verzeichnis Spanisch **Werte-es** enthält eine Datei mit dem gleichen Namen (**von "Strings.xml"**), die Übersetzungen enthält:
+Das Verzeichnis Spanisch **Werte-es** enthält eine Datei mit dem gleichen Namen (**von "Strings.xml"** ), die Übersetzungen enthält:
 
 **values-es/Strings.xml**
 
@@ -252,7 +252,9 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ### <a name="device-testing"></a>Gerätetests
 
 Um auf einem Gerät zu testen, ändern Sie die Sprache in der **Einstellungen** app.
-**Tipp:** Stellen Sie sich die Symbole und den Speicherort der Menüelemente, damit Sie die Sprache, die die ursprüngliche Einstellung wiederherstellen können.
+
+> [!TIP]
+> Stellen Sie sich die Symbole und den Speicherort der Menüelemente, damit Sie die Sprache, die die ursprüngliche Einstellung wiederherstellen können.
 
 
 ## <a name="summary"></a>Zusammenfassung

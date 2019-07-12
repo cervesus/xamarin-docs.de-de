@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3a8872ae54d7b1efb55ee71286ca5ea479616e0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357041"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830156"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Suche mit NSUserActivity in Xamarin.iOS
 
@@ -27,14 +27,14 @@ Wenn der Benutzer auf ein Suchergebnis, zu dem eine Aktivität aus Ihrer app geh
 
 Die folgenden Eigenschaften der `NSUserActivity` dienen zur Unterstützung von App-Suche:
 
- - `EligibleForHandoff` – If `true`, diese Aktivität kann in einem Vorgang für die Übergabe verwendet werden.
- - `EligibleForSearch` – If `true`, diese Aktivität wird auf den Index auf dem Gerät hinzugefügt und in den Suchergebnissen angezeigt.
- - `EligibleForPublicIndexing` – If `true`, diese Aktivität wird von Apple cloudbasierte Index hinzugefügt und angezeigt, die für Benutzer (über die Suche), die nicht bereits Ihre app auf ihrem iOS-Gerät installiert haben. Finden Sie unter den [öffentliche Suchindizierung](#public-search-indexing) Informationen weiter unten im Abschnitt.
- - `Title` – Stellt einen Titel für die Aktivität bereit und wird in den Suchergebnissen angezeigt. Benutzer können auch für den Text des Titels selbst suchen.
- - `Keywords` – Ist ein Array von Zeichenfolgen verwendet, um Ihre Aktivität zu beschreiben, die indiziert und durchsucht werden vorgenommen, durch den Endbenutzer.
- - `ContentAttributeSet` – Ist eine `CSSearchableItemAttributeSet` verwendet, um weitere Ihrer Aktivität ausführlich zu beschreiben, und geben Sie umfangreiche Inhalte in den Suchergebnissen angezeigt.
- - `ExpirationDate` – Wenn Sie eine Aktivität, die nur zu einem bestimmten Datum angezeigt werden, Sie möchten, können Sie dieses Datum hier bereitstellen.
- - `WebpageURL` – Wenn die Aktivität im Web angezeigt werden kann, oder wenn Ihre app mit deep-Links von Safari unterstützt, können Sie den Link, um hier finden Sie auf festlegen.
+- `EligibleForHandoff` – If `true`, diese Aktivität kann in einem Vorgang für die Übergabe verwendet werden.
+- `EligibleForSearch` – If `true`, diese Aktivität wird auf den Index auf dem Gerät hinzugefügt und in den Suchergebnissen angezeigt.
+- `EligibleForPublicIndexing` – If `true`, diese Aktivität wird von Apple cloudbasierte Index hinzugefügt und angezeigt, die für Benutzer (über die Suche), die nicht bereits Ihre app auf ihrem iOS-Gerät installiert haben. Finden Sie unter den [öffentliche Suchindizierung](#public-search-indexing) Informationen weiter unten im Abschnitt.
+- `Title` – Stellt einen Titel für die Aktivität bereit und wird in den Suchergebnissen angezeigt. Benutzer können auch für den Text des Titels selbst suchen.
+- `Keywords` – Ist ein Array von Zeichenfolgen verwendet, um Ihre Aktivität zu beschreiben, die indiziert und durchsucht werden vorgenommen, durch den Endbenutzer.
+- `ContentAttributeSet` – Ist eine `CSSearchableItemAttributeSet` verwendet, um weitere Ihrer Aktivität ausführlich zu beschreiben, und geben Sie umfangreiche Inhalte in den Suchergebnissen angezeigt.
+- `ExpirationDate` – Wenn Sie eine Aktivität, die nur zu einem bestimmten Datum angezeigt werden, Sie möchten, können Sie dieses Datum hier bereitstellen.
+- `WebpageURL` – Wenn die Aktivität im Web angezeigt werden kann, oder wenn Ihre app mit deep-Links von Safari unterstützt, können Sie den Link, um hier finden Sie auf festlegen.
 
 ## <a name="nsuseractivity-quickstart"></a>NSUserActivity-Schnellstart
 
@@ -96,7 +96,7 @@ Mithilfe einer `ContentAttributeSet` können Sie umfassende Suchergebnisse, die 
 
 ## <a name="responding-to-an-activity"></a>Reagieren auf eine Aktivität
 
-Für den Benutzer Tippen auf ein Suchergebnis reagieren (`NSUserActivity`) für unsere app Bearbeiten der **Datei "appdelegate.cs"** Datei, und überschreiben die `ContinueUserActivity` Methode. Zum Beispiel:
+Für den Benutzer Tippen auf ein Suchergebnis reagieren (`NSUserActivity`) für unsere app Bearbeiten der **Datei "appdelegate.cs"** Datei, und überschreiben die `ContinueUserActivity` Methode. Beispiel:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

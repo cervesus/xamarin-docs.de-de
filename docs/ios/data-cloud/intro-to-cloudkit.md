@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: daea27472ac7c0578c1cfd79ebd96428212fafb3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8ef12c8b0822f3d0486f584878f572a266b0d44e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61165589"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831863"
 ---
 # <a name="cloudkit-in-xamarinios"></a>CloudKit in Xamarin.iOS
 
@@ -64,7 +64,7 @@ Vor eine Xamarin-Anwendung das CloudKit-Framework verwenden kann, die Anwendung 
 4.  Mit der rechten Maustaste in des iOS-Projekts in der Projektmappe, und wählen **Optionen**.
 5.  Wählen Sie **iOS Bundle-Signierung**, wählen die **Entwickleridentität** und **Bereitstellungsprofil** oben erstellt haben.
 6.  Stellen Sie sicher die **"Entitlements.plist"** enthält **iCloud aktivieren** , **Schlüssel-Wert-Speicher** und **CloudKit** .
-7.  Stellen Sie sicher die **ortsunabhängigen Container** für die Anwendung vorhanden ist, (wie oben erstellt haben). Ein Beispiel: `iCloud.com.your-company.CloudKitAtlas`
+7.  Stellen Sie sicher die **ortsunabhängigen Container** für die Anwendung vorhanden ist, (wie oben erstellt haben). Beispiel: `iCloud.com.your-company.CloudKitAtlas`
 8.  Speichern Sie die Änderungen in der Datei.
 
 
@@ -153,7 +153,7 @@ Hier sind die Unterschiede zwischen der Datenbank-Datentypen:
 |**Datentyp**|Freigegebene Daten|Daten des aktuellen Benutzers|
 |**Quota**|Klicken Sie auf der Entwickler Kontingent berücksichtigt|Klicken Sie auf das Kontingent des Benutzers berücksichtigt|
 |**Standardberechtigungen**|World lesbar|Benutzer lesbar|
-|**Berechtigungen bearbeiten**|iCloud-Dashboard-Rollen über eine Benutzerdatensatz-Klasse Ebene|Nicht zutreffend|
+|**Berechtigungen bearbeiten**|iCloud-Dashboard-Rollen über eine Benutzerdatensatz-Klasse Ebene|N/V|
 
 ### <a name="records"></a>Datensätze
 
@@ -501,7 +501,7 @@ CloudKit unterstützt die folgenden Typen von `NSPredicates` beim Arbeiten mit A
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
     
- 6. Unterstützt die CloudKit zusammengesetzte verknüpften mit Prädikaten die `AND` Operator.
+6. Unterstützt die CloudKit zusammengesetzte verknüpften mit Prädikaten die `AND` Operator.
     
     ```
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))

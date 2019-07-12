@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 232fcd1d369eba1daad170986f2e2c4c913a3649
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 816ec5c861b5889e1735eab6293ed10318c53644
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61307862"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831876"
 ---
 # <a name="debug-on-a-wear-device"></a>Debuggen Sie auf einem Wear-Gerät
 
@@ -77,7 +77,8 @@ Verwenden Sie die folgenden Schritte aus, um Ihr Wear-Gerät an Ihr Telefon zu v
 
     Wenn Port 4444 nicht verfügbar ist, können Sie einen beliebigen anderen verfügbaren Port auf dem Sie Zugriff haben. 
 
-    **Hinweis:** Wenn Sie Visual Studio oder Visual Studio für Mac neu starten, führen Sie diese Befehle erneut aus, um eine Verbindung mit dem Wear-Gerät einzurichten.
+    > [!NOTE]
+    > Wenn Sie Visual Studio oder Visual Studio für Mac neu starten, führen Sie diese Befehle erneut aus, um eine Verbindung mit dem Wear-Gerät einzurichten.
 
 5.  Wenn die Wear-Gerät aufgefordert werden, vergewissern Sie sich, dass Sie die erlauben **ADB Debuggen**. In der Android Wear-app sehen Sie den Status zu ändern:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 3d8e69af7f790415343abf464ea2bb22e879e025
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 089ada051b6780a15acfcdd7f9e32ddda1384d05
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170760"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832048"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Einschränkungen für programmgesteuerte Layouts in Xamarin.iOS
 
@@ -51,7 +51,7 @@ Layout Anker bieten mehrere Methoden zum Erstellen von Einschränkungen in einem
 - **ConstraintGreaterThanOrEqualTo** -definiert eine Beziehung, in denen `first attribute >= second attribute + [constant]` mit einer optional angegebenen `constant` Offsetwert.
 - **ConstraintLessThanOrEqualTo** -definiert eine Beziehung, in denen `first attribute <= second attribute + [constant]` mit einer optional angegebenen `constant` Offsetwert.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 // Get the parent view's layout
@@ -95,7 +95,7 @@ Zusätzlich zur Bereitstellung von nur die Parameter, die erforderlich sind, um 
 
 ### <a name="layout-constraints"></a>Layout-Einschränkungen
 
-Sie können Einschränkungen für automatisches Layout manuell hinzufügen, indem Sie direkt zu erstellen einen `NSLayoutConstraint` in C# Code. Anders als bei Layout-Anker, müssen Sie einen Wert für alle Parameter angeben, auch wenn es keine Auswirkung auf die Einschränkung definiert haben. Daher werden letztlich eine beträchtliche schwer zu lesen, Standardcode zu erzeugen. Zum Beispiel:
+Sie können Einschränkungen für automatisches Layout manuell hinzufügen, indem Sie direkt zu erstellen einen `NSLayoutConstraint` in C# Code. Anders als bei Layout-Anker, müssen Sie einen Wert für alle Parameter angeben, auch wenn es keine Auswirkung auf die Einschränkung definiert haben. Daher werden letztlich eine beträchtliche schwer zu lesen, Standardcode zu erzeugen. Beispiel:
 
 ```csharp
 //// Pin the leading edge of the view to the margin
@@ -119,10 +119,10 @@ Im Gegensatz zu mit der Layout-Anchor-API, die `NSLayoutConstraint` Erstellungsm
 Das Format der Sprache Visual können Sie zum Definieren von Einschränkungen mithilfe von ASCII-Zeichnungen, wie Zeichenfolgen, die bieten eine visuelle Darstellung der Einschränkung erstellt wird. Dies hat die folgenden vor- und Nachteile:
 
 - Das Format der Sprache Visual erzwingt die Erstellung von nur gültige Einschränkungen.
- - Automatisches Layout gibt die Einschränkungen an die Konsole mit visuellen Formatsprache aus, damit die debugging-Meldungen der Code, der zum Erstellen der Einschränkung entsprechen werden.
- - Das Format der Sprache Visual können Sie mehrere Einschränkungen zur gleichen Zeit mit einem sehr kompakt Ausdruck zu erstellen.
- - Da keine Validierung Kompilieren der Visual Formatsprache Zeichenfolgen ist, können Probleme nur zur Laufzeit ermittelt werden.
- - Da das Format der Sprache Visual Visualisierung über Vollständigkeit einige Einschränkungstypen mit (z. B. Verhältnisse) können nicht erstellt werden verdeutlicht.
+- Automatisches Layout gibt die Einschränkungen an die Konsole mit visuellen Formatsprache aus, damit die debugging-Meldungen der Code, der zum Erstellen der Einschränkung entsprechen werden.
+- Das Format der Sprache Visual können Sie mehrere Einschränkungen zur gleichen Zeit mit einem sehr kompakt Ausdruck zu erstellen.
+- Da keine Validierung Kompilieren der Visual Formatsprache Zeichenfolgen ist, können Probleme nur zur Laufzeit ermittelt werden.
+- Da das Format der Sprache Visual Visualisierung über Vollständigkeit einige Einschränkungstypen mit (z. B. Verhältnisse) können nicht erstellt werden verdeutlicht.
 
 Wenn das Format der Sprache Visual zu verwenden, um eine Einschränkung erstellen, gehen Sie folgendermaßen vor:
 

@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 327070f723aabf8d5d07f4f86580b69ffb5917a7
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: d80363cd339d5d3177ae063df2a20d7938f59169
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675285"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832401"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -67,7 +67,7 @@ Derzeit kann der Xamarin Profiler verwendet werden, zum Testen der Xamarin.Andro
 
 Unterstützung für die Xamarin Profiler ist auf den folgenden Plattformen verfügbar:
 
- - Visual Studio für Mac (Mac OS, mit dem Enterprise-Lizenz)
+- Visual Studio für Mac (Mac OS, mit dem Enterprise-Lizenz)
     - Android
         - Geräte und -Emulator
     - iOS
@@ -76,7 +76,7 @@ Unterstützung für die Xamarin Profiler ist auf den folgenden Plattformen verf�
         - Geräte- und
     - Mac
 
- - Visual Studio (nur **Enterprise** Version)
+- Visual Studio (nur **Enterprise** Version)
     - Android
         - Geräte und -Emulator
     - iOS [experimentell]
@@ -94,7 +94,7 @@ Dieser Abschnitt führt die Teile der Xamarin Profiler und tours seiner Features
 
 Bevor Sie Ihre app erfolgreich das Profil können, müssen Sie die Profilerstellung in den Projektoptionen der app zu ermöglichen.
 
- - iOS:
+- iOS:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -110,7 +110,7 @@ Bevor Sie Ihre app erfolgreich das Profil können, müssen Sie die Profilerstell
 
 -----
 
- - Android:
+- Android:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -216,7 +216,7 @@ Am oberen Rand der Profiler wird das Zuordnungen, der die Größe des Arbeitsspe
 
 Es gibt verschiedenen Datenansichten in den Zuordnungen instrumentieren, die es Entwicklern ermöglichen, wie ihre Anwendung verwenden und Freigeben von Speicher zu analysieren. Diese Ansichten werden nachfolgend beschrieben:
 
- -   **Zuordnungen** – dies Listet alle Zuordnungen und gruppiert sie nach Klassennamen. Dies bietet eine hervorragende Übersicht über Klassen und Methoden, die verwendet wird, wie häufig sie verwendet werden und die gesamte Größe der Klassen verwendet werden. Doppelklicken auf eine Klasse wird den zugeordnete Speicher angezeigt werden: 
+- **Zuordnungen** – dies Listet alle Zuordnungen und gruppiert sie nach Klassennamen. Dies bietet eine hervorragende Übersicht über Klassen und Methoden, die verwendet wird, wie häufig sie verwendet werden und die gesamte Größe der Klassen verwendet werden. Doppelklicken auf eine Klasse wird den zugeordnete Speicher angezeigt werden: 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -230,7 +230,7 @@ Es gibt verschiedenen Datenansichten in den Zuordnungen instrumentieren, die es 
 
 Der prüfungsansicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren von Objekten, die Bereitstellung von Statistiken für den Arbeitsspeicher belegt, und die wichtigste Zuordnungen sowie Ansichten für Stapelüberwachung und den Pfad zum Stamm.
 
- -   **Aufrufstruktur** – Dies zeigt die gesamte Aufrufstruktur aller Threads in der Anwendung und enthält Informationen über die Speichermenge, die auf jedem Knoten. Alle gleichgeordneten Knoten werden angezeigt, wenn ein Element in der Liste ausgewählt ist, grau angezeigt. Können Sie die Struktur erweitern oder doppelklicken Sie auf das Element um einen Drilldown in diesen. Wenn Sie diese Datenansicht anzeigen zu können, kann die Einstellungen für die Inspector Anzeige verwendet werden, zu verändern, wie sie angezeigt werden. Es gibt derzeit zwei Optionen:
+- **Aufrufstruktur** – Dies zeigt die gesamte Aufrufstruktur aller Threads in der Anwendung und enthält Informationen über die Speichermenge, die auf jedem Knoten. Alle gleichgeordneten Knoten werden angezeigt, wenn ein Element in der Liste ausgewählt ist, grau angezeigt. Können Sie die Struktur erweitern oder doppelklicken Sie auf das Element um einen Drilldown in diesen. Wenn Sie diese Datenansicht anzeigen zu können, kann die Einstellungen für die Inspector Anzeige verwendet werden, zu verändern, wie sie angezeigt werden. Es gibt derzeit zwei Optionen:
     1.  **Umgekehrt Aufrufstruktur** – diese Version die stapelüberwachung von oben nach unten. Dies ist eine praktische Ansichtsoption wie die tiefsten-Methoden gibt an, in denen verfügt über die CPU Zeit verloren wurde.
     2.  **Separater Thread** – diese Option ordnet die Aufrufstruktur nach Thread.
 
@@ -244,7 +244,7 @@ Der prüfungsansicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren
 
 -----
 
- -   **Momentaufnahmen** – in diesem Bereich werden Informationen zu Momentaufnahmen des Arbeitsspeichers angezeigt. Um diese bei der profilerstellung einer aktiven Anwendung zu generieren, klicken Sie auf die _Kamera_ Schaltfläche auf der Symbolleiste an jedem Punkt, die Sie möchten, um festzustellen, welcher Speicher beibehalten, und veröffentlicht. Klicken Sie anschließend auf jede Momentaufnahme um untersuchen, was hinter den Kulissen passiert. Beachten Sie, dass Momentaufnahmen können nur Laufzeit-profilerstellung für eine app erstellt werden. 
+- **Momentaufnahmen** – in diesem Bereich werden Informationen zu Momentaufnahmen des Arbeitsspeichers angezeigt. Um diese bei der profilerstellung einer aktiven Anwendung zu generieren, klicken Sie auf die _Kamera_ Schaltfläche auf der Symbolleiste an jedem Punkt, die Sie möchten, um festzustellen, welcher Speicher beibehalten, und veröffentlicht. Klicken Sie anschließend auf jede Momentaufnahme um untersuchen, was hinter den Kulissen passiert. Beachten Sie, dass Momentaufnahmen können nur Laufzeit-profilerstellung für eine app erstellt werden. 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 260d01d6aa8344dd3cf107f1ffc34167c457a491
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6bad05f62fa9168818aa9a2e73cc1e2830af03b3
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61269310"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830033"
 ---
 # <a name="introduction-to-tvos-10"></a>Einführung in tvOS 10
 
@@ -56,10 +56,10 @@ Darüber hinaus `UIKit` wurde geändert, arbeiten Sie in der neuen erweiterten *
 
 Apple bietet die folgenden bewährten Methoden bei der Arbeit mit breiten Farben:
 
- - `UIColor` nun verwendet der sRGB-Farbraum und nicht mehr-Werte Clamp, die `0.0` zu `1.0` Bereich. Wenn die app vom vorherigen clamps-Verhalten basiert, müssen sie für TvOS 10 geändert werden.
- - Wenn die Anwendung benutzerdefinierte Rendering von führt `UIImages`, verwenden Sie die neue [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) Klasse, um die Verwendung der Formate erweiterte-Range- oder Standard-Bereich anzugeben.
- - Eine Low-Level-API, z. B. die wichtigste Grafik oder Metall mit bildverarbeitung bereitstellen, sollte die app eine größere Anzahl Farbe Speicherplatz und Pixel-Format verwenden, 16-Bit-Gleitkommawerte unterstützt, werden kann. Bei Bedarf müssen die app manuell Farbkomponentenwerte clamp.
- - Wichtigste Grafik "," Core-Image "und"-Metal-Leistung Shader neue Methoden bieten für die Konvertierung zwischen den zwei Farbräume ".
+- `UIColor` nun verwendet der sRGB-Farbraum und nicht mehr-Werte Clamp, die `0.0` zu `1.0` Bereich. Wenn die app vom vorherigen clamps-Verhalten basiert, müssen sie für TvOS 10 geändert werden.
+- Wenn die Anwendung benutzerdefinierte Rendering von führt `UIImages`, verwenden Sie die neue [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) Klasse, um die Verwendung der Formate erweiterte-Range- oder Standard-Bereich anzugeben.
+- Eine Low-Level-API, z. B. die wichtigste Grafik oder Metall mit bildverarbeitung bereitstellen, sollte die app eine größere Anzahl Farbe Speicherplatz und Pixel-Format verwenden, 16-Bit-Gleitkommawerte unterstützt, werden kann. Bei Bedarf müssen die app manuell Farbkomponentenwerte clamp.
+- Wichtigste Grafik "," Core-Image "und"-Metal-Leistung Shader neue Methoden bieten für die Konvertierung zwischen den zwei Farbräume ".
 
 Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [Einführung in die Breite Farbskala](~/ios/platform/wide-color.md) Guide.
 
@@ -67,12 +67,12 @@ Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [Einführung in die
 
 Mehrere Frameworks, die unter iOS (und nicht TvOS) verfügbar waren wurden für TvOS 10 verfügbar gemacht z. B.:
 
- - ExternalAccessory
- - HomeKit
- - MultipeerConnectivity
- - Fotos
- - ReplayKit
- - UserNotification
+- ExternalAccessory
+- HomeKit
+- MultipeerConnectivity
+- Fotos
+- ReplayKit
+- UserNotification
 
 ## <a name="additional-framework-changes"></a>Zusätzliche-Frameworkänderungen
 

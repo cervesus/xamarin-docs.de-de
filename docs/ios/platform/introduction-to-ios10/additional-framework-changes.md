@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ac255baf44951518b29112d2903950039a80ee53
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364296"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831212"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Weitere iOS 10-Frameworks Änderungen
 
@@ -132,10 +132,10 @@ Weitere Informationen finden Sie unter Apple [Metall Programming Guide](https://
 
 Das Framework ModelIO unter iOS 10 wurden die folgenden Verbesserungen vorgenommen:
 
- - Das US-Dollar-Dateiformat wird jetzt unterstützt.
- - Signiert von Feld ' Abstand ' Unterstützung hinzugefügt wurde die [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray) Klasse.
- - Verwenden Sie die neue `MDLLightProbeIrradianceDataSource` Klasse zur Unterstützung bei der Platzierung Licht Prüfpunkt.
- - Verwenden Sie die neue `MDLMaterialPropertyGraph` Klasse zur Laufzeit problemlos Unterstützung für Modelle ändert.
+- Das US-Dollar-Dateiformat wird jetzt unterstützt.
+- Signiert von Feld ' Abstand ' Unterstützung hinzugefügt wurde die [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray) Klasse.
+- Verwenden Sie die neue `MDLLightProbeIrradianceDataSource` Klasse zur Unterstützung bei der Platzierung Licht Prüfpunkt.
+- Verwenden Sie die neue `MDLMaterialPropertyGraph` Klasse zur Laufzeit problemlos Unterstützung für Modelle ändert.
 
 ## <a name="photos-enhancements"></a>Verbesserungen von Fotos
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 6a9c66720aeb97c5b894cbea42c6cc0c5285c67d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 888e00fbdbf30b5b2842bc30822a55f57372eb34
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978630"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831809"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Multitasking für iPad im Xamarin.iOS
 
@@ -48,10 +48,10 @@ Dieser Artikel behandelt die erforderlichen Schritte zum sicherstellen, dass Ihr
 
 Zur Unterstützung **Folie über** oder **geteilte Ansicht** Ihre app muss gehen Sie folgendermaßen vor:
 
- - Für iOS 9 (oder höher) erstellt werden.
- - Verwenden Sie ein Storyboard für seine Startbildschirm (und nicht Bildanlagen Sie).
- - Verwenden Sie ein Storyboard mit Autolayout und Größenklassen, für die Benutzeroberfläche.
- - Alle 4 iOS geräteausrichtungen (Hochformat, nach unten zeigende Hochformat, Querformat links und Querformat rechts) zu unterstützen.
+- Für iOS 9 (oder höher) erstellt werden.
+- Verwenden Sie ein Storyboard für seine Startbildschirm (und nicht Bildanlagen Sie).
+- Verwenden Sie ein Storyboard mit Autolayout und Größenklassen, für die Benutzeroberfläche.
+- Alle 4 iOS geräteausrichtungen (Hochformat, nach unten zeigende Hochformat, Querformat links und Querformat rechts) zu unterstützen.
 
 <a name="Multitasking" />
 
@@ -242,9 +242,9 @@ In den meisten Fällen sollte Ihre app können Benutzer, alle video Inhalte wied
 
 Um die Videowiedergabe PIP kündigen möchten, gehen Sie in Ihrer app:
 
- - Bei Verwendung einer `AVPlayerViewController` um Video anzuzeigen, legen die `AllowsPictureInPicturePlayback` Eigenschaft `false`.
- - Bei Verwendung der `AVPlayerLayer` zum Anzeigen von Video nicht instanziieren einer `AVPictureInPictureController`.
- - Bei Verwendung einer `WKWebView` um Video anzuzeigen, legen die `AllowsPictureInPictureMediaPlayback` Eigenschaft `false`.
+- Bei Verwendung einer `AVPlayerViewController` um Video anzuzeigen, legen die `AllowsPictureInPicturePlayback` Eigenschaft `false`.
+- Bei Verwendung der `AVPlayerLayer` zum Anzeigen von Video nicht instanziieren einer `AVPictureInPictureController`.
+- Bei Verwendung einer `WKWebView` um Video anzuzeigen, legen die `AllowsPictureInPictureMediaPlayback` Eigenschaft `false`.
 
 <a name="Summary" />
 

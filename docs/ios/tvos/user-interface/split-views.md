@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f1bd48378faa9ae6a4853083c93377268c38f01
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 775fe01122440378f68973549d46e3010400614e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61374468"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830850"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Arbeiten mit TvOS Split-View-Controller in Xamarin
 
@@ -100,7 +100,7 @@ Wie bereits erwähnt, ist ein Controller für geteilte Ansicht oft in Situatione
 
 ### <a name="accessing-master-and-detail"></a>Zugreifen auf die Master- und Detailtabelle
 
-Wenn Sie programmgesteuert auf die Master- und Detail-View-Controller zugreifen möchten, verwenden Sie die `ViewControllers ` Eigenschaft von der Controller für geteilte Ansicht. Zum Beispiel:
+Wenn Sie programmgesteuert auf die Master- und Detail-View-Controller zugreifen möchten, verwenden Sie die `ViewControllers` Eigenschaft von der Controller für geteilte Ansicht. Beispiel:
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -122,7 +122,7 @@ Die einfachste Möglichkeit hierzu ist, eine Eigenschaft in der Master-View-Cont
 public DetailViewController DetailController { get; set;}
 ```
 
-Überschreiben Sie in den Controller für geteilte Ansicht, die `ViewDidLoad` -Methode und Tie zeigt die beiden zusammen. Zum Beispiel:
+Überschreiben Sie in den Controller für geteilte Ansicht, die `ViewDidLoad` -Methode und Tie zeigt die beiden zusammen. Beispiel:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -146,7 +146,7 @@ Sie können Eigenschaften und Methoden in Ihrem Ansichtscontroller Details verf�
 
 ### <a name="showing-and-hiding-master"></a>Ein- und Ausblenden von-Master
 
-Optional können Sie ein- und ausblenden, die Master-View-Controller mit dem `PreferredDisplayMode` Eigenschaft von der Controller für geteilte Ansicht. Zum Beispiel:
+Optional können Sie ein- und ausblenden, die Master-View-Controller mit dem `PreferredDisplayMode` Eigenschaft von der Controller für geteilte Ansicht. Beispiel:
 
 ```csharp
 // Show hide split view

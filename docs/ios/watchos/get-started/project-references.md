@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: c900ab714fed2bb1e02367ba39ad3c5a0a76121e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60eaad98e2d5469e9c43e6b4ad889080e1aa63ba
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408348"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832062"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>WatchOS-Projekt-Verweise in Xamarin
 
@@ -26,16 +26,16 @@ Anzeigen der Verweise durch Doppelklicken auf den Knoten "Verweise" für jedes P
 
 - **iPhone-app** Verweise **Watch-App**
 
-![](project-references-images/catalog-reference1.png "iPhone-app verweist auf Watch-App")
+  ![](project-references-images/catalog-reference1.png "iPhone-app verweist auf Watch-App")
 
 - **Sehen Sie sich App** Verweise **Watch-App-Erweiterung**
 
-![](project-references-images/catalog-reference2.png "iPhone-app verweist auf Watch-App")
+  ![](project-references-images/catalog-reference2.png "iPhone-app verweist auf Watch-App")
 
 
- - Die **Watch-App-Erweiterung** verweist nicht auf eine der anderen Projekte
+- Die **Watch-App-Erweiterung** verweist nicht auf eine der anderen Projekte
 
-![](project-references-images/catalog-reference3.png "Watch-App-Erweiterung verweist nicht auf die anderen Projekte")
+  ![](project-references-images/catalog-reference3.png "Watch-App-Erweiterung verweist nicht auf die anderen Projekte")
 
 
 
@@ -44,17 +44,17 @@ Anzeigen der Verweise durch Doppelklicken auf den Knoten "Verweise" für jedes P
 Sie müssen auch sicherstellen, Ihre **Bundle-IDs** richtig sind.
 Alle drei Projekte müssen den *gleichen* ID-Präfix, mit den zwei Watch-Projekten mit Erweiterungen der vorab `watchkitextension` und `watchkitapp`wie folgt (für die **WatchKitCatalog** (Beispiel):
 
- - Vereinheitlichten Xamarin.iOS-Projekt- `com.xamarin.WatchKitCatalog`
+- Vereinheitlichten Xamarin.iOS-Projekt- `com.xamarin.WatchKitCatalog`
 
- - WatchKit-Erweiterung-Projekt – `com.xamarin.WatchKitCatalog.watchkitextension`
+- WatchKit-Erweiterung-Projekt – `com.xamarin.WatchKitCatalog.watchkitextension`
 
- - Watch-App-Projekt: `com.xamarin.WatchKitCatalog.watchkitapp`
+- Watch-App-Projekt: `com.xamarin.WatchKitCatalog.watchkitapp`
 
 Stellen Sie außerdem sicher, dass diese **"Info.plist"** Einstellungen korrekt sind:
 
- - Die Watch-App-Projekts `WKCompanionAppBundleIdentifier` entspricht der über-/Container-app Bündel-ID (ie. derjenige, der auf dem iPhone ausgeführt wird);
+- Die Watch-App-Projekts `WKCompanionAppBundleIdentifier` entspricht der über-/Container-app Bündel-ID (ie. derjenige, der auf dem iPhone ausgeführt wird);
 
- - Des Watch-Erweiterung, Kit-Projekts **WKApp-Bundle-ID** mit Paket-ID des Watch-App-Projekts übereinstimmt.
+- Des Watch-Erweiterung, Kit-Projekts **WKApp-Bundle-ID** mit Paket-ID des Watch-App-Projekts übereinstimmt.
 
 Sie können die IDs bearbeiten, indem Sie durch Doppelklicken auf die **"Info.plist"** Datei in jedem Projekt.
 

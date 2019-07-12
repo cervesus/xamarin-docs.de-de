@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: a5083e1d31377caece1b8fb4faf33b6e3ff88202
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62ef02d276e9c98e07f5e0d1b9ddec1b0874a99a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61211819"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829625"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>Tipps zum Aktualisieren von Code für Unified API
 
@@ -74,23 +74,24 @@ Einige Dinge, die möglicherweise manuell behoben werden müssen, gehören:
     public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
     ```
 
- * Die Unified API bietet keine implizite Konvertierung zwischen NSDate und .NET DateTime-Wert, da es sich nicht um eine Verlustlose Konvertierung ist. Um zu verhindern, dass Fehler im Zusammenhang mit `DateTimeKind.Unspecified` Konvertieren von .NET `DateTime` an lokale oder UTC vor der Konvertierung zu `NSDate`.
+* Die Unified API bietet keine implizite Konvertierung zwischen NSDate und .NET DateTime-Wert, da es sich nicht um eine Verlustlose Konvertierung ist. Um zu verhindern, dass Fehler im Zusammenhang mit `DateTimeKind.Unspecified` Konvertieren von .NET `DateTime` an lokale oder UTC vor der Konvertierung zu `NSDate`.
 
- * Objective-C-Kategorie-Methoden sind jetzt als Erweiterungsmethoden in der Unified API generiert. Beispielsweise code, der zuvor verwendet `UIView.DrawString` jetzt verweisen würde `NSString.DrawString` in der Unified API.
+* Objective-C-Kategorie-Methoden sind jetzt als Erweiterungsmethoden in der Unified API generiert. Beispielsweise code, der zuvor verwendet `UIView.DrawString` jetzt verweisen würde `NSString.DrawString` in der Unified API.
 
- * Code mit AVFoundation Klassen mit `VideoSettings` sollten ändern, um verwenden die `WeakVideoSettings` Eigenschaft. Dies erfordert eine `Dictionary`, steht als Eigenschaft für die für Einstellungenklassen, z.B.:
+* Code mit AVFoundation Klassen mit `VideoSettings` sollten ändern, um verwenden die `WeakVideoSettings` Eigenschaft. Dies erfordert eine `Dictionary`, steht als Eigenschaft für die für Einstellungenklassen, z.B.:
 
     ```csharp
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
- * Die NSObject `.ctor(IntPtr)` Konstruktor wurde geändert von öffentlichen, geschützten ([auf die falsche Verwendung zu verhindern, dass](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
+* Die NSObject `.ctor(IntPtr)` Konstruktor wurde geändert von öffentlichen, geschützten ([auf die falsche Verwendung zu verhindern, dass](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
 
- * `NSAction` wurde [ersetzt](~/cross-platform/macios/unified/overview.md#NSAction) mit der Starndard .NET `Action`. Wurden einige einfache (einzelne Parameter) Delegaten auch durch ersetzt `Action<T>`.
+* `NSAction` wurde [ersetzt](~/cross-platform/macios/unified/overview.md#NSAction) mit dem standardmäßigen .NET `Action`. Wurden einige einfache (einzelne Parameter) Delegaten auch durch ersetzt `Action<T>`.
 
 Schließlich finden Sie unter den [Klassisch V Unified API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) , um Änderungen an APIs in Ihrem Code zu suchen. Suche [auf dieser Seite](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) hilft finden Sie klassischen APIs und was sie auf aktualisiert haben.
 
-**Hinweis:** der `MonoTouch.Dialog` Namespace bleibt nach der Migration. Wenn Ihr Code verwendet **MonoTouch.Dialog** sollten Sie weiterhin nach diesen Namespace – übernehmen *nicht* ändern `MonoTouch.Dialog` zu `Dialog`!
+> [!NOTE]
+> Die `MonoTouch.Dialog` Namespace bleibt nach der Migration. Wenn Ihr Code verwendet **MonoTouch.Dialog** sollten Sie weiterhin nach diesen Namespace – übernehmen *nicht* ändern `MonoTouch.Dialog` zu `Dialog`!
 
 ## <a name="common-compiler-errors"></a>Häufige Compilerfehler
 
@@ -136,7 +137,7 @@ Fix: Ändern Sie die Rückgabetypen für Wert und Parameter zum `nint`. Dieser h
 public override nint RowsInSection (UITableView tableview, nint section) {
 ```
 
-**Fehler-CS0508: `WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be 'System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'**
+**Fehler-CS0508: `WordsTableSource.NumberOfSections(UIKit.UITableView)`: Rückgabetyp muss "System.nint" entsprechend der überschriebenen Member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)`**
 
 Fix: Wenn der Rückgabetyp geändert wird, um `nint`, wandeln Sie den Rückgabewert in `nint`.
 

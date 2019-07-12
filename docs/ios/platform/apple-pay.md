@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: b971029ff3b2b1e8f5e63233d1d754c44b0e3309
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7f1851b6a7dec10580c9feea590cf25be30b4aa1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61346971"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832088"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Apple Pay in Xamarin.iOS
 
@@ -26,10 +26,10 @@ Apple Pay ist nur verfügbar in iOS 8 und höher, und aus diesem Grund erfordert
 
 Die folgenden Elemente sind auch erforderlich, um Apple Pay in Ihrer app zu integrieren:
 
- - Zahlungsplattform-Prozessor
- - Händler-ID
- - Ein Apple Pay-Zertifikat
- - Apple Pay-Berechtigung
+- Zahlungsplattform-Prozessor
+- Händler-ID
+- Ein Apple Pay-Zertifikat
+- Apple Pay-Berechtigung
 
 In diesem Dokument werden diese Elemente ausführlicher erläutert.
 
@@ -117,7 +117,7 @@ Führen Sie folgende Schritte aus, um die neue testumgebung zu aktivieren:
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel vorgestellt, die die verschiedenen Elemente erforderlich, um Apple Pay in Ihrer app verwenden. Erläutert, wie Sie eine Händler-ID zu erstellen und deren Verwendung innerhalb der **"Entitlements.plist"**, dies muss manuell geändert werden.
+In diesem Artikel vorgestellt, die die verschiedenen Elemente erforderlich, um Apple Pay in Ihrer app verwenden. Erläutert, wie Sie eine Händler-ID zu erstellen und deren Verwendung innerhalb der **"Entitlements.plist"** , dies muss manuell geändert werden.
 
 ## <a name="related-links"></a>Verwandte Links
 

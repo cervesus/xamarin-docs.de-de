@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bc9396a8cb667b8170c4b3511b9fe8423741e6b1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420877"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829925"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Kann ich Dateien hinzufügen oder Entfernen von Dateien aus einer IPA-Datei nach der Erstellung in Visual Studio?
 
@@ -32,7 +32,7 @@ In diesem Beispiel wird davon ausgegangen, dass der Name des Xamarin.iOS-Projekt
 
 4.  Öffnen Sie ein neues `Terminal.app` Fenster.
 
-5.  Typ `cd ` in die Terminal.app-Fenster, und klicken Sie dann Drag & Drop die `generated session id` Ordner in der `Terminal.app` Fenster:
+5.  Typ `cd` in die Terminal.app-Fenster, und klicken Sie dann Drag & Drop die `generated session id` Ordner in der `Terminal.app` Fenster:
 
     ![](modify-ipa-images/session-id-folder.png "Suchen die generierte Sitzungs-ID-Ordner in Finder")
 
@@ -52,7 +52,7 @@ In diesem Beispiel wird davon ausgegangen, dass der Name des Xamarin.iOS-Projekt
 
 12.  Suchen Sie die Zeile, die enthält `tool /usr/bin/codesign execution started with arguments: -v --force --sign`.
 
-13.  Typ `/usr/bin/codesign ` in das Fenster Terminal.app aus Schritt 8.
+13.  Typ `/usr/bin/codesign` in das Fenster Terminal.app aus Schritt 8.
 
 14.  Kopieren Sie alle Argumente ab `-v` über die Befehlszeile in Schritt 12, und fügen Sie sie in das Fenster Terminal.app.
 

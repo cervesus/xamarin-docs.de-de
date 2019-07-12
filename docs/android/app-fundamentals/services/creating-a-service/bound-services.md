@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: c0adee0dae1135bdfd076082e85a471db1cd1ecf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 490331663d94a1e3130fc794a11a52acdacca014
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013294"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829742"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Gebundene Dienste in Xamarin.Android
 
@@ -55,8 +55,8 @@ Zum Erstellen eines Diensts mithilfe von Xamarin.Android, es ist erforderlich, u
 
 * `OnCreate` &ndash; Diese Methode wird von Android aufgerufen, wie sie den Dienst instanziiert wird. Es wird verwendet, um alle Variablen oder die Objekte, die vom Dienst, während dessen Lebensdauer erforderlich sind zu initialisieren. Diese Methode ist optional.
 * `OnBind` &ndash; Diese Methode muss von allen gebundenen Diensten implementiert werden. Wird aufgerufen, wenn der erste Client versucht, mit dem Dienst herstellen. Es gibt eine Instanz von `IBinder` , damit der Client mit dem Dienst interagieren kann. Solange der Dienst ausgeführt wird, die `IBinder` Objekt wird verwendet, um alle zukünftigen Clientanforderungen für die Bindung an den Dienst zu erfüllen.
-* `OnUnbind` &ndash; Diese Methode wird aufgerufen, wenn alle gebundenen Clients aufgehoben haben. Durch Rückgabe `true` von dieser Methode aufrufen des Diensts höher `OnRebind` mit der Absicht, die an `OnUnbind` neue Clients, wenn zu binden. Dies würden Sie tun, wenn ein Dienst ausgeführt wird weiterhin, nachdem er aufgehoben wurde. Dies geschieht, wenn der vor kurzem ungebundene Dienst auch einen Dienst gestartet wurden und `StopService` oder `StopSelf` noch nicht aufgerufen wurde. In solch einem Szenario `OnRebind` die Absicht, die abgerufen werden können. Der Standardwert gibt `false` , die nichts. Dies ist optional.
-* `OnDestroy` &ndash; Diese Methode wird aufgerufen, wenn Android den Dienst zerstört wird. Eventuell Erforderlicher Bereinigungen, z.B. das Freigeben von Ressourcen sollte in dieser Methode durchgeführt werden. Dies ist optional.
+* `OnUnbind` &ndash; Diese Methode wird aufgerufen, wenn alle gebundenen Clients aufgehoben haben. Durch Rückgabe `true` von dieser Methode aufrufen des Diensts höher `OnRebind` mit der Absicht, die an `OnUnbind` neue Clients, wenn zu binden. Dies würden Sie tun, wenn ein Dienst ausgeführt wird weiterhin, nachdem er aufgehoben wurde. Dies geschieht, wenn der vor kurzem ungebundene Dienst auch einen Dienst gestartet wurden und `StopService` oder `StopSelf` noch nicht aufgerufen wurde. In solch einem Szenario `OnRebind` die Absicht, die abgerufen werden können. Der Standardwert gibt `false` , die nichts. Optional.
+* `OnDestroy` &ndash; Diese Methode wird aufgerufen, wenn Android den Dienst zerstört wird. Eventuell Erforderlicher Bereinigungen, z.B. das Freigeben von Ressourcen sollte in dieser Methode durchgeführt werden. Optional.
 
 Die Lebenszyklus-Ereignisse von einem gebundenen Dienst sind in diesem Diagramm dargestellt:
 
@@ -230,7 +230,7 @@ Die `OnServiceDisconnected` Methode wird nur aufgerufen, wenn die Verbindung zwi
 
 ## <a name="starting-and-binding-to-a-service-with-an-explicit-intent"></a>Starten und Binden an einen Datendienst mit expliziter Intent
 
-Um einen gebundenen Dienst verwenden, muss einen Client (z. B. eine Aktivität) zu instanziieren ein Objekt, das implementiert `Android.Content.IServiceConnection` und Aufrufen der `BindService` Methode.` BindService` Gibt `true` , wenn der Dienst gebunden ist, `false` ist dies nicht. Die Methode `BindService` akzeptiert drei Parameter:
+Um einen gebundenen Dienst verwenden, muss einen Client (z. B. eine Aktivität) zu instanziieren ein Objekt, das implementiert `Android.Content.IServiceConnection` und Aufrufen der `BindService` Methode. `BindService` Gibt `true` , wenn der Dienst gebunden ist, `false` ist dies nicht. Die Methode `BindService` akzeptiert drei Parameter:
 
 * **Ein `Intent`**  &ndash; die Absicht sollten welcher Dienst für die Verbindung explizit identifizieren.
 * **Ein `IServiceConnection` Objekt** &ndash; dieses Objekt ist ein Vermittler, der stellt Rückrufmethoden bereit, um den Client zu benachrichtigen, wenn der gebundene Dienst gestartet oder beendet wird.

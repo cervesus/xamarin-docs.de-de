@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62b577393a498587ee2e2e899d20bfeec7988c4e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034782"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832372"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Siri-Verknüpfungen in Xamarin.iOS
 
@@ -95,7 +95,7 @@ Daten
 Die `com.apple.developer.siri` Schlüssel angegeben, dass die app mit Siri interagiert.
 
 > [!NOTE]
-> Die **SoupChef** Build des Projekts legt **benutzerdefinierte Berechtigungen** zu **"Entitlements.plist"**.
+> Die **SoupChef** Build des Projekts legt **benutzerdefinierte Berechtigungen** zu **"Entitlements.plist"** .
 
 ## <a name="using-an-nsuseractivity-shortcut-to-open-an-app"></a>Mithilfe einer NSUserActivity-Verknüpfung zum Öffnen einer app
 
@@ -218,7 +218,7 @@ In der **OrderSoup** Antwortdefinition die Absicht, beachten Sie Folgendes:
 - Einer Antwort des **Eigenschaften** dienen zum Anpassen der Nachricht zurück an den Benutzer übermittelt. Die **OrderSoup** beabsichtigte Antwort **mehr Licht bei** und **WaitTime** Eigenschaften.
 - Die **Response-Vorlagen** Geben Sie die verschiedenen Erfolgs- und Fehlermeldungen, die verwendet werden können, um Status anzugeben, nachdem ein Intent Task abgeschlossen wurde.
 - Die **Erfolg** Kontrollkästchen sollte ausgewählt sein, für Antworten, die Erfolg zu melden.
- - Die **OrderSoupIntent** Erfolgsantwort verwendet die **mehr Licht bei** und **WaitTime** Eigenschaften, um eine benutzerfreundliche und nützliche Meldung beschreibt, wann der Auftrag mehr Licht bei bereit stehen.
+- Die **OrderSoupIntent** Erfolgsantwort verwendet die **mehr Licht bei** und **WaitTime** Eigenschaften, um eine benutzerfreundliche und nützliche Meldung beschreibt, wann der Auftrag mehr Licht bei bereit stehen.
 
 ### <a name="generating-code-for-the-custom-intent"></a>Generieren von Code für die benutzerdefinierte Absicht
 
@@ -226,7 +226,7 @@ Beim Erstellen des Xcode-Projekts, enthält diese benutzerdefinierte beabsichtig
 
 Dieser generierte Code anzeigen zu können:
 
-- Open **"appdelegate.m"**.
+- Open **"appdelegate.m"** .
 - Fügen Sie einen Import in die benutzerdefinierte Absicht-Headerdatei hinzu: `#import "OrderSoupIntent.h"`
 - Fügen Sie in einer beliebigen Methode in der Klasse, die einen Verweis auf `OrderSoupIntent`.
 - Mit der rechten Maustaste auf `OrderSoupIntent` , und wählen Sie **fahren Sie mit der Definition**.
@@ -442,7 +442,7 @@ Die **"Info.plist"** -Datei enthält außerdem die folgenden:
 </dict>
 ```
 
-In der obigen **"Info.plist"**:
+In der obigen **"Info.plist"** :
 
 - `IntentsRestrictedWhileLocked` Listet Intent-Elemente, die nur behandelt werden soll, wenn das Gerät entsperrt wird.
 - `IntentsSupported` Listet die Absichten von dieser Erweiterung verarbeitet.
@@ -463,7 +463,7 @@ Die **"Entitlements.plist"** in die **SoupChefIntents** Projekt verfügt über d
 Mehr Licht bei Chef speichert Daten mit `NSUserDefaults`. Um die Freigabe von Daten zwischen der app und die app-Erweiterung, die sie verweisen in der gleichen app-Gruppe ihre **"Entitlements.plist"** Dateien.
 
 > [!NOTE]
-> Die **SoupChefIntents** Build des Projekts legt **benutzerdefinierte Berechtigungen** zu **"Entitlements.plist"**.
+> Die **SoupChefIntents** Build des Projekts legt **benutzerdefinierte Berechtigungen** zu **"Entitlements.plist"** .
 
 #### <a name="handling-an-ordersoupintent-background-task"></a>Eine Hintergrundaufgabe OrderSoupIntent behandeln
 
@@ -541,7 +541,7 @@ Die **"Info.plist"** -Datei enthält außerdem die folgenden:
 </dict>
 ```
 
-In der obigen **"Info.plist"**:
+In der obigen **"Info.plist"** :
 
 - `IntentsSupported` Gibt an, dass die `OrderSoupIntent` erfolgt durch dieses Intents-Benutzeroberflächenerweiterung.
 - `NSExtensionPointIdentifier` Gibt den Typ des app-Erweiterung (finden Sie unter [Apple Dokumentation](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15) Informationen).
@@ -645,7 +645,7 @@ In der **Certificates, IDs & Profiles** Teil der [Apple Developer Portal](https:
 
 - Erstellen Sie eine app-Gruppe zum Freigeben von Daten zwischen der app mehr Licht bei Chef und die zugehörigen Erweiterungen. Zum Beispiel: **group.com.yourcompanyname.SoupChef**
 
-- Erstellen Sie drei App-IDs: eine für die app selbst und für die Intents-Erweiterung für die Intents-Benutzeroberflächenerweiterung. Zum Beispiel:
+- Erstellen Sie drei App-IDs: eine für die app selbst und für die Intents-Erweiterung für die Intents-Benutzeroberflächenerweiterung. Beispiel:
 
     - App: **com.yourcompanyname.SoupChef**
         - Weisen Sie zu dieser App-ID, die SiriKit und **App-Gruppen** Funktionen.
