@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 83e28796a2c387927dddd708da3ee6623f800a35
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b11a5972c2aabace8a6991a82f5719f34450297d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61193253"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67841399"
 ---
 In dieser Übung fügen Sie dem Projekt **LocalDatabaseTutorial** Datenzugriffsklassen hinzu, mit denen Personendaten in der Datenbank gespeichert werden.
 
@@ -69,9 +69,7 @@ In dieser Übung fügen Sie dem Projekt **LocalDatabaseTutorial** Datenzugriffsk
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace LocalDatabaseTutorial
     {
         public partial class App : Application
@@ -117,7 +115,8 @@ In dieser Übung fügen Sie dem Projekt **LocalDatabaseTutorial** Datenzugriffsk
 
     In diesem Codeausschnitt wird eine `Database`-Eigenschaft definiert, mit der eine neue `Database`-Instanz als Singleton erstellt wird. Als Argumente für den Konstruktor der `Database`-Klasse werden ein lokaler Dateipfad und ein Dateiname als Speicherort der Datenbank übergeben.
 
-    > [!IMPORTANT Durch das Bereitstellen der Datenbank als Singleton kann eine einzelne Datenbankverbindung erstellt werden, die während der Ausführung der App offen bleibt, sodass der Aufwand für das Öffnen und Schließen der Datenbank beim Ausführen des Datenbankvorgangs vermieden wird.
+    > [!IMPORTANT]
+    > Durch das Bereitstellen der Datenbank als Singleton kann eine einzelne Datenbankverbindung erstellt werden, die während der Ausführung der App offen bleibt, sodass der Aufwand für das Öffnen und Schließen der Datenbank beim Ausführen des Datenbankvorgangs vermieden wird.
 
 1. Erstellen Sie die Projektmappe, um sich zu vergewissern, dass keine Fehler vorliegen.
 
@@ -182,9 +181,7 @@ In dieser Übung fügen Sie dem Projekt **LocalDatabaseTutorial** Datenzugriffsk
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace LocalDatabaseTutorial
     {
         public partial class App : Application
@@ -230,6 +227,7 @@ In dieser Übung fügen Sie dem Projekt **LocalDatabaseTutorial** Datenzugriffsk
 
     In diesem Codeausschnitt wird eine `Database`-Eigenschaft definiert, mit der eine neue `Database`-Instanz als Singleton erstellt wird. Als Argumente für den Konstruktor der `Database`-Klasse werden ein lokaler Dateipfad und ein Dateiname als Speicherort der Datenbank übergeben.
 
-    > [!IMPORTANT Durch das Bereitstellen der Datenbank als Singleton kann eine einzelne Datenbankverbindung erstellt werden, die während der Ausführung der App offen bleibt, sodass der Aufwand für das Öffnen und Schließen der Datenbank beim Ausführen des Datenbankvorgangs vermieden wird.
-    
+    > [!IMPORTANT]
+    > Durch das Bereitstellen der Datenbank als Singleton kann eine einzelne Datenbankverbindung erstellt werden, die während der Ausführung der App offen bleibt, sodass der Aufwand für das Öffnen und Schließen der Datenbank beim Ausführen des Datenbankvorgangs vermieden wird.
+
 1. Erstellen Sie die Projektmappe, um sich zu vergewissern, dass keine Fehler vorliegen.

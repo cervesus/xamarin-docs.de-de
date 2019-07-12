@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2c6c71f5ed46cc1cae66c5d1f412898825805cc6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 16ceaba572ca932777bb366d9f7c58f6dcb24f70
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187522"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67841502"
 ---
 Die Unterklasse [`Application`](xref:Xamarin.Forms.Application) enthält ein statisches [`Properties`](xref:Xamarin.Forms.Application.Properties)-Wörterbuch, das zum Speichern von Daten bei Zustandsänderungen des Lebenszyklus verwendet werden kann. Das Wörterbuch verwendet einen `string`-Schlüssel und speichert einen `object`-Wert. Das Wörterbuch wird automatisch auf dem Gerät gespeichert und wird bei Neustart der Anwendung erneut aufgefüllt.
 
@@ -20,9 +20,7 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
     ```csharp
     using System;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace AppLifecycleTutorial
     {
         public partial class App : Application
@@ -126,9 +124,7 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
     ```csharp
     using System;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace AppLifecycleTutorial
     {
         public partial class App : Application
