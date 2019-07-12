@@ -1,15 +1,15 @@
 ---
-ms.openlocfilehash: 05f1017f8c4b306996d3e8e165511ff9062a1026
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ef16224b9ef060ff8643211b8e1f0c767c518bdf
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61047611"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67841579"
 ---
 
 Die folgende Befehlszeile zum Angeben eines Releasebuilds der Lösung **SOLUTION_FILE.sln** für das iPhone. Der Speicherort der IPA kann festgelegt werden, durch Angabe der `IpaPackageDir` Eigenschaft in der Befehlszeile:
 
- - Auf dem Mac mit **Xbuild**:
+- Auf dem Mac mit **Xbuild**:
 
         xbuild /p:Configuration="Release" \ 
            /p:Platform="iPhone" \ 
@@ -18,7 +18,7 @@ Die folgende Befehlszeile zum Angeben eines Releasebuilds der Lösung **SOLUTION
 
 Die **Xbuild** Befehl befindet sich in der Regel im Verzeichnis **/Library/Frameworks/Mono.framework/Commands**.
 
- - Auf Windows, die mit **Msbuild**:
+- Auf Windows, die mit **Msbuild**:
 
         msbuild /p:Configuration="Release" 
             /p:Platform="iPhone" 
