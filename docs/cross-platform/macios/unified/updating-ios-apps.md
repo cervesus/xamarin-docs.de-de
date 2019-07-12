@@ -6,12 +6,12 @@ ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4d506232903d4a94ac20a1fb9f93a39884d9099c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e471aaca2a7a5f247b21dd1c1863a01b062a716
+ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61213677"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67855751"
 ---
 # <a name="updating-existing-ios-apps"></a>Aktualisieren von vorhandenen iOS-Apps
 
@@ -31,7 +31,7 @@ Bevor Sie den vorhandenen Code der Unified API aktualisieren, es wird dringend e
 
 ## <a name="automated-updating"></a>Automatisierte Updates
 
-Sobald die Warnungen behoben wurden, wählen Sie ein vorhandenes iOS-Projekt in Visual Studio für Mac oder Visual Studio, und wählen Sie **Migration zur vereinheitlichten Xamarin.iOS-API** aus der **Projekt** Menü. Zum Beispiel:
+Sobald die Warnungen behoben wurden, wählen Sie ein vorhandenes iOS-Projekt in Visual Studio für Mac oder Visual Studio, und wählen Sie **Migration zur vereinheitlichten Xamarin.iOS-API** aus der **Projekt** Menü. Beispiel:
 
 ![](updating-ios-apps-images/beta-tool1.png "Vereinheitlichten Xamarin.iOS-API migrieren möchten, aus dem Menü \"Projekt\"")
 
@@ -115,4 +115,3 @@ Unabhängig davon, ob Sie die automatische oder manuelle Methode verwenden, um I
 - [Tipps zum Aktualisieren von Code für Unified API](~/cross-platform/macios/unified/updating-tips.md)
 - [Arbeiten mit nativen Typen in plattformübergreifenden Apps](~/cross-platform/macios/native-types-cross-platform.md)
 - [Klassischen Vs Unified API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
-- [Migrieren zu Unified API (video)](http://university.xamarin.com/lightninglectures/migrating-to-the-unified-api)

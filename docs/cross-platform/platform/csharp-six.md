@@ -1,22 +1,25 @@
 ---
 title: C#Übersicht über die der neuen Funktionen von 6
-description: Die neueste Version von der C# Language – Version 6 – wird die Sprache aus, um weniger Textbausteine, bessere Übersichtlichkeit und mehr Konsistenz zu erhalten. Bereinigung Initialization-Syntax, die Möglichkeit, verwenden Sie "await" in Catch/finally-Blöcken, und der Null-bedingte? Operator sind besonders nützlich.
+description: Version 6 von der C# Sprache wird die Sprache aus, um weniger Codebausteine, bessere Übersichtlichkeit und mehr Konsistenz zu erhalten. Bereinigung Initialization-Syntax, die Möglichkeit, verwenden Sie "await" in Catch/finally-Blöcken, und der Null-bedingte? Operator sind besonders nützlich.
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 1a261c009f105994ac0b9c84f3d0ac037c4a3517
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 0fd7f4e9972f7bf762a44c9edf30fa13f9d989bc
+ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978501"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850947"
 ---
 # <a name="c-6-new-features-overview"></a>C#Übersicht über die der neuen Funktionen von 6
 
-_Die neueste Version von der C# Language – Version 6 – wird die Sprache aus, um weniger Textbausteine, bessere Übersichtlichkeit und mehr Konsistenz zu erhalten. Bereinigung Initialization-Syntax, die Möglichkeit, verwenden Sie "await" in Catch/finally-Blöcken, und der Null-bedingte? Operator sind besonders nützlich._
+_Version 6 von der C# Sprache wird die Sprache aus, um weniger Codebausteine, bessere Übersichtlichkeit und mehr Konsistenz zu erhalten. Bereinigung Initialization-Syntax, die Möglichkeit, verwenden Sie "await" in Catch/finally-Blöcken, und der Null-bedingte? Operator sind besonders nützlich._
+
+> [!NOTE]
+> Informationen über die neueste Version von der C# Language – Version 7 – finden Sie im Artikel [What's New in C# 7.0](/dotnet/csharp/whats-new/csharp-7)
 
 In diesem Dokument werden die neuen Features von C# 6. Wird vollständig von dem mono-Compiler unterstützt, und Entwickler können mithilfe der neuen Funktionen auf allen Zielplattformen von Xamarin starten.
 
