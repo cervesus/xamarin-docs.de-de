@@ -6,12 +6,12 @@ ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: cbe0be19e38892d06a79831d7974fbddcb71a9ac
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: c298d3dc772929a123b6b65b0efe929f023a6563
+ms.sourcegitcommit: 7dbfac5f68c55f40dd726aa1b03cff62082fe711
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978484"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866356"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>Erstellen von Bindungen mit objektive Sharpie
 
@@ -43,7 +43,7 @@ Ziel-Sharpie ist jedoch ein sehr fortschrittlichen Tool, das erfordert erweitert
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Objektive Sharpie-download](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
+- [Objektive Sharpie-download](https://aka.ms/objective-sharpie)
 - [Exemplarische Vorgehensweise: Binden eine Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Informationen zu](~/cross-platform/macios/binding/overview.md)
