@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f53c1afd7c3f835bff2aae507b9937067bde4bec
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832517"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865735"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Dialogfelder in Xamarin.Mac
 
@@ -127,10 +127,10 @@ Um ein neues Fenster hinzuzufügen, führen Sie folgende Schritte aus:
 6. Erstellen Sie eine **modale Segue** über das Hauptfenster der app auf die neue View Controller durch Ziehen von Steuerelementen aus dem UI-Element, das im Dialogfeld, um das Dialogfeld "-Fenster geöffnet wird. Weisen Sie die **Bezeichner** `ModalSegue`: 
 
     [![](dialog-images/new06.png "Eine modale segue")](dialog-images/new06.png#lightbox)
-6. Über das Netzwerk von einem **Aktionen** und **Outlets**: 
+7. Über das Netzwerk von einem **Aktionen** und **Outlets**: 
 
     [![](dialog-images/new04.png "Konfigurieren eine Aktion")](dialog-images/new04.png#lightbox)
-6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+8. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
 
 Stellen Sie die `CustomDialogController.cs` Datei aussehen wie folgt:
 
@@ -265,19 +265,19 @@ Führen Sie zum Erstellen einer benutzerdefinierten Tabelle in Xamarin.Mac wir F
 2. Ziehen Sie ein neues **Ansichtscontroller** in der Entwurfsoberfläche:
 
     [![](dialog-images/new01.png "Wenn Sie einen Ansichtscontroller auswählen, aus der Bibliothek")](dialog-images/new01.png#lightbox)
-2. Entwerfen der Benutzeroberfläche an:
+3. Entwerfen der Benutzeroberfläche an:
 
     [![](dialog-images/sheet01.png "Das Design der Benutzeroberfläche")](dialog-images/sheet01.png#lightbox)
-3. Erstellen Sie eine **Blatt Segue** aus das Hauptfenster auf die neue View Controller: 
+4. Erstellen Sie eine **Blatt Segue** aus das Hauptfenster auf die neue View Controller: 
 
     [![](dialog-images/sheet02.png "Blatt Segue-Typ auswählen")](dialog-images/sheet02.png#lightbox)
-4. In der **Identitätsinspektor**, benennen Sie den Ansichtscontroller **Klasse** `SheetViewController`: 
+5. In der **Identitätsinspektor**, benennen Sie den Ansichtscontroller **Klasse** `SheetViewController`: 
 
     [![](dialog-images/sheet03.png "Den Namen der Klasse festlegen")](dialog-images/sheet03.png#lightbox)
-5. Definieren Sie alle erforderlichen **Outlets** und **Aktionen**: 
+6. Definieren Sie alle erforderlichen **Outlets** und **Aktionen**: 
 
     [![](dialog-images/sheet04.png "Definieren die erforderlichen Outlets und Aktionen")](dialog-images/sheet04.png#lightbox)
-6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac, um zu synchronisieren.
+7. Die Änderungen zu speichern und zurück zu Visual Studio für Mac, um zu synchronisieren.
 
 Als Nächstes bearbeiten Sie die `SheetViewController.cs` Datei, und stellen sie wie folgt aussehen:
 

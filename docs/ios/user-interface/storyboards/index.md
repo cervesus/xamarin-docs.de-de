@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 79c1d7852cdde9b557965931706fcd24e43954f7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831701"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865221"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in Xamarin.iOS
 
@@ -327,7 +327,7 @@ Bevor wir beginnen, befolgen Sie die Schritte 1 – 8 oben. In den folgenden Sch
         - Farbe: Rot
         - Ausrichtung: Center
         - Zeilen: 2
-        - Kontrollkästchen 'Hidden' 
+        - Kontrollkästchen 'Hidden'    
         
     [![](images/passwordvc.png "Center Zeilen")](images/passwordvc.png#lightbox)
     
@@ -424,25 +424,25 @@ Um einen Verweis auf eine bestimmte Szene hinzufügen wie eines externen Storybo
 
     [![](images/ref08.png "Geben Sie ein Storyboard-ID für den neuen Szenen-Ansichtscontroller")](images/ref08.png#lightbox)
     
-3. Öffnen Sie das Storyboard, das auf den Verweis in der iOS-Designer hinzugefügt werden.
+4. Öffnen Sie das Storyboard, das auf den Verweis in der iOS-Designer hinzugefügt werden.
 
-4. Ziehen Sie eine **Storyboard-Verweis** aus der **Toolbox** auf die Entwurfsoberfläche: 
+5. Ziehen Sie eine **Storyboard-Verweis** aus der **Toolbox** auf die Entwurfsoberfläche: 
 
     [![](images/ref03.png "Ein Storyboard-Verweis")](images/ref03.png#lightbox)
     
-5. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, wählen Sie den Namen des der **Storyboard** und **Referenz-ID** (Storyboard-ID) von der Eine Szene, die Sie soeben erstellt haben: 
+6. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, wählen Sie den Namen des der **Storyboard** und **Referenz-ID** (Storyboard-ID) von der Eine Szene, die Sie soeben erstellt haben: 
 
     [![](images/ref09.png "Die Registerkarte \"Widget\" ")](images/ref09.png#lightbox)
     
-6. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben: 
+7. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben: 
 
     [![](images/ref10.png "Erstellen eines segues")](images/ref10.png#lightbox) 
     
-7. Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
+8. Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
 
     [![](images/ref06.png "Anzeigen, die zum Abschließen der Segue auswählen")](images/ref06.png#lightbox) 
     
-8. Speichern Sie die Änderungen auf das Storyboard an.
+9. Speichern Sie die Änderungen auf das Storyboard an.
 
 Wenn die app ausführen und dem Benutzer klickt auf das Element der Benutzeroberfläche, die Sie aus, mit der Segue erstellt die angegebenen **Storyboard-ID** aus dem externen Storyboard in der Storyboard-Verweis angegeben wird angezeigt.
 
@@ -462,9 +462,9 @@ Um einen Verweis auf eine bestimmte Szene das gleiche Storyboard hinzuzufügen, 
 
     [![](images/ref12.png "Die Registerkarte \"Widget\"")](images/ref12.png#lightbox)
     
-3. Ziehen Sie eine **Storyboard-Verweis** aus der **Toolbox** auf die Entwurfsoberfläche: 
+4. Ziehen Sie eine **Storyboard-Verweis** aus der **Toolbox** auf die Entwurfsoberfläche: 
 
-    [![](images/ref03.png "Ein Storyboard-Verweis")](images/ref03.png#lightbox)
+   [![](images/ref03.png "Ein Storyboard-Verweis")](images/ref03.png#lightbox)
     
 5. In der **Widget** Registerkarte die **Eigenschaften-Explorer**Option **Referenz-ID** (Storyboard-ID) der Szene, die Sie soeben erstellt haben: 
 

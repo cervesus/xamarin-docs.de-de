@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c30d70d8a36c0e5a9b9ff6ddc74710dec4fb86a4
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199766"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864396"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple-Plattform (iOS und Mac)
 
@@ -21,7 +21,7 @@ Für Elemente des Codes, die keine Elemente der Benutzeroberfläche die beste Me
 
 Für Code, der einige Arbeit für die Benutzeroberfläche durchgeführt werden und noch, Sie freigeben möchten, verwenden Sie [freigegebene Projekte](~/cross-platform/app-fundamentals/shared-projects.md) , mit denen Sie fügen Code in einem einzelnen Projekt freigeben und mit Mac und iOS aus, wenn auf die verwiesen wird kompiliert.
 
-##  <a name="unified-apiunifiedindexmd"></a>[Unified API](unified/index.md)
+## <a name="unified-apiunifiedindexmd"></a>[Unified API](unified/index.md)
 
 Die Unified API für IOS- und Mac-Projekte verwendet die gleichen Namespaces für Frameworks, sodass derselben Codedatei auf beiden Plattformen, für die nahtlose Freigeben von Code verwendet werden kann. Darüber hinaus können 32- und 64-Bit-Builds. Der Unified API ist seit Anfang 2015 die Standardvorlage und wird empfohlen, für alle neuen Projekte - *nur* Unified-API-Projekte können an den App Store übermittelt werden.
 
@@ -47,11 +47,11 @@ Xamarin ermöglicht Ihnen die native Bibliotheken in Ihre apps mit Bindungen zu 
 
 ## <a name="native-referencesnative-referencesmd"></a>[Native Verweise](native-references.md)
 
-##  <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS Native Typen](nativetypes.md)
+## <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS Native Typen](nativetypes.md)
 
 Zur Unterstützung von 32 und 64-Bit-Code transparent aus C# und F#, wir werden neue Datentypen eingeführt.   Erfahren sie hier.
 
-##  <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[Erstellen von 32- und 64-Bit-Anwendungen](32-and-64/index.md)
+## <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[Erstellen von 32- und 64-Bit-Anwendungen](32-and-64/index.md)
 
 Was müssen Sie wissen, um 32- und 64-Bit-Anwendungen zu unterstützen.
 

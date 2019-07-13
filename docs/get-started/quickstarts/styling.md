@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 53d2a0aae3398ea31676fbc3dab95d500dfe2104
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: 1b68afc1f3d3c57a5c336e9d30c97ce2375acb9f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309506"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864347"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>Formatieren einer plattformübergreifenden Xamarin.Forms-Anwendung
 
@@ -29,7 +29,7 @@ Der Schnellstart erläutert, wie Sie eine plattformübergreifende Xamarin.Forms-
 [![](styling-images/screenshots1-sml.png "Anmerkungen zu dieser Seite")](styling-images/screenshots1.png#lightbox "– Anmerkungen zu dieser Seite")
 [![](styling-images/screenshots2-sml.png "Beachten Sie die Seite für")](styling-images/screenshots2.png#lightbox "Hinweis Seite für")
 
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](database.md) bevor Sie versuchen, die in dieser schnellstartanleitung. Alternativ Herunterladen der [vorherigen schnellstartbeispiel](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/) und als Ausgangspunkt für diesen Schnellstart verwenden.
 
@@ -120,7 +120,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](dat
 
     Speichern Sie die Änderungen an **NotesPage.xaml** durch Drücken von **STRG + S**, und schließen Sie die Datei.
 
-5. In **Projektmappen-Explorer**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NoteEntryPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+4. In **Projektmappen-Explorer**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NoteEntryPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -169,7 +169,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](dat
 
     Speichern Sie die Änderungen an **NoteEntryPage.xaml** durch Drücken von **STRG + S**, und schließen Sie die Datei.
 
-6. Erstellen Sie und führen Sie das Projekt auf jeder Plattform. Weitere Informationen finden Sie unter [des Schnellstarts erstellen](single-page.md#building-the-quickstart).
+5. Erstellen Sie und führen Sie das Projekt auf jeder Plattform. Weitere Informationen finden Sie unter [des Schnellstarts erstellen](single-page.md#building-the-quickstart).
 
     Auf der **NotesPage** drücken Sie die **+** Schaltfläche, um das Navigieren zu der **NoteEntryPage** und geben Sie einen Hinweis. Beachten Sie auf jeder Seite wie die Formatierung aus vorherigen Schnellstart geändert hat.
 
@@ -261,7 +261,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](dat
 
     Speichern Sie die Änderungen an **NotesPage.xaml** dazu **Datei > Speichern** (oder durch Drücken der  **&#8984; + S**), und schließen Sie die Datei.
 
-5. In der **Lösungspad**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NoteEntryPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+4. In der **Lösungspad**in die **Anmerkungen zu dieser** Projekt, doppelklicken Sie auf **NoteEntryPage.xaml** um ihn zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -310,7 +310,7 @@ Sie sollte erfolgreich abgeschlossen. die [vorherigen schnellstartanleitung](dat
 
     Speichern Sie die Änderungen an **NoteEntryPage.xaml** dazu **Datei > Speichern** (oder durch Drücken der  **&#8984; + S**), und schließen Sie die Datei.
 
-6. Erstellen Sie und führen Sie das Projekt auf jeder Plattform. Weitere Informationen finden Sie unter [des Schnellstarts erstellen](single-page.md#building-the-quickstart).
+5. Erstellen Sie und führen Sie das Projekt auf jeder Plattform. Weitere Informationen finden Sie unter [des Schnellstarts erstellen](single-page.md#building-the-quickstart).
 
     Auf der **NotesPage** drücken Sie die **+** Schaltfläche, um das Navigieren zu der **NoteEntryPage** und geben Sie einen Hinweis. Beachten Sie auf jeder Seite wie die Formatierung aus vorherigen Schnellstart geändert hat.
 

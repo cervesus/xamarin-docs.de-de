@@ -6,27 +6,27 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 923ec41443feff67d851a0c2f3cba1b948aed580
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978460"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864415"
 ---
 # <a name="binding-objective-c"></a>Binden von Objective-C
 
 Dieser Abschnitt enthält eine Reihe von Dokumenten Erstellen von Bindungen für Objective-C-Bibliotheken, damit sie von aufgerufen werden können C# Anwendungen, die mit Xamarin.iOS oder Xamarin.Mac erstellt wurden.
 
-##  <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[Übersicht](~/cross-platform/macios/binding/overview.md)
+## <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[Übersicht](~/cross-platform/macios/binding/overview.md)
 
 Dieses Dokument enthält einige der die Interna der wie eine Bindung durchgeführt wird. Es ist eine erweiterte Dokument mit technischen Informationen.
 
-##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
+## <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
 
 Dieses Dokument beschreibt den Prozess zum Erstellen C# Bindungen von Objective-C-APIs und wie die Ausdrücke in .NET verwendet, die Ausdrücke in Objective-C zugeordnet werden.
 Wenn Sie nur die C-APIs binden, sollten Sie den Standardmechanismus für .NET dafür das P/Invoke-Framework verwenden.
 
-##  <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[Bindung Definition – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
+## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[Bindung Definition – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
 
 Dies ist die Referenz-Anleitung, die alle Attribute für Autoren von Bindungen, die den Generierungsprozess der Bindung Laufwerk beschreibt.
 

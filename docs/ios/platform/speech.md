@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: c1f488213f9b3be945fd98e09f630c243d0b0d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8af7474036eb0fd6e2236cf52e96b8d12c8bc44e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382837"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865704"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Spracherkennung in Xamarin.iOS
 
@@ -105,21 +105,21 @@ Zu den erforderlichen `NSSpeechRecognitionUsageDescription` -Schlüssel in der `
 2. Wechseln Sie zu der **Quelle** anzeigen: 
 
     [![](speech-images/speech02.png "Die Datenquellensicht")](speech-images/speech02.png#lightbox)
-3. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Zum Beispiel: 
+3. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Beispiel: 
 
     [![](speech-images/speech03.png "Hinzufügen von NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. Wenn die app live audiotranskription durchführen, müssen sie auch eine Nutzungsbeschreibung für Mikrofon. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Zum Beispiel: 
+4. Wenn die app live audiotranskription durchführen, müssen sie auch eine Nutzungsbeschreibung für Mikrofon. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Beispiel: 
 
     [![](speech-images/speech04.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
-4. Speichern Sie die Änderungen in der Datei.
+5. Speichern Sie die Änderungen in der Datei.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei, die sie für die Bearbeitung zu öffnen.
-3. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Zum Beispiel: 
+2. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Beispiel: 
 
     [![](speech-images/speech03w.png "Hinzufügen von NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
-4. Wenn die app live audiotranskription durchführen, müssen sie auch eine Nutzungsbeschreibung für Mikrofon. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Zum Beispiel: 
+3. Wenn die app live audiotranskription durchführen, müssen sie auch eine Nutzungsbeschreibung für Mikrofon. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Beispiel: 
 
     [![](speech-images/speech04w.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
 4. Speichern Sie die Änderungen in der Datei.
@@ -243,7 +243,7 @@ Wenn der Rückruf aufgerufen wird, wenn die `NSError` ist nicht `null` wurde ein
 
 ### <a name="recognizing-live-speech"></a>Erkennen von Live-Sprache
 
-Wenn möchte, dass die app live Sprache zu erkennen, ist der Prozess ähnelt aufgezeichnete Sprache erkennen. Zum Beispiel:
+Wenn möchte, dass die app live Sprache zu erkennen, ist der Prozess ähnelt aufgezeichnete Sprache erkennen. Beispiel:
 
 ```csharp
 using System;

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 26ab7880b3c4b6176c806783fec7a499d68511c3
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 696432fb51060a236780eedee0b60661e3a86712
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831907"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865192"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Standardsteuerelemente in Xamarin.Mac
 
@@ -603,16 +603,16 @@ Führen Sie folgende Schritte aus, um eine im Popover zu erstellen:
 2. Ziehen Sie eine **Domänencontroller anzeigen** aus der **Bibliotheksinspektor** auf die **Schnittstellen-Editor**: 
 
     [![](standard-controls-images/content02.png "Wenn Sie einen Ansichtscontroller auswählen, aus der Bibliothek")](standard-controls-images/content02.png#lightbox)
-4. Definieren Sie die Größe und das Layout der **benutzerdefinierte Sicht**: 
+3. Definieren Sie die Größe und das Layout der **benutzerdefinierte Sicht**: 
 
     [![](standard-controls-images/content04.png "Bearbeiten des Layouts")](standard-controls-images/content04.png#lightbox)
-5. Strg + Klick und ziehen Sie aus der Quelle des Popups auf den **Ansichtscontroller**: 
+4. Strg + Klick und ziehen Sie aus der Quelle des Popups auf den **Ansichtscontroller**: 
 
     [![](standard-controls-images/content05.png "Ziehen zum Erstellen eines segues")](standard-controls-images/content05.png#lightbox)
-6. Wählen Sie **Popover** im Popup-Menü: 
+5. Wählen Sie **Popover** im Popup-Menü: 
 
     [![](standard-controls-images/content06.png "Segue-Typ")](standard-controls-images/content06.png#lightbox)
-7. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
 
 <a name="Tab_Views" />
 

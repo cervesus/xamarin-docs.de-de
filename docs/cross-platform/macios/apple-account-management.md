@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 28a7d299e78a7fa6837ba9285795d380760f13b7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61206225"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864643"
 ---
 # <a name="apple-account-management"></a>Apple-Kontoverwaltung
 
@@ -54,17 +54,17 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
 
     ![FastLane-Dialogfeld.](apple-account-management-images/image2.png)
 
-4. Geben Sie Ihre Apple-ID und Kennwort ein, und klicken Sie auf die **Anmeldung** Schaltfläche. Dadurch werden Ihre Anmeldeinformationen in der sicheren Keychain auf diesem Computer speichern. [FastLane](~/ios/deploy-test/provisioning/fastlane/index.md) wird verwendet, um Ihre Anmeldeinformationen sicher verarbeitet und an Apple Developer Portal übergeben werden.
+3. Geben Sie Ihre Apple-ID und Kennwort ein, und klicken Sie auf die **Anmeldung** Schaltfläche. Dadurch werden Ihre Anmeldeinformationen in der sicheren Keychain auf diesem Computer speichern. [FastLane](~/ios/deploy-test/provisioning/fastlane/index.md) wird verwendet, um Ihre Anmeldeinformationen sicher verarbeitet und an Apple Developer Portal übergeben werden.
  
-5. Wählen Sie **immer zulassen** auf das Dialogfeld "Warnung" zu Visual Studio, um die Anmeldeinformationen zu verwenden:
+4. Wählen Sie **immer zulassen** auf das Dialogfeld "Warnung" zu Visual Studio, um die Anmeldeinformationen zu verwenden:
 
     ![Dialogfeld "Warnung" immer zulassen](apple-account-management-images/image4.png)
 
-6. Sobald Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie sich Ihre Apple-ID und alle Teams, denen Ihre Apple-ID gehört.
+5. Sobald Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie sich Ihre Apple-ID und alle Teams, denen Ihre Apple-ID gehört.
 
     ![Apple Developer-Konto-Dialogfeld mit Konten hinzugefügt](apple-account-management-images/image5.png)
 
-7. Wählen Sie alle Teams, und drücken Sie die **Details anzeigen...** Schaltfläche. Dies zeigt eine Liste aller von Signierungsidentitäten und Bereitstellungsprofile, die auf Ihrem Computer installiert sind:
+6. Wählen Sie alle Teams, und drücken Sie die **Details anzeigen...** Schaltfläche. Dies zeigt eine Liste aller von Signierungsidentitäten und Bereitstellungsprofile, die auf Ihrem Computer installiert sind:
 
     ![Ansicht Details Bildschirm, mit dem codesignieridentitäten und bereitstellungsprofile auf Ihrem Computer](apple-account-management-images/image6.png)
 

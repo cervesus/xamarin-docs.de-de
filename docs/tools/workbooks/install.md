@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: a1001163d89a9a9cda16a7ee5e644307fcc9875c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb79323c416c107c35c465bc2a8815ab267cc451
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218591"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865938"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Workbooks-Installation und Anforderungen
 
@@ -149,8 +149,8 @@ Für frühere Versionen müssen Sie manuell Folgendes entfernen:
 
 1. Löschen Sie die Workbooks-App unter `"/Applications/Xamarin Workbooks.app"`.
 2. Löschen Sie die Inspector-App unter `"Applications/Xamarin Inspector.app"`.
-2. Löschen Sie die Add-ins `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` und `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`.
-3. Löschen Sie Inspector und die unterstützenden Dateien hier: `/Library/Frameworks/Xamarin.Interactive.framework` und `/Library/Frameworks/Xamarin.Inspector.framework`.
+3. Löschen Sie die Add-ins `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` und `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`.
+4. Löschen Sie Inspector und die unterstützenden Dateien hier: `/Library/Frameworks/Xamarin.Interactive.framework` und `/Library/Frameworks/Xamarin.Inspector.framework`.
 
 ## <a name="downgrading"></a>Ein Downgrade
 

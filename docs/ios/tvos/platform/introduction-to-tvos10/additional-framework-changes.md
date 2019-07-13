@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3eccba01f235382b7969a2f4a122c09ce9b4127b
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ab6236198d0a5826fc613d1f3839bafdb980d235
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832352"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865647"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Zusätzliche TvOS 10 Frameworks Änderungen
 
@@ -25,7 +25,7 @@ Zusätzlich zu den wichtigsten Änderungen, tvos hat Apple Änderungen und Verbe
 Das Framework AVFoundation umfasst folgende Erweiterungen:
 
 - In TvOS 10 und die app nicht mehr implementiert verschiedene [AVPlayerItem](https://developer.apple.com/reference/avfoundation/avplayeritem) Verhalten basierend auf Inhaltstyp. Legen Sie einfach die `Rate` -Eigenschaft und AVFoundation bestimmt Wenn genügend Inhalte ohne treten für die Wiedergabe verfügbar ist.
- - Die neue `AVPlayerLooper` Klasse macht es einfacher, einen bestimmten Media während der Wiedergabe in einer Schleife.
+- Die neue `AVPlayerLooper` Klasse macht es einfacher, einen bestimmten Media während der Wiedergabe in einer Schleife.
 
 <a name="AVKit-Framework-Enhancements" />
 

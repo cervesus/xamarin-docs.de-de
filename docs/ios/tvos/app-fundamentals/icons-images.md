@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 96af7fab366c3fd3493cf5adbf183d80b7c1ee26
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dab1b0f7bf7aabb4dfcfbfdcb5e202baa48e664d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61418194"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865167"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit TvOS Symbole und Bilder in Xamarin
 
@@ -181,7 +181,7 @@ Führen Sie zum Festlegen der App-Symbole, die für Ihr Projekt TvOS erforderlic
 5. Klicken Sie auf die **1 x Apple TV-Eintrag** , und wählen Sie eine Bilddatei.
 6. Wiederholen Sie die oben genannten Schritte für die `Front` und `Middle` Bestand.
 7. Wiederholen Sie dann die gleichen Schritte zum Definieren der `App Icon - Large` Asset.
-4. Speichern Sie die Änderungen.
+8. Speichern Sie die Änderungen.
 
 <a name="Top-Shelf-Image" />
 
@@ -218,8 +218,8 @@ Führen Sie zum Festlegen der Top-Shelf-Image für Ihr Projekt TvOS erforderlich
 3. Klicken Sie auf die `Top Shelf Image` Medienobjekt: 
 
     [![](icons-images-images/asset07.png "Das Medienobjekt Top Shelf Image")](icons-images-images/asset07.png#lightbox)
-5. Klicken Sie auf die **1 x Apple TV-Eintrag** , und wählen Sie eine Bilddatei.
-6. Speichern Sie die Änderungen.
+4. Klicken Sie auf die **1 x Apple TV-Eintrag** , und wählen Sie eine Bilddatei.
+5. Speichern Sie die Änderungen.
 
 <a name="Dynamic-Top-Shelf-Content" />
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 979b103db478e3888d3a3c20df6afbd91d0c37d8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0c0bf6058b2ec7a8e3ef606bef9f725a476abffe
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386524"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865920"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>WatchOS proaktive Vorschläge in Xamarin
 
@@ -132,7 +132,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>Wiederherstellen einer Aktivitäts
 
-Für den Benutzer Tippen auf ein Suchergebnis reagieren (`NSUserActivity`) für die app Bearbeiten der **Datei "appdelegate.cs"** Datei, und überschreiben die `ContinueUserActivity` Methode. Zum Beispiel:
+Für den Benutzer Tippen auf ein Suchergebnis reagieren (`NSUserActivity`) für die app Bearbeiten der **Datei "appdelegate.cs"** Datei, und überschreiben die `ContinueUserActivity` Methode. Beispiel:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -169,9 +169,9 @@ Im folgende Abschnitt wird einen Blick auf zwei weitere neue iOS 10-Funktionen a
 Betrachten Sie beispielsweise das Restaurant-Suchanwendung, die oben genannten. Wenn sie implementiert hat `NSUserActivity` und korrekt alle Metadaten und Attribute, die Benutzer können die folgenden Schritte ausführen:
 
 1. Finden Sie ein Restaurant, in der app, der sie einen Freund am zu erfüllen möchten.
-4. Wenn der Benutzer an die Maps-app wechselt, wird das Restaurant die Adresse als Ziel automatisch vorgeschlagen.
-5. Dies funktioniert sogar für 3. apps von Drittanbietern (, unterstützen `NSUserActivity`), sodass der Benutzer für eine Fahrt-Freigabe-app wechseln kann und das Restaurant die Adresse wird automatisch auch als Ziel es empfohlen.
-6. Es stellt auch Kontext siri, kann der Benutzer Aufrufen von Siri innerhalb der app Restaurant und bitten Sie *"Abrufen einer Wegbeschreibung..."* und Siri bietet Anweisungen für das Restaurant anzeigen.
+2. Wenn der Benutzer an die Maps-app wechselt, wird das Restaurant die Adresse als Ziel automatisch vorgeschlagen.
+3. Dies funktioniert sogar für 3. apps von Drittanbietern (, unterstützen `NSUserActivity`), sodass der Benutzer für eine Fahrt-Freigabe-app wechseln kann und das Restaurant die Adresse wird automatisch auch als Ziel es empfohlen.
+4. Es stellt auch Kontext siri, kann der Benutzer Aufrufen von Siri innerhalb der app Restaurant und bitten Sie *"Abrufen einer Wegbeschreibung..."* und Siri bietet Anweisungen für das Restaurant anzeigen.
 
 Alle oben genannten Funktionen gemeinsam ist eine Sache, alle anzugeben, in dem der Vorschlag ursprünglich stammt. Im Fall der obigen Beispiel ist es die fiktiven Restaurant-app überprüfen.
 
@@ -297,7 +297,7 @@ In diesem Abschnitt dauert einen Blick auf die Speicherort-Vorschläge aus dem d
 - Behandeln, beim Starten der app mit einem MapKit `MKDirectionsRequest` Objekt.
 - Geben Sie die Möglichkeit, erfahren Sie, wie die app basierend auf Benutzerinteraktion vorschlagen WatchOS.
 
-Wenn die app gestartet wird, mit einem MapKit `MKDirectionsRequest` -Objekt, sollten sie automatisch gestartet, sodass die Benutzer-Anweisungen auf den angeforderten Pfad oder stellen eine Benutzeroberfläche, die für den Benutzer zu Anfordern einer Wegbeschreibung vereinfacht. Zum Beispiel:
+Wenn die app gestartet wird, mit einem MapKit `MKDirectionsRequest` -Objekt, sollten sie automatisch gestartet, sodass die Benutzer-Anweisungen auf den angeforderten Pfad oder stellen eine Benutzeroberfläche, die für den Benutzer zu Anfordern einer Wegbeschreibung vereinfacht. Beispiel:
 
 
 ```csharp

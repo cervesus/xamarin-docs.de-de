@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 22ac6a3776e5fa5de2fc238efe90c435190e8005
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f6d059e5a30e7e3dac92a2c4e0e6079222e66b22
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832075"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865204"
 ---
 # <a name="push-notifications-in-ios"></a>Senden von Pushbenachrichtigungen in iOS
 
@@ -55,36 +55,36 @@ Ihr eigenes Zertifikat für jede der im vorherigen Abschnitt erwähnten Umgebung
 
 4. Stellen Sie sicher, dass **Explicit App ID** und, die die Bündel-ID endet nicht mit einem `*` . Hiermit wird einen Bezeichner, der für mehrere Anwendungen gut ist, und Notification-Push-Zertifikate müssen für eine einzelne Anwendung sein.
 
-1. Wählen Sie die App-Dienste, **Pushbenachrichtigungen**:
+5. Wählen Sie die App-Dienste, **Pushbenachrichtigungen**:
 
     [![](remote-notifications-in-ios-images/image8new.png "Erste Schritte mit Pushbenachrichtigungen aktivieren")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
-2. Drücken Sie **senden** , Registrierung von in die neue App-ID zu bestätigen:
+6. Drücken Sie **senden** , Registrierung von in die neue App-ID zu bestätigen:
 
     [![](remote-notifications-in-ios-images/image9new.png "Bestätigen Sie die Registrierung von in die neue App-ID")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-3.  Als Nächstes müssen Sie das Zertifikat für die app-ID erstellen. Navigieren Sie im linken Navigationsbereich zu **Zertifikate > alle** , und wählen Sie die `+` Schaltfläche wie im folgenden Screenshot gezeigt:
+7.  Als Nächstes müssen Sie das Zertifikat für die app-ID erstellen. Navigieren Sie im linken Navigationsbereich zu **Zertifikate > alle** , und wählen Sie die `+` Schaltfläche wie im folgenden Screenshot gezeigt:
 
     [![](remote-notifications-in-ios-images/image10new.png "Erstellen Sie das Zertifikat für die app-ID")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4. Wählen Sie, ob Sie ein Zertifikat für Entwicklung oder Produktion verwenden möchten:
+8. Wählen Sie, ob Sie ein Zertifikat für Entwicklung oder Produktion verwenden möchten:
 
     [![](remote-notifications-in-ios-images/image11new.png "Wählen Sie ein Zertifikat für Entwicklung oder Produktion")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
-5. Ein, und wählen Sie dann auf die neue App-ID, die wir gerade erstellt haben:
+9. Ein, und wählen Sie dann auf die neue App-ID, die wir gerade erstellt haben:
 
     [![](remote-notifications-in-ios-images/image12new.png "Wählen Sie die soeben erstellte neue App-ID")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-6.  Dadurch werden die Anweisungen, mit denen Sie über den Prozess der Erstellung werden angezeigt ein *-Zertifikatsignieranforderung anfordern* mithilfe der **Keychain-Zugriff** Anwendung auf Ihrem Mac.
+10.  Dadurch werden die Anweisungen, mit denen Sie über den Prozess der Erstellung werden angezeigt ein *-Zertifikatsignieranforderung anfordern* mithilfe der **Keychain-Zugriff** Anwendung auf Ihrem Mac.
 
-7.  Nun, dass das Zertifikat erstellt wurde, muss sie verwendet werden als Teil des Buildprozesses zum Signieren der Anwendung, sodass es bei APNs registriert werden kann. Dies erfordert, erstellen und installieren ein Bereitstellungsprofil erstellen, die das Zertifikat verwendet.
+11.  Nun, dass das Zertifikat erstellt wurde, muss sie verwendet werden als Teil des Buildprozesses zum Signieren der Anwendung, sodass es bei APNs registriert werden kann. Dies erfordert, erstellen und installieren ein Bereitstellungsprofil erstellen, die das Zertifikat verwendet.
 
-8.  Navigieren Sie zum Erstellen eines entwicklungsbereitstellungsprofils zu den **Bereitstellungsprofile** aus, und führen Sie die Schritte zum Erstellen, verwenden die App-Id, die wir gerade erstellt haben.
+12.  Navigieren Sie zum Erstellen eines entwicklungsbereitstellungsprofils zu den **Bereitstellungsprofile** aus, und führen Sie die Schritte zum Erstellen, verwenden die App-Id, die wir gerade erstellt haben.
 
-9.  Nachdem Sie das Bereitstellungsprofil erstellt haben, öffnen Sie **Xcode-Organisator** und aktualisiert. Wenn das Bereitstellungsprofil, die Sie erstellt wird, dass es möglicherweise erforderlich sein, das Profil aus der iOS-Bereitstellungsportal herunterladen und manuell importieren nicht angezeigt. Der folgende Screenshot zeigt ein Beispiel der Planer, mit der Bereitstellung-Profil hinzugefügt:  
+13.  Nachdem Sie das Bereitstellungsprofil erstellt haben, öffnen Sie **Xcode-Organisator** und aktualisiert. Wenn das Bereitstellungsprofil, die Sie erstellt wird, dass es möglicherweise erforderlich sein, das Profil aus der iOS-Bereitstellungsportal herunterladen und manuell importieren nicht angezeigt. Der folgende Screenshot zeigt ein Beispiel der Planer, mit der Bereitstellung-Profil hinzugefügt:  
     [![](remote-notifications-in-ios-images/image13new.png "Dieser Screenshot zeigt ein Beispiel für den Planer mit der Bereitstellung-Profil hinzugefügt")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  An dieser Stelle müssen wir so konfigurieren Sie das Xamarin.iOS-Projekt, um diese neu erstellte Bereitstellungsprofil verwenden. Dies erfolgt durch **Projektoptionen** Dialogfeld unter **iOS Bundle-Signierung** Registerkarte wie im folgenden Screenshot gezeigt:  
+14.  An dieser Stelle müssen wir so konfigurieren Sie das Xamarin.iOS-Projekt, um diese neu erstellte Bereitstellungsprofil verwenden. Dies erfolgt durch **Projektoptionen** Dialogfeld unter **iOS Bundle-Signierung** Registerkarte wie im folgenden Screenshot gezeigt:  
     [![](remote-notifications-in-ios-images/image11.png "Konfigurieren Sie das Xamarin.iOS-Projekt, um diese neu erstellte Bereitstellungsprofil verwenden")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 An diesem Punkt ist die Anwendung für die Arbeit mit Pushbenachrichtigungen konfiguriert. Es gibt jedoch immer noch ein paar mehr Schritte erforderlich, mit dem Zertifikat. Dieses Zertifikat wird in DER-Format, das nicht kompatibel mit PushSharp, ist ein Personal Information Exchange (PKCS12)-Zertifikat erfordert. Führen Sie diese letzte Schritte aus, um das Zertifikat zu konvertieren, damit er von PushSharp verwendet werden kann:

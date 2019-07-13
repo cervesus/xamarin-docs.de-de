@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 4472654064812142e3281374754ace0042b542bf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 255603eefb4d7cfd3b906e1744aa19da6a77259a
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61089246"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865297"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Erweiterte benutzerbenachrichtigungen in Xamarin.iOS
 
@@ -65,7 +65,7 @@ Eines der gängigeren Elemente, die von Benutzern gemeinsam zu erhalten ist Foto
 
 Aufgrund der Größe, die beim Senden wird jedoch auch ein kleines Bild enthält, an eine Remote Benachrichtigungsnutzlast anzufügen unpraktisch. Um diese Situation zu behandeln, kann der Entwickler verwenden die neue Webdiensterweiterung unter iOS 10 zum Herunterladen des Images aus einer anderen Quelle (z. B. ein CloudKit-Datenspeicher), und fügen Sie ihn an die benachrichtigungs Inhalt, bevor sie dem Benutzer angezeigt wird.
 
-Für eine Remotebenachrichtigung geändert werden, indem eine Diensterweiterung muss die Nutzlast als änderbaren markiert werden. Zum Beispiel:
+Für eine Remotebenachrichtigung geändert werden, indem eine Diensterweiterung muss die Nutzlast als änderbaren markiert werden. Beispiel:
 
 ```csharp
 {
@@ -258,15 +258,15 @@ Das System muss angewiesen werden, wo finden der app Erweiterung für Benachrich
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf der Erweiterungs `Info.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
-3. Erweitern Sie die `NSExtension` Schlüssel.
-4. Hinzufügen der `UNNotificationExtensionCategory` Schlüssel wird als Typ **Zeichenfolge** mit dem Wert der Kategorie die Erweiterung gehört (in diesem Beispiel "ereigniseinladung): 
+2. Erweitern Sie die `NSExtension` Schlüssel.
+3. Hinzufügen der `UNNotificationExtensionCategory` Schlüssel wird als Typ **Zeichenfolge** mit dem Wert der Kategorie die Erweiterung gehört (in diesem Beispiel "ereigniseinladung): 
 
     [![](advanced-user-notifications-images/customui02w.png "Fügen Sie den Schlüssel UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02w.png#lightbox)
-5. Speichern Sie die Änderungen.
+4. Speichern Sie die Änderungen.
 
 -----
 
-Benachrichtigung Inhaltskategorien-Erweiterung (`UNNotificationExtensionCategory`) verwenden Sie die gleiche Kategoriewerte, die zum Registrieren der Benachrichtigung-Aktionen verwendet werden. Wechseln Sie in der Situation, in dem die app die gleiche Benutzeroberfläche für mehrere Kategorien verwendet, die `UNNotificationExtensionCategory` in den Typ **Array** , und geben Sie alle erforderlichen Kategorien. Zum Beispiel:
+Benachrichtigung Inhaltskategorien-Erweiterung (`UNNotificationExtensionCategory`) verwenden Sie die gleiche Kategoriewerte, die zum Registrieren der Benachrichtigung-Aktionen verwendet werden. Wechseln Sie in der Situation, in dem die app die gleiche Benutzeroberfläche für mehrere Kategorien verwendet, die `UNNotificationExtensionCategory` in den Typ **Array** , und geben Sie alle erforderlichen Kategorien. Beispiel:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -299,7 +299,7 @@ Um die Erweiterung für Benachrichtigungsinhalte der benutzerdefinierten Benutze
 > [!NOTE]
 > Ab iOS 12 kann eine Erweiterung für Benachrichtigungsinhalte interaktive Steuerelemente wie Schaltflächen und Textfelder enthalten. Weitere Informationen finden Sie unter den [interaktive Benachrichtigungen unter iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md) Dokumentation.
 
-Sobald der Benutzeroberflächenautomatisierungs Layout und der erforderlichen Steuerelemente zur Verfügung C# Code öffnen die `NotificationViewController.cs` zum Bearbeiten und ändern Sie die `DidReceiveNotification` Methode, um die Benutzeroberfläche zu füllen, wenn der Benutzer die Benachrichtigung erweitert. Zum Beispiel:
+Sobald der Benutzeroberflächenautomatisierungs Layout und der erforderlichen Steuerelemente zur Verfügung C# Code öffnen die `NotificationViewController.cs` zum Bearbeiten und ändern Sie die `DidReceiveNotification` Methode, um die Benutzeroberfläche zu füllen, wenn der Benutzer die Benachrichtigung erweitert. Beispiel:
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ Stellen Sie die Größe des Inhaltsbereichs für den Benutzer angezeigt, der fol
 
 Da die Benachrichtigung mit dem System bereits, bevor die Benachrichtigung Inhaltserweiterung aufgerufen wird, den Inhaltsbereich ausgeführt wird gestartet wird wird vollständige Größe und animiert werden, auf die angeforderte Größe, bei dem Benutzer angezeigt.
 
-Um diesen Effekt zu entfernen, bearbeiten die `Info.plist` Datei für die Erweiterung, und legen die `UNNotificationExtensionInitialContentSizeRatio` -Schlüssel mit der die `NSExtensionAttributes` Schlüssel in den Typ **Anzahl** mit einem Wert, der das gewünschte Verhältnis darstellt. Zum Beispiel:
+Um diesen Effekt zu entfernen, bearbeiten die `Info.plist` Datei für die Erweiterung, und legen die `UNNotificationExtensionInitialContentSizeRatio` -Schlüssel mit der die `NSExtensionAttributes` Schlüssel in den Typ **Anzahl** mit einem Wert, der das gewünschte Verhältnis darstellt. Beispiel:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -453,7 +453,7 @@ Zusätzlich zu den benutzerdefinierten Aktionen können die Erweiterung für Ben
 
 Notification-Content-Erweiterungen haben auch die Möglichkeit, ihre Benutzeroberfläche zu aktualisieren, wenn der Benutzer eine der benutzerdefinierten Aktionen aufruft, wie z.B. das Anzeigen eines Datums als wenn akzeptiert der Benutzer tippt der **Accept** Schaltfläche "benutzerdefinierte Aktion". Darüber hinaus können die Notification-Content-Erweiterungen das System informiert, um die Entlassung der Benachrichtigung Benutzeroberfläche zu verzögern, damit der Benutzer die Auswirkung ihrer Aktion sehen kann, bevor die Benachrichtigung geschlossen wird.
 
-Dies erfolgt durch eine zweite Version der Implementierung der `DidReceiveNotification` Methode, die einen Abschlusshandler enthält. Zum Beispiel:
+Dies erfolgt durch eine zweite Version der Implementierung der `DidReceiveNotification` Methode, die einen Abschlusshandler enthält. Beispiel:
 
 ```csharp
 using System;
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-Durch Hinzufügen der `Server.PostEventResponse` Handler, der die `DidReceiveNotification` Methode von der Erweiterung für Benachrichtigungsinhalte, die Erweiterung *müssen* allen benutzerdefinierte Aktionen zu behandeln. Die Erweiterung kann auch die benutzerdefinierten Aktionen auf den enthaltenden app weiterleiten, durch Ändern der `UNNotificationContentExtensionResponseOption`. Zum Beispiel:
+Durch Hinzufügen der `Server.PostEventResponse` Handler, der die `DidReceiveNotification` Methode von der Erweiterung für Benachrichtigungsinhalte, die Erweiterung *müssen* allen benutzerdefinierte Aktionen zu behandeln. Die Erweiterung kann auch die benutzerdefinierten Aktionen auf den enthaltenden app weiterleiten, durch Ändern der `UNNotificationContentExtensionResponseOption`. Beispiel:
 
 ```csharp
 // Close Notification
@@ -538,7 +538,7 @@ completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwar
 
 Je nach Entwurf der app und die Benachrichtigung es gibt möglicherweise Fälle, in denen der Benutzer zur Eingabe von Text in der Benachrichtigung (z. B. auf eine Nachricht Antworten) erforderlich. Eine Erweiterung für Benachrichtigungsinhalte hat Zugriff auf die integrierte Text input-Aktion an, wie eine standard-Benachrichtigung wird.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 using System;

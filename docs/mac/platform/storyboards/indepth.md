@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 61d598f90747cf47b613012328f77b4bd8953a41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e24b448bedc60a537bfcd4a5bfbdbe9562163818
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032986"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865937"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Arbeiten mit Storyboards in Xamarin.Mac
 
@@ -273,17 +273,17 @@ Um einen Verweis auf ein externes Storyboard hinzuzufügen, führen Sie folgende
 
     [![](indepth-images/ref01.png "Hinzufügen eines neuen Storyboards")](indepth-images/ref01.png#lightbox)
 2. In der **Projektmappen-Explorer**, doppelklicken Sie auf der neue Name des Storyboards, die sie zur Bearbeitung in Xcode Interface Builder zu öffnen.
-2. Entwerfen Sie das Layout der das neue Storyboard Szenen wie gewohnt würde und die Änderungen zu speichern: 
+3. Entwerfen Sie das Layout der das neue Storyboard Szenen wie gewohnt würde und die Änderungen zu speichern: 
 
     [![](indepth-images/ref02.png "Entwurf der Schnittstelle")](indepth-images/ref02.png#lightbox)
-3. Wechseln Sie zu das Storyboard, das auf den Verweis auf in Interface Builder hinzugefügt werden.
-4. Ziehen Sie eine **Storyboard-Verweis** aus der **Object Library** auf die Entwurfsoberfläche: 
+4. Wechseln Sie zu das Storyboard, das auf den Verweis auf in Interface Builder hinzugefügt werden.
+5. Ziehen Sie eine **Storyboard-Verweis** aus der **Object Library** auf die Entwurfsoberfläche: 
 
     [![](indepth-images/ref03.png "Wählen einen Storyboard-Verweis in der Bibliothek")](indepth-images/ref03.png#lightbox)
-5. In der **Attributinspektor**, wählen Sie den Namen der **Storyboard** , die Sie soeben erstellt haben: 
+6. In der **Attributinspektor**, wählen Sie den Namen der **Storyboard** , die Sie soeben erstellt haben: 
 
     [![](indepth-images/ref04.png "Konfigurieren den Verweis")](indepth-images/ref04.png#lightbox)
-6. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben.  Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
+7. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben.  Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
 
     [![](indepth-images/ref06.png "Segue-Typ")](indepth-images/ref06.png#lightbox) 
 8. Speichern Sie die Änderungen auf das Storyboard an.
@@ -304,14 +304,14 @@ Um einen Verweis auf eine bestimmte Szene hinzufügen wie eines externen Storybo
 3. In der **Identitätsinspektor**, geben Sie einen **Storyboard-ID** für der neuen Szene Fenstercontroller: 
 
     [![](indepth-images/ref08.png "Festlegen der Storyboard-ID")](indepth-images/ref08.png#lightbox)
-3. Öffnen Sie das Storyboard, das auf den Verweis auf in Interface Builder hinzugefügt werden.
-4. Ziehen Sie eine **Storyboard-Verweis** aus der **Object Library** auf die Entwurfsoberfläche: 
+4. Öffnen Sie das Storyboard, das auf den Verweis auf in Interface Builder hinzugefügt werden.
+5. Ziehen Sie eine **Storyboard-Verweis** aus der **Object Library** auf die Entwurfsoberfläche: 
 
     [![](indepth-images/ref03.png "Wählen einen Storyboard-Verweis aus der Bibliothek")](indepth-images/ref03.png#lightbox)
-5. In der **Identitätsinspektor**, wählen Sie den Namen des der **Storyboard** und **Referenz-ID** (Storyboard-ID) der Szene, die Sie soeben erstellt haben: 
+6. In der **Identitätsinspektor**, wählen Sie den Namen des der **Storyboard** und **Referenz-ID** (Storyboard-ID) der Szene, die Sie soeben erstellt haben: 
 
     [![](indepth-images/ref09.png "Die Referenz-ID festlegen")](indepth-images/ref09.png#lightbox)
-6. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben. Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
+7. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben. Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
 
     [![](indepth-images/ref06.png "Segue-Typ")](indepth-images/ref06.png#lightbox) 
 8. Speichern Sie die Änderungen auf das Storyboard an.
@@ -332,7 +332,7 @@ Um einen Verweis auf eine bestimmte Szene das gleiche Storyboard hinzuzufügen, 
 3. In der **Identitätsinspektor**, geben Sie einen **Storyboard-ID** für der neuen Szene Fenstercontroller: 
 
     [![](indepth-images/ref12.png "Festlegen der Storyboard-ID")](indepth-images/ref12.png#lightbox)
-3. Ziehen Sie eine **Storyboard-Verweis** aus der **Toolbox** auf die Entwurfsoberfläche: 
+4. Ziehen Sie eine **Storyboard-Verweis** aus der **Toolbox** auf die Entwurfsoberfläche: 
 
     [![](indepth-images/ref03.png "Wählen einen Storyboard-Verweis aus der Bibliothek")](indepth-images/ref03.png#lightbox)
 5. In **Attributinspektor**Option **Referenz-ID** (Storyboard-ID) der Szene, die Sie soeben erstellt haben: 
@@ -341,8 +341,8 @@ Um einen Verweis auf eine bestimmte Szene das gleiche Storyboard hinzuzufügen, 
 6. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben. Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
 
     [![](indepth-images/ref06.png "Segue-Typ auswählen")](indepth-images/ref06.png#lightbox) 
-8. Speichern Sie die Änderungen auf das Storyboard an.
-9. Zurück zu Visual Studio für Mac, um Ihre Änderungen zu synchronisieren.
+7. Speichern Sie die Änderungen auf das Storyboard an.
+8. Zurück zu Visual Studio für Mac, um Ihre Änderungen zu synchronisieren.
 
 Wenn die app ausführen und dem Benutzer klickt auf das Element der Benutzeroberfläche, die Sie aus, mit der Segue erstellt die angegebenen **Storyboard-ID** im gleichen Storyboard in der Storyboard-Verweis angegeben wird angezeigt.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: b785ef171d2cb00d4f8f5a17f37d49de17fd3da9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0837deccdb535c178e8b00b052efeb7c9bd49679
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153287"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864132"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Wie automatisiere ich ein Android NUnit-Testprojekt?
 
@@ -58,7 +58,7 @@ Die folgenden Schritte erläutern diesen Prozess:
 
 2.  Implementieren der [TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) Konstruktor und die [AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29) Methode. Die `AddTests` Methode-Steuerelemente, die tatsächlich welche Tests ausgeführt werden.
 
-3.  Ändern der `.csproj` hinzuzufügende Datei **TestInstrumentation.cs**. Zum Beispiel:
+3.  Ändern der `.csproj` hinzuzufügende Datei **TestInstrumentation.cs**. Beispiel:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,13 +74,13 @@ Die folgenden Schritte erläutern diesen Prozess:
     </Project>
     ```
 
-3.  Verwenden Sie den folgenden Befehl aus, um die Komponententests auszuführen. Ersetzen Sie dies `PACKAGE_NAME` mit den Namen der app-Paket (der Paketnamen finden Sie in der app `/manifest/@package` Attribut befindet sich in **"androidmanifest.xml"**):
+4.  Verwenden Sie den folgenden Befehl aus, um die Komponententests auszuführen. Ersetzen Sie dies `PACKAGE_NAME` mit den Namen der app-Paket (der Paketnamen finden Sie in der app `/manifest/@package` Attribut befindet sich in **"androidmanifest.xml"** ):
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-4.  Optional können Sie ändern die `.csproj` hinzuzufügenden Datei zu den `RunTests` MSBuild-Ziel. Dadurch kann die Komponententests mit einem Befehl wie folgt aufrufen:
+5.  Optional können Sie ändern die `.csproj` hinzuzufügenden Datei zu den `RunTests` MSBuild-Ziel. Dadurch kann die Komponententests mit einem Befehl wie folgt aufrufen:
 
     ```shell
     msbuild /t:RunTests Project.csproj

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/07/2016
-ms.openlocfilehash: 7b0c2d99412f7a34c0e9c95a282d5d74dbe8dd78
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 63134298e437e7ac9b99ac4d716f6265752651c3
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085659"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865682"
 ---
 # <a name="deprecated-notification-technologies-in-xamarinios"></a>Veraltete Benachrichtigungstechnologien in Xamarin.iOS
 
@@ -25,19 +25,19 @@ In diesem Abschnitt veranschaulicht das Implementieren von lokalen und Pushbenac
 
 <a name="Local Notifications In iOS" />
 
-##  <a name="local-notifications-in-ioslocal-notifications-in-iosmd"></a>[Lokale Benachrichtigungen unter iOS](local-notifications-in-ios.md)
+## <a name="local-notifications-in-ioslocal-notifications-in-iosmd"></a>[Lokale Benachrichtigungen unter iOS](local-notifications-in-ios.md)
 
 Dieser Abschnitt wird erläutert, wie Sie lokale Benachrichtigungen in Xamarin.iOS zu implementieren. Es wird erläutert, die UI-Elemente von einer iOS-Benachrichtigung und diskutieren Sie die API des mit dem Erstellen und Anzeigen einer Benachrichtigung beteiligt.
 
 <a name="Local Notifications Walkthrough" />
 
-##  <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[Exemplarische Vorgehensweise: Verwenden von lokalen Benachrichtigungen in Xamarin.iOS](local-notifications-in-ios-walkthrough.md)
+## <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[Exemplarische Vorgehensweise: Verwenden von lokalen Benachrichtigungen in Xamarin.iOS](local-notifications-in-ios-walkthrough.md)
 
 In diesem Abschnitt begleiten wir erläutert, wie Sie lokale Benachrichtigungen in einer Xamarin.iOS-Anwendung verwenden. Es veranschaulicht die Grundlagen zum Erstellen und veröffentlichen eine Benachrichtigung, die Sie eine Warnung, wenn von der app empfangen angezeigt wird.
 
 <a name="Remote Notifications In iOS" />
 
-##  <a name="remote-notifications-in-iosremote-notifications-in-iosmd"></a>[Remotebenachrichtigungen in iOS](remote-notifications-in-ios.md)
+## <a name="remote-notifications-in-iosremote-notifications-in-iosmd"></a>[Remotebenachrichtigungen in iOS](remote-notifications-in-ios.md)
 
 In diesem Abschnitt werden die Pushbenachrichtigungen in iOS behandelt. Das Apple Push Notifications Gateway Service (APNS) und die Rolle, die es bei der Veröffentlichung Benachrichtigungen an iOS-Anwendungen spielt eingeführt. Es wird erläutert, wie zum Erstellen der Sicherheitszertifikate zum Aktivieren von Pushbenachrichtigungen und besprechen werden sollen. In diesem Abschnitt werden schließlich einige der Verwaltungs-und Wartungsaufgaben erläutert, die Anwendungsserver zum Nachverfolgen der mobile Clientgeräte ausführen müssen.
 

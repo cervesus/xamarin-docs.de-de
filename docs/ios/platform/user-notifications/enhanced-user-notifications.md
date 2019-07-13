@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 0f77f9014cf7bfad510927f0f12a3e70b387036f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: afa20a264e2509a5658cd0d8f90da3148315e803
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61424387"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865728"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Verbesserte Benutzerbenachrichtigungen in Xamarin.iOS
 
@@ -150,7 +150,7 @@ Darüber hinaus kann Benutzer immer die Benachrichtigung über Berechtigungen f�
 // Get current notification settings
 UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
     var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
-}); 
+});    
 ``` 
 
 ### <a name="configuring-the-remote-notifications-environment"></a>Konfigurieren der Umgebung Remotebenachrichtigungen
@@ -176,11 +176,11 @@ Um die erforderliche Berechtigung bereitzustellen, führen Sie folgende Schritte
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf die `Entitlements.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
-3. Klicken Sie auf die **+** , um einen neuen Schlüssel hinzuzufügen.
-4. Geben Sie `aps-environment` für die **Eigenschaft**, lassen Sie die **Typ** als `String` , und geben Sie entweder `development` oder `production` für die **Wert**: 
+2. Klicken Sie auf die **+** , um einen neuen Schlüssel hinzuzufügen.
+3. Geben Sie `aps-environment` für die **Eigenschaft**, lassen Sie die **Typ** als `String` , und geben Sie entweder `development` oder `production` für die **Wert**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Der Aps-Environment-Eigenschaft")](enhanced-user-notifications-images/setup02.png#lightbox)
-5. Speichern Sie die Änderungen in der Datei.
+4. Speichern Sie die Änderungen in der Datei.
 
 -----
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>Behandeln von Benachrichtigungen der Vordergrund-App
 
-Neue auf iOS 10, eine app kann behandeln Benachrichtigungen anders, wenn es im Vordergrund und eine Benachrichtigung wird ausgelöst. Durch die Bereitstellung einer `UNUserNotificationCenterDelegate` und Implementieren der `WillPresentNotification` -Methode, die app kann verwendet werden, die Verantwortung für die Anzeige der Benachrichtigungs. Zum Beispiel:
+Neue auf iOS 10, eine app kann behandeln Benachrichtigungen anders, wenn es im Vordergrund und eine Benachrichtigung wird ausgelöst. Durch die Bereitstellung einer `UNUserNotificationCenterDelegate` und Implementieren der `WillPresentNotification` -Methode, die app kann verwendet werden, die Verantwortung für die Anzeige der Benachrichtigungs. Beispiel:
 
 ```csharp
 using System;
@@ -431,7 +431,7 @@ Schließlich werden alle Kategorien mit dem System registriert die `SetNotificat
 
 Nachdem ein Satz von benutzerdefinierten Aktionen und Kategorien erstellt und im System registriert wurden, können sie entweder lokal oder Remote Notifications angezeigt.
 
-Legen Sie für die Remote-Benachrichtigung einen `category` in der Remote-Notification-Nutzlast, die eine der oben erstellten Kategorien entspricht. Zum Beispiel:
+Legen Sie für die Remote-Benachrichtigung einen `category` in der Remote-Notification-Nutzlast, die eine der oben erstellten Kategorien entspricht. Beispiel:
 
 ```csharp
 {
@@ -442,7 +442,7 @@ Legen Sie für die Remote-Benachrichtigung einen `category` in der Remote-Notifi
 }
 ```
 
-Legen Sie für lokale Benachrichtigungen, die `CategoryIdentifier` Eigenschaft der `UNMutableNotificationContent` Objekt. Zum Beispiel:
+Legen Sie für lokale Benachrichtigungen, die `CategoryIdentifier` Eigenschaft der `UNMutableNotificationContent` Objekt. Beispiel:
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -458,7 +458,7 @@ In diesem Fall muss diese ID entspricht einer der Kategorien, die weiter oben er
 
 ### <a name="handling-dismiss-actions"></a>Behandlung von schließen Aktionen
 
-Wie bereits erwähnt, können eine Schließen-Aktion für die app gesendet werden, wenn der Benutzer eine Benachrichtigung schließt. Da dies keine standard-Aktion ist, müssen eine Option festgelegt werden, wenn die Kategorie erstellt wird. Zum Beispiel:
+Wie bereits erwähnt, können eine Schließen-Aktion für die app gesendet werden, wenn der Benutzer eine Benachrichtigung schließt. Da dies keine standard-Aktion ist, müssen eine Option festgelegt werden, wenn die Kategorie erstellt wird. Beispiel:
 
 ```csharp
 var categoryID = "message";
@@ -471,7 +471,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>Behandeln von Antworten auf Aktionen
 
-Wenn der Benutzer mit dem benutzerdefinierte Aktionen und Kategorien, die interagiert zuvor erstellt haben, muss die app, um die angeforderte Aufgabe zu erfüllen. Dies erfolgt durch die Bereitstellung einer `UNUserNotificationCenterDelegate` und Implementieren der `UserNotificationCenter` Methode. Zum Beispiel:
+Wenn der Benutzer mit dem benutzerdefinierte Aktionen und Kategorien, die interagiert zuvor erstellt haben, muss die app, um die angeforderte Aufgabe zu erfüllen. Dies erfolgt durch die Bereitstellung einer `UNUserNotificationCenterDelegate` und Implementieren der `UserNotificationCenter` Methode. Beispiel:
 
 ```csharp
 using System;
@@ -561,7 +561,7 @@ Um eine Dienst-Erweiterung in einer Xamarin.iOS-app zu implementieren, führen S
 > [!IMPORTANT]
 > Die Bündel-ID für die Service-Erweiterung sollte der Haupt-app mit der Bündel-ID entsprechen `.appnameserviceextension` an das Ende angefügt. Beispielsweise hätte die Haupt-app eine Bündel-ID des `com.xamarin.monkeynotify`, die Service-Erweiterung müssen eine Bündel-ID des `com.xamarin.monkeynotify.monkeynotifyserviceextension`. Dies sollte automatisch festgelegt werden, wenn die Erweiterung der Projektmappe hinzugefügt wird. 
 
-Es ist eine main-Klasse in der Erweiterung für Benachrichtigungsdienst, die geändert werden, um die erforderliche Funktionalität bereitzustellen. Zum Beispiel:
+Es ist eine main-Klasse in der Erweiterung für Benachrichtigungsdienst, die geändert werden, um die erforderliche Funktionalität bereitzustellen. Beispiel:
 
 ```csharp
 using System;
@@ -616,7 +616,7 @@ Die zweite Methode, `TimeWillExpire`, wird direkt vor dem Zeitpunkt zu erschöpf
 
 ### <a name="triggering-a-service-extension"></a>Eine Diensterweiterung auslösen
 
-Mit einer Dienst-Erweiterung erstellt und mit der app übermittelt kann es durch Ändern der Remote Nutzlast der Benachrichtigung an das Gerät gesendet ausgelöst werden. Zum Beispiel:
+Mit einer Dienst-Erweiterung erstellt und mit der app übermittelt kann es durch Ändern der Remote Nutzlast der Benachrichtigung an das Gerät gesendet ausgelöst werden. Beispiel:
 
 ```csharp
 {

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: 1eb3ec77dd478744906625dcfcd9fb843e74577c
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: cf2da9f7fe8d90c52517118cc3b4aa0e046d1f69
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827472"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864553"
 ---
 # <a name="application-icons-in-xamarinios"></a>Anwendungssymbole in Xamarin.iOS
 
@@ -134,16 +134,16 @@ Um einen Ressourcenkatalog verwenden zu können, führen Sie folgende Schritte a
 2. Klicken Sie auf die **visuelle Anlagen** Registerkarte, und klicken Sie auf die **Ressourcenkatalog verwenden** Schaltfläche **-App-Symbole**: 
 
     ![](app-icons-images/icon02w.png "Wählen Sie die Registerkarte \"visuelle Anlagen\"")
-4. Von der **Projektmappen-Explorer**, erweitern Sie die **Asset-Katalog** Ordner: 
+3. Von der **Projektmappen-Explorer**, erweitern Sie die **Asset-Katalog** Ordner: 
 
     ![](app-icons-images/image009.png "Erweitern Sie den Ordner Asset-Katalog")
-5. Doppelklicken Sie auf die **Media** Datei, die sie im Editor zu öffnen: 
+4. Doppelklicken Sie auf die **Media** Datei, die sie im Editor zu öffnen: 
 
     ![](app-icons-images/image010.png "Öffnen Sie die Media-Datei im editor")
-6. Unter den **Eigenschaften-Explorer** der Entwickler kann auswählen, die verschiedene Arten und Größen von Symbolen, die erforderlich sind.
-7. Klicken Sie auf angegebene Art von Symbol, und wählen Sie eine Bilddatei für die erforderliche Typ/Größe.
-8. Klicken Sie auf die **öffnen** Schaltfläche, um das Bild in das Projekt einfügen, und legen Sie es in der Xcasset.
-9. Wiederholen Sie für alle Images, die erforderlich sind.
+5. Unter den **Eigenschaften-Explorer** der Entwickler kann auswählen, die verschiedene Arten und Größen von Symbolen, die erforderlich sind.
+6. Klicken Sie auf angegebene Art von Symbol, und wählen Sie eine Bilddatei für die erforderliche Typ/Größe.
+7. Klicken Sie auf die **öffnen** Schaltfläche, um das Bild in das Projekt einfügen, und legen Sie es in der Xcasset.
+8. Wiederholen Sie für alle Images, die erforderlich sind.
 
 -----
 
@@ -203,8 +203,8 @@ Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 2. Klicken Sie auf die **visuelle Anlagen** Registerkarte, und erweitern Sie die **iTunes-Grafik**: 
 
     ![](app-icons-images/itunes01w.png "Bearbeiten die iTunes-Grafik in Visual Studio")
-4. Bild fehlt, klicken Sie auf die Miniaturansicht im Editor, wählen Sie die Bilddatei für die gewünschte iTunes-Grafik aus das Dialogfeld "Datei öffnen" aus, und klicken Sie auf die **öffnen** Schaltfläche.
-5. Wiederholen Sie diesen Schritt, bis alle Images für die app erforderlichen angegeben wurden.
+3. Bild fehlt, klicken Sie auf die Miniaturansicht im Editor, wählen Sie die Bilddatei für die gewünschte iTunes-Grafik aus das Dialogfeld "Datei öffnen" aus, und klicken Sie auf die **öffnen** Schaltfläche.
+4. Wiederholen Sie diesen Schritt, bis alle Images für die app erforderlichen angegeben wurden.
 
 -----
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 859bbd22640ba3d09324fcd3853cda26e563a1cd
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832478"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865282"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, TvOS – Kurzanleitung
 
@@ -298,20 +298,20 @@ Führen Sie folgende Schritte aus:
 9. Abschließend sollte die Einschränkungen, die unter der Registerkarte "Layout" des eigenschaftenpads ähneln:
 
     [![](hello-tvos-images/designer11.png "Beispiel-Einschränkungen")](hello-tvos-images/designer11.png#lightbox)
-8. Ziehen Sie eine **Schaltfläche** aus der **Toolbox** und platzieren Sie es unter der Bezeichnung.
-9. Klicken Sie auf die **Titel** -Eigenschaft in der **Pad "Eigenschaft"** , und ändern Sie den Titel der Schaltfläche zum `Click Me`:
+10. Ziehen Sie eine **Schaltfläche** aus der **Toolbox** und platzieren Sie es unter der Bezeichnung.
+11. Klicken Sie auf die **Titel** -Eigenschaft in der **Pad "Eigenschaft"** , und ändern Sie den Titel der Schaltfläche zum `Click Me`:
 
     [![](hello-tvos-images/designer12.png "Ändern Sie den Titel der Schaltflächen zum hier klicken")](hello-tvos-images/designer12.png#lightbox)
-10. Wiederholen Sie die Schritte 5 bis 8 oben, um die Schaltfläche im TvOS-Fenster zu beschränken. Aber anstatt zu ziehen das T-Handle, am oberen Rand des Fensters (wie in Schritt #7), ziehen Sie es an das Ende der Bezeichnung:
+12. Wiederholen Sie die Schritte 5 bis 8 oben, um die Schaltfläche im TvOS-Fenster zu beschränken. Aber anstatt zu ziehen das T-Handle, am oberen Rand des Fensters (wie in Schritt #7), ziehen Sie es an das Ende der Bezeichnung:
 
     [![](hello-tvos-images/designer14.png "Beschränken Sie die Schaltfläche \"")](hello-tvos-images/designer14.png#lightbox)
-11. Ziehen Sie eine andere Bezeichnung unter der Schaltfläche, um die gleiche Breite als erste Bezeichnung und legen Sie die Größe der **Ausrichtung** zu **Center**:
+13. Ziehen Sie eine andere Bezeichnung unter der Schaltfläche, um die gleiche Breite als erste Bezeichnung und legen Sie die Größe der **Ausrichtung** zu **Center**:
 
     [![](hello-tvos-images/designer15.png "Ziehen Sie eine andere Bezeichnung unter der Schaltfläche, seine Größe ändern Sie, werden die gleiche Breite wie die erste Bezeichnung aus, und legen die Ausrichtung auf Center")](hello-tvos-images/designer15.png#lightbox)
-12. Wie die erste Bezeichnung und die Schaltfläche legen Sie diese Bezeichnung zentrieren und Heften sie in die Position und Größe:
+14. Wie die erste Bezeichnung und die Schaltfläche legen Sie diese Bezeichnung zentrieren und Heften sie in die Position und Größe:
 
     [![](hello-tvos-images/designer16.png "Heften Sie die Bezeichnung in Position und Größe")](hello-tvos-images/designer16.png#lightbox)
-13. Speichern Sie die Änderungen an der Benutzeroberfläche.
+15. Speichern Sie die Änderungen an der Benutzeroberfläche.
 
 Beim Bewegen von Steuerelementen und Ändern der Größe wurden, Sie sollten aufgefallen, dass der Designer Sie hilfreiche Hinweise gibt auf der Grundlage von [Apple TV-Human Interface Guidelines](https://developer.apple.com/tvos/human-interface-guidelines/). Diese Richtlinien können Sie hochwertige Anwendungen zu erstellen, die eine vertraute Aussehen und Verhalten für Apple TV-Benutzer verfügen sollen.
 

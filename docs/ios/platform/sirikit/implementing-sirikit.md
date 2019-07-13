@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 2c3bddc89348b46c9bba277580071cb8ac3d6943
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7fc675b69132ac41ffa9d87f4b3264de431b11bd
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61434755"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865673"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implementieren von SiriKit in Xamarin.iOS
 
@@ -181,12 +181,12 @@ Führen Sie folgende Schritte aus:
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf die `Entitlements.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
-3. Hinzufügen der `com.apple.developer.siri` **Eigenschaft**legen die **Typ** zu `Boolean` und **Wert** zu `Yes`: 
+2. Hinzufügen der `com.apple.developer.siri` **Eigenschaft**legen die **Typ** zu `Boolean` und **Wert** zu `Yes`: 
 
     [![](implementing-sirikit-images/setup01w.png "Fügen Sie die Eigenschaft com.apple.developer.siri")](implementing-sirikit-images/setup01w.png#lightbox)
-4. Speichern Sie die Änderungen in der Datei.
-5. Doppelklicken Sie auf die **Projektdatei** in die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
-6. Wählen Sie **iOS Bundle-Signierung** und sicherstellen, dass die `Entitlements.plist` Datei ausgewählt ist, der **benutzerdefinierte Berechtigungen** Feld.
+3. Speichern Sie die Änderungen in der Datei.
+4. Doppelklicken Sie auf die **Projektdatei** in die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
+5. Wählen Sie **iOS Bundle-Signierung** und sicherstellen, dass die `Entitlements.plist` Datei ausgewählt ist, der **benutzerdefinierte Berechtigungen** Feld.
 
 -----
 
@@ -233,15 +233,15 @@ Führen Sie auf Ihrem Mac Folgendes ein:
 16. Sicherstellen, dass die **Bereitstellungsprofil** erstellt über Xcode installiert wurde.
 17. Öffnen Sie das Projekt zum Hinzufügen von SiriKit-Support, um in Visual Studio für Mac.
 18. Doppelklicken Sie auf die `Info.plist` Datei die **Projektmappen-Explorer**.
-18. Sicherstellen, dass die **Bündel-ID** entspricht, die im Apple Developer Portal oben erstellt haben: 
+19. Sicherstellen, dass die **Bündel-ID** entspricht, die im Apple Developer Portal oben erstellt haben: 
 
     [![](implementing-sirikit-images/setup06.png "Die Bündel-ID")](implementing-sirikit-images/setup06.png#lightbox)
-18. In der **Projektmappen-Explorer**, wählen die **Projekt**.
-19. Mit der rechten Maustaste in des Projekts, und wählen Sie **Optionen**.
-21. Wählen Sie **iOS Bundle-Signierung**, wählen die **Signierungsidentität** und **Bereitstellungsprofil** oben erstellt haben: 
+20. In der **Projektmappen-Explorer**, wählen die **Projekt**.
+21. Mit der rechten Maustaste in des Projekts, und wählen Sie **Optionen**.
+22. Wählen Sie **iOS Bundle-Signierung**, wählen die **Signierungsidentität** und **Bereitstellungsprofil** oben erstellt haben: 
 
     [![](implementing-sirikit-images/setup07.png "Wählen Sie Signieridentität und Bereitstellungsprofil")](implementing-sirikit-images/setup07.png#lightbox)
-22. Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern.
+23. Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern.
 
 > [!IMPORTANT]
 > Testen von SiriKit kann nur für eine echte iOS 10 Hardwaregerät und nicht in das iOS 10 Simulator. Wenn Probleme bei der Installation einer SiriKit Xamarin.iOS-app auf echter Hardware aktiviert werden, stellen Sie sicher, dass die erforderlichen Berechtigungen, die App-ID, die Signatur-ID und die Bereitstellungsprofil ordnungsgemäß im Apple Entwicklerportal anmelden und Visual Studio für Mac konfiguriert wurden
@@ -300,7 +300,7 @@ Zu jedem Zeitpunkt kann die app überprüfen, die app Zugriff auf Siri durch Auf
 
 ### <a name="localization-and-siri"></a>Lokalisierung und Siri
 
-Der Benutzer kann auf einem iOS-Gerät wählen Sie eine Sprache für Siri, die andere ist dann die Standardeinstellung des Systems. Bei der Arbeit mit lokalisierten Daten die app zu verwenden, muss die `SiriLanguageCode` -Methode der der `INPreferences` Klasse, um den Sprachcode von Siri abzurufen. Zum Beispiel:
+Der Benutzer kann auf einem iOS-Gerät wählen Sie eine Sprache für Siri, die andere ist dann die Standardeinstellung des Systems. Bei der Arbeit mit lokalisierten Daten die app zu verwenden, muss die `SiriLanguageCode` -Methode der der `INPreferences` Klasse, um den Sprachcode von Siri abzurufen. Beispiel:
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -324,7 +324,7 @@ Benutzer spezifische Programmierterminologie muss auf einen der folgenden Katego
 
 Bei der Terminologie als angepassten vokabularanpassung registrieren Sie ausgewählt haben, wählen Sie nur Begriffe, die möglicherweise von einer Person nicht vertraut sind, mit der app missverstanden werden. Nie Register allgemeine Begriffe wie "Meine Trainings" oder "Mein Album". Die MonkeyChat-app wird z. B. die einzelnen Kontakte im Adressbuch des Benutzers zugeordneten Spitznamen registriert.
 
-Die app bietet spezifische Programmierterminologie Benutzer durch Aufrufen der `SetVocabularyStrings` Methode der `INVocabulary` Klasse und übergeben ein `NSOrderedSet` Auflistung aus der Haupt-app. Rufen Sie die app sollte immer die `RemoveAllVocabularyStrings` Methode zunächst zum Entfernen aller vorhandenen Bestimmungen, die vor dem Hinzufügen von neuen Knoten. Zum Beispiel:
+Die app bietet spezifische Programmierterminologie Benutzer durch Aufrufen der `SetVocabularyStrings` Methode der `INVocabulary` Klasse und übergeben ein `NSOrderedSet` Auflistung aus der Haupt-app. Rufen Sie die app sollte immer die `RemoveAllVocabularyStrings` Methode zunächst zum Entfernen aller vorhandenen Bestimmungen, die vor dem Hinzufügen von neuen Knoten. Beispiel:
 
 ```csharp
 using System;
@@ -520,7 +520,7 @@ Hinzufügen einer `AppIntentVocabulary.plist` -Datei in das app-Projekt, gehen S
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Mit der rechten Maustaste in den Namen des Projekts die **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Element… > Apple > Eigenschaftenliste > "Info.plist"**:
+1. Mit der rechten Maustaste in den Namen des Projekts die **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Element… > Apple > Eigenschaftenliste > "Info.plist"** :
 
     [![](implementing-sirikit-images/plist01.w157-sml.png "Fügen Sie eine neue Datei \"Info.plist\" hinzu.")](implementing-sirikit-images/plist01.w157.png#lightbox)
 
@@ -629,7 +629,7 @@ Um eine Intents-Erweiterung der Projektmappe hinzuzufügen, führen Sie folgende
 
     [![](implementing-sirikit-images/intents05.w157-sml.png "Wählen Sie Intent-Erweiterung")](implementing-sirikit-images/intents05.w157.png#lightbox)
 3. Geben Sie als Nächstes eine **Namen** Intent-Erweiterung, und Sie auf die **OK** Schaltfläche.
-1. In der **Projektmappen-Explorer**, mit der rechten Maustaste auf die **Verweise** die Intents-Erweiterung für den neu erstellten Ordner, und wählen Sie **hinzufügen > Verweis**. Überprüfen Sie den Namen des gemeinsamen freigegebenen Code Library-Projekts (die über die app erstellt haben), und klicken Sie auf die **OK** Schaltfläche:
+4. In der **Projektmappen-Explorer**, mit der rechten Maustaste auf die **Verweise** die Intents-Erweiterung für den neu erstellten Ordner, und wählen Sie **hinzufügen > Verweis**. Überprüfen Sie den Namen des gemeinsamen freigegebenen Code Library-Projekts (die über die app erstellt haben), und klicken Sie auf die **OK** Schaltfläche:
 
     [![](implementing-sirikit-images/intents08w.png "Wählen Sie den Namen des gemeinsamen freigegebenen Code Library-Projekts")](implementing-sirikit-images/intents08w.png#lightbox)
     
@@ -689,7 +689,7 @@ Eine vollständige Liste der verfügbaren Domänen der Absicht, finden Sie in Ap
 
 ### <a name="configuring-the-main-class"></a>Konfigurieren von "Main"-Klasse
 
-Als Nächstes müssen die Entwickler so konfigurieren Sie die Hauptklasse, die als der Haupteinstiegspunkt für die Ziel-Erweiterung in Siri fungiert. Es muss eine Unterklasse von `INExtension` die entspricht der `IINIntentHandler` delegieren. Zum Beispiel:
+Als Nächstes müssen die Entwickler so konfigurieren Sie die Hauptklasse, die als der Haupteinstiegspunkt für die Ziel-Erweiterung in Siri fungiert. Es muss eine Unterklasse von `INExtension` die entspricht der `IINIntentHandler` delegieren. Beispiel:
 
 ```csharp
 using System;
@@ -891,7 +891,7 @@ Um eine Intents-Benutzeroberflächenerweiterung zur Projektmappe hinzuzufügen, 
 1. Mit der rechten Maustaste auf die **Projektmappenname** in die **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neues Projekt hinzufügen...**
 2. Wählen Sie im Dialogfeld **iOS** > **Erweiterungen** > **Intent-Benutzeroberflächenerweiterung** , und klicken Sie auf die **Weiter** Schaltfläche ".
 3. Geben Sie als Nächstes eine **Namen** Intent-Erweiterung, und Sie auf die **OK** Schaltfläche.
-5. In der **Projektmappen-Explorer**, mit der rechten Maustaste auf die **Verweise** Ordner, der neu erstellten Intent-Erweiterung. Überprüfen Sie den Namen des gemeinsamen freigegebenen Code Library-Projekts (die über die app erstellt haben), und klicken Sie auf die **OK** Schaltfläche.
+4. In der **Projektmappen-Explorer**, mit der rechten Maustaste auf die **Verweise** Ordner, der neu erstellten Intent-Erweiterung. Überprüfen Sie den Namen des gemeinsamen freigegebenen Code Library-Projekts (die über die app erstellt haben), und klicken Sie auf die **OK** Schaltfläche.
     
 -----
 
@@ -935,7 +935,7 @@ Eine vollständige Liste der verfügbaren Domänen der Absicht, finden Sie in Ap
 
 ### <a name="configuring-the-main-class"></a>Konfigurieren von "Main"-Klasse
 
-Konfigurieren Sie die Hauptklasse, die als der Haupteinstiegspunkt für die beabsichtigte Benutzeroberfläche-Erweiterung in Siri fungiert. Es muss eine Unterklasse von `UIViewController` die entspricht der `IINUIHostedViewController` Schnittstelle. Zum Beispiel:
+Konfigurieren Sie die Hauptklasse, die als der Haupteinstiegspunkt für die beabsichtigte Benutzeroberfläche-Erweiterung in Siri fungiert. Es muss eine Unterklasse von `UIViewController` die entspricht der `IINUIHostedViewController` Schnittstelle. Beispiel:
 
 ```csharp
 using System;

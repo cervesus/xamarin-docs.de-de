@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 9daedbe9bba5a2923a247104c4e69ae2e1b635aa
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831541"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865776"
 ---
 # <a name="homekit-in-xamarinios"></a>HomeKit in Xamarin.iOS
 
@@ -59,20 +59,20 @@ Führen Sie folgende Schritte aus:
 
     [![](homekit-images/provision01.png "Aktivieren Sie den Dienst \"HomeKit\" für die angegebene ID")](homekit-images/provision01.png#lightbox)
 5. Speichern Sie die Änderungen.
-4. Klicken Sie auf **Bereitstellungsprofile** > **Entwicklung** , und erstellen Sie ein neues entwicklungsbereitstellungsprofil für Ihre app: 
+6. Klicken Sie auf **Bereitstellungsprofile** > **Entwicklung** , und erstellen Sie ein neues entwicklungsbereitstellungsprofil für Ihre app: 
 
     [![](homekit-images/provision02.png "Erstellen Sie ein neues entwicklungsbereitstellungsprofil für die app")](homekit-images/provision02.png#lightbox)
-5. Herunterladen Sie und installieren Sie das neue Bereitstellungsprofil oder verwenden Sie Xcode herunterladen und installieren das Profil.
-6. Bearbeiten Sie die Optionen der Xamarin.iOS-Projekt, und stellen Sie sicher, dass Sie das Bereitstellungsprofil verwenden, das Sie gerade erstellt haben: 
+7. Herunterladen Sie und installieren Sie das neue Bereitstellungsprofil oder verwenden Sie Xcode herunterladen und installieren das Profil.
+8. Bearbeiten Sie die Optionen der Xamarin.iOS-Projekt, und stellen Sie sicher, dass Sie das Bereitstellungsprofil verwenden, das Sie gerade erstellt haben: 
 
     [![](homekit-images/provision03.png "Wählen Sie die soeben erstellte Bereitstellungsprofil")](homekit-images/provision03.png#lightbox)
-7. Als Nächstes bearbeiten Ihrer **"Info.plist"** Datei, und stellen Sie sicher, dass Sie die App-ID verwenden, die verwendet wurde, um das Bereitstellungsprofil zu erstellen: 
+9. Als Nächstes bearbeiten Ihrer **"Info.plist"** Datei, und stellen Sie sicher, dass Sie die App-ID verwenden, die verwendet wurde, um das Bereitstellungsprofil zu erstellen: 
 
     [![](homekit-images/provision04.png "Legen Sie die App-ID ")](homekit-images/provision04.png#lightbox)
-8. Bearbeiten Sie abschließend Ihre **"Entitlements.plist"** Datei, und stellen sicher, dass die **HomeKit** Berechtigung ausgewählt wurde: 
+10. Bearbeiten Sie abschließend Ihre **"Entitlements.plist"** Datei, und stellen sicher, dass die **HomeKit** Berechtigung ausgewählt wurde: 
 
     [![](homekit-images/provision05.png "Aktivieren Sie die HomeKit-Berechtigung")](homekit-images/provision05.png#lightbox)
-9. Speichern Sie die Änderungen auf alle Dateien an.
+11. Speichern Sie die Änderungen auf alle Dateien an.
 
 Mit diesen Einstellungen vorhanden ist die Anwendung nun auf die HomeKit-Framework-APIs zugreifen. Ausführliche Informationen zur Bereitstellung finden Sie unter unseren [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) und [Bereitstellung Ihrer App](~/ios/get-started/installation/device-provisioning/index.md) Anleitungen.
 

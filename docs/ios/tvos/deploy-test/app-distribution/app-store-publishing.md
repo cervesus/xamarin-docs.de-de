@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: b941bcc8588e7fb0377430cca2829ad72ecbc8c6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 73ee7fc3c28fc7a8476010e8bf7567b3e5ef590d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61416676"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865087"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Veröffentlichen im Apple TV App Store
 
@@ -78,7 +78,7 @@ Apple bietet eine Auswahl an speziellen Anwendungsdiensten, auch Berechtigungen 
 Führen Sie die folgenden Schritte mithilfe des webbasierten iOS-Bereitstellungsportals von Apple aus, um eine App-ID zu erstellen und optional Berechtigungen auszuwählen:
 
 1. Wählen Sie **Bereitstellung** > **Entwicklung**.
-2. Klicken Sie auf die **+**-Schaltfläche, und stellen Sie einen **Namen** und eine **Bündel-ID** für die neue Anwendung bereit.
+2. Klicken Sie auf die **+** -Schaltfläche, und stellen Sie einen **Namen** und eine **Bündel-ID** für die neue Anwendung bereit.
 3. Scrollen Sie zum unteren Rand des Bildschirms, und wählen Sie einen **Anwendungsdienste** , die Ihre app Xamarin.tvOS erforderlich sein sollen.
 4. Klicken Sie auf die Schaltfläche **Weiter**, und folgen Sie den Anweisungen auf dem Bildschirm, um die neue App-ID zu erstellen.
 
@@ -192,19 +192,19 @@ Nach Abschluss des Verteilungsbuilds können Sie Ihre iOS-Anwendung nun zur Übe
 
 Wird archivworkflow in Visual Studio für Mac Application Loader automatisch geöffnet, nachdem Sie gespeichert haben die `.ipa`:
 
-2. Wählen Sie *Ihre App übermitteln* aus, und klicken Sie auf die Schaltfläche *Auswählen*:
+1. Wählen Sie *Ihre App übermitteln* aus, und klicken Sie auf die Schaltfläche *Auswählen*:
 
     [![](app-store-publishing-images/publishvs01.png "Wählen Sie „Ihre App übermitteln“ aus")](app-store-publishing-images/publishvs01.png#lightbox)
 
-3. Wählen Sie die zuvor erstellte ZIP- oder IPA-Datei aus, und klicken Sie auf die Schaltfläche **OK**.
-4. Die Datei wird durch den Application Loader überprüft:
+2. Wählen Sie die zuvor erstellte ZIP- oder IPA-Datei aus, und klicken Sie auf die Schaltfläche **OK**.
+3. Die Datei wird durch den Application Loader überprüft:
 
     [![](app-store-publishing-images/publishvs02.png "Der Application Loader-Überprüfungsbildschirm")](app-store-publishing-images/publishvs02.png#lightbox)
-5. Klicken Sie auf die Schaltfläche *Weiter*. Die Anwendung wird nun für den App Store überprüft:
+4. Klicken Sie auf die Schaltfläche *Weiter*. Die Anwendung wird nun für den App Store überprüft:
 
     [![](app-store-publishing-images/publishvs03.png "Die Anwendung überprüft wird, für den App Store")](app-store-publishing-images/publishvs03.png#lightbox)
-6. Klicken Sie auf die Schaltfläche **Senden**, um die Anwendung zur Überprüfung an Apple zu senden.
-7. Sie werden vom Application Loader informiert, sobald die Datei erfolgreich hochgeladen wurde.
+5. Klicken Sie auf die Schaltfläche **Senden**, um die Anwendung zur Überprüfung an Apple zu senden.
+6. Sie werden vom Application Loader informiert, sobald die Datei erfolgreich hochgeladen wurde.
 
 <a name="iTunes_Connect_Status" />
 

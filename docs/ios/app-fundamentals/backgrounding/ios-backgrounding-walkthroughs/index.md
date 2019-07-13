@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 5a4be4ff5f8c5322db2e50ba11dd81a188fbae61
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b739b5a23653fdcc2b9324aefde03e48446bdc76
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61391463"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865549"
 ---
 # <a name="ios-backgrounding-walkthroughs"></a>iOS-Hintergrundverarbeitung Exemplarische Vorgehensweisen
 
-##  <a name="walkthrough---using-background-locationiosapp-fundamentalsbackgroundingios-backgrounding-walkthroughslocation-walkthroughmd"></a>[Exemplarische Vorgehensweise: Verwenden einer Hintergrundposition](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)
+## <a name="walkthrough---using-background-locationiosapp-fundamentalsbackgroundingios-backgrounding-walkthroughslocation-walkthroughmd"></a>[Exemplarische Vorgehensweise: Verwenden einer Hintergrundposition](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)
 
 In diesem Beispiel erstellen wir ein iOS-Speicherort-Anwendung, die Informationen über unsere aktuellen Speicherort - Längen- und Breitengrad sowie andere Parameter – auf dem Bildschirm ausgibt. Diese Anwendung zeigen, wie speicherortaktualisierungen ordnungsgemäß durchführen, während die Anwendung entweder "aktiv" oder "Backgrounded ist.
 
-##  <a name="walkthrough---using-background-transfer-service-and-nsurlsessioniosapp-fundamentalsbackgroundingios-backgrounding-walkthroughsbackground-transfer-walkthroughmd"></a>[Exemplarische Vorgehensweise: Verwenden eines Hintergrundübertragungsdiensts und von NSURLSession](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md)
+## <a name="walkthrough---using-background-transfer-service-and-nsurlsessioniosapp-fundamentalsbackgroundingios-backgrounding-walkthroughsbackground-transfer-walkthroughmd"></a>[Exemplarische Vorgehensweise: Verwenden eines Hintergrundübertragungsdiensts und von NSURLSession](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md)
 
 In dieser exemplarischen Vorgehensweise verwenden wir den Hintergrundübertragungsdienst und `NSURLSession` -API zum Starten, ein großes Bild, der weiterhin heruntergeladen werden, wenn die app befindet sich im Hintergrund heruntergeladen.

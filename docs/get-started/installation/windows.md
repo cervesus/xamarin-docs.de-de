@@ -6,12 +6,12 @@ ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 5d9f91300194eb45c5f5f3c52403660cf4898a19
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 92ddbfb48131bdaf8ba12cef86e09e4c575200e9
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61271574"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865613"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Installieren von Xamarin in Visual Studio-2019
 
@@ -44,8 +44,8 @@ Weitere ausführliche Informationen finden Sie im Handbuch [Installieren von Xam
 1. [Installieren von Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 2. [Connecting Visual Studio to your Mac build host (Herstellen einer Verbindung von Visual Studio mit Ihrem Mac-Buildhost)](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 3. [iOS-Entwickler-Setup](~/ios/get-started/installation/device-provisioning/index.md) (zum Ausführen Ihrer Anwendung auf dem Gerät erforderlich).
-5. [Remoted iOS Simulator (iOS-Remotesimulator)](~/tools/ios-simulator/index.md)
-6. [Einführung in Xamarin.iOS für Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
+4. [Remoted iOS Simulator (iOS-Remotesimulator)](~/tools/ios-simulator/index.md)
+5. [Einführung in Xamarin.iOS für Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 
 ### <a name="android"></a>Android
 

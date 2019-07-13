@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 1362767bf9a80af1eac37d316bd99a6ab364063f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bed8180c513eefd5765be767a5dca7cecefa6101
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61413999"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865961"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>Arbeiten mit WatchOS Lokalisierung in Xamarin
 
@@ -127,19 +127,19 @@ Images, die vom Code aufgefüllt werden, können auf zwei Arten festgelegt werde
 
 1. Sie können ändern, eine `Image` Steuerelement durch Festlegen des Werts auf den Namen der Bilddatei, bereits vorhanden ist in der Watch-App, z.B.
 
-  ```csharp
-  displayImage.SetImage("gradient"); // image in Watch App (as shown above)
-  ```
+    ```csharp
+    displayImage.SetImage("gradient"); // image in Watch App (as shown above)
+    ```
 
 2. Sie können ein Bild von der Erweiterung wechseln, sehen Sie sich mit `FromBundle` die app wählt automatisch das richtige Bild für die ausgewählte Sprache des Benutzers. In der Beispielprojektmappe ist ein Bild **language@2x.png** in der jeweiligen Sprache Ordner, und es wird auf `DetailController` mit dem folgenden Code:
 
-  ```csharp
-  using (var image = UIImage.FromBundle ("language")) {
-    displayImage.SetImage (image);
-  }
-  ```
+    ```csharp
+    using (var image = UIImage.FromBundle ("language")) {
+        displayImage.SetImage (image);
+    }
+    ```
 
-  Beachten Sie, die Sie nicht benötigen, geben Sie die **@2x** beim Verweisen auf den Dateinamen des Bilds.
+    Beachten Sie, die Sie nicht benötigen, geben Sie die **@2x** beim Verweisen auf den Dateinamen des Bildes.
 
 Die zweite Methode ist auch gilt, wenn Sie ein Image von einem Remoteserver Rendern auf der Apple Watch herunterladen. sollte in diesem Fall Sie jedoch sicherstellen, dass das Bild, die, das Sie herunterladen, ordnungsgemäß gemäß den Einstellungen des Benutzers lokalisiert wird.
 

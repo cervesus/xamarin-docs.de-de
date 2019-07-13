@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: bf86759832a1aba0ccc1c144981af6ea4eae8670
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 58e3593dc09c76439a3e128e51f354c169d7e72e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61343706"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865967"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>Bereitstellen von WatchOS-Apps für den App Store
 
@@ -49,7 +49,7 @@ Lesen Sie die spezifische Tipps, die im Zusammenhang mit diesen nachfolgenden El
 
 Für die Bereitstellung von App-Store erstellen, Sie erstellen müssen, eine **Verteilungsbereitstellungsprofil** für jede App-ID in der Projektmappe.
 
-Wenn Sie einen Platzhalter-App-ID, haben *nur ein Bereitstellungsprofil wird erforderlich sein,*; aber wenn Sie eine separate App-ID für jedes Projekt benötigen Sie ein Bereitstellungsprofil für jede App-ID:
+Wenn Sie einen Platzhalter-App-ID, haben *nur ein Bereitstellungsprofil wird erforderlich sein,* ; aber wenn Sie eine separate App-ID für jedes Projekt benötigen Sie ein Bereitstellungsprofil für jede App-ID:
 
 ![](appstore-images/provisioningprofile-distribution-sml.png "Das App Store-Verteilungsprofil")
 
@@ -89,15 +89,15 @@ Simulator sehen Sie sich 42 mm können Screenshots dieser Größe erstellen.
 
 1. Stellen Sie sicher, dass die iOS-app das Startprojekt ist. Wenn dies nicht der Fall ist, mit der rechten Maustaste, um es festzulegen:
 
-  ![](appstore-images/xs-startup.png "Festlegen des Startprojekts")
+   ![](appstore-images/xs-startup.png "Festlegen des Startprojekts")
 
 2. Wählen Sie die **AppStore** Buildkonfiguration:
 
-  ![](appstore-images/xs-appstore.png "Die App Store-Buildkonfiguration")
+   ![](appstore-images/xs-appstore.png "Die App Store-Buildkonfiguration")
 
 3. Wählen Sie die **erstellen > archivieren** Menüelement, um das Archivierungsprozess zu starten:
 
-  ![](appstore-images/xs-archive.png "Im Menü erstellen")
+   ![](appstore-images/xs-archive.png "Im Menü erstellen")
 
 Sie können auch die **Ansicht > Archiven...**  Menüelement Archive anzuzeigen, die zuvor erstellt wurden.
 
@@ -111,21 +111,21 @@ Xcode werden in Visual Studio für Mac erstellte Archive automatisch angezeigt w
 
 1. Starten Sie Xcode, und wählen Sie **Fenster > Organisator**:
 
-  ![](appstore-images/xc-organizer.png "Klicken Sie im Menü Fenster")
+   ![](appstore-images/xc-organizer.png "Klicken Sie im Menü Fenster")
 
 2. Wechseln Sie zu der **Archive** Registerkarte, und wählen Sie das Archiv, das mit Visual Studio für Mac erstellt wurde:
 
-  ![](appstore-images/xc-archives.png "Die Registerkarte \"Archive\"")
+   ![](appstore-images/xc-archives.png "Die Registerkarte \"Archive\"")
 
 3. Optional **überprüfen...**  das Archiv, wählen Sie dann **senden...**  zum Hochladen der app in iTunes Connect.
 
 4. Wählen Sie das Entwicklungsteam (Wenn Sie mehrere angehören) und bestätigen Sie dann auf die Übermittlung:
 
-  ![](appstore-images/xc-submit1.png "Abschnitt Team-Entwicklung")
+   ![](appstore-images/xc-submit1.png "Abschnitt Team-Entwicklung")
 
 5. Besuchen Sie iTunes Connect erneut aus, um die hochgeladenen Binärdatei finden Sie unter. Wechseln Sie zu Ihrer app-Konfigurationsseite, und wählen Sie **Vorabversion** im oberen Menü auf finden Sie unter den **erstellt** Liste:
 
-  [![](appstore-images/itc-prerelease-sml.png "Die Seite \"Konfiguration apps\" in iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "Die Seite \"Konfiguration apps\" in iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
 Sie können dann die app zur Genehmigung senden, auf die **Versionen** Seite. Finden Sie in der [Übersicht über die Verteilung von iOS-app](~/ios/deploy-test/app-distribution/index.md) für Weitere Informationen.
 

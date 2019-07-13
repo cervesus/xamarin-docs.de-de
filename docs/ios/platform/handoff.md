@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 084b9924af467459a017413a958ec2e46ff219fc
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385591"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865309"
 ---
 # <a name="handoff-in-xamarinios"></a>Die Übergabe in Xamarin.iOS
 
@@ -117,20 +117,20 @@ Führen Sie folgende Schritte aus:
 
     [![](handoff-images/provision01.png "Aktivieren Sie den iCloud-Dienst für die angegebene ID")](handoff-images/provision01.png#lightbox)
 5. Speichern Sie die Änderungen.
-4. Klicken Sie auf **Bereitstellungsprofile** > **Entwicklung** und erstellen Sie ein Bereitstellungsprofil für Sie Neuentwicklungen-app:
+6. Klicken Sie auf **Bereitstellungsprofile** > **Entwicklung** und erstellen Sie ein Bereitstellungsprofil für Sie Neuentwicklungen-app:
 
     [![](handoff-images/provision02.png "Erstellen Sie ein neues entwicklungsbereitstellungsprofil für die app")](handoff-images/provision02.png#lightbox)
-5. Herunterladen Sie und installieren Sie das neue Bereitstellungsprofil oder verwenden Sie Xcode herunterladen und installieren das Profil.
-6. Bearbeiten Sie die Optionen der Xamarin.iOS-Projekt, und stellen Sie sicher, dass Sie das Bereitstellungsprofil verwenden, das Sie gerade erstellt haben:
+7. Herunterladen Sie und installieren Sie das neue Bereitstellungsprofil oder verwenden Sie Xcode herunterladen und installieren das Profil.
+8. Bearbeiten Sie die Optionen der Xamarin.iOS-Projekt, und stellen Sie sicher, dass Sie das Bereitstellungsprofil verwenden, das Sie gerade erstellt haben:
 
     [![](handoff-images/provision03.png "Wählen Sie das soeben erstellte Bereitstellungsprofil")](handoff-images/provision03.png#lightbox)
-7. Als Nächstes bearbeiten Ihrer **"Info.plist"** Datei, und stellen Sie sicher, dass Sie die App-ID verwenden, die verwendet wurde, um das Bereitstellungsprofil zu erstellen:
+9. Als Nächstes bearbeiten Ihrer **"Info.plist"** Datei, und stellen Sie sicher, dass Sie die App-ID verwenden, die verwendet wurde, um das Bereitstellungsprofil zu erstellen:
 
     [![](handoff-images/provision04.png "Legen Sie die App-ID")](handoff-images/provision04.png#lightbox)
-8. Scrollen Sie zu der **Background Modes** Abschnitt, und überprüfen Sie die folgenden Elemente:
+10. Scrollen Sie zu der **Background Modes** Abschnitt, und überprüfen Sie die folgenden Elemente:
 
     [![](handoff-images/provision05.png "Die erforderliche hintergrundmodi aktivieren")](handoff-images/provision05.png#lightbox)
-9. Speichern Sie die Änderungen auf alle Dateien an.
+11. Speichern Sie die Änderungen auf alle Dateien an.
 
 Mit diesen Einstellungen vorhanden ist die Anwendung nun bereit für die Übergabe Framework-APIs zugreifen. Ausführliche Informationen zur Bereitstellung finden Sie unter unseren [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) und [Bereitstellung Ihrer App](~/ios/get-started/installation/device-provisioning/index.md) Anleitungen.
 
@@ -403,13 +403,13 @@ public void PerformHandoff(NSUserActivity activity) {
 }
 ```
 
-Die `ContinueUserActivity` Methode enthält einen `UIApplicationRestorationHandler` , die Sie aufrufen können, für das Dokument oder -Responder-basierten Aktivität fortsetzen. Müssen Sie übergeben eine `NSArray` wiederherstellbaren Objekte, die beim Aufruf der Wiederherstellung-Handler. Zum Beispiel:
+Die `ContinueUserActivity` Methode enthält einen `UIApplicationRestorationHandler` , die Sie aufrufen können, für das Dokument oder -Responder-basierten Aktivität fortsetzen. Müssen Sie übergeben eine `NSArray` wiederherstellbaren Objekte, die beim Aufruf der Wiederherstellung-Handler. Beispiel:
 
 ```csharp
 completionHandler (new NSObject[]{Tab4});
 ```
 
-Für jedes Objekt übergeben dessen `RestoreUserActivityState` aufgerufene Methode. Jedes Objekt können Sie dann die Daten in die `UserInfo` Wörterbuch, das seinen eigenen Status wiederherstellen. Zum Beispiel:
+Für jedes Objekt übergeben dessen `RestoreUserActivityState` aufgerufene Methode. Jedes Objekt können Sie dann die Daten in die `UserInfo` Wörterbuch, das seinen eigenen Status wiederherstellen. Beispiel:
 
 ```csharp
 public override void RestoreUserActivityState (NSUserActivity activity)
@@ -427,7 +427,7 @@ Für Dokument-basierte apps, wenn Sie nicht implementieren die `ContinueUserActi
 
 Da die Übergabe der Übertragung von Informationen zwischen einer Sammlung lose verbundenen iOS und OS X-Geräte verwendet, Fehler der Übertragungsprozess treten ggf. Entwerfen Sie Ihre app an diese Fehler ordnungsgemäß behandeln und informiert den Benutzer über alle Situationen, die auftreten können.
 
-Bei einem Fehler der `DidFailToContinueUserActivitiy` Methode der `AppDelegate` aufgerufen wird. Zum Beispiel:
+Bei einem Fehler der `DidFailToContinueUserActivitiy` Methode der `AppDelegate` aufgerufen wird. Beispiel:
 
 ```csharp
 public override void DidFailToContinueUserActivitiy (UIApplication application, string userActivityType, NSError error)
@@ -453,7 +453,7 @@ Für eine app, bei dieser Art der Übergabe teilzunehmen, müssen sie die Domän
 
 Wenn die angegebene Domäne entspricht einer `WebpageURL` übergeben den Wert der Eigenschaft lädt eine Liste der genehmigten app IDs von der Website bei dieser Domäne. Geben Sie die Website muss eine Liste der genehmigten-IDs in eine signierte JSON-Datei mit dem Namen **Apple-app-Site-Zuordnung** (z. B. `https://company.com/apple-app-site-association`).
 
-Diese JSON-Datei enthält ein Wörterbuch, das eine Liste von app-IDs in der Form soll `<team identifier>.<bundle identifier>`. Zum Beispiel:
+Diese JSON-Datei enthält ein Wörterbuch, das eine Liste von app-IDs in der Form soll `<team identifier>.<bundle identifier>`. Beispiel:
 
 ```csharp
 {
@@ -464,7 +464,7 @@ Diese JSON-Datei enthält ein Wörterbuch, das eine Liste von app-IDs in der For
 }
 ```
 
-Zum Signieren der JSON-Datei (so, dass sie den richtigen `Content-Type` von `application/pkcs7-mime`), verwenden Sie die **Terminal** app und eine `openssl` Befehl mit einem Zertifikat und Schlüssel, die von einer Zertifizierungsstelle vertrauenswürdig iOS ausgegeben (finden Sie unter [ https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012) eine Liste). Zum Beispiel:
+Zum Signieren der JSON-Datei (so, dass sie den richtigen `Content-Type` von `application/pkcs7-mime`), verwenden Sie die **Terminal** app und eine `openssl` Befehl mit einem Zertifikat und Schlüssel, die von einer Zertifizierungsstelle vertrauenswürdig iOS ausgegeben (finden Sie unter [ https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012) eine Liste). Beispiel:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -477,7 +477,7 @@ cat json.txt | openssl smime -sign -inkey company.com.key
 -outform DER > apple-app-site-association
 ```
 
-Die `openssl` Befehl gibt eine signierte JSON-Datei, die Sie für Ihre Website in Platzieren der **Apple-app-Site-Zuordnung** URL. Zum Beispiel:
+Die `openssl` Befehl gibt eine signierte JSON-Datei, die Sie für Ihre Website in Platzieren der **Apple-app-Site-Zuordnung** URL. Beispiel:
 
 ```csharp
 https://example.com/apple-app-site-association.
@@ -487,7 +487,7 @@ Die app erhält jede Aktivität, deren `WebpageURL` Domäne befindet sich in der
 
 ## <a name="supporting-handoff-in-document-based-apps"></a>Unterstützung der Übergabe in Dokument-basierten Apps
 
-Wie bereits erwähnt, unter iOS und OS X, Dokument-basierte apps werden automatisch unterstützen, Übergabe von Dokumenten mit iCloud-basierten app **"Info.plist"** -Datei enthält eine `CFBundleDocumentTypes` -Schlüssel der `NSUbiquitousDocumentUserActivityType`. Zum Beispiel:
+Wie bereits erwähnt, unter iOS und OS X, Dokument-basierte apps werden automatisch unterstützen, Übergabe von Dokumenten mit iCloud-basierten app **"Info.plist"** -Datei enthält eine `CFBundleDocumentTypes` -Schlüssel der `NSUbiquitousDocumentUserActivityType`. Beispiel:
 
 ```xml
 <key>CFBundleDocumentTypes</key>
@@ -523,7 +523,7 @@ Können Sie Responder zuordnen (geerbt von entweder `UIResponder` unter iOS oder
 
 Die Situationen, in denen die Menge an Informationen erforderlich, um eine Aktivität weiterhin nicht effizient die Nutzlast der ersten Übergabe übertragen werden. In diesen Fällen kann die empfangende app ein oder mehrere Streams zwischen sich selbst und die ursprüngliche Anwendung zum Übertragen von Daten herstellen.
 
-Legen Sie die ursprüngliche Anwendung wird die `SupportsContinuationStreams` Eigenschaft der `NSUserActivity` -Instanz, auf `true`. Zum Beispiel:
+Legen Sie die ursprüngliche Anwendung wird die `SupportsContinuationStreams` Eigenschaft der `NSUserActivity` -Instanz, auf `true`. Beispiel:
 
 ```csharp
 // Create a new user Activity to support this tab
@@ -542,7 +542,7 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-Die empfangende app kann dann aufrufen, die `GetContinuationStreams` -Methode der der `NSUserActivity` in seine `AppDelegate` zu, um den Stream herzustellen. Zum Beispiel:
+Die empfangende app kann dann aufrufen, die `GetContinuationStreams` -Methode der der `NSUserActivity` in seine `AppDelegate` zu, um den Stream herzustellen. Beispiel:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

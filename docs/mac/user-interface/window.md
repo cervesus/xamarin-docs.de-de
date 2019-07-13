@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f23a506acda385b53942661244bcd7a8510c8c7f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61240844"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866000"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows in Xamarin.Mac
 
@@ -221,13 +221,13 @@ Weitere Informationen zum Arbeiten mit **Outlets** und **Aktionen**, informieren
 Für alle Fenster, das Sie erstellen und in Ihre Xamarin.Mac-Anwendung verwenden, ist der Prozess im Grunde identisch mit was wir einfach oben getan haben:
 
 1. Fügen Sie für neue Windows, die nicht die Standardeinstellung, die dem Projekt automatisch hinzugefügt werden eine neue Fensterdefinition zum Projekt hinzu. Dies wird weiter unten ausführlich erläutert werden.
-2. Doppelklicken Sie auf die `Main.storyboard` Datei, um das Fenster-Design für die Bearbeitung in Interface Builder von Xcode zu öffnen.
-3. Ziehen Sie ein neues Fenster in der Benutzeroberfläche entwerfen und verknüpfen Sie das Fenster, in die Verwendung des Hauptfenster _Segues_ (Weitere Informationen finden Sie unter den [Segues](~/mac/platform/storyboards/indepth.md#Segues) Teil unserer [arbeiten mit Storyboards](~/mac/platform/storyboards/indepth.md) Dokumentation).
-3. Legen Sie alle erforderlichen Eigenschaften in der **Attributinspektor** und **Größeninspektor**.
-4. Ziehen Sie in den Steuerelementen erforderlich, um Ihre Schnittstelle erstellen und konfigurieren sie in der **Attributinspektor**.
-5. Verwenden der **Größeninspektor** , behandeln das Ändern der Größe für Ihre UI-Elemente.
-6. Machen Sie das Fenster des UI-Elemente für C#-Code über **Outlets** und **Aktionen**.
-7. Speichern Sie die Änderungen zu, und wechseln Sie zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+1. Doppelklicken Sie auf die `Main.storyboard` Datei, um das Fenster-Design für die Bearbeitung in Interface Builder von Xcode zu öffnen.
+1. Ziehen Sie ein neues Fenster in der Benutzeroberfläche entwerfen und verknüpfen Sie das Fenster, in die Verwendung des Hauptfenster _Segues_ (Weitere Informationen finden Sie unter den [Segues](~/mac/platform/storyboards/indepth.md#Segues) Teil unserer [arbeiten mit Storyboards](~/mac/platform/storyboards/indepth.md) Dokumentation).
+1. Legen Sie alle erforderlichen Eigenschaften in der **Attributinspektor** und **Größeninspektor**.
+1. Ziehen Sie in den Steuerelementen erforderlich, um Ihre Schnittstelle erstellen und konfigurieren sie in der **Attributinspektor**.
+1. Verwenden der **Größeninspektor** , behandeln das Ändern der Größe für Ihre UI-Elemente.
+1. Machen Sie das Fenster des UI-Elemente für C#-Code über **Outlets** und **Aktionen**.
+1. Speichern Sie die Änderungen zu, und wechseln Sie zurück zu Visual Studio für Mac mit Xcode synchronisiert.
 
 Nun, da wir einen grundlegenden Windows erstellt haben, betrachten die typische Prozesse ein Xamarin.Mac wir Anwendung wird bei der Arbeit mit Windows. 
 
@@ -259,7 +259,7 @@ public override void ViewWillAppear ()
     // Set Window Title
     this.View.Window.Title = "untitled";
 }
-``` 
+```    
 
 > [!NOTE]
 > Legen wir den Wert des Fensters `Title` -Eigenschaft in der `ViewWillAppear` -Methode anstelle der `ViewDidLoad` Methode daran, während die Ansicht in den Arbeitsspeicher geladen werden, es nicht noch vollständig instanziiert wird. Wenn wir versuchen, den Zugriff auf die `Title` -Eigenschaft in der `ViewDidLoad` Methode wir erhalten eine `null` Ausnahme, da das Fenster noch nicht wurde erstellt und wired oben auf die Eigenschaft noch.
@@ -711,14 +711,14 @@ Um ein neues Fenster hinzuzufügen, führen Sie folgende Schritte aus:
 3. In der **Identitätsinspektor**, geben Sie `PreferencesWindow` für die **Storyboard-ID**: 
 
     [![](window-images/new02.png "Festlegen der Storyboard-ID")](window-images/new02.png#lightbox)
-5. Entwerfen Sie Ihre Schnittstelle: 
+4. Entwerfen Sie Ihre Schnittstelle: 
 
     [![](window-images/new03.png "Entwerfen der Benutzeroberfläche")](window-images/new03.png#lightbox)
-6. Öffnen Sie im Menü der App (`MacWindows`) Option **Einstellungen...** , Strg + Klick und ziehen Sie auf das neue Fenster: 
+5. Öffnen Sie im Menü der App (`MacWindows`) Option **Einstellungen...** , Strg + Klick und ziehen Sie auf das neue Fenster: 
 
     [![](window-images/new05.png "Erstellen eines segues")](window-images/new05.png#lightbox)
-7. Wählen Sie **anzeigen** im Popupmenü.
-6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+6. Wählen Sie **anzeigen** im Popupmenü.
+7. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
 
 Wenn wir den Code auszuführen, und wählen Sie die **Einstellungen...**  aus der **Anwendungsmenü**, das Fenster wird angezeigt:
 
@@ -734,7 +734,7 @@ Genau wie jede andere Art von Fenster, das Sie erstellen und in Ihre Xamarin.Mac
 
 1. Fügen Sie eine neue Fensterdefinition zum Projekt hinzu.
 2. Doppelklicken Sie auf die `.xib` Datei, um das Fenster-Design für die Bearbeitung in Interface Builder von Xcode zu öffnen.
-2. Legen Sie alle erforderlichen Eigenschaften in der **Attributinspektor** und **Größeninspektor**.
+3. Legen Sie alle erforderlichen Eigenschaften in der **Attributinspektor** und **Größeninspektor**.
 4. Ziehen Sie in den Steuerelementen erforderlich, um Ihre Schnittstelle erstellen und konfigurieren sie in der **Attributinspektor**.
 5. Verwenden der **Größeninspektor** , behandeln das Ändern der Größe für Ihre UI-Elemente.
 6. Machen Sie das Fenster des UI-Elemente für C#-Code über **Outlets** und **Aktionen**.
@@ -768,11 +768,11 @@ Um einen neuen Bereich hinzuzufügen, führen Sie folgende Schritte aus:
 7. Wechseln Sie zu der **Identitätsinspektor** , und legen Sie im Bereich der Klasse auf `DocumentPanel`: 
 
     [![](window-images/panels03.png "Festlegen des Bereichs-Klasse")](window-images/panels03.png#lightbox)
-6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
-7. Bearbeiten der `DocumentPanel.cs` Datei, und ändern Sie die Definition der Klasse auf den folgenden: 
+8. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+9. Bearbeiten der `DocumentPanel.cs` Datei, und ändern Sie die Definition der Klasse auf den folgenden: 
 
     `public partial class DocumentPanel : NSPanel`
-8. Speichern Sie die Änderungen in der Datei.
+10. Speichern Sie die Änderungen in der Datei.
 
 Bearbeiten der `AppDelegate.cs` Datei, und stellen die `DidFinishLaunching` Methode sehen wie folgt:
 
