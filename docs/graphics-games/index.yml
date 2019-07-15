@@ -5,16 +5,14 @@ metadata:
   description: 'Plattformübergreifende Grafiken, 2D- und 3D-Spiele für mobile und Desktopplattformen.'
   author: conceptdev
   ms.author: crdun
-  ms.date: 02/17/2018
+  ms.date: 07/10/2018
   ms.topic: landing-page
 abstract:
   description: 'Plattformübergreifende Grafiken, 2D- und 3D-Spiele für mobile und Desktopplattformen.'
   menu:
     items:
       - href: 'https://developer.xamarin.com/samples/'
-        text: Beispiele
-      - href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
-        text: Versionsinformationen
+        text: Proben
 sections:
   - title: null
     items:
@@ -34,19 +32,13 @@ sections:
               href: ~/graphics-games/urhosharp/index.md
             title: UrhoSharp
             html: Plattformübergreifende 3D-Grafiken und Spiele.
-          - href: ~/graphics-games/cocossharp/index.md
-            image:
-              src: ~/media/index/xamarin-graphics-cocos.svg
-              href: ~/graphics-games/cocossharp/index.md
-            title: CocosSharp
-            html: Erstellen Sie plattformübergreifende 2D-Spiele für mobile Geräte.
           - href: ~/graphics-games/monogame/index.md
             image:
               src: ~/media/index/xamarin-graphics-monogame.svg
               href: ~/graphics-games/monogame/index.md
             title: MonoGame
             html: 'Erstellen Sie Desktop-, mobile und Konsolenspiele mit C#.'
-  - title: Plattformen
+  - title: Mobile Xamarin-Anwendungsentwicklung mit .NET
     items:
       - type: list
         style: cards

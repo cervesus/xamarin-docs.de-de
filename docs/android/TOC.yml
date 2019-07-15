@@ -380,6 +380,8 @@
       items:
         - name: Erste Schritte
           href: ~/essentials/get-started.md?context=xamarin/android
+        - name: Plattform- und Featureunterstützung
+          href: ~/essentials/platform-feature-support.md?context=xamarin/android
         - name: Beschleunigungsmesser
           href: ~/essentials/accelerometer.md?context=xamarin/android
         - name: App-Informationen
