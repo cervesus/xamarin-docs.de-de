@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/03/2019
-ms.openlocfilehash: f0ad4e3271ac8c1f8d30a0440b38d8a46c57783e
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 9c427dc48f6fe19098c312bad16d9630bb480264
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687115"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290161"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms in Xamarin Native-Projekten
 
@@ -119,6 +119,9 @@ Die `NavigateToNoteEntryPage` -Methode konvertiert die Xamarin.Forms [ `ContentP
 [![Screenshot einer Xamarin.iOS-Anwendung, die eine Benutzeroberfläche verwendet, die in XAML definierten](native-forms-images/ios-noteentrypage.png "Xamarin.iOS-app mit einer XAML-UI")](native-forms-images/ios-noteentrypage-large.png#lightbox "Xamarin.iOS-app mit einer XAML-UI")
 
 Bei der `NoteEntryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil angezeigt der `UIViewController` für die `NoteEntryPage` -Klasse aus der `UINavigationController`, Zurückgeben des Benutzers die `UIViewController` für die `NotesPage` Klasse.
+
+> [!WARNING]
+> Die Popping von einem `UIViewController` aus dem iOS Native Navigation Stack wird nicht automatisch zur Freigabe von `UIViewController`s. Es ist Aufgabe des Entwicklers, sicherzustellen, dass alle `UIViewController` , die nicht mehr benötigt hat seine `Dispose()` Methode aufgerufen wird, andernfalls die `UIViewController` und angefügter `Page` verwaisen werden und nicht von der Freispeichersammlung gesammelt werden Was zu einem Speicherverlust.
 
 ## <a name="android"></a>Android
 
