@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: cd3bfd9186c87594fc42702e2d62b33e68973db6
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: 365e580d7d1182cca55a53a714ebb2b9be45ce35
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252293"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650734"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms-Shell-Registerkarten
 
@@ -23,7 +23,7 @@ Wenn das Navigationsmuster für eine Anwendung einen Flyout beinhaltet, ist die 
 Alternativ kann das Navigationsmuster für eine Anwendung mit unteren Registerkarten beginnen und auf die Verwendung eines Flyouts verzichten. In diesem Szenario sollte das untergeordnete Objekt des `Shell`-Objekts ein `TabBar`-Objekt sein, das die untere Registerkartenleiste darstellt.
 
 > [!NOTE]
-> Der `TabBar`-Typ deaktiviert den Flyout.
+> Der `TabBar`-Typ deaktiviert das Flyout.
 
 Jedes `FlyoutItem`- oder `TabBar`-Objekt kann ein oder mehrere `Tab`-Objekte enthalten, wobei jedes `Tab`-Objekt eine Registerkarte auf der unteren Registerkartenleiste darstellt. Jedes `Tab`-Objekt kann ein oder mehrere `ShellContent`-Objekte enthalten, und jedes `ShellContent`-Objekt zeigt ein einzelnes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt an. Wenn mehr als ein `ShellContent`-Objekt in einem `Tab`-Objekt vorhanden ist, sind die `ContentPage`-Objekte über obere Registerkarten navigierbar.
 
