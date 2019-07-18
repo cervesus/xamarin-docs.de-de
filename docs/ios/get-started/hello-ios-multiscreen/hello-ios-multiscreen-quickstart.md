@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 2c05e46309fb2a38b6b3c1542051e7115a58d13c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 849c60507fe0ff7b8bf1743be5bbf89ca94b9d6f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668830"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865568"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Schnellstart: Hallo, iOS Multiscreen
 
@@ -24,7 +24,7 @@ In diesem Teil der exemplarischen Vorgehensweise wird der Phoneword-Anwendung ei
 
 In den [entsprechenden ausführlichen Erläuterungen](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md) wird die erstellte Anwendung überprüft sowie die Architektur, Navigation und weitere neue iOS-Konzepte erläutert, denen Sie noch begegnen werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Dieser Leitfaden macht an der Stelle weiter, an der das Dokument „Hallo, iOS“ aufgehört hat. Zuvor müssen Sie den [Schnellstart: Hallo, iOS](~/ios/get-started/hello-ios/index.md) abgeschlossen haben. Die vollständige Version der Phoneword-App kann auf der Seite [Beispiel: Hallo, iOS](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) heruntergeladen werden.
 
@@ -79,7 +79,7 @@ Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscon
 
 11. Erstellen Sie den Bildschirm **Anrufliste**. Ziehen Sie aus der **Toolbox** einen **Tabellenansichtscontroller** in die Entwurfsoberfläche:
 
-   ![](hello-ios-multiscreen-quickstart-images/12new.png "Ziehen eines Tabellenansichtscontrollers auf die Entwurfsoberfläche")
+    ![](hello-ios-multiscreen-quickstart-images/12new.png "Ziehen eines Tabellenansichtscontrollers auf die Entwurfsoberfläche")
 
 12. Klicken Sie anschließend auf die schwarze Leiste am unteren Rand der Szene, um den **Tabellenansichtscontroller** auszuwählen. Ändern Sie im **Eigenschaftenpad** die Klasse des **Tabellenansichtscontrollers** in `CallHistoryController`, und drücken Sie die **EINGABETASTE**:
 
@@ -262,7 +262,7 @@ Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscon
 
     Speichern und kompilieren Sie die Anwendung, um sicherzustellen, dass keine Fehler auftreten.
 
-20. Klicken Sie zum Starten der Anwendung im **iOS-Simulator** auf die Schaltfläche **Starten**:
+18. Klicken Sie zum Starten der Anwendung im **iOS-Simulator** auf die Schaltfläche **Starten**:
 
     ![](hello-ios-multiscreen-quickstart-images/19.png "Klicken Sie zum Starten der Anwendung im iOS-Simulator auf die Schaltfläche „Starten“")
 
@@ -505,7 +505,7 @@ In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein B
 
     Speichern und kompilieren Sie die Anwendung, um sicherzustellen, dass keine Fehler auftreten.
 
-20. Klicken Sie zum Starten der Anwendung im **iOS-Simulator** auf die Schaltfläche **Starten**:
+18. Klicken Sie zum Starten der Anwendung im **iOS-Simulator** auf die Schaltfläche **Starten**:
 
     ![](hello-ios-multiscreen-quickstart-images/19.png "Der erste Bildschirm der Beispiel-App")
 

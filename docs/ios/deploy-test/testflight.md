@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 87be250bdc425558a8e386a8209596e18f13b3ed
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 27fd8cac85cdf139278d3824ebf71e54cdc7d140
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120516"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865577"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Verwenden von TestFlight zum Verteilen von Xamarin.iOS-Apps
 
@@ -20,10 +20,10 @@ _TestFlight ist jetzt im Besitz von Apple und die wichtigste Methode zum Betates
 
 Das Durchführen von Beta-Tests ist ein wesentlicher Bestandteil des Softwareentwicklungszyklus, und viele plattformübergreifende Anwendungen bieten an, diesen Prozess zu optimieren, wie z.B. [HockeyApp](http://hockeyapp.net/features/), [Applause](http://www.applause.com/mobile-app-testing), und natürlich das Native App Beta-Testing für Android-Apps von Google Play. Dieses Dokument konzentriert sich auf TestFlight von Apple.
 
-TestFlight ist der Beta-Test-Dienst für iOS-Apps von Apple, auf den nur über [iTunes Connect](https://itunesconnect.apple.com/) zugegriffen werden kann. Es ist derzeit für iOS 8.0 Apps und höher verfügbar. TestFlight ermöglicht das Durchführen von Beta-Tests mit internen und externen Benutzern, und aufgrund einer Beta-App-Prüfung für die letztgenannte Aufgabe, wird sichergestellt, dass der endgültige Prüfungsprozess bei der Veröffentlichung im App Store wesentlich vereinfacht wird 
+TestFlight ist der Beta-Test-Dienst für iOS-Apps von Apple, auf den nur über [iTunes Connect](https://itunesconnect.apple.com/) zugegriffen werden kann. Es ist derzeit für iOS 8.0 Apps und höher verfügbar. TestFlight ermöglicht das Durchführen von Beta-Tests mit internen und externen Benutzern, und aufgrund einer Beta-App-Prüfung für die letztgenannte Aufgabe, wird sichergestellt, dass der endgültige Prüfungsprozess bei der Veröffentlichung im App Store wesentlich vereinfacht wird
 
 
-Zuvor wurde die Binärdatei in Visual Studio für Mac generiert und zur Verteilung an Tester auf die TestFlightApp-Website hochgeladen. Der neue Prozess umfasst eine ganze Reihe von Verbesserungen, die Ihnen eine hohe Qualität der Apps und gut getestete Apps im App Store bringen. Zum Beispiel:
+Zuvor wurde die Binärdatei in Visual Studio für Mac generiert und zur Verteilung an Tester auf die TestFlightApp-Website hochgeladen. Der neue Prozess umfasst eine ganze Reihe von Verbesserungen, die Ihnen eine hohe Qualität der Apps und gut getestete Apps im App Store bringen. Beispiel:
 
 
 - Die Beta-App-Prüfung, die für externe Tests benötigt wird, gewährleistet eine höhere Erfolgswahrscheinlichkeit für Ihre endgültige App Store-Prüfung, da beide die Einhaltung der Apple Richtlinien erfordern.
@@ -31,7 +31,7 @@ Zuvor wurde die Binärdatei in Visual Studio für Mac generiert und zur Verteilu
 - Die TestFlight-App ist jetzt eine echte iOS-App, sodass sie schneller ausgeführt wird.
 - Ist die Beta-Testphase einmal abgeschlossen, ist der Verschiebungsprozess der App zur Prüfung schnell und effizient; ein Klick auf die Schaltfläche genügt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Nur Apps mit iOS 8.0 oder höher können über TestFlight getestet werden.
 
@@ -69,7 +69,7 @@ Der folgende Workflow beschreibt die erforderlichen Schritte zum Starten der Ver
     [![](testflight-images/my-apps.png "„My Apps“ (Meine Apps) auswählen")](testflight-images/my-apps.png#lightbox)
 
 
-3.  Auf dem **Meine Apps**-Bildschirm, klicken Sie auf die **+**-Schaltfläche in der linken oberen Ecke des Bildschirms, um eine neue App hinzuzufügen. Wenn Sie Mac- und iOS-Entwicklerkonten besitzen, werden Sie aufgefordert, hier den neuen App-Typ auszuwählen.
+3.  Auf dem **Meine Apps**-Bildschirm, klicken Sie auf die **+** -Schaltfläche in der linken oberen Ecke des Bildschirms, um eine neue App hinzuzufügen. Wenn Sie Mac- und iOS-Entwicklerkonten besitzen, werden Sie aufgefordert, hier den neuen App-Typ auszuwählen.
 
 Es wird Ihnen das Übermittlungsfenster **New iOS App** (Neue iOS-App) angezeigt, in dem genau die gleiche Information wie in der „Info.plist“-Datei Ihrer App enthalten sein muss.
 
@@ -77,7 +77,7 @@ Weitere Informationen zum Erstellen eines neuen iTunes Connect-Datensatzes finde
 
 
 
-###  <a name="completing-the-new-ios-app-submission-form"></a>Ausfüllen des neuen iOS-App-Registrierungsformulars
+### <a name="completing-the-new-ios-app-submission-form"></a>Ausfüllen des neuen iOS-App-Registrierungsformulars
 
 Das Formular sollte genau die gleichen Informationen in der„Info.plist“-Datei Ihrer App wiedergeben, wie unten gezeigt:
 
@@ -100,7 +100,7 @@ Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/ap
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-###  <a name="create-an-archive"></a>Erstellen eines Archivs
+### <a name="create-an-archive"></a>Erstellen eines Archivs
 
  Um eine Binärdatei in Visual Studio für Mac zu erstellen, müssen Sie die _Archiv_-Funktion verwenden. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Archive for Publishing** (Archivieren für die Veröffentlichung) aus, wie unten gezeigt:
 
@@ -109,7 +109,7 @@ Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/ap
 
  Weitere Informationen finden Sie im Handbuch [Building the Distributable (Erstellen des Verteilbaren Codes)](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md).
 
-###  <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen Ihrer App
+### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen Ihrer App
 
  Beim Erstellen Ihres Archivs wird automatisch die **Archivansicht** geöffnet, in der alle archivierten Projekte, gegliedert nach Projektmappe, angezeigt werden. Wählen Sie zum Signieren Ihrer App, und um diese für die Verteilung vorzubereiten **Anmelden und Verteilen...** , wie unten gezeigt:
 
@@ -121,14 +121,14 @@ Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/ap
 
  Lesen Sie den Abschnitt [Submitting your App to Apple (Übermitteln der App an Apple)](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md), um weitere Informationen zu diesen Schritten zu erhalten.
 
-###  <a name="submitting-your-build"></a>Übermitteln Ihres Builds
+### <a name="submitting-your-build"></a>Übermitteln Ihres Builds
  Der Veröffentlichungsassistent öffnet das Application Loader-Programm, um Ihnen zu ermöglichen Ihren Build in iTunes Connect hochzuladen. Wählen Sie die Option **Deliver Your App** (Übermitteln Ihrer App) aus, und laden Sie Ihre oben erstellte `.ipa`-Datei hoch. Der Application Loader überprüft Ihren Build und lädt ihn in iTunes Connect hoch.
 
  Lesen Sie den Abschnitt [Submitting your App to Apple (Übermitteln der App an Apple)](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md), um weitere Informationen zu diesen Schritten zu erhalten.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-###  <a name="building-your-final-distributable"></a>Endgültig verteilbaren Code erstellen
+### <a name="building-your-final-distributable"></a>Endgültig verteilbaren Code erstellen
  Da das Xamarin-Plug-In für Visual Studio die Archivierung von Xamarin.iOS-Apps zur Veröffentlichung im App Store nicht unterstützt, gibt es zwei Optionen für die Veröffentlichung einer iOS-Anwendung von Visual Studio. Diese lauten wie folgt:
 
 1. Hochladen einer IPA, die über den „Build Adhoc IPA“-Befehl erstellt wurde.
@@ -136,7 +136,7 @@ Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/ap
 
  Das Handbuch [Building the Distributable (Erstellen des Verteilbaren Codes)](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) enthält Anweisungen für beide Optionen.
 
-###  <a name="submitting-your-build"></a>Übermitteln Ihres Builds
+### <a name="submitting-your-build"></a>Übermitteln Ihres Builds
  Um Ihre App an Apple zu senden, müssen Sie zu Ihrem Buildhost wechseln und das Anwendungsladeprogramm verwenden, das als Teil von Xcode installiert wird. Weitere Informationen zum Zugreifen auf Anwendungsladeprogramm finden Sie im Apple-Handbuch [Access Application Loader (Zugreifen auf das Anwendungsladeprogramm)](http://help.apple.com/itc/apploader/#/apdATD1E927-D1E1A1303-D1E927A1126).
 
 Wählen Sie nach dem Öffnen die Option **Deliver Your App** (App übermitteln) aus, und laden Sie die oben erstellte ZIP- oder `.ipa`-Datei hoch. Der Application Loader überprüft Ihren Build und lädt ihn in iTunes Connect hoch.
@@ -204,7 +204,7 @@ Vorhandene iTunes Connect-Benutzer werden in der Liste angezeigt. Um diese auszu
 
 [![](testflight-images/internal-tester.png "Den Switch „Interner Tester“ aktivieren")](testflight-images/internal-tester.png#lightbox)
 
-Um einen Benutzer hinzuzufügen, der nicht auf der Liste ist, wählen Sie die **+**-Schaltfläche neben den *Benutzern* aus, und geben Sie einen Vornamen, Nachnamen und eine E-Mail-Adresse zum Erstellen eines Kontos an. Die Benutzer müssen ihre E-Mail zur Aktivierung des Kontos bestätigen:
+Um einen Benutzer hinzuzufügen, der nicht auf der Liste ist, wählen Sie die **+** -Schaltfläche neben den *Benutzern* aus, und geben Sie einen Vornamen, Nachnamen und eine E-Mail-Adresse zum Erstellen eines Kontos an. Die Benutzer müssen ihre E-Mail zur Aktivierung des Kontos bestätigen:
 
 [![](testflight-images/add-new-user.png "Einen Benutzer hinzufügen")](testflight-images/add-new-user.png#lightbox)
 

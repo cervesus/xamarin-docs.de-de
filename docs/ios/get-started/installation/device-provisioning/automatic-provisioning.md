@@ -8,18 +8,18 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 4d4c9980dd4c7be4ed18f1b6ce015d73b3caf836
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: d4bb117273e669cc3c520c42451296e16b6023eb
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855171"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865322"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
 _Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“, um Entwicklungszertifikate und -profile anzufordern._
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -67,7 +67,7 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 
 4. Wählen Sie Ihr Team aus der Dropdownliste **Team** aus.
 
-6. Nach wenigen Sekunden werden ein Signaturzertifikat und ein Bereitstellungsprofil erstellt:
+5. Nach wenigen Sekunden werden ein Signaturzertifikat und ein Bereitstellungsprofil erstellt:
 
     ![Erfolgreich erstelltes Zertifikat und Profil](automatic-provisioning-images/image5.png)
 
@@ -87,7 +87,7 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 
     ![Auswahl des Teams](automatic-provisioning-images/prov3.png)
 
-4. Dadurch wird der automatische Signierprozess gestartet. Visual Studio versucht anschließend, eine App-ID, ein Bereitstellungsprofil und eine Signaturidentität zu generieren, um diese Artefakte für die Signatur zu verwenden. Sie können den Generierungsvorgang in der Buildausgabe sehen:
+5. Dadurch wird der automatische Signierprozess gestartet. Visual Studio versucht anschließend, eine App-ID, ein Bereitstellungsprofil und eine Signaturidentität zu generieren, um diese Artefakte für die Signatur zu verwenden. Sie können den Generierungsvorgang in der Buildausgabe sehen:
 
     ![Buildausgabe, die die Generierung von Artefakten zeigt](automatic-provisioning-images/prov5.png)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7f469dab92793eeaa38bd2b73e9d94b138495379
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971265"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830347"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Barrierefreiheit der Tastatur in Xamarin.Forms
 
@@ -66,10 +66,10 @@ Die `VisualElement.TabIndex`-Eigenschaft wird verwendet, um die Reihenfolge anzu
 
 Die folgenden Regeln gelten, wenn die Standardaktivierreihenfolge verwendet oder die `TabIndex`-Eigenschaft festgelegt wird:
 
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` gleich 0 werden, basierend auf ihrer Deklarationsreihenfolge in XMAL oder untergeordneten Sammlungen, der Aktivierreihenfolge hinzugefügt.
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` größer 0 werden, basierend auf ihrem `TabIndex`-Wert, der Aktivierreihenfolge hinzugefügt.
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` kleiner 0 werden der Aktivierreihenfolge hinzugefügt und werden vor einem NULL-Wert angezeigt.
- - Konflikte bei einem `TabIndex` werden durch Deklaration der Reihenfolge aufgelöst.
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` gleich 0 werden, basierend auf ihrer Deklarationsreihenfolge in XMAL oder untergeordneten Sammlungen, der Aktivierreihenfolge hinzugefügt.
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` größer 0 werden, basierend auf ihrem `TabIndex`-Wert, der Aktivierreihenfolge hinzugefügt.
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)-Instanzen mit einem `TabIndex` kleiner 0 werden der Aktivierreihenfolge hinzugefügt und werden vor einem NULL-Wert angezeigt.
+- Konflikte bei einem `TabIndex` werden durch Deklaration der Reihenfolge aufgelöst.
 
 Nach dem Definieren einer Aktivierreihenfolge, wird durch das Drücken der Tab-Taste eine Fokus-Schleife aktiviert, die Steuerelemente in aufsteigender `TabIndex`-Reihenfolge durchläuft und von vorne beginnt, sobald das letzte Steuerelement erreicht ist.
 

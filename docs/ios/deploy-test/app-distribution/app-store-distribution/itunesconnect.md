@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ff4c72eaaf856083ab8e2e240ac8ce3eff37470c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 24cf255d5cf9269a7d0d485ad8a88abe6842b07a
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669636"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865609"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurieren einer App in iTunes Connect
 
@@ -136,7 +136,7 @@ Apple empfiehlt Folgendes bei der Auswahl eines App-Namens:
 - Er soll der Funktionalität der Anwendung entsprechen.
 - Geben Sie für ausländische Märkte gegebenenfalls einen lokalisierten Namen an.
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
 Schreiben Sie eine klare, präzise und informative Beschreibung zur Anwendung und ihren Funktionen. Die ersten Zeilen sind die wichtigsten und bieten Ihnen die Möglichkeit, einen guten ersten Eindruck zu hinterlassen und das Interesse des Benutzers zu wecken. Beschrieben Sie also das Besondere an Ihrer Anwendung gegenüber ähnlichen Apps.
 
@@ -254,7 +254,7 @@ Führen Sie folgende Schritte in [iTunes Connect](https://itunesconnect.apple.co
 6. Klicken Sie neben **Rating** (Altersfreigabe) auf **Edit** (Bearbeiten), um die entsprechenden Informationen einzugeben:
 
     [![](itunesconnect-images/general02.png "Bearbeiten der Altersfreigabe")](itunesconnect-images/general02.png#lightbox)
-6. Klicken Sie am oberen Bildschirmrand auf **Save** (Speichern), um die Änderungen zu speichern.
+7. Klicken Sie am oberen Bildschirmrand auf **Save** (Speichern), um die Änderungen zu speichern.
 
 > [!NOTE]
 > Hinweis: Apple lehnt Ihre Übermittlung ab, wenn die Kategorien oder die Altersfreigabe nicht mit den aktuellen Funktionen Ihrer Anwendung übereinstimmen.
@@ -274,10 +274,10 @@ Führen Sie folgende Schritte in [iTunes Connect](https://itunesconnect.apple.co
 3. Wählen Sie die Registerkarte **Versions** (Versionen) aus.
 4. Scrollen Sie zum Abschnitt **Game Center**.
 5. Stellen Sie den Schalter im Abschnitt **Game Center** auf **On** (An).
-5. Tragen Sie alle erforderlichen Informationen ein:
+6. Tragen Sie alle erforderlichen Informationen ein:
 
     [![](itunesconnect-images/gamecenter01.png "Bearbeiten von Game Center-Informationen in iTunes Connect")](itunesconnect-images/gamecenter01.png#lightbox)
-6. Klicken Sie am oberen Bildschirmrand auf **Save** (Speichern), um die Änderungen zu speichern.
+7. Klicken Sie am oberen Bildschirmrand auf **Save** (Speichern), um die Änderungen zu speichern.
 
 Aktivieren Sie das **Game Center** auf der entsprechenden Registerkarte, und aktualisieren Sie alle für diese Anwendung verfügbaren **Leaderboards** (Ranglisten) oder **Achievements** (Erfolge):
 
@@ -303,7 +303,7 @@ Führen Sie folgende Schritte in [iTunes Connect](https://itunesconnect.apple.co
 6. Wählen Sie aus, wie die Anwendung nach erfolgreicher Überprüfung im App Store veröffentlicht werden soll:
 
     [![](itunesconnect-images/review02.png "Bearbeiten von Release-Information in iTunes Connect")](itunesconnect-images/review02.png#lightbox)
-6. Klicken Sie am oberen Bildschirmrand auf **Save** (Speichern), um die Änderungen zu speichern.
+7. Klicken Sie am oberen Bildschirmrand auf **Save** (Speichern), um die Änderungen zu speichern.
 
 
 ## <a name="maintaining-pricing-information"></a>Verwalten der Preisinformationen
@@ -333,9 +333,9 @@ Führen Sie folgende Schritte in [iTunes Connect](https://itunesconnect.apple.co
     [![](itunesconnect-images/price02.png "Bearbeiten der Preisinformationen in iTunes Connect")](itunesconnect-images/price02.png#lightbox)
 4. Wählen Sie unter **Availability Date** das Datum aus, ab dem die App verfügbar ist.
 5. Wählen Sie den gewünschten Preis aus der Dropdownliste **Price Tier** (Preisstufe) aus.
-5. Aktivieren Sie optional **Educational Discounts** (Rabatte für Bildungseinrichtungen).
-6. Definieren Sie die Anwendung optional als eine **Custom B2B Application** (Anpassbare B2B-Anwendung).
-6. Klicken Sie auf **Save** (Speichern), um die Änderungen zu speichern.
+6. Aktivieren Sie optional **Educational Discounts** (Rabatte für Bildungseinrichtungen).
+7. Definieren Sie die Anwendung optional als eine **Custom B2B Application** (Anpassbare B2B-Anwendung).
+8. Klicken Sie auf **Save** (Speichern), um die Änderungen zu speichern.
 
 <a name="iap" />
 
@@ -360,7 +360,7 @@ In diesem Artikel wurde beschrieben, wie Sie eine Xamarin.iOS-Anwendung mit iTun
 ## <a name="related-links"></a>Verwandte Links
 
 - [Working with Images (Arbeiten mit Bildern)](~/ios/app-fundamentals/images-icons/index.md)
-- [iOS App Development Workflow Guide: Distributing Applications (Leitfaden für den App-Entwicklungsworkflow für iOS: Verteilen von Anwendungen)](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
+- [iOS App Development Workflow Guide (Leitfaden für den App-Entwicklungsworkflow für iOS) Distributing Applications (Leitfaden für den App-Entwicklungsworkflow für iOS: Verteilen von Anwendungen)](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
 - [Tipps für die Übermittlung an den App Store](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [Richtlinien für die Überprüfung im App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [iTunes Connect-Entwicklerleitfaden](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225-CH1-SW1)

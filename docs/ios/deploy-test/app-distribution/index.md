@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1bd61474daedd8bd330c0370948d6dee6f8ea50e
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: d533996a9c4e86efa360bf2ed71165571c7ca260
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194953"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865830"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Übersicht über die Xamarin.iOS-App-Verteilung
 
@@ -27,8 +27,8 @@ Nach der Entwicklung der Xamarin.iOS-App ist der nächste Schritt im Lebenszyklu
 Apple bietet zum Verteilen einer iOS-Anwendung mehrere Möglichkeiten, die von Xamarin.iOS unterstützt werden:
 
 1. [**App Store-Verteilung**](#App_Store_Distribution)
-2. [**Interne Verteilung (Enterprise-Verteilung)**](#In-House_Distribution)
-2. [**Ad-hoc-Verteilung**](#Ad_Hoc_Distribution)
+2. [**Interne Verteilung (Enterprise-Verteilung)** ](#In-House_Distribution)
+3. [**Ad-hoc-Verteilung**](#Ad_Hoc_Distribution)
 
 Für jedes dieser Szenarios müssen Anwendungen mit dem entsprechenden *Bereitstellungsprofil* bereitgestellt werden. Bereitstellungsprofile sind Dateien, die Informationen zur Codesignierung sowie die Identität der Anwendung und den beabsichtigten Verteilungsmechanismus enthalten. Bei einer Verteilung, die nicht über den App Store erfolgt, enthalten Bereitstellungsprofile auch Informationen darüber, für welche Geräte eine App bereitgestellt werden kann.
 

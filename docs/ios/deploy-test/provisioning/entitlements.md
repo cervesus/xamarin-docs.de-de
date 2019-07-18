@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 5ce778d0e6c2d023362ca5c9c691d77548dd7383
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0314ec958b2c38e702c56ef64d1cc2bba1383060
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672598"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865843"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Arbeiten mit Berechtigungen in Xamarin.iOS
 
@@ -44,7 +44,7 @@ Um die Berechtigungen in Visual Studio für Mac zu konfigurieren, gehen Sie folg
 1. Doppelklicken Sie auf die **info.plist**-Datei im **Projektmappen-Explorer**, um sie zu öffnen und zu bearbeiten.
 2. Füllen Sie im Abschnitt **Ziel für iOS-Anwendung** den Namen für Ihre Anwendung aus, und geben Sie die **Bundle-ID** ein, die Sie beim Definieren der App-ID erstellt haben:
 
-  ![](entitlements-images/servicexs01.png "Geben Sie eine Bündel-ID ein")
+    ![](entitlements-images/servicexs01.png "Geben Sie eine Bündel-ID ein")
 
 3. Speichern Sie die Änderungen an der **info.plist**-Datei.
 4. Doppelklicken Sie im **Projektmappen-Explorer** auf die **entitlements.plist**-Datei, um sie zur Bearbeitung zu öffnen:
@@ -61,7 +61,7 @@ Um die Berechtigung in Visual Studio zu konfigurieren, führen Sie Folgendes aus
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die **info.plist**-Datei, klicken Sie auf **Öffnen mit...** und auf die **PLIST**-Datei, um sie für die Bearbeitung zu öffnen.
 2. Füllen Sie im Abschnitt **Ziel für iOS-Anwendung** den Namen für Ihre Anwendung aus, und geben Sie die **Bundle-ID** ein, die Sie beim Definieren der App-ID erstellt haben:
 
-  ![](entitlements-images/servicevs01.png "Festlegen der Bündel-ID")
+    ![](entitlements-images/servicevs01.png "Festlegen der Bündel-ID")
 
 3. Speichern Sie die Änderungen an der **info.plist**-Datei.
 4. Rechtsklicken Sie im **Projektmappen-Explorer** auf die **entitlements.plist**-Datei, klicken Sie auf **Öffnen mit...** und auf die **PLIST**-Datei, um sie für die Bearbeitung zu öffnen:
@@ -81,10 +81,10 @@ Berechtigungen werden einer App mit der „entitlements.plist“-Datei hinzugef�
 
 Um eine „entitlements.plist“-Datei in Ihrer Xamarin.iOS-Anwendung einzufügen, führen Sie Folgendes aus:
 
-1.  Klicken Sie mit der rechten Maustaste auf die Projektdatei, und navigieren Sie dann zu **Hinzufügen > Neue Datei...**:
+1. Klicken Sie mit der rechten Maustaste auf die Projektdatei, und navigieren Sie dann zu **Hinzufügen > Neue Datei...** :
 
     ![Kontextmenü „Dateien hinzufügen“](entitlements-images/image1.png)
-2.  Klicken Sie im Dialogfeld „Neue Datei“ auf **iOS > Eigenschaftenliste**, und benennen Sie sie „Berechtigungen“:
+2. Klicken Sie im Dialogfeld „Neue Datei“ auf **iOS > Eigenschaftenliste**, und benennen Sie sie „Berechtigungen“:
 
     ![Dialogfeld „Neue Datei“](entitlements-images/image2.png)
 

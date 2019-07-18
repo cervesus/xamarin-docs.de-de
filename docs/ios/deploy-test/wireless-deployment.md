@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 0e7516f030955c9b0f89db6db11b93afd9b358de
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854833"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865508"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Drahtlose Bereitstellung für Xamarin.iOS- und tvOS-Apps
 
@@ -21,7 +21,7 @@ Ein wichtiger Bestandteil des Entwicklerworkflows ist die Bereitstellung auf ein
 
 Dieses Handbuch enthält ausführliche Informationen zum Koppeln und Bereitstellen für ein Gerät über das Netzwerk.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Die drahtlose Bereitstellung steht als Feature sowohl in Visual Studio für Mac als auch in Visual Studio zur Verfügung.
 
@@ -85,7 +85,7 @@ Zur Bereitstellung auf einem iOS- oder tvOS-Gerät gehen Sie folgendermaßen vor
 
 2. Wählen Sie Ihr Gerät aus der Liste der Zielgeräte aus, und starten Sie die Anwendung.
 
-2. Wenn das Gerät gesperrt ist, werden Sie aufgefordert, Ihr Gerät zu entsperren. Sobald das Gerät entsperrt ist, wird Ihre App auf dem Gerät bereitgestellt.
+3. Wenn das Gerät gesperrt ist, werden Sie aufgefordert, Ihr Gerät zu entsperren. Sobald das Gerät entsperrt ist, wird Ihre App auf dem Gerät bereitgestellt.
 
 Drahtloses Debuggen wird automatisch nach der drahtlosen Bereitstellung aktiviert, sodass Sie zuvor festgelegte Haltepunkte verwenden und Ihren Debuggingworkflow wie gewohnt fortsetzen können.
 

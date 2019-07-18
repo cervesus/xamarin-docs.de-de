@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 31992c7d9219289847ebc3e9c8af755d54dc18ab
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 39e641d5e911b179ca8da9fc6c1b7685a9644364
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672715"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831485"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -561,8 +561,8 @@ namespace UsingResxLocalization.Android
 
 Sobald dieser Code zum Android-Anwendungsprojekt hinzugefügt wurde, können übersetzte Zeichenfolgen automatisch angezeigt werden.
 
-> [!NOTE]
->️ **WARNUNG:** Wenn die übersetzten Zeichenfolgen zwar in Ihren RELEASE-Builds für Android funktionieren, aber nicht während des Debuggens, klicken Sie mit der rechten Maustaste auf das **Android-Projekt**, navigieren Sie zu **Optionen > Build > Android-Build**, und vergewissern Sie sich, dass das Kontrollkästchen für **Schnelle Assemblybereitstellung** NICHT aktiviert ist. Wenn diese Option aktiviert ist, treten Probleme beim Laden von Ressourcen auf. Sie sollten sie daher nicht verwenden, wenn Sie lokalisierte Apps testen.
+> [!WARNING]
+> Wenn die übersetzten Zeichenfolgen zwar in Ihren RELEASE-Builds für Android funktionieren, aber nicht während des Debuggens, klicken Sie mit der rechten Maustaste auf das **Android-Projekt**, navigieren Sie zu **Optionen > Build > Android-Build**, und vergewissern Sie sich, dass das Kontrollkästchen für **Schnelle Assemblybereitstellung** NICHT aktiviert ist. Wenn diese Option aktiviert ist, treten Probleme beim Laden von Ressourcen auf. Sie sollten sie daher nicht verwenden, wenn Sie lokalisierte Apps testen.
 
 Weitere Informationen zur Android-Lokalisierung finden Sie unter [Android Localization (Android-Lokalisierung)](~/android/app-fundamentals/localization.md).
 
@@ -735,7 +735,7 @@ Auf dem folgenden Screenshot sehen Sie die Beispiel-App für iOS mit sprachspezi
 
 ![](text-images/ios-resources.png "iOS-Verzeichnisse für Lokalisierungsprojekte")
 
-Jedes Sprachverzeichnis enthält eine entsprechend lokalisierte Kopie des **flag.png**-Bilds. Wenn kein Bild vorhanden ist, wird standardmäßig das Bild verwendet, das im Standardsprachverzeichnis gespeichert ist. Wenn Sie eine vollständige Retina-Unterstützung benötigen, sollten Sie **@2x**- und **@3x**-Kopien jedes Bilds bereitstellen.
+Jedes Sprachverzeichnis enthält eine entsprechend lokalisierte Kopie des **flag.png**-Bilds. Wenn kein Bild vorhanden ist, wird standardmäßig das Bild verwendet, das im Standardsprachverzeichnis gespeichert ist. Wenn Sie eine vollständige Retina-Unterstützung benötigen, sollten Sie **@2x** - und **@3x** -Kopien jedes Bilds bereitstellen.
 
 #### <a name="app-name"></a>App-Name
 

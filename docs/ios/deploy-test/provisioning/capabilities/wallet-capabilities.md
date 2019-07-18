@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 3dc68d0879d3ce4d5dd9b658a3bce7a00c348c09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0ae5dd86341912354938a8509668c843d412367b
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121242"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832580"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Wallet-Funktionen in Xamarin.iOS
 
@@ -32,21 +32,21 @@ Entwickler haben mit Wallet eine Vielzahl von Möglichkeiten:
 
 Führen Sie folgende Schritte aus, um ein neues Bereitstellungsprofil zur Verwendung mit Wallet zu erstellen:
 
-1.  Navigieren Sie im Apple Developer Portal zum Abschnitt [Zertifikate, Bezeichner und Profile](https://developer.apple.com/account/ios/certificate/).
-2.  Navigieren Sie unter **Bezeichner** zu **App-IDs**: 
+1. Navigieren Sie im Apple Developer Portal zum Abschnitt [Zertifikate, Bezeichner und Profile](https://developer.apple.com/account/ios/certificate/).
+2. Navigieren Sie unter **Bezeichner** zu **App-IDs**: 
     
     ![Auswählen der App-ID](wallet-capabilities-images/image17.png)
 
-3.  Klicken Sie auf das **+**-Symbol rechts oben auf der Seite.
-4.  Geben Sie einen **Namen** und einen Bündelbezeichner ein, um eine neue App-ID zu registrieren. (Beachten Sie, dass der Bündelbezeichner mit dem Bündelbezeichner in Ihrem Projekt übereinstimmen muss):
+3. Klicken Sie auf das **+** -Symbol rechts oben auf der Seite.
+4. Geben Sie einen **Namen** und einen Bündelbezeichner ein, um eine neue App-ID zu registrieren. (Beachten Sie, dass der Bündelbezeichner mit dem Bündelbezeichner in Ihrem Projekt übereinstimmen muss):
    
     ![Hinzufügen von App-ID-Details](wallet-capabilities-images/image18.png)
 
-5.  Wählen Sie aus der Liste der Dienste den App Service **Wallet**aus:
+5. Wählen Sie aus der Liste der Dienste den App Service **Wallet**aus:
     
     ![Bildschirm „Dienst auswählen“](wallet-capabilities-images/image19.png)
 
-6.  Wählen Sie **Weiter** und anschließend **Registrieren** aus, um die App-ID zu erstellen.
+6. Wählen Sie **Weiter** und anschließend **Registrieren** aus, um die App-ID zu erstellen.
 
 Vorhandene App-IDs können gegebenenfalls bearbeitet werden, um die Wallet-Funktion hinzuzufügen.
 

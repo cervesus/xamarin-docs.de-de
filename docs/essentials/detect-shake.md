@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: 8aa1062c7948a57a21d59a785d6359056351245d
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: d2aef2c32b3fe2815f1176779a8c28ae8d421ed1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354054"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832600"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Erkennen einer Schüttelbewegung
 
@@ -29,7 +29,7 @@ Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 using Xamarin.Essentials;
 ```
 
-Zum Erkennen von Schüttelbewegungen des Geräts müssen Sie die Beschleunigungsmesserfunktionalität verwenden, indem Sie die Methoden `Start` und `Stop` aufrufen, um auf Änderungen an der Beschleunigung zu lauschen und das Schütteln zu erkennen. Jedes Mal, wenn eine Schüttelbewegung erkannt wird, wird ein `ShakeDetected `-Ereignis ausgelöst. Es wird empfohlen, `Game` oder schneller für die `SensorSpeed` zu verwenden. Sie können sie z.B. wie folgt verwenden:
+Zum Erkennen von Schüttelbewegungen des Geräts müssen Sie die Beschleunigungsmesserfunktionalität verwenden, indem Sie die Methoden `Start` und `Stop` aufrufen, um auf Änderungen an der Beschleunigung zu lauschen und das Schütteln zu erkennen. Jedes Mal, wenn eine Schüttelbewegung erkannt wird, wird ein `ShakeDetected`-Ereignis ausgelöst. Es wird empfohlen, `Game` oder schneller für die `SensorSpeed` zu verwenden. Sie können sie z.B. wie folgt verwenden:
 
 ```csharp
 

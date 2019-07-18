@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 2536e123cb4bdfd194c573802a91cba7a8c1208d
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 7249b699a5f692269d124550a9e7d291f4315903
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178126"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832183"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Arbeiten mit Funktionen in Xamarin.iOS
 
@@ -122,30 +122,30 @@ Die Verwendung des Developer Centers besteht aus zwei Schritten: Erstellen einer
 
 ### <a name="creating-an-app-id-with-an-app-service"></a>Erstellen einer App-ID mit einem App-Dienst
 
-1.  Wechseln Sie auf einem Mac (auf dem Buildhost-Mac, wenn Sie einen Windows-Computer verwenden) zum [Apple Developer Center](https://developer.apple.com/account), und melden Sie sich an.
-2.  Wählen Sie **Zertifikate, Bezeichner und Profile** aus:
+1. Wechseln Sie auf einem Mac (auf dem Buildhost-Mac, wenn Sie einen Windows-Computer verwenden) zum [Apple Developer Center](https://developer.apple.com/account), und melden Sie sich an.
+2. Wählen Sie **Zertifikate, Bezeichner und Profile** aus:
 
     ![Apple Developer Center](images/image5.png)
 
-3.  Wählen Sie unter **Bezeichner** die Option **App-IDs** aus:
+3. Wählen Sie unter **Bezeichner** die Option **App-IDs** aus:
 
     ![Auswahl „App-IDs“ im Developer Center](images/image6.png)
 
-4.  Klicken Sie zum Erstellen einer neuen App-ID auf die **+** -Schaltfläche in der oberen rechten Ecke.
-5.  Geben Sie eine Beschreibung der App-ID ein, wählen Sie „Eindeutige App-ID“ aus, und geben Sie eine Bündel-ID im Format `com.domain.appname` ein. Diese Bündel-ID sollte mit der Bündel-ID in Ihrem Projekt übereinstimmen:
+4. Klicken Sie zum Erstellen einer neuen App-ID auf die **+** -Schaltfläche in der oberen rechten Ecke.
+5. Geben Sie eine Beschreibung der App-ID ein, wählen Sie „Eindeutige App-ID“ aus, und geben Sie eine Bündel-ID im Format `com.domain.appname` ein. Diese Bündel-ID sollte mit der Bündel-ID in Ihrem Projekt übereinstimmen:
 
     ![Hinzufügen von App-ID-Details](images/image7.png)
 
-6.  Wählen Sie unter **App-Dienste** den Dienst oder die Dienste aus, die in Ihrer App erfordert werden:
+6. Wählen Sie unter **App-Dienste** den Dienst oder die Dienste aus, die in Ihrer App erfordert werden:
 
     ![Auswahl der App-Dienste](images/image8.png)
 
-7.  Klicken Sie auf **Weiter**.
-8.  Bestätigen Sie Ihre App-ID. Jeder Dienst kann einen der folgenden Status aufweisen: **Aktiviert**, **Deaktiviert** oder **Konfigurierbar**, wie oben angezeigt. Ist der Dienst **Aktiviert**, können Sie ihn in einem Bereitstellungsprofil verwenden. Ist er **Konfigurierbar**, sind für diese Funktion weitere Konfigurationsschritte erforderlich. Die zusätzlichen Konfigurationsschritte werden in nachfolgenden Abschnitten ausführlicher beschrieben.
+7. Klicken Sie auf **Weiter**.
+8. Bestätigen Sie Ihre App-ID. Jeder Dienst kann einen der folgenden Status aufweisen: **Aktiviert**, **Deaktiviert** oder **Konfigurierbar**, wie oben angezeigt. Ist der Dienst **Aktiviert**, können Sie ihn in einem Bereitstellungsprofil verwenden. Ist er **Konfigurierbar**, sind für diese Funktion weitere Konfigurationsschritte erforderlich. Die zusätzlichen Konfigurationsschritte werden in nachfolgenden Abschnitten ausführlicher beschrieben.
 
     ![Bestätigung der App-ID](images/image9.png)
 
-9.  Klicken Sie auf **Registrieren** und anschließend auf **Fertig**. Die neu erstellte App-ID sollte nun in der Liste der iOS-App-IDs angezeigt werden.
+9. Klicken Sie auf **Registrieren** und anschließend auf **Fertig**. Die neu erstellte App-ID sollte nun in der Liste der iOS-App-IDs angezeigt werden.
 
 
 <a name="provisioningprofile" />
@@ -154,32 +154,32 @@ Die Verwendung des Developer Centers besteht aus zwei Schritten: Erstellen einer
 
 Erstellen Sie nun ein Bereitstellungsprofil, das diese App-ID enthält. Führen Sie die nachfolgenden Schritte aus:
 
-1.  Wechseln Sie im Apple Developer Center zu **Bereitstellungsprofile > Alle**:
+1. Wechseln Sie im Apple Developer Center zu **Bereitstellungsprofile > Alle**:
 
     ![Abschnitt „Bereitstellungsprofil“](images/image10.png)
 
-2.  Klicken Sie zum Erstellen eines neuen Bereitstellungsprofils auf die **+** -Schaltfläche in der oberen rechten Ecke.
-3.  Wählen Sie den Bereitstellungsprofiltyp aus, den Sie benötigen, und klicken Sie auf **Weiter**:
+2. Klicken Sie zum Erstellen eines neuen Bereitstellungsprofils auf die **+** -Schaltfläche in der oberen rechten Ecke.
+3. Wählen Sie den Bereitstellungsprofiltyp aus, den Sie benötigen, und klicken Sie auf **Weiter**:
 
     ![Auswahl des Bereitstellungsprofils](images/image11.png)
 
-4.  Wählen Sie aus der Dropdownliste die App-ID aus, die in den vorhergehenden Schritten erstellt wurde, und klicken Sie auf **Weiter**:
+4. Wählen Sie aus der Dropdownliste die App-ID aus, die in den vorhergehenden Schritten erstellt wurde, und klicken Sie auf **Weiter**:
 
     ![Auswahl der App-ID](images/image12.png)
 
-5.  Wählen Sie die Zertifikate zum Signieren der App aus, und klicken Sie auf **Weiter**:
+5. Wählen Sie die Zertifikate zum Signieren der App aus, und klicken Sie auf **Weiter**:
 
     ![Auswahl der Zertifikate](images/image13.png)
 
-6.  Wählen Sie die Geräte aus, die dieses Profil enthalten soll, und klicken Sie auf **Weiter**:
+6. Wählen Sie die Geräte aus, die dieses Profil enthalten soll, und klicken Sie auf **Weiter**:
 
     ![Auswahl der Geräte für das Bereitstellungsprofil](images/image14.png)
 
-7.  Geben Sie dem Profil zur Identifizierung einen Namen, und klicken Sie zum Generieren des Profils auf **Weiter**:
+7. Geben Sie dem Profil zur Identifizierung einen Namen, und klicken Sie zum Generieren des Profils auf **Weiter**:
 
     ![Name des Bereitstellungsprofils](images/image15.png)
 
-8.  Klicken Sie zum Herunterladen des Profils auf die Schaltfläche **Herunterladen**. Doppelklicken Sie im Finder auf die Datei, um das Bereitstellungsprofil zu installieren.
+8. Klicken Sie zum Herunterladen des Profils auf die Schaltfläche **Herunterladen**. Doppelklicken Sie im Finder auf die Datei, um das Bereitstellungsprofil zu installieren.
 
 9. Stellen Sie bei Verwendung von Visual Studio sicher, dass die Option **Manuelle Bereitstellung** ausgewählt ist.
 
@@ -205,12 +205,12 @@ Wenn eine Funktion auf der Serverseite aktiviert wurde, sind weitere Schritte er
 
 In der folgenden Liste werden einige der häufigsten Probleme aufgeführt, die zu Hindernissen bei der Entwicklung einer App mit einem aktivierten App-Dienst führen können:
 
--   Stellen Sie sicher, dass die richtige ID ordnungsgemäß erstellt und im Abschnitt **Zertifikate, Bezeichner und Profile** des Apple Developer Portal registriert wurde.
--   Stellen Sie sicher, dass der Dienst der App-ID (oder der Erweiterungs-ID) hinzugefügt wurde und dass er für die Verwendung der zuvor erstellten App-Gruppe/Händler-ID/Container unter **Zertifikate, Bezeichner und Profile** des Apple Developer Portal konfiguriert wurde.
--   Stellen Sie sicher, dass die Bereitstellungsprofile und App-IDs installiert wurden und dass die Datei **Info.plist** der App (im Xamarin-Projekt) eine der zuvor konfigurierten App-IDs verwendet.
--   Stellen Sie sicher, dass für die Datei **Entitlements.plist** der App (im Xamarin-Projekt) der richtige Dienst aktiviert wurde.
--   Stellen Sie sicher, dass die Datenschutzschlüssel in der Datei „Info.plist“ entsprechend festgelegt sind.
--   Stellen Sie im Bereich **iOS-Bündelsignierung** der App sicher, dass **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich _nicht_ um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
+- Stellen Sie sicher, dass die richtige ID ordnungsgemäß erstellt und im Abschnitt **Zertifikate, Bezeichner und Profile** des Apple Developer Portal registriert wurde.
+- Stellen Sie sicher, dass der Dienst der App-ID (oder der Erweiterungs-ID) hinzugefügt wurde und dass er für die Verwendung der zuvor erstellten App-Gruppe/Händler-ID/Container unter **Zertifikate, Bezeichner und Profile** des Apple Developer Portal konfiguriert wurde.
+- Stellen Sie sicher, dass die Bereitstellungsprofile und App-IDs installiert wurden und dass die Datei **Info.plist** der App (im Xamarin-Projekt) eine der zuvor konfigurierten App-IDs verwendet.
+- Stellen Sie sicher, dass für die Datei **Entitlements.plist** der App (im Xamarin-Projekt) der richtige Dienst aktiviert wurde.
+- Stellen Sie sicher, dass die Datenschutzschlüssel in der Datei „Info.plist“ entsprechend festgelegt sind.
+- Stellen Sie im Bereich **iOS-Bündelsignierung** der App sicher, dass **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich _nicht_ um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
 
 <a name="summary" />
 

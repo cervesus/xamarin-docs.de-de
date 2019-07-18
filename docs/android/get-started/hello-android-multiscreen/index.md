@@ -8,22 +8,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: c67d2be3d0bb1a159d234e815b16a988b93087d4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 170bd30d65b9f5947bdb9d23d3100a8048f73ac7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670888"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864054"
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen)
 
 _In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hello, Android“ (Hallo, Android) erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Der Leitfaden enthält eine Einführung in die grundlegenden Android-Anwendungsbausteine und detaillierte Informationen zur Android-Architektur, bei der Sie ein besseres Verständnis der Struktur und Funktionalität der Android-Anwendung entwickeln._
 
-##  <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[Teil 1: Schnellstart](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
+## <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[Teil 1: Schnellstart](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
 Im ersten Teil dieses Leitfadens fügen Sie einen zweiten Bildschirm zur Phoneword-Anwendung hinzu, um mithilfe der App den Verlauf der aufgerufenen Nummern nachzuverfolgen. Die endgültige App zeigt einen zweiten Bildschirm an, auf dem der Anrufverlauf aufgelistet wird.
 
-##  <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[Teil 2: Ausführliche Erläuterungen](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
+## <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[Teil 2: Ausführliche Erläuterungen](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
 
 Im zweiten Teil dieses Dokuments können Sie das Erstellte überprüfen. Zudem werden die Architektur, Navigation und weitere neue Android-Konzepte erläutert, denen Sie noch begegnen werden.
 
