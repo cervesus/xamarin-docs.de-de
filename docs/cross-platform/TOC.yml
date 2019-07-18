@@ -6,14 +6,14 @@
       href: get-started/index.md
       expanded: true
       items:
-        - name: Anforderungen
+        - name: Requirements (Anforderungen)
           displayName: System requirements
           href: get-started/requirements.md
-        - name: Einführung in die Entwicklung mobiler Anwendungen
+        - name: Was ist Xamarin?
           href: get-started/introduction-to-mobile-development.md
-        - name: Einführung in den mobilen SDLC
+        - name: Lebenszyklus der Entwicklung mobiler Software
           href: get-started/introduction-to-mobile-sdlc.md
-        - name: Erstellen von plattformübergreifenden Anwendungen
+        - name: 'Exemplarische Vorgehensweise: Erstellung einer plattformübergreifenden App'
           href: app-fundamentals/building-cross-platform-applications/index.md
           items:
             - name: Übersicht
@@ -75,10 +75,10 @@
               href: platform/fsharp/overview.md
             - name: 'F#-Beispiele'
               href: platform/fsharp/samples.md
-        - name: Visual Basic.NET
+        - name: Visual Basic
           href: platform/visual-basic/index.md
           items:
-            - name: Xamarin iOS und Android
+            - name: Xamarin Android und iOS
               href: platform/visual-basic/native-apps.md
             - name: Xamarin.Forms
               href: platform/visual-basic/xamarin-forms.md
