@@ -1,25 +1,25 @@
 ---
 title: Xamarin-Firewall-Konfigurationsanleitung
-description: In diesem Dokument wird eine Liste der Hosts bereitgestellt, die in der Whitelist Ihrer Firewall enthalten sein müssen, damit Xamarin in einer Unternehmensumgebung funktioniert.
+description: Dieses Dokument enthält eine Liste der Hosts, die in Ihrer Firewall zugelassen werden müssen, damit xamarin in einer Unternehmensumgebung funktioniert.
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: asb3993
 ms.author: amburns
-ms.date: 10/05/2018
-ms.openlocfilehash: 68689ce7d92a038d0724e1441f68fddcb1d0bba8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 07/17/2019
+ms.openlocfilehash: b2509bb99a5caf5b508d34aafc0f0c4862a7e563
+ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61346833"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329954"
 ---
-# <a name="xamarin-firewall-configuration-instructions"></a>Xamarin-Firewall-Konfigurationsanleitung
+# <a name="xamarin-firewall-configuration-instructions"></a>Konfigurations Anweisungen für die xamarin-Firewall
 
-_Eine Liste der Hosts, die von Ihrer Firewall zugelassen werden müssen, damit die Xamarin-Plattform in Ihrem Unternehmen funktioniert._
+_Eine Liste der Hosts, die Sie in Ihrer Firewall zulassen müssen, damit die xamarin-Plattform in Ihrem Unternehmen funktioniert._
 
-Für die korrekte Installation und Funktionsweise von Xamarin-Produkten müssen die erforderlichen Tools und Updates für Ihre Software über bestimmte Endpunkte heruntergeladen werden können. Wenn Sie oder Ihr Unternehmen über strenge Firewalleinstellungen verfügen, könnten u.a. Probleme mit der Installation, der Lizenzierung und den Komponenten auftreten. Dieses Dokument erläutert einige der bekannten Endpunkte, die von Ihrer Firewall zugelassen werden müssen, damit Xamarin funktioniert. Die Liste enthält nicht die Endpunkte, die für im Download enthaltene Drittanbietertools erforderlich sind. Wenn Sie immer noch Probleme haben, nachdem Sie diese Liste durchgegangen sind, lesen Sie sich die Apple- oder Android-Handbücher zur Behebung von Installationsproblemen durch.
+Für die korrekte Installation und Funktionsweise von Xamarin-Produkten müssen die erforderlichen Tools und Updates für Ihre Software über bestimmte Endpunkte heruntergeladen werden können. Wenn Sie oder Ihr Unternehmen über strenge Firewalleinstellungen verfügen, könnten u.a. Probleme mit der Installation, der Lizenzierung und den Komponenten auftreten. In diesem Dokument werden einige der bekannten Endpunkte erläutert, die in Ihrer Firewall zugelassen werden müssen, damit xamarin funktioniert. Die Liste enthält nicht die Endpunkte, die für im Download enthaltene Drittanbietertools erforderlich sind. Wenn Sie immer noch Probleme haben, nachdem Sie diese Liste durchgegangen sind, lesen Sie sich die Apple- oder Android-Handbücher zur Behebung von Installationsproblemen durch.
 
-## <a name="endpoints-to-whitelist"></a>Endpunkte für die Whitelist
+## <a name="endpoints-to-allow"></a>Zu erlaubte Endpunkte
 
 ### <a name="xamarin-installer"></a>Xamarin-Installer
 
@@ -39,8 +39,8 @@ Wenn Sie einen Mac verwenden und bei der Installation von Xamarin.Android Proble
 
 Die folgenden Adressen müssen hinzugefügt werden, um auf NuGet (Xamarin.Forms ist als NuGet-Paket verpackt) zuzugreifen:
 
-- www\.nuget.org (für den Zugriff auf NuGet)
-- az320820.vo.msecnd.net (NuGet-Downloads)
+- www.nuget.org (für den Zugriff auf NuGet)
+- globalcdn.nuget.org (nuget-Downloads)
 - dl-ssl.google.com (Google-Komponenten für Android und Xamarin.Forms)
 
 ### <a name="software-updates"></a>Softwareupdates
@@ -54,7 +54,3 @@ Die folgenden Adressen müssen hinzugefügt werden, um sicherzustellen, dass Sof
 ## <a name="xamarin-mac-agent"></a>Xamarin Mac-Agent
 
 Der SSH-Port muss offen sein, damit Visual Studio mithilfe des Xamarin Mac-Agents mit einem Mac-Buildhost verbunden werden kann. Standardmäßig ist es **Port 22**.
-
-## <a name="summary"></a>Zusammenfassung
-
-In diesem Handbuch wurden die Endpunkte behandelt, die zugänglich sein müssen, damit Xamarin-Produkte auf Ihrem Computer ordnungsgemäß installiert und aktualisiert werden.

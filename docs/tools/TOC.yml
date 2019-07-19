@@ -44,11 +44,6 @@
           href: workbooks/workbook.md
         - name: Editor-Tastenkombinationen
           href: workbooks/keybindings.md
-        - name: Beispielarbeitsmappen
-          href: workbooks/samples/index.md
-          items:
-            - name: TinyRenderer
-              href: workbooks/samples/tinyrenderer.md
         - name: Problembehandlung
           href: workbooks/troubleshooting/index.md
           items:
