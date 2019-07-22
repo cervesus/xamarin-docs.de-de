@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: c1e1b2d7bfb43c256c71abb62e7d85a05b096419
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a2dc974fba7beb70f1caecf8198181193d32e4c2
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103581"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865531"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
 
@@ -53,7 +53,7 @@ Es ist wichtig, zu beachten, dass abgelaufene Zertifikate nicht erneuert werden 
 
 1. Navigieren Sie zum Abschnitt *Certificates, Identifiers & Profiles* (Zertifikate, Bezeichner & Profile) im Developer Member Center von Apple.
 2. Wählen Sie unter *Certificates* (Zertifikate) die Option **Production** (Produktion) aus.
-3. Klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen.
+3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Produktion* **Intern und Ad-hoc** aus:
 
    [![](in-house-distribution-images/createcertmanually01.png "„Intern“ und „Ad-hoc“ auswählen")](in-house-distribution-images/createcertmanually01.png#lightbox)
@@ -74,13 +74,13 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Einstellungen
 
 1. Wählen Sie das Team aus, und klicken Sie auf *Details anzeigen*:
 
-    [![](in-house-distribution-images/selectteam.png "Ihr Team auswählen")](in-house-distribution-images/selectteam.png#lightbox)
+   [![](in-house-distribution-images/selectteam.png "Ihr Team auswählen")](in-house-distribution-images/selectteam.png#lightbox)
 
 2. Klicken Sie anschließend auf die Schaltfläche **Create** (Erstellen) neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat):
 
    [![](in-house-distribution-images/selectcert.png "Das iOS-Verteilungszertifikat erstellen")](in-house-distribution-images/selectcert.png#lightbox)
 
-2.   Klicken Sie anschließend auf die Schaltfläche **plus (+)**, und wählen Sie **iOS App Store** aus:
+3. Klicken Sie anschließend auf die Schaltfläche **plus (+)** , und wählen Sie **iOS App Store** aus:
 
    [![](in-house-distribution-images/selectcert.png "„iOS App Store“ auswählen")](in-house-distribution-images/selectcert.png#lightbox)
 
@@ -96,9 +96,9 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 
 
 1. Navigieren Sie im [Apple Developer Center](https://developer.apple.com/account/overview.action) zum Abschnitt *Certificate, Identifiers and Profiles* (Zertifikate, Bezeichner und Profile). Wählen Sie unter **Identifiers** (Bezeichner) **App IDs** (App-IDs) aus.
-2. Klicken Sie auf die Schaltfläche **+**, und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
-3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt werden, und kann nicht geändert werden. Wählen Sie entweder eine explizite oder Platzhalter-App-ID, und geben Sie eine Bundle-ID in einem umgekehrten DNS-Format ein, wie beispielsweise: **Explizit**: com.[Domänenname].[Anwendungsname] **Platzhalter**:com.[Domänenname].*
-4. Wählen Sie die gewünschten [Anwendungsdienste](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services), die Ihre Anwendung benötigt.
+2. Klicken Sie auf die Schaltfläche **+** , und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
+3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt sein und kann nicht geändert werden. Wählen Sie entweder eine explizite oder eine Platzhalter-App-ID aus, und geben Sie eine Bundle-ID in einem umgekehrten DNS-Format ein, wie beispielsweise: **Explizit**: com.[Domaenenname].[App-Name] **Platzhalter**:com.[Domaenenname].*
+4. Wählen Sie die [App Services](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services) (App-Dienste) aus, die für Ihre Anwendung erforderlich sind.
 5. Klicken Sie auf die Schaltfläche **Weiter**, und folgen Sie der Anleitung auf dem Bildschirm, um die neue App-ID zu erstellen.
 
 Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils haben, führen Sie die folgenden Schritte aus, um es zu erstellen:
@@ -107,7 +107,7 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
    [![](in-house-distribution-images/distribute01.png "Klicken Sie auf „Bereitstellung > Verteilung“")](in-house-distribution-images/distribute01.png#lightbox)
 
-2. Klicken Sie auf die **+**-Schaltfläche, und wählen Sie den Typ des Verteilungsprofils aus, das Sie **intern** erstellen möchten:
+2. Klicken Sie auf die **+** -Schaltfläche, und wählen Sie den Typ des Verteilungsprofils aus, das Sie **intern** erstellen möchten:
 
    [ ![](in-house-distribution-images/distribute02.png "Erstellen Sie ein internes Verteilungsprofil")](in-house-distribution-images/distribute02.png#lightbox)
 
@@ -119,11 +119,11 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
    [ ![](in-house-distribution-images/distribute04.png "Wählen Sie ein zum Signieren der Anwendung erforderliches Verteilungszertifikat aus")](in-house-distribution-images/distribute04.png#lightbox)
 
-6. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
+5. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
 
    [![](in-house-distribution-images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](in-house-distribution-images/distribute06.png#lightbox)
 
-7. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
+6. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 602a530e1c185ffeda2c6ac80a96f7795cec4cae
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dbf8f85192f9052041fc65367eb2f6c57603b440
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104842"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831423"
 ---
 # <a name="ios-build-mechanics"></a>Abläufe beim Erstellen von iOS-Builds
 
@@ -33,7 +33,7 @@ So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio für Mac
 
 1. Klicken Sie auf **Visual Studio für Mac > Einstellungen...**
 2. Wählen Sie in der linken Struktur **Projekte > Build** aus.
-3. Legen Sie im rechten Bereich das Dropdownelement „Protokollausführlichkeit“ auf **Diagnose** fest: [![](ios-build-mechanics-images/image2.png "Festlegen der Ausführlichkeit des Protokolls")](ios-build-mechanics-images/image2.png#lightbox)
+3. Legen Sie im rechten Bereich das Dropdownelement „Protokollausführlichkeit“ auf **Diagnose** fest:  [![](ios-build-mechanics-images/image2.png "Festlegen der Ausführlichkeit des Protokolls")](ios-build-mechanics-images/image2.png#lightbox)
 4. Klicken Sie auf **OK**.
 5. Starten Sie Visual Studio für Mac neu.
 6. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
@@ -44,9 +44,9 @@ So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio für Mac
 
 So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio
 
-1. Klicken Sie auf **Extras > Optionen...**.
+1. Klicken Sie auf **Extras > Optionen...** .
 2. Wählen Sie in der linken Struktur **Projekte und Projektmappen > Erstellen und Ausführen** aus.
-3. Legen Sie im rechten Bereich das Dropdownelement *Ausführlichkeit der MSBuild-Buildausgabe* auf **Diagnose** fest: [![](ios-build-mechanics-images/image2-vs.png "Festlegen der Ausführlichkeit der MSBuild-Buildausgabe")](ios-build-mechanics-images/image2-vs.png#lightbox)
+3. Legen Sie im rechten Bereich das Dropdownelement *Ausführlichkeit der MSBuild-Buildausgabe* auf **Diagnose** fest:  [![](ios-build-mechanics-images/image2-vs.png "Festlegen der Ausführlichkeit der MSBuild-Buildausgabe")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. Klicken Sie auf **OK**.
 5. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
 6. Die Diagnoseausgabe wird im Ausgabebereich angezeigt.
@@ -111,9 +111,9 @@ Die Bereitstellung auf dem Gerät ist vergleichbar mit der Bereitstellung auf de
 
 Es gibt eine Reihe von Buildkonfigurationen, die bei der Bereitstellung von iOS-Apps zur Verfügung stehen. Es ist wichtig, ein gutes Verständnis der einzelnen Konfigurationen zu haben, um zu wissen, wann und warum Sie optimieren sollten.
 
- - Debug
+- Debug
   - Dies ist die Hauptkonfiguration, die während der Entwicklung einer App verwendet werden sollte und daher so schnell wie möglich sein sollte.
- - Release
+- Freigabe
   - Releasebuilds sind diejenigen, die an Ihre Benutzer ausgeliefert werden. Bei ihnen liegt der Schwerpunkt auf der Leistung. Wenn Sie die Releasekonfiguration verwenden, empfiehlt es die Verwendung des LLVM-Optimierungscompilers und Optimierung von PNG-Dateien.
 
  

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2019
-ms.openlocfilehash: bb1b615bc922b19c50435218dfee51f9e19d1259
-ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
+ms.openlocfilehash: 49370813f50e3b5f1a9193c542b9f5f13d65a8e1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394725"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829957"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Multi-Core-Geräte und Xamarin.Android
 
@@ -53,13 +53,15 @@ Jede von Android unterstützte ABI wird durch einen eindeutigen Namen identifizi
 
 Dies ist der Name einer EABI für ARM-basierte CPUs, die mindestens den ARMv5TE-Befehlssatz unterstützen. Android folgt der Little-Endian-ARM-GNU-/Linux-ABI. Diese ABI unterstützt keine hardwareunterstützten Gleitkommaberechnungen. Alle FP-Vorgänge werden von Softwarehilfsfunktionen ausgeführt, die aus der statischen `libgcc.a`-Bibliothek des Compilers stammen. SMP-Geräte werden von `armeabi` nicht unterstützt.
 
-**Hinweis:** Der `armeabi`-Code von Xamarin.Android ist nicht threadsicher und sollte nicht auf `armeabi-v7a`-Geräten mit mehreren CPUs verwendet werden (siehe Beschreibung weiter unten). Das Verwenden von `armeabi`-Code auf einem `armeabi-v7a`-Einzelkerngerät ist sicher.
+> [!IMPORTANT]
+> Der `armeabi`-Code von Xamarin.Android ist nicht threadsicher und sollte nicht auf `armeabi-v7a`-Geräten mit mehreren CPUs verwendet werden (siehe Beschreibung weiter unten). Das Verwenden von `armeabi`-Code auf einem `armeabi-v7a`-Einzelkerngerät ist sicher.
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
 Dies ist ein weiterer ARM-basierter CPU-Befehlssatz, der die oben beschriebene `armeabi`-EABI erweitert. Die `armeabi-v7a`-EABI unterstützt Hardware-Gleitkommavorgänge und mehrere CPU-Geräte (SMP). Eine Anwendung, die die `armeabi-v7a`-EABI verwendet, kann erhebliche Leistungsverbesserungen gegenüber einer Anwendung erwarten, die `armeabi` verwendet.
 
-**Hinweis:** `armeabi-v7a`-Computercode kann nicht auf ARMv5 Geräten ausgeführt werden.
+> [!NOTE]
+> `armeabi-v7a`-Computercode kann auf ARMv5 Geräten nicht ausgeführt werden.
 
 #### <a name="arm64-v8a"></a>arm64 v8a
 
@@ -74,7 +76,8 @@ Dies ist der Name einer ABI für CPUs, die den Befehlssatz unterstützen, der ü
 - Zusätzliche SSE3-Erweiterung (SSSE3).
 - Eine Variante von SSE4.
 
-**Hinweis**: Google TV wird vom Android NDK nicht unterstützt, obwohl die Anwendung unter x86 ausgeführt wird.
+> [!NOTE]
+> Google TV wird vom Android NDK nicht unterstützt, obwohl die Anwendung unter x86 ausgeführt wird.
 
 #### <a name="x8664"></a>x86_64
 

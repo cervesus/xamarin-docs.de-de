@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: 14cf2910767e9c205e5ddc8f580020505f54ef46
-ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
+ms.openlocfilehash: 8b3782554615c5ce3350294fc3300e3c369f8af7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "55832027"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831517"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -25,7 +25,7 @@ Nachdem eine Xamarin.iOS-Anwendung entwickelt wurde, ist der nächste Schritt im
 Das Verteilen einer Anwendung erfordert genau wie das Entwickeln einer Anwendung, dass Anwendungen mit dem entsprechenden *Bereitstellungsprofil* bereitgestellt werden. Bereitstellungsprofile sind Dateien, die Informationen zur Codesignierung sowie die Identität der Anwendung und den beabsichtigten Verteilungsmechanismus enthalten. Sie enthalten auch Informationen darüber, für welche Geräte eine App bereitgestellt wird, wenn die Verteilung nicht über den App Store stattfindet.
 
 > [!IMPORTANT]
-> **Beachten Sie**, dass Sie an einem Apple-Entwicklerprogramm für Einzelpersonen oder Organisationen teilnehmen **müssen**, um iTunes Connect verwenden und somit eine App im App Store veröffentlichen zu können. Wenn Sie Mitglied eines Apple Developer **Enterprise** Programs sind, können Sie die Schritte auf dieser Seite nicht ausführen.
+> Um iTunes Connect verwenden und somit eine App im App Store veröffentlichen zu können, **müssen** Sie an einem Apple Developer Program für Einzelpersonen oder Organisationen teilnehmen. Wenn Sie Mitglied eines Apple Developer **Enterprise** Programs sind, können Sie die Schritte auf dieser Seite nicht ausführen.
 
 <a name="provisioning" />
 
@@ -47,7 +47,7 @@ Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklu
 
 1. Navigieren Sie zum Abschnitt *Certificates, Identifiers & Profiles* (Zertifikate, Bezeichner & Profile) im Developer Member Center von Apple.
 2. Wählen Sie unter *Certificates* (Zertifikate) die Option **Production** (Produktion) aus.
-3. Klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen.
+3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Produktion* die Option **App Store and Ad Hoc** (App Store und Ad-hoc) aus:
 
     [![](images/createcertmanually01.png "Auswählen von „App Store“ und „Ad-hoc“")](images/createcertmanually01.png#lightbox)
@@ -83,7 +83,7 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 
 
 1. Navigieren Sie im [Apple Developer Center](https://developer.apple.com/account/overview.action) zum Abschnitt *Certificate, Identifiers and Profiles* (Zertifikate, Bezeichner und Profile). Wählen Sie unter **Identifiers** (Bezeichner) **App IDs** (App-IDs) aus.
-2. Klicken Sie auf die Schaltfläche **+**, und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
+2. Klicken Sie auf die Schaltfläche **+** , und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
 3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt sein und kann nicht geändert werden. Wählen Sie entweder eine explizite oder eine Platzhalter-App-ID aus, und geben Sie eine Bundle-ID in einem umgekehrten DNS-Format ein, wie beispielsweise:
     - **Explizit**: com.[Domänenname].[AppName]
     - **Platzhalter**: com.[Domänenname].*
@@ -99,7 +99,7 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
     [![](images/distribute01.png "Auswählen von „Bereitstellung > Verteilung“")](images/distribute01.png#lightbox)
 
-2. Klicken Sie auf die Schaltfläche **+**, und wählen Sie als Typ des Verteilungsprofils, das Sie erstellen möchten, **App Store** aus:
+2. Klicken Sie auf die Schaltfläche **+** , und wählen Sie als Typ des Verteilungsprofils, das Sie erstellen möchten, **App Store** aus:
 
     [![](images/distribute02.png "App Store-Verteilungsprofil erstellen")](images/distribute02.png#lightbox)
 

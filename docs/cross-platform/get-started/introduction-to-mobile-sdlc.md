@@ -1,30 +1,30 @@
 ---
-title: Einführung in den Lebenszyklus der mobilen Softwareentwicklung
+title: Lebenszyklus der Entwicklung mobiler Software
 description: In diesem Dokument werden unter anderem der Lebenszyklus der mobilen Softwareentwicklung, das UX-Design, das UI-Design, die Entwicklung, die Stabilisierung und die Verteilung beschrieben.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 11/22/2016
-ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 99be69abb11640418917d4d2cb9738a0a843d6d0
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855236"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290139"
 ---
-# <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Einführung in den Lebenszyklus der mobilen Softwareentwicklung
+# <a name="mobile-software-development-lifecycle"></a>Lebenszyklus der Entwicklung mobiler Software
 
-Das Erstellen mobiler Anwendungen kann so einfach sein: Öffnen Sie die IDE, schreiben Sie etwas, führen Sie einen kurzen Test durch, und senden Sie das Ergebnis dann an einen App Store. All dies ist an einem Nachmittag erledigt. Es kann jedoch auch ein sehr komplexer Vorgang sein, der strenge Vorabentwürfe, Nutzbarkeitstests, QA-Tests auf tausenden Geräten, einen vollständigen Beta-Lebenszyklus und anschließend die Bereitstellung einer Reihe verschiedener Methoden enthält.
+Das Erstellen mobiler Anwendungen kann so einfach sein: Öffnen Sie Visual Studio, fügen Sie einige Elemente zusammen, führen Sie einen kurzen Test durch, und senden Sie das Ergebnis dann an einen App Store. Das lässt sich problemlos an einem Nachmittag erledigen. Es kann jedoch sehr komplex sein, weil gründliche Vorabentwürfe, Nutzbarkeitstests, QA-Tests auf tausenden Geräten, ein vollständiger Beta-Lebenszyklus und anschließend die Bereitstellung mit einer Reihe verschiedener Methoden nötig ist.
 
 Dieses Dokument enthält eine gründliche, einführende Erläuterung für das Erstellen von mobilen Anwendungen, einschließlich Folgendem:
 
-1.   **Prozess**: Der Prozess der Softwareentwicklung wird als Lebenszyklus der Softwareentwicklung (Software Development Lifecycle, SDLC) bezeichnet. Wir erläutern alle Phasen des SDLC in Bezug auf die Entwicklung mobiler Anwendungen, einschließlich Inspiration, Entwurf, Entwicklung, Stabilisierung, Bereitstellung und Wartung.
+1.   **Prozess**: Der Prozess der Softwareentwicklung wird als Lebenszyklus der Softwareentwicklung (Software Development Lifecycle, SDLC) bezeichnet. Wir erläutern alle Phasen des SDLC in Bezug auf die Entwicklung mobiler Anwendungen, einschließlich Idee, Entwurf, Entwicklung, Stabilisierung, Bereitstellung und Wartung.
 1.   **Überlegungen**: Es gibt einige Überlegungen zum Erstellen mobiler Anwendung, insbesondere im Gegensatz zu herkömmlichen Web- oder Desktopanwendungen. Diese Überlegungen und ihre Auswirkungen auf die Entwicklung mobiler Anwendungen werden untersucht.
 
 Dieses Dokument richtet sich sowohl an neue als auch an erfahrene Anwendungsentwickler und soll grundlegende Fragen über die Entwicklung mobiler Apps beantworten. Die meisten Konzepte, denen Sie während des gesamten Lebenszyklus der Softwareentwicklung (SDLC) begegnen, werden umfassend vorgestellt. Dieses Dokument ist jedoch nicht für jeden geeignet. Wenn Sie direkt mit dem Erstellen von Anwendungen beginnen möchten, wird empfohlen, direkt mit dem Leitfaden [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md) weiter zu machen und später zu diesem Dokument zurückzukehren.
 
-## <a name="mobile-development-sdlc"></a>Mobile Entwicklung – SDLC
+## <a name="mobile-development-software-lifecycle"></a>Lebenszyklus der Entwicklung mobiler Software
 
 Der Lebenszyklus der Entwicklung mobiler Anwendungen unterscheidet sich größtenteils nicht vom SDLC für Web- und Desktopanwendungen. Wie bei diesen gibt es in der Regel fünf wichtige Teile des Prozesses:
 
@@ -92,7 +92,7 @@ Auch Formfaktoren beeinflussen UX-Entscheidungen. Tablets sind viel größer als
 
 Angesichts der unzähligen bestehenden Formfaktoren gibt es häufig auch mittelgroße Formfaktoren (die zwischen einem Smartphone und einem Tablet liegen), die sie auch berücksichtigen sollten.
 
-#### <a name="user-interface-ui-design"></a>Entwurf der Benutzeroberfläche (User Interface, UI)
+#### <a name="user-interface-ui-design"></a>Entwurf der Benutzeroberfläche
 
 Sobald die UX bestimmt ist, muss als nächstes die UI entworfen werden. Für die UX werden üblicherweise nur schwarz-weiße Modelle eingesetzt. Erst in der Entwurfsphase der UI werden Farben, Grafiken, usw. eingeführt und fertiggestellt. Es ist wichtig, dass Sie sich für den Entwurf der UI viel Zeit nehmen, denn generell gilt: Die beliebtesten Apps haben einen professionellen Entwurf.
 
@@ -172,7 +172,7 @@ Multitasking wird auf jeder Plattform anders gehandhabt, worauf wir später noch
 Mobile Geräte werden in der Regel in zwei Kategorien unterteilt: Smartphones und Tablets. Einige Crossover-Geräte werden zwischen diesen beiden Kategorien angeordnet. Das Entwickeln für diese Formfaktoren ähnelt sich in der Regel, allerdings kann das Entwerfen von Anwendungen große Unterschiede aufweisen.
 Der Bildschirmbereich von Smartphones ist eingeschränkt, und auch bei Tablets, die zwar größer sind, handelt es sich immer noch um mobile Geräte, die einen kleineren Bildschirmbereich haben als die meisten Laptops. Aus diesem Grund wurden UI-Steuerelemente auf mobilen Plattformen vor allem entworfen, damit sie auf kleineren Formfaktoren effektiver sind.
 
-#### <a name="device-and-os-fragmentation"></a>Fragmentieren von Geräten und Betriebssystemen
+#### <a name="device-and-operating-system-fragmentation"></a>Fragmentierung von Geräten und Betriebssystemen
 
 Es ist wichtig, dass im gesamten Lebenszyklus der Softwareentwicklung verschiedene Geräte berücksichtigt werden.
 
@@ -235,7 +235,7 @@ Dies ist ein entscheidender Schritt im Verteilungsmodell von Android. Es handelt
 
 Multitasking bei UWP besteht aus zwei Teilen: dem Lebenszyklus für Seiten und Anwendungen einerseits und Hintergrundprozessen andererseits. Jede Ansicht in einer Anwendung ist eine Seitenklasseninstanz, bei der Ereignisse entweder aktiv oder inaktiv sind (dabei gibt es spezielle Regeln zur Verarbeitung eines inaktiven Zustands bzw. für den Tombstone-Zustand).
 
-Der zweite Teil des Multitasking besteht daraus, Hintergrund-Agents zur Verarbeitung von Aufgaben zur Verfügung zu stellen, wenn die App nicht im Vordergrund ausgeführt wird. 
+Der zweite Teil des Multitasking besteht daraus, Hintergrund-Agents zur Verarbeitung von Aufgaben zur Verfügung zu stellen, wenn die App nicht im Vordergrund ausgeführt wird.
 
 #### <a name="device-capabilities"></a>Gerätefunktionen
 
@@ -251,6 +251,6 @@ In diesem Leitfaden wurde der Lebenszyklus der Softwareentwicklung im Zusammenha
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-- [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md)
+- [Was ist Xamarin?](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Erste Schritte mit Xamarin](~/get-started/index.yml)
 - [Codefreigabe auf verschiedenen Plattformen](~/cross-platform/app-fundamentals/index.md)

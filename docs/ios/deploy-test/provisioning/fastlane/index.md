@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e89b8585371ab2560ae510fdb49f284e358818c1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 23bf62688da4e2e82cb3e0fadc9a3b7c13ab1a7d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108911"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865517"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Einführung in fastlane für iOS
 
@@ -50,35 +50,35 @@ Der Inhalt dieser Anleitung kann als Ausgangspunkt für die Hilfe bei der App-Ve
 3. Entzippen Sie die Datei, und doppelklicken Sie auf die ausführbare Datei `install`, um fastlane zu installieren. Wird ein Fehler angezeigt mit der Meldung, dass die Datei „nicht geöffnet werden kann, da sie von einem unbekannten Entwickler stammt“, klicken Sie auf OK, und führen Sie folgende Schritte aus:
     - Halten Sie STRG gedrückt, und klicken Sie auf die ausführbare Datei `install`. Dadurch wird das folgende Dialogfeld angezeigt:
 
-      ![](images/fastlane-image12.png "Das Dialogfeld „Installieren“")
-    
+     ![](images/fastlane-image12.png "Das Dialogfeld „Installieren“")
+
     - Klicken Sie auf OK, um die Installation der fastlane-Tools zu starten.
 
 4. Terminal zeigt Ihnen das folgende Dialogfeld an. Drücken Sie `y`:
 
-  ![](images/fastlane-image13.png "Die Eingabeaufforderung „Terminal“")
- 
-4. Führen Sie `which fastlane` aus, bevor Sie fastlane zum ersten Mal verwenden. Der Pfad sollte wie folgt aussehen: 
+   ![](images/fastlane-image13.png "Die Eingabeaufforderung „Terminal“")
+
+5. Führen Sie `which fastlane` aus, bevor Sie fastlane zum ersten Mal verwenden. Der Pfad sollte wie folgt aussehen: 
 
     ```bash
     /Users/[user]/.fastlane/bin
     ```
 
-5. Stimmt der Pfad überein, dann können Sie beginnen.
+6. Stimmt der Pfad überein, dann können Sie beginnen.
 
-     Wenn nicht, führen Sie Folgendes aus: Öffnen Sie mit dem folgenden Befehl in macOS die Datei `.bash_profile` (eine versteckte Textdatei im Basisverzeichnis):
+     Andernfalls führen Sie die folgenden Schritte aus:  Öffnen Sie mit dem folgenden Befehl in macOS die Datei `.bash_profile` (eine versteckte Klartextdatei im Basisverzeichnis):
 
     ```bash
     open ~/.bash_profile
     ```
 
-6. Fügen Sie die folgende PATH-Umgebungsvariable hinzu, und speichern Sie sie: 
+7. Fügen Sie die folgende PATH-Umgebungsvariable hinzu, und speichern Sie sie: 
 
     ```bash
     export PATH="$HOME/.fastlane/bin:$PATH"
     ```
 
-7.  Führen Sie erneut `which fastlane` aus, um sicherzustellen, dass der Pfad wie folgt aussieht: `/Users/[user]/.fastlane/bin`.
+8.  Führen Sie erneut `which fastlane` aus, um sicherzustellen, dass der Pfad wie folgt aussieht: `/Users/[user]/.fastlane/bin`.
 
 
 ## <a name="updating-fastlane"></a>Aktualisieren von fastlane
