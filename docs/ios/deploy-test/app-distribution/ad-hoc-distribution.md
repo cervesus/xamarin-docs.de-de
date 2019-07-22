@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5950143532b2d1d026f73bb254507d7d3022cbf1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: efa3c8cf4d2e64c6d8bccdfe6e6fec9602d17c73
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112298"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865851"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Ad-Hoc-Verteilung für Xamarin.iOS-Apps
 
@@ -48,18 +48,18 @@ Im nächste Abschnitt wird die Erstellung eines Verteilungszertifikats und eines
 
 1. Navigieren Sie zum Abschnitt *Certificates, Identifiers & Profiles* (Zertifikate, Bezeichner & Profile) im Developer Member Center von Apple.
 2. Wählen Sie unter *Certificates* (Zertifikate) die Option **Production** (Produktion) aus.
-3. Klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen.
+3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Production* (Produktion) je nach Mitgliedschaft in einem Programm entweder **In-House and Ad Hoc** (interne Verteilung und Ad-hoc-Verteilung) oder **App Store- und Ad-hoc-Verteilung** aus:
 
-  [![](ad-hoc-distribution-images/cert-first-small.png "Wählen „Intern und Ad-hoc“ oder „App-Store und Ad-hoc“")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
+   [![](ad-hoc-distribution-images/cert-first-small.png "Wählen „Intern und Ad-hoc“ oder „App-Store und Ad-hoc“")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. Klicken Sie auf „Continue“ (Weiter), und befolgen Sie die Anweisungen zur Erstellung einer Zertifikatsignieranforderung (CSR) mithilfe des Keychain-Zugriffs:
 
-  [![](ad-hoc-distribution-images/createcertmanually02.png "Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
+   [![](ad-hoc-distribution-images/createcertmanually02.png "Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. Sobald Sie die CSR wie beschrieben erstellt haben, klicken Sie auf „Continue“ (Weiter), und laden Sie die CSR in das Member Center hoch:
 
-  [![](ad-hoc-distribution-images/createcertmanually03.png "Zertifikatsignieranforderung in das Member Center hochladen")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
+   [![](ad-hoc-distribution-images/createcertmanually03.png "Zertifikatsignieranforderung in das Member Center hochladen")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf „Generate“ (Generieren), um das Zertifikat zu erstellen.
 8. Laden Sie das abgeschlossene Zertifikat herunter, und doppelklicken Sie auf die Datei, um sie zu installieren.
@@ -67,9 +67,9 @@ Im nächste Abschnitt wird die Erstellung eines Verteilungszertifikats und eines
 
 Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences“ (Einstellungen) in Xcode anzufordern. Führen Sie dazu folgende Schritte aus:
 
-1.   Wählen Sie das Team aus, und klicken Sie auf **Manage Certificates…** (Zertifikate verwalten...): [![](ad-hoc-distribution-images/selectteam.png "Auswählen des Teams")](ad-hoc-distribution-images/selectteam.png#lightbox)
+1. Wählen Sie das Team aus, und klicken Sie auf **Manage Certificates…** (Zertifikate verwalten...):  [![](ad-hoc-distribution-images/selectteam.png "Auswählen des Teams")](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2.   Klicken Sie anschließend auf die **Plus**-Schaltfläche (+), und wählen Sie **iOS App Store** aus: [![](ad-hoc-distribution-images/selectcert.png "Auswählen von iOS App Store")](ad-hoc-distribution-images/selectcert.png#lightbox)
+2. Klicken Sie anschließend auf die Schaltfläche **plus (+)** , und wählen Sie **iOS App Store** aus:  [![](ad-hoc-distribution-images/selectcert.png "Auswählen von iOS App Store")](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -82,7 +82,7 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 
 
 1. Navigieren Sie im [Apple Developer Center](https://developer.apple.com/account/overview.action) zum Abschnitt *Certificate, Identifiers and Profiles* (Zertifikate, Bezeichner und Profile). Wählen Sie unter **Identifiers** (Bezeichner) **App IDs** (App-IDs) aus.
-2. Klicken Sie auf die Schaltfläche **+**, und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
+2. Klicken Sie auf die Schaltfläche **+** , und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
 3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt sein und kann nicht geändert werden. Wählen Sie entweder „Explicit ID“ (explizite ID) oder „ Wildcard App ID“ (Platzhalter-App-ID) aus, und geben Sie unter „Bundle ID“ eine Bundle-ID in einem der folgenden umgekehrten DNS-Formate ein:
     - **Explizit**: `com.[DomainName].[AppName]`
     - **Platzhalter**: `com.[DomainName].*`
@@ -91,9 +91,9 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 
 Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils haben, führen Sie die folgenden Schritte aus, um es zu erstellen:
 
-1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und klicken Sie auf **Bereitstellung > Verteilung**: [![](ad-hoc-distribution-images/distribute01.png "Auswahl: Bereitstellung > Verteilung")](ad-hoc-distribution-images/distribute01.png#lightbox)
+1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und klicken Sie auf **Bereitstellung > Verteilung**:  [![](ad-hoc-distribution-images/distribute01.png "Klicken Sie auf „Bereitstellung > Verteilung“")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
-2. Klicken Sie auf die Schaltfläche **+**, und wählen Sie den Verteilungsprofiltyp aus, den Sie **ad hoc** erstellen möchten:
+2. Klicken Sie auf die Schaltfläche **+** , und wählen Sie den Verteilungsprofiltyp aus, den Sie **ad hoc** erstellen möchten:
 
     [![](ad-hoc-distribution-images/distribute02.png "Erstellen des Verteilungstyps „Ad-hoc“")](ad-hoc-distribution-images/distribute02.png#lightbox)
 
@@ -105,11 +105,11 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
     [ ![](ad-hoc-distribution-images/distribute04.png "Wählen Sie ein zum Signieren der Anwendung erforderliches Verteilungszertifikat aus")](ad-hoc-distribution-images/distribute04.png#lightbox)
 
-6. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
+5. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
 
     [![](ad-hoc-distribution-images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](ad-hoc-distribution-images/distribute06.png#lightbox)
 
-7. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
+6. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

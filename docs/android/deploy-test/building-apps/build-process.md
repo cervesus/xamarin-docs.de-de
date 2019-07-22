@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 3e660e821e54d673b5c28c611ad24dcb4eefd4bb
-ms.sourcegitcommit: 247a6d00a95fd7f4cf918d923e5f357c8db56761
+ms.openlocfilehash: 43f8b1185900ff20f8e4c53680c1adf62ac8316a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420184"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829695"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -139,8 +139,8 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Standardmäßig ist diese Eigenschaft `False`.
 
--   **AndroidDexTool** &ndash; Eine Eigenschaft im Enumerationsstil mit gültigen Werten von `dx` oder `d8`. Gibt an, welcher Android [Dex][dex]-Compile während des Xamarin.Android-Buildprozesses verwendet wird.
-    Derzeit wird standardmäßig `dx` verwendet. Weitere Informationen finden Sie in unserer Dokumentation auf [D8 und R8][d8-r8].
+-   **AndroidDexTool** &ndash; Eine Eigenschaft im Enumerationsstil mit gültigen Werten von `dx` oder `d8`. Gibt an, welcher Android-[Dex][dex]-Compiler im Xamarin.Android-Buildprozess verwendet wird.
+    Derzeit wird standardmäßig `dx` verwendet. Weitere Informationen finden Sie in unserer Dokumentation zu [D8 und R8][d8-r8].
 
     [dex]: https://source.android.com/devices/tech/dalvik/dalvik-bytecode
     [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
@@ -257,7 +257,10 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     -   **SdkOnly:** Die Verknüpfung wird nur für die Basisklassenbibliotheken ausgeführt, nicht für die Assemblys des Benutzers.
 
-    -   **Full:** Die Verknüpfung wird für die Basisklassenbibliotheken und die Assemblys des Benutzers ausgeführt. **Hinweis**: Die Verwendung des `AndroidLinkMode`-Werts *Full* führt häufig zu fehlerhaften Apps, insbesondere beim Einsatz von Reflektion. Vermeiden Sie diesen Wert (es sei denn, Sie wissen *wirklich*, was Sie tun).
+    -   **Full:** Die Verknüpfung wird für die Basisklassenbibliotheken und die Assemblys des Benutzers ausgeführt.
+
+        > [!NOTE]
+        > Die Verwendung des `AndroidLinkMode`-Werts *Full* führt häufig zu fehlerhaften Apps, insbesondere beim Einsatz von Reflektion. Vermeiden Sie diesen Wert (es sei denn, Sie wissen *wirklich*, was Sie tun).
 
     ```xml
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
@@ -269,7 +272,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
     <AndroidLinkSkip>Assembly1;Assembly2</AndroidLinkSkip>
     ```
 
--   **AndroidLinkTool** &ndash; Eine Eigenschaft im Enumerationsstil mit gültigen Werten von `proguard` oder `r8`. Gibt an, welcher Code-Shrinker für Java-Code verwendet wird. Ist derzeit standardmäßig eine leere Zeichenfolge oder `proguard`, wenn `$(AndroidEnableProguard)` `True` ist. Weitere Informationen finden Sie in unserer Dokumentation auf [D8 und R8][d8-r8].
+-   **AndroidLinkTool** &ndash; Eine Eigenschaft im Enumerationsstil mit gültigen Werten von `proguard` oder `r8`. Gibt an, welcher Code-Shrinker für Java-Code verwendet wird. Ist derzeit standardmäßig eine leere Zeichenfolge oder `proguard`, wenn `$(AndroidEnableProguard)` `True` ist. Weitere Informationen finden Sie in unserer Dokumentation zu [D8 und R8][d8-r8].
 
     [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
 
@@ -311,7 +314,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Hinzugefügt in Xamarin.Android 8.3.
 
--   **AndroidR8JarPath** &ndash; Der Pfad zu `r8.jar` zur Verwendung mit dem 8 dex-Compiler und -Shrinker. Ist standardmäßig ein Pfad in der Xamarin.Android-Installation. Weitere Informationen finden Sie in unserer Dokumentation auf [D8 und R8][d8-r8].
+-   **AndroidR8JarPath** &ndash; Der Pfad zu `r8.jar` zur Verwendung mit dem 8 dex-Compiler und -Shrinker. Ist standardmäßig ein Pfad in der Xamarin.Android-Installation. Weitere Informationen finden Sie in unserer Dokumentation zu [D8 und R8][d8-r8].
 
 -   **AndroidSdkBuildToolsVersion** &ndash; Das build-tools-Paket des Android SDK enthält unter anderem die Tools **aapt** und **zipalign**. Mehrere verschiedene Versionen des build-tools-Pakets können gleichzeitig installiert werden. Das build-tools-Paket, das für die Paketerstellung ausgewählt wird, wird durch Überprüfen und Verwenden einer „bevorzugten“ build-tools-Version ermittelt, wenn diese vorhanden ist. Wenn die „bevorzugte“ Version *nicht* vorhanden ist, wird das Paket mit der höchsten installierten build-tools-Version verwendet.
 
@@ -449,7 +452,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     -   **Other:** Andere Codierungen werden einbezogen, z.B. *Kyrillisch (Windows)* \[CP1251\], *Baltisch (Windows)* \[iso-8859-4, CP1257\], *Vietnamesisch (Windows)* \[CP1258\], *Kyrillisch (KOI8-R)* \[koi8-r, CP1251\], *Ukrainisch (KOI8-U)* \[koi8-u, CP1251\], *Baltisch (ISO)* \[iso-8859-4, CP1257\], *Kyrillisch (ISO)* \[iso-8859-5, CP1251\], *ISCII Devanagari* \[x-iscii-de, CP57002\], *ISCII Bangla* \[x-iscii-be, CP57003\], *ISCII Tamil* \[x-iscii-ta, CP57004\], *ISCII Telugu* \[x-iscii-te, CP57005\], *ISCII Assamesisch* \[x-iscii-as, CP57006\], *ISCII Odia* \[x-iscii-or, CP57007\], *ISCII Kannada* \[x-iscii-ka, CP57008\], *ISCII Malayalam* \[x-iscii-ma, CP57009\], *ISCII Gujarati* \[x-iscii-gu, CP57010\], *ISCII Punjabi* \[x-iscii-pa, CP57011\] und *Thailändisch (Windows)* \[CP874\].
 
-    -   **Rare:** Seltene Codierungen werden einbezogen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\]*, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
+    -   **Rare:** Seltene Codierungen werden einbezogen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\] *, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
 
     -   **West:** Westliche Codierungen werden einbezogen, z.B. *Westeuropäisch (Mac)* \[macintosh, CP10000\], *Isländisch (Mac)* \[x-mac-icelandic, CP10079\], *Zentraleuropäisch (Windows)* \[iso-8859-2, CP1250\], *Westeuropäisch (Windows)* \[iso-8859-1, CP1252\], *Griechisch (Windows)* \[iso-8859-7, CP1253\], *Zentraleuropäisch (ISO)* \[iso-8859-2, CP28592\], *Lateinisch 3 (ISO)* \[iso-8859-3, CP28593\], *Griechisch (ISO)* \[iso-8859-7, CP28597\], *Lateinisch 9 (ISO)* \[iso-8859-15, CP28605\], *OEM USA* \[CP437\], *Westeuropäisch (DOS)* \[CP850\], *Portugiesisch (DOS)* \[CP860\], *Isländisch (DOS)* \[CP861\], *Französisch, Kanada (DOS)* \[CP863\] und *Nordisch (DOS)* \[CP865\].
 
@@ -562,11 +565,11 @@ Standardmäßig generiert das Signaturziel bei Bedarf einen neuen Debugsignaturs
 
 -   **AndroidSigningKeyAlias** &ndash; Gibt den Alias für den Schlüssel im Keystore an. Dies ist der Wert **keytool -alias**, der beim Erstellen des Keystore verwendet wird.
 
--   **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)**.
+-   **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)** .
 
 -   **AndroidSigningKeyStore** &ndash; Gibt den Dateinamen der von `keytool` erstellten Keystoredatei an. Dies entspricht dem Wert, der der Option **keytool -keystore** zur Verfügung gestellt wird.
 
--   **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:**.
+-   **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:** .
 
 Betrachten Sie zum Beispiel den folgenden `keytool`-Aufruf:
 
