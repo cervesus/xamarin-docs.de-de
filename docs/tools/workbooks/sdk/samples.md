@@ -15,7 +15,7 @@ ms.locfileid: "61424600"
 ---
 # <a name="sample-integrations"></a>Beispielintegrationen
 
-Finden Sie unter den [Küche Senke] [ KitchenSink] Beispiel ein funktionsfähiges Beispiel eines Integration. Erstellen Sie einfach `KitchenSink.sln` in Visual Studio für Mac oder Visual Studio und öffnen Sie dann `KitchenSink.workbook`.
+Finden Sie unter den [Küche Senke][KitchenSink] Beispiel ein funktionsfähiges Beispiel eines Integration. Erstellen Sie einfach `KitchenSink.sln` in Visual Studio für Mac oder Visual Studio und öffnen Sie dann `KitchenSink.workbook`.
 
 [![Bildschirmabbildung von Küche Senke-Integration](samples-images/kitchensinkintegrationscreenshot.png)](samples-images/kitchensinkintegrationscreenshot.png#lightbox)
 
@@ -24,7 +24,7 @@ Die Senke Küche veranschaulicht beide Sätze von Konzepten:
 * Die Teile der Darstellung wird veranschaulicht, wie mit `RepresentationManager` , der Rendering zu verbessern, indem Sie die integrierte Darstellungen.
 * Die `Person` -Objekt und seine zugeordneten JavaScript-Renderer veranschaulicht die Verwendung `ISerializableObject` ohne Umweg über einen Anbieter für die Darstellung.
 
-Siehe auch [SkiaSharp] [ skiasharp] für ein praktisches Beispiel eines Integration, die die vorhandene verwendet [Darstellungen](~/tools/workbooks/sdk/representations.md) von Xamarin Workbooks zum Rendern seiner Typen bereitgestellt.
+Siehe auch [SkiaSharp][skiasharp] für ein praktisches Beispiel eines Integration, die die vorhandene verwendet [Darstellungen](~/tools/workbooks/sdk/representations.md) von Xamarin Workbooks zum Rendern seiner Typen bereitgestellt.
 
 [KitchenSink]: https://github.com/xamarin/Workbooks/tree/master/SDK/Samples/KitchenSink
 [skiasharp]: https://github.com/mono/SkiaSharp/tree/master/source/SkiaSharp.Workbooks
