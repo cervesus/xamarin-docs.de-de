@@ -90,7 +90,7 @@ Die `FinishedLaunching` Methode führt die folgenden Aufgaben:
 
 Sobald die `FinishedLaunching` Methode ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `NotesPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
-[ ![Screenshot einer xamarin. IOS-Anwendung, die eine in der XAML]-(native-forms-images/ios-notespage.png "xamarin. IOS-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche") verwendet] (native-forms-images/ios-notespage-large.png#lightbox "Xamarin. IOS-App mit XAML-Benutzeroberfläche")
+[![Screenshot einer xamarin. IOS-Anwendung, die eine in der XAML verwende](native-forms-images/ios-notespage.png "xamarin. IOS-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche")](native-forms-images/ios-notespage-large.png#lightbox "Xamarin. IOS-App mit XAML-Benutzeroberfläche")
 
 Die Interaktion mit der Benutzeroberfläche, z. b. **+** durch Tippen auf den [`Button`](xref:Xamarin.Forms.Button), führt dazu, dass der `NotesPage` folgende Ereignishandler im Code-Behind-Code ausgeführt wird:
 
@@ -117,7 +117,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 Die `NavigateToNoteEntryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, um eine `UIViewController` mit der `CreateViewController` Erweiterungsmethode, und legt die `Title` Eigenschaft der `UIViewController`. Die `UIViewController` klicken Sie dann zu leisten ist `UINavigationController` durch die `PushViewController` Methode. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `NoteEntryPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
-[ ![Screenshot einer xamarin. IOS-Anwendung, die eine in der XAML]-(native-forms-images/ios-noteentrypage.png "xamarin. IOS-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche") verwendet] (native-forms-images/ios-noteentrypage-large.png#lightbox "Xamarin. IOS-App mit XAML-Benutzeroberfläche")
+[![Screenshot einer xamarin. IOS-Anwendung, die eine in der XAML](native-forms-images/ios-noteentrypage.png "xamarin. IOS-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche") verwendet](native-forms-images/ios-noteentrypage-large.png#lightbox "Xamarin. IOS-App mit XAML-Benutzeroberfläche")
 
 Bei der `NoteEntryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil angezeigt der `UIViewController` für die `NoteEntryPage` -Klasse aus der `UINavigationController`, Zurückgeben des Benutzers die `UIViewController` für die `NotesPage` Klasse.
 
@@ -173,7 +173,7 @@ Weitere Informationen zu Fragmenten finden Sie unter [Fragmente](~/android/platf
 
 Sobald die `OnCreate` Methode ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `NotesPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
-[ ![Screenshot einer xamarin. Android-Anwendung, die eine in der XAML]-(native-forms-images/android-notespage.png "xamarin. Android-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche") verwendet] (native-forms-images/android-notespage-large.png#lightbox "Xamarin. Android-App mit einer XAML-Benutzeroberfläche")
+[![Screenshot einer xamarin. Android-Anwendung, die eine in der XAML](native-forms-images/android-notespage.png "xamarin. Android-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche") verwendet](native-forms-images/android-notespage-large.png#lightbox "Xamarin. Android-App mit einer XAML-Benutzeroberfläche")
 
 Die Interaktion mit der Benutzeroberfläche, z. b. **+** durch Tippen auf den [`Button`](xref:Xamarin.Forms.Button), führt dazu, dass der `NotesPage` folgende Ereignishandler im Code-Behind-Code ausgeführt wird:
 
@@ -203,7 +203,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 Der `NavigateToNoteEntryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite, um abgeleitete eine `Fragment` mit der `CreateSupportFragment` -Erweiterungsmethode, und fügt die `Fragment` dem Fragment Rückwärtsstapel. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `NoteEntryPage` wird angezeigt, wie im folgenden Screenshot gezeigt:
 
-[ ![Screenshot einer xamarin. Android-Anwendung, die eine in der XAML]-(native-forms-images/android-noteentrypage.png "xamarin. Android-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche") verwendet] (native-forms-images/android-noteentrypage-large.png#lightbox "Xamarin. Android-App mit einer XAML-Benutzeroberfläche")
+[![Screenshot einer xamarin. Android-Anwendung, die eine in der XAML](native-forms-images/android-noteentrypage.png "xamarin. Android-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche") verwendet](native-forms-images/android-noteentrypage-large.png#lightbox "Xamarin. Android-App mit einer XAML-Benutzeroberfläche")
 
 Bei der `NoteEntryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil angezeigt der `Fragment` für die `NoteEntryPage` aus dem BackStack Fragment, Zurückgeben von dem Benutzer die `Fragment` für die `NotesPage` Klasse.
 
@@ -290,7 +290,7 @@ Die `MainPage` Konstruktor führt die folgenden Aufgaben:
 
 Sobald die `MainPage` Konstruktor ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `NotesPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
-[ ![Screenshot einer UWP-Anwendung, die eine mit xamarin. Forms]-XAML-(native-forms-images/uwp-notespage.png "UWP-App mit xamarin. Forms-XAML-Benutzeroberfläche") definierte Benutzeroberfläche verwendet] (native-forms-images/uwp-notespage-large.png#lightbox "UWP-App mit xamarin. Forms-XAML-Benutzeroberfläche")
+[![Screenshot einer UWP-Anwendung, die eine mit xamarin. Forms-XAML](native-forms-images/uwp-notespage.png "UWP-App mit xamarin. Forms-XAML-Benutzeroberfläche") definierte Benutzeroberfläche verwendet](native-forms-images/uwp-notespage-large.png#lightbox "UWP-App mit xamarin. Forms-XAML-Benutzeroberfläche")
 
 Die Interaktion mit der Benutzeroberfläche, z. b. **+** durch Tippen auf den [`Button`](xref:Xamarin.Forms.Button), führt dazu, dass der `NotesPage` folgende Ereignishandler im Code-Behind-Code ausgeführt wird:
 
@@ -315,7 +315,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 Navigation im UWP erfolgt in der Regel mit der `Frame.Navigate` Methode, die akzeptiert eine `Page` Argument. Xamarin.Forms definiert eine `Frame.Navigate` -Erweiterungsmethode, die akzeptiert eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seiteninstanz abgeleitet. Aus diesem Grund, wenn die `NavigateToNoteEntryPage` Methode ausgeführt wird, die Benutzeroberfläche, die in der Xamarin.Forms definiert `NoteEntryPage` wird angezeigt, wie im folgenden Screenshot gezeigt:
 
-[ ![Screenshot einer UWP-Anwendung, die eine mit xamarin. Forms]-XAML-(native-forms-images/uwp-noteentrypage.png "UWP-App mit xamarin. Forms-XAML-Benutzeroberfläche") definierte Benutzeroberfläche verwendet] (native-forms-images/uwp-noteentrypage-large.png#lightbox "UWP-App mit xamarin. Forms-XAML-Benutzeroberfläche")
+[![Screenshot einer UWP-Anwendung, die eine mit xamarin. Forms](native-forms-images/uwp-noteentrypage.png "-XAML-UWP-App mit xamarin. Forms-XAML-Benutzeroberfläche") definierte Benutzeroberfläche verwendet](native-forms-images/uwp-noteentrypage-large.png#lightbox "UWP-App mit xamarin. Forms-XAML-Benutzeroberfläche")
 
 Bei der `NoteEntryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil wird angezeigt. die `FrameworkElement` für die `NoteEntryPage` aus dem BackStack von in-app Zurückgeben des Benutzers die `FrameworkElement` für die `NotesPage` Klasse.
 
