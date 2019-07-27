@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: ea8af3c84bb53434489d230d159a27b6b9d500d8
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 2279282b08c9d97b239de424cf38aa6f1463dc4d
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830254"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510353"
 ---
 # <a name="radiobutton"></a>RadioButton
 
-In diesem Abschnitt erstellen Sie zwei sich gegenseitig ausschließende Optionsfelder (Aktivieren einer deaktiviert die andere), mithilfe der [`RadioGroup`](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)
-Und [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-widgets. Wenn entweder Optionsfeld gedrückt wird, wird eine eingeblendeten Nachricht angezeigt werden.
+In diesem Abschnitt erstellen Sie zwei sich gegenseitig ausschließende Options Felder (durch Aktivieren von eins wird die andere deaktiviert), indem Sie das[`RadioGroup`](xref:Android.Widget.RadioGroup)
+immer[`RadioButton`](xref:Android.Widget.RadioButton)
+Pass. Wenn beide Options Felder gedrückt werden, wird eine Popup Meldung angezeigt.
 
 
-Öffnen der **Resources/layout/Main.axml** -Datei und fügen Sie zwei [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s, die in geschachtelten eine [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (innerhalb der [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+Öffnen Sie die Datei **Resources/Layout/Main. axml** , und [`RadioButton`](xref:Android.Widget.RadioButton)fügen Sie zwei s hinzu, [`RadioGroup`](xref:Android.Widget.RadioGroup) die in einem [`LinearLayout`](xref:Android.Widget.LinearLayout)(innerhalb der) geschachtelt sind:
 
 ```xml
 <RadioGroup
@@ -38,10 +38,10 @@ widgets. Wenn entweder Optionsfeld gedrückt wird, wird eine eingeblendeten Nach
 </RadioGroup>
 ```
 
-Es ist wichtig, die die [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s werden gruppiert, indem die [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) Element, damit nicht mehr als einen gleichzeitig ausgewählt werden kann. Diese Logik wird automatisch vom System Android behandelt. Wenn bei mindestens einer [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-innerhalb eine Gruppe ausgewählt ist, alle anderen werden nicht automatisch ausgewählt.
+Es ist wichtig, dass [`RadioButton`](xref:Android.Widget.RadioButton)die e nach dem [`RadioGroup`](xref:Android.Widget.RadioGroup) -Element gruppiert werden, damit nicht mehr als ein Element gleichzeitig ausgewählt werden kann. Diese Logik wird automatisch vom Android-System behandelt. Wenn eine[`RadioButton`](xref:Android.Widget.RadioButton)
+Wenn eine Gruppe ausgewählt ist, werden alle anderen automatisch deaktiviert.
 
-Bestimmte Aktionen ausführen müssen bei jeder [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/) ist ausgewählt haben, müssen wir einen Ereignishandler schreiben:
+Um etwas zu tun, [`RadioButton`](xref:Android.Widget.RadioButton) wenn jedes ausgewählt ist, müssen wir einen Ereignishandler schreiben:
 
 ```csharp
 private void RadioButtonClick (object sender, EventArgs e)
@@ -51,12 +51,12 @@ private void RadioButtonClick (object sender, EventArgs e)
 }
 ```
 
-Zunächst wird der Absender, der übergeben wird, in einem RadioButton umgewandelt.
-Ein [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-Meldung zeigt an, dem ausgewählten Optionsfeld Text.
+Zuerst wird der eingeführte Absender in ein Optionsfeld umgewandelt.
+Dann ein[`Toast`](xref:Android.Widget.Toast)
+Meldung Hiermit wird der Text des ausgewählten Options Felds angezeigt.
 
-Jetzt am unteren Rand der [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
-Methode, fügen Sie Folgendes hinzu:
+Nun unten im[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Fügen Sie Folgendes hinzu:
 
 ```csharp
 RadioButton radio_red = FindViewById<RadioButton>(Resource.Id.radio_red);
@@ -66,14 +66,14 @@ radio_red.Click += RadioButtonClick;
 radio_blue.Click += RadioButtonClick;
 ```
 
-Hierbei werden zusammengefasst, jede der [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s aus dem Layout und fügt die neu erstellte Ereignis Handlerto jeder.
+Dadurch werden alle [`RadioButton`](xref:Android.Widget.RadioButton)e aus dem Layout erfasst und die neu erstellten Ereignishandler hinzugefügt.
 
 Führen Sie die Anwendung aus.
 
 > [!TIP]
-> Wenn Sie den Status selbst ändern möchten (z. B. beim Laden eine gespeicherte [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)), verwenden Sie die [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-> Eigenschaften-Setter oder [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+> Wenn Sie den Zustand selbst ändern müssen (z. b. beim Laden eines [`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)gespeicherten), verwenden Sie das[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> Eigenschaften Setter oder[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > -Methode.
 
-*Teile dieser Seite werden Änderungen, die basierend auf der Arbeit erstellt und freigegeben werden, indem Sie das Android Open Source-Projekt, und gemäß den Bedingungen, die in beschriebenen verwendet die*
-[*Creative Commons 2.5 Attribution-Lizenz* ](http://creativecommons.org/licenses/by/2.5/). 
+*Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der*
+[*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden. 

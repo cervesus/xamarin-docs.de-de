@@ -1,31 +1,31 @@
 ---
-title: Systemeigene Typen für iOS und macOS
-description: Dieses Dokument beschreibt basierend auf der Zielarchitektur Kompilierung wie Xamarin Unified API-Typen in .NET 32-Bit- und 64-Bit systemeigenen Typen nach Bedarf zugeordnet.
+title: Native Typen für IOS und macOS
+description: In diesem Dokument wird beschrieben, wie die xamarin-Unified API .NET-Typen nach Bedarf den systemeigenen 32-Bit-und 64-Bit-Typen zuordnet, basierend auf der Kompilierungs Zielarchitektur
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: fc2b91a9265fcf09e4f58d5de27a1fdef9350b2d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9d43bbdb49fe4ab1ff909f709a37f979c360ceb9
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199628"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509589"
 ---
-# <a name="native-types-for-ios-and-macos"></a>Systemeigene Typen für iOS und macOS
+# <a name="native-types-for-ios-and-macos"></a>Native Typen für IOS und macOS
 
-Verwenden Architektur-spezifische Datentypen, die immer 32 Bits auf 32-Bit-Plattformen und 64-Bit auf 64-Bit-Plattformen sind, Mac und iOS-APIs.
+Mac-und IOS-APIs verwenden architekturspezifische Datentypen, die auf 32-Bit-Plattformen immer 32 Bits und 64 Bits auf 64-Bit-Plattformen sind.
 
-Objective-C-beispielsweise ordnet die `NSInteger` Datentyp, `int32_t` auf 32-Bit-Systemen und zu `int64_t` auf 64-Bit-Systemen.
+Beispielsweise ordnet Ziel-C den `NSInteger` `int64_t` -Datentyp auf `int32_t` 32-Bit-Systemen und auf 64-Bit-Systemen zu.
 
-Dieses Verhalten auf unsere einheitliche API, entsprechend der vorherigen Verwendung ersetzt werden `int` (die in .NET wird als definiert immer `System.Int32`) in einen neuen Datentyp: `System.nint`. Sie können das "n" wie "native" vorstellen, damit die systemeigene ganze Zahl eingeben, der Plattform.
+Um dieses Verhalten zu erfüllen, ersetzen wir in unserer vereinheitlichten API die vorherigen Verwendungen `int` von (die in .net als immer wird `System.Int32`definiert definiert) auf einen neuen Datentyp `System.nint`:. Sie können sich "n" als "Native" vorstellen, also den nativen ganzzahligen Typ der Plattform.
 
-Mit dieser neuen Datentypen wird der gleiche Quellcode für 32-Bit- und 64-Bit-Architekturen, je nach Ihrer Kompilierung-Flags kompiliert.
+Mit diesen neuen Datentypen wird der gleiche Quellcode für 32-Bit-und 64-Bit-Architekturen kompiliert, abhängig von den Kompilierungs-Flags.
 
 ## <a name="new-data-types"></a>Neue Datentypen
 
-Die folgende Tabelle zeigt die Änderungen in unseren Datentypen entsprechend dieser neuen 32/64-Bit-Welt:
+In der folgenden Tabelle sind die Änderungen der Datentypen aufgeführt, die mit dieser neuen 32/64-Bit-Welt in Einklang stehen:
 
 |Nativer Typ|32-Bit-Unterstützungstyp|64-Bit-Unterstützungstyp|
 |--- |--- |--- |
@@ -33,41 +33,41 @@ Die folgende Tabelle zeigt die Änderungen in unseren Datentypen entsprechend di
 |`System.nuint`|`System.UInt32` (`uint`)|`System.UInt64` (`ulong`)|
 |`System.nfloat`|`System.Single` (`float`)|`System.Double` (`double`)|
 
-Wir haben uns entschieden, diese Namen können Ihre C# Code mehr oder weniger die gleiche Weise zu suchen, die es heute aussehen würde.
+Wir haben diese Namen gewählt, damit C# Ihr Code mehr oder weniger auf die gleiche Weise wie heute aussehen kann.
 
 ### <a name="implicit-and-explicit-conversions"></a>Implizite und explizite Konvertierungen
 
-Der Entwurf der neuen Datentypen soll es erlauben, eine einzelne C# Quelldatei 32 oder 64-Bit-Speicher je nach die Hostplattform und die Einstellungen für die .NET-Kompilierung auf natürliche Weise zu verwenden.
+Der Entwurf der neuen Datentypen soll es einer einzelnen C# Quelldatei ermöglichen, abhängig von der Host Plattform und den Kompilierungs Einstellungen auf natürliche Weise 32-oder 64-Bit-Speicher zu verwenden.
 
-Dies erforderlich, einen Satz von implizite und explizite Konvertierungen in und aus den plattformspezifischen Datentypen für die .NET Ganzzahl- und Gleitkommatyps Point-Datentypen zu entwerfen.
+Dies erforderte das Entwerfen eines Satzes impliziter und expliziter Konvertierungen in und aus den plattformspezifischen Datentypen in die ganzzahligen und Gleit Komma Datentypen von .net.
 
-Implizite Konvertierungen Operatoren stehen zur Verfügung, wenn kein Risiko von Datenverlusten (32-Bit-Werte besteht, die auf einem 64-Bit-Leerzeichen gespeichert werden).
+Implizite Konvertierungs Operatoren werden bereitgestellt, wenn es keine Möglichkeit zum Verlust von Daten gibt (32-Bit-Werte werden in einem 64-Bit-Raum gespeichert).
 
-Explizite Konvertierungen Operatoren stehen zur Verfügung, wenn es besteht die Gefahr von Datenverlusten (64-Bit-Wert wird auf einem 32 oder potenziell 32 Storage-Speicherort gespeichert wird).
+Explizite Konvertierungs Operatoren werden bereitgestellt, wenn ein Datenverlust möglich ist (64-Bit-Wert wird an einem 32-oder potenziell 32-Speicherort gespeichert).
 
- `int`, `uint` und `float` sind implizit konvertierbar in `nint`, `nuint` und `nfloat` wie 32 Bits immer in 32 oder 64 Bit passen.
+ `int`, `uint` und `float` sindimplizit`nfloat` in konvertierbar `nuint`,und da 32 Bits immer in 32 oder 64 Bits passen. `nint`
 
- `nint`, `nuint` und `nfloat` sind implizit konvertierbar in `long`, `ulong` und `double` wie 32 oder 64-Bit-Werte immer in 64-Bit-Speicher passen.
+ `nint`, `nuint` `long`und `nfloat` sind implizit in konvertierbar. als 32-oder 64 `ulong` -Bit-Werte werden immer in den 64-Bit- `double` Speicher passen.
 
-Verwenden Sie explizite Konvertierungen von `nint`, `nuint` und `nfloat` in `int`, `uint` und `float` , da die systemeigenen Typen 64 Bits des Speichers enthalten können.
+Sie müssen explizite Konvertierungen von `nint` `nuint` und `nfloat` in `int`verwenden, `uint` und `float` da die systemeigenen Typen möglicherweise 64 Bits Speicher enthalten.
 
-Verwenden Sie explizite Konvertierungen von `long`, `ulong` und `double` in `nint`, `nuint` und `nfloat` da die systemeigenen Typen möglicherweise nur Lage 32 Bits von Speicher zu speichern.
+Sie müssen explizite Konvertierungen von `long` `ulong` und `double` in `nint`verwenden, `nuint` und `nfloat` da die systemeigenen Typen möglicherweise nur 32 Bits Speicherplatz enthalten können.
 
 ## <a name="coregraphics-types"></a>CoreGraphics-Typen
 
-Der Punkt, Größe und Rechteck-Datentypen, die mit CoreGraphics verwenden 32 oder 64 Bits je nach Gerät, die, das Sie ausgeführt werden.  Wenn wir ursprünglich die IOS- und Mac-APIs gebunden wir die vorhandenen Datenstrukturen, die aufgetreten sind, entsprechend der Größe der Hostplattform verwendet (die Datentypen in `System.Drawing`).
+Die für CoreGraphics verwendeten Punkt-, Größen-und Rechteck Datentypen verwenden je nach dem Gerät, auf dem Sie ausgeführt werden, 32 oder 64 Bits.  Als wir die IOS-und Mac-APIs ursprünglich gebunden haben, verwendeten wir vorhandene Datenstrukturen, die mit den Größen der Host Plattform (Datentypen `System.Drawing`in) verglichen wurden.
 
-Bei der Umstellung auf **Unified**, Sie ersetzen müssen `System.Drawing` mit ihren `CoreGraphics` Entsprechungen wie in der folgenden Tabelle dargestellt:
+Wenn Sie zu **Unified**migrieren, müssen Sie die Instanzen von `System.Drawing` durch ihre `CoreGraphics` Entsprechungen ersetzen, wie in der folgenden Tabelle gezeigt:
 
-|Geben Sie "System.Drawing" alte|Neue Datentyp CoreGraphics|Beschreibung|
+|Alter Typ in System. Drawing|Neue Datentyp-CoreGraphics|Beschreibung|
 |--- |--- |--- |
-|`RectangleF`|`CGRect`|Enthält Schwebendes Rechteck-Informationen.|
-|`SizeF`|`CGSize`|Unverankerte enthält zeigen Sie Informationen zur Tabellengröße (Width, Height)|
-|`PointF`|`CGPoint`|Enthält eine Gleitkommazahl, zeigen Sie Informationen (X, Y)|
+|`RectangleF`|`CGRect`|Enthält Informationen zu Gleit Komma Rechtecks.|
+|`SizeF`|`CGSize`|Enthält Informationen zur Gleit Komma Größe (Breite, Höhe).|
+|`PointF`|`CGPoint`|Enthält einen Gleit Komma Wert, Punkt Informationen (X, Y)|
 
-Die alten Daten verwendeten Typen Gleitkommawerte zum Speichern der Elemente der Datenstrukturen, die neue verwendet zwar `System.nfloat`.
+Die alten Datentypen, die verwendet werden, um die Elemente der Datenstrukturen zu speichern, während der `System.nfloat`neue Datentypen verwendet.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Arbeiten mit nativen Typen in plattformübergreifenden Apps](~/cross-platform/macios/native-types-cross-platform.md)
-- [Klassischen Vs Unified API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Unterschiede bei klassischem vs Unified API](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

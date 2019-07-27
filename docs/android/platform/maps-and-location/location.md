@@ -1,67 +1,65 @@
 ---
-title: Ortungsdienste
-description: Dieses Handbuch stellt Netzwerkadressinformationen in Android-Anwendungen, und es wird veranschaulicht, wie Sie den Standort des Benutzers mit der Android-API Speicherort sowie der fused Ortungsanbieter Speicherort die Google-API abrufen.
+title: Location Services unter Android
+description: In diesem Leitfaden wird das Standort Bewusstsein in Android-Anwendungen vorgestellt, und es wird veranschaulicht, wie Sie den Speicherort des Benutzers mithilfe der Android Location Service-API und des mit dem Google-Ortungsdienste-API verfügbaren Dienstanbieters für den Fused-Standort
 ms.prod: xamarin
 ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 76f98f1e660f22ec25c48407f2e87cec60ff12ef
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 35e3594f8b1496070e4770c05893d53feed6f2a1
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827684"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511254"
 ---
-# <a name="location-services"></a>Ortungsdienste
+# <a name="location-services-on-android"></a>Location Services unter Android
 
-_Dieses Handbuch stellt Netzwerkadressinformationen in Android-Anwendungen, und es wird veranschaulicht, wie Sie den Standort des Benutzers mit der Android-API Speicherort sowie der fused Ortungsanbieter Speicherort die Google-API abrufen._
+_In diesem Leitfaden wird das Standort Bewusstsein in Android-Anwendungen vorgestellt, und es wird veranschaulicht, wie Sie den Speicherort des Benutzers mithilfe der Android Location Service-API und des mit dem Google-Ortungsdienste-API verfügbaren Dienstanbieters für den Fused-Standort_
 
-## <a name="location-services-overview"></a>Speicherort: Übersicht
+Android ermöglicht den Zugriff auf verschiedene Location-Technologien, wie z. b. Cell Tower Location, Wi-Fi und GPS. Die Details der einzelnen Standorttechnologien werden durch *standortanbieter*abstrahiert, sodass Anwendungen unabhängig vom verwendeten Anbieter auf dieselbe Weise Standorte abrufen können. In diesem Leitfaden wird der Anbieter für den zusammen gezierten Standort vorgestellt, ein Teil des Google Play Services, der Intelligent festlegt, welche Art von Geräten Sie basierend auf den verfügbaren Anbietern und wie das Gerät verwendet wird. Android Location Service-API und zeigt, wie mit dem System Location Service mithilfe eines `LocationManager`kommuniziert werden kann. Im zweiten Teil des Handbuchs werden die Android-Ortungsdienste-API mithilfe `LocationManager`von untersucht.
 
-Android bietet Zugriff auf verschiedenen Speicherort-Technologien wie z. B. die Position der Zelle Tower, Wi-Fi und GPS. Die Details zu jeder Technologie Standort werden über abstrahiert *Ortungsanbietern*, ermöglicht es Anwendungen, die Standorte auf die gleiche Weise, unabhängig von den verwendeten Anbieter zu erhalten. Dieser Leitfaden beschreibt die fused-Location-Anbieters, ein Teil der Google Play-Dienste, die auf intelligente Weise bestimmt die beste Möglichkeit zum Abrufen des Speicherort der Geräte basierend auf welche Anbieter verfügbar sind und wie das Gerät verwendet wird. Android-Ort-Service-API- und zeigt, wie für die Kommunikation mit dem Speicherort im Dateisystem-Dienst mithilfe einer `LocationManager`. Der zweite Teil des Handbuchs untersucht die Android Location Services-API mithilfe der `LocationManager`.
- 
-Als allgemeine Faustregel sollten Anwendungen die fused Location-Anbieters, das Fallback für die älteren Android Speicherort-API nur bei Bedarf verwenden möchten.
+Als allgemeine Faustregel empfiehlt es sich, den Anbieter für die Verbindung mit der Anwendung zu verwenden. dabei wird die ältere Android Location Service-API nur bei Bedarf zurückfallen.
 
-## <a name="location-fundamentals"></a>Speicherort-Grundlagen
+## <a name="location-fundamentals"></a>Grundlagen des Orts
 
-In Android, unabhängig davon, welche API, die Sie auswählen, für die Arbeit mit Daten, bleiben einige Konzepte gleich. Dieser Abschnitt enthält die Location-Anbieter und entsprechende Berechtigungen.
+Unabhängig von der API, die Sie für die Arbeit mit Standortdaten ausgewählt haben, bleiben verschiedene Konzepte gleich. In diesem Abschnitt werden standortanbieter und standortbezogene Berechtigungen vorgestellt.
 
 ### <a name="location-providers"></a>Location-Anbieter
 
-Mehrere Technologien werden intern verwendet, um den Standort des Benutzers zu ermitteln. Der verwendeten Hardware abhängt, auf dem Typ des *Ortungsanbieter* für den Auftrag des Sammelns von Daten ausgewählt. Android verwendet drei Location-Anbieter:
+Mehrere Technologien werden intern verwendet, um den Speicherort des Benutzers zu ermitteln. Welche Hardware verwendet wird, hängt vom Typ des *Orts Anbieters* ab, der für den Auftrag zum Sammeln von Daten ausgewählt wurde. Android verwendet drei Speicherort Anbieter:
 
--   **GPS-Anbieter** &ndash; erhält den genauesten Speicherort, verwendet das größte Leistungspotenzial und funktioniert am besten im freien GPS. Dieser Anbieter verwendet eine Kombination von GPS und persönlicher GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)), womit GPS-Daten, die von cellular Towers erfasst.
+-   **GPS-Anbieter** &ndash; GPS gibt den genauesten Speicherort an, beansprucht die meiste Stromversorgung und funktioniert am besten im Außenbereich. Dieser Anbieter verwendet eine Kombination aus GPS und unterstütztem GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)), die GPS-Daten zurückgibt, die von Mobil Funktürmen gesammelt werden.
 
--   **Netzwerk-Anbieter** &ndash; stellt eine Kombination von Wi-Fi "und" Mobiltelefon Daten, einschließlich aGPS-Daten, die von der Zelle Towers erfasst. Weniger Energie als den GPS-Anbieter verwendet, sondern gibt Positionsdaten unterschiedlicher Genauigkeit.
+-   **Netzwerkanbieter** &ndash; Bietet eine Kombination aus WiFi-und Mobilfunk-Daten, einschließlich aGPS-Daten, die von zelltürmen gesammelt werden. Es verwendet weniger Energie als der GPS-Anbieter, gibt aber Positionsdaten mit abweichender Genauigkeit zurück.
 
--   **Passive Anbieter** &ndash; eine "piggyback" Option mithilfe von anderen Anwendungen oder Diensten angeforderten Anbieter zum Generieren von Daten in einer Anwendung. Dies ist eine weniger zuverlässige aber Energiesparoption Ideal für Anwendungen, die keine Konstante speicherortaktualisierungen Arbeit erforderlich ist.
+-   **Passiver Anbieter** &ndash; Eine "Piggyback"-Option, die Anbieter verwendet, die von anderen Anwendungen oder Diensten angefordert werden, um Standortdaten in einer Anwendung zu generieren. Diese Option ist weniger zuverlässig, aber die Energiespar Option eignet sich ideal für Anwendungen, für die keine Konstanten Speicherort Aktualisierungen erforderlich sind.
 
-Location-Anbieter sind nicht immer verfügbar. Beispielsweise wir möglicherweise GPS bei unserer Anwendung verwenden möchten, aber GPS kann in den Einstellungen deaktiviert werden, oder das Gerät möglicherweise nicht GPS überhaupt. Wenn ein bestimmter Anbieter nicht verfügbar ist, diesen Anbieter möglicherweise zurück auf die Schaltfläche `null`.
+Standortanbieter sind nicht immer verfügbar. Beispielsweise können wir GPS für unsere Anwendung verwenden, aber GPS ist möglicherweise in den Einstellungen ausgeschaltet, oder das Gerät verfügt möglicherweise nicht über GPS. Wenn ein bestimmter Anbieter nicht verfügbar ist, kann die Auswahl dieses Anbieters `null`zurückgeben.
 
-### <a name="location-permissions"></a>Berechtigungen für Positionsdaten
+### <a name="location-permissions"></a>Speicherort Berechtigungen
 
-Eine standortbasierte Anwendung muss Zugriff eines Geräts hardwaresensoren um GPS, Wi-Fi und datenverbindungen zu erhalten. Zugriff wird über die entsprechenden Berechtigungen in der Anwendung Android-Manifest gesteuert.
-Es gibt zwei Berechtigungen verfügbar &ndash; je nach den Anforderungen Ihrer Anwendung und Ihrer Wahl-API, möchten eine zulassen:
+Eine Standort orientierte Anwendung benötigt Zugriff auf die Hardware Sensoren eines Geräts, um GPS-, Wi-Fi-und Mobilfunk-Daten zu erhalten. Der Zugriff wird über die entsprechenden Berechtigungen im Android-Manifest der Anwendung gesteuert.
+Abhängig von den Anforderungen der &ndash; Anwendung und der gewählten API stehen Ihnen zwei Berechtigungen zur Verfügung:
 
--   `ACCESS_FINE_LOCATION` &ndash; Ermöglicht eine Anwendung den Zugriff auf GPS.
-    Erforderlich für die *GPS-Anbieter* und *passiven Anbieter* Optionen (*passiven Anbieter benötigt die Berechtigung zum Zugriff auf GPS-Daten gesammelt, die von einer anderen Anwendung oder Dienst*). Optionale Berechtigung für die *Netzwerkanbieter*.
+-   `ACCESS_FINE_LOCATION`&ndash; Ermöglicht einem Anwendungs Zugriff auf GPS.
+    Erforderlich für den *GPS-Anbieter* und *passive Anbieter* Optionen (*passiver Anbieter benötigt Zugriffsberechtigungen für GPS-Daten, die von einer anderen Anwendung oder einem anderen Dienst gesammelt werden*). Optionale Berechtigung für den *Netzwerkanbieter*.
 
--   `ACCESS_COARSE_LOCATION` &ndash; Ermöglicht eine Anwendung den Zugriff auf Mobilfunk- und Wi-Fi-Speicherort an. Erforderlich für *Netzwerkanbieter* Wenn `ACCESS_FINE_LOCATION` ist nicht festgelegt.
+-   `ACCESS_COARSE_LOCATION`&ndash; Ermöglicht einem Anwendungs Zugriff auf Mobilfunk-und WLAN-Speicherort. Erforderlich für den *Netzwerkanbieter* , wenn `ACCESS_FINE_LOCATION` nicht festgelegt ist.
 
-Für apps, die Ziel-API-Version 21 (Android 5.0 Lollipop) oder höher verwenden, können Sie aktivieren `ACCESS_FINE_LOCATION` und auf Geräten, die keine GPS-Hardware weiterhin ausgeführt. Wenn Ihre app GPS-Hardware erforderlich ist, sollten Sie explizit Hinzufügen einer `android.hardware.location.gps` `uses-feature` Element, das Android-Manifest. Weitere Informationen finden Sie im Android [verwendet-Feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) Elementverweis.
+Für apps, die auf API-Version 21 (Android 5,0 Lollipop) oder höher ausgerichtet sind `ACCESS_FINE_LOCATION` , können Sie auf Geräten ohne GPS-Hardware aktivieren und trotzdem ausführen. Wenn Ihre APP GPS-Hardware erfordert, sollten Sie dem Android `android.hardware.location.gps` -manifest explizit ein `uses-feature` Element hinzufügen. Weitere Informationen finden Sie in der Referenz zum [Funktions](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) Element von Android.
 
-Um die Berechtigungen festgelegt haben, erweitern Sie die **Eigenschaften** Ordner in der **Lösungspad** und doppelklicken Sie auf **"androidmanifest.xml"** . Die Berechtigungen werden er unter **erforderliche Berechtigungen**:
+Um die Berechtigungen festzulegen, erweitern Sie den Ordner **Properties** im **Lösungspad** , und doppelklicken Sie auf **androidmanifest. XML**. Die Berechtigungen werden unter **erforderliche Berechtigungen**aufgeführt:
 
-[![Screenshot der Einstellungen für Android-Manifest erforderliche Berechtigungen](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
+[![Screenshot der erforderlichen Berechtigungseinstellungen für das Android-Manifest](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
-Durch Festlegen eines dieser Berechtigungen teilt Android, dass Ihre Anwendung vom Benutzer die Berechtigung zum Zugriff auf die Location-Anbieter benötigt. Geräte, die API-Ebene 22 (Android 5.1) ausführen oder niedriger fordert den Benutzer zum gewähren dieser Berechtigungen jedes Mal, die die app installiert ist. Auf Geräten mit-API-Ebene 23 (Android 6.0) oder höher verwenden, sollte die app eine Laufzeit berechtigungsüberprüfung, bevor eine Anforderung des Ortungsanbieters ausführen. 
+Wenn Sie eine dieser Berechtigungen festlegen, wird Android mitgeteilt, dass Ihre Anwendung die Berechtigung für den Benutzer benötigt, damit Sie auf die standortanbieter zugreifen können. Bei Geräten, auf denen API Level 22 (Android 5,1) oder niedriger ausgeführt wird, wird der Benutzer aufgefordert, diese Berechtigungen bei jeder Installation der APP zu erteilen. Auf Geräten, auf denen API-Ebene 23 (Android 6,0) oder höher ausgeführt wird, sollte die APP eine Lauf Zeit Berechtigungsüberprüfung durchführen, bevor Sie eine Anforderung an den standortanbieter sendet. 
 
 > [!NOTE]
->Hinweis: Festlegen von `ACCESS_FINE_LOCATION` bedeutet den Zugriff auf beide Daten grob gehalten und ist in Ordnung. Sollte nie müssen Sie beide nur über die Berechtigungen, Festlegen der *minimale* Berechtigung der app arbeiten erforderlich.
+>Hinweis: Die `ACCESS_FINE_LOCATION` Einstellung impliziert Zugriff auf grobe und feine Positionsdaten. Sie sollten niemals beide Berechtigungen festlegen, sondern nur die *minimale* Berechtigung, die Ihre APP benötigt, um zu funktionieren.
 
-Dieser Codeausschnitt ist ein Beispiel für So prüfen Sie, dass eine app-Berechtigung für die `ACCESS_FINE_LOCATION` Berechtigung:
+Dieser Code Ausschnitt ist ein Beispiel dafür, wie Sie überprüfen können, ob eine APP `ACCESS_FINE_LOCATION` über die Berechtigung für die Berechtigung verfügt:
 
 ```csharp
  if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == Permission.Granted)
@@ -75,30 +73,30 @@ else
 }
 ```
 
-Apps müssen fehlertoleranten des Szenarios, in denen der Benutzer wird die Berechtigung nicht gewährt (oder verfügt über die Berechtigung aufgehoben) und eine Möglichkeit, die mit dieser Situation ordnungsgemäß behandeln. Informieren Sie sich die [Handbuch Berechtigungen](~/android/app-fundamentals/permissions.md) prüft, ob weitere Informationen zum Implementieren der Laufzeit-Berechtigung in Xamarin.Android.
+Apps müssen für das Szenario tolerant sein, in dem der Benutzer keine Berechtigungen erteilt (oder die Berechtigung widerrufen hat) und eine Möglichkeit hat, diese Situation ordnungsgemäß zu behandeln. Weitere Informationen zum Implementieren von Lauf Zeit Berechtigungs Überprüfungen in xamarin. Android finden Sie im [Berechtigungs Handbuch](~/android/app-fundamentals/permissions.md) .
 
 
-## <a name="using-the-fused-location-provider"></a>Verwenden die fused-Location-Anbieters
+## <a name="using-the-fused-location-provider"></a>Verwenden des Anbieters für die Zwischenspeicher Orte
 
-Die fused-Location-Anbieters ist die bevorzugte Methode für die Android-Anwendungen auf die Speicherort-Updates vom Gerät empfangen werden, weil sie effizient die Location-Anbieters während der Laufzeit, um die besten Informationen zum Speicherort auf Akku-effiziente Weise bereitzustellen ausgewählt wird. Ein Benutzer durchlaufen, um im freien ruft z. B. den besten Speicherort lesen mit GPS. Wenn der Benutzer in geschlossener Umgebung durchläuft, in denen GPS funktioniert nicht ordnungsgemäß (wenn überhaupt), die fused-Location-Anbieters kann automatisch zur WiFi, was in geschlossener Umgebung besser zu wechseln.
+Der Anbieter für die standortübergreifende Bereitstellung ist die bevorzugte Methode für Android-Anwendungen, um Standort Updates vom Gerät zu empfangen, da der Anbieter für den Standort während der Laufzeit effizient ausgewählt wird, um die optimalen Standortinformationen auf Akku-effiziente Weise bereitzustellen. Beispielsweise erhält ein Benutzer, der die Umgebung durchläuft, den besten Ort, der sich mit GPS ausliest. Wenn der Benutzer dann in den einzelnen Bereichen wechselt, in denen GPS schlecht funktioniert (wenn überhaupt), wechselt der Anbieter für den zusammen gezierten Standort möglicherweise automatisch zu WiFi, was besser im Inneren funktioniert.
  
-Die fused Location-Anbieter-API bietet eine Vielzahl von anderen Tools standortbezogenen Anwendungen, einschließlich Geofencing und aktivitätsüberwachung zu ermöglichen. In diesem Abschnitt werden wir den Fokus auf die Grundlagen zum Einrichten der `LocationClient`, Anbieter einrichten und den Standort des Benutzers abrufen.
+Die Anbieter-API für den Fused-Speicherort bietet eine Vielzahl anderer Tools, mit denen standortabhängige Anwendungen wie Geofencing und Aktivitäts Überwachung unterstützt werden können. In diesem Abschnitt befassen wir uns mit den Grundlagen der Einrichtung `LocationClient`von, der Einrichtung von Anbietern und der Beschaffung des Benutzer Standorts.
 
-Die fused Ortungsanbieter ist Teil des [Google Play Services](https://developer.android.com/google/play-services/index.html).
-Das Google Play Services-Paket muss installiert und ordnungsgemäß konfiguriert werden, in der Anwendung für die fused Location-Anbieter-API arbeiten und das Gerät muss das Google Play Services APK installiert haben.
+Der Anbieter für den Fused-Speicherort ist Teil [Google Play Services](https://developer.android.com/google/play-services/index.html).
+Das Google Play Services Paket muss in der Anwendung installiert und ordnungsgemäß konfiguriert sein, damit die Anbieter-API für den Fused Location funktioniert, und auf dem Gerät muss das Google Play Services APK installiert sein.
 
-Bevor Sie eine xamarin.Android-Anwendung Anwendung können die fused-Location-Anbieters, es muss Hinzufügen der **Xamarin.GooglePlayServices.Maps** Paket dem Projekt. Zudem können die folgenden `using` Anweisungen, die auf die unten beschriebenen Klassen verweisen Quelldateien hinzugefügt werden sollen:
+Bevor eine xamarin. Android-Anwendung den Anbieter für den Fused-Speicherort verwenden kann, muss Sie dem Projekt das **xamarin. googleplayservices. Maps** -Paket hinzufügen. Außerdem sollten den Quelldateien `using` , die auf die unten beschriebenen Klassen verweisen, die folgenden-Anweisungen hinzugefügt werden:
 
 ```csharp
 using Android.Gms.Common;
 using Android.Gms.Location;
 ```
 
-### <a name="checking-if-google-play-services-is-installed"></a>Überprüft, ob es sich bei Google Play Services installiert ist
+### <a name="checking-if-google-play-services-is-installed"></a>Überprüfen, ob Google Play Services installiert ist
 
-Eine Xamarin.Android-wird abstürzen, wenn versucht wird, die fused-Location-Anbieters verwenden, wenn es sich bei Google Play Services nicht installiert ist (oder veraltet) und dann eine Ausnahme zur Laufzeit würde auftreten.  Wenn Google Play Services nicht installiert ist, sollte dann die Anwendung auf der Android Speicherortdienst weiter oben erläuterten zurückgreifen. Wenn Google Play-Dienste nicht mehr aktuell ist, konnte die app eine Nachricht an den Benutzer auffordert, zum Aktualisieren der installierten Version von Google Play Services anzeigen.
+Ein xamarin. Android stürzt ab, wenn versucht wird, den Anbieter für den Fused-Speicherort zu verwenden, wenn Google Play Services nicht installiert (oder veraltet) ist, dann tritt eine Lauf Zeit Ausnahme auf.  Wenn Google Play Services nicht installiert ist, sollte die Anwendung auf den zuvor beschriebenen Android Location Service zurückgreifen. Wenn Google Play Services veraltet ist, könnte die APP dem Benutzer eine Meldung anzeigen, in der Sie aufgefordert werden, die installierte Version von Google Play Services zu aktualisieren.
 
-Dieser Codeausschnitt ist ein Beispiel wie eine Android-Aktivität programmgesteuert überprüfen können, ob es sich bei Google Play Services installiert ist:
+Dieser Code Ausschnitt ist ein Beispiel dafür, wie eine Android-Aktivität Programm gesteuert überprüfen kann, ob Google Play Services installiert ist:
 
 ```csharp
 bool IsGooglePlayServicesInstalled()
@@ -116,7 +114,7 @@ bool IsGooglePlayServicesInstalled()
         var errorString = GoogleApiAvailability.Instance.GetErrorString(queryResult);
         Log.Error("MainActivity", "There is a problem with Google Play Services on this device: {0} - {1}",
                   queryResult, errorString);
-                  
+
         // Alternately, display the error to the user.
     }
 
@@ -126,9 +124,9 @@ bool IsGooglePlayServicesInstalled()
 
 ### <a name="fusedlocationproviderclient"></a>FusedLocationProviderClient
 
-Zum interagieren mit der fused Ortungsanbieter benötigen eine Xamarin.Android-Anwendung eine Instanz von der `FusedLocationProviderClient`. Diese Klasse stellt die erforderlichen Methoden speicherortaktualisierungen abonnieren und den letzten bekannten Speicherort des Geräts abrufen.
+Eine xamarin. Android-Anwendung muss über eine Instanz von `FusedLocationProviderClient`verfügen, damit Sie mit dem Anbieter für den zusammen gezierten Speicherort interagieren kann. Diese Klasse macht die erforderlichen Methoden zum Abonnieren von Standort Aktualisierungen und zum Abrufen des letzten bekannten Speicher Orts des Geräts verfügbar.
 
-Die `OnCreate` geht von einer Aktivität einer geeigneten Stelle zum Abrufen eines Verweises auf die `FusedLocationProviderClient`, wie im folgenden Codeausschnitt gezeigt:
+Die `OnCreate` -Methode einer-Aktivität ist ein geeigneter Speicherort, um einen Verweis `FusedLocationProviderClient`auf das zu erhalten, wie im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 public class MainActivity: AppCompatActivity
@@ -142,11 +140,11 @@ public class MainActivity: AppCompatActivity
 }
 ```
 
-### <a name="getting-the-last-known-location"></a>Abrufen der letzten bekannten Speicherort
+### <a name="getting-the-last-known-location"></a>Der letzte bekannte Speicherort wird erhalten.
 
-Die `FusedLocationProviderClient.GetLastLocationAsync()` Methode bietet eine einfache, nicht blockierende-Methode für eine Xamarin.Android-Anwendung, um den letzten bekannten Speicherort des Geräts mit minimaler Codierung Mehraufwand schnell zu erhalten.
+Die `FusedLocationProviderClient.GetLastLocationAsync()` -Methode bietet eine einfache, nicht blockierende Methode, mit der eine xamarin. Android-Anwendung den letzten bekannten Speicherort des Geräts mit minimalem Codierungsaufwand schnell abrufen kann.
 
-Dieser Codeausschnitt zeigt, wie die `GetLastLocationAsync` Methode, um den Speicherort des Geräts abzurufen:
+In diesem Code Ausschnitt wird gezeigt, wie `GetLastLocationAsync` Sie die-Methode verwenden, um den Speicherort des Geräts abzurufen:
 
 ```csharp
 async Task GetLastLocationFromDevice()
@@ -167,16 +165,17 @@ async Task GetLastLocationFromDevice()
 }
 ```
 
-### <a name="subscribing-to-location-updates"></a>Abonnieren von Speicherort aktualisiert
+### <a name="subscribing-to-location-updates"></a>Abonnieren von Standort Aktualisierungen
 
-Eine Xamarin.Android-Anwendung abonnieren Sie speicherortaktualisierungen vom fused Ortungsanbieter mithilfe der `FusedLocationProviderClient.RequestLocationUpdatesAsync` Methode, wie im folgenden Codeausschnitt gezeigt:
+Eine xamarin. Android-Anwendung kann mithilfe der `FusedLocationProviderClient.RequestLocationUpdatesAsync` -Methode auch Location-Updates vom Anbieter für verknüpfter Speicherorte abonnieren, wie im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, locationCallback);
 ```
-Diese Methode akzeptiert zwei Parameter:
 
--   **`Android.Gms.Location.LocationRequest`** &ndash; Ein `LocationRequest` Objekt ist, wie eine Xamarin.Android-Anwendung die Parameter zur Funktionsweise der fused-Location-Anbieters übergeben. Die `LocationRequest` enthält Informationen, die solche wie häufige Anforderungen gemacht werden sollen, oder wie wichtig eine Aktualisierung der genaue Speicherort sein. Beispielsweise bewirkt eine wichtiger Speicherort-Anforderung des Geräts zu bestimmen den Speicherort des GPS und daher mehr Leistung verwenden. Dieser Codeausschnitt zeigt, wie Sie erstellen eine `LocationRequest` für einen Standort mit hoher Genauigkeit, überprüfen etwa alle fünf Minuten eine Speicherort-Update (aber nicht früher als zwei Minuten zwischen den Anforderungen). Die fused-Location-Anbieters verwenden eine `LocationRequest` als Leitfaden für die Location-Anbieters mit, dass beim Versuch um der Standort des Geräts zu bestimmen:
+Diese Methode nimmt zwei Parameter an:
+
+-   **`Android.Gms.Location.LocationRequest`** &ndash; Ein`LocationRequest` -Objekt ist, wie eine xamarin. Android-Anwendung die Parameter an die Funktionsweise des Dienstanbieters für den Zusammenführungen übergibt. Enthält `LocationRequest` Informationen, wie häufige Anforderungen oder die Wichtigkeit einer exakten Standort Aktualisierung sein sollten. Beispielsweise bewirkt eine wichtige Standort Anforderung, dass das Gerät das GPS verwendet und folglich mehr Energie, wenn der Speicherort bestimmt wird. In diesem Code Ausschnitt wird gezeigt, wie ein `LocationRequest` für einen Speicherort mit hoher Genauigkeit erstellt wird, und es wird ungefähr alle fünf Minuten auf eine Standort Aktualisierung geprüft (aber nicht früher als zwei Minuten zwischen Anforderungen). Der Anbieter für den Anbieter für die `LocationRequest` Zwischenspeicher Orte verwendet einen als Leitfaden, um zu bestimmen, welcher Speicherort Anbieter zum Ermitteln des Gerätespeicher Orts verwendet wird:
 
     ```csharp
     LocationRequest locationRequest = new LocationRequest()
@@ -184,16 +183,15 @@ Diese Methode akzeptiert zwei Parameter:
                                       .SetInterval(60 * 1000 * 5)
                                       .SetFastestInterval(60 * 1000 * 2);
     ```
-                                          
 
--   **`Android.Gms.Location.LocationCallback`** &ndash; Um speicherortaktualisierungen zu erhalten, muss eine Xamarin.Android-Anwendung als Unterklasse der `LocationProvider` abstrakte Klasse. Diese Klasse verfügbar gemacht werden zwei Methoden, die möglicherweise aufgerufen, durch die fused-Location-Anbieters aktualisieren die app mit Informationen zum Speicherort. Dies wird im folgenden ausführlicher erläutert werden.
+-   **`Android.Gms.Location.LocationCallback`** Um Speicherort Aktualisierungen zu erhalten, muss eine xamarin. Android-Anwendung die `LocationProvider` abstrakte Klasse Unterklassen. &ndash; Diese Klasse stellt zwei Methoden zur Verfügung, die möglicherweise vom Anbieter für den Fused-Location aufgerufen werden, um die APP mit Standortinformationen zu aktualisieren Dies wird im folgenden ausführlicher erläutert.
 
-Um eine Xamarin.Android-Anwendung eines Updates Speicherort zu benachrichtigen, die fused-Location-Anbieters wird aufgerufen, die `LocationCallBack.OnLocationResult(LocationResult result)`. Die `Android.Gms.Location.LocationResult` Parameter enthält die Informationen zum Update Speicherort.
+Um eine xamarin. Android-Anwendung über eine Speicherort Aktualisierung zu benachrichtigen, ruft der Anbieter für `LocationCallBack.OnLocationResult(LocationResult result)`den Fused-Ort die auf. Der `Android.Gms.Location.LocationResult` -Parameter enthält die Informationen zum Update Speicherort.
 
-Wenn die fused-Location-Anbieters eine Änderung in die Verfügbarkeit von Daten erkennt, ruft sie die `LocationProvider.OnLocationAvailability(LocationAvailability
-locationAvailability)` Methode. Wenn die `LocationAvailability.IsLocationAvailable` -Eigenschaft gibt `true`, wird davon ausgegangen werden kann, dass durch die speicherortergebnissen Gerät gemeldet `OnLocationResult` sind so genau, und wie auf dem neuesten Stand gemäß der `LocationRequest`. Wenn `IsLocationAvailable` ist "false" werden keine Ergebnisse zurück, indem `OnLocationResult`.
+Wenn der Anbieter für den Fused-Speicherort eine Änderung der Verfügbarkeit von Standortdaten erkennt, `LocationProvider.OnLocationAvailability(LocationAvailability
+locationAvailability)` wird die-Methode aufgerufen. Wenn die `LocationAvailability.IsLocationAvailable` -Eigenschaft `true`zurückgibt, kann davon ausgegangen werden, dass die von `OnLocationResult` gemeldeten Geräte Speicherort Ergebnisse genau und aktuell sind, wie für das `LocationRequest`-Objekt erforderlich. Wenn `IsLocationAvailable` false ist, werden keine Speicherort Ergebnisse von `OnLocationResult`zurückgegeben.
 
-Dieser Codeausschnitt ist eine beispielimplementierung der `LocationCallback` Objekt:
+Dieser Code Ausschnitt ist eine Beispiel Implementierung des `LocationCallback` -Objekts:
 
 ```csharp
 public class FusedLocationProviderCallback : LocationCallback
@@ -225,50 +223,50 @@ public class FusedLocationProviderCallback : LocationCallback
 }
 ```
 
-## <a name="using-the-android-location-service-api"></a>Die Speicherort von Android-API verwenden
+## <a name="using-the-android-location-service-api"></a>Verwenden der Android Location Service-API
 
-Der Speicherortdienst für Android ist eine ältere API für die Nutzung von Standortinformationen in Android. Standortdaten vom hardwaresensoren erfasst und erfasst, die von einem Systemdienst, die in der Anwendung mit zugegriffen wird eine `LocationManager` Klasse und ein `ILocationListener`.
+Der Android Location Service ist eine ältere API für die Verwendung von Standortinformationen unter Android. Standortdaten werden von Hardware Sensoren gesammelt und von einem-Systemdienst gesammelt, auf den in der Anwendung mit einer `LocationManager` `ILocationListener`-Klasse und einer-Klasse zugegriffen wird.
 
-Der Speicherortdienst eignet sich optimal für Anwendungen, die auf Geräten ausgeführt werden müssen, die keine Google Play Services installiert haben.
+Der Location-Dienst eignet sich am besten für Anwendungen, die auf Geräten ausgeführt werden müssen, auf denen Google Play Services nicht installiert ist.
 
-Der Speicherortdienst ist eine besondere Art von [Service](https://developer.android.com/guide/components/services.html) vom System verwaltet. Ein Systemdienst interagiert mit Hardware der Geräte, und es wird immer ausgeführt. Um speicherortaktualisierungen in unserer Anwendung zu nutzen, wir abonnieren speicherortaktualisierungen aus dem System Ortsdienst mithilfe einer `LocationManager` und `RequestLocationUpdates` aufrufen.
+Der Location-Dienst ist ein spezieller [Diensttyp](https://developer.android.com/guide/components/services.html) , der vom System verwaltet wird. Ein-System Dienst interagiert mit der Gerätehardware und wird immer ausgeführt. Zum Abrufen von Location-Updates in unserer Anwendung abonnieren wir Standort Updates vom System Location Service mithilfe `LocationManager` von und einem `RequestLocationUpdates` -Befehl.
 
-Um den Standort des Benutzers mithilfe von Android Ortsdienst erhalten die umfasst mehrere Schritte aus:
+Um den Speicherort des Benutzers mithilfe von Android Location Service abzurufen, sind mehrere Schritte erforderlich:
 
-1.  Abrufen eines Verweises auf die `LocationManager` Service.
-2.  Implementieren der `ILocationListener` -Schnittstelle und behandeln Ereignisse aus, wenn der Standort ändert.
-3.  Verwenden der `LocationManager` Anforderung Standort Updates für einen angegebenen Anbieter. Die `ILocationListener` aus dem vorherigen Schritt verwendet, um Rückrufe von erhalten die `LocationManager`.
-4.  Beenden Sie speicherortaktualisierungen, wenn die Anwendung nicht mehr Updates empfangen werden.
+1.  Verschaffen Sie sich einen Verweis `LocationManager` auf den Dienst.
+2.  Implementieren der `ILocationListener` -Schnittstelle und behandeln von Ereignissen, wenn sich der Speicherort ändert
+3.  `LocationManager` Verwenden Sie, um Location-Updates für einen angegebenen Anbieter anzufordern. Der `ILocationListener` aus dem vorherigen Schritt wird verwendet, um Rückrufe aus dem `LocationManager`zu empfangen.
+4.  Beenden Sie Standort Aktualisierungen, wenn die Anwendung nicht mehr für den Empfang von Updates geeignet ist.
 
-### <a name="location-manager"></a>Quellspeicherort-Manager
+### <a name="location-manager"></a>Location Manager
 
-Wir erreichen die Speicherort-Systemdienst mit einer Instanz von der `LocationManager` Klasse. `LocationManager` ist eine spezielle Klasse, die uns bei der Interaktion mit dem Speicherort im Dateisystem Service Methoden aufrufen kann. Eine Anwendung erhalten einen Verweis auf die `LocationManager` durch Aufrufen von `GetSystemService` und übergeben einen Diensttyp, wie unten dargestellt:
+Wir können auf den System Positions Dienst mit einer Instanz der `LocationManager` -Klasse zugreifen. `LocationManager`ist eine spezielle Klasse, mit der wir mit dem System Positions Dienst interagieren und Methoden für ihn abrufen können. Eine Anwendung kann einen Verweis auf das `LocationManager` abrufen, indem aufgerufen `GetSystemService` und einen Diensttyp übergibt, wie unten dargestellt:
 
 ```csharp
 LocationManager locationManager = (LocationManager) GetSystemService(Context.LocationService);
 ```
 
-`OnCreate` ist eine gute Möglichkeit zum Abrufen eines Verweises auf die `LocationManager`.
-Es ist eine gute Idee, behalten Sie die `LocationManager` als eine Klassenvariable, damit wir sie an verschiedenen Punkten im Lebenszyklus von Aktivität aufrufen kann.
+`OnCreate`ist ein guter Ort, um einen Verweis auf das `LocationManager`zu erhalten.
+Es ist ratsam, die `LocationManager` als Klassen Variable beizubehalten, damit wir Sie an verschiedenen Punkten im Aktivitäts Lebenszyklus abrufen können.
 
-### <a name="request-location-updates-from-the-locationmanager"></a>Speicherortaktualisierungen von der LocationManager anfordern
+### <a name="request-location-updates-from-the-locationmanager"></a>Anfordern von Standort Aktualisierungen vom Locationmanager
 
-Sobald die Anwendung einen Verweis auf verfügt die `LocationManager`, teilen muss die `LocationManager` welche Art von Informationen zum Speicherort, die erforderlich sind, und wie oft diese Informationen aktualisiert werden. Dies erfolgt durch Aufrufen `RequestLocationUpdates` auf die `LocationManager` -Objekt, und übergeben den Kriterien für die Updates und einen Rückruf, der die Speicherort-Updates erhält. Dieser Rückruf ist ein Typ, der implementieren muss, die `ILocationListener` Schnittstelle (weiter unten in diesem Handbuch ausführlicher beschrieben).
+Nachdem die Anwendung einen Verweis auf den `LocationManager`enthält, muss Sie `LocationManager` wissen, welche Art von Standortinformationen erforderlich sind und wie oft diese Informationen aktualisiert werden sollen. Rufen `RequestLocationUpdates` Sie hierzu für das `LocationManager` -Objekt auf, und übergeben Sie einige Kriterien für Updates und einen Rückruf, der die Speicherort Aktualisierungen empfängt. Dieser Rückruf ist ein Typ, der die `ILocationListener` -Schnittstelle implementieren muss (wird später in diesem Handbuch ausführlicher beschrieben).
 
-Die `RequestLocationUpdates` Methode teilt dem Speicherort im Dateisystem Dienst, dass Ihre Anwendung den Empfang von speicherortaktualisierungen starten möchten. Dieser Methode können Sie den Anbieter als auch Zeit und Entfernung Schwellenwerte zum Steuern der aktualisierungshäufigkeit angeben. Zum Beispiel die Methode unten fordert Speicherort, der vom GPS-Standort-Anbieter alle 2000 Millisekunden und aktualisiert, und nur, wenn der Standort mehr als 1 Meter ändert:
+Die `RequestLocationUpdates` -Methode teilt dem System Positions Dienst mit, dass Ihre Anwendung mit dem empfangen von Standort Aktualisierungen beginnen soll. Mit dieser Methode können Sie den Anbieter sowie Zeit-und Entfernungs Schwellenwerte angeben, um die Aktualisierungshäufigkeit zu steuern. Beispielsweise fordert die nachfolgende Methode alle 2000 Millisekunden Standort Aktualisierungen vom GPS-Speicherort Anbieter an, und zwar nur dann, wenn sich der Standort um mehr als 1 Meter ändert:
 
 ```csharp
 // For this example, this method is part of a class that implements ILocationListener, described below
 locationManager.RequestLocationUpdates(LocationManager.GpsProvider, 2000, 1, this);
 ```
 
-Eine Anwendung sollte nur so oft wie erforderlich, damit die Anwendung aus, um gut zu funktionieren die speicherortaktualisierungen anfordern. Dies behält Akkuverbrauch gering zu halten und eine bessere Erfahrung für den Benutzer erstellt.
+Eine Anwendung sollte Standort Aktualisierungen nur so oft anfordern, wie dies für die Ausführung der Anwendung erforderlich ist. Dies behält die Akku Lebensdauer bei und sorgt für eine bessere Benutzer Leistung.
 
-### <a name="responding-to-updates-from-the-locationmanager"></a>Reagieren auf Updates aus der LocationManager
+### <a name="responding-to-updates-from-the-locationmanager"></a>Reagieren auf Updates vom Locationmanager
 
-Sobald eine Anwendung auf Updates angefordert hat die `LocationManager`, erhalten sie Informationen aus dem Dienst, durch die Implementierung der [ `ILocationListener` ](https://developer.xamarin.com/api/type/Android.Locations.ILocationListener/) Schnittstelle. Diese Schnittstelle bietet vier Möglichkeiten für das Lauschen auf den Speicherort-Dienst und der Ortungsanbieter `OnLocationChanged`. Das System ruft `OnLocationChanged` Wenn sich der Standort des Benutzers ändert genug, um als eine Änderung der Position gemäß den Kriterien festgelegt, wenn der Standort Updates anfordern zu qualifizieren. 
+Nachdem eine Anwendung Updates aus dem `LocationManager`angefordert hat, kann Sie Informationen vom Dienst empfangen, indem Sie die [`ILocationListener`](xref:Android.Locations.ILocationListener) -Schnittstelle implementiert. Diese Schnittstelle bietet vier Methoden zum lauschen an Location Service und dem Orts Anbieter `OnLocationChanged`. Das System ruft `OnLocationChanged` auf, wenn der Speicherort des Benutzers so geändert wird, dass er sich je nach den Kriterien, die beim Anfordern von Standort Aktualisierungen festgelegt wurden, als Orts Änderung 
 
-Der folgende Code zeigt die Methoden in der `ILocationListener` Schnittstelle:
+Der folgende Code zeigt die Methoden in der `ILocationListener` -Schnittstelle:
 
 ```csharp
 public class MainActivity : AppCompatActivity, ILocationListener
@@ -298,9 +296,9 @@ public class MainActivity : AppCompatActivity, ILocationListener
 }
 ```
 
-### <a name="unsubscribing-to-locationmanager-updates"></a>Kündigen des Abonnements LocationManager-Updates
+### <a name="unsubscribing-to-locationmanager-updates"></a>Kündigen von Locationmanager-Updates
 
-Um Systemressourcen zu sparen, sollte eine Anwendung auf Standort Updates so bald wie möglich wieder abmelden. Die `RemoveUpdates` Methode teilt dem `LocationManager` zum Senden von Aktualisierungen an die Anwendung zu beenden.  Beispielsweise kann eine Aktivität aufrufen `RemoveUpdates` in die `OnPause` Methode, damit wir um Energie zu sparen, wenn eine Anwendung können benötigt keine speicherortaktualisierungen zwar die Aktivität nicht auf dem Bildschirm:
+Um Systemressourcen zu sparen, sollte eine Anwendung so bald wie möglich Updates für Standort Updates kündigen. Die `RemoveUpdates` -Methode weist `LocationManager` das an, keine Updates mehr an die Anwendung zu senden.  Beispielsweise kann eine Aktivität in der `RemoveUpdates` `OnPause` -Methode aufzurufen, sodass wir Energie sparen können, wenn eine Anwendung keine Standort Aktualisierungen benötigt, während sich Ihre Aktivität nicht auf dem Bildschirm befindet:
 
 ```csharp
 protected override void OnPause ()
@@ -310,15 +308,15 @@ protected override void OnPause ()
 }
 ```
 
-Wenn Ihre Anwendung auf die Speicherort-Updates im Hintergrund zu erhalten muss, sollten Sie einen benutzerdefinierten Dienst zu erstellen, mit dem System Ortsdienst abonniert. Finden Sie in der [Hintergrundverarbeitung mit Android-Dienste](~/android/app-fundamentals/services/index.md) Anleitung finden Sie weitere Informationen.
+Wenn Ihre Anwendung im Hintergrund Speicherort Updates erhalten muss, sollten Sie einen benutzerdefinierten Dienst erstellen, der den System Location Service abonniert. Weitere Informationen finden Sie im Handbuch für die [backerden mit Android-Diensten](~/android/app-fundamentals/services/index.md) .
 
-### <a name="determining-the-best-location-provider-for-the-locationmanager"></a>Bestimmen der besten Location-Anbieters für die LocationManager
+### <a name="determining-the-best-location-provider-for-the-locationmanager"></a>Ermitteln des optimalen Orts Anbieters für Locationmanager
 
-Die Anwendung, die oben genannten legt GPS als der Ortungsanbieter fest. Allerdings können GPS nicht verfügbar in allen Fällen wie z. B., wenn das Gerät in geschlossenen Räumen oder verfügt nicht über ein GPS-Empfänger. Wenn dies der Fall ist, wird das Ergebnis ist eine `null` für den Anbieter zurück.
+Die obige Anwendung legt GPS als Speicherort Anbieter fest. GPS ist jedoch möglicherweise nicht in allen Fällen verfügbar, z. b. wenn das Gerät im Inneren oder nicht über einen GPS-Empfänger verfügt. Wenn dies der Fall ist, ist das Ergebnis eine `null` Rückgabe für den Anbieter.
 
-Rufen Sie Ihre app funktioniert, wenn GPS nicht verfügbar ist, die Sie mit der `GetBestProvider` Methode, um die beste verfügbar (unterstützte Geräte und Benutzer aktiviert) Location-Anbieters beim Anwendungsstart anfordern. Nicht in einen bestimmten Anbieter, Sie können feststellen, `GetBestProvider` die Anforderungen für Anbieter - z. B. Genauigkeit und Leistung – mit einem [ `Criteria` Objekt](https://developer.xamarin.com/api/type/Android.Locations.Criteria/). `GetBestProvider` besten-Anbieter für die angegebenen Kriterien zurückgegeben.
+Damit Ihre APP funktioniert, wenn GPS nicht verfügbar ist, verwenden Sie die `GetBestProvider` -Methode, um beim Anwendungsstart den am besten verfügbaren (Geräte unterstützten und Benutzer fähigen) Speicherort Anbieter anzufordern. Anstatt einen bestimmten Anbieter zu übergeben, können Sie die Anforderungen `GetBestProvider` für den Anbieter (z. b. Genauigkeit und Stromversorgung mit einem [ `Criteria` -Objekt](xref:Android.Locations.Criteria)) erkennen. `GetBestProvider`Gibt den besten Anbieter für die angegebenen Kriterien zurück.
 
-Der folgende Code zeigt, wie Sie den am besten verfügbaren Anbieter erhalten, und verwenden, wenn der Standort Updates anfordern:
+Der folgende Code zeigt, wie Sie den besten verfügbaren Anbieter abrufen und bei der Anforderung von Standort Aktualisierungen verwenden können:
 
 ```csharp
 Criteria locationCriteria = new Criteria();   
@@ -338,29 +336,28 @@ else
 ```
 
 > [!NOTE]
->  Wenn der Benutzer alle Location-Anbieter deaktiviert hat `GetBestProvider` zurück `null`. Um anzuzeigen, wie dieser Code auf einem echten Gerät funktioniert, achten Sie darauf, GPS, Wi-Fi und Mobilfunknetze unter ermöglichen **Google-Einstellungen > Position > Modus** wie im folgenden Screenshot gezeigt:
+>  Wenn der Benutzer alle standortanbieter deaktiviert hat, `GetBestProvider` wird von `null`zurückgegeben. Um zu sehen, wie dieser Code auf einem echten Gerät funktioniert, stellen Sie sicher, dass Sie GPS, Wi-Fi und Mobilfunk-Netzwerke unter **Google Settings > Location >-Modus** aktivieren, wie in diesem Screenshot gezeigt:
 
-[![Bildschirm "Einstellungen Positionsmodus" auf einem Android-Telefon](location-images/location-02.png)](location-images/location-02.png#lightbox)
+[![Bildschirm "Einstellungs Speicherort" auf einem Android-Telefon](location-images/location-02.png)](location-images/location-02.png#lightbox)
 
-Der folgende Screenshot zeigt den Speicherort Anwendung ausgeführten, indem `GetBestProvider`:
+Der folgende Screenshot zeigt die Standort Anwendung, die `GetBestProvider`mithilfe von ausgeführt wird:
 
-[![Anzeigen von Längen- und Breitengrad sowie Anbieter GetBestProvider-app](location-images/location-03.png)](location-images/location-03.png#lightbox)
+[![Getbestprovider-APP, die Breitengrad, Längengrad und Anbieter anzeigt](location-images/location-03.png)](location-images/location-03.png#lightbox)
 
-Beachten Sie, dass `GetBestProvider` wird den Anbieter nicht dynamisch geändert. Stattdessen bestimmt es verfügbaren Anbieter einmal während der aktivitätslebenszyklus. Wenn der Anbieterstatus ändert, nachdem es festgelegt wurde, die Anwendung erfordert zusätzlichen Code in die `ILocationListener` Methoden &ndash; `OnProviderEnabled`, `OnProviderDisabled`, und `OnStatusChanged` &ndash; behandelt jede Möglichkeit, die im Zusammenhang mit der Anbieter-Schalter.
+Denken Sie daran, `GetBestProvider` dass den Anbieter nicht dynamisch ändert. Stattdessen wird der am besten verfügbare Anbieter während des Aktivitäts Lebenszyklus einmal bestimmt. Wenn sich der Anbieter Status ändert, nachdem er festgelegt wurde, benötigt die Anwendung zusätzlichen Code in `ILocationListener` den &ndash; Methoden `OnProviderDisabled` `OnProviderEnabled`, und `OnStatusChanged` &ndash; , um alle Möglichkeiten zu behandeln, die im Zusammenhang mit dem Anbieter Switch.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieses Handbuch behandelt die Position des Benutzers mit der Speicherortdienst für Android und die fused-Location-Anbieters von Google Location Services-API abrufen.
-
+In diesem Leitfaden wurde das Abrufen des Speicher Orts des Benutzers mit dem Android-Speicherort Dienst und dem Anbieter für den Fused-Ort von Google Ortungsdienste-API behandelt.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Speicherort (Beispiel)](https://developer.xamarin.com/samples/monodroid/Location/)
-- [FusedLocationProvider (Beispiel)](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
-- [Google Play-Dienste](https://developer.android.com/google/play-services/index.html)
-- [Kriterien-Klasse](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
-- [LocationManager-Klasse](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)
-- [LocationListener-Klasse](https://developer.xamarin.com/api/type/Android.Locations.ILocationListener/)
-- [LocationClient API](https://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
-- [LocationListener API](https://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
-- [LocationRequest API](https://developer.android.com/reference/com/google/android/gms/location/LocationRequest.html)
+- [Fusedlocationprovider (Beispiel)](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
+- [Google Play Services](https://developer.android.com/google/play-services/index.html)
+- [Criteria-Klasse](xref:Android.Locations.Criteria)
+- [Locationmanager-Klasse](xref:Android.Locations.LocationManager)
+- [Locationlistener-Klasse](xref:Android.Locations.ILocationListener)
+- [Locationclient-API](https://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
+- [Locationlistener-API](https://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
+- [Locationrequest-API](https://developer.android.com/reference/com/google/android/gms/location/LocationRequest.html)

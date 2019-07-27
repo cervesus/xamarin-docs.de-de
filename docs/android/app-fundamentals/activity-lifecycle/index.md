@@ -1,91 +1,90 @@
 ---
 title: Aktivitätslebenszyklus
-description: Aktivitäten sind ein wesentlicher Baustein von Android-Anwendungen, und sie können in einer Reihe von anderen Zuständen vorhanden sein. Der aktivitätslebenszyklus beginnt mit der Instanziierung und endet mit Zerstörung und viele Status in der Zwischenzeit enthält. Wenn eine Aktivität den Status ändert, wird die entsprechende Lebenszyklus-Event-Methode aufgerufen, die Aktivität der bevorstehenden statusänderung zu benachrichtigen und zum Ausführen von Code zur Anpassung an diese Änderung ermöglicht. In diesem Artikel werden die Aktivitäten des Lebenszyklus untersucht und erläutert, die Verantwortung, dass eine Aktivität während dieser Zustandsänderungen als Teil einer Anwendung kaum und zuverlässige verfügt.
+description: Aktivitäten sind ein grundlegender Baustein von Android-Anwendungen und können in einer Reihe unterschiedlicher Zustände vorhanden sein. Der Aktivitäts Lebenszyklus beginnt mit der Instanziierung und endet mit der Zerstörung und umfasst viele Zustände dazwischen. Wenn sich der Zustand einer Aktivität ändert, wird die entsprechende Lifecycle-Ereignismethode aufgerufen, die die Aktivität der bevorstehenden Zustandsänderung benachrichtigt und die Ausführung von Code für die Anpassung an diese Änderung zulässt. In diesem Artikel wird der Lebenszyklus von Aktivitäten untersucht, und es wird erläutert, wie sich eine Aktivität bei den einzelnen Zustandsänderungen als Teil einer gut verhaltenen, zuverlässigen Anwendung verhält.
 ms.prod: xamarin
 ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 48ff30397b2592dd2c4dbd445987392d78ced6f3
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: eda75041add4b5fc9f7998f426aab42ed2618c4b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740777"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508812"
 ---
 # <a name="activity-lifecycle"></a>Aktivitätslebenszyklus
 
-_Aktivitäten sind ein wesentlicher Baustein von Android-Anwendungen, und sie können in einer Reihe von anderen Zuständen vorhanden sein. Der aktivitätslebenszyklus beginnt mit der Instanziierung und endet mit Zerstörung und viele Status in der Zwischenzeit enthält. Wenn eine Aktivität den Status ändert, wird die entsprechende Lebenszyklus-Event-Methode aufgerufen, die Aktivität der bevorstehenden statusänderung zu benachrichtigen und zum Ausführen von Code zur Anpassung an diese Änderung ermöglicht. In diesem Artikel werden die Aktivitäten des Lebenszyklus untersucht und erläutert, die Verantwortung, dass eine Aktivität während dieser Zustandsänderungen als Teil einer Anwendung kaum und zuverlässige verfügt._
+_Aktivitäten sind ein grundlegender Baustein von Android-Anwendungen und können in einer Reihe unterschiedlicher Zustände vorhanden sein. Der Aktivitäts Lebenszyklus beginnt mit der Instanziierung und endet mit der Zerstörung und umfasst viele Zustände dazwischen. Wenn sich der Zustand einer Aktivität ändert, wird die entsprechende Lifecycle-Ereignismethode aufgerufen, die die Aktivität der bevorstehenden Zustandsänderung benachrichtigt und die Ausführung von Code für die Anpassung an diese Änderung zulässt. In diesem Artikel wird der Lebenszyklus von Aktivitäten untersucht, und es wird erläutert, wie sich eine Aktivität bei den einzelnen Zustandsänderungen als Teil einer gut verhaltenen, zuverlässigen Anwendung verhält._
 
-## <a name="activity-lifecycle-overview"></a>Lebenszyklus – Übersicht
+## <a name="activity-lifecycle-overview"></a>Übersicht über Aktivitäts Lebenszyklus
 
-Aktivitäten sind eine ungewöhnliche Programmierkonzept, die speziell für Android. Bei der herkömmlichen Anwendungsentwicklung besteht in der Regel eine statische main-Methode, die zum Starten der Anwendung ausgeführt wird. Mit Android unterscheiden sich jedoch Dinge. Android-Anwendungen können über alle registrierten Aktivitäten innerhalb einer Anwendung gestartet werden. In der Praxis haben die meisten Anwendungen nur eine bestimmte Aktivität, die als Einstiegspunkt der Anwendung angegeben wird. Jedoch, wenn eine Anwendung abstürzt, oder beendet wird vom Betriebssystem, können versuchen, das Betriebssystem die Anwendung auf der letzten Aktivität oder an anderer Stelle in der vorherigen Aktivität Stack neu zu starten.
-Darüber hinaus kann das Betriebssystem Aktivitäten anhalten, wenn sie nicht aktiv sind, und diese freigeben, wenn es nicht genügend Arbeitsspeicher verfügt. Sorgfältiger Überlegung muss erfolgen, dass die Anwendung aus, um dessen Status ordnungsgemäß wiederherzustellen, die eine Aktivität, insbesondere dann, wenn neu gestartet wird, die Aktivität von Daten aus vorherigen Aktivitäten abhängen.
+Aktivitäten sind ein ungewöhnliches Programmier Konzept für Android. Bei der herkömmlichen Anwendungsentwicklung gibt es normalerweise eine statische Main-Methode, die zum Starten der Anwendung ausgeführt wird. Bei Android ist es jedoch anders. Android-Anwendungen können über jede registrierte Aktivität innerhalb einer Anwendung gestartet werden. In der Praxis verfügen die meisten Anwendungen nur über eine bestimmte Aktivität, die als Einstiegspunkt für die Anwendung angegeben wird. Wenn jedoch eine Anwendung abstürzt oder vom Betriebssystem beendet wird, kann das Betriebssystem versuchen, die Anwendung bei der letzten geöffneten Aktivität oder an einer beliebigen Stelle im vorherigen Aktivitäts Stapel neu zu starten.
+Außerdem hält das Betriebssystem möglicherweise Aktivitäten an, wenn Sie nicht aktiv sind, und gibt Sie frei, wenn nicht genügend Arbeitsspeicher verfügbar ist. Es muss sorgfältig vorgegangen werden, damit die Anwendung ihren Zustand ordnungsgemäß wiederherstellen kann, wenn eine Aktivität neu gestartet wird. Dies gilt insbesondere dann, wenn diese Aktivität von Daten aus vorherigen Aktivitäten abhängig ist.
 
-Der aktivitätslebenszyklus ist als eine Auflistung von Methodenaufrufen das Betriebssystem während des Lebenszyklus einer Aktivität implementiert. Diese Methoden ermöglichen Entwicklern, die die Funktionalität zu implementieren, die erforderlich sind, die Status und die Resource Management-Anforderungen ihrer Anwendungen zu erfüllen.
+Der Aktivitäts Lebenszyklus wird als eine Sammlung von Methoden implementiert, die das Betriebssystem während des Lebenszyklus einer Aktivität aufruft. Diese Methoden ermöglichen es Entwicklern, die Funktionalität zu implementieren, die erforderlich ist, um die Anforderungen an die Zustands-und Ressourcenverwaltung Ihrer Anwendungen zu erfüllen.
 
-Es ist äußerst wichtig für den Entwickler der Anwendung zum Analysieren von der Anforderungen jeder Aktivität, um zu bestimmen, welche von der aktivitätslebenszyklus verfügbar gemachte Methoden implementiert werden müssen. Wenn dies nicht der Fall kann Anwendungsinstabilität, Abstürze, Ressource Überfrachtung und möglicherweise sogar zugrunde liegenden Betriebssystem Instabilität führen.
+Es ist äußerst wichtig, dass der Anwendungsentwickler die Anforderungen der einzelnen Aktivitäten analysiert, um zu bestimmen, welche Methoden durch den Aktivitäts Lebenszyklus implementiert werden müssen. Wenn dies nicht der Fall ist, kann dies zu Anwendungs Instabilität, abstürzen, Ressourcen-Bloat und möglicherweise sogar zugrunde liegenden Betriebssystem Instabilität führen.
 
-In diesem Kapitel wird der aktivitätslebenszyklus im Detail, einschließlich:
+In diesem Kapitel wird der Aktivitäts Lebenszyklus ausführlich erläutert, einschließlich:
 
--  Aktivitätsstatus
+-  Aktivitäts Zustände
 -  Lebenszyklusmethoden
--  Der Zustand einer Anwendung beibehalten
+-  Beibehalten des Zustands einer Anwendung
 
 
-Dieser Abschnitt enthält auch eine [Exemplarische Vorgehensweise](~/android/app-fundamentals/activity-lifecycle/saving-state.md) , die bieten praktische Beispiele zum Zustand während der aktivitätslebenszyklus effizient zu speichern. Am Ende dieses Kapitels benötigen Sie einen Überblick über den aktivitätslebenszyklus und wie es in einer Android-Anwendung unterstützt.
+Dieser Abschnitt enthält [auch eine](~/android/app-fundamentals/activity-lifecycle/saving-state.md) Exemplarische Vorgehensweise, die praktische Beispiele für die effiziente Speicherung des Zustands während des Aktivitäts Lebenszyklus bereitstellt. Am Ende dieses Kapitels sollten Sie einen Einblick in den Aktivitäts Lebenszyklus und seine Unterstützung in einer Android-Anwendung haben.
 
 ## <a name="activity-lifecycle"></a>Aktivitätslebenszyklus
 
-Der Lebenszyklus der Android-Aktivität umfasst eine Auflistung von Methoden, die innerhalb der Activity-Klasse verfügbar gemacht, die den Entwickler mit einer Resource Management-Framework bieten. Dieses Framework ermöglicht Entwicklern, die zum Erfüllen der verwaltungsanforderungen eindeutigen Zustand jeder Aktivität innerhalb einer Anwendung und ressourcenverwaltung ordnungsgemäß verarbeiten.
+Der Android-Aktivitäts Lebenszyklus besteht aus einer Sammlung von Methoden, die innerhalb der Aktivitäts Klasse verfügbar gemacht werden und dem Entwickler ein Resource Management-Framework zur Verfügung stellen. Dieses Framework ermöglicht es Entwicklern, die Anforderungen an die eindeutige Zustands Verwaltung der einzelnen Aktivitäten innerhalb einer Anwendung zu erfüllen und die Ressourcenverwaltung ordnungsgemäß zu verarbeiten.
 
-### <a name="activity-states"></a>Aktivitätsstatus
+### <a name="activity-states"></a>Aktivitäts Zustände
 
-Das Android-Betriebssystem führt Vermittlungen Aktivitäten basierend auf ihren Status. Dadurch wird die Android-Aktivitäten zu identifizieren, die nicht mehr verwendet werden, sodass das Betriebssystem, Arbeitsspeicher und Ressourcen freizugeben. Das folgende Diagramm veranschaulicht die Zustände, die eine Aktivität während seiner Lebensdauer durchlaufen kann:
+Das Android-Betriebssystem unterscheidet Aktivitäten basierend auf deren Status. Dadurch können Android Aktivitäten ermitteln, die nicht mehr verwendet werden, und das Betriebssystem kann Speicher und Ressourcen freigeben. Das folgende Diagramm veranschaulicht die Zustände, die eine Aktivität während ihrer Lebensdauer durchlaufen kann:
 
-[![Status-Aktivitätsdiagramm](images/image1-sml.png)](images/image1.png#lightbox)
+[![Diagramm der Aktivitäts Zustände](images/image1-sml.png)](images/image1.png#lightbox)
 
-Diese Zustände können wie folgt in 4 Hauptgruppen unterteilt werden:
+Diese Zustände können wie folgt in vier Hauptgruppen unterteilt werden:
 
-1.  *Aktiven bzw. ausgeführten* &ndash; Aktivitäten werden als aktiv oder ausgeführt wird, wenn sie in den Vordergrund, sind auch als der Anfang des Stapels Aktivität bezeichnet. Dies gilt, dass die höchste Priorität-Aktivität in Android und wird daher nur durch das Betriebssystem in extremen Fällen abgebrochen werden, z. B. als ob die Aktivität versucht, mit mehr Arbeitsspeicher als auf dem Gerät verfügbar wie Dadurch kann die Benutzeroberfläche reagiert.
+1.  *Aktiv oder wird ausgeführt* &ndash; Aktivitäten werden als aktiv betrachtet oder ausgeführt, wenn Sie sich im Vordergrund befinden, auch bekannt als oberster Rand des Aktivitäts Stapels. Dies wird als die höchste Prioritäts Aktivität in Android angesehen und wird daher nur von dem Betriebssystem in Extremsituationen abgebrochen, z. b. wenn die Aktivität versucht, mehr Speicher zu verwenden, als auf dem Gerät verfügbar ist, da dies dazu führen könnte, dass die Benutzeroberfläche nicht mehr reagiert.
 
-1.  *Angehalten* &ndash; Wenn das Gerät wird in den Ruhezustand versetzt oder eine Aktivität immer noch sichtbar, sind jedoch durch eine neue, nicht-vergrößern oder transparent Aktivität teilweise verdeckten ist, gilt die Aktivität wurde angehalten. Angehaltene Aktivitäten sind aktiv, d. h. sie alle Informationen zu Status und die Member verwalten und mit dem Fenstermanager verbunden bleiben. Dies gilt als die zweite höchste Priorität-Aktivität in Android und als solche, wird nur vom Betriebssystem beendet werden, wenn diese Aktivität zu beenden die ressourcenanforderungen erforderlich, um die aktiven/aktiven-Aktivität zu halten, stabil und reaktionsfähige erfüllt.
+1.  *Angeh* alten &ndash; Wenn das Gerät in den Standbymodus wechselt oder eine Aktivität weiterhin sichtbar ist, aber teilweise durch eine neue, nicht vollständige oder transparente Aktivität ausgeblendet ist, wird die Aktivität als angehalten betrachtet. Angehaltene Aktivitäten sind immer noch aktiv, d. h., Sie behalten alle Zustands-und Element Informationen bei und bleiben an den Fenster-Manager angefügt. Dies wird als die zweite Aktivität mit der höchsten Priorität in Android angesehen und wird daher nur vom Betriebssystem abgebrochen, wenn durch das Beenden dieser Aktivität die Ressourcenanforderungen erfüllt werden, die erforderlich sind, um die aktive/aktive Aktivität stabil und reaktionsfähig zu halten.
 
-1.  *Beendet/Backgrounded* &ndash; Aktivitäten, die von einer anderen Aktivität vollständig verdeckt sind gelten, beendet oder im Hintergrund.
-    Beendete Aktivitäten versucht, noch ihren Status und Member zu beibehalten, solange mögliche, aber beendete Aktivitäten gelten die geringste Priorität für die drei Zustände und das Betriebssystem, Aktivitäten, die in diesem Zustand beendet, um auf die Ressource zu erfüllen die Anforderungen der höheren Priorität-Aktivitäten.
+1.  *Beendet/Rück basiert* &ndash; Aktivitäten, die von einer anderen Aktivität vollständig verdeckt werden, werden als beendet oder im Hintergrund betrachtet.
+    Bei beendeten Aktivitäten wird weiterhin versucht, ihre Zustands-und Element Informationen so lange wie möglich beizubehalten, aber beendete Aktivitäten werden als niedrigste Priorität der drei Zustände angesehen, sodass das Betriebssystem zuerst Aktivitäten in diesem Zustand abbricht, um die Ressource zu erfüllen. Anforderungen von Aktivitäten mit höherer Priorität.
 
-1.  *Neustart* &ndash; es ist möglich, für eine Aktivität, die an einer beliebigen Stelle aus im Lebenszyklus aus dem Arbeitsspeicher entfernt werden soll, von Android zu beendet wurde angehalten. Wenn der Benutzer navigiert, an die Aktivität, die sie neu gestartet werden muss, in den zuvor gespeicherten Zustand wiederhergestellt, und klicken Sie dann dem Benutzer angezeigt.
+1.  *Neu gestartet* &ndash; Es ist möglich, dass eine Aktivität, die sich an einem beliebigen Ort befindet, im Lebenszyklus angehalten wird, damit Sie von Android aus dem Arbeitsspeicher entfernt wird. Wenn der Benutzer zur Aktivität zurück navigiert, muss er neu gestartet, im zuvor gespeicherten Zustand wieder hergestellt und dann dem Benutzer angezeigt werden.
 
 
-### <a name="activity-re-creation-in-response-to-configuration-changes"></a>Die erneute Erstellung Aktivität als Reaktion auf Änderungen an der Konfiguration
+### <a name="activity-re-creation-in-response-to-configuration-changes"></a>Neuerstellung von Aktivitäten als Reaktion auf Konfigurationsänderungen
 
-Um spielt eine Rolle, die komplizierter machen, löst Android eine weitere Schraubenschlüsselsymbol in der Mischung wird aufgerufen, Änderungen an der Konfiguration. Änderungen an der Konfiguration werden schnelle Aktivität Zerstörung/erneute-creation Zyklen, die auftreten, wenn die Konfiguration einer Aktivität ändert z. B. wenn das Gerät ist, [gedreht](~/android/app-fundamentals/handling-rotation.md) (und die Aktivität im Querformat oder Hochformat neu erstellt werden muss Modus), wenn die angezeigt wird (und die Aktivität ist eine Möglichkeit zum Ändern der Größe selbst angezeigt), oder wenn das Gerät in ein Dock, u. a. platziert wird.
+Damit die Dinge komplizierter werden, löst Android einen weiteren Schraubendreher in der Mischung namens Konfigurationsänderungen aus. Konfigurationsänderungen sind schnelle Aktivitäts Zerstörung/Neuerstellungs Zyklen, die auftreten, wenn die Konfiguration einer Aktivität geändert wird, z. b. wenn das Gerät [gedreht](~/android/app-fundamentals/handling-rotation.md) wird (und die Aktivität im Quer-oder Hochformat neu erstellt werden muss), wenn die die Tastatur wird angezeigt (und die Aktivität wird mit einer Gelegenheit zur Größenänderung angezeigt), oder wenn das Gerät in einem Dock platziert wird.
 
-Konfigurationsänderungen verursachen weiterhin die gleichen Aktivitätszustand Änderungen, die beim Beenden und Neustarten einer Aktivitäts auftreten würden. Um sicherzustellen, dass eine Anwendung ist mit der Reaktionsfähigkeit und auch bei Änderungen an der Konfiguration führt, ist es jedoch wichtig, dass sie so schnell wie möglich behandelt werden. Aus diesem Grund bietet Android eine bestimmte API, die verwendet werden kann, um den Zustand beizubehalten, während Änderungen an der Konfiguration.
-Ich werde Dies wird später in der [Zustand während der Lebenszyklus verwalten](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle) Abschnitt.
+Konfigurationsänderungen führen weiterhin zu denselben Aktivitäts Zustandsänderungen, die beim Beenden und Neustarten einer Aktivität auftreten würden. Um jedoch sicherzustellen, dass eine Anwendung reaktionsfähig ist und bei Konfigurationsänderungen gut funktioniert, ist es wichtig, dass Sie so schnell wie möglich behandelt werden. Daher verfügt Android über eine bestimmte API, die verwendet werden kann, um den Zustand während der Konfigurationsänderungen beizubehalten.
+Dies wird später im Abschnitt Verwalten des [Zustands im gesamten Lebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle) behandelt.
 
-### <a name="activity-lifecycle-methods"></a>Aktivität Lebenszyklusmethoden
+### <a name="activity-lifecycle-methods"></a>Aktivitäts Lebenszyklus-Methoden
 
-Das Android SDK und durch Erweiterung der Xamarin.Android-Framework, geben Sie ein leistungsfähiges Modell für die Verwaltung des Status von Aktivitäten innerhalb einer Anwendung. Bei einer Aktivität Zustand sich ändert, wird die Aktivität vom Betriebssystem benachrichtigt, die bestimmte Methoden auf die Aktivität aufruft. Das folgende Diagramm veranschaulicht diese Methoden in Bezug auf der Aktivitätslebenszyklus an:
+Das-Android SDK und, das xamarin. Android-Framework, bietet ein leistungsfähiges Modell zum Verwalten des Zustands von Aktivitäten in einer Anwendung. Wenn sich der Zustand einer Aktivität ändert, wird die Aktivität vom Betriebssystem benachrichtigt, das bestimmte Methoden für diese Aktivität aufruft. Im folgenden Diagramm werden diese Methoden im Zusammenhang mit dem Aktivitäts Lebenszyklus veranschaulicht:
 
-[![Aktivität-Lifecycle-Flussdiagramm](images/image2-sml.png)](images/image2.png#lightbox)
+[![Flussdiagramm des Aktivitäts Lebenszyklus](images/image2-sml.png)](images/image2.png#lightbox)
 
-Als Entwickler können Sie Änderungen am Ansichtszustand behandeln, durch das Überschreiben dieser Methoden in einer Aktivität. Es ist wichtig, aber beachten Sie, dass alle Methoden, die im UI-Thread aufgerufen werden, und das Betriebssystem blockiert von der Durchführung des nächsten Teil der UI-Arbeit, z. B. durch das Ausblenden der aktuellen Aktivität, die angezeigt wird, eine neue Aktivität usw. Daher sollte Code in diesen Methoden so kurz wie möglich, eine Anwendung können Sie eine gute Leistung. Lang andauernde Aufgaben sollten in einem Hintergrundthread ausgeführt werden.
+Als Entwickler können Sie Zustandsänderungen behandeln, indem Sie diese Methoden in einer Aktivität überschreiben. Es ist jedoch wichtig zu beachten, dass alle Lebenszyklus Methoden im UI-Thread aufgerufen werden und das Betriebssystem nicht mehr auf der Benutzeroberfläche ausgeführt werden kann, z. b. durch Ausblenden der aktuellen Aktivität, Anzeigen einer neuen Aktivität usw. Daher sollte der Code in diesen Methoden so kurz wie möglich sein, um eine optimale Leistung einer Anwendung zu gewährleisten. Alle Tasks mit langer Ausführungszeit sollten in einem Hintergrund Thread ausgeführt werden.
 
-Betrachten Sie diese Lebenszyklusmethoden und ihre Verwendung:
+Betrachten wir jede dieser Lebenszyklus Methoden und deren Verwendung:
 
 #### <a name="oncreate"></a>OnCreate
 
-[OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) ist die erste Methode aufgerufen werden, wenn eine Aktivität erstellt wird.
-`OnCreate` wird immer überschrieben, um alle Start-Initialisierungen durchführen, die durch eine Aktivität wie z. B. möglicherweise erforderlich sind:
+[OnCreate](xref:Android.App.Activity.OnCreate*) ist die erste Methode, die aufgerufen wird, wenn eine Aktivität erstellt wird.
+`OnCreate`wird immer überschrieben, um Start Initialisierungen auszuführen, die möglicherweise für eine Aktivität erforderlich sind, z. b.:
 
--  Erstellen von Ansichten
--  Initialisieren von Variablen
--  Binden von statischen Daten in Listen
+- Erstellen von Sichten
+- Initialisieren von Variablen
+- Binden statischer Daten an Listen
 
-
-`OnCreate` nimmt eine [Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) -Parameter, der ist ein Wörterbuch zum Speichern und übergeben von Zustandsinformationen und Objekte zwischen Aktivitäten auf, wenn das Paket nicht null ist, wird hiermit die Aktivität wird neu gestartet und sollte es seinen Zustand aus Wiederherstellen der vorherige Instanz. Der folgende Code zeigt, wie Werte aus dem Paket abgerufen wird:
+`OnCreate`nimmt einen [Bundle](xref:Android.OS.Bundle) -Parameter an. Hierbei handelt es sich um ein Wörterbuch zum Speichern und übergeben von Zustandsinformationen und Objekten zwischen Aktivitäten, wenn das Paket nicht NULL ist. Dies bedeutet, dass die Aktivität neu gestartet wird und den Zustand der vorherigen Instanz wiederherstellen soll. Der folgende Code veranschaulicht das Abrufen von Werten aus dem Bündel:
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -106,25 +105,25 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-Einmal `OnCreate` wurde fertig gestellt wurde, Android ruft `OnStart`.
+Nach `OnCreate` Abschluss des Vorgangs wird von Android `OnStart`aufgerufen.
 
 #### <a name="onstart"></a>OnStart
 
-[OnStart](https://developer.xamarin.com/api/member/Android.App.Activity.OnStart/) wird immer aufgerufen, durch das System nach `OnCreate` abgeschlossen ist. Aktivitäten können diese Methode überschreiben, wenn eine beliebige Rechte für bestimmte Aufgaben ausführen, bevor eine Aktivität wie z. B. das Aktualisieren der aktuellen Werte von Ansichten innerhalb der Aktivität angezeigt wird. Android ruft `OnResume` unmittelbar nach dieser Methode.
+[OnStart](xref:Android.App.Activity.OnStart) wird immer vom System aufgerufen, nachdem `OnCreate` abgeschlossen wurde. Aktivitäten können diese Methode überschreiben, wenn Sie eine bestimmte Aufgabe direkt vor dem sichtbar machen einer Aktivität ausführen müssen, wie z. b. das Aktualisieren aktueller Werte von Sichten innerhalb der Aktivität. Android ruft `OnResume` unmittelbar nach dieser Methode auf.
 
-#### <a name="onresume"></a>OnResume
+#### <a name="onresume"></a>Onresume
 
-Das System ruft [OnResume](https://developer.xamarin.com/api/member/Android.App.Activity.OnResume/) Wenn die Aktivität ist mit der Interaktion mit dem Benutzer beginnen.
-Aktivitäten sollten diese Methode, um Aufgaben wie z. B. überschreiben:
+Das System ruft [onresume](xref:Android.App.Activity.OnResume) auf, wenn die Aktivität bereit ist, mit dem Benutzer zu interagieren.
+Aktivitäten sollten diese Methode überschreiben, um folgende Aufgaben auszuführen:
 
--  Langsame Frameraten (Entwicklung von spielen eine häufige Aufgabe)
+-  Hochskalieren von Frameraten (eine gängige Aufgabe bei der Entwicklung von spielen)
 -  Starten von Animationen
--  Lauschen auf GPS-updates
--  Alle relevanten Warnungen oder Dialogfelder anzeigen
--  Verknüpfen Sie externer-Ereignishandler
+-  Lauschen auf GPS-Updates
+-  Anzeigen von relevanten Warnungen oder Dialogfeldern
+-  Externe Ereignishandler verknüpfen
 
 
-Beispielsweise zeigt der folgende Codeausschnitt, wie die Kamera initialisiert werden:
+Der folgende Code Ausschnitt zeigt beispielsweise, wie die Kamera initialisiert wird:
 
 ```csharp
 public void OnResume()
@@ -138,23 +137,23 @@ public void OnResume()
 }
 ```
 
-`OnResume` ist wichtig, da jeder Vorgang, der ist geschieht im `OnPause` muss nicht Arbeit in `OnResume`, da es die einzige Lebenszyklusmethode, die garantiert ist, führen Sie nach der `OnPause` , wenn Sie die Aktivität wieder zum Leben.
+`OnResume`ist wichtig, da jeder Vorgang, der in `OnPause` ausgeführt wird, in `OnResume`nicht ausgeführt werden soll, da es sich dabei um die einzige Lebenszyklus Methode handelt `OnPause` , die nach dem Wiederholen der Aktivität ausgeführt wird.
 
 #### <a name="onpause"></a>OnPause
 
-[OnPause](https://developer.xamarin.com/api/member/Android.App.Activity.OnPause/) wird aufgerufen, wenn das System ist dabei, platzieren Sie die Aktivität aus, in den Hintergrund oder wenn die Aktivität teilweise verdeckt wird. Aktivitäten sollten diese Methode überschreiben, wenn dies erforderlich:
+[OnPause](xref:Android.App.Activity.OnPause) wird aufgerufen, wenn das System im Begriff ist, die Aktivität in den Hintergrund zu versetzen, oder wenn die Aktivität teilweise verdeckt wird. Aktivitäten sollten diese Methode überschreiben, wenn Folgendes erforderlich ist:
 
--   Nicht gespeicherte Änderungen von persistenten Daten
+-   Nicht gespeicherte Änderungen an persistenten Daten übertragen
 
--   Zerstören Sie oder bereinigen Sie andere Objekte, die Ressourcen zu verbrauchen.
+-   Andere Objekte, die Ressourcen verbrauchen, zerstören oder bereinigen
 
--   Stufenförmige Frameraten und Anhalten von Animationen
+-   Fortsetzen von Frameraten und Anhalten von Animationen
 
--   Aufheben der Registrierung externer Ereignishandler oder benachrichtigungshandlern (d. h. diejenigen, die an einen Dienst gebunden sind). Dies muss erfolgen, um Aktivität Speicherverluste zu verhindern.
+-   Aufheben der Registrierung externer Ereignishandler oder Benachrichtigungs Handler (d. h. solche, die an einen Dienst gebunden sind). Dies muss erreicht werden, um Arbeitsspeicher Verluste zu verhindern.
 
--   Auch wenn die Aktivität Dialogfelder oder Warnungen angezeigt hat, sie müssen bereinigt werden mit der `.Dismiss()` Methode.
+-   Ebenso müssen, wenn die Aktivität Dialogfelder oder Warnungen angezeigt hat, mit der `.Dismiss()` -Methode bereinigt werden.
 
-Beispielsweise wird der folgende Codeausschnitt die Kamera, freigegeben, während die Aktivität vornehmen, kann nicht verwendet bei angehaltener skriptausführung:
+Der folgende Code Ausschnitt gibt beispielsweise die Kamera frei, da Sie von der Aktivität nicht verwendet werden kann, während Sie angehalten wurde:
 
 ```csharp
 public void OnPause()
@@ -170,81 +169,78 @@ public void OnPause()
 }
 ```
 
-Es gibt zwei mögliche Lebenszyklusmethoden, die aufgerufen werden, nach dem `OnPause`:
+Es gibt zwei mögliche Lebenszyklus Methoden, die nach `OnPause`aufgerufen werden:
 
-1.  `OnResume` wird aufgerufen, wenn die Aktivität ist in den Vordergrund zurückgegeben werden.
-1.  `OnStop` wird aufgerufen, wenn die Aktivität im Hintergrund platziert wird.
+1.  `OnResume`wird aufgerufen, wenn die Aktivität wieder in den Vordergrund gesetzt werden soll.
+1.  `OnStop`wird aufgerufen, wenn die Aktivität im Hintergrund platziert wird.
 
 
 #### <a name="onstop"></a>OnStop
 
-[OnStop](https://developer.xamarin.com/api/member/Android.App.Activity.OnStop/) wird aufgerufen, wenn die Aktivität nicht mehr für den Benutzer sichtbar ist. Dies geschieht, wenn eine der folgenden Bedingungen zutrifft:
+[Onstopps](xref:Android.App.Activity.OnStop) wird aufgerufen, wenn die Aktivität für den Benutzer nicht mehr sichtbar ist. Dies geschieht, wenn eine der folgenden Aktionen auftritt:
 
--  Eine neue Aktivität gestartet wird und Sie diese Aktivität behandelt wird.
--  Eine vorhandene Aktivität wird in den Vordergrund gesetzt wird.
--  Die Aktivität wird gelöscht.
+-  Eine neue Aktivität wird gestartet und deckt diese Aktivität ab.
+-  Eine vorhandene Aktivität wird in den Vordergrund gestellt.
+-  Die Aktivität wird zerstört.
 
 
-`OnStop` unter Umständen nicht jedes Mal aufgerufen werden im Speicher knapp ist, z. B. wenn Android für Ressourcen blockiert wird, und kann nicht ordnungsgemäß im Hintergrund der Aktivitäts. Aus diesem Grund ist es am besten nicht abhängig `OnStop` bei der Vorbereitung einer Aktivitäts zur Zerstörung aufgerufen. Die nächste Lebenszyklusmethoden, die aufgerufen werden können, nachdem dieser Datensatz `OnDestroy` , wenn die Aktivität, verschwindet oder `OnRestart` , wenn die Aktivität wieder für die Interaktion mit der Benutzer stammt.
+`OnStop`kann nicht immer in Situationen mit geringem Arbeitsspeicher aufgerufen werden, z. b. wenn Android für Ressourcen verhungert wird und den Hintergrund der Aktivität nicht ordnungsgemäß durchläuft. Aus diesem Grund sollten Sie sich nicht darauf verlassen `OnStop` , dass aufgerufen wird, wenn eine Aktivität für die Zerstörung vorbereitet wird. Die nächsten Lebenszyklus Methoden, die nach diesem `OnDestroy` Vorgang aufgerufen werden können, sind, wenn die Aktivität entfernt wird, oder `OnRestart` wenn die Aktivität zurückgeht, um mit dem Benutzer zu interagieren.
 
-#### <a name="ondestroy"></a>onDestroy
+#### <a name="ondestroy"></a>OnDestroy
 
-[OnDestroy](https://developer.xamarin.com/api/member/Android.App.Activity.OnDestroy/) ist die letzte Methode, die auf einer Aktivitätsinstanz aufgerufen wird, bevor es zerstört und vollständig aus dem Arbeitsspeicher entfernt wurde. In extremen Fällen beendet Android den Anwendungsprozess, der die Aktivität, was gehostet wird zu führt `OnDestroy` nicht aufgerufen wird. Die meisten Aktivitäten nicht diese Methode implementieren, da die meisten bereinigen und Herunterfahren erfolgt die `OnPause` und `OnStop` Methoden. Die `OnDestroy` Methode wird in der Regel überschrieben, um lange zu bereinigen Ressourcen ausgeführt, die möglicherweise Ressourcenverlust. Ein Beispiel hierfür ist möglicherweise Hintergrundthreads, die gestartet wurden, im `OnCreate`.
+[OnDestroy](xref:Android.App.Activity.OnDestroy) ist die abschließende Methode, die für eine Aktivitäts Instanz aufgerufen wird, bevor Sie zerstört und vollständig aus dem Arbeitsspeicher entfernt wird. In Extremsituationen kann Android den Anwendungsprozess beenden, der die Aktivität gehostet, was dazu führt `OnDestroy` , dass der Vorgang nicht aufgerufen wird. Die meisten Aktivitäten implementieren diese Methode nicht, da die meisten Bereinigungs-und heruntergefahren in `OnPause` den `OnStop` Methoden und vorgenommen wurden. Die `OnDestroy` -Methode wird in der Regel außer Kraft gesetzt, um Ressourcen mit langer Ausführungszeit zu bereinigen, die Ressourcen nicht Ein Beispiel hierfür sind Hintergrundthreads, die in `OnCreate`gestartet wurden.
 
-Es werden keine Lebenszyklusmethoden aufgerufen, nachdem die Aktivität zerstört wurde.
+Es werden keine Lebenszyklus Methoden aufgerufen, nachdem die Aktivität zerstört wurde.
 
-#### <a name="onrestart"></a>OnRestart
+#### <a name="onrestart"></a>Onrestart
 
-[OnRestart](https://developer.xamarin.com/api/member/Android.App.Activity.OnRestart/) wird aufgerufen, nachdem die Aktivität beendet wurde, bevor er erneut gestartet wird. Ein gutes Beispiel dafür wäre, wenn der Benutzer die Schaltfläche "Start", während Sie sich für eine Aktivität in der Anwendung drückt. Wenn dies geschieht `OnPause` und dann `OnStop` Methoden aufgerufen werden, und die Aktivität in den Hintergrund verschoben, aber nicht zerstört wird. Wenn der Benutzer dann zum Wiederherstellen der Anwendungs über den Task-Manager oder eine ähnliche Anwendung Android aufrufen, wird die `OnRestart` -Methode der Aktivität.
+[Onrestart](xref:Android.App.Activity.OnRestart) wird aufgerufen, nachdem die Aktivität beendet wurde, bevor Sie erneut gestartet wird. Ein gutes Beispiel hierfür wäre, wenn der Benutzer die Start Schaltfläche drückt, während eine Aktivität in der Anwendung angezeigt wird. In diesem Fall `OnPause` `OnStop` werden Methoden aufgerufen, und die Aktivität wird in den Hintergrund verschoben, aber nicht zerstört. Wenn der Benutzer die Anwendung dann mithilfe des Task-Managers oder einer ähnlichen Anwendung wiederherstellen soll, ruft Android die `OnRestart` -Methode der-Aktivität auf.
 
-Es gibt keine allgemeingültigen Richtlinien für welche Art von Logik in implementiert werden sollte `OnRestart`. Grund hierfür ist, `OnStart` wird immer aufgerufen, unabhängig davon, ob die Aktivität erstellt wird oder neu gestartet wird, damit alle Ressourcen, die erforderlich sind, von der Aktivität soll, in initialisiert werden `OnStart`, statt `OnRestart`.
+Es gibt keine allgemeinen Richtlinien für die Art der Logik, die in `OnRestart`implementiert werden sollte. Der Grund hierfür `OnStart` `OnRestart`ist, dass immer aufgerufen wird, unabhängig davon, ob die Aktivität erstellt oder neu gestartet wird. Daher sollten alle Ressourcen, die für die Aktivität erforderlich sind, in anstelle von initialisiert `OnStart` werden.
 
-Die nächste Lebenszyklusmethode wird aufgerufen, nachdem `OnRestart` werden `OnStart`.
+Die nächste Lebenszyklus Methode, `OnRestart` die nach `OnStart`aufgerufen wird, ist.
 
-### <a name="back-vs-home"></a>Sichern Sie die Visual Studio. Startseite
+### <a name="back-vs-home"></a>Zurück im Vergleich zu Privat
 
-Viele Android-Geräte sind zwei unterschiedliche Schaltflächen: eine Schaltfläche "Zurück" und eine Schaltfläche "Home". Ein Beispiel hierfür kann im folgenden Screenshot von Android 4.0.3 angezeigt werden:
+Viele Android-Geräte haben zwei unterschiedliche Schaltflächen: die Schaltfläche "zurück" und die Schaltfläche "Home". Ein Beispiel hierfür finden Sie im folgenden Screenshot von Android 4.0.3:
 
-[!["Zurück" und Schaltflächen der Startseite](images/image4-sml.png)](images/image4.png#lightbox)
+[![Schaltflächen zurück und Start](images/image4-sml.png)](images/image4.png#lightbox)
 
-Besteht ein feinen Unterschied zwischen den zwei Schaltflächen, auch wenn sie auf die gleiche Wirkung hat eine Anwendung im Hintergrund zu platzieren, angezeigt werden. Wenn ein Benutzer die Schaltfläche "zurück" klickt, sagen sie Android, dass sie mit der Aktivität ausgeführt werden. Android werden die Aktivität zerstört. Im Gegensatz dazu klickt der Benutzer die Schaltfläche "Start" die Aktivität nur befindet sich in den Hintergrund &ndash; Android wird die Aktivität nicht ebenfalls beendet.
+Es gibt einen geringfügigen Unterschied zwischen den beiden Schaltflächen, obwohl Sie anscheinend die gleiche Auswirkung haben, dass Sie eine Anwendung im Hintergrund platzieren. Wenn ein Benutzer auf die Schaltfläche "zurück" klickt, wird Android mitgeteilt, dass Sie mit der-Aktivität abgeschlossen sind. Android zerstört die Aktivität. Wenn der Benutzer dagegen auf die Start Schaltfläche klickt, wird die Aktivität nur im Hintergrund &ndash; abgelegt.
 
 <a name="Managing_State_Throughout_the_Lifecycle" />
 
-## <a name="managing-state-throughout-the-lifecycle"></a>Verwalten des Status während des Lebenszyklus
+## <a name="managing-state-throughout-the-lifecycle"></a>Verwalten des Zustands im gesamten Lebenszyklus
 
-Wenn eine Aktivität beendet oder zerstört wird ermöglicht das System den Status der Aktivität für spätere Aktivierung zu speichern.
-Diese gespeicherte Zustand wird als Zustand der Instanz bezeichnet. Android bietet drei Optionen zum Speichern des Instanzstatus während des Lebenszyklus der Aktivität:
+Wenn eine Aktivität beendet oder zerstört wird, bietet das System die Möglichkeit, den Zustand der Aktivität zu speichern, um Sie später zu aktivieren.
+Dieser gespeicherte Zustand wird als Instanzstatus bezeichnet. Android bietet drei Optionen zum Speichern des instanzzustands während des Aktivitäts Lebenszyklus:
 
-1. Speichern von primitiven Werten in einer `Dictionary` bekannt als eine [Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) , Android, Zustand speichern verwenden.
+1. Speichern primitiver Werte in `Dictionary` einem als [Paket bezeichneten Paket](xref:Android.OS.Bundle) , das Android zum Speichern des Zustands verwendet.
 
-1. Eine benutzerdefinierte Klasse erstellen, werden komplexe Werte wie Bitmaps enthalten. Android verwendet diese benutzerdefinierte Klasse, um Zustand zu speichern.
+1. Erstellen einer benutzerdefinierten Klasse, die komplexe Werte wie z. b. Bitmaps enthalten soll. Android verwendet diese benutzerdefinierte Klasse zum Speichern des Zustands.
 
-1. Umgehen der Lebenszyklus der Konfiguration ändern und die vollständige Verantwortung für die Zustandsverwaltung in der Aktivität.
+1. Der Lebenszyklus der Konfigurationsänderung wird umgangen, und es wird davon ausgegangen, dass der Zustand in der Aktivität beibehalten werden soll.
 
+In dieser Anleitung werden die ersten beiden Optionen behandelt.
 
-Dieser Leitfaden behandelt die ersten beiden Optionen.
+### <a name="bundle-state"></a>Bündel Status
 
+Die primäre Option zum Speichern des Instanzstatus ist die Verwendung eines Schlüssel-Wert-Wörterbuch Objekts, das als [Bündel](xref:Android.OS.Bundle)bezeichnet wird.
+Wenn eine Aktivität erstellt wird, die der `OnCreate` Methode als Parameter übergeben wird, kann dieses Bündel verwendet werden, um den Instanzzustand wiederherzustellen. Es wird nicht empfohlen, ein Bündel für komplexere Daten zu verwenden, die nicht schnell oder einfach in Schlüssel/Wert-Paare (z. b. Bitmaps) serialisiert werden können. Stattdessen sollte Sie für einfache Werte wie Zeichen folgen verwendet werden.
 
+Eine-Aktivität stellt Methoden bereit, die beim Speichern und Abrufen des Instanzstatus im Bündel helfen sollen:
 
-### <a name="bundle-state"></a>Bundle-Status
+- [Onsaveinstancestate](xref:Android.App.Activity.OnSaveInstanceState*) &ndash; Dies wird von Android aufgerufen, wenn die Aktivität zerstört wird. Aktivitäten können diese Methode implementieren, wenn Sie Schlüssel-Wert-Zustands Elemente persistent speichern müssen.
 
-Die wichtigste Option zum Speichern des Instanzstatus ist die Verwendung der ein Schlüssel/Wert-Dictionary-Objekt als bezeichnet ein [Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/).
-Bedenken Sie, dass, wenn eine Aktivität erstellt, die `OnCreate` Methode ein Pakets als Parameter übergeben wird, dieses Paket kann verwendet werden, um den Zustand der Instanz wiederherzustellen. Es wird nicht empfohlen, ein Paket für eine komplexere Daten zu verwenden, wird Sie nicht schnell oder einfach serialisieren, um Schlüssel/Wert-Paaren (z. B. Bitmaps); Stattdessen sollte es für einfache Werte wie Zeichenfolgen verwendet werden.
+- [Onrestoreinstancestate](xref:Android.App.Activity.OnRestoreInstanceState*) Dies wird nach Abschluss der `OnCreate` -Methode aufgerufen und bietet eine weitere Möglichkeit für eine Aktivität, ihren Zustand nach Abschluss der Initialisierung wiederherzustellen. &ndash;
 
-Eine Aktivität bietet Methoden, um Hilfe zu speichern und Abrufen des Instanzstatus im Paket:
+Im folgenden Diagramm wird veranschaulicht, wie diese Methoden verwendet werden:
 
--   [OnSaveInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnSaveInstanceState/p/Android.OS.Bundle/) &ndash; Dies wird von Android aufgerufen, wenn die Aktivität zerstört wird. Aktivitäten können diese Methode implementieren, wenn sie alle Elemente der Schlüssel/Wert-Zustand beibehalten müssen.
-
--   [OnRestoreInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnRestoreInstanceState/p/Android.OS.Bundle/) &ndash; wird aufgerufen, nachdem die `OnCreate` Methode abgeschlossen ist, und bietet eine weitere Verwendungsmöglichkeit für eine Aktivität, um dessen Status wiederherzustellen, nachdem die Initialisierung abgeschlossen ist.
-
-Das folgende Diagramm veranschaulicht, wie diese Methoden verwendet werden:
-
-[![Flussdiagramm der Bundle-Status](images/image3-sml.png)](images/image3.png#lightbox)
+[![Flussdiagramm zu Bündel Zuständen](images/image3-sml.png)](images/image3.png#lightbox)
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
-[OnSaveInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnSaveInstanceState/p/Android.OS.Bundle/) wird aufgerufen, wenn die Aktivität beendet wird. Sie erhalten einen Paket-Parameter, dem die Aktivität ihren Status in speichern kann. Wenn ein Gerät eine konfigurationsänderung auftritt, können eine Aktivität die `Bundle` -Objekt, das übergeben wird, um den Status der Aktivität durch Überschreiben beibehalten `OnSaveInstanceState`. Beachten Sie z. B. folgenden Code:
+[Onsaveinstancestate](xref:Android.App.Activity.OnSaveInstanceState*) wird aufgerufen, wenn die Aktivität angehalten wird. Er empfängt einen Paket Parameter, in dem die Aktivität seinen Zustand speichern kann. Wenn ein Gerät eine Konfigurationsänderung hat, kann eine Aktivität das `Bundle` übergebenen-Objekt verwenden, um den Aktivitäts Zustand `OnSaveInstanceState`durch Überschreiben beizubehalten. Beachten Sie z. B. folgenden Code:
 
 ```csharp
 int c;
@@ -273,11 +269,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Der obige Code erhöht, eine ganze Zahl, die mit dem Namen `c` beim Klicken auf eine Schaltfläche mit dem Namen `incrementCounter` geklickt wird, Anzeigen des Ergebnisses in einer `TextView` mit dem Namen `output`. Eine konfigurationsänderung Fall – z. B. wenn das Gerät gedreht wird – der obige Code würde den Wert der verlieren `c` da die `bundle` wäre `null`, wie in der folgenden Abbildung gezeigt:
+Der obige Code erhöht eine Ganzzahl mit `c` dem Namen, wenn `incrementCounter` auf eine Schaltfläche mit `TextView` `output`dem Namen geklickt wird Wenn eine Konfigurationsänderung auftritt, z. b. wenn das Gerät rotiert wird, verliert der obige Code den Wert `c` von `null`, `bundle` da der wie in der folgenden Abbildung dargestellt wäre:
 
-[![Anzeige wird vorherigen Wert nicht angezeigt werden.](images/07-sml.png)](images/07.png#lightbox)
+[![Anzeige zeigt keinen vorherigen Wert an](images/07-sml.png)](images/07.png#lightbox)
 
-Zur Beibehaltung des Werts der `c` in diesem Beispiel kann die Aktivität überschreiben `OnSaveInstanceState`, wird den Wert im Paket gespeichert, wie unten dargestellt:
+Um den Wert von `c` in diesem Beispiel beizubehalten, kann die-Aktivität überschreiben `OnSaveInstanceState`und den Wert im Paket speichern, wie unten dargestellt:
 
 ```csharp
 protected override void OnSaveInstanceState (Bundle outState)
@@ -287,20 +283,18 @@ protected override void OnSaveInstanceState (Bundle outState)
 }
 ```
 
-Nun, wenn das Gerät in die neue Ausrichtung gedreht wird, die ganze Zahl, die im Paket gespeichert ist und wird durch die Zeile abgerufen:
+Wenn das Gerät nun in eine neue Ausrichtung gedreht wird, wird die ganze Zahl im Paket gespeichert und mit der folgenden Zeile abgerufen:
 
 ```csharp
 c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> Es ist wichtig, immer Aufruf der basisimplementierung der `OnSaveInstanceState` , damit der Zustand von der Hierarchie von Inhaltsansichten auch gespeichert werden kann.
+> Es ist wichtig, immer die Basis Implementierung von `OnSaveInstanceState` aufzurufen, damit der Status der Ansichts Hierarchie ebenfalls gespeichert werden kann.
 
+##### <a name="view-state"></a>Ansichts Zustand
 
-
-##### <a name="view-state"></a>Ansichtszustand
-
-Überschreiben von `OnSaveInstanceState` geeigneten Mechanismus zum Speichern vorübergehender Daten in einer Aktivität auf Änderungen der bildschirmausrichtung, z. B. der Indikator im obigen Beispiel ist. Allerdings die standardmäßige Implementierung des `OnSaveInstanceState` übernimmt speichern vorübergehende Daten in der Benutzeroberfläche für jede Ansicht, solange jede Ansicht eine ID zugewiesen wurde. Angenommen, eine Anwendung eine `EditText` Element im XML-Code wie folgt definiert:
+Das Überschreiben ist ein geeigneter Mechanismus zum Speichern vorübergehender Daten in einer Aktivität über Richtungsänderungen hinweg, wie z. b. den Counter im obigen Beispiel. `OnSaveInstanceState` Die Standard Implementierung von `OnSaveInstanceState` übernimmt jedoch das Speichern vorübergehender Daten in der Benutzeroberfläche für jede Ansicht, sofern jeder Ansicht eine ID zugewiesen ist. Angenommen, eine Anwendung verfügt über ein `EditText` in XML definiertes-Element wie folgt:
 
 ```xml
 <EditText android:id="@+id/myText"
@@ -308,15 +302,15 @@ c = bundle.GetInt ("counter", -1);
   android:layout_height="wrap_content"/>
 ```
 
-Da die `EditText` Steuerelement verfügt über eine `id` zugewiesen ist, wenn der Benutzer einige Daten gibt und das Gerät dreht, die Daten werden weiterhin angezeigt, wie unten dargestellt:
+Da dem- `id` Steuerelement eine zugewiesen ist, werden die Daten nach wie vor angezeigt, wenn der Benutzer einige Daten eingibt und das Gerät rotiert: `EditText`
 
-[![Daten werden im Querformat beibehalten.](images/08-sml.png)](images/08.png#lightbox)
+[![Daten werden im Querformat beibehalten](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
-[OnRestoreInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnRestoreInstanceState/p/Android.OS.Bundle/) werden aufgerufen, nachdem `OnStart`. Es stellt einer Aktivität die Möglichkeit, zu einem beliebigen Zustand wiederherstellen, die auf ein Paket zuvor, während der vergangenen gespeichert wurde `OnSaveInstanceState`. Dies ist das gleiche Paket, die bereitgestellt wird `OnCreate`jedoch.
+" [Onrestoreinstancestate](xref:Android.App.Activity.OnRestoreInstanceState*) " wird nach `OnStart`"" aufgerufen. Sie bietet eine Aktivität, die die Möglichkeit hat, jeden Zustand wiederherzustellen, der zuvor in einem Paket `OnSaveInstanceState`während der vorherigen gespeichert wurde. Dies ist das gleiche Bündel, das auch für `OnCreate`bereitgestellt wird.
 
-Der folgende Code zeigt, wie Status wiederhergestellt werden kann `OnRestoreInstanceState`:
+Der folgende Code veranschaulicht, wie der Status in `OnRestoreInstanceState`wieder hergestellt werden kann:
 
 ```csharp
 protected override void OnRestoreInstanceState(Bundle savedState)
@@ -327,33 +321,33 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 }
 ```
 
-Diese Methode ist vorhanden, um einige Flexibilität im Hinblick auf bereitzustellen, wenn der Zustand wiederhergestellt werden soll. Manchmal ist es besser geeignet ist, warten, bis alle Initialisierungen vor dem Wiederherstellen der Instanzstatus fertig sind. Darüber hinaus sollten eine Unterklasse von einer vorhandenen Aktivität nur bestimmte Werte aus den Zustand der Instanz wiederherzustellen. In vielen Fällen ist es nicht erforderlich, außer Kraft setzen `OnRestoreInstanceState`, da die meisten Aktivitäten wiederherstellen können, verwenden das Paket bereitgestellt, um Status `OnCreate`.
+Diese Methode bietet eine gewisse Flexibilität, wenn der Zustand wieder hergestellt werden soll. Manchmal ist es besser, zu warten, bis alle Initialisierungen abgeschlossen sind, bevor der Instanzstatus wieder hergestellt wird. Außerdem möchte eine Unterklasse einer vorhandenen Aktivität möglicherweise nur bestimmte Werte aus dem Instanzzustand wiederherstellen. In vielen Fällen ist es nicht erforderlich, außer Kraft `OnRestoreInstanceState`zu setzen, da die meisten Aktivitäten den Zustand mithilfe des für `OnCreate`bereitgestellten Pakets wiederherstellen können.
 
-Ein Beispiel für das Speichern des Zustands mittels einer `Bundle`, finden Sie in der [Exemplarische Vorgehensweise: Speichern der Aktivitätsstatus](saving-state.md).
-
-
-#### <a name="bundle-limitations"></a>Bundle-Einschränkungen
-
-Obwohl `OnSaveInstanceState` macht es einfach, um kurzlebige Daten zu speichern, es gelten einige Einschränkungen:
-
--   Es wird nicht in allen Fällen aufgerufen. Drücken Sie z. B. **Startseite** oder **wieder** zum Beenden einer Aktivitäts führen nicht `OnSaveInstanceState` aufgerufen wird.
-
--   Übergeben Sie das Paket in `OnSaveInstanceState` dient nicht für große Objekte, z. B. Bilder. Im Fall von großen Objekten Speichern des Objekts aus [OnRetainNonConfigurationInstance](https://developer.xamarin.com/api/member/Android.App.Activity.OnRetainNonConfigurationInstance/) ist zu bevorzugen, wie im folgenden erläutert.
-
--   Daten gespeichert, indem Sie das Paket werden serialisiert, dies kann zu Verzögerungen führen.
-
-Bundle-Status eignet sich für einfache Daten, die nicht viel Arbeitsspeicher verwendet, während *ohne Konfigurationsaufwand Instanzdaten* ist nützlich für komplexere Daten oder Daten, die abzurufenden aufwendig ist, z. B. über einen Webdienstaufruf oder ein komplizierter Datenbankabfrage. Nicht-konfigurationsinstanz Daten nach Bedarf in einem Objekt gespeichert. Der nächste Abschnitt führt `OnRetainNonConfigurationInstance` als eine Möglichkeit, komplexere Datentypen über Änderungen an der Konfiguration beibehalten.
+Ein Beispiel für das Speichern des Zustands mithilfe `Bundle`von finden Sie unter Exemplarische Vorgehensweise [: Speichern des Aktivitäts Zustands](saving-state.md).
 
 
-### <a name="persisting-complex-data"></a>Beibehalten von komplexen Daten
+#### <a name="bundle-limitations"></a>Bündel Einschränkungen
 
-Zusätzlich zum Beibehalten von Daten in das Paket, Android unterstützt auch Speichern von Daten durch das Überschreiben von [OnRetainNonConfigurationInstance](https://developer.xamarin.com/api/member/Android.App.Activity.OnRetainNonConfigurationInstance/) und die Rückgabe einer Instanz von einem `Java.Lang.Object` enthält die Daten beibehalten werden. Es gibt zwei Hauptvorteile der Verwendung von `OnRetainNonConfigurationInstance` , Zustand speichern:
+Obwohl `OnSaveInstanceState` es einfach ist, vorübergehende Daten zu speichern, gelten einige Einschränkungen:
 
--   Das von zurückgegebene Objekt `OnRetainNonConfigurationInstance` gut für größere und komplexere Datentypen ausgeführt werden, da Speicher dieses Objekt behält.
+-   Sie wird nicht in allen Fällen aufgerufen. Beispielsweise führt das Drücken der  `OnSaveInstanceState` **Startseite** oder zurück zum Beenden einer Aktivität nicht dazu, dass aufgerufen wird.
 
--   Die `OnRetainNonConfigurationInstance` Methode ist bei Bedarf aufgerufen werden, und nur bei Bedarf. Dies ist wirtschaftlicher als die Verwendung eines manuellen Cache.
+-   Das an über gegebene `OnSaveInstanceState` Bündel ist nicht für große Objekte (z. b. Bilder) konzipiert. Im Fall von großen Objekten ist das Speichern des Objekts aus [onretainnonconfigurationinstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance) vorzuziehen, wie unten erläutert.
 
-Mithilfe von `OnRetainNonConfigurationInstance` ist für Szenarien, in denen es teuer, zum Abrufen der Daten mehrere Male geeignet ist, z. B. Aufrufe des Webdiensts. Betrachten Sie beispielsweise den folgenden Code, mit dem Twitter gesucht:
+-   Daten, die mithilfe des Pakets gespeichert wurden, werden serialisiert. Dies kann zu Verzögerungen führen.
+
+Der Bündel Status ist für einfache Daten nützlich, die nicht viel Arbeitsspeicher verwenden, wohingegen *nicht-Konfigurations-Instanzdaten* für komplexere Daten oder Daten, die aufwendig abgerufen werden können, wie z. b. von einem Webdienst-oder einer komplizierten Datenbankabfrage, nützlich sind. Nicht konfigurationsinstanzdaten werden bei Bedarf in einem Objekt gespeichert. Im nächsten Abschnitt `OnRetainNonConfigurationInstance` wird die Beibehaltung komplexer Datentypen durch Konfigurationsänderungen erläutert.
+
+
+### <a name="persisting-complex-data"></a>Beibehalten komplexer Daten
+
+Zusätzlich zum Beibehalten von Daten im Paket unterstützt Android auch das Speichern von Daten durch Überschreiben von [onretainnonconfigurationinstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance) und Zurückgeben einer `Java.Lang.Object` Instanz von, die die Daten enthält, die persistent gespeichert werden sollen. Die Verwendung `OnRetainNonConfigurationInstance` von zum Speichern des Zustands hat zwei Hauptvorteile:
+
+-   Das von `OnRetainNonConfigurationInstance` zurückgegebene-Objekt ist gut mit größeren, komplexeren Datentypen verfügbar, da der Arbeitsspeicher dieses Objekt beibehält.
+
+-   Die `OnRetainNonConfigurationInstance` -Methode wird bei Bedarf und nur bei Bedarf aufgerufen. Dies ist wirtschaftlicher als die Verwendung eines manuellen Caches.
+
+Die `OnRetainNonConfigurationInstance` Verwendung von eignet sich für Szenarien, in denen es aufwendig ist, die Daten mehrmals abzurufen, z. b. in Webdienst aufrufen. Sehen Sie sich beispielsweise den folgenden Code an, der Twitter durchsucht:
 
 ```csharp
 public class NonConfigInstanceActivity : ListActivity
@@ -400,11 +394,11 @@ public class NonConfigInstanceActivity : ListActivity
 }
 ```
 
-Dieser Code Ruft die Ergebnisse aus dem Internet, die als JSON formatierten ab, analysiert sie und präsentiert die Ergebnisse dann in einer Liste aus, wie im folgenden Screenshot gezeigt:
+Mit diesem Code werden Ergebnisse aus dem Web als JSON formatiert, analysiert und dann die Ergebnisse in einer Liste dargestellt, wie im folgenden Screenshot zu sehen:
 
-[![Ergebnisse, die auf dem Bildschirm angezeigt](images/06-sml.png)](images/06.png#lightbox)
+[![Auf dem Bildschirm angezeigte Ergebnisse](images/06-sml.png)](images/06.png#lightbox)
 
-Tritt eine konfigurationsänderung – z. B. wenn ein Gerät gedreht wird - wird der Code der Prozess wiederholt. Um die ursprünglich abgerufenen Ergebnisse wiederverwenden, und nicht dazu, dass unnötige, redundante Netzwerkaufrufe, können wir `OnRetainNonconfigurationInstance` um die Ergebnisse zu speichern, wie unten dargestellt:
+Wenn eine Konfigurationsänderung auftritt, z. b. Wenn ein Gerät gedreht wird, wiederholt der Code den Vorgang. Um die ursprünglich abgerufenen Ergebnisse wiederzuverwenden und nicht unnötige, redundante Netzwerk Aufrufe zu verursachen `OnRetainNonconfigurationInstance` , können wir verwenden, um die Ergebnisse zu speichern, wie unten dargestellt:
 
 ```csharp
 public class NonConfigInstanceActivity : ListActivity
@@ -439,7 +433,7 @@ public class NonConfigInstanceActivity : ListActivity
 }
 ```
 
-Nachdem die ursprünglichen Ergebnisse von abgerufen werden, wenn das Gerät gedreht wird, die `LastNonConfiguartionInstance` Eigenschaft. In diesem Beispiel besteht das Ergebnis aus einem `string[]` mit Tweets. Da `OnRetainNonConfigurationInstance` erfordert, dass eine `Java.Lang.Object` zurückgegeben werden, die `string[]` wird in einer Klasse, Unterklassen umschlossen `Java.Lang.Object`, wie unten dargestellt:
+Wenn das Gerät nun gedreht wird, werden die ursprünglichen Ergebnisse aus der `LastNonConfiguartionInstance` -Eigenschaft abgerufen. In diesem Beispiel bestehen die Ergebnisse aus einer `string[]` , die tweets enthält. Da `OnRetainNonConfigurationInstance` erfordert, dass `Java.Lang.Object` eine zurückgegeben wird `string[]` , wird der in eine Klasse umschließt `Java.Lang.Object`, die Unterklassen wie unten dargestellt:
 
 ```csharp
 class TweetListWrapper : Java.Lang.Object
@@ -448,7 +442,7 @@ class TweetListWrapper : Java.Lang.Object
 }
 ```
 
-Beispielsweise möchten, verwenden Sie eine `TextView` als das von zurückgegebene Objekt `OnRetainNonConfigurationInstance` verlieren die Aktivität, wie im folgenden Code dargestellt:
+Wenn Sie z. b. versuchen `TextView` , eine als das von `OnRetainNonConfigurationInstance` zurückgegebene-Objekt zu verwenden, wird die-Aktivität wie im folgenden Code veranschaulicht:
 
 ```csharp
 TextView _textView;
@@ -478,14 +472,14 @@ public override Java.Lang.Object OnRetainNonConfigurationInstance ()
 }
 ```
 
-In diesem Abschnitt haben wir gelernt, wie einfache Daten mit beibehalten der `Bundle`, und speichern Sie eine komplexere Datentypen mit `OnRetainNonConfigurationInstance`.
+In diesem Abschnitt haben wir gelernt, wie Sie einfache Zustandsdaten mit dem `Bundle`beibehalten und komplexere Datentypen mit `OnRetainNonConfigurationInstance`beibehalten.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Der Lebenszyklus der Android-Aktivität bietet ein leistungsfähiges Framework für die Zustandsverwaltung von Aktivitäten innerhalb einer Anwendung, aber es kann schwierig zu verstehen und zu implementieren sein. In diesem Kapitel eingeführt, die verschiedenen Zustände, die eine Aktivität durchlaufen kann, während seiner Lebensdauer als auch die Lebenszyklusmethoden, die diesen Status zugeordnet sind. Als Nächstes wurde Anleitungen, welche Art von Logik in einer dieser Methoden ausgeführt werden soll.
+Der Android-Aktivitäts Lebenszyklus bietet ein leistungsfähiges Framework für die Zustands Verwaltung von Aktivitäten in einer Anwendung, aber es kann schwierig sein, zu verstehen und zu implementieren. In diesem Kapitel wurden die verschiedenen Zustände vorgestellt, die eine Aktivität während ihrer Lebensdauer durchlaufen kann, sowie die Lebenszyklus Methoden, die diesen Zuständen zugeordnet sind. Als nächstes wurde eine Anleitung bereitgestellt, welche Art von Logik für jede dieser Methoden ausgeführt werden sollte.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Verarbeiten der Drehung](~/android/app-fundamentals/handling-rotation.md)
-- [Android Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)
+- [Android-Aktivität](xref:Android.App.Activity)

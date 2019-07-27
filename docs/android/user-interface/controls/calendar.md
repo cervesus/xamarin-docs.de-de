@@ -1,52 +1,52 @@
 ---
-title: Kalender
+title: Xamarin. Android-Kalender
 ms.prod: xamarin
 ms.assetid: 78666541-CA14-4CD8-A94A-A9621C57813E
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 115b5dbd0ec7093bf386e569aedfd0bafe5dc906
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 0172a602f3e85f0de66b39613b4a28e49344ba08
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827648"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510338"
 ---
-# <a name="calendar"></a>Kalender
+# <a name="xamarinandroid-calendar"></a>Xamarin. Android-Kalender
 
 
 ## <a name="calendar-api"></a>Kalender-API
 
-Ein neuer Satz von Kalender-APIs verwendet, die in Android 4 unterstützt Anwendungen, die zum Lesen oder Schreiben von Daten in der Calendar-Anbieter entwickelt wurden. Diese APIs unterstützen eine Fülle von Optionen für die Interaktion mit Kalenderdaten, einschließlich der Möglichkeit zum Lesen und Schreiben von Ereignissen, Teilnehmer und Erinnerungen an. Mithilfe des Kalender-Anbieters in Ihrer Anwendung zu verwenden, werden die Daten, die Sie über die API hinzufügen in die integrierte Kalender-app angezeigt, die mit Android 4.
+Ein neuer Satz von in Android 4 eingeführten Kalender-APIs unterstützt Anwendungen, die zum Lesen oder Schreiben von Daten für den Kalender Anbieter entwickelt wurden. Diese APIs unterstützen eine Vielzahl von Interaktions Optionen mit Kalenderdaten, einschließlich der Möglichkeit, Ereignisse, Teilnehmer und Erinnerungen zu lesen und zu schreiben. Wenn Sie den Kalender Anbieter in Ihrer Anwendung verwenden, werden Daten, die Sie über die API hinzufügen, in der integrierten Kalender-App angezeigt, die mit Android 4 ausgestattet ist.
 
 
 ## <a name="adding-permissions"></a>Hinzufügen von Berechtigungen
 
-Bei der Arbeit mit den neuen Kalender-APIs in Ihrer Anwendung ist, müssen Sie, zunächst die entsprechenden Berechtigungen das Android-Manifest hinzufügen. Die Berechtigungen, die Sie hinzufügen müssen sind `android.permisson.READ_CALENDAR` und `android.permission.WRITE_CALENDAR`, je nachdem, ob Sie lesen und/oder Schreiben von Kalenderdaten sind.
+Beim Arbeiten mit den neuen Kalender-APIs in Ihrer Anwendung müssen Sie zunächst die entsprechenden Berechtigungen für das Android-Manifest hinzufügen. Die Berechtigungen, die Sie hinzufügen `android.permisson.READ_CALENDAR` müssen `android.permission.WRITE_CALENDAR`, sind und, abhängig davon, ob Sie Kalenderdaten lesen und/oder schreiben.
 
 
-## <a name="using-the-calendar-contract"></a>Verwendung des Kalender-Vertrags
+## <a name="using-the-calendar-contract"></a>Verwenden des Kalender Vertrags
 
-Nachdem Sie die Berechtigungen festgelegt, Sie können mit interagieren Kalenderdaten mithilfe der `CalendarContract` Klasse. Diese Klasse stellt ein Datenmodell, die Anwendungen verwenden können, wenn eine Interaktion mit dem Kalenderanbieter. Die `CalendarContract` ermöglicht es Anwendungen, die Uris auf der Kalender-Entitäten, z. B. Kalender und Ereignisse zu beheben. Darüber hinaus eine Möglichkeit zur Interaktion mit verschiedenen Felder in den einzelnen Entitäten, z. B. im Kalender Name und ID oder eines Ereignisses die Anfangs- und Enddatum.
+Nachdem Sie die Berechtigungen festgelegt haben, können Sie mit den Kalenderdaten interagieren `CalendarContract` , indem Sie die-Klasse verwenden. Diese Klasse stellt ein Datenmodell bereit, das Anwendungen verwenden können, wenn Sie mit dem Kalender Anbieter interagieren. `CalendarContract` Ermöglicht es Anwendungen, die URIs in Kalender Entitäten aufzulösen, z. b. Kalender und Ereignisse. Außerdem bietet es eine Möglichkeit, mit verschiedenen Feldern in jeder Entität zu interagieren, z. b. den Namen und die ID eines Kalenders oder das Start-und Enddatum eines Ereignisses.
 
-Sehen wir uns ein Beispiel, das die Kalender-API verwendet. In diesem Beispiel untersuchen wir Kalender und die zugehörigen Ereignisse aufgelistet werden, wie und wie einem Kalender ein neues Ereignis hinzugefügt.
+Sehen wir uns ein Beispiel an, in dem die Kalender-API verwendet wird. In diesem Beispiel untersuchen wir, wie Kalender und deren Ereignisse aufgelistet werden, und wie ein neues Ereignis zu einem Kalender hinzugefügt wird.
 
 
-## <a name="listing-calendars"></a>Kalender auflisten
+## <a name="listing-calendars"></a>Auflisten von Kalendern
 
-Zunächst sehen wir uns die Kalender auflisten, die in der Kalender-app registriert wurden. Zu diesem Zweck können wir Instanziieren einer `CursorLoader`. Eingeführt in Android 3.0 (API-11), `CursorLoader` ist die bevorzugte Methode zum Verarbeiten einer `ContentProvider`. Zumindest müssen wir angeben des Inhalts-Uri für Kalender und die Spalten, die wir zurückgeben möchten; die Spezifikation für diese Spalte wird als bezeichnet ein _Projektion_.
+Zuerst soll erläutert werden, wie die Kalender aufgelistet werden, die in der Kalender-APP registriert wurden. Zu diesem Zweck können Sie eine `CursorLoader`instanziieren. Wird in Android 3,0 (API 11) eingeführt `CursorLoader` und ist die bevorzugte Methode, um `ContentProvider`eine zu nutzen. Wir müssen mindestens den Inhalts-URI für Kalender und die Spalten angeben, die zurückgegeben werden sollen. Diese Spaltenspezifikation wird als _Projektion_bezeichnet.
 
-Aufrufen der `CursorLoader.LoadInBackground` -Methode ermöglicht es uns Inhaltsanbieter für Daten, z. B. des Kalender-Anbieters abgefragt.
-`LoadInBackground` Führt den eigentlichen Ladevorgang ab und gibt eine `Cursor` mit den Ergebnissen der Abfrage.
+Wenn Sie `CursorLoader.LoadInBackground` die-Methode aufrufen, können wir einen Inhaltsanbieter für Daten Abfragen, z. b. den Kalender Anbieter.
+`LoadInBackground`führt den tatsächlichen Ladevorgang aus und gibt `Cursor` mit den Ergebnissen der Abfrage zurück.
 
-Die `CalendarContract` hilft uns bei der Angabe von der Content `Uri` und der Projektion. Zum Abrufen des Inhalts `Uri` zum Abfragen von Kalendern, können wir einfach die `CalendarContract.Calendars.ContentUri` Eigenschaft wie folgt:
+Die `CalendarContract` unterstützt uns bei der Angabe des `Uri` Inhalts und der Projektion. Zum Abrufen des Inhalts `Uri` zum Abfragen von Kalendern können Sie einfach die `CalendarContract.Calendars.ContentUri` -Eigenschaft wie folgt verwenden:
 
 ```csharp
 var calendarsUri = CalendarContract.Calendars.ContentUri;
 ```
 
-Mithilfe der `CalendarContract` sollten Spalten ist genauso einfach auf der Kalender angeben. Wir fügen einfach Felder in der `CalendarContract.Calendars.InterfaceConsts` Klasse, um ein Array. Der folgende Code enthält z. B. der im Kalender-ID, Anzeigename und Kontoname:
+Die `CalendarContract` Verwendung von zum Angeben der gewünschten Kalender Spalten ist gleichermaßen einfach. Wir fügen einfach Felder in der `CalendarContract.Calendars.InterfaceConsts` Klasse zu einem Array hinzu. Der folgende Code enthält z. b. die ID des Kalenders, den anzeigen Amen und den Kontonamen:
 
 ```csharp
 string[] calendarsProjection = {
@@ -56,7 +56,7 @@ string[] calendarsProjection = {
 };
 ```
 
-Die `Id` ist wichtig, einzuschließen, bei Verwendung einer `SimpleCursorAdapter` um die Daten an die Benutzeroberfläche zu binden, wie wir gleich sehen werden. Der Inhalts-Uri und Projektion vorhanden, wir Instanziieren der `CursorLoader` , und rufen Sie die `CursorLoader.LoadInBackground` Methode, um ein Cursor mit Kalenderdaten zurückzugeben, wie unten dargestellt:
+Wichtig ist, dass Sie einbeziehen, wenn Sie eine `SimpleCursorAdapter` zum Binden der Daten an die Benutzeroberfläche verwenden, wie wir in Kürze sehen werden. `Id` Nachdem der Inhalts-URI und die Projektion vorhanden sind, instanziieren `CursorLoader` wir den und `CursorLoader.LoadInBackground` nennen die-Methode, um einen Cursor mit den Kalenderdaten zurückzugeben, wie unten dargestellt:
 
 ```csharp
 var loader = new CursorLoader(this, calendarsUri, calendarsProjection, null, null, null);
@@ -64,7 +64,7 @@ var cursor = (ICursor)loader.LoadInBackground();
 
 ```
 
-Die Benutzeroberfläche für dieses Beispiel enthält eine `ListView`, wobei die einzelnen Elemente in der Liste, die einen einzelnen Kalender darstellt. Das folgende XML zeigt das Markup mit dem `ListView`:
+Die Benutzeroberfläche für dieses Beispiel enthält `ListView`eine, wobei jedes Element in der Liste einen einzelnen Kalender darstellt. Der folgende XML-Code zeigt das Markup, `ListView`das Folgendes enthält:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -79,7 +79,7 @@ android:layout_height="fill_parent">
 </LinearLayout>
 ```
 
-Darüber hinaus müssen wir die Benutzeroberfläche für jedes Listenelement angeben, die wir in einer separaten XML-Datei wie folgt an:
+Außerdem müssen wir die Benutzeroberfläche für jedes Listenelement angeben, das wir in einer separaten XML-Datei wie folgt platzieren:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -98,7 +98,7 @@ android:layout_height="wrap_content">
 </LinearLayout>
 ```
 
-Ab diesem Zeitpunkt ist es lediglich um normale Android-Code, um die Daten aus dem Cursor auf die Benutzeroberfläche zu binden. Wir verwenden eine `SimpleCursorAdapter` wie folgt:
+Ab diesem Zeitpunkt ist es nur normaler Android-Code, die Daten vom Cursor an die Benutzeroberfläche zu binden. Wir verwenden eine `SimpleCursorAdapter` wie folgt:
 
 ```csharp
 string[] sourceColumns = {
@@ -114,18 +114,18 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter (this,
 ListAdapter = adapter;
 ```
 
-Im obigen Code wird der Adapter die in angegebenen Spalten der `sourceColumns` array und schreibt sie in der Elemente der Benutzeroberfläche in der `targetResources` Array für jeden Kalendereintrag im Cursor. Die Aktivität, die hier verwendete ist eine Unterklasse von `ListActivity`; er enthält die `ListAdapter` Eigenschaftensatz, der wir den Adapter.
+Im obigen Code übernimmt der Adapter die im `sourceColumns` Array angegebenen Spalten und schreibt Sie für jeden Kalendereintrag im Cursor in die Benutzeroberflächen Elemente `targetResources` im Array. Bei der hier verwendeten Aktivität handelt es sich um `ListActivity`eine Unterklasse von `ListAdapter` , die die Eigenschaft enthält, auf die der Adapter festgelegt wird.
 
-Hier ist dieser Screenshot zeigt das Ergebnis mit den Kalender-Informationen angezeigt, der `ListView`:
+Der folgende Screenshot zeigt das Endergebnis, wobei die Kalenderinformationen in der `ListView`angezeigt werden:
 
-[![Ausführen im Emulator, Anzeigen von zwei Kalendereinträgen CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
+[![Calendardemo wird im Emulator ausgeführt und zeigt zwei Kalendereinträge an](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
 
 
 
-## <a name="listing-calendar-events"></a>Termine im Kalender auflisten
+## <a name="listing-calendar-events"></a>Auflisten von Kalender Ereignissen
 
-Nächste sehen wir uns die Ereignisse für einen angegebenen Kalender auflisten.
-Aufbauend auf das obige Beispiel, werden wir eine Liste der Ereignisse, die bei der Auswahl eines anderen vorhanden. Aus diesem Grund müssen wir die Elementauswahl im vorherigen Code behandeln:
+Im nächsten Abschnitt sehen wir uns an, wie die Ereignisse für einen bestimmten Kalender aufgelistet werden.
+Nach dem obigen Beispiel wird eine Liste von Ereignissen angezeigt, wenn der Benutzer einen der Kalender auswählt. Daher müssen wir die Elementauswahl im vorherigen Code behandeln:
 
 ```csharp
 ListView.ItemClick += (sender, e) => {
@@ -141,13 +141,13 @@ ListView.ItemClick += (sender, e) => {
 };
 ```
 
-In diesem Code werden wir eine Absicht, öffnen Sie eine Aktivität vom Typ erstellen `EventListActivity`, der im Kalender-ID in seiner Absicht übergeben. Wir benötigen die ID, die wissen, welcher Kalender zur Abfrage nach Ereignissen. In der `EventListActivity`des `OnCreate` -Methode, können wir die ID von Abrufen der `Intent` wie unten dargestellt:
+In diesem Code erstellen wir eine Absicht, eine Aktivität des Typs `EventListActivity`zu öffnen und dabei die ID des Kalenders in der Absicht zu übergeben. Wir benötigen die ID, um zu ermitteln, welcher Kalender nach Ereignissen abgefragt werden soll. In der `EventListActivity`- `OnCreate` Methode des s können wir die ID aus dem `Intent` abrufen, wie unten gezeigt:
 
 ```csharp
 _calId = Intent.GetIntExtra ("calId", -1);
 ```
 
-Nachdem wir Abfrageereignisse für diese ID Kalender Der Prozess zur Abfrage nach Ereignissen ist ähnlich wie die wir für eine Liste der zuvor Kalender abgefragt, nur diese Zeit, die wir in Zusammenarbeit mit der `CalendarContract.Events` Klasse. Der folgende Code erstellt eine Abfrage zum Abrufen von Ereignissen:
+Nun können wir Ereignisse für diese Kalender-ID Abfragen. Der Prozess zum Abfragen von Ereignissen ähnelt der Art und Weise, in der wir eine Liste der Kalender zuvor abgefragt haben, nur dieses Mal arbeiten wir mit `CalendarContract.Events` der-Klasse. Der folgende Code erstellt eine Abfrage zum Abrufen von Ereignissen:
 
 ```csharp
 var eventsUri = CalendarContract.Events.ContentUri;
@@ -163,10 +163,10 @@ var loader = new CursorLoader(this, eventsUri, eventsProjection,
 var cursor = (ICursor)loader.LoadInBackground();
 ```
 
-In diesem Code wird es zunächst den Inhalt `Uri` für Ereignisse aus dem `CalendarContract.Events.ContentUri` Eigenschaft. Klicken Sie dann geben wir die Datenspalten, die im Array EventsProjection abgerufen werden soll.
-Abschließend instanziieren wir eine `CursorLoader` mit diesen Informationen und das Ladeprogramm des Aufrufs `LoadInBackground` -Methode zur Rückgabe einer `Cursor` mit den Ereignisdaten.
+In diesem Code wird zuerst der Inhalt `Uri` für Ereignisse aus der `CalendarContract.Events.ContentUri` -Eigenschaft angezeigt. Anschließend geben wir die Ereignis Spalten an, die im eventsprojection-Array abgerufen werden sollen.
+Schließlich instanziieren wir eine `CursorLoader` mit diesen Informationen und wenden die- `LoadInBackground` Methode des Lade Moduls an, `Cursor` um eine mit den Ereignisdaten zurückzugeben.
 
-Um die Daten in der Benutzeroberfläche anzuzeigen, können wir das Markup und Code nur wie zuvor zum Anzeigen der Liste der Kalender verwenden. In diesem Fall verwenden wir `SimpleCursorAdapter` , die Sie Daten binden ein `ListView` wie im folgenden Code gezeigt:
+Um die Ereignisdaten auf der Benutzeroberfläche anzuzeigen, können wir Markup und Code genau wie zuvor verwenden, um die Liste der Kalender anzuzeigen. Auch hier verwenden `SimpleCursorAdapter` wir, um die Daten an eine `ListView` zu binden, wie im folgenden Code gezeigt:
 
 ```csharp
 string[] sourceColumns = {
@@ -184,13 +184,13 @@ adapter.ViewBinder = new ViewBinder ();
 ListAdapter = adapter;
 ```
 
-Der Hauptunterschied zwischen diesem Code und den Code, die wir zuvor verwendet, um die Kalenderliste anzuzeigen, ist die Verwendung von einem `ViewBinder`, die in der Zeile festgelegt wird:
+Der Hauptunterschied zwischen diesem Code und dem Code, den wir zuvor zum Anzeigen der Kalenderliste verwendet haben, ist die `ViewBinder`Verwendung einer, die in der Zeile festgelegt wird:
 
 ```csharp
 adapter.ViewBinder = new ViewBinder ();
 ```
 
-Die `ViewBinder` Klasse kann wir noch weiter zu steuern, wie wir Werte mit Ansichten zu binden. In diesem Fall verwenden wir diese Startzeit des Ereignisses in Millisekunden, eine Datumszeichenfolge zu konvertieren. Siehe die folgende Implementierung:
+Mit `ViewBinder` der-Klasse können wir weiter steuern, wie Werte an Sichten gebunden werden. In diesem Fall wird es verwendet, um die Ereignis Start Zeit von Millisekunden in eine Datums Zeichenfolge zu konvertieren, wie in der folgenden Implementierung gezeigt:
 
 ```csharp
 class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
@@ -214,23 +214,23 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 }
 ```
 
-Dies zeigt eine Liste der Ereignisse an, wie unten dargestellt:
+Daraufhin wird eine Liste der Ereignisse angezeigt, wie unten dargestellt:
 
-[![Screenshot der Beispiel-app, die drei Termine im Kalender anzeigen](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
-
-
-
-## <a name="adding-a-calendar-event"></a>Hinzufügen eines Kalender-Ereignisses
-
-Wir haben gesehen, wie Kalenderdaten. Jetzt sehen wir uns wie einen Kalender ein Ereignis hinzugefügt. Damit dies funktioniert, müssen Sie die `android.permission.WRITE_CALENDAR` Berechtigung wie bereits erwähnt. Um einen Kalender ein Ereignis hinzugefügt haben, wird Folgendes beschrieben:
-
-1.  Erstellen Sie eine `ContentValues` Instanz.
-1.  Verwenden Sie die Schlüssel aus der `CalendarContract.Events.InterfaceConsts` Klasse zum Auffüllen der `ContentValues` Instanz.
-1.  Legen Sie die Zeitzonen für die Start- und Endzeiten.
-1.  Verwenden einer `ContentResolver` zum Einfügen von Daten für das Ereignis in den Kalender.
+[![Screenshot der Beispiel-App mit drei Kalender Ereignissen](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 
-Der folgende Code veranschaulicht die folgenden Schritte aus:
+
+## <a name="adding-a-calendar-event"></a>Hinzufügen eines Kalender Ereignisses
+
+Wir haben gesehen, wie Kalenderdaten gelesen werden. Sehen wir uns nun an, wie einem Kalender ein Ereignis hinzugefügt wird. Damit dies funktioniert, stellen Sie sicher, dass Sie `android.permission.WRITE_CALENDAR` die zuvor erwähnte Berechtigung einschließen. Zum Hinzufügen eines Ereignisses zu einem Kalender werden folgende Aktionen durchführt:
+
+1.  Erstellen Sie `ContentValues` eine-Instanz.
+1.  Verwenden Sie Schlüssel aus `CalendarContract.Events.InterfaceConsts` der-Klasse, um `ContentValues` die-Instanz aufzufüllen.
+1.  Legen Sie die Zeitzonen für die Start-und Endzeit des Ereignisses fest.
+1.  `ContentResolver` Verwenden Sie, um die Ereignisdaten in den Kalender einzufügen.
+
+
+Der folgende Code veranschaulicht die folgenden Schritte:
 
 ```csharp
 ContentValues eventValues = new ContentValues ();
@@ -255,7 +255,7 @@ var uri = ContentResolver.Insert (CalendarContract.Events.ContentUri,
     eventValues);
 ```
 
-Beachten Sie, wenn wir stellen Sie die Zeitzone, die eine Ausnahme vom Typ keine `Java.Lang.IllegalArgumentException` ausgelöst. Da Event Zeitwerte in Millisekunden seit Beginn der Epoche ausgedrückt werden müssen, erstellen wir eine `GetDateTimeMS` Methode (in `EventListActivity`) unserer Datum-Spezifikationen in Millisekunden-Format zu konvertieren:
+Beachten Sie, dass eine Ausnahme vom Typ `Java.Lang.IllegalArgumentException` ausgelöst wird, wenn die Zeitzone nicht festgelegt wird. Da Ereignis Zeit Werte in Millisekunden seit der Epoche ausgedrückt werden müssen, wird eine `GetDateTimeMS` -Methode ( `EventListActivity`in) erstellt, um die Datums Spezifikationen in das Millisekundenformat zu konvertieren:
 
 ```csharp
 long GetDateTimeMS (int yr, int month, int day, int hr, int min)
@@ -272,19 +272,19 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 }
 ```
 
-Wenn wir die Ereignisliste Benutzeroberfläche eine Schaltfläche hinzu, und führen Sie den obigen Code wird in der Schaltfläche click-Ereignishandler, das Ereignis hinzugefügt dem Kalender und in unserer Liste aktualisiert wird, wie unten dargestellt:
+Wenn Sie der Benutzeroberfläche der Ereignisliste eine Schaltfläche Hinzufügen und den obigen Code im Click-Ereignishandler der Schaltfläche ausführen, wird das Ereignis dem Kalender hinzugefügt und in der Liste aktualisiert, wie unten dargestellt:
 
-[![Screenshot der Beispiel-app mit Kalenderterminen, gefolgt von der Schaltfläche "Beispiel-Ereignis hinzufügen"](calendar-images/13.png)](calendar-images/13.png#lightbox)
+[![Screenshot der Beispiel-App mit Kalender Ereignissen gefolgt von Schaltfläche "Beispiel Ereignis hinzufügen"](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
-Wenn wir die Kalender-app öffnen, klicken Sie dann sehen wir, dass das Ereignis gibt es auch geschrieben wird:
+Wenn wir die Kalender-APP öffnen, sehen wir, dass das Ereignis ebenfalls dort geschrieben wird:
 
-[![Screenshot des Kalender-app, die das Ereignis anzeigen](calendar-images/14.png)](calendar-images/14.png#lightbox)
+[![Screenshot der Kalender-APP, die das ausgewählte Kalenderereignis anzeigt](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
-Wie Sie sehen können, ermöglicht es Android leistungsstarke und einfachen Zugriff auf das Abrufen und Speichern von Kalenderdaten, ermöglicht es Anwendungen, die Kalender-Funktionen integrieren.
+Wie Sie sehen können, ermöglicht Android einen leistungsstarken und einfachen Zugriff zum Abrufen und beibehalten von Kalenderdaten, sodass Anwendungen die Kalenderfunktionen nahtlos integrieren können.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Kalender-Demo (Beispiel)](https://developer.xamarin.com/samples/monodroid/CalendarDemo/)
-- [Einführung in die Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 Platform](https://developer.android.com/sdk/android-4.0.html)
+- [Kalender Demo (Beispiel)](https://developer.xamarin.com/samples/monodroid/CalendarDemo/)
+- [Einführung in Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
+- [Android 4,0-Plattform](https://developer.android.com/sdk/android-4.0.html)

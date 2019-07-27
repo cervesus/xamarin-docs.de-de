@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1d445e3ef8869c74f052eb1153774dfab51ffd45
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 78a84fd8d4f380739a9f080a1a5aad7c5942d0c9
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649601"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511883"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms-Raster
 
@@ -54,7 +54,7 @@ Zeilen-und Spalteninformationen befindet sich in `Grid`des `RowDefinitions`  &  
 - **Absolute** &ndash; Größen der Spalten und Zeilen mit bestimmten festen Höhe und Breite Werten. Als Wert angegeben und `GridUnitType.Absolute` in C# geschrieben und als `#` in XAML, mit `#` wird von den gewünschten Wert.
 
 > [!NOTE]
-> Die Breitenwerte für Spalten werden als festgelegt `*` wird standardmäßig in Xamarin.Forms, die sicherstellt, dass es sich bei die Spalte den verfügbaren Platz ausfüllt. Die Höhenwerte für Zeilen werden auch als festgelegt `*` standardmäßig.
+> Die Breitenwerte für Spalten werden standardmäßig `*` in xamarin. Forms als festgelegt, wodurch sichergestellt wird, dass die Spalte den verfügbaren Platz ausfüllen kann. Die Höhenwerte für Zeilen werden standardmäßig ebenfalls `*` als festgelegt.
 
 Betrachten Sie eine app, die drei Zeilen und zwei Spalten aus. Die untere Zeile muss genau randleistenabschnitt 200 Pixel hoch sein, und die oberste Zeile zweimal so groß wie die mittlere Zeile werden muss. Die linke Spalte muss für den Inhalt ausreichend sein, und die rechte Spalte muss den verbleibenden Platz auszufüllen.
 
@@ -137,7 +137,7 @@ grid.Children.Add(bottomRight, 1, 1);
 
 Der obige Code wird ein Raster mit vier Bezeichnungen, zwei Spalten und zwei Zeilen erstellt. Beachten Sie, dass jede Bezeichnung die gleiche Größe hat, und, dass die Zeilen erweitert werden, um die gesamte verfügbare Speicherplatz verwenden.
 
-Im obigen Beispiel-Ansichten werden hinzugefügt, um die [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children) Sammlung mithilfe der [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) Überladung, die linken und oberen Argumente angibt. Bei Verwendung der [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) Überladung, der angibt, nach links, rechts, oben und unten Argumente, während Sie links und oben Argumente verweist immer auf die Zellen in der [ `Grid` ](xref:Xamarin.Forms.Grid), rechts und unten Argumente können angezeigt werden, verweisen auf Zellen, die außerhalb der `Grid`. Dies ist, da das rechte Argument immer größer als das linke Argument sein muss, und die unteren Argument muss immer größer als die Top-Argument. Das folgende Beispiel zeigt den entsprechenden Code mit `Add` Überladungen:
+Im obigen Beispiel-Ansichten werden hinzugefügt, um die [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children) Sammlung mithilfe der [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*) Überladung, die linken und oberen Argumente angibt. Bei Verwendung der [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*) Überladung, der angibt, nach links, rechts, oben und unten Argumente, während Sie links und oben Argumente verweist immer auf die Zellen in der [ `Grid` ](xref:Xamarin.Forms.Grid), rechts und unten Argumente können angezeigt werden, verweisen auf Zellen, die außerhalb der `Grid`. Dies ist, da das rechte Argument immer größer als das linke Argument sein muss, und die unteren Argument muss immer größer als die Top-Argument. Das folgende Beispiel zeigt den entsprechenden Code mit `Add` Überladungen:
 
 ```csharp
 // left, top

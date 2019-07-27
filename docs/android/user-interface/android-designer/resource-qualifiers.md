@@ -1,101 +1,101 @@
 ---
 title: Ressourcenqualifizierer und Visualisierungsoptionen
-description: In diesem Thema wird erläutert, wie Ressourcen definiert werden, die nur bei einige Qualifiziererwerte entsprechen verwendet werden wird. Ein einfaches Beispiel ist eine Sprache qualifizierten Zeichenfolgenressource. Eine Zeichenfolgenressource kann mit anderen alternativen Ressourcen definiert, um für weitere Sprachen verwendet werden als Standardwert definiert werden. Alle Ressourcentypen können qualifiziert werden, einschließlich des Layouts selbst.
+description: In diesem Thema wird erläutert, wie Sie Ressourcen definieren, die nur verwendet werden, wenn einige Qualifiziererwerte abgeglichen werden. Ein einfaches Beispiel ist eine sprach qualifizierte Zeichen folgen Ressource. Eine Zeichen folgen Ressource kann als Standard definiert werden, wobei andere alternative Ressourcen für die Verwendung in weiteren Sprachen definiert werden. Alle Ressourcentypen können qualifiziert werden, einschließlich des Layouts.
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 9d99e6a59b57b59d585b32befdadc0890d41448c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d9f624084c83b318487f1162a9a2350f9e2cc409
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60950736"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510500"
 ---
-# <a name="resource-qualifiers-and-visualization-options"></a>Ressourcenqualifizierer und visualisierungsoptionen
+# <a name="resource-qualifiers-and-visualization-options"></a>Ressourcen Qualifizierer und Visualisierungs Optionen
 
-_In diesem Thema wird erläutert, wie Ressourcen definiert werden, die nur bei einige Qualifiziererwerte entsprechen verwendet werden wird. Ein einfaches Beispiel ist eine Sprache qualifizierten Zeichenfolgenressource. Eine Zeichenfolgenressource kann mit anderen alternativen Ressourcen definiert, um für weitere Sprachen verwendet werden als Standardwert definiert werden. Alle Ressourcentypen können qualifiziert werden, einschließlich des Layouts selbst._
+_In diesem Thema wird erläutert, wie Sie Ressourcen definieren, die nur verwendet werden, wenn einige Qualifiziererwerte abgeglichen werden. Ein einfaches Beispiel ist eine sprach qualifizierte Zeichen folgen Ressource. Eine Zeichen folgen Ressource kann als Standard definiert werden, wobei andere alternative Ressourcen für die Verwendung in weiteren Sprachen definiert werden. Alle Ressourcentypen können qualifiziert werden, einschließlich des Layouts._
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="resource-qualifier-options"></a>Optionen für ressourcenqualifizierer
+## <a name="resource-qualifier-options"></a>Ressourcen qualifiziereroptionen
 
-**Optionen für ressourcenqualifizierer** zugegriffen werden kann, indem Sie auf die Auslassungspunkte rechts neben der **Querformat** Schaltfläche für Hilfemodus:
+Sie können auf **Ressourcen qualifiziereroptionen** zugreifen, indem Sie auf das Symbol mit den Auslassungs Punkten rechts neben der Schaltfläche **quer** Format klicken:
 
-[![Optionen für Ressourcenqualifizierer](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
+[![Ressourcen qualifiziereroptionen](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
-Dieses Dialogfeld zeigt Pulldown-Menüs für die folgenden ressourcenqualifizierer:
+Dieses Dialogfeld enthält Pulldownmenüs für die folgenden Ressourcen Qualifizierer:
 
--   **Sprache** &ndash; zeigt die verfügbaren Ressourcen und bietet eine Option zum Hinzufügen der neuen Sprache/Region-Ressourcen.
+-   **Sprache** &ndash; Zeigt verfügbare Sprachressourcen an und bietet eine Option zum Hinzufügen neuer sprach-und Regions Ressourcen.
 
--   **UI-Modus** &ndash; Listen von Anzeigemodi (z. B. **Auto Dock** und **Helpdesk Dock**) sowie layoutausrichtungen.
+-   **UI-Modus** Listet Anzeigemodi (z. b. **autodock** und **Desk Dock**) sowie layoutrichtungen auf. &ndash;
 
-Jede dieser Pulldown-Menüs wird geöffnet, neue Dialogfelder angezeigt wird, können Sie auswählen und Konfigurieren von ressourcenqualifizierer (wie unten beschrieben).
+Jedes dieser Pulldownmenüs öffnet neue Dialogfelder, in denen Sie Ressourcen Qualifizierer auswählen und konfigurieren können (wie im folgenden erläutert).
 
 ### <a name="language"></a>Sprache
 
-Die **Sprache** Pulldownmenü enthält nur die Sprachen, die Ressourcen definiert haben (oder **alle Sprachen**, dies ist die Standardeinstellung). Es ist jedoch auch eine **Sprache/Region hinzufügen...**  Option aus, die Ihnen ermöglicht, eine neue Sprache zur Liste hinzuzufügen:
+Das Dropdown Menü **Sprache** listet nur die Sprachen auf, für die Ressourcen definiert sind (oder **alle Sprachen**, die Standardeinstellung). Es gibt jedoch auch eine Option zum **Hinzufügen von Sprachen/Regionen** , mit der Sie der Liste eine neue Sprache hinzufügen können:
 
 [![Sprache/Region hinzufügen](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
-Beim Klicken auf **Sprache/Region hinzufügen...** , **Sprache auswählen** Dialogfeld wird geöffnet, um Dropdownlisten der verfügbaren Sprachen und Regionen anzuzeigen:
+Wenn Sie auf **Sprache/Region hinzufügen...** klicken, wird das Dialogfeld **Sprache auswählen** geöffnet, in dem Dropdown Listen mit den verfügbaren Sprachen und Regionen angezeigt werden:
 
 ![Liste der Sprachen](resource-qualifiers-images/vs/10-languages.png "Liste der Sprachen")
 
-In diesem Beispiel haben wir **fr (Französisch)** für die Sprache und **BE** (Belgien) für das Land/Region Regionalsprache Französisch. Beachten Sie, dass die **Region** Feld ist optional, da viele Sprachen können, ohne dass für bestimmte Regionen angegeben werden. Wenn die **Sprache** Pulldownmenü erneut geöffnet wird, wird die neu hinzugefügte Sprache/Region-Ressource:
+In diesem Beispiel haben wir **fr (Französisch)** für die Sprache und **BE** (Belgien) für das Land/Region Regionalsprache Französisch. Beachten Sie, dass das Feld **Region** optional ist, da viele Sprachen ohne Rücksicht auf bestimmte Regionen angegeben werden können. Wenn das **sprach** -Pulldownmenü erneut geöffnet wird, wird die neu hinzugefügte Sprache/Regions Ressource angezeigt:
 
-![Sprache und Region ausgewählt](resource-qualifiers-images/vs/11-language-region-added.png "Sprache und Region ausgewählt")
+![Ausgewählte Sprache und Region](resource-qualifiers-images/vs/11-language-region-added.png "Ausgewählte Sprache und Region")
 
-Beachten Sie, dass wenn Sie eine neue Sprache hinzufügen, aber Sie erstellen keine neue Ressourcen für sie die hinzugefügte Sprache wird nicht mehr auf das nächste Mal angezeigt werden Sie das Projekt zu öffnen.
+Beachten Sie Folgendes: Wenn Sie eine neue Sprache hinzufügen, aber keine neuen Ressourcen dafür erstellen, wird die hinzugefügte Sprache beim nächsten Öffnen des Projekts nicht mehr angezeigt.
 
 ### <a name="ui-mode"></a>UI-Modus
 
-Beim Klicken auf die **Benutzeroberflächenmodus** Pulldown-Menü, eine Liste der Modi angezeigt wird, wie z. B. **Normal**, **Auto Dock**, **Helpdesk Dock**, **Fernsehen**, **Appliance**, und **Watch**:
+Wenn Sie auf den Pulldownmenü des **UI-Modus** klicken, wird eine Liste der Modi angezeigt, wie z. b. **Normal**, **Car Dock**, **Desk Dock**, **TV**, **Appliance**und **Watch**:
 
 
 [![Menü für UI-Modus](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
-Unterhalb dieser Liste sind die Modi Nacht **nicht Nacht** und **Nacht**, gefolgt von der layoutausrichtungen **von links nach rechts** und **von rechts nach links** (für Informationen zu **von links nach rechts** und **von rechts nach links** Optionen finden Sie [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/)).
-Die letzten Elemente im der **Optionen für Ressourcenqualifizierer** Dialogfeld werden die **runden Bildschirme** (zur Verwendung mit Android Wear) oder **nicht runder Bildschirme**.
-Informationen zu von round und nicht rund Bildschirme, finden Sie unter [Layouts](https://developer.android.com/training/wearables/ui/layouts.html).
-Weitere Informationen zu Android-Benutzeroberflächen-Modi finden Sie unter [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
+Unterhalb dieser Liste befinden sich die Nacht Modi **nicht Nacht** und **Nacht**, gefolgt von den layoutdirections von **Links nach rechts** und von **rechts nach links** (Weitere Informationen zu den Optionen von **Links nach rechts** und von **Rechts** nach Links finden [Sie unter LayoutDirection](xref:Android.Util.LayoutDirection)).
+Die letzten Elemente im Dialogfeld **Ressourcen qualifiziereroptionen** sind die **runden Bildschirme** (für die Verwendung mit Android Wear) oder **nicht die Bildschirme**.
+Informationen zu runden und nicht runden Bildschirmen finden Sie unter [Layouts](https://developer.android.com/training/wearables/ui/layouts.html).
+Weitere Informationen zu den Android-Benutzeroberflächen Modi finden Sie unter [uimodemanager](xref:Android.App.UiModeManager).
 
-## <a name="action-bar-settings"></a>Einstellungen für Aktionsleiste
+## <a name="action-bar-settings"></a>Aktionsleiste Einstellungen
 
-Die **Einstellungen für Aktionsleiste** Symbol links neben das Pinselsymbol (Design-Editor) verfügbar ist:
+Das Symbol Aktionsleisten- **Einstellungen** ist links neben dem Pinselsymbol (Design-Editor) verfügbar:
 
-![Einstellungen für Aktionsleiste](resource-qualifiers-images/vs/14-action-bar.png "Einstellungen für Aktionsleiste")
+![Aktionsleiste Einstellungen](resource-qualifiers-images/vs/14-action-bar.png "Aktionsleiste Einstellungen")
 
-Dieses Symbol öffnet ein Dialogfeld im Popover, die eine Möglichkeit bietet, wählen Sie aus einem von drei Modi der Aktionsleiste:
+Mit diesem Symbol wird ein Dialogfeld-popover geöffnet, das eine Möglichkeit bietet, eine der drei Aktionsleiste Modi auszuwählen:
 
--   **Standard** &ndash; besteht ein Logo oder ein Symbol und dem Titel Text mit einem optionalen Untertitel aus.
+-   **Standard** &ndash; Besteht aus einem Logo oder einem Symbol und einem Titeltext mit einem optionalen Untertitel.
 
--   **Liste** &ndash; Liste Navigationsmodus befindet. Anstelle von statischen Titeltext, bietet dieser Modus einem Listenmenü für die Navigation innerhalb der Aktivität (d. h. es kann angezeigt werden dem Benutzer als ein Dropdown-Liste).
+-   **Liste** &ndash; Navigationsmodus auflisten. Anstelle von statischem Titeltext zeigt dieser Modus ein Listen Menü für die Navigation innerhalb der Aktivität an (d. h., es kann dem Benutzer als Dropdown Liste angezeigt werden).
 
--   **Registerkarten** &ndash; Registerkarte Navigationsmodus befindet. Anstelle von statischen Titeltext enthält in diesem Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität.
+-   **Registerkarten** &ndash; Registerkarten-Navigationsmodus. Anstelle von statischem Titeltext stellt dieser Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität dar.
 
 ## <a name="themes"></a>Designs
 
-Die **Design** Dropdown-Menü zeigt alle der im Projekt definierten Designs. Auswählen von **mehr Designs** öffnet ein Dialogfeld mit einer Liste von allen Designs, die über das installierte Android SDK verfügbar, wie unten dargestellt:
+Das **Dropdown** Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
 
-[![Weitere Themen Liste](resource-qualifiers-images/vs/15-theme-menu-sml.png "mehr Designs-Liste")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
+[![Weitere Themenliste](resource-qualifiers-images/vs/15-theme-menu-sml.png "Weitere Themenliste")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
-Wenn ein Design aktiviert ist, wird der Entwurfsoberfläche aktualisiert, um den Effekt des neuen Designs anzeigen. Beachten Sie, dass diese Änderung dauerhaft erfolgt nur, wenn die **OK** geklickt wird die **Design** Dialogfeld. Nachdem ein Design ausgewählt wurde, wird es in enthalten die **Design** Dropdown-Menü wie unten:
+Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im **Design Dialogfeld** auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt **in das** Dropdown Menü "Design" eingefügt:
 
-![Design "hell" steht jetzt](resource-qualifiers-images/vs/16-light-theme.png "Design \"hell\" ist jetzt verfügbar")
+Das ![helle Design ist jetzt verfügbar] . Das (resource-qualifiers-images/vs/16-light-theme.png "helle Design ist jetzt verfügbar") .
 
-## <a name="android-version"></a>Android-version
+## <a name="android-version"></a>Android-Version
 
-Die Android **Version** Auswahl legt fest, die Android-Version, die zum Rendern des Layouts im Designer verwendet wird. Der Selektor zeigt alle Versionen, die mit Framework-Zielversion des Projekts kompatibel sind:
+Die Android- **Versions** Auswahl legt die Android-Version fest, die zum Rendering des Layouts im Designer verwendet wird. Der Selektor zeigt alle Versionen an, die mit der Ziel Framework-Version des Projekts kompatibel sind:
 
-![Liste der Android-Versionen](resource-qualifiers-images/vs/17-android-version.png "Liste von Android-Versionen")
+![Liste der Android-Versionen](resource-qualifiers-images/vs/17-android-version.png "Liste der Android-Versionen")
 
-Framework-Zielversion kann festgelegt werden, in den projekteinstellungen unter **Eigenschaften > Anwendung > Kompilieren mit der Android-Version**. Weitere Informationen zu Framework-Zielversion, finden Sie unter [Understanding Android API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
+Die Zielframeworkversion kann in den Projekteinstellungen unter **Eigenschaften > Anwendungs > mithilfe der Android-Version kompiliert**werden. Weitere Informationen zur Ziel Framework-Version finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 
-Die Menge von Widgets, die in der Toolbox verfügbar, wird von Framework-Zielversion des Projekts bestimmt. Dies gilt auch für die Eigenschaften der **Fenster "Eigenschaften"**. Ist die Liste der Widgets *nicht* durch die im ausgewählten Wert bestimmt die **Version** Auswahl der Symbolleiste. Z. B. Wenn Sie die Zielversion des Projekts auf Android 4.4 festlegen, Sie können Android 6.0 dennoch auswählen, in der Symbolleiste-Versionsauswahl, um festzustellen, wie das Projekt in Android 6.0 aussieht, aber nicht möglich, Widgets hinzufügen, die auf Android 6.0 spezifisch sind &ndash;  Sie können weiterhin die Widgets stehen, die in Android 4.4 verfügbar sind.
+Der Satz von Widgets, der in der Toolbox verfügbar ist, wird von der Ziel Framework-Version des Projekts bestimmt. Dies gilt auch für die im **Eigenschaften Fenster**verfügbaren Eigenschaften. Die Liste der verfügbaren Widgets wird *nicht* durch den Wert bestimmt, der in der **Versions** Auswahl der Symbolleiste ausgewählt ist. Wenn Sie z. b. die Zielversion des Projekts auf Android 4,4 festgelegt haben, können Sie in der Symbolleiste der Versions Auswahl weiterhin Android 6,0 auswählen, um zu sehen, wie das Projekt in Android 6,0 aussieht, Sie können jedoch keine Widgets hinzufügen, &ndash; die für Android 6,0 spezifisch sind.  Sie sind weiterhin auf die Widgets beschränkt, die in Android 4,4 verfügbar sind.
 
 Weitere Informationen zu Ressourcentypen finden Sie unter [Android-Ressourcen](~/android/app-fundamentals/resources-in-android/index.md).
 
@@ -103,81 +103,81 @@ Weitere Informationen zu Ressourcentypen finden Sie unter [Android-Ressourcen](~
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="resource-qualifier-options"></a>Optionen für ressourcenqualifizierer
+## <a name="resource-qualifier-options"></a>Ressourcen qualifiziereroptionen
 
-**Optionen für ressourcenqualifizierer** zugegriffen werden kann, indem Sie auf die Auslassungspunkte rechts neben der **Querformat** Schaltfläche für Hilfemodus:
+Sie können auf **Ressourcen qualifiziereroptionen** zugreifen, indem Sie auf das Symbol mit den Auslassungs Punkten rechts neben der Schaltfläche **quer** Format klicken:
 
-[![Optionen für ressourcenqualifizierer](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
+[![Ressourcen qualifiziereroptionen](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
 
-Dieses Dialogfeld zeigt Pulldown-Menüs für die folgenden ressourcenqualifizierer:
+Dieses Dialogfeld enthält Pulldownmenüs für die folgenden Ressourcen Qualifizierer:
 
--   **Sprache** &ndash; zeigt die verfügbaren Ressourcen und bietet eine Option zum Hinzufügen der neuen Sprache/Region-Ressourcen.
+-   **Sprache** &ndash; Zeigt verfügbare Sprachressourcen an und bietet eine Option zum Hinzufügen neuer sprach-und Regions Ressourcen.
 
--   **UI-Modus** &ndash; Listen von Anzeigemodi (z. B. **Auto Dock** und **Helpdesk Dock**) sowie layoutausrichtungen.
+-   **UI-Modus** Listet Anzeigemodi (z. b. **autodock** und **Desk Dock**) sowie layoutrichtungen auf. &ndash;
 
-Jede dieser Pulldown-Menüs wird geöffnet, neue Dialogfelder angezeigt wird, können Sie auswählen und Konfigurieren von ressourcenqualifizierer (wie unten beschrieben).
+Jedes dieser Pulldownmenüs öffnet neue Dialogfelder, in denen Sie Ressourcen Qualifizierer auswählen und konfigurieren können (wie im folgenden erläutert).
 
 ### <a name="language"></a>Sprache
 
-Die **Sprache** Pulldownmenü enthält nur die Sprachen, die Ressourcen definiert haben (oder **alle Sprachen**, dies ist die Standardeinstellung). Es ist jedoch auch eine **Sprache/Region hinzufügen...**  Option aus, die Ihnen ermöglicht, eine neue Sprache zur Liste hinzuzufügen:
+Das Dropdown Menü **Sprache** listet nur die Sprachen auf, für die Ressourcen definiert sind (oder **alle Sprachen**, die Standardeinstellung). Es gibt jedoch auch eine Option zum **Hinzufügen von Sprachen/Regionen** , mit der Sie der Liste eine neue Sprache hinzufügen können:
 
 [![Sprache/Region hinzufügen](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
 
-Beim Klicken auf **Sprache/Region hinzufügen...** , **Sprache auswählen** Dialogfeld wird geöffnet, um Dropdownlisten der verfügbaren Sprachen und Regionen anzuzeigen:
+Wenn Sie auf **Sprache/Region hinzufügen...** klicken, wird das Dialogfeld **Sprache auswählen** geöffnet, in dem Dropdown Listen mit den verfügbaren Sprachen und Regionen angezeigt werden:
 
 [![Liste der Sprachen](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
 
-In diesem Beispiel haben wir **fr (Französisch)** für die Sprache und **BE** (Belgien) für das Land/Region Regionalsprache Französisch. Beachten Sie, dass die **Region** Feld ist optional, da viele Sprachen können, ohne dass für bestimmte Regionen angegeben werden. Wenn die **Sprache** Pulldownmenü erneut geöffnet wird, wird die neu hinzugefügte Sprache/Region-Ressource:
+In diesem Beispiel haben wir **fr (Französisch)** für die Sprache und **BE** (Belgien) für das Land/Region Regionalsprache Französisch. Beachten Sie, dass das Feld **Region** optional ist, da viele Sprachen ohne Rücksicht auf bestimmte Regionen angegeben werden können. Wenn das **sprach** -Pulldownmenü erneut geöffnet wird, wird die neu hinzugefügte Sprache/Regions Ressource angezeigt:
 
-[![Sprache und Region ausgewählt](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
+[![Ausgewählte Sprache und Region](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
 
-Beachten Sie, dass wenn Sie eine neue Sprache hinzufügen, aber Sie erstellen keine neue Ressourcen für sie die hinzugefügte Sprache wird nicht mehr auf das nächste Mal angezeigt werden Sie das Projekt zu öffnen.
+Beachten Sie Folgendes: Wenn Sie eine neue Sprache hinzufügen, aber keine neuen Ressourcen dafür erstellen, wird die hinzugefügte Sprache beim nächsten Öffnen des Projekts nicht mehr angezeigt.
 
 ### <a name="ui-mode"></a>UI-Modus
 
-Beim Klicken auf die **Benutzeroberflächenmodus** Pulldown-Menü, eine Liste der Modi angezeigt wird, wie z. B. **Normal**, **Auto Dock**, **Helpdesk Dock**, **Fernsehen**, **Appliance**, und **Watch**:
+Wenn Sie auf den Pulldownmenü des **UI-Modus** klicken, wird eine Liste der Modi angezeigt, wie z. b. **Normal**, **Car Dock**, **Desk Dock**, **TV**, **Appliance**und **Watch**:
 
 [![Menü für UI-Modus](resource-qualifiers-images/xs/12-ui-mode-m75-sml.png)](resource-qualifiers-images/xs/12-ui-mode-m75.png#lightbox)
 
-Unterhalb dieser Liste sind die Modi Nacht **nicht Nacht** und **Nacht**, gefolgt von der layoutausrichtungen **von links nach rechts** und **von rechts nach links**. Die letzten paar Optionen können Sie entweder **runden Bildschirme** oder **rechteckigen Bildschirme** (nützlich für Android Wear-Geräte).
+Unterhalb dieser Liste befinden sich die Nacht Modi **nicht Nacht** und **Nacht**, gefolgt von den layoutrichtungen von **Links nach rechts** und von **rechts nach links**. Mit dem letzten paar von Optionen können Sie entweder **roundscreens** oder **rechteckige Bildschirme** auswählen (nützlich für Android Wear-Geräte).
 
-Weitere Informationen zu Android-Benutzeroberflächen-Modi finden Sie unter [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
-Informationen zu **von links nach rechts** und **von rechts nach links** Optionen finden Sie [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
+Weitere Informationen zu den Android-Benutzeroberflächen Modi finden Sie unter [uimodemanager](xref:Android.App.UiModeManager).
+Informationen zu den Optionen von **Links nach rechts** und von **rechts nach links** finden Sie unter [LayoutDirection](xref:Android.Util.LayoutDirection).
 
 
-## <a name="action-bar-settings"></a>Einstellungen für Aktionsleiste
+## <a name="action-bar-settings"></a>Aktionsleiste Einstellungen
 
-Die **Einstellungen für Aktionsleiste** Symbol links neben das Pinselsymbol (Design-Editor) verfügbar ist:
+Das Symbol Aktionsleisten- **Einstellungen** ist links neben dem Pinselsymbol (Design-Editor) verfügbar:
 
-[![Einstellungen für Aktionsleiste](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
+[![Aktionsleiste Einstellungen](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
 
-Dieses Symbol öffnet ein Dialogfeld im Popover, die eine Möglichkeit bietet, wählen Sie aus einem von drei Modi der Aktionsleiste:
+Mit diesem Symbol wird ein Dialogfeld-popover geöffnet, das eine Möglichkeit bietet, eine der drei Aktionsleiste Modi auszuwählen:
 
--   **Standard** &ndash; besteht aus einem Logo oder Symbol und dem Titel Text mit einem optionalen Untertitel.
+-   **Standard** &ndash; Besteht aus einem Logo oder einem Symbol und einem Titeltext mit einem optionalen Untertitel.
 
--   **Liste** &ndash; Liste Navigationsmodus befindet. Anstelle von statischen Titeltext, bietet dieser Modus einem Listenmenü für die Navigation innerhalb der Aktivität (d. h. es kann angezeigt werden dem Benutzer als ein Dropdown-Liste).
+-   **Liste** &ndash; Navigationsmodus auflisten. Anstelle von statischem Titeltext zeigt dieser Modus ein Listen Menü für die Navigation innerhalb der Aktivität an (d. h., es kann dem Benutzer als Dropdown Liste angezeigt werden).
 
--   **Registerkarten** &ndash; Registerkarte Navigationsmodus befindet. Anstelle von statischen Titeltext enthält in diesem Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität.
+-   **Registerkarten** &ndash; Registerkarten-Navigationsmodus. Anstelle von statischem Titeltext stellt dieser Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität dar.
 
 ## <a name="themes"></a>Designs
 
-Die **Design** Dropdown-Menü zeigt alle der im Projekt definierten Designs. Auswählen von **mehr Designs** öffnet ein Dialogfeld mit einer Liste von allen Designs, die über das installierte Android SDK verfügbar, wie unten dargestellt:
+Das **Dropdown** Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
 
-[![Weitere Themen-Liste](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
+[![Weitere Themenliste](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
 
-Wenn ein Design aktiviert ist, wird der Entwurfsoberfläche aktualisiert, um den Effekt des neuen Designs anzeigen. Beachten Sie, dass diese Änderung dauerhaft erfolgt nur, wenn die **OK** geklickt wird die **Design** Dialogfeld. Nachdem ein Design ausgewählt wurde, wird es in enthalten die **Design** Dropdown-Menü wie unten:
+Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im **Design Dialogfeld** auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt **in das** Dropdown Menü "Design" eingefügt:
 
-[![Design "hell" ist jetzt verfügbar](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
+[![Das helle Design ist jetzt verfügbar.](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
 
-## <a name="android-version"></a>Android-version
+## <a name="android-version"></a>Android-Version
 
-Die Android **Version** Auswahl legt fest, die Android-Version, die zum Rendern des Layouts im Designer verwendet wird. Der Selektor zeigt alle Versionen, die mit Framework-Zielversion des Projekts kompatibel sind:
+Die Android- **Versions** Auswahl legt die Android-Version fest, die zum Rendering des Layouts im Designer verwendet wird. Der Selektor zeigt alle Versionen an, die mit der Ziel Framework-Version des Projekts kompatibel sind:
 
 [![Liste der Android-Versionen](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
 
-Framework-Zielversion kann festgelegt werden, in die projekteinstellungen in die **Projektoptionen > Erstellen > Allgemein** Abschnitt. Weitere Informationen zu Framework-Zielversion, finden Sie unter [Understanding Android API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
+Die Zielframeworkversion kann in den Projekteinstellungen im Abschnitt **Projektoptionen > Build > Allgemein** festgelegt werden. Weitere Informationen zur Ziel Framework-Version finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 
-Die Menge von Widgets, die in der Toolbox verfügbar, wird von Framework-Zielversion des Projekts bestimmt. Dies gilt auch für die Eigenschaften der **Pad "Eigenschaft"**. Ist die Liste der Widgets *nicht* durch die im ausgewählten Wert bestimmt die **Version** Auswahl der Symbolleiste. Z. B. Wenn Sie die Zielversion des Projekts auf Android 4.4 festlegen, Sie können Android 6.0 dennoch auswählen, in der Symbolleiste-Versionsauswahl, um festzustellen, wie das Projekt in Android 6.0 aussieht, aber nicht möglich, Widgets hinzufügen, die auf Android 6.0 spezifisch sind &ndash;  Sie können weiterhin die Widgets stehen, die in Android 4.4 verfügbar sind.
+Der Satz von Widgets, der in der Toolbox verfügbar ist, wird von der Ziel Framework-Version des Projekts bestimmt. Dies gilt auch für die im eigenschaftenpad verfügbaren Eigenschaften. Die Liste der verfügbaren Widgets wird *nicht* durch den Wert bestimmt, der in der **Versions** Auswahl der Symbolleiste ausgewählt ist. Wenn Sie z. b. die Zielversion des Projekts auf Android 4,4 festgelegt haben, können Sie in der Symbolleiste der Versions Auswahl weiterhin Android 6,0 auswählen, um zu sehen, wie das Projekt in Android 6,0 aussieht, Sie können jedoch keine Widgets hinzufügen, &ndash; die für Android 6,0 spezifisch sind.  Sie sind weiterhin auf die Widgets beschränkt, die in Android 4,4 verfügbar sind.
 
 Weitere Informationen zu Ressourcentypen finden Sie unter [Android-Ressourcen](~/android/app-fundamentals/resources-in-android/index.md).
 

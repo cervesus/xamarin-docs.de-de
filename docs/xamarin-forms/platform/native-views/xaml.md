@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
-ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
+ms.openlocfilehash: b2e441a8e1443d1d32d553e9bbf1126fe5e380e7
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65731523"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508847"
 ---
 # <a name="native-views-in-xaml"></a>Native Ansichten in XAML
 
@@ -38,7 +38,7 @@ So betten Sie einen einheitlichen Einblick in einer Xamarin.Forms-XAML-Datei ein
 1. Erstellen Sie eine Instanz der einheitlichen Ansicht, in der XAML-Datei.
 
 > [!IMPORTANT]
-> Kompilierte XAML muss für alle XAML-Seiten deaktiviert werden, die native Ansichten verwenden. Dies kann erreicht werden, werden, indem die CodeBehind-Klasse für die XAML-Seite mit den `[XamlCompilation(XamlCompilationOptions.Skip)]` Attribut. Weitere Informationen zu XAML-Kompilierung, finden Sie unter [XAML-Kompilierung in Xamarin.Forms](~/xamarin-forms/xaml/xamlc.md).
+> Das kompilierte XAML muss für alle XAML-Seiten deaktiviert werden, die native Sichten verwenden. Dies kann erreicht werden, indem Sie die Code-Behind-Klasse für die XAML- `[XamlCompilation(XamlCompilationOptions.Skip)]` Seite mit dem-Attribut versehen. Weitere Informationen zur XAML-Kompilierung finden Sie unter [XAML-Kompilierung in xamarin. Forms](~/xamarin-forms/xaml/xamlc.md).
 
 Um auf eine einheitliche Ansicht aus einer CodeBehind-Datei verweisen, verwenden Sie eine freigegebene Asset Projekt (SAP) und umschließen Sie den plattformspezifischen Code mit bedingten Kompilierungsdirektiven. Weitere Informationen finden Sie unter [verweisen auf Native Ansichten aus Code](#native_view_code).
 
@@ -184,7 +184,7 @@ Im folgenden Codebeispiel wird veranschaulicht, beide Verfahren:
 
 Die [ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*) Factorymethode dient zum Festlegen der [ `UILabel.Font` ](xref:UIKit.UILabel.Font) Eigenschaft, um ein neues [ `UIFont` ](xref:UIKit.UIFont) unter iOS. Die `UIFont` werden Name und Größe angegeben, indem das Argument der Methode, die untergeordnete Elemente von der `x:Arguments` Attribut.
 
-Die [ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/) Factorymethode dient zum Festlegen der [ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/) Eigenschaft, um ein neues [ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/) unter Android. Die `Typeface` Familiennamen und den Stil werden angegeben, indem das Argument der Methode, die untergeordnete Elemente von der `x:Arguments` Attribut.
+Die [ `Typeface.Create` ](xref:Android.Graphics.Typeface.Create*) Factorymethode dient zum Festlegen der [ `TextView.Typeface` ](xref:Android.Widget.TextView.Typeface) Eigenschaft, um ein neues [ `Typeface` ](xref:Android.Graphics.Typeface) unter Android. Die `Typeface` Familiennamen und den Stil werden angegeben, indem das Argument der Methode, die untergeordnete Elemente von der `x:Arguments` Attribut.
 
 Die [ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily) Konstruktor dient zum Festlegen der [ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily) Eigenschaft, um ein neues `FontFamily` auf die universelle Windows-Plattform (UWP). Die `FontFamily` vom Methodenarguments, das ein untergeordnetes Element des angegebene Name ist der `x:Arguments` Attribut.
 
@@ -325,7 +325,7 @@ Die Seite enthält eine [ `Label` ](xref:Xamarin.Forms.Label) , die vom Benutzer
 
 Diese Seite enthält auch eine native Picker-Ansicht für jede Plattform. Jede systemeigene Ansicht zeigt die Auflistung der Früchte durch die Bindung der `ItemSource` Eigenschaft, um die `SubclassedNativeControlsPageViewModel.Fruits` Auflistung. Dies ermöglicht dem Benutzer eine Frucht ist, wählen Sie, wie in den folgenden Screenshots gezeigt:
 
-![](xaml-images/sub-classed.png "Unterklassen Native Ansichten")
+![](xaml-images/sub-classed.png "Untergeordnete Native Sichten")
 
 Unter iOS und Android verwenden die nativen Sammlern Methoden zum Einrichten der Steuerelemente. Daher müssen diese Datumsauswahl in Unterklassen unterteilt werden zum Verfügbarmachen von Eigenschaften, um die XAML-freundliche zu. Auf der universellen Windows-Plattform (UWP), die `ComboBox` bereits XAML-freundliche, und daher keine Unterklassen erforderlich.
 
@@ -423,7 +423,7 @@ Die `PickerModel` Klasse stellt den zugrunde liegenden Speicher für die `MyUIPi
 
 ### <a name="android"></a>Android
 
-Die Android-Implementierung Unterklassen der [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) anzeigen, und macht Eigenschaften und ein Ereignis, das problemlos von XAML genutzt werden kann:
+Die Android-Implementierung Unterklassen der [ `Spinner` ](xref:Android.Widget.Spinner) anzeigen, und macht Eigenschaften und ein Ereignis, das problemlos von XAML genutzt werden kann:
 
 ```csharp
 class MySpinner : Spinner
@@ -481,7 +481,7 @@ class MySpinner : Spinner
 }
 ```
 
-Die `MySpinner` -Klasse macht `ItemsSource` und `SelectedObject` Eigenschaften, und ein `ItemSelected` Ereignis. Die Elemente, die angezeigt wird der `MySpinner` Klasse von bereitgestellt werden die [ `Adapter` ](https://developer.xamarin.com/api/type/Android.Widget.Adapter/) der Ansicht zugeordnet, und die Elemente werden aufgefüllt, in der `Adapter` bei der `ItemsSource` -Eigenschaft festgelegt ist. Wenn das ausgewählte Element in der `MySpinner` Klasse geändert wird, die `OnBindableSpinnerItemSelected` Ereignishandler aktualisiert die `SelectedObject` Eigenschaft.
+Die `MySpinner` -Klasse macht `ItemsSource` und `SelectedObject` Eigenschaften, und ein `ItemSelected` Ereignis. Die Elemente, die angezeigt wird der `MySpinner` Klasse von bereitgestellt werden die [ `Adapter` ](xref:Android.Widget.Adapter) der Ansicht zugeordnet, und die Elemente werden aufgefüllt, in der `Adapter` bei der `ItemsSource` -Eigenschaft festgelegt ist. Wenn das ausgewählte Element in der `MySpinner` Klasse geändert wird, die `OnBindableSpinnerItemSelected` Ereignishandler aktualisiert die `SelectedObject` Eigenschaft.
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -1,67 +1,67 @@
 ---
-title: Debuggen von Integrationen
-description: In diesem Dokument wird beschrieben, wie zum Debuggen von Xamarin Workbooks-Integrationen, sowohl agentseitig als auch die clientseitige unter Windows und Mac.
+title: Debugintegrationen
+description: In diesem Dokument wird beschrieben, wie Sie Xamarin Workbooks-Integrationen sowohl auf Agent-Seite als auch auf Clientseite unter Windows und Mac Debuggen.
 ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 86d9c6af93e7f59eb0e819730e46324688df7566
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b89c0855b35a10a2afcbb69c4a011079c2aaf1d
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61293736"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511859"
 ---
-# <a name="debugging-integrations"></a>Debuggen von Integrationen
+# <a name="debugging-integrations"></a>Debugintegrationen
 
-## <a name="debugging-agent-side-integrations"></a>Debuggen von agentseitig-Integrationen
+## <a name="debugging-agent-side-integrations"></a>Debuggen von agentseitigen Integrationen
 
-Debuggen von agentseitig Integrationen erfolgt am besten mithilfe von bereitgestellten Protokollierungsmethoden der `Log` -Klasse im `Xamarin.Interactive.Logging`. Finden Sie unter den [ `API docs` ](https://developer.xamarin.com/api/type/Xamarin.Interactive.Logging.Log/) für die Methoden aufrufen.
+Das Debuggen von agentseitigen Integrationen erfolgt am besten mithilfe der Protokollierungs `Log` Methoden der `Xamarin.Interactive.Logging`-Klasse in.
 
-Unter MacOS, protokollmeldungen in sowohl im Protokolldatei-Viewer-Menü angezeigt werden (**Fenster > Protokollanzeige**) und im Clientprotokoll. Auf Windows Nachrichten werden nur angezeigt, im Clientprotokoll, da es keine Protokollanzeige vorhanden ist.
+Unter macOS werden Protokollmeldungen sowohl im Menü Log Viewer (**Fenster > Log Viewer**) als auch im Client Protokoll angezeigt. Unter Windows werden Meldungen nur im Client Protokoll angezeigt, da dort kein Protokoll-Viewer vorhanden ist.
 
-Das Clientprotokoll ist an den folgenden Speicherorten unter MacOS und Windows:
+Das Client Protokoll befindet sich unter macOS und Windows an den folgenden Speicherorten:
 
 - Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-Dabei ist zu beachten ist, die beim Laden von Integrationen über den üblichen `#r` Mechanismus während der Entwicklung, Integration Assembly übernommen als eine _Abhängigkeit_ der Arbeitsmappe und mit ihm verpackt werden, wenn ein absoluter Pfad ist nicht verwendet. Dadurch können Änderungen nicht weitergegeben werden, angezeigt werden, als ob die Neuerstellung der Integration hat nichts.
+Beachten Sie, dass beim Laden von Integrationen über den üblichen `#r` Mechanismus während der Entwicklung die integrationsassembly als _Abhängigkeit_ von der Arbeitsmappe übernommen und mit ihr verpackt wird, wenn kein absoluter Pfad verwendet wird. Dies kann dazu führen, dass Änderungen nicht weitergegeben werden, so als ob das Neuerstellen der Integration nichts bewirkt hat.
 
-## <a name="debugging-client-side-integrations"></a>Debuggen von clientseitigen-Integrationen
+## <a name="debugging-client-side-integrations"></a>Debuggen von Client seitigen Integrationen
 
-Die clientseitige Integrationen in JavaScript geschrieben und in unsere Web-Browser-Oberfläche geladen (finden Sie unter der [Architektur](~/tools/workbooks/sdk/architecture.md) Dokumentation), die beste Möglichkeit, die sie Debuggen den WebKit-Developer-Tools auf einem Mac verwenden ist, oder verwenden Sie F12-Auswahl für Windows .
+Da Client seitige Integrationen in JavaScript geschrieben und in unsere Webbrowser Oberfläche geladen werden (siehe [Architektur](~/tools/workbooks/sdk/architecture.md) Dokumentation), ist die beste Möglichkeit, Sie zu debuggen, die Verwendung der WebKit-Entwicklertools unter Mac oder die Verwendung von F12-Auswahl unter Windows.
 
-Beide Sätze von Tools können Sie JavaScript/TypeScript-Quelle anzeigen, legen Sie Haltepunkte, Anzeigen der Konsolenausgabe, und überprüfen und ändern das DOM.
+Beide Toolsets ermöglichen es Ihnen, die JavaScript/typescript-Quelle anzuzeigen, Haltepunkte festzulegen, Konsolen Ausgaben anzuzeigen und das DOM zu überprüfen und zu ändern.
 
 ### <a name="mac"></a>Mac
 
-Um die Developer Tools für Xamarin Workbooks auf einem Mac zu aktivieren, führen Sie den folgenden Befehl in Ihrem Terminal aus:
+Führen Sie den folgenden Befehl in Ihrem Terminal aus, um die Entwicklertools für Xamarin Workbooks auf dem Mac zu aktivieren:
 
 ```shell
 defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 ```
 
-und starten Sie Xamarin Workbooks. Sobald Sie dies tun, sollten Sie sehen **Element überprüfen** in Ihre Rechtsklick-Kontextmenü, und ein neues angezeigt werden **Developer** Bereich stehen in Arbeitsmappen-Einstellungen. Diese Option können Sie wählen, wenn Sie die Developer-Tools, die beim Start geöffnet werden soll:
+und dann Xamarin Workbooks neu starten. Wenn Sie dies tun, sollte das Element "über **prüfen** " in Ihrem Kontextmenü angezeigt werden, und ein neuer **Entwickler** Bereich ist in den Arbeitsmappen-Einstellungen verfügbar. Mit dieser Option können Sie auswählen, ob die Entwicklertools beim Start geöffnet werden sollen:
 
-[![Entwickler-Bereich](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
+[![Entwicklerbereich](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
-Diese Voreinstellung ist ebenfalls nur neu starten, müssen Sie die Arbeitsmappen-Client neu starten, damit es auf neue Arbeitsmappen wirksam. Aktivieren die Developer-Tools über das Kontextmenü oder die Einstellungen werden die vertraute Safari-Benutzeroberfläche angezeigt werden:
+Diese Einstellung ist nur neu starten – Sie müssen den Arbeitsmappen-Client neu starten, damit er in neuen Arbeitsmappen wirksam wird. Wenn Sie die Entwicklertools über das Kontextmenü oder die Einstellungen aktivieren, wird die vertraute Safari-Benutzeroberfläche angezeigt:
 
-[![Safari-Entwicklungstools](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
+[![Safari-Entwicklertools](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
-Weitere Informationen zur Verwendung der Safari-Entwickler-Tools finden Sie unter den [WebKit-Inspektor Dokumentation][webkit-docs].
+Informationen zur Verwendung der Safari-Entwicklertools finden Sie in der [Dokumentation zum WebKit-Inspektor][webkit-docs].
 
 ### <a name="windows"></a>Windows
 
-Auf Windows, bietet das IE-Team ein Tool, genannt "F12-Auswahl", um einen Remotedebugger für eingebettete Internet Explorer-Instanzen. Sie finden das Tool an folgendem Speicherort:
+Unter Windows stellt das Internet Explorer-Team ein Tool mit dem Namen "F12 Chooser" bereit, bei dem es sich um einen Remote Debugger für eingebettete Internet Explorer-Instanzen handelt. Das Tool befindet sich an folgendem Speicherort:
 
 ```shell
 C:\Windows\System32\F12\F12Chooser.exe
 ```
 
-Zur Auswahl von F12, und Sie sollte die eingebettete-Instanz, die die Arbeitsmappen-Client-Oberfläche in der Liste zugrunde liegen. Wählen Sie es, und die vertrauten F12 Tools zum Debuggen von Internet Explorer angezeigt werden, an den Client angehängt:
+Führen Sie F12 Chooser aus, und es sollte die eingebettete Instanz angezeigt werden, die die Client Oberfläche der Arbeitsmappen in der Liste unterstützt. Wählen Sie es aus, und die vertrauten F12-Debugtools von Internet Explorer werden angezeigt, die an den Client angefügt sind:
 
-[![F12-tools](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
+[![F12-Tools](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
 
 [webkit-docs]: https://trac.webkit.org/wiki/WebInspector

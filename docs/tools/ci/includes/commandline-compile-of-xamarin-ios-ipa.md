@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: ef16224b9ef060ff8643211b8e1f0c767c518bdf
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e383bbccd4e76be8a208f5680e5cf21e45a0dbc3
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67841579"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511941"
 ---
 
-Die folgende Befehlszeile zum Angeben eines Releasebuilds der Lösung **SOLUTION_FILE.sln** für das iPhone. Der Speicherort der IPA kann festgelegt werden, durch Angabe der `IpaPackageDir` Eigenschaft in der Befehlszeile:
+In der folgenden Befehlszeile wird ein Releasebuild der Projekt Mappe " **SOLUTION_FILE. sln** " für das iPhone angegeben. Der Speicherort der IPA-Adresse kann festgelegt werden `IpaPackageDir` , indem Sie die-Eigenschaft in der Befehlszeile angeben:
 
-- Auf dem Mac mit **Xbuild**:
+- Auf dem Mac mit **xbuild**:
 
         xbuild /p:Configuration="Release" \ 
            /p:Platform="iPhone" \ 
            /p:IpaPackageDir="$HOME/Builds" \
            /t:Build MyProject.sln
 
-Die **Xbuild** Befehl befindet sich in der Regel im Verzeichnis **/Library/Frameworks/Mono.framework/Commands**.
+Der **xbuild** -Befehl befindet sich in der Regel im Verzeichnis **/Library/Frameworks/Mono.Framework/Commands**.
 
-- Auf Windows, die mit **Msbuild**:
+- Unter Windows mit **MSBuild**:
 
         msbuild /p:Configuration="Release" 
             /p:Platform="iPhone" 
@@ -27,7 +27,6 @@ Die **Xbuild** Befehl befindet sich in der Regel im Verzeichnis **/Library/Frame
             /t:Build MyProject.sln
 
 
-**MSBuild** wird nicht automatisch erweitert `$( )` Ausdrücke mithilfe der Befehlszeile übergeben. Aus diesem Grund ist es wird empfohlen, einen vollständigen Pfad verwenden, beim Festlegen der `IpaPackageDir` an der Befehlszeile eingeben.
+von **MSBuild** werden von der `$( )` Befehlszeile über gegebene Ausdrücke nicht automatisch erweitert. Aus diesem Grund wird empfohlen, beim Festlegen `IpaPackageDir` von in der Befehlszeile einen vollständigen Pfad zu verwenden.
 
-
-Finden Sie unter den [Anmerkungen zu dieser Version für iOS 9.8](https://developer.xamarin.com/releases/ios/xamarin.ios_9/xamarin.ios_9.8/#New_MSBuild_property_IpaPackageDir_to_customize_.ipa_output_location) um mehr über die `IpaPackageDir` Eigenschaft.
+Weitere Informationen `IpaPackageDir` zur-Eigenschaft finden Sie in den [Anmerkungen zu dieser Version von IOS 9,8](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_9/xamarin.ios_9.8.md#new-msbuild-property-ipapackagedir-to-customize-ipa-output-location) .

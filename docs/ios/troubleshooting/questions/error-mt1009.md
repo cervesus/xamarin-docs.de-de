@@ -7,21 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4a67537cc53aeecf1b86d11dbf041cea79587dd2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b01701566cec88ad4a1493cf5ab9778bd38792b0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61422008"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511816"
 ---
 # <a name="error-mt1009-could-not-copy-the-assembly"></a>Fehler MT1009: Die Assembly konnte nicht kopiert werden.
 
 > [!IMPORTANT]
-> In früheren Versionen von Xamarin.iOS hat dieses Problem behoben wurde. Jedoch, wenn das Problem auf die neueste Version der Software auftritt, melden Sie bitte eine [neuer Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) erstellen Sie mit der Ihre vollständige versionsverwaltung Informationen "und" vollständig "Protokollausgabe.
+> Dieses Problem wurde in den letzten Versionen von xamarin. IOS gelöst. Wenn das Problem jedoch in der aktuellen Version der Software auftritt, melden Sie einen [neuen Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) mit den vollständigen Versionsinformationen und der vollständigen buildprotokolleausgabe.
 
-Siehe unsere [– Anmerkungen zu dieser](https://developer.xamarin.com/releases/ios/xamarin.ios_7/xamarin.ios_7.2/), dies ist ein bekanntes Problem in Xamarin.iOS 7.2.6. Dieses Problem ist aufgrund der Dateiberechtigungen, die erhöhte Rechte erforderlich, wenn Xamarin.iOS, und ein anderes Benutzerkonto installiert wird Hauptkonto des Entwicklers.
+Wie in den Anmerkungen zu dieser [Version](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_7/xamarin.ios_7.2/index.md)beschrieben, handelt es sich hierbei um ein bekanntes Problem in xamarin. IOS 7.2.6. Dieses Problem ist darauf zurückzuführen, dass Dateiberechtigungen höhere Berechtigungen erfordern, wenn xamarin. IOS mit einem anderen Benutzerkonto als das Hauptkonto des Entwicklers installiert wird.
 
-Zur Umgehung des Problems öffnen Sie das Terminal.app auf der Arbeitsstation Mac, und führen Sie den folgenden Befehl:
+Um das Problem zu umgehen, öffnen Sie die Terminal. app auf der Mac-Arbeitsstation, und führen Sie den folgenden Befehl aus:
 
 `sudo chmod 0644 /Developer/MonoTouch/usr/lib/mono/2.1/monotouch.dll.mdb`
-
