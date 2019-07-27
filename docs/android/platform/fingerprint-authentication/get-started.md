@@ -1,45 +1,45 @@
 ---
-title: Erste Schritte mit Authentifizierung per Fingerabdruck
+title: Ersten Einstieg in die Fingerabdruckauthentifizierung
 ms.prod: xamarin
 ms.assetid: 7BACCB36-8E3E-4E5D-B8EF-56A639839FD2
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/17/2018
-ms.openlocfilehash: 3082dfcd6d0ffbc6404a89a10819e60b57b9c61c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c433d4d7920b024795e2e8344b452e25d8f58cf4
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023810"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510645"
 ---
-# <a name="getting-started-with-fingerprint-authentication"></a>Erste Schritte mit Authentifizierung per Fingerabdruck
+# <a name="getting-started-with-fingerprint-authentication"></a>Ersten Einstieg in die Fingerabdruckauthentifizierung
 
-Zunächst lassen Sie uns zunächst wird beschrieben, wie ein Xamarin.Android-Projekt so konfigurieren, dass die Anwendung die Authentifizierung per Fingerabdruck zu verwenden ist:
+Zunächst erfahren Sie, wie Sie ein xamarin. Android-Projekt so konfigurieren, dass die Anwendung die Fingerabdruckauthentifizierung verwenden kann:
 
-1. Update **"androidmanifest.xml"** , deklarieren Sie die Berechtigungen, die den Fingerabdruck-APIs erfordern.
-2. Rufen Sie einen Verweis auf die `FingerprintManager`.
-3. Überprüfen Sie, dass das Gerät kann per Fingerabdruck zu scannen.
+1. Aktualisieren Sie " **androidmanifest. XML** ", um die Berechtigungen für die Fingerabdruck-APIs zu deklarieren.
+2. Rufen Sie einen Verweis auf `FingerprintManager`die ab.
+3. Überprüfen Sie, ob das Gerät Fingerabdruck Scannen kann.
 
-## <a name="requesting-permissions-in-the-application-manifest"></a>Anfordernde von Berechtigungen in der Anwendung Manifest
+## <a name="requesting-permissions-in-the-application-manifest"></a>Anfordern von Berechtigungen im Anwendungs Manifest
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Eine Android-Anwendung muss Anfordern der `USE_FINGERPRINT` -Berechtigung für das Manifest. Der folgende Screenshot zeigt, wie Sie diese Berechtigung für die Anwendung in Visual Studio hinzufügen:
+Eine Android-Anwendung muss die `USE_FINGERPRINT` -Berechtigung im Manifest anfordern. Der folgende Screenshot zeigt, wie Sie diese Berechtigung der Anwendung in Visual Studio hinzufügen:
 
-[![Aktivieren der Verwendung\_FINGERABDRUCK auf dem Android-Manifest](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png#lightbox) 
+[![Aktivieren von\_Fingerabdruck auf dem Android-Manifest-Bildschirm](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png#lightbox) 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Eine Android-Anwendung muss Anfordern der `USE_FINGERPRINT` -Berechtigung für das Manifest. Der folgende Screenshot zeigt, wie Sie diese Berechtigung für die Anwendung in Visual Studio für Mac hinzufügen:
+Eine Android-Anwendung muss die `USE_FINGERPRINT` -Berechtigung im Manifest anfordern. Der folgende Screenshot zeigt, wie Sie diese Berechtigung der Anwendung in Visual Studio für Mac hinzufügen:
 
-[![Aktivieren der UseFingerprint auf dem Android-Anwendung](get-started-images/fingerprint-01-xs.png)](get-started-images/fingerprint-01-xs.png#lightbox) 
+[![Aktivieren von usefinger Abdruck auf dem Android-Anwendungsbildschirm](get-started-images/fingerprint-01-xs.png)](get-started-images/fingerprint-01-xs.png#lightbox) 
 
 -----
 
-## <a name="getting-an-instance-of-the-fingerprintmanager"></a>Abrufen einer Instanz der dem FingerprintManager
+## <a name="getting-an-instance-of-the-fingerprintmanager"></a>Eine Instanz von fingerprintmanager wird aufgerufen
 
-Als Nächstes muss die Anwendung ruft eine Instanz von der `FingerprintManager` oder `FingerprintManagerCompat` Klasse. Mit älteren Versionen von Android-Versionen kompatibel ist, sollten eine Android-Anwendung verwenden, die API-Kompatibilität in der Android-Unterstützung v4-NuGet-Paket gefunden. Der folgende Codeausschnitt zeigt, wie das entsprechende Objekt aus dem Betriebssystem abgerufen wird: 
+Als nächstes muss die Anwendung eine Instanz der `FingerprintManager` -Klasse oder der `FingerprintManagerCompat` -Klasse erhalten. Damit eine Android-Anwendung mit älteren Versionen von Android kompatibel ist, sollte Sie die Kompatibilitäts-APIs verwenden, die im Android Support V4 nuget-Paket enthalten sind. Der folgende Code Ausschnitt veranschaulicht, wie Sie das entsprechende-Objekt vom Betriebssystem erhalten: 
 
 ```csharp
 // Using the Android Support Library v4
@@ -49,15 +49,15 @@ FingerprintManagerCompat fingerprintManager = FingerprintManagerCompat.From(cont
 FingerprintManager fingerprintManager = context.GetSystemService(Context.FingerprintService) as FingerprintManager;
 ```  
 
-Im vorherigen Codeausschnitt der `context` stellt alle Android `Android.Content.Context`. In der Regel ist dies die Aktivität, die die Authentifizierung durchführt.
+Im vorherigen Code Ausschnitt `context` ist alle Android. `Android.Content.Context` In der Regel handelt es sich hierbei um die Aktivität, die die Authentifizierung ausführt.
 
-## <a name="checking-for-eligibility"></a>Berechtigung prüfen
+## <a name="checking-for-eligibility"></a>Überprüfen der Berechtigung
 
-Eine Anwendung muss mehrere Überprüfungen, um sicherzustellen, dass es möglich ist, verwenden Sie die Authentifizierung per Fingerabdruck durchführen. Es gibt fünf Bestimmungen, die die Anwendung zum Überprüfen verwendet, für die Berechtigung, insgesamt:  
+Eine Anwendung muss mehrere Prüfungen durchführen, um sicherzustellen, dass es möglich ist, die Fingerabdruckauthentifizierung zu verwenden. Insgesamt gibt es fünf Bedingungen, die von der Anwendung verwendet werden, um die Berechtigung zu prüfen:  
 
-**API-Ebene 23** &ndash; der Fingerprint-APIs erfordern die API-Ebene 23 oder höher. Die `FingerprintManagerCompat` -Klasse wird die Überprüfung der API für Sie zu umschließen. Aus diesem Grund wird empfohlen, verwenden Sie die **Android Support-Bibliothek v4** und `FingerprintManagerCompat`; dies für den Endpunkt der Überprüfungen berücksichtigt wird.
+**API-Ebene 23** &ndash; Die Fingerabdruck-APIs erfordern API-Ebene 23 oder höher. Die `FingerprintManagerCompat` -Klasse packt die Überprüfung auf API-Ebene für Sie. Aus diesem Grund empfiehlt es sich, die **Android-Unterstützungs Bibliothek V4** und `FingerprintManagerCompat`zu verwenden. Hierdurch wird eine dieser Überprüfungen berücksichtigt.
 
-**Hardware** &ndash; , wenn die Anwendung zum ersten Mal wird gestartet, sollten Sie das Vorhandensein einer fingerabdruckscanners überprüfen:
+**Hardware** &ndash; Wenn die Anwendung zum ersten Mal gestartet wird, sollte Sie prüfen, ob ein Fingerabdruckscanner vorhanden ist:
 
 ```csharp
 FingerprintManagerCompat fingerprintManager = FingerprintManagerCompat.From(context);
@@ -67,7 +67,7 @@ if (!fingerprintManager.IsHardwareDetected)
 }
 ```
 
-**Gerät wird gesichert** &ndash; muss der Benutzer das Gerät mit einem Bildschirmsperre gesichert haben. Wenn der Benutzer das Gerät mit einem bildschirmsperren nicht gesichert hat und die Sicherheit wichtig für die Anwendung ist, sollte der Benutzer benachrichtigt werden, dass eine bildschirmsperren konfiguriert werden muss. Der folgende Codeausschnitt zeigt, wie Sie diese vor – da dies zu überprüfen:
+**Gerät ist geschützt** &ndash; Der Benutzer muss das Gerät mit einer Bildschirmsperre gesichert haben. Wenn der Benutzer das Gerät nicht mit einer Bildschirmsperre gesichert hat und die Sicherheit für die Anwendung wichtig ist, sollte der Benutzer benachrichtigt werden, dass eine Bildschirmsperre konfiguriert werden muss. Der folgende Code Ausschnitt zeigt, wie Sie diese Voraussetzungen überprüfen:
 
 ```csharp
 KeyguardManager keyguardManager = (KeyguardManager) GetSystemService(KeyguardService);
@@ -76,7 +76,7 @@ if (!keyguardManager.IsKeyguardSecure)
 }
 ```
 
-**Registrierte Fingerabdrücke** &ndash; der Benutzer muss über mindestens einen Fingerabdruck, die mit dem Betriebssystem registriert haben. Diese Überprüfung der Berechtigung muss vor jedem Authentifizierungsversuch auftreten:
+**Registrierte Fingerabdrücke** &ndash; Der Benutzer muss über mindestens einen Fingerabdruck verfügen, der beim Betriebssystem registriert ist. Diese Berechtigungsüberprüfung sollte vor jedem Authentifizierungs Versuch erfolgen:
 
 ```csharp
 FingerprintManagerCompat fingerprintManager = FingerprintManagerCompat.From(context);
@@ -87,7 +87,7 @@ if (!fingerprintManager.HasEnrolledFingerprints)
 }
 ```
 
-**Berechtigungen** &ndash; die Anwendung muss Berechtigung vom Benutzer anfordern, bevor Sie mit der Anwendung. Für Android 5.0 und niedriger erhält der Benutzer die Berechtigung als Bedingung für die app zu installieren. Android 6.0 eingeführt, ein neues Berechtigungsmodell, das Berechtigungen zur Laufzeit überprüft. Dieser Codeausschnitt ist ein Beispiel zum Überprüfen von Berechtigungen auf Android 6.0:
+**Berechtigungen** &ndash; Die Anwendung muss vor der Verwendung der Anwendung eine Berechtigung vom Benutzer anfordern. Bei Android 5,0 und niedriger erteilt der Benutzer die Berechtigung als Bedingung für die Installation der app. Android 6,0 hat ein neues Berechtigungs Modell eingeführt, das Berechtigungen zur Laufzeit überprüft. Dieser Code Ausschnitt ist ein Beispiel für das Überprüfen von Berechtigungen für Android 6,0:
 
 ```csharp
 // The context is typically a reference to the current activity.
@@ -103,15 +103,15 @@ else
 }
 ```
 
-Überprüfen alle diese Bedingungen jedes Mal Authentifizierungsoptionen sicherzustellen, dass der Benutzer die bestmögliche benutzererfahrung erhält die Anwendung bietet. Änderungen oder Upgrades für ihre Gerät oder Betriebssystem beeinträchtigt die Verfügbarkeit der Authentifizierung per Fingerabdruck. Wenn Sie die Ergebnisse von dieser Überprüfungen zwischenspeichern möchten, sicher für Aktualisierungsszenarien Formfaktoren zur Verfügung.
+Wenn alle diese Bedingungen überprüft werden, sobald die Anwendung Authentifizierungs Optionen anbietet, wird sichergestellt, dass der Benutzer die beste Benutzer Leistung erhält. Änderungen oder Upgrades Ihres Geräts oder Betriebssystems können sich auf die Verfügbarkeit der Fingerabdruckauthentifizierung auswirken. Wenn Sie die Ergebnisse einer dieser Überprüfungen zwischenspeichern möchten, stellen Sie sicher, dass Sie Upgradeszenarien berücksichtigen.
 
-Weitere Informationen dazu, wie Berechtigungen anfordern, in Android 6.0 finden Sie in der Android-Anleitung [Anfordern von Berechtigungen zur Laufzeit](https://developer.android.com/training/permissions/requesting.html).
+Weitere Informationen zum Anfordern von Berechtigungen in Android 6,0 finden Sie im Android Guide [anfordern von Berechtigungen zur Laufzeit](https://developer.android.com/training/permissions/requesting.html).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Kontext](https://developer.xamarin.com/api/type/Android.Content.Context/)
-- [ContextCompat](https://developer.xamarin.com/api/type/Android.Support.V4.Content.ContextCompat/)
-- [KeyguardManager](https://developer.xamarin.com/api/type/Android.App.KeyguardManager/)
+- [Kontext](xref:Android.Content.Context)
+- [KeyguardManager](xref:Android.App.KeyguardManager)
+- [ContextCompat](https://developer.android.com/reference/android/support/v4/content/ContextCompat)
 - [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html)
 - [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)
 - [Anfordern von Berechtigungen zur Laufzeit](https://developer.android.com/training/permissions/requesting.html)

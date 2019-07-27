@@ -1,77 +1,77 @@
 ---
-title: Permissions In Xamarin.Android
+title: Berechtigungen in xamarin. Android
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 204dd903586164691d068a956e741c406df10b36
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1426054b60d182f7f40bf3c4b0bf69b2287ad57e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61027119"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509406"
 ---
-# <a name="permissions-in-xamarinandroid"></a>Permissions In Xamarin.Android
+# <a name="permissions-in-xamarinandroid"></a>Berechtigungen in xamarin. Android
 
 
 ## <a name="overview"></a>Übersicht
 
-Android-Anwendungen in ihren eigenen Sandbox ausgeführt und für die Sicherheit Gründe haben keinen Zugriff auf bestimmte Ressourcen oder die Hardware auf dem Gerät. Der Benutzer muss die Berechtigung für die app explizit gewähren, bevor diese Ressourcen verwendet werden kann. Beispielsweise kann keine Anwendung das GPS auf einem Gerät ohne explizite Berechtigung des Benutzers zugreifen. Android löst eine `Java.Lang.SecurityException` , wenn eine app ohne Berechtigung eine geschützte Ressource zuzugreifen versucht.
+Android-Anwendungen werden in einem eigenen Sandkasten ausgeführt und haben aus Sicherheitsgründen keinen Zugriff auf bestimmte Systemressourcen oder Hardware auf dem Gerät. Der Benutzer muss der APP explizit Berechtigungen erteilen, bevor diese Ressourcen verwendet werden können. Beispielsweise kann eine Anwendung nicht auf das GPS auf einem Gerät zugreifen, ohne dass der Benutzer explizit berechtigt ist. Android löst eine `Java.Lang.SecurityException` aus, wenn eine APP versucht, ohne Berechtigung auf eine geschützte Ressource zuzugreifen.
 
-Berechtigungen werden in deklariert die **"androidmanifest.xml"** durch den Anwendungsentwickler, wenn die app entwickelt wird. Android hat zwei unterschiedliche Workflows für die Zustimmung des Benutzers für diese Berechtigungen abrufen:
+Berechtigungen werden vom Anwendungsentwickler in der Datei " **androidmanifest. XML** " deklariert, wenn die APP entwickelt wird. Android verfügt über zwei unterschiedliche Workflows zum Abrufen der Zustimmung des Benutzers für diese Berechtigungen:
  
-* Für apps, die das Ziel Android 5.1 (API-Ebene 22) oder niedriger ist der berechtigungsanforderung aufgetreten, wenn die app installiert wurde. Wenn der Benutzer nicht die Berechtigungen erteilt hat, würde die app nicht installiert werden. Sobald die app installiert ist, ist gibt es keine Möglichkeit, die Berechtigungen mit Ausnahme der zu widerrufen, indem Sie die app deinstalliert.
-* Ab Android 6.0 (API-Ebene 23), wurden die Benutzer mehr Kontrolle über Berechtigungen vorgegeben. Sie können die gewähren oder widerrufen Berechtigungen aus, solange die app auf dem Gerät installiert ist. Dieser Screenshot zeigt die berechtigungseinstellungen für die Google-Kontakte-app. Es listet die verschiedenen Berechtigungen und ermöglicht dem Benutzer zum Aktivieren oder deaktivieren die Berechtigungen:
+* Für apps, die auf Android 5,1 (API-Ebene 22) oder niedriger abzielen, erfolgte die Berechtigungs Anforderung, als die APP installiert wurde. Wenn der Benutzer die Berechtigungen nicht erteilt hat, würde die APP nicht installiert werden. Nachdem die APP installiert wurde, gibt es keine Möglichkeit, die Berechtigungen aufzuheben, außer indem Sie die APP deinstallieren.
+* Ab Android 6,0 (API-Ebene 23) haben Benutzer mehr Kontrolle über Berechtigungen erhalten. Sie können Berechtigungen erteilen oder widerrufen, solange die APP auf dem Gerät installiert ist. Dieser Screenshot zeigt die Berechtigungseinstellungen für die Google Contacts-app. Sie listet die verschiedenen Berechtigungen auf und ermöglicht dem Benutzer das Aktivieren oder Deaktivieren von Berechtigungen:
 
-![Beispielbildschirm für Berechtigungen](permissions-images/01-permissions-check.png) 
+![Bildschirm für Beispiel Berechtigungen](permissions-images/01-permissions-check.png) 
 
-Android-apps müssen überprüfen, zur Laufzeit zu ermitteln, ob sie über die Berechtigung zum Zugriff auf eine geschützte Ressource ist. Wenn die app die Berechtigung nicht besitzt, muss er Anforderungen mithilfe der neuen APIs, die vom Android SDK für den Benutzer bereitgestellt werden die Berechtigungen ausführen. Berechtigungen sind in zwei Kategorien unterteilt:
+Android-Apps müssen sich zur Laufzeit überprüfen, um festzustellen, ob Sie über die Berechtigung zum Zugriff auf eine geschützte Ressource verfügen. Wenn die APP nicht über die erforderliche Berechtigung verfügt, muss Sie mithilfe der neuen APIs, die von der Android SDK bereitgestellt werden, damit der Benutzer die Berechtigungen erteilt. Berechtigungen werden in zwei Kategorien unterteilt:
 
-* **Berechtigungen der normalen** &ndash; Hierbei handelt es sich um Berechtigungen, die wenig Sicherheitsrisiko für Sicherheits- oder Datenschutzrisiko des Benutzers dar. Android 6.0 wird den normale Berechtigungen zum Zeitpunkt der Installation automatisch erteilt. Wenden Sie sich die Android-Dokumentation für einen [vollständige Liste der normalen Berechtigungen](https://developer.android.com/guide/topics/permissions/normal-permissions.html).
-* **Problematische Berechtigungen** &ndash; im Gegensatz zu normalen Berechtigungen problematischen Berechtigungen sind für die Sicherheits- oder Datenschutzrisiko des Benutzers zu schützen. Diese müssen explizit vom Benutzer erteilt sein. Senden oder Empfangen einer SMS-Nachricht ist ein Beispiel für eine Aktion, die eine riskante Berechtigung erfordern.
+* **Normale Berechtigungen** &ndash; Dies sind Berechtigungen, die ein wenig Sicherheitsrisiko für die Sicherheit und den Datenschutz des Benutzers darstellen. Android 6,0 gewährt zum Zeitpunkt der Installation automatisch normale Berechtigungen. Eine [komplette Liste der normalen Berechtigungen](https://developer.android.com/guide/topics/permissions/normal-permissions.html)finden Sie in der Android-Dokumentation.
+* **Gefährliche Berechtigungen** &ndash; Im Gegensatz zu normalen Berechtigungen sind gefährliche Berechtigungen diejenigen, die die Sicherheit und den Datenschutz des Benutzers schützen. Diese müssen explizit vom Benutzer erteilt werden. Das Senden oder Empfangen einer SMS-Nachricht ist ein Beispiel für eine Aktion, die eine gefährliche Berechtigung erfordert.
 
 > [!IMPORTANT]
-> Die Kategorie, zu dem eine Berechtigung gehört möglicherweise im Lauf der Zeit ändern.  Es ist möglich, dass eine Berechtigung, die kategorisiert wurde, da möglicherweise eine "normale"-Berechtigung in Zukunft-API-Ebenen auf eine riskante Berechtigung mit erhöhten Rechten.
+> Die Kategorie, zu der eine Berechtigung gehört, kann sich im Laufe der Zeit ändern.  Es ist möglich, dass eine Berechtigung, die als "normale"-Berechtigung kategorisiert wurde, in zukünftigen API-Ebenen auf eine gefährliche Berechtigung erhöht werden kann.
 
-Problematische Berechtigungen sind nicht weiter unterteilt in [ _Berechtigungsgruppen_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups). Eine Berechtigungsgruppe enthält Berechtigungen, die logisch verknüpft sind. Wenn der Benutzer die Berechtigung, ein Mitglied einer Berechtigungsgruppe erteilt Android gewährt die Berechtigung automatisch für alle Mitglieder dieser Gruppe. Z. B. die [ `STORAGE` ](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE) Berechtigungsgruppe enthält sowohl die `WRITE_EXTERNAL_STORAGE` und `READ_EXTERNAL_STORAGE` Berechtigungen. Wenn der Benutzer die Berechtigung erteilt `READ_EXTERNAL_STORAGE`, und klicken Sie dann die `WRITE_EXTERNAL_STORAGE` Berechtigung wird zur gleichen Zeit automatisch gewährt.
+Gefährliche Berechtigungen sind weiter unterteilt in [_Berechtigungs Gruppen_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups). Eine Berechtigungs Gruppe enthält Berechtigungen, die logisch verknüpft sind. Wenn der Benutzer eine Berechtigung für ein Mitglied einer Berechtigungs Gruppe erteilt, erteilt Android automatisch die Berechtigung für alle Mitglieder dieser Gruppe. Die [`STORAGE`](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE) Berechtigungs Gruppe enthält z. b. `WRITE_EXTERNAL_STORAGE` die `READ_EXTERNAL_STORAGE` Berechtigungen und. Wenn der Benutzer die Berechtigung für `READ_EXTERNAL_STORAGE`erteilt, wird `WRITE_EXTERNAL_STORAGE` die Berechtigung automatisch zur gleichen Zeit erteilt.
 
-Bevor Sie eine oder mehrere Berechtigungen anfordern, ist es eine bewährte Methode, geben Sie eine Begründung, warum die app die Berechtigung, bevor Sie die Berechtigung anfordern muss. Wenn der Benutzer das Grundprinzip verstanden hat, kann die app die Berechtigung vom Benutzer anfordern. Verstehen der Gründe, kann der Benutzer eine fundierte Entscheidung bei Bedarf die Berechtigung erteilen, und die Auswirkungen zu verstehen, wenn dies nicht der Fall. 
+Vor dem Anfordern einer oder mehrerer Berechtigungen ist es eine bewährte Vorgehensweise, eine Begründung anzugeben, warum die APP die Berechtigung erfordert, bevor Sie die Berechtigung anfordert. Sobald der Benutzer die Begründung verstanden hat, kann die APP die Berechtigung vom Benutzer anfordern. Wenn Sie die Begründung verstanden haben, kann der Benutzer eine fundierte Entscheidung treffen, wenn er die Berechtigung erteilen möchte und die Auswirkungen zu verstehen, wenn dies nicht der Fall ist. 
 
-Der gesamte Workflow überprüfen und Anfordern von Berechtigungen ist bekannt, wie eine _Berechtigungen zur Laufzeit_ überprüfen, und kann in der folgenden Abbildung zusammengefasst werden: 
+Der gesamte Workflow zum Überprüfen und Anfordern von Berechtigungen wird als _Lauf Zeit Berechtigungs_ Überprüfung bezeichnet und kann im folgenden Diagramm zusammengefasst werden: 
 
-[![Flussdiagramm für Laufzeit-Berechtigung überprüfen](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
+[![Flussdiagramm zur Lauf Zeit Berechtigungsüberprüfung](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
-Die Android Support-Bibliothek-Backports einige der neuen APIs für Berechtigungen auf ältere Versionen von Android. Diese zurückportierte APIs überprüft automatisch die Version von Android auf dem Gerät, daher es nicht erforderlich ist, um eine API-Ebene Überprüfung jedes Mal auszuführen.  
+Die Android-Unterstützungs Bibliothek unterstützt einige der neuen APIs für Berechtigungen für ältere Android-Versionen. Diese backportiert-APIs überprüfen automatisch die Android-Version auf dem Gerät, sodass Sie nicht jedes Mal eine Überprüfung auf API-Ebene durchführen müssen.  
 
-In diesem Dokument erfahren Sie, wie Berechtigungen einer Xamarin.Android-Anwendung hinzufügen und wie apps für Android 6.0 (API-Ebene 23) oder höher sollten eine Laufzeit berechtigungsüberprüfung ausführen.
+In diesem Dokument wird erläutert, wie Sie einer xamarin. Android-Anwendung Berechtigungen hinzufügen und wie apps, die auf Android 6,0 (API-Ebene 23) oder höher abzielen, eine Lauf Zeit Berechtigungsüberprüfung ausführen sollten.
 
 
 > [!NOTE]
-> Es ist möglich, dass Berechtigungen für die Hardware auswirken können, wie die app von Google Play gefiltert wird. Z. B. wenn die app eine Berechtigung für die Kamera erfordert, zeigt Google Play nicht die app in der Google Play Store auf einem Gerät dann, die keine Kamera installiert werden.
+> Es ist möglich, dass die Berechtigungen für Hardware sich darauf auswirken können, wie die APP nach Google Play gefiltert wird. Wenn die APP z. b. eine Berechtigung für die Kamera erfordert, zeigt Google Play die APP nicht in der Google Play Store auf einem Gerät an, auf dem keine Kamera installiert ist.
 
 
 <a name="requirements" />
 
 ## <a name="requirements"></a>Anforderungen
 
-Es wird dringend empfohlen, dass die Xamarin.Android-Projekte enthalten die [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) NuGet-Paket. Dieses Paket wird Backport-Berechtigung, die spezifische APIs auf ältere Versionen von Android, die eine Bereitstellung ohne ständig Schnittstelle überprüfen Sie die Version von Android, die die app ausgeführt wird.
+Es wird dringend empfohlen, dass xamarin. Android-Projekte das nuget-Paket [xamarin. Android. Support. compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) enthalten. Mit diesem Paket werden Berechtigungs spezifische APIs für ältere Versionen von Android backportieren. dabei wird eine gemeinsame Schnittstelle bereitgestellt, ohne dass die Android-Version, auf der die app ausgeführt wird, ständig überprüft werden muss.
 
 
-## <a name="requesting-system-permissions"></a>Anfordern von Berechtigungen
+## <a name="requesting-system-permissions"></a>Anfordern von System Berechtigungen
 
-Der erste Schritt bei der Arbeit mit Android-Berechtigungen ist deklariert, dass die Berechtigungen im Android-Manifestdatei. Dies muss unabhängig von der API-Ebene erfolgen, dass die app wird.
+Der erste Schritt bei der Arbeit mit Android-Berechtigungen besteht darin, die Berechtigungen in der Android-Manifest-Datei zu deklarieren. Dies muss unabhängig von der API-Ebene erfolgen, für die die APP vorgesehen ist.
 
-Apps, die Ausrichtung auf Android 6.0 oder höher können nicht angenommen werden, die dem Benutzer die Berechtigung an einem bestimmten Punkt in der Vergangenheit erteilt, dass die Berechtigung gültig das nächste Mal wird. Eine app, die auf Android 6.0 abzielt, muss immer eine Überprüfung der Berechtigung zur Laufzeit ausführen. Apps für Android Version 5.1 oder niedriger müssen sich nicht um eine berechtigungsüberprüfung der Run-Time-ausführen.
+Apps, die auf Android 6,0 oder höher ausgerichtet sind, können nicht davon ausgehen, dass der Benutzer die Berechtigung zu einem bestimmten Zeitpunkt in der Vergangenheit erteilt hat, dass die Berechtigung beim nächsten Mal gültig ist. Eine APP, die auf Android 6,0 abzielt, muss immer eine Lauf Zeit Berechtigungsüberprüfung durchführen. Apps, die auf Android 5,1 oder niedriger abzielen, müssen keine Lauf Zeit Berechtigungsüberprüfung durchführen.
 
 > [!NOTE]
-> Anwendungen sollten nur die Berechtigungen anfordern, die sie benötigen.
+> Anwendungen sollten nur die Berechtigungen anfordern, die Sie benötigen.
 
 
-### <a name="declaring-permissions-in-the-manifest"></a>Deklarieren Sie die Berechtigungen im Manifest
+### <a name="declaring-permissions-in-the-manifest"></a>Deklarieren von Berechtigungen im Manifest
 
-Berechtigungen werden hinzugefügt, um die **"androidmanifest.xml"** mit der `uses-permission` Element. Z. B. wenn eine Anwendung besteht darin, die Position des Geräts, es erfordert gut und Berechtigungen für Positionsdaten Kurs. Das Manifest werden die folgenden zwei Elemente hinzugefügt: 
+Die Berechtigungen werden der Datei " **androidmanifest. XML** " `uses-permission` mit dem-Element hinzugefügt. Wenn eine Anwendung z. b. die Position des Geräts Auffinden soll, sind die Berechtigungen für die-und Kurs Orte erforderlich. Die folgenden beiden Elemente werden dem Manifest hinzugefügt: 
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -80,51 +80,51 @@ Berechtigungen werden hinzugefügt, um die **"androidmanifest.xml"** mit der `us
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Es ist möglich, deklarieren Sie die Berechtigungen, die mithilfe der toolunterstützung in Visual Studio integriert:
+Es ist möglich, die Berechtigungen mithilfe der in Visual Studio integrierten Tool Unterstützung zu deklarieren:
 
-1. Doppelklicken Sie auf **Eigenschaften** in die **Projektmappen-Explorer** , und wählen Sie die **Android-Manifest** Registerkarte im Eigenschaftenfenster angezeigt:
+1. Doppelklicken Sie im **Projektmappen-Explorer** auf **Eigenschaften** , und wählen Sie im Eigenschaftenfenster die Registerkarte **Android-Manifest** aus:
 
     [![Erforderliche Berechtigungen auf der Registerkarte "Android-Manifest"](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
-2. Wenn die Anwendung nicht bereits eine Datei "androidmanifest.xml" verfügt, klicken Sie auf **keine "androidmanifest.xml" gefunden. Klicken Sie auf einen hinzufügen** wie unten dargestellt:
+2. Wenn die Anwendung nicht bereits über die Datei "androidmanifest. xml" **verfügt, klicken Sie auf "keine androidmanifest. xml". Klicken Sie, um** einen wie unten gezeigt hinzuzufügen:
 
-    [![Keine "androidmanifest.xml"-Meldung](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
+    [![Keine "androidmanifest. xml"-Meldung](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
-3. Wählen Sie Ihre Anwendung über muss Berechtigungen der **erforderliche Berechtigungen** aufzulisten und zu speichern:
+3. Wählen Sie in der Liste der **erforderlichen Berechtigungen** alle Berechtigungen aus, die Ihre Anwendung benötigt, und speichern Sie
 
-    [![Beispiele für Berechtigungen zur KAMERA ausgewählt](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
+    [![Beispiel für Kamera Berechtigungen ausgewählt](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Es ist möglich, deklarieren Sie die Berechtigungen, die mithilfe der toolunterstützung in Visual Studio für Mac integriert:
+Es ist möglich, die Berechtigungen mithilfe der in Visual Studio für Mac integrierten Tool Unterstützung zu deklarieren:
 
-1. Doppelklicken Sie auf das Projekt in der **Lösungspad** , und wählen Sie **Optionen > Erstellen > Android-Anwendung**:
+1. Doppelklicken Sie im **Lösungspad** auf das Projekt, und wählen Sie **Optionen > Build > Android-Anwendung**aus:
 
-    [![Erforderliche Abschnitt "Berechtigungen" angezeigt](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
+    [![Der Abschnitt erforderliche Berechtigungen wird angezeigt.](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
-2. Klicken Sie auf die **Android-Manifest hinzufügen** Schaltfläche verfügt das Projekt nicht bereits ein **"androidmanifest.xml"**:
+2. Klicken Sie auf die Schaltfläche **Android-Manifest hinzufügen** , wenn das Projekt nicht bereits über eine " **androidmanifest. XML**" verfügt:
 
-    [![Android-Manifest des Projekts ist nicht vorhanden](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
+    [![Das Android-Manifest des Projekts fehlt.](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
-3. Wählen Sie Ihre Anwendung über muss Berechtigungen der **erforderliche Berechtigungen** aus, und klicken Sie auf **OK**:
+3. Wählen Sie in der Liste **erforderliche Berechtigungen** alle Berechtigungen aus, die Ihre Anwendung benötigt, und klicken Sie auf **OK**:
 
-    [![Beispiele für Berechtigungen zur KAMERA ausgewählt](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
+    [![Beispiel für Kamera Berechtigungen ausgewählt](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
-Xamarin.Android werden bestimmte Berechtigungen zum Zeitpunkt der Erstellung auf Debugbuilds automatisch hinzugefügt. Dies veranlasst die Debuggen der Anwendung einfacher. Insbesondere sind dies zwei Berechtigungen, die wichtige `INTERNET` und `READ_EXTERNAL_STORAGE`. Diese Berechtigungen automatisch festgelegte erscheint nicht aktiviert werden die **erforderliche Berechtigungen** Liste. Releasebuilds, jedoch können Sie nur die Berechtigungen, die explizit auf die **erforderliche Berechtigungen** Liste. 
+Xamarin. Android fügt bei der Buildzeit automatisch einige Berechtigungen zum Debuggen von Builds hinzu. Dadurch wird das Debuggen der Anwendung vereinfacht. Vor allem sind `INTERNET` zwei relevante Berechtigungen und `READ_EXTERNAL_STORAGE`. Diese automatisch festgelegten Berechtigungen werden in der Liste **erforderliche Berechtigungen** nicht als aktiviert angezeigt. Releasebuilds verwenden jedoch nur die Berechtigungen, die explizit in der Liste **erforderliche Berechtigungen** festgelegt sind. 
 
-Für apps für Android 5.1 (API-Ebene 22) oder niedriger ist es nicht mehr, die ausgeführt werden muss. Apps, die auf Android 6.0 (API 23-Ebene 23) oder höher ausgeführt werden, sollten mit dem nächsten Abschnitt zur Laufzeit Durchführung Berechtigung überprüft fortfahren. 
+Für apps, die auf Android 5.1 (API-Ebene 22) oder niedriger abzielen, müssen Sie nichts weiter tun. Apps, die unter Android 6,0 (API 23 Level 23) oder höher ausgeführt werden, sollten mit dem nächsten Abschnitt zum Ausführen von Berechtigungs Prüfungen zur Laufzeit fortfahren. 
 
 
-### <a name="runtime-permission-checks-in-android-60"></a>Runtime-Berechtigung überprüft wird, in Android 6.0
+### <a name="runtime-permission-checks-in-android-60"></a>Lauf Zeit Berechtigungs Prüfungen in Android 6,0
 
-Die `ContextCompat.CheckSelfPermission` -Methode (verfügbar mit der Android Support-Bibliothek) Dient zum Überprüfen, ob eine bestimmte Berechtigung erteilt wurde. Diese Methode gibt eine [ `Android.Content.PM.Permission` ](https://developer.xamarin.com/api/type/Android.Content.PM.Permission/) Enumeration, die eine der beiden Werte aufweist:
+Die `ContextCompat.CheckSelfPermission` -Methode (verfügbar mit der Android-Unterstützungs Bibliothek) wird verwendet, um zu überprüfen, ob eine bestimmte Berechtigung erteilt wurde. Diese Methode gibt eine [`Android.Content.PM.Permission`](xref:Android.Content.PM.Permission) Enumeration zurück, die einen von zwei Werten hat:
 
-* **`Permission.Granted`** &ndash; Die angegebene Berechtigung wurde gewährt wurde.
+* **`Permission.Granted`** &ndash; Die angegebene Berechtigung wurde erteilt.
 * **`Permission.Denied`** &ndash; Die angegebene Berechtigung wurde nicht erteilt.
 
-Dieser Codeausschnitt ist ein Beispiel für die Kamera-Berechtigung in einer Aktivität überprüfen: 
+Dieser Code Ausschnitt ist ein Beispiel dafür, wie die Kamera Berechtigung in einer Aktivität überprüft wird: 
 
 ```csharp
 if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Camera) == (int)Permission.Granted) 
@@ -137,19 +137,19 @@ else
 }
 ```
 
-Es ist eine bewährte Methode, informieren Sie den Benutzer, warum eine Berechtigung für eine Anwendung erforderlich ist, damit eine fundierte Entscheidung getroffen werden kann, zum Erteilen der Berechtigung. Ein Beispiel hierfür wäre eine app, die Fotos und Geo-Tags verwendet werden. Es ist für den Benutzer, dass die Kamera-Berechtigung erforderlich ist, aber möglicherweise nicht klar, warum die app außerdem den Speicherort des Geräts benötigt. Das Grundprinzip sollte angezeigt werden eine Meldung an den Benutzer zu verstehen, warum die speicherortberechtigung ist, wünschenswert und die Kamera-Berechtigung erforderlich ist.
+Es wird empfohlen, den Benutzer darüber zu informieren, warum eine Berechtigung für eine Anwendung erforderlich ist, damit eine fundierte Entscheidung getroffen werden kann, um die Berechtigung zu erteilen. Ein Beispiel hierfür wäre eine APP, die Fotos aufnimmt und Sie als georedunziert. Dem Benutzer ist klar, dass die Kamera Berechtigung erforderlich ist, aber es ist nicht klar, warum die APP auch den Speicherort des Geräts benötigt. Der Grund dafür ist, dass eine Meldung angezeigt wird, die dem Benutzer hilft, zu verstehen, warum die Location-Berechtigung erwünscht ist und dass die Kamera Berechtigung erforderlich ist.
 
-Die `ActivityCompat.ShouldShowRequestPermissionRationale` Methode wird verwendet, um zu bestimmen, ob die Gründe für den Benutzer angezeigt werden soll. Diese Methode gibt `true` Wenn die Gründe für eine angegebene Berechtigung angezeigt werden soll. Dieser Screenshot zeigt ein Beispiel für eine Snackbar angezeigt, die von einer Anwendung, die erklärt, warum die app muss den Speicherort des Geräts kennen:
+Die `ActivityCompat.ShouldShowRequestPermissionRationale` -Methode wird verwendet, um zu bestimmen, ob dem Benutzer die Begründung angezeigt werden soll. Diese Methode gibt zurück `true` , wenn die Begründung für eine bestimmte Berechtigung angezeigt werden soll. Dieser Screenshot zeigt ein Beispiel für eine Snackbar, die von einer Anwendung angezeigt wird, in der erläutert wird, warum die APP den Speicherort des Geräts kennen muss:
 
-![Gründe für Position](permissions-images/07-rationale-snackbar.png) 
+![Begründung für Speicherort](permissions-images/07-rationale-snackbar.png) 
 
-Wenn der Benutzer die Berechtigung gewährt der `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` -Methode aufgerufen werden soll. Diese Methode erfordert die folgenden Parameter:
+Wenn der Benutzer die Berechtigung erteilt, sollte `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` die-Methode aufgerufen werden. Diese Methode erfordert die folgenden Parameter:
 
-* **Aktivität** &ndash; Dies ist die Aktivität, die Berechtigungen anfordert, und von Android der Ergebnisse informiert werden soll.
-* **Berechtigungen** &ndash; eine Liste der Berechtigungen, die angefordert werden.
-* **"requestcode"** &ndash; ein ganzzahliger Wert, der verwendet wird, um die Ergebnisse der Anforderung der Berechtigung zum Erfüllen einer `RequestPermissions` aufrufen. Dieser Wert muss größer als null sein.
+* **Aktivität** &ndash; Dies ist die Aktivität, die die Berechtigungen anfordert und von Android der Ergebnisse informiert werden soll.
+* **Berechtigungen** &ndash; Eine Liste der Berechtigungen, die angefordert werden.
+* **requestcode** Ein ganzzahliger Wert, der verwendet wird, um die Ergebnisse der Berechtigungs `RequestPermissions` Anforderung an einen-Befehl abzugleichen. &ndash; Dieser Wert muss größer als null sein.
 
-Dieser Codeausschnitt ist ein Beispiel für die zwei Methoden, die hier erörtert wurden. Zunächst wird eine Überprüfung durchgeführt, um festzustellen, ob die Gründe für die Berechtigungen angezeigt werden soll. Wenn der Grund ist, angezeigt werden soll, wird eine Snackbar mit der Grund angezeigt. Wenn der Benutzer klickt **OK** in die Snackbar, klicken Sie dann die app fordert die Berechtigungen. Wenn der Benutzer die Gründe nicht akzeptiert, sollte die app nicht fortgesetzt, Berechtigungen anfordern. Wenn die Gründe nicht angezeigt wird, wird die Aktivität die Berechtigung anfordern:
+Dieser Code Ausschnitt ist ein Beispiel für die beiden Methoden, die besprochen wurden. Zuerst wird geprüft, ob die Berechtigungs Begründung angezeigt werden soll. Wenn die Begründung angezeigt werden soll, wird eine Snackbar mit der Begründung angezeigt. Wenn der Benutzer in der Snackbar auf **OK** klickt, werden die Berechtigungen von der APP angefordert. Wenn der Benutzer die Begründung nicht annimmt, sollte die APP nicht mit den Anforderungs Berechtigungen fortfahren. Wenn die Begründung nicht angezeigt wird, wird die-Berechtigung von der-Aktivität angefordert:
 
 ```csharp
 if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.AccessFineLocation)) 
@@ -176,11 +176,11 @@ else
 }
 ```
 
-`RequestPermission` kann aufgerufen werden, auch wenn der Benutzer bereits die Berechtigung gewährt hat. Nachfolgende Aufrufe sind nicht erforderlich, aber sie bieten dem Benutzer die Möglichkeit, die Berechtigung bestätigen (oder aufzuheben). Wenn `RequestPermission` wird aufgerufen, Steuerelement wird übergeben, für das Betriebssystem, der eine Benutzeroberfläche angezeigt wird, akzeptieren Sie die Berechtigungen:  
+`RequestPermission`kann auch aufgerufen werden, wenn der Benutzer bereits die Berechtigung erteilt hat. Nachfolgende Aufrufe sind nicht erforderlich, bieten jedoch dem Benutzer die Möglichkeit, die Berechtigung zu bestätigen (oder aufzuheben). Wenn `RequestPermission` aufgerufen wird, wird die Steuerung an das Betriebssystem übergeben, das eine Benutzeroberfläche zum Akzeptieren der Berechtigungen anzeigt:  
 
-![Dialogfeld für Berechtigungen](permissions-images/08-location-permission-dialog.png)
+![Permession (Dialog Feld)](permissions-images/08-location-permission-dialog.png)
 
-Nachdem der Benutzer abgeschlossen ist, Android die Ergebnisse zurück an die Aktivität über eine Rückrufmethode `OnRequestPermissionResult`. Diese Methode ist ein Teil der Schnittstelle `ActivityCompat.IOnRequestPermissionsResultCallback` die von der Aktivität implementiert werden muss. Diese Schnittstelle verfügt über eine einzelne Methode, `OnRequestPermissionsResult`, die von Android, um die Aktivität des Benutzers Entscheidungen darüber zu informieren aufgerufen. Wenn der Benutzer die Berechtigung erteilt hat, kann die app fortfahren und die geschützte Ressource verwenden. Ein Beispiel zum Implementieren `OnRequestPermissionResult` ist unten dargestellt: 
+Nachdem der Benutzer fertig ist, gibt Android die Ergebnisse über eine Rückruf Methode `OnRequestPermissionResult`an die-Aktivität zurück. Diese Methode ist Teil der-Schnittstelle `ActivityCompat.IOnRequestPermissionsResultCallback` , die von der-Aktivität implementiert werden muss. Diese Schnittstelle verfügt über eine einzelne `OnRequestPermissionsResult`Methode,, die von Android aufgerufen wird, um die Aktivitäten der Benutzeroptionen zu informieren. Wenn der Benutzer die Berechtigung erteilt hat, kann die APP die geschützte Ressource verwenden. Ein Beispiel für die Implementierung `OnRequestPermissionResult` von finden Sie unten: 
 
 ```csharp
 public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
@@ -212,11 +212,11 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Leitfaden erläutert das Hinzufügen und überprüfen Sie für Berechtigungen in einem Android-Gerät. Die Unterschiede bei der Funktionsweise von Berechtigungen zwischen alten Android-apps (API-Ebene 23 <) und neue Android-apps (API-Ebene 22 >). Er erläutert, wie im Android 6.0 Runtime-Berechtigung überprüfen.
+In diesem Leitfaden wurde erläutert, wie Sie Berechtigungen auf einem Android-Gerät hinzufügen und überprüfen. Die Unterschiede in der Funktionsweise von Berechtigungen zwischen alten Android-Apps (API-Ebene < 23) und neuen Android-Apps (API-Ebene > 22). Es wurde erläutert, wie Lauf Zeit Berechtigungs Überprüfungen in Android 6,0 ausgeführt werden.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Liste mit normalen Berechtigungen](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
-- [Beispiel-App von Common Language Runtime-Berechtigungen](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)
-- [Behandeln von Berechtigungen in Xamarin.Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)
+- [Liste der normalen Berechtigungen](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
+- [Beispiel-App für Lauf Zeit Berechtigungen](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)
+- [Behandeln von Berechtigungen in xamarin. Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)

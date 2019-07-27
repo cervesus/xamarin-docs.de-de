@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 6e65124df4b20a50091ad93e18621f8e6707ebbe
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 1fa46af1ac1cf6ea49a53e3f8d3c3dca6ba83e13
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970554"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511886"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms-Schieberegler
 
@@ -39,7 +39,7 @@ Die `Slider` wandelt die `Value` Eigenschaft, damit es zwischen ist `Minimum` un
 
 Die [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) Objekt an, die mit der `ValueChanged` Ereignis verfügt über zwei Eigenschaften, die beide vom Typ `double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) und [ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). Zum Zeitpunkt das Ereignis ausgelöst wird, den Wert der `NewValue` ist identisch mit der `Value` Eigenschaft der `Slider` Objekt.
 
-`Slider` definiert außerdem `DragStarted` und `DragCompleted` Ereignisse, die am Anfang und Ende der Drag-Aktion ausgelöst werden. Im Gegensatz zu den [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) -Ereignis, das `DragStarted` und `DragCompleted` Ereignisse werden nur ausgelöst, durch die Benutzer die Bearbeitung von der `Slider`. Wenn die `DragStarted` Ereignis wird ausgelöst, die `DragStartedCommand`, des Typs `ICommand`, ausgeführt wird. Auf ähnliche Weise, wenn die `DragCompleted` Ereignis wird ausgelöst, die `DragCompletedCommand`, des Typs `ICommand`, ausgeführt wird.
+`Slider`definiert `DragStarted` auch- `DragCompleted` und-Ereignisse, die am Anfang und Ende der Zieh Aktion ausgelöst werden. Im Gegensatz [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) zum-Ereignis `DragStarted` werden das-Ereignis und das- `DragCompleted` Ereignis nur durch `Slider`die Benutzer Bearbeitung von ausgelöst. Wenn das `DragStarted` -Ereignis ausgelöst wird `DragStartedCommand`, wird der `ICommand`vom Typ ausgeführt. Ebenso wird, wenn `DragCompleted` das Ereignis ausgelöst wird `DragCompletedCommand`, der vom `ICommand`Typ ausgeführt.
 
 > [!WARNING]
 > Verwenden Sie keine Optionen uneingeschränkte horizontales Layout `Center`, `Start`, oder `End` mit `Slider`. Für Android und UWP die `Slider` reduziert, die in ein Balkendiagramm der Länge Null, und klicken Sie unter iOS, die Leiste ist sehr kurz. Behalten Sie den Standardwert `HorizontalOptions` -Einstellung `Fill`, und verwenden Sie keine Breite von `Auto` beim `Slider` in eine `Grid` Layout.
@@ -205,7 +205,7 @@ Die **Standardbindungen Schieberegler** Seite zeigt, wie ein nahezu gleichwertig
 </ContentPage>
 ```
 
-Die `Rotation` Eigenschaft des ersten `Label` gebunden ist die `Value` Eigenschaft der `Slider`, da die `Text` -Eigenschaft der zweiten `Label` mit einer `StringFormat` Spezifikation. Die **Standardbindungen Schieberegler** Seite Funktionen etwas anders aus den vorherigen zwei Seiten: Wenn die Seite zuerst angezeigt wird, das zweite `Label` zeigt die Zeichenfolge mit dem Wert an. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der `ValueChanged` Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor.
+Die `Rotation` Eigenschaft des ersten `Label` gebunden ist die `Value` Eigenschaft der `Slider`, da die `Text` -Eigenschaft der zweiten `Label` mit einer `StringFormat` Spezifikation. Die Seite mit den **grundlegenden Schieberegler-Bindungen** funktioniert etwas anders als die beiden vorherigen Seiten: Wenn die Seite zum ersten Mal angezeigt wird `Label` , zeigt die zweite die Text Zeichenfolge mit dem Wert an. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der `ValueChanged` Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor.
 
 <a name="precautions" />
 
@@ -289,11 +289,11 @@ Die oben gezeigten Screenshots zeigen den Wert von der `Slider` mit einer unters
 
 ### <a name="the-android-implementation"></a>Die Android-Implementierung
 
-Die Android-Implementierung von `Slider` basiert auf dem Android [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) und stellt stets die [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) -Eigenschaft auf 1000. Dies bedeutet, dass die `Slider` unter Android hat nur 1.001 diskrete Werte. Setzen Sie die `Slider` haben eine `Minimum` 0 und einem `Maximum` 5000 aus, und klicken Sie dann als der `Slider` bearbeitet wird, die `Value` Eigenschaft enthält die Werte von 0, 5, 10, 15 und So weiter.
+Die Android-Implementierung von `Slider` basiert auf dem Android [ `SeekBar` ](xref:Android.Widget.SeekBar) und stellt stets die [ `Max` ](xref:Android.Widget.ProgressBar.Max) -Eigenschaft auf 1000. Dies bedeutet, dass die `Slider` unter Android hat nur 1.001 diskrete Werte. Setzen Sie die `Slider` haben eine `Minimum` 0 und einem `Maximum` 5000 aus, und klicken Sie dann als der `Slider` bearbeitet wird, die `Value` Eigenschaft enthält die Werte von 0, 5, 10, 15 und So weiter.
 
 ### <a name="the-uwp-implementation"></a>Die UWP-Implementierung
 
-Die UWP-Implementierung von `Slider` basiert auf der UWP [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) Steuerelement. Die `StepFrequency` Eigenschaft der UWP `Slider` festgelegt ist, um den Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften unterteilt, 10, aber nicht größer als 1.
+Die UWP-Implementierung von `Slider` basiert auf der UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider) Steuerelement. Die `StepFrequency` Eigenschaft der UWP `Slider` festgelegt ist, um den Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften unterteilt, 10, aber nicht größer als 1.
 
 Für die Standard-Bereich von 0 bis 1, beispielsweise die `StepFrequency` -Eigenschaftensatz auf 0,1. Als die `Slider` bearbeitet wird, die `Value` -Eigenschaft auf 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9 und 1.0 beschränkt ist. (Dies wird in der letzten Seite in der [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) Beispiel.) Wenn der Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften ist 10 oder höher ist, klicken Sie dann `StepFrequency` ist auf 1 festgelegt, und die `Value` Eigenschaft verfügt über ganzzahlige Werte.
 

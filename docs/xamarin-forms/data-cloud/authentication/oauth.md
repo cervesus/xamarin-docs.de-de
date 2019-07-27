@@ -1,5 +1,5 @@
 ---
-title: AuthenticateUsers mit einem Identitätsanbieter
+title: Authentifialisierer mit Identitäts Anbieter
 description: In diesem Artikel wird erläutert, wie Xamarin.Auth zum Verwalten des Authentifizierungsprozesses in einer Xamarin.Forms-Anwendung verwendet wird.
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 006e403b50a452265a40a0e95d17769fa0446a1a
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 294483e8b831aa085fc338eb05147ced1098c1c5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650413"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508246"
 ---
-# <a name="authenticate-users-with-an-identity-provider"></a>Authentifizieren von Benutzern mit einem Identitätsanbieter
+# <a name="authenticate-users-with-an-identity-provider"></a>Authentifizieren von Benutzern mit einem Identitäts Anbieter
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 
@@ -171,7 +171,7 @@ Die `OpenUrl` -Methode konvertiert die empfangene-URL aus einer `NSUrl` in ein .
 
 #### <a name="android"></a>Android
 
-Unter Android wird ein benutzerdefiniertes URL-Schema registriert ist, durch Angeben einer [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) -Attribut für die `Activity` behandelt, die das Schema. Wenn der Identitätsanbieter die autorisierungsanforderung abgeschlossen ist, erfolgt eine Umleitung an den umleitungs-URL der Anwendung. Da die URL ein benutzerdefiniertes Schema verwendet, Android, die die Anwendung gestartet wird, übergeben Sie in der URL als Parameter starten, in dem sie vom verarbeitet wird der `OnCreate` Methode der `Activity` registriert, um die benutzerdefinierte URL-Schema zu behandeln. Das folgende Codebeispiel zeigt die Klasse aus der beispielanwendung, die die benutzerdefinierte URL-Schema behandelt:
+Unter Android wird ein benutzerdefiniertes URL-Schema registriert ist, durch Angeben einer [ `IntentFilter` ](xref:Android.App.IntentFilterAttribute) -Attribut für die `Activity` behandelt, die das Schema. Wenn der Identitätsanbieter die autorisierungsanforderung abgeschlossen ist, erfolgt eine Umleitung an den umleitungs-URL der Anwendung. Da die URL ein benutzerdefiniertes Schema verwendet, Android, die die Anwendung gestartet wird, übergeben Sie in der URL als Parameter starten, in dem sie vom verarbeitet wird der `OnCreate` Methode der `Activity` registriert, um die benutzerdefinierte URL-Schema zu behandeln. Das folgende Codebeispiel zeigt die Klasse aus der beispielanwendung, die die benutzerdefinierte URL-Schema behandelt:
 
 ```csharp
 [Activity(Label = "CustomUrlSchemeInterceptorActivity", NoHistory = true, LaunchMode = LaunchMode.SingleTop )]
@@ -197,7 +197,7 @@ public class CustomUrlSchemeInterceptorActivity : Activity
 }
 ```
 
-Die `DataSchemes` Eigenschaft der [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) muss festgelegt werden, um die umgekehrten Client-ID, die von der Android-Client-Id für das Projekt abgerufen werden, auf [Google-API-Konsole](http://console.developers.google.com).
+Die `DataSchemes` Eigenschaft der [ `IntentFilter` ](xref:Android.App.IntentFilterAttribute) muss festgelegt werden, um die umgekehrten Client-ID, die von der Android-Client-Id für das Projekt abgerufen werden, auf [Google-API-Konsole](http://console.developers.google.com).
 
 Die `OnCreate` -Methode konvertiert die empfangene-URL aus einer `Android.Net.Url` in ein .NET `Uri`, vor der Verarbeitung der umleitungs-URL mit der `OnPageLoading` Methode einer öffentlichen `OAuth2Authenticator` Objekt. Dies bewirkt, dass Xamarin.Auth zum Schließen der Registerkarte des Webbrowsers, und analysieren Sie die empfangenen OAuth-Daten.
 

@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 27. Benutzerdefinierte Renderer
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 27. Benutzerdefinierte Renderer'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 27. Benutzerdefinierte Renderer'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 96d06626fe0a8a4bb5aca59de454f707d4dfc731
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 985510caa78733d1a53aceb41371839f544daa73
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331404"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511639"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Zusammenfassung der Kapitel 27. Benutzerdefinierte Renderer
 
@@ -50,7 +50,7 @@ IOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Fo
 Die Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17) verfügt über generische Argumente:
 
 - `TView` beschränkt auf [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeView` beschränkt auf [`Android.Views.View`](https://developer.xamarin.com/api/type/Android.Views.View/)
+- `TNativeView` beschränkt auf [`Android.Views.View`](xref:Android.Views.View)
 
 Die UWP [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ViewRenderer.cs#L6) verfügt über die generischen Argumente unterschiedlich benannt:
 

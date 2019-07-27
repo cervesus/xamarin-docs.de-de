@@ -1,31 +1,31 @@
 ---
-title: Automatische Vervollständigung
+title: Auto Vervollständigen für xamarin. Android
 ms.prod: xamarin
 ms.assetid: D4C8CA49-8369-35B7-798D-B147FDC24185
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: bcbab6deddf5e1a4782cd382623f22281a0823e6
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 810c6ddead66d191870ce97a50653f29737492b0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674856"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510652"
 ---
-# <a name="auto-complete"></a>Automatische Vervollständigung
+# <a name="auto-complete-for-xamarinandroid"></a>Auto Vervollständigen für xamarin. Android
 
-`AutoCompleteTextView` ist ein bearbeitbarer Text anzeigen-Element, das vervollständigungsvorschläge automatisch zeigt während der Eingabe des Benutzers an. Die Liste der Vorschläge wird in einem Dropdown-Menü angezeigt, in dem der Benutzer ein Element hinzu, ersetzen Sie den Inhalt des Bearbeitungsfelds mit auswählen kann.
+`AutoCompleteTextView`ein bearbeitbares Text Ansichts Element, das die Vervollständigungs Vorschläge automatisch anzeigt, während der Benutzer die Eingabe durchläuft. Die Liste der Vorschläge wird in einem Dropdown Menü angezeigt, in dem der Benutzer ein Element auswählen kann, um den Inhalt des Bearbeitungs Felds durch zu ersetzen.
 
-![Beispiel für die automatische Vervollständigung](images/auto-complete.png)
+![Beispiel für Auto Vervollständigen](images/auto-complete.png)
 
 ## <a name="overview"></a>Übersicht
 
-Verwenden Sie zum Erstellen eines Text-Eintrag-Widgets, die automatische Vervollständigung Vorschläge unterbreitet der [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-widget. Vorschläge werden aus einer Auflistung von Zeichenfolgen, die das Widget über zugeordnete empfangen ein [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/).
+Verwenden Sie zum Erstellen eines Text Eintrags Widgets, das Empfehlungen für automatische Vervollständigung bereitstellt, das[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Program. Vorschläge werden aus einer Auflistung von Zeichen folgen, die dem Widget zugeordnet sind [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter), über einen empfangen.
 
-In diesem Tutorial erstellen Sie eine [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-Widgets, die Vorschläge für einen Ländernamen.
+In diesem Tutorial erstellen Sie eine[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+ein Widget, das Vorschläge für einen Ländernamen bereitstellt.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -45,15 +45,15 @@ Widgets, die Vorschläge für einen Ländernamen.
 </LinearLayout>
 ```
 
-Die [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) ist eine Bezeichnung, die eingeführt werden die [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-widget.
+[`TextView`](xref:Android.Widget.TextView) Ist eine Bezeichnung, die die[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Program.
 
 
 ## <a name="tutorial"></a>Lernprogramm
 
-Starten Sie ein neues Projekt namens *HelloAutoComplete*.
+Starten Sie ein neues Projekt mit dem Namen *helloautocomplete*.
 
-Erstellen Sie eine XML-Datei mit dem Namen `list_item.xml` und speichern Sie ihn in das **Ressourcen/Layout** Ordner. Legen Sie die Build-Aktion für diese Datei, um `AndroidResource`. Bearbeiten Sie die Datei wie folgt aussehen:
+Erstellen Sie eine XML- `list_item.xml` Datei mit dem Namen, und speichern Sie Sie im Ordner " **Resources/Layout** ". Legen Sie die Buildaktion dieser Datei `AndroidResource`auf fest. Bearbeiten Sie die Datei so, dass Sie wie folgt aussieht:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -64,12 +64,12 @@ Erstellen Sie eine XML-Datei mit dem Namen `list_item.xml` und speichern Sie ihn
     android:padding="10dp"
     android:textSize="16sp"
     android:textColor="#000">
-</TextView>
+</TextView> 
 ```
 
-Diese Datei definiert eine einfache [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) wird, wird für jedes Element, das in der Liste mit Vorschlägen angezeigt wird.
+Diese Datei definiert eine einfache [`TextView`](xref:Android.Widget.TextView) , die für jedes Element verwendet wird, das in der Liste der Vorschläge angezeigt wird.
 
-Open **Resources/Layout/Main.axml** und fügen Sie Folgendes:
+Öffnen Sie **Resources/Layout/Main. axml** , und fügen Sie Folgendes ein:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -89,8 +89,8 @@ Open **Resources/Layout/Main.axml** und fügen Sie Folgendes:
 </LinearLayout>
 ```
 
-Open **"mainactivity.cs"** und fügen Sie den folgenden Code für die [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
-Methode:
+Öffnen Sie **MainActivity.cs** , und fügen Sie den folgenden Code für das[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+anzuwenden
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -107,11 +107,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Nach der Ansicht "Inhalt", um festgelegt ist die `main.xml` Layout, das [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-Widget wird erfasst, aus dem Layout mit [ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/). Ein neues [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) ist dann für die Bindung initialisiert die `list_item.xml` Layout für jedes Listenelement in der `COUNTRIES` Array von Zeichenfolgen (im nächsten Schritt definiert). Zum Schluss `SetAdapter()` wird aufgerufen, um das Zuordnen der [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) mit der [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-Widget, damit das Zeichenfolgenarray Auffüllen die Liste der Vorschläge.
+Nachdem die Inhaltsansicht auf das `main.xml` Layout festgelegt wurde, wird das[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+das Widget wird aus dem Layout mit [`FindViewById`](xref:Android.App.Activity.FindViewById*)aufgezeichnet. Anschließend wird [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) ein neuer initialisiert, um das `list_item.xml` Layout an `COUNTRIES` jedes Listenelement im Zeichen folgen Array (im nächsten Schritt definiert) zu binden. Schließlich wird aufgerufen, um die [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) mit dem `SetAdapter()`[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Widget, damit das Zeichen folgen Array die Liste der Vorschläge auffüllt.
 
-In der `MainActivity` -Klasse erstellt wird, die Zeichenfolgen-Array:
+Fügen Sie `MainActivity` in der-Klasse das Zeichen folgen Array hinzu:
 
 ```csharp
 static string[] COUNTRIES = new string[] {
@@ -159,19 +159,19 @@ static string[] COUNTRIES = new string[] {
 };
 ```
 
-Dies ist die Liste mit Vorschlägen, die in einer Dropdown-Liste bereitgestellt wird, wenn der Benutzer, in eingibt der [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-widget.
+Dies ist die Liste der Vorschläge, die in einer Dropdown Liste bereitgestellt werden, wenn der Benutzer in den[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Program.
 
-Führen Sie die Anwendung aus. Wenn Sie eingeben, sehen Sie etwa wie folgt:
+Führen Sie die Anwendung aus. Wenn Sie eingeben, sollte etwa Folgendes angezeigt werden:
 
-[![Automatische Vervollständigung beispielscreenshot Auflisten von Namen mit "ca"](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
+[![Beispiel für eine automatische Vervollständigung von Screenshots, die "ca" enthalten](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 
 
 ## <a name="more-information"></a>Weitere Informationen
 
-Beachten Sie, dass eine hartcodierte Zeichenfolgen-Array nicht empfohlener Entwurf Methode handelt, da Ihr Anwendungscode, auf das Verhalten, die nicht damit zufrieden konzentrieren sollten. Anwendungsinhalte, z. B. Zeichenfolgen sollte extern ausgelagert werden, aus der Code zum Vereinfachen von Änderungen an den Inhalt und die Lokalisierung des Inhalts zu ermöglichen. Die hartcodierte Zeichenfolgen werden in diesem Tutorial verwendet, nur für einfache und den Schwerpunkt auf der [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-widget. Stattdessen sollte Ihre Anwendung solche Zeichenfolgen-Arrays in eine XML-Datei deklarieren. Dies erreichen Sie mit einem `<string-array>` Ressource in Ihrem Projekt `res/values/strings.xml` Datei. Zum Beispiel:
+Beachten Sie, dass die Verwendung eines hart codierten Zeichen folgen Arrays keine empfohlene Entwurfs Praxis ist, da sich Ihr Anwendungscode auf das Verhalten, nicht auf den Inhalt konzentrieren sollte. Anwendungs Inhalt, z. b. Zeichen folgen, sollte vom Code extern ausgelagert werden, um Änderungen am Inhalt zu vereinfachen und die Lokalisierung der Inhalte zu vereinfachen. Die hart codierten Zeichen folgen werden in diesem Tutorial lediglich verwendet, um Sie einfach zu gestalten und sich auf das[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Program. Stattdessen sollte die Anwendung solche Zeichen folgen Arrays in einer XML-Datei deklarieren. Dies kann mit einer `<string-array>` Ressource in ihrer Projekt `res/values/strings.xml` Datei erfolgen. Beispiel:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -188,8 +188,8 @@ widget. Stattdessen sollte Ihre Anwendung solche Zeichenfolgen-Arrays in eine XM
 </resources>
 ```
 
-Verwenden Sie diese Ressourcenzeichenfolgen für die [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/), ersetzen Sie das ursprüngliche [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
-mit den folgenden Konstruktor-Zeile:
+Um diese Ressourcen Zeichenfolgen für [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)die zu verwenden, ersetzen Sie den ursprünglichen[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+konstruktorzeile mit folgendem:
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.array.countries_array);
@@ -199,11 +199,11 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 
 ### <a name="references"></a>Verweise
 
--   [AutoCompleteTextView Rezept](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input) &ndash; Xamarin.Android-Beispielprojekt für das `AutoCompleteTextView`.
--   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
--   [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+-   [Autocompletetextview-Rezept](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input) Xamarin. Android-Beispiel Projekt für `AutoCompleteTextView`das. &ndash;
+-   [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+-   [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 
-*Teile dieser Seite werden Änderungen, die basierend auf der Arbeit erstellt und freigegeben werden, indem Sie das Android Open Source-Projekt, und gemäß den Bedingungen, die in beschriebenen verwendet die*
-[*Creative Commons 2.5 Attribution-Lizenz* ](http://creativecommons.org/licenses/by/2.5/) *. Dieses Tutorial basiert auf der*
-[*Android automatische vollständige Tutorial*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
- *.*
+*Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der*
+[*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/) *beschriebenen Begriffen verwendet werden. Dieses Tutorial*basiert auf dem
+[*Android-Tutorial*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
+zum automatischen Abschluss *.*

@@ -1,42 +1,40 @@
 ---
-title: Xamarin.Android vs. Desktop - Unterschiede in die Mono-Laufzeit
+title: Xamarin. Android im Vergleich zu Desktop-Unterschiede in der Mono-Laufzeit
 ms.prod: xamarin
 ms.assetid: F953F9B4-3596-8B3A-A8E4-8219B5B9F7CA
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 115d715214d7af3174c41d9d82e894ce429dab42
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 18e6e82011460a51a96df4694f15b36c5ec94ab5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953343"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510711"
 ---
 # <a name="limitations"></a>Einschränkungen
 
-Da Anwendungen unter Android erforderlich ist, Generieren von Java-Proxy-Typen während des Buildprozesses, ist es nicht möglich, alle Code zur Laufzeit zu generieren.
+Da Anwendungen auf Android während des Buildprozesses Java-Proxy Typen generieren müssen, ist es nicht möglich, den gesamten Code zur Laufzeit zu generieren.
 
-Dies sind die Xamarin.Android-Einschränkungen, die im Vergleich zum Desktop Mono:
+Dies sind die xamarin. Android-Einschränkungen im Vergleich zu Desktop Mono:
 
+## <a name="limited-dynamic-language-support"></a>Eingeschränkte Unterstützung dynamischer Sprachen
 
-## <a name="limited-dynamic-language-support"></a>Eingeschränkte dynamische sprachunterstützung
+ [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) werden immer dann benötigt, wenn die Android-Laufzeit verwalteten Code aufrufen muss. Android Callable Wrapper werden zur Kompilierzeit basierend auf der statischen Analyse von Il generiert. Das Ergebnis: Sie *können* keine dynamischen Sprachen (IronPython, IronRuby usw.) in jedem Szenario verwenden, in dem die Unterklassen von Java-Typen erforderlich sind (einschließlich indirekter Unterklassen), da es keine Möglichkeit gibt, diese dynamischen Typen zur Kompilierzeit in zu extrahieren. Generieren Sie die erforderlichen Android Callable Wrapper.
 
- [Android callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) sind erforderlich, einem beliebigen Zeitpunkt die Android-Laufzeit verwalteter Code aufgerufen muss. Android callable Wrapper werden zum Zeitpunkt der Kompilierung generiert basierend auf der statischen Analyse von IL. Das Ergebnis dieser: Sie *kann nicht* verwenden dynamische Sprachen (IronPython, IronRuby, usw.) in jedem Szenario, für die Unterklassen von Java-Typen (einschließlich indirekte Unterklassen), erforderlich ist, wie es keine Möglichkeit gibt, extrahieren Sie diese dynamischen Typen zum Zeitpunkt der Kompilierung zum Generieren der erforderlichen Android callable Wrapper.
+## <a name="limited-java-generation-support"></a>Eingeschränkte Unterstützung für Java-Generierung
 
-
-## <a name="limited-java-generation-support"></a>Unterstützung für die Codegenerierung beschränkt Java
-
-[Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) müssen in der Reihenfolge für die Java-Code zum Aufrufen von verwalteten Codes generiert werden soll. *Standardmäßig*, Android callable Wrapper sind nur enthalten, (bestimmte) deklarierten Konstruktoren und Methoden, die eine virtuelle Java-Methode außer Kraft setzen (d. h. sie hat [ `RegisterAttribute` ](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)) oder eine Java-Methode ()-Schnittstelle implementieren Schnittstelle verfügt ebenso über `Attribute`).
+[Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) müssen generiert werden, damit Java-Code verwalteten Code aufrufen kann. *Standardmäßig*enthalten Android Callable Wrapper nur (bestimmte) deklarierte Konstruktoren und Methoden, die eine virtuelle Java-Methode über [`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)schreiben (d. h.) oder eine Java-Schnittstellen Methode implementieren (die Schnittstelle weist `Attribute`gleichermaßen).
   
-Vor der Version 4.1 konnten keine zusätzlichen Methoden deklariert werden. Mit der Version 4.1 [der `Export` und `ExportField` benutzerdefinierte Attribute können verwendet werden, um Java-Methoden und Felder in den Android Callable Wrapper deklarieren](~/android/platform/java-integration/working-with-jni.md).
+Vor Version 4,1 konnten keine zusätzlichen Methoden deklariert werden. Mit der Version 4,1 [können die `Export` Benutzer `ExportField` definierten Attribute und verwendet werden, um Java-Methoden und-Felder innerhalb des Android Callable Wrapper zu deklarieren](~/android/platform/java-integration/working-with-jni.md).
 
 ### <a name="missing-constructors"></a>Fehlende Konstruktoren
 
-Konstruktoren bleiben schwierig, es sei denn, [ `ExportAttribute` ](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute) verwendet wird. Der Algorithmus zum Generieren von Android aufrufbare wrapperkonstruktoren ist, dass ein Java-Konstruktor Wenn ausgegeben werden:
+Konstruktoren bleiben knifflig, [`ExportAttribute`](xref:Java.Interop.ExportAttribute) es sei denn, wird verwendet. Der Algorithmus zum Erstellen von Android Callable Wrapper Konstruktoren ist, dass ein Java-Konstruktor ausgegeben wird, wenn Folgendes gilt:
 
-1. Es ist eine Java-Zuordnung für alle Parametertypen
-2. Die Basisklasse deklariert, die gleichen Konstruktor &ndash; Dies ist erforderlich, da der Android callable Wrapper *muss* den entsprechenden Konstruktor der Basisklasse aufrufen, können keine Standardargumente verwendet werden, (wie es keine einfache Möglichkeit ist, zu bestimmen, welche Werte sollten innerhalb von Java verwendet).
+1. Für alle Parametertypen ist eine Java-Zuordnung vorhanden.
+2. Die Basisklasse deklariert denselben Konstruktor &ndash; . Dies ist erforderlich, da der von Android Callable Wrapper den entsprechenden Basisklassenkonstruktor aufrufen *muss* . es können keine Standardargumente verwendet werden (da es keine einfache Möglichkeit gibt, um zu ermitteln, welche Werte sollte in Java verwendet werden.)
 
 Betrachten Sie beispielsweise die folgende Klasse:
 
@@ -49,7 +47,7 @@ class MyIntentService : IntentService {
 }
 ```
 
-Während dieser durchaus logisch, sieht die resultierende Android callable Wrapper *in Releasebuilds* enthält einen standardmäßigen Konstruktor nicht. Daher, wenn Sie versuchen, diesen Dienst zu starten (z. B. [ `Context.StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/)), wird fehlerhaft sein:
+Obwohl dies perfekt logisch aussieht, enthält der resultierende Android Callable Wrapper *in Releasebuilds* keinen Standardkonstruktor. Wenn Sie also versuchen, diesen Dienst zu starten (z. [`Context.StartService`](xref:Android.Content.Context.StartService*)b. tritt ein Fehler auf:
 
 ```shell
 E/AndroidRuntime(31766): FATAL EXCEPTION: main
@@ -72,7 +70,7 @@ E/AndroidRuntime(31766):        at android.app.ActivityThread.handleCreateServic
 E/AndroidRuntime(31766):        ... 10 more
 ```
 
-Die problemumgehung besteht darin, einen standardmäßigen Konstruktor zu deklarieren, die mit Verzieren der `ExportAttribute`, und legen Sie die [ `ExportAttribute.SuperStringArgument` ](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/): 
+Die Problem Umgehung besteht darin, einen Standardkonstruktor zu deklarieren `ExportAttribute`, ihn mit zu [`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)schmücken und Folgendes festzulegen: 
 
 ```csharp
 [Service]
@@ -89,10 +87,10 @@ class MyIntentService : IntentService {
 
 ### <a name="generic-c-classes"></a>Generische C# Klassen
 
-Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschränkungen gelten:
+Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschränkungen sind vorhanden:
 
 
--   Generische Typen können nicht `[Export]` oder `[ExportField`]. Dies dennoch versuchen, generiert eine `XA4207` Fehler.
+-   Generische Typen dürfen nicht oder `[Export]` `[ExportField`verwenden. Wenn Sie versuchen, dies zu tun `XA4207` , wird ein Fehler generiert.
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -105,7 +103,7 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
--   Generische Methoden können nicht `[Export]` oder `[ExportField]`:
+-   Generische Methoden dürfen nicht oder `[Export]` `[ExportField]`verwenden:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -120,7 +118,7 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
--   `[ExportField]` kann nicht verwendet werden, auf Methoden, die zurückgeben `void`:
+-   `[ExportField]`darf nicht für Methoden verwendet werden, die `void`Folgendes zurückgeben:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -133,7 +131,7 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
--   Instanzen von generischen Typen _darf nicht_ aus Java-Code erstellt werden.
+-   Instanzen generischer Typen _dürfen nicht_ aus Java-Code erstellt werden.
     Sie können nur sicher aus verwaltetem Code erstellt werden:
 
     ```csharp
@@ -147,17 +145,15 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
+## <a name="partial-java-generics-support"></a>Partielle Unterstützung für Java-Generika
 
-## <a name="partial-java-generics-support"></a>Partielle Java Generika-Unterstützung
-
-Die Java, die generische Typen, die Datenbindung unterstützen, ist begrenzt. Besonders, verbleiben Elemente in eine generische Instanz-Klasse, die von einem anderen generischen (nicht instanziiert)-Klasse abgeleitet ist als Java.Lang.Object verfügbar gemacht werden. Z. B. [Android.Content.Intent.GetParcelableExtra](https://developer.xamarin.com/api/member/Android.Content.Intent.GetParcelableExtra/p/System.String/) Methodenrückgabe Java.Lang.Object. Dies ist aufgrund gelöschter Java Generika.
-Wir haben einige Klassen, die diese Einschränkung nicht gelten, aber sie werden manuell angepasst.
-
+Die Bindungs Unterstützung für Java Generika ist begrenzt. Insbesondere werden Elemente in einer generischen Instanzklasse, die von einer anderen generischen (nicht instanziierten) Klasse abgeleitet ist, als Java. lang. Object offengelegt. Beispielsweise gibt die [Android. Content. Intent. getsamcelableextra](xref:Android.Content.Intent.GetParcelableExtra*) -Methode "java. lang. Object" zurück. Dies ist auf gelöschte Java-Generika zurückzuführen.
+Wir haben einige Klassen, die diese Einschränkung nicht anwenden, aber Sie werden manuell angepasst.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md)
-- [Arbeiten mit JNI](~/android/platform/java-integration/working-with-jni.md)
-- [ExportAttribute](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
-- [SuperString](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)
-- [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)
+- [Arbeiten mit jni](~/android/platform/java-integration/working-with-jni.md)
+- [Export Attribute](xref:Java.Interop.ExportAttribute)
+- [SuperString](xref:Java.Interop.ExportAttribute.SuperArgumentsString)
+- [RegisterAttribute](xref:Android.Runtime.RegisterAttribute)

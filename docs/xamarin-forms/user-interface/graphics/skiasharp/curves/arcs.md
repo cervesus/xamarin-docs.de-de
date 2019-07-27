@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: cfa96273b6c23d755925b08c9daec22c94627be7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c93441bff02322fb938a67806ba7f5163c8c969e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61088794"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511903"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen zu zeichnen
 
@@ -38,7 +38,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-Diese Methoden sind identisch mit dem Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) und [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) Methoden. IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) Methode ähnelt aber auf Bögen auf den Umfang eines Kreises beschränkt ist, anstatt in eine Ellipse generalisiert.
+Diese Methoden sind identisch mit den Methoden [`AddArc`](xref:Android.Graphics.Path.AddArc*) Android und`ArcTo`[] Xref: Android. Graphics. Path. ArcTo *). IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) Methode ähnelt aber auf Bögen auf den Umfang eines Kreises beschränkt ist, anstatt in eine Ellipse generalisiert.
 
 Beide Methoden beginnen mit einem `SKRect` -Wert, der Speicherort und die Größe einer Ellipse definiert:
 
@@ -58,7 +58,7 @@ Die Kurve, die hinzugefügt werden, um den Pfad mit der `AddArc` oder `ArcTo` Me
 
 ![](arcs-images/anglearc.png "Der Winkel Bogen selbst")
 
-Die `startAngle` oder `sweepAngle` Argumente können negativ sein: Der Bogen ist für positive Werte, der im Uhrzeigersinn `sweepAngle` und gegen den Uhrzeigersinn für negative Werte.
+Das `startAngle` - `sweepAngle` Argument oder das-Argument kann negativ sein: Der Bogen steht im Uhrzeigersinn für positive `sweepAngle` Werte von und gegen den Uhrzeigersinn für negative Werte.
 
 Allerdings `AddArc` ist *nicht* definieren eine geschlossene Kontur. Wenn Sie aufrufen `LineTo` nach `AddArc`, eine Zeile am Ende der Bogen gezeichnet wird, zu dem Punkt in der `LineTo` -Methode, und dasselbe gilt für `ArcTo`.
 
@@ -521,7 +521,7 @@ Wenn dieser Geneigter Ellipse dann so, dass es sich um die beiden Punkte berühr
 
 ![](arcs-images/ellipticalarcellipse1.png "Der erste Satz von elliptische Bogen")
 
-Diese zwei Bögen können auf zwei Arten unterschieden werden: Der Bogen mit oben ist größer als der Bogen unten, und wie die von links nach rechts zu zeichnende Bogen stammt, der oberste Bogen gezeichnet wird im Uhrzeigersinn während der untere Bogen in entgegen dem Uhrzeigersinn gezeichnet wird.
+Diese beiden Bögen können auf zwei Arten unterschieden werden: Der obere Bogen ist größer als der untere Bogen, und wenn der Bogen von links nach rechts gezeichnet wird, wird der obere Bogen in einer Richtung im Uhrzeigersinn gezeichnet, während der untere Bogen in einer Richtung gegen den Uhrzeigersinn gezeichnet wird.
 
 Es ist auch möglich, das die Ellipse zwischen den beiden Punkten auf andere Weise anpassen:
 
@@ -535,10 +535,10 @@ Diese beiden Punkte können durch einen Bogen, der durch die Geneigter Ellipse i
 
 Diese vier Bögen unterscheiden sich durch die vier Kombinationen von der [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize) und [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection) Enumeration Typargumente für die `ArcTo` Methode:
 
-- Rot: SKPathArcSize.Large und SKPathDirection.Clockwise
-- Grün: SKPathArcSize.Small und SKPathDirection.Clockwise
-- Blau: SKPathArcSize.Small und SKPathDirection.CounterClockwise
-- Magenta: SKPathArcSize.Large und SKPathDirection.CounterClockwise
+- Red Skpatharcsize. Large und skpathdirection. Uhrzeigersinn
+- Grünbuchs Skpatharcsize. Small und skpathdirection. Uhrzeigersinn
+- blauen Skpatharcsize. Small und skpathdirection. gegen den Uhrzeigersinn
+- Magenta Skpatharcsize. Large und skpathdirection. gegen den Uhrzeigersinn
 
 Geneigter Ellipse ist nicht groß genug für zwischen den beiden Punkten, und klicken Sie dann es gleichmäßig skaliert wird, bis es groß genug ist. Nur zwei eindeutige Bögen die beiden Punkte in diesem Fall eine Verbindung herstellen. Diese unterschieden werden können, mit der `SKPathDirection` Parameter.
 

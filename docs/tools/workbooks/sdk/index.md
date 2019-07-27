@@ -1,63 +1,63 @@
 ---
-title: Erste Schritte mit der Xamarin-Arbeitsmappen-SDK
-description: Dieses Dokument beschreibt, wie Sie zum Einstieg in der SDK Xamarin-Arbeitsmappen, die zum Entwickeln von Integrationen für Xamarin Workbooks verwendet werden kann.
+title: Einstieg in das Xamarin Workbooks SDK
+description: In diesem Dokument wird beschrieben, wie Sie mit dem Xamarin Workbooks SDK beginnen, das zum Entwickeln von Integrationen für Xamarin Workbooks verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 5800e98acbff147735ae4a6125979a4b47be2367
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dd75270b3b14b0b770808bbc3ffc88240f868eae
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382717"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511010"
 ---
-# <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Erste Schritte mit der Xamarin-Arbeitsmappen-SDK
+# <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Einstieg in das Xamarin Workbooks SDK
 
-Dieses Dokument enthält eine kurze Einführung in die erste Schritte beim Entwickeln von Integrationen für Xamarin Workbooks. Viele dieser funktioniert mit den stabilen Xamarin Workbooks, aber **Integrationen über NuGet-Pakete laden wird nur in Arbeitsmappen 1.3 unterstützt**, in der alpha-Kanal zum Zeitpunkt der Verfassung.
+Dieses Dokument enthält eine kurze Anleitung für den Einstieg in die Entwicklung von Integrationen für Xamarin Workbooks. Vieles davon funktioniert mit dem stabilen Xamarin Workbooks, das Laden von **Integrationen über nuget-Pakete wird jedoch nur in-Arbeitsmappen 1,3 unterstützt**, die zum Zeitpunkt des Schreibens des Alphakanals verwendet werden.
 
 ## <a name="general-overview"></a>Allgemeine Übersicht
 
-Xamarin Workbooks Integrationen sind kleine Bibliotheken, mit denen die [ `Xamarin.Workbooks.Integrations` NuGet] [ nuget] SDK, um die Integration in die Xamarin Workbooks und Inspector Agents zur verbesserten Erlebnis ermöglichen.
+Xamarin Workbooks Integrationen sind kleine Bibliotheken, die das [ `Xamarin.Workbooks.Integrations` nuget][nuget] -SDK für die Integration in die Xamarin Workbooks und Inspektor-Agents verwenden, um eine verbesserte Benutzererfahrung zu bieten.
 
-Es gibt 3 wichtigsten Schritte für den Einstieg in die Entwicklung eines Integration – sie werden hier beschrieben.
+Es gibt drei wichtige Schritte für die ersten Schritte bei der Entwicklung einer Integration – wir erläutern Sie hier.
 
-## <a name="creating-the-integration-project"></a>Erstellen des Projekts für die Integration
+## <a name="creating-the-integration-project"></a>Erstellen des Integrationsprojekts
 
-Von integrationsbibliotheken werden am besten als plattformübergreifende Bibliotheken entwickelt. Da Sie die optimale Integration auf alle verfügbaren Agents, Vergangenheit und Zukunft bereitstellen möchten, sollten Sie einen allgemein unterstützten Satz von Bibliotheken zu wählen. Es wird empfohlen, mithilfe der "Portable Library" Vorlage für die umfassendste Unterstützung:
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-
-[![Portable Bibliothek Vorlage Visual Studio für Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-[![Portable Bibliothek Vorlage Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
-
-In Visual Studio sollten Sie sicherstellen, dass Sie die folgenden Zielplattformen für Ihre portable Bibliothek auswählen:
-
-[![Portable Bibliothek Plattformen Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
-
------
-
-Nachdem Sie das Bibliotheksprojekt erstellt haben, fügen Sie einen Verweis auf unsere `Xamarin.Workbooks.Integration` NuGet-Bibliothek über den NuGet-Paket-Manager.
+Integrations Bibliotheken werden am besten als Bibliotheken mit mehreren Plattformen entwickelt. Da Sie die beste Integration für alle verfügbaren Agents in der Vergangenheit und in Zukunft bereitstellen möchten, sollten Sie einen weit verbreiteten Satz von Bibliotheken auswählen. Es wird empfohlen, die Vorlage "Portable Bibliothek" für die breiteste Unterstützung zu verwenden:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![NuGet Visual Studio für Mac](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png#lightbox)
+[![Vorlage der portablen Bibliothek Visual Studio für Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![NuGet Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png#lightbox)
+[![Portable Bibliotheks Vorlage Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
+
+In Visual Studio sollten Sie sicherstellen, dass Sie die folgenden Zielplattformen für Ihre Portable Bibliothek auswählen:
+
+[![Portable Bibliotheks Plattformen Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
 
 -----
 
-Sie sollten die leere Klasse zu löschen, die für Sie als Teil des Projekts erstellt wird – Sie wird nicht benötigen sie für diese. Nachdem Sie diese Schritte durchgeführt haben, können Sie mit der Entwicklung Ihrer Integration beginnen.
+Nachdem Sie das Bibliotheksprojekt erstellt haben, fügen Sie über den `Xamarin.Workbooks.Integration` nuget-Paket-Manager einen Verweis auf die nuget-Bibliothek hinzu.
 
-## <a name="building-an-integration"></a>Erstellen eine Integration
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Wir erstellen eine einfache Integration. Wir schätzen sehr die Farbe Grün angezeigt werden, damit wir die Farbe Grün als Darstellung für jedes Objekt hinzufügen. Erstellen Sie zunächst eine neue Klasse namens `SampleIntegration`, und legen Sie ihn implementieren unsere [ `IAgentIntegration` ] [ integration-type] Schnittstelle:
+[![Nuget-Visual Studio für Mac](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png#lightbox)
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+[![Nuget Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png#lightbox)
+
+-----
+
+Sie müssen die leere Klasse löschen, die Sie als Teil des Projekts erstellt haben – Sie benötigen Sie nicht für dieses. Nachdem Sie diese Schritte ausgeführt haben, können Sie mit der Erstellung ihrer Integration beginnen.
+
+## <a name="building-an-integration"></a>Integrieren einer Integration
+
+Wir werden eine einfache Integration erstellen. Wir schätzen die Farbe Grün, daher fügen wir die Farbe Grün als Darstellung zu jedem Objekt hinzu. Erstellen Sie zunächst eine neue Klasse mit `SampleIntegration`dem Namen, und legen Sie `IAgentIntegration` die Implementierung der Schnittstelle ab:
 
 ```csharp
 using Xamarin.Interactive;
@@ -70,7 +70,7 @@ public class SampleIntegration : IAgentIntegration
 }
 ```
 
-Was wir tun möchten ist das Hinzufügen einer [Darstellung](~/tools/workbooks/sdk/representations.md) für jedes Objekt, das eine grüne Farbe ist. Wir werden mithilfe eines Anbieters Darstellung hierzu. Anbieter, die von erben die [ `RepresentationProvider` ] [ reppr] Klasse – für unsere, es muss lediglich überschreiben [ `ProvideRepresentations` ] [ prrep]:
+Wir möchten für jedes Objekt, das eine grüne Farbe darstellt, eine [Darstellung](~/tools/workbooks/sdk/representations.md) hinzufügen. Hierfür wird ein Darstellungs Anbieter verwendet. Anbieter erben von der `RepresentationProvider` -Klasse – für uns müssen wir nur Folgendes über `ProvideRepresentations`schreiben:
 
 ```csharp
 using Xamarin.Interactive.Representations;
@@ -85,22 +85,22 @@ class SampleRepresentationProvider : RepresentationProvider
 }
 ```
 
-Zurückgegeben eine [ `Color` ] [ color], eine vorab erstellte Darstellungstyp in unser SDK.
-Sie werden feststellen, dass der Rückgabetyp ist ein `IEnumerable<object>` &mdash;ein Darstellung Anbieter möglicherweise viele Darstellungen für ein Objekt zurück. Alle Darstellung-Anbieter werden für jedes Objekt bezeichnet, daher ist es wichtig, die keine Annahmen über die Objekte an Sie übergeben werden.
+Wir geben einen `Color`, einen vorgefertigten Darstellungs Typen in unserem SDK zurück.
+Sie werden feststellen, dass der Rückgabetyp hier ein `IEnumerable<object>` &mdash;einziger Darstellungs Anbieter ist und möglicherweise viele Darstellungen für ein Objekt zurückgibt. Alle Darstellungs Anbieter werden für jedes Objekt aufgerufen, daher ist es wichtig, keine Annahmen darüber zu treffen, welche Objekte an Sie übermittelt werden.
 
-Der letzte Schritt besteht unsere Anbieter registrieren, mit dem Agent und teilen Sie Arbeitsmappen, wo unsere Integrationstyp zu finden. Um den Anbieter zu registrieren, fügen Sie diesen Code in die `IntegrateWith` -Methode in der die `SampleIntegration` Klasse, die wir zuvor erstellt haben:
+Der letzte Schritt besteht darin, den Anbieter tatsächlich beim Agent zu registrieren und Arbeitsmappen mitzuteilen, wo der Integrationstyp zu finden ist. Fügen Sie der- `IntegrateWith` Methode in der `SampleIntegration` zuvor erstellten-Klasse den folgenden Code hinzu, um den Anbieter zu registrieren:
 
 ```csharp
 agent.RepresentationManager.AddProvider (new SampleRepresentationProvider ());
 ```
 
-Festlegen des Typs für die Integration erfolgt über ein assemblyweit-Attribut. Sie können dies in Ihrer Datei "AssemblyInfo.cs" oder in derselben Klasse wie den Integrationstyp der Einfachheit halber nehmen:
+Das Festlegen des Integrations Typs erfolgt über ein assemblyweites Attribut. Sie können dies in ihrer AssemblyInfo.cs oder in derselben Klasse wie Ihr Integrationstyp platzieren:
 
 ```csharp
 [assembly: AgentIntegration (typeof (SampleIntegration))]
 ````
 
-Während der Entwicklung Umständen ist es bequemer, mithilfe [ `AddProvider` Überladungen] [ addprovider] auf `RepresentationManager` , mit denen Sie Darstellungen in einer Arbeitsmappe, bieten einen einfachen Rückruf zu registrieren. und verschieben Sie dann diesen Code in Ihre `RepresentationProvider` Implementierung, sobald Sie fertig sind. Ein Beispiel für das Rendern einer [ `OxyPlot` ] [ oxyplot] `PlotModel` könnte wie folgt aussehen:
+Während der Entwicklung ist es möglicherweise bequemer, über Ladungen `AddProvider` für `RepresentationManager` zu verwenden, die es Ihnen ermöglichen, einen einfachen Rückruf zu registrieren, um Darstellungen innerhalb einer Arbeitsmappe bereitzustellen, und diesen `RepresentationProvider` Code dann einmal in Ihre Implementierung zu verschieben. Sie sind fertig. Ein Beispiel für das Rendern eines [`OxyPlot`][oxyplot] `PlotModel` könnte wie folgt aussehen:
 
 ```csharp
 InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
@@ -111,15 +111,15 @@ InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
 ```
 
 > [!NOTE]
-> Diese APIs bieten Ihnen eine schnelle Möglichkeit zum Abrufen und ausführen, aber es wäre nicht empfehlenswert, versenden ein gesamtes Integration, nur diese&mdash;bieten nur sehr wenig steuern, wie die Typen vom Client verarbeitet werden.
+> Mit diesen APIs können Sie schnell loslegen, aber es wird nicht empfohlen, eine vollständige Integration nur mit Ihnen&mdash;durchführen zu lassen. Sie bieten nur sehr wenig Kontrolle darüber, wie Ihre Typen vom Client verarbeitet werden.
 
-Mit der Darstellung, die registriert wird kann die Integration geliefert.
+Wenn die Darstellung registriert ist, ist ihre Integration bereit für die Bereitstellung!
 
-## <a name="shipping-your-integration"></a>Protokollversand von der integration
+## <a name="shipping-your-integration"></a>Versenden der Integration
 
-Die Integration zu liefern, müssen Sie ihn in ein NuGet-Paket hinzufügen.
-Sie können es mit Ihrer vorhandenen Bibliothek NuGet schicken, oder wenn Sie ein neues Paket erstellen, können Sie diese Vorlage NuSpec-Datei als Ausgangspunkt verwenden.
-Sie müssen in den Abschnitten, die relevant für die Integration ausfüllen. Der wichtigste Teil Transportservers ist, dass alle Dateien für die Integration in eine `xamarin.interactive` Verzeichnis im Stammverzeichnis des Pakets. Dies ermöglicht uns die relevanten Dateien für die Integration, unabhängig davon, ob Sie ein vorhandenes Paket verwenden, oder erstellen Sie eine leicht zu finden.
+Um ihre Integration zu senden, müssen Sie Sie einem nuget-Paket hinzufügen.
+Sie können Sie mit dem nuget-Element Ihrer vorhandenen Bibliothek versenden, oder wenn Sie ein neues Paket erstellen, können Sie diese Vorlage. nuspec-Datei als Ausgangspunkt verwenden.
+Sie müssen die für ihre Integration relevanten Abschnitte ausfüllen. Der wichtigste Teil ist, dass sich alle Dateien für ihre Integration in einem `xamarin.interactive` Verzeichnis im Stammverzeichnis des Pakets befinden müssen. Dies ermöglicht es uns, alle relevanten Dateien für ihre Integration problemlos zu finden, unabhängig davon, ob Sie ein vorhandenes Paket verwenden oder ein neues erstellen.
 
 ```xml
 <?xml version="1.0"?>
@@ -137,37 +137,30 @@ Sie müssen in den Abschnitten, die relevant für die Integration ausfüllen. De
 </package>
 ```
 
-Nachdem Sie die NuSpec-Datei erstellt haben, können Sie Ihres NuGet pack wie folgt:
+Nachdem Sie die nuspec-Datei erstellt haben, können Sie Ihre nuget-Datei wie folgt Verpacken:
 
 ```csharp
 nuget pack MyIntegration.nuspec
 ```
 
-und dann zu veröffentlichen, [NuGet][nugetorg]. Sobald es vorliegt, werden Sie möglicherweise, verweisen sie aus jeder Arbeitsmappe und in Aktion erleben. Im nachfolgenden Screenshot haben wir die Beispiel-Integration verpackt, dass wir in diesem Dokument erstellt und das NuGet-Paket in einer Arbeitsmappe installiert:
+und veröffentlichen Sie Sie dann auf [nuget][nugetorg]. Sobald Sie vorhanden sind, können Sie von einer beliebigen Arbeitsmappe aus darauf verweisen und Sie in Aktion sehen. Im folgenden Screenshot haben wir die Beispiel Integration verpackt, die wir in diesem Dokument erstellt und das nuget-Paket in einer-Arbeitsmappe installiert haben:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Die Arbeitsmappe mit Integration](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
+[![Arbeitsmappe mit Integration](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Die Arbeitsmappe mit Integration](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
+[![Arbeitsmappe mit Integration](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
 
 -----
 
-Beachten Sie, dass Sie keine sehen `#r` Direktiven oder etwas zum Initialisieren der Integration – Arbeitsmappen kümmert sich all das für Sie hinter den Kulissen!
+Beachten Sie, dass keine `#r` Direktiven oder nichts angezeigt wird, um die Integration zu initialisieren – Arbeitsmappen haben all dies für Sie im Hintergrund erledigt!
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Sehen Sie sich unsere Dokumentationen für Weitere Informationen zu den bewegliche Teile, aus denen das SDK besteht und unseren [Beispiel Integrationen](~/tools/workbooks/samples/index.md) für zusätzliche Elemente können Sie über Ihre Integration, beispielsweise die Bereitstellung der benutzerdefinierten JavaScript-Code, der ausgeführt wird, im durchführen der Arbeitsmappen-Client.
+In unserer weiteren Dokumentation finden Sie weitere Informationen zu den beweglichen Komponenten, aus denen das SDK besteht, sowie unsere [Beispiel Integrationen](~/tools/workbooks/samples/index.md) für weitere Dinge, die Sie in ihrer Integration durchführen können, wie z. b. das Bereitstellen benutzerdefinierter JavaScript, das im Arbeitsmappen-Client ausgeführt wird
 
-[integration-type]: https://developer.xamarin.com/api/type/Xamarin.Interactive.IAgentIntegration/
-[repman-api]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.IRepresentationManager/
-[color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
-[xir]: https://developer.xamarin.com/api/namespace/Xamarin.Interactive.Representations/
-[reppr]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.RepresentationProvider/
-[prrep]: https://developer.xamarin.com/api/member/Xamarin.Interactive.Representations.RepresentationProvider.ProvideRepresentations/p/System.Object/
 [nugetorg]: https://nuget.org
 [nuget]: https://nuget.org/packages/Xamarin.Workbooks.Integration
-[addprovider]: https://developer.xamarin.com/api/member/Xamarin.Interactive.Representations.IRepresentationManager.AddProvider/
 [oxyplot]: http://www.oxyplot.org/

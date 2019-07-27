@@ -1,36 +1,36 @@
 ---
-title: Intent-Dienste in Xamarin.Android
+title: Beabsichtigte Dienste in xamarin. Android
 ms.prod: xamarin
 ms.assetid: A5B86FE4-C8E2-4B0A-84CA-EF8F5119E31B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1301f34ad1f7a0069c542ba81bf237a673fd239d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4c868623ae08ac1366c1c9ea55c8d635f0a6a061
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013116"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509139"
 ---
-# <a name="intent-services-in-xamarinandroid"></a>Intent-Dienste in Xamarin.Android
+# <a name="intent-services-in-xamarinandroid"></a>Beabsichtigte Dienste in xamarin. Android
 
-## <a name="intent-services-overview"></a>Übersicht über die Intent-Dienste
+## <a name="intent-services-overview"></a>Übersicht über beabsichtigte Dienste
 
-Beide Schritte und gebundene Dienste führen Sie auf den Hauptthread, was bedeutet, dass ein Dienst um Leistung smooth beizubehalten, die Arbeit asynchron auszuführen muss. Eine der einfachsten Möglichkeiten, um dieses Problem zu beheben ist mit einem _Muster "Prozessor" Worker_, in dem die zu erledigenden Arbeit in einer Warteschlange platziert wird, die von einem einzelnen Thread verarbeitet wird. 
+Sowohl gestartete als auch gebundene Dienste werden im Haupt Thread ausgeführt. Dies bedeutet, dass ein Dienst die Arbeit asynchron ausführen muss, um die Leistung zu gewährleisten. Eine der einfachsten Möglichkeiten, dieses Problem zu beheben, liegt bei einem _Prozessor Muster_für workerwarteschlangen, bei dem die zu erledende Arbeit in einer Warteschlange platziert wird, die von einem einzelnen Thread bedient wird.
 
-Die [ `IntentService` ](https://developer.xamarin.com/api/type/Android.App.IntentService/) ist eine Unterklasse von der `Service` Klasse, die eine Android-spezifische Implementierung dieses Musters bereitstellt. Verwaltet Arbeit Queueing service die Warteschlange, ein Arbeitsthread gestartet aktivieren und Deaktivieren der Warteschlange für den Arbeitsthread ausgeführt werden, Abrufen von Anforderungen. Ein `IntentService` unauffällig selbst beendet und den Arbeitsthread zu entfernen, wenn keine weiteren Aufgaben in der Warteschlange vorhanden ist.
- 
-Arbeit an die Warteschlange gesendet wird, durch das Erstellen einer `Intent` und deren Übergabe, die `Intent` auf die `StartService` Methode.
+Bei handelt es sich um eine unter `Service` Klasse der-Klasse, die eine Android-spezifische Implementierung dieses Musters bereitstellt. [`IntentService`](xref:Android.App.IntentService) Sie verwaltet die Warteschlangen Arbeit, startet einen Arbeits Thread, um die Warteschlange zu verarbeiten, und zieht Anforderungen aus der Warteschlange ab, die im Arbeits Thread ausgeführt werden. Ein `IntentService` -Wert wird in Ruhe und entfernt den Arbeits Thread, wenn keine weiteren Aufgaben in der Warteschlange vorhanden sind.
 
-Es ist nicht möglich, beenden oder unterbrechen die `OnHandleIntent` Methode `IntentService` und sie arbeitet. Aufgrund dieses Designs ein `IntentService` zustandslosen beibehalten werden sollen &ndash; es, auf eine aktive Verbindung oder Kommunikation mit dem Rest der Anwendung nicht empfehlenswert. Ein `IntentService` statelessly arbeitsanforderungen verarbeiten soll.
+Die Arbeit wird an die Warteschlange übermittelt `Intent` , indem ein erstellt `Intent` und dann `StartService` an die-Methode übergeben wird.
 
-Es gibt zwei Anforderungen für Unterklassen `IntentService`:
+Es ist nicht möglich, die Methode `OnHandleIntent` `IntentService` zu stoppen oder zu unterbrechen, während Sie funktioniert. Aufgrund dieses Entwurfs sollte ein `IntentService` Zustands frei &ndash; beibehalten werden. er sollte sich nicht auf eine aktive Verbindung oder Kommunikation mit dem Rest der Anwendung verlassen. Ein `IntentService` -Wert ist dazu gedacht, die Arbeitsanforderungen Status fähig zu verarbeiten.
 
-1. Der neue Typ (erstellt, indem Unterklassen `IntentService`) nur Außerkraftsetzungen der `OnHandleIntent` Methode.
-2. Der Konstruktor für den neuen Typ muss es sich um eine Zeichenfolge, die verwendet wird, um den Arbeitsthread zu benennen, der die Anforderungen behandelt. Der Name der dieser Arbeitsthread wird hauptsächlich beim Debuggen der Anwendung.
+Es gibt zwei Anforderungen für die Unterklassen `IntentService`:
 
-Der folgende code zeigt eine `IntentService` -Implementierung mit der überschriebenen `OnHandleIntent` Methode:
+1. Der neue Typ (erstellt durch Unterklassen `IntentService`) überschreibt nur die `OnHandleIntent` -Methode.
+2. Der Konstruktor für den neuen Typ erfordert eine Zeichenfolge, die verwendet wird, um den Arbeits Thread zu benennen, der die Anforderungen verarbeitet. Der Name dieses Arbeitsthreads wird hauptsächlich verwendet, wenn die Anwendung debuggt wird.
+
+Der folgende Code zeigt eine `IntentService` -Implementierung mit der überschriebenen `OnHandleIntent` -Methode:
 
 ```csharp
 [Service]
@@ -39,7 +39,7 @@ public class DemoIntentService: IntentService
     public DemoIntentService () : base("DemoIntentService")
     {
     }
-    
+
     protected override void OnHandleIntent (Android.Content.Intent intent)
     {
         Console.WriteLine ("perform some long running work");
@@ -49,7 +49,7 @@ public class DemoIntentService: IntentService
 }
 ```
 
-Arbeit wird gesendet, um eine `IntentService` durch Instanziieren einer `Intent` und dem anschließenden Aufrufen der [ `StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/) -Methode mit diese Absicht als Parameter. Die Absicht wird an den Dienst übergeben werden, als Parameter in der `OnHandleIntent` Methode. Dieser Codeausschnitt ist ein Beispiel für eine Aufgaben-Anforderung an einen Intent gesendet: 
+Die Arbeit wird an eine `IntentService` gesendet, indem eine `Intent` instanziiert und anschließend [`StartService`](xref:Android.Content.Context.StartService*) die-Methode mit dieser Absicht als Parameter aufgerufen wird. Die Absicht wird als Parameter in der `OnHandleIntent` -Methode an den Dienst übergeben. Dieser Code Ausschnitt ist ein Beispiel für das Senden einer Arbeits Anforderung an eine Absicht: 
 
 ```csharp
 // This code might be called from within an Activity, for example in an event
@@ -63,19 +63,18 @@ downloadIntent.Put
 StartService(downloadIntent);
 ```
 
-Die `IntentService` können die Werte von der Absicht, extrahieren, wie im folgenden Codeausschnitt gezeigt:  
+Der `IntentService` kann die Werte aus der Absicht extrahieren, wie im folgenden Code Ausschnitt gezeigt:  
 
 ```csharp
 protected override void OnHandleIntent (Android.Content.Intent intent)
 {
     string fileToDownload = intent.GetStringExtra("file_to_download");
-    
+
     Log.Debug("DemoIntentService", $"File to download: {fileToDownload}.");
 }
 ```
 
-
 ## <a name="related-links"></a>Verwandte Links
 
-- [IntentService](https://developer.xamarin.com/api/type/Android.App.IntentService/)
-- [StartService](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/)
+- [IntentService](xref:Android.App.IntentService)
+- [StartService](xref:Android.Content.Context.StartService*)

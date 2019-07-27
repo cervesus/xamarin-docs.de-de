@@ -6,46 +6,46 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 1e9a71de7725c8382e133d85977407bcc859fc58
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f8a542b58fa891b63f43d1c87dea911b83e01949
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013664"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509320"
 ---
 # <a name="using-android-assets"></a>Verwenden von Android-Ressourcen
 
-_Assets_ bieten eine Möglichkeit, beliebige Dateien, wie Text, Xml, Schriftarten, Musik und Videos in Ihre Anwendung einbinden. Wenn Sie versuchen, diese Dateien als "Resources" enthalten, Android werden diese in der Resource-System verarbeitet, und Sie werden nicht in die Rohdaten zu erhalten. Sie können den Zugriff auf Daten, die unverändert sind Ressourcen eine Möglichkeit dafür.
+_Assets_ bieten eine Möglichkeit, beliebige Dateien wie Text, XML, Schriftarten, Musik und Videos in Ihre Anwendung einzubeziehen. Wenn Sie versuchen, diese Dateien als "Ressourcen" einzuschließen, verarbeitet Android Sie in das Ressourcensystem, und Sie können die Rohdaten nicht mehr erhalten. Wenn Sie auf Daten nicht auf Daten zugreifen möchten, sind Assets eine Möglichkeit dafür.
 
-Objekte, die dem Projekt hinzugefügt werden angezeigt, wie ein Dateisystem, das von Ihrer Anwendung mithilfe von lesen kann [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/).
-In dieser einfachen Demo werden wir ein Text-Datei-Medienobjekt unser Projekt hinzufügen, lesen Sie sie mit `AssetManager`, und in einem TextView angezeigt wird.
+Dem Projekt hinzugefügte Ressourcen werden genau wie ein Dateisystem angezeigt, das von Ihrer Anwendung mithilfe von [Assetmanager](xref:Android.Content.Res.AssetManager)gelesen werden kann.
+In dieser einfachen Demo fügen wir dem Projekt ein Textdatei-Medienobjekt hinzu, lesen es mit `AssetManager`und zeigen es in einer TextView an.
 
 
-## <a name="add-asset-to-project"></a>Anlage zu Projekt hinzufügen
+## <a name="add-asset-to-project"></a>Medienobjekt zu Projekt hinzufügen
 
-Ressourcen befinden sich der `Assets` Ordner des Projekts. Fügen Sie eine neue Textdatei, in diesem Ordner namens `read_asset.txt`. Platzieren Sie etwas Text darin, wie "Ich aus einem Medienobjekt stammen!".
+Assets wechseln in den `Assets` Ordner des Projekts. Fügen Sie diesem Ordner eine neue Textdatei mit `read_asset.txt`dem Namen hinzu. Platzieren Sie Text wie "Ich habe von einem Asset!".
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio festgelegt haben sollte die **Buildvorgang** für diese Datei, um **AndroidAsset**:
+Visual Studio muss die Buildaktion für diese Datei auf **androidasset**festlegen:
 
-![Die Buildaktion festlegen auf AndroidAsset](android-assets-images/asset-properties-vs.png) 
+![Festlegen der Buildaktion auf "androidasset"](android-assets-images/asset-properties-vs.png) 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Visual Studio für Mac festgelegt haben sollte die **Buildvorgang** für diese Datei, um **AndroidAsset**:
+Visual Studio für Mac müssen die Buildaktion für diese Datei auf " **androidasset**" festlegen:
 
-[![Die Buildaktion festlegen auf AndroidAsset](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
+[![Festlegen der Buildaktion auf "androidasset"](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
 
 -----
 
-Wählen Sie die richtigen **BuildAction** wird sichergestellt, dass die Datei in das APK zum Zeitpunkt der Kompilierung verpackt werden.
+Wenn Sie die richtige **BuildAction** auswählen, wird sichergestellt, dass die Datei zur Kompilierzeit in das APK gepackt wird.
 
 
-## <a name="reading-assets"></a>Lesen von Ressourcen
+## <a name="reading-assets"></a>Lesen von Assets
 
-Ressourcen werden gelesen, die mit einem [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/). Eine Instanz von der `AssetManager` ist verfügbar, die Zugriff auf die [Assets](https://developer.xamarin.com/api/property/Android.Content.Context.Assets/) Eigenschaft für eine `Android.Content.Context`, wie z. B. eine Aktivität.
-Öffnen Sie in den folgenden Code, wir unsere **read_asset.txt** Asset, lesen Sie den Inhalt und mit einem TextView anzuzeigen.
+Assets werden mithilfe eines [assetmanagers](xref:Android.Content.Res.AssetManager)gelesen. Eine Instanz des `AssetManager` ist verfügbar, indem auf die [Assets](xref:Android.Content.Context.Assets) -Eigenschaft eines `Android.Content.Context`zugegriffen wird, z. b. eine-Aktivität.
+Im folgenden Code öffnen wir das **read_asset. txt** -Asset, lesen den Inhalt und zeigen ihn mithilfe einer TextView an.
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -72,12 +72,12 @@ protected override void OnCreate (Bundle bundle)
 
 ## <a name="running-the-application"></a>Ausführen der Anwendung
 
-Führen Sie die Anwendung und sollte Folgendes angezeigt:
+Führen Sie die Anwendung aus, und Folgendes sollte angezeigt werden:
 
-![Beispielscreenshot](android-assets-images/screenshot.png)
+![Beispiel Bildschirm](android-assets-images/screenshot.png)
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/)
-- [Kontext](https://developer.xamarin.com/api/type/Android.Content.Context/)
+- [AssetManager](xref:Android.Content.Res.AssetManager)
+- [Kontext](xref:Android.Content.Context)

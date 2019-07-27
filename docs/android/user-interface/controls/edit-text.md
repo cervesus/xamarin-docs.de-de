@@ -1,24 +1,24 @@
 ---
 title: Text bearbeiten
-description: So verwenden Sie das Widget EditText Benutzereingaben akzeptieren.
+description: Verwenden des EDITTEXT-Widgets, um Benutzereingaben zu akzeptieren.
 ms.prod: xamarin
 ms.assetid: E513BCBC-438E-15E8-B83A-4B768A8E8B32
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 518c13aea431a8e973579768cc70b8281a31acac
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: ffe1c33c2ec93ae04af70a67d0417ab253591183
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674729"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510293"
 ---
-# <a name="edit-text"></a>Text bearbeiten
+# <a name="xamarinandroid-edit-text"></a>Xamarin. Android-Bearbeitungs Text
 
-In diesem Abschnitt verwenden Sie die [EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/) Widgets zu einem Textfeld Benutzer zur Eingabe erstellen. Nach Text in das Feld eingegeben wurde die **EINGABETASTE** Schlüssel wird den Text in einer eingeblendeten Nachricht anzuzeigen.
+In diesem Abschnitt verwenden Sie das [EDITTEXT](xref:Android.Widget.EditText) -Widget, um ein Textfeld für Benutzereingaben zu erstellen. Nachdem Text in das Feld eingegeben wurde, wird in der **Eingabe** Taste der Text in einer Popup Meldung angezeigt.
 
-Open **Resources/layout/activity_main.axml** und Hinzufügen der [EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/) Element zu einem Layout enthält. Im folgenden Beispiel **activity_main.axml** verfügt über eine `EditText` , die hinzugefügt wurde eine `LinearLayout`:
+Öffnen Sie **Resources/Layout/activity_main. axml** , und fügen Sie das [EDITTEXT](xref:Android.Widget.EditText) -Element einem enthaltenden Layout hinzu. Das folgende Beispiel **activity_main. axml** verfügt über `EditText` einen, der zu einem `LinearLayout`hinzugefügt wurde:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -35,10 +35,10 @@ Open **Resources/layout/activity_main.axml** und Hinzufügen der [EditText](http
 </LinearLayout>
 ```
 
-In diesem Codebeispiel wird die `EditText` Attribut `android:imeOptions` nastaven NA hodnotu `actionGo`. Diese Einstellung ändert den Standard [durchgeführt](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) Aktion aus, um die [wechseln Sie](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) Aktion, damit durch Tippen auf die **EINGABETASTE** Schlüssel Trigger die `KeyPress` eingabehandler.
-(In der Regel `actionGo` wird verwendet, damit die **EINGABETASTE** Schlüssel wird der Benutzer auf das Ziel eine URL, die in eingegeben wird.)
+In diesem Codebeispiel wird das `EditText` - `android:imeOptions` Attribut auf `actionGo`festgelegt. Mit dieser Einstellung wird die Standardaktion done in die [go](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) -Aktion geändert, sodass der `KeyPress` Eingabe Handler [durch](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) Tippen auf die **EINGABETASTE ausgelöst** wird.
+(In der `actionGo` Regel wird verwendet, damit die **Eingabe** Taste den Benutzer zum Ziel einer URL, die eingegeben wird, verwendet.)
 
-Um Text Benutzereingaben zu behandeln, fügen Sie den folgenden Code am Ende der [OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/) -Methode in der **"mainactivity.cs"** :
+Fügen Sie den folgenden Code am Ende der [OnCreate](xref:Android.App.Activity.OnCreate*) -Methode in **MainActivity.cs**ein, um Benutzer Texteingaben zu behandeln:
 
 ```csharp
 EditText edittext = FindViewById<EditText>(Resource.Id.edittext);
@@ -52,19 +52,19 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 };
 ```
 
-Darüber hinaus fügen Sie die folgenden `using` Anweisung am Anfang **"mainactivity.cs"** ist dies nicht bereits vorhanden:
+Fügen Sie außerdem die folgende `using` Anweisung am Anfang von **MainActivity.cs** hinzu, wenn Sie nicht bereits vorhanden ist:
 
 ```csharp
 using Android.Views;
 ```
 
-In diesem Codebeispiel wird vergrößert die [EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/) Element aus dem Layout und fügt eine [KeyPress](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/) Handler, der definiert, die Aktion, die vorgenommen werden, wenn eine Taste gedrückt wird, während das Widget den Fokus besitzt. In diesem Fall wird die Methode zum Abhören von definiert die **EINGABETASTE** Schlüssel (wenn es sich um eine angetippt), und klicken Sie dann angezeigt ein [Toast](https://developer.xamarin.com/api/type/Android.Widget.Toast/) Nachricht mit dem Text, der eingegeben wurde. Beachten Sie, dass die [behandelt](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/) Eigenschaft muss immer `true` , wenn das Ereignis behandelt wurde. Dies ist erforderlich, um zu verhindern, dass das Ereignis bubbling oben (Dies wird ein Wagenrücklauf in das Textfeld führen würde).
+In diesem Codebeispiel wird das [EDITTEXT](xref:Android.Widget.EditText) -Element aus dem Layout vergrößert und ein [KeyPress](xref:Android.Views.View.KeyPress) -Handler hinzugefügt, der die Aktion definiert, die durchgeführt wird, wenn eine Taste gedrückt wird, während das Widget den Fokus besitzt. In diesem Fall wird die-Methode so definiert, dass **Sie die Eingabe** Taste (beim Tippen) abhört und dann [eine Popup](xref:Android.Widget.Toast) Meldung mit dem eingegebenen Text öffnet. Beachten Sie, dass die [behandelte](xref:Android.Views.View.KeyEventArgs.Handled) Eigenschaft immer `true` sein sollte, wenn das Ereignis behandelt wurde. Dies ist erforderlich, um zu verhindern, dass das Ereignis nach oben blindelt (was zu einem Wagen Rücklauf im Textfeld führen würde).
 
-Führen Sie die Anwendung, und geben Sie Text in das Textfeld ein. Beim Drücken der **EINGABETASTE** Schlüssel, der Toast angezeigt, wie auf der rechten Seite dargestellt:
+Führen Sie die Anwendung aus, und geben Sie Text in das Textfeld ein. Wenn Sie die **Eingabe** Taste drücken, wird der Toast wie auf der rechten Seite angezeigt:
 
-[![Beispiele für die Eingabe von Text in EditText](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
+[![Beispiele für das Eingeben von Text in EDITTEXT](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*Teile dieser Seite werden Änderungen, die basierend auf der Arbeit, die erstellt und* [ *freigegeben, indem Sie das Android Open Source-Projekt* ](http://code.google.com/policies.html) *und gemäß den Bedingungen, die in derbeschriebenenverwendet* [ *Attribution-Lizenz Creative Commons 2.5* ](http://creativecommons.org/licenses/by/2.5/) *. Dieses Tutorial basiert auf der* [ *Android Formular Dinge Tutorial* ](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
+*Teile dieser Seite sind Änderungen, die auf der erstellten Arbeit und* [*vom Android Open Source-Projekt gemeinsam*](http://code.google.com/policies.html) verwendet *und werden gemäß den Begriffen verwendet, die im* [*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/) *. Dieses Tutorial basiert auf dem* Android-Lernprogramm für [*Formular Inhalte*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
 
 
 ## <a name="related-links"></a>Verwandte Links

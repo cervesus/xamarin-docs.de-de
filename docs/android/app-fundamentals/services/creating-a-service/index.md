@@ -6,23 +6,23 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 8c2086025ccb5fe41b3ffddc9cd650c1e0c81fbc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c5348ab754139dbd4012f6bfe9d22068ac16d12b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013481"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509259"
 ---
 # <a name="creating-a-service"></a>Erstellen eines Diensts
 
-Xamarin.Android-Dienste müssen zwei unverletzliche Regeln von Android-Dienste erfüllt sein:
+Xamarin. Android-Dienste müssen zwei unantastbare Regeln für Android-Dienste einhalten:
 
-* Sie müssen erweitern die [ `Android.App.Service` ](https://developer.xamarin.com/api/type/Android.App.Service/).
-* Sie müssen mit ergänzt werden, die [ `Android.App.ServiceAttribute` ](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/).
+* Sie müssen den [`Android.App.Service`](xref:Android.App.Service)erweitern.
+* Sie müssen mit dem [`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)versehen werden.
 
-Ein weiteres Erfordernis von Android-Dienste ist, dass sie in registriert werden, müssen die **"androidmanifest.xml"** und erhält einen eindeutigen Namen. Xamarin.Android wird der Dienst zum Zeitpunkt der Erstellung mit dem erforderlichen XML-Attribut automatisch in das Manifest registrieren.
+Eine weitere Anforderung für Android-Dienste besteht darin, dass Sie in der Datei " **androidmanifest. XML** " registriert werden müssen und einen eindeutigen Namen erhalten. Xamarin. Android registriert den Dienst bei der Buildzeit automatisch im Manifest, wobei das erforderliche XML-Attribut verwendet wird.
 
-Dieser Codeausschnitt ist das einfachste Beispiel für das Erstellen eines Diensts in Xamarin.Android ein, die diese beiden Anforderungen erfüllt:  
+Dieser Code Ausschnitt ist das einfachste Beispiel für das Erstellen eines Dienstanbieter in xamarin. Android, der diese beiden Anforderungen erfüllt:  
 
 ```csharp
 [Service]
@@ -32,13 +32,13 @@ public class DemoService : Service
 }
 ```
 
-Zum Zeitpunkt der Kompilierung wird Xamarin.Android den Dienst registrieren, indem Sie in den folgende XML-Element einfügen **"androidmanifest.xml"** (Beachten Sie, dass Xamarin.Android ein zufälliger Name für den Dienst generiert):
+Zum Zeitpunkt der Kompilierung registriert xamarin. Android den Dienst, indem er das folgende XML-Element in " **androidmanifest. XML** " einfügt (Beachten Sie, dass xamarin. Android einen zufälligen Namen für den Dienst generiert hat):
 
 ```xml
 <service android:name="md5a0cbbf8da641ae5a4c781aaf35e00a86.DemoService" />
 ```
 
-Es ist möglich, einen Dienst gemeinsam mit anderen Android-Anwendungen von _exportieren_ es. Dies geschieht durch Festlegen der `Exported` Eigenschaft für die `ServiceAttribute`. Wenn Sie einen Dienst exportieren die `ServiceAttribute.Name` Eigenschaft muss auch festgelegt werden, um einen öffentlichen aussagekräftigen Namen für den Dienst bereitzustellen. Dieser Codeausschnitt veranschaulicht, wie exportieren, und benennen Sie einen Dienst:
+Es ist möglich, einen Dienst gemeinsam mit anderen Android-Anwendungen zu verwenden, indem Sie ihn _exportieren_ . Dies wird erreicht, indem die `Exported` -Eigenschaft `ServiceAttribute`auf festgelegt wird. Wenn Sie einen Dienst exportieren, `ServiceAttribute.Name` sollte die-Eigenschaft auch so festgelegt werden, dass Sie einen aussagekräftigen öffentlichen Namen für den Dienst bereitstellt. Dieser Code Ausschnitt veranschaulicht, wie Sie einen Dienst exportieren und benennen:
 
 ```csharp
 [Service(Exported=true, Name="com.xamarin.example.DemoService")]
@@ -48,15 +48,15 @@ public class DemoService : Service
 }
 ```
 
-Die **"androidmanifest.xml"** -Element für diesen Dienst sieht dann etwa wie folgt:
+Das Element " **androidmanifest. XML** " für diesen Dienst sieht dann in etwa wie folgt aus:
 
 ```xml
 <service android:exported="true" android:name="com.xamarin.example.DemoService" />
 ```
 
-Dienste verfügen über ihre eigenen Lebenszyklus mit Rückrufmethoden, die aufgerufen werden, da der Dienst erstellt wird. Genau die Methoden aufgerufen werden, hängt von den Typ des Diensts ab. Ein gestarteter Dienst muss andere Methoden als einen Dienst gebundene implementieren, während ein Hybrid-Diensts für einen Dienst gestartet und ein gebundener Dienst Rückrufmethoden implementieren muss. Diese Methoden sind alle Mitglieder der `Service` Klasse, die aufgerufen werden, welche Lebenszyklusmethoden bestimmt wie der Dienst gestartet wurde. Diese Methoden werden weiter unten ausführlicher erläutert.
+Dienste verfügen über einen eigenen Lebenszyklus mit Rückruf Methoden, die beim Erstellen des Diensts aufgerufen werden. Welche Methoden aufgerufen werden, richtet sich nach dem Diensttyp. Ein gestarteter Dienst muss verschiedene Lebenszyklus Methoden implementieren als ein gebundener Dienst, während ein Hybrid Dienst die Rückruf Methoden für einen gestarteten Dienst und einen gebundenen Dienst implementieren muss. Diese Methoden sind alle Member der `Service` -Klasse. die Art und Weise, wie der Dienst gestartet wird, bestimmt, welche Lebenszyklus Methoden aufgerufen werden. Diese Lebenszyklus Methoden werden später ausführlicher erläutert.
 
-Standardmäßig wird ein Dienst im gleichen Prozess wie eine Android-Anwendung gestartet. Es ist möglich, einen Dienst in einem eigenen Prozess starten, durch Festlegen der `ServiceAttribute.IsolatedProcess` Eigenschaft auf "true":
+Standardmäßig wird ein Dienst im gleichen Prozess wie eine Android-Anwendung gestartet. Es ist möglich, einen Dienst in einem eigenen Prozess zu starten, indem `ServiceAttribute.IsolatedProcess` die-Eigenschaft auf "true" festgelegt wird:
 
 ```csharp
 [Service(IsolatedProcess=true)]
@@ -66,16 +66,16 @@ public class DemoService : Service
 }
 ```
 
-Der nächste Schritt besteht, überprüfen Sie das Starten eines Diensts und uns dann zum Implementieren der drei verschiedene Arten von Diensten zu überprüfen.
+Der nächste Schritt besteht darin, zu untersuchen, wie Sie einen Dienst starten und dann fortfahren, um zu erfahren, wie die drei verschiedenen Typen von Diensten implementiert werden.
 
 > [!NOTE]
-> Ein Dienst ausgeführt wird, auf den UI-Thread, sodass ist keine Arbeit sein ausgeführt, die die Benutzeroberfläche blockiert, der Dienst Threads verwenden muss, um die Arbeit zu erledigen.
+> Ein Dienst wird im UI-Thread ausgeführt. Wenn also eine Arbeit ausgeführt werden soll, die die Benutzeroberfläche blockiert, muss der Dienst Threads zum Ausführen der Arbeit verwenden.
 
-## <a name="starting-a-service"></a>Starten eines Diensts
+## <a name="starting-a-service"></a>Starten eines Dienstanbieter
 
-Die einfachste Möglichkeit zum Starten eines Diensts unter Android wird zum Verteilen einer `Intent` enthält Metadaten zur Identifizierung der Dienst gestartet werden soll. Es gibt zwei verschiedene Arten der Intent-Elemente, die zum Starten eines Diensts verwendet werden können:
+Die einfachste Möglichkeit, einen Dienst in Android zu starten, besteht darin, `Intent` einen zu senden, der Metadaten enthält, um zu ermitteln, welcher Dienst gestartet werden sollte. Es gibt zwei verschiedene Arten von Intents, die zum Starten eines dienstanzen verwendet werden können:
 
--   **Expliziter Intent** &ndash; ein _expliziter Intent_ erkennt genau welcher Dienst verwendet werden soll, um eine bestimmte Aktion abzuschließen. Ein expliziter Intent kann als Buchstabe betrachtet werden, die eine bestimmte Adresse verfügt. Android wird die Absicht an den Dienst weiterzuleiten, die explizit angegeben wird. Dieser Codeausschnitt ist ein Beispiel der Verwendung expliziten Intent zum Starten eines Diensts wird aufgerufen, `DownloadService`:
+-   **Explizite Absicht** Eine _explizite Absicht_ gibt genau an, welcher Dienst verwendet werden soll, um eine bestimmte Aktion abzuschließen. &ndash; Eine explizite Absicht kann als Buchstabe angesehen werden, der über eine bestimmte Adresse verfügt. Android leitet die Absicht an den Dienst weiter, der explizit identifiziert wird. Dieser Code Ausschnitt ist ein Beispiel für die Verwendung einer expliziten Absicht, einen Dienst `DownloadService`mit dem Namen zu starten:
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,31 +83,31 @@ Die einfachste Möglichkeit zum Starten eines Diensts unter Android wird zum Ver
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **Impliziter Intent** &ndash; diese Art von Absicht lose identifiziert die Aktion an, dass der Benutzer ausführen möchte, aber die genaue Dienst zum Abschließen dieser Aktion unbekannt ist. Ein impliziter Intent-Objekt kann ein Buchstabe, der "To Whom It Mai Problem..." kommunikationsattribut betrachtet werden.
-    Android wird untersuchen Sie den Inhalt über den Zweck und bestimmen, ob es ein vorhandener Dienst, der die Absicht entspricht.
+-   **Implizite Absicht** &ndash; Diese Art der Absicht identifiziert lose den der Aktion, die der Benutzer ausführen möchte, aber der genaue Dienst zum Abschluss dieser Aktion ist unbekannt. Eine implizite Absicht kann als Buchstabe angesehen werden, der adressiert wird, dass es sich um ein Problem handelt.
+    Android prüft den Inhalt der Absicht und ermittelt, ob ein vorhandener Dienst vorhanden ist, der mit der Absicht übereinstimmt.
 
-    Ein _Zielfilter_ wird verwendet, um die impliziter Intent mit einem registrierten Dienst übereinstimmen. Ein intent-Filter ist ein XML-Element, das hinzugefügt wird **"androidmanifest.xml"** enthält die erforderlichen Metadaten können von einem Dienst mit impliziter Intent entsprechen.
+    Ein beabsichtigter _Filter_ wird verwendet, um die implizite Absicht mit einem registrierten Dienst abzugleichen. Ein Intent Filter ist ein XML-Element, das der Datei " **androidmanifest. XML** " hinzugefügt wird, die die erforderlichen Metadaten enthält, um einen Dienst mit einer impliziten Absicht abzugleichen.
 
     ```csharp
     Intent sendIntent = new Intent("common.xamarin.DemoService");
     sendIntent.Data = Uri.Parse(fileToDownload);
     ```
 
-Wenn Android mehr als eine mögliche Entsprechung für ein impliziter Intent enthält, kann dann es der Benutzer die Auswahl die Komponente, die Aktion zu behandeln Fragen:
+Wenn für Android mehr als eine mögliche Entsprechung für eine implizite Absicht vorliegt, wird der Benutzer möglicherweise aufgefordert, die Komponente auszuwählen, um die Aktion zu behandeln:
 
-![Screenshot des ein Dialogfeld zur Klärung](images/creating-a-service-01.png "Screenshot eines Dialogfelds zur mehrdeutigkeitsvermeidung")
+![Bildschirm Abbildung eines mehrdeutigkeits Dialogfelds](images/creating-a-service-01.png "Bildschirm Abbildung eines mehrdeutigkeits Dialogfelds")
 
 > [!IMPORTANT]
-> Ab Android 5.0 (AP-Ebene 21) kann ein impliziter Intent zum Starten eines Diensts verwendet werden.
+> Ab Android 5,0 (AP-Level 21) kann eine implizite Absicht nicht verwendet werden, um einen Dienst zu starten.
 
-Nach Möglichkeit sollten Anwendungen expliziter Intent-Elemente verwenden, um einen Dienst zu starten. Ein impliziter Intent fordert nicht für einen bestimmten Dienst zu &ndash; ist eine Anforderung für einen Dienst auf dem Gerät installiert, die die Anforderung zu verarbeiten. Diese Anforderung nicht eindeutig kann führen, in dem falschen Dienst Behandlung der Anforderung oder einer anderen app unnötig starten (wodurch den Druck für Ressourcen auf dem Gerät erhöht wird).
+Wenn möglich, sollten Anwendungen explizite Intents verwenden, um einen Dienst zu starten. Bei einer impliziten Absicht wird nicht angefordert, dass ein bestimmter Dienst &ndash; gestartet wird. es handelt sich um eine Anforderung für einen Dienst, der auf dem Gerät installiert ist, um die Anforderung zu verarbeiten. Diese mehrdeutige Anforderung kann dazu führen, dass der falsche Dienst die Anforderung verarbeitet oder eine andere APP unnötig startet (was den Druck für Ressourcen auf dem Gerät erhöht).
 
-Wie die Absicht weitergeleitet wird, hängt von der Art des Diensts und erläutert im Detail weiter unten in den Leitfäden, die für jeden Dienst spezifische.
+Die Art und Weise, wie die Absicht verteilt wird, hängt von der Art des Dienstanbieter ab und wird später in den Anleitungen zu den einzelnen Dienst Typen ausführlicher erläutert.
 
 
-### <a name="creating-an-intent-filter-for-implicit-intents"></a>Erstellen eine Zielfilter für implizite Intents
+### <a name="creating-an-intent-filter-for-implicit-intents"></a>Erstellen eines Intent-Filters für implizite Intents
 
-Um einen Dienst mit impliziter Intent zuzuordnen, muss eine Android-app einige Metadaten zum Identifizieren der Funktionen des Diensts bereitstellen. Diese Metadaten erfolgt über _Beabsichtigter Filter_. Beabsichtigter Filter enthalten einige Informationen, z. B. eine Aktion oder einen Typ von Daten, die in ein Intent-Objekt zum Starten eines Diensts vorhanden sein müssen. In Xamarin.Android wird im Zielfilter registriert **"androidmanifest.xml"** werden, indem einen Dienst mit der [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). Der folgende Code fügt z. B. einen beabsichtigten Filter mit der Aktion zugeordnete `com.xamarin.DemoService`:
+Um einen Dienst einer impliziten Absicht zuzuordnen, muss eine Android-App metadatendaten bereitstellen, um die Funktionen des Dienstanbieter zu identifizieren. Diese Metadaten werden von _beabsichtigten Filtern_bereitgestellt. Beabsichtigte Filter enthalten einige Informationen, z. b. eine Aktion oder einen Datentyp, die in einer Absicht vorhanden sein müssen, einen Dienst zu starten. In xamarin. Android wird der Intent-Filter in **androidmanifest. XML** registriert, indem ein Dienst mit dem [`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)versehen wird. Der folgende Code fügt z. b. einen Intent-Filter mit einer zugeordneten Aktion von `com.xamarin.DemoService`hinzu:
 
 ```csharp
 [Service]
@@ -117,7 +117,7 @@ public class DemoService : Service
 }
 ```
 
-Dies führt zu einem Eintrag in einbezogen werden die **"androidmanifest.xml"** Datei &ndash; einen Eintrag, der mit der Anwendung auf eine Weise, die analog zu den im folgenden Beispiel wird verpackt wird:
+Dies führt dazu, dass in der Datei &ndash; " **androidmanifest. XML** " ein Eintrag enthalten ist, der mit der Anwendung in einer Weise analog zum folgenden Beispiel verpackt wird:
 
 ```xml
 <service android:name="demoservice.DemoService">
@@ -127,12 +127,12 @@ Dies führt zu einem Eintrag in einbezogen werden die **"androidmanifest.xml"** 
 </service>
 ```
 
-Betrachten wir mit den Grundlagen eines Xamarin.Android-Diensts aus dem Weg die unterschiedliche Untertypen von Diensten im Detail.
+Mit den Grundlagen eines xamarin. Android-Diensts können wir die verschiedenen Untertypen von Diensten ausführlicher untersuchen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
-- [Android.App.ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/)
-- [Android.App.Intent](https://developer.xamarin.com/api/type/Android.Content.Intent/)
-- [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
+- [Android.App.Service](xref:Android.App.Service)
+- [Android.App.ServiceAttribute](xref:Android.App.ServiceAttribute)
+- [Android.App.Intent](xref:Android.Content.Intent)
+- [Android.App.IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)

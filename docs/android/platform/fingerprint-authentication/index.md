@@ -1,37 +1,37 @@
 ---
 title: Fingerabdruckauthentifizierung
-description: Dieser Leitfaden erläutert, wie Sie die Authentifizierung per Fingerabdruck, eingeführt in Android 6.0 zu einer Xamarin.Android-Anwendung hinzufügen.
+description: In diesem Handbuch wird erläutert, wie Sie die Fingerabdruckauthentifizierung, die in Android 6,0 eingeführt wurde, in eine xamarin. Android-Anwendung einfügen.
 ms.prod: xamarin
 ms.assetid: 6742D874-4988-4516-A946-D5C714B20A10
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 70e12abdf61a6a0bfb36d281bcaa6214199e567d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7917f0cc03a4079d6b2adaba37fdc0332f8626c8
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023469"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510608"
 ---
 # <a name="fingerprint-authentication"></a>Fingerabdruckauthentifizierung
 
-_Dieser Leitfaden erläutert, wie Sie die Authentifizierung per Fingerabdruck, eingeführt in Android 6.0 zu einer Xamarin.Android-Anwendung hinzufügen._
+_In diesem Handbuch wird erläutert, wie Sie die Fingerabdruckauthentifizierung, die in Android 6,0 eingeführt wurde, in eine xamarin. Android-Anwendung einfügen._
 
 
-## <a name="fingerprint-authentication-overview"></a>Übersicht über die Authentifizierung per Fingerabdruck
+## <a name="fingerprint-authentication-overview"></a>Übersicht über Fingerabdruckauthentifizierung
 
-Der Eingang Fingerabdruckscanner auf Android-Geräten bietet Anwendungen eine Alternative zu der herkömmlichen Benutzername/Kennwort-Methode der Benutzerauthentifizierung. Die Verwendung von Fingerabdrücken zum Authentifizieren eines Benutzers ermöglicht es einer Anwendung, die Sicherheit zu integrieren, die weniger intrusiv als Benutzername und Kennwort.
+Die Ankunft von Fingerabdruckscannern auf Android-Geräten bietet Anwendungen eine Alternative zur herkömmlichen Benutzernamen-/Kennwort-Methode der Benutzerauthentifizierung. Die Verwendung von Fingerabdrücken zum Authentifizieren eines Benutzers ermöglicht einer Anwendung die Einbindung von Sicherheit, die weniger stark aufdringlich ist als ein Benutzername und ein Kennwort.
 
-Die FingerprintManager-APIs mit einem Fingerabdruck-Scanner-Zielgeräte und API-Ebene 23 (Android 6.0) ausgeführt werden oder höher. Die APIs befinden sich die `Android.Hardware.Fingerprints` Namespace. Die Bibliothek für Android-Unterstützung v4 enthält den Fingerabdruck-APIs vorgesehen, die für ältere Versionen von Android-Versionen. Die Kompatibilität APIs finden Sie in der `Android.Support.v4.Hardware.Fingerprint` -Namespace über verteilt werden die [Xamarin.Android.Support.v4 NuGet-Paket](https://www.nuget.org/packages/Xamarin.Android.Support.v4/).
+Die fingerprintmanager-APIs richten sich an Geräte mit einem Fingerabdruckscanner und führen die API-Ebene 23 (Android 6,0) oder höher aus. Die APIs finden Sie im `Android.Hardware.Fingerprints` -Namespace. Die Android-Unterstützungs Bibliothek V4 stellt Versionen der Fingerabdruck-APIs bereit, die für ältere Android-Versionen vorgesehen sind. Die Kompatibilitäts-APIs befinden sich `Android.Support.v4.Hardware.Fingerprint` im-Namespace, werden über das [xamarin. Android. Support. v4-nuget-Paket](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)verteilt.
 
-Die [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (und sein Gegenstück Unterstützungsbibliothek [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) ist die primäre Klasse für die Verwendung von der Hardware mittels fingerabdruckscan. Diese Klasse ist ein Android SDK-Wrapper für die Ebene Systemdienst, die Interaktionen mit der Hardware selbst verwaltet. Er ist verantwortlich für das Starten des fingerabdruckscanners und für die Reaktion auf Feedback von der Überprüfung. Diese Klasse verfügt über eine Schnittstelle ziemlich einfach, mit nur drei Member:
+Der [fingerprintmanager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (und das zugehörige Unterstützungs Bibliotheks Pendant, [fingerprintmanagercompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) ist die primäre Klasse für die Verwendung der Fingerabdruck-Scan Hardware. Bei dieser Klasse handelt es sich um einen Android SDK Wrapper um den systemebenendienst, der Interaktionen mit der Hardware selbst verwaltet. Er ist verantwortlich für das Starten des Fingerabdruckscanners und das reagieren auf Feedback des Scanners. Diese Klasse verfügt über eine relativ unkomplizierte Schnittstelle mit nur drei Membern:
 
-* **`Authenticate`** &ndash; Diese Methode wird die Überprüfung von Hardware zu initialisieren und starten Sie den Dienst im Hintergrund, warten, bis des Benutzers ihren Fingerabdruck scannen.
-* **`EnrolledFingerprints`** &ndash; Diese Eigenschaft gibt `true` , wenn der Benutzer eine oder mehrere Fingerabdrücke mit dem Gerät registriert wurde.
-* **`HardwareDetected`** &ndash; Diese Eigenschaft wird verwendet, um festzustellen, ob das Gerät per Fingerabdruck zu scannen unterstützt.
+* **`Authenticate`** &ndash; Mit dieser Methode wird die Hardware Überprüfung initialisiert und der Dienst im Hintergrund gestartet, und es wird darauf gewartet, dass der Benutzer den Fingerabdruck scannt.
+* **`EnrolledFingerprints`** Diese Eigenschaft gibt zurück `true` , wenn der Benutzer mindestens einen Fingerabdruck beim Gerät registriert hat. &ndash;
+* **`HardwareDetected`** &ndash; Diese Eigenschaft wird verwendet, um zu bestimmen, ob das Gerät Fingerabdruck Scans unterstützt.
 
-Die `FingerprintManager.Authenticate` Methode wird von einer Android-Anwendung verwendet, um des fingerabdruckscanners zu starten. Der folgende Codeausschnitt ist ein Beispiel, wie Sie mit der Unterstützung der Kompatibilität von APIs aufrufen:
+Die `FingerprintManager.Authenticate` -Methode wird von einer Android-Anwendung verwendet, um den Fingerabdruckscanner zu starten. Der folgende Code Ausschnitt ist ein Beispiel dafür, wie Sie ihn mit den Kompatibilitäts-APIs der Unterstützungs Bibliothek aufrufen:
 
 ```csharp
 // context is any Android.Content.Context instance, typically the Activity 
@@ -44,13 +44,13 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
                                );
 ```
 
-Dieser Anleitung erfahren Sie, wie mit der `FingerprintManager` APIs, um eine Android-Anwendung mit der Authentifizierung per Fingerabdruck zu verbessern. Es wird beschrieben, wie Sie instanziieren und erstellen Sie eine `CryptoObject` um die Ergebnisse des fingerabdruckscanners zu schützen. Wie eine Anwendung die Unterklasse sollte untersucht `FingerprintManager.AuthenticationCallback` und reagieren auf Feedback des fingerabdruckscanners. Zum Schluss sehen, dass zum Registrieren eines Fingerabdrucks auf einem Android-Gerät oder Emulator und Verwendung **Adb** um eine Überprüfung per Fingerabdruck zu simulieren.
+In dieser Anleitung wird erläutert, wie Sie `FingerprintManager` die APIs verwenden, um eine Android-Anwendung mit Fingerabdruckauthentifizierung zu verbessern. Es wird erläutert, wie eine `CryptoObject` instanziiert und erstellt wird, um die Ergebnisse des Fingerabdruckscanners zu sichern. Wir untersuchen, wie eine Anwendung die unter `FingerprintManager.AuthenticationCallback` Klasse Unternehmen und Feedback vom Fingerabdruckscanner beantworten kann. Abschließend erfahren Sie, wie Sie einen Fingerabdruck auf einem Android-Gerät oder-Emulator registrieren und mit **ADB** einen Fingerabdruck Scan simulieren.
 
 ## <a name="requirements"></a>Anforderungen
 
-Authentifizierung per Fingerabdruck muss Android 6.0 (API-Ebene 23) oder höher und ein Gerät mit einem Fingerabdruck-Scanner. 
+Die Fingerabdruckauthentifizierung erfordert Android 6,0 (API-Ebene 23) oder höher und ein Gerät mit einem Fingerabdruckscanner. 
 
-Ein Fingerabdruck muss bereits mit dem Gerät für die einzelnen Benutzer registriert werden, der authentifiziert werden. Dies umfasst das Einrichten einer Bildschirmsperre, die Kennwörter, PIN, wischbewegungen Muster oder gesichtserkennung verwendet. Es ist möglich, einige der Authentifizierungsfunktionen per Fingerabdruck im Android-Emulator zu simulieren.  Weitere Informationen zu diesen zwei Themen finden Sie unter den [Registrieren eines Fingerabdrucks](enrolling-fingerprint.md) Abschnitt. 
+Für jeden Benutzer, der authentifiziert werden soll, muss bereits ein Fingerabdruck für das Gerät registriert sein. Dies umfasst das Einrichten einer Bildschirmsperre, die ein Kennwort, eine PIN, ein wischen-Muster oder eine Gesichtserkennung verwendet. Es ist möglich, einige der Fingerabdruck Authentifizierungsfunktionen in einem Android-Emulator zu simulieren.  Weitere Informationen zu diesen beiden Themen finden Sie im Abschnitt zum [Anmelden eines Fingerabdrucks](enrolling-fingerprint.md) . 
 
 
 
@@ -59,10 +59,10 @@ Ein Fingerabdruck muss bereits mit dem Gerät für die einzelnen Benutzer regist
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Fingerabdruck-Guide-Beispiel-App](https://developer.xamarin.com/samples/monodroid/FingerprintGuide/)
-- [Beispiel der Fingerprint-Dialogfeld](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
+- [Beispiel-App für Fingerabdruck Handbuch](https://developer.xamarin.com/samples/monodroid/FingerprintGuide/)
+- [Beispiel für Fingerabdruck](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
 - [Anfordern von Berechtigungen zur Laufzeit](https://developer.android.com/training/permissions/requesting.html)
 - [android.hardware.fingerprint](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
 - [android.support.v4.hardware.fingerprint](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)
-- [Android.Content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)
-- [Fingerabdruck und Zahlungen-API (Video)](https://youtu.be/VOn7VrTRlA4)
+- [Android.Content.Context](xref:Android.Content.Context)
+- [Fingerabdruck-und Zahlungs-API (Video)](https://youtu.be/VOn7VrTRlA4)

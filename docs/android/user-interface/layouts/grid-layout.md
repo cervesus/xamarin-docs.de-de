@@ -6,25 +6,25 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 45e625b28bbdf0009b5cfcf661b00ce17638771d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ef965bed5b50402e1659e45c55a02f9382001521
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61311258"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511484"
 ---
-# <a name="gridlayout"></a>GridLayout
+# <a name="xamarinandroid-gridlayout"></a>Xamarin. Android-GridLayout
 
-Die `GridLayout` ist ein neues `ViewGroup` Unterklasse, die unterstützt Anordnung von Ansichten in einem 2D-Raster ähnelt einer HTML-Tabelle, wie unten dargestellt:
+Der `GridLayout` ist eine neue `ViewGroup` Unterklasse, die das Anordnen von Sichten in einem 2D-Raster unterstützt, ähnlich wie eine HTML-Tabelle, wie unten dargestellt:
 
- [![Anzeigen von vier Zellen GridLayout zugeschnitten](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
+ [![Ausgeschnittenes GridLayout, das vier Zellen anzeigt](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
- `GridLayout` funktioniert mit einer Flatfile-View-Hierarchie, in dem untergeordnete Ansichten ihre Positionen im Raster über festlegen die Zeilen und Spalten, die, denen Sie auf sein soll. Auf diese Weise die *GridLayout* positionieren Ansichten im Raster, ohne dass fortgeschrittenen Sichten Geben Sie eine Tabellenstruktur, so wie in den Zeilen der Tabelle, die in der TableLayout verwendet werden kann. Indem Sie eine flache Hierarchie, verwalten *GridLayout* kann mehr geht Layout seine untergeordneten Ansichten. Werfen wir einen Blick auf ein Beispiel zur Veranschaulichung, wie dieses Konzept im Code eigentlich bedeutet.
+ `GridLayout`funktioniert mit einer flachen Sicht Hierarchie, in der untergeordnete Sichten ihre Positionen im Raster festlegen, indem Sie die Zeilen und Spalten angeben, in denen Sie sich befinden sollten. Auf diese Weise kann das *GridLayout* Sichten im Raster positionieren, ohne dass es erforderlich ist, dass zwischen Sichten eine Tabellenstruktur bereitstellen, z. b. in den Tabellenzeilen, die im tablelayout verwendet werden. Durch die Beibehaltung einer flachen Hierarchie kann *GridLayout* die untergeordneten Ansichten schneller ausrichten. Werfen wir einen Blick auf ein Beispiel, um zu veranschaulichen, wie dieses Konzept im Code tatsächlich gemeint ist.
 
 
-## <a name="creating-a-grid-layout"></a>Erstellen eines Grid-Layouts
+## <a name="creating-a-grid-layout"></a>Erstellen eines Raster Layouts
 
-Das folgende XML fügt mehrere `TextView` -Steuerelementen an eine *GridLayout*.
+Mit dem folgenden XML werden `TextView` einem *GridLayout*mehrere Steuerelemente hinzugefügt.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -48,19 +48,19 @@ Das folgende XML fügt mehrere `TextView` -Steuerelementen an eine *GridLayout*.
 </GridLayout>
 ```
 
-Anpassen des Layouts werden die Zeilen- und -Größen, damit die Zellen ihrem Inhalt verwendet werden können wie im folgenden Diagramm dargestellt:
+Das Layout passt die Zeilen-und Spaltengrößen so an, dass die Zellen ihren Inhalt anpassen können, wie im folgenden Diagramm dargestellt:
 
- [![Diagramm des Layouts, der zwei Zellen auf der linken Seite kleiner ist als auf der rechten Seite anzeigt](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
+ [![Diagramm des Layouts, das zwei Zellen auf der linken Seite kleiner als auf der rechten Seite anzeigt](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
-Dadurch wird in der folgenden-Benutzeroberfläche bei der Ausführung in einer Anwendung:
+Dies führt zur folgenden Benutzeroberfläche, wenn Sie in einer Anwendung ausgeführt wird:
 
- [![Screenshot der GridLayoutDemo-app, die vier Zellen anzeigen](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
+ [![Screenshot der gridlayoutdemo-APP, die vier Zellen anzeigt](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
 
 
 ## <a name="specifying-orientation"></a>Angeben der Ausrichtung
 
-Beachten Sie, dass im obigen XML jedes `TextView` gibt nicht an einer Zeile oder Spalte. Wenn diese nicht angegeben werden, die `GridLayout` weist jeder untergeordneten Ansicht in der Reihenfolge, basierend auf die Ausrichtung. Z. B. Ändern der GridLayouts Ausrichtung von der Standardeinstellung handelt es sich horizontal, zu vertikal wie folgt:
+Beachten Sie, dass im obigen XML `TextView` -Code keine Zeile oder Spalte angegeben ist. Wenn diese nicht angegeben werden, wird `GridLayout` jede untergeordnete Ansicht basierend auf der Ausrichtung der Reihenfolge zugewiesen. Nehmen wir beispielsweise an, dass die Ausrichtung des GridLayout von der standardmäßigen, horizontalen und vertikalen Weise wie folgt geändert wird:
 
 ```xml
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -72,19 +72,19 @@ Beachten Sie, dass im obigen XML jedes `TextView` gibt nicht an einer Zeile oder
 </GridLayout>
 ```
 
-Jetzt die `GridLayout` positioniert die Zellen von oben nach unten in jeder Spalte anstelle von links nach rechts, wie unten dargestellt:
+Die `GridLayout` Zellen werden nun von oben nach unten in jeder Spalte und nicht von links nach rechts positioniert, wie unten dargestellt:
 
- [![Diagramm zur Veranschaulichung, wie Zellen in vertikale Ausrichtung positioniert werden](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
+ [![Diagramm, das zeigt, wie Zellen in vertikaler Ausrichtung positioniert werden](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
-Dadurch wird in der folgenden-Benutzeroberfläche zur Laufzeit:
+Dies führt zur Laufzeit zur folgenden Benutzeroberfläche:
 
- [![Screenshot der GridLayoutDemo mit Zellen, die vertikale Ausrichtung positioniert](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
+ [![Screenshot von gridlayoutdemo mit in vertikaler Ausrichtung positionierten Zellen](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
 
 
 
-### <a name="specifying-explicit-position"></a>Angeben von expliziten Positionswerten
+### <a name="specifying-explicit-position"></a>Angeben der expliziten Position
 
-Wenn Sie möchten explizit zu steuern, die Positionen der untergeordneten Ansichten in der `GridLayout`, wir können festlegen, ihre `layout_row` und `layout_column` Attribute. Beispielsweise führt die folgende XML-Code das Layout, die im ersten Screenshot (siehe oben), unabhängig von die Ausrichtung angezeigt.
+Wenn Sie die Positionen der untergeordneten Sichten in `GridLayout`explizit steuern möchten, können Sie Ihre `layout_row` -und- `layout_column` Attribute festlegen. Der folgende XML-Code führt z. b. zu dem Layout, das im ersten Screenshot angezeigt wird (siehe oben), unabhängig von der Ausrichtung.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -118,9 +118,9 @@ Wenn Sie möchten explizit zu steuern, die Positionen der untergeordneten Ansich
 
 
 
-### <a name="specifying-spacing"></a>Angeben von Leerzeichen
+### <a name="specifying-spacing"></a>Angeben von Abstände
 
-Wir haben eine Reihe von Optionen, die Abstände zwischen den untergeordneten Ansichten Bereitstellen der `GridLayout`. Wir können die `layout_margin` Attributs auf den Rand zu den einzelnen untergeordneten Ansichten direkt festgelegt werden, wie unten dargestellt
+Wir haben eine Reihe von Optionen, die den Abstand zwischen den untergeordneten Sichten von `GridLayout`bereitstellen. Wir können das `layout_margin` -Attribut verwenden, um den Rand für jede untergeordnete Ansicht direkt festzulegen, wie unten gezeigt.
 
 ```xml
 <TextView
@@ -131,8 +131,8 @@ Wir haben eine Reihe von Optionen, die Abstände zwischen den untergeordneten An
             android:layout_margin="10dp" />
 ```
 
-Darüber hinaus in Android 4 eine neue allgemeine Abstand Ansicht mit der `Space` ist jetzt verfügbar. Um es zu verwenden, müssen fügen Sie es einfach als eine untergeordnete Ansicht hinzu.
-Das folgende XML fügt z.B. eine zusätzliche Zeile zum die `GridLayout` durch Festlegen der `rowcount` und 3 an, und fügt eine `Space` anzeigen, das Abstand zwischen der `TextViews`.
+Außerdem ist nun in Android 4 eine neue allgemeine Abstands Ansicht mit dem Namen `Space` verfügbar. Um es zu verwenden, fügen Sie es einfach als untergeordnete Ansicht hinzu.
+Der folgende XML-Code fügt z. b. eine zusätzliche `GridLayout` Zeile hinzu, `rowcount` indem auf den Wert 3 fest `Space` gelegt und eine Ansicht hinzugefügt `TextViews`wird, die Abstand zwischen dem bereitstellt.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -170,17 +170,17 @@ Das folgende XML fügt z.B. eine zusätzliche Zeile zum die `GridLayout` durch F
 </GridLayout>
 ```
 
-Dieser XML-Code erstellt einen Abstand in der `GridLayout` wie unten dargestellt:
+Dieser XML-Code erstellt einen `GridLayout` Abstand in der, wie unten dargestellt:
 
- [![Screenshot der GridLayoutDemo zur Veranschaulichung größerer Zellen mit Abstand](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
+ [![Screenshot von gridlayoutdemo, das größere Zellen mit Abstand illustriert](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
-Der Vorteil der Verwendung der neuen `Space` Ansicht ist, können für die Analyse und erfordern keine Attribute für jede untergeordnete Ansicht festgelegt.
+Der Vorteil der Verwendung der neuen `Space` Ansicht besteht darin, dass Sie Abstand zulässt und es nicht erforderlich ist, Attribute für jede untergeordnete Ansicht festzulegen.
 
 
 
-### <a name="spanning-columns-and-rows"></a>Aufteilung von Spalten und Zeilen
+### <a name="spanning-columns-and-rows"></a>Umspannen von Spalten und Zeilen
 
-Die `GridLayout` unterstützt auch Zellen, die mehreren Spalten und Zeilen erstrecken. Angenommen, wir eine andere Zeile mit einer Schaltfläche zum Hinzufügen der `GridLayout` wie unten dargestellt:
+Der `GridLayout` unterstützt auch Zellen, die mehrere Spalten und Zeilen umfassen. Nehmen wir beispielsweise an, dass wir eine weitere Zeile mit einer `GridLayout` Schaltfläche zum Hinzufügen, wie unten gezeigt:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -223,11 +223,11 @@ Die `GridLayout` unterstützt auch Zellen, die mehreren Spalten und Zeilen erstr
 </GridLayout>
 ```
 
-Dadurch treten bei der ersten Spalte der `GridLayout` wird gestreckt, um die Größe der Schaltfläche, wie wir hier sehen:
+Dies führt dazu, dass die erste Spalte des `GridLayout` gestreckt wird, um die Größe der Schaltfläche anzupassen, wie hier zu sehen ist:
 
-[![Screenshot der GridLayoutDemo mit der Schaltfläche, umfassen nur die erste Spalte](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
+[![Screenshot von gridlayoutdemo mit der Schaltfläche, die nur die erste Spalte umfasst](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
 
-Um zu verhindern, dass die erste Spalte Strecken, können wir die Schaltfläche, um zwei Spalten umfassen, durch Festlegen seiner Columnspan wie folgt festlegen:
+Um die Streckung der ersten Spalte beizubehalten, können Sie die Schaltfläche auf zwei Spalten umspannen, indem Sie die zugehörige ColumnSpan wie folgt festlegen:
 
 ```xml
 <Button
@@ -238,13 +238,13 @@ Um zu verhindern, dass die erste Spalte Strecken, können wir die Schaltfläche,
     android:layout_columnSpan="2" />
 ```
 
-Dies führt zu ein Layout für die `TextViews` ähnelt das Layout, die wir zuvor mit der Schaltfläche hinzugefügt, die an das Ende der `GridLayout` wie unten dargestellt:
+Dies führt zu einem Layout für das `TextViews` , das mit dem oben beschriebenen Layout vergleichbar ist, wobei die Schaltfläche am unteren Rand `GridLayout` des hinzugefügt wurde, wie unten dargestellt:
 
- [![Screenshot der GridLayoutDemo mit der Schaltfläche, die beide Spalten umfasst](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
+ [![Screenshot von gridlayoutdemo mit Schaltfläche, die beide Spalten umfasst](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [GridLayoutDemo (sample)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/GridLayoutDemo/)
-- [Einführung in die Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 Platform](https://developer.android.com/sdk/android-4.0.html)
+- [Gridlayoutdemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/GridLayoutDemo/)
+- [Einführung in Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
+- [Android 4,0-Plattform](https://developer.android.com/sdk/android-4.0.html)

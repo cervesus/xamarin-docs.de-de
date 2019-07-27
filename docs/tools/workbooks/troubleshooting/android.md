@@ -1,55 +1,54 @@
 ---
 title: Problembehandlung bei Xamarin Workbooks unter Android
-description: Dieses Dokument enthält Tipps zur Problembehandlung für die Arbeit mit Xamarin Workbooks unter Android. Es wird erläutert, Unterstützung von Emulatoren, Arbeitsmappen, die nicht geladen werden und anderen Themen.
+description: Dieses Dokument enthält Tipps zur Problembehandlung beim Arbeiten mit Xamarin Workbooks unter Android. Es erläutert die Emulator-Unterstützung, Arbeitsmappen, die nicht geladen werden, und andere Themen.
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 08fa7f57f3fe44721bc00f0d59ed5df93300cf1e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 0d04b42a8d9f230c48bb09059296eb3740336dc6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864031"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511833"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Problembehandlung bei Xamarin Workbooks unter Android
 
-## <a name="emulator-support"></a>Unterstützung von Emulatoren
+## <a name="emulator-support"></a>Emulator-Unterstützung
 
-Zum Ausführen einer Android-Arbeitsmappe muss ein Android-Emulator für die Verwendung verfügbar sein. Physische Android-Geräte werden nicht unterstützt.
+Zum Ausführen einer Android-Arbeitsmappe muss ein Android-Emulator zur Verwendung verfügbar sein. Physische Android-Geräte werden nicht unterstützt.
 
-Google Emulator mit HAXM wird empfohlen, wenn der Computer diesen unterstützt.
-Wenn Sie Hyper-V auf Ihrem System aktiviert haben müssen, verwenden Sie die Visual Studio-Android-Emulator stattdessen.
+Es wird empfohlen, den Google-Emulator zusammen mit haxm zu empfehlen, wenn der Computer ihn unterstützt.
+Wenn Hyper-V auf Ihrem System aktiviert sein muss, wechseln Sie stattdessen zum Visual Studio-Android-Emulator.
 
-Sie benötigen einen Emulator, der Android 5.0 oder höher ausgeführt wird. ARM-Emulatoren werden nicht unterstützt. Verwendung `x86` oder `x86_64` nur für Geräte.
+Sie müssen über einen Emulator verfügen, auf dem Android 5,0 oder höher ausgeführt wird. Arm-Emulatoren werden nicht unterstützt. Verwenden `x86` Sie `x86_64` nur-oder-Geräte.
 
-Lesen Sie [unserer Dokumentation zum Einrichten der Android-Emulatoren][android-emu] , wenn Sie nicht mit dem Prozess vertraut sind.
+Wenn Sie mit dem Prozess nicht vertraut sind, lesen Sie [unsere Dokumentation zum Einrichten von Android-Emulatoren][android-emu] .
 
 > [!NOTE]
-> Arbeitsmappen, 1.1 und früher werden versuchen Sie es (fehl und!) für ARM-Emulatoren verwenden, sofern diese verfügbar sind. Eine problemumgehung dieser, starten die X86-Emulator Ihrer Wahl vor dem Öffnen oder erstellen eine Android-Arbeitsmappe. Arbeitsmappen werden immer für die Verbindung zu einem ausgeführten Emulator zu bevorzugen, solange er kompatibel ist.
+> Die Arbeitsmappen 1,1 und früher versuchen (und schlagen!), wenn Sie verfügbar sind, um Arm-Emulatoren zu verwenden. Um dieses Problem zu umgehen, starten Sie den x86-Emulator Ihrer Wahl, bevor Sie eine Android-Arbeitsmappe öffnen oder erstellen. Arbeitsmappen bevorzugen immer, eine Verbindung mit einem laufenden Emulator herzustellen, sofern er kompatibel ist.
 
-## <a name="workbooks-wont-load"></a>Arbeitsmappen Laden nicht.
+## <a name="workbooks-wont-load"></a>Arbeitsmappen werden nicht geladen
 
-### <a name="workbook-window-spins-forever-never-loads-windows"></a>Arbeitsmappenfenster dreht sich immer, nie geladen (Windows)
+### <a name="workbook-window-spins-forever-never-loads-windows"></a>Arbeitsmappenfenster wird dauerhaft und nie geladen (Windows)
 
-Überprüfen Sie zunächst, dass der Emulator vollständig funktionierende-Netzwerkzugriff verfügt, testen Sie jede Website im Webbrowser des Emulators.
+Überprüfen Sie zunächst, ob Ihr Emulator über vollständigen Netzwerk Zugriff verfügt, indem Sie eine beliebige Website im Webbrowser des Emulators testen.
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio Emulator für Android kann nicht mit dem Internet herstellen.
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio-Android-Emulator kann keine Verbindung mit dem Internet herstellen.
 
-Wenn es sich bei Ihrem Emulator nicht über Zugriff auf das Netzwerk verfügt, müssen Sie diese Schritte ausführen, um Ihre Hyper-V-Netzwerkswitch zu beheben. Wenn der Wechsel zwischen häufig Wi-Fi-Netzwerke müssen Sie dies in regelmäßigen Abständen wiederholt werden soll:
+Wenn Ihr Emulator keinen Netzwerk Zugriff hat, müssen Sie möglicherweise die folgenden Schritte ausführen, um den Hyper-V-Netzwerk Switch zu korrigieren. Wenn Sie häufig zwischen Wi-Fi-Netzwerken wechseln, müssen Sie dies möglicherweise regelmäßig wiederholen:
 
-1. **Stellen Sie sicher, dass kritische Netzwerkvorgänge abgeschlossen sind, wie dies Windows vorübergehend aus dem Internet die Verbindung trennen kann.**
-1. Schließen Sie die Emulatoren.
+1. **Stellen Sie sicher, dass alle wichtigen Netzwerk Vorgänge ausgeführt werden, da dadurch Windows vorübergehend vom Internet getrennt werden kann.**
+1. Schließen Sie Emulatoren.
 1. Öffnen Sie `Hyper-V Manager`.
-1. Klicken Sie unter `Actions`öffnen `Virtual Switch Manager...`.
-1. Löschen Sie alle virtuellen Switches an.
+1. `Actions` Öffnen`Virtual Switch Manager...`Sie unter die.
+1. Löschen Sie alle virtuellen Switches.
 1. Klicken Sie auf `OK`.
-1. Starten Sie Visual Studio-Android-Emulator. Wahrscheinlich werden Sie aufgefordert, virtuelles Netzwerk-Switch neu zu erstellen.
-1. Prüfen Sie, ob es sich bei Visual Studio Android Emulator-Browser auf das Internet zugreifen kann.
+1. Starten Sie vs Android-Emulator. Sie werden wahrscheinlich aufgefordert, den Switch für ein virtuelles Netzwerk neu zu erstellen.
+1. Testen Sie, ob der Browser von vs Android-Emulator auf das Internet zugreifen kann.
 
-[android-emu]: https://developer.xamarin.com/guides/android/deployment,_testing,_and_metrics/debug-on-emulator/
-
+[android-emu]: ~/android/deploy-test/debugging/debug-on-emulator.md
 
 ## <a name="related-links"></a>Verwandte Links
 

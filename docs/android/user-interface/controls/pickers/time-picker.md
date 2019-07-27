@@ -1,67 +1,65 @@
 ---
 title: Zeitauswahl
-description: Wählen eine Uhrzeit TimePickerDialog und DialogFragment
+description: Auswählen einer Uhrzeit mithilfe von timepickerdialog und dialogfragment
 ms.prod: xamarin
 ms.assetid: EB4E8206-E8AD-9F04-AC1C-82AC9364A9DD
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: faf2c35b49b0b02b9f3b16e19494d2e447361d84
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e959f0d3cafa9e856458472668244fcd33ba4f81
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283668"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510230"
 ---
-# <a name="time-picker"></a>Zeitauswahl
+# <a name="android-time-picker"></a>Android-Zeitauswahl
 
-Um die Möglichkeit für den Benutzer auf eine Uhrzeit auswählen, können Sie [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/). Verwenden Sie die Android-apps in der Regel `TimePicker` mit [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/) zum Auswählen eines Werts Zeit &ndash; Hiermit können Sie um eine einheitliche Schnittstelle zwischen Geräten und Anwendungen zu gewährleisten. `TimePicker` Wählen Sie die Uhrzeit im 24-Stunden- oder 12-Stunden AM/PM-Modus ermöglicht.
-`TimePickerDialog` ist eine Hilfsklasse, die kapselt die `TimePicker` in einem Dialogfeld.
+Um dem Benutzer die Möglichkeit zu geben, eine Uhrzeit auszuwählen, können Sie [timePicker](xref:Android.Widget.TimePicker)verwenden. Android-Apps verwenden `TimePicker` in der Regel mit [timepickerdialog](xref:Android.App.TimePickerDialog) zum auswählen &ndash; eines Zeitwerts, mit dem eine konsistente Schnittstelle zwischen Geräten und Anwendungen gewährleistet werden kann. `TimePicker`ermöglicht Benutzern das Auswählen der Tageszeit im 24-Stunden-oder 12-Stunden-Modus.
+`TimePickerDialog`ist eine Hilfsklasse, die `TimePicker` in einem Dialogfeld kapselt.
 
-[![Beispielscreenshot, der das Dialogfeld zur Dateiauswahl Zeit in Aktion](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png#lightbox)
+[![Beispiel Bildschirm Abbildung des Dialog Felds "Zeitauswahl" in Aktion](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png#lightbox)
 
 ## <a name="overview"></a>Übersicht
 
-Anzeigen von modernen Android-Anwendungen die `TimePickerDialog` in einer [DialogFragment](https://developer.xamarin.com/api/type/Android.App.DialogFragment/). Dadurch kann für eine Anwendung zum Anzeigen der `TimePicker` als ein Dialogfenster wird oder Sie betten Sie sie in einer Aktivität. Darüber hinaus die `DialogFragment` verwaltet den Lebenszyklus und die Anzeige des Dialogfelds, verringert die Menge des Codes, die implementiert werden müssen.
+Moderne Android-Anwendungen zeigen `TimePickerDialog` den in einem [dialogfragment](xref:Android.App.DialogFragment)an. Dies ermöglicht es einer Anwendung, die `TimePicker` als Popup Dialogfeld anzuzeigen oder in eine Aktivität einzubetten. Außerdem `DialogFragment` verwaltet den Lebenszyklus und die Anzeige des Dialog Felds und reduziert so die Menge an Code, die implementiert werden muss.
 
-Diese Anleitung veranschaulicht, wie Sie mit der `TimePickerDialog`, eingeschlossen in einem `DialogFragment`. Zeigt die Beispiel-Anwendung die `TimePickerDialog` als modales Dialogfeld klickt der Benutzer eine Schaltfläche für eine Aktivität. Wenn die Zeit vom Benutzer festgelegt ist, beendet das Dialogfeld, und ein Ereignishandler aktualisiert eine `TextView` auf dem Bildschirm "Aktivität" mit der Zeit, die ausgewählt wurde.
+In dieser Anleitung wird veranschaulicht, wie `TimePickerDialog`die in einem `DialogFragment`umschließenen verwendet wird. In der Beispielanwendung wird `TimePickerDialog` als modales Dialogfeld angezeigt, wenn der Benutzer auf eine Schaltfläche in einer Aktivität klickt. Wenn die Uhrzeit vom Benutzer festgelegt wird, wird das Dialogfeld beendet, und ein `TextView` Handler aktualisiert eine auf dem Aktivitäts Bildschirm mit der ausgewählten Zeit.
 
 ## <a name="requirements"></a>Anforderungen
 
-Die beispielanwendung für dieses Handbuch ist Android 4.1 (API-Ebene
-16) oder höher, ist jedoch mit Android 3.0 (API-Ebene 11 oder höher) verwendet werden kann. Es ist möglich, ältere Versionen von Android durch das Hinzufügen der Bibliothek für Android unterstützt v4 auf das Projekt, und einige Änderungen am Code unterstützen.
+Die Beispielanwendung für dieses Handbuch zielt auf Android 4,1 (API-Ebene) ab.
+16) oder höher, aber kann mit Android 3,0 (API-Ebene 11 oder höher) verwendet werden. Es ist möglich, ältere Android-Versionen zu unterstützen, wobei die Android-Unterstützungs Bibliothek V4 zum Projekt hinzugefügt wird und einige Codeänderungen vorgenommen werden.
 
-## <a name="using-the-timepicker"></a>Verwenden von TimePicker
+## <a name="using-the-timepicker"></a>Verwenden der timePicker
 
-Dieses Beispiel erweitert `DialogFragment`; die Unterklasse-Implementierung von `DialogFragment` (namens `TimePickerFragment` unten) hostet, und zeigt eine `TimePickerDialog`. Wenn die Beispiel-app zum ersten Mal gestartet wird, zeigt er eine **PICK Zeit** Schaltfläche oben eine `TextView` wird, wird für den ausgewählten Zeitraum anzuzeigen:
+Dieses Beispiel erweitert `DialogFragment`; die Unterklassen Implementierung von `DialogFragment` (unten `TimePickerFragment` genannt) und zeigt einen `TimePickerDialog`an. Wenn die Beispiel-App zum ersten Mal gestartet wird, wird die Schaltfläche " `TextView` **Pick Time** " oberhalb eines angezeigt, das zum Anzeigen der ausgewählten Zeit verwendet wird:
 
-[![Anfängliche Beispiel-app-Bildschirm](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
+[![Bildschirm für erste Beispiel-App](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
-Beim Klicken auf die **PICK Zeit** Schaltfläche, die Beispiel-app-Startvorgänge der `TimePickerDialog` wie im folgenden Screenshot zu sehen:
+Wenn Sie auf die Schaltfläche " **Pick Time** " klicken, wird `TimePickerDialog` die Beispiel-APP wie in diesem Screenshot gezeigt gestartet:
 
-[![Screenshot des Dialogfelds für standardmäßige Zeitauswahl angezeigt, die von der app](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
+[![Screenshot des von der APP angezeigten standardmäßigen Zeitauswahl Dialogfelds](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
 
-In der `TimePickerDialog`, eine Uhrzeit auswählen und auf die **OK** Schaltfläche bewirkt, dass die `TimePickerDialog` zum Aufrufen der Methode [IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/).
-Diese Schnittstelle wird implementiert, indem Sie das Hosten `DialogFragment` (`TimePickerFragment`im folgenden beschriebenen). Klicken auf die **Abbrechen** -Schaltfläche bewirkt, dass die Fragment und das Dialogfeld geschlossen werden.
+Wenn Sie in eine Uhrzeit auswählen und auf die  Schaltfläche `TimePickerDialog` `TimePickerDialog` OK klicken, wird die Methode " [iontimesetlistener. ontimeset](xref:Android.App.TimePickerDialog.IOnTimeSetListener.OnTimeSet*)" aufgerufen.
+Diese Schnittstelle wird durch das Hosting `DialogFragment` implementiert`TimePickerFragment`(, wie unten beschrieben). Wenn Sie auf die Schaltfläche **Abbrechen** klicken, werden das Fragment und Dialogfeld verworfen.
 
-`DialogFragment` Gibt den ausgewählten Zeitraum an die hosting-Aktivität in einer von drei Methoden zurück:
+`DialogFragment`gibt auf eine von drei Arten die ausgewählte Zeit für die hostingaktivität zurück:
 
-1. **Aufrufen einer Methode oder Festlegen einer Eigenschaft** &ndash; bieten die Aktivität, einer Eigenschaft oder Methode speziell für das Festlegen dieses Werts.
+1. **Aufrufen einer Methode oder Festlegen einer Eigenschaft** &ndash; Die-Aktivität kann eine Eigenschaft oder Methode bereitstellen, die speziell zum Festlegen dieses Werts vorgesehen ist.
 
-2. **Auslösen eines Ereignisses** &ndash; der `DialogFragment` ein definieren, die ausgelöst wird, wenn `OnTimeSet` aufgerufen wird.
+2. **Ereignisse werden angehoben** Der kann ein Ereignis definieren, das ausgelöst wird, `OnTimeSet` wenn aufgerufen wird. `DialogFragment` &ndash;
 
-3. **Mit einer `Action`**  &ndash; der `DialogFragment` aufrufen können eine `Action<DateTime>` , die Zeit in der Aktivität an. Die Aktivität stellt die `Action<DateTime` beim Instanziieren der `DialogFragment`. 
+3. **Mithilfe eines `Action`**  &ndash; kanneine`Action<DateTime>` aufrufen, um die Zeit in der Aktivität anzuzeigen. `DialogFragment` Die-Aktivität stellt beim `Action<DateTime` `DialogFragment`Instanziieren von bereit.
 
-Dieses Beispiel verwendet der dritten Technik, die erfordert, dass die Aktivität erneut eine `Action<DateTime>` Handler, der die `DialogFragment`.
+In diesem Beispiel wird das dritte Verfahren verwendet, das erfordert, dass die- `Action<DateTime>` Aktivität einen Handler `DialogFragment`für die bereitstellt.
 
+## <a name="start-an-app-project"></a>Starten eines App-Projekts
 
+Starten Sie ein neues Android-Projekt mit dem Namen **timepickerdemo** (wenn Sie mit dem Erstellen von xamarin. Android-Projekten nicht vertraut sind, lesen Sie [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) , um zu erfahren, wie Sie ein neues Projekt erstellen).
 
-## <a name="start-an-app-project"></a>Starten Sie ein App-Projekt
-
-Starten Sie ein neues Android-Projekt namens **TimePickerDemo** (Wenn Sie nicht mit dem Erstellen von Xamarin.Android-Projekte vertraut sind, finden Sie unter [Hallo, Android](~/android/get-started/hello-android/hello-android-quickstart.md) zu erfahren, wie Sie ein neues Projekt erstellen).
-
-Bearbeiten Sie **Resources/layout/Main.axml** und Ersetzen Sie den Inhalt durch folgendes XML:
+Bearbeiten Sie **Resources/Layout/Main. axml** , und ersetzen Sie den Inhalt durch den folgenden XML-Code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -89,9 +87,9 @@ Bearbeiten Sie **Resources/layout/Main.axml** und Ersetzen Sie den Inhalt durch 
 </LinearLayout>
 ```
 
-Dies ist eine einfache [LinearLayout](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) mit einem [TextView](https://developer.xamarin.com/api/type/Android.Widget.TextView/) , das zeigt an, und ein [Schaltfläche](https://developer.xamarin.com/api/type/Android.Widget.Button/) , öffnet der `TimePickerDialog`. Beachten Sie, dass dieses Layout hartcodierte Zeichenfolgen und Dimensionen verwendet, um die app einfacher und leichter zu verstehen, stellen &ndash; eine Produktions-app üblicherweise Ressourcen verwendet, um diese Werte (wie in der angezeigt werden die ["DatePicker"](https://github.com/xamarin/recipes/blob/master/Recipes/android/controls/datepicker/select_a_date/Resources/layout/Main.axml) Codebeispiel).
+Dabei handelt es sich um ein einfaches [LinearLayout](xref:Android.Widget.LinearLayout) mit einer [TextView](xref:Android.Widget.TextView) , die die Uhrzeit und eine [Schaltfläche](xref:Android.Widget.Button) anzeigt, die das `TimePickerDialog`öffnet. Beachten Sie, dass in diesem Layout hart codierte Zeichen folgen und Dimensionen verwendet werden, damit die APP &ndash; einfacher und leichter zu verstehen ist, wenn eine Produktions-App normalerweise Ressourcen für diese Werte verwendet (wie im Beispiel für das [DatePicker](https://github.com/xamarin/recipes/blob/master/Recipes/android/controls/datepicker/select_a_date/Resources/layout/Main.axml) -Code zu sehen).
 
-Bearbeiten Sie **"mainactivity.cs"** und Ersetzen Sie den Inhalt durch den folgenden Code:
+Bearbeiten Sie **MainActivity.cs** , und ersetzen Sie den Inhalt durch den folgenden Code:
 
 ```csharp
 using Android.App;
@@ -120,18 +118,16 @@ namespace TimePickerDemo
 }
 ```
 
-Wenn Sie erstellen und dieses Beispiel ausführen, sehen Sie einen Startbildschirm, die im folgenden Screenshot ähnelt:
+Wenn Sie dieses Beispiel erstellen und ausführen, sollte ein ursprünglicher Bildschirm angezeigt werden, der dem folgenden Screenshot ähnelt:
 
-[![Startbildschirm der App](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
+[![Bildschirm für erste APP](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
-Klicken auf die **PICK Zeit** Schaltfläche führt keine Aktion da der `DialogFragment` wurde noch nicht implementiert zum Anzeigen der `TimePicker`.
-Der nächste Schritt ist die Erstellung dieser `DialogFragment`.
+Das Klicken auf die Schaltfläche " **Pick Time** " bewirkt nichts, weil `DialogFragment` noch nicht implementiert wurde, um die `TimePicker`anzuzeigen.
+Der nächste Schritt besteht darin, diese `DialogFragment`zu erstellen.
 
+## <a name="extending-dialogfragment"></a>Erweitern von dialogfragment
 
-
-## <a name="extending-dialogfragment"></a>Erweitern von DialogFragment
-
-Erweitern `DialogFragment` für die Verwendung mit `TimePicker`, es ist notwendig, eine Unterklasse zu erstellen, das von abgeleitet ist `DialogFragment` und implementiert `TimePickerDialog.IOnTimeSetListener`. Fügen Sie die folgende Klasse **"mainactivity.cs"**:
+Um für `DialogFragment` die Verwendung mit `TimePicker`erweitert werden zu können, muss eine Unterklasse erstellt werden, die `DialogFragment` von abgeleitet `TimePickerDialog.IOnTimeSetListener`wird und implementiert. Fügen Sie die folgende Klasse zu **MainActivity.cs**hinzu:
 
 ```csharp
 public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetListener
@@ -165,27 +161,26 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 }
 ```
 
-Dies `TimePickerFragment` -Klasse ist in kleinere Teile unterteilt, und im nächsten Abschnitt erläutert.
+Diese `TimePickerFragment` Klasse ist in kleinere Teile aufgeteilt und wird im nächsten Abschnitt erläutert.
 
+### <a name="dialogfragment-implementation"></a>Dialogfragment-Implementierung
 
-### <a name="dialogfragment-implementation"></a>DialogFragment-Implementierung
+`TimePickerFragment`implementiert mehrere Methoden: eine Factorymethode, eine Dialog Feld-Instanziierung `OnTimeSet` -Methode und die `TimePickerDialog.IOnTimeSetListener`Handlermethode, die von benötigt wird.
 
-`TimePickerFragment` mehrere Methoden implementiert: eine Factorymethode, die eine Methode zum Dialogfeld Instanziierung, und die `OnTimeSet` Handlermethode, die erforderlichen `TimePickerDialog.IOnTimeSetListener`.
-
--   `TimePickerFragment` ist eine Unterklasse von `DialogFragment`. Es implementiert auch die `TimePickerDialog.IOnTimeSetListener` Schnittstelle (d. h., gibt er die erforderlichen `OnTimeSet` Methode):
+-   `TimePickerFragment`ist eine Unterklasse von `DialogFragment`. Außerdem wird die `TimePickerDialog.IOnTimeSetListener` -Schnittstelle implementiert (d. h., `OnTimeSet` Sie stellt die erforderliche-Methode bereit):
 
     ```csharp
     public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetListener
     ```
 
--   `TAG` für die Protokollierung initialisiert wird (*MyTimePickerFragment* kann geändert werden, um die Zeichenfolge ein, die Sie verwenden möchten). Die `timeSelectedHandler` Aktion mit einer leeren Delegat, der null-verweisausnahmen zu verhindern, dass initialisiert wird:
+-   `TAG`wird zu Protokollierungs Zwecken initialisiert (*mytimepickerfragment* kann in beliebige Zeichen folgen geändert werden, die Sie verwenden möchten). Die `timeSelectedHandler` Aktion wird mit einem leeren Delegaten initialisiert, um NULL-Verweis Ausnahmen zu verhindern:
 
     ```csharp
     public static readonly string TAG = "MyTimePickerFragment";
     Action<DateTime> timeSelectedHandler = delegate { };
     ```
 
--   Die `NewInstance` Factory-Methode wird aufgerufen, um ein neues instanziieren `TimePickerFragment`. Diese Methode akzeptiert eine `Action<DateTime>` Handler, der aufgerufen wird, wenn der Benutzer klickt auf die **OK** Schaltfläche der `TimePickerDialog`:
+-   Die `NewInstance` Factory-Methode wird aufgerufen, um eine neue `TimePickerFragment`zu instanziieren. Diese Methode nimmt einen `Action<DateTime>` Handler an, der aufgerufen wird, wenn der Benutzer auf die Schalt `TimePickerDialog`Fläche **OK** in der klickt:
 
     ```csharp
     public static TimePickerFragment NewInstance(Action<DateTime> onTimeSelected)
@@ -196,8 +191,8 @@ Dies `TimePickerFragment` -Klasse ist in kleinere Teile unterteilt, und im näch
     }
     ```
 
--   Wenn das Fragment ist, die angezeigt werden, um Android Ruft die `DialogFragment` Methode [OnCreateDialog](https://developer.xamarin.com/api/member/Android.App.DialogFragment.OnCreateDialog/p/Android.OS.Bundle/). 
-    Diese Methode erstellt ein neues `TimePickerDialog` -Objekt und initialisiert sie mit der Aktivität, die das Rückrufobjekt an (Dies ist die aktuelle Instanz von der `TimePickerFragment`), und die aktuelle Zeit:
+-   Wenn das Fragment angezeigt werden soll, ruft Android die `DialogFragment` [onkreatedialog](xref:Android.App.DialogFragment.OnCreateDialog*)-Methode auf.
+    Diese Methode erstellt ein neues `TimePickerDialog` -Objekt und initialisiert es mit der-Aktivität, dem Rückruf Objekt (bei dem es sich um `TimePickerFragment`die aktuelle Instanz von handelt) und der aktuellen Uhrzeit:
 
     ```csharp
     public override Dialog OnCreateDialog (Bundle savedInstanceState)
@@ -210,7 +205,7 @@ Dies `TimePickerFragment` -Klasse ist in kleinere Teile unterteilt, und im näch
     }
     ```
 
--   Wenn der Benutzer ändert die Einstellung in der `TimePicker` im Dialogfeld die `OnTimeSet` -Methode wird aufgerufen. `OnTimeSet` erstellt eine `DateTime` -Objekt unter Verwendung des aktuellen Systemdatums und Zusammenführungen in der die Uhrzeit (Stunde und Minute), die vom Benutzer ausgewählt wurde:
+-   Wenn der Benutzer die Zeiteinstellung im `TimePicker` Dialogfeld ändert, wird die `OnTimeSet` -Methode aufgerufen. `OnTimeSet`erstellt ein `DateTime` -Objekt mit dem aktuellen Datum und den Zusammenführungen in der Zeit (Stunde und Minute), die vom Benutzer ausgewählt wurde:
 
     ```csharp
     public void OnTimeSet(TimePicker view, int hourOfDay, int minute)
@@ -220,19 +215,17 @@ Dies `TimePickerFragment` -Klasse ist in kleinere Teile unterteilt, und im näch
     ```
 
 
--   Dies `DateTime` Objekt wird zum Übergeben der `timeSelectedHandler` , die registriert wird die `TimePickerFragment` Objekt zum Zeitpunkt der Erstellung. `OnTimeSet` Ruft dieser Handler der Aktivität angezeigt, die auf der ausgewählten Zeit aktualisieren (dieser Handler wird im nächsten Abschnitt implementiert):
+-   Dieses `DateTime` Objekt wird an das- `timeSelectedHandler` Objekt, das beim Erstellungs Zeitpunkt beim- `TimePickerFragment` Objekt registriert ist, an das-Objekt `OnTimeSet`Ruft diesen Handler auf, um die Zeitanzeige der Aktivität auf den ausgewählten Zeitpunkt zu aktualisieren (dieser Handler wird im nächsten Abschnitt implementiert):
 
     ```csharp
     timeSelectedHandler (selectedTime);
     ```
 
+## <a name="displaying-the-timepickerfragment"></a>Anzeigen von timepickerfragment
 
+Nachdem der `DialogFragment` implementiert wurde, ist es an der Zeit, `DialogFragment` mithilfe der `NewInstance` Factory-Methode zu instanziieren und ihn durch Aufrufen von [dialogfragment. Show](xref:Android.App.DialogFragment.Show*)anzuzeigen:
 
-## <a name="displaying-the-timepickerfragment"></a>Anzeigen der TimePickerFragment
-
-Nun, dass die `DialogFragment` wurde implementiert, ist es Zeit, zu instanziieren der `DialogFragment` mithilfe der `NewInstance` Factorymethode und zeigen Sie es durch Aufrufen von [DialogFragment.Show](https://developer.xamarin.com/api/member/Android.App.DialogFragment.Show/p/Android.App.FragmentManager/System.String/):
-
-Fügen Sie die folgende Methode `MainActivity`:
+Fügen Sie die folgende Methode `MainActivity`zu hinzu:
 
 ```csharp
 void TimeSelectOnClick (object sender, EventArgs eventArgs)
@@ -247,51 +240,46 @@ void TimeSelectOnClick (object sender, EventArgs eventArgs)
 }
 ```
 
-Nach dem `TimeSelectOnClick` instanziiert ein `TimePickerFragment`, erstellt und übergibt einen Delegaten für eine anonyme Methode, die der Aktivität angezeigt mit dem übergebenen-in-Time-Wert aktualisiert. Abschließend startet es die `TimePicker` Dialogfeld Fragment (über `DialogFragment.Show`) zum Anzeigen der `TimePicker` für den Benutzer.
+Nachdem `TimeSelectOnClick` ein`TimePickerFragment`-Objekt instanziiert wurde, erstellt es einen Delegaten und übergibt ihn an eine anonyme Methode, die die Uhrzeit Anzeige der Aktivität mit dem übergebenen Uhrzeitwert aktualisiert. Schließlich wird das `TimePicker` Dialog Fragment (via `DialogFragment.Show`) gestartet, um das `TimePicker` für den Benutzer anzuzeigen.
 
-Am Ende der `OnCreate` -Methode, fügen die folgende Zeile zum Anfügen des Ereignishandler, der **PICK Zeit** Schaltfläche, das Dialogfeld gestartet wird:
+Fügen Sie am Ende der `OnCreate` Methode die folgende Zeile hinzu, um den Ereignishandler an die Schaltfläche " **Pick Time** " anzufügen, mit der das Dialogfeld gestartet wird:
 
 ```csharp
 timeSelectButton.Click += TimeSelectOnClick;
 ```
 
-Bei der **PICK Zeit** Schaltfläche geklickt wird, `TimeSelectOnClick` aufgerufen, um die Anzeige der `TimePicker` Dialogfeld-Fragment, das der Benutzer.
-
-
+Beim Klicken auf die Schaltfläche **Pick Time** wird aufgerufen, `TimeSelectOnClick` um dem Benutzer `TimePicker` das Dialog Fragment anzuzeigen.
 
 ## <a name="try-it"></a>Probieren Sie es aus!
 
-Erstellen Sie die App, und führen Sie sie aus. Beim Klicken auf die **PICK Zeit** Schaltfläche der `TimePickerDialog` wird das Standardformat für die Zeit für die Aktivität (in diesem Fall, 12-Stunden AM/PM-Modus) angezeigt:
+Erstellen Sie die App, und führen Sie sie aus. Wenn Sie auf die Schaltfläche " **Pick Time** " klicken, wird das `TimePickerDialog` im Standardzeit Format für die Aktivität angezeigt (in diesem Fall im 12-Stunden-Modus):
 
-[![Time-Dialogfeld wird angezeigt, in der AM/PM-Modus](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
+[![Das Zeit Dialogfeld wird im am/pm-Modus angezeigt.](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
    
-Beim Klicken auf **OK** in die `TimePicker` Dialogfeld den Handler für updates der Aktivitäts `TextView` mit der ausgewählten Zeit und wird dann beendet:
+Wenn Sie im  `TimePicker` Dialogfeld auf OK klicken, aktualisiert der Handler die- `TextView` Aktivität mit der ausgewählten Uhrzeit und wird dann beendet:
 
-[![Ein/Min. Zeit wird in der TextView-Aktivität angezeigt.](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png#lightbox)
+[![Eine/M-Zeit wird in der TextView-Aktivität angezeigt.](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png#lightbox)
 
-Fügen Sie die folgende Codezeile, `OnCreateDialog` unmittelbar `is24HourFormat` deklariert und initialisiert wird:
+Fügen Sie als nächstes die folgende Codezeile `OnCreateDialog` direkt nach `is24HourFormat` dem deklarierten und Initialisieren von hinzu:
 
 ```csharp
 is24HourFormat = true;
 ```
 
-Diese Änderung erzwingt, dass das Flag, das die an die `TimePickerDialog` Konstruktor sein `true` damit, 24-Stunden-Modus nicht das Uhrzeitformat der hosting-Aktivität verwendet wird. Wenn Sie erstellen und führen die app erneut aus, klicken Sie auf die **PICK Zeit** Schaltfläche der `TimePicker` Dialogfeld wird jetzt im 24-Stunden-Format angezeigt:
+Diese Änderung erzwingt, dass das Flag `TimePickerDialog` , das an den `true` Konstruktor übergeben wird, so lautet, dass anstelle des Zeit Formats der hostingaktivität der 24-Stunden-Modus verwendet wird. Wenn Sie die APP erneut erstellen und ausführen, klicken Sie auf die Schaltfläche **Zeit auswählen** . das `TimePicker` Dialogfeld wird nun im 24-Stunden-Format angezeigt:
 
-[![TimePicker-Dialogfeld im 24-Stunden-format](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
+[![TimePicker-Dialogfeld im 24-Stunden-Format](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
 
-Da der Handler ruft [DateTime.ToShortTimeString](xref:System.DateTime.ToShortDateString*) So drucken Sie die Zeit der Aktivität `TextView`, die Zeit wird immer noch im standardmäßigen 12-Stunden AM/PM-Format ausgegeben.
-
-
+Da der Handler [DateTime. ToShortTimeString](xref:System.DateTime.ToShortDateString*) aufruft, um die Uhrzeit in der der- `TextView`Aktivität auszugeben, wird die Uhrzeit weiterhin im standardmäßigen 12-Stunden-e/a-Format gedruckt.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel erläutert die Vorgehensweise beim Anzeigen einer `TimePicker` Widgets, wie ein modales Popup-Dialogfeld aus einer Android-Aktivität. Sie ein Beispiel bereitgestellt `DialogFragment` Implementierung und erläutert die `IOnTimeSetListener` Schnittstelle. Darüber hinaus wird in diesem Beispiel veranschaulicht die `DialogFragment` Interaktion mit dem Host-Aktivität, um den ausgewählten Zeitpunkt anzuzeigen.
-
+In diesem Artikel wurde erläutert, wie `TimePicker` ein Widget aus einer Android-Aktivität als modales Popup Dialogfeld angezeigt wird. Es wurde eine Beispiel `DialogFragment` Implementierung bereitgestellt und `IOnTimeSetListener` die-Schnittstelle erläutert. In diesem Beispiel wurde auch veranschaulicht `DialogFragment` , wie mit der Host Aktivität interagiert werden kann, um den ausgewählten Zeitpunkt anzuzeigen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [DialogFragment](https://developer.xamarin.com/api/type/Android.App.DialogFragment/)
-- [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/)
-- [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/)
-- [TimePickerDialog.IOnTimeSetListener](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog+IOnTimeSetListener/)
-- [TimePickerDemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/UserInterface/TimePickerDemo)
+- [DialogFragment](xref:Android.App.DialogFragment)
+- [TimePicker](xref:Android.Widget.TimePicker)
+- [TimePickerDialog](xref:Android.App.TimePickerDialog)
+- [TimePickerDialog.IOnTimeSetListener](xref:Android.App.TimePickerDialog.IOnTimeSetListener)
+- [Timepickerdemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/UserInterface/TimePickerDemo)

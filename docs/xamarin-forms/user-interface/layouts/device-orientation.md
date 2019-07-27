@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a38249236e758728452ff25fd0c486c3d03ce8fc
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 2c218b030739dee8d3e49fab4e5c2a70ff5e71e0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970988"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511828"
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
 
@@ -32,7 +32,7 @@ Geräteausrichtung erfolgt unter iOS, für Anwendungen unter Verwendung der **"I
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Klicken Sie in Visual Studio, öffnen Sie das iOS-Projekt, und öffnen Sie **"Info.plist"**. Die Datei wird in einem Bereich Konfiguration angezeigt, beginnend mit der iPhone-Bereitstellungsinformationen-Registerkarte geöffnet:
+Klicken Sie in Visual Studio, öffnen Sie das iOS-Projekt, und öffnen Sie **"Info.plist"** . Die Datei wird in einem Bereich Konfiguration angezeigt, beginnend mit der iPhone-Bereitstellungsinformationen-Registerkarte geöffnet:
 
 ![iPhone-Bereitstellungsinformationen in Visual Studio](device-orientation-images/orientation-vs-iphone.png)
 
@@ -42,7 +42,7 @@ Wählen Sie zum Konfigurieren der iPad-Ausrichtung der **iPad-Bereitstellungsinf
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Klicken Sie in Visual Studio für Mac öffnen Sie das iOS-Projekt, und öffnen Sie **"Info.plist"**. Unter den **Anwendung** Registerkarte Abschnitte stehen Ausrichtung festgelegt:
+Klicken Sie in Visual Studio für Mac öffnen Sie das iOS-Projekt, und öffnen Sie **"Info.plist"** . Unter den **Anwendung** Registerkarte Abschnitte stehen Ausrichtung festgelegt:
 
 ![iPhone-Bereitstellungsinformationen in Visual Studio für Mac](device-orientation-images/orientation-xam-ui.png)
 
@@ -71,7 +71,7 @@ Xamarin.Android unterstützt mehrere Optionen zum Angeben der Ausrichtung:
 - **Querformat** &ndash; erzwingt, dass die Anwendung-Ausrichtung auf Querformat, unabhängig davon, Sensordaten sein.
 - **Hochformat** &ndash; erzwingt, dass die Anwendung-Ausrichtung auf Hochformat, unabhängig von Daten von gerätesensoren zu werden.
 - **Benutzer** &ndash; bewirkt, dass die Anwendung mithilfe der bevorzugte Ausrichtung des Benutzers angezeigt werden.
-- **Hinter** &ndash; bewirkt Ausrichtung der Anwendung, mit der die Ausrichtung des identisch sein, dass die [Aktivität](https://developer.xamarin.com/api/type/Android.App.Activity/) dahinter.
+- **Hinter** &ndash; bewirkt Ausrichtung der Anwendung, mit der die Ausrichtung des identisch sein, dass die [Aktivität](xref:Android.App.Activity) dahinter.
 - **Sensor** &ndash; bewirkt, dass die Anwendung die Ausrichtung vom Sensor, bestimmt werden soll, selbst wenn der Benutzer die automatische Drehung deaktiviert hat.
 - **SensorLandscape** &ndash; bewirkt, dass die Anwendung zur Verwendung von Querformat bei der Verwendung von Daten von triebwerksensoren so ändern Sie die Richtung der Bildschirm befindet sich in einer (sodass der Bildschirm als auf dem Kopf stehend betrachtet wird).
 - **SensorPortrait** &ndash; bewirkt, dass die Anwendung zur Verwendung von Hochformat bei der Verwendung von Daten von triebwerksensoren so ändern Sie die Richtung der Bildschirm befindet sich in einer (sodass der Bildschirm als auf dem Kopf stehend betrachtet wird).

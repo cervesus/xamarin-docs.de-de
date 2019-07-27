@@ -6,64 +6,61 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: c8a6e7a9abf9e8430253b9402d69f43744bf93c0
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 64210bc18532a5260bd31ff1c20e8ffaf92d0df2
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827669"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510553"
 ---
-# <a name="customizing-a-listviews-appearance"></a>Anpassen einer ListView-Darstellung
+# <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Anpassen der Darstellung eines ListView-Steuermoduls mit xamarin. Android
+
+Das Aussehen einer ListView wird durch das Layout der Zeilen vorgegeben, die angezeigt werden. Um die `ListView`Darstellung eines zu ändern, verwenden Sie ein anderes Zeilen Layout.
 
 
-## <a name="overview"></a>Übersicht
+## <a name="built-in-row-views"></a>Integrierte Zeilen Sichten
 
-Durch das Layout der angezeigten Zeilen wird die Darstellung einer ListView festgelegt. So ändern Sie die Darstellung einer `ListView`, verwenden Sie eine andere Zeilenlayout.
+Es gibt zwölf integrierte Sichten, auf die mithilfe von **Android. Resource. Layout**verwiesen werden kann:
 
+- **Testlistitem** &ndash; Eine Textzeile mit minimaler Formatierung.
 
-## <a name="built-in-row-views"></a>Integrierte Zeilenansichten
+- **SimpleListItem1** &ndash; Eine Textzeile.
 
-Es gibt zwölf integrierte Sichten, die mit verwiesen werden können **Android.Resource.Layout**:
+- **SimpleListItem2** &ndash; Zwei Textzeilen.
 
-- **TestListItem** &ndash; Textzeile mit minimaler Formatierung.
+- **Simpleselectablelistitem** &ndash; Eine einzelne Textzeile, die die Auswahl einzelner oder mehrerer Elemente unterstützt (auf API-Ebene 11 hinzugefügt).
 
-- **SimpleListItem1** &ndash; einzelne Textzeile.
+- **SimpleListItemActivated1** &ndash; Vergleichbar mit SimpleListItem1, aber die Hintergrundfarbe gibt an, wenn eine Zeile ausgewählt wird (auf API-Ebene 11 hinzugefügt).
 
-- **SimpleListItem2** &ndash; zwei Textzeilen.
+- **SimpleListItemActivated2** &ndash; Vergleichbar mit SimpleListItem2, aber die Hintergrundfarbe gibt an, wenn eine Zeile ausgewählt wird (auf API-Ebene 11 hinzugefügt).
 
-- **SimpleSelectableListItem** &ndash; eine Textzeile, die von einem oder mehreren Elementauswahl (hinzugefügt in API-Ebene 11) unterstützt.
+- **Simplelistitemcheck** &ndash; Zeigt Kontrollzeichen an, um die Auswahl anzugeben.
 
-- **SimpleListItemActivated1** &ndash; SimpleListItem1 ähnlich, aber die Farbe des Hintergrunds gibt an, wenn eine Zeile ausgewählt ist (in der API-Ebene 11 hinzugefügt).
+- **Simplelistitemmultiplechoice** &ndash; Zeigt Kontrollkästchen an, um die Auswahl mehrerer Auswahl anzugeben.
 
-- **SimpleListItemActivated2** &ndash; SimpleListItem2 ähnlich, aber die Farbe des Hintergrunds gibt an, wenn eine Zeile ausgewählt ist (in der API-Ebene 11 hinzugefügt).
+- **Simplelistitemsinglechoice** &ndash; Zeigt Options Felder an, um sich gegenseitig ausschließende Auswahl anzugeben.
 
-- **SimpleListItemChecked** &ndash; zeigt Häkchen Auswahl an.
+- **Twolinelistitem** &ndash; Zwei Textzeilen.
 
-- **SimpleListItemMultipleChoice** &ndash; zeigt Kontrollkästchen Multiple-Choice-Auswahl an.
+- **Activitylistitem** &ndash; Eine Textzeile mit einem Bild.
 
-- **SimpleListItemSingleChoice** &ndash; zeigt Optionsfelder gegenseitig Auswahl an.
+- **Simpleexpandablelistitem** &ndash; Gruppiert Zeilen nach Kategorien, und jede Gruppe kann erweitert oder reduziert werden.
 
-- **TwoLineListItem** &ndash; zwei Textzeilen.
+Jeder integrierten Zeilen Ansicht ist ein integrierter Stil zugeordnet. Diese Screenshots zeigen, wie jede Ansicht angezeigt wird:
 
-- **ActivityListItem** &ndash; eine Textzeile, die mit einem Bild.
+[![Screenshots von testlistitem, simpleselectablelistitem, SimpleListitem1 und SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-- **SimpleExpandableListItem** &ndash; gruppiert Zeilen nach Kategorien, und jede Gruppe erweitert oder reduziert werden können.
+[![Screenshots von SimpleListItemActivated1, SimpleListItemActivated2, simplelistitemcheck und simplelistitemmultiplecheck](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-Jede Zeilenansicht integrierten verfügt über einen integrierten Stil zugeordnet. Diese Screenshots zeigen, wie jeder Ansicht angezeigt wird:
+[![Screenshots von simplelistitemsinglechoice, twolinelistitem, activitylistitem und simpleexpandablelistitem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
-[![Screenshots der TestListItem, SimpleSelectableListItem, SimpleListitem1 und SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
-
-[![Screenshots der SimpleListItemActivated1, SimpleListItemActivated2, SimpleListItemChecked und SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
-
-[![Screenshots der SimpleListItemSingleChoice, TwoLineListItem, ActivityListItem und SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
-
-Die **BuiltInViews/HomeScreenAdapter.cs** -Beispieldatei (in der **BuiltInViews** Lösung) enthält den Code, um die nicht erweiterbaren Liste Element Bildschirme zu erstellen. Die Ansicht festgelegt ist, der `GetView` Methode wie folgt:
+Die Beispieldatei " **builtinviews/homescreenadapter. cs** " (in der Projekt Mappe " **builtinviews** ") enthält den Code, mit dem die nicht erweiterbaren Listenelement Bildschirme erzeugt werden. Die-Sicht wird in der `GetView` -Methode wie folgt festgelegt:
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
 ```
 
-Die Eigenschaften der Sicht festgelegt werden, durch Verweisen auf die standard-Steuerelement-IDs `Text1`, `Text2` und `Icon` unter `Android.Resource.Id` (Eigenschaften, die die Sicht enthält keine oder eine Ausnahme ausgelöst wird nicht festgelegt):
+Die Eigenschaften der Ansicht können dann festgelegt `Text1`werden, indem Sie auf die Standard Steuerelement Bezeichner verweisen, und `Icon` unter `Android.Resource.Id` (legen Sie keine Eigenschaften fest, die die Sicht nicht enthält, `Text2` oder es wird eine Ausnahme ausgelöst):
 
 ```csharp
 view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Heading;
@@ -71,50 +68,50 @@ view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = item.SubHeading;
 view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(item.ImageResourceId); // only use with ActivityListItem
 ```
 
-Die **BuiltInExpandableViews/ExpandableScreenAdapter.cs** -Beispieldatei (in der **BuiltInViews** Lösung) enthält den Code, um den Bildschirm SimpleExpandableListItem zu erzeugen. Die Ansicht "" festgelegt ist, der `GetGroupView` Methode wie folgt:
+Die " **builtinexpandableviews/expandablescreenadapter. cs"-** Beispieldatei (in der Projekt Mappe " **builtinviews** ") enthält den Code zum Erstellen des Bildschirms "simpleexpandablelistitem". Die Gruppenansicht wird in der `GetGroupView` -Methode wie folgt festgelegt:
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem1, null);
 ```
 
-Die untergeordnete Ansicht festgelegt ist, der `GetChildView` Methode wie folgt:
+Die untergeordnete Ansicht wird in der `GetChildView` -Methode wie folgt festgelegt:
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem2, null);
 ```
 
-Die Eigenschaften für die Gruppe anzeigen und die untergeordnete Ansicht können dann durch Verweisen auf den Standard festgelegt werden `Text1` und `Text2` Bezeichner zu steuern, wie oben gezeigt. Screenshot SimpleExpandableListItem (siehe oben) enthält ein Beispiel für eine einzige Zeile Gruppenansicht (SimpleExpandableListItem1) und einer zweizeiligen untergeordnete Ansicht (SimpleExpandableListItem2). Alternativ können Sie die Ansicht "" kann für zwei Zeilen (SimpleExpandableListItem2) konfiguriert werden und die untergeordnete Ansicht kann für eine Zeile (SimpleExpandableListItem1), konfiguriert werden oder sowohl Gruppen-als Ansicht und untergeordnete Ansicht haben die gleiche Anzahl von Zeilen. 
+Die Eigenschaften für die Gruppenansicht und die untergeordnete Ansicht können dann festgelegt werden, indem Sie `Text1` auf `Text2` die Standard-und Steuerelement Bezeichner verweisen, wie oben gezeigt. Der simpleexpandablelistitem-Bildschirmfoto (siehe oben) enthält ein Beispiel für eine einzeilige Gruppenansicht (SimpleExpandableListItem1) und eine untergeordnete zweizeilige Ansicht (SimpleExpandableListItem2). Alternativ kann die Gruppenansicht für zwei Zeilen (SimpleExpandableListItem2) konfiguriert werden, und die untergeordnete Ansicht kann für eine Zeile (SimpleExpandableListItem1) konfiguriert werden, oder sowohl die Gruppenansicht als auch die untergeordnete Ansicht können die gleiche Anzahl von Zeilen aufweisen. 
 
 
 
-## <a name="accessories"></a>Zubehör
+## <a name="accessories"></a>Bad
 
-Zeilen können Zubehör rechts von der Ansicht, um den Auswahlzustand anzugeben hinzugefügt haben:
+Für Zeilen können Zubehör rechts neben der Ansicht hinzugefügt werden, um den Auswahl Status anzugeben:
 
-- **SimpleListItemChecked** &ndash; erstellt eine Einfachauswahl-Liste mit einem Häkchen als Indikator.
+- **Simplelistitemcheck** &ndash; Erstellt eine Auswahlliste mit einer Auswahl als Indikator.
 
-- **SimpleListItemSingleChoice** &ndash; erstellt Funktyp-Schaltfläche enthält, in denen nur eine Auswahl möglich ist.
+- **Simplelistitemsinglechoice** &ndash; Erstellt die Liste der Options Felder, in denen nur eine Auswahl möglich ist.
 
-- **SimpleListItemMultipleChoice** &ndash; erstellt das Kontrollkästchen-Type-Listen, in denen mehrere Auswahlmöglichkeiten möglich sind.
+- **Simplelistitemmultiplechoice** &ndash; Erstellt Kontrollkästchen, bei denen mehrere Optionen möglich sind.
 
-Die oben genannten Zubehör sind in den folgenden Bildschirmen, in der entsprechenden Reihenfolge dargestellt:
+Die oben genannten Zubehör sind in der jeweiligen Reihenfolge in den folgenden Bildschirmen dargestellt:
 
-[![Screenshots der SimpleListItemChecked SimpleListItemSingleChoice und SimpleListItemMultipleChoice mit Zubehör](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
+[![Screenshots von simplelistitemcheck, simplelistitemsinglechoice und simplelistitemmultiplechoice mit Zubehör](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
-Zum Anzeigen eines dieser Zubehör übergeben die erforderlichen Layout-Ressourcen-ID an den Adapter klicken Sie dann manuell den Auswahlzustand festlegen für die erforderlichen Zeilen. Diese Codezeile veranschaulicht das Erstellen und Zuweisen einer `Adapter` mithilfe eines Layouts:
+Um eines dieser Zubehör anzuzeigen, übergeben Sie die erforderliche layoutressourcenid an den Adapter, und legen Sie dann den Auswahl Status für die erforderlichen Zeilen manuell fest. Diese Codezeile zeigt, wie `Adapter` Sie mit einem der folgenden Layouts erstellen und zuweisen:
 
 ```csharp
 ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItemChecked, items);
 ```
 
-Die `ListView` selbst unterstützt die unterschiedlichen Auswahlmodi, unabhängig von die Zugriffsmethode, die angezeigt wird. Um Verwirrung zu vermeiden, verwenden Sie `Single` Auswahlmodus mit `SingleChoice` Zubehör und `Checked` oder `Multiple` Modus mit der `MultipleChoice` Stil. Der Auswahlmodus wird gesteuert, indem die `ChoiceMode` Eigenschaft der `ListView`.
+Der `ListView` selbst unterstützt verschiedene Auswahl Modi, unabhängig davon, welches Zubehör angezeigt wird. Um Verwirrung zu vermeiden, `Single` verwenden Sie den `SingleChoice` Auswahlmodus mit `Checked` Zubehör `Multiple` und den- `MultipleChoice` oder-Modus mit dem-Stil. Der Auswahlmodus wird von der `ChoiceMode` -Eigenschaft `ListView`des gesteuert.
 
 
-### <a name="handling-api-level"></a>Behandlung von API-Ebene
+### <a name="handling-api-level"></a>Behandeln von API-Ebenen
 
-Enumerationen werden von frühere Versionen von Xamarin.Android als ganzzahligen Eigenschaften implementiert. Die neueste Version hat richtige Enumerationstypen in .NET eingeführt, wodurch sie viel einfacher, um die möglichen Optionen zu ermitteln.
+In früheren Versionen von xamarin. Android wurden Enumerationen als ganzzahlige Eigenschaften implementiert. Die neueste Version hat ordnungsgemäße .net-Enumerationstypen eingeführt, die es Ihnen erleichtern, die möglichen Optionen zu ermitteln.
 
-Abhängig von der API-Ebene Sie verwenden möchten, `ChoiceMode` ist entweder eine ganze Zahl oder eine Enumeration. Die Beispieldatei **AccessoryViews/HomeScreen.cs** verfügt über ein Block auskommentiert werden, wenn Sie die Gingerbread-API als Ziel möchten:
+Je nachdem, welche API-Ebene Sie als `ChoiceMode` Ziel haben, ist entweder eine ganze Zahl oder eine Enumeration. Die Beispieldatei **accessoryviews/homescreen. cs** weist einen Block auf, der auskommentiert ist, wenn Sie auf die Lebkuchen-API abzielen möchten:
 
 ```csharp
 // For targeting Gingerbread the ChoiceMode is an int, otherwise it is an
@@ -134,22 +131,22 @@ lv.ChoiceMode = 1; // Single
 ```
 
 
-### <a name="selecting-items-programmatically"></a>Programmgesteuertes auswählen von Elementen
+### <a name="selecting-items-programmatically"></a>Programm gesteuertes auswählen von Elementen
 
-Manuelles Festlegen der Elemente sind "ausgewählt" erfolgt mit der `SetItemChecked` Methode (er kann mehrmals aufgerufen werden für die Mehrfachauswahl):
+Manuelles Festlegen, welche Elemente "ausgewählt" sind, wird `SetItemChecked` mit der-Methode ausgeführt (Sie kann mehrmals für Mehrfachauswahl aufgerufen werden):
 
 ```csharp
 // Set the initially checked row ("Fruits")
 lv.SetItemChecked(1, true);
 ```
 
-Der Code muss auch einzelne Auswahl anders als mehrere Auswahlmöglichkeiten zu erkennen. Um zu bestimmen, welche Zeile ausgewählt wurde `Single` Modus verwenden die `CheckedItemPosition` -Zahl mit Vorzeichen:
+Der Code muss auch die einfache Auswahl anders als bei Mehrfachauswahl erkennen. Verwenden Sie die `CheckedItemPosition` Eigenschaft "Integer", `Single` um zu bestimmen, welche Zeile im-Modus ausgewählt wurde:
 
 ```csharp
 FindViewById<ListView>(Android.Resource.Id.List).CheckedItemPosition
 ```
 
-Um zu bestimmen, welche Zeilen ausgewählt wurden `Multiple` Modus Sie durchlaufen müssen die `CheckedItemPositions` `SparseBooleanArray`. Ein Array mit geringer Dichte ist wie ein Wörterbuch, der nur die Einträge enthält, wurde der Wert geändert wurde, damit Sie das gesamte Array nach durchlaufen müssen `true` Werte wissen, was in der Liste ausgewählt wurde wie im folgenden Codeausschnitt gezeigt:
+Um zu ermitteln, welche Zeilen im `Multiple` -Modus ausgewählt wurden, müssen Sie eine Schleife `CheckedItemPositions` `SparseBooleanArray`durchlaufen. Ein Array mit geringer Dichte ist wie ein Wörterbuch, das nur Einträge enthält, bei denen der Wert geändert wurde. Daher müssen Sie das `true` gesamte Array durchlaufen, um nach Werten zu suchen, um zu wissen, was in der Liste ausgewählt wurde, wie im folgenden Code Ausschnitt veranschaulicht:
 
 ```csharp
 var sparseArray = FindViewById<ListView>(Android.Resource.Id.List).CheckedItemPositions;
@@ -161,31 +158,31 @@ Console.WriteLine();
 ```
 
 
-## <a name="creating-custom-row-layouts"></a>Erstellen von benutzerdefinierten Zeile Layouts
+## <a name="creating-custom-row-layouts"></a>Erstellen von benutzerdefinierten Zeilen Layouts
 
-Die vier integrierten Zeilenansichten sind sehr einfach. Zum Anzeigen von komplexere Layouts (z. B. eine Liste von e-Mails, Tweets oder Kontaktinformationen) ist eine benutzerdefinierte Ansicht erforderlich. Benutzerdefinierte Ansichten werden in der Regel als AXML-Dateien deklariert die **Ressourcen/Layout** Verzeichnis, und klicken Sie dann die mit den Ressourcen-Id eines benutzerdefinierten Adapters geladen. Die Sicht kann eine beliebige Anzahl von anzeigen-Klassen (z. B. TextViews, ImageViews und andere Steuerelemente) mit benutzerdefinierten Farben, Schriftarten und Layout enthalten.
+Die vier integrierten Zeilen Sichten sind sehr einfach. Um komplexere Layouts (z. b. eine Liste von e-Mails, Tweets oder Kontaktinformationen) anzuzeigen, ist eine benutzerdefinierte Ansicht erforderlich. Benutzerdefinierte Ansichten werden im Allgemeinen als axml-Dateien im Verzeichnis " **Resources/Layout** " deklariert und dann mithilfe ihrer Ressourcen-ID von einem benutzerdefinierten Adapter geladen. Die Sicht kann eine beliebige Anzahl von Anzeige Klassen (z. b. Text views, imageviews und andere Steuerelemente) mit benutzerdefinierten Farben, Schriftarten und Layout enthalten.
 
-In diesem Beispiel unterscheidet sich von den vorherigen Beispielen in eine Reihe von Möglichkeiten:
+Dieses Beispiel unterscheidet sich in vielerlei Hinsicht von den vorherigen Beispielen:
 
--  Erbt von `Activity` , nicht `ListActivity` . Sie können die Zeilen für alle anpassen `ListView` , jedoch auch andere Steuerelemente auch aufgenommen werden können, können Sie in einer `Activity` Layout (z. B. eine Überschrift, Schaltflächen oder andere Elemente der Benutzeroberfläche). In diesem Beispiel wird eine Überschrift oben die `ListView` um zu veranschaulichen.
+-  Erbt von `Activity` , nicht `ListActivity` . Sie können Zeilen für beliebige `ListView` anpassen, andere Steuerelemente können jedoch auch in ein `Activity` Layout eingefügt werden (z. b. eine Überschrift, Schaltflächen oder andere Elemente der Benutzeroberfläche). In diesem Beispiel wird eine Überschrift `ListView` über der hinzugefügt.
 
--  Erfordert ein AXML-Layoutdatei für den Bildschirm an. in den vorherigen Beispielen die `ListActivity` eine Layoutdatei ist nicht erforderlich. Diese AXML enthält eine `ListView` Deklaration zu steuern.
+-  Erfordert eine axml-Layoutdatei für den Bildschirm. in den vorherigen Beispielen `ListActivity` erfordert keine Layoutdatei. Diese axml enthält eine `ListView` Steuerelement Deklaration.
 
--  Erfordert ein AXML-Layoutdatei um jede Zeile zu rendern. Diese AXML-Datei enthält die Text- und Image-Steuerelemente mit benutzerdefinierten Schriftart- und farbeinstellungen.
+-  Erfordert eine axml-Layoutdatei zum Rendering der einzelnen Zeilen. Diese axml-Datei enthält die Text-und Image-Steuerelemente mit benutzerdefinierten Schriftart-und Farbeinstellungen.
 
--  Verwendet eine optionale benutzerdefinierte Auswahl XML-Datei die Darstellung der Zeile festgelegt, wenn es ausgewählt wird.
+-  Verwendet eine optionale benutzerdefinierte Selektor-XML-Datei, um die Darstellung der Zeile bei der Auswahl festzulegen.
 
--  Die `Adapter` Implementierung gibt ein benutzerdefiniertes Layout aus der `GetView` außer Kraft setzen.
+-  Die `Adapter` -Implementierung gibt ein benutzerdefiniertes `GetView` Layout aus der Überschreibung zurück.
 
--  `ItemClick` muss anders deklariert werden (ein Ereignishandler angefügt ist `ListView.ItemClick` statt einer überschreiben `OnListItemClick` in `ListActivity`).
-
-
-Diese Änderungen werden unten genauer beschrieben erstellen, die Ansicht der Aktivität und die der benutzerdefinierten Zeilenansicht und deckt die klicken Sie dann die Änderungen an den Adapter und die Aktivität, um die Berichte Rendern ab.
+-  `ItemClick`muss anders deklariert werden (ein Ereignishandler ist an angefügt, `ListView.ItemClick` anstelle `OnListItemClick` eines über `ListActivity`schreibenden in).
 
 
-### <a name="adding-a-listview-to-an-activity-layout"></a>Hinzufügen einer ListView auf einer Aktivitätsüberlagerung
+Diese Änderungen werden im folgenden ausführlich erläutert, beginnend mit dem Erstellen der Aktivitätsansicht und der benutzerdefinierten Zeilen Ansicht und dem anschließenden abdecken der Änderungen am Adapter und der Aktivität, um Sie zu erstellen.
 
-Da `HomeScreen` erbt nicht mehr von `ListActivity` keine Standardansicht, damit eine AXML-Layoutdatei für den HomeScreen Ansicht erstellt werden muss. In diesem Beispiel wird die Ansicht eine Überschrift haben (mithilfe einer `TextView`) und ein `ListView` zum Anzeigen von Daten. Das Layout wird definiert, der **Resources/Layout/HomeScreen.axml** Datei, die hier gezeigt wird:
+
+### <a name="adding-a-listview-to-an-activity-layout"></a>Hinzufügen eines ListView zu einem Aktivitäts Layout
+
+Da `HomeScreen` nicht mehr von `ListActivity` ihm erbt, verfügt keine Standardansicht, daher muss für die Ansicht des Homescreen eine axml-Layoutdatei erstellt werden. In diesem Beispiel enthält die Sicht eine Überschrift (unter Verwendung eines `TextView`) und eine `ListView` zum Anzeigen von Daten. Das Layout wird in der Datei " **Resources/Layout/homescreen. axml** " definiert, die hier gezeigt wird:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -211,12 +208,12 @@ Da `HomeScreen` erbt nicht mehr von `ListActivity` keine Standardansicht, damit 
 </LinearLayout>
 ```
 
-Der Vorteil der Verwendung einer `Activity` mit einem benutzerdefinierten Layout (anstelle von einem `ListActivity`) liegt in der Lage, fügen zusätzliche Steuerelemente auf dem Bildschirm z. B. die Überschrift `TextView` in diesem Beispiel.
+Der Vorteil der Verwendung eines `Activity` mit einem benutzerdefinierten Layout (anstelle `ListActivity`eines) liegt darin, dass es möglich ist, dem Bildschirm zusätzliche Steuerelemente hinzuzufügen `TextView` , z. b. die Überschrift in diesem Beispiel.
 
 
-### <a name="creating-a-custom-row-layout"></a>Erstellen eines benutzerdefinierten Zeile Layouts
+### <a name="creating-a-custom-row-layout"></a>Erstellen eines benutzerdefinierten Zeilen Layouts
 
-Eine andere AXML-Layoutdatei ist erforderlich, das benutzerdefinierte Layout für jede Zeile enthält, die in der Listenansicht angezeigt wird. In diesem Beispiel wird die Zeile eine grünem Hintergrund, braunen Text und Bild rechts ausgerichtete verfügen. Das Android XML-Markup, deklarieren dieses Layout finden Sie im **Resources/Layout/CustomView.axml**:
+Eine weitere axml-Layoutdatei ist erforderlich, um das benutzerdefinierte Layout für jede Zeile zu enthalten, die in der Listenansicht angezeigt wird. In diesem Beispiel enthält die Zeile einen grünen Hintergrund, einen braunen Text und ein rechts Bündiges Bild. Das Android XML-Markup zum Deklarieren dieses Layouts wird unter **Ressourcen/Layout/CustomView. axml**beschrieben:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -257,12 +254,12 @@ Eine andere AXML-Layoutdatei ist erforderlich, das benutzerdefinierte Layout fü
 </RelativeLayout >
 ```
 
-Während einer benutzerdefinierten Zeilenlayout viele verschiedene Steuerelemente enthalten kann, die bildlaufleistung kann durch komplexe Entwürfe beeinflusst werden, und verwenden-images (insbesondere, wenn sie über das Netzwerk geladen werden müssen). Finden Sie im Artikel von Google Informationen auf Bildlauf Leistungsprobleme.
+Während ein benutzerdefiniertes Zeilen Layout viele verschiedene Steuerelemente enthalten kann, kann die Bild Laufleistung von komplexen Entwürfen und der Verwendung von Bildern beeinflusst werden (insbesondere, wenn Sie über das Netzwerk geladen werden müssen). Weitere Informationen zur Behandlung von Leistungsproblemen beim Scrollen finden Sie im Google-Artikel.
 
 
-### <a name="referencing-a-custom-row-view"></a>Verweisen auf eine Zeile der benutzerdefinierten Ansicht
+### <a name="referencing-a-custom-row-view"></a>Verweisen auf eine benutzerdefinierte Zeilen Ansicht
 
-Die Implementierung des benutzerdefinierten Adapter Beispiel befindet sich in `HomeScreenAdapter.cs`. Die Schlüsselmethode ist `GetView` geladen, in dem die benutzerdefinierte AXML mithilfe der Ressourcen-ID `Resource.Layout.CustomView`, und legt dann die Eigenschaften für jedes der Steuerelemente in der Ansicht vor dem zurückgeben. Die vollständige Adapterklasse wird angezeigt:
+Die Implementierung des benutzerdefinierten Adapter Beispiels finden Sie `HomeScreenAdapter.cs`unter. Bei der Schlüsselmethode `GetView` wird das benutzerdefinierte axml mithilfe der Ressourcen-ID `Resource.Layout.CustomView`geladen, und anschließend werden Eigenschaften für jedes der Steuerelemente in der Ansicht festgelegt, bevor Sie zurückgegeben werden. Die gesamte Adapter Klasse wird angezeigt:
 
 ```csharp
 public class HomeScreenAdapter : BaseAdapter<TableItem> {
@@ -301,15 +298,15 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 ```
 
 
-### <a name="referencing-the-custom-listview-in-the-activity"></a>Verweisen auf die benutzerdefinierte ListView, in der Aktivität
+### <a name="referencing-the-custom-listview-in-the-activity"></a>Verweisen auf die benutzerdefinierte ListView in der Aktivität
 
-Da die `HomeScreen` Klasse erbt nun von `Activity`, `ListView` Feld ist deklariert, in der Klasse für einen Verweis auf das Steuerelement in der AXML deklariert:
+Da die `HomeScreen` -Klasse nun von `Activity`erbt, `ListView` wird in der-Klasse ein-Feld deklariert, das einen Verweis auf das in axml deklarierte Steuerelement enthalten soll:
 
 ```csharp
 ListView listView;
 ```
 
-Die Klasse muss dann der Aktivität benutzerdefinierte Layout AXML Laden mithilfe der `SetContentView` Methode. Suchen sie Sie dann die `ListView` -Steuerelement in das Layout wird erstellt und weist den Adapter und weist Sie den Click-Handler. Der Code für die der OnCreate-Methode ist hier dargestellt:
+Die Klasse muss dann das benutzerdefinierte Layout axml der Aktivität mithilfe der `SetContentView` -Methode laden. Anschließend kann das `ListView` Steuerelement im Layout gefunden werden, dann wird der Adapter erstellt und zugewiesen und der Click-Handler zugewiesen. Der Code für die OnCreate-Methode wird hier angezeigt:
 
 ```csharp
 SetContentView(Resource.Layout.HomeScreen); // loads the HomeScreen.axml as this activity's view
@@ -320,7 +317,7 @@ listView.Adapter = new HomeScreenAdapter(this, tableItems);
 listView.ItemClick += OnListItemClick;  // to be defined
 ```
 
-Zum Schluss die `ItemClick` Handler muss definiert werden; in diesem Fall es zeigt nur eine `Toast` Nachricht:
+Schließlich muss `ItemClick` der Handler definiert werden. in diesem Fall wird nur eine `Toast` Meldung angezeigt:
 
 ```csharp
 void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -331,21 +328,21 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 }
 ```
 
-Die angezeigten Bildschirm sieht folgendermaßen aus:
+Der resultierende Bildschirm sieht wie folgt aus:
 
-[![Screenshot der resultierenden CustomRowView](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
+[![Screenshot der resultierenden customrowview](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 
 
-### <a name="customizing-the-row-selector-color"></a>Die Farbe der Auswahl anpassen
+### <a name="customizing-the-row-selector-color"></a>Anpassen der Zeilenauswahl Farbe
 
-Bei eine Zeile verwendet wird, sollten sie für Benutzerfeedback hervorgehoben werden. Wenn eine benutzerdefinierte Ansicht gibt als Hintergrundfarbe als **CustomView.axml** der Fall ist, außerdem überschreibt er die Markierung der. Diese Codezeile in **CustomView.axml** legt der Hintergrund hellgrün, aber es bedeutet auch, dass es gibt keinen visuellen Indikator, wenn die Zeile verwendet wird:
+Wenn eine Zeile berührt wird, sollte Sie für Benutzer Feedback hervorgehoben werden. Wenn eine benutzerdefinierte Ansicht als Hintergrundfarbe angibt, wie **CustomView. axml** dies tut, überschreibt Sie auch die Auswahl Markierung. Mit dieser Codezeile in " **CustomView. axml** " wird der Hintergrund auf Hellgrün festgelegt, aber es bedeutet auch, dass es keinen visuellen Indikator gibt, wenn die Zeile berührt wird:
 
 ```xml
 android:background="#FFDAFF7F"
 ```
 
-So aktivieren Sie das Verhalten für die Hervorhebung erneut, und auch die Farbe anpassen, die verwendet wird, legen Sie stattdessen das Background-Attribut auf eine benutzerdefinierte aufweist. Die Auswahl wird sowohl die Standardhintergrundfarbe als auch die Hervorhebungsfarbe deklarieren. Die Datei **Resources/Drawable/CustomSelector.xml** enthält die folgende Deklaration:
+Zum erneuten Aktivieren des Hervorhebungs Verhaltens und zum Anpassen der verwendeten Farbe legen Sie stattdessen das Background-Attribut auf einen benutzerdefinierten Selektor fest. Der Selektor deklariert sowohl die Standard Hintergrundfarbe als auch die Hervorhebungs Farbe. Die Datei **Resources/drawable/customselector. XML** enthält die folgende Deklaration:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -367,26 +364,26 @@ So aktivieren Sie das Verhalten für die Hervorhebung erneut, und auch die Farbe
 </selector>
 ```
 
-Um die benutzerdefinierte Auswahl zu verweisen, ändern Sie das Background-Attribut in **CustomView.axml** auf:
+Um auf den benutzerdefinierten Selektor zu verweisen, ändern Sie das Background-Attribut in **CustomView. axml** in:
 
 ```xml
 android:background="@drawable/CustomSelector"
 ```
 
-Eine ausgewählte Zeile und dem entsprechenden `Toast` Nachricht jetzt sieht wie folgt aus:
+Eine ausgewählte Zeile und die entsprechende `Toast` Meldung sehen nun wie folgt aus:
 
-[![Eine ausgewählte Zeile in Orange mit eingeblendeten Nachricht, die Namen der ausgewählten Zeile anzeigen](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
+[![Eine ausgewählte Zeile in Orange mit Popup Meldung mit dem Namen der ausgewählten Zeile](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 
 
-### <a name="preventing-flickering-on-custom-layouts"></a>Verhindern von Flimmern in benutzerdefinierten Layouts
+### <a name="preventing-flickering-on-custom-layouts"></a>Verhindern von Flimmern bei benutzerdefinierten Layouts
 
-Android versucht wird, zur Verbesserung der Leistung von `ListView` Durchführen eines Bildlaufs durch Zwischenspeichern der Layoutinformationen. Wenn man einen Bildlauf lange Listen mit Daten sollten Sie auch Festlegen der `android:cacheColorHint` Eigenschaft für die `ListView` Deklaration in der Aktivität AXML-Definition (auf denselben Farbwert als Ihre benutzerdefinierten Zeilenlayout Hintergrund). Dieser Hinweis enthalten kann "Flimmern" als der Benutzer einen Bildlauf durch eine Liste mit benutzerdefinierten Zeilenhintergrundfarben führen.
+Android versucht, die Leistung `ListView` beim Scrollen zu verbessern, indem Layoutinformationen zwischengespeichert werden. Wenn Sie über lange Bildläufe mit Daten verfügen, sollten Sie auch `android:cacheColorHint` die-Eigenschaft `ListView` für die-Deklaration in der axml-Definition der Aktivität (auf denselben Farbwert wie für den Hintergrund des benutzerdefinierten Zeilen Layouts) festlegen. Wenn Sie diesen Hinweis nicht einschließen, kann dies zu einem "Flimmern" führen, wenn der Benutzer durch eine Liste mit benutzerdefinierten Zeilen Hintergrundfarben Scrollen würde.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [BuiltInViews (Beispiel)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
-- [AccessoryViews (Beispiel)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
-- [CustomRowView (Beispiel)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
+- [Builtinviews (Beispiel)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
+- [Accessoryviews (Beispiel)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
+- [Customrowview (Beispiel)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)

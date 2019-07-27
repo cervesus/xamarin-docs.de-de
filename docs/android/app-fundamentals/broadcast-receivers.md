@@ -1,52 +1,52 @@
 ---
-title: Broadcast Receiver in Xamarin.Android
-description: In diesem Abschnitt wird erläutert, wie ein Broadcast Receivers verwendet wird.
+title: Broadcast Empfänger in xamarin. Android
+description: In diesem Abschnitt wird die Verwendung eines Broadcast Empfängers erläutert.
 ms.prod: xamarin
 ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: a411d4d85877c9868ec49f92b53ca8d7a81f9959
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8f7dd6f0a2e6db2580982a877cab2137cf28fab2
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018650"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508700"
 ---
-# <a name="broadcast-receivers-in-xamarinandroid"></a>Broadcast Receiver in Xamarin.Android
+# <a name="broadcast-receivers-in-xamarinandroid"></a>Broadcast Empfänger in xamarin. Android
 
-_In diesem Abschnitt wird erläutert, wie ein Broadcast Receivers verwendet wird._
+_In diesem Abschnitt wird die Verwendung eines Broadcast Empfängers erläutert._
 
-## <a name="broadcast-receiver-overview"></a>Übersicht über die Übertragungsempfänger
+## <a name="broadcast-receiver-overview"></a>Übersicht über Broadcast Empfänger
 
-Ein _übertragungsempfänger_ ist eine Android-Komponente, die eine Anwendung auf Meldungen reagieren kann (Android [ `Intent` ](https://developer.xamarin.com/api/type/Android.Content.Intent/)), die von der Android-Betriebssystem oder durch eine Anwendung übertragen werden. Broadcasts führen Sie eine _Veröffentlichen / Abonnieren-_ Modell &ndash; ein Ereignis bewirkt, dass einen Broadcast veröffentlichen und Empfangen von diesen Komponenten, die das Ereignis interessiert sind.
+Ein _Broadcast Empfänger_ ist eine Android-Komponente, die es einer Anwendung ermöglicht, auf Nachrichten [`Intent`](xref:Android.Content.Intent)(Android) zu antworten, die vom Android-Betriebssystem oder von einer Anwendung übertragen werden. Übertragungen folgen einem _Veröffentlichen-Abonnieren-_ Modell &ndash; ein Ereignis bewirkt, dass eine Übertragung von den für das Ereignis relevanten Komponenten veröffentlicht und empfangen wird.
 
-Android gibt zwei Arten von Broadcasts:
+Android identifiziert zwei Arten von Übertragungen:
 
-* **Explizite Broadcast** &ndash; diese Arten von Broadcasts als Ziel eine bestimmte Anwendung. Die häufigste Verwendung von einer expliziten Übertragung wird eine Aktivität gestartet. Ein Beispiel für eine explizite übertragen, wenn eine app benötigt, um eine Telefonnummer zu wählen; Es wird ein Intent-Objekt, dessen Ziel die Phone-app unter Android und Bahn entlang der Telefonnummer zu wählende zu senden. Android leitet dann die Absicht an der Phone-app weiter.
-* **Implizite Broadcast** &ndash; Broadcasts werden für alle apps auf dem Gerät verteilt. Ein Beispiel für eine implizite Broadcastnachricht ist die `ACTION_POWER_CONNECTED` Absicht. Diese Absicht wird jedes Mal veröffentlicht, die Android erkennt, dass der Akku auf dem Gerät geladen wird. Android leitet diese Absicht für alle apps, die für dieses Ereignis registriert haben.
+- **Expliziter Broadcast** &ndash; Diese Arten von Übertragungen Zielen auf eine bestimmte Anwendung ab. Eine explizite Übertragung wird am häufigsten verwendet, um eine Aktivität zu starten. Ein Beispiel für einen expliziten Broadcast, wenn eine APP eine Telefonnummer wählen muss. Er leitet eine Absicht weiter, die auf die Phone-app unter Android ausgerichtet ist, und übergibt die Telefonnummer, die gewählt werden soll. Android leitet dann die Absicht an die Phone-APP weiter.
+- **Impliziter Broadcast** &ndash; Diese Übertragungen werden an alle apps auf dem Gerät gesendet. Ein Beispiel für eine implizite Übertragung ist `ACTION_POWER_CONNECTED` die Absicht. Diese Absicht wird jedes Mal veröffentlicht, wenn Android erkennt, dass der Akku auf dem Gerät berechnet wird. Android leitet diese Absicht an alle apps weiter, die für dieses Ereignis registriert wurden.
 
-Übertragungsempfänger ist eine Unterklasse von der `BroadcastReceiver` Typ, und es müssen überschreiben die [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) Methode. Android führt `OnReceive` im Hauptthread, also diese Methode sollte entworfen werden schnell ausgeführt. Vorsicht geboten, wenn das Erzeugen von Threads im `OnReceive` da Android den Prozess beenden kann, wenn die Methode abgeschlossen ist. Wenn ein broadcast Receiver muss lang ausgeführte Arbeit ausführen, es wird empfohlen, Planen Sie eine _Auftrag_ mithilfe der `JobScheduler` oder _Firebase Auftrag Verteiler_. Planung von Arbeiten mit einem Auftrag wird in ein separates Handbuch besprochen.
+Der Broadcast Empfänger ist eine Unterklasse des `BroadcastReceiver` Typs und muss die [`OnReceive`](xref:Android.Content.BroadcastReceiver.OnReceive*) -Methode überschreiben. Android wird im `OnReceive` Haupt Thread ausgeführt. Daher sollte diese Methode für eine schnelle Ausführung entworfen werden. Beim Erzeugen von Threads in `OnReceive` sollten Sie sorgfältig vorgehen, da Android den Prozess beenden kann, wenn die-Methode abgeschlossen ist. Wenn ein Broadcast Empfänger eine lange laufende Arbeit ausführen muss, empfiehlt es sich, einen _Auftrag_ mithilfe `JobScheduler` von oder des _Firebase-Auftrags_Verteilers zu planen. Die Planung der Arbeit mit einem Auftrag wird in einem separaten Handbuch erläutert.
 
-Ein _Zielfilter_ wird verwendet, um ein broadcast Receiver registrieren, sodass Nachrichten von Android ordnungsgemäß weiterleiten kann. Der Zielfilter kann zur Laufzeit angegeben werden (Dies wird manchmal als bezeichnet ein _Kontext registrierten Empfänger_ oder als _dynamische Registrierung_), oder er kann statisch im Android-Manifest (eine definiertwerden_Manifest registrierten Empfänger_). Xamarin.Android bietet eine C# Attribut `IntentFilterAttribute`, registrieren, die statisch Zielfilter (Dies wird werden ausführlicher in diesem Handbuch). Ab Android 8.0, ist es nicht möglich, eine Anwendung für eine implizite Broadcastnachricht statisch zu registrieren.
+Ein beabsichtigter _Filter_ wird verwendet, um einen Broadcast Empfänger zu registrieren, sodass Android ordnungsgemäß Nachrichten weiterleiten kann. Der Intent-Filter kann zur Laufzeit festgelegt werden (Dies wird manchmal als _Kontext registrierter Empfänger_ oder als _dynamische Registrierung_bezeichnet), oder er kann statisch im Android-Manifest (ein _Manifest-registrierter Empfänger_) definiert werden. Xamarin. Android bietet ein C# -Attribut `IntentFilterAttribute`,, das den Intent-Filter statisch registriert (Dies wird später in diesem Handbuch ausführlicher erläutert). Ab Android 8,0 ist es nicht möglich, dass eine Anwendung für eine implizite Übertragung statisch registriert wird.
 
-Der Hauptunterschied zwischen der Manifest-registrierten Empfänger und der Empfänger Kontext registriert ist, dass ein Empfänger Kontext registriert nur Broadcasts reagiert, während eine Anwendung ausgeführt wird, während ein Manifest registrierten Empfänger reagieren kann, überträgt, auch wenn die app nicht ausgeführt werden kann.  
+Der Hauptunterschied zwischen dem vom Manifest registrierten Empfänger und dem Kontexts registrierten Empfänger besteht darin, dass ein Kontext registrierter Empfänger nur auf Übertragungen antwortet, während eine Anwendung ausgeführt wird, während ein Manifest-registrierter Empfänger auf überträgt, auch wenn die APP möglicherweise nicht ausgeführt wird.  
 
-Es gibt zwei Sätze an APIs zum Verwalten von ein broadcast Receiver und Senden von Broadcasts:
+Es gibt zwei Sätze von APIs zum Verwalten eines Broadcast Empfängers und Senden von Übertragungen:
 
-1. **`Context`** &ndash; Die `Android.Content.Context` Klasse kann verwendet werden, um ein broadcast Receiver zu registrieren, die auf eine systemweite Ereignisse reagiert. Die `Context` wird auch verwendet, um eine systemweite Broadcasts zu veröffentlichen.
-2. **[`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))** &ndash; Dies ist eine API, die über die [NuGet-Paket für Xamarin-Support-Bibliothek v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/). Diese Klasse wird verwendet, Übertragungen und übertragungsempfänger isoliert, die im Kontext der Anwendung, die sie verwendet wird. Diese Klasse kann nützlich für verhindert, dass andere Anwendungen reagieren auf nur-Anwendung-Übertragungen oder Senden von Nachrichten an die private Empfänger sein.
+1. **`Context`** Die-Klasse kann verwendet werden, um einen Broadcast Empfänger zu registrieren, der `Android.Content.Context` auf systemweite Ereignisse antwortet. &ndash; Der `Context` wird auch zum Veröffentlichen von systemweiten Übertragungen verwendet.
+2. **[`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))** Dies ist eine API, die über das [xamarin-Unterstützungs Bibliothek V4-nuget-Paket](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)verfügbar ist. &ndash; Diese Klasse wird verwendet, um Übertragungen und Broadcast Empfänger im Kontext der Anwendung, die Sie verwendet, isoliert zu halten. Diese Klasse kann nützlich sein, um zu verhindern, dass andere Anwendungen auf nur Anwendungen reagieren, die nur Anwendungen übertragen, oder Nachrichten an private Empfänger senden.
 
-Dialogfelder möglicherweise wird ein broadcast Receiver nicht angezeigt, und es wird dringend davon abgeraten, um eine Aktivität aus, in ein broadcast Receiver zu starten. Wenn ein übertragungsempfänger den Benutzer informieren muss, sollten sie eine Benachrichtigung veröffentlichen.
+Ein Broadcast Empfänger zeigt möglicherweise keine Dialoge an, und es wird dringend davon abgeraten, eine Aktivität innerhalb eines Broadcast Empfängers zu starten. Wenn ein Broadcast Empfänger den Benutzer benachrichtigen muss, sollte er eine Benachrichtigung veröffentlichen.
 
-Es ist nicht möglich, zum Binden an, oder starten einen Dienst in ein broadcast Receiver. 
+Es ist nicht möglich, einen Dienst innerhalb eines Broadcast Empfängers zu binden oder zu starten. 
 
-Dieses Handbuch befasst sich wie einen broadcast Receiver erstellen und registrieren, damit es Broadcasts empfangen kann.
+In diesem Leitfaden wird beschrieben, wie ein Broadcast Empfänger erstellt und registriert wird, damit er Übertragungen empfangen kann.
 
-## <a name="creating-a-broadcast-receiver"></a>Erstellen einen Broadcast Receiver
+## <a name="creating-a-broadcast-receiver"></a>Erstellen eines Broadcast Empfängers
 
-Um ein broadcast Receiver in Xamarin.Android zu erstellen, sollte eine Anwendung die Unterklasse der `BroadcastReceiver` Klasse, die mit Verzieren der `BroadcastReceiverAttribute`, und überschreiben die `OnReceive` Methode:
+Um einen Broadcast Empfänger in xamarin. Android zu erstellen, sollte eine Anwendung die `BroadcastReceiver` -Klasse Unterklassen, Sie mit dem `BroadcastReceiverAttribute`schmücken und die `OnReceive` -Methode überschreiben:
 
 ```csharp
 [BroadcastReceiver(Enabled = true, Exported = false)]
@@ -61,15 +61,15 @@ public class SampleReceiver : BroadcastReceiver
 }
 ```
 
-Wenn Xamarin.Android Klasse kompiliert wird, werden sie auch die AndroidManifest mit den erforderlichen Metadaten zum Registrieren des Empfängers aktualisiert. Für ein statisch registrierte broadcast Receiver der `Enabled` muss ordnungsgemäß festgelegt werden, um `true`, andernfalls Android wird möglicherweise nicht zum Erstellen einer Instanz des Empfängers.
+Wenn xamarin. Android die Klasse kompiliert, wird auch das androidmanifest mit den erforderlichen Metadaten aktualisiert, um den Empfänger zu registrieren. Bei einem statisch registrierten Broadcast Empfänger muss das `Enabled` ordnungsgemäß auf `true`festgelegt werden. andernfalls kann Android keine Instanz des Empfängers erstellen.
  
-Die `Exported` Eigenschaft steuert, ob der übertragungsempfänger Nachrichten von außerhalb der Anwendung empfangen kann. Wenn die Eigenschaft nicht explizit festgelegt ist, wird der Standardwert der Eigenschaft bestimmt, von Android, die basierend auf, wenn Absicht-Filter übertragungsempfänger zugeordnet. Wenn mindestens ein Intent-Filter für die übertragungsempfänger Android geht davon aus, die die `Exported` Eigenschaft `true`. Wenn keine Absicht-Filter übertragungsempfänger zugeordnet, Android geht davon aus, dass der Wert `false`. 
+Die `Exported` -Eigenschaft steuert, ob der Broadcast Empfänger Nachrichten von außerhalb der Anwendung empfangen kann. Wenn die Eigenschaft nicht explizit festgelegt wird, wird der Standardwert der Eigenschaft von Android bestimmt, basierend auf, wenn dem Broadcast Empfänger beabsichtigte Filter zugeordnet sind. Wenn mindestens ein Intent-Filter für den Broadcast Empfänger vorhanden ist, geht `Exported` `true`Android davon aus, dass die-Eigenschaft den Wert hat. Wenn dem Broadcast Empfänger keine Intent-Filter zugeordnet sind, wird von Android angenommen, dass der Wert ist `false`. 
 
-Die `OnReceive` -Methode empfängt einen Verweis auf die `Intent` , die an übertragungsempfänger gesendet wurde. Dies ermöglicht ist möglich, dass der Absender der Absicht, die Werte an die übertragungsempfänger übergeben.
+Die `OnReceive` -Methode empfängt einen Verweis auf `Intent` den, der an den Broadcast Empfänger gesendet wurde. Dies ermöglicht es dem Absender der Absicht, Werte an den Broadcast Empfänger zu übergeben.
 
-### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>Registrieren einen Broadcast Receivers statisch mit einem Filter für beabsichtigte Lesevorgänge
+### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>Statischer Registrierung eines Broadcast Empfängers mit einem Intent-Filter
 
-Wenn eine `BroadcastReceiver` ergänzt wird, mit der [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/), Xamarin.Android fügen die erforderlichen `<intent-filter>` Element für die Android manifest zum Zeitpunkt der Kompilierung. Der folgende Ausschnitt ist ein Beispiel für ein broadcast Receiver, der ausgeführt werden, wenn ein Gerät abgeschlossen ist, starten (wenn der Benutzer die erforderlichen Android-Berechtigungen erteilt wurden):
+Wenn ein `BroadcastReceiver` mit dem [`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)versehen wird, fügt xamarin. Android dem Android- `<intent-filter>` Manifest zum Zeitpunkt der Kompilierung das erforderliche-Element hinzu. Der folgende Code Ausschnitt ist ein Beispiel für einen Broadcast Empfänger, der ausgeführt wird, wenn das Starten eines Geräts abgeschlossen ist (sofern die entsprechenden Android-Berechtigungen vom Benutzer erteilt wurden):
 
 ```csharp
 [BroadcastReceiver(Enabled = true)]
@@ -83,7 +83,7 @@ public class MyBootReceiver : BroadcastReceiver
 }
 ```
 
-Es ist auch möglich, einen intent Filter zu erstellen, der auf benutzerdefinierten Intents reagieren. Betrachten Sie das folgende Beispiel: 
+Es ist auch möglich, einen beabsichtigten Filter zu erstellen, der auf benutzerdefinierte Intents antwortet. Betrachten Sie das folgende Beispiel: 
 
 ```csharp
 [BroadcastReceiver(Enabled = true)]
@@ -97,11 +97,11 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Apps für Android 8.0 (API-Ebene 26) oder höher kann nicht statisch registrieren für eine implizite Übertragung. Apps können für eine explizite Broadcastnachricht weiter statisch registrieren. Es gibt eine kleine Liste implizite Broadcasts, die von dieser Einschränkung ausgenommen sind. Diese Ausnahmen werden weiter in die [implizite Broadcast Ausnahmen](https://developer.android.com/guide/components/broadcast-exceptions.html) Leitfaden in der Android-Dokumentation. Apps, die implizite Broadcasts interessieren müssen dynamisch mithilfe der `RegisterReceiver` Methode. Dies wird nachfolgend beschrieben.
+Apps, die auf Android 8,0 (API-Ebene 26) oder höher ausgerichtet sind, können für eine implizite Übertragung nicht statisch registriert werden. Apps können sich für einen expliziten Broadcast weiterhin statisch registrieren. Es gibt eine kleine Liste impliziter Übertragungen, die von dieser Einschränkung ausgenommen sind. Diese Ausnahmen werden im Leitfaden für [implizite Broadcast Ausnahmen](https://developer.android.com/guide/components/broadcast-exceptions.html) in der Android-Dokumentation beschrieben. Apps, die an impliziten Übertragungen interessiert sind, müssen dies dynamisch `RegisterReceiver` mithilfe der-Methode durchführen. Dies wird im nächsten Schritt beschrieben.
 
-### <a name="context-registering-a-broadcast-receiver"></a>Kontext Registrierung-einen Broadcast Receiver
+### <a name="context-registering-a-broadcast-receiver"></a>Kontext-Registrieren eines Broadcast Empfängers
 
-Kontext-Registrierung (auch bezeichnet als dynamische Registrierung) von einem Empfänger erfolgt durch Aufruf der `RegisterReceiver` -Methode, und der broadcast Receiver muss aufgehoben werden, durch einen Aufruf der `UnregisterReceiver` Methode. Zum Verlust von Ressourcen verhindert, ist es wichtig, den Empfänger aufgehoben werden, wenn es nicht mehr für den Kontext (der Aktivität oder Dienst) relevant sind. Beispielsweise kann ein Dienst zu senden Zweck, eine Aktivität zu informieren, die Updates, die dem Benutzer anzuzeigende verfügbar sind. Wenn die Aktivität gestartet wird, würde es für die Intents registrieren. Wenn die Aktivität wird in den Hintergrund verschoben und für den Benutzer nicht mehr sichtbar, es sollte Aufheben der Registrierung des Empfängers, da die Benutzeroberfläche zum Anzeigen von Updates nicht mehr sichtbar ist. Der folgende Codeausschnitt ist ein Beispiel für das Registrieren und Aufheben der Registrierung eines broadcast Receivers im Kontext einer Aktivität:
+Die Kontext Registrierung (auch als dynamische Registrierung bezeichnet) eines Empfängers wird durch Aufrufen der `RegisterReceiver` -Methode durchgeführt, und der Broadcast Empfänger muss bei einem Aufruf der `UnregisterReceiver` -Methode die Registrierung aufheben. Um das Verlust von Ressourcen zu verhindern, ist es wichtig, die Registrierung des Empfängers aufzuheben, wenn er für den Kontext (die Aktivität oder den Dienst) nicht mehr relevant ist. Ein Dienst kann z. b. eine Absicht übermitteln, eine Aktivität zu informieren, dass Updates für den Benutzer verfügbar sind. Wenn die Aktivität gestartet wird, würde Sie für diese Intents registriert werden. Wenn die Aktivität in den Hintergrund verschoben und für den Benutzer nicht mehr sichtbar ist, sollte die Registrierung des Empfängers aufgehoben werden, da die Benutzeroberfläche zum Anzeigen der Updates nicht mehr sichtbar ist. Der folgende Code Ausschnitt ist ein Beispiel für die Registrierung und Aufhebung der Registrierung eines Broadcast Empfängers im Kontext einer Aktivität:
 
 ```csharp
 [Activity(Label = "MainActivity", MainLauncher = true, Icon = "@mipmap/icon")]
@@ -133,14 +133,14 @@ public class MainActivity: Activity
 }
 ```
 
-Im vorherigen Beispiel, wenn die Aktivität in den Vordergrund geholt geht wird registriert einen broadcast Receiver, die eine benutzerdefinierte Absicht mit überwacht die `OnResume` Lebenszyklus-Methode. Wie die Aktivität in den Hintergrund, verschiebt der `OnPause()` Methode wird den Empfänger nicht aufheben.
+Wenn im vorherigen Beispiel die Aktivität in den Vordergrund rückt, registriert Sie einen Broadcast Empfänger, der mithilfe der `OnResume` Lifecycle-Methode auf eine benutzerdefinierte Absicht lauscht. Wenn die Aktivität in den Hintergrund wechselt, wird `OnPause()` die Registrierung des Empfängers von der Methode aufgehoben.
 
-## <a name="publishing-a-broadcast"></a>Veröffentlichen Sie eine Übertragung
+## <a name="publishing-a-broadcast"></a>Veröffentlichen einer Übertragung
 
-Eine Übertragung aller auf dem Gerät ein Intent-Objekt erstellen und verteilen es mit installierten apps veröffentlicht werden die `SendBroadcast` oder `SendOrderedBroadcast` Methode.  
+Eine Übertragung kann für alle auf dem Gerät installierten apps veröffentlicht werden, wodurch ein Intent-Objekt erstellt und mit `SendBroadcast` der- `SendOrderedBroadcast` Methode oder der-Methode versendet wird.  
 
-1. **Context.SendBroadcast Methoden** &ndash; es gibt mehrere Implementierungen dieser Methode.
-   Diese Methoden, die das Ziel für das gesamte System übertragen werden. Die übertragungsempfänger, die das Ziel in einer unbestimmten Reihenfolge empfängt. Dies bietet ein hohes Maß an Flexibilität, aber bedeutet, dass es möglich, dass andere Anwendungen registrieren und die Absicht zu erhalten. Dies kann ein potenzielles Sicherheitsrisiko darstellen. Anwendungen müssen möglicherweise so implementieren Sie Sicherheit hinzufügen, um nicht autorisierte Zugriffe zu verhindern. Eine mögliche Lösung ist die Verwendung der `LocalBroadcastManager` die werden nur Nachrichten innerhalb des privaten Adressraums der app zu senden. Dieser Codeausschnitt ist ein Beispiel dafür, wie ein Intent-Objekt mit einer der verteilt die `SendBroadcast` Methoden:
+1. **Context. sendbroadcast-Methoden** &ndash; Es gibt mehrere Implementierungen dieser Methode.
+   Diese Methoden übertragen die Absicht an das gesamte System. Broadcast Empfänger, die die Absicht in einer unbestimmten Reihenfolge empfangen. Dies bietet ein hohes Maß an Flexibilität, bedeutet aber, dass es möglich ist, dass andere Anwendungen die Absicht registrieren und erhalten. Dies kann ein potenzielles Sicherheitsrisiko darstellen. Anwendungen müssen möglicherweise zusätzliche Sicherheit implementieren, um nicht autorisierten Zugriff zu verhindern. Eine mögliche Lösung besteht darin, die `LocalBroadcastManager` zu verwenden, die nur Nachrichten innerhalb des privaten Raums der APP verteilt. Dieser Code Ausschnitt ist ein Beispiel dafür, wie Sie eine Absicht mithilfe einer der `SendBroadcast` -Methoden verteilen:
 
    ```csharp
    Intent message = new Intent("com.xamarin.example.TEST");
@@ -149,7 +149,7 @@ Eine Übertragung aller auf dem Gerät ein Intent-Objekt erstellen und verteilen
    SendBroadcast(message);
    ```
 
-    Dieser Codeausschnitt ist ein weiteres Beispiel für ein Broadcast gesendet, mit der `Intent.SetAction` Methode, um die Aktion zu ermitteln:
+    Dieser Code Ausschnitt ist ein weiteres Beispiel für das Senden einer Broadcast- `Intent.SetAction` Methode mithilfe der-Methode, um die Aktion zu identifizieren:
 
     ```csharp
     Intent intent = new Intent();
@@ -158,17 +158,17 @@ Eine Übertragung aller auf dem Gerät ein Intent-Objekt erstellen und verteilen
     SendBroadcast(intent);
     ```
 
-2. **Context.SendOrderedBroadcast** &ndash; Dies ist die Methode ist sehr ähnlich `Context.SendBroadcast`, mit dem Unterschied, dass die Absicht veröffentlichten zum Zeitpunkt, an die Empfänger, in der Reihenfolge werden, dass die Empfänger registriert wurden.
+2. **Context. sendorderedbroadcast** &ndash; diese Methode `Context.SendBroadcast`ist sehr ähnlich, wobei der Unterschied darin besteht, dass die Absicht bei Empfängern nacheinander in der Reihenfolge veröffentlicht wird, in der die Empfänger registriert wurden.
 
 ### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-Die [Xamarin-Support-Bibliothek v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) stellt eine Hilfsklasse namens [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). Die `LocalBroadcastManager` richtet sich an für apps, die nicht zum Senden oder Übertragungen von anderen apps auf dem Gerät empfangen soll. Die `LocalBroadcastManager` veröffentlichen Nachrichten innerhalb des Kontexts der Anwendung und gilt nur für diese übertragungsempfänger, die bei registriert werden nur die `LocalBroadcastManager`. Dieser Codeausschnitt ist ein Beispiel für ein broadcast Receiver mit Registrierung `LocalBroadcastManager`:
+Die [xamarin-Unterstützungs Bibliothek V4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) bietet eine Hilfsprogrammklasse mit dem Namen [`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). Der `LocalBroadcastManager` ist für apps bestimmt, die keine Übertragungen von anderen apps auf dem Gerät senden oder empfangen möchten. Der `LocalBroadcastManager` veröffentlicht nur Meldungen im Kontext der Anwendung und nur für die Broadcast Empfänger, die `LocalBroadcastManager`beim registriert sind. Dieser Code Ausschnitt ist ein Beispiel für die Registrierung eines Broadcast Empfängers bei `LocalBroadcastManager`:
 
 ```csharp
 Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this). RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
 ```
 
-Andere apps auf dem Gerät keine der Nachrichten, die mit veröffentlicht werden empfangen die `LocalBroadcastManager`. Mit diesem Codeausschnitt wird gezeigt, wie eine beabsichtigte mit verteilt die `LocalBroadcastManager`:
+Andere apps auf dem Gerät können keine Nachrichten empfangen, die mit `LocalBroadcastManager`veröffentlicht werden. In diesem Code Ausschnitt wird gezeigt, wie eine Absicht mithilfe `LocalBroadcastManager`von versendet wird:
 
 ```csharp
 Intent message = new Intent("com.xamarin.example.TEST");
@@ -179,12 +179,12 @@ Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Broadcastreceivers API](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiver/)
-- [Context.RegisterReceiver API](https://developer.xamarin.com/api/member/Android.Content.Context.RegisterReceiver/p/Android.Content.BroadcastReceiver/Android.Content.IntentFilter/System.String/Android.OS.Handler/)
-- [Context.SendBroadcast API](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/)
-- [Context.UnregisterReceiver API](https://developer.xamarin.com/api/member/Android.Content.Context.UnregisterReceiver/p/Android.Content.BroadcastReceiver/)
-- [Intent-API](https://developer.xamarin.com/api/type/Android.Content.Intent/)
-- [IntentFilter API](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
-- [LocalBroadcastManager (Android-Dokumentation)](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
-- [Lokale Benachrichtigungen unter Android](~/android/app-fundamentals/notifications/local-notifications.md) Handbuch
-- [Android-Unterstützung Bibliothek v4 (NuGet)](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
+- [Broadcastreceiver-API](xref:Android.Content.BroadcastReceiver)
+- [Context. registerreceiver-API](xref:Android.Content.Context.RegisterReceiver*)
+- [Context. sendbroadcast-API](xref:Android.Content.Context.SendBroadcast*)
+- [Context. unregisterreceiver-API](xref:Android.Content.Context.UnregisterReceiver*)
+- [Intent-API](xref:Android.Content.Intent)
+- [Intentfilter-API](xref:Android.App.IntentFilterAttribute)
+- [Localbroadcastmanager (Android-Dokumentation)](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
+- [Lokale Benachrichtigungen in der Android](~/android/app-fundamentals/notifications/local-notifications.md) -Anleitung
+- [Android-Unterstützungs Bibliothek V4 (nuget)](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)

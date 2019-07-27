@@ -1,63 +1,63 @@
 ---
 title: Xamarin Profiler
-description: Dieses Handbuch beschreibt die wichtigsten Features von der Xamarin Profiler. Sie sehen an Profiler, profilerstellung und wann sie verwendet werden sollen und an einen Standardworkflow, für die profilerstellung von Xamarin-Anwendungen.
+description: In diesem Leitfaden werden die wichtigsten Features der Xamarin Profiler erläutert. Dabei werden Profiler, Profilerstellung und Zeitpunkt der Verwendung sowie ein Standard Workflow für die Profilerstellung von xamarin-Anwendungen untersucht.
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: d80363cd339d5d3177ae063df2a20d7938f59169
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 2efc782386b8ec39ecca21aaf88738c813c260f0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832401"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511659"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
-_Dieses Handbuch beschreibt die wichtigsten Features von der Xamarin Profiler. Sie sehen an Profiler, profilerstellung und wann sie verwendet werden sollen und an einen Standardworkflow, für die profilerstellung von Xamarin-Anwendungen._
+_In diesem Leitfaden werden die wichtigsten Features der Xamarin Profiler erläutert. Dabei werden Profiler, Profilerstellung und Zeitpunkt der Verwendung sowie ein Standard Workflow für die Profilerstellung von xamarin-Anwendungen untersucht._
 
-Eine Anwendung Erfolg hängt von der Benutzeroberfläche ab. Als Entwickler möglicherweise implementierten einige wirklich überzeugende Features in Ihrer app, aber wenn die app langsam oder Abstürze vollständig ist, der Benutzer wird wahrscheinlich es deshalb entsorgen.
+Der Erfolg einer Anwendung hängt von der Benutzer Leistung ab. Als Entwickler haben Sie möglicherweise einige wirklich tolle Features in Ihrer APP implementiert, aber wenn die APP träge oder vollständig ausfällt, wird der Benutzer Sie wahrscheinlich entfernen.
 
-In der Vergangenheit hat Mono einen leistungsfähigen Befehlszeilen Profiler vorgestellt, für das Erfassen von Informationen über Programme, die in die Mono-Laufzeit ausgeführt wird aufgerufen, die [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/). Der Xamarin Profiler eine grafische Benutzeroberfläche für die Mono-Log-Profiler, und unterstützt Android, iOS, TvOS und Macintosh-Anwendungen unter Mac und Android, iOS und TvOS-Anwendungen auf Windows-profilerstellung.
+In der Vergangenheit hat Mono einen leistungsfähigen befehlszeilenprofiler zum Sammeln von Informationen zu Programmen, die in der Mono-Laufzeit ausgeführt werden, als [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)vorgestellt. Der Xamarin Profiler eine grafische Schnittstelle für den Mono Log Profiler und unterstützt die Profilerstellung für Android-, Ios-, tvos-und Mac-Anwendungen auf Mac-und Android-, IOS-und tvos-Anwendungen unter Windows.
 
-Der Xamarin Profiler verfügt über eine Reihe Instrumente zur profilerstellung, Zuordnungen, Zyklen und Zeit Profiler. Dieser Leitfaden wird beschrieben, was diese Instrumente messen und wie sie Ihre Anwendung analysieren und verdeutlicht die Bedeutung der Daten auf jedem Bildschirm dargestellt.
+Der Xamarin Profiler verfügt über eine Reihe von Tools für die Profilerstellung – Zuordnungen, Zyklen und Zeit Profiler. In dieser Anleitung wird erläutert, was diese Instrumente messen und wie Sie Ihre Anwendung analysieren. Außerdem wird erläutert, wie die Daten auf den einzelnen Bildschirmen dargestellt werden.
 
-Dieses Handbuch allgemeine Profilerstellungsszenarios untersucht und führt die den Profiler als ein Tool zum Analysieren und Optimieren von IOS- und Android-Anwendungen.
+In diesem Handbuch werden gängige Profil Erstellungs Szenarien behandelt und der Profiler als Tool für die Analyse und Optimierung von IOS-und Android-Anwendungen vorgestellt.
 
 ## <a name="download-and-install"></a>Herunterladen und installieren
 
 > [!NOTE]
-> Sie müssen werden eine [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) Abonnenten zum Entsperren dieses Feature in entweder Visual Studio Enterprise auf Windows oder Visual Studio für Mac auf einem Mac.
+> Sie müssen ein [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) Abonnent sein, um dieses Feature entweder in Visual Studio Enterprise unter Windows oder Visual Studio für Mac auf einem Mac entsperren zu können.
 
-Der Xamarin Profiler ist eine eigenständige Anwendung, und ist in Visual Studio für Mac und Visual Studio zum Aktivieren der profilerstellung aus, in der IDE integriert.
+Bei der Xamarin Profiler handelt es sich um eine eigenständige Anwendung, die in Visual Studio für Mac und Visual Studio integriert ist, um die Profilerstellung innerhalb der IDE zu ermöglichen.
 
 Laden Sie das Installationspaket für Ihre Plattform herunter:
 
 - [**macOS**](https://dl.xamarin.com/profiler/profiler-mac.pkg)
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
-Nach dem Herunterladen, starten Sie den Installer, um den Xamarin Profiler dem System hinzufügen.
+Starten Sie nach dem herunterladen das Installationsprogramm, um dem System die Xamarin Profiler hinzuzufügen.
 
 ## <a name="profilers-and-profiling"></a>Profiler und Profilerstellung
 
-Die profilerstellung ist ein wichtiger und häufig übersehene Schritt bei der Anwendungsentwicklung. Die profilerstellung ist eine Form der **dynamische Programmanalyse** -analysiert das Programm, während es ausgeführt werden und verwendet wird. Ein Profiler ist ein Datamining-Tool, das Informationen zu der Zeit, die Verwendung von bestimmten Methoden und die Speichermenge gesammelt. Ein Profiler können Sie einen tiefen Drilldown und analysieren Sie diese Metriken, um die Problembereiche im Code zu ermitteln.
+Die Profilerstellung ist ein wichtiger und oft übersehener Schritt bei der Anwendungsentwicklung. Die Profilerstellung ist eine Form der **dynamischen Programmanalyse** . Sie analysiert das Programm, während es ausgeführt wird und verwendet wird. Ein Profiler ist ein Data Mining Tool, das Informationen über die Zeit Komplexität, die Verwendung bestimmter Methoden und den zugeordneten Arbeitsspeicher sammelt. Mit einem Profiler können Sie einen Drilldown durchführen und diese Metriken analysieren, um Problembereiche im Code zu ermitteln.
 
-Beim Entwerfen und Entwickeln einer Anwendung, ist es wichtig, die keine vorzeitige Optimierung; d. h. verbringt Zeit mit der Entwicklung von Code in Bereichen, die selten zugegriffen wird. Dies ist die Leistung der profilerstellung. Ein Profiler bietet einen Einblick in die am häufigsten verwendeten Teile Ihrer Codebasis und hilft suchen, Bereiche, in dem Sie alle uhrzeitverbesserungen verbringen sollten. Entwickler sollten darauf achten, um zu verstehen, wo in Ihrer Anwendung die meiste Zeit verbracht wird, und wie der Arbeitsspeicher von der Anwendung verwendet wird.
+Beim Entwerfen und entwickeln einer Anwendung ist es wichtig, nicht vorzeitig zu optimieren. Das heißt, Sie müssen den Code in Bereichen entwickeln, auf die nur selten zugegriffen wird. Dies ist die Leistungsfähigkeit der Profilerstellung. Ein Profiler bietet Einblicke in die am häufigsten verwendeten Teile Ihrer Codebasis und hilft dabei, Bereiche zu finden, in denen Sie Zeit für Verbesserungen aufwenden sollten. Entwickler sollten darauf achten, dass Sie wissen, wo die meiste Zeit in Ihrer Anwendung aufgewendet wird und wie der Arbeitsspeicher von Ihrer Anwendung verwendet wird.
 
-Profilerstellung bei der alle Arten der Entwicklung hilfreich ist, aber es ist besonders wichtig, in der mobilen Entwicklung. Nicht optimierter Code ist viel deutlicher auf mobilen Plattformen als auf Desktopcomputern und der Erfolg Ihrer App hängt von ansprechenden und optimierten Code, der effizient ausgeführt wird.
+Die Profilerstellung ist für alle Arten der Entwicklung hilfreich, aber Sie ist für die Entwicklung mobiler Anwendungen besonders wichtig. Nicht optimierter Code ist auf mobilen Plattformen viel deutlicher als auf Desktop Computern, und der Erfolg Ihrer APP hängt von einem schönen und optimierten Code ab, der effizient ausgeführt wird.
 
 ## <a name="xamarin-profiler"></a>Xamarin Profiler
 
-Der Xamarin Profiler bietet Entwicklern eine Möglichkeit zur profilieren von Anwendungen aus Visual Studio für Mac oder Visual Studio. Der Profiler sammelt und zeigt Informationen über die app, die dann vom Entwickler verwendet werden kann, um das Verhalten der Anwendung zu analysieren. Es gibt zahlreiche Möglichkeiten, die eine profilerstellung einer Anwendung mit der Xamarin Profiler, nämlich speicherprofilierung und statistisches Sampling. Diese durchgeführt werden, über die Zuordnungen und die Uhrzeit Profiler bzw. instrumentiert.
+Der Xamarin Profiler stellt Entwicklern eine Möglichkeit zum Erstellen von Profilen für Anwendungen in Visual Studio für Mac oder Visual Studio zur Verfügung. Der Profiler sammelt und zeigt Informationen über die APP an, die dann vom Entwickler verwendet werden können, um das Verhalten der Anwendung zu analysieren. Es gibt verschiedene Möglichkeiten zum Erstellen eines Profils für eine Anwendung mit dem Xamarin Profiler, nämlich Speicher Profilerstellung und statistische Stichprobe. Diese werden über die Zuordnungen und Zeit Profil Erstellungs Instrumente durchgeführt.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Derzeit kann der Xamarin Profiler verwendet werden, zum Testen von Xamarin.iOS, Xamarin.Android und Xamarin.Mac-Anwendungen unter Mac (über Visual Studio für Mac). Der Profiler ist ein separater Prozess aus der IDE, und daher, zusätzlich zum Starten von Visual Studio für Mac, er kann verwendet werden als eigenständige Anwendung .exe untersuchen und `.mlpd` Dateien, die von erzeugt wurden die [mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
+Derzeit können die Xamarin Profiler verwendet werden, um xamarin. IOS-, xamarin. Android-und xamarin. Mac-Anwendungen auf dem Mac (über Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE und kann daher nicht nur über Visual Studio für Mac gestartet werden, sondern kann als eigenständige Anwendung verwendet werden, um exe-Dateien und `.mlpd` Dateien zu überprüfen, die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Derzeit kann der Xamarin Profiler verwendet werden, zum Testen der Xamarin.Android-apps für Windows (über Visual Studio und Visual Studio für Mac). Der Profiler ist ein separater Prozess aus der IDE, und daher, zusätzlich zum Starten von Visual Studio, er kann verwendet werden als eigenständige Anwendung .exe untersuchen und `.mlpd` Dateien, die von erzeugt wurden die [mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/) .
+Derzeit kann der Xamarin Profiler verwendet werden, um xamarin. Android-Apps unter Windows (über Visual Studio und Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE. Daher kann er zusätzlich zum Starten von Visual Studio als eigenständige Anwendung verwendet werden, um exe-Dateien und `.mlpd` Dateien zu überprüfen, die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
 
 -----
 
@@ -65,48 +65,48 @@ Derzeit kann der Xamarin Profiler verwendet werden, zum Testen der Xamarin.Andro
 
 ## <a name="profiler-support"></a>Profiler-Unterstützung
 
-Unterstützung für die Xamarin Profiler ist auf den folgenden Plattformen verfügbar:
+Die Unterstützung für die Xamarin Profiler ist auf den folgenden Plattformen verfügbar:
 
-- Visual Studio für Mac (Mac OS, mit dem Enterprise-Lizenz)
+- Visual Studio für Mac (macOS, mit Enterprise-Lizenz)
     - Android
-        - Geräte und -Emulator
+        - Gerät und Emulator
     - iOS
-        - Geräte- und
-    - TvOS (Zeit Instrumentieren wird nicht unterstützt)
-        - Geräte- und
+        - Gerät und Simulator
+    - tvos (Zeit Instrument wird nicht unterstützt)
+        - Gerät und Simulator
     - Mac
 
-- Visual Studio (nur **Enterprise** Version)
+- Visual Studio (nur **Enterprise** -Version)
     - Android
-        - Geräte und -Emulator
-    - iOS [experimentell]
-        - Geräte- und
+        - Gerät und Emulator
+    - IOS [experimentell]
+        - Gerät und Simulator
     - tvOS
-        - Geräte- und
+        - Gerät und Simulator
 
-Beachten Sie, die Sie **nur** Profil **Debuggen** Konfigurationen.
+Beachten Sie, dass Sie **nur** Profile für **Debugkonfigurationen** erstellen können.
 
-## <a name="profiler-basics"></a>Profiler-Grundlagen
+## <a name="profiler-basics"></a>Grundlagen zu Profiler
 
-Dieser Abschnitt führt die Teile der Xamarin Profiler und tours seiner Features.
+In diesem Abschnitt werden die Teile des Xamarin Profiler vorgestellt und die zugehörigen Features erläutert.
 
-### <a name="allow-profiling-in-your-app"></a>Ermöglichen Sie die Profilerstellung in Ihrer App
+### <a name="allow-profiling-in-your-app"></a>Profilerstellung in ihrer App zulassen
 
-Bevor Sie Ihre app erfolgreich das Profil können, müssen Sie die Profilerstellung in den Projektoptionen der app zu ermöglichen.
+Bevor Sie ein Profil für Ihre APP erstellen können, müssen Sie die Profilerstellung in den Projektoptionen der App zulassen.
 
 - iOS:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  **Erstellen > iOS-Debugging > Profilerstellung aktivieren**
+  **Erstellen > IOS-debug> Aktivieren der Profilerstellung**
 
-  ![](images/ios-options-mac.png "iOS-Dialogfeld \"Optionen\" in Visual Studio für Mac")
+  ![](images/ios-options-mac.png "Dialog Feld für IOS-Optionen in Visual Studio für Mac")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  **Eigenschaften > iOS-Build > Profilerstellung aktivieren**
+  **Eigenschaften > IOS-Build > Profilerstellung aktivieren**
 
-  ![](images/ios-project-options-vs.png "iOS-Dialogfeld \"Optionen\" in Visual Studio")
+  ![](images/ios-project-options-vs.png "Dialog Feld \"IOS-Optionen\" in Visual Studio")
 
 -----
 
@@ -114,73 +114,73 @@ Bevor Sie Ihre app erfolgreich das Profil können, müssen Sie die Profilerstell
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  **Erstellen > Android-Debugprotokoll > Entwicklerinstrumentierung aktivieren**
+  **Erstellen > Android debug-> Entwickler Instrumentation aktivieren**
 
-  ![Android Dialogfeld "Optionen" in Visual Studio für Mac](images/android-project-options.png)
+  ![Dialog Feld für Android-Optionen in Visual Studio für Mac](images/android-project-options.png)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  **Erstellen > Android-Debugprotokoll > Entwicklerinstrumentierung aktivieren**
+  **Erstellen > Android debug-> Entwickler Instrumentation aktivieren**
 
-  ![Android Dialogfeld "Optionen" in Visual Studio für Mac](images/android-project-options-vs-sml.png)
+  ![Dialog Feld für Android-Optionen in Visual Studio für Mac](images/android-project-options-vs-sml.png)
 
 -----
 
-### <a name="launching-the-profiler"></a>Starten den Profiler
+### <a name="launching-the-profiler"></a>Starten des Profilers
 
-Der Xamarin Profiler kann gestartet werden, über die IDE, wenn Sie Ihre IOS- oder Android-Anwendung ein Profil oder als eigenständige Anwendung.
+Der Xamarin Profiler kann von Ihrer IDE aus gestartet werden, wenn Sie die Profilerstellung für Ihre IOS-oder Android-Anwendung oder als eigenständige Anwendung durchlaufen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 #### <a name="launching-from-visual-studio-for-mac"></a>Starten von Visual Studio für Mac
 
-1. Zuerst stellen Sie sicher, dass die Anwendung in Visual Studio für Mac geladen, und wählen Sie die Debugkonfiguration (Standard).
-2. Navigieren Sie zu **ausführen > Profilerstellung starten**in Visual Studio für Mac oder **analysieren > Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie im folgenden Diagramm veranschaulicht:
+1. Stellen Sie zunächst sicher, dass die Anwendung in Visual Studio für Mac geladen ist, und wählen Sie die (standardmäßige) Debugkonfiguration aus.
+2. Navigieren Sie zu **ausführen, > starten Sie die Profilerstellung**in Visual Studio für Mac, oder analysieren Sie **> Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie in der folgenden Abbildung gezeigt:
 
-  ![](images/start-profiling-xs.png "Starten den Profiler in Visual Studio für Mac")
+  ![](images/start-profiling-xs.png "Der Profiler wird von Visual Studio für Mac gestartet.")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-#### <a name="launching-from-visual-studio"></a>Starten von Visual Studio
+#### <a name="launching-from-visual-studio"></a>Starten von Visual Studio aus
 
-1.  Zuerst stellen Sie sicher, dass Ihre Anwendung in Visual Studio geladen haben, und wählen Sie die Debugkonfiguration (Standard), wie oben angegeben.
-2.  Navigieren Sie zu **analysieren > Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie im folgenden Diagramm veranschaulicht:
+1.  Stellen Sie zunächst sicher, dass die Anwendung in Visual Studio geladen ist, und wählen Sie die (standardmäßige) Debugkonfiguration aus, wie oben angegeben.
+2.  Navigieren Sie zum **analysieren > Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie in der folgenden Abbildung veranschaulicht:
 
-![Starten den Profiler in Visual Studio](images/start-profiling-vs.png)
+![Starten des Profilers aus Visual Studio](images/start-profiling-vs.png)
 
 -----
 
-Wenn die Menüelemente im nicht angezeigt werden, finden Sie in der [Handbuch zur Problembehandlung](~/tools/profiler/troubleshooting.md).
+Wenn die Menü Elemente nicht angezeigt werden, lesen Sie den [Leitfaden zur Problem](~/tools/profiler/troubleshooting.md)Behandlung.
 
-Dies startet den Profiler und startet automatisch die profilerstellung der Anwendung.
+Dadurch wird der Profiler gestartet, und die Profilerstellung für die Anwendung wird automatisch gestartet.
 
-Der Profiler kann verwendet werden, um Arbeitsspeicher und Leistung zu messen. Er erreicht dies durch die Zuordnungen und die Uhrzeit Profiler Instrumente, die wir im nächsten Abschnitt detailliert vorgestellt wird.
+Der Profiler kann verwendet werden, um den Arbeitsspeicher und die Leistung zu messen. Dies erfolgt über die Instrumente für Zuordnungen und Zeitprofile, die im nächsten Abschnitt ausführlich erläutert werden.
 
 #### <a name="saving-and-loading-profiler-sessions"></a>Speichern und Laden von Profiler-Sitzungen
 
-Um eine Profilerstellungssitzung zu einem beliebigen Zeitpunkt zu speichern, wählen **Datei > Speichern unter...**  über die Profiler-Menüleiste. Dies speichert die Datei im _Mlpd_ Format, ein spezielles, stark komprimierten Format für Profilerstellungsdaten.
+Um eine Profil Erstellungs Sitzung zu einem beliebigen Zeitpunkt zu speichern, wählen Sie in der Profiler-Menüleiste **Datei > Speichern unter...** aus. Dadurch wird die Datei im _MLPD_ -Format gespeichert, ein spezielles, stark komprimiertes Format für die Profilerstellung von Daten.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Nach der Installation von wurde der Xamarin Profiler in Ihrem Ordner "Programme" finden Sie wie im folgenden Screenshot dargestellt:
+Nachdem es installiert wurde, finden Sie die Xamarin Profiler wie im folgenden Screenshot gezeigt im Ordner "Anwendungen":
 
-![](images/applications.png "Öffnen Sie Mac eigenständiger Profiler")
+![](images/applications.png "Eigenständigen Profiler über Mac öffnen")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Nach der Installation wurden die Xamarin Profiler-Anwendung in Ihrem Anwendungsverzeichnis finden:
+Nachdem die Anwendung installiert wurde, befindet sich die Xamarin Profiler Anwendung im Anwendungsverzeichnis:
 
-![](images/applications-vs.png "Öffnen Sie Windows eigenständiger Profiler ")
+![](images/applications-vs.png "Öffnen Sie den eigenständigen Profiler unter Windows.")
 
 -----
 
-Sie können laden *.mlpd* -Dateien in der Profiler durch Öffnen der eigenständigen Anwendung, auswählen **Ziel auswählen** und laden die Datei.
+Sie können *. MLPD* -Dateien in den Profiler Laden, indem Sie die eigenständige Anwendung öffnen, **Wählen Sie Ziel auswählen** und die Datei laden.
 
-Weitere Informationen finden Sie unter [Generieren von Dateien von .mlpd](~/tools/profiler/troubleshooting.md#gen_mlpd).
+Weitere Informationen finden Sie unter " [Erstellen von MLPD-Dateien](~/tools/profiler/troubleshooting.md#gen_mlpd)".
 
-## <a name="profiler-features"></a>Profiler-Funktionen
+## <a name="profiler-features"></a>Profiler-Features
 
-Der Xamarin Profiler besteht aus fünf Abschnitten, wie unten gezeigt:
+Der Xamarin Profiler besteht aus fünf Abschnitten, wie unten dargestellt:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -192,152 +192,152 @@ Der Xamarin Profiler besteht aus fünf Abschnitten, wie unten gezeigt:
 
 -----
 
-- **Symbolleiste** – befindet sich am Anfang des Profilers, dies bietet Optionen zum Starten/Beenden der profilerstellung, die einen Zielprozess auswählen, das die Ausführungszeit der app anzuzeigen, und wählen die geteilten Ansichten, aus denen die Profiler-Anwendung zusammensetzt.
-- **Instrumentieren Sie die Liste** – Listet alle Instrumente, die für die Profilerstellungssitzung geladen.
-- **Diagramm zeichnen** – in diesen Diagrammen beziehen sich auf die die relevanten Instrumente in der Liste Instrumentieren horizontal. Ein Schieberegler (siehe unter Zeit Profiler) kann verwendet werden, um die Skalierung zu ändern.
-- **Instrumentieren Sie Detailbereich** -enthält Daten, die von der ausgewählten Ansicht des aktuellen Instruments angezeigt wird. Wir betrachten diese Sichten noch ausführlicher im Abschnitt unten.
-- **Prüfungsansicht** – enthält Abschnitte, die von dem segmentierten Steuerelement ausgewählt werden können. Die Abschnitte sind abhängig von der Instrumentierung ausgewählt, und enthält: Konfigurationseinstellungen, Statistik, Stapel-Trace-Informationen, und den Pfad zu Wurzeln.
+- **Symbolleiste** – am Anfang des Profilers finden Sie Optionen zum Starten/Starten der Profilerstellung, Auswählen eines Ziel Prozesses, Anzeigen der Laufzeit der APP und Auswählen der geteilten Sichten, die die Profiler-Anwendung bilden.
+- **Instrumentations Liste** – Hiermit werden alle für die Profil Erstellungs Sitzung geladenen Instrumente aufgelistet.
+- **Plotdiagramm** – diese Diagramme beziehen sich horizontal auf die relevanten Instrumente in der Instrumentations Liste. Mithilfe eines Schiebereglers (unten Zeit Profiler) kann die Skala geändert werden.
+- **Instrumentierungsdetailbereich** -enthält Daten, die von der ausgewählten Ansicht des aktuellen Instrumentations Instruments angezeigt werden. Diese Sichten werden im folgenden Abschnitt ausführlicher erläutert.
+- **Inspektoransicht** – enthält Abschnitte, die vom segmentierten Steuerelement ausgewählt werden können. Die Abschnitte sind vom ausgewählten Instrument abhängig und umfassen Folgendes: Konfigurationseinstellungen, Statistiken, Stapel Verfolgungs Informationen und Pfad zu Stamm Elementen.
 
-### <a name="allocations"></a>Zuordnungen
+### <a name="allocations"></a>Bewilli
 
-Das änderungsinstrument Zuordnungen enthält ausführliche Informationen zu Objekten in der Anwendung, wie sie erstellt werden und die Garbage collection.
+Das Zuordnungs Instrument bietet ausführliche Informationen zu Objekten in der Anwendung, während diese erstellt und in der Garbage Collection gesammelt werden.
 
-Am oberen Rand der Profiler wird das Zuordnungen, der die Größe des Arbeitsspeichers, die während der profilerstellung in regelmäßigen Abständen angezeigt. Derzeit ist das Diagramm Zuordnungen die Gesamtanzahl der Zuordnungen und nicht die Größe des Heaps zu diesem Zeitpunkt. Klicken Sie in gewisser Hinsicht er nie ausfällt, immer nur erhöht. Dies umfasst auch Objekte, die auf dem Stapel zugeordnet werden. Abhängig von der Common Language RuntimeVersion verwendet wird kann das Diagramm sieht anders – auch für die gleiche app aus.
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-
-[![](images/allocations1.png "Instrumentieren von Zuordnungen")](images/allocations1.png#lightbox) 
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-[![](images/allocations1-vs.png "Instrumentieren von Zuordnungen")](images/allocations1-vs.png#lightbox)
-
------
-
-Es gibt verschiedenen Datenansichten in den Zuordnungen instrumentieren, die es Entwicklern ermöglichen, wie ihre Anwendung verwenden und Freigeben von Speicher zu analysieren. Diese Ansichten werden nachfolgend beschrieben:
-
-- **Zuordnungen** – dies Listet alle Zuordnungen und gruppiert sie nach Klassennamen. Dies bietet eine hervorragende Übersicht über Klassen und Methoden, die verwendet wird, wie häufig sie verwendet werden und die gesamte Größe der Klassen verwendet werden. Doppelklicken auf eine Klasse wird den zugeordnete Speicher angezeigt werden: 
+Am Anfang des Profilers befindet sich das Zuordnungs Diagramm, in dem die Menge an Arbeitsspeicher angezeigt wird, die in regelmäßigen Abständen während der Profilerstellung zugeordnet wird. Derzeit ist das Zuordnungs Diagramm die Gesamtzahl der Zuordnungen und nicht die Größe des Heaps zu diesem Zeitpunkt. In gewisser Hinsicht geht es nie Weg, sondern es wird immer nur noch zunehmen. Dies schließt im Stapel zugeordnete Objekte ein. Abhängig von der verwendeten Laufzeitversion kann das Diagramm anders aussehen – auch für die gleiche APP.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![](images/allocations3.png "Registerkarte \"Zuordnungen\"")](images/allocations3.png#lightbox) 
+[![](images/allocations1.png "Zuordnungs Instrument")](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations2-vs.png "Registerkarte \"Zuordnungen\"")](images/allocations2-vs.png#lightbox)
+[![](images/allocations1-vs.png "Zuordnungs Instrument")](images/allocations1-vs.png#lightbox)
 
 -----
 
-Der prüfungsansicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren von Objekten, die Bereitstellung von Statistiken für den Arbeitsspeicher belegt, und die wichtigste Zuordnungen sowie Ansichten für Stapelüberwachung und den Pfad zum Stamm.
+Es gibt unterschiedliche Datenansichten im Zuordnungs Instrument, mit denen Entwickler die Verwendung und Freigabe von Arbeitsspeicher durch Ihre Anwendung analysieren können. Diese Sichten werden im folgenden beschrieben:
 
-- **Aufrufstruktur** – Dies zeigt die gesamte Aufrufstruktur aller Threads in der Anwendung und enthält Informationen über die Speichermenge, die auf jedem Knoten. Alle gleichgeordneten Knoten werden angezeigt, wenn ein Element in der Liste ausgewählt ist, grau angezeigt. Können Sie die Struktur erweitern oder doppelklicken Sie auf das Element um einen Drilldown in diesen. Wenn Sie diese Datenansicht anzeigen zu können, kann die Einstellungen für die Inspector Anzeige verwendet werden, zu verändern, wie sie angezeigt werden. Es gibt derzeit zwei Optionen:
-    1.  **Umgekehrt Aufrufstruktur** – diese Version die stapelüberwachung von oben nach unten. Dies ist eine praktische Ansichtsoption wie die tiefsten-Methoden gibt an, in denen verfügt über die CPU Zeit verloren wurde.
-    2.  **Separater Thread** – diese Option ordnet die Aufrufstruktur nach Thread.
+- **Zuordnungen – hiermit** wird eine Liste aller Zuordnungen angezeigt und nach Klassennamen gruppiert. Dies bietet eine gute Übersicht über die verwendeten Klassen und Methoden, die Häufigkeit der Verwendung und die kollektive Größe der verwendeten Klassen. Beim Doppelklicken auf eine Klasse wird der zugeordnete Arbeitsspeicher angezeigt: 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![](images/allocations2.png "Registerkarte \"Aufruf\"")](images/allocations2.png#lightbox) 
+  [![](images/allocations3.png "Registerkarte \"Zuweisungen")](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations3-vs.png "Registerkarte \"Aufruf\"")](images/allocations3-vs.png#lightbox)
+  [![](images/allocations2-vs.png "Registerkarte \"Zuweisungen")](images/allocations2-vs.png#lightbox)
 
 -----
 
-- **Momentaufnahmen** – in diesem Bereich werden Informationen zu Momentaufnahmen des Arbeitsspeichers angezeigt. Um diese bei der profilerstellung einer aktiven Anwendung zu generieren, klicken Sie auf die _Kamera_ Schaltfläche auf der Symbolleiste an jedem Punkt, die Sie möchten, um festzustellen, welcher Speicher beibehalten, und veröffentlicht. Klicken Sie anschließend auf jede Momentaufnahme um untersuchen, was hinter den Kulissen passiert. Beachten Sie, dass Momentaufnahmen können nur Laufzeit-profilerstellung für eine app erstellt werden. 
+Die inspektoransicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren von Objekten, zur Bereitstellung von Statistiken für zugeordnete Arbeitsspeicher und zu den obersten Zuordnungen sowie Ansichten für die Stapel Überwachung und den Pfad zum Stamm.
+
+- **CallTree** – zeigt die gesamte Aufrufstruktur aller Threads in der Anwendung an und enthält Informationen über den Arbeitsspeicher, der auf den einzelnen Knoten zugeordnet wird. Wenn ein Element in der Liste ausgewählt wird, werden alle neben geordneten Knoten grau angezeigt. Sie können die Struktur erweitern oder auf das Element doppelklicken, um einen Drilldown auszuführen. Wenn Sie diese Datenansicht anzeigen, kann die Anzeigeeinstellungen-inspektoransicht verwendet werden, um die dargestellte Darstellung zu ändern. Derzeit gibt es zwei Optionen:
+    1.  **Umgekehrte Aufrufstruktur** – berücksichtigt die Stapel Überwachung von oben nach unten. Dies ist eine bequeme Ansichts Option, da Sie die tiefststen Methoden angibt, bei denen die CPU ihre Zeit aufgewendet hat.
+    2.  **Separat durch Thread** – diese Option organisiert die Aufrufstruktur nach Thread.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![](images/allocations4.png "Registerkarte \"Momentaufnahmen\"")](images/allocations4.png#lightbox) 
+  [![](images/allocations2.png "Registerkarte \"Callcenter\"")](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations4-vs.png "Registerkarte \"Momentaufnahmen\"")](images/allocations4-vs.png#lightbox)
+  [![](images/allocations3-vs.png "Registerkarte \"Callcenter\"")](images/allocations3-vs.png#lightbox)
 
 -----
 
-### <a name="time-profiler"></a>Time-Profiler
-
-Das änderungsinstrument Zeit Profiler misst, genau wie viel Zeit in jeder Methode einer Anwendung verwendet wird. Die Anwendung wird in regelmäßigen Abständen angehalten, und eine stapelüberwachung, die auf jeder aktive Thread ausgeführt wird. Jede Zeile in die Instrumentierung Detailbereich zeigt den Ausführungspfad, der besucht wurde.
-
-Im Diagramm Plot zeigt, wie im nachstehenden Screenshot dargestellt, die Anzahl der Samplings, die von der app empfangen werden, während der Ausführung:
+- **Momentaufnahmen** – in diesem Bereich werden Informationen zu Speicher Momentaufnahmen angezeigt. Wenn Sie diese während der Profilerstellung für eine Live Anwendung generieren möchten, klicken Sie auf der Symbolleiste auf die Schaltfläche _Kamera_ an jedem Punkt, den Sie sehen möchten, welcher Arbeitsspeicher beibehalten und freigegeben wird. Sie können dann auf jede Momentaufnahme klicken, um herauszufinden, was im Hintergrund geschieht. Beachten Sie, dass Momentaufnahmen nur erstellt werden können, wenn Live-Profilerstellung für eine APP 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Instrumentieren der Time-Profiler](images/time1.png)](images/time1.png#lightbox) 
-
-[![Zeit Profiler Instrumentieren – Liste der Beispiele](images/time3.png)](images/time3.png#lightbox) 
+  [![](images/allocations4.png "Momentaufnahmen")](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Instrumentieren der Time-Profiler](images/time1-vs.png)](images/time1-vs.png#lightbox) 
-
-[![Zeit Profiler Instrumentieren – Liste der Beispiele](images/time3-vs.png)](images/time3-vs.png#lightbox) 
+  [![](images/allocations4-vs.png "Momentaufnahmen")](images/allocations4-vs.png#lightbox)
 
 -----
 
-- **Aufrufstruktur** – zeigt aufgewendete Zeit in jeder Methode:
+### <a name="time-profiler"></a>Zeit Profiler
+
+Mit dem instrumentierungsinstrumentierungsinstrument wird genau gemessen, wie viel Zeit in den einzelnen Methoden einer Anwendung aufgewendet wird. Die Anwendung wird in regelmäßigen Abständen angehalten, und es wird eine Stapel Überwachung in jedem aktiven Thread ausgeführt. Jede Zeile im Bereich "Instrumentations Details" zeigt den Ausführungs Pfad an, der befolgt wurde.
+
+Das Zeichnungs Diagramm zeigt, wie im folgenden Screenshot gezeigt, die Anzahl der von der APP empfangenen Beispiele an, während Sie ausgeführt wird:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![](images/time2.png "Zeit Profiler Instrumentieren – Aufrufstruktur")](images/time2.png#lightbox) 
+[![Zeit-profilerinstrument](images/time1.png)](images/time1.png#lightbox) 
+
+[![Zeit Profil Erstellungs Instrument – Beispielliste](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/time2-vs.png "Zeit Profiler Instrumentieren – Aufrufstruktur")](images/time2-vs.png#lightbox) 
+[![Zeit-profilerinstrument](images/time1-vs.png)](images/time1-vs.png#lightbox) 
+
+[![Zeit Profil Erstellungs Instrument – Beispielliste](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
-### <a name="cycles"></a>Zyklen
-
-Mithilfe des C# und F# verwalteter Code, es kann sein, üblich ist, und leider ziemlich einfach, Verweise auf Objekte zu erstellen, die nie gelöscht wird. Diese Instrumentieren können Sie diese Objekte zu ermitteln, und zeigen die Zyklen in Ihrer Anwendung verwiesen wird.
+- **Aufruf** Struktur – zeigt die für jede Methode aufgewendeten Zeit an:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Instrumentieren von Zyklen](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
+  [![](images/time2.png "Zeit Profil Erstellungs Instrument – Aufruf Struktur")](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Instrumentieren von Zyklen](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
+  [![](images/time2-vs.png "Zeit Profil Erstellungs Instrument – Aufruf Struktur")](images/time2-vs.png#lightbox) 
 
 -----
 
-## <a name="profiling-applications"></a>Profilerstellung für Anwendungen
+### <a name="cycles"></a>Kte
 
-Derzeit können nur die Debug-Standardkonfigurationen, profiliert werden.
+Durch die Verwendung von C# und F# verwaltetem Code kann es ziemlich üblich sein, und leider ist es recht einfach, Verweise auf Objekte zu erstellen, die nie verworfen werden. Mit diesem Instrument können Sie diese Objekte lokalisieren und die Zyklen anzeigen, auf die in der Anwendung verwiesen wird.
 
-Wenn Sie ein Profil eine app mit einer anderen Konfiguration erstellen, werden Sie im folgenden Dialogfeld angezeigt werden:
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+
+[![Cycles-Instrument](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+[![Cycles-Instrument](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
+
+-----
+
+## <a name="profiling-applications"></a>Profil Erstellungs Anwendungen
+
+Derzeit können nur die standarddebugkonfigurationen erstellt werden.
+
+Wenn Sie ein Profil für eine APP mit einer anderen Konfiguration erstellen, wird das folgende Meldungs Dialogfeld angezeigt:
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Dialogfeld "Fehler" die profilerstellung](images/image001.png)](images/image001.png#lightbox) 
+[![Profil Erstellungs Fehler](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](images/image1vs.png "Dialogfeld \"Fehler\" die profilerstellung")](images/image1vs.png#lightbox) 
+[![](images/image1vs.png "Profil Erstellungs Fehler")](images/image1vs.png#lightbox) 
 
 -----
 
-Wählen Sie **Update** um den Vorgang fortzusetzen.
+Wählen Sie **Aktualisieren** , um fortzufahren.
 
-### <a name="sgen-garbage-collector-and-profiling"></a>SGen-Garbage Collector und Profilerstellung
+### <a name="sgen-garbage-collector-and-profiling"></a>Sgen-Garbage Collector und Profilerstellung
 
-Die [SGen](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/) Garbage Collector wird für alle Xamarin-Plattformen verwendet.
+Der [Sgen](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/) -Garbage Collector wird für alle xamarin-Plattformen verwendet.
 
-SGen ist eine generationsbasierte GC, das Objekte einer Anwendung in drei Heaps zugeordnet werden – Nursery, Major Heap und die Large Object Space. Dies ermöglicht schnellere Ausführung der Garbagecollection. SGen ist derzeit die Standard-GC für Xamarin.Android und Xamarin.iOS Unified-Anwendungen.
+Sgen ist ein generationsübergreifender GC, mit dem Objekte einer Anwendung in drei Heaps zugeordnet werden – Gärtnerei, Haupt Heap und Large Object Raum. Dies ermöglicht eine schnellere Ausführung von Garbage Collection. Sgen ist derzeit die Standard-GC für xamarin. Android und vereinheitlichte xamarin. IOS-Anwendungen.
 
-Xamarin.iOS-Anwendung mithilfe der klassischen API, Boehm Garbage Collector – ein konservativer, nicht generationeller Garbage Collector verwendet. Wie es konservativ ist, ist es weniger wahrscheinlich, dass Sie verfügbaren Arbeitsspeicher freizugeben, die zu ungenauen Ergebnissen führen kann, wenn Sie den Profiler verwenden. Aus diesem Grund kann das änderungsinstrument Zuordnungen mit dem Boehm Garbage Collector verwendet werden.
+Die xamarin. IOS-Anwendung, die den Classic API verwendet, verwendet den Boehm-GC – eine konservative, nicht generelle Garbage Collector. Da es konservativ ist, ist es weniger wahrscheinlich, dass Sie verfügbaren Arbeitsspeicher freigeben, was bei der Verwendung des Profilers zu ungenauen Ergebnissen führen kann. Aus diesem Grund kann das Zuordnungs Instrument nicht mit dem Boehm-Garbage Collector verwendet werden.
 
-Während ein Dialogfeld für die Meldung Sie aufgefordert werden, wenn Ihre app Boehm Garbage Collector verwendet, wechseln vorhandene iOS-Anwendung, die Boehm zu SGen ohne sorgfältige Forschung und gründliche Tests verwenden die Xamarin wird nicht empfohlen. Xamarin ist auch nicht empfehlen den Wechsel zum SGen, zur profilerstellung und das anschließende Wechsel zurück, wie diese Ergebnisse nicht genau Benchmarks der Auslastung des Speichers erhalten.
+Obwohl Sie mit einem Meldungs Dialogfeld aufgefordert werden, wenn Ihre APP den Boehm-GC verwendet, empfiehlt xamarin nicht, eine vorhandene IOS-Anwendung, die Boehm verwendet, ohne sorgfältige Untersuchung und gründliche Tests in Sgen zu wechseln. Xamarin empfiehlt außerdem nicht, zur Profilerstellung zu Sgen zu wechseln und dann zurückzukehren, da diese Ergebnisse keine genauen Benchmarks der Speicherauslastung bereitstellen.
 
-Weitere Informationen zur Speicherverwaltung von finden Sie in der [Arbeitsspeicher und bewährte Methoden für Leistung](~/cross-platform/deploy-test/memory-perf-best-practices.md) Guide.
+Weitere Informationen zur Speicherverwaltung finden Sie im Handbuch mit [bewährten Methoden für Arbeitsspeicher und Leistung](~/cross-platform/deploy-test/memory-perf-best-practices.md) .
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Handbuch erläutert, welche die profilerstellung ist und wie es vorteilhaft sein, der Entwickler. Wir eingeführt, klicken Sie dann den Xamarin Profiler, bereitstellen, einige Verlauf und die Informationen in die Funktionsweise. Wir lassen die Funktionen von der Xamarin Profiler und schließlich untersucht die Zuordnungen und die Uhrzeit Profiler Instruments.
+In dieser Anleitung haben wir uns mit der Profilerstellung und der Vorteile des Entwicklers beschäftigt. Anschließend haben wir die Xamarin Profiler eingeführt und einige Verlaufs Informationen und Informationen zur Funktionsweise bereitgestellt. Schließlich haben wir die Features der Xamarin Profiler besucht und die Zuordnungen und die Zeit der Profiler-Instrumente untersucht.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Arbeitsspeicher- und Leistungsproblemen bewährte Methoden](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [Anmerkungen zu dieser Version](https://developer.xamarin.com/releases/profiler/preview/)
+- [Bewährte Methoden für Arbeitsspeicher und Leistung](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [Anmerkungen zu dieser Version](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/profiler/preview/index.md)

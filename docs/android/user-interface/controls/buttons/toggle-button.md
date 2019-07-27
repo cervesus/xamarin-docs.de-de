@@ -6,27 +6,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: a22d274feb5539164663ac0c48e5a84bdf5d2c66
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 91003f9a23c667b38028a9852b28dba656ba13db
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830226"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510333"
 ---
 # <a name="togglebutton"></a>ToggleButton
 
-In diesem Abschnitt erstellen Sie eine Schaltfläche verwendet, die speziell für das Umschalten zwischen zwei Zuständen, mit der [ `ToggleButton` ](https://developer.xamarin.com/api/type/Android.Widget.ToggleButton/) Widget. Dieses Widget ist eine hervorragende Alternative für Optionsfelder aus, wenn Sie zwei einfache Status verfügen, die sich gegenseitig ausschließende sind ("on" und "off", z. B.). Android 4.0 (API-Ebene 14) eingeführt, eine Alternative zu der Umschaltfläche, bekannt als eine [ `Switch` ](https://developer.xamarin.com/api/type/Android.Widget.Switch/).
+In diesem Abschnitt erstellen Sie mithilfe des Widgets eine Schaltfläche, die speziell für das [`ToggleButton`](xref:Android.Widget.ToggleButton) Umschalten zwischen zwei Zuständen verwendet wird. Dieses Widget ist eine hervorragende Alternative zu Options Feldern, wenn Sie zwei einfache Zustände haben, die sich gegenseitig ausschließen (z. b. "on" und "Off"). Android 4,0 (API-Ebene 14) hat eine Alternative zu der UMSCHALT Fläche eingeführt, die [`Switch`](xref:Android.Widget.Switch)als bezeichnet wird.
 
-Ein Beispiel für eine **ToggleButton** finden Sie im linken-Paar von Abbildern, während die beiden rechten Bilder ein Beispiel stellt eine **Switch**:
+Ein Beispiel für eine **ToggleButton-Taste** kann im linken paar von Bildern angezeigt werden, während das Rechte paar von Bildern ein Beispiel für einen **Switch**darstellt:
 
-![Beispiele für Switches und ToggleButtons sowohl die ein- und Ausschalten der Zustände](toggle-button-images/togglebutton-switch.png)  
+![Beispiele für Switches und umgglebuttons in den Zuständen "ein" und "aus"](toggle-button-images/togglebutton-switch.png)  
 
-Das Steuerelement, das eine Anwendung verwendet wird, eine Frage des Stils. Beide Widgets sind funktional äquivalent.
+Welches Steuerelement eine Anwendung verwendet, ist eine Frage des Stils. Beide Widgets sind funktionell gleichwertig.
 
-Öffnen der **Resources/layout/Main.axml** -Datei und fügen die [ `ToggleButton` ](https://developer.xamarin.com/api/type/Android.Widget.ToggleButton/) Element (innerhalb der [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+Öffnen Sie die Datei **Resources/Layout/Main. axml** , und [`ToggleButton`](xref:Android.Widget.ToggleButton) fügen Sie das- [`LinearLayout`](xref:Android.Widget.LinearLayout)Element (innerhalb der) hinzu:
 
-Etwas erfolgt, wenn der Status geändert wird, fügen Sie den folgenden Code am Ende der [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
-Methode:
+Um etwas zu tun, wenn der Status geändert wird, fügen Sie den folgenden Code am Ende der[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+anzuwenden
 
 ```csharp
 ToggleButton togglebutton = FindViewById<ToggleButton>(Resource.Id.togglebutton);
@@ -40,16 +40,16 @@ togglebutton.Click += (o, e) => {
 };
 ```
 
-Hierbei werden zusammengefasst, die [ `ToggleButton` ](https://developer.xamarin.com/api/type/Android.Widget.ToggleButton/) Element aus dem Layout und behandelt das Click-Ereignis, das definiert, welche Aktion ausgeführt wird, wenn die Schaltfläche geklickt wird. In diesem Beispiel ist die Methode überprüft den neuen Status der Schaltfläche, und zeigt eine [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) Meldung, die den aktuellen Status angibt.
+Dadurch wird das [`ToggleButton`](xref:Android.Widget.ToggleButton) -Element aus dem Layout erfasst und das Click-Ereignis behandelt, das die Aktion definiert, die beim Klicken auf die Schaltfläche ausgeführt werden soll. In diesem Beispiel überprüft die-Methode den neuen Status der Schaltfläche und zeigt dann eine [`Toast`](xref:Android.Widget.Toast) Meldung an, die den aktuellen Zustand angibt.
 
-Beachten Sie, dass die [ `ToggleButton` ](https://developer.xamarin.com/api/type/Android.Widget.ToggleButton/) seinen eigenen Status zwischen aktiviert oder deaktiviert ist, ändern Sie Sie also nur Fragen, die es verarbeitet.
+Beachten Sie, [`ToggleButton`](xref:Android.Widget.ToggleButton) dass die die eigene Zustandsänderung zwischen aktivierten und nicht aktivierten behandelt, sodass Sie nur die Frage stellen, welche ist.
 
 Führen Sie die Anwendung aus.
 
 
 > [!TIP]
-> Wenn Sie den Status selbst ändern möchten (z. B. beim Laden eine gespeicherte [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)), verwenden Sie die [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-> Eigenschaften-Setter oder [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+> Wenn Sie den Zustand selbst ändern müssen (z. b. beim Laden eines [`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)gespeicherten), verwenden Sie das[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> Eigenschaften Setter oder[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > -Methode.
 
 

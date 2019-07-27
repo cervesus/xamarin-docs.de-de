@@ -1,39 +1,39 @@
 ---
-title: Navigationsleiste
+title: Xamarin. Android-Navigationsleiste
 ms.prod: xamarin
 ms.assetid: 6023DB7E-9E72-4B90-A96A-11BC297B8A3D
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 9455cac81a0f9ea81e08cf63397e45c1698e1c1b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 70e009ed1a017b2336b6acb443a4d9cd87ff3e68
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153638"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510267"
 ---
-# <a name="navigation-bar"></a>Navigationsleiste
+# <a name="xamarinandroid-navigation-bar"></a>Xamarin. Android-Navigationsleiste
 
-Android 4 eingeführt wurde, ein neues Systemfeature der Benutzeroberfläche wird aufgerufen, eine *Navigationsleiste*, die Steuerelemente für die Seitennavigation auf Geräten, die keine Hardwaretasten für enthalten bietet **Startseite**, **zurück** , und **Menü**.
-Der folgende Screenshot zeigt der Navigationsleiste auf einem Nexus Prime-Gerät:
+Mit Android 4 wurde eine neue Systembenutzer Oberfläche eingeführt, die als *Navigationsleiste*bezeichnet wird, die Navigations Steuerelemente auf Geräten bereitstellt, die keine Hardware Schaltflächen für **Home**, **Back**und **Menü**enthalten.
+Der folgende Screenshot zeigt die Navigationsleiste von einem Nexus-Prim Gerät:
 
- [![Beispiel für eine Android-Navigation-Leiste](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
+ [![Beispiel für eine Android-Navigationsleiste](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
-Mehrere neue Optionen zur Verfügung stehen, die steuern, die Sichtbarkeit von der Navigationsleiste und seiner Steuerelemente sowie die Sichtbarkeit der System-Leiste, die in Android 3 eingeführt wurde. Die Flags werden definiert, der `Android.View.View` Klasse und sind nachfolgend aufgeführt:
+Es sind mehrere neue Flags verfügbar, die die Sichtbarkeit der Navigationsleiste und deren Steuerelemente steuern, sowie die Sichtbarkeit der System Leiste, die in Android 3 eingeführt wurde. Die Flags sind in der `Android.View.View` -Klasse definiert und sind im folgenden aufgeführt:
 
--   `SystemUiFlagVisible` &ndash; Die Navigationsleiste macht sichtbar. 
--   `SystemUiFlagLowProfile` &ndash; DIMS Steuerelemente in der Navigationsleiste auf. 
--   `SystemUiFlagHideNavigation` &ndash; Blendet die Navigationsleiste aus. 
+-   `SystemUiFlagVisible`&ndash; Macht die Navigationsleiste sichtbar. 
+-   `SystemUiFlagLowProfile`&ndash; Gibt die Steuerelemente in der Navigationsleiste aus. 
+-   `SystemUiFlagHideNavigation`&ndash; Blendet die Navigationsleiste aus. 
 
 
-Diese Flags können auf einer beliebigen Ansicht in der Hierarchie von Inhaltsansichten angewendet werden, durch Festlegen der `SystemUiVisibility` Eigenschaft. Wenn mehrere Ansichten auf diese Eigenschaft festgelegt haben, wird das System mit einer OR-Operation kombiniert und wendet sie an, solange das Fenster, in dem die Flags festgelegt sind, den Fokus beibehalten. Wenn Sie eine Ansicht entfernen, werden alle Flags, die sie festgelegt hat auch entfernt werden.
+Diese Flags können auf jede Sicht in der Ansichts Hierarchie angewendet werden, `SystemUiVisibility` indem die-Eigenschaft festgelegt wird. Wenn diese Eigenschaft in mehreren Ansichten festgelegt ist, werden Sie vom System mit einer OR-Operation kombiniert und angewendet, solange das Fenster, in dem die Flags festgelegt sind, den Fokus erhält. Wenn Sie eine Ansicht entfernen, werden alle festgelegten Flags ebenfalls entfernt.
 
-Das folgende Beispiel zeigt eine einfache Anwendung, in denen Änderungen auf eine der Schaltflächen der `SystemUiVisibility`:
+Das folgende Beispiel zeigt eine einfache Anwendung, bei der durch Klicken auf eine der `SystemUiVisibility`Schaltflächen die geändert wird:
 
- [![Screenshots veranschaulicht, sichtbar und flacher SystemUiVisibility ausgeblendet](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
+ [![Screenshots, die sichtbare, niedrige Profile und verborgene System Sichtbarkeit veranschaulichen](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
-Der Code zum Ändern der `SystemUiVisibility` wird die Eigenschaft eine `TextView` aus jeder der Schaltfläche die click-Ereignishandler aus, wie unten dargestellt:
+Der Code, der `SystemUiVisibility` geändert werden soll, legt die-Eigenschaft für einen `TextView` von jedem Click-Ereignishandler der Schaltfläche fest, wie unten dargestellt:
 
 ```csharp
 var tv = FindViewById<TextView> (Resource.Id.systemUiFlagTextView);
@@ -56,7 +56,7 @@ visibleButton.Click += delegate {
 }
 ```
 
-Darüber hinaus eine `SystemUiVisibility` ändern löst eine `SystemUiVisibilityChange` Ereignis. Wie Sie die Einstellung der `SystemUiVisibility` -Eigenschaft, einen Handler für die `SystemUiVisibilityChange` Ereignis für jede Ansicht in der Hierarchie registriert werden kann. Beispielsweise der folgende Code verwendet die `TextView` -Instanz, für die Veranstaltung zu registrieren:
+Außerdem löst eine `SystemUiVisibility` Änderung ein `SystemUiVisibilityChange` -Ereignis aus. Ebenso wie das Festlegen `SystemUiVisibility` der-Eigenschaft kann ein Handler `SystemUiVisibilityChange` für das-Ereignis für jede Ansicht in der Hierarchie registriert werden. Der folgende Code verwendet beispielsweise die `TextView` -Instanz, um sich für das-Ereignis zu registrieren:
 
 ```csharp
 tv.SystemUiVisibilityChange +=
@@ -69,6 +69,6 @@ tv.SystemUiVisibilityChange +=
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SystemUIVisibilityDemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/SystemUIVisibilityDemo/)
-- [Einführung in die Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 Platform](https://developer.android.com/sdk/android-4.0.html)
+- [Systemuivisibilitydemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/SystemUIVisibilityDemo/)
+- [Einführung in Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
+- [Android 4,0-Plattform](https://developer.android.com/sdk/android-4.0.html)

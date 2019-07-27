@@ -1,51 +1,51 @@
 ---
 title: Einführung in macOS Mojave
-description: Dieses Dokument enthält eine allgemeine Übersicht der neuen und aktualisierten Features in MacOS Mojave.
+description: Dieses Dokument bietet einen Überblick über neue und aktualisierte Features in macOS.
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: a9975eeec445ac59dc71a44a1156804835795982
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9c88d0a90cf5f1cae0e27a05aeaa71f726ddb4de
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032102"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511682"
 ---
 # <a name="introduction-to-macos-mojave"></a>Einführung in macOS Mojave
 
-Dieses Dokument enthält eine allgemeine Übersicht der neuen und aktualisierten Features in MacOS Mojave.
+Dieses Dokument bietet einen Überblick über neue und aktualisierte Features in macOS.
 
-Zunächst entwickeln MacOS Mojave-apps mit Xamarin, sehen Sie sich die [Handbuch mit ersten Schritten](~/mac/platform/introduction-to-macos-mojave/get-started.md) für [Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/).
+Informationen zu den ersten Schritten beim Erstellen von macOS-Anwendungen mit xamarin finden Sie im [Leitfaden](~/mac/platform/introduction-to-macos-mojave/get-started.md) für die ersten Schritte für [xamarin. Mac 5,0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md).
 
-## <a name="dark-mode"></a>Dunkel-Modus
+## <a name="dark-mode"></a>Dunkler Modus
 
-Dunkel-Modus ist eine systemweite dunklen Design in MacOS Mojave, der eine dynamische, dunkel grauen Farbschema verwendet wird, um Elemente der Benutzeroberfläche anzuzeigen. Er führt außerdem neue Akzentfarben, Auswirkungen der Farbe und Inhalt Farbton Farben können Drittanbieter-apps, die unabhängig von den Einstellungen des Benutzers Farbe gut aussehen.
+Der dunkle Modus ist ein systemweites dunkles Design in macOS, das ein dynamisches, dunkles graues Farbschema verwendet, um Benutzeroberflächen Elemente anzuzeigen. Außerdem werden neue Akzentfarben, Farbeffekte und Content-Tönungs-Farben eingeführt, damit apps von Drittanbietern unabhängig von den Farbeinstellungen des Benutzers gut aussehen.
 
-## <a name="user-notifications-framework"></a>Framework für Benutzerbenachrichtigungen
+## <a name="user-notifications-framework"></a>Benutzer Benachrichtigungs Framework
 
-Das Framework für Benutzerbenachrichtigungen ist im MacOS Mojave, ändern die APIs, die Mac-apps verwenden, um die Arbeit mit benutzerbenachrichtigungen enthalten.
+Das Benutzer Benachrichtigungs Framework ist in macOS-mujave enthalten und ändert die APIs, die Mac-Apps zum Arbeiten mit Benutzer Benachrichtigungen verwenden.
 
-## <a name="natural-language-framework"></a>Natürlicher Sprachen-framework
+## <a name="natural-language-framework"></a>Framework für natürliche Sprache
 
-Natürlicher Sprachen-Framework ermöglicht Anwendungen das Ausführen von verschiedenen Arten von sprachanalyse. Beispielsweise kann verwendet werden, zum Identifizieren von Wortarten, und ermitteln die Sprache, die durch einen Textblock dargestellt wird.
+Das Framework für natürliche Sprache ermöglicht Anwendungen das Ausführen verschiedener Arten von Sprachanalysen. Beispielsweise kann Sie verwendet werden, um Teile der Sprache zu identifizieren und die durch einen TextBlock dargestellte Sprache zu bestimmen.
 
-## <a name="vision-framework"></a>Maschinelles sehen-framework
+## <a name="vision-framework"></a>Vision Framework
 
-Das Vision Framework enthält eine verbesserte gesichtserkennung, die in verschiedenen Ausrichtungen Gesichter erkennen kann. Darüber hinaus können Anforderung Revisionen jetzt verwendet werden, um eine bestimmte Vision Framework Algorithmusrevision auszuwählen.
+Das Vision-Framework enthält ein verbessertes Gesichts Erkennungs Modul, mit dem Gesichter in verschiedenen Ausrichtungen erkannt werden können. Außerdem können Anforderungs Revisionen nun verwendet werden, um eine bestimmte Vision Framework-Algorithmusrevision auszuwählen.
 
-## <a name="network-framework"></a>Netzwerk-framework
+## <a name="network-framework"></a>Netzwerk Framework
 
-Netzwerk-Framework, das Netzwerk stack zugrunde liegende der `URLSession` APIs, die häufig in iOS-Anwendungen verwendet, ist jetzt verfügbar als eigenständiges Framework, erleichtert Ihnen die Arbeit mit TCP, UDP, TLS, IPv4/IPv6 und mehr.
+Netzwerk Framework, der Netzwerk Stapel, der `URLSession` den APIs zugrunde liegt, die häufig in ios-Anwendungen verwendet werden, ist nun als eigenständiges Framework verfügbar, sodass die Arbeit mit TCP, UDP, TLS, IPv4/IPv6 und mehr möglich ist.
 
-## <a name="deprecations"></a>Veralteten
+## <a name="deprecations"></a>Veraltete Funktionen
 
-Mit MacOS Mojave, Apple wurde als veraltet OpenGL-ES und OpenCL, [und Entwickler werden angeregt](https://developer.apple.com/macos/whats-new/) Metal- und -Metal-Performance-Shader zu übernehmen.
+Mit macOS-mujave hat Apple OpenGL es und OpenCL als veraltet eingestuft und [Entwickler dazu ermutigt](https://developer.apple.com/macos/whats-new/) , Metal-und Metal-leistungshader zu übernehmen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin.Mac-Beispiele](https://developer.xamarin.com/samples/mac/)
-- [MacOS – Apple Developer](https://developer.apple.com/macos/)
-- [Anmerkungen zur Version von Xamarin.Mac 5.0](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
+- [Xamarin. Mac-Beispiele](https://developer.xamarin.com/samples/mac/)
+- [macOS – Apple-Entwickler](https://developer.apple.com/macos/)
+- [Anmerkungen zu dieser Version von xamarin. Mac 5,0](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)

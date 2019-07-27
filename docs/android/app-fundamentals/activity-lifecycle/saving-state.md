@@ -1,34 +1,34 @@
 ---
 title: 'Exemplarische Vorgehensweise: Speichern des Aktivitätsstatus'
-description: Wir haben die Theorie hinter den Status speichern, in der Aktivitätslebenszyklus Anleitung behandelt; jetzt betrachten wir ein Beispiel.
+description: Wir haben die Theorie hinter dem Speichern des Zustands im Aktivitäts Lebenszyklus Handbuch behandelt. sehen wir uns nun ein Beispiel an.
 ms.prod: xamarin
 ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: c8f92e55648dff469227cc3bad981ad5f6e6d0ac
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7e2d6c1bb462a8eee5debc139aee9f71ae8ac6a8
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019159"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508784"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>Exemplarische Vorgehensweise: Speichern des Aktivitätsstatus
 
-_Wir haben die Theorie hinter den Status speichern, in der Aktivitätslebenszyklus Anleitung behandelt; jetzt betrachten wir ein Beispiel._
+_Wir haben die Theorie hinter dem Speichern des Zustands im Aktivitäts Lebenszyklus Handbuch behandelt. sehen wir uns nun ein Beispiel an._
 
-## <a name="activity-state-walkthrough"></a>Aktivitätsstatus Exemplarische Vorgehensweise
+## <a name="activity-state-walkthrough"></a>Exemplarische Vorgehensweise zum Aktivitäts Zustand
 
-Öffnen wir die **ActivityLifecycle_Start** Projekt (in der [ActivityLifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle) Beispiel), erstellen es und führen Sie es. Dies ist ein sehr einfaches Projekt, das hat zwei Aktivitäten veranschaulicht, wie der aktivitätslebenszyklus und wie die verschiedenen Lebenszyklusmethoden aufgerufen werden. Beim Starten der Anwendung den Bildschirm `MainActivity` wird angezeigt: 
+Öffnen Sie das Projekt **ActivityLifecycle_Start** (im Beispiel [activitylifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle) ), erstellen Sie es, und führen Sie es aus. Dabei handelt es sich um ein sehr einfaches Projekt, das zwei Aktivitäten umfasst, um den Aktivitäts Lebenszyklus zu veranschaulichen, und wie die verschiedenen Lebenszyklus Methoden aufgerufen werden. Wenn Sie die Anwendung starten, wird der Bild `MainActivity` Schirm von angezeigt:
 
-[![Aktivität A-Bildschirm](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
+[![Aktivität A Bildschirm](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
-### <a name="viewing-state-transitions"></a>Anzeigen von Zustandsübergängen
+### <a name="viewing-state-transitions"></a>Anzeigen von Zustands Übergängen
 
-Jede Methode in diesem Beispiel werden im Ausgabefenster von IDE-Anwendung an die Aktivität schreibt. (Geben Sie zum Öffnen im Ausgabefenster in Visual Studio **STRG-ALT-O**; um das Fenster "Ausgabe" in Visual Studio für Mac öffnen, klicken Sie auf **Ansicht > Pads > Anwendungsausgabe**.)
+Jede Methode in diesem Beispiel schreibt in das Fenster der IDE-Anwendungs Ausgabe, um den Aktivitäts Zustand anzugeben. (Um das Fenster Ausgabe in Visual Studio zu öffnen, geben Sie **STRG + ALT + O**; ein, um das Ausgabefenster in Visual Studio für Mac zu öffnen, und klicken Sie auf **> Pads > Anwendungs Ausgabe anzeigen**.)
 
-Beim ersten Start die app wird im Ausgabefenster werden die Änderungen des Ansichtszustands *Aktivität A*: 
+Wenn die APP zum ersten Mal gestartet wird, zeigt das Fenster Ausgabe die Zustandsänderungen von *Aktivität A*an: 
 
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnCreate
@@ -36,7 +36,7 @@ Beim ersten Start die app wird im Ausgabefenster werden die Änderungen des Ansi
 [ActivityLifecycle.MainActivity] Activity A - OnResume
 ```
 
-Klicken auf die **starten Aktivität B** Schaltfläche sehen *Aktivität A* anhalten und beenden und *Aktivität B* durchläuft dessen Zustand ändert: 
+Wenn Sie auf die Schaltfläche **Start Aktivität b** klicken, wird *Aktivität a* anhalten und beenden angezeigt, während *Aktivität b* die Statusänderungen durchläuft: 
 
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnPause
@@ -46,11 +46,11 @@ Klicken auf die **starten Aktivität B** Schaltfläche sehen *Aktivität A* anha
 [ActivityLifecycle.MainActivity] Activity A - OnStop
 ```
 
-Daher *Aktivität B* gestartet wurde und angezeigt werden, anstelle von *Aktivität A*: 
+Daher wird *Aktivität B* gestartet und anstelle von *Aktivität a*angezeigt: 
 
-[![Bildschirm der Aktivität B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
+[![Bildschirm für Aktivität B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
-Klicken auf die **wieder** Schaltfläche *Aktivität B* zerstört wird und *Aktivität A* fortgesetzt wird: 
+Wenn Sie auf die Schaltfläche " **zurück** " klicken, wird *Aktivität B* zerstört und *Aktivität a* wird fortgesetzt: 
 
 ```shell
 [ActivityLifecycle.SecondActivity] Activity B - OnPause
@@ -60,15 +60,15 @@ Klicken auf die **wieder** Schaltfläche *Aktivität B* zerstört wird und *Akti
 [ActivityLifecycle.SecondActivity] Activity B - OnStop
 [ActivityLifecycle.SecondActivity] Activity B - OnDestroy
 ```
-### <a name="adding-a-click-counter"></a>Hinzufügen eines Click-Leistungsindikators
+### <a name="adding-a-click-counter"></a>Hinzufügen eines Klick Zählers
 
-Als Nächstes werden wir die Anwendung zu ändern, sodass wir eine Schaltfläche verfügen, die zählt, und zeigt die Anzahl der Male, die darauf geklickt wird. Zunächst fügen wir eine `_counter` Instanzvariable hinzu `MainActivity`:
+Als nächstes ändern wir die Anwendung so, dass eine Schaltfläche angezeigt wird, die anzeigt, wie oft auf Sie geklickt wird. Fügen Sie zunächst eine `_counter` `MainActivity`Instanzvariable hinzu:
 
 ```csharp
 int _counter = 0;
 ```
 
-Als Nächstes ermöglicht das Bearbeiten der **Resource/layout/Main.axml** Layout-Datei, und fügen Sie einen neuen `clickButton` , das zeigt an, wie oft der Benutzer die Schaltfläche geklickt hat. Die resultierende **Main.axml** sollte etwa folgendermaßen aussehen: 
+Als nächstes bearbeiten wir die Layoutdatei " **Resource/Layout/Main. axml** " und fügen `clickButton` eine neue hinzu, die anzeigt, wie oft der Benutzer auf die Schaltfläche geklickt hat. Die resultierende **Main. axml** sollte in etwa wie folgt aussehen: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -89,7 +89,7 @@ Als Nächstes ermöglicht das Bearbeiten der **Resource/layout/Main.axml** Layou
 </LinearLayout>
 ```
 
-Fügen Sie den folgenden Code am Ende der [OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) -Methode in der `MainActivity` &ndash; dieser Code behandelt, klicken Sie auf Ereignisse aus der `clickButton`:
+Fügen Sie den folgenden Code am Ende der [OnCreate](xref:Android.App.Activity.OnCreate*) -Methode in `MainActivity` &ndash; den Code Handles Click-Ereignisse aus der `clickButton`-Datei ein:
 
 ```csharp
 var clickbutton = FindViewById<Button> (Resource.Id.clickButton);
@@ -103,15 +103,15 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 } ;
 ```
 
-Wenn wir zum Erstellen und führen die app erneut aus, das eine neue Schaltfläche angezeigt wird, die inkrementiert, und zeigt den Wert der `_counter` bei jedem klicken:
+Wenn Sie die APP erneut erstellen und ausführen, wird eine neue Schaltfläche angezeigt, in der der Wert von `_counter` bei jedem Mausklick erhöht und angezeigt wird:
 
-[![Hinzufügen von Touch-Anzahl](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
+[![Berührungs Anzahl hinzufügen](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
-Aber wenn wir das Gerät in das Querformat zu drehen, wird diese Anzahl verloren:
+Wenn wir das Gerät jedoch in den Querformat drehen, gehen diese Anzahl verloren:
 
-[![Zum Querformat zu drehen, legt die Anzahl an 0 (null) fest](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
+[![Beim Drehen in das Querformat wird die Anzahl auf 0 zurückgesetzt.](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
-Untersuchen die Anwendungsausgabe, sehen Sie, dass *Aktivität A* wurde angehalten, beendet, gelöscht, neu erstellt, neu gestartet und dann fortgesetzt, während die Rotation vom Hochformat zum Querformat: 
+Wenn Sie die Anwendungs Ausgabe untersuchen, sehen wir, dass *Aktivität A* angehalten, beendet, zerstört, neu erstellt, neu gestartet und anschließend während der Drehung vom Hochformat in den Querformat Modus wieder aufgenommen wurde: 
 
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnPause
@@ -123,11 +123,11 @@ Untersuchen die Anwendungsausgabe, sehen Sie, dass *Aktivität A* wurde angehalt
 [ActivityLifecycle.MainActivity] Activity A - OnResume
 ```
 
-Da *Aktivität A* zerstört und neu erstellt noch Mal, wenn das Gerät gedreht wird, wird der Zustand geht verloren. Als Nächstes werden wir Code zum Speichern und Wiederherstellen des Instanzstatus hinzufügen.
+Da *Aktivität A* beim Drehen des Geräts zerstört und erneut erstellt wird, geht der Instanzzustand verloren. Als Nächstes fügen Sie Code hinzu, um den Instanzzustand zu speichern und wiederherzustellen.
 
-### <a name="adding-code-to-preserve-instance-state"></a>Hinzufügen von Code zum Beibehalten von Instanzstatus
+### <a name="adding-code-to-preserve-instance-state"></a>Hinzufügen von Code zum Beibehalten des Instanzstatus
 
-Fügen Sie eine Methode, um `MainActivity` um den Zustand der Instanz zu speichern. Vor dem *Aktivität A* wird zerstört, Android ruft automatisch [OnSaveInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnSaveInstanceState/p/Android.OS.Bundle/) auf und übergibt eine [Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) , mit denen wir unsere instanzzustand zu speichern. Sie verwenden wir die um Anzahl der Klicks als ganzzahligen Wert zu speichern:
+Fügen Sie eine Methode `MainActivity` hinzu, um den Instanzzustand zu speichern. Bevor *Aktivität A* zerstört wird, ruft Android automatisch [onsaveinstancestate](xref:Android.App.Activity.OnSaveInstanceState*) auf und übergibt ein [Bündel](xref:Android.OS.Bundle) , mit dem wir den Instanzzustand speichern können. Wir verwenden es zum Speichern der Klick Anzahl als ganzzahliger Wert:
 
 ```csharp
 protected override void OnSaveInstanceState (Bundle outState)
@@ -140,7 +140,7 @@ protected override void OnSaveInstanceState (Bundle outState)
 }
 ```
 
-Wenn *Aktivität A* neu erstellt und fortgesetzt wird, ist Android übergibt diesen `Bundle` wieder unsere `OnCreate` Methode. Fügen Sie Code zum `OnCreate` zum Wiederherstellen der `_counter` Wert aus der übergebenen `Bundle`. Fügen Sie den folgenden Code unmittelbar vor der Zeile, in denen `clickbutton` definiert ist: 
+Wenn *Aktivität A* neu erstellt und fortgesetzt wird, übergibt Android `Bundle` diese wieder an `OnCreate` unsere Methode. Fügen Sie Code `OnCreate` hinzu, um den `_counter` Wert `Bundle`aus dem weiter gegebenen wiederherzustellen. Fügen Sie den folgenden Code direkt vor der Zeile `clickbutton` ein, in der definiert ist: 
 
 ```csharp
 if (bundle != null)
@@ -150,13 +150,12 @@ if (bundle != null)
 }
 ```
 
-Erstellen Sie und führen Sie die app erneut aus, und klicken Sie mehrmals auf die zweite Schaltfläche. Wenn wir das Gerät im Querformat drehen, wird die Anzahl die beibehalten.
+Erstellen Sie die APP erneut, und führen Sie Sie aus, und klicken Sie dann mehrmals auf die zweite Schaltfläche. Wenn wir das Gerät in den Querformat drehen, wird die Anzahl beibehalten.
 
-[![Drehen den Bildschirm zeigt die Anzahl von vier beibehalten](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
+[![Drehen des Bildschirms zeigt die Anzahl von vier beibehaltenen](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
+Sehen wir uns das Ausgabefenster an, um zu sehen, was passiert ist:
 
-Werfen wir einen Blick auf das Ausgabefenster ", was passiert ist:
-    
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnPause
 [ActivityLifecycle.MainActivity] Activity A - Saving instance state
@@ -167,19 +166,16 @@ Werfen wir einen Blick auf das Ausgabefenster ", was passiert ist:
 [ActivityLifecycle.MainActivity] Activity A - Recovered instance state
 [ActivityLifecycle.MainActivity] Activity A - OnStart
 [ActivityLifecycle.MainActivity] Activity A - OnResume
-``` 
+```
 
-Vor der [OnStop](https://developer.xamarin.com/api/member/Android.App.Activity.OnStop/) Methode wurde aufgerufen, unseres neuen `OnSaveInstanceState` Methode wurde aufgerufen, um das Speichern der `_counter` Wert in eine `Bundle`. Android übergeben dieser `Bundle` an uns, wenn sie aufgerufen unsere `OnCreate` -Methode, und wir waren in der Lage, verwendet es zum Wiederherstellen der `_counter` Wert an, wo wir aufgehört.
-
+Bevor die [onstoppt](xref:Android.App.Activity.OnStop) -Methode aufgerufen wurde, wurde `OnSaveInstanceState` die neue-Methode aufgerufen, `_counter` um den Wert `Bundle`in einem zu speichern. Android hat diese `Bundle` `OnCreate` Methode an uns zurückgegeben, als die Methode aufgerufen wurde, und wir konnten Sie verwenden, um `_counter` den Wert an der Stelle wiederherzustellen, an der wir aufgehört haben.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser exemplarischen Vorgehensweise haben wir Ihrer Kenntnisse der Aktivitätslebenszyklus verwendet, um Daten zu erhalten. 
-
-
+In dieser exemplentyp Anleitung haben wir unsere Kenntnisse des Aktivitäts Lebenszyklus verwendet, um Zustandsdaten beizubehalten.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [ActivityLifecycle (Beispiel)](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)
+- [Activitylifecycle (Beispiel)](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)
 - [Aktivitätslebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
-- [Android Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)
+- [Android-Aktivität](xref:Android.App.Activity)

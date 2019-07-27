@@ -1,43 +1,41 @@
 ---
-title: Schalter
-description: Verwenden Sie das Widget "Switch" in einer Xamarin.Android-Anwendung
+title: Xamarin. Android-Schalter
+description: Verwenden des switchwidgets in einer xamarin. Android-Anwendung
 ms.prod: xamarin
 ms.assetid: 6E1F3324-EC41-454A-AEC0-0208813C7E50
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: ef400aaa31992b577762ad695418b865882e2e2d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7ff10433ffe11965ccfb8c9a46a785b8cb0304e6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075764"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510173"
 ---
-# <a name="switch"></a>Schalter
+# <a name="xamarinandroid-switch"></a>Xamarin. Android-Schalter
 
-Die `Switch` Widget (siehe unten) ermöglicht Benutzern das Umschalten zwischen zwei Zuständen, z. B. auf oder deaktiviert. Die `Switch` Standardwert ist OFF. Das Widget ist in ihrer ON und OFF-Status dargestellt:
+Mit `Switch` dem Widget (unten dargestellt) kann ein Benutzer zwischen zwei Zuständen umschalten, z. b. ein-oder ausschalten. Der `Switch` Standardwert ist off. Das Widget wird unten in den Status "ein" und "aus" angezeigt:
 
-[![Screenshots von einem Switch-Widget und Status](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
+[![Screenshots eines switchwidgets in den Zuständen off und on](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
+## <a name="creating-a-switch"></a>Erstellen eines Schalters
 
-## <a name="creating-a-switch"></a>Erstellen einen Switch
-
-Um einen Switch zu erstellen, deklarieren Sie einfach eine `Switch` -Element im XML-Code wie folgt:
+Zum Erstellen eines Schalters deklarieren Sie `Switch` einfach ein-Element in XML wie folgt:
 
 ```xml
 <Switch android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 ```
 
-Dadurch wird einen grundlegende Switch erstellt, wie unten dargestellt:
+Dadurch wird ein einfacher Schalter erstellt, wie unten dargestellt:
 
-[![Bildschirmabbildung von Demo-App, die einen Switch im Zustand "OFF" anzeigen](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
+[![Screenshot der Demo-App, die einen Switch im Zustand "aus" anzeigt](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
+## <a name="changing-default-values"></a>Ändern von Standardwerten
 
-## <a name="changing-default-values"></a>Ändern der Standardwerte
-
-Der Text, den im Steuerelement angezeigt wird, für die ON und OFF gibt an, und der Standardwert sind konfigurierbar. Z. B. Damit wird den Switch standardmäßig auf ON, und Lesen Nein Ja/statt auf ein/aus, wir können festlegen, die `checked`, `textOn`, und `textOff` Attribute in den folgenden XML-Code.
+Sowohl der Text, den das Steuerelement für den Status ein und aus anzeigt, als auch der Standardwert sind konfigurierbar. Um z. b. für den Switch standardmäßig on und Read No/Yes anstelle von off/on festzulegen, können `checked`wir `textOn`die Attribute `textOff` , und im folgenden XML-Code festlegen.
 
 ```xml
 <Switch android:layout_width="wrap_content"
@@ -49,9 +47,9 @@ Der Text, den im Steuerelement angezeigt wird, für die ON und OFF gibt an, und 
 
 
 
-## <a name="providing-a-title"></a>Angabe eines Titels
+## <a name="providing-a-title"></a>Bereitstellen eines Titels
 
-Die `Switch` Widget unterstützt auch, einschließlich einer textbezeichnung durch Festlegen der `text` -Attribut wie folgt:
+Das `Switch` Widget unterstützt auch das Einschließen einer Text Bezeichnung, `text` indem das-Attribut wie folgt festgelegt wird:
 
 ```xml
 <Switch android:text="Is Xamarin.Android great?"
@@ -62,12 +60,12 @@ Die `Switch` Widget unterstützt auch, einschließlich einer textbezeichnung dur
         android:textOff="NO" />
 ```
 
-Dieses Markup wird der folgende Screenshot zeigt die zur Laufzeit:
+Dieses Markup erzeugt den folgenden Screenshot zur Laufzeit:
 
-[![Screenshot des Demo-app mit Text horizontal vor der Switch-widget](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
+[![Screenshot der Demo-App mit horizontaler Text vor dem switchwidget](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
-Wenn eine `Switch`des geändert wird, löst es eine `CheckedChange` Ereignis.
-Z. B. in den folgenden Code wir dieses Ereignis erfassen, und stellen eine `Toast` Widget mit einer Nachricht basierend auf der `isChecked` Wert `Switch`, die an den Ereignishandler übergeben wird, als Teil der `CompoundButton.CheckedChangeEventArg` Argument.
+Wenn ein `Switch`-Wert geändert wird, wird ein `CheckedChange` -Ereignis ausgelöst.
+`Toast` Im folgenden Code erfassen `isChecked` Siez`Switch`. b. dieses Ereignis und stellen ein Widget mit einer Nachricht auf Grundlage des Werts von dar, der als Teil des- ArgumentsandenEreignishandlerübermitteltwird.`CompoundButton.CheckedChangeEventArg`
 
 ```csharp
 Switch s = FindViewById<Switch> (Resource.Id.monitored_switch);
@@ -82,5 +80,5 @@ s.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SwitchDemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
-- [Registerkarte Layout-Tutorial](~/android/user-interface/layouts/tab-layout/index.md)
+- [Switchdemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
+- [Tutorial zur Registerkarten Layout](~/android/user-interface/layouts/tab-layout/index.md)

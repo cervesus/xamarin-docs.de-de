@@ -1,165 +1,165 @@
 ---
 title: Android 9 Pie
-description: Informationen zum Entwickeln von apps für Android mithilfe von Xamarin.Android 9-Kreis.
+description: Erfahren Sie, wie Sie mit xamarin. Android mit der Entwicklung von Apps für Android 9-Kreis beginnen.
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: e08324d5a905639e7ecd59bc4c7a5c0f02d0adfe
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 52141141ab525c7407fa2f3ff2dca749473b39c1
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61217935"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511452"
 ---
-# <a name="android-pie-features"></a>Android Kreis-Funktionen
+# <a name="android-pie-features"></a>Android-Kreis Features
 
-_Informationen zum Entwickeln von apps für Android mithilfe von Xamarin.Android 9-Kreis._
+_Erfahren Sie, wie Sie mit xamarin. Android mit der Entwicklung von Apps für Android 9-Kreis beginnen._
 
-[Android 9 Kreis](https://developer.android.com/about/versions/pie/) ist jetzt von Google verfügbar. Eine Reihe von neuen Funktionen und APIs in dieser Version vorgenommen werden, und viele davon sind erforderlich, in der neuesten Android-Geräte der neuen Hardwarefunktionen nutzen.
+Der [Android 9](https://developer.android.com/about/versions/pie/) -Kreis ist jetzt über Google verfügbar. In dieser Version werden eine Reihe neuer Features und APIs zur Verfügung gestellt, und viele davon sind erforderlich, um neue Hardwarefunktionen in den neuesten Android-Geräten nutzen zu können.
 
-![Android Kreis Hero-Bild](pie-images/01-android-p-logo.png)
+![Android-Kreis-Hero-Image](pie-images/01-android-p-logo.png)
 
-In diesem Artikel ist strukturiert, um Ihnen bei der Entwicklung von Xamarin.Android-apps für Android Kreis beim Einstieg helfen. Es wird erläutert, wie die erforderlichen Updates zu installieren, konfigurieren Sie das SDK und bereiten Sie vor einem Emulator oder Gerät zu Testzwecken. Außerdem bietet einen Überblick über die neuen Features in Android Kreis- und enthält Beispiel-Quellcode, das veranschaulicht, wie Sie einige der wichtigsten Features Android Kreis verwenden.
+Dieser Artikel ist für den Einstieg in die Entwicklung von xamarin. Android-Apps für Android-Kreis strukturiert. Darin wird erläutert, wie Sie die erforderlichen Updates installieren, das SDK konfigurieren und einen Emulator oder ein Gerät für Tests vorbereiten. Außerdem finden Sie hier einen Überblick über die neuen Features in Android-Kreis und einen Beispiel Quellcode, der veranschaulicht, wie einige der wichtigsten Android-Kreis Features verwendet werden.
 
-Xamarin.Android 9.0 bietet Unterstützung für Android Kreis. Weitere Informationen zu Xamarin.Android-Unterstützung für Android Kreis-, finden Sie unter den [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1) Anmerkungen zu dieser Version.
+Xamarin. Android 9,0 bietet Unterstützung für Android-Kreis. Weitere Informationen zur xamarin. Android-Unterstützung für Android-Kreis finden Sie in den Anmerkungen zu dieser Version von [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1) .
 
 ## <a name="requirements"></a>Anforderungen
 
-In der folgende Liste ist erforderlich, Android Kreis-Features in Xamarin-basierte apps verwenden:
+Die folgende Liste ist erforderlich, um die Android-Kreis Funktionen in xamarin-basierten apps zu verwenden:
 
-- **Visual Studio** &ndash; empfiehlt sich Visual Studio-2019.
-    Wenn Sie Visual Studio 2017 für Windows-Update für Visual Studio 2017 Version 15,8 oder höher verwenden. Aktualisieren Sie unter MacOS Visual Studio 2017 für Mac 7.6 oder höher.
+- **Visual Studio** &ndash; Visual Studio 2019 wird empfohlen.
+    Wenn Sie Visual Studio 2017 verwenden, unter Windows Update auf Visual Studio 2017 Version 15,8 oder höher. Aktualisieren Sie unter macOS auf Visual Studio 2017 für Mac, Version 7,6 oder höher.
 
-- **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 oder höher muss installiert sein, mit Visual Studio (Xamarin.Android wird automatisch installiert, als Teil der **Mobile Entwicklung mit .NET** Workload).
+- **Xamarin. Android** &ndash; xamarin. Android 9.0.0.17 oder höher muss mit Visual Studio installiert werden (xamarin. Android wird automatisch als Teil der Mobile- **Entwicklung mit .net** -Arbeitsauslastung installiert).
 
-- **Java Developer Kit** &ndash; Entwicklung mit Xamarin Android 9.0 erfordert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (oder Sie können versuchen, die Vorschau von Microsoft Verteilung der [OpenJDK](~/android/get-started/installation/openjdk.md)). JDK8 wird automatisch installiert, als Teil der **Mobile Entwicklung mit .NET** arbeitsauslastung.
+- **Java Developer Kit** Die Entwicklung von xamarin Android 9,0 erfordert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (oder Sie können die Vorschau der Microsoft-Distribution von [openjdk](~/android/get-started/installation/openjdk.md)testen). &ndash; JDK8 wird automatisch als Teil der Mobile- **Entwicklung mit .net** -Arbeitsauslastung installiert.
 
-- **Android SDK** &ndash; Android SDK-API-28 oder höher muss über den Android SDK Manager installiert werden.
+- **Android SDK** &ndash; Android SDK API 28 oder höher muss über den Android SDK-Manager installiert werden.
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Informationen zum Einstieg mit Xamarin.Android Android Pie-apps entwickeln, müssen Sie herunterladen und die neuesten Tools und SDK-Pakete installieren, bevor Sie Ihr erste Android Kreis-Projekt erstellen können:
+Um mit der Entwicklung von Android-Kreis-apps mit xamarin. Android zu beginnen, müssen Sie die neuesten Tools und SDK-Pakete herunterladen und installieren, bevor Sie Ihr erstes Android-kreisprojekt erstellen können:
 
-1. Visual Studio 2019 wird empfohlen. Wenn Sie Visual Studio 2017 verwenden, aktualisieren Sie auf [Visual Studio 2017 Version 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) oder höher. Wenn Sie Visual Studio für Mac verwenden, aktualisieren Sie auf [Visual Studio 2017 für Mac, Version 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) oder höher.
+1. Visual Studio 2019 wird empfohlen. Wenn Sie Visual Studio 2017 verwenden, aktualisieren Sie auf [Visual Studio 2017 Version 15,8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) oder höher. Wenn Sie Visual Studio für Mac verwenden, aktualisieren Sie auf [Visual Studio 2017 für Mac, Version 7,6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) oder höher.
 
-2. Installieren Sie **Android Pie (API-28)** -Pakete und Tools über den SDK-Manager.
+2. Installieren Sie Pakete und Tools für Android-Kreis **(API 28)** über den SDK-Manager.
 
-3. Erstellen eines neuen Xamarin.Android-Projekts, das als Ziel **Android 9.0**.
+3. Erstellen Sie ein neues xamarin. Android-Projekt, das auf **Android 9,0**abzielt.
 
-4. Konfigurieren Sie einen Emulator oder Gerät zum Testen von Android Pie-apps.
+4. Konfigurieren Sie einen Emulator oder ein Gerät zum Testen von Android-Kreis-apps.
 
 Jeder dieser Schritte wird in den folgenden Abschnitten erläutert:
 
 ### <a name="update-visual-studio"></a>Aktualisieren von Visual Studio 2017
 
-Visual Studio-2019 wird empfohlen, für das Erstellen von Android Pie-apps mit Xamarin.
+Visual Studio 2019 wird zum Entwickeln von Android-Kreis-apps mit xamarin empfohlen.
 
-Wenn Sie Visual Studio 2017 verwenden, aktualisieren Sie zu Visual Studio 2017 Version 15,8 oder höher (Anweisungen hierzu finden Sie unter [aktualisieren Visual Studio 2017 auf die neueste Version](https://docs.microsoft.com/visualstudio/install/update-visual-studio)). Aktualisieren Sie unter MacOS, Visual Studio 2017 für Mac 7.6 oder höher (Anweisungen hierzu finden Sie unter [Setup und installieren Sie Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation)).
+Wenn Sie Visual Studio 2017 verwenden, aktualisieren Sie auf Visual Studio 2017 Version 15,8 oder höher (Anweisungen dazu finden Sie unter [Aktualisieren von Visual Studio 2017 auf die neueste Version](https://docs.microsoft.com/visualstudio/install/update-visual-studio)). Aktualisieren Sie unter macOS auf Visual Studio 2017 für Mac 7,6 oder höher (Anweisungen finden Sie unter [Setup und Installation Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation)).
 
-### <a name="install-the-android-sdk"></a>Installieren Sie das Android SDK
+### <a name="install-the-android-sdk"></a>Installieren des Android SDK
 
-Zum Erstellen eines Projekts mit Xamarin.Android 9.0, müssen Sie zuerst den Android SDK Manager verwenden, installieren Sie die SDK-Plattform für **Android Pie (API-Ebene 28)** oder höher.
+Zum Erstellen eines Projekts mit xamarin. Android 9,0 müssen Sie zunächst den Android SDK-Manager verwenden, um die SDK-Plattform für Android-Kreis **(API-Ebene 28)** oder höher zu installieren.
 
-1. Starten Sie den SDK-Manager. Klicken Sie in Visual Studio auf **Tools > Android > Android SDK Manager**. Klicken Sie in Visual Studio für Mac auf **Extras > SDK-Manager**.
+1. Starten Sie den SDK-Manager. Klicken Sie in Visual Studio auf Extras **> Android-> Android SDK-Manager**. Klicken Sie in Visual Studio für Mac auf Extras **> SDK-Manager**.
 
-2. Klicken Sie in der unteren rechten Ecke, klicken Sie auf das Zahnradsymbol, und wählen Sie **Repository > Google (nicht unterstützt)**:
+2. Klicken Sie in der unteren rechten Ecke auf das Zahnrad Symbol, und wählen Sie **Repository > Google (nicht unterstützt)** :
 
-    [![Das Repository festlegen an Google](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [![Festlegen des Repository auf Google](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
-3. Installieren der **Android Kreis** SDK-Pakete, die als aufgelistet sind **Android SDK Platform-28** in die **Plattformen** Registerkarte (Weitere Informationen zur Verwendung des SDK-Managers finden Sie unter [ Android SDK-Installation](~/android/get-started/installation/android-sdk.md)):
+3. Installieren Sie die **Android** -Paket-SDK-Pakete, die auf der Registerkarte **Plattformen** als **Android SDK Plattform 28** aufgeführt sind. (Weitere Informationen zur Verwendung des SDK-Managers finden Sie unter [Android SDK Setup](~/android/get-started/installation/android-sdk.md).):
 
-    [![Installieren von Paketen für Android Kreis](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [![Installieren von Android-Kreis Paketen](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
-4. Wenn Sie einen Emulator verwenden, erstellen Sie ein virtuelles Gerät, unterstützt **-API-Ebene 28**. Weitere Informationen zum Erstellen von virtuellen Geräten finden Sie unter [Verwalten von virtuellen Geräten mit Android-Geräte-Manager](~/android/get-started/installation/android-emulator/device-manager.md).
+4. Wenn Sie einen Emulator verwenden, erstellen Sie ein virtuelles Gerät, das **API-Ebene 28**unterstützt. Weitere Informationen zum Erstellen von virtuellen Geräten finden Sie unter [Verwalten von virtuellen Geräten mit dem Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md).
 
-### <a name="start-a-xamarinandroid-project"></a>Ein Xamarin.Android-Projekt starten
+### <a name="start-a-xamarinandroid-project"></a>Starten eines xamarin. Android-Projekts
 
-Erstellen eines neuen Xamarin.Android-Projekts an. Wenn Sie die Android-Entwicklung mit Xamarin vertraut sind, finden Sie unter [Hallo, Android](~/android/get-started/hello-android/index.md) um weitere Informationen zum Erstellen von Xamarin.Android-Projekte.
+Erstellen Sie ein neues xamarin. Android-Projekt. Wenn Sie mit der Android-Entwicklung mit xamarin noch nicht vertraut sind, finden Sie unter [Hello, Android](~/android/get-started/hello-android/index.md) Weitere Informationen zum Erstellen von xamarin. Android-Projekten.
 
-Wenn Sie ein Android-Projekt erstellen, müssen Sie die versionseinstellungen Ziel Android 9.0 oder höher konfigurieren. Z. B. um das Projekt für Android Kreis als Ziel festzulegen, müssen Sie konfigurieren die Android-API-Zielebene des Projekts in **Android 9.0** (28-API). Es wird empfohlen, dass Sie auch Ihr Zielframework Level-API-28 oder höher festlegen. Weitere Informationen zum Konfigurieren von Android-API-Ebenen finden Sie unter [Understanding Android API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
+Wenn Sie ein Android-Projekt erstellen, müssen Sie die Versions Einstellungen so konfigurieren, dass Sie Android 9,0 oder höher als Ziel haben. Wenn Sie z. b. Ihr Projekt für Android-Kreis als Ziel festlegen möchten, müssen Sie die Android-API-Ziel Ebene Ihres Projekts auf **Android 9,0** (API 28) konfigurieren. Es wird empfohlen, dass Sie auch die zielframeworkebene auf API 28 oder höher festlegen. Weitere Informationen zum Konfigurieren von Android-API-Ebenen finden Sie unter [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md).
 
 
-### <a name="configure-a-device-or-emulator"></a>Konfigurieren von einem Gerät oder emulator
+### <a name="configure-a-device-or-emulator"></a>Konfigurieren eines Geräts oder Emulators
 
-Wenn Sie z. B. eine Nexus oder eines Pixels ein physisches Gerät verwenden, können Sie Ihr Gerät zum Android Kreis aktualisieren, mithilfe der Anweisungen in [Factory Images für Nexus und Pixel-Geräte](https://developers.google.com/android/images).
+Wenn Sie ein physisches Gerät, z. b. einen Nexus oder ein Pixel, verwenden, können Sie Ihr Gerät mit dem Android-Kreis aktualisieren, indem Sie die Anweisungen unter [Factory-Images für Nexus-und Pixel-Geräte](https://developers.google.com/android/images)befolgen.
 
-Wenn Sie einen Emulator verwenden, Erstellen eines virtuellen Geräts für API-Ebene 28, und wählen Sie ein Image X86-basierten. Weitere Informationen zur Verwendung von Android-Geräte-Manager zum Erstellen und Verwalten von virtuellen Geräten finden Sie unter [Verwalten von virtuellen Geräten mit Android-Geräte-Manager](~/android/get-started/installation/android-emulator/device-manager.md).
-Weitere Informationen zur Verwendung von Android-Emulator zum Testen und Debuggen, finden Sie unter [Debuggen auf Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
+Wenn Sie einen Emulator verwenden, erstellen Sie ein virtuelles Gerät für API-Ebene 28, und wählen Sie ein x86-basiertes Abbild aus. Informationen zur Verwendung der Android Device Manager zum Erstellen und Verwalten von virtuellen Geräten finden Sie unter [Verwalten von virtuellen Geräten mit dem Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md).
+Weitere Informationen zum Verwenden des Android-Emulators zum Testen und Debuggen finden Sie unter [Debugging auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
 
 
 
 ## <a name="new-features"></a>Neue Funktionen
 
-Android Kreis wird eine Vielzahl neuer Features eingeführt. Einige dieser neuen Features sollen nutzen, neue Hardwarefunktionen, die von der neuesten Android-Geräte bereitgestellt werden, während andere entworfen werden, um die Android-benutzerfreundlichkeit weiter zu verbessern:
+Mit dem Android-Kreis wird eine Reihe neuer Features eingeführt. Einige dieser neuen Features sind darauf ausgelegt, neue Hardwarefunktionen zu nutzen, die von den neuesten Android-Geräten angeboten werden, während andere die Benutzer Funktionalität von Android weiter verbessern können:
 
--   **Anzeigeunterstützung Ausschnitt** &ndash; bietet APIs, um den Speicherort und die Form des finden die _Ausschnitt_ am oberen Rand des Bildschirms auf neueren Android-Geräten.
+-   **Unterstützung für Ausschneide Anzeige** Stellt APIs bereit, um den Speicherort und die Form des Ausschneide Fensters auf neueren Android-Geräten im oberen Bildschirmbereich zu finden.  &ndash;
 
--   **Verbesserungen der Benachrichtigung** &ndash; können jetzt Benachrichtigungen anzeigen, Bilder und ein neues `Person` Klasse wird verwendet, um die Teilnehmer der Konversation zu vereinfachen.
+-   **Benachrichtigungs Erweiterungen** Benachrichtigungs Meldungen können jetzt Bilder anzeigen, und eine `Person` neue Klasse wird verwendet, um Konversations Teilnehmer zu vereinfachen. &ndash;
 
--   **Ruhiges Positionierung** &ndash; Neuheit Unterstützung für das WLAN-Round-Trip-Zeit-Protokoll, das apps über WiFi-Geräte für die Navigation in ruhiges Einstellungen ermöglicht.
+-   **Innen Positionierung** &ndash; Platt Form Unterstützung für das WLAN-Roundtrip-Zeitprotokoll, das es Apps ermöglicht, WiFi-Geräte für die Navigation in den Einstellungen von innen zu verwenden.
 
--   **Unterstützung für Multi-Kamera** &ndash; gleichzeitig bietet die Möglichkeit in Streams für den Zugriff von mehreren physischen Kameras (z. B. Dual-Front "und" Dual-Back-Kameras).
+-   **Unterstützung für mehrere Kameras** &ndash; Bietet die Möglichkeit, gleichzeitig von mehreren physischen Kameras aus auf Streams zuzugreifen (z. b. Dual-Front-und Dual-Back-Kameras).
 
 
-In den folgenden Abschnitten markieren diese Funktionen und angeben, dass die Nutzung in Ihrer app kurze Codebeispiele können Sie beginnen.
+In den folgenden Abschnitten werden diese Features hervorgehoben und kurze Codebeispiele bereitgestellt, die Ihnen bei der Verwendung in Ihrer APP helfen.
 
-### <a name="display-cutout-support"></a>Ausschnitt anzeigeunterstützung
+### <a name="display-cutout-support"></a>Unterstützung für Ausschneide Anzeige
 
-Viele neuere Android-Geräte mit Edge-to-Edge-Bildschirme sind eine *Ausschnitt anzeigen* (oder "Kerbe") am oberen Rand der Anzeige der Kamera und hält Vorträge.
-Der folgende Screenshot enthält ein Beispiel für Emulator einen Ausschnitt:
+Viele neuere Android-Geräte mit Edge-to-Edge-Bildschirmen verfügen am oberen Rand der Anzeige für Kamera und Redner über einen Bildschirm zum *anzeigen* .
+Der folgende Screenshot zeigt ein emulatorbeispiel für einen Ausschnitt:
 
-[![Android-Emulator simuliert einen Ausschnitt](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
+[![Android-Emulator, der einen Ausschnitt simuliert](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
-Um zu verwalten wie Ihre app-Fenster seinen Inhalt auf Geräten mit einem Display-Ausschnitt zeigt, Android Kreis wurde hinzugefügt, ein neues [LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode) Fenster Layout-Attribut. Dieses Attribut kann auf einen der folgenden Werte festgelegt werden:
+Um zu verwalten, wie Ihr App-Fenster seinen Inhalt auf Geräten anzeigt, auf denen ein Ausschnitt angezeigt wird, hat Android-Kreis ein neues [layoutunbestrilaycutoutmode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode) -Fenster Layout-Attribut hinzugefügt. Dieses Attribut kann auf einen der folgenden Werte festgelegt werden:
 
--   [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; Fenster ist nie zulässig Ausschnitt Bereich überschneiden.
+-   [Layoutunbestrilaycutoutmumuever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; Das Fenster darf sich niemals mit dem Ausschneide Bereich überlappen.
 
--   [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; Fenster in den Bereich der Ausschnitt jedoch nur an der kurzen Kante des Bildschirms erweitern können. 
+-   [Layoutunbestreitlaycutoutmodeshortedges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; Das Fenster darf nur auf den kurzen Rand des Bildschirms in den Ausschneide Bereich ausgedehnt werden. 
 
--   [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; Fenster kann in den Bereich der Ausschnitt erweitert werden soll, wenn der Ausschnitt in einer Systemleiste enthalten ist.
+-   [Layoutunbestreitlaycutoutmodedefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; Das Fenster kann in den Ausschneide Bereich erweitert werden, wenn das Ausschneide in einer Systemleiste enthalten ist.
 
-Um zu verhindern, dass das app-Fenster überschneidet sich mit den Ausschnitt-Bereich, legen Sie beispielsweise den Ausschnitt Layoutmodus auf *nie*: 
+Um beispielsweise zu verhindern, dass sich das Fenster der APP mit dem Ausschneide Bereich überschneidet, legen Sie den layoutausschneide Modus auf *nie*fest: 
 
 ```csharp
 Window.Attributes.LayoutInDisplayCutoutMode =
     Android.Views.LayoutInDisplayCutoutMode.Never;
 ```
 
-Die folgenden Beispiele enthalten Beispiele für diesen Ausschnitt-Modi. Der erste Screenshot auf der linken Seite ist für die app im nicht-Vollbildmodus. Im Screenshot Center ist die app wechselt Vollbild-mit `LayoutInDisplayCutoutMode` festgelegt `LayoutInDisplayCutoutModeShortEdges`. Beachten Sie, dass es sich bei der app weißer Hintergrund in den Anzeigebereich der Ausschnitt erweitert:
+In den folgenden Beispielen werden Beispiele für diese Ausschneide Modi bereitgestellt. Der erste Screenshot auf der linken Seite befindet sich in der APP im nicht Vollbildmodus. Im Mittelpunkt des Screenshots wird die APP Vollbildmodus, `LayoutInDisplayCutoutMode` wobei auf `LayoutInDisplayCutoutModeShortEdges`festgelegt ist. Beachten Sie, dass sich der weiße Hintergrund der APP auf den Bereich Anzeige Ausschnitt erstreckt:
 
-[![Beispiel Anzeigemodi Ausschnitt im emulator](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[![Beispiel für das Anzeigen von Ausschneide Modi im Emulator](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
-Im letzten Screenshot (oben auf der rechten Seite), `LayoutInDisplayCutoutMode` nastaven NA hodnotu `LayoutInDisplayCutoutModeShortNever` vor zum Vollbildmodus gewechselt wird.
-Beachten Sie, dass der app weißer Hintergrund darf nicht auf den Anzeigebereich der Ausschnitt erweitert.
+Im abschließenden Screenshot (oben rechts) wird auf `LayoutInDisplayCutoutMode` `LayoutInDisplayCutoutModeShortNever` festgelegt, bevor es in den Vollbildmodus wechselt.
+Beachten Sie, dass der weiße Hintergrund der APP nicht in den Bereich für die Anzeige Ausschnitte erweitert werden darf.
 
-Wenn Sie ausführlichere Informationen zu den Ausschnitt-Bereich auf dem Gerät benötigen, können Sie die neue [DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html) Klasse. `DisplayCutout` Stellt den Bereich der Anzeige, die verwendet werden kann, um Inhalt anzuzeigen. Sie können diese Informationen verwenden, um die Position und Form der Ausschnitt abzurufen, damit Ihre app nicht versucht, Inhalt in diesem Bereich nicht funktionsbezogenen angezeigt.
+Wenn Sie ausführlichere Informationen zum Ausschneide Bereich auf dem Gerät benötigen, können Sie die neue [displaycutout](https://developer.android.com/reference/android/view/DisplayCutout.html) -Klasse verwenden. `DisplayCutout`stellt den Bereich der Anzeige dar, der nicht zum Anzeigen von Inhalt verwendet werden kann. Sie können diese Informationen verwenden, um den Speicherort und die Form des Ausschneide Bereichs abzurufen, sodass Ihre APP nicht versucht, Inhalt in diesem nicht Funktionsbereich anzuzeigen.
 
-Weitere Informationen zu den neuen Ausschnitt-Features in Android P, finden Sie unter [Ausschnitt Anzeigeunterstützung](https://developer.android.com/about/versions/pie/android-9.0#cutout).
+Weitere Informationen zu den neuen Ausschneide Features in Android P finden Sie [unter Unterstützung der Ausschneide](https://developer.android.com/about/versions/pie/android-9.0#cutout)Funktion.
 
 
 
-### <a name="notifications-enhancements"></a>Verbesserungen für Benachrichtigungen
+### <a name="notifications-enhancements"></a>Benachrichtigungs Erweiterungen
 
-Android Kreis führt die folgenden Verbesserungen messaging verbessern:
+Der Android-Kreis bietet die folgenden Verbesserungen, um das Messaging zu verbessern:
 
--   Benachrichtigungskanäle (eingeführt in [Android Oreo](~/android/platform/oreo.md)) unterstützt jetzt die Blockierung des Channel-Gruppen.
+-   Benachrichtigungs Kanäle (eingeführt in [Android Oreo](~/android/platform/oreo.md)) unterstützen jetzt das Blockieren von Kanalgruppen.
 
--   Das Benachrichtigungssystem verfügt über drei neue-Not-stören Kategorien (Priorisieren von Alarmen, Systemsounds und Medien). Darüber hinaus stehen sieben neue-Not-stören Modi, die mit dem visual Unterbrechungen (z. B. Badges, Benachrichtigung Beleuchtung, Status Leiste Darstellungen und Vollbild-Aktivitäten starten) unterdrückt werden können.
+-   Das Benachrichtigungssystem verfügt über drei neue, nicht störende Kategorien (Priorisieren von Alarmen, Systemsounds und Medienquellen). Außerdem gibt es sieben neue do-not-stört-Modi, die verwendet werden können, um visuelle Unterbrechungen (z. b. Abzeichen, Benachrichtigungs Beleuchtung, Status leisten Auftritte und das Starten von voll Bild Aktivitäten) zu unterdrücken.
 
--   Ein neues [Person](https://developer.android.com/reference/android/app/Person.html) -Klasse wurde hinzugefügt, die den Absender einer Nachricht darstellt. Diese Klasse hilft, die um das Rendern von jede Benachrichtigung zu optimieren, indem Sie in einer Konversation (einschließlich ihrer Avatare und URIs) beteiligten Personen zu identifizieren.
+-   Eine neue [Person](https://developer.android.com/reference/android/app/Person.html) -Klasse wurde hinzugefügt, um den Absender einer Nachricht darzustellen. Mit dieser Klasse können Sie das Rendering der einzelnen Benachrichtigungen optimieren, indem Sie die an einer Konversation beteiligten Personen (einschließlich ihrer Avatare und URIs) identifizieren.
 
--   Benachrichtigungen können Images jetzt anzeigen. 
+-   Benachrichtigungen können jetzt Bilder anzeigen. 
 
-Das folgende Beispiel veranschaulicht, wie Sie die neuen APIs verwenden, um eine Benachrichtigung generieren, die ein Bild enthält. In den folgenden Screenshots eine SMS-Benachrichtigung gesendet wird und eine Benachrichtigung mit der ein eingebettetes Bild folgt. Die zweite Benachrichtigung wird vergrößert, wenn die Benachrichtigungen erweitert werden, (wie auf der rechten Seite dargestellt), wird der Text von der ersten Benachrichtigung angezeigt, und das Bild in eingebetteten:
+Im folgenden Beispiel wird veranschaulicht, wie die neuen APIs verwendet werden, um eine Benachrichtigung zu generieren, die ein Bild enthält. In den folgenden Screenshots wird eine Text Benachrichtigung gesendet, auf die eine Benachrichtigung mit einem eingebetteten Bild folgt. Wenn die Benachrichtigungen erweitert werden (wie auf der rechten Seite angezeigt), wird der Text der ersten Benachrichtigung angezeigt, und das in der zweiten Benachrichtigung eingebettete Bild wird vergrößert:
 
-[![Beispiel-Benachrichtigung mit Bild](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[![Beispiel Benachrichtigung mit Image](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
-Das folgende Beispiel veranschaulicht, wie Sie ein Bild in einer Benachrichtigung Android Kreis enthalten, und es veranschaulicht die Verwendung der neuen `Person` Klasse:
+Im folgenden Beispiel wird veranschaulicht, wie Sie ein Bild in eine Android-Kreis Benachrichtigung einschließen und die Verwendung der neuen `Person` Klasse veranschaulichen:
 
-1. Erstellen Sie eine `Person` -Objekt, den Absender darstellt. Z. B. Name und das Symbol des Senders befinden sich im `fromPerson`:
+1. Erstellen Sie `Person` ein-Objekt, das den Absender darstellt. Der Name und das Symbol des Absenders sind z. b `fromPerson`. in enthalten:
 
     ```csharp
     Icon senderIcon = Icon.CreateWithResource(this, Resource.Drawable.sender_icon);
@@ -169,8 +169,8 @@ Das folgende Beispiel veranschaulicht, wie Sie ein Bild in einer Benachrichtigun
         .Build();
     ```
 
-2. Erstellen Sie eine `Notification.MessagingStyle.Message` , enthält das Bild, das senden möchten, übergeben das Bild, das die neue [Notification.MessagingStyle.Message.SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri) Methode.
-   Zum Beispiel:
+2. Erstellen Sie `Notification.MessagingStyle.Message` eine, die das zu sendende Bild enthält, und übergeben Sie das Bild an die neue [Notification. messagingstyle. Message. SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri) -Methode.
+   Beispiel:
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");
@@ -179,14 +179,14 @@ Das folgende Beispiel veranschaulicht, wie Sie ein Bild in einer Benachrichtigun
             .SetData("image/", imageUri);
     ```
 
-3. Fügen Sie die Nachricht an eine `Notification.MessagingStyle` Objekt. Zum Beispiel:
+3. Fügen Sie die Nachricht einem `Notification.MessagingStyle` -Objekt hinzu. Beispiel:
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
             .AddMessage(message);
     ```
 
-4. Schließen Sie dieses Format, in der Benachrichtigung-Generator. Zum Beispiel:
+4. Binden Sie diesen Stil in den Benachrichtigungs-Generator ein. Beispiel:
 
     ```csharp
     builder = new Notification.Builder(this, MY_CHANNEL)
@@ -197,7 +197,7 @@ Das folgende Beispiel veranschaulicht, wie Sie ein Bild in einer Benachrichtigun
         .SetChannelId(MY_CHANNEL);
     ```
 
-5. Veröffentlichen Sie die Benachrichtigung ein. Zum Beispiel:
+5. Veröffentlichen Sie die Benachrichtigung. Beispiel:
 
     ```csharp
     const int notificationId = 1000;
@@ -207,64 +207,64 @@ Das folgende Beispiel veranschaulicht, wie Sie ein Bild in einer Benachrichtigun
 Weitere Informationen zum Erstellen von Benachrichtigungen finden Sie unter [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md).
 
 
-### <a name="indoor-positioning"></a>Ruhiges Positionierung
+### <a name="indoor-positioning"></a>Innen Positionierung
 
-Android Kreis bietet Unterstützung für IEEE 802.11mc (auch bekannt als _WiFi Round-Trip-Zeit_ oder _WiFi RTT_), wodurch es möglich, für apps, um die Entfernung zu einem zu erkennen oder weitere Wi-Fi-Zugriffspunkte. Mithilfe dieser Informationen kann für Ihre app nutzen *ruhiges Positionierung* mit einer Genauigkeit von ein bis zwei Verbrauchseinheiten. Auf Android-Geräten, die für IEEE 801.11mc Hardware unterstützen, kann Ihre app Navigationsfunktionen, z. B. standortbasierte-Steuerelement von smarten Geräten über autonomes oder Turn-von-Turn-Anweisungen über eine Store anbieten:
+Android-Kreis bietet Unterstützung für IEEE 802.11 MC (auch bekannt als _WiFi Round-Trip-Time_ oder _WiFi RTT_). Dadurch können Apps die Entfernung zu einem oder mehreren WLAN-Zugriffs Punkten erkennen. Mithilfe dieser Informationen ist es möglich, dass Ihre APP die *innen Positionierung* mit einer Genauigkeit von bis zu zwei Metern nutzt. Auf Android-Geräten, die Hardwareunterstützung für IEEE 801.11 MC bereitstellen, kann Ihre APP Navigations Features wie z. b. die standortbasierte Steuerung von intelligenten Geräten oder eine Reihe von Anweisungen in einem Store anbieten:
 
-[![Beispiel für ruhiges Navigation, die über WiFi RTT](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[![Beispiel für die Navigation im Innenbereich mithilfe von WiFi RTT](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
-Die neue [WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager) Klasse und mehrere Hilfsklassen, bietet die Möglichkeit zum Messen der Entfernung für Wi-Fi-Geräte. Weitere Informationen zu den ruhiges positionierungs-APIs, die in Android P eingeführt wurden, finden Sie unter [Android.Net.Wifi.Rtt](https://developer.android.com/reference/android/net/wifi/rtt/package-summary).
+Die neue [wifirttmanager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager) -Klasse und mehrere Hilfsklassen bieten die Mittel zum Messen der Entfernung zu WLAN-Geräten. Weitere Informationen zu den in Android P eingeführten APIs für die innen Positionierung finden Sie unter [Android .net. WiFi. RTT](https://developer.android.com/reference/android/net/wifi/rtt/package-summary).
 
 
-### <a name="multi-camera-support"></a>Multi-Kamera-Unterstützung
+### <a name="multi-camera-support"></a>Unterstützung für mehrere Kameras
 
-Viele neuere Android-Geräte haben Dual-Front "und/oder" Dual-Back-Kameras, die nützlich für Features wie Stereo Bildanalyse, verbesserte visuelle Effekte und verbesserte Zoom-Funktion sind. Android P wird ein neuer [Multi-Kamera](https://developer.android.com/about/versions/pie/android-9.0#camera) -API, die Ihre app ermöglicht ein *logische Kamera* (oder *logische Multi-Kamera*), basiert auf zwei oder mehr physische Kameras.
-Um zu bestimmen, ob das Gerät eine logische Multi-Kamera unterstützt, sehen Sie sich die Funktionen von jede Kamera auf dem Gerät, um festzustellen, ob es unterstützt [RequestAvailableCapabilitiesLogicalMultiCamera](https://developer.android.com/reference/android/hardware/camera2/CameraMetadata#REQUEST_AVAILABLE_CAPABILITIES_LOGICAL_MULTI_CAMERA).
+Viele neuere Android-Geräte verfügen über Dual-Front-und/oder-Dual-Back-Kameras, die für Funktionen wie Stereo Vision, verbesserte visuelle Effekte und verbesserte Zoomfunktion nützlich sind. Android P führt eine neue [Multi-Kamera](https://developer.android.com/about/versions/pie/android-9.0#camera) -API ein, die es Ihrer APP ermöglicht, eine *logische Kamera* (oder eine *logische Multikamera*) zu verwenden, die von mindestens zwei physischen Kameras unterstützt wird.
+Um festzustellen, ob das Gerät eine logische Multikamera unterstützt, können Sie die Funktionen der einzelnen Kameras auf dem Gerät überprüfen, um festzustellen, ob es [requestavailablecapabilitieslogicalmulticamera](https://developer.android.com/reference/android/hardware/camera2/CameraMetadata#REQUEST_AVAILABLE_CAPABILITIES_LOGICAL_MULTI_CAMERA)unterstützt.
 
-Android Kreis enthält auch eine neue [SessionConfiguration](https://developer.android.com/reference/android/hardware/camera2/params/SessionConfiguration.html) -Klasse, die zum Reduzieren Verzögerungen bei der ersten Erfassung und ist somit überflüssig zu starten, und starten die Kamera-Datenstrom verwendet werden kann.
+Der Android-Kreis umfasst auch eine neue [SessionConfiguration](https://developer.android.com/reference/android/hardware/camera2/params/SessionConfiguration.html) -Klasse, die verwendet werden kann, um Verzögerungen während der ersten Erfassung zu verringern und das Starten und Starten des Kameradaten Stroms zu vermeiden.
 
-Weitere Informationen zu Multi-Kamera-Unterstützung in Android P, finden Sie unter [Multi-Kamera-Unterstützung und Kamera Updates](https://developer.android.com/about/versions/pie/android-9.0#camera).
+Weitere Informationen zur Unterstützung mehrerer Kameras in Android P finden Sie [unter Unterstützung mehrerer Kameras und Kamera Updates](https://developer.android.com/about/versions/pie/android-9.0#camera).
 
 
 ### <a name="other-features"></a>Weitere Funktionen
 
-Darüber hinaus unterstützt Android Kreis-, mehrere neue Features:
+Außerdem unterstützt Android-Kreis eine Reihe weiterer neuer Features:
 
--   Die neue [AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html) -Klasse, die zum Zeichnen und Anzeigen von animierten Bildern verwendet werden kann.
+-   Die neue [animatedimagedrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html) -Klasse, die zum Zeichnen und anzeigen animierter Bilder verwendet werden kann.
 
--   Ein neues [ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) -Klasse, die ersetzt `BitmapFactory`. `ImageDecoder` kann verwendet werden, um die Decodierung einer `AnimatedImageDrawable`.
+-   Eine neue [imagedecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) -Klasse, `BitmapFactory`die ersetzt. `ImageDecoder`kann verwendet werden, um eine `AnimatedImageDrawable`zu decodieren.
 
--   Images für HDR (hoch dynamischen Bereich)-Video und HEIF (hohe Effizienz Image File Format) unterstützt.
+-   Unterstützung für Video-und heif-Bilder (High Efficiency Image File Format) für HDR (Hochdynamisches Bereich).
 
--   Die [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html) wurde verbessert, um intelligentere netzwerkbezogener Aufträge zu verarbeiten. Die neue [GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29) Methode der [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters) -Klasse gibt das beste Netzwerk für die Durchführung jeder netzwerkanforderungen für einen bestimmten Auftrag zurück.
+-   [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html) wurde verbessert, um netzwerkbezogene Aufträge intelligenter verarbeiten zu können. Die neue [getnetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29) -Methode der [jobparameters](https://developer.android.com/reference/android/app/job/JobParameters) -Klasse gibt das beste Netzwerk zum Ausführen beliebiger Netzwerk Anforderungen für einen bestimmten Auftrag zurück.
 
-Weitere Informationen über die neuesten Android Kreis-Features finden Sie unter [Android 9-Funktionen und APIs](https://developer.android.com/about/versions/pie/android-9.0).
+Weitere Informationen zu den neuesten Android-Kreis Features finden Sie unter [Android 9 Features und APIs](https://developer.android.com/about/versions/pie/android-9.0).
 
 
 ## <a name="behavior-changes"></a>Verhaltensänderungen
 
-Wenn die Android-Zielversion auf API-Ebene 28 festgelegt ist, sind mehrere plattformänderungen, die das Verhalten Ihrer app auswirken können, selbst wenn Sie nicht die neuen Features, die oben beschriebenen implementieren. Die folgende Liste enthält eine kurze Zusammenfassung dieser Änderungen:
+Wenn die Android-Ziel Version auf API-Ebene 28 festgelegt ist, gibt es mehrere Platt Formänderungen, die sich auf das Verhalten Ihrer APP auswirken können, auch wenn Sie die oben beschriebenen neuen Features nicht implementieren. Die folgende Liste stellt eine kurze Zusammenfassung dieser Änderungen dar:
 
--  Apps müssen die Vordergrund-Berechtigung vor der Verwendung von vordergrunddienste jetzt anfordern.
+-  Apps müssen jetzt die Vordergrund Berechtigung anfordern, bevor Sie Vordergrund Dienste verwenden.
 
--  Wenn Ihre Anwendung mehr als einem Prozess verfügt, kann nicht es Freigeben eines einzelnen [WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) Datenverzeichnis zwischen Prozessen.
+-  Wenn Ihre APP mehr als einen Prozess umfasst, kann Sie ein einzelnes [WebView](xref:Android.Webkit.WebView) -Datenverzeichnis nicht Prozess übergreifend freigeben.
 
--  Direkten Zugriff auf eine andere app-Datenverzeichnis anhand des Pfads ist nicht mehr zulässig.
+-  Der direkte Zugriff auf das Datenverzeichnis einer anderen APP über den Pfad ist nicht mehr zulässig.
 
-Weitere Informationen zu verhaltensänderungen für apps für Android-P, finden Sie unter [Verhaltensänderungen](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps).
+Weitere Informationen zu Verhaltensänderungen für apps, die auf Android P abzielen, finden Sie unter [Verhaltensänderungen](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps).
 
 
 ## <a name="sample-code"></a>Beispielcode
 
-[AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo) ist eine Xamarin.Android-Beispiel-app für Android Kreis, die zeigt, wie Ausschnitt Anzeigemodi festgelegt wie für die Verwendung der neuen `Person` -Klasse, und wie Sie eine Benachrichtigung zu senden, die ein Bild enthält.
+[Androidpminidemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo) ist eine xamarin. Android-Beispiel-App für Android, die veranschaulicht, wie die Anzeige Ausschneide Modi festgelegt werden, `Person` wie die neue Klasse verwendet wird und wie eine Benachrichtigung gesendet wird, die ein Bild enthält.
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel eingeführt Android Kreis- und erläutert, wie zum Installieren und konfigurieren die neuesten Tools und Pakete für Xamarin.Android-Entwicklung mit Android Kreis. Sie haben einen Überblick über die wichtigsten Features in Android Kreis-und mit Beispiel-Quellcode für mehrere dieser Features bereitgestellt.
-Sie enthalten Links zur Dokumentation der API und erste Schritte mit Android Developer-Themen, die Sie unterstützen das Erstellen von apps für Android Kreis. Sie markiert auch die wichtigsten Android Kreis verhaltensänderungen, die vorhandene apps auswirken können.
+In diesem Artikel wurde Android-Kreis vorgestellt und erläutert, wie die neuesten Tools und Pakete für die xamarin. Android-Entwicklung mit dem Android-Kreis installiert und konfiguriert werden. Er bietet einen Überblick über die wichtigsten Features, die in Android-Kreis verfügbar sind, mit Beispiel Quellcode für einige dieser Features.
+Es enthält Links zu API-Dokumentation und Android-Entwickler Themen, die Ihnen den Einstieg in das Erstellen von Apps für Android-Kreis erleichtern. Außerdem wurden die wichtigsten Änderungen am Android-Kreis Verhalten hervorgehoben, die sich auf vorhandene apps auswirken können.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android 9 Kreis](https://developer.android.com/about/versions/pie/)
+- [Android 9-Kreis](https://developer.android.com/about/versions/pie/)

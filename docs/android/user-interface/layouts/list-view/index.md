@@ -1,49 +1,44 @@
 ---
-title: Verwenden die ListView in Xamarin.Android
-description: ListView ist eine wichtige Benutzeroberflächenkomponente von Android-Anwendungen. Sie wird überall aus kurzen Listen von Menüoptionen zu lange Listen mit Kontakten oder Internet-Favoriten verwendet. Es bietet eine einfache Möglichkeit, eine bildlauffähigen Liste mit Zeilen vorhanden, die entweder werden mit einer integrierten Formatvorlage formatiert oder können umfassend angepasst werden.
+title: Verwenden von ListView in xamarin. Android
+description: ListView ist eine wichtige Benutzeroberflächen Komponente von Android-Anwendungen. Sie wird überall von kurzen Listen mit Menü Optionen zu langen Listen von Kontakten oder Internet Favoriten verwendet. Es bietet eine einfache Möglichkeit, eine Bildlauf-Liste mit Zeilen darzustellen, die entweder mit einem integrierten Stil formatiert oder ausgiebig angepasst werden können.
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 2560a451f3a6e7dd09b687f9db8c0c070598def6
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 653b6e3d41f9acb4ee3e9ee3626e72220687ccb8
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740658"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510103"
 ---
-# <a name="listview"></a>ListView
+# <a name="xamarinandroid-listview"></a>Xamarin. Android-ListView
 
-_ListView ist eine wichtige Benutzeroberflächenkomponente von Android-Anwendungen. Sie wird überall aus kurzen Listen von Menüoptionen zu lange Listen mit Kontakten oder Internet-Favoriten verwendet. Es bietet eine einfache Möglichkeit, eine bildlauffähigen Liste mit Zeilen vorhanden, die entweder werden mit einer integrierten Formatvorlage formatiert oder können umfassend angepasst werden._
-
+_ListView ist eine wichtige Benutzeroberflächen Komponente von Android-Anwendungen. Sie wird überall von kurzen Listen mit Menü Optionen zu langen Listen von Kontakten oder Internet Favoriten verwendet. Es bietet eine einfache Möglichkeit, eine Bildlauf-Liste mit Zeilen darzustellen, die entweder mit einem integrierten Stil formatiert oder ausgiebig angepasst werden können._
 
 ## <a name="overview"></a>Übersicht
 
-Listenansichten und Adapter sind in die grundlegenden Bausteine von Android-Anwendungen enthalten. Die `ListView` Klasse bietet eine flexible Möglichkeit zur Darstellung der Daten, ob es sich um eine kurze Menü oder einer langen scrollliste ist. Es bietet nützliche Funktionen wie schnell der Bildlauf, Indizes und einfach- oder Mehrfachauswahl können Sie Mobilgeräte Benutzeroberflächen für Ihre Anwendungen zu erstellen. Eine `ListView`-Instanz erfordert einen *Adapter*, um sie mit in Zeilenansichten enthaltenen Daten zu füllen.
+Listenansichten und Adapter sind in den grundlegendsten Bausteine von Android-Anwendungen enthalten. Die `ListView` -Klasse bietet eine flexible Möglichkeit zum Darstellen von Daten, unabhängig davon, ob es sich um ein kurzes Menü oder eine lange scrollliste handelt. Es bietet Nutzbarkeits Features wie schnelles Scrollen, Indizes und eine einfache oder mehrfache Auswahl, die Sie beim Erstellen von benutzerfreundlichen Benutzeroberflächen für Ihre Anwendungen unterstützen. Eine `ListView`-Instanz erfordert einen *Adapter*, um sie mit in Zeilenansichten enthaltenen Daten zu füllen.
 
-Dieses Handbuch wird erläutert, wie implementieren `ListView` und die verschiedenen `Adapter` Klassen in Xamarin.Android. Außerdem wird veranschaulicht, wie die Darstellung anpassen einer `ListView`, und erläutert die Bedeutung der Zeile erneut zu verwenden, um die arbeitsspeichernutzung zu verringern. Es gibt auch eine Erläuterung der Auswirkungen der Aktivitätslebenszyklus `ListView` und `Adapter` verwenden. Wenn Sie plattformübergreifende Anwendungen mit Xamarin.iOS, arbeiten die `ListView` Steuerelement ist ähnlich strukturiert wie für den iOS- `UITableView` (und die Android `Adapter` ist vergleichbar mit der `UITableViewSource`).
+In diesem Handbuch wird erläutert, `ListView` wie und die `Adapter` verschiedenen Klassen in xamarin. Android implementiert werden. Außerdem `ListView`wird veranschaulicht, wie die Darstellung eines angepasst wird, und es wird die Wichtigkeit der erneuten Verwendung von Zeilen erläutert, um den Speicherverbrauch zu verringern. Außerdem wird erläutert, wie sich der Aktivitäts Lebenszyklus beeinflusst `ListView` und `Adapter` verwendet. Wenn Sie mit xamarin. IOS an plattformübergreifenden Anwendungen arbeiten, ist das `ListView` Steuerelement strukturell ähnlich wie das IOS `UITableView` (und das `UITableViewSource`Android `Adapter` ähnelt dem).
 
-Zuerst ein kurzes Lernprogramm führt die `ListView` anhand eines Beispiels für die basic-Code. Als Nächstes werden Links zu Themen für fortgeschrittenere Benutzer bereitgestellt, um Informationen zur Nutzung von `ListView` in WPF-Anwendungen.
-
+Zuerst führt ein kurzes Tutorial den `ListView` mit einem einfachen Codebeispiel ein. Im nächsten Schritt werden Links zu erweiterten Themen bereitgestellt, die Ihnen `ListView` bei der Verwendung von in realen Apps helfen.
 
 > [!NOTE]
-> Die `RecyclerView` Widget ist ein flexibler und besser erweiterte Version des `ListView`. Da `RecyclerView` fungiert als der Nachfolger von `ListView` (und `GridView`), es wird empfohlen, die Sie verwenden `RecyclerView` statt `ListView` für die neue app-Entwicklung. Weitere Informationen finden Sie unter [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
-
-
+> Das `RecyclerView` Widget ist eine erweiterte und flexiblere Version von `ListView`. Da `RecyclerView` `GridView` `RecyclerView` als Nachfolger von `ListView` (und) konzipiert ist, empfiehlt es sich, anstelle von für die Entwicklung neuer apps zu verwenden. `ListView` Weitere Informationen finden Sie unter [recyclerview](~/android/user-interface/layouts/recycler-view/index.md).
 
 ## <a name="listview-tutorial"></a>ListView-Tutorial
 
-[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) is a [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
-eine Liste von bildlauffähigen Elementen erstellt. Listenelemente werden automatisch eingefügt, um die Liste mit einem [ `IListAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.IListAdapter/).
+[`ListView`](xref:Android.Widget.ListView)ist eine[`ViewGroup`](xref:Android.Views.ViewGroup)
+Dadurch wird eine Liste von scrollbaren Elementen erstellt. Die Listenelemente werden mithilfe eines [`IListAdapter`](xref:Android.Widget.IListAdapter)automatisch in die Liste eingefügt.
 
-In diesem Tutorial erstellen Sie eine Übersicht der Ländernamen, die aus einem Zeichenfolgenarray gelesen werden. Wenn ein Listenelement ausgewählt ist, wird eine Popup-Nachricht die Position des Elements in der Liste angezeigt.
+In diesem Tutorial erstellen Sie eine Bild lauffähigen Liste mit Ländernamen, die aus einem Zeichen folgen Array gelesen werden. Wenn ein Listenelement ausgewählt wird, wird in einer Popup Meldung die Position des Elements in der Liste angezeigt.
 
+Starten Sie ein neues Projekt mit dem Namen **hellolistview**.
 
-Starten Sie ein neues Projekt namens **HelloListView**.
-
-Erstellen Sie eine XML-Datei mit dem Namen **list_item.xml** und speichern Sie ihn in das **Ressourcen/Layout/** Ordner. Fügen Sie Folgendes ein:
+Erstellen Sie eine XML-Datei mit dem Namen **list_item. XML** , und speichern Sie Sie im **Ressourcen/Layout/** Ordner. Fügen Sie Folgendes ein:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -55,17 +50,16 @@ Erstellen Sie eine XML-Datei mit dem Namen **list_item.xml** und speichern Sie i
 </TextView>
 ```
 
-Diese Datei definiert das Layout für jedes Element, das in platziert werden, wird die [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/).
+Diese Datei definiert das Layout für jedes Element, das in der [`ListView`](xref:Android.Widget.ListView)platziert wird.
 
-Open `MainActivity.cs` und ändern Sie die Klasse erweitern [ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (anstelle von [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)):
+Öffnen `MainActivity.cs` Sie, und ändern Sie die [`ListActivity`](xref:Android.App.ListActivity) -Klasse, [`Activity`](xref:Android.App.Activity)um (anstelle von) zu erweitern:
 
 ```csharp
 public class MainActivity : ListActivity
 {
 ```
 
-Fügen Sie den folgenden Code für die [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
-Methode:
+Fügen Sie den folgenden Code für [`OnCreate()`](xref:Android.App.Activity.OnCreate*)die Methode) ein:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -83,33 +77,33 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Beachten Sie, dass dies keine Layoutdatei für die Aktivität geladen wird (Dies geschieht in der Regel mit [ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32))).
-Festlegen von stattdessen die [`ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)
-Eigenschaft fügt automatisch eine [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-Um von den gesamten Bildschirm einnimmt der [ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/).
-Diese Methode akzeptiert eine [ `ArrayAdapter<T>` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/), verwaltet das Array der Listenelemente, die in gespeichert werden die [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/).
-Die [`ArrayAdapter<T>`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)
-Konstruktor akzeptiert die Anwendung [ `Context` ](https://developer.xamarin.com/api/type/Android.Content.Context/), die Layout-Beschreibung für jedes Listenelement (im vorherigen Schritt erstellt), und ein `T[]` oder [`Java.Util.IList<T>`](https://developer.xamarin.com/api/type/Java.Util.IList/)
-Array von Objekten zum Einfügen in die [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-(als Nächstes definiert).
+Beachten Sie, dass dadurch keine Layoutdatei für die Aktivität geladen wird (was Sie in [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)der Regel mit tun)).
+Legen Sie stattdessen die Einstellung[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
+die Eigenschaft fügt automatisch ein[`ListView`](xref:Android.Widget.ListView)
+, um den gesamten Bildschirm der [`ListActivity`](xref:Android.App.ListActivity)auszufüllen.
+Diese Methode verwendet einen [`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1), der das Array von Listenelementen verwaltet, die in die [`ListView`](xref:Android.Widget.ListView)eingefügt werden.
+Die[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)
+der Konstruktor nimmt die [`Context`](xref:Android.Content.Context)Anwendung, die layoutbeschreibung für jedes Listenelement (im vorherigen Schritt erstellt) und eine `T[]` oder[`Java.Util.IList<T>`](xref:Java.Util.IList)
+Array von-Objekten, die in eingefügt werden sollen[`ListView`](xref:Android.Widget.ListView)
+(definiert als nächstes).
 
-Die [`TextFilterEnabled`](https://developer.xamarin.com/api/property/Android.Widget.AbsListView.TextFilterEnabled/)
-textfilterung für die Eigenschaft aktiviert die [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/), sodass Wenn der Benutzer beginnt, eingeben, die Liste gefiltert werden.
+Die[`TextFilterEnabled`](xref:Android.Widget.AbsListView.TextFilterEnabled)
+die-Eigenschaft schaltet die Text Filterung [`ListView`](xref:Android.Widget.ListView)für das um, sodass die Liste gefiltert wird, wenn der Benutzer mit der Eingabe beginnt.
 
-Die [`ItemClick`](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)
-Ereignis kann verwendet werden, Handler für Mausklicks zu abonnieren. Wenn ein Element in der [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-ist geklickt haben, wird der Handler aufgerufen und ein [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-Meldung wird angezeigt, mit dem Text aus dem Element geklickt wurde.
+Die[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+das Ereignis kann zum Abonnieren von Handlern für Klicks verwendet werden. Wenn ein Element in der[`ListView`](xref:Android.Widget.ListView)
+wird geklickt, der Handler wird aufgerufen und ein[`Toast`](xref:Android.Widget.Toast)
+die Meldung wird mit dem Text aus dem Element angezeigt, auf das geklickt wurde.
 
-Liste Element Entwürfe, die von der Plattform, anstatt Ihre eigenen Layoutdatei für bereitgestellte können die [ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/).
-Beispielsweise verwenden Sie `Android.Resource.Layout.SimpleListItem1` anstelle von `Resource.Layout.list_item`.
+Sie können Listenelement Entwürfe verwenden, die von der-Plattform bereitgestellt werden, anstatt eine eigene [`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)Layoutdatei für den zu definieren.
+Versuchen Sie beispielsweise, `Android.Resource.Layout.SimpleListItem1` anstelle von `Resource.Layout.list_item`zu verwenden.
 
-Fügen Sie die folgenden `using` Anweisung:
+Fügen Sie die `using` folgende-Anweisung hinzu:
 
 ```csharp
 using System;
 ```
-Fügen Sie die folgenden Zeichenfolgen-Array als Mitglied der `MainActivity`:
+Fügen Sie als nächstes das folgende Zeichen folgen Array als Member `MainActivity`von hinzu:
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -157,14 +151,14 @@ static readonly string[] countries = new String[] {
   };
 ```
 
-Dies ist das Array von Zeichenfolgen, die in gespeichert werden die [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/).
+Dies ist das Array von Zeichen folgen, die in die [`ListView`](xref:Android.Widget.ListView)eingefügt werden.
 
-Führen Sie die Anwendung aus. Können die Liste Scrollen oder eingeben, um es zu filtern, und klicken Sie dann ein Element, um eine Meldung angezeigt. Folgendes sollte angezeigt werden:
+Führen Sie die Anwendung aus. Sie können einen Bildlauf in der Liste durchführen oder eingeben, um ihn zu filtern, und dann auf ein Element klicken, um eine Meldung anzuzeigen Folgendes sollte angezeigt werden:
 
-[![Beispielscreenshot von ListView mit Ländernamen](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
+[![Beispiel Bildschirm Abbildung von ListView mit Ländernamen](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
-Beachten Sie, dass mit einem hartcodierten Zeichenfolgen-Array nicht die bewährte Methode für den Entwurf. Einer wird in diesem Tutorial der Einfachheit halber verwendet, um zu veranschaulichen die [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-widget. Empfohlen wird, auf ein Zeichenfolgenarray, das von einer externen Ressource, z. B. mit definiert eine `string-array` Ressource in Ihrem Projekt **Resources/Values/Strings.xml** Datei. Zum Beispiel:
+Beachten Sie, dass die Verwendung eines hart codierten Zeichen folgen Arrays nicht die beste Entwurfs Praxis ist. Der Einfachheit halber wird in diesem Tutorial verwendet, um die[`ListView`](xref:Android.Widget.ListView)
+Program. Die bessere Vorgehensweise besteht darin, auf ein durch eine externe Ressource definiertes Zeichen folgen Array zu `string-array` verweisen, z. b. mit einer Ressource in der Datei Project **Resources/Values/Strings. XML** . Beispiel:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -182,38 +176,38 @@ widget. Empfohlen wird, auf ein Zeichenfolgenarray, das von einer externen Resso
 </resources>
 ```
 
-Verwenden Sie diese Ressourcenzeichenfolgen für die [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/), ersetzen Sie das ursprüngliche [`ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)
-die Zeile mit den folgenden:
+Um diese Ressourcen Zeichenfolgen für [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter`1)die zu verwenden, ersetzen Sie den ursprünglichen[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
+Zeile mit folgendem:
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
+
 Führen Sie die Anwendung aus. Folgendes sollte angezeigt werden:
 
-[![Beispielscreenshot von ListView mit kleineren Liste von Namen](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
+[![Beispiel Bildschirm Abbildung von ListView mit einer kleineren Liste von Namen](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
+## <a name="going-further-with-listview"></a>Fortfahren mit ListView
 
-## <a name="going-further-with-listview"></a>Weitergehende Möglichkeiten mit ListView
+Die verbleibenden Themen (links unten) machen einen umfassenden Einblick in die Arbeit `ListView` mit der-Klasse und die unterschiedlichen Typen von Adapter Typen, die Sie mit der-Klasse verwenden können. Die Struktur lautet wie folgt:
 
-In die übrigen Themen (aus dem Link unten) nutzen, einen umfassenden Überblick über das Arbeiten mit der `ListView` -Klasse und die verschiedenen Typen von Sie mit der sie können Kartentypen. Die Struktur lautet wie folgt:
+-   **Visuelle** Darstellung &ndash; Teile`ListView` des Steuer Elements und ihre Funktionsweise.
 
--   **Visuelle Darstellung** &ndash; Teile der `ListView` -Steuerelement und deren Funktionsweise.
+-   **Klassen** Übersicht über die Klassen, die zum Anzeigen `ListView`eines verwendet werden. &ndash;
 
--   **Klassen** &ndash; Übersicht über die Klassen, die zum Anzeigen einer `ListView`.
+-   **Anzeigen von Daten in einem ListView** -Steuer Punkt Hier erfahren Sie, wie Sie eine einfache Liste von Daten anzeigen `ListView's` , wie Sie Verwendbarkeits Features implementieren, wie Sie verschiedene integrierte Zeilen Layouts verwenden und wie Adapter Speicher durch wieder verwenden von Zeilen Ansichten speichern. &ndash;
 
--   **Anzeigen von Daten in einer ListView** &ndash; wie eine einfache Liste mit Daten angezeigt, die zum Implementieren `ListView's` nützliche Funktionen, wie andere integrierte Zeile Layouts verwendet und wie Adaptern Arbeitsspeicher zu sparen, indem das Wiederverwenden von Zeilenansichten.
+-   **Benutzerdefinierte** Darstellung Ändern des Stils `ListView` von mit benutzerdefinierten Layouts, Schriftarten und Farben. &ndash;
 
--   **Benutzerdefinierte Darstellung** &ndash; ändern die Darstellung der `ListView` mit benutzerdefinierten Layouts, Schriftarten und Farben.
+-   **Verwenden von SQLite** Anzeigen von Daten aus einer SQLite-Datenbank mit einem `CursorAdapter`. &ndash;
 
--   **Mithilfe von SQLite** &ndash; Vorgehensweise beim Anzeigen von Daten aus einer SQLite-Datenbank mit einem `CursorAdapter`.
+-   **Aktivitäts Lebenszyklus** Entwurfs Überlegungen bei `ListView` der Implementierung von Aktivitäten, einschließlich der Art und Weise, in der Sie Ihre Daten auffüllen sollten und wann Ressourcen freigegeben werden sollen. &ndash;
 
--   **Aktivitätslebenszyklus** &ndash; Überlegungen zum Entwurf, bei der Implementierung `ListView` Aktivitäten, einschließlich, in dem im Lebenszyklus Sie Ihre Daten zu füllen soll, und wann Sie die Ressourcen freizugeben.
-
-Die Diskussion (unterteilt in sechs Komponenten) beginnt mit einer Übersicht über die `ListView` -Klasse selbst vor der Einführung von zunehmend komplex Beispiele verwenden.
+Die Erörterung (in sechs Teile unterteilt) beginnt mit einer Übersicht `ListView` über die Klasse selbst, bevor Sie progressivere Beispiele zur Verwendung von Beispielen einführt.
 
 -   [ListView-Komponenten und -Funktionen](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
--   [Eine ListView mit Daten auffüllen](~/android/user-interface/layouts/list-view/populating.md)
+-   [Auffüllen von ListView mit Daten](~/android/user-interface/layouts/list-view/populating.md)
 -   [Anpassen einer ListView-Darstellung](~/android/user-interface/layouts/list-view/customizing-appearance.md)
 -   [Verwenden von CursorAdapters](~/android/user-interface/layouts/list-view/cursor-adapters.md)
 -   [Verwenden von ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
@@ -222,24 +216,24 @@ Die Diskussion (unterteilt in sechs Komponenten) beginnt mit einer Übersicht ü
 
 ## <a name="summary"></a>Zusammenfassung
 
-Diese Themensammlung eingeführt `ListView` und einige Beispiele zur Verwendung der integrierten Funktionen von der `ListActivity`. Es wurden benutzerdefinierte Implementierungen der behandelt `ListView` , die für die farbige Layouts zulässig und mithilfe einer SQLite-Datenbank und kurz auf die Relevanz der aktivitätslebenszyklus wurden Ihre `ListView` Implementierung.
+Diese Themen wurden vorgestellt `ListView` und enthalten einige Beispiele für die Verwendung der integrierten Funktionen `ListActivity`von. Es wurden benutzerdefinierte Implementierungen `ListView` von erläutert, die für farbige Layouts und die Verwendung einer SQLite-Datenbank zulässig waren, und es wurde kurz auf die Relevanz `ListView` des Aktivitäts Lebenszyklus in ihrer Implementierung eingegangen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [AccessoryViews (Beispiel)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
-- [BasicTableAndroid (Beispiel)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
-- [BasicTableAdapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
-- [BuiltInViews (Beispiel)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
-- [CustomRowView (Beispiel)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
-- [FastScroll (Beispiel)](https://developer.xamarin.com/samples/monodroid/FastScroll/)
-- [SectionIndex (Beispiel)](https://developer.xamarin.com/samples/monodroid/SectionIndex/)
-- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
-- [CursorTableAdapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
-- [Aktivität-Lebenszyklus (Lernprogramm)](~/android/app-fundamentals/activity-lifecycle/index.md)
-- [Arbeiten mit Tabellen und Zellen (Xamarin.iOS)](~/ios/user-interface/controls/tables/index.md)
-- [ListView-Klassenreferenz](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-- [ListActivity-Klassenreferenz](https://developer.xamarin.com/api/type/Android.App.ListActivity/)
-- [BaseAdapter-Klassenreferenz](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)
-- [ArrayAdapter-Klassenreferenz](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
-- [CursorAdapter-Klassenreferenz](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)
+- [Accessoryviews (Beispiel)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
+- [Basictableandroid (Beispiel)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
+- [Basictableadapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
+- [Builtinviews (Beispiel)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
+- [Customrowview (Beispiel)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
+- [Fastscroll (Beispiel)](https://developer.xamarin.com/samples/monodroid/FastScroll/)
+- [Sectionindex (Beispiel)](https://developer.xamarin.com/samples/monodroid/SectionIndex/)
+- [Simplecurrsortableadapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
+- [Cursor TableAdapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
+- [Tutorial zum Aktivitäts Lebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
+- [Arbeiten mit Tabellen und Zellen (in xamarin. IOS)](~/ios/user-interface/controls/tables/index.md)
+- [ListView-Klassen Verweis](xref:Android.Widget.ListView)
+- [Listactivity-Klassen Verweis](xref:Android.App.ListActivity)
+- [Baseadapter-Klassenreferenz](xref:Android.Widget.BaseAdapter)
+- [Arrayadapter-Klassenreferenz](xref:Android.Widget.ArrayAdapter)
+- [CursorAdapter-Klassenreferenz](xref:Android.Widget.CursorAdapter)

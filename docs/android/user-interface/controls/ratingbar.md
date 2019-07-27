@@ -1,30 +1,30 @@
 ---
-title: RatingBar
-description: Wie eine Android-Aktivität ein RatingBar-Widgets hinzugefügt.
+title: Xamarin. Android-ratingleiste
+description: Hinzufügen eines ratingbar-Widgets zu einer Android-Aktivität
 ms.prod: xamarin
 ms.assetid: d7a1f9bb-926d-4f93-9e8e-0fa933e330e7
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 97d2a126be70e210d2e8f4ebf4d7a25ff8777a02
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e98dd824d5044367b975ae66c77327f10e826f1
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945440"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510184"
 ---
-# <a name="ratingbar"></a>RatingBar
+# <a name="xamarinandroid-ratingbar"></a>Xamarin. Android-ratingleiste
 
-Eine RatingBar ist eine UI-Widgets, die auf eine Skala von 1 bis 5 Sternen anzeigt. Der Benutzer kann eine Bewertung von Berichtsinhalt auf einem Stern In diesem Abschnitt auswählen, erstellen Sie ein Widget, das dem Benutzer ermöglicht, eine Bewertung, bieten die [ `RatingBar` ](https://developer.xamarin.com/api/type/Android.Widget.RatingBar/) Widget.
+Eine ratingleiste ist ein UI-Widget, das eine Bewertung von einem bis fünf Sternen anzeigt. Der Benutzer kann eine Bewertung auswählen, indem er einen Stern in diesem Abschnitt tippen. Sie erstellen ein Widget, mit dem der Benutzer mit dem [`RatingBar`](xref:Android.Widget.RatingBar) Widget eine Bewertung bereitstellen kann.
 
-![Beispiel für eine RatingBar](ratingbar-images/01-ratingbar.png)
+![Beispiel für eine ratingleiste](ratingbar-images/01-ratingbar.png)
 
 
-## <a name="creating-a-ratingbar"></a>Erstellen eine RatingBar
+## <a name="creating-a-ratingbar"></a>Erstellen einer ratingleiste
 
-1. Öffnen der **Resource/layout/Main.axml** -Datei und fügen die [`RatingBar`](https://developer.xamarin.com/api/type/Android.Widget.RatingBar/)
-   -Element (innerhalb der [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+1. Öffnen Sie die Datei " **Resource/Layout/Main. axml** ", und fügen Sie das[`RatingBar`](xref:Android.Widget.RatingBar)
+   -Element (in [`LinearLayout`](xref:Android.Widget.LinearLayout)):
 
     ```xml
     <RatingBar android:id="@+id/ratingbar"
@@ -33,10 +33,10 @@ Eine RatingBar ist eine UI-Widgets, die auf eine Skala von 1 bis 5 Sternen anzei
             android:numStars="5"
             android:stepSize="1.0"/>
     ```
-   Die `android:numStars` Attribut wird definiert, wie viele Sterne für die Bewertung Leiste anzeigen möchten. Die `android:stepSize` Attribut definiert die Granularität für jedes Sterns (z. B. den Wert `0.5` halben Stern-Bewertungen können).
+   Das `android:numStars` -Attribut definiert, wie viele Sterne für die Bewertungs Leiste angezeigt werden. Das `android:stepSize` -Attribut definiert die Granularität für jeden Stern (z. b., `0.5` wenn ein Wert von halb Stern Bewertungen zulässt).
 
-2. Um etwas tun, wenn eine neue Bewertung festgelegt wurde, fügen Sie den folgenden Code am Ende der [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
-   Methode:
+2. Um etwas zu tun, wenn eine neue Bewertung festgelegt wurde, fügen Sie den folgenden Code am Ende der[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+   anzuwenden
 
     ```csharp
     RatingBar ratingbar = FindViewById<RatingBar>(Resource.Id.ratingbar);
@@ -46,7 +46,7 @@ Eine RatingBar ist eine UI-Widgets, die auf eine Skala von 1 bis 5 Sternen anzei
     };
     ```
 
-    Hierbei werden zusammengefasst, die [ `RatingBar` ](https://developer.xamarin.com/api/type/Android.Widget.RatingBar/) Widgets aus dem Layout mit [ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/) und legt eine Ereignismethode anschließend definiert, welche Aktion ausgeführt wird, wenn der Benutzer eine Bewertung festlegt. In diesem Fall eine einfache [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) Meldung angezeigt, das die neue Bewertung.
+    Dadurch wird das [`RatingBar`](xref:Android.Widget.RatingBar) widget aus dem Layout mit [`FindViewById`](xref:Android.App.Activity.FindViewById*) aufgezeichnet. Anschließend wird eine Ereignismethode festgelegt und dann die Aktion definiert, die durchgeführt werden soll, wenn der Benutzer eine Bewertung festlegt. In diesem Fall wird eine einfache [`Toast`](xref:Android.Widget.Toast) Meldung mit der neuen Bewertung angezeigt.
 
 3.  Führen Sie die Anwendung aus.
 
