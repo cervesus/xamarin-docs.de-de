@@ -180,6 +180,7 @@
 #### [Festlegen der ItemsSource-Eigenschaft einer Auswahl](user-interface/picker/populating-itemssource.md)
 #### [Hinzufügen von Daten zur Elementsammlung einer Auswahl](user-interface/picker/populating-items.md)
 ### [ProgressBar](user-interface/progressbar.md)
+### [SearchBar](user-interface/searchbar.md)
 ### [Schieberegler](user-interface/slider.md)
 ### [Stepper](user-interface/stepper.md)
 ### [Stile](user-interface/styles/index.md)
