@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f9c7ada224cefc9bb80e0bcba370d0dee4a664c9
+ms.sourcegitcommit: 25be5acf979f6b18b6d0e64392c9ab307259c032
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831097"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603839"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms-Schnittstelle Benutzeransichten
 
@@ -22,7 +22,7 @@ _Gewusst wie: Verwenden Sie die Ansichten von Xamarin.Forms bereitgestelltes_
 
 ## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
 
-Die `ActivityIndicator` ist ein animiertes-Steuerelement, das Benutzern zeigt an, dass die Anwendung in einer langen Aktivität beteiligt ist, ohne dass darauf ausgeführt.
+Das `ActivityIndicator` ist ein animiertes Steuerelement, das Benutzern anzeigt, dass die Anwendung mit einer langwierigen Aktivität beschäftigt ist, ohne dass der Fortschritt angegeben wird.
 
 ## <a name="animationanimationindexmd"></a>[Animation](animation/index.md)
 
@@ -38,11 +38,11 @@ Die `Button` reagiert auf ein tippen oder klicken Sie auf, die eine Anwendung, u
 
 ## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
 
-Die `CheckBox` ist eine Art von Schaltfläche, die können entweder überprüfte oder leer sein. Wenn ein Kontrollkästchen aktiviert ist, gilt dies als auf. Wenn ein Kontrollkästchen leer ist, gilt dies als deaktiviert werden.
+Der `CheckBox` ist ein Typ von Schaltfläche, der entweder aktiviert oder leer sein kann. Wenn ein Kontrollkästchen aktiviert ist, gilt es als aktiviert. Wenn ein Kontrollkästchen leer ist, wird es als deaktiviert angesehen.
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
-Die [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) ist eine flexible und leistungsfähige Ansicht zur Darstellung von Listen mit Daten, die mit anderen Layout-Spezifikationen.
+Der [`CollectionView`](xref:Xamarin.Forms.CollectionView) ist eine flexible und leistungsfähige Ansicht für die Darstellung von Listen mit Daten mit unterschiedlichen layoutspezifikationen.
 
 ## <a name="colorscolorsmd"></a>[Farben](colors.md)
 
@@ -62,7 +62,7 @@ Die `DatePicker` ermöglicht es einem Benutzer ein Datum in einem angegebenen Be
 
 ## <a name="display-pop-upspop-upsmd"></a>[Anzeigen von Popupelementen](pop-ups.md)
 
-Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. Diese Elemente der Benutzeroberfläche können verwendet werden, die Dialogfelder angezeigt, die einfache Fragen von Benutzern und den Benutzern Hinweise, durch die Aufgaben stellen zu können.
+Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. Diese Schnittstellen Elemente können verwendet werden, um Dialogfelder anzuzeigen, die Benutzer zu einfachen Fragen auffordern und Benutzer durch Aufgaben leiten.
 
 ## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[Grafiken mit SkiaSharp](graphics/skiasharp/index.md)
 
@@ -94,7 +94,11 @@ Die [ `Picker` ](xref:Xamarin.Forms.Picker) Ansicht ist ein Steuerelement für e
 
 ## <a name="progressbarprogressbarmd"></a>[ProgressBar](progressbar.md)
 
-Die [ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar) ist ein Steuerelement, die visuelle Bearbeitung als horizontalen Balken, der gefüllt ist, und basierend auf einer "float"-Eigenschaft darstellt.
+Das [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) -Steuerelement ist ein Steuerelement, das den Fortschritt visuell als horizontalen Balken darstellt, der basierend auf einer float-Eigenschaft ausgefüllt wird.
+
+## <a name="searchbarsearchbarmd"></a>[SearchBar](searchbar.md)
+
+Der [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das Searchbar-Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch.
 
 ## <a name="sliderslidermd"></a>[Schieberegler](slider.md)
 
@@ -110,7 +114,7 @@ Schriftart, Farbe und andere Attribute können in Stilen gruppiert werden, die f
 
 ## <a name="switchswitchmd"></a>[Schalter](switch.md)
 
-Die `Switch` ist eine Art von Schaltfläche, die zwischen ein- und ausschalten Status ein-und ausgeschaltet werden kann.
+Der `Switch` ist ein Typ von Schaltfläche, der zwischen den Zuständen "ein" und "aus" gewechselt werden kann.
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 
@@ -130,7 +134,7 @@ Die `TimePicker` ermöglicht es einem Benutzer auf eine Uhrzeit auswählen. Die 
 
 ## <a name="visualvisualindexmd"></a>[Grafisches Element](visual/index.md)
 
-Xamarin.Forms-Material-Visual kann zum Erstellen von Xamarin.Forms-Anwendungen, die Aussehen identische oder weitgehend identisch, unter iOS und Android verwendet werden.
+Xamarin. Forms Material Visual kann verwendet werden, um xamarin. Forms-Anwendungen zu erstellen, die unter IOS und Android identisch oder größtenteils identisch aussehen.
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Manager für den visuellen Zustand](visual-state-manager.md)
 
