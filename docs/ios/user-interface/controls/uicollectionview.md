@@ -1,55 +1,55 @@
 ---
-title: Auflistungsansichten in Xamarin.iOS
-description: Auflistungsansichten können Inhalte mithilfe von beliebigen Layouts angezeigt werden. Sie können problemlos Raster-ähnliches Layouts standardmäßig unterstützt benutzerdefinierte Layouts erstellen.
+title: Auflistungs Ansichten in xamarin. IOS
+description: Mithilfe von Auflistungs Ansichten können Inhalte mit beliebigen Layouts angezeigt werden. Sie ermöglichen die einfache Erstellung von Raster ähnlichen Layouts, während gleichzeitig auch benutzerdefinierte Layouts unterstützt werden.
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 890c11908b11b18d6ca626820f1a835d817870da
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 256f38b4e08b1a7cb91b0a0a977ef222f7affbb4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829863"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642876"
 ---
-# <a name="collection-views-in-xamarinios"></a>Auflistungsansichten in Xamarin.iOS
+# <a name="collection-views-in-xamarinios"></a>Auflistungs Ansichten in xamarin. IOS
 
-_Auflistungsansichten können Inhalte mithilfe von beliebigen Layouts angezeigt werden. Sie können problemlos Raster-ähnliches Layouts standardmäßig unterstützt benutzerdefinierte Layouts erstellen._
+_Mithilfe von Auflistungs Ansichten können Inhalte mit beliebigen Layouts angezeigt werden. Sie ermöglichen die einfache Erstellung von Raster ähnlichen Layouts, während gleichzeitig auch benutzerdefinierte Layouts unterstützt werden._
 
-Auflistungsansichten, verfügbar in der `UICollectionView` -Klasse sind ein neues Konzept in iOS 6, die Sie einführen, mehrere Elemente auf dem Bildschirm mithilfe von Layouts darstellen. Die Muster zum Bereitstellen von Daten für eine `UICollectionView` Elemente erstellen und diese Elemente führen Sie die gleichen Delegierung und Datenquellen-Muster, die häufig in iOS-Entwicklung verwendet interagieren.
+Sammlungs Sichten, die in der `UICollectionView` -Klasse verfügbar sind, sind ein neues Konzept in ios 6, das die Darstellung mehrerer Elemente auf dem Bildschirm mithilfe von Layouts einführt. Die Muster für die Bereitstellung von `UICollectionView` Daten für einen, um Elemente zu erstellen und mit diesen Elementen zu interagieren, folgen derselben Delegierung und denselben Datenquellen Mustern, die häufig bei der IOS-Entwicklung
 
-Auflistungsansichten funktioniert jedoch mit einem Layoutsubsystem, das unabhängig von der `UICollectionView` selbst. Aus diesem Grund kann ermöglichen lediglich ein anderes Layout einfach die Darstellung von einer Auflistungsansicht ändern.
+Auflistungs Ansichten funktionieren jedoch mit einem layoutsubsystem, das unabhängig `UICollectionView` von der selbst ist. Daher kann die Darstellung einer Sammlungsansicht durch einfaches Bereitstellen eines anderen Layouts problemlos geändert werden.
 
-iOS bietet eine Layoutklasse namens `UICollectionViewFlowLayout` , mit der Aufruflistenansicht als zeilenbasierte Layouts z. B. einer Tabelle ohne zusätzliche Arbeit erstellt werden. Darüber hinaus können benutzerdefinierte Layouts auch erstellt werden, die jede Präsentation zu ermöglichen, die Sie sich vorstellen können.
+IOS bietet eine Layoutklasse `UICollectionViewFlowLayout` mit dem Namen, die das Erstellen von Zeilen basierten Layouts, wie z. b. einem Raster, ohne zusätzliche Arbeit ermöglicht. Außerdem können benutzerdefinierte Layouts erstellt werden, die jede Präsentation ermöglichen, die Sie sich vorstellen können.
 
-## <a name="uicollectionview-basics"></a>UICollectionView-Grundlagen
+## <a name="uicollectionview-basics"></a>Uicollectionview-Grundlagen
 
-Die `UICollectionView` Klasse besteht aus drei verschiedenen Elementen:
+Die `UICollectionView` Klasse besteht aus drei unterschiedlichen Elementen:
 
--  **Zellen** – datengesteuerte Views für jedes Element
--  **Zusätzliche Ansichten** – datengesteuerte Ansichten mit einem Abschnitt.
--  **Ansichten der Dekoration** – nicht-Data-driven ein Layout erstellt hat
+-  **Zellen** – datengesteuerte Sichten für jedes Element
+-  **Ergänzende Sichten** – datengesteuerte Sichten, die einem Abschnitt zugeordnet sind.
+-  **Dekorations Ansichten** – nicht datengesteuerte Sichten, die von einem Layout erstellt werden
 
 ## <a name="cells"></a>Zellen
 
-Zellen sind Objekte, die ein einzelnes Element in der Menge der Daten darstellen, die durch die Auflistungsansicht präsentiert wird. Jede Zelle ist eine Instanz der `UICollectionViewCell` -Klasse, die aus drei verschiedene Informationsansichten besteht, wie in der folgenden Abbildung gezeigt:
+Zellen sind Objekte, die ein einzelnes Element in dem DataSet darstellen, das von der Auflistungs Ansicht angezeigt wird. Jede Zelle ist eine Instanz der `UICollectionViewCell` -Klasse, die aus drei verschiedenen Ansichten besteht, wie in der folgenden Abbildung dargestellt:
 
- [![](uicollectionview-images/01-uicollectionviewcell.png "Jede Zelle drei verschiedene Informationsansichten besteht wie hier gezeigt.")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
+ [![](uicollectionview-images/01-uicollectionviewcell.png "Jede Zelle besteht aus drei verschiedenen Ansichten, wie hier gezeigt.")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
 
-Die `UICollectionViewCell` -Klasse verfügt über die folgenden Eigenschaften für jede dieser Ansichten:
+Die `UICollectionViewCell` -Klasse verfügt für jede dieser Sichten über die folgenden Eigenschaften:
 
--   `ContentView` – In dieser Ansicht enthält den Inhalt, den die Zelle enthält. Es wird in der obersten Z-Reihenfolge auf dem Bildschirm gerendert.
--   `SelectedBackgroundView` – Zellen haben integrierte Unterstützung für die Auswahl. In dieser Ansicht wird verwendet, um visuell zu kennzeichnen, dass eine Zelle ausgewählt ist. Es wird gerendert, direkt unterhalb der `ContentView` Wenn eine Zelle ausgewählt ist.
--   `BackgroundView` – Zellen können auch anzeigen, einen Hintergrund, das von vorgelegt wird die `BackgroundView` . Diese Ansicht gerendert wird, unter dem `SelectedBackgroundView` .
+-   `ContentView`– Diese Ansicht enthält den Inhalt, der in der Zelle dargestellt wird. Sie wird in der obersten z-Reihenfolge auf dem Bildschirm gerendert.
+-   `SelectedBackgroundView`–-Zellen verfügen über integrierte Unterstützung für die Auswahl. Diese Ansicht wird verwendet, um zu kennzeichnen, dass eine Zelle ausgewählt ist. Sie wird direkt unterhalb `ContentView` von gerendert, wenn eine Zelle ausgewählt wird.
+-   `BackgroundView`– Zellen können auch einen Hintergrund anzeigen, der von `BackgroundView` dargestellt wird. Diese Ansicht wird unterhalb `SelectedBackgroundView` von gerendert.
 
 
-Durch Festlegen der `ContentView` so, dass er kleiner als ist die `BackgroundView` und `SelectedBackgroundView`, wird die `BackgroundView` können verwendet werden, um die frame-Inhalten, While visuell die `SelectedBackgroundView` wird angezeigt, wenn eine Zelle ausgewählt ist, wie unten dargestellt:
+Wenn Sie die `ContentView` Einstellung so festlegen, dass Sie kleiner `BackgroundView` als `SelectedBackgroundView`und ist `BackgroundView` , kann verwendet werden, um den Inhalt visuell zu gestalten `SelectedBackgroundView` , während der angezeigt wird, wenn eine Zelle ausgewählt wird, wie unten dargestellt:
 
- [![](uicollectionview-images/02-cells.png "Die andere Zellenelemente")](uicollectionview-images/02-cells.png#lightbox)
+ [![](uicollectionview-images/02-cells.png "Die unterschiedlichen Zellen Elemente")](uicollectionview-images/02-cells.png#lightbox)
 
-Die Zellen im obigen Screenshot werden erstellt, durch Erben von `UICollectionViewCell` und Einstellung der `ContentView`, `SelectedBackgroundView` und `BackgroundView` Eigenschaften, bzw., wie im folgenden Code gezeigt:
+Die Zellen im obigen Screenshot werden erstellt `UICollectionViewCell` , indem Sie von erben und die `ContentView`-, `SelectedBackgroundView` - `BackgroundView` und-Eigenschaften festlegen, wie im folgenden Code gezeigt:
 
 ```csharp
 public class AnimalCell : UICollectionViewCell
@@ -86,21 +86,21 @@ public class AnimalCell : UICollectionViewCell
  <a name="Supplementary_Views" />
 
 
-## <a name="supplementary-views"></a>Zusätzliche Ansichten
+## <a name="supplementary-views"></a>Ergänzende Ansichten
 
-Zusätzliche Ansichten sind Ansichten, die den gesamten zugeordneten Informationen präsentieren einer `UICollectionView`. Wie Zellen sind zusätzliche Ansichten, datengesteuerte. Wenn Zellen die Elementdaten aus einer Datenquelle vorhanden, zu präsentieren zusätzliche Ansichten Abschnitt, z. B. die Kategorien von Buch im Bücherregal oder das Genre Musik in einer Bibliothek "Musik".
+Ergänzende Sichten sind Sichten, die Informationen darstellen, die den einzelnen Abschnitten `UICollectionView`eines zugeordnet sind. Wie Zellen sind ergänzende Sichten Daten gesteuert. Wenn Zellen die Elementdaten aus einer Datenquelle darstellen, stellen ergänzende Sichten die Abschnitts Daten dar, z. b. die Buch Kategorien in einem Buch Regal oder das Genre der Musik in einer Musikbibliothek.
 
-Beispielsweise könnte eine zusätzliche Ansicht dienen stellen einen Header für einen bestimmten Abschnitt, wie in der folgenden Abbildung gezeigt:
+Beispielsweise kann eine ergänzende Ansicht verwendet werden, um einen Header für einen bestimmten Abschnitt darzustellen, wie in der folgenden Abbildung dargestellt:
 
- [![](uicollectionview-images/02a-supplementary-view.png "Eine zusätzliche Ansicht verwendet, um einen Header für einen bestimmten Abschnitt zu präsentieren, wie hier gezeigt")](uicollectionview-images/02a-supplementary-view.png#lightbox)
+ [![](uicollectionview-images/02a-supplementary-view.png "Eine ergänzende Ansicht, die verwendet wird, um einen Header für einen bestimmten Abschnitt darzustellen, wie hier gezeigt.")](uicollectionview-images/02a-supplementary-view.png#lightbox)
 
-Um eine zusätzliche Ansicht verwenden zu können, muss zuerst in registriert werden die `ViewDidLoad` Methode:
+Um eine ergänzende Ansicht zu verwenden, muss Sie zuerst in der `ViewDidLoad` -Methode registriert werden:
 
 ```csharp
 CollectionView.RegisterClassForSupplementaryView (typeof(Header), UICollectionElementKindSection.Header, headerId);
 ```
 
-Klicken Sie dann die Ansicht mit zurückgegeben werden muss, `GetViewForSupplementaryElement`, der mithilfe von `DequeueReusableSupplementaryView`, und erbt von `UICollectionReusableView`. Der folgende Codeausschnitt erzeugt die SupplementaryView im Screenshot oben gezeigt:
+Anschließend muss die Sicht mithilfe `GetViewForSupplementaryElement`von zurückgegeben werden, erstellt mithilfe `DequeueReusableSupplementaryView`von, und erbt von `UICollectionReusableView`. Der folgende Code Ausschnitt erzeugt die ergänzende Ansicht, die im obigen Screenshot dargestellt wird:
 
 ```csharp
 public override UICollectionReusableView GetViewForSupplementaryElement (UICollectionView collectionView, NSString elementKind, NSIndexPath indexPath)
@@ -112,19 +112,19 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 ```
 
-Zusätzliche Ansichten sind allgemeiner als nur die Kopf- und Fußzeilen.
-Sie können eine beliebige Stelle in der Auflistung positioniert werden und können alle Ansichten, sodass ihre Darstellung zu vollständig anpassbaren umfassen.
+Ergänzende Sichten sind generischer als nur Kopf-und Fußzeilen.
+Sie können an einer beliebigen Stelle in der Sammlungsansicht positioniert werden und können aus beliebigen Ansichten bestehen, sodass ihre Darstellung vollständig anpassbar ist.
 
  <a name="Decoration_Views" />
 
 
-## <a name="decoration-views"></a>Decoration-Ansichten
+## <a name="decoration-views"></a>Dekorations Ansichten
 
-Decoration-Ansichten sind rein visuelle Ansichten, die in angezeigt werden, können ein `UICollectionView`. Im Gegensatz zu den Zellen und zusätzliche Ansichten sind sie nicht datengesteuert. Sie werden immer innerhalb des Layouts-Unterklasse erstellt und später als des Inhalts Layout ändern können. Beispielsweise kann eine Decoration-Ansicht verwendet werden, präsentieren Sie eine Hintergrundansicht, die einen Bildlauf durchführt, mit dem Inhalt der `UICollectionView`, wie unten dargestellt:
+Dekorations Ansichten sind reine visuelle Ansichten, die in einem `UICollectionView`angezeigt werden können. Im Gegensatz zu Zellen und ergänzenden Ansichten sind Sie nicht Daten gesteuert. Sie werden immer in der Unterklasse eines Layouts erstellt und können anschließend als Layout des Inhalts geändert werden. So kann z. b. eine-anfügeansicht verwendet werden, um eine Hintergrund Ansicht anzuzeigen, `UICollectionView`die mit dem Inhalt im scrollt, wie unten dargestellt:
 
- [![](uicollectionview-images/02c-decoration-view.png "Decoration-Ansicht mit einem roten Hintergrund")](uicollectionview-images/02c-decoration-view.png#lightbox)
+ [![](uicollectionview-images/02c-decoration-view.png "Ansicht \"Dekoration\" mit rotem Hintergrund")](uicollectionview-images/02c-decoration-view.png#lightbox)
 
- Der folgende Codeausschnitt wird den Hintergrund Rot dargestellt, in den Beispielen `CircleLayout` Klasse:
+ Der folgende Code Ausschnitt ändert in der Samples `CircleLayout` -Klasse den Hintergrund in rot:
 
  ```csharp
  public class MyDecorationView : UICollectionReusableView
@@ -140,34 +140,34 @@ Decoration-Ansichten sind rein visuelle Ansichten, die in angezeigt werden, kön
 
 ## <a name="data-source"></a>Datenquelle
 
-Wie bei anderen Teilen von iOS-, wie z. B. `UITableView` und `MKMapView`, `UICollectionView` Ruft die Daten aus der ein *Datenquelle*, verfügbar gemacht in Xamarin.iOS über die **`UICollectionViewDataSource`** Klasse. Diese Klasse ist zuständig für die Bereitstellung von Inhalt an die `UICollectionView` wie z.B.:
+Wie bei anderen Teilen von IOS, wie z `UITableView` . `MKMapView`b `UICollectionView` . und, ruft seine Daten aus einer *Datenquelle*ab, die über die **`UICollectionViewDataSource`** -Klasse in xamarin. IOS verfügbar gemacht wird. Diese Klasse ist verantwortlich für die `UICollectionView` Bereitstellung von Inhalten für, wie z. b.:
 
--  **Zellen** – Merry `GetCell` Methode.
--  **Zusätzliche Ansichten** – Merry `GetViewForSupplementaryElement` Methode.
--  **Anzahl von Abschnitten** – Merry `NumberOfSections` Methode. Der Standardwert ist 1, wenn nicht implementiert.
--  **Anzahl der Elemente im Abschnitt** – Merry `GetItemsCount` Methode.
+-  **Zellen** – von der `GetCell` -Methode zurückgegeben.
+-  **Ergänzende Sichten** – von der `GetViewForSupplementaryElement` -Methode zurückgegeben.
+-  **Anzahl von Abschnitten** – wird von `NumberOfSections` der-Methode zurückgegeben. Der Standardwert ist 1, wenn er nicht implementiert ist.
+-  **Anzahl von Elementen pro Abschnitt** – wird von `GetItemsCount` der-Methode zurückgegeben.
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
-Der Einfachheit halber die `UICollectionViewController` -Klasse ist verfügbar. Dies wird automatisch konfiguriert, um sowohl der Delegat, der im nächsten Abschnitt erläutert wird, und die Datenquelle für die `UICollectionView` anzeigen.
+Der Zweck der- `UICollectionViewController` Klasse ist die-Klasse verfügbar. Diese wird automatisch so konfiguriert, dass Sie sowohl der Delegat ist, der im nächsten Abschnitt erläutert wird, als auch `UICollectionView` die Datenquelle für die Ansicht.
 
-Wie bei `UITableView`, `UICollectionView` Klasse ruft nur die Datenquelle aus, um die Zellen für Elemente abzurufen, die auf dem Bildschirm sind.
-Zellen, die außerhalb des Bildschirms einen Bildlauf in an eine Warteschlange für die Wiederverwendung befinden wie die folgende Abbildung veranschaulicht:
+Wie bei `UITableView`Ruft die `UICollectionView` -Klasse nur Ihre Datenquelle auf, um Zellen für Elemente zu erhalten, die sich auf dem Bildschirm befinden.
+Zellen, die auf dem Bildschirm scrollen, werden zur Wiederverwendung in eine Warteschlange eingefügt, wie in der folgenden Abbildung veranschaulicht:
 
- [![](uicollectionview-images/03-cell-reuse.png "Zellen, die außerhalb des Bildschirms einen Bildlauf an eine Warteschlange für die Wiederverwendung befinden sich wie hier gezeigt.")](uicollectionview-images/03-cell-reuse.png#lightbox)
+ [![](uicollectionview-images/03-cell-reuse.png "Zellen, die auf dem Bildschirm scrollen, werden zur Wiederverwendung in eine Warteschlange eingefügt, wie hier gezeigt.")](uicollectionview-images/03-cell-reuse.png#lightbox)
 
-Wiederverwendung von Zelle wurde mit vereinfacht `UICollectionView` und `UITableView`. Sie müssen nicht mehr zum Erstellen einer Zelle direkt in der Datenquelle, wenn eine nicht verfügbar in der Warteschlange Wiederverwendung ist wie die Zellen mit dem System registriert sind. Wenn eine Zelle beim Aufruf zum Entfernen aus die Zelle aus der Warteschlange für die Wiederverwendung der Warteschlange nicht verfügbar ist, wird iOS erstellt sie automatisch basierend auf den Typ oder die Nib, der registriert wurde.
-Das gleiche Verfahren ist auch für zusätzliche Ansichten verfügbar.
+Die Wiederverwendung von Zellen wurde `UICollectionView` mit `UITableView`und vereinfacht. Es ist nicht mehr erforderlich, eine Zelle direkt in der Datenquelle zu erstellen, wenn Sie in der Warteschlange für die Wiederverwendung nicht verfügbar ist, da Zellen beim System registriert sind. Wenn eine Zelle nicht verfügbar ist, wenn der Befehl zum Aufheben der Warteschlange der Zelle aus der Warteschlange für die Wiederverwendung verfügbar ist, erstellt IOS diese automatisch basierend auf dem registrierten Typ oder NIB.
+Die gleiche Technik ist auch für ergänzende Ansichten verfügbar.
 
-Betrachten Sie beispielsweise den folgenden Code, der registriert die `AnimalCell` Klasse:
+Sehen Sie sich beispielsweise den folgenden Code an, `AnimalCell` der die-Klasse registriert:
 
 ```csharp
 static NSString animalCellId = new NSString ("AnimalCell");
 CollectionView.RegisterClassForCell (typeof(AnimalCell), animalCellId);
 ```
 
-Wenn eine `UICollectionView` eine Zelle benötigt, da dessen Element auf dem Bildschirm, um die `UICollectionView` ruft seine Datenquelle `GetCell` Methode. Ähnlich wie bei der Funktionsweise mit UITableView werden diese Methode ist verantwortlich für die Konfiguration einer Zelle aus den Daten sichern, die eine `AnimalCell` Klasse in diesem Fall.
+Wenn ein `UICollectionView` eine Zelle benötigt, da sich das Element auf dem Bildschirm `UICollectionView` befindet, ruft die die `GetCell` -Methode der zugehörigen Datenquelle auf. Ähnlich wie dies mit uitableview funktioniert, ist diese Methode für das Konfigurieren einer Zelle aus den Unterstützungs Daten zuständig, die in diesem Fall `AnimalCell` eine Klasse wäre.
 
-Der folgende Code zeigt eine Implementierung von `GetCell` zurückgibt, die eine `AnimalCell` Instanz:
+Der folgende Code zeigt eine Implementierung von `GetCell` , die eine `AnimalCell` -Instanz zurückgibt:
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, Foundation.NSIndexPath indexPath)
@@ -182,34 +182,34 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 }
 ```
 
-Der Aufruf von `DequeReusableCell` ist, an die Zelle entweder aus der Warteschlange für die Wiederverwendung aufheben in Warteschlangen gestellt werden oder, wenn eine Zelle nicht in der Warteschlange, erstellt auf Grundlage der im Aufruf von registrierten Typ verfügbar ist `CollectionView.RegisterClassForCell`.
+Der- `CollectionView.RegisterClassForCell`Vorgang istderOrt,andemdieZelleentwederausderWarteschlangefürdieWiederverwendungausderWarteschlangeentferntwirdoderwenneineZellenichtinderWarteschlangeverfügbarist,basierendaufdemTyp,derim-Aufrufe`DequeReusableCell` von registriert ist.
 
-In diesem Fall durch die Registrierung der `AnimalCell` Klasse iOS erstellt eine neue `AnimalCell` intern und gibt ihn zurück, wenn eine Zelle entfernen aus der Warteschlange aufgerufen wird, nach dem er mit dem Image in das Animal-Klasse enthalten und für die Anzeige zurückgegeben, um die konfiguriertist`UICollectionView`.
+In diesem Fall erstellt IOS durch das `AnimalCell` Registrieren der-Klasse intern eine neue `AnimalCell` und gibt diese zurück, wenn ein aufzurufende Befehl zum Aufheben der Warteschlange für eine Zelle erstellt wird. Anschließend wird Sie mit dem in der Tier-Klasse enthaltenen Bild konfiguriert und für die Anzeige an die `UICollectionView`.
 
  <a name="Delegate" />
 
 
 ### <a name="delegate"></a>delegate
 
-Die `UICollectionView` Klasse verwendet einen Delegaten vom Typ `UICollectionViewDelegate` zur Unterstützung der Interaktion mit Inhalt in die `UICollectionView`. Dies ermöglicht das Steuern von:
+Die `UICollectionView` -Klasse verwendet einen Delegaten `UICollectionViewDelegate` vom Typ, um die `UICollectionView`Interaktion mit Inhalt in zu unterstützen. Dies ermöglicht Folgendes:
 
--  **Auswahl der Zelle** – bestimmt, ob eine Zelle ausgewählt wird.
--  **Zellen hervorheben** – bestimmt, ob eine Zelle wird derzeit verwendet wird.
--  **Zelle Menüs** – Menü, das für eine Zelle in der Antwort auf eine Geste für ein langes Drücken angezeigt.
+-  **Zellen Auswahl** – bestimmt, ob eine Zelle ausgewählt ist.
+-  **Zellen Hervorhebung** – bestimmt, ob eine Zelle gerade berührt wird.
+-  **Zellen Menüs** – Menü, das als Reaktion auf eine lange Press Bewegung für eine Zelle angezeigt wird.
 
 
-Wie bei der Datenquelle, die `UICollectionViewController` ist standardmäßig so konfiguriert, werden der Delegat für die `UICollectionView`.
+Wie bei der Datenquelle ist die `UICollectionViewController` standardmäßig so konfiguriert, `UICollectionView`dass Sie der-Delegat ist.
 
  <a name="Cell_HighLighting" />
 
 
-#### <a name="cell-highlighting"></a>Zelle zu markieren
+#### <a name="cell-highlighting"></a>Zellen Hervorhebung
 
-Wenn eine Zelle, wird die Zelle Übergänge in den markierten Status gedrückt wird, und es nicht, bis aktiviert ist wird der Benutzer den Finger aus der Zelle. Dies ermöglicht einen temporären ändern in die Darstellung der Zelle aus, bevor es tatsächlich ausgewählt wird. Bei Auswahl der Zelle des `SelectedBackgroundView` wird angezeigt. Die folgende Abbildung zeigt den markierten Status auf, kurz bevor die Auswahl vorgenommen wird:
+Wenn eine Zelle gedrückt wird, wechselt die Zelle in einen markierten Zustand und wird erst ausgewählt, wenn der Benutzer den Finger von der Zelle anhebt. Dies ermöglicht eine temporäre Änderung der Darstellung der Zelle, bevor Sie tatsächlich ausgewählt wird. Bei Auswahl werden die Zellen `SelectedBackgroundView` angezeigt. Die folgende Abbildung zeigt den hervorgehobenen Zustand, kurz bevor die Auswahl erfolgt:
 
- [![](uicollectionview-images/04-cell-highlight.png "Diese Abbildung zeigt den markierten Status auf, kurz bevor die Auswahl vorgenommen wird")](uicollectionview-images/04-cell-highlight.png#lightbox)
+ [![](uicollectionview-images/04-cell-highlight.png "Diese Abbildung zeigt den hervorgehobenen Zustand, kurz bevor die Auswahl erfolgt.")](uicollectionview-images/04-cell-highlight.png#lightbox)
 
-Zum Implementieren von Hervorhebungen, die `ItemHighlighted` und `ItemUnhighlighted` Methoden der `UICollectionViewDelegate` kann verwendet werden. Beispielsweise gilt der folgende Code einen gelben Hintergrund auf den `ContentView` Wenn die Zelle markiert ist, und einen weißen Hintergrund, wenn nicht hervorgehoben, wie in der Abbildung oben gezeigt:
+Zum Implementieren der Hervorhebung `ItemHighlighted` `UICollectionViewDelegate` können `ItemUnhighlighted` die-Methode und die-Methode von verwendet werden. Der folgende Code wendet z. b. einen gelben Hintergrund des an `ContentView` , wenn die Zelle hervorgehoben ist, und einen weißen Hintergrund, wenn er nicht hervorgehoben ist, wie in der Abbildung oben dargestellt:
 
 ```csharp
 public override void ItemHighlighted (UICollectionView collectionView, NSIndexPath indexPath)
@@ -230,7 +230,7 @@ public override void ItemUnhighlighted (UICollectionView collectionView, NSIndex
 
 #### <a name="disabling-selection"></a>Auswahl deaktivieren
 
-Auswahl ist standardmäßig aktiviert, in `UICollectionView`. Überschreiben, um die Auswahl zu deaktivieren, `ShouldHighlightItem` und Zurückgeben von "false", wie unten dargestellt:
+Die Auswahl ist in `UICollectionView`standardmäßig aktiviert. Um die Auswahl zu deaktivieren `ShouldHighlightItem` , überschreiben Sie, und geben Sie false zurück
 
 ```csharp
 public override bool ShouldHighlightItem (UICollectionView collectionView, NSIndexPath indexPath)
@@ -239,43 +239,43 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 }
 ```
 
-Wenn Hervorhebung deaktiviert ist, ist der Prozess der Auswahl einer Zelle ebenfalls deaktiviert. Darüber hinaus ist auch eine `ShouldSelectItem` -Methode, die Auswahl direkt, obwohl steuert, wenn `ShouldHighlightItem` implementiert ist und "falsch" und `ShouldSelectItem` wird nicht aufgerufen.
+Wenn die Hervorhebung deaktiviert ist, wird der Vorgang der Auswahl einer Zelle ebenfalls deaktiviert. Außerdem gibt es auch eine `ShouldSelectItem` Methode, die die Auswahl direkt steuert. Wenn `ShouldHighlightItem` jedoch implementiert ist und false zurückgibt, `ShouldSelectItem` wird nicht aufgerufen.
 
- `ShouldSelectItem` ermöglicht die Auswahl auf aktiviert oder deaktiviert werden, auf Element-von-Element ab, wenn `ShouldHighlightItem` ist nicht implementiert. Darüber hinaus können ohne Auswahl hervorgehoben, wenn `ShouldHighlightItem` wird implementiert, und gibt true zurück, während `ShouldSelectItem` "false" zurückgibt.
+ `ShouldSelectItem`ermöglicht das Aktivieren oder Deaktivieren der Auswahl auf Element Basis, wenn `ShouldHighlightItem` nicht implementiert ist. Außerdem ermöglicht Sie die Hervorhebung ohne Auswahl `ShouldHighlightItem` , wenn implementiert ist und true zurück `ShouldSelectItem` gibt, während false zurückgibt.
 
  <a name="Cell_Menus" />
 
 
-#### <a name="cell-menus"></a>Zelle Menüs
+#### <a name="cell-menus"></a>Zellen Menüs
 
-Jede Zelle in einer `UICollectionView` kann mit der ein Menü, das Ausschneiden, kopieren und einfügen, um optional unterstützt werden kann. So erstellen ein Menü "Bearbeiten" auf eine Zelle:
+Jede Zelle in einem `UICollectionView` kann ein Menü zeigen, das Ausschneiden, kopieren und einfügen ermöglicht, optional unterstützt zu werden. So erstellen Sie ein Bearbeitungs Menü in einer Zelle:
 
-1.  Außer Kraft setzen `ShouldShowMenu` und true zurückgeben, wenn das Element ein Menü angezeigt werden sollen.
-1.  Außer Kraft setzen `CanPerformAction` und WAHR zurückgeben, für jede Aktion, die das Element ausführen können, die Ausschneiden, kopieren oder einfügen sein.
-1.  Außer Kraft setzen `PerformAction` um die Bearbeitung auszuführen, kopieren Sie für den Einfügevorgang.
+1.  Über `ShouldShowMenu` schreiben Sie, und geben Sie true zurück, wenn das Element ein Menü anzeigen soll.
+1.  Über `CanPerformAction` schreiben Sie, und geben Sie für jede Aktion, die vom Element ausgeführt werden kann, true zurück, wobei es sich um Ausschneiden, kopieren oder Einfügen handelt.
+1.  Über `PerformAction` schreiben, um den Vorgang zum Bearbeiten, Kopieren von Einfügevorgang auszuführen
 
 
-Der folgende Screenshot Menü anzeigen, wenn eine Zelle lang gedrückt wird:
+Der folgende Screenshot zeigt das Menü, wenn eine Zelle lange gedrückt ist:
 
- [![](uicollectionview-images/04a-menu.png "Dieser Screenshot zeigt das Menü anzeigen, wenn eine Zelle lang gedrückt wird")](uicollectionview-images/04a-menu.png#lightbox)
+ [![](uicollectionview-images/04a-menu.png "Dieser Screenshot zeigt das Menü an, wenn eine Zelle lang gedrückt ist.")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
 
 
 ## <a name="layout"></a>Layout
 
-`UICollectionView` unterstützt ein Layout, die ermöglicht, die Positionierung der alle Elemente, Zellen, zusätzliche Ansichten und Decoration-Ansichten, unabhängig von der Verwaltung der `UICollectionView` selbst.
-Verwenden das Layoutsystem, kann eine Anwendung Layouts wie Raster-ähnliches unterstützen, wir haben gesehen, in diesem Artikel als auch benutzerdefinierte Layouts zu bereitstellen.
+`UICollectionView`unterstützt ein Layoutsystem, das es ermöglicht, alle zugehörigen Elemente, Zellen, ergänzenden Sichten und Dekorations Ansichten unabhängig von der `UICollectionView` selbst zu verwalten.
+Mithilfe des Layoutsystems kann eine Anwendung Layouts unterstützen, wie z. b. das Raster, das wir in diesem Artikel gesehen haben, sowie benutzerdefinierte Layouts bereitstellen.
 
  <a name="Layout_Basics" />
 
 
-### <a name="layout-basics"></a>Layout-Grundlagen
+### <a name="layout-basics"></a>Grundlagen des Layouts
 
-Layouts in einer `UICollectionView` werden definiert, in einer Klasse, die von erbt `UICollectionViewLayout`. Die Layout-Implementierung ist verantwortlich für das Erstellen der Layoutattribute für jedes Element in der `UICollectionView`. Es gibt zwei Möglichkeiten, ein Layout zu erstellen:
+Layouts in einem `UICollectionView` werden in einer Klasse definiert, die von `UICollectionViewLayout`erbt. Die layoutimplementierung ist für das Erstellen der Layoutattribute für jedes Element `UICollectionView`in der verantwortlich. Es gibt zwei Möglichkeiten, ein Layout zu erstellen:
 
--  Die integrierte `UICollectionViewFlowLayout` .
--  Geben Sie ein benutzerdefiniertes Layout durch Erben von `UICollectionViewLayout` .
+-  Verwenden Sie die integrierte `UICollectionViewFlowLayout` .
+-  Stellen Sie ein benutzerdefiniertes Layout bereit `UICollectionViewLayout` , indem Sie von erben.
 
 
  <a name="Flow_Layout" />
@@ -283,59 +283,59 @@ Layouts in einer `UICollectionView` werden definiert, in einer Klasse, die von e
 
 ### <a name="flow-layout"></a>Flusslayout
 
-Die `UICollectionViewFlowLayout` -Klasse stellt ein linienbasiertes Layout, geeignet für die Anordnung von Inhalt in einem Raster von Zellen, wie wir gesehen haben.
+Die `UICollectionViewFlowLayout` -Klasse bietet ein Linien basiertes Layout, das zum Anordnen von Inhalt in einem Raster von Zellen geeignet ist, wie wir gesehen haben.
 
-So verwenden Sie eine Flow-layout
+So verwenden Sie ein Fluss Layout:
 
--  Erstellen Sie eine Instanz des `UICollectionViewFlowLayout` :
+-  Erstellen Sie eine Instanz `UICollectionViewFlowLayout` von:
 
 
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
--  Übergeben Sie die Instanz an den Konstruktor der `UICollectionView` :
+-  Übergeben Sie die-Instanz an den Konstruktor `UICollectionView` von:
 
 
 ```csharp
 simpleCollectionViewController = new SimpleCollectionViewController (layout);
 ```
 
-Dies ist alles, die was Layout Inhalt in einem Raster benötigt wird. Auch wenn die Ausrichtung ändert, ändert der `UICollectionViewFlowLayout` behandelt, wie unten dargestellt, entsprechend neu anordnen des Inhalts:
+Das ist alles, was zum Layoutinhalt in einem Raster benötigt wird. Wenn sich die Ausrichtung ändert, `UICollectionViewFlowLayout` ordnet der den Inhalt ebenfalls entsprechend an, wie unten dargestellt:
 
- [![](uicollectionview-images/05-layout-orientation.png "Beispiel für die Änderungen der bildschirmausrichtung")](uicollectionview-images/05-layout-orientation.png#lightbox)
+ [![](uicollectionview-images/05-layout-orientation.png "Beispiel für die Ausrichtung von Änderungen")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
 
 
-#### <a name="section-inset"></a>Abschnitt Inset
+#### <a name="section-inset"></a>Abschnitts INSET
 
-Zu einigen Raum der `UIContentView`, Layouts sind eine `SectionInset` Eigenschaft vom Typ `UIEdgeInsets`. Beispielsweise der folgende Code enthält einen 50 Pixel-Puffer, um den gesamten der `UIContentView` beim Layout durch eine `UICollectionViewFlowLayout`:
+Zum Bereitstellen von Speicherplatz `UIContentView`um den verfügen Layouts `SectionInset` über eine Eigenschaft `UIEdgeInsets`vom Typ. Der folgende Code stellt z. b. einen 50-Pixel-Puffer um jeden Abschnitt `UIContentView` von bereit, wenn er `UICollectionViewFlowLayout`von einem angelegt wird:
 
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 ```
 
-Dies führt zu Abstand um den Abschnitt, wie unten dargestellt:
+Dies führt zu einem Abstand um den Abschnitt, wie unten dargestellt:
 
- [![](uicollectionview-images/06-sectioninset.png "Abstand um den Abschnitt, wie hier gezeigt.")](uicollectionview-images/06-sectioninset.png#lightbox)
+ [![](uicollectionview-images/06-sectioninset.png "Abstand um den Abschnitt, wie hier gezeigt")](uicollectionview-images/06-sectioninset.png#lightbox)
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
 
-#### <a name="subclassing-uicollectionviewflowlayout"></a>Erstellen von Unterklassen für UICollectionViewFlowLayout
+#### <a name="subclassing-uicollectionviewflowlayout"></a>Subclassinguicollectionviewflowlayout
 
-In der Edition mit `UICollectionViewFlowLayout` direkt, sie können auch als Unterklasse definiert werden um das Layout des Inhalt auf einer Linie weiter anzupassen. Dies kann beispielsweise verwendet werden, erstellen Sie ein Layout, die die Zellen in einem Raster wird nicht umbrochen, sondern erstellt stattdessen eine einzelne Zeile mit einem horizontalen Bildlauf Effekt, wie unten dargestellt:
+In der Edition zur `UICollectionViewFlowLayout` direkten Verwendung kann Sie auch untergeordnet werden, um das Layout von Inhalten an einer Zeile weiter anzupassen. Dies kann z. b. verwendet werden, um ein Layout zu erstellen, das die Zellen nicht in ein Raster packt, sondern stattdessen eine einzelne Zeile mit einem horizontalen scrolleffekt erstellt, wie unten dargestellt:
 
- [![](uicollectionview-images/07-line-layout.png "Eine einzelne Zeile mit einem horizontalen Bildlauf Effekt")](uicollectionview-images/07-line-layout.png#lightbox)
+ [![](uicollectionview-images/07-line-layout.png "Eine einzelne Zeile mit einem horizontalen scrolleffekt")](uicollectionview-images/07-line-layout.png#lightbox)
 
-Dies implementieren, indem Unterklassen `UICollectionViewFlowLayout` erfordert:
+Um dies durch Unterklassen `UICollectionViewFlowLayout` zu implementieren, ist Folgendes erforderlich:
 
--  Initialisieren alle Layouteigenschaften, die auf das Layout selbst anwenden oder alle Elemente im Layout im Konstruktor.
--  Überschreiben `ShouldInvalidateLayoutForBoundsChange` , zurückgeben "true", also bei Grenzen des der `UICollectionView` Änderungen das Layout der Zellen werden neu berechnet. Hiermit wird den Code in diesem Fall sicherstellen, für die während des Bildlaufs auf der Mittelwert Zelle angewendete Transformation angewendet wird.
--  Überschreiben von `TargetContentOffset` den Mittelwert zu Ausrichtung an der Mitte der Zelle die `UICollectionView` als Durchführen eines Bildlaufs beendet wird.
--  Überschreiben von `LayoutAttributesForElementsInRect` zurückzugebenden ein Array von `UICollectionViewLayoutAttributes` . Jede `UICollectionViewLayoutAttribute` enthält Informationen zum Layout, das bestimmte Element, einschließlich Eigenschaften, wie z. B. die `Center` , `Size` , `ZIndex` und `Transform3D` .
+-  Initialisieren von Layouteigenschaften, die für das Layout selbst oder für alle Elemente im Layout im Konstruktor gelten.
+-  Überschreiben von true `UICollectionView` ,sodassdasLayoutderZellen,wennsichdieGrenzenderÄnderungenändern,neuberechnetwird.`ShouldInvalidateLayoutForBoundsChange` Dies wird in diesem Fall verwendet, um sicherzustellen, dass der Code für die Transformation, die auf die zentriste Zelle angewendet wird, beim Scrollen angewendet wird.
+-  Überschreiben `UICollectionView` , um die mittelste Zelle in den Mittelpunkt der zu setzen, während der Bildlauf angehalten wird. `TargetContentOffset`
+-  Überschreiben, um ein- `UICollectionViewLayoutAttributes` Array zurückzugeben. `LayoutAttributesForElementsInRect` Jede `UICollectionViewLayoutAttribute` enthält Informationen zum Layout des jeweiligen Elements, `Size` einschließlich der `Center` `ZIndex` Eigenschaften, und `Transform3D` .
 
 
 Der folgende Code zeigt eine solche Implementierung:
@@ -410,50 +410,50 @@ namespace SimpleCollectionView
  <a name="Custom_Layout" />
 
 
-### <a name="custom-layout"></a>Benutzerdefinierte Layouts
+### <a name="custom-layout"></a>Benutzerdefiniertes Layout
 
-Zusätzlich zur Verwendung von `UICollectionViewFlowLayout`, Layouts können auch vollständig angepasst werden durch erben direkt von `UICollectionViewLayout`.
+Zusätzlich zur Verwendung `UICollectionViewFlowLayout`von können Layouts auch vollständig angepasst werden, indem direkt von `UICollectionViewLayout`geerbt wird.
 
-Die wichtigsten Methoden überschrieben werden:
+Folgende Schlüsselmethoden müssen überschrieben werden:
 
--   `PrepareLayout` : Wird zum Ausführen der anfänglichen geometrischer Berechnungen, die während des Prozesses Layout verwendet werden.
--   `CollectionViewContentSize` – Gibt die Größe des Bereichs verwendet, um Inhalt anzuzeigen.
--   `LayoutAttributesForElementsInRect` – Wie im zuvor gezeigten Beispiel UICollectionViewFlowLayout diese Methode verwendet wird, um Informationen zum Bereitstellen der `UICollectionView` zum Layout jedes Element. Anders als bei der `UICollectionViewFlowLayout` , wenn Sie ein benutzerdefiniertes Layout erstellen, können Sie Elemente positionieren, aber Sie auswählen.
-
-
-Beispielsweise kann derselbe Inhalt in einem kreisförmigen Layout angezeigt wie unten dargestellt:
-
- [![](uicollectionview-images/08-circle-layout.png "Eine benutzerdefinierte kreisförmigen Layout wie hier gezeigt.")](uicollectionview-images/08-circle-layout.png#lightbox)
-
-Das Layouts leistungsfähigere an, die aus dem Raster-ähnliches-Layout, in einem horizontalen Bildlauf Layout zu ändern und anschließend dieses zirkuläre Layout erfordert nur die Layoutklasse, die bereitgestellt, um die `UICollectionView` geändert werden. "Nothing" in der `UICollectionView`, Delegaten oder seine Datenquelle Änderungen am Code überhaupt.
+-   `PrepareLayout`– Wird zum Durchführen ursprünglicher geometrischer Berechnungen verwendet, die während des gesamten Layoutprozesses verwendet werden.
+-   `CollectionViewContentSize`– Gibt die Größe des Bereichs zurück, der zum Anzeigen von Inhalten verwendet wird.
+-   `LayoutAttributesForElementsInRect`– Wie das oben gezeigte uicollectionviewflowlayout-Beispiel, wird diese Methode zum Bereitstellen von Informationen für `UICollectionView` das Layout der einzelnen Elemente verwendet. Anders als bei der `UICollectionViewFlowLayout` Erstellung eines benutzerdefinierten Layouts können Sie jedoch die Elemente positionieren, die Sie auswählen.
 
 
-## <a name="changes-in-ios-9"></a>Änderungen in iOS 9
+Beispielsweise kann derselbe Inhalt in einem zirkulären Layout wie unten gezeigt dargestellt werden:
+
+ [![](uicollectionview-images/08-circle-layout.png "Ein kreisförmiges benutzerdefiniertes Layout, wie hier gezeigt")](uicollectionview-images/08-circle-layout.png#lightbox)
+
+Der leistungsstarke Vorteil von Layouts besteht darin, dass Sie zum Ändern des Raster ähnlichen Layouts in ein horizontales scrolllayout und anschließende anschließende zu diesem zirkulären Layout nur die Layoutklasse ändern müssen, die für die `UICollectionView` geändert wird. Nichts in der `UICollectionView`, der Delegat oder der Datenquellen Code ändert sich überhaupt.
 
 
-In iOS 9, die Auflistungsansicht (`UICollectionView`) unterstützt das Ziehen Sie jetzt neuanordnung von Elementen, die standardmäßig durch Hinzufügen einer neuen Standard stiftbewegungs-Erkennung und mehrere neue unterstützender Methoden.
+## <a name="changes-in-ios-9"></a>Änderungen in ios 9
 
-Verwenden diese neuen Methoden, können Sie ganz einfach implementieren ziehen Sie in der Auflistungsansicht Neuanordnen und haben die Möglichkeit zum Anpassen der Darstellung der Elemente jeder Phase des Prozesses Neuordnung von Elementen.
 
-[![](uicollectionview-images/intro01.png "Ein Beispiel für die Neuordnung")](uicollectionview-images/intro01.png#lightbox)
+In ios 9 unterstützt die Auflistungs Ansicht (`UICollectionView`) jetzt die Neuanordnung von Elementen im Standardfeld, indem eine neue Standard Gestenerkennung und mehrere neue unterstützende Methoden hinzugefügt werden.
 
-In diesem Artikel werden wir sehen uns die Implementierung von Drag-zu-neuanordnung in einer Xamarin.iOS-Anwendung als auch einige der anderen vorgenommenen Änderungen, die dem Steuerelement Auflistung iOS 9 vorgenommen hat:
+Mithilfe dieser neuen Methoden können Sie Drag to Order in der Auflistungs Ansicht problemlos implementieren und die Darstellung der Elemente in jeder Phase des Neuanordnungs Vorgangs anpassen.
+
+[![](uicollectionview-images/intro01.png "Ein Beispiel für den Neuanordnungs Vorgang")](uicollectionview-images/intro01.png#lightbox)
+
+In diesem Artikel wird die Implementierung von Drag-to-Order in einer xamarin. IOS-Anwendung sowie einige der anderen Änderungen erläutert, die IOS 9 an der Sammlungsansicht vorgenommen hat:
 
 - [Einfache Neuanordnung von Elementen](#Easy-Reordering-of-Items)
-    - [Einfaches Beispiel für die Neuordnung von Elementen](#Simple-Reordering-Example)
-    - [Verwenden eine benutzerdefinierte Stiftbewegungs-Erkennung](#Using-a-Custom-Gesture-Recognizer)
-    - [Benutzerdefinierte Layouts und neuanordnung von Spalten](#Custom-Layouts-and-Reording)
-- [Änderungen der Auflistung anzeigen](#collection-view-changes)
+    - [Beispiel für einfache Neuanordnung](#Simple-Reordering-Example)
+    - [Verwenden einer benutzerdefinierten Gestenerkennung](#Using-a-Custom-Gesture-Recognizer)
+    - [Benutzerdefinierte Layouts und Neuanordnen](#Custom-Layouts-and-Reording)
+- [Änderungen der Sammlungsansicht](#collection-view-changes)
 
 <a name="Easy-Reordering-of-Items" />
 
-## <a name="reordering-of-items"></a>Neuanordnung von Elementen
+## <a name="reordering-of-items"></a>Neuanordnen von Elementen
 
-Wie bereits erwähnt, war einer der wichtigsten Änderungen an der Auflistungsansicht in iOS 9 das Hinzufügen von einfach Drag-neuanordnung-Funktionalität standardmäßig.
+Wie bereits erwähnt, war eine der signifikantesten Änderungen an der Sammlungsansicht in ios 9 das Hinzufügen von einfachen Drag-to-Order-Funktionen.
 
-In iOS 9 die schnellste Möglichkeit zum Hinzufügen einer Ansicht der Auflistung Neuanordnen von ist die Verwendung einer `UICollectionViewController`.
-Der Auflistung-View-Controller verfügt jetzt über eine `InstallsStandardGestureForInteractiveMovement` -Eigenschaft, die einen Standard fügt *Geste Erkennung* , die Sie ziehen, um Elemente in der Auflistung Neuanordnen unterstützt.
-Da der Standardwert ist `true`, haben nur implementieren die `MoveItem` -Methode der der `UICollectionViewDataSource` Klasse zur Unterstützung von Drag-zu-neuanordnung. Beispiel:
+In ios 9 ist die schnellste Möglichkeit zum Hinzufügen einer Neuanordnung zu einer Auflistungs Ansicht `UICollectionViewController`die Verwendung eines.
+Der Auflistungs Ansichts Controller `InstallsStandardGestureForInteractiveMovement` verfügt nun über eine-Eigenschaft, die eine Standard *Gestenerkennung* hinzufügt, die das ziehen zum Neuanordnen von Elementen in der Auflistung unterstützt.
+Da der Standardwert ist `true`, müssen Sie nur die `MoveItem` -Methode der `UICollectionViewDataSource` -Klasse implementieren, um die Drag-to-Order-Unterstützung zu unterstützen. Beispiel:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -464,44 +464,44 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 ```
 <a name="Simple-Reordering-Example" />
 
-### <a name="simple-reordering-example"></a>Einfaches Beispiel für die Neuordnung von Elementen
+### <a name="simple-reordering-example"></a>Beispiel für einfache Neuanordnung
 
-Als kurzes Beispiel, starten Sie ein neues Xamarin.iOS-Projekt, und Bearbeiten der **"Main.Storyboard"** Datei. Ziehen Sie eine `UICollectionViewController` auf die Entwurfsoberfläche:
+Starten Sie als schnelles Beispiel ein neues xamarin. IOS-Projekt, und bearbeiten Sie die Datei " **Main. Storyboard** ". Ziehen Sie `UICollectionViewController` einen auf die Entwurfs Oberfläche:
 
-[![](uicollectionview-images/quick01.png "Hinzufügen einer UICollectionViewController")](uicollectionview-images/quick01.png#lightbox)
+[![](uicollectionview-images/quick01.png "Hinzufügen von uicollectionviewcontroller")](uicollectionview-images/quick01.png#lightbox)
 
-Wählen Sie die Auflistungsansicht (es kann am einfachsten, diesen Vorgang durchführen, die dokumentgliederung sein). Legen Sie in der Registerkarte "Layout" des Eigenschaftenpads die folgenden Größen, wie im folgenden Screenshot dargestellt:
+Wählen Sie die Sammlungsansicht aus (Dies ist möglicherweise am einfachsten in der Dokument Gliederung). Legen Sie auf der Registerkarte Layout des Eigenschaftenpad die folgenden Größen fest, wie im folgenden Screenshot veranschaulicht:
 
-- **Größe der Zelle**: Width – 60 | Height – 60
-- **Größe des Headers**: Width – 0 | Height – 0
-- **Fußzeilengröße**: Width – 0 | Height – 0
-- **Min-Abstand**: Für Zellen – 8 | Für Zeilen – 8
-- **Im Abschnitt Abstände**: Top – 16 | Unten – 16 | Left – 16 | Rechts: 16
+- **Zellgröße**: Breite – 60 | Höhe – 60
+- **Header Größe**: Breite – 0 | Höhe – 0
+- **Footergröße**: Breite – 0 | Höhe – 0
+- Minimaler **Abstand**: Für Zellen – 8 | Für Zeilen – 8
+- **Abschnitts insets**: Top – 16 | Bottom – 16 | Left – 16 | Right – 16
 
-[![](uicollectionview-images/quick04.png "Legen Sie die Auflistungsansicht-Größen")](uicollectionview-images/quick04.png#lightbox)
+[![](uicollectionview-images/quick04.png "Festlegen der Größen der Sammlungsansicht")](uicollectionview-images/quick04.png#lightbox)
 
-Als Nächstes bearbeiten Sie die standardmäßige Zelle ein:
-    - Ändern der Hintergrundfarbe in Blau
-    - Fügen Sie eine Bezeichnung, die als Titel für die Zelle fungiert.
-    - Legen Sie den Bezeichner für die Wiederverwendung auf **Zelle**
+Bearbeiten Sie als nächstes die Standard Zelle:
+    - Ändern der Hintergrundfarbe in blau
+    - Fügen Sie eine Bezeichnung hinzu, die als Titel für die Zelle fungiert.
+    - Festlegen des Verwendungs Bezeichners auf die **Zelle**
 
-[![](uicollectionview-images/quick02.png "Bearbeiten Sie die standardmäßige Zelle")](uicollectionview-images/quick02.png#lightbox)
+[![](uicollectionview-images/quick02.png "Standard Zelle bearbeiten")](uicollectionview-images/quick02.png#lightbox)
 
-Fügen Sie die Einschränkungen, um die Bezeichnung, die in der Zelle zentriert werden, wie sie die Größe ändert beibehalten:
+Fügen Sie Einschränkungen hinzu, damit die Bezeichnung in der Zelle zentriert bleibt, wenn Sie die Größe ändert:
 
-In der **Pad "Eigenschaft"** für die _CollectionViewCell_ und legen Sie die **Klasse** zu `TextCollectionViewCell`:
+Legen Sie im eigenschaftenpad für _collectionviewcell_ fest, und `TextCollectionViewCell`legen Sie die- **Klasse** auf fest:
 
-[![](uicollectionview-images/quick05.png "Legen Sie die Klasse auf TextCollectionViewCell")](uicollectionview-images/quick05.png#lightbox)
+[![](uicollectionview-images/quick05.png "Legen Sie die Klasse auf textcollectionviewcell fest.")](uicollectionview-images/quick05.png#lightbox)
 
-Legen Sie die **Wiederverwendbare Auflistungsansicht** zu `Cell`:
+Legen Sie die wieder **verwendbare Ansicht** der Auflistung auf `Cell`fest:
 
-[![](uicollectionview-images/quick06.png "Legen Sie die Wiederverwendbare Auflistungsansicht auf Zelle")](uicollectionview-images/quick06.png#lightbox)
+[![](uicollectionview-images/quick06.png "Wiederverwendbare Ansicht der Sammlung auf Zelle festlegen")](uicollectionview-images/quick06.png#lightbox)
 
-Abschließend wählen Sie die Bezeichnung, und nennen Sie sie `TextLabel`:
+Wählen Sie abschließend die Bezeichnung aus, und `TextLabel`benennen Sie Sie:
 
-[![](uicollectionview-images/quick07.png "Bezeichnung für TextLabel")](uicollectionview-images/quick07.png#lightbox)
+[![](uicollectionview-images/quick07.png "namens Bezeichnung Text Label")](uicollectionview-images/quick07.png#lightbox)
 
-Bearbeiten der `TextCollectionViewCell` Klasse und fügen Sie die folgenden Eigenschaften.:
+Bearbeiten Sie `TextCollectionViewCell` die-Klasse, und fügen Sie die folgenden Eigenschaften hinzu:
 
 ```csharp
 using System;
@@ -528,9 +528,9 @@ namespace CollectionView
 }
 ```
 
-Hier die `Text` -Eigenschaft der Bezeichnung wird verfügbar gemacht werden als Titel der Zelle, damit sie vom Code festgelegt werden kann.
+Hier wird `Text` die-Eigenschaft der Bezeichnung als Titel der Zelle verfügbar gemacht, sodass Sie aus dem Code festgelegt werden kann.
 
-Fügen Sie einen neuen C# Klasse dem Projekt, und rufen Sie es `WaterfallCollectionSource`. Bearbeiten Sie die Datei, und stellen sie wie folgt aussehen:
+Fügen Sie dem C# Projekt eine neue Klasse hinzu, und `WaterfallCollectionSource`nennen Sie Sie. Bearbeiten Sie die Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -597,10 +597,10 @@ namespace CollectionView
 }
 ```
 
-Diese Klasse wird die Datenquelle für unsere Auflistungsansicht werden, und geben Sie die Informationen für jede Zelle in der Auflistung.
-Beachten Sie, dass die `MoveItem` Methode wird implementiert, um das Ziehen von Elementen in der Auflistung können neu angeordnet.
+Diese Klasse ist die Datenquelle für die Sammlungsansicht und stellt die Informationen für jede Zelle in der Auflistung bereit.
+Beachten Sie, `MoveItem` dass die-Methode implementiert wird, damit Elemente in der Auflistung neu angeordnet werden können.
 
-Fügen Sie ein weiteres neues C# Klasse dem Projekt, und rufen Sie es `WaterfallCollectionDelegate`. Bearbeiten Sie diese Datei, und stellen sie wie folgt aussehen:
+Fügen Sie dem C# Projekt eine weitere neue Klasse hinzu, `WaterfallCollectionDelegate`und nennen Sie Sie. Bearbeiten Sie diese Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -650,9 +650,9 @@ namespace CollectionView
 }
 ```
 
-Dies wird als der Delegat für unsere Auflistungsansicht fungieren. Um eine Zelle zu markieren, während der Benutzer in der Auflistung mit ihm interagiert wurde Methoden überschrieben.
+Dies fungiert als Delegat für die Auflistungs Ansicht. Methoden wurden überschrieben, um eine Zelle hervorzuheben, während der Benutzer in der Auflistungs Ansicht mit ihr interagiert.
 
-Fügen Sie einen letzten C# Klasse dem Projekt, und rufen Sie es `WaterfallCollectionView`. Bearbeiten Sie diese Datei, und stellen sie wie folgt aussehen:
+Fügen Sie dem C# Projekt eine letzte Klasse hinzu, und `WaterfallCollectionView`nennen Sie Sie. Bearbeiten Sie diese Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -687,21 +687,21 @@ namespace CollectionView
 }
 ```
 
-Beachten Sie, dass `DataSource` und `Delegate` , die wir oben erstellt werden festgelegt, wenn die Auflistungsansicht aus das Storyboard erstellt wird (oder **XIB** Datei).
+Beachten Sie `DataSource` , `Delegate` dass und, die wir oben erstellt haben, festgelegt werden, wenn die Auflistungs Ansicht aus dem Storyboard (oder **XIb** -Datei) erstellt wird.
 
-Bearbeiten der **"Main.Storyboard"** -Datei erneut, und wählen Sie die Auflistungsansicht aus, und wechseln Sie zu der **Eigenschaften**. Legen Sie die **Klasse** mit den benutzerdefinierten `WaterfallCollectionView` -Klasse, die wir oben definiert:
+Bearbeiten Sie die Datei " **Main. Storyboard** " erneut, und wählen Sie die Sammlungsansicht aus, und wechseln Sie zu den **Eigenschaften**. Legen Sie die- **Klasse** auf `WaterfallCollectionView` die benutzerdefinierte Klasse fest, die wir oben definiert haben:
 
-Speichern Sie die Änderungen, die Sie an der Benutzeroberfläche vorgenommen, und führen Sie die app.
-Wenn der Benutzer ein Element aus der Liste wählt und es in einem neuen Speicherort zieht, werden automatisch die anderen Elemente animieren, wie sie aus dem Weg des Elements verschoben.
-Wenn der Benutzer das Element an einer neuen Position ablegt, wird es zu diesem Speicherort vorhanden sein. Beispiel:
+Speichern Sie die an der Benutzeroberfläche vorgenommenen Änderungen, und führen Sie die APP aus.
+Wenn der Benutzer ein Element aus der Liste auswählt und an einen neuen Speicherort zieht, werden die anderen Elemente automatisch animiert, wenn Sie sich nicht mehr auf das Element bewegen.
+Wenn der Benutzer das Element an einem neuen Speicherort löscht, wird er an diesem Speicherort abgelegt. Beispiel:
 
-[![](uicollectionview-images/intro01.png "Ein Beispiel für ein Element an eine neue Position ziehen")](uicollectionview-images/intro01.png#lightbox)
+[![](uicollectionview-images/intro01.png "Ein Beispiel für das Ziehen eines Elements an einen neuen Speicherort")](uicollectionview-images/intro01.png#lightbox)
 
 <a name="Using-a-Custom-Gesture-Recognizer" />
 
-### <a name="using-a-custom-gesture-recognizer"></a>Verwenden eine benutzerdefinierte Stiftbewegungs-Erkennung
+### <a name="using-a-custom-gesture-recognizer"></a>Verwenden einer benutzerdefinierten Gestenerkennung
 
-In Fällen, in dem können keine `UICollectionViewController` und müssen eine regulären `UIViewController`, oder wenn Sie mehr Kontrolle über die Drag & Drop-Geste nutzen möchten, erstellen Sie eigene benutzerdefinierte Stiftbewegungs-Erkennung und die Auflistungsansicht hinzufügen, wenn das Laden der Ansicht. Beispiel:
+In Fällen, in denen Sie keine `UICollectionViewController` verwenden können und eine reguläre `UIViewController`verwenden müssen, oder wenn Sie mehr Kontrolle über die Drag & Drop-Bewegung benötigen, können Sie eine eigene benutzerdefinierte Gestenerkennung erstellen und diese der Auflistungs Ansicht hinzufügen, wenn die Ansicht geladen wird. Beispiel:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -737,22 +737,22 @@ public override void ViewDidLoad ()
 }
 ```
 
-Hier verwenden wir mehrere neue Methoden hinzugefügt, um die Auflistungsansicht zu implementieren und steuern den Ziehvorgang entsteht:
+Hier werden mehrere neue Methoden verwendet, die der Auflistungs Ansicht hinzugefügt werden, um den Zieh Vorgang zu implementieren und zu steuern:
 
-- `BeginInteractiveMovementForItem` – Kennzeichnet den Anfang eines Verschiebevorgangs.
-- `UpdateInteractiveMovementTargetPosition` -Wird gesendet, wie die Position des Elements aktualisiert wird.
-- `EndInteractiveMovement` : Markiert das Ende der Verschiebung eines Elements.
-- `CancelInteractiveMovement` : Den Benutzer den Vorgang abgebrochen markiert.
+- `BeginInteractiveMovementForItem`-Markiert den Anfang eines Verschiebungs Vorgangs.
+- `UpdateInteractiveMovementTargetPosition`-Wird gesendet, wenn der Speicherort des Elements aktualisiert wird.
+- `EndInteractiveMovement`-Markiert das Ende eines Element Verschiebens.
+- `CancelInteractiveMovement`-Markiert den Benutzer, der den Verschiebungs Vorgang abbricht.
 
-Wenn die Anwendung ausgeführt wird, funktioniert der Ziehvorgang genau so, wie der Standardwert ziehen stiftbewegungs-Erkennung, die die Auflistungsansicht gehört.
+Wenn die Anwendung ausgeführt wird, funktioniert der Zieh Vorgang genau wie die standardmäßige Erkennung der Zieh Gesten in der Auflistungs Ansicht.
 
 <a name="Custom-Layouts-and-Reording" />
 
-### <a name="custom-layouts-and-reordering"></a>Benutzerdefinierte Layouts und neuanordnung von Spalten
+### <a name="custom-layouts-and-reordering"></a>Benutzerdefinierte Layouts und Neuanordnen
 
-In iOS 9 wurden mehrere neue Methoden zum Arbeiten mit Drag-zu-neu anordnen und benutzerdefinierte Layouts in einer Auflistung hinzugefügt. Um dieses Feature zu untersuchen, fügen Sie ein benutzerdefiniertes Layout der Auflistung.
+In ios 9 wurden mehrere neue Methoden hinzugefügt, um mit Drag-to-Order-und benutzerdefinierten Layouts in einer Auflistungs Ansicht zu arbeiten. Um dieses Feature zu durchsuchen, fügen wir der Auflistung ein benutzerdefiniertes Layout hinzu.
 
-Fügen Sie zunächst ein neues C# Klasse mit dem Namen `WaterfallCollectionLayout` zum Projekt. Bearbeiten Sie sie aus, und stellen Sie sie wie folgt aussehen:
+Fügen Sie zunächst dem Projekt C# eine neue `WaterfallCollectionLayout` Klasse mit dem Namen hinzu. Bearbeiten Sie die Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -1144,10 +1144,10 @@ namespace CollectionView
 }
 ```
 
-Dies liegt möglicherweise Klasse verwendet, um ein benutzerdefiniertes zwei Spalten, die Wasserfall-Typlayout zur Auflistungsansicht bereitzustellen.
-Der Code verwendet die Schlüssel / Wert-Codierung (über die `WillChangeValue` und `DidChangeValue` Methoden), die Datenbindung für unsere berechnete Eigenschaften in dieser Klasse zu ermöglichen.
+Dies kann verwendet werden, um ein benutzerdefiniertes Wasserfall Layout für zwei Spalten für die Auflistungs Ansicht bereitzustellen.
+Der Code verwendet Schlüssel-Wert-Codierung (über `WillChangeValue` die `DidChangeValue` -Methode und die-Methode), um Daten Bindungen für unsere berechneten Eigenschaften in dieser Klasse bereitzustellen.
 
-Als Nächstes bearbeiten Sie die `WaterfallCollectionSource` , und stellen Sie die folgenden Änderungen und Ergänzungen:
+Bearbeiten Sie als nächstes `WaterfallCollectionSource` das, und nehmen Sie die folgenden Änderungen und Ergänzungen vor:
 
 ```csharp
 private Random rnd = new Random();
@@ -1169,9 +1169,9 @@ public WaterfallCollectionSource (WaterfallCollectionView collectionView)
 }
 ```
 
-Dadurch wird eine zufällige Höhe für jedes der Elemente erstellt, die in der Liste angezeigt werden.
+Dadurch wird eine zufällige Höhe für jedes Element erstellt, das in der Liste angezeigt wird.
 
-Als Nächstes bearbeiten Sie die `WaterfallCollectionView` Klasse und fügen Sie die folgende Hilfsprogramm-Eigenschaft hinzu:
+Bearbeiten Sie als nächstes `WaterfallCollectionView` die-Klasse, und fügen Sie die folgende Hilfseigenschaft hinzu:
 
 ```csharp
 public WaterfallCollectionSource Source {
@@ -1179,9 +1179,9 @@ public WaterfallCollectionSource Source {
 }
 ```
 
-Dies wird es auf Ihre Datenquelle (und die Höhe des Elements) aus dem benutzerdefinierten Layout zu vereinfachen.
+Dadurch wird es einfacher, die Datenquelle (und die Elementhöhe) aus dem benutzerdefinierten Layout zu erhalten.
 
-Schließlich bearbeiten Sie den ansichtscontroller ein, und fügen Sie den folgenden Code hinzu:
+Bearbeiten Sie schließlich den Ansichts Controller, und fügen Sie den folgenden Code hinzu:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -1201,104 +1201,104 @@ public override void AwakeFromNib ()
 }
 ```
 
-Dies erstellt eine Instanz des unserer benutzerdefinierten Layouts das Ereignis, das die Größe jedes Elements festlegt und fügt das neue Layout zu unserer Auflistungsansicht.
+Dadurch wird eine Instanz des benutzerdefinierten Layouts erstellt, das-Ereignis festgelegt, um die Größe der einzelnen Elemente anzugeben, und das neue Layout wird an unsere Auflistungs Ansicht angefügt.
 
-Wenn wir die Xamarin.iOS-app erneut ausführen, wird die Auflistungsansicht jetzt wie folgt aussehen:
+Wenn die xamarin. IOS-App erneut ausgeführt wird, sieht die Sammlungsansicht nun wie folgt aus:
 
-[![](uicollectionview-images/custom01.png "Die Auflistungsansicht sieht nun wie folgt aus.")](uicollectionview-images/custom01.png#lightbox)
+[![](uicollectionview-images/custom01.png "Die Sammlungsansicht sieht nun wie folgt aus.")](uicollectionview-images/custom01.png#lightbox)
 
-Wir können noch Drag-zu-Elemente neu anordnen als vor, aber Elemente ändert sich jetzt an ihrem neuen Speicherort anpassen, wenn sie gelöscht werden.
+Wir können Elemente weiterhin wie zuvor per Drag & amp; Drop neu anordnen, aber die Größe der Elemente ändert sich nun, damit Sie an den neuen Speicherort angepasst werden, wenn Sie gelöscht werden.
 
-## <a name="collection-view-changes"></a>Änderungen der Auflistung anzeigen
+## <a name="collection-view-changes"></a>Änderungen der Sammlungsansicht
 
-In den folgenden Abschnitten werden wir einen detaillierten Einblick in die Änderungen, die an jede Klasse in der Auflistung von iOS 9 dauern.
+In den folgenden Abschnitten werden die Änderungen, die an den einzelnen Klassen in der Sammlungsansicht von IOS 9 vorgenommen werden, ausführlich erläutert.
 
 ### <a name="uicollectionview"></a>UICollectionView
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionView` -Klasse für iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionView` -Klasse für IOS 9 vorgenommen:
 
-- `BeginInteractiveMovementForItem` – Kennzeichnet den Anfang eines Ziehvorgangs.
-- `CancelInteractiveMovement` – Informiert Sie die Auflistung anzeigen, dass der Benutzer einen Ziehvorgang abgebrochen wurde.
-- `EndInteractiveMovement` – Informiert Sie die Auflistung anzeigen, dass der Benutzer einen Ziehvorgang beendet wurde.
-- `GetIndexPathsForVisibleSupplementaryElements` – Gibt die `indexPath` einer Kopf-oder Fußzeile in einem Abschnitt der Auflistung anzeigen.
-- `GetSupplementaryView` – Gibt die angegebene Kopf- oder Fußzeile.
-- `GetVisibleSupplementaryViews` – Gibt eine Liste aller sichtbaren Kopf- und Fußzeilen zurück.
-- `UpdateInteractiveMovementTargetPosition` – Informiert Sie die Auflistung anzeigen, dass der Benutzer verschoben wurde oder verschoben wurde, ein Element bei einem Ziehvorgang.
+- `BeginInteractiveMovementForItem`– Markiert den Anfang eines Zieh Vorgangs.
+- `CancelInteractiveMovement`– Informiert die Sammlungsansicht darüber, dass der Benutzer einen Zieh Vorgang abgebrochen hat.
+- `EndInteractiveMovement`– Informiert die Sammlungsansicht darüber, dass der Benutzer einen Zieh Vorgang abgeschlossen hat.
+- `GetIndexPathsForVisibleSupplementaryElements`– Gibt den `indexPath` einer Kopfzeile oder Fußzeile in einem Auflistungs Ansichts Abschnitt zurück.
+- `GetSupplementaryView`– Gibt die angegebene Kopfzeile oder Fußzeile zurück.
+- `GetVisibleSupplementaryViews`– Gibt eine Liste aller sichtbaren Kopf-und Fußzeilen zurück.
+- `UpdateInteractiveMovementTargetPosition`– Informiert die Sammlungsansicht, dass der Benutzer während eines Zieh Vorgangs ein Element verschoben oder verschoben hat.
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewController` Klasse in iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewController` -Klasse in ios 9 vorgenommen:
 
-- `InstallsStandardGestureForInteractiveMovement` – If `true` der neuen Stiftbewegungs-Erkennung, die Drag-zu-neuanordnung automatisch unterstützt verwendet werden.
-- `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
-- `GetTargetContentOffset` – Wird verwendet, um den Offset eines Elements der angegebenen Auflistung Ansicht zu erhalten.
-- `GetTargetIndexPathForMove` – Ruft die `indexPath` eines angegebenen Elements für einen Ziehvorgang.
-- `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
+- `InstallsStandardGestureForInteractiveMovement`–, `true` Wenn das neue Gesten Erkennungs Modul verwendet wird, das die Drag-to-Order-Funktion automatisch unterstützt.
+- `CanMoveItem`– Informiert die Auflistungs Ansicht, wenn ein angegebenes Element per Drag-up gezeichnet werden kann.
+- `GetTargetContentOffset`– Wird verwendet, um den Offset eines angegebenen Auflistungs Ansichts Elements zu erhalten.
+- `GetTargetIndexPathForMove`– Ruft den `indexPath` eines bestimmten Elements für einen Zieh Vorgang ab.
+- `MoveItem`– Verschiebt die Reihenfolge eines bestimmten Elements in der Liste.
 
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewDataSource` Klasse in iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewDataSource` -Klasse in ios 9 vorgenommen:
 
-- `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
-- `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
+- `CanMoveItem`– Informiert die Auflistungs Ansicht, wenn ein angegebenes Element per Drag-up gezeichnet werden kann.
+- `MoveItem`– Verschiebt die Reihenfolge eines bestimmten Elements in der Liste.
 
 ### <a name="uicollectionviewdelegate"></a>UICollectionViewDelegate
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewDelegate` Klasse in iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewDelegate` -Klasse in ios 9 vorgenommen:
 
-- `GetTargetContentOffset` – Wird verwendet, um den Offset eines Elements der angegebenen Auflistung Ansicht zu erhalten.
-- `GetTargetIndexPathForMove` – Ruft die `indexPath` eines angegebenen Elements für einen Ziehvorgang.
+- `GetTargetContentOffset`– Wird verwendet, um den Offset eines angegebenen Auflistungs Ansichts Elements zu erhalten.
+- `GetTargetIndexPathForMove`– Ruft den `indexPath` eines bestimmten Elements für einen Zieh Vorgang ab.
 
 ### <a name="uicollectionviewflowlayout"></a>UICollectionViewFlowLayout
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewFlowLayout` Klasse in iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewFlowLayout` -Klasse in ios 9 vorgenommen:
 
-- `SectionFootersPinToVisibleBounds` : Der angemeldete der Fußzeilen im Abschnitt zu den Grenzen des sichtbaren Auflistung anzeigen.
-- `SectionHeadersPinToVisibleBounds` : Der angemeldete die Abschnittsheader zu den Grenzen des sichtbaren Auflistung anzeigen.
+- `SectionFootersPinToVisibleBounds`– Bindet die Abschnitts Fußzeilen an die sichtbaren Begrenzungen der Auflistungs Ansicht.
+- `SectionHeadersPinToVisibleBounds`– Bindet die Abschnitts Header an die sichtbaren Begrenzungen der Auflistungs Ansicht.
 
 ### <a name="uicollectionviewlayout"></a>UICollectionViewLayout
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewLayout` Klasse in iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewLayout` -Klasse in ios 9 vorgenommen:
 
-- `GetInvalidationContextForEndingInteractiveMovementOfItems` – Gibt die invalidierung Kontext am Ende des Ziehvorgangs zurück, wenn der Benutzer das Ziehen abgeschlossen oder wird abgebrochen.
-- `GetInvalidationContextForInteractivelyMovingItems` – Gibt den Kontext invalidierung am Anfang eines Ziehvorgangs.
-- `GetLayoutAttributesForInteractivelyMovingItem` – Ruft die Layout-Attribute für ein bestimmtes Element beim Ziehen eines Elements.
-- `GetTargetIndexPathForInteractivelyMovingItem` – Gibt die `indexPath` des Elements, das am angegebenen Punkt befindet, beim Ziehen eines Elements.
+- `GetInvalidationContextForEndingInteractiveMovementOfItems`– Gibt den invalidierungskontext am Ende eines Zieh Vorgangs zurück, wenn der Benutzer das ziehen beendet oder abbricht.
+- `GetInvalidationContextForInteractivelyMovingItems`– Gibt den invalidierungskontext zu Beginn eines Zieh Vorgangs zurück.
+- `GetLayoutAttributesForInteractivelyMovingItem`– Ruft die Layoutattribute für ein angegebenes Element beim Ziehen eines Elements ab.
+- `GetTargetIndexPathForInteractivelyMovingItem`– Gibt den `indexPath` des Elements zurück, das sich am angegebenen Punkt befindet, wenn ein Element gezogen wird.
 
 ### <a name="uicollectionviewlayoutattributes"></a>UICollectionViewLayoutAttributes
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewLayoutAttributes` Klasse in iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewLayoutAttributes` -Klasse in ios 9 vorgenommen:
 
-- `CollisionBoundingPath` – Gibt den Pfad der Kollision von zwei Elementen während eines Ziehvorgangs.
-- `CollisionBoundsType` – Gibt den Typ eines Konflikts zurück (wie eine `UIDynamicItemCollisionBoundsType`), die während eines Ziehvorgangs aufgetreten.
+- `CollisionBoundingPath`– Gibt während eines Zieh Vorgangs den Kollisions Pfad zweier Elemente zurück.
+- `CollisionBoundsType`– Gibt den Typ der Kollision (als `UIDynamicItemCollisionBoundsType`) zurück, die während eines Zieh Vorgangs aufgetreten ist.
 
 ### <a name="uicollectionviewlayoutinvalidationcontext"></a>UICollectionViewLayoutInvalidationContext
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewLayoutInvalidationContext` Klasse in iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewLayoutInvalidationContext` -Klasse in ios 9 vorgenommen:
 
-- `InteractiveMovementTarget` – Gibt das Zielelement eines Ziehvorgangs.
-- `PreviousIndexPathsForInteractivelyMovingItems` – Gibt die `indexPaths` anderer Elemente beteiligt ein Ziehvorgang, Vorgang neu anzuordnen.
-- `TargetIndexPathsForInteractivelyMovingItems` – Gibt die `indexPaths` von Elementen, die als Ergebnis einer Operation Drag-zu-neuanordnung neu angeordnet werden werden.
+- `InteractiveMovementTarget`– Gibt das Ziel Element eines Zieh Vorgangs zurück.
+- `PreviousIndexPathsForInteractivelyMovingItems`– Gibt das `indexPaths` -Element anderer Elemente zurück, die an einem Drag to neu anordnen-Vorgang beteiligt sind.
+- `TargetIndexPathsForInteractivelyMovingItems`– Gibt den `indexPaths` der Elemente zurück, die als Ergebnis eines Drag-to-Order-Vorgangs neu angeordnet werden.
 
 ### <a name="uicollectionviewsource"></a>UICollectionViewSource
 
-Die folgenden Änderungen oder Erweiterungen wurden vorgenommen, um die `UICollectionViewSource` Klasse in iOS 9:
+Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewSource` -Klasse in ios 9 vorgenommen:
 
-- `CanMoveItem` – Die Auflistungsansicht informiert, wenn ein bestimmtes Element ziehen neu geordnet werden kann.
-- `GetTargetContentOffset` – Gibt die Offsets der Elemente, die über eine Drag-zu-neuordnungsvorgang verschoben werden.
-- `GetTargetIndexPathForMove` – Gibt die `indexPath` eines Elements, die während eines Drag-zu-neuanordnung verschoben werden.
-- `MoveItem` : Verschiebt die Reihenfolge der ein bestimmtes Element in der Liste.
+- `CanMoveItem`– Informiert die Auflistungs Ansicht, wenn ein angegebenes Element per Drag-up gezeichnet werden kann.
+- `GetTargetContentOffset`– Gibt die Offsets von Elementen zurück, die über einen Drag-to-Order-Vorgang verschoben werden.
+- `GetTargetIndexPathForMove`– Gibt den `indexPath` eines Elements zurück, das während eines Drag-to-Order-Vorgangs verschoben wird.
+- `MoveItem`– Verschiebt die Reihenfolge eines bestimmten Elements in der Liste.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert die Änderungen zu Auflistungsansichten in iOS 9 und beschrieben, wie sie in Xamarin.iOS zu implementieren.
-Es wird beschrieben, implementieren eine einfache Drag-neuanordnung-Aktion in einer Auflistungsansicht; verwenden eine benutzerdefinierte Stiftbewegungs-Erkennung mit Drag-zu-anordnen; und wie Drag-zu-neuanordnung ein Ansichtslayouts für benutzerdefinierte Sammlung auswirkt.
+In diesem Artikel wurden die Änderungen an den Sammlungs Ansichten in ios 9 erläutert und beschrieben, wie Sie in xamarin. IOS implementiert werden.
+Es wurde beschrieben, wie eine einfache Drag-to-Order-Aktion in einer Auflistungs Ansicht implementiert wird. Verwenden einer benutzerdefinierten Gestenerkennung mit Drag-to-Order und wie sich Drag-to-Order auf ein benutzerdefiniertes Auflistungs Ansichts Layout auswirkt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS 9-Beispiele](https://developer.xamarin.com/samples/ios/iOS9/)
-- [Collection-Viewer-Beispiel](https://developer.xamarin.com/samples/monotouch/ios9/CollectionView/)
-- [SimpleCollectionView (Beispiel)](https://developer.xamarin.com/samples/monotouch/SimpleCollectionView/)
+- [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Beispiel für Sammlungsansicht](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-collectionview)
+- [Simplecollectionview (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplecollectionview)
 - [Ereignisse, Protokolle und Delegaten](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 - [Arbeiten mit Tabellen und Zellen](~/ios/user-interface/controls/tables/index.md)

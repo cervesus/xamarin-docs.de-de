@@ -7,16 +7,16 @@ ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: be2d998916c81cb2216251e2112ff8ca2af5d87a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ca6c8fafe4352bac83e5ae60b43627d4c7fdc10f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61410685"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648668"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Segmentierte Anzeige der SkiaSharp-bitmaps
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Die SkiaSharp `SKCanvas` Objekt definiert eine Methode namens `DrawBitmapNinePatch` und zwei Methoden, die mit dem Namen `DrawBitmapLattice` , sind sehr ähnlich. Sowohl diese Methoden Rendern einer Bitmap auf die Größe eines Rechtecks Ziel, aber statt Dehnen die Bitmap gleichmäßig, Teile der Bitmap in die Pixeldimensionen anzeigen und andere Teile der Bitmap gestreckt, so, dass sie das Rechteck passt:
 
@@ -44,7 +44,7 @@ canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 
 Das Center-Rechteck ist relativ zu der Bitmap. Es ist ein `SKRectI` Wert (die Integer-Version des `SKRect`) und alle Koordinaten und Größen sind in Pixel. Das Zielrechteck ist relativ zu der Anzeigeoberfläche. Das `paint`-Argument ist optional.
 
-Die **neun Patch Anzeige** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel verwendet einen statischen Konstruktor zuerst erstellen Sie eine öffentliche statische Eigenschaft vom Typ `SKBitmap`:
+Die **neun Patch Anzeige** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel verwendet einen statischen Konstruktor zuerst erstellen Sie eine öffentliche statische Eigenschaft vom Typ `SKBitmap`:
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -228,4 +228,4 @@ Die **Lattice Anzeige** Seite generalisiert und dadurch die Erstellung der `Flag
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

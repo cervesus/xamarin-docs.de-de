@@ -7,16 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dea7f5e51a864922d56f7b65d19b21a889cbc650
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61292940"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656156"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp-Rauschen und zusammenstellen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Einfache Vektorgrafiken tendenziell unnatürlichen suchen. Die geraden, geglättete Kurven und Volltonfarben entsprechen nicht den Fehlern von realen Objekten. Bei der Arbeit an den Computer generierte Grafiken für den Film 1982 _Tron_, Computerwissenschaftler Ken Perlin zu Beginn der Entwicklung von Algorithmen, die zufällige Prozesse verwendet wird, um diese Images realistischere Texturen geben. Im Jahre 1997 gewonnen Ken Perlin Academy Auszeichnung für den technischen Kompetenz. Verfügt über seine Arbeit Perlin-Noise genannt, stammen, und wird in die SkiaSharp unterstützt. Im Folgenden ein Beispiel:
 
@@ -44,7 +44,7 @@ Die `numOctaves` Wert ist eine ganze Zahl von 1 oder höher. Dieser bezieht sich
 
 Die `seed` Parameter ist der Ausgangspunkt für den Zufallszahlen-Generator. Zwar als Gleitkommawert angegeben wird, wird der Bruch abgeschnitten, bevor sie wird verwendet, und 0 der gleiche wie 1 ist.
 
-Die **Perlin-Noise** auf der Seite die [ **SkiaSharpFormsDemos**)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel können Sie experimentieren mit verschiedenen Werten von der `baseFrequency` und `numOctaves` Argumente. Hier ist die XAML-Datei ein:
+Die **Perlin-Noise** auf der Seite die [ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel können Sie experimentieren mit verschiedenen Werten von der `baseFrequency` und `numOctaves` Argumente. Hier ist die XAML-Datei ein:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -399,4 +399,4 @@ Der letzte Parameter ist ein Mitglied der `SKBlendMode` -Enumeration, die eine E
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

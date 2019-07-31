@@ -1,108 +1,108 @@
 ---
-title: Arbeiten mit TvOS segmentierte Steuerelemente in Xamarin
-description: Dieses Dokument beschreibt das Arbeiten mit TvOS segmentierte Steuerelemente in einer app mit Xamarin erstellt wurde. Es wird erläutert, Segment-Symbole und Text, Ereignisse, ändern die Darstellung des Steuerelements und vieles mehr.
+title: Arbeiten mit tvos segmentierten Steuerelementen in xamarin
+description: In diesem Dokument wird beschrieben, wie Sie mit tvos segmentierte Steuerelemente in einer mit xamarin erstellten App arbeiten. Dabei werden Segment Symbole und Text, Ereignisse, das Ändern der Darstellung des Steuer Elements und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 98a770d05014e0498b805ed9ffa0c84314efc765
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f4f063cf7004d35aa93f688e71a917caa7a3e5a8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61374998"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648947"
 ---
-# <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Arbeiten mit TvOS segmentierte Steuerelemente in Xamarin
+# <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Arbeiten mit tvos segmentierten Steuerelementen in xamarin
 
-Ein segmentiertes Steuerelement bietet einen Satz von linearen Elementen, von die jedes ein Symbol oder Text enthalten kann, und wird verwendet, um einen Satz von verwandten Optionen für dem Benutzer bereitstellen.
+Ein segmentiertes Steuerelement stellt eine Reihe linearer Elemente bereit, von denen jedes ein Symbol oder einen Text enthalten kann. Sie wird verwendet, um dem Benutzer eine Reihe verwandter Optionen bereitzustellen.
 
-[![](segmented-controls-images/segment01.png "Beispiel-Segment-Steuerelemente")](segmented-controls-images/segment01.png#lightbox)
+[![](segmented-controls-images/segment01.png "Sample Segment-Steuerelemente")](segmented-controls-images/segment01.png#lightbox)
 
-Apple hat die folgenden Vorschläge für die Arbeit mit segmentierte Steuerelemente:
+Apple hat die folgenden Vorschläge zum Arbeiten mit segmentierten Steuerelementen:
 
-- **Geben Sie genügend Speicherplatz** -Sorgfalt muss brauchen, um die bietet somit viel Platz zwischen anderen [Fokussierbare Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md) und ein segmentiertes Steuerelement. Einem einzelnen Segment wird ausgewählt, wenn es in den Fokus hat (nicht, wenn darauf geklickt wird) und der Benutzer die Segmente versehentlich ändern kann, wenn sie tatsächlich ein anderes fokussierbares Element auf das aktuelle Segment auswählen möchten.
-- **Verwenden Sie geteilten Ansichten für das Filtern von Inhalt** -segmentierte Steuerelemente nicht die stellen eine gute Wahl für die inhaltsfilterung wie geteilten Ansichten für einfache Navigation zwischen dem Inhalt und die Filter entwickelt wurden.
-- **Beschränkung für sieben Segmente Max** -sollten Sie versuchen, behalten Sie die maximalen Anzahl von Segmenten unter acht (8) als dies ist einfacher, Analysieren von durch das Zimmer auf dem Sofa und einfacher zu navigieren.
-- **Konsistente Größe des Segments Inhalt verwenden** – alle Segmente verfügen über die gleiche Breite und, falls möglich, sollten Sie versuchen, dem Inhalt in jedem Segment verwenden die gleiche Größe behalten. Dies macht die Segment-Steuerelemente visuell ansprechende klassifizierungsvorgänge erleichtert es, einen Blick zu lesen.
-- **Vermeiden Sie das Kombinieren von Symbolen und Text** -jedes einzelnen Segment kann entweder ein Symbol oder Text, jedoch nicht beides enthalten. Es ist, zwar möglich, sowohl Symbole und Text in einem segmentierten Steuerelement zu kombinieren sollte dies vermieden werden.
+- **Stellen Sie genügend Speicherplatz** zur Verfügung, um genügend Speicherplatz zwischen anderen [Fokus baren Elementen](~/ios/tvos/app-fundamentals/navigation-focus.md) und einem segmentierten Steuerelement bereitzustellen. Ein einzelnes Segment wird ausgewählt, wenn es sich im Fokus befindet (nicht beim Klicken), und der Benutzer kann versehentlich Segmente ändern, wenn ein anderes Fokus bares Element für das aktuelle Segment ausgewählt werden soll.
+- **Verwenden von geteilten Sichten für das Filtern von Inhalten** : segmentierte Steuerelemente treffen keine guten Optionen für das Filtern von Inhalten, da geteilte Ansichten für eine einfache Navigation zwischen dem Inhalt und den Filtern entworfen wurden.
+- Maximal **7 Segmente begrenzen** -Sie sollten versuchen, die maximale Anzahl von Segmenten unterhalb von acht (8) beizubehalten, da dies im Raum auf dem Couch einfacher zu analysieren und leichter zu navigieren ist.
+- **Konsistente Segment Inhalts Größe verwenden** : alle Segmente weisen die gleiche Breite auf, und wenn möglich, sollten Sie versuchen, den Inhalt in jedem Segment in derselben Größe beizubehalten. Dadurch sind die Segment Steuerelemente nicht mehr visuell ansprechend, aber Sie können auf einen Blick leichter lesbar sein.
+- **Vermeiden Sie das Mischen von Symbolen und Text** . jedes einzelne Segment kann entweder ein Symbol oder einen Text enthalten, aber nicht beides. Obwohl es möglich ist, sowohl Symbole als auch Text im gleichen segmentierten Steuerelement zu mischen, sollte dies vermieden werden.
 
 <a name="About-Segment-Icons" />
 
-## <a name="about-segment-icons"></a>Informationen zu den Segment-Symbole
+## <a name="about-segment-icons"></a>Informationen zu Segment Symbolen
 
-Apple empfiehlt das Verwenden von einfachen, erkennbaren clientimages für Segment-Symbole, z. B. einer Lupe für die Suche. Kompliziert, als Symbole sind schwer zu erkennen auf einem TV-Bildschirm, über den Raum, daher wird empfohlen, um die Symbole in einfache Darstellungen zu beschränken.
+Apple schlägt vor, einfache, erkennbare Bilder für Segment Symbole zu verwenden, z. b. eine Lupe für die Suche. Übermäßig komplexe Symbole sind auf einem TV-Bildschirm im gesamten Raum schwer zu erkennen. Daher sollten Sie Ihre Symbole am besten auf einfache Darstellungen beschränken.
 
-Sowohl Text als auch Symbole auf ein bestimmtes Segment können nicht gemischt werden, und vermeiden Sie das Kombinieren von Symbolen und Text in einem einzelnen segmentierten Steuerelement. Es muss entweder alle Symbole oder Text.
+Sie können nicht sowohl Text als auch Symbole für ein bestimmtes Segment mischen und vermeiden, Symbole und Text in einem einzelnen segmentierten Steuerelement zu mischen. Dabei sollte es sich entweder um alle Symbole oder um den gesamten Text handeln.
 
 <a name="Summary" />
 
-## <a name="segment-text"></a>Segment-Text
+## <a name="segment-text"></a>Segment Text
 
-Apple stellt die folgenden Vorschläge für die Arbeit mit der Segment-Text:
+Apple nimmt die folgenden Vorschläge zum Arbeiten mit Segment Text vor:
 
-- **Verwenden Sie kurze, aussagekräftige Nomen** : das Segment Titel sollte den Typ des Inhalts, die der Benutzer erwarten soll, wenn das angegebene Segment auswählen eindeutig angeben. Zum Beispiel: Musik oder Videos.
-- **Verwenden Sie die Groß-/Kleinschreibung große Anfangsbuchstaben** -jedes Wort des Titels Segmente sollten groß geschrieben werden, mit Ausnahme von Artikeln, Konjunktionen und Präpositionen von weniger als vier (4) Zeichen.
-- **Verwenden Sie kurze, konzentriert sich Titel** -behalten Sie den Titel, kurze und konzentriert sich auf den Typ des Inhalts zu erwarten, wenn das Segment ausgewählt ist.
+- **Verwenden Sie kurze, sinnvolle Nomen** . der Segment Titel sollte eindeutig den Inhaltstyp angeben, den der Benutzer bei der Auswahl des angegebenen Segments erwarten sollte. Beispiel: Musik oder Videos.
+- Groß-/Kleinschreibung von Groß-/Kleinschreibung **verwenden** : jedes Wort des Segment Titels sollte groß geschrieben werden, mit Ausnahme von Artikeln, ankreuzungen und Positionen von weniger als vier (4) Zeichen.
+- **Verwenden Sie kurze, fokussierte Titel** : behalten Sie die Titel, kurz, und konzentrieren Sie sich auf den Inhaltstyp, der bei Auswahl des Segments zu erwarten ist.
 
-In diesem Fall können nicht gemischt werden sowohl Text als auch Symbole auf ein bestimmtes Segment, und vermeiden Sie das Kombinieren von Symbolen und Text in einem einzelnen segmentierten Steuerelement.
+Auch hier können Sie nicht sowohl Text als auch Symbole für ein bestimmtes Segment mischen und vermeiden, Symbole und Text in einem einzelnen segmentierten Steuerelement zu mischen.
 
 <a name="Segment-Controls-and-Storyboards" />
 
-## <a name="segment-controls-and-storyboards"></a>Segment-Steuerelemente und Storyboards
+## <a name="segment-controls-and-storyboards"></a>Segment Steuerelemente und Storyboards
 
-Die einfachste Möglichkeit zum Arbeiten mit der Segment-Steuerelemente in einer Xamarin.tvOS-app ist so fügen sie der app Benutzeroberfläche, die Verwendung des iOS Designers hinzu.
+Die einfachste Möglichkeit, mit Segment Steuerelementen in einer xamarin. tvos-APP zu arbeiten, besteht darin, Sie mithilfe des IOS-Designers zur Benutzeroberfläche der APP hinzuzufügen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. In der **Lösungspad**, doppelklicken Sie auf die `Main.storyboard` und öffnen Sie sie für die Bearbeitung.
-1. Ziehen Sie eine **Segment-Steuerelement** aus der **Toolbox** und legen Sie sie in der Ansicht: 
+1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
+1. Ziehen Sie ein **Segment-Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab: 
 
-    [![](segmented-controls-images/segment02.png "Ein Segment-Steuerelement")](segmented-controls-images/segment02.png#lightbox)
-1. In der **Widget Registerkarte** von der **Pad "Eigenschaft"**, können Sie verschiedene Eigenschaften des Steuerelements Segment wie z. B. Anpassen der **Stil** und **Zustand**: 
+    [![](segmented-controls-images/segment02.png "Ein Segment Steuerelement")](segmented-controls-images/segment02.png#lightbox)
+1. Auf der **Registerkarte widget** des **eigenschaftenpad**können Sie verschiedene Eigenschaften des Segment Steuer Elements anpassen, z. b. den **Stil** und den **Zustand**: 
 
-    [![](segmented-controls-images/segment03.png "Die Registerkarte \"Widget\"")](segmented-controls-images/segment03.png#lightbox)
-1. Verwenden der **Segmente** Feld zum Steuern der Anzahl der Segmente im Controller.
-1. Wählen Sie ein bestimmtes Segment aus der **Segment Dropdownliste** ihre individuellen Eigenschaften anpassen, wie z. B. **Titel** oder **Image** und steuern, ob ein bestimmtes Segment ist  **Aktiviert** oder **ausgewählte** Wenn das Steuerelement angezeigt wird.
-1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie auf diese Dateien im reagieren können C# Code. Zum Beispiel: 
+    [![](segmented-controls-images/segment03.png "Die Widget-Registerkarte")](segmented-controls-images/segment03.png#lightbox)
+1. Verwenden Sie das Feld **Segmente** , um die Anzahl der Segmente im Controller zu steuern.
+1. Wählen Sie ein bestimmtes Segment aus der **Dropdown Liste Segment** aus, um die einzelnen Eigenschaften, z. b. **Titel** oder **Bild** , anzupassen und zu steuern, ob ein bestimmtes Segment **aktiviert** oder **ausgewählt** ist, wenn das Steuerelement angezeigt wird.
+1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel: 
 
-    [![](segmented-controls-images/segment04.png "Weisen Sie einen Namen")](segmented-controls-images/segment04.png#lightbox)
+    [![](segmented-controls-images/segment04.png "Zuweisen eines Namens")](segmented-controls-images/segment04.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
     
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` und öffnen Sie sie für die Bearbeitung.
-1. Ziehen Sie eine **Segment-Steuerelement** aus der **Toolbox** und legen Sie sie in der Ansicht: 
+1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
+1. Ziehen Sie ein **Segment-Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab: 
 
-    [![](segmented-controls-images/segment02-vs.png "Ein Segment-Steuerelement")](segmented-controls-images/segment02-vs.png#lightbox)
-1. In der **Widget Registerkarte** von der **Eigenschaften-Explorer**, können Sie verschiedene Eigenschaften des Steuerelements Segment wie z. B. Anpassen der **Stil** und **Zustand**: 
+    [![](segmented-controls-images/segment02-vs.png "Ein Segment Steuerelement")](segmented-controls-images/segment02-vs.png#lightbox)
+1. Auf der **Registerkarte widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Segment Steuer Elements anpassen, z. b. den **Stil** und den **Zustand**: 
 
-    [![](segmented-controls-images/segment03-vs.png "Die Registerkarte \"Widget\"")](segmented-controls-images/segment03-vs.png#lightbox)
-1. Verwenden der **Segmente** Feld zum Steuern der Anzahl der Segmente im Controller.
-1. Wählen Sie ein bestimmtes Segment aus der **Segment Dropdownliste** ihre individuellen Eigenschaften anpassen, wie z. B. **Titel** oder **Image** und steuern, ob ein bestimmtes Segment ist  **Aktiviert** oder **ausgewählte** Wenn das Steuerelement angezeigt wird.
-1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie auf diese Dateien im reagieren können C# Code. Zum Beispiel: 
+    [![](segmented-controls-images/segment03-vs.png "Die Widget-Registerkarte")](segmented-controls-images/segment03-vs.png#lightbox)
+1. Verwenden Sie das Feld **Segmente** , um die Anzahl der Segmente im Controller zu steuern.
+1. Wählen Sie ein bestimmtes Segment aus der **Dropdown Liste Segment** aus, um die einzelnen Eigenschaften, z. b. **Titel** oder **Bild** , anzupassen und zu steuern, ob ein bestimmtes Segment **aktiviert** oder **ausgewählt** ist, wenn das Steuerelement angezeigt wird.
+1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel: 
 
-    [![](segmented-controls-images/segment04-vs.png "Weisen Sie einen Namen")](segmented-controls-images/segment04-vs.png#lightbox)
+    [![](segmented-controls-images/segment04-vs.png "Zuweisen eines Namens")](segmented-controls-images/segment04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 -----
 
-Weitere Informationen zum Arbeiten mit Storyboards, informieren Sie sich unsere [Hello, TvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md). 
+Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md). 
 
 <a name="Working-with-Segmented-Controls" />
 
-## <a name="working-with-segmented-controls"></a>Arbeiten mit segmentierte Steuerelemente
+## <a name="working-with-segmented-controls"></a>Arbeiten mit segmentierten Steuerelementen
 
-Wie oben, s angegeben, dass ein segmentiertes Steuerelement über einen Satz von linearen Elemente bereitstellt, von denen jeder kann ein Symbol oder Text enthalten und wird verwendet, um einen Satz von verwandten Optionen für dem Benutzer bereitstellen.
+Wie bereits erwähnt, stellt das segmentierte Steuerelement eine Reihe linearer Elemente bereit, von denen jedes ein Symbol oder einen Text enthalten kann. Sie wird verwendet, um dem Benutzer eine Reihe verwandter Optionen bereitzustellen.
 
-Es gibt mehrere Möglichkeiten, die Sie in Ihrer app Xamarin.tvOS segmentierte Steuerelemente verwenden können.
+Es gibt verschiedene Möglichkeiten, wie Sie in ihrer xamarin. tvos-App mit segmentierten Steuerelementen arbeiten können.
 
 <a name="Exposed-as-Outlets-and-Actions" />
 
-## <a name="exposed-as-names-and-events"></a>Als Namen und Ereignissen verfügbar gemacht werden
+## <a name="exposed-as-names-and-events"></a>Verfügbar gemacht als Namen und Ereignisse
 
-Wenn Sie es als ein Steuerelement mit dem Namen und ein Ereignis verfügbar gemacht und das Segment-Steuerelement im Benutzeroberflächen-Designer erstellt können Sie den folgenden Code, um auf das Segment ändern zu reagieren:
+Wenn Sie das Segment Steuerelement im Schnittstellen-Designer erstellt und als benanntes Steuerelement verfügbar gemacht haben, können Sie den folgenden Code verwenden, um auf die Änderung des Segments zu reagieren:
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {
@@ -125,15 +125,15 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 }
 ```
 
-Im Fall der obigen Beispiel wurde die Segment-Steuerelement als verfügbar gemacht eine `PlayerCount` Namen und eine `PlayerCountChanged` Ereignisaktion. Weitere Informationen zum Arbeiten mit Aktionen und Ergebnisdaten finden Sie unter den [Schreiben von Code mit Outlets und Aktionen](~/ios/tvos/get-started/hello-tvos.md#Writing-the-Code) Teil unserer [Hello, TvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md).
+Im obigen Beispiel wurde das Segment Steuerelement als `PlayerCount` Name und eine `PlayerCountChanged` Ereignis Aktion verfügbar gemacht. Weitere Informationen zum Arbeiten mit Aktionen und Outlets finden Sie im Abschnitt [Schreiben des Codes mit Outlets und Aktionen](~/ios/tvos/get-started/hello-tvos.md#Writing-the-Code) in unserer [Schnellstarthandbuch Hello, tvos](~/ios/tvos/get-started/hello-tvos.md).
 
-Die `SelectedSegment` -Eigenschaft ruft ab oder legt den Index des aktuell ausgewählten Segment als null (0), die basierend. Wenn also Sie fünf (5) Segmente verfügen, das erste Segment einen Index von 0 (null) und der letzte Index vier (4).
+Die `SelectedSegment` -Eigenschaft ruft das aktuell ausgewählte Segment als NULL (0)-basierten Index ab oder legt dieses fest. Wenn Sie also fünf (5) Segmente haben, weist das erste Segment den Index 0 (null) und den letzten Index von vier (4) auf.
 
 <a name="Modifying-Segments" />
 
 ## <a name="modifying-segments"></a>Ändern von Segmenten
 
-Zu einem beliebigen Zeitpunkt können Sie die Anzahl und den Inhalt der segmentierte Steuerelemente ändern. Verwenden Sie den folgenden Code, um ein neues Symbol Segment einzufügen:
+Sie können die Anzahl und den Inhalt der segmentierten Steuerelemente jederzeit ändern. Verwenden Sie den folgenden Code, um ein neues Symbol Segment einzufügen:
 
 ```csharp
 // Icon Segment
@@ -143,23 +143,23 @@ SegmentedControl.InsertSegment(UIImage.FromFile("icon.png"), 0, true);
 SegmentedControl.InsertSegment("New Segment", 0, true);
 ```
 
-Der zweite Parameter definiert, in dem das Segment mit der (eine Null 0)-basierter Index eingefügt. Wenn der letzte Parameter ist `true` Insert animiert wird.
+Mit dem zweiten Parameter wird definiert, wo das Segment mit einem NULL-Index (0) eingefügt wird. Wenn der letzte Parameter ist `true` , wird der Einfügevorgang animiert.
 
-Um ein bestimmtes Segment zu entfernen, verwenden Sie Folgendes ein:
+Um ein bestimmtes Segment zu entfernen, verwenden Sie Folgendes:
 
 ```csharp
 SegmentedControl.RemoveSegmentAtIndex(0, true);
 ```
 
-Oder So entfernen Sie alle Segmente Folgendes:
+Sie können auch Folgendes entfernen, um alle Segmente zu entfernen:
 
 ```csharp
 SegmentedControl.RemoveAllSegments();
 ```
 
-In diesem Fall ist der letzte Parameter `true`, die Entfernung animiert wird. Verwenden der `NumberOfSegments` Eigenschaft, die die aktuelle Anzahl von Segmenten zurückgegeben.
+Wenn der letzte Parameter ist `true`, wird die Entfernung animiert. Verwenden Sie `NumberOfSegments` die-Eigenschaft, um die aktuelle Anzahl von Segmenten zurückzugeben.
 
-Zum Abrufen der **Titel** oder **Symbol** für ein bestimmtes Segment, verwenden Sie Folgendes:
+Um den **Titel** oder das **Symbol** für ein bestimmtes Segment zu erhalten, verwenden Sie Folgendes:
 
 ```csharp
 // Get title
@@ -169,7 +169,7 @@ var title = SegmentedControl.TitleAt(0);
 var icon = SegmentedControl.ImageAt(0);
 ```
 
-Und so ändern Sie die **Titel** oder **Symbol**, verwenden Sie Folgendes:
+Zum Ändern des **Titels** oder **Symbols**verwenden Sie Folgendes:
 
 ```csharp
 // Set title
@@ -179,7 +179,7 @@ SegmentedControl.SetTitle("New Title", 0);
 SegmentedControl.SetImage(UIImage.FromFile("icon.png"), 0);
 ```
 
-Um festzustellen, ob ein bestimmtes Segment ist **aktiviert**, verwenden Sie Folgendes:
+Um festzustellen, ob ein bestimmtes Segment **aktiviert**ist, verwenden Sie Folgendes:
 
 ```csharp
 if (SegmentedControl.IsEnabled(0)) {
@@ -188,7 +188,7 @@ if (SegmentedControl.IsEnabled(0)) {
 }
 ```
 
-Und **Aktivieren/Deaktivieren von** ein Segment wird angegeben, verwenden Sie Folgendes:
+Verwenden Sie Folgendes, um ein bestimmtes Segment zu **Aktivieren bzw** . zu deaktivieren:
 
 ```csharp
 SegmentedControl.SetEnabled(false, 0);
@@ -196,48 +196,48 @@ SegmentedControl.SetEnabled(false, 0);
 
 <a name="Modifying-the-Segmented-Controls-Appearance" />
 
-## <a name="modifying-the-segmented-controls-appearance"></a>Ändern der Darstellung der segmentierte Steuerelemente
+## <a name="modifying-the-segmented-controls-appearance"></a>Ändern der Darstellung des segmentierten Steuer Elements
 
-Sie können den folgenden Code verwenden, auf um den Hintergrund eines bestimmten Segments zu einem Bild zu ändern:
+Sie können den folgenden Code verwenden, um den Hintergrund eines bestimmten Segments in ein Bild zu ändern:
 
 ```csharp
 SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-Wo `UIControlState` gibt den Zustand des Steuerelements, das Sie das Image für als festlegen:
+Where `UIControlState` gibt den Zustand des Steuer Elements an, für das Sie das Bild festlegen:
 
 - Normal
-- hervorgehoben
-- Deaktiviert
+- Vorder
+- Disabled
 - Ausgewählt
 - Focused
 
-Und `UIBarMetrics` gibt an, die Metriken, die als verwendet:
+Und `UIBarMetrics` gibt die zu verwendenden Metriken an:
 
-- Standard
-- Komprimieren
+- Default
+- Theit
 - DefaultPrompt
-- CompactPrompt
+- Compactprompt
 
-Darüber hinaus können Sie den Unterteiler zwischen den Segmenten mit festlegen:
+Darüber hinaus können Sie den unter Teiler zwischen den Segmenten mithilfe von festlegen:
 
 ```csharp
 SegmentedControl.SetDividerImage (UIImage.FromFile("divider.png"), UIControlState.Normal, UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-In dem die erste `UIControlState` gibt den Status des Segments, das links neben dem Unterteiler und das zweite `UIControlState` gibt den Status des Segments, das rechts.
+, Wobei der `UIControlState` erste den Status des Segments Links vom unter Teiler angibt und der zweite `UIControlState` den Zustand des Segments auf der rechten Seite angibt.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit segmentierten Steuerelement in ein Xamarin.tvOS-app.
+In diesem Artikel wurde das Entwerfen und arbeiten mit segmentiertem Steuerelement in einer xamarin. tvos-App behandelt.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [TvOS Human Interface-Handbücher](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [App-Programmierhandbuch für tvos verwendet.](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvos Human Interface Guides](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [Leitfaden zur APP-Programmierung für tvos](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

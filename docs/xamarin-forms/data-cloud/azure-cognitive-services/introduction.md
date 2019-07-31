@@ -1,5 +1,5 @@
 ---
-title: Einführung in Xamarin.Forms und den Azure-Cognitive Services
+title: Einführung in xamarin. Forms und Azure Cognitive Services
 description: Dieser Artikel enthält eine Einführung in eine beispielanwendung, die zeigt, wie Sie einige der Microsoft Cognitive Services-APIs aufrufen.
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 36aa53a6d257d8f5311cab84485e608bef3e97f8
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659267"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652310"
 ---
-# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Einführung in Xamarin.Forms und den Azure-Cognitive Services
+# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Einführung in xamarin. Forms und Azure Cognitive Services
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Cognitive Services umfasst einen Satz von APIs, SDKs und Diensten für Entwickler, um ihre Anwendungen intelligenter zu machen, durch das Hinzufügen von Features wie gesichtserkennung, Spracherkennung und sprachverständnis. Dieser Artikel enthält eine Einführung in die beispielanwendung, die zeigt, wie Sie einige der Microsoft Cognitive Services-APIs aufrufen._
 
@@ -50,9 +50,9 @@ Klicken auf die Schaltfläche mit den Smileys der `TodoListPage` navigiert zu de
 
 Die `RateAppPage` ermöglicht dem Benutzer ein Foto ihrer Fläche, die an der Gesichtserkennungs-API gesendet wird, mit der zurückgegebenen Emotionen, die angezeigt wird.
 
-## <a name="understand-the-application-anatomy"></a>Verstehen Sie die Struktur der Anwendung
+## <a name="understand-the-application-anatomy"></a>Grundlegendes zur Anwendungs Anatomie
 
-Das Projekt mit freigegebenem Code für die beispielanwendung besteht aus fünf wichtigsten Ordner:
+Das Projekt mit dem freigegebenen Code für die Beispielanwendung besteht aus fünf Haupt Ordnern:
 
 |Ordner|Zweck|
 |--- |--- |
@@ -62,7 +62,7 @@ Das Projekt mit freigegebenem Code für die beispielanwendung besteht aus fünf 
 |"Utils"|Enthält die `Timer` -Klasse, die von verwendet wird, die `AuthenticationService` Klasse, um ein JWT-Zugriffstoken 9 Minuten erneuern.|
 |Ansichten|Enthält die Seiten für die Anwendung.|
 
-Das Projekt mit freigegebenem Code enthält auch einige wichtigen Dateien:
+Das Projekt mit frei gegebenem Code enthält auch einige wichtige Dateien:
 
 |Datei|Zweck|
 |--- |--- |
@@ -80,7 +80,7 @@ Die beispielanwendung verwendet die folgenden NuGet-Pakete:
 
 Diese NuGet-Pakete wird darüber hinaus auch ihre eigenen Abhängigkeiten installieren.
 
-### <a name="model-the-data"></a>Das Datenmodell
+### <a name="model-the-data"></a>Modellieren der Daten
 
 Die beispielanwendung verwendet die `TodoItem` Klasse, um die Daten zu modellieren, die angezeigt und in der lokalen SQLite-Datenbank gespeichert. Das folgende Codebeispiel zeigt die `TodoItem`-Klasse:
 
@@ -96,7 +96,7 @@ public class TodoItem
 
 Die `ID` Eigenschaft dient zur eindeutigen Identifizierung der einzelnen `TodoItem` -Instanz, und durch SQLite-Attribute, die der Eigenschaft einen automatisch inkrementierten Primärschlüssel in der Datenbank vorzunehmen.
 
-### <a name="invoke-database-operations"></a>Rufen Sie Datenbankvorgänge auf
+### <a name="invoke-database-operations"></a>Daten Bank Vorgänge aufrufen
 
 Die `TodoItemRepository` -Klasse implementiert die Datenbankvorgänge aus, und eine Instanz der Klasse zugegriffen werden kann, über die `App.TodoManager` Eigenschaft. Die `TodoItemRepository` Klasse stellt die folgenden Methoden zum Aufrufen von Datenbankvorgängen:
 
@@ -105,15 +105,15 @@ Die `TodoItemRepository` -Klasse implementiert die Datenbankvorgänge aus, und e
 - **SaveItemAsync** – erstellt oder aktualisiert ein Element in der lokalen SQLite-Datenbank.
 - **DeleteItemAsync** – löscht das angegebene Element aus der lokalen SQLite-Datenbank.
 
-### <a name="platform-project-implementations"></a>Plattform-Projekt-Implementierungen
+### <a name="platform-project-implementations"></a>Platt Form Projekt Implementierungen
 
-Die `Services` Ordner, in dem Projekt mit freigegebenem Code enthält die `IFileHelper` und `IAudioRecorderService` Schnittstellen, mit denen, die `DependencyService` Klasse, um die Klassen zu suchen, die die Schnittstellen in Plattform-Projekten.
+Der `Services` Ordner im freigegebenen Code Projekt enthält die `IFileHelper` - `IAudioRecorderService` und-Schnittstellen, die `DependencyService` von der-Klasse verwendet werden, um die Klassen zu suchen, die die Schnittstellen in Platt Form Projekten implementieren.
 
 Die `IFileHelper` Schnittstelle wird implementiert, indem die `FileHelper` Klasse in jede plattformprojekt. Diese Klasse besteht aus einer einzelnen Methode, `GetLocalFilePath`, die einen lokalen Pfad zum Speichern der SQLite-Datenbank zurückgibt.
 
 Die `IAudioRecorderService` Schnittstelle wird implementiert, indem die `AudioRecorderService` Klasse in jede plattformprojekt. Diese Klasse besteht aus `StartRecording`, `StopRecording`, und unterstützen von Methoden, die das Gerätemikrofon mit Plattform-APIs können Sie Audio aufzeichnen und speichern es als eine Wav-Datei. Unter iOS die `AudioRecorderService` verwendet die `AVFoundation` -API, um Audio aufzeichnen. Unter Android die `AudioRecordService` verwendet die `AudioRecord` -API, um Audio aufzeichnen. Auf der universellen Windows-Plattform (UWP), die `AudioRecorderService` verwendet die `AudioGraph` -API, um Audio aufzeichnen.
 
-### <a name="invoke-cognitive-services"></a>Aufrufen der cognitive services
+### <a name="invoke-cognitive-services"></a>Aufrufen von Cognitive Services
 
 Die beispielanwendung ruft folgende Microsoft Cognitive Services:
 
@@ -125,4 +125,4 @@ Die beispielanwendung ruft folgende Microsoft Cognitive Services:
 ## <a name="related-links"></a>Verwandte Links
 
 - [Microsoft Cognitive Services-Dokumentation](https://www.microsoft.com/cognitive-services/documentation)
-- [TODO-Cognitive-Services (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [TODO-Cognitive-Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 74f08a274eec4560846fb0c0067e3209031f5c6e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4137ce7542a213a0a4c27b6a66b38828e4646520
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511764"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653467"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>IOS-Erweiterungen in xamarin. IOS
 
@@ -462,5 +462,5 @@ In diesem Dokument wurden die Erweiterungen, die Art der Erweiterungs Punkte und
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Containerapp (Beispiel)](https://developer.xamarin.com/samples/monotouch/intro-to-extensions)
+- [Containerapp (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/intro-to-extensions)
 - [Erstellen von Erweiterungen in xamarin. IOS (Video)](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)

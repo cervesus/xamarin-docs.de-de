@@ -8,16 +8,16 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: ba0a76b44f5942db5528e9f5d11a1d2c3f027c40
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: f41bcc3ccaa6b4dd8c001ceb5ead165486745283
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354014"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650258"
 ---
 # <a name="resource-dictionaries"></a>Ressourcenverzeichnisse
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
 _XAML-Ressourcen sind Definitionen der Objekte, die gemeinsam genutzt und in einer Xamarin.Forms-Anwendung erneut verwendet werden können._
 
@@ -150,7 +150,7 @@ Die ursprüngliche `PageBackgroundColor` und `NormalTextColor` Instanzen, die au
 
 Beachten Sie jedoch, dass der Hintergrund-Leiste des der [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) weiterhin Gelb ist, da die [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) -Eigenschaftensatz auf den Wert des der `PageBackgroundColor` Ressource, die in der Anwendung definiert Ebene `ResourceDictionary`.
 
-Hier ist eine andere Möglichkeit, sich vorzustellen `ResourceDictionary` Vorrang vor: Wenn der XAML-Parser erkennt eine `StaticResource`, es sucht nach einem übereinstimmenden Schlüssel, indem Sie sich über die visuelle Struktur zurücklegen, die erste Übereinstimmung findet. Wenn es sich bei dieser Suche wird beendet, auf der Seite, und der Schlüssel können weiterhin wurde nicht gefunden wurde, sucht der XAML-Parser die `ResourceDictionary` angefügt, um die `App` Objekt. Wenn der Schlüssel nicht gefunden wird, wird eine Ausnahme ausgelöst.
+Dies ist eine weitere Möglichkeit, die `ResourceDictionary` Rangfolge zu betrachten: Wenn der XAML-Parser auf `StaticResource`einen stößt, sucht er nach einem übereinstimmenden Schlüssel, indem er die visuelle Struktur durchsucht, wobei die erste gefundene Übereinstimmung verwendet wird. Wenn es sich bei dieser Suche wird beendet, auf der Seite, und der Schlüssel können weiterhin wurde nicht gefunden wurde, sucht der XAML-Parser die `ResourceDictionary` angefügt, um die `App` Objekt. Wenn der Schlüssel nicht gefunden wird, wird eine Ausnahme ausgelöst.
 
 ## <a name="stand-alone-resource-dictionaries"></a>Eigenständige Ressourcenverzeichnisse
 
@@ -196,7 +196,7 @@ Instanziieren Sie `MyResourceDictionary` Wenn man diese Anwendungen zwischen ein
 
 Eine Instanz von `MyResourceDictionary` nastaven NA hodnotu der `Resources` Eigenschaft der `ContentPage` Objekt.
 
-Dieser Ansatz hat jedoch einige Einschränkungen: Die `Resources` Eigenschaft der `ContentPage` verweist auf nur diese eine `ResourceDictionary`. In den meisten Fällen soll die Möglichkeit, einschließlich anderer `ResourceDictionary` Instanzen und möglicherweise andere Ressourcen als auch.
+Bei diesem Ansatz gelten jedoch einige Einschränkungen: Die `Resources` -Eigenschaft `ContentPage` des-Objekts verweist nur `ResourceDictionary`auf dieses. In den meisten Fällen soll die Möglichkeit, einschließlich anderer `ResourceDictionary` Instanzen und möglicherweise andere Ressourcen als auch.
 
 Diese Aufgabe erfordert zusammengeführte Ressourcenwörterbücher.
 
@@ -306,7 +306,7 @@ In diesem Artikel wurde erläutert, wie das Erstellen und nutzen einen [ `Resour
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Ressourcenverzeichnisse (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
+- [Ressourcenverzeichnisse (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [Stile](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 

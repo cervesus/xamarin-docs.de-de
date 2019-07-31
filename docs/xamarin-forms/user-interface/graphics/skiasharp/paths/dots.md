@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: f59aa92f5f4f013a2d14b1667f4d0679a7ba82b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9e12e901a4224580f72a4b92a4319e02a60efe46
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384826"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643019"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>Punkte und Striche in SkiaSharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Meistern Sie die feinheiten der punktierte und gestrichelte Linien im SkiaSharp zeichnen_
 
@@ -26,7 +26,7 @@ SkiaSharp können Sie das Zeichnen von Linien, die nicht solid aber stattdessen 
 
 Dies erledigen Sie über eine *Pfad Auswirkungen*, dies ist eine Instanz von der [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect) -Klasse, die Sie, um festlegen die [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect) Eigenschaft `SKPaint`. Sie können einen Pfad erstellen Auswirkungen (oder kombinieren pfadeffekte) mit einer der definierten Erstellungsmethoden statische `SKPathEffect`. (`SKPathEffect` ist eine der sechs Auswirkungen von SkiaSharp unterstützt werden; die anderen sind im Abschnitt beschriebenen [ **Auswirkung von SkiaSharp**](../effects/index.md).)
 
-Um gepunkteten oder gestrichelten Linien zu zeichnen, verwenden Sie die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) statische Methode. Es gibt zwei Argumente: Dies ist zunächst ein Array von `float` Werte, die die Länge der die Punkte und Bindestriche enthalten und die Länge der Leerzeichen dazwischen angeben. Dieses Array muss eine gerade Anzahl von Elementen verwendet, und es sollte mindestens zwei Elemente vorhanden sein. (Es kann sein, aber dies führt zu einer durchgezogenen Linie 0 (null) Elemente im Array.) Wenn zwei Elemente vorhanden sind, wird die erste ist die Länge von einem Punkt oder Gedankenstrich, und die zweite ist die Länge der Lücke, bevor der nächste Punkt oder Gedankenstrich. Wenn mehr als zwei Elemente vorhanden sind, sie sind in der folgenden Reihenfolge: dash, Länge, Länge der Lücke, Dash-Länge, Länge der Lücke und So weiter.
+Um gepunkteten oder gestrichelten Linien zu zeichnen, verwenden Sie die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) statische Methode. Es gibt zwei Argumente: Dabei handelt es sich um ein `float` Array von Werten, die die Länge der Punkte und Bindestriche sowie die Länge der Leerzeichen dazwischen angeben. Dieses Array muss eine gerade Anzahl von Elementen verwendet, und es sollte mindestens zwei Elemente vorhanden sein. (Es kann sein, aber dies führt zu einer durchgezogenen Linie 0 (null) Elemente im Array.) Wenn zwei Elemente vorhanden sind, wird die erste ist die Länge von einem Punkt oder Gedankenstrich, und die zweite ist die Länge der Lücke, bevor der nächste Punkt oder Gedankenstrich. Wenn mehr als zwei Elemente vorhanden sind, sie sind in der folgenden Reihenfolge: dash, Länge, Länge der Lücke, Dash-Länge, Länge der Lücke und So weiter.
 
 Im Allgemeinen sollten Sie den Striche und Lücken Längen ein Vielfaches der Strichbreite vornehmen. Wenn die Strichbreite 10 Pixel ist, wird z. B. Klicken Sie dann das Array {10, 10} eine gepunktete Linie gezeichnet, wo sind die Punkte und Lücken. für die gleiche Länge wie die Stärke des Strichs.
 
@@ -217,4 +217,4 @@ Natürlich müssen Sie das Programm zum Anzeigen der Animation tatsächlich ausz
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,38 +1,38 @@
 ---
-title: Framework für Benutzerbenachrichtigungen in Xamarin.iOS
-description: Enthält Links zu Dokumenten, in denen das Framework für Benutzerbenachrichtigungen und Vorgehensweise zum Senden und Empfangen von Benachrichtigungen für lokale und remote in einer Xamarin.iOS-app verwenden.
+title: Benutzer Benachrichtigungs Framework in xamarin. IOS
+description: Links zu Dokumenten, die das Framework für Benutzer Benachrichtigungen beschreiben und verwenden, um lokale und Remote Benachrichtigungen in einer xamarin. IOS-APP zu senden und zu empfangen.
 ms.prod: xamarin
 ms.assetid: 223FCE25-A3E6-4255-BCFC-0E3136F4E987
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/01/2016
-ms.openlocfilehash: 3e9103b02dd17529d0084d6f7eb4ddcc7749659a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 13fb48d5ee64c1d84926158381f0f69655fb2cf2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61423317"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651175"
 ---
-# <a name="user-notifications-framework-in-xamarinios"></a>Framework für Benutzerbenachrichtigungen in Xamarin.iOS
+# <a name="user-notifications-framework-in-xamarinios"></a>Benutzer Benachrichtigungs Framework in xamarin. IOS
 
-Noch nicht mit iOS 10, ermöglicht das Framework für die Bereitstellung und Verarbeitung von lokalen und remote-Benachrichtigungen, erhalten. Durch die Verwendung dieses Frameworks kann der app oder App-Erweiterung die Übermittlung von lokalen Benachrichtigungen planen eine Reihe von Bedingungen wie z. B. Speicherort oder Uhrzeit angeben.
+Das Benutzer Benachrichtigungs Framework ist neu bei IOS 10 und ermöglicht die Übermittlung und Handhabung von lokalen Benachrichtigungen und Remote Benachrichtigungen. Mithilfe dieses Frameworks kann die APP-oder App-Erweiterung die Übermittlung lokaler Benachrichtigungen planen, indem Sie einen Satz von Bedingungen angibt, wie z. b. den Standort oder die Uhrzeit.
 
-Darüber hinaus die app oder die Erweiterung kann empfangen (und potenziell ändern) sowohl lokale als auch Benachrichtigungen, wie sie iOS-Gerät des Benutzers übermittelt werden.
+Darüber hinaus kann die APP oder Erweiterung lokale Benachrichtigungen und Remote Benachrichtigungen empfangen (und potenziell ändern), wenn Sie an das IOS-Gerät des Benutzers übermittelt werden.
 
-Das neue Benachrichtigung User Interface, UI-Framework ermöglicht der app oder App-Erweiterung, die Darstellung von lokalen und Remotecomputern Benachrichtigungen anpassen, wenn sie dem Benutzer angezeigt werden.
+Das neue UI-Framework für Benutzer Benachrichtigungen ermöglicht der APP-oder App-Erweiterung, die Darstellung von lokalen Benachrichtigungen und Remote Benachrichtigungen anzupassen, wenn Sie dem Benutzer angezeigt werden.
 
 ## <a name="enhanced-user-notificationsiosplatformuser-notificationsenhanced-user-notificationsmd"></a>[Verbesserte Benutzerbenachrichtigungen](~/ios/platform/user-notifications/enhanced-user-notifications.md)
 
-Dieser Artikel enthält alle, wie Benutzerbenachrichtigungen für iOS 10 wurden verbessert und bietet eine kurze Einführung in die Implementierung des neuen Frameworks für die Benachrichtigung für Benutzer mit.
+In diesem Artikel werden alle Methoden vorgestellt, mit denen Benutzer Benachrichtigungen für IOS 10 erweitert wurden, und Sie erhalten eine kurze Einführung in die Implementierung mithilfe des neuen Benutzer Benachrichtigungs Frameworks.
 
 ## <a name="advanced-user-notificationsiosplatformuser-notificationsadvanced-user-notificationsmd"></a>[Erweiterte Benutzerbenachrichtigungen](~/ios/platform/user-notifications/advanced-user-notifications.md)
 
-Dieser Artikel bietet einen tieferen Einblick in das neue Framework für Benutzerbenachrichtigungen und wie Sie es in einer Xamarin.iOS-app nutzen.
+Dieser Artikel bietet einen tieferen Einblick in das neue Benutzer Benachrichtigungs Framework und erläutert, wie Sie es in einer xamarin. IOS-app in vollem Umfang nutzen können.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS 10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)
-- ["Usernotifications"-Framework-Referenz](https://developer.apple.com/reference/usernotifications)
+- [IOS 10-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [User Notification Framework-Referenz](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
-- [Programmierhandbuch für lokale und Remote-Benachrichtigung](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html)
+- [Leitfaden zur lokalen und Remote Benachrichtigungs Programmierung](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html)

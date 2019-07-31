@@ -7,16 +7,16 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 54f6c8b94a1abdfcc3be9a86e179e766c417232b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290203"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655378"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp-Bildfilter
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Bildfilter sind, die Auswirkungen, die ausgeführt werden auf alle Bits Farbe der Pixel, die sich ein Bild zusammensetzt. Sie sind flexibler als Maske-Filter, mit denen nur auf den alpha-Kanal ausgeführt werden, wie in diesem Artikel beschrieben [ **SkiaSharp Maske Filter**](mask-filters.md). Um ein Image-Filter verwenden, legen die [ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter) , dass Sie durch einen Aufruf der statischen Methoden der Klasse erstellt haben.
 
@@ -28,7 +28,7 @@ Dieser Artikel veranschaulicht auch, einen Image-Filter verwenden, um einen Scha
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>Weichzeichner Vektorgrafiken und bitmaps
 
-Weichzeichnereffekts erstellt die [ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*) statische Methode hat einen deutlicher Vorteil gegenüber den Blur-Methoden in der [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) Klasse: Der-Abbildfilter kann eine gesamte Bitmap Weichzeichner. Die Methode hat die folgende Syntax:
+Der von der [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) statischen-Methode erstellte Weichzeichnereffekt hat gegenüber den weichzeichnermethoden [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) in der-Klasse einen erheblichen Vorteil: Der Bild Filter kann eine ganze Bitmap verwischen. Die Methode hat die folgende Syntax:
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -38,7 +38,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 
 Die Methode verfügt über zwei Sigma Werte &mdash; die erste für den Wertebereich Blur in horizontaler Richtung und die zweite für den vertikaler Richtung. Sie können Bildfilter zu Kaskadieren von einem anderen Image-Filter angeben, wie das optionale dritte Argument. Ein zuschnittrechteck kann auch angegeben werden.
 
-Die **Image experimentieren Blur-** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) enthält zwei `Slider` Ansichten, mit denen Sie experimentieren mit unterschiedlicher Blur festlegen:
+Die **Image experimentieren Blur-** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) enthält zwei `Slider` Ansichten, mit denen Sie experimentieren mit unterschiedlicher Blur festlegen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -427,7 +427,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-Das erste Argument von `SKImageFilter.CreateDistantLitDiffuse` ist die Richtung des Lichts. Die positive X und Y Koordinaten anzugeben, dass das Licht zeigt nach rechts und nach unten. Positive Z-Koordinaten Punkt in die Anzeige. Die XAML-Datei können Sie negative Z-Werte, aber das ist, damit Sie sehen können, was geschieht: Im Prinzip dazu führen, dass negative Z-Koordinaten das Licht aus dem Bildschirm heraus verweisen. Andere kleinere negative Werte und funktioniert für alle Elemente die Beleuchtung Auswirkungen mehr.
+Das erste Argument von `SKImageFilter.CreateDistantLitDiffuse` ist die Richtung des Lichts. Die positive X und Y Koordinaten anzugeben, dass das Licht zeigt nach rechts und nach unten. Positive Z-Koordinaten Punkt in die Anzeige. Mit der XAML-Datei können Sie negative Z-Werte auswählen, aber das ist nur so, dass Sie sehen können, was passiert: Konzeptionell bewirken negative Z-Koordinaten, dass das Licht auf den Bildschirm verweist. Andere kleinere negative Werte und funktioniert für alle Elemente die Beleuchtung Auswirkungen mehr.
 
 Die `surfaceScale` Argument kann zwischen – 1 und 1 liegen. (Höhere oder niedrigere Werte haben keine weitere Auswirkung.) Dies sind die relativen Werte in der Z-Achse, die angeben, die Verschiebung des grafischen Objekts (in diesem Fall die Textzeichenfolge) aus der Canvas-Oberfläche. Verwenden Sie negative Werte zum Auslösen der Textzeichenfolge oberhalb der Fläche im Zeichenbereich und positive Werte, die sie in den Zeichenbereich drücken.
 
@@ -439,9 +439,9 @@ Diese Faktoren können abgewogen werden, um eine Geprägte erhalten wirksam, wen
 
 Der Android-Screenshot verfügt über eine Z-Wert, der 0, was bedeutet, dass das Licht nur nach unten und nach rechts zeigt. Der Hintergrund ist nicht beleuchtet und die Oberfläche der Textzeichenfolge beleuchtet ist nicht beide. Das Licht wirkt sich nur der Rand des Texts für einen kleinen Effekt.
 
-Eine alternative Methode zum Geprägte und Gravur Text wurde in diesem Artikel gezeigt [das Übersetzen transformieren](../transforms/translate.md): Die Textzeichenfolge wird zweimal mit verschiedenen Farben, die ausgeglichen werden, leicht voneinander angezeigt.
+Ein alternativer Ansatz für die Prägung und den einsetzenden Text wurde im Artikel [Transform Transform](../transforms/translate.md): Die Text Zeichenfolge wird zweimal mit unterschiedlichen Farben angezeigt, die leicht voneinander abgeglichen werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

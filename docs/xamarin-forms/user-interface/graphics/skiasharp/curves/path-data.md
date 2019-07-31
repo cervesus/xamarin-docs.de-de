@@ -7,16 +7,16 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: 690d3c15d7ad2aad06be5b499bae1a94107414f4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a645ef4ed55c8b4c78bad94865777088f62f1175
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019540"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647396"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in SkiaSharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Definieren Sie Pfade, die Verwendung von Zeichenfolgen im Format Scalable Vector Graphics_
 
@@ -361,7 +361,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Die [ **Punkte und Gedankenstriche** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Artikel wurde erläutert, wie Sie verwenden können die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*) Methode, um eine gestrichelte Linie zu erstellen. Das erste Argument ist ein `float` Array, das in der Regel über zwei Elemente verfügt: Das erste Element ist die Länge der Bindestriche aus, und das zweite Element ist die Lücke zwischen der Bindestriche. Wenn die `StrokeCap` -Eigenschaftensatz auf `SKStrokeCap.Round`, und klicken Sie dann die abgerundeten Enden des Strichs effektiv die Dash Länge durch die Strichbreite auf beiden Seiten des Strichs verlängern. Wenn das erste Arrayelement auf 0 erstellt daher eine gestrichelte Linie.
+Die [ **Punkte und Gedankenstriche** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Artikel wurde erläutert, wie Sie verwenden können die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*) Methode, um eine gestrichelte Linie zu erstellen. Das erste Argument ist ein `float` -Array, das in der Regel über zwei-Elemente verfügt: Das erste Element ist die Länge der Bindestriche, und das zweite Element ist die Lücke zwischen den Bindestrichen. Wenn die `StrokeCap` -Eigenschaftensatz auf `SKStrokeCap.Round`, und klicken Sie dann die abgerundeten Enden des Strichs effektiv die Dash Länge durch die Strichbreite auf beiden Seiten des Strichs verlängern. Wenn das erste Arrayelement auf 0 erstellt daher eine gestrichelte Linie.
 
 Die Entfernung zwischen diesen Punkten wird durch das zweite Arrayelement bestimmt. Wie Sie diese in Kürze, zwei sehen werden `SKPaint` Objekte dienen zum Zeichnen der Kreise mit einem Radius von 90 Einheiten. Der Umfang dieser Kreises ist daher 180π, was bedeutet, dass die 60-Minuten-Markierungen jeder 3π Einheiten angezeigt werden müssen, dies ist der zweite Wert in der `float` im array `minuteMarkPaint`. Die 12-Stunden-Markierungen müssen angezeigt werden alle Einheiten 15π, dies ist der Wert in der zweiten `float` Array.
 
@@ -433,4 +433,4 @@ Eine Besonderheit des zweiten Zeigers, jedoch erfolgt mit. Da die Uhr aktualisie
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

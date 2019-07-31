@@ -1,24 +1,24 @@
 ---
-title: VisualElement löschen Shadows unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die plattformspezifischen iOS nutzen, die einen Schlagschatten in einem VisualElement ermöglicht wird.
+title: Visualelement-Ablage Schatten auf IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die einen Schlag Schatten für ein visualelement ermöglicht.
 ms.prod: xamarin
 ms.assetid: 2147FD66-058E-4BE5-840A-369842B26EC4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 9c576be30eb4b456e2eabcb5a041c57e58bdc747
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 9d58576e67e6e8129b15f4935986c494bb093538
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925632"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649559"
 ---
-# <a name="visualelement-drop-shadows-on-ios"></a>VisualElement löschen Shadows unter iOS
+# <a name="visualelement-drop-shadows-on-ios"></a>Visualelement-Ablage Schatten auf IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses iOS-Plattform-spezifische wird verwendet, um auf einen Schlagschatten Aktivieren einer [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Er wird genutzt, in XAML durch Festlegen der [ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) angefügten Eigenschaft, um `true`, sowie einige weitere optionale angefügten Eigenschaften zum Rendern des Schlagschattens steuern:
+Diese IOS-plattformspezifische dient zum Aktivieren eines Schlag Schattens [`VisualElement`](xref:Xamarin.Forms.VisualElement)für einen. Er wird genutzt, in XAML durch Festlegen der [ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) angefügten Eigenschaft, um `true`, sowie einige weitere optionale angefügten Eigenschaften zum Rendern des Schlagschattens steuern:
 
 ```xaml
 <ContentPage ...
@@ -75,6 +75,6 @@ Das Ergebnis ist, die ein Schlagschatten aktiviert werden kann, auf eine [ `Visu
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

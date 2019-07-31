@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: bd6d409f8727cf4e0e628fde4fa785bff573c9b5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 7f21964fff0ac37fd87b8dcc6321e47c42c78a49
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508764"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644336"
 ---
 # <a name="android-graphics-and-animation"></a>Android-Grafiken und-Animationen
 
@@ -38,7 +38,7 @@ Zusätzlich zu diesen 2D-Grafiktechniken bietet Android auch mehrere verschieden
 
 -   **Drawable-Animationen** Android unterstützt auch Frame-by-Frame-Animationen, die als *drawable Animation*bezeichnet werden. &ndash; Dies ist die einfachste Animations-API. Android lädt und zeigt drawable-Ressourcen nacheinander an (ähnlich wie eine Zeichenfolge).
 
--   **Animationen anzeigen** "Animationen anzeigen" sind die ursprünglichen Animations-APIs in Android und sind in allen Versionen von Android verfügbar.  &ndash; Diese API ist darauf beschränkt, dass Sie nur mit Ansichts Objekten funktioniert und nur einfache Transformationen für diese Ansichten ausführen kann.
+-   **Animationen anzeigen** "Animationen anzeigen" sind die ursprünglichen Animations-APIs in Android und sind in allen Versionen von Android verfügbar. &ndash; Diese API ist darauf beschränkt, dass Sie nur mit Ansichts Objekten funktioniert und nur einfache Transformationen für diese Ansichten ausführen kann.
     Ansichts Animationen werden in der `/Resources/anim` Regel in XML-Dateien im Ordner definiert.
 
 -   **Eigenschafts Animationen** In Android 3,0 wurde ein neuer Satz von Animations-APIs eingeführt, die als *Eigenschafts Animationen*bezeichnet werden. &ndash; Diese neue API hat ein erweiterbares und flexibles System eingeführt, das zum Animieren der Eigenschaften eines beliebigen Objekts verwendet werden kann, nicht nur zum Anzeigen von Objekten. Dank dieser Flexibilität können Animationen in unterschiedlichen Klassen gekapselt werden, um die Code Freigabe zu vereinfachen.
@@ -85,7 +85,7 @@ Android definiert mehrere verschiedene Typen von drawable-Ressourcen:
 
 -   [Transitiondrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition) Dies ist ein *layerdrawable* , jedoch mit einem Unterschied. &ndash; Ein *transitiondrawable* -Element kann eine Ebene animieren, die über dem oberen Rand angezeigt wird.
 
--   [Levellistdrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) Dies ähnelt einem Status von "Status", da dadurch ein Bild auf der Grundlage bestimmter Bedingungen angezeigt wird.  &ndash; Anders als bei einer *Status-drawable*zeigt das *levellistdrawable* -Element jedoch ein Bild an, das auf einem ganzzahligen Wert basiert. Ein Beispiel für ein *levellistdrawable* -Element wäre, die Stärke eines WiFi-Signals anzuzeigen. Wenn die Stärke des WLAN-Signals geändert wird, ändert sich der angezeigte drawable entsprechend.
+-   [Levellistdrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) Dies ähnelt einem Status von "Status", da dadurch ein Bild auf der Grundlage bestimmter Bedingungen angezeigt wird. &ndash; Anders als bei einer *Status-drawable*zeigt das *levellistdrawable* -Element jedoch ein Bild an, das auf einem ganzzahligen Wert basiert. Ein Beispiel für ein *levellistdrawable* -Element wäre, die Stärke eines WiFi-Signals anzuzeigen. Wenn die Stärke des WLAN-Signals geändert wird, ändert sich der angezeigte drawable entsprechend.
 
 -   [Scaledrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[clipdrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash; wie der Name schon sagt, bieten diese drawables sowohl Skalierungs-als auch clippingfunktionen. Der *scaledrawable* skaliert einen anderen drawable-Wert, während der *clipdrawable* einen anderen drawable Ausschneide.
 
@@ -438,7 +438,7 @@ In diesem Artikel wurden viele neue Konzepte und APIs vorgestellt, mit denen Sie
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Animations Demo (Beispiel)](https://developer.xamarin.com/samples/monodroid/AnimationDemo)
+- [Animations Demo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/animationdemo)
 - [Animation und Grafiken](https://developer.android.com/guide/topics/graphics/index.html)
 - [Verwenden von Animationen zum bringen ihrer Mobile Apps](http://youtu.be/ikSk_ILg3d0)
 - [AnimationDrawable](xref:Android.Graphics.Drawables.AnimationDrawable)

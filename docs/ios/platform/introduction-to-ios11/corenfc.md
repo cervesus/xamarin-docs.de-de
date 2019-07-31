@@ -1,47 +1,47 @@
 ---
-title: Core NFC in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie in der Nähe von Feld-Communication-Tags in Xamarin.iOS unter Verwendung der APIs in iOS 11 eingeführte gelesen wird.
+title: Kern-NFC in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Near-Field-Kommunikations Tags in xamarin. IOS mithilfe der in ios 11 eingeführten APIs gelesen werden.
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 6888f7147796d3c00752d10387c19d0d9f269cad
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c82861a0b4ca00f7c664cd6a920f250ad937d306
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170838"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656459"
 ---
-# <a name="core-nfc-in-xamarinios"></a>Core NFC in Xamarin.iOS
+# <a name="core-nfc-in-xamarinios"></a>Kern-NFC in xamarin. IOS
 
-_Lesen Near Field Communication (NFC)-Tags, die mithilfe von iOS 11_
+_Lesen von NFC-Tags (Near Field Communication) mithilfe von IOS 11_
 
-CoreNFC ist ein neues Framework in iOS 11, den Zugriff auf die _Near Field Communication_ (NFC) Radio Tags aus, in apps zu lesen. Es funktioniert auf einem iPhone 7 7 Plus 8, 8, Plus und X.
+Correfc ist ein neues Framework in ios 11, das den Zugriff auf das NFC-Radio ( _Near Field Communication_ ) zum Lesen von Tags aus Apps ermöglicht. Es funktioniert auf iPhone 7, 7 Plus, 8, 8 Plus und X.
 
-Der NFC-Tag-Reader in iOS-Geräten unterstützt alle NFC Tag 1 bis 5, die enthalten _NFC-Datenaustauschformat_ (NDEF) Informationen.
+Der NFC-TagReader in IOS-Geräten unterstützt alle NFC-Tagtypen von 1 bis 5, die Informationen zum _NFC-Datenaustausch Format_ (ndef) enthalten.
 
-Es gibt einige Einschränkungen zu beachten:
+Beachten Sie die folgenden Einschränkungen:
 
-- CoreNFC unterstützt nur Transponder lesen (nicht das Schreiben oder Formatierung).
-- Überprüfungen der Tag muss vom Benutzer initiierte, und Timeout nach 60 Sekunden.
-- Apps müssen im Vordergrund für die Überprüfung angezeigt werden.
-- CoreNFC kann nur auf echten Geräten (nicht auf dem Simulator) getestet werden.
+- Corenfc unterstützt nur Transponder Lesevorgänge (nicht schreiben oder formatieren).
+- Tagscans müssen vom Benutzer initiiert werden, und es muss ein Timeout nach 60 Sekunden angegeben werden.
+- Apps müssen im Vordergrund für die Überprüfung sichtbar sein.
+- Correfc kann nur auf echten Geräten (nicht auf dem Simulator) getestet werden.
 
-Diese Seite beschreibt die Konfiguration erforderlich, um CoreNFC verwenden, und zeigt, wie die API mit dem ["NFCTagReader" Beispielcode](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/).
+Auf dieser Seite wird die Konfiguration beschrieben, die für die Verwendung von corenfc und die Verwendung der API mithilfe des [Beispielcodes "nfctagreader](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)" erforderlich ist.
 
 ## <a name="configuration"></a>Konfiguration
 
-Um CoreNFC zu aktivieren, müssen Sie drei Elemente in Ihrem Projekt konfigurieren:
+Zum Aktivieren von Cor-FC müssen Sie drei Elemente in Ihrem Projekt konfigurieren:
 
-- Ein **"Info.plist"** datenschutzschlüssel.
-- Ein **"Entitlements.plist"** Eintrag.
-- Ein Bereitstellungsprofil mit **Lesen von NFC-Tags** Funktion.
+- Ein Datenschutz Schlüssel für " **Info. plist** ".
+- Ein "Berechtigungs **. plist** "-Eintrag.
+- Ein Bereitstellungs Profil mit **NFC-taglese** Funktion.
 
 ### <a name="infoplist"></a>Info.plist
 
-Hinzufügen der **NFCReaderUsageDescription** datenschutzschlüssel und Text, der dem Benutzer angezeigt wird, während die Überprüfung ausgeführt wird. Verwenden Sie eine Nachricht, die für Ihre Anwendung geeignet (z. B. erläutert den Zweck des Scans):
+Fügen Sie den Datenschutz Schlüssel **nfkreaderusagedescription** und den Text hinzu, der dem Benutzer angezeigt wird, während die Überprüfung stattfindet. Verwenden Sie eine für Ihre Anwendung geeignete Nachricht (z. b., um den Zweck der Überprüfung zu erläutern):
 
 ```xml
 <key>NFCReaderUsageDescription</key>
@@ -50,7 +50,7 @@ Hinzufügen der **NFCReaderUsageDescription** datenschutzschlüssel und Text, de
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
-Muss Ihre app Anfordern der **in der Nähe von Feld Kommunikation lesen Tags** Funktion, die mit den folgenden Schlüssel/Wert-Paar in Ihre **"Entitlements.plist"**:
+Ihre APP muss die Lesefunktion des **Near Field Communications-Tags** mit dem folgenden Schlüssel-Wert-Paar in der Berechtigung " **Berechtigungen. plist**" anfordern:
 
 ```xml
 <key>com.apple.developer.nfc.readersession.formats</key>
@@ -61,26 +61,26 @@ Muss Ihre app Anfordern der **in der Nähe von Feld Kommunikation lesen Tags** F
 
 ### <a name="provisioning-profile"></a>Bereitstellungsprofil
 
-Erstellen Sie ein neues **App-ID** und sicherstellen, dass die **Lesen von NFC-Tags** Dienst ausgewählt ist:
+Erstellen Sie eine neue **App-ID** , und stellen Sie sicher, dass der NFC- **taglesedienst** getickt ist
 
-[![Auf der Developer-Portal neue App-ID mit dem Lesen von NFC-Tags ausgewählt](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
+[![Entwickler Portal Seite "neue APP-ID" mit ausgewähltem NFC-Tag](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
-Sie sollten klicken Sie dann erstellen ein neues Bereitstellungsprofil für diese App-ID, und klicken Sie dann herunterladen, und installieren Sie es auf der Mac-Entwicklung
+Sie sollten dann ein neues Bereitstellungs Profil für diese APP-ID erstellen, es dann herunterladen und auf Ihrem Entwicklungs-Mac installieren.
 
-## <a name="reading-a-tag"></a>Ein Tag gelesen
+## <a name="reading-a-tag"></a>Lesen eines Tags
 
-Sobald Ihr Projekt konfiguriert ist, fügen `using CoreNFC;` am Anfang der Datei und führen Sie diese drei Schritte zum Implementieren von NFC tag-lesen-Funktionen:
+Nachdem das Projekt konfiguriert wurde, fügen `using CoreNFC;` Sie am Anfang der Datei hinzu, und befolgen Sie diese drei Schritte, um NFC-Transponder Lesefunktionen zu implementieren:
 
-### <a name="1-implement-infcndefreadersessiondelegate"></a>1. Implementieren `INFCNdefReaderSessionDelegate`
+### <a name="1-implement-infcndefreadersessiondelegate"></a>1. Umsetzt`INFCNdefReaderSessionDelegate`
 
-Die Schnittstelle verfügt über zwei Methoden implementiert werden:
+Die-Schnittstelle verfügt über zwei Methoden, die implementiert werden müssen:
 
-- `DidDetect` : Wird aufgerufen, wenn ein Transponder erfolgreich gelesen wird.
-- `DidInvalidate` : Wird aufgerufen, wenn ein Fehler auftritt oder das Timeout von 60 Sekunden erreicht ist.
+- `DidDetect`– Wird aufgerufen, wenn ein Transponder erfolgreich gelesen wurde.
+- `DidInvalidate`– Wird aufgerufen, wenn ein Fehler auftritt oder das 60-Sekunden-Timeout erreicht wird.
 
 #### <a name="diddetect"></a>DidDetect
 
-Im Beispielcode wird die einzelnen gescannte Nachrichten zu einer Tabellenansicht hinzugefügt:
+Im Beispielcode wird jede gescannte Nachricht einer Tabellenansicht hinzugefügt:
 
 ```csharp
 public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
@@ -96,18 +96,18 @@ public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
 }
 ```
 
-Diese Methode kann mehrmals aufgerufen werden (und möglicherweise ein Array von Nachrichten übergeben werden), wenn die Sitzung mehrere RFID-Transponderlesevorgänge ermöglicht. Dadurch wird festgelegt, mit dem dritten Parameter von der `Start` Methode (beschrieben [Schritt 2](#step2)).
+Diese Methode kann mehrmals aufgerufen werden (und es kann ein Array von Nachrichten übermittelt werden), wenn die Sitzung mehrere Transponder Lesevorgänge zulässt. Dies wird mit dem dritten Parameter der `Start` -Methode festgelegt (erläutert in [Schritt 2](#step2)).
 
 #### <a name="didinvalidate"></a>DidInvalidate
 
-Invalidierung kann aus verschiedenen Gründen auftreten:
+Die Invalidierung kann aus verschiedenen Gründen erfolgen:
 
-- Fehler beim Überprüfen.
-- Die app nicht mehr im Vordergrund werden.
-- Der Benutzer möchte die Überprüfung abbrechen.
-- Die Überprüfung wurde von der app abgebrochen.
+- Fehler beim Scannen.
+- Die APP ist nicht mehr im Vordergrund.
+- Der Benutzer hat den Scanvorgang abgebrochen.
+- Die Überprüfung wurde von der APP abgebrochen.
 
-Der folgende Code zeigt, wie Fehler behandelt:
+Der folgende Code zeigt, wie ein Fehler behandelt wird:
 
 ```csharp
 public void DidInvalidate(NFCNdefReaderSession session, NSError error)
@@ -121,47 +121,47 @@ public void DidInvalidate(NFCNdefReaderSession session, NSError error)
 }
 ```
 
-Sobald eine Sitzung ungültig geworden ist, muss ein neues Sitzungsobjekt erstellt werden, um erneut zu überprüfen.
+Nachdem eine Sitzung ungültig gemacht wurde, muss ein neues Sitzungs Objekt erstellt werden, um den Scanvorgang erneut durchsuchen zu können.
 
 <a name="step2" />
 
-### <a name="2-start-an-nfcndefreadersession"></a>2. Starten Sie eine `NFCNdefReaderSession`
+### <a name="2-start-an-nfcndefreadersession"></a>2. Starten eines`NFCNdefReaderSession`
 
-Überprüfung sollten mit einer benutzeranforderung, wie z. B. Klicken einer Schaltfläche beginnen.
-Der folgende Code erstellt und startet eine Scan-Sitzung:
+Die Überprüfung sollte mit einer Benutzer Anforderung beginnen, z. b. einem Schaltflächen-Press.
+Mit dem folgenden Code wird eine Scan Sitzung erstellt und gestartet:
 
 ```csharp
 Session = new NFCNdefReaderSession(this, null, true);
 Session?.BeginSession();
 ```
 
-Die Parameter für die `NFCNdefReaderSession` Konstruktor lauten wie folgt:
+Die Parameter für den `NFCNdefReaderSession` Konstruktor lauten wie folgt:
 
-- `delegate` – Eine Implementierung von `INFCNdefReaderSessionDelegate`. Im Beispielcode wird der Delegat wird implementiert in der Tabelle-View-Controller daher `this` als die Delegate-Parameter verwendet wird.
-- `queue` – Die Warteschlange, der Rückrufe für behandelt werden. Es kann sein `null`, werden in diesem Fall verwenden Sie die `DispatchQueue.MainQueue` beim Aktualisieren von Benutzeroberflächen-Steuerelemente (wie im Beispiel gezeigt).
-- `invalidateAfterFirstRead` – Wenn `true`, die Überprüfung beendet wird, nach der ersten erfolgreichen Überprüfung; Wenn `false` Analyse fortgesetzt wird und mehrere Ergebnisse zurückgegeben werden soll, bis die Überprüfung wird abgebrochen, oder das Timeout von 60 Sekunden erreicht wird.
+- `delegate`– Eine Implementierung von `INFCNdefReaderSessionDelegate`. Im Beispielcode wird der Delegat im Tabellen Ansichts Controller implementiert und daher `this` als Delegatparameter verwendet.
+- `queue`– Die Warteschlange, für die die Rückrufe verarbeitet werden. Dies kann sein `null`. in diesem Fall sollten Sie sicherstellen, `DispatchQueue.MainQueue` dass beim Aktualisieren von Steuerelementen der Benutzeroberfläche verwendet wird (wie im Beispiel gezeigt).
+- `invalidateAfterFirstRead`– Gibt an `false` ,dassdieÜberprüfungnachdererstenerfolgreichenÜberprüfungbeendetwird,wenndieÜberprüfungfortgesetztwirdundmehrereErgebnissezurückgegebenwerden,bisdieÜberprüfungabgebrochenoderdasTimeout`true`von 60 Sekunden erreicht
 
 
-### <a name="3-cancel-the-scanning-session"></a>3. Die Scan-Sitzung abbrechen
+### <a name="3-cancel-the-scanning-session"></a>3. Abbrechen der Scan Sitzung
 
-Der Benutzer kann über eine vom System bereitgestellte Schaltfläche in der Benutzeroberfläche der Scan-Sitzung abbrechen:
+Der Benutzer kann die Scan Sitzung über eine vom System bereitgestellte Schaltfläche in der Benutzeroberfläche Abbrechen:
 
-![Schaltfläche "Abbrechen", bei der Überprüfung](corenfc-images/scan-cancel-sml.png)
+![Schaltfläche "Abbrechen" beim Scannen](corenfc-images/scan-cancel-sml.png)
 
-Die app kann programmgesteuert die Überprüfung abbrechen, durch den Aufruf der `InvalidateSession` Methode:
+Die APP kann den Scanprogramm gesteuert abbrechen, indem Sie `InvalidateSession` die-Methode aufrufen:
 
 ```csharp
 Session.InvalidateSession();
 ```
 
-In beiden Fällen den Delegaten der `DidInvalidate` aufgerufene Methode.
+In beiden Fällen wird die- `DidInvalidate` Methode des Delegaten aufgerufen.
 
 ## <a name="summary"></a>Zusammenfassung
 
-CoreNFC ermöglicht Ihrer app zum Lesen von Daten von NFC-Tags. Es unterstützt eine Vielzahl von Tag-Formate (NDEF Arten von 1 bis 5) lesen und schreiben oder die Formatierung nicht unterstützt.
+Corenfc ermöglicht der APP das Lesen von Daten aus NFC-Tags. Es unterstützt das Lesen einer Vielzahl von tagformaten (ndef-Typen 1 bis 5), unterstützt jedoch weder das Schreiben noch das formatieren.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [NFCTagReader (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/)
+- [NF ctagreader (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
 - [Einführung in Core NFC (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/718/)

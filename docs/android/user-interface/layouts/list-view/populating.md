@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: dff2efe687fde16903df19fefad2e2589c888086
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: abc7bb09791df115536f552979b48a3a12b4f443
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510107"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646345"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Auffüllen einer xamarin. Android-ListView mit Daten
 
@@ -133,7 +133,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 }
 ```
 
-Benutzerdefinierte Adapter Implementierungen  sollten das `convertView` Objekt immer wieder verwenden, bevor neue Sichten erstellt werden, um sicherzustellen, dass nicht genügend Arbeitsspeicher verfügbar ist, wenn lange Listen angezeigt werden.
+Benutzerdefinierte Adapter Implementierungen sollten das `convertView` Objekt immer wieder verwenden, bevor neue Sichten erstellt werden, um sicherzustellen, dass nicht genügend Arbeitsspeicher verfügbar ist, wenn lange Listen angezeigt werden.
 
 Einige `CursorAdapter`Adapter Implementierungen (z. b.) verfügen nicht über eine `GetView` -Methode, sondern `BindView` erfordern zwei `NewView` verschiedene Methoden, die die erneute Verwendung von Zeilen erzwingen, indem `GetView` die Zuständigkeiten von in zwei Bereiche aufgeteilt werden. anzuwenden. Ein `CursorAdapter` Beispiel finden Sie weiter unten in diesem Dokument.
 
@@ -218,6 +218,6 @@ Ihre Abschnitts Index Titel müssen nicht 1:1 ihren eigentlichen Abschnitten zuo
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Basictableandroid (Beispiel)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
-- [Basictableadapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
-- [Fastscroll (Beispiel)](https://developer.xamarin.com/samples/monodroid/FastScroll/)
+- [Basictableandroid (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableandroid)
+- [Basictableadapter (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableadapter)
+- [Fastscroll (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fastscroll)

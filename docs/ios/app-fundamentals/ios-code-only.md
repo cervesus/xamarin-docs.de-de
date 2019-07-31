@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 28475df4baa225cc9a608607be6ed673ad0e6e8a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 105d06c7cea23ac0873c8de68d7ad1ad62ae1ffc
+ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61251385"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68665712"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Erstellen von Benutzeroberflächen im Code in Xamarin.iOS für iOS
 
@@ -89,10 +89,10 @@ Die folgenden Schritte führen Sie durch das Storyboard aus einer Anwendung zu e
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -118,10 +118,10 @@ public class AppDelegate : UIApplicationDelegate
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -132,7 +132,7 @@ Wenn Sie diese Anwendung jetzt ausführen würden, würden Sie wahrscheinlich ei
 
 ## <a name="adding-a-controller"></a>Hinzufügen eines Controllers
 
-Ihre app kann viele View-Controller enthalten ist, muss einem Root View Controller alle View-Controller zu steuern.  Hinzufügen eines Controllers in das Fenster durch das Erstellen einer `UIViewController` -Instanz und zum Festlegen der `window.RootViewController` Eigenschaft:
+Ihre app kann viele View-Controller enthalten ist, muss einem Root View Controller alle View-Controller zu steuern.  Hinzufügen eines Controllers in das Fenster durch das Erstellen einer `UIViewController` -Instanz und zum Festlegen der `Window.RootViewController` Eigenschaft:
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -632,4 +632,4 @@ In diesem Artikel wurde beschrieben, wie zum Entwickeln von iOS-Anwendungen prog
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SimpleLogin (Beispiel)](https://developer.xamarin.com/samples/monotouch/SimpleLogin)
+- [SimpleLogin (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplelogin)

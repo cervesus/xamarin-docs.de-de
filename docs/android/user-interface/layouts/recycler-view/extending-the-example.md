@@ -1,45 +1,45 @@
 ---
-title: Erweitern Sie im RecyclerView-Beispiel
-description: Hinzufügen von Element-Click-Ereignishandler zu der RecyclerView-Beispiel-app ein.
+title: Erweitern des recyclerview-Beispiels
+description: Hinzufügen von Element-Click-Ereignis Handlern zur Beispiel-app "recyclerview".
 ms.prod: xamarin
 ms.assetid: 707EE1CE-C164-485B-944C-82C6795E8A24
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: eca0f58a470228ce8e6331defe88c1ef727cef57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fd813427836b0250b84941eca54d6bbe6219518e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036085"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645333"
 ---
-# <a name="extending-the-recyclerview-example"></a>Erweitern Sie im RecyclerView-Beispiel
+# <a name="extending-the-recyclerview-example"></a>Erweitern des recyclerview-Beispiels
 
 
-Die basic-app, die in beschriebenen [ein einfaches RecyclerView-Beispiel](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) eigentlich nicht viel &ndash; es einfach führt einen Bildlauf durch, und zeigt eine feste Liste der Foto-Elemente zum Browsen zu ermöglichen. In realen Anwendungen erwarten, dass Benutzer mit der app interagieren, indem Sie auf Elemente in der Anzeige können. Darüber hinaus wird die zugrunde liegenden Datenquelle ändern kann (oder von der app geändert werden), und den Inhalt der Anzeige müssen diese Änderungen konsistent bleiben. In den folgenden Abschnitten erfahren Sie, wie Sie die Element-Click-Ereignisse behandeln, und aktualisieren Sie `RecyclerView` Wenn die Änderungen die zugrunde liegenden Datenquelle.
+Die grundlegende APP, die in [einem grundlegenden recyclerview](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) -Beispiel &ndash; beschrieben wird, führt einfach nur einen Bildlauf durch und zeigt eine fixierte Liste von Fotoelementen an, um das Durchsuchen In realen Anwendungen erwarten Benutzer, dass Sie mit der APP interagieren können, indem Sie auf Elemente in der Anzeige tippen. Außerdem kann sich die zugrunde liegende Datenquelle ändern (oder von der APP geändert werden), und der Inhalt der Anzeige muss mit diesen Änderungen konsistent bleiben. In den folgenden Abschnitten erfahren Sie, wie Sie Elemente mit Klick Ereignissen behandeln und aktualisieren `RecyclerView` , wenn sich die zugrunde liegende Datenquelle ändert.
 
 
-### <a name="handling-item-click-events"></a>Behandeln von Element-Click-Ereignissen
+### <a name="handling-item-click-events"></a>Behandeln von Element Klick Ereignissen
 
-Wenn ein Benutzer ein Element im berührt die `RecyclerView`, ein Element-Click-Ereignis wird generiert, um die app zu benachrichtigen, welches Element verwendet wurde. Dieses Ereignis wird nicht generiert, indem `RecyclerView` &ndash; stattdessen die Elementansicht (die in der Ansicht Inhaber umschlossen wird) erkennt, Workflows und meldet diese Workflows wie der click-Ereignisse.
+Wenn ein Benutzer ein Element im `RecyclerView`berührt, wird ein Element mit einem Element angezeigt, um die APP zu benachrichtigen, welches Element berührt wurde. Dieses Ereignis wird nicht von `RecyclerView` &ndash; generiert. die Element Ansicht (die in den Ansichts Halter umschließt) erkennt Berührungen und meldet diese Berührungen als Click-Ereignisse.
 
-Um das Element-Click-Ereignisse behandeln zu veranschaulichen, erklären Sie die folgenden Schritte aus erläutert, wie die grundlegenden Anzeigen von Fotos-app zum Bericht ändern die Foto vom Benutzer verwendete wurde, hatte. Wenn ein Element-Click-Ereignis in der Beispiel-app auftritt, erfolgt die folgende Sequenz:
+Die folgenden Schritte erläutern, wie Sie Elemente mit Element Klick behandeln, um zu veranschaulichen, wie die grundlegende Foto Anzeige-APP geändert wird, um zu melden, welche Fotos vom Benutzer berührt wurden. Wenn ein Element Click-Ereignis in der Beispiel-App auftritt, erfolgt die folgende Sequenz:
 
-1.  Des Bild des `CardView` erkennt das Element-Click-Ereignis und benachrichtigt den Adapter.
+1.  Das Element des `CardView` Fotos erkennt das Element-Click-Ereignis und benachrichtigt den Adapter.
 
-2.  Der Adapter leitet das Ereignis (mit Informationen über die Position Elemente) an die Element-Click-Ereignishandler der Aktivität.
+2.  Der Adapter leitet das Ereignis (mit Element Positionsinformationen) an den Element-Click-Handler der Aktivität weiter.
 
-3.  Aktivitäts Element-Click-Ereignishandler reagiert auf das Element-Click-Ereignis.
+3.  Der Element-Click-Handler der Aktivität antwortet auf das Element Click-Ereignis.
 
-Ein Ereignismember-Handler zuerst aufgerufen `ItemClick` wird hinzugefügt, um die `PhotoAlbumAdapter` Definition der Klasse:
+Zuerst wird ein ereignishandlermember aufgerufen `ItemClick` , der der `PhotoAlbumAdapter` Klassendefinition hinzugefügt wird:
 
 ```csharp
 public event EventHandler<int> ItemClick;
 ```
 
-Anschließend wird eine Element-Click-Ereignishandlermethode hinzugefügt, um `MainActivity`.
-Diesem Handler zeigt kurz als Popupbenachrichtigung an, der angibt, welches Foto-Element verwendet wurde:
+Anschließend wird eine Element-Click-Ereignishandlermethode `MainActivity`hinzugefügt.
+Dieser Handler zeigt kurz einen Toast an, der angibt, welches Foto Element berührt wurde:
 
 ```csharp
 void OnItemClick (object sender, int position)
@@ -50,7 +50,7 @@ void OnItemClick (object sender, int position)
 
 ```
 
-Als Nächstes wird eine einzige Zeile Code für die Registrierung benötigt die `OnItemClick` Ereignishandler mit `PhotoAlbumAdapter`. Ein guter Ausgangspunkt zu diesem Zweck wird unmittelbar nach `PhotoAlbumAdapter` wird erstellt: 
+Als nächstes ist eine Codezeile erforderlich, um den `OnItemClick` Handler bei `PhotoAlbumAdapter`zu registrieren. Ein guter Ausgangspunkt ist, nachdem `PhotoAlbumAdapter` erstellt wurde: 
 
 ```csharp
 mAdapter = new PhotoAlbumAdapter (mPhotoAlbum);
@@ -58,9 +58,9 @@ mAdapter.ItemClick += OnItemClick;
 
 ```
 
-In diesem einfachen Beispiel Registrierung findet statt, in der Hauptaktivität `OnCreate` -Methode, aber eine Produktions-app registrieren Sie möglicherweise den Handler in `OnResume` und Aufheben der Registrierung in `OnPause` &ndash; finden Sie unter [Aktivitätslebenszyklus ](~/android/app-fundamentals/activity-lifecycle/index.md) für Weitere Informationen.
+In diesem grundlegenden Beispiel findet die `OnCreate` Handlerregistrierung in der-Methode der Hauptaktivität statt, aber eine Produktions-App registriert den Handler möglicherweise in `OnPause` `OnResume` und die Registrierung in &ndash; dem [Aktivitäts Lebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md) , um weitere Informationen zu erhalten. Informationen.
 
-`PhotoAlbumAdapter` Jetzt rufen `OnItemClick` ein Element-Click-Ereignis empfängt. Der nächste Schritt ist die Erstellung einen Ereignishandler im Adapter, der dies auslöst `ItemClick` Ereignis. Die folgende Methode, `OnClick`, wird direkt danach des Adapters hinzugefügt `ItemCount` Methode:
+`PhotoAlbumAdapter`Ruft `OnItemClick` jetzt auf, wenn ein Element Click-Ereignis empfangen wird. Der nächste Schritt ist das Erstellen eines Handlers im Adapter, der dieses `ItemClick` Ereignis auslöst. Die folgende Methode `OnClick`wird direkt nach der- `ItemCount` Methode des Adapters hinzugefügt:
 
 ```csharp
 void OnClick (int position)
@@ -70,8 +70,8 @@ void OnClick (int position)
 }
 ```
 
-Dies `OnClick` Methode ist der Adapter die *Listener* für Element-Click-Ereignisse aus Item Sichten. Bevor dieser Listener registriert werden kann, mit einem Element anzeigen (per der Elementansicht Ansicht Inhaber), die `PhotoViewHolder` Konstruktor muss geändert werden, um diese Methode als ein zusätzliches Argument akzeptieren, und registrieren Sie `OnClick` mit der Elementansicht `Click` Ereignis.
-Hier ist die geänderte `PhotoViewHolder` Konstruktor:
+Diese `OnClick` Methode ist der *Listener* des Adapters für Element-Click-Ereignisse aus Element Ansichten. Bevor dieser Listener für eine Element Ansicht (über den Ansichts Halter der Element Ansicht) registriert werden kann, `PhotoViewHolder` muss der Konstruktor geändert werden, um diese Methode als zusätzliches Argument zu akzeptieren, `OnClick` und sich beim Element `Click` Ansichts Ereignis registrieren.
+Hier ist der geänderte `PhotoViewHolder` Konstruktor:
 
 ```csharp
 public PhotoViewHolder (View itemView, Action<int> listener)
@@ -85,19 +85,19 @@ public PhotoViewHolder (View itemView, Action<int> listener)
 
 ```
 
-Die `itemView` Parameter enthält einen Verweis auf die `CardView` , die vom Benutzer verwendet wurde. Beachten Sie, dass die Basisklasse für die Ansicht Inhaber die Layoutposition des Elements weiß (`CardView`), den sie darstellt (über die `LayoutPosition` Eigenschaft), und diese Position des Adapters übergeben `OnClick` Methode, wenn ein Element-Click-Ereignis stattfindet. Des Adapters die `OnCreateViewHolder` Methode wird geändert, um das Übergeben des Adapters `OnClick` Methode, um die Ansicht des Karteninhabers-Konstruktor:
+Der `itemView` -Parameter enthält einen Verweis auf `CardView` den, der vom Benutzer berührt wurde. Beachten Sie, dass die Basisklasse des Ansichts Besitzers die Layoutposition`CardView`des Elements () kennt, das `LayoutPosition` es darstellt (über die-Eigenschaft). diese Position wird `OnClick` an die-Methode des Adapters übermittelt, wenn ein Item-Click-Ereignis stattfindet. Die- `OnCreateViewHolder` Methode des Adapters wird so geändert, dass Sie `OnClick` die-Methode des Adapters an den Konstruktor des Ansichts Besitzers übergibt:
 
 ```csharp
 PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 ```
 
-Nun, wenn Sie erstellen und der beispielanwendung für das Anzeigen von Fotos ausführen, bewirkt durch Tippen auf ein Foto in der Anzeige, dass ein Popup angezeigt werden, dass die meldet, dass die Foto verwendet wurde:
+Wenn Sie nun die Beispiel-App zum Anzeigen von Fotos erstellen und ausführen, bewirkt das Tippen eines Fotos in der Anzeige, dass ein Toast angezeigt wird, der meldet, welches Foto berührt wurde:
 
-[![Toast Beispiel, das wird angezeigt, wenn ein Foto Karte getippt wird](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
+[![Beispiel Toast, der angezeigt wird, wenn eine Foto Karte getippt wird](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
-Dieses Beispiel zeigt nur einen Ansatz zum Implementieren von Ereignishandlern mit `RecyclerView`. Eine weitere Möglichkeit, die hier nicht verwendet werden kann, werden Ereignisse auf den Inhaber der Ansicht platzieren, und den Adapter diese Ereignisse abonniert haben ab. Sofern die Foto-Beispiel-app ein Foto Bearbeitungsfunktionen, separate Ereignisse wäre erforderlich, damit die `ImageView` und die `TextView` innerhalb der einzelnen `CardView`: erwähnt die `TextView` starten würde eine `EditView` Dialogfeld, in dem den Benutzer bearbeiten kann die Beschriftung und die Workflows für die `ImageView` würde ein Foto Touchup-Tool, mit dem den Benutzer Zuschneiden oder drehen das Foto zu starten. Je nach den Anforderungen Ihrer App müssen Sie am besten für die Behandlung von und Reaktion Berührungsereignisse entwerfen.
+In diesem Beispiel wird nur ein Ansatz für die Implementierung von Ereignis `RecyclerView`Handlern mit veranschaulicht. Ein weiterer Ansatz, der hier verwendet werden könnte, ist das Platzieren von Ereignissen auf dem Ansichts Halter und das Abonnieren dieser Ereignisse durch den Adapter. Wenn die Foto-Beispiel-App eine Funktion zur Fotobearbeitung bereitgestellt hat, sind separate `ImageView` Ereignisse für `TextView` die und `CardView`die innerhalb der `TextView` beiden Elemente `EditView` erforderlich mit der Beschriftung und dem `ImageView` -Wert wird ein Foto TouchUp-Tool gestartet, mit dem der Benutzer das Foto anschneiden oder drehen kann. Abhängig von den Anforderungen Ihrer APP müssen Sie den besten Ansatz für die Behandlung von und die Reaktion auf Berührungs Ereignisse entwerfen.
 
-Zur Veranschaulichung wie `RecyclerView` kann aktualisiert werden, wenn die DataSet-Änderungen, die beispielanwendung für das Anzeigen von Fotos geändert werden können, um nach dem Zufallsprinzip ein Foto in der Datenquelle auszuwählen, und tauschen sie mit dem ersten Foto. Zunächst wird eine **zufällige auswählen** Schaltfläche wird hinzugefügt, um der Beispiel Foto-app **Main.axml** Layout:
+Um zu veranschaulichen `RecyclerView` , wie aktualisiert werden kann, wenn das Dataset geändert wird, kann die Beispiel-App für die Foto Anzeige so geändert werden, dass ein Foto in der Datenquelle nach dem Zufallsprinzip ausgewählt und mit dem ersten Foto ausgetauscht wird. Zuerst wird eine **zufällige Auswahl** Schaltfläche zum **Main. axml** -Layout der Beispiel Foto-app hinzugefügt:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -120,7 +120,7 @@ Zur Veranschaulichung wie `RecyclerView` kann aktualisiert werden, wenn die Data
 </LinearLayout>
 ```
 
-Als Nächstes wird Code hinzugefügt, am Ende der Hauptaktivität `OnCreate` Methode zum Suchen der `Random Pick` im Layout Schaltfläche, und fügen Sie einen Handler zuzuweisen:
+Im nächsten Schritt wird Code am Ende der-Methode der Main- `OnCreate` Aktivität hinzugefügt, `Random Pick` um die Schaltfläche im Layout zu suchen und einen Handler an ihn anzufügen:
 
 ```csharp
 Button randomPickBtn = FindViewById<Button>(Resource.Id.randPickButton);
@@ -136,9 +136,9 @@ randomPickBtn.Click += delegate
 
 ```
 
-Dieser Ereignishandler ruft des Fotoalbums `RandomSwap` Methode bei der **zufällige auswählen** Schaltfläche getippt wird. Die `RandomSwap` Methode nach dem Zufallsprinzip tauscht ein Foto mit dem ersten Foto in der Datenquelle und gibt dann den Index des Fotos nach dem Zufallsprinzip ausgetauscht. Wenn Sie kompilieren und die Beispiel-app mit dem folgenden Code ausführen, tippen Sie auf die **zufällige auswählen** Schaltfläche führt zu einer Änderung der Anzeige nicht zu, da die `RecyclerView` sind nicht die Änderung an der Datenquelle bekannt.
+Dieser Handler Ruft die-Methode des `RandomSwap` Foto-Albums auf, wenn die **zufällige Pick** -Taste getippt wird. Die `RandomSwap` Methode tauscht ein Foto nach dem Zufallsprinzip mit dem ersten Foto in der Datenquelle aus und gibt dann den Index des zufällig vertauschten Fotos zurück. Wenn Sie die Beispiel-App mit diesem Code kompilieren und ausführen, führt das Tippen auf die **zufällige Auswahl** Schaltfläche nicht zu einer `RecyclerView` Änderung der Anzeige, da der die Änderung an der Datenquelle nicht kennt.
 
-Zu `RecyclerView` aktualisiert, nachdem die Datenquelle ändert, die **zufällige auswählen** klicken Sie auf Ereignishandler muss geändert werden, zum Aufrufen des Adapters `NotifyItemChanged` Methode für jedes Element in der Auflistung, die geändert wurde (in diesem Fall zwei Elemente vorhanden sind geändert: das erste Foto und das getauscht Foto). Dies bewirkt, dass `RecyclerView` um die Anzeige zu aktualisieren, damit sie mit den neuen Zustand der Datenquelle konsistent sind:
+Um nach `RecyclerView` dem Ändern der Datenquelle weiterhin aktualisiert zu werden, muss der **zufällige Pick** -Click-Handler so geändert `NotifyItemChanged` werden, dass er die Methode des Adapters für jedes Element in der Auflistung aufruft, das geändert wurde (in diesem Fall wurden zwei Elemente geändert: das erste Foto und dem vertauschten Foto). Dies bewirkt `RecyclerView` , dass die Anzeige der Anzeige so aktualisiert wird, dass Sie mit dem neuen Status der Datenquelle konsistent ist:
 
 ```csharp
 Button randomPickBtn = FindViewById<Button>(Resource.Id.randPickButton);
@@ -159,17 +159,17 @@ randomPickBtn.Click += delegate
 
 ```
 
-Nun, wenn die **zufällige auswählen** ist auf die Schaltfläche getippt, `RecyclerView` aktualisiert die Anzeige, um anzugeben, dass ein Foto weiter unten in der Auflistung mit dem ersten Foto in der Auflistung vertauscht wurden:
+Wenn nun die **zufällige Pick** -Taste getippt wird `RecyclerView` , aktualisiert die Anzeige, um anzuzeigen, dass ein Foto weiter unten in der Auflistung mit dem ersten Foto in der Auflistung ausgetauscht wurde:
 
-[![Erster Screenshot vor dem Austausch, zweiten Screenshot nach dem Austausch](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
+[![Erster Screenshot vor dem austauschen, zweiter Screenshot nach dem Austausch](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
-Natürlich `NotifyDataSetChanged` wurde möglicherweise aufgerufen anstatt die beiden Aufrufe von `NotifyItemChanged`, aber dies also gezwungen, `RecyclerView` die gesamte Auflistung zu aktualisieren, auch wenn nur zwei Elemente in der Auflistung geändert haben. Aufrufen von `NotifyItemChanged` ist erheblich effizienter als das Aufrufen `NotifyDataSetChanged`.
+Selbstverständlich `NotifyDataSetChanged` hätte aufgerufen werden können, statt die beiden `NotifyItemChanged`Aufrufe von vorzunehmen, `RecyclerView` aber dies würde dazu führen, dass die gesamte Auflistung aktualisiert wird, obwohl nur zwei Elemente in der Auflistung geändert wurden. Der `NotifyItemChanged` Aufruf von ist wesentlich effizienter als `NotifyDataSetChanged`das Aufrufen von.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [RecyclerViewer (Beispiel)](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)
+- [Recyclerviewer (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
-- [RecyclerView-Komponenten und Funktionen](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
-- [Ein einfaches RecyclerView-Beispiel](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
+- [Recyclerview-Teile und-Funktionalität](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
+- [Ein grundlegendes recyclerview-Beispiel](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
 - [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)

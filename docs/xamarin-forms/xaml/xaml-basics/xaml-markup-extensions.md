@@ -7,16 +7,16 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 17ca8ec481b8af5ad0515e6544613864f0a66271
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342194"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655485"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. XAML-Markuperweiterungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML-Markuperweiterungen bilden eine wichtige Funktion in XAML, mit denen Eigenschaften festgelegt werden, um Objekte oder Werte, die aus anderen Quellen indirekt verwiesen werden. XAML-Markuperweiterungen sind besonders wichtig für das Freigeben von Objekten und verweisen auf Konstanten, die in der gesamten Anwendung verwendet, aber sie finden ihre größten Dienstprogramm datenbindungen._
 
@@ -395,7 +395,7 @@ Sie benötigen zusätzliche XML-Namespacedeklaration auf andere Klassen zugreife
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-Sie können auch XML-Namespacedeklaration für .NET Namespaces definieren, die in einer beliebigen Assembly, die die .NET Standard-Bibliothek verweist. Hier ist z. B. eine `sys` Präfix für die .NET standard `System` -Namespace, der in der **"mscorlib"** -Assembly, die einmal für die "Microsoft Common Runtime-Objektbibliothek" erstellt, aber jetzt bedeutet "Multilanguage Standard Allgemeine Objekt Runtime Library". Da es sich um eine andere Assembly handelt, müssen Sie auch angeben den Assemblynamen an, in diesem Fall **"mscorlib"**:
+Sie können auch XML-Namespacedeklaration für .NET Namespaces definieren, die in einer beliebigen Assembly, die die .NET Standard-Bibliothek verweist. Hier ist z. B. eine `sys` Präfix für die .NET standard `System` -Namespace, der in der **"mscorlib"** -Assembly, die einmal für die "Microsoft Common Runtime-Objektbibliothek" erstellt, aber jetzt bedeutet "Multilanguage Standard Allgemeine Objekt Runtime Library". Da es sich um eine andere Assembly handelt, müssen Sie auch angeben den Assemblynamen an, in diesem Fall **"mscorlib"** :
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 Beachten Sie, dass das Schlüsselwort `clr-namespace` ist, gefolgt von einem Doppelpunkt und dann den Namespacenamen .NET, gefolgt von einem Semikolon, das Schlüsselwort `assembly`, einem Gleichheitszeichen und der Name der Assembly.
 
-Ja, ein Doppelpunkt folgt `clr-namespace` Gleichheitszeichen folgt `assembly`. Die Syntax wurde in dieser Weise absichtlich definiert: Die meisten XML-Namespacedeklaration verweisen auf ein URI, der ein URI-Schema-Name, z. B. beginnt `http`, die immer durch einen Doppelpunkt gefolgt wird. Die `clr-namespace` Teil dieser Zeichenfolge soll dieser Konvention zu imitieren.
+Ja, ein Doppelpunkt folgt `clr-namespace` Gleichheitszeichen folgt `assembly`. Die Syntax wurde auf diese Weise absichtlich definiert: Die meisten XML-Namespace Deklarationen verweisen auf einen URI, der einen URI `http`-Schema Namen (z. b.) beginnt, dem immer ein Doppelpunkt folgt. Die `clr-namespace` Teil dieser Zeichenfolge soll dieser Konvention zu imitieren.
 
 Sowohl diese Namespacedeklarationen befinden sich der **StaticConstantsPage** Beispiel. Beachten Sie, dass die `BoxView` Dimensionen werden festgelegt, um `Math.PI` und `Math.E`, jedoch mit einem Faktor von 100 skalierte:
 
@@ -547,7 +547,7 @@ Im Folgenden ein Beispiel:
 </ContentPage>
 ```
 
-Die wichtigste Lektion, die Sie, in diesem Beispiel ausführen sollten ist vielleicht die Syntax der Markuperweiterung: Keine Anführungszeichen müssen innerhalb der geschweiften Klammern einer Markuperweiterung angezeigt werden. Wenn Sie die Markuperweiterung in einer XAML-Datei eingeben, ist es natürlich, die Werte der Eigenschaften in Anführungszeichen gesetzt werden soll. Widerstehen Sie der Versuchung!
+Die wichtigste Lektion, die Sie in diesem Beispiel berücksichtigen sollten, ist die Syntax der Markup Erweiterung: In den geschweiften Klammern einer Markup Erweiterung dürfen keine Anführungszeichen angezeigt werden. Wenn Sie die Markuperweiterung in einer XAML-Datei eingeben, ist es natürlich, die Werte der Eigenschaften in Anführungszeichen gesetzt werden soll. Widerstehen Sie der Versuchung!
 
 Hier wird das Programm ausgeführt wird:
 
@@ -561,7 +561,7 @@ Die hier gezeigten XAML-Markuperweiterungen bieten wichtige Unterstützung für 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Teil 1. Erste Schritte mit XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Teil 2. Grundlegende XAML-Syntax](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Teil 4. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

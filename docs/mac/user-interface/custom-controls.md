@@ -1,56 +1,56 @@
 ---
-title: Erstellen von benutzerdefinierten Steuerelementen in Xamarin.Mac
-description: Dieses Dokument beschreibt, wie Sie benutzerdefinierte Steuerelemente in Xamarin.Mac zu erstellen. Es zeigt, wie das benutzerdefinierte Steuerelement erstellen, seinen Status zu verfolgen, zeichnen die Schnittstelle, auf Benutzereingaben reagieren und verwenden Sie das Steuerelement in einer Anwendung.
+title: Erstellen von benutzerdefinierten Steuerelementen in xamarin. Mac
+description: In diesem Dokument wird beschrieben, wie benutzerdefinierte Steuerelemente in xamarin. Mac erstellt werden. Es zeigt, wie Sie das benutzerdefinierte Steuerelement erstellen, seinen Zustand nachverfolgen, seine Schnittstelle zeichnen, auf Benutzereingaben reagieren und das Steuerelement in einer Anwendung verwenden.
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 015c1e315b6070777542a8f8c5871c00cf336b5c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: aee3d81375ab619fa2016a87951cce3e72cdbe47
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61236111"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650194"
 ---
-# <a name="creating-custom-controls-in-xamarinmac"></a>Erstellen von benutzerdefinierten Steuerelementen in Xamarin.Mac
+# <a name="creating-custom-controls-in-xamarinmac"></a>Erstellen von benutzerdefinierten Steuerelementen in xamarin. Mac
 
-Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-Anwendung, Sie haben Zugriff auf der gleiche Benutzer steuert, die ein Entwickler *Objective-C-*, *Swift* und *Xcode*ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und Verwalten Ihrer Benutzer-Steuerelemente (oder erstellen sie optional direkt in c#-Code).
+Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zugriff auf die gleichen Benutzer Steuerelemente, die ein Entwickler in " *Ziel-C*", " *SWIFT* " und " *Xcode* " verwendet. Da xamarin. Mac direkt in Xcode integriert ist, können Sie die _Interface Builder_ von Xcode verwenden, um die Benutzer Steuerelemente zu erstellen und zu verwalten ( C# oder Sie optional direkt im Code zu erstellen).
 
-Während MacOS eine Fülle von integrierten Steuerelementen bereitstellt, gibt es möglicherweise vorkommen, die Sie benötigen, erstellen Sie ein benutzerdefiniertes Steuerelement angeben, dass Funktionen nicht mit Out-of-the-Box bereitgestellt oder ein benutzerdefiniertes Design der Benutzeroberfläche (z. B. eine Spiele-Schnittstelle) entsprechend vor.
+MacOS bietet zwar eine Vielzahl integrierter Benutzer Steuerelemente, es kann jedoch vorkommen, dass Sie ein benutzerdefiniertes Steuerelement erstellen müssen, um Funktionen bereitzustellen, die nicht standardmäßig bereitgestellt werden, oder um ein benutzerdefiniertes UI-Design (z. b. eine spielschnittstelle) abzugleichen.
 
 [![](custom-controls-images/intro01.png "Beispiel für ein benutzerdefiniertes UI-Steuerelement")](custom-controls-images/intro01.png#lightbox)
 
-In diesem Artikel wird die Grundlagen zum Erstellen einer wiederverwendbaren benutzerdefinierte Benutzeroberflächensteuerelement in einer Xamarin.Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie über arbeiten die [Hallo, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die wir in diesem Artikel verwenden.
+In diesem Artikel werden die Grundlagen der Erstellung eines wiederverwendbaren benutzerdefinierten Benutzeroberflächen Steuer Elements in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , verwenden, da er wichtige Konzepte und Techniken behandelt, die wir in verwenden werden. Dieser Artikel.
 
-Empfiehlt es sich um einen Blick auf die [Verfügbarmachen von c#-Klassen / Methoden mit Objective-C](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac-Interna](~/mac/internals/how-it-works.md) dokumentieren, es wird erläutert, die `Register` und `Export` Befehle verwendet, um Ihre Klassen in c# für Objective-C-Objekte und Elemente der Benutzeroberfläche anschließen.
+Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden die-und `Register` `Export` -Befehle erläutert, die zum Verknüpfen der C# Klassen mit verwendet werden. Ziel-C-Objekte und UI-Elemente.
 
 <a name="Introduction-to-Outline-Views" />
 
 ## <a name="introduction-to-custom-controls"></a>Einführung in benutzerdefinierte Steuerelemente
 
-Wie bereits erwähnt, gibt es möglicherweise gelegentlich Sie zum Erstellen einer wiederverwendbaren, benutzerdefinierte Steuerelemente der Benutzeroberfläche einer Xamarin.Mac-app-Benutzeroberfläche einzigartige Funktionen bereit, oder erstellen Sie ein benutzerdefiniertes Design der Benutzeroberfläche (z. B. eine Spiele-Schnittstelle müssen).
+Wie bereits erwähnt, kann es vorkommen, dass Sie ein wiederverwendbares benutzerdefiniertes Steuerelement für die Benutzeroberfläche erstellen müssen, um eine eindeutige Funktionalität für die Benutzeroberfläche Ihrer xamarin. Mac-app bereitzustellen oder um ein benutzerdefiniertes UI-Design (z. b. eine spielschnittstelle)
 
-In diesen Fällen können Sie ganz einfach von erben `NSControl` , und erstellen Sie ein benutzerdefiniertes Tool, das UIs Ihrer app über c#-Code oder mit Interface Builder von Xcode entweder hinzugefügt werden kann. Durch Erben von `NSControl` Ihr benutzerdefinierte Steuerelement verfügen automatisch über alle standard-Funktionen, die über eine integrierte Benutzeroberflächensteuerelement verfügt (z. B. `NSButton`).
+In diesen Fällen können Sie problemlos von `NSControl` erben und ein benutzerdefiniertes Tool erstellen, das entweder über C# Code oder über das Interface Builder von Xcode zur Benutzeroberfläche Ihrer app hinzugefügt werden kann. Wenn Sie von `NSControl` einem benutzerdefinierten Steuerelement erben, verfügt automatisch über alle Standard Features, die ein integriertes Steuerelement für die Benutzeroberfläche hat `NSButton`(z. b.).
 
-Wenn Ihr benutzerdefinierte Steuerelement für die Benutzeroberfläche zeigt nur Informationen (z. B. einen benutzerdefinierten Diagrammen und grafisches Tool), sollten Sie das erben `NSView` anstelle von `NSControl`.
+Wenn Ihr benutzerdefiniertes Steuerelement für die Benutzeroberfläche lediglich Informationen anzeigt (z. b. ein benutzerdefiniertes Diagramm und Grafik `NSView` Tool) `NSControl`, können Sie von anstelle von erben.
 
-Unabhängig davon, welcher Basisklasse verwendet wird die grundlegenden Schritte zum Erstellen eines benutzerdefinierten Steuerelements ist identisch.
+Unabhängig davon, welche Basisklasse verwendet wird, sind die grundlegenden Schritte zum Erstellen eines benutzerdefinierten Steuer Elements identisch.
 
-Erstellen Sie in diesem Artikel wird eine benutzerdefinierte Switch Flip-Komponente, die einen eindeutigen Design der Benutzeroberfläche und ein Beispiel für das Erstellen eines voll funktionsfähigen benutzerdefinierten Schnittstelle Benutzersteuerelements bereitstellt.
+In diesem Artikel erstellen Sie eine benutzerdefinierte Flip Switch-Komponente, die ein eindeutiges Design der Benutzeroberfläche und ein Beispiel für die Erstellung eines voll funktionsfähigen benutzerdefinierten Benutzeroberflächen-Steuer Elements bereitstellt.
 
 <a name="Building-the-Custom-Control" />
 
-## <a name="building-the-custom-control"></a>Erstellen des benutzerdefinierten Steuerelements
+## <a name="building-the-custom-control"></a>Aufbauen des benutzerdefinierten Steuer Elements
 
-Da das benutzerdefinierte Steuerelement erstellt wird, wird auf eine Benutzereingabe (linke Mausklicks) reagieren sein wird, werden wir das erben `NSControl`. Auf diese Weise wird das benutzerdefinierte Steuerelement automatisch alle Standardfunktionen, die über eine integrierte Benutzeroberflächensteuerelement verfügt und Verhalten sich wie ein standard-Mac-OS-Steuerelement.
+Da das benutzerdefinierte Steuerelement, das wir erstellen, auf die Benutzereingabe (Mausklicks mit der linken Maustaste) antwortet, wird `NSControl`die Vererbung von übernommen. Auf diese Weise verfügt unser benutzerdefiniertes Steuerelement automatisch über alle Standard Features, die ein integriertes Steuerelement für die Benutzeroberfläche hat und wie ein macOS-Standard Steuerelement antwortet.
 
-Öffnen Sie in Visual Studio für Mac die Xamarin.Mac-Projekt, das Sie verwenden möchten, erstellen eine benutzerdefinierte Schnittstelle Benutzersteuerelement für (oder eine neue erstellen). Fügen Sie eine neue Klasse und nenne `NSFlipSwitch`:
+Öffnen Sie in Visual Studio für Mac das xamarin. Mac-Projekt, für das Sie ein benutzerdefiniertes Steuerelement für die Benutzeroberfläche erstellen möchten (oder erstellen Sie ein neues). Fügen Sie eine neue Klasse hinzu, `NSFlipSwitch`und nennen Sie Sie:
 
 [![](custom-controls-images/custom01.png "Hinzufügen einer neuen Klasse")](custom-controls-images/custom01.png#lightbox)
 
-Als Nächstes bearbeiten Sie die `NSFlipSwitch.cs` Klasse, und stellen sie wie folgt aussehen:
+Bearbeiten Sie als nächstes `NSFlipSwitch.cs` die-Klasse, und machen Sie Sie wie folgt:
 
 ```csharp
 using Foundation;
@@ -126,20 +126,20 @@ namespace MacCustomControl
 }
 ```
 
-Der zuerst fällt auf Informationen über unsere benutzerdefinierte Klasse, da sind wir erben von `NSControl` und Verwenden der **registrieren** Befehl aus, um diese Klasse für Objective-C und Xcode Interface Builder verfügbar machen:
+Der erste Punkt, der über unsere benutzerdefinierte Klasse in zu beachten ist, die `NSControl` von uns geerbt wird und die den **Register** -Befehl verwendet, um diese Klasse für die Interface Builder von Ziel-C und Xcode verfügbar zu machen:
 
 ```csharp
 [Register("NSFlipSwitch")]
 public class NSFlipSwitch : NSControl
 ```
 
-In den folgenden Abschnitten werden wir den Rest des obigen Codes im Detail ansehen.
+In den folgenden Abschnitten wird der Rest des obigen Codes ausführlich erläutert.
 
 <a name="Tracking-the-Controls-State" />
 
-### <a name="tracking-the-controls-state"></a>Verfolgen den Zustand des Steuerelements
+### <a name="tracking-the-controls-state"></a>Nachverfolgen des Zustands des Steuer Elements
 
-Da das benutzerdefinierte Steuerelement ein Switch ist, benötigen wir eine Möglichkeit zum Nachverfolgen des ein/aus-Zustands des Schalters. Wir behandeln, die mit den folgenden Code in `NSFlipSwitch`:
+Da unser benutzerdefiniertes Steuerelement ein Switch ist, benötigen wir eine Möglichkeit, den ein-/Ausschalten des Schalters zu verfolgen. Dies wird mit dem folgenden Code in `NSFlipSwitch`behandelt:
 
 ```csharp
 private bool _value = false;
@@ -155,11 +155,11 @@ public bool Value {
 }
 ```
 
-Wenn der Status des Switches ändert, benötigen wir eine Methode, die die Benutzeroberfläche aktualisiert. Zu diesem Zweck erzwingen das Steuerelement zum Neuzeichnen der Benutzeroberflächenautomatisierungs mit `NeedsDisplay = true`.
+Wenn sich der Status des Schalters ändert, benötigen wir eine Möglichkeit, die Benutzeroberfläche zu aktualisieren. Dazu erzwingen Sie, dass das Steuerelement die Benutzeroberfläche mit `NeedsDisplay = true`neu zeichnet.
 
-Wenn das Steuerelement mehr als eine einzelne in/aus-Status (z. B. einen mehrstufigen Switch mit 3 Positionen) erforderlich, wir hätten auch ein **Enum** zum Nachverfolgen des Zustands. In unserem Beispiel eine einfache **"bool"** erfolgt.
+Wenn für das Steuerelement mehr als ein/aus-Status (z. b. ein Switch mit mehreren Zuständen mit drei Positionen) benötigt wird, könnte eine-Aufzählung verwendet werden **, um den** Status zu verfolgen. In unserem Beispiel wird ein einfacher boolescher Code dargestellt.
 
-Wir haben auch eine Hilfsmethode zum Wechseln von der Wechsel zwischen des Status ein- und ausschalten hinzugefügt:
+Wir haben auch eine Hilfsmethode hinzugefügt, um den Status des Schalters zwischen on und Off auszutauschen:
 
 ```csharp
 private void FlipSwitchState() {
@@ -168,13 +168,13 @@ private void FlipSwitchState() {
 }
 ```
 
-Wir werden später erweitern, dass diese Hilfsklasse aus, um den Aufrufer darüber zu informieren, wenn der Schalter-Zustand geändert hat.
+Später wird diese Hilfsklasse erweitert, um den Aufrufer darüber zu informieren, wenn sich der Schalter Zustand geändert hat.
 
 <a name="Drawing-the-Controls-Interface" />
 
-### <a name="drawing-the-controls-interface"></a>Die Schnittstelle des Steuerelements zeichnen
+### <a name="drawing-the-controls-interface"></a>Zeichnen der-Schnittstelle des Steuer Elements
 
-Wir werden Grafische Core zeichnen Routinen zu verwenden, um des benutzerdefinierten Steuerelements-Benutzeroberfläche zur Laufzeit zu zeichnen. Bevor wir dies tun können, müssen wir Ebenen für das Steuerelement zu aktivieren. Dies erfolgt über die folgende private Methode:
+Wir werden die Kern Grafik Zeichnungs Routinen verwenden, um die Benutzeroberfläche des benutzerdefinierten Steuer Elements zur Laufzeit zu zeichnen. Bevor wir dies tun können, müssen wir die Ebenen für das Steuerelement aktivieren. Dies geschieht mit der folgenden privaten Methode:
 
 ```csharp
 private void Initialize() {
@@ -183,7 +183,7 @@ private void Initialize() {
 }
 ```
 
-Diese Methode wird aufgerufen, von jeder der Konstruktoren des Steuerelements, um sicherzustellen, dass das Steuerelement ordnungsgemäß konfiguriert ist. Zum Beispiel:
+Diese Methode wird von jedem der Konstruktoren des Steuer Elements aufgerufen, um sicherzustellen, dass das Steuerelement ordnungsgemäß konfiguriert ist. Zum Beispiel:
 
 ```csharp
 public NSFlipSwitch (IntPtr handle) : base (handle)
@@ -193,7 +193,7 @@ public NSFlipSwitch (IntPtr handle) : base (handle)
 }
 ```
 
-Als Nächstes müssen wir überschreiben die `DrawRect` Methode, und fügen Sie die Grafische Core Routinen zum Zeichnen des Steuerelements hinzu:
+Als nächstes müssen wir die `DrawRect` -Methode überschreiben und die Kern Grafik Routinen zum Zeichnen des Steuer Elements hinzufügen:
 
 ```csharp
 public override void DrawRect (CGRect dirtyRect)
@@ -206,22 +206,22 @@ public override void DrawRect (CGRect dirtyRect)
 }
 ```
 
-Wir werden werden anpassen die visuelle Darstellung des Steuerelements, wenn dessen Zustand ändert (z. B. der Wechsel von **auf** zu **aus**). Sobald der Status geändert wird, können wir die `NeedsDisplay = true` Befehl aus, um zu erzwingen, dass das Steuerelement für den neuen Status neu zeichnet.
+Die visuelle Darstellung des Steuer Elements wird **angepasst, wenn** sich der Zustand ändert (z. b. durch ein-oder **ausschalten**). Wenn sich der Status ändert, können wir mit dem `NeedsDisplay = true` Befehl erzwingen, dass das Steuerelement für den neuen Zustand neu gezeichnet wird.
 
 <a name="Responding-to-User-Input" />
 
-### <a name="responding-to-user-input"></a>Reagieren auf Benutzereingabe
+### <a name="responding-to-user-input"></a>Reagieren auf Benutzereingaben
 
-Es gibt zwei einfache Möglichkeit, dass wir die Benutzereingaben an das benutzerdefinierte Steuerelement hinzufügen können: **Überschreiben Sie die Maus, die Anwendungsroutinen zur Fehlerbehandlung** oder **Gestenerkennungsfunktionen**. Welche Methode, die wir verwenden, wird auf Grundlage der Funktionalität, die erforderlich sind, indem Sie das Steuerelement.
+Es gibt zwei grundlegende Möglichkeiten, Benutzereingaben zum benutzerdefinierten Steuerelement hinzuzufügen: Über **Schreiben** von mousehandlerroutinen oder **Gesten erkenzern**. Welche Methode wir verwenden, basiert auf der Funktionalität, die von unserem Steuerelement benötigt wird.
 
 > [!IMPORTANT]
-> Für jedes benutzerdefinierten Steuerelements, das Sie erstellen, sollten Sie verwenden entweder **Methoden außer Kraft setzen** _oder_ **Geste Erkennungen**, aber nicht beide zur gleichen Zeit wie sie miteinander in Konflikt stehen.
+> Für ein beliebiges benutzerdefiniertes Steuerelement, das Sie erstellen, sollten Sie entweder **Überschreibungs Methoden** _oder_ **Gesten Erkennungs**Tools verwenden, aber nicht beides gleichzeitig, da Sie miteinander in Konflikt stehen können.
 
 <a name="Summary" />
 
-#### <a name="handling-user-input-with-override-methods"></a>Behandeln von Benutzereingaben mit Methoden zum Überschreiben
+#### <a name="handling-user-input-with-override-methods"></a>Behandeln von Benutzereingaben mit Überschreibungs Methoden
 
-Objekte, die von erben `NSControl` (oder `NSView`) verfügen über mehrere überschreiben Sie Methoden für die Behandlung von Maus- oder Tastatureingaben. Für unser Beispielsteuerelement, um den Status der Wechsel zwischen kippen sollten **auf** und **aus** klickt der Benutzer auf das Steuerelement mit der linken Maustaste. Wir können die folgenden überschreiben Sie Methoden zum Hinzufügen der `NSFlipSwitch` Klasse, um dies zu verarbeiten:
+Objekte, die von `NSControl` (oder `NSView`) erben, verfügen über mehrere Überschreibungs Methoden zur Behandlung von Maus-oder Tastatureingaben. In unserem Beispiel Steuerelement möchten wir den Zustand des Schalters **zwischen ein** -und **ausschalten** , wenn der Benutzer mit der linken Maustaste auf das Steuerelement klickt. Wir können der- `NSFlipSwitch` Klasse die folgenden Überschreibungs Methoden hinzufügen, um Folgendes zu behandeln:
 
 ```csharp
 #region Mouse Handling Methods
@@ -253,13 +253,13 @@ public override void MouseMoved (NSEvent theEvent)
 ## endregion
 ```
 
-Im obigen Code rufen wir die `FlipSwitchState` Methode (wie oben definiert) zum Spiegeln der On/Off-Status, der den Switch in der `MouseDown` Methode. Dies zwingt auch das Steuerelement neu gezeichnet wird, um den aktuellen Zustand wiederzugeben.
+Im obigen Code wird die `FlipSwitchState` -Methode (oben definiert) aufgerufen, um den ein-/Ausschalten des Schalters in der `MouseDown` -Methode zu kippen. Dadurch wird auch erzwungen, dass das Steuerelement neu gezeichnet wird, um den aktuellen Zustand widerzuspiegeln.
 
 <a name="Handling-User-Input-with-Gesture-Recognizers" />
 
-#### <a name="handling-user-input-with-gesture-recognizers"></a>Behandeln von Benutzereingaben für Geste Erkennungen
+#### <a name="handling-user-input-with-gesture-recognizers"></a>Behandeln von Benutzereingaben mit Gesten Erkennungs Tools
 
-Optional können Sie die Bewegung Erkennungen, behandeln den Benutzer, die Interaktion mit dem Steuerelement verwenden. Entfernen Sie die oben hinzugefügten Außerkraftsetzungen, bearbeiten Sie die `Initialize` Methode und legen Sie ihn wie folgt aussehen:
+Optional können Sie Gesten Erkennungs Tools verwenden, um den Benutzer zu verarbeiten, der mit dem Steuerelement interagiert. Entfernen Sie die oben hinzugefügten außer Kraft `Initialize` setzungen, bearbeiten Sie die-Methode, und führen Sie Sie wie folgt aus:
 
 ```csharp
 private void Initialize() {
@@ -277,17 +277,17 @@ private void Initialize() {
 }
 ```
 
-Hier erstellen wir ein neues `NSClickGestureRecognizer` und Aufrufen von unserem `FlipSwitchState` -Methode des Switches Status zu ändern, wenn der Benutzer darauf, mit der linken Maustaste klickt. Die `AddGestureRecognizer (click)` Methode fügt die Stiftbewegungserkennung auf das Steuerelement.
+Hier erstellen wir eine neue `NSClickGestureRecognizer` und rufen unsere `FlipSwitchState` Methode auf, um den Status des Schalters zu ändern, wenn der Benutzer mit der linken Maustaste darauf klickt. Mit `AddGestureRecognizer (click)` der-Methode wird dem-Steuerelement die Gestenerkennung hinzugefügt.
 
-In diesem Fall die Methode, die wir verwenden, hängt davon ab, was wir mit das benutzerdefinierte Steuerelement erreichen möchten. Wenn wir Zugriff auf niedriger Ebene benötigen die auf eine Benutzerinteraktion, verwenden Sie die Methoden außer Kraft setzen. Wenn wir die vordefinierten Funktionen benötigen, verwenden Sie wie Mausklicks, Geste Erkennungen.
+Die Methode, die wir verwenden, hängt wiederum davon ab, was wir mit unserem benutzerdefinierten Steuerelement erreichen möchten. Verwenden Sie die Überschreibungs Methoden, wenn der Zugriff auf die Benutzerinteraktion gering ist. Wenn wir vordefinierte Funktionen benötigen (z. b. Mausklicks), verwenden Sie Gesten Erkennungs Tools.
 
 <a name="Responding-to-State-Change-Events" />
 
-### <a name="responding-to-state-change-events"></a>In den Status des Change-Ereignissen reagiert.
+### <a name="responding-to-state-change-events"></a>Reagieren auf Status Änderungs Ereignisse
 
-Wenn der Benutzer den Zustand der das benutzerdefinierte Steuerelement ändert, benötigen wir eine Möglichkeit, auf der Statuswechsel im Code zu reagieren (z. B. nachgehen Wenn auf eine benutzerdefinierte Schaltfläche klickt). 
+Wenn der Benutzer den Zustand des benutzerdefinierten Steuer Elements ändert, benötigen wir eine Möglichkeit, auf die Statusänderung im Code zu reagieren (z. b. durch das durch Klicken auf eine benutzerdefinierte Schaltfläche). 
 
-Um diese Funktionalität bereitzustellen, bearbeiten die `NSFlipSwitch` Klasse und fügen Sie den folgenden Code hinzu:
+Um diese Funktionalität bereitzustellen, bearbeiten `NSFlipSwitch` Sie die-Klasse, und fügen Sie den folgenden Code hinzu:
 
 ```csharp
 #region Events
@@ -305,7 +305,7 @@ internal void RaiseValueChanged() {
 ## endregion
 ```
 
-Als Nächstes bearbeiten Sie die `FlipSwitchState` Methode und legen Sie ihn wie folgt aussehen:
+Bearbeiten Sie als nächstes `FlipSwitchState` die-Methode, und führen Sie Sie wie folgt aus:
 
 ```csharp
 private void FlipSwitchState() {
@@ -315,40 +315,40 @@ private void FlipSwitchState() {
 }
 ```
 
-Wir geben Sie zuerst eine `ValueChanged` Fall, dass wir einen Handler, der in C#-Code hinzufügen können, sodass wir eine Aktion ausführen kann, wenn der Benutzer den Status des Switches ändert.
+Zuerst wird ein `ValueChanged` Ereignis bereitgestellt, dem wir im C# Code einen Handler hinzufügen können, damit wir eine Aktion ausführen können, wenn der Benutzer den Zustand des Schalters ändert.
 
-Zweitens: Da das benutzerdefinierte Steuerelement erbt `NSControl`, verfügt automatisch über eine **Aktion** in Interface Builder von Xcode zugewiesen werden können. Um diesen Aufruf **Aktion** bei Zustandsänderungen, verwenden wir den folgenden Code:
+Zweitens: da das benutzerdefinierte Steuerelement von `NSControl`erbt, verfügt es automatisch über eine **Aktion** , die in der Interface Builder von Xcode zugewiesen werden kann. Um diese **Aktion** aufzurufen, wenn sich der Status ändert, verwenden wir den folgenden Code:
 
 ```csharp
 if (this.Action !=null) 
     NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 ```
 
-Zuerst überprüfen wir Wenn ein **Aktion** des Steuerelements zugewiesen wurde. Als Nächstes rufen wir die **Aktion** wenn er definiert wurde.
+Zuerst überprüfen wir, ob dem Steuerelement eine **Aktion** zugewiesen wurde. Als nächstes wird die **Aktion** aufgerufen, wenn Sie definiert wurde.
 
 <a name="Using-the-Custom-Control" />
 
-## <a name="using-the-custom-control"></a>Verwenden des benutzerdefinierten Steuerelements
+## <a name="using-the-custom-control"></a>Verwenden des benutzerdefinierten Steuer Elements
 
-Mit das benutzerdefinierte Steuerelement vollständig definiert wird können wir entweder sie unsere Xamarin.Mac-app-Benutzeroberfläche, die mithilfe von c#-Code oder in Interface Builder von Xcode hinzufügen.
+Wenn das benutzerdefinierte Steuerelement vollständig definiert ist, können wir es entweder der Benutzeroberfläche der xamarin. C# Mac-App mithilfe von Code oder in der Interface Builder von Xcode hinzufügen.
 
-Zum Hinzufügen des Steuerelements mit Interface Builder zuerst führen eine bereinigte Erstellung der dem Xamarin.Mac-Projekt, und doppelklicken Sie dann die `Main.storyboard` Datei, die sie für die Bearbeitung in Interface Builder zu öffnen:
+Um das Steuerelement mithilfe von Interface Builder hinzuzufügen, führen Sie zunächst eine saubere Erstellung des xamarin. Mac-Projekts aus, `Main.storyboard` und doppelklicken Sie dann auf die Datei, um Sie in Interface Builder zu öffnen:
 
-[![](custom-controls-images/custom02.png "Bearbeiten das Storyboard in Xcode")](custom-controls-images/custom02.png#lightbox)
+[![](custom-controls-images/custom02.png "Bearbeiten des Storyboards in Xcode")](custom-controls-images/custom02.png#lightbox)
 
-Ziehen Sie jetzt eine `Custom View` in den Entwurf der Benutzeroberfläche:
+Ziehen Sie als nächstes `Custom View` eine in den Benutzeroberflächen Entwurf:
 
-[![](custom-controls-images/custom03.png "Wählen eine benutzerdefinierte Ansicht aus der Bibliothek")](custom-controls-images/custom03.png#lightbox)
+[![](custom-controls-images/custom03.png "Auswählen einer benutzerdefinierten Ansicht aus der Bibliothek")](custom-controls-images/custom03.png#lightbox)
 
-Die benutzerdefinierte Sicht noch ausgewählt ist, wechseln Sie zu der **Identitätsinspektor** und ändern Sie die Ansicht des **Klasse** zu `NSFlipSwitch`:
+Wenn die benutzerdefinierte Ansicht noch ausgewählt ist, wechseln Sie zum **Identitäts Inspektor** , und ändern Sie die `NSFlipSwitch`Klasse der Ansicht in:
 
-[![](custom-controls-images/custom04.png "Festlegen der Ansicht-Klasse")](custom-controls-images/custom04.png#lightbox)
+[![](custom-controls-images/custom04.png "Festlegen der Klasse der Sicht")](custom-controls-images/custom04.png#lightbox)
 
-Wechseln Sie zu der **Assistant Editor** , und erstellen Sie eine **Outlet** für das benutzerdefinierte Steuerelement (dabei bindet, bindet es in der `ViewController.h` Datei und nicht die `.m` Datei):
+Wechseln Sie zum **Assistenten-Editor** , und erstellen Sie ein **Outlet** für das benutzerdefinierte Steuerelement (stellen Sie `ViewController.h` sicher, dass es `.m` in der Datei und nicht in der Datei gebunden wird):
 
-[![](custom-controls-images/custom05.png "Konfigurieren einen neuen Outlets")](custom-controls-images/custom05.png#lightbox)
+[![](custom-controls-images/custom05.png "Konfigurieren eines neuen Outlets")](custom-controls-images/custom05.png#lightbox)
 
-Speichern Sie die Änderungen, wechseln Sie zurück zur Visual Studio für Mac, und ermöglichen Sie die Änderungen zu synchronisieren. Bearbeiten der `ViewController.cs` Datei, und stellen die `ViewDidLoad` Methode sehen wie folgt:
+Speichern Sie die Änderungen, kehren Sie zu Visual Studio für Mac zurück, und lassen Sie die Synchronisierung zu. Bearbeiten Sie `ViewController.cs` die Datei, und `ViewDidLoad` führen Sie die Methode wie folgt aus:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -363,13 +363,13 @@ public override void ViewDidLoad ()
 }
 ``` 
 
-Hier, wir reagieren auf die `ValueChanged` auf oben definierten Ereignis die `NSFlipSwitch` Klasse, und schreibt die aktuelle **Wert** klickt der Benutzer auf das Steuerelement.
+Hier reagieren wir auf das `ValueChanged` Ereignis, das wir oben in der `NSFlipSwitch` Klasse definiert haben, und schreiben den aktuellen **Wert** , wenn der Benutzer auf das Steuerelement klickt.
 
-Optional könnten wir zurück zu Interface Builder und definieren eine **Aktion** des Steuerelements:
+Optional könnten wir zu Interface Builder zurückkehren und eine **Aktion** für das Steuerelement definieren:
 
-[![](custom-controls-images/custom06.png "Konfigurieren eine neue Aktion")](custom-controls-images/custom06.png#lightbox)
+[![](custom-controls-images/custom06.png "Konfigurieren einer neuen Aktion")](custom-controls-images/custom06.png#lightbox)
 
-Bearbeiten Sie in diesem Fall die `ViewController.cs` Datei, und fügen Sie die folgende Methode hinzu:
+Bearbeiten Sie die `ViewController.cs` Datei erneut, und fügen Sie die folgende Methode hinzu:
 
 ```csharp
 partial void OptionTwoFlipped (Foundation.NSObject sender) {
@@ -379,17 +379,17 @@ partial void OptionTwoFlipped (Foundation.NSObject sender) {
 ```
 
 > [!IMPORTANT]
-> Verwenden Sie entweder die **Ereignis** oder definieren Sie eine **Aktion** in Interface Builder, aber Sie sollten nicht beide Methoden zur gleichen Zeit verwenden oder sie miteinander in Konflikt stehen können.
+> Sie sollten entweder das- **Ereignis** verwenden oder eine **Aktion** in Interface Builder definieren, aber Sie sollten nicht beide Methoden gleichzeitig verwenden, oder Sie können miteinander in Konflikt stehen.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel hat es sich um einen detaillierten Einblick in die erstellen eine wiederverwendbare benutzerdefinierte Benutzeroberflächensteuerelement in einer Xamarin.Mac-Anwendung geführt. Erläutert, wie die benutzerdefinierten Steuerelemente der Benutzeroberfläche, die zwei Hauptverfahren zu zeichnen, Maus und eine Benutzereingabe reagieren und das neue Steuerelement auf Aktionen in Interface Builder von Xcode verfügbar zu machen.
+In diesem Artikel wurde beschrieben, wie Sie ein wiederverwendbares benutzerdefiniertes Benutzeroberflächen-Steuerelement in einer xamarin. Mac-Anwendung erstellen. Wir haben gesehen, wie die Benutzeroberfläche für benutzerdefinierte Steuerelemente gezeichnet wird, die zwei Hauptmöglichkeiten, auf die Maus-und Benutzereingaben zu reagieren und das neue Steuerelement für Aktionen in der Interface Builder von Xcode verfügbar zu machen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacCustomControl (Beispiel)](https://developer.xamarin.com/samples/mac/MacCustomControl/)
+- [Maccustomcontrol (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccustomcontrol)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Datenbindung und Schlüssel/Wert-Codierung](~/mac/app-fundamentals/databinding.md)
 - [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

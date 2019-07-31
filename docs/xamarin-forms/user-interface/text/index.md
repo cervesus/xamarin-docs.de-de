@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 8754f6573b00334fd228b1c9bd094cd91565976c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363918"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656190"
 ---
 # <a name="text-in-xamarinforms"></a>Text in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Verwenden Xamarin.Forms, um Text eingeben oder anzeigen._
 
@@ -66,7 +66,7 @@ Finden Sie unter den [Editor](editor.md) Weitere Informationen.
 
 ## <a name="fontsfontsmd"></a>[Schriftarten](fonts.md)
 
-Viele Steuerelemente unterstützen andere Schriftart-Einstellungen, die unter Verwendung der integrierten Schriftarten auf jeder Plattform oder benutzerdefinierte Schriftarten, die mit Ihrer app enthalten. Finden Sie unter den [Schriftarten](fonts.md) Artikel Weitere Informationen.
+Viele Steuerelemente unterstützen unterschiedliche Schriftart Einstellungen mithilfe der integrierten Schriftarten auf jeder Plattform oder benutzerdefinierter Schriftarten, die in Ihrer APP enthalten sind. Finden Sie unter den [Schriftarten](fonts.md) Artikel Weitere Informationen.
 
 <a name="Styles" />
 
@@ -76,4 +76,4 @@ Finden Sie unter [arbeiten mit Stilen](~/xamarin-forms/user-interface/styles/ind
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Text (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

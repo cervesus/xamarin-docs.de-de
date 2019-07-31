@@ -1,48 +1,48 @@
 ---
-title: Anzeigen von Warnungen in Xamarin.iOS
-description: Dieses Dokument beschreibt die Vorgehensweise zum Anzeigen von Warnungen in Xamarin.iOS mithilfe der APIs, die iOS 8 eingeführtes UIAlertController.
+title: Anzeigen von Warnungen in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Warnungen in xamarin. IOS mithilfe der in ios 8 eingeführten uialertcontroller-APIs angezeigt werden.
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 576de9a46fc89fe01c564c05568d4331a32dbd96
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 4c47e12468d9107cbe03d4bc45ffa77e4ad918e9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674397"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652051"
 ---
-# <a name="displaying-alerts-in-xamarinios"></a>Anzeigen von Warnungen in Xamarin.iOS
+# <a name="displaying-alerts-in-xamarinios"></a>Anzeigen von Warnungen in xamarin. IOS
 
-Ab iOS 8, UIAlertController hat abgeschlossenen ersetzten UIActionSheet aus, und UIAlertView der sind jetzt veraltet.
+Ab IOS 8 hat uialertcontroller den ersetzten uiaktionsheet und UIAlertView abgeschlossen, die beide nun als veraltet markiert wurden.
 
-Im Gegensatz zu den Klassen, die es ersetzt, die Unterklassen von UIView sind, ist die UIAlertController eine Unterklasse von UIViewController.
+Anders als bei den ersetzten Klassen, bei denen es sich um Unterklassen von UIView handelt, ist uialertcontroller eine Unterklasse von UIViewController.
 
-Verwendung `UIAlertControllerStyle` an, dass die Art der Warnung angezeigt. Diese Warnungen sind:
+Verwenden `UIAlertControllerStyle` Sie, um den Typ der anzuzeigenden Warnung anzugeben. Diese Warnungs Typen lauten wie folgt:
 
 - **UIAlertControllerStyleActionSheet**
-    * Vor iOS 8 Dies hätte eine UIActionSheet
+    * Pre-IOS 8: Dies wäre ein uiaktionsheet.
 - **UIAlertControllerStyleAlert**
-    * Vor iOS 8 Dies hätte uialertview-Element 
+    * Pre-IOS 8: Dies wäre UIAlertView. 
 
-Es gibt drei erforderlichen Schritte an, die beim Erstellen einen Warnungscontroller:
+Beim Erstellen eines Warnungs Controllers sind drei Schritte erforderlich:
 
-- Erstellen Sie und konfigurieren Sie die Warnung mit:
+- Erstellen und konfigurieren Sie die Warnung mit einem:
     * title
     * message
     * preferredStyle
     
-- (Optional) Hinzufügen eines Textfelds
-- Fügen Sie die erforderlichen Aktionen hinzu.
-- Stellen Sie den Ansichtscontroller
+- Optionale Textfeld hinzufügen
+- Erforderliche Aktionen hinzufügen
+- Zeigen Sie den Ansichts Controller an
 
-Die einfachste Warnung enthält eine Schaltfläche aus, wie im folgenden Screenshot gezeigt:
+Die einfachste Warnung enthält eine einzelne Schaltfläche, wie in diesem Screenshot gezeigt:
 
  ![Warnung mit einer Schaltfläche](alerts-images/alert1.png)
 
-Der Code zum Anzeigen der einer einfachen Warnung lautet wie folgt aus:
+Der Code zum Anzeigen einer einfachen Warnung lautet wie folgt:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,7 +58,7 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-Auf ähnliche Weise erfolgt eine Warnung mit mehreren Optionen, aber fügen Sie zwei Aktionen hinzu. Der folgende Screenshot zeigt beispielsweise eine Warnung mit zwei Schaltflächen:
+Die Anzeige einer Warnung mit mehreren Optionen erfolgt auf ähnliche Weise, aber es werden zwei Aktionen hinzugefügt. Der folgende Screenshot zeigt beispielsweise eine Warnung mit zwei Schaltflächen:
 
  ![Warnung mit zwei Schaltflächen](alerts-images/alert2.png)
 
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-Warnungen können auch ein aktionsblatt, ähnlich wie im folgenden Screenshot angezeigt:
+Warnungen können auch ein Aktions Blatt ähnlich dem folgenden Screenshot anzeigen:
 
- ![Aktion-Stylesheet-Warnung](alerts-images/alert3.png)
+ ![Warnung zu Aktions Blatt](alerts-images/alert3.png)
 
-Schaltflächen hinzugefügt werden, auf die Warnung mit dem `AddAction` Methode:
+Der Warnung werden mithilfe der-Methode die `AddAction` Schaltflächen hinzugefügt:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Steuerelemente (Beispiel)](https://developer.xamarin.com/samples/monotouch/Controls/)
-- [Warnungscontroller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)
+- [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [Warnungs Controller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

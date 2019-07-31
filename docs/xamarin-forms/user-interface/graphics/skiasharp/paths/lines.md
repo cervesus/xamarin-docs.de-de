@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 85d863b19c3bf0302464e371738a2926cc80e8ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ed423a19eabd9c7f1d91457cc1834f28d62b2121
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290779"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647302"
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erfahren Sie, wie SkiaSharp verwenden Sie zum Zeichnen von Linien mit anderen Strichenden_
 
@@ -30,7 +30,7 @@ Für das Zeichnen von Linien, `SKCanvas` definiert eine einfache [ `DrawLine` ](
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-In der Standardeinstellung die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0 (null) und denselben Effekt wie der Wert 1 hat in beim Rendern einer Zeile von einem Pixel im Stärke. Dies scheint sehr dünne auf Geräten wie Smartphones, mit hoher Auflösung, sollten Sie wahrscheinlich zum Festlegen der `StrokeWidth` auf einen höheren Wert. Aber sobald Sie eine beträchtliche Dicke Zeichnen von Linien starten, ein weiteres Problem auslöst: Wie soll der beginnt und am Ende diese dicken Zeilen werden gerendert?
+In der Standardeinstellung die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0 (null) und denselben Effekt wie der Wert 1 hat in beim Rendern einer Zeile von einem Pixel im Stärke. Dies scheint sehr dünne auf Geräten wie Smartphones, mit hoher Auflösung, sollten Sie wahrscheinlich zum Festlegen der `StrokeWidth` auf einen höheren Wert. Wenn Sie jedoch mit dem Zeichnen von Linien mit einer hervor generischen Stärke beginnen, wird ein anderes Problem ausgelöst: Wie sollen die Starts und enden dieser Thick Lines gerendert werden?
 
 Die Darstellung der den Beginn und Ende von Zeilen wird aufgerufen, eine *Linienende* oder Skia, eine *Stroke Cap*. Das Wort "Obergrenze" in diesem Kontext bezieht sich auf eine Art von Hat &mdash; etwas, das auf das Ende der Zeile befindet. Festlegen der [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) Eigenschaft der `SKPaint` -Objekts auf einen der folgenden Elemente von der [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) Enumeration:
 
@@ -38,7 +38,7 @@ Die Darstellung der den Beginn und Ende von Zeilen wird aufgerufen, eine *Linien
 - `Square`
 - `Round`
 
-Diese werden am besten mit einem Beispiel veranschaulicht. Die **SkiaSharp-Linien und-Pfade** Teil der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm beginnt mit einer Seite mit dem Titel **Strichenden** basierend auf der [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) Klasse. Auf dieser Seite wird eine `PaintSurface` -Ereignishandler, der die drei Elemente von durchläuft die `SKStrokeCap` Enumeration, die den Namen des Enumerationsmembers angezeigt, und Zeichnen einer Linie mit diese Obergrenze, Strich:
+Diese werden am besten mit einem Beispiel veranschaulicht. Die **SkiaSharp-Linien und-Pfade** Teil der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm beginnt mit einer Seite mit dem Titel **Strichenden** basierend auf der [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) Klasse. Auf dieser Seite wird eine `PaintSurface` -Ereignishandler, der die drei Elemente von durchläuft die `SKStrokeCap` Enumeration, die den Namen des Enumerationsmembers angezeigt, und Zeichnen einer Linie mit diese Obergrenze, Strich:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,4 +242,4 @@ Ist ein entscheidender Aspekt für die Arbeit mit Grafikpfade, ob Zeilen oder ni
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

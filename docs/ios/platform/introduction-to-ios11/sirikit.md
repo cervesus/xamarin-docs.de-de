@@ -1,130 +1,130 @@
 ---
-title: SiriKit-Updates in iOS 11
-description: In diesem Dokument wird beschrieben, wie in iOS 11 SiriKit eingesetzt wird. Wird untersucht, insbesondere zum Arbeiten mit Aufgaben und Notizen und alternative Namen für eine Anwendung bereitstellen.
+title: Updates für Sirikit in ios 11
+description: In diesem Dokument wird beschrieben, wie Sie mit dem Sirikit in ios 11 arbeiten. Insbesondere wird untersucht, wie mit Aufgaben und Notizen gearbeitet wird und wie alternative Namen für eine Anwendung bereitgestellt werden.
 ms.prod: xamarin
 ms.assetid: 8F75300B-B591-42ED-9D17-001992A5C381
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/07/2017
-ms.openlocfilehash: 7e895dc2865880ec2789a40f8cdf047a20f8693b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7aa3b430af28a85cb8b774baa9538306cb9dd673
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61400303"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656409"
 ---
-# <a name="sirikit-updates-in-ios-11"></a>SiriKit-Updates in iOS 11
+# <a name="sirikit-updates-in-ios-11"></a>Updates für Sirikit in ios 11
 
-SiriKit wurde in iOS 10, mit einer Anzahl von Service-Domänen (einschließlich fitnessaktivitäten, Fahrt Buchung und Aufrufe) eingeführt. Finden Sie in der [SiriKit Abschnitt](~/ios/platform/sirikit/index.md) SiriKit-Konzepten und Implementieren von SiriKit in Ihrer app.
+Das Sirikit wurde in ios 10 mit einer Reihe von Dienst Domänen (einschließlich Workouts, Fahrten Reservierung und Anrufe) eingeführt. Im Abschnitt " [Sirikit](~/ios/platform/sirikit/index.md) " finden Sie Informationen zu "Sirikit" und zur Implementierung von "Sirikit" in Ihrer APP.
 
-![Siri Aufgabe Liste demo](sirikit-images/sirikit.png)
+![Demo zur Siri-Aufgabenliste](sirikit-images/sirikit.png)
 
-SiriKit in iOS 11 fügt diese neuen und aktualisierten beabsichtigten Domänen hinzu:
+Mit dem Sirikit in ios 11 werden diese neuen und aktualisierten beabsichtigten Domänen hinzugefügt:
 
-- [**Listet und Anmerkungen zu dieser** ](#listsnotes) – neue! Stellt eine API für apps, um Aufgaben und Notizen zu verarbeiten.
-- **Visual Codes** – neue! Siri kann QR-Codes zum Freigeben von Kontaktinformationen oder Payment-Transaktionen teilnehmen angezeigt werden.
-- **Zahlungen** – Absicht "Suchen und Übertragung" für die Zahlung Interaktionen hinzugefügt.
-- **Zeigt die Buchung** – hinzugefügten Abbrechen Absicht Fahrt "und" Feedback ".
+- [**Listen und Notizen**](#listsnotes) – neu! Bietet eine API für apps, um Aufgaben und Notizen zu verarbeiten.
+- **Visual Codes** – neu! Siri kann QR-Codes anzeigen, um Kontaktinformationen auszutauschen oder an Zahlungs Transaktionen teilzunehmen.
+- **Zahlungen** – hinzugefügte Such-und Übertragungs Absichten für Zahlungs Interaktionen.
+- **Fahrt Reservierung** – hinzugefügte Abbruch Fahrt und Feedback Intents.
 
 Zu weiteren neuen Features gehören:
 
-- [**Alternative app-Namen** ](#alternativenames) – stellt Aliase, die Kunden weiterhelfen Teilen Sie Siri Ihrer app verwendet wird, indem Sie alternative Namen/Aussprache anbieten.
-- **Starten Fitnessaktivitäten** – bietet die Möglichkeit, ein Thema im Hintergrund zu starten.
+- [**Alternative APP-Namen**](#alternativenames) – bietet Aliase, die Kunden helfen, Siri für Ihre APP zu informieren, indem alternative Namen/Ausdrücke angeboten werden.
+- **Starten von Workouts** – bietet die Möglichkeit, ein Training im Hintergrund zu starten.
 
-Einige dieser Features werden im folgenden erläutert. Weitere Informationen zu den anderen, finden Sie unter [Apple SiriKit Dokumentation](https://developer.apple.com/documentation/sirikit).
+Einige dieser Features werden weiter unten erläutert. Weitere Informationen zu den anderen finden Sie in [der Dokumentation zu Sirikit von Apple](https://developer.apple.com/documentation/sirikit).
 
 <a name="listsnotes" />
 
-## <a name="lists-and-notes"></a>Listen und Anmerkungen zu dieser Version
+## <a name="lists-and-notes"></a>Listen und Notizen
 
-Die neue Domäne für Listen und Anmerkungen zu dieser Version stellt eine API für apps zur Verarbeitung von Aufgaben und Notizen über Siri-Voice-Anforderungen bereit.
+Die neue Domäne "Listen und Notizen" stellt eine API für Apps zur Verarbeitung von Aufgaben und Notizen über Siri-Sprachanforderungen bereit.
 
 **Aufgaben**
 
-- Haben Sie einen Titel und der Abschlussstatus.
-- Optional enthalten Sie einen Stichtag und einen Speicherort aus.
+- Einen Titel und einen Abschluss Status aufweisen.
+- Fügen Sie optional einen Stichtag und einen Speicherort ein.
 
 **Notizen**
 
-- Haben Sie einen Titel und eine Inhaltsfeld.
+- Sie haben einen Titel und ein Inhaltsfeld.
 
-Aufgaben und Notizen können in Gruppen organisiert werden. Im restlichen Teil dieses Abschnitts wird beschrieben, wie diese neue Domäne mit SiriKit, implementieren Sie mithilfe der [TasksNotes SiriKit Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/SiriKitSample/).
+Sowohl Aufgaben als auch Notizen können in Gruppen organisiert werden. Im restlichen Teil dieses Abschnitts wird beschrieben, wie diese neue Domäne mit "Sirikit" mit dem [tasksnotes-Beispiel "Sirikit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)" implementiert wird.
 
-### <a name="how-to-process-a-sirikit-request"></a>Gewusst wie: Verarbeiten einer Anforderung SiriKit
+### <a name="how-to-process-a-sirikit-request"></a>Verarbeiten einer Sirikit-Anforderung
 
-Verarbeiten einer Anforderung SiriKit mit folgenden Schritten:
+Verarbeiten Sie eine Sirikit-Anforderung, indem Sie die folgenden Schritte ausführen:
 
-1. **Beheben** – Parameter überprüfen und Weitere Informationen vom Benutzer anfordern (falls erforderlich).
-2. **Vergewissern Sie sich** – abschließende Überprüfung und Bestätigung, dass die Anforderung verarbeitet werden kann.
-3. **Behandeln** – führen Sie den Vorgang (Aktualisieren von Daten oder Durchführen von Netzwerkoperationen).
+1. **Lösen** Sie – validieren Sie die Parameter, und fordern Sie weitere Informationen vom Benutzer an (falls erforderlich).
+2. **Bestätigen** – abschließende Validierung und Überprüfung, ob die Anforderung verarbeitet werden kann.
+3. **Handle** – führen Sie den Vorgang aus (Aktualisieren von Daten oder Durchführen von Netzwerk Vorgängen).
 
-Die ersten beiden Schritte sind optional (obwohl empfohlen wird), und der letzte Schritt ist erforderlich.
-Es gibt eine ausführlichere Anleitung in der [SiriKit Abschnitt](~/ios/platform/sirikit/index.md).
+Die ersten beiden Schritte sind optional (obwohl empfohlen), und der letzte Schritt ist erforderlich.
+Eine ausführlichere Anleitung finden Sie im [Abschnitt "Sirikit](~/ios/platform/sirikit/index.md)".
 
-### <a name="resolve-and-confirm-methods"></a>Beheben, und bestätigen Sie die Methoden
+### <a name="resolve-and-confirm-methods"></a>Auflösen und bestätigen von Methoden
 
-Diese optionalen Methoden können Ihren Code, Validierung, auf Standardwerte oder zusätzliche Informationen vom Benutzer ausgeführt werden.
+Mit diesen optionalen Methoden können Sie Ihren Code validieren, Standardwerte auswählen oder zusätzliche Informationen vom Benutzer anfordern.
 
-Als Beispiel für die `IINCreateTaskListIntent` -Schnittstelle, die erforderliche Methode ist `HandleCreateTaskList`. Es gibt vier optionale Methoden, die mehr über die Interaktion von Siri Kontrolle:
+Beispielsweise ist `IINCreateTaskListIntent` `HandleCreateTaskList`für die-Schnittstelle die erforderliche Methode. Es gibt vier optionale Methoden, die eine bessere Kontrolle über die Siri-Interaktion bieten:
 
-- `ResolveTitle` : Überprüft den Titel, definiert einen Standardtitel (falls zutreffend) und signalisiert, dass die Daten nicht erforderlich ist.
-- `ResolveTaskTitles` – Überprüft die Liste der Aufgaben, die vom Benutzer gesprochen wird.
-- `ResolveGroupName` : Überprüft den Gruppennamen, wählt eine Standardgruppe oder signalisiert, dass die Daten nicht erforderlich ist.
-- `ConfirmCreateTaskList` – Überprüft, dass Ihr Code kann den angeforderten Vorgang auszuführen, jedoch er keine führt (nur die `Handle*` Methoden sollten Daten ändern).
+- `ResolveTitle`– Überprüft den Titel, legt einen Standard Titel fest (falls zutreffend) oder signalisiert, dass die Daten nicht erforderlich sind.
+- `ResolveTaskTitles`– Überprüft die Liste der Aufgaben, die vom Benutzer gesprochen werden.
+- `ResolveGroupName`– Überprüft den Gruppennamen, wählt eine Standardgruppe aus oder signalisiert, dass die Daten nicht erforderlich sind.
+- `ConfirmCreateTaskList`– Überprüft, ob Ihr Code den angeforderten Vorgang ausführen kann, führt ihn aber nicht aus (nur die `Handle*` Methoden sollten Daten ändern).
 
-### <a name="handle-the-intent"></a>Das Ziel behandeln
+### <a name="handle-the-intent"></a>Verarbeiten der Absicht
 
-Es gibt sechs Intent-Elemente in Listen und Anmerkungen zu dieser Domäne, die drei Aufgaben und drei für Anmerkungen zu dieser Version.
-Die Methoden, die Sie implementieren müssen, um diese Intent-Elemente zu verarbeiten sind:
+Die Domäne "Listen und Notizen" enthält sechs Absichten, drei für Aufgaben und drei für Notizen.
+Die Methoden, die Sie implementieren müssen, um diese Intents zu verarbeiten, lauten wie folgt:
 
 - Für Aufgaben:
   - `HandleAddTasks`
   - `HandleCreateTaskList`
   - `HandleSetTaskAttribute`
-- Anmerkungen zu dieser:
+- Hinweise:
   - `HandleCreateNote`
   - `HandleAppendToNote`
   - `HandleSearchForNotebookItems`
 
-Jede Methode verfügt über einen bestimmten beabsichtigte Typ übergeben, die alle Informationen enthält Siri aus die Anforderung des Benutzers analysiert wurde (und möglicherweise aktualisiert werden, der `Resolve*` und `Confirm*` Methoden).
-Ihre app muss analysiert die Daten bereitgestellt, und klicken Sie dann einige Aktionen, die zum Speichern oder andernfalls Verarbeiten der Daten ausgeführt werden und ein Ergebnis, das Siri spricht, und zeigt dem Benutzer zurückgegeben.
+Jede Methode verfügt über einen bestimmten Intent-Typ, der alle Informationen enthält, die Siri aus der Anforderung des Benutzers analysiert hat (und möglicherweise in der- `Resolve*` Methode `Confirm*` und der-Methode aktualisiert).
+Ihre APP muss die bereitgestellten Daten analysieren, dann einige Aktionen ausführen, um die Daten zu speichern oder anderweitig zu verarbeiten, und ein Ergebnis zurückgeben, das Siri meldet und dem Benutzer anzeigt.
 
 ### <a name="response-codes"></a>Antwortcodes
 
-Die erforderlichen `Handle*` und optionalen `Confirm*` Methoden geben einen Antwortcode von auf das Objekt, das sie übergeben einen Wert festlegen, um ihre Abschlusshandler. Antworten stammen aus der `INCreateTaskListIntentResponseCode` Enumeration:
+Die erforderlichen `Handle*` und optionalen `Confirm*` Methoden geben einen Antwort Code an, indem Sie einen Wert für das Objekt festlegen, das Sie an den Abschluss Handler übergeben. Antworten stammen aus der `INCreateTaskListIntentResponseCode` -Enumeration:
 
-- `Ready` – Kehrt zurück, während der Phase der Bestätigung (ie. aus einer `Confirm*` -Methode, jedoch nicht von einer `Handle*` Methode).
-- `InProgress` – Für lang andauernde Vorgänge (z.B. ein Abfragevorgang mit Netzwerk-Server) verwendet.
-- `Success` – Antwortet mit den Details der die erfolgreiche Ausführung (nur von einem `Handle*` Methode).
-- `Failure` – Bedeutet, dass ein Fehler aufgetreten ist, und der Vorgang nicht abgeschlossen werden konnte.
-- `RequiringAppLaunch` – Von der Absicht nicht verarbeitet werden, aber der Vorgang kann in der app ausgeführt.
-- `Unspecified` – Verwenden Sie nicht: Fehlermeldung wird dem Benutzer angezeigt werden.
+- `Ready`– Wird während der Bestätigungsphase (d.h. von einer `Confirm*` Methode, jedoch nicht von einer `Handle*` Methode) zurückgegeben.
+- `InProgress`– Wird für Aufgaben mit langer Ausführungszeit verwendet (z. b. ein Netzwerk-/Servervorgang).
+- `Success`– Antwortet mit den Details des erfolgreichen Vorgangs (nur aus einer `Handle*` Methode).
+- `Failure`– Bedeutet, dass ein Fehler aufgetreten ist, und der Vorgang konnte nicht abgeschlossen werden.
+- `RequiringAppLaunch`– Kann nicht von der Absicht verarbeitet werden, aber der Vorgang ist in der APP möglich.
+- `Unspecified`– Nicht verwenden: die Fehlermeldung wird dem Benutzer angezeigt.
 
-Weitere Informationen zu diesen Methoden und Antworten in Apple [SiriKit aufgelistet und Anmerkungen zu dieser Dokumentation](https://developer.apple.com/documentation/sirikit/lists_and_notes).
+Weitere Informationen zu diesen Methoden und Antworten finden Sie in der Dokumentation zu den [Sirikit-Listen und Notizen](https://developer.apple.com/documentation/sirikit/lists_and_notes)von Apple.
 
-### <a name="implementing-lists-and-notes"></a>Implementieren von Listen und Anmerkungen zu dieser Version
+### <a name="implementing-lists-and-notes"></a>Implementieren von Listen und Notizen
 
-Die [TasksNotes SiriKit Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/SiriKitSample/) verwenden die folgenden Schritte zum Hinzufügen von SiriKit-Unterstützung für eine leere iOS-app erstellt wurde.
+Das [Beispiel tasksnotes Sirikit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample) wurde mit den folgenden Schritten erstellt, um eine Unterstützung für eine leere IOS-APP zu unterstützen.
 
-Zunächst zum Hinzufügen der Unterstützung von SiriKit folgendermaßen Sie für Ihre iOS-app:
+Führen Sie zum Hinzufügen der Unterstützung von Sirikit zunächst die folgenden Schritte für Ihre IOS-App aus:
 
-1. Teilstriche **SiriKit** in **"Entitlements.plist"**.
-2. Hinzufügen der **Datenschutz – Nutzungsbeschreibung für Siri** um **"Info.plist"**, zusammen mit einer Nachricht für Ihre Kunden.
-3. Rufen Sie die `INPreferences.RequestSiriAuthorization` Methode in der app, um den Benutzer auffordern, Siri-Interaktionen ermöglichen.
-4. Fügen Sie Ihrer App-ID im Entwicklerportal SiriKit und erstellen Sie bereitstellungsprofilen Einbeziehung die neue Berechtigung neu zu.
+1. Tick **Sirikit** in "Berechtigungs **. plist**".
+2. Fügen Sie " **Info. plist**" den Schlüssel " **Privacy – Siri Usage Description** " und eine Nachricht für Ihre Kunden hinzu.
+3. Wenden Sie `INPreferences.RequestSiriAuthorization` die-Methode in der APP an, um den Benutzer aufzufordern, Siri-Interaktionen zuzulassen.
+4. Fügen Sie Ihrer APP-ID im Entwickler Portal "Sirikit" hinzu, und erstellen Sie Ihre Bereitstellungs Profile neu, damit Sie die neue Berechtigung enthalten.
 
-Fügen Sie ein neues Erweiterungsprojekt dann zu Ihrer app zur Verarbeitung von Siri-Anforderungen:
+Fügen Sie Ihrer APP dann ein neues Erweiterungsprojekt hinzu, um Siri-Anforderungen verarbeiten zu können:
 
-1. Mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **hinzufügen > Neues Projekt hinzufügen...** .
-2. Wählen Sie die **iOS > Erweiterung > Intents-Erweiterung** Vorlage.
-3. Zwei neue Projekte werden hinzugefügt: Zweck und IntentUI. Anpassen der Benutzeroberfläche ist optional, damit das Beispiel nur Code in enthält die **Absicht** Projekt.
+1. Klicken Sie mit der rechten Maustaste auf Ihre Projekt Mappe, und wählen Sie **Hinzufügen > Neues Projekt hinzufügen**aus.
+2. Wählen Sie die **IOS-> Erweiterung > Intents-Erweiterungs** Vorlage aus.
+3. Es werden zwei neue Projekte hinzugefügt: Absicht und intentui. Das Anpassen der Benutzeroberfläche ist optional, sodass das Beispiel nur Code im **Intent** -Projekt enthält.
 
-Das Erweiterungsprojekt ist, in dem alle SiriKit-Anforderungen verarbeitet werden. Als separate Erweiterung ist automatisch keine Möglichkeit, die mit Ihrer Haupt-app – zu kommunizieren, dies in der Regel aufgelöst wird, durch die Implementierung von freigegebenen File Storage mithilfe von app-Gruppen.
+Das Erweiterungsprojekt ist der Ort, an dem alle Sirikit-Anforderungen verarbeitet werden. Als separate Erweiterung hat Sie nicht automatisch eine Möglichkeit, mit Ihrer Haupt-APP zu kommunizieren – Dies wird in der Regel durch die Implementierung von frei gegebenem Dateispeicher mithilfe von App-Gruppen gelöst.
 
-#### <a name="configure-the-intenthandler"></a>Konfigurieren Sie die IntentHandler
+#### <a name="configure-the-intenthandler"></a>Konfigurieren des intenthandler
 
-Die `IntentHandler` Klasse ist der Einstiegspunkt für Siri-Anforderungen – jedes Ziel, um übergeben wird die `GetHandler` Methode, die ein Objekt zurückgibt, der die Anforderung verarbeiten kann.
+Die `IntentHandler` -Klasse ist der Einstiegspunkt für Siri-Anforderungen – jede Absicht wird an die `GetHandler` -Methode übermittelt, die ein Objekt zurückgibt, das die Anforderung verarbeiten kann.
 
 Der folgende Code zeigt eine einfache Implementierung:
 
@@ -144,21 +144,21 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 }
 ```
 
-Die Klasse erben muss `INExtension`, und da im Beispiel wird zur Behandlung von Listen und Anmerkungen dieser Intents, es implementiert auch `IINNotebookDomainHandling`.
+Die Klasse muss von Erben `INExtension`, und da das Beispiel die Verarbeitung von Listen und Notizen behandelt, wird auch implementiert. `IINNotebookDomainHandling`
 
 > [!NOTE]
-> - Ist es eine Konvention in .NET für Schnittstellen im wahrsten Sinne Präfix `I`, die Xamarin beim Binden von Protokollen aus dem iOS-SDK entspricht.
-> - Xamarin behält auch Namen von iOS und Apple verwendet die ersten beiden Zeichen im Namen entsprechend das Framework, dem ein Typ gehört.
-> - Für die `Intents` Framework Typen werden mit dem Präfix `IN*` (z. b. `INExtension`), aber dies sind _nicht_ Schnittstellen.
-> - Folgt auch diese Protokolle (die Schnittstellen werden C#) am Ende mit zwei `I`s, wie z. B. `IINAddTasksIntentHandling`.
+> - In .net gibt es eine Konvention für Schnittstellen, denen ein Haupt `I`-und xamarin-Präfix vorangestellt wird, wenn Protokolle vom IOS SDK gebunden werden.
+> - Xamarin behält auch Typnamen von IOS bei, und Apple verwendet die ersten beiden Zeichen in Typnamen, um das Framework widerzuspiegeln, zu dem ein Typ gehört.
+> - Für das `Intents` Framework verfügen Typen über `IN*` ein Präfix (z. b. `INExtension`), aber dies sind _keine_ Schnittstellen.
+> - Außerdem folgt die Verwendung von Protokollen (die zu Schnitt C#stellen in werden) zwei `I` `IINAddTasksIntentHandling`s, z. b.
 
-#### <a name="handling-intents"></a>Verarbeiten von Intents
+#### <a name="handling-intents"></a>Umgang mit Intents
 
-Jedes Ziel (Hinzufügen von Tasks, Task-Attribut festgelegt usw.) wird in einer einzelnen Methode, die ähnlich wie unten gezeigt implementiert. Die Methode sollte drei Hauptfunktionen auszuführen:
+Jede Absicht (Aufgabe hinzufügen, Set Task Attribute usw.) wird in einer einzelnen Methode implementiert, die der unten gezeigten ähnelt. Die-Methode sollte drei Hauptfunktionen ausführen:
 
-1. **Verarbeiten Sie die Absicht** – die Daten von Siri analysiert im verfügbar gemacht wurde ein `intent` Objekt spezifisch für den Typ der Absicht. Ihre app möglicherweise wurden überprüft diese Daten mit optionalen `Resolve*` Methoden.
-2. **Überprüfen und aktualisieren Sie die Datenspeicher** , speichern Sie Daten in das Dateisystem (mit App-Gruppen an, damit die iOS-Haupt-app auch darauf zugreifen kann) oder über eine netzwerkanforderung.
-3. **Geben Sie die Antwort** – verwenden der `completion` Handler, der eine Antwort zurück an Siri anzuzeigender Read/an den Benutzer zu senden:
+1. **Verarbeiten der Absicht** – die von Siri analysierten Daten werden in einem `intent` Objekt zur Verfügung gestellt, das für den Typ der Absicht spezifisch ist. Möglicherweise hat Ihre APP diese Daten mithilfe optionaler `Resolve*` Methoden überprüft.
+2. **Datenspeicher überprüfen und aktualisieren** – speichern Sie Daten im Dateisystem (mithilfe von App-Gruppen, sodass die IOS-Haupt-APP auch darauf zugreifen kann) oder über eine Netzwerk Anforderung.
+3. **Antwort angeben** – verwenden Sie `completion` den Handler, um eine Antwort zurück an Siri zu senden, um den Benutzer zu lesen/anzuzeigen:
 
 ```csharp
 public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateTaskListIntentResponse> completion)
@@ -173,62 +173,62 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 }
 ```
 
-Beachten Sie, dass `null` wird übergeben, als zweiten Parameter an die Antwort: ist dies der Benutzerparameter-Aktivität, und wenn er nicht angegeben ist, wird ein Standardwert verwendet werden.
-Sie können einen Typ für die benutzerdefinierte Aktivität festlegen, solange Ihre iOS-app, über unterstützt die `NSUserActivityTypes` -Schlüssels im **"Info.plist"**. Sie können dann verarbeiten diesen Fall, wenn Ihre app geöffnet wird, und bestimmte Vorgänge (z. B. öffnen, um einen entsprechenden ansichtscontroller, und Laden der Daten aus den Siri-Vorgang) ausführen.
+Beachten Sie `null` , dass als zweiter Parameter an die Antwort übergeben wird – dies ist der Benutzer Aktivitäts Parameter. wenn er nicht angegeben wird, wird ein Standardwert verwendet.
+Sie können einen benutzerdefinierten Aktivitätstyp festlegen, solange Ihre IOS-App ihn über `NSUserActivityTypes` den Schlüssel in " **Info. plist**" unterstützt. Sie können diesen Fall dann verarbeiten, wenn Ihre APP geöffnet wird, und bestimmte Vorgänge ausführen (z. b. das Öffnen eines relevanten Ansichts Controllers und das Laden der Daten aus dem Siri-Vorgang).
 
-Das Beispiel auch sind die `Success` Ergebnis, aber in realen Szenarios richtigen Fehlerberichterstattung hinzugefügt werden sollen.
+Im Beispiel wird auch das `Success` Ergebnis hart codiert, aber in realen Szenarien sollte die richtige Fehlerberichterstattung hinzugefügt werden.
 
-### <a name="test-phrases"></a>Testen von Ausdrücken
+### <a name="test-phrases"></a>Test Ausdrücke
 
-Die folgenden Test-Sätze sollte in der Beispiel-app funktionieren:
+Die folgenden Test Ausdrücke sollten in der Beispiel-App funktionieren:
 
-- "Stellen Sie eine Einkaufsliste mit Äpfeln Bananen und Birnen in TasksNotes"
-- "Add Task WWDC in TasksNotes"
-- "Add Task WWDC Training-Liste in TasksNotes"
-- "Mark WWDC als vollständig in TasksNotes teilnehmen"
-- "In TasksNotes erinnern Sie, einem Iphone zu erwerben, wenn Start ich erhalte"
-- "Mark kaufen iPhone im TasksNotes als abgeschlossen"
-- "Erinnern Sie, 8: 00 Uhr in TasksNotes Start beibehalten"
+- "Erstellen einer lebensmittelliste mit Äpfeln, Bananen und Birnen in tasksnotes"
+- "Task WWDC in tasksnotes hinzufügen"
+- "Task WWDC zu Trainings Liste in tasksnotes hinzufügen"
+- "Mark attend WWDC as Complete in tasksnotes"
+- "In tasksnotes erinnern Sie sich an den Kauf eines iPhones, wenn ich zu Hause komme."
+- "Mark iPhone als abgeschlossen in tasksnotes markieren"
+- "Erinnern Sie mich daran, in tasksnotes an der Startseite zu bleiben."
 
-![Beispiel für eine neue Liste erstellen](sirikit-images/createtasklist-sml.png) ![Set-Vorgang als vollständiges Beispiel](sirikit-images/settaskattribute-sml.png)
+![Beispiel für eine neue Liste erstellen](sirikit-images/createtasklist-sml.png) ![Aufgabe als vervollständigen festlegen (Beispiel)](sirikit-images/settaskattribute-sml.png)
 
 > [!NOTE]
-> IOS 11 unterstützt die Simulator-Tests mit Siri (im Gegensatz zu früheren Versionen).
+> Der IOS 11-Simulator unterstützt Tests mit Siri (im Gegensatz zu früheren Versionen).
 >
-> Vergessen Sie auf echten Geräten getestet nicht zum Konfigurieren von App-ID und die bereitstellungsprofile SiriKit-Unterstützung.
+> Wenn Sie auf echten Geräten testen, vergessen Sie nicht, Ihre APP-ID und Bereitstellungs Profile für die Unterstützung von Sirikit zu konfigurieren.
 
 <a name="alternativenames" />
 
 ## <a name="alternative-names"></a>Alternative Namen
 
-Diese neue iOS 11-Funktion bedeutet, dass Sie alternative Namen für Ihre app für Benutzer sie ordnungsgemäß mit Siri auslösen konfigurieren können. Fügen Sie die folgenden Schlüssel, der **"Info.plist"** Datei mit dem iOS-app-Projekt:
+Dieses neue IOS 11-Feature bedeutet, dass Sie alternative Namen für Ihre APP konfigurieren können, damit Benutzer Sie mithilfe von Siri ordnungsgemäß auslöst. Fügen Sie der Datei " **Info. plist** " des IOS-App-Projekts die folgenden Schlüssel hinzu:
 
-![Datei "Info.plist" mit Name-alternative app-Schlüssel und Werte](sirikit-images/alternative-names.png)
+![Info. plist mit alternativen App-namens Schlüsseln und-Werten](sirikit-images/alternative-names.png)
 
-Die alternative app-Namen festgelegt, die folgenden Ausdrücke funktionieren auch für die Beispiel-app (mit dem tatsächlich Namen **TasksNotes**):
+Wenn die alternativen APP-Namen festgelegt sind, funktionieren die folgenden Ausdrücke auch für die Beispiel-app (die tatsächlich **tasksnotes**heißt):
 
-- "Stellen Sie eine Einkaufsliste mit Äpfeln Bananen und Birnen in _MonkeyNotes_"
-- "Fügen WWDC in task _MonkeyTodo_"
+- "Erstellen einer lebensmittelliste mit Äpfeln, Bananen und Birnen in _monkeynotes_"
+- "Task WWDC in _monkeytodo_hinzufügen"
 
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-Einige Fehler, die beim Ausführen des Beispiels oder Hinzufügen von SiriKit zu Ihren eigenen Anwendungen auftreten können:
+Einige Fehler, die bei der Ausführung des Beispiels auftreten können, oder zum Hinzufügen von Sirikit zu ihren eigenen Anwendungen:
 
 ### <a name="nsinternalinconsistencyexception"></a>NSInternalInconsistencyException
 
-_Objective-C-Ausnahme ausgelöst wird.  Name: NSInternalInconsistencyException Ursache: Verwendung der Klasse < INPreferences: 0x60400082ff00 > von einer app erfordert die Berechtigung com.apple.developer.siri. Aktivieren Sie die Siri-Funktion in Ihrem Xcode-Projekt?_
+_Die ausgelöste Ziel-C-Ausnahme.  Name: NSInternalInconsistencyException Grund: Verwendung der-Klasse < inpreferences: 0x60400082ff00 > aus einer APP erfordert die Berechtigung com. Apple. Developer. Siri. Haben Sie die Siri-Funktion in Ihrem Xcode-Projekt aktiviert?_
 
-- SiriKit ist Perform **"Entitlements.plist"**.
-- **"Entitlements.plist"** konfiguriert ist, der **Projektoptionen > Erstellen > iOS Bundle-Signierung**.
+- "Sirikit" wird in "Berechtigungs **. plist" angezeigt**.
+- " **Berechtigungen. plist** " wird in den **Projektoptionen > Build > IOS-Bündel Signierung**konfiguriert.
 
-  [![Projektoptionen mit, dass die Berechtigungen ordnungsgemäß festgelegt.](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
+  [![Projektoptionen mit ordnungsgemäßer Festlegung von Berechtigungen](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 
-- (für die gerätebereitstellung) App-ID hat SiriKit aktiviert und Bereitstellungsprofil heruntergeladen.
+- (für die Geräte Bereitstellung) Für die APP-ID ist das Sirikit aktiviert und das Bereitstellungs Profil heruntergeladen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SiriKit (Apple)](https://developer.apple.com/documentation/sirikit)
-- [TasksNotes SiriKit-Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/SiriKitSample/)
-- [Was ist neu in der SiriKit (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/214/)
+- [Sirikit (Apple)](https://developer.apple.com/documentation/sirikit)
+- [Tasksnotes-Beispiel für Sirikit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+- [Neuerungen in "Sirikit" (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/214/)

@@ -7,16 +7,16 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189237"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649287"
 ---
 # <a name="the-scale-transform"></a>Die Skalierungstransformation
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Ermitteln Sie die Skalierungstransformation SkiaSharp, für die Skalierung von Objekten in verschiedenen Größen_
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Sie Fragen sich vielleicht: Wie wirken sich die Skalierungsfaktoren auf den Rückgabewert aus der `MeasureText` -Methode der `SKPaint`? Die Antwort ist: Nein. `Scale` ist eine Methode `SKCanvas`. Es hat keine Auswirkungen auf Alles was Sie tun, mit einem `SKPaint` Objekt, bis Sie das Objekt verwenden, um etwas auf der Leinwand zu rendern.
+Vielleicht Fragen Sie sich Folgendes: Wie wirken sich die Skalierungsfaktoren auf den von der `MeasureText` -Methode `SKPaint`von zurückgegebenen Wert aus? Die Antwort lautet: Nein. `Scale` ist eine Methode `SKCanvas`. Es hat keine Auswirkungen auf Alles was Sie tun, mit einem `SKPaint` Objekt, bis Sie das Objekt verwenden, um etwas auf der Leinwand zu rendern.
 
 Wie Sie alle Elemente, die nach dem sehen können die `Scale` erhöht sich proportional aufrufen:
 
@@ -251,7 +251,7 @@ Die `pathBounds` Rechteck am oberen Rand dieser Code abgerufen, und klicken Sie 
 
 [![](scale-images/anisotropicscaling-small.png "Dreifacher Screenshot der Seite anisotrope Skalierung")](scale-images/anisotropicscaling-large.png#lightbox "dreifachen Screenshot der Seite anisotrope Skalierung")
 
-Eine weitere Möglichkeit kann man die `Scale` und `Translate` aufrufen wird, um den Effekt in umgekehrter Reihenfolge zu bestimmen: Die `Translate` Aufruf wechselt den Pfad aus, damit er vollständig sichtbar ist, jedoch in der oberen linken Ecke der Leinwand ausgerichtet wird. Die `Scale` Methode dann vornimmt, Stern größere relativ zur oberen linken Ecke.
+Eine andere Möglichkeit, die `Scale` Aufrufe von und `Translate` zu überprüfen, besteht darin, die Auswirkung in umgekehrter Reihenfolge zu bestimmen: Der `Translate` -Befehl verschiebt den Pfad so, dass er vollständig sichtbar und in der oberen linken Ecke des Zeichen Bereichs ausgerichtet wird. Die `Scale` Methode dann vornimmt, Stern größere relativ zur oberen linken Ecke.
 
 Tatsächlich wird es angezeigt, dass das Sternchen ein bisschen größer als die Leinwand ist. Das Problem ist die Strichbreite. Die `Bounds` Eigenschaft `SKPath` gibt an, die Dimensionen der Koordinaten codiert, in dem Pfad, und was die Anwendung verwendet, um sie zu skalieren. Wenn der Pfad mit einer Strichbreite von bestimmten gerendert wird, ist der gerenderte Pfad größer als der Leinwand.
 
@@ -347,4 +347,4 @@ Der Code zeigt auch das Sternsymbol 10 weitere Male, berücksichtigen jedes Mal,
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

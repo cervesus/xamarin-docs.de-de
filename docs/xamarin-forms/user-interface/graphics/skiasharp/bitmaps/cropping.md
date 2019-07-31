@@ -7,16 +7,16 @@ ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: cf31f3bd6f84a040d21420e865737417c374d947
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 50174844100eb852ac7daf5ce3f33b02b490ceb2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61078480"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646659"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>Zuschneiden von SkiaSharp-bitmaps
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Die [ **erstellen und zeichnen SkiaSharp Bitmaps** ](drawing.md) Artikel beschrieben, wie ein `SKBitmap` Objekt übergeben werden, um eine `SKCanvas` Konstruktor. Jeder zeichnen-Methode wird aufgerufen, auf die Grafiken, Canvas bewirkt, dass auf die Bitmap gerendert werden soll. Einzubeziehen Zeichnungsmethoden `DrawBitmap`, was bedeutet, dass diese Technik ermöglicht das Übertragen von teilweise oder vollständig eine Bitmap in einem anderen Bitmap, vielleicht mit Transformationen angewendet.
 
@@ -445,7 +445,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>Hosten die Foto Cropper Canvas-Ansicht
 
-Mit diesen zwei Klassen, die das Zuschneiden Anwendungslogik die **Fotos Zuschneiden** auf der Seite die **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** Anwendung befindet sich nur sehr wenig. Die XAML-Datei instanziiert ein `Grid` auf Host der `PhotoCropperCanvasView` und **Fertig** Schaltfläche:
+Mit diesen zwei Klassen, die das Zuschneiden Anwendungslogik die **Fotos Zuschneiden** auf der Seite die **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** Anwendung befindet sich nur sehr wenig. Die XAML-Datei instanziiert ein `Grid` auf Host der `PhotoCropperCanvasView` und **Fertig** Schaltfläche:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -536,7 +536,7 @@ Sie sehen, dass das zuschnittrechteck auf ein 16-zu-9-Seitenverhältnis von High
 
 Eine Xamarin.Forms-Version der berühmtheiten gelangen 14-15-Rätsel angezeigt, in Kapitel 22 des Buchs [ _Erstellen mobiler Apps mit Xamarin.Forms_ ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) heruntergeladen werden können, als [  **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle). Das Rätsel wird jedoch mehr Spaß (und häufig schwieriger) Wenn sie auf ein Image aus Ihrer eigenen Fotobibliothek basiert.
 
-Diese Version des Rätsels 14-15 ist Teil der **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** -Anwendung und besteht aus einer Reihe von Seiten, die mit dem Titel **Foto Rätsel**.
+Diese Version des Rätsels 14-15 ist Teil der **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** -Anwendung und besteht aus einer Reihe von Seiten, die mit dem Titel **Foto Rätsel**.
 
 Die **PhotoPuzzlePage1.xaml** -Datei besteht aus einem `Button`:
 
@@ -584,7 +584,7 @@ Die Methode navigiert dann zu `PhotoPuzzlePage2`, und übergeben Sie an den Kons
 
 Es ist möglich, dass das Foto, das aus der Bibliothek ausgewählt, soweit es ist in der Fotobibliothek aufgetreten ist, gedreht oder nach unten zeigende nicht ausgerichtet ist. (Dies ist besonders dann ein Problem mit iOS-Geräten). Aus diesem Grund `PhotoPuzzlePage2` können Sie das Image in die gewünschte Ausrichtung zu rotieren. Die XAML-Datei enthält drei Schaltflächen, die mit der Bezeichnung **90&#x00B0; rechts** (d. h. im Uhrzeigersinn), **90&#x00B0; Links** (gegen den Uhrzeigersinn) und **Fertig**.
 
-Die Code-Behind-Datei implementiert die Bitmap für die Rotation-Logik, die in diesem Artikel gezeigten  **[erstellen und Zeichnen auf SkiaSharp Bitmaps](drawing.md#rotating-bitmaps)**. Der Benutzer kann dem Bild um 90 Grad im Uhrzeigersinn oder gegen den Uhrzeigersinn oft drehen: 
+Die Code-Behind-Datei implementiert die Bitmap für die Rotation-Logik, die in diesem Artikel gezeigten  **[erstellen und Zeichnen auf SkiaSharp Bitmaps](drawing.md#rotating-bitmaps)** . Der Benutzer kann dem Bild um 90 Grad im Uhrzeigersinn oder gegen den Uhrzeigersinn oft drehen: 
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage
@@ -765,4 +765,4 @@ Jetzt können Sie sie in der richtigen Reihenfolge wieder platzieren. Alle Kache
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

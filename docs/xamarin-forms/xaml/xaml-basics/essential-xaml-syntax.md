@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: d8052e00809b15f0858583ee2919c47cfd8af00b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309510"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646572"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Essential XAML Syntax
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML ist hauptsächlich für das Instanziieren und Initialisieren von Objekten ausgelegt. Aber häufig Eigenschaften müssen festgelegt werden, bis zu komplexen Objekten, die einfach als XML-Zeichenfolgen dargestellt werden können, und manchmal auf eine untergeordnete Klasse von einer Klasse definierte Eigenschaften festgelegt werden müssen. Diese beiden Anforderungen erfordern die wesentlichen Funktionen der XAML-Syntax von Eigenschaftenelementen und angefügte Eigenschaften._
 
@@ -143,7 +143,7 @@ Eigenschaftenelement Syntax wird jedoch wichtig, wenn der Wert einer Eigenschaft
 </Label>
 ```
 
-Ein weiteres Beispiel: Die `Grid` verfügt über zwei Eigenschaften, die mit dem Namen `RowDefinitions` und `ColumnDefinitions`. Diese beiden Eigenschaften sind vom Typ `RowDefinitionCollection` und `ColumnDefinitionCollection`, der es sich um Auflistungen von `RowDefinition` und `ColumnDefinition` Objekte. In diesem Fall müssen Sie eine Eigenschaftenelement-Syntax zu verwenden, um diese Sammlungen festzulegen.
+Ein weiteres Beispiel: Der `Grid` verfügt über zwei Eigenschaften `RowDefinitions` mit `ColumnDefinitions`dem Namen und. Diese beiden Eigenschaften sind vom Typ `RowDefinitionCollection` und `ColumnDefinitionCollection`, der es sich um Auflistungen von `RowDefinition` und `ColumnDefinition` Objekte. In diesem Fall müssen Sie eine Eigenschaftenelement-Syntax zu verwenden, um diese Sammlungen festzulegen.
 
 Hier ist der Anfang der XAML-Datei für eine `GridDemoPage` -Klasse, mit dem Eigenschaftenelement-Tags für die `RowDefinitions` und `ColumnDefinitions` Sammlungen:
 
@@ -351,7 +351,7 @@ Sie können sicherlich einschließen der `Content` und `Children` Eigenschaften 
 </ContentPage>
 ```
 
-Die einzig wichtige Frage ist: Warum sind von dieser Eigenschaftenelemente *nicht* in der XAML-Datei erforderlich?
+Die eigentliche Frage ist: Warum sind diese Eigenschafts Elemente in der XAML-Datei *nicht* erforderlich?
 
 Dürfen Elemente, die für die Verwendung in XAML in Xamarin.Forms definiert eine Eigenschaft, die in gekennzeichnet haben die `ContentProperty` -Attribut in der Klasse. Wenn Sie Nachschlagen der `ContentPage` Klasse in der Onlinedokumentation für die Xamarin.Forms, sehen Sie dieses Attribut:
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-Sie können auch in XAML verwenden etwas Ähnliches Durchführen der [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) und [ `On` ](xref:Xamarin.Forms.On) Klassen. Erster eingeschlossen Eigenschaftenelemente für die `Padding` Eigenschaft am oberen Rand der Seite:
+Mit der-Klasse und der [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) - [`On`](xref:Xamarin.Forms.On) Klasse können Sie auch in XAML ähnliche Aktionen ausführen. Erster eingeschlossen Eigenschaftenelemente für die `Padding` Eigenschaft am oberen Rand der Seite:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -524,7 +524,7 @@ Dies ist die Standardmethode zum legen Sie einer plattformabhängige `Padding` -
 ```
 
 > [!NOTE]
-> Die `OnPlatform` Markuperweiterung kann auch in XAML verwendet werden, um UI-Darstellung individuell für jede Plattform anzupassen. Es bietet die gleiche Funktionalität wie die `OnPlatform` und `On` Klassen, jedoch eine präzisere Darstellung. Weitere Informationen finden Sie unter [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
+> Die `OnPlatform` Markup Erweiterung kann auch in XAML verwendet werden, um die Darstellung der Benutzeroberfläche plattformspezifisch anzupassen. Sie bietet die gleiche Funktionalität wie die `OnPlatform` - `On` Klasse und die-Klasse, jedoch mit einer präziseren Darstellung. Weitere Informationen finden Sie unter [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -532,7 +532,7 @@ Property-Elemente und angefügte Eigenschaften wurde ein Großteil der grundlege
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Teil 1. Erste Schritte mit XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Teil 3. XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Teil 4. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

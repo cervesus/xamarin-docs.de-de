@@ -1,145 +1,144 @@
 ---
-title: Storyboards in Xamarin.Mac – Schnellstart
-description: Dieses Dokument enthält eine Einführung Schnellstart zum Erstellen von MacOS-Benutzeroberflächen mit Storyboards in Xamarin.Mac. Es wird beschrieben, wie einem Segue und erstellt ein Fenster "Einstellungen".
+title: Storyboards in xamarin. Mac – Schnellstart
+description: Dieses Dokument enthält eine kurze Einführung in das aufbauen von macOS-Benutzeroberflächen mit Storyboards in xamarin. Mac. Es wird beschrieben, wie Sie einen-Abschnitt erstellen und ein Einstellungsfenster erstellen.
 ms.prod: xamarin
 ms.assetid: 20719B5D-8147-4E8A-A23C-8D575C7ACCEE
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 7f7d23a01a3c3c6567d6bab45d0abbfb078fb512
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b93cc584a58d864e6dc7477dc7f76d4f59844d48
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61033603"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652401"
 ---
-# <a name="storyboards-in-xamarinmac-quick-start"></a>Storyboards in Xamarin.Mac – Schnellstart
+# <a name="storyboards-in-xamarinmac-quick-start"></a>Storyboards in xamarin. Mac – Schnellstart
 
-Beginnen Sie als eine kurze Einführung in mithilfe von Storyboards zum Definieren der Benutzeroberfläche einer Xamarin.Mac-app eines neuen Xamarin.Mac-Projekts. Klicken Sie auf **Mac** > **App** > **Cocoa-App** und dann auf **Weiter**:
+Als kurze Einführung in die Verwendung von Storyboards zum Definieren der Benutzeroberfläche einer xamarin. Mac-app können Sie ein neues xamarin. Mac-Projekt starten. Klicken Sie auf **Mac** > **App** > **Cocoa-App** und dann auf **Weiter**:
 
 [![](quickstart-images/qs01.png "Hinzufügen einer neuen Cocoa-App")](quickstart-images/qs01.png#lightbox)
 
-Verwenden der **Anwendungsnamen** von `MacStoryboard` , und klicken Sie auf die **Weiter** Schaltfläche:
+Verwenden Sie den **App** `MacStoryboard` -Namen, und klicken Sie auf die Schaltfläche **weiter** :
 
-[![](quickstart-images/qs02.png "Der Name der App festlegen")](quickstart-images/qs02.png#lightbox)
+[![](quickstart-images/qs02.png "Festlegen des App-namens")](quickstart-images/qs02.png#lightbox)
 
-Verwenden Sie die Standardeinstellung **Projektname** und **Projektmappenname** , und klicken Sie auf die **erstellen** Schaltfläche:
+Verwenden Sie den Standard **Projektnamen** und Projektmappennamen, und klicken Sie auf die Schaltfläche **Erstellen**
 
-[![](quickstart-images/qs03.png "Die Namen von Projekt- und Projektmappendateien")](quickstart-images/qs03.png#lightbox)
+[![](quickstart-images/qs03.png "Die Projekt-und Projektmappennamen")](quickstart-images/qs03.png#lightbox)
 
-In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei, die sie zur Bearbeitung in Xcode Interface Builder zu öffnen:
+Doppelklicken Sie im **Projektmappen-Explorer**auf die Datei `Main.storyboard` , um Sie für die Bearbeitung in Interface Builder von Xcode zu öffnen:
 
-[![](quickstart-images/qs04.png "Bearbeiten das Storyboard in Xcode")](quickstart-images/qs04.png#lightbox)
+[![](quickstart-images/qs04.png "Bearbeiten des Storyboards in Xcode")](quickstart-images/qs04.png#lightbox)
 
-Wie Sie oben sehen können, definiert die Standard-Storyboard sowohl für der app Menüleiste als auch für das Hauptfenster mit View-Controller und Ansicht. Für unser Beispiel-app werden wir eine Benutzeroberfläche erstellen, die eine Main _Ansicht "Inhalt"_ auf einer Seite und ein _Prüfungsansicht_ in der Sekunde.
+Wie Sie oben sehen können, definiert das Standard Storyboard sowohl die Menüleiste der App als auch das Hauptfenster mit dem Ansichts Controller und der Ansicht. Für unsere Beispiel-app erstellen wir eine Benutzeroberfläche, die über eine Haupt _Inhaltsansicht_ auf einer Seite und eine Inspektor- _Ansicht_ in der zweiten Seite verfügt.
 
-Zu diesem Zweck müssen wir zunächst das standardmäßige View Controller zu entfernen und die Ansicht, die mit dem Storyboard von geliefert wird, wählen Sie ihn in Interface Builder und auf die **löschen** Schlüssel:
+Zu diesem Zweck müssen wir zunächst den Standard Ansichts Controller und die Ansicht aus dem Storyboard entfernen, indem wir ihn in Interface Builder auswählen **und die** ENTF-Taste drücken:
 
-[![](quickstart-images/qs05.png "Entfernen den Standard-View-controller")](quickstart-images/qs05.png#lightbox)
+[![](quickstart-images/qs05.png "Entfernen des Standard Ansichts Controllers")](quickstart-images/qs05.png#lightbox)
 
-Geben Sie als Nächstes `split` in die **Filter** Bereich, wählen Sie die vertikale Controller für geteilte Ansicht, und ziehen Sie es auf die _Entwurfsoberfläche_:
+Geben `split` Sie als nächstes in den **Filter** Bereich ein, wählen Sie den vertikalen geteilten Ansichts Controller aus, und ziehen Sie ihn auf den _Designoberfläche_:
 
-[![](quickstart-images/qs06.png "Suchen nach den Controller für geteilte Ansicht")](quickstart-images/qs06.png#lightbox)
+[![](quickstart-images/qs06.png "Suchen nach dem Split View Controller")](quickstart-images/qs06.png#lightbox)
 
-Beachten Sie, dass der Controller werden automatisch zwei untergeordnete View Controller (und deren zugehörigen Sichten), wired oben auf der linken und rechten Seite der geteilten Ansicht enthalten. Um die die geteilten Ansicht an dessen übergeordnetes Fenster zu verknüpfen, drücken Sie die **Steuerelement** Schlüssel, klicken Sie auf den Fenster-Controller (blauer Kreis im Fenster des Controllers Frame), und ziehen Sie eine Zeile in den Controller für geteilte Ansicht. Wählen Sie **Fensterinhalt** im Popupmenü:
+Beachten Sie, dass der Controller automatisch zwei untergeordnete Ansichts Controller (und zugehörige Ansichten) enthält, die Links und rechts in der geteilten Ansicht bündig sind. Um die geteilte Ansicht an das übergeordnete Fenster zu binden, drücken Sie die STRG **-Taste,** klicken Sie auf den Fenster Controller (den blauen Kreis im Frame des Fenster Controllers), und ziehen Sie eine Linie auf den Controller für geteilte Ansicht. Wählen Sie im Popup **Fensterinhalt** aus:
 
-[![](quickstart-images/qs07.png "Die Windows-Ansicht \"Inhalt\" festlegen")](quickstart-images/qs07.png#lightbox)
+[![](quickstart-images/qs07.png "Festlegen der Windows-Inhaltsansicht")](quickstart-images/qs07.png#lightbox)
 
-Dadurch wird die zwei Benutzeroberflächenelement, das zusammen mit einem Segue verbunden:
+Dadurch werden die beiden Schnittstellen Elemente mithilfe von "*" verknüpft:
 
-[![](quickstart-images/qs08.png "Der Segue zwischen dem Fenster und den Inhalt")](quickstart-images/qs08.png#lightbox)
+[![](quickstart-images/qs08.png "Der eings zwischen dem Fenster und dem Inhalt.")](quickstart-images/qs08.png#lightbox)
 
-Wir möchten, platzieren eine Textansicht, in der linken Seite der geteilten Ansicht und den verfügbaren Bereich automatisch auszufüllen, wenn entweder das Fenster oder der geteilten Ansicht geändert wird. Ziehen Sie eine Textansicht an die oberste Position Ansichtscontroller an der geteilten Ansicht, und klicken Sie auf die **Pin** auto-Layout-Einschränkung (das zweite Symbol von rechts unten auf der Entwurfsoberfläche).
+Wir möchten eine Text Ansicht auf der linken Seite der geteilten Ansicht platzieren und lassen, dass der verfügbare Bereich automatisch ausgefüllt wird, wenn die Größe des Fensters oder der geteilten Ansicht geändert wird. Ziehen Sie eine Text Ansicht auf den oberen Ansichts Controller, der der geteilten Ansicht angefügt ist, und klicken Sie auf die **Pin** Auto Layout-Einschränkung (das zweite Symbol rechts unten im Designoberfläche).
 
-[![](quickstart-images/qs09.png "Konfigurieren von Einschränkungen")](quickstart-images/qs09.png#lightbox)
+[![](quickstart-images/qs09.png "Konfigurieren der Einschränkungen")](quickstart-images/qs09.png#lightbox)
 
-Hier klicken wir alle vier der **i-Balken** Symbole für das umgebende Feld am oberen Rand im Popover Einschränkungen, und klicken Sie auf die **4 Einschränkungen hinzufügen** Schaltfläche unten, um die erforderlichen Einschränkungen hinzufügen.
+Von hier aus klicken wir am oberen Rand der Einschränkungs Schaltfläche auf alle vier Symbol Symbole um das umgebende Feld und klicken im unteren Bereich auf die Schaltfläche **4 Einschränkungen hinzufügen** , um die erforderlichen Einschränkungen hinzuzufügen.
 
-Wenn wir zu Visual Studio für Mac zurück, und führen Sie das Projekt, beachten Sie, dass die Textansicht automatisch angepasst wird, um im linken Bildschirmbereich der geteilten Ansicht im Fenster auszufüllen, oder die Aufteilung geändert werden:
+Wenn wir zu Visual Studio für Mac zurückkehren und das Projekt ausführen, beachten Sie, dass die Text Ansicht automatisch angepasst wird, um die linke Seite der geteilten Ansicht zu füllen, wenn die Größe des Fensters oder der Aufteilung geändert wird:
 
-[![](quickstart-images/qs10.png "Ein Beispiel für die app ausgeführt wird")](quickstart-images/qs10.png#lightbox)
+[![](quickstart-images/qs10.png "Ein Beispiel für die Ausführung der APP")](quickstart-images/qs10.png#lightbox)
 
-Da wir möchten als Inspektor Bereich rechts von der geteilten Ansicht verwenden, möchten wir haben eine kleinere Größe und zuzulassen, dass sie reduziert werden. Zurück zu Xcode, und bearbeiten Sie die Anzeige für die rechte Seite, indem Sie sie in der Entwurfsoberfläche auswählen und dann auf die **Größeninspektor**. Hier geben Sie einen **Breite** von `250`:
+Da wir die Rechte Seite der geteilten Ansicht als Inspektor-Bereich verwenden, möchten wir, dass Sie eine geringere Größe aufweisen und den Vorgang reduzieren kann. Kehren Sie zu Xcode zurück, und bearbeiten Sie die Ansicht für die Rechte Seite, indem Sie Sie im Designoberfläche auswählen und auf den **Größen Inspektor**klicken. Geben Sie hier eine **Breite** von `250`ein:
 
 [![](quickstart-images/qs11.png "Festlegen der Breite")](quickstart-images/qs11.png#lightbox)
 
-Wählen Sie dann das Split-Element, das der rechten Seite stellt eine höhere festgelegt **enthält Priorität** , und klicken Sie auf die **Benutzer können reduzieren** Kontrollkästchen:
+Wählen Sie als nächstes das geteilte Element aus, das die Rechte Seite darstellt, legen Sie eine höhere **Priorität** fest, und klicken Sie auf das Kontrollkästchen **Benutzer kann** reduzieren:
 
-[![](quickstart-images/qs12.png "Bearbeiten die Betriebs-Priorität")](quickstart-images/qs12.png#lightbox)
+[![](quickstart-images/qs12.png "Bearbeiten der haltenden Priorität")](quickstart-images/qs12.png#lightbox)
 
-Wenn wir zurück zu Visual Studio für Mac und das Projekt jetzt ausführen, beachten Sie, dass die rechte Seite er hält kleiner wird Größe und das Fenster geändert:
+Wenn wir zu Visual Studio für Mac zurückkehren und das Projekt jetzt ausführen, beachten Sie, dass auf der rechten Seite die Größe kleiner ist und die Größe des Fensters angepasst wird:
 
-[![](quickstart-images/qs13.png "Ein Beispiel für die app ausgeführt wird")](quickstart-images/qs13.png#lightbox)
+[![](quickstart-images/qs13.png "Ein Beispiel für die Ausführung der APP")](quickstart-images/qs13.png#lightbox)
 
 <a name="Defining-a-Presentation-Segue" />
 
-## <a name="defining-a-presentation-segue"></a>Definieren eine Präsentation Segue
+## <a name="defining-a-presentation-segue"></a>Definieren eines Präsentations-segue
 
-Layout werden der rechten Seite der geteilten Ansicht, die als eines Inspektors für die Eigenschaften für den ausgewählten Text fungiert wir. Wir werden einige Steuerelemente auf die Ansicht im unteren Layout der Benutzeroberfläche des Inspektors ziehen. Das letzte Steuerelement möchten wir eine Popover anzuzeigen, die dem Benutzer ermöglicht, die aus vier vordefinierten Zeichenformate auswählen.
+Das Layout der rechten Seite der geteilten Ansicht wird als Inspektor für die Eigenschaften des ausgewählten Texts fungieren. Wir ziehen einige Steuerelemente auf die untere Ansicht, um die Benutzeroberfläche des Inspektors zu gestalten. Für das letzte Steuerelement möchten wir ein popover anzeigen, das es dem Benutzer ermöglicht, vier vordefinierte Zeichenstile auszuwählen.
 
-Wir fügen eine Schaltfläche des Inspektors und einen Ansichtscontroller für die Entwurfsoberfläche. Größe des View-Controller, um die Größe zu sein, dass unsere Popover und vier Schaltflächen hinzugefügt werden soll. Als Nächstes müssen wir **Steuerelement** Schlüssel, klicken Sie auf die Schaltfläche in der Prüfungsansicht und ziehen Sie in der View-Controller, die unsere Popover darstellt:
+Wir fügen dem Inspektor eine Schaltfläche und einen Ansichts Controller zum Designoberfläche hinzu. Wir ändern die Größe des Ansichts Controllers in der Größe, die unser popover sein soll, und fügen vier Schaltflächen hinzu. Im nächsten Schritt **Steuern** Sie die Taste. Klicken Sie auf die Schaltfläche in der inspektoransicht, und ziehen Sie Sie auf den Ansichts Controller, der unser popover darstellt:
 
-[![](quickstart-images/qs14.png "Ziehen zum Erstellen eines neuen segues")](quickstart-images/qs14.png#lightbox)
+[![](quickstart-images/qs14.png "Ziehen zum Erstellen eines neuen eings")](quickstart-images/qs14.png#lightbox)
 
-Klicken Sie im Popupmenü entscheiden wir uns **Popover**: 
+Wählen Sie im Popup Menü **popover**aus: 
 
-[![](quickstart-images/qs15.png "Segue-Typ auswählen")](quickstart-images/qs15.png#lightbox)
+[![](quickstart-images/qs15.png "Auswählen des Typs \"Typ\"")](quickstart-images/qs15.png#lightbox)
 
-Abschließend wir wählen Sie auf der Entwurfsoberfläche der Segue und legen Sie die **bevorzugt Edge** zu **Links**. Klicken Sie dann Ziehen wir eine Zeile aus der **Anker Ansicht** auf die Schaltfläche, die im Popover an angefügt werden sollen:
+Schließlich wählen wir den segue im Designoberfläche aus und legen den **bevorzugten Edge** auf **left**fest. Anschließend ziehen wir eine Linie aus der **Anker Ansicht** auf die Schaltfläche, an die das popover angefügt werden soll:
 
-[![](quickstart-images/qs16.png "Ziehen zum Erstellen eines neuen segues")](quickstart-images/qs16.png#lightbox)
+[![](quickstart-images/qs16.png "Ziehen zum Erstellen eines neuen eings")](quickstart-images/qs16.png#lightbox)
 
-Wenn wir zu Visual Studio für Mac zurückgegeben wird, führen Sie die app, und klicken Sie auf die **keine** des Inspektors im Popover die Schaltfläche wird angezeigt:
+Wenn Sie zu Visual Studio für Mac zurückkehren, führen Sie die APP aus, und klicken Sie auf die Schaltfläche **keine** im Inspektor. das Popup Fenster wird angezeigt:
 
-[![](quickstart-images/qs17.png "Ein Beispiel der Segue ausgeführt wird")](quickstart-images/qs17.png#lightbox)
+[![](quickstart-images/qs17.png "Ein Beispiel für das Ausführen von")](quickstart-images/qs17.png#lightbox)
 
 <a name="Creating-App-Preferences" />
 
 ## <a name="creating-app-preferences"></a>Erstellen von App-Einstellungen
 
-Der Großteil der standardmäßigen MacOS-apps bieten eine _Einstellung Dialogfeld_ , mit der den Benutzer mehrere Optionen zu definieren, die verschiedene Aspekte der app, wie z. B. die Darstellung oder Benutzerkonten steuern können.
+Die meisten macOS-Standard-Apps bieten ein _Einstellungs Dialogfeld_ , das es dem Benutzer ermöglicht, mehrere Optionen zu definieren, die verschiedene Aspekte der App steuern, z. b. Darstellung oder Benutzerkonten.
 
-Um ein Dialogfeld Einstellung Standardfenster zu definieren, ziehen Sie zuerst eine Registerkarte-View-Controller, auf die Entwurfsoberfläche:
+Wenn Sie ein Standard Dialogfeld für die Einstellung definieren möchten, ziehen Sie zuerst einen Registerkarten Ansichts Controller auf den Designoberfläche
 
-[![](quickstart-images/qs18.png "Bearbeiten das Storyboard in Xcode")](quickstart-images/qs18.png#lightbox)
+[![](quickstart-images/qs18.png "Bearbeiten des Storyboards in Xcode")](quickstart-images/qs18.png#lightbox)
 
-In diesem Fall wird dies automatisch stammen, mit zwei untergeordneten, mit der View Controller verbunden. Z. B. skizzieren, eine Bezeichnung zu den einzelnen Sichten fügen wir, die darin center wird:
+Auch hier werden automatisch zwei untergeordnete Ansichts Controller angefügt. Zum Beispiel fügen wir jeder Ansicht, die darin zentriert wird, eine Bezeichnung hinzu:
 
-[![](quickstart-images/qs19.png "Festlegen von Einschränkungen")](quickstart-images/qs19.png#lightbox)
+[![](quickstart-images/qs19.png "Festlegen der Einschränkungen")](quickstart-images/qs19.png#lightbox)
 
-Als Nächstes soll das Fenster "Einstellungen" angezeigt, wenn der Benutzer auswählt der **Einstellungen...**  Menüelement. Wählen Sie in der Menüleiste das Menüelement Voreinstellungen **Steuerelement** Schlüssel auf, und ziehen Sie eine Zeile in unserer Registerkarte-View-Controller:
+Als nächstes möchten wir das Fenster "Einstellungen" anzeigen, wenn der Benutzer das Menü Element " **Einstellungen** " auswählt. Wählen Sie in der Menüleiste das Menü Element "Einstellungen" aus, und klicken Sie dann auf **die Tastenkombination** .
 
-[![](quickstart-images/qs20.png "Ziehen zum Erstellen eines segues")](quickstart-images/qs20.png#lightbox)
+[![](quickstart-images/qs20.png "Ziehen zum Erstellen einer Tabelle")](quickstart-images/qs20.png#lightbox)
 
-Im Popupmenü entscheiden wir uns **modale** dieses Fenster als Modaldialogfeld angezeigt:
+Wählen Sie im Popup Fenster **Modal** aus, um dieses Fenster als modales Dialog Feld anzuzeigen:
 
-[![](quickstart-images/qs21.png "Segue-Typ auswählen")](quickstart-images/qs21.png#lightbox)
+[![](quickstart-images/qs21.png "Auswählen des Typs \"Typ\"")](quickstart-images/qs21.png#lightbox)
 
-Wenn wir unsere Änderungen, wechseln Sie zurück zur Visual Studio für Mac, speichern, führen Sie die app, und wählen die **Einstellungen...**  Menüelement, unsere neuen Einstellungen mit dem Dialogfeld wird angezeigt:
+Wenn unsere Änderungen gespeichert werden, kehren Sie zu Visual Studio für Mac zurück, führen Sie die APP aus, und wählen Sie das Menü Element "Einstellungen" aus **.** das Dialogfeld "neue Einstellungen" wird angezeigt:
 
-[![](quickstart-images/qs22.png "Ein Beispiel der Segue ausgeführt wird")](quickstart-images/qs22.png#lightbox)
+[![](quickstart-images/qs22.png "Ein Beispiel für das Ausführen von")](quickstart-images/qs22.png#lightbox)
 
-Sie werden feststellen, dass dies nicht wie ein standard MacOS-app-Einstellung Dialogfenster aussieht. Um dieses Problem zu beheben, schließen Sie zwei Bilddateien in der Xamarin.Mac-app `Resources` Ordner in der **Projektmappen-Explorer** und kehren Sie zur Interface Builder von Xcode zurück.
+Sie bemerken möglicherweise, dass dies nicht wie ein Standard Dialogfeld für die macOS-app-Einstellung aussieht. Um dieses Problem zu beheben, schließen Sie zwei Bilddateien in den Ordner der xamarin. Mac- `Resources` App im **Projektmappen-Explorer** ein, und kehren Sie zur Interface Builder von Xcode zurück.
 
-Wählen Sie die Registerkarte-View-Controller und der Switch die **Stil** zu **Symbolleiste**: 
+Wählen Sie den Registerkarten Ansichts Controller aus, und wechseln Sie dessen **Stil** zu **Symbolleiste** 
 
-[![](quickstart-images/qs23.png "Der Standardstil der Statusleiste Registerkarte festlegen")](quickstart-images/qs23.png#lightbox)
+[![](quickstart-images/qs23.png "Festlegen des Steuer leisten Stils der Registerkarte")](quickstart-images/qs23.png#lightbox)
 
-Wählen Sie jede Registerkarte, und geben Sie ihm eine **Bezeichnung** , und wählen Sie eines der Images für die Darstellung:
+Wählen Sie jede Registerkarte aus, und weisen Sie Ihr eine **Bezeichnung** zu, und wählen Sie eines der Bilder aus
 
 [![](quickstart-images/qs24.png "Konfigurieren der einzelnen Registerkarten in Xcode")](quickstart-images/qs24.png#lightbox)
 
-Wenn wir unsere Änderungen, wechseln Sie zurück zur Visual Studio für Mac, speichern, führen Sie die app, und wählen die **Einstellungen...**  Menüelement, wie ein standard MacOS-app werden jetzt im Dialogfeld angezeigt:
+Wenn wir unsere Änderungen speichern, kehren Sie zu Visual Studio für Mac zurück, führen Sie die APP aus, und wählen Sie das Menü Element " **Preferences...** " aus. das Dialogfeld wird nun wie eine Standard-macOS-App angezeigt:
 
-[![](quickstart-images/qs25.png "Ein Beispiel für die ausgeführten Fenster \"Einstellungen\"")](quickstart-images/qs25.png#lightbox)
+[![](quickstart-images/qs25.png "Beispiel für das Fenster \"Laufende Einstellungen\"")](quickstart-images/qs25.png#lightbox)
 
-Weitere Informationen finden Sie unserem [arbeiten mit Bildern](~/mac/app-fundamentals/image.md), [Menüs](~/mac/user-interface/menu.md), [Windows](~/mac/user-interface/window.md) und [Dialogfelder](~/mac/user-interface/dialog.md) Dokumentation.
+Weitere Informationen finden Sie in der Dokumentation [Arbeiten mit Bildern](~/mac/app-fundamentals/image.md), [Menüs](~/mac/user-interface/menu.md), [Fenstern](~/mac/user-interface/window.md) und [Dialog](~/mac/user-interface/dialog.md) Feldern.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacStoryboard (Beispiel)](https://developer.xamarin.com/samples/mac/MacStoryboard/)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Arbeiten mit Windows](~/mac/user-interface/window.md)
-- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [macOS-Eingaberichtlinien](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)
 - [Einführung in Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

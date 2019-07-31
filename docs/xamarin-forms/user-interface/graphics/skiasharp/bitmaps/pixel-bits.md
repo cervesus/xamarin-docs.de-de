@@ -7,20 +7,20 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: cd7c8484827a038bbcf11180296547ea6fedf929
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6c066f89dc8f558a9154138bf38ad4326fe21291
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61411273"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642517"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>Zugreifen auf SkiaSharp Bitmap Pixelbits
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 In diesem Artikel haben Sie gesehen [ **Speichern von SkiaSharp-Bitmaps, die Dateien**](saving.md), Bitmaps werden in der Regel in Dateien in einem komprimierten Format, z. B. JPEG oder PNG-Datei gespeichert. Im Gegensatz dazu lässt wird eine SkiaSharp-Bitmap im Arbeitsspeicher gespeichert, nicht komprimiert. Es wird als eine sequenzielle Reihe von Pixel gespeichert. Dieses Format nicht komprimierte ermöglicht die Übertragung von Bitmaps in einer Oberfläche angezeigt.
 
-Der Speicherblock, der von einer Bitmap SkiaSharp belegt wird, ist auf sehr einfache Weise unterteilt: Es beginnt mit der ersten Zeile der Pixel von links nach rechts, und klicken Sie dann mit der zweiten Zeile wird fortgesetzt. Für Farbe Bitmaps besteht aus jedes Pixel von vier Bytes, was bedeutet, dass es sich bei der gesamten Speicherplatz erforderlich sind, indem die Bitmap viermal das Produkt der die Breite und Höhe ist.
+Der von einer skiasharp-Bitmap belegte Speicherblock ist auf einfache Weise organisiert: Sie beginnt mit der ersten Zeile der Pixel von links nach rechts und wird dann mit der zweiten Zeile fortgesetzt. Für Farbe Bitmaps besteht aus jedes Pixel von vier Bytes, was bedeutet, dass es sich bei der gesamten Speicherplatz erforderlich sind, indem die Bitmap viermal das Produkt der die Breite und Höhe ist.
 
 In diesem Artikel wird beschrieben, wie eine Anwendung Zugriff auf diese Pixel, entweder direkt über den Zugriff auf die Bitmap Pixel Speicherblock erhalten oder indirekt. In einigen Fällen kann ein Programm möchten die Pixel eines Bilds zu analysieren und erstellen Sie ein Histogramm irgendeiner Art. In der Regel können Anwendungen eindeutige Bilder erstellen, indem Sie algorithmisch Erstellen der Pixel, die die Bitmap bilden:
 
@@ -37,7 +37,7 @@ SkiaSharp bietet verschiedene Methoden für den Zugriff auf eine Bitmap des Pixe
 
 Sie können den ersten beiden Verfahren als "high-Level" und die zweiten beiden als "niedrige Ebene auf." vorstellen. Es gibt einige andere Methoden und Eigenschaften, die Sie verwenden können, aber dies sind die wichtigsten.
 
-Können Sie sehen, die Leistungsunterschiede zwischen diesen Funktionen und Techniken der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Anwendung enthält eine Seite namens **Farbverlauf Bitmap** , erstellt eine Bitmap mit Pixeln, die rote und blaue grauschattierungen zum Erstellen eines Verlaufs zu kombinieren. Das Programm erstellt acht verschiedene Kopien der Bitmap, verwenden alle verschiedene Verfahren zum Festlegen der Bitmap in Pixel. Jede dieser acht Bitmaps wird in einer separaten Methode erstellt, die auch eine kurze textbeschreibung des Verfahrens legt sie fest, und berechnet den Zeitaufwand für alle Pixel festgelegt. Jede Methode durchläuft die Pixel-Setting-Logik 100-Mal um eine bessere Schätzung für die Leistung zu erhalten.
+Können Sie sehen, die Leistungsunterschiede zwischen diesen Funktionen und Techniken der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Anwendung enthält eine Seite namens **Farbverlauf Bitmap** , erstellt eine Bitmap mit Pixeln, die rote und blaue grauschattierungen zum Erstellen eines Verlaufs zu kombinieren. Das Programm erstellt acht verschiedene Kopien der Bitmap, verwenden alle verschiedene Verfahren zum Festlegen der Bitmap in Pixel. Jede dieser acht Bitmaps wird in einer separaten Methode erstellt, die auch eine kurze textbeschreibung des Verfahrens legt sie fest, und berechnet den Zeitaufwand für alle Pixel festgelegt. Jede Methode durchläuft die Pixel-Setting-Logik 100-Mal um eine bessere Schätzung für die Leistung zu erhalten.
 
 ### <a name="the-setpixel-method"></a>Die SetPixel-Methode
 
@@ -280,7 +280,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 }
 ```
 
-Die einzige Frage lautet: Ist das Format ganze Zahl, der die `SKColor` in der Reihenfolge der Wert der `SKColorType.Rgba8888` color-Typ, oder die `SKColorType.Bgra8888` color-Typ, oder ist es etwas anderes vollständig? Die Antwort auf diese Frage wird in Kürze offengelegt werden.
+Die einzige Frage ist: Ist das ganzzahlige Format `SKColor` des Werts in der Reihenfolge `SKColorType.Rgba8888` des Farbtyps oder des `SKColorType.Bgra8888` Farbtyps, oder ist das ganz anders? Die Antwort auf diese Frage wird in Kürze offengelegt werden.
 
 ### <a name="the-setpixels-method"></a>Die SetPixels-Methode
 
@@ -294,7 +294,7 @@ Zur Erinnerung: `GetPixels` erhält eine `IntPtr` verweisen auf den Speicherbloc
 
 Zunächst erscheint es als ob `SetPixels` bietet mehr Leistung und Leistung als `GetPixels` während Sie weniger einfach. Mit `GetPixels` Sie erhalten Sie den Bitmap-Speicherblock und darauf zugreifen. Mit `SetPixels` Sie zuordnen und Zugriff auf bestimmte Menge an Arbeitsspeicher, und legen Sie dieses dann als Bitmap Speicherblocks.
 
-Während mit `SetPixels` bietet einen unterschiedlichen syntaktischen Vorteil: Sie können auf Pixelbits Bitmap mit einem Array zugreifen. Hier ist die Methode `GradientBitmapPage` , die diese Technik veranschaulicht. Die Methode definiert zuerst ein mehrdimensionales Byte-Array, das für die Bytes, der die Pixel der Bitmap. Die erste Dimension ist die Zeile, die zweite Dimension ist die Spalte, und die dritte Dimension entspricht die vier Komponenten der einzelnen Pixel:
+Die Verwendung `SetPixels` von bietet jedoch einen unterschiedlichen syntaktischen Vorteil: Mithilfe eines Arrays können Sie auf die Bitmap-Pixel Bits zugreifen. Hier ist die Methode `GradientBitmapPage` , die diese Technik veranschaulicht. Die Methode definiert zuerst ein mehrdimensionales Byte-Array, das für die Bytes, der die Pixel der Bitmap. Die erste Dimension ist die Zeile, die zweite Dimension ist die Spalte, und die dritte Dimension entspricht die vier Komponenten der einzelnen Pixel:
 
 ```csharp
 SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
@@ -499,7 +499,7 @@ Hier ist eine Tabelle, die die Ausführung der Zeitüberschreitung in Millisekun
 
 Aufrufen von erwartungsgemäß funktioniert, `SetPixel` 65.536 Zeiten lässt am geringsten Effeicient der Bitmap Pixel festgelegt. Ausfüllen einer `SKColor` Array und die Einstellung der `Pixels` Eigenschaft ist viel besser, und vergleicht auch zeigt, mit einigen der `GetPixels` und `SetPixels` Techniken. Arbeiten mit `uint` Pixelwerte ist im Allgemeinen schneller als separate Einstellung `byte` Komponenten und zum Konvertieren der `SKColor` Ganzzahl ohne Vorzeichen Mehrwert Mehraufwand an den Prozess.
 
-Es ist auch interessant, die verschiedene Farbverläufe verglichen werden soll: Die obersten Zeilen für jede Plattform entsprechen, und zeigen den Farbverlauf aus, wie gewünscht. Dies bedeutet, dass die `SetPixel` Methode und die `Pixels` Eigenschaft ordnungsgemäß Pixel von Farben, unabhängig vom zugrunde liegenden Pixelformat erstellen.
+Es ist auch interessant, die verschiedenen Farbverläufe zu vergleichen: Die obersten Zeilen der einzelnen Plattformen sind identisch, und Sie zeigen den Farbverlauf an, wie er beabsichtigt war. Dies bedeutet, dass die `SetPixel` Methode und die `Pixels` Eigenschaft ordnungsgemäß Pixel von Farben, unabhängig vom zugrunde liegenden Pixelformat erstellen.
 
 Die nächsten beiden Zeilen der IOS- und Android Screenshots sind identisch, die Bestätigung, die das kleine `MakePixel` Methode ordnungsgemäß definiert ist, für den standardmäßigen `Rgba8888` Pixelformat für diese Plattformen.
 
@@ -794,4 +794,4 @@ Der Code im Konstruktor greift auf jedes Pixel, führt eine bitweise AND-Operati
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

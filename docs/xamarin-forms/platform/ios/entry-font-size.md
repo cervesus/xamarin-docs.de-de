@@ -1,24 +1,24 @@
 ---
-title: Eintrag Schriftgrad unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die plattformspezifischen iOS nutzen, die den Schriftgrad eines Eintrags skaliert wird.
+title: Eingabe Schriftgröße unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung nutzen, die den Schrift Grad eines Eintrags skaliert.
 ms.prod: xamarin
 ms.assetid: E8881D4E-902B-4397-A43E-916B2885EC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 24e8c0e0b963cda7d3240c47ee526001db9d4533
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f0f5ca8aa7959d5c305c29c96f972dccc43a65ff
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926058"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648138"
 ---
-# <a name="entry-font-size-on-ios"></a>Eintrag Schriftgrad unter iOS
+# <a name="entry-font-size-on-ios"></a>Eingabe Schriftgröße unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses iOS-Plattform-spezifische wird verwendet, um den Schriftgrad des Skalieren einer [ `Entry` ](xref:Xamarin.Forms.Entry) um sicherzustellen, dass es sich bei der eingegebenen Text im Steuerelement geeignet ist. Es ist in XAML verwendet, durch Festlegen der [ `Entry.AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) angefügten Eigenschaft, um eine `boolean` Wert:
+Diese plattformspezifische IOS-Datei wird verwendet, um den Schrift Grad [`Entry`](xref:Xamarin.Forms.Entry) eines zu skalieren, um sicherzustellen, dass der eingeputzte Text in das Steuerelement passt. Es ist in XAML verwendet, durch Festlegen der [ `Entry.AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <ContentPage ...
@@ -55,6 +55,6 @@ Das Ergebnis ist, den Schriftgrad des der [ `Entry` ](xref:Xamarin.Forms.Entry) 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

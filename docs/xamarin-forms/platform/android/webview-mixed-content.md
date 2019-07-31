@@ -1,24 +1,24 @@
 ---
-title: Gemischter Inhalt unter Android WebView
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, nutzen Sie die Android-Plattform-spezifische, die gemischte Inhalte in einer WebView in Anwendungen angezeigt, Ziel API 21 oder höher.
+title: Gemischter WebView-Inhalt unter Android
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Datei nutzen, die gemischte Inhalte in einer WebView in Anwendungen mit API 21 oder höher anzeigte.
 ms.prod: xamarin
 ms.assetid: 68F908F3-04C5-4B91-B6E5-B7E8357B4154
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 67ab68ceda69f9000bb160d1e443fd82ad7b61b3
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 286a7dceead327d727110d4ebbcecbc2341345b3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924569"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656070"
 ---
-# <a name="webview-mixed-content-on-android"></a>Gemischter Inhalt unter Android WebView
+# <a name="webview-mixed-content-on-android"></a>Gemischter WebView-Inhalt unter Android
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses Android-Plattform-spezifische steuert, ob eine [ `WebView` ](xref:Xamarin.Forms.WebView) können gemischten Inhalt anzeigen in Anwendungen, die auf API 21 oder höher abzielen. Gemischte Inhalte sind Inhalte, die anfänglich über eine HTTPS-Verbindung geladen, aber die Ressourcen (z. B. Bilder, Audio, Video, Stylesheets, Skripts) über eine HTTP-Verbindung lädt. Es ist in XAML verwendet, durch Festlegen der [ `WebView.MixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) angefügte Eigenschaft auf den Wert der [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) Enumeration:
+Mit diesem Android-plattformspezifischen Steuer [`WebView`](xref:Xamarin.Forms.WebView) Element wird gesteuert, ob ein gemischter Inhalt in Anwendungen mit API 21 oder höher angezeigt werden kann. Gemischte Inhalte sind Inhalte, die anfänglich über eine HTTPS-Verbindung geladen, aber die Ressourcen (z. B. Bilder, Audio, Video, Stylesheets, Skripts) über eine HTTP-Verbindung lädt. Es ist in XAML verwendet, durch Festlegen der [ `WebView.MixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) angefügte Eigenschaft auf den Wert der [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) Enumeration:
 
 ```xaml
 <ContentPage ...
@@ -49,7 +49,7 @@ Das Ergebnis ist, die einem angegebenen [ `MixedContentHandling` ](xref:Xamarin.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [Androidspecific-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [Androidspecific. AppCompat-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

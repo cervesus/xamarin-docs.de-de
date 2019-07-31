@@ -7,16 +7,16 @@ ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: df45908af9e2d13dcaeff732e8e8b1b49c523934
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218186"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647654"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>Die zirkuläre SkiaSharp-Farbverläufe
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Die [ `SKShader` ](xref:SkiaSharp.SKShader) -Klasse definiert statische Methoden zum Erstellen von vier verschiedenen Typen von Farbverläufen an. Die [ **SkiaSharp linearer Farbverlauf** ](linear-gradient.md) Artikel behandelt die [ `CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient*) Methode. Dieser Artikel behandelt die anderen drei Typen von Farbverläufen an, die auf Kreise basieren.
 
@@ -54,7 +54,7 @@ Die ersten beiden Argumente geben Sie den Mittelpunkt eines Kreises und dem Radi
 
 Bei Verwendung von `CreateRadialGradient` um einen Kreis zu füllen, können Sie die Mitte des Farbverlaufs auf den Mittelpunkt des Kreises und den Radius des Farbverlaufs entspricht, der den Radius des Kreises festlegen. In diesem Fall die `SKShaderTileMode` Argument hat keine Auswirkungen auf das Rendering des Farbverlaufs entspricht. Aber wenn die von den Farbverlauf ausgefüllten Bereich größer als den Kreis, der von der Gradient, definiert die `SKShaderTileMode` Argument hat nachhaltige Auswirkungen auf außerhalb des Kreises Vorgänge.
 
-Die Auswirkungen der `SKShaderMode` wird veranschaulicht, der **Radialer Farbverlauf** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel. Die XAML-Datei für diese Seite instanziiert ein `Picker` , ermöglicht Ihnen die Auswahl eines der drei Elemente von der `SKShaderTileMode` Enumeration:
+Die Auswirkungen der `SKShaderMode` wird veranschaulicht, der **Radialer Farbverlauf** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel. Die XAML-Datei für diese Seite instanziiert ein `Picker` , ermöglicht Ihnen die Auswahl eines der drei Elemente von der `SKShaderTileMode` Enumeration:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ Dieser Code erstellt einen Farbverlauf mit Schwarz, zentriert, um 100 Pixel aus 
 
 [![Radialen Farbverlauf](circular-gradients-images/RadialGradient.png "Radialer Farbverlauf")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-In allen drei Fällen füllt der Farbverlauf für den Zeichenbereich. Der Farbverlauf außerhalb der Radius wird auf dem Bildschirm "iOS" auf der linken Seite die letzte Farbe an, die weiß ist fortgesetzt. Das ist das Ergebnis der `SKShaderTileMode.Clamp`. Die Android-Bildschirm zeigt die Auswirkungen der `SKShaderTileMode.Repeat`: Von 100 Pixel von der Mitte beginnt der Gradient erneut mit der ersten Farbe, die Schwarz ist. Der Farbverlauf wird jeder 100 Pixel von Radius wiederholt. 
+In allen drei Fällen füllt der Farbverlauf für den Zeichenbereich. Der Farbverlauf außerhalb der Radius wird auf dem Bildschirm "iOS" auf der linken Seite die letzte Farbe an, die weiß ist fortgesetzt. Das ist das Ergebnis der `SKShaderTileMode.Clamp`. Der Android-Bildschirm zeigt die `SKShaderTileMode.Repeat`Auswirkung von: Bei 100 Pixeln von der Mitte beginnt der Farbverlauf erneut mit der ersten Farbe, die schwarz ist. Der Farbverlauf wird jeder 100 Pixel von Radius wiederholt. 
 
 Die universelle Windows-Plattform-Bildschirm auf die richtige wie `SKShaderTileMode.Mirror` bewirkt, dass die Gradienten an, die alternative Richtungen. Der erste Farbverlauf liegt zwischen Schwarz, zentriert und weiß, an einen Radius von 100 Pixel. Das nächste ist von den Radius von 100 Pixel auf Schwarz festgelegt, an einen Radius von 200 Pixel weiß, und weiter Farbverlaufs wieder rückgängig gemacht.
 
@@ -620,4 +620,4 @@ Die beiden Kreise haben, wird von `offCenter` und `center`. Der Kreis zentriert 
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

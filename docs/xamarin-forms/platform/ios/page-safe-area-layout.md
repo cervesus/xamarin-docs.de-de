@@ -1,24 +1,24 @@
 ---
-title: Sichere Führungslinie für IOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie der iOS-Plattform-spezifische genutzt, die sicherstellt, dass der Inhalt der Seite auf einen Bereich des Bildschirms befindet, die für alle Geräte sicher ist, die iOS 11 und höher verwenden.
+title: Handbuch zum Safe Area Layout unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung nutzen, um sicherzustellen, dass Seiteninhalte in einem Bereich des Bildschirms positioniert sind, der für alle Geräte mit IOS 11 und höher sicher ist.
 ms.prod: xamarin
 ms.assetid: 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: f38064027b4eb6dada2becc69b4163d6fa6082fb
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c6a2ec5a4d1466b7118e6cc7b03cc5518b27e2fb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65927021"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644542"
 ---
-# <a name="safe-area-layout-guide-on-ios"></a>Sichere Führungslinie für IOS
+# <a name="safe-area-layout-guide-on-ios"></a>Handbuch zum Safe Area Layout unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses iOS-Plattform-spezifische wird verwendet, um sicherzustellen, dass der Inhalt der Seite auf einen Bereich des Bildschirms befindet, die für alle Geräte sicher ist, die iOS 11 und höher verwenden. Insbesondere leichter sicherstellen, dass der Inhalt wird nicht gerundet Gerät Ecken, home Indikators oder der Sensor wohnkosten auf einem iPhone X abgeschnitten. Es ist in XAML verwendet, durch Festlegen der `Page.UseSafeArea` angefügten Eigenschaft, um eine `boolean` Wert:
+Diese IOS-plattformspezifische wird verwendet, um sicherzustellen, dass der Seiten Inhalt in einem Bereich des Bildschirms positioniert ist, der für alle Geräte, die IOS 11 und höher verwenden, sicher ist. Insbesondere leichter sicherstellen, dass der Inhalt wird nicht gerundet Gerät Ecken, home Indikators oder der Sensor wohnkosten auf einem iPhone X abgeschnitten. Es ist in XAML verwendet, durch Festlegen der `Page.UseSafeArea` angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <ContentPage ...
@@ -65,6 +65,6 @@ protected override void OnAppearing()
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

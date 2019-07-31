@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1048d954656152f47509887ed6acf21962a787b2
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4ff0fa177bf28f00182c202ffba770d4be61b3c7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510476"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643355"
 ---
 # <a name="marshmallow-features"></a>Marshmallow-Features
 
@@ -34,9 +34,9 @@ Obwohl sich die Marshmallow-Version hauptsächlich auf "Polnisch und Qualität" 
 
 -   **Lauf Zeit Berechtigungen** &ndash; Diese Erweiterung ermöglicht es Benutzern, Sicherheits Berechtigungen von Fall zu Fall zur Laufzeit zu genehmigen. 
 
--   **Authentifizierungs Verbesserungen** Ab Android Marshmallow können apps nun Fingerabdrucksensoren verwenden, um Benutzer zu authentifizieren, und eine neue Funktion zum Bestätigen von Anmelde Informationen minimiert die Eingabe von Kenn Wörtern.  &ndash; 
+-   **Authentifizierungs Verbesserungen** Ab Android Marshmallow können apps nun Fingerabdrucksensoren verwenden, um Benutzer zu authentifizieren, und eine neue Funktion zum Bestätigen von Anmelde Informationen minimiert die Eingabe von Kenn Wörtern. &ndash; 
 
--   **App-Verknüpfung** Mit dieser Funktion entfällt die Notwendigkeit, dass die APP beim Auswählen von Apps automatisch mit Webdomänen verknüpft wird.  &ndash; 
+-   **App-Verknüpfung** Mit dieser Funktion entfällt die Notwendigkeit, dass die APP beim Auswählen von Apps automatisch mit Webdomänen verknüpft wird. &ndash; 
 
 -   **Direkte Freigabe** Sie können *direkte Freigabe Ziele* definieren, die die Freigabe für Benutzer schnell und intuitiv machen. diese Funktion ermöglicht es utoren, Inhalte für andere apps freizugeben. &ndash; 
 
@@ -143,7 +143,7 @@ Viele der in Android Marshmallow eingeführten Änderungen sind darauf ausgerich
 Das Android-Berechtigungssystem wurde seit Android Lollipop erheblich optimiert und vereinfacht. In Android Marshmallow erteilen Benutzerberechtigungen für eine Groß-/Kleinschreibung zur Laufzeit anstatt zur Installationszeit. Um dieses Feature unter Android Marshmallow und höher zu unterstützen, entwerfen Sie Ihre APP so, dass der Benutzer zur Laufzeit zur Eingabe von Berechtigungen aufgefordert wird (in dem Kontext, in dem die Berechtigungen benötigt werden). Diese Änderung erleichtert es Benutzern, sofort mit der Verwendung Ihrer APP zu beginnen, da Sie den Prozess der Installation und Aktualisierung Ihrer APP optimiert. 
 
 Weitere Informationen zum Implementieren von Lauf Zeit Berechtigungen in xamarin. Android-Apps finden Sie [unter Anfordern von Lauf Zeit Berechtigungen in Android Marshmallow](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/) .
-Xamarin bietet auch eine Beispiel-APP, die veranschaulicht, wie Lauf Zeit Berechtigungen in Android Marshmallow (und höher) funktionieren: [Runtimeberechtigungen](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions).
+Xamarin bietet auch eine Beispiel-APP, die veranschaulicht, wie Lauf Zeit Berechtigungen in Android Marshmallow (und höher) funktionieren: [Runtimeberechtigungen](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions).
 
 Diese Beispiel-App veranschaulicht Folgendes:
 
@@ -175,7 +175,7 @@ Die im folgenden beschriebenen Links und Beispiel-Apps können Ihnen helfen, sic
 Auf Geräten, die die Fingerabdruck Überprüfung unterstützen, können Sie `FingerPrintManager` die neue Klasse verwenden, um einen Benutzer zu authentifizieren.
 Weitere Informationen zur Funktion Fingerabdruckauthentifizierung in Android Marshmallow finden Sie unter [Fingerabdruckauthentifizierung](https://developer.android.com/preview/api-overview.html#fingerprint-authentication).
 
-Xamarin bietet eine Beispiel-APP, die die Verwendung registrierter Fingerabdrücke zum Authentifizieren eines Benutzers in Ihrer APP veranschaulicht: [Fingerprintdialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog).
+Xamarin bietet eine Beispiel-APP, die die Verwendung registrierter Fingerabdrücke zum Authentifizieren eines Benutzers in Ihrer APP veranschaulicht: [Fingerprintdialog](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog).
 
 So verwenden Sie diese Beispiel-App:
 
@@ -201,7 +201,7 @@ Eine Beispiel-APP ist verfügbar, die die Verwendung der sprachinteraktions-API 
 Mithilfe des neuen Features zum *bestätigen* der Anmelde Informationen von Android Marshmallow können Sie Benutzern die Möglichkeit geben, sich an App-spezifische Kenn Wörter zu erinnern und Sie einzugeben, indem Sie Sie basierend auf der Sperre Ihres Geräts authentifizieren.
 Zu diesem Zweck verwenden Sie die neue `SetUserAuthenticationValidityDurationSeconds` Methode `KeyGenerator`von. Verwenden Sie `KeyGuardManager`die `CreateConfirmDeviceCredentialIntent` -Methode, um den Benutzer in Ihrer APP erneut zu authentifizieren. Weitere Informationen zu diesem neuen Feature in Android Marshmallow finden Sie unter [Confirm Credential](https://developer.android.com/preview/api-overview.html#confirm-credential).
 
-Xamarin bietet eine Beispiel-APP, die die Verwendung von Geräte Anmelde Informationen (z. b. PIN, Muster oder Kennwort) in Ihrer APP veranschaulicht: [Confirmcredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
+Xamarin bietet eine Beispiel-APP, die die Verwendung von Geräte Anmelde Informationen (z. b. PIN, Muster oder Kennwort) in Ihrer APP veranschaulicht: [Confirmcredential](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)
 
 So verwenden Sie diese Beispiel-App:
 
@@ -250,7 +250,7 @@ Android Lollipop hat den [Material Entwurf](http://www.google.com/design/spec/ma
 Wenn Sie die [Entwurfs Unterstützungs Bibliothek](https://developer.android.com/tools/support-library/features.html#design) in ihrer xamarin. Android-App nutzen möchten, laden Sie das xamarin [xamarin-Unterstützungs Bibliotheks Design](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) -nuget-Paket herunter, und installieren Sie es.
 
 Weitere Details (einschließlich Codebeispiele) zur Verwendung der Material Design-Unterstützungs Bibliothek in xamarin. Android-Apps finden Sie unter Design [Bibliothek für die Android-Unterstützung](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/) .
-Xamarin bietet eine Beispiel-APP, die die neue Android-Entwurfs Bibliothek in xamarin &ndash; . Android [cheesesquare untersucht](https://developer.xamarin.com/samples/monodroid/android5.0/Cheesesquare).
+Xamarin bietet eine Beispiel-APP, die die neue Android-Entwurfs Bibliothek in xamarin &ndash; . Android [cheesesquare untersucht](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-cheesesquare).
 In diesem Beispiel werden die folgenden Funktionen der Entwurfs Bibliothek veranschaulicht:
 
 
@@ -285,6 +285,6 @@ In diesem Artikel wurde Android Marshmallow vorgestellt und erläutert, wie die 
 - [Android SDK](https://developer.android.com/sdk/index.html#Other)
 - [Übersicht über Features](https://developer.android.com/preview/api-overview.html)
 - [Anmerkungen zu dieser Version](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1.99/index.md)
-- [Runtimeberechtigungen (Beispiel)](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions)
-- [Confirmcredential (Beispiel)](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential)
-- [Fingerprintdialog (Beispiel)](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog)
+- [Runtimeberechtigungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions)
+- [Confirmcredential (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)
+- [Fingerprintdialog (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)

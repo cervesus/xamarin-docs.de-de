@@ -7,22 +7,22 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b4cd84e9134db2b2106af3205f189fbc2a92bdcc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 484a3ac742d162e1d6faaa38ad2e4eb056ed64a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018308"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644484"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in SkiaSharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erlernen der Grundlagen von SkiaSharp-Zeichnungen, einschließlich Leinwände, und Zeichnen von Objekten_
 
 In diesem Artikel erläutert die Konzepte der Zeichnen von Grafiken in Xamarin.Forms mithilfe von SkiaSharp, einschließlich der Erstellung einer `SKCanvasView` Objekt zum Hosten der Grafik, Verarbeitung der `PaintSurface` -Ereignis, und Verwenden einer `SKPaint` Objekt, das Angeben von Farbe und andere Funktionen zum Zeichnen Attribute.
 
-Die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm enthält den Beispielcode für diese Reihe von SkiaSharp-Artikeln. Die erste Seite berechtigt ist **einfachen Kreises** und ruft die Seitenklasse [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Dieser Code zeigt, wie Sie das Zeichnen eines Kreises in der Mitte der Seite mit einem Radius von 100 Pixel. Die Gliederung des Kreises ist rot, und das Innere des Kreises ist Blau.
+Die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm enthält den Beispielcode für diese Reihe von SkiaSharp-Artikeln. Die erste Seite berechtigt ist **einfachen Kreises** und ruft die Seitenklasse [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Dieser Code zeigt, wie Sie das Zeichnen eines Kreises in der Mitte der Seite mit einem Radius von 100 Pixel. Die Gliederung des Kreises ist rot, und das Innere des Kreises ist Blau.
 
 ![](circle-images/circleexample.png "Ein blauer Kreis rot umrandet")
 
@@ -153,7 +153,7 @@ Ein `SKPaint` Objekt ist nicht viel mehr als eine Auflistung von Grafiken, die E
 > [!NOTE]
 > Die `SKPaint` -Klasse definiert ein [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias) in das Rendern von Grafiken Antialiasing zu aktivieren. Anti-Aliasing im Allgemeinen führt visuell weichere Kanten, sollten Sie wahrscheinlich zum Festlegen dieser Eigenschaft auf `true` in den meisten Ihrer `SKPaint` Objekte. Der Einfachheit halber, diese Eigenschaft ist _nicht_ in den meisten die Beispielseiten festgelegt.
 
-Obwohl die Breite der Umriss des Kreises als 25 Pixeln angegeben wird &mdash; oder ein Viertel der den Radius des Kreises &mdash; anscheinend schlankere werden, und es gibt ein guter Grund dafür: Halbe Breite der Linie, die durch das blaue Kreis verdeckt wird. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
+Obwohl die Breite des Kreis Gliederung als 25 Pixel &mdash; oder ein Viertel des Radius des Kreises &mdash; angegeben ist, scheint es dünner zu sein, und es gibt einen guten Grund dafür: Die Hälfte der Linienbreite wird durch den blauen Kreis verdeckt. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
 
 Im folgenden Beispiel in der [Integrieren von Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) Artikel veranschaulicht dies visuell.
 
@@ -161,4 +161,4 @@ Im folgenden Beispiel in der [Integrieren von Xamarin.Forms](~/xamarin-forms/use
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

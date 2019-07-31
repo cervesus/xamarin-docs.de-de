@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 653b6e3d41f9acb4ee3e9ee3626e72220687ccb8
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 79f97382b6d8bd7875e4921c859f92cd6b321687
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510103"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646321"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin. Android-ListView
 
@@ -221,15 +221,15 @@ Diese Themen wurden vorgestellt `ListView` und enthalten einige Beispiele für d
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Accessoryviews (Beispiel)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
-- [Basictableandroid (Beispiel)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
-- [Basictableadapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
-- [Builtinviews (Beispiel)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
-- [Customrowview (Beispiel)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
-- [Fastscroll (Beispiel)](https://developer.xamarin.com/samples/monodroid/FastScroll/)
-- [Sectionindex (Beispiel)](https://developer.xamarin.com/samples/monodroid/SectionIndex/)
-- [Simplecurrsortableadapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
-- [Cursor TableAdapter (Beispiel)](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
+- [Accessoryviews (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/accessoryviews)
+- [Basictableandroid (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableandroid)
+- [Basictableadapter (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableadapter)
+- [Builtinviews (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/builtinviews)
+- [Customrowview (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/customrowview)
+- [Fastscroll (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fastscroll)
+- [Sectionindex (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sectionindex)
+- [Simplecurrsortableadapter (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/simplecursortableadapter)
+- [Cursor TableAdapter (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/cursortableadapter)
 - [Tutorial zum Aktivitäts Lebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Arbeiten mit Tabellen und Zellen (in xamarin. IOS)](~/ios/user-interface/controls/tables/index.md)
 - [ListView-Klassen Verweis](xref:Android.Widget.ListView)

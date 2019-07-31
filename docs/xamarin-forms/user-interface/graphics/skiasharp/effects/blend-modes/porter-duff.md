@@ -7,16 +7,16 @@ ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60de4b8abc200ac7892838765210167f8a79dcfe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61205559"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645833"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter-Duff Füllmethoden einheitlich
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Die Blend-Modi Porter-Duff heißen nach Thomas Porter und Tom Duff, der eine Algebra der Zusammensetzung bei der Arbeit für Lucasfilm entwickelt hat. Die Artikel [ _Zusammensetzung Digitalbilder_ ](https://graphics.pixar.com/library/Compositing/paper.pdf) veröffentlicht wurde, in der Ausgabe vom Juli 1984 _Computergrafiken_, Seiten von 253 auf 259. Diese Füllmethoden für das zusammensetzen, die verschiedenen Bilder in einer zusammengesetzten Szene zusammenstellen, ist von entscheidender Bedeutung sind:
 
@@ -279,11 +279,11 @@ Es gibt möglicherweise Versuchung, ersetzen Sie die Bitmaps in der **Porter-Duf
 
 ## <a name="using-mattes-with-porter-duff"></a>Verwenden von Masken mit Porter-Duff
 
-Die **Durchbruch Zusammensetzung** Seite zeigt ein Beispiel für eine Aufgabe klassischen zusammensetzen: Ein Bild muss zusammengestellt werden, in mehrere Stücke aufgeteilt, einschließlich einer Bitmap mit einem Hintergrund, der entfernt werden muss. Hier ist die **SeatedMonkey.jpg** Bitmap mit den problematischen Hintergrund:
+Die zusammengesetzte Seite " **Brick-Wall Zusammensetzung** " zeigt ein Beispiel für eine klassische Zusammensetzung-Aufgabe: Ein Bild muss aus mehreren Teilen zusammengestellt werden, einschließlich einer Bitmap mit einem Hintergrund, der entfernt werden muss. Hier ist die **SeatedMonkey.jpg** Bitmap mit den problematischen Hintergrund:
 
 ![Sitzen Monkey](porter-duff-images/SeatedMonkey.jpg "sitzen Monkey-Objekt")
 
-Als Vorbereitung für die Zusammensetzung zu einer entsprechenden _Matte_ erstellt wurde, dies ist eine andere Bitmap, die andernfalls Schwarz, wobei das Bild angezeigt werden soll und transparent ist. Diese Datei heißt **SeatedMonkeyMatte.png** und gehört zu den Ressourcen in der **Media** Ordner in der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel :
+Als Vorbereitung für die Zusammensetzung zu einer entsprechenden _Matte_ erstellt wurde, dies ist eine andere Bitmap, die andernfalls Schwarz, wobei das Bild angezeigt werden soll und transparent ist. Diese Datei heißt **SeatedMonkeyMatte.png** und gehört zu den Ressourcen in der **Media** Ordner in der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel :
 
 ![Sitzen Monkey Matte](porter-duff-images/SeatedMonkeyMatte.png "sitzen Monkey-Maske")
 
@@ -505,9 +505,9 @@ Die Notation in der folgenden Tabelle werden die folgenden Abkürzungen verwende
 - **SA** wird von der Quelle alpha-Kanal
 - **SC** ist die Quelle RGB-Farbe
 
-RGB-Farben werden vor dem Alphawert multipliziert. Z. B. wenn **Sc** reines Rot stellt jedoch **Sa** ist 0 x 80, dann ist die RGB-Farbe **(0 x 80, 0, 0)**. Wenn **Sa** ist 0, und klicken Sie dann alle RGB-Komponenten sind auch 0 (null).
+RGB-Farben werden vor dem Alphawert multipliziert. Z. B. wenn **Sc** reines Rot stellt jedoch **Sa** ist 0 x 80, dann ist die RGB-Farbe **(0 x 80, 0, 0)** . Wenn **Sa** ist 0, und klicken Sie dann alle RGB-Komponenten sind auch 0 (null).
 
-Das Ergebnis wird angezeigt, in Klammern mit der alpha-Kanal und die RGB-Farbe, die durch ein Komma getrennt: **[Alphafarbe]**. Für die Farbe erfolgt die Berechnung für die Komponenten roten, grünen und blauen getrennt:
+Das Ergebnis wird angezeigt, in Klammern mit der alpha-Kanal und die RGB-Farbe, die durch ein Komma getrennt: **[Alphafarbe]** . Für die Farbe erfolgt die Berechnung für die Komponenten roten, grünen und blauen getrennt:
 
 | Modus       | Vorgang |
 | ---------- | --------- |
@@ -526,11 +526,11 @@ Das Ergebnis wird angezeigt, in Klammern mit der alpha-Kanal und die RGB-Farbe, 
 | `Plus`     | ["Sa" + "Daten", "Sc" + "Dc"] |
 | `Modulate` | [Sa· Da, Sc· DC] | 
 
-Diese Vorgänge sind einfacher, wenn analysieren **Da** und **Sa** sind entweder 0 oder 1. Z. B. für die Standardeinstellung `SrcOver` Modus, wenn **Sa** gleich 0 ist, klicken Sie dann **Sc** ist auch 0, und das Ergebnis ist **[Da, Dc]**, die Ziel-Alpha und die Farbe. Wenn **Sa** 1 ist, lautet das Ergebnis **[Sa, Sc]**, die Alpha für Quelle und die Farbe, oder **[1, Sc]**.
+Diese Vorgänge sind einfacher, wenn analysieren **Da** und **Sa** sind entweder 0 oder 1. Z. B. für die Standardeinstellung `SrcOver` Modus, wenn **Sa** gleich 0 ist, klicken Sie dann **Sc** ist auch 0, und das Ergebnis ist **[Da, Dc]** , die Ziel-Alpha und die Farbe. Wenn **Sa** 1 ist, lautet das Ergebnis **[Sa, Sc]** , die Alpha für Quelle und die Farbe, oder **[1, Sc]** .
 
-Die `Plus` und `Modulate` Modi unterscheiden sich geringfügig von den anderen, neue Farben aus der Kombination von der Quelle und Ziel führen können. Die `Plus` Modus interpretiert werden kann, entweder mit Byte oder Gleitkomma-Komponenten. In der **Porter-Duff Raster** Seite, die zuvor gezeigte, wird der Zielfarbe **("0xC0", 0 x 80, 0 x 00)** und die Quellfarbe **(0 x 00, 0 x 80, "0xC0")**. Jedes Paar von Komponenten hinzugefügt, aber die Summe wird am 0xFF gebunden sind. Das Ergebnis ist die Farbe **("0xC0", 0xFF "0xC0")**. Dies ist die Farbe, die in die Schnittmenge angezeigt.
+Die `Plus` und `Modulate` Modi unterscheiden sich geringfügig von den anderen, neue Farben aus der Kombination von der Quelle und Ziel führen können. Die `Plus` Modus interpretiert werden kann, entweder mit Byte oder Gleitkomma-Komponenten. In der **Porter-Duff Raster** Seite, die zuvor gezeigte, wird der Zielfarbe **("0xC0", 0 x 80, 0 x 00)** und die Quellfarbe **(0 x 00, 0 x 80, "0xC0")** . Jedes Paar von Komponenten hinzugefügt, aber die Summe wird am 0xFF gebunden sind. Das Ergebnis ist die Farbe **("0xC0", 0xFF "0xC0")** . Dies ist die Farbe, die in die Schnittmenge angezeigt.
 
-Für die `Modulate` -Modus die RGB-Werte müssen zu Gleitkommazahl konvertiert werden. Ist der Zielfarbe **(0,75, 0,5, 0)** und die Quelle **(0, 0,5, 0,75)**. Die RGB-Komponenten sind miteinander multipliziert jede, und das Ergebnis ist **("0", "0.25", "0")**. Dies ist der Farbe angezeigt, in der Schnittmenge in der **Porter-Duff Raster** Seite für diesen Modus.
+Für die `Modulate` -Modus die RGB-Werte müssen zu Gleitkommazahl konvertiert werden. Ist der Zielfarbe **(0,75, 0,5, 0)** und die Quelle **(0, 0,5, 0,75)** . Die RGB-Komponenten sind miteinander multipliziert jede, und das Ergebnis ist **("0", "0.25", "0")** . Dies ist der Farbe angezeigt, in der Schnittmenge in der **Porter-Duff Raster** Seite für diesen Modus.
 
 Die **Porter-Duff Transparenz** auf der Seite können Sie untersuchen, wie die Porter-Duff Füllmethoden einheitlich für grafische Objekte verwendet werden, die teilweise transparent sind. Die XAML-Datei enthält eine `Picker` mit den Porter-Duff Modi:
 
@@ -903,4 +903,4 @@ Die folgenden Screenshots zeigen die drei Typen von verschiedenen Übergänge, j
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

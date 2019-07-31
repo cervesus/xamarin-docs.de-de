@@ -1,54 +1,54 @@
 ---
-title: Benutzerdefinierte Dokumenteigenschaften-Symbole in Xamarin.iOS
-description: Dieser Artikel behandelt, einschließlich und Verwalten von ein Bildobjekt in einer Xamarin.iOS-app als einen benutzerdefinierten Typ Dokumentsymbol verwendet werden soll.
+title: Benutzerdefinierte Dokument Symbole in xamarin. IOS
+description: In diesem Artikel wird das einschließen und Verwalten eines Image Assets in einer xamarin. IOS-App behandelt, die als benutzerdefiniertes Dokumenttyp Symbol verwendet werden soll.
 ms.prod: xamarin
 ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/23/2017
-ms.openlocfilehash: 7520d3984a204dbceb67ef5310a10b1571f03127
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 1125b0c420d6dbd23c5539a2183d531bc0d6089f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827387"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643002"
 ---
-# <a name="custom-document-icons-in-xamarinios"></a>Benutzerdefinierte Dokumenteigenschaften-Symbole in Xamarin.iOS
+# <a name="custom-document-icons-in-xamarinios"></a>Benutzerdefinierte Dokument Symbole in xamarin. IOS
 
-_Dieser Artikel behandelt, einschließlich und Verwalten von ein Bildobjekt in einer Xamarin.iOS-app als einen benutzerdefinierten Typ Dokumentsymbol verwendet werden soll._
+_In diesem Artikel wird das einschließen und Verwalten eines Image Assets in einer xamarin. IOS-App behandelt, die als benutzerdefiniertes Dokumenttyp Symbol verwendet werden soll._
 
-Wenn eine Xamarin.iOS-app unterstützt, ein bestimmtes Dokument zu laden, kann der Entwickler Symbole, die vom System verwendet wird, wenn es auf diesen Dokumenttyp, z. B. wenn ein Benutzer unten ein Anhang in hält trifft Bereitstellen der *Mail-Anwendung* als hier gezeigt:
+Wenn eine xamarin. IOS-APP das Laden eines bestimmten Dokument Typs unterstützt, kann der Entwickler beim Auffinden dieses Dokument Typs Symbole bereitstellen, die vom System verwendet werden, z. b. Wenn ein Benutzer eine Anlage in der e- *Mail-Anwendung* ablegt, wie hier gezeigt:
 
- [![](custom-document-types-images/17.png "Ein Beispiel für Dokumentsymbole")](custom-document-types-images/17.png#lightbox)
+ [![](custom-document-types-images/17.png "Ein Beispiel für Dokumenttyp Symbole")](custom-document-types-images/17.png#lightbox)
 
-Entwickler kann die Dokumenttypinformationen hinzufügen, für die app eine Datei im Format Öffnen durch Einschließen der Wörterbucheinträge für kann die `CFBundleTypeName` Zeichenfolge und `LSItemContentTypes` Arrays in der app `Info.plist`. Die Symbole für den Dokumenttyp wechseln Sie der `CFBundleTypeIconFiles` Array. Wenn ein Dokumentsymbol nicht angegeben wird, wird iOS aus dem app-Symbol abgeleitet werden.
-Symbole können für verschiedene Größen, optimiert für die verschiedenen Lösungen für Geräte bereitgestellt werden. 
+Der Entwickler kann Dokumenttyp Informationen für ein Dateiformat hinzufügen, das die APP öffnen kann, indem Sie Wörterbuch `CFBundleTypeName` Einträge für `LSItemContentTypes` die Zeichenfolge und das `Info.plist`Array in der der APP einschließt. Die Symbole für den Dokumenttyp werden im `CFBundleTypeIconFiles` Array angezeigt. Wenn ein Dokument Symbol nicht bereitgestellt wird, leitet IOS eines von dem App-Symbol ab.
+Symbole können für verschiedene Größen bereitgestellt werden, die für die verschiedenen Geräte Auflösungen optimiert sind. 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-So weisen Sie diese Werte in Visual Studio für Mac verwenden die **Dokumenttypen** unter im Abschnitt der **erweitert** Registerkarte die `Info.plist` -Editor, um den Dokumenttyp hinzufügen und Bildsymbole zuzuweisen. Hier ist z. B. einen Screenshot der Registrierung für PDF-Unterstützung:
+Um diese Werte in Visual Studio für Mac zuzuweisen, verwenden Sie den Abschnitt **Dokumenttypen** auf der `Info.plist` Registerkarte Erweitert im Editor, um den Dokumenttyp hinzuzufügen und Bildsymbole zuzuweisen. Hier sehen Sie beispielsweise einen Screenshot, der die Registrierung für die PDF-Unterstützung anzeigt:
 
- [![](custom-document-types-images/18.png "Abschnitt \"Dokumenttypen\" unter der Registerkarte \"Erweitert\" auf \"Info.plist\"-editor")](custom-document-types-images/18.png#lightbox)
+ [![](custom-document-types-images/18.png "Der Abschnitt \"Dokumenttypen\" auf der Registerkarte \"Erweitert\" im Editor \"Info. plist\"")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Um diese Werte in Visual Studio zuzuweisen, verwenden die **Dokumenttypen** unter im Abschnitt der **erweitert** Registerkarte die `Info.plist`:
+Um diese Werte in Visual Studio zuzuweisen, verwenden Sie den Abschnitt **Dokumenttypen** auf der Registerkarte Erweitert `Info.plist`auf der Registerkarte Erweitert:
 
- ![](custom-document-types-images/doc01w.png "Öffnen Sie den Abschnitt \"Dokumente\" unter der Registerkarte \"Erweitert\"")
+ ![](custom-document-types-images/doc01w.png "Dokumenttypen Abschnitt auf der Registerkarte \"Erweitert\" öffnen")
 
-Klicken Sie auf die **Dokumenttyp hinzufügen** Schaltfläche, und füllen Sie die erforderlichen Felder:
+Klicken Sie auf die Schaltfläche **Dokumenttyp hinzufügen** , und füllen Sie die erforderlichen Felder aus:
 
-![](custom-document-types-images/doc02w.png "Das Formular Dokumenttyp hinzufügen")
+![](custom-document-types-images/doc02w.png "Das Formular \"Dokumenttyp hinzufügen\"")
 
 -----
 
 
-Weitere Informationen zu Typen von Dokumenten, finden Sie in der Apple [Uniform Typverweis Bezeichner](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) und [Interaktion Programmierung Dokumentthemen für iOS](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html).
+Weitere Informationen zu Dokumenttypen finden Sie unter Referenz zu den [einheitlichen Typbezeichner](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) von Apple und in den [Programmierthemen zur Dokument Interaktion für IOS](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html).
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Arbeiten mit Bildern (Beispiel)](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
+- [Arbeiten mit Bildern (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
 - [Hallo iPhone](~/ios/get-started/hello-ios/index.md)
-- [Benutzerdefinierte Symbol und Richtlinien für die Erstellung von Images](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [Richtlinien für benutzerdefiniertes Symbol und Bild Erstellung](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

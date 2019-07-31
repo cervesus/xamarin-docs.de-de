@@ -7,16 +7,16 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 885bba381e1371d273000fa0d970b465e9ca9c0b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4414ce498bdf69e82269137c35af8f27b9e5f541
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61410752"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649565"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Speichern von SkiaSharp-Bitmaps in Dateien
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Nach eine SkiaSharp-Anwendung erstellt oder eine Bitmap geändert haben, kann die Anwendung die Bitmap auf Fotobibliothek des Benutzers speichern möchten:
 
@@ -46,7 +46,7 @@ Die [ `SKBitmap` ](xref:SkiaSharp.SKBitmap) -Klasse enthält mehrere Methoden, d
 
 Darüber hinaus die [ `SKCodec` ](xref:SkiaSharp.SKCodec) -Klasse verfügt über zwei Methoden namens `Create` erstellen kann ein `SKCodec` -Objekt aus einer komprimierten Quelldateien und damit eine Anwendung in die Decodierung komplizierter zu erhalten. (Die `SKCodec` ist in diesem Artikel dargestellt [ **Animieren von SkiaSharp-Bitmaps** ](animating.md#gif-animation) im Zusammenhang mit der Decodierung einer animierten GIF-Datei.)
 
-Wenn Sie eine Bitmap zu codieren, sind weitere Informationen erforderlich: Der Encoder muss wissen, dass möchte, dass das Format für bestimmte Datei der Anwendung (JPEG oder PNG oder etwas anderes) verwenden. Wenn ein verlustreiches Format gewünscht ist, muss die Codierung auch das gewünschte Maß an Qualität kennen.
+Beim Codieren einer Bitmap sind weitere Informationen erforderlich: Der Encoder muss das jeweilige Dateiformat kennen, das von der Anwendung verwendet werden soll (JPEG oder PNG oder etwas anderes). Wenn ein verlustreiches Format gewünscht ist, muss die Codierung auch das gewünschte Maß an Qualität kennen.
 
 Die `SKBitmap` Klasse definiert eine [ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32)) Methode mit der folgenden Syntax:
 
@@ -68,7 +68,7 @@ Speichern in einer Datei im lokalen Anwendungsspeicher ist recht einfach, da es 
 
 Wenn Sie die Datei von anderen Anwendungen gemeinsam verwendet werden soll, muss es auf Fotobibliothek des Benutzers gespeichert werden. Diese Aufgabe ist erforderlich, plattformspezifischen Code und die Verwendung von der Xamarin.Forms [ `DependencyService` ](xref:Xamarin.Forms.DependencyService).
 
-Die **SkiaSharpFormsDemo** -Projekt in der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Anwendung definiert eine `IPhotoLibrary` Schnittstelle, die verwendet werden, mit der `DependencyService` Klasse. Dies definiert die Syntax einer `SavePhotoAsync` Methode:
+Die **SkiaSharpFormsDemo** -Projekt in der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Anwendung definiert eine `IPhotoLibrary` Schnittstelle, die verwendet werden, mit der `DependencyService` Klasse. Dies definiert die Syntax einer `SavePhotoAsync` Methode:
 
 ```csharp
 public interface IPhotoLibrary
@@ -280,7 +280,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 
 Die `SKManagedWStream` Klasse leitet sich von `SKWStream` (das steht für "ein schreibbarer Stream"). Die `Encode` Methode schreibt die codierten Bitmaps-Datei in den Stream. Die Kommentare im Code finden Sie eine fehlerprüfung auf, dass Sie möglicherweise durchführen müssen.
 
-Die **-Dateiformate speichern** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Anwendung ähnlichen Code verwendet, um Ihnen das Experimentieren mit eine Bitmap in verschiedenen Formaten speichern zu ermöglichen.
+Die **-Dateiformate speichern** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Anwendung ähnlichen Code verwendet, um Ihnen das Experimentieren mit eine Bitmap in verschiedenen Formaten speichern zu ermöglichen.
 
 Die XAML-Datei enthält eine `SKCanvasView` , die eine Bitmap anzeigt, während der Rest der Seite, die alles enthält, muss die Anwendung zum Aufrufen der `Encode` -Methode der `SKBitmap`. Hat eine `Picker` für ein Mitglied der `SKEncodedImageFormat` -Enumeration ein `Slider` für das Qualitätsargument für verlustbehaftete Bitmapformate, zwei `Entry` Ansichten für einen Dateinamen und den Ordner ein, und ein `Button` zum Speichern der Datei.
 
@@ -471,7 +471,7 @@ Eine häufige Verwendung einer Bitmap beim Zeichnen von Programmen, funktioniert
 
 Die [ **Zeichnen mit Fingern in SkiaSharp** ](../paths/finger-paint.md) Artikel wurde veranschaulicht, wie zur Implementierung eines primitiven multitoucheingaben Programms nachverfolgen Toucheingabe zu verwenden. Die Anwendung unterstützt nur eine Farbe und nur eine Strichbreite bleiben jedoch erhalten sie die gesamte Zeichnen in einer Auflistung von `SKPath` Objekte.
 
-Die **Fingerpaint mit speichern** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel auch behält das gesamte Zeichnen in einer Auflistung von `SKPath` Objekte aufweist, aber auch Rendert die Zeichnung auf eine Bitmap, die sie auf Ihre Fotobibliothek speichern können.
+Die **Fingerpaint mit speichern** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel auch behält das gesamte Zeichnen in einer Auflistung von `SKPath` Objekte aufweist, aber auch Rendert die Zeichnung auf eine Bitmap, die sie auf Ihre Fotobibliothek speichern können.
 
 Ein Großteil dieses Programm ähnelt der ursprünglichen **Fingerpaint** Programm. Eine Verbesserung ist, dass die XAML-Datei nun Schaltflächen, die mit der Bezeichnung instanziiert **löschen** und **speichern**:
 
@@ -698,7 +698,7 @@ So sieht die Anwendung in Aktion:
 
 [![Finger Paint speichern](saving-images/FingerPaintSave.png "Finger Paint speichern")](saving-images/FingerPaintSave-Large.png#lightbox)
 
-Ein sehr ähnliches Verfahren wird verwendet, der [ **SpinPaint** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/) Beispiel. Dies ist auch ein multitoucheingaben Programm, mit dem Unterschied, dass der Benutzer auf einer rotierenden Festplatte zeichnet, die Sie dann die Entwürfe auf der anderen vier Quadranten reproduziert. Dreht sich die Farbe der Finger Paint Änderungen als Datenträger:
+Ein sehr ähnliches Verfahren wird verwendet, der [ **SpinPaint** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint) Beispiel. Dies ist auch ein multitoucheingaben Programm, mit dem Unterschied, dass der Benutzer auf einer rotierenden Festplatte zeichnet, die Sie dann die Entwürfe auf der anderen vier Quadranten reproduziert. Dreht sich die Farbe der Finger Paint Änderungen als Datenträger:
 
 [![Starten von Paint](saving-images/SpinPaint.png "Paint starten")](saving-images/SpinPaint-Large.png#lightbox)
 
@@ -707,5 +707,5 @@ Die **speichern** Schaltfläche `SpinPaint` Klasse ist vergleichbar mit **Finger
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [SpinPaint (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SpinPaint (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)

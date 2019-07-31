@@ -7,18 +7,18 @@ ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 24c33c61002130fe645bba54c307394bbc2e0656
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7d323aa6616f7547ab91dfe2b394c339e273d61c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61322253"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650025"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp-Bitmap-Kacheln
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
 Wie Sie in den zwei vorherigen Artikel gesehen haben die [ `SKShader` ](xref:SkiaSharp.SKShader) -Klasse lineare oder zirkuläre Farbverläufe erstellt werden können. Dieser Artikel konzentriert sich auf die `SKShader` -Objekt, das eine Bitmap wird ein Bereich verwendet. Die Bitmap horizontal und vertikal wiederholt werden kann entweder in der ursprünglichen Ausrichtung oder alternativ gekippt horizontal und vertikal. Die kippen vermeidet Diskontinuitäten zwischen den Kacheln:
 
@@ -42,7 +42,7 @@ Dieser Artikel enthält einige Beispiele für angeordnete Bitmaps mit dieser Mat
 
 ## <a name="exploring-the-tile-modes"></a>Untersuchen die Kachel "-Modi
 
-Das erste Programm in der **Bitmap Tiling** Teil der **Shader und andere Effekte** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel veranschaulicht die Auswirkungen der beiden `SKShaderTileMode` Argumente. Die **Bitmap Kachelmodi kippen** XAML-Datei instanziiert ein `SKCanvasView` und zwei `Picker` Ansichten, mit denen Sie auswählen, können eine `SKShaderTilerMode` Wert für die horizontale und vertikale Tiling. Beachten Sie, dass ein Array von der `SKShaderTileMode` Member definiert ist, der `Resources` Abschnitt:
+Das erste Programm in der **Bitmap Tiling** Teil der **Shader und andere Effekte** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel veranschaulicht die Auswirkungen der beiden `SKShaderTileMode` Argumente. Die **Bitmap Kachelmodi kippen** XAML-Datei instanziiert ein `SKCanvasView` und zwei `Picker` Ansichten, mit denen Sie auswählen, können eine `SKShaderTilerMode` Wert für die horizontale und vertikale Tiling. Beachten Sie, dass ein Array von der `SKShaderTileMode` Member definiert ist, der `Resources` Abschnitt:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -300,7 +300,7 @@ Beachten Sie, dass die `SKShaderTileMode` Argumente `CreateBitmap` sind beide `M
 
 Einige Aufgaben ist erforderlich, um eine geeignete Bitmap für die Kachel zu erhalten. Dieser funktioniert nicht sehr gut, da die dunkleren Brick sich hebt zuviel. Es wird regelmäßig innerhalb der wiederholten Bilder, die Offenlegung durch die Tatsache, dass diese Durchbruch aus keine kleinere Bitmap erstellt wurde.
 
-Die **Media** Ordner die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel umfasst auch dieses Bild einer Stone Wand:
+Die **Media** Ordner die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel umfasst auch dieses Bild einer Stone Wand:
 
 ![Stein Wall Kachel](bitmap-tiling-images/StoneWallTile.jpg "Stein Wall-Kachel")
 
@@ -366,7 +366,7 @@ Wenn die Transformation auf die einzelnen Kachel angewendet wird, klicken Sie da
 
 Im Abschnitt [ **Kachel Ausrichtung**](#tile-alignment), sehen Sie ein Beispiel für TranslateTransform an den Shader angewendet.
 
-Die eigenständige [ **Cat Uhr** ](https://developer.xamarin.com/samples/xamarin-forms/CatClock) Beispiel (nicht Teil der **SkiaSharpFormsDemos**) simuliert einen Bitmap-Kacheln, die auf der Grundlage dieser quadratischen 240 Pixel-Bitmap mit Holz differenziertere-Hintergrund:
+Die eigenständige [ **Cat Uhr** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock) Beispiel (nicht Teil der **SkiaSharpFormsDemos**) simuliert einen Bitmap-Kacheln, die auf der Grundlage dieser quadratischen 240 Pixel-Bitmap mit Holz differenziertere-Hintergrund:
 
 ![Aggregationsintervall Holz](bitmap-tiling-images/WoodGrain.png "Holz Granularität")
 
@@ -780,5 +780,5 @@ Die `SKShaderTileMode.Mirror` Optionen stellen Sie sicher, dass die Arme, der da
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [CatClock (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [CatClock (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)

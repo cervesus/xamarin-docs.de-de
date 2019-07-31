@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6b3a6f45d78c0febb2aacf4f7693bc6e328c3ec0
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 0dc3c8e4c8b4db99b07114e855910ccfe5fe180f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740957"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654556"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Arbeiten mit dem WatchOS übergeordnete Anwendung in Xamarin
 
@@ -35,7 +35,7 @@ Die übergeordnete-App wird manchmal auch als der Container-App bezeichnet.
 
 ## <a name="run-code"></a>Ausführen von Code
 
-Kommunikation zwischen eine Watch-Erweiterung und der übergeordneten iPhone-app wird veranschaulicht, der [GpsWatch Beispiel](https://developer.xamarin.com/samples/monotouch/WatchKit/GpsWatch/).
+Kommunikation zwischen eine Watch-Erweiterung und der übergeordneten iPhone-app wird veranschaulicht, der [GpsWatch Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gpswatch).
 Die Watch-Erweiterung kann anfordern, dass die übergeordnete iOS-app können Sie einige Verarbeitungsschritte auf seinen Namen mithilfe der `OpenParentApplication` Methode.
 
 Dies ist besonders nützlich für lang andauernde Aufgaben (einschließlich netzwerkanforderungen): nur das übergeordnete iOS-app nutzen kann, der hintergrundverarbeitung um führen diese Aufgaben aus, und speichern die abgerufenen Daten an einem Speicherort auf der Watch-Erweiterung zugreifen kann.
@@ -147,7 +147,7 @@ Herunterladen der C# Version [WormHoleSharp](https://github.com/Clancey/WormHole
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [GpsWatch (Beispiel)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [GpsWatch (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WormHoleSharp (Beispiel)](https://github.com/Clancey/WormHoleSharp)
 - [Apple WKInterfaceController Verweis](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
 - [Apple Freigeben von Daten mit Ihrer App mit](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

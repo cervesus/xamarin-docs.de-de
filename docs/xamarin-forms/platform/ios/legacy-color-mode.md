@@ -1,26 +1,26 @@
 ---
-title: VisualElement Farbe Legacymodus unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die iOS-Plattform-spezifische zu nutzen, der den alten Farbmodus Xamarin.Forms deaktiviert wird.
+title: Visualelement-Legacy Farben Modus unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Version verwenden, die den xamarin. Forms-Legacy Farb Modus deaktiviert.
 ms.prod: xamarin
 ms.assetid: 60FFBA67-6E06-439B-A5EB-8C808285E2CD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 7399301e8a979097d25f1916de76fd49a584f90e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 6a991e1fb3b8d0325a5fd5f56f943bf69f9be602
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926725"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655447"
 ---
-# <a name="visualelement-legacy-color-mode-on-ios"></a>VisualElement Farbe Legacymodus unter iOS
+# <a name="visualelement-legacy-color-mode-on-ios"></a>Visualelement-Legacy Farben Modus unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Einige der Xamarin.Forms-Ansichten bieten eines ältere Farbmodus. In diesem Modus bei der [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) -Eigenschaft der Ansicht nastaven NA hodnotu `false`, die Ansicht überschreibt die Farben, die vom Benutzer mit den systemeigenen Standardfarben für den deaktivierten Zustand festgelegt wird. Für die Abwärtskompatibilität dieser älteren Farbmodus-Kompatibilität für das Standardverhalten für die unterstützten Ansichten bleibt.
 
-Dieses iOS-Plattform-spezifische deaktiviert diese älteren Farbmodus auf eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), Farben, die für eine Sicht vom Benutzer festgelegt auch bleiben, wenn die Sicht deaktiviert ist. Es ist in XAML verwendet, durch Festlegen der [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty) angefügte Eigenschaft zu `false`:
+Mit diesem IOS-plattformspezifischen wird dieser ältere Farb Modus auf [`VisualElement`](xref:Xamarin.Forms.VisualElement)einem deaktiviert, sodass die für eine Ansicht des Benutzers festgelegten Farben auch dann beibehalten werden, wenn die Ansicht deaktiviert ist. Es ist in XAML verwendet, durch Festlegen der [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty) angefügte Eigenschaft zu `false`:
 
 ```xaml
 <ContentPage ...
@@ -57,6 +57,6 @@ Das Ergebnis ist, dass die ältere Farbmodus deaktiviert werden kann, Farben, di
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

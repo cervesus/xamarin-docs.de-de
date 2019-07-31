@@ -1,81 +1,81 @@
 ---
-title: TvOS-Benutzeroberflächen mit Xamarin erstellen
-description: Allgemeine Benutzererfahrung (UX) Abdeckung, einschließlich der Steuerelemente der Benutzeroberfläche (UI), verwenden Xcodes Interface Builder und UX-Entwurfsprinzipien, bei der Arbeit mit Xamarin.tvOS.
+title: Entwickeln von tvos-Benutzeroberflächen mit xamarin
+description: Bei der Verwendung von xamarin. tvos werden bei der Verwendung von xamarin. tvos bei der Verwendung von xamarin. tvos die Entwurfs Prinzipien von Xcode Interface Builder und UX verwendet.
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 0d5bfa83bee74a799398912f77f21cba10c7be45
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1029f1b99e37899bf1ab33a25fc070c565223954
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60895610"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649027"
 ---
-# <a name="building-tvos-user-interfaces-with-xamarin"></a>TvOS-Benutzeroberflächen mit Xamarin erstellen
+# <a name="building-tvos-user-interfaces-with-xamarin"></a>Entwickeln von tvos-Benutzeroberflächen mit xamarin
 
-_Allgemeine Benutzererfahrung (UX) Abdeckung, einschließlich der Steuerelemente der Benutzeroberfläche (UI), verwenden Xcodes Interface Builder und UX-Entwurfsprinzipien, bei der Arbeit mit Xamarin.tvOS._
+_Bei der Verwendung von xamarin. tvos werden bei der Verwendung von xamarin. tvos bei der Verwendung von xamarin. tvos die Entwurfs Prinzipien von Xcode Interface Builder und UX verwendet._
 
-Bei der Arbeit mit C# und .NET, in eine Xamarin-basierte TvOS haben Sie Zugriff auf die gleichen Benutzeroberfläche-Steuerelemente, die ein Entwickler in Objective-C oder Swift und Xcode. Interface Builder von Xcode kann verwendet werden, erstellen und verwalten Ihre Benutzer-Schnittstellen (oder erstellen Sie sie direkt im C# Code).
+Wenn Sie mit C# und .net in einer xamarin-basierten tvos arbeiten, haben Sie Zugriff auf die gleichen Steuerelemente der Benutzeroberfläche, die von einem Entwickler in Ziel-C, SWIFT und Xcode verwendet werden. Die Interface Builder von Xcode kann verwendet werden, um die Benutzeroberflächen zu erstellen und zu verwalten (oder um C# diese optional direkt im Code zu erstellen).
 
-In folgenden Leitfäden erhalten Sie ausführliche Informationen zum Arbeiten mit TvOS-UI-Elemente in einer Xamarin.tvOS-app. Es wird dringend empfohlen, dass Sie über arbeiten die [Hello, TvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md) Erstens: Wenn sie erfahren, wichtige Konzepte und Techniken, die wir in jedem Artikel verwenden.
+Die unten aufgeführten Anleitungen zeigen ausführliche Informationen zum Arbeiten mit tvos-Elementen der Benutzeroberfläche in einer xamarin. tvos-app. Es wird dringend empfohlen, dass Sie zunächst die [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md) durcharbeiten, da diese wichtige Konzepte und Techniken behandelt, die wir in jedem Artikel verwenden werden.
 
 ## <a name="working-with-alertsiostvosuser-interfacealertsmd"></a>[Arbeiten mit Warnungen](~/ios/tvos/user-interface/alerts.md)
 
-Dieser Artikel behandelt die Arbeit mit `UIAlertController` eine Warnmeldung, die dem Benutzer in Xamarin.tvOS angezeigt.
+In diesem Artikel wird das `UIAlertController` arbeiten mit erläutert, um dem Benutzer eine Warnmeldung in xamarin. tvos anzuzeigen.
 
 ## <a name="working-with-buttonsiostvosuser-interfacebuttonsmd"></a>[Arbeiten mit Schaltflächen](~/ios/tvos/user-interface/buttons.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Schaltflächen innerhalb einer Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Schaltflächen in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-collection-viewsiostvosuser-interfacecollection-viewsmd"></a>[Arbeiten mit Auflistungsansichten](~/ios/tvos/user-interface/collection-views.md)
+## <a name="working-with-collection-viewsiostvosuser-interfacecollection-viewsmd"></a>[Arbeiten mit Sammlungs Ansichten](~/ios/tvos/user-interface/collection-views.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Auflistungsansichten in ein Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Auflistungs Ansichten in einer xamarin. tvos-App behandelt.
 
 ## <a name="working-with-navigation-barsiostvosuser-interfacenavigation-barsmd"></a>[Arbeiten mit Navigationsleisten](~/ios/tvos/user-interface/navigation-bars.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Navigationsleisten, innerhalb einer Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Navigationsleisten in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-page-controlsiostvosuser-interfacepage-controlsmd"></a>[Arbeiten mit Seitensteuerelementen](~/ios/tvos/user-interface/page-controls.md)
+## <a name="working-with-page-controlsiostvosuser-interfacepage-controlsmd"></a>[Arbeiten mit Seiten Steuerelementen](~/ios/tvos/user-interface/page-controls.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Seitensteuerelementen innerhalb einer Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Seiten Steuerelementen in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-progress-indicatorsiostvosuser-interfaceprogress-indicatorsmd"></a>[Arbeiten mit Statusanzeige](~/ios/tvos/user-interface/progress-indicators.md)
+## <a name="working-with-progress-indicatorsiostvosuser-interfaceprogress-indicatorsmd"></a>[Arbeiten mit Status Indikatoren](~/ios/tvos/user-interface/progress-indicators.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Statusanzeige in ein Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Status Indikatoren in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-segmented-controlsiostvosuser-interfacesegmented-controlsmd"></a>[Arbeiten mit segmentierte Steuerelemente](~/ios/tvos/user-interface/segmented-controls.md)
+## <a name="working-with-segmented-controlsiostvosuser-interfacesegmented-controlsmd"></a>[Arbeiten mit segmentierten Steuerelementen](~/ios/tvos/user-interface/segmented-controls.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit segmentierte Steuerelemente, in ein Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit segmentierten Steuerelementen in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-split-view-controllersiostvosuser-interfacesplit-viewsmd"></a>[Arbeiten mit Split-View-Controller](~/ios/tvos/user-interface/split-views.md)
+## <a name="working-with-split-view-controllersiostvosuser-interfacesplit-viewsmd"></a>[Arbeiten mit Split View-Controllern](~/ios/tvos/user-interface/split-views.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Ansichtscontrollern Teilen innerhalb einer Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Split View Controller in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-stack-viewsiostvosuser-interfacestacked-viewsmd"></a>[Arbeiten mit Stack-Ansichten](~/ios/tvos/user-interface/stacked-views.md)
+## <a name="working-with-stack-viewsiostvosuser-interfacestacked-viewsmd"></a>[Arbeiten mit Stapel Ansichten](~/ios/tvos/user-interface/stacked-views.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Stack-Ansichten innerhalb einer Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Stapel Ansichten in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-tab-barsiostvosuser-interfacetab-barsmd"></a>[Arbeiten mit Registerkartenleisten](~/ios/tvos/user-interface/tab-bars.md)
+## <a name="working-with-tab-barsiostvosuser-interfacetab-barsmd"></a>[Arbeiten mit Registerkarten](~/ios/tvos/user-interface/tab-bars.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Registerkartenleisten innerhalb einer Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Registerkarten in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-table-viewsiostvosuser-interfacetable-viewsmd"></a>[Arbeiten mit Tabellenansichten](~/ios/tvos/user-interface/table-views.md)
+## <a name="working-with-table-viewsiostvosuser-interfacetable-viewsmd"></a>[Arbeiten mit Tabellen Sichten](~/ios/tvos/user-interface/table-views.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Tabellenansichten "und" Table View Controllers, in ein Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Tabellen Sichten und Tabellen Ansichts Controllern in einer xamarin. tvos-App behandelt.
 
-## <a name="working-with-text-and-search-fieldsiostvosuser-interfacetext-fields-and-searchmd"></a>[Arbeiten mit Text- und Suchfelder](~/ios/tvos/user-interface/text-fields-and-search.md)
+## <a name="working-with-text-and-search-fieldsiostvosuser-interfacetext-fields-and-searchmd"></a>[Arbeiten mit Text-und Suchfeldern](~/ios/tvos/user-interface/text-fields-and-search.md)
 
-Dieser Artikel behandelt das Entwerfen von und Arbeiten mit Text- und Suchfelder in ein Xamarin.tvOS-app.
+In diesem Artikel wird das Entwerfen und arbeiten mit Text-und Suchfeldern in einer xamarin. tvos-App behandelt.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [TvOS Human Interface-Handbücher](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [App-Programmierhandbuch für tvos verwendet.](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
-- [Erstellen von apps für TvOS mit Xamarin (video)](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)
+- [tvos Human Interface Guides](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [Leitfaden zur APP-Programmierung für tvos](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [Entwickeln von Apps für tvos mit xamarin (Video)](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

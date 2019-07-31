@@ -7,16 +7,16 @@ ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1d85c705fb993e9b6b558b0c051de93e449b9d05
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289114"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648722"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp-Maske-Filter
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Maske Filter sind die Auswirkungen, die die Geometrie und die alpha-Kanal von grafischen Objekten ändern. Legen Sie zum Verwenden eines Filters für die Maske der [ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) Sie erstellt haben, durch Aufrufen einer der der `SKMaskFilter` statische Methoden.
 
@@ -43,7 +43,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 Die Auswirkungen dieser Stile sind in den folgenden Beispielen gezeigt. Die `sigma` Parameter gibt den Umfang der des Weichzeichnens. In früheren Versionen von Skia können wurde der Wertebereich des Weichzeichnens mit einem Radiuswert angegeben. Wenn ein Radiuswert für Ihre Anwendung vorzuziehen ist, ist eine statische [ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) -Methode, die von einem zum anderen konvertieren kann. Die Methode 0.57735 Radius multipliziert und 0,5 hinzugefügt.
 
-Die **Maske Blur experimentieren** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel ermöglicht Ihnen das Experimentieren mit dem Blur-Stile und Sigma-Werte. Die XAML-Datei instanziiert ein `Picker` mit den vier `SKBlurStyle` Enumerationsmember und `Slider` zum Angeben des Werts Sigma:
+Die **Maske Blur experimentieren** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel ermöglicht Ihnen das Experimentieren mit dem Blur-Stile und Sigma-Werte. Die XAML-Datei instanziiert ein `Picker` mit den vier `SKBlurStyle` Enumerationsmember und `Slider` zum Angeben des Werts Sigma:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,9 +180,9 @@ Alle in den Screenshots bis jetzt wurde gezeigt, Weichzeichnungseffekt erstellt,
 
 [![Maskieren Blur-Experiment](mask-filters-images/MaskBlurExperiment.png "maskieren Blur-Experiment")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-Der iOS-Screenshot zeigt die `Solid` Stil: Die Textzeichen werden weiterhin als durchgehende schwarze Striche vorhanden, und dieser Text Zeichen außerhalb des Weichzeichnens hinzugefügt wird. 
+Der IOS-Screenshot zeigt `Solid` den Stil: Die Textzeichen sind immer noch als solide schwarze Striche vorhanden, und der weich Strich wird der außerhalb dieser Textzeichen hinzugefügt. 
 
-Der Android-Screenshot im mittleren zeigt die `Outer` Stil: Die Zeichen Striche selbst werden entfernt (wie die Bitmap) und des Weichzeichnens umgibt den leeren Bereich, in denen die Textzeichen Mal vorkam. 
+Der Android-Bildschirm Abbildung in der Mitte `Outer` zeigt den Stil: Die Zeichen Striche selbst werden entfernt (wie die Bitmap), und der weich Zeichenbereich umgibt den leeren Bereich, in dem die Textzeichen angezeigt werden. 
 
 Die UWP-Screenshot, auf die richtigen zeigt die `Inner` Stil. Die Unschärfe ist auf des Bereichs, der normalerweise durch die Textzeichen beschränkt.
 
@@ -274,4 +274,4 @@ Diese unschärfefilter bewirkt, dass die Reflektion, um die viel realistischer e
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

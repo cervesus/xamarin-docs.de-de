@@ -1,35 +1,35 @@
 ---
-title: Verwaltung von Benachrichtigungen in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Sie Xamarin.iOS zu verwenden, um neue Verwaltungsfunktionen für Notification in iOS-12 eingeführt nutzen.
+title: Benachrichtigungs Verwaltung in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie xamarin. IOS verwenden, um die neuen Benachrichtigungs Verwaltungs Features zu nutzen, die in IOS 12 eingeführt wurden.
 ms.prod: xamarin
 ms.assetid: F1D90729-F85A-425B-B633-E2FA38FB4A0C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 0157a685ac990c0626cd4d6001ef853c6a28b993
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 69b6876a22e511d1c14a795d7b81c3a638492468
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035273"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652384"
 ---
-# <a name="notification-management-in-xamarinios"></a>Verwaltung von Benachrichtigungen in Xamarin.iOS
+# <a name="notification-management-in-xamarinios"></a>Benachrichtigungs Verwaltung in xamarin. IOS
 
-Das Betriebssystem in iOS 12 können deep-Link in der Mitteilungszentrale und der Einstellungs-app-Bildschirm zur Eingabe einer app Benachrichtigung. Dieser Bildschirm sollten Benutzern aktivieren und aus verschiedenen Typen von Benachrichtigungen, die die app sendet.
+In IOS 12 kann das Betriebssystem einen Deep-Link zwischen dem Benachrichtigungs Center und der App "Einstellungen" mit dem Benachrichtigungs Verwaltungs Bildschirm einer App herstellen. Auf diesem Bildschirm können Benutzer die verschiedenen Benachrichtigungs Typen, die von der APP gesendet werden, abonnieren.
 
-## <a name="sample-app-redgreennotifications"></a>Beispiel-app: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Beispiel-App: RedGreenNotifications
 
-Um ein Beispiel für die Funktionsweise der Verwaltung der Benachrichtigung zu sehen, sehen Sie sich die [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications) Beispiel-app.
+Ein Beispiel für die Funktionsweise der Benachrichtigungs Verwaltung finden Sie in der Beispiel-APP [redgreenbenachrichtigungen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) .
 
-Diese Beispiel-app sendet zwei Arten von Benachrichtigungen, – Rot, Grün – und bietet einen Bildschirm, der Benutzern ermöglicht, das ein-bzw. auszuschalten beide Arten.
+Diese Beispiel-App sendet zwei Arten von Benachrichtigungen – rot und grün – und bietet einen Bildschirm, der es Benutzern ermöglicht, beide Arten zu abonnieren.
 
-Codeausschnitte in diesem Handbuch stammen aus dieser Beispiel-app.
+Code Ausschnitte in dieser Anleitung stammen aus dieser Beispiel-app.
 
-## <a name="notification-management-screen"></a>Benachrichtigungs-Bildschirm
+## <a name="notification-management-screen"></a>Benachrichtigungs Verwaltungs Bildschirm
 
-In der Beispiel-app `ManageNotificationsViewController` definiert eine Benutzeroberfläche, die unabhängig voneinander aktivieren und Deaktivieren der roten Benachrichtigungen und grünen Benachrichtigungen ermöglicht. Dies ist ein standard [`UIViewController`](xref:UIKit.UIViewController)
-mit einem [ `UISwitch` ](xref:UIKit.UISwitch) für jeden Benachrichtigungstyp. Umschalten des Schalters für beide Arten von Benachrichtigungen wird gespeichert, in den Standardeinstellungen für Benutzer, die Einstellungen der Benutzer für diese Art von Benachrichtigung:
+In der Beispiel-APP `ManageNotificationsViewController` definiert eine Benutzeroberfläche, die Benutzern das unabhängige aktivieren und Deaktivieren von roten Benachrichtigungen und grünen Benachrichtigungen ermöglicht. Es ist ein Standard[`UIViewController`](xref:UIKit.UIViewController)
+, der [`UISwitch`](xref:UIKit.UISwitch) einen für jeden Benachrichtigungstyp enthält. Ein-und Ausschalten des Schalters für beide Arten von Benachrichtigungen in den Benutzer Standardwerten für diesen Benachrichtigungstyp:
 
 ```csharp
 partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
@@ -39,13 +39,13 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 ```
 
 > [!NOTE]
-> Das Verwaltungsfenster Benachrichtigung überprüft auch, und zwar unabhängig davon, ob der Benutzer die Benachrichtigungen für die app vollständig deaktiviert hat. Wenn dies der Fall ist, blendet sie die Optionen für die einzelnen Benachrichtigungstypen an. Das Verwaltungsfenster für die Benachrichtigung dazu:
+> Der Bildschirm Benachrichtigungs Verwaltung prüft auch, ob der Benutzer vollständig deaktivierte Benachrichtigungen für die APP hat. Wenn dies der Fall ist, werden die UMSCHALT Flächen für die einzelnen Benachrichtigungs Typen ausgeblendet. Gehen Sie hierzu wie folgt vor:
 >
-> - Aufrufe [ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync) und untersucht die [ `AuthorizationStatus` ](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus) Eigenschaft.
-> - Blendet die Optionen für die einzelnen Benachrichtigungstypen an, wenn Benachrichtigungen für die app vollständig deaktiviert wurden.
-> - Erneut prüft, ob Benachrichtigungen jedes Mal deaktiviert wurden, um die Anwendung in den Vordergrund verschoben wird, da der Benutzer aktivieren/Benachrichtigungen in iOS-Einstellungen zu einem beliebigen Zeitpunkt deaktivieren kann.
+> - Ruft [`UNUserNotificationCenter.Current.GetNotificationSettingsAsync`](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync) [die`AuthorizationStatus`](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus) -Eigenschaft auf und überprüft sie.
+> - Blendet die UMSCHALT Flächen für die einzelnen Benachrichtigungs Typen aus, wenn Benachrichtigungen für die APP vollständig deaktiviert wurden.
+> - Prüft, ob Benachrichtigungen bei jedem Verschieben der Anwendung in den Vordergrund deaktiviert wurden, da der Benutzer jederzeit Benachrichtigungen in den IOS-Einstellungen aktivieren/deaktivieren kann.
 
-Der Beispiel-app `ViewController` -Klasse, die der Benachrichtigungen, überprüfen Sie die Einstellung des Benutzers sendet, bevor senden eine lokale Benachrichtigung, um sicherzustellen, dass die Benachrichtigung vom Typ der Benutzer ist tatsächlich empfangen möchte:
+Mit der-Klasse `ViewController` der Beispiel-APP, die die Benachrichtigungen sendet, wird die Benutzereinstellung vor dem Senden einer lokalen Benachrichtigung überprüft, um sicherzustellen, dass es sich bei der Benachrichtigung um einen Typ handelt, den der Benutzer tatsächlich erhalten möchte:
 
 ```csharp
 partial void HandleTapRedNotificationButton(UIButton sender)
@@ -56,18 +56,18 @@ partial void HandleTapRedNotificationButton(UIButton sender)
         // ...
 ```
 
-## <a name="deep-link"></a>Deep-link
+## <a name="deep-link"></a>Deep-Link
 
-iOS deep-Links zu einer app Benachrichtigung-Bildschirm von Mitteilungszentrale und der app-Benachrichtigungseinstellungen in der Einstellungs-app. Um dies zu ermöglichen, müssen eine app aus:
+IOS Deep Links zum Bildschirm für die Benachrichtigungs Verwaltung einer App aus dem Benachrichtigungs Center und die Benachrichtigungseinstellungen der app in der App "Einstellungen". Um dies zu vereinfachen, muss eine APP folgende Aktionen ausführen:
 
-- Um anzugeben, dass ein Benachrichtigung-Bildschirm durch Übergabe verfügbar ist `UNAuthorizationOptions.ProvidesAppNotificationSettings` auf die app Benachrichtigung-autorisierungsanforderung.
-- Implementieren der `OpenSettings` aus [ `IUNUserNotificationCenterDelegate` ](xref:UserNotifications.IUNUserNotificationCenterDelegate).
+- Geben Sie an, dass ein Benachrichtigungs Verwaltungs Bildschirm `UNAuthorizationOptions.ProvidesAppNotificationSettings` verfügbar ist, indem Sie die Benachrichtigungs Autorisierungs Anforderung der APP übergeben.
+- Implementieren Sie `OpenSettings` die- [`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)Methode aus.
 
-### <a name="authorization-request"></a>Autorisierungsanforderung
+### <a name="authorization-request"></a>Autorisierungs Anforderung
 
-Das Betriebssystem an, dass ein Benachrichtigung-Bildschirm ist verfügbar, eine app sollte übergeben die `UNAuthorizationOptions.ProvidesAppNotificationSettings` (zusammen mit anderen Benachrichtigung Übermittlungsoptionen muss) die Möglichkeit, die `RequestAuthorization` Methode für die `UNUserNotificationCenter`.
+Um dem Betriebssystem mitzuteilen, dass ein Benachrichtigungs Verwaltungs Bildschirm verfügbar ist, sollte eine APP die `UNAuthorizationOptions.ProvidesAppNotificationSettings` -Option (zusammen mit allen anderen erforderlichen Benachrichtigungs Zustellungs Optionen) `RequestAuthorization` an die- `UNUserNotificationCenter`Methode in der übergeben.
 
-In der Beispiel-app beispielsweise `AppDelegate`:
+Beispielsweise in der Beispiel- `AppDelegate`App:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -80,11 +80,11 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
         // ...
 ```
 
-### <a name="opensettings-method"></a>OpenSettings-Methode
+### <a name="opensettings-method"></a>Opensettings-Methode
 
-Die `OpenSettings` Methode wird aufgerufen, die vom System deep-Link zu einer app Benachrichtigung-Bildschirm, sollte den Benutzer direkt auf diesem Bildschirm navigieren.
+Die `OpenSettings` Methode, die vom System zum Deep-Link zum Benachrichtigungs Verwaltungs Bildschirm einer APP aufgerufen wird, sollte den Benutzer direkt zu diesem Bildschirm navigieren.
 
-In der Beispiel-app führt diese Methode der Segue an die `ManageNotificationsViewController` bei Bedarf:
+In der Beispiel-App führt diese Methode ggf. den- `ManageNotificationsViewController` Abschnitt für die-Methode aus:
 
 ```csharp
 [Export("userNotificationCenter:openSettingsForNotification:")]
@@ -105,9 +105,9 @@ public void OpenSettings(UNUserNotificationCenter center, UNNotification notific
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel-app – RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)
-- [Framework für Benutzerbenachrichtigungen in Xamarin.iOS](~/ios/platform/user-notifications/index.md)
-- ["Usernotifications" (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [Neuerungen in Benutzerbenachrichtigungen (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [Bewährte Methoden und Neuigkeiten in Benutzerbenachrichtigungen (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [Generieren eine Remotebenachrichtigung (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [Beispiel-App – redgreenbenachrichtigungen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [Benutzer Benachrichtigungs Framework in xamarin. IOS](~/ios/platform/user-notifications/index.md)
+- [Benutzer Benachrichtigungen (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
+- [Neues in Benutzer Benachrichtigungen (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [Bewährte Methoden und Neuerungen bei Benutzer Benachrichtigungen (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [Erstellen einer Remote Benachrichtigung (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

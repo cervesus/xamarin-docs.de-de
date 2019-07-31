@@ -1,190 +1,190 @@
 ---
 title: 'Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek'
-description: Dieser Artikel bietet eine praktische exemplarischen Vorgehensweise erstellen Sie eine Xamarin.iOS-Bindung für eine vorhandene Objective-C-Bibliothek, InfColorPicker. Sie erfahren, wie z. B. Kompilieren einer statischen Bibliothek für Objective-C, binden sie und Verwenden der Bindung in einer Xamarin.iOS-Anwendung.
+description: Dieser Artikel enthält eine praktische Exemplarische Vorgehensweise zum Erstellen einer xamarin. IOS-Bindung für eine vorhandene Ziel-C-Bibliothek, infcolorpicker. Es behandelt Themen wie das Kompilieren einer statischen Ziel-C-Bibliothek, deren Bindung und die Verwendung der Bindung in einer xamarin. IOS-Anwendung.
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 2897129779b698eae60338d44f9af19b6a2761bc
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: b73f00eb704d80da6b0bab3a34f08f2d1cb70a16
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252354"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646179"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek
 
-_Dieser Artikel bietet eine praktische exemplarischen Vorgehensweise erstellen Sie eine Xamarin.iOS-Bindung für eine vorhandene Objective-C-Bibliothek, InfColorPicker. Sie erfahren, wie z. B. Kompilieren einer statischen Bibliothek für Objective-C, binden sie und Verwenden der Bindung in einer Xamarin.iOS-Anwendung._
+_Dieser Artikel enthält eine praktische Exemplarische Vorgehensweise zum Erstellen einer xamarin. IOS-Bindung für eine vorhandene Ziel-C-Bibliothek, infcolorpicker. Es behandelt Themen wie das Kompilieren einer statischen Ziel-C-Bibliothek, deren Bindung und die Verwendung der Bindung in einer xamarin. IOS-Anwendung._
 
-Bei der Arbeit an iOS können Fällen auftreten, in dem Sie ein Objective-C-Bibliotheken von Drittanbietern nutzen möchten. In diesen Fällen können Sie eine Xamarin.iOS _Bindungsprojekt_ zum Erstellen einer [ C# Bindung](~/cross-platform/macios/binding/overview.md) , mit denen Sie die Bibliothek in Ihr Xamarin.iOS-Anwendungen zu nutzen.
+Bei der Arbeit mit IOS kann es vorkommen, dass Sie eine Ziel-C-Bibliothek eines Drittanbieters verwenden möchten. In diesen Fällen können Sie ein xamarin. IOS- _Bindungs Projekt_ verwenden, um eine [ C# Bindung](~/cross-platform/macios/binding/overview.md) zu erstellen, die es Ihnen ermöglicht, die Bibliothek in ihren xamarin. IOS-Anwendungen zu nutzen.
 
-Im Allgemeinen können Sie im iOS-Ökosystem Bibliotheken 3 Arten finden:
+In der Regel im IOS-Ökosystem finden Sie Bibliotheken in drei Varianten:
 
-* Als vorkompilierte statische Bibliothek mit `.a` Erweiterung zusammen mit der einem oder mehreren Headern (h-Dateien). Z. B. [Googles Analytics-Bibliothek](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
-* Als vorkompilierte Framework. Dies ist nur ein Ordner mit der statischen Bibliothek, Header und manchmal zusätzliche Ressourcen mit `.framework` Erweiterung. Z. B. [AdMob Googles-Bibliothek](https://developers.google.com/admob/ios/download).
-* Einfach nur als Quellcodedateien. Z. B. eine Bibliothek, die nur `.m` und `.h` Objective-C-Dateien.
+* Als vorkompilierte statische Bibliotheksdatei mit `.a` Erweiterung zusammen mit den zugehörigen Headern (h-Dateien). Beispiel: [die Analyse Bibliothek von Google](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
+* Als vorkompiliertes Framework. Dabei handelt es sich nur um einen Ordner, der die statische Bibliothek, Header und `.framework` manchmal zusätzliche Ressourcen mit der Erweiterung enthält. Beispielsweise [die AdMob-Bibliothek von Google](https://developers.google.com/admob/ios/download).
+* Nur als Quell Code Dateien. Beispielsweise eine Bibliothek, die nur `.m` und `.h` Ziel-C-Dateien enthält.
 
-In der ersten und zweiten Szenario stehen bereits eine vorkompilierte CocoaTouch statische Bibliothek daher in diesem Artikel wir uns auf das dritte Szenario konzentrieren. Beachten Sie, bevor Sie beginnen, erstellen Sie eine Bindung, überprüfen Sie immer die Lizenz, die mit der Bibliothek, um sicherzustellen, dass Sie bindet, bindet es kostenlos bereitgestellt.
+Im ersten und zweiten Szenario gibt es bereits eine vorkompilierte, statische cocoatouch-Bibliothek, daher konzentrieren wir uns in diesem Artikel auf das dritte Szenario. Bevor Sie beginnen, eine Bindung zu erstellen, sollten Sie die in der Bibliothek bereitgestellte Lizenz immer überprüfen, um sicherzustellen, dass Sie diese binden können.
 
-Dieser Artikel enthält eine schrittweise Anleitung zum Erstellen einer Bindung-Projekts mithilfe des open Source [InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective-C-Projekt als ein Beispiel, jedoch alle Informationen in diesem Handbuch mit einem angepasst werden kann Objective-C-Bibliotheken von Drittanbietern. Die InfColorPicker-Bibliothek bietet es sich um einen wieder verwendbaren View-Controller, der dem Benutzer ermöglicht, wählen Sie eine Farbe anhand der HSB-Darstellung, die Farbauswahl Benutzerfreundlicher zu machen.
+Dieser Artikel enthält eine schrittweise exemplarische Vorgehensweise zum Erstellen eines Bindungs Projekts mithilfe des Open Source-Projekts " [infcolorpicker](https://github.com/InfinitApps/InfColorPicker) " für Ziel-c. alle Informationen in diesem Handbuch können jedoch für die Verwendung mit der Ziel-c-Bibliothek von Drittanbietern angepasst werden. . Die infcolorpicker-Bibliothek stellt einen wiederverwendbaren Ansichts Controller bereit, mit dem der Benutzer eine Farbe basierend auf der HSB-Darstellung auswählen kann, wodurch die Farbauswahl benutzerfreundlicher wird.
 
-[![](walkthrough-images/run01.png "Beispiel für die InfColorPicker-Bibliothek, die unter iOS")](walkthrough-images/run01.png#lightbox)
+[![](walkthrough-images/run01.png "Beispiel für die infcolorpicker-Bibliothek, die unter IOS ausgeführt wird")](walkthrough-images/run01.png#lightbox)
 
-Ich werde die notwendigen Schritte zum Nutzen dieser bestimmten Objective-C-API in Xamarin.iOS:
+Wir behandeln alle notwendigen Schritte, um diese spezielle Ziel-C-API in xamarin. IOS zu verwenden:
 
-- Erstellen Sie zunächst eine statische Objective-C-Bibliothek, die mithilfe von Xcode.
-- Anschließend werden wir diese statische Bibliothek mit Xamarin.iOS binden.
-- Als Nächstes zeigen, wie Objective Sharpie die Workload reduzieren können, mittels automatischer Generierung von einige (aber nicht alle) der erforderlichen API-Definitionen durch die Xamarin.iOS-Bindung erforderlich.
-- Schließlich erstellen wir eine Xamarin.iOS-Anwendung, die die Bindung verwendet.
+- Zuerst erstellen wir eine statische Ziel-C-Bibliothek mithilfe von Xcode.
+- Dann binden wir diese statische Bibliothek mit xamarin. IOS.
+- Zeigen Sie als nächstes an, wie die Arbeitsauslastung durch Ziel-Sharpie reduziert werden kann, indem automatisch einige (aber nicht alle) der für die xamarin. IOS-Bindung erforderlichen API-Definitionen erstellt werden.
+- Schließlich erstellen wir eine xamarin. IOS-Anwendung, die die Bindung verwendet.
 
-Die beispielanwendung zeigen, wie ein sicheres Delegat für die Kommunikation zwischen der InfColorPicker-API verwenden und den C# Code. Nachdem wir einen starken Delegaten mit gesehen haben, wird die Verwendung von schwachen Delegaten für die gleichen Aufgaben behandelt.
+Die Beispielanwendung zeigt, wie Sie einen starken Delegaten für die Kommunikation zwischen der infcolorpicker-API C# und unserem Code verwenden. Nachdem Sie erfahren haben, wie Sie einen starken Delegaten verwenden, wird erläutert, wie Sie schwache Delegaten verwenden, um dieselben Aufgaben auszuführen.
 
 ## <a name="requirements"></a>Anforderungen
 
-In diesem Artikel wird davon ausgegangen, dass Sie eine gewisse Vertrautheit mit Xcode und Objective-C-Sprache und Sie gelesen haben unsere [Binden von Objective-C](~/cross-platform/macios/binding/index.md) Dokumentation. Darüber hinaus ist Folgendes erforderlich, um die aufgeführten Schritte ausführen:
+In diesem Artikel wird davon ausgegangen, dass Sie mit Xcode und der Programmiersprache "Ziel-c" vertraut sind und dass Sie unsere [Bindungs Ziel-c-](~/cross-platform/macios/binding/index.md) Dokumentation gelesen haben. Außerdem ist Folgendes erforderlich, um die folgenden Schritte auszuführen:
 
--  **Xcode und iOS SDK** -Apple Xcode und die neueste iOS-API müssen installiert und konfiguriert werden, auf dem Computer des Entwicklers.
--  **[Xcode-Befehlszeilentools](#Installing_the_Xcode_Command_Line_Tools)**  -der Xcode-Befehlszeilentools für die derzeit installierte Version von Xcode (siehe unten für Installationsdetails) installiert werden.
--  **Visual Studio für Mac oder Visual Studio** – die neueste Version von Visual Studio für Mac oder Visual Studio installiert und konfiguriert werden, auf dem Entwicklungscomputer installiert werden soll. Eine Apple Mac ist erforderlich, für die Entwicklung einer Xamarin.iOS-Anwendung, und bei Verwendung von Visual Studio muss eine Verbindung zum [eine Xamarin.iOS-buildhost](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
--  **Die neueste Version des Ziel-Sharpie** -eine aktuelle Kopie des Ziel-Sharpie Tools heruntergeladen [hier](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Wenn Sie bereits Ziel Sharpie installiert haben, können Sie es auf die neueste Version aktualisieren, mit der `sharpie update`
+-  **Xcode und IOS SDK** : der Xcode von Apple und die neueste IOS-API müssen auf dem Computer des Entwicklers installiert und konfiguriert werden.
+-  **[Xcode-Befehlszeilen Tools](#Installing_the_Xcode_Command_Line_Tools)** : die Xcode-Befehlszeilen Tools müssen für die aktuell installierte Version von Xcode installiert werden (Weitere Informationen zur Installation finden Sie unten).
+-  **Visual Studio für Mac oder Visual Studio** : die neueste Version von Visual Studio für Mac oder Visual Studio sollte auf dem Entwicklungs Computer installiert und konfiguriert werden. Zum Entwickeln einer xamarin. IOS-Anwendung ist ein Apple Mac erforderlich, und wenn Sie Visual Studio verwenden, müssen Sie mit [einem xamarin. IOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md) -buildhost verbunden sein.
+-  **Die neueste Version von Target Sharpie** : eine aktuelle Kopie des Ziel-Sharpie-Tools, das [hier](~/cross-platform/macios/binding/objective-sharpie/get-started.md)heruntergeladen wird. Wenn Sie bereits das Ziel "Sharpie" installiert haben, können Sie es mithilfe der`sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 
-## <a name="installing-the-xcode-command-line-tools"></a>Installieren die Xcode-Command-Line-Tools
+## <a name="installing-the-xcode-command-line-tools"></a>Installieren der Xcode-Befehlszeilen Tools
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 
-Wie bereits erwähnt, wir verwenden Xcode-Befehlszeilentools (insbesondere `make` und `lipo`) in dieser exemplarischen Vorgehensweise. Die `make` Befehl ist ein sehr häufig Unix-Dienstprogramm, das die Kompilierung von ausführbaren Programmen und Bibliotheken mit automatisieren, wird eine _Makefile_ , der angibt, wie das Programm erstellt werden soll. Die `lipo` Befehl eine OS X-Befehlszeilen-Hilfsprogramm zum Erstellen von Multi-Architektur von Dateien, wird es fassen Sie mehrere `.a` -Dateien in eine Datei, die von der alle Hardwarearchitekturen verwendet werden kann.
+Wie bereits erwähnt, verwenden wir Xcode-Befehlszeilen Tools (insbesondere `make` und `lipo`) in dieser exemplarischen Vorgehensweise. Der `make` Befehl ist ein sehr häufiges UNIX-Hilfsprogramm, das die Kompilierung ausführbarer Programme und Bibliotheken mithilfe eines _Makefile_ automatisiert, das angibt, wie das Programm erstellt werden soll. Der `lipo` Befehl ist ein OS X-Befehlszeilen-Hilfsprogramm zum Erstellen von Dateien mit mehreren Architekturen. `.a` es werden mehrere Dateien zu einer Datei zusammengefasst, die von allen Hardwarearchitekturen verwendet werden kann.
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-Wie bereits erwähnt, wir verwenden Xcode-Befehlszeilentools für die **Mac-Buildhost** (insbesondere `make` und `lipo`) in dieser exemplarischen Vorgehensweise. Die `make` Befehl ist ein sehr häufig Unix-Dienstprogramm, das die Kompilierung von ausführbaren Programmen und Bibliotheken mit automatisieren, wird eine _Makefile_ , gibt an, wie das Programm zu erstellen. Die `lipo` Befehl eine OS X-Befehlszeilen-Hilfsprogramm zum Erstellen von Multi-Architektur von Dateien, wird es fassen Sie mehrere `.a` -Dateien in eine Datei, die von der alle Hardwarearchitekturen verwendet werden kann.
+Wie bereits erwähnt, verwenden wir die Xcode-Befehlszeilen Tools auf dem **Mac** -buildhost `make` ( `lipo`insbesondere und) in dieser exemplarischen Vorgehensweise. Der `make` -Befehl ist ein sehr häufiges UNIX-Hilfsprogramm, das die Kompilierung von ausführbaren Programmen und Bibliotheken mithilfe eines _Makefile_ -para gramms automatisiert, das angibt, wie das Programm erstellt werden soll. Der `lipo` Befehl ist ein OS X-Befehlszeilen-Hilfsprogramm zum Erstellen von Dateien mit mehreren Architekturen. `.a` es werden mehrere Dateien zu einer Datei zusammengefasst, die von allen Hardwarearchitekturen verwendet werden kann.
 
 
 -----
 
-Gemäß den Apple [erstellen, die über die Befehlszeile mit Xcode – häufig gestellte Fragen von](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) Dokumentation in OS X 10.9 und höher, wird die **Downloads** Bereich von Xcode **Voreinstellungen** Dialogfeld nicht unterstützt mehr die Download-Befehlszeilentools.
+Gemäß der Apple-Dokumentation über [die Befehlszeile mit der Dokumentation zu Xcode FAQ](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) in OS X 10,9 und höher unterstützt der **Download** Bereich des Dialog Felds Xcode- **Einstellungen** nicht mehr die Download-Befehlszeilen Tools.
 
 Sie müssen eine der folgenden Methoden verwenden, um die Tools zu installieren:
 
-- **Installieren von Xcode** – bei der Installation von Xcode, es wird zusammen mit allen Befehlszeilentools ausgeliefert. Shims in OS X 10.9 (installiert `/usr/bin`), können alle Tool im "zuordnen" `/usr/bin` an das entsprechende Tool in Xcode. Z. B. die `xcrun` Befehl, der Sie gefunden oder einem beliebigen Tool in Xcode über die Befehlszeile ausgeführt werden kann.
-- **Die Terminal-Anwendung** -aus der Terminal-Anwendung, können Sie die Befehlszeilentools installieren, indem Sie mit der `xcode-select --install` Befehl:
-    - Die Terminal-Anwendung zu starten.
-    - Typ `xcode-select --install` , und drücken Sie **EINGABETASTE**, z.B.:
+- **Installieren von Xcode** : Wenn Sie Xcode installieren, werden alle Ihre Befehlszeilen Tools gebündelt. In OS X 10,9-Shims (installiert `/usr/bin`in) kann jedes in `/usr/bin` enthaltene Tool dem entsprechenden Tool in Xcode zuordnen. Beispielsweise der `xcrun` -Befehl, mit dem Sie ein beliebiges Tool in Xcode über die Befehlszeile suchen oder ausführen können.
+- **Die Terminalanwendung** : Sie können die Befehlszeilen Tools über die Terminalanwendung installieren, indem Sie den `xcode-select --install` folgenden Befehl ausführen:
+    - Starten Sie die Terminal Anwendung.
+    - Geben **Sie**ein, unddrückenSiedieEingabe`xcode-select --install` Taste:
 
     ```bash
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - Werden Sie aufgefordert, die Befehlszeilentools installieren, klicken Sie auf die **installieren** Schaltfläche:   [![](walkthrough-images/xcode01.png "Installieren von Tools über die Befehlszeile")](walkthrough-images/xcode01.png#lightbox)
+    - Sie werden aufgefordert, die Befehlszeilen Tools zu installieren. Klicken Sie auf die Schaltfläche **Installieren** :   [![](walkthrough-images/xcode01.png "Installieren der Befehlszeilen Tools")](walkthrough-images/xcode01.png#lightbox)
 
-    - Die Tools heruntergeladen und installiert, die von Apple Servern:   [![](walkthrough-images/xcode02.png "Herunterladen von tools")](walkthrough-images/xcode02.png#lightbox)
+    - Die Tools werden von Apple-Servern heruntergeladen und installiert:   [![](walkthrough-images/xcode02.png "Herunterladen der Tools")](walkthrough-images/xcode02.png#lightbox)
 
-- **Downloads für Apple-Entwickler** -das Befehlszeilentools-Paket steht die [Downloads für Apple-Entwickler](https://developer.apple.com/downloads/index.action) Webseite. Melden Sie sich mit Ihrer Apple-ID, und klicken Sie dann suchen Sie und Laden Sie die Befehlszeilentools: [![](walkthrough-images/xcode03.png "Suchen die Befehlszeilentools")](walkthrough-images/xcode03.png#lightbox)
+- **Downloads für Apple-Entwickler** : das Paket mit den Befehlszeilen Tools ist auf der Webseite [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action) verfügbar. Melden Sie sich mit Ihrer Apple-ID an, suchen Sie nach den Befehlszeilen Tools, und laden Sie Sie herunter: [![](walkthrough-images/xcode03.png "Suchen der Befehlszeilen Tools")](walkthrough-images/xcode03.png#lightbox)
 
-Mit der Befehlszeilentools installiert sind sind wir bereit, mit der exemplarischen Vorgehensweise fortzufahren.
+Wenn die Befehlszeilen Tools installiert sind, können wir mit der exemplarischen Vorgehensweise fortfahren.
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
-In dieser exemplarischen Vorgehensweise wird die folgenden Schritte behandelt:
+In dieser exemplarischen Vorgehensweise werden die folgenden Schritte behandelt:
 
-- **[Erstellen Sie eine statische Bibliothek](#Creating_A_Static_Library)**  – dieser Schritt umfasst das Erstellen einer statischen Bibliothek aus der **InfColorPicker** Objective-C-Code. Die statische Bibliothek hat die `.a` Dateierweiterung und werden in der .NET-Assembly des Library-Projekts eingebettet werden.
-- **[Erstellen Sie ein Projekt der Xamarin.iOS-Bindung](#Create_a_Xamarin.iOS_Binding_Project)**  – Sobald wir eine statische Bibliothek verfügen, verwenden wir es zum Erstellen eines Projekts der Xamarin.iOS-Bindung. Das bindungsprojekt besteht aus der statischen Bibliothek, die wir gerade erstellt haben und die Metadaten in Form von C# Code, der erklärt, wie die Objective-C-API verwendet werden kann. Diese Metadaten wird häufig als die API-Definitionen bezeichnet. Wir verwenden **[Ziel Sharpie](#Using_Objective_Sharpie)** damit wir mit der API-Definitionen erstellen können.
-- **[Die API-Definitionen zu normalisieren](#Normalize_the_API_Definitions)**  – Ziel Sharpie ist gut für uns dabei zu unterstützen, aber nicht alles. Besprochen werden einige Änderungen, die wir benötigen, um auf die API-Definitionen zu machen, bevor sie verwendet werden können.
-- **[Verwenden Sie die Bindungsbibliothek](#Using_the_Binding)**  -schließlich erstellen wir eine Xamarin.iOS-Anwendung veranschaulichen, wie Sie das Projekt neu erstellte Bindung verwenden.
+- **[Erstellen einer statischen Bibliothek](#Creating_A_Static_Library)** : dieser Schritt umfasst das Erstellen einer statischen Bibliothek des Ziel-C-Codes von **infcolorpicker** . Die statische Bibliothek verfügt über die `.a` Dateierweiterung und wird in die .NET-Assembly des Bibliotheks Projekts eingebettet.
+- **[Erstellen eines xamarin. IOS-Bindungs Projekts](#Create_a_Xamarin.iOS_Binding_Project)** : Sobald wir über eine statische Bibliothek verfügen, verwenden wir diese, um ein xamarin. IOS-Bindungs Projekt zu erstellen. Das Bindungs Projekt besteht aus der statischen Bibliothek, die wir soeben erstellt haben, und Metadaten C# in Form von Code, in dem erläutert wird, wie die Ziel-C-API verwendet werden kann. Diese Metadaten werden im Allgemeinen als API-Definitionen bezeichnet. Wir verwenden **[Ziel-Sharpie](#Using_Objective_Sharpie)** , um uns bei der Erstellung der API-Definitionen zu unterstützen.
+- **[Normalisieren der API-Definitionen](#Normalize_the_API_Definitions)** : Ziel-Sharpie führt zu einer großen Aufgabe, uns zu unterstützen, aber es kann nicht alles durchführen. Wir besprechen einige Änderungen, die wir an den API-Definitionen vornehmen müssen, bevor Sie verwendet werden können.
+- **[Verwenden der Bindungs Bibliothek](#Using_the_Binding)** : Schließlich erstellen wir eine xamarin. IOS-Anwendung, um zu zeigen, wie das neu erstellte Bindungs Projekt verwendet werden kann.
 
-Nun, da wir wissen, welche Schritte erforderlich sind, betrachten wir nun den Rest der exemplarischen Vorgehensweise.
+Nachdem wir nun verstanden haben, welche Schritte ausgeführt werden, können wir uns mit dem Rest der exemplarischen Vorgehensweise beschäftigen.
 
 <a name="Creating_A_Static_Library"/>
 
 ## <a name="creating-a-static-library"></a>Erstellen einer statischen Bibliothek
 
-Wenn wir uns den Code für InfColorPicker in Github ansehen:
+Wenn wir den Code für infcolorpicker in GitHub untersuchen:
 
-[![](walkthrough-images/image02.png "Überprüfen Sie den Code für InfColorPicker in Github")](walkthrough-images/image02.png#lightbox)
+[![](walkthrough-images/image02.png "Überprüfen des Codes für infcolorpicker in GitHub")](walkthrough-images/image02.png#lightbox)
 
-Wir können die folgenden drei Verzeichnisse im Projekt sehen:
+Die folgenden drei Verzeichnisse können im Projekt angezeigt werden:
 
-- **InfColorPicker** : Dieses Verzeichnis enthält die Objective-C-Code für das Projekt.
-- **PickerSamplePad** : Dieses Verzeichnis enthält ein Beispielprojekt für das iPad.
-- **PickerSamplePhone** : Dieses Verzeichnis enthält ein Beispielprojekt für das iPhone.
+- **Infcolorpicker** : dieses Verzeichnis enthält den Ziel-C-Code für das Projekt.
+- **Pickersamplepad** : dieses Verzeichnis enthält ein Beispiel-iPad-Projekt.
+- **Pickersamplephone** : dieses Verzeichnis enthält ein Beispiel-iPhone-Projekt.
 
-Wir laden Sie das Projekt InfColorPicker [GitHub](https://github.com/InfinitApps/InfColorPicker/archive/master.zip) und Entzippen Sie sie in das Verzeichnis der unsere auswählen. Öffnen Sie das Xcode-Ziel für `PickerSamplePhone` -Projekt sehen Sie die folgende Projektstruktur im Xcode Navigator:
+Laden wir das infcolorpicker-Projekt von [GitHub](https://github.com/InfinitApps/InfColorPicker/archive/master.zip) herunter, und entpacken Sie es in das Verzeichnis unserer Wahl. Wenn Sie das Xcode-Ziel `PickerSamplePhone` für das Projekt öffnen, wird die folgende Projektstruktur im Xcode-Navigator angezeigt:
 
-[![](walkthrough-images/image03.png "Die Projektstruktur im Xcode-Navigator")](walkthrough-images/image03.png#lightbox)
+[![](walkthrough-images/image03.png "Die Projektstruktur im Xcode-Navigator.")](walkthrough-images/image03.png#lightbox)
 
-Dieses Projekt erreicht die Wiederverwendung von Code durch das direkte Hinzufügen des InfColorPicker-Quellcodes (in Rot) in jedem Beispielprojekt. Der Code für das Beispielprojekt ist im blauen Rahmen. Da dieses Projekt keine uns mit einer statischen Bibliothek, ist es erforderlich, für uns erstellen Sie ein Xcode-Projekt, um die statische Bibliothek zu kompilieren.
+Dieses Projekt erreicht die Wiederverwendung von Code durch direktes Hinzufügen des infcolorpicker-Quellcodes (im roten Feld) zu jedem Beispiel Projekt. Der Code für das Beispiel Projekt befindet sich im blauen Feld. Da uns dieses bestimmte Projekt keine statische Bibliothek bereitstellt, ist es erforderlich, ein Xcode-Projekt zu erstellen, um die statische Bibliothek zu kompilieren.
 
-Der erste Schritt besteht für uns den Quellcode InfoColorPicker der statischen Bibliothek hinzufügen. Lassen Sie uns hierzu gehen Sie folgendermaßen vor:
+Der erste Schritt besteht darin, dass wir den infocolorpicker-Quellcode der statischen Bibliothek hinzufügen. Um dies zu erreichen, gehen Sie folgendermaßen vor:
 
 1. Starten Sie Xcode.
-2. Von der **Datei** Menü die Option **neu** > **Projekt...** :
+2. Wählen Sie im Menü **Datei** die Option **Neues** > **Projekt...** aus:
 
     [![](walkthrough-images/image04.png "Starten eines neuen Projekts")](walkthrough-images/image04.png#lightbox)
-3. Wählen Sie **Framework und Bibliothek**, **Cocoa Touch statische Bibliothek** Vorlage, und klicken Sie auf die **Weiter** Schaltfläche:
+3. Wählen Sie **Framework & Bibliothek**aus , und klicken Sie dann auf die Schaltfläche **weiter** :
 
-    [![](walkthrough-images/image05.png "Wählen Sie die statische Bibliothek mit Cocoa Touch-Vorlage")](walkthrough-images/image05.png#lightbox)
+    [![](walkthrough-images/image05.png "Vorlage für die statische Cocoa-Eingabe Vorlage auswählen")](walkthrough-images/image05.png#lightbox)
 
-4. Geben Sie `InfColorPicker` für die **Projektname** , und klicken Sie auf die **Weiter** Schaltfläche:
+4. Geben `InfColorPicker` Sie als **Projektnamen** ein, und klicken Sie auf die Schaltfläche **weiter** :
 
-    [![](walkthrough-images/image06.png "Geben Sie den Namen des Projekts InfColorPicker")](walkthrough-images/image06.png#lightbox)
-5. Wählen Sie einen Speicherort zum Speichern Sie das Projekt, und klicken Sie auf die **OK** Schaltfläche.
-6. Nun müssen wir die Quelle aus dem Projekt InfColorPicker statische Bibliothek hinzufügen. Da die **InfColorPicker.h** Datei bereits in der statischen Bibliothek (standardmäßig), Xcode gestattet es uns nicht um ihn zu überschreiben. Von der **Finder**, navigieren Sie zu den InfColorPicker Quellcode im ursprünglichen Projekt, das wir von GitHub entpackt, alle InfColorPicker Dateien kopieren und fügen Sie sie in unserem neuen statischen Bibliothek-Projekt:
+    [![](walkthrough-images/image06.png "Geben Sie infcolorpicker als Projektnamen ein.")](walkthrough-images/image06.png#lightbox)
+5. Wählen Sie einen Speicherort für das Projekt aus, und klicken Sie auf die Schaltfläche **OK** .
+6. Nun müssen wir die Quelle aus dem Projekt infcolorpicker dem statischen Bibliotheksprojekt hinzufügen. Da die Datei " **infcolorpicker. h** " in der statischen Bibliothek bereits vorhanden ist (standardmäßig), lässt Xcode nicht zu, dass Sie überschrieben werden kann. Navigieren Sie aus dem **Finder**in das ursprüngliche Projekt, das Sie aus GitHub entzippt haben, zum infcolorpicker-Quellcode, kopieren Sie alle infcolorpicker-Dateien, und fügen Sie Sie in unser neues statisches Bibliotheksprojekt ein:
 
-    [![](walkthrough-images/image12.png "Kopieren Sie alle Dateien InfColorPicker")](walkthrough-images/image12.png#lightbox)
+    [![](walkthrough-images/image12.png "Alle infcolorpicker-Dateien kopieren")](walkthrough-images/image12.png#lightbox)
 
-7. Zurück zu Xcode, klicken Sie mit der rechten Maustaste auf die **InfColorPicker** Ordner, und wählen **Hinzufügen von Dateien zu "InfColorPicker..."** :
+7. Kehren Sie zu Xcode zurück, klicken Sie mit der rechten Maustaste auf den Ordner **infcolorpicker** , und wählen Sie dann **Dateien zu "infcolorpicker" hinzufügen**aus:
 
     [![](walkthrough-images/image08.png "Hinzufügen von Dateien")](walkthrough-images/image08.png#lightbox)
 
-8. Das Dialogfeld "Dateien hinzufügen", navigieren Sie zu den InfColorPicker Quellcodedateien, die wir gerade kopiert haben, wählen sie alle aus, und klicken Sie auf die **hinzufügen** Schaltfläche:
+8. Navigieren Sie im Dialogfeld "Dateien hinzufügen" zu den von uns soeben kopierten Quell Code Dateien für infcolorpicker, wählen Sie alle aus, und klicken Sie auf die Schaltfläche **Hinzufügen** :
 
-    [![](walkthrough-images/image09.png "Wählen Sie alle aus, und klicken Sie auf die Schaltfläche \"hinzufügen\"")](walkthrough-images/image09.png#lightbox)
+    [![](walkthrough-images/image09.png "Alle auswählen und auf die Schaltfläche \"hinzufügen\" klicken")](walkthrough-images/image09.png#lightbox)
 
-9. Der Quellcode wird in unserem Projekt kopiert werden:
+9. Der Quellcode wird in unser Projekt kopiert:
 
-    [![](walkthrough-images/image10.png "Der Quellcode wird in das Projekt kopiert werden")](walkthrough-images/image10.png#lightbox)
+    [![](walkthrough-images/image10.png "Der Quellcode wird in das Projekt kopiert.")](walkthrough-images/image10.png#lightbox)
 
-10. Wählen Sie aus der Xcode-Projektnavigator der **InfColorPicker.m** Datei, und kommentieren Sie die letzten beiden Zeilen (aufgrund der Art, die diese Bibliothek geschrieben wurde, wird diese Datei wird nicht verwendet wird):
+10. Wählen Sie im Xcode-Projekt Navigator die Datei **infcolorpicker. m** aus, und kommentieren Sie die letzten beiden Zeilen aus (aufgrund der Art und Weise, in der diese Bibliothek geschrieben wurde, wird diese Datei nicht verwendet):
 
-    [![](walkthrough-images/image14.png "Bearbeiten der Datei InfColorPicker.m")](walkthrough-images/image14.png#lightbox)
+    [![](walkthrough-images/image14.png "Bearbeiten der Datei \"infcolorpicker. m\"")](walkthrough-images/image14.png#lightbox)
 
-11. Nun müssen wir überprüfen, ob alle Frameworks, die von der Bibliothek erforderlich. Sie finden diese Informationen entweder in der Infodatei oder durch Öffnen einer der Beispielprojekte bereitgestellt. Dieses Beispiel verwendet `Foundation.framework`, `UIKit.framework`, und `CoreGraphics.framework` wir hinzufügen.
+11. Wir müssen jetzt überprüfen, ob für die Bibliothek Frameworks erforderlich sind. Sie finden diese Informationen entweder in der Infodatei oder indem Sie eines der bereitgestellten Beispiel Projekte öffnen. In diesem Beispiel `Foundation.framework`werden `UIKit.framework`, und `CoreGraphics.framework` hinzugefügt.
 
-12. Wählen Sie die **InfColorPicker Ziel > Build Phases** und erweitern Sie die **Binärdatei mit Verknüpfungsbibliotheken** Abschnitt:
+12. Wählen Sie das **Ziel >** buildphasen aus, und erweitern Sie den Abschnitt **Link Binary with Libraries** :
 
-    [![](walkthrough-images/image16b.png "Erweitern Sie den Abschnitt für die Binärdatei mit Bibliotheken verknüpfen")](walkthrough-images/image16b.png#lightbox)
+    [![](walkthrough-images/image16b.png "Erweitern Sie den Abschnitt Link Binary with Libraries.")](walkthrough-images/image16b.png#lightbox)
 
-13. Verwenden der **+** Schaltfläche Öffnen Sie das Dialogfeld, sodass Sie zum Hinzufügen der erforderlichen Frames-Frameworks, die oben aufgeführten:
+13. Verwenden Sie **+** die Schaltfläche, um das Dialogfeld zu öffnen, in dem Sie die oben aufgeführten erforderlichen Frames hinzufügen können:
 
-    [![](walkthrough-images/image16c.png "Fügen Sie die erforderlichen Frames Frameworks oben aufgelisteten")](walkthrough-images/image16c.png#lightbox)
+    [![](walkthrough-images/image16c.png "Fügen Sie die oben aufgeführten erforderlichen Frame-Frameworks hinzu.")](walkthrough-images/image16c.png#lightbox)
 
-14. Die **Binärdatei mit Verknüpfungsbibliotheken** Abschnitt sollte jetzt wie folgt aussehen:
+14. Der Abschnitt **Link Binary with Libraries** sollte nun wie in der folgenden Abbildung aussehen:
 
-    [![](walkthrough-images/image16d.png "Im Abschnitt für die Binärdatei mit Bibliotheken verknüpfen")](walkthrough-images/image16d.png#lightbox)
+    [![](walkthrough-images/image16d.png "Der Link Binary with Libraries-Abschnitt")](walkthrough-images/image16d.png#lightbox)
 
-An diesem Punkt sind wir schließen, aber noch nicht ganz fertig. Die statische Bibliothek erstellt wurde, aber wir müssen, erstellen Sie sie zum Erstellen einer Fat binary, alle erforderlichen-Architekturen für iOS-Gerät und iOS-Simulator umfasst.
+An diesem Punkt sind wir geschlossen, aber wir sind noch nicht fertig. Die statische Bibliothek wurde erstellt, aber wir müssen Sie erstellen, um eine FAT-Binärdatei zu erstellen, die alle erforderlichen Architekturen für IOS-Geräte und IOS-Simulator enthält.
 
-### <a name="creating-a-fat-binary"></a>Erstellen einer Fat-Binärdatei
+### <a name="creating-a-fat-binary"></a>Erstellen einer FAT-Binärdatei
 
-Alle iOS-Geräte verfügen über Prozessoren, die von ARM-Architektur unterstützt werden und, die im Laufe der Zeit entwickelt wurden. Jede neue Architektur werden neue Anweisungen und andere Verbesserungen bei gleichzeitiger Rückwärtskompatibilität Kompatibilität hinzugefügt. iOS-Geräte haben armv6 "," armv7 "," armv7s "," arm64-Befehlssätze – Obwohl [armv6 nicht mehr verwendet](~/ios/deploy-test/compiling-for-different-devices.md). IOS-Simulator basiert nicht auf ARM und wird stattdessen ein X86- und mit Strom versorgt x86_64-Simulator. Das bedeutet, dass die Bibliotheken für jeden Anweisungssatz angegeben werden müssen.
+Alle IOS-Geräte verfügen über Prozessoren, die von der ARM-Architektur betrieben werden und mit der Zeit entwickelt wurden Jede neue Architektur hat neue Anweisungen und andere Verbesserungen hinzugefügt, wobei die Abwärtskompatibilität weiterhin gewahrt bleibt. IOS-Geräte verfügen über ARMv6, armv7, armv7s, arm64-Anweisungs Sätze – Obwohl [ARMv6 nicht mehr verwendet wird](~/ios/deploy-test/compiling-for-different-devices.md). Der IOS-Simulator wird nicht von Arm unterversorgt und ist stattdessen ein x86-und x86_64-gestützter Simulator. Dies bedeutet, dass Bibliotheken für jeden Anweisungs Satz bereitgestellt werden müssen.
 
-Fat-Bibliothek ist `.a` Datei, die jede unterstützte Architektur enthält.
+Eine FAT-Bibliothek `.a` ist eine Datei, die alle unterstützten Architekturen enthält.
 
-Erstellen eine Fat binary ist drei Schritten:
+Das Erstellen einer FAT-Binärdatei ist ein dreistufiger Prozess:
 
-- Kompilieren Sie eine ARM-7 und ARM64-Version von der statischen Bibliothek an.
-- Kompilieren einer X86- und x84_64-Version von der statischen Bibliothek an.
-- Verwenden der `lipo` Befehlszeilentool zum Kombinieren der zwei statischen Bibliotheken.
+- Kompilieren Sie eine ARM 7-& ARM64 Version der statischen Bibliothek.
+- Kompilieren Sie eine x86-und x84_64-Version der statischen Bibliothek.
+- Verwenden Sie `lipo` das-Befehlszeilen Tool, um die beiden statischen Bibliotheken zu einer zu kombinieren.
 
-Diese drei Schritte sind recht einfach ist es möglicherweise notwendig, diese zu wiederholen, in der Zukunft verwendet werden, wenn die Objective-C-Bibliothek empfangen wird, Updates oder Fehlerkorrekturen ist erforderlich. Wenn Sie diese Schritte automatisieren möchten, vereinfachen sie die künftige Wartung und die Unterstützung des iOS-Projekts Bindung.
+Diese drei Schritte sind zwar recht unkompliziert, es kann jedoch erforderlich sein, Sie in Zukunft zu wiederholen, wenn die Ziel-C-Bibliothek Updates empfängt oder wenn wir Fehlerbehebungen benötigen. Wenn Sie diese Schritte automatisieren, wird die zukünftige Wartung und Unterstützung des IOS-Bindungs Projekts vereinfacht.
 
-Es gibt viele Tools zur Automatisierung solcher Aufgaben – ein Shellskript [Rake](http://rake.rubyforge.org/), [Xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/), und [stellen](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Wenn die Xcode-Befehlszeilentools installiert sind, `make` ebenfalls installiert ist, ist das Buildsystem, die in dieser exemplarischen Vorgehensweise verwendet werden. Hier ist ein **Makefile** , mit denen Sie können eine freigegebene Bibliothek von Multi-Architektur zu erstellen, die auf einem iOS-Gerät und der Simulator für eine beliebige Bibliothek funktioniert:
+Es stehen zahlreiche Tools zur Verfügung, mit denen Sie Aufgaben wie Shellskripts, [Rake](http://rake.rubyforge.org/), [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)und [make](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)automatisieren können. Wenn die Xcode-Befehlszeilen Tools installiert sind `make` , wird ebenfalls installiert. Dies ist das Buildsystem, das für diese exemplarische Vorgehensweise verwendet wird. Hier ist ein **Makefile** , mit dem Sie eine freigegebene Bibliothek für mehrere Architekturen erstellen können, die auf einem IOS-Gerät und dem Simulator für jede Bibliothek funktioniert:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -213,62 +213,62 @@ clean:
     -rm -f *.a *.dll
 ```
 
-Geben Sie die **Makefile** Befehle im nur-Text-Editor Ihrer Wahl, und aktualisieren Sie die Abschnitte mit **YOUR-Projektname** mit dem Namen des Projekts. Es ist auch wichtig, um sicherzustellen, dass Sie die obigen Anweisungen genau mit den Registerkarten in den Anweisungen, die beibehalten einfügen.
+Geben Sie die **Makefile** -Befehle im nur-Text-Editor Ihrer Wahl ein, und aktualisieren Sie die Abschnitte mit **Ihrem Projektnamen** mit dem Namen Ihres Projekts. Es ist auch wichtig, sicherzustellen, dass Sie die obigen Anweisungen genau einfügen, wobei die Registerkarten in den Anweisungen beibehalten werden.
 
-Speichern Sie die Datei mit dem Namen **Makefile** an demselben Speicherort wie die statische Bibliothek Xcode InfColorPicker wir oben erstellt haben:
+Speichern Sie die Datei mit dem Namen **Makefile** am gleichen Speicherort wie die statische Bibliothek infcolorpicker Xcode, die wir oben erstellt haben:
 
-[![](walkthrough-images/lib00.png "Speichern Sie die Datei mit dem Namen Makefile")](walkthrough-images/lib00.png#lightbox)
+[![](walkthrough-images/lib00.png "Speichern Sie die Datei mit dem Namen Makefile.")](walkthrough-images/lib00.png#lightbox)
 
-Öffnen Sie die Terminal-Anwendung auf Ihrem Mac, und navigieren Sie zum Speicherort Ihrer Makefiles. Typ `make` in das Terminal aus, drücken Sie die **EINGABETASTE** und **Makefile** ausgeführt wird:
+Öffnen Sie die Terminal Anwendung auf Ihrem Mac, und navigieren Sie zum Speicherort Ihrer Makefile. Geben Sie in das Terminal ein, drücken Sie die EINGABETASTE, und das Makefile wird ausgeführt: `make`
 
-[![](walkthrough-images/lib01.png "Makefile-Beispielausgabe")](walkthrough-images/lib01.png#lightbox)
+[![](walkthrough-images/lib01.png "Beispiel für Makefile-Ausgabe")](walkthrough-images/lib01.png#lightbox)
 
-Beim Ausführen von Stellen sehen Sie eine Menge Text Scrollen durch. Wenn alles ordnungsgemäß funktioniert, sehen Sie die Wörter **BUILDVORGANG war erfolgreich** und `libInfColorPicker-armv7.a`, `libInfColorPicker-i386.a` und `libInfColorPickerSDK.a` Dateien kopiert werden, am gleichen Speicherort wie die **Makefile**:
+Wenn Sie make ausführen, wird ein großer Text durch Scrollen von angezeigt. Wenn alles ordnungsgemäß funktioniert hat, sehen Sie, dass die Wörter **Build erfolgreich** `libInfColorPicker-armv7.a`sind `libInfColorPickerSDK.a` und `libInfColorPicker-i386.a` dass Dateien an denselben Speicherort wie das **Makefile**kopiert werden:
 
-[![](walkthrough-images/lib02.png "Mit dem Makefile generierten Dateien LibInfColorPicker-armv7.a, LibInfColorPicker-i386.a und libInfColorPickerSDK.a")](walkthrough-images/lib02.png#lightbox)
+[![](walkthrough-images/lib02.png "Die vom Makefile generierten Dateien libinf ColorPicker-armv7. a, libinf ColorPicker-i386. a und libinf colorpickersdk. a")](walkthrough-images/lib02.png#lightbox)
 
-Sie können die Architekturen in Ihre Fat-Binärdatei mithilfe des folgenden Befehls überprüfen:
+Mit dem folgenden Befehl können Sie die Architekturen in der FAT-Binärdatei bestätigen:
 
 ```bash
 xcrun -sdk iphoneos lipo -info libInfColorPicker.a
 ```
 
-Dies sollte Folgendes angezeigt:
+Folgendes sollte angezeigt werden:
 
 ```bash
 Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 ```
 
-Wir haben den ersten Schritt für die iOS-Bindung an diesem Punkt abgeschlossen, erstellen Sie eine statische Bibliothek mit Xcode und die Xcode-Befehlszeilentools `make` und `lipo`. Lassen Sie uns mit dem nächsten Schritt fortfahren, und verwenden Sie **Ziel-Sharpie** zum Automatisieren der Erstellung der API-Bindungen für uns.
+An diesem Punkt haben wir den ersten Schritt der IOS-Bindung abgeschlossen, indem wir mithilfe von Xcode und den Xcode-Befehlszeilen Tools `make` und `lipo`eine statische Bibliothek erstellt haben. Fahren Sie mit dem nächsten Schritt fort, und verwenden Sie "Target **-Sharpie** ", um die Erstellung der API-Bindungen für uns zu automatisieren.
 
 <a name="Create_a_Xamarin.iOS_Binding_Project"/>
 
-## <a name="create-a-xamarinios-binding-project"></a>Erstellen Sie eine Xamarin.iOS Projekt wird gebunden
+## <a name="create-a-xamarinios-binding-project"></a>Erstellen eines xamarin. IOS-Bindungs Projekts
 
-Bevor wir verwenden können, **Ziel-Sharpie** des Bindungsvorgangs automatisieren möchten, müssen wir zum Erstellen eines Projekts des Xamarin.iOS-Bindung, die API-Definitionen aufnehmen soll (, die wir verwenden **Ziel-Sharpie** , uns zu helfen Build), und erstellen Sie die C# für uns zu binden.
+Bevor wir "Target **-Sharpie** " verwenden können, um den Bindungsprozess zu automatisieren, muss ein xamarin. IOS-Bindungs Projekt erstellt werden, um die API-Definitionen zu beherbergen (die wir zum Erstellen von "Target **-Sharpie** " verwenden, um uns zu helfen) und die C# Bindung für uns zu erstellen.
 
-Lassen Sie uns wie folgt vor:
+Führen Sie die folgenden Schritte aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Starten Sie Visual Studio für Mac.
-1. Von der **Datei** , wählen Sie im Menü **neu** > **Projektmappe...** :
+1. Wählen Sie im Menü Datei die Option **neue** > Projekt **Mappe** **...** aus:
 
-    ![](walkthrough-images/bind01.png "Starten einer neuen Projektmappe")
+    ![](walkthrough-images/bind01.png "Starten einer neuen Projekt Mappe")
 
-1. Wählen Sie im Dialogfeld "neue Projektmappe" **Bibliothek** > **iOS-Projekts Bindung**:
+1. Wählen Sie im Dialogfeld neue Projekt Mappe die Option **Bibliothek** > **IOS-Bindungs Projekt**:
 
-    ![](walkthrough-images/bind02.png "Wählen Sie die iOS-Projekts binden")
+    ![](walkthrough-images/bind02.png "IOS-Bindungs Projekt auswählen")
 
-1. Klicken Sie auf die **Weiter** Schaltfläche.
+1. Klicken Sie auf die Schaltfläche **weiter** .
 
-1. Geben Sie "InfColorPickerBinding" als die **Projektname** , und klicken Sie auf die **erstellen** Schaltfläche, um die Projektmappe zu erstellen:
+1. Geben Sie "infcolorpickerbinding" als **Projektnamen** ein, und klicken Sie auf die Schaltfläche **Erstellen** , um die Projekt Mappe zu erstellen:
 
-    ![](walkthrough-images/bind02a.png "Geben Sie den Namen des Projekts InfColorPickerBinding")
+    ![](walkthrough-images/bind02a.png "Geben Sie infcolorpickerbinding als Projektnamen ein.")
 
-Die Lösung erstellt werden und werden zwei Standarddateien enthalten:
+Die Projekt Mappe wird erstellt, und es werden zwei Standard Dateien eingeschlossen:
 
-![](walkthrough-images/bind03.png "Die Projektmappenstruktur im Projektmappen-Explorer")
+![](walkthrough-images/bind03.png "Die Lösungs Struktur im Projektmappen-Explorer")
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -276,66 +276,66 @@ Die Lösung erstellt werden und werden zwei Standarddateien enthalten:
 
 1. Starten Sie Visual Studio.
 
-1. Von der **Datei** , wählen Sie im Menü **neu** > **Projekt...** :
+1. Wählen Sie im Menü **Datei** die Option **Neues** > **Projekt...** aus:
 
     ![Starten eines neuen Projekts](walkthrough-images/bind01vs.png "Starten eines neuen Projekts")
 
-1. Wählen Sie im Dialogfeld "Neues Projekt" **Visual C# > iPhone & iPad > iOS-Bindungsbibliothek (Xamarin)** :
+1. Wählen Sie im Dialogfeld Neues Projekt die **Option C# Visual > iPhone & iPad > IOS-Bindungs Bibliothek (xamarin)** aus:
 
-    [![Wählen Sie die iOS-Bindungsbibliothek](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
+    [![IOS-Bindungs Bibliothek auswählen](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
-1. Geben Sie "InfColorPickerBinding" als die **Namen** , und klicken Sie auf die **OK** Schaltfläche, um die Projektmappe zu erstellen.
+1. Geben Sie "infcolorpickerbinding" als **Namen** ein, und klicken Sie auf die Schaltfläche **OK** , um die Projekt Mappe zu erstellen.
 
-Die Lösung erstellt werden und werden zwei Standarddateien enthalten:
+Die Projekt Mappe wird erstellt, und es werden zwei Standard Dateien eingeschlossen:
 
-![](walkthrough-images/bind03vs.png "Die Projektmappenstruktur im Projektmappen-Explorer")
+![](walkthrough-images/bind03vs.png "Die Lösungs Struktur im Projektmappen-Explorer")
 
 -----
 
-- **ApiDefinition.cs** – diese Datei enthält die Verträge, die definieren, wie Objective-C-API in umschlossen wird C#.
-- **Structs.cs** : Diese Datei enthält alle Strukturen oder-Enumerationswerte fest, die die Schnittstellen und Delegaten erforderlich sind.
+- **ApiDefinition.cs** : Diese Datei enthält die Verträge, die definieren, wie die Ziel-C-APIs umschließt C#werden.
+- **Structs.cs** : Diese Datei enthält alle Strukturen oder Enumerationswerte, die von den Schnittstellen und Delegaten benötigt werden.
 
-Wir arbeiten mit diesen zwei Dateien weiter unten in dieser exemplarischen Vorgehensweise. Zunächst müssen wir die InfColorPicker-Bibliothek für das bindungsprojekt hinzuzufügen.
+Wir arbeiten mit diesen beiden Dateien später in der exemplarischen Vorgehensweise. Zuerst müssen wir die infcolorpicker-Bibliothek zum Bindungs Projekt hinzufügen.
 
-### <a name="including-the-static-library-in-the-binding-project"></a>Einschließen der statischen Bibliothek in der Bindungsprojekt
+### <a name="including-the-static-library-in-the-binding-project"></a>Einschließen der statischen Bibliothek in das Bindungs Projekt
 
-Nachdem wir unsere Bindung Basisprojekt bereit haben, müssen Sie die Fat Binary-Bibliothek hinzufügen wir oben, für erstellt die **InfColorPicker** Bibliothek.
+Wir haben jetzt das Basis Bindungs Projekt vorbereitet, und wir müssen die zuvor erstellte FAT-Datei für die-Bibliothek der **infcolorpicker** -Bibliothek hinzufügen.
 
-Um die Bibliothek hinzuzufügen, gehen Sie wie folgt vor:
+Gehen Sie folgendermaßen vor, um die Bibliothek hinzuzufügen:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Mit der rechten Maustaste auf die **Native Verweise** Ordner in der Projektmappe, und wählen Sie **Native Verweise hinzufügen**:
+1. Klicken Sie im Lösungspad mit der rechten Maustaste auf den Ordner **native References** , und wählen Sie **native Verweise hinzufügen**aus:
 
     ![](walkthrough-images/bind04a.png "Native Verweise hinzufügen")
 
-1. Navigieren Sie zu der Fat Binary wir vorher getroffen haben (`libInfColorPickerSDK.a`), und drücken Sie die **öffnen** Schaltfläche:
+1. Navigieren Sie zur FAT-Binärdatei, die`libInfColorPickerSDK.a`wir zuvor erstellt haben (), und drücken Sie die Schaltfläche **Öffnen**
 
-    ![](walkthrough-images/bind05.png "Wählen Sie die Datei libInfColorPickerSDK.a")
-1. Die Datei wird im Projekt enthalten sein:
+    ![](walkthrough-images/bind05.png "Wählen Sie die Datei \"libinf colorpickersdk. a\" aus.")
+1. Die Datei wird in das Projekt eingeschlossen:
 
-    ![](walkthrough-images/bind04.png "Eine Datei einschließen")
+    ![](walkthrough-images/bind04.png "Einschließen einer Datei")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Kopieren der `libInfColorPickerSDK.a` aus Ihrem **Mac-Buildhost** und fügen Sie ihn in das bindungsprojekt.
+1. Kopieren Sie `libInfColorPickerSDK.a` die von Ihrem **Mac** -buildhost, und fügen Sie Sie in das Bindungs Projekt ein.
 
-1. Mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen > Vorhandenes Element...** :
+1. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **> vorhandenes Element hinzufügen...** :
 
     ![](walkthrough-images/bind04vs.png "Hinzufügen einer vorhandenen Datei")
 
-1. Navigieren Sie zu der `libInfColorPickerSDK.a` , und drücken Sie die **hinzufügen** Schaltfläche:
+1. Navigieren Sie zum `libInfColorPickerSDK.a` , und klicken Sie auf die Schaltfläche **Hinzufügen** :
 
-    ![](walkthrough-images/bind05vs.png "Adding libInfColorPickerSDK.a")
+    ![](walkthrough-images/bind05vs.png "Hinzufügen von libinf colorpickersdk. a")
 
-1. Die Datei wird im Projekt enthalten sein.
+1. Die Datei wird in das Projekt eingefügt.
 
 -----
 
-Wenn die **.a** Datei wird dem Projekt hinzugefügt, Xamarin.iOS wird automatisch festgelegt. die **Buildvorgang** der Datei, die **ObjcBindingNativeLibrary**, und erstellen Sie eine spezielle Datei wird aufgerufen, `libInfColorPickerSDK.linkwith.cs`.
+Wenn die Datei " **. a** " dem Projekt hinzugefügt wird, legt xamarin. IOS automatisch **den** Buildvorgang der Datei auf **objcbindingnativelibrary**fest und erstellt eine spezielle Datei `libInfColorPickerSDK.linkwith.cs`mit dem Namen.
 
 
-Diese Datei enthält die `LinkWith` Attribut, Xamarin.iOS mitteilt, wie Handle der statischen Bibliothek, die wir soeben hinzugefügt. Der Inhalt dieser Datei werden in den folgenden Codeausschnitt dargestellt:
+Diese Datei enthält das `LinkWith` Attribut, das xamarin. IOS anweist, wie die soeben hinzugefügte statische Bibliothek behandelt werden soll. Der Inhalt dieser Datei wird im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 using ObjCRuntime;
@@ -343,38 +343,38 @@ using ObjCRuntime;
 [assembly: LinkWith ("libInfColorPickerSDK.a", SmartLink = true, ForceLoad = true)]
 ```
 
-Die `LinkWith` Attribut identifiziert die statische Bibliothek für das Projekt und einige wichtige Linker-Flags.
+Das `LinkWith` -Attribut identifiziert die statische Bibliothek für das Projekt und einige wichtige Linker-Flags.
 
 
-Im nächsten Schritt erforderlich ist, wird die API-Definitionen für das Projekt InfColorPicker erstellt. Für die Zwecke dieser exemplarischen Vorgehensweise verwenden wir Ziel Sharpie zum Generieren der Datei **ApiDefinition.cs**.
+Als nächstes müssen wir die API-Definitionen für das infcolorpicker-Projekt erstellen. Im Rahmen dieser exemplarischen Vorgehensweise verwenden wir das Ziel "Sharpie", um die Datei " **ApiDefinition.cs**" zu generieren.
 
 <a name="Using_Objective_Sharpie"/>
 
-## <a name="using-objective-sharpie"></a>Verwenden von objektive Sharpie
+## <a name="using-objective-sharpie"></a>Verwenden von Ziel-Sharpie
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 
-Objektive Sharpie ist eine Kommandozeile Tool (bereitgestellt von Xamarin), die beim Erstellen der Definitionen, die zum Binden einer 3rd Party Objective-C-Bibliothek in erforderliche unterstützen C#. In diesem Abschnitt verwenden wir Ziel Sharpie zum Erstellen der anfänglichen **ApiDefinition.cs** für das Projekt InfColorPicker.
+Ziel-Sharpie ist ein von xamarin bereitgestelltes Befehlszeilen Tool, das beim Erstellen der Definitionen helfen kann, die erforderlich sind, um eine Ziel-C C#-Bibliothek von Drittanbietern an zu binden. In diesem Abschnitt verwenden wir den Ziel-Sharpie, um die anfängliche **ApiDefinition.cs** für das infcolorpicker-Projekt zu erstellen.
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-Objektive Sharpie ist eine Kommandozeile Tool (bereitgestellt von Xamarin), die beim Erstellen der Definitionen, die zum Binden einer 3rd Party Objective-C-Bibliothek in erforderliche unterstützen C#. In diesem Abschnitt verwenden wir Ziel Sharpie auf unsere **Mac-Buildhost** zum Erstellen der anfänglichen **ApiDefinition.cs** für das Projekt InfColorPicker.
+Ziel-Sharpie ist ein von xamarin bereitgestelltes Befehlszeilen Tool, das beim Erstellen der Definitionen helfen kann, die erforderlich sind, um eine Ziel-C C#-Bibliothek von Drittanbietern an zu binden. In diesem Abschnitt verwenden wir den Ziel-Sharpie auf dem **Mac** -buildhost, um die anfängliche **ApiDefinition.cs** für das infcolorpicker-Projekt zu erstellen.
 
 
 -----
 
-Laden Sie zum Einstieg wir Ziel Sharpie-Installationsdatei wie in diesem [Handbuch](~/cross-platform/macios/binding/objective-sharpie/get-started.md#installing). Führen Sie das Installationsprogramm aus, und befolgen Sie alle eingabeaufforderungen auf dem Bildschirm aus der Installations-Assistent zum Ziel Sharpie auf unsere Entwicklungscomputer zu installieren.
+Zum Einstieg laden wir die Ziel-Sharpie-Installationsdatei herunter, wie in diesem [Handbuch](~/cross-platform/macios/binding/objective-sharpie/get-started.md#installing)ausführlich beschrieben. Führen Sie das Installationsprogramm aus, und befolgen Sie alle Aufforderungen auf dem Bildschirm vom Installations-Assistenten, um Ziel-Sharpie auf unserem Entwicklungs Computer zu installieren.
 
-Nach wir erfolgreich Ziel Sharpie haben installiert haben, lassen Sie uns die Terminal-app starten und geben Sie den folgenden Befehl auf alle Tools, Hilfe, die es bereitstellt, um die Bindung zu unterstützen:
+Nachdem Sie das Ziel "Sharpie" erfolgreich installiert haben, starten Sie die Terminal-app, und geben Sie den folgenden Befehl ein, um Hilfe zu allen Tools zu erhalten, die zur Unterstützung der Bindung bereitstellt:
 
 ```bash
 sharpie -help
 ```
 
-Wenn wir den oben angegebenen Befehl ausführen, wird die folgende Ausgabe generiert:
+Wenn Sie den obigen Befehl ausführen, wird die folgende Ausgabe generiert:
 
 ```bash
 Europa:Resources kmullins$ sharpie -help
@@ -392,12 +392,12 @@ Available Tools:
 Europa:Resources kmullins$
 ```
 
-In dieser exemplarischen Vorgehensweise wird die folgende Ziel Sharpie-Tools verwenden:
+Im Rahmen dieser exemplarischen Vorgehensweise verwenden wir die folgenden Ziel-Sharpie-Tools:
 
-- **Xcode** : dieses Tools bietet uns die Informationen zu unseren aktuellen Xcode-Installation und die Versionen von iOS und Mac-APIs, die es installiert haben. Wir werden diese Informationen später verwenden werden, wenn wir unsere Bindungen generieren.
-- **Binden Sie** -verwenden wir dieses Tool analysiert die **h** Dateien im Projekt InfColorPicker in die Ausgangs- **ApiDefinition.cs** und **StructsAndEnums.cs** Dateien.
+- **Xcode** : Diese Tools enthalten Informationen über unsere aktuelle Xcode-Installation und die Versionen von IOS-und Mac-APIs, die installiert wurden. Diese Informationen werden später verwendet, wenn wir unsere Bindungen generieren.
+- **Bind** : Wir verwenden dieses Tool, um die **h** -Dateien im Projekt infcolorpicker in die anfänglichen **ApiDefinition.cs** -und **StructsAndEnums.cs** -Dateien zu analysieren.
 
-Geben Sie den Namen des Tools, um Hilfe für ein bestimmtes Ziel Sharpie-Tool zu erhalten, und die `-help` Option. Z. B. `sharpie xcode -help` gibt die folgende Ausgabe zurück:
+Um Hilfe zu einem bestimmten Ziel-Sharpie-Tool zu erhalten, geben Sie den Namen des `-help` Tools und die Option ein. Beispielsweise `sharpie xcode -help` gibt die folgende Ausgabe zurück:
 
 ```bash
 Europa:Resources kmullins$ sharpie xcode -help
@@ -411,7 +411,7 @@ Options:
 Europa:Resources kmullins$
 ```
 
-Bevor wir den Bindungsprozess beginnen können, müssen wir Informationen über unsere aktuellen installierten SDKs erhalten Sie mithilfe des folgenden Befehls in das Terminal `sharpie xcode -sdks`:
+Bevor wir den Bindungsprozess starten können, müssen wir Informationen zu unseren aktuell installierten sdden erhalten, indem wir den folgenden Befehl in das Terminal `sharpie xcode -sdks`eingeben:
 
 ```bash
 amyb:Desktop amyb$ sharpie xcode -sdks
@@ -421,17 +421,17 @@ sdk: macosx10.11     arch: x86_64  i386
 sdk: watchos2.2      arch: armv7
 ```
 
-In den oben genannten wir sehen, dass wir haben die `iphoneos9.3` SDK auf dem Computer installiert. Mit diesen Informationen vorhanden, wir können das Projekt InfColorPicker analysieren `.h` -Dateien in den ersten **ApiDefinition.cs** und `StructsAndEnums.cs` für das Projekt InfColorPicker.
+Im obigen Beispiel sehen wir, dass das SDK auf dem `iphoneos9.3` Computer installiert ist. Nachdem diese Informationen vorhanden sind, können wir die infcolorpicker-Projekt `.h` Dateien in die anfängliche **ApiDefinition.cs** und das infcolorpicker- `StructsAndEnums.cs` Projekt analysieren.
 
-Geben Sie den folgenden Befehl aus, in der Terminal-app:
+Geben Sie den folgenden Befehl in der Terminal-app ein:
 
 ```bash
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-In denen `[full-path-to-project]` ist der vollständige Pfad zu dem Verzeichnis, in denen die **InfColorPicker** Xcode-Projektdatei auf unseren Computer befindet, und [Iphone-Betriebssystem] ist das iOS-SDK, die es installiert haben, siehe die `sharpie xcode -sdks` Befehl. Beachten Sie, dass in diesem Beispiel wir übergeben haben  **\*h** als Parameter verwendet, darunter *alle* die Header-Dateien in diesem Verzeichnis – normalerweise Sie sollten dies nicht, aber stattdessen sorgfältig lesen der Headerdateien der obersten Ebene gefunden **h** Datei verweist auf alle anderen relevanten Dateien, und übergeben Sie einfach, die zum Ziel Sharpie.
+Dabei steht für den vollständigen Pfad zu dem Verzeichnis, in dem sich die Projektdatei " **infcolorpicker** " auf dem Computer befindet, und [iPhone-OS] ist das IOS SDK, das wir installiert haben `sharpie xcode -sdks` , wie im Befehl angegeben. `[full-path-to-project]` Beachten Sie, dass in diesem Beispiel  **\*. h** als Parameter übergeben wurde, der *alle* Header Dateien in diesem Verzeichnis enthält. Dies ist normalerweise nicht der Fall, stattdessen sollten Sie die Header Dateien sorgfältig durchlesen, um die **. h** -Datei der obersten Ebene zu finden. eine Datei, die auf alle anderen relevanten Dateien verweist und diese einfach an den Ziel-Sharpie übergibt.
 
-Die folgenden [Ausgabe](walkthrough-images/os05.png) im Terminal generiert werden:
+Die folgende [Ausgabe](walkthrough-images/os05.png) wird im Terminal generiert:
 
 ```bash
 Europa:Resources kmullins$ sharpie bind -output InfColorPicker -namespace InfColorPicker -sdk iphoneos8.1 /Users/kmullins/Projects/InfColorPicker/InfColorPicker/InfColorPicker.h -unified
@@ -458,117 +458,117 @@ In file included from /Users/kmullins/Projects/InfColorPicker/InfColorPicker/Inf
 Europa:Resources kmullins$
 ```
 
-Und die **InfColorPicker.enums.cs** und **InfColorPicker.cs** Dateien in unser Verzeichnis erstellt werden:
+Und die **InfColorPicker.enums.cs** -und **InfColorPicker.cs** -Dateien werden in unserem Verzeichnis erstellt:
 
-[![](walkthrough-images/os06.png "Die InfColorPicker.enums.cs und InfColorPicker.cs-Dateien")](walkthrough-images/os06.png#lightbox)
+[![](walkthrough-images/os06.png "Die Dateien InfColorPicker.enums.cs und InfColorPicker.cs")](walkthrough-images/os06.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 
-Öffnen Sie beide Dateien an, in der Bindung-Projekt, dem wir zuvor erstellt haben. Kopieren Sie den Inhalt von der **InfColorPicker.cs** Datei, und fügen Sie ihn in die **ApiDefinition.cs** Ersetzen der vorhandenen Datei `namespace ...` Codeblock durch den Inhalt der der  **InfColorPicker.cs** Datei (verlassen die `using` Anweisungen intakt):
+Öffnen Sie beide Dateien im Bindungs Projekt, das wir oben erstellt haben. Kopieren Sie den Inhalt der **Datei InfColorPicker.cs** , und fügen Sie ihn in die Datei **ApiDefinition.cs** ein. `namespace ...` ersetzen Sie dabei den vorhandenen Codeblock durch den Inhalt der **InfColorPicker.cs** -Datei (indem Sie die `using` Anweisungen überschreiben. intakt):
 
-![](walkthrough-images/os07.png "Die Datei InfColorPickerControllerDelegate")
+![](walkthrough-images/os07.png "Die infcolorpickercontrollerdelegatdatei")
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-Öffnen Sie beide Dateien an, in der Bindung-Projekt, dem wir zuvor erstellt haben. Kopieren Sie den Inhalt von der **InfColorPicker.cs** Datei (aus der **Mac-Buildhost**), und fügen Sie ihn in die **ApiDefinition.cs** Ersetzen der vorhandenen Datei `namespace ...` Codeblock, mit dem Inhalt der **InfColorPicker.cs** Datei (verlassen die `using` Anweisungen intakt).
+Öffnen Sie beide Dateien im Bindungs Projekt, das wir oben erstellt haben. Kopieren Sie den Inhalt der **Datei InfColorPicker.cs** (auf dem **Mac**-buildhost), und fügen Sie ihn in die Datei ApiDefinition.cs `namespace ...` ein. ersetzen Sie dabei den vorhandenen Codeblock durch den Inhalt der **InfColorPicker.cs** -Datei ( die `using` Anweisungen bleiben unverändert).
 
 
 -----
 
 <a name="Normalize_the_API_Definitions"/>
 
-## <a name="normalize-the-api-definitions"></a>Die API-Definitionen zu normalisieren
+## <a name="normalize-the-api-definitions"></a>Normalisieren der API-Definitionen
 
-Objektive Sharpie manchmal hat ein Problem übersetzen `Delegates`, sodass die Definition der ändern müssen die `InfColorPickerControllerDelegate` Schnittstelle, und Ersetzen Sie die `[Protocol, Model]` Zeile mit den folgenden:
+Bei Ziel-Sharpie tritt mitunter ein `Delegates`Problem auf. Daher müssen wir die Definition `InfColorPickerControllerDelegate` der Schnittstelle ändern und die `[Protocol, Model]` Zeile durch Folgendes ersetzen:
 
 ```csharp
 [BaseType(typeof(NSObject))]
 [Model]
 ```
-Damit die Definition sieht wie folgt vor:
+So sieht die Definition wie folgt aus:
 
-[![](walkthrough-images/os11.png "Die definition")](walkthrough-images/os11.png#lightbox)
+[![](walkthrough-images/os11.png "Die Definition")](walkthrough-images/os11.png#lightbox)
 
-Als Nächstes nehmen wir das gleiche mit dem Inhalt der der `InfColorPicker.enums.cs` Datei, kopieren und Einfügen in die `StructsAndEnums.cs` Datei verlassen die `using` intakt Anweisungen:
+Als nächstes führen wir das gleiche mit dem Inhalt der `InfColorPicker.enums.cs` Datei aus, kopieren und Einfügen in die `StructsAndEnums.cs` Datei, sodass die `using` Anweisungen intakt bleiben:
 
-[![](walkthrough-images/os09.png "Der Inhalt der StructsAndEnums.cs Datei ")](walkthrough-images/os09.png#lightbox)
+[![](walkthrough-images/os09.png "Der Inhalt der Datei \"StructsAndEnums.cs\".")](walkthrough-images/os09.png#lightbox)
 
-Finden Sie auch, dass das Ziel Sharpie die Bindung mit dem mit Anmerkungen versehen wurde `[Verify]` Attribute. Diese Attribute geben, Sie sicherstellen sollten, dass das Ziel Sharpie hat die richtige durch Vergleichen der Bindung mit der ursprünglichen C/Objective-C-Deklaration (die in einem Kommentar über der gebundenen Deklaration bereitgestellt wird). Nachdem Sie die Bindungen überprüft haben, sollten Sie das Attribut überprüfen entfernen. Weitere Informationen finden Sie in der [überprüfen](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) Guide.
+Sie können auch feststellen, dass der Ziel-Sharpie die Bindung mit `[Verify]` Attributen versehen hat. Diese Attribute geben an, dass Sie sicherstellen sollten, dass Ziel-Sharpie das richtige ist, indem Sie die Bindung mit der ursprünglichen c/Ziel-c-Deklaration vergleichen (die in einem Kommentar oberhalb der gebundenen Deklaration bereitgestellt wird). Nachdem Sie die Bindungen überprüft haben, sollten Sie das Verify-Attribut entfernen. Weitere Informationen finden Sie im Leitfaden zur [Überprüfung](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) .
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 
-An diesem Punkt sollte das bindungsprojekt abgeschlossen und kann zum Erstellen. Wir erstellen das bindungsprojekt aus, und stellen Sie sicher, dass wir keine Fehler hat geführt:
+An diesem Punkt sollte das Bindungs Projekt abgeschlossen und bereit für die Erstellung sein. Erstellen wir nun das Bindungs Projekt, und stellen Sie sicher, dass keine Fehler aufgetreten sind:
 
-[Erstellen Sie das bindungsprojekt, und stellen Sie sicher, dass keine Fehler vorliegen](walkthrough-images/os12.png)
+[Erstellen Sie das Bindungs Projekt, und stellen Sie sicher, dass keine Fehler vorliegen.](walkthrough-images/os12.png)
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-An diesem Punkt sollte das bindungsprojekt abgeschlossen und kann zum Erstellen. Wir erstellen das bindungsprojekt aus, und stellen Sie sicher, dass wir keine Fehler hat geführt.
+An diesem Punkt sollte das Bindungs Projekt abgeschlossen und bereit für die Erstellung sein. Erstellen wir nun das Bindungs Projekt, und stellen Sie sicher, dass keine Fehler aufgetreten sind.
 
 
 -----
 
 <a name="Using_the_Binding"/>
 
-## <a name="using-the-binding"></a>Unter Verwendung der Bindung
+## <a name="using-the-binding"></a>Verwenden der Bindung
 
-Um das Erstellen einer iPhone-beispielanwendung mit iOS oben erstellten Bibliothek binden, gehen Sie wie folgt vor:
+Gehen Sie folgendermaßen vor, um eine Beispiel-iPhone-Anwendung zur Verwendung der oben erstellten IOS-Bindungs Bibliothek zu erstellen:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. **Erstellen von Xamarin.iOS-Projekt** -fügen Sie ein neues Xamarin.iOS-Projekt namens **InfColorPickerSample** der Projektmappe, wie in den folgenden Screenshots gezeigt:
+1. **Erstellen eines xamarin. IOS-Projekts** : Fügen Sie der Projekt Mappe ein neues xamarin. IOS-Projekt mit dem Namen " **infcolorpickersample** " hinzu, wie in den folgenden Screenshots gezeigt:
 
-    ![](walkthrough-images/use01.png "Eine Einzelansicht-App hinzufügen")
+    ![](walkthrough-images/use01.png "Hinzufügen einer einzelnen Ansichts-App")
 
-    ![](walkthrough-images/use01a.png "Den Bezeichner festlegen")
+    ![](walkthrough-images/use01a.png "Festlegen des Bezeichners")
 
-1. **Hinzufügen der Verweis auf das Projekt Bindung** -Update die **InfColorPickerSample** Projekt so, dass sie einen Verweis auf die **InfColorPickerBinding** Projekt:
+1. **Fügen Sie dem Bindungs Projekt einen Verweis hinzu** : Aktualisieren Sie das Projekt **infcolorpickersample** , sodass es einen Verweis auf das Projekt **infcolorpickerbinding** hat:
 
-    ![](walkthrough-images/use02.png "Verweis auf das Bindungsprojekt hinzufügen")
+    ![](walkthrough-images/use02.png "Hinzufügen eines Verweises auf das Bindungs Projekt")
 
-1. **Erstellen Sie die iPhone-Benutzeroberfläche** -einen Doppelklick auf die **MainStoryboard.storyboard** Datei die **InfColorPickerSample** Projekt in der iOS-Designer bearbeiten. Hinzufügen einer **Schaltfläche** an die Ansicht und nennen Sie sie `ChangeColorButton`, wie im folgenden gezeigt:
+1. **Erstellen der iPhone-Benutzeroberfläche** : Doppelklicken Sie auf die Datei " **mainstoryboard. Storyboard** " im Projekt " **infcolorpickersample** ", um Sie im IOS-Designer zu bearbeiten. Fügen Sie der Ansicht eine **Schaltfläche** hinzu, `ChangeColorButton`und nennen Sie Sie, wie im folgenden dargestellt:
 
-    ![](walkthrough-images/use03.png "Hinzufügen einer Schaltfläche an die Ansicht")
+    ![](walkthrough-images/use03.png "Hinzufügen einer Schaltfläche zur Ansicht")
 
-1. **Hinzufügen der InfColorPickerView.xib** -die InfColorPicker Objective-C-Bibliothek enthält eine **XIB** Datei. Xamarin.iOS enthält keine dies **XIB** Bindung im Projekt verursacht Laufzeitfehler in unserer beispielanwendung. Dieses Problem zu umgehen ist zum Hinzufügen der **XIB** Datei, die unsere Xamarin.iOS-Projekt. Wählen Sie die Xamarin.iOS-Projekt, mit der rechten Maustaste und wählen Sie **hinzufügen > Dateien hinzufügen**, und fügen die **XIB** Datei wie im folgenden Screenshot gezeigt:
+1. **Fügen Sie infcolorpickerview. XIb hinzu** : die infcolorpicker-Ziel-C-Bibliothek enthält eine **XIb** -Datei. Xamarin. IOS schließt this **. XIb** nicht in das Bindungs Projekt ein, was zu Laufzeitfehlern in der Beispielanwendung führt. Um dieses Problem zu umgehen, fügen Sie dem xamarin. IOS-Projekt die **XIb** -Datei hinzu. Wählen Sie das xamarin. IOS-Projekt aus, klicken Sie mit der rechten Maustaste, und wählen Sie **Hinzufügen > Dateien**hinzufügen aus. Fügen Sie die **XIb** -Datei wie im folgenden Screenshot gezeigt hinzu:
 
-    ![](walkthrough-images/use04.png "Fügen Sie der InfColorPickerView.xib hinzu.")
+    ![](walkthrough-images/use04.png "Fügen Sie infcolorpickerview. XIb hinzu.")
 
-1. Wenn Sie aufgefordert, kopieren Sie die **XIB** -Datei in das Projekt.
+1. Wenn Sie gefragt werden, kopieren Sie die **XIb** -Datei in das Projekt.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **Erstellen von Xamarin.iOS-Projekt** -Hinzufügen eines neuen Xamarin.iOS-Projekts mit dem Namen **InfColorPickerSample** mithilfe der **Einzelansicht-App** Vorlage:
+1. **Xamarin. IOS-Projekt erstellen** : Fügen Sie ein neues xamarin. IOS-Projekt mit dem Namen " **infcolorpickersample** " mithilfe der Vorlage für die **Einzelansicht-App** hinzu
 
-    [![iOS-App (Xamarin)-Projekt](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
+    [![IOS-App-Projekt (xamarin)](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
     [![Vorlage auswählen](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
-1. **Hinzufügen der Verweis auf das Projekt Bindung** -Update die **InfColorPickerSample** Projekt so, dass sie einen Verweis auf die **InfColorPickerBinding** Projekt:
+1. **Fügen Sie dem Bindungs Projekt einen Verweis hinzu** : Aktualisieren Sie das Projekt **infcolorpickersample** , sodass es einen Verweis auf das Projekt **infcolorpickerbinding** hat:
 
-    ![](walkthrough-images/use02vs.png "Verweis auf das Bindungsprojekt hinzufügen")
+    ![](walkthrough-images/use02vs.png "Verweis zum Bindungs Projekt hinzufügen")
 
-1. **Erstellen Sie die iPhone-Benutzeroberfläche** -einen Doppelklick auf die **MainStoryboard.storyboard** Datei die **InfColorPickerSample** Projekt in der iOS-Designer bearbeiten. Hinzufügen einer **Schaltfläche** an die Ansicht und nennen Sie sie `ChangeColorButton`, wie im folgenden gezeigt:
+1. **Erstellen der iPhone-Benutzeroberfläche** : Doppelklicken Sie auf die Datei " **mainstoryboard. Storyboard** " im Projekt " **infcolorpickersample** ", um Sie im IOS-Designer zu bearbeiten. Fügen Sie der Ansicht eine **Schaltfläche** hinzu, `ChangeColorButton`und nennen Sie Sie, wie im folgenden dargestellt:
 
-    ![](walkthrough-images/use03vs.png "Erstellen Sie die iPhone-Benutzeroberfläche")
+    ![](walkthrough-images/use03vs.png "Erstellen der iPhone-Benutzeroberfläche")
 
-1. **Hinzufügen der InfColorPickerView.xib** -die InfColorPicker Objective-C-Bibliothek enthält eine **XIB** Datei. Xamarin.iOS enthält keine dies **XIB** Bindung im Projekt verursacht Laufzeitfehler in unserer beispielanwendung. Dieses Problem zu umgehen, besteht darin, hinzuzufügen der **XIB** Datei, die unsere Xamarin.iOS-Projekt aus unserer **Mac-Buildhost**. Wählen Sie die Xamarin.iOS-Projekt, mit der rechten Maustaste und wählen Sie **hinzufügen** > **vorhandenes Element...** , und fügen die **XIB** Datei.
+1. **Fügen Sie infcolorpickerview. XIb hinzu** : die infcolorpicker-Ziel-C-Bibliothek enthält eine **XIb** -Datei. Xamarin. IOS schließt this **. XIb** nicht in das Bindungs Projekt ein, was zu Laufzeitfehlern in der Beispielanwendung führt. Um dieses Problem zu umgehen, fügen Sie dem xamarin. IOS-Projekt auf dem **Mac**-buildhost die **XIb** -Datei hinzu. Wählen Sie das xamarin. IOS-Projekt aus, klicken Sie mit der rechten Maustaste, wählen Sie**Vorhandenes Element** **Hinzufügen** > aus, und fügen Sie die **XIb** -Datei hinzu.
 
 -----
 
-Als Nächstes werfen wir einen kurzen Blick auf die Protokolle in Objective-C und wie wir sie in der Bindung behandeln und C# Code.
+Im nächsten Schritt betrachten wir die Protokolle in Ziel-C und die Art und Weise, wie wir Sie in der C# Bindung und im Code behandeln.
 
-### <a name="protocols-and-xamarinios"></a>Protokolle und Xamarin.iOS
+### <a name="protocols-and-xamarinios"></a>Protokolle und xamarin. IOS
 
-In Objective-C ein Protokoll-Methoden (oder Nachrichten) definiert, die unter bestimmten Umständen verwendet werden kann. Sie sind vom Konzept her ähnelt Schnittstellen in C#. Ein Hauptunterschied zwischen einem Objective-C-Protokoll und einem C# Schnittstelle ist, dass Protokolle optionale Methoden - Methoden, die eine Klasse nicht haben können implementiert. Objective-C verwendet die @optional Schlüsselwort verwendet, um anzugeben, welche Methoden optional sind. Weitere Informationen zu Protokollen finden Sie unter [Ereignisse, Protokolle und Delegaten](~/ios/app-fundamentals/delegates-protocols-and-events.md).
+In Ziel-C definiert ein Protokoll Methoden (oder Meldungen), die unter bestimmten Umständen verwendet werden können. Konzeptionell ähneln Sie den Schnittstellen in C#. Ein wichtiger Unterschied zwischen einem Ziel-C-Protokoll C# und einer-Schnittstelle besteht darin, dass Protokolle optionale Methoden aufweisen können, die von einer Klasse nicht implementiert werden müssen. Ziel-C verwendet das @optional -Schlüsselwort, um anzugeben, welche Methoden optional sind. Weitere Informationen zu Protokollen finden Sie unter [Ereignisse, Protokolle und](~/ios/app-fundamentals/delegates-protocols-and-events.md)Delegaten.
 
-**InfColorPickerController** wurde von einem solchen Protokoll, in den folgenden Codeausschnitt gezeigt:
+**Infcolorpickercontroller** verfügt über ein solches Protokoll, wie im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 @protocol InfColorPickerControllerDelegate
@@ -583,7 +583,7 @@ In Objective-C ein Protokoll-Methoden (oder Nachrichten) definiert, die unter be
 @end
 ```
 
-Dieses Protokoll wird verwendet, indem **InfColorPickerController** um Clients zu informieren, dass der Benutzer, eine neue Farbe und dass ausgewählt hat die **InfColorPickerController** abgeschlossen ist. Objektive Sharpie dieses Protokoll zugeordnet, wie im folgenden Codeausschnitt gezeigt:
+Dieses Protokoll wird von **infcolorpickercontroller** verwendet, um Clients darüber zu informieren, dass der Benutzer eine neue Farbe ausgewählt hat und dass **infcolorpickercontroller** fertiggestellt ist. Ziel-Sharpie hat dieses Protokoll zugeordnet, wie im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 [BaseType(typeof(NSObject))]
@@ -599,22 +599,22 @@ public partial interface InfColorPickerControllerDelegate {
 
 ```
 
-Wenn die bindungsbibliothek kompiliert wird, erstellt Xamarin.iOS eine abstrakte Basisklasse namens `InfColorPickerControllerDelegate`, der diese Schnittstelle mit virtuellen Methoden implementiert.
+Wenn die Bindungs Bibliothek kompiliert wird, erstellt xamarin. IOS eine abstrakte Basisklasse mit dem `InfColorPickerControllerDelegate`Namen, die diese Schnittstelle mit virtuellen Methoden implementiert.
 
-Es gibt zwei Möglichkeiten, dass wir diese Schnittstelle in einer Xamarin.iOS-Anwendung implementieren können:
+Es gibt zwei Möglichkeiten, wie Sie diese Schnittstelle in einer xamarin. IOS-Anwendung implementieren können:
 
-- **Delegieren der starken** -mit einem starken Delegaten umfasst das Erstellen einer C# Klasse diese Unterklassen `InfColorPickerControllerDelegate` und überschreibt die entsprechenden Methoden. **InfColorPickerController** für die Kommunikation mit den Clients eine Instanz dieser Klasse verwenden.
-- **Schwache Delegaten** -ein schwacher Delegat ist ein etwas anderes Verfahren, das umfasst das Erstellen einer öffentlichen Methode für eine Klasse (z. B. `InfColorPickerSampleViewController`) und klicken Sie dann diese Methode, um die `InfColorPickerDelegate` Protokoll über eine `Export` Attribut.
+- **Starker** Delegat: die Verwendung eines starken Delegaten C# umfasst das Erstellen einer `InfColorPickerControllerDelegate` Klasse, die die entsprechenden Methoden Unterklassen und überschreibt. **Infcolorpickercontroller** verwendet eine Instanz dieser Klasse, um mit den Clients zu kommunizieren.
+- **Schwacher** Delegat: bei einem schwachen Delegaten handelt es sich um eine etwas andere Technik, die das Erstellen einer öffentlichen `InfColorPickerSampleViewController`Methode für eine Klasse (z. b `InfColorPickerDelegate` .) und `Export` das anschließende verfügbar machen dieser Methode für das Protokoll über ein Attribut umfasst
 
-Starke Delegaten bieten Intellisense, typsicherheit und eine bessere Kapselung. Aus diesen Gründen sollten Sie starke Delegaten verwenden, können Sie anstatt eines schwachen Delegaten.
+Starke Delegaten bieten IntelliSense, Typsicherheit und eine bessere Kapselung. Aus diesen Gründen sollten Sie anstelle eines schwachen Delegaten starke Delegaten verwenden.
 
-In dieser exemplarischen Vorgehensweise wird erörtert, beide Verfahren: Implementieren zuerst einen starke Delegaten, und klicken Sie dann erläutert, wie Sie einen schwachen Delegaten implementieren.
+In dieser exemplarischen Vorgehensweise werden beide Verfahren erläutert: zuerst wird ein starker Delegat implementiert, und anschließend wird erläutert, wie ein schwacher Delegat implementiert wird.
 
-### <a name="implementing-a-strong-delegate"></a>Implementieren ein sicheres Delegat
+### <a name="implementing-a-strong-delegate"></a>Implementieren eines starken Delegaten
 
-Fertig stellen die Xamarin.iOS-Anwendung mit einem starken Delegaten auf reagieren die `colorPickerControllerDidFinish:` Nachricht:
+Beenden Sie die xamarin. IOS-Anwendung, indem Sie einen starken Delegaten `colorPickerControllerDidFinish:` verwenden, um auf die Meldung zu reagieren:
 
-**Unterklasse InfColorPickerControllerDelegate** -fügen Sie eine neue Klasse mit dem Namen `ColorSelectedDelegate`. Bearbeiten Sie die Klasse, sodass sie den folgenden Code:
+**Subclass infcolorpickercontrollerdelegat** -fügt dem Projekt eine neue Klasse mit `ColorSelectedDelegate`dem Namen hinzu. Bearbeiten Sie die-Klasse, sodass Sie den folgenden Code enthält:
 
 ```csharp
 using InfColorPickerBinding;
@@ -640,15 +640,15 @@ namespace InfColorPickerSample
 }
 ```
 
-Xamarin.iOS verbindet den Objective-C-Delegaten durch das Erstellen einer abstrakten Klasse namens `InfColorPickerControllerDelegate`. Unterklasse diesen Typ und die außer Kraft setzen der `ColorPickerControllerDidFinish` Methode, um den Wert der Zugriff auf die `ResultColor` Eigenschaft `InfColorPickerController`.
+Xamarin. IOS bindet den Ziel-C-Delegaten, indem eine abstrakte Basisklasse `InfColorPickerControllerDelegate`mit dem Namen erstellt wird. Unterklasse dieses Typs, und über `ColorPickerControllerDidFinish` schreiben Sie die-Methode, um `ResultColor` auf den `InfColorPickerController`Wert der-Eigenschaft von zuzugreifen.
 
-**Erstellen Sie eine Instanz des ColorSelectedDelegate** -der Ereignishandler benötigen eine Instanz von der `ColorSelectedDelegate` Typ, den wir im vorherigen Schritt erstellt haben. Bearbeiten Sie die Klasse `InfColorPickerSampleViewController` und fügen Sie die folgende Instanzvariable der Klasse:
+**Erstellen einer Instanz von colorselecteddelegat** : für den Ereignishandler wird eine Instanz des `ColorSelectedDelegate` Typs benötigt, den wir im vorherigen Schritt erstellt haben. Bearbeiten Sie die `InfColorPickerSampleViewController` -Klasse, und fügen Sie der-Klasse die folgende Instanzvariable hinzu:
 
 ```csharp
 ColorSelectedDelegate selector;
 ```
 
-**Initialisieren Sie die Variable ColorSelectedDelegate** –, um sicherzustellen, dass `selector` ist eine gültige Instanz ist, aktualisieren Sie die Methode `ViewDidLoad` in `ViewController` entsprechend den folgenden Codeausschnitt:
+**Initialisieren Sie die colorselecteddelegatvariable** . um `selector` sicherzustellen, dass eine gültige-Instanz `ViewDidLoad` ist `ViewController` , aktualisieren Sie die-Methode in, um dem folgenden Code Ausschnitt zu entsprechen:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -658,7 +658,7 @@ public override void ViewDidLoad ()
     selector = new ColorSelectedDelegate (this);
 }
 ```
-**Implementieren Sie die Methode HandleTouchUpInsideWithStrongDelegate** – als Nächstes implementieren Sie den Ereignishandler für, wenn der Benutzer berührt **ColorChangeButton**. Bearbeiten Sie `ViewController`, und fügen Sie die folgende Methode hinzu:
+**Implementieren Sie die Methode "shandtouchupinsidewithstrongdelegat** -Next implementieren Sie den Ereignishandler für", wenn der Benutzer **colorchangebutton**berührt. Bearbeiten `ViewController`Sie, und fügen Sie die folgende Methode hinzu:
 
 ```csharp
 using InfColorPicker;
@@ -673,19 +673,19 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 ```
 
-Wir rufen Sie zunächst eine Instanz von `InfColorPickerController` über eine statische Methode, und stellen, die unsere starken Delegat über die Eigenschaft über Instanz `InfColorPickerController.Delegate`. Diese Eigenschaft wurde automatisch für uns vom Ziel Sharpie generiert. Schließlich rufen wir `PresentModallyOverViewController` zum Anzeigen der Ansicht `InfColorPickerSampleViewController.xib` , damit der Benutzer eine Farbe auswählen kann.
+Zuerst wird eine Instanz von `InfColorPickerController` über eine statische Methode abgerufen, und diese Instanz wird über die-Eigenschaft `InfColorPickerController.Delegate`auf unseren starken Delegaten aufmerksam gemacht. Diese Eigenschaft wurde von Ziel-Sharpie automatisch für uns generiert. Schließlich wird aufgerufen `PresentModallyOverViewController` , um die Ansicht `InfColorPickerSampleViewController.xib` anzuzeigen, sodass der Benutzer eine Farbe auswählen kann.
 
-**Führen Sie die Anwendung** – an diesem Punkt sind wir mit unserem Code fertig. Wenn Sie die Anwendung ausführen, Sie sollten möglicherweise so ändern Sie die Farbe des Hintergrunds der `InfColorColorPickerSampleView` wie in den folgenden Screenshots gezeigt:
+**Ausführen der Anwendung** : an dieser Stelle wird der gesamte Code ausgeführt. Wenn Sie die Anwendung ausführen, sollten Sie in der Lage sein, die Hintergrundfarbe `InfColorColorPickerSampleView` der zu ändern, wie in den folgenden Screenshots gezeigt:
 
 [![](walkthrough-images/run01.png "Ausführen der Anwendung")](walkthrough-images/run01.png#lightbox)
 
-Herzlichen Glückwunsch! An diesem Punkt haben Sie erfolgreich erstellt und eine Objective-C-Bibliothek für die Verwendung in einer Xamarin.iOS-Anwendung gebunden wird. Als Nächstes betrachten wir die Verwendung von schwacher Delegaten.
+Herzlichen Glückwunsch! An diesem Punkt haben Sie eine Ziel-C-Bibliothek erfolgreich erstellt und für die Verwendung in einer xamarin. IOS-Anwendung gebunden. Als Nächstes erfahren Sie mehr über die Verwendung von schwachen Delegaten.
 
-### <a name="implementing-a-weak-delegate"></a>Implementieren einen schwachen Delegaten
+### <a name="implementing-a-weak-delegate"></a>Implementieren eines schwachen Delegaten
 
-Anstelle von Unterklassen aus einer Klasse, die an die Objective-C-Protokoll für Delegaten gebunden, Xamarin.iOS können Sie auch die Protokollmethoden in einer beliebigen Klasse zu implementieren, die abgeleitet `NSObject`, versehen Sie Ihre Methoden mit dem `ExportAttribute`, und klicken Sie dann liefern die entsprechenden Selektoren ein. Wenn Sie diesen Ansatz verwenden, weisen Sie eine Instanz dieser Klasse die `WeakDelegate` Eigenschaft anstatt auf die `Delegate` Eigenschaft. Ein schwacher Delegat bietet Ihnen die Flexibilität, Ihre Delegatklasse Sie einer anderen Vererbungshierarchie zu nutzen. Sehen Sie das Implementieren und Verwenden von schwachen Delegaten in der Xamarin.iOS-Anwendung an.
+Anstatt eine Klasse zu Unterklassen, die an das Ziel-C-Protokoll für einen bestimmten Delegaten gebunden ist, können Sie mit xamarin. IOS auch die Protokoll Methoden in jeder `NSObject`Klasse implementieren, die von abgeleitet `ExportAttribute`ist, und die Methoden mit dem versehen. Bereitstellen der entsprechenden Selektoren. Wenn Sie diesen Ansatz verwenden, weisen Sie der `WeakDelegate` -Eigenschaft anstelle `Delegate` der-Eigenschaft eine Instanz der-Klasse zu. Ein schwacher Delegat bietet Ihnen die Flexibilität, ihre Delegatklasse in eine andere Vererbungs Hierarchie zu bringen. Sehen wir uns an, wie Sie einen schwachen Delegaten in unserer xamarin. IOS-Anwendung implementieren und verwenden.
 
-**Erstellen Sie Ereignishandler für TouchUpInside** -erstellen wir einen neuen Ereignishandler für die `TouchUpInside` -Ereignis der Schaltfläche Hintergrundfarbe ändern. Dieser Handler wird die gleiche Funktion wie das Ausfüllen der `HandleTouchUpInsideWithStrongDelegate` Handler, dass wir im vorherigen Abschnitt erstellt haben, aber einen schwachen Delegaten anstatt eines starken Delegaten verwenden. Bearbeiten Sie die Klasse `ViewController`, und fügen Sie die folgende Methode hinzu:
+**Create Event Handler for touchupinside** : Erstellen Sie einen neuen Ereignishandler für das `TouchUpInside` -Ereignis der Schaltfläche Hintergrundfarbe ändern. Dieser Handler nimmt dieselbe Rolle wie der `HandleTouchUpInsideWithStrongDelegate` Handler, den wir im vorherigen Abschnitt erstellt haben, verwendet aber einen schwachen Delegaten anstelle eines starken Delegaten. Bearbeiten Sie die `ViewController`-Klasse, und fügen Sie die folgende Methode hinzu:
 
 ```csharp
 private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
@@ -696,7 +696,7 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
     picker.PresentModallyOverViewController (this);
 }
 ```
-**Aktualisieren von ViewDidLoad** -ändern wir `ViewDidLoad` so, dass sie den Ereignishandler verwendet, die wir gerade erstellt haben. Bearbeiten Sie `ViewController` , und ändern Sie `ViewDidLoad` , die im folgenden Codeausschnitt ähnelt:
+**ViewDidLoad aktualisieren** : Wir müssen ändern `ViewDidLoad` , damit der soeben erstellte Ereignishandler verwendet wird. Bearbeiten `ViewController` und ändern `ViewDidLoad` Sie den folgenden Code Ausschnitt:
 
 
 ```csharp
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**Handle der ColorPickerControllerDidFinish: Nachricht** – im Falle der `ViewController` ist abgeschlossen ist, iOS sendet die Nachricht `colorPickerControllerDidFinish:` auf die `WeakDelegate`. Müssen wir erstellen eine C# -Methode, die diese Nachricht verarbeiten kann. Zu diesem Zweck erstellen wir eine C# Methode und verzieren klicken Sie dann mit der `ExportAttribute`. Bearbeiten Sie `ViewController`, und fügen Sie der Klasse die folgende Methode hinzu:
+**Behandeln Sie colorpickercontrollerdidfinish: Meldung** : Wenn der `ViewController` abgeschlossen ist, sendet IOS die Nachricht `colorPickerControllerDidFinish:` an den `WeakDelegate`. Wir müssen eine C# Methode erstellen, die diese Nachricht verarbeiten kann. Zu diesem Zweck erstellen wir eine C# -Methode und schmücken Sie dann mit dem `ExportAttribute`. Bearbeiten `ViewController`Sie, und fügen Sie der-Klasse die folgende Methode hinzu:
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -720,17 +720,17 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 ```
 
-Führen Sie die Anwendung aus. Sie sollten jetzt Verhalten sich genau wie gewohnt, aber es eines schwaches Delegaten anstelle der starken Delegat mithilfe wird. An diesem Punkt haben Sie diese exemplarische Vorgehensweise erfolgreich abgeschlossen. Sie verfügen nun einen Überblick über das Erstellen und nutzen eine Xamarin.iOS-Bindung-Projekt.
+Führen Sie die Anwendung aus. Es sollte sich nun genau wie zuvor Verhalten, aber es verwendet einen schwachen Delegaten anstelle des starken Delegaten. An diesem Punkt haben Sie diese exemplarische Vorgehensweise erfolgreich abgeschlossen. Sie sollten nun wissen, wie ein xamarin. IOS-Bindungs Projekt erstellt und genutzt werden kann.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie der Prozess zum Erstellen und verwenden eine Xamarin.iOS-Bindung-Projekt. Zunächst erläutert wie Sie eine vorhandene Objective-C-Bibliothek in einer statischen Bibliothek zu kompilieren. Klicken Sie dann behandelt es zum Erstellen eines Projekts der Xamarin.iOS-Bindung, und das Ziel Sharpie verwenden, um die API-Definitionen für die Objective-C-Bibliothek zu generieren. Erläutert das Aktualisieren und optimieren die generierte API-Definitionen, um sie für die öffentliche Nutzung geeignet machen. Nachdem die Xamarin.iOS-Bindung des Projekts abgeschlossen wurde, versuchten wir uns mit der Nutzung von dieser Bindung in einer Xamarin.iOS-Anwendung mit dem Schwerpunkt auf starken Delegaten mit schwachen Delegaten auf.
+In diesem Artikel wurde das Erstellen und Verwenden eines xamarin. IOS-Bindungs Projekts erläutert. Zuerst wurde erläutert, wie eine vorhandene Ziel-C-Bibliothek in eine statische Bibliothek kompiliert wird. Anschließend haben wir erläutert, wie Sie ein xamarin. IOS-Bindungs Projekt erstellen und die API-Definitionen für die Ziel-C-Bibliothek mit dem Ziel-Sharpie generieren. Wir haben erläutert, wie Sie die generierten API-Definitionen aktualisieren und optimieren, damit Sie für den öffentlichen Gebrauch geeignet sind. Nachdem das xamarin. IOS-Bindungs Projekt fertiggestellt wurde, haben wir mit der Verwendung dieser Bindung in einer xamarin. IOS-Anwendung weiterentwickelt, wobei der Schwerpunkt auf der Verwendung starker Delegaten und schwacher Delegaten liegt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel für blobbindung (Beispiel)](https://developer.xamarin.com/samples/monotouch/InfColorPicker/)
+- [Bindungs Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/infcolorpicker)
 - [Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [Informationen zu](~/cross-platform/macios/binding/overview.md)
-- [Bindung Typen – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
+- [Bindungs Details](~/cross-platform/macios/binding/overview.md)
+- [Bindungs Typen-Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Xamarin für Objective-C-Entwickler](~/ios/get-started/objective-c-developers/index.md)
 - [Frameworkentwurfsrichtlinien](https://msdn.microsoft.com/library/ms229042.aspx)

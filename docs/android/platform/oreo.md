@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 29f7725e41e5163b8f990c827983fbd79bdd1b1e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 08339ba3017983cf79d75adc1c6c21a2fb9ad98b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510483"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643431"
 ---
 # <a name="oreo-features"></a>Oreo-Features
 
@@ -205,7 +205,7 @@ Android Oreo bietet eine Reihe von neuen Features und Funktionen, wie z. b. Bena
 *Benachrichtigungs Kanäle* sind App-definierte Kategorien für Benachrichtigungen.
 Sie können einen Benachrichtigungs Kanal für jeden Benachrichtigungstyp erstellen, den Sie senden müssen, und Sie können Benachrichtigungs Kanäle erstellen, um die von Benutzern Ihrer APP getroffenen Entscheidungen widerzuspiegeln. Mithilfe der neuen Benachrichtigungs Kanäle können Sie Benutzern eine präzisere Kontrolle über verschiedene Arten von Benachrichtigungen ermöglichen. Wenn Sie z. b. eine Messaging-App implementieren, können Sie separate Benachrichtigungs Kanäle für jede Konversations Gruppe erstellen, die von einem Benutzer erstellt wird.
 
-[Benachrichtigungs Kanäle](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan) erläutern, wie ein Benachrichtigungs Kanal erstellt und zum Veröffentlichen lokaler Benachrichtigungen verwendet wird. Ein Beispiel für einen realen Code finden Sie im [notificationchannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) -Beispiel. Diese Beispiel-App verwaltet zwei Kanäle und legt zusätzliche Benachrichtigungs Optionen fest.
+[Benachrichtigungs Kanäle](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan) erläutern, wie ein Benachrichtigungs Kanal erstellt und zum Veröffentlichen lokaler Benachrichtigungen verwendet wird. Ein Beispiel für einen realen Code finden Sie im [notificationchannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels) -Beispiel. Diese Beispiel-App verwaltet zwei Kanäle und legt zusätzliche Benachrichtigungs Optionen fest.
 
 
 
@@ -262,7 +262,7 @@ Wenn Ihre APP eine Schriftart benötigt, erstellen Sie ein `FontsRequest` -Objek
 
 Wenn Sie die `RequestFonts` -Methode aufzurufen, wird zuerst überprüft, ob die Schriftart lokal zwischengespeichert ist (von einem vorherigen `RequestFont`-Aufrufvorgang). Wenn Sie nicht zwischengespeichert wird, wird der Schriftart Anbieter aufgerufen. die Schriftart wird asynchron abgerufen, und die Ergebnisse werden an Ihre APP zurückgeleitet, indem `OnTypeFaceRetrieved` die-Methode aufgerufen wird.
 
-Das Beispiel zum Herunterladen von [Schriftarten](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts) veranschaulicht, wie Sie das in Android Oreo eingeführte herunterladbare Schriftarten Feature verwenden 
+Das Beispiel zum Herunterladen von [Schriftarten](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) veranschaulicht, wie Sie das in Android Oreo eingeführte herunterladbare Schriftarten Feature verwenden 
 
 Weitere Informationen zum Herunterladen von Schriftarten finden Sie im Thema Android Developer [Download Fonts](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html) .
 
@@ -272,7 +272,7 @@ Weitere Informationen zum Herunterladen von Schriftarten finden Sie im Thema And
 
 Das neue _AutoFill_ -Framework in Android Oreo vereinfacht es Benutzern, sich wiederholende Aufgaben wie Anmelde Name, Kontoerstellung und Kreditkartentransaktionen zu verarbeiten. Benutzer verbringen weniger Zeit mit der erneuten Typisierung von Informationen (was zu Eingabefehlern führen kann). Bevor Ihre APP mit dem Auto Ausfüllen-Framework arbeiten kann, muss in den Systemeinstellungen ein Auto Ausfüllen-Dienst aktiviert werden (Benutzer können die automatische Füllung aktivieren oder deaktivieren).
 
-Das [autofillframework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework/) -Beispiel veranschaulicht die Verwendung des AutoFill-Frameworks. Es umfasst Implementierungen von Client Aktivitäten mit Sichten, die automatisch ausgefüllt werden sollten, und einen Dienst, der Daten für das automatische Auffüllen an Client Aktivitäten bereitstellen kann.
+Das [autofillframework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework) -Beispiel veranschaulicht die Verwendung des AutoFill-Frameworks. Es umfasst Implementierungen von Client Aktivitäten mit Sichten, die automatisch ausgefüllt werden sollten, und einen Dienst, der Daten für das automatische Auffüllen an Client Aktivitäten bereitstellen kann.
 
 Weitere Informationen über das neue Feature "AutoFill" und die Optimierung Ihrer APP für Autofill finden Sie im Thema Android Developer [AutoFill Framework](https://developer.android.com/guide/topics/text/autofill.html) .
 
@@ -294,7 +294,7 @@ Wenn Sie angeben möchten, wie sich die Aktivität im PIP-Modus Verhalten soll, 
 
 -   [Setpictureinpictuneu](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; Aktualisiert die PIP-Konfigurationseinstellungen der Aktivität (z. b. eine Änderung des Seitenverhältnisses).
 
-Das Beispiel " [pictureinpicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture) " veranschaulicht die grundlegende Verwendung des PIP-Modus (Bild-in-Bild) für in Oreo eingeführte Hand Held Geräte. Im Beispiel wird ein Video abgespielt, das beim Wechseln zwischen Anzeigemodi oder anderen Aktivitäten ununterbrochen fortgesetzt wird.
+Das Beispiel " [pictureinpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) " veranschaulicht die grundlegende Verwendung des PIP-Modus (Bild-in-Bild) für in Oreo eingeführte Hand Held Geräte. Im Beispiel wird ein Video abgespielt, das beim Wechseln zwischen Anzeigemodi oder anderen Aktivitäten ununterbrochen fortgesetzt wird.
 
 
 
@@ -333,19 +333,19 @@ Apps, die auf Android Oreo oder höher ausgerichtet sind, müssen Ihre apps änd
 
 Es stehen mehrere xamarin. Android-Beispiele zur Verfügung, die Ihnen zeigen, wie Sie die Funktionen von Android Oreo nutzen können:
 
--   [Notificationschannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) zeigt die Verwendung des neuen Benachrichtigungs Kanalsystems, das in Android Oreo eingeführt wurde. In diesem Beispiel werden zwei Benachrichtigungs Kanäle verwaltet: eine mit der Standard Wichtigkeit und die andere mit hoher Wichtigkeit.
+-   [Notificationschannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels) zeigt die Verwendung des neuen Benachrichtigungs Kanalsystems, das in Android Oreo eingeführt wurde. In diesem Beispiel werden zwei Benachrichtigungs Kanäle verwaltet: eine mit der Standard Wichtigkeit und die andere mit hoher Wichtigkeit.
 
--   " [Pictureinpicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture) " veranschaulicht die grundlegende Verwendung des PIP-Modus (Bild-in-Bild) für in Oreo eingeführte Handheld-Geräte. Im Beispiel wird ein Video abgespielt, das beim Wechseln zwischen Anzeigemodi oder anderen Aktivitäten ununterbrochen fortgesetzt wird.
+-   " [Pictureinpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) " veranschaulicht die grundlegende Verwendung des PIP-Modus (Bild-in-Bild) für in Oreo eingeführte Handheld-Geräte. Im Beispiel wird ein Video abgespielt, das beim Wechseln zwischen Anzeigemodi oder anderen Aktivitäten ununterbrochen fortgesetzt wird.
 
--   [Autofillframework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework) veranschaulicht die Verwendung des AutoFill-Frameworks. Es umfasst Implementierungen von Client Aktivitäten mit Sichten, die automatisch ausgefüllt werden sollten, und einen Dienst, der Daten für das automatische Auffüllen an Client Aktivitäten bereitstellen kann.
+-   [Autofillframework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework) veranschaulicht die Verwendung des AutoFill-Frameworks. Es umfasst Implementierungen von Client Aktivitäten mit Sichten, die automatisch ausgefüllt werden sollten, und einen Dienst, der Daten für das automatische Auffüllen an Client Aktivitäten bereitstellen kann.
 
--   Zum Herunterladen von [Schriftarten](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts) finden Sie ein Beispiel für die Verwendung des zuvor beschriebenen Features zum Herunterladen von Schriftarten
+-   Zum Herunterladen von [Schriftarten](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) finden Sie ein Beispiel für die Verwendung des zuvor beschriebenen Features zum Herunterladen von Schriftarten
 
--   [Emojicompat](https://developer.xamarin.com/samples/monodroid/android-o/EmojiCompat) veranschaulicht die Verwendung der emojicompat-Unterstützungs Bibliothek. Sie können diese Bibliothek verwenden, um zu verhindern, dass Ihre APP fehlende Emoji-Zeichen als "Tofu"-Zeichen anzeigt.
+-   [Emojicompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat) veranschaulicht die Verwendung der emojicompat-Unterstützungs Bibliothek. Sie können diese Bibliothek verwenden, um zu verhindern, dass Ihre APP fehlende Emoji-Zeichen als "Tofu"-Zeichen anzeigt.
 
--   [Location Updates Pending Intent](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdPendIntent) veranschaulicht die Verwendung der Location-API, um Updates zum Speicherort eines Geräts mithilfe `PendingIntent`von zu erhalten.
+-   [Location Updates Pending Intent](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) veranschaulicht die Verwendung der Location-API, um Updates zum Speicherort eines Geräts mithilfe `PendingIntent`von zu erhalten.
 
--   [Location Updates Vordergrund Dienst](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService) veranschaulicht, wie die Location-API verwendet wird, um Updates zum Speicherort eines Geräts mithilfe eines gebundenen und gestarteten Vordergrund Dienstanbieter zu erhalten.
+-   [Location Updates Vordergrund Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice) veranschaulicht, wie die Location-API verwendet wird, um Updates zum Speicherort eines Geräts mithilfe eines gebundenen und gestarteten Vordergrund Dienstanbieter zu erhalten.
 
 
 ## <a name="video"></a>Video

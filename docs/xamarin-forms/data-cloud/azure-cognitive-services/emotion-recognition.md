@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: d703de90378991d262a4b056b9ebc98d183e3fb8
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 6f03ae1030ef4a69b15c5e219785eee12c4e603b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658727"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656564"
 ---
 # <a name="emotion-recognition-using-the-face-api"></a>Mithilfe der Gesichtserkennungs-API zur Erkennung von Emotionen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Die Gesichtserkennungs-API Gesichtsausdrücke in einem Bild als Eingabe akzeptiert und gibt die Daten, die Vertrauensgrade auf eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit der Gesichtserkennungs-API zur Erkennung von Emotionen, um eine Xamarin.Forms-Anwendung zu bewerten._
 
@@ -181,5 +181,5 @@ In diesem Artikel erläutert, wie Sie mit der Gesichtserkennungs-API zur Erkennu
 ## <a name="related-links"></a>Verwandte Links
 
 - [Gesichtserkennungs-API](/azure/cognitive-services/face/overview/).
-- [TODO-Cognitive-Services (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [TODO-Cognitive-Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Gesichtserkennungs-REST-API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

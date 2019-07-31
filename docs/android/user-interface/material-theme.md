@@ -1,71 +1,71 @@
 ---
 title: Materialdesign
-description: Wie Sie das Design Ihrer Xamarin.Android-app mit Material Design
+description: 'Gewusst wie: Design Ihrer xamarin. Android-App mit Material Design'
 ms.prod: xamarin
 ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 512775864f5ad55ddfedd53b83dd02d7b0e1d1f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 027460196f97173fcf977971b79def722ab672d9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61309094"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647866"
 ---
 # <a name="material-theme"></a>Materialdesign
 
-*Materialdesign* ist eine Art der Benutzer-Schnittstelle, die das Aussehen und Verhalten von Ansichten und Aktivitäten, die ab Android 5.0 (Lollipop) bestimmt. Material Design ist in Android 5.0 integriert, damit sie vom System Benutzeroberfläche sowie von Anwendungen verwendet wird. Material Design ist nicht "Design" im Sinne einer systemweiten Darstellung-Option, die ein Benutzer dynamisch aus einem Menü "Einstellungen" auswählen können. Stattdessen kann Material Design als eine Gruppe von zugehörigen integrierten Basis Formatvorlagen betrachtet werden, die Sie verwenden können, um das Aussehen und Verhalten Ihrer App anzupassen.
+Das *Material* Design ist ein Benutzeroberflächen Stil, der das Erscheinungsbild von Ansichten und Aktivitäten bestimmt, beginnend mit Android 5,0 (Lollipop). Das Material Design ist in Android 5,0 integriert, sodass es von der Benutzeroberfläche des Systems sowie von Anwendungen verwendet wird. Das Material Design ist kein "Design" im Sinne einer systemweiten Darstellungs Option, die ein Benutzer dynamisch aus dem Menü "Einstellungen" auswählen kann. Vielmehr kann das Material Design als ein Satz verwandter, integrierter Basis Stile betrachtet werden, die Sie zum Anpassen des Erscheinungsbild Ihrer APP verwenden können.
 
-Android bietet drei Arten von Material Design:
+Android bietet drei Material Design-Varianten:
 
--  `Theme.Material` &ndash; Dunkel Version des Material Design; Dies ist die Standard-Konfiguration in Android 5.0.
+-  `Theme.Material`&ndash; Dunkle Version von Material Theme; Dies ist die Standardkonfiguration in Android 5,0.
 
--  `Theme.Material.Light` &ndash; Light-Version von Material Design.
+-  `Theme.Material.Light`&ndash; Helle Version des Material Designs.
 
--  `Theme.Material.Light.DarkActionBar` &ndash; Light-Version des Material Design, jedoch mit einem dunklen Aktionsleiste.
+-  `Theme.Material.Light.DarkActionBar`&ndash; Helle Version des Material Designs, aber mit einer dunklen Aktionsleiste.
 
 Beispiele für diese Material Design-Varianten werden hier angezeigt:
 
-[![Beispiel-Screenshot, der das Design "dunkel" Design "hell" und Aktionsleiste Dunkles Design](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
+[![Beispiel-Screenshots des Design "dunkel", "Light Design" und "Dark Aktionsleiste Design"](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
 
-Sie können eine Ableitung von Material Design zum Erstellen eigener Designs, einige oder alle Farbattributen überschreiben. Sie können z. B. ein Design, das von abgeleitet ist erstellen `Theme.Material.Light`, aber überschreibt die Farbe des app um die Farbe der Ihre Marke zu entsprechen. Sie können auch einzelne Ansichten formatieren; Sie können z. B. erstellen ein Stils für [CardView](~/android/user-interface/controls/card-view.md) , mehr abgerundete Ecken aufweist, und verwendet eine dunklere Farbe des Hintergrunds.
+Sie können aus dem Material Design ableiten, um ein eigenes Design zu erstellen und einige oder alle Farb Attribute außer Kraft zu setzen. Sie können z. b. ein Design erstellen, das `Theme.Material.Light`von abgeleitet wird, aber die Farbe der APP-Leiste entsprechend der Farbe Ihrer Marke überschreibt. Sie können auch einzelne Ansichten formatieren. Beispielsweise können Sie einen Stil für [CardView](~/android/user-interface/controls/card-view.md) erstellen, der mehr abgerundete Ecken aufweist und eine dunklere Hintergrundfarbe verwendet.
 
-Können Sie ein einzelnes Design für eine gesamte Anwendung oder können Sie verschiedene Designs für unterschiedliche Bildschirme (Aktivitäten) in einer app. In den obigen Screenshots verwendet z. B. eine einzelne app für jede Aktivität ein anderes Design integrierten Farbschemata veranschaulicht. Optionsfelder wechseln Sie die app an verschiedene Aktivitäten, und daher zeigen verschiedene Designs.
+Sie können ein einzelnes Design für eine gesamte App verwenden, oder Sie können unterschiedliche Designs für verschiedene Bildschirme (Aktivitäten) in einer App verwenden. In den obigen Screenshots verwendet eine einzelne APP beispielsweise ein anderes Design für jede Aktivität, um die integrierten Farbschemas zu veranschaulichen. Options Felder schalten die APP auf verschiedene Aktivitäten um und zeigen als Ergebnis andere Designs an.
 
-Da Material Design nur unter Android 5.0 und höher unterstützt wird, können nicht Sie (oder ein benutzerdefiniertes Design Material Design abgeleitet) auf das Design Ihrer app verwenden für die Ausführung in früheren Versionen von Android. Allerdings können Sie Ihre app, um Material Design auf Android 5.0-Geräte und ordnungsgemäß ein Fallback auf einen früheren Design bei der Ausführung in älteren Versionen von Android konfigurieren (finden Sie unter den [Kompatibilität](#compatibility) Abschnitt dieses Artikels Informationen).
+Da das Material Design nur unter Android 5,0 und höher unterstützt wird, können Sie es (oder ein benutzerdefiniertes Design, das aus dem Material Design abgeleitet ist) nicht verwenden, um die APP für die Ausführung unter früheren Versionen von Android zu verwenden. Allerdings können Sie Ihre APP so konfigurieren, dass Sie das Material Design auf Android 5,0-Geräten verwendet, und auf ein früheres Design zurückgreifen, wenn es unter älteren Versionen von Android ausgeführt wird (Weitere Informationen finden Sie im Abschnitt zur [Kompatibilität](#compatibility) in diesem Artikel).
 
 
 ## <a name="requirements"></a>Anforderungen
 
-Folgendes ist erforderlich, um die neue Android 5.0 Material Design-Features in Xamarin-basierte apps verwenden:
+Folgendes ist erforderlich, um die neuen Android 5,0-Material Design Features in xamarin-basierten apps zu verwenden:
 
 -  **Xamarin.Android** &ndash; Xamarin.Android 4.20 or later must be installed and configured with either Visual Studio or Visual Studio for Mac. 
 
--  **Android SDK** &ndash; Android 5.0 (API 21) oder höher muss installiert sein über den Android SDK Manager.
+-  **Android SDK** &ndash; Android 5,0 (API 21) oder höher muss über den Android SDK-Manager installiert werden.
 
--  **Java JDK 1.8** &ndash; JDK 1.7 kann verwendet werden, wenn Sie speziell für die API-Ebene 23 und früher sind. JDK 1.8 steht [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+-  **Java JDK 1,8** &ndash; JDK 1,7 kann verwendet werden, wenn Sie genau die API-Ebene 23 und früher verwenden. JDK 1,8 ist in [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)verfügbar.
 
-Vorgehensweise: Konfigurieren Sie ein Android 5.0-app-Projekt finden Sie unter [sich ein Android 5.0-Projekt](~/android/platform/lollipop.md).
+Informationen zum Konfigurieren eines Android 5,0-App-Projekts finden Sie unter [Einrichten eines Android 5,0-Projekts](~/android/platform/lollipop.md).
 
 
-## <a name="using-the-built-in-themes"></a>Verwenden von integrierten Designs
+## <a name="using-the-built-in-themes"></a>Verwenden der integrierten Designs
 
-Die einfachste Möglichkeit zum Verwenden von Material Design ist so konfigurieren Sie Ihre app, um eine integrierte Design ohne Anpassung verwenden. Wenn Sie nicht explizit ein Design konfigurieren möchten, Ihre app wird standardmäßig `Theme.Material` (das dunkle Design). Wenn Ihre Anwendung nur eine Aktivität verfügt, können Sie ein Design auf der Aktivitätsebene konfigurieren. Wenn Ihre app mehrere Aktivitäten aufweist, können Sie ein Design auf Anwendungsebene konfigurieren, damit dasselbe Design in allen Aktivitäten verwendet, oder Sie verschiedene Designs, um verschiedene Aktivitäten zuweisen können. In den folgenden Abschnitten wird erläutert, wie Designs auf app-Ebene und auf der Aktivitätsebene konfigurieren.
+Die einfachste Möglichkeit, das Material Design zu verwenden, besteht darin, Ihre APP für die Verwendung eines integrierten Designs ohne Anpassung zu konfigurieren. Wenn Sie kein Design explizit konfigurieren möchten, wird die App standardmäßig auf `Theme.Material` (das dunkle Design) fest. Wenn Ihre APP nur über eine Aktivität verfügt, können Sie ein Design auf der Aktivitäts Ebene konfigurieren. Wenn Ihre APP mehrere Aktivitäten umfasst, können Sie ein Design auf Anwendungsebene so konfigurieren, dass das gleiche Design für alle Aktivitäten verwendet wird, oder Sie können verschiedene Designs verschiedenen Aktivitäten zuweisen. In den folgenden Abschnitten wird erläutert, wie Designs auf App-Ebene und auf Aktivitäts Ebene konfiguriert werden.
 
 
 ### <a name="theming-an-application"></a>Design einer Anwendung
 
-Um eine gesamte Anwendung in ein Material Design-Typ verwenden konfigurieren zu können, legen die `android:theme` Attribut den Anwendungsknoten in **"androidmanifest.xml"** auf einen der folgenden:
+Um eine gesamte Anwendung für die Verwendung einer Material Design-Konfiguration zu konfigurieren `android:theme` , legen Sie das-Attribut des Anwendungs Knotens in " **androidmanifest. XML** " auf einen der folgenden Einstellungen fest:
 
--  `@android:style/Theme.Material` &ndash; Design "dunkel".
+-  `@android:style/Theme.Material`&ndash; Dunkles Design.
 
--  `@android:style/Theme.Material.Light` &ndash; Design "hell".
+-  `@android:style/Theme.Material.Light`&ndash; Helles Design.
 
--  `@android:style/Theme.Material.Light.DarkActionBar` &ndash; Design "hell" mit der dunklen Aktionsleiste.
+-  `@android:style/Theme.Material.Light.DarkActionBar`&ndash; Helles Design mit dunkler Aktionsleiste.
 
-Im folgenden Beispiel wird die Anwendung *"MyApp"* das Design "hell" verwenden:
+Im folgenden Beispiel wird die Anwendung *myapp* für die Verwendung des Design Light konfiguriert:
 
 ```xml
 <application android:label="MyApp" 
@@ -73,60 +73,60 @@ Im folgenden Beispiel wird die Anwendung *"MyApp"* das Design "hell" verwenden:
 </application>
 ```
 
-Alternativ können Sie festlegen, die Anwendung `Theme` -Attribut im **"AssemblyInfo.cs"** (oder **Properties.cs**). Zum Beispiel:
+Alternativ können Sie das Anwendungs `Theme` Attribut in **AssemblyInfo.cs** (oder **Properties.cs**) festlegen. Beispiel:
 
 ```C#
 [assembly: Application(Theme="@android:style/Theme.Material.Light")]
 ```
 
-Wenn das Anwendungsdesign festgelegte `@android:style/Theme.Material.Light`, jede Aktivität in *"MyApp"* erscheint mit `Theme.Material.Light`.
+Wenn das Anwendungsdesign auf festgelegt `@android:style/Theme.Material.Light`ist, wird jede Aktivität in *myapp* mithilfe `Theme.Material.Light`von angezeigt.
 
 
-### <a name="theming-an-activity"></a>Designs mit einer Aktivität
+### <a name="theming-an-activity"></a>Design einer Aktivität
 
-Design eine Aktivität, die Sie hinzufügen eine `Theme` zum Festlegen der `[Activity]` Attribut oberhalb der Deklaration der Aktivität, und weisen Sie `Theme` auf das Material Design-Konfiguration, die Sie verwenden möchten. Das folgende Beispiel-Designs, eine Aktivität mit `Theme.Material.Light`:
+Um eine Aktivität zu verwenden, fügen Sie `Theme` dem `[Activity]` Attribut oberhalb der Aktivitäts Deklaration eine Einstellung hinzu `Theme` , und weisen Sie die gewünschte Material Design-Konfiguration zu. Im folgenden Beispiel wird eine-Aktivität `Theme.Material.Light`mit dem-
 
 ```C#
 [Activity(Theme = "@android:style/Theme.Material.Light",
           Label = "MyApp", MainLauncher = true, Icon = "@drawable/icon")]  
 ```
 
-Andere Aktivitäten in dieser app verwenden die standardmäßige `Theme.Material` Dunkles Farbschema (oder, falls konfiguriert, die Einstellung für Design).
+Für andere Aktivitäten in dieser APP wird das Standard `Theme.Material` Schema für dunkle Farben verwendet (oder, wenn konfiguriert, die Einstellung des Anwendungs Designs).
 
 <a name="customtheme" />
 
 ## <a name="using-custom-themes"></a>Verwenden von benutzerdefinierten Designs
 
-Sie können Ihre Marke verbessern, indem das Erstellen eines benutzerdefinierten Designs, die Ihre app an Ihre Marke anpassen formatiert&rsquo;s Farben. Um ein benutzerdefiniertes Design zu erstellen, definieren Sie ein neues Format, das leitet sich von einem integrierten Material Design-Typ, überschreiben die Farbe-Attribute, die Sie ändern möchten. Sie können z. B. definieren ein benutzerdefiniertes Designs, die von abgeleitet `Theme.Material.Light.DarkActionBar` und ändert die Hintergrundfarbe des Beige statt weiß.
+Sie können Ihre Marke verbessern, indem Sie ein benutzerdefiniertes Design erstellen, das&rsquo;Ihre APP mit den Farben ihrer Marken formatiert. Um ein benutzerdefiniertes Design zu erstellen, definieren Sie ein neues Format, das von einer integrierten Material Design-Konfiguration abgeleitet wird und die Farb Attribute überschreibt, die Sie ändern möchten. Beispielsweise können Sie ein benutzerdefiniertes Design definieren, das `Theme.Material.Light.DarkActionBar` von abgeleitet wird, und die Hintergrundfarbe des Bildschirms in beige anstatt weiß ändern.
 
-Material Design macht die folgenden Layoutattribute für die Anpassung:
+Das Material Design macht die folgenden Layoutattribute für die Anpassung verfügbar:
 
--  `colorPrimary` &ndash; Die Farbe von der app-Leiste.
+-  `colorPrimary`&ndash; Die Farbe der APP-Leiste.
 
--  `colorPrimaryDark` &ndash; Die Farbe der Statusleiste und kontextbezogene app-leisten; Dies ist normalerweise eine dunkle Version `colorPrimary`.
+-  `colorPrimaryDark`Die Farbe der Statusleiste und der kontextbezogenen App-leisten. Dies ist normalerweise eine dunkle Version von `colorPrimary`. &ndash;
 
--  `colorAccent` &ndash; Die Farbe des UI-Steuerelemente wie Kontrollkästchen, Optionsfelder, und Bearbeiten von Textfeldern.
+-  `colorAccent`&ndash; Die Farbe von UI-Steuerelementen, z. b. Kontrollkästchen, Options Felder und Textfelder bearbeiten.
 
--  `windowBackground` &ndash; Die Farbe des Hintergrunds Bildschirm.
+-  `windowBackground`&ndash; Die Farbe des Bildschirm Hintergrunds.
 
--  `textColorPrimary` &ndash; Die Farbe des Benutzeroberflächen-Text in der app-Leiste.
+-  `textColorPrimary`&ndash; Die Farbe des UI-Texts in der APP-Leiste.
 
--  `statusBarColor` &ndash; Die Farbe der Statusleiste.
+-  `statusBarColor`&ndash; Die Farbe der Statusleiste.
 
--  `navigationBarColor` &ndash; Die Farbe der Navigationsleiste.
+-  `navigationBarColor`&ndash; Die Farbe der Navigationsleiste.
 
-In der folgenden Abbildung sind die folgenden Bildschirmbereiche bezeichnet:
+Diese Bildschirmbereiche werden im folgenden Diagramm bezeichnet:
 
-[![Diagramm der Attribute und ihre zugeordneten Bildschirmbereiche](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
+[![Diagramm der Attribute und der zugehörigen Bildschirmbereiche](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
-In der Standardeinstellung `statusBarColor` festgelegt ist, auf den Wert der `colorPrimaryDark`. Sie können festlegen, `statusBarColor` auf eine Volltonfarbe, oder Sie können sie festlegen, um `@android:color/transparent` auf die Statusleiste transparent zu gestalten. Die Navigationsleiste kann auch erfolgen transparent durch Festlegen von `navigationBarColor` zu `@android:color/transparent`.
+Standardmäßig `statusBarColor` ist auf den `colorPrimaryDark`Wert festgelegt. Sie können auf `statusBarColor` eine voll Tonfarbe festlegen, oder Sie können Sie auf `@android:color/transparent` festlegen, um die Statusleiste transparent zu gestalten. Die Navigationsleiste kann auch durch Festlegen `navigationBarColor` von auf `@android:color/transparent`transparent gemacht werden.
 
 
 ### <a name="creating-a-custom-app-theme"></a>Erstellen eines benutzerdefinierten App-Designs
 
-Sie können eine benutzerdefinierte app-Design erstellen, indem erstellen und Ändern von Dateien in die **Ressourcen** Ordner des app-Projekts. Um Ihre app mit einem benutzerdefinierten Design zu formatieren, verwenden Sie die folgenden Schritte aus:
+Sie können ein benutzerdefiniertes App-Design erstellen, indem Sie Dateien im **Ressourcen** Ordner des App-Projekts erstellen und ändern. Um Ihre APP mit einem benutzerdefinierten Design zu formatieren, führen Sie die folgenden Schritte aus:
 
--   Erstellen einer **"Colors.xml"** Datei **Ressourcen/Values** &mdash; Sie diese Datei verwenden, um Ihre benutzerdefinierten Designfarben zu definieren. Sie können z. B. den folgenden Code einfügen **"Colors.xml"** , die Ihnen beim Einstieg helfen:
+-   Erstellen einer Datei " **Colors. XML** " in **Ressourcen/Werten** &mdash; Sie verwenden diese Datei, um die benutzerdefinierten Design Farben zu definieren. Beispielsweise können Sie den folgenden Code in **Colors. XML** einfügen, um Ihnen den Einstieg zu erleichtern:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -138,15 +138,15 @@ Sie können eine benutzerdefinierte app-Design erstellen, indem erstellen und Ä
 </resources>
 ```
 
--   Ändern Sie diese Beispieldatei, um die Namen und die Farbcodes für Farbe-Ressourcen, die Sie in einem benutzerdefinierten Design verwenden zu definieren.
+-   Ändern Sie diese Beispieldatei, um die Namen und Farb Codes für Farb Ressourcen zu definieren, die Sie in Ihrem benutzerdefinierten Design verwenden werden.
 
--   Erstellen Sie eine **Ressourcen/Werte-v21** Ordner. Erstellen Sie in diesem Ordner eine **styles.xml** Datei:
+-   Erstellen Sie einen Ordner " **Resources/Values-V21** ". Erstellen Sie in diesem Ordner die Datei **Styles. XML** :
 
-    [![Speicherort der styles.xml im Ordner "Ressourcen/Werte-21.xml"](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
+    [![Speicherort von "Styles. xml" im Ordner "Resources/Values-21. xml"](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
-    Beachten Sie, dass **Ressourcen/Werte-v21** bezieht sich auf Android 5.0 &ndash; Dateien in diesem Ordner werden von ältere Versionen von Android nicht gelesen.
+    Beachten Sie, dass die **Ressourcen/Werte V21** speziell für Android &ndash; 5,0, ältere Versionen von Android, keine Dateien in diesem Ordner lesen.
 
--   Hinzufügen einer `resources` Knoten **styles.xml** und definieren Sie eine `style` Knoten mit dem Namen des benutzerdefinierten Designs. Hier ist z. B. eine **styles.xml** Datei, die definiert *MyCustomTheme* (abgeleitet von der integrierten `Theme.Material.Light` Designstil):
+-   Fügen Sie `resources` einen Knoten zu " **Styles. XML** " `style` hinzu, und definieren Sie einen Knoten mit dem Namen des benutzerdefinierten Designs. Hier sehen Sie beispielsweise die Datei **Styles. XML** , die *mycustomtheme* definiert (abgeleitet aus dem `Theme.Material.Light` integrierten Design Stil):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -158,11 +158,11 @@ Sie können eine benutzerdefinierte app-Design erstellen, indem erstellen und Ä
 </resources>
 ```
 
--   An diesem Punkt eine app, *MyCustomTheme* zeigt die Stock `Theme.Material.Light` Design ohne Anpassungen:
+-   An dieser Stelle zeigt eine APP, die *mycustomtheme* verwendet, das Aktien `Theme.Material.Light` Design ohne Anpassungen an:
 
-    [![Benutzerdefiniertes Design aussehen, bevor Sie Anpassungen](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
+    [![Darstellung des benutzerdefinierten Designs vor Anpassungen](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
--   Hinzufügen von Anpassungen von Farbe in **styles.xml** definieren die Farben der Layoutattribute, die Sie ändern möchten. So ändern Sie die Farbe des app-Leiste an, beispielsweise `my_blue` , und ändern Sie die Farbe des Benutzeroberflächen-Steuerelemente `my_purple`, fügen Sie die Farbe, überschreibungen, um **styles.xml** mit Verweisen auf im konfigurierten Farbressourcen **"Colors.xml"**:
+-   Fügen Sie der Datei " **Styles. XML** " Farbanpassungen hinzu, indem Sie die Farben der Layoutattribute definieren, die Sie ändern möchten. Wenn Sie z. b. die Farbe der APP `my_blue` -Leiste in ändern und die Farbe von `my_purple`UI-Steuerelementen in ändern möchten, fügen Sie " **Styles. XML** " Farb Überschreibungen hinzu, die auf Farb Ressourcen verweisen, die in **Colors. XML**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -177,20 +177,20 @@ Sie können eine benutzerdefinierte app-Design erstellen, indem erstellen und Ä
 </resources>
 ```
 
-Mit diesen Änderungen vorhanden, eine app, die verwendet *MyCustomTheme* zeigt eine app-Leiste Farbe in `my_blue` und UI-Steuerelemente in `my_purple`, aber die `Theme.Material.Light` Farbschema alle anderen Elemente:
+Nachdem diese Änderungen vorgenommen wurden, zeigt eine APP, die *mycustomtheme* verwendet, eine Farbe der APP `my_blue` -Leiste in und `my_purple`UI-Steuerelemente `Theme.Material.Light` in an, verwendet jedoch das Farbschema an allen anderen Stellen:
 
-[![Benutzerdefiniertes Design-Darstellung nach Anpassungen](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
+[![Darstellung des benutzerdefinierten Designs nach Anpassungen](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
 
-In diesem Beispiel *MyCustomTheme* verwendet Farben aus `Theme.Material.Light` für den Hintergrund der Farbe, Statusleiste und Textfarben, sondern ändert sich die Farbe der app-Leiste auf `my_blue` und legt die Farbe des Optionsfelds, `my_purple`.
+In diesem Beispiel werden von *mycustomtheme* Farben aus `Theme.Material.Light` für die Hintergrundfarbe, die Statusleiste und die Textfarben, aber die Farbe der APP-Leiste in `my_blue` geändert und die Farbe des Options Felds auf `my_purple`festgelegt.
 
 <a name="customview" />
 
-### <a name="creating-a-custom-view-style"></a>Erstellen einen Stil für die benutzerdefinierte Ansicht
+### <a name="creating-a-custom-view-style"></a>Erstellen eines benutzerdefinierten Ansichts Stils
 
-Android 5.0 erleichtert auch möglich, eine einzelne Ansicht zu formatieren. Nach der Erstellung **"Colors.xml"** und **styles.xml** (wie im vorherigen Abschnitt beschrieben), können Sie einen Stil anzeigen, hinzufügen **styles.xml**.
-Um eine einzelne Ansicht zu formatieren, verwenden Sie die folgenden Schritte aus:
+Android 5,0 ermöglicht Ihnen auch, eine einzelne Ansicht zu formatieren. Nachdem Sie " **Colors. XML** " und " **Styles. XML** " (wie im vorherigen Abschnitt beschrieben) erstellt haben, können Sie " **Styles. XML**" einen Ansichts Stil hinzufügen.
+Um eine einzelne Ansicht zu formatieren, führen Sie die folgenden Schritte aus:
 
--   Bearbeiten Sie **Resources/values-v21/styles.xml** und Hinzufügen einer `style` Knoten mit dem Namen Ihres Stils benutzerdefinierte Ansicht. Legen Sie die benutzerdefinierte Farbe Attribute für die Ansicht in dieser `style` Knoten. Beispielsweise erstellen Sie eine benutzerdefinierte [CardView](~/android/user-interface/controls/card-view.md) Stil, der mehr Ecken und verwendet gerundet wurde `my_blue` als der Hintergrundfarbe der Karte, Hinzufügen einer `style` Knoten **styles.xml** (innerhalb der `resources`Knoten) und den Background-Farbe und die Ecke Radius konfigurieren:
+-   Bearbeiten Sie **Resources/Values-V21/Styles. XML** , und `style` fügen Sie einen Knoten mit dem Namen Ihres benutzerdefinierten Ansichts Stils hinzu. Legen Sie die benutzerdefinierten Farb Attribute für Ihre Ansicht `style` innerhalb dieses Knotens fest. Um z. b. einen Benutzer [definierten Karten Ansichts](~/android/user-interface/controls/card-view.md) Stil zu erstellen, der mehr `my_blue` abgerundete Ecken aufweist und als Karten Hintergrund `style` Farbe verwendet, fügen Sie " **Styles. XML** " (innerhalb des `resources` Knotens) einen Knoten hinzu, und konfigurieren Sie die Hintergrundfarbe. Eckradius:
 
 ```xml
 <!-- Theme an individual view: -->
@@ -204,7 +204,7 @@ Um eine einzelne Ansicht zu formatieren, verwenden Sie die folgenden Schritte au
 </style>
 ```
 
--   Legen Sie im Layout der `style` Attribut für diese Ansicht mit dem benutzerdefinierten Stil-Namen übereinstimmen, den Sie im vorherigen Schritt ausgewählt haben. Zum Beispiel:
+-   Legen Sie im Layout das `style` -Attribut für diese Ansicht so fest, dass es mit dem im vorherigen Schritt ausgewählten benutzerdefinierten Stilnamen identisch ist. Beispiel:
 
 ```xml
 <android.support.v7.widget.CardView
@@ -214,18 +214,18 @@ Um eine einzelne Ansicht zu formatieren, verwenden Sie die folgenden Schritte au
     android:layout_gravity="center_horizontal">
 ```
 
-Der folgende Screenshot enthält ein Beispiel des standardmäßigen `CardView` (dargestellt auf der linken Seite) heißt wie im Vergleich zu einem `CardView` hat, die mit dem benutzerdefinierten formatiert wurde `CardView.MyBlue` Design (auf der rechten Seite dargestellt):
+Der folgende Screenshot zeigt ein Beispiel für den Standard `CardView` Wert (auf der linken Seite) im Vergleich zu `CardView` einem, der mit dem benutzerdefinierten `CardView.MyBlue` Design formatiert wurde (auf der rechten Seite angezeigt):
 
-[![Beispiele für standardmäßige CardView und benutzerdefinierte CardView-](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
+[![Beispiele für Standard CardView und Custom CardView](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
 
-In diesem Beispiel wird die benutzerdefinierte `CardView` wird angezeigt, mit der Hintergrundfarbe `my_blue` und einen Eckradius 18dp.
+In diesem Beispiel wird der Benutzer `CardView` definierte mit der Hintergrundfarbe `my_blue` und einem 18dp-Eckradius angezeigt.
 
 
 ## <a name="compatibility"></a>Kompatibilität
 
-Um Ihre app formatieren, damit es Material Design in Android 5.0 verwendet, jedoch auf ein nach unten-kompatiblen Format in älteren Android-Versionen automatisch zurückgesetzt, verwenden Sie die folgenden Schritte aus:
+Führen Sie die folgenden Schritte aus, um Ihre APP so zu formatieren, dass Sie das Material Design unter Android 5,0 verwendet, aber automatisch auf eine abwärts kompatible Formatvorlage für ältere Android-Versionen zurückgreift:
 
--   Definieren ein benutzerdefiniertes Designs in **Resources/values-v21/styles.xml** abgeleitet, die einen Material Design-Stil. Zum Beispiel:
+-   Definieren Sie ein benutzerdefiniertes Design in **Resources/Values-V21/Styles. XML** , das von einem Material Design Style abgeleitet ist. Beispiel:
 
 ```xml
 <resources>
@@ -235,7 +235,7 @@ Um Ihre app formatieren, damit es Material Design in Android 5.0 verwendet, jedo
 </resources>
 ```
 
--   Definieren ein benutzerdefiniertes Designs in **Resources/values/styles.xml** , die aus einer älteren Design abgeleitet wird, aber der gleiche Name des Designs wie oben beschrieben verwendet. Zum Beispiel:
+-   Definieren Sie ein benutzerdefiniertes Design in **Resources/Values/Styles. XML** , das von einem älteren Design abgeleitet ist, aber den gleichen Design Namen wie oben verwendet. Beispiel:
 
 ```xml
 <resources>
@@ -245,8 +245,8 @@ Um Ihre app formatieren, damit es Material Design in Android 5.0 verwendet, jedo
 </resources>
 ```
 
--   In **"androidmanifest.xml"**, konfigurieren Sie Ihre app mit dem Namen der benutzerdefinierten Designs. 
-    Zum Beispiel:
+-   Konfigurieren Sie Ihre APP in " **androidmanifest. XML**" mit dem benutzerdefinierten Design Namen. 
+    Beispiel:
 
 ```xml
 <application android:label="MyApp" 
@@ -254,32 +254,32 @@ Um Ihre app formatieren, damit es Material Design in Android 5.0 verwendet, jedo
 </application>
 ```
 
--   Alternativ können Sie eine bestimmte Aktivität, die mit Ihrer benutzerdefinierten Designs formatieren:
+-   Alternativ können Sie eine bestimmte Aktivität mithilfe des benutzerdefinierten Designs formatieren:
 
 ```C#
 [Activity(Label = "MyActivity", Theme = "@style/MyCustomTheme")]
 ```
 
-Wenn Ihr Design in definierte Farben verwendet eine **"Colors.xml"** Datei, achten Sie darauf, dass Sie diese Datei in **Ressourcen/Values** (statt **Ressourcen/Werte-v21**), damit beide Versionen von Ihr benutzerdefinierte Design kann die Color-Definitionen zugreifen.
+Wenn in Ihrem Design Farben verwendet werden, die in einer Datei " **Colors. XML** " definiert sind, stellen Sie sicher, dass Sie diese Datei in **Ressourcen/Werte** (anstelle von " **Resources/Values-V21**") platzieren, damit beide Versionen des benutzerdefinierten Designs auf ihre Farb Definitionen zugreifen können.
 
-Wenn Ihre app auf einem Android 5.0-Gerät ausgeführt wird, verwenden Sie die Designdefinition, die im angegebenen **Resources/values-v21/styles.xml**. Wenn diese app auf älteren Android-Geräten ausgeführt wird, es wird automatisch ein Fallback auf die Designdefinition, die im angegebenen **Resources/values/styles.xml**.
+Wenn Ihre APP auf einem Android 5,0-Gerät ausgeführt wird, wird die in **Resources/Values-V21/Styles. XML**angegebene Design Definition verwendet. Wenn diese APP auf älteren Android-Geräten ausgeführt wird, wird Sie automatisch auf die in **Resources/Values/Styles. XML**angegebene Design Definition zurückgreifen.
 
-Weitere Informationen über die Design-Kompatibilität mit älteren Android-Versionen finden Sie unter [alternative Ressourcen](~/android/app-fundamentals/resources-in-android/alternate-resources.md).
+Weitere Informationen zur Design Kompatibilität mit älteren Android-Versionen finden Sie unter [Alternative Ressourcen](~/android/app-fundamentals/resources-in-android/alternate-resources.md).
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel eingeführt, die neuen Material Design Benutzer schnittstellenstil in Android 5.0 (Lollipop) enthalten. Es wurde beschrieben, die drei integrierten Material Design-Typen, die Sie zum Formatieren der app verwenden können, es wurde erklärt, wie ein benutzerdefiniertes Design für das branding Ihrer app zu erstellen und sie ein Beispiel dafür, wie Design eine einzelne Ansicht bereitgestellt. Schließlich wurde in diesem Artikel erläutert, wie Material Design in Ihrer app zu verwenden, gleichzeitig aus Gründen der Abwärtskompatibilität mit älteren Versionen von Android werden.
+In diesem Artikel wurde das neue Design Design der Benutzeroberfläche vorgestellt, das in Android 5,0 (Lollipop) enthalten ist. Es wurden die drei integrierten Material Design-Varianten beschrieben, die Sie verwenden können, um Ihre APP zu formatieren. es wurde erläutert, wie Sie ein benutzerdefiniertes Design zum Branding Ihrer APP erstellen, und es wurde ein Beispiel für das Design einer einzelnen Ansicht bereitgestellt. Schließlich wurde in diesem Artikel erläutert, wie Sie das Material Design in Ihrer APP verwenden und gleichzeitig die Kompatibilität mit älteren Versionen von Android aufrechterhalten.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [ThemeSwitcher (Beispiel)](https://developer.xamarin.com/samples/monodroid/android5.0/ThemeSwitcher)
-- [Einführung in die Lollipop](../platform/lollipop.md)
+- [Themeswitcher (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-themeswitcher)
+- [Einführung in Lollipop](../platform/lollipop.md)
 - [CardView](controls/card-view.md)
 - [Alternative Ressourcen](../app-fundamentals/resources-in-android/alternate-resources.md)
 - [Android Lollipop](https://developer.android.com/about/versions/lollipop)
-- [Kreis mit Android-Entwickler](https://developer.android.com/about/versions/pie/)
-- [Materialdesign](https://developer.android.com/guide/topics/ui/look-and-feel/)
-- [Material Entwurfsprinzipien](https://material.io/design/)
-- [Verwalten der Anwendungskompatibilität](https://developer.android.com/training/backward-compatible-ui/)
+- [Android-Kreis Entwickler](https://developer.android.com/about/versions/pie/)
+- [Material Design](https://developer.android.com/guide/topics/ui/look-and-feel/)
+- [Grundlagen des Material Entwurfs](https://material.io/design/)
+- [Beibehalten der Kompatibilität](https://developer.android.com/training/backward-compatible-ui/)

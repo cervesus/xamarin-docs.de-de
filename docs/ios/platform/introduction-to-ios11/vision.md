@@ -1,56 +1,56 @@
 ---
-title: Maschinelles sehen-Framework in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Sie mit der iOS 11 Vision Framework in Xamarin.iOS. Insbesondere erläutert Rechteck Erkennung und gesichtserkennung.
+title: Vision Framework in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie das IOS 11-Vision-Framework in xamarin. IOS verwenden. Insbesondere werden Rechteck Erkennung und Gesichtserkennung erläutert.
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/31/2017
-ms.openlocfilehash: 291cbdb93cfb6ac123d740e98065ba877bb44da5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c7fd1a933ba166b7c1b708bc102b84ce407b18fd
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61159658"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648358"
 ---
-# <a name="vision-framework-in-xamarinios"></a>Maschinelles sehen-Framework in Xamarin.iOS
+# <a name="vision-framework-in-xamarinios"></a>Vision Framework in xamarin. IOS
 
-Das Vision Framework bietet es sich um eine Reihe von neuen Funktionen auf iOS 11, einschließlich für die bildverarbeitung:
+Das Vision-Framework bietet IOS 11 eine Reihe neuer Features für die Bildverarbeitung, einschließlich:
 
-- [Rechteck-Erkennung](#rectangles)
+- [Rechteck Erkennung](#rectangles)
 - [Gesichtserkennung](#faces)
-- Machine Learning-Bildanalyse (ausführlicher [CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
-- Barcodeerkennung
-- Bildanalyse-Ausrichtung
-- Erkennung von Text
-- Horizont-Erkennung
-- Objekterkennung und Überwachung
+- Machine Learning Abbild Analyse (in [coreml](~/ios/platform/introduction-to-ios11/coreml.md)erläutert)
+- Barcode Erkennung
+- Bild Ausrichtungs Analyse
+- Text Erkennung
+- Horizont aliterkennung
+- Objekterkennung & Nachverfolgung
 
-![Fotografieren Sie mit drei Rechtecken erkannt](vision-images/found-rectangles-tiny.png) ![Fotografieren Sie mit zwei Gesichter erkannt](vision-images/xamarin-home-faces-tiny.png)
+![Foto mit drei Rechtecke erkannt](vision-images/found-rectangles-tiny.png) ![Foto mit zwei Gesichtern erkannt](vision-images/xamarin-home-faces-tiny.png)
 
-Rechteck zur Erkennung und Gesichtserkennung werden im folgenden ausführlicher erläutert.
+Die Rechteck Erkennung und-Gesichtserkennung werden unten ausführlicher erläutert.
 
 <a name="rectangles" />
 
-## <a name="rectangle-detection"></a>Rechteck-Erkennung
+## <a name="rectangle-detection"></a>Rechteck Erkennung
 
-Die [VisionRects Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) das Verarbeiten eines Images, und zeichnen die erkannten Rechtecke darauf zeigt.
+Das [Beispiel "visionrects](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles) " zeigt, wie ein Bild verarbeitet und die erkannten Rechtecke gezeichnet werden.
 
-### <a name="1-initialize-the-vision-request"></a>1. Initialisieren der maschinelles sehen-Anforderung
+### <a name="1-initialize-the-vision-request"></a>1. Anforderungs Anforderung initialisieren
 
-In `ViewDidLoad`, erstellen Sie eine `VNDetectRectanglesRequest` , die auf die `HandleRectangles` Methode, die am Ende jeder Anforderung aufgerufen wird:
+Erstellen `ViewDidLoad`Sie in eine `VNDetectRectanglesRequest` , die auf `HandleRectangles` die Methode verweist, die am Ende jeder Anforderung aufgerufen wird:
 
-Die `MaximumObservations` Eigenschaft auch festgelegt werden soll, andernfalls wird standardmäßig auf 1 und nur ein einzelnes Ergebnis zurückgegeben.
+Die `MaximumObservations` -Eigenschaft sollte ebenfalls festgelegt werden. andernfalls wird Sie standardmäßig auf 1 festgelegt, und nur ein einzelnes Ergebnis wird zurückgegeben.
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 RectangleRequest.MaximumObservations = 10;
 ```
 
-### <a name="2-start-the-vision-processing"></a>2. Starten Sie die Verarbeitung der maschinelles sehen
+### <a name="2-start-the-vision-processing"></a>2. Starten der Bild Verarbeitungs Verarbeitung
 
-Der folgende Code startet die Verarbeitung der Anforderung. In der **VisionRects** Beispiel dieser Code ausgeführt wird, nachdem der Benutzer ein Bild ausgewählt hat:
+Der folgende Code beginnt mit der Verarbeitung der Anforderung. Im Beispiel " **visionrects** " wird dieser Code ausgeführt, nachdem der Benutzer ein Bild ausgewählt hat:
 
 ```csharp
 // Run the rectangle detector
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Dieser Handler übergibt die `ciImage` Vision Framework `VNDetectRectanglesRequest` , die in Schritt 1 erstellt wurde.
+Dieser Handler übergibt das `ciImage` an das Vision Framework `VNDetectRectanglesRequest` , das in Schritt 1 erstellt wurde.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Verarbeiten der Ergebnisse der Verarbeitung der maschinelles sehen
+### <a name="3-handle-the-results-of-vision-processing"></a>3. Verarbeiten der Ergebnisse der Maschinelles Verarbeitung
 
-Sobald die Erkennung Rechteck abgeschlossen ist, führt das Framework die `HandleRectangles` -Methode, eine Zusammenfassung der wird unten gezeigt:
+Nachdem die Rechteck Erkennung fertiggestellt wurde, führt das Framework `HandleRectangles` die-Methode aus, eine Zusammenfassung, die unten dargestellt wird:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -86,40 +86,40 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4. Die Ergebnisse werden angezeigt
+### <a name="4-display-the-results"></a>4. Anzeigen der Ergebnisse
 
-Die `OverlayRectangles` -Methode in der die **VisionRectangles** Beispiel verfügt über drei Funktionen:
+Die `OverlayRectangles` -Methode im **visionrechgles** -Beispiel verfügt über drei Funktionen:
 
-- Das Quellbild Rendering
-- Zeichnen eines Rechtecks um anzugeben, in denen jeweils erkannt wurde, und
-- Eine textbezeichnung für jedes Rechteck CoreGraphics wird hinzugefügt.
+- Rendern des Quell Bilds
+- Zeichnen eines Rechtecks, um anzugeben, wo jedes erkannt wurde, und
+- Hinzufügen einer Text Bezeichnung für jedes Rechteck mithilfe von CoreGraphics.
 
-Anzeigen der [des Beispielquelle](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) für die genaue CoreGraphics-Methode.
+Sehen Sie sich die Quelle des Beispiels für die exakte CoreGraphics [-](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles) Methode an.
 
-![Fotografieren Sie mit drei Rechtecken erkannt](vision-images/found-rectangles-phone-sml.png)
+![Foto mit drei Rechtecke erkannt](vision-images/found-rectangles-phone-sml.png)
 
-### <a name="5-further-processing"></a>5. Weiterverarbeitung
+### <a name="5-further-processing"></a>5. Weitere Verarbeitung
 
-Rechteck-Erkennung ist häufig nur der erste Schritt in einer Kette von Vorgängen, z. B. mit [in diesem Beispiel CoreMLVision](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), in denen die Rechtecke mit einem CoreML-Modell zum Analysieren von handgeschriebener Ziffern übergeben werden.
+Die Rechteck Erkennung ist oft nur der erste Schritt in einer Kette von Vorgängen, z. b. mit [diesem coremlvision-Beispiel](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), bei dem die Rechtecke an ein coreml-Modell zum Analysieren von handschriftlichen Ziffern übermittelt werden.
 
 
 <a name="faces" />
 
 ## <a name="face-detection"></a>Gesichtserkennung
 
-Die [VisionFaces Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) funktioniert auf ähnliche Weise wie die **VisionRectangles** Beispiels mit einer anderen Klasse der maschinelles sehen-Anforderung.
+Das [Beispiel "visiongesichter](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces) " funktioniert ähnlich wie das Beispiel " **visionrechgles** " unter Verwendung einer anderen Vision Request-Klasse.
 
-### <a name="1-initialize-the-vision-request"></a>1. Initialisieren der maschinelles sehen-Anforderung
+### <a name="1-initialize-the-vision-request"></a>1. Anforderungs Anforderung initialisieren
 
-In `ViewDidLoad`, erstellen Sie eine `VNDetectFaceRectanglesRequest` , die auf die `HandleRectangles` Methode, die am Ende jeder Anforderung aufgerufen wird.
+Erstellen `ViewDidLoad`Sie in eine `VNDetectFaceRectanglesRequest` , die auf `HandleRectangles` die Methode verweist, die am Ende jeder Anforderung aufgerufen wird.
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 ```
 
-### <a name="2-start-the-vision-processing"></a>2. Starten Sie die Verarbeitung der maschinelles sehen
+### <a name="2-start-the-vision-processing"></a>2. Starten der Bild Verarbeitungs Verarbeitung
 
-Der folgende Code startet die Verarbeitung der Anforderung. In der **VisionFaces** Beispiel dieser Code ausgeführt wird, nachdem der Benutzer ein Bild ausgewählt hat:
+Der folgende Code beginnt mit der Verarbeitung der Anforderung. Im Beispiel " **visiongesichter** " wird dieser Code ausgeführt, nachdem der Benutzer ein Bild ausgewählt hat:
 
 ```csharp
 // Run the face detector
@@ -129,11 +129,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Dieser Handler übergibt die `ciImage` Vision Framework `VNDetectFaceRectanglesRequest` , die in Schritt 1 erstellt wurde.
+Dieser Handler übergibt das `ciImage` an das Vision Framework `VNDetectFaceRectanglesRequest` , das in Schritt 1 erstellt wurde.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Verarbeiten der Ergebnisse der Verarbeitung der maschinelles sehen
+### <a name="3-handle-the-results-of-vision-processing"></a>3. Verarbeiten der Ergebnisse der Maschinelles Verarbeitung
 
-Sobald die gesichtserkennung abgeschlossen ist, führt der Handler die `HandleRectangles` Methode führt eine Fehlerbehandlung und zeigt die Grenzen des erkannten Gesichtern, und ruft die `OverlayRectangles` zum Zeichnen von umgebenden Rechtecken auf das ursprüngliche Bild:
+Sobald die Gesichtserkennung vollständig ist, führt der Handler `HandleRectangles` die Methode aus, die die Fehlerbehandlung ausführt und die Begrenzungen der erkannten Gesichter anzeigt, `OverlayRectangles` und ruft auf, um umschließende Rechtecke auf der ursprünglichen Abbildung zu zeichnen:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -160,25 +160,25 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4. Die Ergebnisse werden angezeigt
+### <a name="4-display-the-results"></a>4. Anzeigen der Ergebnisse
 
-Die `OverlayRectangles` -Methode in der die **VisionFaces** Beispiel verfügt über drei Funktionen:
+Die `OverlayRectangles` -Methode im " **visionfaces** "-Beispiel verfügt über drei Funktionen:
 
-- Das Quellbild Rendering
-- Zeichnen eines Rechtecks für jedes Gesicht erkannt, und
-- Hinzufügen einer textbezeichnung für jedes Gesicht CoreGraphics verwenden.
+- Rendern des Quell Bilds
+- Zeichnen eines Rechtecks für jedes erkannte Gesicht, und
+- Hinzufügen einer Text Bezeichnung für jedes Gesicht mithilfe von CoreGraphics.
 
-Anzeigen der [des Beispielquelle](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) für die genaue CoreGraphics-Methode.
+Sehen Sie sich die Quelle des Beispiels für die exakte CoreGraphics [-](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces) Methode an.
 
-![Fotografieren Sie mit zwei Gesichter erkannt](vision-images/found-faces-phone-sml.png)
+![Foto mit zwei Gesichtern erkannt](vision-images/found-faces-phone-sml.png)
 
-### <a name="5-further-processing"></a>5. Weiterverarbeitung
+### <a name="5-further-processing"></a>5. Weitere Verarbeitung
 
-Das Vision Framework enthält zusätzliche Funktionen, um gesichtsmerkmale, z. B. die Auge und Mund zu erkennen. Verwenden der `VNDetectFaceLandmarksRequest` Typ, der zurückgibt `VNFaceObservation` Ergebnisse wie in Schritt 3 oben, jedoch mit zusätzlichen `VNFaceLandmark` Daten.
+Das Vision-Framework bietet zusätzliche Funktionen zum Erkennen von Gesichtsmerkmalen, wie z. b. Augen und Mund. Verwenden Sie `VNDetectFaceLandmarksRequest` den-Typ, der `VNFaceObservation` Ergebnisse wie in Schritt 3 weiter oben zurückgibt, `VNFaceLandmark` jedoch mit zusätzlichen Daten.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Vision Rechtecke (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
-- [Vision Gesichter (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
-- [Fortschritte in der Core-Image - Filter, die Metal, maschinelles sehen und mehr (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/510/)
+- [Vision Rechtecke (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)
+- [Vision Gesichter (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+- [Fortschritte im Kern Image: Filter, Metal, Vision und mehr (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/510/)

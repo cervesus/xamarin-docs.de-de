@@ -1,24 +1,24 @@
 ---
-title: ListView-Group-Headerformat unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie der iOS-Plattform-spezifische zu nutzen, die steuert, ob die ListView Headerzellen während des Bildlaufs "float" werden.
+title: ListView-Gruppen Header Stil unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie das plattformspezifische IOS-Element nutzen, das steuert, ob ListView-Header Zellen beim Scrollen schweben.
 ms.prod: xamarin
 ms.assetid: 099B2C7F-727F-4BCF-903B-87E728108C24
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: e2f6a402d1df8b842e147ab145474688c203aaa6
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f40737799f63c6e0c61fcc6f4f59584222a49d6d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925869"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648324"
 ---
-# <a name="listview-group-header-style-on-ios"></a>ListView-Group-Headerformat unter iOS
+# <a name="listview-group-header-style-on-ios"></a>ListView-Gruppen Header Stil unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese iOS-Plattform-spezifische steuert, ob [ `ListView` ](xref:Xamarin.Forms.ListView) Headerzellen "float" während des Bildlaufs. Es ist in XAML verwendet, durch Festlegen der `ListView.GroupHeaderStyle` bindbare Eigenschaft auf den Wert der `GroupHeaderStyle` Enumeration:
+Mit diesem IOS-plattformspezifischen [`ListView`](xref:Xamarin.Forms.ListView) Steuerelement wird gesteuert, ob Kopfzeilen Zellen beim Scrollen schweben Sie wird in XAML verwendet, indem die `ListView.GroupHeaderStyle` bindbare Eigenschaft auf einen Wert `GroupHeaderStyle` der-Enumeration festgelegt wird:
 
 ```xaml
 <ContentPage ...
@@ -41,19 +41,19 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 listView.On<iOS>().SetGroupHeaderStyle(GroupHeaderStyle.Grouped);
 ```
 
-Die `ListView.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die `ListView.SetGroupHeaderStyle` Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um Steuerelement gibt an, ob [ `ListView` ](xref:Xamarin.Forms.ListView) Headerzellen "float" während des Bildlaufs. Die `GroupHeaderStyle` Enumeration bietet zwei mögliche Werte:
+Die `ListView.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die `ListView.SetGroupHeaderStyle` -Methode [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) im-Namespace wird verwendet, um zu steuern [`ListView`](xref:Xamarin.Forms.ListView) , ob die Header Zellen beim Scrollen schweben. Die `GroupHeaderStyle` -Enumeration bietet zwei mögliche Werte:
 
-- `Plain` – Gibt an, dass die Headerzellen Verankerung aufheben, wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) ist ein Bildlauf durchgeführt (Standard).
-- `Grouped` – Gibt an, dass die Headerzellen nicht wenn "float" werden die [ `ListView` ](xref:Xamarin.Forms.ListView) ein Bildlauf durchgeführt wird.
+- `Plain`– Gibt an, dass die Header Zellen [`ListView`](xref:Xamarin.Forms.ListView) beim scrollt (Standard) in den Gleit Komma Wert gesetzt werden.
+- `Grouped`– Gibt an, dass Header Zellen beim [`ListView`](xref:Xamarin.Forms.ListView) Rollup von nicht float werden.
 
-Darüber hinaus die `ListView.GetGroupHeaderStyle` Methode kann verwendet werden, um das Zurückgeben der `GroupHeaderStyle` angewendeten der [ `ListView` ](xref:Xamarin.Forms.ListView).
+Außerdem kann die `ListView.GetGroupHeaderStyle` -Methode verwendet werden, um den `GroupHeaderStyle` zurückzugeben, der auf den [`ListView`](xref:Xamarin.Forms.ListView)angewendet wird.
 
-Das Ergebnis ist, die einem angegebenen `GroupHeaderStyle` Wert gilt für die [ `ListView` ](xref:Xamarin.Forms.ListView), die steuert, ob die Headerzellen während des Bildlaufs "float":
+Das Ergebnis ist, dass ein `GroupHeaderStyle` angegebener Wert auf [`ListView`](xref:Xamarin.Forms.ListView)den angewendet wird, der steuert, ob die Header Zellen beim Scrollen schweben:
 
-[![Screenshot der Gleitkomma- und unverankerte ListView Headerzellen, die unter iOS](listview-group-header-style-images/group-header-styles.png "ListView mit Gleitkomma- und unverankerte Headerzellen")](listview-group-header-style-images/group-header-styles-large.png#lightbox "ListView mit Gleitkomma- und unverankerte Headerzellen")
+[ ![Screenshot der nicht Gleit Komma-und nicht Gleit Komma-ListView-Header Zellen in ios]-(listview-group-header-style-images/group-header-styles.png "ListView mit Gleit Komma-und nicht-Gleit Komma Zellen") ] (listview-group-header-style-images/group-header-styles-large.png#lightbox "ListView mit Gleit Komma-und nicht-Gleit Komma Zellen")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

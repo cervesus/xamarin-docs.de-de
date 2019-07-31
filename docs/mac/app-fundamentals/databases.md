@@ -1,63 +1,63 @@
 ---
-title: Datenbanken in Xamarin.Mac
-description: Dieser Artikel befasst sich mit der Codierung mit Schlüssel-Wert und Schlüssel-Wert beachtet werden, um die Datenbindung zwischen SQLite-Datenbanken und Elementen der Benutzeroberfläche in Interface Builder von Xcode zu ermöglichen. Hierin sind auch mit, dass die von SQLite.NET ORM bieten Zugriff auf SQLite-Daten.
+title: Datenbanken in xamarin. Mac
+description: In diesem Artikel wird die Verwendung von Schlüssel-Wert-Codierungen und Schlüssel-Wert-Beobachtungen behandelt, um die Datenbindung zwischen SQLite-Datenbanken und Benutzeroberflächen Elementen in der Interface Builder von Xcode Außerdem wird die Verwendung des sqlite.net ORM zum Bereitstellen des Zugriffs auf SQLite-Daten behandelt.
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 465b4a34d54dbee92461669b16c3b8a13188bbde
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: febfa23ecb2f1536631b3009d6ddc614fa355f01
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61378342"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656502"
 ---
-# <a name="databases-in-xamarinmac"></a>Datenbanken in Xamarin.Mac
+# <a name="databases-in-xamarinmac"></a>Datenbanken in xamarin. Mac
 
-_Dieser Artikel befasst sich mit der Codierung mit Schlüssel-Wert und Schlüssel-Wert beachtet werden, um die Datenbindung zwischen SQLite-Datenbanken und Elementen der Benutzeroberfläche in Interface Builder von Xcode zu ermöglichen. Hierin sind auch mit, dass die von SQLite.NET ORM bieten Zugriff auf SQLite-Daten._
+_In diesem Artikel wird die Verwendung von Schlüssel-Wert-Codierungen und Schlüssel-Wert-Beobachtungen behandelt, um die Datenbindung zwischen SQLite-Datenbanken und Benutzeroberflächen Elementen in der Interface Builder von Xcode Außerdem wird die Verwendung des sqlite.net ORM zum Bereitstellen des Zugriffs auf SQLite-Daten behandelt._
 
 ## <a name="overview"></a>Übersicht
 
-Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf die gleiche SQLite-Datenbanken, die eine Xamarin.iOS oder Xamarin.Android-Anwendung zugreifen kann.
+Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zugriff auf die gleichen SQLite-Datenbanken, auf die eine xamarin. IOS-oder xamarin. Android-Anwendung zugreifen kann.
 
-In diesem Artikel werden wir zwei Möglichkeiten, SQLite für den Datenzugriff zu folgenden Themen werden:
+In diesem Artikel werden zwei Möglichkeiten für den Zugriff auf SQLite-Daten behandelt:
 
-1. **Direkter Zugriff auf** – durch direkten Zugriff auf eine SQLite-Datenbank, können wir Daten aus der Datenbank für die Codierung von Schlüssel-Wert und die Datenbindung mit UI-Elementen, die in Interface Builder von Xcode erstellt. Mithilfe von Schlüssel-Wert-Codierung und Datenbindungsmethoden in Ihre Xamarin.Mac-Anwendung, können Sie die Menge des Codes, die Sie schreiben und verwalten, die zum Auffüllen und zum Arbeiten mit UI-Elemente, erheblich reduzieren. Sie haben außerdem den Vorteil, dass weitere entkoppeln Ihre Daten sichern (_Datenmodell_) aus Ihrem Front end-Benutzeroberfläche (_Model-View-Controller_), wodurch einfacher zu verwalten, eine flexiblere Anwendung Entwurf.
-2. **Von SQLite.NET ORM** – mithilfe der open Source [von SQLite.NET](http://www.sqlite.org) Objekt Beziehung Manager (ORM), wir können die erforderliche Menge an Code zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank erheblich reduzieren. Diese Daten können dann zum Auffüllen eines Benutzeroberflächenelements wie z. B. eine Tabellenansicht verwendet werden.
+1. **Direkter Zugriff** : indem Sie direkt auf eine SQLite-Datenbank zugreifen, können wir Daten aus der Datenbank für Schlüssel-Wert-Codierung und Datenbindung mit Benutzeroberflächen Elementen verwenden, die in der Interface Builder von Xcode erstellt wurden. Durch die Verwendung von Schlüssel-Wert-Codierungs-und Daten Bindungs Techniken in ihrer xamarin. Mac-Anwendung können Sie die Menge des Codes, den Sie schreiben und verwalten müssen, erheblich verringern, um Benutzeroberflächen Elemente aufzufüllen und mit Ihnen zu arbeiten. Außerdem profitieren Sie von der weiteren Entkopplung ihrer Sicherungsdaten (_Datenmodell_) von der Front-End-Benutzeroberfläche (_Model-View-Controller_). Dies führt zu einer einfacheren Wartung und einem flexibleren Anwendungs Entwurf.
+2. **Sqlite.net ORM** : mit dem Open-Source- [sqlite.net](http://www.sqlite.org) Object Relationship Manager (ORM) können wir die Menge an Code, der zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank benötigt wird, erheblich reduzieren. Diese Daten können dann verwendet werden, um ein Benutzeroberflächen Element (z. b. eine Tabellenansicht) aufzufüllen.
 
-[![Ein Beispiel für die ausgeführte app](databases-images/intro01.png "ein Beispiel für die ausgeführte app")](databases-images/intro01-large.png#lightbox)
+[![Ein Beispiel für die laufende App](databases-images/intro01.png "Ein Beispiel für die laufende App")](databases-images/intro01-large.png#lightbox)
 
-In diesem Artikel werden die Grundlagen der Arbeit mit Schlüssel / Wert-Codierung und Datenbindung mit SQLite-Datenbanken in einer Xamarin.Mac-Anwendung beschrieben. Es wird dringend empfohlen, dass Sie über arbeiten die [Hallo, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die wir in diesem Artikel verwenden.
+In diesem Artikel werden die Grundlagen der Arbeit mit Schlüssel-Wert-Codierung und Datenbindung mit SQLite-Datenbanken in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , verwenden, da er wichtige Konzepte und Techniken behandelt, die wir in verwenden werden. Dieser Artikel.
 
-Da wir Schlüssel / Wert-Codierung und die Datenbindung verwenden, wenden Sie sich über die [Datenbindung und Schlüssel / Wert-Codierung](~/mac/app-fundamentals/databinding.md) zunächst als core-Methoden und Konzepte werden besprochen werden, die in dieser Dokumentation und der Beispielcode verwendet werden die Anwendung.
+Da die Schlüssel-Wert-Codierung und Datenbindung verwendet werden, arbeiten Sie zunächst mit der [Datenbindung und der Schlüssel-Wert-Codierung](~/mac/app-fundamentals/databinding.md) , da grundlegende Techniken und Konzepte behandelt werden, die in dieser Dokumentation und der zugehörigen Beispielanwendung verwendet werden.
 
-Empfiehlt es sich um einen Blick auf die [Verfügbarmachen von c#-Klassen / Methoden mit Objective-C](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac-Interna](~/mac/internals/how-it-works.md) dokumentieren, es wird erläutert, die `Register` und `Export` Attribute verwendet, um Ihre Klassen in c# für Objective-C-Objekte und Benutzeroberfläche Elemente zu verknüpfen.
+Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden das-Attribut `Register` und `Export` das-Attribut erläutert, mit C# denen die Klassen an gesendet werden. Ziel-C-Objekte und UI-Elemente.
 
-## <a name="direct-sqlite-access"></a>Direkter Zugriff auf die SQLite
+## <a name="direct-sqlite-access"></a>Direkter SQLite-Zugriff
 
-Für die SQLite-Daten, die an UI-Elemente in Interface Builder von Xcode gebunden werden soll, wird dringend empfohlen, dass Sie auf die SQLite-Datenbank direkt (und nicht über eine Methode wie z. B. ein ORM) zugreifen, da Sie vollständige Kontrolle über die Möglichkeit haben die Daten geschrieben und gelesen wird  aus der Datenbank.
+Für SQLite-Daten, die an Benutzeroberflächen Elemente in der Interface Builder von Xcode gebunden werden sollen, wird dringend empfohlen, direkt auf die SQLite-Datenbank zuzugreifen (im Gegensatz zur Verwendung eines Verfahrens, wie z. b. ein ORM), da Sie die vollständige Kontrolle über die Art und Weise haben, in der die Daten geschrieben und gelesen werden.  aus der Datenbank.
 
-Wie in der wir gesehen haben die [Datenbindung und Schlüssel / Wert-Codierung](~/mac/app-fundamentals/databinding.md) Dokumentation die, mithilfe von Schlüssel-Wert-Codierung und Datenbindungsmethoden in Ihre Xamarin.Mac-Anwendung können Sie erheblich verringern, die Menge des Codes, die Sie schreiben müssen, und Behalten Sie zum Auffüllen und zum Arbeiten mit UI-Elemente. In Kombination mit direktem Zugriff auf eine SQLite-Datenbank können sie erheblich reduzieren den Umfang des Codes zum Lesen und Schreiben von Daten in der Datenbank erforderlich.
+Wie wir in der Dokumentation für die [Datenbindung und die Schlüssel-Wert-Codierung](~/mac/app-fundamentals/databinding.md) mithilfe von Schlüssel-Wert-Codierungs-und Daten Bindungs Techniken in ihrer xamarin. Mac-Anwendung gesehen haben, können Sie die Menge des Codes, den Sie schreiben und verwalten müssen, erheblich verringern, um zu füllen und Arbeiten Sie mit Benutzeroberflächen Elementen. In Kombination mit direktem Zugriff auf eine SQLite-Datenbank kann die Menge an Code, der zum Lesen und Schreiben von Daten in diese Datenbank erforderlich ist, erheblich reduziert werden.
 
-In diesem Artikel werden wir die Beispiel-app von Datenbindung und Schlüssel-Wert-Codierung-Dokument mit einer SQLite-Datenbank als die Quelle der Sicherung für die Bindung ändern können.
+In diesem Artikel wird die Beispiel-App aus dem Daten Bindungs-und Schlüssel-Wert-Codierungs Dokument so geändert, dass eine SQLite-Datenbank als Unterstützungs Quelle für die Bindung verwendet wird.
 
-### <a name="including-sqlite-database-support"></a>Einschließlich Unterstützung für SQLite-Datenbank
+### <a name="including-sqlite-database-support"></a>Einschließlich SQLite-Datenbankunterstützung
 
-Bevor wir fortfahren können, müssen wir unsere Anwendung Unterstützung für SQLite-Datenbanken hinzufügen, indem die einschließen von Verweisen auf eine Reihe von. Dateien, DLLs.
+Bevor wir fortfahren können, müssen wir der Anwendung SQLite-Datenbankunterstützung hinzufügen, indem wir Verweise auf einige von einbeziehen. DLLs-Dateien.
 
 Führen Sie folgende Schritte aus:
 
-1. In der **Lösungspad**, mit der rechten Maustaste auf die **Verweise** Ordner, und wählen **Verweise bearbeiten**.
-2. Wählen Sie die Optionen der **Mono.Data.Sqlite** und **"System.Data"** Assemblys: 
+1. Klicken Sie im **Lösungspad**mit der rechten Maustaste auf den Ordner **Verweise** , und wählen Sie **Verweise bearbeiten**aus.
+2. Wählen Sie die Assemblys **Mono. Data. sqlite** und **System. Data** aus: 
 
-    [![Hinzufügen der erforderlichen Verweise](databases-images/reference01.png "die erforderlichen Verweise hinzufügen")](databases-images/reference01-large.png#lightbox)
-3. Klicken Sie auf die **OK** Schaltfläche, um die Änderungen zu speichern und die Verweise hinzuzufügen.
+    [![Hinzufügen der erforderlichen Verweise](databases-images/reference01.png "Hinzufügen der erforderlichen Verweise")](databases-images/reference01-large.png#lightbox)
+3. Klicken Sie auf die Schaltfläche **OK** , um die Änderungen zu speichern und die Verweise hinzuzufügen.
 
-### <a name="modifying-the-data-model"></a>Ändern das Datenmodell
+### <a name="modifying-the-data-model"></a>Ändern des Datenmodells
 
-Nun, wir Unterstützung für den direkten Zugriff auf eine SQLite-Datenbank, um die Anwendung hinzugefügt haben, müssen wir unsere Data Model-Objekts zum Lesen und Schreiben von Daten aus der Datenbank (und geben Sie Schlüssel / Wert-Codierung und die Datenbindung) ändern. Im Fall von unserer beispielanwendung bearbeiten wir die **PersonModel.cs** Klasse, und stellen sie wie folgt aussehen:
+Nachdem wir nun Unterstützung für den direkten Zugriff auf eine SQLite-Datenbank für die Anwendung hinzugefügt haben, müssen wir das Datenmodell Objekt ändern, um Daten aus der Datenbank zu lesen und zu schreiben (und die Schlüssel-Wert-Codierung und Datenbindung bereitzustellen). Im Fall der Beispielanwendung bearbeiten wir die **PersonModel.cs** -Klasse und führen Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -418,9 +418,9 @@ namespace MacDatabase
 }
 ```
 
-Werfen wir einen Blick auf die Änderungen im folgenden ausführlicher beschrieben.
+Werfen wir einen Blick auf die unten aufgeführten Änderungen.
 
-Wir haben zunächst hinzugefügt mehrere using-Anweisungen, die zum Verwenden von SQLite erforderlich sind, und wir haben eine Variable zum Speichern von unserer letzten Verbindungs mit der SQLite-Datenbank hinzugefügt:
+Zunächst haben wir mehrere using-Anweisungen hinzugefügt, die für die Verwendung von SQLite erforderlich sind, und wir haben eine Variable zum Speichern der letzten Verbindung mit der SQLite-Datenbank hinzugefügt:
 
 ```csharp
 using System.Data;
@@ -431,7 +431,7 @@ using Mono.Data.Sqlite;
 private SqliteConnection _conn = null;
 ```
 
-Verwenden wir diese gespeicherte Verbindung, um alle Änderungen automatisch auf den Datensatz in der Datenbank zu speichern, wenn der Benutzer den Inhalt in der Benutzeroberfläche, über die Datenbindung ändert:
+Diese gespeicherte Verbindung wird verwendet, um automatisch Änderungen am Datensatz in der Datenbank zu speichern, wenn der Benutzer den Inhalt in der Benutzeroberfläche über die Datenbindung ändert:
 
 ```csharp
 [Export("Name")]
@@ -476,9 +476,9 @@ public bool isManager {
 }
 ```
 
-Alle Änderungen an der **Namen**, **"Occupation"** oder **IsManager** Eigenschaften werden an die Datenbank gesendet, wenn die Daten vor dem es gespeichert wurde (z. B. wenn die `_conn` Variable ist nicht `null`). Als Nächstes sehen wir uns die Methoden, die wir hinzugefügt haben **erstellen**, **Update**, **Load** und **löschen** Personen aus der Datenbank.
+Alle an den Eigenschaften **Name**, **Beruf** oder **IsManager** vorgenommenen Änderungen werden an die Datenbank gesendet, wenn die Daten zuvor gespeichert wurden (z. b. Wenn `_conn` die Variable nicht `null`ist). Als nächstes sehen wir uns die Methoden an, die wir hinzugefügt haben, um Personen aus der Datenbank zu **Erstellen**, zu **Aktualisieren**, zu **Laden** und zu **Löschen** .
 
-#### <a name="create-a-new-record"></a>Erstellen eines neuen Datensatzes
+#### <a name="create-a-new-record"></a>Neuen Datensatz erstellen
 
 Der folgende Code wurde hinzugefügt, um einen neuen Datensatz in der SQLite-Datenbank zu erstellen:
 
@@ -526,19 +526,19 @@ public void Create(SqliteConnection conn) {
 }
 ```
 
-Wir verwenden eine `SQLiteCommand` des neuen Eintrags in der Datenbank zu erstellen. Wir erhalten einen neuen Befehl von der `SQLiteConnection` (conn), dass wir die Methode durch den Aufruf übergebene `CreateCommand`. Anschließend legen wir die SQL-Anweisung, um tatsächlich den neuen Datensatz, schreiben und Parameter für die tatsächlichen Werte:
+Wir verwenden einen `SQLiteCommand` , um den neuen Datensatz in der Datenbank zu erstellen. Wir erhalten einen neuen Befehl von `SQLiteConnection` (conn), den wir durch Aufrufen `CreateCommand`von an die-Methode übermittelt haben. Als nächstes legen wir die SQL-Anweisung so fest, dass Sie den neuen Datensatz tatsächlich schreibt und Parameter für die tatsächlichen Werte bereitstellt:
 
 ```csharp
 command.CommandText = "INSERT INTO [People] (ID, Name, Occupation, isManager, ManagerID) VALUES (@COL1, @COL2, @COL3, @COL4, @COL5)";
 ```
 
-Später legen wir die Werte für die Parameter dabei mit der `Parameters.AddWithValue` Methode für die `SQLiteCommand`. Mit Parametern, stellen wir sicher, dass Werte (z. B. ein einfaches Anführungszeichen) vor dem Senden zu SQLite ordnungsgemäß codiert zu erhalten. Beispiel:
+Später legen wir die Werte für die Parameter mit der `Parameters.AddWithValue` -Methode für `SQLiteCommand`die fest. Mithilfe von Parametern stellen wir sicher, dass Werte (z. b. ein einzelnes Anführungszeichen) ordnungsgemäß codiert werden, bevor Sie an SQLite gesendet werden. Beispiel:
 
 ```csharp
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-Schließlich, da ein Benutzer kann ein Manager und eine von Mitarbeitern, die unter diesen Sammlung, werden wir rekursiv Aufrufen der `Create` Methode für diesen Personen in der Datenbank zu speichern:
+Da eine Person ein Manager sein kann und über eine Sammlung von Mitarbeitern verfügt, wird die `Create` -Methode für diese Personen rekursiv aufgerufen, um Sie in der Datenbank zu speichern:
 
 ```csharp
 // Save children to database as well
@@ -594,13 +594,13 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-Wie **erstellen** höher erhalten wir eine `SQLiteCommand` aus dem übergebenen in `SQLiteConnection`, und legen Sie unser SQL, unserem Datensatz (mit dem Parameter) zu aktualisieren:
+Wie **oben** beschrieben erhalten wir eine `SQLiteCommand` `SQLiteConnection`aus dem weiter gegebenen und legen "SQL" fest, um unseren Datensatz zu aktualisieren (Bereitstellen von Parametern):
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";
 ```
 
-Wir geben Sie die Parameterwerte (Beispiel: `command.Parameters.AddWithValue ("@COL1", ID);`) und erneut rekursiv aufrufen, Updates für keines der untergeordneten Datensätze:
+Wir geben die Parameterwerte ein (Beispiel: `command.Parameters.AddWithValue ("@COL1", ID);`) und wieder rekursiv Update für alle untergeordneten Datensätze aufrufen:
 
 ```csharp
 // Save children to database as well
@@ -612,7 +612,7 @@ for (nuint n = 0; n < People.Count; ++n) {
     Person.Update (conn);
 }
 ```
-#### <a name="loading-a-record"></a>Laden einen Datensatz
+#### <a name="loading-a-record"></a>Ein Datensatz wird geladen.
 
 Der folgende Code wurde hinzugefügt, um einen vorhandenen Datensatz aus der SQLite-Datenbank zu laden:
 
@@ -680,7 +680,7 @@ public void Load(SqliteConnection conn, string id) {
 }
 ```
 
-Da die Routine rekursiv von einem übergeordneten Objekt (z. B. eine Manager-Objekt, das Laden von ihren Mitarbeitern-Objekt) aufgerufen werden, kann, wurde spezieller Code hinzugefügt, um öffnen und schließen die Verbindung mit der Datenbank zu verarbeiten:
+Da die Routine von einem übergeordneten Objekt rekursiv aufgerufen werden kann (z. b. ein Manager-Objekt, das das Objekt "Employees" lädt), wurde spezieller Code hinzugefügt, um das Öffnen und Schließen der Verbindung zur Datenbank zu verarbeiten:
 
 ```csharp
 bool shouldClose = false;
@@ -700,7 +700,7 @@ if (shouldClose) {
 
 ```
 
-Wie immer legen wir unsere SQL rufen Sie den Datensatz und Parameter verwenden:
+Wie immer legen wir die SQL-Einstellung so fest, dass die Datensatz-und use-Parameter abgerufen werden:
 
 ```csharp
 // Create new command
@@ -710,7 +710,7 @@ command.CommandText = "SELECT ID FROM [People] WHERE ManagerID = @COL1";
 command.Parameters.AddWithValue ("@COL1", id);
 ```
 
-Schließlich verwenden wir ein Datenleser zum Ausführen der Abfrage und die Datensatzfelder zurück (die wir in die Instanz der Kopieren der `PersonModel` Klasse):
+Zum Schluss verwenden wir einen Daten Reader, um die Abfrage auszuführen und die Daten Satz Felder zurückzugeben, die wir in die Instanz `PersonModel` der Klasse kopieren:
 
 ```csharp
 using (var reader = command.ExecuteReader ()) {
@@ -725,7 +725,7 @@ using (var reader = command.ExecuteReader ()) {
 }
 ```
 
-Wenn diese Person ein Manager ist, müssen wir auch alle ihre Mitarbeiter zu laden (in diesem Fall durch rekursiv aufrufen ihre `Load` Methode):
+Wenn es sich bei dieser Person um einen Vorgesetzten handelt, müssen wir auch alle Ihre Mitarbeiter laden (durch rekursiver Aufruf `Load` der Methode):
 
 ```csharp
 // Is this a manager?
@@ -787,7 +787,7 @@ public void Delete(SqliteConnection conn) {
 }
 ```
 
-Hier bieten wir die SQL aus, um sowohl die Datensätze von Mitarbeitern unter diesem Manager (mit Parameter) als auch der Manager-Datensatz zu löschen:
+Hier stellen wir die SQL-Daten bereit, um sowohl den Manager-Datensatz als auch die Datensätze aller Mitarbeiter unter diesem Manager (mithilfe von Parametern) zu löschen:
 
 ```csharp
 // Create new command
@@ -797,7 +797,7 @@ command.CommandText = "DELETE FROM [People] WHERE (ID = @COL1 OR ManagerID = @CO
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-Nachdem der Datensatz entfernt wurde, deaktivieren Sie die aktuelle Instanz von der `PersonModel` Klasse:
+Nachdem der Datensatz entfernt wurde, löschen wir die aktuelle Instanz der `PersonModel` -Klasse:
 
 ```csharp
 // Empty class
@@ -811,7 +811,7 @@ _people = new NSMutableArray();
 
 ### <a name="initializing-the-database"></a>Initialisieren der Datenbank
 
-Mit den Änderungen, unserem Datenmodell vorhanden sein, um lesen und Schreiben in die Datenbank zu unterstützen müssen wir eine Verbindung mit der Datenbank öffnen, und initialisieren Sie sie bei der ersten Ausführung. Fügen Sie den folgenden Code, um unsere **MainWindow.cs** Datei:
+Mit den Änderungen an unserem Datenmodell zur Unterstützung von Lese-und Schreibvorgängen in der Datenbank müssen wir eine Verbindung mit der Datenbank herstellen und Sie bei der ersten Durchführung initialisieren. Fügen Sie der Datei **MainWindow.cs** den folgenden Code hinzu:
 
 ```csharp
 using System.Data;
@@ -868,7 +868,7 @@ private SqliteConnection GetDatabaseConnection() {
 }
 ```
 
-Werfen Sie einen Blick den oben dargestellten Code ein. Zunächst wählen wir einen Speicherort für die neue Datenbank (in diesem Beispiel den Desktop des Benutzers), suchen, um festzustellen, ob die Datenbank vorhanden ist, und wenn dies nicht der Fall, erstellen Sie ihn:
+Sehen wir uns den obigen Code genauer an. Zunächst wählen wir einen Speicherort für die neue Datenbank aus (in diesem Beispiel der Desktop des Benutzers), überprüfen, ob die Datenbank vorhanden ist, und wenn dies nicht der Fall ist, erstellen Sie Folgendes:
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.Desktop);
@@ -880,13 +880,13 @@ if (!exists)
     SqliteConnection.CreateFile (db);
 ```
 
-Als Nächstes erstellen wir das Herstellen einer Verbindung mit der Datenbank unter Verwendung des Pfads, die, dem wir zuvor erstellt haben:
+Als Nächstes stellen wir die Verbindung mit der Datenbank mithilfe des zuvor erstellten Pfads her:
 
 ```csharp
 var conn = new SqliteConnection("Data Source=" + db);
 ```
 
-Anschließend erstellen wir die SQL-Tabellen in der Datenbank, die wir benötigen:
+Anschließend erstellen wir alle SQL-Tabellen in der Datenbank, die wir benötigen:
 
 ```csharp
 var commands = new[] {
@@ -903,7 +903,7 @@ foreach (var cmd in commands) {
 conn.Close ();
 ```
 
-Schließlich verwenden wir unser Datenmodell (`PersonModel`) erstellen Sie eine Reihe von Datensätzen für die die erste Datenbankzeit die Anwendung ausgeführt wird oder wenn die Datenbank nicht vorhanden ist:
+Schließlich wird unser Datenmodell (`PersonModel`) verwendet, um einen Standardsatz von Datensätzen für die Datenbank zu erstellen, wenn die Anwendung zum ersten Mal ausgeführt wird oder wenn die Datenbank nicht vorhanden ist:
 
 ```csharp
 // Build list of employees
@@ -920,7 +920,7 @@ Larry.AddPerson (new PersonModel ("Mike Norman", "API Documentor"));
 Larry.Create (conn);
 ``` 
 
-Wenn die Anwendung gestartet wird, und es wird das Hauptfenster geöffnet, stellen wir eine Verbindung mit der Datenbank, die mit dem Code, dem wir oben hinzugefügt:
+Wenn die Anwendung gestartet und das Hauptfenster geöffnet wird, stellen wir mithilfe des oben hinzugefügten Codes eine Verbindung mit der Datenbank her:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -932,21 +932,21 @@ public override void AwakeFromNib ()
 }
 ```
 
-### <a name="loading-bound-data"></a>Laden von gebundenen Daten
+### <a name="loading-bound-data"></a>Gebundene Daten werden geladen.
 
-Mit allen Komponenten für den direkten Zugriff auf gebundene Daten aus einer SQLite-Datenbank vorhanden können wir laden die Daten in die verschiedenen Ansichten, die unsere Anwendung bereitgestellt und wird automatisch auf unserer Benutzeroberfläche angezeigt.
+Wenn alle Komponenten für den direkten Zugriff auf gebundene Daten aus einer SQLite-Datenbank vorhanden sind, können wir die Daten in den verschiedenen Ansichten laden, die von der Anwendung bereitstellt werden, und Sie werden automatisch in der Benutzeroberfläche angezeigt.
 
-#### <a name="loading-a-single-record"></a>Laden einen einzelnen Datensatz
+#### <a name="loading-a-single-record"></a>Laden eines einzelnen Datensatzes
 
-Zum Laden ein einzelnes Datensatzes dabei ist die ID kennen, verwenden wir den folgenden Code:
+Zum Laden eines einzelnen Datensatzes, bei dem die ID bekannt ist, können Sie den folgenden Code verwenden:
 
 ```csharp
 Person = new PersonModel (Conn, "0");
 ```
 
-#### <a name="loading-all-records"></a>Laden alle Datensätze
+#### <a name="loading-all-records"></a>Alle Datensätze werden geladen
 
-Um alle Personen, unabhängig davon, laden sie ein Manager sind, verwenden Sie den folgenden Code:
+Um alle Personen zu laden, unabhängig davon, ob Sie ein Manager sind oder nicht, verwenden Sie den folgenden Code:
 
 ```csharp
 // Load all employees
@@ -968,13 +968,13 @@ _conn.Close ();
 
 ```
 
-Hier verwenden wir eine Überladung des Konstruktors für den `PersonModel` Klasse, um die Person, die in den Arbeitsspeicher geladen:
+Hier verwenden wir eine Überladung des Konstruktors für die `PersonModel` -Klasse, um die Person in den Arbeitsspeicher zu laden:
 
 ```csharp
 var person = new PersonModel (_conn, childID);
 ```
 
-Wir sind auch die datengebundene-Klasse, um die Person, die die Auflistung von Personen hinzufügen aufruft `AddPerson (person)`, dadurch wird sichergestellt, dass unserer Benutzeroberfläche erkennt die Änderung wird angezeigt:
+Wir rufen auch die Daten gebundene Klasse auf, um die Person unserer Sammlung von Personen `AddPerson (person)`hinzuzufügen. Dadurch wird sichergestellt, dass die Benutzeroberfläche die Änderung erkennt und anzeigt:
 
 ```csharp
 [Export("addObject:")]
@@ -986,9 +986,9 @@ public void AddPerson(PersonModel person) {
 }
 ```
 
-#### <a name="loading-top-level-records-only"></a>Laden nur die Datensätze auf oberster Ebene
+#### <a name="loading-top-level-records-only"></a>Nur Datensätze oberster Ebene werden geladen
 
-Um nur von Managern (z. B. zum Anzeigen von Daten in einer Gliederungsansicht) zu laden, verwenden wir den folgenden Code:
+Wenn Sie nur Manager laden möchten (z. b., um Daten in einer Gliederungs Ansicht anzuzeigen), verwenden wir den folgenden Code:
 
 ```csharp
 // Load only managers employees
@@ -1009,27 +1009,27 @@ using (var command = _conn.CreateCommand ()) {
 _conn.Close ();
 ```
 
-Der einzige wirkliche Unterschied in der in SQL-Anweisung (die nur Manager lädt `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`), aber funktioniert genauso wie im obigen Abschnitt andernfalls.
+Der einzige wirkliche Unterschied in der in SQL-Anweisung (die nur `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`Manager lädt), funktioniert jedoch genauso wie der oben beschriebene Abschnitt.
 
 <a name="Databases-and-ComboBoxes" />
 
-### <a name="databases-and-comboboxes"></a>Datenbanken und comboboxes
+### <a name="databases-and-comboboxes"></a>Datenbanken und Kombinations Felder
 
-MacOS (z. B. das Kombinationsfeld) verfügbaren Steuerelemente im Menü der Dropdown-Liste entweder aus einer internen Liste aufgefüllt (die können vordefinierte in Interface Builder oder über Code aufgefüllt) festgelegt werden können oder durch Ihre eigenen benutzerdefinierten, externe Datenquelle bereitstellen. Finden Sie unter [Menü Steuerelementdaten bereitstellen](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data) Weitere Details.
+Die Menü Steuerelemente, die für macOS (z. b. das Kombinations Feld) verfügbar sind, können so festgelegt werden, dass die Dropdown Liste entweder aus einer internen Liste (die in Interface Builder vordefiniert oder über Code aufgefüllt werden kann) ausgefüllt wird, oder indem Sie eine eigene benutzerdefinierte, externe Datenquelle bereitstellt. Weitere Informationen finden Sie unter [Bereitstellen von Menü Steuerungsdaten](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data) .
 
-Als Beispiel fügen Sie im Beispiel oben im-Generator-Schnittstelle: einfache Datenbindung bearbeiten ein Kombinationsfeld, und machen Sie es mithilfe eines outlets mit dem Namen `EmployeeSelector`:
+Bearbeiten Sie z. b. das Beispiel für eine einfache Bindung in Interface Builder, fügen Sie ein Kombinations Feld hinzu, und machen `EmployeeSelector`Sie es mithilfe eines Outlets namens verfügbar.
 
-[![Verfügbarmachen von einem Kombinationsfeld Feld Outlet](databases-images/combo01.png "Outlet ein Kombinationsfeld-Feld verfügbar zu machen")](databases-images/combo01-large.png#lightbox)
+[Verfügbar machen ![eines Kombinations Feld-Outlets] Verfügbar machen (databases-images/combo01.png "eines Kombinations Feld-Outlets")](databases-images/combo01-large.png#lightbox)
 
-In der **Attributes Inspector**, überprüfen Sie die **vervollständigt** und **Datenquelle verwendet** Eigenschaften:
+Überprüfen Sie im **Attribut Inspektor**die Eigenschaften **automatisch abgeschlossen** und **verwendet Datenquelle** :
 
-![Konfigurieren die Attribute des Kombinationsfelds Feld](databases-images/combo02.png "Combo Box Attribute konfigurieren")
+![Konfigurieren der Kombinations Feld Attribute](databases-images/combo02.png "Konfigurieren der Kombinations Feld Attribute")
 
-Die Änderungen zu speichern und zurück zu Visual Studio für Mac, um zu synchronisieren.
+Speichern Sie die Änderungen, und kehren Sie zur Synchronisierung Visual Studio für Mac zurück.
 
-#### <a name="providing-combobox-data"></a>Bereitstellen von Daten für "ComboBox"
+#### <a name="providing-combobox-data"></a>Bereitstellen von ComboBox-Daten
 
-Als Nächstes fügen Sie eine neue Klasse mit dem Namen `ComboBoxDataSource` und legen Sie ihn wie folgt aussehen:
+Fügen Sie als nächstes dem Projekt eine neue Klasse mit `ComboBoxDataSource` dem Namen hinzu, und machen Sie Sie wie folgt:
 
 ```csharp
 using System;
@@ -1398,15 +1398,15 @@ namespace MacDatabase
 }
 ```
 
-In diesem Beispiel erstellen wir ein neues `NSComboBoxDataSource` Kombinationsfeldelemente aus einer beliebigen Datenquelle SQLite vorweisen kann. Zuerst definieren wir die folgenden Eigenschaften:
+In diesem Beispiel erstellen wir eine neue `NSComboBoxDataSource` , die Kombinations Feld-Elemente aus einer beliebigen SQLite-Datenquelle darstellen kann. Zuerst definieren wir die folgenden Eigenschaften:
 
-- `Conn` -Ruft ab oder legt eine Verbindung mit der SQLite-Datenbank fest.
-- `TableName` -Ruft ab oder legt den Namen der Tabelle.
-- `IDField` -Ruft ab oder legt das Feld, der die eindeutige ID für die angegebene Tabelle fest. Der Standardwert ist `ID`.
-- `DisplayField` -Ruft ab oder legt das Feld, das in der Dropdownliste angezeigt wird.
-- `RecordCount` -Ruft die Anzahl der Datensätze in der angegebenen Tabelle.
+- `Conn`: Ruft eine Verbindung mit der SQLite-Datenbank ab oder legt Sie fest.
+- `TableName`: Ruft den Tabellennamen ab oder legt ihn fest.
+- `IDField`: Ruft das Feld ab, das die eindeutige ID für die angegebene Tabelle bereitstellt, oder legt dieses fest. Der Standardwert ist `ID`.
+- `DisplayField`: Ruft das Feld ab, das in der Dropdown Liste angezeigt wird, oder legt dieses fest.
+- `RecordCount`-Ruft die Anzahl der Datensätze in der angegebenen Tabelle ab.
 
-Wenn wir eine neue Instanz des Objekts erstellen, übergeben wir die Verbindung, Tabellenname, optional das ID-Feld und das Anzeigen eines Felds:
+Wenn wir eine neue Instanz des Objekts erstellen, übergeben wir die Verbindung, den Tabellennamen, optional das ID-Feld und das Anzeige Feld:
 
 ```csharp
 public ComboBoxDataSource (SqliteConnection conn, string tableName, string displayField)
@@ -1418,7 +1418,7 @@ public ComboBoxDataSource (SqliteConnection conn, string tableName, string displ
 }
 ```
 
-Die `GetRecordCount` Methode gibt die Anzahl der Datensätze in der angegebenen Tabelle zurück:
+Die `GetRecordCount` -Methode gibt die Anzahl der Datensätze in der angegebenen Tabelle zurück:
 
 ```csharp
 private nint GetRecordCount ()
@@ -1460,9 +1460,9 @@ private nint GetRecordCount ()
 }
 ```
 
-Es heißt, jedes Mal die `TableName`, `IDField` oder `DisplayField` Eigenschaften geändert wird.
+Sie wird immer dann aufgerufen, `TableName` `IDField` wenn der `DisplayField` -Wert oder der-Eigenschafts Wert geändert wird.
 
-Die `IDForIndex` Methode gibt die eindeutige ID (`IDField`) für den Datensatz an den Elementindex der angegebenen Dropdown-Liste: 
+Die `IDForIndex` -Methode gibt die eindeutige ID`IDField`() für den Datensatz am angegebenen Dropdown Listenelement-Index zurück: 
 
 ```csharp
 public string IDForIndex (nint index)
@@ -1503,7 +1503,7 @@ public string IDForIndex (nint index)
 }
 ```
 
-Die `ValueForIndex` -Methode gibt den Wert (`DisplayField`) für das Element am Index angegebenen Dropdown-Liste:
+Die `ValueForIndex` -Methode gibt den Wert`DisplayField`() für das Element am angegebenen Dropdown-Listen Index zurück:
 
 ```csharp
 public string ValueForIndex (nint index)
@@ -1544,7 +1544,7 @@ public string ValueForIndex (nint index)
 }
 ```
 
-Die `IDForValue` Methode gibt die eindeutige ID (`IDField`) für den gegebenen Wert (`DisplayField`):
+Die `IDForValue` -Methode gibt die eindeutige ID`IDField`() für den angegebenen Wert`DisplayField`zurück ():
 
 ```csharp
 public string IDForValue (string value)
@@ -1588,7 +1588,7 @@ public string IDForValue (string value)
 }
 ```
 
-Die `ItemCount` gibt die vorausberechnete Anzahl von Elementen in der Liste wie berechnet, wenn die `TableName`, `IDField` oder `DisplayField` Eigenschaften geändert werden:
+Der `ItemCount` gibt die Voraus berechnete Anzahl von Elementen in der Liste zurück, die `TableName`berechnet werden `DisplayField` , wenn die Eigenschaften, `IDField` oder geändert werden:
 
 ```csharp
 public override nint ItemCount (NSComboBox comboBox)
@@ -1597,7 +1597,7 @@ public override nint ItemCount (NSComboBox comboBox)
 }
 ```
 
-Die `ObjectValueForItem` Methode stellt den Wert (`DisplayField`) für den Elementindex der angegebenen Dropdown-Liste:
+Die `ObjectValueForItem` -Methode stellt den Wert`DisplayField`() für den angegebenen Dropdown-Listenelement Index bereit:
 
 ```csharp
 public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
@@ -1638,9 +1638,9 @@ public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 }
 ```
 
-Beachten Sie, die wir verwenden die `LIMIT` und `OFFSET` Anweisungen in unserem SQLite-Befehl, um, die einen Datensatz zu beschränken, dass wir erforderlich sind.
+Beachten Sie, dass die `LIMIT` -und-Anweisungen in unserem SQLite- `OFFSET` Befehl verwendet werden, um den einzelnen Datensatz einzuschränken, den wir benötigen.
 
-Die `IndexOfItem` Methodenrückgabe Dropdownliste Elementindex des Werts (`DisplayField`) angegebenen:
+Die `IndexOfItem` Methode gibt den Dropdown-Element Index des Werts`DisplayField`() zurück, der angegeben ist:
 
 ```csharp
 public override nint IndexOfItem (NSComboBox comboBox, string value)
@@ -1690,9 +1690,9 @@ public override nint IndexOfItem (NSComboBox comboBox, string value)
 }
 ```
 
-Wenn der Wert kann nicht gefunden werden, die `NSRange.NotFound` Wert wird zurückgegeben, und alle Elemente in der Dropdownliste deaktiviert werden.
+Wenn der Wert nicht gefunden werden kann, `NSRange.NotFound` wird der Wert zurückgegeben, und alle Elemente werden in der Dropdown Liste deaktiviert.
 
-Die `CompletedString` Methode gibt den ersten übereinstimmenden Wert (`DisplayField`) für einen teilweise typisierte Eintrag:
+Die `CompletedString` -Methode gibt den ersten übereinstimmenden Wert (`DisplayField`) für einen teilweise typisierten Eintrag zurück:
 
 ```csharp
 public override string CompletedString (NSComboBox comboBox, string uncompletedString)
@@ -1742,7 +1742,7 @@ public override string CompletedString (NSComboBox comboBox, string uncompletedS
 
 #### <a name="displaying-data-and-responding-to-events"></a>Anzeigen von Daten und reagieren auf Ereignisse
 
-Um alle Teile zusammenzuführen, bearbeiten Sie die `SubviewSimpleBindingController` und legen Sie ihn wie folgt aussehen:
+Wenn Sie alle Teile zusammenbringen möchten, bearbeiten Sie `SubviewSimpleBindingController` das, und führen Sie es wie folgt aus:
 
 ```csharp
 using System;
@@ -1857,9 +1857,9 @@ namespace MacDatabase
 }
 ```
 
-Die `DataSource` Eigenschaft verfügt über eine Tastenkombination, die `ComboBoxDataSource` (oben erstellt) auf das Kombinationsfeld angefügt.
+Die `DataSource` -Eigenschaft stellt eine Verknüpfung `ComboBoxDataSource` zum (oben erstellten) dar, das an das Kombinations Feld angefügt ist.
 
-Die `LoadSelectedPerson` Methode lädt die Person, die aus der Datenbank für den angegebenen eindeutigen Bezeichner:
+Die `LoadSelectedPerson` -Methode lädt die Person für die angegebene eindeutige ID aus der Datenbank:
 
 ```csharp
 private void LoadSelectedPerson (string id)
@@ -1873,13 +1873,13 @@ private void LoadSelectedPerson (string id)
 }
 ```
 
-In der `AwakeFromNib` methodenüberschreibung, zunächst fügen wir eine Instanz von der Datenquelle der benutzerdefinierten Kombinationsfeld im:
+In der `AwakeFromNib` Methoden Überschreibung fügen wir zuerst eine Instanz der benutzerdefinierten Kombinations Feld-Datenquelle an:
 
 ```csharp
 EmployeeSelector.DataSource = new ComboBoxDataSource (Conn, "People", "Name");
 ```
 
-Als Nächstes, wir Antworten an den Benutzer, der den Textwert des Kombinationsfelds bearbeitet, durch die zugeordnete eindeutige ID zu suchen (`IDField`) der Daten darstellen, und laden die angegebene Person ein, wenn gefunden:
+Als nächstes Antworten wir auf den Benutzer, der den Textwert des Kombinations Felds bearbeitet, indem Sie die zugeordnete`IDField`eindeutige ID () der Daten ermitteln, die die jeweilige Person darstellen und laden, sofern Sie gefunden wird:
 
 ```csharp
 EmployeeSelector.Changed += (sender, e) => {
@@ -1889,7 +1889,7 @@ EmployeeSelector.Changed += (sender, e) => {
 };
 ```
 
-Wir laden Sie eine neue Person, wenn der Benutzer ein neues Element in der Dropdownliste auswählt:
+Außerdem wird eine neue Person geladen, wenn der Benutzer ein neues Element aus der Dropdown Liste auswählt:
 
 ```csharp
 EmployeeSelector.SelectionChanged += (sender, e) => {
@@ -1899,7 +1899,7 @@ EmployeeSelector.SelectionChanged += (sender, e) => {
 };
 ```
 
-Zum Schluss Auffüllen wir das Kombinationsfeld und angezeigten Person mit dem ersten Element in der Liste:
+Zum Schluss wird das Kombinations Feld und die angezeigte Person automatisch mit dem ersten Element in der Liste aufgefüllt:
 
 ```csharp
 // Auto select the first person
@@ -1907,29 +1907,29 @@ EmployeeSelector.StringValue = DataSource.ValueForIndex (0);
 Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 ```
 
-## <a name="sqlitenet-orm"></a>SQLite.NET ORM
+## <a name="sqlitenet-orm"></a>SQLite.net ORM
 
-Wie oben angegeben, mit der open Source [von SQLite.NET](http://www.sqlite.org) Objekt Beziehung Manager (ORM), wir können die erforderliche Menge an Code zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank erheblich reduzieren. Dies möglicherweise nicht die beste Route an, die beim Binden von Daten aufgrund von mehreren Anforderungen, die Schlüssel / Wert-Codierung und der Datenbindung für ein Objekt zu platzieren.
+Wie oben bereits erwähnt, können wir mithilfe des Open Source [sqlite.net](http://www.sqlite.org) Object Relationship Manager (ORM) die Menge des Codes, der zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank benötigt wird, erheblich reduzieren. Dies ist möglicherweise nicht die beste Route, die beim Binden von Daten aufgrund verschiedener Anforderungen erforderlich ist, bei denen die Schlüssel-Wert-Codierung und die Datenbindung für ein Objekt erfolgen.
 
-Gemäß der Website von SQLite.Net _"SQLite ist eine Softwarebibliothek, die eine eigenständige, serverlose, ohne Konfigurationsaufwand, transaktionale SQL-Datenbank-Engine implementiert. SQLite ist die am häufigsten bereitgestellten Datenbank-Engine in der ganzen Welt. Der Quellcode für SQLite ist in der öffentlichen Domäne."_
+Gemäß der SQLite.NET-Website _ist "SQLite" eine Software Bibliothek, die ein eigenständiges, transaktionales SQL-Datenbankmodul (Server Loses, null) Konfigurationsmodul implementiert. SQLite ist die am weitesten verbreitete Datenbank-Engine auf der ganzen Welt. Der Quellcode für SQLite befindet sich in der öffentlichen Domäne. "_
 
-In den folgenden Abschnitten zeigen wir, wie Sie von SQLite.Net verwenden, um Daten für eine Tabellenansicht bereitzustellen.
+In den folgenden Abschnitten wird gezeigt, wie sqlite.NET verwendet wird, um Daten für eine Tabellenansicht bereitzustellen.
 
-### <a name="including-the-sqlitenet-nuget"></a>Einschließlich des NuGet-Pakets von SQLite.net
+### <a name="including-the-sqlitenet-nuget"></a>Einschließlich sqlite.net nuget
 
-Von SQLite.NET wird als NuGet-Paket angezeigt, die Sie in der Anwendung einschließen. Vor dem Verwenden von SQLite.NET datenbankunterstützung hinzufügen können, müssen wir diesem Paket enthalten.
+SQLite.net wird als nuget-Paket dargestellt, das Sie in Ihre Anwendung einschließen. Bevor wir die Datenbankunterstützung mithilfe von SQLite.NET hinzufügen können, müssen wir dieses Paket einschließen.
 
-Gehen Sie zum Hinzufügen des Pakets:
+Gehen Sie folgendermaßen vor, um das Paket hinzuzufügen:
 
-1. In der **Lösungspad**, mit der rechten Maustaste die **Pakete** Ordner, und wählen **Pakete hinzufügen...**
-2. Geben Sie `SQLite.net` in die **Suchfeld** , und wählen Sie die **Sqlite-Net-** Eintrag:
+1. Klicken Sie im **Lösungspad**mit der rechten Maustaste auf den Ordner **Pakete** , und wählen Sie **Pakete hinzufügen... aus.**
+2. Geben `SQLite.net` Sie im **Suchfeld** ein, und wählen Sie den Eintrag **SQLite-net** aus:
 
-    [![Hinzufügen des SQLite-NuGet-Pakets](databases-images/nuget01.png "des SQLite-NuGet-Pakets hinzufügen")](databases-images/nuget01-large.png#lightbox)
-3. Klicken Sie auf die **Paket hinzufügen** Schaltfläche, um den Vorgang abzuschließen.
+    [![Hinzufügen des SQLite-nuget-Pakets](databases-images/nuget01.png "Hinzufügen des SQLite-nuget-Pakets")](databases-images/nuget01-large.png#lightbox)
+3. Klicken Sie zum Fertigstellen auf die Schaltfläche **Paket hinzufügen**
 
 ### <a name="creating-the-data-model"></a>Erstellen des Datenmodells
 
-Wir fügen Sie dem Projekt eine neue Klasse und rufen Sie in `OccupationModel`. Als Nächstes bearbeiten wir die **OccupationModel.cs** Datei, und stellen sie wie folgt aussehen:
+Fügen Sie dem Projekt eine neue Klasse hinzu, und nennen Sie `OccupationModel`Sie in. Als nächstes bearbeiten wir die Datei **OccupationModel.cs** und legen Sie wie folgt an:
 
 ```csharp
 using System;
@@ -1965,7 +1965,7 @@ namespace MacDatabase
 }
 ```
 
-Zunächst schließen wir von SQLite.NET (`using Sqlite`), klicken Sie dann mehrere Eigenschaften verfügbar, von denen jede geschrieben in die Datenbank wird dieser Datensatz gespeichert wird. Die erste Eigenschaft, die wir als Primärschlüssel vornehmen und es wie folgt auf die automatische Erhöhung festgelegt:
+Zuerst fügen wir sqlite.net (`using Sqlite`) ein. dann werden mehrere Eigenschaften verfügbar gemacht, die beim Speichern dieses Datensatzes in die Datenbank geschrieben werden. Die erste Eigenschaft, die wir als Primärschlüssel festlegen, und legen die automatische Inkrement wie folgt fest:
 
 ```csharp
 [PrimaryKey, AutoIncrement]
@@ -1973,7 +1973,7 @@ public int ID { get; set; }
 ```
 ### <a name="initializing-the-database"></a>Initialisieren der Datenbank
 
-Mit den Änderungen, unserem Datenmodell vorhanden sein, um lesen und Schreiben in die Datenbank zu unterstützen müssen wir eine Verbindung mit der Datenbank öffnen, und initialisieren Sie sie bei der ersten Ausführung. Fügen Sie den folgenden Code ein:
+Mit den Änderungen an unserem Datenmodell zur Unterstützung von Lese-und Schreibvorgängen in der Datenbank müssen wir eine Verbindung mit der Datenbank herstellen und Sie bei der ersten Durchführung initialisieren. Fügen Sie den folgenden Code hinzu:
 
 ```csharp
 using SQLite;
@@ -2019,7 +2019,7 @@ private SQLiteConnection GetDatabaseConnection() {
 }
 ```
 
-Zunächst erhalten einen Pfad zu der Datenbank (dem Desktop des Benutzers in diesem Fall) und festzustellen, ob die Datenbank bereits vorhanden ist:
+Zuerst wird ein Pfad zur Datenbank (in diesem Fall der Desktop des Benutzers) angezeigt, und es wird angezeigt, ob die Datenbank bereits vorhanden ist:
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.Desktop);
@@ -2030,13 +2030,13 @@ OccupationModel Occupation;
 bool exists = File.Exists (db);
 ```
 
-Als Nächstes erstellen wir eine Verbindung mit der Datenbank unter dem Pfad, die, dem wir zuvor erstellt haben:
+Als Nächstes stellen wir eine Verbindung mit der Datenbank an dem Pfad her, den wir oben erstellt haben:
 
 ```csharp
 var conn = new SQLiteConnection (db);
 ```
 
-Schließlich erstellen wir in der Tabelle und fügen Sie einige Standard-Einträge hinzu:
+Schließlich wird die Tabelle erstellt und einige Standarddaten Sätze hinzugefügt:
 
 ```csharp
 // Yes, build table
@@ -2061,15 +2061,15 @@ conn.Insert (Occupation);
 
 ### <a name="adding-a-table-view"></a>Hinzufügen einer Tabellenansicht
 
-Als Beispiel fügen wir eine Tabellenansicht zu unserer Benutzeroberfläche in Interface Builder von Xcode. Wir werden in dieser Ansicht der Tabelle über eine Steckdose verfügbar zu machen (`OccupationTable`), damit wir sie über die c#-Code zugreifen können:
+Als Beispiel für die Verwendung fügen wir eine Tabellenansicht zu unserer Benutzeroberfläche in den Schnittstellen Generator von Xcode hinzu. Wir machen diese Tabellenansicht über ein Outlet (`OccupationTable`) verfügbar, damit wir über C# Code darauf zugreifen können:
 
-[![Verfügbarmachen von einer Tabelle anzeigen Outlet](databases-images/table01.png "verfügbar machen eine Tabelle Ansicht an")](databases-images/table01-large.png#lightbox)
+[Verfügbar machen ![eines Outlets der Tabellenansicht] Verfügbar machen (databases-images/table01.png "eines Outlets der Tabellenansicht")](databases-images/table01-large.png#lightbox)
 
-Als Nächstes fügen wir die benutzerdefinierten Klassen, um diese Tabelle mit Daten aus der Datenbank von SQLite.NET aufzufüllen.
+Als Nächstes fügen wir die benutzerdefinierten Klassen hinzu, um diese Tabelle mit Daten aus der SQLite.net-Datenbank aufzufüllen.
 
-### <a name="creating-the-table-data-source"></a>Erstellen der Tabelle-Datenquelle
+### <a name="creating-the-table-data-source"></a>Erstellen der Tabellendaten Quelle
 
-Wir erstellen eine benutzerdefinierte Datenquelle zum Bereitstellen von Daten für die Tabelle ein. Fügen Sie zunächst eine neue Klasse namens `TableORMDatasource` und legen Sie ihn wie folgt aussehen:
+Erstellen wir eine benutzerdefinierte Datenquelle, um Daten für die Tabelle bereitzustellen. Fügen Sie zunächst eine neue Klasse mit `TableORMDatasource` dem Namen hinzu, und machen Sie Sie wie folgt:
 
 ```csharp
 using System;
@@ -2123,11 +2123,11 @@ namespace MacDatabase
 }
 ```
 
-Wenn wir eine Instanz dieser Klasse zu einem späteren Zeitpunkt erstellen, werden wir in unserem open von SQLite.NET datenbankverbindung übergeben. Die `LoadOccupations` Methode fragt die Datenbank und die gefundenen Datensätze in den Arbeitsspeicher kopiert (mit unserer `OccupationModel` Datenmodell).
+Wenn wir später eine Instanz dieser Klasse erstellen, übergeben wir unsere Open sqlite.net-Datenbankverbindung. Die `LoadOccupations` -Methode fragt die Datenbank ab und kopiert die gefundenen Datensätze in den `OccupationModel` Arbeitsspeicher (mit unserem Datenmodell).
 
-### <a name="creating-the-table-delegate"></a>Der Delegat für die Tabelle erstellen
+### <a name="creating-the-table-delegate"></a>Erstellen des Tabellen Delegaten
 
-Die endgültige Klasse benötigten ist es sich um einen benutzerdefinierten Delegaten der Tabelle zum Anzeigen der Informationen, die wir aus der Datenbank von SQLite.NET geladen haben. Fügen Sie ein neues `TableORMDelegate` auf das Projekt und legen Sie ihn wie folgt aussehen:
+Die endgültige Klasse, die wir benötigen, ist ein benutzerdefinierter Tabellen Delegat zum Anzeigen der Informationen, die aus der SQLite.net-Datenbank geladen wurden. Fügen Sie dem Projekt ein `TableORMDelegate` neues hinzu, und machen Sie es wie folgt:
 
 ```csharp
 using System;
@@ -2191,11 +2191,11 @@ namespace MacDatabase
 }
 ```
 
-Hier verwenden wir die Datenquelle `Occupations` Sammlung (die wir aus der Datenbank von SQLite.NET geladen), geben Sie in den Spalten der Tabelle über die `GetViewForItem` Methode außer Kraft setzen.
+Hier verwenden wir die `Occupations` Sammlung der Datenquelle (die aus der SQLite.net-Datenbank geladen wurde), um die Spalten der Tabelle über die `GetViewForItem` Außerkraftsetzungs Methode auszufüllen.
 
 ### <a name="populating-the-table"></a>Auffüllen der Tabelle
 
-Alle Komponenten beisammen, lassen Sie uns Auffüllen der Tabelle, wenn sie aus der XIB-Datei, durch Überschreiben vergrößert werden der `AwakeFromNib` -Methode und somit zu sehen, wie im folgenden Beispiel:
+Wenn alle Teile vorhanden sind, füllen wir die Tabelle aus, wenn Sie aus der XIb-Datei überschrieben wird, indem Sie die `AwakeFromNib` -Methode überschreiben und wie folgt aussehen:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -2214,25 +2214,25 @@ public override void AwakeFromNib ()
 }
 ```
 
-Zunächst greifen wir unsere Datenbank von SQLite.NET erstellen und befüllen, wenn er nicht bereits vorhanden. Als Nächstes erstellen wir eine neue Instanz der benutzerdefinierten Tabelle-Datenquelle, übergeben Sie die datenbankverbindung und wir sie an der Tabelle anfügen. Schließlich erstellen eine neue Instanz der unserer benutzerdefinierten Delegaten für die Tabelle wir, übergeben in der Datenquelle, und fügen Sie es an der Tabelle.
+Zuerst erhalten wir Zugriff auf unsere sqlite.net-Datenbank, die Sie erstellen und Auffüllen, wenn Sie nicht bereits vorhanden ist. Als Nächstes erstellen wir eine neue Instanz der benutzerdefinierten Tabellendaten Quelle, übergeben die Datenbankverbindung und fügen diese an die Tabelle an. Schließlich erstellen wir eine neue Instanz des benutzerdefinierten Tabellen Delegaten, übergeben die Datenquelle und fügen Sie an die Tabelle an.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird eine ausführliche Übersicht über das Arbeiten mit Datenbindung und Schlüssel / Wert-Codierung, mit SQLite-Datenbanken in einer Xamarin.Mac-Anwendung verwendet. Zunächst sah im Endeffekt sehr auf das Verfügbarmachen von c#-Klasse mit Objective-C mithilfe von Schlüssel / Wert-Codierung (KVM), und beobachten von Schlüssel-Wert (KVO). Als Nächstes wurde erläutert, wie eine konforme KVO-Klasse verwenden, und bindet es Daten an Benutzeroberflächenelemente in Interface Builder von Xcode. Der Artikel behandelt auch arbeiten mit SQLite-Daten über die von SQLite.NET ORM und Anzeigen von Daten in einer Tabellenansicht.
+In diesem Artikel wurde die Arbeit mit der Datenbindung und der Schlüssel-Wert-Codierung mit SQLite-Datenbanken in einer xamarin. Mac-Anwendung ausführlich erläutert. Zuerst wurde das verfügbar machen einer C# Klasse für "Ziel-C" mithilfe von Key-Value Coding (KVC) und Key-Value-Beobachtungen (KVO) untersucht. Im nächsten Schritt wurde gezeigt, wie eine KVO-kompatible Klasse verwendet und Daten an Benutzeroberflächen Elemente in der Interface Builder von Xcode gebunden werden. Der Artikel behandelt auch das Arbeiten mit SQLite-Daten über den sqlite.net ORM und das Anzeigen dieser Daten in einer Tabellenansicht.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacDatabase (Beispiel)](https://developer.xamarin.com/samples/mac/MacDatabase/)
+- [Macdatabase (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabase)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
-- [Die Datenbindung und Schlüssel / Wert-Codierung](~/mac/app-fundamentals/databinding.md)
-- [Standardsteuerelemente](~/mac/user-interface/standard-controls.md)
-- [Tabellenansichten](~/mac/user-interface/table-view.md)
-- [Gliederungsansichten](~/mac/user-interface/outline-view.md)
-- [Auflistungsansichten](~/mac/user-interface/collection-view.md)
-- [Schlüssel-Wert-Codierung Programmierhandbuch](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
-- [Einführung in den Themen zur Programmierung Cocoa-Bindungen](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
-- [Einführung in die Referenz für Cocoa-Bindungen](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
+- [Datenbindung und Schlüssel-Wert-Codierung](~/mac/app-fundamentals/databinding.md)
+- [Standard Steuerelemente](~/mac/user-interface/standard-controls.md)
+- [Tabellen Sichten](~/mac/user-interface/table-view.md)
+- [Gliederungs Ansichten](~/mac/user-interface/outline-view.md)
+- [Sammlungs Ansichten](~/mac/user-interface/collection-view.md)
+- [Programmier Handbuch für Schlüssel-Wert-Codierung](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
+- [Programmierthemen "Einführung in Cocoa-Bindungen"](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
+- [Einführung in Cocoa-Bindungs Referenz](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
 - [macOS-Eingaberichtlinien](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

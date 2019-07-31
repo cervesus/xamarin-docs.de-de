@@ -1,43 +1,43 @@
 ---
-title: Dateisystemzugriff in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Sie mit dem Dateisystem in Xamarin.iOS arbeiten. Es wird erläutert, Verzeichnisse, die beim Lesen der Dateien, XML und JSON-Serialisierung, der Sandbox der Anwendung, Freigeben von Dateien über iTunes und vieles mehr.
+title: Dateisystem Zugriff in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie in xamarin. IOS mit dem Dateisystem arbeiten. Es werden Verzeichnisse, das Lesen von Dateien, die XML-und JSON-Serialisierung, die Anwendungs Sandbox, das Freigeben von Dateien über iTunes und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
-ms.openlocfilehash: 10f4f53e71a47521076538bf9eb12b86c1e478a6
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: e52f9abb31090f3acc361eb5a3f9ae2e12600b36
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827515"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653519"
 ---
-# <a name="file-system-access-in-xamarinios"></a>Dateisystemzugriff in Xamarin.iOS
+# <a name="file-system-access-in-xamarinios"></a>Dateisystem Zugriff in xamarin. IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
 
-Können Sie Xamarin.iOS und `System.IO` Klassen in der *.NET Basisklassenbibliothek (BCL)* auf das iOS-Dateisystem zugreifen. Mithilfe der `File`-Klasse können Sie Dateien erstellen, löschen und lesen, und mit der `Directory`-Klasse können Sie den Inhalt der Verzeichnisse erstellen, löschen oder auflisten. Sie können auch `Stream` Unterklassen, die ein höheres Maß an Kontrolle über Dateioperationen (z. B. Komprimierung oder Position Suchen innerhalb einer Datei) bereitstellen können.
+Sie können xamarin. IOS und die `System.IO` Klassen in der .net- *Basisklassen Bibliothek (BCL)* verwenden, um auf das IOS-Dateisystem zuzugreifen. Mithilfe der `File`-Klasse können Sie Dateien erstellen, löschen und lesen, und mit der `Directory`-Klasse können Sie den Inhalt der Verzeichnisse erstellen, löschen oder auflisten. Sie können auch unter `Stream` Klassen verwenden, die ein höheres Maß an Kontrolle über Datei Vorgänge bereitstellen können (z. b. Komprimierung oder Positions Suche innerhalb einer Datei).
 
-iOS gelten einige Einschränkungen, in denen Sie eine Anwendung mit dem Dateisystem, um die Sicherheit der Daten einer Anwendung zu erhalten, und Benutzer vor bösartige apps schützen kann. Diese Einschränkungen sind Teil der *Sandbox der Anwendung* – eine Reihe von Regeln, die einer Anwendung den Zugriff auf Dateien, Einstellungen, Netzwerkressourcen, Hardware usw. beschränkt. Eine Anwendung ist beschränkt auf das Lesen und Schreiben von Dateien in ihrem Basisverzeichnis (Installationsort); Es kann nicht auf eine andere Anwendung Dateien zugreifen.
+IOS erzwingt einige Einschränkungen, die eine Anwendung mit dem Dateisystem ausführen kann, um die Sicherheit der Anwendungsdaten zu erhalten und Benutzer vor bösartigen apps zu schützen. Diese Einschränkungen sind Teil der *Anwendungs Sandbox* – ein Satz von Regeln, die den Zugriff einer Anwendung auf Dateien, Einstellungen, Netzwerkressourcen, Hardware usw. einschränken. Eine Anwendung ist auf das Lesen und Schreiben von Dateien innerhalb Ihres Basisverzeichnisses (installierter Speicherort) beschränkt. der Zugriff auf die Dateien einer anderen Anwendung ist nicht möglich.
 
-iOS enthält auch einige spezifische dateifeatures: bestimmte Verzeichnisse erfordern eine besondere Behandlung in Bezug auf Sicherungen und Upgrades und Anwendungen können auch Dateien mit jeweils anderen freigeben und die **Dateien** app (ab iOS 11), und über iTunes.
+IOS verfügt auch über einige Dateisystem spezifische Features: bestimmte Verzeichnisse erfordern eine besondere Behandlung in Bezug auf Sicherungen und Upgrades, und Anwendungen können auch Dateien untereinander **und die Datei** -app (seit IOS 11) und über iTunes gemeinsam nutzen.
 
-Dieser Artikel behandelt die Features und Einschränkungen des iOS-Dateisystem und eine beispielanwendung, die zeigt, wie Sie Xamarin.iOS zu verwenden, um einige einfache Dateisystemvorgänge auszuführen:
+In diesem Artikel werden die Features und Einschränkungen des IOS-Dateisystems beschrieben. es enthält eine Beispielanwendung, die veranschaulicht, wie mit xamarin. IOS einige einfache Dateisystem Vorgänge ausgeführt werden:
 
-[![Ein Beispiel für iOS, die einige einfache Dateisystemvorgänge ausführen](file-system-images/01-sampleapp-sml.png)](file-system-images/01-sampleapp.png#lightbox)
+[![Ein Beispiel für IOS, das einige einfache Dateisystem Vorgänge ausführt](file-system-images/01-sampleapp-sml.png)](file-system-images/01-sampleapp.png#lightbox)
 
-## <a name="general-file-access"></a>Allgemeine Dateizugriff
+## <a name="general-file-access"></a>Allgemeiner Dateizugriff
 
-Xamarin.iOS ermöglicht die Verwendung der .NET `System.IO` Klassen, die für Dateisystemvorgänge unter iOS.
+Xamarin. IOS ermöglicht die Verwendung der .net `System.IO` -Klassen für Dateisystem Vorgänge unter IOS.
 
-Die folgenden Codeausschnitte veranschaulichen einige häufig verwendete Dateivorgänge. Finden Sie alle unter Ihnen, in der **SampleCode.cs** -Datei in der beispielanwendung für diesen Artikel.
+Die folgenden Code Ausschnitte veranschaulichen einige gängige Datei Vorgänge. Sie finden Sie unten in der **SampleCode.cs** -Datei in der Beispielanwendung für diesen Artikel.
 
 ### <a name="working-with-directories"></a>Arbeiten mit Verzeichnissen
 
-Dieser Code Listet die Unterverzeichnisse im aktuellen Verzeichnis (angegeben durch die ". /" Parameter), gibt den Speicherort der ausführbaren Datei für Ihre Anwendung.
-Die Ausgabe wird eine Liste aller Dateien und Ordnern, die mit Ihrer Anwendung (angezeigt im Konsolenfenster angezeigt, während des Debuggens) bereitgestellt werden.
+Dieser Code listet die Unterverzeichnisse im aktuellen Verzeichnis auf (angegeben durch den Parameter "./"), wobei es sich um den Speicherort der ausführbaren Datei der Anwendung handelt.
+Bei der Ausgabe handelt es sich um eine Liste aller Dateien und Ordner, die mit Ihrer Anwendung bereitgestellt werden (im Konsolenfenster angezeigt, während Sie Debuggen).
 
 ```csharp
 var directories = Directory.EnumerateDirectories("./");
@@ -48,7 +48,7 @@ foreach (var directory in directories) {
 
 ### <a name="reading-files"></a>Lesen von Dateien
 
-Um eine Textdatei zu lesen, benötigen Sie nur eine einzige Zeile Code. In diesem Beispiel wird der Inhalt einer Textdatei im Ausgabefenster der Anwendung angezeigt.
+Um eine Textdatei zu lesen, benötigen Sie nur eine einzige Codezeile. In diesem Beispiel wird der Inhalt einer Textdatei im Fenster "Anwendungs Ausgabe" angezeigt.
 
 ```csharp
 var text = File.ReadAllText("TestData/ReadMe.txt");
@@ -57,7 +57,7 @@ Console.WriteLine(text);
 
 ### <a name="xml-serialization"></a>XML-Serialisierung
 
-Obwohl die vollständige Verwendung `System.Xml` Namespace sprengt den Rahmen dieses Artikels sprengen, Sie Deserialisieren können einfach ein XML-Dokument aus dem Dateisystem mithilfe ein StreamReader, wie in diesem Codeausschnitt:
+Obwohl die Arbeit mit dem `System.Xml` gesamten Namespace über den Rahmen dieses Artikels hinausgeht, können Sie ein XML-Dokument problemlos aus dem Dateisystem deserialisieren, indem Sie einen StreamReader wie diesen Code Ausschnitt verwenden:
 
 ```csharp
 using (TextReader reader = new StreamReader("./TestData/test.xml")) {
@@ -66,11 +66,11 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-Weitere Informationen finden Sie in der Dokumentation für ["System.xml"](xref:System.Xml) und [Serialisierung](xref:System.Xml.Serialization). Finden Sie unter den [Xamarin.iOS-Dokumentation](~/ios/deploy-test/linker.md) zum Linker – häufig Sie benötigen zum Hinzufügen der `[Preserve]` -Attribut auf Klassen, die serialisiert werden soll.
+Weitere Informationen finden Sie in der Dokumentation zu [System. XML](xref:System.Xml) und [Serialisierung](xref:System.Xml.Serialization). Weitere Informationen finden Sie in der [xamarin. IOS-Dokumentation](~/ios/deploy-test/linker.md) auf dem Linker – oft müssen `[Preserve]` Sie das-Attribut zu Klassen hinzufügen, die Sie serialisieren möchten.
 
 ### <a name="creating-files-and-directories"></a>Erstellen von Dateien und Verzeichnissen
 
-Dieses Beispiel zeigt, wie Sie mit der `Environment` Klasse auf den Ordner "Dokumente", in dem wir Dateien und Verzeichnisse erstellen können.
+Dieses Beispiel zeigt, wie Sie die `Environment` -Klasse verwenden, um auf den Ordner "Dokumente" zuzugreifen, in dem Dateien und Verzeichnisse erstellt werden können.
 
 ```csharp
 var documents =
@@ -79,7 +79,7 @@ var filename = Path.Combine (documents, "Write.txt");
 File.WriteAllText(filename, "Write this text into a file");
 ```
 
-Erstellen ein Verzeichnis ist ein ähnlicher Prozess:
+Das Erstellen eines Verzeichnisses ist ein ähnlicher Prozess:
 
 ```csharp
 var documents =
@@ -88,15 +88,15 @@ var directoryname = Path.Combine (documents, "NewDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-Weitere Informationen finden Sie unter den [System.IO-API-Referenz](xref:System.IO).
+Weitere Informationen finden Sie in der [System.IO-API-Referenz](xref:System.IO).
 
 ### <a name="serializing-json"></a>Serialisieren von JSON
 
-[Json.NET](http://www.newtonsoft.com/json) ist ein Hochleistungs-JSON-Framework, die mit Xamarin.iOS funktioniert und ist unter NuGet verfügbar. Fügen Sie das NuGet-Paket für Ihre Anwendung-Projekt aus mithilfe **NuGet hinzufügen** in Visual Studio für Mac:
+[JSON.net](http://www.newtonsoft.com/json) ist ein leistungsfähiges JSON-Framework, das mit xamarin. IOS funktioniert und für nuget verfügbar ist. Fügen Sie dem Anwendungsprojekt das nuget-Paket hinzu, indem **Sie nuget in Visual Studio für Mac hinzufügen** :
 
-[![](file-system-images/json01.png "Die Applikationen-Projekt hinzugefügt das NuGet-Paket")](file-system-images/json01.png#lightbox)
+[![](file-system-images/json01.png "Hinzufügen des nuget-Pakets zum Anwendungsprojekt")](file-system-images/json01.png#lightbox)
 
-Als Nächstes fügen Sie eine Klasse, die als Datenmodell für die Serialisierung/Deserialisierung fungiert (in diesem Fall `Account.cs`):
+Fügen Sie als nächstes eine Klasse hinzu, die als Datenmodell für die Serialisierung/Deserialisierung fungiert ( `Account.cs`in diesem Fall):
 
 ```csharp
 using System;
@@ -119,7 +119,7 @@ namespace FileSystem
 }
 ```
 
-Abschließend erstellen Sie eine Instanz von der `Account` Klasse, auf den JSON-Daten serialisieren und in eine Datei zu schreiben:
+Erstellen Sie abschließend eine Instanz der `Account` -Klasse, serialisieren Sie Sie in JSON-Daten, und schreiben Sie Sie in eine Datei:
 
 ```csharp
 // Create a new record
@@ -139,81 +139,81 @@ var filename = Path.Combine (documents, "account.json");
 File.WriteAllText(filename, json);
 ```
 
-Weitere Informationen zum Arbeiten mit JSON-Daten in einer .NET-Anwendung finden Sie unter Json .NET [Dokumentation](http://www.newtonsoft.com/json/help).
+Weitere Informationen zum Arbeiten mit JSON-Daten in einer .NET-Anwendung finden Sie in der [Dokumentation](http://www.newtonsoft.com/json/help)zu JSON. net.
 
 ## <a name="special-considerations"></a>Besonderheiten
 
-Trotz der Ähnlichkeit zwischen Xamarin.iOS und .NET-Dateivorgänge, iOS und Xamarin.iOS unterscheiden sich in einigen wichtigen Aspekten von .NET.
+Trotz der Ähnlichkeiten zwischen xamarin. IOS-und .NET-Datei Vorgängen unterscheiden sich IOS und xamarin. IOS in einigen wichtigen Punkten von .net.
 
-### <a name="making-project-files-accessible-at-runtime"></a>Zur Laufzeit für Projektdateien jedermann
+### <a name="making-project-files-accessible-at-runtime"></a>Zugreifen auf Projektdateien zur Laufzeit
 
-In der Standardeinstellung, wenn Sie eine Datei zu Ihrem Projekt hinzufügen es nicht in die endgültige Assembly einbezogen, und daher nicht mehr für Ihre Anwendung verfügbar. Um eine Datei in die Assembly einschließen möchten, müssen Sie sie mit einer speziellen Buildaktion, Inhalt namens kennzeichnen.
+Wenn Sie dem Projekt eine Datei hinzufügen, wird diese standardmäßig nicht in die endgültige Assembly eingeschlossen und ist daher für Ihre Anwendung nicht verfügbar. Wenn Sie eine Datei in die Assembly einschließen möchten, müssen Sie Sie mit einer speziellen Buildaktion markieren, die als Inhalt bezeichnet wird.
 
-Um eine Datei für die Aufnahme zu markieren, mit der rechten Maustaste auf die Dateien, und wählen Sie **Buildvorgang &gt; Content** in Visual Studio für Mac. Sie können auch ändern, die **Buildvorgang** in der Datei **Eigenschaften** Blatt.
+Um eine Datei für die Einbindung zu markieren, klicken Sie mit der rechten Maustaste auf die Datei **&gt;** (en), und wählen Sie in Visual Studio für Mac buildaktionsinhalt. Sie können auch die Buildaktion auf der **Eigenschaften** Seite der Datei ändern.
 
 ### <a name="case-sensitivity"></a>Groß-/Kleinschreibung
 
-Es ist wichtig zu verstehen, dass das iOS-Dateisystem ist *Groß-/Kleinschreibung*. Instanzenmethode bedeutet, dass die Datei- und Verzeichnisnamen genau – übereinstimmen müssen **"Readme.txt"** und **"Readme.txt"** unterschiedliche Dateinamen betrachtet werden.
+Es ist wichtig zu wissen, dass beim IOS-Dateisystem die *groß-* /Kleinschreibung beachtet wird. Berücksichtigung der Groß-/Kleinschreibung bedeutet, dass die Datei-und Verzeichnisnamen exakt übereinstimmen müssen – "Infodatei **. txt** " und "Infodatei **. txt** " werden als andere Dateinamen angesehen
 
-Dies ist möglicherweise für .NET Entwickler, die immer vertrauter mit dem Windows-Dateisystem, handelt es sich verwirrend *Groß-/Kleinschreibung* – **Dateien**, **Dateien**, und  **Dateien** würde in dasselbe Verzeichnis verweisen.
+Dies könnte für .NET-Entwickler verwirrend sein, die mit dem Windows-Dateisystem vertraut sind, *bei* dem die Groß-/Kleinschreibung nicht beachtet wird – **Dateien**, **Dateien**und **Dateien** würden alle auf dasselbe Verzeichnis verweisen.
 
 > [!WARNING]
-> Die iOS-Simulator kein ist Groß-/Kleinschreibung beachtet.
-> Wenn sich Ihre Filename Groß-/Kleinschreibung zwischen der Datei selbst und die Verweise auf ihn im Code unterscheidet, tritt immer noch der Code im Simulator funktionieren möglicherweise jedoch ein auf einem echten Gerät. Dies ist einer der Gründe, warum es wichtig ist, bereitstellen und Testen auf einem echten Gerät frühzeitig und häufig während der iOS-Entwicklung.
+> Beim IOS-Simulator wird die Groß-/Kleinschreibung nicht beachtet.
+> Wenn die Schreibweise des Datei namens zwischen der Datei selbst und den verweisen darauf im Code abweicht, kann Ihr Code im Simulator weiterhin verwendet werden, schlägt jedoch auf einem echten Gerät fehl. Dies ist einer der Gründe, warum es wichtig ist, früh und häufig während der IOS-Entwicklung auf einem tatsächlichen Gerät bereitzustellen und zu testen.
 
-### <a name="path-separator"></a>Pfadtrennzeichen
+### <a name="path-separator"></a>Pfad Trennzeichen
 
-iOS verwendet einen Schrägstrich "/" als Pfadtrennzeichen (unterscheidet sich vom Windows, die verwendet den umgekehrten Schrägstrich ' \').
+IOS verwendet den Schrägstrich "/" als Pfad Trennzeichen (unterscheidet sich von Windows, der den umgekehrten Schrägstrich "\" verwendet).
 
-Aufgrund dieses Unterschieds verwirrend, die es wird empfohlen, mit der `System.IO.Path.Combine` -Methode, die für die aktuelle Plattform statt hartcodierung einer bestimmten Pfadtrennzeichen angepasst wird. Dies ist eine einfache Schritt, der Ihren Code für andere Plattformen einfacher macht.
+Aufgrund dieses verwirrenden Unterschieds empfiehlt es sich, die `System.IO.Path.Combine` -Methode zu verwenden, die sich für die aktuelle Plattform anpasst, anstatt ein bestimmtes Pfad Trennzeichen hart zu codieren. Dies ist ein einfacher Schritt, der Ihren Code besser auf andere Plattformen portierbar macht.
 
-## <a name="application-sandbox"></a>Sandbox der Anwendung
+## <a name="application-sandbox"></a>Anwendungs Sandbox
 
-Ihre Anwendung auf das Dateisystem (und andere Ressourcen wie die Features für Netzwerk- und Hardwareproblemen) ist aus Sicherheitsgründen beschränkt. Diese Einschränkung wird als bezeichnet die *Sandbox der Anwendung*. Im Hinblick auf das Dateisystem kann Ihre Anwendung zu erstellen und Löschen von Dateien und Verzeichnissen in ihrem Basisverzeichnis beschränkt.
+Der Zugriff auf das Dateisystem (und andere Ressourcen, z. b. die Netzwerk-und Hardware Features) Ihrer Anwendung ist aus Sicherheitsgründen eingeschränkt. Diese Einschränkung wird als *Anwendungs Sandbox*bezeichnet. Im Hinblick auf das Dateisystem ist die Anwendung auf das Erstellen und Löschen von Dateien und Verzeichnissen in Ihrem Basisverzeichnis beschränkt.
 
-Das Basisverzeichnis ist ein eindeutiger Speicherort im Dateisystem, in denen Ihre Anwendung und alle darin enthaltenen Daten gespeichert werden. Sie können nicht den Speicherort des Basisverzeichnisses für Ihre Anwendung auswählen (oder ändern); iOS- und Xamarin.iOS Eigenschaften und Methoden zum Verwalten von Dateien und Verzeichnisse innerhalb jedoch ermöglichen.
+Das Basisverzeichnis ist ein eindeutiger Speicherort im Dateisystem, in dem Ihre Anwendung und alle Ihre Daten gespeichert werden. Der Speicherort des Basisverzeichnisses für Ihre Anwendung kann nicht ausgewählt (oder geändert) werden. IOS und xamarin. IOS stellen jedoch Eigenschaften und Methoden bereit, um die Dateien und Verzeichnisse in zu verwalten.
 
-## <a name="the-application-bundle"></a>Anwendungspaket
+## <a name="the-application-bundle"></a>Das Anwendungspaket
 
-Die *Anwendungsbündel* ist der Ordner, der Ihre Anwendung enthält.
-Es ist von anderen Ordnern, dass das Suffix ". app" in den Namen des Verzeichnisses unterschieden. Ihr Anwendungspaket enthält Ihrer ausführbaren Datei und den gesamten Inhalt (Dateien, Bilder usw.) für Ihr Projekt erforderlich sind.
+Das *Anwendungspaket* ist der Ordner, der Ihre Anwendung enthält.
+Sie wird von anderen Ordnern unterschieden, indem dem Verzeichnisnamen das Suffix. app hinzugefügt wird. Ihr Anwendungspaket enthält die ausführbare Datei und alle Inhalte (Dateien, Bilder usw.), die für Ihr Projekt erforderlich sind.
 
-Wenn Sie zu Ihrem Anwendungspaket unter Mac OS navigieren, wird Sie durch ein anderes Symbol, als Sie in anderen Verzeichnissen finden Sie unter (und die **.app** Suffix wird ausgeblendet,), aber es ist nur ein regulärer Verzeichnis, das das Betriebssystem anzeigt unterschiedlich.
+Wenn Sie in Mac OS zu Ihrem Anwendungspaket navigieren, wird es mit einem anderen Symbol angezeigt als in anderen Verzeichnissen (und das Suffix " **. app** " ist ausgeblendet). Es handelt sich jedoch lediglich um ein reguläres Verzeichnis, das vom Betriebssystem unterschiedlich angezeigt wird.
 
-Zum Anzeigen der Anwendungspaket für den Beispielcode mit der Maustaste, auf das Projekt im **Visual Studio für Mac** , und wählen Sie **im Finder zeigen**. Navigieren Sie dann auf die **"bin" /** Verzeichnis, in dem Sie ein Anwendungssymbols feststellen werden (ähnlich wie im folgenden Screenshot).
+Um das Anwendungspaket für den Beispielcode anzuzeigen, klicken Sie in **Visual Studio für Mac** mit der rechten Maustaste auf das Projekt, und wählen Sie **in Finder**anzeigen aus. Navigieren Sie dann zum Verzeichnis " **bin/** Verzeichnis", in dem Sie ein Anwendungssymbol finden sollten (ähnlich wie im nachfolgenden Screenshot).
 
-![Navigieren Sie durch das Bin-Verzeichnis ein Anwendungssymbol ähnlich wie in diesem Screenshot gefunden.](file-system-images/40-bundle.png)
+![Navigieren Sie durch das bin-Verzeichnis, um ein Anwendungssymbol zu finden, das diesem Screenshot ähnelt.](file-system-images/40-bundle.png)
 
-Mit der rechten Maustaste auf das Symbol, und wählen Sie **Paketinhalt anzeigen** um den Inhalt des Verzeichnisses Anwendungspaket zu suchen. Der Inhalt wird genau wie der Inhalt von einem regulären Verzeichnis angezeigt, wie hier gezeigt:
+Klicken Sie mit der rechten Maustaste auf dieses Symbol, und wählen Sie **Paket Inhalt anzeigen** aus, um den Inhalt des Anwendungspaket Verzeichnisses zu durchsuchen. Der Inhalt wird genau wie der Inhalt eines regulären Verzeichnisses angezeigt, wie hier gezeigt:
 
-[![Der Inhalt der app-Bundle](file-system-images/45-bundle-sml.png)](file-system-images/45-bundle.png#lightbox)
+[![Der Inhalt des App Bundle](file-system-images/45-bundle-sml.png)](file-system-images/45-bundle.png#lightbox)
 
-Das Anwendungspaket ist, was auf dem Simulator oder auf Ihrem Gerät installiert ist, während der Tests, und letztlich liegt es in was für die Aufnahme in die App-Store an Apple gesendet wird.
+Das Anwendungspaket wird während des Tests auf dem Simulator oder auf Ihrem Gerät installiert, und letztendlich wird es an Apple zur Einbindung in den App Store übermittelt.
 
-## <a name="application-directories"></a>Anwendungsverzeichnisse
+## <a name="application-directories"></a>Anwendungs Verzeichnisse
 
-Wenn Ihre Anwendung auf einem Gerät installiert ist, wird das Betriebssystem ein Basisverzeichnis für Ihre Anwendung erstellt, und erstellt eine Reihe von Verzeichnissen im Stammverzeichnis Anwendung, die für die Verwendung verfügbar sind. Seit iOS 8, den Benutzer zugänglichen Verzeichnisse sind [nicht gefunden](https://developer.apple.com/library/ios/technotes/tn2406/_index.html) innerhalb des Anwendungsstammverzeichnisses, sodass Sie können nicht abgeleitet werden die Pfade für das anwendungsbündel aus den Verzeichnissen nach Benutzer (oder umgekehrt).
+Wenn die Anwendung auf einem Gerät installiert ist, erstellt das Betriebssystem ein Basisverzeichnis für Ihre Anwendung und erstellt eine Reihe von Verzeichnissen im Stammverzeichnis der Anwendung, die zur Verwendung verfügbar sind. Seit IOS 8 befinden sich die vom Benutzer zugänglichen Verzeichnisse [nicht](https://developer.apple.com/library/ios/technotes/tn2406/_index.html) innerhalb des Anwendungs Stamms, sodass Sie die Pfade für das Anwendungspaket nicht aus den Benutzerverzeichnissen ableiten können (oder umgekehrt).
 
-Diese Verzeichnisse, wie Sie ihren Pfad und ihren Zweck zu ermitteln, sind nachfolgend aufgeführt:
+Diese Verzeichnisse, wie Sie Ihren Pfad ermitteln, und ihre Zwecke sind unten aufgeführt:
 
 &nbsp;
 
 |Verzeichnis|Beschreibung|
 |---|---|
-|[ApplicationName].app/|**In iOS 7 und früher**, dies ist die `ApplicationBundle` Verzeichnis, in dem die ausführbare Datei Ihrer Anwendung gespeichert ist. Die Verzeichnisstruktur, die Sie in Ihrer app zu erstellen, die in diesem Verzeichnis (z. B. Bilder und andere Dateitypen, die Sie als Ressourcen in Ihrer Visual Studio für Mac-Projekt gekennzeichnet haben) vorhanden ist.<br /><br />Wenn Sie die Inhaltsdateien in Ihr Anwendungspaket zugreifen möchten, steht der Pfad zu diesem Verzeichnis über die `NSBundle.MainBundle.BundlePath` Eigenschaft.|
-|Dokumente /|Verwenden Sie dieses Verzeichnis, um Benutzerdokumente und Anwendungsdaten zu speichern.<br /><br />Der Inhalt dieses Verzeichnisses können zur Verfügung gestellt, die dem Benutzer über iTunes Dateifreigabe (auch wenn diese Option standardmäßig deaktiviert ist). Hinzufügen einer `UIFileSharingEnabled` Boolean-Taste, um die Datei "Info.plist", um Benutzern Zugriff auf diese Dateien zu ermöglichen.<br /><br />Selbst, wenn eine Anwendung sofort Dateifreigabe kann nicht, sollten Sie vermeiden, Ablegen von Dateien, die von Ihren Benutzern in diesem Verzeichnis ausgeblendet werden soll (z. B. Datenbankdateien, es sei denn, Sie sie freigeben möchten). Als vertrauliche Dateien ausgeblendet bleiben, diese Dateien nicht verfügbar gemacht werden (und möglicherweise verschoben, geänderte oder gelöschte von iTunes) Wenn die Dateifreigabe in einer zukünftigen Version aktiviert ist.<br /><br /> Sie können die `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` Methode, um den Pfad zu dem Verzeichnis "Dateien" für Ihre Anwendung abzurufen.<br /><br />Der Inhalt dieses Verzeichnisses werden von iTunes gesichert.|
-|Bibliothek /|Das Verzeichnis für die Bibliothek ist eine gute Möglichkeit zum Speichern von Dateien, die nicht direkt vom Benutzer, z. B. Datenbanken oder anderen Anwendung generierte Dateien erstellt werden. Der Inhalt dieses Verzeichnisses werden nie an den Benutzer über iTunes verfügbar gemacht.<br /><br />Sie können Ihre eigenen Unterverzeichnisse in Bibliothek erstellen. Es gibt jedoch noch einige vom System erstellten Verzeichnisse hier, dass Sie von, z. B. Einstellungen und Caches berücksichtigen sollten.<br /><br />Der Inhalt dieses Verzeichnisses (mit Ausnahme der Caches Unterverzeichnis) werden von iTunes gesichert. Benutzerdefinierte Verzeichnisse, die Sie in der Bibliothek erstellen werden gesichert werden.|
-|Library/Preferences /|Anwendungsspezifische Einstellungsdateien werden in diesem Verzeichnis gespeichert. Erstellen Sie diese Dateien nicht direkt auf. Verwenden Sie stattdessen die `NSUserDefaults` Klasse.<br /><br />Der Inhalt dieses Verzeichnisses werden von iTunes gesichert.|
-|Library/Caches/|Das Verzeichnis des Caches ist ein guter Ausgangspunkt zum Speichern von Datendateien, mit die Ihre Anwendung können ausgeführt, aber, die einfach neu erstellt werden kann. Die Anwendung erstellen und löschen Sie diese Dateien nach Bedarf und in der Lage, diese Dateien bei Bedarf neu erstellen. iOS 5 kann auch diese Dateien (Situationen Speicher), löschen, jedoch kein Wert zurückgegeben wird, während die Anwendung ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses nicht vom iTunes, das bedeutet, dass sie nicht vorhanden, wenn der Benutzer ein Gerät wiederherstellt, gesichert werden, und sie möglicherweise nicht vorhanden, nachdem eine aktualisierte Version der Anwendung installiert ist.<br /><br />Für den Fall, dass Ihre Anwendung keine Verbindung mit dem Netzwerk herstellen kann, können Sie beispielsweise das Verzeichnis des Caches verwenden, zum Speichern von Daten oder Dateien, um ein gutes offline zu ermöglichen. Kann die Anwendung zu speichern und diese Daten schnell abgerufen, beim Warten auf Netzwerk-Antworten, jedoch nicht gesichert werden müssen und können leicht wiederhergestellt oder werden neu erstellt werden, nachdem eine Wiederherstellung oder eine Version aktualisiert.|
-|tmp/|Anwendungen können das Speichern temporärer Dateien, die nur für einen kurzen Zeitraum in diesem Verzeichnis erforderlich sind. Um Speicherplatz zu sparen, sollten die Dateien gelöscht werden, wenn sie nicht mehr benötigt werden. Das Betriebssystem kann auch Dateien aus diesem Verzeichnis löschen, wenn eine Anwendung nicht ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses werden von iTunes nicht gesichert.<br /><br />Beispielsweise kann das Tmp Verzeichnis verwendet zum Speichern von temporärer Dateien, die für die Anzeige für Benutzer (z. B. Twitter Avatare oder e-Mail-Anlagen) heruntergeladen werden, jedoch konnte, die gelöscht werden, sobald sie haben angezeigt (und wurden erneut heruntergeladen werden, wenn sie in der Zukunft erforderlich sind) .|
+|[ApplicationName]. app/|**In ios 7 und früheren**Versionen ist dies das `ApplicationBundle` Verzeichnis, in dem die ausführbare Datei der Anwendung gespeichert ist. Die Verzeichnisstruktur, die Sie in Ihrer APP erstellen, ist in diesem Verzeichnis vorhanden (z. b. Bilder und andere Dateitypen, die Sie als Ressourcen in Ihrem Visual Studio für Mac Projekt gekennzeichnet haben).<br /><br />Wenn Sie auf die Inhalts Dateien innerhalb des Anwendungspakets zugreifen müssen, ist der Pfad zu diesem Verzeichnis über die `NSBundle.MainBundle.BundlePath` -Eigenschaft verfügbar.|
+|Dokumenten|Verwenden Sie dieses Verzeichnis zum Speichern von Benutzer Dokumenten und Anwendungs Datendateien.<br /><br />Der Inhalt dieses Verzeichnisses kann dem Benutzer über die iTunes-Dateifreigabe zur Verfügung gestellt werden (obwohl dies standardmäßig deaktiviert ist). Fügen Sie `UIFileSharingEnabled` der Datei "Info. plist" einen booleschen Schlüssel hinzu, damit Benutzer auf diese Dateien zugreifen können.<br /><br />Auch wenn eine Anwendung die Dateifreigabe nicht sofort aktiviert, sollten Sie verhindern, dass Dateien, die für die Benutzer in diesem Verzeichnis ausgeblendet werden sollen (z. b. Datenbankdateien), nicht mehr zur Verfügung stehen. Solange sensible Dateien ausgeblendet bleiben, werden diese Dateien nicht verfügbar gemacht (und möglicherweise von iTunes verschoben, geändert oder gelöscht), wenn die Dateifreigabe in einer zukünftigen Version aktiviert ist.<br /><br /> Sie können die `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` -Methode verwenden, um den Pfad zum Verzeichnis "Dokumente" für Ihre Anwendung zu erhalten.<br /><br />Der Inhalt dieses Verzeichnisses wird von iTunes gesichert.|
+|Fern|Das Bibliotheksverzeichnis ist ein guter Ort, um Dateien zu speichern, die nicht direkt vom Benutzer erstellt werden, z. b. Datenbanken oder andere von der Anwendung generierte Dateien. Der Inhalt dieses Verzeichnisses wird dem Benutzer nie über iTunes zugänglich gemacht.<br /><br />Sie können eigene Unterverzeichnisse in der Bibliothek erstellen. Es gibt jedoch bereits einige vom System erstellte Verzeichnisse, die Sie kennen sollten, einschließlich Einstellungen und Caches.<br /><br />Der Inhalt dieses Verzeichnisses (mit Ausnahme des Unterverzeichnisses Caches) wird von iTunes gesichert. Benutzerdefinierte Verzeichnisse, die Sie in der Bibliothek erstellen, werden gesichert.|
+|Bibliothek/Einstellungen/|Anwendungsspezifische Einstellungsdateien werden in diesem Verzeichnis gespeichert. Erstellen Sie diese Dateien nicht direkt. Verwenden Sie stattdessen die `NSUserDefaults` -Klasse.<br /><br />Der Inhalt dieses Verzeichnisses wird von iTunes gesichert.|
+|Bibliothek/Caches/|Das Caches-Verzeichnis ist ein guter Ort zum Speichern von Datendateien, die Ihre Anwendung unterstützen, aber problemlos neu erstellt werden können. Die Anwendung sollte diese Dateien nach Bedarf erstellen und löschen und diese Dateien bei Bedarf neu erstellen können. IOS 5 kann diese Dateien auch löschen (in Situationen mit geringem Speicherplatz), dies ist jedoch nicht der Fall, während die Anwendung ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses wird nicht von iTunes gesichert. Dies bedeutet, dass Sie nicht vorhanden sind, wenn der Benutzer ein Gerät wiederherstellt, und Sie sind möglicherweise nicht vorhanden, nachdem eine aktualisierte Version der Anwendung installiert wurde.<br /><br />Wenn Ihre Anwendung beispielsweise keine Verbindung mit dem Netzwerk herstellen kann, können Sie das Caches-Verzeichnis verwenden, um Daten oder Dateien zu speichern, um ein gutes Offline Verhalten zu gewährleisten. Diese Daten können von der Anwendung beim Warten auf Netzwerk Antworten schnell gespeichert und abgerufen werden. Sie müssen jedoch nicht gesichert werden und können nach einem Wiederherstellungs-oder Versions Update problemlos wieder hergestellt oder neu erstellt werden.|
+|tmp|Anwendungen können temporäre Dateien speichern, die nur für einen kurzen Zeitraum in diesem Verzeichnis benötigt werden. Um Speicherplatz zu sparen, sollten Dateien gelöscht werden, wenn Sie nicht mehr benötigt werden. Das Betriebssystem kann auch Dateien aus diesem Verzeichnis löschen, wenn eine Anwendung nicht ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses wird nicht von iTunes gesichert.<br /><br />Beispielsweise kann das tmp-Verzeichnis zum Speichern temporärer Dateien verwendet werden, die für die Anzeige für den Benutzer heruntergeladen werden (z. b. Twitter-Avatare oder e-Mail-Anlagen). Diese können jedoch gelöscht werden, sobald Sie angezeigt werden (und erneut heruntergeladen werden, wenn Sie in Zukunft benötigt werden). .|
 
-Dieser Screenshot zeigt die Verzeichnisstruktur, in einem finderfenster:
+Dieser Screenshot zeigt die Verzeichnisstruktur in einem Finder-Fenster:
 
-[![](file-system-images/08-library-directory.png "Dieser Screenshot zeigt die Verzeichnisstruktur, in einem finderfenster")](file-system-images/08-library-directory.png#lightbox)
+[![](file-system-images/08-library-directory.png "Dieser Screenshot zeigt die Verzeichnisstruktur in einem Finder-Fenster")](file-system-images/08-library-directory.png#lightbox)
 
-### <a name="accessing-other-directories-programmatically"></a>Programmgesteuerter Zugriff auf andere Verzeichnisse
+### <a name="accessing-other-directories-programmatically"></a>Programm gesteuertes zugreifen auf andere Verzeichnisse
 
-Die früheren Verzeichnis- und Beispiele, die Zugriff auf die `Documents` Verzeichnis. Um zu einem anderen Verzeichnis zu schreiben, müssen Sie erstellen, einen Pfad mithilfe der ".." Syntax wie hier gezeigt:
+In den vorherigen Verzeichnis-und Datei Beispielen `Documents` wurde auf das Verzeichnis zugegriffen. Um in ein anderes Verzeichnis zu schreiben, müssen Sie einen Pfad mit der Syntax ".." erstellen, wie hier gezeigt:
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -222,7 +222,7 @@ var filename = Path.Combine (library, "WriteToLibrary.txt");
 File.WriteAllText(filename, "Write this text into a file in Library");
 ```
 
-Erstellen eines Verzeichnisses entspricht:
+Das Erstellen eines Verzeichnisses ist ähnlich:
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -231,7 +231,7 @@ var directoryname = Path.Combine (library, "NewLibraryDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-Pfade zu den `Caches` und `tmp` Verzeichnisse können wie folgt erstellt werden:
+Pfade zu den `Caches` Verzeichnissen `tmp` und können wie folgt erstellt werden:
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -239,66 +239,66 @@ var cache = Path.Combine (documents, "..", "Library", "Caches");
 var tmp = Path.Combine (documents, "..", "tmp");
 ```
 
-## <a name="sharing-with-the-files-app"></a>Die app Dateien freigeben
+## <a name="sharing-with-the-files-app"></a>Freigabe mit der App "Dateien"
 
-iOS 11 eingeführte der **Dateien** app – ein Datei-Browser für iOS, kann der Benutzer anzeigen und ihre zugehörigen Dateien in iCloud interagieren, die von jeder Anwendung, die es unterstützt auch gespeichert. Damit um die Benutzer auf Dateien in Ihrer app direkt zugreifen zu können, erstellen Sie einen neuen booleschen Schlüssel in der **"Info.plist"** Datei `LSSupportsOpeningDocumentsInPlace` und legen ihn auf `true`, wie hier:
+IOS 11 hat die Datei **-App eingeführt** : einen Dateibrowser für IOS, mit dem Benutzer Ihre Dateien in icloud anzeigen und mit ihr interagieren und auch von einer beliebigen Anwendung, die Sie unterstützt, gespeichert werden können. Damit der Benutzer direkt auf Dateien in der App zugreifen kann, erstellen Sie einen neuen booleschen Schlüssel in der **Info. plist** -Datei `LSSupportsOpeningDocumentsInPlace` , und legen Sie ihn wie folgt auf `true`fest:
 
-![LSSupportsOpeningDocumentsInPlace in "Info.plist" festlegen](file-system-images/51-supports-opening.png)
+![Lssupportsopeningdocumentsinplace in "Info. plist" festlegen](file-system-images/51-supports-opening.png)
 
-Der app **Dokumente** Verzeichnis zur Verfügung, zum Durchsuchen in die **Dateien** app. In der **Dateien** -app, navigieren Sie zu **auf Mein iPhone** und jede app mit freigegebenen Dateien werden angezeigt. Die folgenden Screenshots zeigen, was die [FileSystem-Beispiel-app](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/) wie folgt aussieht:
+Das Verzeichnis " **Dokumente** " der APP steht nun in der **Datei** -App zum Durchsuchen zur Verfügung. Navigieren Sie in der **Datei** -APP **auf meinem iPhone** zu, und jede APP mit freigegebenen Dateien wird angezeigt. Die folgenden Screenshots zeigen, wie die [File System-Beispiel-App](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode) aussieht:
 
-![app für iOS 11-Dateien](file-system-images/50-files-app-1-sml.png) ![Mein iPhone Dateien durchsuchen](file-system-images/50-files-app-2-sml.png) ![Beispiel-app-Dateien](file-system-images/50-files-app-3-sml.png)
+![IOS 11-Dateien-App](file-system-images/50-files-app-1-sml.png) ![Meine iPhone-Dateien durchsuchen](file-system-images/50-files-app-2-sml.png) ![Beispiel-APP-Dateien](file-system-images/50-files-app-3-sml.png)
 
-## <a name="sharing-files-with-the-user-through-itunes"></a>Freigeben von Dateien mit dem Benutzer über iTunes
+## <a name="sharing-files-with-the-user-through-itunes"></a>Freigeben von Dateien für den Benutzer über iTunes
 
-Benutzer können die Dateien im Verzeichnis "Dateien" Ihrer Anwendung zugreifen, indem Sie die Bearbeitung `Info.plist` und das Erstellen einer **Anwendung, die iTunes-Freigaben unterstützt** (`UIFileSharingEnabled`) Eintrag in der **Quelle** Zeigen Sie an, wie hier gezeigt:
+Benutzer können auf die Dateien im Verzeichnis "Dokumente" Ihrer Anwendung zugreifen `Info.plist` , indem Sie eine Anwendung, die den iTunes`UIFileSharingEnabled`Sharing ()-Eintrag **unterstützt** , in der **Quell** Ansicht bearbeiten und erstellen, wie hier gezeigt:
 
-[![Hinzufügen der Anwendung unterstützt iTunes-Freigabe-Eigenschaft](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
+[![Das Hinzufügen der Anwendung unterstützt die iTunes-Freigabe Eigenschaft](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
-Diese Dateien können in iTunes zugegriffen werden, wenn das Gerät verbunden ist und des Benutzers die `Apps` Registerkarte. Der folgende Screenshot zeigt beispielsweise die Dateien in der ausgewählten app, die über iTunes freigegeben:
+Diese Dateien können in iTunes aufgerufen werden, wenn das Gerät verbunden ist und der Benutzer die `Apps` Registerkarte auswählt. Der folgende Screenshot zeigt z. b. die Dateien in der ausgewählten APP, die über iTunes freigegeben wurde:
 
-[![Dieser Screenshot zeigt die Dateien in der ausgewählten app, die über iTunes freigegeben](file-system-images/10-itunes-file-sharing-sml.png)](file-system-images/10-itunes-file-sharing.png#lightbox)
+[![Dieser Screenshot zeigt die Dateien in ausgewählter APP, die über iTunes freigegeben wurde.](file-system-images/10-itunes-file-sharing-sml.png)](file-system-images/10-itunes-file-sharing.png#lightbox)
 
-Benutzer können nur die Elemente der obersten Ebene in diesem Verzeichnis über iTunes zugreifen. Sie können nicht den Inhalt der alle Unterverzeichnisse (obwohl sie können auf ihren Computer kopieren oder löschen) finden Sie unter. Beispielsweise können GoodReader, PDF- und EPUB-Dateien mit der Anwendung freigegeben werden, damit Benutzer diese auf ihren iOS-Geräten lesen können.
+Benutzer können nur über iTunes auf die Elemente der obersten Ebene in diesem Verzeichnis zugreifen. Die Inhalte von Unterverzeichnissen können nicht angezeigt werden (Sie können Sie jedoch auf Ihren Computer kopieren oder löschen). Beispielsweise können mit goodreader PDF-und EPUB-Dateien für die Anwendung freigegeben werden, damit Benutzer Sie auf Ihren IOS-Geräten lesen können.
 
-Benutzer, die den Inhalt von ihren Ordnern "Dokumente" ändern, können Probleme verursachen, wenn sie nicht vorsichtig sind. Ihre Anwendung sollte dies berücksichtigen und sind unempfindlich für destruktive Updates der Ordner "Dokumente".
+Benutzer, die den Inhalt Ihres Ordners "Dokumente" ändern, können Probleme verursachen, wenn Sie nicht vorsichtig sind. Die Anwendung sollte dies berücksichtigen und sich gegen zerstörerische Updates des Ordners "Dokumente" widerstandsfähig machen.
 
-Der Beispielcode für diesen Artikel erstellt eine Datei und einen Ordner im Ordner "Dokumente" (in **SampleCode.cs**) und die Dateifreigabe ermöglicht die **"Info.plist"** Datei. Dieser Screenshot zeigt, wie diese in iTunes angezeigt werden:
+Der Beispielcode für diesen Artikel erstellt sowohl eine Datei als auch einen Ordner im Ordner "Documents" (in **SampleCode.cs**) und aktiviert die Dateifreigabe in der Datei " **Info. plist** ". Dieser Screenshot zeigt, wie diese in iTunes angezeigt werden:
 
-[![Dieser Screenshot zeigt, wie die Dateien in iTunes angezeigt werden](file-system-images/15-itunes-file-sharing-example-sml.png)](file-system-images/15-itunes-file-sharing-example.png#lightbox)
+[![Dieser Screenshot zeigt, wie die Dateien in iTunes angezeigt werden.](file-system-images/15-itunes-file-sharing-example-sml.png)](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
-Finden Sie in der [arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) Weitere Informationen über das Festlegen von Symbolen für die Anwendung und für alle benutzerdefinierten Dokumenttypen, die Sie erstellen.
+Informationen dazu, wie Sie Symbole für die Anwendung und benutzerdefinierte Dokumenttypen festlegen, die Sie erstellen, finden Sie im Artikel [Working with Images (Arbeiten mit Images](~/ios/app-fundamentals/images-icons/index.md) ).
 
-Wenn die `UIFileSharingEnabled` Schlüssel ist falsch oder nicht vorhanden ist, dann teilen der Datei ist, wird standardmäßig deaktiviert, und Benutzer werden nicht in der Lage, für die Interaktion mit Ihrem Verzeichnis "Dateien".
+Wenn der `UIFileSharingEnabled` Schlüssel falsch oder nicht vorhanden ist, wird die Dateifreigabe standardmäßig deaktiviert, und die Benutzer können nicht mit Ihrem Verzeichnis "Dokumente" interagieren.
 
 ## <a name="backup-and-restore"></a>Sichern und Wiederherstellen
 
-Wenn ein Gerät von iTunes gesichert wird, ausgenommen alles, was die Verzeichnisse im Stammverzeichnis Ihrer Anwendung erstellten gespeichert werden, die folgenden Verzeichnisse:
+Wenn ein Gerät von iTunes gesichert wird, werden alle Verzeichnisse, die im Basisverzeichnis Ihrer Anwendung erstellt werden, mit Ausnahme der folgenden Verzeichnisse gespeichert:
 
-- **[ApplicationName] .app** – nicht zu diesem Verzeichnis schreiben, da es signiert ist und daher nach der Installation unverändert bleiben muss. Sie enthält eventuell Ressourcen, die Sie vom Code aus zugreifen, aber sie erfordern keine Sicherung, da sie zum Herunterladen der app erneut wiederhergestellt werden soll.
-- **Bibliothek/Caches** – richtet sich an das Cacheverzeichnis für Arbeitsdateien, die nicht gesichert werden müssen.
-- **TMP** : Dieses Verzeichnis wird verwendet, für die temporären Dateien, die erstellt und gelöscht werden, wenn nicht mehr benötigt werden, oder für Dateien löscht, iOS, wenn Speicherplatz benötigt.
+- **[ApplicationName]. app** – schreiben Sie in dieses Verzeichnis nicht, da es signiert ist und daher nach der Installation unverändert bleiben muss. Sie enthält möglicherweise Ressourcen, auf die Sie aus Ihrem Code zugreifen, aber Sie benötigen keine Sicherung, da Sie durch erneutes herunterladen der APP wieder hergestellt werden.
+- **Bibliothek/Caches** – das Cache Verzeichnis ist für Arbeitsdateien vorgesehen, die nicht gesichert werden müssen.
+- **tmp** – dieses Verzeichnis wird für temporäre Dateien verwendet, die erstellt und gelöscht werden, wenn Sie nicht mehr benötigt werden, oder für Dateien, die von IOS gelöscht werden, wenn Speicherplatz benötigt wird.
 
-Eine große Datenmenge sichern, kann sehr lange dauern. Wenn Sie sich entscheiden, müssen Sie keine bestimmten Dokument oder die Daten sichern, sollte Ihre Anwendung entweder mit den Dokumenten verwenden und Bibliothek-Ordner. Verwenden Sie für vorübergehende Daten oder Dateien, die einfach über das Netzwerk abgerufen werden können die Caches oder der Tmp-Verzeichnis.
-
-> [!NOTE]
-> iOS wird "im Dateisystem clean" Wenn ein Gerät nur noch wenig Speicherplatz auf dem Datenträger ausgeführt wird.
-> Dieser Vorgang entfernt alle Dateien aus der Bibliothek/Caches und Tmp Ordner von Anwendungen, die derzeit nicht ausgeführt wird.
-
-## <a name="complying-with-ios-5-icloud-backup-restrictions"></a>Einhaltung der iOS 5 iCloud-backup-Einschränkungen
+Das Sichern einer großen Datenmenge kann einige Zeit in Anspruch nehmen. Wenn Sie festlegen, dass Sie ein bestimmtes Dokument oder Daten sichern möchten, sollte Ihre Anwendung entweder die Ordner "Dokumente" und "Bibliothek" verwenden. Bei vorübergehenden Daten oder Dateien, die problemlos aus dem Netzwerk abgerufen werden können, verwenden Sie entweder die Caches oder das tmp-Verzeichnis.
 
 > [!NOTE]
-> Diese Richtlinie wurde zwar mit iOS 5 (die vor langer Zeit scheint) eingeführt wurden die Anweisungen immer noch relevant für apps noch heute.
+> IOS wird das Dateisystem bereinigen, wenn der Speicherplatz auf einem Gerät deutlich niedrig ist.
+> Bei diesem Vorgang werden alle Dateien aus den Bibliotheken/Caches und dem tmp-Ordner von Anwendungen entfernt, die derzeit nicht ausgeführt werden.
 
-Apple eingeführt *iCloud-Sicherung* -Funktionalität mit iOS 5. Wenn der iCloud-Sicherung aktiviert ist, alle Dateien im Stammverzeichnis Ihrer Anwendung (ausgenommen Verzeichnisse, die nicht normal, z. B. das app-Bundle, gesichert werden `Caches`, und `tmp`) sind Sicherung auf iCloud-Server. Dieses Feature bietet dem Benutzer eine vollständige Sicherung aus, falls ihr Gerät verloren geht, gestohlen oder beschädigt ist.
+## <a name="complying-with-ios-5-icloud-backup-restrictions"></a>Einhaltung der Einschränkungen für IOS 5-icloud-Sicherungen
 
-Da iCloud nur 5 Gb "Speicherplatz" für jeden Benutzer und vermeiden unnötig Bandbreite bereitstellt, wird von Apple Anwendungen nur wichtige Benutzern generierte Daten erwartet. Um mit dem iOS-Speicherrichtlinien für Daten zu erfüllen, sollten Sie die Menge der Daten einschränken, die gesichert werden, durch Nutzung der folgenden Elemente:
+> [!NOTE]
+> Obwohl diese Richtlinie erstmals mit IOS 5 eingeführt wurde (was vor längerer Zeit scheint), ist die Anleitung für apps noch heute relevant.
 
-- Speichern Sie nur von Benutzern generierte Daten oder Daten, die sonst neu erstellt, in das Verzeichnis "Dateien" können nicht (die gesichert wird).
-- Alle anderen Daten, die einfach neu erstellt oder erneut heruntergeladen werden können Store `Library/Caches` oder `tmp` (das ist nicht gesichert und kann "bereinigt").
-- Wenn Sie über Dateien verfügen, die möglicherweise für die `Library/Caches` oder `tmp` Ordner, sondern Sie möchten nicht "bereinigt werden" und speichert Sie sie an anderer Stelle (wie z. B. `Library/YourData`) und wenden Sie die "werden nicht zurück einrichten" Attribut, um zu verhindern, dass die Dateien regelmäßig iCloud-Sicherung Bandbreite und Speicherplatz. Diese Daten verwendet weiterhin Speicherplatz auf dem Gerät, damit Sie ihn sorgfältig verwalten und löschen Sie sie nach Möglichkeit sollte.
+Apple hat eine *icloud-Sicherungs* Funktion mit IOS 5 eingeführt. Wenn die icloud-Sicherung aktiviert ist, werden alle Dateien im Stammverzeichnis Ihrer Anwendung (ausgenommen Verzeichnisse, die normalerweise nicht gesichert werden, z. b. `Caches`die APP Bundle `tmp`, und) auf icloud-Servern gesichert. Diese Funktion bietet dem Benutzer eine komplette Sicherung für den Fall, dass das Gerät verloren geht, gestohlen wird oder beschädigt ist.
 
-Der "werden nicht zurück um"-Attribut festgelegt ist, mit der `NSFileManager` Klasse. Sicherstellen, dass die Klasse ist `using Foundation` , und rufen Sie `SetSkipBackupAttribute` wie folgt aus:
+Da icloud nur 5 GB freien Speicherplatz für jeden Benutzer bereitstellt und die Bandbreite unnötig vermeiden kann, erwartet Apple, dass Anwendungen nur wichtige benutzergenerierte Daten sichern. Zur Einhaltung der IOS-Daten Speicherungs Richtlinien sollten Sie die Menge der zu sichernden Daten einschränken, indem Sie die folgenden Elemente einhalten:
+
+- Speichern Sie nur benutzergenerierte Daten oder Daten, die anderweitig nicht neu erstellt werden können, im Verzeichnis "Dokumente" (das gesichert ist).
+- Speichern Sie alle anderen Daten, die einfach neu erstellt oder heruntergeladen `Library/Caches` werden können, oder `tmp` (die nicht gesichert und möglicherweise "bereinigt" werden).
+- Wenn Sie über Dateien verfügen, die möglicherweise für `Library/Caches` den `tmp` Ordner oder geeignet sind, aber nicht "bereinigt" werden sollen, speichern `Library/YourData`Sie Sie an einer anderen Stelle (z. b.), und wenden Sie das Attribut "nicht sichern" an, um zu verhindern, dass die Dateien die icloud-Sicherung verwenden. Bandbreite und Speicherplatz. Diese Daten verbraucht weiterhin Speicherplatz auf dem Gerät, sodass Sie Sie nach Möglichkeit sorgfältig verwalten und löschen sollten.
+
+Das ' do not Backup '-Attribut wird mithilfe der `NSFileManager` -Klasse festgelegt. Stellen Sie sicher, `using Foundation` dass Ihre `SetSkipBackupAttribute` Klasse ist und wie folgt aufruft:
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -307,25 +307,25 @@ File.WriteAllText(filename, "This file will never get backed-up. It would need t
 NSFileManager.SetSkipBackupAttribute (filename, true); // backup will be skipped for this file
 ```
 
-Wenn `SetSkipBackupAttribute` ist `true` die Datei werden nicht gesichert wurden, unabhängig davon, sich im befindet, Verzeichnis (auch auf dem `Documents` Verzeichnis). Können Sie Abfragen, bei der Verwendung des Attributs der `GetSkipBackupAttribute` Methode, und Sie können es zurücksetzen durch Aufrufen der `SetSkipBackupAttribute` -Methode mit `false`, wie folgt aus:
+Wenn `SetSkipBackupAttribute` `Documents` ist `true` , wird die Datei unabhängig von dem Verzeichnis, in dem Sie gespeichert ist, nicht gesichert (auch das Verzeichnis). Sie können das-Attribut mithilfe der `GetSkipBackupAttribute` -Methode Abfragen, und Sie können es zurücksetzen `SetSkipBackupAttribute` , indem `false`Sie die-Methode mit wie folgt aufrufen:
 
 ```csharp
 NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-up
 ```
 
-## <a name="sharing-data-between-ios-apps-and-app-extensions"></a>Freigeben von Daten zwischen iOS-apps und app-Erweiterungen
+## <a name="sharing-data-between-ios-apps-and-app-extensions"></a>Freigeben von Daten zwischen IOS-apps und App-Erweiterungen
 
-Da App-Erweiterungen als Teil einer hostanwendung (im Gegensatz zu ihren enthaltenden app) ausgeführt werden, erfolgt nicht die Freigabe von Daten automatisch enthalten, sodass zusätzliche Arbeit erforderlich ist. App-Gruppen sind, dass der Mechanismus iOS verwendet, um verschiedene apps zum Freigeben von Daten zu ermöglichen. Wenn die Anwendungen ordnungsgemäß konfiguriert, die für die richtigen Berechtigungen und Bereitstellung erfüllt sind, können sie ein freigegebenes Verzeichnis außerhalb ihrer normalen iOS-Sandbox zugreifen.
+Da App-Erweiterungen als Teil einer Host Anwendung ausgeführt werden (im Gegensatz zu ihrer enthaltenden APP), ist die Datenfreigabe nicht automatisch eingeschlossen, sodass zusätzliche Arbeit erforderlich ist. App-Gruppen sind der Mechanismus, den IOS verwendet, um unterschiedlichen apps das Freigeben von Daten zu gestatten. Wenn die Anwendungen ordnungsgemäß mit den richtigen Berechtigungen und der Bereitstellung konfiguriert wurden, können Sie auf ein frei gegebenes Verzeichnis außerhalb ihrer normalen IOS-Sandbox zugreifen.
 
-### <a name="configure-an-app-group"></a>Konfigurieren Sie eine App-Gruppe
+### <a name="configure-an-app-group"></a>Konfigurieren einer APP-Gruppe
 
-Der freigegebene Speicherort erfolgt über eine [App-Gruppe](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19), die konfiguriert wird, der **Zertifikate, Bezeichner & Profile** im Abschnitt [iOS Developer Center](https://developer.apple.com/devcenter/ios/). Dieser Wert muss außerdem in jedem Projekt auf die verwiesen werden **"Entitlements.plist"** .
+Der freigegebene Speicherort wird mit einer [App-Gruppe](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)konfiguriert, die im Abschnitt Zertifikate, Bezeichner **& profile** im [IOS dev Center](https://developer.apple.com/devcenter/ios/)konfiguriert ist. Auf diesen Wert muss in den **Berechtigungen. plist**jedes Projekts verwiesen werden.
 
-Informationen zum Erstellen und konfigurieren eine App-Gruppe finden Sie in der [App-Gruppen-Funktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Guide.
+Informationen zum Erstellen und Konfigurieren einer APP-Gruppe finden Sie im Handbuch zu [App-Gruppenfunktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
 
 ### <a name="files"></a>Dateien
 
-Die iOS-app und die Erweiterung können auch Freigeben von Dateien, die über einen gemeinsamen Dateipfad (erhalten sie wurden ordnungsgemäß konfiguriert, die für die richtigen Berechtigungen und Bereitstellung):
+Die IOS-APP und die Erweiterung können auch Dateien mit einem gemeinsamen Dateipfad freigeben (wenn Sie ordnungsgemäß mit den richtigen Berechtigungen und der Bereitstellung konfiguriert wurden):
 
 ```csharp
 var FileManager = new NSFileManager ();
@@ -339,23 +339,23 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 ```
 
 > [!IMPORTANT]
-> Wenn der Pfad für die Gruppe zurückgegeben wird `null`, überprüfen Sie die Konfiguration von den Berechtigungen und das Bereitstellungsprofil und stellen Sie sicher, dass diese richtig sind.
+> Wenn der zurückgegebene Gruppen Pfad `null`lautet, überprüfen Sie die Konfiguration der Berechtigungen und des Bereitstellungs Profils, und stellen Sie sicher, dass Sie korrekt sind.
 
-## <a name="application-version-updates"></a>Version von Anwendungsupdates
+## <a name="application-version-updates"></a>Updates der Anwendungs Version
 
-Wenn eine neue Version der Anwendung heruntergeladen wird, wird iOS erstellt ein neues home-Verzeichnis und das neue Anwendungspaket darin gespeichert. iOS verschiebt klicken Sie dann die folgenden Ordnern aus der vorherigen Version Ihres Application Bundles an Ihrem neuen home-Verzeichnis:
+Wenn eine neue Version der Anwendung heruntergeladen wird, erstellt IOS ein neues Basisverzeichnis und speichert das neue Anwendungs Bündel darin. anschließend verschiebt IOS die folgenden Ordner aus der vorherigen Version Ihres Anwendungspakets in das neue Basisverzeichnis:
 
 - **Dokumente**
 - **Bibliothek**
 
-Andere Verzeichnisse können auch über kopiert und unter Ihrem neuen home-Verzeichnis gestellt werden, aber sie sind nicht notwendigerweise kopiert werden, damit Ihre Anwendung nicht auf diesem Systemverhalten verlassen sollten.
+Andere Verzeichnisse können auch über das neue Basisverzeichnis kopiert und abgelegt werden, aber nicht unbedingt kopiert werden, sodass die Anwendung nicht auf dieses Systemverhalten angewiesen ist.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel haben, dass Dateisystemvorgänge mit Xamarin.iOS an eine beliebige andere .NET-Anwendung ähnlich sind. Außerdem der Sandbox der Anwendung eingeführt und untersucht die negative Auswirkungen auf die Sicherheit die fehlschlägt. Als Nächstes untersucht es das Konzept der ein Anwendungspaket. Schließlich werden die speziellen Verzeichnisse, die für Ihre Anwendung aufgelistet und ihre Rollen während des Anwendungsupgrades und Sicherungen erläutert.
+In diesem Artikel wurde gezeigt, dass Dateisystem Vorgänge mit xamarin. IOS allen anderen .NET-Anwendungen ähneln. Außerdem wurde die Anwendungs Sandbox eingeführt und die Auswirkungen auf die Sicherheit untersucht. Als nächstes wurde das Konzept eines Anwendungspakets untersucht. Schließlich wurden die spezialisierten Verzeichnisse aufgelistet, die für Ihre Anwendung verfügbar sind, und ihre Rollen wurden während Anwendungs Upgrades und-Sicherungen erläutert.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Dateisystem-Beispielcode](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
-- [Programmierhandbuch für Datei-System](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
-- [Registrieren die Datei Typen Ihrer App unterstützt](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)
+- [File System-Beispielcode](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
+- [Programmier Handbuch für Dateisysteme](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
+- [Registrieren der von Ihrer APP unterstützten Dateitypen](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

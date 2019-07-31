@@ -1,24 +1,24 @@
 ---
-title: Wischen auf Android "tabbedpage"-Seite
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die Android-Plattform-spezifische genutzt, die es ermöglicht, ein Lesegerät mit einer horizontalen Finger Bewegung zwischen Seiten in einer "tabbedpage".
+title: Tabbedpage Page schwenken unter Android
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Element nutzen, das das Schwenken mit einer horizontalen Fingerbewegung zwischen Seiten in einer tabbedpage ermöglicht.
 ms.prod: xamarin
 ms.assetid: D1C09CCB-7246-41A4-8BD2-FA6FABCF1C72
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 36fd3d047f9f847cfdaadc3787ba81a583f25e57
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 47a941b88ef22a24383f54aad72563a4814ac077
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926451"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649950"
 ---
-# <a name="tabbedpage-page-swiping-on-android"></a>Wischen auf Android "tabbedpage"-Seite
+# <a name="tabbedpage-page-swiping-on-android"></a>Tabbedpage Page schwenken unter Android
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses Android-Plattform-spezifische wird verwendet, um ermöglichen ein Lesegerät mit einer horizontalen Finger Bewegung zwischen Seiten in einem [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Es ist in XAML verwendet, durch Festlegen der [ `TabbedPage.IsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty) angefügten Eigenschaft, um eine `boolean` Wert:
+Diese Android-plattformspezifische wird verwendet, um das Schwenken mit einer horizontalen Fingerbewegung zwischen Seiten in [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)einem zu ermöglichen. Es ist in XAML verwendet, durch Festlegen der [ `TabbedPage.IsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty) angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <TabbedPage ...
@@ -48,7 +48,7 @@ Das Ergebnis ist, wischbewegungen Paging durch die Seiten angezeigt werden, inde
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [Androidspecific-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [Androidspecific. AppCompat-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

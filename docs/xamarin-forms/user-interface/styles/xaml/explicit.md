@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7a149a41a6e50d3b18da166d9c7cb61e36f2d0e7
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 567985b1d6c6aff87e0a6879f05ab711a0095d6f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970458"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647204"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>Explizite Stile in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _Expliziter Stil ist eine, die selektiv auf Steuerelemente angewendet wird, indem die Stileigenschaften._
 
-## <a name="create-an-explicit-style-in-xaml"></a>Erstellen Sie einen expliziten Stil in XAML
+## <a name="create-an-explicit-style-in-xaml"></a>Erstellen eines expliziten Stils in XAML
 
 Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Seitenebene, eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) muss hinzugefügt werden, um die Seite, und klicken Sie dann eine oder mehrere `Style` Deklarationen enthalten sein können, der `ResourceDictionary`. Ein `Style` erfolgt *explizite* erteilen Sie der Deklaration einer `x:Key` -Attribut, das sie einen beschreibenden Schlüssel, in erhalten der `ResourceDictionary`. *Explizite* Stile müssen dann an bestimmte visuelle Elemente angewendet werden, durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften.
 
@@ -70,7 +70,7 @@ Die [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) definiert dr
 
 Darüber hinaus die endgültige [ `Label` ](xref:Xamarin.Forms.Label) verfügt über eine [ `Style` ](xref:Xamarin.Forms.Style) angewendet wird, aber überschreibt auch die [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) Eigenschaft, um einen anderen `Color`Wert.
 
-### <a name="create-an-explicit-style-at-the-control-level"></a>Erstellen Sie einen expliziten Stil auf der Steuerelementebene
+### <a name="create-an-explicit-style-at-the-control-level"></a>Erstellen eines expliziten Stils auf der Steuerelement Ebene
 
 Zusätzlich zur Erstellung *explizite* Formatvorlagen auf Seitenebene, sie können auch erstellt werden auf der Steuerelementebene wie im folgenden Codebeispiel gezeigt:
 
@@ -97,7 +97,7 @@ In diesem Beispiel die *explizite* [ `Style` ](xref:Xamarin.Forms.Style) Instanz
 
 Informationen zum Erstellen von Stilen in einer Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), finden Sie unter [globale Stile](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="create-an-explicit-style-in-c35"></a>Erstellen Sie einen expliziten Stil in C&#35;
+## <a name="create-an-explicit-style-in-c35"></a>Erstellen eines expliziten Stils in C&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) Instanzen können einer Seite hinzugefügt werden [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in C# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`Siehe die folgende Codebeispiel:
 
@@ -184,8 +184,8 @@ Der Konstruktor definiert drei *explizite* Stile, die auf der Seite angewendet w
 ## <a name="related-links"></a>Verwandte Links
 
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Einfache Stile (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [Arbeiten mit Stilen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [Einfache Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [Arbeiten mit Stilen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Stil](xref:Xamarin.Forms.Style)
 - [Set-Methode](xref:Xamarin.Forms.Setter)

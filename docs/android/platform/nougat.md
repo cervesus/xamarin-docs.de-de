@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 7a50488d8b18682dffd76dee582767c063920840
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: a28368e0fa4574fbb92a43dbd650a127008f5d06
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510508"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643463"
 ---
 # <a name="nougat-features"></a>Nougat-Features
 
@@ -160,7 +160,7 @@ if (!IsInMultiWindowMode) {
 }
 ```
 
-Die Beispiel-app " [multiwindowplayground](https://developer.xamarin.com/samples/monodroid/android-n/MultiWindowPlayground/) " enthält C# Code, der veranschaulicht, wie Sie die Vorteile mehrerer Fensterbenutzer Oberflächen mit ihrer App nutzen können.
+Die Beispiel-app " [multiwindowplayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground) " enthält C# Code, der veranschaulicht, wie Sie die Vorteile mehrerer Fensterbenutzer Oberflächen mit ihrer App nutzen können.
 
 Weitere Informationen zum Modus für mehrere Fenster finden Sie [unter Unterstützung mehrerer Fenster](https://developer.android.com/guide/topics/ui/multi-window.html).
 
@@ -210,7 +210,7 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
    .AddAction (actionReplyByRemoteInput);
 ```
 
-Die Beispiel-App für den C# [Messaging Dienst](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/) enthält Code, der veranschaulicht, wie `RemoteInput` Benachrichtigungen mit einem-Objekt erweitert werden. Weitere Informationen zum Hinzufügen von Inline Antwort Aktionen zu Ihrer APP für Android 7,0 oder höher finden Sie im Thema Android Response [to Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct) .
+Die Beispiel-App für den C# [Messaging Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) enthält Code, der veranschaulicht, wie `RemoteInput` Benachrichtigungen mit einem-Objekt erweitert werden. Weitere Informationen zum Hinzufügen von Inline Antwort Aktionen zu Ihrer APP für Android 7,0 oder höher finden Sie im Thema Android Response [to Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct) .
 
 
 #### <a name="bundled-notifications"></a>Gebündelte Benachrichtigungen
@@ -253,15 +253,15 @@ Weitere Informationen zur Funktion "neue APP-Verknüpfungen" in Android 7,1 find
 
 Es stehen mehrere xamarin. Android-Beispiele zur Verfügung, die Ihnen zeigen, wie Sie die Funktionen von Android-Nougat nutzen können:
 
--   [Multiwindowplayground](https://developer.xamarin.com/samples/monodroid/android-n/MultiWindowPlayground/) veranschaulicht die Verwendung der Multi-Window-API, die in Android-Nougat verfügbar ist. Sie können die Beispiel-app in den multiwindows-Modus wechseln, um zu sehen, wie sich diese auf den Lebenszyklus und das Verhalten der APP auswirkt.
+-   [Multiwindowplayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground) veranschaulicht die Verwendung der Multi-Window-API, die in Android-Nougat verfügbar ist. Sie können die Beispiel-app in den multiwindows-Modus wechseln, um zu sehen, wie sich diese auf den Lebenszyklus und das Verhalten der APP auswirkt.
 
--   Der [Messaging Dienst](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/) ist ein einfacher Dienst, der `NotificationCompatManager`mithilfe von Benachrichtigungen sendet. Außerdem wird die Benachrichtigung mit einem `RemoteInput` -Objekt erweitert, damit Android-Nougat-Geräte per Text direkt aus der Benachrichtigung antworten können, ohne eine APP öffnen zu müssen.
+-   Der [Messaging Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) ist ein einfacher Dienst, der `NotificationCompatManager`mithilfe von Benachrichtigungen sendet. Außerdem wird die Benachrichtigung mit einem `RemoteInput` -Objekt erweitert, damit Android-Nougat-Geräte per Text direkt aus der Benachrichtigung antworten können, ohne eine APP öffnen zu müssen.
 
--   [Aktive Benachrichtigungen](https://developer.xamarin.com/samples/monodroid/android-n/ActiveNotifications/) veranschaulichen, wie die `NotificationManager` API verwendet wird, um Ihnen mitzuteilen, wie viele Benachrichtigungen derzeit von Ihrer Anwendung angezeigt werden.
+-   [Aktive Benachrichtigungen](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications) veranschaulichen, wie die `NotificationManager` API verwendet wird, um Ihnen mitzuteilen, wie viele Benachrichtigungen derzeit von Ihrer Anwendung angezeigt werden.
 
--   Bereichs bezogener [Verzeichnis Zugriff](https://developer.xamarin.com/samples/monodroid/android-n/ScopedDirectoryAccess/) Veranschaulicht die Verwendung der Bereichs bezogenen Verzeichniszugriffs-API für den einfachen Zugriff auf bestimmte Verzeichnisse. Dies dient als Alternative zum Definieren `READ_EXTERNAL_STORAGE` von-oder `WRITE_EXTERNAL_STORAGE` -Berechtigungen in ihrem Manifest.
+-   Bereichs bezogener [Verzeichnis Zugriff](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess) Veranschaulicht die Verwendung der Bereichs bezogenen Verzeichniszugriffs-API für den einfachen Zugriff auf bestimmte Verzeichnisse. Dies dient als Alternative zum Definieren `READ_EXTERNAL_STORAGE` von-oder `WRITE_EXTERNAL_STORAGE` -Berechtigungen in ihrem Manifest.
 
--   [Direkter Start](https://developer.xamarin.com/samples/monodroid/android-n/DirectBoot/) Veranschaulicht das Speichern von Daten in einem Geräte verschlüsselten Speicher, der immer verfügbar ist, wenn das Gerät vor und nach der Eingabe von Benutzer Anmelde Informationen (PIN/Muster/Kennwort) gestartet wird.
+-   [Direkter Start](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot) Veranschaulicht das Speichern von Daten in einem Geräte verschlüsselten Speicher, der immer verfügbar ist, wenn das Gerät vor und nach der Eingabe von Benutzer Anmelde Informationen (PIN/Muster/Kennwort) gestartet wird.
 
 
 ## <a name="summary"></a>Zusammenfassung

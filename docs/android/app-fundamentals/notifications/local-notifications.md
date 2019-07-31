@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: cd35dc0058ff9f48c98aea90a7decac5e9915cfe
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 19998f685955ce118ffe37e7624fd43b082ab994
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508955"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644419"
 ---
 # <a name="local-notifications-on-android"></a>Lokale Benachrichtigungen unter Android
 
@@ -430,7 +430,7 @@ Die Zeichen folgen Nachricht (die an die- `PutExtra` Methode der Absicht geleite
 string message = Intent.Extras.GetString ("message", "");
 ```
 
-Diese abgerufene Meldung "Greetings from mainactivity!" wird auf dem `SecondActivity` Bildschirm angezeigt, wie im obigen Screenshot dargestellt. Wenn der Benutzer die Schalt  Fläche `SecondActivity`"zurück" drückt, führt die Navigation aus der APP und zurück zum Bildschirm, der vor dem Start der APP liegt.
+Diese abgerufene Meldung "Greetings from mainactivity!" wird auf dem `SecondActivity` Bildschirm angezeigt, wie im obigen Screenshot dargestellt. Wenn der Benutzer die Schalt Fläche `SecondActivity`"zurück" drückt, führt die Navigation aus der APP und zurück zum Bildschirm, der vor dem Start der APP liegt.
 
 Weitere Informationen zum Erstellen von ausstehenden Intents finden Sie unter " [tzdingintent](xref:Android.App.PendingIntent)".
 
@@ -501,7 +501,7 @@ In diesem Beispiel werden der Meldungs Text und der Zusammenfassungs Text im `Bi
 
 ### <a name="image-style"></a>Bildstil
 
-Der *Bildstil* (auch als *großer Bildstil* bezeichnet) ist ein erweitertes Benachrichtigungs Format, das Sie verwenden können, um ein Bild im Text einer Benachrichtigung anzuzeigen. Beispielsweise kann eine Bildschirm-APP oder eine Foto-APP den *Bild* Benachrichtigungs Stil verwenden, um dem Benutzer eine Benachrichtigung über das zuletzt erfasste Bild bereitzustellen. Beachten Sie, dass die maximale Höhe  der Abbild Benachrichtigung 256 &ndash; ist, dass DP Android die Größe des Bilds in die Größenbeschränkung der maximalen Höhe innerhalb der Grenzen des verfügbaren Arbeitsspeichers einfügt.
+Der *Bildstil* (auch als *großer Bildstil* bezeichnet) ist ein erweitertes Benachrichtigungs Format, das Sie verwenden können, um ein Bild im Text einer Benachrichtigung anzuzeigen. Beispielsweise kann eine Bildschirm-APP oder eine Foto-APP den *Bild* Benachrichtigungs Stil verwenden, um dem Benutzer eine Benachrichtigung über das zuletzt erfasste Bild bereitzustellen. Beachten Sie, dass die maximale Höhe der Abbild Benachrichtigung 256 &ndash; ist, dass DP Android die Größe des Bilds in die Größenbeschränkung der maximalen Höhe innerhalb der Grenzen des verfügbaren Arbeitsspeichers einfügt.
 
 Wie alle erweiterten layoutbenachrichtigungen werden *Bild* Benachrichtigungen zuerst in einem kompakten Format angezeigt, das einen Auszug aus dem zugehörigen Meldungs Text anzeigt:
 
@@ -572,7 +572,7 @@ Wenn der Benutzer die Benachrichtigung abzieht, wird er erweitert, um eine e-Mai
 
 ![Beispiel für erweiterte Posteingangs Benachrichtigung](local-notifications-images/21-inbox-expanded.png)
 
-Um eine Posteingangs Benachrichtigung zu erstellen,  instanziieren `NotificationCompat.Builder` Sie ein-Objekt wie zuvor, und fügen Sie dem `NotificationCompat.Builder`ein [inboxstyle](xref:Android.App.Notification.InboxStyle) -Objekt hinzu. Im Folgenden ein Beispiel:
+Um eine Posteingangs Benachrichtigung zu erstellen, instanziieren `NotificationCompat.Builder` Sie ein-Objekt wie zuvor, und fügen Sie dem `NotificationCompat.Builder`ein [inboxstyle](xref:Android.App.Notification.InboxStyle) -Objekt hinzu. Im Folgenden ein Beispiel:
 
 ```csharp
 // Instantiate the Inbox style:
@@ -711,7 +711,7 @@ Die Funktion " *nicht stören* " (neu in Android 5,0) filtert Benachrichtigungen
 
 Wenn der Benutzer konfiguriert ist, dass *nicht* alle Interrupts außer bei Telefon anrufen blockiert werden (wie im obigen Screenshot dargestellt), ermöglicht Android, dass Benachrichtigungen mit der Kategorieeinstellung `Notification.CategoryCall` angezeigt werden, während das Gerät *nicht störmodus* . Beachten Sie `Notification.CategoryAlarm` , dass Benachrichtigungen im Modus " *nicht stören* " niemals blockiert werden.
 
-Das [localnotification](https://developer.xamarin.com/samples/monodroid/LocalNotifications) -Beispiel veranschaulicht, wie `NotificationCompat.Builder` verwendet wird, um eine zweite Aktivität aus einer Benachrichtigung zu starten. Dieser Beispielcode wird in der exemplarischen Vorgehensweise [Verwenden von lokalen Benachrichtigungen in xamarin. Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) erläutert.
+Das [localnotification](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications) -Beispiel veranschaulicht, wie `NotificationCompat.Builder` verwendet wird, um eine zweite Aktivität aus einer Benachrichtigung zu starten. Dieser Beispielcode wird in der exemplarischen Vorgehensweise [Verwenden von lokalen Benachrichtigungen in xamarin. Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) erläutert.
 
 ### <a name="notification-styles"></a>Benachrichtigungs Stile
 
@@ -758,8 +758,8 @@ Richtlinien zum Entwerfen von Benachrichtigungen für Android finden Sie unter [
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Notificationslab (Beispiel)](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
-- [Localbenachrichtigungen (Beispiel)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
+- [Notificationslab (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-notificationslab)
+- [Localbenachrichtigungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
 - [Lokale Benachrichtigungen in Android Exemplarische Vorgehensweise](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
 - [Benachrichtigen des Benutzers](https://developer.android.com/training/notify-user/index.html)
 - [Benachrichtigungen](xref:Android.App.Notification)
