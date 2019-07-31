@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: c5fa46a67496123eb105ae12404d5607032f5ac1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 24f6eac93dd3095df70bbb326388cd9ed47f395c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971149"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657058"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>Stilvererbung in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _Stile können andere Stile Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben._
 
-## <a name="style-inheritance-in-xaml"></a>Stilvererbung in XAML
+## <a name="style-inheritance-in-xaml"></a>Stil Vererbung in XAML
 
 Stilvererbung wird ausgeführt, indem die [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) Eigenschaft zu einem vorhandenen [ `Style` ](xref:Xamarin.Forms.Style). In XAML, erfolgt dies durch Festlegen der `BasedOn` Eigenschaft, um eine `StaticResource` Markuperweiterung, die ein zuvor erstelltes verweist `Style`. In C# geschrieben, erfolgt dies durch Festlegen der `BasedOn` Eigenschaft, um eine `Style` Instanz.
 
@@ -69,7 +69,7 @@ Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und leg
 > [!NOTE]
 > Ein impliziter Stil von expliziter Stil abgeleitet werden kann, aber ein expliziter Stil kann nicht in ein impliziter Stil abgeleitet werden.
 
-### <a name="respecting-the-inheritance-chain"></a>Unter Beachtung der Vererbungskette
+### <a name="respecting-the-inheritance-chain"></a>Berücksichtigen der Vererbungs Kette
 
 Ein Stil kann nur von Stilen auf derselben Ebene oder höher, erben in der Hierarchie anzeigen. Dies bedeutet Folgendes:
 
@@ -108,7 +108,7 @@ Diese Vererbungskette wird im folgenden Codebeispiel veranschaulicht:
 
 In diesem Beispiel `labelStyle` und `buttonStyle` sind Ressourcen der Ebene, während `baseStyle` wird eine Seite-Ressource auf. Allerdings while `labelStyle` und `buttonStyle` erben `baseStyle`, es ist nicht möglich, dass `baseStyle` das erben `labelStyle` oder `buttonStyle`, da ihre jeweiligen Positionen in der Hierarchie von Inhaltsansichten.
 
-## <a name="style-inheritance-in-c35"></a>Style-Vererbung in C&#35;
+## <a name="style-inheritance-in-c35"></a>Stil Vererbung in C&#35;
 
 Der entsprechende C#-Seite, in denen [ `Style` ](xref:Xamarin.Forms.Style) Instanzen direkt zugewiesen sind die [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften der Steuerelemente erforderlich, wird im folgenden Codebeispiel wird angezeigt:
 
@@ -158,8 +158,8 @@ Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und leg
 ## <a name="related-links"></a>Verwandte Links
 
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Einfache Stile (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [Arbeiten mit Stilen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [Einfache Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [Arbeiten mit Stilen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Stil](xref:Xamarin.Forms.Style)
 - [Set-Methode](xref:Xamarin.Forms.Setter)

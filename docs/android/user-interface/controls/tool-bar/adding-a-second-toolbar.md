@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: fc95c05c1945464cd9cac8565d8a11ff1b4c7e1d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5d2fec537f10ad3ef5300275c9851d4f57bc961d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61175155"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645156"
 ---
 # <a name="adding-a-second-toolbar"></a>Hinzufügen einer zweiten Symbolleiste
 
 
 ## <a name="overview"></a>Übersicht 
 
-Die `Toolbar` erreichen mehr als ersetzen die Aktionsleiste &ndash; mehrmals innerhalb einer Aktivität verwendet werden, kann er für die Platzierung an einer beliebigen Stelle auf dem Bildschirm angepasst werden und sie können nur eine partielle Breite des Bildschirms erstreckt konfiguriert werden. Die folgenden Beispiele veranschaulichen, wie Sie ein zweites `Toolbar` und platzieren Sie sie am unteren Rand des Bildschirms. Dies `Toolbar` implementiert **Kopie**, **Ausschneiden**, und **einfügen** Menüelemente. 
+Der `Toolbar` kann die Aktionsleiste &ndash; , die mehrmals in einer Aktivität verwendet werden kann, nicht ersetzen, Sie kann an beliebiger Stelle auf dem Bildschirm angepasst werden und kann so konfiguriert werden, dass Sie nur eine partielle Breite des Bildschirms umfasst. In den folgenden Beispielen wird veranschaulicht, wie ein `Toolbar` zweites erstellt und am unteren Bildschirmrand platziert wird. Hierdurch werden die Menü Elemente **Kopieren**, **Ausschneiden**und **Einfügen** implementiert.`Toolbar` 
 
 
-## <a name="define-the-second-toolbar"></a>Definieren Sie die zweite Symbolleiste 
+## <a name="define-the-second-toolbar"></a>Definieren der zweiten Symbolleiste 
 
-Bearbeiten Sie die Layoutdatei **Main.axml** und seinen Inhalt mit mit den folgenden XML-Code ersetzen:
+Bearbeiten Sie die Layoutdatei " **Main. axml** ", und ersetzen Sie deren Inhalt durch den folgenden XML-Code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -54,53 +54,53 @@ Bearbeiten Sie die Layoutdatei **Main.axml** und seinen Inhalt mit mit den folge
 </RelativeLayout>
 ```
 
-Dieser XML-Code fügt eine zweite `Toolbar` zum unteren Rand des Bildschirms mit einer leeren `ImageView` füllen die Mitte des Bildschirms. Die Höhe dieses `Toolbar` festgelegt ist, der die Höhe des eine Aktionsleiste: 
+Dieses XML fügt am unteren `Toolbar` Rand des Bildschirms eine Sekunde hinzu, wobei `ImageView` die Anzeige in der Mitte des Bildschirms leer ist. Die Höhe dieser `Toolbar` wird auf die Höhe einer Aktionsleiste festgelegt: 
 
 ```xml
 android:minHeight="?android:attr/actionBarSize"
 ```
 
-Die Hintergrundfarbe der `Toolbar` festgelegt ist, um eine Farbe für Akzente, die als Nächstes definiert werden:
+Die Hintergrundfarbe dieser `Toolbar` wird auf eine Akzentfarbe festgelegt, die als nächstes definiert wird:
 
 ```xml
 android:background="?android:attr/colorAccent
 ```
 
-Beachten Sie, das von diesem `Toolbar` basiert auf einem anderen Design (**ThemeOverlay.Material.Dark.ActionBar**) als durch die `Toolbar` in erstellt [Ersetzen der Aktionsleiste](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md) &ndash;es ist nicht gebunden, auf der Aktivität im Fenster Decor oder auf das Design verwendet, in der ersten `Toolbar`.
+Beachten Sie, `Toolbar` dass dies auf einem anderen Design ("**meoverlay. Material. Dark. Aktionsleiste**") basiert als das, `Toolbar` das von dem erstellt wird, das [ersetzt, das ersetzt, Aktionsleiste](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md) &ndash; es nicht an das Fenster der Aktivität gebunden ist oder das in der ersten `Toolbar`verwendete Design.
 
-Bearbeiten Sie **Resources/values/styles.xml** und der Style-Definition die folgenden Akzentfarbe hinzu: 
+Bearbeiten Sie **Resources/Values/Styles. XML** , und fügen Sie der Format Definition die folgende Akzentfarbe hinzu: 
 
 ```xml
 <item name="android:colorAccent">#C7A935</item>
 ```
 
-Dadurch wird der unteren Symbolleiste eine dunkle gelbe Farbe. Erstellen und Ausführen der app können Sie eine leere zweite Symbolleiste am unteren Rand des Bildschirms angezeigt: 
+Dadurch wird der unteren Symbolleiste eine dunkle Bernsteinfarbe angezeigt. Beim entwickeln und Ausführen der APP wird unten auf dem Bildschirm eine leere zweite Symbolleiste angezeigt: 
 
-[![Screenshot der app mit dem gelben zweite Symbolleiste am unteren Rand des Bildschirms](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
+[![Screenshot der APP mit gelber zweiter Symbolleiste am unteren Bildschirmrand](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
  
-## <a name="add-edit-menu-items"></a>Hinzufügen von Menüelementen bearbeiten 
+## <a name="add-edit-menu-items"></a>Bearbeitungs Menü Elemente hinzufügen 
 
-In diesem Abschnitt wird erläutert, wie im unteren Bereich Menüelemente bearbeiten hinzuzufügende `Toolbar`. 
+In diesem Abschnitt wird erläutert, wie Sie Menü Elemente bearbeiten unten `Toolbar`hinzufügen. 
 
-Hinzufügen von Menüelementen auf eine sekundäre Datenbank `Toolbar`: 
+So fügen Sie einem sekundären `Toolbar`Menü Elemente hinzu: 
 
-1.  Fügen Sie im Menüsymbole, um die `mipmap-` Ordner des app-Projekts (falls erforderlich).
+1.  Fügen Sie den `mipmap-` Ordnern des App-Projekts (falls erforderlich) Menü Symbole hinzu.
 
-2.  Definieren Sie den Inhalt der Menüelemente durch Hinzufügen einer zusätzlichen Menü-Ressourcendatei zu **ressourcenmenü/**. 
+2.  Hiermit wird der Inhalt der Menü Elemente durch Hinzufügen einer zusätzlichen Menü Ressourcen Datei zu **Ressourcen/Menü**definiert. 
 
-3.  In der Aktivitäts `OnCreate` -Methode finden Sie die `Toolbar` (durch Aufrufen von `FindViewById`) und vergrößert werden soll die `Toolbar`des Menüs.
+3.  Suchen Sie in der `OnCreate` -Methode der Aktivität `Toolbar` nach dem ( `FindViewById`durch Aufrufen von), `Toolbar`und erhöhen Sie die Menüs des s.
 
-4.  Implementieren Sie einen Click-Ereignishandler in `OnCreate` für die neuen Menüelemente. 
+4.  Implementieren Sie einen Click- `OnCreate` Handler in für die neuen Menü Elemente. 
 
-Die folgenden Abschnitte zeigen diesen Prozess im Detail: **Ausschneiden**, **Kopie**, und **einfügen** Menüelemente werden hinzugefügt, die nach-unten `Toolbar`. 
+In den folgenden Abschnitten wird dieser Prozess ausführlich veranschaulicht: Die Menü Elemente **Ausschneiden**, **Kopieren**und **Einfügen** werden am unteren Rand `Toolbar`hinzugefügt. 
 
 
 
-### <a name="define-the-edit-menu-resource"></a>Definieren Sie die Menüressource bearbeiten
+### <a name="define-the-edit-menu-resource"></a>Definieren der Menü Ressource "Bearbeiten"
 
-In der **ressourcenmenü/** Unterverzeichnis, erstellen Sie eine neue XML-Datei namens **edit_menus.xml** und Ersetzen Sie den Inhalt durch folgendes XML:
+Erstellen Sie im Unterverzeichnis **Ressourcen/Menü** eine neue XML-Datei mit dem Namen **edit_menus. XML** , und ersetzen Sie den Inhalt durch den folgenden XML-Code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -123,13 +123,13 @@ In der **ressourcenmenü/** Unterverzeichnis, erstellen Sie eine neue XML-Datei 
 </menu>
 ```
 
-Dieser XML-Code erstellt die **Ausschneiden**, **Kopie**, und **einfügen** Menüelemente (mithilfe von Symbolen, die hinzugefügt wurden, die `mipmap-` Ordner im [Ersetzen der Aktionsleiste ](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
+Dieser XML-Code erstellt die Menü Elemente **Ausschneiden**, **Kopieren**und **Einfügen** (mithilfe von Symbolen, die `mipmap-` zu den Ordnern hinzugefügt wurden, um [den Aktionsleiste zu ersetzen](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
 
 
-### <a name="inflate-the-menus"></a>Vergrößerung der Menüs
+### <a name="inflate-the-menus"></a>Die Menüs erhöhen
 
-Am Ende der `OnCreate` -Methode in der **"mainactivity.cs"**, fügen Sie die folgenden Codezeilen hinzu: 
+Fügen Sie am Ende `OnCreate` der-Methode in **MainActivity.cs**die folgenden Codezeilen hinzu: 
 
 ```csharp
 var editToolbar = FindViewById<Toolbar>(Resource.Id.edit_toolbar);
@@ -140,28 +140,28 @@ editToolbar.MenuItemClick += (sender, e) => {
 };
 ```
 
-Dieser Code sucht nach der `edit_toolbar` anzeigen, die in definierten **Main.axml**, legt den Titel auf **bearbeiten**, und vergrößert die Menüelemente (definiert **edit_menus.xml**). Definiert ein Menü click-Ereignishandler, die ein Popup, um anzugeben, welches Symbol Bearbeiten angetippt wurde anzeigt. 
+In diesem Code wird die `edit_toolbar` in " **Main. axml**" definierte Sicht festgelegt, deren Titel auf " **Bearbeitung**" festgelegt und die Menü Elemente (definiert in **edit_menus. XML**) vergrößert. Er definiert einen Menü Klick Handler, der einen Toast anzeigt, um anzugeben, welches Bearbeitungs Symbol angetippt wurde. 
 
-Erstellen Sie die App, und führen Sie sie aus. Wenn die app ausgeführt wird, werden der Text und Symbole, die weiter oben hinzugefügt angezeigt, wie hier gezeigt: 
+Erstellen Sie die App, und führen Sie sie aus. Wenn die app ausgeführt wird, werden der oben hinzugefügte Text und die Symbole wie hier dargestellt angezeigt: 
 
-[![Diagramm der unteren Symbolleiste mit Ausschneiden, kopieren und Einfügen von Symbolen](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
+[![Diagramm der unteren Symbolleiste mit Ausschneide-, Kopier-und Einfüge Symbolen](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
-Durch Tippen auf die **Ausschneiden** Symbol "Menü" bewirkt, dass den folgenden Toast angezeigt werden: 
+Wenn Sie auf das Menü " **Ausschneiden** " tippen, wird der folgende Toast angezeigt: 
 
-[![Screenshot des Toasts gibt an, dass das Menüsymbol Ausschneiden angetippt wurde](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
+[![Screenshot des Popups, der anzeigt, dass das Menü Symbol "Ausschneiden"](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
-Durch Tippen auf die Menüelemente in beiden Symbolleiste wird das resultierende Popups angezeigt: 
+Wenn Sie auf eine der beiden Symbolleisten tippen, werden die resultierenden Elemente angezeigt: 
 
-[![Screenshots des Popups für speichern, kopieren, und fügen Sie Menüelemente getippt wird](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
+[![Screenshots von Popups zum Speichern, kopieren und Einfügen von Menü Elementen, die getippt werden](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
 
-## <a name="the-up-button"></a>Die oben-Taste 
+## <a name="the-up-button"></a>Die Schaltfläche nach oben 
 
-Die meisten Android-apps basieren auf der **wieder** für app-Navigation Schaltfläche; durch Drücken der **wieder** Schaltfläche wird der Benutzer zum vorherigen Bildschirm.
-Aber Sie können auch bereitstellen möchten eine **einrichten** Schaltfläche, die zum Navigieren zum Hauptbildschirm von der app "oben" vereinfacht. Wenn der Benutzer wählt die **einrichten** Schaltfläche der Benutzer nach oben zu einer höheren Ebene in der app-Hierarchie verschoben &ndash; , also die app wird dem Benutzer wieder mehrere Aktivitäten in den Backstack anstelle von Abholvorgänge wieder an die zuvor besuchten Aktivität. 
+Die meisten Android-Apps basieren auf der Schaltfläche **zurück** für die APP-Navigation. durch Drücken der Schaltfläche " **zurück** " wird der Benutzer zum vorherigen Bildschirm.
+Sie können jedoch auch eine Schaltfläche "nach **oben** " bereitstellen, die es Benutzern leicht macht, zum Hauptbildschirm der APP zu navigieren. Wenn der Benutzer die Schaltfläche "nach **oben** " auswählt, wird der Benutzer in der APP- &ndash; Hierarchie auf eine höhere Ebene verschoben, d. h., die APP zeigt den Benutzer auf mehrere Aktivitäten im BackStack an, anstatt zur zuvor besuchten Aktivität zurückzukehren. 
 
-So aktivieren Sie die **einrichten** Schaltfläche in einer zweiten Aktivität, die verwendet eine `Toolbar` aufrufen, als der Aktionsleiste der `SetDisplayHomeAsUpEnabled` und `SetHomeButtonEnabled` Methoden in der zweiten Aktivitätssymbols `OnCreate` Methode:
+Um die Schaltfläche nach **oben** in einer zweiten Aktivität zu aktivieren `Toolbar` , die eine als Aktionsleiste verwendet `SetDisplayHomeAsUpEnabled` , `SetHomeButtonEnabled` müssen Sie die-Methode und `OnCreate` die-Methode in der-Methode der zweiten Aktivität abrufen:
 
 ```csharp
 SetActionBar (toolbar);
@@ -170,7 +170,7 @@ ActionBar.SetDisplayHomeAsUpEnabled (true);
 ActionBar.SetHomeButtonEnabled (true);
 ```
 
-Die [Unterstützung des v7-Symbolleiste](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/) Codebeispiel wird veranschaulicht, die **einrichten** der Schaltfläche. In diesem Beispiel (das die Anwendungsentwicklung AppCompat-Bibliothek verwendet wird) implementiert, eine zweite Aktivität, die die Symbolleiste verwendet **einrichten** Schaltfläche für die hierarchische Navigation zurück zur vorherigen Aktivität. In diesem Beispiel die `DetailActivity` Schaltfläche "Start" ermöglicht die **einrichten** Schaltfläche dazu die folgenden `SupportActionBar` Methodenaufrufe: 
+Das Codebeispiel für die [Unterstützung von V7-Symbolleiste](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar) zeigt die Schaltfläche **up** in Aktion In diesem Beispiel (das die im folgenden beschriebene AppCompat-Bibliothek verwendet) wird eine zweite-Aktivität implementiert, die **die Symbolleisten** -Schaltfläche für die hierarchische Navigation zurück zur vorherigen Aktivität verwendet. In diesem Beispiel aktiviert die `DetailActivity` Start Schaltfläche die Schaltfläche nach **oben** , `SupportActionBar` indem die folgenden Methodenaufrufe durchführen: 
 
 ```csharp
 SetSupportActionBar (toolbar);
@@ -179,15 +179,15 @@ SupportActionBar.SetDisplayHomeAsUpEnabled (true);
 SupportActionBar.SetHomeButtonEnabled (true);
 ```
 
-Wenn der Benutzer navigiert `MainActivity` zu `DetailActivity`, `DetailActivity` zeigt eine **einrichten** Schaltfläche (nach links zeigenden Pfeil), wie im Screenshot dargestellt:
+Wenn der Benutzer `MainActivity` von zu `DetailActivity`navigiert, zeigt `DetailActivity` das eine nach- **oben** -Taste (nach links zeigenden Pfeil) an, wie im Screenshot gezeigt:
 
-[![Beispielhafter Screenshot von einer linken Schaltfläche Pfeil auf der Symbolleiste](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
+[![Screenshot: Beispiel für einen Pfeil nach links in der Symbolleiste](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
-Tippen Sie auf diese **einrichten** -Schaltfläche bewirkt, dass die app wieder `MainActivity`. In eine komplexere Anwendung mit mehreren Ebenen der Hierarchie würde auf diese Schaltfläche den Benutzer auf die nächsthöhere Ebene in der app und nicht auf dem vorherigen Bildschirm zurück. 
+Wenn **Sie** auf diese Schaltfläche klicken, wird die `MainActivity`APP zu zurückgegeben. Wenn Sie in einer komplexeren App mit mehreren Ebenen der Hierarchie auf diese Schaltfläche tippen, wird der Benutzer auf die nächsthöhere Ebene der APP und nicht auf den vorherigen Bildschirm zurückgegeben. 
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Lollipop-Symbolleiste (Beispiel)](https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/)
-- [AppCompat-Symbolleiste (Beispiel)](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/)
+- [Lollipop-Symbolleiste (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar)
+- [AppCompat-Symbolleiste (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar)

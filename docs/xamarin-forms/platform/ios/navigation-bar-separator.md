@@ -1,24 +1,24 @@
 ---
-title: "\"NavigationPage\"-Trennzeichens unter iOS"
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, nutzen Sie die iOS-Plattform-spezifische, die die Trennlinie verbirgt und Schattenkopien, die am unteren Rand der Navigationsleiste auf einer "NavigationPage" ist.
+title: Trennzeichen für Navigations Seitenleiste unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Datei nutzen, die die Trennlinie und den Schatten im unteren Bereich der Navigationsleiste auf einer navigationpage verbirgt.
 ms.prod: xamarin
 ms.assetid: 5A45748A-6779-4441-82F2-415BD68473B9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 7e367d742145c6f984c4485afe9201d4b7ae2e38
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: e33b25a9eb97009ca0a260662d492560114fd692
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925671"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655469"
 ---
-# <a name="navigationpage-bar-separator-on-ios"></a>"NavigationPage"-Trennzeichens unter iOS
+# <a name="navigationpage-bar-separator-on-ios"></a>Trennzeichen für Navigations Seitenleiste unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses iOS-Plattform-spezifische Blendet die Trennlinie und Schattenkopien, die am unteren Rand der Navigationsleiste auf einen [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). Es ist in XAML verwendet, durch Festlegen der [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) bindbare Eigenschaft `false`:
+Diese IOS-plattformspezifische verbirgt die Trennlinie und den Schatten, der sich am unteren Rand der Navigationsleiste [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)eines befindet. Es ist in XAML verwendet, durch Festlegen der [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) bindbare Eigenschaft `false`:
 
 ```xaml
 <NavigationPage ...
@@ -51,6 +51,6 @@ Das Ergebnis ist,-Trennzeichens. die Navigation auf einer [ `NavigationPage` ](x
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -1,24 +1,24 @@
 ---
-title: Seite Status Sichtbarkeit unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die plattformspezifischen iOS nutzen, die die Sichtbarkeit der Statusleiste auf einer Seite festlegt wird.
+title: Sichtbarkeit von Seiten Status Leiste unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die plattformspezifische IOS-Anwendung verwendet wird, die die Sichtbarkeit der Statusleiste auf einer Seite festlegt.
 ms.prod: xamarin
 ms.assetid: D8BB7C24-A27F-4758-8557-6A81F909ABD9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 66bd6c1ca2ccc3e5335a790950cbf1a792a7df82
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: a187efa9310fa150ddc884d8b42da5ccb9ecee11
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925399"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655843"
 ---
-# <a name="page-status-bar-visibility-on-ios"></a>Seite Status Sichtbarkeit unter iOS
+# <a name="page-status-bar-visibility-on-ios"></a>Sichtbarkeit von Seiten Status Leiste unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses iOS-Plattform-spezifische wird verwendet, um die Sichtbarkeit der Statusleiste für Festlegen einer [ `Page` ](xref:Xamarin.Forms.Page), sowie die Möglichkeit zum Steuern, wie die Statusleiste eintritt oder dieses verlässt die `Page`. Er wird genutzt, in XAML durch Festlegen der `Page.PrefersStatusBarHidden` angefügte Eigenschaft auf einen Wert von der `StatusBarHiddenMode` -Enumeration und optional die `Page.PreferredStatusBarUpdateAnimation` angefügte Eigenschaft auf einen Wert von der `UIStatusBarAnimation` Enumeration:
+Diese plattformspezifische IOS-Datei wird verwendet, um die Sichtbarkeit der Statusleiste [`Page`](xref:Xamarin.Forms.Page)eines festzulegen, und bietet die Möglichkeit, zu steuern, wie die Statusleiste `Page`in das-Element gelangt oder Sie verlässt. Er wird genutzt, in XAML durch Festlegen der `Page.PrefersStatusBarHidden` angefügte Eigenschaft auf einen Wert von der `StatusBarHiddenMode` -Enumeration und optional die `Page.PreferredStatusBarUpdateAnimation` angefügte Eigenschaft auf einen Wert von der `UIStatusBarAnimation` Enumeration:
 
 ```xaml
 <ContentPage ...
@@ -53,6 +53,6 @@ Die `Page.SetPreferredStatusBarUpdateAnimation` Methode wird verwendet, um festz
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

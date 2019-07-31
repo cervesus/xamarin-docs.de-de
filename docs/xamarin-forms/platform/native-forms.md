@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/03/2019
-ms.openlocfilehash: dad68f5daaf3a4c85f130ee219472b867163fd71
-ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
+ms.openlocfilehash: 88483f151852e882d6bac42a2d0c3fd0857060fb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329996"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653239"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms in Xamarin Native-Projekten
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
 
 In der Regel eine Xamarin.Forms-Anwendung enthält eine oder mehrere Seiten, die von abgeleitet [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), und für diese Seiten werden alle Plattformen in einer .NET Standard Library-Projekt oder ein freigegebenes Projekt freigegeben. Native Formulare können jedoch `ContentPage`-abgeleitete Seiten direkt in systemeigenen Xamarin.iOS, Xamarin.Android und UWP-Anwendungen hinzugefügt werden. Im Vergleich zu, müssen das systemeigene Projekt nutzen `ContentPage`-abgeleitete Seiten aus einer .NET Standard Library-Projekt oder ein freigegebenes Projekt, den Vorteil, Hinzufügen von Seiten direkt in systemeigenen Projekten ist, dass die Seiten mit nativer Sichten erweitert werden können. Native Ansichten können dann den Namen in XAML mit `x:Name` und im Code-Behind verwiesen wird. Weitere Informationen zu systemeigenen Ansichten finden Sie unter [nativer Sichten](~/xamarin-forms/platform/native-views/index.md).
 
@@ -372,5 +372,5 @@ Weitere Informationen zur Unterstützung der Rückwärtsnavigation in UWP finden
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [NativeForms (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
+- [NativeForms (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
 - [Native Ansichten](~/xamarin-forms/platform/native-views/index.md)

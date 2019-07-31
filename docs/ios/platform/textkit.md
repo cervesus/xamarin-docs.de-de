@@ -1,24 +1,24 @@
 ---
-title: TextKit in Xamarin.iOS
-description: In diesem Dokument wird beschrieben, wie TextKit in Xamarin.iOS verwendet wird. TextKit bietet leistungsstarke Text Layout- und Renderingaufgaben-Funktionen.
+title: Textkit in xamarin. IOS
+description: In diesem Dokument wird die Verwendung von textkit in xamarin. IOS beschrieben. Textkit bietet leistungsstarke Funktionen für das Layout und Rendering von Text.
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f08e37d17cc32e45232d54cc4a51bb48d7ec94b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4d4785d6e556c856b0f7b4db2accd87f5297e277
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61184514"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655373"
 ---
-# <a name="textkit-in-xamarinios"></a>TextKit in Xamarin.iOS
+# <a name="textkit-in-xamarinios"></a>Textkit in xamarin. IOS
 
-TextKit ist eine neue API, die leistungsstarke Text Layout- und Renderingaufgaben Features bietet. Es basiert auf der Low-Level-Kern-Text-Framework und ist viel einfacher zu verwenden als Core Text.
+Textkit ist eine neue API, die leistungsstarke Funktionen für das Layout und Rendering von Text Funktionen bietet. Es baut auf dem grundlegenden Text Framework auf niedriger Ebene auf, ist aber viel einfacher zu verwenden als Kerntext.
 
-Um die Funktionen von TextKit für standard-Steuerelemente verfügbar zu machen, mehrere iOS Text-Steuerelemente neu implementiert wurden mit TextKit, einschließlich:
+Um die Funktionen von textkit für Standard Steuerelemente verfügbar zu machen, wurden mehrere IOS-Text Steuerelemente für die Verwendung von textkit neu implementiert, einschließlich:
 
 -  UITextView
 -  UITextField
@@ -26,24 +26,24 @@ Um die Funktionen von TextKit für standard-Steuerelemente verfügbar zu machen,
 
 ## <a name="architecture"></a>Architektur
 
-TextKit bietet eine mehrschichtigen Architektur, die den Text-Speicher aus dem Layout und die Anzeige, einschließlich der folgenden Klassen trennt:
+Textkit bietet eine geschichtete Architektur, die den Text Speicher vom Layout und der Anzeige trennt, einschließlich der folgenden Klassen:
 
--  `NSTextContainer` – Stellt das Koordinatensystem und die Geometrie an, die zum Layout von Text verwendet wird.
--  `NSLayoutManager` : Ordnet Text durch Aktivieren von Text in Symbole. 
--  `NSTextStorage` – Enthält die Textdaten, als auch Batchaktualisierungen, Text-Eigenschaft behandelt. Alle BatchUpdates werden auf der Layout-Manager für die eigentliche Verarbeitung der Änderungen, z. B. das Layout neu zu berechnen und Neuzeichnen des Texts übergeben.
+-  `NSTextContainer`– Stellt das Koordinatensystem und die Geometrie zur Verfügung, die zum Layouttext verwendet werden.
+-  `NSLayoutManager`– Legt Text fest, indem Text in Glyphen verwandelt wird. 
+-  `NSTextStorage`– Enthält die Textdaten und verarbeitet Updates von Batch Texteigenschaften. Alle Batch Aktualisierungen werden dem LayoutManager für die tatsächliche Verarbeitung der Änderungen übergeben, z. b. Neuberechnen des Layouts und Neuzeichnen des Texts.
 
 
-Diese drei Klassen werden auf einer Sicht angewendet, die Text rendert. Die integrierten Textverarbeitung Ansichten, z. B. `UITextView`, `UITextField`, und `UILabel` bereits haben sie festgelegt, aber Sie können das Erstellen und auf alle anwenden `UIView` -Instanz.
+Diese drei Klassen werden auf eine Ansicht angewendet, die Text rendert. Die integrierten Text Behandlungs Sichten, wie `UITextView`z. b., `UITextField`und `UILabel` , haben Sie bereits festgelegt, aber Sie können Sie auch erstellen und `UIView` auf jede beliebige Instanz anwenden.
 
-Die folgende Abbildung veranschaulicht diese Architektur:
+Diese Architektur wird in der folgenden Abbildung veranschaulicht:
 
- ![](textkit-images/textkitarch.png "Die folgende Abbildung zeigt die TextKit-Architektur")
+ ![](textkit-images/textkitarch.png "Diese Abbildung veranschaulicht die textkit-Architektur.")
 
-## <a name="text-storage-and-attributes"></a>Textspeicher und Attribute
+## <a name="text-storage-and-attributes"></a>Text Speicher und Attribute
 
-Die `NSTextStorage` -Klasse enthält den Text, der von einer Ansicht angezeigt wird. Es kommuniziert auch alle Änderungen, die Text - beispielsweise Änderungen an Zeichen oder deren Attributen – auf der Layout-Manager für die Anzeige. `NSTextStorage` erbt von `MSMutableAttributed` Zeichenfolge ist, sodass Änderungen an Text-Attribute in Batches zwischen angegeben werden `BeginEditing` und `EndEditing` aufrufen.
+Die `NSTextStorage` -Klasse enthält den Text, der von einer Ansicht angezeigt wird. Außerdem werden alle Änderungen an den Text, z. b. Änderungen an Zeichen oder deren Attributen, an den Layout-Manager für die Anzeige übermittelt. `NSTextStorage`erbt von `MSMutableAttributed` der Zeichenfolge, sodass Änderungen an Textattributen in Batches zwischen `BeginEditing` -und `EndEditing` -aufrufen angegeben werden können.
 
-Beispielsweise der folgende Codeausschnitt gibt an, eine Änderung in den Vordergrund und Hintergrundfarben, und bestimmte Bereiche abzielt:
+Der folgende Code Ausschnitt gibt z. b. eine Änderung an Vordergrund-bzw. Hintergrundfarben an und richtet sich an bestimmte Bereiche:
 
 ```csharp
 textView.TextStorage.BeginEditing ();
@@ -52,17 +52,17 @@ textView.TextStorage.AddAttribute(UIStringAttributeKey.BackgroundColor, UIColor.
 textView.TextStorage.EndEditing ();
 ```
 
-Nach dem `EndEditing` wird aufgerufen, werden die Änderungen an der Layout-Manager, die alle erforderlichen Layout und Rendering Berechnungen für den Text, der in der Ansicht angezeigt werden wiederum durchführt gesendet.
+Nachdem `EndEditing` aufgerufen wurde, werden die Änderungen an den Layout-Manager gesendet, der wiederum alle notwendigen Layout-und Renderingerweiterungen für den Text ausführt, der in der Ansicht angezeigt werden soll.
 
-## <a name="layout-with-exclusion-path"></a>Layout mit Ausschlusspfad
+## <a name="layout-with-exclusion-path"></a>Layout mit Ausschluss Pfad
 
-TextKit unterstützt Layout auch für komplexe Szenarien ermöglicht, wie z. B. mit mehreren Spalten und fließende Text angegebenen Pfade namens *pfadausschluss*. Beim pfadausschluss. werden in den Textcontainer und angewendet, die bestimmt, die Geometrie das Textlayout, sodass des Texts, um die angegebenen Pfade fließen.
+Textkit unterstützt auch das Layout und ermöglicht komplexe Szenarien, wie z. b. mehrspaltigen Text und fließenden Text um angegebene Pfade, die als *Ausschluss Pfade*bezeichnet werden. Ausschluss Pfade werden auf den Text Container angewendet, der die Geometrie des Textlayouts ändert, wodurch der Text um die angegebenen Pfade herum fließt.
 
-Ein Ausschlusspfad hinzufügen ist erforderlich, das die `ExclusionPaths` Eigenschaft auf der Layout-Manager. Durch Festlegen dieser Eigenschaft bewirkt, dass die Layout-Manager für ungültig erklärt das Textlayout, und Text der Ausschlusspfad fließen.
+Zum Hinzufügen eines Ausschluss Pfades muss `ExclusionPaths` die-Eigenschaft für den Layout-Manager festgelegt werden. Das Festlegen dieser Eigenschaft bewirkt, dass der LayoutManager das Text Layout für ungültig erklärt und den Text um den Ausschluss Pfad umgeht.
 
-### <a name="exclusion-based-on-a-cgpath"></a>Basierend auf einer CGPath Ausschluss
+### <a name="exclusion-based-on-a-cgpath"></a>Ausschluss basierend auf einem cgpath
 
-Beachten Sie Folgendes `UITextView` Unterklasse-Implementierung:
+Beachten Sie die `UITextView` folgende Unterklassen Implementierung:
 
 ```csharp
 public class ExclusionPathView : UITextView
@@ -139,35 +139,35 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-Dieser Code fügt Unterstützung für das Zeichnen in der Textansicht, die wichtigste Grafik verwenden. Da die `UITextView` Klasse ist jetzt erstellt, um die TextKit für ihren Textrendering und Layout zu verwenden, es können alle Features der TextKit, z. B. das Festlegen von pfadausschluss.
+Dieser Code fügt Unterstützung für das Zeichnen in der Textansicht mithilfe von Kern Grafiken hinzu. Da die `UITextView` -Klasse jetzt erstellt wurde, um textkit für das Text Rendering und Layout zu verwenden, kann Sie alle Funktionen von textkit verwenden, z. b. das Festlegen von Ausschluss Pfaden.
 
 > [!IMPORTANT]
-> Dieses Beispiel Unterklassen `UITextView` zeichnen Unterstützung Aussehen verleihen. Erstellen von Unterklassen für `UITextView` ist nicht notwendig, die Funktionen der TextKit zu erhalten.
+> Diese Beispiel Unterklassen `UITextView` , um die Unterstützung für Finger Eingaben hinzuzufügen. Die Unterklassen `UITextView` sind nicht erforderlich, um die Funktionen von textkit zu erhalten.
 
 
 
-Nachdem der Benutzer in der Textansicht, die gezeichnet zeichnet `CGPath` gilt für eine `UIBezierPath` Instanz durch Festlegen der `UIBezierPath.CGPath` Eigenschaft:
+Nachdem der Benutzer die Textansicht gezeichnet hat, wird der `CGPath` gezeichnete auf eine `UIBezierPath` -Instanz angewendet, `UIBezierPath.CGPath` indem die-Eigenschaft festgelegt wird:
 
 ```csharp
 bezierPath.CGPath = exclusionPath;
 ```
 
-Aktualisieren die folgende Codezeile macht das Textlayout rund um den Pfad zu aktualisieren:
+Durch Aktualisieren der folgenden Codezeile wird das textlayoutupdate um den Pfad verschoben:
 
 ```csharp
 TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 ```
 
-Der folgende Screenshot veranschaulicht, wie das Textlayout ändert, um rund um den gezeichneten Pfad fließen zu lassen:
+Der folgende Screenshot veranschaulicht, wie sich das Textlayout um den gezeichneten Pfad ändert:
 
 <!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")--> 
-![](textkit-images/exclusionpath2.png "In diesem Screenshot veranschaulicht, wie das Textlayout ändert um rund um den gezeichneten Pfad fließen zu lassen.")
+![](textkit-images/exclusionpath2.png "Dieser Screenshot veranschaulicht, wie sich das Textlayout um den gezeichneten Pfad ändert.")
 
-Beachten Sie, dass die Layout-Manager `AllowsNonContiguousLayout` Eigenschaft in diesem Fall auf "false" festgelegt ist. Dies bewirkt, dass das Layout in allen Fällen neu berechnet werden, in dem der Text ändert. Festlegung auf "true" kann Leistung profitieren, indem Sie eine vollständige Layout-Aktualisierung, vor allem bei großen Dokumenten zu vermeiden. Festlegen von jedoch `AllowsNonContiguousLayout` auf "true" verhindert die Ausschlusspfad Aktualisieren des Layouts in einigen Fällen – z.B. wenn Text zur Laufzeit eingegeben wird, ohne eine nachfolgende Wagenrücklauf vor dem Pfad, der festgelegt wird.
+Beachten Sie, dass die- `AllowsNonContiguousLayout` Eigenschaft des Layout-Managers in diesem Fall auf false festgelegt ist. Dadurch wird das Layout für alle Fälle neu berechnet, in denen sich der Text ändert. Wenn diese Einstellung auf "true" festgelegt wird, kann die Leistung beeinträchtigt werden, indem eine Aktualisierung des vollständigen Layouts vermieden wird, insbesondere bei großen Dokumenten. Wenn Sie jedoch `AllowsNonContiguousLayout` auf true festlegen, wird verhindert, dass der Ausschluss Pfad das Layout in einigen Fällen aktualisiert, z. b. Wenn Text zur Laufzeit ohne nachfolgende Wagen Rücklauf Eingabe eingegeben wird, bevor der Pfad festgelegt wird.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Einführung in iOS 7 (Beispiel)](https://developer.xamarin.com/samples/monotouch/IntroToiOS7)
+- [Einführung zu IOS 7 (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
 - [Übersicht über die iOS 7-Benutzeroberfläche](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [Hintergrundverarbeitung](~/ios/app-fundamentals/backgrounding/index.md)

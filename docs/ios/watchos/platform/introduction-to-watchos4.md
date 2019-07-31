@@ -1,36 +1,36 @@
 ---
 title: Einführung in watchOS 4
-description: Dieses Dokument enthält eine allgemeine Einführung in WatchOS 4, beschreiben die neuen Features, die nun Xamarin-Entwickler zur Verfügung stehen.
+description: Dieses Dokument bietet eine allgemeine Einführung in watchos 4 und beschreibt die neuen Features, die jetzt für xamarin-Entwickler verfügbar sind.
 ms.prod: xamarin
 ms.assetid: 753A9993-A951-40A2-9270-37F000A01BC9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
-ms.openlocfilehash: ca922840b47899b62615bded852e66fe81b3371c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e3766815e071c190046cc5bc7d436621bcee3d29
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61223969"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651547"
 ---
 # <a name="introduction-to-watchos-4"></a>Einführung in watchOS 4
 
-Zugriff auf neue Funktionen von WatchOS 4 in Ihren apps:
+Greifen Sie auf neue Features von watchos 4 in ihren apps zu:
 
-* Lesen Sie barometric Altimeter-Daten in der neuen Apple Watch-Serie 3.
-* Verbinden Sie direkt mit Netzwerkressourcen mit datenverbindungen, die für bestimmte Modelle 3 der Apple Watch-Serie verfügbar.
-* Core Bluetooth kann direkt auf Zubehör, eine Verbindung herstellen.
-* Neue hintergrundmodi für Trainings und Audio-apps.
-* Neue SiriKit Intents für [Listen und Anmerkungen zu dieser](~/ios/platform/introduction-to-ios11/sirikit.md).
+* Lesen Sie die Daten in der neuen Apple Watch Reihe 3.
+* Stellen Sie eine direkte Verbindung mit Netzwerkressourcen her, die in einigen Apple Watch Serie 3-Modellen verfügbar sind.
+* Core Bluetooth kann eine direkte Verbindung mit Zubehör herstellen.
+* Neue hintergrundmodi für Trainings-und Audioanwendungen.
+* Neue Sirikit-Intents für [Listen und Notizen](~/ios/platform/introduction-to-ios11/sirikit.md).
 
-Die Änderungen seit der WatchOS 3:
+Änderungen seit watchos 3:
 
-* App-Code und Benutzeroberfläche, die in einem einzelnen Prozess ausgeführt werden.
-* Speicherortberechtigung kann auf der Apple Watch (es muss der Benutzer auf seinem Telefon akzeptieren) erteilt werden.
+* Der app-Code und die Benutzeroberfläche werden in einem einzelnen Prozess ausgeführt.
+* Die Location-Berechtigung kann für die Überwachung gewährt werden (es ist nicht erforderlich, den Benutzer zur Annahme auf seinem Telefon aufzufordern).
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [watchOS-Beispiele](https://developer.xamarin.com/samples/watchos/all/)
+* [watchOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
 * [WatchKit (Apple)](https://developer.apple.com/documentation/watchkit)
-* [Neuerungen in WatchOS 4 (Apple) (video)](https://developer.apple.com/videos/play/wwdc2017/205/)
+* [Neues in watchos 4 (Apple) (Video)](https://developer.apple.com/videos/play/wwdc2017/205/)

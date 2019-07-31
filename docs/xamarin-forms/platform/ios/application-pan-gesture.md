@@ -1,26 +1,26 @@
 ---
-title: Gleichzeitige Pan Gestenerkennung unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel erläutert das iOS-Plattform-spezifische nutzen, die gleichzeitig Pan gestenerkennung in einer Anwendung verwendet werden können.
+title: Gleichzeitige Erkennung von Schwenken in ios
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die plattformspezifische IOS-Anwendung verwendet wird, die die gleichzeitige Erkennung von Schwenken in einer Anwendung ermöglicht.
 ms.prod: xamarin
 ms.assetid: 883D89DA-F8FF-4B97-9C3F-2DD05C96A495
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4587bb89ddfe43873e666a07514075f1a952e985
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8e86141ac27999a71a84ae7150b19ef3f60c117f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926779"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655980"
 ---
-# <a name="simultaneous-pan-gesture-recognition-on-ios"></a>Gleichzeitige Pan Gestenerkennung unter iOS
+# <a name="simultaneous-pan-gesture-recognition-on-ios"></a>Gleichzeitige Erkennung von Schwenken in ios
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Wenn eine [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) angefügt ist, auf eine Ansicht innerhalb einer Bildlaufansicht, alle der Pfanne Gesten erfasst werden, die `PanGestureRecognizer` und werden nicht an, dass der Bildlauf anzeigen. Aus diesem Grund wird ein Bildlauf Ansicht nicht mehr ausgeführt.
 
-Dieses iOS-Plattform-spezifische ermöglicht eine `PanGestureRecognizer` in einer fortlaufenden zu erfassen und freigeben die Bewegung Schwenken mit der Bildlauf angezeigt. Es ist in XAML verwendet, durch Festlegen der [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) angefügte Eigenschaft zu `true`:
+Mit diesem IOS-plattformspezifischen `PanGestureRecognizer` kann ein in einer scrollansicht in der scrollansicht aufzeichnen und die Schwenkbewegung freigeben. Es ist in XAML verwendet, durch Festlegen der [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) angefügte Eigenschaft zu `true`:
 
 ```xaml
 <Application ...
@@ -46,6 +46,6 @@ Aus diesem Grund mit diesem plattformspezifische aktiviert, wenn eine [ `ListVie
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

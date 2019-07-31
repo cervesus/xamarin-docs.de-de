@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: f97cd3030b865b53b82845ff8941e3f0a10f0320
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 90d860cb6429025672a058e22e76f029872d3b34
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169828"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657171"
 ---
 # <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _ImageButton ein Bild anzeigt und reagiert auf ein tippen oder klicken Sie auf, die eine Anwendung, um eine bestimmte Aufgabe durchzuführen weiterleitet._
 
@@ -25,7 +25,7 @@ Die `ImageButton` anzeigen kombiniert die [ `Button` ](xref:Xamarin.Forms.Button
 > [!NOTE]
 > Während der [ `Button` ](xref:Xamarin.Forms.Button) Sicht definiert eine [ `Image` ](xref:Xamarin.Forms.Button.Image) Eigenschaft, die Ihnen ermöglicht, ein Bild angezeigt, auf die `Button`, diese Eigenschaft sollte verwendet werden, wenn ein kleines Symbol angezeigt neben der `Button` Text.
 
-Die Codebeispiele in diesem Handbuch stammen aus der [FormsGallery Beispiel](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/).
+Die Codebeispiele in diesem Handbuch stammen aus der [FormsGallery Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery).
 
 ## <a name="setting-the-image-source"></a>Die Bildquelle festlegen
 
@@ -276,4 +276,4 @@ Weitere Informationen zu visuellen Status finden Sie unter [die Xamarin.Forms Vi
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [FormsGallery-Beispiel](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+- [FormsGallery-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

@@ -1,332 +1,332 @@
 ---
-title: Arbeiten mit TvOS Symbole und Bilder in Xamarin
-description: Dieses Dokument beschreibt das Arbeiten mit Symbolen und Bildern in einer TvOS-app mit Xamarin erstellt wurde. Es wird erläutert, startbilder, mehrschichtiger Abbilder, das app-Symbol und vieles mehr.
+title: Arbeiten mit tvos-Symbolen und-Bildern in xamarin
+description: In diesem Dokument wird beschrieben, wie Sie mit Symbolen und Bildern in einer tvos-App arbeiten, die mit xamarin erstellt wurde. Es werden Start Bilder, geschichtete Bilder, das App-Symbol und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: dab1b0f7bf7aabb4dfcfbfdcb5e202baa48e664d
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 4c3739f7d1583966a58ebf102a3d3b2a0a9f93ab
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865167"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653210"
 ---
-# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit TvOS Symbole und Bilder in Xamarin
+# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit tvos-Symbolen und-Bildern in xamarin
 
-Erstellen ansprechender Symbole und Bilder sind ein wichtiger Bestandteil der Entwicklung eine beeindruckende benutzererfahrung für Ihre Apple TV-apps. Dieses Handbuch befasst sich die erforderlichen Schritte zum Erstellen und integrieren Sie die erforderlichen grafischen Ressourcen für Ihre Xamarin.tvOS-apps:
+Das Erstellen von faszinierenden Symbolen und Bildern ist ein wichtiger Bestandteil der Entwicklung eines immersiven Benutzer Erlebnisses für Ihre Apple TV-apps. In diesem Leitfaden werden die erforderlichen Schritte zum Erstellen und einschließen der erforderlichen Grafik Ressourcen für Ihre xamarin. tvos-apps behandelt:
 
-- [Startbild](#Launch-Image) -ein startbilds, das angezeigt wird, wenn Ihre app zum ersten Mal gestartet, und wird nach Abschluss der Start vom ersten Bildschirm der app ersetzt.
-- [Mehrstufige Images](#Layered-Images) – speziell für Apple TV, Apple neue Images mit Ebenen Arbeit mit den Parallaxeneffekt, um eine 3D-Effekt für ausgewählte Elemente zu erstellen. Es gibt mehrere Möglichkeiten, [Mehrschicht-Images erstellen](#Creating-Layered-Images).
-- [Symbol "App"](#App-Icons) -Symbole erforderlich sind, nicht nur Apple TV Home-Bildschirm jedoch für den App Store. Sie müssen als Mehrschicht-Image bereitgestellt werden.
-- [Top-Shelf-Bild](#Top-Shelf-Image) – Wenn Ihre app auf der obersten Zeile des Startbildschirms platziert wird, benötigen sie einen Top Shelf Image, um Ihrer app Funktionen zu markieren. Optional können Sie angeben [dynamischen Inhalt der Top-Shelf](#Dynamic-Top-Shelf-Content) , markieren Sie den Inhalt in Ihrer app.
-- [Game Center-Images](#Game-Center-Images) – Wenn Ihre app ein Spiel ist und Game Center verwendet, werden verschiedene weitere Images erforderlich sein.
-- [Festlegen Xamarin.tvOS-Projekt Bilder](#Setting-Xamarin.tvOS-Project-Images) -enthält die erforderlichen Schritte für das Image zu starten und die App-Symbol für Ihre Xamarin.tvOS-app einzurichten.
+- [Startbild](#Launch-Image) : ein Start Bild wird angezeigt, wenn Ihre APP zum ersten Mal gestartet wird, und wird durch den ersten Bildschirm der APP ersetzt, sobald der Startvorgang abgeschlossen ist.
+- Überlappende [Bilder](#Layered-Images) , die spezifisch für das Apple TV sind, können die neuen geschichteten Images von Apple mit dem Paramet-Effekt zusammenarbeiten, um einen 3D-Effekt für ausgewählte Elemente zu erstellen Es gibt mehrere Möglichkeiten zum [Erstellen von geschichteten Bildern](#Creating-Layered-Images).
+- [App-Symbol](#App-Icons) : Symbole sind nur für den Apple TV-Startbildschirm, sondern für den App Store erforderlich. Sie müssen als geschichtetes Bild bereitgestellt werden.
+- [Top-Regal Bild](#Top-Shelf-Image) : Wenn Ihre APP in der obersten Zeile des Startbildschirms platziert wird, benötigt Sie ein Top-Regal Bild, um die Features Ihrer APP hervorzuheben. Optional können Sie [dynamischen Top-Shelf-Inhalt](#Dynamic-Top-Shelf-Content) bereitstellen, um den Inhalt in Ihrer APP hervorzuheben.
+- [Game Center Images](#Game-Center-Images) : Wenn Ihre APP ein Spiel ist und Game Center verwendet, sind mehrere weitere Images erforderlich.
+- Festlegen von [xamarin. tvos-Projekt Images](#Setting-Xamarin.tvOS-Project-Images) : Hier werden die erforderlichen Schritte zum Festlegen des Start Images und App-Symbols für Ihre xamarin. tvos-App behandelt.
 
 > [!IMPORTANT]
-> Alle Bilder auf Apple TV zu werden, in der 1 X-Auflösung (`@1x`) und Sie sollten _nur_ Images dieser Größe verwenden. Einschließlich größer, Grafiken mit höherer Auflösung dauern, nicht nur zum Herunterladen und Verwenden von mehr Arbeitsspeicher und Speicher, aber sie müssen zur Laufzeit dynamisch neu skaliert werden und wirkt sich negativ auf die Rendergeschwindigkeit.
+> Alle Images auf dem Apple TV befinden sich in der 1-x`@1x`-Auflösung (), und Sie sollten _nur_ Images dieser Größe verwenden. Das einschließen größerer Grafiken mit höherer Auflösung benötigt nicht nur Zeit zum herunterladen und Verwenden von mehr Arbeitsspeicher und Speicher, sondern muss zur Laufzeit dynamisch neu erstellt werden, was sich negativ auf die Zeichnungs Leistung auswirkt.
 
 <a name="Launch-Image" />
 
-## <a name="launch-image"></a>Startbild
+## <a name="launch-image"></a>Bild starten
 
-Das Image starten wird als erstes, das angezeigt wird, wenn Ihre app Xamarin.tvOS anfänglich auf Apple TV gestartet wird, und daher jede TvOS-app muss angeben, ein Image zu starten. 
+Das Startimage ist das erste, was angezeigt wird, wenn Ihre xamarin. tvos-App anfänglich im Apple TV gestartet wird. Daher muss jede tvos-App ein Launch-Image bereitstellen. 
 
-Das Image zu starten, erscheint schnell und den Eindruck entstehen lässt, dass Ihre app schnell und reaktionsfähig ist. Apple TV ersetzt das Abbild starten mit dem ersten Bildschirm Ihrer App in Kürze es nach.
+Das Startbild erscheint schnell und gibt den Eindruck, dass Ihre APP schnell und reaktionsfähig ist. Das Apple TV ersetzt das Startbild durch den ersten Bildschirm der app in Kürze.
 
-Startbilder nicht Gelegenheit für Werbung oder künstlerische Ausdruck, sie dienen lediglich der Eindruck entstehen, dass Ihre app schnell gestartet und verwendet.
+Start Bilder sind keine Gelegenheit für Werbeeinblendungen oder Kunst Ausdrücke, Sie sind nur vorhanden, um den Eindruck zu erwecken, dass Ihre APP schnell gestartet werden kann und einsatzbereit ist.
 
-|Starten Sie die Größe des Abbilds|Hinweise|
+|Bild Größe starten|Hinweise|
 |---|---|
-|1920x1080px|Nur die Ebenen nicht PNG-Dateien|
+|1920 × 1080px|Nur nicht geschichtete PNG-Dateien|
 
-Apple stellt die folgenden Vorschläge für das Entwerfen von Startbildgruppe Ihrer app:
+Apple gibt die folgenden Vorschläge zum Entwerfen des Start Images Ihrer APP an:
 
-- **Fast identisch mit dem ersten Bildschirm** -der Startbildschirm sollte wie in der Nähe Ihrer app ersten Bildschirm wie möglich sein. Z. B. verschiedene Grafiken oder Element kann eine lästige führen "flash", wenn der erste Bildschirm angezeigt wird.
-- **Vermeiden Sie Text mithilfe von** -Startbilder sind statisch und wird daher nicht vor seiner Anzeige lokalisiert werden.
-- **Starten Sie herunterspielen** -da Apple TV-Benutzer werden häufig apps wechseln, sollten nicht an den Prozess der app-Start aufgezeigt.
-- **Weder anzeigen noch Branding** -Ihre Startbildgruppe sollte nicht verwendet werden, wie ein Bildschirm "Info" oder sind branding, es sei denn, es sich um statischen Teil des ersten Bildschirm Ihrer app ist. ADS sind streng untersagt.
+- **Nahezu identisch mit dem ersten Bildschirm** : Ihr Startbildschirm sollte so nah wie möglich mit dem ersten Bildschirm Ihrer APP sein. Wenn Sie verschiedene Grafiken oder Elemente einschließen, kann dies zu einem lästigen "Flash" führen, wenn der erste Bildschirm angezeigt wird.
+- **Vermeiden Sie die Verwendung von Text** Start Bildern, die statisch sind und daher nicht lokalisiert werden, bevor Sie angezeigt werden.
+- **Downplay-Start** : da Apple TV-Benutzer häufig Anwendungen wechseln, sollten Sie nicht auf den App-Startprozess achten.
+- **Keine anzeigen oder Brandings** : das Start Image darf nicht als Info Bildschirm verwendet werden oder ein Branding enthalten, es sei denn, es ist ein statischer Teil des ersten Bildschirms Ihrer APP. ADS sind streng unzulässig.
 
 <a name="Setting-the-Launch-Image" />
 
-### <a name="setting-the-launch-image"></a>Das Startbild, das Festlegen
+### <a name="setting-the-launch-image"></a>Festlegen des Start Abbilds
 
-Führen Sie zum Festlegen der starten-Image für Ihr Projekt TvOS folgende:
+Gehen Sie folgendermaßen vor, um das Start Image für Ihr tvos-Projekt festzulegen:
 
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf `Assets.xcassets` um ihn zur Bearbeitung zu öffnen: 
+1. Doppelklicken `Assets.xcassets` Sie im Projektmappen-Explorer, um es zur Bearbeitung zu öffnen: 
 
-    [![](icons-images-images/asset01.png "Die Datei Assets.xcassets")](icons-images-images/asset01.png#lightbox)
-2. In der **Ressourcen-Editor**, klicken Sie auf die `LaunchImages` Medienobjekt: 
+    [![](icons-images-images/asset01.png "Die Datei Assets. xcassets")](icons-images-images/asset01.png#lightbox)
+2. Klicken Sie im **Asset-Editor**auf das `LaunchImages` Medienobjekt: 
 
-    [![](icons-images-images/asset02.png "Das Medienobjekt LaunchImages")](icons-images-images/asset02.png#lightbox)
-3. Klicken Sie auf die **1 x Apple TV** Eintrag, und wählen Sie das Image zu starten, oder ziehen Sie optional ein neues Image in aus dem Dateisystem: 
+    [![](icons-images-images/asset02.png "Das launchimages-Asset")](icons-images-images/asset02.png#lightbox)
+3. Klicken Sie auf den Eintrag **1X Apple TV** , und wählen Sie das Startbild aus, oder ziehen Sie optional ein neues Bild aus dem Dateisystem: 
 
-    [![](icons-images-images/asset03.png "Wählen Sie ein Startbilds, das")](icons-images-images/asset03.png#lightbox)
+    [![](icons-images-images/asset03.png "Startbild auswählen")](icons-images-images/asset03.png#lightbox)
 4. Speichern Sie die Änderungen.
 
 <a name="Layered-Images" />
 
-## <a name="layered-images"></a>Mehrschichtige Abbilder
+## <a name="layered-images"></a>Geschichtete Bilder
 
-Noch nicht mit Apple TV Mehrschicht-Images-arbeiten mit den Parallaxeneffekt, um eine 3D-Effekt zu erstellen, mit dem der Benutzer auf dem Sofa, die auf den Inhalt auf dem Bildschirm mental verbunden werden, durch das Zimmer gehalten wird.
+In der Abbildung von Apple TV haben mehrstufige Bilder mit den Parametern der einzelnen Inhalte zusammengearbeitet, um einen 3D-Effekt zu erzielen, der dabei hilft, den Benutzer auf dem Bildschirm über das gesamte Raum mit dem Inhalt auf dem Bildschirm zu verbinden.
 
-Mehrschichtige Abbilder enthalten von zwei (2) auf fünf (5) Trennen von Ebenen, die kombiniert werden, um ein vollständiges Image zu erstellen. Mit Ausnahme der Hintergrundebene verwendet jede Ebene der Z-Reihenfolge zusammen mit Transparenz, um eine Illusion von Tiefe zu erstellen. Wenn der Benutzer mit einem Image Layered interagiert, sind höhere Z geordnete Ebenen skaliert und überlappende, um diesen Effekt zu erstellen.
+Geschichtete Bilder enthalten zwei (2) bis fünf (5) separate Ebenen, die kombiniert werden, um ein Abbild zu bilden. Mit Ausnahme der Hintergrund Ebene verwendet jede Schicht die Z-Reihenfolge zusammen mit Transparenz, um eine Illusion von Tiefe zu erzeugen. Wenn der Benutzer mit einem geschichteten Bild interagiert, werden höhere Z-geordnete Ebenen skaliert und überlappen, um diesen Effekt zu erzeugen.
 
-[![](icons-images-images/layered01.png "Überlappende Images Z geordnete-Diagramm")](icons-images-images/layered01.png#lightbox)
+[![](icons-images-images/layered01.png "In Ebenen aufgeschichtete Bilder Z-geordnetes Diagramm")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
-> Mehrschichtige Abbilder für Ihre app Symbole erforderlich sind, und sind optional, für andere [Fokussierbare Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (z. B. die Top Shelf Image). Allerdings schlägt Apple vor, die Verwendung von Images mit Ebenen für jedes Bild, das in Ihrer app den Fokus erhalten kann.
+> Für die Symbole Ihrer APP sind geschichtete Bilder erforderlich und für andere [Fokussier Bare Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (z. b. das Top-Regal Bild) optional. Apple schlägt jedoch vor, dass Sie für jedes Bild, das in Ihrer APP den Fokus erhält, geschichtete Bilder verwenden können.
 
 
 
 
-Apple stellt die folgenden Vorschläge zum Entwerfen Ihrer Ebenen Images:
+Apple gibt die folgenden Vorschläge zum Entwerfen Ihrer geschichteten Images an:
 
-- **Die Hintergrund-Ebene nicht transparent machen** -der Hintergrundebene (Ebene 1) **müssen** nicht transparent sein, oder Sie erhalten einen Fehler auf, wenn Sie versuchen, das Image mit Ebenen auf Apple TV zu verwenden. Alle anderen Ebenen können mehrere Ebenen von Transparenz zur Verbesserung des 3D-Effekt enthalten.
-- **Zu isolieren, Vordergrund, mittleren und Elemente im Hintergrund** -gut sichtbaren Elemente (z. B. Spiele Zeichen) in den Vordergrund zu platzieren, verwenden Sie die Mitte für sekundäre Elemente oder Schatten. Schließlich enthalten Sie einen neutralen Hintergrund um eine Stufe für die oberen Ebenen bereitzustellen.
-- **Behalten Sie Text im Vordergrund** – es sei denn, Ihr Text von höheren Ebenen verdeckt werden soll, in der Regel wird auf der obersten Ebene.
-- **Verwenden Sie einfache Schichten** -die Parallaxeneffekt wurde entworfen, um geringfügige werden halten Sie also Ihre Ebenen, eine minimale bedürfen, unrealistisch Auswirkungen vermieden werden.
-- **Eine sichere Zone enthalten** -da obere Schichten während einer Parallaxeneffekt abgeschnitten werden können, müssen Sie einen Rahmen für die sichere Zone in jeder Ebene zu erstellen. Wenn Sie Ihre Inhalte zu nah am Rand des Ebenen erhalten, kann es abgeschnitten werden. Obere Schichten treten weitere Skalierung und als unteren Schichten zuschneiden. Finden Sie unter den [Größenanpassung Imageebenen](#Sizing-Image-Layers) Abschnitt weiter unten.
-- **Vorschau häufig** -Mehrschicht-Images sollten regelmäßig, um sicherzustellen, dass der gewünschte 3D-Effekt tritt ein, und keine des Inhalts auf den einzelnen Ebenen zugeschnitten wird, wird Vorschau angezeigt werden. Sie sollten Vorschaubilder Ihrer Ebenen auf echter Apple TV-Hardware, stellen Sie sicher, dass sie werden wie erwartet gerendert.
+- **Legen Sie die Hintergrund Ebene undurchsichtig** fest: Ihre Hintergrund Ebene (Schicht 1) **muss** nicht transparent sein, oder Sie erhalten eine Fehlermeldung, wenn Sie versuchen, das geschichtete Bild in Apple TV zu verwenden. Alle anderen Ebenen können mehrere Ebenen der Transparenz enthalten, um den 3D-Effekt zu verbessern.
+- **Isolieren Sie Vordergrund-, Mittel-und Hintergrundelemente** : Platzieren Sie wichtige Elemente (z. b. Spiel Zeichen) im Vordergrund, und verwenden Sie die Mitte für sekundäre Elemente oder Schatten. Fügen Sie abschließend einen neutralen Hintergrund ein, um eine Phase für die oberen Ebenen bereitzustellen.
+- **Behalten Sie Text im Vordergrund bei** , es sei denn, Sie möchten, dass der Text durch eine höhere Ebene verdeckt wird. in der Regel sollte er sich auf der obersten Ebene befinden.
+- **Einfache** ebenenweise verwenden: der Teil des Parametern ist so konzipiert, dass er sehr gering ist, sodass Sie die Ebenen möglichst gering halten können, um jarrings, unrealistische Effekte zu vermeiden.
+- **Schließen Sie eine sichere Zone ein** . da obere Ebenen bei einem Teil des Effekts zugeschnitten werden können, müssen Sie einen sicheren Zonen Rahmen in jeder Schicht erstellen. Wenn Sie Ihren Inhalt zu einem zu schließende Ebenenrand bringen, kann er entfernt werden. Obere Ebenen werden mehr skalieren und Zuschneiden als niedrigere Ebenen. Weitere Informationen finden Sie unten im Abschnitt Anpassen der [Bildebenen](#Sizing-Image-Layers) .
+- **Vorschau von häufig** geschichteten Bildern sollten häufig in der Vorschau angezeigt werden, um sicherzustellen, dass der gewünschte 3D-Effekt auftritt und der Inhalt auf den einzelnen Ebenen nicht abgeschnitten wird. Sie sollten eine Vorschau der überlappenden Images auf echter Apple TV-Hardware anzeigen, um sicherzustellen, dass Sie erwartungsgemäß angezeigt werden
 
-Wann immer möglich, verwenden Sie immer die integrierte `UIKit` Steuerelemente Ihre Ebenen Bilder anzuzeigen, wie sie automatisch den Parallaxeneffekt erhalten werden, wenn sie in den Fokus fallen.
+Wenn möglich, sollten Sie immer die integrierten Steuer `UIKit` Elemente verwenden, um die überlappenden Bilder anzuzeigen, da Sie automatisch den Teil des Parametern erhalten, wenn Sie den Fokus erhalten.
 
 <a name="Sizing-Image-Layers" />
 
-### <a name="sizing-image-layers"></a>Größenanpassung Imageebenen
+### <a name="sizing-image-layers"></a>Anpassen von Bildebenen
 
-Es ist wichtig, denken Sie daran, eine _sichere Zone_ Rahmen in jeder Schicht, die Ihr Image Ebenen erstellen. Da die einzelnen Ebenen skaliert und, die bei den Parallaxeneffekt zugeschnitten werden können, kann der Inhalt der Ebenen zugeschnitten ist dies nah an der Schicht Edge:
+Beachten Sie, dass Sie einen _sicheren Zonen_ Rahmen in jede Schicht einschließen müssen, die ihr geschichtetes Bild bilden wird. Da die einzelnen Ebenen während des-Parametern skaliert und zugeschnitten werden können, kann der Inhalt der Ebenen abgeschnitten werden, wenn er zu nah am Rand der Ebene ist:
 
-[![](icons-images-images/layered02.png "35 Pixel-Rahmen")](icons-images-images/layered02.png#lightbox)
+[![](icons-images-images/layered02.png "35 Pixel Rahmen")](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images" />
 
-### <a name="creating-layered-images"></a>Erstellen von mehrstufige Images
+### <a name="creating-layered-images"></a>Erstellen von geschichteten Bildern
 
-TvOS funktioniert mit Ebenen von Bildern in den folgenden Formaten:
+tvos funktioniert mit mehrschichtigen Bildern in den folgenden Formaten:
 
-- **Auto-Dateien** – Dies ist ein proprietäres Asset-Katalog-Format, das von Apple entwickelt wurde. Auto-Dateien wird nicht direkt erstellen, werden sie zum Zeitpunkt der Kompilierung aus beliebigen LSR-Dateien erstellt und in Ihres app-Bundles eingeschlossen.
-- **LSR Images** – Dies ist ein proprietäres Bildformat, das von Apple entwickelt wurde. Verwenden der [Parallax Ausführer Adobe Photoshop-Plug-in](https://itunespartner.apple.com/assets/downloads/ParallaxExporter_Apps.zip) oder [Parallax-Vorschau](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) erstellen und Vorschaubilder mit Ebenen im LSR Format.
-- **Assets.xcassets** – aus zwei (2) auf fünf (5) standard `.png` formatierte Bildern in ein Asset-Katalog, der in ein Auto oder LSR kompiliert wird formatiert Mehrschicht-Image zum Zeitpunkt der Kompilierung.
-- **LCR-Dateien** – Dies ist ein proprietäres Format von Apple entwickelt wurde. LCR-Dateien dienen als zusätzliche Inhalte, die von einem der Content-Server heruntergeladen verwendet werden soll. LCR-Datei sollte nie in Ihrer app-Bündel enthalten sein. LCR-Dateien werden generiert, aus LSR oder Photoshop-Dateien, die mithilfe der `layerutil` -Befehlszeilentools, die in Xcode enthalten.
+- **Auto-Dateien** : Dies ist ein proprietäres, von Apple erstelltes Objektkatalog Format. Sie erstellen keine autodateien direkt, Sie werden zur Kompilierzeit aus beliebigen LSR-Dateien erstellt und in Ihrer APP Bundle enthalten.
+- **LSR-Images** : Dies ist ein proprietäres Bildformat, das von Apple erstellt wurde. Verwenden Sie das [Adobe Photoshop-Plug](https://itunespartner.apple.com/assets/downloads/ParallaxExporter_Apps.zip) -in "Parser" oder " [Parser](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) ", um überlappende Bilder im LSR-Format zu erstellen und in der Vorschau anzuzeigen.
+- **Assets. xcassets** : zwischen zwei (2) und fünf (5) Standard `.png` formatierten Bildern, die in einem Asset-Katalog enthalten sind, die zur Kompilierzeit in ein mit einem Auto formatiertes oder LSR-formatiertes Bild umgewandelt werden.
+- **LCR-Dateien** : Dies ist ein proprietäres Dateiformat, das von Apple erstellt wurde. LCR-Dateien sind für die Verwendung als zusätzlicher Inhalt gedacht, der von einem ihrer Inhalts Server heruntergeladen wird. Die LCR-Datei sollte nie in ihren App Bundle eingeschlossen werden. LCR-Dateien werden aus LSR-oder Photoshop-Dateien `layerutil` mithilfe des Befehlszeilen Tools generiert, das in Xcode enthalten ist.
 
 <a name="The-Parallax-Previewer" />
 
-### <a name="the-parallax-previewer"></a>Der Parallax-Vorschau
+### <a name="the-parallax-previewer"></a>Die "Parser"-Vorschau
 
-Apple erstellt die [Parallax-Vorschau](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) zu Vorschau- und erstellten Mehrschicht-Images für App-Symbole und optional den Fokus erhalten kann Elemente erforderlich sind. Der Previewer wird jeder Ebene, die den abgeschlossenen Images von Ebenen bildet:
+Apple hat die " [Parser](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) "-Vorschau für die Vorschau und Erstellung von geschichteten Bildern erstellt, die für App-Symbole und optionale Fokussier Bare Elemente erforderlich sind. Der Vorschau zeigt jede Ebene, die das abgeschlossene geschichtete Bild bildet:
 
-[![](icons-images-images/layered03.png "Der Parallax-Vorschau")](icons-images-images/layered03.png#lightbox)
+[![](icons-images-images/layered03.png "Die \"Parser\"-Vorschau")](icons-images-images/layered03.png#lightbox)
 
-Während der Vorschau eines Mehrschicht-Images, können Sie die Maus verwenden, zum Drehen eines Bilds und Vorschau den Parallaxeneffekt. Verwenden der **+** (Pluszeichen) und **-** (Schaltflächen zum Hinzufügen und Entfernen von Ebenen minus).
+Beim Anzeigen einer Vorschau eines geschichteten Bilds können Sie die Maus verwenden, um das Bild zu drehen und die Vorschau des Parametern anzuzeigen. Verwenden Sie **+** die Schaltflächen ( **-** Plus) und (minus) zum Hinzufügen und Entfernen von Ebenen.
 
-Wenn Sie ein neues Image mit Ebenen zu erstellen, können Sie in dem LSR-Format exportiert und in Ihrer app Bundle eingeschlossen werden.
+Beim Erstellen eines neuen geschichteten Bilds kann es im LSR-Format exportiert und in das Paket Ihrer APP eingeschlossen werden.
 
-Weitere Informationen zum Erstellen und Anzeigen einer Vorschau Mehrschicht-Images finden Sie unter Apple [Parallax-Grafik erstellen](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/CreatingParallaxArtwork.html#//apple_ref/doc/uid/TP40015241-CH19-SW1) Teil der [App-Programmierhandbuch für TvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/).
+Weitere Informationen zum Erstellen und in der Vorschau von geschichteten Bildern finden Sie im Abschnitt [Erstellen von para](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/CreatingParallaxArtwork.html#//apple_ref/doc/uid/TP40015241-CH19-SW1) Metern für die Apple-Programmierung des App- [Programmier Handbuchs für tvos](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/).
 
 <a name="App-Icons" />
 
 ## <a name="app-icons"></a>App-Symbole
 
-Ihre Xamarin.tvOS-app wird nicht nur App-Symbol für den Apple TV-Home-Bildschirm, sondern auch ein Symbol für die Store-App benötigen. Das App-Symbol ist das Ihre erste ändern, um eine hervorragende Eindruck für Ihre potenziellen Benutzer ist, und sprechen Zweck von Ihrer app auf einen Blick.
+Ihre xamarin. tvos-App benötigt nicht nur ein App-Symbol für den Apple TV-Startbildschirm, sondern auch ein Symbol für den App Store. Das App-Symbol ist die erste Änderung, mit der Sie sich einen guten Eindruck von Ihrem potenziellen Benutzer verschaffen und den Zweck Ihrer APP auf einen Blick vermitteln sollten.
 
 [![](icons-images-images/icon01.png "Das App-Symbol")](icons-images-images/icon01.png#lightbox)
 
-Jede app muss sowohl eine kleine als auch eine große Version der App-Symbol angeben. Das kleine Symbol wird auf dem Bildschirm Apple TV-Startseite verwendet werden, wenn die app installiert ist. Die große Version wird von der App Store verwendet. Die großen App-Symbol sollte es sich um das Aussehen und Verhalten der Version Minisymbols imitieren.
+Jede APP muss sowohl eine kleine als auch eine große Version des App-Symbols bereitstellen. Das kleine Symbol wird bei der Installation der APP auf dem Apple TV-Startbildschirm verwendet. Die umfangreiche Version wird vom App Store verwendet. Das Symbol für große apps sollte das Aussehen und Gefühl der kleinen Symbol Version imitieren.
 
 |Kleines Symbol||Großes Symbol||
 |---|---|---|---|
-|Tatsächliche Größe|400x240px|Größe|1280x768px|
-|Sichere Zone Größe|370x222px|||
-|Ohne Fokus Größe|300x180px|||
-|Fokussierte Größe|370x222px|||
+|Tatsächliche Größe|400x240 px|Größe|1280x768px|
+|Größe der sicheren Zone|370x222px|||
+|Größe ohne Fokus|300 x 180px|||
+|Fokus Größe|370x222px|||
 
 > [!IMPORTANT]
-> Ihre App-Symbole muss angegeben werden, als **Layered Images**. Informieren Sie sich die [Mehrschicht-Image](#Layered-Images) Abschnitt Weitere Informationen.
+> Ihre APP-Symbole müssen als **geschichtete Bilder**bereitgestellt werden. Weitere Informationen finden Sie im Abschnitt überlappende [Images](#Layered-Images) .
 
 
 
 
-Apple bietet die folgenden Vorschläge zum Erstellen Ihrer App-Symbole:
+Apple bietet die folgenden Vorschläge zum Erstellen Ihrer APP-Symbole:
 
-- **Geben Sie einen einzelnen Fokuspunkt** – Entwurf Ihrer Symbol mit einem einzelnen Fokuspunkt platziert wird, direkt in der Mitte des Symbols.
-- **Verwenden Sie einfache Hintergrund** – Ihre Symbolhintergrund einfach halten, damit die oberen Schichten abhebt. Erwägen Sie eine einfache Farbe oder einen feinen Farbverlauf.
-- **Begrenzen der Menge von Text** – da es sich bei den Namen der app unterhalb des Symbols angezeigt wird, wenn sie vom Benutzer ausgewählt wird, Sie sollten nur Text beim einschließen ist es wichtig, für das Design des Symbols.
-- **Verwenden Sie keine Screenshots** – Screenshots sind zu komplex für ein Symbol und nicht den Zweck der app auf einen Blick anzeigen können.
-- **Keep Symbole Quadrat** – TvOS wendet automatisch eine Maske, das die Ecken der Ihre Symbole leicht rundet. Nehmen Sie nicht durch diese Rundung selbst.
-- **Trennen der Ebenen sorgfältig** – sollte oben angezeigt werden, die meisten Schicht, sekundäre Elemente in der Mitte und einem neutralen Hintergrund, die die oberen Schichten zu bringen kann.
-- **Verwenden Sie Verläufe und Schatten sorgfältig** – Farbverläufe und Schatten können miteinander in Konflikt geraten mit den Parallaxeneffekt sollte sorgfältig verwendet werden. Einfache oben-nach-unten, funktionieren am besten, Licht-dunkel-Farbverlauf-Formate. Zeichnen von Schatten arbeiten normalerweise am besten als scharfe, mit harten Kanten Farbtöne.
-- **Variieren Sie die Transparenz** – verwenden Sie unterschiedliche Zugriffsebenen Transparenz für die oberen Ebenen des Ihr App-Symbol, um der 3D-Effekt zu erhöhen. Die Hintergrundebene muss nicht transparent sein oder zu einem Fehler führt.
+- **Stellen Sie einen einzelnen Fokuspunkt bereit** – entwerfen Sie das Symbol mit einem einzelnen Schwerpunkt Punkt, der direkt in der Mitte des Symbols platziert wird.
+- **Verwenden Sie einen einfachen Hintergrund** – halten Sie den Symbol Hintergrund so einfach, dass die oberen Ebenen ausstehen. Verwenden Sie eine einfache Farbe oder einen subtilen Farbverlauf.
+- **Begrenzen Sie die Menge an Text** – da der Name der APP unter dem Symbol angezeigt wird, wenn er vom Benutzer ausgewählt wird, sollten Sie nur Text einschließen, wenn dies für den Entwurf des Symbols von Bedeutung ist.
+- **Verwenden Sie keine Screenshots** – Screenshots sind zu komplex für ein Symbol und ermöglichen dem Benutzer nicht, den Zweck der APP auf einen Blick anzuzeigen.
+- **Symbole speichern** – tvos wendet automatisch eine Maske an, mit der die Ecken der Symbole auf eine beliebige Ecke gerundet werden. Schließen Sie diese Rundung nicht ein.
+- **Trennen Sie Ihre Ebenen sorgfältig** – der Text sollte sich auf der oberen Ebene, sekundären Elementen in der Mitte und einem neutralen Hintergrund befinden, der die Obergrenzen des oberen Ebenen ermöglicht.
+- **Verwenden Sie Farbverläufe und Schatten sorgfältig** – Farbverläufe und Schatten können mit den Parametern in Konflikt stehen, sodass Sie sorgfältig verwendet werden sollten. Einfache, helle Farbverlaufs Stile von oben nach unten funktionieren am besten. Schatten funktionieren in der Regel am besten als Spitze, hart über schneidige tints.
+- **Variieren der Ebenentransparenz** – verwenden Sie unterschiedliche Transparenz Ebenen auf den oberen Ebenen des App-Symbols, um den 3D-Effekt zu erhöhen. Die Hintergrund Ebene muss undurchsichtig sein, da Sie zu einem Fehler führt.
 
 <a name="Setting-the-App-Icons" />
 
-### <a name="setting-the-app-icons"></a>Festlegen der App-Symbole
+### <a name="setting-the-app-icons"></a>Festlegen der APP-Symbole
 
-Führen Sie zum Festlegen der App-Symbole, die für Ihr Projekt TvOS erforderlich sind folgende:
+Gehen Sie folgendermaßen vor, um die für Ihr tvos-Projekt erforderlichen App-Symbole festzulegen:
 
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf `Assets.xcassets` um ihn zur Bearbeitung zu öffnen: 
+1. Doppelklicken `Assets.xcassets` Sie im Projektmappen-Explorer, um es zur Bearbeitung zu öffnen: 
 
-    [![](icons-images-images/asset01.png "Die Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
-2. In der **Ressourcen-Editor**, erweitern Sie die `App Icon & Top Shelf Image` Medienobjekt: 
+    [![](icons-images-images/asset01.png "Die Assets. xcassets-Datei")](icons-images-images/asset01.png#lightbox)
+2. Erweitern Sie im **Asset-Editor**das `App Icon & Top Shelf Image` Objekt: 
 
-    [![](icons-images-images/asset04.png "Erweitern Sie das Medienobjekt Top Shelf Image")](icons-images-images/asset04.png#lightbox)
-3. Erweitern Sie als Nächstes die `App Icon - Small` Medienobjekt: 
+    [![](icons-images-images/asset04.png "Erweitern Sie das Objekt des obersten Regal Bilds.")](icons-images-images/asset04.png#lightbox)
+3. Erweitern Sie als nächstes `App Icon - Small` das Medienobjekt: 
 
-    [![](icons-images-images/asset05.png "Erweitern Sie das Symbol der App - kleine asset")](icons-images-images/asset05.png#lightbox)
-4. Erweitern Sie dann die `Back` Bestand, und klicken Sie auf die `Contents` Eintrag: 
+    [![](icons-images-images/asset05.png "Erweitern Sie das App-Symbol-Small Asset")](icons-images-images/asset05.png#lightbox)
+4. Erweitern Sie dann `Back` das Objekt, und klicken `Contents` Sie auf den Eintrag: 
 
-    [![](icons-images-images/asset06.png "Erweitern Sie dann auf das Back-Medienobjekt")](icons-images-images/asset06.png#lightbox)
-5. Klicken Sie auf die **1 x Apple TV-Eintrag** , und wählen Sie eine Bilddatei.
-6. Wiederholen Sie die oben genannten Schritte für die `Front` und `Middle` Bestand.
-7. Wiederholen Sie dann die gleichen Schritte zum Definieren der `App Icon - Large` Asset.
+    [![](icons-images-images/asset06.png "Erweitern Sie dann das Back-Asset.")](icons-images-images/asset06.png#lightbox)
+5. Klicken Sie auf den **Eintrag 1X Apple TV** , und wählen Sie eine Bilddatei aus.
+6. Wiederholen Sie die obigen Schritte `Front` für `Middle` die Objekte und.
+7. Wiederholen Sie dann die gleichen Schritte, `App Icon - Large` um das Medienobjekt zu definieren.
 8. Speichern Sie die Änderungen.
 
 <a name="Top-Shelf-Image" />
 
-## <a name="top-shelf-image"></a>Top-Shelf-Bild
+## <a name="top-shelf-image"></a>Top-Regal Bild
 
-Wenn der Benutzer Ihre Xamarin.tvOS-app auf der obersten Zeile, auf dem Bildschirm Apple TV-Startseite aufgegeben hat, wird eine große Top Shelf Image angezeigt, wenn es sich bei Ihrer app vom Benutzer ausgewählt wird. Dieses Image sollte markieren Sie die Funktionen Ihrer App oder enthalten direkte Links zum jeweiligen Inhalt.
+Wenn der Benutzer die xamarin. tvos-app in der obersten Zeile des Apple TV-Startbildschirms abgelegt hat, wird ein großes hoch Regal Bild angezeigt, wenn die APP vom Benutzer ausgewählt wird. Dieses Bild sollte die Features Ihrer APP hervorheben oder direkte Links zu den Inhalten bereitstellen.
 
-[![](icons-images-images/topshelf01.png "Top-Shelf-Bild-Beispiel")](icons-images-images/topshelf01.png#lightbox)
+[![](icons-images-images/topshelf01.png "Beispiel für das Top-Regal Bild")](icons-images-images/topshelf01.png#lightbox)
 
-Die Top Shelf Image kann entweder als eine einzelne statische bereitgestellt `.png` oder `.lsr` Datei (finden Sie unter [Mehrschicht-Images erstellen](#Creating-Layered-Images)) oder es werden dynamisch erstellt zur Laufzeit als eine einzelne Zeile den Fokus erhalten kann Elemente (finden Sie unter [ Dynamische Oberes Regal Inhalt](#Dynamic-Top-Shelf-Content) unten).
+Das Top-Regal Bild kann entweder `.png` als einzelne statische Datei oder `.lsr` Datei bereitgestellt werden (siehe Erstellen von [geschichteten Bildern](#Creating-Layered-Images)), oder es kann zur Laufzeit dynamisch als einzelne Zeile mit Fokus nutzbaren Elementen erstellt werden (siehe [dynamischer Top-Shelf-Inhalt](#Dynamic-Top-Shelf-Content) unten).
 
-|Oberes Regal-Bildgröße|Hinweise|
+|Größe des oberen Regal Bilds|Hinweise|
 |---|---|
-|1920x720px|Statische PNG- oder überlappende .lsr-Datei|
+|1920 x 720px|Statische PNG-oder geschichtete LSR-Datei|
 
-Apple bietet die folgenden Vorschläge für Ihre Top-Shelf-Images erstellen:
+Apple bietet die folgenden Vorschläge zum Erstellen Ihrer Top-Regal-Images:
 
-- **Umfangreiche statische Bilder verwenden** – Wenn Ihre app keinen dynamischen Inhalt bereitstellt, wird die Top Shelf Image nicht erhalten werden. Verwenden Sie dieses Bild, um die Features der app oder Ihre Marke zu markieren.
-- **Link zur App-Inhalte** – dynamische Layouts der Top-Shelf Geben Sie einen Quicklink zu den Inhalt, den Ihre Benutzer in Ihrer app die wichtigsten findet. Verwenden Sie diesen Bereich, um ein quick Link zu Ihrer app zu starten und sofort in den angegebenen Inhalt wechseln.
-- **Präsentieren Sie die neuesten Inhalte** – umfassender-Top-Shelf-Inhalte kann zeichnen Sie einen Benutzer in Ihrer app und machen es verwendet werden soll. Verwenden Sie diese als ein Bereich, um die höchsten Bewertung oder neueste Inhalt zu veranschaulichen.
-- **Personalisierte Inhalte** – Benutzer vorhanden, die am häufigsten verwendeten, oder bevorzugten apps in der obersten Zeile des Startbildschirms. Verwenden Sie die Top-Shelf, um den Inhalt anzuzeigen, die, dem Sie am meisten interessiert wäre.
-- **ADS unzulässig** – Werbeeinblendungen dürfen ausschließlich in der Top-Shelf angezeigt wird. Sie können den neuesten kostenpflichtige Inhalt anzeigen, aber keine Preisinformationen angezeigt werden soll.
+- **Verwenden reichhaltiger statischer Bilder** – Wenn Ihre APP keinen dynamischen Inhalt bereitstellt, kann das oberste Regal Bild nicht verwendet werden. Verwenden Sie dieses Image, um die Features der APP oder Ihrer Marke hervorzuheben.
+- **Verknüpfung mit App-Inhalten** – dynamische Top-Regal-Layouts bieten einen schnellen Link zu den Inhalten, die Ihr Benutzer in Ihrer APP am wichtigsten findet. Verwenden Sie diesen Bereich, um einen schnellen Link zum Starten der APP bereitzustellen und sofort in den gegebenen Inhalt zu springen.
+- **Präsentieren Sie den neuesten Inhalt** – umfassende Inhalte mit Top-Shelf können einen Benutzer in Ihre APP ziehen und ihn mehr verwenden. Verwenden Sie diese als Bereich, um den höchsten bewerteten oder neuesten Inhalt zu präsentieren.
+- **Personalisierter Inhalt** – Benutzer platzieren Ihre am häufigsten verwendeten oder bevorzugten apps in der obersten Zeile des Startbildschirms. Verwenden Sie das obere Regal, um den Inhalt anzuzeigen, den Sie am meisten interessiert.
+- **ADS nicht zulässig** – Werbeeinblendungen dürfen im oberen Regal nicht angezeigt werden. Sie können den neuesten, von purchgbaren Inhalt anzeigen, es sollten jedoch keine Preisinformationen angezeigt werden.
 
-### <a name="setting-the-top-shelf-image"></a>Festlegen der Top-Shelf-Bild
+### <a name="setting-the-top-shelf-image"></a>Festlegen des oberen Regal Bilds
 
-Führen Sie zum Festlegen der Top-Shelf-Image für Ihr Projekt TvOS erforderlich sind folgende:
+Gehen Sie folgendermaßen vor, um das oberste Regal Bild festzulegen, das für Ihr tvos-Projekt erforderlich ist:
 
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf `Assets.xcassets` um ihn zur Bearbeitung zu öffnen: 
+1. Doppelklicken `Assets.xcassets` Sie im Projektmappen-Explorer, um es zur Bearbeitung zu öffnen: 
 
-    [![](icons-images-images/asset01.png "Die Datei Assets.xcassets")](icons-images-images/asset01.png#lightbox)
-2. In der **Ressourcen-Editor**, erweitern Sie die `App Icon & Top Shelf Image` Medienobjekt: 
+    [![](icons-images-images/asset01.png "Die Datei Assets. xcassets")](icons-images-images/asset01.png#lightbox)
+2. Erweitern Sie im **Asset-Editor**das `App Icon & Top Shelf Image` Objekt: 
 
-    [![](icons-images-images/asset04.png "Erweitern Sie das Medienobjekt Top Shelf Image")](icons-images-images/asset04.png#lightbox)
-3. Klicken Sie auf die `Top Shelf Image` Medienobjekt: 
+    [![](icons-images-images/asset04.png "Erweitern Sie das Objekt des obersten Regal Bilds.")](icons-images-images/asset04.png#lightbox)
+3. Klicken Sie auf `Top Shelf Image` das Medienobjekt: 
 
-    [![](icons-images-images/asset07.png "Das Medienobjekt Top Shelf Image")](icons-images-images/asset07.png#lightbox)
-4. Klicken Sie auf die **1 x Apple TV-Eintrag** , und wählen Sie eine Bilddatei.
+    [![](icons-images-images/asset07.png "Das Top-Regal Bild Asset")](icons-images-images/asset07.png#lightbox)
+4. Klicken Sie auf den **Eintrag 1X Apple TV** , und wählen Sie eine Bilddatei aus.
 5. Speichern Sie die Änderungen.
 
 <a name="Dynamic-Top-Shelf-Content" />
 
-### <a name="dynamic-top-shelf-content"></a>Dynamische Oberes Regal Inhalt
+### <a name="dynamic-top-shelf-content"></a>Dynamischer Top-Shelf-Inhalt
 
-Anstatt eine statische Top Shelf Image zu verwenden, darf der Top-Shelf eine dynamischen Zeile [Fokussierbare Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) oder einen dynamischen Satz von Durchführen eines Bildlaufs Banner. Beide dieser dynamische Format können Sie markieren Sie den Inhalt von Ihrer app oder ein Sprung in die am häufigsten verwendeten Funktionen bereitgestellt.
+Anstatt ein statisches Top-Regal Bild anzuzeigen, kann der obere Regal eine dynamische Zeile von [Fokus verwendbaren Elementen](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) oder einen dynamischen Satz von scrollbanner enthalten. Beide dynamischen Stile ermöglichen es Ihnen, den von der APP bereitgestellten Inhalt hervorzuheben oder zu den am häufigsten verwendeten Features zu springen.
 
 <a name="Sectioned-Content-Row" />
 
-#### <a name="sectioned-content-row"></a>Schottwänden Inhalt Zeile
+#### <a name="sectioned-content-row"></a>Zeile mit Abschnitts Inhalt
 
-Dieser dynamische Top Shelf-Inhaltstyp stellt eine einzelne Zeile des Bildlaufs an, den Fokus erhalten kann Elemente, die optional in Abschnitte unterteilt. Es wird normalerweise verwendet, um neue, Favoriten zu markieren oder die zuletzt angezeigte app-Inhalte.
+Dieser dynamische Top-Regal-Inhaltstyp zeigt eine einzelne Zeile mit Bild Lauf baren Elementen, die optional in Abschnitte unterteilt sind. Sie wird in der Regel verwendet, um neue, bevorzugte oder zuletzt angezeigte App-Inhalte hervorzuheben.
 
-Der Inhalt wird als einzelne, einem horizontalen Bildlauf Liste von Inhalten mit einer Bezeichnung, die unter der aktuellen Teil des ausgewählten Inhalts dargestellt (die gerade den Fokus besitzt). Wenn der Benutzer einen bestimmten Inhalt auswählt, wird Ihre app wird gestartet, und sie direkt in diese Inhalte entnommen werden soll.
+Der Inhalt wird als einzelne, horizontale Bildlauf-Inhaltsliste dargestellt, wobei eine Bezeichnung unter dem aktuell ausgewählten Inhalt angezeigt wird (der derzeit den Fokus besitzt). Wenn der Benutzer ein bestimmtes Inhalts Element auswählt, wird die APP gestartet und sollte direkt in diesen Inhalt übernommen werden.
 
-Die folgenden Inhalte Größen werden benötigt:
+Die folgenden Inhalts Größen sind erforderlich:
 
 ||Poster (2:3)|Square (1:1)|HDTV (16:9)|
 |---|---|---|---|
-|Tatsächliche Größe|404x608px|608x608px|908x512px|
-|Sichere Zone Größe|380x570px|570x570px|852x479px|
-|Ohne Fokus Größe|333x500px|500x500px|782x440px|
-|Fokussierte Größe|380x570px|570x570px|852x479px|
+|Tatsächliche Größe|404x608px|608x608px|908x512 px|
+|Größe der sicheren Zone|380x570px|570x570px|852x479px|
+|Größe ohne Fokus|333x500.000|500.000 × 500.000 Pixel|782x440px|
+|Fokus Größe|380x570px|570x570px|852x479px|
 
-Apple bietet die folgenden Vorschläge für die Inhalte geschnitten Zeile:
+Apple bietet die folgenden Vorschläge für die Zeile mit den Zeilen mit Inhalt:
 
-- **Führen Sie die Zeile** – sollten Sie genug Daten umfassen die gesamte Breite des Bildschirms bereitstellen.
-- **Skalieren von Bildern mit gemischten** – die geschnitten Content Zeile wurde entworfen, um eine Mischung aus Image-Größe (in der Liste oben aufgeführten) enthalten. Wenn Sie jedoch Bildgrößen mischen, denken Sie daran, dass zusätzliche Skalierung angewendet wird, um die Inhaltsanzeige zu normalisieren.
+- **Vervollständigen Sie die Zeile** – Sie sollten genügend Inhalte bereitstellen, um die gesamte Bildschirmbreite zu überspannen.
+- **Skalieren gemischter Images** – die Zeile mit den Zeilen mit dem Inhalt wurde so entworfen, dass Sie eine Mischung aus Bildgrößen (aus der oben angegebenen Liste) enthält. Wenn Sie jedoch Bildgrößen kombinieren, beachten Sie, dass zusätzliche Skalierung angewendet wird, um die Inhalts Anzeige zu normalisieren.
 
 <a name="Scrolling-Inset-Banners" />
 
-#### <a name="scrolling-inset-banners"></a>Durchführen eines Bildlaufs Inset Banner
+#### <a name="scrolling-inset-banners"></a>Scrollen in INSET-Banner
 
-Optional kann Ihre Xamarin.tvOS-app den Inhalt darstellen, in der Top-Shelf als automatisch durchführen eines Bildlaufs und Schleifen Auflistung von Banner, die nahezu den Bildschirm zu füllen. Dieses Format wird normalerweise verwendet, um featurereiche, neue Inhalte wie neue Fernsehsendungen vorzustellen.
+Optional kann Ihre xamarin. tvos-App ihren Inhalt im oberen Regal als automatische Bildlauf-und Schleifen Auflistung von transparenten präsentieren, die den Bildschirm fast ausfüllen. Dieser Stil wird in der Regel verwendet, um umfangreiche, neue Inhalte wie neue Fernsehsendungen zu präsentieren.
 
-Zusätzlich zu den automatischen Bildlauf aus, kann der Benutzer Kontrolle über das Banner und führen Sie einen Bildlauf in beide Richtungen mithilfe von Siri Remote. Sie haben eine kleine, werden den Parallaxeneffekt für dieses Banner zirkuläre Bewegung auf dem Remotecomputer Siri, wenn ein Banner im Fokus ist aktiviert.
+Zusätzlich zum automatischen Bildlauf kann der Benutzer die Kontrolle über die Banner und den Bildlauf in beide Richtungen mithilfe von Siri Remote durchführen. Wenn ein Banner im Fokus ist, wird eine kleine, kreisförmige Geste auf der Siri-Remote Bewegung aktiviert.
 
-**Bannerbild (zusätzliche breit)**
+**Banner Bild (extra breit)**
 
 |   |   |
 |---|---|
-|Tatsächliche Größe|1940x624px|
-|Sichere Zone Größe|1740x620px|
-|Ohne Fokus Größe|1740x560px|
-|Fokussierte Größe|1740x620px|
+|Tatsächliche Größe|1940× 624px|
+|Größe der sicheren Zone|1740x620px|
+|Größe ohne Fokus|1740x560px|
+|Fokus Größe|1740x620px|
 
-Durchführen eines Bildlaufs Inset Banner kann entweder bereitgestellt werden als statisch `.png` oder Ebenen `.lsr` Datei.
+Bildlauf-INSET-Banner können als statische `.png` oder geschichtete `.lsr` Datei bereitgestellt werden.
 
-Apple bietet die folgenden Vorschläge für das Durchführen eines Bildlaufs Inset Banner:
+Apple bietet die folgenden Vorschläge für die scrollinset-Banner:
 
-- **Inhalt der Menge** -sollten Sie mindestens drei (3) Banner für den Bildlauf damit können Sie natürliche bereitstellen. Sie sollten nicht mehr als acht (8) Banner einschließen oder erleichtern Navigation schwer für den Endbenutzer.
-- **Inhalt der Text** : Wenn Ihr Banner erfordert Text in das Bannerbild eingeschlossen werden soll. Wenn Sie Abbilder mit Ebenen verwendet werden, sollte der Text auf der obersten Ebene sein.
+- **Inhalts Betrag** : Sie sollten mindestens drei Banner für den Bildlauf angeben, damit der Bildlauf naturgemäß angezeigt wird. Sie sollten nicht mehr als acht (8) Banner einschließen oder die Navigation für den Endbenutzer hart machen.
+- **Inhalts Text** : Wenn für Ihr Banner Text in erforderlich ist, sollte das Banner Bild enthalten sein. Wenn Sie geschichtete Bilder verwenden, sollte sich der Text auf der obersten Ebene befinden.
 
-Informieren Sie sich von Apple [TVServices Frameworkverweis](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) für Weitere Informationen zu Ihrer app zum Bereitstellen von dynamischen Top Shelf-Inhalt eine Top-Shelf-Erweiterung hinzufügen.
+Weitere Informationen zum Hinzufügen einer Top-Regal-Erweiterung zu ihrer App finden Sie in der [Referenz zum tvservices-Framework](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) von Apple, um dynamische Top-Regal Inhalte bereitzustellen.
 
 <a name="Game-Center-Images" />
 
-## <a name="game-center-images"></a>Gamecenter-Images
+## <a name="game-center-images"></a>Game Center Bilder
 
-Wenn Ihre Xamarin.tvOS-app ein Spiel ist, und Sie Game Center-Unterstützung enthält, werden einige weitere Bildanlagen benötigt:
+Wenn Ihre xamarin. tvos-App ein Spiel ist und Sie Game Center Support eingeschlossen haben, sind mehrere Bild Ressourcen erforderlich:
 
-- **Auszeichnung Symbole** – ein nicht transparenter Image ist erforderlich, damit jede Auszeichnung an, die automatisch in einen Kreis zugeschnitten wird. Leistungen sind nicht den Fokus erhalten kann Elemente vorhanden.
-- **Dashboard-Bildmaterial** -bereitgestellt, die am oberen Rand der app-Dashboard im Game Center angezeigt wird, kann ein optionales Bild sein. Diese Images werden nicht erhalten.
-- **Leaderboard-Bildmaterial** -Geben Sie zwischen einem (1) auf drei (3) Seitenverhältnis 16:9-Images für die einzelnen Bestenliste anzeigen, die Ihre app unterstützt. Diese können entweder statisch sein `.png` oder Ebenen `.lsr` Dateien. Das Leaderboard-Bildmaterial ist den Fokus erhalten kann.
+- **Erfolgs Symbole** : ein undurchsichtiges Bild ist für jede der einzelnen Leistungen erforderlich, die automatisch in einen Kreis zugeschnitten werden. Die Ergebnisse sind nicht Fokus nutzbare Elemente.
+- **Dashboard-Grafik** : Sie können ein optionales Bild bereitstellen, das im oberen Bereich des App-dashGame Center Boards angezeigt wird. Diese Bilder können nicht verwendet werden.
+- **Leaderboard-Grafik** : Sie müssen zwischen einem (1) und drei (3) 16:9-Seitenverhältnis-Bild für jede Bestenlisten bereitstellen, die ihre App unterstützt. Dabei kann es sich entweder `.png` um statische `.lsr` oder geschichtete Dateien handeln. Die Leaderboard-Grafik kann als Fokus verwendet werden.
 
-||Auszeichnung-Symbole|Dashboard-Bildmaterial|Leaderboard-Bildmaterial|
+||Symbol "Erfolge"|Dashboard-Grafik|Leaderboard-Grafik|
 |---|---|---|---|
 |Sichtbare Größe|200x200px|923x150px|n/v|
-|Tatsächliche Größe|320x320px|n/v|659x371px|
-|Sichere Zone Größe|n/v|n/v|618x348px|
-|Ohne Fokus Größe|n/v|n/v|548x309px|
-|Fokussierte Größe|n/v|n/v|618x348px|
+|Tatsächliche Größe|320x320 px|n/v|659x371px|
+|Größe der sicheren Zone|n/v|n/v|618x348px|
+|Größe ohne Fokus|n/v|n/v|548x309px|
+|Fokus Größe|n/v|n/v|618x348px|
 
-Weitere Informationen zum Arbeiten mit Game Center finden Sie unter Apple [Game Center-Programmierhandbuch](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html).
+Weitere Informationen zum Arbeiten mit Game Center finden Sie im [Game Center-Programmier Handbuch](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)von Apple.
 
 <a name="Working-with-Images" />
 
 ## <a name="working-with-images"></a>Working with Images (Arbeiten mit Bildern)
 
-Da TvOS 9 eine Teilmenge von iOS 9 ist und Anzeigen von Bildern in einer Xamarin.iOS-app verwendeten Techniken funktionieren Sie auch für eine Xamarin.tvOS-app. Informieren Sie sich unsere [Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Dokumentation zu informieren.
+Da tvos 9 eine Teilmenge von IOS 9 ist, funktionieren die gleichen Techniken zum einschließen und Anzeigen von Bildern in einer xamarin. IOS-APP auch für eine xamarin. tvos-app. Weitere Informationen finden Sie in unserer [Bild](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Dokumentation.
 
 <a name="Setting-Xamarin.tvOS-Project-Images" />
 
-## <a name="setting-xamarintvos-project-images"></a>Festlegen der Bilder mit Xamarin.tvOS-Projekt
+## <a name="setting-xamarintvos-project-images"></a>Festlegen von xamarin. tvos-Projekt Images
 
-Wie bereits erwähnt, erfordern alle TvOS-apps eine [Startbildgruppe](#Launch-Image), und [App-Symbol](#App-Icons). Dieser Abschnitt enthält das Image zu starten und die App-Symbol für Ihre Xamarin.tvOS-app-Projekt auswählen, nachdem sie in einem Ressourcenkatalog festgelegt wurden.
+Wie bereits erwähnt, erfordern alle tvos-apps ein [Start Image](#Launch-Image)und ein [App-Symbol](#App-Icons). In diesem Abschnitt wird beschrieben, wie Sie das Symbol Start Bild und App für Ihr xamarin. tvos-App-Projekt auswählen, nachdem Sie in einem Ressourcen Katalog festgelegt wurden.
 
 Führen Sie folgende Schritte aus:
 
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Info.plist` um ihn zur Bearbeitung zu öffnen: 
+1. Doppelklicken Sie in der **Projektmappen-Explorer**auf das `Info.plist` , um es zur Bearbeitung zu öffnen: 
 
-    [![](icons-images-images/info01.png "Die Datei \"Info.plist\"")](icons-images-images/info01.png#lightbox)
-2. In der **Info.Plist-Editor**, wählen Sie den Katalog der Ressourcen (Konfiguration oben in der [Festlegen der App-Symbole](#Setting-the-App-Icons) Abschnitt) für die **-App-Symbole**: 
+    [![](icons-images-images/info01.png "Die Datei \"Info. plist\"")](icons-images-images/info01.png#lightbox)
+2. Wählen Sie im **Info. plist-Editor**den Ressourcen Katalog (oben im Abschnitt [Festlegen der APP-Symbole](#Setting-the-App-Icons) konfiguriert) für die **App-Symbole**aus: 
 
-    [![](icons-images-images/info02.png "Die Datei \"Info.plist\"-Editor")](icons-images-images/info02.png#lightbox)
-3. Wählen Sie als Nächstes die Ressourcenkatalogs (Konfiguration oben in der [Festlegen des Bildformats starten](#Setting-the-Launch-Image) Abschnitt) für die **Startbilder**.
+    [![](icons-images-images/info02.png "Der Info. plist-Editor")](icons-images-images/info02.png#lightbox)
+3. Wählen Sie als nächstes den Ressourcen Katalog (oben im Abschnitt [Festlegen des Start](#Setting-the-Launch-Image) Abbilds konfiguriert) für die **Start Images**aus.
 4. Speichern Sie die Änderungen.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden alle imagetypen und Größen, die in einer Xamarin.tvOS-app verwendet behandelt. Es behandelt zunächst Startbilder, Mehrschicht-Images, App-Symbole, Top-Shelf-Images und Game Center-Images. Klicken Sie dann konnte damit die Arbeit mit Bildern in der Xamarin.tvOS-app.
+In diesem Artikel wurden alle in einer xamarin. tvos-App verwendeten Abbild Typen und-Größen behandelt. Zuerst wurden Start Bilder, geschichtete Bilder, App-Symbole, Top-Shelf-Bilder und Game Center Bilder abgedeckt. Anschließend wird die Arbeit mit Bildern in ihrer xamarin. tvos-App behandelt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [TvOS Human Interface-Handbücher](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [App-Programmierhandbuch für tvos verwendet.](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvos Human Interface Guides](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [Leitfaden zur APP-Programmierung für tvos](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

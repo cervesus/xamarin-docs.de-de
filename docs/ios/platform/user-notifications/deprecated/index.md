@@ -1,46 +1,46 @@
 ---
-title: Veraltete Benachrichtigungstechnologien in Xamarin.iOS
-description: Dieses Dokument beschreibt die iOS-Notification-Technologien, die durch das Framework Benutzerbenachrichtigungen eingeführt, die unter iOS 10 als veraltet gelten.
+title: Veraltete Benachrichtigungs Technologien in xamarin. IOS
+description: In diesem Dokument werden IOS-Benachrichtigungs Technologien beschrieben, die für das in ios 10 eingeführte Framework für Benutzer Benachrichtigungen veraltet sind.
 ms.prod: xamarin
 ms.assetid: 20C4F6E5-56DF-4A85-BBF0-E38C88586307
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/07/2016
-ms.openlocfilehash: 63134298e437e7ac9b99ac4d716f6265752651c3
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: af9f4d606dbe258b224d09f68f9b65d6f56ab28f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865682"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653896"
 ---
-# <a name="deprecated-notification-technologies-in-xamarinios"></a>Veraltete Benachrichtigungstechnologien in Xamarin.iOS
+# <a name="deprecated-notification-technologies-in-xamarinios"></a>Veraltete Benachrichtigungs Technologien in xamarin. IOS
 
-In diesem Abschnitt veranschaulicht das Implementieren von lokalen und Pushbenachrichtigungen in Xamarin.iOS. Es wird erläutert, die UI-Elemente von einer iOS-Benachrichtigung und diskutieren Sie die API des mit dem Erstellen und Anzeigen einer Benachrichtigung beteiligt.
+In diesem Abschnitt wird gezeigt, wie lokale und Pushbenachrichtigungen in xamarin. IOS implementiert werden. Darin werden die verschiedenen Benutzeroberflächen Elemente einer IOS-Benachrichtigung erläutert, und es wird erläutert, welche API zum Erstellen und Anzeigen einer Benachrichtigung beteiligt ist.
 
 > [!IMPORTANT]
-> Die Informationen in diesem Abschnitt beziehen sich auf iOS 9 und vorherigen, es wurde keine hier zur Unterstützung von älterer iOS-Versionen. IOS 10 und höher, finden Sie unter den [Handbuch für die Benutzer-Notification-Framework](~/ios/platform/user-notifications/index.md) für die Unterstützung von sowohl lokale als auch Remote-Benachrichtigung auf iOS-Geräten.
+> Die Informationen in diesem Abschnitt beziehen sich auf IOS 9 und ältere Versionen, die Sie für ältere IOS-Versionen unterstützen. Informationen zu IOS 10 und höher finden Sie im [Handbuch zum Benutzer Benachrichtigungs Framework](~/ios/platform/user-notifications/index.md) , das sowohl lokale als auch Remote Benachrichtigungen auf einem IOS-Gerät unterstützt.
 
 ## <a name="sections"></a>Abschnitte
 
 <a name="Local Notifications In iOS" />
 
-## <a name="local-notifications-in-ioslocal-notifications-in-iosmd"></a>[Lokale Benachrichtigungen unter iOS](local-notifications-in-ios.md)
+## <a name="local-notifications-in-ioslocal-notifications-in-iosmd"></a>[Lokale Benachrichtigungen in ios](local-notifications-in-ios.md)
 
-Dieser Abschnitt wird erläutert, wie Sie lokale Benachrichtigungen in Xamarin.iOS zu implementieren. Es wird erläutert, die UI-Elemente von einer iOS-Benachrichtigung und diskutieren Sie die API des mit dem Erstellen und Anzeigen einer Benachrichtigung beteiligt.
+In diesem Abschnitt wird erläutert, wie lokale Benachrichtigungen in xamarin. IOS implementiert werden. Darin werden die verschiedenen Benutzeroberflächen Elemente einer IOS-Benachrichtigung erläutert, und es wird erläutert, welche API zum Erstellen und Anzeigen einer Benachrichtigung beteiligt ist.
 
 <a name="Local Notifications Walkthrough" />
 
 ## <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[Exemplarische Vorgehensweise: Verwenden von lokalen Benachrichtigungen in Xamarin.iOS](local-notifications-in-ios-walkthrough.md)
 
-In diesem Abschnitt begleiten wir erläutert, wie Sie lokale Benachrichtigungen in einer Xamarin.iOS-Anwendung verwenden. Es veranschaulicht die Grundlagen zum Erstellen und veröffentlichen eine Benachrichtigung, die Sie eine Warnung, wenn von der app empfangen angezeigt wird.
+In diesem Abschnitt wird erläutert, wie lokale Benachrichtigungen in einer xamarin. IOS-Anwendung verwendet werden. Es veranschaulicht die Grundlagen der Erstellung und Veröffentlichung einer Benachrichtigung, mit der eine Warnung angezeigt wird, wenn Sie von der APP empfangen wird.
 
 <a name="Remote Notifications In iOS" />
 
-## <a name="remote-notifications-in-iosremote-notifications-in-iosmd"></a>[Remotebenachrichtigungen in iOS](remote-notifications-in-ios.md)
+## <a name="remote-notifications-in-iosremote-notifications-in-iosmd"></a>[Remote Benachrichtigungen in ios](remote-notifications-in-ios.md)
 
-In diesem Abschnitt werden die Pushbenachrichtigungen in iOS behandelt. Das Apple Push Notifications Gateway Service (APNS) und die Rolle, die es bei der Veröffentlichung Benachrichtigungen an iOS-Anwendungen spielt eingeführt. Es wird erläutert, wie zum Erstellen der Sicherheitszertifikate zum Aktivieren von Pushbenachrichtigungen und besprechen werden sollen. In diesem Abschnitt werden schließlich einige der Verwaltungs-und Wartungsaufgaben erläutert, die Anwendungsserver zum Nachverfolgen der mobile Clientgeräte ausführen müssen.
+In diesem Abschnitt werden Pushbenachrichtigungen in ios behandelt. Es führt den Apple Push Notification Gateway-Dienst (APNs) und die Rolle ein, die er beim Veröffentlichen von Benachrichtigungen für IOS-Anwendungen spielt. Darin wird erläutert, wie die Sicherheitszertifikate erstellt werden, die erforderlich sind, um Pushbenachrichtigungen zu aktivieren und zu besprechen. In diesem Abschnitt werden einige der Aufgaben beschrieben, die von Anwendungsservern ausgeführt werden müssen, um die mobilen Client Geräte nachzuverfolgen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Benachrichtigungen (Beispiel)](https://developer.xamarin.com/samples/monotouch/Notifications/)
+- [Benachrichtigungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)

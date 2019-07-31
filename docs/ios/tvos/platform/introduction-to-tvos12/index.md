@@ -1,52 +1,52 @@
 ---
 title: Einführung in tvOS 12
-description: Dieses Dokument enthält eine allgemeine Übersicht der neuen und aktualisierten Funktionen in TvOS 12 für die Xamarin Preview-Version aktuell c#-Bindungen enthält.
+description: Dieses Dokument enthält eine Übersicht über neue und aktualisierte Features in tvos 12, für die das xamarin-Vorschau Release derzeit Bindungen bereitstellt C# .
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 16568ca06a7c6be9d23ebb44e9c958b06bbc6bdf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60932540"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657354"
 ---
 # <a name="introduction-to-tvos-12"></a>Einführung in tvOS 12
 
-Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte TvOS 12.
+Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte tvos 12.
 
-Informationen zum Einstieg TvOS-12-apps mit Xamarin erstellen, sehen Sie sich die [Handbuch mit ersten Schritten](~/ios/platform/introduction-to-ios12/get-started.md).
+Informationen zu den ersten Schritten beim Erstellen von tvos 12-apps mit xamarin finden Sie im [Leitfaden](~/ios/platform/introduction-to-ios12/get-started.md)für die ersten Schritte.
 
-## <a name="tvuikit"></a>TVUIKit
+## <a name="tvuikit"></a>Tvuikit
 
-TvOS 12 enthält TVUIKit, einen Satz von APIs, die für TvOS-Entwicklern, TvOS-Standardsteuerelemente, z. B. Poster Ansichten, Titelleistenschaltflächen, Smartcard-Ansichten und Monogramm Ansichten verwenden können. TvOS 12 führt außerdem eine Eigenschaft, die können Beschriftungen, Text zu blättern, die vollständig sichtbar ist zu lang ist.
+tvos 12 umfasst tvuikit, eine Reihe von APIs, die es tvos-Entwicklern ermöglichen, gängige tvos-Steuerelemente wie z. b. Poster-Ansichten, Beschriftungs Schaltflächen, Kartenansichten und Monogram-Sichten zu verwenden. tvos 12 führt außerdem eine Eigenschaft ein, mit der Bezeichnungen einen Bildlauf durchführen können, der für eine vollständige Sichtbarkeit zu lang ist.
 
-## <a name="password-autofill"></a>Das Kennwort automatisch ausfüllen
+## <a name="password-autofill"></a>Kenn Wort AutoFill
 
-Mit TvOS 12 können Benutzer ihre iOS-Geräte verwenden, für die Anmeldung zu einer TvOS-app mit einem einzigen fingertipp. Dies erfolgt durch eine Kombination von `UITextContentType` zugehörige Domänen, die zum Erstellen einer Beziehung zwischen einer iOS-app und einer TvOS-app und bevorzugte Fokus Umgebungen auf ein Element, das Fokus erhalten, nachdem ein Benutzer mit Benutzername und ein Kennwort angeben Feldern Stellt einen Benutzernamen und ein Kennwort an.
+Mit tvos 12 können sich Benutzer mit ihren IOS-Geräten bei einer tvos-App mit einer einzigen Tap anmelden. Dies wird durch eine Kombination von `UITextContentType` Verwendung zum Angeben von Benutzername-und Kenn Wort Feldern, zugeordneten Domänen, um eine Beziehung zwischen einer IOS-APP und einer tvos-App herzustellen, und bevorzugten Fokus Umgebungen ermöglicht, um ein Element auszuwählen, das nach einem Benutzer Fokus erhält. Gibt einen Benutzernamen und ein Kennwort an.
 
 ## <a name="focus-engine-enhancements"></a>Erweiterungen der Fokus-Engine
 
-TvOS-12 kann alle apps, unabhängig davon, wie sie für die Interaktion mit der Engine Fokus gerendert werden, an. Über die Interaktionen des Benutzers mit dem Remoterepository Siri kann der Fokus-Engine verwendet werden mit einer anderen app wählen Sie ein Element, Hinweise zur möglichen fokusänderungen und den Fokus auf natürliche Weise zu aktualisieren. Dieses Verhalten wird aktiviert, in benutzerdefinierten Anwendungen über die UIKit `IUIFocusItemContainer` -Schnittstelle, die `UIFocusMovementHint` -Klasse, die `IUIFocusItemScrollableContainer` -Schnittstelle, und anderen verwandten Klassen und Methoden.
+tvos 12 ermöglicht die Interaktion mit der Fokus-Engine für alle apps, unabhängig davon, wie Sie gerendert werden. Durch die Interaktion eines Benutzers mit der Siri-Remote-Engine kann die Fokus-Engine mit jeder beliebigen App verwendet werden, um ein Element auszuwählen, mögliche Fokus Änderungen zu berücksichtigen und den Fokus natürlich zu aktualisieren. Dies wird in benutzerdefinierten Anwendungen über die Benutzeroberfläche von `IUIFocusItemContainer` UIKit `UIFocusMovementHint` , die- `IUIFocusItemScrollableContainer` Klasse, die-Schnittstelle und andere verwandte Klassen und Methoden aktiviert.
 
-## <a name="vision-framework"></a>Maschinelles sehen-framework
+## <a name="vision-framework"></a>Vision Framework
 
-Das Vision Framework enthält eine verbesserte gesichtserkennung, die in verschiedenen Ausrichtungen Gesichter erkennen kann. Darüber hinaus können Anforderung Revisionen jetzt verwendet werden, um eine bestimmte Vision Framework Algorithmusrevision auszuwählen.
+Das Vision-Framework enthält ein verbessertes Gesichts Erkennungs Modul, mit dem Gesichter in verschiedenen Ausrichtungen erkannt werden können. Außerdem können Anforderungs Revisionen nun verwendet werden, um eine bestimmte Vision Framework-Algorithmusrevision auszuwählen.
 
-## <a name="natural-language-framework"></a>Natürlicher Sprachen-framework
+## <a name="natural-language-framework"></a>Framework für natürliche Sprache
 
-Natürlicher Sprachen-Framework ermöglicht Anwendungen das Ausführen von verschiedenen Arten von sprachanalyse. Beispielsweise kann verwendet werden, zum Identifizieren von Wortarten, und ermitteln die Sprache, die durch einen Textblock dargestellt wird.
+Das Framework für natürliche Sprache ermöglicht Anwendungen das Ausführen verschiedener Arten von Sprachanalysen. Beispielsweise kann Sie verwendet werden, um Teile der Sprache zu identifizieren und die durch einen TextBlock dargestellte Sprache zu bestimmen.
 
-## <a name="deprecations"></a>Veralteten
+## <a name="deprecations"></a>Veraltete Funktionen
 
-Mit TvOS 12 veraltet Apple OpenGL-ES, [und Entwickler werden angeregt](https://developer.apple.com/tvos/whats-new/) -Metal-Computern zu übernehmen.
+Mit tvos 12 hat Apple veraltete OpenGL es als veraltet eingestuft und [Entwickler dazu ermutigt](https://developer.apple.com/tvos/whats-new/) , Metal zu übernehmen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
-- [TvOS-Apple-Entwickler (Apple)](https://developer.apple.com/tvos/)
-- [Neuerungen in TvOS-12 (Apple) (video)](https://developer.apple.com/videos/play/wwdc2018/208/)
+- [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvos – Apple Developer (Apple)](https://developer.apple.com/tvos/)
+- [Neues in tvos 12 (Apple) (Video)](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [TV (Apple)](https://www.apple.com/tv/)

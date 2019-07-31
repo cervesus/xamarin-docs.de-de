@@ -1,35 +1,35 @@
 ---
-title: Arbeiten mit Tabellen und Zellen in Xamarin.iOS
-description: Dieses Dokument enthält Links zu verschiedenen Anleitungen, die beschreiben, wie Daten mit dem UITableView-Steuerelement in einer Xamarin.iOS-app angezeigt.
+title: Arbeiten mit Tabellen und Zellen in xamarin. IOS
+description: Dieses Dokument verweist auf verschiedene Anleitungen, in denen beschrieben wird, wie Daten mit dem uitableview-Steuerelement in einer xamarin. IOS-App angezeigt werden.
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/06/2016
-ms.openlocfilehash: 275c7553e465da67ca0780ea6aa9e986ca33b1f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d01814bc241dcfb7b62f40bef226ee720a96ff23
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61379124"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657004"
 ---
-# <a name="working-with-tables-and-cells-in-xamarinios"></a>Arbeiten mit Tabellen und Zellen in Xamarin.iOS
+# <a name="working-with-tables-and-cells-in-xamarinios"></a>Arbeiten mit Tabellen und Zellen in xamarin. IOS
 
-In diesem Abschnitt werden die Klassen, die zum Erstellen und zeigen Sie Tabellen vorgestellt, und klicken Sie dann enthält Beispiele dafür, wie Sie diese in Xamarin.iOS verwenden. Es wird behandelt, verwenden die standarddarstellung für Tabellen, Anpassen des Layouts, das Implementieren von bearbeiten und die Verwendung der Xamarin.IOS-Designer, um eine Tabelle visuell zu entwerfen. Manchmal ist die Anzeige offensichtlich eine Liste von Zeilen (z. B. die Musik-app) und in anderen Situationen ist es schwer zu erkennen, das Table-Steuerelement (z. B. die Bearbeitung in die Kontakte-app oder einer Konversation in der Nachrichten-app).
+In diesem Abschnitt werden die Klassen vorgestellt, die zum Erstellen und Anzeigen von Tabellen verwendet werden, und es werden Beispiele für die Verwendung in xamarin. IOS bereitgestellt. Dabei wird die Standarddarstellung für Tabellen, das Anpassen des Layouts, das Implementieren der Bearbeitung und die Verwendung des xamarin IOS-Designers zum visuellen Entwerfen einer Tabelle behandelt. Manchmal ist die Anzeige offensichtlich eine Liste von Zeilen (z. b. die Musik-app), und in anderen Fällen ist es schwierig, das Tabellen Steuerelement zu erkennen (z. b. die Bearbeitung in der App "Kontakte" oder eine Konversation in der Nachrichten-
 
-Für alle Arbeiten an plattformübergreifenden Anwendungen, die mit Xamarin.Android das UITableView-Steuerelement ist vergleichbar mit der Klasse "ListView" unter Android (und die UITableViewSource-Klasse ist vergleichbar mit der Android-Adapterklassen).
+Bei der Verwendung von plattformübergreifenden Anwendungen mit xamarin. Android ähnelt das uitableview-Steuerelement der ListView-Klasse in Android (und die uitableviewsource-Klasse ähnelt den Adapter Klassen von Android).
 
-Diese Artikel nehmen einen umfassenden Überblick über das Arbeiten mit Tabellen, einschließlich:
+Diese Artikel machen einen umfassenden Einblick in die Arbeit mit Tabellen, einschließlich der folgenden:
 
--   **Tabelle Teile** – Einführung in und erläutert die visuellen Elemente der `UITableView` Steuerelement. 
--   **Anzeigen von Daten in Tabellen** – veranschaulicht, wie zum Erstellen und Auffüllen einer Tabelle, verwenden Sie verschiedene Formate für Tabellen und Zellen und Speicherproblemen zu vermeiden, indem Sie die Wiederverwendung von Cell-Objekte. 
--   **Erweiterte Verwendung** – Erstellen von benutzerdefinierten Zellen und verwenden Sie die Bearbeitungsfunktionen der UITableView-Klasse. 
--   **Erstellen einer Tabelle visuell** – mit dem Xamarin-Designer für iOS eine tabellenbasierten-Schnittstelle mit einem Storyboard zu erstellen. 
+-   **Tabellen Teile** – Einführung und Erläuterung der visuellen Elemente des `UITableView` Steuer Elements. 
+-   **Anzeigen von Daten in Tabellen** – veranschaulichen, wie Sie eine Tabelle erstellen und Auffüllen, verschiedene Tabellen-und Zell Stile verwenden und Speicherprobleme vermeiden, indem Sie Zellen Objekte wieder verwenden. 
+-   **Erweiterte Verwendung** – das Entwickeln von benutzerdefinierten Zellen und das Verwenden der Bearbeitungsfunktionen der uitableview-Klasse. 
+-   **Visuelles Erstellen einer Tabelle** – mithilfe der Xamarin Designer für IOS, um eine Tabellen gesteuerte Schnittstelle mit einem Storyboard zu erstellen. 
 
 ## <a name="contents"></a>Inhalt
 
- [Tabelle Teile &amp; Funktionen](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
+ [Tabellen Teile &amp; Funktionalität](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
 
  [Auffüllen einer Tabelle mit Daten](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
 
@@ -37,7 +37,7 @@ Diese Artikel nehmen einen umfassenden Überblick über das Arbeiten mit Tabelle
 
  [Bearbeiten](~/ios/user-interface/controls/tables/editing.md)
  
- [Zeilenaktionen](~/ios/user-interface/controls/tables/row-action.md)
+ [Zeilen Aktionen](~/ios/user-interface/controls/tables/row-action.md)
 
  [Erstellen von Tabellen in einem Storyboard](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
  
@@ -45,15 +45,15 @@ Diese Artikel nehmen einen umfassenden Überblick über das Arbeiten mit Tabelle
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WorkingWithTables (Beispiel)](https://developer.xamarin.com/samples/monotouch/WorkingWithTables/)
-- [Tabellen in Storyboards (Beispiel)](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
+- [Workingwithtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [Tabellen in Storyboards (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable)
 - [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md)
-- [Eine Anleitung TableView Storyboard](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/storyboard_a_tableview)
-- [Einführung in die MonoTouch.Dialog](~/ios/user-interface/monotouch.dialog/index.md)
-- [TableEditing-Beispiel auf Github](https://github.com/xamarin/monotouch-samples/tree/master/TableEditing)
-- [TableParts-Beispiel auf Github](https://github.com/xamarin/monotouch-samples/tree/master/TableParts)
-- [TableAndCellStyles-Beispiel auf Github](https://github.com/xamarin/mobile-samples/tree/master/TablesLists)
-- [UITableView-Klassenreferenz](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/)
-- [UITableViewCell-Klassenreferenz](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/)
+- [Storyboard für eine TableView-Anleitung](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/storyboard_a_tableview)
+- [Einführung in MonoTouch. Dialog](~/ios/user-interface/monotouch.dialog/index.md)
+- [Tableediting-Beispiel auf GitHub](https://github.com/xamarin/monotouch-samples/tree/master/TableEditing)
+- [Tableparts-Beispiel auf GitHub](https://github.com/xamarin/monotouch-samples/tree/master/TableParts)
+- [Tableandcellstyles-Beispiel auf GitHub](https://github.com/xamarin/mobile-samples/tree/master/TablesLists)
+- [Uitableview-Klassenreferenz](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/)
+- [Uitableviewcell-Klassenreferenz](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/)
 - [UITableViewDelegate](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/)
 - [UITableViewDataSource](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/)

@@ -1,50 +1,50 @@
 ---
-title: Auflistungsansichten in Xamarin.Mac
-description: Dieser Artikel beschreibt das Arbeiten mit Auflistungsansichten in einer Xamarin.Mac-app. Hierin sind erstellen und verwalten Auflistungsansichten in Xcode und Interface Builder und Programmgesteuertes Arbeiten mit ihnen.
+title: Auflistungs Ansichten in xamarin. Mac
+description: Dieser Artikel beschreibt das Arbeiten mit Auflistungs Ansichten in einer xamarin. Mac-app. Sie behandelt das Erstellen und Verwalten von Auflistungs Ansichten in Xcode und Interface Builder und Programm gesteuertes arbeiten mit Ihnen.
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: 82dd175222289676c3dacd80522c55e71ba12180
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 432e875969164b6481671d769d488c5f34458fe0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61236025"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657263"
 ---
-# <a name="collection-views-in-xamarinmac"></a>Auflistungsansichten in Xamarin.Mac
+# <a name="collection-views-in-xamarinmac"></a>Auflistungs Ansichten in xamarin. Mac
 
-_Dieser Artikel beschreibt das Arbeiten mit Auflistungsansichten in einer Xamarin.Mac-app. Hierin sind erstellen und verwalten Auflistungsansichten in Xcode und Interface Builder und Programmgesteuertes Arbeiten mit ihnen._
+_Dieser Artikel beschreibt das Arbeiten mit Auflistungs Ansichten in einer xamarin. Mac-app. Sie behandelt das Erstellen und Verwalten von Auflistungs Ansichten in Xcode und Interface Builder und Programm gesteuertes arbeiten mit Ihnen._
 
-Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-app, die der Entwickler hat Zugriff auf die gleiche AppKit Auflistungsansicht steuert, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, verwendet der Entwickler von Xcode _Interface Builder_ erstellen und verwalten Auflistungsansichten.
+Beim Arbeiten mit C# und .net in einer xamarin. Mac-app hat der Entwickler Zugriff auf die gleichen AppKit-Auflistungs Ansicht-Steuerelemente, die ein Entwickler in *Ziel-C* und *Xcode* verwendet. Da xamarin. Mac direkt in Xcode integriert ist, verwendet der Entwickler Xcode- _Interface Builder_ , um Auflistungs Ansichten zu erstellen und zu verwalten.
 
-Ein `NSCollectionView` zeigt ein Raster mit Unteransichten Organisation mit einem `NSCollectionViewLayout`. Durch jede Unteransicht im Raster dargestellt wird ein `NSCollectionViewItem` verwaltet das Laden der Ansicht Inhalt aus einem `.xib` Datei.
+Ein `NSCollectionView` zeigt ein Raster von unter Sichten an, die `NSCollectionViewLayout`mithilfe eines organisiert wurden. Jede untergeordnete Sicht im Raster wird durch einen `NSCollectionViewItem` dargestellt, der das Laden des Inhalts der Ansicht aus einer `.xib` Datei verwaltet.
 
-[![Eine Beispiel-app-Ausführung](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
+[![Ein Beispiel für eine APP-Laufzeit](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
-Dieser Artikel behandelt die Grundlagen der Arbeit mit Auflistungsansichten in einer Xamarin.Mac-app. Es wird dringend empfohlen, dass Sie über arbeiten die [Hallo, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
+In diesem Artikel werden die Grundlagen der Arbeit mit Auflistungs Ansichten in einer xamarin. Mac-app behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , durcharbeiten, da er wichtige Konzepte und Techniken behandelt, die verwendet werden. in diesem Artikel.
 
-Empfiehlt es sich um einen Blick auf die [Verfügbarmachen von c#-Klassen / Methoden mit Objective-C](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac-Interna](~/mac/internals/how-it-works.md) dokumentieren, es wird erläutert, die `Register` und `Export` Befehle verwendet, um Ihre Klassen in c# für Objective-C-Objekte und Elemente der Benutzeroberfläche anschließen.
+Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden die-und `Register` `Export` -Befehle erläutert, die zum Verknüpfen der C# Klassen mit verwendet werden. Ziel-C-Objekte und UI-Elemente.
 
 <a name="About_Collection_Views"/>
 
-## <a name="about-collection-views"></a>Über die Auflistungsansichten
+## <a name="about-collection-views"></a>Informationen zu Sammlungs Ansichten
 
-Das Hauptziel der eine Auflistungsansicht (`NSCollectionView`) besteht darin, eine Gruppe von Objekten in einer strukturierten Weise mit einem Ansichtslayout Auflistung visuell anordnen (`NSCollectionViewLayout`), mit der jedes einzelne Objekt (`NSCollectionViewItem`) ihre eigene Ansicht abrufen, in der Auflistung größer. Auflistungsansichten zu arbeiten, über Techniken für die Datenbindung und Schlüssel / Wert-Codierung und Lesen Sie daher die [Datenbindung und Schlüssel / Wert-Codierung](~/mac/app-fundamentals/databinding.md) Dokumentation, bevor Sie mit diesem Artikel fortfahren.
+Das Hauptziel einer Sammlungsansicht (`NSCollectionView`) besteht darin, eine Gruppe von Objekten mithilfe eines Auflistungs Ansichts Layouts (`NSCollectionViewLayout`) visuell visuell anzuordnen, wobei jedes einzelne Objekt (`NSCollectionViewItem`) eine eigene Ansicht in der größeren Auflistung erhält. Auflistungs Ansichten funktionieren über Daten Bindungen und Schlüssel-Wert-Codierungstechniken. Daher sollten Sie die [Datenbindung und die Schlüssel-Wert-Codierungs](~/mac/app-fundamentals/databinding.md) Dokumentation lesen, bevor Sie mit diesem Artikel fortfahren.
 
-Die Auflistungsansicht hat keine integrierten Auflistungselement anzeigen (wie eine Gliederung oder die Tabellenansicht der Fall ist), also der Entwickler verantwortlich für das Entwerfen und Implementieren einer _Prototyp Ansicht_ mithilfe von anderen AppKit-Steuerelementen wie z. B. Image-Feldern , Textfelder, Bezeichnungen usw. In dieser Ansicht Prototyp verwendet werden, um anzuzeigen, und Arbeiten mit jedem Element, die von der Auflistungsansicht verwaltet und befindet sich in einem `.xib` Datei.
+Die Sammlungsansicht verfügt über kein integriertes Standard Auflistungs Ansichts Element (wie z. b. eine Gliederung oder Tabellenansicht), sodass der Entwickler für das Entwerfen und Implementieren einer _prototypansicht_ mit anderen AppKit-Steuerelementen, wie z. b. Bildfeldern, Text Feldern, Bezeichnungen, zuständig ist. etc. Diese prototypansicht wird verwendet, um jedes Element, das von der Auflistungs Ansicht verwaltet wird, anzuzeigen und zu `.xib` bearbeiten, und wird in einer Datei gespeichert.
 
-Da der Entwickler für das Aussehen und Verhalten eines Sammelelements Ansicht verantwortlich ist, hat die Auflistungsansicht keine integrierte Unterstützung für ein ausgewähltes Element im Raster hervorheben. Implementieren dieses Feature wird in diesem Artikel erläutert.
+Da der Entwickler für das Aussehen und das Gefühl eines Auflistungs Ansichts Elements verantwortlich ist, verfügt die Sammlungsansicht nicht über integrierte Unterstützung für das Markieren eines ausgewählten Elements im Raster. Die Implementierung dieses Features wird in diesem Artikel behandelt.
 
 <a name="Defining_your_Data_Model"/>
 
 ## <a name="defining-the-data-model"></a>Definieren des Datenmodells
 
-Bevor Sie eine Auflistungsansicht-Datenbindung in Interface Builder, ein Schlüssel-Wert-Codierung (KVM) / beobachten von Schlüssel-Wert (KVO) kompatible Klasse muss definiert werden, in dem Xamarin.Mac-app, die als fungiert die _Datenmodell_ für die Bindung. Das Datenmodell enthält alle Daten, die in der Auflistung angezeigt und empfängt keine Änderungen an den Daten, die der Benutzer in der Benutzeroberfläche vorgenommen werden, beim Ausführen der Anwendung.
+Vor der Datenbindung einer Auflistungs Ansicht in Interface Builder muss in der xamarin. Mac-app eine KVO-kompatible Klasse (Key-Value Coding, KVC) definiert werden, die als _Datenmodell_ für die Bindung fungiert. Das Datenmodell stellt alle Daten bereit, die in der Auflistung angezeigt werden, und empfängt Änderungen an den Daten, die der Benutzer während der Ausführung der Anwendung in der Benutzeroberfläche vornimmt.
 
-Betrachten Sie beispielsweise eine app, die eine Gruppe von Mitarbeitern verwaltet, die folgende Klasse verwendet werden, um das Datenmodell zu definieren:
+Sehen Sie sich das Beispiel für eine APP an, die eine Gruppe von Mitarbeitern verwaltet. die folgende Klasse kann zum Definieren des Datenmodells verwendet werden:
 
 ```csharp
 using System;
@@ -183,48 +183,48 @@ namespace MacDatabinding
 }
 ```
 
-Die `PersonModel` Datenmodell wird im weiteren Verlauf dieses Artikels verwendet werden.
+Im `PersonModel` restlichen Verlauf dieses Artikels wird das Datenmodell verwendet.
 
 <a name="Working_with_a_Collection_View"/>
 
-## <a name="working-with-a-collection-view"></a>Arbeiten mit einer Auflistungsansicht
+## <a name="working-with-a-collection-view"></a>Arbeiten mit einer Sammlungsansicht
 
-Datenbindung mit einer Auflistungsansicht ist sehr ähnlich wie Bindung mit einer Tabellenansicht `NSCollectionViewDataSource` wird verwendet, um Daten für die Sammlung bereitstellen. Da die Auflistungsansicht nicht über einen vordefinierten Anzeigeformat verfügt, sind mehr Schritte erforderlich, um Feedback für die Interaktion von Benutzern bereitzustellen und zum Nachverfolgen der Auswahl des Benutzers.
+Die Datenbindung mit einer Auflistungs Ansicht ähnelt der Bindung mit einer Tabellen Sicht, `NSCollectionViewDataSource` die zum Bereitstellen von Daten für die Auflistung verwendet wird. Da die Sammlungsansicht nicht über ein voreingestelltes Anzeige Format verfügt, ist mehr Arbeit erforderlich, um Feedback zur Benutzerinteraktion bereitzustellen und die Benutzer Auswahl zu verfolgen.
 
 <a name="Creating-the-Cell-Prototype"/>
 
-### <a name="creating-the-cell-prototype"></a>Erstellung des Prototyps Zelle
+### <a name="creating-the-cell-prototype"></a>Erstellen des Zellen Prototyps
 
-Da einen Standard-Zelle-Prototyp in der Auflistungsansicht nicht enthalten ist, muss der Entwickler eine oder mehrere hinzuzufügende `.xib` Dateien in die Xamarin.Mac-app, um das Layout und Inhalt der einzelnen Zellen zu definieren.
+Da die Sammlungsansicht keinen Standardzellen Prototyp enthält, muss der Entwickler der xamarin. Mac-app `.xib` eine oder mehrere Dateien hinzufügen, um Layout und Inhalt der einzelnen Zellen zu definieren.
 
 Führen Sie folgende Schritte aus:
 
-1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie **hinzufügen** > **neue Datei...**
-2. Wählen Sie **Mac** > **Ansichtscontroller**, geben sie einen Namen (z. B. `EmployeeItem` in diesem Beispiel), und klicken Sie auf der **neu** zu erstellen: 
+1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.
+2. Wählen Sie **Mac** > **View Controller** `EmployeeItem` aus, geben Sie ihm einen Namen (z.b. in diesem Beispiel), und klicken Sie auf die Schaltfläche **neu** , um Folgendes zu erstellen: 
 
-    ![Hinzufügen eines neuen ansichtscontrollers](collection-view-images/proto01.png)
+    ![Hinzufügen eines neuen Ansichts Controllers](collection-view-images/proto01.png)
 
-    Hiermit wird ein `EmployeeItem.cs`, `EmployeeItemController.cs` und `EmployeeItemController.xib` Datei, die der Projektmappe.
-3. Doppelklicken Sie auf die `EmployeeItemController.xib` Datei, die sie zur Bearbeitung in Xcode Interface Builder zu öffnen.
-4. Hinzufügen einer `NSBox`, `NSImageView` und zwei `NSLabel` Steuerelemente an die Ansicht und ordnen sie Sie wie folgt:
+    Dadurch wird der Projekt `EmployeeItem.cs`Mappe `EmployeeItemController.cs` eine `EmployeeItemController.xib` -Datei und eine-Datei hinzugefügt.
+3. Doppelklicken Sie auf `EmployeeItemController.xib` die Datei, um Sie in der Interface Builder von Xcode zur Bearbeitung zu öffnen.
+4. Fügen Sie `NSBox`der `NSImageView` Ansicht ein `NSLabel` -Steuerelement und zwei-Steuerelemente hinzu, und legen Sie Sie wie folgt fest:
 
-    ![Entwerfen des Layouts des Prototyps Zelle](collection-view-images/proto02.png)
-5. Öffnen der **Assistant Editor** , und erstellen Sie eine **Outlet** für die `NSBox` , damit sie verwendet werden kann, um den Auswahlzustand einer Zelle anzugeben:
+    ![Entwerfen des Layouts des Zellen Prototyps](collection-view-images/proto02.png)
+5. Öffnen Sie den **Assistenten-Editor** , und erstellen Sie ein **Outlet** für das `NSBox` , sodass es verwendet werden kann, um den Auswahl Zustand einer Zelle anzugeben:
 
-    ![Verfügbarmachen der NSBox in eines Outlets](collection-view-images/proto03.png)
-6. Wechseln Sie zurück zur der **Standard-Editor** , und wählen Sie die Image-Ansicht.
-7. In der **Inspektor Bindung**wählen **binden,** > **Besitzer der Datei** , und geben Sie eine **Schlüsselpfad Modell** von `self.Person.Icon`:
+    ![Verfügbar machen der NSBox in einem Outlet](collection-view-images/proto03.png)
+6. Wechseln Sie zurück zum **Standard-Editor** , und wählen Sie die Bildansicht aus.
+7. Wählen Sie im **Bindungs Inspektor**die **Option an** > **Dateibesitzer** binden aus, und geben Sie den **Modell Schlüssel Pfad** für `self.Person.Icon`Folgendes ein:
 
-    ![Binden das Symbol "](collection-view-images/proto04.png)
-8. Wählen Sie die erste Bezeichnung und klicken Sie in der **Inspektor Bindung**Option **binden,** > **Besitzer der Datei** , und geben Sie eine **Modell Schlüsselpfad**von `self.Person.Name`:
+    ![Binden des Symbols](collection-view-images/proto04.png)
+8. Wählen Sie die erste Bezeichnung aus, und wählen Sie im **Bindungs Inspektor**die Option **an** > **Dateibesitzer** binden aus, und geben `self.Person.Name`Sie den **Modell Schlüssel Pfad** für Folgendes ein:
 
-    ![Binden den Namen](collection-view-images/proto05.png)
-9. Wählen Sie die zweite Bezeichnung und klicken Sie in der **Inspektor Bindung**Option **binden,** > **Besitzer der Datei** , und geben Sie eine **Modell Schlüsselpfad**von `self.Person.Occupation`:
+    ![Binden des Namens](collection-view-images/proto05.png)
+9. Wählen Sie die zweite Bezeichnung aus, und wählen Sie im **Bindungs Inspektor**die Option **an** > **Dateibesitzer** binden aus, und geben `self.Person.Occupation`Sie den **Modell Schlüssel Pfad** für Folgendes ein:
 
-    ![Binden die "Occupation"](collection-view-images/proto06.png)
-10. Speichern Sie die Änderungen an der `.xib` Datei und zurück zu Visual Studio, um die Änderungen zu synchronisieren.
+    ![Binden der Tätigkeit](collection-view-images/proto06.png)
+10. Speichern Sie die Änderungen in `.xib` der Datei, und kehren Sie zu Visual Studio zurück, um die Änderungen zu synchronisieren.
 
-Bearbeiten der `EmployeeItemController.cs` Datei, und stellen sie wie folgt aussehen:
+Bearbeiten Sie `EmployeeItemController.cs` die Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -344,9 +344,9 @@ namespace MacCollectionNew
 }
 ```
 
-Betrachten diesen Code im Detail, die Klasse erbt von `NSCollectionViewItem` , damit sie als einen Prototyp für eine Auflistungsansicht Zelle fungieren kann. Die `Person` -Eigenschaft verfügbar macht, die Klasse, die für die Datenbindung an die Image-Ansicht und die Bezeichnungen in Xcode verwendet wurde. Dies ist eine Instanz der `PersonModel` oben erstellt haben.
+Wenn Sie diesen Code ausführlich betrachten, erbt die-Klasse `NSCollectionViewItem` von, sodass Sie als Prototyp für eine Sammlungs Ansichts Zelle fungieren kann. Die `Person` -Eigenschaft macht die-Klasse verfügbar, die zur Datenbindung an die Bildansicht und Bezeichnungen in Xcode verwendet wurde. Dies ist eine Instanz von, `PersonModel` die oben erstellt wurde.
 
-Die `BackgroundColor` Eigenschaft ist eine Verknüpfung zu den `NSBox` des Steuerelements `FillColor` , wird verwendet, um den Auswahlstatus einer Zelle anzuzeigen. Durch Überschreiben der `Selected` Eigenschaft der `NSCollectionViewItem`, der folgende Code legt fest oder löscht diese Auswahlzustand:
+Die `BackgroundColor` -Eigenschaft ist eine Verknüpfung `NSBox` zum- `FillColor` Steuerelement, das verwendet wird, um den Auswahl Status einer Zelle anzuzeigen. Durch Überschreiben `Selected` der-Eigenschaft `NSCollectionViewItem`von legt der folgende Code diesen Auswahl Zustand fest oder löscht ihn:
 
 ```csharp
 public override bool Selected
@@ -371,11 +371,11 @@ public override bool Selected
 
 <a name="Creating-the-Collection-View-Data-Source"/>
 
-### <a name="creating-the-collection-view-data-source"></a>Erstellen der Sammlung anzeigen-Datenquelle
+### <a name="creating-the-collection-view-data-source"></a>Erstellen der Sammlungs Ansichts Datenquelle
 
-Eine Auflistung anzeigen-Datenquelle (`NSCollectionViewDataSource`) enthält alle Daten für eine Auflistungsansicht erstellt und füllt einer Sammlungsansichtszelle (mithilfe der `.xib` Prototyp) für jedes Element in der Auflistung nach Bedarf.
+Eine Auflistungs Ansichts`NSCollectionViewDataSource`Datenquelle () stellt alle Daten für eine Auflistungs Ansicht bereit und erstellt und füllt eine Auflistungs `.xib` Ansichts Zelle (mit dem Prototyp), wie für jedes Element in der Sammlung erforderlich.
 
-Fügen Sie eine neue Klasse dem Projekt hinzu, nennen Sie es `CollectionViewDataSource` und legen Sie ihn wie folgt aussehen:
+Fügen Sie dem Projekt eine neue Klasse hinzu, `CollectionViewDataSource` nennen Sie Sie, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -462,11 +462,11 @@ namespace MacCollectionNew
 }
 ```
 
-Betrachten diesen Code im Detail, die Klasse erbt von `NSCollectionViewDataSource` und stellt eine Liste der `PersonModel` Instanzen über seine `Data` Eigenschaft.
+Wenn Sie diesen Code ausführlich betrachten, erbt die-Klasse `NSCollectionViewDataSource` von und stellt eine Liste `PersonModel` von-Instanzen `Data` durch die-Eigenschaft zur Verfügung.
 
-Da diese Auflistung nur ein Abschnitt hat, überschreibt der Code die `GetNumberOfSections` -Methode und gibt immer `1`. Darüber hinaus die `GetNumberofItems` Methode wird überschrieben, an, die es gibt die Anzahl der Elemente in der `Data` Eigenschaftenliste.
+Da diese Auflistung nur über einen Abschnitt verfügt, überschreibt der Code `GetNumberOfSections` die-Methode und `1`gibt immer zurück. Außerdem wird die `GetNumberofItems` -Methode überschrieben, wenn Sie die Anzahl der Elemente in der `Data` Eigenschaften Liste zurückgibt.
 
-Die `GetItem` Methode wird aufgerufen, wenn eine neue Zelle erforderlich ist und sieht wie folgt aus:
+Die `GetItem` -Methode wird immer dann aufgerufen, wenn eine neue Zelle erforderlich ist und wie folgt aussieht:
 
 ```csharp
 public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NSIndexPath indexPath)
@@ -478,23 +478,23 @@ public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NS
 }
 ```
 
-Die `MakeItem` der Auflistungsansicht aufgerufen, um erstellen oder eine wieder verwendbare Instanz zurückgeben der `EmployeeItemController` und die zugehörige `Person` -Eigenschaftensatz auf Element in der angeforderten Zelle angezeigt wird. 
+Die `MakeItem` `EmployeeItemController` -Methode der Auflistungs Ansicht wird aufgerufen, um eine wiederverwendbare Instanz von zu `Person` erstellen oder zurückzugeben, und die-Eigenschaft wird auf das in der angeforderten Zelle angezeigte Element festgelegt. 
 
-Die `EmployeeItemController` müssen in der Auflistung View-Controller, die zuvor mithilfe des folgenden Codes registriert werden:
+`EmployeeItemController` Muss beim Sammlungs Ansichts Controller im Voraus mit folgendem Code registriert werden:
 
 ```csharp
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ``` 
 
-Die **Bezeichner** (`EmployeeCell`) verwendet, der `MakeItem` Aufrufen _müssen_ mit dem Namen des View-Controller, die mit der Auflistungsansicht registriert wurde. Dieser Schritt wird weiter unten ausführlich erläutert.
+Der im-`EmployeeCell`Befehl verwendete Bezeichner `MakeItem` () _muss_ mit dem Namen des Ansichts Controllers, der in der Auflistungs Ansicht registriert wurde, identisch sein. Dieser Schritt wird im folgenden ausführlich beschrieben.
 
 <a name="Handling-Item-Selection"/>
 
-### <a name="handling-item-selection"></a>Behandlung von Elementauswahl
+### <a name="handling-item-selection"></a>Behandeln der Elementauswahl
 
-Verarbeiten Sie die Auswahl und die Aufhebung der Auswahl der Elemente in der Auflistung eine `NSCollectionViewDelegate` erforderlich. Da in diesem Beispiel wird in der integrierten verwenden werden `NSCollectionViewFlowLayout` Layouttyp, eine `NSCollectionViewDelegateFlowLayout` bestimmte Version dieses Delegaten wird erforderlich sein.
+Um die Auswahl und Auswahl von Elementen in der Auflistung zu verarbeiten, ist `NSCollectionViewDelegate` ein erforderlich. Da in diesem Beispiel der integrierte `NSCollectionViewFlowLayout` Layouttyp verwendet wird, wird eine `NSCollectionViewDelegateFlowLayout` bestimmte Version dieses Delegaten benötigt.
 
-Fügen Sie dem Projekt eine neue Klasse aufrufen `CollectionViewDelegate` und legen Sie ihn wie folgt aussehen:
+Fügen Sie dem Projekt eine neue Klasse hinzu, nennen `CollectionViewDelegate` Sie Sie, und machen Sie Sie wie folgt:
 
 ```csharp
 using System;
@@ -565,37 +565,37 @@ namespace MacCollectionNew
 }
 ``` 
 
-Die `ItemsSelected` und `ItemsDeselected` Methoden außer Kraft gesetzt werden, und zum Aktivieren oder deaktivieren Sie die `PersonSelected` Eigenschaft des Ansichtscontrollers, der die Auflistungsansicht behandeln wird, wenn der Benutzer wählt oder hebt die Auswahl eines Elements. Dies wird weiter unten ausführlich angezeigt.
+Die `ItemsSelected` - `ItemsDeselected` Methode und die-Methode werden überschrieben und verwendet, `PersonSelected` um die-Eigenschaft des Ansichts Controllers festzulegen oder zu löschen, der die Auflistungs Ansicht behandelt, wenn der Benutzer ein Element auswählt oder deaktiviert. Dies wird im folgenden ausführlich dargestellt.
 
 <a name="Creating-the-Collection-View-in-Interface-Builder"/>
 
-### <a name="creating-the-collection-view-in-interface-builder"></a>Erstellen die Auflistungsansicht in Interface Builder
+### <a name="creating-the-collection-view-in-interface-builder"></a>Erstellen der Sammlungsansicht in Interface Builder
 
-Alle erforderlichen unterstützenden Komponenten beisammen die Haupt-Storyboard bearbeitet werden kann, und eine Auflistungsansicht hinzugefügt wird.
+Wenn alle erforderlichen unterstützenden Elemente vorhanden sind, kann das Haupt Storyboard bearbeitet und eine Auflistungs Ansicht hinzugefügt werden.
 
 Führen Sie folgende Schritte aus:
 
-1. Doppelklicken Sie auf die `Main.Storyboard` Datei die **Projektmappen-Explorer** es für die Bearbeitung in Xcode öffnen, die Sie Interface Builder.
-2. Ziehen Sie eine Auflistungsansicht in die Hauptansicht, und passen Sie es die Sicht ausfüllen:
+1. Doppelklicken Sie auf `Main.Storyboard` die Datei im **Projektmappen-Explorer** , um Sie in der Interface Builder von Xcode zur Bearbeitung zu öffnen.
+2. Ziehen Sie eine Auflistungs Ansicht in die Hauptansicht, und ändern Sie Sie, um die Ansicht auszufüllen:
 
-    ![Das Layout hinzugefügt einer Auflistungsansicht](collection-view-images/collection01.png)
-3. Verwenden Sie mit der Auflistungsansicht ausgewählt haben des-Editors, um heften sie an die Ansicht aus, wenn seine Größe geändert wird:
+    ![Hinzufügen einer Auflistungs Ansicht zum Layout](collection-view-images/collection01.png)
+3. Wenn die Auflistungs Ansicht ausgewählt ist, verwenden Sie den Einschränkungs-Editor, um Sie bei der Größenänderung an die Ansicht anzuheften:
 
     ![Hinzufügen von Einschränkungen](collection-view-images/collection02.png)
-4. Stellen Sie sicher, dass die Auflistungsansicht, in ausgewählt ist der **Entwurfsoberfläche** (und nicht die **Scrollansicht umrandet,** oder **Clip-Ansicht** , die Sie enthält), wechseln Sie zu der  **Assistenten-Editor** , und erstellen Sie eine **Outlet** für die Sammlung an:
+4. Stellen Sie sicher, dass die Auflistungs Ansicht im **Designoberfläche** ausgewählt ist (nicht in der markierten Bild Lauf **Ansicht** oder **Clip Ansicht** , in der Sie enthalten ist), wechseln Sie zum **Assistenten-Editor** , und erstellen Sie ein **Outlet** für die Sammlungsansicht:
 
     ![Hinzufügen von Einschränkungen](collection-view-images/collection03.png)
-5. Die Änderungen zu speichern und zurück zu Visual Studio, um zu synchronisieren.
+5. Speichern Sie die Änderungen, und kehren Sie zur Synchronisierung zu Visual Studio zurück.
 
 <a name="Bringing-it-all-Together"/>
 
-## <a name="bringing-it-all-together"></a>Bringen sie alle zusammen
+## <a name="bringing-it-all-together"></a>Alles zusammenbringen
 
-Alle Bestandteile unterstützen jetzt an der Stelle mit einer Klasse, die als das Datenmodell fungiert eingefügt (`PersonModel`), ein `NSCollectionViewDataSource` hinzugefügt wurde, geben Sie die Daten eine `NSCollectionViewDelegateFlowLayout` wurde entwickelt, um die Auswahl von Listenelementen zu behandeln und eine `NSCollectionView` wurde hinzugefügt, um die Haupt-Storyboard und als eines Outlets verfügbar gemacht (`EmployeeCollection`).
+Alle unterstützenden Teile wurden nun mit einer Klasse platziert, die als`PersonModel`Datenmodell fungiert (), ein `NSCollectionViewDataSource` wurde zum Bereitstellen von Daten hinzugefügt, ein `NSCollectionViewDelegateFlowLayout` wurde erstellt, um die Elementauswahl zu verarbeiten, `NSCollectionView` und eine wurde dem Haupt Storyboard hinzugefügt. und werden als Outlet (`EmployeeCollection`) verfügbar gemacht.
 
-Der letzte Schritt ist zum Bearbeiten der View-Controller, die die Auflistungsansicht enthält, und schalten alle Bestandteile zusammen, um füllen Sie die Sammlung und Auswahl von Listenelementen zu behandeln.
+Der letzte Schritt besteht darin, den Ansichts Controller zu bearbeiten, der die Auflistungs Ansicht enthält, und alle Teile zusammenzufassen, um die Auflistung zu füllen und die Elementauswahl zu verarbeiten.
 
-Bearbeiten der `ViewController.cs` Datei, und stellen sie wie folgt aussehen:
+Bearbeiten Sie `ViewController.cs` die Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -736,28 +736,28 @@ namespace MacCollectionNew
 }
 ```
 
-Ein Blick auf diesen Code im Detail, eine `Datasource` Eigenschaft wird definiert, um eine Instanz von aufzunehmen der `CollectionViewDataSource` liefert, die die Daten für die Sammlung an. Ein `PersonSelected` Eigenschaft wird definiert, enthält die `PersonModel` , das das aktuell ausgewählte Element in der Auflistung darstellt. Diese Eigenschaft löst auch die `SelectionChanged` Ereignis aus, wenn die Auswahl geändert wird.
+Wenn Sie diesen Code ausführlich betrachten, wird eine `Datasource` -Eigenschaft definiert, die `CollectionViewDataSource` eine Instanz von enthält, die die Daten für die Auflistungs Ansicht bereitstellt. Eine `PersonSelected` Eigenschaft ist so definiert, dass `PersonModel` Sie die enthält, die das aktuell ausgewählte Element in der Auflistungs Ansicht darstellt. Diese Eigenschaft löst auch das `SelectionChanged` -Ereignis aus, wenn sich die Auswahl ändert.
 
-Die `ConfigureCollectionView` Klasse wird verwendet, um die View-Controller zu registrieren, die als Prototyp Zelle fungiert, mit der Sammlung angezeigt, die mit der folgenden Befehlszeile:
+Die `ConfigureCollectionView` -Klasse wird verwendet, um den Ansichts Controller, der als Zellen Prototyp fungiert, mit der Sammlungsansicht in der folgenden Zeile zu registrieren:
 
 ```csharp
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ```
 
-Beachten Sie, dass die **Bezeichner** (`EmployeeCell`) verwendet, um den Prototyp Übereinstimmungen zu registrieren, den Namen in, der `GetItem` Methode der `CollectionViewDataSource` oben definierten:
+Beachten Sie, dass der`EmployeeCell`Bezeichner (), der zum Registrieren des Prototyps verwendet `GetItem` wird, mit `CollectionViewDataSource` dem in der-Methode der oben definierten-Methode aufgerufenen
 
 ```csharp
 var item = collectionView.MakeItem("EmployeeCell", indexPath) as EmployeeItemController;
 ...
 ```
 
-Darüber hinaus den Typ des Ansichtscontrollers **müssen** mit dem Namen des der `.xib` Datei, die den Prototyp definiert **genau**. In diesem Beispiel `EmployeeItemController` und `EmployeeItemController.xib`.
+Außerdem **muss** der Typ des Ansichts Controllers mit `.xib` dem Namen der Datei übereinstimmen, die den Prototyp **exakt**definiert. Im Fall dieses Beispiels `EmployeeItemController` und. `EmployeeItemController.xib`
 
-Das tatsächliche Layout der Elemente in der Auflistung wird durch eine Auflistung der Standardankündigung Klasse gesteuert und können durch Zuweisen einer neuen Instanz dynamisch zur Laufzeit geändert werden die `CollectionViewLayout` Eigenschaft. Das Ändern dieser Eigenschaft aktualisiert die Auflistungsansicht-Darstellung, ohne die Änderung zu animieren.
+Das tatsächliche Layout der Elemente in der Auflistungs Ansicht wird durch eine Auflistungs Ansichts Layout-Klasse gesteuert und kann zur Laufzeit dynamisch geändert werden, indem `CollectionViewLayout` der-Eigenschaft eine neue Instanz zugewiesen wird. Wenn Sie diese Eigenschaft ändern, wird die Darstellung der Sammlungsansicht aktualisiert, ohne die Änderung zu animieren.
 
-Apple ausgeliefert wird, zwei Typen von integrierten Layout mit der Sammlung angezeigt, die meisten typische Verwendungen behandelt: `NSCollectionViewFlowLayout` und `NSCollectionViewGridLayout`. Der Entwickler ggf. ein benutzerdefiniertes Format, z. B. zur Festlegung der Elemente, im Kreis, können sie eine benutzerdefinierte Instanz von erstellen `NSCollectionViewLayout` und überschreiben Sie die erforderlichen Methoden, um den gewünschten Effekt zu erzielen.
+Apple gibt zwei integrierte Layouttypen mit der Sammlungsansicht aus, die die meisten typischen Verwendungen `NSCollectionViewFlowLayout` behandelt `NSCollectionViewGridLayout`: und. Wenn der Entwickler ein benutzerdefiniertes Format benötigt, z. b. das Ablegen der Elemente in einem Kreis, können Sie eine `NSCollectionViewLayout` benutzerdefinierte Instanz von erstellen und die erforderlichen Methoden überschreiben, um den gewünschten Effekt zu erzielen.
 
-In diesem Beispiel verwendet das Standardlayout für den Flow aus, sodass es sich um eine Instanz erstellt die `NSCollectionViewFlowLayout` -Klasse und konfiguriert sie wie folgt:
+In diesem Beispiel wird das standardmäßige Fluss Layout verwendet, sodass es eine `NSCollectionViewFlowLayout` Instanz der-Klasse erstellt und wie folgt konfiguriert:
 
 ```csharp
 var flowLayout = new NSCollectionViewFlowLayout()
@@ -769,9 +769,9 @@ var flowLayout = new NSCollectionViewFlowLayout()
 };
 ```
 
-Die `ItemSize` -Eigenschaft definiert die Größe jeder einzelnen Zelle in der Auflistung. Die `SectionInset` -Eigenschaft definiert die Abstände zwischen dem Rand der Auflistung, die Zellen in angeordnet werden. `MinimumInteritemSpacing` definiert den minimalen Abstand zwischen Elementen und `MinimumLineSpacing` definiert den minimalen Abstand zwischen den Zeilen in der Auflistung.
+Die `ItemSize` -Eigenschaft definiert die Größe jeder einzelnen Zelle in der Auflistung. Die `SectionInset` -Eigenschaft definiert die Insets von der Kante der Auflistung, in der Zellen angeordnet werden. `MinimumInteritemSpacing`definiert den minimalen Abstand zwischen Elementen und `MinimumLineSpacing` definiert den minimalen Abstand zwischen Zeilen in der Auflistung.
 
-Das Layout der Auflistungsansicht und einer Instanz von zugewiesen wird die `CollectionViewDelegate` angefügt ist, um die Auswahl von Listenelementen zu behandeln:
+Das Layout wird der Auflistungs Ansicht zugewiesen, und eine Instanz `CollectionViewDelegate` von wird an die Elementauswahl angehängt:
 
 ```csharp
 // Setup collection view
@@ -779,7 +779,7 @@ EmployeeCollection.CollectionViewLayout = flowLayout;
 EmployeeCollection.Delegate = new CollectionViewDelegate(this);
 ```
 
-Die `PopulateWithData` Methode erstellt eine neue Instanz der dem `CollectionViewDataSource`, es mit Daten aufgefüllt wird, hängt es an die Auflistungsansicht und ruft die `ReloadData` Methode zum Anzeigen von Elementen:
+Die `PopulateWithData` -Methode erstellt eine neue Instanz `CollectionViewDataSource`von, füllt sie mit Daten auf, fügt Sie an die Sammlungsansicht an und ruft `ReloadData` die-Methode auf, um die Elemente anzuzeigen:
 
 ```csharp
 private void PopulateWithData()
@@ -796,7 +796,7 @@ private void PopulateWithData()
 }
 ```
 
-Die `ViewDidLoad` Methode überschrieben wird, und ruft die `ConfigureCollectionView` und `PopulateWithData` Methoden, um die endgültige Auflistungsansicht für den Benutzer anzuzeigen:
+Die `ViewDidLoad` -Methode wird überschrieben und ruft `ConfigureCollectionView` die `PopulateWithData` -Methode und die-Methode auf, um dem Benutzer die endgültige Auflistungs Ansicht anzuzeigen:
 
 ```csharp
 public override void ViewDidLoad()
@@ -813,11 +813,11 @@ public override void ViewDidLoad()
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird eine ausführliche Übersicht über das Arbeiten mit Auflistungsansichten in einer Xamarin.Mac-Anwendung verwendet. Zunächst sah im Endeffekt sehr auf das Verfügbarmachen von c#-Klasse mit Objective-C mithilfe von Schlüssel-Wert-Codierung (KVM), und beobachten von Schlüssel-Wert (KVO). Anschließend wurde erläutert, wie mit einer kompatiblen KVO-Klasse aus, und Daten zu Auflistungsansichten in Interface Builder von Xcode binden. Zum Schluss wird aufgezeigt, wie Sie mit Auflistungsansichten in C#-Code zu interagieren.
+In diesem Artikel wurde die Arbeit mit Auflistungs Ansichten in einer xamarin. Mac-Anwendung ausführlich erläutert. Zuerst wurde das verfügbar machen einer C# Klasse für "Ziel-C" mithilfe von Key-Value Coding (KVC) und Key-Value-Beobachtungen (KVO) untersucht. Im nächsten Schritt wurde gezeigt, wie eine KVO-kompatible Klasse verwendet wird und wie Daten an Auflistungs Ansichten in der Interface Builder von Xcode gebunden werden. Schließlich wurde gezeigt, wie Sie mit Auflistungs Ansichten C# im Code interagieren.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacCollectionNew (Beispiel)](https://developer.xamarin.com/samples/mac/MacCollectionNew/)
+- [Maccollectionnew (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccollectionnew)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Datenbindung und Schlüssel/Wert-Codierung](~/mac/app-fundamentals/databinding.md)
 - [NSCollectionView](https://developer.apple.com/reference/appkit/nscollectionview)

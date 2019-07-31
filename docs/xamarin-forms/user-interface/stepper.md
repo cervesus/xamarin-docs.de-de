@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/17/2018
-ms.openlocfilehash: a224d82ed7bb993f51be6cca6ccf09b5331cfac0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6c89f04b1d1d87fed8d86d50cb68527391a7f317
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250584"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656202"
 ---
 # <a name="xamarinforms-stepper"></a>Xamarin.Forms zugeordnetem
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
 _Verwenden Sie eine zugeordnetem für einen numerischen Wert aus einen Bereich von Werten auswählen._
 
@@ -42,11 +42,11 @@ Die [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) Objekt
 
 ## <a name="basic-stepper-code-and-markup"></a>Grundlegende zugeordnetem Code und markup
 
-Die [ **StepperDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) Beispiel enthält drei Seiten, die funktionell identisch sind, aber auf unterschiedliche Weise implementiert werden. Die erste Seite wird nur verwendet, C# Code, die zweite verwendet XAML mit einem Ereignishandler im Code, und die dritte den Ereignishandler zu vermeiden, indem Sie die Datenbindung in der XAML-Datei kann.
+Die [ **StepperDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos) Beispiel enthält drei Seiten, die funktionell identisch sind, aber auf unterschiedliche Weise implementiert werden. Die erste Seite wird nur verwendet, C# Code, die zweite verwendet XAML mit einem Ereignishandler im Code, und die dritte den Ereignishandler zu vermeiden, indem Sie die Datenbindung in der XAML-Datei kann.
 
 ### <a name="creating-a-stepper-in-code"></a>Erstellen eine zugeordnetem in code
 
-Die **grundlegenden zugeordnetem Code** auf der Seite die [ **StepperDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) Beispiel zeigt, wie zum Erstellen einer [ `Stepper` ](xref:Xamarin.Forms.Stepper) und zwei [ `Label` ](xref:Xamarin.Forms.Label) -Objekte im Code:
+Die **grundlegenden zugeordnetem Code** auf der Seite die [ **StepperDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos) Beispiel zeigt, wie zum Erstellen einer [ `Stepper` ](xref:Xamarin.Forms.Stepper) und zwei [ `Label` ](xref:Xamarin.Forms.Label) -Objekte im Code:
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -182,7 +182,7 @@ Die **Standardbindungen zugeordnetem** Seite zeigt, wie Sie eine nahezu gleichwe
 </ContentPage>
 ```
 
-Die [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) Eigenschaft des ersten [ `Label` ](xref:Xamarin.Forms.Label) gebunden ist die [ `Value` ](xref:Xamarin.Forms.Stepper.Value) Eigenschaft der [ `Stepper` ](xref:Xamarin.Forms.Stepper), da die [ `Text` ](xref:Xamarin.Forms.Label.Text) -Eigenschaft der zweiten `Label` mit einem `StringFormat` Spezifikation. Die **Standardbindungen zugeordnetem** Seite Funktionen etwas anders aus den vorherigen zwei Seiten: Wenn die Seite zuerst angezeigt wird, das zweite `Label` zeigt die Zeichenfolge mit dem Wert an. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der [ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged) Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor .
+Die [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) Eigenschaft des ersten [ `Label` ](xref:Xamarin.Forms.Label) gebunden ist die [ `Value` ](xref:Xamarin.Forms.Stepper.Value) Eigenschaft der [ `Stepper` ](xref:Xamarin.Forms.Stepper), da die [ `Text` ](xref:Xamarin.Forms.Label.Text) -Eigenschaft der zweiten `Label` mit einem `StringFormat` Spezifikation. Die Seite " **grundlegende Stepper-Bindungen** " funktioniert ein wenig anders als die beiden vorherigen Seiten: Wenn die Seite zum ersten Mal angezeigt wird `Label` , zeigt die zweite die Text Zeichenfolge mit dem Wert an. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der [ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged) Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor .
 
 ## <a name="precautions"></a>Vorsichtsmaßnahmen bei der
 
@@ -258,5 +258,5 @@ Wenn [ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum) nastaven NA hodnotu 180 a
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Zugeordnetem Demos-Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)
+- [Zugeordnetem Demos-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 - [Zugeordnetem API](xref:Xamarin.Forms.Stepper)

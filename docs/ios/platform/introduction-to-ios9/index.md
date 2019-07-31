@@ -1,207 +1,207 @@
 ---
 title: Einführung in iOS 9
-description: Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen von iOS 9 für Xamarin.iOS-Entwickler.
+description: In diesem Artikel werden alle neuen und geänderten APIs und Features vorgestellt, die in ios 9 für xamarin. IOS-Entwickler zur Verfügung stehen.
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 733f50954c7ea6bd4ada7468eb14443f4f3b1f1d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946229"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654419"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
-_Dieser Artikel enthält alle neuen und geänderten APIs und Funktionen von iOS 9 für Xamarin.iOS-Entwickler._
+_In diesem Artikel werden alle neuen und geänderten APIs und Features vorgestellt, die in ios 9 für xamarin. IOS-Entwickler zur Verfügung stehen._
 
-![](images/ios9-sml.png "Das iOS 9-logo")
+![](images/ios9-sml.png "IOS 9-Logo")
 
-Apple hat verschiedene neue APIs und Dienste in iOS 9 sowie zahlreiche Verbesserungen an vorhandenen Funktionen hinzugefügt.
+Apple hat mehrere neue APIs und Dienste in ios 9 zusammen mit vielen Verbesserungen an vorhandenen Features hinzugefügt.
 
 ## <a name="3d-touch"></a>3D Touch
 
-Noch nicht mit iOS 9 und das iPhone 6 s und iPhone 6 s Plus, 3D Touch hinzugefügt Druck vertrauliche Gesten Ihre iOS-apps. Mit 3D kann Touch, eine iPhone-app jetzt nicht nur sagen, dass der Benutzer den Bildschirm des Geräts berührt, es auch wie viel der Benutzer selbst ist Druck erkennen und reagieren auf die verschiedenen arbeitsspeicherauslastung.
+Neu bei IOS 9 und der iPhone 6S und iPhone 6S Plus ist eine 3D-Toucheingabe, die ihren IOS-apps druckempfindliche Gesten hinzufügt. Mit der 3D-Toucheingabe kann eine iPhone-APP jetzt nicht nur erkennen, dass der Benutzer den Bildschirm des Geräts berührt, sondern auch festzustellen, wie viel Druck der Benutzer ausübt und auf die unterschiedlichen Druck Ebenen antwortet.
 
-3D Touch bietet die folgenden Funktionen zu Ihrer app:
+der 3D-Fingerabdruck bietet die folgenden Features für Ihre APP:
 
-- **Vertraulichkeit Druck** : Apps können jetzt wie schwer messen oder Licht der Benutzer berührt den Bildschirm "und" Take-Vorteil mit diesen Informationen. Eine app zeichnen kann z. B. eine Linie dicker oder flacher abhängig, wie sehr die Benutzer den Bildschirm berührt vornehmen.
-- **Einsehen und Pop** -Ihrer-app können nun den Benutzer, die mit den Daten interagieren, ohne aus ihrem aktuellen Kontext Navigieren zu müssen. Durch Drücken auf dem Bildschirm schwierig, sie können *einsehen* mit dem Element, das sie interessieren (z. B. das Anzeigen einer Vorschau einer Nachricht). Durch Drücken von schwieriger, sie können *Pop* in das Element.
-- **Schnelle Aktionen** -vorstellen von Schnellaktionen wie die Kontextmenüs, die per pop ausgelesen oben können sein, wenn ein Benutzer auf ein Element in einer desktop-app mit der rechten Maustaste. Verwenden von Schnellaktionen, können Sie allgemeine, schnell und einfach zu Verknüpfungen der Zugriff auf Funktionen in Ihrer app über das Symbol des Home-Bildschirm auf iOS-Geräten hinzufügen.
+- Unterscheidung nach **Druck** : Apps können nun Messen, wie schwer oder hell der Benutzer den Bildschirm berührt und diese Informationen nutzt. Beispielsweise kann eine Zeichnungs-App abhängig von der Art und Weise, in der der Benutzer den Bildschirm berührt, zu einem dickeren oder dünneren.
+- **Peek und Pop** : Ihre APP kann jetzt den Benutzer mit seinen Daten interagieren, ohne aus dem aktuellen Kontext navigieren zu müssen. Wenn Sie auf dem Bildschirm hart drücken, *können Sie* sich das gewünschte Element ansehen (z. b. eine Vorschau der Nachricht). Durch das Drücken von "Harder" können *Sie in das* Element eingeblendet werden.
+- **Schnelle Aktionen** : Stellen Sie sich schnell Aktionen wie die Kontextmenüs vor, die angezeigt werden können, wenn ein Benutzer mit der rechten Maustaste auf ein Element in einer Desktop-App klickt. Mithilfe von schnellen Aktionen können Sie in der APP über das Startbildschirm Symbol auf dem IOS-Gerät allgemeine, schnelle und leicht zu verwendbare Verknüpfungen zu Funktionen in Ihrer APP hinzufügen.
 
-Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [Einführung in 3D Touch](~/ios/platform/3d-touch.md) Guide.
+Weitere Informationen finden Sie im Artikel [Einführung in die 3D-](~/ios/platform/3d-touch.md) Eingabe Anleitung.
 
 ## <a name="app-transport-security"></a>App-Transportsicherheit
 
-Neue IOS 9, App Transport Security (ATS) erzwingt die sichere Verbindungen zwischen Ressourcen für Internet (z. B. die app Back-End-Server) und Ihrer app. ATS wird sichergestellt, dass die gesamte Internetkommunikation entsprechen, um die Verbindung secure best Practices und verhindert versehentliche Offenlegung vertraulicher Informationen, die entweder direkt über Ihre app oder eine Bibliothek, die es verwendet.
+Neu in ios 9: die APP-Transport Sicherheit (app Transport Security, ATS) erzwingt sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und ihrer app. Mithilfe von ATS wird sichergestellt, dass die gesamte Internetkommunikation den bewährten Methoden der sicheren Verbindung entspricht. Dadurch wird die versehentliche Offenlegung vertraulicher Informationen entweder direkt über Ihre APP oder eine von ihr verwendete Bibliothek verhindert.
 
-Da ATS, wird standardmäßig in apps aktiviert ist, die für iOS 9 und OS X 10.11 (El Capitan), alle Verbindungen mit [NSUrlConnection](xref:Foundation.NSUrlConnection), [CFUrl](xref:CoreFoundation.CFUrl) oder [NSUrlSession](xref:Foundation.NSUrlSession) wird vorgenommen werden. ATS-sicherheitsanforderungen. Wenn Ihre Verbindungen diese Anforderung nicht erfüllen, werden sie mit einer Ausnahme fehlschlagen.
+Da ATS in apps, die für IOS 9 und OS X 10,11 (El Capitan) erstellt werden, standardmäßig aktiviert ist, gelten für alle Verbindungen, die [NSURLConnection](xref:Foundation.NSUrlConnection), [cfurl](xref:CoreFoundation.CFUrl) oder [nsurlsession](xref:Foundation.NSUrlSession) verwenden, Sicherheitsanforderungen. Wenn Ihre Verbindungen diese Anforderung nicht erfüllen, schlagen Sie mit einer Ausnahme fehl.
 
-Um mehr über ATS erfahren möchten, informieren Sie sich unsere [App Transport Security](~/ios/app-fundamentals/ats.md) Guide.
+Weitere Informationen zu ATS finden Sie in unserem Handbuch zur [App-Transport Sicherheit](~/ios/app-fundamentals/ats.md) .
 
 <a name="multitasking" />
 
 ## <a name="multitasking-for-ipad"></a>Multitasking für iPad
 
-Mit iOS 9 hat Apple Multitasking-Unterstützung für die Ausführung von zwei apps gleichzeitig auf bestimmte iPad Hardware hinzugefügt. Daher können Ihrer Xamarin.iOS-apps nicht mehr davon ausgehen, dass sie die einzige app, die einem bestimmten Zeitpunkt ausgeführt werden, oder, dass sie Zugriff auf die gesamte Anzeige oder die Ressourcen des Geräts haben.
+Mit IOS 9 hat Apple Multitasking-Unterstützung für die gleich malige Ausführung von zwei apps auf einer bestimmten iPad-Hardware hinzugefügt. Folglich können Ihre xamarin. IOS-apps nicht mehr davon ausgehen, dass es sich um die einzige APP handelt, die zu einem beliebigen Zeitpunkt ausgeführt wird oder ob Sie Zugriff auf den vollständigen Bildschirm oder die Ressourcen des Geräts haben.
 
-Multitasking für iPad wird über die folgenden Funktionen unterstützt:
+Multitasking für iPad wird durch die folgenden Features unterstützt:
 
-- **Folie über** -ermöglicht dem Benutzer, die vorübergehend eine zweite iOS-app in eine Folie, Bereich (entweder auf den rechten oder linken Seite des Bildschirms basierend auf Sprache Richtung) ausgeführt, die CA. 25 % der Haupt-app ausgeführten abdeckt. Schieben Sie über steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3, oder iPad Mini-4.
-- **Geteilte Ansicht** – der Benutzer kann auf unterstützten iPad-Hardware (iPad Air 2, iPad Mini-4 und iPad nur Pro), wählen Sie eine zweite app und Seite-an-Seite mit der aktuell ausgeführten app in einem geteilten Bildschirms-Modus ausführen. Der Benutzer kann es sich um den Prozentsatz des Hauptbildschirms steuern, die jeder app belegt.
-- **Bild in Abbildung** : für apps, die Wiedergabe von Videoinhalten, das video kann jetzt in einem verschiebbaren und in der Größe veränderbaren Fenster wiedergegeben werden, die über die anderen apps, die derzeit auf dem iOS-Gerät ausgeführten gleitet. Der Benutzer hat vollständige Kontrolle über die Größe und Position des Fensters. Bild in Abbildung steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3, oder iPad Mini-4.
+- **Folie over** : ermöglicht es dem Benutzer, eine zweite IOS-App temporär in einem Schiebe Bereich auszuführen (entweder auf der rechten oder linken Seite des Bildschirms basierend auf der Sprache), der ungefähr 25% der derzeit ausgelaufenden Haupt-App abdeckt. Die Folie ist nur auf iPad pro, iPad Air, iPad Air 2, iPad Mini 2, iPad Mini 3 oder iPad Mini 4 verfügbar.
+- **Geteilte Ansicht** : auf der unterstützten iPad-Hardware (iPad Air 2, iPad Mini 4 und iPad pro) kann der Benutzer eine zweite App auswählen und parallel mit der aktuell aktiven app in einem Split Screen-Modus ausführen. Der Benutzer kann den Prozentsatz des Hauptbildschirms steuern, den jede APP einnimmt.
+- **Bild im Bild** : für apps, die Videoinhalte wiedergeben, kann das Video nun in einem Fenster wiedergegeben werden, das sich in einem Fenster befindet und in der Größe geändert werden kann Der Benutzer hat die vollständige Kontrolle über die Größe und Position dieses Fensters. Bild im Bild ist nur auf iPad pro, iPad Air, iPad Air 2, iPad Mini 2, iPad Mini 3 oder iPad Mini 4 verfügbar.
 
-Um mehr über die neuen Multitasking-Funktionen von iOS 9 zu suchen, finden Sie unserem [Multitasking für iPad](~/ios/platform/multitasking.md) Guide.
+Weitere Informationen zu den neuen Multitasking-Funktionen von IOS 9 finden Sie in unserem Handbuch [zum Multitasking für iPad](~/ios/platform/multitasking.md) .
 
-## <a name="new-contacts-and-contacts-ui-frameworks"></a>Neue Kontakte und Kontakte-Benutzeroberflächen-Frameworks
+## <a name="new-contacts-and-contacts-ui-frameworks"></a>Neue Benutzeroberflächen-Frameworks und Kontakte
 
-Apple hat mit der Einführung von iOS 9 sind zwei neue Frameworks vorgestellt, [Kontakte](xref:Contacts) und [ContactsUI](xref:ContactsUI), das Ersetzen der vorhandenen Adressbuch und Adressbuch Benutzeroberflächen-Frameworks von iOS 8 und früher verwendeten.
+Mit der Einführung von IOS 9 hat Apple zwei neue Frameworks ( [Kontakte](xref:Contacts) und [contactsui](xref:ContactsUI)) veröffentlicht, die das vorhandene Adressbuch und die Benutzeroberflächen-Frameworks der Adressbücher ersetzen, die von IOS 8 und früheren Versionen verwendet werden.
 
-Diese neue, objektorientierte Frameworks bieten Folgendes:
+Diese neuen, objektorientierten Frameworks stellen Folgendes bereit:
 
-- **Kontakte** – Xamarin.iOS bietet Zugriff auf die Kontaktinformationen des Benutzers. Da die meisten apps nur schreibgeschützten Zugriff erfordern, wurde dieses Framework für den Thread sicher, schreibgeschützten Zugriff optimiert.
-- **ContactsUI** – bietet der Xamarin.iOS-UI-Elemente angezeigt werden, bearbeiten, wählen und Kontakte auf iOS-Geräten erstellen.
+- **Kontakte** – bietet xamarin. IOS Zugriff auf die Kontaktinformationen des Benutzers. Da die meisten apps nur schreibgeschützten Zugriff erfordern, wurde dieses Framework für Thread sicheren, schreibgeschützten Zugriff optimiert.
+- **Contactsui** – bietet xamarin. IOS-Benutzeroberflächen Elemente zum Anzeigen, bearbeiten, auswählen und Erstellen von Kontakten auf IOS-Geräten.
 
-Weitere Informationen finden Sie unserem [Kontakte und Kontakte UI](~/ios/platform/contacts.md) Dokumentation.
-
-
-## <a name="new-search-apis"></a>Neue Suche-APIs
-
-Suche wurde erweitert, unter iOS 9, um hervorragende neue Möglichkeiten, den Zugriff auf Informationen innerhalb Ihrer Xamarin.iOS-app bereitzustellen. Mithilfe der neuen Suche-APIs können Sie den Inhalt Ihrer app durchsuchbare durch Spotlight und Safari Suchergebnissen Übergabeanimationen und Siri-Erinnerungen und Vorschläge machen. Dadurch können Benutzer die schnellen Zugriff in Ihrer app detaillierte Informationen zu Aktivitäten.
-
-Darüber hinaus erleichtern den neuen Such-APIs auf die Suche in Ihrer app ohne die vorherige Implementierung Suchfunktionen integrieren. Aus diesem Grund Ansprüche Apple an, dass in der Regel ein paar Stunden dauert nach einer iOS 9-app-Inhalte global gesucht werden mithilfe von App-Suche.
-
-Weitere Informationen finden Sie unserem [Verbesserungen bei der Suche](~/ios/platform/search/index.md) Dokumentation.
-
-## <a name="new-stack-view"></a>Neue Stapelansicht
-
-Die Stack-Steuerelement ([UIStackView](xref:UIKit.UIStackView) nutzt die Leistungsfähigkeit von Automatisches Layout und Größenklassen einen Stapel von Unteransichten (entweder horizontal oder vertikal) zu verwalten, die auf dem iOS-Gerät-Ausrichtung und der Bildschirmgröße Größe dynamisch reagiert.
-
-Mit Stapelansicht Steuerelement erforderlich, der Umfang der Arbeit zu Layout, die eine Benutzeroberfläche erheblich reduziert wird. Das Layout der alle Unteransichten, die an eine Stapelansicht angefügt werden automatisch basierend auf definierten Developer-Eigenschaften, z. B. Achse "," Verteilungspunkt "," Ausrichtung "und" Abstand verwaltet.
-
-Weitere Informationen finden Sie unserem [Einführung in die Stapelansicht](~/ios/user-interface/controls/uistackview.md) Dokumentation.
+Weitere Informationen finden Sie in unserer Benutzeroberflächen Dokumentation zu [Kontakten und Kontakten](~/ios/platform/contacts.md) .
 
 
-## <a name="collection-view-changes"></a>Änderungen der Auflistung anzeigen
+## <a name="new-search-apis"></a>Neue Such-APIs
 
-In iOS 9, die Auflistungsansicht ([UICollectionView](xref:UIKit.UICollectionView) unterstützt das Ziehen Sie jetzt neuanordnung von Elementen, die standardmäßig durch Hinzufügen einer neuen Standard stiftbewegungs-Erkennung und mehrere neue unterstützender Methoden.
+Die Suche wurde in ios 9 erweitert und bietet hervorragend neue Möglichkeiten für den Zugriff auf Informationen in ihrer xamarin. IOS-app. Mithilfe der neuen Such-APIs können Sie den Inhalt Ihrer APP über Spotlight-und Safari-Suchergebnisse, Übergabe und Siri-Erinnerungen und Vorschläge durchsuchbar machen. Dadurch können Benutzer schnell auf Aktivitäten und Informationen innerhalb ihrer App zugreifen.
 
-Verwenden diese neuen Methoden, können Sie einfache Implementierung von Drag-zu-neuanordnung in der Ansicht der Auflistung und haben die Möglichkeit zum Anpassen der Darstellung der Elemente jeder Phase des Prozesses Neuordnung von Elementen.
+Außerdem vereinfachen die neuen Such-APIs das Integrieren der Suche in Ihre APP, ohne dass eine vorherige Such Implementierung möglich ist. Daher beansprucht Apple in der Regel einige Stunden, bis der Inhalt einer IOS 9-APP über die APP-Suche universell durchsuchbar ist.
 
-Um weitere Informationen zu den Änderungen der Auflistungsansicht für iOS 9 zu suchen, finden Sie unsere [Ansicht Sammlungsänderungen](~/ios/user-interface/controls/uicollectionview.md) Handbuch.
+Weitere Informationen finden Sie in der Dokumentation zu den [Such Erweiterungen](~/ios/platform/search/index.md) .
 
-## <a name="game-enhancements"></a>Spiele-Verbesserungen
+## <a name="new-stack-view"></a>Neue Stapel Ansicht
 
-Mit iOS 9 hat Apple mehrere technologische Verbesserungen auf die Gaming-APIs vorgenommen, die Grafiken und Audio in Ihrer Xamarin.iOS-app implementieren zu vereinfachen. Dazu gehören sowohl einfache Entwicklung über die allgemeine Frameworks und der leitungsfähigkeit von dem iOS-Gerät GPU für verbesserte Geschwindigkeit und Grafik-Fähigkeiten im Hinblick auf niedriger Ebene.
+Das Stapel Ansicht-Steuerelement ([uistackview](xref:UIKit.UIStackView) nutzt die Leistungsfähigkeit der automatischen Layout-und Größenklassen, um einen Stapel von unter Sichten (horizontal oder vertikal) zu verwalten, der dynamisch auf die Ausrichtung und Bildschirmgröße des IOS-Geräts antwortet.
 
-Dies schließt GameplayKit "," ReplayKit "," Model e/a-"," MetalKit "und"-Metal-Leistung Shader zusammen mit neuen, erweiterten Funktionen von Metall, SceneKit und SpriteKit.
+Mithilfe des Stapel Ansicht-Steuer Elements wird die Menge an Arbeit, die für das Layout einer Benutzeroberfläche erforderlich ist, erheblich reduziert. Das Layout aller untergeordneten Sichten, die an eine Stapel Ansicht angefügt sind, wird automatisch auf der Grundlage von vom Entwickler definierten Eigenschaften wie Achse, Verteilung, Ausrichtung und Abstand verwaltet.
 
-Weitere Informationen finden Sie unserem [Spiel Verbesserungen](~/ios/platform/gaming/index.md) Dokumentation.
+Weitere Informationen finden Sie [in der Einführung in die Stack View](~/ios/user-interface/controls/uistackview.md) -Dokumentation.
 
-## <a name="homekit-framework-changes"></a>HomeKit-Frameworkänderungen
 
-Die [HomeKit](xref:HomeKit) , iOS 8 eingeführtes Framework bietet die Möglichkeit zum Einrichten und verschiedene aktiviert HomeKit-Zubehör (z.B. automatisierte Beleuchtung, Türschlösser und Türöffnern für Garagen) aus einer Xamarin.iOS-app zu steuern. Einfache Einrichtung und Konfiguration, sondern können HomeKit-Zubehör gesprochenen Siri-Befehle gesteuert werden.
+## <a name="collection-view-changes"></a>Änderungen der Sammlungsansicht
 
-In iOS 9 hat Apple vereinfacht das Setup, erweitert die Typen von Zubehör unterstützt und weitere Zubehör Interaktionen (z. B. das Steuern von Zubehör Remote über die iCloud) bereitgestellt.
+In ios 9 unterstützt die Auflistungs Ansicht ("[uicollectionview](xref:UIKit.UICollectionView) " jetzt die Neuanordnung von Elementen nach oben, indem eine neue Standard Gestenerkennung und mehrere neue unterstützende Methoden hinzugefügt werden.
 
-Weitere Informationen finden Sie unserem [Einführung in HomeKit](~/ios/platform/homekit.md), [HomeKitIntro iOS-Beispielanwendung](https://developer.xamarin.com/samples/monotouch/HomeKit/HomeKitIntro/) und Apple [HomeKit](https://developer.apple.com/homekit/) Dokumentation.
+Mithilfe dieser neuen Methoden können Sie Drag-to-Order in der Auflistungs Ansicht problemlos implementieren und die Darstellung der Elemente in jeder Phase des Neuanordnungs Vorgangs anpassen.
 
-## <a name="handoff-framework-changes"></a>Übergabe-Frameworkänderungen
+Weitere Informationen zu den Änderungen der Sammlungsansicht für IOS 9 finden Sie in unserem Handbuch zum [Ändern der Sammlungsansicht](~/ios/user-interface/controls/uicollectionview.md) .
 
-Übergabe (auch bekannt als Geschäftskontinuität) wurde von Apple iOS 8 und OS X Yosemite (10.10) als eine Möglichkeit für den Benutzer an eine Aktivität eines ihrer Geräte (IOS- oder Mac) beginnen, und weiterhin diese gleichen Aktivität auf einem anderen Geräte (wie anhand des Benutzers iClou identifiziert eingeführt. (d Konto).
+## <a name="game-enhancements"></a>Spiele Erweiterungen
 
-Übergabe wurde in den iOS 9, um neue, unterstützen auch erweiterte Suchfunktionen erweitert. Weitere Informationen finden Sie unserem [Verbesserungen bei der Suche](~/ios/platform/search/index.md) Dokumentation. Weitere Informationen zur Verwendung von Übergabeanimationen finden Sie unserem [Einführung in die Übergabe](~/ios/platform/handoff.md) Dokumentation.
+Mit IOS 9 hat Apple einige technologische Verbesserungen an den Gaming-APIs vorgenommen, die die Implementierung von Spielgrafiken und Audiodaten in ihrer xamarin. IOS-App vereinfachen. Diese umfassen sowohl die einfache Entwicklung durch allgemeine Frameworks als auch die Leistungsfähigkeit der GPU des IOS-Geräts, um die Geschwindigkeit und Grafikfunktionen mit Low-Level-Erweiterungen zu verbessern.
+
+Dies umfasst gameplaykit, replaykit, Model I/O, Metal Kit und Metal Performance Shaders sowie neue, erweiterte Features von Metal, scenekit und spritekit.
+
+Weitere Informationen finden Sie in unserer Dokumentation zur [Spiel Verbesserung](~/ios/platform/gaming/index.md) .
+
+## <a name="homekit-framework-changes"></a>Änderungen am homekit-Framework
+
+Das [homekit](xref:HomeKit) -Framework, das in ios 8 eingeführt wurde, bietet die Möglichkeit zum Einrichten und Steuern verschiedener homekit-fähiger Zubehör (z. b. automatisierter Beleuchtung, Tür Sperren und Türöffnungs Türen) aus einer xamarin. IOS-app. Homekit-Zubehör kann nicht nur einfach einzurichten und zu konfigurieren, sondern auch über gesprochene Siri-Befehle gesteuert werden.
+
+In ios 9 hat Apple das Setup vereinfacht, die unterstützten Zubehör Typen erweitert und mehr Zubehör Interaktionen bereitgestellt (z. b. die Remote Steuerung von Zubehör über icloud).
+
+Weitere Informationen finden [Sie in unserer Einführung in homekit](~/ios/platform/homekit.md), [homekitintro IOS-Beispiel-App](https://docs.microsoft.com/samples/xamarin/ios-samples/homekit-homekitintro) und Dokumentation zu [homekit](https://developer.apple.com/homekit/) von Apple.
+
+## <a name="handoff-framework-changes"></a>Übergabe von frameworkänderungen
+
+Die Übergabe (auch als Kontinuität bezeichnet) wurde von Apple in ios 8 und OS X Yosemite (10,10) eingeführt, sodass der Benutzer eine Aktivität auf einem Ihrer Geräte (IOS oder Mac) starten und dieselbe Aktivität auf einem anderen Gerät (wie durch die iclou des Benutzers identifiziert) fortsetzen kann. d-Konto).
+
+Die Übergabe von Handoff wurde in ios 9 erweitert, um auch neue, erweiterte Suchfunktionen zu unterstützen. Weitere Informationen finden Sie in der Dokumentation zu den [Such Erweiterungen](~/ios/platform/search/index.md) . Weitere Informationen zur Verwendung von Handoff finden Sie in unserer [Einführung in die Übergabe](~/ios/platform/handoff.md) Dokumentation.
 
 ## <a name="new-extension-points"></a>Neue Erweiterungspunkte
 
-In iOS 8 hat Apple Erweiterungen eingeführt – Bibliotheken, die vom Betriebssystem in standard Kontexten wie z. B. in der Mitteilungszentrale angezeigt werden, wenn der Benutzer die Tastatur anfordert oder wenn sie ein Foto bearbeiten.
+In ios 8 hat Apple Erweiterungen – Bibliotheken eingeführt, die vom Betriebssystem in Standard Kontexten, z. b. innerhalb des Benachrichtigungs Centers, wenn der Benutzer eine Tastatur anfordert, oder beim Bearbeiten eines Fotos angezeigt werden.
 
-Mit iOS 9, Apple Unterstützung durch die Bereitstellung mehrere neue erweitert _Erweiterungspunkte_ , definieren Sie Nutzungsrichtlinien und bieten APIs für die Arbeit in einem bestimmten Bereich wie folgt:
+Mit IOS 9 erweitert Apple die Erweiterungs Unterstützung durch die Bereitstellung mehrerer neuer _Erweiterungs Punkte_ , die Verwendungs Richtlinien definieren und APIs für die Arbeit innerhalb eines bestimmten Bereichs bereitstellen, wie im folgenden dargestellt:
 
-- **Neuen Audio Unit-Erweiterungspunkt** – mit diesem Erweiterungspunkt zum Bereitstellen von Audioeffekten, Musikinstrumente, sound Generatoren usw. für die Verwendung in anderen Audio Unit-Host-apps (z. B. GarageBand) verwenden. Mit diesem Erweiterungspunkt können Sie verkaufen auch _Audioeinheiten_ (audio-Plug-ins) auf dem App Store.
-- **Neuen Index Wartung Erweiterungspunkt** – verwenden Sie diesen Erweiterungspunkt zur Unterstützung der neuindizierung von app-Daten, ohne dass eine app erneut starten.
-- **Neue Netzwerk-Erweiterungspunkte** (erfordern spezielle Berechtigung von Apple):
-    - **App-Proxy-Anbietererweiterung** – mit diesem Erweiterungspunkt zum Implementieren von benutzerdefinierten transparentes Netzwerk von der clientseitigen Proxy verwenden.
-    - **Filtern von Datenanbieter / Filter-Steuerelement-Anbietererweiterung** -verwenden Sie diese Erweiterungspunkte, um dynamische Netzwerkinhalte Filterung auf dem Gerät zu implementieren.
-    - **Paket-Tunnel-Anbietererweiterung** – mit diesem Erweiterungspunkt Implementierung ein benutzerdefiniertes VPN-Tunneling-Protokoll der clientseitigen verwenden.
-- **Neue Erweiterungspunkte für Safari**:
-    - **Erweiterung blockiert Inhalte** – mit diesem Erweiterungspunkt verwenden, um eine Liste der blockierten Inhalte zu definieren, die nicht angezeigt wird, wenn der Benutzer im Internet durchsucht.
-    - **Freigegebene Links Erweiterung** – verwenden Sie diesen Erweiterungspunkt zum Anzeigen von Inhalt von Safari Shared Links Ihrer app zu aktivieren.
+- **Neuer AudioUnit-Erweiterungs Punkt** – verwenden Sie diesen Erweiterungs Punkt, um Audioeffekte, Musikinstrumente, Soundgeneratoren usw. zur Verwendung in anderen AudioUnit-Host-Apps (z. b. GarageBand) bereitzustellen. Mit diesem Erweiterungs Punkt können Sie auch _Audioeinheiten_ (Audioplug-ins) im App Store verkaufen.
+- **Neuer Index Wartungs Erweiterungs Punkt** – verwenden Sie diesen Erweiterungs Punkt zur Unterstützung der Neuindizierung von App-Daten, ohne dass ein App-Neustart erforderlich ist.
+- **Neue Netzwerk Erweiterungs Punkte** (diese erfordern eine spezielle Berechtigung von Apple):
+    - Anwendungs **Proxy-Anbieter Erweiterung** – verwenden Sie diesen Erweiterungs Punkt zum Implementieren eines benutzerdefinierten transparenten Client seitigen Netzwerk Proxys.
+    - **Filter Datenanbieter-/filtersteuerungsanbietererweiterung** : Verwenden Sie diese Erweiterungs Punkte, um die dynamische Netzwerk Inhalts Filterung auf dem Gerät zu implementieren.
+    - **Paket Tunnel Anbieter-Erweiterung** – verwenden Sie diesen Erweiterungs Punkt, um ein benutzerdefiniertes VPN-Tunneling-Protokoll auf Clientseite zu implementieren.
+- **Neue Safari-Erweiterungs Punkte**:
+    - **Erweiterung für Inhalts Blockierung** – verwenden Sie diesen Erweiterungs Punkt, um eine Liste der blockierten Inhalte zu definieren, die nicht angezeigt werden, wenn der Benutzer das Internet durchsucht.
+    - **Erweiterung für freigegebene Links** – verwenden Sie diesen Erweiterungs Punkt, um die Anzeige des Inhalts ihrer app in den freigegebenen Links von Safari zu aktivieren.
 
-Weitere Informationen finden Sie unserem [Einführung in die Erweiterungen](~/ios/platform/extensions.md) und Apple [Programmierhandbuch für App-Erweiterung](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214) Dokumentation.
+Weitere Informationen finden Sie [in unserer Einführung in Erweiterungen](~/ios/platform/extensions.md) und in der Dokumentation zum [Programmier Handbuch für App](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214) -Erweiterungen von Apple.
 
-## <a name="keychain-enhancements"></a>Keychain-Verbesserungen
+## <a name="keychain-enhancements"></a>Keychain-Erweiterungen
 
-In iOS 9 wurde verbessert, Apple die Keychain aus, um einen neuen Schlüssel Verschlüsselungstyp für die sichere Enclave und weitere Elementoptionen Schutz wie folgt bereitstellen:
+In ios 9 hat Apple die Keychain erweitert, um einen neuen Verschlüsselungs Schlüsseltyp für die Secure Enclave und weitere Element Schutz Optionen wie folgt bereitzustellen:
 
-- Eine neue Touch ID-Einschränkung, die Schlüsselbund-Objekte ungültig, wenn die Fingerabdruck-Datenbank geändert wird.
-- Neue Beschränkungen, die es ermöglichen, nur die Einträge der Zugriffssteuerungsliste mit Touch ID oder der Kennung erstellen.
-- Eine neue authentifizierungskontext, der Ihnen ermöglicht, das Aufrufen der Authentifizierung getrennt von `SecItem` aufrufen.
-- Zugriff auf Access Control List Entropie (mithilfe der Option für die Anwendung) für die Verschlüsselung der app bereitgestellten Keychain-Element.
-- Unterstützung für das Generieren und Verwenden von Schlüsseln innerhalb der sicheren Enclave (über die `kSecAttrTokenIDSecureEnclave` Attribut).
+- Eine neue Berührungs-ID-Einschränkung, die Keychain-Elemente für ungültig erklärt, wenn die Fingerabdruckdatenbank geändert wird.
+- Neue Einschränkungen, die das Erstellen von Access Control Listeneinträgen mit der Fingereingabe-ID oder Kennung ermöglichen.
+- Ein neuer Authentifizierungs Kontext, mit dem Sie die Authentifizierung unabhängig von `SecItem` den aufrufen aufrufen können.
+- Access Control Listen Entropie (mit der Option "Anwendungs Kennwort") für die von der APP bereitgestellte Schlüsselbund Element-Verschlüsselung.
+- Unterstützung für das Erstellen und Verwenden von Schlüsseln innerhalb der sicheren Enclave `kSecAttrTokenIDSecureEnclave` (über das-Attribut).
 
-Weitere Informationen finden Sie unserem [Einführung in die Touch ID](~/ios/platform/touchid.md) Dokumentation.
-
-
-## <a name="right-to-left-language-support"></a>Rechts-nach-links-sprachunterstützung
-
-In iOS 9 hat Apple präsentieren einer gespiegelten Benutzeroberfläche einfacher als je zuvor durch die vollständige Unterstützung für rechts-nach-links-Sprachen. Hierzu gehören folgende Elemente:
-
-- Standard [UIKit](xref:UIKit) Steuerelemente werden automatisch kippt, rechts-nach-links-basierend auf den iOS-Geräte-Gebietsschema und die Sprache-Einstellungen.
-- Die [UIView](xref:UIKit.UIView) Klasse enthält Attribute, mit denen Sie definieren, wie eine bestimmte Ansicht angezeigt werden soll, gekippt rechts-nach-links.
-- Die Möglichkeit, programmgesteuert kippen Sie ein Bild mithilfe der [FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection) Eigenschaft der [UIImage](xref:UIKit.UIImage) Klasse.
-
-Weitere Informationen finden Sie unter Apple [unterstützen rechts-nach-links-Sprachen](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17) Dokumentation.
+Weitere Informationen finden Sie [in unserer Einführung in die Berührungs-ID](~/ios/platform/touchid.md) -Dokumentation.
 
 
+## <a name="right-to-left-language-support"></a>Sprachunterstützung von rechts nach links
 
-## <a name="additional-framework-changes"></a>Zusätzliche-Frameworkänderungen
+In ios 9 hat Apple die Darstellung einer geflickten Benutzeroberfläche einfacher als je zuvor durch Bereitstellen der vollständigen Unterstützung von rechts-nach-links-Sprachen bereitgestellt. Hierzu gehören folgende Elemente:
 
-Zusätzlich zu den wichtigsten Änderungen, denen wir oben behandelt wurden, hat Apple Änderungen und Verbesserungen an mehrere vorhandene Frameworks für iOS 9, einschließlich der folgenden:
+- Standard mäßige [UIKit](xref:UIKit) -Steuerelemente werden basierend auf den Gebiets Schema-und Spracheinstellungen der IOS-Geräte automatisch von rechts nach links gekippt.
+- Die [UIView](xref:UIKit.UIView) -Klasse stellt Attribute bereit, mit denen Sie definieren können, wie eine bestimmte Ansicht angezeigt werden soll, wenn Sie von rechts nach links gekippt werden.
+- Die Möglichkeit zum programmgesteuerten Kippen eines Bilds mithilfe der [flipsforrighttoleftlayoutdirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection) -Eigenschaft der [uiimage](xref:UIKit.UIImage) -Klasse.
 
-- AV-Foundation-Framework
-- AVKit-Framework
-- CloudKit-Framework
+Weitere Informationen finden Sie in der Dokumentation von Apple, die von [rechts nach Links unterstützt](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17) wird.
+
+
+
+## <a name="additional-framework-changes"></a>Weitere frameworkänderungen
+
+Zusätzlich zu den wichtigsten Änderungen, die wir oben beschrieben haben, hat Apple Änderungen und Verbesserungen an mehreren vorhandenen Frameworks für IOS 9 vorgenommen, einschließlich der folgenden:
+
+- AV Foundation-Framework
+- Avkit-Framework
+- Cloudkit-Framework
 - Foundation-Framework
-- Übergabe-Framework
-- HealthKit-Framework
-- HomeKit-Framework
-- Lokale Authentifizierungs-Frameworks
+- Handoff-Framework
+- Healthkit-Framework
+- Homekit-Framework
+- Lokales Authentifizierungs Framework
 - MapKit-Framework
-- PassKit-Framework
-- Safari-Services-Framework
+- Passkit-Framework
+- Safari Services-Framework
 - UIKit-Framework
 
-Weitere Informationen finden Sie unserem [Weitere iOS 9-Frameworkänderungen](~/ios/platform/introduction-to-ios9/additional-framework-changes.md) Dokumentation.
+Weitere Informationen finden Sie in unserer zusätzlichen Dokumentation zu [IOS 9 Framework-Änderungen](~/ios/platform/introduction-to-ios9/additional-framework-changes.md) .
 
 ## <a name="deprecated-apis-and-functions"></a>Veraltete APIs und Funktionen
 
-Apple hat die folgenden APIs und Funktionen in iOS 9 als veraltet markiert:
+Apple hat die folgenden APIs und Funktionen in ios 9 als veraltet markiert:
 
-- **Adresse Buch und die Benutzeroberfläche der Adressbuch** -diese APIs wurden durch die wenden Sie sich an, und wenden Sie sich an UI-Frameworks ersetzt. Weitere Informationen finden Sie unserem [Kontakte und Kontakte UI](~/ios/platform/contacts.md) Dokumentation.
-- **CBCentralManager** : die `RetrievePeripherals` und `RetrieveConnectedPeripherals` Methoden der `CBCentralManager` Klasse in iOS 9 entfernt wurden. Aufrufen dieser Methoden führt dazu, dass eine app zu einem Absturz, wenn Zubehör Kopplung oder beim Start der app.
-- **FetchAllChanges** : die `FetchAllChanges` von der `CKFetchRecordChangesOperation` -Klasse wurde jedoch veraltet und wird in iOS 9 entfernt.
-- **Media Player** : der Media Player-Framework in iOS 9 ist veraltet. Verwenden Sie stattdessen AVKit oder AV-Foundation-APIs.
+- **Adressbuch & Address Book UI** : Diese APIs wurden durch die Benutzeroberflächen-Frameworks Contact und Contact ersetzt. Weitere Informationen finden Sie in unserer Benutzeroberflächen Dokumentation zu [Kontakten und Kontakten](~/ios/platform/contacts.md) .
+- **Cbcentralmanager** : die `RetrievePeripherals` - `RetrieveConnectedPeripherals` Methode `CBCentralManager` und die-Methode der-Klasse wurden in ios 9 entfernt. Wenn Sie diese Methoden aufrufen, stürzt eine App ab, wenn ein Zubehör oder ein App-Start paarweise gekoppelt wird.
+- **Fetchallchanges** -der `FetchAllChanges` der `CKFetchRecordChangesOperation` Klasse wurde abgewertet und wird in ios 9 entfernt.
+- **Media Player** -das Media Player Framework ist in ios 9 veraltet. Verwenden Sie stattdessen avkit oder die AV Foundation-APIs.
 
-Eine vollständige Liste der veralteten für bestimmte API, finden Sie unter Apple [iOS 9.0-API-Unterschiede](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222) Dokumentation.
+Eine umfassende Liste der spezifischen API-Abgrenzungen finden Sie in der Dokumentation zu den [IOS 9,0-API-Distributionen](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222) von Apple.
 
-## <a name="ios-9-sample-apps"></a>Beispiel-Apps für iOS 9
+## <a name="ios-9-sample-apps"></a>IOS 9-Beispiel-apps
 
-Wir haben einige [iOS 9-spezifische Beispiele](https://developer.xamarin.com/samples/ios/iOS9/) für den Einstieg:
+Wir haben einige [IOS 9-spezifische Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9) für den Einstieg:
 
 - [AstroLayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
-- [MetalPerformanceShadersHelloWorld](https://developer.xamarin.com/samples/monotouch/ios9/MetalPerformanceShadersHelloWorld/)
-- [MusicMotion](https://developer.xamarin.com/samples/monotouch/ios9/MusicMotion/)
-- [PhotoProgress](https://developer.xamarin.com/samples/monotouch/ios9/PhotoProgress/)
-- [SegueCatalog](https://developer.xamarin.com/samples/monotouch/ios9/SegueCatalog/)
+- [MetalPerformanceShadersHelloWorld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
+- [Musik Bewegung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
+- [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
+- [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
-Testen Sie auch die iOS-Teile dieser Beispiele (Companion Mac OS X-Versionen verfügbar!) ein:
+Sehen Sie sich auch die IOS-Abschnitte dieser Beispiele an (Begleit Mac OS X Versionen kommen!):
 
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
@@ -210,19 +210,19 @@ Testen Sie auch die iOS-Teile dieser Beispiele (Companion Mac OS X-Versionen ver
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS 9-Beispiele](https://developer.xamarin.com/samples/ios/iOS9/)
-- [Einführung in 3D Touch](~/ios/platform/3d-touch.md)
+- [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Einführung in 3D-Fingereingabe](~/ios/platform/3d-touch.md)
 - [App-Transportsicherheit](~/ios/app-fundamentals/ats.md)
 - [Multitasking für iPad](~/ios/platform/multitasking.md)
-- [Kontakte und UI-Kontakte](~/ios/platform/contacts.md)
-- [Neue Suche-APIs](~/ios/platform/search/index.md)
-- [Einführung in die Aufrufliste anzeigen](~/ios/user-interface/controls/uistackview.md)
-- [Änderungen der Auflistung anzeigen](~/ios/user-interface/controls/uicollectionview.md)
-- [Gaming-Verbesserungen](~/ios/platform/gaming/index.md)
-- [Einführung in HomeKit](~/ios/platform/homekit.md)
+- [Benutzeroberfläche von Kontakten und Kontakten](~/ios/platform/contacts.md)
+- [Neue Such-APIs](~/ios/platform/search/index.md)
+- [Einführung in die Stapel Ansicht](~/ios/user-interface/controls/uistackview.md)
+- [Änderungen der Sammlungsansicht](~/ios/user-interface/controls/uicollectionview.md)
+- [Spiele Erweiterungen](~/ios/platform/gaming/index.md)
+- [Einführung in homekit](~/ios/platform/homekit.md)
 - [Einführung in die Übergabe](~/ios/platform/handoff.md)
 - [Weitere iOS 9-Frameworkänderungen](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
 - [Problembehandlung](~/ios/platform/introduction-to-ios9/troubleshooting.md)
-- [iOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
-- [Was ist neu in iOS 9.0 verfügen](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Aktualisieren Ihre Xamarin.iOS-apps auf iOS9 (video)](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)
+- [IOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
+- [Neuerungen in ios 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [Aktualisieren Ihrer xamarin. IOS-apps auf iOS9 (Video)](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

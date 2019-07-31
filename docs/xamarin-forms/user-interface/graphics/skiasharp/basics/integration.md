@@ -7,16 +7,16 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: c4ca44488a4d10d3936e7bd8e664e3ffcb2a140a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 586cf0eaa7b0f38af61c9f7d619b30a39023a19e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61179804"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652957"
 ---
 # <a name="integrating-with-xamarinforms"></a>Integrieren von Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erstellen von SkiaSharp-Grafiken, die auf Fingereingabe und Xamarin.Forms-Elemente reagieren_
 
@@ -25,7 +25,7 @@ SkiaSharp-Grafiken können den Rest von Xamarin.Forms auf verschiedene Weise int
 ![](integration-images/integrationexample.png "Auswählen einer Farbe mit Schieberegler")
 
 Ein anderer Ansatz zum Erstellen von interaktiver Grafiken von SkiaSharp in Xamarin.Forms erfolgt über Touch.
-Die zweite Seite in der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm berechtigt ist **tippen ein-/ausschalten geben**. Es wird einen einfachen Kreis auf zwei Arten gezeichnet &mdash; ohne eine Fläche und eine Füllung &mdash; von einem fingertipp auf eine ein-/ausgeschaltet. Die [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasse zeigt, wie Sie SkiaSharp-Grafiken in Reaktion auf eine Benutzereingabe ändern können.
+Die zweite Seite in der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm berechtigt ist **tippen ein-/ausschalten geben**. Es wird einen einfachen Kreis auf zwei Arten gezeichnet &mdash; ohne eine Fläche und eine Füllung &mdash; von einem fingertipp auf eine ein-/ausgeschaltet. Die [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasse zeigt, wie Sie SkiaSharp-Grafiken in Reaktion auf eine Benutzereingabe ändern können.
 
 Für diese Seite die `SKCanvasView` Klasse instanziiert wird, der [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) -Datei, die außerdem eine Xamarin.Forms wird [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) in der Ansicht:
 
@@ -243,4 +243,4 @@ Die beste Möglichkeit, ein Gefühl für die zwei Modelle mit ihnen experimentie
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

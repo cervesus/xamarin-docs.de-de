@@ -6,31 +6,31 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1b0771a0ccc2597ebd800468b82044e4020d9d94
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d3e5b36f2cbc48dac09b55bfba8c3613db12bbc8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153309"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643272"
 ---
 # <a name="using-native-libraries"></a>Verwenden nativer Bibliotheken
 
-Xamarin.Android unterstützt die Verwendung von systemeigenen Bibliotheken mithilfe der standardmäßigen PInvoke-Mechanismus. Sie können auch zusätzliche native Bibliotheken bündeln, die nicht Teil des Betriebssystems in Ihrem apk-Datei sind.
+Xamarin. Android unterstützt die Verwendung von nativen Bibliotheken über den standardmäßigen PInvoke-Mechanismus. Sie können auch zusätzliche systemeigene Bibliotheken bündeln, die nicht Teil des Betriebssystems in ihrer APK-APP sind.
 
-Um eine native Bibliothek mit einer Xamarin.Android-Anwendung bereitzustellen, die binäre-Bibliothek zum Projekt hinzufügen, und legen Sie dessen **Buildvorgang** zu **AndroidNativeLibrary**.
+Fügen Sie zum Bereitstellen einer nativen Bibliothek mit einer xamarin. Android-Anwendung die Bibliotheks Binärdatei zum Projekt hinzu, und legen Sie die Buildaktion auf **androidnativelibrary**fest.
 
-Um eine native Bibliothek mit einer Xamarin.Android-Library-Projekt bereitzustellen, die binäre-Bibliothek zum Projekt hinzufügen, und legen Sie dessen **Buildvorgang** zu **EmbeddedNativeLibrary**.
+Fügen Sie zum Bereitstellen einer nativen Bibliothek mit einem xamarin. Android-Bibliotheksprojekt die Bibliotheks Binärdatei zum Projekt hinzu, und legen Sie die Buildaktion auf **embeddednativelibrary**fest.
 
-Beachten Sie, dass da Android mehrere Application Binary Interfaces (ABIs) unterstützt, Xamarin.Android welche ABI die native Bibliothek wissen müssen, ist für konzipiert.
+Da Android mehrere Anwendungs Binär Schnittstellen (ABIS) unterstützt, muss xamarin. Android wissen, für welche ABI die native Bibliothek erstellt wurde.
 Es gibt zwei Möglichkeiten, dies zu erreichen:
 
-1.  Pfad "sniffing"
-1.  Mithilfe einer `AndroidNativeLibrary/Abi` Element in der Projektdatei
+1.  Pfad "Sniffing"
+1.  Mithilfe eines `AndroidNativeLibrary/Abi` Elements in der Projektdatei
 
 
-Bei der Pfadermittlung wird der Name des übergeordneten Verzeichnisses der nativen Bibliothek verwendet, um die ABI anzugeben, die die Bibliothek als Ziel verwendet. Also, wenn Sie hinzufügen `lib/armeabi/libfoo.so` auf das Projekt, klicken Sie dann die ABI wird "ermittelt" als `armeabi`.
+Bei der Pfadermittlung wird der Name des übergeordneten Verzeichnisses der nativen Bibliothek verwendet, um die ABI anzugeben, die die Bibliothek als Ziel verwendet. Wenn Sie also dem Projekt `lib/armeabi/libfoo.so` hinzufügen, wird die ABI als `armeabi`"ermittelt".
 
-Alternativ können Sie Ihrer Projektdatei, um explizit anzugeben, die ABI mit bearbeiten:
+Alternativ können Sie die Projektdatei bearbeiten, um die zu verwendende ABI explizit anzugeben:
 
 ```xml
 <ItemGroup>
@@ -40,24 +40,24 @@ Alternativ können Sie Ihrer Projektdatei, um explizit anzugeben, die ABI mit be
 </ItemGroup>
 ```
 
-Weitere Informationen zur Verwendung von systemeigenen Bibliotheken finden Sie unter [Interop mit systemeigenen Bibliotheken](https://www.mono-project.com/docs/advanced/pinvoke/).
+Weitere Informationen zum Verwenden von nativen Bibliotheken finden Sie unter [Interop mit nativen Bibliotheken](https://www.mono-project.com/docs/advanced/pinvoke/).
 
 ## <a name="debugging-native-code-with-visual-studio"></a>Debuggen von nativem Code mit Visual Studio
 
-Bei Verwendung von *Visual Studio-2019* oder *Visual Studio 2017*, müssen Sie nicht Ihre Projektdateien zu ändern, wie oben beschrieben.
-Erstellen und Debuggen von C++ in Ihrer Xamarin.Android-Projektmappe durch Hinzufügen eines Projektverweises ein c++ **dynamische freigegebene Bibliothek (Android)** Projekt.
+Wenn Sie *Visual Studio 2019* oder *Visual Studio 2017*verwenden, müssen Sie die Projektdateien nicht wie oben beschrieben ändern.
+Sie können in der xamarin. Android-Projekt Mappe erstellen und Debuggen C++ , indem Sie C++ einem Projekt für eine **dynamische freigegebene Bibliothek (Android)** einen Projekt Verweis hinzufügen.
 
-Um systemeigenen C++-Code in Ihrem Projekt zu debuggen, gehen Sie folgendermaßen vor:
+Gehen Sie folgen C++ dermaßen vor, um systemeigenen Code in Ihrem Projekt zu Debuggen:
 
-1. Doppelklicken Sie auf Projekt **Eigenschaften** , und wählen Sie die **Android-Optionen** Seite.
-2. Führen Sie einen Bildlauf nach unten zum **Debugoptionen**.
-3. In der **Debugger** wählen Sie im Dropdownmenü **C++** (anstelle der standardmäßigen **.Net (Xamarin)**).
+1. Doppelklicken Sie auf Projekt **Eigenschaften** , und wählen Sie die Seite **Android-Optionen** aus.
+2. Scrollen Sie nach unten zu **Debugoptionen**.
+3. Wählen Sie **C++** im Dropdown Menü des Debuggers (anstelle des standardmäßigen **.net (xamarin)** ) aus.
 
-Visual Studio C++ Entwicklern die [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/) Beispiel zu debuggen versuchen C++ 2019 für Visual Studio oder Visual Studio 2017 mit Xamarin, und beziehen sich auf unsere [Blogbeitrag](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) Weitere Informationen.
+Visual Studio C++ -Entwickler können das [SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk) -Beispiel sehen, C++ um das Debuggen von Visual Studio 2019 oder Visual Studio 2017 mit xamarin zu testen. Weitere Informationen finden Sie in unserem [Blogbeitrag](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) .
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SanAngeles_NativeDebug (sample)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
-- [Entwickeln nativer Xamarin Android-Anwendungen](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)
+- [SanAngeles_NativeDebug (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk)
+- [Entwickeln von nativen xamarin Android-Anwendungen](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

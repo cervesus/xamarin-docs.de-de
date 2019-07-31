@@ -1,33 +1,33 @@
 ---
-title: Datumsauswahl-Steuerelement in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Sie entwerfen und Arbeiten mit Picker-Steuerelemente in einer Xamarin.iOS-app. Es wird erläutert, wie eine Auswahl im Code und in der iOS-Designer implementieren.
+title: Auswahl Steuerelement in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie Auswahl Steuerelemente in einer xamarin. IOS-App entwerfen und mit diesen arbeiten. Darin wird erläutert, wie eine Auswahl im Code und im IOS-Designer implementiert wird.
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
-ms.openlocfilehash: 946cba08e1e504962c093f67e336d72b654a3a41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4f4855c3928f05f2593d3d80fb7490a115b36e6a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61229164"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655815"
 ---
-# <a name="picker-control-in-xamarinios"></a>Datumsauswahl-Steuerelement in Xamarin.iOS
+# <a name="picker-control-in-xamarinios"></a>Auswahl Steuerelement in xamarin. IOS
 
-Ein [ `UIPickerView` ](xref:UIKit.UIPickerView) ermöglicht es, einen Wert aus einer Liste auszuwählen, indem Sie einen Bildlauf der einzelne Komponenten einer RAD-ähnlichen Schnittstelle.
+Mit [`UIPickerView`](xref:UIKit.UIPickerView) einem können Sie einen Wert aus einer Liste auswählen, indem Sie die einzelnen Komponenten einer Rad ähnlichen Schnittstelle scrollen.
 
-Datumsauswahl werden häufig verwendet, um ein Datum und eine Uhrzeit auszuwählen; Apple bietet die [`UIDatePicker`](xref:UIKit.UIDatePicker)
-die Klasse für diesen Zweck.
+Picker werden häufig verwendet, um ein Datum und eine Uhrzeit auszuwählen. Apple stellt das[`UIDatePicker`](xref:UIKit.UIDatePicker)
+-Klasse zu diesem Zweck.
 
-Der Artikel beschreibt die Implementierung und Verwendung der `UIPickerView` und `UIDatePicker` Steuerelemente.
+In diesem Artikel wird beschrieben, wie die `UIPickerView` -und- `UIDatePicker` Steuerelemente implementiert und verwendet werden.
 
-## <a name="uipickerview"></a>UIPickerView
+## <a name="uipickerview"></a>Uipickerview
 
 ### <a name="implementing-a-picker"></a>Implementieren einer Auswahl
 
-Implementieren Sie eine Auswahl durch Instanziierung eines neuen `UIPickerView`:
+Implementieren Sie eine Auswahl, indem Sie eine neue `UIPickerView`Instanz von instanziieren:
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
@@ -40,15 +40,15 @@ UIPickerView pickerView = new UIPickerView(
 );
 ```
 
-### <a name="pickers-and-storyboards"></a>Auswahltools und storyboards
+### <a name="pickers-and-storyboards"></a>Picker und Storyboards
 
-Erstellen Sie eine Auswahl in der **iOS-Designer**, ziehen Sie eine **Auswahl anzeigen** aus der **Toolbox** auf die Entwurfsoberfläche.
+Um eine Auswahl im IOS- **Designer**zu erstellen, ziehen Sie eine Auswahl **Ansicht** aus der **Toolbox** auf die Entwurfs Oberfläche.
 
-![Ziehen Sie eine Ansicht für die Auswahl auf die Entwurfsoberfläche](picker-images/image1.png "eine Datumsauswahl-Ansicht auf die Entwurfsoberfläche ziehen.")
+![Ziehen Sie eine Auswahl Ansicht auf die Entwurfs Oberfläche] . (picker-images/image1.png "Ziehen Sie eine Auswahl Ansicht auf die Entwurfs Oberfläche") .
 
-### <a name="working-with-a-picker-control"></a>Arbeiten mit einer Datumsauswahl-Steuerelement
+### <a name="working-with-a-picker-control"></a>Arbeiten mit einem Auswahl Steuerelement
 
-Eine Auswahl verwendet eine _Modell_ für die Interaktion mit Daten:
+Eine Auswahl verwendet ein _Modell_ für die Interaktion mit Daten:
 
 ```csharp
 public override void ViewDidLoad()
@@ -59,8 +59,8 @@ public override void ViewDidLoad()
 }
 ```
 
-Die [ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel) Basisklasse implementiert zwei Schnittstellen, [`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
-und [ `IUIPickerViewDelegate` ](xref:UIKit.IUIPickerViewDelegate), die verschiedenen Methoden zu deklarieren, die Daten mit einer Auswahl angeben, und wie diese Interaktion behandelt:
+Die [`UIPickerViewModel`](xref:UIKit.UIPickerViewModel) -Basisklasse implementiert zwei Schnittstellen:[`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
+und [`IUIPickerViewDelegate`](xref:UIKit.IUIPickerViewDelegate), die verschiedene Methoden deklarieren, mit denen die Daten einer Auswahl angegeben werden, und wie die Interaktion behandelt wird:
 
 ```csharp
 public class PeopleModel : UIPickerViewModel
@@ -122,23 +122,23 @@ public class PeopleModel : UIPickerViewModel
     }
 ```
 
-Eine Auswahl haben mehrere Spalten oder _Komponenten_. Komponenten Partitionieren Sie eine Auswahl in mehrere Abschnitte, um einfachere und genauere Daten ausgewählt werden kann:
+Eine Auswahl kann über mehrere Spalten oder _Komponenten_verfügen. Komponenten Partitionieren eine Auswahl in mehrere Abschnitte und ermöglichen so eine einfachere und spezifischere Datenauswahl:
 
-![Auswahl mit zwei Komponenten](picker-images/image3.png "Farbauswahl mit zwei Komponenten")
+Auswahl ![mit zwei Komponenten] Auswahl (picker-images/image3.png "mit zwei Komponenten")
 
-Verwenden Sie zum Angeben der Anzahl der Komponenten in einer Auswahl der [`GetComponentCount`](xref:UIKit.UIPickerViewModel.GetComponentCount(UIKit.UIPickerView)) 
+Um die Anzahl der Komponenten in einer Auswahl anzugeben, verwenden Sie das[`GetComponentCount`](xref:UIKit.UIPickerViewModel.GetComponentCount(UIKit.UIPickerView)) 
 -Methode.
 
-### <a name="customizing-a-pickers-appearance"></a>Anpassen der Darstellung von einer Auswahl
+### <a name="customizing-a-pickers-appearance"></a>Anpassen der Darstellung einer Auswahl
 
-Verwenden Sie zum Anpassen der Darstellung einer Auswahl der [`UIPickerView.UIPickerViewAppearance`](xref:UIKit.UIPickerView.UIPickerViewAppearance)
-Klasse oder außer Kraft setzen der [ `GetView` ](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView)) und [ `GetRowHeight` ](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint)) Methoden in der `UIPickerViewModel`.
+Verwenden Sie zum Anpassen der Darstellung einer Auswahl das[`UIPickerView.UIPickerViewAppearance`](xref:UIKit.UIPickerView.UIPickerViewAppearance)
+, oder überschreiben [`GetView`](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView)) Sie [`GetRowHeight`](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint)) die-Methode `UIPickerViewModel`und die-Methode in.
 
 ## <a name="uidatepicker"></a>UIDatePicker
 
 ### <a name="implementing-a-date-picker"></a>Implementieren einer Datumsauswahl
 
-Implementieren eine Datumsauswahl durch Instanziieren einer `UIDatePicker`:
+Implementieren Sie eine Datumsauswahl, indem Sie eine `UIDatePicker`instanziieren:
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
@@ -151,17 +151,17 @@ UIPickerView pickerView = new UIPickerView(
 );
 ```
 
-### <a name="date-pickers-and-storyboards"></a>Datumsauswahl und storyboards
+### <a name="date-pickers-and-storyboards"></a>Datums-und Storyboards
 
-Zum Erstellen einer Datumsauswahl in die **iOS-Designer**, ziehen Sie eine **Datumsauswahl** aus der **Toolbox** auf die Entwurfsoberfläche.
+Zum Erstellen einer Datumsauswahl im **IOS-Designer**ziehen Sie eine **Datums** Auswahl aus der **Toolbox** auf die Entwurfs Oberfläche.
 
-![Ziehen Sie eine Datumsauswahl auf der Entwurfsoberfläche](picker-images/image2.png "einer Datumsauswahl auf die Entwurfsoberfläche ziehen")
+![Ziehen Sie eine Datumsauswahl auf die Entwurfs Oberfläche] . (picker-images/image2.png "Ziehen Sie eine Datumsauswahl auf die Entwurfs Oberfläche") .
 
-### <a name="date-picker-properties"></a>Eigenschaften für Datumsauswahl
+### <a name="date-picker-properties"></a>Datumsauswahl Eigenschaften
 
-#### <a name="minimum-and-maximum-date"></a>Minimale und maximale Datum
+#### <a name="minimum-and-maximum-date"></a>Mindest-und höchst Datum
 
-[`MinimumDate`](xref:UIKit.UIDatePicker.MinimumDate) und [ `MaximumDate` ](xref:UIKit.UIDatePicker.MaximumDate) schränkt den Bereich der Datumsangaben in der Datumsauswahl verfügbar. So schränkt zum Beispiel der folgende Code eine Datumsauswahl 60 Jahre vor dem Zeitpunkt vorhanden:
+[`MinimumDate`](xref:UIKit.UIDatePicker.MinimumDate)und [`MaximumDate`](xref:UIKit.UIDatePicker.MaximumDate) schränken den in der Datumsauswahl verfügbaren Datumsbereich ein. Der folgende Code schränkt z. b. eine Datumsauswahl auf die 60 Jahre ein, die bis zum aktuellen Zeitpunkt liegen:
 
 ```csharp
 var calendar = new NSCalendar(NSCalendarType.Gregorian);
@@ -174,15 +174,15 @@ datePickerView.MaximumDate = NSDate.Now;
 ```
 
 > [!TIP]
-> Es ist möglich, explizit Umwandeln einer `DateTime` auf eine `NSDate`:
+> Es ist möglich, eine `DateTime` explizit in eine `NSDate`umzuwandeln:
 > ```csharp
 > DatePicker.MinimumDate = (NSDate)DateTime.Today.AddDays (-7);
 > DatePicker.MaximumDate = (NSDate)DateTime.Today.AddDays (7);
 > ```
 
-#### <a name="minute-interval"></a>Zeitraum von Minuten
+#### <a name="minute-interval"></a>Minuten Intervall
 
-Die [ `MinuteInterval` ](xref:UIKit.UIDatePicker.MinuteInterval) Eigenschaft legt fest, das Intervall, an dem die Auswahl Minuten angezeigt werden:
+Die [`MinuteInterval`](xref:UIKit.UIDatePicker.MinuteInterval) -Eigenschaft legt das Intervall fest, in dem die Auswahl Minuten anzeigt:
 
 ```csharp
 datePickerView.MinuteInterval = 10;
@@ -190,62 +190,62 @@ datePickerView.MinuteInterval = 10;
 
 #### <a name="mode"></a>Modus
 
-Datumsauswahl unterstützen vier [Modi](xref:UIKit.UIDatePickerMode), im folgenden beschrieben:
+Date-Picker unterstützen vier [Modi](xref:UIKit.UIDatePickerMode), die unten beschrieben werden:
 
 ##### <a name="uidatepickermodetime"></a>UIDatePickerMode.Time
 
-`UIDatePickerMode.Time` Zeigt an, mit einer Stunde und Minute Selektor und einer optionalen AM oder PM-Bezeichnung:
+`UIDatePickerMode.Time`zeigt die Uhrzeit mit einer Auswahl von Stunde und Minute und einer optionalen am-oder PM-Bezeichnung an:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Time;
 ```
 
-![UIDatePickerMode.Time](picker-images/image8.png "UIDatePickerMode.Time")
+![Uidatepickermode. Time](picker-images/image8.png "Uidatepickermode. Time")
 
 ##### <a name="uidatepickermodedate"></a>UIDatePickerMode.Date
 
-`UIDatePickerMode.Date` Zeigt das Datum mit einem Monat, Tag und Jahr Selektor:
+`UIDatePickerMode.Date`zeigt das Datum mit einer Auswahl für Monat, Tag und Jahr an:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Date;
 ```
 
-![UIDatePickerMode.Date](picker-images/image7.png "UIDatePickerMode.Date")
+![Uidatepickermode. Date](picker-images/image7.png "Uidatepickermode. Date")
 
-Die Reihenfolge der Selektoren hängt von der Datumsauswahl-Gebietsschema, die standardmäßig das Gebietsschema des Systems verwendet ab. In der Abbildung oben zeigt das Layout der Selektoren in die `en_US` Gebietsschema, aber die folgenden, ändert die Reihenfolge von Tag | Monat | Jahr:
+Die Reihenfolge der Selektoren hängt vom Gebiets Schema der Datumsauswahl ab, das standardmäßig das Gebiets Schema des Systems verwendet. In der obigen Abbildung ist das Layout der Selektoren im `en_US` Gebiets Schema dargestellt. im folgenden wird die Reihenfolge jedoch geändert. Monat | Jährigen
 
 ```csharp
 datePickerView.Locale = NSLocale.FromLocaleIdentifier("en_GB");
 ```
 
-![Tag | Monat | Jahr](picker-images/image9.png "Tag | Monat | Jahr")
+![Tag | Monat | Jahr]((picker-images/image9.png "Tag) | Monat | Jahr")
 
 ##### <a name="uidatepickermodedateandtime"></a>UIDatePickerMode.DateAndTime
 
-`UIDatePickerMode.DateAndTime` Zeigt eine verkürzte Ansicht des Datums, die Zeit in Stunden und Minuten sowie eine optionale AM oder PM-Bezeichnung (je nachdem, ob ein 12- oder 24-Stunden-Format verwendet wird):
+`UIDatePickerMode.DateAndTime`zeigt eine verkürzte Ansicht des Datums, die Uhrzeit in Stunden und Minuten sowie eine optionale am-oder PM-Bezeichnung an (abhängig davon, ob ein 12-oder 24-Stunden-Takt verwendet wird):
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.DateAndTime;
 ```
 
-![UIDatePickerMode.DateAndTime](picker-images/image6.png "UIDatePickerMode.DateAndTime")
+![Uidatepickermode. DateAndTime](picker-images/image6.png "Uidatepickermode. DateAndTime")
 
-Wie bei [ `UIDatePickerMode.Date` ](#uidatepickermodedate), die Reihenfolge der Selektoren und die Verwendung von einem 12- oder 24-Stunden-Format, die auf dem Gebietsschema der Datumsauswahl abhängig ist.
+Wie bei [`UIDatePickerMode.Date`](#uidatepickermodedate)ist die Reihenfolge der Selektoren und die Verwendung eines 12-oder 24-Stunden-Zeit Ortes vom Gebiets Schema der Datumsauswahl abhängig.
 
 > [!TIP]
-> Verwenden der `Date` Eigenschaft, um den Wert einer Datumsauswahl im Modus erfassen `UIDatePickerMode.Time`, `UIDatePickerMode.Date`, oder `UIDatePickerMode.DateAndTime`. Dieser Wert wird gespeichert, als ein `NSDate`.
+> Verwenden Sie `Date` die-Eigenschaft, um den Wert einer Datumsauswahl im `UIDatePickerMode.Time`- `UIDatePickerMode.Date`Modus, `UIDatePickerMode.DateAndTime`oder zu erfassen. Dieser Wert wird als `NSDate`gespeichert.
 
 ##### <a name="uidatepickermodecountdowntimer"></a>UIDatePickerMode.CountDownTimer
 
-`UIDatePickerMode.CountDownTimer` Zeigt die Werte für Stunden und Minuten:
+`UIDatePickerMode.CountDownTimer`zeigt die Stunden-und Minuten Werte an:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.CountDownTimer;
 ```
 
-!["UIDatePickerMode.CountDownTimer"](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
+!["Uidatepickermode. Countdowntimer"](picker-images/image5.png "Uidatepickermode. Countdowntimer")
 
-Die `CountDownDuration` Eigenschaft erfasst den Wert einer Datumsauswahl in `UIDatePickerMode.CountDownTimer` Modus. Geben Sie beispielsweise Folgendes ein, um den countdownwert auf das aktuelle Datum hinzufügen:
+Die `CountDownDuration` -Eigenschaft erfasst den Wert einer Datumsauswahl im `UIDatePickerMode.CountDownTimer` -Modus. Fügen Sie beispielsweise dem aktuellen Datum den countdownwert hinzu:
 
 ```csharp
 var currentTime = NSDate.Now;
@@ -257,9 +257,9 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 #### <a name="nsdateformatter"></a>NSDateFormatter
 
-Formatieren einer `NSDate`, verwenden Sie eine [ `NSDateFormatter` ](xref:Foundation.NSDateFormatter).
+Verwenden Sie zum Formatieren eines `NSDate`. [`NSDateFormatter`](xref:Foundation.NSDateFormatter)
 
-Verwenden einer `NSDateFormatter`, rufen Sie die [ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate)) Methode. Zum Beispiel:
+Um einen `NSDateFormatter`zu verwenden, müssen [`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate)) Sie seine-Methode aufruft. Beispiel:
 
 ```csharp
 var date = NSDate.Now;
@@ -272,48 +272,48 @@ var formattedDate = formatter.ToString(d);
 
 ##### <a name="dateformat"></a>DateFormat
 
-Die [ `DateFormat` ](xref:Foundation.NSDateFormatter.DateFormat) Eigenschaft (eine Zeichenfolge) eine `NSDateFormatter` ermöglicht eine Formatspezifikation anpassbare Datum:
+Die [`DateFormat`](xref:Foundation.NSDateFormatter.DateFormat) -Eigenschaft (eine Zeichenfolge) `NSDateFormatter` von ermöglicht eine anpassbare Datumsformat Spezifikation:
 
 ```csharp
 NSDateFormatter dateFormat = new NSDateFormatter();
 dateFormat.DateFormat = "yyyy-MM-dd";
 ```
 
-##### <a name="timestyle"></a>TimeStyle
+##### <a name="timestyle"></a>Timestyle
 
-Die [ `TimeStyle` ](xref:Foundation.NSDateFormatter.TimeStyle) Eigenschaft (eine [ `NSDateFormatterStyle` ](xref:Foundation.NSDateFormatterStyle) von einer `NSDateFormatter` gibt die Zeit Formatierung basierend auf vordefinierten Formate an:
+Die [`TimeStyle`](xref:Foundation.NSDateFormatter.TimeStyle) -Eigenschaft ( [`NSDateFormatterStyle`](xref:Foundation.NSDateFormatterStyle) eine von `NSDateFormatter` gibt die Zeit Formatierung basierend auf vordefinierten Stilen an:
 
 ```csharp
 NSDateFormatter timeFormat = new NSDateFormatter();
 timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 ```
 
-Verschiedene `NSDateFormatterStyle` Werte anzeigen wie folgt:
+Verschiedene `NSDateFormatterStyle` Werte zeigen die Zeiten wie folgt an:
 
-- `NSDateFormatterStyle.Full`: 19:46:00 Uhr Eastern Daylight Time
-- `NSDateFormatterStyle.Long`: 7:47:00 PM EDT
-- `NSDateFormatterStyle.Medium`: 7:47:00 PM
-- `NSDateFormatterSytle.Short`: 7:47 PM
+- `NSDateFormatterStyle.Full`: 7:46:00 Uhr Ost-Sommerzeit
+- `NSDateFormatterStyle.Long`: 7:47:00 UHR EDT
+- `NSDateFormatterStyle.Medium`: 7:47:00 UHR
+- `NSDateFormatterSytle.Short`: 7:47 UHR
 
 ##### <a name="datestyle"></a>DateStyle
 
-Die [ `DateStyle` ](xref:Foundation.NSDateFormatter.DateStyle) Eigenschaft (eine `NSDateFormatterStyle`) von einer `NSDateFormatter` gibt die Formatierung des Datums basierend auf vordefinierten Formate an:
+Die [`DateStyle`](xref:Foundation.NSDateFormatter.DateStyle) -Eigenschaft ( `NSDateFormatterStyle`eines) von `NSDateFormatter` gibt die Datums Formatierung basierend auf vordefinierten Stilen an:
 
 ```csharp
 NSDateFormatter dateTimeformat = new NSDateFormatter();
 dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 ```
 
-Verschiedene `NSDateFormatterStyle` Werte anzeigen von Datumsangaben wie folgt:
+Verschiedene `NSDateFormatterStyle` Werte zeigen Datumsangaben wie folgt an:
 
-- `NSDateFormatterStyle.Full`: Mittwoch, August 2 2017 um 7:48 Uhr
-- `NSDateFormatterStyle.Long`: 2. August 2017 um 7:49 Uhr
-- `NSDateFormatterStyle.Medium`: 2. August 2017, 19:49 Uhr
-- `NSDateFormatterStyle.Short`: 8/2/17, 19:50 UHR
+- `NSDateFormatterStyle.Full`: Mittwoch, 2. August, 2017 Uhr 7:48 Uhr
+- `NSDateFormatterStyle.Long`: 2. August, 2017 Uhr, 7:49 Uhr
+- `NSDateFormatterStyle.Medium`: 2. Aug, 2017, 7:49 Uhr
+- `NSDateFormatterStyle.Short`: 8/2/17, 7:50 UHR
 
 > [!NOTE]
-> `DateFormat` und `DateStyle` / `TimeStyle` bieten verschiedene Möglichkeiten zum Angeben von Datums- und uhrzeitformatierungen. Bestimmen die zuletzt Eigenschaften festlegen, dass das Datum Formatierungsprogramm Ausgabe des.
+> `DateFormat`und `DateStyle` bietenverschiedeneMethoden`TimeStyle` zum Angeben der Datums-und Uhrzeit Formatierung. / Die zuletzt festgelegten Eigenschaften bestimmen die Ausgabe des dateiformatierers.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PickerControl (Beispiel)](https://developer.xamarin.com/samples/monotouch/PickerControl/)
+- [Pickercontrol (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/pickercontrol)

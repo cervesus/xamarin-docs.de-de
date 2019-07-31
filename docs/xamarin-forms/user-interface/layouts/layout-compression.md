@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 4b37435c9cec7549c04c35a81ec31d3a2236e7c1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 97aa8c321362ebccc954a79f99b7bc69b5a0ad63
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925470"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657065"
 ---
 # <a name="layout-compression"></a>Layoutkomprimierung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutCompression/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
 _Layoutkomprimierung werden bestimmte Layouts aus der visuellen Struktur Versuch zur Verbesserung der Leistung beim Rendern der Seite entfernt. In diesem Artikel erläutert das Aktivieren der layoutkomprimierung und die Vorteile, die sie bieten kann._
 
@@ -123,4 +123,4 @@ Layoutkomprimierung werden bestimmte Layouts aus der visuellen Struktur Versuch 
 
 - [Erstellen eines benutzerdefinierten Layouts](~/xamarin-forms/user-interface/layouts/custom.md)
 - [Schnelle Renderer](~/xamarin-forms/internals/fast-renderers.md)
-- [LayoutCompression (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutCompression/)
+- [LayoutCompression (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)

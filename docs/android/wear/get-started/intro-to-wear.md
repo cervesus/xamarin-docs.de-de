@@ -1,214 +1,214 @@
 ---
 title: Einführung in Android Wear
-description: Mit der Einführung Googles Android Wear sind Sie nicht mehr auf nur Smartphones und Tablets beschränkt, wenn es darum geht, hervorragende Android-apps entwickeln. Der Xamarin.Android-Unterstützung für Android Wear ermöglicht es für die Ausführung von C# Code in die Finger! Diese Einführung bietet eine grundlegende Übersicht über Android Wear, beschreibt ihre wichtigsten Funktionen und bietet einen Überblick über die in Android Wear 2.0 verfügbaren Features. Es führt einige der gängigeren Geräte mit Android Wear, und es enthält Links zu essential Google Android Wear-Dokumentation für Weitere Informationen.
+description: Mit der Einführung des Android Wear von Google sind Sie nicht mehr auf Smartphones und Tablets beschränkt, wenn es um die Entwicklung großartiger Android-Apps geht. Xamarin. Android-Unterstützung für Android Wear ermöglicht Ihnen das Ausführen C# von Code auf Ihrem Handgelenk! Diese Einführung bietet eine grundlegende Übersicht über Android Wear, beschreibt die wichtigsten Features und bietet einen Überblick über die Features, die in Android Wear 2,0 verfügbar sind. Darin sind einige der gängigeren Android Wear-Geräte aufgeführt. Außerdem finden Sie hier Links zu grundlegender Google Android Wear-Dokumentationen für weitere Informationen.
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 57a521df5fdede2bd92a6b1432f698c822a2b06f
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: a57273005df45c2f8035563efe9562c27cdfa732
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674571"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648407"
 ---
 # <a name="introduction-to-android-wear"></a>Einführung in Android Wear
 
-_Mit der Einführung Googles Android Wear sind Sie nicht mehr auf nur Smartphones und Tablets beschränkt, wenn es darum geht, hervorragende Android-apps entwickeln. Der Xamarin.Android-Unterstützung für Android Wear ermöglicht es für die Ausführung von C# Code in die Finger! Diese Einführung bietet eine grundlegende Übersicht über Android Wear, beschreibt ihre wichtigsten Funktionen und bietet einen Überblick über die in Android Wear 2.0 verfügbaren Features. Es führt einige der gängigeren Geräte mit Android Wear, und es enthält Links zu essential Google Android Wear-Dokumentation für Weitere Informationen._
+_Mit der Einführung des Android Wear von Google sind Sie nicht mehr auf Smartphones und Tablets beschränkt, wenn es um die Entwicklung großartiger Android-Apps geht. Xamarin. Android-Unterstützung für Android Wear ermöglicht Ihnen das Ausführen C# von Code auf Ihrem Handgelenk! Diese Einführung bietet eine grundlegende Übersicht über Android Wear, beschreibt die wichtigsten Features und bietet einen Überblick über die Features, die in Android Wear 2,0 verfügbar sind. Darin sind einige der gängigeren Android Wear-Geräte aufgeführt. Außerdem finden Sie hier Links zu grundlegender Google Android Wear-Dokumentationen für weitere Informationen._
 
 
 ## <a name="overview"></a>Übersicht
 
-Android Wear wird auf einer Vielzahl von Geräten, wie z.B. die erste Generation Motorola 360 LGs G-Überwachung und der Samsung Zahnradsymbol Live ausgeführt. Eine zweite Generation, einschließlich des Sony SmartWatch 3, hat auch mit zusätzlichen Funktionen, einschließlich integrierten GPS und offline Musikwiedergabe veröffentlicht wurde. Für Android Wear 2.0 Google hat mit zusammengetan, LG für zwei neue Überwachungen: die LG Watch Sport und LG Watch-Stil.
+Android Wear kann auf einer Vielzahl von Geräten ausgeführt werden, z. b. in der ersten Generation von Motorola 360, LG G Watch und Samsung Gear Live. Eine zweite Generation, einschließlich der Smartwatch 3 von Apple, wurde ebenfalls mit zusätzlichen Funktionen veröffentlicht, einschließlich integrierter GPS-und Offline-Musikwiedergabe. Für Android Wear 2,0 hat sich Google mit LG für zwei neue Überwachungen zusammengetan: der LG Watch Sport und der LG-Überwachungs Stil.
 
-![Android Wear-2.0-Geräte](intro-to-wear-images/hero-image.png "Beispiel Android Wear-2.0-Geräte")
+![Android Wear 2,0-Geräte](intro-to-wear-images/hero-image.png "Beispiel: Android Wear 2,0-Geräte")
 
-Xamarin.Android 5.0 und höher unterstützt Android Wear über unser Android 4.4W (20-API) unterstützen, und ein NuGet-Paket, das zusätzliche fügt Wear-spezifische UI-Steuerelemente. Xamarin.Android 5.0 und höher umfasst auch Funktionen zum Packen Ihrer Wear-apps. NuGet-Pakete stehen auch für Android Wear-2.0 wie weiter unten in diesem Handbuch beschrieben.
+Xamarin. Android 5,0 und höher unterstützt Android-Wear über unsere Android 4.4 w (API 20)-Unterstützung und ein nuget-Paket, das zusätzliche Verschleiß spezifische UI-Steuerelemente hinzufügt. Xamarin. Android 5,0 und höher umfasst auch Funktionen zum Verpacken Ihrer Wear-apps. Nuget-Pakete sind auch für Android Wear 2,0 verfügbar, wie weiter unten in diesem Handbuch beschrieben.
 
 
-## <a name="android-wear-basics"></a>Android Wear-Grundlagen
+## <a name="android-wear-basics"></a>Grundlagen zu Android Wear
 
-Android Wear verfügt über ein Paradigma der Benutzer-Schnittstelle, die von der Android-handheld-apps unterscheidet. Die erste Welle von Wear-apps wurden entworfen, um eine begleitende erweitern handheld-app in bestimmter Weise aber ab Android Wear 2.0, Wear-apps verwendet eigenständige werden können. Wenn Sie eine Wear-app bereitstellen, wird es mit handheld Begleit-app verpackt. Da die meisten Wear apps hängen handheld Begleit-app, sie benötigen eine Möglichkeit zur Kommunikation mit handheld-apps. In den folgenden Abschnitten werden diese Nutzungsszenarien und beschreiben die wesentlichen Funktionen für Android Wear. 
+Android Wear verfügt über ein Benutzeroberflächen Paradigma, das sich von Android-Apps unterscheidet. Die erste Welle von Wear-Apps wurde entwickelt, um eine begleitende Handheld-App auf irgendeine Weise zu erweitern, aber ab Android Wear 2,0 können Wear-apps eigenständig verwendet werden. Wenn Sie eine Wear-App bereitstellen, wird Sie mit einer begleitenden Hand Held-App verpackt. Da die meisten Wear-apps von einer begleitenden begleitenden App abhängen, benötigen Sie eine Möglichkeit, mit Handheld-apps zu kommunizieren. In den folgenden Abschnitten werden diese Verwendungs Szenarien beschrieben und die wesentlichen Features für Android-Wear erläutert. 
 
 
 
 ### <a name="usage-scenarios"></a>Verwendungsszenarien
 
-Die erste Version von Android Wear lag der Schwerpunkt hauptsächlich auf aktuelle handheld-Anwendungen mit erweiterten Benachrichtigungen erweitern und Synchronisieren von Daten zwischen der handheld-app und der tragbare app. Diese Szenarien sind daher relativ einfach implementieren.
+Die erste Version von Android Wear konzentriert sich hauptsächlich auf die Erweiterung aktueller Handheld-Anwendungen mit erweiterten Benachrichtigungen und die Synchronisierung von Daten zwischen der Handheld-APP und der tragbaren-app. Daher ist es relativ einfach, diese Szenarien zu implementieren.
 
 
-#### <a name="wearable-notifications"></a>Tragbare Benachrichtigungen
+#### <a name="wearable-notifications"></a>Wearable-Benachrichtigungen
 
-Die einfachste Möglichkeit zur Unterstützung von Android Wear, ist der freigegebene Art von Benachrichtigungen zwischen dem Handheldgerät und das tragbare Gerät nutzen. Mithilfe von API-Unterstützung v4 Benachrichtigung und die `WearableExtender` Klasse (verfügbar in der [unterstützt Xamarin Android-Bibliothek](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)), können Sie profitieren Sie von der nativen Features der Plattform, z. B. kartengestaltung Posteingang oder voice-Eingabe. Die [RecipeAssistant](https://developer.xamarin.com/samples/monodroid/wear/RecipeAssistant/) Beispiel enthält Beispielcode, der zeigt, wie Sie eine Liste der Benachrichtigungen an ein Android Wear-Gerät zu senden. 
+Die einfachste Möglichkeit zur Unterstützung von Android Wear besteht darin, die gemeinsame Nutzung von Benachrichtigungen zwischen dem Hand Held und dem tragbaren-Gerät zu nutzen. Mithilfe der Unterstützung der V4-Benachrichtigungs `WearableExtender` -API und der-Klasse (in der [xamarin Android-Unterstützungs Bibliothek](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)verfügbar) können Sie auf die systemeigenen Features der Plattform tippen, wie z. b. Post fach Karten oder Spracheingaben. Das Beispiel " [recipeer Assistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant) " enthält Beispielcode, der veranschaulicht, wie eine Liste von Benachrichtigungen an ein Android Wear-Gerät gesendet wird. 
 
 
 
-#### <a name="companion-applications"></a>Companion-Anwendungen
+#### <a name="companion-applications"></a>Begleit Anwendungen
 
-Eine andere Strategie ist eine vollständige Anwendung zu erstellen, die wird systemeigen unter das tragbare Gerät ausgeführt und mit Begleit-app handheld-Paaren. Ein gutes Beispiel dieses Ansatzes ist die [Quiz](https://developer.xamarin.com/samples/monodroid/wear/Quiz/) Beispiel-app, die veranschaulicht, wie Sie ein Quiz zu erstellen, die auf einem tragbaren Gerät ausgeführt wird, und fordert auf das tragbare Gerät Quizfragen. 
+Eine andere Strategie besteht darin, eine komplette Anwendung zu erstellen, die System intern auf dem tragbaren-Gerät ausgeführt wird, und Paare mit einer begleitenden Handheld-app. Ein gutes Beispiel für diesen Ansatz ist die [Quiz](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-quiz) -Beispiel-APP, die veranschaulicht, wie ein Quiz erstellt wird, das auf einem Hand Held Gerät ausgeführt wird, und Quiz Fragen auf dem tragbaren-Gerät stellt. 
 
 
 
 ### <a name="user-interface"></a>Benutzeroberfläche
 
-Das primäre navigationsmuster für Verschleiß ist eine Reihe von Karten, die vertikal angeordnet. Jede dieser Karten kann Aktionen zugeordnet, die sich auf derselben Zeile Ebenen auf. Die `GridViewPager` Klasse bietet folgende Funktionen; er entspricht, auf das gleiche Konzept der Adapter als `ListView`. Ordnen Sie Sie in der Regel die `GridViewPager` mit einer `FragmentGridPagerAdaptor` (oder `GridPagerAdaptor`), mit der Sie die einzelnen Zellen in Zeilen- und als darstellen einer `Fragment`: 
+Das primäre Navigationsmuster für Wear ist eine vertikale Reihe von Karten. Jeder dieser Karten können Aktionen zugeordnet werden, die in derselben Zeile angeordnet werden. Diese `GridViewPager` Funktion wird von der-Klasse bereitstellt. Sie entspricht dem gleichen `ListView`Adapterkonzept wie. Normalerweise ordnen Sie `GridViewPager` den mit `FragmentGridPagerAdaptor` einem ( `GridPagerAdaptor`oder) zu, mit dem Sie jede Zeilen-und Spalten `Fragment`Zelle als darstellen können: 
 
 [![Wear-Navigation](intro-to-wear-images/2d-picker-sml.png "Wear-Navigation")](intro-to-wear-images/2d-picker.png#lightbox)
 
-Wear auch mithilfe von Aktionsschaltflächen, die aus einem großen bestehen Kreis mit kleinen Beschreibungstext darunter (wie oben dargestellt) gefärbt ist.  Die [GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/) Beispiel veranschaulicht, wie `GridViewPager` und `GridPagerAdapter` in einer Wear-app.
+Wear verwendet auch Aktions Schaltflächen, die aus einem großen farbigen Kreis mit kleinen Beschreibungstext darunter stehen (wie oben gezeigt).  Das [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager) -Beispiel veranschaulicht die Verwendung `GridViewPager` von `GridPagerAdapter` und in einer Wear-app.
 
-Android Wear 2.0 werden die Wear-Benutzeroberfläche eine Navigations-Drawer, eine Aktion Drawer und Inline-Aktionsschaltflächen hinzugefügt. Weitere Informationen zu Android Wear-2.0-Benutzeroberflächenelemente, finden Sie unter Android [Aufbau](https://www.google.com/design/spec-wear/system-overview/anatomy.html) Thema. 
+Android Wear 2,0 fügt der Benutzeroberfläche "Wear" eine Navigations-, Aktions-und Inline Aktions Schaltfläche hinzu. Weitere Informationen zu Android Wear 2,0-Benutzeroberflächen Elementen finden Sie im Thema Android- [Anatomie](https://www.google.com/design/spec-wear/system-overview/anatomy.html) . 
 
 
 
 ### <a name="communications"></a>Kommunikation
 
-Android Wear bietet zwei verschiedene-Kommunikations-APIs, um die Kommunikation zwischen apps für tragbare Geräte und tragbare Begleit-apps zu vereinfachen: 
+Android Wear bietet zwei verschiedene Kommunikations-APIs, um die Kommunikation zwischen tragbaren apps und begleitenden Handheld-apps zu vereinfachen: 
 
-**Daten-API** &ndash; diese API ist eine synchronisierte Datenspeicher zwischen dem tragbare Gerät und dem Handheldgerät ähnelt. Android übernimmt das Weitergeben von Änderungen zwischen tragbare und handheld, wenn sie dazu eine optimale ist. Wenn das tragbare Gerät außerhalb des gültigen Bereichs befindet, wird die Synchronisierung für einen späteren Zeitpunkt Warteschlange. Der Haupteinstiegspunkt für diese API ist `WearableClass.DataApi`. Weitere Informationen zu dieser API finden Sie im Android [Synchronisierung Datenelemente](https://developer.android.com/training/wearables/data-layer/data-items.html) Thema. 
+**Daten-API** &ndash; Diese API ähnelt einem synchronisierten Datenspeicher zwischen dem tragbaren-Gerät und dem Handheld-Gerät. Android übernimmt die Weitergabe von Änderungen zwischen tragbaren und Hand Held, wenn dies optimal ist. Wenn die tragbaren außerhalb des Bereichs liegt, wird die Synchronisierung für einen späteren Zeitpunkt in die Warteschlange eingereiht. Der Haupteinstiegspunkt für diese API ist `WearableClass.DataApi`. Weitere Informationen zu dieser API finden Sie im Thema Android- [Synchronisierungs Datenelemente](https://developer.android.com/training/wearables/data-layer/data-items.html) . 
 
-**Message-API-** &ndash; diese API ermöglicht es Ihnen die Verwendung einen niedrigeren Ebene Kommunikationspfad: eine kleine Nutzlast wird unidirektionale Kommunikation ohne Synchronisierung zwischen den apps Handheld- und tragbare gesendet.
+**Message-API** &ndash; Diese API ermöglicht es Ihnen, einen Kommunikations Pfad auf niedrigerer Ebene zu verwenden: eine kleine Nutzlast wird unidirektional gesendet, ohne dass eine Synchronisierung zwischen den Handheld-und den tragbaren-apps erfolgt.
 Der Haupteinstiegspunkt für diese API ist `WearableClass.MessageApi`.
-Weitere Informationen zu dieser API finden Sie im Android [senden und Empfangen von Nachrichten](https://developer.android.com/training/wearables/data-layer/messages.html) Thema.
+Weitere Informationen zu dieser API finden Sie im Thema Android [Send and empfansnachrichten](https://developer.android.com/training/wearables/data-layer/messages.html) .
 
-Sie können auswählen, zum Registrieren von Rückrufen für den Empfang von Nachrichten über jede der Schnittstellen-API-Listener oder alternativ Implementieren eines Diensts in Ihrer app, die von abgeleitet `WearableListenerService`.
-Dieser Dienst wird automatisch vom Android Wear instanziiert werden.
-Die [FindMyPhone](https://developer.xamarin.com/samples/monodroid/wear/FindMyPhoneSample/) Beispiel veranschaulicht das Implementieren einer `WearableListenerService`.
+Sie können auch Rückrufe zum Empfangen dieser Nachrichten über jede API-listenerschnittstelle registrieren oder einen Dienst in der APP implementieren, der von `WearableListenerService`abgeleitet wird.
+Dieser Dienst wird automatisch von Android Wear instanziiert.
+Das [findmyphone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample) -Beispiel veranschaulicht, wie ein `WearableListenerService`implementiert wird.
 
 
 
 ### <a name="deployment"></a>Bereitstellung
 
-Jede tragbare app wird mit eigenen APK-Datei, die in der hauptanwendung APK eingebettet bereitgestellt. Diese paketerstellung erfolgt automatisch in Xamarin.Android 5.0 oder höher, aber Sie muss manuell durchgeführt werden, für die Versionen von Xamarin.Android vor Version 5.0. 
-[Arbeiten mit der Paketerstellung](~/android/wear/deploy-test/packaging.md) Bereitstellung ausführlicher erläutert. 
+Jede tragbaren APP wird mit einer eigenen APK-Datei bereitgestellt, die in das APK der Hauptanwendung eingebettet ist. Diese Verpackung wird automatisch in xamarin. Android 5,0 und höher behandelt, muss aber für Versionen von xamarin. Android vor Version 5,0 manuell ausgeführt werden. 
+Beim [Arbeiten mit der Paket](~/android/wear/deploy-test/packaging.md) Erstellung wird die Bereitstellung ausführlicher erläutert. 
 
 
 
 ## <a name="going-further"></a>Weiterführende Themen 
 
-Die beste Möglichkeit, die mit Android Wear vertraut ist zum Erstellen und Testen Ihre erste app. Die folgende Liste enthält eine empfohlene Lesereihenfolge lassen sich schnell an:
+Die beste Möglichkeit, sich mit Android Wear vertraut zu machen, besteht darin, Ihre erste APP zu erstellen und zu testen. Die folgende Liste enthält eine empfohlene Lesereihenfolge, mit der Sie schnell loslegen können:
 
-1.  [Setup und Installation](~/android/wear/get-started/installation.md) enthält detaillierte Anweisungen zum Installieren und Konfigurieren der Entwicklungsumgebung zum Erstellen von Xamarin.Android Wear-apps. 
+1.  [Setup & Installation](~/android/wear/get-started/installation.md) enthält ausführliche Anweisungen zum Installieren und Konfigurieren der Entwicklungsumgebung für die Erstellung von xamarin. Android Wear-apps. 
 
-2.  Nachdem Sie die erforderlichen Pakete installiert und konfiguriert werden, einem Emulator oder Gerät haben, finden Sie unter [Hallo Wear](~/android/wear/get-started/hello-wear.md) für schrittweise Anweisungen dazu, wie zum Erstellen von eines kleinen Projekts für Android Wear, Handles-Schaltfläche klickt, und zeigt eine Klicken Sie auf den Zähler der Wear-Gerät. 
+2.  Nachdem Sie die erforderlichen Pakete installiert und einen Emulator oder ein Gerät konfiguriert haben, finden Sie unter [Hello, Wear](~/android/wear/get-started/hello-wear.md) eine Schritt-für-Schritt-Anleitung, in der erläutert wird, wie ein kleines Android Wear-Projekt erstellt wird, das Schaltflächen Klicks behandelt und einen Klick-Counter auf dem Wear anzeigt. Schutz. 
 
-3.  [Bereitstellung und Tests](~/android/wear/deploy-test/index.md) bietet Ausführlichere Informationen zum Konfigurieren und bereitstellen, Emulatoren und Geräten, einschließlich Anweisungen zum Bereitstellen Ihrer app auf einem Wear-Gerät über Bluetooth.
+3.  Das [Bereitstellungs & testet](~/android/wear/deploy-test/index.md) ausführlichere Informationen zum Konfigurieren und Bereitstellen von Emulatoren und Geräten, einschließlich Anweisungen zum Bereitstellen der APP auf einem Wear-Gerät über Bluetooth.
 
-4.  [Arbeiten mit Bildschirmen](~/android/wear/screen-sizes.md) wird erläutert, wie Sie eine Vorschau anzeigen und die Benutzeroberfläche für die verschiedenen verfügbaren Bildschirmgrößen auf Wear-Geräten zu optimieren. 
+4.  [Bei der Arbeit mit Bildschirmgrößen](~/android/wear/screen-sizes.md) wird erläutert, wie Sie die Benutzeroberfläche für die verschiedenen verfügbaren Bildschirmgrößen von Geräten in der Vorschau anzeigen und optimieren. 
 
-5.  [Arbeiten mit der Paketerstellung](~/android/wear/deploy-test/packaging.md) beschreibt die Schritte zum manuellen Packen Wear-apps für die Verteilung auf Google Play.
+5.  Beim [Arbeiten mit der Paket](~/android/wear/deploy-test/packaging.md) Erstellung werden die Schritte zum manuellen Verpacken von Wear-Apps für die Verteilung auf Google Play beschrieben.
 
-Nachdem Sie Ihre erste Wear-app erstellt haben, sollten Sie versuchen, erstellen eine benutzerdefinierte watchface für Android Wear. 
-[Erstellen eines Zifferblatts](~/android/wear/platform/creating-a-watchface.md) bietet schrittweise Anleitungen und Beispielcode für die Entwicklung von digitalen sehen Sie sich Gesicht-Diensts, gefolgt von weiteren Code, um ein Pendant-Stil watchface mit zusätzlichen Funktionen verbessert, die keinen Fall eine gekürzte. 
-
-
-
-## <a name="android-wear-20"></a>Android Wear 2.0
-
-Android Wear 2.0 führt zu einer Vielzahl von neuen Features und Funktionen, z. B. *Komplikationen*, gekrümmt, Layouts, Navigation und Aktion drawern und erweiterten Benachrichtigungen. Darüber hinaus erleichtert Wear 2.0 können Sie eigenständige Anwendungen erstellen, die unabhängig von handheld-apps zu arbeiten. Die neue *Handgelenk Gesten* ermöglicht die einhändige Interaktionen mit Ihrer app. In den folgenden Abschnitten markieren diese Funktionen und angeben, dass Links können Sie mit der Nutzung in Ihrer app beginnen.
+Nachdem Sie Ihre erste Wear-App erstellt haben, möchten Sie möglicherweise versuchen, ein benutzerdefiniertes Überwachungs Gesicht für Android Wear zu erstellen. 
+Das [Erstellen eines Watch-Gesichts](~/android/wear/platform/creating-a-watchface.md) enthält schrittweise Anleitungen und Beispielcode für die Entwicklung eines abzurufenden Digital Watch-Gesichts dienstanweises, gefolgt von mehr Code, der ihn auf eine Uhr des analogen Stils mit zusätzlichen Features erweitert. 
 
 
 
-### <a name="install-wear-20-packages"></a>Wear-2.0-Pakete installieren
+## <a name="android-wear-20"></a>Android Wear 2,0
 
-Sie müssen zum Erstellen einer 2.0 Wear-app, die mit Xamarin.Android Hinzufügen der **Xamarin.Android.Wear v2. 0** Paket Ihrem Projekt (klicken Sie auf die **Registerkarte "Durchsuchen"** ):
+Android Wear 2,0 führt eine Reihe von neuen Features und Funktionen ein, wie z. b. *Komplikationen*, Kurven Layouts, Navigations-und Aktions-und erweiterte Benachrichtigungen. Außerdem ermöglicht Wear 2,0 das Erstellen eigenständiger apps, die unabhängig von Handheld-apps funktionieren. Die neue Funktion " *Handgelenk Gesten* " ermöglicht eindimensionale Interaktionen mit Ihrer APP. In den folgenden Abschnitten werden diese Features hervorgehoben, und es werden Links bereitgestellt, die Ihnen bei der Verwendung in Ihrer APP helfen.
 
-[![Xamarin.Android.Wear v2. 0](intro-to-wear-images/wear-nuget-2.0-sml.png "Installieren von NuGet das Xamarin.Android.Wear-v2. 0")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
 
-Dieses NuGet-Paket enthält die Bindungen für tragbare für Android unterstützt sowohl die Wear Compat-Bibliotheken.
 
-Zusätzlich zu **Xamarin.Android.Wear**, es wird empfohlen, die Sie installieren die **Xamarin.GooglePlayServices.Wearable** NuGet: 
+### <a name="install-wear-20-packages"></a>Installieren von Wear 2,0-Paketen
+
+Um eine Wear 2,0-App mit xamarin. Android zu erstellen, müssen Sie das **xamarin. Android. Wear v 2.0** -Paket zu Ihrem Projekt hinzufügen (Klicken Sie auf die **Registerkarte Durchsuchen**):
+
+[![Xamarin. Android. Wear v 2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "Installieren Sie den nuget-Code für xamarin. Android. Wear v 2.0.")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
+
+Dieses nuget-Paket enthält Bindungen für die Android-Unterstützung für Wearable-und Wear-compat-Bibliotheken.
+
+Zusätzlich zu **xamarin. Android. Wear**empfiehlt es sich, die **xamarin. googleplayservices. Wearable** -nuget zu installieren: 
 
 [![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "Install the Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png#lightbox)
 
 
-### <a name="key-features-of-wear-20"></a>Wichtige Features von Wear 2.0
+### <a name="key-features-of-wear-20"></a>Wichtige Features von Wear 2,0
 
-Android Wear 2.0 ist das größte Update zu Android Wear, seit der ersten Einführung im Jahr 2014 vornehmen. Den folgenden Abschnitten werden die wichtigsten Features von Android Wear 2.0 und Links werden bereitgestellt, um zu ersten Schritten mit diesen neuen Features in Ihrer app. 
+Android Wear 2,0 ist das größte Update von Android Wear seit dem ersten Start in 2014. In den folgenden Abschnitten werden die wichtigsten Features von Android Wear 2,0 hervorgehoben, und es werden Links bereitgestellt, die Ihnen den Einstieg in die Verwendung dieser neuen Features in Ihrer APP erleichtern. 
 
 
 #### <a name="complications"></a>Komplikationen
 
-*Komplikationen* sind kleine Watch gesichtserkennungs-Widgets, die Sie auf einen Blick sehen können, ohne dass auf dem Zifferblatt Ihrer Apple Watch Wischen. Komplikationen ähneln Desktop-Stil dashboardwidgets. Sie zeigen Informationen wie z. B. das Wetter, Akkuverbrauch gering zu halten, Termine im Kalender und Fitness-app-Statistiken: 
+*Komplikationen* sind kleine Watch-Gadgets, die Sie auf einen Blick sehen können, ohne das Gesicht schwenken zu müssen. Komplikationen ähneln dashboardwidgets im Desktop Stil. Sie zeigen Informationen wie z. b. Wetter, Akku Lebensdauer, Kalenderereignisse und Fitness-app-Statistiken an: 
 
-![Beispiel für schwierigkeiten](intro-to-wear-images/complications.png "Komplikationen-Beispiel")
+![Beispiel für Komplikationen](intro-to-wear-images/complications.png "Beispiel für Komplikationen")
 
-Weitere Informationen zu Komplikationen, finden Sie in der Android [Watch Gesicht Komplikationen](https://developer.android.com/wear/preview/features/complications.html) Thema. 
-
-
-
-#### <a name="navigation-and-action-drawers"></a>Navigation und Aktion Drawern 
-
-Zwei neue drawern sind in Wear 2.0 enthalten. Die *Navigations-Drawer*, die am oberen Rand des Bildschirms angezeigt wird, können Benutzer zwischen den Ansichten der app navigieren (siehe unten links). Die *Aktion Drawer*, die am unteren Rand des Bildschirms (wie rechts gezeigt) angezeigt wird, können Benutzer aus einer Liste von Aktionen auswählen. 
-
-![Navigation und Aktion Drawern](intro-to-wear-images/drawers.png "Navigation und Aktion Drawern")
-
-Weitere Informationen zu diesen zwei neuen interaktive Schubladen, finden Sie unter Android [Wear-Navigation und Aktionen](https://developer.android.com/wear/preview/features/ui-nav-actions.html) Thema. 
+Weitere Informationen zu Komplikationen finden Sie im Thema Android [Watch Face Komplikationen](https://developer.android.com/wear/preview/features/complications.html) . 
 
 
 
-#### <a name="curved-layouts"></a>Gekrümmte Layouts 
+#### <a name="navigation-and-action-drawers"></a>Navigations-und Aktions-Schub Schub 
 
-Wear 2.0 werden neue Features für die Anzeige von gekrümmten Layouts auf round Wear-Geräten eingeführt. Insbesondere das neue `WearableRecyclerView` Klasse ist für die eine Liste der vertikalen Elemente anzeigt, auf die Runde Anzeige optimiert: 
+In Wear 2,0 sind zwei neue Schubkarren enthalten. Der *Navigations*Bereich, der oben auf dem Bildschirm angezeigt wird, ermöglicht Benutzern das Navigieren zwischen App-Ansichten (wie auf der linken Seite dargestellt). Die *Aktions*Leiste, die unten auf dem Bildschirm angezeigt wird (wie auf der rechten Seite gezeigt), ermöglicht Benutzern die Auswahl aus einer Liste von Aktionen. 
 
-![Beispiel für einen gekrümmt](intro-to-wear-images/curved-layout.png "gekrümmten Layout-Beispiel")
+![Navigations-und Aktions-Schub Schub](intro-to-wear-images/drawers.png "Navigations-und Aktions-Schub Schub")
 
-`WearableRecyclerView` Erweitert die `RecyclerView` Klasse gekrümmte Layouts und zirkuläre Bildlauf Gesten unterstützt. Weitere Informationen finden Sie im Android [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) -API-Dokumentation. 
-
-
-
-#### <a name="standalone-apps"></a>Eigenständige Anwendungen 
-
-Android Wear-2.0-apps können unabhängig von handheld-apps arbeiten. Bedeutet dass, kann z. B. eine intelligenten Überwachung weiterhin vollständige Funktionalität zu bieten, selbst wenn das zugehörige handheld-Gerät deaktivieren oder weit entfernt vom tragbare Gerät aktiviert ist. Weitere Informationen zu diesem Feature finden Sie im Android [eigenständige Apps](https://developer.android.com/wear/preview/features/standalone-apps.html) Thema.
+Weitere Informationen zu diesen beiden neuen interaktiven Schub Zeugen finden Sie im Thema Android [Wear-Navigation und-Aktionen](https://developer.android.com/wear/preview/features/ui-nav-actions.html) . 
 
 
 
-#### <a name="wrist-gestures"></a>Finger-Bewegungen 
+#### <a name="curved-layouts"></a>Kurven Layouts 
 
-Finger-Bewegungen können sie Benutzer mit Ihrer app interagieren, ohne den Touchscreen &ndash; Benutzer für die app mit der ein einzelnes Black reagieren können. Zwei-Finger-Bewegungen werden unterstützt: 
+Mit "Wear 2,0" werden neue Features zum Anzeigen von Kurven Layouts auf runwear-Geräten eingeführt. Die neue `WearableRecyclerView` Klasse ist speziell für die Anzeige einer Liste vertikaler Elemente in Runden anzeigen optimiert: 
 
--   Flick Handgelenk out
--   Flick Handgelenk in
+![Beispiel für Kurven Layout](intro-to-wear-images/curved-layout.png "Beispiel für Kurven Layout")
 
-Weitere Informationen finden Sie im Android [Handgelenk Gesten](https://developer.android.com/wear/preview/features/gestures.html) Thema. 
+`WearableRecyclerView`erweitert die `RecyclerView` -Klasse zur Unterstützung von gekrümmten Layouts und Zirkel Bildlauf Weitere Informationen finden Sie in der Android [wearablerecyclerview](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) -API-Dokumentation. 
 
 
-Es gibt viele weitere Wear 2.0-Features wie z. B. inlineaktionen, smart Reply, remoteeingabe, erweiterten Benachrichtigungen und einen neuen bridging-Modus für Benachrichtigungen. Weitere Informationen zu den neuen Wear-2.0-Features finden Sie im Android [-API – Übersicht](https://developer.android.com/wear/preview/api-overview.html). 
+
+#### <a name="standalone-apps"></a>Eigenständige apps 
+
+Android Wear 2,0-Apps können unabhängig von Handheld-Apps verwendet werden. Dies bedeutet, dass beispielsweise eine Smartwatch weiterhin vollständige Funktionalität bietet, auch wenn das begleitende Gerät ausgeschaltet ist, das sich vom tragbaren-Gerät entfernt befindet. Weitere Informationen zu diesem Feature finden Sie im Thema " [eigenständige](https://developer.android.com/wear/preview/features/standalone-apps.html) Android-Apps".
+
+
+
+#### <a name="wrist-gestures"></a>Handgelenk Gesten 
+
+Handgesten ermöglichen es Benutzern, mit Ihrer APP zu interagieren, ohne den Touchscreen &ndash; zu verwenden, mit dem Benutzer auf die APP mit einer einzigen Hand Antworten können. Zwei Handgesten werden unterstützt: 
+
+-   Handgelenk ausgeflicke
+-   Handgelenk im Handumdrehen
+
+Weitere Informationen finden Sie im Thema Android- [Hand Handgesten](https://developer.android.com/wear/preview/features/gestures.html) . 
+
+
+Es gibt noch viele weitere Funktionen der Features 2,0, wie z. b. Inline Aktionen, intelligente Antworten, Remote Eingaben, erweiterte Benachrichtigungen und einen neuen Überbrückungs Modus für Benachrichtigungen. Weitere Informationen zu den neuen Funktionen von Wear 2,0 finden Sie in der [Übersicht](https://developer.android.com/wear/preview/api-overview.html)über die Android-API. 
 
 
 
 ## <a name="devices"></a>Geräte
 
-Hier sind einige Beispiele für die Geräte, die Android Wear ausgeführt werden können:
+Hier sind einige Beispiele für Geräte, auf denen Android Wear ausgeführt werden kann:
 
 * [Motorola 360](https://moto360.motorola.com/)
 * [LG G ansehen](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
-* [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
-* [Samsung Gear Live](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
-* [Sony SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
-* [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
+* [LG G ansehen R](http://www.lg.com/us/smartwatch/g-watch-r)
+* [Samsung Zahnrad Live](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
+* [Sony Smartwatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
+* [ASUS-Überwachung](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
-Sehen Sie sich Googles Android Wear-Dokumentation:
+Sehen Sie sich die Google-Dokumentation zu Android Wear an:
 
 * [Informationen zu Android Wear](http://www.android.com/wear/)
-* [Android Wear-App-Design](https://developer.android.com/design/wear/index.html)
-* [android.support.wearable library](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-* [Android Wear 2.0](https://developer.android.com/wear/preview/index.html)
+* [Android Wear-App-Entwurf](https://developer.android.com/design/wear/index.html)
+* [Android. Support. Wearable-Bibliothek](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+* [Android Wear 2,0](https://developer.android.com/wear/preview/index.html)
 
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Einführung werden eine Übersicht über Android Wear bereitgestellt. Es erläutert die grundlegenden Funktionen von Android Wear und enthalten eine Übersicht über die Funktionen, die in Android Wear 2.0 eingeführt wurde. Diese angegeben, dass Links zu den wesentlichen lesen, damit Entwickler, die mit Xamarin.Android Wear-Entwicklung beginnen können, und sie Beispiele für die Android Wear-Geräte derzeit auf dem Markt aufgeführt.
+Diese Einführung bietet einen Überblick über Android Wear. Es wurden die grundlegenden Features von Android Wear beschrieben und eine Übersicht über die in Android Wear 2,0 eingeführten Features enthalten. Es wurden Links zu wichtigen Lese Vorlagen bereitgestellt, die Entwicklern den Einstieg in die Entwicklung von xamarin. Android Wear erleichtern, und es wurden Beispiele für einige Android Wear-Geräte aufgelistet, die sich derzeit auf dem Markt befinden.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Installation und Einrichtung](~/android/wear/get-started/installation.md)
+- [Installation und Setup](~/android/wear/get-started/installation.md)
 - [Erste Schritte](~/android/wear/get-started/index.md)

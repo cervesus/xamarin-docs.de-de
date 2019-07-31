@@ -1,63 +1,63 @@
 ---
-title: Suchen und Startseite Bildschirm Widget-Verbesserungen in iOS 10
-description: Dieses Dokument beschreibt die Erweiterungen, die Apple an die Widgets unter iOS 10, einschließlich Updates für Such- und Startbildschirm-Widgets vorgenommen hat.
+title: Verbesserungen bei der Suche und dem Startbildschirm Widget in ios 10
+description: In diesem Dokument werden die Verbesserungen beschrieben, die Apple an den Widgets in ios 10 vorgenommen hat, einschließlich Aktualisierungen der Such-und Startbildschirm Widgets.
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f693b480fff141c177ed135ced60afd65abd77de
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f2ac37676dbdfc96c853c9bc679e79c2aae1adb1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61082172"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656234"
 ---
-# <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Suchen und Startseite Bildschirm Widget-Verbesserungen in iOS 10
+# <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Verbesserungen bei der Suche und dem Startbildschirm Widget in ios 10
 
-_Dieser Artikel beschreibt die Erweiterungen, die vom Widget-System unter iOS 10 Apple angefordert hat._
+_In diesem Artikel werden die Verbesserungen erläutert, die Apple in ios 10 am Widget-System vorgenommen hat._
 
-Apple wurden mehrere Erweiterungen für das Widget-System, um sicherzustellen, dass die Widgets auf eine im Hintergrund laufende suchen, die auf dem neuen iOS 10 Sperrbildschirm vorhanden ist. Darüber hinaus enthalten Widgets jetzt eine [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) -Eigenschaft, kann der Entwickler beschrieben, wie viel Inhalt verfügbar ist, und ermöglicht dem Benutzer zum Erweitern und reduzieren den Inhalt.
+Apple hat mehrere Verbesserungen am Widget-System eingeführt, um sicherzustellen, dass die Widgets in jedem Hintergrund, der auf dem neuen IOS 10-Sperrbildschirm vorhanden ist, hervorragend aussehen. Außerdem enthalten Widgets nun eine [ncwidgetdisplaymode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) -Eigenschaft, mit der Entwickler beschreiben können, wie viel Inhalt verfügbar ist und der Benutzer den Inhalt erweitern und reduzieren kann.
 
-Widgets (auch bekannt als heute Extensions) sind eine besondere Art von iOS Erweiterung, die eine kleine Menge nützlicher Informationen oder app-spezifische Funktionalität rechtzeitig verfügbar zu machen. Z. B. die News-app verfügt über ein Widget, das die oberen Schlagzeilen zeigt und der Kalender-app bietet zwei verschiedene Widgets: eine zum Anzeigen der heutigen Ereignisse und einer anstehenden Ereignissen angezeigt.
+Widgets (auch als "heute Extensions" bezeichnet) sind eine besondere Art von IOS-Erweiterungen, die eine kleine Menge nützlicher Informationen anzeigen oder die APP-spezifische Funktionalität rechtzeitig verfügbar machen. Beispielsweise verfügt die News-App über ein Widget, das die Top-Schlagzeilen anzeigt, und die Kalender-APP bietet zwei verschiedene Widgets: eine zum Anzeigen der aktuellen Ereignisse und eine zum Anzeigen der anstehenden Ereignisse.
 
-Widgets sind umfassend anpassbar und können die UI-Elemente, z. B. Text, Bilder, Schaltflächen usw. enthalten. Darüber hinaus kann Entwickler weiter das Layout von ihren Widgets anpassen.
+Widgets sind hochgradig anpassbar und enthalten möglicherweise Elemente der Benutzeroberfläche, z. b. Text, Bilder, Schaltflächen usw. Außerdem kann der Entwickler das Layout seiner Widgets weiter anpassen.
 
-[![](widgets-images/widgets01.png "Beispiel-widgets")](widgets-images/widgets01.png#lightbox)
+[![](widgets-images/widgets01.png "Beispiel-Widgets")](widgets-images/widgets01.png#lightbox)
 
-Es gibt zwei wichtigsten stellen, die ein Benutzer anzeigen und interagieren mit der app-Widgets kann:
+Es gibt zwei Haupt Orte, an denen ein Benutzer die Widgets einer App anzeigen und mit ihnen interagieren kann:
 
-- **Der Bildschirm zum Suchen von** -Benutzer können die finden sie besonders nützlich für ihren Bildschirm zum Suchen von Widgets hinzufügen. Der Bildschirm zum Suchen von erfolgt durch Wischen nach rechts auf der Startseite und die Sperre Bildschirmen.
-- **Der Startbildschirm** -aus der Startbildschirm, die Benutzer kann Verwenden von 3D Touch Liste der Schnellaktionen durch Anwenden von Druck auf das Symbol der app zu öffnen. Der app-Widgets werden über die schnelle Aktion-Liste angezeigt. Informieren Sie sich unsere [Einführung in 3D Touch](~/ios/platform/3d-touch.md) Dokumentation zu informieren.
+- **Der Bildschirm für die Suche** : Benutzer können die Widgets hinzufügen, die für Ihren Suchbildschirm am nützlichsten sind. Der Zugriff auf den Suchbildschirm erfolgt durch Schwenken direkt auf dem Start-und dem Sperrbildschirm.
+- **Der Startbildschirm** : der Benutzer kann auf dem Startbildschirm die 3D-Toucheingabe verwenden, um die Liste schneller Aktionen zu öffnen, indem er den Druck auf das Symbol der APP anwendet. Die Widgets einer App werden oberhalb der Liste schneller Aktionen angezeigt. Weitere Informationen finden Sie [in der Einführung in die 3D-](~/ios/platform/3d-touch.md) Dokumentation.
 
-## <a name="widgets-developer-suggestions"></a>Vorschläge für Widgets-Entwickler
+## <a name="widgets-developer-suggestions"></a>Widgets Entwickler Vorschläge
 
-Der Entwickler sollte im Idealfall immer versuchen und Entwerfen von Widgets, die der Benutzer ihren Search-Bildschirmen hinzufügen möchten. Aus diesem Grund hat Apple die folgenden Vorschläge:
+Im Idealfall sollte der Entwickler immer versuchen, Widgets zu entwerfen, die der Benutzer zu den Such Bildschirmen hinzufügen möchte. Zu diesem Zweck hat Apple die folgenden Vorschläge:
 
-- **Erstellen Sie eine gute, Glanceable Erfahrung** -Benutzers soll Widgets, die zur Verfügung kurze glanceable von statusaktualisierungen oder können sie einfache Aufgaben schnell ausführen. Dadurch wird die richtige Menge an Informationen und Interaktivität ein unverzichtbares bereitstellen. Wann immer möglich, können Sie Benutzer zum Ausführen von einer bestimmten Aufgabe mit einem einzigen fingertipp. Da keine Widgets schwenken oder Bildlauf unterstützen, müssen dies darüber hinaus in die Widget Geräts Entwurf berücksichtigt werden.
-- **Inhalte schnell anzeigen** -Widgets dienen als glanceable, damit der Benutzer warten auf Inhalt geladen wird, sobald ein Widget angezeigt wird, nie erhalten soll. Widgets sollte ihren Inhalt zwischenspeichern, lokal, sodass sie aktuelle Inhalte anzeigen können, während neue Inhalte im Hintergrund geladen wird.
-- **Geben Sie entsprechende Auffüllung und Rändern** -Widgets sollte nie suchen Rechenzentrum weiter aufzurüsten, daher nicht Erweitern von Inhalt an den Rändern des Widget Geräts anzeigen. Es sollte immer einen mehrere große Pixel-Rand zwischen den Rändern und der Inhalt vorhanden sein. Apple empfiehlt außerdem verwenden das Symbol der app, im oberen Bereich des Widgets, wie eine Führungslinie angezeigt. Wenn das Widget ein Rasterlayout vorweisen, sicherzustellen Sie, dass ordnungsgemäße Abstand zwischen den Elementen im Raster, und wiederholen Sie die Anzahl der Elemente, die vier Max zu beschränken.
-- **Anpassungsfähige Layouts verwenden** -ein Widget Geräts Breite variieren basierend auf dem Gerät auf und die Ausrichtung des Geräts. Ein Widget Geräts Höhe kann auch basierend auf variieren, wenn es in einem Collapsed (Standard) oder die erweiterte (nicht durch alle Widgets unterstützt)-Status angezeigt wird. Ein Widget reduziert hat es sich um eine Höhe von etwa 2,5 standard iOS Tabellenzeilen. Der Entwickler kann die Größe für ein Widget erweitert anfordern, jedoch sollte im Idealfall kleiner als die Höhe des Bildschirms sein. Das Widget sollte in den Zustand "Collapsed" nur wichtige, eigenständige Informationen angezeigt werden. Wenn erweitert, das Widget zusätzliche Informationen werden, die den Hauptinhalt gezeigt im Zustand "Collapsed" verbessert angezeigt sollen. Widgets, die in der Liste der schnellen Aktion angezeigt werden nur im Zustand "Collapsed".
-- **Nicht Anpassen des Widget-Hintergrund** -Widgets auf einen hellen, weichgezeichnete Hintergrund, die vom System bereitgestellten angezeigt werden. Dies erfolgt zum fördern der Konsistenz zwischen Widgets und verbessern die Lesbarkeit ihrer Inhalte. Verwenden Sie ein Bild als Hintergrund Widget, da es mit des Benutzers sperren und Startbildschirm Hintergrundbilder miteinander in Konflikt geraten kann.
-- **Verwenden Sie die Systemschriftart in Schwarz oder dunkelgrau** : Anzeige von Text in einem Widget, die Systemschriftart funktioniert am besten. Die Schriftart sollte in eine Schwarz oder dunkel graue Farbe, die vor dem Hintergrund für kleine und weichgezeichnete Widget abhebt.
-- **Bereitstellen der App den Zugriff bei der entsprechenden** -Widget Geräts sollten immer separat von ihrer app arbeiten, die jedoch wenn tiefere Funktionalität erforderlich ist, das Widget sollte in der Lage, starten Sie die app zum Anzeigen oder bearbeiten eine bestimmte Information. Fügen Sie eine Schaltfläche "Öffnen der app" nie einfach durch den Benutzer der Inhalt selbst Tippen Sie auf zulassen und nie open a 3rd party app.
-- **Wählen Sie ein eindeutiges, präzise Namen des Widgets** : das Symbol der app und des Widget-Namen werden immer über das Widget die Inhalte angezeigt. Apple empfiehlt, mit der App-Namen für die primäre Gadget und eine klare und kompakte Namen für alle anderen bereitgestellten. Wenn Sie einen benutzerdefinierten Widgettitel bereitstellen zu können, sollten sie den Namen der app (z. B. Karten in Ihrer Nähe, Zuordnungen, Restaurants usw.) vorangestellt ist.
-- **Zu informieren, wenn die Authentifizierung Mehrwert** : Wenn zusätzliche Funktionalität oder Informationen steht nur, wenn der Benutzer authentifiziert wird und angemeldet sind, dies dem Benutzer angezeigt. Eine Tour Freigabe-app kann z. B. "Melden Sie sich beim Buch Fahrt".
-- **Wählen Sie eine schnelle Aktion Listenwidget** – Wenn die app mehr als ein Widget bereitstellt, der Entwickler muss wählen Sie das um anzuzeigen, wenn der Benutzer die Liste der schnellen Aktionen durch Anwenden von Druck auf das Symbol der app mithilfe von 3D Touch öffnet.
+- **Erstellen Sie eine großartige,** benutzerfreundliche benutzerfreundliche Darstellung, die kurze, Zustands gesteuerte Informationen von Statusaktualisierungen bereitstellt, oder Sie können einfache Aufgaben schnell ausführen. Dadurch wird die richtige Menge an Informationen und Interaktivität als wesentlich bereitgestellt. Ermöglichen Sie es dem Benutzer nach Möglichkeit, eine bestimmte Aufgabe mit einem einzigen Tap auszuführen. Da Widgets das Schwenken oder Scrollen nicht unterstützen, muss dies im widgetentwurf berücksichtigt werden.
+- **Schnelles Anzeigen von Inhalten** : Widgets sind so konzipiert, dass Sie ausgeblendet werden können, sodass der Benutzer niemals auf das Laden von Inhalten warten muss, sobald ein Widget angezeigt wird. Widgets sollten ihren Inhalt lokal zwischenspeichern, damit Sie aktuelle Inhalte anzeigen können, während im Hintergrund neue Inhalte geladen werden.
+- Geben Sie entsprechende Auffüll- **und Rand Ränder** an. Widgets sollten nie überfüllt aussehen. vermeiden Sie daher die Erweiterung von Inhalten an die Ränder der Ansicht eines Widgets. Zwischen den Rändern und dem Inhalt sollte immer ein Pixel breiter Rand vorhanden sein. Apple schlägt außerdem vor, das App-Symbol, das am Anfang des Widgets angezeigt wird, als Ausrichtungs Handbuch zu verwenden. Wenn das Widget ein Raster Layout darstellt, stellen Sie sicher, dass zwischen den Elementen im Raster eine ordnungsgemäße Auffüll Zeichen besteht, und versuchen Sie, die Anzahl der Elemente auf vier Maximalwerte zu beschränken.
+- **Anpassbare Layouts verwenden** : die Breite eines Widgets variiert je nach dem Gerät, auf dem es ausgeführt wird, und der Ausrichtung des Geräts. Die Höhe eines Widgets kann auch abhängig davon variieren, ob es in einem reduzierten (Standard-) oder erweiterten (nicht von allen Widgets unterstützten) Zustand angezeigt wird. Ein reduziertes Widget hat eine Höhe von ungefähr zwei und einer halben Standard-IOS-Tabellenzeile. Der Entwickler kann die Größe für ein erweitertes Widget anfordern, sollte jedoch idealerweise kleiner sein als die Höhe des Bildschirms. Im reduzierten Zustand sollte das Widget nur wichtige, eigenständige Informationen anzeigen. Wenn Sie erweitert ist, sollte das Widget zusätzliche Informationen anzeigen, mit denen der im reduzierten Zustand angezeigte primäre Inhalt erweitert wird. Widgets, die in der Liste schneller Aktionen angezeigt werden, sind nur im reduzierten Zustand.
+- **Passen Sie die Hintergrund Widgets des Widgets nicht** an, wenn der Hintergrund vom System bereitgestellt wird. Dies geschieht, um die Konsistenz zwischen Widgets zu fördern und die Lesbarkeit Ihrer Inhalte zu verbessern. Vermeiden Sie die Verwendung eines Bilds als Widget-Hintergrund, da es mit dem Sperr-und Startbildschirm-Bildschirm des Benutzers kollidieren könnte.
+- **Verwenden Sie die System Schriftart in schwarz oder dunkelgrau** : Wenn Sie Text in einem Widget anzeigen, funktioniert die System Schriftart am besten. Die Schriftart sollte sich in einer schwarz-oder dunkelgrauen Farbe befinden, damit Sie mit dem hellen, unscharfen widgehintergrund hervorgeht.
+- **Bereitstellen von App-Zugriff, wenn das entsprechende** Widget immer separat von der app ausgeführt werden soll. Wenn jedoch eine tiefere Funktionalität erforderlich ist, sollte das Widget die app starten können, um bestimmte Informationen anzuzeigen oder zu bearbeiten. Fügen Sie niemals die Schaltfläche "APP öffnen" ein, lassen Sie den Benutzer einfach das Tippen auf den Inhalt selbst, und öffnen Sie niemals eine Drittanbieter-app.
+- **Wählen Sie einen eindeutigen, präzisen widgenamen** aus. das Symbol der APP und der Name des Widgets werden immer über den Inhalt des Widgets angezeigt. Apple schlägt vor, den APP-Namen für das primäre Widget und einen eindeutigen, präzisen Namen für alle anderen Benutzer zu verwenden. Beim Bereitstellen eines benutzerdefinierten widgetitels sollte dem Namen der APP ein Präfix vorangestellt werden (z. b. Karten in der Nähe, Maps-Restaurants usw.).
+- Informieren Sie sich darüber, wann der Wert von der **Authentifizierung hinzugefügt** wird, wenn zusätzliche Funktionen oder Informationen nur verfügbar sind, wenn der Benutzer authentifiziert und angemeldet ist. Beispielsweise kann eine Fahrt Freigabe-App beispielsweise "Anmelden bei buchfahrt" lauten.
+- **Wählen Sie ein Widget für die schnell Aktionsliste** aus. wenn die APP mehr als ein Widget bereitstellt, sollte der Entwickler den Typ auswählen, der angezeigt werden soll, wenn der Benutzer die Liste schneller Aktionen aufführt, indem er mithilfe von 3D-Fingerabdruck auf das Symbol der APP zeigt.
 
-Weitere Informationen zum Arbeiten mit Widgets, informieren Sie sich unsere [Einführung in die Erweiterungen](~/ios/platform/extensions.md), [Einführung in 3D Touch](~/ios/platform/3d-touch.md) Dokumentation und Apple [App-Erweiterung Programming Guide](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html).
+Weitere Informationen zum Arbeiten mit Widgets finden Sie in unserer [Einführung in Extensions](~/ios/platform/extensions.md), [Einführung in die 3D-](~/ios/platform/3d-touch.md) Fingereingabe Dokumentation und in das [Programmier Handbuch zur APP-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html)von Apple.
 
-## <a name="working-with-vibrancy"></a>Arbeiten mit Dynamik
+## <a name="working-with-vibrancy"></a>Arbeiten mit vibrancy
 
-Dynamik wird sichergestellt, dass ein Widget Geräts Text lesbar, die Darstellung auf das Widget die Light weichgezeichnete Hintergrund (bereitgestellt vom System) bleibt. Bevor Sie iOS 10, verwendet der Entwickler eine [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect) für das Widget die Dynamik. Zum Beispiel:
+Vibrancy stellt sicher, dass der Text eines Widgets lesbar bleibt, wenn er im hell-und unscharfe Hintergrund des Widgets angezeigt wird (vom System bereitgestellt). Vor IOS 10 hat der Entwickler eine [notificationcentervibrancyeffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect) für die vibrancy des Widgets verwendet. Beispiel:
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect
 var vibrancy = UIVibrancyEffect.CreateForNotificationCenter ();
 ```
 
-Dies wurde als veraltet markiert werden iOS 10 und ersetzt werden soll, entweder mit einem [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect) oder [WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect). Zum Beispiel:
+Dies ist in ios 10 veraltet und sollte entweder durch eine [widgetprimaryvibrancyeffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect) oder eine [widgetsecondaryvibrancyeffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)ersetzt werden. Beispiel:
 
 ```csharp
 // Get Primary Widget Vibrancy Effect
@@ -67,17 +67,17 @@ var vibrancy = UIVibrancyEffect.CreatePrimaryVibrancyEffectForNotificationCenter
 var vibrancy2 = UIVibrancyEffect.CreateSecondaryVibrancyEffectForNotificationCenter ();
 ```
 
-## <a name="working-with-collapsed-and-expanded-widgets"></a>Arbeiten mit zu- bzw. aufgeklappt Widgets
+## <a name="working-with-collapsed-and-expanded-widgets"></a>Arbeiten mit reduzierten und erweiterten Widgets
 
-Neue IOS 10, Widgets enthalten nun die eine [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) -Eigenschaft, kann der Entwickler beschrieben, wie viel Inhalt verfügbar ist, und ermöglicht dem Benutzer zum Erweitern und reduzieren den Inhalt.
+In ios 10 gibt es jetzt eine [ncwidgetdisplaymode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) -Eigenschaft, mit der Entwickler beschreiben können, wie viel Inhalt verfügbar ist und der Benutzer den Inhalt erweitern und reduzieren kann.
 
-Wenn ein Widget anfänglich angezeigt wird, ist es in einem Collapsed-Zustand. Ein Widget reduziert hat es sich um eine Höhe von etwa 2,5 standard iOS Tabellenzeilen. Der Entwickler kann die Größe für ein Widget erweitert anfordern, jedoch sollte im Idealfall kleiner als die Höhe des Bildschirms sein. 
+Wenn ein Widget anfänglich angezeigt wird, befindet es sich in einem reduzierten Zustand. Ein reduziertes Widget hat eine Höhe von ungefähr zwei und einer halben Standard-IOS-Tabellenzeile. Der Entwickler kann die Größe für ein erweitertes Widget anfordern, sollte jedoch idealerweise kleiner sein als die Höhe des Bildschirms. 
 
-Das Widget sollte in den Zustand "Collapsed" nur wichtige, eigenständige Informationen angezeigt werden. Wenn erweitert, das Widget zusätzliche Informationen werden, die den Hauptinhalt gezeigt im Zustand "Collapsed" verbessert angezeigt sollen. Z. B. die Wetter-app zeigt die aktuellen Wetterbedingungen Wenn reduziert, und fügt die stündlichen prognostizieren, wenn die Kategorie erweitert.
+Im reduzierten Zustand sollte das Widget nur wichtige, eigenständige Informationen anzeigen. Wenn Sie erweitert ist, sollte das Widget zusätzliche Informationen anzeigen, mit denen der im reduzierten Zustand angezeigte primäre Inhalt erweitert wird. Die Wetter-APP zeigt z. b. die aktuellen Wetterbedingungen an, wenn Sie reduziert ist, und fügt die stündliche Vorhersage hinzu
 
-Widgets, die in der Liste der schnellen Aktion angezeigt werden nur im Zustand "Collapsed". Wenn die app mehr als ein Widget bereitstellt, sollten Entwickler auswählen, die ein, um anzuzeigen, wenn der Benutzer die Liste der schnellen Aktionen durch Anwenden von Druck auf das Symbol der app mithilfe von 3D Touch öffnet.
+Widgets, die in der Liste schneller Aktionen angezeigt werden, sind nur im reduzierten Zustand. Wenn die APP mehr als ein Widget bereitstellt, sollte der Entwickler den Typ auswählen, der angezeigt werden soll, wenn der Benutzer die Liste schneller Aktionen aufführt, indem er mithilfe von 3D-Fingereingabe den Druck auf das Symbol der APP anwendet.
 
-Im folgende Beispiel wird einer einfachen heute-Erweiterung (Widget), der die Zustände reduziert und erweitert behandelt:
+Das folgende Beispiel ist eine einfache heutige Erweiterung (Widget), die den reduzierten und erweiterten Status behandelt:
 
 ```csharp
 using System;
@@ -146,27 +146,27 @@ namespace MonkeyAbout
 }
 ```
 
-Sehen Sie sich der bestimmte Anzeigemodus Widget-Code im Detail an. Um dem System zu informieren, dass dieses Widget den erweiterte-Zustand unterstützt, wird wie folgt vor:
+Sehen Sie sich den Code im Widget-Anzeigemodus im Detail an. Um dem System mitzuteilen, dass dieses Widget den erweiterten Status unterstützt, wird Folgendes verwendet:
 
 ```csharp
 // Tell widget it can be expanded
 ExtensionContext.SetWidgetLargestAvailableDisplayMode (NCWidgetDisplayMode.Expanded);
 ```
 
-Rufen Sie das Widget die aktuellen Anzeigemodus befindet, wird wie folgt vor:
+Um den aktuellen Anzeigemodus des Widgets zu erhalten, wird Folgendes verwendet:
 
 ```csharp
 ExtensionContext.GetWidgetActiveDisplayMode()
 ```
 
-Rufen Sie die maximale Größe für die reduzierte oder erweitert Zustand, wird wie folgt vor:
+Um die maximale Größe für den reduzierten oder erweiterten Zustand zu erhalten, wird Folgendes verwendet:
 
 ```csharp
 // Get the maximum size
 var maxSize = ExtensionContext.GetWidgetMaximumSize (NCWidgetDisplayMode.Expanded);
 ```
 
-Und um die statusänderung (Anzeigemodus) zu behandeln, verwendet:
+Und um den Status (Anzeigemodus) zu ändern, wird Folgendes verwendet:
 
 ```csharp
 [Export ("widgetActiveDisplayModeDidChange:withMaximumSize:")]
@@ -186,17 +186,17 @@ public void WidgetActiveDisplayModeDidChange (NCWidgetDisplayMode activeDisplayM
 }
 ```
 
-Zusätzlich zum Festlegen der angeforderten Größe für jeden Zustand (reduziert oder erweitert), aktualisiert sie auch den Inhalt, der angezeigt wird, um die neue Größe zu entsprechen.
+Zusätzlich zum Festlegen der angeforderten Größe für jeden Zustand (reduziert oder erweitert) wird auch der angezeigte Inhalt aktualisiert, damit er der neuen Größe entspricht.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde behandelt die Erweiterungen, die Apple an das System Widgets unter iOS 10 vorgenommen hat und gezeigt, wie sie in Xamarin.iOS zu implementieren.
+In diesem Artikel wurden die Verbesserungen erläutert, die Apple in ios 10 am Widget-System vorgenommen hat, und es wurde gezeigt, wie Sie in xamarin. IOS implementiert werden.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS 10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)
+- [IOS 10-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [Einführung in Erweiterungen](~/ios/platform/extensions.md)
-- [Einführung in 3D Touch](~/ios/platform/3d-touch.md)
-- [Programmierhandbuch für App-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html)
+- [Einführung in 3D-Fingereingabe](~/ios/platform/3d-touch.md)
+- [Programmier Handbuch für die APP-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html)

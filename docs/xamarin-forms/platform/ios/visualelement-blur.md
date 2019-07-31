@@ -1,24 +1,24 @@
 ---
-title: VisualElement Blur unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel erläutert das iOS-Plattform-spezifische nutzen, die eine VisualElement Blur gilt.
+title: Bildschirm Abbildung von visualelement unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung nutzen, die weich auf ein visualelement anwendet.
 ms.prod: xamarin
 ms.assetid: 2DE3B65E-B96E-4ECD-92DF-AA42D5205C44
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 42db25a05cc902b1b52e45f73a55748c9920b8a5
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 2536902a03618fd50fad5019f79cb834b0c748f0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925222"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642966"
 ---
-# <a name="visualelement-blur-on-ios"></a>VisualElement Blur unter iOS
+# <a name="visualelement-blur-on-ios"></a>Bildschirm Abbildung von visualelement unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses iOS-Plattform-spezifische wird verwendet, um den Inhalt, die darunter liegenden Ebenen blur und können auf jede angewendet werden [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Es ist in XAML verwendet, durch Festlegen der [ `VisualElement.BlurEffect` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty) angefügte Eigenschaft auf den Wert der [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) Enumeration:
+Diese plattformspezifische IOS-Datei wird verwendet, um den untergeordneten Inhalt zu verwischen, und kann [`VisualElement`](xref:Xamarin.Forms.VisualElement)auf beliebige angewendet werden. Es ist in XAML verwendet, durch Festlegen der [ `VisualElement.BlurEffect` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty) angefügte Eigenschaft auf den Wert der [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) Enumeration:
 
 ```xaml
 <ContentPage ...
@@ -53,6 +53,6 @@ Das Ergebnis ist, die einem angegebenen [ `BlurEffectStyle` ](xref:Xamarin.Forms
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

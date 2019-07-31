@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: cb8aabb3649da3818c1b020508b78a03f513963b
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5109e3a66e22d885d8dc8b685db0817057709464
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830684"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653694"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>Installieren und Verwenden von WatchOS in Xamarin
 
@@ -33,7 +33,7 @@ Eine Watch-app besteht aus drei Projekten:
 
 - **Watch-App-Projekt** -enthält die Benutzeroberfläche Storyboard-Datei mit allen im UI-Ressourcen für die Watch-App.
 
-Die [Watch Kit Katalog-Beispiel](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) Lösung sieht wie folgt in xamarin.Studio die Datei aus:
+Die [Watch Kit Katalog-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) Lösung sieht wie folgt in xamarin.Studio die Datei aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -45,7 +45,7 @@ Die [Watch Kit Katalog-Beispiel](https://developer.xamarin.com/samples/monotouch
 
 -----
 
-Herunterladen und Ausführen der [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) Beispiel für den Einstieg.
+Herunterladen und Ausführen der [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) Beispiel für den Einstieg.
 Bildschirme, aus dem Beispiel finden Sie auf die [Steuerelemente](~/ios/watchos/user-interface/index.md) Seite.
 
 
@@ -179,7 +179,7 @@ Standardmäßig wird eine Watch-app im normalen beginnt **app** Modus (Modus "ni
 Bei Verwendung von Xcode 6, nur das iPhone 5, iPhone 5, iPhone 6 und iPhone 6 Plus kann aktivieren, die externe Anzeige entweder **Apple Watch - 38mm** oder **Apple Watch - 42mm** , sodass die Anwendungen überwachen können angezeigt.
 
 > [!NOTE]
-> Denken Sie daran, dass auf der Bildschirm sehen Sie sich im iOS-Simulator nicht automatisch angezeigt wird, wenn Sie Xcode 6 verwenden.
+> Beachten Sie, dass der Bildschirm überwachen bei Verwendung von Xcode 6 nicht automatisch im IOS-Simulator angezeigt wird.
 > Verwenden der **Hardware > externe zeigt** Menü zeigt der Bildschirm sehen Sie sich an.
 
 <a name="custommodes" />
@@ -232,6 +232,6 @@ Die WatchOS-Vorlagendateien (z. B. `InterfaceController`, `ExtensionDelegate`, `
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WatchKitCatalog (Beispiel)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchKitCatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Erste Watch-App-video](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple WatchKit-Tipps](https://developer.apple.com/watchkit/tips/)

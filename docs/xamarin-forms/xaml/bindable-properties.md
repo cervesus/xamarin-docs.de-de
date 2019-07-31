@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: d3e1c8a2b17ba41e3c9d212948f42023c15205ac
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 59ec82c222208ff0e73b0b7b5226d416d3a53398
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926236"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656597"
 ---
 # <a name="bindable-properties"></a>Bindbare Eigenschaften
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 _In Xamarin.Forms wird die Funktionalität der common Language Runtime (CLR)-Eigenschaften von bindbare Eigenschaften erweitert. Eine bindbare Eigenschaft ist eine besondere Art von Eigenschaft, in denen der Wert der Eigenschaft wird vom Eigenschaftensystem Xamarin.Forms nachverfolgt. Dieser Artikel bietet eine Einführung in bindbare Eigenschaften und veranschaulicht das Erstellen und deren Nutzung._
 
@@ -226,8 +226,8 @@ Dieser Artikel enthält eine Einführung in bindbare Eigenschaften und veranscha
 ## <a name="related-links"></a>Verwandte Links
 
 - [XAML-Namespaces](~/xamarin-forms/xaml/namespaces.md)
-- [Ereignis zum Verhalten des Befehls (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
-- [Validation Callback (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
-- [Coerce-Wert-Rückruf (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
+- [Ereignis zum Verhalten des Befehls (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+- [Validation Callback (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-validationcallback)
+- [Coerce-Wert-Rückruf (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-coercevaluecallback)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

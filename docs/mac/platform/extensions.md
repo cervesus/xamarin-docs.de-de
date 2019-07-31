@@ -1,22 +1,22 @@
 ---
 title: Unterstützung für Xamarin.Mac-Erweiterungen
-description: Dieses Dokument beschreibt die Xamarin.Mac-Unterstützung für Finder, Freigabe und heute Erweiterungen. Es werden Einschränkungen und bekannte Probleme, Links zu einer exemplarischen Vorgehensweise und Beispiel-app, und enthält Tipps zum Arbeiten mit Erweiterungen.
+description: In diesem Dokument wird die Unterstützung von xamarin. Mac für Finder-, Freigabe-und heutige Erweiterungen beschrieben. Sie untersucht Einschränkungen und bekannte Probleme, Links zu einer exemplarischen Vorgehensweise und einer Beispiel-APP und bietet Tipps zum Arbeiten mit Erweiterungen.
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0f4d6bb042f8bc8d48b45d7148984a53e3ce3437
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5138062cec6ee71f1db17d0118001b59dd7bc02c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032515"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642955"
 ---
 # <a name="xamarinmac-extension-support"></a>Unterstützung für Xamarin.Mac-Erweiterungen
 
-In Xamarin.Mac 2.10 wurde Unterstützung für mehrere MacOS-Erweiterungspunkte hinzugefügt:
+In xamarin. Mac 2,10 wurde für mehrere macOS-Erweiterungs Punkte eine Unterstützung hinzugefügt:
 
 - Finder
 - Freigeben
@@ -26,43 +26,43 @@ In Xamarin.Mac 2.10 wurde Unterstützung für mehrere MacOS-Erweiterungspunkte h
 
 ## <a name="limitations-and-known-issues"></a>Einschränkungen und bekannte Probleme
 
-Im folgenden sind die Einschränkungen und bekannte Probleme, die auftreten können, bei der Entwicklung von Xamarin.Mac-Erweiterungen:
+Im folgenden finden Sie die Einschränkungen und bekannten Probleme, die beim Entwickeln von Erweiterungen in xamarin. Mac auftreten können:
 
-* Es gibt derzeit kein debugging-Unterstützung in Visual Studio für Mac. Alle debuggen müssen über erfolgen **NSLog** und **Konsole**. Siehe Tipps unten im Abschnitt Details.
-* Erweiterungen müssen enthalten sein, in einer hostanwendung, die bei einmal mit registrieren Sie sich mit dem System ausführen. Sie müssen dann aktiviert werden die **Erweiterung** im Abschnitt **Systemeinstellungen**. 
-* Einige Abstürze Erweiterung können die hostanwendung destabilisieren und unerwartetem Verhalten führen. Insbesondere **Finder** und **heute** Teil der **Mitteilungszentrale** "ein Papierstau aufgetreten" werden und reagiert möglicherweise. Dies wurde in Erweiterungsprojekten in Xcode als auch erfahrene und zurzeit wird angezeigt, unabhängig von Xamarin.Mac. Häufig kann dies im Systemprotokoll angezeigt werden (über **Konsole**, finden Sie unter Tipps für Details) wiederholte Druckfehlermeldungen. Neustarten von MacOS scheint dieses Problem zu beheben.
+* Derzeit gibt es keine Debuggingunterstützung in Visual Studio für Mac. Das Debuggen muss über **NSLog** und die- **Konsole**durchgeführt werden. Weitere Informationen finden Sie im Abschnitt Tipps.
+* Erweiterungen müssen in einer Host Anwendung enthalten sein, die bei einem einmaligen ausführen mit Register beim System ausgeführt wird. Sie müssen dann im **Erweiterungs** Abschnitt der **System Einstellungen**aktiviert werden. 
+* Einige Erweiterungs Abstürze können die Host Anwendung destabilisieren und ein seltsames Verhalten verursachen. Insbesondere der **Finder** und der **heutige** Abschnitt des **Benachrichtigungs Centers** werden möglicherweise "Jammed" und werden nicht mehr reagiert. Dies ist auch in Erweiterungs Projekten in Xcode zu verzeichnen und wird zurzeit nicht in Zusammenhang mit xamarin. Mac angezeigt. Dies kann häufig im System Protokoll (über die **Konsole**, siehe Tipps für Details) zum Drucken von wiederholten Fehlermeldungen angezeigt werden. Dieser Fehler wird durch das Neustarten von macOS behoben.
 
 <a name="Tips" />
 
 ## <a name="tips"></a>Tipps
 
-Die folgenden Tipps können hilfreich sein, bei der Arbeit mit Xamarin.Mac-Erweiterungen:
+Die folgenden Tipps können bei der Arbeit mit Erweiterungen in xamarin. Mac hilfreich sein:
 
-- Da Xamarin.Mac Debugerweiterungen derzeit nicht unterstützt, das Debuggen dabei hängt in erster Linie für Ausführung und `printf` wie Anweisungen. Allerdings Erweiterungen in einem sandkastenprozess ausgeführt, daher `Console.WriteLine` nicht angewendet wird, wie in anderen Xamarin.Mac-Anwendungen. Aufrufen von [ `NSLog` direkt](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554) gibt debugging-Meldungen im Systemprotokoll.
-- Nicht abgefangenen Ausnahmen stürzt der verlängerungsprozess, die Bereitstellung nur einer kleinen Menge nützlicher Informationen in den **Systemprotokoll**. Umschließen die problematischen Code in eine `try/catch` (Ausnahme) zu blockieren, `NSLog`des vor dem erneuten Auslösen nützlich sein kann.
-- Die **Systemprotokoll** zugegriffen werden kann, aus der **Konsole** -app unter **Anwendungen** > **Dienstprogramme**:
+- Da xamarin. Mac derzeit keine debuggingerweiterungen unterstützt, hängt die debuggingweise hauptsächlich von der Ausführung und `printf` ähnlichen Anweisungen ab. Erweiterungen werden jedoch in einem Sandkasten Prozess ausgeführt und `Console.WriteLine` funktionieren daher nicht wie in anderen xamarin. Mac-Anwendungen. Wenn Sie [ `NSLog` direkt](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554) aufrufen, werden Debugmeldungen in das System Protokoll ausgegeben.
+- Alle nicht abgefangenen Ausnahmen abstürzen den Erweiterungsprozess, sodass nur eine kleine Menge nützlicher Informationen im **System Protokoll**bereitgestellt wird. Das umlösen von problematischer Code in einem `try/catch` (Ausnahme-) Block, der vor dem erneuten Auslösen liegt, `NSLog`kann nützlich sein.
+- Der Zugriff auf das **System Protokoll** kann über die **Konsolen** -app unter **Anwendungs** > **Dienstprogramme**erfolgen:
 
-    [![](extensions-images/extension02.png "Das Systemprotokoll")](extensions-images/extension02.png#lightbox)
-- Wie bereits erwähnt, wird mit der hostanwendung für die Erweiterung mit dem System registriert. Löschen das Anwendungspaket mit heben Sie die Registrierung. 
-- Wenn "vereinzelten" Versionen der app-Erweiterungen registriert sind, verwenden Sie den folgenden Befehl, um sie zu finden (sodass sie gelöscht werden können): `plugin kit -mv`
+    [![](extensions-images/extension02.png "Das System Protokoll")](extensions-images/extension02.png#lightbox)
+- Wie bereits erwähnt, wird das Ausführen der Erweiterungs Host Anwendung beim System registriert. Löschen des Anwendungspakets mit der Aufhebung der Registrierung. 
+- Wenn die "Stray"-Versionen der Erweiterungen einer APP registriert sind, verwenden Sie den folgenden Befehl, um Sie zu suchen (sodass Sie gelöscht werden können):`plugin kit -mv`
 
 
 <a name="Walkthrough-and-Sample-App" />
 
 ## <a name="walkthrough-and-sample-app"></a>Exemplarische Vorgehensweise und Beispiel-App
 
-Da der Entwickler erstellt und mit Xamarin.Mac-Erweiterungen in die gleiche Weise wie die Xamarin.iOS-Erweiterungen funktionieren, finden Sie in unserem [Einführung in die Erweiterungen](~/ios/platform/extensions.md) Dokumentation.
+Da der Entwickler xamarin. Mac-Erweiterungen auf die gleiche Weise wie xamarin. IOS-Erweiterungen erstellt und bearbeitet, finden Sie weitere Informationen in unserer [Einführung in die Extensions](~/ios/platform/extensions.md) -Dokumentation.
 
-Ein Beispiel für Xamarin.Mac-Projekt mit kleinen, funktionstüchtige Beispiele für jeden Erweiterungstyp finden [hier](https://developer.xamarin.com/samples/mac/ExtensionSamples/).
+Ein xamarin. Mac-Beispiel Projekt, das kleine, funktionierende Beispiele für jeden Erweiterungstyp enthält, finden Sie [hier](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples).
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel verfügt über einen kurzen Blick auf die Arbeit mit Erweiterungen in einer Xamarin.Mac-Version 2.10 (und höher)-app erstellt.
+In diesem Artikel wurde die Arbeit mit Erweiterungen in einer xamarin. Mac-app der Version 2,10 (und höher) kurz erläutert.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
-- [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
+- [ExtensionSamples](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)
 - [macOS-Eingaberichtlinien](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

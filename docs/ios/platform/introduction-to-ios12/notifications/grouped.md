@@ -1,36 +1,36 @@
 ---
-title: Gruppierte Benachrichtigungen in Xamarin.iOS
-description: In iOS 12 ist es möglich, Gruppe Benachrichtigungen im Notification Center oder dem Sperrbildschirm von Anwendung oder vom Thread. Dieses Dokument beschreibt, wie Threads gesendet und nicht verketteten Benachrichtigungen mit Xamarin.iOS.
+title: Gruppierte Benachrichtigungen in xamarin. IOS
+description: Mit IOS 12 ist es möglich, Benachrichtigungen im Benachrichtigungs Center oder auf dem Sperrbildschirm nach Anwendung oder Thread zu gruppieren. In diesem Dokument wird beschrieben, wie mit xamarin. IOS Thread-und unthreaded-Benachrichtigungen gesendet werden.
 ms.prod: xamarin
 ms.assetid: C6FA7C25-061B-4FD7-8E55-88597D512F3C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 6798c4c5fa7502ba5e99cb8bc209468acaa4a9ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3edaabe287bc2b37d2ec5a759ada9f59441c6d3a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402420"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652575"
 ---
-# <a name="grouped-notifications-in-xamarinios"></a>Gruppierte Benachrichtigungen in Xamarin.iOS
+# <a name="grouped-notifications-in-xamarinios"></a>Gruppierte Benachrichtigungen in xamarin. IOS
 
-Standardmäßig platziert iOS 12 alle von der app-Benachrichtigungen in einer Gruppe. Der Sperrbildschirm und Notification Center können Sie dieser Gruppe als einen Stapel mit der letzten Benachrichtigung im Vordergrund anzeigen. Benutzer können die Gruppe "" finden alle Benachrichtigungen, die es enthält, und schließen die Gruppe als Ganzes erweitern.
+Standardmäßig platziert IOS 12 alle Benachrichtigungen einer APP in einer Gruppe. Der Sperrbildschirm und das Benachrichtigungs Center zeigen diese Gruppe als Stapel mit der neuesten Benachrichtigung an. Benutzer können die Gruppe erweitern, um alle darin enthaltenen Benachrichtigungen anzuzeigen und die Gruppe als Ganzes zu verwerfen.
 
-Apps können auch Benachrichtigungen für Gruppe von Thread, erleichtert es dem Benutzer suchen, und interagieren mit der bestimmte Informationen, die, der Sie interessiert sind.
+Apps können auch Benachrichtigungen nach Thread gruppieren, sodass Benutzer die gewünschten Informationen leichter finden und mit ihnen interagieren können.
 
-## <a name="sample-app-groupednotifications"></a>Beispiel-app: GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>Beispiel-App: Groupedbenachrichtigungen
 
-Informationen zum gruppierte Benachrichtigungen mit Xamarin.iOS verwenden, sehen Sie sich die [GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications) Beispiel-app.
+Weitere Informationen zum Verwenden von gruppierten Benachrichtigungen mit xamarin. IOS finden Sie in der Beispiel-APP [groupednotification](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications) .
 
-Diese Beispiel-app simuliert Konversationen mit verschiedenen Freunde senden einer Benachrichtigung für jede Nachricht, und gruppieren sie nach Thread. Darüber hinaus wird veranschaulicht, wie nicht verketteten Flächen, die Benachrichtigungen in einer Gruppe auf Anwendungsebene.
+Diese Beispiel-App simuliert Konversationen mit verschiedenen Freunden, sendet eine Benachrichtigung für jede Nachricht und gruppiert Sie nach Thread. Außerdem wird veranschaulicht, wie unthread-Benachrichtigungen in einer Gruppe auf Anwendungsebene landen.
 
-Codeausschnitte in diesem Handbuch stammen aus dieser Beispiel-app.
+Code Ausschnitte in dieser Anleitung stammen aus dieser Beispiel-app.
 
-## <a name="request-authorization-and-allow-foreground-notifications"></a>Autorisierung anfordern und Foreground-Benachrichtigungen zulassen
+## <a name="request-authorization-and-allow-foreground-notifications"></a>Autorisierung anfordern und Vordergrund Benachrichtigungen zulassen
 
-Um eine app lokale Benachrichtigungen senden zu kann, müssen sie die Berechtigung anfordern. In der Beispiel-app [ `AppDelegate` ](xref:UIKit.UIApplicationDelegate), [ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) Methode fordert diese Berechtigung:
+Bevor eine APP lokale Benachrichtigungen senden kann, muss Sie eine entsprechende Berechtigung anfordern. In der Beispiel-APP [`AppDelegate`](xref:UIKit.UIApplicationDelegate)fordert die [`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) -Methode diese Berechtigung an:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Die [ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) (Satz oben) für eine [ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter) entscheidet, ob eine eingehende Benachrichtigung durch den Aufruf des abschlusshandlers ,dieaneineVordergrund-appangezeigtwerdensollodernicht[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
+Der [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate) (oben festgelegte) für [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter) einen entscheidet, ob eine Vordergrund-App eine eingehende Benachrichtigung anzeigen soll, indem der an [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions}))weiter gegebene Abschluss Handler aufgerufen wird:
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,18 +56,18 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-Die [ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions) Parameter gibt an, dass die app soll Warnung anzeigen, aber keines Sounds wiedergeben oder einen Badge zu aktualisieren.
+Der [`UNNotificationPresentationOptions.Alert`](xref:UserNotifications.UNNotificationPresentationOptions) -Parameter gibt an, dass die APP die Warnung anzeigen soll, aber keinen Sound abspielen oder einen Badge aktualisieren soll.
 
-## <a name="threaded-notifications"></a>Singlethread-Benachrichtigungen
+## <a name="threaded-notifications"></a>Thread Benachrichtigungen
 
-Tippen Sie auf der Beispiel-app **Nachricht mit Alice** Schaltfläche wiederholt, um Benachrichtigungen für eine Konversation mit einem Freund namens Alice zu senden.
-Da diese Konversation, die Benachrichtigungen im gleichen Thread gehören, Gruppieren der Sperrbildschirm und Mitteilungszentrale zu.
+Tippen Sie wiederholt auf die Meldung der Beispiel-APP **mit der Alice** -Schaltfläche, damit Benachrichtigungen für eine Konversation mit dem Namen Alice gesendet werden.
+Da die Benachrichtigungen dieser Konversation Teil desselben Threads sind, Gruppieren Sie den Sperrbildschirm und das Benachrichtigungs Center zusammen.
 
-Um eine Konversation mit einem anderen Freund zu starten, tippen Sie auf die **wählen Sie einen neuen Freund** Schaltfläche. Benachrichtigungen für diese Konversation, die in eine separate Gruppe angezeigt werden.
+Um eine Konversation mit einem anderen Freund zu starten, tippen Sie auf die Schaltfläche **neuen Freund auswählen** . Benachrichtigungen für diese Konversation werden in einer separaten Gruppe angezeigt.
 
-### <a name="threadidentifier"></a>ThreadIdentifier
+### <a name="threadidentifier"></a>Threadidentifier
 
-Jedes Mal die Beispiel-app einen neuen Thread und startet, erstellt es eine eindeutige Thread-ID:
+Jedes Mal, wenn die Beispiel-APP einen neuen Thread startet, wird ein eindeutiger Thread Bezeichner erstellt:
 
 ```csharp
 void StartNewThread()
@@ -77,13 +77,13 @@ void StartNewThread()
 }
 ```
 
-Um eine Singlethread-Benachrichtigung, die Beispiel-app zu senden:
+Zum Senden einer Thread Benachrichtigung wird in der Beispiel-App Folgendes angezeigt:
 
-- Überprüft, ob die app die Autorisierung zum Senden einer Benachrichtigung.
-- Erstellt ein [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
--Objekt für die Benachrichtigung, den Inhalt, und legt sie fest seine [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
-der Thread-ID oben erstellt haben.
-- Erstellt eine Anforderung, und plant die Benachrichtigung:
+- Überprüft, ob die APP über eine Autorisierung zum Senden einer Benachrichtigung verfügt.
+- Erstellt eine[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+Objekt für den Inhalt der Benachrichtigung und legt seine[`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
+an den oben erstellten Thread Bezeichner.
+- Erstellt eine Anforderung und plant die Benachrichtigung:
 
 ```csharp
 async partial void ScheduleThreadedNotification(UIButton sender)
@@ -119,29 +119,29 @@ async partial void ScheduleThreadedNotification(UIButton sender)
 }
 ```
 
-Alle Benachrichtigungen von der gleichen app mit derselben Thread-ID werden in der gleichen Benachrichtigungsgruppe angezeigt.
+Alle Benachrichtigungen aus derselben App mit dem gleichen Thread Bezeichner werden in derselben Benachrichtigungs Gruppe angezeigt.
 
 > [!NOTE]
-> Um eine Thread-ID für eine remotebenachrichtigung festzulegen, fügen die `thread-id` um die JSON-Nutzlast der Benachrichtigung. Finden Sie unter Apple [generieren eine Remotebenachrichtigung](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification) Dokument Weitere Informationen.
+> Fügen Sie der JSON-Nutzlast der Benachrichtigung den `thread-id` Schlüssel hinzu, um einen Thread Bezeichner für eine Remote Benachrichtigung festzulegen. Weitere Informationen finden Sie in der Apple-Dokumentation zum [Erstellen eines Remote Benachrichtigungs](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification) Dokuments.
 
 ### <a name="summaryargument"></a>SummaryArgument
 
-`SummaryArgument` Gibt an, wie eine Benachrichtigung den Zusammenfassungstext auswirken, der auf der linken unteren Ecke der einer Benachrichtigungsgruppe angezeigt wird, der die Benachrichtigung angehört. iOS aggregiert Zusammenfassungstext von Benachrichtigungen in der gleichen Gruppe um eine zusammenfassende Beschreibung zu erstellen.
+`SummaryArgument`Gibt an, wie sich eine Benachrichtigung auf den Übersichts Text auswirkt, der in der unteren linken Ecke einer Benachrichtigungs Gruppe angezeigt wird, zu der die Benachrichtigung gehört. IOS aggregiert einen Zusammenfassungs Text aus Benachrichtigungen in derselben Gruppe, um eine allgemeine Übersichts Beschreibung zu erstellen.
 
-Die Beispiel-app wird der Nachricht Autor als Zusammenfassung Argument verwendet. Mit diesem Ansatz ist für eine Gruppe von sechs Benachrichtigungen mit Alice der Zusammenfassungstext möglicherweise **5 weitere Benachrichtigungen von Alice und mich**.
+In der Beispiel-APP wird der Autor der Nachricht als Zusammenfassungs Argument verwendet. Bei diesem Ansatz kann der Zusammenfassungs Text für eine Gruppe von sechs Benachrichtigungen mit Alice **5 weitere Benachrichtigungen von Alice und mir**sein.
 
-## <a name="unthreaded-notifications"></a>Nicht verketteten Benachrichtigungen
+## <a name="unthreaded-notifications"></a>Nicht Thread Benachrichtigungen
 
-Jede der Beispiel-app durch Tippen auf **Erinnerung Termin** Schaltfläche sendet eine der verschiedenen Termin Erinnerung Benachrichtigungen. Da diese Erinnerungen nicht verkettet werden, werden sie in der Benachrichtigungsgruppe auf Anwendungsebene auf dem Sperrbildschirm angezeigt und in der Mitteilungszentrale angezeigt.
+Jede Tap-Schaltfläche zur **Termin Erinnerung** der Beispiel-App sendet eine der verschiedenen Benachrichtigungen zur Termin Erinnerung. Da diese Erinnerungen nicht Thread abhängig sind, werden Sie auf dem Sperrbildschirm und im Benachrichtigungs Center in der Benachrichtigungs Gruppe auf Anwendungsebene angezeigt.
 
-Nicht verketteten Senden einer benachrichtigungs, die Beispiel-app die `ScheduleUnthreadedNotification` Methode verwendet ähnlichen Code wie oben beschrieben.
-Allerdings ist es nicht festgelegt die `ThreadIdentifier` auf die `UNMutableNotificationContent` Objekt.
+Um eine unthread Benachrichtigung zu senden, verwendet die- `ScheduleUnthreadedNotification` Methode der Beispiel-APP einen ähnlichen Code wie oben.
+Es wird jedoch nicht `ThreadIdentifier` für das `UNMutableNotificationContent` Objekt festgelegt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel-app – GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)
-- [Framework für Benutzerbenachrichtigungen in Xamarin.iOS](~/ios/platform/user-notifications/index.md)
-- [Neuerungen in Benutzerbenachrichtigungen (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [Beispiel-App – groupednotification](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)
+- [Benutzer Benachrichtigungs Framework in xamarin. IOS](~/ios/platform/user-notifications/index.md)
+- [Neues in Benutzer Benachrichtigungen (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
 - [Verwenden von gruppierten Benachrichtigungen (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)
-- [Bewährte Methoden und Neuigkeiten in Benutzerbenachrichtigungen (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [Generieren eine Remotebenachrichtigung (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [Bewährte Methoden und Neuerungen bei Benutzer Benachrichtigungen (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [Erstellen einer Remote Benachrichtigung (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

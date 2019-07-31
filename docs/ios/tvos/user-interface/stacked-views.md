@@ -1,156 +1,156 @@
 ---
-title: Arbeiten mit TvOS gestapelt Ansichten in Xamarin
-description: Dieses Dokument beschreibt, wie Sie arbeitet mit TvOS gestapelte Ansichten in einer app mit Xamarin erstellt wurde. Es bietet einen Überblick über gestapelte Ansichten und automatisches Layout, Position und Größe eine gestapelte Ansicht, häufig verwendet, -Integration mit Storyboards und vieles mehr erläutert.
+title: Arbeiten mit gestapelten Ansichten von tvos in xamarin
+description: In diesem Dokument wird beschrieben, wie Sie mit tvos-gestapelten Ansichten in einer mit xamarin erstellten App arbeiten. Er bietet eine allgemeine Übersicht über gestapelte Ansichten und erläutert das automatische Layout, die Positionierung und die Größe einer gestapelten Ansicht, häufige Verwendungsmöglichkeiten, die Integration in Storyboards und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 00B07F85-F30B-4DD4-8664-A61D0A1CDB0E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: f51ed3d6dbbfc8a7e430c2949485838a7471e545
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 646a26b4c9b2d44595315a6a32b7294b18c42d7a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61161466"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648962"
 ---
-# <a name="working-with-tvos-stacked-views-in-xamarin"></a>Arbeiten mit TvOS gestapelt Ansichten in Xamarin
+# <a name="working-with-tvos-stacked-views-in-xamarin"></a>Arbeiten mit gestapelten Ansichten von tvos in xamarin
 
-Die Stack-Steuerelement (`UIStackView`) nutzt die Leistungsfähigkeit von Automatisches Layout und Größenklassen einen Stapel von Unteransichten entweder horizontal oder vertikal zu verwalten, die dynamisch auf Änderungen am Inhalt und der Bildschirmgröße des Geräts Apple TV reagiert.
+Das Stapel Ansicht-Steuer`UIStackView`Element () nutzt die Leistungsfähigkeit von automatischen layoutklassen und Größenklassen, um einen Stapel von unter Ansichten entweder horizontal oder vertikal zu verwalten, der dynamisch auf Inhalts Änderungen und Bildschirmgröße des Apple TV-Geräts antwortet.
 
-Das Layout der alle Unteransichten, die an eine Stapelansicht angefügt werden verwaltet, werden basierend auf Entwickler definiert Eigenschaften, z. B. Achse "," Verteilungspunkt "," Ausrichtung "und" Abstand:
+Das Layout aller untergeordneten Sichten, die an eine Stapel Ansicht angefügt sind, wird von der Anwendung basierend auf vom Entwickler definierten Eigenschaften wie Achse, Verteilung, Ausrichtung und Abstand verwaltet:
 
-[![](stacked-views-images/stacked01.png "Unteransicht Layout für Diagramm")](stacked-views-images/stacked01.png#lightbox)
+[![](stacked-views-images/stacked01.png "Subview-Layoutdiagramm")](stacked-views-images/stacked01.png#lightbox)
 
-Bei Verwendung einer `UIStackView` in einer app Xamarin.tvOS Definieren der Entwickler kann die Unteransichten entweder in einem Storyboard in der iOS-Designer oder durch Hinzufügen und Entfernen von Unteransichten in C# Code.
+Wenn Sie `UIStackView` in einer xamarin. tvos-App verwenden, kann der Entwickler entweder die unter Ansichten entweder innerhalb eines Storyboards im IOS-Designer oder durch Hinzufügen und Entfernen von unter Ansichten C# im Code definieren.
 
-## <a name="about-stacked-view-controls"></a>Informationen zu gestapelten-Steuerelemente 
+## <a name="about-stacked-view-controls"></a>Informationen zu gestapelten Sicht Steuerelementen 
 
-Die `UIStackView` dient als für nicht-Rendering-Containeransicht und ist daher nicht Zeichnen auf den Zeichenbereich wie andere Unterklassen von `UIView`. Festlegen von Eigenschaften wie z. B. `BackgroundColor` oder überschreiben `DrawRect` keine visuellen Auswirkungen.
+Der `UIStackView` ist als nicht Rendering-Container Ansicht konzipiert und wird daher nicht wie andere Unterklassen von `UIView`in den Zeichenbereich gezeichnet. Das Festlegen von Eigenschaften `BackgroundColor` , z `DrawRect` . b. oder überschreiben, hat keinen visuellen Effekt.
 
-Es gibt mehrere Eigenschaften, die steuern, wie ein Stapel-Ansicht ihrer Auflistung von Unteransichten anordnen, wird ein:
+Es gibt mehrere Eigenschaften, mit denen gesteuert wird, wie eine Stapel Ansicht ihre Auflistung von untergeordneten Sichten anordnet:
 
-- **Achse** – bestimmt, ob die Stapelansicht die Unteransichten entweder ordnet **horizontal** oder **vertikal**.
-- **Ausrichtung** – steuert, wie die Unteransichten innerhalb der Stapelansicht ausgerichtet werden.
-- **Verteilung** – steuert, wie die Unteransichten in die Stapelansicht groß sind.
-- **Der Abstand** – steuert den minimalen Abstand zwischen jeder Unteransicht in die Stapelansicht.
-- **Baseline relativ** – Wenn `true`, der vertikale Abstand der einzelnen Unteransicht von seinem Baseline abgeleitet werden.
-- **Layout Ränder Relative** – platziert die Unteransichten relativ zu den Rändern Standardlayout.
+- **Axis** – bestimmt, ob die untergeordneten Sichten in der Stapel Ansicht entweder **Horizontal** oder **vertikal angeordnet**werden.
+- **Alignment** – steuert, wie die untergeordneten Sichten innerhalb der Stapel Ansicht ausgerichtet werden.
+- **Distribution** – steuert, wie die untergeordneten Sichten in der Stapel Ansicht skaliert werden.
+- **Abstand** – steuert den minimalen Abstand zwischen jeder unter Ansicht in der Stapel Ansicht.
+- **Baseline relative** – Wenn `true`der Wert ist, wird der vertikale Abstand jeder unter Ansicht von der Basislinie abgeleitet.
+- **Layoutränder relativ** – platziert die untergeordneten Sichten in Relation zu den standardmäßigen Layouträndern.
 
-In der Regel verwenden Sie einen Stapel-Ansicht um eine kleine Anzahl von Unteransichten anzuordnen. Eine oder mehrere Stack Ansichten ineinander schachteln können komplexere Benutzeroberflächen erstellt werden.
+In der Regel wird eine Stapel Ansicht verwendet, um eine kleine Anzahl von unter Sichten anzuordnen. Komplexere Benutzeroberflächen können erstellt werden, indem eine oder mehrere Stapel Ansichten ineinander geschachtelt werden.
 
-Sie können die Darstellung von Benutzeroberflächen weiter optimieren, durch das Hinzufügen von zusätzlicher Einschränkungen, die Unteransichten (z. B. um die Höhe oder Breite-Steuerelement). Allerdings sollte darauf geachtet werden, nicht in Konflikt stehenden Einschränkungen auf solche, die selbst von der Sicht Stack aufzunehmen.
+Sie können die Benutzeroberflächen Darstellung weiter optimieren, indem Sie den unter Ansichten zusätzliche Einschränkungen hinzufügen (z. b. um die Höhe oder Breite zu steuern). Allerdings sollte darauf geachtet werden, dass in Konflikt stehende Einschränkungen nicht zu den von der Stapel Ansicht selbst eingeführten Einschränkungen gehören.
 
 <a name="Auto-Layout-and-Size-Classes" />
 
-## <a name="auto-layout-and-size-classes"></a>Automatisches Layout und Größenklassen
+## <a name="auto-layout-and-size-classes"></a>Klassen für automatisches Layout und Größe
 
-Wenn eine Stapelansicht eine Unteransicht hinzugefügt wird, wird der Layouts vollständig durch, automatisches Layout und die Größenklassen zu positionieren und ihre Größe des angeordneten Ansichten mit Stapelansicht gesteuert.
+Wenn eine unter Ansicht zu einer Stapel Ansicht hinzugefügt wird, wird das Layout vollständig von dieser Stapel Ansicht gesteuert, wobei die Klassen für automatisches Layout und Größe verwendet werden, um die angeordneten Sichten zu positionieren und deren Größe
 
-Der Stapel-Ansicht wird _Pin_ die vor- und Nachnamen Unteransicht in ihrer Sammlung, um die **oben** und **unten** Kanten für die vertikalen Stapel Ansichten oder **Links**und **rechts** Kanten für die horizontale Stack-Ansichten. Setzen Sie die `LayoutMarginsRelativeArrangement` Eigenschaft `true`, und klicken Sie dann die Ansicht die Unteransichten den entsprechenden Rand anstelle der Rand fixiert.
+In der Stapel Ansicht _wird die_ erste und letzte untergeordnete Sicht in der Auflistung an den **oberen** und **unteren** Rand für vertikale Stapel Ansichten oder den **linken** und **rechten** Rand für horizontale Stapel Ansichten angeheftet. Wenn Sie die `LayoutMarginsRelativeArrangement` -Eigenschaft auf `true`festlegen, werden die untergeordneten Sichten in der Ansicht an die relevanten Ränder anstatt an den Rand angeheftet.
 
-Verwendet die Stack-Sicht, der Unteransicht des `IntrinsicContentSize` Eigenschaft beim Berechnen der Größe Unteransichten entlang der definierten `Axis` (mit Ausnahme der `FillEqually Distribution`). Die `FillEqually Distribution` alle Unteransichten ändert, sodass sie die gleiche Größe, werden daher füllen die Stapelansicht entlang der `Axis`.
+Die Stapel Ansicht verwendet die-Eigenschaft der `IntrinsicContentSize` untergeordneten Ansicht beim Berechnen der untergeordneten Ansichts `Axis` Größe entlang der definierten `FillEqually Distribution`(mit Ausnahme von). Die `FillEqually Distribution` ändert die Größe aller untergeordneten Sichten, sodass Sie die gleiche Größe haben. Dadurch wird die Stapel Ansicht `Axis`entlang des aufgefüllt.
 
-Mit Ausnahme von der `Fill Alignment`, verwendet die Stack-Sicht, der Unteransicht des `IntrinsicContentSize` -Eigenschaft für die Berechnung der Ansicht Größe senkrecht zur der angegebenen `Axis`. Für die `Fill Alignment`, alle Unteransichten werden angepasst, sodass sie die senkrecht zur Stapelansicht Ausfüllen der angegebenen `Axis`.
+Mit Ausnahme von `Fill Alignment`wird in der Stapel Ansicht die- `IntrinsicContentSize` Eigenschaft der unter Ansicht verwendet, um die Größe der Sicht senkrecht zum angegebenen `Axis`zu berechnen. Bei sind alle untergeordneten Sichten so groß, dass Sie die Stapel Ansicht senkrecht zum angegebenen `Axis`auffüllen. `Fill Alignment`
 
 <a name="Positioning-and-Sizing-the-Stack-View" />
 
-## <a name="positioning-and-sizing-the-stack-view"></a>Positionierung und Größenanpassung der Stapelansicht
+## <a name="positioning-and-sizing-the-stack-view"></a>Positionieren und Anpassen der Stapel Ansicht
 
-Während die Stapelansicht vollständige Kontrolle über das Layout der alle Unteransicht hat (basierend auf Eigenschaften wie z. B. `Axis` und `Distribution`), müssen Sie immer noch zum Positionieren der Ansicht Stack (`UIStackView`) innerhalb ihrer übergeordneten Ansicht mit Automatisches Layout und die Größenklassen.
+Die Stapel Ansicht hat die gesamte Kontrolle über das Layout einer beliebigen unter Ansicht (basierend auf Eigenschaften wie `Axis` und `Distribution`), aber Sie müssen die Stapel Ansicht (`UIStackView`) in der übergeordneten Ansicht weiterhin mithilfe der Klassen für automatisches Layout und Größe positionieren.
 
-Im Allgemeinen bedeutet dies, mindestens zwei Kanten der Sicht ein Stapel, Erweiterung und Verkleinerung, definieren daher seine Position anheften. Ohne zusätzlichen Einschränkungen werden die Stapelansicht automatische größenanpassung werden alle zugehörigen Unteransichten wie folgt:
+Im Allgemeinen bedeutet dies, dass mindestens zwei Ränder der Stapel Ansicht angeheftet werden, um Sie zu erweitern und zu verkleinern und so die Position zu definieren. Ohne zusätzliche Einschränkungen wird die Stapel Ansicht automatisch so angepasst, dass Sie alle untergeordneten Sichten wie folgt einfügt:
 
-* Die Größe entlang der `Axis` wird die Summe der Größen für alle Unteransicht und eine beliebige Stelle, die zwischen einzelnen Unteransicht definiert wurde.
-* Wenn die `LayoutMarginsRelativeArrangement` Eigenschaft `true`, die Größe des Stapels Ansichten umfasst auch Raum für Ränder.
-* Die senkrecht zur Größe der `Axis` wird auf die größten Unteransicht in der Auflistung festgelegt werden.
+* Die Größe der unter `Axis` geordneten Ansichts Größe und des zwischen den einzelnen untergeordneten Sichten definierten Speicherplatzes ist gleich.
+* Wenn die `LayoutMarginsRelativeArrangement` -Eigenschaft `true`ist, enthalten die Stapel Ansichts Größe auch Platz für die Ränder.
+* Die Größe, die senkrecht `Axis` zum ist, wird auf die größte unter Ansicht in der Auflistung festgelegt.
 
-Darüber hinaus können Sie Einschränkungen angeben, für die Stapelansicht **Höhe** und **Breite**. In diesem Fall die Unteransichten angeordnet werden (Größe) den Platz gemäß der Stapelansicht gemäß der `Distribution` und `Alignment` Eigenschaften.
+Darüber hinaus können Sie Einschränkungen für die **Höhe** und **Breite**der Stapel Ansicht angeben. In diesem Fall werden die untergeordneten Sichten angeordnet (mit der Größenangabe), um den von der Stapel Ansicht festgelegten Platz entsprechend der `Distribution` - `Alignment` Eigenschaft und der-Eigenschaft auszufüllen.
 
-Wenn die `BaselineRelativeArrangement` Eigenschaft `true`, die Unteransichten angeordnet werden basierend auf der ersten oder letzten Unteransicht Baseline, anstatt die **oben**, **unten** oder **Center* -  **Y** Position. Diese werden in die Stapelansicht Inhalt wie folgt berechnet:
+Wenn die `BaselineRelativeArrangement` -Eigenschaft `true`auf festgelegt ist, werden die untergeordneten Sichten basierend auf der Baseline der ersten oder letzten unter Ansicht angelegt, anstatt die **obere**, **untere** oder **zentrierte*- **Y** -Position zu verwenden. Diese werden im Inhalt der Stapel Ansicht wie folgt berechnet:
 
-* Einem vertikalen Stapel-Ansicht wird der erste Unteransicht für die erste Baseline und der letzte für die letzte zurückgegeben. Wenn eine der folgenden Unteransichten selbst Stack Ansichten sind, wird die erste oder letzte Baseline verwendet werden.
-* Einem horizontalen Stapel-Ansicht wird der höchste Unteransicht für die erste und letzte Baseline verwendet werden. Wenn der höchste Ansicht auch ein Stapel ist, wird als Grundlage des höchsten Unteransicht verwendet.
+* Eine vertikale Stapel Ansicht gibt die erste unter Ansicht für die erste Baseline und die letzte für den letzten zurück. Wenn eine dieser unter Sichten selbst Stapel Ansichten ist, wird Ihre erste oder letzte Baseline verwendet.
+* In einer horizontalen Stapel Ansicht wird die höchste unter Ansicht für die erste und die letzte Baseline verwendet. Wenn die höchste Ansicht auch eine Stapel Ansicht ist, wird Sie mit der höchsten unter Ansicht als Baseline verwendet.
 
 > [!IMPORTANT]
-> Baseline-Ausrichtung funktioniert nicht für gestreckt oder komprimiert Unteransicht Größen, wie die Baseline der falschen Position berechnet werden sollen. Für Baseline-Ausrichtung, sicherstellen, dass der Unteransicht des **Höhe** entspricht der systeminterne Inhaltsansicht **Höhe**.
+> Die Baseline-Ausrichtung funktioniert nicht bei gestreckten oder komprimierten untergeordneten Ansichts Größen, da die Baseline an die falsche Position berechnet wird. Stellen Sie bei der Baseline-Ausrichtung sicher, dass die **Höhe** der unter Ansicht mit der **Höhe**der intrinsischen Inhaltsansicht übereinstimmt.
 
 
 
 
 <a name="Common-Stack-View-Uses" />
 
-## <a name="common-stack-view-uses"></a>Einsatzmöglichkeiten von Stapel anzeigen
+## <a name="common-stack-view-uses"></a>Allgemeine Stapel Ansicht verwendet
 
-Es gibt mehrere Typen aus dem Layout, die gut mit Stapelansicht Steuerelemente funktionieren. Hier sind einige der häufigeren Verwendungsarten, gemäß den Apple:
+Es gibt mehrere Layouttypen, die gut mit Stapel Ansicht-Steuerelementen funktionieren. Nachfolgend finden Sie einige der gängigeren Verwendungsmöglichkeiten:
 
-- **Definieren Sie die Größe entlang der Achse** – durch Anheften von beide Ränder entlang der Stapelansicht `Axis` und einen der angrenzenden Ränder die Position im Stapel festlegen Ansicht wächst die Achse von untergeordneten Ansichten definierte Raum zu passen.
-*  **Definieren Sie die Unteransicht des Position** – durch anheften an benachbarte Ränder Stack Ansicht, um die übergeordnete Ansicht, wächst die Stapelansicht in beiden Dimensionen des enthaltenden Unteransichten anpassen.
-- **Definieren Sie die Größe und Position des Stapels** – durch Anheften von allen vier Kanten der Stack Ansicht für die übergeordnete Ansicht, ordnet die Stapelansicht die Unteransichten basierend auf den Speicherplatz, der in die Stapelansicht definiert.
-*  **Definieren der Größe senkrecht der Achse** – beide Ränder senkrecht an den Stapel-Ansicht anheften `Axis` und einen der Ränder auf der Achse, um die Position im Stapel festzulegen Ansicht senkrecht zur Achse wächst von definierte Raum zu passen die Unteransichten.
+- **Definieren Sie die Größe entlang der Achse** – indem Sie beide Ränder entlang der Stapel Ansicht `Axis` und einen der angrenzenden Ränder anheten, um die Position festzulegen, vergrößert sich die Stapel Ansicht entlang der Achse, damit Sie an den durch die untergeordneten Sichten definierten Platz passt.
+*  **Legen Sie die Position der untergeordneten Ansicht** fest – indem Sie an angrenzende Ränder der Stapel Ansicht an die übergeordnete Ansicht angehefteten, wird die Stapel Ansicht in beiden Dimensionen vergrößert, sodass Sie mit den untergeordneten Sichten verknüpft ist.
+- **Definieren der Größe und Position des Stapels** – durch anheten aller vier Ränder der Stapel Ansicht an die übergeordnete Ansicht ordnet die Stapel Ansicht die unter Ansichten auf der Grundlage des in der Stapel Ansicht definierten Speicherplatzes an.
+*  **Definieren Sie die Größe der Achse senkrecht** – indem Sie beide Ränder senkrecht an die Stapel Ansicht `Axis` und einen der Kanten entlang der Achse anheken, um die Position festzulegen, vergrößert sich die Stapel Ansicht senkrecht zur Achse, damit Sie an den von den untergeordneten Sichten definierten Bereich angepasst wird.
 
 <a name="Stack-Views-and-Storyboards" />
 
-## <a name="stack-views-and-storyboards"></a>Stack-Ansichten und Storyboards
+## <a name="stack-views-and-storyboards"></a>Stapel Ansichten und Storyboards
 
-Die einfachste Möglichkeit zum Arbeiten mit Stack Ansichten in einer Xamarin.tvOS-app ist so fügen sie der app Benutzeroberfläche, die Verwendung des iOS Designers hinzu.
+Die einfachste Möglichkeit, mit Stapel Ansichten in einer xamarin. tvos-APP zu arbeiten, besteht darin, Sie mithilfe des IOS-Designers zur Benutzeroberfläche der APP hinzuzufügen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. In der **Lösungspad**und auf die `Main.storyboard` und öffnen Sie sie für die Bearbeitung.
-1. Entwerfen Sie das Layout der einzelnen Elemente, die auf den Stapel-Ansicht hinzugefügt werden: 
+1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
+1. Entwerfen Sie das Layout der einzelnen Elemente, die der Stapel Ansicht hinzugefügt werden sollen: 
 
-    [![](stacked-views-images/layout01.png "Element-Layout-Beispiel")](stacked-views-images/layout01.png#lightbox)
-1. Fügen Sie alle erforderlichen Einschränkungen auf die Elemente aus, um sicherzustellen, dass sie ordnungsgemäß skaliert werden. Dieser Schritt ist wichtig, nachdem der Stapel-Ansicht das Element hinzugefügt wurde.
-1. Stellen Sie die erforderliche Anzahl von Kopien (vier in diesem Fall): 
+    [![](stacked-views-images/layout01.png "Beispiel für Element Layout")](stacked-views-images/layout01.png#lightbox)
+1. Fügen Sie den Elementen alle erforderlichen Einschränkungen hinzu, um sicherzustellen, dass Sie korrekt skaliert werden Dieser Schritt ist wichtig, wenn das Element der Stapel Ansicht hinzugefügt wird.
+1. Nehmen Sie die erforderliche Anzahl von Kopien (in diesem Fall vier) vor: 
 
     [![](stacked-views-images/layout02.png "Die erforderliche Anzahl von Kopien")](stacked-views-images/layout02.png#lightbox)
-1. Ziehen Sie eine **Stapelansicht** aus der **Toolbox** und legen Sie sie in der Ansicht: 
+1. Ziehen Sie eine **Stapel Ansicht** aus der **Toolbox** , und legen Sie Sie in der Ansicht ab: 
 
-    [![](stacked-views-images/layout03.png "Ein Stapelansicht")](stacked-views-images/layout03.png#lightbox)
-1. Wählen Sie in die Stapelansicht der **Widget-Registerkarte** von der **Pad "Eigenschaften"** wählen **füllen** für die **Ausrichtung**, **füllen Gleichermaßen** für die **Verteilung** , und geben Sie `25` für die **Abstand**: 
+    [![](stacked-views-images/layout03.png "Eine Stapel Ansicht")](stacked-views-images/layout03.png#lightbox)
+1. Wählen Sie die Stapel Ansicht aus, und wählen Sie auf der **Registerkarte widget** des **Eigenschaftenpad** für die **Ausrichtung** **Ausfüllen** aus , und geben `25` Sie für die Verteilung **gleichermaßen** **ein:** 
 
-    [![](stacked-views-images/layout04.png "Die Registerkarte \"Widget\"")](stacked-views-images/layout04.png#lightbox)
-1. Positionieren Sie die Stack-Sicht, auf dem Bildschirm, in dem Sie soll, und fügen die Einschränkungen, damit es in den erforderlichen Speicherort bleibt.
-1. Wählen Sie die einzelnen Elemente, und ziehen Sie diese in die Stapelansicht: 
+    [![](stacked-views-images/layout04.png "Die Widget-Registerkarte")](stacked-views-images/layout04.png#lightbox)
+1. Positionieren Sie die Stapel Ansicht auf dem Bildschirm, wo Sie Sie möchten, und fügen Sie Einschränkungen hinzu, um Sie am erforderlichen Speicherort zu speichern.
+1. Wählen Sie die einzelnen Elemente aus, und ziehen Sie Sie in die Stapel Ansicht: 
 
-    [![](stacked-views-images/layout05.png "Die einzelnen Elemente in die Stapelansicht")](stacked-views-images/layout05.png#lightbox)
-1. Das Layout wird angepasst, und die Elemente in die Stapelansicht basierend auf den Attributen, die, denen Sie, oben festlegen, angeordnet.
-1. Weisen Sie **Namen** in die **Widget Registerkarte** von der **Eigenschaften-Explorer** zum Arbeiten mit UI-Steuerelemente in C# Code.
+    [![](stacked-views-images/layout05.png "Die einzelnen Elemente in der Stapel Ansicht")](stacked-views-images/layout05.png#lightbox)
+1. Das Layout wird angepasst, und die Elemente werden in der Stapel Ansicht basierend auf den Attributen, die Sie oben festgelegt haben, angeordnet.
+1. Weisen Sie im **Eigenschaften-Explorer** auf der **Registerkarte widget** **Namen** zu, um mit Ihren C# UI-Steuerelementen im Code zu arbeiten.
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. In der **Projektmappen-Explorer**und auf die `Main.storyboard` und öffnen Sie sie für die Bearbeitung.
-1. Entwerfen Sie das Layout der einzelnen Elemente, die auf den Stapel-Ansicht hinzugefügt werden: 
+1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
+1. Entwerfen Sie das Layout der einzelnen Elemente, die der Stapel Ansicht hinzugefügt werden sollen: 
 
-    [![](stacked-views-images/layout01.png "Beispiellayout-element")](stacked-views-images/layout01.png#lightbox)
-1. Fügen Sie alle erforderlichen Einschränkungen auf die Elemente aus, um sicherzustellen, dass sie ordnungsgemäß skaliert werden. Dieser Schritt ist wichtig, nachdem der Stapel-Ansicht das Element hinzugefügt wurde.
-1. Stellen Sie die erforderliche Anzahl von Kopien (vier in diesem Fall): 
+    [![](stacked-views-images/layout01.png "Beispiel für Element Layout")](stacked-views-images/layout01.png#lightbox)
+1. Fügen Sie den Elementen alle erforderlichen Einschränkungen hinzu, um sicherzustellen, dass Sie korrekt skaliert werden Dieser Schritt ist wichtig, wenn das Element der Stapel Ansicht hinzugefügt wird.
+1. Nehmen Sie die erforderliche Anzahl von Kopien (in diesem Fall vier) vor: 
 
     [![](stacked-views-images/layout02.png "Die erforderliche Anzahl von Kopien")](stacked-views-images/layout02.png#lightbox)
-1. Ziehen Sie eine **Stapelansicht** aus der **Toolbox** und legen Sie sie in der Ansicht: 
+1. Ziehen Sie eine **Stapel Ansicht** aus der **Toolbox** , und legen Sie Sie in der Ansicht ab: 
 
-    [![](stacked-views-images/layout03-vs.png "Ein Stapelansicht")](stacked-views-images/layout03-vs.png#lightbox)
-1. Wählen Sie in die Stapelansicht der **Widget-Registerkarte** von der **Eigenschaften-Explorer** wählen **füllen** für die **Ausrichtung**, **füllen Gleichermaßen** für die **Verteilung** , und geben Sie `25` für die **Abstand**: 
+    [![](stacked-views-images/layout03-vs.png "Eine Stapel Ansicht")](stacked-views-images/layout03-vs.png#lightbox)
+1. Wählen Sie die Stapel Ansicht aus, wählen Sie im **Eigenschaften-Explorer** auf der **Registerkarte widget** die Option **Ausfüllen** für die **Ausrichtung**aus **, und geben** `25` Sie für den **Abstand** **gleich** ein: 
 
-    [![](stacked-views-images/layout04-vs.png "Die Registerkarte \"Widget\"")](stacked-views-images/layout04-vs.png#lightbox)
-1. Positionieren Sie die Stack-Sicht, auf dem Bildschirm, in dem Sie soll, und fügen die Einschränkungen, damit es in den erforderlichen Speicherort bleibt.
-1. Wählen Sie die einzelnen Elemente, und ziehen Sie diese in die Stapelansicht: 
+    [![](stacked-views-images/layout04-vs.png "Die Widget-Registerkarte")](stacked-views-images/layout04-vs.png#lightbox)
+1. Positionieren Sie die Stapel Ansicht auf dem Bildschirm, wo Sie Sie möchten, und fügen Sie Einschränkungen hinzu, um Sie am erforderlichen Speicherort zu speichern.
+1. Wählen Sie die einzelnen Elemente aus, und ziehen Sie Sie in die Stapel Ansicht: 
 
-    [![](stacked-views-images/layout05-vs.png "Die einzelnen Elemente in die Stapelansicht")](stacked-views-images/layout05-vs.png#lightbox)
-1. Das Layout wird angepasst, und die Elemente in die Stapelansicht basierend auf den Attributen, die, denen Sie, oben festlegen, angeordnet.
-1. Weisen Sie **Namen** in die **Widget Registerkarte** von der **Eigenschaften-Explorer** zum Arbeiten mit UI-Steuerelemente in C# Code.
+    [![](stacked-views-images/layout05-vs.png "Die einzelnen Elemente in der Stapel Ansicht")](stacked-views-images/layout05-vs.png#lightbox)
+1. Das Layout wird angepasst, und die Elemente werden in der Stapel Ansicht basierend auf den Attributen, die Sie oben festgelegt haben, angeordnet.
+1. Weisen Sie im **Eigenschaften-Explorer** auf der **Registerkarte widget** **Namen** zu, um mit Ihren C# UI-Steuerelementen im Code zu arbeiten.
 1. Speichern Sie die Änderungen.
 
 -----
 
 > [!IMPORTANT]
-> Es ist zwar möglich, weisen Sie Aktionen wie z. B. `TouchUpInside` auf ein Element der Benutzeroberfläche (z. B. eine `UIButton`) in der iOS-Designer, wenn Sie einen Ereignishandler zu erstellen, wird nie aufgerufen da Apple TV besitzt eine Fingereingabe Bildschirm oder Touch-Ereignissen zu unterstützen. Sie sollten immer die Standardeinstellung verwenden `Action Type` beim Erstellen von Aktionen für TvOS Elemente der Benutzeroberfläche.
+> Obwohl es möglich ist, Aktionen wie z `TouchUpInside` . b. einem Benutzeroberflächen Element (z `UIButton`. b.) im IOS-Designer zuzuweisen, wenn ein Ereignis Handler erstellt wird, wird er nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Beim Erstellen von Aktionen für tvos-Benutzeroberflächen Elemente sollte immer der Standard `Action Type` Wert verwendet werden.
 
-Weitere Informationen zum Arbeiten mit Storyboards, informieren Sie sich unsere [Hello, TvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md).
+Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 
-Bei unserem Beispiel haben wir eine Outlet und Aktion für das Segment-Steuerelement und eines Outlets für jede Karte"Player" verfügbar gemacht. Im Code müssen wir ausblenden und Player basierend auf das aktuelle Segment anzuzeigen. Zum Beispiel:
+Im vorliegenden Beispiel haben wir ein Outlet und eine Aktion für das Segment Steuerelement und ein Outlet für jede "Player Karte" verfügbar gemacht. Im Code wird der Spieler basierend auf dem aktuellen Segment ausgeblendet und angezeigt. Beispiel:
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {
@@ -185,21 +185,21 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 }
 ```
 
-Wenn die app ausgeführt wird, werden vier Elemente in unserer Stapelansicht gleichmäßig verteilt werden:
+Wenn die app ausgeführt wird, werden die vier Elemente gleichmäßig in der Stapel Ansicht verteilt:
 
-[![](stacked-views-images/layout06.png "Wenn die app ausgeführt wird, werden die vier Elemente gleichmäßig in unserer Stapelansicht verteilt")](stacked-views-images/layout06.png#lightbox)
+[![](stacked-views-images/layout06.png "Wenn die app ausgeführt wird, werden die vier Elemente gleichmäßig in der Stapel Ansicht verteilt.")](stacked-views-images/layout06.png#lightbox)
 
-Wenn die Anzahl der Spieler verringert wird, wird die nicht verwendeten Ansichten ausgeblendet sind, und die Stapelansicht passen Sie das Layout anpassen:
+Wenn die Anzahl der Spieler verringert wird, werden die nicht verwendeten Sichten ausgeblendet, und in der Stapel Ansicht wird das Layout angepasst und angepasst:
 
-[![](stacked-views-images/layout07.png "Die Anzahl der Spieler verringert wird, die nicht verwendeten Ansichten sind ausgeblendet, und die Stapelansicht passen Sie das Layout anpassen")](stacked-views-images/layout07.png#lightbox)
+[![](stacked-views-images/layout07.png "Wenn die Anzahl der Spieler verringert wird, werden die nicht verwendeten Sichten ausgeblendet, und die Stapel Ansicht passt das Layout an")](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code" />
 
-### <a name="populate-a-stack-view-from-code"></a>Auffüllen einer Stapelansicht aus Code
+### <a name="populate-a-stack-view-from-code"></a>Auffüllen einer Stapel Ansicht aus Code
 
-Zusätzlich zum Definieren von Inhalt und Layout einer Stapel-Ansicht vollständig im iOS-Designer, Sie erstellen und entfernen Sie sie dynamisch aus C# Code.
+Zusätzlich zur vollständig Definition der Inhalte und des Layouts einer Stapel Ansicht im IOS-Designer können Sie diese dynamisch aus C# dem Code erstellen und entfernen.
 
-Führen Sie das folgende Beispiel, mit denen eine Stapelansicht "Sternen" in einem Review (1 bis 5) behandelt:
+Verwenden Sie das folgende Beispiel, in dem eine Stapel Ansicht verwendet wird, um "Stars" in einer Überprüfung (1 bis 5) zu behandeln:
 
 ```csharp
 public int Rating { get; set;} = 0;
@@ -251,32 +251,32 @@ partial void DecreaseRating (Foundation.NSObject sender) {
 }
 ```
 
-Werfen wir einen Blick auf einige Teile dieses Codes im Detail. Verwenden Sie als Erstes eine `if` Anweisungen, um zu überprüfen, dass es nicht mehr als fünf "Sternen" oder kleiner als 0 (null).
+Werfen wir einen Blick auf einige Teile dieses Codes im Detail. Zuerst verwenden wir eine `if` -Anweisung, um zu überprüfen, ob es nicht mehr als fünf "Sterne" oder kleiner als 0 (null) ist.
 
-Hinzufügen einer neuen "Star" laden wir das Bild, und legen seine **Modus Inhalt** zu **Seitengröße skalieren Aspekt**:
+Zum Hinzufügen eines neuen "Stars" laden wir das zugehörige Bild und legen den **Inhalts Modus** auf " **skalieren" anpassen**fest:
 
 ```csharp
 var icon = new UIImageView (new UIImage("icon.png"));
 icon.ContentMode = UIViewContentMode.ScaleAspectFit;
 ```
 
-Dadurch wird verhindert, dass das Symbol für "Sterne" verzerrt wird, wenn sie die Stapelansicht hinzugefügt wird.
+Dadurch wird das Symbol "Stern" nicht mehr verzerrt, wenn es der Stapel Ansicht hinzugefügt wird.
 
-Als Nächstes fügen wir das neue Symbol für "Stern" auf die Stapelansicht-Auflistung von Unteransichten hinzu:
+Als Nächstes fügen wir das neue "Star"-Symbol der Auflistung von untergeordneten Sichten der Stapel Ansicht hinzu:
 
 ```csharp
 RatingView.AddArrangedSubview(icon);
 ```
 
-Sie werden feststellen, dass wir hinzugefügt, die `UIImageView` auf der `UIStackView`des `ArrangedSubviews` Eigenschaft und nicht auf die `SubView`. Einer beliebigen Ansicht, dass der Stapel-Ansicht zur Steuerung des Layouts sollen muss hinzugefügt werden, um die `ArrangedSubviews` Eigenschaft.
+Sie werden feststellen, dass der `UIImageView` `UIStackView`-Eigenschaft der `ArrangedSubviews` -Eigenschaft und nicht `SubView`der-Eigenschaft hinzugefügt wurde. Jede Ansicht, deren Layout in der Stapel Ansicht gesteuert werden soll, muss der `ArrangedSubviews` -Eigenschaft hinzugefügt werden.
 
-Um eine Unteransicht aus einer Sicht Stapel zu entfernen, rufen wir zunächst die Unteransicht entfernen:
+Zum Entfernen einer unter Ansicht aus einer Stapel Ansicht wird zunächst die zu entfern gende unter Ansicht angezeigt:
 
 ```csharp
 var icon = RatingView.ArrangedSubviews[RatingView.ArrangedSubviews.Length-1];
 ```
 
-Wir müssen sie sowohl Entfernen der `ArrangedSubviews` Auflistung und die Super-Ansicht:
+Anschließend müssen wir Sie aus der `ArrangedSubviews` Auflistung und der Super Ansicht entfernen:
 
 ```csharp
 // Remove from stack and screen
@@ -284,15 +284,15 @@ RatingView.RemoveArrangedSubview(icon);
 icon.RemoveFromSuperview();
 ```
 
-Entfernen eine Unteransicht aus lediglich die `ArrangedSubviews` Auflistung dauert es nicht die Stapelansicht Kontrolle, jedoch nicht vom Bildschirm entfernt wird.
+Wenn Sie eine unter Ansicht aus nur `ArrangedSubviews` der Auflistung entfernen, wird Sie aus dem Steuerelement der Stapel Ansicht entfernt, jedoch nicht vom Bildschirm entfernt.
 
 <a name="Dynamically-Changing-Content" />
 
-## <a name="dynamically-changing-content"></a>Inhalt dynamisch ändern
+## <a name="dynamically-changing-content"></a>Dynamisches Ändern von Inhalten
 
-Eine Stapelansicht werden das Layout der Unteransichten automatisch angepasst, wenn eine Unteransicht hinzugefügt, entfernt oder ausgeblendet wird. Das Layout wird auch angepasst werden, wenn eine Eigenschaft der Ansicht Stack angepasst wird (z. B. die `Axis`).
+Eine Stapel Ansicht passt automatisch das Layout der untergeordneten Sichten an, wenn eine unter Ansicht hinzugefügt, entfernt oder ausgeblendet wird. Das Layout wird auch angepasst, wenn eine Eigenschaft der Stapel Ansicht angepasst wird (z `Axis`. b. die).
 
-Änderungen am Layout können animiert werden, indem Sie sie z. B. innerhalb einer Animation-Blocks platzieren:
+Layoutänderungen können animiert werden, indem Sie in einem Animations Block platziert werden, z. b.:
 
 ```csharp
 // Animate stack
@@ -302,19 +302,19 @@ UIView.Animate(0.25, ()=>{
 });
 ```
 
-Viele der Eigenschaften der Stack-Sicht können Größenklassen in einem Storyboard angegeben werden. Diese Eigenschaften werden automatisch animiert die Reaktion auf Änderungen der Größe oder Ausrichtung ist.
+Viele der Eigenschaften der Stapel Ansicht können mithilfe von Größenklassen innerhalb eines Storyboards angegeben werden. Diese Eigenschaften werden automatisch animiert, wenn die Größe oder die Ausrichtung geändert wird.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit gestapelte Ansicht, in ein Xamarin.tvOS-app.
+In diesem Artikel wurde das Entwerfen und arbeiten mit der gestapelten Ansicht in einer xamarin. tvos-App behandelt.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [TvOS Human Interface-Handbücher](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [App-Programmierhandbuch für tvos verwendet.](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvos Human Interface Guides](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [Leitfaden zur APP-Programmierung für tvos](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

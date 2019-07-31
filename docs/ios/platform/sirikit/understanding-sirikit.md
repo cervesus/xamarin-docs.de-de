@@ -1,188 +1,188 @@
 ---
 title: Grundlegendes zu SiriKit-Konzepten
-description: Dieses Dokument beschreibt die wichtigsten Konzepte für die Arbeit mit SiriKit in einer Xamarin.iOS-app erforderlich sind. Z. B. erläutert Intents und Intents UI-Erweiterungen, SiriKit Berechtigungen Entwerfen einer überzeugenden Umgebung und vieles mehr.
+description: In diesem Dokument werden die wichtigsten Konzepte beschrieben, die für die Arbeit mit dem Sirikit in einer xamarin. IOS-App erforderlich sind. Beispielsweise werden Intents und Intents UI Extensions, Sirikit-Berechtigungen, das Entwerfen einer hervorragend Benutzeroberfläche und vieles mehr erläutert.
 ms.prod: xamarin
 ms.assetid: 99EC5C1E-484F-4371-8555-58C9F60DE37F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: b2a9e757e8a3407bbb19ae0580e5788eabe84cf0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b9e8ad848204f7db785327093cd4b7ed9aa6de81
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61188920"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654072"
 ---
 # <a name="understanding-sirikit-concepts"></a>Grundlegendes zu SiriKit-Konzepten
 
-_Dieser Artikel behandelt die grundlegenden Konzepte, die für die Arbeit mit SiriKit in einer Xamarin.iOS-app benötigt werden._
+_In diesem Artikel werden die wichtigsten Konzepte behandelt, die für die Arbeit mit dem Sirikit in einer xamarin. IOS-App erforderlich sind._
 
 
-Neue iOS 10, SiriKit kann eine Xamarin.iOS-app, um Dienste bereitzustellen, die für den Benutzer mithilfe von Siri und die Karten-app auf einem iOS-Gerät zugänglich sind. Diese Funktion finden Sie im App-Erweiterung für eine oder mehrere mit dem neuen **Intents** und **Intents UI** Frameworks.
+Mit dem neuen IOS 10 ermöglicht das Sirikit einer xamarin. IOS-APP das Bereitstellen von Diensten, auf die der Benutzer mithilfe von Siri und der Maps-APP auf einem IOS-Gerät zugreifen kann. Diese Funktionalität wird in einer oder mehreren App-Erweiterungen mithilfe der neuen **Intents** und **Intents-Benutzer** Oberflächen-Frameworks bereitgestellt.
 
-SiriKit ermöglicht eine iOS-app, um Dienste bereitzustellen, die für den Benutzer mithilfe von Siri und die Karten-app auf einem iOS-Gerät mithilfe von App-Erweiterungen und neuen zugänglich sind **Intents** und **Intents UI** Frameworks.
+Mit "Sirikit" kann eine IOS-App Dienste bereitstellen, auf die der Benutzer mit Siri und der Maps-APP auf einem IOS-Gerät mithilfe von App-Erweiterungen und den neuen **Intents** und **Intents-Benutzer** Oberflächen-Frameworks zugreifen kann
 
-Siri arbeitet mit dem Konzept der **Domänen**, wissen, Gruppen von Aktionen für verwandte Aufgaben. Jede Interaktion mit die app mit Siri muss wie folgt in eine Domäne bekannten Diensts liegen:
+Siri arbeitet mit dem Konzept von **Domänen**, Gruppen von bekannten Aktionen für Verwandte Aufgaben. Jede Interaktion zwischen der APP und Siri muss wie folgt in eine der bekannten Dienst Domänen fallen:
 
-- Audio- oder Videoanruf.
-- Buchung einer Tour an.
-- Verwalten von fitnessaktivitäten aus.
-- Messaging.
-- Durchsuchen von Fotos.
-- Senden oder Empfangen von Zahlungen.
+- Aufrufen von Audiodaten oder Videos.
+- Die Reservierung einer Fahrt.
+- Verwalten von-Workouts.
+- Übermittlung.
+- Fotos werden gesucht.
+- Senden oder empfangen von Zahlungen.
 
-Wenn der Benutzer eine Anforderung von Siri im Zusammenhang mit einer der Dienste für die App-Erweiterung stellt, sendet SiriKit die Erweiterung einer **Absicht** Objekt, das die Anforderung des Benutzers sowie alle unterstützungsdaten beschreibt. Die App-Erweiterung generiert dann das entsprechende **Antwort** -Objekt für den angegebenen **Absicht**, mit Informationen, wie die Erweiterung für die Anforderung verarbeiten kann.
+Wenn der Benutzer eine Anforderung von Siri an einen der Dienste der APP-Erweiterung sendet, sendet Sirikit der Erweiterung ein **Intent** -Objekt, das die Anforderung des Benutzers zusammen mit allen unterstützenden Daten beschreibt. Die APP-Erweiterung generiert dann das entsprechende **Antwort** Objekt für die angegebene **Absicht**und erläutert, wie die Erweiterung die Anforderung verarbeiten kann.
 
-## <a name="the-intents-and-intents-ui-extensions"></a>Die Intents und Intents UI-Erweiterungen
+## <a name="the-intents-and-intents-ui-extensions"></a>Intents und Intents UI Extensions
 
-Interagieren mit der app-Diensten über zwei verschiedene Arten von App-Erweiterungen, sowohl Siri und die Karten-app:
+Sowohl Siri als auch die Maps-APP interagieren mit den Diensten der APP über zwei unterschiedliche Arten von App-Erweiterungen:
 
-- **Intents-Erweiterung** -bietet Siri und Karten mit der app, den Inhalt, und führt die Aufgaben, die erforderlich sind, um alle unterstützten Absichten zu erfüllen.
-- **Intents-Benutzeroberflächenerweiterung** -bietet eine benutzerdefinierte Benutzeroberfläche, die angezeigt wird, für die app Inhalte in entweder Siri- oder Maps.
+- **Intents-Erweiterung** : gibt Siri und Maps mit dem Inhalt der APP an und führt die Aufgaben aus, die erforderlich sind, um alle unterstützten Intents zu erfüllen.
+- **Intents-Benutzeroberflächen Erweiterung** : stellt eine benutzerdefinierte Benutzeroberfläche bereit, die für den Inhalt der app in Siri oder Maps angezeigt wird.
 
-Die app muss eine Intents-Erweiterung zur Unterstützung von SiriKit bereitstellen, und er ist verantwortlich für die Bereitstellung von Informationen, die für dem Benutzer Siri und Zuordnungen vorweisen kann und für die Behandlung von Intents.
+Die APP muss eine Intents-Erweiterung zur Unterstützung von Sirikit bereitstellen, und Sie ist verantwortlich für die Bereitstellung von Informationen, die Siri und Maps für den Benutzer bereitstellen können.
 
-Erstellt eine Intents-Benutzeroberflächenerweiterung ist optional, da Siri in der Regel alle Benutzerinteraktionen behandelt, und verfügt über einen integrierten Benutzeroberfläche zum Darstellen von Informationen in jeder der unterstützten Domänen. Die app kann durch die Bereitstellung eine Intents-Benutzeroberflächenerweiterung, verwenden die **beabsichtigte Benutzeroberfläche** Framework, um eine umfassende, benutzerdefinierte Benutzeroberfläche mit dem branding die app zu präsentieren und zusätzliche Informationen.
+Das Erstellen einer Intents-Benutzeroberflächen Erweiterung ist optional, da Siri in der Regel die gesamte Benutzerinteraktion verarbeitet und über eine standardmäßige, integrierte Benutzeroberfläche zum Darstellen von Informationen in jeder der unterstützten Domänen verfügt. Durch die Bereitstellung einer Intents-Benutzeroberflächen Erweiterung kann die APP das **Intent UI** -Framework verwenden, um eine umfangreiche, benutzerdefinierte Benutzeroberfläche mit dem Branding der APP und zusätzlichen Informationen zu präsentieren.
 
-## <a name="siri-and-the-maps-app-role"></a>Siri und die Karten-App-Rolle
+## <a name="siri-and-the-maps-app-role"></a>Siri und die APP-Rolle Maps
 
-Die Anforderungen der Benutzer gesprochen werden Sprache verarbeitet und semantisch analysiert von Siri auf die Anforderungen in handlungsrelevante Intents deaktiviert wird, der die Absicht Erweiterungen verarbeiten kann.
+Die gesprochenen Anforderungen des Benutzers werden von Siri verarbeitet und semantisch analysiert, wodurch diese Anforderungen in umsetzbare Intents umgewandelt werden, die von den beabsichtigten Erweiterungen verarbeitet werden können.
 
-Maps verwendet die app Absichten Erweiterungen zum Anzeigen von Informationen in der Mapping-Interface als Reaktion auf Benutzeraktionen. Werden z. B. nahe gelegene Restaurants anfordern oder für das Abrufen der app-Restaurant.
+In Maps werden die Intent-Erweiterungen der APP verwendet, um Informationen in der Kartenschnittstelle als Reaktion auf Benutzeraktionen anzuzeigen. Z. b. das Anfordern von Restaurants in der Nähe oder das Abrufen der Restaurant Reviews der APP
 
-Sowohl Siri und Zuordnungen Verwalten aller die Interaktionen des Benutzers, und Ergebnisse, die mithilfe der Standardsystem-Benutzeroberfläche anzeigen. Die app-Erweiterungen-Rolle ist in erster Linie um die Daten bereitzustellen, die angezeigt wird. Die app kann optional eine Intents-Benutzeroberflächenerweiterung bereitzustellen und eine benutzerdefinierte Benutzeroberfläche um die Standardschnittstelle für das System zu verbessern.
+Sowohl Siri als auch Maps verwalten alle Interaktionen des Benutzers und zeigen die Ergebnisse mithilfe der Standardsystem Schnittstelle an. Die Rolle "App-Erweiterungen" besteht hauptsächlich darin, die angezeigten Daten bereitzustellen. Optional kann die APP eine Intents-Benutzeroberflächen Erweiterung bereitstellen und eine benutzerdefinierte Benutzeroberfläche zur Verbesserung der Standardsystem Schnittstelle darstellen.
 
-## <a name="interacting-with-siri-via-sirikit"></a>Interaktion mit Siri über SiriKit
+## <a name="interacting-with-siri-via-sirikit"></a>Interaktion mit Siri über Sirikit
 
-Dieser Abschnitt bietet einen Überblick darüber, wie Benutzer für die Interaktion mit der app mithilfe von Siri von SiriKit kann. Dieses Beispiel wird die gefälschte MonkeyChat-app verwendet werden:
+In diesem Abschnitt erhalten Sie einen Überblick darüber, wie mit dem Benutzer von Sirikit die Interaktion mit der App mithilfe von Siri ermöglicht wird. Für dieses Beispiel verwenden wir die gefälschte monkeychat-App:
 
-[![](understanding-sirikit-images/monkeychat01.png "Das Symbol \"MonkeyChat\"")](understanding-sirikit-images/monkeychat01.png#lightbox)
+[![](understanding-sirikit-images/monkeychat01.png "Das monkeychat-Symbol")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
-MonkeyChat behält eine eigene wenden Sie sich an Buchs für die Freunde des Benutzers, die jeweils einem Bildschirmnamen (z. B. Bobo z. B.) zugeordnet, und ermöglicht dem Benutzer jeder Freund von seinem Bildschirmnamen Chats von Text an.
+Monkeychat hält ein eigenes Kontaktbuch der Freunde des Benutzers, die jeweils einem Bildschirmnamen (z. b. "Bobo") zugeordnet sind, und ermöglicht es dem Benutzer, Text Chats über den Bildschirmnamen an jeden Freund zu senden.
 
-Es gibt viele Möglichkeiten, dass der Benutzer möglicherweise eine Interaktion mit der app initiieren können, da verschiedene Personen möglicherweise dieselbe Anforderung in vielen verschiedenen Formen getroffen.
+Es gibt viele Möglichkeiten, wie der Benutzer eine Interaktion mit der APP initiieren kann, da verschiedene Personen dieselbe Anforderung in vielen verschiedenen Formularen vornehmen können.
 
-Z. B. wenn der Benutzer zum Senden einer Nachricht an ihre Freund Bobo, muss er die folgende Konversation mit Siri möglicherweise:
+Wenn der Benutzer z. b. eine Nachricht an den Friend-Bobo senden möchte, kann er über die folgende Konversation mit Siri verfügen:
 
-_Benutzer: Hallo Siri, senden Sie eine Nachricht MonkeyChat._<br />
-_Siri: Zu wem?_<br />
-_Benutzer: Bobo._<br />
-_Siri: Was möchten Sie für Bobo ein?_<br />
-_Benutzer: Senden Sie weitere Bananen._<br />
+_Bedienungs Hey Siri, sendet eine monkeychat-Nachricht._<br />
+_Siri Zu wem?_<br />
+_Bedienungs Bos._<br />
+_Siri Was möchten Sie für "Bobo" sagen?_<br />
+_Bedienungs Senden Sie weitere Bananen._<br />
 
-Eine andere Person erstellt möglicherweise die gleiche Anforderung mit einem anderen Gespräch:
+Eine andere Person kann dieselbe Anforderung mit einer anderen Konversation treffen:
 
-_Benutzer: Senden einer Nachricht an Bobo auf MonkeyChat._<br />
-_Siri: Was möchten Sie für Bobo ein?_<br />
-_Benutzer: Senden Sie weitere Bananen._<br />
+_Bedienungs Senden Sie eine Nachricht an Bobo auf monkeychat._<br />
+_Siri Was möchten Sie für "Bobo" sagen?_<br />
+_Bedienungs Senden Sie weitere Bananen._<br />
 
-Und ein anderer Benutzer kann eine noch kürzere anfordern:
+Und ein anderer Benutzer kann eine noch kürzere Anforderung stellen:
 
-_Benutzer: MonkeyChat Bobo und senden Sie weitere Bananen aus._<br />
-_Siri: OK, senden Nachrichten senden Sie weitere Bananen an Bobo auf Monkeychat._<br />
+_Bedienungs Monkeychat-Bobo senden Sie weitere Bananen._<br />
+_Siri OK, senden Sie eine Nachricht, und senden Sie weitere Bananen an Bobo auf monkeychat._<br />
 
-Oder stellen Sie die gleiche Anforderung auch in einer anderen Sprache:
+Sie können auch dieselbe Anforderung in einer anderen Sprache ausführen:
 
-_Benutzer: MonkeyChat Bobo s’il vous plaît envoyer plus de bananes._<br />
-_Siri: Oui, envoi message s’il vous plaît envoyer plus de bananes à Bobo sur Monkeychat._<br />
+_Bedienungs Monkeychat-"......._<br />
+_Siri Oui, envoi-Nachricht, ' il vous plaît Envoyer ' plus de Bananes à Bobo sur monkeychat._<br />
 
-Noch sehr ausführlich in die Konversation möglicherweise ein anderer Benutzer:
+Ein anderer Benutzer ist in der Konversation jedoch möglicherweise sehr ausführlich:
 
-_Benutzer: Hallo Siri, können Sie Sie tun Sie mir einen gefallen und starten Sie die app MonkeyChat, um eine SMS mit der Nachricht zu senden. senden Sie eine weitere Bananen._<br />
-_Siri: Zu wem?_<br />
-_Benutzer: Meine bewährte Pal Bobo._<br />
+_Bedienungs Wenn Sie Siri haben, können Sie mich bevorzugen und die monkeychat-app starten, um einen Text mit der Nachricht zu senden. senden Sie weitere Bananen._<br />
+_Siri Zu wem?_<br />
+_Bedienungs Mein bester PAL-Bobo._<br />
 
-Darüber hinaus stehen viele Möglichkeiten, die Siri reagieren kann, auf eine Anforderung, einige basierend auf wie die Anforderung gestellt wurde:
+Außerdem gibt es viele Möglichkeiten, wie Siri auf eine Anforderung reagieren kann, und zwar basierend auf der Art der Anforderung:
 
-- **Durch Drücken der Schaltfläche "Start"** -Siri bieten mehr visual Reaktionen beschränkt mündliche Feedback zu senden.
-- **Von "Hey Siri"** -Siri werden mehr mündliche und geben Sie weniger visual Antworten.
+- **Durch die Verwendung der Schaltfläche "Home** " (Start Schaltfläche) werden mehr visuelle Antworten mit eingeschränktem verbalen Feedback
+- **Von "Hey Siri"** -Siri ist eher verbal und bietet weniger visuelle Antworten.
 
-Siri wurde auch optimiert, um den Zugriff auf Anforderungen des Benutzers und interagiert, und basierend auf diesen Anforderungen zu reagieren.
+Siri ist auch darauf abgestimmt, den Barrierefreiheits Anforderungen des Benutzers gerecht zu werden und auf der Grundlage dieser Anforderungen zu interagieren.
 
-Unabhängig davon, wie eine Anforderung gestellt wird, oder wie Siri auf die Anforderung reagiert Siri behandelt die Konversation mit dem Benutzer, und die app (über ihre Erweiterungen) stellt die Funktionalität bereit.
+Unabhängig davon, wie eine Anforderung erfolgt oder wie Siri auf die Anforderung antwortet, verarbeitet Siri die Konversation mit dem Benutzer, und die APP (über deren Erweiterungen) stellt die Funktionalität bereit.
 
-Wenn der Benutzer eine mündliche von Siri anfordert, sind dies die folgenden Schritte Siri wird:
+Wenn der Benutzer eine verbale Anforderung von Siri sendet, sind dies die Schritte, die von Siri befolgt werden:
 
-[![](understanding-sirikit-images/monkeychat02.png "Die folgenden Schritte Siri wird")](understanding-sirikit-images/monkeychat02.png#lightbox)
+[![](understanding-sirikit-images/monkeychat02.png "Die Schritte, die von Siri befolgt werden.")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
-1. Siri wird zuerst das Audio des des Benutzers **Spracherkennung** und in Text konvertiert wird.
-2. Als Nächstes wird der Text in konvertiert eine **Absicht**, eine strukturierte Darstellung der Anforderung des Benutzers.
-3. Basierend auf der Absicht, ist Siri dauert **Aktion** zum Ausführen der Anforderung des Benutzers.
-4. Schließlich bietet Siri **Antworten** (visual und verbalen) für den Benutzer basierend auf die durchzuführende Aktion.
+1. Zuerst übernimmt Siri das audiozeichen der **Sprache** des Benutzers und konvertiert es in Text.
+2. Als nächstes wird der Text in eine **Absicht**konvertiert, eine strukturierte Darstellung der Anforderung des Benutzers.
+3. Basierend auf der Absicht führt Siri eine **Aktion** aus, um die Anforderung des Benutzers auszuführen.
+4. Zum Schluss stellt Siri dem Benutzer auf der Grundlage der ausgeführten Aktion **Antworten** (sowohl visuell als auch verbal) dar.
 
-Es gibt drei Hauptmethoden, die die app des Benutzers-Konversation mit Siri teilnehmen kann:
+Es gibt drei Hauptmethoden, mit denen die APP bei Siri an der Konversation des Benutzers teilnehmen kann:
 
-[![](understanding-sirikit-images/monkeychat03.png "Die drei Hauptmethoden, dass die app an die Benutzer-Konversation mit Siri teilnehmen kann")](understanding-sirikit-images/monkeychat03.png#lightbox)
+[![](understanding-sirikit-images/monkeychat03.png "Die drei wichtigsten Möglichkeiten, dass die APP an der Benutzer Konversation mit Siri teilnehmen kann.")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
-1. **Vokabular** – Dies ist die app Siri die Wörter mitteilen, wie sie wissen Sie mit ihm interagieren muss.
-2. **App-Logik** : Hierbei handelt es sich um die Aktionen und Antworten, mit denen die app gelangen auf Basis der angegebenen Intent-Elemente.
-3. **Benutzeroberfläche** – Dies ist die optionalen, benutzerdefinierten Benutzeroberfläche, die Antworten in die app übergeben werden kann.
+1. **Vokabular** : auf diese Weise teilt die APP Siri die Wörter, die Sie kennen müssen, um mit der Anwendung zu interagieren.
+2. **App-Logik** : Hierbei handelt es sich um die Aktionen und Antworten, die von der App basierend auf den jeweiligen Intents ausgeführt werden.
+3. **Benutzeroberfläche** : Dies ist die optionale benutzerdefinierte Benutzeroberfläche, in der die APP Antworten senden kann.
 
 ### <a name="example"></a>Beispiel
 
-Wenn die obige Informationen, untersuchen Sie, wie die folgende Konversation mit der app MonkeyChat interagieren würde:
+Überprüfen Sie anhand der obigen Informationen, wie die folgende Konversation mit der monkeychat-App interagieren würde:
 
-_Benutzer: Hallo Siri, Senden einer Nachricht an Bobo auf MonkeyChat._<br />
-_Siri: Was möchten Sie für Bobo ein?_<br />
-_Benutzer: Senden Sie weitere Bananen._<br />
+_Bedienungs Hey Siri, sendet eine Nachricht an Bobo auf monkeychat._<br />
+_Siri Was möchten Sie für "Bobo" sagen?_<br />
+_Bedienungs Senden Sie weitere Bananen._<br />
 
-Die erste Rolle, die die app in der Konversation verwendet, besteht darin, können Siri, die der Benutzer die Spracheingabe zu verstehen:
+Die erste Rolle, die die app in der Konversation übernimmt, ist die Unterstützung von Siri beim Verständnis der Sprache des Benutzers:
 
-[![](understanding-sirikit-images/monkeychat04.png "Helfen Siri, die die Sprache der Benutzer zu verstehen.")](understanding-sirikit-images/monkeychat04.png#lightbox)
+[![](understanding-sirikit-images/monkeychat04.png "Unterstützung von Siri bei der sprach sprechungssprache")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
-Siri verfügt nicht über den Namen "Bobo" in der Datenbank, aber die app ist und für Sie freigegeben hat diese Informationen Siri über des Vokabulars. Die app hilft auch Siri erkennen, dass Bobo einen Empfänger an, ist, da sie siri wie angegeben ein *wenden Sie sich an*.
+Siri hat nicht den Namen "Bobo" in der Datenbank, aber die APP hat diese Informationen über das Vokabular mit Siri gemeinsam genutzt. Mit der APP kann Siri auch erkennen, dass Bobo ein Empfänger ist, da Sie als *Kontakt*für Siri angegeben wurde.
 
-Siri weiß, dass weitere ist erforderlich, um eine Nachricht als nur einen Empfänger an, zu senden, damit wird schnell überprüft, mit der App-Erweiterung, um festzustellen, ob eine Nachricht Inhalt erforderlich ist. Da MonkeyChat der Fall ist, antwortet Siri, für den Benutzer mit der Frage: *"Was möchten Sie sagen zu Bobo?"*
+Siri weiß, dass mehr erforderlich ist, um eine Nachricht zu senden, als nur ein Empfänger, sodass Sie schnell mit der APP-Erweiterung überprüfen kann, ob eine Nachricht Inhalte erfordert. Da monkeychat dies tut, antwortet Siri an den Benutzer mit der folgenden Frage: *"Was möchten Sie an Bobo sagen?"*
 
-Im obigen Beispiel hat der Benutzer geantwortet, *"Senden Sie weitere Bananen"*, die Siri in eine strukturierte bündeln wird **Absicht**:
+Im obigen Beispiel hat der Benutzer geantwortet: *"Bitte senden Sie weitere Bananen"* , die Siri in eine strukturierte **Absicht**bündeln wird:
 
-[![](understanding-sirikit-images/monkeychat05.png "Siri wird die Antwort des Benutzers in eine strukturierte Absicht bündeln.")](understanding-sirikit-images/monkeychat05.png#lightbox)
+[![](understanding-sirikit-images/monkeychat05.png "Siri bündelt die Antwort des Benutzers in eine strukturierte Absicht")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
-Die strukturierte Absicht enthält die folgende Informationen:
+Die strukturierte Absicht enthält die folgenden Informationen:
 
-- **Domäne:** Meldungen
-- **Zweck:** SendMessage
-- **Empfänger:** Bobo
-- **Inhalt:** Senden Sie eine weitere Bananen
+- **-** Meldungen
+- **Absicht:** SendMessage
+- **Erhält** Bos
+- **Inhaltliche** Senden Sie weitere Bananen
 
-Jede Domäne verfügt, als Satz von wissen *Aktionen* , kann darin ausgeführt werden und basierend auf der Domäne und die Aktion, 0 (null), die zu viele Parameter in der Absicht eingeschlossen werden können, an die app gesendet.
+Jede Domäne verfügt über eine Reihe von bekannten *Aktionen* , die innerhalb der Domäne ausgeführt werden können. basierend auf der Domäne und der Aktion können null bis viele Parameter in die Absicht eingeschlossen werden, die an die APP gesendet wird.
 
-Die Absicht wird an die App-Erweiterung für die Verarbeitung, klicken Sie dann gesendet. Als Ergebnis der Verarbeitung der Absicht an, die app generiert ein **IntentResponse** der wird mit der Absicht gebündelt werden, und schließen Sie Parameter, die beschreiben, was die app mit der Absicht hat.
+Die Absicht wird dann zur Verarbeitung an die APP-Erweiterung gesendet. Aufgrund der Verarbeitung der Absicht generiert die APP ein **intentresponse** -Paket, das mit der Absicht gebündelt wird und Parameter enthält, die beschreiben, was die APP mit der Absicht getan hat.
 
-Jede IntentResponse umfasst auch eine **Antwortcode** wodurch Siri angewiesen wird, wenn die app die Anforderung oder nicht abgeschlossen werden konnte. Einige Domänen haben sehr spezifische Fehlerantwort geführt haben, die auch gesendet werden können.
+Jede intentresponse enthält auch einen **Antwort Code** , der Siri anweist, ob die APP die Anforderung erfüllen konnte oder nicht. Einige Domänen verfügen über sehr spezifische Fehler Antwort Codes, die ebenfalls gesendet werden können.
 
-Zum Schluss die IntentResponse umfasst eine `NSUserActivity` (z. B. die zur Unterstützung von Hand aus verwendet werden). Die `NSUserActivity` wird verwendet, um die app zu starten, wenn die Antwort erforderlich ist, lassen die Siri-Umgebung, und geben die app, um es abzuschließen. 
+Schließlich enthält die intentresponse eine `NSUserActivity` (z. b. die, die zur Unterstützung von Hand Eingaben verwendet werden). `NSUserActivity` Wird verwendet, um die APP zu starten, wenn die Antwort erfordert, dass Sie die SIRI-Umgebung verlassen und die app eingeben, um Sie abzuschließen. 
 
-Siri erstellt automatisch eine entsprechende `NSUserActivity` zum Starten der app "und" Pickup der Benutzer, wo in der Umgebung Siri unterbrochen. Die app kann jedoch Bereitstellen eigener `NSUserActivity` mit benutzerdefinierten Informationen, wenn dies erforderlich ist.
+Siri erstellt automatisch einen geeigneten `NSUserActivity` , um die APP zu starten und zu Abholung, wo der Benutzer in der SIRI-Umgebung aufgehört hat. Die APP kann jedoch eine eigene `NSUserActivity` mit benutzerdefinierten Informationen bereitstellen, wenn dies erforderlich ist.
 
-Nachdem die app verarbeitet die Absicht und hat eine Antwort siri zurückgegeben hat, wird Sie dann die Ergebnisse an dem Benutzer (verbal und visuell):
+Nachdem die APP die Absicht verarbeitet und eine Antwort an Siri zurückgegeben hat, zeigt Sie die Ergebnisse dem Benutzer (sowohl verbal als auch visuell) an:
 
-[![](understanding-sirikit-images/monkeychat06.png "Die Ergebnisse, die dem Benutzer angezeigten verbal sowohl visuell")](understanding-sirikit-images/monkeychat06.png#lightbox)
+[![](understanding-sirikit-images/monkeychat06.png "Die Ergebnisse werden dem Benutzer sowohl verbal als auch visuell angezeigt.")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
-Siri enthält mehrere integrierte Antwort von Benutzeroberflächen für jede der Domänen für die app zur Verfügung. Allerdings da MonkeyChat eine optionale Erweiterung des Intent-Benutzeroberfläche zur Verfügung gestellt hat, wird es verwendet die Ergebnisse der Konversation, die dem Benutzer im obigen Beispiel angezeigt.
+Siri verfügt über mehrere integrierte Benutzeroberflächen für die Reaktionsfähigkeit jeder Domäne, die für die app verfügbar ist. Da monkeychat jedoch eine optionale Benutzeroberflächen Erweiterung der Absicht bereitgestellt hat, wird es verwendet, um dem Benutzer die Ergebnisse der Konversation im obigen Beispiel darzustellen.
 
-## <a name="the-intent-lifecycle"></a>Der beabsichtigte Lebenszyklus
+## <a name="the-intent-lifecycle"></a>Der Intent-Lebenszyklus
 
-Es gibt drei Hauptaufgaben, die die App-Erweiterung zum Ausführen beim Umgang mit Intent-Elemente müssen:
+Es gibt drei Hauptaufgaben, die die APP-Erweiterung beim Umgang mit Intents ausführen muss:
 
-[![](understanding-sirikit-images/monkeychat07.png "Der beabsichtigte Lebenszyklus")](understanding-sirikit-images/monkeychat07.png#lightbox)
+[![](understanding-sirikit-images/monkeychat07.png "Der Intent-Lebenszyklus")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
-1. Die app muss **beheben** jeden Parameter auf ein Ereignis. Daher wird die app auflösen, die mehrere Male (einmal pro jeden Parameter), und manchmal mehrmals auf denselben Parameter aufrufen, bis die app und der Benutzer zustimmen, auf was angefordert wird.
-2. Die app muss **bestätigen** , behandeln das angeforderte Ziel und das erwartete Ergebnis Siri erzählen können.
-3. Abschließend muss von die app **behandeln** die Absicht, und führen Sie die Schritte, um das gewünschte Ergebnis zu erzielen.
+1. Die APP muss alle Parameter für ein Ereignis **Auflösen** . Folglich ruft die APP mehrmals auflösen (einmal pro Parameter) und manchmal mehrmals für denselben Parameter auf, bis die APP und der Benutzer den angeforderten Anforderungen zustimmen.
+2. Die APP muss **bestätigen** , dass Sie die angeforderte Absicht verarbeiten kann, und Siri über das erwartete Ergebnis informiert.
+3. Schließlich muss die APP die Absicht **verarbeiten** und die Schritte ausführen, um das gewünschte Ergebnis zu erzielen.
 
-### <a name="the-resolve-stage"></a>Der Resolve-Phase
+### <a name="the-resolve-stage"></a>Die Auflösungsphase
 
-Die Resolve-Stufe können Siri, die die Werte zu verstehen, die der Benutzer wurde bereitgestellt und stellt sicher, dass der Benutzer tatsächlich vorgesehen ist, was passiert, wenn das Ziel von der Anwendung verarbeitet wird. 
+Mit der Auflösungsphase können Siri die vom Benutzer bereitgestellten Werte verstehen und sicherstellen, dass der tatsächliche Benutzer tatsächlich beabsichtigt ist, wenn die Absicht von der APP verarbeitet wird. 
 
-Diese Phase ermöglicht auch für die app aus, um während der Konversation mit dem Benutzer Siris-Verhalten zu beeinflussen. Zu diesem Zweck die app bietet eine **Auflösung Antwort**. Es gibt eine Anzahl von vordefinierten Antwort auf die verschiedenen Typen von Daten, die Siri versteht.
+Diese Phase bietet auch eine Möglichkeit für die APP, das Verhalten von Siri während der Konversation mit dem Benutzer zu beeinflussen. Zu diesem Zweck stellt die APP eine **Auflösungs Antwort**bereit. Es gibt eine Reihe vordefinierter Antworten auf die unterschiedlichen Typen von Daten, die Siri versteht.
 
-Die am häufigsten verwendeten Auflösung Antwort der app werden **Erfolg**, d. h. die app das bestimmte Datenelement aus einem Parameter (z. B. Bildschirmname des Benutzers) zugeordnet, einem Teil der Informationen, die Informationen zu.
+Die häufigste Lösungs Antwort von der APP ist **erfolgreich**, was bedeutet, dass die APP mit den spezifischen Daten aus einem Parameter (z. b. dem Namen des Benutzer Bildschirms) mit einer Information übereinstimmt, die er kennt.
 
-Es gibt möglicherweise Zeiten, wenn die app benötigt, um sicherzustellen, dass eine bestimmte Anforderung die richtigen Information übereinstimmt, die er kennt. In diesen Fällen sendet eine **ConfirmationRequired** als Antwort auf eine Ja oder Nein, die dem Benutzer z. B. Frage *"Send message, Bobo großartigen?"*
+Es kann vorkommen, dass die APP sicherstellen muss, dass eine bestimmte Anforderung mit der richtigen Information übereinstimmt, die Sie kennt. In diesen Fällen sendet Sie eine **confirmationrequired** -Antwort, um dem Benutzer eine Ja-oder keine Frage zu stellen, z. b. *"Nachricht an Bobo das großartige senden"* .
 
-Möglicherweise gibt es andere Fälle, in denen muss die app den Benutzer, eine kurze Liste der Optionen auswählen. In diesem Fall die app bietet eine **zur Mehrdeutigkeitsvermeidung** Antwort mit einer Liste von zwei bis zehn-Optionen für die Benutzer z. B. auswählen: 
+Möglicherweise gibt es in anderen Fällen, in denen die APP den Benutzer benötigt, eine kurze Liste von Optionen auszuwählen. In diesem Fall stellt die APP eine mehrdeutigkeits Antwort mit einer Liste von zwei bis zehn Optionen bereit, aus denen der Benutzer auswählen kann: 
 
 ```csharp
 Who do you want to message?
@@ -192,218 +192,218 @@ Who do you want to message?
 * Little Bobo
 ```
 
-Siri den Benutzer die Auswahl, verbal oder durch Interaktion mit der Siri UI behandelt wird, und das Ergebnis wird an die app gesendet werden.
+Siri verarbeitet den Benutzer, der die Auswahl treffen soll, entweder verbal oder durch Interaktion mit der Siri-Benutzeroberfläche, und das Ergebnis wird zurück an die APP gesendet.
 
-In anderen Fällen ist es möglicherweise nicht genügend Informationen für die app aus, um den Parameter zu beheben, oder gibt es möglicherweise zu viele Übereinstimmungen zum Auflösen von using zur mehrdeutigkeitsvermeidung (z. B. 80 Benutzern mit Bobo in ihrem Namen). In diesen Fällen die app sendet eine **NeedsMoreDetails** Antwort und Siri fordert den Benutzer genauer.
+In anderen Fällen sind möglicherweise nicht genügend Informationen vorhanden, um die APP zum Auflösen des Parameters zu verwenden, oder es können zu viele Übereinstimmungen vorhanden sein, die mithilfe von Mehrdeutigkeit aufgelöst werden sollen (z. b. 80 Benutzer mit Bobo in Ihrem Namen). In diesem Fall sendet die APP eine **needsmoredetails** -Antwort, und Siri fordert den Benutzer auf, spezifischer zu sein.
 
-Wenn der Benutzer einen Wert, die den Prozess der Absicht erforderlich ist angeben nicht haben, kann er senden eine **NeedsValue** Reaktion, damit Siri, die den Benutzer auf den Wert anzugeben.
+Wenn der Benutzer keinen Wert bereitgestellt hat, der für die Verarbeitung der Absicht erforderlich ist, kann er eine **needsvalue** -Antwort senden, damit Siri den Benutzer zur Eingabe des Werts auffordert.
 
-Wenn die app einen-Wert unterstützt, die der Benutzer für einen bestimmten Parameter erteilt hat, kann er senden die **UnsupportedWithReason** als Antwort auf einen Grund angeben, warum der Wert war nicht unterstützt. Siri fordert dann den Benutzer für einen vollständig neuen Wert ein, und bei ihnen der Grund dafür ist erforderlich.
+Wenn die APP einen Wert nicht unterstützt, den der Benutzer für einen bestimmten Parameter angegeben hat, kann Sie die **unsupportedwithreason** -Antwort senden, um einen Grund anzugeben, warum der Wert nicht unterstützt wurde. Siri fordert dann den Benutzer zur Eingabe eines vollständig neuen Werts auf und gibt ihm den Grund, warum er erforderlich ist.
 
-Verwenden Sie schließlich die **NotRequired** Antwort Siri mitteilen, dass die app einen Wert für einen bestimmten Parameter erfordert. Wenn der Benutzer eine trotzdem bereitstellt, wird es von Siri einfach ignoriert.
+Verwenden Sie schließlich die **notrequired** -Antwort, um Siri mitzuteilen, dass die APP keinen Wert für einen bestimmten Parameter benötigt. Wenn der Benutzer dies trotzdem bereitstellt, wird er von Siri einfach ignoriert.
 
-### <a name="the-confirm-stage"></a>Die Confirm-Phase
+### <a name="the-confirm-stage"></a>Die Bestätigungsphase
 
-Die Phase bestätigen hat zwei Aufgaben:
+Die Confirm-Phase besteht aus zwei Gründen:
 
-- Siri mitteilen, das erwartete Ergebnis ein Intent-Objekt zu verarbeiten, damit Siri den Benutzer überprüfen kann, was geschehen soll.
-- Bietet einer Möglichkeit Überprüfung erforderlichen Zustände, die die Anwendung benötigen könnte, um die Anforderung vom Benutzer, z. B., dass ausreichende Geldmittel der Bank für die Zahlung für die angeforderte bereitgestellten abzuschließen.
+- Um Siri das erwartete Ergebnis der Handhabung einer Absicht mitzuteilen, damit Siri dem Benutzer mitteilen kann, was passiert.
+- Bietet eine Gelegenheit zum Überprüfen aller erforderlichen Zustände, die die APP möglicherweise benötigt, um die vom Benutzer bereitgestellte Anforderung abzuschließen, z. b. Wenn Sie über ausreichend Geld in der Bank zum Anfordern der angeforderten Zahlung verfügen.
 
-Die app bietet ein **Absicht Antwort** aus dem Schritt bestätigen, die aufgefüllt werden soll mit, wie viele Informationen der app zur Verfügung hat, sodass Siri mit dem Benutzer effektiv kommunizieren kann.
+Die APP stellt eine beabsichtigte **Antwort** aus dem Schritt "bestätigen" bereit, die mit so vielen Informationen aufgefüllt werden soll, wie die app verfügbar ist, sodass Siri Sie effektiv mit dem Benutzer kommunizieren kann.
 
-Basierend auf der Domäne und zu den Aktion-Typ, möglicherweise Siri den Benutzer zur Bestätigung, Eingabe wie z. B. vor dem Senden einer Zahlungsausgangs oder Buchung einer Tour.
+Basierend auf dem Domänen-und Aktionstyp kann Siri den Benutzer zur Bestätigung auffordern, z. b. vor dem Senden einer Zahlung oder dem Buchen einer Fahrt.
 
-### <a name="the-handle-stage"></a>Der Handle-Phase
+### <a name="the-handle-stage"></a>Die Handle-Phase
 
-Der Phase verarbeitet, ist der wichtigste Teil der Arbeit mit Intent, da es der Punkt ist, in dem die app die Anforderung des Benutzers durch Ausführen der Aufgabe, die es Sie gepostet wurde erfüllt.
+Die Handle-Phase ist der wichtigste Teil der Arbeit mit einer Absicht, da die APP die Anforderung des Benutzers erfüllt, indem Sie die Aufgabe ausführt, die Sie angefordert hat.
 
-Wie sie in der Phase zu bestätigen, muss die app so viele Informationen über das Ergebnis wie möglich bereitstellen, damit diese Siri auf Benutzer beziehen kann. Auch diese Informationen werden erhält visuell oder anderen Zeiten Siri einfach zurück an den Benutzer sprechen werden. 
+Ebenso wie in der Confirm-Phase muss die APP so viele Informationen zum Ergebnis wie möglich bereitstellen, damit Siri dies dem Benutzer zuordnen kann. Manchmal werden diese Informationen visuell oder in anderen Fällen angezeigt, in denen Siri Sie einfach an den Benutzer zurückgibt. 
 
-Möglicherweise Zeiten, wenn die app möglicherweise zusätzliche Zeit zum Verarbeiten einer angegebenen Anforderung, z. B. der Aufruf von netzwerkverzögerungen erfordern oder wenn eine live-Person zur Erfüllung der Anforderung (z. B. abschließen und Lieferung eines Auftrags oder ein Auto einbringen, um den Standort des Benutzers muss). Wenn Siri eine Antwort von der app wartet, werden angezeigt eine warten-Benutzeroberfläche für den Benutzer, der angibt, dass die app die Anforderung verarbeitet.
+Manchmal kann es vorkommen, dass die APP zusätzliche Zeit benötigt, um eine bestimmte Anforderung zu verarbeiten, z. b. Verzögerungen bei Netzwerk anrufen oder wenn eine LivePerson die Anforderung erfüllen muss (z. b. das abschließen und Versenden einer Bestellung oder das Fahren eines Fahrzeugs zum Speicherort des Benutzers). Wenn Siri auf eine Antwort von der APP wartet, wird dem Benutzer eine wartende Benutzeroberfläche angezeigt, die Sie darüber informiert, dass die APP die Anforderung verarbeitet.
 
-Im Idealfall sollte die app eine Antwort auf Siri innerhalb von zwei bis drei Sekunden höchstens bereitstellen. Wenn die app bekannt ist, dass eine bestimmte Antwort Prozess länger dauern wird, muss zum Senden einer **InProgress** Antwortcode siri. Siri informiert dem Benutzer dann, dass die app die Anforderung im Hintergrund verarbeitet und fortgesetzt wird, auch wenn sie Siri Umgebung verlassen.
+Im Idealfall sollte die APP innerhalb von zwei bis drei Sekunden höchstens eine Antwort auf Siri bereitstellen. Wenn die APP weiß, dass die Verarbeitung einer bestimmten Antwort länger dauert, muss Sie einen **InProgress** -Antwort Code an Siri senden. Siri informiert den Benutzer dann, dass die APP die Anforderung im Hintergrund verarbeitet, und auch dann, wenn Sie die SIRI-Umgebung verlassen.
 
-## <a name="adding-sirikit-to-the-app"></a>Hinzufügen von SiriKit zur App
+## <a name="adding-sirikit-to-the-app"></a>Hinzufügen von Sirikit zur APP
 
-Mit SiriKit unter iOS 10 hat Apple zwei neue Erweiterungspunkte erstellt:
+Mit dem Sirikit in ios 10 hat Apple zwei neue Erweiterungs Punkte erstellt:
 
-- **Intents-Erweiterung** : der Inhalt der app Siri bietet und führt die Aufgaben, die erforderlich sind, um alle unterstützten Absichten zu erfüllen.
-- **Intents-Benutzeroberflächenerweiterung** -bietet eine benutzerdefinierte Benutzeroberfläche, die angezeigt wird, für den Inhalt der apps innerhalb von Siri. 
+- **Intents-Erweiterung** : gibt Siri den Inhalt der APP an und führt die Aufgaben aus, die erforderlich sind, um alle unterstützten Intents zu erfüllen.
+- **Intents-Benutzeroberflächen Erweiterung** : stellt eine benutzerdefinierte Benutzeroberfläche bereit, die für den Inhalt der apps in Siri angezeigt wird. 
 
-Es gibt auch eine API zum Bereitstellen von Wörtern und Ausdrücken siri zur Unterstützung bei der Erkennung in Form von:
+Es gibt auch eine API zum Bereitstellen von Wörtern und Ausdrücken für Siri, um die Erkennung in Form von zu unterstützen:
 
-- **App-Vokabular** -Wörter und Ausdrücke, die für jeden Benutzer der app gelten.
-- **Benutzer-Vokabular** -Wörter und Ausdrücke, die für einen bestimmten app-Benutzer eindeutig sind.
+- **App-Vokabulare** Wörter und Ausdrücke, die allen Benutzern der APP gemeinsam sind.
+- **Benutzer Vokabular** : Wörter und Ausdrücke, die für einen bestimmten App-Benutzer eindeutig sind.
 
-## <a name="the-intents-extension"></a>Die Intents-Erweiterung
+## <a name="the-intents-extension"></a>Intents-Erweiterung
 
-Die Intents-Erweiterung ist verantwortlich für die wichtigsten Interaktionen zwischen der app und Siri wie folgt behandeln:
+Die Intents-Erweiterung ist für die Verarbeitung der Haupt Interaktionen zwischen der APP und Siri wie folgt verantwortlich:
 
-[![](understanding-sirikit-images/intents01.png "Die Intents-Erweiterung")](understanding-sirikit-images/intents01.png#lightbox)
+[![](understanding-sirikit-images/intents01.png "Intents-Erweiterung")](understanding-sirikit-images/intents01.png#lightbox)
 
-Die Absicht-Erweiterung kann eine oder mehrere Intents unterstützen, es ist Aufgabe des Entwicklers, entscheiden, wie sie möchten SiriKit in der app zu implementieren. Der Entwickler könnten auch eine separate Intent-Erweiterung für jeden Zweck, die verarbeitet werden müssen hinzufügen.  Dies bedeutet, dass Apple fordert an, dass der Entwickler die Anzahl der Absicht Erweiterungen beschränkt, sodass Siri nicht mehrere Prozesse, die erfordern, mehr Arbeitsspeicher und Zeit verarbeiten, die für die app geöffnet.
+Die Intent-Erweiterung kann eine oder mehrere Intents unterstützen, es ist dem Entwickler zu entscheiden, wie Sie Sirikit in der APP implementieren möchten. Der Entwickler kann auch eine separate Intent-Erweiterung für jede Absicht hinzufügen, die behandelt werden muss.  Das heißt, Apple fordert an, dass der Entwickler die Anzahl der Intent-Erweiterungen einschränkt, damit Siri nicht über mehrere Prozesse verfügt, die für die APP geöffnet sind, die mehr Arbeitsspeicher und Zeit für die Handhabung benötigen.
 
-Der Entwickler sollte auch bewusst sein, dass die Absicht-Erweiterung im Hintergrund ausgeführt werden, wird während Siri aktiv ist. Dies ermöglicht Siri aktiv für eine Konversation mit dem Benutzer während der Kommunikation weiterhin mit der Erweiterung zum Verarbeiten der Informationen über die Anforderung auszuführen.
+Der Entwickler sollte außerdem beachten, dass die Intent-Erweiterung im Hintergrund ausgeführt wird, während Siri aktiv ist. Dadurch kann Siri aktiv eine Konversation mit dem Benutzer durchführen und gleichzeitig mit der Erweiterung kommunizieren, um Informationen über die Anforderung zu verarbeiten.
 
-## <a name="privacy-and-security-considerations"></a>Datenschutz und Überlegungen zur Sicherheit
+## <a name="privacy-and-security-considerations"></a>Überlegungen zu Datenschutz und Sicherheit
 
-Apple hat großartige Maßnahmen, um sicherzustellen, dass einen Benutzer, die private Informationen sicher ist, bei der Verwendung von Siri und es sind mehrere Aktivitäten, die der Benutzer auf iOS-Geräten angemeldet sein, übernommen. Beispielsweise wird beim Anfordern einer Tour oder Zahlungsoptionen.
+Apple hat hervorragend Maßnahmen ergriffen, um sicherzustellen, dass die privaten Informationen eines Benutzers bei der Arbeit mit Siri sicher sind. Daher gibt es mehrere Interaktionen, die erfordern, dass der Benutzer auf dem IOS-Gerät angemeldet ist. Dies ist beispielsweise der Fall, wenn Sie eine Fahrt anfordern oder eine Zahlung tätigen.
 
-Darüber hinaus stehen bestimmte Verhaltensweisen, die die app dem wird auf diesem Gerät angemeldeten Benutzer beschränken möchten. In diesen Situationen kann die app Anfordern der **einschränken gesperrten** Verhalten. Dies erfolgt über eine Einstellung in der `Info.plist` Datei.
+Außerdem gibt es bestimmte Verhalten, die die APP möglicherweise auf den Benutzer beschränken möchte, der beim Gerät angemeldet ist. In diesen Fällen kann die APP die **Einschränkung beim gesperrten** Verhalten anfordern. Dies erfolgt über eine Einstellung in der `Info.plist` Datei.
 
-Die lokalen Authentifizierungs-Frameworks ist verfügbar, für die Ziel-Erweiterung, damit die app den Benutzer Informationen für die zusätzliche Authentifizierung anfordern kann, auch wenn das Gerät bereits entsperrt wird.
+Das lokale Authentifizierungs Framework ist für die beabsichtigte Erweiterung verfügbar, sodass die APP den Benutzer zur weiteren Authentifizierung auffordern kann, auch wenn das Gerät bereits entsperrt ist.
 
-Schließlich ist die Apple Pay für die Ziel-Erweiterung zur Verfügung, damit die app eine Transaktion, die Verwendung von Apple Pay abzuschließen und den integrierten Apple Pay-Blatt angezeigt, über die Siri-Schnittstelle kann wird.
+Zum Schluss ist Apple Pay für die beabsichtigte Erweiterung verfügbar, sodass die APP eine Transaktion mithilfe Apple Pay ausführen kann, und das integrierte Apple Pay Blatt wird über der Siri-Schnittstelle angezeigt.
 
-Apple darüber hinaus möchte, um sicherzustellen, dass der Benutzer weiß, wenn sie Informationen zu einer 3rd Party-app und daher den Benutzer senden **müssen** angenommen, bei den angegebenen Namen der app (wie in der app-Bundle-Anzeigename angegeben) einer Anforderung.
+Außerdem möchte Apple sicherstellen, dass die Benutzer wissen, wann Sie Informationen an eine Drittanbieter-App senden, und dass der Benutzer den spezifischen Namen der APP angeben **muss** (wie im Paket anzeigen amen der APP angegeben), wenn er eine Anforderung sendet.
 
-Wurde entwickelt, Apple Siri um natürliches und Fließendes Konversationen mit dem Benutzer und aus diesem Grund durchzuführen, den Namen der app-Bundle kann in vielen Wortarten, verwendet werden, wo sie sich auf natürliche Weise in die Anforderung des Benutzers passen.
+Apple hat SIRI entworfen, um natürliche, fließende Konversationen mit dem Benutzer durchzuführen, und aus diesem Grund kann der Paketname der app in vielen Teilen der Sprache verwendet werden, und zwar unabhängig davon, wo Sie sich auf natürliche Weise in der Anforderung des Benutzers einfügt.
 
-Eine der Probleme, die Benutzer ausführen, werden ist "den Namen der app, verbify" heißt, wobei der Name der app und verwenden ihn als Verb in einer Anforderung. Z. B. *"MonkeyChat Bobo war eine großartige Bananen."*
+Eine der häufigsten Aufgaben besteht darin, den Namen der APP zu "verbify", d. h., den APP-Namen zu übernehmen und ihn als Verb in einer Anforderung zu verwenden. Beispiel: *"monkeychat Bobo, das war großartig Bananen."*
 
-## <a name="the-intents-ui-extension"></a>Die Intents-Benutzeroberflächenerweiterung
+## <a name="the-intents-ui-extension"></a>Die Intents-Benutzeroberflächen Erweiterung
 
-Die Intents-Benutzeroberflächenerweiterung die Möglichkeit, app Benutzeroberfläche und in die Oberfläche Siri branding anzuzeigen, und stellen die Verbindung mit der app können Benutzer. Mit dieser Erweiterung kann die app sowohl die Marke als auch visual und andere Informationen in die Aufzeichnung erhöhen.
+Die Intents-Benutzeroberflächen Erweiterung bietet die Möglichkeit, die Benutzeroberfläche und das Branding der app in die Siri-Erfahrung zu bringen und die Benutzer mit der App verbunden zu gestalten. Mit dieser Erweiterung kann die APP die Marke sowie visuelle und andere Informationen in das Transkript einbringen.
 
-[![](understanding-sirikit-images/intents02.png "Beispielausgabe für die Intents-Benutzeroberflächenerweiterung")](understanding-sirikit-images/intents02.png#lightbox)
+[![](understanding-sirikit-images/intents02.png "Beispiel Intents-Benutzeroberflächen-Erweiterungs Ausgabe")](understanding-sirikit-images/intents02.png#lightbox)
 
-Die Intents-Benutzeroberflächenerweiterung gibt stets eine `UIViewController` und die app kann alles innerhalb der View-Controller, z. B. zeigt zusätzliche Informationen, die die erste Antwort überschreitet gewünscht hinzufügen. Die Intents-Benutzeroberfläche können Benutzer auch aktualisieren, mit dem Status eines lang andauernden-Ereignisses, z. B. wie lange es, eine Tour, die gemeinsame Nutzung von Autos dauert, um ihren Speicherort zu erreichen.
+Die Intents-Benutzeroberflächen Erweiterung gibt immer `UIViewController` eine zurück, und die APP kann alle Elemente hinzufügen, die Sie im Ansichts Controller anweist, z. b. zusätzliche Informationen, die über die erste Antwort hinausgehen. Die Intents-Benutzeroberfläche kann den Benutzer auch mit dem Status eines Ereignisses mit langer Laufzeit aktualisieren, z. b. wie viel länger eine Fahrt Freigabe Wagen hat, um Ihren Standort zu erreichen.
 
-Die Intents-Benutzeroberflächenerweiterung immer zusammen mit anderem Inhalt Siri, z. B. die app-Symbol und Name am oberen Rand der Benutzeroberfläche angezeigt oder wird, basierend auf der Absicht, Schaltflächen (z. B. Sende- oder "Abbrechen") am unteren Rand angezeigt werden können.
+Die Intents-Benutzeroberflächen Erweiterung wird immer zusammen mit anderen Siri-Inhalten angezeigt, z. b. dem App-Symbol und dem Namen oben auf der Benutzeroberfläche, oder auf der Grundlage der Absicht werden möglicherweise Schaltflächen (z. b. "Senden" oder "Abbrechen") unten angezeigt.
 
-Es gibt einige Fälle, in dem die app die Informationen ersetzen können, die Siri anzeigt, die dem Benutzer standardmäßig wie z. B. messaging oder zugeordnet, in dem die app mit einem maßgeschneidert an die app die standarderfahrung ersetzen können.
-
-> [!IMPORTANT]
-> Es ist zwar möglich, interaktive Elemente hinzufügen, wie z. B. `UIButtons` oder `UITextFields` auf der Absicht-Benutzeroberflächenerweiterung `UIViewController`, diesen sind streng verboten, als die beabsichtigte Benutzeroberfläche im nicht interaktiven und der Benutzer ist nicht in der Lage, Sie mit ihnen interagieren.
-
-Es ist völlig optional für die app eine Benutzeroberflächenerweiterung für beabsichtigte Lesevorgänge angeben, da Siri einen Standardsatz der Benutzeroberfläche für jeden beabsichtigten Typ enthält. Darüber hinaus stehen die Intents UI-Schnittstellen nur für bestimmte, dass Intents, dass Apple angesehen wird für den Benutzer hilfreich wäre.
-
-## <a name="adding-sirikit-vocabulary"></a>Hinzufügen von SiriKit-Vokabular
-
-Der letzte Schritt beim Implementieren von SiriKit liegt innerhalb der app durch die Bereitstellung der erforderlichen Vokabular. Viele Apps besitzen eindeutige Möglichkeiten zur Beschreibung der Informationen für den Benutzer und dem eindeutigen Möglichkeiten, dass der Benutzer Informationen an die app bereitstellt.
-
-Aus diesem Grund erfordert Siri der app Unterstützung zu erhalten, die Wörter und Ausdrücke, die eindeutig für die app zu verstehen. Einige der folgenden Meldungen wird Teil der app, sodass alle Benutzer kennen und sie verstehen. Andere werden noch für einen bestimmten Benutzer der app eindeutig sein.
-
-### <a name="app-specific-vocabulary"></a>App-spezifische Vokabular
-
-Der App-spezifische Programmierterminologie definiert die bestimmte Wörter und Ausdrücke an, die bekannt sind, an alle Benutzer der app, wie z. B. Fahrzeugtypen oder Trainings-Namen. Da diese Teil der Anwendung sind, werden sie in definiert eine `AppIntentVocabulary.plist` -Datei als Teil des Haupt-app-Pakets. Darüber hinaus sollte diese Wörter und Ausdrücke lokalisiert werden.
-
-Es gibt mehrere Teile eines Vokabulars `AppIntentVocabulary.plist` Datei:
-
-- **Beispiel-App verwendet** – diese bieten eine Reihe von gängigen Anwendungsfällen, für die Anforderungen, die der Benutzer der app vornehmen können. Zum Beispiel: *"Starten einer Herausforderung mit MonkeyFit".*
-- **Parameter** – diese bieten eine Reihe von nicht standardmäßigen Parametertypen, die speziell auf die app. Z. B. Trainings Namen für die MonkeyFit-app. Diese bestehen aus:
-    - **Ausdruck** -ermöglicht der app, die eindeutigen Begriffe für die app zu definieren. Zum Beispiel: der Typ "Bananarific" Trainings, für die MonkeyFit-app. 
-    - **Aussprache** -Aussprache Hinweise siri als eine einfache lautrechtschreibung nach einem bestimmten Ausdruck zu erhalten. Beispiel: "Ba Nana ri Einzelschritt".
-    - **Beispiel** -enthält ein Beispiel für die Verwendung des angegebenen Ausdrucks in der app. Z. B. *"Starten Sie ein Bananarific in MonkeyFit"*.
-
-Weitere Informationen finden Sie unter Apple [App Vokabular Datei Formatreferenz für Blobüberwachungsprotokolle](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CustomVocabularyKeys.html#//apple_ref/doc/uid/TP40016875-CH10-SW1).
-
-### <a name="user-specific-vocabulary"></a>Bestimmte Benutzer-Vokabular
-
-Benutzer spezifische Programmierterminologie wird Geben Sie Wörter oder Ausdrücke, die für einzelne Benutzer der app eindeutig sind. Diese werden zur Laufzeit aus der Haupt-app (nicht der App-Erweiterungen) als einen geordneten Satz von Bedingungen, die in einer wichtigsten Nutzung Priorität für die Benutzer mit den wichtigsten Begriffen am Anfang der Liste sortiert angegeben werden.
-
-Sehen Sie sich das Beispiel für die oben aufgeführten MonkeyChat-app. MonkeyChat behält es sich um eine Liste aller Kontakte des Benutzers, die sie siri über spezifische Programmierterminologie Benutzer gesendet wird. Es führt auch eine Liste von 10 letzten Kontakten, die der Benutzer Nachrichten hat, und eine Reihe von Favoriten-Kontakte für jeden Benutzer ist. In diesem Beispiel sollte die bevorzugten Kontakte zu Beginn unserer Benutzer spezifische Programmierterminologie, gefolgt von der letzten Kontakten klicken Sie dann die restlichen Kontakte des Benutzers sein.
-
-Die folgenden Arten von Informationen werden vom Benutzer spezifische Programmierterminologie unterstützt:
-
-- Wenden Sie sich an Namen.
-- Trainings-Namen.
-- Fotoalbum Namen.
-- Foto-Schlüsselwörter.
-
-Wenn die app auf dem iOS-Adressbuch basiert, wird die app keine Aktion ausführen, da diese Informationen bereits siri verfügbar sind. Die app benötigt nur Kontaktnamen bereitstellen, verfügt die app einen eigenen eindeutigen Datenbanknamen von Kontakten.
-
-Geben Sie beim Entwerfen des Vokabulars nur die erforderlichen Werte, die die Benutzer kennen und kümmern. Vermeiden Sie die Bereitstellung von Informationen wie z.B. Telefonnummern oder e-Mail-Adressen.
-
-Die app muss außerdem Siri sofort zu aktualisieren, wenn Benutzer spezifische programmierterminologie ändert. Benutzer zum Anfordern von Informationen von Siri den Zeitpunkt daran gewöhnt sind, die sie für ihre iOS-Gerät hinzugefügt wurde. Z. B. wenn der Benutzer einen neuen Kontakt in der app hinzufügt, sendet diese Informationen siri, sobald der Benutzer speichert.
-
-Noch wichtiger ist, dass die app _müssen_ Löschen von Daten aus dem Vokabular Siri sofort, da ein Benutzer verärgern werden konnte, wenn sie eine Information gelöscht, aber Siri noch es Stunden oder Tage später erkennt wurde.
+Es gibt einige Fälle, in denen die APP die Informationen ersetzen kann, die von Siri standardmäßig für den Benutzer angezeigt werden, z. b. Nachrichten oder Zuordnungen, bei denen die APP die Standardbenutzer Anwendung ersetzen kann, die auf die APP zugeschnitten ist.
 
 > [!IMPORTANT]
-> Die app sollte entfernt sämtliche Benutzer spezifische Programmierterminologie Siri, wenn der Benutzer zum Zurücksetzen der app auswählt oder wenn sie abmelden.
+> Obwohl es möglich ist, interaktive Elemente wie `UIButtons` oder `UITextFields` zu den Intent UI- `UIViewController`Erweiterungen hinzuzufügen, sind diese als beabsichtigte Benutzeroberfläche in nicht interaktiv unzulässig, und der Benutzer ist nicht in der Lage, mit Ihnen zu interagieren.
 
-## <a name="sirikit-permissions"></a>SiriKit-Berechtigungen
+Es ist völlig optional, dass die APP eine beabsichtigte Benutzeroberflächen Erweiterung bereitstellt, da Siri einen Standardsatz von Benutzeroberflächen für jeden Intent-Typ enthält. Außerdem sind die Intents UI-Schnittstellen nur für bestimmte Intents verfügbar, die von Apple als hilfreich für den Benutzer angesehen werden.
 
-Das letzte Stück von SiriKit basiert auf Berechtigungen. Vergleichbar mit dem andere Funktionen der e/a (z. B. Fotos, Kamera oder Kontakte) verwenden, müssen Benutzer die explizite Berechtigung für die Kommunikation mit Siri-app zu gewähren.
+## <a name="adding-sirikit-vocabulary"></a>Hinzufügen von Sirikit-Vokabular
 
-Die app ist eine Zeichenfolge, welche Informationen sie siri bieten und geben Sie einen Grund, warum der Benutzer diesen Zugriff zu gewähren sollten bereitstellen. 
+Der letzte Teil der Implementierung von "Sirikit" liegt in der app durch Bereitstellen des erforderlichen Vokabulars. Viele apps verfügen über einzigartige Möglichkeiten, Informationen für den Benutzer zu beschreiben, und es gibt eindeutige Möglichkeiten, wie der Benutzer der APP Informationen bereitstellt.
 
-Apple empfiehlt, dass die app vom Benutzer Siri das erste Mal verwenden, der Benutzer die app wird geöffnet, nachdem sie auf iOS 10 aktualisiert haben, Berechtigung anfordern muss. Dies ist, damit Benutzer, über die Integration von Siri wissen und vorab genehmigte Verwendung können, bevor sie mit die erste Anforderung vornehmen.
+Aus diesem Grund benötigt Siri die Unterstützung der APP, um die Wörter und Ausdrücke zu verstehen, die für die APP eindeutig sind. Einige dieser Ausdrücke sind Teil der APP, sodass jeder Benutzer Sie kennt und versteht. Andere werden jedoch für einen bestimmten Benutzer der APP eindeutig sein.
 
-## <a name="sirikit-and-maps"></a>SiriKit und Zuordnungen
+### <a name="app-specific-vocabulary"></a>App-spezifisches Vokabular
 
-SiriKit ist ein integraler Bestandteil der e/a und nutzt die größeren Intents-Framework, das auf iOS 10 hinzugefügt. Die Intents-Framework soll allgemeiner und gemeinsam genutzter Aktionen und Intents zusammen mit anderen Teilen des Systems nutzen.
+Das App-spezifische Vokabular definiert die Wörter und Ausdrücke, die allen Benutzern der APP, z. b. Fahrzeugtypen oder Trainings Namen, bekannt sein werden. Da diese Teil der Anwendung sind, werden Sie als Teil des Haupt `AppIntentVocabulary.plist` App Bundle in einer Datei definiert. Außerdem sollten diese Wörter und Ausdrücke lokalisiert werden.
 
-Die Intents-Framework nur Siri Integration hinausgeht und bietet andere Funktionen wie z. B. Kontakte-Integration, in dem die app die Standard-Telefonie oder die messaging-app für bestimmte Kontakte werden kann. Intent-Elemente bieten auch nahtlose Integration in CallKit VOIP am besten mögliche Benutzern bereitstellen.
+Eine Vokabulardatei `AppIntentVocabulary.plist` besteht aus mehreren Teilen:
 
-Die Karten-app unter iOS 10 wurde hinzugefügt, Funktionen, z. B. der Fahrt Freigabe, in denen der Benutzer auf eine Tour direkt in der Maps-Benutzeroberfläche buchen können. SiriKit bietet einen allgemeinen Erweiterungspunkt mit Karten aus, sodass Fahrt freigeben (und andere) Intents Siri und Zuordnungen gemeinsam genutzt werden können. 
+- **Beispiel-App-Verwendung** : Diese stellen eine Reihe allgemeiner Anwendungsfälle für die Anforderungen bereit, die der Benutzer für die APP erstellen kann. Beispiel: *"Starten Sie ein Training mit monkeyfit".*
+- **Parameter** : Diese stellen eine Reihe von nicht standardmäßigen Parametertypen bereit, die für die APP spezifisch sind. Beispielsweise Trainings Namen für die monkeyfit-app. Diese umfassen Folgendes:
+    - **Ausdruck** : ermöglicht der APP, eindeutige Begriffe für die APP zu definieren. Beispiel: der "bananarific"-traintyp für die monkeyfit-app. 
+    - **Aussprache** : gibt die Ausrufe Hinweise an Siri als einfache phonetische Schreibweise für einen gegebenen Ausdruck an. Beispiel: "BA Nana RI FIC".
+    - **Beispiel** : gibt ein Beispiel für die Verwendung des angegebenen Ausdrucks in der APP an. Beispiel: *"Start a bananarific in monkeyfit"* .
 
-Dies bedeutet, dass die app die SiriKit Erweiterungen beschlossen, auch die Integration von Maps kostenlos abgerufen werden sollen. 
+Weitere Informationen finden Sie in der APP- [vokabulardateiformatreferenz](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CustomVocabularyKeys.html#//apple_ref/doc/uid/TP40016875-CH10-SW1)von Apple.
 
-## <a name="designing-a-great-siri-experience"></a>Entwerfen einer überzeugenden Umgebung für Siri
+### <a name="user-specific-vocabulary"></a>Benutzerspezifisches Vokabular
 
-Ein optimales Benutzererlebnis entwerfen, wenn Sie eine app in Siri integrieren unterscheidet sich das Entwerfen einer tollen app-Benutzeroberfläche zur Verfügung. Im Gegensatz zu normalen Situationen, in denen der Benutzer interagiert mit der app, die direkt auf, Bildschirm, wenn es mithilfe von Siri sind oft Wenn keine Benutzeroberfläche sichtbar ist. Z. B. wenn der Benutzer gestarteten die Konversation mit *"Hey Siri"*.
+Das benutzerspezifische Vokabular dient zum Bereitstellen von Wörtern oder Ausdrücken, die für einzelne Benutzer der APP eindeutig sind. Diese werden zur Laufzeit von der Haupt-app (nicht von den App-Erweiterungen) als geordneter Satz von Begriffen bereitgestellt, die mit einer signifikantesten Nutzungs Priorität für die Benutzer geordnet sind, mit den wichtigsten Begriffen am Anfang der Liste.
 
-### <a name="how-siri-helps-the-developer"></a>Wie Siri dabei hilft, den Entwickler
+Sehen Sie sich das Beispiel der oben dargestellten monkeychat-APP an. Monkeychat speichert eine Liste aller Kontakte des Benutzers, die über das benutzerspezifische Vokabular an Siri gesendet werden. Außerdem wird eine Liste der 10 neuesten Kontakte angezeigt, die für den Benutzer angezeigt werden, und er verfügt über eine Reihe von bevorzugten Kontakten für jeden Benutzer. In diesem Beispiel sollten sich die bevorzugten Kontakte am Anfang des benutzerspezifischen Vokabulars befinden, gefolgt von den aktuellen Kontakten und den restlichen Kontakten des Benutzers.
 
-Beim Entwerfen einer app-Interaktionen mit Siri wird die app erstellen eine *Gesprächsschnittstelle*, d. h. des Kontexts wird abgeleitet von der Konversation, die von Siri mit dem Benutzer in der app-Namen hat.
+Die folgenden Informationstypen werden von einem benutzerspezifischen Vokabular unterstützt:
 
-In Ermangelung als visuelle Referenz der Benutzer muss die Informationen in ihren Köpfen Anzeige von verfolgt. Aus diesem Grund stellt Siri den bare mindestens erforderlichen Informationen für die Aufgabe, dass der Benutzer wird zum ausführen möchte.
+- Kontaktnamen.
+- Trainings Namen.
+- Foto-Album-Namen.
+- Foto Schlüsselwörter.
 
-Die Gesprächsschnittstelle wird während der Konversation aus der Benutzer- und Siri von Fragen und Antworten für den strukturiert. Daher ist es wichtig, zu überlegen, wie Siri Fragen stellt und reagiert, wenn diese Schnittstelle zu entwerfen.
+Wenn die APP auf dem IOS-Adressbuch basiert, muss die APP keine Maßnahmen ergreifen, da diese Informationen bereits für Siri verfügbar sind. Die APP muss nur Kontaktnamen bereitstellen, wenn die APP über eine eigene, eindeutige Kontaktdatenbank verfügt.
 
-Im folgenden Beispiel für den Benutzer erstellt eine Nachricht Siri reagieren möglicherweise mit der Frage, *"Zum Senden bereit?"* . Der Benutzer kann auf viele verschiedene Arten reagieren, wie z. B. *"Senden"*, *"Abbrechen"* oder sogar etwas völlig auf diese Frage nicht verbunden. Unabhängig davon, wie die Konversation funktioniert wird Siri für die app behandeln, und nur senden sie die relevante Informationen sobald diese verfügbar werden.
+Stellen Sie beim Entwerfen des Vokabulars nur die erforderlichen Werte bereit, die den Benutzern bekannt und wichtig sind. Vermeiden Sie die Angabe von Informationen wie Telefonnummern oder e-Mail-Adressen.
 
-Es gibt verschiedene Möglichkeiten, ein Benutzer eine Konversation mit Siri initiieren kann:
+Die APP muss Siri auch umgehend aktualisieren, wenn das benutzerspezifische Vokabular geändert wird. Benutzer sind daran gewöhnt, Informationen von Siri anzufordern, sobald Sie zu Ihrem IOS-Gerät hinzugefügt wurden. Wenn der Benutzer beispielsweise einen neuen Kontakt in der APP hinzufügt, senden Sie diese Informationen an Siri, sobald Sie vom Benutzer gespeichert werden.
 
-- Durch Auswählen des Geräts ein, drücken die Schaltfläche "Start". In diesem Fall werden Siri Weitere visuellen Schnittstellen und weniger mündlichen Antworten angezeigt.
-- Mit den Worten *"Hey Siri"* und Starten einer Konversation freie Hand. In diesem Fall werden Siri weniger visual und mehr mündliche.
-- Verwenden von Barrierefreiheitsfunktionen z. B. Bluetooth aktiviert hören Hilfsmittel, in denen die Benutzeroberfläche für einen Benutzer mit speziellen Anforderungen zugeschnitten ist.
-- Mithilfe von Autos wiedergeben, in denen der Benutzer benötigt ihre Aufmerksamkeit zu, konzentriert sich einbringen ablenkungen auf ein Minimum zu halten.
+Noch wichtiger ist, dass die APP Informationen aus dem Siri-Vokabular umgehend löschen _muss_ , da ein Benutzer verärgert sein könnte, wenn er eine Information gelöscht hat, aber Siri noch Stunden oder Tage später erkannt hat.
 
-### <a name="how-the-developer-helps-siri"></a>Wie kann Entwickler für Siri
+> [!IMPORTANT]
+> Die APP sollte alle benutzerspezifischen Vokabulare aus Siri entfernen, wenn der Benutzer sich für das Zurücksetzen der APP entscheidet oder wenn Sie sich abmelden.
 
-Wenn Sie eine app mit Siri integrieren zu können, muss der Entwickler oft diese Integration zu testen und stellen Sie sicher, dass sie viele verschiedene Anforderungen werden aufgefordert, für denselben Speicherbereich Informationen "oder" Task in so viele unterschiedliche Weisen wie möglich vornehmen.
+## <a name="sirikit-permissions"></a>Sirikit-Berechtigungen
 
-Da nicht zwei Personen, die gleichermaßen denken, ist es wichtig, dass so viele verschiedene Betatester möglichst optimieren können die Integration von Siri erhält. Benutzer können Informationen anfordern oder Anforderungen in die Möglichkeiten des Entwicklers nie jedoch der und diese Feinabstimmung helfen sicherzustellen, dass die umfangreichste Gruppe von Benutzern eine überzeugenden Umgebung, die mit ihrer app mit Siri.
+Der letzte Teil von Sirikit ist um Berechtigungen herum zentriert. Wie bei anderen Features von IOS (z. b. Fotos, Kameras oder Kontakten) müssen Benutzer der APP explizit die Berechtigung erteilen, mit Siri zu kommunizieren.
 
-In verschiedenen Situationen und Umgebungen testen. Die Konversationen mit Siri in allen wie möglich, stellen Sie sicher, dass diese Konversationen fließend bleiben und natürliche zu initiieren. Testen Sie in die Speicherorte, in denen der Benutzer sehr wahrscheinlich die app, wie in einem Rechenzentrum weiter aufzurüsten Fitnessstudios verwenden würde.
+Die APP kann eine Zeichenfolge bereitstellen, die festlegt, welche Informationen für Siri bereitgestellt werden, und gibt einen Grund dafür an, warum der Benutzer diesen Zugriff gewähren sollte. 
 
-Stellen Sie sicher, dass die app alle Informationen bereitstellt, dass Siri ordnungsgemäß die Anforderung und das Ergebnis für den Benutzer darstellt muss. Dies gilt insbesondere bei Verwendung von Siri in eine praktische kostenlose Situation.
+Apple schlägt vor, dass die APP die Berechtigung des Benutzers für die Verwendung von Siri anfordern soll, wenn der Benutzer die APP zum ersten Mal öffnet, nachdem er auf IOS 10 aktualisiert wurde. So wissen die Benutzer über die Siri-Integration und können die Nutzung vorab genehmigen, bevor Sie Ihre erste Anforderung stellen.
 
-### <a name="siri-design-guidelines"></a>Siri-Entwurfsrichtlinien
+## <a name="sirikit-and-maps"></a>Sirikit und Maps
 
-Denken Sie immer daran, dass Siri im Auftrag von der app eine Konversation mit der Benutzer hat. Der Entwickler kann nicht sicher, dass diese Konversation bleibt, wie fließende und natürlich wie möglich ist.
+Sirikit ist ein integraler Bestandteil von IOS und nutzt das größere Intents-Framework, das IOS 10 hinzugefügt wird. Das Intents-Framework wurde entwickelt, um gemeinsame und gemeinsam genutzte Aktionen und Intents mit anderen Teilen des Systems gemeinsam zu nutzen.
 
-Wie bei jeder wichtige Konversation auch, muss der Entwickler, um Folgendes sicherzustellen:
+Das Intents-Framework geht über die Siri-Integration hinaus und bietet weitere Features, wie z. b. die Integration von Kontakten, bei denen die APP als Standard telefonieapp oder Messaging-App für bestimmte Kontakte Intents bieten außerdem eine umfassende Integration in callkit, um Benutzern die beste VoIP-Darstellung zu bieten.
 
-- Die app für die Konversation vorbereitet ist.
-- Dass die app lauscht, genau wie der Benutzer zu erreichen versucht.
-- Dass die app die entsprechenden Fragen zu den entsprechenden Zeitpunkten fordert.
-- Dass die app auf die Anforderung mit den Informationen, die der Benutzer gesucht wird reagiert.
+Die Maps-app in ios 10 hat Features wie die Fahrt Freigabe hinzugefügt, mit denen der Benutzer direkt in der kartenbenutzer Oberfläche eine Fahrt buchen kann. Das Sirikit bietet einen gemeinsamen Erweiterungs Punkt mit Maps, sodass Fahrt Freigabe (und andere) Intents von Siri und Maps gemeinsam genutzt werden können. 
 
-#### <a name="preparing-for-the-conversation"></a>Vorbereiten für die Konversation
+Dies bedeutet, dass, wenn die APP die Sirikit-Erweiterungen übernommen hat, auch die Maps-Integration kostenlos ist. 
 
-Die erste, was zu beachten ist, dass die Benutzer der app genau wie der Entwickler sind nicht. Sie können die von verschiedenen Hintergründen, unterschiedliche Sprachen sprechen oder besondere Anforderungen haben, bei der Arbeit mit der app stammen.
+## <a name="designing-a-great-siri-experience"></a>Entwerfen einer hervor artigen Siri-Darstellung
 
-Darüber hinaus, da der Entwickler entworfen und die app, verfügen sie tiefgreifende, sehr gute Kenntnisse über die app und die internen Abläufe und Funktionen, die ein typischer Benutzer keinen hat. Daher kann der Entwickler Anforderung von Siri anders als ein normaler Benutzer bitten.
+Das Entwerfen einer hervorragend Benutzeroberfläche bei der Integration einer APP in Siri unterscheidet sich vom Entwerfen einer großartigen App-Benutzeroberfläche. Im Gegensatz zu normalen Situationen, in denen der Benutzer direkt auf dem Bildschirm mit der APP interagiert, gibt es bei Verwendung von Siri viele Male, wenn überhaupt keine visuelle Oberfläche sichtbar ist. Beispielsweise, wenn der Benutzer die Konversation mit *"Hey Siri"* gestartet hat.
 
-Daher ist es ist wichtig, wie viele verschiedene Personen wie möglich mit der app über Siri interagieren. Benutzer können Anforderungen an die app über Siri vornehmen, die der Entwickler nie mehr Gedanken hat, oder in Methoden, die der Entwickler nicht berücksichtigt hat.
+### <a name="how-siri-helps-the-developer"></a>Wie Siri dem Entwickler hilft
 
-#### <a name="ensure-the-app-is-a-good-listener"></a>Stellen Sie sicher, dass die App befindet sich eine gute Listener
+Beim Entwerfen der Interaktionen einer APP mit Siri erstellt die APP eine *Konversation-Schnittstelle*. Dies bedeutet, dass der Kontext von der Konversation abgeleitet ist, die Siri mit dem Benutzer im Auftrag der APP aufweist.
 
-Der Entwickler muss sicherstellen, dass die app ein guter Listener ist und erhält die Einzelheiten der Konversation, die der Benutzer die Erwartungen zu erfüllen. Aber es ist auch möglich, dass sie nicht alle Informationen eingegeben haben könnte, dass der app erforderlich sind, um die angeforderte Aufgabe zu erzielen.
+Wenn kein visueller Verweis vorhanden ist, muss der Benutzer die Informationen nachverfolgen, die im Kopf angezeigt werden. Aus diesem Grund stellt Siri die minimalen Informationen dar, die erforderlich sind, um die Aufgabe zu erfüllen, die der Benutzer ausführen möchte.
 
-Es gibt mehrere Möglichkeiten, die app diese Situation behandeln kann:
+Die Konversation-Schnittstelle wird durch die Fragen und Antworten von Benutzern und Siri während der Konversation strukturiert. Daher ist es wichtig zu berücksichtigen, wie Siri Fragen stellt und antwortet, wenn diese Schnittstelle entworfen wird.
 
-- **Wählen Sie ein geeigneter Standard für den Missing Value** – beispielsweise eine Fahrt Freigabe-app kann auf aktuellen Standort des Benutzers standardmäßig, wenn sie nicht angegeben haben, in dem sie von abgeholt werden wollten.
-- **Stellen Sie eine wohl begründete Vermutung** -verwenden spezielle Informationen, die für den Benutzer die app gesammelt wurden, die app möglicherweise Hersteller und das wohl begründete Vermutung anzustellen die fehlenden Informationen, z. B. eine fehlende Mobiltelefonnummer von Kontaktinformationen des Benutzers eingeben. Allerdings sollte darauf geachtet werden, z. B. auswählen, die teuerste Option usw., bösen überraschungen zu vermeiden.
-- **Weitere Informationen auffordern** -die app kann Siri benutzeraufforderung für den fehlenden Wert verfügen. Der Schlüssel ist jedoch die Konversationen einfach und präzise beibehalten. Benutzer werden schnell frustriert, wenn sie mehrere Fragen zum Erreichen ihrer Anforderung haben.
-- **Missverständnisse ordnungsgemäß behandeln** – der Benutzer kann einen Wert, der die app wurde nicht erwartet oder, die es im angegebenen Kontext verarbeiten kann nicht, angeben. Stellen Sie sicher, dass die app diese Situation für den Benutzer auf eine Weise verknüpft, die es einfach zu verstehen und zu korrigieren ist.
+Nehmen Sie im folgenden Beispiel an, dass der Benutzer, der eine Nachricht erstellt, mit der Frage *"bereit zum Senden"* antwortet. Der Benutzer kann auf viele verschiedene Arten Antworten, z. b. *"senden*, *Abbrechen* " oder sogar etwas, das mit dieser Frage nicht verknüpft ist. Unabhängig davon, wie die Konversation abgespielt wird, verarbeitet Siri Sie für die APP und sendet Ihnen nur die relevanten Informationen, sobald Sie verfügbar wird.
 
-Wenn die app mit einem Wert, die zweifelhaft ist angezeigt wird, ist die bevorzugte Methode, dies zu verarbeiten, haben Sie Siri, die der Benutzer zur Bestätigung aufgefordert. Z. B. *"Meinten Sie Bobo großartigen?"* , die sie mit der eine einfache Ja oder Nein-Antwort Antworten können.
+Es gibt verschiedene Möglichkeiten, wie ein Benutzer eine Konversation mit Siri initiieren kann:
 
-Wenn es eine Situation ist, in denen mehrere mögliche Optionen für einen einzelnen Wert handeln, ist zur mehrdeutigkeitsvermeidung die bevorzugte Behandlungsmethode. In diesem Fall kann Siri den Benutzer mit bis zu zehn möglichen Optionen zur Auswahl aufgefordert. Zum Beispiel:
+- Wenn Sie das Gerät auswählen, klicken Sie auf die Start Schaltfläche. In dieser Situation stellt Siri mehr visuelle Schnittstellen und weniger verbale Antworten dar.
+- Indem Sie *"Hey Siri"* sagen und eine Hand freie Konversation beginnen. In dieser Situation ist Siri weniger visuell und eher verbal.
+- Verwendung von Barrierefreiheits Funktionen wie Bluetooth-aktivierten Hörhilfen, bei denen die Benutzeroberfläche für einen Benutzer mit besonderen Anforderungen angepasst wird.
+- Die Verwendung von Auto spielen, bei denen der Benutzer ihre Aufmerksamkeit behalten muss, konzentriert sich auf die Verwendung von Ablenkungen.
+
+### <a name="how-the-developer-helps-siri"></a>Unterstützung von Siri durch den Entwickler
+
+Wenn Sie eine app in Siri integrieren, muss der Entwickler diese Integration häufig testen und sicherstellen, dass Sie viele verschiedene Anforderungen ausführen, indem er die gleichen Informationen oder Aufgaben auf so viele verschiedene Arten wie möglich anfordert.
+
+Da keine zwei Personen gleich sind, ist es wichtig, dass der Entwickler so viele verschiedene Betatester wie möglich erhält, um die Siri-Integration zu optimieren. Benutzer Fragen sich möglicherweise nach Informationen oder stellen Anforderungen auf eine Weise ein, die der Entwickler niemals hat. Diese Feinabstimmung kann dabei helfen, sicherzustellen, dass die breiteste Gruppe von Benutzern eine gute benutzerfreundliche Benutzeranwendung mit Siri verwendet.
+
+Testen Sie in unterschiedlichen Situationen und Umgebungen. Initiieren Sie die Konversationen mit Siri auf alle möglichen Möglichkeiten, um sicherzustellen, dass diese Konversationen fließend und natürlich bleiben. Testen Sie an Standorten, an denen der Benutzer die APP eher wie in einem überfüllten Fitnessgerät verwenden würde.
+
+Stellen Sie sicher, dass die APP alle Informationen bereitstellt, die Siri benötigt, damit die Anforderung und das Ergebnis für den Benutzer ordnungsgemäß dargestellt werden. Dies trifft vor allem dann zu, wenn SIRI in einer praktischen Situation genutzt wird.
+
+### <a name="siri-design-guidelines"></a>Siri-Entwurfs Richtlinien
+
+Denken Sie immer daran, dass Siri über eine Konversation mit dem Benutzer im Auftrag der App verfügt. Der Entwickler möchte sicher sein, dass diese Konversation so reibungslos und natürlich wie möglich bleibt.
+
+Wie bei jeder wichtigen Konversation muss der Entwickler Folgendes sicherstellen:
+
+- , Dass die APP für die Konversation vorbereitet ist.
+- Die APP lauscht genau darauf, was der Benutzer zu erreichen versucht.
+- Die APP fragt die entsprechenden Fragen zu den entsprechenden Zeiten ab.
+- , Dass die APP auf die Anforderung mit den vom Benutzer gewünschten Informationen antwortet.
+
+#### <a name="preparing-for-the-conversation"></a>Vorbereiten der Konversation
+
+Als erstes sollten Sie daran denken, dass die Benutzer der APP nicht genau wie der Entwickler arbeiten. Sie können aus unterschiedlichen Hintergründen stammen, verschiedene Sprachen sprechen oder besondere Anforderungen haben, wenn Sie mit der APP arbeiten.
+
+Seit dem Entwickler, der die APP entworfen und erstellt hat, haben Sie außerdem Tiefe, intime Kenntnisse der APP und ihrer inneren Abläufe und Funktionen, die ein typischer Benutzer nicht hat. Der Entwickler kann die Anforderung von Siri anders als ein normaler Benutzer anfordern.
+
+Aus diesem Grund ist es wichtig, dass so viele verschiedene Personen wie möglich über Siri mit der APP interagieren. Benutzer können mithilfe von Siri Anforderungen an die APP stellen, die der Entwickler nie in Erwägung gezogen hat.
+
+#### <a name="ensure-the-app-is-a-good-listener"></a>Stellen Sie sicher, dass die APP ein guter Listener ist.
+
+Der Entwickler muss sicherstellen, dass die APP ein guter Listener ist und die Besonderheiten der Konversation erhält, die die Erwartungen der Benutzer erfüllen. Es ist jedoch auch möglich, dass Sie möglicherweise nicht alle Informationen bereitgestellt haben, die die APP zum Erreichen der angeforderten Aufgabe benötigt.
+
+Es gibt mehrere Möglichkeiten, wie die APP diese Situation verarbeiten kann:
+
+- **Wählen Sie einen guten Standardwert für den fehlenden Wert** aus, z. b. kann eine Fahrt Freigabe-App standardmäßig auf den aktuellen Speicherort des Benutzers festgelegt werden, wenn Sie nicht angeben, von wo Sie abgerufen werden sollen.
+- **Erstellen Sie einen fundierten** Schätzwert, der bestimmte Informationen verwendet, die die APP für den Benutzer gesammelt hat. die APP ist möglicherweise in der Lage, die fehlenden Informationen zu erraten, z. b. das Ausfüllen einer fehlenden mobilen Nummer aus den Kontaktinformationen des Benutzers. Sie sollten jedoch darauf achten, dass Sie unerwartete Überraschungen vermeiden, wie z. b. das Auswählen der teuersten Option usw.
+- **Aufforderung zur Eingabe von weiteren Informationen** : die APP kann den Benutzer von Siri auffordern, den fehlenden Wert einzugeben. Der Schlüssel hier besteht jedoch darin, die Konversationen einfach und an den Punkt zu halten. Benutzer werden schnell frustriert, wenn Sie mehrere Fragen beantworten müssen, um Ihre Anforderung zu erfüllen.
+- Ordnungsgemäßes **Behandeln von fehl** Informationen: der Benutzer kann einen Wert angeben, der von der APP nicht erwartet wurde oder der nicht im angegebenen Kontext verarbeitet werden kann. Stellen Sie sicher, dass die APP diese Situation für den Benutzer auf eine Weise verknüpft, mit der es klar und leicht zu korrigieren ist.
+
+Wenn die APP mit einem einzelnen fraglichen Wert angezeigt wird, ist die bevorzugte Methode zur Behandlung dieses Vorgangs, dass Siri den Benutzer zur Bestätigung auffordert. Beispiel: *"Meinten Sie das toll?"* , mit dem Sie Antworten können, indem Sie eine einfache Ja-oder Nein-Antwort erhalten.
+
+Wenn es eine Situation gibt, in der mehrere mögliche Optionen für einen einzelnen Wert korrekt sein könnten, ist die Eindeutigkeit die bevorzugte Behandlungsmethode. In dieser Situation kann Siri den Benutzer zur Auswahl von bis zu zehn möglichen Optionen auffordern. Beispiel:
 
 ```csharp
 Who do you want to send the message to?
@@ -413,61 +413,61 @@ Who do you want to send the message to?
 * Little Bobo
 ```
 
-Falls Sie sich noch in Frage, haben Sie Siri, die den Benutzer auffordern, eine völlig neue und spezifischere-Antwort für einen bestimmten Wert angeben.
+Wenn Sie noch immer dabei sind, muss Siri den Benutzer auffordern, eine völlig neue, spezifischere Antwort für einen bestimmten Wert bereitzustellen.
 
-#### <a name="request-final-confirmation"></a>Abschließende Bestätigung anfordern
+#### <a name="request-final-confirmation"></a>Endgültige Bestätigung anfordern
 
-Bevor die app tatsächlich die Aufgabe zum Erfüllen der Anforderung des Benutzers ausführt, prüft Siri mit der App-Erweiterung, um sicherzustellen, dass alles vorhanden ist. Beispielsweise besitzt der Benutzer ausreichende Geldmittel in ihrem Konto für die Zahlung für die angeforderte?
+Bevor die APP tatsächlich die Aufgabe ausführt, um die Anforderung des Benutzers zu erfüllen, prüft Siri die APP-Erweiterung, um sicherzustellen, dass alles vorhanden ist. Verfügt der Benutzer z. b. über ausreichende Kosten in seinem Konto, um die angeforderte Zahlung zu tätigen?
 
-Darüber hinaus muss die app, um sicherzustellen, dass er alle möglichen Informationen siri bereit ist, damit sie für den Benutzer stellt und bestätigen Sie, dass die Aufgabe ausgeführt werden, ihre Erwartungen erfüllt werden können.
+Darüber hinaus muss die APP sicherstellen, dass Sie alle möglichen Informationen für Siri bereitstellt, damit Sie dem Benutzer präsentiert und bestätigt werden kann, dass die durchzuführende Aufgabe Ihren Erwartungen entspricht.
 
-Sobald der Benutzer, die Anforderung und die app bestätigt hat wurde ausgeführt, muss der app erneut stellen Sie sicher, dass er alle Ergebnisse zurück an Siri bereitgestellt hat, damit es dem Benutzer verknüpft sein kann.
+Nachdem der Benutzer die Anforderung bestätigt hat und die APP ihn ausgeführt hat, muss die APP erneut sicherstellen, dass Sie alle Ergebnisse an Siri zurückgegeben hat, damit Sie Sie mit dem Benutzer verknüpfen können.
 
-#### <a name="responding-to-the-request"></a>Reagieren auf die Anforderung
+#### <a name="responding-to-the-request"></a>Antworten auf die Anforderung
 
-Siri enthält mehrere integrierte Benutzeroberflächen, für jede der Domänen und der Aktionen, die er kennt. Allerdings kann gegebenenfalls die app um die benutzerfreundlichkeit zu bereichern, durch die Bereitstellung der app branding und die Benutzeroberfläche oder die mehr Informationen als in der Anforderung wurde eine benutzerdefinierte Erweiterung auf der Absicht-Benutzeroberfläche bereitstellen.
+Siri verfügt über mehrere integrierte Benutzeroberflächen für jede der Domänen und Aktionen, die Sie kennen. Allerdings kann die APP ggf. eine benutzerdefinierte Intent-Benutzeroberflächen Erweiterung bereitstellen, um die Benutzeroberfläche zu erweitern, indem Sie das Branding und die Benutzeroberfläche der APP oder mehr Informationen bereitstellen, als in der Anforderung vorhanden waren.
 
-Allerdings zeigen beim Entwerfen von benutzerdefinierter Schnittstellen für Siri verwendet werden soll. In der Regel wird der Benutzer wird eine bestimmte Aufgabe muss so schnell wie möglich erhalten möchten, und nicht mit unnötigen Informationen überladen werden soll.
+Dies bedeutet, dass die Unterhaltung beim Entwerfen von benutzerdefinierten Schnittstellen für Siri verwendet werden sollte. Normalerweise möchte der Benutzer eine bestimmte Aufgabe so schnell wie möglich ausführen und sollte nicht mit unnötigen Informationen überladen werden.
 
-Außerdem sollte vorsichtig vorgenommen werden, um sicherzustellen, dass die benutzerdefinierte Benutzeroberfläche das Aussehen und Verhalten sich ordnungsgemäß in alle anderen iOS-Geräte und Ausrichtungen an, dass der Benutzer möglicherweise oder das Gerät verwenden.
+Außerdem sollten Sie sicherstellen, dass die benutzerdefinierte Benutzeroberfläche auf allen IOS-Geräten und-Ausrichtungen, die der Benutzer möglicherweise hat oder das Gerät verwendet, korrekt aussieht und antwortet.
 
-Falls angebracht, verwenden Sie die SiriKit-API, alle redundanten Informationen, die bereits in der standardmäßigen Siri UI ausgeblendet. Noch stellen Sie sicher, dass die app die Informationen noch siri bereitstellt, damit er es verbal in eine praktische kostenlose Situationen darstellen kann.
+Verwenden Sie bei Bedarf die Sirikit-API, um redundante Informationen auszublenden, die bereits in der standardmäßigen Siri-Benutzeroberfläche vorhanden sind Stellen Sie jedoch sicher, dass die APP immer noch die Informationen für Siri bereitstellt, damit Sie Sie in einer Hand freien Situation in Hand haben können.
 
-Es gibt möglicherweise Situationen, in denen Siri starten wird der app zum Erfüllen der Anforderung des Benutzers, z. B. präsentieren die Fotos, die der Benutzer angefordert hat. In diesen Situationen sollte überraschen Sie nicht den Benutzer werden. Zeigen Sie die erwarteten Informationen ohne Zwischenschritte oder weitere Interaktion erforderlich. Nie zeigen Sie Informationen an, oder führen Sie eine Aufgabe, die nicht der Benutzer erwartet, dass.
+Es kann vorkommen, dass Siri die APP startet, um die Anforderung des Benutzers zu erfüllen, z. b. das darstellen der Fotos, die der Benutzer angefordert hat. In diesen Situationen überraschen Sie den Benutzer nicht. Zeigen Sie die erwarteten Informationen an, ohne dass Zwischenschritte oder eine weitere Interaktion erforderlich ist. Niemals Informationen anzeigen oder eine Aufgabe ausführen, die der Benutzer nicht erwartet.
 
-### <a name="polishing-the-design"></a>Optimieren des Entwurfs
+### <a name="polishing-the-design"></a>Entwerfen des Entwurfs
 
-Es gibt mehrere Schritte, die von Apple vorgeschlagen, um den Entwurf der Gesprächsschnittstellen polish. Erstens ist durch die Bereitstellung der klare und kompakte Vokabulars und Verwendung Beispiele für Anwendungsfälle für siri.
+Es gibt mehrere Schritte, die Apple vorschlagen soll, den Entwurf der konverterenden Schnittstellen zu polieren. Zuerst wird durch die Bereitstellung eines eindeutigen, präzisen vokabularvokabulars und von Anwendungsfällen für Siri.
 
-Eine der Möglichkeiten, dass ein Benutzer die app ermittelt wird durch Initiieren einer Konversations mit Siri und aufzufordern, *"Was können Sie tun?"* Siri zeigt verschiedene Dinge können erfolgen, einschließlich des Entwicklers-app und die Beispiel-Hero-Anwendungsfälle, die sie über bereitgestellt hat seine `plist` Datei.
+Eine der Methoden, mit denen ein Benutzer die APP ermittelt, besteht darin, eine Konversation mit Siri zu initiieren und die Frage zu *stellen, was Sie tun können* . Siri zeigt mehrere verschiedene Dinge, die Sie ausführen können, einschließlich der APP des Entwicklers und der von ihr `plist` bereitgestellten Beispiel-Anwendungsfälle.
 
-So schreiben Sie gute Beispiele für Anwendungsfälle:
+So schreiben Sie gute Anwendungsfälle:
 
-- Stellen Sie sicher, dass die Beispiele umfassen die Namen der app.
-- Lassen Sie das Beispiel kurz und auf den Punkt an.
-- Geben Sie mehrere Beispiele für jede der Intent-Elemente, die die app unterstützt.
-- Priorisieren Sie sowohl die Beispiele in basierend auf der die häufigsten Anwendungsfälle für die app als auch der Intent-Elemente.
-- Stellen Sie sicher, dass die app lokalisierte Beispiele bietet.
-- Stellen Sie sicher, dass jedes Beispiel funktioniert wie erwartet in der app.
-- Vermeiden Sie die Adressierung von Siri in den Beispielen wird daher Text wie enthalten nicht *"Hey Siri..."*
-- Vermeiden Sie z. B. alle unnötigen Pleasantries *"Sie"* oder *"Danke"*.
+- Stellen Sie sicher, dass die Beispiele den APP-Namen enthalten.
+- Halten Sie das Beispiel kurz und auf den Punkt.
+- Geben Sie mehrere Beispiele für die einzelnen Intents an, die von der App unterstützt werden.
+- Priorisieren Sie die Intents und die darin enthaltenen Beispiele basierend auf den gängigsten Anwendungsfällen für die app.
+- Stellen Sie sicher, dass die APP lokalisierte Beispiele enthält.
+- Stellen Sie sicher, dass jedes angegebene Beispiel in der APP erwartungsgemäß funktioniert.
+- Vermeiden Sie die Adressierung von Siri in den Beispielen. Fügen Sie daher keinen Text wie *"Hey Siri..." ein.*
+- Vermeiden Sie unnötige Genüsse, wie z. b. *"bitte"* oder *"vielen Dank*".
 
-Nehmen Sie die entsprechende Zeit, ausprobieren und experimentieren auf wie die app die Konversation strukturieren, die von Siri mit dem Benutzer in ihrem Namen hat. Achten Sie darauf, sprechen Sie mit typischen Benutzern während des Prozesses, als deren Interaktionen mit und Erwartungen der app können sich im Laufe der Zeit ändern.
+Nehmen Sie sich die geeignete Zeit, um zu untersuchen und zu experimentieren, wie die APP die Konversation, die Siri hat, mit dem Benutzer in Ihrem Namen gestalten kann. Stellen Sie sicher, dass Sie im gesamten Prozess mit typischen Benutzern kommunizieren, da sich ihre Interaktionen mit und den Erwartungen der APP im Laufe der Zeit ändern können.
 
-Denken Sie immer daran, zum Testen der app in verschiedenen Situationen und all die verschiedenen Methoden, um eine Konversation mit Siri aufzurufen. Test in der realen Welt Speicherorte des Benutzers möglicherweise verwenden Sie die app von der Office und den Helpdesk.
+Denken Sie immer daran, die app in unterschiedlichen Situationen und allen unterschiedlichen Methoden zum Aufrufen einer Konversation mit Siri zu testen. Testen Sie an realen Orten, wo die Benutzer die APP verwenden, und nicht im Büro und Desk.
 
-Bemühen uns um die Konversationen mit Siri (im Auftrag einer app) Fluid, natürlichen und "genau das richtige fühlen" sein. 
+Möchten Sie, dass die Konversationen mit Siri (im Auftrag der APP) fließend, natürlich und "gut wahr" sind. 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden die grundlegenden Konzepte für die Verwendung von SiriKit erforderlich und gezeigt, dass sie interagieren kann, mit dem Xamarin.iOS-apps, um Dienste bereitzustellen, die für den Benutzer mithilfe von Siri und die Karten-app auf einem iOS-Gerät zugänglich sind, behandelt.
+In diesem Artikel wurden die wesentlichen Konzepte erläutert, die für die Verwendung von Sirikit erforderlich sind, und es wird gezeigt, dass es mit den xamarin. IOS-apps interagieren kann, um Dienste bereitzustellen, auf die der Benutzer mithilfe von Siri und der Maps-APP auf einem IOS
 
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [ElizaChat-Beispiel](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
-- [SiriKit-Programmierhandbuch](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
-- [Frameworkverweis Intents](https://developer.apple.com/reference/intents)
-- [Referenz für Intents UI-Framework](https://developer.apple.com/reference/intentsui)
+- [Elizachat-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-elizachat)
+- [Sirikit-Programmier Handbuch](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
+- [Intents Framework-Referenz](https://developer.apple.com/reference/intents)
+- [Intents UI-frameworkreferenz](https://developer.apple.com/reference/intentsui)

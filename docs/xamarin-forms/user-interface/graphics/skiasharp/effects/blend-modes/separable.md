@@ -7,16 +7,16 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 8c86782d5b8b8250049d0ae060ca7bd548c5a4ef
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fb5bd1e883adc3be89bde7cc0e1529e77165247
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61387358"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655043"
 ---
 # <a name="the-separable-blend-modes"></a>Die trennbare Füllmethoden einheitlich
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 In diesem Artikel haben Sie gesehen [ **SkiaSharp Porter-Duff Füllmethoden**](porter-duff.md), die Porter-Duff Blend-Modi werden in der Regel Clipping-Vorgänge ausführen. Die trennbare Füllmethoden einheitlich unterscheiden. Die trennbare Modi geändert werden, die einzelne roten, grünen und blauen Farbkomponenten eines Bilds. Trennbare Füllmethoden einheitlich können mischen Sie Farbe zu zeigen, dass die Kombination von Rot, Grün und Blau in der Tat weiß ist:
 
@@ -127,7 +127,7 @@ Die Screenshots von links nach rechts zeigen immer größeren `Slider` Werte, wi
 
 [![Heller und dunkler](separable-images/LightenAndDarken.png "heller und dunkler angezeigt")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-Dieses Programm zeigt die übliche Weise, in der die trennbare Füllmethoden einheitlich verwendet werden: Das Ziel ist ein Bild irgendeiner Art, die sehr häufig eine Bitmap. Die Quelle ist ein Rechteck, das angezeigt wird, mit einer `SKPaint` Objekt mit der `BlendMode` -Eigenschaft auf einen trennbare Blend-Modus festgelegt. Das Rechteck kann eine Volltonfarbe werden (wie es hier der Fall ist) oder einem Farbverlauf. Transparenz ist _nicht_ in der Regel mit der trennbare Füllmethoden einheitlich verwendet.
+Dieses Programm veranschaulicht die normale Art und Weise, in der die trennbaren Blend-Modi verwendet werden: Das Ziel ist ein Image einiger Art, sehr häufig eine Bitmap. Die Quelle ist ein Rechteck, das angezeigt wird, mit einer `SKPaint` Objekt mit der `BlendMode` -Eigenschaft auf einen trennbare Blend-Modus festgelegt. Das Rechteck kann eine Volltonfarbe werden (wie es hier der Fall ist) oder einem Farbverlauf. Transparenz ist _nicht_ in der Regel mit der trennbare Füllmethoden einheitlich verwendet.
 
 Beim Experimentieren mit diesem Programm werden Sie feststellen, dass diese zwei Füllmethoden einheitlich nicht aufgehellt werden soll, und das Bild gleichmäßig Abdunkeln. Stattdessen die `Slider` scheint einen Schwellenwert für eine Art festzulegen. Erhöhen Sie zum Beispiel die `Slider` für die `Lighten` -Modus die dunkleren Bereiche des Bilds rufen Licht zuerst während der hellere Bereiche unverändert bleiben.
 
@@ -149,9 +149,9 @@ Die folgende Tabelle zeigt die trennbare Blend-Modi mit kurze erläuterungen zu 
 
 | Blend-Modus   | Keine Änderung | Vorgang |
 | ------------ | --------- | --------- |
-| `Plus`       | Schwarz     | Hellt durch Hinzufügen von Farben: Sc + Dc |
-| `Modulate`   | Weiß     | Dunkler wird durch Multiplikation von Farben: Sc·Dc | 
-| `Screen`     | Schwarz     | Ergänzt Produkt ergänzt: Sc + Dc &ndash; Sc·Dc |
+| `Plus`       | Schwarz     | Lighdutzende durch Hinzufügen von Farben: SC + DC |
+| `Modulate`   | Weiß     | Darkens durch Multiplikation von Farben: SC DC | 
+| `Screen`     | Schwarz     | Ergänzt das Produkt von Ergänzungen: SC + DC &ndash; SC DC |
 | `Overlay`    | Grau      | Quantile `HardLight` |
 | `Darken`     | Weiß     | Mindestanzahl von Farben: min (Sc, Dc) |
 | `Lighten`    | Schwarz     | Maximale von Farben: Max (Sc, Dc) |
@@ -159,9 +159,9 @@ Die folgende Tabelle zeigt die trennbare Blend-Modi mit kurze erläuterungen zu 
 | `ColorBurn`  | Weiß     | Dunkelt Ziel wird basierend auf Quelle | 
 | `HardLight`  | Grau      | Auswirkungen von Spot ähnelt |
 | `SoftLight`  | Grau      | Ähnlich wie bei der Auswirkung der weiche spotlight | 
-| `Difference` | Schwarz     | Subtrahiert von helleren dunkleren: Abs (Dc &ndash; Sc) | 
+| `Difference` | Schwarz     | Subtrahiert die dunkleren vom helleren: Abs (DC &ndash; SC) | 
 | `Exclusion`  | Schwarz     | Ähnlich wie `Difference` jedoch niedrigere Kontrast |
-| `Multiply`   | Weiß     | Dunkler wird durch Multiplikation von Farben: Sc·Dc |
+| `Multiply`   | Weiß     | Darkens durch Multiplikation von Farben: SC DC |
 
 Ausführlichere Algorithmen finden Sie in der W3C [ **zusammensetzt und auf Ebene1 Blending** ](https://www.w3.org/TR/compositing-1/) -Spezifikation und die Skia [ **SkBlendMode Verweis** ](https://skia.org/user/api/SkBlendMode_Reference), obwohl die Schreibweise in diesen beiden Quellen nicht identisch ist. Beachten Sie, dass `Plus` wird häufig als Mischmodus Porter-Duff, betrachtet und `Modulate` ist nicht Teil der W3C-Spezifikation.
 
@@ -428,4 +428,4 @@ Die `Darken` Modus funktioniert auch für diesen Effekt.
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

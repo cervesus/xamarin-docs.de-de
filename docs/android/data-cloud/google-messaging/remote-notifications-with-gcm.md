@@ -1,102 +1,102 @@
 ---
-title: Remotebenachrichtigungen mit Google Cloud Messaging
-description: Diese exemplarische Vorgehensweise enthält eine schrittweise Erklärung der Vorgehensweise für die Google Cloud Messaging verwenden, um remotebenachrichtigungen (auch als "Pushbenachrichtigungen" bezeichnet) implementieren in einer Xamarin.Android-Anwendung. Es wird beschrieben, die verschiedene Klassen, die Sie implementieren müssen, um die Kommunikation mit Google Cloud Messaging (GCM), es wird erläutert, wie zum Festlegen von Berechtigungen im Android-Manifest für den Zugriff auf den GCM und End-to-End-messaging mit einem Beispiel-Test-Programm veranschaulicht.
+title: Remote Benachrichtigungen mit Google Cloud Messaging
+description: Diese exemplarische Vorgehensweise enthält eine schrittweise Erläuterung der Verwendung von Google Cloud Messaging zum Implementieren von Remote Benachrichtigungen (auch als Pushbenachrichtigungen bezeichnet) in einer xamarin. Android-Anwendung. In diesem Thema werden die verschiedenen Klassen beschrieben, die Sie implementieren müssen, um mit Google Cloud Messaging (GCM) zu kommunizieren. Außerdem wird erläutert, wie Berechtigungen im Android-Manifest für den Zugriff auf GCM festgelegt werden, und es wird ein End-to-End-Messaging mit einem Beispiel Testprogramm veranschaulicht.
 ms.prod: xamarin
 ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 7f7afacaf8154cd425fcd1c1638a512d5bc32ffd
-ms.sourcegitcommit: 53480ed32a126f88eec82e8c8ee5ed8d30616c44
+ms.openlocfilehash: 8c816bf98d9997d09b73e7c9cb0d2ff436b65fbb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65017699"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643982"
 ---
-# <a name="remote-notifications-with-google-cloud-messaging"></a>Remotebenachrichtigungen mit Google Cloud Messaging
+# <a name="remote-notifications-with-google-cloud-messaging"></a>Remote Benachrichtigungen mit Google Cloud Messaging
 
 > [!WARNING]
-> Google veraltet GCM ab 10. April 2018. Die folgenden Dokumente und die Beispielprojekte möglicherweise nicht mehr verwaltet werden. Von Google GCM-Server und Client-APIs werden so bald wie 29 Mai 2019 entfernt. Google empfiehlt, die Migration von GCM-apps zu Firebase Cloud Messaging (FCM). Weitere Informationen zu den GCM-Einstellung und Migration, finden Sie unter [Google Cloud Messaging - veraltet](https://developers.google.com/cloud-messaging/).
+> Google hat GCM seit dem 10. April 2018 als veraltet markiert. Die folgenden Dokumente und Beispiel Projekte werden möglicherweise nicht mehr verwaltet. Der GCM-Server und die Client-APIs von Google werden ab dem 29. Mai 2019 entfernt. Google empfiehlt, GCM-apps zu Firebase Cloud Messaging (FCM) zu migrieren. Weitere Informationen zur Veraltung und Migration von GCM finden Sie unter [Google Cloud Messaging deprecated](https://developers.google.com/cloud-messaging/).
 >
-> Um den ersten Schritten mit Remotebenachrichtigungen mit Firebase Cloud Messaging mit Xamarin finden Sie unter [Remotebenachrichtigungen bei FCM](remote-notifications-with-fcm.md).
+> Informationen zu den ersten Schritten mit Remote Benachrichtigungen mithilfe von Firebase Cloud Messaging mit xamarin finden Sie unter [Remote Benachrichtigungen mit FCM](remote-notifications-with-fcm.md).
 
-_Diese exemplarische Vorgehensweise enthält eine schrittweise Erklärung der Vorgehensweise für die Google Cloud Messaging verwenden, um remotebenachrichtigungen (auch als "Pushbenachrichtigungen" bezeichnet) implementieren in einer Xamarin.Android-Anwendung. Es wird beschrieben, die verschiedene Klassen, die Sie implementieren müssen, um die Kommunikation mit Google Cloud Messaging (GCM), es wird erläutert, wie zum Festlegen von Berechtigungen im Android-Manifest für den Zugriff auf den GCM und End-to-End-messaging mit einem Beispiel-Test-Programm veranschaulicht._
+_Diese exemplarische Vorgehensweise enthält eine schrittweise Erläuterung der Verwendung von Google Cloud Messaging zum Implementieren von Remote Benachrichtigungen (auch als Pushbenachrichtigungen bezeichnet) in einer xamarin. Android-Anwendung. In diesem Thema werden die verschiedenen Klassen beschrieben, die Sie implementieren müssen, um mit Google Cloud Messaging (GCM) zu kommunizieren. Außerdem wird erläutert, wie Berechtigungen im Android-Manifest für den Zugriff auf GCM festgelegt werden, und es wird ein End-to-End-Messaging mit einem Beispiel Testprogramm veranschaulicht._
 
-## <a name="gcm-notifications-overview"></a>Übersicht über die GCM-Benachrichtigungen
+## <a name="gcm-notifications-overview"></a>Übersicht über GCM-Benachrichtigungen
 
-In dieser exemplarischen Vorgehensweise erstellen wir eine Xamarin.Android-Anwendung, die Google Cloud Messaging (GCM) verwendet, um remotebenachrichtigungen zu implementieren (auch bekannt als *Pushbenachrichtigungen*). Implementieren wir die verschiedenen Intents und -Listener-Dienste, die GCM für remote-messaging verwenden, und wir unsere Implementierung mit einem Befehlszeilenprogramm, das einen Anwendungsserver simuliert testen. 
+In dieser exemplarischen Vorgehensweise erstellen wir eine xamarin. Android-Anwendung, die Google Cloud Messaging (GCM) zum Implementieren von Remote Benachrichtigungen (auch als *Pushbenachrichtigungen*bezeichnet) verwendet. Wir implementieren die verschiedenen Intent-und Listener-Dienste, die GCM für Remote Messaging verwenden. Wir testen unsere Implementierung mit einem Befehlszeilenprogramm, das einen Anwendungsserver simuliert. 
 
-Bevor Sie mit dieser exemplarischen Vorgehensweise fortfahren können, müssen Sie die erforderlichen Anmeldeinformationen zum Verwenden Googles GCM-Server abrufen; Dieser Prozess wird erläutert, [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md). Insbesondere müssen Sie eine *API-Schlüssel* und *Absender-ID* zum Einfügen in den Beispielcode in dieser exemplarischen Vorgehensweise angezeigt. 
+Bevor Sie mit dieser exemplarischen Vorgehensweise fortfahren können, müssen Sie die erforderlichen Anmelde Informationen für die Verwendung der GCM-Server von Google erwerben. Dieser Prozess wird in [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)erläutert. Insbesondere benötigen Sie einen *API-Schlüssel* und eine Absender- *ID* , die in den in dieser exemplarischen Vorgehensweise dargestellten Beispielcode eingefügt werden. 
 
-Wir verwenden die folgenden Schritte aus, um eine GCM-fähigen Xamarin.Android-Client-app zu erstellen:
+Wir führen die folgenden Schritte aus, um eine GCM-aktivierte xamarin. Android-Client-App zu erstellen:
 
-1.  Installieren Sie zusätzlicher Pakete, die für die Kommunikation mit GCM-Server erforderlich.
-2.  Konfigurieren Sie app-Berechtigungen für den Zugriff auf den GCM-Server.
-3.  Implementieren Sie Code zum Überprüfen auf das Vorhandensein von Google Play-Dienste. 
-4.  Implementieren Sie einen Registrierung intent-Dienst, der für ein Registrierungstoken bei GCM handelt.
-5.  Implementieren Sie einen Instanz-ID-Listenerdienst, der token registrierungsaktualisierungen von GCM lauscht.
-6.  Implementieren Sie einen GCM-Listenerdienst, der remote-Nachrichten von der app-Server über GCM erhält.
+1.  Installieren zusätzlicher Pakete, die für die Kommunikation mit GCM-Servern erforderlich sind.
+2.  Konfigurieren Sie App-Berechtigungen für den Zugriff auf GCM-Server.
+3.  Implementieren Sie Code, um zu überprüfen, ob Google Play Services vorhanden ist. 
+4.  Implementieren Sie einen Dienst für die Registrierungs Absicht, der mit GCM für ein Registrierungs Token aushandiert.
+5.  Implementieren Sie einen Instanz-ID-Listenerdienst, der auf registrierungstokenaktualisierungen von GCM lauscht
+6.  Implementieren Sie einen GCM-Listenerdienst, der Remote Nachrichten vom App-Server über GCM empfängt.
 
-Diese app verwendet eine neue GCM-Funktion, die als bekannt *Thema messaging*. Im Thema zu messaging, sendet der app-Server eine Nachricht an, an ein Thema, anstatt eine Liste mit den einzelnen Geräten. Geräte, die für dieses Thema abonnieren können Thema Nachrichten als Pushbenachrichtigungen empfangen. Weitere Informationen zu den GCM-Thema messaging, finden Sie unter Google [implementieren Thema Messaging](https://developers.google.com/cloud-messaging/topic-messaging). 
+Diese APP verwendet ein neues GCM-Feature, das als *Topic Messaging*bezeichnet wird. Im Thema Messaging sendet der App-Server eine Nachricht an ein Thema und nicht an eine Liste einzelner Geräte. Geräte, die dieses Thema abonnieren, können Thema Nachrichten als Pushbenachrichtigungen empfangen. Weitere Informationen zum Thema Messaging von GCM finden Sie im Artikel zur [Implementierung](https://developers.google.com/cloud-messaging/topic-messaging)von Google in Google. 
 
-Wenn die Client-app bereit ist, implementieren wir über eine Befehlszeile C# Anwendung, die eine Pushbenachrichtigung an die Client-app über GCM sendet. 
+Wenn die Client-App bereit ist, implementieren wir eine Befehlszeilen C# Anwendung, die per GCM eine Pushbenachrichtigung an unsere Client-App sendet. 
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
-Zunächst erstellen wir eine neue leere Projektmappe namens **RemoteNotifications**. Als Nächstes fügen Sie ein neues Android-Projekt mit dieser Lösung auf der Grundlage der **Android-App** Vorlage. Wir nennen dieses Projekt **ClientApp**. (Wenn Sie nicht mit dem Erstellen von Xamarin.Android-Projekte vertraut sind, finden Sie unter [Hallo, Android](~/android/get-started/hello-android/hello-android-quickstart.md).) Die **ClientApp** Projekt enthält den Code für die Xamarin.Android-Client-Anwendung, die über GCM remotebenachrichtigungen empfängt. 
+Erstellen Sie zunächst eine neue leere Lösung namens **remotenotifications**. Als Nächstes fügen wir dieser Lösung ein neues Android-Projekt hinzu, das auf der **Android-App** -Vorlage basiert. Wir nennen dieses Projekt " **ClientApp**". (Wenn Sie mit dem Erstellen von xamarin. Android-Projekten nicht vertraut sind, finden Sie weitere Informationen unter [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).) Das **ClientApp** -Projekt enthält den Code für die xamarin. Android-Client Anwendung, die Remote Benachrichtigungen über GCM empfängt. 
 
-### <a name="add-required-packages"></a>Hinzufügen von erforderlichen Paketen
+### <a name="add-required-packages"></a>Erforderliche Pakete hinzufügen
 
-Bevor wir unsere Client-app-Code implementieren können, müssen wir mehrere Pakete installieren, die wir für die Kommunikation mit GCM verwenden. Darüber hinaus müssen wir die Google Play Store-Anwendung auf Ihr Gerät hinzufügen, wenn es nicht bereits installiert ist.
+Bevor wir unseren Client-App-Code implementieren können, müssen wir mehrere Pakete installieren, die für die Kommunikation mit GCM verwendet werden. Außerdem müssen wir dem Gerät die Google Play Store Anwendung hinzufügen, wenn es nicht bereits installiert ist.
 
-#### <a name="add-the-xamarin-google-play-services-gcm-package"></a>Fügen Sie das Xamarin Google Play Services GCM-Paket hinzu.
+#### <a name="add-the-xamarin-google-play-services-gcm-package"></a>Hinzufügen des xamarin Google Play Services GCM-Pakets
 
-Zum Empfangen von Nachrichten aus Google Cloud Messaging, die [Google Play Services](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Gcm/) Framework muss auf dem Gerät vorhanden sein. Eine Android-Anwendung kann keine Nachrichten von GCM-Servern empfangen, ohne dieses Framework. Google Play-Dienste während der Ausführung im Hintergrund der Android-Gerät eingeschaltet wird, automatisch Lauschen auf Nachrichten von GCM. Wenn diese Nachrichten eingehen, wird Google Play Services konvertiert die Nachrichten in Intents und sendet dann diese Intent-Elemente für Anwendungen, die für sie registriert haben. 
+Zum Empfangen von Nachrichten von Google Cloud Messaging muss das [Google Play Services](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Gcm/) Framework auf dem Gerät vorhanden sein. Ohne dieses Framework kann eine Android-Anwendung keine Nachrichten von GCM-Servern empfangen. Google Play Services wird im Hintergrund ausgeführt, während das Android-Gerät eingeschaltet ist, und lauscht in der Ruhe auf Nachrichten aus GCM. Wenn diese Nachrichten eintreffen, konvertiert Google Play Services die Nachrichten in Intents und überträgt diese Intents dann an Anwendungen, die für Sie registriert wurden. 
 
-In Visual Studio mit der Maustaste **Verweise > NuGet-Pakete verwalten...** ; in Visual Studio für Mac, mit der rechten Maustaste **Pakete > Pakete hinzufügen...** . Suchen Sie nach **Xamarin Google Play Services - GCM** und installieren Sie dieses Paket in der **ClientApp** Projekt: 
+Klicken Sie in Visual Studio mit der rechten Maustaste auf **Verweise > nuget-Pakete verwalten...** ; Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Pakete > Pakete hinzufügen...** . Suchen Sie nach **xamarin Google Play Services-GCM** , und installieren Sie dieses Paket im **ClientApp** -Projekt: 
 
-[![Installieren von Google Play-Dienste](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png#lightbox)
+[![Installieren von Google Play Services](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png#lightbox)
 
-Bei der Installation **Xamarin Google Play Services - GCM**, **Xamarin Google Play Services - Basis** wird automatisch installiert. Wenn Sie eine Fehlermeldung erhalten, Ändern des Projekts *Android-Mindestversion* außer auf einen Wert festlegen **Kompilieren mit der SDK-Version** , und wiederholen Sie die NuGet-Installation. 
+Wenn Sie **xamarin Google Play Services-GCM**installieren, wird **xamarin Google Play Services-Base** automatisch installiert. Wenn Sie eine Fehlermeldung erhalten, ändern Sie die *Mindesteinstellung für Android in* das Projekt auf einen anderen Wert als " **Kompilieren" mit der SDK-Version** , und versuchen Sie die nuget-Installation erneut. 
 
-Als Nächstes bearbeiten **"mainactivity.cs"** und fügen Sie die folgenden `using` Anweisungen:
+Bearbeiten Sie als nächstes **MainActivity.cs** , und fügen `using` Sie die folgenden Anweisungen hinzu:
 
 ```csharp
 using Android.Gms.Common;
 using Android.Util;
 ```
 
-Dies macht Typen im Google Play Services GMS Paket unserem Code zur Verfügung, und Protokollierungsfunktion bereit, die wir verwenden unsere Transaktionen mit GMS nachverfolgen hinzugefügt. 
+Dadurch sind Typen im Google Play Services GMS-Paket für den Code verfügbar, und es werden Protokollierungsfunktionen hinzugefügt, mit denen wir unsere Transaktionen mit GMS verfolgen. 
 
 #### <a name="google-play-store"></a>Google Play Store
 
-Um Nachrichten von GCM empfangen zu können, muss die Google Play Store-Anwendung auf dem Gerät installiert werden. (Wenn eine Google Play-Anwendung auf einem Gerät installiert ist, wird Google Play Store auch installiert, kann es sein, dass es auf Ihrem Testgerät bereits installiert ist,.) Eine Android-Anwendung kann keine Nachrichten von GCM empfangen, ohne Sie zu Google Play. Wenn Sie noch nicht über die Google Play Store-app auf Ihrem Gerät installierten verfügen, besuchen Sie die [Google Play](https://support.google.com/googleplay) -Website herunterladen und installieren Google Play. 
+Zum Empfangen von Nachrichten aus GCM muss die Google Play Store Anwendung auf dem Gerät installiert sein. (Wenn eine Google Play Anwendung auf einem Gerät installiert ist, wird Google Play Store ebenfalls installiert. Daher ist es wahrscheinlich, dass Sie bereits auf dem Testgerät installiert ist.) Ohne Google Play kann eine Android-Anwendung keine Nachrichten von GCM empfangen. Wenn Sie die Google Play Store-App noch nicht auf Ihrem Gerät installiert haben, besuchen Sie die [Google Play](https://support.google.com/googleplay) -Website, um Google Play herunterzuladen und zu installieren. 
 
-Alternativ können Sie einen Android-Emulator Android 2.2 oder höher, anstatt ein Testgerät (Sie müssen keinen So installieren Sie Google Play Store auf einem Android-Emulator) ausführen. Jedoch wenn Sie einen Emulator verwenden, müssen Sie Wi-Fi-Verbindung mit GCM verwenden, und Sie müssen Sie mehrere Ports in der Wi-Fi-Firewall öffnen, wie weiter unten in dieser exemplarischen Vorgehensweise erläutert. 
+Alternativ können Sie einen Android-Emulator, auf dem Android 2,2 oder höher ausgeführt wird, anstelle eines Testgeräts verwenden (Sie müssen Google Play Store nicht auf einem Android-Emulator installieren). Wenn Sie jedoch einen Emulator verwenden, müssen Sie die WLAN-Verbindung verwenden, um eine Verbindung mit GCM herzustellen, und Sie müssen mehrere Ports in der WLAN-Firewall öffnen, wie weiter unten in dieser exemplarischen Vorgehensweise erläutert. 
 
-### <a name="set-the-package-name"></a>Legen Sie den Paketnamen
+### <a name="set-the-package-name"></a>Festlegen des Paket namens
 
-In [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md), wir einen Paketnamen für unser GCM-fähige Anwendung angegeben (diese Paketname dient auch als die *Anwendungs-ID* , unsere API-Schlüssel und die Absender-ID zugeordnet ist). Öffnen wir die Eigenschaften für die **ClientApp** Projekt, und legen Sie den Paketnamen in dieser Zeichenfolge. In diesem Beispiel legen wir den Paketnamen `com.xamarin.gcmexample`:
+In [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)haben wir einen Paketnamen für die GCM-aktivierte App angegeben (dieser Paketname dient auch als *Anwendungs-ID* , die mit dem API-Schlüssel und der Absender-ID verknüpft ist). Öffnen Sie die Eigenschaften für das **ClientApp** -Projekt, und legen Sie den Paketnamen auf diese Zeichenfolge fest. In diesem Beispiel wird der Paketname auf `com.xamarin.gcmexample`festgelegt:
 
-[![Festlegen der Paketname](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png#lightbox)
+[![Festlegen des Paket namens](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png#lightbox)
 
-Beachten Sie, dass die Client-app kann dann ein Registrierungstoken von GCM empfangen, wenn dieser Paketname nicht der Fall ist *genau* entsprechen den Paketnamen an, die wir in der Google-Entwicklerkonsole eingegeben. 
+Beachten Sie, dass die Client-App kein Registrierungs Token von GCM empfangen kann, wenn dieser Paketname nicht *exakt* mit dem Paketnamen übereinstimmt, den wir in die Google Developer Console eingegeben haben. 
 
-### <a name="add-permissions-to-the-android-manifest"></a>Hinzufügen von Berechtigungen zur Android-Manifest
+### <a name="add-permissions-to-the-android-manifest"></a>Hinzufügen von Berechtigungen zum Android-Manifest
 
-Eine Android-Anwendung müssen die folgenden Berechtigungen, die konfiguriert werden, damit sie Benachrichtigungen von Google Cloud Messaging erhalten kann: 
+Für eine Android-Anwendung müssen die folgenden Berechtigungen konfiguriert sein, bevor Benachrichtigungen von Google Cloud Messaging empfangen werden können: 
 
--   `com.google.android.c2dm.permission.RECEIVE` &ndash; Gewährt die Berechtigung zum Registrieren und Empfangen von Nachrichten aus Google Cloud Messaging für die app. (Funktionsweise `c2dm` bedeuten? Dies steht für _Cloud-zu-Gerät-Messaging_, der jetzt veralteten Vorgänger GCM ist. 
-    GCM verwendet weiterhin `c2dm` in vielen der Zeichenfolgen Berechtigung.) 
+-   `com.google.android.c2dm.permission.RECEIVE`&ndash; Erteilt der APP die Berechtigung zum Registrieren und empfangen von Nachrichten von Google Cloud Messaging. (Was `c2dm` bedeutet das? Dies steht für _Cloud-zu-Gerät-Messaging_, bei dem es sich um den mittlerweile veralteten Vorgänger für GCM handelt. 
+    GCM verwendet `c2dm` weiterhin in vielen Ihrer Berechtigungs Zeichenfolgen.) 
 
--   `android.permission.WAKE_LOCK` &ndash; (Optional) Verhindert, dass das Gerät CPU in den Standbymodus wechseln beim Empfang einer Nachricht. 
+-   `android.permission.WAKE_LOCK`&ndash; (Optional) verhindert, dass die CPU des Geräts beim lauschen auf eine Nachricht in den Standbymodus wechselt. 
 
--   `android.permission.INTERNET` &ndash; Gewährt Zugriff auf das Internet, damit die Client-app bei GCM kommunizieren kann. 
+-   `android.permission.INTERNET`&ndash; Gewährt Internet Zugriff, sodass die Client-App mit GCM kommunizieren kann. 
 
--   *Paketname* `.permission.C2D_MESSAGE` &ndash; registriert die Anwendung mit Android und fordert die Berechtigung zum Empfangen von ausschließlich alle C2D-Nachrichten (Cloud-zu-Gerät). Die *Package_name* Präfix ist identisch mit Ihrem Anwendungs-ID. 
+-   *Paketname registriert die Anwendung* `.permission.C2D_MESSAGE` bei Android und fordert die Berechtigung an, alle C2D-Nachrichten (Cloud-zu-Gerät) exklusiv zu empfangen. &ndash; Das *Paketname* -Präfix ist mit der Anwendungs-ID identisch. 
 
-Wir werden diese Berechtigungen im Android-Manifest festlegen. Ermöglicht das Bearbeiten von **"androidmanifest.xml"** und Ersetzen Sie den Inhalt durch folgendes XML: 
+Diese Berechtigungen werden im Android-Manifest festgelegt. Bearbeiten Sie " **androidmanifest. XML** ", und ersetzen Sie den Inhalt durch den folgenden XML-Code: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -116,13 +116,13 @@ Wir werden diese Berechtigungen im Android-Manifest festlegen. Ermöglicht das B
 </manifest>
 ```
 
-Ändern Sie im obigen XML *YOUR_PACKAGE_NAME* an den Paketnamen für Ihre Client-app-Projekt. Beispielsweise `com.xamarin.gcmexample`. 
+Ändern Sie *YOUR_PACKAGE_NAME* im obigen XML-Code in den Paketnamen für das Client-App-Projekt. Beispielsweise `com.xamarin.gcmexample`. 
 
-### <a name="check-for-google-play-services"></a>Überprüfung auf Google Play-Dienste
+### <a name="check-for-google-play-services"></a>Auf Google Play Services überprüfen
 
-In dieser exemplarischen Vorgehensweise erstellen wir eine app auf das Notwendigste mit einem einzelnen `TextView` in der Benutzeroberfläche. Diese app Interaktion mit GCM nicht direkt angegeben werden. Wir werden stattdessen sehen Sie sich im Ausgabefenster angezeigt wie unsere app-Handshakes mit GCM, wir Prüfen der Komponentenleiste Benachrichtigung für neue Benachrichtigungen, wenn diese eingehen. 
+In dieser exemplarischen Vorgehensweise erstellen wir eine Bare-the-app mit einem `TextView` einzelnen in der Benutzeroberfläche. Diese APP weist nicht direkt auf die Interaktion mit GCM hin. Stattdessen sehen wir uns das Ausgabefenster an, um zu sehen, wie die APP mit GCM Handshakes, und wir überprüfen die Benachrichtigungsleiste auf neue Benachrichtigungen, sobald sie eintreffen. 
 
-Zunächst erstellen wir ein Layout für den Bereich. Bearbeiten Sie **Resources.layout.Main.axml** und Ersetzen Sie den Inhalt durch folgendes XML: 
+Erstellen Sie zunächst ein Layout für den Nachrichtenbereich. Bearbeiten Sie **Resources. Layout. Main. axml** , und ersetzen Sie den Inhalt durch den folgenden XML-Code: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -141,15 +141,15 @@ Zunächst erstellen wir ein Layout für den Bereich. Bearbeiten Sie **Resources.
 </LinearLayout>
 ```
 
-Speichern Sie **Main.axml** und schließen Sie sie.
+Speichern Sie die Datei **Main. axml** , und schließen Sie Sie.
 
-Wenn die Client-app gestartet wird, möchten wir sie, um sicherzustellen, dass die Google Play Services verfügbar ist, bevor wir GCM wenden Sie sich an. Bearbeiten Sie **"mainactivity.cs"** , und Ersetzen Sie die ``count`` Variablendeklaration mit der folgenden Instanz Variablendeklaration-Instanz: 
+Wenn die Client-App gestartet wird, soll überprüft werden, ob Google Play Services verfügbar ist, bevor versucht wird, GCM zu kontaktieren. Bearbeiten Sie **MainActivity.cs** , und ``count`` ersetzen Sie die Deklaration der Instanzvariablen durch die folgende Instanz-Variablen Deklaration 
 
 ```csharp
 TextView msgText;
 ```
 
-Fügen Sie die folgende Methode der **MainActivity** Klasse: 
+Fügen Sie als nächstes der **mainactivity** -Klasse die folgende Methode hinzu: 
 
 ```csharp
 public bool IsPlayServicesAvailable ()
@@ -174,10 +174,10 @@ public bool IsPlayServicesAvailable ()
 }
 ```
 
-Dieser Code überprüft das Gerät aus, um festzustellen, ob die Google Play Services-APK installiert ist. Wenn es nicht installiert ist, wird eine Meldung im Nachrichtenbereich angezeigt, die der Benutzer ein APK aus dem Google Play Store herunterladen (oder in den Systemeinstellungen des Geräts aktivieren). Denn wir möchten diese Prüfung ausgeführt, wenn die Client-app gestartet wird, werden wir einen Aufruf dieser Methode fügen Sie am Ende der `OnCreate`. 
+Dieser Code überprüft das Gerät, um festzustellen, ob das Google Play Services APK installiert ist. Wenn Sie nicht installiert ist, wird eine Meldung im Meldungs Bereich angezeigt, in der der Benutzer angewiesen wird, ein APK vom Google Play Store herunterzuladen (oder in den Systemeinstellungen des Geräts zu aktivieren). Da diese Überprüfung beim Starten der Client-app ausgeführt werden soll, fügen Sie am Ende von `OnCreate`einen-Aufrufvorgang für diese Methode hinzu. 
 
 
-Ersetzen Sie als Nächstes die `OnCreate` Methode durch den folgenden Code:
+Ersetzen Sie als nächstes `OnCreate` die-Methode durch den folgenden Code:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -191,29 +191,29 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Dieser Code überprüft das Vorhandensein der Google Play Services apk-Datei und schreibt das Ergebnis in den Bereich. 
+Dieser Code überprüft, ob das Google Play Services APK vorhanden ist, und schreibt das Ergebnis in den Nachrichtenbereich. 
 
-Lassen Sie uns vollständig neu zu erstellen und Ausführen der app. Sie sollten ein Bildschirm angezeigt, der wie im folgenden Screenshot aussieht: 
+Wir erstellen die APP vollständig neu und führen Sie aus. Es sollte ein Bildschirm angezeigt werden, der dem folgenden Screenshot ähnelt: 
 
-[![Google Play Services ist verfügbar](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png#lightbox)
+[![Google Play Services ist verfügbar.](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png#lightbox)
 
-Wenn Sie dieses Ergebnis nicht erhalten, stellen Sie sicher, dass die Google Play Services-APK auf dem Gerät und, installiert ist die **Xamarin Google Play Services - GCM** -Paket hinzugefügt wird Ihre **ClientApp** Projekt wie beschrieben weiter oben. Wenn Sie einen Buildfehler erhalten, versuchen Sie es die Projektmappe zu bereinigen und das Projekt erneut zu erstellen. 
+Wenn Sie dieses Ergebnis nicht erhalten, vergewissern Sie sich, dass das Google Play Services APK auf Ihrem Gerät installiert ist und dass das **xamarin Google Play Services-GCM-** Paket zum **Client App** -Projekt hinzugefügt wird, wie bereits erläutert. Wenn Sie einen Buildfehler erhalten, versuchen Sie, die Projekt Mappe zu bereinigen und das Projekt neu zu erstellen. 
 
-Als Nächstes schreiben wir Code, um wenden Sie sich an GCM und ein Registrierungstoken zu erhalten.
+Als nächstes schreiben wir Code, um GCM zu kontaktieren und ein Registrierungs Token zurückzukommen.
 
 ### <a name="register-with-gcm"></a>Bei GCM registrieren
 
-Bevor die app aus der app-Server die remotebenachrichtigungen empfangen kann, müssen sie bei GCM registrieren und ein Registrierungstoken erhalten. Die Arbeit von der Anwendung bei GCM registrieren erfolgt durch ein `IntentService` , die wir erstellen. Unsere `IntentService` führt die folgenden Schritte aus: 
+Bevor die APP Remote Benachrichtigungen vom App-Server empfangen kann, muss Sie sich bei GCM registrieren und ein Registrierungs Token zurückerhalten. Das Registrieren unserer Anwendung bei GCM erfolgt durch eine `IntentService` , die wir erstellen. Unsere `IntentService` führt die folgenden Schritte aus: 
 
-1.  Verwendet die [InstanceID](https://developers.google.com/instance-id/) -API, um Sicherheitstoken zu generieren, die unsere Client-app Zugriff auf den app-Server zu autorisieren. Im Gegenzug erhalten wir eine Registrierung token von GCM.
+1.  Verwendet die [InstanceId-](https://developers.google.com/instance-id/) API zum Generieren von Sicherheits Token, die die Client-App für den Zugriff auf den App-Server autorisieren. Im Gegenzug erhalten wir ein Registrierungs Token aus GCM zurück.
 
-2.  Das Registrierungstoken für die app-Server weitergeleitet, (wenn der Server app es erfordert).
+2.  Leitet das Registrierungs Token an den App-Server weiter (sofern der App-Server dies erfordert).
 
-3.  Eine oder mehrere Thema benachrichtigungskanäle abonniert.
+3.  Abonniert einen oder mehrere Benachrichtigungs Themen Kanäle.
 
-Nachdem wir dies implementieren `IntentService`, testen, um festzustellen, ob wir eine Registrierung token von GCM erhalten.
+Nachdem wir dies `IntentService`implementiert haben, testen wir es, um festzustellen, ob wir ein Registrierungs Token aus GCM zurückerhalten.
 
-Fügen Sie eine neue Datei namens **RegistrationIntentService.cs** , und Ersetzen Sie den Vorlagencode durch den folgenden:
+Fügen Sie eine neue Datei mit dem Namen **RegistrationIntentService.cs** hinzu, und ersetzen Sie den Vorlagen Code durch Folgendes:
 
 
 ```csharp
@@ -270,17 +270,17 @@ namespace ClientApp
 }
 ```
 
-Ändern Sie in der obigen Beispielcode *YOUR_SENDER_ID* auf die Anzahl der Absender-ID für Ihre Client-app-Projekt. So erhalten Sie die Absender-ID für Ihr Projekt: 
+Ändern Sie *YOUR_SENDER_ID* im obigen Beispielcode in die Absender-ID für das Client-App-Projekt. So erhalten Sie die Absender-ID für Ihr Projekt: 
 
-1.  Melden Sie sich bei der [Google Cloud Console](https://console.cloud.google.com/) , und wählen Sie den Projektnamen aus dem Pulldownmenü. In der **Projekt Informationen** Bereich, der für Ihr Projekt angezeigt wird, klicken Sie auf **wechseln Sie auf die projekteinstellungen**:
+1.  Melden Sie sich bei der [Google Cloud Console](https://console.cloud.google.com/) an, und wählen Sie im Pulldownmenü den Projektnamen aus. Klicken Sie im Bereich **Project Info** , der für das Projekt angezeigt wird, auf **zu Projekteinstellungen**wechseln:
 
-    [![Auswählen des XamarinGCM-Projekts](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
+    [![Xamaringcm-Projekt auswählen](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
-2.  Auf der **Einstellungen** Seite, suchen Sie nach der **Projektnummer** &ndash; Dies ist die Absender-ID für Ihr Projekt:
+2.  Suchen Sie auf der Seite " **Einstellungen** " die **Projekt Nummer** &ndash; , die die Absender-ID für Ihr Projekt ist:
 
-    [![Projektnummer angezeigt](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
+    [![Projekt Nummer angezeigt](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
-Wir möchten unsere `RegistrationIntentService` Wenn unsere app ausgeführt wird. Bearbeiten Sie **"mainactivity.cs"** und ändern Sie die `OnCreate` Methode, damit unsere `RegistrationIntentService` wird gestartet, nachdem es das Vorhandensein von Google Play Services überprüft: 
+Wir möchten unsere `RegistrationIntentService` app starten, wenn die APP gestartet wird. Bearbeiten Sie **MainActivity.cs** , und `OnCreate` ändern Sie die- `RegistrationIntentService` Methode so, dass nach dem Überprüfen auf das vorhanden sein von Google Play Services gestartet wird: 
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -298,26 +298,26 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Nun werfen wir einen Blick auf die einzelnen Abschnitte des `RegistrationIntentService` zu verstehen, wie es funktioniert. 
+Sehen wir uns nun den einzelnen Abschnitt von `RegistrationIntentService` an, um zu verstehen, wie er funktioniert. 
 
-Zuerst versehen wir unsere `RegistrationIntentService` mit dem folgenden Attribut, um anzugeben, dass der Dienst ist nicht für vom System instanziiert werden: 
+Zuerst kommentieren wir unsere `RegistrationIntentService` mit dem folgenden Attribut, um anzugeben, dass der Dienst nicht vom System instanziiert werden soll: 
 
 ```csharp
 [Service (Exported = false)]
 ```
 
-Die `RegistrationIntentService` Konstruktor benennt den Arbeitsthread *RegistrationIntentService* zum Debugging zu erleichtern. 
+Der `RegistrationIntentService` Konstruktor benennt den Arbeits Thread *registrationintentservice* , um das Debuggen zu vereinfachen. 
 
 ```csharp
 public RegistrationIntentService() : base ("RegistrationIntentService") { }
 ```
 
-Die Kernfunktionen von `RegistrationIntentService` befindet sich in der `OnHandleIntent` Methode. Betrachten wir nun diesen Code, um festzustellen, wie sie die app bei GCM registriert.
+Die Kernfunktionalität von `RegistrationIntentService` befindet sich in `OnHandleIntent` der-Methode. Sehen wir uns diesen Code an, um zu erfahren, wie die APP mit GCM registriert wird.
 
 
-##### <a name="request-a-registration-token"></a>Anfordern eines Registrierungstokens
+##### <a name="request-a-registration-token"></a>Anfordern eines Registrierungs Tokens
 
-`OnHandleIntent` Ruft zunächst die Google [InstanceID.GetToken](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;) Methode, um ein Registrierungstoken von GCM anfordern. Wir diesen Code in umschließen einer `lock` zum Schutz gegen die Möglichkeit, mehrere gleichzeitige Registrierung-Intents &ndash; der `lock` wird sichergestellt, dass diese Intent-Elemente nacheinander verarbeitet werden. Zum Abrufen eines registrierungstokens nicht, wird eine Ausnahme ausgelöst, und melden Sie sich einen Fehler. Wenn die Registrierung erfolgreich ist, `token` auf die wir wieder von GCM hier-Registrierungstoken festgelegt ist: 
+`OnHandleIntent`Ruft zuerst die [InstanceID. GetToken-](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;) Methode von Google auf, um ein Registrierungs Token von GCM anzufordern. Wir wrappen diesen Code in `lock` einer, um zu verhindern, dass mehrere Registrierungs Intents `lock` gleich &ndash; zeitig ausgeführt werden. Dadurch wird sichergestellt, dass diese Intents sequenziell verarbeitet werden. Wenn ein Registrierungs Token nicht erhalten werden kann, wird eine Ausnahme ausgelöst, und es wird ein Fehler protokolliert. Wenn die Registrierung erfolgreich ist `token` , wird auf das Registrierungs Token festgelegt, das wir von GCM erhalten haben: 
 
 ```csharp
 static object locker = new object ();
@@ -337,9 +337,9 @@ catch (Exception e)
     Log.Debug ...
 ```
 
-##### <a name="forward-the-registration-token-to-the-app-server"></a>Weiterleiten Sie das Registrierungstoken wird an der App-Server.
+##### <a name="forward-the-registration-token-to-the-app-server"></a>Leiten Sie das Registrierungs Token an den App-Server weiter.
 
-Wenn wir ein Registrierungstoken zu erhalten (d. h. keine Ausnahme wurde ausgelöst), rufen wir `SendRegistrationToAppServer` Zuordnen des Benutzers Registrierung token mit dem serverseitigen-Konto (falls vorhanden) verwaltet wird von der Anwendung. Da diese Implementierung für den Entwurf des app-Servers abhängig ist, wird eine leere Methode hier bereitgestellt: 
+Wenn wir ein Registrierungs Token erhalten (d. h., es wurde keine Ausnahme ausgelöst) `SendRegistrationToAppServer` , wird aufgerufen, um das Registrierungs Token des Benutzers dem serverseitigen Konto (sofern vorhanden) zuzuordnen, das von der Anwendung verwaltet wird. Da diese Implementierung vom Entwurf des App-Servers abhängt, wird hier eine leere Methode bereitgestellt: 
 
 ```csharp
 void SendRegistrationToAppServer (string token)
@@ -348,12 +348,12 @@ void SendRegistrationToAppServer (string token)
 }
 ```
 
-In einigen Fällen benötigt die app-Server nicht Registrierungstoken des Benutzers. In diesem Fall kann dieser Methode ausgelassen werden. Wenn ein Registrierungstoken an der app-Server gesendet wird `SendRegistrationToAppServer` sollten beibehalten, ein boolescher Wert, um anzugeben, ob das Token an den Server gesendet wurde. Wenn dieser Wert auf "false" ist `SendRegistrationToAppServer` sendet das Token an die Anwendungsserver &ndash; , andernfalls das Token bereits an der app-Server in einem vorherigen Aufruf gesendet wurde. 
+In einigen Fällen benötigt der App-Server das Registrierungs Token des Benutzers nicht. in diesem Fall kann diese Methode ausgelassen werden. Wenn ein Registrierungs Token an den App-Server gesendet wird `SendRegistrationToAppServer` , muss einen booleschen Wert aufbewahren, um anzugeben, ob das Token an den Server gesendet wurde. Wenn dieser boolesche Wert false ist `SendRegistrationToAppServer` , sendet das Token an den APP &ndash; -Server, andernfalls wurde das Token bereits in einem vorherigen-Befehl an den App-Server gesendet. 
 
 
-##### <a name="subscribe-to-the-notification-topic"></a>Das Benachrichtigungsthema abonnieren
+##### <a name="subscribe-to-the-notification-topic"></a>Abonnieren des Benachrichtigungs Themas
 
-Als Nächstes rufen wir unseren `Subscribe` Methode, um anzugeben, GCM, die an ein Benachrichtigungsthema abonnieren soll. In `Subscribe`, rufen wir die [GcmPubSub.Subscribe](https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmPubSub.html#subscribe&#40;java.lang.String,%20java.lang.String,%20android.os.Bundle&#41;) API, abonnieren unseren Client-app für alle Nachrichten, die unter `/topics/global`:
+Als nächstes nennen wir unsere `Subscribe` Methode, um dem GCM mitzuteilen, dass ein Benachrichtigungs Thema abonniert werden soll. In `Subscribe`wird die API " [gcmpubsub. Subscribe](https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmPubSub.html#subscribe&#40;java.lang.String,%20java.lang.String,%20android.os.Bundle&#41;) " aufgerufen, um die Client-App für alle `/topics/global`Nachrichten unter zu abonnieren:
 
 ```csharp
 void Subscribe (string token)
@@ -363,16 +363,16 @@ void Subscribe (string token)
 }
 ```
 
-Der app-Server senden muss benachrichtigungsmeldungen an `/topics/global` Wenn Sie diese empfangen werden. Beachten Sie, die im Thema zu benennen, unter `/topics` kann beliebig, sein, solange der app-Server und die Client-app auf diesen Namen akzeptieren. (Hier haben wir den Namen `global` , um anzugeben, dass zum Empfangen von Nachrichten in allen Themen, die von der app-Server unterstützt werden soll.) 
+Der App-Server muss Benachrichtigungs Meldungen `/topics/global` an senden, wenn diese empfangen werden. Beachten Sie, dass der Name `/topics` des Themas unter beliebig sein kann, solange der App-Server und die Client-App Diese Namen akzeptieren. (Hier haben wir den Namen `global` gewählt, um anzugeben, dass wir Nachrichten für alle vom App-Server unterstützten Themen empfangen möchten.) 
 
-Informationen zu GCM-Thema, die auf dem Server-messaging finden Sie in der Google [senden Botschaften und Hinweise an Themen](https://developers.google.com/cloud-messaging/topic-messaging). 
+Weitere Informationen zu GCM Topic Messaging auf der Serverseite finden Sie unter Google es [Send Messaging to topics](https://developers.google.com/cloud-messaging/topic-messaging). 
 
 
-#### <a name="implement-an-instance-id-listener-service"></a>Einen Instanz-ID-Listenerdienst implementieren
+#### <a name="implement-an-instance-id-listener-service"></a>Implementieren Sie einen Instanz-ID-Listenerdienst
 
-Registrierungstoken sind eindeutig und sicher. Allerdings kann der Client-app (oder GCM) müssen das Registrierungstoken im Fall von app-Neuinstallation oder ein Sicherheitsproblem aktualisieren. Aus diesem Grund müssen wir implementieren ein `InstanceIdListenerService` , die von GCM tokenaktualisierung-Anforderungen reagiert. 
+Registrierungs Token sind eindeutig und sicher. die Client-app (bzw. GCM) muss das Registrierungs Token jedoch möglicherweise aktualisieren, falls die Neuinstallation der APP oder ein Sicherheitsproblem vorliegt. Aus diesem Grund müssen wir eine `InstanceIdListenerService` implementieren, die auf tokenaktualisierungs Anforderungen von GCM antwortet. 
 
-Fügen Sie eine neue Datei namens **InstanceIdListenerService.cs** , und Ersetzen Sie den Vorlagencode durch den folgenden: 
+Fügen Sie eine neue Datei mit dem Namen **InstanceIdListenerService.cs** hinzu, und ersetzen Sie den Vorlagen Code durch Folgendes: 
 
 ```csharp
 using Android.App;
@@ -393,18 +393,18 @@ namespace ClientApp
 }
 ```
 
-Mit einer Anmerkung versehen `InstanceIdListenerService` mit dem folgenden Attribut, um anzugeben, dass der Dienst ist nicht für vom System instanziiert werden und sie GCM-Registrierungstoken erhalten kann (so genannte *Instanz-ID*) aktualisieren von Anforderungen: 
+Kommentieren Sie mit `InstanceIdListenerService` dem folgenden Attribut, um anzugeben, dass der Dienst nicht vom System instanziiert werden kann und dass er GCM-Registrierungs Token (auch als Instanz- *ID*bezeichnet) für Aktualisierungs Anforderungen empfangen kann: 
 
 ```csharp
 [Service(Exported = false), IntentFilter(new[] { "com.google.android.gms.iid.InstanceID" })]
 ```
 
-Die `OnTokenRefresh` Methode in unserem Dienst startet die `RegistrationIntentService` , damit sie das Registrierungstoken für die neue abfangen kann.
+Die `OnTokenRefresh` -Methode in unserem Dienst startet `RegistrationIntentService` den, sodass er das neue Registrierungs Token abfangen kann.
 
 
-#### <a name="test-registration-with-gcm"></a>Testen Sie die Registrierung bei GCM
+#### <a name="test-registration-with-gcm"></a>Test Registrierung bei GCM
 
-Lassen Sie uns vollständig neu zu erstellen und Ausführen der app. Wenn Sie erfolgreich ein Registrierungstoken von GCM empfangen haben, sollte das Registrierungstoken im Ausgabefenster angezeigt werden. Zum Beispiel: 
+Wir erstellen die APP vollständig neu und führen Sie aus. Wenn Sie erfolgreich ein Registrierungs Token von GCM erhalten haben, sollte das Registrierungs Token im Fenster Ausgabe angezeigt werden. Beispiel: 
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2
@@ -413,19 +413,19 @@ I/RegistrationIntentService( 1934): GCM Registration Token: f8LdveCvXig:APA91bFI
 
 ```
 
-### <a name="handle-downstream-messages"></a>Nachgelagerte Verarbeitung von Nachrichten 
+### <a name="handle-downstream-messages"></a>Verarbeiten von downstreamnachrichten 
 
-Der Code, den wir bisher implementiert haben, ist nur "Einrichtung" Code; Er überprüft, um festzustellen, ob es sich bei Google Play Services ist installiert und mit GCM und der app-Server, um unsere Client-app vorzubereiten, für den Empfang von remotebenachrichtigungen handelt. Allerdings gibt es noch Code implementieren, der tatsächlich empfangen und Verarbeiten von benachrichtigungsmeldungen downstream. Zu diesem Zweck müssen wir implementieren eine *GCM-Listenerdienst*. Dieser Dienst Thema Nachrichten aus der app-Server empfängt und sendet diese lokal als Benachrichtigungen. Nachdem wir diesen Dienst implementiert haben, erstellen wir ein Testprogramm zum Senden von Nachrichten an GCM, sodass wir sehen können, wenn es sich bei unserer Implementierung ordnungsgemäß funktioniert. 
-
-
-#### <a name="add-a-notification-icon"></a>Fügen Sie ein Symbol hinzu.
-
-Zuerst fügen Sie ein kleines Symbol, das im Infobereich der Taskleiste angezeigt wird, wenn unsere Benachrichtigung gestartet wird. Sie können kopieren [dieses Symbol](remote-notifications-with-gcm-images/ic-stat-ic-notification.png) zu Ihrem Projekt, oder erstellen Sie Ihr eigenes benutzerdefinierte Symbol. Den Namen der Symboldatei **ic_stat_button_click.png** und kopieren Sie sie in der **Ressourcen/drawable** Ordner. Denken Sie daran, verwenden Sie **hinzufügen > Vorhandenes Element...**  auf dieses Symboldatei in Ihr Projekt einbinden.
+Der Code, den wir bisher implementiert haben, ist nur "Setup"-Code. Es prüft, ob Google Play Services installiert ist, und verhandelt mit GCM und dem App-Server, um die Client-App für den Empfang von Remote Benachrichtigungen vorzubereiten. Wir haben jedoch noch Code implementiert, der nachgeschaltete Benachrichtigungs Meldungen empfängt und verarbeitet. Zu diesem Zweck muss ein *GCM-Listenerdienst*implementiert werden. Dieser Dienst empfängt Thema Nachrichten vom App-Server und sendet diese lokal als Benachrichtigungen. Nachdem wir diesen Dienst implementiert haben, erstellen wir ein Testprogramm zum Senden von Nachrichten an GCM, damit wir sehen können, ob die Implementierung ordnungsgemäß funktioniert. 
 
 
-#### <a name="implement-a-gcm-listener-service"></a>Einen GCM-Listenerdienst implementieren
+#### <a name="add-a-notification-icon"></a>Benachrichtigungssymbol hinzufügen
 
-Fügen Sie eine neue Datei namens **GcmListenerService.cs** , und Ersetzen Sie den Vorlagencode durch den folgenden:
+Fügen Sie zunächst ein kleines Symbol hinzu, das im Benachrichtigungsbereich angezeigt wird, wenn unsere Benachrichtigung gestartet wird. Sie können [dieses Symbol](remote-notifications-with-gcm-images/ic-stat-ic-notification.png) in Ihr Projekt kopieren oder ein eigenes benutzerdefiniertes Symbol erstellen. Wir nennen die Symbol Datei " **ic_stat_button_click. png** " und kopieren Sie in den Ordner " **Resources/drawable** ". Denken Sie daran, **> vorhandenes Element hinzufügen...** zu verwenden, um diese Symbol Datei in das Projekt einzuschließen.
+
+
+#### <a name="implement-a-gcm-listener-service"></a>Implementieren eines GCM-listenerdienstanbieter
+
+Fügen Sie eine neue Datei mit dem Namen **GcmListenerService.cs** hinzu, und ersetzen Sie den Vorlagen Code durch Folgendes:
 
 ```csharp
 using Android.App;
@@ -467,15 +467,15 @@ namespace ClientApp
 }
 ```
 
-Werfen wir einen Blick auf die einzelnen Abschnitte des unsere `GcmListenerService` zu verstehen, wie es funktioniert. 
+Werfen wir einen Blick auf jeden Abschnitt unserer `GcmListenerService` , um zu verstehen, wie es funktioniert. 
 
-Zuerst versehen wir `GcmListenerService` mit einem Attribut, um anzugeben, dass dieser Dienst ist nicht für vom System instanziiert werden, und wir eine Zielfilter schließen, um anzugeben, dass der Empfang von GCM-Nachrichten: 
+Zunächst wird ein Attribut mit einem `GcmListenerService` Attribut versehen, um anzugeben, dass dieser Dienst nicht vom System instanziiert werden soll, und es wird ein beabsichtigter Filter hinzugefügt, um anzugeben, dass er GCM-Nachrichten empfängt: 
 
 ```csharp
 [Service (Exported = false), IntentFilter (new [] { "com.google.android.c2dm.intent.RECEIVE" })]
 ```
 
-Wenn `GcmListenerService` empfängt eine Nachricht von GCM, die `OnMessageReceived` -Methode wird aufgerufen. Diese Methode extrahiert den Nachrichteninhalt aus dem übergebenen `Bundle`, protokolliert der Inhalt der Nachricht (sodass wir sie in das Fenster "Ausgabe" sehen können), und ruft `SendNotification` um eine lokale Benachrichtigung mit dem Inhalt der empfangenen Nachricht zu starten: 
+Wenn `GcmListenerService` eine Nachricht von GCM empfängt, wird `OnMessageReceived` die-Methode aufgerufen. Diese Methode extrahiert den Nachrichten Inhalt aus dem `Bundle`über gebenden, protokolliert den Nachrichten Inhalt (damit wir ihn im Ausgabefenster anzeigen können) und ruft `SendNotification` auf, um eine lokale Benachrichtigung mit dem empfangenen Nachrichten Inhalt zu starten: 
 
 ```csharp
 var message = data.GetString ("message");
@@ -484,13 +484,13 @@ Log.Debug ("MyGcmListenerService", "Message: " + message);
 SendNotification (message);
 ```
 
-Die `SendNotification` -Methode verwendet `Notification.Builder` verwendet zum Erstellen der Benachrichtigung, und klicken Sie dann die `NotificationManager` um die Benachrichtigung zu starten. Effektiv, konvertiert diese die remote-Nachricht in eine lokale Benachrichtigung, die dem Benutzer angezeigt werden.
-Weitere Informationen zur Verwendung von `Notification.Builder` und `NotificationManager`, finden Sie unter [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md).
+Die `SendNotification` -Methode`Notification.Builder` verwendet, um die Benachrichtigung zu erstellen, und verwendet dann, umdieBenachrichtigungzustarten.`NotificationManager` Dadurch wird die Remote Benachrichtigungs Meldung in eine lokale Benachrichtigung konvertiert, damit Sie dem Benutzer angezeigt wird.
+Weitere Informationen zur Verwendung von `Notification.Builder` und `NotificationManager`finden Sie unter [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md).
 
 
-#### <a name="declare-the-receiver-in-the-manifest"></a>Den Empfänger im Manifest deklariert
+#### <a name="declare-the-receiver-in-the-manifest"></a>Deklarieren des Empfängers im Manifest
 
-Bevor wir die Nachrichten von GCM empfangen kann, muss den GCM-Listener in der Android-Manifest deklariert werden. Ermöglicht das Bearbeiten von **"androidmanifest.xml"** , und Ersetzen Sie die `<application>` Abschnitt mit den folgenden XML-Code: 
+Vor dem empfangen von Nachrichten aus GCM müssen wir den GCM-Listener im Android-Manifest deklarieren. Bearbeiten Sie " **androidmanifest. XML** ", und `<application>` ersetzen Sie den Abschnitt durch den folgenden XML-Code: 
 
 ```xml
 <application android:label="RemoteNotifications" android:icon="@drawable/Icon">
@@ -506,42 +506,42 @@ Bevor wir die Nachrichten von GCM empfangen kann, muss den GCM-Listener in der A
 </application>
 ```
 
-Ändern Sie im obigen XML *YOUR_PACKAGE_NAME* an den Paketnamen für Ihre Client-app-Projekt. In unserem Beispiel Exemplarische Vorgehensweise der Paketname ist `com.xamarin.gcmexample`. 
+Ändern Sie *YOUR_PACKAGE_NAME* im obigen XML-Code in den Paketnamen für das Client-App-Projekt. In unserem exemplarischen Vorgehensweise lautet `com.xamarin.gcmexample`der Paketname. 
 
-Sehen wir uns, was bewirkt, dass jede Einstellung in dieser XML-Code:
+Sehen wir uns an, was die einzelnen Einstellungen in dieser XML-Datei sind:
 
 |Einstellung|Beschreibung|
 |---|---|
-|`com.google.android.gms.gcm.GcmReceiver`|Deklariert, dass unsere app einen GCM-Empfänger implementiert, der erfasst und verarbeitet eingehende Nachrichten der Push-Benachrichtigungen.|
-|`com.google.android.c2dm.permission.SEND`|Deklariert, dass nur die GCM-Server die Nachrichten direkt an die app senden können.|
-|`com.google.android.c2dm.intent.RECEIVE`|Der Zielfilter angekündigt, dass unsere app von GCM-Broadcastmeldungen behandelt.|
-|`com.google.android.c2dm.intent.REGISTRATION`|Zielfilter angekündigt, dass unsere app neue Registrierung Intents verarbeitet (d. h. wir implementiert haben einen Instanz-ID-Listenerdienst).|
+|`com.google.android.gms.gcm.GcmReceiver`|Deklariert, dass unsere APP einen GCM-Empfänger implementiert, der eingehende pushbenachrichtigungsnachrichten erfasst und verarbeitet.|
+|`com.google.android.c2dm.permission.SEND`|Deklariert, dass nur GCM-Server Nachrichten direkt an die APP senden können.|
+|`com.google.android.c2dm.intent.RECEIVE`|Beabsichtigte Filter ankündigen, dass unsere App Broadcast Nachrichten aus GCM verarbeitet.|
+|`com.google.android.c2dm.intent.REGISTRATION`|Beabsichtigte Filter Werbung, dass unsere App neue Registrierungs Absichten behandelt (d. h., wir haben einen Instanz-ID-Listenerdienst implementiert).|
 
-Sie können alternativ ergänzen `GcmListenerService` mit der Angabe in XML, anstatt diese Attribute hier wir geben Sie sie in **"androidmanifest.xml"** , damit die Beispiele für Code leichter zu verstehen sind. 
-
-
-### <a name="create-a-message-sender-to-test-the-app"></a>Erstellen Sie den Absender einer Nachricht zum Testen der App
-
-Fügen Sie eine C# desktop-Konsolenanwendung zur Projektmappe, und nennen Sie sie **MessageSender**. Wir verwenden diese Konsolenanwendung zum Simulieren von eines Anwendungsservers &ndash; Traffic Manager sendet benachrichtigungsmeldungen an **ClientApp** über GCM. 
+Alternativ können Sie diese Attribute `GcmListenerService` ergänzen, anstatt Sie in XML anzugeben. hier geben wir Sie in " **androidmanifest. XML** " an, damit die Codebeispiele leichter befolgt werden können. 
 
 
-#### <a name="add-the-jsonnet-package"></a>Fügen Sie dem JSON.NET-Paket hinzu.
+### <a name="create-a-message-sender-to-test-the-app"></a>Erstellen eines Nachrichten Absenders zum Testen der APP
 
-In dieser Konsolen-app erstellen wir eine JSON-Nutzlast, die die Nachricht enthält, die an die Client-app gesendet werden soll. Wir verwenden die **Json.NET** -Paket in **MessageSender** zu vereinfachen, erstellen Sie das JSON-Objekt, das durch GCM erforderlich. In Visual Studio mit der Maustaste **Verweise > NuGet-Pakete verwalten...** ; in Visual Studio für Mac, mit der rechten Maustaste **Pakete > Pakete hinzufügen...** . 
-
-Wir suchen nach den **Json.NET** Packen und installieren Sie es in das Projekt: 
-
-[![Installieren des Pakets Json.NET](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
+Fügen Sie der Projekt C# Mappe ein Desktop Konsolen Anwendungsprojekt hinzu, und nennen Sie es " **messagesender**". Wir verwenden diese Konsolenanwendung zum Simulieren eines Anwendungs Servers &ndash; , der über GCM Benachrichtigungs Meldungen an **ClientApp** sendet. 
 
 
-#### <a name="add-a-reference-to-systemnethttp"></a>Hinzufügen eines Verweises auf System.Net.Http
+#### <a name="add-the-jsonnet-package"></a>Hinzufügen des JSON.net-Pakets
 
-Wir müssen auch einen Verweis hinzufügen `System.Net.Http` , damit wir instanziieren kann ein `HttpClient` für die Testnachricht an GCM sendet. In der **MessageSender** -Projekt mit der rechten Maustaste **Verweise > Verweis hinzufügen** und scrollen Sie nach unten, bis Sie sehen **System.Net.Http**. Fügen ein Häkchen neben **System.Net.Http** , und klicken Sie auf **OK**. 
+In dieser Konsolen-APP wird eine JSON-Nutzlast mit der Benachrichtigungs Meldung, die an die Client-App gesendet werden soll, in einer JSON-Nutzlast aufgebaut. Wir verwenden das **JSON.net** -Paket in **messagesender** , um das Erstellen des JSON-Objekts zu vereinfachen, das von GCM benötigt wird. Klicken Sie in Visual Studio mit der rechten Maustaste auf **Verweise > nuget-Pakete verwalten...** ; Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Pakete > Pakete hinzufügen...** . 
+
+Suchen Sie nach dem **JSON.net** -Paket, und installieren Sie es im Projekt: 
+
+[![Installieren des JSON.net-Pakets](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
 
 
-#### <a name="implement-code-that-sends-a-test-message"></a>Implementieren Sie Code, die eine Testnachricht gesendet.
+#### <a name="add-a-reference-to-systemnethttp"></a>Hinzufügen eines Verweises auf System .net. http
 
-In **MessageSender**, bearbeiten Sie **"Program.cs"** und Ersetzen Sie den Inhalt durch den folgenden Code:
+Wir müssen auch einen Verweis auf `System.Net.Http` hinzufügen, damit wir ein `HttpClient` -Objekt zum Senden der Testnachricht an GCM instanziieren können. Klicken Sie im Projekt **messagesender** mit der rechten Maustaste auf **Verweise > fügen Sie einen Verweis hinzu** , und Scrollen Sie nach unten, bis **System .net. http**angezeigt wird. Stellen Sie ein Häkchen neben **System .net. http** ein, und klicken Sie auf **OK**. 
+
+
+#### <a name="implement-code-that-sends-a-test-message"></a>Implementieren von Code, der eine Test Nachricht sendet
+
+Bearbeiten Sie in **messagesender** **Program.cs** , und ersetzen Sie den Inhalt durch den folgenden Code:
 
 ```csharp
 using System;
@@ -597,9 +597,9 @@ namespace MessageSender
 }
 ```
 
-Ändern Sie im obigen Code *YOUR_API_KEY* auf den API-Schlüssel für das Client-app-Projekt. 
+Ändern Sie *YOUR_API_KEY* im obigen Code in den API-Schlüssel für das Client-App-Projekt. 
 
-Dieser Test-app-Server sendet die folgende JSON-formatierte Meldung an GCM:
+Dieser Test-App-Server sendet die folgende JSON-formatierte Nachricht an GCM:
 
 ```csharp
 {
@@ -610,61 +610,61 @@ Dieser Test-app-Server sendet die folgende JSON-formatierte Meldung an GCM:
 }
 ```
 
-Diese Nachricht an Ihre Client-app wird von GCM, wiederum weitergeleitet. Erstellen Sie **MessageSender** , und öffnen Sie ein Konsolenfenster, in dem wir es über die Befehlszeile ausführen können.
+GCM leitet diese Nachricht ihrerseits an Ihre Client-App weiter. Erstellen Sie nun **messagesender** , und öffnen Sie ein Konsolenfenster, in dem wir es über die Befehlszeile ausführen können.
 
 
 
 ### <a name="try-it"></a>Probieren Sie es aus!
 
-Nun können wir unsere Client-app zu testen. Wenn Sie einen Emulator verwenden, oder wenn Ihr Gerät über WLAN mit GCM kommuniziert, Sie die folgenden TCP-Ports, in der Firewall für GCM-Nachrichten öffnen müssen zu erledigen: 5228 5229 und 5230.
+Nun können wir unsere Client-App testen. Wenn Sie einen Emulator verwenden oder wenn Ihr Gerät mit GCM über Wi-Fi kommuniziert, müssen Sie die folgenden TCP-Ports in der Firewall öffnen, damit GCM-Nachrichten durchgeführt werden können: 5228, 5229 und 5230.
 
-Starten Sie Ihre Client-app, und beobachten Sie das Fenster "Ausgabe". Nach der `RegistrationIntentService` erfolgreich empfängt eine Registrierung von GCM token, das Ausgabefenster sollte angezeigt werden das Token Ausgabeprotokoll wie den folgenden:
+Starten Sie Ihre Client-App, und beobachten Sie das Ausgabefenster. `RegistrationIntentService` Nachdem erfolgreich ein Registrierungs Token von GCM empfangen hat, sollte im Ausgabefenster das Token mit der Protokoll Ausgabe wie folgt angezeigt werden:
 
 ```shell
 I/RegistrationIntentService(16103): GCM Registration Token: eX9ggabZV1Q:APA91bHjBnQXMUeBOT6JDiLpRt8m2YWtY ...
 ```
 
-An diesem Punkt ist die Client-app bereit, eine remote-Benachrichtigung zu empfangen. Führen Sie über die Befehlszeile, die **MessageSender.exe** Programm, um eine Meldung "Hello, Xamarin" an die Client-app zu senden.
-Wenn Sie noch nicht erstellt haben die **MessageSender** Projekt, tun Sie dies jetzt.
+An diesem Punkt ist die Client-App bereit, eine Remote Benachrichtigungs Meldung zu empfangen. Führen Sie in der Befehlszeile das Programm " **messagesender. exe** " aus, um eine "Hello, xamarin"-Benachrichtigungs Meldung an die Client-App zu senden.
+Wenn Sie das Projekt " **messagesender** " noch nicht erstellt haben, können Sie dies jetzt tun.
 
-Auszuführende **MessageSender.exe** unter Visual Studio, öffnen Sie eine Eingabeaufforderung, wechseln Sie in der **MessageSender/Bin/Debug** Verzeichnis, und führen Sie den Befehl direkt:
+Um " **messagesender. exe** " unter Visual Studio auszuführen, öffnen Sie eine Eingabeaufforderung, wechseln Sie in das Verzeichnis " **messagesender/bin/debug** ", und führen Sie den Befehl direkt aus:
 
 ```cmd
 MessageSender.exe
 ```
 
-Auszuführende **MessageSender.exe** unter Visual Studio für Mac öffnen eine Terminalsitzung, **MessageSender/Bin/Debug** das Verzeichnis und das Verwenden von Mono ausführen **MessageSender.exe** 
+Um " **messagesender. exe** " unter Visual Studio für Mac auszuführen, öffnen Sie eine Terminal Sitzung, wechseln Sie zu " **messagesender/bin/debug** ", und verwenden Sie Mono, um " **messagesender. exe** " auszuführen. 
 
 ```bash
 mono MessageSender.exe
 ```
 
-Es kann bis zu einer Minute für die Nachricht über GCM und wieder auf Ihre Client-app verteilt dauern. Wenn die Nachricht erfolgreich empfangen wurde, sollte ähnlich die folgenden in das Fenster "Ausgabe" Ausgabe angezeigt werden: 
+Es kann bis zu einer Minute dauern, bis die Nachricht über GCM verteilt und wieder an Ihre Client-App weitergeleitet wird. Wenn die Nachricht erfolgreich empfangen wurde, sollte im Ausgabefenster die Ausgabe ähnlich der folgenden angezeigt werden: 
 
 ```shell
 D/MyGcmListenerService(16103): From:    /topics/global
 D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 ```
 
-Darüber hinaus sollten Sie feststellen, dass ein neues Benachrichtigungssymbol im Benachrichtigungsbereich angezeigt wurde: 
+Außerdem sollten Sie bemerken, dass ein neues Benachrichtigungssymbol in der Info Leiste angezeigt wird: 
 
-[![Symbol "Benachrichtigung" wird auf Gerät angezeigt.](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
+[![Benachrichtigungssymbol wird auf Gerät angezeigt.](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
-Beim Öffnen der Komponentenleiste Benachrichtigung, um Benachrichtigungen anzuzeigen, sehen Sie unsere remote-Benachrichtigung:
+Wenn Sie die Benachrichtigungsleiste öffnen, um Benachrichtigungen anzuzeigen, sollte die Remote Benachrichtigung angezeigt werden:
 
-[![Benachrichtigung wird angezeigt.](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
+[![Benachrichtigungs Meldung wird angezeigt](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
 
-Herzlichen Glückwunsch! Ihre app hat seine erste remote-Benachrichtigung erhalten.
+Herzlichen Glückwunsch, Ihre APP hat ihre erste Remote Benachrichtigung erhalten.
 
-Beachten Sie, dass es sich bei GCM nicht mehr empfangen werden sollen, wenn die app-Force-beendet wird. Um Benachrichtigungen nach der ein Force Hand fortzusetzen, muss die app manuell neu gestartet werden. Weitere Informationen zu dieser Android-Richtlinie finden Sie unter [Steuerelemente auf die beendete Anwendungen starten](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) und [stack Overflow-Beitrag](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
+Beachten Sie, dass GCM-Nachrichten nicht mehr empfangen werden, wenn die APP erzwungen wird. Zum Fortsetzen von Benachrichtigungen nach einem Erzwingen der Beendigung muss die APP manuell neu gestartet werden. Weitere Informationen zu dieser Android-Richtlinie finden Sie unter [Launch Controls on beendete Applications](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) und this [Stack Overflow Post](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
 
  
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser exemplarischen Vorgehensweise beschrieben, die Schritte zur Implementierung von remotebenachrichtigungen in einer Xamarin.Android-Anwendung. Es wurde beschrieben, wie Sie zusätzliche Pakete, die erforderlich sind, für die Kommunikation mit GCM installieren, und es wurde erklärt, wie app-Berechtigungen für den Zugriff auf den GCM-Server zu konfigurieren. Sie bereitgestellt Beispielcode, der veranschaulicht, wie So prüfen Sie auf das Vorhandensein von Google Play-Dienste und Gewusst wie: Implementieren eines Registrierung intent-Dienst und die Instanz-ID-Listenerdienst, der für ein Registrierungstoken bei GCM verhandelt zum Implementieren von GCM listener Dienst, der empfangen und Verarbeiten von benachrichtigungsmeldungen remote. Schließlich haben wir ein Befehlszeilen-Test-Programm zum Senden von testbenachrichtigungen an die Client-app durch GCM implementiert. 
+In dieser exemplarischen Vorgehensweise werden die Schritte zum Implementieren von Remote Benachrichtigungen in einer xamarin. Android-Anwendung beschrieben. Es wurde beschrieben, wie Sie zusätzliche Pakete installieren, die für die GCM-Kommunikation benötigt werden, und wie Sie App-Berechtigungen für den Zugriff auf GCM-Server konfigurieren. Es wurde ein Beispielcode bereitgestellt, der veranschaulicht, wie Sie das vorhanden sein von Google Play Services überprüfen, wie Sie einen Dienst für die Registrierungs Absicht und einen Instanz-ID-Listenerdienst implementieren, der mit GCM für ein Registrierungs Token verhandelt und wie ein GCM-Listener implementiert wird. Dienst, der Remote Benachrichtigungs Meldungen empfängt und verarbeitet. Schließlich haben wir ein Befehlszeilen-Testprogramm implementiert, mit dem Test Benachrichtigungen über GCM an unsere Client-App gesendet werden. 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [GCM-Modes (Beispiel)](https://developer.xamarin.com/samples/monodroid/RemoteNotifications)
+- [GCM-remotenotifications (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/remotenotifications)
 - [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)

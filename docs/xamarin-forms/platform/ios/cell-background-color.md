@@ -1,24 +1,24 @@
 ---
-title: Hintergrundfarbe der Zelle unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie die plattformspezifischen iOS nutzen, die die Standardhintergrundfarbe der Zellen für iOS festlegt wird.
+title: Zellen Hintergrundfarbe unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die die Standard Hintergrundfarbe von Zellen unter IOS festlegt.
 ms.prod: xamarin
 ms.assetid: 2A3FDACF-5AE2-40DE-8488-6FE41733712F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 6b1e2fe534c8b7d0c3346a18d1b82d797e52dba1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 24276dce97e4935ba41d7012cf6a9aa8fa2658a8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926769"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651375"
 ---
-# <a name="cell-background-color-on-ios"></a>Hintergrundfarbe der Zelle unter iOS
+# <a name="cell-background-color-on-ios"></a>Zellen Hintergrundfarbe unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses iOS-Plattform-spezifische legt die Standardhintergrundfarbe der [ `Cell` ](xref:Xamarin.Forms.Cell) Instanzen. Es ist in XAML verwendet, durch Festlegen der `Cell.DefaultBackgroundColor` bindbare Eigenschaft eine [ `Color` ](xref:Xamarin.Forms.Color):
+Mit diesem IOS-plattformspezifischen wird die Standard Hintergrund [`Cell`](xref:Xamarin.Forms.Cell) Farbe der-Instanzen festgelegt. Sie wird in XAML verwendet `Cell.DefaultBackgroundColor` [`Color`](xref:Xamarin.Forms.Color), indem die bindbare Eigenschaft auf festgelegt wird:
 
 ```xaml
 <ContentPage ...
@@ -52,14 +52,14 @@ var viewCell = new ViewCell { View = ... };
 viewCell.On<iOS>().SetDefaultBackgroundColor(Color.Teal);
 ```
 
-Die `ListView.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die `Cell.SetDefaultBackgroundColor` Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace, legt die Hintergrundfarbe der Zelle mit einem angegebenen [ `Color` ](xref:Xamarin.Forms.Color). Darüber hinaus die `Cell.DefaultBackgroundColor` Methode kann zum Abrufen der aktuellen Hintergrundfarbe der Zelle verwendet werden.
+Die `ListView.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die `Cell.SetDefaultBackgroundColor` -Methode [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) im-Namespace legt die Hintergrundfarbe der Zelle auf eine angegebene [`Color`](xref:Xamarin.Forms.Color)fest. Außerdem kann die `Cell.DefaultBackgroundColor` -Methode zum Abrufen der aktuellen Zellen Hintergrundfarbe verwendet werden.
 
-Das Ergebnis ist, die Farbe des Hintergrunds in ein [ `Cell` ](xref:Xamarin.Forms.Cell) kann festgelegt werden, zu einem bestimmten [ `Color` ](xref:Xamarin.Forms.Color):
+Das Ergebnis ist, dass die Hintergrundfarbe in [`Cell`](xref:Xamarin.Forms.Cell) einem auf einen bestimmten [`Color`](xref:Xamarin.Forms.Color)festgelegt werden kann:
 
-[![Screenshot der Gruppenkopfzellen Blaugrün unter iOS](cell-background-color-images/group-header-cell-color.png "ListView mit Blaugrün Gruppenkopfzellen")](cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView mit Gruppenkopfzellen Blaugrün")
+[ ![Screenshot der Header Zellen der blaugrün-Gruppe in der IOS]-(cell-background-color-images/group-header-cell-color.png "ListView mit blaugrün-Gruppen Header Zellen") ] (cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView mit Header Zellen der Gruppe \"Blaugrün") "
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

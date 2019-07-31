@@ -7,16 +7,16 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 4f8b6b7ea0db8d46886c3391f1aef3ba20a5be44
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8978bd386ec2f2ea0f9960f079ce82750941cfad
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085969"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655952"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Schneiden mit Pfaden und Regionen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Pfade zu Clip-Grafiken zu verwenden, auf bestimmte Bereiche und Regionen erstellen._
 
@@ -24,7 +24,7 @@ Manchmal ist es erforderlich, um das Rendern von Grafiken auf einem bestimmten B
 
 ![](clipping-images/clippingsample.png "Monkey-Objekt über eine keyhole")
 
-Die *Clippingbereichs* ist der Bereich des Bildschirms in der Grafik gerendert werden. Alle Elemente, die außerhalb des Clippingbereichs angezeigt wird, wird nicht gerendert. Clippingbereichs in der Regel durch ein Rechteck definiert ist oder ein [ `SKPath` ](xref:SkiaSharp.SKPath) -Objekt, aber Sie können alternativ definieren ein Clipping mithilfe einer [ `SKRegion` ](xref:SkiaSharp.SKRegion) Objekt. Diese beiden Arten von Objekten an scheint zunächst Verwandte, da Sie eine Region aus einem Pfad erstellen können. Allerdings kann nicht, erstellen Sie einen Pfad aus einer Region, und sie unterscheiden sich stark intern: Ein Pfad umfasst eine Reihe von Linien und Kurven, während eine Region durch eine Reihe von Zeilen definiert wird.
+Die *Clippingbereichs* ist der Bereich des Bildschirms in der Grafik gerendert werden. Alle Elemente, die außerhalb des Clippingbereichs angezeigt wird, wird nicht gerendert. Clippingbereichs in der Regel durch ein Rechteck definiert ist oder ein [ `SKPath` ](xref:SkiaSharp.SKPath) -Objekt, aber Sie können alternativ definieren ein Clipping mithilfe einer [ `SKRegion` ](xref:SkiaSharp.SKRegion) Objekt. Diese beiden Arten von Objekten an scheint zunächst Verwandte, da Sie eine Region aus einem Pfad erstellen können. Es ist jedoch nicht möglich, einen Pfad aus einer Region zu erstellen, und Sie unterscheiden sich intern stark: Ein Pfad besteht aus einer Reihe von Linien und Kurven, während ein Bereich durch eine Reihe von horizontalen Scan Linien definiert wird.
 
 In der Abbildung oben wurde erstellt, indem die **Monkey-Objekt über Keyhole** Seite. Die [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) -Klasse definiert einen Pfad mit SVG-Daten und wird der Konstruktor verwendet, um eine Bitmap aus Programmressourcen zu laden:
 
@@ -366,7 +366,7 @@ Um die Gründe für diesen Unterschied zu verstehen, ist es hilfreich zu versteh
 
 Dieser Auftrag wird erheblich vereinfacht, wenn jeder Pfad in eine Reihe von Zeilen, z. B. in altmodischen Vakuum Tube TVs reduziert wird. Jede Scanzeile ist einfach eine horizontale Linie mit einem Start- und Endpunkt. Beispielsweise kann ein Kreis mit einem Radius von 10 Pixel in 20 Zeilen, zerlegt werden, von denen jedes an den linken Teil des Kreises beginnt, und endet mit den rechten Teil. Kombinieren von zwei Kreise mit jeder Region-Vorgang wird sehr einfach, da sie lediglich die Anfangs- und Endkoordinaten der einzelnen Zeilen der entsprechenden Überprüfung untersucht wird.
 
-Hierfür gibt es ein Bereich ist: Eine Reihe von Zeilen, die einen Bereich zu definieren.
+Eine Region ist: Eine Reihe von horizontalen Scan Linien, die einen Bereich definieren.
 
 Aber wenn ein Bereich in eine Reihe von Scan reduziert wird Zeilen, diese Überprüfung aus, auf denen ein bestimmtes Pixel Dimension Zeilen basieren. Genau genommen ist die Region kein Vector Graphics-Objekt. Es ähnelt in der Art, eine komprimierte monochrome Bitmap als einem Pfad. Daher können nicht Regionen skaliert oder rotiert ohne Verlust der Genauigkeit und aus diesem Grund, die sie nicht transformiert werden, wenn für Clipping-Bereiche verwendet werden.
 
@@ -515,4 +515,4 @@ Sehen sie nicht wirklich wie ein vier – Leaf Clover, aber es ist ein Bild an, 
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

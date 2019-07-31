@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2019
-ms.openlocfilehash: fd67072953f0fc4e448fee7edeec84760ebbda9a
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 6eeafcd943f9d92cf8fb2c19cea40a491413f78b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048320"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657282"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML-Markuperweiterungen können die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Sie Attribute des Elements aus einer Vielzahl von Datenquellen festgelegt werden können. Einige XAML-Markuperweiterungen sind Teil der Spezifikation für die XAML 2009. Diese werden in XAML-Dateien mit der üblichen `x` Namespace-Präfix, und Sie werden häufig bezeichnet mit diesem Präfix. In diesem Artikel werden die folgenden Markuperweiterungen erläutert:
 
@@ -27,7 +27,7 @@ XAML-Markuperweiterungen können die Leistungsfähigkeit und Flexibilität von X
 - [`x:Null`](#null) – Legen Sie ein Attribut auf eine `null` Wert.
 - [`OnPlatform`](#onplatform) – Benutzeroberfläche-Darstellung auf einer Basis pro Plattform anpassen.
 - [`OnIdiom`](#onidiom) – Anpassen der UI-Darstellung, die abhängig von der Sprache des Geräts auf die Anwendung ausgeführt wird.
-- [`DataTemplate`](#datatemplate-markup-extension) – Konvertiert einen Typ in einen [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate).
+- [`DataTemplate`](#datatemplate-markup-extension)-Konvertiert einen-Typ in [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)einen-Typ.
 
 Zusätzliche XAML-Markuperweiterungen verfügen in der Vergangenheit von anderen XAML-Implementierungen unterstützt wurde, und werden auch von Xamarin.Forms unterstützt. Diese werden in anderen Artikeln ausführlicher beschrieben:
 
@@ -44,7 +44,7 @@ Die [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Layout verwendet die
 
 Die `x:Static` Markuperweiterung wird unterstützt, indem die [ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension) Klasse. Die Klasse verfügt über eine einzelne Eigenschaft namens [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) des Typs `string` , dass Sie den Namen der eine öffentliche Konstante, statische Eigenschaft, Feld oder Enumerationsmember festlegen.
 
-Eine gebräuchliche Möglichkeit zum Verwenden `x:Static` besteht darin, zuerst eine Klasse mit einigen Konstanten oder statischen Variablen wie z. B. definieren diesem kleinen `AppConstants` -Klasse in der [ **MarkupExtensions** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) Programm:
+Eine gebräuchliche Möglichkeit zum Verwenden `x:Static` besteht darin, zuerst eine Klasse mit einigen Konstanten oder statischen Variablen wie z. B. definieren diesem kleinen `AppConstants` -Klasse in der [ **MarkupExtensions** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions) Programm:
 
 ```csharp
 static class AppConstants
@@ -85,7 +85,7 @@ Der XAML-Parser ermöglicht auch die `StaticExtension` Klasse als abgekürzt wer
 </Label>
 ```
 
-Dies sogar noch weiter vereinfacht werden, aber die Änderung werden einige neue Syntax eingeführt: Es besteht aus zu platzieren, die `StaticExtension` -Klasse und der Member, die in geschweifte Klammern festlegen. Der resultierende Ausdruck festgelegt ist, direkt an die `FontSize` Attribut:
+Dies kann noch weiter vereinfacht werden, aber die Änderung führt zu einer neuen Syntax: Es besteht darin, die `StaticExtension` -Klasse und die-Member-Einstellung in geschweiften Klammern zu versetzen. Der resultierende Ausdruck festgelegt ist, direkt an die `FontSize` Attribut:
 
 ```xaml
 <Label Text="Label No. 3"
@@ -504,7 +504,7 @@ Hier wird das Programm ausgeführt wird:
 
 ## <a name="onidiom-markup-extension"></a>OnIdiom-Markuperweiterung
 
-Die `OnIdiom` Markuperweiterung können Sie zum Anpassen der UI-Darstellung, die abhängig von der Sprache des Geräts auf die Anwendung ausgeführt wird. Wird von unterstützt die [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) -Klasse, die die folgenden Eigenschaften definiert:
+Die `OnIdiom` Markup Erweiterung ermöglicht es Ihnen, die Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts anzupassen, auf dem die Anwendung ausgeführt wird. Wird von unterstützt die [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) -Klasse, die die folgenden Eigenschaften definiert:
 
 - `Default` Der Typ `object`, dass Sie auf einen Standardwert festlegen, auf die Eigenschaften angewendet werden, die Geräte-Ausdrücke darstellen.
 - `Phone` Der Typ `object`, die Sie auf einen Wert festlegen, auf Telefonen angewendet werden.
@@ -538,14 +538,14 @@ Hier wird das Programm ausgeführt wird:
 
 [![OnIdiom Demo](consuming-images/onidiomdemo-small.png "OnIdiom Demo")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom-Demo")
 
-## <a name="datatemplate-markup-extension"></a>DataTemplate-Markuperweiterung
+## <a name="datatemplate-markup-extension"></a>DataTemplate-Markup Erweiterung
 
-Die `DataTemplate` Markuperweiterung können Sie zum Konvertieren eines Typs in eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Wird von unterstützt die `DataTemplateExtension` Klasse, die definiert eine `TypeName` -Eigenschaft vom Typ `string`, d. h. auf den Namen des Typs festgelegt werden, in konvertiert werden soll eine `DataTemplate`. Die `TypeName` -Eigenschaft ist die Content-Eigenschaft des `DataTemplateExtension`. Aus diesem Grund für XAML-Markup-Ausdrücke mit geschweiften Klammern ausgedrückt, Sie können vermeiden, die `TypeName=` Teil des Ausdrucks.
+Die `DataTemplate` Markup Erweiterung ermöglicht es Ihnen, einen Typ in einen [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)zu konvertieren. Sie wird von `DataTemplateExtension` der-Klasse unterstützt, die eine `TypeName` Eigenschaft des Typs `string`definiert, die auf den Namen des Typs festgelegt ist, der in eine `DataTemplate`konvertiert werden soll. Die `TypeName` -Eigenschaft ist die Content-Eigenschaft des `DataTemplateExtension`. Daher können Sie für XAML-Markup Ausdrücke, die mit geschweiften Klammern ausgedrückt werden `TypeName=` , den Teil des Ausdrucks eliminieren.
 
 > [!NOTE]
-> Der XAML-Parser lässt die `DataTemplateExtension` Klasse als abgekürzt werden `DataTemplate`.
+> Der XAML-Parser ermöglicht `DataTemplateExtension` , dass die-Klasse `DataTemplate`als abgekürzt wird.
 
-Eine typische Verwendung dieser Markuperweiterung ist in einer Shell-Anwendung, wie im folgenden Beispiel gezeigt:
+Eine typische Verwendung dieser Markup Erweiterung ist in einer Shellanwendung, wie im folgenden Beispiel gezeigt:
 
 ```xaml
 <ShellContent Title="Monkeys"
@@ -553,9 +553,9 @@ Eine typische Verwendung dieser Markuperweiterung ist in einer Shell-Anwendung, 
               ContentTemplate="{DataTemplate views:MonkeysPage}" />
 ```
 
-In diesem Beispiel `MonkeysPage` von konvertiert eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) auf eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate), der festgelegt ist, als Wert für die `ShellContent.ContentTemplate` Eigenschaft. Dadurch wird sichergestellt, dass `MonkeysPage` wird nur erstellt, bei der Navigation auf der Seite und nicht beim Start der Anwendung.
+In diesem Beispiel `MonkeysPage` wird von einem [`ContentPage`](xref:Xamarin.Forms.ContentPage) - `ShellContent.ContentTemplate` Objekt in ein [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Objekt konvertiert, das als Wert der-Eigenschaft festgelegt wird. Dadurch wird sicher `MonkeysPage` gestellt, dass nur bei einem Anwendungsstart erstellt wird, wenn die Navigation zur Seite stattfindet.
 
-Weitere Informationen zu den Shell-Anwendungen, finden Sie unter [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+Weitere Informationen zu Shellanwendungen finden Sie unter [xamarin. Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
 
 ## <a name="define-your-own-markup-extensions"></a>Definieren Sie Ihre eigenen Markuperweiterungen
 
@@ -563,9 +563,9 @@ Wenn Sie müssen für eine XAML-Markuperweiterung, die nicht in Xamarin.Forms ve
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Markuperweiterungen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+- [Markuperweiterungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [XAML-Markup Extensions Kapitel von Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamische Stile](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+- [Xamarin. Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).

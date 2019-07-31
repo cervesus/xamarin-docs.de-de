@@ -1,49 +1,49 @@
 ---
 ms.assetid: 77F12838-DBB1-48AC-ACF8-B934998B6EC8
-title: Cross-Platform-desktop-Beispiele
-description: Dieses Dokument enthält Links zu verschiedenen Beispielanwendungen, die portiert wurde haben, führen Sie als plattformübergreifende apps mit Xamarin.
+title: Plattformübergreifende Desktop Beispiele
+description: Dieses Dokument verweist auf verschiedene Beispielanwendungen, die zur Verwendung als plattformübergreifende apps mit xamarin portiert wurden.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 4f77353345c6ed1ce1cde8190a347f3deb1c0348
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7af820e1c73c3b41e58ef8a9ee8ab5ea3a601834
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61269936"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647549"
 ---
-# <a name="cross-platform-desktop-samples"></a>Cross-Platform-desktop-Beispiele
+# <a name="cross-platform-desktop-samples"></a>Plattformübergreifende Desktop Beispiele
 
-## <a name="wpf-to-cross-platform-with-xamarinforms"></a>WPF, um plattformübergreifende mit Xamarin.Forms
+## <a name="wpf-to-cross-platform-with-xamarinforms"></a>WPF mit xamarin. Forms plattformübergreifend
 
 ### <a name="expenses-app"></a>Ausgaben-App
 
-[WPFToMobile Source auf GitHub](https://github.com/nishanil/WPFToMobile)
+[Wpftomobile-Quelle auf GitHub](https://github.com/nishanil/WPFToMobile)
 
 #### <a name="original-app"></a>Original-App
 
 * WPF UND WCF
 
-#### <a name="cross-platform-apps"></a>Plattformübergreifende Apps
+#### <a name="cross-platform-apps"></a>Plattformübergreifende apps
 
-Verwenden Xamarin.Forms, die original-app wurde portiert an ein Azure Back-End, die auf dem Mobiltelefon, ausgeführt wird, Tablet und Desktop:
+Mithilfe von xamarin. Forms konnte die Original-App auf ein Azure-Back-End portiert werden, das auf mobilen, Tablet-und Desktop Computern ausgeführt wird:
 
 * Android
 * iOS
 * Universelle Windows-Plattform
 
-## <a name="architecture-guidance"></a>Anleitung zur Architektur
+## <a name="architecture-guidance"></a>Architekturleitfaden
 
-### <a name="eshop-on-containers-app"></a>Shopping (in Containern) App
+### <a name="eshop-on-containers-app"></a>eShop-app (in Containern)
 
-["eshoponcontainers" Source auf GitHub](https://github.com/dotnet-architecture/eShopOnContainers)
+[eshoponcontainers-Quelle auf GitHub](https://github.com/dotnet-architecture/eShopOnContainers)
 
-Beispiel-app, die auf die verwiesen wird durch Folgendes:
+Beispiel-APP, auf die Folgendes verwiesen wird:
 
-* [.NET Microservices-e-Book](https://aka.ms/microservicesebook)
-* [Container-Lebenszyklus von Docker-e-Book](https://aka.ms/dockerlifecycleebook)
-* [Enterprise Application-Muster mithilfe von Xamarin.Forms-e-Book](~/xamarin-forms/enterprise-application-patterns/index.md)
+* [.Net-mikroservicesbook](https://aka.ms/microservicesebook)
+* [Docker-Container für docker-Anwendungslebenszyklus](https://aka.ms/dockerlifecycleebook)
+* [Unternehmens Anwendungs Muster mit xamarin. Forms-e-book](~/xamarin-forms/enterprise-application-patterns/index.md)
 
 ## <a name="mobile-app-samples"></a>Beispiele für Mobile Apps
 
-* Andere [Xamarin-Beispiele](https://developer.xamarin.com/samples/)
+* Andere [xamarin-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin)

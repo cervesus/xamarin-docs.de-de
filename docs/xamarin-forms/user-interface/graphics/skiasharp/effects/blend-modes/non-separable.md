@@ -7,16 +7,16 @@ ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 9b94db14a197ca31be42e8712c2170fd66b86579
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9054539b08da89c0f7d8a93150866fb1b41e63f1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61162409"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642780"
 ---
 # <a name="the-non-separable-blend-modes"></a>Die nicht trennbare Füllmethoden einheitlich
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 In diesem Artikel haben Sie gesehen [ **SkiaSharp trennbare Füllmethoden**](separable.md), die trennbare Füllmethoden einheitlich Vorgänge für den Rot-, Grün- und blauen-Kanälen separat ausführen. Die Modi nicht trennbare Blend nicht der Fall ist. Durch das Arbeiten auf den Farbton, Sättigung und Helligkeit Ebenen der Farbe, können der nicht trennbare Füllmethoden einheitlich Farben auf interessante Weise zu ändern:
 
@@ -28,7 +28,7 @@ Um die nicht trennbare Füllmethoden einheitlich zu verstehen, ist es erforderli
 
 Das Modell der HSL-Farbe wurde in diesem Artikel erläuterten [ **Integrieren von Xamarin.Forms** ](../../basics/integration.md) und ein Beispielprogramm in diesem Artikel ermöglicht das Experimentieren mit HSL-Farben. Sie erstellen eine `SKColor` -Wert mithilfe der Werte für Farbton, Sättigung und Helligkeit mit der statischen [ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*) Methode.
 
-Der Farbton stellt die vorherrschende Wellenlänge der Farbe dar. Hue Werte zwischen 0 und 360 liegen und die primärstandorte additiv und Subtraktive durchlaufen: Red ist der Wert 0 (null) Gelb ist 60, Grün ist 120, Cyan ist 180, Blau ist 240 Magenta ist 300 und der Zyklus wird wieder in Rot auf 360.
+Der Farbton stellt die vorherrschende Wellenlänge der Farbe dar. Hue-Werte reichen von 0 bis 360 und durchlaufen die Additiven und subtraktiven primären Replikate: "Red" ist der Wert 0, gelb ist 60, grün ist 120, Zyan ist 180, blau ist 240, Magenta ist 300, und der Cycle wird auf "Red" um 360 zurückgeleitet.
 
 Es ist keine dominanten Farbe &mdash; ist z. B. die Farbe Weiß oder Schwarz oder eine grauschattierung &mdash; der Farbton ist nicht definiert und in der Regel auf 0 festgelegt. 
 
@@ -198,7 +198,7 @@ Die `SKBlendModes.Color` Mischmodus behält die Helligkeit des Ziels verwendet j
 
 Eine Anwendung dieses Blend-Modus wird in Kürze angezeigt werden.
 
-Zum Schluss die `SKBlendModes.Luminosity` Blend-Modus ist das Gegenteil von `SKBlendModes.Color`. Er behält die Hue und die Sättigung des Ziels jedoch die Helligkeit der Quelle verwendet. Die `Luminosity` Blendingmodus ist die am häufigsten mysteriöse des Batches: Der Farbton und Sättigung Schieberegler Auswirkungen auf das Bild, aber auch auf die mittlere Helligkeit, das Image ist nicht eindeutig:
+Zum Schluss die `SKBlendModes.Luminosity` Blend-Modus ist das Gegenteil von `SKBlendModes.Color`. Er behält die Hue und die Sättigung des Ziels jedoch die Helligkeit der Quelle verwendet. Der `Luminosity` Blend-Modus ist der größte Teil des Batches: Die Schieberegler Hue und Sättigung wirken sich auf das Bild aus, aber selbst bei mittlerer Helligkeit ist das Bild nicht eindeutig:
 
 [![Nicht trennbare Füllmethoden einheitlich - Helligkeit](non-separable-images/NonSeparableBlendModes-Luminosity.png "nicht trennbare Füllmethoden einheitlich - Helligkeit")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
@@ -208,11 +208,11 @@ Es ist in der Regel nicht der Fall, den Sie möchten einen der Modi nicht trennb
 
 ## <a name="a-matte-for-a-separable-mode"></a>Eine Maske für einen trennbare Modus
 
-Hier ist eine der Bitmaps enthalten, die als Ressource in der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel. Der Dateiname ist **Banana.jpg**:
+Hier ist eine der Bitmaps enthalten, die als Ressource in der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel. Der Dateiname ist **Banana.jpg**:
 
 ![Banane Monkey](non-separable-images/Banana.jpg "Banane Monkey-Objekt")
 
-Es ist möglich, eine Maske zu erstellen, die nur die Banane umfasst. Dies ist auch eine Ressource in der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel. Der Dateiname ist **BananaMatte.png**:
+Es ist möglich, eine Maske zu erstellen, die nur die Banane umfasst. Dies ist auch eine Ressource in der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel. Der Dateiname ist **BananaMatte.png**:
 
 ![Banane Matte](non-separable-images/BananaMatte.png "Banane-Maske")
 
@@ -292,4 +292,4 @@ Versuchen Sie es ändern des Blendingmodus auf `SKBlendMode.Saturation`. Die Ban
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 9a54743ed7dc3ce23c3306589c0bae1e0fd3206c
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: ed6992f946512cd88b4b2b8cfcf4c826bdd6b837
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658677"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645350"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Rechtschreibprüfung mithilfe der Bing-Rechtschreibprüfungs-API
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Bing-Rechtschreibprüfung führt kontextbezogene Rechtschreibprüfung für Text Inline Empfehlungen für falsch geschriebene Wörter. In diesem Artikel wird erläutert, wie Sie mit der Bing-Rechtschreibprüfungs REST-API, korrigieren Sie Rechtschreibfehler in einer Xamarin.Forms-Anwendung._
 
@@ -156,7 +156,7 @@ Dieser Code durchläuft die `FlaggedTokens` Auflistung und ersetzt alle falsch g
 ![](spell-check-images/after-spell-check.png "Nach der Rechtschreibprüfung")
 
 > [!NOTE]
-> Im Beispiel oben wird `Replace` aus Gründen der Einfachheit, aber für eine große Menge an Text können sie das falsche Token ersetzen. Die-API bietet die `offset` Wert, der zur Identifizierung des richtigen Speicherorts im Quelltext vorkommen, Durchführen eines Updates in Produktions-apps verwendet werden soll.
+> Im obigen Beispiel wird `Replace` der Einfachheit halber verwendet, aber über eine große Menge an Text kann das falsche Token ersetzt werden. Die API stellt den `offset` Wert bereit, der in Produktions-Apps verwendet werden soll, um die richtige Position im Quelltext zum Ausführen eines Updates zu identifizieren.
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -165,6 +165,6 @@ In diesem Artikel wurde erläutert, wie die Bing-Rechtschreibprüfungs REST-API 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Dokumentation zur Bing-Rechtschreibprüfungs-Überprüfung](/azure/cognitive-services/bing-spell-check/)
-- [Verwenden eines RESTful-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [TODO-Cognitive-Services (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
+- [TODO-Cognitive-Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Bing-Rechtschreibprüfungs-API v7-Referenz](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

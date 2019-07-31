@@ -1,5 +1,5 @@
 ---
-title: Verwenden eines RESTful-Webdiensts
+title: Nutzen eines Rest-Webdiensts
 description: Die Integration von einem Webdienst in eine Anwendung ist ein gängiges Szenario. In diesem Artikel wird veranschaulicht, wie einen RESTful-Webdienst aus einer Xamarin.Forms-Anwendung genutzt wird.
 ms.prod: xamarin
 ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: adfc3247bce4d40d73580d6ca9baa31df4f57229
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: cb569a425bf636a51dd6d132f6efa539e74443a0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658967"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644579"
 ---
-# <a name="consume-a-restful-web-service"></a>Verwenden eines RESTful-Webdiensts
+# <a name="consume-a-restful-web-service"></a>Nutzen eines Rest-Webdiensts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _Die Integration von einem Webdienst in eine Anwendung ist ein gängiges Szenario. In diesem Artikel wird veranschaulicht, wie einen RESTful-Webdienst aus einer Xamarin.Forms-Anwendung genutzt wird._
 
@@ -38,7 +38,7 @@ RESTful-Webdienste verwenden JSON-Nachrichten in der Regel um Daten an den Clien
 
 Die Einfachheit von REST hat dazu beigetragen, die primäre Methode für den Zugriff auf Web Services in mobilen Anwendungen zu vereinfachen.
 
-Wenn die Anwendung ausgeführt wird, wird es auf einen lokal gehosteten REST-Dienst verbinden, wie im folgenden Screenshot gezeigt:
+Wenn die Beispielanwendung ausgeführt wird, wird eine Verbindung mit einem lokal gehosteten Rest-Dienst hergestellt, wie im folgenden Screenshot zu sehen:
 
 ![](rest-images/portal.png "Beispielanwendung")
 
@@ -208,5 +208,5 @@ Der REST-Dienst sendet einen HTTP-Statuscode in den `HttpResponseMessage.IsSucce
 ## <a name="related-links"></a>Verwandte Links
 
 - [Erstellen von Back-End-Diensten für native mobile Anwendungen](/aspnet/core/mobile/native-mobile-backend/)
-- [TodoREST (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
+- [TodoREST (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1e62dc32e9764667cb8737167a49bcc9a4516f0f
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 2533ad80571e2c8fe94cb4a2dcb0ec0ff0dd68cb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510625"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643589"
 ---
 # <a name="intro-to-contentproviders"></a>Einführung zu contentproviders
 
@@ -45,8 +45,8 @@ Die Themen in diesem Abschnitt enthalten einige einfache Beispiele für das vera
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Contacttadapter-Demo (Beispiel)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ContactsAdapterDemo/)
-- [Simplecontentprovider (Beispiel)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
+- [Contacttadapter-Demo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
+- [Simplecontentprovider (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)
 - [Entwicklerhandbuch zu Inhaltsanbietern](https://developer.android.com/guide/topics/providers/content-providers.html)
 - [Contentprovider-Klassenreferenz](xref:Android.Content.ContentProvider)
 - [Contentresolver-Klassenreferenz](xref:Android.Content.ContentResolver)

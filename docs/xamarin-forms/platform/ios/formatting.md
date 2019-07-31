@@ -1,37 +1,37 @@
 ---
-title: Hinzufügen von iOS-spezifische Formatierung
-description: In diesem Artikel wird erläutert, wie iOS-spezifische Darstellung ohne Verwendung eines benutzerdefinierten Xamarin.Forms-Renderers festgelegt wird.
+title: Hinzufügen einer IOS-spezifischen Formatierung
+description: In diesem Artikel wird erläutert, wie Sie eine IOS-spezifische Darstellung ohne einen benutzerdefinierten xamarin. Forms-Renderer festlegen.
 ms.prod: xamarin
 ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 3b8a440617dedfbe23f869e865b3cedae21d6c5b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 22efd672c041ad84488f822ac2e7e51a80ea2b61
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946390"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655330"
 ---
-# <a name="adding-ios-specific-formatting"></a>Hinzufügen von iOS-spezifische Formatierung
+# <a name="adding-ios-specific-formatting"></a>Hinzufügen einer IOS-spezifischen Formatierung
 
-Eine Möglichkeit zum Festlegen der iOS-spezifische Formatierung ist die Erstellung einer [benutzerdefinierter Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) für ein Steuerelement und die plattformspezifische Stile festgelegt und Farben für jede Plattform.
+Eine Möglichkeit zum Festlegen einer IOS-spezifischen Formatierung besteht darin, einen [benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) für ein Steuerelement zu erstellen und plattformspezifische Stile und Farben für jede Plattform festzulegen.
 
-Andere Optionen zu steuern, wie Ihre Xamarin.Forms iOS-app-Darstellung enthalten:
+Weitere Optionen zum Steuern der Darstellung Ihrer xamarin. Forms IOS-APP sind:
 
-* Konfigurieren von Anzeigeoptionen in [ **"Info.plist"**](#info-plist)
-* Festlegen der Stile von Listensteuerelementen über die [ `UIAppearance` API](#uiappearance)
+* Konfigurieren von Anzeigeoptionen in " [ **Info. plist** "](#info-plist)
+* Festlegen von Steuerelement Stilen über die [ `UIAppearance` API](#uiappearance)
 
-Diese alternativen werden nachfolgend beschrieben.
+Diese Alternativen werden im folgenden erläutert.
 
 <a name="info-plist"/>
 
-## <a name="customizing-infoplist"></a>Anpassen der Datei "Info.plist"
+## <a name="customizing-infoplist"></a>Anpassen von "Info. plist"
 
-Die **"Info.plist"** Datei können Sie die Konfiguration einiger Aspekte der Renderering einer iOS-Anwendung, z. B. wie (und gibt an, ob) auf die Statusleiste angezeigt wird.
+In der **Info. plist** -Datei können Sie einige Aspekte des Renderings einer IOS-Anwendung konfigurieren, wie z. b. wie (und ob) die Statusleiste angezeigt wird.
 
-Z. B. die [Beispiel "Todo"](https://developer.xamarin.com/samples/xamarin-forms/Todo/) der folgende Code verwendet, um Farbe und Textfarbe auf der Navigationsleiste auf allen Plattformen festzulegen:
+Das [TODO-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo) verwendet beispielsweise den folgenden Code, um die Farbe und die Textfarbe der Navigationsleiste auf allen Plattformen festzulegen:
 
 ```csharp
 var nav = new NavigationPage (new TodoListPage ());
@@ -39,15 +39,15 @@ nav.BarBackgroundColor = Color.FromHex("91CA47");
 nav.BarTextColor = Color.White;
 ```
 
-Das Ergebnis wird im folgenden Codeausschnitt Bildschirm angezeigt. Beachten Sie, dass die Leiste Statuselemente Schwarz sind (Dies kann nicht festgelegt werden in Xamarin.Forms, da es sich um eine bestimmte Funktion ist).
+Das Ergebnis wird im folgenden Bildschirm Ausschnitt gezeigt. Beachten Sie, dass die Status leisten Elemente schwarz sind (Dies kann nicht innerhalb von xamarin. Forms festgelegt werden, da es sich um ein plattformspezifisches Feature handelt).
 
-![](theme-images/status-default-sml.png "iOS-Design")
+![](theme-images/status-default-sml.png "IOS-Themen")
 
-Im Idealfall die Statusleiste wird auch die Whitelist gesetzt werden: Es können verschiedene Aufgaben direkt in das iOS-Projekt. Fügen Sie die folgenden Einträge, die **"Info.plist"** zu erzwingen, dass die Statusleiste weiß sein:
+Im Idealfall ist die Statusleiste auch weiß, was wir direkt im IOS-Projekt erreichen können. Fügen Sie der Datei " **Info. plist** " die folgenden Einträge hinzu, um zu erzwingen, dass die Statusleiste weiß ist:
 
-![](theme-images/info-plist.png "iOS-Einträge der Datei \"Info.plist\"")
+![](theme-images/info-plist.png "IOS Info. plist-Einträge")
 
-oder bearbeiten Sie die entsprechende **"Info.plist"** Datei direkt in enthalten:
+oder bearbeiten Sie die entsprechende Datei " **Info. plist** " direkt, um Folgendes einzuschließen:
 
 ```xml
 <key>UIStatusBarStyle</key>
@@ -56,19 +56,19 @@ oder bearbeiten Sie die entsprechende **"Info.plist"** Datei direkt in enthalten
 <false/>
 ```
 
-Wenn die app ausgeführt wird, die Navigationsleiste ist Grün und der Text ist (aufgrund von Xamarin.Forms Formatierung) weiß *und* der Text der Statusleiste wird auch weißen Dank der iOS-spezifischen Konfiguration:
+Wenn die App nun ausgeführt wird, ist die Navigationsleiste grün, und der Text ist weiß (aufgrund der xamarin. Forms-Formatierung), *und* der Status leisten Text ist dank der IOS-spezifischen Konfiguration ebenfalls weiß:
 
-![](theme-images/status-white-sml.png "iOS-Design")
+![](theme-images/status-white-sml.png "IOS-Themen")
 
 <a name="uiappearance"/>
 
-## <a name="uiappearance-api"></a>UIAppearance API
+## <a name="uiappearance-api"></a>Uiappearance-API
 
-Der [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) können verwendet werden, um die visuelle Eigenschaften für viele iOS-Steuerelemente festlegen *ohne* erstellen eine [benutzerdefinierter Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+[ Die`UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) kann verwendet werden, um visuelle Eigenschaften für viele IOS-Steuerelemente festzulegen, *ohne* einen [benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)erstellen zu müssen.
 
-Eine einzige Zeile Code zum Hinzufügen der **Datei "appdelegate.cs"** `FinishedLaunching` Methode kann alle Steuerelemente eines bestimmten Typs mit formatieren ihrer `Appearance` Eigenschaft. Der folgende Code enthält zwei Beispiele – Global formatieren die Registerkarte Balken- und Steuerelement wechseln:
+Wenn Sie der **AppDelegate.cs** `FinishedLaunching` -Methode eine einzelne Codezeile hinzufügen, können Sie alle Steuerelemente eines bestimmten `Appearance` Typs mithilfe ihrer-Eigenschaft formatieren. Der folgende Code enthält zwei Beispiele: Global Formatieren der Registerkarten Leiste und des Switch-Steuer Elements:
 
-**Datei "appdelegate.cs"** in der iOS-Projekt
+**AppDelegate.cs** im IOS-Projekt
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -86,38 +86,38 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="uitabbar"></a>UITabBar
 
-Standardmäßig wird das ausgewählte Registerkarte Balken-Symbol in ein [`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
-wäre Blau:
+Standardmäßig wird das Symbol für die ausgewählte Registerkarten Leiste in einem[`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
+ist blau:
 
-![](theme-images/tabbar-default.png "Standard-iOS-Leiste Registerkartensymbol in \"tabbedpage\"")
+![](theme-images/tabbar-default.png "Standardmäßiges IOS-Registerkarten Symbol in tabbedpage")
 
-Um dieses Verhalten zu ändern, legen die `UITabBar.Appearance` Eigenschaft:
+Um dieses Verhalten zu ändern, legen `UITabBar.Appearance` Sie die-Eigenschaft fest:
 
 ```csharp
 UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Dies bewirkt, dass die ausgewählte Registerkarte grün sein:
+Dies bewirkt, dass die ausgewählte Registerkarte grün ist:
 
-![](theme-images/tabbar-custom.png "Grüne iOS Symbol Registerkarte Balken \"tabbedpage\"")
+![](theme-images/tabbar-custom.png "Grünes IOS-Registerkarten Symbol in tabbedpage")
 
-Mit dieser API können Sie die Gestaltung der Xamarin.Forms `TabbedPage` unter iOS mit nur wenigen Codezeilen. Finden Sie in der [anpassen Registerkarten Rezept](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) für Weitere Informationen zur Verwendung eines benutzerdefinierten Renderers eine bestimmte Schriftart für die Registerkarte fest.
+Mit dieser API können Sie die Darstellung von xamarin. Forms `TabbedPage` unter IOS mit sehr geringem Code anpassen. Weitere Informationen zur Verwendung eines benutzerdefinierten Renderers zum Festlegen einer bestimmten Schriftart für die Registerkarte finden Sie in der Anleitung zum [Anpassen von Registerkarten](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) .
 
 ### <a name="uiswitch"></a>UISwitch
 
-Die `Switch` Steuerelement ist ein weiteres Beispiel, das ganz einfach formatiert werden kann:
+Das `Switch` -Steuerelement ist ein weiteres Beispiel, das leicht formatiert werden kann:
 
 ```csharp
 UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Diese beiden Screenshots zeigen die Standardeinstellung `UISwitch` -Steuerelement auf der linken Seite und die benutzerdefinierte Version (Einstellung `Appearance`) auf der rechten Seite der [Beispiel "Todo"](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
+Diese beiden Bildschirmaufzeichnungen zeigen das Standard `UISwitch` Steuerelement auf der linken Seite und die angepasste Version `Appearance`(Einstellung) auf der rechten Seite im [TODO-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)an:
 
 ![](theme-images/switch-default.png "Standardfarbe UISwitch") ![](theme-images/switch-custom.png "UISwitch Farbe angepasst")
 
 ### <a name="other-controls"></a>Andere Steuerelemente
 
-Viele Steuerelemente der iOS-Benutzeroberfläche haben, die standardmäßigen Farben und andere Attribute, die festlegen, mit der [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
+Viele IOS-Benutzeroberflächen-Steuerelemente können mithilfe der [ `UIAppearance` -API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)ihre Standardfarben und andere Attribute festlegen.
 
 
 

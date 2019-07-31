@@ -1,54 +1,54 @@
 ---
-title: Arbeiten mit Standardeinstellungen für Benutzer in Xamarin.iOS
-description: Dieser Artikel behandelt die Arbeit mit NSUserDefaults zum Speichern von Einstellungen der Standardrichtlinie in einer Xamarin iOS-app oder die Erweiterung. Es wird erläutert, wie das Lesen und Schreiben von Werten haben und NSUserDefaults auf hoher Ebene beschrieben wurde.
+title: Arbeiten mit Benutzer Standardwerten in xamarin. IOS
+description: In diesem Artikel wird die Verwendung von NSUserDefaults zum Speichern von Standardeinstellungen in einer xamarin IOS-APP oder-Erweiterung behandelt. Er beschreibt NSUserDefaults auf hoher Ebene und erläutert, wie Werte gelesen und geschrieben werden.
 ms.prod: xamarin
 ms.assetid: DAE7FFC4-B8C9-4D9E-886A-9B2388452EEB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 688db534d6c99a8fadb7535f0532f9c1e9564707
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a1bc00d69f5b00787ba0e16b7e3846d5f18a4bed
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153385"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655132"
 ---
-# <a name="working-with-user-defaults-in-xamarinios"></a>Arbeiten mit Standardeinstellungen für Benutzer in Xamarin.iOS
+# <a name="working-with-user-defaults-in-xamarinios"></a>Arbeiten mit Benutzer Standardwerten in xamarin. IOS
 
-_Dieser Artikel behandelt die Arbeit mit NSUserDefault Standardeinstellungen in einer Xamarin.iOS-App oder die Erweiterung zu speichern._
+_In diesem Artikel wird die Verwendung von nsuserdefault zum Speichern von Standardeinstellungen in einer xamarin. IOS-APP oder-Erweiterung behandelt._
 
 
-Die `NSUserDefaults` -Klasse bietet eine Möglichkeit für iOS-Apps und -Erweiterungen für die programmgesteuerte Interaktion mit dem standardmäßig eine systemweite-System. Verwenden Sie das System standardmäßig, kann der Benutzer der app-Verhalten oder die Formatierung, um ihre Einstellungen (basierend auf den Entwurf der app) zu erfüllen konfigurieren. Geben Sie beispielsweise Folgendes ein, um Daten im Metrik-Vs-Imperial Messungen darstellen oder von bestimmten UI Design auswählen.
+Mit `NSUserDefaults` der-Klasse können IOS-apps und-Erweiterungen Programm gesteuert mit dem systemweiten Standardsystem interagieren. Mithilfe des Standardsystems kann der Benutzer das Verhalten oder das Formatieren einer APP so konfigurieren, dass die Einstellungen (basierend auf dem Entwurf der APP) erfüllt werden. Beispielsweise zur Darstellung von Daten in Metriken im Vergleich zu kaiserlichen Messungen oder zum Auswählen eines bestimmten UI-Designs.
 
-Bei Verwendung mit App-Gruppen, `NSUserDefaults` bietet auch eine Möglichkeit für die Kommunikation zwischen apps (oder Erweiterungen) in einer bestimmten Gruppe.
+Bei Verwendung mit App-Gruppen `NSUserDefaults` bietet auch eine Möglichkeit, zwischen Apps (oder Erweiterungen) innerhalb einer bestimmten Gruppe zu kommunizieren.
 
 <a name="About-User-Defaults" />
 
-## <a name="about-user-defaults"></a>Informationen zu den Standardeinstellungen des Standardbenutzers
+## <a name="about-user-defaults"></a>Informationen zu Benutzer Standards
 
-Wie oben, Standardeinstellungen für Benutzer (`NSUserDefaults`) kann eine App (oder die Erweiterung) hinzugefügt und verwendet, um konfigurierbare Optionen bereitzustellen, die der Endbenutzer zum Anpassen des Aussehens oder die Ausführung der app zur Laufzeit ändern können.
+Wie bereits erwähnt, können Benutzer Standardwerte (`NSUserDefaults`) einer APP (oder Erweiterung) hinzugefügt und zum Bereitstellen konfigurierbarer Optionen verwendet werden, die der Endbenutzer ändern kann, um das Aussehen oder den Betrieb der App zur Laufzeit anzupassen.
 
-Wenn Ihre app zuerst ausgeführt wird, `NSUserDefaults` die Schlüssel und Werte aus der app Benutzer standardmäßig Datenbank liest und speichert sie in den Speicher, um zu vermeiden, öffnen und lesen die Datenbank jedes Mal ein Wert erforderlich ist. 
+Wenn Ihre APP zum ersten Mal `NSUserDefaults` ausgeführt wird, liest die Schlüssel und Werte aus der Datenbank mit den Benutzer Standardwerten der APP und speichert Sie im Arbeitsspeicher zwischen, um zu vermeiden, dass die Datenbank bei jedem erforderlichen Wert geöffnet und gelesen wird. 
 
 > [!IMPORTANT]
-> Apple empfiehlt, die nicht mehr den Developer-Aufruf die `Synchronize` Methode, um in-Memory-Cache mit der Datenbank direkt zu synchronisieren. Stattdessen wird diese automatisch in regelmäßigen Abständen zu in-Memory-Cache mit der Datenbank eines Benutzers standardmäßig synchron aufgerufen werden.
+> Apple empfiehlt nicht mehr, dass der Entwickler die `Synchronize` -Methode aufruft, um den in-Memory-Cache direkt mit der Datenbank zu synchronisieren. Stattdessen wird es automatisch in regelmäßigen Abständen aufgerufen, um den in-Memory-Cache mit der Standarddatenbank eines Benutzers synchron zu halten.
 
-Die `NSUserDefaults` -Klasse enthält verschiedene praktische Methoden zum Lesen und Schreiben Einstellungswerte für häufig verwendete Datentypen wie z. B.: Zeichenfolge "," ganze Zahl "," Float "," Boolean "und"-URLs. Andere Arten von Daten können archiviert werden, mithilfe von `NSData`, und Lesen aus oder in der Benutzerdatenbank standardmäßig geschrieben. Weitere Informationen finden Sie unter Apple [Vorlieben und Einstellungen Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
+Die `NSUserDefaults` -Klasse enthält verschiedene Hilfsmethoden zum Lesen und Schreiben von Einstellungs Werten für allgemeine Datentypen wie z. b. String, Integer, float, booleschen und URLs. Andere Datentypen können mithilfe `NSData`von archiviert und dann in die Datenbank für Benutzer Standardwerte gelesen oder geschrieben werden. Weitere Informationen finden Sie im [Programmier Handbuch für Einstellungen und Einstellungen](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)von Apple.
 
 <a name="Accessing-the-Shared-NSUserDefaults-Instance" />
 
 ## <a name="accessing-the-shared-nsuserdefaults-instance"></a>Zugreifen auf die freigegebene NSUserDefaults-Instanz 
 
-Die freigegebene standardmäßig Benutzerinstanz bietet Zugriff auf die Standardeinstellungen für den Benutzer, für den aktuellen Benutzer des Geräts. Wenn das Objekt freigegeben wird standardmäßig nicht vorhanden ist, wird es beim ersten Zugriff und initialisiert mit den folgenden Informationen erstellt:
+Die Standard Instanz für freigegebene Benutzer ermöglicht den Zugriff auf die Benutzer Standardwerte für den aktuellen Benutzer des Geräts. Wenn das freigegebene Default-Objekt nicht vorhanden ist, wird es beim ersten Zugriff erstellt und mit den folgenden Informationen initialisiert:
 
-- Ein `NSArgumentDomain` bestehend aus die Standardwerte aus der aktuellen app analysiert.
-- Die app Bündel-ID-Domäne.
-- Ein `NSGlobalDomain` bestehend aus die Standardwerte, die von allen apps gemeinsam verwendet werden.
+- Ein `NSArgumentDomain` , das aus den aus der aktuellen App analysierten Standardwerten besteht.
+- Die Bundle-Bezeichnerdomäne der app.
+- Eine `NSGlobalDomain` , die aus den von allen apps gemeinsam genutzten Standardwerten besteht.
 - Eine separate Domäne für jede bevorzugte Sprache des Benutzers.
-- Ein `NSRegistrationDomain` mit einem Satz von temporären Standardwerte, die von der app, um sicherzustellen, dass Suchvorgänge werden immer erfolgreich geändert werden kann.
+- Ein `NSRegistrationDomain` mit einer Reihe von temporären Standardwerten, die von der APP geändert werden können, um sicherzustellen, dass die Suche immer erfolgreich ist.
 
-Um die freigegebenen Benutzer-Standard-Instanz zuzugreifen, verwenden Sie den folgenden Code:
+Verwenden Sie den folgenden Code, um auf die Standard Instanz der freigegebenen Benutzer zu zugreifen:
 
 ```csharp
 // Get Shared User Defaults
@@ -57,39 +57,39 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 <a name="Accessing-an-App-Group-NSUserDefaults-Instance" />
 
-## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>Zugreifen auf eine Instanz der App-Gruppe NSUserDefaults
+## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>Zugreifen auf eine APP-Gruppe NSUserDefaults-Instanz
 
-Wie oben erwähnt, mithilfe von App-Gruppen, `NSUserDefaults` für die Kommunikation zwischen Apps (oder Erweiterungen) in einer bestimmten Gruppe verwendet werden können. Zunächst müssen Sie sicherstellen, dass die App-Gruppe und die erforderlichen App-IDs in ordnungsgemäß konfiguriert wurden die **Zertifikate, Bezeichner & Profile** Abschnitt [iOS Developer Center](https://developer.apple.com/devcenter/ios/) und installiert wurden in der Entwicklungsumgebung.
+Wie bereits erwähnt, `NSUserDefaults` kann mithilfe von App-Gruppen verwendet werden, um zwischen Apps (oder Erweiterungen) innerhalb einer bestimmten Gruppe zu kommunizieren. Zunächst müssen Sie sicherstellen, dass die APP-Gruppe und die erforderlichen App-IDs im Abschnitt **Zertifikate, Bezeichner & profile** im [IOS dev Center](https://developer.apple.com/devcenter/ios/) ordnungsgemäß konfiguriert wurden und in der Entwicklungsumgebung installiert wurden.
 
-Als Nächstes Ihre App oder Erweiterungsbezogenen Projekte müssen jeweils eine der oben erstellten gültiger App-IDs und die `Entitlements.plist` Datei muss in das App-Bundle mit den App-Gruppen aktiviert und angegeben einbezogen werden.
+Als nächstes müssen Ihre APP-und/oder Erweiterungsprojekte eine gültige APP-ID aufweisen, die oben erstellt wurde, `Entitlements.plist` und die Datei muss in das App-Bündel eingeschlossen werden, wobei die APP-Gruppen aktiviert und angegeben werden.
 
-Mit dieser All vorhanden kann die freigegebene App Gruppe Standardeinstellungen für Benutzer zugegriffen werden mithilfe des folgenden Codes:
+Da all diese Einstellungen vorhanden sind, können Sie mit dem folgenden Code auf die Benutzer Standardwerte der freigegebenen App-Gruppe zugreifen:
 
 ```csharp
 // Get App Group User Defaults
 var plist = new NSUserDefaults ("group.com.xamarin.todaysharing", NSUserDefaultsType.SuiteName);
 ```
 
-Wo `group.com.xamarin.todaysharing` wird in die App-Gruppe erstellt **Zertifikate, Bezeichner & Profile** , die Sie zugreifen möchten. Weitere Informationen finden Sie unter den [App-Gruppen-Funktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Dokumentation.
+Dabei ist die APP-Gruppe, die in **Zertifikaten erstellt wurde, Bezeichner & profile** , auf die Sie zugreifen möchten. `group.com.xamarin.todaysharing` Weitere Informationen finden Sie unter den [App-Gruppen-Funktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Dokumentation.
 
 <a name="Reading-Default-Values" />
 
-## <a name="reading-default-values"></a>Lesen Sie die Standardwerte
+## <a name="reading-default-values"></a>Lesen von Standardwerten
 
-Nachdem Sie die gewünschte Standard-Datenbank für den Benutzer zugegriffen haben, können Sie die Werte von den Standardwerten, die mithilfe von Schlüssel/Wert-Paare und verschiedene praktische Methoden, die basierend auf den Typ des zu lesenden Daten lesen:
+Nachdem Sie auf die gewünschte Standarddatenbank zugegriffen haben, können Sie Werte aus den Standardeinstellungen mithilfe von Schlüssel-Wert-Paaren und verschiedenen Hilfsmethoden lesen, die auf der Art der gelesenen Daten basieren:
 
-- `ArrayForKey` -Gibt ein Array von `NSObjects` für den angegebenen Schlüssel-Wert.
-- `BoolForKey` -Gibt einen booleschen Wert für den angegebenen Schlüssel.
-- `DataForKey` -Gibt ein `NSData` Objekt für den angegebenen Schlüssel.
-- `DictionaryForKey` -Gibt ein `NSDictionary` für den angegebenen Schlüssel.
-- `DoubleForKey` -Gibt einen double-Wert für den angegebenen Schlüssel.
-- `FloatForKey` -Gibt einen Float-Wert für den angegebenen Schlüssel.
-- `IntForKey` -Gibt einen ganzzahligen Wert für den angegebenen Schlüssel.
-- `StringArrayForKey` -Gibt ein Array von `String` Objekte aus dem angegebenen Schlüssel-Wert.
-- `StringForKey` -Gibt einen Zeichenfolgenwert für den angegebenen Schlüssel.
-- `URLForKey` -Gibt ein `NSUrl` Wert für den angegebenen Schlüssel.
+- `ArrayForKey`-Gibt ein Array von `NSObjects` für den angegebenen Schlüsselwert zurück.
+- `BoolForKey`-Gibt einen booleschen Wert für den angegebenen Schlüssel zurück.
+- `DataForKey`-Gibt ein `NSData` -Objekt für den angegebenen Schlüssel zurück.
+- `DictionaryForKey`-Gibt einen `NSDictionary` für den angegebenen Schlüssel zurück.
+- `DoubleForKey`-Gibt einen Double-Wert für den angegebenen Schlüssel zurück.
+- `FloatForKey`-Gibt einen float-Wert für den angegebenen Schlüssel zurück.
+- `IntForKey`-Gibt einen ganzzahligen Wert für den angegebenen Schlüssel zurück.
+- `StringArrayForKey`-Gibt ein Array von `String` -Objekten aus dem angegebenen Schlüsselwert zurück.
+- `StringForKey`-Gibt einen Zeichen folgen Wert für den angegebenen Schlüssel zurück.
+- `URLForKey`-Gibt einen `NSUrl` Wert für den angegebenen Schlüssel zurück.
 
-Beispielsweise würde der folgende Code einen booleschen Wert aus der Standardeinstellungen für Benutzer lesen:
+Der folgende Code liest z. b. einen booleschen Wert aus den Benutzer Standardwerten:
 
 ```csharp
 // Get Shared User Defaults
@@ -105,15 +105,15 @@ var useHeader = plist.BoolForKey("UseHeader");
 
 ## <a name="writing-default-values"></a>Schreiben von Standardwerten
 
-Genau wie beim oben genannten Werte lesen, nachdem Sie die gewünschte Benutzer standardmäßig Datenbank zugegriffen haben können Sie Werte auf die Standardwerte, die mithilfe von Schlüssel/Wert-Paare und verschiedene praktische Methoden, die basierend auf den Typ des zu schreibenden Daten schreiben:
+Wie oben beschrieben, können Sie nach dem Zugriff auf die gewünschte Standarddatenbank des Benutzers Werte in die Standardwerte schreiben, indem Sie Schlüssel-Wert-Paare und verschiedene Hilfsmethoden basierend auf dem Typ der geschriebenen Daten verwenden:
 
-- `SetBool` -Schreibt den angegebenen booleschen Wert dem angegebenen Schlüssel.
-- `SetDouble` -Schreibt den angegebenen double-Wert dem angegebenen Schlüssel.
-- `SetFloat` -Schreibt den angegebenen Float-Wert dem angegebenen Schlüssel an.
-- `SetString` -Schreibt den angegebenen Zeichenfolgenwert, der dem angegebenen Schlüssel.
-- `SetURL` – Schreibt die angegebene URL (`NSUrl`) Wert, der dem angegebenen Schlüssel.
+- `SetBool`-Schreibt den angegebenen booleschen Wert in den angegebenen Schlüssel.
+- `SetDouble`: Schreibt den angegebenen Double-Wert in den angegebenen Schlüssel.
+- `SetFloat`: Schreibt den angegebenen float-Wert in den angegebenen Schlüssel.
+- `SetString`-Schreibt den angegebenen Zeichen folgen Wert in den angegebenen Schlüssel.
+- `SetURL`-Schreibt den angegebenen URL (`NSUrl`)-Wert in den angegebenen Schlüssel.
 
-Beispielsweise würde der folgende Code einen booleschen Wert auf die Standardeinstellungen für Benutzer schreiben:
+Der folgende Code schreibt z. b. einen booleschen Wert in die Benutzer Standardwerte:
 
 ```csharp
 // Get Shared User Defaults
@@ -127,7 +127,7 @@ plist.SetBool(useHeader, "UseHeader");
 ```
 
 > [!IMPORTANT]
-> Wenn Ihre App zuerst ausgeführt wird, `NSUserDefaults` die Schlüssel und Werte aus der app Benutzer standardmäßig Datenbank liest und speichert sie in den Speicher, um zu vermeiden, öffnen und lesen die Datenbank jedes Mal ein Wert erforderlich ist.
+> Wenn Ihre APP zum ersten Mal `NSUserDefaults` ausgeführt wird, liest die Schlüssel und Werte aus der Datenbank mit den Benutzer Standardwerten der APP und speichert Sie im Arbeitsspeicher zwischen, um zu vermeiden, dass die Datenbank bei jedem erforderlichen Wert geöffnet und gelesen wird.
 
 
 
@@ -135,11 +135,11 @@ plist.SetBool(useHeader, "UseHeader");
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden behandelt die `NSUserDefaults` -Klasse, und wie sie einen Satz von Optionen bereitstellen, die die Endbenutzer, zum Konfigurieren Ihrer Xamarin.iOS-App verwenden können verwendet werden kann. Darüber hinaus konnte damit die App-Gruppen für die Kommunikation zwischen einer Erweiterung und seine übergeordneten-App oder -apps in einer Gruppe verwenden.
+In diesem Artikel wurde die `NSUserDefaults` -Klasse behandelt und erläutert, wie Sie verwendet werden kann, um eine Reihe von Optionen bereitzustellen, mit denen der Endbenutzer ihre xamarin. IOS-App konfigurieren kann. Darüber hinaus wird die Verwendung von App-Gruppen für die Kommunikation zwischen einer Erweiterung und der übergeordneten APP oder zwischen apps in einer Gruppe abgedeckt.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
-- [Programmierleitfaden für Einstellungen](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
+- [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Programmier Handbuch zu Einstellungen und Einstellungen](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
 - [NSUserDefaults](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/#//apple_ref/doc/constant_group/NSUserDefaults_Domains)

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 4e462346c2c0130c972d098aa2c988bdd61fc360
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: ad20ba50b8ff0f7dcbba3e8d297b2281544a373b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804899"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657089"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[StackLayout](xref:Xamarin.Forms.StackLayout) Sichten in einer eindimensionalen Linie ("Stapel"), organisiert, entweder horizontal oder vertikal. Ansichten in einer `StackLayout` basierend auf den Speicherplatz im Layout mit Layoutoptionen vergrößert werden kann. Positionierung wird durch die Reihenfolge bestimmt, die das Layout und die Layoutoptionen Ansichten Ansichten hinzugefügt wurden.
+[Stacklayout](xref:Xamarin.Forms.StackLayout) organisiert Sichten in einer eindimensionalen Linie ("Stapel"), entweder horizontal oder vertikal. Ansichten in einer `StackLayout` basierend auf den Speicherplatz im Layout mit Layoutoptionen vergrößert werden kann. Positionierung wird durch die Reihenfolge bestimmt, die das Layout und die Layoutoptionen Ansichten Ansichten hinzugefügt wurden.
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms-Layouts")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms-Layouts")
 
@@ -226,5 +226,5 @@ Beachten Sie, dass `StackLayouts`s geschachtelt sind, da in einigen Fällen Scha
 ## <a name="related-links"></a>Verwandte Links
 
 - [LayoutOptions](~/xamarin-forms/user-interface/layouts/layout-options.md)
-- [Layout (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble-Beispiel (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [Layout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble-Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

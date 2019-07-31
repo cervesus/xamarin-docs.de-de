@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
-ms.openlocfilehash: 85edbf657382b7c85ab2c5af543431fb51fb0d4e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 21edcf4a660049f2ef4ecf8426741a62b56b71e4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019610"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651444"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView) Rendert ein einfaches Rechteck von einer angegebenen Breite, Höhe und Farbe. Sie können `BoxView` Dekoration, rudimentäre Grafiken, und für die Interaktion mit dem Benutzer über Touch.
 
@@ -52,9 +52,9 @@ Die `WidthRequest` und `HeightRequest` Eigenschaften nur eine Rolle spielen, wen
 
 Die `WidthRequest` und `HeightRequest` Eigenschaften werden ignoriert, wenn die `BoxView` ist *eingeschränkte* im Layout, in dem Fall der Layoutcontainer seine eigene Größe für legt die `BoxView`.
 
-Ein `BoxView` in einer Dimension beschränkt und im anderen uneingeschränkt werden kann. Z. B. wenn die `BoxView` ist ein untergeordnetes Element eines vertikalen `StackLayout`, die vertikale Dimension der der `BoxView` ist uneingeschränkt und dessen horizontale Dimension wird im Allgemeinen eingeschränkt. Aber es gibt jedoch Ausnahmen für diese horizontale Dimension: Wenn die `BoxView` hat seine `HorizontalOptions` -Eigenschaft auf etwas anders als `LayoutOptions.Fill`, und klicken Sie dann die horizontale Abmessung auch uneingeschränkte ist. Es ist auch möglich, für die `StackLayout` selbst, um eine uneingeschränkte horizontale Dimension, in diesem Fall müssen die `BoxView` werden auch horizontal uneingeschränkt.
+Ein `BoxView` in einer Dimension beschränkt und im anderen uneingeschränkt werden kann. Z. B. wenn die `BoxView` ist ein untergeordnetes Element eines vertikalen `StackLayout`, die vertikale Dimension der der `BoxView` ist uneingeschränkt und dessen horizontale Dimension wird im Allgemeinen eingeschränkt. Es gibt jedoch Ausnahmen für diese horizontale Dimension: Wenn die `BoxView` -Eigenschaft `HorizontalOptions` der-Eigenschaft auf einen anderen `LayoutOptions.Fill`Wert als festgelegt ist, wird die horizontale Dimension ebenfalls nicht eingeschränkt. Es ist auch möglich, für die `StackLayout` selbst, um eine uneingeschränkte horizontale Dimension, in diesem Fall müssen die `BoxView` werden auch horizontal uneingeschränkt.
 
-Die [ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) Beispiel zeigt eine uneingeschränkte eine-Zoll-Square `BoxView` in der Mitte der Seite:
+Die [ **BasicBoxView** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview) Beispiel zeigt eine uneingeschränkte eine-Zoll-Square `BoxView` in der Mitte der Seite:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -78,7 +78,7 @@ Hier ist das Ergebnis:
 
 Wenn die `VerticalOptions` und `HorizontalOptions` Eigenschaften entfernt wurden die `BoxView` kennzeichnen oder auf festgelegt `Fill`, und klicken Sie dann die `BoxView` wird von der Größe der Seite beschränkt und wird erweitert, um das Ausfüllen der Seite.
 
-Ein `BoxView` kann auch sein, ein untergeordnetes Element des ein `AbsoluteLayout`. In diesem Fall wird der Speicherort und die Größe der `BoxView` festgelegt werden, werden die `LayoutBounds` bindbare Eigenschaft angefügt. Die `AbsoluteLayout` ist in diesem Artikel erläuterten [ **von "AbsoluteLayout"**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
+Ein `BoxView` kann auch sein, ein untergeordnetes Element des ein `AbsoluteLayout`. In diesem Fall wird der Speicherort und die Größe der `BoxView` festgelegt werden, werden die `LayoutBounds` bindbare Eigenschaft angefügt. Die `AbsoluteLayout` ist in diesem Artikel erläuterten [ **von "AbsoluteLayout"** ](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
 
 Beispiele für die all diesen Fällen in den Beispielprogrammen angezeigt, die folgen.
 
@@ -86,7 +86,7 @@ Beispiele für die all diesen Fällen in den Beispielprogrammen angezeigt, die f
 
 ## <a name="rendering-text-decorations"></a>Rendern von Textdekorationen
 
-Sie können die `BoxView` einige einfache Ergänzungen, die auf Ihren Seiten in Form von horizontale und vertikale Linien hinzufügen. Die [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) veranschaulicht dies. Alle des Programms Visuals werden definiert, der **"MainPage.xaml"** Datei, die mehrere enthält `Label` und `BoxView` Elemente in der `StackLayout` hier gezeigt:
+Sie können die `BoxView` einige einfache Ergänzungen, die auf Ihren Seiten in Form von horizontale und vertikale Linien hinzufügen. Die [ **TextDecoration** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration) veranschaulicht dies. Alle des Programms Visuals werden definiert, der **"MainPage.xaml"** Datei, die mehrere enthält `Label` und `BoxView` Elemente in der `StackLayout` hier gezeigt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -176,7 +176,7 @@ Die `BoxView` eignet sich zum Anzeigen von Farben. Dieses Programm verwendet ein
 
 [![ListView-Farben](boxview-images/listviewcolors-small.png "ListView Farben")](boxview-images/listviewcolors-large.png#lightbox "ListView-Farben")
 
-Die [ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) Programm enthält eine Klasse namens `NamedColor`. Der statische Konstruktor verwendet Reflektion, um alle Felder der Zugriff auf die `Color` Struktur und erstellen Sie eine `NamedColor` Objekt für jeden dieser. Diese befinden sich in der statischen `All` Eigenschaft:
+Die [ **ListViewColors** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors) Programm enthält eine Klasse namens `NamedColor`. Der statische Konstruktor verwendet Reflektion, um alle Felder der Zugriff auf die `Color` Struktur und erstellen Sie eine `NamedColor` Objekt für jeden dieser. Diese befinden sich in der statischen `All` Eigenschaft:
 
 ```csharp
 public class NamedColor
@@ -307,7 +307,7 @@ Die `NamedColor` Objekte werden formatiert, indem die `ViewCell` -Objekt, das di
 
 Das Spiel-of-Life ist eine Mobilfunk Automaton von Mathematiker John Conway erfunden und auf den Seiten des bekannt gemacht *Scientific American-* in den 1970er Jahren. Eine gute Einführung wird bereitgestellt, indem Sie im Wikipedia-Artikel [Conways Spiel of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
-Die Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) Programm definiert eine Klasse namens `LifeCell` abgeleitet, die `BoxView`. Diese Klasse kapselt die Logik der eine einzelne Zelle im Spiel Leben:
+Die Xamarin.Forms [ **GameOfLife** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife) Programm definiert eine Klasse namens `LifeCell` abgeleitet, die `BoxView`. Diese Klasse kapselt die Logik der eine einzelne Zelle im Spiel Leben:
 
 ```csharp
 class LifeCell : BoxView
@@ -362,7 +362,7 @@ Die **GameOfLife** Programm enthält auch eine `LifeGrid` Klasse, die ein Großt
 
 ## <a name="creating-a-digital-clock"></a>Erstellen eine digitale Uhr
 
-Die [ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) Programm erstellt 210 `BoxView` Elemente, die Punkte ein altmodisches 5-von-7-Punktmatrix-Anzeige zu simulieren. Sie können die Zeit in entweder hoch-oder Querformat lesen, es ist jedoch größere im Querformat:
+Die [ **DotMatrixClock** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock) Programm erstellt 210 `BoxView` Elemente, die Punkte ein altmodisches 5-von-7-Punktmatrix-Anzeige zu simulieren. Sie können die Zeit in entweder hoch-oder Querformat lesen, es ist jedoch größere im Querformat:
 
 [![Matrix-Uhr](boxview-images/dotmatrixclock-small.png "Matrix-Uhr")](boxview-images/dotmatrixclock-large.png#lightbox "Punktmatrix Uhr")
 
@@ -602,7 +602,7 @@ Eine Uhr Matrix-scheinen sich in einer Anwendung offensichtlich sein `BoxView`, 
 
 [![BoxView Uhr](boxview-images/boxviewclock-small.png "BoxView Uhr")](boxview-images/boxviewclock-large.png#lightbox "BoxView Uhr")
 
-Alle visuellen Elemente in der [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) Programm sind untergeordnete Elemente von einem `AbsoluteLayout`. Diese Elemente haben eine Größe von über die `LayoutBounds` angefügte Eigenschaft und gedreht, mit der `Rotation` Eigenschaft.
+Alle visuellen Elemente in der [ **BoxViewClock** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock) Programm sind untergeordnete Elemente von einem `AbsoluteLayout`. Diese Elemente haben eine Größe von über die `LayoutBounds` angefügte Eigenschaft und gedreht, mit der `Rotation` Eigenschaft.
 
 Die drei `BoxView` Elemente für die Zeiger der Uhr in der XAML-Datei instanziiert jedoch keine positioniert oder angepasst werden:
 
@@ -776,7 +776,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Der zweite Zeiger wird jedoch etwas anders behandelt: Eine Animation, die Beschleunigungsfunktion wird angewendet, um die Bewegung scheinen mechanischen anstelle von smooth zu machen. Bei jedem der zweite Zeiger wieder ein wenig abruft und overshoots klicken Sie dann auf das Ziel. Diese wenig Code fügt viel zu die wirklichkeitsgetreuen Bilder der Bewegung.
+Die zweite Hand wird etwas anders behandelt: Eine Animations Beschleunigungs Funktion wird angewendet, damit die Bewegung eher mechanisch als glatt erscheint. Bei jedem der zweite Zeiger wieder ein wenig abruft und overshoots klicken Sie dann auf das Ziel. Diese wenig Code fügt viel zu die wirklichkeitsgetreuen Bilder der Bewegung.
 
 ## <a name="conclusion"></a>Schlussbemerkung
 
@@ -785,10 +785,10 @@ Die `BoxView` mag zunächst, aber Sie einfach auf gesehen haben, kann es Recht v
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Grundlegende BoxView (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
-- [Textdekoration (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)
-- [Farbe ListBox (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)
-- [Spiel Leben (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
-- [Punktmatrix Format (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)
-- [BoxView-Format (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock)
+- [Grundlegende BoxView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+- [Textdekoration (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
+- [ListView-Farben (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)
+- [Spiel Leben (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)
+- [Punktmatrix Format (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)
+- [BoxView-Format (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)
 - [BoxView](xref:Xamarin.Forms.BoxView)

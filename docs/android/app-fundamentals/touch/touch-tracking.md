@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 877cd7d10cfd81281d2ca94bf5443531d721cdfa
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 26dfc4f9327f12d6854d72349dc46e0b4427fa72
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509097"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643929"
 ---
 # <a name="multi-touch-finger-tracking"></a>Multitouch-Finger Verfolgung
 
@@ -23,7 +23,7 @@ Es gibt Zeiten, in denen eine Multitouch-Anwendung einzelne Finger nachverfolgen
 Für alle Ereignisse, die einem bestimmten Finger zugeordnet sind, bleibt der ID-Code unverändert. Der ID-Code wird zugewiesen, wenn ein Finger den Bildschirm zum ersten Mal berührt und ungültig wird, nachdem der Finger auf dem Bildschirm angezeigt wird.
 Diese ID-Codes sind im Allgemeinen sehr klein und werden von Android für spätere Berührungs Ereignisse wieder verwendet.
 
-Fast immer verwaltet ein Programm, das einzelne Finger verfolgt, ein Wörterbuch für die Berührungs Überwachung. Der Wörterbuch Schlüssel ist der ID-Code, der einen bestimmten Finger identifiziert. Der Wörter Buchwert hängt von der Anwendung ab. Im [fingerpaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) -Programm wird jeder Finger Strich (von Touch zu Release) einem Objekt zugeordnet, das alle Informationen enthält, die erforderlich sind, um die mit diesem Finger gezeichnete Linie zu renderieren. Das Programm definiert zu diesem `FingerPaintPolyline` Zweck eine kleine Klasse:
+Fast immer verwaltet ein Programm, das einzelne Finger verfolgt, ein Wörterbuch für die Berührungs Überwachung. Der Wörterbuch Schlüssel ist der ID-Code, der einen bestimmten Finger identifiziert. Der Wörter Buchwert hängt von der Anwendung ab. Im [fingerpaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) -Programm wird jeder Finger Strich (von Touch zu Release) einem Objekt zugeordnet, das alle Informationen enthält, die erforderlich sind, um die mit diesem Finger gezeichnete Linie zu renderieren. Das Programm definiert zu diesem `FingerPaintPolyline` Zweck eine kleine Klasse:
 
 ```csharp
 class FingerPaintPolyline
@@ -98,7 +98,7 @@ Die `ActionMasked` -Eigenschaft benötigt eine geringere Anzahl von Werten, da S
 
 Wenn verwendet `ActionMasked` wird,`MotionEvent` unter scheidetunterdennachfolgendenFingern,umsichzuberührenunddenBildschirmzuverlassen,aberSiemüssendiesenWertinderRegelnichtalsArgumentfürandereMethodenim`ActionIndex` -Objekt verwenden. Für Multi-Touch wird `GetPointerId` eine der wichtigsten dieser Methoden im obigen Code aufgerufen. Diese Methode gibt einen Wert zurück, den Sie für einen Wörterbuch Schlüssel verwenden können, um bestimmte Ereignisse zu Fingern zuzuordnen.
 
-Die `OnTouchEvent` außer Kraft Setzung [im fingerpaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) -Programm `MotionEventActions.Down` verarbeitet das-Ereignis und das- `PointerDown` Ereignis `FingerPaintPolyline` , indem ein neues-Objekt erstellt und dem Wörterbuch hinzugefügt wird:
+Die `OnTouchEvent` außer Kraft Setzung [im fingerpaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) -Programm `MotionEventActions.Down` verarbeitet das-Ereignis und das- `PointerDown` Ereignis `FingerPaintPolyline` , indem ein neues-Objekt erstellt und dem Wörterbuch hinzugefügt wird:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -191,7 +191,7 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-Dieser Verarbeitungstyp ermöglicht dem [fingerpaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) -Programm das Nachverfolgen einzelner Finger und das Zeichnen der Ergebnisse auf dem Bildschirm:
+Dieser Verarbeitungstyp ermöglicht dem [fingerpaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) -Programm das Nachverfolgen einzelner Finger und das Zeichnen der Ergebnisse auf dem Bildschirm:
 
 [![Beispiel eines Screenshots aus dem fingerpaint-Beispiel](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
 
@@ -201,4 +201,4 @@ Sie haben nun gesehen, wie Sie einzelne Finger auf dem Bildschirm nachverfolgen 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Entsprechendes xamarin IOS-Handbuch](~/ios/app-fundamentals/touch/touch-tracking.md)
-- [Fingerpaint (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)
+- [Fingerpaint (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)

@@ -1,178 +1,178 @@
 ---
 title: Einführung in iOS 8
-description: Apple hat mit iOS 8 eine Fülle von neuen Frameworks und begeistern, und begeistern Sie Entwickler-APIs bereitgestellt. In diesem Handbuch wir diese neuen APIs eingeführt, und wie die iOS 8 Entwickler und Benutzer unterstützen kann.
+description: Mit IOS 8 hat Apple eine Vielzahl von neuen Frameworks und APIs bereitgestellt, mit denen sich Entwickler begeistern und begeistern können. In diesem Handbuch werden diese neuen APIs vorgestellt und erläutert, wie IOS 8 von Entwicklern und Benutzern profitieren kann.
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 592eff29e7c12741975dda0d602f5850071c1f45
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61317635"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644812"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 
-_Apple hat mit iOS 8 eine Fülle von neuen Frameworks und begeistern, und begeistern Sie Entwickler-APIs bereitgestellt. In diesem Handbuch wir diese neuen APIs eingeführt, und wie die iOS 8 Entwickler und Benutzer unterstützen kann._
+_Mit IOS 8 hat Apple eine Vielzahl von neuen Frameworks und APIs bereitgestellt, mit denen sich Entwickler begeistern und begeistern können. In diesem Handbuch werden diese neuen APIs vorgestellt und erläutert, wie IOS 8 von Entwicklern und Benutzern profitieren kann._
 
-iOS 7 geändert visuell die gesamte iOS-Benutzeroberfläche aus, welche Benutzer und Entwickler zu erwarten, direkt aus der ersten iPhone-Betriebssystem ausgestattet gewesen. IOS 8 weiterhin mit diesem durch die Bereitstellung von vielen Frameworks für Entwickler, der Benutzern ermöglicht, fast jeden Aspekt ihrer Lebensdauer direkt über die iPhone zu steuern. Z. B. Integrität und Fitness analysiert werden können mit *HealthKit*, Kennungen sind veraltet, biometrische Authentifizierung mit *LocalAuthentication*, *App-Erweiterungen*Öffnen eines Kommunikationskanals zwischen 3rd Party-apps und *HomeKit* können Sie die Möglichkeit, Ihr Haus in ein Zuhause für die Zukunft zu verwandeln. 
+IOS 7 hat die gesamte IOS-Benutzeroberfläche von dem ersten iPhone-Betriebssystem, das von Benutzern und Entwicklern erwartet wurde, visuell geändert. IOS 8 fährt damit fort, indem viele Frameworks für Entwickler bereitgestellt werden, die es Benutzern ermöglichen, fast alle Aspekte ihrer Lebensdauer direkt von Ihrem iPhone aus zu steuern. Beispielsweise können Integrität und Fitness mit *healthkit*analysiert werden, Kennungen sind mit der biometrischen Authentifizierung über *localauthentication*veraltet, *App-Erweiterungen* eröffnen einen Kommunikationskanal zwischen Drittanbieter-apps und  *Homekit* ermöglicht die Möglichkeit, Ihr Haus in die Zukunft zu versetzen. 
 
-War iOS 7 zu erfreuen Benutzer, konzentriert sich die iOS 8 für Entwickler schätzen, die mit einer Vielzahl dieser tasty neuen Tools. 
+Wenn IOS 7 mit einem erfreuen von Benutzern zu tun hat, konzentriert sich IOS 8 auf die Auswahl von Entwicklern, die über eine ganze Reihe von leckeren neuen Tools verfügen. 
 
-Dieser Leitfaden beschreibt die neuen APIs für Xamarin.iOS-Entwickler.  
+In diesem Handbuch werden die neuen APIs für xamarin. IOS-Entwickler vorgestellt.  
 
-Es gibt auch einige APIs, die in iOS 8 veraltet sind die am Ende dieses Dokuments beschrieben werden.
+Es gibt auch einige APIs, die in ios 8 als veraltet eingestuft wurden, die am Ende dieses Dokuments ausführlich erläutert werden.
 
 ## <a name="requirements"></a>Anforderungen
 
-Folgendes ist erforderlich, um die iOS 8-apps in Visual Studio für Mac zu erstellen:
+Zum Erstellen von IOS 8-Apps in Visual Studio für Mac sind die folgenden Schritte erforderlich:
 
-- **Xcode 7 und iOS 8 oder neueren** – die neuesten Xcode und Apple iOS-APIs müssen installiert und konfiguriert werden, auf dem Computer des Entwicklers.
-- **Visual Studio für Mac** – die neueste Version von Visual Studio für Mac installiert und auf dem Benutzergerät konfiguriert werden soll.
-- **iOS 8-Gerät oder Simulator** – ein iOS-Gerät mit der neuesten Version von iOS 8 für das Testen.
+- **Xcode 7 und IOS 8 oder** höher – die neuesten Xcode-und IOS-APIs von Apple müssen auf dem Computer des Entwicklers installiert und konfiguriert werden.
+- **Visual Studio für Mac** – die neueste Version von Visual Studio für Mac muss auf dem Benutzergerät installiert und konfiguriert werden.
+- **IOS 8-Gerät oder-Simulator** – ein IOS-Gerät, auf dem die neueste Version von IOS 8 zum Testen ausgeführt wird.
 
-## <a name="home-and-leisure"></a>Heim- und Freizeit
+## <a name="home-and-leisure"></a>Zuhause und Freizeit
 
-iOS 8 hat dazu beigetragen, weshalb Apple und das iOS-Gerät direkt in den Kern Ihres Zuhauses, durch die Verwendung von HomeKit und HealthKit einzuschleusen. In diesem Abschnitt betrachten wir beide diese neue Frameworks funktionieren und wie sie in Ihrer Xamarin.iOS-Anwendung integriert werden können.
+IOS 8 unterstützt Sie bei der festen Einrichtung von Apple und dem IOS-Gerät durch die Verwendung von homekit und healthkit direkt in das Herzstück. In diesem Abschnitt wird erläutert, wie diese neuen Frameworks funktionieren und wie Sie in Ihre xamarin. IOS-Anwendung integriert werden können.
 
 ## <a name="homekit"></a>HomeKit
 
-Steuern Ihre Geräte auf Ihrem iPhone ist keine neue Anwendung der Technologie; Viele verbunden – Startseite Produkte können über eine iOS-app gesteuert werden. Jedoch geht HomeKit jetzt noch einen Schritt weiter durch die Förderung von eines gemeinsamen Protokolls für heimautomatisierungsgeräte und eine öffentliche API verfügbar zu machen. bestimmte Herstellern, z. B. iHome, Philips und Honeywell. Für den Benutzer bedeutet dies, dass sie fast jeden Aspekt ihrer Startseite nahtlos aus steuern können innerhalb einer Anwendung. Dabei ist es unerheblich, feststellen, dass sie eine Glühbirne Philips Hue oder ein Alarm für die Schachtelung verwenden. Benutzer können auch zahlreiche intelligente home-Prozesse in "Szenen" verketten.
+Das Steuern ihrer Geräte über Ihr iPhone ist keine neue Technologie Anwendung. viele Connected-Home-Produkte können über eine IOS-App gesteuert werden. Homekit führt diesen Schritt jedoch weiter aus, indem ein gängiges Protokoll für Home Automation-Geräte herauf gestuft wird und eine öffentliche API für bestimmte Hersteller verfügbar ist, z. b. iHome, Philips und Honeywell. Für den Benutzer bedeutet dies, dass Sie fast jeden Aspekt Ihrer Startseite nahtlos von einer Anwendung aus steuern können. Es ist unerheblich, dass Sie eine Philips Hue Lightbulb oder einen Schachtelungs Alarm verwenden. Benutzer können auch zahlreiche Smart Home-Prozesse in "Szenen" verketten.
 
-Mit HomeKit können Drittanbieter-apps und Siri Zubehör ermitteln ihrer persönlichen Startseite Konfigurationsdatenbank hinzufügen, bearbeiten und werden auf diese Daten angewendet, und kommunizieren mit der Verpackung für Zubehör und ihre Dienste zur Ausführung einer Aktion.
+Mit homekit können Drittanbieter-apps und Siri Zubehör erkennen und ihrer eigenen Konfigurations Datenbank für die privat Datenbank hinzufügen, diese Daten bearbeiten und bearbeiten und mit Zubehör und Ihren Diensten kommunizieren, um eine Aktion auszuführen.
 
 ### <a name="configuration"></a>Konfiguration
 
-Das folgende Diagramm zeigt die Hierarchie der Konfiguration des HomeKit-Zubehör:
+Das folgende Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör:
 
-![](introduction-to-ios8-images/image1.png "Dieses Diagramm zeigt die Hierarchie der Konfiguration des HomeKit-Zubehör")
+![](introduction-to-ios8-images/image1.png "Dieses Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör.")
  
-Um den ersten Schritten mit HomeKit müssen Entwickler sicherstellen, dass ihre Bereitstellungsprofil den HomeKit-Dienst ausgewählt verfügt. Apple bereitgestellt für Xcode auch Entwicklern ein HomeKit-Simulator-add-in. Diese finden Sie in der [Apple Developer Center](https://developer.apple.com/downloads/index.action)unter `Hardware IO Tools for Xcode`. 
+Um mit homekit zu beginnen, müssen Entwickler sicherstellen, dass für das Bereitstellungs Profil der homekit-Dienst ausgewählt ist. Apple hat Entwicklern auch ein homekit-Simulator-Add-in für Xcode bereitgestellt. Diese finden Sie im [Apple Developer Center](https://developer.apple.com/downloads/index.action)unter `Hardware IO Tools for Xcode`. 
 
-Weitere Informationen finden Sie unserem [HomeKit](~/ios/platform/homekit.md) Guide.
+Weitere Informationen finden Sie in unserem [homekit](~/ios/platform/homekit.md) -Handbuch.
 
 ## <a name="healthkit"></a>HealthKit
 
-HealthKit ist ein Framework, eingeführt in iOS 8, die einen zentralisierten, koordinierten und sicheren Datenspeicher für integritätsbezogene Informationen bereitstellt. Das Betriebssystem wird sichergestellt, Datenschutz und zur Sicherheit von Gesundheitsinformationen und, mit der Health-app, ein Dashboard für den Benutzer. Mit der Berechtigung des Benutzers können Anwendungen lesen und schreiben eine Vielzahl von Gesundheitsinformationen.
+Healthkit ist ein Framework, das in ios 8 eingeführt wurde und einen zentralisierten, koordinierten und sicheren Datenspeicher für Integritäts bezogene Informationen bietet. Das Betriebssystem stellt den Datenschutz und die Sicherheit von Integritäts Informationen und, mit der Health-APP, als Dashboard für den Benutzer sicher. Mit der Benutzer Berechtigung können Anwendungen eine Vielzahl von Integritäts Informationen lesen und schreiben.
 
-Weitere Informationen zur Verwendung in Ihrer Xamarin.iOS-app finden Sie in der [Einführung in HealthKit](~/ios/platform/healthkit.md) Guide.
+Weitere Informationen zur Verwendung dieser in ihrer xamarin. IOS-App finden Sie im Handbuch [Introduction to healthkit (Einführung in healthkit](~/ios/platform/healthkit.md) ).
 
-## <a name="extending-iphone-functionality"></a>Erweitern Sie die iPhone-Funktion
-Klicken Sie mit IOS 8 sind Entwickler übergeben wird deutlich mehr Kontrolle darüber, wer ihre app und verbesserte Funktionen für die weitere open Kommunikation zwischen apps von Drittanbietern verwenden kann. Öffnen Sie Funktionen wie App-Erweiterungen und Dokumentauswahl zahlreiche Möglichkeiten, wie Anwendungen im Apple Ökosystem verwendet werden können.
+## <a name="extending-iphone-functionality"></a>Erweitern der iPhone-Funktionalität
+Mit iOS8 erhalten Entwickler wesentlich mehr Kontrolle darüber, wer Ihre APP verwenden kann, und die Funktion für eine besser geöffnete Kommunikation zwischen Drittanbieter-apps zu erhöhen. Features wie App-Erweiterungen und Dokument Auswahl eröffnen eine Vielzahl von Möglichkeiten, wie Anwendungen im Ökosystem von Apple eingesetzt werden können.
 
 ### <a name="app-extensions"></a>App-Erweiterungen
-App-Erweiterungen, um oversimplify, sind eine Möglichkeit, apps von Drittanbietern, um miteinander zu kommunizieren. Um die hohen Sicherheitsstandards verwalten und die Integrität der Sandbox-apps einzuhalten, geschieht nicht diese Kommunikation direkt zwischen Anwendungen. Stattdessen, es erfolgt durch ein *Erweiterung* in der Mitte.
+App-Erweiterungen, die zu viel mplify sind, sind eine Möglichkeit für Drittanbieter-apps, miteinander zu kommunizieren. Diese Kommunikation erfolgt nicht direkt zwischen Anwendungen, um hohe Sicherheitsstandards zu gewährleisten und die Integrität der Sandbox-apps aufrechtzuerhalten. Stattdessen wird Sie durch eine *Erweiterung* in der Mitte durchgeführt.
 
-Der erste Schritt beim Erstellen einer App-Erweiterung ist, um den richtigen Erweiterungspunkt zu definieren – dies ist wichtig, sicherzustellen, das Verhalten und die Verfügbarkeit der richtigen-APIs. Um eine App-Erweiterung in Visual Studio für Mac zu erstellen, fügen Sie sie zu einer vorhandenen Anwendung hinzu, durch das Hinzufügen eines neuen Projekts Ihrer Projektmappe verwenden.
+Der erste Schritt beim Erstellen einer APP-Erweiterung besteht darin, den richtigen Erweiterungs Punkt zu definieren – Dies ist wichtig, um das Verhalten und die Verfügbarkeit der richtigen APIs sicherzustellen. Um eine APP-Erweiterung in Visual Studio für Mac zu erstellen, fügen Sie Sie einer vorhandenen Anwendung hinzu, indem Sie der Projekt Mappe ein neues Projekt hinzufügen.
 
-In der **neues Projekt** Dialogfeld navigieren Sie zu **C#**  >  **iOS** > **Unified API**  >  **Erweiterungen**, wie im folgenden Screenshot dargestellt:
+Navigieren Sie im Dialogfeld **Neues Projekt** **C#**  > zu **IOS** > -**Unified API** > **Erweiterungen**, wie im folgenden Screenshot veranschaulicht:
 
-![](introduction-to-ios8-images/image2.png "Erstellen einer neuen Erweiterungs")
+![](introduction-to-ios8-images/image2.png "Erstellen einer neuen Erweiterung")
  
-Das Dialogfeld "Neues Projekt" bietet sieben neue Projektvorlagen zum Erstellen von App-Erweiterungen, und werden weiter unten erläutert. Beachten Sie, dass viele der Erweiterungen für andere neue APIs in iOS, z. B. Dokumentauswahl beziehen:
+Das Dialogfeld "Neues Projekt" enthält sieben neue Projektvorlagen zum Erstellen von App-Erweiterungen, die im folgenden erläutert werden. Beachten Sie, dass viele der Erweiterungen sich auf andere neue APIs in ios beziehen, wie z. b. die Dokument Auswahl:
 
-- **Aktion** – Dies ermöglicht Entwicklern das Erstellen von eindeutigen benutzerdefinierten Aktionsschaltflächen ermöglicht Benutzern, bestimmte Aufgaben ausgeführt
-- **Benutzerdefinierte Tastatur** – Dadurch können Entwickler auf den Bereich der hinzuzufügenden integrierte Apple Tastaturen durch ihre eigenen benutzerdefinierten hinzufügen. Der beliebten Tastatur verwendet Swype diese auf um die Tastatur auf iOS zu bringen.
-- **Dokumentieren Sie die Auswahl** – enthält einen Ansichtscontroller Dokument Auswahl dem Benutzer Zugriff auf Dateien außerhalb der Anwendung Sandbox ermöglicht.
-- **Dokumentieren Sie die Auswahl Dateianbieter** – Dies ermöglicht die sichere Speicherung für Dateien, die über die Auswahl des Dokuments.
-- **Foto bearbeiten** – diese erweitert, die den angegebenen Filtern und Bearbeiten von bereits in der Fotos-Anwendung, um Benutzern mehr Kontrolle und weitere Optionen ermöglichen, wenn Sie ihre Fotos bearbeiten von Apple bereitgestellten Tools.
-- **Heute** – Dies ermöglicht es Anwendungen, Widgets im Abschnitt "heute" der Mitteilungszentrale angezeigt.
+- **Aktion** – Hiermit können Entwickler eindeutige benutzerdefinierte Aktions Schaltflächen erstellen, die es Benutzern ermöglichen, bestimmte Aufgaben auszuführen.
+- **Benutzerdefinierte Tastatur** – dadurch können Entwickler den Bereich der erstellten Apple-Tastaturen durch Hinzufügen Ihrer eigenen benutzerdefinierten Tastatur hinzufügen. Die beliebte Tastatur, der Swap-Austausch verwendet diese, um Ihre Tastatur auf IOS zu bringen.
+- **Dokument** Auswahl – enthält einen Ansichts Controller für die Dokument Auswahl, mit dem Benutzer auf Dateien außerhalb des Sandkastens der Anwendung zugreifen können.
+- **Datei Anbieter** für die Dokument Auswahl – hiermit wird ein sicherer Speicher für Dateien mithilfe der Dokument Auswahl bereitstellt.
+- **Fotobearbeitung** – Dies erweitert die Filter und Bearbeitungs Tools, die bereits von Apple in der Fotos-Anwendung bereitgestellt wurden, um Benutzern mehr Kontrolle und mehr Optionen beim Bearbeiten Ihrer Fotos zu bieten.
+- **Heute** – Hiermit können Anwendungen im Abschnitt "heute" des Benachrichtigungs Centers Widgets anzeigen.
 
-Weitere Informationen zur Verwendung von App-Erweiterungen in Xamarin finden Sie in der [Einführung in die App-Erweiterungen](~/ios/platform/extensions.md) Guide.
+Weitere Informationen zur Verwendung von App-Erweiterungen in xamarin finden Sie im Handbuch [Introduction to App Extensions](~/ios/platform/extensions.md) .
 
 ### <a name="touch-id"></a>Touch-ID
 
-Touch ID wurde in iOS 7 eingeführt, als Mittel zum Authentifizieren des Benutzers – ähnlich einer Kennung. Es war jedoch beschränkt auf die entsperrung des Geräts, mithilfe der App-Store, mithilfe der iTunes und iCloud-Schlüsselbund nur Authentifizierung 
+Die Fingereingabe-ID wurde in ios 7 als Mittel zum Authentifizieren des Benutzers eingeführt – ähnlich wie bei einer Kennung. Dies war jedoch auf das Entsperren des Geräts, die Verwendung des App Store, die Verwendung von iTunes und das Authentifizieren der icloud-Keychain beschränkt. 
 
-Es gibt jetzt zwei Möglichkeiten, Touch ID als Authentifizierungsmechanismus in iOS 8-Anwendungen, die mit der lokalen Authentifizierungs-API verwenden. Es ist derzeit nicht möglich, die lokale Authentifizierung verwenden, um die Remote authentifiziert.
+Es gibt zwei Möglichkeiten, die Berührungs-ID als Authentifizierungsmechanismus in ios 8-Anwendungen mithilfe der lokalen Authentifizierungs-API zu verwenden. Es ist derzeit nicht möglich, die lokale Authentifizierung für die Remote Authentifizierung zu verwenden.
 
-Erstens unterstützt er die vorhandenen Keychain-Dienste durch die Verwendung von neuen Keychain Zugriffssteuerungslisten (ACLs). Keychain-Daten können mit der erfolgreichen Authentifizierung eines Fingerabdrucks Benutzer entsperrt werden.
+Erstens werden die vorhandenen Keychain-Dienste durch die Verwendung neuer Keychain-Access Control Listen (ACLs) unterstützt. Keychain-Daten können mit der erfolgreichen Authentifizierung eines Benutzer Fingerabdrucks entsperrt werden.
 
-Zweitens LocalAuthentication zwei stellt Methoden bereit, um die Anwendung lokal zu authentifizieren. Entwickler sollten verwenden `CanEvaluatePolicy` zu bestimmen, ob das Gerät Touch ID akzeptieren kann, und klicken Sie dann `EvaluatePolicy` , starten Sie den Authentifizierungsvorgang.
+Zweitens bietet localauthentication zwei Methoden, um Ihre Anwendung lokal zu authentifizieren. Entwickler sollten verwenden `CanEvaluatePolicy` , um zu bestimmen, ob das Gerät die Berührungs-ID akzeptieren kann `EvaluatePolicy` , und dann den Authentifizierungs Vorgang zu starten.
 
-Weitere Informationen für die Touch ID und erfahren, wie sie in einer Xamarin.iOS-Anwendung integriert, finden Sie in der [Einführung zum TouchID](~/ios/platform/touchid.md) Anleitungen.
+Weitere Informationen zur Touch-ID und zur Integration in eine xamarin. IOS-Anwendung finden Sie in der [Einführung in touchid](~/ios/platform/touchid.md) -Anleitungen.
 
 ### <a name="document-picker"></a>Dokumentauswahl
 
-Dokument-Auswahl funktioniert mit einem Benutzer iCloud-Laufwerk, damit der Benutzer zum Öffnen von Dateien, die in eine andere app erstellt wurden, importieren und diese bearbeiten und Exportieren zurück. Dies erstellt eines intuitiven Workflows und daher eine viel bessere benutzererfahrung, für Benutzer. iCloud-Synchronisierung geht noch einen Schritt weiter – alle in einer Anwendung vorgenommenen Änderungen auch werden spiegeln konsistent auf allen Geräten.
+Die Dokument Auswahl funktioniert mit einem Benutzer-icloud-Laufwerk, um dem Benutzer zu ermöglichen, Dateien zu öffnen, die in einer anderen APP erstellt wurden, Sie zu importieren und zu manipulieren und dann wieder zurück zu exportieren. Dadurch entsteht ein intuitiver Workflow und somit eine viel bessere Benutzer Leistung. die icloud-Synchronisierung führt dies einen Schritt weiter aus – alle Änderungen, die in einer Anwendung vorgenommen werden, werden auch konsistent auf allen ihren Geräten widerspiegeln.
 
-Die Dokumentauswahl ausführlicher Informationen und erfahren, wie Sie es in einer Xamarin.iOS-Anwendung zu integrieren, finden Sie in der [Einführung in die Dokumentauswahl](~/ios/platform/document-picker.md) Guide.
+Weitere Informationen zur Dokument Auswahl und zur Integration in eine xamarin. IOS-Anwendung finden Sie in der [Einführung in das Dokument](~/ios/platform/document-picker.md) Auswahl Handbuch.
 
 ### <a name="handoff"></a>Handoff
 
-Übergabe, die Teil der größeren Geschäftskontinuität-Funktion ist, hat es sich um einen weiteren Schritt in Richtung Integration von OS X und iOS. Dies umfasst plattformübergreifende AirDrop, die Fähigkeit, iPhone Anrufe, SMS, auf die iPad- und Mac und Verbesserungen bei der Bindung auf Ihrem iPhone zu werden.
+Der Handoff, der Teil des größeren Kontinuitäts Features ist, führt zur Integration von OS X und IOS einen Schritt weiter. Dies umfasst plattformübergreifende airdrop, die Möglichkeit zum Übernehmen von iPhone-anrufen, SMS auf dem iPad und Mac sowie Verbesserungen beim Tethering von Ihrem iPhone.
 
-Übergabe arbeitet mit iOS 8 und Yosemite und erfordert ein iCloud-Konto für alle anderen Geräte angemeldet sein, dass Sie verwenden möchten. Sie sollten mit vorinstallierten am Apple-apps, einschließlich der Safari, iWork, Karten, Kalender und Kontakte zusammenarbeiten.
+Die Übergabe funktioniert mit IOS 8 und Yosemite und erfordert, dass ein icloud-Konto bei allen verschiedenen Geräten angemeldet ist, die Sie verwenden möchten. Es sollte mit den meisten vorinstallierten Apple-Apps wie Safari, iWork, Maps, Kalenders und Kontakten funktionieren.
 
-Weitere Informationen finden Sie unserem [Handoff](~/ios/platform/handoff.md) Guide.
+Weitere Informationen finden Sie in unserem [Handzettel](~/ios/platform/handoff.md) Handbuch.
 
 ## <a name="unified-storyboards"></a>Einheitliche Storyboards
-iOS 8 umfasst ein neues einfacher Mechanismus zum Erstellen der Benutzeroberfläche zu verwenden – das einheitliche Storyboard. Mit einem einzelnen Storyboard um sämtliche Bildschirmgrößen der unterschiedliche Hardware abzudecken können schnelle und reaktionsfähige Ansichten in einem "true" "einmal entwerfen, viele" Stil erstellt werden.
+IOS 8 umfasst einen neuen einfacheren Verwendungs Mechanismus zum Erstellen der Benutzeroberfläche – das vereinheitlichte Storyboard. Mit einem einzelnen Storyboard, das alle unterschiedlichen Hardware Bildschirmgrößen abdeckt, können schnelle und reaktionsschnelle Ansichten in einem echten "Design einmal erstellt werden.
 
-Vor IOS 8 wurde für Entwickler verwendet `UIInterfaceOrientation` , zwischen Hoch- und Querformat zu unterscheiden und `UIInterfaceIdiom` zur Unterscheidung zwischen iOS-Geräte. In iOS8 ist es nicht mehr erforderlich, separate Storyboards für iPhone und iPad-Geräte zu erstellen, Ausrichtung und Gerät werden mithilfe von bestimmt *Größenklassen*.
+Vor iOS8 wurden Entwickler verwendet `UIInterfaceOrientation` , um zwischen hoch-und Querformat zu unterscheiden und `UIInterfaceIdiom` zwischen IOS-Geräten zu unterscheiden. In iOS8 ist es nicht mehr erforderlich, separate Storyboards für iPhone-und iPad-Geräte zu erstellen – Ausrichtung und Gerät werden durch die Verwendung von *Größenklassen*bestimmt.
 
-Jedes Gerät wird definiert, indem eine Größenklasse, in der vertikalen und der horizontalen Achse, und es gibt zwei Arten von Größenklassen IOS 8:
+Jedes Gerät wird in der vertikalen und der horizontalen Achse durch eine Size-Klasse definiert, und es gibt zwei Typen von Größenklassen in ios 8:
 
-- **Reguläre** – Dies ist für eine große Bildschirmgröße (z. B. einem iPad) oder eine minianwendung, die eine beträchtliche Größe (z. B. ein UIScrollView-Element den Eindruck erhalten
-- **Compact** – Dies ist für kleinere Geräte (z. B. das iPhone). Diese Größe berücksichtigt die Ausrichtung des Geräts.
+- **Regulär** : Dies ist entweder für eine große Bildschirmgröße (z. b. ein iPad) oder eine Mini Anwendung, die den Eindruck einer großen Größe (z. b. eine uiscrollview) liefert.
+- **Compact** : Dies gilt für kleinere Geräte (z. b. das iPhone). Diese Größe berücksichtigt die Ausrichtung des Geräts.
 
-Wenn die beiden Konzepte zusammen verwendet werden, ist das Ergebnis ein 2 x 2-Raster, das definiert die verschiedenen möglichen Größen, die in die beiden unterschiedlichen Ausrichtungen verwendet werden können, wie im folgenden Diagramm dargestellt:
+Wenn die beiden Konzepte gleichzeitig verwendet werden, ist das Ergebnis ein 2 x 2-Raster, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können, wie in der folgenden Abbildung dargestellt:
 
-![](introduction-to-ios8-images/image3.png "Ein Auszug aus 2 x 2-Raster, das sowohl die unterschiedlichen Ausrichtungen definiert die verschiedenen möglichen Größen, die verwendet werden können")
+![](introduction-to-ios8-images/image3.png "Ein Diagramm, das das 2 x 2-Raster darstellt, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können")
  
-Weitere Informationen zu Größenklassen, finden Sie in der [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md).
+Weitere Informationen zu Größenklassen finden Sie unter [Introduction to Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md).
 
-## <a name="photo-kit"></a>Foto-Kit
-Foto-Kit ist ein neues Framework, das ermöglicht es Anwendungen, die systembilderbibliothek Abfragen und die Erstellung benutzerdefinierter Benutzeroberflächen zum Anzeigen und ändern seinen Inhalt. Sie enthält eine Reihe von Klassen, die Images und Videoassets sowie Sammlungen von Ressourcen wie z. B. Alben und Ordner darstellen.
+## <a name="photo-kit"></a>Fotokit
+Photo Kit ist ein neues Framework, das es Anwendungen ermöglicht, die System Image Bibliothek abzufragen und benutzerdefinierte Benutzeroberflächen zu erstellen, um deren Inhalte anzuzeigen und zu ändern. Sie enthält eine Reihe von Klassen, die Bild-und Video Medienobjekte sowie Sammlungen von Assets wie z. b. Alben und Ordner darstellen.
 
-Weitere Informationen finden Sie unserem [PhotoKit](~/ios/platform/photokit.md) Guide.
+Weitere Informationen finden Sie in unserem Leitfaden für [photokit](~/ios/platform/photokit.md) .
 
 ## <a name="games"></a>Spiele
 
 <a name="scenekit" />
 
-### <a name="scene-kit"></a>Szene Kit
+### <a name="scene-kit"></a>Szene-Kit
 
-Szene Kit ist eine 3D-Szene-Graph-API, die die Arbeit mit 3D-Grafiken vereinfacht. Es wurde erstmals in OS X 10.8 und ist jetzt für iOS 8 stammen. Mit Szene Kit ist die immersive 3D Visualisierungen und casual 3D-Spiele erstellen keine Kenntnisse OpenGL erforderlich. Aufbauend auf allgemeine Konzepte der Szene Graph, abstrahiert Szene Kit die Komplexität der OpenGL und OpenGL-ES, können Sie es sehr einfach, Hinzufügen von 3D Inhalt zu einer Anwendung. Wenn Sie ein OpenGL-Experte sind, hat jedoch Szene Kit hervorragende Unterstützung für die Bindung in den direkt mit OpenGL ebenfalls. Außerdem umfasst zahlreiche Features, die 3D-Grafiken, z. B. Physik ergänzen und mehrere andere Apple-Frameworks, z. B. Core Animation, Core-Image und Spritekit sehr gut integriert.
+Das Scene Kit ist eine 3D-Szene-Graph-API, die die Arbeit mit 3D-Grafiken vereinfacht. Sie wurde erstmals in OS X 10,8 eingeführt und ist jetzt auf IOS 8. Mit dem Szene-Kit, das immersive 3D-Visualisierungen erstellt, und ungezwungene 3D-Spiele erfordert kein Know-how in OpenGL. Das Scene Kit baut auf gängigen Szenen Diagramm Konzepten auf und abstrahiert die Komplexität von OpenGL und OpenGL, sodass es sehr einfach ist, 3D-Inhalte zu einer Anwendung hinzuzufügen. Wenn Sie jedoch ein OpenGL-Experte sind, bietet das Szene-Kit auch hervorragend Unterstützung für die direkte Bindung mit OpenGL. Außerdem sind zahlreiche Features enthalten, die 3D-Grafiken (z. b. Physik) ergänzen und sehr gut in verschiedene andere Apple-Frameworks integriert sind, z. b. Core Animation, Core Image und Sprite Kit.
 
-Weitere Informationen finden Sie unserem [SceneKit](~/ios/platform/gaming/scenekit.md) Dokumentation.
+Weitere Informationen finden Sie in unserer [scenekit](~/ios/platform/gaming/scenekit.md) -Dokumentation.
 
 <a name="spritekit" />
 
-### <a name="sprite-kit"></a>Spritekit
+### <a name="sprite-kit"></a>Sprite-Kit
 
-Spritekit, dem 2D-spieleframework bei Apple an, verfügt über einige interessante neue Features in iOS 8 und OS X Yosemite. Dazu zählen die Integration mit Szene Kit, Unterstützung für Shader, Beleuchtung, Schatten, Einschränkungen, Normalmap-Generierung und physikalische Enhancements. Insbesondere vereinfachen die neuen Funktionen der Physik, realistische Effekte zu einem Spiel hinzufügen.
+Sprite Kit, das 2D-Spiel Framework von Apple, verfügt über einige interessante neue Features in ios 8 und OS X Yosemite. Hierzu gehören die Integration in das Szene-Kit, shaderunterstützung, Beleuchtung, Schatten, Einschränkungen, normale Zuordnungs Generierung und physikalische Erweiterungen. Insbesondere die neuen Physik Features erleichtern das Hinzufügen realistischer Effekte zu einem Spiel.
 
-Weitere Informationen finden Sie unserem [SpriteKit](~/ios/platform/gaming/spritekit.md) Dokumentation.
+Weitere Informationen finden Sie in unserer [spritekit](~/ios/platform/gaming/spritekit.md) -Dokumentation.
 
 ## <a name="other-changes"></a>Weitere Änderungen
-Sowie die wichtigsten Änderungen in iOS 8, die oben beschrieben sind, hat Apple darüber Frameworks für viele vorhandene aktualisiert. Diese werden nachfolgend ausführlich erläutert:
+Zusätzlich zu den wichtigsten Änderungen in ios 8, die oben beschrieben wurden, hat Apple zusätzlich viele vorhandene Frameworks aktualisiert. Diese werden im folgenden beschrieben:
 
-- **[Core-Image](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)**  – Apple hat bei der Image-verarbeitungsframework erweitert werden, indem Sie eine bessere Unterstützung für die Erkennung von rechteckige Bereiche hinzufügen, und QR-codes in Bildern. Mike Bluestein untersucht, dies in seinem Blog post berechtigt [Bilderkennung IOS 8](https://blog.xamarin.com/image-detection-in-ios-8/)
+- **[Core-Image](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple hat sich auf das Abbild Verarbeitungs Framework ausgedehnt, indem es eine bessere Unterstützung für die Erkennung von rechteckigen Bereichen und QR-Codes in Bildern bietet. Mike Bluestein untersucht dies in seinem Blogbeitrag " [Image Erkennung in ios 8](https://blog.xamarin.com/image-detection-in-ios-8/) ".
 
 ## <a name="deprecated-apis"></a>Nicht mehr unterstützte APIs
-Alle Verbesserungen in iOS 8 vorgenommen wurden wurden eine Reihe von APIs als veraltet. Einige davon werden nachfolgend beschrieben.
+Mit allen in ios 8 vorgenommenen Verbesserungen sind einige APIs veraltet. Einige davon sind unten aufgeführt.
 
-- **[UIApplication](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/cl/UIApplication)**  – die Methoden und Eigenschaften, die bei der Registrierung von remotebenachrichtigungen wurden als veraltet. Dies sind RegisterForRemoteNotificationTypes und EnabledRemoteNotificationTypes.
-- **[UIViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController)**  – "traits" und Größenklassen wurden ersetzt, die Methoden und Eigenschaften verwendet, um anfangsausrichtung der Schnittstelle beschreiben. Finden Sie in der [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) für Weitere Informationen dazu, wie diese verwendet.
+- **[UIApplication](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/cl/UIApplication)** – die Methoden und Eigenschaften, die zum Registrieren von Remote Benachrichtigungen verwendet werden, sind veraltet. Dies sind registerforremotenotificationtypes und enabledremutenotificationtypes.
+- **[UIViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController)** – Merkmale und Größenklassen haben die Methoden und Eigenschaften ersetzt, die zur Beschreibung der Schnittstellen Ausrichtung verwendet werden. Weitere Informationen zur Verwendung dieser Funktionen finden Sie unter [Introduction to Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
-- **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)**  – Dadurch wurde ersetzt durch UISearchController in iOS8.
+- **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** – dies wurde durch uisearchcontroller in iOS8 ersetzt.
 
 ## <a name="summary"></a>Zusammenfassung
-In diesem Artikel haben Sie einige der neuen Funktionen von Apple iOS 8 eingeführtes.
+In diesem Artikel wurden einige der neuen Features behandelt, die von Apple in ios 8 eingeführt wurden.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [UIKitEnhancements (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios8/UIKitEnhancements)
-- [Einführung in die App-Erweiterungen](~/ios/platform/extensions.md)
+- [Uikitenhancements (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-uikitenhancements)
+- [Einführung in App-Erweiterungen](~/ios/platform/extensions.md)
 - [Einführung in CloudKit](~/ios/data-cloud/intro-to-cloudkit.md)
-- [Einführung in die Dokumentauswahl](~/ios/platform/document-picker.md)
-- [Einführung in HealthKit](~/ios/platform/healthkit.md)
-- [Einführung in die Steuerelemente der manuellen Kamera](~/ios/user-interface/controls/intro-to-manual-camera-controls.md)
-- [Einführung in die Touch ID](~/ios/platform/touchid.md)
-- [Einführung in die einheitliche Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)
+- [Einführung in die Dokument Auswahl](~/ios/platform/document-picker.md)
+- [Einführung in healthkit](~/ios/platform/healthkit.md)
+- [Einführung in manuelle Kamera Steuerelemente](~/ios/user-interface/controls/intro-to-manual-camera-controls.md)
+- [Einführung in touchid](~/ios/platform/touchid.md)
+- [Einführung in vereinheitlichte Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)

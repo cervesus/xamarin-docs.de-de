@@ -1,267 +1,267 @@
 ---
-title: Symbolleisten in Xamarin.Mac
-description: Dieser Artikel beschreibt das Arbeiten mit Symbolleisten in einer Xamarin.Mac-Anwendung. Hierin sind erstellen und Verwalten von Symbolleisten in Xcode und Interface Builder, für Code verfügbar zu machen und Programmgesteuertes Arbeiten mit ihnen.
+title: Symbolleisten in xamarin. Mac
+description: Dieser Artikel beschreibt das Arbeiten mit Symbolleisten in einer xamarin. Mac-Anwendung. Es behandelt das Erstellen und Verwalten von Symbolleisten in Xcode und Interface Builder, die Bereitstellung für Code und die programmgesteuerte Arbeit mit Ihnen.
 ms.prod: xamarin
 ms.assetid: C8D228CE-C860-47E1-85FD-69864BF91F20
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6cb17ae0f60390564a8aa6bdb64ea612aae51b55
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b2008b93f208d73af06c12fa493232fd56ddd64f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61295330"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644747"
 ---
-# <a name="toolbars-in-xamarinmac"></a>Symbolleisten in Xamarin.Mac
+# <a name="toolbars-in-xamarinmac"></a>Symbolleisten in xamarin. Mac
 
-_Dieser Artikel beschreibt das Arbeiten mit Symbolleisten in einer Xamarin.Mac-Anwendung. Hierin sind erstellen und Verwalten von Symbolleisten in Xcode und Interface Builder, für Code verfügbar zu machen und Programmgesteuertes Arbeiten mit ihnen._
+_Dieser Artikel beschreibt das Arbeiten mit Symbolleisten in einer xamarin. Mac-Anwendung. Es behandelt das Erstellen und Verwalten von Symbolleisten in Xcode und Interface Builder, die Bereitstellung für Code und die programmgesteuerte Arbeit mit Ihnen._
 
-Xamarin.Mac-Entwickler, die Arbeit mit Visual Studio für Mac haben Zugriff auf die gleiche UI-Steuerelemente, die für MacOS-Entwickler arbeiten mit Xcode, einschließlich das Symbolleisten-Steuerelement. Da Xamarin.Mac direkt in Xcode integriert ist, ist es möglich, verwenden Interface Builder von Xcode erstellen und verwalten die Elemente der Symbolleiste. Diese Elemente der Symbolleiste können auch in c# erstellt werden.
+Xamarin. Mac-Entwickler, die mit Visual Studio für Mac arbeiten, haben Zugriff auf dieselben UI-Steuerelemente, die für macOS-Entwickler mit Xcode verfügbar sind, einschließlich des Toolbar-Steuer Elements. Da xamarin. Mac direkt in Xcode integriert ist, ist es möglich, die Interface Builder von Xcode zu verwenden, um Symbolleisten Elemente zu erstellen und zu verwalten. Diese Symbolleisten Elemente können auch in C#erstellt werden.
 
-Symbolleisten in MacOS werden im oberen Abschnitt eines Fensters hinzugefügt und bieten einfachen Zugriff auf Befehle, die sich auf die Funktionalität beziehen. Symbolleisten ausgeblendet, angezeigt oder von einer Anwendung Benutzer angepasst werden können, und sie können Elemente der Symbolleiste auf verschiedene Weise präsentieren.
+Symbolleisten in macOS werden dem oberen Abschnitt eines Fensters hinzugefügt und ermöglichen einen einfachen Zugriff auf Befehle im Zusammenhang mit der Funktionalität. Symbolleisten können von den Benutzern einer Anwendung ausgeblendet, angezeigt oder angepasst werden, und Sie können Symbolleisten Elemente auf verschiedene Weise darstellen.
 
-Dieser Artikel behandelt die Grundlagen der Arbeit mit der Symbolleisten und Symbolleistenelementen in einer Xamarin.Mac-Anwendung. 
+In diesem Artikel werden die Grundlagen der Arbeit mit Symbolleisten und Symbolleisten Elementen in einer xamarin. Mac-Anwendung behandelt. 
 
-Bevor Sie fortfahren, lesen Sie die [Hallo, Mac](~/mac/get-started/hello-mac.md) Artikel – insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) Abschnitte – wie behandelt wichtige Konzepte und Techniken, die in dieser Anleitung verwendet werden.
+Bevor Sie fortfahren, lesen Sie den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) – insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) –, da er wichtige Konzepte und Techniken behandelt, die in diesem Handbuch verwendet werden.
 
-Außerdem sehen Sie sich die [Verfügbarmachen von c#-Klassen / Methoden mit Objective-C](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac-Interna](~/mac/internals/how-it-works.md) Dokument. Es wird erläutert, die `Register` und `Export` Attribute, die zur Verbindung von Klassen in c# mit Objective-C-Klassen.
+Sehen Sie sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu Ziel-C](~/mac/internals/how-it-works.md) im Dokument " [xamarin. Mac Internals](~/mac/internals/how-it-works.md) " an. Es werden die `Register` Attribute `Export` und erläutert, die C# zum Verbinden von Klassen mit Ziel-C-Klassen verwendet werden.
 
 ## <a name="introduction-to-toolbars"></a>Einführung in Symbolleisten
 
-Ein Fenster in einer MacOS-Anwendung kann es sich um eine Symbolleiste enthalten:
+Jedes Fenster in einer macOS-Anwendung kann eine Symbolleiste enthalten:
 
-![Ein Beispiel-Fenster mit einer Symbolleiste](toolbar-images/info01.png "ein Beispiel-Fenster mit einer Symbolleiste")
+![Ein Beispiel Fenster mit einer Symbolleiste](toolbar-images/info01.png "Ein Beispiel Fenster mit einer Symbolleiste")
 
-Symbolleisten bieten eine einfache Möglichkeit für Benutzer Ihrer Anwendung, um schnell auf wichtige zuzugreifen oder häufig verwendete Funktionen. Z. B. gewährleistet eine Anwendung dokumentbearbeitung Elemente der Symbolleiste für die Textfarbe festlegen, Ändern der Schriftart oder das aktuelle Dokument zu drucken.
+Symbolleisten bieten den Benutzern Ihrer Anwendung eine einfache Möglichkeit, schnell auf wichtige oder häufig verwendete Features zuzugreifen. Beispielsweise kann eine Anwendung zur Dokument Bearbeitung Symbolleisten Elemente zum Festlegen der Textfarbe, zum Ändern der Schriftart oder zum Drucken des aktuellen Dokuments enthalten.
 
-Symbolleisten können Elemente auf drei Arten angezeigt werden:
+Symbolleisten können Elemente auf drei Arten anzeigen:
 
 1. **Symbol und Text** 
 
-     ![Eine Symbolleiste mit Symbolen und Text](toolbar-images/info02.png "eine Symbolleiste mit Symbolen und Text")
+     ![Eine Symbolleiste mit Symbolen und Text](toolbar-images/info02.png "Eine Symbolleiste mit Symbolen und Text")
 
-2. **Symbol "nur"** 
+2. **Nur Symbol** 
 
-     ![Ein Symbol nur Symbolleiste](toolbar-images/info03.png "eine nur-Symbol-Symbolleiste")
+     ![Eine Symbol] geschützte Symbolleiste (toolbar-images/info03.png "Eine Symbol") geschützte Symbolleiste
 
 3. **Nur Text** 
 
-     ![Eine nur-Text-Symbolleiste](toolbar-images/info04.png "eine nur-Text-Symbolleiste")
+     ![Eine nur-Text-Symbolleiste](toolbar-images/info04.png "Eine nur-Text-Symbolleiste")
 
-Wechseln Sie zwischen diesen Modi, indem Sie mit der rechten Maustaste in der Symbolleiste und einen Anzeigemodus aus dem Kontextmenü auswählen:
+Wechseln Sie zwischen diesen Modi, indem Sie mit der rechten Maustaste auf die Symbolleiste klicken und im Kontextmenü einen Anzeigemodus auswählen:
 
-![Kontextmenü für eine Symbolleiste](toolbar-images/info05.png "im Kontextmenü auf einer Symbolleiste")
+![Das Kontextmenü für eine Symbolleiste](toolbar-images/info05.png "Das Kontextmenü für eine Symbolleiste")
 
-Verwenden Sie das gleiche Menü auf der Symbolleiste auf eine kleinere Größe angezeigt:
+Verwenden Sie das gleiche Menü, um die Symbolleiste in einer kleineren Größe anzuzeigen:
 
-![Eine Symbolleiste mit kleinen Symbolen](toolbar-images/info06.png "eine Symbolleiste mit kleinen Symbolen")
+![Eine Symbolleiste mit kleinen Symbolen](toolbar-images/info06.png "Eine Symbolleiste mit kleinen Symbolen")
 
-Klicken Sie im Menü kann auch zum Anpassen der Symbolleiste:
+Das Menü ermöglicht außerdem das Anpassen der Symbolleiste:
 
-![Das Dialogfeld zum Anpassen einer Symbolleiste](toolbar-images/info07.png "das Dialogfeld zum Anpassen einer Symbolleiste")
+![Dialogfeld zum Anpassen einer Symbolleiste](toolbar-images/info07.png "Dialogfeld zum Anpassen einer Symbolleiste")
 
-Bei der Einrichtung einer Symbolleiste in Interface Builder von Xcode kann ein Entwickler zusätzliche Symbolleistenelemente bereitstellen, die nicht Teil der standardmäßigen Konfiguration sind. Benutzer der Anwendung können dann die Symbolleiste anpassen, hinzufügen und entfernen diese vordefinierte Elemente nach Bedarf. Natürlich kann die Symbolleiste auf die Standardkonfiguration zurückgesetzt werden.
+Beim Einrichten einer Symbolleiste in der Interface Builder von Xcode kann ein Entwickler zusätzliche Symbolleisten Elemente bereitstellen, die nicht Teil der Standardkonfiguration sind. Benutzer der Anwendung können dann die Symbolleiste anpassen und diese vordefinierten Elemente bei Bedarf hinzufügen und entfernen. Natürlich kann die Symbolleiste auf die Standardkonfiguration zurückgesetzt werden.
 
-Die Symbolleiste zum automatischen Verbindung mit der **Ansicht** -Menü, das ermöglicht es Benutzern, die sie ausblenden, anzeigen und anpassen:
+Die Symbolleiste stellt automatisch eine Verbindung mit dem Menü **Ansicht** her, sodass Benutzer Sie ausblenden, anzeigen und anpassen können:
 
-![Symbolleiste-bezogene Elemente im Menü Ansicht](toolbar-images/info08.png "Symbolleistenelemente im Menü Ansicht")
+![Symbolleisten bezogene Elemente im Menü "Ansicht] " (toolbar-images/info08.png "Symbolleisten bezogene Elemente im Menü \"Ansicht") "
 
-Finden Sie unter den [Funktionen der integrierten Menüs](~/mac/user-interface/menu.md) Dokumentation.
+Weitere Informationen finden Sie in der Dokumentation zur [integrierten Menü Funktionalität](~/mac/user-interface/menu.md) .
 
-Wenn die Symbolleiste in Interface Builder ordnungsgemäß konfiguriert ist, wird darüber hinaus benutzerdefinierten Symbolleisten von die Anwendung automatisch über mehrere Starts der Anwendung beibehalten.
+Wenn die Symbolleiste in Interface Builder ordnungsgemäß konfiguriert ist, werden die Symbolleisten Anpassungen von der Anwendung automatisch über mehrere Starts der Anwendung beibehalten.
 
-In den nächsten Abschnitten dieses Handbuchs beschrieben, wie zum Erstellen und Verwalten von Symbolleisten mit Interface Builder von Xcode und im Code mit ihnen arbeiten.
+In den nächsten Abschnitten dieses Handbuchs wird beschrieben, wie Symbolleisten mit dem Interface Builder von Xcode erstellt und verwaltet werden und wie Sie mit Ihnen im Code arbeiten können.
 
-## <a name="setting-a-custom-main-window-controller"></a>Festlegen eines benutzerdefinierten Hauptfenster-Controllers
+## <a name="setting-a-custom-main-window-controller"></a>Festlegen eines benutzerdefinierten Hauptfenster Controllers
 
-Eine benutzerdefinierte fenstercontroller muss verwenden, um Benutzeroberflächenelemente für C#-Code mit Outlets und Aktionen, die Xamarin.Mac-app verfügbar zu machen:
+Um UI-Elemente für C# den Code über Outlets und Aktionen verfügbar zu machen, muss die xamarin. Mac-app einen benutzerdefinierten Fenster Controller verwenden:
 
-1. Öffnen Sie die app Storyboard in Interface Builder von Xcode an.
-2. Wählen Sie den fenstercontroller im auf der Entwurfsoberfläche angezeigt.
-3. Wechseln Sie zu der **Identitätsinspektor** und geben Sie "WindowController" als die **Klassenname**: 
+1. Öffnen Sie das Storyboard der app in der Interface Builder von Xcode.
+2. Wählen Sie auf der Entwurfs Oberfläche den Fenster Controller aus.
+3. Wechseln Sie zur **Identitäts** Prüfung, und geben Sie "windowcontroller" als **Klassennamen**ein: 
 
-    [![Einstellungsname eine benutzerdefinierte Klasse für den fenstercontroller](toolbar-images/windowcontroller01.png "Einstellung einen Namen der benutzerdefinierten Klasse für den fenstercontroller")](toolbar-images/windowcontroller01-large.png#lightbox) 
+    [![Festlegen eines benutzerdefinierten Klassen namens für den Fenster Controller](toolbar-images/windowcontroller01.png "Festlegen eines benutzerdefinierten Klassen namens für den Fenster Controller")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
-4. Die Änderungen zu speichern und zurück zu Visual Studio für Mac, um zu synchronisieren.
-5. Ein **WindowController.cs** Datei wird hinzugefügt werden, mit Ihrem Projekt in der **Lösungspad** in Visual Studio für Mac: 
+4. Speichern Sie die Änderungen, und kehren Sie zur Synchronisierung Visual Studio für Mac zurück.
+5. Eine **WindowController.cs** -Datei wird dem Projekt im **Lösungspad** in Visual Studio für Mac hinzugefügt: 
 
-    ![Wählen im Projektmappenpad WindowController.cs](toolbar-images/windowcontroller02.png "WindowController.cs im Projektmappenpad auswählen")
+    ![Auswählen von WindowController.cs im Lösungspad](toolbar-images/windowcontroller02.png "Auswählen von WindowController.cs im Lösungspad")
 
-6. Öffnen Sie erneut das Storyboard in Interface Builder von Xcode.
-7. Die **WindowController.h** Datei wird für die Verwendung verfügbar sein: 
+6. Öffnen Sie das Storyboard erneut in der Interface Builder von Xcode.
+7. Die Datei " **windowcontroller. h** " steht zur Verwendung zur Verfügung: 
 
-    [![Die Datei WindowController.h](toolbar-images/windowcontroller03.png "der WindowController.h-Datei")](toolbar-images/windowcontroller03-large.png#lightbox)
+    [![Die Datei "windowcontroller. h] " (toolbar-images/windowcontroller03.png "Die Datei \"windowcontroller. h") "](toolbar-images/windowcontroller03-large.png#lightbox)
 
 ## <a name="creating-and-maintaining-toolbars-in-xcode"></a>Erstellen und Verwalten von Symbolleisten in Xcode
 
-Symbolleisten erstellt und verwaltet mit Interface Builder von Xcode. Um eine Symbolleiste, eine Anwendung hinzufügen, Bearbeiten der app primären Storyboard (in diesem Fall **"Main.Storyboard"**) durch Doppelklick im der **Lösungspad**:
+Symbolleisten werden mit dem Interface Builder von Xcode erstellt und verwaltet. Wenn Sie einer Anwendung eine Symbolleiste hinzufügen möchten, bearbeiten Sie das primäre Storyboard der APP (in diesem Fall " **Main. Storyboard**"), indem Sie in der **Lösungspad**auf die Symbolleiste doppelklicken:
 
-![Öffnen "Main.Storyboard" im Projektmappenpad](toolbar-images/edit01.png "\"Main.Storyboard\" im Projektmappenpad öffnen")
+![Öffnen von "Main. Storyboard" im Lösungspad](toolbar-images/edit01.png "Öffnen von \"Main. Storyboard\" im Lösungspad")
 
-In der **Bibliotheksinspektor**, geben Sie "Tools" in der **Suchfeld** zu erleichtern, damit alle die verfügbaren Symbolleistenelemente angezeigt:
+Geben Sie im **Bibliotheks Inspektor**"Tool" in das **Suchfeld** ein, damit alle verfügbaren Symbolleisten Elemente leichter angezeigt werden können:
 
-![Im Bibliotheksinspektor festlegen, gefiltert, um Symbolleistenelemente anzeigen](toolbar-images/edit02.png "der Bibliotheksinspektor, gefiltert, um Elemente der Symbolleiste")
+![Der Bibliothek Inspektor, gefiltert zum Anzeigen von Symbolleisten Elementen] . (toolbar-images/edit02.png "Der Bibliothek Inspektor, gefiltert zum Anzeigen von Symbolleisten Elementen") .
 
-Ziehen Sie die Symbolleiste auf das Fenster in der **Schnittstellen-Editor**. Konfigurieren Sie mit der Symbolleiste ausgewählt ist, dessen Verhalten durch Festlegen von Eigenschaften der **Attributes Inspector**:
+Ziehen Sie eine Symbolleiste auf das Fenster im Schnittstellen- **Editor**. Wenn die Symbolleiste ausgewählt ist, konfigurieren Sie das Verhalten, indem Sie die Eigenschaften im **Attribut Inspektor**festlegen:
 
-![Attributes Inspector für eine Symbolleiste](toolbar-images/edit04.png "dem Attributinspektor einer Symbolleiste")
+![Der-Attribut Inspektor für eine Symbolleiste] . (toolbar-images/edit04.png "Der-Attribut Inspektor für eine Symbolleiste") .
 
 Die folgenden Eigenschaften sind verfügbar:
 
-1. **Anzeige** -steuert, ob die Symbolleiste Symbole, Text oder beides anzeigt.
-2. **Angezeigt beim Start** -Wenn ausgewählt, für die Symbolleiste standardmäßig sichtbar ist.
-3. **Anpassbare** -Wenn ausgewählt, Benutzer bearbeiten und Anpassen die Symbolleiste können.
-4. **Trennzeichen** -Wenn ausgewählt, trennt eine schlanke horizontale Linie die Symbolleiste vom Inhalt des Fensters.
-5. **Größe** – Festlegen der Größe der Symbolleiste
-6. **Automatisches Speichern** -ausgewählt, die Anwendung bleibt bestehen, wenn Änderungen an der Konfiguration von eines Benutzers-Symbolleiste für die Anwendung gestartet wird.
+1. **Anzeigen** : steuert, ob die Symbolleiste Symbole, Text oder beides anzeigt.
+2. **Beim Start sichtbar** : Wenn diese Option ausgewählt ist, wird die Symbolleiste standardmäßig angezeigt.
+3. **Anpassbar** : Wenn diese Option ausgewählt ist, können Benutzer die Symbolleiste bearbeiten und anpassen.
+4. **Trenn** Zeichen: Wenn diese Option ausgewählt ist, wird die Symbolleiste von einer dünnen horizontalen Linie vom Inhalt des Fensters getrennt.
+5. **Größe** : legt die Größe der Symbolleiste fest.
+6. **Automatisch speichern** : Wenn diese Option ausgewählt ist, werden die Änderungen an der Symbolleisten Konfiguration eines Benutzers von der Anwendung über Anwendungs Starts hinweg beibehalten.
 
-Wählen Sie die **Autosave** aus, und lassen Sie alle anderen Eigenschaften die Standardeinstellungen. 
+Wählen Sie die Option **automatisch speichern** aus, und überlassen Sie alle anderen Eigenschaften ihren Standardeinstellungen. 
 
-Nach dem Öffnen der Symbolleiste in der **Schnittstellenhierarchie**, dazu ein Symbolleistenelement das Dialogfeld für kartenanpassung öffnen:
+Öffnen Sie nach dem Öffnen der Symbolleiste in der **Schnittstellen Hierarchie**das Anpassungs Dialogfeld, indem Sie ein Symbolleisten Element auswählen:
 
 ![Anpassen der Symbolleiste](toolbar-images/edit05.png "Anpassen der Symbolleiste")
 
-Verwenden Sie dieses Dialogfeld zum Festlegen von Eigenschaften für Elemente, die bereits Teil der Symbolleiste auf der Standardsymbolleiste für die Anwendung, und geben Sie zusätzliche Symbolleistenelemente für einen Benutzer auswählen, wenn die Symbolleiste anpasst. Um Elemente auf der Symbolleiste hinzuzufügen, ziehen Sie diese aus der **Bibliotheksinspektor**:
+Verwenden Sie dieses Dialogfeld, um Eigenschaften für Elemente festzulegen, die bereits Teil der Symbolleiste sind, um die Standard Symbolleiste für die Anwendung zu entwerfen und um zusätzliche Symbolleisten Elemente anzugeben, die ein Benutzer auswählen kann, wenn er die Symbolleiste anpasst. Um der Symbolleiste Elemente hinzuzufügen, ziehen Sie Sie aus der **Bibliothek Inspector**:
 
-![Der Bibliotheksinspektor](toolbar-images/edit06.png "im Bibliotheksinspektor festlegen")
+![Der Bibliotheks Inspektor](toolbar-images/edit06.png "Der Bibliotheks Inspektor")
 
-Die folgenden Symbolleistenelemente können hinzugefügt werden:
+Die folgenden Symbolleisten Elemente können hinzugefügt werden:
 
-- **Abbildung Symbolleistenelement** -ein Symbolleistenelement mit einem benutzerdefinierten Image als Symbol.
-- **Flexible Speicherplatz Symbolleistenelement** -Flexible Speicherplatz verwendet, um nachfolgende Symbolleistenelemente zu rechtfertigen. Z. B. eine oder mehrere Elemente der Symbolleiste gefolgt ein Symbolleistenelement flexible Speicherplatz, und Heften Sie eine andere Symbolleistenelement würde das letzte Element der rechten Seite der Symbolleiste.
-- **Leerzeichen Symbolleistenelement** -feste Leerzeichen zwischen Elementen auf der Symbolleiste
-- **Trennzeichen-Symbolleistenelement** -sichtbar Trennzeichen zwischen zwei oder mehr Elemente der Symbolleiste, für die Gruppierung
-- **Anpassen des Symbolleistenelements** – ermöglicht das Anpassen die Symbolleiste
-- **Drucken von Symbolleistenelement** -können Benutzer das geöffnete Dokument drucken
-- **Anzeigen von Farben Symbolleistenelement** -wird die standardmäßige Farbauswahl angezeigt: 
+- **Bildsymbol leisten Element** -ein Symbolleisten Element mit einem benutzerdefinierten Bild als Symbol.
+- **Flexibles Leerzeichen-Symbolleisten Element** : flexibler Bereich zum begründen der nachfolgenden Symbolleisten Elemente. Beispielsweise wird in einem oder mehreren Symbolleisten Elementen, gefolgt von einem flexiblen Leerzeichen-Symbolleisten Element und einem weiteren Symbolleisten Element, das letzte Element an der rechten Seite der Symbolleiste angeheftet.
+- **Leerzeichen-Symbolleisten Element** -fester Bereich zwischen Elementen auf der Symbolleiste
+- **Trenn** Zeichen-Symbolleisten Element-ein sichtbares Trennzeichen zwischen mindestens zwei Symbolleisten Elementen für die Gruppierung
+- **Symbolleisten Element anpassen** : ermöglicht Benutzern das Anpassen der Symbolleiste.
+- **Symbolleisten Element "Drucken** ": ermöglicht Benutzern das Drucken des geöffneten Dokuments.
+- **Symbolleisten Element Farben anzeigen** : zeigt die standardmäßige System Farbauswahl an: 
 
-     ![Die System-Farbauswahl](toolbar-images/edit07.png "der System-Farbauswahl")
+     ![Die System Farb] Auswahl (toolbar-images/edit07.png "Die System Farb") Auswahl
 
-- **Anzeigen der Schriftart Symbolleistenelement** -zeigt das Standarddialogfeld Schriftart: 
+- **Schriftart-Symbolleisten Element anzeigen** : zeigt das standardmäßige System Schriftart Dialogfeld an: 
 
-     ![Die Auswahl der Schriftart](toolbar-images/edit08.png "die Schriftart-Auswahl")
+     ![Die Schriftart Auswahl](toolbar-images/edit08.png "Die Schriftart Auswahl")
 
 > [!IMPORTANT]
-> Wie weiter unten angezeigt wird, können viele standard-Cocoa-UI-Steuerelemente wie z. B. Suchfelder und segmentierte Steuerelemente horizontalen Schieberegler auch eine Symbolleiste hinzugefügt werden.
+> Wie Sie später sehen werden, können auch viele standardmäßige Cocoa-UI-Steuerelemente wie Suchfelder, segmentierte Steuerelemente und horizontale Schieberegler zu einer Symbolleiste hinzugefügt werden.
 
 ### <a name="adding-an-item-to-a-toolbar"></a>Hinzufügen eines Elements zu einer Symbolleiste
 
-Um ein Element zu einer Symbolleiste hinzufügen, wählen Sie auf die Symbolleiste in der **Schnittstellenhierarchie** , und klicken Sie auf eines seiner Elemente, sodass im Dialogfeld "anpassen" angezeigt werden. Ziehen Sie jetzt ein neues Element aus der **Bibliotheksinspektor** auf die **Symbolleistenelemente zulässig** Bereich:
+Wenn Sie einer Symbolleiste ein Element hinzufügen möchten, wählen Sie die Symbolleiste in der **Schnittstellen Hierarchie** aus, und klicken Sie auf eines ihrer Elemente, damit das Dialogfeld Anpassung angezeigt wird. Ziehen Sie als nächstes ein neues Element aus der **Bibliothek Inspektor** in den Bereich **zulässige Symbolleisten Elemente** :
 
-![Die zulässige Symbolleistenelemente im Dialogfeld "Symbolleiste anpassen"](toolbar-images/add01.png "die zulässigen Elemente der Symbolleiste im Dialogfeld \"Symbolleiste anpassen\"")
+![Zulässige Symbolleisten Elemente im Dialogfeld für die Symbolleisten Anpassung](toolbar-images/add01.png "Zulässige Symbolleisten Elemente im Dialogfeld für die Symbolleisten Anpassung")
 
-Um sicherzustellen, dass ein neues Element Teil der Standardsymbolleiste ist, ziehen Sie dann auf die **Symbolleiste Standardelemente** Bereich: 
+Um sicherzustellen, dass ein neues Element Teil der Standard Symbolleiste ist, ziehen Sie es in den Standardbereich der **Symbolleisten Elemente** : 
 
-![Neuanordnen von ein Symbolleistenelement durch Ziehen von](toolbar-images/add02.png "Neuanordnung ein Symbolleistenelement durch Ziehen")
+![Neuanordnen eines Symbolleisten Elements durchziehen](toolbar-images/add02.png "Neuanordnen eines Symbolleisten Elements durchziehen")
 
-Um Standardelemente für die Symbolleiste neu anzuordnen, ziehen Sie sie nach links oder rechts.
+Wenn Sie Standard Symbolleisten Elemente neu anordnen möchten, ziehen Sie Sie nach links oder rechts.
 
-Verwenden Sie als Nächstes die **Attributes Inspector** Standardeigenschaften für das Element festlegen:
+Verwenden Sie als nächstes den **Attribute Inspector** , um die Standardeigenschaften für das Element festzulegen:
 
-![Anpassen eines Symbolleistenelements mit Attributes Inspector](toolbar-images/add03.png "ein Symbolleistenelement mit Attributes Inspector anpassen")
+![Anpassen eines Toolbar-Elements mit dem Attribute Inspector](toolbar-images/add03.png "Anpassen eines Toolbar-Elements mit dem Attribute Inspector")
 
 Die folgenden Eigenschaften sind verfügbar:
 
-- **ImageName** -Bild, das als Symbol für das Element verwendet wird
-- **Bezeichnung** -Text, der für das Element in der Symbolleiste angezeigt.
-- **Palette Bezeichnung** -Text für das Element in der **Symbolleistenelemente zulässig** Bereich
-- **Tag** – ein optionaler, eindeutiger Bezeichner, mit denen das Element im Code identifiziert.
-- **Bezeichner** -definiert den Typ der Symbolleisten-Element. Ein benutzerdefinierter Wert kann verwendet werden, um ein Symbolleistenelement im Code auszuwählen.
-- **Auswählbare** – Wenn aktiviert, wird das Element fungiert, wie ein/aus-Schaltfläche.
+- **Bildname** : Bild, das als Symbol für das Element verwendet werden soll.
+- **Bezeichnungs** Text, der für das Element in der Symbolleiste angezeigt werden soll.
+- **Palettenbezeichnung** -Text, der für das Element im Bereich der **zulässigen Symbolleisten Elemente** angezeigt werden soll.
+- **Tag** : ein optionaler eindeutiger Bezeichner, der die Identifizierung des Elements im Code erleichtert.
+- **Identifier** : definiert den Typ der Symbolleisten Elemente. Ein benutzerdefinierter Wert kann verwendet werden, um ein Symbolleisten Element im Code auszuwählen.
+- **Auswählbar** : Wenn das Element aktiviert ist, verhält es sich wie eine Schaltfläche ein/aus.
 
 > [!IMPORTANT]
-> Fügen Sie ein Element, das die **Symbolleistenelemente zulässig** Bereich vorhanden, aber nicht der Standardsymbolleiste, um die Anpassungsoptionen für Benutzer bereitstellen. 
+> Fügen Sie dem Bereich **zulässige Symbolleisten Elemente** ein Element hinzu, aber nicht die Standard Symbolleiste, um Anpassungsoptionen für Benutzer bereitzustellen. 
 
-### <a name="adding-other-ui-controls-to-a-toolbar"></a>Andere UI-Steuerelemente hinzufügen zu einer Symbolleiste.
+### <a name="adding-other-ui-controls-to-a-toolbar"></a>Hinzufügen anderer UI-Steuerelemente zu einer Symbolleiste
 
-Mehrere Cocoa-UI-Elemente wie z. B. Suchfelder und segmentierte Steuerelemente können auch eine Symbolleiste hinzugefügt werden.
+Einer Symbolleiste können auch mehrere Cocoa-Elemente der Benutzeroberfläche hinzugefügt werden, z. b. Suchfelder und segmentierte Steuerelemente
 
-Um dies zu testen, öffnen Sie die Symbolleiste in der **Schnittstellenhierarchie** , und wählen Sie ein Symbolleistenelement, um das Dialogfeld für kartenanpassung öffnen. Ziehen Sie eine **suchen (Feld)** aus der **Bibliotheksinspektor** auf die **Symbolleistenelemente zulässig** Bereich:
+Öffnen Sie dazu die Symbolleiste in der **Schnittstellen Hierarchie** , und wählen Sie ein Symbolleisten Element aus, um das Anpassungs Dialogfeld zu öffnen. Ziehen Sie ein **Suchfeld** aus dem **Bibliotheks Inspektor** in den Bereich **zulässige Symbolleisten Elemente** :
 
-![Verwenden das Dialogfeld zum Anpassen der Symbolleiste](toolbar-images/add05.png "mithilfe der Symbolleiste-Dialogfeld für kartenanpassung")
+![Verwenden des Dialog Felds zur Symbolleisten Anpassung](toolbar-images/add05.png "Verwenden des Dialog Felds zur Symbolleisten Anpassung")
 
-Verwenden Sie Interface Builder hier konfigurieren das Suchfeld ein, und machen ihn Code über eine Aktion oder Outlet verfügbar.
+Verwenden Sie hier Interface Builder, um das Suchfeld zu konfigurieren, und machen Sie es für den Code über eine Aktion oder ein Outlet verfügbar.
 
-## <a name="built-in-toolbar-item-support"></a>Unterstützung für integrierte Symbolleiste-Element
+## <a name="built-in-toolbar-item-support"></a>Unterstützung integrierter Symbolleisten Elemente
 
-Mehrere Cocoa-UI-Elemente interagieren Sie mit der Standardsymbolleiste Elemente in der Standardeinstellung. Ziehen Sie beispielsweise eine **Textansicht** auf das Fenster der Anwendung und positionieren Sie ihn, um den Inhaltsbereich zu füllen:
+Mehrere Cocoa-UI-Elemente interagieren standardmäßig mit Standard Symbolleisten Elementen. Ziehen Sie beispielsweise eine **Text Ansicht** in das Fenster der Anwendung, und positionieren Sie Sie, um den Inhalts Bereich auszufüllen:
 
-[![Hinzufügen einer Textansicht an die Anwendung](toolbar-images/edit09.png "eine Textansicht an die Anwendung hinzufügen")](toolbar-images/edit09-large.png#lightbox)
+[![Hinzufügen einer Textansicht zur Anwendung](toolbar-images/edit09.png "Hinzufügen einer Textansicht zur Anwendung")](toolbar-images/edit09-large.png#lightbox)
 
-Speichern Sie das Dokument, wechseln Sie zurück zur Visual Studio für Mac mit Xcode synchronisieren, die Anwendung auszuführen, geben Text ein, wählen Sie ihn und klicken Sie auf die **Farben** Symbolleistenelement. Beachten Sie, dass die Textansicht automatisch mit dem Farbwähler funktioniert:
+Speichern Sie das Dokument, kehren Sie zu Visual Studio für Mac um mit Xcode zu synchronisieren, führen Sie die Anwendung aus, geben Sie Text ein, wählen Sie ihn aus, und klicken Sie auf das Symbolleisten Element **Farben** Beachten Sie, dass die Textansicht automatisch mit der Farbauswahl verwendet wird:
 
-![Integrierte Symbolleiste-Funktionalität mit einer Text anzeigen und die Farbe der Auswahl](toolbar-images/edit10.png "integrierte Symbolleiste-Funktionalität mit einer Ansicht und die Farbe Auswahl von Text")
+![Integrierte Funktionen der Symbolleiste mit einer Textansicht und einer Farb] Auswahl (toolbar-images/edit10.png "Integrierte Funktionen der Symbolleiste mit einer Textansicht und einer Farb") Auswahl
 
-## <a name="using-images-with-toolbar-items"></a>Verwenden von Bildern mit Symbolleistenelemente
+## <a name="using-images-with-toolbar-items"></a>Verwenden von Bildern mit Symbolleisten Elementen
 
-Mit einer **Image Symbolleistenelement**, alle Bitmap-Bild hinzugefügt der **Ressourcen** Ordner (und eine Buildaktion von **Bundle-Ressource**) können auf der Symbolleiste als Symbol angezeigt werden:
+Mithilfe eines **Bildsymbol leisten Elements**können alle dem **Ressourcen** Ordner hinzugefügten Bitmap-Bilder (und eine Buildaktion der **Bundle-Ressource**) als Symbol auf der Symbolleiste angezeigt werden:
 
-1. In Visual Studio für Mac in der **Lösungspad**, mit der rechten Maustaste die **Ressourcen** Ordner, und wählen **hinzufügen** > **Hinzufügen von Dateien** .
-2. Von der **Hinzufügen von Dateien** Dialogfeld, navigieren Sie zu den gewünschten Bildern, wählen Sie sie aus, und auf die **öffnen** Schaltfläche: 
+1. Klicken Sie in Visual Studio für Mac im **Lösungspad**mit der rechten Maustaste auf den Ordner **Ressourcen** , und wählen Sie hinzufügen**Dateien**hinzu **fügen** > aus.
+2. Navigieren Sie im Dialogfeld **Dateien hinzufügen** zu den gewünschten Bildern, wählen Sie Sie aus, und klicken Sie auf die Schaltfläche **Öffnen** : 
 
-    [![Auswählen von Images hinzufügen](toolbar-images/edit11.png "auswählen von Images hinzufügen")](toolbar-images/edit11-large.png#lightbox)
+    [Hinzu zufügende ![Bilder auswählen] Hinzu zufügende (toolbar-images/edit11.png "Bilder auswählen")](toolbar-images/edit11-large.png#lightbox)
 
-3. Wählen Sie **Kopie**, überprüfen Sie **verwenden die gleiche Aktion für alle ausgewählten Dateien**, und klicken Sie auf **OK**:
+3. Wählen Sie **Kopieren**aus, aktivieren Sie **dieselbe Aktion für alle ausgewählten Dateien verwenden**, und klicken Sie auf **OK**:
 
-    ![Bei Auswahl der Kopieraktion für die hinzugefügten Bilder](toolbar-images/edit12.png "des Kopiervorgangs für die hinzugefügten Bilder auswählen")
+    ![Auswählen der Kopier Aktion für die hinzugefügten Images](toolbar-images/edit12.png "Auswählen der Kopier Aktion für die hinzugefügten Images")
 
-4. In der **Lösungspad**, doppelklicken Sie auf **MainWindow.xib** , die sie in Xcode geöffnet.
+4. Doppelklicken Sie im **Lösungspad**auf die Datei **MainWindow. XIb** , um Sie in Xcode zu öffnen.
 
-5. Wählen Sie die Symbolleiste in der **Schnittstellenhierarchie** , und klicken Sie auf eines seiner Elemente, um das Dialogfeld für kartenanpassung öffnen.
+5. Wählen Sie die Symbolleiste in der **Schnittstellen Hierarchie** aus, und klicken Sie auf ein Element, um das Dialogfeld Anpassung zu öffnen.
 
-6. Ziehen Sie ein **Image Symbolleistenelement** aus der **Bibliotheksinspektor** auf der Symbolleiste auf die **Symbolleistenelemente zulässig** Bereich: 
+6. Ziehen Sie ein **Bildsymbol leisten Element** aus dem **Bibliotheks Inspektor** in den Bereich **zulässige Symbolleisten Elemente** der Symbolleiste: 
 
-    ![Ein Image-Symbolleiste-Element hinzugefügt wird, in den Bereich der zulässigen Symbolleistenelemente](toolbar-images/edit14.png "ein Bildelement Symbolleiste hinzugefügt wird, in den Bereich der Symbolleistenelemente zulässig")
+    ![Ein Bildsymbol leisten Element, das dem Bereich zulässige Symbolleisten Elemente hinzugefügt] wurde (toolbar-images/edit14.png "Ein Bildsymbol leisten Element, das dem Bereich zulässige Symbolleisten Elemente hinzugefügt") wurde
 
-7. In der **Attributes Inspector**, wählen Sie das Bild, das nur in Visual Studio für Mac hinzugefügt wurde: 
+7. Wählen Sie im **Attribut Inspektor**das Image aus, das soeben in Visual Studio für Mac hinzugefügt wurde: 
 
-    ![Festlegen eines benutzerdefinierten Images für ein Symbolleistenelement](toolbar-images/edit15.png "Festlegen eines benutzerdefinierten Images für ein Symbolleistenelement")
+    ![Festlegen eines benutzerdefinierten Bilds für ein Symbolleisten Element](toolbar-images/edit15.png "Festlegen eines benutzerdefinierten Bilds für ein Symbolleisten Element")
 
-8. Legen Sie die **Bezeichnung** in "Den Papierkorb legen" und die **Palette Bezeichnung** auf "Dokument löschen": 
+8. Legen Sie die **Bezeichnung** auf "Papierkorb" und die **palettenbezeichnung** auf "Dokument löschen" fest: 
 
-    ![Festlegen der Symbolleiste des Elements, Bezeichnung und Palette Bezeichnung](toolbar-images/edit16.png "Element Festlegen der Symbolleiste, Bezeichnung und Palette Bezeichnung")
+    ![Festlegen der Symbolleisten-Element Bezeichnung und der palettenbezeichnung](toolbar-images/edit16.png "Festlegen der Symbolleisten-Element Bezeichnung und der palettenbezeichnung")
 
-9. Ziehen Sie eine **Trennzeichen Symbolleistenelement** aus der **Bibliotheksinspektor** auf der Symbolleiste auf die **Symbolleistenelemente zulässig** Bereich: 
+9. Ziehen Sie ein **Symbolleisten Element** der Symbolleiste aus dem **Bibliotheks Inspektor** in den Bereich **zulässige Symbolleisten Elemente** der Symbolleiste: 
 
-    [![Ein Trennzeichenelement. Symbolleiste hinzugefügt wird, in den Bereich der Symbolleistenelemente zulässig](toolbar-images/edit17.png "ein Trennzeichenelement. Symbolleiste hinzugefügt wird, in den Bereich der Symbolleistenelemente zulässig")](toolbar-images/edit17-large.png#lightbox)
+    [![Ein Trennzeichen-Symbolleisten Element, das zum Bereich zulässige Symbolleisten Elemente](toolbar-images/edit17.png "Ein Trennzeichen-Symbolleisten Element, das zum Bereich zulässige Symbolleisten Elemente")](toolbar-images/edit17-large.png#lightbox)
 
-10. Ziehen Sie das trennzeichenelement und das "Papierkorb"-Element, das die **Symbolleistenelemente Standard** Bereichs- und Menge von aus die Reihenfolge der Symbolleiste Elementen von links nach rechts, die wie folgt (Farben, Schriftarten, Trennzeichen, den Papierkorb, Flexible Speicherplatz, Drucken): 
+10. Ziehen Sie das Trennzeichen und das Element "Papierkorb" in den Standardbereich der **Symbolleisten Elemente** , und legen Sie die Reihenfolge der Symbolleisten Elemente von links nach rechts fest (Farben, Schriftarten, Trennzeichen, Papierkorb, flexibler Raum, Druck): 
 
-    ![Die Standardelemente für die Symbolleiste](toolbar-images/edit18.png "die Standardelemente für die Symbolleiste")
+    ![Die standardmäßigen Symbolleisten Elemente](toolbar-images/edit18.png "Die standardmäßigen Symbolleisten Elemente")
 
-11. Speichert Änderungen und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+11. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac um mit Xcode zu synchronisieren.
 
 Führen Sie die Anwendung aus, um sicherzustellen, dass die neue Symbolleiste standardmäßig angezeigt wird:
 
-![Eine Symbolleiste mit angepassten Standard-Elementen](toolbar-images/edit19.png "eine Symbolleiste mit angepassten Standard-Elemente")
+![Eine Symbolleiste mit angepassten Standardelementen](toolbar-images/edit19.png "Eine Symbolleiste mit angepassten Standardelementen")
 
-## <a name="exposing-toolbar-items-with-outlets-and-actions"></a>Verfügbarmachen von Symbolleistenelemente mit Outlets und Aktionen
+## <a name="exposing-toolbar-items-with-outlets-and-actions"></a>Verfügbar machen von Symbolleisten Elementen mit Outlets und Aktionen
 
-Um eine Symbolleiste oder Symbolleistenelement im Code zugreifen, müssen sie eines outlets oder eine Aktion zugeordnet werden:
+Wenn Sie im Code auf eine Symbolleiste oder ein Symbolleisten Element zugreifen möchten, muss Sie an ein Outlet oder eine Aktion angefügt werden:
 
-1. In der **Lösungspad**, doppelklicken Sie auf **"Main.Storyboard"** , die sie in Xcode geöffnet.
-2. Stellen Sie sicher, dass die benutzerdefinierte Klasse, die den Controller im Hauptfenster auf "WindowController" zugewiesen wurde die **Identitätsinspektor**:
+1. Doppelklicken Sie im **Lösungspad**auf **Main. Storyboard** , um es in Xcode zu öffnen.
+2. Stellen Sie sicher, dass die benutzerdefinierte Klasse "windowcontroller" dem Hauptfenster Controller im **Identitäts Inspektor**zugewiesen wurde:
 
-    [![Legen Sie eine benutzerdefinierte Klasse für den fenstercontroller mithilfe der Identitätsinspektor](toolbar-images/edit20a.png "mit der Identity-Inspektor eine benutzerdefinierte Klasse für den fenstercontroller festlegen")](toolbar-images/edit20a-large.png#lightbox)
+    [![Verwenden des Identitäts Inspektors zum Festlegen einer benutzerdefinierten Klasse für den Fenster Controller](toolbar-images/edit20a.png "Verwenden des Identitäts Inspektors zum Festlegen einer benutzerdefinierten Klasse für den Fenster Controller")](toolbar-images/edit20a-large.png#lightbox)
 
-3. Wählen Sie als Nächstes Symbolleistenelement der **Schnittstellenhierarchie**: 
+3. Wählen Sie als nächstes das Symbolleisten Element in der **Schnittstellen Hierarchie**aus: 
 
-    ![Wählen in der Schnittstellenhierarchie Symbolleistenelement](toolbar-images/edit20.png "Symbolleistenelement in der Hierarchie der Benutzeroberfläche auswählen")  
+    ![Auswählen des Symbolleisten Elements in der Schnittstellen Hierarchie](toolbar-images/edit20.png "Auswählen des Symbolleisten Elements in der Schnittstellen Hierarchie")  
 
-4. Öffnen der **Assistant Ansicht**, wählen die **WindowController.h** Datei- und Steuerelement ziehen aus dem Symbolleistenelement auf die **WindowController.h** Datei.
-5. Festlegen der **Verbindung** Geben Sie auf **Aktion**, geben Sie "TrashDocument" für die **Namen**, und klicken Sie auf der **verbinden** Schaltfläche: 
+4. Öffnen Sie die **Ansicht "Assistant**", wählen Sie die Datei " **windowcontroller. h** " aus, und ziehen Sie die Steuerung von der Symbolleiste in die Datei " **windowcontroller. h** ".
+5. Legen Sie den Verbindungstyp auf **Action**fest, geben Sie als **Name**"trashdocument" ein, und klicken Sie auf die Schaltfläche " **verbinden** ": 
 
-    [![Konfigurieren eine Aktion für ein Symbolleistenelement](toolbar-images/edit23.png "konfigurieren eine Aktion für ein Symbolleistenelement")](toolbar-images/edit23-large.png#lightbox)
+    [![Konfigurieren einer Aktion für ein Symbolleisten Element](toolbar-images/edit23.png "Konfigurieren einer Aktion für ein Symbolleisten Element")](toolbar-images/edit23-large.png#lightbox)
 
-6. Machen die **Textansicht** als eines outlets namens "DocumentEditor" in der **"viewcontroller.h"** Datei: 
+6. Machen Sie die **Text Ansicht** als Outlet mit dem Namen "documenteditor" in der Datei " **ViewController. h** " verfügbar: 
 
-    [![Konfigurieren eines outlets für die Textansicht](toolbar-images/edit24.png "Konfigurieren eines outlets für die Textansicht")](toolbar-images/edit24-large.png#lightbox)
+    [![Konfigurieren eines Outlets für die Textansicht](toolbar-images/edit24.png "Konfigurieren eines Outlets für die Textansicht")](toolbar-images/edit24-large.png#lightbox)
 
-7. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+7. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
-Bearbeiten in Visual Studio für Mac die **ViewController.cs** Datei, und fügen Sie den folgenden Code hinzu:
+Bearbeiten Sie in Visual Studio für Mac die Datei **ViewController.cs** , und fügen Sie den folgenden Code hinzu:
 
 ```csharp
 public void EraseDocument() {
@@ -269,7 +269,7 @@ public void EraseDocument() {
 }
 ```
 
-Als Nächstes bearbeiten Sie die **WindowController.cs** Datei, und fügen Sie den folgenden Code am Ende der `WindowController` Klasse:
+Bearbeiten Sie als nächstes die Datei **WindowController.cs** , und fügen Sie am Ende `WindowController` der Klasse den folgenden Code ein:
 
 ```csharp
 [Export ("trashDocument:")]
@@ -280,21 +280,21 @@ void TrashDocument (NSObject sender) {
 }
 ```
 
-Beim Ausführen der Anwendung, die **Papierkorb** Symbolleistenelement aktiv sein:
+Beim Ausführen der Anwendung wird das **Papierkorb** -Symbolleisten Element aktiv:
 
-![Eine Symbolleiste mit einem aktiven Papierkorb Element](toolbar-images/edit25.png "eine Symbolleiste mit einem aktiven Papierkorb-Element")
+![Eine Symbolleiste mit einem aktiven Papierkorb Element](toolbar-images/edit25.png "Eine Symbolleiste mit einem aktiven Papierkorb Element")
 
-Beachten Sie, dass die **Papierkorb** Symbolleistenelement kann jetzt verwendet werden, um Text zu löschen.
+Beachten Sie, dass das **Papierkorb** -Symbolleisten Element jetzt zum Löschen von Text verwendet werden kann.
 
-## <a name="disabling-toolbar-items"></a>Deaktivieren die Elemente der Symbolleiste
+## <a name="disabling-toolbar-items"></a>Deaktivieren von Symbolleisten Elementen
 
-Um ein Element in einer Symbolleiste zu deaktivieren, erstellen Sie eine benutzerdefinierte `NSToolbarItem` Klasse, und überschreiben die `Validate` Methode. Weisen Sie anschließend in Interface Builder, des benutzerdefinierten Typs des Elements, die Sie zum Aktivieren/deaktivieren möchten.
+Zum Deaktivieren eines Elements auf einer Symbolleiste erstellen Sie eine `NSToolbarItem` benutzerdefinierte Klasse und `Validate` überschreiben die-Methode. Weisen Sie dann in Interface Builder den benutzerdefinierten Typ dem Element zu, das Sie aktivieren/deaktivieren möchten.
 
-Erstellen eine benutzerdefinierten `NSToolbarItem` Klasse, mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei...** . Wählen Sie **allgemeine** > **leere Klasse**, geben Sie "ActivatableItem" für die **Namen**, und klicken Sie auf die **neu** Schaltfläche: 
+Um eine benutzerdefinierte `NSToolbarItem` Klasse zu erstellen, klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie**neue Datei** **Hinzufügen** > aus. Wählen Sie **Allgemeine** > **leere Klasse**aus, geben Sie "activatableitem" als **Namen**ein, und klicken Sie auf die Schaltfläche " **neu** ": 
 
-![Hinzufügen einer leeren Klasse in Visual Studio für Mac](toolbar-images/custom01.png "hinzufügen eine leere Klasse in Visual Studio für Mac")
+![Hinzufügen einer leeren Klasse in Visual Studio für Mac](toolbar-images/custom01.png "Hinzufügen einer leeren Klasse in Visual Studio für Mac")
 
-Als Nächstes bearbeiten Sie die **ActivatableItem.cs** Datei wie folgt:
+Bearbeiten Sie anschließend die **ActivatableItem.cs** -Datei wie folgt:
 
 ```csharp
 using System;
@@ -334,11 +334,11 @@ namespace MacToolbar
 }
 ```
 
-Doppelklicken Sie auf **"Main.Storyboard"** , die sie in Xcode geöffnet. Wählen Sie die **Papierkorb** Symbolleistenelement oben erstellt haben, und ändern Sie die Klasse in "ActivatableItem", der **Identitätsinspektor**:
+Doppelklicken Sie auf **Main. Storyboard** , um es in Xcode zu öffnen. Wählen Sie das oben erstellte **Papierkorb** -Symbolleisten Element aus, und ändern Sie die Klasse in "activatableitem" im **Identitäts Inspektor**:
 
-![Festlegen einer benutzerdefinierten Klasse für ein Symbolleistenelement](toolbar-images/custom02.png "Festlegen einer benutzerdefinierten Klasse für ein Symbolleistenelement")
+![Festlegen einer benutzerdefinierten Klasse für ein Symbolleisten Element](toolbar-images/custom02.png "Festlegen einer benutzerdefinierten Klasse für ein Symbolleisten Element")
 
-Erstellen ein outlets namens `trashItem` für die **Papierkorb** Symbolleistenelement. Speichert Änderungen und zurück zu Visual Studio für Mac mit Xcode synchronisiert. Öffnen Sie abschließend **MainWindow.cs** und aktualisieren Sie die `AwakeFromNib` Methode wie folgt:
+Erstellen Sie ein Outlet `trashItem` namens für das **Papierkorb** -Symbolleisten Element. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac um mit Xcode zu synchronisieren. Öffnen Sie abschließend **MainWindow.cs** , und aktualisieren `AwakeFromNib` Sie die-Methode wie folgt:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -350,18 +350,18 @@ public override void AwakeFromNib ()
 }
 ```
 
-Führen Sie die Anwendung, und beachten Sie, dass die **Papierkorb** Element ist jetzt in der Symbolleiste deaktiviert:
+Führen Sie die Anwendung aus, und beachten Sie, dass das **Papierkorb** Element jetzt auf der Symbolleiste deaktiviert ist:
 
-![Eine Symbolleiste mit einem inaktiven Papierkorb Element](toolbar-images/custom03.png "eine Symbolleiste mit einem inaktiven Papierkorb-Element")
+![Eine Symbolleiste mit einem inaktiven Papierkorb Element](toolbar-images/custom03.png "Eine Symbolleiste mit einem inaktiven Papierkorb Element")
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat es sich um einen detaillierten Einblick in die Arbeit mit der Symbolleisten und Symbolleistenelementen in einer Xamarin.Mac-Anwendung geführt. Es wurde beschrieben, wie zum Erstellen und Verwalten von Symbolleisten in Interface Builder von Xcode, einige Benutzeroberflächen-Steuerelemente automatisch Symbolleistenelemente Funktionsweise mit, wie Sie mit der Symbolleisten im C#-Code arbeiten und wie beim Aktivieren und deaktivieren die Elemente der Symbolleiste.
+In diesem Artikel wurde die Arbeit mit Symbolleisten und Symbolleisten Elementen in einer xamarin. Mac-Anwendung ausführlich erläutert. Es wurde beschrieben, wie Symbolleisten in der Interface Builder von Xcode erstellt und verwaltet werden, wie einige UI-Steuerelemente automatisch mit Symbolleisten Elementen arbeiten, wie C# Sie mit Symbolleisten im Code arbeiten und wie Sie Symbolleisten Elemente aktivieren und deaktivieren.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacToolbar (Beispiel)](https://developer.xamarin.com/samples/mac/MacToolbar/)
+- [Mactoolbar (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/mactoolbar)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
-- [Human Interface Guidelines für Symbolleisten](https://developer.apple.com/macos/human-interface-guidelines/windows-and-views/toolbars/)
+- [Richtlinien für die Benutzeroberfläche für Symbolleisten](https://developer.apple.com/macos/human-interface-guidelines/windows-and-views/toolbars/)
 - [Einführung in Symbolleisten](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Toolbars/Toolbars.html)

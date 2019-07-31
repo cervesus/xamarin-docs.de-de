@@ -1,67 +1,67 @@
 ---
-title: Drag & Drop in Xamarin.iOS
-description: Dieses Dokument beschreibt das Implementieren von Drag und drop in Xamarin.iOS-apps unter Verwendung der APIs in iOS 11 eingeführte. Insbesondere erläutert Aktivieren der Drag & drop in UITableView.
+title: Drag & Drop in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie Drag & Drop in xamarin. IOS-Apps mithilfe der in ios 11 eingeführten APIs implementieren. Insbesondere wird das Aktivieren von Drag & Drop in "uitableview" erläutert.
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/05/2017
-ms.openlocfilehash: aa93e015a399e733a2bb52f087a1e482bc23a00a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb982b1cd2340262101ff09bce2c37c69864b8dc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169667"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656468"
 ---
-# <a name="drag-and-drop-in-xamarinios"></a>Drag & Drop in Xamarin.iOS
+# <a name="drag-and-drop-in-xamarinios"></a>Drag & Drop in xamarin. IOS
 
-_Implementieren von Drag & Drop für iOS 11_
+_Implementieren von Drag & Drop für IOS 11_
 
-iOS 11 enthält Drag und drop-Unterstützung zum Kopieren von Daten zwischen Anwendungen auf dem iPad. Benutzer können auswählen, und ziehen alle Arten von Inhalten aus apps positioniert-Seite-an-Seite oder durch Ziehen über app-Symbol, die die app zu öffnen und damit die Daten gelöscht werden können auslösen wird:
+IOS 11 umfasst Drag & Drop-Unterstützung zum Kopieren von Daten zwischen Anwendungen auf dem iPad. Benutzer können alle Inhaltstypen von apps auswählen und ziehen, die nebeneinander positioniert sind, oder indem Sie ein App-Symbol ziehen, das auslöst, dass die APP geöffnet wird und die Daten gelöscht werden können:
 
-![Drag & Drop-Beispiel aus der benutzerdefinierten app in den Anmerkungen zu dieser app](drag-and-drop-images/drag-drop-sml.png)
+![Drag & Drop-Beispiel von benutzerdefinierter app in Notes-App](drag-and-drop-images/drag-drop-sml.png)
 
 > [!NOTE]
-> Drag & Drop ist nur innerhalb derselben app auf einem iPhone verfügbar.
+> Drag & Drop ist nur innerhalb derselben App auf dem iPhone verfügbar.
 
-Erwägen Sie die Unterstützung von Drag und Drop-Vorgänge, die an einer beliebigen Stelle Inhalt erstellt oder bearbeitet werden können:
+Ziehen Sie in Erwägung, Drag & Drop-Vorgänge zu unterstützen, wo Inhalte erstellt oder bearbeitet werden
 
-- Textsteuerelemente unterstützen Drag & Drop für alle apps für iOS 11, ohne zusätzlichen Aufwand erstellt.
-- Tabellenansichten und Auflistungsansichten enthalten Erweiterungen in iOS 11, die vereinfachen Hinzufügen von Drag und drop-Vorgang aus.
-- Jeder anderen Ansicht kann vorgenommen werden, zu unterstützen der Drag & drop mit zusätzliche Anpassungen vorzunehmen.
+- Text Steuerelemente unterstützen Drag & Drop für alle apps, die mit IOS 11 erstellt wurden, ohne zusätzliche Arbeit.
+- Tabellen Sichten und Auflistungs Sichten enthalten Erweiterungen in ios 11, die das Hinzufügen von Drag & Drop-Verhalten vereinfachen.
+- Jede andere Ansicht kann zur Unterstützung von Drag & Drop mit zusätzlicher Anpassung erstellt werden.
 
-Beim Hinzufügen von Drag & Drop auf Ihre apps zu unterstützen, können Sie unterschiedliche Inhalte Genauigkeit angeben; Sie können z. B. einen formatierten Text und die nur-Text-Version der Daten bereitstellen, damit die empfangende app auswählen kann, die in das Ziel ziehen Sie am besten passt. Es ist auch möglich, zum Anpassen der Visualisierung ziehen Sie und ziehen mehrere Elemente gleichzeitig aktivieren.
+Wenn Sie Drag & Drop-Unterstützung für Ihre apps hinzufügen, können Sie unterschiedliche Ebenen der Inhalts Treue bereitstellen. Beispielsweise können Sie sowohl einen formatierten Text als auch eine nur-Text-Version der Daten bereitstellen, damit die empfangende App auswählen kann, was am besten in das Zieh Ziel passt. Es ist auch möglich, die Zieh Visualisierung anzupassen und gleichzeitig mehrere Elemente gleichzeitig zu aktivieren.
 
-## <a name="drag-and-drop-with-text-controls"></a>Drag & Drop Textsteuerelementen
+## <a name="drag-and-drop-with-text-controls"></a>Drag & Drop mit Text Steuerelementen
 
-`UITextView` und `UITextField` markierten Text, ziehen und Ablegen von Textinhalt in automatisch zu unterstützen.
+`UITextView`und `UITextField` unterstützen automatisch das Ziehen von ausgewähltem Text und das Ablegen von Text Inhalt in.
 
 <a name="uitableview" />
 
-## <a name="drag-and-drop-with-uitableview"></a>Drag & Drop mit UITableView
+## <a name="drag-and-drop-with-uitableview"></a>Drag & Drop mit uitableview
 
-`UITableView` bietet eine integrierte Behandlung für Drag & drop-Interaktionen mit den Tabellenzeilen, erfordern nur ein paar Methoden, um das Standardverhalten zu aktivieren.
+`UITableView`verfügt über eine integrierte Behandlung von Drag & Drop-Interaktionen mit Tabellenzeilen, die nur wenige Methoden zum Aktivieren des Standard Verhaltens erfordert.
 
-Es gibt zwei Schnittstellen beteiligt:
+Es sind zwei Schnittstellen beteiligt:
 
-- `IUITableViewDragDelegate` – Pakete Informationen, wenn ein Ziehvorgang in der Tabellenansicht initiiert wird.
-- `IUITableViewDropDelegate` – Informationen verarbeitet, wenn ein Ablegen wird versucht, und abgeschlossen.
+- `IUITableViewDragDelegate`– Verpackt Informationen, wenn ein Drag-Vorgang in der Tabellenansicht initiiert wird.
+- `IUITableViewDropDelegate`– Verarbeitet Informationen, wenn ein Löschvorgang versucht und abgeschlossen wird.
 
-In der [DragAndDropTableView Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/) diese beiden Schnittstellen werden sowohl auf implementiert die `UITableViewController` -Klasse, zusammen mit dem Delegaten und der Datenquelle. Sie zugewiesen sind die `ViewDidLoad` Methode:
+Im [draganddroptableview-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview) werden diese beiden Schnittstellen zusammen mit dem `UITableViewController` Delegaten und der Datenquelle für die-Klasse implementiert. Sie werden in der `ViewDidLoad` -Methode zugewiesen:
 
 ```csharp
 this.TableView.DragDelegate = this;
 this.TableView.DropDelegate = this;
 ```
 
-Der minimale erforderlichen Code für diese beiden Schnittstellen wird unten erläutert.
+Der minimal erforderliche Code für diese beiden Schnittstellen wird weiter unten erläutert.
 
-### <a name="table-view-drag-delegate"></a>Tabelle anzeigen Drag Delegat
+### <a name="table-view-drag-delegate"></a>Tabellenansicht, Drag-Delegat
 
-Die einzige Methode _erforderlichen_ zu unterstützen, ziehen eine Zeile aus einer Tabelle fungiert `GetItemsForBeginningDragSession`. Wenn der Benutzer beginnt, eine Zeile zu ziehen, wird diese Methode aufgerufen werden.
+Die einzige Methode , die zum unterstützen der Durchführung einer Zeile aus `GetItemsForBeginningDragSession`einer Tabellenansicht erforderlich ist, ist. Wenn der Benutzer mit dem Ziehen einer Zeile beginnt, wird diese Methode aufgerufen.
 
-Eine Implementierung ist unten dargestellt. Ruft ab, die Daten, die gezogenen Zeile zugeordnet ist, codiert und konfiguriert eine `NSItemProvider` die bestimmt, wie Anwendungen die "Drop" Teil des Vorgangs verarbeiten soll (z. B., ob sie den Datentyp behandeln können `PlainText`, im Beispiel):
+Eine-Implementierung ist unten dargestellt. Er ruft die der gezogenen Zeile zugeordneten Daten ab, codiert Sie und konfiguriert einen `NSItemProvider` , der bestimmt, wie Anwendungen den "Drop"-Teil des Vorgangs behandeln (z. b. ob Sie den `PlainText`Datentyp verarbeiten können, im Beispiel):
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -85,19 +85,19 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 }
 ```
 
-Es gibt viele optionale Methoden auf der Drag Delegat, der implementiert werden kann, um das Anpassen des Verhaltens ziehen Sie, wie das Bereitstellen von mehreren datendarstellungen dem Ziel-Apps genutzt werden können (z. B. den formatierten Text als auch als nur-Text oder einen Vektor und Bitmap-Versionen einer Zeichnung). Sie können auch benutzerdefinierte datendarstellungen verwendet werden, wenn Drag & Drop innerhalb derselben app bereitstellen.
+Es gibt viele optionale Methoden für den Drag-Delegaten, die implementiert werden können, um das Zieh Verhalten anzupassen, z. b. das Bereitstellen mehrerer Daten Darstellungen, die in Ziel-apps genutzt werden können (z. b. formatierten Text und nur-Text oder ein Vektor und). Bitmap-Versionen einer Zeichnung). Sie können auch benutzerdefinierte Daten Darstellungen bereitstellen, die beim Ziehen und ablegen innerhalb derselben App verwendet werden.
 
-### <a name="table-view-drop-delegate"></a>Tabelle, Sicht Drop-Delegat
+### <a name="table-view-drop-delegate"></a>Tabellen Sicht-Drop-Delegat
 
-Die Methoden für die Drop-Delegaten werden immer dann aufgerufen, wenn ein Ziehvorgang über eine Tabellenansicht erfolgt oder darüber abgeschlossen ist. Die erforderlichen Methoden ermitteln, ob die Daten gelöscht werden darf und welche Aktionen ausgeführt werden, wenn der Drop ausgeführt wird:
+Die Methoden auf dem Drop-Delegaten werden aufgerufen, wenn ein Zieh Vorgang über eine Tabellen Sicht erfolgt oder über diesem Vorgang abgeschlossen wird. Die erforderlichen Methoden bestimmen, ob die Daten gelöscht werden dürfen und welche Aktionen durchgeführt werden, wenn der Löschvorgang abgeschlossen ist:
 
-- `CanHandleDropSession` – Während ein Ziehvorgang ausgeführt wird, und für die Anwendung möglicherweise gelöscht wird, die diese Methode bestimmt, ob die gezogenen Daten gelöscht werden darf.
-- `DropSessionDidUpdate` – Während der Ziehvorgang ausgeführt wird, wird diese Methode aufgerufen, um zu bestimmen, welche Aktion soll. Informationen aus der Tabellenansicht gezogen wird, über die Drag-Sitzung und der Index ist möglicherweise Pfad können alle verwendet werden um das Verhalten und das visuelle Feedback, die dem Benutzer bereitgestellt, zu bestimmen.
-- `PerformDrop` – Wenn der Benutzer die Dropdownliste (durch ihren Finger abheben) abgeschlossen ist, wird diese Methode die gezogenen Daten extrahiert und ändert die Tabellenansicht, um die Daten in eine neue Zeile (oder Zeilen) hinzuzufügen.
+- `CanHandleDropSession`– Während ein Drag-Vorgang ausgeführt wird und möglicherweise auf der Anwendung gelöscht wird, bestimmt diese Methode, ob die gezogenen Daten gelöscht werden können.
+- `DropSessionDidUpdate`– Während der Zieh Vorgang wird diese Methode aufgerufen, um zu bestimmen, welche Aktion beabsichtigt ist. Informationen aus der über gezogenen Tabellenansicht, der Zieh Sitzung und dem möglichen Indexpfad können verwendet werden, um das Verhalten und das visuelle Feedback zu ermitteln, die dem Benutzer bereitgestellt werden.
+- `PerformDrop`– Wenn der Benutzer den Löschvorgang abschließt (durch das Heben des Fingers), extrahiert diese Methode die gezogenen Daten und ändert die Tabellenansicht, um die Daten in einer neuen Zeile (oder Zeilen) hinzuzufügen.
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession` Gibt an, ob die Tabellenansicht die gezogenen Daten akzeptieren kann. In diesem Codeausschnitt `CanLoadObjects` wird verwendet, um sicherzustellen, dass diese Tabellenansicht Zeichenfolgendaten annehmen kann.
+`CanHandleDropSession`Gibt an, ob die Tabellen Sicht die gezogenen Daten akzeptieren kann. In diesem Code Ausschnitt `CanLoadObjects` wird verwendet, um zu bestätigen, dass diese Tabellenansicht Zeichen folgen Daten akzeptieren kann.
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,10 +108,10 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-Die `DropSessionDidUpdate` Methode wird wiederholt aufgerufen, während des Ziehvorgangs ausgeführt wird, zu dem Benutzer visuelle Hinweise bereitgestellt wird.
+Die `DropSessionDidUpdate` -Methode wird wiederholt aufgerufen, während der Zieh Vorgang ausgeführt wird, um dem Benutzer visuelle Hinweise bereitzustellen.
 
-Im folgenden Code `HasActiveDrag` wird verwendet, um zu bestimmen, ob der Vorgang in der Tabellenansicht der aktuellen stammt. Wenn dies der Fall ist, werden nur einzelne Zeilen verschoben werden darf.
-Wenn für der Ziehvorgang aus einer anderen Quelle ist, wird ein Kopiervorgang angegeben:
+Im folgenden Code wird verwendet `HasActiveDrag` , um zu bestimmen, ob der Vorgang aus der aktuellen Tabellenansicht stammt. Wenn dies der Fall ist, dürfen nur einzelne Zeilen verschoben werden.
+Wenn der Zieh Vorgang aus einer anderen Quelle erfolgt, wird ein Kopiervorgang angezeigt:
 
 ```csharp
 public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDropSession session, NSIndexPath destinationIndexPath)
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-Der Drop-Vorgang kann eine der `Cancel`, `Move`, oder `Copy`.
+Der Drop-Vorgang kann `Cancel`, `Move`oder `Copy`sein.
 
-Das Drop-Ziel kann sein, um eine neue Zeile einzufügen oder zu Daten in eine vorhandene Zeile hinzufügen/anfügen.
+Die Lösch Absicht kann das Einfügen einer neuen Zeile oder das Hinzufügen/Anfügen von Daten zu einer vorhandenen Zeile sein.
 
-#### <a name="performdrop"></a>PerformDrop
+#### <a name="performdrop"></a>Performdrop
 
-Die `PerformDrop` Methode wird aufgerufen, wenn der Benutzer schließt den Vorgang ab und die Tabelle anzeigen und der Datenquelle ändert entsprechend die abgelegten Daten.
+Die `PerformDrop` -Methode wird aufgerufen, wenn der Benutzer den Vorgang abschließt, und ändert die Tabellenansicht und die Datenquelle, um die gelöschten Daten widerzuspiegeln.
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)
@@ -178,18 +178,18 @@ public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coord
 
 Zusätzlicher Code kann hinzugefügt werden, um große Datenobjekte asynchron zu laden.
 
-### <a name="testing-drag-and-drop"></a>Tests ziehen und ablegen
+### <a name="testing-drag-and-drop"></a>Testen von Drag & amp; Drop
 
-Sie müssen ein iPad zum Testen verwenden die [Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/).
-Öffnen Sie das Beispiel zusammen mit einer anderen app (z. B. Anmerkungen zu dieser Version), und ziehen Sie Zeilen und der Text zwischen ihnen:
+Zum [Testen des Beispiels](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)müssen Sie ein iPad verwenden.
+Öffnen Sie das Beispiel neben einer anderen APP (z. b. Notizen), und ziehen Sie Zeilen und Text zwischen diesen:
 
-![Screenshot des Ziehvorgangs in Bearbeitung](drag-and-drop-images/01-sml.png)
+![Screenshot des Zieh Vorgangs in Bearbeitung](drag-and-drop-images/01-sml.png)
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Drag & Drop Human Interface Guidelines (Apple)](https://developer.apple.com/ios/human-interface-guidelines/interaction/drag-and-drop/)
-- [Drag & Drop Table-Viewer-Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)
-- [Drag & Drop-Auflistung-Viewer-Beispiel](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
-- [Einführung in die Drag & Drop (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/203/)
-- [Drag & Drop-Sammlung mit Tabelle anzeigen (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/223/)
+- [Richtlinien für die Benutzeroberfläche per Drag & Drop (Apple)](https://developer.apple.com/ios/human-interface-guidelines/interaction/drag-and-drop/)
+- [Beispiel für eine Drag & Drop-Tabellenansicht](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
+- [Beispiel für eine Drag & Drop-Sammlungsansicht](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+- [Einführung in Drag & Drop (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/203/)
+- [Ziehen und Ablegen mit der Sammlungs-und Tabellenansicht (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/223/)

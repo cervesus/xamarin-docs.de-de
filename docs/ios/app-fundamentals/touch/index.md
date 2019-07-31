@@ -1,30 +1,30 @@
 ---
-title: Behandeln von Toucheingaben in Xamarin.iOS-Apps
-description: Dieses Dokument enthält Links zu Anleitungen, die beschreiben, wie Sie mit Touch, Multitouch, Gesten und 3D Touch in einer Xamarin.iOS-app arbeiten.
+title: Behandeln von Berührungen in xamarin. IOS-apps
+description: Dieses Dokument ist mit Anleitungen verknüpft, die beschreiben, wie Touch, Multitouch, Gesten und 3D-Touch in einer xamarin. IOS-App verwendet werden.
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/23/2017
-ms.openlocfilehash: 5aabc3a3c2ffbcffc0e12379989f7eb43b03a902
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8ed9ab164f6b14d794b29667ec96afab47e3fcde
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399290"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655172"
 ---
-# <a name="handling-touch-in-xamarinios-apps"></a>Behandeln von Toucheingaben in Xamarin.iOS-Apps
+# <a name="handling-touch-in-xamarinios-apps"></a>Behandeln von Berührungen in xamarin. IOS-apps
 
-Wie andere mobilen Plattformen hat iOS eine Reihe von Möglichkeiten, Fingereingabe zu behandeln. Es kann Multitouch unterstützen – viele Datenpunkte wenden Sie sich an, auf dem Bildschirm – und komplexe Gesten. Dieser Leitfaden beschreibt einige der Konzepte, sowie den Besonderheiten der Implementierung von Berührung und Gesten unter iOS.
+Wie andere mobile Plattformen bietet IOS eine Reihe von Möglichkeiten, die Berührungs Möglichkeiten zu behandeln. Es kann Multitouch – viele Kontaktpunkte auf dem Bildschirm – und komplexe Gesten unterstützen. In diesem Handbuch werden einige der Konzepte sowie die Besonderheiten der Implementierung von toucheingaben und Gesten unter IOS vorgestellt.
 
-iOS kapselt Touch-Daten in die `UITouch` -Klasse, die eine Reihe von Anwendungen zur Verfügung gestellt wird `UIResponder` Methoden. Anwendungen können außer Kraft setzen dieser Methoden in Unterklassen von `UIView` und `UIViewController`, beide erben von `UIResponder`.
+IOS kapselt Berührungs Daten in der `UITouch` -Klasse, die Anwendungen über eine Reihe von `UIResponder` Methoden zur Verfügung gestellt wird. Anwendungen können diese Methoden in Unterklassen von `UIView` und `UIViewController`überschreiben, die beide von `UIResponder`erben.
 
-Neben dem Erfassen von Touch-Daten, bietet iOS bedeutet, dass für das Interpretieren der Muster der Workflows in die Eingabeaktionen. Diese Geste Erkennungen können wiederum verwendet werden, um anwendungsspezifische-Befehle, wie eine Drehung um ein Bild oder eine Reihe von einer Seite zu interpretieren. iOS bietet eine umfangreiche Sammlung von Klassen, allgemeine Gesten minimalen zusätzlichen Code zu behandeln.
+Zusätzlich zur Erfassung von Touch-Daten bietet IOS die Möglichkeit, die Muster von Berührungen in Gesten zu interpretieren. Diese Gesten Erkennungs Tools können wiederum verwendet werden, um anwendungsspezifische Befehle zu interpretieren, z. b. eine Drehung eines Bilds oder eine Seite. IOS stellt eine umfangreiche Sammlung von Klassen bereit, um häufige Gesten mit dem minimal hinzugefügten Code zu behandeln.
 
-Die Wahl zwischen Workflows und Bewegung Erkennungen kann eine verwirrend sein. Es wird empfohlen, im Allgemeinen Präferenz zu Geste Erkennungen gewährt werden soll. Geste Erkennungen werden als diskrete Klassen implementiert, die stärkere Trennung von Belangen und eine bessere Kapselung bereitstellen. Dies können sie ganz leicht die Logik zwischen verschiedenen Ansichten, minimieren die Menge an geschriebenen Code gemeinsam nutzen.
+Die Wahl zwischen den Berührungen und Gesten erkenungen kann verwirrend sein. In dieser Anleitung wird empfohlen, dass Gesten Erkennungs Tools im allgemeinen bevorzugt werden. Gesten Erkennungs Tools werden als diskrete Klassen implementiert, die eine stärkere Trennung von Anliegen und eine bessere Kapselung bieten. Dies vereinfacht die gemeinsame Nutzung der Logik zwischen unterschiedlichen Ansichten und minimiert so die Menge an geschriebenem Code.
 
-Es gibt jedoch müssen Sie manchmal Low-Level-Touch-Verarbeitung und sogar mehrere Finger, z. B. zum Erstellen eines Programms Finger-paint nachverfolgen.
+Es gibt jedoch Zeiten, in denen Sie die Touch-Verarbeitung auf niedriger Ebene verwenden und sogar mehrere Finger nachverfolgen müssen, um z. b. ein Finger Paint-Programm zu erstellen.
 
 ## <a name="sections"></a>Abschnitte
 
@@ -32,13 +32,13 @@ Es gibt jedoch müssen Sie manchmal Low-Level-Touch-Verarbeitung und sogar mehre
 -  [Exemplarische Vorgehensweise: Toucheingabe in iOS](ios-touch-walkthrough.md)
 -  [Nachverfolgen von Multitoucheingaben](touch-tracking.md)
 
-Dieses Handbuch dient als Einführung in die Toucheingabe in iOS. Weitere Informationen zum Verwenden von 3D Touch und Übermitteln von Haptischem Feedback in iOS wurden die in iOS 9 und 10 bzw. finden Sie in der unten angegebenen speziellen Anleitungen eingeführt:
+Dieses Handbuch bietet eine Einführung in die Kontaktaufnahme in ios. Weitere Informationen zur Verwendung von 3D Toucheingabe und haptisches Feedback in Ios, die in ios 9 und 10 eingeführt wurden, finden Sie in den folgenden Anleitungen:
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS-Touch (Beispiel) starten](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start)
-- [iOS letzte Touch (Beispiel)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final)
-- [FingerPaint (Beispiel)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)
+- [IOS-Berührungs Start (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
+- [IOS-Berührungs Finale (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
+- [Fingerpaint (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

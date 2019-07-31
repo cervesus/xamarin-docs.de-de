@@ -1,28 +1,28 @@
 ---
-title: Multitouch-Finger, die Nachrichtennachverfolgung in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie einzelner Finger in die Multitouch-Gesten in einer Xamarin.iOS-app nachverfolgt wird. Es basiert auf einer multitoucheingaben Beispiel-app.
+title: Multitouch-Finger Verfolgung in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie einzelne Finger in Multitouch-Gesten in einer xamarin. IOS-App nachverfolgen können. Das Beispiel ist ein Beispiel für eine Fingerabdruck-App.
 ms.prod: xamarin
 ms.assetid: 48E8B20D-0833-43D2-976A-0605DDB386E3
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 09e895714cb4bbe241e4e14facaaee52079d55d9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cdf6e78356ee1c846b5921957e8eda53931a3c6b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61082770"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655159"
 ---
-# <a name="multi-touch-finger-tracking-in-xamarinios"></a>Multitouch-Finger, die Nachrichtennachverfolgung in Xamarin.iOS
+# <a name="multi-touch-finger-tracking-in-xamarinios"></a>Multitouch-Finger Verfolgung in xamarin. IOS
 
-_In diesem Dokument wird veranschaulicht, wie zum Nachverfolgen von Touch-Ereignissen aus mehreren Fingern_
+_In diesem Dokument wird veranschaulicht, wie Berührungs Ereignisse von mehreren Fingern nachverfolgt werden._
 
-Es gibt Situationen, wenn eine Multi-Touch-Anwendung muss einzelner Finger zu verfolgen, während sie gleichzeitig auf dem Bildschirm zu verschieben. Eine typische Anwendung ist ein Programm Finger-paint. Sie möchten die Benutzer mit einem einzelnen Finger gezeichnet werden soll, sondern auch gleichzeitig mit mehreren Fingern zeichnen kann. Während das Programm mehrere touchereignisse verarbeitet, muss diese Finger zu unterscheiden.
+Es gibt Zeiten, in denen eine Multitouch-Anwendung einzelne Finger nachverfolgen muss, während Sie sich gleichzeitig auf dem Bildschirm bewegen. Eine typische Anwendung ist ein Finger Paint-Programm. Sie möchten, dass der Benutzer mit einem einzelnen Finger zeichnen kann, aber gleichzeitig mit mehreren Fingern zeichnen kann. Wenn das Programm mehrere Berührungs Ereignisse verarbeitet, muss es zwischen diesen Fingern unterschieden werden.
 
-Wenn ein Finger den Bildschirm zuerst berührt, iOS erstellt eine [ `UITouch` ](xref:UIKit.UITouch) Objekt für diese Finger. Dieses Objekt bleibt unverändert, da der Finger auf dem Bildschirm bewegt, und hebt dann wählen Sie im Fenster an diesem Punkt das Objekt verworfen wird. Um zu verfolgen Finger, ein Programm sollten durch die Speicherung `UITouch` direkt. Sie können stattdessen die [ `Handle` ](xref:Foundation.NSObject.Handle) Eigenschaft vom Typ `IntPtr` zum eindeutigen Identifizieren dieser `UITouch` Objekte.
+Wenn ein Finger den Bildschirm zum ersten Mal berührt, [`UITouch`](xref:UIKit.UITouch) erstellt IOS ein-Objekt für diesen Finger. Dieses Objekt bleibt unverändert, wenn der Finger auf dem Bildschirm angezeigt wird, und dann wird der Bildschirm auf dem Bildschirm angezeigt, an dem das Objekt verworfen wird. Zum Nachverfolgen von Fingern sollte ein Programm vermeiden, dieses `UITouch` Objekt direkt zu speichern. Stattdessen kann die [`Handle`](xref:Foundation.NSObject.Handle) -Eigenschaft des-Typs `IntPtr` verwendet werden, um diese `UITouch` Objekte eindeutig zu identifizieren.
 
-Ein Programm, das einzelner Finger verfolgt wird fast immer ein Wörterbuch zum Nachverfolgen von Touch verwaltet. Bei einem iOS-Programm, der Wörterbuchschlüssel ist der `Handle` Wert, der einen bestimmten Finger identifiziert. Der Wörterbuchwert hängt von der Anwendung ab. In der [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint) Programm Strichfarbe Finger (von Toucheingabe freigeben) bezieht sich auf ein Objekt, das alle Informationen, die zum Rendern mit Fingers gezeichneten Linie enthält. Das Programm definiert ein kleines `FingerPaintPolyline` -Klasse für diesen Zweck:
+Fast immer verwaltet ein Programm, das einzelne Finger verfolgt, ein Wörterbuch für die Berührungs Überwachung. Bei einem IOS-Programm ist der Wörterbuch Schlüssel `Handle` der Wert, der einen bestimmten Finger identifiziert. Der Wörter Buchwert hängt von der Anwendung ab. Im [fingerpaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint) -Programm wird jeder Finger Strich (von Touch zu Release) einem Objekt zugeordnet, das alle Informationen enthält, die erforderlich sind, um die mit diesem Finger gezeichnete Linie zu renderieren. Das Programm definiert zu diesem `FingerPaintPolyline` Zweck eine kleine Klasse:
 
 ```csharp
 class FingerPaintPolyline
@@ -40,26 +40,26 @@ class FingerPaintPolyline
 }
 ```
 
-Jeder Polylinie verfügt über eine Farbe, eine Strichbreite und ein iOS-Grafiken [ `CGPath` ](xref:CoreGraphics.CGPath) Objekt, das Sammeln und mehrere Punkte der Linie zu rendern, wie er gerade gezeichnet wird.
+Jede Polylinie hat eine Farbe, eine Strichbreite und ein IOS-Grafik [`CGPath`](xref:CoreGraphics.CGPath) Objekt, um beim Zeichnen mehrere Punkte der Linie zu sammeln und zu Renderern.
 
 
-Die restlichen den folgenden Code ist Bestandteil einer `UIView` -Ableitung namens `FingerPaintCanvasView`. Dass die Klasse ein Wörterbuch von Objekten des Typs verwaltet `FingerPaintPolyline` während des Zeitraums, der diese aktiv von einem oder mehreren Fingern gezeichnet werden:
+Der Rest des unten gezeigten Codes ist in einer Ableitung mit dem `UIView` Namen `FingerPaintCanvasView`enthalten. Diese Klasse verwaltet ein Wörterbuch von Objekten des `FingerPaintPolyline` Typs, wenn Sie aktiv von einem oder mehreren Fingern gezeichnet werden:
 
 ```csharp
 Dictionary<IntPtr, FingerPaintPolyline> inProgressPolylines = new Dictionary<IntPtr, FingerPaintPolyline>();
 ```
 
-Dieses Wörterbuch kann die Ansicht schnell Abrufen der `FingerPaintPolyline` jeden Finger zugeordneten Informationen auf der Grundlage der `Handle` Eigenschaft der `UITouch` Objekt.
+Dieses Wörterbuch ermöglicht der Ansicht, die `FingerPaintPolyline` jedem Finger zugeordneten Informationen schnell basierend auf der `Handle` -Eigenschaft des `UITouch` -Objekts abzurufen.
 
-Die `FingerPaintCanvasView` Klasse verwaltet auch eine `List` -Objekt für die Polylinien, die abgeschlossen wurden:
+Die `FingerPaintCanvasView` -Klasse verwaltet auch `List` ein-Objekt für die ausgefüllten Polylinien:
 
 ```csharp
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 ```
 
-Die Objekte in diesem `List` befinden sich in der gleichen Reihenfolge an, dass sie gezeichnet wurden.
+Die Objekte in diesem `List` befinden sich in derselben Reihenfolge, in der Sie gezeichnet wurden.
 
-`FingerPaintCanvasView` fünf definierte Methoden überschreibt `View`:
+`FingerPaintCanvasView`Überschreibt fünf durch `View`definierte Methoden:
 
 - [`TouchesBegan`](xref:UIKit.UIResponder.TouchesBegan(Foundation.NSSet,UIKit.UIEvent))
 - [`TouchesMoved`](xref:UIKit.UIResponder.TouchesMoved(Foundation.NSSet,UIKit.UIEvent))
@@ -67,9 +67,9 @@ Die Objekte in diesem `List` befinden sich in der gleichen Reihenfolge an, dass 
 - [`TouchesCancelled`](xref:UIKit.UIResponder.TouchesCancelled(Foundation.NSSet,UIKit.UIEvent))
 - [`Draw`](xref:UIKit.UIView.Draw(CoreGraphics.CGRect))
 
-Die verschiedenen `Touches` , überschreibungen, sammeln Sie die Punkte, die die Polylinien bilden.
+Die verschiedenen `Touches` über schreibungen sammeln die Punkte, aus denen die Polylinien bestehen.
 
-Die [`Draw`] außer Kraft setzen zeichnet die abgeschlossenen Polylinien, und klicken Sie dann die Polylinien in Bearbeitung:
+Der [`Draw`]-überschreiben zeichnet die abgeschlossenen Polylinien und anschließend die in Bearbeitung befindlichen Polylinien:
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -103,7 +103,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-Jede der `Touches` Außerkraftsetzungen meldet möglicherweise die Aktionen mehrerer Finger, die von einer oder mehreren angegebenen `UITouch` im gespeicherten Objekte die `touches` Argument der Methode. Die `TouchesBegan` Außerkraftsetzungen, durchlaufen diese Objekte. Für jede `UITouch` -Objekts die Methode erstellt und initialisiert eine neue `FingerPaintPolyline` -Objekts, einschließlich, speichern die ursprüngliche Position des Fingers abgerufen, die von der `LocationInView` Methode. Dies `FingerPaintPolyline` Objekt hinzugefügt wird die `InProgressPolylines` Wörterbuch mit den `Handle` Eigenschaft der `UITouch` -Objekt als ein Dictionary-Schlüssel:
+Jede der außer Kraft setzungen meldet möglicherweise die Aktionen mehrerer Finger, die durch ein oder mehrere `UITouch` -Objekte angegeben werden `touches` , die im-Argument der-Methode gespeichert sind. `Touches` Die `TouchesBegan` außer Kraft setzungen-Schleife durch diese Objekte. Für jedes `UITouch` -Objekt erstellt und initialisiert die-Methode ein `FingerPaintPolyline` neues-Objekt, einschließlich der Speicherung der ursprünglichen Position des Fingers, `LocationInView` der aus der-Methode abgerufen wurde. Dieses `FingerPaintPolyline` Objekt wird dem `InProgressPolylines` Wörterbuch hinzugefügt, `Handle` `UITouch` indem die-Eigenschaft des-Objekts als Wörterbuch Schlüssel verwendet wird:
 
 ```csharp
 public override void TouchesBegan(NSSet touches, UIEvent evt)
@@ -126,9 +126,9 @@ public override void TouchesBegan(NSSet touches, UIEvent evt)
 }
 ```
 
-Die Methode endet mit dem Aufruf von `SetNeedsDisplay` zum Generieren von eines Aufrufs der `Draw` außer Kraft setzen und den Bildschirm zu aktualisieren.
+Die Methode wird beendet, `SetNeedsDisplay` indem aufgerufen wird, um einen `Draw` Aufruf der außer Kraft Setzung zu generieren und den Bildschirm zu aktualisieren.
 
-Während die Finger oder der Finger auf dem Bildschirm bewegen der `View` ruft mehrere Aufrufe an die `TouchesMoved` außer Kraft setzen. Diese Außerkraftsetzung wird auf ähnliche Weise durchläuft die `UITouch` im gespeicherten Objekte die `touches` Argument und fügt der aktuellen Position des Fingers der Grafikpfad hinzu:
+Wenn der Finger oder die Finger auf dem Bildschirm bewegt `View` werden, ruft mehrere Aufrufe `TouchesMoved` der außer Kraft Setzung ab. Diese Überschreibung durchläuft die `UITouch` `touches` im-Argument gespeicherten-Objekte und fügt die aktuelle Position des Fingers dem Grafik Pfad hinzu:
 
 ```csharp
 public override void TouchesMoved(NSSet touches, UIEvent evt)
@@ -144,9 +144,9 @@ public override void TouchesMoved(NSSet touches, UIEvent evt)
 }
 ```
 
-Die `touches` Auflistung enthält nur die `UITouch` Objekte für die Finger, die seit dem letzten Aufruf von verschoben wurden `TouchesBegan` oder `TouchesMoved`. Sollten Sie jemals `UITouch` entsprechende Objekte *alle* die Finger den Bildschirm berühren derzeit, diese Information steht über die `AllTouches` Eigenschaft der `UIEvent` Argument der Methode.
+Die `touches` -Auflistung enthält `UITouch` nur die-Objekte für die Finger, die seit dem letzten- `TouchesBegan` Rückruf `TouchesMoved`von oder verschoben wurden. Wenn Sie jemals Objekte `UITouch` benötigen, die *sich derzeit* in Kontakt mit dem Bildschirm befinden, sind diese Informationen über `AllTouches` `UIEvent` die-Eigenschaft des-Arguments für die-Methode verfügbar.
 
-Die `TouchesEnded` Überschreibung hat zwei Aufträge. Sie müssen die Grafikpfad und die Übertragung den letzten Punkt hinzufügen der `FingerPaintPolyline` -Objekt aus der `inProgressPolylines` Wörterbuch, das die `completedPolylines` Liste:
+Die `TouchesEnded` außer Kraft Setzung umfasst zwei Aufträge. Er muss dem Grafik Pfad den letzten Punkt hinzufügen und das `FingerPaintPolyline` Objekt aus dem `inProgressPolylines` Wörterbuch in die `completedPolylines` Liste übertragen:
 
 ```csharp
 public override void TouchesEnded(NSSet touches, UIEvent evt)
@@ -167,7 +167,7 @@ public override void TouchesEnded(NSSet touches, UIEvent evt)
 }
 ```
 
-Die `TouchesCancelled` Überschreibung erfolgt, indem Sie einfach Abbrechen der `FingerPaintPolyline` Objekt aus dem Wörterbuch:
+Die `TouchesCancelled` außer Kraft setzung wird durch einfaches verwerfen `FingerPaintPolyline` des-Objekts im Wörterbuch behandelt:
 
 ```csharp
 public override void TouchesCancelled(NSSet touches, UIEvent evt)
@@ -182,15 +182,15 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 }
 ```
 
-Diese Verarbeitung vollständig zu entfernen und ermöglicht die [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint) Programm einzelner Finger nachverfolgen und die Ergebnisse auf dem Bildschirm zeichnen:
+Diese Verarbeitung ermöglicht es dem [fingerpaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint) -Programm, einzelne Finger zu verfolgen und die Ergebnisse auf dem Bildschirm zu zeichnen:
 
-[![](touch-tracking-images/image01.png "Einzelner Finger verfolgt, und zeichnen die Ergebnisse auf dem Bildschirm")](touch-tracking-images/image01.png#lightbox)
+[![](touch-tracking-images/image01.png "Nachverfolgen von einzelnen Fingern und Zeichnen der Ergebnisse auf dem Bildschirm")](touch-tracking-images/image01.png#lightbox)
 
-Sie haben nun gesehen, wie Sie einzelne Finger auf dem Bildschirm nachverfolgen und diese zu unterscheiden.
+Sie haben nun gesehen, wie Sie einzelne Finger auf dem Bildschirm nachverfolgen und voneinander unterscheiden können.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Entsprechende Xamarin Android-Leitfaden](~/android/app-fundamentals/touch/touch-tracking.md)
-- [FingerPaint (Beispiel)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)
+- [Entsprechendes xamarin Android-Handbuch](~/android/app-fundamentals/touch/touch-tracking.md)
+- [Fingerpaint (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

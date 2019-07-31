@@ -1,41 +1,41 @@
 ---
-title: Neue Features in MapKit auf iOS 11
-description: 'Dieses Dokument beschreibt die neuen MapKit-Features in iOS 11: Gruppieren von markern, die Schaltfläche "Compass", der Skalierungsansicht und die Schaltfläche "Benutzer-nachverfolgung".'
+title: Neue Features in MapKit unter IOS 11
+description: 'In diesem Dokument werden die neuen MapKit-Features in ios 11 beschrieben: Gruppierungs Marker, die Kompass Schaltfläche, die Skalierungs Ansicht und die Benutzer nach Verfolgungs Schaltfläche.'
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: 3c1b29a4aba03ffe8a3131625ef29cf64766bb6c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0345a20e20b96e2f219218fc396b11ac508c8add
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342351"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656432"
 ---
-# <a name="new-features-in-mapkit-on-ios-11"></a>Neue Features in MapKit auf iOS 11
+# <a name="new-features-in-mapkit-on-ios-11"></a>Neue Features in MapKit unter IOS 11
 
-iOS 11 hinzugefügt MapKit die folgenden neuen Features:
+IOS 11 fügt MapKit die folgenden neuen Funktionen hinzu:
 
-- [Anmerkung Clustering](#clustering)
-- [Schaltfläche "Compass"](#compass)
-- [Skalierungsansicht](#scale)
-- [Schaltfläche "Benutzer-Überwachung"](#user-tracking)
+- [Annotation-Clustering](#clustering)
+- [Kompass Schaltfläche](#compass)
+- [Skalierungs Ansicht](#scale)
+- [Schaltfläche "Benutzer Verfolgung](#user-tracking)
 
-![Eine Zuordnung, die gruppierten Marker anzeigt und Compass-Schaltfläche](mapkit-images/cyclemap-heading.png)
+![Karte mit geclusterten Markern und Kompass Schaltfläche](mapkit-images/cyclemap-heading.png)
 
 <a name="clustering" />
 
-## <a name="automatically-grouping-markers-while-zooming"></a>Automatisch Gruppierung Marker beim Zoomen
+## <a name="automatically-grouping-markers-while-zooming"></a>Automatisches Gruppieren von Markern beim Zoomen
 
-Das Beispiel [MapKit-Beispiel "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) zeigt, wie Sie die neue iOS 11-Anmerkung, die Failoverclustering-Features zu implementieren.
+Das Beispiel ["tandm" für das MapKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample) zeigt, wie das neue Feature "IOS 11-Anmerkung-Clustering" implementiert wird.
 
-### <a name="1-create-an-mkpointannotation-subclass"></a>1. Erstellen Sie eine `MKPointAnnotation` Unterklasse
+### <a name="1-create-an-mkpointannotation-subclass"></a>1. Erstellen einer `MKPointAnnotation` Unterklasse
 
-Der Punkt Annotation-Klasse stellt die Marker auf der Karte dar. Sie können einzeln mit hinzugefügt werden `MapView.AddAnnotation()` oder ein Array mit `MapView.AddAnnotations()`.
+Die Point-Anmerkung-Klasse stellt die einzelnen Marker auf der Karte dar. Sie können mithilfe von `MapView.AddAnnotation()` oder mithilfe von `MapView.AddAnnotations()`einzeln hinzugefügt werden.
 
-Point-Anmerkung-Klassen müssen sich nicht auf eine visuelle Darstellung, sie werden nur benötigt, um die Darstellung der Daten, die dem Marker zugeordnet (vor allem die `Coordinate` Eigenschaft, die die Breiten- und Längengrad auf der Karte ist), und benutzerdefinierte Eigenschaften:
+Pointannotation-Klassen verfügen über keine visuelle Darstellung, Sie sind nur erforderlich, um die dem Marker zugeordneten Daten darzustellen (am wichtigsten `Coordinate` ist dies die Eigenschaft, bei der es sich um den breiten-und Längengrad der Zuordnung handelt) und alle benutzerdefinierten Eigenschaften:
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,18 +57,18 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Erstellen Sie eine `MKMarkerAnnotationView` -Unterklasse für die einzelnen Markierungen
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Erstellen einer `MKMarkerAnnotationView` Unterklasse für einzelne Marker
 
-Die Markierung Anmerkung Ansicht die visuelle Darstellung der jede Anmerkung, und ist ein Format, z. B. mithilfe von Eigenschaften:
+Die Ansicht der markeranmerkung ist die visuelle Darstellung jeder Anmerkung und wird mit Eigenschaften wie z. b. formatiert:
 
-- **MarkerTintColor** – die Farbe für den Marker.
-- **GlyphText** – Text in der Marker angezeigt.
-- **GlyphImage** : Legt das Bild, das in der Marker angezeigt wird.
-- **DisplayPriority** – bestimmt die Z-Reihenfolge (Stapeln Verhalten) Wenn die Zuordnung mit markern überfüllt ist. Verwenden Sie eine der `Required`, `DefaultHigh`, oder `DefaultLow`.
+- **Markertintcolor** – die Farbe für den Marker.
+- **Glyphtext** – im Marker angezeigter Text.
+- **Glyphimage** – legt das Bild fest, das in der Markierung angezeigt wird.
+- **Displaypriority** – bestimmt die z-Reihenfolge (Stapel Verhalten), wenn die Zuordnung mit Markern überfüllt ist. Verwenden Sie eine `Required`der `DefaultHigh`-, `DefaultLow`-oder-.
 
-Um automatische clustering zu unterstützen, müssen Sie auch Folgendes festlegen:
+Um das automatische Clustering zu unterstützen, müssen Sie auch Folgendes festlegen:
 
-- **ClusteringIdentifier** – Dies steuert, welche Markierungen zusammen gruppiert. Sie können den gleichen Bezeichner für alle Ihre Marker verwenden oder verwenden verschiedene Bezeichner zur steuern, wie sie zusammen gruppiert werden.
+- **Clusteringidentifier** – Hiermit wird gesteuert, welche Marker gruppiert werden. Sie können den gleichen Bezeichner für alle Marker verwenden oder andere Bezeichner verwenden, um die Art und Weise zu steuern, wie Sie gruppiert werden.
 
 ```csharp
 [Register("BikeView")]
@@ -104,16 +104,16 @@ public class BikeView : MKMarkerAnnotationView
   }
 ```
 
-### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Erstellen Sie eine `MKAnnotationView` zur Darstellung der Cluster von markern
+### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Erstellen eines `MKAnnotationView` zum Darstellen von markerclustern
 
-Während die Anmerkung-Ansicht, die einen Cluster von markern darstellt _konnte_ können Sie ein einfaches Image, Benutzer erwarten, dass die app zu optische Hinweise zur wie viele Marker gruppiert wurden.
+Obwohl es sich bei der Anmerkung-Ansicht, die einen Cluster von Markern darstellt, um ein einfaches Bild handeln _kann_ , erwarten Benutzer, dass die APP visuelle Hinweise dazu bereitstellt, wie viele Marker gruppiert wurden.
 
-Die [Beispielcode](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) CoreGraphics verwendet, um die Anzahl von Markierungen in den Cluster als auch einen Circle-grafikdarstellung den Anteil von jedem Markertyp zu rendern.
+Im [Beispielcode](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample) wird CoreGraphics verwendet, um die Anzahl der Marker im Cluster und eine Kreis Diagramm Darstellung des Anteils der einzelnen Markertypen darzustellen.
 
-Sie sollen ebenfalls festlegen:
+Sie sollten auch Folgendes festlegen:
 
-- **DisplayPriority** – bestimmt die Z-Reihenfolge (Stapeln Verhalten) Wenn die Zuordnung mit markern überfüllt ist. Verwenden Sie eine der `Required`, `DefaultHigh`, oder `DefaultLow`.
-- **CollisionMode** – `Circle` oder `Rectangle`.
+- **Displaypriority** – bestimmt die z-Reihenfolge (Stapel Verhalten), wenn die Zuordnung mit Markern überfüllt ist. Verwenden Sie eine `Required`der `DefaultHigh`-, `DefaultLow`-oder-.
+- **Collisionmode** – `Circle` oder `Rectangle`.
 
 ```csharp
 [Register("ClusterView")]
@@ -179,34 +179,34 @@ public class ClusterView : MKAnnotationView
 }
 ```
 
-### <a name="4-register-the-view-classes"></a>4. Registrieren der Klassen anzeigen
+### <a name="4-register-the-view-classes"></a>4. Registrieren der Ansichts Klassen
 
-Wenn die Map-Steuerelement erstellt wird, und eine Sicht hinzugefügt wurde, registrieren Sie die Ansichtstypen Anmerkung, um das automatische clustering Verhalten zu aktivieren, wie die Karte ein-und vergrößert wird:
+Wenn das Kartenansicht-Steuerelement erstellt und zu einer Ansicht hinzugefügt wird, registrieren Sie die Anmerkung-Ansichts Typen, um das automatische clusteringverhalten zu aktivieren, wenn die Zuordnung vergrößert und ausgehend wird:
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
 MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReuseIdentifier);
 ```
 
-### <a name="5-render-the-map"></a>5. Die Karte zu rendern.
+### <a name="5-render-the-map"></a>5. Rendering der Karte!
 
-Wenn die Karte gerendert wird, werden anmerkungsmarker gruppiert oder abhängig vom Zoomfaktor gerendert werden. Wenn der Zoomfaktor geändert wird, animieren Marker und Cluster an.
+Wenn die Zuordnung gerendert wird, werden die Anmerkung-Marker abhängig von der Zoomstufe gruppiert oder gerendert. Wenn sich die Zoomstufe ändert, animieren Marker in und aus Clustern.
 
-![Gruppierte Marker auf der Karte mit Simulator](mapkit-images/cyclemap-sml.png)
+![Simulator, der gruppierte Marker auf der Karte anzeigt](mapkit-images/cyclemap-sml.png)
 
-Finden Sie in der [ordnet Abschnitt](~/ios/user-interface/controls/ios-maps/index.md) Weitere Informationen zum Anzeigen von Daten mit MapKit.
+Weitere Informationen zum Anzeigen von Daten mit MapKit finden Sie im [Abschnitt Maps](~/ios/user-interface/controls/ios-maps/index.md) .
 
 <a name="compass" />
 
-## <a name="compass-button"></a>Schaltfläche "Compass"
+## <a name="compass-button"></a>Kompass Schaltfläche
 
-iOS 11 fügt die Möglichkeit, der Kompass verkleinern Sie die Übersicht angezeigt, und es an anderer Stelle in der Ansicht zu rendern. Finden Sie unter den [Tandm-Beispiel-app](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) verdeutlicht.
+IOS 11 bietet die Möglichkeit, den Kompass aus der Zuordnung zu übertragen und an anderer Stelle in der Ansicht zu rendereren. Ein Beispiel finden Sie in der Beispiel- [App für tandm](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample) .
 
-Erstellen Sie eine Schaltfläche, die einen Kompass (einschließlich live-Animation aus, wenn die Ausrichtung der Zuordnung geändert wird), sieht und rendert ihn für ein anderes Steuerelement.
+Erstellen Sie eine Schaltfläche, die wie ein Kompass aussieht (einschließlich Live Animation, wenn die Karten Ausrichtung geändert wird), und rendert Sie in einem anderen Steuerelement.
 
-![Compass-Schaltfläche in der Navigationsleiste](mapkit-images/compass-sml.png)
+![Kompass Schaltfläche in der Navigationsleiste](mapkit-images/compass-sml.png)
 
-Der folgende Code erstellt eine Compass-Schaltfläche und rendert ihn auf der Navigationsleiste auf:
+Der folgende Code erstellt eine Kompass Schaltfläche und rendert Sie auf der Navigationsleiste:
 
 ```csharp
 var compass = MKCompassButton.FromMapView(MapView);
@@ -215,15 +215,15 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-Die `ShowsCompass` Eigenschaft kann zum Steuern der Sichtbarkeit des Kompasses standardmäßig in der Kartenansicht verwendet werden.
+Die `ShowsCompass` -Eigenschaft kann verwendet werden, um die Sichtbarkeit des standardkompass in der Kartenansicht zu steuern.
 
 <a name="scale" />
 
-## <a name="scale-view"></a>Skalierungsansicht
+## <a name="scale-view"></a>Skalierungs Ansicht
 
-Hinzufügen des Scale an anderer Stelle in der Ansicht mit den `MKScaleView.FromMapView()` -Methode zum Abrufen einer Instanz der Skalierungsansicht an anderer Stelle in der Hierarchie von Inhaltsansichten hinzufügen.
+Fügen Sie die Skala an anderer Stelle in der `MKScaleView.FromMapView()` Sicht hinzu, indem Sie die-Methode verwenden, um eine Instanz der Skalierungs Ansicht zu erhalten, die an anderer Stelle in der
 
-![Skalierungsansicht als Überlagerung auf einer Karte](mapkit-images/scale-sml.png)
+![Skalierungs Ansicht überlagert auf einer Karte](mapkit-images/scale-sml.png)
 
 ```csharp
 var scale = MKScaleView.FromMapView(MapView);
@@ -233,15 +233,15 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-Die `ShowsScale` Eigenschaft kann zum Steuern der Sichtbarkeit des Kompasses standardmäßig in der Kartenansicht verwendet werden.
+Die `ShowsScale` -Eigenschaft kann verwendet werden, um die Sichtbarkeit des standardkompass in der Kartenansicht zu steuern.
 
 <a name="user-tracking" />
 
-## <a name="user-tracking-button"></a>Schaltfläche "Benutzer-Überwachung"
+## <a name="user-tracking-button"></a>Schaltfläche "Benutzer Verfolgung
 
-Die Schaltfläche "Benutzer-nachverfolgung" konzentriert sich die Karte auf aktuellen Standort des Benutzers. Verwenden der `MKUserTrackingButton.FromMapView()` Methode rufen Sie eine Instanz der Schaltfläche und Anwenden von Formatierungsänderungen an anderer Stelle in der Hierarchie von Inhaltsansichten hinzufügen.
+Die Schaltfläche Benutzer Nachverfolgung zentriert die Karte auf den aktuellen Speicherort des Benutzers. Verwenden Sie `MKUserTrackingButton.FromMapView()` die-Methode, um eine Instanz der Schaltfläche zu erhalten, Formatierungs Änderungen anzuwenden und an anderer Stelle in der Ansichts Hierarchie hinzuzufügen.
 
-![Schaltfläche der Benutzer-Speicherort als Überlagerung auf einer Karte](mapkit-images/user-location-sml.png)
+![Benutzer Positions Schaltfläche auf einer Karte überlagert](mapkit-images/user-location-sml.png)
 
 ```csharp
 var button = MKUserTrackingButton.FromMapView(MapView);
@@ -256,6 +256,6 @@ View.AddSubview(button); // constraints omitted for simplicity
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MapKit-Beispiel "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)
+- [MapKit-Beispiel ' tandm '](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
 - [MKCompassButton](https://developer.apple.com/documentation/mapkit/mkcompassbutton)
-- [Was ist neu in der MapKit (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/237/)
+- [Neues in MapKit (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/237/)

@@ -7,16 +7,16 @@ ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 43a427b4eca174dce4af47bb43cb1a048a6cfe7c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61158545"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647686"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp linearen Farbverlaufs
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Die [ `SKPaint` ](xref:SkiaSharp.SKPaint) -Klasse definiert eine [ `Color` ](xref:SkiaSharp.SKPaint.Color) -Eigenschaft, die zum Zeichnen von Linien oder Bereiche mit einer Volltonfarbe füllen verwendet wird. Sie können alternativ Zeichnen von Linien oder Bereiche mit _Farbverläufe_, die schrittweise Farbverlauf der Farben sind:
 
@@ -27,7 +27,7 @@ Die einfachste Form des Farbverlaufs ist eine _lineare_ Farbverlauf. Die Mischun
 Diese Methoden geben ein Objekt des Typs zurück [ `SKShader` ](xref:SkiaSharp.SKShader) , die Sie festlegen, um die [ `Shader` ](xref:SkiaSharp.SKPaint.Shader) Eigenschaft `SKPaint`. Wenn die `Shader` -Eigenschaft ungleich Null ist, überschreibt es die `Color` Eigenschaft. Jede Zeile, die mit Strichen gezeichnet wird oder andere Bereiche, die mit diesem gefüllt ist `SKPaint` -Objekts basiert auf der Volltonfarbe entspricht, anstatt den Farbverlauf.
 
 > [!NOTE]
-> Die `Shader` Eigenschaft wird ignoriert, wenn Sie enthalten eine `SKPaint` -Objekt in ein `DrawBitmap` aufrufen. Können Sie die `Color` Eigenschaft `SKPaint` Grad der Transparenz für die Anzeige einer Bitmap festlegen (in diesem Artikel beschriebenen [SkiaSharp Anzeigen von Bitmaps](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)), kann jedoch nicht die `Shader` Eigenschaft für die Anzeige von eine Bitmap mit einem Farbverlauf Transparenz. Andere Techniken sind zum Anzeigen von Bitmaps mit Farbverlauf Transparenz verfügbar: Diese werden in den Artikeln beschrieben [SkiaSharp zirkuläre Farbverläufe](circular-gradients.md#radial-gradients-for-masking) und [SkiaSharp-Zusammensetzung und Blend-Modi](../blend-modes/porter-duff.md#gradient-transparency-and-transitions).
+> Die `Shader` Eigenschaft wird ignoriert, wenn Sie enthalten eine `SKPaint` -Objekt in ein `DrawBitmap` aufrufen. Können Sie die `Color` Eigenschaft `SKPaint` Grad der Transparenz für die Anzeige einer Bitmap festlegen (in diesem Artikel beschriebenen [SkiaSharp Anzeigen von Bitmaps](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)), kann jedoch nicht die `Shader` Eigenschaft für die Anzeige von eine Bitmap mit einem Farbverlauf Transparenz. Es stehen andere Techniken zum Anzeigen von Bitmaps mit Verlaufs Übersichten zur Verfügung: Diese werden in den Artikeln [skiasharp-zirkuläre Farbverläufe](circular-gradients.md#radial-gradients-for-masking) und [skiasharp Zusammensetzung-und Blend-Modi](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)beschrieben.
 
 ## <a name="corner-to-corner-gradients"></a>Ecke-zu-Ecke Farbverläufe
 
@@ -37,7 +37,7 @@ Erstreckt sich häufig ein linearer Farbverlauf von einer Ecke eines Rechtecks z
 - horizontal auf der oberen rechten Ecke
 - auf der unteren rechten Ecke diagonal
 
-Diagonale, lineare Farbverlauf wird veranschaulicht, in die erste Seite in der **SkiaSharp-Shader und andere Effekte** Teil der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel. Die **Ecke-zu-Ecke Farbverlauf** -Seite erstellt eine `SKCanvasView` in seinem Konstruktor. Die `PaintSurface` Ereignishandler erstellt ein `SKPaint` -Objekt in ein `using` Anweisung und definiert dann ein quadratisches 300 Pixel-Rechteck, der zentriert in der Canvas:
+Diagonale, lineare Farbverlauf wird veranschaulicht, in die erste Seite in der **SkiaSharp-Shader und andere Effekte** Teil der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel. Die **Ecke-zu-Ecke Farbverlauf** -Seite erstellt eine `SKCanvasView` in seinem Konstruktor. Die `PaintSurface` Ereignishandler erstellt ein `SKPaint` -Objekt in ein `using` Anweisung und definiert dann ein quadratisches 300 Pixel-Rechteck, der zentriert in der Canvas:
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -477,7 +477,7 @@ public class GradientAnimationPage : ContentPage
 
 Die `OnTimerTick` Methode berechnet einen `angle` -Wert, der von 0 zu 2π alle 3 Sekunden animiert wird. 
 
-Hier ist eine Möglichkeit, um den Farbverlauf zwei Punkten zu berechnen. Ein `SKPoint` Wert mit dem Namen `vector` errechnet sich aus der Mitte der Canvas mit einem Punkt der Radius des Kreises zu erweitern. Die Richtung dieses Vektors basiert auf den Werten Sinus und Cosinus des Winkels. Die beiden umgekehrter Farbverlauf Punkte werden dann berechnet: Ein Punkt wird durch Subtrahieren von diesem Vektor vom Mittelpunkt berechnet, und weiterer Punkt wird berechnet, indem Sie den Mittelpunkt den Vektor hinzugefügt:
+Hier ist eine Möglichkeit, um den Farbverlauf zwei Punkten zu berechnen. Ein `SKPoint` Wert mit dem Namen `vector` errechnet sich aus der Mitte der Canvas mit einem Punkt der Radius des Kreises zu erweitern. Die Richtung dieses Vektors basiert auf den Werten Sinus und Cosinus des Winkels. Anschließend werden die beiden gegenüberliegenden Farbverlaufs Punkte berechnet: Ein Punkt wird berechnet, indem der Vektor vom Mittelpunkt abgezogen wird, und ein anderer Punkt wird berechnet, indem der Vektor dem Mittelpunkt hinzugefügt wird:
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -511,7 +511,7 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-Ein etwas anderer Ansatz ist weniger Code erforderlich. Dieser Ansatz nutzt die [ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) Überladung der Methode mit einer Matrixtransformation als letztes Argument. Dieser Ansatz ist die Version in der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel:
+Ein etwas anderer Ansatz ist weniger Code erforderlich. Dieser Ansatz nutzt die [ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) Überladung der Methode mit einer Matrixtransformation als letztes Argument. Dieser Ansatz ist die Version in der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel:
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -617,13 +617,13 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-Die beiden Farbverlauf Punkte in der `CreateLinearGradient` Methode basieren auf zwei Punkte, die diesen Pfad zu definieren: Beide Punkte sind in der Nähe der oberen linken Ecke. Die erste ist, auf den oberen Rand des Zeichenbereichs, und die zweite ist am linken Rand des Zeichenbereichs. Hier ist das Ergebnis:
+Die zwei Farbverlaufs Punkte `CreateLinearGradient` in der-Methode basieren auf zwei der Punkte, die diesen Pfad definieren: Beide Punkte befinden sich in der Nähe der oberen linken Ecke. Die erste ist, auf den oberen Rand des Zeichenbereichs, und die zweite ist am linken Rand des Zeichenbereichs. Hier ist das Ergebnis:
 
 [![Rainbow Farbverlauf fehlerhafte](linear-gradient-images/RainbowGradientFaulty.png "Rainbow Farbverlauf fehlerhaft")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 
 Dies ist eine interessante Image, aber es ist nicht sehr von der Absicht. Das Problem ist, dass bei einen linearen Farbverlauf zu erstellen, die Zeilen der Konstante Farbe senkrecht zur der Farbverlaufslinie sind. Der Farbverlaufslinie basiert auf dem, in dem in der Abbildung berührt die oberen und linken Rand, und diese Zeile in der Regel nicht senkrecht an den Rändern des in der Abbildung, die auf der unteren rechten Ecke erweitern. Dieser Ansatz funktioniert nur, wenn im Zeichenbereich quadratischen wurden.
 
-Um eine ordnungsgemäße Rainbow Farbverlauf zu erstellen, muss der Farbverlaufslinie senkrecht an den Rand des den Regenbogen hervorgebracht. Dies ist eine komplexere Berechnung. Ein Vektor muss definiert werden, die parallel zu der langen Seite des in der Abbildung ist. Der Vektor ist um 90 Grad gedreht, sodass es senkrecht an dieser Seite ist. Es ist dann verlängert werden, um die Breite der Abbildung werden durch Multiplikation mit `rainbowWidth`. Die beiden Farbverlauf Punkte auf einen Punkt im Zweifelsfall in der Abbildung werden berechnet, und, sowie den Vektor verweisen. Hier ist der Code, der angezeigt wird der **Rainbow Farbverlauf** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel:
+Um eine ordnungsgemäße Rainbow Farbverlauf zu erstellen, muss der Farbverlaufslinie senkrecht an den Rand des den Regenbogen hervorgebracht. Dies ist eine komplexere Berechnung. Ein Vektor muss definiert werden, die parallel zu der langen Seite des in der Abbildung ist. Der Vektor ist um 90 Grad gedreht, sodass es senkrecht an dieser Seite ist. Es ist dann verlängert werden, um die Breite der Abbildung werden durch Multiplikation mit `rainbowWidth`. Die beiden Farbverlauf Punkte auf einen Punkt im Zweifelsfall in der Abbildung werden berechnet, und, sowie den Vektor verweisen. Hier ist der Code, der angezeigt wird der **Rainbow Farbverlauf** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel:
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -917,4 +917,4 @@ Die `CreateLinearGradient` Aufruf einen Farbverlauf von der obersten Position di
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

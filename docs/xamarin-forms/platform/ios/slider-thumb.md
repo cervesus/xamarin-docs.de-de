@@ -1,24 +1,24 @@
 ---
-title: Schieberegler Thumb-Steuerelement zu tippen, unter iOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel erläutert das iOS-Plattform-spezifische nutzen, die mit der-Eigenschaft Slider.Value durch Tippen auf den Schieberegler festgelegt werden können.
+title: Ziehpunkt für den Schieberegler unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die die Eigenschaft "Slider. Value" durch Tippen auf den Schieberegler festlegen kann.
 ms.prod: xamarin
 ms.assetid: D0915D37-9A59-4728-BB6A-FE094A661275
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: b195a277defa04bac88ad65b928957c6efff4601
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 573b68097724c976ce73b51e3b7ba21b52f7a776
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925339"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651781"
 ---
-# <a name="slider-thumb-tap-on-ios"></a>Schieberegler Thumb-Steuerelement zu tippen, unter iOS
+# <a name="slider-thumb-tap-on-ios"></a>Ziehpunkt für den Schieberegler unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese iOS-Plattform-spezifische ermöglicht die [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value) festzulegende Eigenschaft durch Tippen auf eine Position auf der [ `Slider` ](xref:Xamarin.Forms.Slider) Balken-, anstatt dass ziehen die `Slider` Thumb-Steuerelement. Es ist in XAML verwendet, durch Festlegen der [ `Slider.UpdateOnTap` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty) bindbare Eigenschaft `true`:
+Diese plattformspezifische IOS-Anwendung [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) ermöglicht die Festlegung der-Eigenschaft, indem Sie auf [`Slider`](xref:Xamarin.Forms.Slider) eine Position auf der Leiste tippt, anstatt den `Slider` Ziehpunkt ziehen zu müssen. Es ist in XAML verwendet, durch Festlegen der [ `Slider.UpdateOnTap` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty) bindbare Eigenschaft `true`:
 
 ```xaml
 <ContentPage ...
@@ -49,6 +49,6 @@ Das Ergebnis ist, tippen auf die [ `Slider` ](xref:Xamarin.Forms.Slider) Balken 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

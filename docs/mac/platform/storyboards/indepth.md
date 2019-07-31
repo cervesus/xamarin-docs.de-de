@@ -1,34 +1,34 @@
 ---
-title: Arbeiten mit Storyboards in Xamarin.Mac
-description: Dieses Dokument beschreibt das Arbeiten mit Storyboards in Xamarin.Mac, feststellen, wie Sie sie aus Code, den Lebenszyklus der Ansicht-Controller, der Beantworter Kette zu laden, Übergänge, Fenster-Controller, Geste Erkennungen und mehr.
+title: Arbeiten mit Storyboards in xamarin. Mac
+description: In diesem Dokument wird beschrieben, wie Sie mit Storyboards in xamarin. Mac arbeiten und wie Sie diese aus Code, dem Lebenszyklus des Ansichts Controllers, der Beantworter-Kette, den Segues, Fenster Controllern, Gesten Erkennungs Tools usw. laden.
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: e24b448bedc60a537bfcd4a5bfbdbe9562163818
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 06d3127bbe7766a70efc570bd455a8d570548731
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865937"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653784"
 ---
-# <a name="working-with-storyboards-in-xamarinmac"></a>Arbeiten mit Storyboards in Xamarin.Mac
+# <a name="working-with-storyboards-in-xamarinmac"></a>Arbeiten mit Storyboards in xamarin. Mac
 
-Ein Storyboard definiert die Benutzeroberfläche für eine bestimmte app in eine funktionale Übersicht über die View-Controller unterteilt werden. In Interface Builder von Xcode befindet sich jede dieser Controller in einen eigenen Szene.
+Ein Storyboard definiert alle Benutzeroberflächen für eine bestimmte APP, die in einer funktionalen Übersicht der zugehörigen Ansichts Controller aufgeschlüsselt sind. In der Interface Builder von Xcode befindet sich jeder dieser Controller in einer eigenen Szene.
 
-[![](indepth-images/intro01.png "Ein Storyboard im Interface Builder von Xcode")](indepth-images/intro01.png#lightbox)
+[![](indepth-images/intro01.png "Ein Storyboard in der Interface Builder von Xcode")](indepth-images/intro01.png#lightbox)
 
-Das Storyboard ist eine Ressourcendatei (mit den Erweiterungen der `.storyboard`), ruft ab, in dem Xamarin.Mac-app Bundle enthalten, wenn er kompiliert und ausgeliefert wird. Um das Storyboard ab, für Ihre app zu definieren, bearbeiten sie die `Info.plist` und wählen Sie die **Hauptschnittstelle** aus dem Dropdownfeld: 
+Beim Storyboard handelt es sich um eine Ressourcen Datei (mit `.storyboard`der Erweiterung), die beim Kompilieren und versenden in das Paket der xamarin. Mac-app eingeschlossen wird. Um das Storyboard für die APP zu definieren, bearbeiten Sie `Info.plist` die Datei, und wählen Sie im Dropdown Feld die **Hauptschnittstelle** aus: 
 
-[![](indepth-images/sb01.png "Die Datei \"Info.plist\"-editor")](indepth-images/sb01.png#lightbox)
+[![](indepth-images/sb01.png "Der Info. plist-Editor")](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 
 ## <a name="loading-from-code"></a>Laden aus Code
 
-Es gibt möglicherweise Zeiten, wenn Sie bestimmte Storyboard aus Code zu laden und einen Ansichtscontroller manuell erstellen müssen. Sie können den folgenden Code verwenden, zum Ausführen dieser Aktion:
+Es kann vorkommen, dass Sie ein bestimmtes Storyboard aus dem Code laden und einen Ansichts Controller manuell erstellen müssen. Sie können den folgenden Code verwenden, um diese Aktion auszuführen:
 
 ```csharp
 // Get new window
@@ -39,101 +39,101 @@ var controller = storyboard.InstantiateControllerWithIdentifier ("MainWindow") a
 controller.ShowWindow(this);
 ```
 
-Die `FromName` lädt die Storyboard-Datei mit dem angegebenen Namen, die in der app Bundle eingeschlossen wurde. Die `InstantiateControllerWithIdentifier` erstellt eine Instanz des Ansichtscontrollers mit der angegebenen Identität. Legen Sie die Identität im Interface Builder von Xcode, beim Entwerfen der Benutzeroberflächenautomatisierungs:
+Das `FromName` lädt die storyboarddatei mit dem angegebenen Namen, der im Paket der App enthalten ist. `InstantiateControllerWithIdentifier` Erstellt eine Instanz des Ansichts Controllers mit der angegebenen Identität. Beim Entwerfen der Benutzeroberfläche wird die Identität in der Interface Builder von Xcode festgelegt:
 
 [![](indepth-images/sb02.png "Festlegen der Storyboard-ID")](indepth-images/sb02.png#lightbox)
 
-Optional können Sie die `InstantiateInitialController` Methode, um die View-Controller zu laden, der dem ersten Controller in Interface Builder zugewiesen wurde:
+Optional können Sie die `InstantiateInitialController` -Methode verwenden, um den Ansichts Controller zu laden, dem der anfängliche Controller in Interface Builder zugewiesen wurde:
 
-[![](indepth-images/sb03.png "Den erste Controller festlegen")](indepth-images/sb03.png#lightbox)
+[![](indepth-images/sb03.png "Festlegen des ersten Controllers")](indepth-images/sb03.png#lightbox)
 
-Gekennzeichnet durch die **Storyboard-Einstiegspunkt** und oben auf den Pfeil nach offenem Ende.
+Sie wird durch den **Einstiegspunkt des Storyboards** und den obigen geöffneten Pfeil gekennzeichnet.
 
 <a name="View-Controllers" />
 
-## <a name="view-controllers"></a>Ansichtscontroller
+## <a name="view-controllers"></a>Controller anzeigen
 
-Ansichtscontroller definieren die Beziehungen zwischen einer bestimmten Ansicht der Informationen in einer Mac-app und das Datenmodell, das die Informationen bereitstellt. Jede Szene auf oberster Ebene im Storyboard stellt einen Ansichtscontroller im Code der Xamarin.Mac-app dar.
+Ansichts Controller definieren die Beziehungen zwischen einer bestimmten Ansicht von Informationen in einer Mac-app und dem Datenmodell, das diese Informationen bereitstellt. Jede Szene der obersten Ebene im Storyboard stellt einen Ansichts Controller im Code der xamarin. Mac-app dar.
 
 <a name="The-View-Controller-Lifecycle" />
 
-### <a name="the-view-controller-lifecycle"></a>Der Lebenszyklus der Ansicht-Controller
+### <a name="the-view-controller-lifecycle"></a>Der Lebenszyklus des Ansichts Controllers
 
-Mehrere neue Methoden hinzugefügt wurden die `NSViewController` Klasse, um Storyboards in MacOS zu unterstützen. Sind am wichtigsten, dass die folgenden Methoden verwenden, um auf den Lebenszyklus der Ansicht wird gesteuert, indem der angegebene View-Controller zu reagieren:
+Der `NSViewController` -Klasse wurden mehrere neue Methoden hinzugefügt, um Storyboards in macOS zu unterstützen. Am wichtigsten ist, dass die folgenden Methoden verwenden, um auf den Lebenszyklus der Ansicht zu reagieren, die vom angegebenen Ansichts Controller gesteuert wird:
 
-- `ViewDidLoad` – Diese Methode wird aufgerufen, wenn die Sicht aus der Storyboard-Datei geladen wird.
-- `ViewWillAppear` – Diese Methode wird aufgerufen, kurz bevor die Ansicht auf dem Bildschirm angezeigt wird.
-- `ViewDidAppear` – Diese Methode wird direkt aufgerufen, nachdem Sie die Ansicht auf dem Bildschirm angezeigt wurde.
-- `ViewWillDisappear` – Diese Methode wird aufgerufen, kurz bevor die Ansicht vom Bildschirm entfernt wird.
-- `ViewDidDisappear` – Diese Methode wird direkt aufgerufen, nachdem die Ansicht vom Bildschirm entfernt wurde.
-- `UpdateViewConstraints` – Diese Methode wird aufgerufen, wenn die Einschränkungen, die eine Sicht definiert Layout Position und Größe müssen aktualisiert werden, automatisch.
-- `ViewWillLayout` – Diese Methode wird aufgerufen, kurz bevor die Unteransichten dieser Ansicht auf dem Bildschirm angeordnet werden.
-- `ViewDidLayout` – Diese Methode wird direkt aufgerufen, nachdem die Unteransichten der Ansicht auf dem Bildschirm angeordnet werden.
+- `ViewDidLoad`-Diese Methode wird aufgerufen, wenn die Ansicht aus der Storyboard-Datei geladen wird.
+- `ViewWillAppear`-Diese Methode wird aufgerufen, kurz bevor die Ansicht auf dem Bildschirm angezeigt wird.
+- `ViewDidAppear`-Diese Methode wird direkt aufgerufen, nachdem die Ansicht auf dem Bildschirm angezeigt wurde.
+- `ViewWillDisappear`-Diese Methode wird aufgerufen, kurz bevor die Ansicht vom Bildschirm entfernt wird.
+- `ViewDidDisappear`-Diese Methode wird direkt aufgerufen, nachdem die Ansicht vom Bildschirm entfernt wurde.
+- `UpdateViewConstraints`-Diese Methode wird aufgerufen, wenn die Einschränkungen, die eine Ansicht für die automatische Layoutposition und-Größe definieren, aktualisiert werden müssen.
+- `ViewWillLayout`-Diese Methode wird aufgerufen, kurz bevor die untergeordneten Sichten dieser Ansicht auf dem Bildschirm angeordnet werden.
+- `ViewDidLayout`-Diese Methode wird direkt aufgerufen, nachdem die unter Sichten der Ansicht auf dem Bildschirm angeordnet wurden.
 
 <a name="The-Responder-Chain" />
 
-### <a name="the-responder-chain"></a>Der Responder-Kette
+### <a name="the-responder-chain"></a>Die Responder-Kette
 
-Darüber hinaus `NSViewControllers` sind jetzt Bestandteil des Fensters _Beantworter Kette_:
+Außerdem sind Sie nun Teil der _Responder-Kette_des Fensters: `NSViewControllers`
 
-[![](indepth-images/vc01.png "Der Responder-Kette")](indepth-images/vc01.png#lightbox)
+[![](indepth-images/vc01.png "Die Responder-Kette")](indepth-images/vc01.png#lightbox)
 
-Und daher werden diese wired – bis zu empfangen und reagieren auf Ereignisse wie Ausschneiden, kopieren und fügen Sie die Auswahl von Menüelementen. Diese automatische View Controller anschließen tritt nur auf apps, die unter MacOS Sierra (10.12) und höher.
+Daher sind Sie miteinander verknüpft, um Ereignisse wie Ausschneiden, kopieren und Einfügen (Menü Elementauswahl) zu empfangen und darauf zu reagieren. Diese automatische Ansichts Controller Verbindung tritt nur bei apps auf, die auf macOS Sierra (10,12) und höher ausgeführt werden.
 
 <a name="Containment" />
 
 ### <a name="containment"></a>Kapselung
 
-In Storyboards, View Controller (z. B. den Controller für geteilte Ansicht und der Registerkarte "-View-Controller) können nun implementieren _Kapselung_, sodass sie"andere Sub View Controller enthalten können,":
+In Storyboards können Ansichts Controller (z. b. der Split View Controller und der Registerkarten Ansichts Controller) nun die Kapselung _implementieren,_ sodass Sie andere Sub-View-Controller enthalten können:
 
-[![](indepth-images/vc02.png "Ein Beispiel für View Controller-Kapselung")](indepth-images/vc02.png#lightbox)
+[![](indepth-images/vc02.png "Ein Beispiel für die Sicht Controller Kapselung")](indepth-images/vc02.png#lightbox)
 
-Untergeordnete View Controller enthalten die Methoden und Eigenschaften, die sie verknüpfen zurück, deren übergeordnete-View-Controller und Arbeiten mit anzeigen und Löschen von Sichten auf dem Bildschirm.
+Untergeordnete Ansichts Controller enthalten Methoden und Eigenschaften, um Sie zurück an ihren übergeordneten Ansichts Controller zu binden und um mit dem anzeigen und Entfernen von Ansichten auf dem Bildschirm zu arbeiten.
 
-Alle Container-View-Controller, die in MacOS integriert haben, ein bestimmtes Layout auf die Apple wird empfohlen, die Sie ausführen, wenn Sie Ihre eigenen benutzerdefinierten Container-View-Controller zu erstellen:
+Alle in macOS integrierten Container Ansichts Controller verfügen über ein bestimmtes Layout, das Apple vorschlägt, wenn Sie Ihre eigenen benutzerdefinierten Container Ansichts Controller erstellen:
 
-[![](indepth-images/vc03.png "Das View Controller-layout")](indepth-images/vc03.png#lightbox)
+[![](indepth-images/vc03.png "Das Ansichts Controller Layout")](indepth-images/vc03.png#lightbox)
 
-Der Ansichtscontroller für die Auflistung enthält ein Array von Auflistungselemente anzeigen, von denen jeder enthalten mindestens eine View-Controller, die ihre eigenen Ansichten enthalten.
+Der Sammlungs Ansichts Controller enthält ein Array von Auflistungs Ansichts Elementen, von denen jedes einen oder mehrere Ansichts Controller enthält, die eigene Sichten enthalten.
 
 <a name="Segues" />
 
 ## <a name="segues"></a>Segues
 
-Segues geben die Beziehungen zwischen allen im Hintergrund, die UIs Ihrer app zu definieren. Wenn Sie mit der Arbeiten in Storyboards unter iOS vertraut sind, beachten Sie, dass Segues für iOS die Übergänge zwischen Vollbild-Ansichten in der Regel definieren. Dies unterscheidet sich von Mac OS, wenn Übergänge in der Regel definieren "[Kapselung](#Containment)", wobei eine Szene das untergeordnete Element eines übergeordneten Elements Szene ist.
+Die Beziehungen zwischen den Kulissen, in denen die Benutzeroberfläche Ihrer APP definiert ist, werden durch die Beziehungen bereitgestellt. Wenn Sie mit der Arbeit in Storyboards in ios vertraut sind, wissen Sie, dass die Seiten für IOS in der Regel Übergänge zwischen den voll Bildansichten definieren. Dies unterscheidet sich von macOS, wenn in der Regel "[Containment](#Containment)" definiert wird, wobei eine Szene das untergeordnete Element einer übergeordneten Szene ist.
 
-Die meisten apps tendenziell unter MacOS ihre Ansichten zusammen im gleichen Fenster mithilfe von UI-Elemente wie z. B. geteilten Ansichten und Registerkarten gruppiert. Zeigen Sie im Gegensatz zu iOS, in denen Sichten ein- und ausschalten Bildschirm umgestellt werden müssen, aufgrund der begrenzten physische Speicherplatz.
+Unter macOS gruppieren die meisten apps ihre Ansichten tendenziell innerhalb desselben Fensters mithilfe von Benutzeroberflächen Elementen wie z. b. geteilten Sichten und Registerkarten. Anders als bei IOS, bei dem Ansichten aufgrund von eingeschränktem physischem Anzeigebereich ein-und ausgeschaltet werden müssen.
 
 <a name="Presentation-Segues" />
 
-### <a name="presentation-segues"></a>Präsentation Segues
+### <a name="presentation-segues"></a>Präsentations-Segues
 
-Angesichts des MacOS-Tendenzen zu Kapselung, es gibt Situationen, in denen _Präsentation Segues_ verwendet werden, z. B. modalen Windows, Tabellenansichten und Popovers. MacOS bietet die folgende integrierten segue-Typen:
+Bei den Tendenzen von macOS in Bezug auf die Kapselung gibt es Situationen, in denen _Präsentations_ Seiten verwendet werden, wie z. b. modale Fenster, Blatt Ansichten und popovers. macOS bietet die folgenden integrierten Enumerationstypen:
 
-- **Anzeigen** -das Ziel der Segue als nicht modales Fenster angezeigt. Verwenden Sie z. B. diese Art von Segue, um eine andere Instanz eines Dokumentfensters in Ihrer app vorhanden.
-- **Modale** – stellt das Ziel der Segue als modales Fenster. Beispielsweise verwenden Sie diese Art von Segue, um das Fenster "Einstellungen" für Ihre app darstellen.
-- **Blatt** -das Ziel der Segue zeigt, wie eine Tabelle für das übergeordnete Fenster angefügt. Beispielsweise verwendet, die diese Art von segue, einen suchen und Ersetzen Blatt präsentieren.
-- **Im Popover** -das Ziel der Segue zeigt, wie in einem Fenster im Popover. Verwenden Sie z. B. dieser Segue-Typ, um Optionen zu präsentieren, wenn ein Element der Benutzeroberfläche geklickt wird.
-- **Benutzerdefinierte** – stellt das Ziel der Segue, verwenden einen benutzerdefinierten Segue-Typ vom Entwickler definiert. Finden Sie unter den [Erstellen von benutzerdefinierten Segues](#Creating-Custom-Segues) Informationen weiter unten im Abschnitt.
+- **Anzeigen** : zeigt das Ziel des-Ziels als nicht modales Fenster an. Verwenden Sie z. b. diesen Typ von "log", um eine weitere Instanz eines Dokument Fensters in der APP darzustellen.
+- **Modal** : zeigt das Ziel des-Ziels als modales Fenster an. Verwenden Sie z. b. diesen Typ von "log", um das Fenster "Einstellungen" für Ihre APP darzustellen.
+- **Sheet** -zeigt das Ziel des-Objekts als ein Blatt an, das an das übergeordnete Fenster angefügt ist. Verwenden Sie z. b. diesen Typ von "log", um ein Blatt "suchen und ersetzen" darzustellen.
+- **Popover** : zeigt das Ziel des segue als in einem popover-Fenster an. Verwenden Sie z. b. diesen Typ, um Optionen zu präsentieren, wenn der Benutzer auf ein Benutzeroberflächen Element klickt.
+- **Custom** : zeigt das Ziel des-Ziels mit einem vom Entwickler definierten benutzerdefinierten Typ an. Weitere Informationen finden Sie weiter unten im Abschnitt [Erstellen von benutzerdefinierten](#Creating-Custom-Segues) Abschnitten.
 
-Wenn Segues Präsentation verwenden, können Sie überschreiben die `PrepareForSegue` -Methode des übergeordneten Ansichtscontroller für Präsentationen zum Initialisieren und Variablen, und geben Sie alle Daten auf den View-Controller, der angezeigt wird.
+Wenn Sie präsentationsegues verwenden, können Sie `PrepareForSegue` die-Methode des übergeordneten Ansichts Controllers überschreiben, um die Präsentation zu initialisieren und Variablen zu erstellen und dem Ansichts Controller alle Daten bereitzustellen.
 
 <a name="Triggered-Segues" />
 
-### <a name="triggered-segues"></a>Ausgelöst Segues
+### <a name="triggered-segues"></a>Ausgelöste Trigger
 
-Ausgelöste Segues ermöglichen es Ihnen, benannte Segues angeben (über ihre **Bezeichner** -Eigenschaft in Interface Builder) zu bitten, ausgelöst durch Ereignisse wie z. B. der Benutzer auf eine Schaltfläche oder durch Aufrufen der `PerformSegue` Methode im Code:
+Ausgelöste Segues ermöglichen es Ihnen, benannte Segues (über deren Bezeichnereigenschaft in Interface Builder) anzugeben und Sie durch Ereignisse wie den Benutzer, der auf eine Schaltfläche klickt `PerformSegue` , oder durch Aufrufen der-Methode im Code auszulösen:
 
 ```csharp
 // Display the Scene defined by the given Segue ID
 PerformSegue("MyNamedSegue", this);
 ``` 
 
-Der Segue-ID ist innerhalb von Interface Builder von Xcode definiert, wenn das Layout der Benutzeroberfläche der Anwendung sind:
+Die segue-ID wird in der Interface Builder von Xcode definiert, wenn Sie die Benutzeroberfläche der APP festlegen:
 
-[![](indepth-images/sg02.png "Eingeben einer Segue Name")](indepth-images/sg02.png#lightbox)
+[![](indepth-images/sg02.png "Eingeben eines Namens für den Namen")](indepth-images/sg02.png#lightbox)
 
-Sie sollten in der View-Controller, der als Quelle für die Segue fungiert, überschreiben die `PrepareForSegue` -Methode, und führen alle Initialisierungsschritte erforderlich, bevor der Segue ausgeführt wird und der angegebene View-Controller wird angezeigt:
+Im Ansichts Controller, der als Quelle des segue fungiert, sollten Sie die `PrepareForSegue` -Methode überschreiben und jede Initialisierung durchführen, die vor der Ausführung von Segue erforderlich ist, und der angegebene Ansichts Controller wird angezeigt:
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -150,15 +150,15 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-Optional können Sie überschreiben die `ShouldPerformSegue` -Methode und -Steuerelement, und zwar unabhängig davon, ob der Segue tatsächlich über ausgeführt C# Code. Rufen Sie für die manuell angegebene View-Controller, deren `DismissController` Methode, die sie aus der Anzeige zu entfernen, wenn sie nicht mehr benötigt werden.
+Optional können Sie die `ShouldPerformSegue` -Methode überschreiben und Steuern, ob der segue tatsächlich über C# Code ausgeführt wird. Aufrufen Sie für manuell dargestellte Ansichts `DismissController` Controller ihre-Methode, um Sie aus der Anzeige zu entfernen, wenn Sie nicht mehr benötigt werden.
 
 <a name="Creating-Custom-Segues" />
 
-### <a name="creating-custom-segues"></a>Erstellen von benutzerdefinierten Segues
+### <a name="creating-custom-segues"></a>Erstellen von benutzerdefinierten.
 
-Es gibt möglicherweise Zeiten, wenn Ihre app einen Segue-Typ nicht angegeben wird, durch die integrierte Segues in MacOS definiert benötigt. Wenn dies der Fall ist, können Sie bei Ihrer app-Benutzeroberfläche zur Festlegung in Interface Builder von Xcode erstellen eine benutzerdefinierte Segue, die zugewiesen werden kann.
+Es kann vorkommen, dass Ihre APP einen "*"-Typ erfordert, der nicht von den in macOS definierten Build-in-Standpunkten bereitgestellt wird. Wenn dies der Fall ist, können Sie einen benutzerdefinierten segue erstellen, der in der Interface Builder von Xcode zugewiesen werden kann, wenn Sie die Benutzeroberfläche der APP anordnen.
 
-Um einen neuen Segue-Typ zu erstellen, der der aktuelle Ansichtscontroller in einem Fenster (statt Sie das Ziel Szene in einem neuen Fenster öffnen) ersetzt, können wir beispielsweise den folgenden Code verwenden:
+Um z. b. einen neuen segue-Typ zu erstellen, der den aktuellen Ansichts Controller innerhalb eines Fensters ersetzt (anstatt die zielszene in einem neuen Fenster zu öffnen), können wir den folgenden Code verwenden:
 
 ```csharp
 using System;
@@ -206,157 +206,156 @@ namespace OnCardMac
 }
 ```
 
-Ein paar Punkte zu beachten:
+Hier sind einige Punkte zu beachten:
 
-- Wir verwenden die `Register` Attribut, um diese Klasse in Objective-C/MacOS verfügbar zu machen.
-- Überschreiben wir die `Perform` Methode, um die Aktion der unsere benutzerdefinierte Segue tatsächlich auszuführen.
-- Wir Ersetzen des Fensters `ContentViewController` Controller mit dem durch das Ziel (Ziel) der Segue definiert.
-- Entfernen wir den ursprünglichen Ansichtscontroller, um Arbeitsspeicher freizugeben der `RemoveFromParentViewController` Methode.
+- Wir verwenden das `Register` -Attribut, um diese Klasse für "Ziel-C/macOS" verfügbar zu machen.
+- Wir überschreiben die `Perform` -Methode, um die Aktion des benutzerdefinierten-Angs tatsächlich auszuführen.
+- Wir ersetzen den `ContentViewController` Controller des Fensters durch den, der durch das Ziel (Ziel) des-Ziels definiert wird.
+- Wir entfernen den ursprünglichen Ansichts Controller, um Speicher mithilfe der `RemoveFromParentViewController` -Methode freizugeben.
 
-Um diesen neuen Segue-Typ in Interface Builder von Xcode verwenden zu können, müssen wir zuerst kompiliert die app dann wechseln Sie zu Xcode und Hinzufügen einer neuen Segue zwischen den beiden Szenen. Festlegen der **Stil** zu **benutzerdefinierte** und **Segue-Klasse** zu `ReplaceViewSegue` (den Namen unserer benutzerdefinierten Segue-Klasse):
+Um diesen neuen segue-Typ in der Interface Builder von Xcode zu verwenden, müssen wir zuerst die APP kompilieren, dann zu Xcode wechseln und einen neuen segue zwischen zwei Kulissen hinzufügen. Legen Sie den **Stil** auf **Custom** und die **segue-Klasse** auf `ReplaceViewSegue` (den Namen der benutzerdefinierten segue-Klasse) fest:
 
-[![](indepth-images/sg01.png "Festlegen der Segue-Klasse")](indepth-images/sg01.png#lightbox)
+[![](indepth-images/sg01.png "Festlegen der Klasse \"Klasse\"")](indepth-images/sg01.png#lightbox)
 
 <a name="Triggered-Segues" />
 
-## <a name="window-controllers"></a>Fenster-Controller
+## <a name="window-controllers"></a>Fenster Controller
 
-Fenster Controller enthalten und steuern die verschiedenen Fenster-Typen, die Ihre app für MacOS erstellen können. Nach Storyboards haben sie die folgenden Funktionen:
+Fenster Controller enthalten und steuern die unterschiedlichen Fenstertypen, die von ihrer macOS-App erstellt werden können. Für Storyboards verfügen Sie über die folgenden Features:
 
-1. Sie müssen einen Content View-Controller bereitstellen. Dies ist der gleiche Inhalt View-Controller wird, die die untergeordneten Fenster.
-2. Die `Storyboard` Eigenschaft enthält das Storyboard, das dem Controller im Fenster, andernfalls geladen wurde `null` Wenn nicht von einem Storyboard geladen.
-3. Rufen Sie die `DismissController` Methode, um das angegebene Fenster zu schließen und aus Ansicht entfernen.
+1. Sie müssen einen Inhalts Ansichts Controller bereitstellen. Dabei handelt es sich um denselben Inhalts Ansichts Controller, den das untergeordnete Fenster besitzt.
+2. Die `Storyboard` -Eigenschaft enthält das Storyboard, aus dem der Fenster Controller geladen wurde `null` , andernfalls, wenn es nicht von einem Storyboard geladen wird.
+3. Sie können die `DismissController` -Methode aufzurufen, um das angegebene Fenster zu schließen und aus der Ansicht zu entfernen.
 
-Wie die View-Controller, Fenster-Controller implementieren die `PerformSegue`, `PrepareForSegue` und `ShouldPerformSegue` Methoden und kann als Quelle eines Segues-Vorgangs verwendet werden.
+Wie Ansichts Controller implementieren Fenster Controller die `PerformSegue`- `PrepareForSegue` Methode und `ShouldPerformSegue` die-Methode, und Sie können als Quelle für einen-Vorgang verwendet werden.
 
-Fenstercontroller sind verantwortlich für die folgenden Funktionen von einem MacOS-app:
+Der Fenster Controller ist für die folgenden Funktionen einer macOS-App verantwortlich:
 
-- Sie verwalten, ein bestimmtes Fenster.
-- Sie verwalten Titelleiste angezeigt wird und in der Symbolleiste des Fensters (falls verfügbar).
-- Sie verwalten die Content View-Controller zum Anzeigen des Fensters.
+- Sie verwalten ein bestimmtes Fenster.
+- Sie verwalten die Titelleiste und Symbolleiste des Fensters (falls verfügbar).
+- Sie verwalten den Content View Controller, um den Inhalt des Fensters anzuzeigen.
 
 <a name="Gesture-Recognizers" />
 
-## <a name="gesture-recognizers"></a>Geste Erkennungen
+## <a name="gesture-recognizers"></a>Gesten Erkennungs Tools
 
-Geste Erkennungen für MacOS sind nahezu identisch mit ihren Gegenstücken in iOS und ermöglichen es dem Entwickler auf einfache Weise Aktionen (z. B. das Klicken auf die zweite Mausklick) hinzufügen, Elemente in Ihrer app Benutzeroberfläche.
+Gesten erkentungen für macOS sind fast identisch mit ihren Gegenstücken in IOS und ermöglichen es dem Entwickler, einfach Gesten (z. b. das Klicken auf eine Maustaste) auf Elemente in der Benutzeroberfläche Ihrer APP hinzuzufügen.
 
-Allerdings werden, in dem Gesten in iOS der app-Entwurf (z. B. durch Tippen auf dem Bildschirm mit zwei Fingern), am häufigsten ermittelt, Gesten in MacOS von Hardware, die bestimmt werden.
+Wenn Gesten in ios jedoch durch das Design der APP bestimmt werden (z. b. das Tippen auf den Bildschirm mit zwei Fingern), werden die meisten Gesten in macOS durch Hardware bestimmt.
 
-Verwenden Sie die Bewegung Erkennungen, können Sie die Menge an Code zum Hinzufügen von benutzerdefinierter Aktivitäten zu einem Element in der Benutzeroberfläche erforderlich erheblich reduzieren. Wie sie zwischen den doppelte und einfache Klicks automatisch ermitteln können, klicken Sie auf, und ziehen Sie, Ereignisse usw. aus.
+Mithilfe von Gesten Erkennungs Tools können Sie die Menge des Codes, der zum Hinzufügen benutzerdefinierter Interaktionen zu einem Element in der Benutzeroberfläche erforderlich ist, erheblich reduzieren. Da Sie automatisch zwischen doppelten und einfachen Klicks ermitteln können, klicken und ziehen Sie Ereignisse usw.
 
-Anstelle von der `MouseDown` Ereignis in Ihrem Ansichtscontroller sollten verwenden Sie eine Stiftbewegungs-Erkennung, um das Eingabeereignis des Benutzers ein, bei der Arbeit mit Storyboards zu behandeln.
+Anstatt das `MouseDown` Ereignis in Ihrem Ansichts Controller zu überschreiben, sollten Sie beim Arbeiten mit Storyboards eine Gestenerkennung verwenden, um das Benutzereingabe Ereignis zu behandeln.
 
-Die folgenden Gesten Erkennungen sind in MacOS verfügbar:
+Die folgenden Gesten Erkennungs Tools sind in macOS verfügbar:
 
-- `NSClickGestureRecognizer` – Registrieren Sie die Maus Down- und up-Ereignisse.
-- `NSPanGestureRecognizer` -Register Maustaste unten drag und Freigeben von Ereignissen.
-- `NSPressGestureRecognizer` : Registriert eine Maustaste gedrückt, für eine bestimmte Menge an Ereignissen zur Startzeit.
-- `NSMagnificationGestureRecognizer` – Registriert ein Ereignis für die Vergrößerung aus Trackpad Hardware.
-- `NSRotationGestureRecognizer` – Registriert ein Ereignis für die Drehung aus Trackpad Hardware.
+- `NSClickGestureRecognizer`: Hiermit werden MouseDown-und aufwärts Ereignisse registriert.
+- `NSPanGestureRecognizer`: Hiermit werden MouseButton-, Drag-und releaseereignisse registriert.
+- `NSPressGestureRecognizer`: Registriert das halten einer Maustaste für eine bestimmte Zeitspanne.
+- `NSMagnificationGestureRecognizer`: Registriert ein Vergrößerungs Ereignis von der Trackpad-Hardware.
+- `NSRotationGestureRecognizer`: Registriert ein Rotations Ereignis von der Trackpad-Hardware.
 
 <a name="Using-Storyboard-References" />
 
 ## <a name="using-storyboard-references"></a>Verwenden von Storyboard-verweisen
 
-Ein Storyboard-Verweis können Sie einen großen, komplexen Storyboard-Entwurf und teilen sie in kleinere Storyboards, die aus der ursprünglichen referenziert erhalten daher entfernen die Komplexität und erleichtert die sich ergebende einzelne Storyboards zum Entwerfen und verwalten.
+Mithilfe eines storyboardverweises können Sie einen großen, komplexen Storyboard-Entwurf erstellen und in kleinere Storyboards unterteilen, auf die von der ursprünglichen verwiesen wird. Dadurch können Sie die Komplexität entfernen und die resultierenden einzelnen Storyboards leichter entwerfen und warten.
 
-Darüber hinaus bieten ein Storyboard-Verweis ein _Anker_ zu einem anderen Szene innerhalb des gleichen Storyboards oder eine bestimmte Szene auf einem anderen.
+Außerdem kann eine storyboardreferenz einen _Anker_ für eine andere Szene innerhalb desselben Storyboards oder eine bestimmte Szene auf einer anderen Szene bereitstellen.
 
 <a name="Referencing-an-External-Storyboard" />
 
 ### <a name="referencing-an-external-storyboard"></a>Verweisen auf ein externes Storyboard
 
-Um einen Verweis auf ein externes Storyboard hinzuzufügen, führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor, um einen Verweis auf ein externes Storyboard hinzuzufügen:
 
-1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie **hinzufügen** > **neue Datei...**   >  **Mac** > **Storyboard**. Geben Sie einen **Namen** für das neue Storyboard und auf die **neu** Schaltfläche: 
+1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.  > Mac- > **Storyboard**. Geben Sie einen **Namen** für das neue Storyboard ein, und klicken Sie auf die Schaltfläche **neu** : 
 
     [![](indepth-images/ref01.png "Hinzufügen eines neuen Storyboards")](indepth-images/ref01.png#lightbox)
-2. In der **Projektmappen-Explorer**, doppelklicken Sie auf der neue Name des Storyboards, die sie zur Bearbeitung in Xcode Interface Builder zu öffnen.
-3. Entwerfen Sie das Layout der das neue Storyboard Szenen wie gewohnt würde und die Änderungen zu speichern: 
+2. Doppelklicken Sie im **Projektmappen-Explorer**auf den neuen Storyboardnamen, um ihn für die Bearbeitung in der Interface Builder von Xcode zu öffnen.
+3. Entwerfen Sie das Layout der neuen Storyboard-Szenen wie gewohnt, und speichern Sie die Änderungen: 
 
-    [![](indepth-images/ref02.png "Entwurf der Schnittstelle")](indepth-images/ref02.png#lightbox)
-4. Wechseln Sie zu das Storyboard, das auf den Verweis auf in Interface Builder hinzugefügt werden.
-5. Ziehen Sie eine **Storyboard-Verweis** aus der **Object Library** auf die Entwurfsoberfläche: 
+    [![](indepth-images/ref02.png "Entwerfen der Schnittstelle")](indepth-images/ref02.png#lightbox)
+4. Wechseln Sie in das Storyboard, dem Sie den Verweis hinzufügen möchten, in der Interface Builder.
+5. Ziehen Sie einen **storyboardverweis** aus der **Objektbibliothek** auf den Designoberfläche: 
 
-    [![](indepth-images/ref03.png "Wählen einen Storyboard-Verweis in der Bibliothek")](indepth-images/ref03.png#lightbox)
-6. In der **Attributinspektor**, wählen Sie den Namen der **Storyboard** , die Sie soeben erstellt haben: 
+    [![](indepth-images/ref03.png "Auswählen eines storyboardverweises in der Bibliothek")](indepth-images/ref03.png#lightbox)
+6. Wählen Sie im **Attribut Inspektor**den Namen des **Storyboards** aus, das Sie oben erstellt haben: 
 
-    [![](indepth-images/ref04.png "Konfigurieren den Verweis")](indepth-images/ref04.png#lightbox)
-7. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben.  Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
+    [![](indepth-images/ref04.png "Konfigurieren des Verweises")](indepth-images/ref04.png#lightbox)
+7. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den soeben erstellten **storyboardverweis** .  Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen: 
 
-    [![](indepth-images/ref06.png "Segue-Typ")](indepth-images/ref06.png#lightbox) 
-8. Speichern Sie die Änderungen auf das Storyboard an.
-9. Zurück zu Visual Studio für Mac, um Ihre Änderungen zu synchronisieren.
+    [![](indepth-images/ref06.png "Festlegen des Typs \"Typ\"")](indepth-images/ref06.png#lightbox) 
+8. Speichern Sie die Änderungen am Storyboard.
+9. Kehren Sie zu Visual Studio für Mac zurück, um die Änderungen zu synchronisieren.
 
-Wenn die app ausgeführt wird und der Benutzer auf das Element der Benutzeroberfläche klickt der Erstellung der Segue aus, die anfängliche Fenstercontroller aus dem externen Storyboard in der Storyboard-Verweis angegeben wird angezeigt.
+Wenn die app ausgeführt wird und der Benutzer auf das Benutzeroberflächen Element klickt, das Sie aus dem-Element erstellt haben, wird der anfängliche Fenster Controller aus dem externen Storyboard angezeigt, das in der storyboardreferenz angegeben ist.
 
 <a name="Referencing-a-Specific-Scene-in-an-External-Storyboard" />
 
-### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>Verweisen auf eine bestimmte Szene in einer externen Storyboard
+### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>Verweisen auf eine bestimmte Szene in einem externen Storyboard
 
-Um einen Verweis auf eine bestimmte Szene hinzufügen wie eines externen Storyboards (und nicht das erste Fenster-Controller) folgt vor:
+Gehen Sie folgendermaßen vor, um einen Verweis auf eine bestimmte Szene zu einem externen Storyboard (und nicht zum anfänglichen Fenster Controller) hinzuzufügen:
 
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf das externe Storyboard aus, um ihn zur Bearbeitung in Xcode Interface Builder zu öffnen.
-2. Fügen Sie eine neue Szene, und Entwerfen Sie des Layouts, wie gewohnt aus: 
+1. Doppelklicken Sie im **Projektmappen-Explorer**auf das externe Storyboard, um es für die Bearbeitung in der Interface Builder von Xcode zu öffnen.
+2. Fügen Sie eine neue Szene hinzu, und entwerfen Sie das Layout wie gewohnt: 
 
     [![](indepth-images/ref07.png "Entwerfen des Layouts in Xcode")](indepth-images/ref07.png#lightbox)
-3. In der **Identitätsinspektor**, geben Sie einen **Storyboard-ID** für der neuen Szene Fenstercontroller: 
+3. Geben Sie im **Identitäts Inspektor**eine **Storyboard-ID** für den Fenster Controller der neuen Szene ein: 
 
     [![](indepth-images/ref08.png "Festlegen der Storyboard-ID")](indepth-images/ref08.png#lightbox)
-4. Öffnen Sie das Storyboard, das auf den Verweis auf in Interface Builder hinzugefügt werden.
-5. Ziehen Sie eine **Storyboard-Verweis** aus der **Object Library** auf die Entwurfsoberfläche: 
+4. Öffnen Sie das Storyboard, dem Sie den Verweis hinzufügen möchten, in Interface Builder.
+5. Ziehen Sie einen **storyboardverweis** aus der **Objektbibliothek** auf den Designoberfläche: 
 
-    [![](indepth-images/ref03.png "Wählen einen Storyboard-Verweis aus der Bibliothek")](indepth-images/ref03.png#lightbox)
-6. In der **Identitätsinspektor**, wählen Sie den Namen des der **Storyboard** und **Referenz-ID** (Storyboard-ID) der Szene, die Sie soeben erstellt haben: 
+    [![](indepth-images/ref03.png "Auswählen eines storyboardverweises aus der Bibliothek")](indepth-images/ref03.png#lightbox)
+6. Wählen Sie im **Identitäts Inspektor**den Namen des **Storyboards** und die Verweis- **ID** (Storyboard-ID) der Szene aus, die Sie oben erstellt haben: 
 
-    [![](indepth-images/ref09.png "Die Referenz-ID festlegen")](indepth-images/ref09.png#lightbox)
-7. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben. Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
+    [![](indepth-images/ref09.png "Festlegen der Verweis-ID")](indepth-images/ref09.png#lightbox)
+7. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den soeben erstellten **storyboardverweis** . Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen: 
 
-    [![](indepth-images/ref06.png "Segue-Typ")](indepth-images/ref06.png#lightbox) 
-8. Speichern Sie die Änderungen auf das Storyboard an.
-9. Zurück zu Visual Studio für Mac, um Ihre Änderungen zu synchronisieren.
+    [![](indepth-images/ref06.png "Festlegen des Typs \"Typ\"")](indepth-images/ref06.png#lightbox) 
+8. Speichern Sie die Änderungen am Storyboard.
+9. Kehren Sie zu Visual Studio für Mac zurück, um die Änderungen zu synchronisieren.
 
-Wenn die app ausführen und dem Benutzer klickt auf das Element der Benutzeroberfläche, die Sie aus, mit der Segue erstellt die angegebenen **Storyboard-ID** aus dem externen Storyboard in der Storyboard-Verweis angegeben wird angezeigt.
+Wenn die app ausgeführt wird und der Benutzer auf das Benutzeroberflächen Element klickt, das Sie in erstellt haben, wird die Szene mit der angegebenen **Storyboard-ID** aus dem externen Storyboard angezeigt, das in der storyboardreferenz angegeben ist.
 
 <a name="Referencing-a-Specific-Scene-in-the-Same-Storyboard" />
 
 ### <a name="referencing-a-specific-scene-in-the-same-storyboard"></a>Verweisen auf eine bestimmte Szene im gleichen Storyboard
 
-Um einen Verweis auf eine bestimmte Szene das gleiche Storyboard hinzuzufügen, führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor, um einem Storyboard einen Verweis auf eine bestimmte Szene hinzuzufügen:
 
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf das Storyboard, um es zur Bearbeitung zu öffnen.
-2. Fügen Sie eine neue Szene, und Entwerfen Sie des Layouts, wie gewohnt aus: 
+1. Doppelklicken Sie im **Projektmappen-Explorer**auf das Storyboard, um es zur Bearbeitung zu öffnen.
+2. Fügen Sie eine neue Szene hinzu, und entwerfen Sie das Layout wie gewohnt: 
 
-    [![](indepth-images/ref11.png "Bearbeiten das Storyboard in Xcode")](indepth-images/ref11.png#lightbox)
-3. In der **Identitätsinspektor**, geben Sie einen **Storyboard-ID** für der neuen Szene Fenstercontroller: 
+    [![](indepth-images/ref11.png "Bearbeiten des Storyboards in Xcode")](indepth-images/ref11.png#lightbox)
+3. Geben Sie im **Identitäts Inspektor**eine **Storyboard-ID** für den Fenster Controller der neuen Szene ein: 
 
     [![](indepth-images/ref12.png "Festlegen der Storyboard-ID")](indepth-images/ref12.png#lightbox)
-4. Ziehen Sie eine **Storyboard-Verweis** aus der **Toolbox** auf die Entwurfsoberfläche: 
+4. Ziehen Sie einen **storyboardverweis** aus der **Toolbox** auf den Designoberfläche: 
 
-    [![](indepth-images/ref03.png "Wählen einen Storyboard-Verweis aus der Bibliothek")](indepth-images/ref03.png#lightbox)
-5. In **Attributinspektor**Option **Referenz-ID** (Storyboard-ID) der Szene, die Sie soeben erstellt haben: 
+    [![](indepth-images/ref03.png "Auswählen eines storyboardverweises aus der Bibliothek")](indepth-images/ref03.png#lightbox)
+5. Wählen Sie in **Attribut Inspektor**die **Verweis-ID** (Storyboard-ID) der Szene aus, die Sie oben erstellt haben: 
 
-    [![](indepth-images/ref13.png "Die Referenz-ID festlegen")](indepth-images/ref13.png#lightbox)
-6. Strg + Klick auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene, und erstellen Sie eine neue Segue, die **Storyboard Verweis** , die Sie gerade erstellt haben. Wählen Sie im Popupmenü **anzeigen** zum Abschließen der Segue: 
+    [![](indepth-images/ref13.png "Festlegen der Verweis-ID")](indepth-images/ref13.png#lightbox)
+6. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den soeben erstellten **storyboardverweis** . Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen: 
 
-    [![](indepth-images/ref06.png "Segue-Typ auswählen")](indepth-images/ref06.png#lightbox) 
-7. Speichern Sie die Änderungen auf das Storyboard an.
-8. Zurück zu Visual Studio für Mac, um Ihre Änderungen zu synchronisieren.
+    [![](indepth-images/ref06.png "Auswählen des Typs \"Typ\"")](indepth-images/ref06.png#lightbox) 
+7. Speichern Sie die Änderungen am Storyboard.
+8. Kehren Sie zu Visual Studio für Mac zurück, um die Änderungen zu synchronisieren.
 
-Wenn die app ausführen und dem Benutzer klickt auf das Element der Benutzeroberfläche, die Sie aus, mit der Segue erstellt die angegebenen **Storyboard-ID** im gleichen Storyboard in der Storyboard-Verweis angegeben wird angezeigt.
+Wenn die app ausgeführt wird und der Benutzer auf das Benutzeroberflächen Element klickt, das Sie aus erstellt haben, wird die Szene mit der angegebenen **Storyboard-ID** im gleichen Storyboard angezeigt, das in der storyboardreferenz angegeben ist.
 
 <a name="Complex-Storyboard-Example" />
 
-## <a name="complex-storyboard-example"></a>Komplexe Storyboard-Beispiel
+## <a name="complex-storyboard-example"></a>Beispiel für ein komplexes Storyboard
 
-Ein komplexes Beispiel die Arbeit mit Storyboards in einer Xamarin.Mac-app, finden Sie unter den [SourceWriter-Beispiel-App](https://developer.xamarin.com/samples/mac/SourceWriter/). SourceWriter ist ein einfacher Quellcode-Editor, der Unterstützung für die Codevervollständigung und die einfache Syntaxhervorhebung bietet.
+Ein komplexes Beispiel für das Arbeiten mit Storyboards in einer xamarin. Mac-app finden Sie in der [sourcewriter-Beispiel-App](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter). SourceWriter ist ein einfacher Quellcode-Editor, der Unterstützung für die Codevervollständigung und die einfache Syntaxhervorhebung bietet.
 
 Der SourceWriter-Code wurde vollständig kommentiert und es wurden, wenn möglich, Links der Schlüsseltechnologien und -methoden zu wichtigen Informationen in den Leitfäden der Xamarin.Mac-Dokumentation bereitgestellt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacStoryboard (Beispiel)](https://developer.xamarin.com/samples/mac/MacStoryboard/)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Arbeiten mit Windows](~/mac/user-interface/window.md)
 - [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

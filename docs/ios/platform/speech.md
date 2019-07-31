@@ -1,140 +1,140 @@
 ---
-title: Spracherkennung in Xamarin.iOS
-description: Dieser Artikel stellt die neue Spracheingabe-API und zeigt, wie sie in einer Xamarin.iOS-app fortlaufende Spracherkennung unterstützen und Spracherkennung (von Livedaten oder aufgezeichnete Audiodatenströme) in Text zu transkribieren implementieren.
+title: Spracherkennung in xamarin. IOS
+description: In diesem Artikel wird die neue Speech-API vorgestellt und gezeigt, wie Sie Sie in einer xamarin. IOS-App implementieren, um die fortlaufende Spracherkennung und die Sprachaufzeichnung (aus Live-oder aufgezeichneten Audiodatenströmen) in Text zu unterstützen.
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 8af7474036eb0fd6e2236cf52e96b8d12c8bc44e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: fe871985700c5a40db2736ded78588b0b7d4f616
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865704"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655387"
 ---
-# <a name="speech-recognition-in-xamarinios"></a>Spracherkennung in Xamarin.iOS
+# <a name="speech-recognition-in-xamarinios"></a>Spracherkennung in xamarin. IOS
 
-_Dieser Artikel stellt die neue Spracheingabe-API und zeigt, wie sie in einer Xamarin.iOS-app fortlaufende Spracherkennung unterstützen und Spracherkennung (von Livedaten oder aufgezeichnete Audiodatenströme) in Text zu transkribieren implementieren._
+_In diesem Artikel wird die neue Speech-API vorgestellt und gezeigt, wie Sie Sie in einer xamarin. IOS-App implementieren, um die fortlaufende Spracherkennung und die Sprachaufzeichnung (aus Live-oder aufgezeichneten Audiodatenströmen) in Text zu unterstützen._
 
-Neue auf iOS 10, Version Apple hat der Spracheingabe-API, die eine iOS-app fortlaufende Spracherkennung unterstützen und transkribieren Speech (von Livedaten oder aufgezeichnete Audiodatenströme) in Text ermöglicht.
+Neu bei IOS 10 hat Apple die Spracherkennungs-API freigegeben, mit der eine IOS-App fortlaufende sprach Erkennungs-und transkribiersprache (aus Live-oder aufgezeichneten Audiodatenströmen) in Text unterstützt.
 
-Gemäß den Apple hat der Spracheingabe-API die folgenden Features und Vorteile:
+Gemäß Apple hat die Spracherkennungs-API die folgenden Features und Vorteile:
 
-- Äußerst präzise
-- Stand der Technik
-- Einfach zu verwenden
+- Streng genau
+- Der Zustand der Kunst
+- Leicht zu verwenden
 - Fast
 - Unterstützt mehrere Sprachen
-- Benutzerdatenschutz Hinsicht
+- Respektiert den Benutzer Datenschutz
 
 ## <a name="how-speech-recognition-works"></a>Funktionsweise der Spracherkennung
 
-Spracherkennung wird in einer iOS-app implementiert, durch das Erfassen von live oder aufgezeichnete Audio (in einem der gesprochene Sprachen, die die API unterstützt wird) und Übergabe an eine Spracherkennung die Erkennung der eine nur-Text-Transkription der gesprochenen Worte zurückgibt.
+Die Spracherkennung wird in einer IOS-App implementiert, indem entweder Live oder vorab aufgezeichnete Audiodaten (in den von der API unterstützten Sprachen) abgerufen und an eine Spracherkennung übergeben werden, die eine klar Text Aufzeichnung der gesprochenen Wörter zurückgibt.
 
 [![](speech-images/speech01.png "Funktionsweise der Spracherkennung")](speech-images/speech01.png#lightbox)
 
-### <a name="keyboard-dictation"></a>Tastaturdiktierfunktion
+### <a name="keyboard-dictation"></a>Tastatur Diktat
 
-Wenn die meisten Benutzer der Spracherkennung auf iOS-Geräten denken, betrachten sie integrierte Sprach-Assistenten Siri, die zusammen mit Tastaturdiktierfunktion IOS 5, mit dem iPhone 4 s veröffentlicht wurde.
+Wenn die meisten Benutzer die Spracherkennung auf einem IOS-Gerät vorstellen, stellen Sie sich den integrierten Siri-sprach-Assistenten vor, der zusammen mit der Tastatur Diktat Erstellung in ios 5 mit dem iPhone 4S freigegeben wurde.
 
-Tastaturdiktierfunktion wird unterstützt durch beliebige Elemente der Benutzeroberfläche, die TextKit unterstützt (z. B. `UITextField` oder `UITextArea`) und durch den Benutzer, die Sie auf die Schaltfläche Spracheingaben (direkt auf der linken Seite der LEERTASTE) auf der virtuellen iOS-Tastatur aktiviert wird.
+Tastatur Diktat werden von jedem Interface-Element unterstützt, das textkit unterstützt `UITextField` ( `UITextArea`z. b. oder), und es wird durch den Benutzer aktiviert, indem er auf die Schaltfläche "Diktat" (direkt links neben der Leertaste) in der virtuellen IOS-Tastatur klickt.
 
-Apple hat die folgenden Tastaturdiktierfunktion-Statistiken (seit 2011 aufgelistet):
+Apple hat die folgende Tastatur Diktat Statistik veröffentlicht (seit 2011 erfasst):
 
-- Tastaturdiktierfunktion wurde seit vertriebsbeginn IOS 5 häufig verwendet.
-- Ungefähr 65.000 apps pro Tag verwenden.
-- Diktat erfolgt über ein Drittel aller iOS in einer 3rd Party-app verwendet wird.
+- Die Tastatur Diktat wurde häufig verwendet, seit Sie in ios 5 veröffentlicht wurde.
+- Ungefähr 65.000 Apps verwenden Sie pro Tag.
+- In einer Drittanbieter-APP wird ein Drittel aller IOS-Diktat Aktionen ausgeführt.
 
-Tastaturdiktierfunktion ist sehr benutzerfreundlich, da kein Aufwand des Entwicklers Teil, abgesehen von der Verwendung von einem Element der Debuggerbenutzeroberfläche befindet TextKit im Design der Benutzeroberfläche der app erforderlich ist. Tastaturdiktierfunktion verfügt auch über den Vorteil, dass keine Sonderberechtigung Anforderungen aus der app aus, bevor sie verwendet werden kann.
+Die Tastatur Diktat ist äußerst einfach zu verwenden, da es keinen Aufwand für den Entwickler Teil erfordert, außer die Verwendung eines textkit-Schnittstellen Elements im UI-Design der app. Die Tastatur Diktat hat auch den Vorteil, dass keine speziellen Berechtigungsanforderungen von der APP erforderlich sind, bevor Sie verwendet werden können.
 
-Apps, die die neuen Speech Recognition-APIs verwenden müssen besondere Berechtigungen vom Benutzer erteilt werden, da Spracherkennung die Übertragung und die temporäre Speicherung von Daten auf Apple Server erforderlich ist. Informieren Sie sich unsere [Verbesserungen Sicherheit und Datenschutz](~/ios/app-fundamentals/security-privacy.md) Dokumentation.
+Apps, die die neuen Spracherkennungs-APIs verwenden, erfordern spezielle Berechtigungen, die vom Benutzer erteilt werden müssen, da die Spracherkennung die Übertragung und temporäre Speicherung von Daten auf den Servern von Apple erfordert. Ausführliche Informationen finden Sie in unserer Dokumentation zu [Sicherheits-und Datenschutz Erweiterungen](~/ios/app-fundamentals/security-privacy.md) .
 
-Tastaturdiktierfunktion ist, zwar einfach zu implementieren ist es eine Frage mit mehreren Einschränkungen und Nachteile:
+Obwohl die Tastatur Diktat leicht implementiert werden kann, gibt es einige Einschränkungen und Nachteile:
 
-- Sie erfordert die Verwendung von einem Textfeld für die Eingabe und Anzeige der Tastatur.
-- Es funktioniert mit live-Audiodaten nur aus, und die app hat keine Kontrolle über den Prozess der audioaufzeichnung.
-- Es bietet keine Kontrolle über die Sprache, die zum Interpretieren des Benutzers Sprache verwendet wird.
-- Es gibt keine Möglichkeit für die app zu wissen, ob die Schaltfläche mit den Diktatmodus auch für den Benutzer verfügbar ist.
-- Die app kann nicht den audioaufzeichnung Prozess anpassen.
-- Es bietet einen sehr oberflächlichen Satz von Ergebnissen, die Informationen wie z. B. der zeitlichen Steuerung und das Selbstvertrauen, verfügt nicht über.
+- Hierfür müssen ein Text Eingabefeld und die Anzeige einer Tastatur verwendet werden.
+- Es funktioniert nur mit liveaudioeingaben, und die APP hat keine Kontrolle über den audioaufzeichnungs Prozess.
+- Sie bietet keine Kontrolle über die Sprache, die zum Interpretieren der Sprache des Benutzers verwendet wird.
+- Es gibt keine Möglichkeit, dass die APP weiß, ob die Diktat Schaltfläche für den Benutzer überhaupt verfügbar ist.
+- Die APP kann den audioaufzeichnungs Prozess nicht anpassen.
+- Er bietet einen sehr flachen Satz von Ergebnissen, bei denen keine Informationen wie zeitliche Steuerung und Zuverlässigkeit fehlen.
 
-### <a name="speech-recognition-api"></a>API-Spracherkennung
+### <a name="speech-recognition-api"></a>Spracherkennungs-API
 
-Neue Apple hat für iOS 10, der Spracheingabe-API bietet eine leistungsstärkere Möglichkeit für eine iOS-app Spracherkennung zu implementieren. Diese API ist dasjenige, das Apple Siri und Tastaturdiktierfunktion sowohl Power verwendet und kann schnell Aufzeichnung mit modernsten Genauigkeit bereitstellen.
+Neu bei IOS 10 hat Apple die Spracherkennungs-API veröffentlicht, die eine leistungsfähigere Methode für eine IOS-App zur Implementierung der Spracherkennung bereitstellt. Bei dieser API handelt es sich um die gleiche API, die von Apple zur Unterstützung von Siri und Tastatur Diktat verwendet wird, und es ist in der Lage, eine schnelle Aufzeichnung mit dem Zustand der Kunst Genauigkeit bereitzustellen
 
-Die Ergebnisse der Spracheingabe-API sind transparent für die einzelnen Benutzer, ohne die app keine sammeln oder den Zugriff auf private Daten angepasst.
+Die von der Spracherkennungs-API bereitgestellten Ergebnisse werden transparent an die einzelnen Benutzer angepasst, ohne dass die APP private Benutzerdaten erfassen oder darauf zugreifen muss.
 
-Der Spracheingabe-API stellt die Ergebnisse zurück an die aufrufende Anwendung in nahezu Echtzeit, wie der Benutzer spricht, und Weitere Informationen zu den Ergebnissen der Übersetzung als nur-Text bietet bereit. Dazu gehören:
+Die Spracherkennungs-API liefert die Ergebnisse der aufrufenden App nahezu in Echtzeit zurück, wenn der Benutzer spricht, und er bietet weitere Informationen über die Ergebnisse der Übersetzung als nur Text. Dazu gehören:
 
-- Mehrere Interpretationen verfügen, der der Benutzer als bezeichnet.
-- Vertrauensgrade für die einzelnen Übersetzungen.
+- Mehrere Interpretationen der Aussagen des Benutzers.
+- Vertrauens Ebenen für die einzelnen Übersetzungen.
 - Informationen zur zeitlichen Steuerung.
 
 Wie bereits erwähnt, kann Audio für die Übersetzung entweder durch eine live Feed oder von aufgezeichnete Quelle und in über 50 Sprachen und Regionalsprachen von iOS 10 unterstützt bereitgestellt werden.
 
-Der Spracheingabe-API kann verwendet werden, auf allen iOS-Geräten mit iOS 10 und in den meisten Fällen erfordert eine aktive Internetverbindung, da der Großteil der Übersetzungen in Apple Server ausgeführt wird. Allerdings einige neuere iOS-Geräte immer unterstützen, die Übersetzung auf dem Gerät bestimmte Sprachen.
+Die Spracherkennungs-API kann auf allen IOS-Geräten verwendet werden, auf denen IOS 10 ausgeführt wird. in den meisten Fällen ist eine Live-Internetverbindung erforderlich, da der Großteil der Übersetzungen auf den Servern von Apple stattfindet. Das heißt, einige neuere IOS-Geräte unterstützen die Always on-Übersetzung für bestimmte Sprachen.
 
-Apple hat eine Verfügbarkeit-API, um festzustellen, ob eine bestimmte Sprache für Übersetzung zum aktuellen Zeitpunkt verfügbar ist, enthalten. Die app sollte diese API verwenden, anstelle der direkten Internetverbindung selbst testen zu können.
+Apple hat eine Verfügbarkeits-API enthalten, um zu bestimmen, ob eine bestimmte Sprache zum aktuellen Zeitpunkt für die Übersetzung verfügbar ist. Die APP sollte diese API verwenden, anstatt direkt auf die Internet Konnektivität zu testen.
 
-Wie oben im Abschnitt Tastaturdiktierfunktion erwähnt, Spracherkennung erfordert die Übertragung und die temporäre Speicherung von Daten auf Apple Server über das Internet und als solche, die app _müssen_ fordern Sie die Berechtigung des Benutzers ausführen Anerkennung durch Einschließen der `NSSpeechRecognitionUsageDescription` -Schlüssel in der `Info.plist` Datei ab, und rufen die `SFSpeechRecognizer.RequestAuthorization` Methode. 
+Wie oben im Abschnitt "Tastatur Diktat" erwähnt, erfordert die Spracherkennung die Übertragung und temporäre Speicherung von Daten auf Apple-Servern über das Internet. daher _muss_ die APP die Berechtigung des Benutzers zum Durchführen der Erkennung anfordern, indem der `NSSpeechRecognitionUsageDescription` Schlüssel `SFSpeechRecognizer.RequestAuthorization` in der Datei und der Aufruf der-Methode. `Info.plist` 
 
-Auf Grundlage der Quelle für das Audio für die Spracherkennung verwendet wird, weitere Änderungen an der app `Info.plist` Datei ist möglicherweise erforderlich. Informieren Sie sich unsere [Verbesserungen Sicherheit und Datenschutz](~/ios/app-fundamentals/security-privacy.md) Dokumentation.
+Basierend auf der Quelle der Audiodaten, die für die Spracherkennung verwendet werden, sind möglicherweise `Info.plist` andere Änderungen an der Datei der APP erforderlich. Ausführliche Informationen finden Sie in unserer Dokumentation zu [Sicherheits-und Datenschutz Erweiterungen](~/ios/app-fundamentals/security-privacy.md) .
 
-## <a name="adopting-speech-recognition-in-an-app"></a>Übernehmen die Spracherkennung in einer App
+## <a name="adopting-speech-recognition-in-an-app"></a>Anwenden der Spracherkennung in einer APP
 
-Es gibt vier wichtigsten Schritte, die Entwickler durchführen muss, um die Spracherkennung in einer iOS-app zu übernehmen:
+Der Entwickler muss vier wichtige Schritte ausführen, um die Spracherkennung in einer IOS-APP zu übernehmen:
 
-- Geben Sie eine nutzungsbeschreibung der App `Info.plist` Datei mithilfe der `NSSpeechRecognitionUsageDescription` Schlüssel. Für eine Kamera-app kann beispielsweise die folgende Beschreibung _"Dadurch können Sie ein Bild aufnehmen kann, indem Sie einfach das Wort"Cheese"."_
-- Autorisierung anfordern, durch den Aufruf der `SFSpeechRecognizer.RequestAuthorization` Methode, um eine Erklärung zu präsentieren (bereitgestellt, der `NSSpeechRecognitionUsageDescription` Taste oben) warum die app Spracherkennung möchte Anerkennung Zugriff auf den Benutzer in einem Dialogfeld und ermöglicht es ihnen, annehmen oder ablehnen.
-- Erstellen Sie eine Speech Recognition-Anforderung:
-    * Verwenden Sie für aufgezeichnete Audioinhalte auf dem Datenträger, die `SFSpeechURLRecognitionRequest` Klasse.
-    * Verwenden Sie für die live-Audio (oder Audiodaten aus dem Arbeitsspeicher), die `SFSPeechAudioBufferRecognitionRequest` Klasse.
-- Übergeben Sie die Speech Recognition-Anforderung an eine Spracherkennung die Erkennung (`SFSpeechRecognizer`) um Erkennung zu beginnen. Die app kann optional auf die zurückgegebene enthalten `SFSpeechRecognitionTask` überwachen und verfolgen Sie die Erkennungsergebnisse.
+- Geben Sie mithilfe des `Info.plist` `NSSpeechRecognitionUsageDescription` Schlüssels eine Verwendungs Beschreibung in der Datei der APP an. Eine Kamera-APP könnte z. b. die folgende Beschreibung enthalten: _"Dies ermöglicht es Ihnen, ein Foto zu nehmen, indem Sie das Wort" Käse "sagen._
+- Fordern Sie eine Autorisierung `SFSpeechRecognizer.RequestAuthorization` durch Aufrufen der-Methode an, um eine `NSSpeechRecognitionUsageDescription` Erläuterung (im obigen Schlüssel bereitgestellt) anzuzeigen, warum die APP sprach Erkennungs Zugriff auf den Benutzer in einem Dialogfeld wünscht, damit Sie akzeptiert oder abgelehnt werden kann.
+- Erstellen Sie eine sprach Erkennungs Anforderung:
+    * Verwenden Sie für vorab aufgezeichnete Audiodaten auf dem `SFSpeechURLRecognitionRequest` Datenträger die-Klasse.
+    * Verwenden Sie für liveaudiodaten (oder Audiodateien aus dem Arbeits `SFSPeechAudioBufferRecognitionRequest` Speicher) die-Klasse.
+- Übergeben Sie die sprach Erkennungs Anforderung an eine sprach Erkennungsfunktion`SFSpeechRecognizer`(), um die Erkennung zu beginnen. Die APP kann optional auf dem zurückgegebenen `SFSpeechRecognitionTask` enthalten, um die Erkennungsergebnisse zu überwachen und zu verfolgen.
 
-Diese Schritte werden weiter unten ausführlich behandelt.
+Diese Schritte werden im folgenden ausführlich beschrieben.
 
-### <a name="providing-a-usage-description"></a>Bereitstellen einer Beschreibung der Verwendung
+### <a name="providing-a-usage-description"></a>Bereitstellen einer Nutzungs Beschreibung
 
-Zu den erforderlichen `NSSpeechRecognitionUsageDescription` -Schlüssel in der `Info.plist` Datei, gehen Sie folgendermaßen vor:
+Gehen Sie folgendermaßen `NSSpeechRecognitionUsageDescription` vor, um `Info.plist` den erforderlichen Schlüssel in der Datei bereitzustellen:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Doppelklicken Sie auf die `Info.plist` Datei, die sie für die Bearbeitung zu öffnen.
-2. Wechseln Sie zu der **Quelle** anzeigen: 
+1. Doppelklicken Sie auf `Info.plist` die Datei, um Sie zur Bearbeitung zu öffnen.
+2. Wechseln Sie zur **Quell** Ansicht: 
 
-    [![](speech-images/speech02.png "Die Datenquellensicht")](speech-images/speech02.png#lightbox)
-3. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Beispiel: 
+    [![](speech-images/speech02.png "Die Quell Ansicht")](speech-images/speech02.png#lightbox)
+3. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` als `String` - **Eigenschaft**für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
 
-    [![](speech-images/speech03.png "Hinzufügen von NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. Wenn die app live audiotranskription durchführen, müssen sie auch eine Nutzungsbeschreibung für Mikrofon. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Beispiel: 
+    [![](speech-images/speech03.png "Nssprachlos erkentionusagedescription wird hinzugefügt")](speech-images/speech03.png#lightbox)
+4. Wenn die APP die Live-Audioaufzeichnung verarbeitet, wird auch eine Beschreibung der Mikrofon Verwendung benötigt. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` als `String` - **Eigenschaft**für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
 
-    [![](speech-images/speech04.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
+    [![](speech-images/speech04.png "Hinzufügen von nsmikrophoneusagedescription")](speech-images/speech04.png#lightbox)
 5. Speichern Sie die Änderungen in der Datei.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Doppelklicken Sie auf die `Info.plist` Datei, die sie für die Bearbeitung zu öffnen.
-2. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Beispiel: 
+1. Doppelklicken Sie auf `Info.plist` die Datei, um Sie zur Bearbeitung zu öffnen.
+2. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` als `String` - **Eigenschaft**für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
 
-    [![](speech-images/speech03w.png "Hinzufügen von NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
-3. Wenn die app live audiotranskription durchführen, müssen sie auch eine Nutzungsbeschreibung für Mikrofon. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` für die **Eigenschaft**, `String` für die **Typ** und **Nutzungsbeschreibung** als die **Wert**. Beispiel: 
+    [![](speech-images/speech03w.png "Nssprachlos erkentionusagedescription wird hinzugefügt")](speech-images/speech03w.png#lightbox)
+3. Wenn die APP die Live-Audioaufzeichnung verarbeitet, wird auch eine Beschreibung der Mikrofon Verwendung benötigt. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` als `String` - **Eigenschaft**für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
 
-    [![](speech-images/speech04w.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
+    [![](speech-images/speech04w.png "Hinzufügen von nsmikrophoneusagedescription")](speech-images/speech04w.png#lightbox)
 4. Speichern Sie die Änderungen in der Datei.
 
 -----
 
 > [!IMPORTANT]
-> Geben Sie entweder die oben genannten Schritte nicht `Info.plist` Schlüssel (`NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription`) kann dazu führen, die app, die Fehler ohne Warnung, wenn Sie versuchen, auf die Spracherkennung oder das Mikrofon für live-Audio.
+> Wenn Sie keinen der oben genannten `Info.plist` Schlüssel (`NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription`) bereitstellen, kann dies dazu führen, dass die APP ohne Warnung fehlschlägt, wenn Sie versuchen, auf die Spracherkennung oder das Mikrofon für liveaudiodaten zuzugreifen.
 
 
 
 
-### <a name="requesting-authorization"></a>Eine Autorisierung anfordert
+### <a name="requesting-authorization"></a>Anfordern der Autorisierung
 
-Um die erforderliche Autorisierung anzufordern, die in der app auf die Spracherkennung zugreifen können, bearbeiten Sie die wichtigsten View Controller-Klasse, und fügen Sie den folgenden Code hinzu:
+Um die erforderliche Benutzer Autorisierung anzufordern, die der APP den Zugriff auf die Spracherkennung ermöglicht, bearbeiten Sie die Main View Controller-Klasse, und fügen Sie den folgenden Code hinzu:
 
 ```csharp
 using System;
@@ -181,16 +181,16 @@ namespace MonkeyTalk
 }
 ```
 
-Die `RequestAuthorization` -Methode der der `SFSpeechRecognizer` Klasse anfordert, der Benutzer zum Zugriff Spracherkennung mithilfe des Grunds, die in der Entwickler bereitgestellt der `NSSpeechRecognitionUsageDescription` Schlüssel, der die `Info.plist` Datei.
+Die `RequestAuthorization` -Methode `SFSpeechRecognizer` der-Klasse fordert vom Benutzer die Berechtigung für den Zugriff auf die Spracherkennung mit dem Grund an, den `NSSpeechRecognitionUsageDescription` der Entwickler `Info.plist` im Schlüssel der Datei bereitgestellt hat.
 
-Ein `SFSpeechRecognizerAuthorizationStatus` Ergebnis wird zurückgegeben, um die `RequestAuthorization` Methode Rückrufroutine, die verwendet werden kann, eine Aktion basierend auf die Berechtigung des Benutzers. 
+Ein `SFSpeechRecognizerAuthorizationStatus` Ergebnis wird an die Rückruf `RequestAuthorization` Routine der Methode zurückgegeben, die verwendet werden kann, um auf der Grundlage der Benutzer Berechtigung Aktionen auszuführen. 
 
 > [!IMPORTANT]
-> Apple empfiehlt warten, bis der Benutzer eine Aktion in der app, die Spracherkennung muss gestartet wurde, bevor Sie diese Berechtigung anfordern.
+> Apple schlägt vor, bis der Benutzer eine Aktion in der APP gestartet hat, die Spracherkennung erfordert, bevor Sie diese Berechtigung anfordern.
 
-### <a name="recognizing-pre-recorded-speech"></a>Aufgezeichnete Sprache erkennen
+### <a name="recognizing-pre-recorded-speech"></a>Erkennen von voraufgezeichneten Spracheingaben
 
-Wenn möchte, dass die app Spracherkennung aus einer zuvor erstelltem WAV- oder MP3-Datei zu erkennen, können sie den folgenden Code:
+Wenn die APP Sprache aus einer vorab aufgezeichneten WAV-oder MP3-Datei erkennen will, kann Sie den folgenden Code verwenden:
 
 ```csharp
 using System;
@@ -233,17 +233,17 @@ public void RecognizeFile (NSUrl url)
 }
 ```
 
-Betrachten diesen Code im Detail, zuerst versucht wird, erstellen Sie eine Spracherkennung (`SFSpeechRecognizer`). Wenn die Standardsprache für die Spracherkennung, nicht unterstützt wird `null` wird zurückgegeben, und die Funktionen wird beendet.
+Wenn Sie diesen Code ausführlich betrachten, versucht er zunächst, eine Spracherkennung (`SFSpeechRecognizer`) zu erstellen. Wenn die Standardsprache für die Spracherkennung nicht unter `null` stützt wird, wird zurückgegeben, und die Funktionen werden beendet.
 
-Wenn die freigegebene Spracherkennung. verfügbar für die Standardsprache ist, wird die app überprüft, um festzustellen, ob sie derzeit für die Verwendung von Erkennung verfügbar ist die `Available` Eigenschaft. Z. B. Erkennung möglicherweise nicht verfügbar, wenn das Gerät nicht über eine aktive Internetverbindung verfügt.
+Wenn die Spracherkennung für die Standardsprache verfügbar ist, wird von der APP überprüft, ob Sie zurzeit für die Erkennung mithilfe der `Available` -Eigenschaft verfügbar ist. Beispielsweise ist die Erkennung möglicherweise nicht verfügbar, wenn das Gerät nicht über eine aktive Internetverbindung verfügt.
 
-Ein `SFSpeechUrlRecognitionRequest` wird erstellt, aus der `NSUrl` Speicherort der aufgezeichnete Datei auf dem iOS-Gerät, und es wird für die Spracherkennung mit Rückrufroutine übergeben.
+Eine `SFSpeechUrlRecognitionRequest` wird aus dem `NSUrl` Speicherort der vorab aufgezeichneten Datei auf dem IOS-Gerät erstellt und an die Spracherkennung übergeben, damit Sie mit einer Rückruf Routine verarbeitet werden kann.
 
-Wenn der Rückruf aufgerufen wird, wenn die `NSError` ist nicht `null` wurde ein Fehler auf, die verarbeitet werden müssen. Da Spracherkennung inkrementell ausgeführt wird, die Rückrufroutine kann aufgerufen werden mehr als einmal, sodass die `SFSpeechRecognitionResult.Final` Eigenschaft wird getestet, um festzustellen, ob die Übersetzung abgeschlossen ist, und am besten geeignete Version der Übersetzung geschrieben (`BestTranscription`).
+Wenn der Rückruf aufgerufen wird, ist ein `NSError` Fehler `null` aufgetreten, der behandelt werden muss. Da die Spracherkennung inkrementell erfolgt, kann die Rückruf Routine mehrmals aufgerufen werden, damit `SFSpeechRecognitionResult.Final` die-Eigenschaft überprüft wird, ob die Übersetzung abgeschlossen ist und die beste Version der Übersetzung geschrieben`BestTranscription`wird ().
 
-### <a name="recognizing-live-speech"></a>Erkennen von Live-Sprache
+### <a name="recognizing-live-speech"></a>Erkennen von Live Speech
 
-Wenn möchte, dass die app live Sprache zu erkennen, ist der Prozess ähnelt aufgezeichnete Sprache erkennen. Beispiel:
+Wenn die APP Live Speech erkennen möchte, ist der Prozess sehr ähnlich wie die Erkennung vorab aufgezeichneter Spracheingaben. Beispiel:
 
 ```csharp
 using System;
@@ -311,7 +311,7 @@ public void CancelRecording ()
 }
 ```
 
-Betrachten diesen Code im Detail, erstellt es etliche private Variablen, um den Erkennungsvorgang zu behandeln:
+Wenn Sie diesen Code ausführlich betrachten, werden mehrere private Variablen erstellt, um den Erkennungsprozess zu behandeln:
 
 ```csharp
 private AVAudioEngine AudioEngine = new AVAudioEngine ();
@@ -320,7 +320,7 @@ private SFSpeechAudioBufferRecognitionRequest LiveSpeechRequest = new SFSpeechAu
 private SFSpeechRecognitionTask RecognitionTask;
 ```
 
-AV-Foundation verwendet, um Audio aufzeichnen, die zum übergeben werden eine `SFSpeechAudioBufferRecognitionRequest` zur Verarbeitung der Anforderung verwendet:
+Es verwendet die AV Foundation zum Aufzeichnen von Audiodaten, die an `SFSpeechAudioBufferRecognitionRequest` einen zur Verarbeitung der Erkennungs Anforderung übermittelt werden:
 
 ```csharp
 var node = AudioEngine.InputNode;
@@ -331,7 +331,7 @@ node.InstallTapOnBus (0, 1024, recordingFormat, (AVAudioPcmBuffer buffer, AVAudi
 });
 ```
 
-Die app versucht, starten Sie die Aufzeichnung, und alle Fehler werden behandelt, wenn die Aufzeichnung nicht gestartet werden kann:
+Die APP versucht, die Aufzeichnung zu starten, und alle Fehler werden behandelt, wenn die Aufzeichnung nicht gestartet werden kann:
 
 ```csharp
 AudioEngine.Prepare ();
@@ -346,7 +346,7 @@ if (error != null) {
 }
 ```
 
-Die Erkennung Aufgabe gestartet wird und ein Handle an die Aufgabe verwendet wird (`SFSpeechRecognitionTask`):
+Die Erkennungs Aufgabe wird gestartet, und ein Handle wird an die Erkennungs Aufgabe (`SFSpeechRecognitionTask`) beibehalten:
 
 ```csharp
 RecognitionTask = SpeechRecognizer.GetRecognitionTask (LiveSpeechRequest, (SFSpeechRecognitionResult result, NSError err) => {
@@ -354,53 +354,53 @@ RecognitionTask = SpeechRecognizer.GetRecognitionTask (LiveSpeechRequest, (SFSpe
 });
 ```
 
-Der Rückruf wird in ähnlicher Weise wie höher aufgezeichnete Spracherkennung verwendet verwendet.
+Der Rückruf wird in ähnlicher Weise verwendet wie der oben aufgezeichnete sprach Abruf.
 
-Wenn vom Benutzer Aufzeichnung gestoppt wird, werden sowohl die Audio-Engine als auch die Speech Recognition Anforderung informiert:
+Wenn die Aufzeichnung vom Benutzer angehalten wird, werden sowohl die Audioengine als auch die sprach Erkennungs Anforderung informiert:
 
 ```csharp
 AudioEngine.Stop ();
 LiveSpeechRequest.EndAudio ();
 ```
 
-Wenn der Benutzer die Anerkennung abbricht, werden die Audio-Engine und die Erkennung informiert:
+Wenn der Benutzer die Erkennung abbricht, werden die Audioengine und die Erkennungs Aufgabe informiert:
 
 ```csharp
 AudioEngine.Stop ();
 RecognitionTask.Cancel ();
 ```
 
-Es ist wichtig, rufen Sie `RecognitionTask.Cancel` , wenn der Benutzer, die Übersetzung abbricht in die Arbeitsspeicher- und des geräteprozessors freizugeben.
+Es ist wichtig, dass `RecognitionTask.Cancel` aufgerufen wird, wenn der Benutzer die Übersetzung abbricht, um sowohl Speicher als auch den Prozessor des Geräts freizugeben.
 
 > [!IMPORTANT]
-> Fehler beim Bereitstellen der `NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription` `Info.plist` Schlüssel können dazu führen, die app, die Fehler ohne Warnung, wenn Sie versuchen, auf die Spracherkennung oder das Mikrofon für live-Audio (`var node = AudioEngine.InputNode;`). Informieren Sie sich die **Bereitstellen einer Beschreibung der Verwendung** Abschnitt Weitere Informationen.
+> Wenn Sie die `NSSpeechRecognitionUsageDescription` -oder `NSMicrophoneUsageDescription` `Info.plist` -Schlüssel nicht bereitstellen, kann dies dazu führen, dass die APP ohne Warnung fehlschlägt, wenn Sie versuchen,`var node = AudioEngine.InputNode;`auf die Spracherkennung oder das Mikrofon für Livedaten zuzugreifen Weitere Informationen finden Sie im obigen Abschnitt **Bereitstellen einer Verwendungs Beschreibung** .
 
-## <a name="speech-recognition-limits"></a>Speech Recognition-Grenzwerte
+## <a name="speech-recognition-limits"></a>Grenzen der Spracherkennung
 
-Apple gelten die folgenden Einschränkungen bei der Verwendung der Spracherkennung in einer iOS-app:
+Apple erzwingt bei der Arbeit mit der Spracherkennung in einer IOS-APP die folgenden Einschränkungen:
 
-- Spracherkennung ist kostenlos für alle apps, aber die Verwendung ist nicht unbegrenzt:
-    - Einzelne iOS-Geräte haben eine begrenzte Anzahl von Erkennungsvorgänge, die pro Tag ausgeführt werden können.
-    - Apps werden global pro Anforderung pro Tag gedrosselt.
-- Die app muss vorbereitet sein, um Netzwerkverbindung für die Spracherkennung verwendet und Nutzung Rate-Limit-Fehler zu behandeln.
-- Spracherkennung kann hohe Kosten in akkuentleerung und hoher Netzwerkdatenverkehr auf iOS-Gerät des Benutzers aus diesem Grund, Apple unterstützt maximal strikte audio-Dauer ungefähr eine Minute Spracheingabe max.
+- Die Spracherkennung ist für alle apps kostenlos, aber Ihre Nutzung ist nicht unbegrenzt:
+    - Einzelne IOS-Geräte verfügen über eine begrenzte Anzahl von erkenungen, die pro Tag ausgeführt werden können.
+    - Apps werden pro Tag Global gedrosselt.
+- Die APP muss für die Behandlung von Fehlern bei der sprach Erkennungs Netzwerkverbindung und bei Verwendungsraten Limits vorbereitet sein.
+- Die Spracherkennung kann sowohl für den Akku-als auch für den hohen Netzwerkverkehr auf dem IOS-Gerät des Benutzers einen hohen Kostenaufwand haben. daher erzwingt Apple eine strikte Audiodauer von ungefähr einer Minute sprach Maximum.
 
-Wenn eine app regelmäßig die Einschränkung der Bitrate Grenzwerte erreicht, fordert Apple an, dass der Entwickler an diesen Partner wenden.
+Wenn eine APP regelmäßig die Grenzwerte für die Raten Drosselung trifft, fordert Apple Sie dazu auf, Sie zu kontaktieren.
 
-## <a name="privacy-and-usability-considerations"></a>Datenschutz und Benutzerfreundlichkeit Überlegungen
+## <a name="privacy-and-usability-considerations"></a>Überlegungen zum Datenschutz
 
-Apple hat den folgenden Vorschlag für transparent und der Rücksichtnahme auf die Privatsphäre des Benutzers bei der Spracherkennung in einer iOS-app einschließen:
+Apple hat den folgenden Vorschlag, um transparent zu sein und den Datenschutz des Benutzers beim einschließen der Spracherkennung in eine IOS-APP zu berücksichtigen:
 
-- Bei der Aufzeichnung des Benutzers Spracherkennung, achten Sie darauf, dass Sie eindeutig anzugeben, dass die Aufzeichnung in der app-Benutzeroberfläche durchgeführt wird. Die app könnte z. B. eine "Aufzeichnen" sound wiedergeben und aufzeichnen Indikator anzeigen.
-- Verwenden Sie nicht die Spracherkennung für vertrauliche Benutzerinformationen wie Kennwörter, Daten oder Finanzdaten.
-- Anzeigen der Ergebnisse bei der _vor_ , die auf diese. Dies bietet nicht nur Feedback, was die app macht, aber ermöglicht dem Benutzer, der Anerkennung Fehler zu behandeln, wie sie gemacht werden.
+- Wenn Sie die Sprache des Benutzers aufzeichnen, stellen Sie sicher, dass die Aufzeichnung in der Benutzeroberfläche der APP stattfindet. So kann die APP beispielsweise einen Sound "Aufzeichnung" Abspielen und einen Aufzeichnungs Indikator anzeigen.
+- Verwenden Sie die Spracherkennung nicht für sensible Benutzerinformationen wie Kenn Wörter, Integritäts Daten oder Finanzinformationen.
+- Zeigen Sie die Erkennungsergebnisse an, _bevor_ Sie Sie ausführen. Dadurch erhalten Sie nicht nur Feedback, wie die app ausgeführt wird, sondern ermöglicht es dem Benutzer, Erkennungs Fehler zu behandeln, sobald sie auftreten.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel verfügt über die neuen Spracheingabe-API angezeigt und wurde gezeigt, wie sie in einer Xamarin.iOS-app fortlaufende Spracherkennung unterstützen und Spracherkennung (von Livedaten oder aufgezeichnete Audiodatenströme) in Text zu transkribieren implementieren. 
+In diesem Artikel wurde die neue Speech-API vorgestellt und gezeigt, wie Sie Sie in einer xamarin. IOS-App implementieren, um fortlaufende Spracherkennung und transcriwriter (aus Live-oder aufgezeichneten Audiodatenströmen) in Text zu unterstützen. 
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SpeakToMe (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios10/SpeakToMe/)
+- [Speaktome (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-speaktome)

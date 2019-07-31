@@ -1,5 +1,5 @@
 ---
-title: Suchen von Daten mit Azure Search und Xamarin.Forms
+title: Daten mit Azure Search und xamarin. Forms suchen
 description: In diesem Artikel veranschaulicht, wie die Bibliothek für Microsoft Azure Search, um Azure Search in einer Xamarin.Forms-Anwendung zu integrieren.
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 0ecb546cfb657aa138f05ade64354eb46380e9ab
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: d13246ddae3f505d04db2a866f785a9f60ce3979
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658637"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652045"
 ---
-# <a name="search-data-with-azure-search-and-xamarinforms"></a>Suchen von Daten mit Azure Search und Xamarin.Forms
+# <a name="search-data-with-azure-search-and-xamarinforms"></a>Daten mit Azure Search und xamarin. Forms suchen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Azure Search ist ein Clouddienst zur indizierungs- und Abfragefunktionen für hochgeladene Daten. Dies entfernt die Anforderungen an die Infrastruktur und die Suche Algorithmus Komplexitäten, die normalerweise bei der Implementierung von Suchfunktionen in einer Anwendung verknüpft ist. In diesem Artikel veranschaulicht, wie die Bibliothek für Microsoft Azure Search, um Azure Search in einer Xamarin.Forms-Anwendung zu integrieren._
 
@@ -279,6 +279,6 @@ In diesem Artikel wurde veranschaulicht, wie die Microsoft Azure Search-Biblioth
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Azure Search (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
+- [Azure Search (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 - [Azure Search-Dokumentation](/azure/search/)
 - [Microsoft Azure Search-Bibliothek](https://www.nuget.org/packages/Microsoft.Azure.Search/)

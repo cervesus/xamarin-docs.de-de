@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 93218289cefe26c523bf14721202f7ec4743f022
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 21d25315aec5c056df90da11b8a51ee1493a45a5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659077"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656685"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Dateiverarbeitung in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 _Die Dateiverarbeitung mit Xamarin.Forms kann mit Code in einer .NET Standard-Bibliothek oder mithilfe eingebetteter Ressourcen erfolgen._
 
@@ -87,7 +87,7 @@ using (var reader = new System.IO.StreamReader (stream)) {
 }
 ```
 
-Die `text`-Variable kann anschließend verwendet werden, um den Text darzustellen. Sie können Sie jedoch auch im Code verwenden. Dieser Screenshot der [Beispiel-App](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/) veranschaulicht den Text, der in einem `Label`-Steuerelement gerendert wird.
+Die `text`-Variable kann anschließend verwendet werden, um den Text darzustellen. Sie können Sie jedoch auch im Code verwenden. Dieser Screenshot der [Beispiel-App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles) veranschaulicht den Text, der in einem `Label`-Steuerelement gerendert wird.
 
  [![In PCL eingebettete Textdatei](files-images/pcltext-sml.png "In PCL eingebettete Textdatei in der App")](files-images/pcltext.png#lightbox "In PCL eingebettete Textdatei in der App")
 
@@ -166,7 +166,7 @@ In diesem Artikel wurden einfache Dateivorgänge für das Speichern und Laden vo
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
+- [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)
 - [Working with the File System in Xamarin.iOS (Arbeiten mit dem Dateisystem in Xamarin.iOS)](~/ios/app-fundamentals/file-system.md)
 

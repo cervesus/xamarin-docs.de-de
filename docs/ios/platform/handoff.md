@@ -1,168 +1,168 @@
 ---
-title: Die Übergabe in Xamarin.iOS
-description: In diesem Artikel behandelt, die Arbeit mit Übergabe in einer Xamarin.iOS-app zum Übertragen von anderen Geräte des Benutzeraktivitäten zwischen apps, die für den Benutzer ausgeführt wird.
+title: Übergabe in xamarin. IOS
+description: In diesem Artikel wird das Arbeiten mit Handoff in einer xamarin. IOS-App behandelt, um Benutzeraktivitäten zwischen apps zu übertragen, die auf den anderen Geräten eines Benutzers ausgeführt werden.
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 084b9924af467459a017413a958ec2e46ff219fc
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 28c5086833ceb1dc8550e513b120f7355aa9bebe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865309"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656576"
 ---
-# <a name="handoff-in-xamarinios"></a>Die Übergabe in Xamarin.iOS
+# <a name="handoff-in-xamarinios"></a>Übergabe in xamarin. IOS
 
-_In diesem Artikel behandelt, die Arbeit mit Übergabe in einer Xamarin.iOS-app zum Übertragen von anderen Geräte des Benutzeraktivitäten zwischen apps, die für den Benutzer ausgeführt wird._
+_In diesem Artikel wird das Arbeiten mit Handoff in einer xamarin. IOS-App behandelt, um Benutzeraktivitäten zwischen apps zu übertragen, die auf den anderen Geräten eines Benutzers ausgeführt werden._
 
-Apple führte Übergabe in iOS 8 und OS X Yosemite (10.10), geben Sie einen allgemeinen Mechanismus für den Benutzer zum Übertragen von Aktivitäten, die Schritte auf einem ihrer Geräte, auf ein anderes Gerät mit der gleichen app oder einer anderen app, die von der gleichen Aktivität unterstützt.
+Apple hat die Übergabe in ios 8 und OS X Yosemite (10,10) eingeführt, um dem Benutzer einen allgemeinen Mechanismus zum Übertragen von Aktivitäten zu ermöglichen, die auf einem seiner Geräte gestartet werden, auf ein anderes Gerät, auf dem dieselbe APP oder eine andere app ausgeführt wird, die dieselbe Aktivität unterstützt.
 
-[![](handoff-images/handoff02.png "Ein Beispiel für eine Übergabe-Operation")](handoff-images/handoff02.png#lightbox)
+[![](handoff-images/handoff02.png "Ein Beispiel für das Ausführen eines Handoff-Vorgangs.")](handoff-images/handoff02.png#lightbox)
 
-In diesem Artikel übernimmt einen kurzen Blick auf die Aktivität, die Freigabe in einer Xamarin.iOS-app aktivieren und das Framework Handoff ausführlich behandelt:
+In diesem Artikel wird kurz darauf eingegangen, wie Sie die Aktivitäts Freigabe in einer xamarin. IOS-App aktivieren und das Handoff-Framework ausführlich behandeln:
 
-## <a name="about-handoff"></a>Informationen zu Übergabeanimationen
+## <a name="about-handoff"></a>Informationen über die Übergabe
 
-Übergabe (auch bekannt als Geschäftskontinuität) wurde von Apple iOS 8 und OS X Yosemite (10.10) als eine Möglichkeit für den Benutzer an eine Aktivität eines ihrer Geräte (IOS- oder Mac) beginnen, und weiterhin diese gleichen Aktivität auf einem anderen Geräte (wie anhand des Benutzers iClou identifiziert eingeführt. (d Konto).
+Die Übergabe (auch als Kontinuität bezeichnet) wurde von Apple in ios 8 und OS X Yosemite (10,10) eingeführt, sodass der Benutzer eine Aktivität auf einem Ihrer Geräte (IOS oder Mac) starten und dieselbe Aktivität auf einem anderen Gerät (wie durch die iclou des Benutzers identifiziert) fortsetzen kann. d-Konto).
 
-Übergabe wurde in den iOS 9, um neue, unterstützen auch erweiterte Suchfunktionen erweitert. Weitere Informationen finden Sie unserem [Verbesserungen bei der Suche](~/ios/platform/search/index.md) Dokumentation.
+Die Übergabe von Handoff wurde in ios 9 erweitert, um auch neue, erweiterte Suchfunktionen zu unterstützen. Weitere Informationen finden Sie in der Dokumentation zu den [Such Erweiterungen](~/ios/platform/search/index.md) .
 
-Der Benutzer kann z. B. starten eine e-Mail an eigene iPhones und nahtlos fortgesetzt werden die e-Mail-Adresse auf ihren Mac mit der gleichen Nachrichteninformationen aufgefüllt wurden und der Cursor am gleichen Speicherort, der sie es in iOS beibehalten.
+Der Benutzer kann z. b. eine e-Mail auf seinem iPhone starten und die e-Mail nahtlos auf seinem Mac fortsetzen, wobei die gleichen Nachrichten Informationen und der Cursor am gleichen Speicherort wie in ios eingefügt werden.
 
-Eine der apps, die denselben _Team-ID_ sind berechtigt, für die Übergabe verwenden, um Benutzeraktivitäten über apps hinweg fortzusetzen, solange diese app sind entweder über den iTunes App Store übermittelt oder durch ein registrierter Entwickler signierte (für Mac Enterprise oder Ad-hoc-apps).
+Alle apps, die dieselbe _Team-ID_ verwenden, sind für die Verwendung von Handoff zum Fortsetzen von Benutzeraktivitäten in allen apps berechtigt, sofern diese APP entweder über den iTunes App Store übermittelt oder von einem registrierten Entwickler (für Mac-, Enterprise-oder Ad-hoc-Apps) signiert wird.
 
-Alle `NSDocument` oder `UIDocument` basierend apps haben, automatisch Handoff integrierte unterstützen und erfordert nur minimale Änderungen zur Unterstützung der Übergabe.
+Für `NSDocument` alle `UIDocument` Apps oder apps wird automatisch die Handoff-Unterstützung integriert, und es sind nur minimale Änderungen erforderlich, um die Übergabe zu unterstützen.
 
 ### <a name="continuing-user-activities"></a>Fortsetzen von Benutzeraktivitäten
 
-Die `NSUserActivity` Klasse (sowie einige kleine Änderungen an `UIKit` und `AppKit`) bietet Unterstützung für das Definieren eines Benutzers-Aktivität, die möglicherweise weiterhin ausgeführt werden kann, auf einem der anderen Geräte des Benutzers.
+Die `NSUserActivity` -Klasse (zusammen mit einigen kleinen Änderungen `UIKit` an `AppKit`und) bietet Unterstützung für die Definition der Aktivität eines Benutzers, die auf einem der Geräte des Benutzers möglicherweise fortgesetzt werden kann.
 
-Eine Aktivität an einem der anderen Geräte des Benutzers übergeben werden, müssen sie in einer Instanz gekapselt werden `NSUserActivity`, außer die _aktuelle Aktivität_, dessen Nutzlast festgelegt (die Daten verwendet, um die Fortsetzung auszuführen) und die Aktivität muss dann für das Gerät übertragen werden.
+Damit eine Aktivität an eine andere Geräte der Benutzer übertragen werden kann, muss Sie in einer Instanz `NSUserActivity`gekapselt werden, die als _aktuelle Aktivität_gekennzeichnet ist, deren Nutz Last festgelegt ist (die zum Ausführen der Fortsetzung verwendeten Daten), und die Aktivität muss dann wird an dieses Gerät übertragen.
 
-Übergabe übergibt das absolute Minimum der Informationen, die definieren, der Aktivität, die fortgesetzt werden, mit größeren Datenpakete, die über die iCloud synchronisiert werden.
+Handoff übergibt das Minimum an Informationen, um die fort zufügende Aktivität zu definieren, wobei größere Datenpakete über icloud synchronisiert werden.
 
-Auf dem empfangenden Gerät wird der Benutzer eine Benachrichtigung, dass eine Aktivität für die Fortsetzung verfügbar ist. Bei Einmaliger Betätigung die Aktivität auf das neue Gerät fortsetzen, die angegebene app gestartet wird (sofern nicht bereits ausgeführt wird) und die Nutzlast aus der `NSUserActivity` wird verwendet, um die Aktivität neu zu starten.
+Auf dem empfangenden Gerät erhält der Benutzer eine Benachrichtigung, dass eine Aktivität für die Fortsetzung verfügbar ist. Wenn sich der Benutzer entscheidet, die Aktivität auf dem neuen Gerät fortzusetzen, wird die angegebene App gestartet (wenn Sie nicht bereits ausgeführt wird), `NSUserActivity` und die Nutzlast von wird verwendet, um die Aktivität neu zu starten.
 
-[![](handoff-images/handoffinteractions.png "Einen Überblick über die Benutzeraktivitäten fortsetzen")](handoff-images/handoffinteractions.png#lightbox)
+[![](handoff-images/handoffinteractions.png "Übersicht über das Fortsetzen von Benutzeraktivitäten")](handoff-images/handoffinteractions.png#lightbox)
 
-Nur apps, die Freigabe des gleichen Entwicklers Team-ID von und reagieren auf einen bestimmten _Aktivitätstyp_ kommen für eine Fortsetzung. Eine app definiert die Aktivitätstypen, die sie unter unterstützt die `NSUserActivityTypes` Schlüssel, der die **"Info.plist"** Datei. Deshalb wählt ein Gerät fortsetzen die app, führen Sie die Fortsetzung, die basierend auf der Team-ID, Aktivitätstyp und optional die _Aktivität Titel_.
+Nur apps, die dieselbe Entwickler-Team-ID verwenden und auf einen bestimmten _Aktivitätstyp_ reagieren, sind für die Fortsetzung berechtigt. Eine APP definiert die Aktivitätstypen, die Sie unter dem `NSUserActivityTypes` Schlüssel der zugehörigen **Info. plist** -Datei unterstützt. Wenn dies der Folge ist, wählt ein fortgesetztes Gerät die APP für die Ausführung der Fortsetzung basierend auf der Team-ID, dem Aktivitätstyp und optional dem _Aktivitäts Titel_
 
-Die empfangende app mithilfe von Informationen aus der `NSUserActivity`des `UserInfo` Wörterbuch, das Konfigurieren der Benutzeroberfläche und den Status der angegebenen Aktivität wiederherstellen, sodass der Übergang nahtlos für den Endbenutzer angezeigt wird.
+Die empfangende App verwendet Informationen aus `NSUserActivity`dem `UserInfo` Wörterbuch, um die Benutzeroberfläche zu konfigurieren und den Zustand der angegebenen Aktivität wiederherzustellen, sodass der Übergang nahtlos für den Endbenutzer angezeigt wird.
 
-Wenn die Fortsetzung mehr Informationen als effizient über gesendet werden kann, erfordert eine `NSUserActivity`, das Fortsetzen der app senden einen Aufruf auf die ursprüngliche Anwendung und herstellen eine oder mehrere Datenströme, um die erforderlichen Daten zu übertragen. Z. B. wenn die Aktivität ein großer Text-Dokument mit mehreren Abbildern bearbeitet wurde, ist streaming erforderlich, um die erforderlichen Informationen zum Fortsetzen der Aktivitäts auf dem empfangenden Gerät übertragen. Weitere Informationen finden Sie unter den [unterstützen Fortsetzung Streams](#supporting-continuation-streams) Abschnitt weiter unten.
+Wenn die Fortsetzung mehr Informationen erfordert, als effizient über ein `NSUserActivity`gesendet werden können, kann die fort Setz Ende APP einen-Aufrufvorgang an die ursprüngliche App senden und einen oder mehrere Streams einrichten, um die erforderlichen Daten zu übertragen. Wenn die Aktivität z. b. ein umfangreiches Textdokument mit mehreren Bildern bearbeitet hat, wäre das Streaming erforderlich, um die erforderlichen Informationen zu übertragen, um die Aktivität auf dem empfangenden Gerät fortzusetzen. Weitere Informationen finden Sie weiter unten im Abschnitt [unterstützende Fortsetzungs Datenströme](#supporting-continuation-streams) .
 
-Wie bereits erwähnt, `NSDocument` oder `UIDocument` basierend apps haben, automatisch übergeben, die integrierte Unterstützung. Weitere Informationen finden Sie unter den [unterstützen Übergabe in Dokument-basierten Apps](#supporting-handoff-in-document-based-apps) Abschnitt weiter unten.
+Wie bereits erwähnt, `NSDocument` haben `UIDocument` oder auf Basis von Apps automatisch die Handoff-Unterstützung integriert. Weitere Informationen finden Sie weiter unten [im Abschnitt unterstützende Übergabe in Dokument basierten apps](#supporting-handoff-in-document-based-apps) .
 
-### <a name="the-nsuseractivity-class"></a>Die NSUserActivity-Klasse
+### <a name="the-nsuseractivity-class"></a>Die nsuseractivity-Klasse
 
-Die `NSUserActivity` -Klasse ist das primäre Objekt in einer Exchange Übergabeanimationen und wird verwendet, um den Status der Aktivität eines Benutzers zu kapseln, die für die Fortsetzung verfügbar ist. Instanziieren Sie eine app wird eine Kopie des `NSUserActivity` für jede Aktivität unterstützt und auf einem anderen Gerät fortsetzen möchte. Dokument-Editor wird eine Aktivität für jedes Dokument z. B. als aktuell geöffneten erstellen. Nur der vordersten-Dokument (angezeigt in der vordersten Fenster oder der Registerkarte ") ist jedoch die _aktuelle Aktivität_ und deshalb für die Fortsetzung verfügbar.
+Die `NSUserActivity` -Klasse ist das primäre Objekt in einem Übergabe Austausch und wird verwendet, um den Zustand einer Benutzeraktivität zu kapseln, die für die Fortsetzung verfügbar ist. Eine APP instanziiert eine Kopie von `NSUserActivity` für jede Aktivität, die Sie unterstützt, und möchte auf einem anderen Gerät fortgesetzt werden. Der Dokument-Editor erstellt z. b. eine Aktivität für jedes aktuell geöffnete Dokument. Allerdings ist nur das vorderste Dokument (angezeigt in der Vorderseite oder Registerkarte) die _aktuelle Aktivität_ und ist für die Fortsetzung verfügbar.
 
-Eine Instanz von `NSUserActivity` wird von beiden identifiziert die `ActivityType` und `Title` Eigenschaften. Die `UserInfo` Eigenschaft "Dictionary" wird verwendet, um Informationen über den Status der Aktivität enthalten. Festlegen der `NeedsSave` Eigenschaft, um `true` Wunsch zu verzögerten Laden Sie die Statusinformationen über die `NSUserActivity`des Delegaten. Verwenden der `AddUserInfoEntries` Methode zum Zusammenführen von neuer Daten von anderen Clients in der `UserInfo` Wörterbuch erforderlich, um die Aktivität den Status beizubehalten.
+Eine Instanz von `NSUserActivity` wird durch die `ActivityType` Eigenschaften und `Title` identifiziert. Die `UserInfo` Dictionary-Eigenschaft wird zum Übertragen von Informationen über den Status der Aktivität verwendet. Legen Sie `NeedsSave` die- `true` Eigenschaft auf fest, wenn Sie die Zustandsinformationen mithilfe des `NSUserActivity`-Delegaten verzögert laden möchten. Verwenden Sie `AddUserInfoEntries` die-Methode, um nach Bedarf neue Daten von `UserInfo` anderen Clients in das Wörterbuch zusammenzuführen, um den Status der Aktivität beizubehalten.
 
-### <a name="the-nsuseractivitydelegate-class"></a>Die NSUserActivityDelegate-Klasse
+### <a name="the-nsuseractivitydelegate-class"></a>Die nsuseractivitydelegatklasse
 
-Die `NSUserActivityDelegate` wird verwendet, um Informationen zu halten, einem `NSUserActivity`des `UserInfo` Wörterbuch auf dem neuesten Stand und synchronisiert mit dem aktuellen Status der Aktivität. Wenn das System benötigt die Informationen in der Aktivität aktualisiert werden (z. B. vor der Fortsetzung, die auf einem anderen Gerät), ruft der `UserActivityWillSave` Methode des Delegaten.
+Wird verwendet, um die Informationen in `UserInfo` einem `NSUserActivity`-Wörterbuch auf dem neuesten Stand zu halten und mit dem aktuellen Status der Aktivität synchron zu synchronisieren. `NSUserActivityDelegate` Wenn das System die Informationen in der zu aktualisierenden Aktivität benötigt (z. b. vor der Fortsetzung auf einem `UserActivityWillSave` anderen Gerät), wird die-Methode des-Delegaten aufgerufen.
 
-Sie benötigen zum Implementieren der `UserActivityWillSave` -Methode, und nehmen Sie alle Änderungen an der `NSUserActivity` (wie z. B. `UserInfo`, `Title`usw.) um sicherzustellen, dass es immer noch den Status der aktuellen Aktivität reflektiert. Wenn das System Ruft die `UserActivityWillSave` -Methode, die `NeedsSave` Flag wird gelöscht. Wenn Sie die Eigenschaften der Daten der Aktivität ändern, müssen Sie festlegen `NeedsSave` zu `true` erneut aus.
+Sie müssen die `UserActivityWillSave` -Methode implementieren und Änderungen an der `NSUserActivity` vornehmen (z `UserInfo`. b., `Title`usw.), um sicherzustellen, dass der Status der aktuellen Aktivität weiterhin angezeigt wird. Wenn das System die `UserActivityWillSave` -Methode aufruft, wird das `NeedsSave` -Flag gelöscht. Wenn Sie die Daten Eigenschaften der Aktivität ändern, müssen Sie erneut auf `NeedsSave` `true` festlegen.
 
-Anstatt die `UserActivityWillSave` Methode, die oben aufgeführten, Sie können optional haben `UIKit` oder `AppKit` automatisch, die Aktivitäten von Benutzern zu verwalten. Zu diesem Zweck legen Sie den Beantworter des Objekts `UserActivity` -Eigenschaft und Implementieren der `UpdateUserActivityState` Methode. Finden Sie unter den [unterstützen Übergabe in Responder](#supporting-handoff-in-responders) Informationen weiter unten im Abschnitt.
+Anstatt die `UserActivityWillSave` oben dargestellte Methode zu verwenden, können Sie die Benutzer `AppKit` Aktivität `UIKit` optional auch automatisch verwalten. Legen Sie hierzu die-Eigenschaft des Beantworter- `UserActivity` Objekts fest, und `UpdateUserActivityState` implementieren Sie die-Methode. Weitere Informationen finden Sie weiter unten [im Abschnitt unterstützende Handoff in Responders](#supporting-handoff-in-responders) .
 
-### <a name="app-framework-support"></a>App-Framework-Unterstützung
+### <a name="app-framework-support"></a>App Framework-Unterstützung
 
-Beide `UIKit` (iOS) und `AppKit` (OS X) bieten integrierte Unterstützung für die Übergabe in die `NSDocument`, Responder (`UIResponder`/`NSResponder`), und `AppDelegate` Klassen. Während jedes Betriebssystem Handoff etwas anders implementiert, sind der grundlegende Mechanismus und die APIs identisch.
+Sowohl `UIKit` (IOS) als `AppKit` auch (OS X) bieten integrierte Unterstützung für die Übergabe in den `NSDocument`Klassen, Responder`UIResponder`(/`NSResponder`) und `AppDelegate` . Obwohl jedes Betriebssystem die Übergabe etwas anders implementiert, sind der grundlegende Mechanismus und die APIs identisch.
 
-#### <a name="user-activities-in-document-based-apps"></a>Benutzeraktivitäten in Dokument-basierten Apps
+#### <a name="user-activities-in-document-based-apps"></a>Benutzeraktivitäten in Dokument basierten apps
 
-Dokumentbasierte IOS- und OS X-apps haben automatisch integrierte Handoff-Unterstützung. Um diese Unterstützung zu aktivieren, müssen Sie zum Hinzufügen einer `NSUbiquitousDocumentUserActivityType` Schlüssel und Wert für die einzelnen `CFBundleDocumentTypes` Eintrag in der app **"Info.plist"** Datei.
+Für Dokument basierte IOS-und OS X-Apps ist die automatische Übergabe Unterstützung integriert. Um diese Unterstützung zu aktivieren, müssen Sie einen `NSUbiquitousDocumentUserActivityType` Schlüssel und Wert für jeden `CFBundleDocumentTypes` Eintrag in der **Info. plist** -Datei der APP hinzufügen.
 
-Wenn dieser Schlüssel vorhanden ist, ist sowohl `NSDocument` und `UIDocument` automatisch `NSUserActivity` -Instanzen für die iCloud-basierten Dokumenten des angegebenen Typs. Sie müssen einen Aktivitätstyp für jeden Typ von Dokument bereitgestellt wird, die app unterstützt, und mehrere Dokumenttypen können den gleichen Aktivitätstyp verwenden. Beide `NSDocument` und `UIDocument` automatisch Auffüllen der `UserInfo` Eigenschaft der `NSUserActivity` mit ihre `FileURL` Eigenschaftswert.
+Wenn dieser Schlüssel vorhanden ist, `NSDocument` erstellen `NSUserActivity` und `UIDocument` automatisch Instanzen für icloud-basierte Dokumente des angegebenen Typs. Sie müssen für jeden Dokumenttyp, der von der App unterstützt wird, einen Aktivitätstyp bereitstellen, und mehrere Dokumenttypen können denselben Aktivitätstyp verwenden. `NSUserActivity` `FileURL` Und füllen die -`UserInfo` Eigenschaft von automatisch mit dem Wert ihrer Eigenschaft auf. `UIDocument` `NSDocument`
 
-Auf OS X die `NSUserActivity` von verwalteten `AppKit` und Responder automatisch zugeordnet werden Sie die aktuelle Aktivität aus, wenn das Fenster des Dokuments im Hauptfenster wird. Unter iOS für `NSUserActivity` vom verwalteten Objekte `UIKit`, müssen Sie entweder Aufruf `BecomeCurrent` Methode explizit oder des Dokuments `UserActivity` -Eigenschaftensatz am ein `UIViewController` Wenn die app stammt, in den Vordergrund gestellt.
+Unter OS X werden die `NSUserActivity` von `AppKit` verwalteten und zugeordneten Responder automatisch zur aktuellen Aktivität, wenn das Fenster des Dokuments zum Hauptfenster wird. Unter IOS müssen Sie `NSUserActivity` für Objekte, `UIKit`die von verwaltet `BecomeCurrent` werden, entweder die-Methode explizit oder die `UserActivity` -Eigenschaft des Dokuments `UIViewController` auf festlegen, wenn die app in den Vordergrund steht.
 
-`AppKit` wird automatisch wiederhergestellt, alle `UserActivity` Eigenschaft, die auf diese Weise unter OS X erstellt. Dies geschieht, wenn die `ContinueUserActivity` Methodenrückgabe `false` oder nicht implementiert ist. In diesem Fall das Dokument geöffnet ist, mit der `OpenDocument` Methode der `NSDocumentController` und sie erhalten dann eine `RestoreUserActivityState` Methodenaufruf.
+`AppKit`alle `UserActivity` Eigenschaften, die auf diese Weise auf OS X erstellt werden, werden von automatisch wieder hergestellt. Dies tritt auf, `ContinueUserActivity` wenn die `false` Methode zurückgibt oder wenn Sie nicht implementiert ist. In dieser Situation wird das Dokument mit der `OpenDocument` `NSDocumentController` -Methode von geöffnet, und es wird dann ein `RestoreUserActivityState` -Methoden Aufrufvorgang empfangen.
 
-Finden Sie unter den [unterstützen Übergabe in Dokument-basierten Apps](#supporting-handoff-in-document-based-apps) Informationen weiter unten im Abschnitt.
+Weitere Informationen finden Sie weiter unten [im Abschnitt unterstützende Übergabe von Dokument basierten apps](#supporting-handoff-in-document-based-apps) .
 
-#### <a name="user-activities-and-responders"></a>Benutzeraktivitäten und Responder
+#### <a name="user-activities-and-responders"></a>Benutzeraktivitäten und-Responder
 
-Beide `UIKit` und `AppKit` kann automatisch eine Benutzeraktivität verwalten, wenn Sie sie als Beantworter Objekt festlegen `UserActivity` Eigenschaft. Wenn der Zustand geändert wurde, müssen Sie festlegen der `NeedsSave` Eigenschaft für des beantworters des `UserActivity` zu `true`. Das System automatisch speichert die `UserActivity` bei Bedarf die Zeit der Beantworter mit dem Status durch den Aufruf aktualisiert joshi, dessen `UpdateUserActivityState` Methode.
+Und können eine Benutzeraktivität automatisch verwalten, wenn Sie Sie als-Eigenschaft eines Beantworter- `UserActivity` Objekts festlegen. `AppKit` `UIKit` Wenn der Zustand geändert wurde, müssen Sie die `NeedsSave` -Eigenschaft des- `UserActivity` Responders auf `true`festlegen. Das System speichert den `UserActivity` ggf. automatisch, nachdem er der Antwortzeit das Aktualisieren des Zustands durch Aufrufen seiner `UpdateUserActivityState` -Methode erteilt hat.
 
-Wenn mehrere Responder einer einzelnen Freigabe `NSUserActivity` -Instanz, die sie erhalten eine `UpdateUserActivityState` Rückruf, wenn das System das Benutzerobjekt der Aktivität aktualisiert. Aufrufen der Antwortdienst muss die `AddUserInfoEntries` -Methode zum Aktualisieren der `NSUserActivity`des `UserInfo` Wörterbuch an diesem Punkt entsprechend den aktuellen Aktivitätsstatus. Die `UserInfo` Wörterbuch deaktiviert ist, vor jedem `UpdateUserActivityState` aufrufen.
+Wenn mehrere Antwort Empfänger eine einzelne `NSUserActivity` Instanz gemeinsam nutzen, erhalten Sie einen `UpdateUserActivityState` Rückruf, wenn das System das Benutzer Aktivitäts Objekt aktualisiert. Der-Beantworter muss die `AddUserInfoEntries` - `UserInfo` Methode aufrufen, um `NSUserActivity`das Wörterbuch zu aktualisieren, um den aktuellen Aktivitäts Zustand an diesem Punkt widerzuspiegeln. Das `UserInfo` Wörterbuch wird vor jedem `UpdateUserActivityState` -Rückruf gelöscht.
 
-Wenn sich aus einer Aktivität trennen möchten, kann ein Antwortdienst Festlegen der `UserActivity` Eigenschaft `null`. Wenn ein app-Framework verwaltet `NSUserActivity` Instanz verfügt über keine weitere zugeordneten Responder oder Dokumente, die automatisch für ungültig erklärt werden kann.
+Um die Zuordnung zu einer Aktivität aufzuheben, kann ein Beantworter seine `UserActivity` -Eigenschaft auf `null`festlegen. Wenn eine verwaltete `NSUserActivity` App Framework-Instanz nicht mehr zugeordnete Responder oder Dokumente enthält, wird Sie automatisch für ungültig erklärt.
 
-Finden Sie unter den [unterstützen Übergabe in Responder](#supporting-handoff-in-responders) Informationen weiter unten im Abschnitt.
+Weitere Informationen finden Sie weiter unten [im Abschnitt unterstützende Handoff in Responders](#supporting-handoff-in-responders) .
 
-#### <a name="user-activities-and-the-appdelegate"></a>Benutzeraktivitäten und appdelegate-Element
+#### <a name="user-activities-and-the-appdelegate"></a>Benutzeraktivitäten und der appdelegat
 
-Ihrer app `AppDelegate` ist der primäre Einstiegspunkt, bei der Verarbeitung einer Fortsetzung übergeben. Wenn der Benutzer reagiert auf eine Übergabe-Benachrichtigung, die entsprechenden app gestartet wird (sofern nicht bereits ausgeführt wird) und die `WillContinueUserActivityWithType` Methode der `AppDelegate` aufgerufen wird. An diesem Punkt sollte die app den Benutzer zu informieren, den die Fortsetzung gestartet wird.
+Der primäre Einstiegs `AppDelegate` Punkt Ihrer APP ist der primäre Einstiegspunkt, wenn eine Übergabe Fortsetzung verarbeitet wird. Wenn der Benutzer auf eine Übergabe Benachrichtigung antwortet, wird die entsprechende App gestartet (wenn Sie nicht bereits ausgeführt wird), `WillContinueUserActivityWithType` und die- `AppDelegate` Methode des wird aufgerufen. An diesem Punkt sollte die APP den Benutzer darüber informieren, dass die Fortsetzung gestartet wird.
 
-Die `NSUserActivity` Instanz wird bereitgestellt, wenn die `AppDelegate`des `ContinueUserActivity` Methode wird aufgerufen. An diesem Punkt sollte die app Benutzeroberfläche konfigurieren und weiterhin die angegebene Aktivität.
+Die `NSUserActivity` -Instanz wird übermittelt `AppDelegate`, `ContinueUserActivity` wenn die-Methode des aufgerufen wird. An diesem Punkt sollten Sie die Benutzeroberfläche der App konfigurieren und die angegebene Aktivität fortsetzen.
 
-Finden Sie unter den [implementieren Handoff](#implementing-handoff) Informationen weiter unten im Abschnitt.
+Weitere Informationen finden Sie weiter unten im Abschnitt [Implementieren von Handoff](#implementing-handoff) .
 
-## <a name="enabling-handoff-in-a-xamarin-app"></a>Aktivieren die Übergabe in einer Xamarin-App
+## <a name="enabling-handoff-in-a-xamarin-app"></a>Aktivieren von "Handoff" in einer xamarin-App
 
-Aufgrund der sicherheitsanforderungen durch Übergabe auferlegt wird muss eine Xamarin.iOS-app, die Übergabe-Framework verwendet, ordnungsgemäß in das Apple Developer Portal und in der Xamarin.iOS-Projektdatei konfiguriert werden.
+Aufgrund der Sicherheitsanforderungen, die durch die Übergabe erzwungen werden, muss eine xamarin. IOS-APP, die das Handoff-Framework verwendet, ordnungsgemäß im Apple-Entwickler Portal und in der xamarin. IOS-Projektdatei konfiguriert werden.
 
 Führen Sie folgende Schritte aus:
 
-1. Melden Sie sich bei der [Apple-Entwicklerportal](https://developer.apple.com).
-2. Klicken Sie auf **Zertifikate, Bezeichner & Profile**.
-3. Wenn Sie dies noch nicht getan haben, klicken Sie auf **Bezeichner** und erstellen Sie eine ID für Ihre app (z. B. `com.company.appname`), andernfalls bearbeiten Sie Ihre vorhandenen-ID.
-4. Sicherstellen, dass die **iCloud** Dienst für die angegebene ID überprüft wurden:
+1. Melden Sie sich beim [Apple Developer Portal](https://developer.apple.com)an.
+2. Klicken Sie auf **Zertifikate, Bezeichner & profile**.
+3. Wenn Sie dies noch nicht getan haben, klicken Sie auf Bezeichner **, und erstellen** Sie eine ID für Ihre `com.company.appname`app (z. b.), und bearbeiten Sie andernfalls Ihre vorhandene ID.
+4. Stellen Sie sicher, dass der **icloud** -Dienst auf die angegebene ID geprüft wurde:
 
-    [![](handoff-images/provision01.png "Aktivieren Sie den iCloud-Dienst für die angegebene ID")](handoff-images/provision01.png#lightbox)
+    [![](handoff-images/provision01.png "Aktivieren Sie den icloud-Dienst für die angegebene ID.")](handoff-images/provision01.png#lightbox)
 5. Speichern Sie die Änderungen.
-6. Klicken Sie auf **Bereitstellungsprofile** > **Entwicklung** und erstellen Sie ein Bereitstellungsprofil für Sie Neuentwicklungen-app:
+6. Klicken Sie auf **Bereitstellungs profile** > **Entwicklung** , und erstellen Sie ein neues Entwicklungs Bereitstellungs Profil für Ihre APP:
 
-    [![](handoff-images/provision02.png "Erstellen Sie ein neues entwicklungsbereitstellungsprofil für die app")](handoff-images/provision02.png#lightbox)
-7. Herunterladen Sie und installieren Sie das neue Bereitstellungsprofil oder verwenden Sie Xcode herunterladen und installieren das Profil.
-8. Bearbeiten Sie die Optionen der Xamarin.iOS-Projekt, und stellen Sie sicher, dass Sie das Bereitstellungsprofil verwenden, das Sie gerade erstellt haben:
+    [![](handoff-images/provision02.png "Erstellen eines neuen Entwicklungs Bereitstellungs Profils für die APP")](handoff-images/provision02.png#lightbox)
+7. Sie können das neue Bereitstellungs Profil herunterladen und installieren oder das Profil mit Xcode herunterladen und installieren.
+8. Bearbeiten Sie die xamarin. IOS-Projektoptionen, und stellen Sie sicher, dass Sie das soeben erstellte Bereitstellungs Profil verwenden:
 
-    [![](handoff-images/provision03.png "Wählen Sie das soeben erstellte Bereitstellungsprofil")](handoff-images/provision03.png#lightbox)
-9. Als Nächstes bearbeiten Ihrer **"Info.plist"** Datei, und stellen Sie sicher, dass Sie die App-ID verwenden, die verwendet wurde, um das Bereitstellungsprofil zu erstellen:
+    [![](handoff-images/provision03.png "Wählen Sie das soeben erstellte Bereitstellungs Profil aus.")](handoff-images/provision03.png#lightbox)
+9. Bearbeiten Sie als nächstes die Datei " **Info. plist** ", und stellen Sie sicher, dass Sie die APP-ID verwenden, die zum Erstellen des Bereitstellungs Profils verwendet wurde:
 
-    [![](handoff-images/provision04.png "Legen Sie die App-ID")](handoff-images/provision04.png#lightbox)
-10. Scrollen Sie zu der **Background Modes** Abschnitt, und überprüfen Sie die folgenden Elemente:
+    [![](handoff-images/provision04.png "APP-ID festlegen")](handoff-images/provision04.png#lightbox)
+10. Scrollen Sie zum Abschnitt **hintergrundmodi** , und überprüfen Sie die folgenden Elemente:
 
-    [![](handoff-images/provision05.png "Die erforderliche hintergrundmodi aktivieren")](handoff-images/provision05.png#lightbox)
-11. Speichern Sie die Änderungen auf alle Dateien an.
+    [![](handoff-images/provision05.png "Erforderliche hintergrundmodi aktivieren")](handoff-images/provision05.png#lightbox)
+11. Speichern Sie die Änderungen an allen Dateien.
 
-Mit diesen Einstellungen vorhanden ist die Anwendung nun bereit für die Übergabe Framework-APIs zugreifen. Ausführliche Informationen zur Bereitstellung finden Sie unter unseren [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) und [Bereitstellung Ihrer App](~/ios/get-started/installation/device-provisioning/index.md) Anleitungen.
+Wenn diese Einstellungen vorhanden sind, kann die Anwendung jetzt auf die Handoff-Framework-APIs zugreifen. Ausführliche Informationen zur Bereitstellung finden Sie in unseren [Hand](~/ios/get-started/installation/device-provisioning/index.md) Büchern zur [Geräte Bereitstellung](~/ios/get-started/installation/device-provisioning/index.md) und-Bereitstellung.
 
-## <a name="implementing-handoff"></a>Implementieren von Übergabeanimationen
+## <a name="implementing-handoff"></a>Implementieren von Handoff
 
-Benutzeraktivitäten können mehrere apps fortgesetzt werden, die mit der Entwickler Team-ID angemeldet sind und der gleichen Aktivitätstyp zu unterstützen. Übergabe in einer Xamarin.iOS-app zu implementieren, müssen Sie Sie ein Benutzerobjekt für die Aktivität zu erstellen (entweder im `UIKit` oder `AppKit`), aktualisieren Sie den Zustand des Objekts zum Nachverfolgen der Aktivität und fortsetzen die Aktivität auf einem Gerät empfangen.
+Benutzeraktivitäten können in apps fortgesetzt werden, die mit derselben Entwickler-Team-ID signiert sind und denselben Aktivitätstyp unterstützen. Zum Implementieren von "Handoff" in einer xamarin. IOS-App müssen Sie ein Benutzer Aktivitäts Objekt `UIKit` ( `AppKit`entweder in oder) erstellen, den Zustand des Objekts aktualisieren, um die Aktivität zu verfolgen, und die Aktivität auf einem empfangenden Gerät fortsetzen.
 
 ### <a name="identifying-user-activities"></a>Identifizieren von Benutzeraktivitäten
 
-Der erste Schritt bei der Implementierung von Übergabeanimationen zum Identifizieren von Benutzeraktivitäten, die Ihrer app unterstützt wird, und wird angezeigt, der diese Aktivitäten sind gute Kandidaten für die Fortsetzung auf einem anderen Gerät. Zum Beispiel: eine ToDo-app möglicherweise unterstützt Bearbeitung Elemente als eine _Aktivitätstyp Benutzer_, und Durchsuchen die Liste der verfügbaren Elemente wie eine andere zu unterstützen.
+Der erste Schritt bei der Implementierung von Handoff besteht darin, die Typen von Benutzeraktivitäten zu identifizieren, die ihre App unterstützt, und zu sehen, welche dieser Aktivitäten gute Kandidaten für die Fortsetzung auf einem anderen Gerät sind. Beispiel: eine ToDo-APP unterstützt möglicherweise die Bearbeitung von Elementen als einen _Benutzer Aktivitätstyp_und unterstützt das Durchsuchen der Liste verfügbarer Elemente als andere.
 
-Eine app kann beliebig viele Benutzer Aktivitätstypen wie erforderlich sind, eine für jede Funktion erstellen, die die app bereitstellt. Für jeden Aktivitätstyp von Benutzer benötigt die app zu überwachen, wann eine Aktivität des Typs beginnt und endet, und muss über aktuelle Zustandsinformationen, um diese Aufgabe auf einem anderen Gerät weiterhin verwalten.
+Eine APP kann beliebig viele Benutzer Aktivitätstypen erstellen, und zwar eine für jede Funktion, die die APP bereitstellt. Für jeden benutzeraktivitätstyp muss die APP nachverfolgen, wann eine Aktivität des Typs beginnt und endet, und aktuelle Zustandsinformationen aufbewahren müssen, um diese Aufgabe auf einem anderen Gerät fortsetzen zu können.
 
-Benutzeraktivitäten können auf jede app, die mit der gleichen Team-ID ohne 1: 1-Zuordnung zwischen den sendenden und empfangenden apps signiert fortgesetzt werden. Beispielsweise kann eine bestimmte app vier verschiedene Typen von Aktivitäten, erstellen, die von anderen, einzelne apps auf einem anderen Gerät verwendet werden. Dies ist häufig auftreten zwischen einem Mac-Version der app (die zahlreichen Features und Funktionen möglicherweise) und iOS-apps bei jeder app kleiner und konzentriert sich auf eine bestimmte Aufgabe.
+Benutzeraktivitäten können für jede APP fortgesetzt werden, die mit derselben Team-ID signiert ist, ohne dass eine eins-zu-Eins-Zuordnung zwischen den sendenden und empfangenden apps besteht. Beispielsweise kann eine bestimmte App vier verschiedene Arten von Aktivitäten erstellen, die von unterschiedlichen, einzelnen apps auf einem anderen Gerät genutzt werden. Dies ist ein häufiges Vorkommen zwischen einer Mac-Version der APP (die viele Features und Funktionen aufweisen kann) und IOS-apps, wobei jede APP kleiner ist und sich auf eine bestimmte Aufgabe konzentriert.
 
-### <a name="creating-activity-type-identifiers"></a>Aktivität-Typ-IDs erstellen
+### <a name="creating-activity-type-identifiers"></a>Erstellen von Aktivitätstyp bezeichlern
 
-Die _Typbezeichner der Aktivität_ wird eine kurze Zeichenfolge hinzugefügt die `NSUserActivityTypes` Array von der app **"Info.plist"** Datei, die zur eindeutigen Identifizierung eines bestimmten Typs des Benutzer-Aktivität verwendet. Es werden ein Eintrag im Array für jede Aktivität, die die app unterstützt. Apple empfiehlt eine Notation Reverse-DNS-Format für den Typ des Bezeichners der Aktivität verwenden, um Konflikte zu vermeiden. Zum Beispiel: `com.company-name.appname.activity` für bestimmte app-basierte Aktivitäten oder `com.company-name.activity` für Aktivitäten, die für mehrere apps ausgeführt werden können.
+Der _Aktivitätstyp Bezeichner_ ist eine kurze Zeichenfolge `NSUserActivityTypes` , die dem Array der **Info. plist** -Datei der app hinzugefügt wird, die zur eindeutigen Identifizierung eines bestimmten Benutzer Aktivitäts Typs verwendet wird. Für jede Aktivität, die von der App unterstützt wird, gibt es einen Eintrag im Array. Apple schlägt vor, eine Notation im Reverse-DNS-Stil für den Aktivitätstyp Bezeichner zu verwenden, um Konflikte zu vermeiden. Beispiel: `com.company-name.appname.activity` für bestimmte App-basierte Aktivitäten oder `com.company-name.activity` für Aktivitäten, die über mehrere apps hinweg ausgeführt werden können.
 
-Typ des Bezeichners der Aktivität wird verwendet, beim Erstellen einer `NSUserActivity` Instanz, um den Typ der Aktivität zu identifizieren. Wenn eine Aktivität auf einem anderen Gerät fortgesetzt wird, bestimmt der Aktivitätstyp (zusammen mit der app-Team-ID) der app zu starten, um die Aktivität den Vorgang fortzusetzen.
+Der Aktivitätstyp Bezeichner wird verwendet, `NSUserActivity` wenn eine-Instanz erstellt wird, um den Typ der Aktivität zu identifizieren. Wenn eine Aktivität auf einem anderen Gerät fortgesetzt wird, bestimmt der Aktivitätstyp (zusammen mit der Team-ID der APP), welche App gestartet werden soll, um die Aktivität fortzusetzen.
 
-Beispielsweise werden wir zum Erstellen einer Beispielapp aufgerufen **MonkeyBrowser** ([hier herunterladen](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)). Diese app stellt vier Registerkarten, von denen jede eine andere URL geöffnet, in einer Web-Browser-Ansicht dar. Der Benutzer wird weiterhin eine beliebige Registerkarte kann auf ein iOS-Gerät, das Ausführen der app sein.
+Als Beispiel erstellen wir eine Beispiel-App namens **monkeybrowser** ([hier herunterladen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser)). Diese APP zeigt vier Registerkarten an, die jeweils über eine andere URL verfügen, die in einer Webbrowser Ansicht geöffnet ist. Der Benutzer kann jede Registerkarte auf einem anderen ios-Gerät, auf dem die app ausgeführt wird, fortsetzen.
 
-Um die erforderliche Aktivität Typ-IDs zur Unterstützung dieses Verhaltens zu erstellen, bearbeiten die **"Info.plist"** Datei, und wechseln Sie zu der **Quelle** anzeigen. Hinzufügen einer `NSUserActivityTypes` gedrückt, und erstellen Sie die folgenden Bezeichner:
+Um die erforderlichen Aktivitätstypen Bezeichner zu erstellen, um dieses Verhalten zu unterstützen, bearbeiten Sie die Datei **Info. plist** , und wechseln Sie zur **Quell** Ansicht. Fügen Sie `NSUserActivityTypes` einen Schlüssel hinzu, und erstellen Sie die folgenden Bezeichner:
 
-[![](handoff-images/type01.png "Die NSUserActivityTypes Schlüssel und die erforderlichen-IDs in der Plist-editor")](handoff-images/type01.png#lightbox)
+[![](handoff-images/type01.png "Der nsuseractivitytypes-Schlüssel und erforderliche Bezeichner im plist-Editor")](handoff-images/type01.png#lightbox)
 
-Vier neue Aktivität Typ-IDs, eine für jede der Registerkarten im Beispiel erstellten **MonkeyBrowser** app. Wenn Sie Ihre eigenen apps zu erstellen, ersetzen Sie den Inhalt von der `NSUserActivityTypes` array mit der Aktivität-Typ-IDs für die Aktivitäten Ihrer app unterstützt.
+Wir haben vier neue Aktivitätstyp Bezeichner erstellt, einen für jede Registerkarte in der Beispiel-APP **monkeybrowser** . Wenn Sie eigene Apps erstellen, ersetzen Sie den Inhalt des `NSUserActivityTypes` Arrays durch die Aktivitätstyp-IDs, die für die von Ihrer APP unterstützten Aktivitäten spezifisch sind.
 
-### <a name="tracking-user-activity-changes"></a>Nachverfolgen von Änderungen für Benutzer-Aktivität
+### <a name="tracking-user-activity-changes"></a>Nachverfolgen von Änderungen an Benutzeraktivitäten
 
-Wenn wir erstellen eine neue Instanz der der `NSUserActivity` -Klasse geben wir eine `NSUserActivityDelegate` Instanz zum Nachverfolgen von Änderungen in der Aktivität Zustand. Beispielsweise kann der folgende Code verwendet werden, um Änderungen am Ansichtszustand nachzuverfolgen:
+Wenn eine neue Instanz der `NSUserActivity` -Klasse erstellt wird, wird eine `NSUserActivityDelegate` -Instanz angegeben, um Änderungen am Zustand der Aktivität zu verfolgen. Der folgende Code kann z. b. zum Nachverfolgen von Zustandsänderungen verwendet werden:
 
 ```csharp
 using System;
@@ -201,17 +201,17 @@ namespace MonkeyBrowse
 }
 ```
 
-Die `UserActivityReceivedData` Methode wird aufgerufen, wenn eine Fortsetzung Stream Daten von einem sendenden Gerät empfangen hat. Weitere Informationen finden Sie unter den [unterstützen Fortsetzung Streams](#supporting-continuation-streams) Abschnitt weiter unten.
+Die `UserActivityReceivedData` -Methode wird aufgerufen, wenn ein Fortsetzungs Datenstrom Daten von einem sendenden Gerät empfängt. Weitere Informationen finden Sie weiter unten im Abschnitt [unterstützende Fortsetzungs Datenströme](#supporting-continuation-streams) .
 
-Die `UserActivityWasContinued` Methode wird aufgerufen, wenn ein anderes Gerät über eine Aktivität aus dem aktuellen Gerät stattgefunden hat. Je nach Art der Aktivität, wie das Hinzufügen eines neuen Elements zu einer ToDo-Liste kann die app die Aktivität auf dem sendenden Gerät abbrechen müssen.
+Die `UserActivityWasContinued` -Methode wird aufgerufen, wenn ein anderes Gerät eine Aktivität vom aktuellen Gerät übernommen hat. Abhängig vom Typ der Aktivität, wie z. b. Hinzufügen eines neuen Elements zu einer TODO-Liste, muss die APP möglicherweise die Aktivität auf dem sendenden Gerät abbrechen.
 
-Die `UserActivityWillSave` Methode wird aufgerufen, bevor Änderungen an der Aktivität gespeichert und lokal verfügbare geräteübergreifend synchronisiert werden. Können Sie diese Methode alle letzten Minute Änderungen an der `UserInfo` Eigenschaft der `NSUserActivity` Instanz, bevor sie gesendet wird.
+Die `UserActivityWillSave` -Methode wird aufgerufen, bevor Änderungen an der Aktivität gespeichert und über lokal verfügbare Geräte synchronisiert werden. Sie können diese Methode verwenden, um Änderungen an der `UserInfo` -Eigenschaft `NSUserActivity` der-Instanz vorzunehmen, bevor Sie gesendet wird.
 
-### <a name="creating-a-nsuseractivity-instance"></a>Erstellen einer Instanz NSUserActivity
+### <a name="creating-a-nsuseractivity-instance"></a>Erstellen einer nsuseractivity-Instanz
 
-Jede Aktivität, die Ihre app die Möglichkeit, weiterhin auf einem anderen Gerät bereitstellen möchte gekapselt werden muss, einem `NSUserActivity` Instanz. Erstellen Sie die app kann beliebig viele Aktivitäten nach Bedarf, und die Art dieser Aktivitäten ist abhängig von der Funktionalität und Merkmale die betreffende Anwendung. Beispielsweise kann eine e-Mail-app eine Aktivität zum Erstellen einer neuen Nachricht und eine andere zum Lesen einer Nachricht erstellen.
+Jede Aktivität, die Ihre APP bereitstellen möchte, um auf einem anderen Gerät fortzufahren, muss in `NSUserActivity` einer-Instanz gekapselt werden. Die APP kann beliebig viele Aktivitäten erstellen, und die Art dieser Aktivitäten hängt von der Funktionalität und den Features der betreffenden App ab. Eine e-Mail-app könnte z. b. eine Aktivität zum Erstellen einer neuen Nachricht und eine weitere zum Lesen einer Nachricht erstellen.
 
-Für die Beispiel-app eine neue `NSUserActivity` erstellt jedes Mal, wenn der Benutzer eine neue URL eines der im Registerkartenformat Webbrowseransicht eingibt. Der folgende Code speichert den Zustand einer angegebene Registerkarte:
+Bei der Beispiel-APP wird jedes `NSUserActivity` mal ein neues erstellt, wenn der Benutzer eine neue URL in einer der Webbrowser Ansicht im Registerkarten Format eingibt. Der folgende Code speichert den Status einer bestimmten Registerkarte:
 
 ```csharp
 public NSString UserActivityTab1 = new NSString ("com.xamarin.monkeybrowser.tab1");
@@ -231,13 +231,13 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-Er erstellt ein neues `NSUserActivity` Verwenden des Aktivitätstyps Benutzer oben erstellt haben, und gibt einen lesbaren Titel für die Aktivität. Es fügt zu einer Instanz von der `NSUserActivityDelegate` oben, sehen Sie sich für Zustand ändert, und informiert iOS, dass diese Benutzer-Aktivität der aktuellen Aktivität wird erstellt.
+Mit einem der oben `NSUserActivity` erstellten benutzeraktivitätstyp wird ein neuer erstellt, und es wird ein lesbarer Titel für die Aktivität bereitstellt. Sie wird an eine Instanz von `NSUserActivityDelegate` angefügt, um Zustandsänderungen zu überwachen, und informiert IOS, dass diese Benutzeraktivität die aktuelle Aktivität ist.
 
-### <a name="populating-the-userinfo-dictionary"></a>Das Wörterbuch UserInfo Auffüllen
+### <a name="populating-the-userinfo-dictionary"></a>Auffüllen des userinfo-Wörterbuchs
 
-Wie wir oben gesehen haben die `UserInfo` Eigenschaft der `NSUserActivity` -Klasse ist eine `NSDictionary` von Schlüssel-Wert-Paaren verwendet, um den Status einer bestimmten Aktivität zu definieren. Die in gespeicherten Werte `UserInfo` muss einer der folgenden Typen sein: `NSArray`, `NSData`, `NSDate`, `NSDictionary`, `NSNull`, `NSNumber`, `NSSet`, `NSString`, oder `NSURL`. `NSURL` Datenwerte, die auf iCloud-Dokumente verweisen werden automatisch angepasst, damit sie auf den gleichen Dokumenten auf einem empfangenden Gerät verweisen.
+Wie bereits erwähnt, ist die `UserInfo` -Eigenschaft `NSUserActivity` der-Klasse eine `NSDictionary` von Schlüssel-Wert-Paaren, die verwendet wird, um den Status einer bestimmten Aktivität zu definieren. Bei den `UserInfo` in gespeicherten Werten muss es sich um einen der folgenden Typen `NSData`handeln: `NSDictionary` `NSArray`, `NSNull`, `NSNumber` `NSDate`, `NSSet`, `NSString`,, `NSURL`, oder. `NSURL`Datenwerte, die auf icloud-Dokumente verweisen, werden automatisch so angepasst, dass Sie auf die gleichen Dokumente auf einem empfangenden Gerät zeigen.
 
-Im obigen Beispiel, erstellt es eine `NSMutableDictionary` Objekt aus, und füllen Sie ihn mit einem einzigen Schlüssel mit der Angabe der URL, die der Benutzer gerade auf die angegebene Registerkarte anzeigt wurde. Die `AddUserInfoEntries` Methode, die Aktivitäten des Benutzers wurde verwendet, um die Aktivität mit den Daten zu aktualisieren, die zum Wiederherstellen der Aktivität auf dem empfangenden Gerät verwendet werden:
+Im obigen Beispiel haben wir ein `NSMutableDictionary` -Objekt erstellt und mit einem einzelnen Schlüssel aufgefüllt, der die URL bereitstellt, die der Benutzer zurzeit auf der angegebenen Registerkarte anzeigen hat. Die `AddUserInfoEntries` -Methode der User-Aktivität wurde verwendet, um die-Aktivität mit den Daten zu aktualisieren, die zum Wiederherstellen der Aktivität auf dem empfangenden Gerät verwendet werden:
 
 ```csharp
 // Update the activity when the tab's URL changes
@@ -246,13 +246,13 @@ userInfo.Add (new NSString ("Url"), new NSString (url));
 UserActivity.AddUserInfoEntries (userInfo);
 ```
 
-Apple empfiehlt, halten die Informationen, die an die minimal notwendige gesendet, um sicherzustellen, dass die Aktivität rechtzeitig auf dem empfangenden Gerät gesendet wird. Wenn mehr Informationen erforderlich ist, wie ein Bild an ein Dokument angefügt bearbeitet werden muss gesendet werden soll, sollten Sie die Fortsetzung Datenströme verwenden. Finden Sie unter den [unterstützen Fortsetzung Streams](#supporting-continuation-streams) Informationen weiter unten im Abschnitt.
+Apple schlägt vor, die gesendeten Informationen an den geringsten Minimalwert zu halten, um sicherzustellen, dass die Aktivität rechtzeitig an das empfangende Gerät gesendet wird. Wenn größere Informationen erforderlich sind, wie z. b. ein an ein Dokument angefügtes Bild, das bearbeitet werden muss, müssen Sie Fortsetzungs Datenströme verwenden. Weitere Informationen finden Sie weiter unten im Abschnitt [unterstützende Fortsetzungs Datenströme](#supporting-continuation-streams) .
 
-### <a name="continuing-an-activity"></a>Fortsetzen einer Aktivitäts
+### <a name="continuing-an-activity"></a>Fortsetzen einer Aktivität
 
-Übergabe informiert automatisch lokale IOS- und OS X-Geräte, die aufgrund der physischen Nähe auf dem sendenden Gerät und bei demselben iCloud-Konto, über die Verfügbarkeit von vernachlässigbar Benutzeraktivitäten angemeldet. Wenn der Benutzer auswählt, um eine Aktivität auf einem neuen Gerät den Vorgang fortzusetzen, startet das System die entsprechende app (basierend auf den Team-ID und die Art der Aktivität) und die Informationen der `AppDelegate` , dass die Fortsetzung ausgeführt werden soll.
+Bei der Übergabe werden automatisch lokale IOS-und OS X-Geräte, die sich in physischer Nähe zum ursprünglichen Gerät befinden und bei demselben icloud-Konto angemeldet sind, von der Verfügbarkeit von Fort Setz baren Benutzeraktivitäten informiert. Wenn sich der Benutzer entscheidet, eine Aktivität auf einem neuen Gerät fortzusetzen, startet das System die entsprechende app (basierend auf der Team-ID und dem Aktivitätstyp `AppDelegate` ) und die Informationen, die für die Fortsetzung benötigt werden.
 
-Zunächst wird die `WillContinueUserActivityWithType` Methode wird aufgerufen, damit die app den Benutzer darüber informieren kann, die die Fortsetzung begonnen wird. Wir verwenden den folgenden Code in die **Datei "appdelegate.cs"** Datei unserer Beispiel-App, eine Fortsetzung ab behandeln:
+Zuerst wird die `WillContinueUserActivityWithType` -Methode aufgerufen, sodass die APP den Benutzer darüber informieren kann, dass die Fortsetzung gerade beginnt. Der folgende Code wird in der **AppDelegate.cs** -Datei der Beispiel-App verwendet, um eine Fortsetzung zu behandeln:
 
 ```csharp
 public NSString UserActivityTab1 = new NSString ("com.xamarin.monkeybrowser.tab1");
@@ -297,7 +297,7 @@ public override bool WillContinueUserActivity (UIApplication application, string
 }
 ```
 
-Im obigen Beispiel registriert sich jedes View Controller mit dem `AppDelegate` und verfügt über eine öffentliche `PreparingToHandoff` Methode, die anzeigt, ein Indikator für die Aktivität und eine Meldung, die den Benutzer darüber informiert, dass die Aktivität wird an das aktuelle Gerät übergeben werden. Beispiel:
+Im obigen Beispiel wird jeder Ansichts Controller beim registriert `AppDelegate` und verfügt über eine öffentliche `PreparingToHandoff` Methode, mit der ein Aktivitätsindikator und eine Meldung angezeigt wird, dass der Benutzer weiß, dass die Aktivität dem aktuellen Gerät übergeben werden soll. Beispiel:
 
 ```csharp
 private void ShowBusy(string reason) {
@@ -322,7 +322,7 @@ public void PreparingToHandoff() {
 }
 ```
 
-Die `ContinueUserActivity` von der `AppDelegate` wird aufgerufen, um die angegebene Aktivität tatsächlich weiterhin. In diesem Fall aus unserem Beispiel-app:
+`ContinueUserActivity` Der`AppDelegate` von wird aufgerufen, um die angegebene Aktivität tatsächlich fortzusetzen. Auch in unserer Beispiel-App:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -366,7 +366,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-Die öffentliche `PerformHandoff` jedes View Controller tatsächlich führt die Übergabe und die Aktivität auf dem aktuellen Gerät wiederhergestellt. Bei diesem Beispiel wird die gleiche URL in einer angegebenen Registerkarte, die der Benutzer, auf einem anderen Gerät besucht wurde angezeigt. Beispiel:
+Die öffentliche `PerformHandoff` Methode jedes Ansichts Controllers führt den Handler tatsächlich aus und stellt die Aktivität auf dem aktuellen Gerät wieder her. Im Beispiel wird die gleiche URL auf einer bestimmten Registerkarte angezeigt, die der Benutzer auf einem anderen Gerät durchsucht hat. Beispiel:
 
 ```csharp
 private void HideBusy() {
@@ -403,13 +403,13 @@ public void PerformHandoff(NSUserActivity activity) {
 }
 ```
 
-Die `ContinueUserActivity` Methode enthält einen `UIApplicationRestorationHandler` , die Sie aufrufen können, für das Dokument oder -Responder-basierten Aktivität fortsetzen. Müssen Sie übergeben eine `NSArray` wiederherstellbaren Objekte, die beim Aufruf der Wiederherstellung-Handler. Beispiel:
+Die `ContinueUserActivity` -Methode enthält `UIApplicationRestorationHandler` ein, das Sie für das Fortsetzen von Dokumenten oder Beantworter-Aktivität aufrufen können. Wenn Sie aufgerufen werden, müssen `NSArray` Sie ein oder wiederherstellbare Objekte an den Wiederherstellungs Handler übergeben. Beispiel:
 
 ```csharp
 completionHandler (new NSObject[]{Tab4});
 ```
 
-Für jedes Objekt übergeben dessen `RestoreUserActivityState` aufgerufene Methode. Jedes Objekt können Sie dann die Daten in die `UserInfo` Wörterbuch, das seinen eigenen Status wiederherstellen. Beispiel:
+Für jedes Objekt, das erfolgreich `RestoreUserActivityState` ist, wird die zugehörige-Methode aufgerufen. Jedes-Objekt kann dann die Daten im `UserInfo` Wörterbuch verwenden, um seinen eigenen Zustand wiederherzustellen. Beispiel:
 
 ```csharp
 public override void RestoreUserActivityState (NSUserActivity activity)
@@ -421,13 +421,13 @@ public override void RestoreUserActivityState (NSUserActivity activity)
 }
 ```
 
-Für Dokument-basierte apps, wenn Sie nicht implementieren die `ContinueUserActivity` -Methode, oder es gibt `false`, `UIKit` oder `AppKit` können die Aktivität automatisch fortgesetzt. Finden Sie unter den [unterstützen Übergabe in Dokument-basierten Apps](#supporting-handoff-in-document-based-apps) Informationen weiter unten im Abschnitt.
+Für Dokument basierte apps `ContinueUserActivity` : Wenn Sie die Methode nicht implementieren oder zurückgibt `false`, `AppKit` kann die `UIKit` Aktivität automatisch fortgesetzt werden. Weitere Informationen finden Sie weiter unten [im Abschnitt unterstützende Übergabe von Dokument basierten apps](#supporting-handoff-in-document-based-apps) .
 
-### <a name="failing-handoff-gracefully"></a>Fehler bei Übergabe ordnungsgemäß
+### <a name="failing-handoff-gracefully"></a>Fehlerhafte Übergabe
 
-Da die Übergabe der Übertragung von Informationen zwischen einer Sammlung lose verbundenen iOS und OS X-Geräte verwendet, Fehler der Übertragungsprozess treten ggf. Entwerfen Sie Ihre app an diese Fehler ordnungsgemäß behandeln und informiert den Benutzer über alle Situationen, die auftreten können.
+Da bei der Übergabe von Informationen zwischen einer Sammlung lose verbundene IOS-und OS X-Geräte übertragen werden, kann der Übertragungsvorgang manchmal fehlschlagen. Sie sollten Ihre APP so entwerfen, dass diese Fehler ordnungsgemäß behandelt werden, und den Benutzer über alle auftretenden Situationen informieren.
 
-Bei einem Fehler der `DidFailToContinueUserActivitiy` Methode der `AppDelegate` aufgerufen wird. Beispiel:
+Wenn ein Fehler auftritt, `DidFailToContinueUserActivitiy` `AppDelegate` wird die-Methode von aufgerufen. Beispiel:
 
 ```csharp
 public override void DidFailToContinueUserActivitiy (UIApplication application, string userActivityType, NSError error)
@@ -437,23 +437,23 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-Verwenden Sie die angegebene `NSError` Informationen für den Benutzer zu diesem Fehler bereitstellen.
+Verwenden Sie die bereit `NSError` gestellte, um dem Benutzerinformationen über den Fehler bereitzustellen.
 
-## <a name="native-app-to-web-browser-handoff"></a>Native Übergabe der Web-Browser-App
+## <a name="native-app-to-web-browser-handoff"></a>Übergabe von System eigenem APP-zu-Webbrowser
 
-Ein Benutzer möchte eine Aktivität fortgesetzt wird, ohne eine entsprechende native app, die auf das gewünschte Gerät installiert. In einigen Fällen eine webbasierte Schnittstelle kann die erforderliche Funktionalität bereitstellen, und die Aktivität trotzdem fortgesetzt werden kann. Beispielsweise kann die e-Mail-Konto des Benutzers eine Basis-Web-Benutzeroberfläche für die erstellen und Lesen von Nachrichten bereitstellen.
+Ein Benutzer möchte möglicherweise eine Aktivität fortsetzen, ohne dass eine entsprechende Native App auf dem gewünschten Gerät installiert sein muss. In einigen Situationen kann eine webbasierte Schnittstelle die erforderliche Funktionalität bereitstellen, und die Aktivität kann weiterhin fortgesetzt werden. Beispielsweise kann das e-Mail-Konto des Benutzers eine Web-Base-Benutzeroberfläche zum Verfassen und Lesen von Nachrichten bereitstellen.
 
-Wenn die URL für die ursprüngliche, systemeigene app bekannt ist für die Web-Schnittstelle (und die erforderliche Syntax für die Identifizierung des angegebenen Elements fortgesetzt wird), können sie diese Informationen im Codieren der `WebpageURL` Eigenschaft der `NSUserActivity` Instanz. Wenn empfangende Gerät nicht über eine entsprechende systemeigene app installiert, um die Fortsetzung bewältigen verfügt, kann die bereitgestellten Webschnittstelle aufgerufen werden.
+Wenn die ursprüngliche, systemeigene APP die URL für die Weboberfläche kennt (und die erforderliche Syntax zum Identifizieren des angegebenen Elements ist), kann diese Informationen in der `WebpageURL` -Eigenschaft `NSUserActivity` der-Instanz codiert werden. Wenn auf dem empfangenden Gerät keine geeignete Native App installiert ist, um die Fortsetzung zu verarbeiten, kann die bereitgestellte Weboberfläche aufgerufen werden.
 
-## <a name="web-browser-to-native-app-handoff"></a>Webbrowser, um die Übergabe der nativen App
+## <a name="web-browser-to-native-app-handoff"></a>Webbrowser zu nativer App-Übergabe
 
-Wenn der Benutzer wurde eine webbasierte Schnittstelle auf dem sendenden Gerät und eine native app auf dem empfangenden Gerät der Domänenteil des Ansprüche der `WebpageURL` -Eigenschaft, und klicken Sie dann auf das System die app das Handle der Fortsetzung verwendet. Das neue Gerät erhält ein `NSUserActivity` -Instanz, die als Typ markiert `BrowsingWeb` und `WebpageURL` enthält die URL der Benutzer das Unternehmen besuchen wurde, die `UserInfo` Wörterbuch leer sein wird.
+Wenn der Benutzer eine webbasierte Schnittstelle auf dem Ursprungs Gerät verwendet und eine native App auf dem empfangenden Gerät den Domänen Teil `WebpageURL` der Eigenschaft beansprucht, verwendet das System diese APP zum Behandeln der Fortsetzung. Das neue Gerät empfängt `NSUserActivity` eine-Instanz, die den Aktivitätstyp als `BrowsingWeb` markiert `WebpageURL` , und enthält die URL, die der Benutzer besucht `UserInfo` hat. das Wörterbuch ist leer.
 
-Für eine app, bei dieser Art der Übergabe teilzunehmen, müssen sie die Domäne in Anspruch eine `com.apple.developer.associated-domains` Berechtigung mit dem Format `<service>:<fully qualified domain name>` (z. B.: `activity continuation:company.com`).
+Damit eine APP an dieser Art von Übergabe teilnehmen kann, muss Sie die Domäne in einer `com.apple.developer.associated-domains` Berechtigung mit dem Format `<service>:<fully qualified domain name>` (z `activity continuation:company.com`. b.) beanspruchen.
 
-Wenn die angegebene Domäne entspricht einer `WebpageURL` übergeben den Wert der Eigenschaft lädt eine Liste der genehmigten app IDs von der Website bei dieser Domäne. Geben Sie die Website muss eine Liste der genehmigten-IDs in eine signierte JSON-Datei mit dem Namen **Apple-app-Site-Zuordnung** (z. B. `https://company.com/apple-app-site-association`).
+Wenn die angegebene Domäne mit dem `WebpageURL` Wert einer Eigenschaft übereinstimmt, wird von Handoff eine Liste der genehmigten App-IDs von der Website in dieser Domäne heruntergeladen. Die Website muss eine Liste genehmigter IDs in einer signierten JSON-Datei mit dem Namen **Apple-App-Site-Association** ( `https://company.com/apple-app-site-association`z. b.) bereitstellen.
 
-Diese JSON-Datei enthält ein Wörterbuch, das eine Liste von app-IDs in der Form soll `<team identifier>.<bundle identifier>`. Beispiel:
+Diese JSON-Datei enthält ein Wörterbuch, das eine Liste der APP-IDs `<team identifier>.<bundle identifier>`im Formular angibt. Beispiel:
 
 ```csharp
 {
@@ -464,7 +464,7 @@ Diese JSON-Datei enthält ein Wörterbuch, das eine Liste von app-IDs in der For
 }
 ```
 
-Zum Signieren der JSON-Datei (so, dass sie den richtigen `Content-Type` von `application/pkcs7-mime`), verwenden Sie die **Terminal** app und eine `openssl` Befehl mit einem Zertifikat und Schlüssel, die von einer Zertifizierungsstelle vertrauenswürdig iOS ausgegeben (finden Sie unter [ https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012) eine Liste). Beispiel:
+Um die JSON-Datei zu signieren (sodass Sie die `Content-Type` richtige `application/pkcs7-mime`ist), verwenden Sie die **Terminal** - `openssl` APP und einen Befehl mit einem Zertifikat und Schlüssel, das von einer Zertifizierungsstelle ausgestellt [https://support.apple.com/kb/ht5012](https://support.apple.com/kb/ht5012) wurde, die von IOS als vertrauenswürdig eingestuft wird (eine Liste finden Sie unter). Beispiel:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -477,17 +477,17 @@ cat json.txt | openssl smime -sign -inkey company.com.key
 -outform DER > apple-app-site-association
 ```
 
-Die `openssl` Befehl gibt eine signierte JSON-Datei, die Sie für Ihre Website in Platzieren der **Apple-app-Site-Zuordnung** URL. Beispiel:
+Der `openssl` Befehl gibt eine signierte JSON-Datei aus, die Sie auf Ihrer Website unter der **Apple-App-Site-Association-** URL platzieren. Beispiel:
 
 ```csharp
 https://example.com/apple-app-site-association.
 ```
 
-Die app erhält jede Aktivität, deren `WebpageURL` Domäne befindet sich in der `com.apple.developer.associated-domains` Berechtigung. Nur die `http` und `https` Protokolle werden unterstützt, ein anderes Protokoll wird eine Ausnahme ausgelöst.
+Die App empfängt eine beliebige Aktivität, `WebpageURL` deren Domäne Ihre `com.apple.developer.associated-domains` Berechtigung hat. Nur die `http` Protokolle `https` und werden unterstützt, jedes andere Protokoll gibt eine Ausnahme aus.
 
-## <a name="supporting-handoff-in-document-based-apps"></a>Unterstützung der Übergabe in Dokument-basierten Apps
+## <a name="supporting-handoff-in-document-based-apps"></a>Unterstützende Übergabe in Dokument basierten apps
 
-Wie bereits erwähnt, unter iOS und OS X, Dokument-basierte apps werden automatisch unterstützen, Übergabe von Dokumenten mit iCloud-basierten app **"Info.plist"** -Datei enthält eine `CFBundleDocumentTypes` -Schlüssel der `NSUbiquitousDocumentUserActivityType`. Beispiel:
+Wie oben bereits erwähnt, unterstützen Dokument basierte apps unter IOS und OS X automatisch die Übergabe von icloud-basierten Dokumenten, wenn die Datei " **Info. plist** " der APP `CFBundleDocumentTypes` einen Schlüssel `NSUbiquitousDocumentUserActivityType`von enthält. Beispiel:
 
 ```xml
 <key>CFBundleDocumentTypes</key>
@@ -507,23 +507,23 @@ Wie bereits erwähnt, unter iOS und OS X, Dokument-basierte apps werden automati
 </array>
 ```
 
-In diesem Beispiel ist die Zeichenfolge ein Reverse-DNS-app-Kennzeichner mit dem Namen der Aktivität angefügt. Wenn auf diese Weise eingegeben haben, die typeinträgen Aktivität müssen nicht wiederholt werden, in der `NSUserActivityTypes` Array mit den **"Info.plist"** Datei.
+In diesem Beispiel ist die Zeichenfolge ein Reverse-DNS-App-Kenn Zeichner mit dem angefügten Namen der Aktivität. Wenn diese Methode eingegeben wird, müssen die Aktivitätstypen Einträge nicht im `NSUserActivityTypes` -Array der **Info. plist** -Datei wiederholt werden.
 
-Das automatisch erstellte Benutzeraktivität-Objekt (des Dokuments erhältlich `UserActivity` Eigenschaft) verwiesen wird, von anderen Objekten in der app und zum Wiederherstellen der Status in der Fortsetzung verwendet werden kann. Z. B. positionieren zum Nachverfolgen von Element Auswahl und das Dokument. Müssen Sie diese Aktivitäten `NeedsSave` Eigenschaft `true` jedes Mal, wenn der Status ändert, und aktualisieren Sie die `UserInfo` Wörterbuch in der `UpdateUserActivityState` Methode.
+Auf das automatisch erstellte Benutzer Aktivitäts Objekt (das über die-Eigenschaft `UserActivity` des Dokuments verfügbar ist) kann von anderen Objekten in der APP verwiesen und zum Wiederherstellen des Zustands bei der Fortsetzung verwendet werden. Beispielsweise, um die Elementauswahl und die Dokument Position zu verfolgen. Sie müssen diese `NeedsSave` Aktivitäts Eigenschaft auf festlegen, wenn sich der Status ändert, `true` und `UserInfo` das Wörterbuch `UpdateUserActivityState` in der-Methode aktualisieren.
 
-Die `UserActivity` Eigenschaft kann von jedem Thread verwendet werden, und entspricht das beobachten (KVO)-Protokoll für Schlüssel-Wert, damit sie verwendet werden kann, um ein Dokument synchron halten, wie ein-und der iCloud verschoben wird. Die `UserActivity` Eigenschaft wird ungültig gemacht werden, wenn das Dokument geschlossen wird.
+Die `UserActivity` -Eigenschaft kann von jedem Thread verwendet werden und entspricht dem KVO-Protokoll (Key-Value Beobachtung). Daher kann Sie verwendet werden, um ein Dokument synchron zu halten, während es in die icloud übergeht. Die `UserActivity` Eigenschaft wird für ungültig erklärt, wenn das Dokument geschlossen wird.
 
-Weitere Informationen finden Sie unter Apple [Aktivität-Unterstützung für Benutzer in Dokument-basierten Apps](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html#//apple_ref/doc/uid/TP40014338-CH3-SW5) Dokumentation.
+Weitere Informationen finden Sie in der Dokumentation zur Benutzeraktivität von Apple in der Dokumentation zu [Dokument basierten apps](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html#//apple_ref/doc/uid/TP40014338-CH3-SW5) .
 
-## <a name="supporting-handoff-in-responders"></a>Unterstützung von Übergabe in Responder
+## <a name="supporting-handoff-in-responders"></a>Unterstützende Übergabe in Responders
 
-Können Sie Responder zuordnen (geerbt von entweder `UIResponder` unter iOS oder `NSResponder` unter OS X) Aktivitäten durch Festlegen ihrer `UserActivity` Eigenschaften. Speichert das System automatisch die `UserActivity` Eigenschaft auf den entsprechenden-Mal ab, der Beantworter Aufrufen `UpdateUserActivityState` Methode, um die Benutzeraktivität mit aktuelle Daten hinzuzufügen der `AddUserInfoEntriesFromDictionary` Methode.
+Sie können Responder (geerbt von `UIResponder` unter IOS oder `NSResponder` unter OS X) zu Aktivitäten zuordnen, indem Sie deren `UserActivity` Eigenschaften festlegen. Das System speichert die `UserActivity` Eigenschaft automatisch zu den entsprechenden Zeitpunkten und ruft die-Methode des Responders auf, um dem Benutzer Aktivitäts Objekt mithilfe der `AddUserInfoEntriesFromDictionary` - `UpdateUserActivityState` Methode aktuelle Daten hinzuzufügen.
 
-## <a name="supporting-continuation-streams"></a>Unterstützung der Fortsetzung Streams
+## <a name="supporting-continuation-streams"></a>Unterstützende Fortsetzungs Ströme
 
-Die Situationen, in denen die Menge an Informationen erforderlich, um eine Aktivität weiterhin nicht effizient die Nutzlast der ersten Übergabe übertragen werden. In diesen Fällen kann die empfangende app ein oder mehrere Streams zwischen sich selbst und die ursprüngliche Anwendung zum Übertragen von Daten herstellen.
+Dies kann vorkommen, wenn die Menge der Informationen, die zum Fortsetzen einer Aktivität erforderlich sind, von der anfänglichen Handoff-Nutzlast nicht effizient übertragen werden kann. In diesen Fällen kann die empfangende APP einen oder mehrere Streams zwischen sich selbst und der Ursprungs-App zum Übertragen der Daten einrichten.
 
-Legen Sie die ursprüngliche Anwendung wird die `SupportsContinuationStreams` Eigenschaft der `NSUserActivity` -Instanz, auf `true`. Beispiel:
+Die ursprüngliche App legt die `SupportsContinuationStreams` -Eigenschaft `NSUserActivity` der-Instanz auf `true`fest. Beispiel:
 
 ```csharp
 // Create a new user Activity to support this tab
@@ -542,7 +542,7 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-Die empfangende app kann dann aufrufen, die `GetContinuationStreams` -Methode der der `NSUserActivity` in seine `AppDelegate` zu, um den Stream herzustellen. Beispiel:
+Die empfangende App kann dann die `GetContinuationStreams` -Methode `NSUserActivity` von in `AppDelegate` der-Klasse aufzurufen, um den Stream einzurichten. Beispiel:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -586,55 +586,55 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-Auf dem sendenden Gerät empfängt der Benutzerdelegat der Aktivität die Datenströme durch Aufrufen der `DidReceiveInputStream` Methode, um die Daten bereitzustellen angefordert wird, um die Benutzeraktivität auf dem Gerät fortsetzen den Vorgang fortzusetzen.
+Auf dem Ursprungs Gerät empfängt der Benutzeraktivitäts-Delegat die Datenströme `DidReceiveInputStream` durch Aufrufen seiner-Methode, um die angeforderten Daten bereitzustellen, um die Benutzeraktivität auf dem fort Setz enden Gerät fortzusetzen.
 
-Verwenden Sie eine `NSInputStream` zu nur-Lese-Zugriff zum Übertragen von Daten und ein `NSOutputStream` lesegeschützten Zugriff bereitzustellen. In denen die empfangende app mehr Daten anfordert und die ursprüngliche Anwendung bereitgestellt., sollte die Datenströme in einer Weise Anforderungs- und Antwortnachrichten verwendet werden. So, dass Daten, die in den Ausgabestream geschrieben werden, auf dem sendenden Gerät aus dem Eingabestream auf dem Gerät fortsetzen gelesen werden und umgekehrt.
+Sie verwenden ein `NSInputStream` -Objekt, um schreibgeschützten Zugriff auf Streamdaten bereitzustellen, `NSOutputStream` und ein schreibgeschützten Zugriff. Die Streams sollten in Anforderungs-und Antwort Weise verwendet werden, wobei die empfangende app mehr Daten anfordert und die ursprüngliche app Sie bereitstellt. Das heißt, dass Daten, die in den Ausgabestream auf dem ursprünglichen Gerät geschrieben werden, aus dem Eingabestream auf dem fortlaufenden Gerät gelesen werden und umgekehrt.
 
-Auch in Situationen, in denen Fortsetzung Stream erforderlich sind, dürfte eine minimale zurück und vor der Kommunikation zwischen den beiden apps.
+Auch in Situationen, in denen der Fortsetzungs Datenstrom erforderlich ist, sollte die Kommunikation zwischen den beiden apps minimal sein.
 
-Weitere Informationen finden Sie auf der Apple [Using Fortsetzung Streams](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/AdoptingHandoff/AdoptingHandoff.html#//apple_ref/doc/uid/TP40014338-CH2-SW13) Dokumentation.
+Weitere Informationen finden Sie in der Dokumentation zur [Verwendung von Fort](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/AdoptingHandoff/AdoptingHandoff.html#//apple_ref/doc/uid/TP40014338-CH2-SW13) setzungen in Apple.
 
-## <a name="handoff-best-practices"></a>Übergabe bewährte Methoden
+## <a name="handoff-best-practices"></a>Bewährte Methoden für die Übergabe
 
-Die erfolgreiche Implementierung die nahtlose Fortsetzung eine Benutzeraktivität über Handoff erfordert sorgfältigen Entwurf aufgrund alle der verschiedenen beteiligten Komponenten. Apple empfiehlt, übernehmen die folgenden bewährten Methoden für Ihre apps Handoff aktiviert:
+Die erfolgreiche Implementierung der nahtlosen Fortsetzung einer Benutzeraktivität über Handoff erfordert aufgrund der unterschiedlichen Komponenten einen sorgfältigen Entwurf. Apple schlägt vor, die folgenden bewährten Methoden für Ihre Handoff-aktivierten apps zu verwenden:
 
-- Entwerfen Sie Ihrer Benutzeraktivitäten müssen die kleinste Nutzlast möglich, beziehen den Status der Aktivität auf fortgesetzt werden. Je größer die Nutzlast, desto länger dauert die Fortsetzung zu starten.
-- Wenn Sie große Mengen von Daten für erfolgreiche Fortsetzung übertragen müssen, berücksichtigen Sie Konfiguration und Netzwerkaufwand verringert die Kosten beteiligt.
-- Es kommt häufig bei einer großen Mac-app, um Benutzeraktivitäten zu erstellen, die von mehreren, kleiner, aufgabenspezifische apps auf iOS-Geräten verarbeitet werden. Die andere app und die Versionen des Betriebssystems sollten so entworfen werden, zu gut zusammen funktionieren ordnungsgemäß.
-- Wenn Sie die Typen der Aktivität angeben, verwenden Sie Reverse-DNS-Notation, um Konflikte zu vermeiden. Wenn eine Aktivität für eine bestimmte app spezifisch ist, der Namen in der Typdefinition enthalten sein (z. B. `com.myCompany.myEditor.editing`). Wenn die Aktivität über mehrere apps arbeiten kann, legen Sie den Namen der app aus der Definition (z. B. `com.myCompany.editing`).
-- Wenn Ihre app benötigt, um den Status der Aktivität eines Benutzers zu aktualisieren (`NSUserActivity`) legen Sie die `NeedsSave` Eigenschaft `true`. Zu geeigneten Zeitpunkten und Übergabe des Delegaten aufrufen wird `UserActivityWillSave` Methode, sodass Sie aktualisieren können, die `UserInfo` Wörterbuch nach Bedarf.
-- Da es sich bei der Übergabe-Prozess nicht sofort auf dem empfangenden Gerät initialisieren kann, sollten Sie implementieren die `AppDelegate`des `WillContinueUserActivity` und informiert den Benutzer, die eine Fortsetzung zu starten.
+- Entwerfen Sie Ihre Benutzeraktivitäten so, dass die kleinste Nutzlast erforderlich ist, um den Status der Aktivität zu verknüpfen, damit Sie fortgesetzt werden kann. Je größer die Nutzlast, desto länger dauert die Fortsetzung.
+- Wenn Sie große Datenmengen zur erfolgreichen Fortsetzung übertragen müssen, berücksichtigen Sie die Kosten für die Konfiguration und den Netzwerk Aufwand.
+- Es ist üblich, dass eine große Mac-app Benutzeraktivitäten erstellt, die von mehreren, kleineren, aufgabenspezifischen apps auf IOS-Geräten verarbeitet werden. Die verschiedenen APP-und Betriebssystemversionen sollten so entworfen werden, dass Sie gut zusammenarbeiten oder ordnungsgemäß fehlschlagen.
+- Verwenden Sie beim Angeben der Aktivitätstypen Reverse-DNS-Notation, um Konflikte zu vermeiden. Wenn eine Aktivität für eine bestimmte App spezifisch ist, sollte Ihr Name in die Typdefinition eingeschlossen werden (z `com.myCompany.myEditor.editing`. b.). Wenn die Aktivität über mehrere apps hinweg funktionieren kann, löschen Sie den Namen der APP aus der Definition `com.myCompany.editing`(z. b.).
+- Wenn Ihre APP den Status einer Benutzeraktivität aktualisieren muss (`NSUserActivity`), legen Sie die `NeedsSave` -Eigenschaft auf `true`fest. Zu den entsprechenden Zeitpunkten wird die- `UserActivityWillSave` Methode des Delegaten aufgerufen, sodass Sie das `UserInfo` Wörterbuch nach Bedarf aktualisieren können.
+- Da der Übergabeprozess auf dem empfangenden Gerät nicht sofort initialisiert werden kann, sollten Sie das `AppDelegate` `WillContinueUserActivity` implementieren und den Benutzer darüber informieren, dass eine Fortsetzung gestartet wird.
 
-## <a name="example-handoff-app"></a>Übergabe-Beispiel-App
+## <a name="example-handoff-app"></a>Beispiel für eine Handoff-App
 
-Als ein Beispiel für die Übergabe in einer Xamarin.iOS-app verwenden, haben wir enthalten die [ **MonkeyBrowser** ](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/) Beispiel-app mit diesem Handbuch. Die app verfügt über vier Registerkarten, mit denen der Benutzer im Web, jeweils mit einer bestimmten Aktivitätstyp zu durchsuchen: Weather "," Favoriten "," Kaffeepause "und" Arbeit ".
+Als Beispiel für die Verwendung von Handoff in einer xamarin. IOS-APP haben wir die Beispiel-app " [**monkeybrowser**](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser) " in dieses Handbuch integriert. Die APP verfügt über vier Registerkarten, mit denen der Benutzer das Web durchsuchen kann, die jeweils einen bestimmten Aktivitätstyp haben: Wetter, Favorit, Kaffeepause und Arbeit.
 
-Auf eine beliebige Registerkarte, wenn der Benutzer, eine neue URL und Taps eingibt der **wechseln** eine neue Schaltfläche `NSUserActivity` für diese Registerkarte, die die URL enthält, die der Benutzer zurzeit navigiert wird erstellt:
+Wenn der Benutzer auf jeder Registerkarte eine neue URL eingibt und auf die Schaltfläche "Go `NSUserActivity` " tippt, wird für die Registerkarte eine neue erstellt, die die URL enthält, die der Benutzer gerade durchsucht:
 
-[![](handoff-images/handoff01.png "Übergabe-Beispiel-App")](handoff-images/handoff01.png#lightbox)
+[![](handoff-images/handoff01.png "Beispiel für eine Handoff-App")](handoff-images/handoff01.png#lightbox)
 
-Wenn einem der anderen Geräte des Benutzers verfügt das **MonkeyBrowser** -app installiert, iCloud, die mit dem gleichen Benutzerkonto angemeldet ist, wird auf dem gleichen Netzwerk und in unmittelbarer Nähe ausrichten, mit dem oben genannten Gerät, die Übergabe Aktivität unter "Start" angezeigt der Bildschirm (in der unteren linken Ecke):
+Wenn auf einem der Geräte des Benutzers die **monkeybrowser** -App installiert ist, mit demselben Benutzerkonto bei icloud angemeldet ist, sich im selben Netzwerk befindet und sich in der Nähe des obigen Geräts befindet, wird die Handoff-Aktivität auf dem Startbildschirm angezeigt (in der unteren linke Ecke):
 
-[![](handoff-images/handoff02.png "Die Übergabe-Aktivität, die auf dem Startbildschirm in der unteren linken Ecke angezeigt")](handoff-images/handoff02.png#lightbox)
+[![](handoff-images/handoff02.png "Die Handoff-Aktivität, die auf dem Startbildschirm in der unteren linken Ecke angezeigt wird.")](handoff-images/handoff02.png#lightbox)
 
-Wenn der Benutzer nach oben auf das Symbol für die Übergabe zieht, die app wird gestartet, und die Aktivitäten von Benutzern angegeben, der `NSUserActivity` wird auf dem neuen Gerät fortgesetzt werden:
+Wenn der Benutzer das Handoff-Symbol nach oben zieht, wird die APP gestartet, und die in der `NSUserActivity` angegebene Benutzeraktivität wird auf dem neuen Gerät fortgesetzt:
 
-[![](handoff-images/handoff03.png "Die Benutzer-Aktivität fortgesetzt wird, auf dem neuen Gerät")](handoff-images/handoff03.png#lightbox)
+[![](handoff-images/handoff03.png "Die Benutzeraktivität wurde auf dem neuen Gerät fortgesetzt.")](handoff-images/handoff03.png#lightbox)
 
-Wenn die Benutzeraktivität erfolgreich gesendet wurde auf einem anderen Apple-Gerät, dem sendenden Gerät die `NSUserActivity` erhalten einen Anruf an die `UserActivityWasContinued` Methode für die `NSUserActivityDelegate` , damit es weiß, dass die Aktivitäten von Benutzern zu einem anderen erfolgreich übertragen wurden das Gerät.
+Wenn die Benutzeraktivität erfolgreich an ein anderes Apple-Gerät gesendet wurde, empfängt das sendende Gerät einen aufzurufenden Befehl an `NSUserActivityDelegate` die `UserActivityWasContinued` - `NSUserActivity` Methode, um Sie darüber zu informieren, dass die Benutzeraktivität erfolgreich auf eine andere übertragen wurde. Schutz.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel erhält eine Einführung in die Übergabe-Framework verwendet, um eine Benutzeraktivität zwischen mehreren von Apple-Geräten des Benutzers, den Vorgang fortzusetzen. Als Nächstes wird aufgezeigt, wie Sie aktivieren und die Übergabe in einer Xamarin.iOS-app zu implementieren. Abschließend erläutert er die verschiedenen Typen von Übergabeanimationen Fortsetzungen verfügbar und die bewährten Methoden der Übergabe an.
+Dieser Artikel bietet eine Einführung in das Handoff-Framework, mit dem eine Benutzeraktivität zwischen mehreren der Apple-Geräte des Benutzers fortgesetzt werden kann. Als nächstes haben Sie gezeigt, wie Sie Handoff in einer xamarin. IOS-App aktivieren und implementieren. Schließlich wurden die unterschiedlichen Arten von Fortsetzungen für die Übergabe und die bewährten Methoden für die Übergabe erläutert.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS 9-Beispiele](https://developer.xamarin.com/samples/ios/iOS9/)
-- [MonkeyBrowser-Beispiel](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)
-- [iOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
-- [Was ist neu in iOS 9.0 verfügen](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [HomeKitDeveloper Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
-- [HomeKit Richtlinien zur Benutzeroberfläche](https://developer.apple.com/homekit/ui-guidelines/)
-- [Referenz zu HomeKit-Framework](https://developer.apple.com/library/ios/home_kit_framework_ref)
+- [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Beispiel für monkeybrowser](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser)
+- [IOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
+- [Neuerungen in ios 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [Homekitdeveloper-Handbuch](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
+- [Homekit-Richtlinien zur Benutzeroberfläche](https://developer.apple.com/homekit/ui-guidelines/)
+- [Referenz zum homekit-Framework](https://developer.apple.com/library/ios/home_kit_framework_ref)

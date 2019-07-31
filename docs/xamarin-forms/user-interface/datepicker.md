@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 263cbb4aed47794a09341bb8c78c4835510e50c0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 521df49a7698bc149d6bca7460cff2df74402bda
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408096"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657018"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms "DatePicker"
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 
 _Eine Xamarin.Forms-Sicht, die dem Benutzer ermöglicht, ein Datum auswählen._
 
@@ -92,7 +92,7 @@ Dies wird jedoch nicht empfohlen. Entsprechend der Einstellung von der `Format` 
 
 ## <a name="datepicker-in-an-application"></a>"DatePicker" in einer Anwendung
 
-Die [ **DaysBetweenDates** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) Beispiel enthält zwei `DatePicker` Ansichten auf der Seite. Diese können auf zwei Datumsangaben, die verwendet werden, und die Anwendung berechnet die Anzahl der Tage zwischen diesen Daten. Das Programm nicht die Einstellungen des Ändern der `MinimumDate` und `MaximumDate` Eigenschaften, sodass zwei Datumsangaben zwischen 1900 und 2100 sein müssen.
+Die [ **DaysBetweenDates** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker) Beispiel enthält zwei `DatePicker` Ansichten auf der Seite. Diese können auf zwei Datumsangaben, die verwendet werden, und die Anwendung berechnet die Anzahl der Tage zwischen diesen Daten. Das Programm nicht die Einstellungen des Ändern der `MinimumDate` und `MaximumDate` Eigenschaften, sodass zwei Datumsangaben zwischen 1900 und 2100 sein müssen.
 
 Hier ist die XAML-Datei ein:
 
@@ -196,5 +196,5 @@ Nachdem zwei Datumsangaben, die ausgewählt werden, zeigt die Anwendung die Anza
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [DaysBetweenDates-Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+- [DaysBetweenDates-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 - [DatePicker-API](xref:Xamarin.Forms.DatePicker)

@@ -1,37 +1,37 @@
 ---
-title: Layoutoptionen in Xamarin.iOS
-description: Dieses Dokument beschreibt verschiedene Möglichkeiten zum Anordnen von Benutzeroberflächen in Xamarin.iOS. Automatisches Anpassen der Größe und automatisches Layout werden erörtert.
+title: Layoutoptionen in xamarin. IOS
+description: In diesem Dokument werden verschiedene Möglichkeiten zum Anordnen von Benutzeroberflächen in xamarin. IOS beschrieben. Dabei werden die automatische Größenanpassung und das automatische Layout erläutert.
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1bcced2f43328bf5e7d1ebb171b3c92c9ec22493
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: b825b0d7f9e18350514e3f84e70f901f5fcb6724
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827766"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655928"
 ---
-# <a name="layout-options-in-xamarinios"></a>Layoutoptionen in Xamarin.iOS
+# <a name="layout-options-in-xamarinios"></a>Layoutoptionen in xamarin. IOS
 
-Es gibt zwei unterschiedliche Mechanismen für die Steuerung des Layouts, wenn eine Sicht geändert oder gedreht wird:
+Es gibt zwei verschiedene Mechanismen, um das Layout zu steuern, wenn die Größe einer Ansicht geändert oder gedreht wird:
 
--  **Automatisches Anpassen der Größe** : Automatisches Anpassen der Größe der Inspektor im Designer bietet eine Möglichkeit zum Festlegen der `AutoresizingMask` Eigenschaften. Hiermit wird ein Steuerelement an die Ränder des Containers verankert werden bzw. ihre Größe zu beheben. Automatisches Anpassen der Größe wird in allen Versionen von iOS. Dies wird im folgenden ausführlicher beschrieben.
--  **Automatisches Layout** – eine Funktion, die in iOS 6, die ermöglicht eine präzisere Kontrolle über die Beziehungen zwischen der UI-Steuerelemente eingeführt. Sie können die Kontrolle über die Positionen der Elemente relativ zu anderen Elementen auf der Entwurfsoberfläche angezeigt. In diesem Thema wird ausführlicher behandelt die [Automatisches Layout mit dem Xamarin.IOS-Designer](~/ios/user-interface/designer/designer-auto-layout.md) Guide.
+-  **Automatische Größen** Anpassung – mit dem Filter für die automatische Größenanpassung im Designer können die `AutoresizingMask` Eigenschaften festgelegt werden. Dadurch kann ein Steuerelement an die Ränder des Containers verankert und/oder seine Größe behoben werden. Die automatische Größenanpassung funktioniert in allen Versionen von IOS. Dies wird im folgenden ausführlicher beschrieben.
+-  **Automatisches Layout** – eine Funktion in ios 6, die eine differenzierte Steuerung der Beziehungen der UI-Steuerelemente ermöglicht. Sie ermöglicht die Steuerung der Positionen von Elementen im Verhältnis zu anderen Elementen auf der Entwurfs Oberfläche. Dieses Thema wird im Handbuch zum [automatischen Layout mit dem xamarin IOS-Designer](~/ios/user-interface/designer/designer-auto-layout.md) ausführlicher beschrieben.
 
-## <a name="autosizing"></a>Automatisches Anpassen der Größe
+## <a name="autosizing"></a>Automatisches Anpassen
 
-Wenn ein Benutzer ändert die Größe eines Fensters, z. B. wenn das Gerät gedreht wird, und die Änderungen der bildschirmausrichtung, wird das System automatisch Ansichten in diesem Fenster entsprechend ihren Regeln Automatisches Anpassen der Größe ändern. Dieser Regeln können festgelegt werden, C# mithilfe der `AutoresizingMask` Eigenschaft der `UIView` oder in der **Pad "Eigenschaften"** des iOS-Designer, wie unten gezeigt:
+Wenn ein Benutzer die Größe eines Fensters ändert, z. b. wenn das Gerät gedreht wird und sich die Ausrichtung ändert, ändert das System automatisch die Größe der Ansichten innerhalb dieses Fensters gemäß den Regeln für die automatische Größenanpassung. Diese C# Regeln können in mithilfe der `AutoresizingMask` -Eigenschaft von `UIView` oder in der **Eigenschaftenpad** des IOS-Designers festgelegt werden, wie unten dargestellt:
 
  [![](layout-options-images/image41.png "Visual Studio für Mac-Designer")](layout-options-images/image41.png#lightbox)
 
-Wenn ein Steuerelement ausgewählt ist, dadurch können Sie manuell angeben, den Speicherort und den Abmessungen des Steuerelements, sowie die Auswahl **Automatisches Anpassen der Größe** Verhalten. Wie im folgenden Screenshot dargestellt wird, können wir die Federn und Struts definieren Sie die ausgewählte Ansicht Beziehung, da das übergeordnete Element im Steuerelement Automatisches Anpassen der Größe verwenden:
+Wenn Sie ein Steuerelement auswählen, können Sie den Speicherort und die Dimensionen des Steuer Elements manuell angeben und das Verhalten für die **Automatische Größen** Anpassung auswählen. Wie im folgenden Screenshot gezeigt, können wir die Quellen und Strukturen im Steuerelement für die automatische Größenanpassung verwenden, um die Beziehung der ausgewählten Ansicht mit ihrem übergeordneten Element zu definieren:
 
  [![](layout-options-images/image42.png "Visual Studio für Mac-Designer")](layout-options-images/image42.png#lightbox)
 
-Anpassen einer *Spring* führt dazu, dass die Sicht zum Ändern der Größe basierend auf der Breite oder Höhe der ihr übergeordneten Ansicht. Anpassen einer *strut* veranlasst, dass die Sicht ein konstanter Abstand zwischen sich selbst und ihrer übergeordneten Ansicht, in diesem bestimmten Edge beibehalten.
+Das Anpassen einer *Spring* -Ansicht bewirkt, dass die Größe der Ansicht basierend auf der Breite oder Höhe der übergeordneten Ansicht geändert wird. Wenn Sie einen *Strumpf* anpassen, wird die Ansicht in der Ansicht einen konstanten Abstand zwischen sich selbst und der übergeordneten Ansicht an diesem bestimmten Rand beibehalten.
 
 Diese Einstellungen können auch im Code festgelegt werden:
 
@@ -41,11 +41,11 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 ```
 
 
-Um die Einstellungen für automatisches Anpassen der Größe zu testen, aktivieren Sie verschiedene **unterstützte Geräteausrichtungen** in den Projektoptionen:
+Um die Einstellungen für die automatische Größenanpassung zu testen, aktivieren Sie in den Optionen des Projekts verschiedene **Unterstützte Geräte Ausrichtungen** :
 
- [![](layout-options-images/image43a.png "Einstellungen für automatisches Anpassen der Größe")](layout-options-images/image43a.png#lightbox)
+ [![](layout-options-images/image43a.png "Einstellungen für automatische Größenanpassung")](layout-options-images/image43a.png#lightbox)
 
-In der CodeBehind können wir folgenden Code verwenden, der bewirkt, dass die beiden Textsteuerelemente horizontal ändern der Größe:
+Im Code Behind können wir den folgenden Code verwenden, der bewirkt, dass die Größe der beiden Text Steuerelemente horizontal geändert wird:
 
 ```csharp
 textview1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
@@ -54,15 +54,15 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 ```
 
 
-Wir können auch das Steuerelement im Designer anpassen. Der Struts auswählen, wie unten gezeigt haben bewirkt, dass das Bild, das rechts ausgerichtete bleiben, ohne vom unteren Rand der Ansicht abgeschnitten wird:
+Wir können die Steuerelemente auch mithilfe des Designers anpassen. Wenn Sie die unten gezeigten Strukturen auswählen, wird das Bild rechtsbündig ausgerichtet, ohne am unteren Rand der Ansicht abgeschnitten zu werden:
 
- [![](layout-options-images/autoresize.png "Standardeinstellungen")](layout-options-images/autoresize.png#lightbox)
+ [![](layout-options-images/autoresize.png "Autorotierung")](layout-options-images/autoresize.png#lightbox)
 
-Diese Screenshots zeigen, wie Sie die Steuerelemente zum Ändern der Größe oder positionieren selbst, wenn der Bildschirm gedreht wird:
+Diese Screenshots zeigen, wie sich die Größe der Steuerelemente ändert, wenn der Bildschirm gedreht wird.
 
- [![](layout-options-images/image44a.png "Standardeinstellungen")](layout-options-images/image44a.png#lightbox)
+ [![](layout-options-images/image44a.png "Autorotierung")](layout-options-images/image44a.png#lightbox)
 
-Beachten Sie, dass die Textansicht Textfeld sowohl gestreckt, um den gleichen Links zu verwenden und Rändern, aufgrund rechten der `FlexibleWidth` festlegen. Das Image hat den oberen und linken Rand flexibel, was bedeutet, dass er behält die unteren und rechten Rändern – beibehalten der Abbildung in der Ansicht an, wenn der Bildschirm gedreht wird. Komplexe Layouts erfordern in der Regel eine Kombination dieser Einstellungen auf alle sichtbaren Steuerelements auf die Benutzeroberfläche in Einklang zu bringen und zu verhindern, dass Steuerelemente überlappen, wenn die Ansicht des Bereichs (aufgrund von Rotation oder eines anderen Ereignisses ändern der Größe) ändern.
+Beachten Sie, dass die Textansicht und das Textfeld gestreckt werden, um die gleichen linken und rechten Ränder aufgrund `FlexibleWidth` der-Einstellung beizubehalten. Das Bild hat den oberen und den linken Rand flexibel, d. h., er behält den unteren und rechten Rand bei – behält das Bild beim Drehen des Bildschirms bei. Komplexe Layouts erfordern in der Regel eine Kombination dieser Einstellungen auf jedem sichtbaren Steuerelement, um die Benutzeroberfläche konsistent zu halten und zu verhindern, dass sich Steuerelemente überlappen, wenn sich die Begrenzungen der Ansicht ändern (aufgrund der Drehung oder eines anderen Ereignisses zur Änderungs Änderung).
 
 
 
@@ -70,4 +70,4 @@ Beachten Sie, dass die Textansicht Textfeld sowohl gestreckt, um den gleichen Li
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Steuerelemente (Beispiel)](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

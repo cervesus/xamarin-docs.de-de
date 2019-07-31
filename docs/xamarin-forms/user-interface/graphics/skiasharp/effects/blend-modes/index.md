@@ -7,16 +7,16 @@ ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 3ea05563ecbca95d26d692d5424c30e961229ac5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8071f310e899575699e1d0b925541f2863b00676
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61021197"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645189"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp Füllmethoden einheitlich
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Diese Artikel konzentrieren sich auf die [ `BlendMode` ](xref:SkiaSharp.SKPaint.BlendMode) Eigenschaft [ `SKPaint` ](xref:SkiaSharp.SKPaint). Die `BlendMode` Eigenschaft ist vom Typ [ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode), eine Enumeration mit Membern von 29.
 
@@ -46,13 +46,13 @@ Die 29 Mitglieder der `SKBlendMode` Enumeration kann in drei Kategorien untertei
 
 Die Namen dieser drei Kategorien dauert mehr Bedeutung in den Diskussionen bemerkt, die folgen. Die Reihenfolge, in der hier aufgeführten Elemente ist der gleiche wie in der Definition der `SKBlendMode` Enumeration. In der ersten Spalte der 13 Enumerationsmember haben die ganzzahligen Werte 0 bis 12. Die zweite Spalte sind Enumerationsmember, die zu einer ganzen Zahl 13 bis 24 entsprechen, und die Elemente in der dritten Spalte haben Werte 25, 28.
 
-Diese Modi finden Sie im Blend _ungefähr_ der gleichen Reihenfolge, in der W3C **zusammensetzt und auf Ebene1 Blending** Dokument, es gibt jedoch einige Unterschiede: Die `Src` Modus hat die Bezeichnung _Kopie_ im W3C-Dokument und `Plus` heißt _heller_. Das W3C-Dokument definiert eine _Normal_ Blendingmodus, der nicht in enthalten ist `SKBlendModes` da wäre es identisch `SrcOver`. Die `Modulate` Blend-Modus (am oberen Rand der ersten Spalte) nicht in der W3C-Dokument und eine Erläuterung der enthalten die `Multiply` Modus steht `Screen`.
+Diese Blend-Modi werden in _etwa_ der gleichen Reihenfolge im Dokument "W3C **Compositing and Mischungs Stufe 1** " erläutert, es gibt jedoch einige Unterschiede: Der `Src` Modus wird im W3C-Dokument als _Kopie_ bezeichnet und `Plus` wird als _heller_bezeichnet. Das W3C-Dokument definiert eine _Normal_ Blendingmodus, der nicht in enthalten ist `SKBlendModes` da wäre es identisch `SrcOver`. Die `Modulate` Blend-Modus (am oberen Rand der ersten Spalte) nicht in der W3C-Dokument und eine Erläuterung der enthalten die `Multiply` Modus steht `Screen`.
 
 Da die `Modulate` Blend-Modus für Skia eindeutig ist, werden als eine zusätzliche Porter-Duff-Modus und einem trennbare Modus behandelt werden.
 
 ## <a name="the-importance-of-transparency"></a>Die Bedeutung von Transparenz
 
-In der Vergangenheit wurde Zusammensetzung entwickelt, in Verbindung mit dem Konzept der _alpha-Kanal_. In der Anzeige einer Oberfläche wie z. B. die `SKCanvas` Objekt oder eine Bitmap für die Farbe, jedes Pixels 4 Bytes besteht aus: 1 Byte jeder für die Komponenten roten, grünen und blauen und einer zusätzlichen Byte für Transparenz. Diese alpha-Komponente ist 0 für vollständige Transparenz und 0xFF für vollständige Deckkraft mit unterschiedlichen Transparenz zwischen diesen Werten.
+In der Vergangenheit wurde Zusammensetzung entwickelt, in Verbindung mit dem Konzept der _alpha-Kanal_. In einer Anzeige Oberfläche, wie z `SKCanvas` . b. dem-Objekt und einer vollfarbliche Bitmap, besteht jedes Pixel aus 4 Bytes: jeweils 1 Byte für die roten, grünen und blauen Komponenten und ein zusätzliches Byte für Transparenz. Diese alpha-Komponente ist 0 für vollständige Transparenz und 0xFF für vollständige Deckkraft mit unterschiedlichen Transparenz zwischen diesen Werten.
 
 Viele der Füllmethoden einheitlich basieren auf der Transparenz. In der Regel, wenn ein `SKCanvas` wird zuerst abgerufen, eine `PaintSurface` Handler auf, oder wenn ein `SKCanvas` wird erstellt, um eine Bitmap zu zeichnen, ist der erste Schritt dieses Aufrufs:
 
@@ -93,4 +93,4 @@ Verwenden Sie die nicht trennbare Füllmethoden einheitlich Farbton, Sättigung 
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

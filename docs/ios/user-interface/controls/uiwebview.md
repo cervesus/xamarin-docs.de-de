@@ -1,34 +1,34 @@
 ---
-title: Web-Ansichten in Xamarin.iOS
-description: Dieses Dokument beschreibt die verschiedenen Möglichkeiten, die eine Xamarin.iOS-app, Web-Inhalte anzeigen kann. Es wird erläutert, UIWebView, WKWebView, SFSafariViewController, Safari und app-transportsicherheit.
+title: Webansichten in xamarin. IOS
+description: In diesem Dokument werden die verschiedenen Möglichkeiten beschrieben, wie eine xamarin. IOS-App Webinhalte anzeigen kann. Es erläutert UIWebView, wkwebview, sfsafariviewcontroller, Safari und App-Transportsicherheit.
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9adf514e4fc510617e3f4d801569935ee4a03f25
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8848f2bacac4b1ddab5c74ec07246e077bb4f158
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61093765"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642695"
 ---
-# <a name="web-views-in-xamarinios"></a>Web-Ansichten in Xamarin.iOS
+# <a name="web-views-in-xamarinios"></a>Webansichten in xamarin. IOS
 
-Apple hat eine Reihe von Möglichkeiten für app-Entwickler Webvorschau in ihre apps integrieren veröffentlicht, während der Lebensdauer der e/a. Die meisten Benutzer verwenden den integrierten Safari-Webbrowser auf ihrem iOS-Gerät, und daher erwarten, dass die Webansicht-Funktionalität von anderen apps mit diesem-Erfahrung konsistent ist. Sie erwarten, dass die gleichen Gesten funktionieren, die Leistung auf Par und die Funktionen identisch sein.
+Die Lebensdauer von IOS Apple hat eine Reihe von Möglichkeiten für App-Entwickler veröffentlicht, webansichts Funktionen in Ihre apps einzubinden. Die meisten Benutzer verwenden den integrierten Safari-Webbrowser auf Ihrem IOS-Gerät und erwarten daher, dass die webansichtenfunktionalität von anderen apps mit dieser Funktionalität konsistent ist. Sie erwarten, dass die gleichen Gesten funktionieren, die Leistung auf dem gleichen Niveau und die Funktionalität identisch ist.
 
-In diesem Artikel wird untersucht, jede der drei Webansicht, die von Apple bereitgestellten: `UIWebView`, `WKWebview`, und `SFSafariViewController`, die ähnlichkeiten und Unterschiede und wie sie verwendet werden können. 
+In diesem Artikel untersuchen wir die drei von Apple bereitgestellten Webansichten: `UIWebView`, `WKWebview`und `SFSafariViewController`, ihre Ähnlichkeiten und Unterschiede sowie deren Verwendung. 
 
-iOS 11 eingeführte neue Änderungen sowohl `WKWebView` und `SFSafariViewController`. Weitere Informationen dazu finden Sie unter den [Web-Änderungen in iOS 11-Handbuch](~/ios/platform/introduction-to-ios11/web.md) Guide.
+IOS 11 hat neue Änderungen sowohl `WKWebView` in als auch `SFSafariViewController`in eingeführt. Weitere Informationen hierzu finden Sie im Leitfaden für [webänderungen in ios 11](~/ios/platform/introduction-to-ios11/web.md) .
 
 ## <a name="uiwebview"></a>UIWebView
 
-`UIWebView` wird von Apple die herkömmliche Weise für die Bereitstellung von Web-Inhalte in Ihrer app. Es wurde im iOS 2.0 veröffentlicht, und ist seit 8.0 veraltet.
+`UIWebView`ist die ältere Methode von Apple, Webinhalte in Ihrer APP bereitzustellen. Sie wurde in ios 2,0 veröffentlicht und ist seit 8,0 als veraltet markiert.
 
-Wenn Sie iOS-Versionen vor 8.0 unterstützen möchten, müssen mit `UIWebView`. Auf der Tatsache, dass `UIWebView` weniger optimiert ist für Leistung als die alternativen, es wird empfohlen, dass Sie iOS-Version des Benutzers überprüfen soll. Wenn sie 8.0 oder höher verwenden eine der Optionen erläutern unten wird eine bessere benutzererfahrung zu erstellen.
+Wenn Sie beabsichtigen, IOS-Versionen vor 8,0 zu unterstützen, müssen Sie verwenden `UIWebView`. Aufgrund der Tatsache, dass `UIWebView` die Leistung weniger optimiert ist als bei den Alternativen, empfiehlt es sich, die IOS-Version des Benutzers zu überprüfen. Wenn es 8,0 oder höher ist, wird durch die Verwendung einer der unten erläuternden Optionen eine bessere Benutzer Leistung erzielt.
  
-Um eine UIWebView Ihrer Xamarin.iOS-app hinzuzufügen, verwenden Sie den folgenden Code:
+Um ihrer xamarin. IOS-App eine UIWebView hinzuzufügen, verwenden Sie den folgenden Code:
  
 ```
 webView = new UIWebView (View.Bounds);
@@ -38,24 +38,24 @@ var url = "https://xamarin.com"; // NOTE: https secure request
 webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 ```
 
-Dies erzeugt die folgende Webansicht:
+Dadurch wird die folgende Webansicht erzeugt:
 
-[![](uiwebview-images/webview.png "Die Auswirkungen der ScalesPagesToFit")](uiwebview-images/webview.png#lightbox)
+[![](uiwebview-images/webview.png "Die Auswirkung von scalespagestofit")](uiwebview-images/webview.png#lightbox)
 
-Weitere Informationen zur Verwendung von `UIWebView`, finden Sie in der folgenden Anleitungen:
+Weitere Informationen zum verwenden `UIWebView`von finden Sie in den folgenden Rezepte:
 
 
 - [Laden einer Webseite](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_a_web_page)
-- [Laden von lokalen Inhalten](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_local_content)
-- [Laden von nicht-Dokumenten](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_non-web_documents)
+- [Lokalen Inhalt laden](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_local_content)
+- [Nicht-Webdokumente laden](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_non-web_documents)
 
 ## <a name="wkwebview"></a>WKWebView
 
-`WKWebView` wurde in iOS 8 und ermöglicht app-Entwickler eine Benutzeroberfläche ähnlich, die von mobilen Safari-Webbrowser implementieren eingeführt. Dies ist, teilweise auf die Tatsache zurückzuführen, `WKWebView` verwendet die Nitro Javascript-Engine, die gleiche Engine, die von mobilen Safari verwendet. `WKWebView` sollte stets verwendet werden UIWebView wurden aufgrund von möglichen über die [eine höhere Leistung](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview), benutzerfreundlichen Gesten, und die einfache Interaktion zwischen der Webseite und Ihre app integriert.
+`WKWebView`wurde in ios 8 eingeführt und ermöglicht es App-Entwicklern, eine Webbrowser Schnittstelle zu implementieren, die der von Mobile Safari ähnelt. Dies liegt teilweise an der Tatsache, dass `WKWebView` die Nitro-Javascript-Engine verwendet, die von Mobile Safari verwendet wird. `WKWebView`sollte immer über UIWebView verwendet werden. Dies ist aufgrund der [verbesserten Leistung](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview), der integrierten benutzerfreundlichen Gesten und der einfachen Interaktion zwischen der Webseite und Ihrer APP möglich.
   
-`WKWebView` können zu Ihrer app in eine fast identische Möglichkeit zum UIWebView, hinzugefügt werden, aber als Entwickler deutlich mehr Kontrolle über die Benutzeroberfläche/UX und Funktionen haben. Erstellen und Anzeigen des Objekts der Web-Ansicht zeigt die angeforderte Seite, jedoch Sie steuern können, wie die Ansicht dargestellt werden, wie der Benutzer navigieren kann und wie sich der Benutzer auf die Sicht beendet.  
+`WKWebView`kann Ihrer APP nahezu identisch mit UIWebView hinzugefügt werden. als Entwickler haben Sie jedoch viel mehr Kontrolle über die Benutzeroberfläche, die Benutzeroberfläche und die Funktionalität. Beim Erstellen und Anzeigen des webansichts Objekts wird die angeforderte Seite angezeigt, Sie können jedoch steuern, wie die Ansicht dargestellt wird, wie der Benutzer navigieren kann und wie der Benutzer die Ansicht verlässt.  
 
-Der folgende Code kann zum Starten einer `WKWebView` in Ihrer Xamarin.iOS-app:
+Der folgende Code kann verwendet werden, um eine `WKWebView` in ihrer xamarin. IOS-APP zu starten:
 
 ```csharp
     WKWebView webView = new WKWebView(View.Frame, new WKWebViewConfiguration());
@@ -66,29 +66,29 @@ Der folgende Code kann zum Starten einer `WKWebView` in Ihrer Xamarin.iOS-app:
     webView.LoadRequest(request);
 ```
 
-Dies erzeugt die folgende Webansicht:
+Dadurch wird die folgende Webansicht erzeugt:
 
-[![](uiwebview-images/wkwebview.png "Eine Beispiel-Web-Ansicht ohne ScalesPagesToFit")](uiwebview-images/wkwebview.png#lightbox)
+[![](uiwebview-images/wkwebview.png "Eine Beispiel Webansicht ohne scalespagestofit")](uiwebview-images/wkwebview.png#lightbox)
 
-Es ist wichtig zu beachten, dass `WKWebView` befindet sich in den WebKit-Namespace, sodass Sie dadurch die using-Direktive am Anfang der Klasse hinzugefügt werden.
+Beachten Sie, dass `WKWebView` sich im WebKit-Namespace befindet, sodass Sie diese using-Direktive am Anfang der Klasse hinzufügen müssen.
 
-`WKWebView` kann auch in einer Xamarin.Mac-apps verwendet werden, und Sie aus diesem Grund sollten in Betracht, wenn Sie eine plattformübergreifende Mac/iOS-app erstellen.
+`WKWebView`kann auch innerhalb von xamarin. Mac-Apps verwendet werden, und Sie sollten es ggf. verwenden, wenn Sie eine plattformübergreifende Mac/IOS-app erstellen.
 
-Die [JavaScript Warnungen behandeln](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/handle_javascript_alerts) Anleitung enthält auch Informationen zur Verwendung von WKWebView mit Javascript
+Das Rezept zum [Behandeln von JavaScript-Warnungen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/handle_javascript_alerts) bietet auch Informationen zur Verwendung von wkwebview mit JavaScript.
 
 <a name="safariviewcontroller" />
 
 ## <a name="sfsafariviewcontroller"></a>SFSafariViewController
  
- `SFSafariViewController` ist das aktuelle Verfahren zum Bereitstellen von Webinhalte aus Ihrer app und in iOS 9 und höher verfügbar. Im Gegensatz zu `UIWebView` oder `WKWebView`, `SFSafariViewController` ist ein View-Controller und kann daher nicht mit anderen Ansichten verwendet werden. Sie sollten zur Verfügung stellen `SFSafariViewController` als eine neue View-Controller, auf die gleiche Weise präsentieren alle View-Controller.
+ `SFSafariViewController`ist die neueste Methode, um Webinhalte von Ihrer APP bereitzustellen, und ist in ios 9 und höher verfügbar. Anders `UIWebView` als `WKWebView`oder isteinAnsichtsControllerundkanndahernichtmitanderenSichtenverwendetwerden.`SFSafariViewController` Sie sollten `SFSafariViewController` als neuen Ansichts Controller auf die gleiche Weise wie alle Ansichts Controller vorhanden sein.
  
- `SFSafariViewController` ist im Wesentlichen einem "Mini Safari", die in Ihre app eingebettet werden kann. Wie WKWebView verwendet die gleichen Nitro Javascript-Engine, sondern bietet auch eine Reihe von zusätzlichen Safari-Features wie AutoAusfüllen, Reader und die Möglichkeit zur Freigabe von Cookies und Daten mit mobilen Safari. Interaktion zwischen dem Benutzer und dem `SFSafariViewController` ist für Ihre app nicht verfügbar. Ihre app wird nicht auf keines der standardmäßigen Safari-Features zugreifen.
+ `SFSafariViewController`ist im Wesentlichen eine "Mini Safari", die in Ihre APP eingebettet werden kann. Wie bei wkwebview wird dieselbe Nitro-Javascript-Engine verwendet, aber es bietet auch eine Reihe zusätzlicher Safari-Features, wie z. b. AutoFill, Reader und die Möglichkeit, Cookies und Daten mit mobile Safari gemeinsam zu nutzen. Die Interaktion zwischen dem Benutzer und `SFSafariViewController` dem ist für Ihre APP nicht zugänglich. Ihre APP hat keinen Zugriff auf die standardmäßigen Safari-Features.
  
-Es implementiert auch, wird standardmäßig ein **Fertig** Dadurch können Benutzer einfach zu Ihrer app zurückkehren und weiterzuleiten, wobei Navigationsschaltflächen, sodass Ihre Benutzer durch einen Stapel von Webseiten zu navigieren. Darüber hinaus bietet es auch den Benutzer eine Adressleiste, sodass sie die Sicherheit, die sie auf der erwarteten Webseite sind. Die-Adressleiste lässt sich nicht auf den Benutzer, ändern die Url aus. 
+Außerdem implementiert Sie standardmäßig eine Schaltfläche " **done** ", die es Benutzern ermöglicht, problemlos zu Ihrer APP zurückzukehren und Navigations Schaltflächen Vorwärts und rückwärts zu navigieren, sodass der Benutzer durch einen Stapel von Webseiten navigieren kann. Außerdem bietet Sie dem Benutzer eine Adressleiste, die dem Benutzer die Meinung bietet, dass Sie sich auf der erwarteten Webseite befinden. In der Adressleiste ist es dem Benutzer nicht möglich, die URL zu ändern. 
 
-Diese Implementierungen kann nicht geändert werden, also `SFSafariViewController` ist ideal als Standardbrowser verwendet wird, wenn möchte, dass Ihre app eine Webseite ohne Anpassung zu präsentieren.
+Diese Implementierungen können nicht geändert werden. `SFSafariViewController` daher eignet sich ideal für die Verwendung als Standardbrowser, wenn Ihre APP ohne Anpassung eine Webseite präsentieren möchte.
 
-Der folgende Code kann zum Starten einer `SFSafariViewController` in Ihrer Xamarin.iOS-app:
+Der folgende Code kann verwendet werden, um eine `SFSafariViewController` in ihrer xamarin. IOS-APP zu starten:
 
 ```csharp
 var sfViewController = new SFSafariViewController(url);
@@ -96,13 +96,13 @@ var sfViewController = new SFSafariViewController(url);
 PresentViewController(sfViewController, true, null);
 ```
 
-Dies erzeugt die folgende Webansicht:
+Dadurch wird die folgende Webansicht erzeugt:
 
-[![](uiwebview-images/sfsafariviewcontroller.png "Eine Beispiel-Web-Ansicht mit SFSafariViewController")](uiwebview-images/sfsafariviewcontroller.png#lightbox)
+[![](uiwebview-images/sfsafariviewcontroller.png "Eine Beispiel Webansicht mit sfsafariviewcontroller")](uiwebview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
-Es ist auch möglich, zu die mobile Safari-app in der app zu öffnen, mit dem folgenden Code:
+Es ist auch möglich, die mobile Safari-App aus der APP heraus zu öffnen, indem Sie den folgenden Code verwenden:
 
 ```csharp
 var url = new NSUrl("https://xamarin.com");
@@ -111,20 +111,20 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 ```
 
-Dies erzeugt die folgende Webansicht:
+Dadurch wird die folgende Webansicht erzeugt:
 
-[![](uiwebview-images/safari.png "Eine Webseite angezeigt, die in Safari")](uiwebview-images/safari.png#lightbox)
+[![](uiwebview-images/safari.png "Eine in Safari präsentierte Webseite")](uiwebview-images/safari.png#lightbox)
 
-Navigieren durch Benutzer weg von Ihrer app in Safari sollten im Allgemeinen immer vermieden werden. Die meisten Benutzer nicht erwarten, dass die Navigation außerhalb Ihrer Anwendung, sodass, wenn Sie Ihre app verlassen, Benutzer nie, zurückgegeben können Engagement im Wesentlichen zu beenden.
+Die Navigation von Benutzern zu Safari sollte in der Regel immer vermieden werden. Die meisten Benutzer erwarten keine Navigation außerhalb Ihrer Anwendung. Wenn Sie also von ihrer app Weg navigieren, können Benutzer diese nicht mehr zurückgeben.
 
-iOS 9-Verbesserungen können Benutzer einfach an Ihre app über eine Schaltfläche "zurück" zurückgegeben, die in der oberen linken Ecke der Seite Safari bereitgestellt wird.
+mit den Verbesserungen für IOS 9 kann der Benutzer problemlos über eine Schaltfläche "zurück", die in der linken oberen Ecke der Safari-Seite angezeigt wird, zu Ihrer APP zurückkehren.
 
 ## <a name="app-transport-security"></a>App-Transportsicherheit
 
-App-Transportsicherheit: oder *ATS* seit von Apple iOS 9, um sicherzustellen, dass die gesamte Internetkommunikation entsprechen, um die Verbindung zu bewährte Methoden sichern.
+App-Transport Sicherheit oder *ATS* wurde von Apple in ios 9 eingeführt, um sicherzustellen, dass die gesamte Internetkommunikation den bewährten Methoden der sicheren Verbindung entspricht.
 
-Weitere Informationen zu ATS, einschließlich der Implementierung in Ihrer app finden Sie in der [App Transport Security](~/ios/app-fundamentals/ats.md) Guide.
+Weitere Informationen zu den Vorgängen, einschließlich der Implementierung in der APP, finden Sie im Leitfaden zur [App-Transport Sicherheit](~/ios/app-fundamentals/ats.md) .
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WebViews (Beispiel)](https://developer.xamarin.com/samples/monotouch/WebView/)
+- [Webviews (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)

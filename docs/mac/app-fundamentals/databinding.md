@@ -1,44 +1,44 @@
 ---
-title: Die Datenbindung und Schlüssel / Wert-Codierung, xamarin.Mac
-description: Dieser Artikel befasst sich mit der Codierung mit Schlüssel-Wert und Schlüssel-Wert beachtet werden, um die Datenbindung an Benutzeroberflächenelemente in Interface Builder von Xcode zu ermöglichen.
+title: Datenbindung und Schlüssel-Wert-Codierung in xamarin. Mac
+description: In diesem Artikel wird die Verwendung von Schlüssel-Wert-Codierung und Schlüssel-Wert-Beobachtung erläutert, um die Datenbindung an Benutzeroberflächen Elemente in der Interface Builder von Xcode zuzulassen.
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4a391160f2102fd1f069a45eb7c16aec91dfd7e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dfc4c8a5f00fd11d1554dcadf5e35018046e49f4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61428100"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642899"
 ---
-# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Die Datenbindung und Schlüssel / Wert-Codierung, xamarin.Mac
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Datenbindung und Schlüssel-Wert-Codierung in xamarin. Mac
 
-_Dieser Artikel befasst sich mit der Codierung mit Schlüssel-Wert und Schlüssel-Wert beachtet werden, um die Datenbindung an Benutzeroberflächenelemente in Interface Builder von Xcode zu ermöglichen._
+_In diesem Artikel wird die Verwendung von Schlüssel-Wert-Codierung und Schlüssel-Wert-Beobachtung erläutert, um die Datenbindung an Benutzeroberflächen Elemente in der Interface Builder von Xcode zuzulassen._
 
 ## <a name="overview"></a>Übersicht
 
-Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf den gleichen Schlüssel / Wert-Codierung und Datenbindungsverfahren, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ zum Binden von Daten mit UI-Elementen, statt Code zu schreiben.
+Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zugriff auf dieselben Schlüssel-Wert-Codierungs-und Daten Bindungs Techniken, die von einem Entwickler in *Ziel-C* und *Xcode* verwendet werden. Da xamarin. Mac direkt in Xcode integriert ist, können Sie die _Interface Builder_ von Xcode verwenden, um Daten an Benutzeroberflächen Elemente zu binden, anstatt Code zu schreiben.
 
-Mithilfe von Schlüssel-Wert-Codierung und Datenbindungsmethoden in Ihre Xamarin.Mac-Anwendung, können Sie die Menge des Codes, die Sie schreiben und verwalten, die zum Auffüllen und zum Arbeiten mit UI-Elemente, erheblich reduzieren. Sie haben außerdem den Vorteil, dass weitere entkoppeln Ihre Daten sichern (_Datenmodell_) aus Ihrem Front end-Benutzeroberfläche (_Model-View-Controller_), wodurch einfacher zu verwalten, eine flexiblere Anwendung Entwurf.
+Durch die Verwendung von Schlüssel-Wert-Codierungs-und Daten Bindungs Techniken in ihrer xamarin. Mac-Anwendung können Sie die Menge des Codes, den Sie schreiben und verwalten müssen, erheblich verringern, um Benutzeroberflächen Elemente aufzufüllen und mit Ihnen zu arbeiten. Außerdem profitieren Sie von der weiteren Entkopplung ihrer Sicherungsdaten (_Datenmodell_) von der Front-End-Benutzeroberfläche (_Model-View-Controller_). Dies führt zu einer einfacheren Wartung und einem flexibleren Anwendungs Entwurf.
 
-[![Ein Beispiel für die ausgeführte app](databinding-images/intro01.png "ein Beispiel für die ausgeführte app")](databinding-images/intro01-large.png#lightbox)
+[![Ein Beispiel für die laufende App](databinding-images/intro01.png "Ein Beispiel für die laufende App")](databinding-images/intro01-large.png#lightbox)
 
-In diesem Artikel werden die Grundlagen der Arbeit mit Schlüssel / Wert-Codierung und der Datenbindung in einer Xamarin.Mac-Anwendung beschrieben. Es wird dringend empfohlen, dass Sie über arbeiten die [Hallo, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die wir in diesem Artikel verwenden.
+In diesem Artikel werden die Grundlagen der Arbeit mit Schlüssel-Wert-Codierung und Datenbindung in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , verwenden, da er wichtige Konzepte und Techniken behandelt, die wir in verwenden werden. Dieser Artikel.
 
-Empfiehlt es sich um einen Blick auf die [Verfügbarmachen von c#-Klassen / Methoden mit Objective-C](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac-Interna](~/mac/internals/how-it-works.md) dokumentieren, es wird erläutert, die `Register` und `Export` Attribute verwendet, um Ihre Klassen in c# für Objective-C-Objekte und Benutzeroberfläche Elemente zu verknüpfen.
+Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden das-Attribut `Register` und `Export` das-Attribut erläutert, mit C# denen die Klassen an gesendet werden. Ziel-C-Objekte und UI-Elemente.
 
 <a name="What_is_Key-Value_Coding" />
 
-## <a name="what-is-key-value-coding"></a>Was ist das Schlüssel / Wert-Codierung
+## <a name="what-is-key-value-coding"></a>Was ist Schlüssel-Wert-Codierung?
 
-Schlüssel / Wert-Codierung (KVM) ist ein Mechanismus für den Zugriff auf die Eigenschaften eines Objekts ist indirekt, mithilfe von Schlüsseln (speziell formatierte Zeichenfolgen) zum Identifizieren von Eigenschaften, statt den Zugriff über Instanzvariablen oder Methoden der eigenschaftenzugriffsmethode (`get/set`). Durch die Implementierung von Schlüssel-Wert-Codierung kompatibel Accessors in Ihre Xamarin.Mac-Anwendung, erhalten Sie Zugriff auf andere MacOS (früher als OS X)-Funktionen wie die Schlüssel-Wert beobachten (KVO), Datenbindung, Kerndaten, Cocoa-Bindungen und Scriptability.
+Key-Value Coding (KVC) ist ein Mechanismus für den indirekten Zugriff auf die Eigenschaften eines Objekts, indem Schlüssel (speziell formatierte Zeichen folgen) verwendet werden, um Eigenschaften zu identifizieren, anstatt über Instanzvariablen oder Zugriffsmethoden (`get/set`) auf Sie zuzugreifen. Durch Implementieren von Schlüssel-Wert-Codierungs kompatiblen Accessoren in ihrer xamarin. Mac-Anwendung erhalten Sie Zugriff auf andere macOS-Features (ehemals OS X), wie z. b. die Schlüssel-Wert-Beobachtung (KVO), die Datenbindung, die Kern Daten, Cocoa-Bindungen und die scriptbarkeit.
 
-Mithilfe von Schlüssel-Wert-Codierung und Datenbindungsmethoden in Ihre Xamarin.Mac-Anwendung, können Sie die Menge des Codes, die Sie schreiben und verwalten, die zum Auffüllen und zum Arbeiten mit UI-Elemente, erheblich reduzieren. Sie haben außerdem den Vorteil, dass weitere entkoppeln Ihre Daten sichern (_Datenmodell_) aus Ihrem Front end-Benutzeroberfläche (_Model-View-Controller_), wodurch einfacher zu verwalten, eine flexiblere Anwendung Entwurf. 
+Durch die Verwendung von Schlüssel-Wert-Codierungs-und Daten Bindungs Techniken in ihrer xamarin. Mac-Anwendung können Sie die Menge des Codes, den Sie schreiben und verwalten müssen, erheblich verringern, um Benutzeroberflächen Elemente aufzufüllen und mit Ihnen zu arbeiten. Außerdem profitieren Sie von der weiteren Entkopplung ihrer Sicherungsdaten (_Datenmodell_) von der Front-End-Benutzeroberfläche (_Model-View-Controller_). Dies führt zu einer einfacheren Wartung und einem flexibleren Anwendungs Entwurf. 
 
-Beispielsweise sehen wir uns die folgende Klassendefinition eines kompatiblen KVM-Objekts:
+Betrachten wir beispielsweise die folgende Klassendefinition eines KVC-kompatiblen Objekts:
 
 ```csharp
 using System;
@@ -68,9 +68,9 @@ namespace MacDatabinding
 }
 ```
 
-Zunächst wird die `[Register("PersonModel")]` Attribut registriert die Klasse und legt Objective-c Klicken Sie dann die Klasse erben muss `NSObject` (oder eine Unterklasse, die von erbt `NSObject`), dadurch werden mehrere Basis-Methode, mit denen auf die Klasse KVM kompatibel sein. Als Nächstes die `[Export("Name")]` Attribut macht die `Name` Eigenschaft und den Schlüssel-Wert, der später verwendet wird, um Zugriff auf die Eigenschaft über KVM und KVO Techniken definiert. 
+Zuerst registriert das `[Register("PersonModel")]` Attribut die Klasse und macht Sie für "Ziel-C" verfügbar. Anschließend muss die-Klasse von `NSObject` (oder einer Unterklasse, die von `NSObject`erbt) erben, sodass mehrere Basis Methoden hinzugefügt werden, die der-Klasse die KVC-Konformität ermöglichen. Als nächstes macht `[Export("Name")]` das-Attribut `Name` die-Eigenschaft verfügbar und definiert den Schlüsselwert, der später verwendet wird, um über KVC-und KVO-Techniken auf die-Eigenschaft zuzugreifen. 
 
-Schließlich um die in der Lage sein, beobachtet der Schlüssel-Wert ändert sich der Wert der Eigenschaft, die Zugriffsmethode muss umschließen Änderungen auf den Wert in `WillChangeValue` und `DidChangeValue` Methodenaufrufe (Angeben von dem gleichen Schlüssel wie die `Export` Attribut).  Zum Beispiel:
+Schließlich muss der-Accessor Änderungen an seinem Wert in `WillChangeValue` -und `DidChangeValue` -Methoden aufrufen umschließen, um `Export` den Schlüsselwert zu ändern, der für den Wert der Eigenschaft erforderlich ist.  Zum Beispiel:
 
 ```csharp
 set {
@@ -80,17 +80,17 @@ set {
 }
 ```
 
-Dieser Schritt ist _sehr_ wichtig für die Datenbindung in Xcode die eine Interface Builder, (wie wir später in diesem Artikel sehen werden).
+Dieser Schritt ist für die Datenbindung in der Interface Builder von Xcode _sehr_ wichtig (wie weiter unten in diesem Artikel zu sehen ist).
 
-Weitere Informationen finden Sie unter Apple [Schlüssel-Wert-Codierung Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html).
+Weitere Informationen finden Sie im [Programmier Handbuch für Schlüssel-Wert-Codierungen](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)von Apple.
 
-### <a name="keys-and-key-paths"></a>Schlüssel und Schlüsselpfade
+### <a name="keys-and-key-paths"></a>Schlüssel und Schlüssel Pfade
 
-Ein _Schlüssel_ ist eine Zeichenfolge, die eine bestimmte Eigenschaft eines Objekts identifiziert. Ein Schlüssel in der Regel entspricht der Name einer Accessor-Methode in einer Schlüssel-Wert-Codierung kompatibel Objekt. Schlüssel müssen ASCII-Codierung, verwenden Sie in der Regel mit einem Kleinbuchstaben beginnen und darf kein Leerzeichen enthalten. Angenommen im obigen Beispiel `Name` wäre ein Schlüssel-Wert, der `Name` Eigenschaft der `PersonModel` Klasse. Der Schlüssel und den Namen der Eigenschaft, die sie verfügbar machen müssen übereinstimmen, jedoch in den meisten Fällen sind.
+Ein _Schlüssel_ ist eine Zeichenfolge, die eine bestimmte Eigenschaft eines Objekts angibt. In der Regel entspricht ein Schlüssel dem Namen einer Accessormethode in einem Schlüssel-Wert-Codierungs kompatiblen Objekt. Schlüssel müssen ASCII-Codierung verwenden, in der Regel mit einem Kleinbuchstaben beginnen und dürfen keine Leerzeichen enthalten. Im obigen `Name` Beispiel wäre also ein Schlüsselwert der `Name` -Eigenschaft `PersonModel` der-Klasse. Der Schlüssel und der Name der Eigenschaft, die Sie verfügbar machen, müssen nicht identisch sein. in den meisten Fällen handelt es sich jedoch um.
 
-Ein _Schlüsselpfad_ ist eine Zeichenfolge mit Punkt getrennte Schlüssel verwendet, um eine Hierarchie von Objekteigenschaften durchlaufen anzugeben. Die Eigenschaft den ersten Schlüssel in der Sequenz ist relativ zu der Empfänger ein, und jeder nachfolgende Schlüssel relativ zum Wert der vorherigen Eigenschaft ausgewertet wird. Auf die gleiche Weise verwenden Sie Punktnotation, um ein Objekt und seine Eigenschaften in einer C#-Klasse zu durchlaufen.
+Ein _Schlüssel Pfad_ ist eine Zeichenfolge mit durch Punkte getrennten Schlüsseln, die verwendet werden, um eine Hierarchie von zu durchsuchenden Objekteigenschaften anzugeben. Die-Eigenschaft des ersten Schlüssels in der Sequenz ist relativ zum Empfänger, und jeder nachfolgende Schlüssel wird relativ zum Wert der vorherigen Eigenschaft ausgewertet. Auf dieselbe Weise verwenden Sie die Punkt Notation, um ein Objekt und seine Eigenschaften in einer C# Klasse zu durchlaufen.
 
-Wenn Sie erweitert, z. B. die `PersonModel` Klasse hinzugefügt, und wählen Sie `Child` Eigenschaft:
+Wenn Sie z. b. die `PersonModel` -Klasse erweitert `Child` und die-Eigenschaft hinzugefügt haben:
 
 ```csharp
 using System;
@@ -131,35 +131,35 @@ namespace MacDatabinding
 }
 ```
 
-Der Pfad des untergeordneten Standortes Schlüssel wäre `self.Child.Name` oder einfach `Child.Name` (basierend auf wie die Schlüssel-Wert verwendet wurde).
+Der Schlüssel Pfad zum Namen `self.Child.Name` des untergeordneten Elements ist oder einfach `Child.Name` (basierend auf der Verwendung des Schlüssel Werts).
 
-### <a name="getting-values-using-key-value-coding"></a>Abrufen von Werten, die mithilfe von Schlüssel / Wert-Codierung
+### <a name="getting-values-using-key-value-coding"></a>Erhalten von Werten mithilfe von Schlüssel-Wert-Codierung
 
-Die `ValueForKey` -Methode gibt den Wert für den angegebenen Schlüssel (wie eine `NSString`) im Verhältnis zu der Instanz der KVM-Klasse, die die Anforderung zu empfangen. Z. B. wenn `Person` ist eine Instanz der `PersonModel` oben definierten Klasse:
+Die `ValueForKey` -Methode gibt den Wert für den angegebenen Schlüssel ( `NSString`als) relativ zur Instanz der KVC-Klasse zurück, die die Anforderung empfängt. Wenn `Person` z. b. eine Instanz `PersonModel` der oben definierten-Klasse ist:
 
 ```csharp
 // Read value 
 var name = Person.ValueForKey (new NSString("Name"));
 ```
 
-Diese Rückgabe des Werts, der die `Name` -Eigenschaft für diese Instanz von `PersonModel`. 
+Dies würde den Wert der `Name` -Eigenschaft für diese Instanz von `PersonModel`zurückgeben. 
 
-### <a name="setting-values-using-key-value-coding"></a>Festlegen von Werten, die mithilfe von Schlüssel / Wert-Codierung
+### <a name="setting-values-using-key-value-coding"></a>Festlegen von Werten mithilfe von Schlüssel-Wert-Codierung
 
-Auf ähnliche Weise die `SetValueForKey` legen Sie den Wert für den angegebenen Schlüssel (wie eine `NSString`) im Verhältnis zu der Instanz der KVM-Klasse, die die Anforderung zu empfangen. In diesem Fall also mithilfe einer Instanz von der `PersonModel` Klasse, wie unten dargestellt:
+Entsprechend wird `SetValueForKey` der Wert für den angegebenen Schlüssel ( `NSString`als) in Relation zur Instanz der KVC-Klasse, die die Anforderung empfängt, festgelegt. Verwenden Sie eine Instanz der `PersonModel` -Klasse, wie unten gezeigt:
 
 ```csharp
 // Write value
 Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 ```
 
-Ändert den Wert des der `Name` Eigenschaft `Jane Doe`.
+Würde den Wert der `Name` -Eigenschaft in `Jane Doe`ändern.
 
 <a name="Observing_Value_Changes" />
 
-### <a name="observing-value-changes"></a>Beobachten von wertänderungen
+### <a name="observing-value-changes"></a>Beobachten von Wertänderungen
 
-Mithilfe von Schlüssel-Wert prüfen (KVO), Sie können einen Beobachter an einen bestimmten Schlüssel einer KVM-kompatible Klasse anfügen, und benachrichtigt werden, jedes Mal, wenn der Wert für diesen Schlüssel geändert wird (mithilfe von Techniken der KVM oder direkten Zugriff auf die angegebene Eigenschaft in C#-Code). Zum Beispiel:
+Mithilfe von Key-Value-Beobachtungen (KVO) können Sie einen Beobachter an einen bestimmten Schlüssel einer KVC-kompatiblen Klasse anfügen und jederzeit benachrichtigt werden, wenn der Wert für diesen Schlüssel geändert wird (entweder mithilfe von KVC-Techniken oder direkt C# Zugriff auf die angegebene Eigenschaft im Code). Zum Beispiel:
 
 ```csharp
 // Watch for the name value changing
@@ -169,21 +169,21 @@ Person.AddObserver ("Name", NSKeyValueObservingOptions.New, (sender) => {
 });
 ```
 
-Nun jederzeit die `Name` Eigenschaft der `Person` Instanz die `PersonModel` Klasse geändert wird, der neue Wert an die Konsole geschrieben wird. 
+Wenn nun die `Name` -Eigenschaft `Person` der Instanz der `PersonModel` -Klasse geändert wird, wird der neue Wert in die Konsole geschrieben. 
 
-Weitere Informationen finden Sie unter Apple [Einführung in Schlüssel-Wert beachtet Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i).
+Weitere Informationen finden Sie unter Apple [Introduction to Key-Value beobachtender Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i).
 
 ## <a name="data-binding"></a>Datenbindung
 
-In den folgenden Abschnitten werden angezeigt, wie Sie ein Schlüssel / Wert-Codierung und die Schlüssel-Wert-kompatible Klasse beobachten verwenden können, um Daten an Benutzeroberflächenelemente in Interface Builder von Xcode lesen und Schreiben von Werten, die mithilfe von C#-Code binden. Auf diese Weise trennen Sie Ihre _Datenmodell_ aus den Ansichten, die verwendet werden, um sie anzuzeigen, wodurch die Xamarin.Mac-Anwendung, flexibler und einfacher zu verwalten. Sie verringern erheblich die Menge des Codes, die geschrieben werden.
+In den folgenden Abschnitten wird gezeigt, wie Sie eine Schlüssel-Wert-Codierung und eine Schlüsselwert beobachtende kompatible Klasse verwenden können, um Daten an Benutzeroberflächen Elemente in der Interface Builder von Xcode zu C# binden, anstatt Werte mithilfe von Code zu lesen und zu schreiben. Auf diese Weise trennen Sie das _Datenmodell_ von den Sichten, die zum Anzeigen verwendet werden, sodass die xamarin. Mac-Anwendung flexibler und einfacher zu verwalten ist. Außerdem verringern Sie die Menge des zu schreibenden Codes erheblich.
 
 <a name="Defining_your_Data_Model" />
 
-### <a name="defining-your-data-model"></a>Definition des Datenmodells
+### <a name="defining-your-data-model"></a>Definieren des Datenmodells
 
-Bevor Sie Daten binden ein Benutzeroberflächenelement in Interface Builder können, benötigen Sie eine kompatible KVM/KVO-Klasse, die in Ihre Xamarin.Mac-Anwendung, die als fungiert definiert die _Datenmodell_ für die Bindung. Das Datenmodell enthält alle Daten, die in der Benutzeroberfläche angezeigt, und empfängt keine Änderungen an den Daten, die der Benutzer in der Benutzeroberfläche vorgenommen werden, beim Ausführen der Anwendung.
+Bevor Sie ein Benutzeroberflächen Element in Interface Builder binden können, müssen Sie in ihrer xamarin. Mac-Anwendung eine KVC/KVO-kompatible Klasse definieren, die als _Datenmodell_ für die Bindung fungiert. Das Datenmodell stellt alle Daten bereit, die auf der Benutzeroberfläche angezeigt werden, und empfängt Änderungen an den Daten, die der Benutzer während der Ausführung der Anwendung in der Benutzeroberfläche vornimmt.
 
-Wenn Sie eine Anwendung schreiben, die eine Gruppe von Mitarbeitern verwaltet wurden, können Sie z. B. die folgende Klasse verwenden, um das Datenmodell zu definieren:
+Wenn Sie z. b. eine Anwendung schreiben, die eine Gruppe von Mitarbeitern verwaltet, können Sie die folgende Klasse verwenden, um das Datenmodell zu definieren:
 
 ```csharp
 using System;
@@ -317,9 +317,9 @@ namespace MacDatabinding
 }
 ```
 
-Die meisten Funktionen dieser Klasse behandelt wurden, der [neuerungen von Schlüssel / Wert-Codierung](#What_is_Key-Value_Coding) weiter oben. Allerdings sehen wir uns einige bestimmte Elemente und einige Ergänzungen, die vorgenommen wurden, damit diese Klasse fungiert als Datenmodell für kann **Array-Controllern** und **Struktur-Controller** (die wir später noch Mal mit Daten verwenden Binden Sie **Strukturansichten**, **Gliederungsansichten** und **Auflistungsansichten**).
+Die meisten Funktionen dieser Klasse wurden im obigen Abschnitt [Was sind Schlüssel-Wert-Codierung](#What_is_Key-Value_Coding) beschrieben. Betrachten wir jedoch einige spezifische Elemente und einige Ergänzungen, die dazu geführt haben, dass diese Klasse als Datenmodell für **Array Controller** und Struktur **Controller** fungieren soll (das wir später für die Datenbindung von Struktur **Ansichten**, Gliederungs Ansichten) verwenden werden.und Auflistungs **Ansichten**).
 
-Zuerst, da ein Mitarbeiter eines Managers sein könnte, wir haben verwendet eine `NSArray` (insbesondere ein `NSMutableArray` damit die Werte geändert werden können) auf die Mitarbeiter zu ermöglichen, die sie verwaltet, die an diese angefügt werden:
+Da ein Mitarbeiter möglicherweise ein Manager ist, haben wir einen `NSArray` verwendet (insbesondere eine `NSMutableArray` , damit die Werte geändert werden können), damit die Mitarbeiter, denen Sie zugeordnet sind, an Sie angefügt werden können:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -331,12 +331,12 @@ public NSArray People {
 }
 ```
 
-Zwei Aspekte zu beachten:
+Hier sind zwei Punkte zu beachten:
 
-1. Wir verwendeten eine `NSMutableArray` anstatt ein standard C#-Array oder eine Auflistung, da dies eine Anforderung zum Binden von Daten, um AppKit-Steuerelementen, z. B. ist **Tabellenansichten**, **Gliederungsansichten** und **Sammlungen** .
-2. Durch das umwandeln, damit das Array von Angestellten verfügbar gemacht eine `NSArray` für Daten Bindung zu Evaluierungszwecken nutzen und geändert seine C# formatierten Namen `People`, die die Datenbindung wird erwartet, `personModelArray` in Form **{Class_name} Array**(Beachten Sie, dass das erste Zeichen Kleinbuchstaben vorgenommen wurde).
+1. Wir haben eine `NSMutableArray` anstelle eines Standard Arrays C# oder einer Standard Auflistung verwendet, da dies eine Voraussetzung für die Datenbindung an AppKit **-Steuer**Elemente wie **Tabellen Sichten**, Gliederungs **Sichten** und Auflistungen ist.
+2. Wir haben das Array von Mitarbeitern zur Verfügung gestellt, indem `NSArray` wir es zu Daten Bindungs Zwecken in C# eine umwandeln und `People`den von der Datenbindung `personModelArray` erwarteten formatierten Namen in der Form " **{class_name} Array** " geändert haben (Beachten Sie, dass die erste das Zeichen wurde in Kleinbuchstaben geschrieben.)
 
-Als Nächstes müssen wir einige speziell Namen öffentliche Methoden zur Unterstützung hinzufügen **Array-Controllern** und **Struktur-Controller**:
+Als nächstes müssen wir einige besondere öffentliche Methoden hinzufügen, um **Array Controller** und Struktur **Controller**zu unterstützen:
 
 ```csharp
 [Export("addObject:")]
@@ -369,16 +369,16 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Die Controller aus, um anzufordern, und ändern Sie die Daten, die sie anzeigen können. Wie Sie den verfügbar gemachten `NSArray` höher, Sie verfügen über eine sehr spezifische Namenskonvention gilt (die typische C#-Benennungskonventionen für unterscheidet):
+Diese ermöglichen es den Controllern, die angezeigten Daten anzufordern und zu ändern. Wie die `NSArray` oben verfügbar gemachten haben diese eine ganz bestimmte Benennungs Konvention (die sich von den C# üblichen Benennungs Konventionen unterscheidet):
 
-- `addObject:` -Fügt ein Objekt in das Array an.
-- `insertObject:in{class_name}ArrayAtIndex:` : Der Speicherort `{class_name}` ist der Name der Klasse. Diese Methode fügt ein Objekt in das Array am angegebenen Index.
-- `removeObjectFrom{class_name}ArrayAtIndex:` : Der Speicherort `{class_name}` ist der Name der Klasse. Diese Methode entfernt das Objekt im Array am angegebenen Index.
-- `set{class_name}Array:` : Der Speicherort `{class_name}` ist der Name der Klasse. Diese Methode können Sie die vorhandenen Carry durch eine neue zu ersetzen.
+- `addObject:`-Fügt dem Array ein Objekt hinzu.
+- `insertObject:in{class_name}ArrayAtIndex:`: Wobei `{class_name}` der Name der Klasse ist. Diese Methode fügt ein Objekt an einem angegebenen Index in das Array ein.
+- `removeObjectFrom{class_name}ArrayAtIndex:`: Wobei `{class_name}` der Name der Klasse ist. Diese Methode entfernt das-Objekt im-Array an einem angegebenen Index.
+- `set{class_name}Array:`: Wobei `{class_name}` der Name der Klasse ist. Diese Methode ermöglicht es Ihnen, die vorhandene Durchführung durch eine neue zu ersetzen.
 
-Innerhalb dieser Methoden nutzen, haben wir Änderungen an das Array in umschlossen `WillChangeValue` und `DidChangeValue` Nachrichten KVO Kompatibilität.
+Innerhalb dieser Methoden haben wir Änderungen am Array in `WillChangeValue` und Nachrichten für die KVO- `DidChangeValue` Konformität umschließen.
 
-Schließlich, da die `Icon` Eigenschaft beruht auf den Wert des der `isManager` Eigenschaft, ändert sich in der `isManager` Eigenschaft kann nicht wiedergegeben werden, der `Icon` für Daten gebunden Benutzeroberflächenelemente (während der KVO):
+Da die `Icon` -Eigenschaft auf den Wert `isManager` der-Eigenschaft basiert, werden Änderungen an der `isManager` -Eigenschaft möglicherweise nicht in `Icon` für Daten gebundene Benutzeroberflächen Elemente (während der KVO) berücksichtigt:
 
 ```csharp
 [Export("Icon")]
@@ -393,7 +393,7 @@ public NSImage Icon {
 }
 ``` 
 
-Um, die zu korrigieren, verwenden wir den folgenden Code:
+Um dies zu korrigieren, verwenden wir den folgenden Code:
 
 ```csharp
 [Export("isManager")]
@@ -409,21 +409,21 @@ public bool isManager {
 }
 ```
 
-Beachten Sie, dass zusätzlich zu seinen eigenen Schlüssel an, die `isManager` Accessor ist auch das Senden der `WillChangeValue` und `DidChangeValue` Nachrichten für die `Icon` Schlüssel, damit sie auch die Änderung angezeigt wird.
+Beachten Sie, dass `isManager` die-Zugriffsmethode zusätzlich zu Ihrem eigenen Schlüssel auch die `WillChangeValue` -und `DidChangeValue` -Meldungen für `Icon` den Schlüssel sendet, sodass auch die Änderung angezeigt wird.
 
-Wir verwenden die `PersonModel` Datenmodell im weiteren Verlauf dieses Artikels.
+Wir verwenden das `PersonModel` Datenmodell im restlichen Verlauf dieses Artikels.
 
 <a name="Simple_Data_Binding" />
 
 ### <a name="simple-data-binding"></a>Einfache Datenbindung
 
-Mit unserem Datenmodell definiert sehen wir uns ein einfaches Beispiel für die Datenbindung in Interface Builder von Xcode. Beispielsweise fügen Sie ein Formular für unsere Xamarin.Mac-Anwendung, die verwendet werden kann, so bearbeiten Sie die `PersonModel` , den wir oben definiert. Wir fügen einige Textfelder und ein Kontrollkästchen zum Anzeigen und Bearbeiten der Eigenschaften des Modells.
+Wenn wir unser Datenmodell definiert haben, sehen wir uns ein einfaches Beispiel für die Datenbindung in Xcode Interface Builder an. Fügen Sie beispielsweise der xamarin. Mac-Anwendung ein Formular hinzu, das zum Bearbeiten der verwendet werden kann `PersonModel` , die wir zuvor definiert haben. Wir fügen einige Text Felder und ein Kontrollkästchen hinzu, um die Eigenschaften des Modells anzuzeigen und zu bearbeiten.
 
-Zunächst fügen Sie ein neues **Ansichtscontroller** auf unsere **"Main.Storyboard"** in Interface Builder-Datei und nennen Sie die Klasse `SimpleViewController`: 
+Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen `SimpleViewController` **Ansichts Controller** hinzu, und benennen Sie die Klasse: 
 
-[![Hinzufügen eines neuen View Controllers](databinding-images/simple01.png "einen neuen View-Controller hinzufügen")](databinding-images/simple01-large.png#lightbox)
+[![Hinzufügen eines neuen Ansichts Controllers](databinding-images/simple01.png "Hinzufügen eines neuen Ansichts Controllers")](databinding-images/simple01-large.png#lightbox)
 
-Anschließend zurück zu Visual Studio für Mac, bearbeiten Sie die **SimpleViewController.cs** Datei (die das Projekt automatisch hinzugefügt wurde) und Bereitstellen eine Instanz von der `PersonModel` , dass wir unser Formular zum Binden von Daten ist. Fügen Sie den folgenden Code hinzu:
+Kehren Sie als nächstes zu Visual Studio für Mac zurück, bearbeiten Sie die Datei **SimpleViewController.cs** (die dem Projekt automatisch hinzugefügt wurde), und machen `PersonModel` Sie eine Instanz von verfügbar, an die wir Daten binden. Fügen Sie den folgenden Code hinzu:
 
 ```csharp
 private PersonModel _person = new PersonModel();
@@ -440,7 +440,7 @@ public PersonModel Person {
 }
 ```
 
-Als Nächstes, wenn die Ansicht geladen wird, erstellen wir eine Instanz von unserem `PersonModel` und füllen Sie sie durch den folgenden Code:
+Nachdem die Ansicht geladen wurde, erstellen wir eine Instanz von `PersonModel` und füllen Sie mit dem folgenden Code:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -459,55 +459,55 @@ public override void ViewDidLoad ()
 }
 ```
 
-Nun wir das Formular zu erstellen müssen, doppelklicken Sie auf die **"Main.Storyboard"** Datei, die sie zur Bearbeitung in Interface Builder zu öffnen. Layout des Formulars, das in etwa wie folgt aussehen:
+Nun müssen wir das Formular erstellen und auf die Datei " **Main. Storyboard** " doppelklicken, um es für die Bearbeitung in Interface Builder zu öffnen. Layout Sie das Formular so, dass es in etwa wie folgt aussieht:
 
-[![Bearbeiten das Storyboard in Xcode](databinding-images/simple02.png "bearbeiten das Storyboard in Xcode")](databinding-images/simple02-large.png#lightbox)
+[![Bearbeiten des Storyboards in Xcode](databinding-images/simple02.png "Bearbeiten des Storyboards in Xcode")](databinding-images/simple02-large.png#lightbox)
 
-An Daten binden Sie das Formular, um die `PersonModel` , die wir über verfügbar gemachte der `Person` Schlüssel, gehen Sie folgendermaßen vor:
+Gehen Sie folgendermaßen vor, um `PersonModel` das Formular an den zu `Person` binden, den wir über den Schlüssel verfügbar gemacht haben:
 
-1. Wählen Sie die **Mitarbeiternamen** Textfeld ein, und wechseln Sie zur der **Bindungsinspektor**.
-2. Überprüfen Sie die **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie als Nächstes `self.Person.Name` für die **Schlüsselpfad**: 
+1. Wählen Sie das Textfeld **Mitarbeiter Name** aus, und wechseln Sie zum **Bindungs Inspektor**.
+2. Aktivieren Sie das Kontrollkästchen **binden an,** und wählen Sie in der Dropdown Liste **Simple View Controller** aus. Geben Sie `self.Person.Name` als nächstes den **Schlüssel Pfad**ein: 
 
-    [![Den Schlüsselpfad Eingabe](databinding-images/simple03.png "Schlüsselpfad eingeben")](databinding-images/simple03-large.png#lightbox)
-3. Wählen Sie die **"Occupation"** Textfeld ein, und überprüfen Sie die **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie als Nächstes `self.Person.Occupation` für die **Schlüsselpfad**:  
+    [![Eingeben des Schlüssel Pfads](databinding-images/simple03.png "Eingeben des Schlüssel Pfads")](databinding-images/simple03-large.png#lightbox)
+3. Wählen Sie das Feld **Berufs** Text aus, und aktivieren Sie das Feld **binden an,** und wählen Sie in der Dropdown Liste **Simple View Controller** aus. Geben Sie `self.Person.Occupation` als nächstes den **Schlüssel Pfad**ein:  
 
-    [![Den Schlüsselpfad Eingabe](databinding-images/simple04.png "Schlüsselpfad eingeben")](databinding-images/simple04-large.png#lightbox)
-4. Wählen Sie die **Mitarbeiter ist ein Manager** Kontrollkästchen, und überprüfen Sie die **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie als Nächstes `self.Person.isManager` für die **Schlüsselpfad**:  
+    [![Eingeben des Schlüssel Pfads](databinding-images/simple04.png "Eingeben des Schlüssel Pfads")](databinding-images/simple04-large.png#lightbox)
+4. Aktivieren Sie das Kontrollkästchen **Mitarbeiter ist ein Manager** , aktivieren Sie das Kontrollkästchen **binden an,** und wählen Sie in der Dropdown Liste **Simple View Controller** aus. Geben Sie `self.Person.isManager` als nächstes den **Schlüssel Pfad**ein:  
 
-    [![Den Schlüsselpfad Eingabe](databinding-images/simple05.png "Schlüsselpfad eingeben")](databinding-images/simple05-large.png#lightbox)
-5. Wählen Sie die **Anzahl von Mitarbeitern verwaltet** Textfeld ein, und überprüfen Sie die **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie als Nächstes `self.Person.NumberOfEmployees` für die **Schlüsselpfad**:  
+    [![Eingeben des Schlüssel Pfads](databinding-images/simple05.png "Eingeben des Schlüssel Pfads")](databinding-images/simple05-large.png#lightbox)
+5. Wählen Sie die **Anzahl der Mitarbeiter verwalteten** Textfeld aus, aktivieren Sie das Feld **binden an,** und wählen Sie in der Dropdown Liste **Simple View Controller** aus. Geben Sie `self.Person.NumberOfEmployees` als nächstes den **Schlüssel Pfad**ein:  
 
-    [![Den Schlüsselpfad Eingabe](databinding-images/simple06.png "Schlüsselpfad eingeben")](databinding-images/simple06-large.png#lightbox)
-6. Wenn der Mitarbeiter kein Manager ist, möchten wir die Anzahl von Mitarbeitern verwaltet Beschriftung und Textfeld auszublenden.
-7. Wählen Sie die **Anzahl von Mitarbeitern verwaltet** Bezeichnung, erweitern Sie die **Hidden** Pfeil, und Überprüfen der **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie als Nächstes `self.Person.isManager` für die **Schlüsselpfad**:  
+    [![Eingeben des Schlüssel Pfads](databinding-images/simple06.png "Eingeben des Schlüssel Pfads")](databinding-images/simple06-large.png#lightbox)
+6. Wenn der Mitarbeiter kein Manager ist, möchten wir die Anzahl von Mitarbeitern, die verwaltete Bezeichnung und das Textfeld haben, ausblenden.
+7. Wählen Sie die Bezeichnung **Anzahl der verwalteten Mitarbeiter** aus, erweitern Sie den ausgeblendeten **Pfeil** , und aktivieren Sie das Kontrollkästchen **binden an** , **und wählen Sie** in der Dropdown Liste die Option Geben Sie `self.Person.isManager` als nächstes den **Schlüssel Pfad**ein:  
 
-    [![Den Schlüsselpfad Eingabe](databinding-images/simple07.png "Schlüsselpfad eingeben")](databinding-images/simple07-large.png#lightbox)
-8. Wählen Sie `NSNegateBoolean` aus der **Wert Transformator** Dropdownliste:  
+    [![Eingeben des Schlüssel Pfads](databinding-images/simple07.png "Eingeben des Schlüssel Pfads")](databinding-images/simple07-large.png#lightbox)
+8. Wählen `NSNegateBoolean` Sie aus der Dropdown Liste **Wert Transformator** Folgendes aus:  
 
-    ![Auswählen der NSNegateBoolean-Key-Transformations](databinding-images/simple08.png "auswählen die NSNegateBoolean-Key-Transformation")
-9. Dies weist die Datenbindung an, dass die Bezeichnung ausgeblendet, wenn der Wert des der `isManager` -Eigenschaft ist `false`.
-10. Wiederholen Sie die Schritte 7 und 8 für die **Anzahl von Mitarbeitern verwaltet** Textfeld ein.
-11. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+    ![Auswählen der nsnegateboolean-Schlüssel Transformation](databinding-images/simple08.png "Auswählen der nsnegateboolean-Schlüssel Transformation")
+9. Dadurch wird der Datenbindung mitgeteilt, dass die Bezeichnung ausgeblendet wird, wenn der `isManager` Wert der `false`-Eigenschaft ist.
+10. Wiederholen Sie die Schritte 7 und 8 für das Feld **Anzahl der Mitarbeiter verwalteten** Text.
+11. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
-Wenn das Ausführen der Anwendung, die Werte aus der `Person` Eigenschaft füllt automatisch das Formular:
+Wenn Sie die Anwendung ausführen, füllen die Werte aus `Person` der-Eigenschaft automatisch das folgende Formular auf:
 
-[![Zeigt ein Formular automatisch](databinding-images/simple09.png "zeigt ein Formular automatisch")](databinding-images/simple09-large.png#lightbox)
+[![Ein automatisch aufgefülltes Formular wird angezeigt] . (databinding-images/simple09.png "Ein automatisch aufgefülltes Formular wird angezeigt") .](databinding-images/simple09-large.png#lightbox)
 
-Alle Änderungen, die die Benutzer können auf das Formular werden in zurückgeschrieben werden die `Person` -Eigenschaft in der View-Controller. Z. B. durch Aufheben der Auswahl **Mitarbeiter ist ein Manager** Updates der `Person` Instanz unserer `PersonModel` und die **Anzahl von Mitarbeitern verwaltet** Beschriftung und Textfeld automatisch (per ausgeblendet werden Datenbindung):
+Alle Änderungen, die die Benutzer an dem Formular vornehmen, werden in der- `Person` Eigenschaft des Ansichts Controllers zurückgeschrieben. Wenn Sie z. b. die Auswahl von **Employee** aufheben `Person` , aktualisiert die `PersonModel` Instanz von, und die **Anzahl von Mitarbeitern verwaltete** Bezeichnung und Textfeld werden automatisch ausgeblendet (über die Datenbindung):
 
-[![Ausblenden von der Anzahl von Mitarbeitern für nicht-Manager](databinding-images/simple10.png "Ausblenden von der Anzahl von Mitarbeitern für nicht-Manager")](databinding-images/simple10-large.png#lightbox)
+[Ausblenden ![der Anzahl von Mitarbeitern für nicht-Manager] Ausblenden (databinding-images/simple10.png "der Anzahl von Mitarbeitern für nicht-Manager")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
-### <a name="table-view-data-binding"></a>Tabelle anzeigen, die Datenbindung
+### <a name="table-view-data-binding"></a>Tabellen Ansichts Datenbindung
 
-Nun, wir die Grundlagen der Datenbindung aus dem Weg haben, sehen wir uns eine komplexere Aufgabe des Daten-Bindung mit einer _Arraycontroller_ und Datenbindung zu einer Tabellenansicht. Weitere Informationen zum Arbeiten mit Tabellenansichten finden Sie unserem [Tabellenansichten](~/mac/user-interface/table-view.md) Dokumentation.
+Nachdem wir nun über die Grundlagen der Datenbindung verfügen, sehen wir uns eine komplexere Daten Bindungs Aufgabe an, indem wir einen _Array Controller_ und eine Datenbindung an eine Tabellenansicht verwenden. Weitere Informationen zum Arbeiten mit Tabellen Sichten finden Sie in der Dokumentation der [Tabellen Sichten](~/mac/user-interface/table-view.md) .
 
-Zunächst fügen Sie ein neues **Ansichtscontroller** auf unsere **"Main.Storyboard"** in Interface Builder-Datei und nennen Sie die Klasse `TableViewController`:
+Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen `TableViewController` **Ansichts Controller** hinzu, und benennen Sie die Klasse:
 
-[![Hinzufügen eines neuen View Controllers](databinding-images/table01.png "einen neuen View-Controller hinzufügen")](databinding-images/table01-large.png#lightbox)
+[![Hinzufügen eines neuen Ansichts Controllers](databinding-images/table01.png "Hinzufügen eines neuen Ansichts Controllers")](databinding-images/table01-large.png#lightbox)
 
-Als Nächstes ermöglicht das Bearbeiten der **TableViewController.cs** -Datei (mit unserem Projekt automatisch hinzugefügt wurde) und machen ein Array (`NSArray`) der `PersonModel` Klassen, werden wir unser Formular zum Binden von Daten. Fügen Sie den folgenden Code hinzu:
+Als nächstes bearbeiten wir die Datei " **TableViewController.cs** " (die dem Projekt automatisch hinzugefügt wurde) und machen ein Array`NSArray`() `PersonModel` von Klassen verfügbar, an die wir Daten binden. Fügen Sie den folgenden Code hinzu:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -548,9 +548,9 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Wie wir auf die `PersonModel` -Klasse weiter oben in der [Definition des Datenmodells](#Defining_your_Data_Model) Abschnitt haben wir vier speziell benannte öffentliche Methoden verfügbar, damit die Array-Controller und lesen und schreiben Daten in die Auflistung von `PersonModels`.
+Genau wie bei der `PersonModel` oben aufgeführten Klasse im Abschnitt Definieren des [Datenmodells](#Defining_your_Data_Model) haben wir vier speziell benannte öffentliche Methoden zur Verfügung gestellt, sodass der Array Controller und Daten aus unserer Auflistung von `PersonModels`lesen und schreiben.
 
-Als Nächstes müssen wir bei die Ansicht geladen wird, füllen Sie unser Array durch den folgenden Code:
+Nachdem die Ansicht geladen wurde, müssen wir das Array mit dem folgenden Code Auffüllen:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -570,59 +570,59 @@ public override void AwakeFromNib ()
 }
 ```
 
-Nachdem wir unsere Tabellenansicht erstellen müssen, doppelklicken Sie auf die **"Main.Storyboard"** Datei, die sie zur Bearbeitung in Interface Builder zu öffnen. Layout der Tabelle, um in etwa wie folgt aussehen:
+Nun müssen wir die Tabellenansicht erstellen, auf die Datei " **Main. Storyboard** " doppelklicken, um Sie für die Bearbeitung in Interface Builder zu öffnen. Das Layout der Tabelle sieht in etwa wie folgt aus:
 
-[![Anlegen einer neuen Tabellenansicht](databinding-images/table02.png "Anlegen einer neuen Tabellenansicht")](databinding-images/table02-large.png#lightbox)
+[![Festlegen einer neuen Tabellenansicht](databinding-images/table02.png "Festlegen einer neuen Tabellenansicht")](databinding-images/table02-large.png#lightbox)
 
-Wir müssen ein **Arraycontroller** um gebundene Daten mit unserer Tabelle bereitzustellen, gehen Sie folgendermaßen vor:
+Wir müssen einen **Array Controller** hinzufügen, um gebundene Daten für die Tabelle bereitzustellen. gehen Sie dazu wie folgt vor:
 
-1. Ziehen Sie ein **Array Controller** aus der **Bibliotheksinspektor** auf die **Schnittstellen-Editor**:  
+1. Ziehen Sie einen **Array Controller** aus der **Bibliothek Inspector** auf den **Schnittstellen-Editor**:  
 
-    ![Auswählen eines Controllers Array aus der Bibliothek](databinding-images/table03.png "ein Controllers Array aus der Bibliothek auswählen")
-2. Wählen Sie **Arraycontroller** in die **Schnittstellenhierarchie** und wechseln Sie zu der **Attributinspektor**:  
+    ![Auswählen eines Array Controllers aus der Bibliothek](databinding-images/table03.png "Auswählen eines Array Controllers aus der Bibliothek")
+2. Wählen Sie in der **Schnittstellen Hierarchie** **Array Controller** aus, und wechseln Sie zum **Attribut Inspektor**:  
 
-    [![Auswählen von Attributes Inspector](databinding-images/table04.png "Attributes Inspector auswählen")](databinding-images/table04-large.png#lightbox)
-3. Geben Sie `PersonModel` für die **Klassenname**, klicken Sie auf die **Plus** Schaltfläche, und fügen Sie drei Product Keys. Nennen Sie diese `Name`, `Occupation` und `isManager`:  
+    [![Auswählen des Attribut Inspektors](databinding-images/table04.png "Auswählen des Attribut Inspektors")](databinding-images/table04-large.png#lightbox)
+3. Geben `PersonModel` Sie als **Klassennamen**ein, klicken Sie auf die Schaltfläche **plus** , und fügen Sie drei Schlüssel hinzu. Benennen Sie `Name`Sie `Occupation`wiefolgt: `isManager`  
 
-    ![Hinzufügen der erforderlichen Schlüsselpfade](databinding-images/table05.png "Hinzufügen der erforderlichen Schlüsselpfade")
-4. Dadurch wird der wie ein Array von verwalteten und welche Eigenschaften sie sollte verfügbar zu machen (über Schlüssel).
-5. Wechseln Sie zu der **Bindungsinspektor** und wählen Sie unter **Content Array** wählen **Binden an** und **Tabellenansichtscontroller**. Geben Sie einen **modellieren Schlüsselpfad** von `self.personModelArray`:  
+    ![Hinzufügen der erforderlichen Schlüssel Pfade](databinding-images/table05.png "Hinzufügen der erforderlichen Schlüssel Pfade")
+4. Dadurch wird dem Array Controller mitgeteilt, worum es sich bei der Verwaltung eines Arrays von handelt und welche Eigenschaften es (über Schlüssel) verfügbar machen soll.
+5. Wechseln Sie zum **Bindungs Inspektor** , und wählen Sie unter **Inhalts Array** die Option **binden an** und **Tabellen Ansichts Controller**aus. Geben Sie einen **Modell Schlüssel Pfad** für `self.personModelArray`Folgendes ein:  
 
-    ![Eingeben von einem Schlüsselpfad](databinding-images/table06.png "einen Schlüsselpfad eingeben")
-6. Dies verbindet die Array-Controller, auf das Array von `PersonModels` , die wir für unsere View-Controller verfügbar gemacht werden.
+    ![Eingeben eines Schlüssel Pfads](databinding-images/table06.png "Eingeben eines Schlüssel Pfads")
+6. Dadurch wird der Array Controller mit dem Array von `PersonModels` verknüpft, das wir auf dem Ansichts Controller verfügbar gemacht haben.
 
-Nun wir unsere Tabellenansicht mit dem Array-Controller zu binden müssen, führen Sie folgende Schritte aus:
+Nun muss die Tabellenansicht an den Array Controller gebunden werden. gehen Sie wie folgt vor:
 
-1. Wählen Sie die Tabellenansicht und die **Bindung Inspektor**:  
+1. Wählen Sie die Tabellenansicht und den **Bindungs Inspektor**aus:  
 
-    [![Auswählen des Bindung Inspektors](databinding-images/table07.png "den Inspektor Bindung auswählen")](databinding-images/table07-large.png#lightbox)
-2. Unter den **Tabelleninhalte** Pfeil, wählen **Binden an** und **Arraycontroller**. Geben Sie `arrangedObjects` für die **Controller Schlüssel** Feld:  
+    [![Auswählen des Bindungs Inspektors](databinding-images/table07.png "Auswählen des Bindungs Inspektors")](databinding-images/table07-large.png#lightbox)
+2. Wählen Sie unter der **Liste Tabelleninhalt** die Option **binden an** und **Array Controller**aus. Geben `arrangedObjects` Sie für das Feld **Controller Schlüssel** Folgendes ein:  
 
-    ![Definieren den Controller Schlüssel](databinding-images/table08.png "definieren die Controller-Taste")
-3. Wählen Sie die **Tabellenansichtszelle** unter der **Mitarbeiter** Spalte. In der **Bindungsinspektor** unter der **Wert** Pfeil, wählen **Binden an** und **Zelle Tabellenansicht**. Geben Sie `objectValue.Name` für die **modellieren Schlüsselpfad**:  
+    ![Definieren des Controller Schlüssels](databinding-images/table08.png "Definieren des Controller Schlüssels")
+3. Wählen Sie die **Tabellen Ansichts Zelle** unter der Spalte **Employee** aus. Wählen Sie im **Bindungs Inspektor** unter dem **Wert** -Turndown die Option **binden an** und **Tabellenzellen Ansicht**aus. Geben `objectValue.Name` Sie als **Modell Schlüssel Pfad**ein:  
 
-    [![Festlegen des Modell-Schlüsselpfads](databinding-images/table09.png "Modell Schlüsselpfad festlegen")](databinding-images/table09-large.png#lightbox)
-4. `objectValue` ist die aktuelle `PersonModel` im Array wird vom Netzwerkcontroller verwaltet wird das Array.
-5. Wählen Sie die **Tabellenansichtszelle** unter der **"Occupation"** Spalte. In der **Bindungsinspektor** unter der **Wert** Pfeil, wählen **Binden an** und **Zelle Tabellenansicht**. Geben Sie `objectValue.Occupation` für die **modellieren Schlüsselpfad**:  
+    [![Der Modell Schlüssel Pfad wird festgelegt] . (databinding-images/table09.png "Der Modell Schlüssel Pfad wird festgelegt") .](databinding-images/table09-large.png#lightbox)
+4. `objectValue`der aktuelle `PersonModel` in dem Array, das vom Array Controller verwaltet wird.
+5. Wählen Sie die **Tabellen Ansichts Zelle** unter der Spalte **Beruf** aus. Wählen Sie im **Bindungs Inspektor** unter dem **Wert** -Turndown die Option **binden an** und **Tabellenzellen Ansicht**aus. Geben `objectValue.Occupation` Sie als **Modell Schlüssel Pfad**ein:  
 
-    [![Festlegen des Modell-Schlüsselpfads](databinding-images/table10.png "Modell Schlüsselpfad festlegen")](databinding-images/table10-large.png#lightbox)
-6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+    [![Der Modell Schlüssel Pfad wird festgelegt] . (databinding-images/table10.png "Der Modell Schlüssel Pfad wird festgelegt") .](databinding-images/table10-large.png#lightbox)
+6. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
-Wenn wir die Anwendung ausführen, wird in der Tabelle aufgefüllt werden, mit unserem Array von `PersonModels`:
+Wenn die Anwendung ausgeführt wird, wird die Tabelle mit dem folgenden Array `PersonModels`aufgefüllt:
 
 [![Ausführen der Anwendung](databinding-images/table11.png "Ausführen der Anwendung")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
-### <a name="outline-view-data-binding"></a>Gliederung Anzeigen der Datenbindung
+### <a name="outline-view-data-binding"></a>Datenbindung Gliederungsansicht
 
-eine Datenbindung für eine Gliederungsansicht ähnelt eine Datenbindung für eine Tabellenansicht. Der Hauptunterschied besteht darin, die wir verwenden eine **Struktur-Controller** statt einer **Arraycontroller** der Gliederungsansicht an die gebundenen Daten anbieten. Weitere Informationen zum Arbeiten mit Gliederungsansichten informieren Sie sich unsere [Gliederungsansichten](~/mac/user-interface/outline-view.md) Dokumentation.
+die Datenbindung für eine Gliederungs Ansicht ähnelt der Bindung an eine Tabellen Sicht. Der Hauptunterschied besteht darin, dass wir anstelle eines **Array Controllers** einen Struktur **Controller** verwenden, um die gebundenen Daten für die Gliederungs Ansicht bereitzustellen. Weitere Informationen zum Arbeiten mit Gliederungs Ansichten finden Sie in der Dokumentation zu den Gliederungs [Ansichten](~/mac/user-interface/outline-view.md) .
 
-Zunächst fügen Sie ein neues **Ansichtscontroller** auf unsere **"Main.Storyboard"** in Interface Builder-Datei und nennen Sie die Klasse `OutlineViewController`: 
+Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen `OutlineViewController` **Ansichts Controller** hinzu, und benennen Sie die Klasse: 
 
-[![Hinzufügen eines neuen View Controllers](databinding-images/outline01.png "einen neuen View-Controller hinzufügen")](databinding-images/outline01-large.png#lightbox)
+[![Hinzufügen eines neuen Ansichts Controllers](databinding-images/outline01.png "Hinzufügen eines neuen Ansichts Controllers")](databinding-images/outline01-large.png#lightbox)
 
-Als Nächstes ermöglicht das Bearbeiten der **OutlineViewController.cs** -Datei (mit unserem Projekt automatisch hinzugefügt wurde) und machen ein Array (`NSArray`) der `PersonModel` Klassen, werden wir unser Formular zum Binden von Daten. Fügen Sie den folgenden Code hinzu:
+Als nächstes bearbeiten wir die Datei " **OutlineViewController.cs** " (die dem Projekt automatisch hinzugefügt wurde) und machen ein Array`NSArray`() `PersonModel` von Klassen verfügbar, an die wir Daten binden. Fügen Sie den folgenden Code hinzu:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -663,9 +663,9 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Wie wir auf die `PersonModel` -Klasse weiter oben in der [Definition des Datenmodells](#Defining_your_Data_Model) Abschnitt haben wir vier speziell benannte öffentliche Methoden verfügbar, damit die Struktur-Controller und lesen und schreiben Daten in die Auflistung von `PersonModels`.
+Genau wie bei der `PersonModel` oben aufgeführten Klasse im Abschnitt Definieren des [Datenmodells](#Defining_your_Data_Model) haben wir vier speziell benannte öffentliche Methoden zur Verfügung gestellt, sodass der Struktur Controller und Daten aus unserer Auflistung von `PersonModels`gelesen und geschrieben werden.
 
-Als Nächstes müssen wir bei die Ansicht geladen wird, füllen Sie unser Array durch den folgenden Code:
+Nachdem die Ansicht geladen wurde, müssen wir das Array mit dem folgenden Code Auffüllen:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -688,58 +688,58 @@ public override void AwakeFromNib ()
 }
 ```
 
-Nachdem wir unsere Gliederungsansicht erstellen müssen, doppelklicken Sie auf die **"Main.Storyboard"** Datei, die sie zur Bearbeitung in Interface Builder zu öffnen. Layout der Tabelle, um in etwa wie folgt aussehen:
+Nun müssen wir unsere Gliederungs Ansicht erstellen, auf die Datei " **Main. Storyboard** " doppelklicken, um Sie für die Bearbeitung in Interface Builder zu öffnen. Das Layout der Tabelle sieht in etwa wie folgt aus:
 
-[![Erstellen die Gliederungsansicht](databinding-images/outline02.png "Gliederungsansicht erstellen")](databinding-images/outline02-large.png#lightbox)
+[![Erstellen der] Gliederungs Ansicht (databinding-images/outline02.png "Erstellen der") Gliederungs Ansicht](databinding-images/outline02-large.png#lightbox)
 
-Wir müssen ein **Struktur-Controller** um gebundene Daten zu unseren Gliederung bereitzustellen, gehen Sie folgendermaßen vor:
+Wir müssen einen Struktur **Controller** hinzufügen, um dem Umriss gebundene Daten bereitzustellen. gehen Sie dazu wie folgt vor:
 
-1. Ziehen Sie ein **Struktur-Controller** aus der **Bibliotheksinspektor** auf die **Schnittstellen-Editor**:  
+1. Ziehen Sie einen Struktur **Controller** aus der **Bibliothek Inspector** auf den **Schnittstellen-Editor**:  
 
-    ![Wählen aus der Bibliothek einen Struktur-Controller](databinding-images/outline03.png "einen Struktur-Controller aus der Bibliothek auswählen")
-2. Wählen Sie **Struktur-Controller** in die **Schnittstellenhierarchie** und wechseln Sie zu der **Attributinspektor**:  
+    ![Auswählen eines Struktur Controllers aus der Bibliothek](databinding-images/outline03.png "Auswählen eines Struktur Controllers aus der Bibliothek")
+2. Wählen Sie in der **Schnittstellen Hierarchie** Struktur **Controller** aus, und wechseln Sie zum **Attribut Inspektor**:  
 
-    [![Auswählen der Attribute Inspector](databinding-images/outline04.png "Attribute Inspector auswählen")](databinding-images/outline04-large.png#lightbox)
-3. Geben Sie `PersonModel` für die **Klassenname**, klicken Sie auf die **Plus** Schaltfläche, und fügen Sie drei Product Keys. Nennen Sie diese `Name`, `Occupation` und `isManager`:  
+    [![Auswählen des Attribut Inspektors](databinding-images/outline04.png "Auswählen des Attribut Inspektors")](databinding-images/outline04-large.png#lightbox)
+3. Geben `PersonModel` Sie als **Klassennamen**ein, klicken Sie auf die Schaltfläche **plus** , und fügen Sie drei Schlüssel hinzu. Benennen Sie `Name`Sie `Occupation`wiefolgt: `isManager`  
 
-    ![Hinzufügen der erforderlichen Schlüsselpfade](databinding-images/outline05.png "Hinzufügen der erforderlichen Schlüsselpfade")
-4. Dadurch wird die Struktur-Controller wie ein Array von verwalteten und welche Eigenschaften sie sollte verfügbar zu machen (über Schlüssel).
-5. Unter den **Struktur-Controller** Geben Sie im Abschnitt `personModelArray` für **untergeordneten**, geben Sie `NumberOfEmployees` unter der **Anzahl** , und geben Sie `isEmployee` unter  **Blattelemente**:  
+    ![Hinzufügen der erforderlichen Schlüssel Pfade](databinding-images/outline05.png "Hinzufügen der erforderlichen Schlüssel Pfade")
+4. Dadurch wird dem Struktur Controller mitgeteilt, worum es sich bei der Verwaltung eines Arrays von handelt und welche Eigenschaften (über Schlüssel) verfügbar gemacht werden sollen.
+5. Geben Sie im Abschnitt `personModelArray` Struktur Controller **für unter**geordnete Elemente ein `NumberOfEmployees` , geben Sie unter der `isEmployee` **Anzahl** ein, und geben Sie unter **Blatt**ein:  
 
-    ![Festlegen der Struktur-Controller-Schlüsselpfade](databinding-images/outline05.png "den Struktur-Controller-Schlüsselpfade festlegen")
-6. Dies weist den Struktur-Controller, wo Sie alle untergeordneten Knoten, wie viele untergeordnete Knoten vorhanden sind und wenn der aktuelle Knoten über untergeordnete Knoten verfügt zu finden.
-7. Wechseln Sie zu der **Bindungsinspektor** und wählen Sie unter **Content Array** wählen **Binden an** und **Besitzer der Datei**. Geben Sie einen **modellieren Schlüsselpfad** von `self.personModelArray`:  
+    ![Festlegen der Struktur Controller-Schlüssel Pfade](databinding-images/outline05.png "Festlegen der Struktur Controller-Schlüssel Pfade")
+6. Dadurch wird dem Struktur Controller mitgeteilt, wo alle untergeordneten Knoten zu finden sind, wie viele untergeordnete Knoten vorhanden sind und ob der aktuelle Knoten über untergeordnete Knoten verfügt.
+7. Wechseln Sie zum **Bindungs Inspektor** , und wählen Sie unter **Inhalts Array** die Option **binden an** und **den Besitzer der Datei**aus. Geben Sie einen **Modell Schlüssel Pfad** für `self.personModelArray`Folgendes ein:  
 
-    ![Bearbeiten den Schlüsselpfad](databinding-images/outline06.png "Schlüsselpfad bearbeiten")
-8. Dies verbindet den Struktur-Controller, auf das Array von `PersonModels` , die wir für unsere View-Controller verfügbar gemacht werden.
+    ![Bearbeiten des Schlüssel Pfads](databinding-images/outline06.png "Bearbeiten des Schlüssel Pfads")
+8. Dadurch wird der Struktur Controller mit dem Array von `PersonModels` verknüpft, das wir auf dem Ansichts Controller verfügbar gemacht haben.
 
-Nun wir unsere Gliederungsansicht an den Struktur-Controller zu binden müssen, führen Sie folgende Schritte aus:
+Nun müssen wir unsere Gliederungs Ansicht an den Struktur Controller binden, um Folgendes durchzuführen:
 
-1. Auswählen der Gliederungsansicht an und klicken Sie in der **Bindung Inspektor** auswählen:  
+1. Wählen Sie die Gliederungs Ansicht und in der **Bindungs** Prüfung Folgendes aus:  
 
-    [![Auswählen des Bindung Inspektors](databinding-images/outline07.png "den Inspektor Bindung auswählen")](databinding-images/outline07-large.png#lightbox)
-2. Unter den **Inhalt der Gliederung anzeigen** Pfeil, wählen **Binden an** und **Struktur-Controller**. Geben Sie `arrangedObjects` für die **Controller Schlüssel** Feld:  
+    [![Auswählen des Bindungs Inspektors](databinding-images/outline07.png "Auswählen des Bindungs Inspektors")](databinding-images/outline07-large.png#lightbox)
+2. Wählen Sie unter der **Ansicht Inhalt der Umriss Ansicht** die Option **binden an** und Struktur **Controller**aus. Geben `arrangedObjects` Sie für das Feld **Controller Schlüssel** Folgendes ein:  
 
-    ![Festlegen des Controller-Schlüssels](databinding-images/outline08.png "Festlegen des Controller-Schlüssels")
-3. Wählen Sie die **Tabellenansichtszelle** unter der **Mitarbeiter** Spalte. In der **Bindungsinspektor** unter der **Wert** Pfeil, wählen **Binden an** und **Zelle Tabellenansicht**. Geben Sie `objectValue.Name` für die **modellieren Schlüsselpfad**:  
+    ![Festlegen des Controller Schlüssels](databinding-images/outline08.png "Festlegen des Controller Schlüssels")
+3. Wählen Sie die **Tabellen Ansichts Zelle** unter der Spalte **Employee** aus. Wählen Sie im **Bindungs Inspektor** unter dem **Wert** -Turndown die Option **binden an** und **Tabellenzellen Ansicht**aus. Geben `objectValue.Name` Sie als **Modell Schlüssel Pfad**ein:  
 
-    [![Eingeben des Modell-Schlüsselpfads](databinding-images/outline09.png "Modell Schlüsselpfad eingeben")](databinding-images/outline09-large.png#lightbox)
-4. `objectValue` ist die aktuelle `PersonModel` im Array, die von der Struktur-Controller verwaltet.
-5. Wählen Sie die **Tabellenansichtszelle** unter der **"Occupation"** Spalte. In der **Bindungsinspektor** unter der **Wert** Pfeil, wählen **Binden an** und **Zelle Tabellenansicht**. Geben Sie `objectValue.Occupation` für die **modellieren Schlüsselpfad**:  
+    [![Eingeben des Modell Schlüssel Pfads](databinding-images/outline09.png "Eingeben des Modell Schlüssel Pfads")](databinding-images/outline09-large.png#lightbox)
+4. `objectValue`der aktuelle `PersonModel` in dem Array, das vom Struktur Controller verwaltet wird.
+5. Wählen Sie die **Tabellen Ansichts Zelle** unter der Spalte **Beruf** aus. Wählen Sie im **Bindungs Inspektor** unter dem **Wert** -Turndown die Option **binden an** und **Tabellenzellen Ansicht**aus. Geben `objectValue.Occupation` Sie als **Modell Schlüssel Pfad**ein:  
 
-    [![Eingeben des Modell-Schlüsselpfads](databinding-images/outline10.png "Modell Schlüsselpfad eingeben")](databinding-images/outline10-large.png#lightbox)
-6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
+    [![Eingeben des Modell Schlüssel Pfads](databinding-images/outline10.png "Eingeben des Modell Schlüssel Pfads")](databinding-images/outline10-large.png#lightbox)
+6. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
-Wenn wir die Anwendung ausführen, wird die Gliederung mit unserem Array von aufgefüllt `PersonModels`:
+Wenn die Anwendung ausgeführt wird, wird der Umriss mit dem folgenden Array `PersonModels`aufgefüllt:
 
 [![Ausführen der Anwendung](databinding-images/outline11.png "Ausführen der Anwendung")](databinding-images/outline11-large.png#lightbox)
 
-### <a name="collection-view-data-binding"></a>Datenbindung für Auflistung anzeigen
+### <a name="collection-view-data-binding"></a>Datenbindung für Sammlungsansicht
 
-Datenbindung mit einer Auflistungsansicht ist ganz ähnlich wie die Bindung mit einer Tabellenansicht, wie ein Array-Controller verwendet wird, um Daten für die Sammlung bereitstellen. Da die Auflistungsansicht nicht über einen vordefinierten Anzeigeformat verfügt, sind mehr Schritte erforderlich, um Feedback für die Interaktion von Benutzern bereitzustellen und zum Nachverfolgen der Auswahl des Benutzers.
+Die Datenbindung mit einer Auflistungs Ansicht ähnelt der Bindung mit einer Tabellen Sicht, da ein Array Controller zum Bereitstellen von Daten für die Auflistung verwendet wird. Da die Sammlungsansicht nicht über ein voreingestelltes Anzeige Format verfügt, ist mehr Arbeit erforderlich, um Feedback zur Benutzerinteraktion bereitzustellen und die Benutzer Auswahl zu verfolgen.
 
 > [!IMPORTANT]
-> Aufgrund eines Problems in Xcode 7 und Mac OS 10.11 (und höher) können Auflistungsansichten nicht in einem Storyboard (.storyboard)-Dateien verwendet werden. Daher müssen Sie weiterhin XIB-Dateien zur Definition Ihrer Sichten Auflistung für Ihre Xamarin.Mac-apps verwenden. Informieren Sie sich unsere [Auflistungsansichten](~/mac/user-interface/collection-view.md) Dokumentation zu informieren.
+> Aufgrund eines Problems in Xcode 7 und macOS 10,11 (und höher) können Sammlungs Sichten nicht innerhalb von Storyboard-Dateien (. Storyboard) verwendet werden. Daher müssen Sie weiterhin XIb-Dateien verwenden, um Ihre Sammlungs Ansichten für Ihre xamarin. Mac-apps zu definieren. Weitere Informationen finden Sie in der Dokumentation zu den [Sammlungs Ansichten](~/mac/user-interface/collection-view.md) .
 
 <!--KKM 012/16/2015 - Once Apple fixes the issue with Xcode and Collection Views in Storyboards, we can uncomment this section.
 
@@ -856,52 +856,52 @@ If we run the application, the table will be populated with our array of `Person
 
 For more information on working with Collection Views, please see our [Collection Views](~/mac/user-interface/collection-view.md) documentation.-->
 
-## <a name="debugging-native-crashes"></a>Debuggen native Abstürze
+## <a name="debugging-native-crashes"></a>Debugging nativer Abstürze
 
-Einen Fehler gemacht haben Ihre datenbindungen kann dazu führen, eine _Native abstürzen_ in nicht verwaltetem Code und dazu führen, dass Ihre Xamarin.Mac-Anwendung mit vollständig ausfällt eine `SIGABRT` Fehler:
+Wenn Sie einen Fehler in den Daten Bindungen erzeugen, kann dies zu einem _nativen Absturz_ in nicht verwaltetem Code führen, und ihre xamarin. Mac `SIGABRT` -Anwendung kann mit einem Fehler vollständig ausfallen:
 
-[![Beispiel eines nativen Absturzes-Dialogfelds](databinding-images/debug01.png "Beispiel eines nativen Absturzes-Dialogfelds")](databinding-images/debug01-large.png#lightbox)
+[![Beispiel für einen nativen Absturz (Dialogfeld] ) (databinding-images/debug01.png "Beispiel für einen nativen Absturz (Dialogfeld") )](databinding-images/debug01-large.png#lightbox)
 
-Es gibt in der Regel vier wichtigsten Gründe für native Abstürze während der Datenbindung:
+Es gibt in der Regel vier Hauptgründe für Native Abstürze während der Datenbindung:
 
-1. Ihr Datenmodell erbt nicht von `NSObject` oder eine Unterklasse von `NSObject`.
-2. Sie Ihr Eigentum mit Objective-C nicht verfügbar machen die `[Export("key-name")]` Attribut.
-3. Sie keine Änderungen an der Accessor, der Wert in umschließen `WillChangeValue` und `DidChangeValue` Methodenaufrufe (Angeben von dem gleichen Schlüssel wie die `Export` Attribut).
-4. Sie haben einen falschen oder falsch Schlüssel in der **Bindung Inspektor** in Interface Builder.
+1. Das Datenmodell erbt nicht von `NSObject` oder einer Unterklasse von `NSObject`.
+2. Sie haben die Eigenschaft nicht mit dem `[Export("key-name")]` -Attribut für "Ziel-C" verfügbar gemacht.
+3. Sie haben Änderungen am Wert des Accessors in-und- `WillChangeValue` Methoden `DidChangeValue` Aufrufen nicht umschlossen (und dabei denselben Schlüssel `Export` wie das-Attribut angeben).
+4. Der **Bindungs Inspektor** in Interface Builder weist einen falschen oder falsch formatierten Schlüssel auf.
 
-### <a name="decoding-a-crash"></a>Decodieren von einem Absturz
+### <a name="decoding-a-crash"></a>Decodieren eines Absturzes
 
-Lassen Sie uns dazu führen, dass eines nativen Absturzes in unserer Datenbindung, sodass wir zeigen können, wie Sie suchen und zu beheben. In Interface Builder, ändern wir unsere Bindung der erste Bezeichnung im Beispiel Auflistungsansicht aus `Name` zu `Title`:
+Wir verursachen einen systemeigenen Absturz in unserer Datenbindung, damit wir zeigen können, wie Sie ihn finden und beheben können. Ändern Sie in Interface Builder die Bindung der ersten Bezeichnung im Beispiel der Sammlungsansicht von `Name` `Title`in:
 
-[![Bearbeiten den Bindungsschlüssel des](databinding-images/debug02.png "Bindungsschlüssel des bearbeiten")](databinding-images/debug02-large.png#lightbox)
+[![Bearbeiten des Bindungs Schlüssels](databinding-images/debug02.png "Bearbeiten des Bindungs Schlüssels")](databinding-images/debug02-large.png#lightbox)
 
-Wir speichern Sie die Änderung, wechseln Sie zurück zu Visual Studio für Mac mit Xcode synchronisieren und die Anwendung auszuführen. Wenn die Auflistungsansicht angezeigt wird, stürzt die Anwendung wird sofort mit einem `SIGABRT` Fehler (siehe die **Anwendungsausgabe** in Visual Studio für Mac) seit der `PersonModel` macht eine Eigenschaft mit dem Schlüssel `Title`:
+Speichern Sie die Änderung, wechseln Sie zurück zu Visual Studio für Mac, um die Synchronisierung mit Xcode durchzuführen, und führen Sie die Anwendung aus. Wenn die Auflistungs Ansicht angezeigt wird, stürzt die Anwendung vorübergehend mit einem `SIGABRT` Fehler ab (wie in der **Anwendungs Ausgabe** in Visual Studio für Mac gezeigt), `PersonModel` da der keine Eigenschaft mit dem Schlüssel `Title`verfügbar macht:
 
-[![Beispiel für einen Bindungsfehler](databinding-images/debug03.png "Beispiel für einen Bindungsfehler")](databinding-images/debug03-large.png#lightbox)
+[![Beispiel für einen Bindungs Fehler](databinding-images/debug03.png "Beispiel für einen Bindungs Fehler")](databinding-images/debug03-large.png#lightbox)
 
-Wenn wir einen zu den Fehler in ganz oben Bildlauf die **Anwendungsausgabe** sehen wir die Taste, um das Problem zu lösen:
+Wenn wir einen Bildlauf zum Anfang des Fehlers in der **Anwendungs Ausgabe** ausführen, sehen wir den Schlüssel zur Behebung des Problems:
 
-[![Suchen das Problem in das Fehlerprotokoll](databinding-images/debug04.png "suchen das Problem in das Fehlerprotokoll an")](databinding-images/debug04-large.png#lightbox)
+[Suchen ![des Problems im Fehlerprotokoll] Suchen (databinding-images/debug04.png "des Problems im Fehlerprotokoll")](databinding-images/debug04-large.png#lightbox)
 
-Diese Zeile wird uns mitteilen, die den Schlüssel `Title` ist nicht vorhanden, auf das Objekt, das wir zu binden. Wenn wir ändern die Bindung zurück, in `Name` in Interface Builder, speichern, die Synchronisierung neu zu erstellen und ausführen, wird die Anwendung wie erwartet ohne Probleme ausgeführt.
+Diese Zeile teilt uns mit, dass der `Title` Schlüssel für das Objekt, an das wir binden, nicht vorhanden ist. Wenn wir die Bindung `Name` in Interface Builder ändern, speichern, synchronisieren, neu erstellen und ausführen, wird die Anwendung erwartungsgemäß ohne Probleme ausgeführt.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird eine ausführliche Übersicht über das Arbeiten mit Datenbindung und Schlüssel-Wert zu codieren, in einer Xamarin.Mac-Anwendung verwendet. Zunächst sah im Endeffekt sehr auf das Verfügbarmachen von c#-Klasse mit Objective-C mithilfe von Schlüssel / Wert-Codierung (KVM), und beobachten von Schlüssel-Wert (KVO). Als Nächstes wurde erläutert, wie eine konforme KVO-Klasse verwenden, und bindet es Daten an Benutzeroberflächenelemente in Interface Builder von Xcode. Abschließend wurde erläutert, komplexe Bindung mit **Array-Controllern** und **Struktur-Controller**.
+In diesem Artikel wurde die Arbeit mit Datenbindung und Schlüssel-Wert-Codierung in einer xamarin. Mac-Anwendung ausführlich erläutert. Zuerst wurde das verfügbar machen einer C# Klasse für "Ziel-C" mithilfe von Key-Value Coding (KVC) und Key-Value-Beobachtungen (KVO) untersucht. Im nächsten Schritt wurde gezeigt, wie eine KVO-kompatible Klasse verwendet und Daten an Benutzeroberflächen Elemente in der Interface Builder von Xcode gebunden werden. Zum Schluss zeigte er eine komplexe Datenbindung mithilfe von **Array Controllern** und Struktur **Controllern**.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacDatabinding Storyboard (Beispiel)](https://developer.xamarin.com/samples/mac/MacDatabinding-Storyboard/)
-- [MacDatabinding XIBs (Beispiel)](https://developer.xamarin.com/samples/mac/MacDatabinding-XIBs/)
+- [Macdatabinding-Storyboard (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabinding-storyboard)
+- [Macdatabinding-xisb (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabinding-xibs)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
-- [Standardsteuerelemente](~/mac/user-interface/standard-controls.md)
-- [Tabellenansichten](~/mac/user-interface/table-view.md)
-- [Gliederungsansichten](~/mac/user-interface/outline-view.md)
-- [Auflistungsansichten](~/mac/user-interface/collection-view.md)
-- [Schlüssel-Wert-Codierung Programmierhandbuch](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
-- [Einführung in die beobachten von Schlüssel-Wert-Programmierhandbuch](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
-- [Einführung in den Themen zur Programmierung Cocoa-Bindungen](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
-- [Einführung in die Referenz für Cocoa-Bindungen](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
+- [Standard Steuerelemente](~/mac/user-interface/standard-controls.md)
+- [Tabellen Sichten](~/mac/user-interface/table-view.md)
+- [Gliederungs Ansichten](~/mac/user-interface/outline-view.md)
+- [Sammlungs Ansichten](~/mac/user-interface/collection-view.md)
+- [Programmier Handbuch für Schlüssel-Wert-Codierung](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
+- [Einführung in den Programmier Leit Faden für Schlüssel-Wert-Beobachtungen](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
+- [Programmierthemen "Einführung in Cocoa-Bindungen"](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
+- [Einführung in Cocoa-Bindungs Referenz](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
 - [macOS-Eingaberichtlinien](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

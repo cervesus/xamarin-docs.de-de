@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: e4d7901e703544d52bb0e4a377875847b9af0c0a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 7d153491802a74ff06b3a5cd63e585b7fd18ff03
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509338"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644316"
 ---
 # <a name="notifications-in-xamarinandroid"></a>Benachrichtigungen in xamarin. Android
 
@@ -36,5 +36,5 @@ Beachten Sie, dass der Benutzer die Berechtigung für Ihre APP explizit erteilen
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Lokale Benachrichtigungen (Beispiel)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
-- [Remote Benachrichtigungen (Beispiel)](https://developer.xamarin.com/samples/monodroid/RemoteNotifications/)
+- [Lokale Benachrichtigungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
+- [Remote Benachrichtigungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/remotenotifications)

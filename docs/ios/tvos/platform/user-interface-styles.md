@@ -1,115 +1,115 @@
 ---
-title: TvOS-Stile der Benutzeroberfläche in Xamarin
-description: Dieser Artikel behandelt das Licht und dunkel UI-Designs, die Apple TvOS 10 und wie sie in einer Xamarin.tvOS-app implementiert hinzugefügt wurde.
+title: tvos-Benutzeroberflächen Stile in xamarin
+description: In diesem Artikel werden die hellen und dunklen UI-Designs behandelt, die Apple tvos 10 hinzugefügt hat, und wie diese in einer xamarin. tvos-App implementiert werden.
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 2536ca5d3bff3f5b7962bc4fcf58b31a130fd03c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc9a8acb2c04d805e7abc52b2996ec5546b0fb69
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270885"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657367"
 ---
-# <a name="tvos-user-interface-styles-in-xamarin"></a>TvOS-Stile der Benutzeroberfläche in Xamarin
+# <a name="tvos-user-interface-styles-in-xamarin"></a>tvos-Benutzeroberflächen Stile in xamarin
 
-_Dieser Artikel behandelt das Licht und dunkel UI-Designs, die Apple TvOS 10 und wie sie in einer Xamarin.tvOS-app implementiert hinzugefügt wurde._
+_In diesem Artikel werden die hellen und dunklen UI-Designs behandelt, die Apple tvos 10 hinzugefügt hat, und wie diese in einer xamarin. tvos-App implementiert werden._
 
-TvOS 10 nun unterstützt sowohl die Light-Benutzeroberfläche ein dunkles Design, dass alle von der integrierten UIKit Steuerelemente wird automatisch angepasst, basierend auf den Einstellungen des Benutzers. Darüber hinaus wird der Entwickler kann manuell anpassen, Benutzeroberflächenelemente auf der Grundlage des Designs, die der Benutzer ausgewählt hat, und kann außer Kraft setzen ein bestimmtes Designs.
+tvos 10 unterstützt jetzt sowohl ein dunkles als auch ein helles Design der Benutzeroberfläche, mit dem sich alle Build-in-UIKit-Steuerelemente basierend auf den Benutzereinstellungen automatisch an anpassen. Außerdem kann der Entwickler Benutzeroberflächen Elemente basierend auf dem Design, das der Benutzer ausgewählt hat, manuell anpassen und ein bestimmtes Design überschreiben.
 
 <a name="About-the-New-User-Interface-Styles" />
 
-## <a name="about-the-new-user-interface-styles"></a>Informationen zu den neuen Stile der Benutzeroberfläche
+## <a name="about-the-new-user-interface-styles"></a>Informationen zu den neuen Benutzeroberflächen Stilen
 
-Wie bereits erwähnt, basierend TvOS 10 nun unterstützt sowohl die Light-Benutzeroberfläche ein dunkles Design, dass alle von der integrierten UIKit Steuerelemente wird automatisch angepasst, auf den Einstellungen des Benutzers ab.
+Wie bereits erwähnt, unterstützt tvos 10 jetzt sowohl ein dunkles als auch ein helles Design der Benutzeroberfläche, dass alle in der benutzerdefinierten UIKit-Steuerelemente basierend auf den Benutzereinstellungen automatisch an angepasst werden.
 
-Der Benutzer kann dieses Design wechseln, indem Sie auf **Einstellungen** > **allgemeine** > **Darstellung** und zum Wechsel zwischen **Licht**  und **dunkel**:
+Der Benutzer kann dieses Design ändern, indem er zu **Einstellungen** > **Allgemeine** > Darstellung**wechselt und zwischen** **hell** und **dunkel**wechselt:
 
-[![](user-interface-styles-images/theme01.png "Die Einstellungs-app")](user-interface-styles-images/theme01.png#lightbox)
+[![](user-interface-styles-images/theme01.png "Die app \"Einstellungen\"")](user-interface-styles-images/theme01.png#lightbox)
 
-Wenn die **dunkel** Design ausgewählt ist, werden alle Elemente der Benutzeroberfläche wechseln Sie zur heller Text auf dunklem Hintergrund:
+Wenn das **dunkle** Design ausgewählt ist, werden alle Benutzeroberflächen Elemente in einem dunklen Hintergrund zum hellen Text gewechselt:
 
 [![](user-interface-styles-images/theme02.png "Das Design \"dunkel\"")](user-interface-styles-images/theme02.png#lightbox)
 
-Der Benutzer hat die Möglichkeit, wechseln Sie zu einem beliebigen Zeitpunkt das Design und kann also basierend auf der aktuellen Aktivität, die auf dem sich das Apple TV befindet oder die Zeit des Tages erfolgen kann.
+Der Benutzer kann das Design jederzeit ändern und auf der Grundlage der aktuellen Aktivität, in der sich das Apple TV-Gerät befindet, oder der Tageszeit wechseln.
 
-Das Design der Light-Benutzeroberfläche ist das Standarddesign und sämtlicher vorhandener TvOS-apps werden das Design "hell", unabhängig von den Einstellungen des Benutzers, weiterhin verwendet, es sei denn, sie für TvOS 10, um das Design "dunkel" nutzen geändert werden. Eine TvOS 10-app verfügt zudem über die Möglichkeit zum Überschreiben des aktuellen Designs und immer der hell oder dunkel Design für einige oder alle der Benutzeroberfläche verwenden.
+Das Design der hellen Benutzeroberfläche ist das Standarddesign, und alle vorhandenen tvos-Apps verwenden immer noch das Design "Hell", unabhängig von den Einstellungen des Benutzers, es sei denn, Sie wurden für tvos 10 geändert, um das dunkle Design zu nutzen. Eine tvos 10-App bietet auch die Möglichkeit, das aktuelle Design zu überschreiben, und verwendet immer das helle oder dunkle Design für einige oder alle Benutzeroberflächen.
 
 <a name="Adopting-the-Light-and-Dark-Themes" />
 
-## <a name="adopting-the-light-and-dark-themes"></a>Übernehmen die hellen und dunklen Designs
+## <a name="adopting-the-light-and-dark-themes"></a>Einführung in das helle und dunkle Design
 
-Um dieses Feature zu unterstützen, wurde Apple hinzugefügt, um eine neue API die `UITraitCollection` -Klasse und einer TvOS-app müssen sich um die dunkle Darstellung zu unterstützen (über eine Einstellung in der `Info.plist` Datei).
+Zur Unterstützung dieses Features hat Apple der `UITraitCollection` -Klasse eine neue API hinzugefügt, und eine tvos-app muss sich für die Unterstützung der dunklen Darstellung entscheiden (über eine Einstellung in der `Info.plist` Datei).
 
-Um zur Unterstützung von im hellen und dunklen Design teilnehmen, führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor, um die Unterstützung für ein helles und dunkles Design zu abonnieren:
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei `Info.plist`, um sie zur Bearbeitung zu öffnen.
-2. Wählen Sie die **Quelle** anzeigen (von unten im Editor).
-3. Fügen Sie einen neuen Schlüssel hinzu, und rufen sie `UIUserInterfaceStyle`: 
+2. Wählen Sie die **Quell** Ansicht aus (vom unteren Rand des Editors).
+3. Fügen Sie einen neuen Schlüssel hinzu, `UIUserInterfaceStyle`und nennen Sie ihn: 
 
-    [![](user-interface-styles-images/theme03.png "Der Schlüssel UIUserInterfaceStyle")](user-interface-styles-images/theme03.png#lightbox)
-4. Lassen Sie den Typ `String` , und geben Sie einen Wert von `Automatic`: 
+    [![](user-interface-styles-images/theme03.png "Der uiuserinterfakestyle-Schlüssel")](user-interface-styles-images/theme03.png#lightbox)
+4. Legen Sie den Typ auf `String` fest, und geben Sie `Automatic`den folgenden Wert ein: 
 
-    [![](user-interface-styles-images/theme04.png "Geben Sie die automatische")](user-interface-styles-images/theme04.png#lightbox)
+    [![](user-interface-styles-images/theme04.png "Automatisch eingeben")](user-interface-styles-images/theme04.png#lightbox)
 5. Speichern Sie die Änderungen in der Datei.
 
-Es gibt drei mögliche Werte für die `UIUserInterfaceStyle` Schlüssel:
+Es gibt drei mögliche Werte für den `UIUserInterfaceStyle` Schlüssel:
 
-- **Light** -erzwingt die TvOS-app-Benutzeroberfläche immer das Design "hell" verwenden.
-- **Dunkel** -erzwingt die TvOS-app-Benutzeroberfläche immer das Design "dunkel" verwenden.
-- **Automatische** -wechselt zwischen hellen und dunklen Designs auf der Grundlage von den Einstellungen des Benutzers in den Einstellungen. Dies ist die bevorzugte Einstellung.
+- Das **Licht** erzwingt die Benutzeroberfläche der tvos-APP, immer das helle Design zu verwenden.
+- **Dunkel** : erzwingt, dass die Benutzeroberfläche der tvos-App immer das Design "dunkel" verwendet.
+- **Automatisches** wechseln zwischen dem hellen und dem dunklen Design basierend auf den Einstellungen des Benutzers in den Einstellungen. Dies ist die bevorzugte Einstellung.
 
 <a name="UIKit-Theme-Support" />
 
-### <a name="uikit-theme-support"></a>Unterstützung von UIKit-Designs
+### <a name="uikit-theme-support"></a>UIKit-Designunterstützung
 
-Wenn eine TvOS-app, integrierten verwendet wird `UIView` basierte Steuerelemente, sie werden automatisch auf das Design der Benutzeroberfläche ohne Eingriffe von Entwicklern reagieren.
+Wenn eine tvos-App standardmäßig integrierte, integrierte `UIView` Steuerelemente verwendet, werden Sie automatisch auf das UI-Design reagieren, ohne dass ein Entwickler eingreifen muss.
 
-Darüber hinaus `UILabel` und `UITextView` ändert sich automatisch auf ihre Farbe basierend auf der UI-Design wählen:
+Außerdem ändern `UITextView` und automatisch Ihre Farbe basierend auf dem Design der Benutzeroberfläche auswählen: `UILabel`
 
-- Der Text wird in das Design "hell" Schwarz.
-- Der Text wird im dunklen Design weiß sein.
+- Der Text wird im Design "Hell" schwarz angezeigt.
+- Der Text wird im Design "dunkel" weiß angezeigt.
 
-Wenn der Entwickler die Textfarbe manuell (entweder im Storyboard oder Code) ändert, werden sie für die Farbe ändert sich basierend auf dem UI-Design Behandlung verantwortlich.
+Wenn der Entwickler die Textfarbe je manuell ändert (entweder im Storyboard oder im Code), sind Sie für die Verarbeitung von Farbänderungen basierend auf dem Design der Benutzeroberfläche verantwortlich.
 
 <a name="New-Blur-Effects" />
 
-### <a name="new-blur-effects"></a>Neue Blur-Effekte
+### <a name="new-blur-effects"></a>Neue Weichzeichnereffekte
 
-Für die Unterstützung der hellen und dunklen Design in einer TvOS 10-app, hat Apple zwei neue Blur-Effekte hinzugefügt. Diese neuen Effekte passt automatisch die Unschärfe, basierend auf der UI-Designs, die der Benutzer wie folgt ausgewählt hat:
+Zur Unterstützung der hellen und dunklen Designs in einer tvos 10-APP hat Apple zwei neue Weichzeichnereffekte hinzugefügt. Diese neuen Effekte passen den weich zeichnenden automatisch basierend auf dem Design der Benutzeroberfläche an, das der Benutzer wie folgt ausgewählt hat:
 
-- `UIBlurEffectStyleRegular` – Verwendet, die ein Licht in das Design "hell" und einem dunklen blur blur im dunklen Design.
-- `UIBlurEffectStyleProminent` – Verwendet eine Extra-light Blur in das Design "hell" und einem sehr dunklen Blur im dunklen Design.
+- `UIBlurEffectStyleRegular`-Verwendet einen hellen Weichzeichner im Design "Hell" und einen dunklen Weichzeichner im Design "dunkel".
+- `UIBlurEffectStyleProminent`-Verwendet einen Extra-Light-Weichzeichner im Design "Hell" und einen extra dunklen Weichzeichner im Design "dunkel".
 
 <a name="Working-with-Trait-Collections" />
 
-## <a name="working-with-trait-collections"></a>Arbeiten mit Auflistungen von Merkmal
+## <a name="working-with-trait-collections"></a>Arbeiten mit Merkmals Auflistungen
 
-Die neue `UserInterfaceStyle` Eigenschaft der `UITraitCollection` Klasse kann verwendet werden, um das aktuell ausgewählte UI-Design zu erhalten und werden eine `UIUserInterfaceStyle` Enumeration eines der folgenden Werte:
+Die neue `UserInterfaceStyle` -Eigenschaft `UITraitCollection` der-Klasse kann verwendet werden, um das aktuell ausgewählte UI-Design zu erhalten `UIUserInterfaceStyle` , und es handelt sich um eine Enumeration mit einem der folgenden Werte:
 
-- **Light** -Design für die Light-Benutzeroberfläche aktiviert ist.
-- **Dunkel** : die Benutzeroberfläche des dunklen Designs aktiviert ist.
-- **Unbekannter** : die Ansicht wurde nicht angezeigt, auf dem Bildschirm, damit die aktuelle UI-Design unbekannt ist.
+- **Hell** : das Design der hellen Benutzeroberfläche ist ausgewählt.
+- **Dunkel** : das dunkle UI-Design ist ausgewählt.
+- **Nicht angegeben** : die Ansicht wurde noch nicht auf dem Bildschirm angezeigt, sodass das aktuelle UI-Design unbekannt ist.
 
-Darüber hinaus weisen Merkmal Sammlungen die folgenden Funktionen in TvOS 10:
+Außerdem verfügen Merkmals Auflistungen in tvos 10 über die folgenden Features:
  
-- Der Proxy für die Darstellung kann angepasst werden, basierend auf den `UserInterfaceStyle` von einer angegebenen `UITraitCollection` zu ändern, z. B. Bilder oder Element von Farben basierend auf dem Design.
-- TvOS-app kann Merkmal sammlungsänderungen behandeln, durch Überschreiben der `TraitCollectionDidChange` Methode eine `UIView` oder `UIViewController` Klasse.
+- Der Darstellungs Proxy kann basierend auf der `UserInterfaceStyle` eines bestimmten `UITraitCollection` angepasst werden, um Elemente wie Bilder oder Element Farben auf Grundlage des Designs zu ändern.
+- Eine tvos-App kann Merkmals Sammlungs Änderungen durch über `TraitCollectionDidChange` Schreiben der- `UIView` Methode `UIViewController` einer-Klasse oder-Klasse verarbeiten.
 
 > [!IMPORTANT]
-> Die frühe Xamarin.tvOS-Vorschau für TvOS 10 nicht vollständig unterstützen `UIUserInterfaceStyle` für `UITraitCollection` noch. Vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt werden.
+> Die frühe Vorschauversion von xamarin. tvos für tvos 10 wird `UIUserInterfaceStyle` `UITraitCollection` noch nicht vollständig unterstützt. Die vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt.
 
 
 
 
 <a name="Customizing-Appearance-Based-on-Theme" />
 
-### <a name="customizing-appearance-based-on-theme"></a>Anpassen der Darstellung, die basierend auf dem Design
+### <a name="customizing-appearance-based-on-theme"></a>Anpassen der Darstellung basierend auf dem Design
 
-Für Benutzeroberflächenelemente, die den Proxy für die Darstellung zu unterstützen, kann ihre Darstellung basierend auf dem UI-Design ihrer Trait-Sammlung angepasst werden. Für ein angegebenes UI-Element, kann der Entwickler also eine Farbe für das Design "hell" und eine andere Farbe für das Design "dunkel" angeben.
+Für Benutzeroberflächen Elemente, die den Darstellungs Proxy unterstützen, kann ihre Darstellung basierend auf dem UI-Design Ihrer Merkmals Auflistung angepasst werden. Daher kann der Entwickler für ein bestimmtes Benutzeroberflächen Element eine Farbe für das helle Design und eine andere Farbe für das dunkle Design angeben.
 
 ```csharp
 button.SetTitleColor (UIColor.Red, UIControlState.Normal);
@@ -123,15 +123,15 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> Leider können die Xamarin.tvOS-Vorschau für TvOS 10 nicht vollständig unterstützen `UIUserInterfaceStyle` für `UITraitCollection`, sodass diese Art der Anpassung noch nicht verfügbar ist. Vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt werden.
+> Leider ist die xamarin. tvos-Vorschau für tvos 10 für `UIUserInterfaceStyle` `UITraitCollection`nicht vollständig unterstützt. Daher ist diese Art der Anpassung noch nicht verfügbar. Die vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt.
 
 <a name="Responding-to-Theme-Changes-Directly" />
 
-### <a name="responding-to-theme-changes-directly"></a>Direkt reagieren, Designänderungen
+### <a name="responding-to-theme-changes-directly"></a>Direkte Reaktion auf Designänderungen
 
-In der Entwickler ist erforderlich, noch mehr Kontrolle über die Darstellung eines Benutzeroberflächenelements auf Grundlage der ausgewählten UI-Designs, überschreiben die `TraitCollectionDidChange` Methode eine `UIView` oder `UIViewController` Klasse.
+Wenn Entwickler die Darstellung eines UI-Elements auf der Grundlage des ausgewählten Benutzeroberflächen Designs genauer steuern müssen, können Sie die `TraitCollectionDidChange` -Methode einer `UIView` -Klasse `UIViewController` oder-Klasse überschreiben.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 public override void TraitCollectionDidChange (UITraitCollection previousTraitCollection)
@@ -145,11 +145,11 @@ public override void TraitCollectionDidChange (UITraitCollection previousTraitCo
 
 <a name="Responding-to-Theme-Changes-Directly" />
 
-### <a name="overriding-a-trait-collection"></a>Eine Auflistung der Eigenschaft überschreiben
+### <a name="overriding-a-trait-collection"></a>Überschreiben einer Merkmals Auflistung
 
-Basierend auf den Entwurf einer TvOS-App, es gibt möglicherweise Zeiten, wenn der Entwickler muss die Trait-Auflistung eines angegebenen Elements der Benutzeroberfläche zu überschreiben und verwenden Sie immer ein bestimmtes Design der Benutzeroberfläche.
+Basierend auf dem Entwurf einer tvos-App kann es vorkommen, dass der Entwickler die Merkmals Auflistung eines bestimmten Benutzeroberflächen Elements überschreiben muss und immer ein bestimmtes UI-Design verwenden muss.
 
-Dies kann erfolgen mithilfe der `SetOverrideTraitCollection` Methode für die `UIViewController` Klasse. Zum Beispiel:
+Dies kann mithilfe der `SetOverrideTraitCollection` -Methode für die `UIViewController` -Klasse erfolgen. Beispiel:
 
 ```csharp
 // Create new trait and configure it
@@ -160,59 +160,59 @@ var trait = new UITraitCollection ();
 SetOverrideTraitCollection (trait, this);
 ```
 
-Weitere Informationen finden Sie unter den ["traits"](~/ios/user-interface/storyboards/unified-storyboards.md) und [überschreiben "traits"](~/ios/user-interface/storyboards/unified-storyboards.md) Teile unserer [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Dokumentation.
+Weitere Informationen finden Sie in den Abschnitten [Merkmale](~/ios/user-interface/storyboards/unified-storyboards.md) und Überschreiben von [Merkmalen](~/ios/user-interface/storyboards/unified-storyboards.md) unserer [Einführung in die Dokumentation zu Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 <a name="Trait-Collections-and-Storyboards" />
 
-### <a name="trait-collections-and-storyboards"></a>Merkmal Sammlungen und Storyboards
+### <a name="trait-collections-and-storyboards"></a>Merkmals Auflistungen und Storyboards
 
-In TvOS 10 kann der app-Storyboard-Merkmal-Sammlungen reagieren festgelegt werden und viele Elemente der Benutzeroberfläche erfolgen hellen und dunklen Design kennen. Der aktuellen frühen Xamarin.tvOS-Vorschau für TvOS 10 unterstützt dieses Feature im Benutzeroberflächen-Designer noch keine, sodass das Storyboard in Interface Builder von Xcode, als problemumgehung bearbeitet werden muss.
+In tvos 10 kann das Storyboard einer APP so festgelegt werden, dass Sie auf Merkmals Auflistungen antwortet, und viele Elemente der Benutzeroberfläche können leicht und dunkel Design fähig gemacht werden. Die aktuelle xamarin. tvos-frühe Vorschau für tvos 10 unterstützt dieses Feature noch nicht im Schnittstellen-Designer, sodass das Storyboard in der Interface Builder von Xcode als Problem Umgehung bearbeitet werden muss.
 
-Um Unterstützung von Merkmal zu aktivieren, führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor, um die Unterstützung von Merkmal Sammlungen zu aktivieren
 
-1. Mit der rechten Maustaste auf die Storyboard-Datei in die **Projektmappen-Explorer** , und wählen Sie **Öffnen mit** > **Xcode Interface Builder**: 
+1. Klicken Sie **mit** > der rechten Maustaste auf die Storyboard-Datei im **Projektmappen-Explorer** , und wählen Sie mit**Xcode Interface Builder**öffnen: 
 
-    [![](user-interface-styles-images/theme05.png "Mit Xcode Interface Builder öffnen")](user-interface-styles-images/theme05.png#lightbox) 
-2. Um Unterstützung von Merkmal zu aktivieren, wechseln Sie zu der **Dateiinspektor** und überprüfen Sie die **verwenden Merkmal Variationen** -Eigenschaft in der **Interface Builder-Dokument** Abschnitt: 
+    [![](user-interface-styles-images/theme05.png "Öffnen mit Xcode Interface Builder")](user-interface-styles-images/theme05.png#lightbox) 
+2. Um die Unterstützung für Merkmals Auflistungen zu aktivieren, wechseln Sie zum **Datei Inspektor** , und aktivieren Sie im Abschnitt **Interface Builder Document** die Eigenschaft **Merkmals Variationen verwenden** : 
 
     [![](user-interface-styles-images/theme06.png "Unterstützung von Merkmal aktivieren")](user-interface-styles-images/theme06.png#lightbox)
-3. Vergewissern Sie sich die Änderung zum Merkmal Variationen: 
+3. Bestätigen Sie die Änderung, um Merkmals Variationen zu verwenden: 
 
-    [![](user-interface-styles-images/theme07.png "Die Verwendung Merkmal Variationen-Warnung")](user-interface-styles-images/theme07.png#lightbox)
-4. Speichern Sie die Änderungen der Storyboard-Datei.
+    [![](user-interface-styles-images/theme07.png "Warnung \"Merkmals Variationen verwenden\"")](user-interface-styles-images/theme07.png#lightbox)
+4. Speichern Sie die Änderungen in der storyboarddatei.
 
-Apple hat folgenden Möglichkeiten hinzugefügt, wenn TvOS-Storyboards in Interface Builder zu bearbeiten:
+Apple hat beim Bearbeiten von tvos-Storyboards in Interface Builder die folgenden Funktionen hinzugefügt:
 
-* Der Entwickler kann verschiedene Varianten der Elemente der Benutzeroberfläche, die basierend auf dem UI-Design im Festlegen der **Attributinspektor**:
+* Der Entwickler kann verschiedene Variationen von Benutzeroberflächen Elementen angeben, die auf dem UI-Design im **Attribut Inspektor**basieren:
     
-    * Mehrere Eigenschaften verfügen nun über eine **+** nebenstehenden die geklickt werden kann, um eine bestimmte Version des UI-Design hinzuzufügen: 
+    * Mehrere Eigenschaften verfügen jetzt über **+** eine neben Ihnen, auf die Sie klicken können, um eine spezifische Version des Benutzeroberflächen Designs hinzuzufügen: 
 
-        [![](user-interface-styles-images/theme08.png "Fügen Sie eine bestimmte Version des UI-Design")](user-interface-styles-images/theme08.png#lightbox) 
+        [![](user-interface-styles-images/theme08.png "Benutzeroberflächen-designspezifische Version hinzufügen")](user-interface-styles-images/theme08.png#lightbox) 
     
-    * Der Entwickler eine neue Eigenschaft angeben kann, oder klicken Sie auf die **x** Schaltfläche, um ihn zu entfernen: 
+    * Der Entwickler kann eine neue Eigenschaft angeben oder auf die Schaltfläche **x** klicken, um Sie zu entfernen: 
 
-        [![](user-interface-styles-images/theme09.png "Geben Sie eine neue Eigenschaft ein, oder klicken Sie auf die Schaltfläche \"X\", um ihn zu entfernen")](user-interface-styles-images/theme09.png#lightbox)
-* Entwickler kann einen UI-Entwurf in der hell oder dunkel Design aus innerhalb von Interface Builder in Vorschau anzeigen:
+        [![](user-interface-styles-images/theme09.png "Geben Sie eine neue Eigenschaft an, oder klicken Sie auf die Schaltfläche \"x\"")](user-interface-styles-images/theme09.png#lightbox)
+* Der Entwickler kann einen Design der Benutzeroberfläche im hellen oder dunklen Design innerhalb Interface Builder anzeigen:
     
-    * Unteren Rand der Entwurfsoberfläche kann der Entwickler die aktuelle UI-Design wechseln: 
+    * Der untere Teil des Designoberfläche ermöglicht es dem Entwickler, das aktuelle UI-Design zu wechseln: 
 
-        [![](user-interface-styles-images/theme10.png "Unteren Rand der Entwurfsoberfläche")](user-interface-styles-images/theme10.png#lightbox)
+        [![](user-interface-styles-images/theme10.png "Der untere Teil des Designoberfläche")](user-interface-styles-images/theme10.png#lightbox)
         
-    * Das neue Design in Interface Builder angezeigt und bestimmten Anpassungen Merkmal Auflistung angezeigt werden: 
+    * Das neue Design wird in Interface Builder angezeigt, und alle spezifischen Anpassungen der Merkmals Sammlung werden angezeigt: 
 
-        [![](user-interface-styles-images/theme11.png "Das Design in Interface Builder angezeigt")](user-interface-styles-images/theme11.png#lightbox)
+        [![](user-interface-styles-images/theme11.png "Das in Interface Builder angezeigte Design")](user-interface-styles-images/theme11.png#lightbox)
 
-Darüber hinaus verfügt die TvOS-Simulator nun eine Tastenkombination, die Entwickler schnell zwischen den hellen und dunklen Design, beim Debuggen einer TvOS-app wechseln können. Verwenden der **Befehl + Umschalt + D,** Tastatur Sequenz, die zwischen hellen und dunklen zu wechseln.
+Außerdem verfügt der tvos-Simulator jetzt über eine Tastenkombination, die es dem Entwickler ermöglicht, beim Debuggen einer tvos-app schnell zwischen den hellen und dunklen Designs zu wechseln. Verwenden Sie die **Command-Shift-D-** Tastatursequenz, um zwischen hell und dunkel zu wechseln.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden das Licht behandelt und dunkel UI-Designs, die Apple TvOS 10 und wie sie in einer Xamarin.tvOS-app implementiert hinzugefügt wurde.
+In diesem Artikel wurden die hellen und dunklen UI-Designs behandelt, die Apple tvos 10 hinzugefügt hat, und wie diese in einer xamarin. tvos-App implementiert werden.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
-- [Neuerungen in TvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)
+- [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Neues in tvos 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

@@ -1,44 +1,44 @@
 ---
-title: Bindbare Layouts in Xamarin.Forms
-description: Bindbare Layouts ermöglichen die Layout-Klassen, um ihre Inhalte durch Bindung an eine Auflistung von Elementen, mit der Option, die die Darstellung der einzelnen Elemente mit einem DataTemplate festlegen zu generieren.
+title: Bindbare Layouts in xamarin. Forms
+description: Bindbare Layouts ermöglichen layoutklassen das Generieren ihres Inhalts durch Binden an eine Auflistung von Elementen, mit der Option, die Darstellung der einzelnen Elemente mit einem DataTemplate festzulegen.
 ms.prod: xamarin
 ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 28846e6e9590d2adf56114fce8bc6056c0112ac1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: a824c892d21df9264b772bed09a4aef893f3b949
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970966"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647908"
 ---
-# <a name="bindable-layouts-in-xamarinforms"></a>Bindbare Layouts in Xamarin.Forms
+# <a name="bindable-layouts-in-xamarinforms"></a>Bindbare Layouts in xamarin. Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindableLayouts/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
-Bindbare Layouts können jede abgeleitete Layoutklasse der [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) Klasse, um den Inhalt durch Bindung an eine Auflistung von Elementen, mit der Option, die die Darstellung der einzelnen Elemente in festlegen generieren eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Bindbare Layouts werden bereitgestellt, durch die `BindableLayout` -Klasse, die die folgenden angefügten Eigenschaften aufweist:
+Bindbare Layouts ermöglichen es allen layoutklassen, die [`Layout<T>`](xref:Xamarin.Forms.Layout`1) von der-Klasse abgeleitet sind, den Inhalt durch Binden an eine Auflistung von Elementen zu generieren. die Möglichkeit, die Darstellung der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)einzelnen Elemente mit einem festzulegen. Bindbare Layouts werden von der `BindableLayout` -Klasse bereitgestellt, die die folgenden angefügten Eigenschaften verfügbar macht:
 
-- `ItemsSource` – Gibt die Auflistung der `IEnumerable` Elemente, die durch das Layout angezeigt werden.
-- `ItemTemplate` – Gibt an, die [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) zuweisen jedes Element in die Auflistung von Elementen, die das Layout angezeigt.
-- `ItemTemplateSelector` – Gibt an, die [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector) , die verwendet werden, wählen Sie eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) für ein Element zur Laufzeit.
+- `ItemsSource`– Gibt die Sammlung von `IEnumerable` Elementen an, die vom Layout angezeigt werden sollen.
+- `ItemTemplate`– Gibt das [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) an, das auf jedes Element in der Auflistung von Elementen angewendet werden soll, die vom Layout angezeigt werden.
+- `ItemTemplateSelector`– Gibt das [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) an, das zum Auswählen eines [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) für ein Element zur Laufzeit verwendet wird.
 
-Diese Eigenschaften angefügt werden können, um die [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout), [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout), [ `Grid` ](xref:Xamarin.Forms.Grid), [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) , und [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) , alle abgeleiteten Klassen der [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) Klasse.
+Diese [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)Eigenschaften können an die- [`Grid`](xref:Xamarin.Forms.Grid), [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)-,-,- [`StackLayout`](xref:Xamarin.Forms.StackLayout) und-Klassen angefügt werden, [`Layout<T>`](xref:Xamarin.Forms.Layout`1) die alle von der-Klasse abgeleitet werden.
 
 > [!NOTE]
-> Die `ItemTemplate` -Eigenschaft Vorrang bei der sowohl die `ItemTemplate` und `ItemTemplateSelector` Eigenschaften festgelegt werden.
+> Die `ItemTemplate` -Eigenschaft hat Vorrang, wenn `ItemTemplate` die `ItemTemplateSelector` -Eigenschaft und die-Eigenschaft festgelegt sind.
 
-Die `Layout<T>` -Klasse macht eine [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) Auflistung, die die untergeordneten Elemente eines Layouts hinzugefügt werden. Bei der `BinableLayout.ItemsSource` Eigenschaft ist auf eine Auflistung von Elementen festgelegt und an der eine [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-abgeleiteten Klasse, die jedes Element in der Auflistung hinzugefügt wird die `Layout<T>.Children` Auflistung für die Anzeige nach dem Layout. Die `Layout<T>`-abgeleiteten Klasse wird seine untergeordneten Ansichten aktualisiert, wenn die zugrunde liegende Auflistung ändert. Weitere Informationen zu den Zyklus der Xamarin.Forms-Layouts, finden Sie unter [Erstellen eines benutzerdefinierten Layouts](~/xamarin-forms/user-interface/layouts/custom.md).
+Die `Layout<T>` -Klasse macht [`Children`](xref:Xamarin.Forms.Layout`1.Children) eine Auflistung verfügbar, der die untergeordneten Elemente eines Layouts hinzugefügt werden. Wenn die `BinableLayout.ItemsSource` Eigenschaft auf eine Auflistung von Elementen festgelegt und an eine [`Layout<T>`](xref:Xamarin.Forms.Layout`1)von abgeleitete Klasse angefügt wird, wird jedes Element in der Auflistung `Layout<T>.Children` der Auflistung für die Anzeige durch das Layout hinzugefügt. Die `Layout<T>`von abgeleitete Klasse aktualisiert dann die untergeordneten Sichten, wenn sich die zugrunde liegende Auflistung ändert. Weitere Informationen zum xamarin. Forms-layoutcycle finden Sie unter [Erstellen eines benutzerdefinierten Layouts](~/xamarin-forms/user-interface/layouts/custom.md).
 
-Bindbare Layouts sollte nur verwendet werden, wenn die Auflistung von Elementen, die angezeigt werden, klein ist und Durchführen eines Bildlaufs und Auswahl ist nicht erforderlich. Beim Durchführen eines Bildlaufs bereitgestellt werden kann, durch das wrapping bindbare Layouts in einer [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), dies wird nicht empfohlen, da bindbare Layouts UI-Virtualisierung fehlt. Wenn das Durchführen eines Bildlaufs erforderlich ist, eine bildlauffähige Ansicht, die Virtualisierung der Benutzeroberfläche, z. B. enthält [ `ListView` ](xref:Xamarin.Forms.ListView) oder [ `CollectionView` ](xref:Xamarin.Forms.CollectionView), verwendet werden soll. Fehler beim beobachten von diese Empfehlung kann zu Leistungsproblemen führen.
+Bindbare Layouts sollten nur verwendet werden, wenn die Auflistung von Elementen, die angezeigt werden sollen, klein ist und ein Bildlauf und eine Auswahl nicht erforderlich sind. Wenn Sie einen Bildlauf durchführen können, indem Sie ein bindbare Layout in einem [`ScrollView`](xref:Xamarin.Forms.ScrollView)umgestalten, wird dies nicht empfohlen, da es bei bindbaren Layouts keine UI-Virtualisierung Wenn ein Bildlauf erforderlich ist, sollte eine Bild lauffähige Sicht verwendet [`ListView`](xref:Xamarin.Forms.ListView) werden [`CollectionView`](xref:Xamarin.Forms.CollectionView), die die UI-Virtualisierung wie oder enthält. Wenn Sie diese Empfehlung nicht beachten, kann dies zu Leistungsproblemen führen.
 
 > [!IMPORTANT]
->Es ist zwar technisch möglich ist, eine bindbare Layout einer beliebigen Klasse Layout anfügen, die von abgeleitet der [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) -Klasse, es ist nicht immer praktikabel zu diesem Zweck, insbesondere für die [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout) , [ `Grid` ](xref:Xamarin.Forms.Grid), und [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Klassen. Betrachten Sie beispielsweise das Szenario entwickelt, die zum Anzeigen einer Auflistung von Daten in einem [ `Grid` ](xref:Xamarin.Forms.Grid) mit bindbaren Layout, wobei jedes Element in der Auflistung ein Objekt ist, die mehrere Eigenschaften enthält. Jede Zeile in der `Grid` sollte angezeigt werden ein Objekt aus der Auflistung, in der jede Spalte in der `Grid` eine der Eigenschaften des Objekts anzeigen. Da die [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) für das bindbare Layout nur ein einzelnes Objekt enthalten kann, ist es erforderlich, für dieses Objekt eine Layoutklasse, die mit mehreren Ansichten an, dass jede eine der Eigenschaften des Objekts in einer bestimmten angezeigtwerden`Grid` Spalte. Obwohl dieses Szenario mit bindbaren Layouts realisiert werden kann, führt dies zu einem übergeordneten Element `Grid` , enthält ein untergeordnetes Element `Grid` für jedes Element in die gebundene Auflistung, die die ist eine äußerst ineffiziente und problematische Verwendung der `Grid` Layout.
+>Obwohl es technisch möglich ist, ein bindbares Layout an eine beliebige Layoutklasse anzufügen, [`Layout<T>`](xref:Xamarin.Forms.Layout`1) die von der-Klasse abgeleitet ist, ist dies nicht immer praktisch, [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)insbesondere [`Grid`](xref:Xamarin.Forms.Grid)für die [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) Klassen, und. Angenommen, Sie möchten eine Auflistung von Daten in einem [`Grid`](xref:Xamarin.Forms.Grid) mithilfe eines bindbaren Layouts anzeigen, wobei jedes Element in der Auflistung ein Objekt mit mehreren Eigenschaften ist. Jede Zeile in der `Grid` sollte ein Objekt aus der Auflistung anzeigen, wobei jede Spalte in der `Grid` eine der Eigenschaften des Objekts anzeigt. Da der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) für das bindbare Layout nur ein einzelnes Objekt enthalten kann, ist es erforderlich, dass dieses Objekt eine Layoutklasse mit mehreren Ansichten ist, die jeweils eine der Eigenschaften des Objekts in einer bestimmten `Grid` Spalte anzeigen. Obwohl dieses Szenario mit bindbaren Layouts realisiert werden kann, führt es zu einem `Grid` `Grid` übergeordneten Element, das ein untergeordnetes Element für jedes Element in der gebundenen Auflistung enthält. Dies ist eine hochgradig `Grid` ineffiziente und problematische Verwendung des Layouts.
 
-## <a name="populating-a-bindable-layout-with-data"></a>Eine bindbare Layout mit Daten auffüllen
+## <a name="populating-a-bindable-layout-with-data"></a>Auffüllen eines bindbaren Layouts mit Daten
 
-Eine bindbare Layout mit Daten aufgefüllt wird, durch Festlegen der `ItemsSource` Eigenschaft, um eine beliebige Sammlung, die implementiert `IEnumerable`, und fügen Sie diesen auf eine [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-abgeleitete Klasse:
+Ein bindbares Layout wird mit Daten aufgefüllt, indem die `ItemsSource` zugehörige-Eigenschaft auf eine `IEnumerable`beliebige Auflistung festgelegt wird, [`Layout<T>`](xref:Xamarin.Forms.Layout`1)die implementiert, und an eine von abgeleitete Klasse angehängt wird:
 
 ```xaml
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
@@ -52,11 +52,11 @@ var grid = new Grid();
 BindableLayout.SetItemsSource(grid, items);
 ```
 
-Wenn die `BindableLayout.ItemsSource` angefügte Eigenschaft in einem Layout mit Ausrichtung festgelegt ist aber die `BindableLayout.ItemTemplate` angefügte Eigenschaft nicht festgelegt ist, jedes Element der `IEnumerable` Sammlung angezeigt, auf eine [ `Label` ](xref:Xamarin.Forms.Label) werden von der erstellt`BindableLayout` Klasse.
+Wenn die `BindableLayout.ItemsSource` angefügte-Eigenschaft für ein Layout festgelegt ist `BindableLayout.ItemTemplate` , die angefügte-Eigenschaft jedoch nicht fest `IEnumerable` gelegt ist, wird jedes Element [`Label`](xref:Xamarin.Forms.Label) in der Auflistung von einem `BindableLayout` angezeigt, das von der-Klasse erstellt wird.
 
-## <a name="defining-item-appearance"></a>Definieren der Darstellung des Elements
+## <a name="defining-item-appearance"></a>Definieren der Element Darstellung
 
-Die Darstellung der einzelnen Elemente im bindbare Layout definiert werden, indem Sie die Einstellung der `BindableLayout.ItemTemplate` angefügten Eigenschaft, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate):
+Die Darstellung der einzelnen Elemente im bindbaren Layout kann definiert werden `BindableLayout.ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), indem die angefügte-Eigenschaft auf festgelegt wird:
 
 ```xaml
 <StackLayout BindableLayout.ItemsSource="{Binding User.TopFollowers}"
@@ -83,15 +83,15 @@ BindableLayout.SetItemsSource(stackLayout, viewModel.User.TopFollowers);
 BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 ```
 
-In diesem Beispiel wird jedes Element in der `TopFollowers` Sammlung angezeigt, auf eine `CircleImage` Sicht definiert, der [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate):
+In diesem Beispiel wird jedes Element in der `TopFollowers` Auflistung von einer `CircleImage` Ansicht angezeigt, die [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)in definiert ist:
 
-![Bindbare Layout mit einem DataTemplate](bindable-layouts-images/top-followers.png "bindbare Layout mit einer Datenvorlage")
+![Bindable Layout mit einem DataTemplate](bindable-layouts-images/top-followers.png "Bindable Layout mit einer Daten Vorlage")
 
 Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
-## <a name="choosing-item-appearance-at-runtime"></a>Auswählen der Element-Darstellung zur Laufzeit
+## <a name="choosing-item-appearance-at-runtime"></a>Auswählen der Element Darstellung zur Laufzeit
 
-Die Darstellung der einzelnen Elemente im bindbare Layout kann ausgewählt werden, zur Laufzeit basierend auf dem Elementwert, durch Festlegen der `BindableLayout.ItemTemplateSelector` angefügten Eigenschaft, um eine [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector):
+Die Darstellung der einzelnen Elemente im bindbaren Layout kann zur Laufzeit basierend auf dem Elementwert ausgewählt werden, indem die `BindableLayout.ItemTemplateSelector` angefügte-Eigenschaft [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)auf festgelegt wird:
 
 ```xaml
 <FlexLayout BindableLayout.ItemsSource="{Binding User.FavoriteTech}"
@@ -108,7 +108,7 @@ BindableLayout.SetItemsSource(flexLayout, viewModel.User.FavoriteTech);
 BindableLayout.SetItemTemplateSelector(flexLayout, dataTemplateSelector);
 ```
 
-Die [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector) verwendete Anwendung wird im Beispiel im folgenden Beispiel gezeigt:
+Das [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) in der Beispielanwendung verwendete ist im folgenden Beispiel dargestellt:
 
 ```csharp
 public class TechItemTemplateSelector : DataTemplateSelector
@@ -123,15 +123,15 @@ public class TechItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-Die `TechItemTemplateSelector` -Klasse definiert `DefaultTemplate` und `XamarinFormsTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Eigenschaften, die auf verschiedene Datenvorlagen festgelegt sind. Die `OnSelectTemplate` Methode gibt die `XamarinFormsTemplate`, dem ein Element in Dunkelrot mit einem Kern angezeigt wird, angezeigt, wenn das Element "Xamarin.Forms" entspricht. Wenn das Element nicht gleich "Xamarin.Forms", ist die `OnSelectTemplate` Methode gibt die `DefaultTemplate`, wird angezeigt, die ein Element mit die Standardfarbe eine [ `Label` ](xref:Xamarin.Forms.Label):
+Die `TechItemTemplateSelector` -Klasse `DefaultTemplate` definiert `XamarinFormsTemplate` die Eigenschaften und [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die auf unterschiedliche Datenvorlagen festgelegt sind. Die `OnSelectTemplate` -Methode gibt `XamarinFormsTemplate`den zurück, der ein Element in einem dunkelroten mit einem Herz daneben anzeigt, wenn das Element gleich "xamarin. Forms" ist. Wenn das Element nicht gleich "xamarin. Forms" ist, gibt `OnSelectTemplate` die Methode den `DefaultTemplate`zurück, der ein Element mit der Standardfarbe eines [`Label`](xref:Xamarin.Forms.Label)anzeigt:
 
-![Bindbare Layout mit einem DataTemplateSelector](bindable-layouts-images/favorite-tech.png "bindbare Layout mit eine Datenvorlagenauswahl")
+![Bindable Layout mit DataTemplateSelector](bindable-layouts-images/favorite-tech.png "Bindable Layout mit Datenvorlagen Auswahl")
 
-Weitere Informationen zu Daten Vorlage Selektoren, finden Sie unter [Erstellen einer Xamarin.Forms-DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
+Weitere Informationen zu Datenvorlagen-Selektoren finden Sie unter [Erstellen eines xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Bindbare Layout-Demo (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindableLayouts/)
+- [Demo zu bindbaren Layouts (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 - [Erstellen eines benutzerdefinierten Layouts](~/xamarin-forms/user-interface/layouts/custom.md)
-- [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Erstellen einer Xamarin.Forms-DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [Xamarin. Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Erstellen eines xamarin. Forms-DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

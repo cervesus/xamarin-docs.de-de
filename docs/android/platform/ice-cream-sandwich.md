@@ -1,72 +1,72 @@
 ---
-title: ICE Cream Sandwich-Funktionen
-description: Dieser Artikel beschreibt einige der neuen Features für Entwickler mit Android 4-API - Ice Cream Sandwich verfügbar. Es behandelt verschiedene neue Technologien für die Benutzer-Schnittstelle und überprüft dann eine Reihe neuer Funktionen, die Android 4 bietet für die Freigabe von Daten zwischen Anwendungen und zwischen Geräten.
+title: Ice Cream Sandwich-Features
+description: In diesem Artikel werden einige der neuen Features beschrieben, die Anwendungsentwicklern mit dem Android 4-API-Ice-Sandwich zur Verfügung stehen. Es umfasst mehrere neue Technologien für die Benutzeroberfläche und prüft dann eine Reihe neuer Funktionen, die Android 4 für die gemeinsame Nutzung von Daten zwischen Anwendungen und Geräten bietet.
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 00b553ae8de0dfcd86d57d1d5e3e2a892d6b5463
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 548d513d8b949b56711bacad6924c692c0454bf4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61091177"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643511"
 ---
-# <a name="ice-cream-sandwich-features"></a>ICE Cream Sandwich-Funktionen
+# <a name="ice-cream-sandwich-features"></a>Ice Cream Sandwich-Features
 
-_Dieser Artikel beschreibt einige der neuen Features für Entwickler mit Android 4-API - Ice Cream Sandwich verfügbar. Es behandelt verschiedene neue Technologien für die Benutzer-Schnittstelle und überprüft dann eine Reihe neuer Funktionen, die Android 4 bietet für die Freigabe von Daten zwischen Anwendungen und zwischen Geräten._
+_In diesem Artikel werden einige der neuen Features beschrieben, die Anwendungsentwicklern mit dem Android 4-API-Ice-Sandwich zur Verfügung stehen. Es umfasst mehrere neue Technologien für die Benutzeroberfläche und prüft dann eine Reihe neuer Funktionen, die Android 4 für die gemeinsame Nutzung von Daten zwischen Anwendungen und Geräten bietet._
 
 ## <a name="overview"></a>Übersicht
 
-Android OS, Version 4.0 (API-Ebene 14) stellt einen wichtigen Überarbeiten des Android-Betriebssysteme und umfasst eine Reihe von wichtigen Änderungen und Aktualisierungen, einschließlich:
+Die Android-Betriebs System Version 4,0 (API-Ebene 14) stellt eine größere Funktionsweise des Android-Betriebssystems dar und umfasst eine Reihe wichtiger Änderungen und Upgrades, einschließlich der folgenden:
 
--   **Aktualisiert die Benutzeroberfläche** – mehrere neue Funktionen der Benutzeroberfläche erhalten Entwickler, die mehr Leistung und Flexibilität beim Erstellen von Anwendungsbenutzer-Schnittstellen. Diese neuen Features gehören: `GridLayout` , `PopupMenu` , `Switch` Widget, und `TextureView` . 
--   **Bessere Hardwarebeschleunigung** – 2D, der rendering jetzt erfolgt auf der GPU für alle Android-Steuerelemente. Darüber hinaus ist die Hardwarebeschleunigung aktiviert, wird standardmäßig in allen Anwendungen, die für Android 4.0 entwickelt wurden. 
--   **APIs für neue Daten** – es gibt neuer Zugriff auf Daten, die nicht zuvor offiziell zugegriffen werden kann, z. B. Kalenderdaten und des Benutzerprofils des der Eigentümer des Geräts. 
--   **App-Datenfreigabe** – gemeinsame Datennutzung zwischen Anwendungen und Geräten ist jetzt einfacher denn je über Technologien wie z. B. die `ShareActionProvider` , sodass sie mühelos auf eine Aktion zur Freigabe in eine Aktionsleiste erstellen und *Android Balken* für *Near Field Communications (NFC)* , das ist es ein Kinderspiel zum Freigeben von Daten auf Geräten in unmittelbarer Nähe zueinander. 
-
-
-In diesem Artikel wir werden untersuchen diese Funktionen und andere Änderungen, die an die Android 4.0-API vorgenommen wurden, und wir erläutern, wie jede Funktion, die mit Xamarin.Android verwendet.
-
-## <a name="user-interface-features"></a>Features der Benutzeroberfläche
-
-Eine Vielzahl von neuen Benutzer Schnittstelle Technologien stehen mit Android 4, einschließlich:
-
--   **[GridLayout](~/android/user-interface/layouts/grid-layout.md)**  – 2D Grid-Layout der Steuerelemente unterstützt. 
--   **[Wechseln Sie Widget](~/android/user-interface/controls/switch.md)**  – ermöglicht das Umschalten zwischen ON oder OFF. 
--   **[TextureView](~/android/user-interface/controls/texture-view.md)**  – können Sie Video- und OpenGL-Inhalte in einer Ansicht. 
--   **[Navigationsleiste](~/android/user-interface/controls/navigation-bar.md)**  – virtuelle Schaltflächen für die Sicherung, Heim- und Multitasking enthält. 
+-   **Aktualisierte Benutzeroberfläche** – mit mehreren neuen Benutzeroberflächen Features können Entwickler beim Erstellen von Anwendungs Benutzeroberflächen mehr Leistung und Flexibilität erzielen. Zu diesen neuen Features gehören `GridLayout` : `PopupMenu` , `Switch` , Widget und `TextureView` . 
+-   **Bessere Hardware Beschleunigung** – das 2D-Rendering erfolgt nun auf der GPU für alle Android-Steuerelemente. Außerdem ist die Hardwarebeschleunigung standardmäßig in allen Anwendungen aktiviert, die für Android 4,0 entwickelt wurden. 
+-   **Neue Daten-APIs** – es gibt neuen Zugriff auf Daten, die zuvor nicht offiziell zugänglich waren, wie z. b. Kalenderdaten und das Benutzerprofil des Geräte Besitzers. 
+-   **App-Datenfreigabe** – das Freigeben von Daten zwischen Anwendungen und Geräten ist jetzt einfacher als je zuvor über `ShareActionProvider` Technologien wie das, was das Erstellen einer Freigabe Aktion aus einer Aktionsleiste und *Android-Beam* für *Near Field erleichtert. Kommunikation (NFC)* , wodurch es zu einem Snap-in ist, Daten auf mehreren Geräten in unmittelbarer Nähe zueinander zu teilen. 
 
 
-Darüber hinaus andere UI-Elemente wurden verbessert, wie z. B. die `<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`, das ist jetzt einfacher zu verwenden und für Registerkarten, die ein besseres aussehen.
+In diesem Artikel untersuchen wir diese Features und andere Änderungen, die an der Android 4,0-API vorgenommen wurden. Außerdem wird erläutert, wie Sie die einzelnen Features mit xamarin. Android verwenden.
 
-## <a name="sharing-features"></a>Features zur gemeinsamen Nutzung
+## <a name="user-interface-features"></a>Benutzeroberflächen Funktionen
 
-Android 4 umfasst verschiedene neue Technologien, mit die wir die Daten auf Geräten und Anwendungen gemeinsam nutzen können. Darüber hinaus den Zugriff auf verschiedene Arten von Daten, die nicht bereits verfügbar ist, z. B. Kalenderinformationen und der Eigentümer des Geräts des Benutzerprofils waren. In diesem Abschnitt untersuchen wir werden eine Reihe von Funktionen von Angeboten Android 4 dieser Adresse diesen Bereichen, einschließlich:
+Eine Reihe von neuen Technologien für die Benutzeroberfläche ist mit Android 4 verfügbar, einschließlich:
 
--  **[Android Balken](~/android/platform/android-beam.md)**  – ermöglicht die Datenfreigabe über NFC.
--   **[ShareActionProvider](~/android/user-interface/controls/action-bar.md)**  – erstellt einen Anbieter, die Entwickler Freigabe Aktionen in der Aktionsleiste angeben kann. 
--   **[Benutzerprofil](~/android/user-interface/user-profile.md)**  – ermöglicht den Zugriff auf die Profildaten der Eigentümer des Geräts. 
--   **[Kalender-API-](~/android/user-interface/controls/calendar.md)**  – ermöglicht den Zugriff auf die Kalenderdaten des Kalender-Anbieters. 
+-   **[GridLayout](~/android/user-interface/layouts/grid-layout.md)** – unterstützt das 2D-Raster Layout von Steuerelementen. 
+-   **[Switchwidget](~/android/user-interface/controls/switch.md)** – ermöglicht das Umschalten zwischen ein-oder ausschalten. 
+-   **[Textureview](~/android/user-interface/controls/texture-view.md)** – aktiviert Video-und OpenGL-Inhalte in einer Ansicht. 
+-   **[Navigationsleiste](~/android/user-interface/controls/navigation-bar.md)** – enthält virtuelle Schaltflächen für "Back", "Home" und "Multitasking". 
 
-## <a name="x86-emulators"></a>X86 Emulatoren
 
-ICS unterstützt noch keine-Entwicklung mit x X86 Emulator. X86 Emulatoren sind nur mit Android 2.3.3, API-Ebene 10 unterstützt. Finden Sie unter [konfigurieren die X86 Emulator](~/android/get-started/installation/android-emulator/index.md) für Weitere Informationen.
+Außerdem wurden andere Elemente der Benutzeroberfläche verbessert, wie z. `<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`b. die, die nun einfacher zu bearbeiten ist, und Registerkarten, die eine präziere Darstellung aufweisen.
+
+## <a name="sharing-features"></a>Freigabe Features
+
+Android 4 umfasst mehrere neue Technologien, mit denen Sie Daten Geräte übergreifend und Anwendungs übergreifend freigeben können. Außerdem wird der Zugriff auf verschiedene Datentypen ermöglicht, die zuvor nicht verfügbar waren, wie z. b. Kalenderinformationen und das Benutzerprofil des Geräte Besitzers. In diesem Abschnitt untersuchen wir eine Vielzahl von Features, die von Android 4 angeboten werden, die die folgenden Bereiche erfüllen:
+
+-  **[Android-Beam](~/android/platform/android-beam.md)** – ermöglicht die gemeinsame Nutzung von Daten über NFC.
+-   **[Shareaktionprovider](~/android/user-interface/controls/action-bar.md)** – erstellt einen Anbieter, der es Entwicklern ermöglicht, Freigabe Aktionen aus dem Aktionsleiste anzugeben. 
+-   **[Benutzerprofil](~/android/user-interface/user-profile.md)** – bietet Zugriff auf Profildaten des Geräte Besitzers. 
+-   **[Kalender-API](~/android/user-interface/controls/calendar.md)** – bietet Zugriff auf Kalenderdaten vom Kalender Anbieter. 
+
+## <a name="x86-emulators"></a>x86-Emulatoren
+
+ICS unterstützt die Entwicklung mit einem x86-Emulator noch nicht. x86-Emulatoren werden nur mit Android 2.3.3, API-Ebene 10 unterstützt. Weitere Informationen finden Sie [unter Konfigurieren des x86-Emulators](~/android/get-started/installation/android-emulator/index.md) .
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel behandelt eine Vielzahl von neuen Technologien, die mit Android 4 verfügbar sind. Wir überprüfen neuer Features der Benutzeroberfläche wie z. B. die *GridLayout*, *PopupMenu*, und *Switch* Widget. Wir haben auch einige der neuen Unterstützung für das System-Benutzeroberfläche sowie Informationen zum Arbeiten mit steuern die *TextureView*. Dann besprochen haben wir eine Vielzahl von Technologien für neue Freigabe. Wir erläutert, wie *Android Balken* lassen Sie uns Freigeben von Informationen auf Geräten, mit denen *NFC*, erläutert die neue *Kalender-API*, und außerdem gezeigt, wie die integrierten in verwenden *ShareActionProvider*.
-Abschließend wir untersucht, wie Sie mit der *ContactsContract* Anbieter für den Datenzugriff für Benutzer-Profil.
+Dieser Artikel behandelt eine Reihe von neuen Technologien, die nun mit Android 4 verfügbar sind. Wir haben neue Features für die Benutzeroberfläche, wie z. b. *GridLayout*, *PopupMenu*und *Switch* -Widget, geprüft. Wir haben auch einige der neuen Unterstützung für die Steuerung der Systembenutzer Oberfläche und die Verwendung von *textureview*behandelt. Anschließend haben wir eine Reihe von neuen Technologien für die gemeinsame Nutzung erläutert. Wir haben erläutert, wie Sie mit *Android-Beam* Informationen auf allen Geräten freigeben können, die *NFC*verwenden, die neue *Kalender-API*besprochen und die Verwendung des integrierten *shareaktionsanbieters*gezeigt haben.
+Schließlich wurde untersucht, wie der *contactscontract* -Anbieter verwendet wird, um auf Benutzerprofil Daten zuzugreifen.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [ICE Cream Sandwich-Beispiele](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/)
-- [TextureViewDemo (sample)](https://developer.xamarin.com/samples/monodroid/TextureViewDemo/)
-- [CalendarDemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/CalendarDemo/)
-- [Registerkarte Layout-Tutorial](~/android/user-interface/layouts/tab-layout/index.md)
-- [ICE Cream Sandwich](https://developer.android.com/about/versions/android-4.0-highlights.html)
-- [Android 4.0 Platform](https://developer.android.com/about/versions/android-4.0.html)
+- [Ice Cream Sandwich-Beispiele](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-ics-samples)
+- [Textureviewdemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
+- [Calendardemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)
+- [Tutorial zur Registerkarten Layout](~/android/user-interface/layouts/tab-layout/index.md)
+- [Ice Cream Sandwich](https://developer.android.com/about/versions/android-4.0-highlights.html)
+- [Android 4,0-Plattform](https://developer.android.com/about/versions/android-4.0.html)

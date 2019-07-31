@@ -1,37 +1,37 @@
 ---
-title: Message-App-Integration in Xamarin.iOS
-description: Diese Artikel zeigen, wie Hinzufügen einer Nachrichten-App-Erweiterung in einer Xamarin.iOS-Projektmappe, die integriert werden, die Nachrichten-app, neue Funktionen, die dem Benutzer angezeigt.
+title: Integration von Message-apps in xamarin. IOS
+description: In diesen Artikeln wird erläutert, wie Sie eine Erweiterung der Nachrichten-APP in eine xamarin. IOS-Projekt Mappe einschließen, die in die Nachrichten-APP integriert wird, um dem Benutzer neue Funktionen
 ms.prod: xamarin
 ms.assetid: 00AF2D4C-9BA8-4265-A11F-989C93BDF723
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2016
-ms.openlocfilehash: 8343c186082303988154fd3e6ee9781c93f5d601
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7cb079beac7fd97072333bccf3ff387a9e8c5465
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153411"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654319"
 ---
-# <a name="message-app-integration-in-xamarinios"></a>Message-App-Integration in Xamarin.iOS
+# <a name="message-app-integration-in-xamarinios"></a>Integration von Message-apps in xamarin. IOS
 
-_Diese Artikel zeigen, wie Hinzufügen einer Nachrichten-App-Erweiterung in einer Xamarin.iOS-Projektmappe, die integriert werden, die Nachrichten-app, neue Funktionen, die dem Benutzer angezeigt._
+_In diesen Artikeln wird erläutert, wie Sie eine Erweiterung der Nachrichten-APP in eine xamarin. IOS-Projekt Mappe einschließen, die in die Nachrichten-APP integriert wird, um dem Benutzer neue Funktionen_
 
-Neue IOS 10, integriert eine Nachrichten-App-Erweiterung der **Nachrichten** -app und stellt neue Funktionen für den Benutzer. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden.
+Neu bei IOS 10. eine Erweiterung der Nachrichten-APP wird in die **Nachrichten** -app integriert und stellt dem Benutzer neue Funktionen zur Anwendung. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden.
 
     
 ## <a name="message-app-extension-basicsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[Grundlagen der Erweiterung von Nachrichten-Apps](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 
-In diesem Artikel zeigt wie eine Nachrichten-App-Erweiterung hinzufügen, in einer Xamarin.iOS-Projektmappe, die integriert werden, die **Nachrichten** -app und stellt neue Funktionen für den Benutzer.
+In diesem Artikel wird gezeigt, wie Sie eine Erweiterung der Nachrichten-APP in eine xamarin. IOS-Projekt Mappe einschließen, die in die **Nachrichten** -app integriert wird und dem Benutzer neue Funktionen bietet
 
 ## <a name="advanced-message-app-extensionsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[Erweiterte Erweiterungen von Nachrichten-Apps](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 
-In diesem Artikel wird die erweiterte Techniken für die Arbeit mit Nachrichten-App-Erweiterungen in einer Xamarin.iOS-Projektmappe, die integriert werden, die **Nachrichten** -app und stellt neue Funktionen für den Benutzer.
+In diesem Artikel werden erweiterte Techniken zum Arbeiten mit Message-App-Erweiterungen in einer xamarin. IOS-Projekt Mappe erläutert, die in die **Nachrichten** -app integriert wird und dem Benutzer neue Funktionen präsentiert.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS 10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)
-- [Nachrichten-Referenz](https://developer.apple.com/reference/messages)
-- [Programmierhandbuch für App-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)
+- [IOS 10-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Nachrichten Verweis](https://developer.apple.com/reference/messages)
+- [Programmier Handbuch für die APP-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 1447526ef925431e3cad5f36d4ce7a528c8ab07c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 833e6d3fc06ceeb5f8f63cb8b8b255b2a940098c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386683"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653888"
 ---
 # <a name="listview-interactivity"></a>ListView-Interaktivität
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
-[`ListView`](xref:Xamarin.Forms.ListView) unterstützt die Interaktion mit den Daten, die es bereitstellt.
+[`ListView`](xref:Xamarin.Forms.ListView)unterstützt die Interaktion mit den Daten, die Sie präsentiert.
 
 <a name="selectiontaps" />
 
@@ -37,7 +37,7 @@ Wenn ein Benutzer ein Element tippt, werden zwei Ereignisse ausgelöst:
 Tippen auf das gleiche Element zweimal ausgelöst wird, zwei [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignisse, sondern werden nur Auslösen eines einzelnen [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis.
 
 > [!NOTE]
-> Die [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs) -Klasse, die die Ereignisargumente für enthält die [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignis hat [ `Group` ](xref:Xamarin.Forms.ItemTappedEventArgs.Group) und [ `Item` ](xref:Xamarin.Forms.ItemTappedEventArgs.Item) Eigenschaften, und ein `ItemIndex` Eigenschaft, deren Wert, den Index in darstellt, die [ `ListView` ](xref:Xamarin.Forms.ListView) von das angetippte Element. Auf ähnliche Weise die [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs) -Klasse, die die Ereignisargumente für enthält die [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis verfügt über eine [ `SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) -Eigenschaft und eine `SelectedItemIndex` Eigenschaft, deren Wert, den Index in darstellt, die `ListView` des ausgewählten Elements.
+> Die [`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs) [`Group`](xref:Xamarin.Forms.ItemTappedEventArgs.Group) -Klasse, die die Ereignis Argumente für das [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) -Ereignis, die [`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item) -Eigenschaft und die `ItemIndex` -Eigenschaft sowie eine-Eigenschaft enthält, [`ListView`](xref:Xamarin.Forms.ListView) deren Wert den Index in der des gezapften Elements darstellt. Entsprechend verfügt die [`SelectedItemChangedEventArgs`](xref:Xamarin.Forms.SelectedItemChangedEventArgs) -Klasse, die die Ereignis Argumente für das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) -Ereignis enthält, [`SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) über eine-Eigenschaft `SelectedItemIndex` und eine-Eigenschaft, deren Wert den `ListView` Index in der des ausgewählten Elements darstellt.
 
 Wenn die [ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode) -Eigenschaftensatz auf [ `Single` ](xref:Xamarin.Forms.ListViewSelectionMode.Single), Elemente in der [ `ListView` ](xref:Xamarin.Forms.ListView) ausgewählt werden kann, die [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) und [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignisse ausgelöst, und die [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) Eigenschaft wird auf den Wert des ausgewählten Elements festgelegt werden.
 
@@ -149,7 +149,7 @@ public void OnDelete (object sender, EventArgs e) {
 
 ## <a name="pull-to-refresh"></a>Zum Aktualisieren ziehen
 
-Benutzer schon lange davon ausgehen, dass in der Liste der Daten nach unten ziehen, Liste aktualisiert. [`ListView`](xref:Xamarin.Forms.ListView) Diese Out-of-the-Box wird unterstützt. Um Pull zum Aktualisieren von Funktionalität zu aktivieren, legen [ `IsPullToRefreshEnabled` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled) zu `true`:
+Benutzer schon lange davon ausgehen, dass in der Liste der Daten nach unten ziehen, Liste aktualisiert. [`ListView`](xref:Xamarin.Forms.ListView)unterstützt diese standardmäßig. Legen Sie zum Aktivieren der Pull-to-refresh [`IsPullToRefreshEnabled`](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled) - `true`Funktionalität auf Folgendes fest:
 
 ```xaml
 <ListView ...
@@ -162,7 +162,7 @@ Der entsprechende C#-Code ist:
 listView.IsPullToRefreshEnabled = true;
 ```
 
-Bei der Aktualisierung, die standardmäßig Schwarz ist, wird ein Drehfeld angezeigt. Allerdings kann die Farbe des Spinner unter iOS und Android geändert werden, durch Festlegen der `RefreshControlColor` Eigenschaft, um eine [ `Color` ](xref:Xamarin.Forms.Color):
+Während der Aktualisierung wird ein Spinner angezeigt, der standardmäßig schwarz ist. Die spinfarbe kann jedoch unter IOS und Android geändert werden, indem die `RefreshControlColor` -Eigenschaft [`Color`](xref:Xamarin.Forms.Color)auf festgelegt wird:
 
 ```xaml
 <ListView ...
@@ -176,19 +176,19 @@ Der entsprechende C#-Code ist:
 listView.RefreshControlColor = Color.Red;
 ```
 
-Die folgenden Screenshots zeigen zum Aktualisieren ziehen, wie der Benutzer abruft:
+Die folgenden Screenshots zeigen Pull-to-refresh-Vorgänge, während der Benutzer den Abruf durchläuft:
 
 ![](interactivity-images/refresh-start.png "ListView Pull In Ausführung befindlichen aktualisieren")
 
-Die folgenden Screenshots zeigen Pull zum Aktualisieren, nachdem der Benutzer das Drehfeld angezeigt wird, Pull freigegeben wurde während der [ `ListView` ](xref:Xamarin.Forms.ListView) wird aktualisiert:
+Die folgenden Screenshots zeigen die Pull-zu-aktualisieren, nachdem der Benutzer den Pull losgelassen hat, während der Spinner angezeigt wird [`ListView`](xref:Xamarin.Forms.ListView) , während aktualisiert wird:
 
-![](interactivity-images/refresh-in-progress.png "ListView-Pull auf die Aktualisierung abgeschlossen")
+![](interactivity-images/refresh-in-progress.png "ListView-Pull zum Aktualisieren wird beendet.")
 
-[`ListView`](xref:Xamarin.Forms.ListView) löst die [ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing) Ereignis, um die Aktualisierung zu initiieren und die [ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing) Eigenschaft auf festgelegt `true`. Jeden beliebigen Code zum Aktualisieren des Inhalts erforderlich ist der `ListView` dann vom Ereignishandler für ausgeführt werden soll die `Refreshing` Ereignis oder die Methode ausgeführt, indem die [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand). Nach der `ListView` wird aktualisiert, die `IsRefreshing` Eigenschaft sollte festgelegt werden, um `false`, oder die [ `EndRefresh` ](xref:Xamarin.Forms.ListView.EndRefresh) -Methode aufgerufen werden soll, um anzugeben, dass die Aktualisierung abgeschlossen ist.
+[`ListView`](xref:Xamarin.Forms.ListView)Löst das [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) -Ereignis aus, um die Aktualisierung zu [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) initiieren, und die- `true`Eigenschaft wird auf festgelegt. Der Code, der zum Aktualisieren des Inhalts von `ListView` erforderlich ist, sollte dann vom Ereignishandler für das `Refreshing` -Ereignis oder durch [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)die-Methode, die von ausgeführt wird, ausgeführt werden. Nachdem aktualisiert wurde, sollte die `IsRefreshing` -Eigenschaft auf `false`festgelegt werden, oder [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) die-Methode sollte aufgerufen werden, um anzugeben, dass die Aktualisierung beendet ist. `ListView`
 
 > [!NOTE]
-> Beim Definieren einer [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand), `CanExecute` Methode des Befehls zum Aktivieren oder deaktivieren den Befehl angegeben werden kann.
+> Beim definieren [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)von kann die `CanExecute` -Methode des-Befehls angegeben werden, um den Befehl zu aktivieren oder zu deaktivieren.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [ListView-Interaktivität (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+- [ListView-Interaktivität (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

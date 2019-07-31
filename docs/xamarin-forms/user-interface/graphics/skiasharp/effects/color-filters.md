@@ -7,16 +7,16 @@ ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/28/2018
-ms.openlocfilehash: 71c0495520a5dd596be2e9cafec6b63e316fb627
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5aa8b2e85d5a7d547af5333dcaf350025b86cc26
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342455"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647698"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp-Color-Filter
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Filter "Farbe" können die Farben in eine Bitmap (oder anderen Bilds) auf andere Farben Effekte wie z. B. keine Farbsprünge auftreten übersetzen:
 
@@ -120,7 +120,7 @@ Die statische [ `SKColorFilter.CreateColorMatrix` ](xref:SkiaSharp.SKColorFilter
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-wo `matrix` ist ein Array von der 20 `float` Werte. Beim Erstellen des Arrays C#, es ist einfach, die Zahlen zu formatieren, damit sie die 4 x 5-Matrix ähneln. Dies wird veranschaulicht, der **Graustufen Matrix** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel:
+wo `matrix` ist ein Array von der 20 `float` Werte. Beim Erstellen des Arrays C#, es ist einfach, die Zahlen zu formatieren, damit sie die 4 x 5-Matrix ähneln. Dies wird veranschaulicht, der **Graustufen Matrix** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel:
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -163,7 +163,7 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-Die `DrawBitmap` Methode verwendet, die in diesem Code stammt aus der **BitmapExtension.cs** enthaltene Datei die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel. 
+Die `DrawBitmap` Methode verwendet, die in diesem Code stammt aus der **BitmapExtension.cs** enthaltene Datei die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel. 
 
 Hier ist das Ergebnis auf iOS-, Android- und universelle Windows-Plattform ausgeführt wird:
 
@@ -232,7 +232,7 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-Die Arrays enthalten immer 256 Einträgen. In der `CreateTable` Methode mit einer Tabelle, die gleiche Tabelle wird verwendet, für die Komponenten roten, grünen und blauen. Es ist eine einfache Nachschlagetabelle: Wenn Quellfarbe (R, G, B), und die Zielfarbe darstellt (R ", B", "G"), und klicken Sie dann die Zielkomponenten, von der Indizierung abgerufen werden `table` mit der Source-Komponenten:
+Die Arrays enthalten immer 256 Einträgen. In der `CreateTable` Methode mit einer Tabelle, die gleiche Tabelle wird verwendet, für die Komponenten roten, grünen und blauen. Es handelt sich um eine einfache Nachschlage Tabelle: Wenn die Quellfarbe (r, G, b) und die Zielfarbe (r ', b ', G ') ist, werden die Ziel Komponenten durch Indizierung `table` mit den Quell Komponenten abgerufen:
 
 `R' = table[R]`
 
@@ -300,4 +300,4 @@ Sie können verschiedene Farbtabellen für die verschiedene Farbkanäle für ver
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

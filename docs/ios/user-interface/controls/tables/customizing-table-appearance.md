@@ -1,38 +1,38 @@
 ---
-title: Anpassen der Darstellung einer Tabelle in Xamarin.iOS
-description: Dieses Dokument beschreibt das Anpassen der Darstellung einer Tabelle in Xamarin.iOS. Es wird erläutert, Zellstile "," Zubehör "," Zelle Trennzeichen "und" benutzerdefinierte Zelle Layouts.
+title: Anpassen der Darstellung einer Tabelle in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie die Darstellung einer Tabelle in xamarin. IOS angepasst wird. Es werden Zellen Stile, Zubehör, Zellen Trennzeichen und benutzerdefinierte Zell Layouts erläutert.
 ms.prod: xamarin
 ms.assetid: 8A83DE38-0028-CB61-66F9-0FB9DE552286
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e1e86918d29e12d2f34dd3008b8c1d8e47471c24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cad7378e3d569454606a9d472cf30c42956553e4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61225783"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644945"
 ---
-# <a name="customizing-a-tables-appearance-in-xamarinios"></a>Anpassen der Darstellung einer Tabelle in Xamarin.iOS
+# <a name="customizing-a-tables-appearance-in-xamarinios"></a>Anpassen der Darstellung einer Tabelle in xamarin. IOS
 
-Die einfachste Möglichkeit, ändern Sie die Darstellung einer Tabelle ist die Verwendung einer anderen Zellenstil entspricht. Sie können ändern, welche Zellstil verwendet wird, beim Erstellen der jede Zelle in der `UITableViewSource`des `GetCell` Methode.
+Die einfachste Möglichkeit, die Darstellung einer Tabelle zu ändern, besteht darin, einen anderen Zellstil zu verwenden. Sie können den Zellstil ändern, der beim Erstellen der einzelnen Zellen in `UITableViewSource`der `GetCell` -Methode verwendet wird.
 
-## <a name="cell-styles"></a>Zellenstile
+## <a name="cell-styles"></a>Zell Stile
 
-Es gibt vier integrierte Formate ein:
+Es gibt vier integrierte Stile:
 
--  **Standard** – unterstützt eine `UIImageView`.
--  **Untertitel** – unterstützt eine `UIImageView` und Untertitel.
--  **Wert1** – rechts ausgerichteten Untertitel, unterstützt eine `UIImageView`.
--  **Value2** – Titel ist rechts ausgerichtet und Untertitel wird linksbündig ausgerichtet (jedoch kein Bild).
+-  **Standard** – unterstützt `UIImageView`.
+-  Unter **Titel** – unter `UIImageView` stützt einen Untertitel und.
+-  **Value1** – rechtsbündig ausgerichtete Untertitel `UIImageView`unterstützt.
+-  **Value2** – Titel ist rechtsbündig ausgerichtet, und Untertitel ist linksbündig (aber kein Bild).
 
 
-Diese Screenshots zeigen, wie die einzelnen Stile angezeigt wird:
+Diese Screenshots zeigen, wie die einzelnen Stile angezeigt werden:
 
- [![](customizing-table-appearance-images/image7.png "Diese Screenshots zeigen, wie die einzelnen Stile angezeigt wird")](customizing-table-appearance-images/image7.png#lightbox)
+ [![](customizing-table-appearance-images/image7.png "Diese Screenshots zeigen, wie die einzelnen Stile angezeigt werden.")](customizing-table-appearance-images/image7.png#lightbox)
 
-Das Beispiel **CellDefaultTable** enthält den Code, um diese Bildschirme zu erstellen. Der Zellstil festgelegt ist, der `UITableViewCell` Konstruktor wie folgt:
+Die Beispieldatei " **celldefaulobligbar** " enthält den Code zum Entwickeln dieser Bildschirme. Der Zellstil wird im `UITableViewCell` Konstruktor wie folgt festgelegt:
 
 ```csharp
 cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -41,7 +41,7 @@ cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 //cell = new UITableViewCell (UITableViewCellStyle.Value2, cellIdentifier);
 ```
 
-[Unterstützte Eigenschaften](xref:UIKit.UITableViewCell) der Zelle Stil kann dann festgelegt werden:
+Die [unterstützten Eigenschaften](xref:UIKit.UITableViewCell) des Zellstils können dann festgelegt werden:
 
 ```csharp
 cell.TextLabel.Text = tableItems[indexPath.Row].Heading;
@@ -49,21 +49,21 @@ cell.DetailTextLabel.Text = tableItems[indexPath.Row].SubHeading;
 cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].ImageName); // don't use for Value2
 ```
 
-## <a name="accessories"></a>Zubehör
+## <a name="accessories"></a>Bad
 
-Zellen können die folgenden Zubehör rechts von der Sicht hinzugefügt haben:
+Zellen können das folgende Zubehör auf der rechten Seite der Ansicht hinzugefügt werden:
 
--   **Häkchen** – kann verwendet werden, um die Mehrfachauswahl in einer Tabelle anzugeben.
--   **DetailButton** – reagiert auf die touch-unabhängig vom Rest der Zelle, führen Sie eine andere Funktion, die die Zelle selbst berühren ermöglicht (z. B. ein Popupfenster oder ein neues Fenster, die nicht öffnen, Teil einer `UINavigationController` Stack).
--   **DisclosureIndicator** – normalerweise verwendet, um anzugeben, dass die Zelle berühren einer anderen Ansicht geöffnet wird.
--   **DetailDisclosureButton** – eine Kombination aus den `DetailButton` und `DisclosureIndicator`.
+-   **Häkchen–** kann verwendet werden, um die Mehrfachauswahl in einer Tabelle anzugeben.
+-   **Detailbutton** – antwortet unabhängig vom Rest der Zelle und ermöglicht es, eine andere Funktion zum Berühren der Zelle selbst auszuführen (z. b. das Öffnen eines Popups oder eines neuen Fensters, das nicht Teil `UINavigationController` eines Stapels ist).
+-   " **Disclosure sureindicator** " – wird normalerweise verwendet, um anzugeben, dass durch Berühren der Zelle eine andere Ansicht geöffnet wird
+-   **Detaildisclosure surebutton** – eine Kombination aus `DetailButton` und `DisclosureIndicator`.
 
 
-Dies ist, was sie wie folgt aussehen:
+Dies sieht wie folgt aus:
 
- [![](customizing-table-appearance-images/image8.png "Beispiel-Zubehör")](customizing-table-appearance-images/image8.png#lightbox)
+ [![](customizing-table-appearance-images/image8.png "Beispiel Zubehör")](customizing-table-appearance-images/image8.png#lightbox)
 
-Um diese Zubehör von anzuzeigen, Sie festlegen können, die `Accessory` -Eigenschaft in der `GetCell` Methode:
+Um eines dieser Zubehör anzuzeigen, können Sie die `Accessory` -Eigenschaft in der `GetCell` -Methode festlegen:
 
 ```csharp
 cell.Accessory = UITableViewCellAccessory.Checkmark;
@@ -72,7 +72,7 @@ cell.Accessory = UITableViewCellAccessory.Checkmark;
 //cell.Accessory = UITableViewCellAccessory.None; // to clear the accessory
 ```
 
-Wenn die `DetailButton` oder `DetailDisclosureButton` angezeigt werden, sollten Sie auch überschreiben die `AccessoryButtonTapped` , eine Aktion auszuführen, wenn es verwendet wird.
+`DetailButton` Wenn oder `DetailDisclosureButton` angezeigt werden, sollten Sie auch die `AccessoryButtonTapped` überschreiben, um eine Aktion auszuführen, wenn Sie berührt wird.
 
 ```csharp
 public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath indexPath)
@@ -85,18 +85,18 @@ public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath i
 }
 ```
 
-Das Beispiel **CellAccessoryTable** zeigt ein Beispiel zur Verwendung von Zubehör.
+Die **cellaccessorytable** -Beispiel Tabelle zeigt ein Beispiel für die Verwendung von Zubehör.
 
-## <a name="cell-separators"></a>Zelle Trennzeichen
+## <a name="cell-separators"></a>Zellen Trennzeichen
 
-Zelle Trennzeichen sind die Zellen der Tabelle verwendet, um die Tabelle zu trennen. Die Eigenschaften werden für die Tabelle festgelegt.
+Zellen Trennzeichen sind Tabellenzellen, die zum Trennen der Tabelle verwendet werden. Die Eigenschaften werden für die Tabelle festgelegt.
 
 ```csharp
 TableView.SeparatorColor = UIColor.Blue;
 TableView.SeparatorStyle = UITableViewCellSeparatorStyle.DoubleLineEtched;
 ```
 
-Es ist auch möglich, einen Effekt Weichzeichners oder Dynamik Trennzeichen hinzu:
+Es ist auch möglich, dem Trennzeichen einen weich-oder vibrancy-Effekt hinzuzufügen:
 
 ```csharp
 // blur effect
@@ -108,28 +108,28 @@ var effect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Light);
 TableView.SeparatorEffect = UIVibrancyEffect.FromBlurEffect(effect);
 ```
 
-Das Trennzeichen kann auch ein Inset haben:
+Das Trennzeichen kann auch eine inmenge aufweisen:
 
 ```csharp
 TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
 ```
 
-## <a name="creating-custom-cell-layouts"></a>Erstellen von benutzerdefinierten Zelle Layouts
+## <a name="creating-custom-cell-layouts"></a>Erstellen von benutzerdefinierten Zell Layouts
 
-Um den visuellen Stil einer Tabelle ändern, Sie benutzerdefinierte Zellen angezeigt müssen. Die benutzerdefinierte Zelle haben unterschiedliche Farben und Steuerelement Layouts.
+Um den visuellen Stil einer Tabelle zu ändern, müssen Sie benutzerdefinierte Zellen bereitstellen, damit Sie angezeigt werden. Die benutzerdefinierte Zelle kann verschiedene Farben und Steuerelement Layouts aufweisen.
 
-Das CellCustomTable-Beispiel implementiert eine `UITableViewCell` Unterklasse, die definiert ein benutzerdefiniertes Layout von `UILabel`s und einem `UIImage` mit verschiedenen Schriftarten und Farben. Die resultierenden Zellen werden wie folgt aussehen:
+Das cellcustomtable-Beispiel implementiert `UITableViewCell` eine Unterklasse, die ein benutzerdefiniertes Layout von `UIImage` `UILabel`s und eine mit verschiedenen Schriftarten und Farben definiert. Die resultierenden Zellen sehen wie folgt aus:
 
- [![](customizing-table-appearance-images/image9.png "Benutzerdefinierte Zelle Layouts")](customizing-table-appearance-images/image9.png#lightbox)
+ [![](customizing-table-appearance-images/image9.png "Benutzerdefinierte Zell Layouts")](customizing-table-appearance-images/image9.png#lightbox)
 
-Die benutzerdefinierte Zellenklasse besteht aus nur drei Methoden:
+Die benutzerdefinierte Cell-Klasse besteht nur aus drei Methoden:
 
--   **Konstruktor** : erstellt die UI-Steuerelemente und legt die benutzerdefinierten Eigenschaften (z. b. Schriftart, Größe und Farben).
--   **UpdateCell** – eine Methode für die `UITableView.GetCell` zu verwenden, um der Zelle Eigenschaften festzulegen.
--   **LayoutSubviews** – legen Sie den Speicherort der UI-Steuerelemente. Im Beispiel hat jeder Zelle das gleiche Layout, jedoch eine komplexere Zelle (insbesondere mit unterschiedlichen Größen) möglicherweise ein anderes Layout Positionen je nach Inhalt, der angezeigt wird.
+-   **Konstruktor** – erstellt die UI-Steuerelemente und legt die benutzerdefinierten Stileigenschaften fest (z. b. Schriftart, Größe und Farben).
+-   **Updatecell** – eine Methode `UITableView.GetCell` , mit der die Eigenschaften der Zelle festgelegt werden können.
+-   **Layoutsubviews** – legen Sie den Speicherort der UI-Steuerelemente fest. In dem Beispiel hat jede Zelle das gleiche Layout, aber eine komplexere Zelle (insbesondere diejenigen mit unterschiedlichen Größen) benötigt je nach angezeigter Inhalte möglicherweise unterschiedliche Layoutpositionen.
 
 
-Den vollständigen Beispielcode in **CellCustomTable > CustomVegeCell.cs** folgt:
+Der gesamte Beispielcode in **cellcustomtable > CustomVegeCell.cs** folgt:
 
 ```csharp
 public class CustomVegeCell : UITableViewCell  {
@@ -170,7 +170,7 @@ public class CustomVegeCell : UITableViewCell  {
 }
 ```
 
-Die `GetCell` Methode der `UITableViewSource` muss geändert werden, um die benutzerdefinierte Zelle erstellt:
+Die `GetCell` -Methode `UITableViewSource` des muss geändert werden, um die benutzerdefinierte Zelle zu erstellen:
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -189,4 +189,4 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WorkingWithTables (Beispiel)](https://developer.xamarin.com/samples/monotouch/WorkingWithTables)
+- [Workingwithtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

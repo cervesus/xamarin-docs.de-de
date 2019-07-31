@@ -1,55 +1,55 @@
 ---
 title: Symbolleiste
-description: 'Die Symbolleiste ist eine Komponente der Action-Leiste, die bietet mehr Flexibilität als der Standard-Aktionsleiste: eine beliebige Stelle in der app platziert werden, kann seine Größe geändert werden und ein Farbschema aus, die sich von der app-Design ist kann verwendet werden. Darüber hinaus kann jede app-Bildschirm mehrere Symbolleisten verfügen.'
+description: 'Die Symbolleiste ist eine Aktionsleisten Komponente, die mehr Flexibilität bietet als die Standard Aktionsleiste: Sie kann an beliebiger Stelle in der APP platziert werden, die Größe kann geändert werden, und Sie kann ein Farbschema verwenden, das sich vom Design der APP unterscheidet. Außerdem kann jeder App-Bildschirm über mehrere Symbolleisten verfügen.'
 ms.prod: xamarin
 ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 2c9de4058fdaee53671e65f49ad95c3af5e127d6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 25287e5aa52eeac712f93c3973e02c7e14c89a78
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61082834"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645099"
 ---
 # <a name="toolbar"></a>Symbolleiste
 
-_Die Symbolleiste ist eine Komponente der Action-Leiste, die bietet mehr Flexibilität als der Standard-Aktionsleiste: eine beliebige Stelle in der app platziert werden, kann seine Größe geändert werden und ein Farbschema aus, die sich von der app-Design ist kann verwendet werden. Darüber hinaus kann jede app-Bildschirm mehrere Symbolleisten verfügen._
+_Die Symbolleiste ist eine Aktionsleisten Komponente, die mehr Flexibilität bietet als die Standard Aktionsleiste: Sie kann an beliebiger Stelle in der APP platziert werden, die Größe kann geändert werden, und Sie kann ein Farbschema verwenden, das sich vom Design der APP unterscheidet. Außerdem kann jeder App-Bildschirm über mehrere Symbolleisten verfügen._
 
  
 ## <a name="overview"></a>Übersicht
 
-Eine wichtige Designelement des Android-Aktivität ist eine *Aktionsleiste*. Die Aktionsleiste ist die UI-Komponente, die für die Navigation, Suche, Menüs und branding in einer Android-app ist. In der Android-Versionen vor Android 5.0 Lollipop, der Aktionsleiste (auch bekannt als die *app-Leiste*) war die empfohlene Komponente für die Bereitstellung dieser Funktionalität. 
+Ein wichtiges Entwurfs Element einer Android-Aktivität ist eine *Aktionsleiste*. Die Aktionsleiste ist die Benutzeroberflächen Komponente, die für Navigation, Suche, Menüs und Branding in einer Android-App verwendet wird. In Android-Versionen vor Android 5,0 Lollipop war die Aktionsleiste (auch als *App-Leiste*bezeichnet) die empfohlene Komponente zum Bereitstellen dieser Funktionalität. 
 
-Die `Toolbar` Widget (eingeführt in Android 5.0 Lollipop) kann als eine Generalisierung der Aktion Leiste-Schnittstelle betrachtet werden &ndash; es dient zum Ersetzen der Aktionsleiste. Die `Toolbar` kann überall in einem app-Layout verwendet werden, und es ist viel mehr als eine Aktionsleiste angepasst. Der folgende Screenshot veranschaulicht die angepasste `Toolbar` Beispiel in diesem Handbuch erstellt: 
+Das `Toolbar` Widget (eingeführt in Android 5,0 Lollipop) kann sich als Generalisierung der Aktionsleisten Schnittstelle &ndash; vorstellen, die die Aktionsleiste ersetzen soll. Der `Toolbar` kann an beliebiger Stelle in einem App-Layout verwendet werden, und er ist viel anpassbarer als eine Aktionsleiste. Der folgende Screenshot veranschaulicht das angepasste `Toolbar` Beispiel, das in diesem Handbuch erstellt wurde: 
 
-[![Beispielscreenshot, der eine Symbolleiste mit bearbeiten, speichern und Menüelemente overflow](images/01-toolbar-sml.png)](images/01-toolbar.png#lightbox)
+[![Beispiel Bildschirm Abbildung einer Symbolleiste mit Menü Elementen "Bearbeiten", "Speichern" und "Überlauf"](images/01-toolbar-sml.png)](images/01-toolbar.png#lightbox)
 
-Es gibt einige wichtige Unterschiede zwischen der `Toolbar` und in der Aktionsleiste: 
+Es gibt einige wichtige Unterschiede zwischen `Toolbar` der und der Aktionsleiste: 
 
--   Ein `Toolbar` an einer beliebigen Stelle in der Benutzeroberfläche platziert werden kann.
+-   Ein `Toolbar` kann an beliebiger Stelle in der Benutzeroberfläche platziert werden.
 
--   Mehrere Symbolleisten können auf demselben Bildschirm angezeigt werden.
+-   Auf demselben Bildschirm können mehrere Symbolleisten angezeigt werden.
 
--   Wenn Fragmenten verwendet werden, jedes Fragment haben eine eigene `Toolbar`. 
+-   Wenn Fragmente verwendet werden, kann jedes Fragment über ein eigenes `Toolbar`Fragment verfügen. 
 
--   Ein `Toolbar` kann konfiguriert werden, nur eine partielle Breite des Bildschirms erstreckt. 
+-   Eine `Toolbar` kann so konfiguriert werden, dass Sie nur eine partielle Breite des Bildschirms umfasst. 
 
--   Da die `Toolbar` nicht gebunden ist, das Farbschema der Aktivität im Fenster Decor, kann ein visuell Farbschema haben. 
+-   Da das `Toolbar` nicht an das Farbschema des Fensters der Aktivitäts Fenster gebunden ist, kann es über ein visuell unterschiedliches Farbschema verfügen. 
 
--   Im Gegensatz zu der Aktionsleiste der `Toolbar` schließt sich nicht auf ein Symbol auf der linken Seite. Die Menüs auf der rechten Seite weniger Speicher zu verwenden. 
+-   Anders als bei der Aktionsleiste `Toolbar` enthält das kein Symbol auf der linken Seite. In den Menüs auf der rechten Seite wird weniger Speicherplatz verwendet. 
 
--   Die `Toolbar` Höhe ist anpassbar. 
+-   Die `Toolbar` Höhe ist anpassungsfähig. 
 
--   Andere Ansichten können enthalten sein, in der `Toolbar`. 
+-   Andere Sichten können in `Toolbar`enthalten sein. 
 
-Ein `Toolbar` kann eine oder mehrere der folgenden Elemente enthalten: 
+Eine `Toolbar` kann eines oder mehrere der folgenden Elemente enthalten: 
 
--   Die Navigationsschaltfläche "
+-   Navigations Schaltfläche
 
--   Ein Bild mit Branding-logo
+-   Ein Branding-Logo-Image
 
 -   Titel und Untertitel
 
@@ -57,29 +57,29 @@ Ein `Toolbar` kann eine oder mehrere der folgenden Elemente enthalten:
 
 -   Menü "Aktion"
 
--   Überlaufmenü
+-   Überlauf Menü
 
-Google [materialentwurfsrichtlinien](https://material.google.com/) empfiehlt die Nutzung dieser Elemente apps unterschiedliche finden (und nicht ausschließlich auf ein Anwendungssymbol und Title) zu gewähren. 
+Die [Material Design Guidelines](https://material.google.com/) von Google empfiehlt, diese Elemente zu nutzen, um apps ein unterschiedliches Aussehen zu verschaffen (anstatt sich ausschließlich auf ein Anwendungssymbol und einen Titel zu verlassen). 
 
-Dieser Leitfaden behandelt, die am häufigsten verwendeten `Toolbar` Szenarien:
+In diesem Handbuch werden die am häufigsten verwendeten `Toolbar` Szenarien behandelt:
 
--   Ersetzen einer Aktivität Aktionsleiste "Standard" mit einem `Toolbar`. 
+-   Ersetzen der Standard Aktionsleiste einer Aktivität durch eine `Toolbar`. 
 
--   Hinzufügen einer zweiten `Toolbar` zu einer Aktivität.
+-   Hinzufügen einer `Toolbar` zweiten zu einer Aktivität.
 
--   Mithilfe der **Android Support-Bibliothek v7 AppCompat** Bibliothek (genannt *AppCompat* im Rest dieses Handbuchs) bereitstellen `Toolbar` in früheren Versionen von Android. 
+-   Verwenden der Bibliothek für die **Android-Unterstützungs Bibliothek V7 AppCompat** (im weiteren Verlauf dieses Handbuchs als *AppCompat* bezeichnet `Toolbar` ) zur Bereitstellung in früheren Versionen von Android. 
 
  
  
 ## <a name="requirements"></a>Anforderungen
 
-`Toolbar` ist auf Android 5.0 Lollipop (API 21) und höher verfügbar. Verwenden Sie bei vor Android 5.0 für Android Versionen, die [Android Support Library v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/), die bietet rückwärtskompatibel `Toolbar` in einem NuGet-Paket zu unterstützen. 
-[Kompatibilität von Symbolleisten](~/android/user-interface/controls/tool-bar/toolbar-compatibility.md) wird erläutert, wie Sie diese Bibliothek verwenden. 
+`Toolbar`ist unter Android 5,0 Lollipop (API 21) und höher verfügbar. Wenn Sie auf Android-Releases vor Android 5,0 abzielen, verwenden Sie die [Android-Unterstützungs Bibliothek V7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/), die `Toolbar` abwärts kompatible Unterstützung in einem nuget-Paket bereitstellt. 
+[Symbolleisten Kompatibilität](~/android/user-interface/controls/tool-bar/toolbar-compatibility.md) erläutert, wie diese Bibliothek verwendet wird. 
 
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Lollipop-Symbolleiste (Beispiel)](https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/)
-- [AppCompat-Symbolleiste (Beispiel)](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/)
+- [Lollipop-Symbolleiste (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar)
+- [AppCompat-Symbolleiste (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar)

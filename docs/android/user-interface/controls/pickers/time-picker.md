@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: e959f0d3cafa9e856458472668244fcd33ba4f81
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fea96ab645b2d01b774f691402a5796eec1f1dba
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510230"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644972"
 ---
 # <a name="android-time-picker"></a>Android-Zeitauswahl
 
@@ -42,7 +42,7 @@ Wenn Sie auf die Schaltfläche " **Pick Time** " klicken, wird `TimePickerDialog
 
 [![Screenshot des von der APP angezeigten standardmäßigen Zeitauswahl Dialogfelds](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
 
-Wenn Sie in eine Uhrzeit auswählen und auf die  Schaltfläche `TimePickerDialog` `TimePickerDialog` OK klicken, wird die Methode " [iontimesetlistener. ontimeset](xref:Android.App.TimePickerDialog.IOnTimeSetListener.OnTimeSet*)" aufgerufen.
+Wenn Sie in eine Uhrzeit auswählen und auf die Schaltfläche `TimePickerDialog` `TimePickerDialog` OK klicken, wird die Methode " [iontimesetlistener. ontimeset](xref:Android.App.TimePickerDialog.IOnTimeSetListener.OnTimeSet*)" aufgerufen.
 Diese Schnittstelle wird durch das Hosting `DialogFragment` implementiert`TimePickerFragment`(, wie unten beschrieben). Wenn Sie auf die Schaltfläche **Abbrechen** klicken, werden das Fragment und Dialogfeld verworfen.
 
 `DialogFragment`gibt auf eine von drei Arten die ausgewählte Zeit für die hostingaktivität zurück:
@@ -256,7 +256,7 @@ Erstellen Sie die App, und führen Sie sie aus. Wenn Sie auf die Schaltfläche "
 
 [![Das Zeit Dialogfeld wird im am/pm-Modus angezeigt.](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
    
-Wenn Sie im  `TimePicker` Dialogfeld auf OK klicken, aktualisiert der Handler die- `TextView` Aktivität mit der ausgewählten Uhrzeit und wird dann beendet:
+Wenn Sie im `TimePicker` Dialogfeld auf OK klicken, aktualisiert der Handler die- `TextView` Aktivität mit der ausgewählten Uhrzeit und wird dann beendet:
 
 [![Eine/M-Zeit wird in der TextView-Aktivität angezeigt.](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png#lightbox)
 
@@ -282,4 +282,4 @@ In diesem Artikel wurde erläutert, wie `TimePicker` ein Widget aus einer Androi
 - [TimePicker](xref:Android.Widget.TimePicker)
 - [TimePickerDialog](xref:Android.App.TimePickerDialog)
 - [TimePickerDialog.IOnTimeSetListener](xref:Android.App.TimePickerDialog.IOnTimeSetListener)
-- [Timepickerdemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/UserInterface/TimePickerDemo)
+- [Timepickerdemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-timepickerdemo)

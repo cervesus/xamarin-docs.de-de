@@ -1,30 +1,30 @@
 ---
-title: Arbeiten mit UI-Thread in Xamarin.iOS
-description: Dieses Dokument beschreibt das Arbeiten mit UI-Thread in Xamarin.iOS. Erläutert die Ausführung von UI-Threads, bietet ein Beispiel für die Hintergrund-Thread und untersucht, Async/await.
+title: Arbeiten mit dem UI-Thread in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie mit dem UI-Thread in xamarin. IOS arbeiten. Es wird erläutert, wie die Ausführung des UI-Threads, ein Hintergrund Thread Beispiel, und Async/warten überprüft wird.
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: e4485c485b708bdec06f7f1dc22f0bf33e07e982
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 6f9f11a84f9a57d699a219958883afae33824e95
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827745"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655283"
 ---
-# <a name="working-with-the-ui-thread-in-xamarinios"></a>Arbeiten mit UI-Thread in Xamarin.iOS
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>Arbeiten mit dem UI-Thread in xamarin. IOS
 
-Anwendungsbenutzerschnittstellen sind immer, auch in Multithread-Geräte – es gibt nur eine Darstellung des Bildschirms, und müssen alle Änderungen an der Anzeige durch einen einzigen 'Access Point' koordiniert werden. Dadurch wird verhindert, dass mehrere Threads versuchen, dasselbe Pixel (z. B.) zur gleichen Zeit zu aktualisieren.
+Anwendungs Benutzerschnittstellen sind immer Single Thread, auch bei Multithread-Geräten – es gibt nur eine Darstellung des Bildschirms, und Änderungen an den angezeigten Änderungen müssen über einen einzelnen "Zugriffspunkt" koordiniert werden. Dadurch wird verhindert, dass mehrere Threads gleichzeitig versuchen, dasselbe Pixel zu aktualisieren (z. b.).
 
-Ihr Code sollte nur Änderungen an den Benutzer Steuerelemente der Benutzeroberfläche aus der primären (oder UI) Thread vornehmen. Alle Aktualisierungen der Benutzeroberfläche, die auf einem anderen Thread (z. B. einen Rückruf oder Hintergrund-Thread) auftreten können nicht auf dem Bildschirm gerendert zu erhalten, oder es können auch einen Absturz verursachen.
+Der Code sollte nur Änderungen an den Steuerelementen der Benutzeroberfläche vom Hauptthread (oder UI) aus vornehmen. Alle Aktualisierungen der Benutzeroberfläche, die in einem anderen Thread (z. b. einem Rückruf oder einem Hintergrund Thread) auftreten, werden möglicherweise nicht auf dem Bildschirm gerendert oder können sogar zu einem Absturz führen.
 
-## <a name="ui-thread-execution"></a>Ausführung von UI-Threads
+## <a name="ui-thread-execution"></a>UI-Thread Ausführung
 
-Wenn Sie das Erstellen von Steuerelementen in einer Sicht, oder behandeln ein Ereignisses vom Benutzer initiierte, z. B. eine Fingereingabe, wird der Code bereits im Kontext des UI-Threads ausgeführt.
+Wenn Sie Steuerelemente in einer Ansicht erstellen oder ein vom Benutzer initiiertes Ereignis, z. b. eine Berührung, behandeln, wird der Code bereits im Kontext des UI-Threads ausgeführt.
 
-Wenn Code in einem Hintergrundthread, in einem Task oder einen Rückruf ausführt ist es wahrscheinlich nicht auf dem Hauptbenutzeroberflächen-Thread ausgeführt. In diesem Fall sollten Sie den Code umschließen, in einem Aufruf von `InvokeOnMainThread` oder `BeginInvokeOnMainThread` wie folgt aus:
+Wenn Code in einem Hintergrund Thread, in einer Aufgabe oder einem Rückruf ausgeführt wird, wird er wahrscheinlich nicht auf dem Hauptbenutzer Oberflächen-Thread ausgeführt. In diesem Fall sollten Sie den Code in einem `InvokeOnMainThread` -Befehl oder `BeginInvokeOnMainThread` wie diesem einschließen:
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -32,18 +32,18 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-Die `InvokeOnMainThread` Methode definiert ist, auf `NSObject` , damit sie von innerhalb jedes UIKit-Objekt (z. B. eine Sicht oder View Controller) definierten Methoden aufgerufen werden kann.
+Die `InvokeOnMainThread` -Methode ist `NSObject` so definiert, dass Sie in Methoden aufgerufen werden kann, die für ein beliebiges UIKit-Objekt definiert sind (z. b. eine Ansicht oder ein Ansichts Controller)
 
-Beim Debuggen von Xamarin.iOS-Anwendungen, wird ein Fehler ausgelöst werden, wenn der Code versucht, den falschen Thread auf ein UI-Steuerelement. Dadurch können Sie zum Aufspüren und beheben diese Probleme mit der InvokeOnMainThread-Methode. Dies wird nur tritt auf, während des Debuggens und einen Fehler wird nicht in Releasebuilds ausgelöst. Die Fehlermeldung wird wie folgt angezeigt:
+Beim Debuggen von xamarin. IOS-Anwendungen wird ein Fehler ausgelöst, wenn der Code versucht, auf ein UI-Steuerelement vom falschen Thread aus zuzugreifen. Dies hilft Ihnen, diese Probleme mit der invokeonmainthread-Methode aufzuspüren und zu beheben. Dies tritt nur beim Debuggen auf und löst in Releasebuilds keinen Fehler aus. Die Fehlermeldung wird wie folgt angezeigt:
 
- ![](ui-thread-images/image10.png "Ausführung von UI-Threads")
+ ![](ui-thread-images/image10.png "UI-Thread Ausführung")
 
  <a name="Background_Thread_Example" />
 
 
-## <a name="background-thread-example"></a>Hintergrund-Thread-Beispiel
+## <a name="background-thread-example"></a>Beispiel für Hintergrund Thread
 
-Es folgt ein Beispiel, das versucht, ein Steuerelement der Benutzeroberfläche zugreifen (eine `UILabel`) aus einem Hintergrundthread, der mit einem einfachen Thread:
+Im folgenden Beispiel wird versucht, mithilfe eines einfachen Threads von einem Hintergrund Thread `UILabel`aus auf ein Benutzeroberflächen Steuerelement (a) zuzugreifen:
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -51,7 +51,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-Dass der Code eine Ausnahme auslöst, die `UIKitThreadAccessException` während des Debuggens. Umschließen Sie zum Beheben des Problems (und stellen Sie sicher, dass die Steuerelemente der Benutzeroberfläche nur aus dem Hauptbenutzeroberflächen-Thread zugegriffen wird), Code, verweist der UI-Steuerelemente in, einem `InvokeOnMainThread` Ausdruck wie folgt:
+Mit diesem Code wird während `UIKitThreadAccessException` des Debuggens ausgelöst. Um das Problem zu beheben (und sicherzustellen, dass nur über den Hauptbenutzer Oberflächen-Thread auf das Benutzeroberflächen Steuerelement zugegriffen wird), packen Sie `InvokeOnMainThread` Code, der auf UI-Steuerelemente verweist, in einem Ausdruck wie folgt
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -61,16 +61,16 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-Sie müssen nicht dies für den Rest der Beispiele in diesem Dokument verwenden, aber es ist ein wichtiger Konzept zu beachten, wenn Ihre app netzwerkanforderungen stellt verwendet Notification Center oder andere Methoden, die einen Abschlusshandler erfordern, die auf einem anderen ausgeführt wird Thread.
+Sie müssen dies nicht für die restlichen Beispiele in diesem Dokument verwenden, aber es ist ein wichtiges Konzept, wenn Ihre APP Netzwerk Anforderungen stellt, das Benachrichtigungs Center oder andere Methoden verwendet, die einen Abschluss Handler erfordern, der auf einem anderen ausgeführt wird. Aden.
 
  <a name="Async_Await_Example" />
 
 
-## <a name="asyncawait-example"></a>Beispiel für "Async/await"
+## <a name="asyncawait-example"></a>Beispiel für Async/Erwartung
 
-Bei Verwendung der C# 5 Async/await-Schlüsselwörtern `InvokeOnMainThread` ist nicht erforderlich, da bei der eine erwartete Aufgabe abgeschlossen ist die Methode, die für den aufrufenden Thread fortgesetzt.
+Wenn die C# 5 Async-/erwarter-Schlüsselwörter `InvokeOnMainThread` nicht benötigt werden, ist die-Methode im aufrufenden Thread fortgesetzt, wenn eine erwartete Aufgabe abgeschlossen wird.
 
-Dieser Beispielcode (die in einem Methodenaufruf Verzögerung ausschließlich zu Demonstrationszwecken "awaits") zeigt eine asynchrone Methode, die im UI-Thread aufgerufen wird (es handelt es sich um einen Handler TouchUpInside). Da der UI-Thread die enthaltende Methode aufgerufen wird, UI-Vorgänge wie das Festlegen des Texts auf eine `UILabel` oder Einblenden von einer `UIAlertView` kann problemlos aufgerufen werden, nachdem in Hintergrundthreads asynchrone Vorgänge abgeschlossen haben.
+Dieser Beispielcode (der bei einem verzögerten Methodenaufruf, nur zu Demonstrationszwecken, erwartet wird) zeigt eine Async-Methode an, die im UI-Thread aufgerufen wird (es handelt sich um einen touchupin-Handler). Da die enthaltende Methode im UI-Thread aufgerufen wird, können UI-Vorgänge wie das Festlegen `UILabel` des Texts auf `UIAlertView` einem oder ein, das anzeigt, sicher aufgerufen werden, nachdem asynchrone Vorgänge für Hintergrundthreads abgeschlossen wurden.
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -91,10 +91,10 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-Wenn eine asynchrone Methode aus einem Hintergrundthread (nicht dem Hauptbenutzeroberflächen-Thread) aufgerufen wird, klicken Sie dann `InvokeOnMainThread` wären immer noch erforderlich.
+Wenn eine asynchrone Methode von einem Hintergrund Thread (nicht dem Hauptbenutzer Oberflächen-Thread) `InvokeOnMainThread` aufgerufen wird, ist dennoch erforderlich.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Steuerelemente (Beispiel)](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [Threading](~/ios/app-fundamentals/threading.md)

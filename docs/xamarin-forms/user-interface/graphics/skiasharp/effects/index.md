@@ -7,16 +7,16 @@ ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2018
-ms.openlocfilehash: 121d505d578aa20e86977c0da5d69626bbad1f53
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: da923a3542a57b6150e536ecb6649140e57c81e1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289304"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655360"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp-Auswirkungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Die SkiaSharp [ `SKPaint` ](xref:SkiaSharp.SKPaint) -Klasse definiert sechs Eigenschaften, die unter der allgemeine Begriff der klassifiziert werden können _Effekte_. Dies sind Eigenschaften, die die normale Anzeige von Grafiken in irgendeiner Weise zu ändern. Die Auswirkungen von SkiaSharp fallen in sechs Kategorien:
 
@@ -44,9 +44,9 @@ Legen Sie die [ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter) Eigenschaft 
 
 Legen Sie die [ `ColorFilter` ](xref:SkiaSharp.SKPaint.ColorFilter) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKColorFilter` ](xref:SkiaSharp.SKColorFilter) , zu ändern, Farben mithilfe von Tabellen oder Matrix transformiert.
 
-Alle der Beispielcode für diese Artikel enthalten, in der [ **SkiaSharpFormsDemos**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/). Wählen Sie auf der Startseite des **SkiaSharp-Effekte**.
+Alle der Beispielcode für diese Artikel enthalten, in der [ **SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos). Wählen Sie auf der Startseite des **SkiaSharp-Effekte**.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,24 +1,24 @@
 ---
-title: "\"NavigationPage\" Leiste Durchsichtigkeit unter iOS"
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie der iOS-Plattform-spezifische zu nutzen, die die Transparenz der Navigationsleiste in einer "NavigationPage" geändert wird.
+title: Translustialisierung der Navigations Seitenleiste unter IOS
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung nutzen, die die Transparenz der Navigationsleiste auf einer Navigationsseite ändert.
 ms.prod: xamarin
 ms.assetid: 1150941B-56DB-4781-BE36-A4C4F9F2C500
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: d6a3538b4083112a2bf1a343a9db438e4894815b
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 6a8d1c0a4130e7f5b909e963fce23c87597a688c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925647"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652133"
 ---
-# <a name="navigationpage-bar-translucency-on-ios"></a>"NavigationPage" Leiste Durchsichtigkeit unter iOS
+# <a name="navigationpage-bar-translucency-on-ios"></a>Translustialisierung der Navigations Seitenleiste unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Dieses iOS-Plattform-spezifische wird verwendet, so ändern Sie die Transparenz der Navigationsleiste auf einen [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage), und in XAML verwendet wird, durch Festlegen der [ `NavigationPage.IsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty) angefügte Eigenschaft auf einen `boolean`Wert:
+Diese IOS-plattformspezifische dient zum Ändern der Transparenz der Navigationsleiste eines [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)und wird in XAML verwendet, indem die [`NavigationPage.IsNavigationBarTranslucent`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty) angefügte-Eigenschaft auf einen `boolean` Wert festgelegt wird:
 
 ```xaml
 <NavigationPage ...
@@ -54,6 +54,6 @@ Das Ergebnis ist, dass die Transparenz der Navigationsleiste geändert werden ka
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

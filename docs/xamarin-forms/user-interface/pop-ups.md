@@ -1,24 +1,24 @@
 ---
-title: Anzeigen von Popups
-description: 'Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. In diesem Artikel veranschaulicht, wie mit dem Blatt "Warnung" und "Aktion" APIs Dialogfelder angezeigt, die Benutzer auf einfache Fragen stellen und führt die Benutzer durch Aufgaben.'
+title: Popup anzeigen
+description: 'Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. In diesem Artikel wird die Verwendung der APIs für Warnungen und Aktions Blätter zum Anzeigen von Dialogfeldern veranschaulicht, die Benutzer zu einfachen Fragen auffordern und Benutzer durch Aufgaben leiten.'
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 58c98aefdf87bcd1ca819de96f67c66646c1723d
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 3b6b2ea2d497c9fdce2c323c7f7a793a4186aa4f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66182302"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656110"
 ---
-# <a name="display-pop-ups"></a>Anzeigen von Popups
+# <a name="display-pop-ups"></a>Popup anzeigen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-_Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. In diesem Artikel veranschaulicht, wie mit dem Blatt "Warnung" und "Aktion" APIs Dialogfelder angezeigt, die Benutzer auf einfache Fragen stellen und führt die Benutzer durch Aufgaben._
+_Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. In diesem Artikel wird die Verwendung der APIs für Warnungen und Aktions Blätter zum Anzeigen von Dialogfeldern veranschaulicht, die Benutzer zu einfachen Fragen auffordern und Benutzer durch Aufgaben leiten._
 
 Eine Warnung anzuzeigen oder einen Benutzer zu einer Auswahl aufzufordern, ist eine gängige Benutzeroberflächenaufgabe. Xamarin.Forms verfügt über zwei Methoden für die [`Page`](xref:Xamarin.Forms.Page)-Klasse für die Interaktion mit dem Benutzer über ein Popupelement: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) und [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*). Sie werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
 
@@ -46,7 +46,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [![DisplayAlert](pop-ups-images/alert2-sml.png "Warnungsdialogfeld mit zwei Schaltflächen")](pop-ups-images/alert2.png#lightbox "Alert Dialog with Two Buttons")
 
-## <a name="guide-users-through-tasks"></a>Für Benutzer durch Aufgaben
+## <a name="guide-users-through-tasks"></a>Benutzer durch Aufgaben leiten
 
 [UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) ist ein allgemeines Benutzeroberflächenelement unter iOS. Mithilfe der [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)-Methode von Xamarin.Forms können Sie dieses Steuerelement in plattformübergreifende Apps einfügen, um native Alternativen unter Android und auf der UWP zu rendern.
 
@@ -76,4 +76,4 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Popups (Popupelemente (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)
+- [Popups (Popupelemente (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

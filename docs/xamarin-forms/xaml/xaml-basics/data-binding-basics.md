@@ -7,22 +7,22 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 6d8ed5e2ec4707af2b61e299ee8274402f3a88a4
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309516"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655252"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Datenbindungen können Sie Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einer bewirkt, dass eine Änderung in der anderen. Dies ist ein sehr wertvolles Tool, und während der datenbindungen, die vollständig in Code definiert werden können, Verknüpfungen und der Einfachheit halber XAML enthält. Daher ist eine der wichtigsten Markuperweiterungen in Xamarin.Forms binden._
 
 ## <a name="data-bindings"></a>Datenbindungen
 
-Datenbindungen, die connect-Eigenschaften von zwei Objekte, mit dem Namen der *Quelle* und *Ziel*. Im Code sind zwei Schritte erforderlich: Die `BindingContext` Eigenschaft des Zielobjekts muss festgelegt werden, mit dem Quellobjekt und die `SetBinding` Methode (wird häufig in Verbindung mit der `Binding` Klasse) muss für das Zielobjekt eine Eigenschaft dieses Objekts an eine Eigenschaft der Quelle binden aufgerufen werden -Objekt.
+Datenbindungen, die connect-Eigenschaften von zwei Objekte, mit dem Namen der *Quelle* und *Ziel*. Im Code sind zwei Schritte erforderlich: Die `BindingContext` -Eigenschaft des Zielobjekts muss auf das-Quell Objekt festgelegt werden, `SetBinding` und die-Methode (häufig in Verbindung `Binding` mit der-Klasse verwendet) muss für das Zielobjekt aufgerufen werden, um eine Eigenschaft dieses Objekts an eine Eigenschaft der Quelle zu binden. Objekt.
 
 Die Zieleigenschaft muss eine bindbare Eigenschaft an, was bedeutet, dass das Zielobjekt von abgeleitet werden, muss `BindableObject`. Die Xamarin.Forms-Onlinedokumentation gibt an, welche Eigenschaften bindbare Eigenschaften sind. Eine Eigenschaft des `Label` wie z. B. `Text` bezieht sich auf die bindbare Eigenschaft `TextProperty`.
 
@@ -114,11 +114,11 @@ Die Lösung für dieses und andere Probleme umfasst die `Mode` -Eigenschaft, die
 - `OneWay` – Werte werden aus der Quelle zum Ziel übertragen
 - `OneWayToSource` – Werte vom Ziel zur Quelle übertragen werden
 - `TwoWay` – Werte werden in beide Richtungen zwischen Quelle und Ziel übertragen
-- `OneTime` – Daten werden von der Quelle zum Ziel, aber nur, wenn die `BindingContext` Änderungen
+- `OneTime`– Daten werden von der Quelle zum Ziel weitergeleitet, aber `BindingContext` nur, wenn die Änderungen
 
 Das folgende Programm zeigt häufig dazu verwendet die `OneWayToSource` und `TwoWay` Bindungsmodi. Vier `Slider` Sichten dienen der Kontrolle der `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften eine `Label`. Zunächst erscheint es als ob diese vier Eigenschaften der `Label` Datenbindung Ziele sollte sein werden, da jeder von festgelegt wird eine `Slider`. Allerdings die `BindingContext` von `Label` kann nur ein Objekt sein, und es gibt vier verschiedene Schieberegler.
 
-Aus diesem Grund Alle Bindungen in festgelegt sind scheinbar rückwärts Möglichkeiten: Die `BindingContext` jedes der vier Schieberegler auf festgelegt ist die `Label`, und die Bindungen festgelegt sind, auf die `Value` Eigenschaften der Schieberegler. Mithilfe der `OneWayToSource` und `TwoWay` Modi diese `Value` Eigenschaften können die Datenquelleneigenschaften, die festgelegt die `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften der `Label`:
+Aus diesem Grund werden alle Bindungen in scheinbar rückwärts festgelegt: Die `BindingContext` jedes der vier Schieberegler ist `Label`auf festgelegt, und die Bindungen werden auf die `Value` Eigenschaften der Schieberegler festgelegt. Mithilfe der `OneWayToSource` und `TwoWay` Modi diese `Value` Eigenschaften können die Datenquelleneigenschaften, die festgelegt die `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften der `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -255,7 +255,7 @@ Um eine Vorlage für die Elemente zu definieren, sollten Sie sich die `ItemTempl
 ```
 
 > [!NOTE]
-> Die Bindungsquelle für Zellen und Zellen, untergeordneten Elemente ist die `ListView.ItemsSource` Auflistung.
+> Die Bindungs Quelle für Zellen und untergeordnete Elemente von Zellen ist die `ListView.ItemsSource` Auflistung.
 
 Die `Label` -Elementgruppe ist die `View` Eigenschaft der `ViewCell`. (Die `ViewCell.View` Tags sind nicht erforderlich, da die `View` -Eigenschaft ist die Content-Eigenschaft des `ViewCell`.) Dieses Markup zeigt die `FriendlyName` Eigenschaft der einzelnen `NamedColor` Objekt:
 
@@ -410,7 +410,7 @@ Datenbindungen bieten einen leistungsfähigen Mechanismus zum Verknüpfen von Ei
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Teil 1. Erste Schritte mit XAML (Beispiel)](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Teil 2. Essential XAML Syntax (Beispiel)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Teil 3. XAML-Markuperweiterungen (Beispiel)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

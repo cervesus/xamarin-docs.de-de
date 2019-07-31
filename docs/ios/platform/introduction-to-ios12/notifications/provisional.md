@@ -1,33 +1,33 @@
 ---
-title: Vorläufige Benachrichtigungen in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Sie Xamarin.iOS zum Arbeiten mit vorläufigen Benachrichtigungen zu verwenden. Vorläufige Benachrichtigungen, eingeführt in iOS 12, können Anwendungen ohne explizite Benutzerberechtigungen quiet Benachrichtigungen.
+title: Vorläufige Benachrichtigungen in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie xamarin. IOS verwenden, um mit provisorischen Benachrichtigungen zu arbeiten. In IOS 12 eingeführte vorläufige Benachrichtigungen ermöglichen Anwendungen das Senden von stillen Benachrichtigungen ohne explizite Benutzerberechtigungen.
 ms.prod: xamarin
 ms.assetid: 5DCB36B9-2637-48AE-8FC0-F6124F08AC48
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 434dd2e2ee7a0064b706872a228070c5114078c4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1b4cf7f2caee274f353afff89e30c2db96009c12
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034772"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652370"
 ---
-# <a name="provisional-notifications-in-xamarinios"></a>Vorläufige Benachrichtigungen in Xamarin.iOS
+# <a name="provisional-notifications-in-xamarinios"></a>Vorläufige Benachrichtigungen in xamarin. IOS
 
-Vorläufige Benachrichtigungen können apps, um Benachrichtigungen ohne explizite vorab-Zustimmung des Benutzers. Diese Benachrichtigungen unauffällig eingehen, und zeigen nur in der Mitteilungszentrale zur Verfügung, die Benutzer, die sie vor der Aktivierung für oder gegen die Fortführung Vorschau anzeigen können.
+Durch vorläufige Benachrichtigungen können apps Benachrichtigungen übermitteln, ohne dass eine vorherige Zustimmung des Benutzers besteht. Diese Benachrichtigungen werden nur in der Benachrichtigungs zentrale angezeigt, sodass Benutzer Sie in der Vorschau anzeigen können, bevor Sie sich für die fortgesetzte Bereitstellung entscheiden.
 
-In Mitteilungszentrale zur Verfügung können Benutzer angeben, dass eine app beendet werden soll Übermittlung von Benachrichtigungen der vorläufigen, weiterhin vorläufig bereitstellen oder mit der Bereitstellung werden hervorgehoben.
+Im Benachrichtigungs Center können Benutzer angeben, dass eine APP die Bereitstellung von provisorischen Benachrichtigungen beenden, Sie weiterhin vorläufig bereitstellt oder mit der Bereitstellung der Lösungen beginnen soll.
 
-## <a name="sample-app-redgreennotifications"></a>Beispiel-app: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Beispiel-App: RedGreenNotifications
 
-Sehen Sie sich die [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications) Beispielapp, die vorläufige Benachrichtigungen sendet.
+Sehen Sie sich die Beispiel-APP [redgreenbenachrichtigungen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) an, mit der vorläufige Benachrichtigungen gesendet werden.
 
-## <a name="sending-provisional-notifications"></a>Vorläufige Senden von Benachrichtigungen
+## <a name="sending-provisional-notifications"></a>Senden von provisorischen Benachrichtigungen
 
-Um vorläufige Benachrichtigungen senden, bieten `UNAuthorizationOptions.Provisional` als Option für die [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
-Methode der `UNUserNotificationCenter`:
+Um vorläufige Benachrichtigungen zu senden, `UNAuthorizationOptions.Provisional` geben Sie als Option für das[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
+Methode von `UNUserNotificationCenter`:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -41,13 +41,13 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Wenn der Benutzer vorläufige Benachrichtigungen an gut sichtbaren Übermittlung, stuft die `UNAuthorizationOptions` an übergebenen Werte `RequestAuthorization` bestimmt die neue Einstellungen für die Übermittlung von Benachrichtigungen (im obigen Code `UNAuthorizationOptions.Alert` und `UNAuthorizationOptions.Sound`).
+Wenn der Benutzer vorläufige Benachrichtigungen auf eine bedeutende Übermittlung herauf stuft `UNAuthorizationOptions` , bestimmen die `RequestAuthorization` an übergebenen Werte die neuen Einstellungen für die Benachrichtigungs Übermittlung ( `UNAuthorizationOptions.Alert` im `UNAuthorizationOptions.Sound`obigen Code und).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel-app – RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)
-- [Framework für Benutzerbenachrichtigungen in Xamarin.iOS](~/ios/platform/user-notifications/index.md)
-- ["Usernotifications" (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [Neuerungen in Benutzerbenachrichtigungen (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [Bewährte Methoden und Neuigkeiten in Benutzerbenachrichtigungen (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [Generieren eine Remotebenachrichtigung (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [Beispiel-App – redgreenbenachrichtigungen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [Benutzer Benachrichtigungs Framework in xamarin. IOS](~/ios/platform/user-notifications/index.md)
+- [Benutzer Benachrichtigungen (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
+- [Neues in Benutzer Benachrichtigungen (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [Bewährte Methoden und Neuerungen bei Benutzer Benachrichtigungen (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [Erstellen einer Remote Benachrichtigung (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

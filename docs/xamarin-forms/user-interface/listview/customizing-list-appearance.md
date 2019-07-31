@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 49bb3f901f2b1f8ed4ae26650cb0509aabfd2369
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169883"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647620"
 ---
 # <a name="customizing-listview-appearance"></a>Anpassen der Darstellung der ListView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
-[`ListView`](xref:Xamarin.Forms.ListView) hat die Möglichkeit, die Darstellung der Liste, zusätzlich zum Steuern der [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) Instanzen für jede Zeile in der Liste.
+[`ListView`](xref:Xamarin.Forms.ListView)bietet die Möglichkeit, die Darstellung der Liste zu steuern, zusätzlich zu den [`ViewCell`](xref:Xamarin.Forms.ViewCell) Instanzen für jede Zeile in der Liste.
 
 <a name="Grouping" />
 
@@ -78,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-Im obigen Code kann auch rufen wir `Add` Elemente eines `groups`, die Instanzen des Typs sind `PageTypeGroup`. Dies ist möglich, da `PageTypeGroup` erbt `List<PageModel>`. Dies ist ein Beispiel für die Liste der Listen-Muster, die wie oben beschrieben.
+Im obigen Code können auch für Elemente von `Add` `groups`aufgerufen werden, bei denen es sich um Instanzen des `PageTypeGroup`Typs handelt. Dies ist möglich, da `PageTypeGroup` erbt `List<PageModel>`. Dies ist ein Beispiel für die Liste der Listen-Muster, die wie oben beschrieben.
 
 Hier ist die XAML zur Anzeige der gruppierten Liste:
 
@@ -201,13 +201,13 @@ Um eine benutzerdefinierte Kopf- und Fußzeile zu erstellen, definieren Sie die 
 
 ![](customizing-list-appearance-images/header-custom.png "ListView mit benutzerdefinierten Header und Footer")
 
-## <a name="scrollbar-visibility"></a>Sichtbarkeit der Bildlaufleiste
+## <a name="scrollbar-visibility"></a>Sichtbarkeit der Scrollleiste
 
-[`ListView`](xref:Xamarin.Forms.ListView) verfügt über `HorizontalScrollBarVisibility` und `VerticalScrollBarVisibility` Eigenschaften, die abrufen oder Festlegen einer [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) -Wert, der darstellt, wenn es sich bei der horizontalen oder vertikalen Schiebeleiste sichtbar ist. Beide Eigenschaften können auf die folgenden Werte festgelegt werden:
+[`ListView`](xref:Xamarin.Forms.ListView)verfügt `HorizontalScrollBarVisibility` über `VerticalScrollBarVisibility` die-Eigenschaft und die-Eigenschaft [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) , mit der ein Wert festgelegt oder festgelegt wird, der angibt, wann die horizontale oder vertikale Schiebe Leiste sichtbar ist Beide Eigenschaften können auf die folgenden Werte festgelegt werden:
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt das Scroll-Leiste-Standardverhalten für die Plattform und ist der Standardwert für die `HorizontalScrollBarVisibility` und `VerticalScrollBarVisibility` Eigenschaften.
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt an, dass Bildlaufleisten angezeigt, werden auch verwendet werden, wenn der Inhalt in der Ansicht entspricht.
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) Gibt an, dass Bildlaufleisten nicht sichtbar ist, auch wenn der Inhalt nicht in der Ansicht passt.
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)Gibt das Standardverhalten der Bild Lauf Leiste für die Plattform an, und ist der Standard `HorizontalScrollBarVisibility` Wert `VerticalScrollBarVisibility` für die-Eigenschaft und die-Eigenschaft.
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)Gibt an, dass Scrollleisten sichtbar sind, auch wenn der Inhalt in die Ansicht passt.
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)Gibt an, dass Scrollleisten nicht sichtbar sind, auch wenn der Inhalt nicht in die Ansicht passt.
 
 <a name="Row_Separators" />
 
@@ -342,8 +342,8 @@ Beachten Sie, dass ist es sehr wahrscheinlich, dass eine Verringerung der Leistu
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Gruppierung (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [Benutzerdefinierte Renderer-Ansicht (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [Dynamische Ändern der Größe von Zeilen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
+- [Gruppierung (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [Benutzerdefinierte Renderer-Ansicht (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [Dynamische Ändern der Größe von Zeilen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
 - [die Anmerkungen zu dieser Version 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [1.3 – Anmerkungen zu dieser](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

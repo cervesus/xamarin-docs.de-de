@@ -1,48 +1,48 @@
 ---
-title: Arbeiten mit Zeilenaktionen in Xamarin.iOS
-description: Diese Anleitung veranschaulicht, wie Sie benutzerdefinierte Wischen Aktionen für die Tabellenzeilen mit UISwipeActionsConfiguration oder UITableViewRowAction erstellen
+title: Arbeiten mit Zeilen Aktionen in xamarin. IOS
+description: In dieser Anleitung wird veranschaulicht, wie benutzerdefinierte wischen-Aktionen für Tabellenzeilen mit uiswipeactionsconfiguration oder uitableviewrowaction erstellt werden.
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 6d41f37d4a63db710bb04e35e6e1a4be0dd4f7a4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 41aabb5e8b6d3eb46a92ee194c6b6b5e3ca51943
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408280"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655628"
 ---
-# <a name="working-with-row-actions-in-xamarinios"></a>Arbeiten mit Zeilenaktionen in Xamarin.iOS
+# <a name="working-with-row-actions-in-xamarinios"></a>Arbeiten mit Zeilen Aktionen in xamarin. IOS
 
-_Diese Anleitung veranschaulicht, wie Sie benutzerdefinierte Wischen Aktionen für die Tabellenzeilen mit UISwipeActionsConfiguration oder UITableViewRowAction erstellen_
+_In dieser Anleitung wird veranschaulicht, wie benutzerdefinierte wischen-Aktionen für Tabellenzeilen mit uiswipeactionsconfiguration oder uitableviewrowaction erstellt werden._
 
-![Demonstration Wischen Aktionen für Zeilen](row-action-images/action02.png)
+![Demonstrieren von wischen-Aktionen in Zeilen](row-action-images/action02.png)
 
-iOS bietet zwei Möglichkeiten zum Ausführen von Aktionen für eine Tabelle: `UISwipeActionsConfiguration` und `UITableViewRowAction`.
+IOS bietet zwei Möglichkeiten zum Ausführen von Aktionen für eine Tabelle `UISwipeActionsConfiguration` : `UITableViewRowAction`und.
 
-`UISwipeActionsConfiguration` wurde in iOS 11 eingeführt und wird verwendet, um einen Satz von definieren Aktionen ausführen, sollte statt, wenn der Benutzer Kundenkarte _in beide Richtungen_ für eine Zeile in einer Tabellenansicht. Dieses Verhalten ist vergleichbar mit der systemeigenen Mail.app 
+`UISwipeActionsConfiguration`wurde in ios 11 eingeführt und wird verwendet, um eine Reihe von Aktionen zu definieren, die durchgeführt werden sollten, wenn der Benutzer in einer der Zeilen in einer Tabellenansicht _in beide Richtungen bewegt_ wird. Dieses Verhalten ähnelt dem der nativen Mail-app. 
 
-Die `UITableViewRowAction` Klasse wird verwendet, um eine Aktion definieren, die stattfinden soll, wenn der Benutzer Kundenkarte horizontal auf eine Zeile in einer Tabellenansicht bleibt.
-Beim Bearbeiten einer Tabelle, Wischen auf eine Zeile nach links zeigt beispielsweise eine **löschen** Schaltfläche standardmäßig. Durch Anfügen von mehreren Instanzen von der `UITableViewRowAction` -Klasse eine `UITableView`, mehrere benutzerdefinierte Aktionen definiert werden können, jeweils einen eigenen Text, Formatierung und Verhalten.
+Die `UITableViewRowAction` -Klasse wird verwendet, um eine Aktion zu definieren, die ausgeführt wird, wenn der Benutzer in einer Zeile in einer Tabellenansicht horizontal nach links bewegt.
+Wenn Sie z. b. eine Tabelle bearbeiten, wird die Schaltfläche **Löschen** standardmäßig in einer Zeile nach links angezeigt. Indem mehrere Instanzen der `UITableViewRowAction` Klasse an einen `UITableView`angefügt werden, können mehrere benutzerdefinierte Aktionen definiert werden, jeweils mit eigenem Text, Formatierung und Verhalten.
 
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
-Eine drei Schritte sind erforderlich, um streichen Sie nach Aktionen mit implementieren `UISwipeActionsConfiguration`:
+Zum Implementieren von wischen-Aktionen mit `UISwipeActionsConfiguration`sind drei Schritte erforderlich:
 
-1. Außer Kraft setzen `GetLeadingSwipeActionsConfiguration` und/oder `GetTrailingSwipeActionsConfiguration` Methoden. Diese Methoden zurück, eine `UISwipeActionsConfiguration`. 
-2. Instanziieren der `UISwipeActionsConfiguration` zurückgegeben werden. Diese Klasse wird ein Array von `UIContextualAction`.
+1. Über `GetLeadingSwipeActionsConfiguration` schreiben Sie die `GetTrailingSwipeActionsConfiguration` Methoden und/oder. Diese Methoden geben einen `UISwipeActionsConfiguration`zurück. 
+2. Instanziieren Sie `UISwipeActionsConfiguration` die, die zurückgegeben werden soll. Diese Klasse nimmt ein-Array `UIContextualAction`an.
 3. Erstellen Sie eine `UIContextualAction`.
 
 Diese werden in den folgenden Abschnitten ausführlicher erläutert.
 
-### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. Implementieren der SwipeActionsConfigurations-Methoden
+### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. Implementieren der swipeactionskonfigurationen-Methoden
 
-`UITableViewController` (und auch `UITableViewSource` und `UITableViewDelegate`) enthält zwei Methoden: `GetLeadingSwipeActionsConfiguration` und `GetTrailingSwipeActionsConfiguration`, mit denen eine Reihe von Wischen Aktionen auf eine Zeile einer Tabelle zu implementieren. Die führenden Wischen-Aktion verweist auf ein Wischen nach, von der linken Seite des Bildschirms in einer links-nach-rechts-Sprache und von der rechten Seite des Bildschirms in einer rechts-nach-links-Sprache. 
+`UITableViewController`(und auch `UITableViewSource` und `UITableViewDelegate`) enthalten zwei Methoden: `GetLeadingSwipeActionsConfiguration` und `GetTrailingSwipeActionsConfiguration`, die zum Implementieren eines Satzes von Schwenk Aktionen für eine Tabellen Ansichts Zeile verwendet werden. Die führende wischen-Aktion verweist auf einen Schwenk von der linken Seite des Bildschirms in einer Sprache von links nach rechts und von der rechten Seite des Bildschirms in einer Sprache von rechts nach links. 
 
-Im folgenden Beispiel (aus der [TableSwipeActions](https://developer.xamarin.com/samples/monotouch/TableSwipeActions) Beispiel) demonstriert die Implementierung der führenden Wischen-Konfigurations. Zwei Aktionen werden erstellt, der kontextbezogenen Aktionen, die ausführlich erläutert werden [unten](#create-uicontextualaction). Diese Aktionen werden dann an eine neu initialisierte übergeben [ `UISwipeActionsConfiguration` ](#create-uiswipeactionsconfigurations), die als Rückgabewert verwendet wird.
+Das folgende Beispiel (aus dem [tableswipeer Actions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions) -Beispiel) veranschaulicht die Implementierung der führenden wischen-Konfiguration. Aus den kontextbezogenen Aktionen werden zwei Aktionen erstellt, die nach [folgend](#create-uicontextualaction)erläutert werden. Diese Aktionen werden dann an eine neu initialisierte [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)weitergegeben, die als Rückgabewert verwendet wird.
 
 
 ```csharp
@@ -63,9 +63,9 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
 <a name="create-uiswipeactionsconfigurations" />
 
-### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. Instanziieren Sie ein `UISwipeActionsConfiguration`
+### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. Instanziieren eines`UISwipeActionsConfiguration`
 
-Instanziieren einer `UISwipeActionsConfiguration` mithilfe der `FromActions` Methode, um ein neues Array vom hinzuzufügen `UIContextualAction`s, wie im folgenden Codeausschnitt gezeigt:
+Instanziieren Sie `UISwipeActionsConfiguration` einen, indem `FromActions` Sie die-Methode verwenden, um `UIContextualAction`ein neues Array von s hinzuzufügen, wie im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { flagAction, definitionAction })
@@ -73,23 +73,23 @@ var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualActio
 leadingSwipe.PerformsFirstActionWithFullSwipe = false;
 ```
 
-Es ist wichtig zu beachten, dass die Reihenfolge, in der sich Ihre Aktionen anzeigen, abhängig, wie sie in Ihrem Array übergeben werden. Beispielsweise zeigt den Code oben führende Kundenkarte wie also die Aktionen aus:
+Beachten Sie, dass die Reihenfolge, in der die Aktionen angezeigt werden, von der Art und Weise abhängt, wie Sie an das Array übermittelt werden. Der obige Code für führende Streif zeigt z. b. die Aktionen wie folgt an:
 
-![führende Wischen Aktionen angezeigt, auf eine Zeile einer Tabelle](row-action-images/action03.png)
+![führende Schwenk Aktionen, die für eine Tabellenzeile angezeigt werden](row-action-images/action03.png)
 
-Für nachfolgende Kundenkarte, werden die Aktionen angezeigt werden, wie in der folgenden Abbildung dargestellt:
+Für nachfolgende Streifen werden die Aktionen wie in der folgenden Abbildung dargestellt angezeigt:
 
-![nachfolgende Wischen Aktionen angezeigt, auf eine Zeile einer Tabelle](row-action-images/action04.png)
+![nachfolgende Schwenk Aktionen, die in einer Tabellenzeile angezeigt werden](row-action-images/action04.png)
 
-Dieser Codeausschnitt verwendet auch das neue `PerformsFirstActionWithFullSwipe` Eigenschaft. Standardmäßig ist diese Eigenschaft auf festgelegt "true", was bedeutet, dass die erste Aktion in das Array, wenn ein Benutzer vollständig in einer Zeile mit einer wischbewegung erfolgt. Wenn Sie eine Aktion verfügen, die nicht destruktiv ist (z. B. "löschen", dies möglicherweise nicht die ideale Verhalten und legen sie daher auf `false`.
+In diesem Code Ausschnitt wird auch die neue `PerformsFirstActionWithFullSwipe` -Eigenschaft verwendet. Standardmäßig ist diese Eigenschaft auf true festgelegt, was bedeutet, dass die erste Aktion im Array auftritt, wenn ein Benutzer vollständig in einer Zeile schwimmt. Wenn Sie über eine Aktion verfügen, die nicht destruktiv ist (z. b. "Delete"), ist dies möglicherweise kein ideales Verhalten `false`, und Sie sollten es daher auf festlegen.
 
 <a name="create-uicontextualaction" />
 
 ### <a name="create-a-uicontextualaction"></a>Erstellen einer `UIContextualAction`
 
-Die kontextbezogene Aktion ist, in dem Sie tatsächlich die Aktion erstellt, die angezeigt wird, wenn der Benutzer eine Zeile einer Tabelle mit einer wischbewegung.
+Die kontextbezogene Aktion besteht darin, dass Sie die Aktion erstellen, die angezeigt wird, wenn der Benutzer eine Tabellenzeile durchläuft.
 
-Um eine Aktion zu initialisieren, müssen Sie angeben, einer `UIContextualActionStyle`, einen Titel und einen `UIContextualActionHandler`. Die `UIContextualActionHandler` akzeptiert drei Parameter: eine Aktion, die an, die die Aktion im angezeigt wurde und einen Abschlusshandler:
+Um eine Aktion zu initialisieren, müssen Sie `UIContextualActionStyle`, einen Titel und einen `UIContextualActionHandler`bereitstellen. Der `UIContextualActionHandler` übernimmt drei Parameter: eine Aktion, die Ansicht, in der die Aktion angezeigt wurde, und ein Vervollständigungs Handler:
 
 ```csharp
 public UIContextualAction ContextualFlagAction(int row)
@@ -113,13 +113,13 @@ public UIContextualAction ContextualFlagAction(int row)
 }
 ```
 
-Unterschiedliche visuelle Eigenschaften, z. B. die Hintergrundfarbe oder ein Bild der Aktion können bearbeitet werden. Der obige Codeausschnitt veranschaulicht, Hinzufügen eines Bilds an die Aktion und Festlegen der Hintergrundfarbe in Blau.
+Verschiedene visuelle Eigenschaften, z. b. die Hintergrundfarbe oder das Bild der Aktion, können bearbeitet werden. Der obige Code Ausschnitt veranschaulicht das Hinzufügen eines Bilds zur Aktion und das Festlegen der Hintergrundfarbe auf blau.
 
-Nachdem der kontextbezogenen Aktionen erstellt wurden, können sie Sie initialisieren den `UISwipeActionsConfiguration` in die `GetLeadingSwipeActionsConfiguration` Methode.
+Nachdem die kontextbezogenen Aktionen erstellt wurden, können Sie verwenden, um das `UISwipeActionsConfiguration` in der `GetLeadingSwipeActionsConfiguration` -Methode zu initialisieren.
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-So definieren Sie eine oder mehrere benutzerdefinierte Zeilenaktionen für eine `UITableView`, Sie benötigen zum Erstellen einer Instanz von der `UITableViewDelegate` Klasse, und überschreiben die `EditActionsForRow` Methode. Zum Beispiel:
+Um eine oder mehrere benutzerdefinierte Zeilen Aktionen für einen `UITableView`zu definieren, müssen Sie eine Instanz `UITableViewDelegate` der-Klasse erstellen und die `EditActionsForRow` -Methode überschreiben. Beispiel:
 
 ```csharp
 using System;
@@ -163,7 +163,7 @@ namespace BasicTable
 }
 ```
 
-Die statische `UITableViewRowAction.Create` Methode dient zum Erstellen eines neuen `UITableViewRowAction` zeigt, die eine **Hi** -Schaltfläche, wenn der Benutzer Kundenkarte horizontal auf eine Zeile in der Tabelle nach links. Später eine neue Instanz der dem `TableDelegate` erstellt und angefügt ist die `UITableView`. Zum Beispiel:
+Die statische `UITableViewRowAction.Create` -Methode wird verwendet, um eine `UITableViewRowAction` neue zu erstellen, die eine **Hi** -Schaltfläche anzeigt, wenn der Benutzer in einer Zeile in der Tabelle horizontal nach links bewegt wird. Später `TableDelegate` wird eine neue Instanz von erstellt und an die `UITableView`angefügt. Beispiel:
 
 ```csharp
 TableDelegate tableDelegate;
@@ -175,15 +175,15 @@ table.Delegate = tableDelegate;
 
 ```
 
-Wenn der obige Code ausgeführt wird, und die Benutzer-Kundenkarte auf die Zeile einer Tabelle links, die **Hi** Schaltfläche nicht angezeigt wird der **löschen** Schaltfläche, die standardmäßig angezeigt wird:
+Wenn der obige Code ausgeführt wird und der Benutzer in einer Tabellenzeile nach links drückt, wird die Schaltfläche " **Hi** " anstelle der standardmäßig angezeigten Schaltfläche " **Löschen** " angezeigt:
 
-[![](row-action-images/action01.png "Die Schaltfläche \"Hi\" angezeigt wird, anstatt die Schaltfläche \"löschen\"")](row-action-images/action01.png#lightbox)
+[![](row-action-images/action01.png "Die angezeigte Schaltfläche \"Hi\" anstelle der Schaltfläche \"Löschen\"")](row-action-images/action01.png#lightbox)
 
-Wenn der Benutzer tippt der **Hi** Schaltfläche `Hello World!` geschrieben wird an die Konsole in Visual Studio für Mac oder Visual Studio, wenn die Anwendung im Debugmodus ausgeführt wird.
+Wenn der Benutzer auf die Schaltfläche " `Hello World!` Hi" tippt, wird in Visual Studio für Mac oder Visual Studio in die Konsole geschrieben, wenn die Anwendung im Debugmodus ausgeführt wird.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TableSwipeActions (Beispiel)](https://developer.xamarin.com/samples/monotouch/TableSwipeActions)
-- [WorkingWithTables (Beispiel)](https://developer.xamarin.com/samples/monotouch/WorkingWithTables)
+- [Tableswipeer Actions (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
+- [Workingwithtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 238ba1853df523ee275de628ebdbd138a6d1d1bf
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649612"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650274"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms-Eintrag
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Einzeiligen Text oder das Kennwort eingeben_
 
@@ -59,9 +59,9 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 > [!NOTE]
 > Die Breite des ein `Entry` definiert werden, indem Sie die Einstellung der `WidthRequest` Eigenschaft. Hängen nicht von der Breite des ein `Entry` definiert basierend auf den Wert der `Text` Eigenschaft.
 
-### <a name="preventing-text-entry"></a>Verhindern von Texteingabe
+### <a name="preventing-text-entry"></a>Verhindern des Text Eintrags
 
-Benutzer können verhindert werden, ändern Sie den Text in eine [ `Entry` ](xref:Xamarin.Forms.Entry) durch Festlegen der `IsReadOnly` -Eigenschaft, die einen Standardwert besitzt der `false`zu `true`:
+Benutzer können daran gehindert werden, den Text in einer [`Entry`](xref:Xamarin.Forms.Entry) zu ändern, `IsReadOnly` indem Sie die-Eigenschaft mit dem Standard `false`Wert auf `true`festlegen:
 
 ```xaml
 <Entry Text="This is a read-only Entry"
@@ -73,7 +73,7 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 ```
 
 > [!NOTE]
-> Die `IsReadonly` Eigenschaft ändert sich nicht auf die visuelle Darstellung des ein [ `Entry` ](xref:Xamarin.Forms.Entry)anders als die `IsEnabled` -Eigenschaft, die ändert sich auch die visuelle Darstellung des der `Entry` in Grau.
+> Die `IsReadonly` -Eigenschaft ändert nicht die visuelle Darstellung [`Entry`](xref:Xamarin.Forms.Entry)eines, anders als die `IsEnabled` -Eigenschaft `Entry` , die auch die visuelle Darstellung von in grau ändert.
 
 ### <a name="limiting-input-length"></a>Geben Sie die Länge beschränken
 
@@ -323,11 +323,11 @@ Eintrag macht zwei Ereignisse:
 - [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; wird ausgelöst, wenn der Benutzer die Eingabe beendet wurde, durch Drücken der EINGABETASTE auf der Tastatur.
 
 > [!NOTE]
-> Die [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) -Klasse, von dem [ `Entry` ](xref:Xamarin.Forms.Entry) erbt, verfügt auch über [ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused) und [ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)Ereignisse.
+> Die [`VisualElement`](xref:Xamarin.Forms.VisualElement) -Klasse, von [`Entry`](xref:Xamarin.Forms.Entry) der erbt, verfügt [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) auch [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) über die-und-Ereignisse.
 
 ### <a name="completed"></a>Abgeschlossen
 
-Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit einem Eintrag zu reagieren. `Completed` wird ausgelöst, wenn der Benutzer durch Drücken der EINGABETASTE auf der Tastatur drücken (oder durch Drücken der Tab-Taste in UWP) Eingabe mit einem Feld beendet. Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
+Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit einem Eintrag zu reagieren. `Completed`wird ausgelöst, wenn der Benutzer die Eingabe mit einem Feld beendet, indem die Rückgabetaste auf der Tastatur gedrückt wird (oder durch Drücken der Tab-Taste auf der UWP). Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -381,5 +381,5 @@ entry.TextChanged += Entry_TextChanged;
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Text (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [API-Eintrag](xref:Xamarin.Forms.Entry)
