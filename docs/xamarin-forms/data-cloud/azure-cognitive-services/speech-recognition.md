@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: f854ac363fe3e5b9dc3df046c9fab592b97bc962
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 97997a527647ae972eadff47da8c1321d5d55daa
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675261"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655457"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>Spracherkennung, die mit der Microsoft-Spracheingabe-API
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Der Microsoft Speech-API ist eine Cloud-basierte API, Algorithmen zur Verarbeitung gesprochener Sprache. In diesem Artikel wird erläutert, wie der Microsoft Speech Recognition-REST-API zu verwenden, um Audiodaten in Text in einer Xamarin.Forms-Anwendung zu konvertieren._
 
@@ -114,7 +114,7 @@ string GenerateRequestUri(string speechEndpoint)
 }
 ```
 
-Die wichtigsten Konfiguration durch die `GenerateRequestUri` Methode besteht darin, das Gebietsschema der Audioinhalt festgelegt. Eine Liste der unterstützten Gebietsschemas, finden Sie unter [unterstützte Sprachen](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/).
+Die wichtigsten Konfiguration durch die `GenerateRequestUri` Methode besteht darin, das Gebietsschema der Audioinhalt festgelegt. Eine Liste der unterstützten Gebiets Schemas finden Sie [unter Unterstützte Sprachen](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/).
 
 ### <a name="sending-the-request"></a>Senden der Anforderung
 
@@ -170,5 +170,5 @@ In diesem Artikel wurde erläutert, wie der REST-API von Microsoft zu verwenden,
 ## <a name="related-links"></a>Verwandte Links
 
 - [Dokumentation zu Microsoft Speech API](/azure/cognitive-services/speech/home/).
-- [Verwenden eines RESTful-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [TODO-Cognitive-Services (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
+- [TODO-Cognitive-Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

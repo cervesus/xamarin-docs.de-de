@@ -1,69 +1,69 @@
 ---
-title: Suche mit Markup im Web in Xamarin.iOS
-description: In diesem Dokument wird beschrieben, wie webbasierte Suchergebnisse zu erstellen, die mit einer Xamarin.iOS-app verknüpft wird. Es wird erläutert, wie Webinhalte indizieren, wodurch Ihrer app-Website mithilfe von smart-app-Banner, universelle Links und mehr auffindbar zu ermöglichen.
+title: Suche mit webmarkup in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie webbasierte Suchergebnisse erstellt werden, die mit einer xamarin. IOS-App verknüpft sind. Darin wird erläutert, wie Sie die Indizierung von Webanwendungen aktivieren, damit die Website Ihrer APP auffindbar ist, und zwar mit intelligenten App-Banner, universellen Links und mehr.
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a9cf3dab9c112bf7ff99cbc0dd9541c3c1e35142
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: bd4c09b7defcc3038919a4dea841d7bd1d02f39e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830143"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654078"
 ---
-# <a name="search-with-web-markup-in-xamarinios"></a>Suche mit Markup im Web in Xamarin.iOS
+# <a name="search-with-web-markup-in-xamarinios"></a>Suche mit webmarkup in xamarin. IOS
 
-Für apps, die Zugriff auf ihre Inhalte über eine Website bereitstellen (nicht nur von innerhalb der app), Webinhalte kann sich mit speziellen Links, die von Apple wird gecrawlt und deep links, um Ihre app auf dem Gerät des Benutzers iOS 9 markiert werden.
+Für apps, die den Zugriff auf Ihre Inhalte über eine Website ermöglichen (nicht nur innerhalb der APP), können Webinhalte mit speziellen Links gekennzeichnet werden, die von Apple durchforstet werden, und Deep Linking Ihrer APP auf dem IOS 9-Gerät des Benutzers bereitstellen.
 
-Wenn Ihre iOS-app bereits mobile deep-Links unterstützt und Ihrer Website, deep-Links zu Inhalten innerhalb Ihrer app, Apple angezeigt _Applebot_ Webcrawler werden diese Inhalte zu indizieren und fügen Sie diese in ihren Cloud-Index:
+Wenn Ihre IOS-App bereits Mobile Deep Linking unterstützt und Ihre Website Deep-Links zu Inhalten in Ihrer APP präsentiert, indiziert Apple _applebot_ Web Crawler diesen Inhalt und fügt ihn automatisch dem cloudindex hinzu:
 
-[![](web-markup-images/webmarkup01.png "Übersicht über die Cloud-Index")](web-markup-images/webmarkup01.png#lightbox)
+[![](web-markup-images/webmarkup01.png "Übersicht über den cloudindex")](web-markup-images/webmarkup01.png#lightbox)
 
-Apple wird diese Ergebnisse in Spotlight-Suche, und suchen Sie Safari-Ergebnissen auftreten.
-Wenn Sie auf der Benutzer tippt auf eines der folgenden Ergebnisse (und sie Ihre app installiert haben) und dann sie auf den Inhalt in Ihrer app ausgeführt werden:
+Apple zeigt diese Ergebnisse in Spotlight-Suche und Safari-Suchergebnissen an.
+Wenn der Benutzer auf eines dieser Ergebnisse tippt (und die APP installiert ist), werden Sie an den Inhalt in Ihrer APP weitergeleitet:
 
-[![](web-markup-images/webmarkup02.png "Tiefe auf einer Website in den Suchergebnissen verknüpfen")](web-markup-images/webmarkup02.png#lightbox)
+[![](web-markup-images/webmarkup02.png "Deep Linking von einer Website in den Suchergebnissen")](web-markup-images/webmarkup02.png#lightbox)
 
-## <a name="enabling-web-content-indexing"></a>Web Content Indizierung aktivieren
+## <a name="enabling-web-content-indexing"></a>Aktivieren der Webinhalts Indizierung
 
-Es gibt vier Schritte erforderlich, damit Sie die app-Inhalte durchsuchbar mithilfe von Markup im Web:
+Es gibt vier Schritte, die erforderlich sind, um den Inhalt Ihrer App mithilfe von webmarkup durchsuchbar zu machen:
 
-1. Sicherstellen, dass Apple ermitteln und index-Ihrer-app-Website durch die Definition als kann die **Unterstützung** oder **Marketing** -Website in iTunes Connect.
-2. Stellen Sie sicher, dass die Website von Ihrer app das erforderliche Markup zum Implementieren von mobile deep-Links enthält. Finden Sie unter den folgenden Abschnitten Weitere Informationen.
-3. Aktivieren Sie deep-Link in Ihre iOS-app verarbeiten.
-4. Fügen Sie Markup für die strukturierten Daten, die von Ihrer app-Website zu einem Ergebnis funktionsreicher und ansprechender für den Endbenutzer verfügbar gemacht. Dieser Schritt ist, zwar nicht zwingend erforderlich wird es von Apple empfohlen.
+1. Stellen Sie sicher, dass Apple die Website Ihrer APP ermitteln und indizieren kann, indem Sie Sie als **Support** -oder **Marketing** Website in iTunes Connect definieren.
+2. Stellen Sie sicher, dass die Website Ihrer APP das erforderliche Markup zum Implementieren mobiler Deep Linking enthält. Weitere Informationen finden Sie in den folgenden Abschnitten.
+3. Aktivieren Sie die Verarbeitung von Deep-Links in ihrer IOS-app.
+4. Fügen Sie für die strukturierten Daten, die von der Website Ihrer APP bereitgestellt werden, Markup hinzu, um dem Endbenutzer ein umfassendes und ansprechendes Ergebnis zu bieten. Obwohl dieser Schritt nicht zwingend erforderlich ist, wird er von Apple dringend empfohlen.
 
-In den folgenden Abschnitten werden diese Schritte im Detail besprochen.
+In den folgenden Abschnitten werden diese Schritte ausführlich erläutert.
 
-## <a name="make-your-apps-website-discoverable"></a>Stellen Sie Ihrer App-Website ermittelt
+## <a name="make-your-apps-website-discoverable"></a>Auffallen, dass die Website der APP erkennbar ist
 
-Die einfachste Möglichkeit, haben Apple-Ihrer-app-Website zu finden ist die für die Verwendung als die **Unterstützung** oder **Marketing** Website, wenn Sie Ihre app an Apple über iTunes Connect übermitteln.
+Die einfachste Möglichkeit, Apple die Website Ihrer APP zu finden, ist die Verwendung als **Support** -oder **Marketing** Website, wenn Sie Ihre APP über iTunes Connect an Apple übermitteln.
 
-## <a name="using-smart-app-banners"></a>Mithilfe von Smart-App-Banner
+## <a name="using-smart-app-banners"></a>Verwenden von intelligenten App-Banner
 
-Geben Sie ein Smart-App-Banner auf Ihrer Website einen Link löschen in Ihrer app zu präsentieren. Wenn die app nicht bereits installiert ist, fordert der Safari automatisch den Benutzer auf Ihre app zu installieren. Andernfalls tippen auf die Verwendung der **Ansicht** Link zum Starten der app auf der Website. Zum Erstellen einer intelligenten App-Bannerbenachrichtigung können Sie z. B. den folgenden Code verwenden:
+Stellen Sie ein intelligentes App-Banner auf Ihrer Website bereit, um einen klaren Link zu Ihrer APP zu präsentieren. Wenn die APP nicht bereits installiert ist, wird der Benutzer von Safari automatisch aufgefordert, Ihre APP zu installieren. Andernfalls kann die Verwendung auf den Link " **Ansicht** " tippen, um Ihre APP von der Website zu starten. Wenn Sie z. b. ein SmartApp-Banner erstellen möchten, können Sie den folgenden Code verwenden:
 
 ```xml
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
-Weitere Informationen finden Sie unter Apple [Höherstufen von Apps mit App-Banner Smart](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html) Dokumentation.
+Weitere Informationen finden Sie in der Dokumentation zu den Apple [promoten apps mit intelligenten apps](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html) .
 
-## <a name="using-universal-links"></a>Verwenden universelle Links
+## <a name="using-universal-links"></a>Verwenden universeller Verknüpfungen
 
-Neue IOS 9, universelle Links geben Sie eine bessere Alternative als intelligente App-Banner oder vorhandene benutzerdefinierte URL-Schemas durch die Bereitstellung der Folgendes:
+Universelle Verknüpfungen für IOS 9 bieten eine bessere Alternative zu intelligenten App-transparenten oder vorhandenen benutzerdefinierten URL-Schemas, indem Sie Folgendes bereitstellen:
 
-- **Eindeutige** – kann nicht die gleiche URL von mehr als eine Website in Anspruch genommen werden.
-- **Sichere** – ein signiertes Zertifikat ist erforderlich, für die Website, die sicherstellt, die Website gehört und ordnungsgemäß verknüpft die Ihrer app.
-- **Flexible** – Benutzer können steuern, ob die URL der Website oder die app gestartet wird.
-- **Universelle** – die gleiche URL kann verwendet werden, um sowohl Ihrer Website und Ihrer app-Inhalte zu definieren.
+- **Eindeutig** – dieselbe URL kann nicht von mehr als einer Website beansprucht werden.
+- **Sicher** – ein signiertes Zertifikat ist für die Website erforderlich, mit der sichergestellt wird, dass sich die Website im Besitz von Ihnen befindet und mit Ihrer APP ordnungsgemäß verknüpft ist.
+- **Flexibel** – der Endbenutzer kann steuern, ob die URL die Website oder die app starten soll.
+- **Universal** – die gleiche URL kann verwendet werden, um sowohl den Inhalt Ihrer Website als auch den Inhalt Ihrer APP zu definieren.
 
-## <a name="using-twitter-cards"></a>Verwendung von Twitter-Karten
+## <a name="using-twitter-cards"></a>Verwenden von Twitter-Karten
 
-Sie können deep-Links zu Ihrer app-Inhalte, die mithilfe einer Twitter-Karte angeben. Beispiel:
+Sie können mithilfe einer Twitter-Karte Deep Links zum Inhalt Ihrer APP bereitstellen. Beispiel:
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -71,11 +71,11 @@ Sie können deep-Links zu Ihrer app-Inhalte, die mithilfe einer Twitter-Karte an
 <meta name="twitter:app:url:iphone" content="AppNameURL">
 ```
 
-Weitere Informationen finden Sie unter der Twitter [Twitter-Karte Protokoll](http://dev.twitter.com/cards/mobile) Dokumentation.
+Weitere Informationen finden Sie in der Twitter-Dokumentation zum [Twitter-Karten Protokoll](http://dev.twitter.com/cards/mobile) von Twitter.
 
-## <a name="using-facebook-app-links"></a>Mithilfe von Facebook-App-Links
+## <a name="using-facebook-app-links"></a>Verwenden von Facebook-App-Links
 
-Sie können deep-Links zu den Inhalt Ihrer app mit einer Facebook-App-Link bereitstellen. Beispiel:
+Sie können mit einem Facebook-App-Link Deep Links zum Inhalt Ihrer APP bereitstellen. Beispiel:
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -83,11 +83,11 @@ Sie können deep-Links zu den Inhalt Ihrer app mit einer Facebook-App-Link berei
 <meta property="al:ios:url" content="AppNameURL">
 ```
 
-Weitere Informationen finden Sie unter Facebook [App Links](http://applinks.org) Dokumentation.
+Weitere Informationen finden Sie in der Dokumentation der Facebook- [App-Links](http://applinks.org) .
 
-## <a name="opening-deep-links"></a>Öffnen Deep-Links
+## <a name="opening-deep-links"></a>Öffnen von Deep-Links
 
-Sie müssen zum Hinzufügen der Unterstützung für das Öffnen und Anzeigen von Deep-Links in Ihrer Xamarin.iOS-app. Bearbeiten der **Datei "appdelegate.cs"** Datei, und überschreiben die `OpenURL` Methode, um das benutzerdefinierte URL-Format zu verarbeiten. Beispiel:
+Sie müssen Unterstützung für das Öffnen und Anzeigen von Deep-Links in ihrer xamarin. IOS-app hinzufügen. Bearbeiten Sie die Datei **AppDelegate.cs** , und `OpenURL` überschreiben Sie die Methode, um das benutzerdefinierte URL-Format zu verarbeiten Beispiel:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,15 +113,15 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-Im obigen Code suchen wir eine URL mit `/appname` und übergeben den Wert der `query` (`123` in diesem Beispiel), einen benutzerdefinierten ansichtencontroller in unserer app, um den angeforderten Inhalt an den Benutzer anzuzeigen.
+Im obigen Code suchen wir nach einer URL, die enthält `/appname` und den Wert von `query` (`123` in diesem Beispiel) an einen benutzerdefinierten Ansichts Controller in unserer App übergibt, um dem Benutzer den angeforderten Inhalt anzuzeigen.
 
-## <a name="providing-rich-results-with-structured-data"></a>Bereitstellen von Rich-Ergebnisse mit strukturierten Daten
+## <a name="providing-rich-results-with-structured-data"></a>Bereitstellen umfangreicher Ergebnisse mit strukturierten Daten
 
-Durch Einschließen von strukturierten Daten Markup können Sie umfassende Suchergebnisse bereitstellen, für den Endbenutzer, die einfach einen Titel und Beschreibung hinausgehen. Enthalten Sie Bilder, die bestimmte app-Daten (etwa Bewertungen) und die Aktionen, die Ergebnisse mithilfe von Markup für strukturierte Daten.
+Durch Einschließen von strukturiertem Daten Markup können Sie den Endbenutzern umfassende Suchergebnisse bereitstellen, die über einen Titel und eine Beschreibung hinausgehen. Einschließen von Bildern, App-spezifischen Daten (z. b. Bewertungen) und Aktionen, die mit strukturiertem Daten Markup erzielt werden.
 
-Umfassende Ergebnisse sind viel ansprechender und verbessert die Rangfolge in der Cloud anhand einer verlockenden mehr Benutzer zur Interaktion Search-Index.
+Umfassende Ergebnisse sind ansprechender und können dazu beitragen, ihre Rangfolge im cloudbasierten Suchindex zu verbessern, indem mehr Benutzer zur Interaktion mit Ihnen verleitet werden.
 
-Eine Option für die Bereitstellung von strukturierten Daten Markup ist die Verwendung von Open Graph. Beispiel:
+Eine Möglichkeit zum Bereitstellen von strukturiertem Daten Markup ist die Verwendung von Open Graph. Beispiel:
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -129,9 +129,9 @@ Eine Option für die Bereitstellung von strukturierten Daten Markup ist die Verw
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
 ```
 
-Weitere Informationen finden Sie unter den [Open Graph](http://ogp.me) Website.
+Weitere Informationen finden Sie auf der [Open Graph](http://ogp.me) -Website.
 
-Ein anderes gängiges Format für strukturierte Daten Markup ist die Schema.org-Mikrodaten-Format. Beispiel:
+Ein weiteres gängiges Format für strukturiertes Daten Markup ist das Format von Schema. org im Mikrodaten Format. Beispiel:
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -141,7 +141,7 @@ Ein anderes gängiges Format für strukturierte Daten Markup ist die Schema.org-
 
 ```
 
-Die gleiche Informationen kann im Schema.org des JSON-LD-Format dargestellt werden:
+Die gleichen Informationen können im JSON-LD-Format von Schema. org dargestellt werden:
 
 ```xml
 <script type="application/ld+json">
@@ -152,32 +152,32 @@ Die gleiche Informationen kann im Schema.org des JSON-LD-Format dargestellt werd
 </script>
 ```
 
-Der folgende Code zeigt ein Beispiel Metadaten auf Ihrer Website, die umfassende Suchergebnisse für den Endbenutzer bereitstellen:
+Im folgenden finden Sie ein Beispiel für Metadaten von Ihrer Website, die dem Endbenutzer umfangreiche Suchergebnisse bieten:
 
-[![](web-markup-images/deeplink01.png "Umfassende Suchergebnisse über strukturierte Daten Markup")](web-markup-images/deeplink01.png#lightbox)
+[![](web-markup-images/deeplink01.png "Umfassende Suchergebnisse über strukturiertes Daten Markup")](web-markup-images/deeplink01.png#lightbox)
 
-Apple unterstützt derzeit die folgenden Schematypen schema.org:
+Apple unterstützt derzeit die folgenden Schema Typen von Schema.org:
 
 - AggregateRating
-- ImageObject
-- InteractionCount
+- Imageobject
+- Interaktioncount
 - Angebote
 - Organization
-- PriceRange
-- Anleitung
+- Pricerange
+- Tions
 - SearchAction
 
-Weitere Informationen zu diesen Schemas finden Sie unter [schema.org](http://schema.org).
+Weitere Informationen zu diesen Schema Typen finden Sie unter [Schema.org](http://schema.org).
 
 ## <a name="providing-actions-with-structured-data"></a>Bereitstellen von Aktionen mit strukturierten Daten
 
-Bestimmte Typen von strukturierten Daten lässt sich auf ein Suchergebnis vom Endbenutzer reagiert werden. Derzeit werden die folgenden Aktionen unterstützt:
+Bestimmte Typen strukturierter Daten ermöglichen, dass ein Suchergebnis vom Endbenutzer verwendet werden kann. Derzeit werden die folgenden Aktionen unterstützt:
 
-- Wählen eine Telefonnummer ein.
-- Abrufen von Map-Richtung, in einer bestimmten Adresse.
-- Wiedergeben einer Audio- oder video-Datei an.
+- Eine Telefonnummer wird unterschieden.
+- Zuordnen von Zuordnungs Richtung zu einer bestimmten Adresse.
+- Wiedergabe einer Audiodatei oder Videodatei.
 
-Definieren eine Aktion, um eine Telefonnummer zu wählen könnte beispielsweise wie folgt aussehen:
+Beispielsweise könnte die Definition einer Aktion, mit der eine Telefonnummer gewählt werden soll, wie folgt aussehen:
 
 ```xml
 <div itemscope itemtype="http://schema.org/Organization">
@@ -186,9 +186,9 @@ Definieren eine Aktion, um eine Telefonnummer zu wählen könnte beispielsweise 
 
 ```
 
-Wenn dieses Suchergebnis für den Endbenutzer angezeigt wird, wird ein kleines Telefonsymbol im Resultset angezeigt. Wenn der Benutzer das Symbol tippt, wird die angegebene Zahl aufgerufen werden.
+Wenn das Suchergebnis für den Endbenutzer angezeigt wird, wird im Ergebnis ein kleines Telefon Symbol angezeigt. Wenn der Benutzer auf das Symbol tippt, wird die angegebene Zahl aufgerufen.
 
-Eine Aktion, um die Wiedergabe einer Audiodatei im Suchergebnis würde folgende HTML-Code hinzugefügt werden:
+Der folgende HTML-Code würde eine Aktion hinzufügen, um eine Audiodatei aus dem Suchergebnis wiederzugeben:
 
 ```xml
 <div itemscope itemtype="http://schema.org/AudioObject">
@@ -197,7 +197,7 @@ Eine Aktion, um die Wiedergabe einer Audiodatei im Suchergebnis würde folgende 
 
 ```
 
-Folgende HTML-Code würde schließlich eine Aktion zum Abrufen von Anweisungen aus den Suchergebnissen hinzugefügt werden:
+Schließlich würde der folgende HTML-Code eine Aktion hinzufügen, um Anweisungen aus dem Suchergebnis zu erhalten:
 
 ```xml
 <div itemscope itemtype="http://schema.org/PostalAddress">
@@ -209,13 +209,13 @@ Folgende HTML-Code würde schließlich eine Aktion zum Abrufen von Anweisungen a
 
 ```
 
-Weitere Informationen finden Sie unter Apple [App-Suche-Entwicklerwebsite](https://developer.apple.com/ios/search/).
+Weitere Informationen finden Sie auf der [App Search-Entwickler Website](https://developer.apple.com/ios/search/)von Apple.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS 9-Beispiele](https://developer.xamarin.com/samples/ios/iOS9/)
-- [iOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
+- [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [IOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Programmierhandbuch für App-Suche](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)
+- [Programmier Handbuch für die APP-Suche](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

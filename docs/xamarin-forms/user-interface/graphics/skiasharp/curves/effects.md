@@ -7,16 +7,16 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: ee1df713315559c076fbfaed6f5a34057940ff36
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e0af5188dd34e76b419b4cd5bf8d604fb059b7d3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61083132"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642759"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp-Effekten Pfad
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Ermitteln Sie die verschiedenen pfadeffekte, mit die Pfade für die Kontur zuweisen, und füllen Sie verwendet werden können_
 
@@ -418,7 +418,7 @@ Eine Kette oder Kabel des uniform gewichtsverteilung hängt in Form einer Oberle
 
 `y = a · cosh(x / a)`
 
-Die *Cosh* ist die hyperbolische Kosinus-Funktion. Für *x* gleich 0 (null) *Cosh* ist 0 (null) und *y* gleich *eine*. Das ist der Mitte des der Oberleitung. Wie die *Kosinus* -Funktion *Cosh* gilt als *sogar*, was bedeutet, dass *cosh(–x)* gleich *cosh(x)*, und erhöhen Sie die Werte für die Steigerung der positiver oder negativer Arguments. Diese Werte beschreiben die Kurven, die die Seiten der Oberleitung bilden.
+Die *Cosh* ist die hyperbolische Kosinus-Funktion. Für *x* gleich 0 (null) *Cosh* ist 0 (null) und *y* gleich *eine*. Das ist der Mitte des der Oberleitung. Wie die *Kosinus* -Funktion *Cosh* gilt als *sogar*, was bedeutet, dass *cosh(–x)* gleich *cosh(x)* , und erhöhen Sie die Werte für die Steigerung der positiver oder negativer Arguments. Diese Werte beschreiben die Kurven, die die Seiten der Oberleitung bilden.
 
 Suchen den richtigen Wert von *eine* Anpassen der Oberleitung mit den Abmessungen des Telefons-Seite ist keine direkte Berechnung. Wenn *w* und *h* sind die Breite und Höhe eines Rechtecks, das den optimalen Wert für *eine* erfüllt die folgende Gleichung:
 
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-Wenn Sie die Ergebnisse sorgfältig betrachten, sehen Sie sich, dass die rote und blaue schraffurlinien genau auf die abgerundetes Rechteck beschränkt sind nicht. (Dies ist offensichtlich ein Merkmal des zugrunde liegenden Codes Skia.) Wenn dies nicht zufriedenstellend ist, ist ein alternativer Ansatz für die diagonale schraffurlinien in grün angezeigt: Abgerundete Rechteck als einen Freistellungspfad verwendet wird, und die schraffurlinien werden auf die gesamte Seite gezeichnet.
+Wenn Sie die Ergebnisse sorgfältig betrachten, sehen Sie sich, dass die rote und blaue schraffurlinien genau auf die abgerundetes Rechteck beschränkt sind nicht. (Dies ist offensichtlich ein Merkmal des zugrunde liegenden Codes Skia.) Wenn dies nicht zufriedenstellend ist, wird ein alternativer Ansatz für die diagonal Schraffurlinien in grün angezeigt: Das abgerundete Rechteck wird als clippingpfad verwendet, und die Schraffurlinien werden auf der gesamten Seite gezeichnet.
 
 Die `PaintSurface` Handler endet mit einem Aufruf von einfach die abgerundete Rechteck zu zeichnen, damit Sie die Abweichung mit dem roten und blauen schraffurlinien sehen können:
 
 [![](effects-images/hatchfill-small.png "Dreifacher Screenshot der Seite ausfüllen Schraffur")](effects-images/hatchfill-large.png#lightbox "dreifachen Screenshot der Seite ausfüllen Schraffur")
 
-Die Android-Bildschirm aussehen nicht wirklich: Die Skalierung des Screenshots hat die schmale rote Linien und thin zu scheinbar breiter roten Linien zusammenfassen, auch größeren Leerzeichen verursacht.
+Der Android-Bildschirm sieht nicht wirklich wie folgt aus: Die Skalierung des Screenshots hat bewirkt, dass die schmalen roten Linien und die dünnen Leerzeichen in scheinbar breitere rote und größere Leerräume konsolidiert wurden.
 
 ## <a name="filling-with-a-path"></a>Füllen mit einem Pfad
 
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 Nur die ersten beiden Argumente erforderlich sind. Die Methode greift auf den Pfad, der auf die verwiesen wird durch die `src` Argument ändert die Pfaddaten, die basierend auf den Stricheigenschaften in der `SKPaint` Objekt (einschließlich der `PathEffect` Eigenschaft), und schreibt dann die Ergebnisse in der `dst` Pfad. Die `resScale` Parameter ermöglicht, verringern Sie die Genauigkeit, um einen kleineren Zielpfad an, zu erstellen und die `cullRect` Argument Konturen außerhalb eines Rechtecks kann ausgeschlossen werden.
 
-Eine grundlegende Verwendung dieser Methode muss überhaupt keine pfadeffekte werden: Wenn die `SKPaint` Objekt verfügt über seine `Style` -Eigenschaft auf festgelegt `SKPaintStyle.Stroke`, und führt *nicht* haben die `PathEffect` festgelegt ist, `GetFillPath` erstellt einen Pfad, der darstellt ein *Gliederung*von den Quellpfad, als ob es durch die Eigenschaften für die Paint-Element gezeichnet worden.
+Eine grundlegende Verwendung dieser Methode beinhaltet keine Pfad Effekte: Wenn für `SKPaint` das `Style` `SKPaintStyle.Stroke` `PathEffect` -Objektdie-Eigenschaftauffestgelegtistundnichtüberdiefestgelegte-Eigenschaftverfügt,wirdvoneinPfaderstellt,dereinenUmrissdesQuellPfadsdarstellt,alsob`GetFillPath` er vom Paint-Eigenschaften.
 
 Z. B. wenn die `src` Pfad ist ein einfacher Kreis RADIUS 500, und die `SKPaint` Objekt gibt an, eine Strichbreite von 100, und klicken Sie dann die `dst` Pfad wird der beiden konzentrischen Kreise, eine mit einem Radius von 450 und der andere mit einem Radius von 550. Die Methode wird aufgerufen, `GetFillPath` , da dies ausfüllen `dst` Pfad entspricht dem Verlauf der `src` Pfad. Aber Sie können auch zeichnen die `dst` Pfades darauf, den Pfad beschreibt.
 
@@ -1418,4 +1418,4 @@ Nun, da Sie pfadeffekte, reichen von einfachen Punkte und Striche seltsame Kombi
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

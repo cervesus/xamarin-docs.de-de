@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 8587cade1c5b4a6882f21603ee869f94f38fd04a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ebaf5bf2fcb82dd98147819ea9e089dcd427affc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61086004"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644456"
 ---
 # <a name="native-views-in-c"></a>Native Ansichten in c#
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
 _Native Ansichten von iOS-, Android- und UWP können direkt von Xamarin.Forms-Seiten, die mit c# erstellte verwiesen werden. In diesem Artikel wird veranschaulicht, wie eine Xamarin.Forms-Layout mit c# erstellte native Ansichten hinzugefügt, und wie Sie das Layout der benutzerdefinierte Ansichten, korrigieren Sie die Messung API-Nutzung außer Kraft zu setzen._
 
@@ -323,5 +323,5 @@ In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Layout mit c# erstellt
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [NativeEmbedding (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
+- [NativeEmbedding (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 - [Native Formulare](~/xamarin-forms/platform/native-forms.md)

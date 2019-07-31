@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 9c88d0a90cf5f1cae0e27a05aeaa71f726ddb4de
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: b765bafe5e7a227a4ad5325046e9f005ba097dc8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511682"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653150"
 ---
 # <a name="introduction-to-macos-mojave"></a>Einführung in macOS Mojave
 
@@ -46,6 +46,6 @@ Mit macOS-mujave hat Apple OpenGL es und OpenCL als veraltet eingestuft und [Ent
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin. Mac-Beispiele](https://developer.xamarin.com/samples/mac/)
+- [Xamarin. Mac-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [macOS – Apple-Entwickler](https://developer.apple.com/macos/)
 - [Anmerkungen zu dieser Version von xamarin. Mac 5,0](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)

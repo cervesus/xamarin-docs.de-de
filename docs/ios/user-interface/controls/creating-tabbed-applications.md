@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: e02b5631aff76e35300ae4d7dd5e3c6652f6e3da
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1c3be128749b9fd0f67aa83038b3d30f4b2fcd2d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61427020"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657541"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Registerkartenleisten und Registerkartenleisten-Controller in Xamarin.iOS
 
@@ -61,7 +61,7 @@ Wählen Sie die **Datei > Neu > Projektmappe** Menüelement in Visual Studio fü
 
 ### <a name="adding-the-uitabbarcontroller"></a>Hinzufügen der UITabBarController
 
-Fügen Sie eine leere Klasse dazu **Datei > neue Datei** auswählen und die **Allgemein: Leere Klasse** Vorlage. Nennen Sie die Datei `TabController` wie unten dargestellt:
+Fügen Sie als nächstes eine leere Klasse hinzu, indem Sie **Datei > neue Datei** auswählen und die **Option Allgemein auswählen: Leere Klassen** Vorlage. Nennen Sie die Datei `TabController` wie unten dargestellt:
 
 [![](creating-tabbed-applications-images/02-newclass.png "Fügen Sie die TabController-Klasse")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
@@ -283,8 +283,8 @@ Als Nächstes erstellen eine einfache Benutzeroberfläche für jede ViewControll
 
 Wir möchten, ziehen eine `Label` und `Button` auf ViewController1 aus der **ToolBox** auf der rechten Seite. Als Nächstes verwenden wir das Pad "Eigenschaften", so bearbeiten Sie den Namen und den Text der Steuerelemente auf Folgendes:
 
--  **Bezeichnung** : `Text` = **One**
--  **Schaltfläche** : `Title` = **Benutzer führt einige anfängliche Aktionen**
+-  **Bezeichnung** : `Text` = **Einseitig**
+-  **Schaltfläche** : `Title` = **Benutzer nimmt einige anfängliche Aktionen vor**
 
 
 Wir steuern die Sichtbarkeit der Schaltfläche in einem `TouchUpInside` -Ereignis, und wir müssen in der CodeBehind darauf verweisen. Wir identifizieren sie mit der **Namen** `aButton` in das Pad "Eigenschaften", wie im folgenden Screenshot dargestellt:
@@ -370,6 +370,6 @@ In diesem Artikel erläutert, wie Sie verwenden eine `UITabBarController` in ein
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Anwendungserstellung im Registerkartenformat (Beispiel)](https://developer.xamarin.com/samples/monotouch/CreatingTabbedApplications/)
+- [Anwendungserstellung im Registerkartenformat (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/creatingtabbedapplications)
 - [Images.zip](https://github.com/xamarin/ios-samples/blob/master/CreatingTabbedApplications/Resources/images.zip?raw=true)
 - [UITabBarController-Klassenreferenz](https://developer.apple.com/library/ios/#documentation/uikit/reference/UITabBarController_Class/Reference/Reference.html)

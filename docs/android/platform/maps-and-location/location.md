@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 35e3594f8b1496070e4770c05893d53feed6f2a1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: b44bb52dc69aae1d3d058a1eae7c3be13ec5dc53
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511254"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643337"
 ---
 # <a name="location-services-on-android"></a>Location Services unter Android
 
@@ -352,8 +352,8 @@ In diesem Leitfaden wurde das Abrufen des Speicher Orts des Benutzers mit dem An
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Speicherort (Beispiel)](https://developer.xamarin.com/samples/monodroid/Location/)
-- [Fusedlocationprovider (Beispiel)](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
+- [Speicherort (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/location)
+- [Fusedlocationprovider (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fusedlocationprovider)
 - [Google Play Services](https://developer.android.com/google/play-services/index.html)
 - [Criteria-Klasse](xref:Android.Locations.Criteria)
 - [Locationmanager-Klasse](xref:Android.Locations.LocationManager)

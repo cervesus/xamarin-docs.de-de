@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/12/2017
-ms.openlocfilehash: b5d32f486b45005534adc8929caf6158d1c62a4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 05d5003d349ae11a1ec6a1b6f3d66b2f68ffad8a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357175"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652870"
 ---
 # <a name="path-information-and-enumeration"></a>Pfadinformationen und -enumeration
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Abrufen von Informationen zu Pfaden und den Inhalt auflisten_
 
@@ -24,7 +24,7 @@ Die [ `SKPath` ](xref:SkiaSharp.SKPath) -Klasse definiert verschiedene Eigenscha
 
 Manchmal ist es sinnvoll, um zu bestimmen, die gesamte Länge aller Linien und Kurven, die einen Pfad zu bilden. Berechnet die Länge ist keine algorithmisch einfache Aufgabe, also eine ganze Klasse mit dem Namen [ `PathMeasure` ](xref:SkiaSharp.SKPathMeasure) verwendet wird, in es.
 
-Außerdem ist es manchmal sinnvoll, erhalten alle zeichnen-Vorgänge und Punkte, die einen Pfad zu bilden. Zunächst mag diese Funktion nicht erforderlich: Wenn Ihr Programm den Pfad erstellt hat, weiß die Anwendung bereits den Inhalt. Allerdings haben Sie gesehen, dass es sich bei Pfaden auch erstellt werden können [pfadeffekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) und durch umwandeln [Zeichenfolgen in Pfade](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Sie erhalten auch alle zeichnen-Vorgänge und Punkte, die diese Pfade bilden. Eine Möglichkeit besteht darin, auf die Punkte, z. B. eine algorithmische Transformation anwenden, um den Textfluss um eine Hemisphäre:
+Außerdem ist es manchmal sinnvoll, erhalten alle zeichnen-Vorgänge und Punkte, die einen Pfad zu bilden. Diese Anlage mag zunächst unnötig erscheinen: Wenn das Programm den Pfad erstellt hat, kennt das Programm den Inhalt bereits. Allerdings haben Sie gesehen, dass es sich bei Pfaden auch erstellt werden können [pfadeffekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) und durch umwandeln [Zeichenfolgen in Pfade](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Sie erhalten auch alle zeichnen-Vorgänge und Punkte, die diese Pfade bilden. Eine Möglichkeit besteht darin, auf die Punkte, z. B. eine algorithmische Transformation anwenden, um den Textfluss um eine Hemisphäre:
 
 ![](information-images/pathenumerationsample.png "Text in eine Hemisphäre eingeschlossen")
 
@@ -140,7 +140,7 @@ Die **Einrad halb-Pipe** Seite erstellt eine Animation ein Strichmännchen auf e
 
 [![](information-images/unicyclehalfpipe-small.png "Dreifacher Screenshot der Seite Einrad halb-Pipe")](information-images/unicyclehalfpipe-large.png#lightbox "dreifachen Screenshot der Seite Einrad halb-Pipe")
 
-Die `SKPaint` für Kontur zuweisen, sowohl die Hälfte Pipes als auch die Einrad verwendete Objekt ist definiert als Feld in der `UnicycleHalfPipePage` Klasse. Wird definiert auch die `SKPath` -Objekt für die Einrad:
+Das `SKPaint` -Objekt, das zum Durchsuchen der Hälfte Pipe und des Unicycle verwendet wird, wird als ein Feld `UnicycleHalfPipePage` in der-Klasse definiert. Wird definiert auch die `SKPath` -Objekt für die Einrad:
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -255,7 +255,7 @@ Die meisten dieser Buchstaben bestehen aus geraden, aber diese geraden haben off
 
 Der Schlüssel ist, dass die ursprünglichen geraden Linien in eine Reihe von kleineren geraden beeinträchtigt werden. Diese einzelnen geraden Linien an kleinere können klicken Sie dann auf unterschiedliche Weisen für die form einer Kurve bearbeitet werden.
 
-Zur Unterstützung dieses Vorgangs die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispiel enthält eine statische [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) -Klasse mit einer `Interpolate` -Methode, die unterteilt ein die gerade in zahlreichen kurze Zeilen, die nur eine Einheit lang sind. Darüber hinaus enthält die Klasse mehrere Methoden, die die drei Typen von Bézierkurven in eine Reihe von kleinen gerade Linien konvertieren, die die Kurve annähern. (Die parametrischen Formeln wurden in diesem Artikel präsentiert [ **drei Typen von Bézierkurven**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) Dieser Prozess heißt _vereinfachen_ Kurve:
+Zur Unterstützung dieses Vorgangs die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel enthält eine statische [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) -Klasse mit einer `Interpolate` -Methode, die unterteilt ein die gerade in zahlreichen kurze Zeilen, die nur eine Einheit lang sind. Darüber hinaus enthält die Klasse mehrere Methoden, die die drei Typen von Bézierkurven in eine Reihe von kleinen gerade Linien konvertieren, die die Kurve annähern. (Die parametrischen Formeln wurden in diesem Artikel präsentiert [ **drei Typen von Bézierkurven**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) Dieser Prozess heißt _vereinfachen_ Kurve:
 
 ```csharp
 static class PathExtensions
@@ -523,4 +523,4 @@ Dies ist eine sehr vielseitige Technik. Wenn das Array von pfadeffekte in beschr
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

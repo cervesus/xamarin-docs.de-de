@@ -1,105 +1,105 @@
 ---
-title: Status- und Aktivitätsindikatoren in Xamarin.iOS
-description: In diesem Dokument wird erläutert, wie Status und Aktivität von Indikatoren in Xamarin.iOS verwendet wird. Es wird beschrieben, wie sie sowohl programmgesteuert als auch mit einem Storyboard verwenden.
+title: Status-und Aktivitätsindikatoren in xamarin. IOS
+description: In diesem Dokument wird erläutert, wie Status-und Aktivitätsindikatoren in xamarin. IOS verwendet werden. Es wird beschrieben, wie Sie sowohl Programm gesteuert als auch mit einem Storyboard verwendet werden.
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: d39170d0109d7f81d3f02ec36381ebcd46c0143d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e65836fe9b86cd4e05f60ad4ab116a14e43ad2ce
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61029590"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655700"
 ---
-# <a name="progress-and-activity-indicators-in-xamarinios"></a>Status- und Aktivitätsindikatoren in Xamarin.iOS
+# <a name="progress-and-activity-indicators-in-xamarinios"></a>Status-und Aktivitätsindikatoren in xamarin. IOS
 
-Ist es wahrscheinlich, dass Ihre app, zum Ausführen lang hat ausgeführte Aufgaben wie z. B. Laden oder Verarbeiten von Daten und, dass diese Verzögerung bei der Aktualisierung der Benutzeroberflächenautomatisierungs, eine Verzögerung verursachen kann. Während dieser Zeit sollten Sie immer eine Statusanzeige verwenden, dem Benutzer zu versichern, dass das System Arbeit ausgelastet ist. Dadurch wird das Benutzersteuerelement, das die app funktioniert bei ihrer Anforderung, die die Eingabe nicht gewartet wird, und bieten eine Möglichkeit, genau geschildert, genau wie lange sie warten müssen.
+Es ist wahrscheinlich, dass Ihre APP Aufgaben mit langer Ausführungsdauer ausführen muss, z. b. das Laden oder Verarbeiten von Daten, und dass diese Verzögerung zu einer Verzögerung bei der Aktualisierung der Benutzeroberfläche führen kann. Während dieser Zeit sollten Sie immer eine Statusanzeige verwenden, um dem Benutzer zu versichern, dass das System ausgelastet ist. Dadurch wird dem Benutzer Steuerelement ermöglicht, dass die APP an Ihrer Anforderung arbeitet, dass Sie nicht auf Ihre Eingabe wartet und eine Möglichkeit bereitstellen kann, um genau zu bestimmen, wie lange Sie warten müssen.
 
-iOS bietet zwei Arten, um diese Fortschrittsanzeige in Ihrer app bereitzustellen: Aktivitätsindikatoren (einschließlich einen bestimmten _Netzwerk_ Aktivitätsanzeige) und Statusanzeigen.
+IOS bietet zwei Hauptmöglichkeiten, diese Fortschrittsanzeige in Ihrer APP bereitzustellen: Aktivitätsindikatoren (einschließlich eines bestimmten _Netzwerk_ Aktivitäts Indikators) und Status leisten.
 
-## <a name="activity-indicator"></a>Aktivität-Indikator
+## <a name="activity-indicator"></a>Aktivitätsindikator
 
-Aktivitätsindikatoren sollte angezeigt werden, wenn Ihre app einen langen Prozess ausgeführt wird, aber Sie wissen nicht, die genaue Länge der Zeit, die die Aufgabe erforderlich ist.
+Aktivitätsindikatoren sollten angezeigt werden, wenn Ihre APP einen langen Prozess ausgeführt hat, aber Sie wissen nicht genau, wie lange die Aufgabe benötigt.
 
-Apple hat die folgenden Vorschläge für die Arbeit mit Aktivitätsindikatoren:
+Apple hat die folgenden Vorschläge zum Arbeiten mit Aktivitätsindikatoren:
 
-- **Verwenden Sie nach Möglichkeit stattdessen Balken Fortschritt** : Da ein Indikator für die Aktivität dem Benutzer, kein Feedback ermöglicht, wie lange der ausgeführte Prozess dauert, verwenden Sie immer eine Statusanzeige angezeigt, wenn die Länge (z. B., wie viele Bytes in eine Datei herunterladen) bekannt ist.
-- **Behalten Sie den Indikator animierte** -Benutzer ein stationär Aktivität Indikator für eine angehaltene app beziehen, damit Sie immer angeben, sollte den Indikator animiert, während er angezeigt wird, wird.
-- **Beschreiben Sie den Task verarbeiteten** -lediglich zum Anzeigen der Aktivität Indikator allein reicht nicht aus, die der Benutzer muss über den Prozess informiert werden, warten auf. Enthalten Sie eine aussagekräftige Bezeichnung (in der Regel eine einzelne, vollständige Satz) an, die den Task eindeutig definiert.
+- **Verwenden Sie nach Möglichkeit stattdessen** Status anzeigen, da der Benutzer in einem Aktivitätsindikator kein Feedback darüber gibt, wie lange der Prozess ausgeführt wird. verwenden Sie immer eine Statusanzeige, wenn die Länge bekannt ist (z. b., wie viele Bytes in einer Datei heruntergeladen werden müssen).
+- **Halten Sie den Indikator animiert** : Benutzer verknüpfen einen Indikator für eine stationäre Aktivität mit einer angehaltenen APP, sodass der Indikator immer animiert werden muss, während er angezeigt wird.
+- **Beschreiben der verarbeiteten Aufgabe** : nur das Anzeigen des Aktivitäts Indikators allein ist nicht ausreichend, der Benutzer muss über den Prozess informiert werden, auf den Sie warten. Fügen Sie eine aussagekräftige Bezeichnung (in der Regel einen einzelnen, vollständigen Satz) ein, die die Aufgabe eindeutig definiert.
 
-### <a name="implementing-an-activity-indicator"></a>Implementieren einen Indikator für die Aktivität
+### <a name="implementing-an-activity-indicator"></a>Implementieren eines Aktivitäts Indikators
 
-Ein Indikator für die Aktivität wird implementiert, über die [ `UIActivityIndictorView` ](xref:UIKit.UIActivityIndicatorView) Klasse an, dass eine `UIActivity` stattfindet.
+Ein Aktivitätsindikator wird durch die [`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView) -Klasse implementiert, um anzugeben, dass eine `UIActivity` stattfindet.
 
 ### <a name="activity-indicators-and-storyboards"></a>Aktivitätsindikatoren und Storyboards
 
-Wenn Sie zum Erstellen der Benutzeroberflächenautomatisierungs der iOS-Designer verwenden, können den Indikator für die Aktivität auf das Layout aus der Toolbox hinzugefügt werden. Die folgenden Eigenschaften können über das Pad "Eigenschaften" angepasst werden:
+Wenn Sie den IOS-Designer verwenden, um die Benutzeroberfläche zu erstellen, kann der Aktivitätsindikator dem Layout aus der Toolbox hinzugefügt werden. Die folgenden Eigenschaften können von der Eigenschaftenpad angepasst werden:
 
-![Pad "Eigenschaften"](progress-activity-indicator-images/progress-indicator1.png)
+![Eigenschaftenpad](progress-activity-indicator-images/progress-indicator1.png)
 
-### <a name="managing-activity-indicator-behavior"></a>Verwalten von Indikator das Verhalten einer Aktivität
+### <a name="managing-activity-indicator-behavior"></a>Verwalten des Aktivitätsindikator Verhaltens
 
-Verwenden der `StartAnimating()` und `StopAnimating()` Methoden zum Starten und Beenden der Aktivität Indikator Animation.
+Verwenden Sie `StartAnimating()` die `StopAnimating()` -und-Methoden, um die Aktivitätsindikator Animation zu starten und anzuhalten.
 
-Legen Sie die `HidesWhenStopped` Eigenschaft `true` die Aktivitätsanzeige verschwinden nach vornehmen `StopAnimating()` aufgerufen wurde. Dieser Wert auf festgelegt `true` standardmäßig. Sie sehen können, ob der Indikator für die Aktivität die Animation rotierende Überprüfung ausgeführt wird, jederzeit die `IsAnimating` Eigenschaft. 
+Legen Sie `HidesWhenStopped` die- `true` Eigenschaft auf fest, damit der Aktivitäts `StopAnimating()` Indikator ausgeblendet wird, nachdem aufgerufen wurde. Diese ist standardmäßig `true` auf festgelegt. An jedem Punkt können Sie sehen, ob der Aktivitätsindikator seine spinanimation durch Überprüfen der `IsAnimating` -Eigenschaft ausgeführt wird. 
 
 
-### <a name="managing-activity-indicator-appearances"></a>Verwalten von Aktivitäten Indikator Darstellungen
+### <a name="managing-activity-indicator-appearances"></a>Verwalten von Aktivitätsindikator Auftritten
 
-Die `UIActivityIndicatorViewStyle` Enumeration kann als Parameter übergeben werden, wenn der Indikator für die Aktivität zu instanziieren. Hiermit können Sie den visuellen Stil festlegen, um `Gray`, `White`, oder `WhiteLarge`, z.B.:
+Die `UIActivityIndicatorViewStyle` -Enumeration kann als Parameter übergeben werden, wenn der Aktivitätsindikator instanziiert wird. Sie können dies verwenden, um den visuellen Stil auf `Gray`, `White`oder `WhiteLarge`festzulegen, z. b.:
 
 ```csharp
 activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 ```
 
-Sie können die Farbe von bereitgestellten überschreiben `UIActivityIndicatorViewStyle` durch Festlegen der `Color` Eigenschaft.
+Sie können die von `UIActivityIndicatorViewStyle` bereitgestellte Farbe überschreiben, indem Sie die `Color` -Eigenschaft festlegen.
 
 ## <a name="progress-bar"></a>Statusanzeige
 
-Eine Statusanzeige wird als eine Zeile, die mit der Farbe an, dass der Status und die Länge der sehr zeitaufwändig füllt dargestellt. Statusleisten sollte immer verwendet werden, wenn die Länge der Aufgaben ist, oder berechnet werden kann.
+Eine Statusanzeige wird als Linie dargestellt, die die Farbe füllt, um den Zustand und die Länge einer zeitaufwändigen Aufgabe anzugeben. Status leisten sollten immer verwendet werden, wenn die Länge der Aufgaben bekannt ist oder berechnet werden kann.
 
-Apple hat die folgenden Vorschläge für die Arbeit mit Statusanzeigen:
+Apple hat die folgenden Vorschläge zum Arbeiten mit Status leisten:
 
-- **Genau Forschritt** -Statusleisten sollte immer eine genaue Darstellung der die erforderliche Zeit zum Abschließen einer Aufgabe sein. Falsch angezeigt werden nie die Zeit für die Anwendung ausgelastet angezeigt werden.
-- **Verwendung für die Dauer der Well-Defined** -Statusanzeige sollte nicht nur, dass eine langwierige Aufgabe dauert anzeigen zu platzieren, aber erhält der Benutzer und Überblick, wie viel von der Aufgabe abgeschlossen ist und eine Schätzung der verbleibenden Zeit.
+- **Genaueres melden** von Status leisten sollten immer eine genaue Darstellung der Zeit sein, die zum Ausführen einer Aufgabe erforderlich ist. Geben Sie niemals die Zeit an, die die APP als ausgelastet angezeigt werden soll.
+- **Für klar definierte Dauer verwenden** : die Statusanzeige sollte nicht nur zeigen, dass eine lange Aufgabe stattfindet, sondern den Benutzer und die Angabe, wie viel der Aufgabe abgeschlossen ist, und eine Schätzung der verbleibenden Zeit anzeigen.
 
-### <a name="implementing-an-progress-bar"></a>Implementieren eine Statusanzeige
+### <a name="implementing-an-progress-bar"></a>Implementieren einer Statusanzeige
 
-Eine Statusanzeige wird erstellt, durch die Instanziierung einer [`UIProgressView`](xref:UIKit.UIProgressView)
+Eine Statusanzeige wird durch Instanziierung von erstellt.[`UIProgressView`](xref:UIKit.UIProgressView)
 
-### <a name="progress-bars-and-storyboards"></a>Statusanzeigen und Storyboards
+### <a name="progress-bars-and-storyboards"></a>Status anzeigen und Storyboards
 
-Sie können auch eine Statusanzeige an die Benutzeroberfläche hinzufügen, bei Verwendung des iOS-Designers. Suchen Sie nach **Bearbeitung** in die **Toolbox** und ziehen Sie es in der Ansicht.
+Wenn Sie den IOS-Designer verwenden, können Sie der Benutzeroberfläche auch eine Statusanzeige hinzufügen. Suchen Sie in der **Toolbox** nach der **Fortschritts Ansicht** , und ziehen Sie Sie in die Ansicht.
 
-Die folgenden Eigenschaften können auf das Pad "Eigenschaften" angepasst werden:
+Die folgenden Eigenschaften können im eigenschaftenpad angepasst werden:
 
-![Pad "Eigenschaften"](progress-activity-indicator-images/progress-indicator3.png)
+![Eigenschaftenpad](progress-activity-indicator-images/progress-indicator3.png)
 
 
-### <a name="managing-progress-bar-behavior"></a>Verwalten von Statusanzeige-Verhalten
+### <a name="managing-progress-bar-behavior"></a>Verwalten des Statusanzeige Verhaltens
 
-Der Fortschritt des Balkens anfänglich mithilfe festgelegt werden kann die `Progress` Eigenschaft:
+Der Status der Leiste kann zunächst mithilfe der `Progress` -Eigenschaft festgelegt werden:
 
 ```csharp
 ProgressBar.Progress = 0f;
 ```
 
-Der Fortschritt angepasst werden kann, mithilfe der `SetProgress` -Methode und übergeben einen booleschen Wert, der deklariert, wenn Sie möchten, dass die Änderung, die animiert wird, oder nicht.
+Der Fortschritt kann mithilfe der `SetProgress` -Methode angepasst und eine boolesche Deklaration übergeben werden, wenn die Änderung animiert werden soll oder nicht.
 
 ```csharp
 ProgressBar.SetProgress(1.0f, true);
 ```
 
-Weitere Informationen zur Verwendung der Statusanzeige finden Sie unter der [Reporting ausgeführt](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/networking/download_progress) Rezept, und die [UICatalog TvOS-Beispiel](https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/).
+Weitere Informationen zur Verwendung der Statusanzeige finden Sie in der Anleitung zum [melden](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/networking/download_progress) des Status und im [Beispiel uicatalog tvos](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-uicatalog).
 
-### <a name="managing-progress-bar-appearance"></a>Verwalten die Darstellung der Statusanzeige
+### <a name="managing-progress-bar-appearance"></a>Verwalten der Statusanzeige
 
-Ein Indikator Aktivität ähnelt der `UIProgressViewStyle` Enumeration kann als Parameter übergeben werden, wenn die Statusanzeige zu instanziieren.
+Ähnlich wie bei einem Aktivitätsindikator kann `UIProgressViewStyle` die-Enumeration beim Instanziieren der Statusanzeige als Parameter übergeben werden.
 
-Den Fortschritt und Track-Image und Tönungsfarbe kann angepasst werden, mithilfe der folgenden Eigenschaften:
+Der Fortschritt und die Bild-und Bildfarben können mithilfe der folgenden Eigenschaften angepasst werden:
 
 ```csharp
 progressBar = new UIProgressView(UIProgressViewStyle.Default)

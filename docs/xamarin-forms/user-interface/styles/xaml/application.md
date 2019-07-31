@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7b13a192f883ea667977f4d9ae3eea41d8c65e24
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: f8fb026cd9a8dfbfd5abf13c9b11463bf84f7e0b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971171"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647248"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Globale Stile in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _Stile können verfügbar Global gemacht werden durch das Ressourcenverzeichnis der Anwendung hinzugefügt. Dadurch wird die um Duplizierung von Formatvorlagen für Seiten oder Steuerelemente zu vermeiden._
 
-## <a name="create-a-global-style-in-xaml"></a>Erstellen Sie einen globalen Stil in XAML
+## <a name="create-a-global-style-in-xaml"></a>Erstellen eines globalen Stils in XAML
 
 Standardmäßig verwenden alle Xamarin.Forms-Anwendungen, die aus einer Vorlage erstellt werden, die Klasse **App**. Damit wird die Unterklasse [`Application`](xref:Xamarin.Forms.Application) implementiert. Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Anwendungsebene, in der Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) mit XAML, der Standardwert **App** Klasse mit einer XAML ersetzt werden muss **App** -Klasse und zugeordnete Code-Behind. Weitere Informationen finden Sie unter [arbeiten mit App-Klasse](~/xamarin-forms/app-fundamentals/application-class.md).
 
@@ -66,7 +66,7 @@ Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
 Informationen zum Erstellen von Stilen einer Seite [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), finden Sie unter [explizite Stile](~/xamarin-forms/user-interface/styles/explicit.md) und [impliziten Stilen](~/xamarin-forms/user-interface/styles/implicit.md).
 
-### <a name="override-styles"></a>Überschreiben von Formatvorlagen
+### <a name="override-styles"></a>Überschreibungs Stile
 
 Formatvorlagen, die weiter unten in der Hierarchie von Inhaltsansichten haben Vorrang vor den definierten höher einrichten. Z. B. eine [ `Style` ](xref:Xamarin.Forms.Style) festlegt [ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor) zu `Red` in der Anwendung wird von einem Seite-Level-Stil, der festlegt Ebene überschrieben werden `Button.TextColor` zu `Green`. Auf ähnliche Weise wird ein Servicelevel-Seite-Style von einem Steuerelementstil Ebene überschrieben werden. Darüber hinaus, wenn `Button.TextColor` direkt auf einer Steuerelementeigenschaft ist dies Vorrang vor alle Formatvorlagen festgelegt ist. Diese Priorität wird im folgenden Codebeispiel veranschaulicht:
 
@@ -102,7 +102,7 @@ Die ursprüngliche `buttonStyle`, auf Anwendungsebene definiert ist, wird übers
 
 [![](application-images/application-styles-2.png "Überschreiben die Stile Beispiel")](application-images/application-styles-2-large.png#lightbox "überschreiben die Stile-Beispiel")
 
-## <a name="create-a-global-style-in-c35"></a>Erstellen Sie einen globalen Stil in C&#35;
+## <a name="create-a-global-style-in-c35"></a>Erstellen eines globalen Stils in C&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) Instanzen der Anwendung hinzugefügt werden können [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in C# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`, als Im folgenden Codebeispiel gezeigt:
 
@@ -153,8 +153,8 @@ Die `buttonStyle` gilt, an die [ `Button` ](xref:Xamarin.Forms.Button) Instanzen
 ## <a name="related-links"></a>Verwandte Links
 
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Einfache Stile (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [Arbeiten mit Stilen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [Einfache Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [Arbeiten mit Stilen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Stil](xref:Xamarin.Forms.Style)
 - [Set-Methode](xref:Xamarin.Forms.Setter)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 97bb5ec954f36e48d8ae115baf8738862e5a8358
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 1f9cd0acd201f124f4a4577fec23dce52aee627d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649543"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657508"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms-Editor
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Mehrzeilige Texteingabe_
 
@@ -59,9 +59,9 @@ Die [ `Editor` ](xref:Xamarin.Forms.Editor) Platzhaltertext angezeigt, wenn es k
 var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
 ```
 
-### <a name="preventing-text-entry"></a>Verhindern von Texteingabe
+### <a name="preventing-text-entry"></a>Verhindern des Text Eintrags
 
-Benutzer können verhindert werden, ändern Sie den Text in eine [ `Editor` ](xref:Xamarin.Forms.Editor) durch Festlegen der `IsReadOnly` -Eigenschaft, die einen Standardwert besitzt der `false`zu `true`:
+Benutzer können daran gehindert werden, den Text in einer [`Editor`](xref:Xamarin.Forms.Editor) zu ändern, `IsReadOnly` indem Sie die-Eigenschaft mit dem Standard `false`Wert auf `true`festlegen:
 
 ```xaml
 <Editor Text="This is a read-only Editor"
@@ -73,7 +73,7 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 ```
 
 > [!NOTE]
-> Die `IsReadonly` Eigenschaft ändert sich nicht auf die visuelle Darstellung des ein [ `Editor` ](xref:Xamarin.Forms.Editor)anders als die `IsEnabled` -Eigenschaft, die ändert sich auch die visuelle Darstellung des der `Editor` in Grau.
+> Die `IsReadonly` -Eigenschaft ändert nicht die visuelle Darstellung [`Editor`](xref:Xamarin.Forms.Editor)eines, anders als die `IsEnabled` -Eigenschaft `Editor` , die auch die visuelle Darstellung von in grau ändert.
 
 ### <a name="limiting-input-length"></a>Geben Sie die Länge beschränken
 
@@ -189,9 +189,9 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 
 ### <a name="enabling-and-disabling-text-prediction"></a>Aktivieren und Deaktivieren von Textvorhersage
 
-Die `IsTextPredictionEnabled` Eigenschaft steuert, ob die Textvorhersage und automatisierter Textkorrektur ist aktiviert. Standardmäßig ist die Eigenschaft auf festgelegt `true`. Wenn der Benutzer Text eingibt, werden Word Vorhersagen angezeigt.
+Die `IsTextPredictionEnabled` -Eigenschaft steuert, ob die Text Vorhersage und die automatische Textkorrektur aktiviert ist. Standardmäßig ist die Eigenschaft auf festgelegt `true`. Wenn der Benutzer Text eingibt, werden Word Vorhersagen angezeigt.
 
-Allerdings für einige Szenarien für den Text-Eintrag, wie das Eingeben von Benutzername, Textvorhersage und automatische Text Korrektur bietet eine negative und sollte deaktiviert werden, indem die `IsTextPredictionEnabled` Eigenschaft `false`:
+Für einige Texteingabe Szenarios, wie z. b. die Eingabe eines Benutzernamens, bietet die Text Vorhersage und die automatische Textkorrektur jedoch eine negative Benutzer `IsTextPredictionEnabled` Umgebung und `false`sollte durch Festlegen der-Eigenschaft auf deaktiviert werden:
 
 ```xaml
 <Editor ... IsTextPredictionEnabled="false" />
@@ -202,7 +202,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
 
 > [!NOTE]
-> Wenn die `IsTextPredictionEnabled` -Eigenschaftensatz auf `false`, und eine benutzerdefinierte Tastatur wird nicht verwendet, die Textvorhersage und automatische Text deaktiviert ist. Jedoch, wenn eine [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) wurde festgelegt, Textvorhersage deaktiviert, die `IsTextPredictionEnabled` Eigenschaft wird ignoriert. Aus diesem Grund kann nicht die Eigenschaft verwendet werden, aktivieren Sie die Textvorhersage für eine `Keyboard` , die explizit deaktiviert.
+> Wenn die `IsTextPredictionEnabled` -Eigenschaft auf `false`festgelegt ist und keine benutzerdefinierte Tastatur verwendet wird, werden die Text Vorhersage und die automatische Textkorrektur deaktiviert. Jedoch, wenn eine [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) wurde festgelegt, Textvorhersage deaktiviert, die `IsTextPredictionEnabled` Eigenschaft wird ignoriert. Aus diesem Grund kann nicht die Eigenschaft verwendet werden, aktivieren Sie die Textvorhersage für eine `Keyboard` , die explizit deaktiviert.
 
 ### <a name="colors"></a>Farben
 
@@ -260,11 +260,11 @@ Stellen Sie sicher, dass die Hintergrund- und Textfarben können auf jeder Platt
 - [Abgeschlossen](xref:Xamarin.Forms.Editor.Completed) &ndash; wird ausgelöst, wenn der Benutzer die Eingabe beendet wurde, durch Drücken der EINGABETASTE auf der Tastatur.
 
 > [!NOTE]
-> Die [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) -Klasse, von dem [ `Entry` ](xref:Xamarin.Forms.Entry) erbt, verfügt auch über [ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused) und [ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)Ereignisse.
+> Die [`VisualElement`](xref:Xamarin.Forms.VisualElement) -Klasse, von [`Entry`](xref:Xamarin.Forms.Entry) der erbt, verfügt [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) auch [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) über die-und-Ereignisse.
 
 ### <a name="completed"></a>Abgeschlossen
 
-Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit reagieren ein `Editor`. `Completed` wird ausgelöst, wenn der Benutzer durch die return-Taste auf der Tastatur eingeben (oder durch Drücken der Tab-Taste in UWP) Eingabe mit einem Feld beendet. Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
+Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit reagieren ein `Editor`. `Completed`wird ausgelöst, wenn der Benutzer die Eingabe mit einem Feld beendet, indem die Rückgabetaste auf der Tastatur eingegeben wird (oder durch Drücken der Tab-Taste auf der UWP). Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -360,5 +360,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Text (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Editor-API](xref:Xamarin.Forms.Editor)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 1fa46af1ac1cf6ea49a53e3f8d3c3dca6ba83e13
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e54b36989f5b4694da5d46a89391d56920b8d6a9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511886"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656253"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms-Schieberegler
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _Verwenden Sie einen Schieberegler für die Auswahl aus einem Bereich fortlaufender Werte._
 
@@ -56,11 +56,11 @@ Die `Slider` definiert außerdem mehrere Eigenschaften, die die Darstellung ausw
 
 ## <a name="basic-slider-code-and-markup"></a>Grundlegende Schieberegler-Code und markup
 
-Die [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) Beispiel beginnt mit drei Seiten, die funktionell identisch sind, aber auf unterschiedliche Weise implementiert werden. Die erste Seite wird nur C#-Code verwendet. der zweite verwendet XAML mit einem Ereignishandler im Code und das dritte hingegen ist, können Sie den Ereignishandler zu vermeiden, indem Sie mithilfe der Datenbindung in der XAML-Datei.
+Die [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) Beispiel beginnt mit drei Seiten, die funktionell identisch sind, aber auf unterschiedliche Weise implementiert werden. Die erste Seite wird nur C#-Code verwendet. der zweite verwendet XAML mit einem Ereignishandler im Code und das dritte hingegen ist, können Sie den Ereignishandler zu vermeiden, indem Sie mithilfe der Datenbindung in der XAML-Datei.
 
 ### <a name="creating-a-slider-in-code"></a>Erstellen einen Schieberegler in code
 
-Die **grundlegenden Schieberegler Code** auf der Seite die [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) Beispiel wird gezeigt, anzeigen, erstellen Sie eine `Slider` und zwei `Label` -Objekte im Code:
+Die **grundlegenden Schieberegler Code** auf der Seite die [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) Beispiel wird gezeigt, anzeigen, erstellen Sie eine `Slider` und zwei `Label` -Objekte im Code:
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -295,7 +295,7 @@ Die Android-Implementierung von `Slider` basiert auf dem Android [ `SeekBar` ](x
 
 Die UWP-Implementierung von `Slider` basiert auf der UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider) Steuerelement. Die `StepFrequency` Eigenschaft der UWP `Slider` festgelegt ist, um den Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften unterteilt, 10, aber nicht größer als 1.
 
-Für die Standard-Bereich von 0 bis 1, beispielsweise die `StepFrequency` -Eigenschaftensatz auf 0,1. Als die `Slider` bearbeitet wird, die `Value` -Eigenschaft auf 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9 und 1.0 beschränkt ist. (Dies wird in der letzten Seite in der [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) Beispiel.) Wenn der Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften ist 10 oder höher ist, klicken Sie dann `StepFrequency` ist auf 1 festgelegt, und die `Value` Eigenschaft verfügt über ganzzahlige Werte.
+Für die Standard-Bereich von 0 bis 1, beispielsweise die `StepFrequency` -Eigenschaftensatz auf 0,1. Als die `Slider` bearbeitet wird, die `Value` -Eigenschaft auf 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9 und 1.0 beschränkt ist. (Dies wird in der letzten Seite in der [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) Beispiel.) Wenn der Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften ist 10 oder höher ist, klicken Sie dann `StepFrequency` ist auf 1 festgelegt, und die `Value` Eigenschaft verfügt über ganzzahlige Werte.
 
 ### <a name="the-stepslider-solution"></a>Die Lösung StepSlider
 
@@ -303,7 +303,7 @@ Ein flexibler `StepSlider` ausführlicher [Kapitel 27. Benutzerdefinierte Render
 
 ## <a name="sliders-for-color-selection"></a>Schieberegler für die Farbauswahl
 
-Die letzten zwei Seiten in der [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) Beispiel verwenden drei `Slider` Instanzen für die Farbauswahl. Die erste Seite behandelt alle Aktivitäten in der CodeBehind-Datei während die zweite Seite wie die Datenbindung mit einem ViewModel zu verwendet wird.
+Die letzten zwei Seiten in der [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) Beispiel verwenden drei `Slider` Instanzen für die Farbauswahl. Die erste Seite behandelt alle Aktivitäten in der CodeBehind-Datei während die zweite Seite wie die Datenbindung mit einem ViewModel zu verwendet wird.
 
 ### <a name="handling-sliders-in-the-code-behind-file"></a>Behandeln der Schieberegler in der CodeBehind-Datei
 
@@ -509,5 +509,5 @@ Die `StringFormat` -Komponente von der `Binding` Markuperweiterung für ein Form
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel für Schieberegler-Demos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+- [Beispiel für Schieberegler-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 - [Schieberegler-API](xref:Xamarin.Forms.Slider)

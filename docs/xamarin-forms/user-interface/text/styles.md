@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f70ab3faf6984720e395f5a41b4cabb63fe03053
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b639a7fdefb8fca67d833b07ef9aa1a85da67ef6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61188746"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642885"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms-Textformate
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Formatieren von Text in Xamarin.Forms_
 
@@ -150,5 +150,5 @@ Um Zugriff zu gewährleisten, stellen Sie sicher, dass die integrierte Formatvor
 
 - [Erstellen von mobilen Apps mit Xamarin.Forms, Kapitel 12](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [Stile](~/xamarin-forms/user-interface/styles/index.md)
-- [Text (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Stil](xref:Xamarin.Forms.Style)

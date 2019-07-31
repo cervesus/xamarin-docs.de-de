@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 1e57764dacf7ae0599df46f13bd4f5505c4cc4a2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ecb9e84473778f5185276a854bfbf2fdfcbb6528
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61370751"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654849"
 ---
 # <a name="customizing-listview-cell-appearance"></a>Anpassen der Zellendarstellung ListView
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
 
-[`ListView`](xref:Xamarin.Forms.ListView) bildlauffähige Listen, auf die durch die Verwendung von angepasst werden können, stellt `ViewCell`s. `ViewCells` kann für Anzeigen von Text und Bilder an, einen True/False-Status und Empfangen von Benutzereingaben verwendet werden.
+[`ListView`](xref:Xamarin.Forms.ListView)stellt scrollbare Listen dar, die durch die Verwendung von `ViewCell`s angepasst werden können. `ViewCells` kann für Anzeigen von Text und Bilder an, einen True/False-Status und Empfangen von Benutzereingaben verwendet werden.
 
 <a name="Built_in_Cells" />
 
@@ -115,7 +115,7 @@ Der obige XAML macht viel. Wir unterteilen:
 - Die benutzerdefinierte Zelle darin geschachtelt ist eine `DataTemplate`, d.h. in `ListView.ItemTemplate`. Dies ist genauso wie mit der eine beliebige andere Zelle.
 - `ViewCell` ist der Typ der benutzerdefinierten Zelle. Das untergeordnete Element die `DataTemplate` Element sein oder vom Typ abgeleitet werden muss `ViewCell`.
 - Beachten Sie, dass dieses innerhalb der `ViewCell`, Layout wird verwaltet, indem eine `StackLayout`. Dieses Layout ermöglicht uns, die die Hintergrundfarbe anpassen. Beachten Sie, dass eine beliebige Eigenschaft des `StackLayout` , bindbare kann innerhalb einer benutzerdefinierten Zelle gebunden werden, obwohl, hier nicht angezeigt werden.
-- In der `ViewCell`, Layout von Xamarin.Forms Layouts verwaltet werden kann. 
+- Innerhalb von `ViewCell`kann das Layout von einem beliebigen xamarin. Forms-Layout verwaltet werden. 
 
 ### <a name="cnum"></a>C&num;
 
@@ -258,6 +258,6 @@ Unter iOS und Android Wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) wirft
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Erstellt in Zellen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
-- [Benutzerdefinierte Zellen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
-- [Bindung der Kontext geändert (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BindingContextChanged)
+- [Erstellt in Zellen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [Benutzerdefinierte Zellen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [Bindung der Kontext geändert (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)
