@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: f4ff43ea51dc690daa716e69021f690511cdcc97
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 3be28815441b65df101ac9722a665e01503e1b5c
+ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854053"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68386209"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Einrichten des Android SDK für Xamarin.Android
 
@@ -29,7 +29,7 @@ Der Xamarin Android SDK-Manager (der als Teil der Workload **Mobile-Entwicklung 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Sie benötigen Folgendes, um den Xamarin Android SDK-Manager verwenden zu können:
 
@@ -104,7 +104,7 @@ Die Registerkarte **Plattformen** zeigt eine Liste der Versionen des Platform SD
 In dieser Anzeige werden die Android-Version (z.B. **Android 8.0**), der Codename (z.B. **Oreo**), die API-Ebene (z.B. **26**) und die Komponentengrößen für diese Plattform (z.B. **1 GB**) aufgelistet. Verwenden Sie die Registerkarte **Plattformen**, um die Komponenten für die Android API-Ebene zu installieren, die Sie als Ziel verwenden möchten. Weitere Informationen zu Android-Versionen und API-Ebenen finden Sie unter [Understanding Android API Levels (Grundlegendes zu Android-API-Ebenen)](~/android/app-fundamentals/android-api-levels.md).
 
 Wenn alle Komponenten einer Plattform installiert sind, wird neben dem Namen der Plattform ein Häkchen angezeigt. Wenn nicht alle Komponenten installiert sind, wird das Kontrollkästchen gefüllt. Sie können die Plattform erweitern, um deren Komponenten anzuzeigen (und welche Komponenten installiert sind), indem Sie auf die Schaltfläche **+** links neben der Plattform klicken.
-Klicken Sie auf **-**, um die Auflistung der Komponenten der Plattform wieder einzuklappen.
+Klicken Sie auf **-** , um die Auflistung der Komponenten der Plattform wieder einzuklappen.
 
 Fügen Sie dem SDK eine weitere Plattform hinzu, indem Sie neben der Plattform auf das Kontrollkästchen klicken, bis das Häkchen angezeigt wird, und klicken Sie dann auf **Änderungen anwenden**:
 
@@ -117,20 +117,20 @@ Wenn Sie nur bestimmte Komponenten installieren möchten, klicken Sie einmal auf
 Beachten Sie, dass die Anzahl der zu installierenden Komponenten neben der Schaltfläche **Änderungen anwenden** angezeigt wird. Wenn Sie auf die Schaltfläche **Änderungen anwenden** klicken, wird wie oben dargestellt das Fenster **Zustimmung zur Lizenz** angezeigt.
 Klicken Sie auf **Akzeptieren**, wenn Sie den Geschäftsbedingungen zustimmen. Möglicherweise wird dieses Dialogfeld mehrmals angezeigt, wenn Sie mehrere Komponenten installieren. Am unteren Rand des Fensters gibt eine Statusleiste den Fortschritt des Downloads und der Installation an. Sobald der Download und der Installationsprozess beendet sind (das kann abhängig von der Menge der herunterzuladenden Komponenten einige Minuten beanspruchen), werden die hinzugefügten Komponenten mit einem Häkchen versehen und als **Installiert** aufgelistet.
 
-### <a name="respository-selection"></a>Auswählen eines Repositorys
+### <a name="repository-selection"></a>Repositoryauswahl
 
-Der Android SDK-Manager lädt standardmäßig Plattformkomponenten und Tools aus dem von Microsoft verwalteten Repository herunter. Wenn Sie auf Plattformen in der Alpha- bzw. Betaphase und noch nicht verfügbare Tools im Microsoft-Repository zugreifen möchten, können Sie den SDK-Manager aktivieren, um das Repository von Google zu verwenden. Klicken Sie dafür erst auf das Zahnradsymbol unten rechts und anschließend auf **Repository > Google (nicht unterstützt)**:
+Der Android SDK-Manager lädt standardmäßig Plattformkomponenten und Tools aus dem von Microsoft verwalteten Repository herunter. Wenn Sie auf Plattformen in der Alpha- bzw. Betaphase und noch nicht verfügbare Tools im Microsoft-Repository zugreifen möchten, können Sie den SDK-Manager aktivieren, um das Repository von Google zu verwenden. Klicken Sie dafür erst auf das Zahnradsymbol unten rechts und anschließend auf **Repository > Google (nicht unterstützt)** :
 
 [![Google-Repository auswählen](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
 
 Wenn das Google-Repository ausgewählt wird, werden möglicherweise weitere Pakete in der Registerkarte **Plattformen** angezeigt, die zuvor nicht verfügbar waren. (Im Screenshot oben wurde **Android SDK Platform 28** hinzugefügt, indem das Google-Repository aktiviert wurde.) Bedenken Sie, dass die Verwendung des Google-Repositorys nicht unterstützt und daher auch nicht für die Entwicklung im Alltag empfohlen wird.
 
-Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktivieren möchten, klicken Sie auf **Microsoft (empfohlen)**. Dadurch wird die Standardliste mit den Paketen und Tools wiederhergestellt.
+Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktivieren möchten, klicken Sie auf **Microsoft (empfohlen)** . Dadurch wird die Standardliste mit den Paketen und Tools wiederhergestellt.
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Sie benötigen Folgendes, um den Xamarin Android SDK-Manager verwenden zu können:
 
@@ -210,15 +210,15 @@ Wenn Sie nur bestimmte Komponenten installieren möchten, klicken Sie einmal auf
 Beachten Sie, dass die Anzahl der zu installierenden Komponenten neben der Schaltfläche **Änderungen anwenden** angezeigt wird. Wenn Sie auf die Schaltfläche **Änderungen anwenden** klicken, wird wie oben dargestellt das Fenster **Zustimmung zur Lizenz** angezeigt.
 Klicken Sie auf **Akzeptieren**, wenn Sie den Geschäftsbedingungen zustimmen. Möglicherweise wird dieses Dialogfeld mehrmals angezeigt, wenn Sie mehrere Komponenten installieren. Am unteren Rand des Fensters gibt eine Statusleiste den Fortschritt des Downloads und der Installation an. Sobald der Download und der Installationsprozess beendet sind (das kann abhängig von der Menge der herunterzuladenden Komponenten einige Minuten beanspruchen), werden die hinzugefügten Komponenten mit einem Häkchen versehen und als **Installiert** aufgelistet.
 
-### <a name="respository-selection"></a>Auswählen eines Repositorys
+### <a name="repository-selection"></a>Repositoryauswahl
 
-Der Android SDK-Manager lädt standardmäßig Plattformkomponenten und Tools aus dem von Microsoft verwalteten Repository herunter. Wenn Sie auf Plattformen in der Alpha- bzw. Betaphase und noch nicht verfügbare Tools im Microsoft-Repository zugreifen möchten, können Sie den SDK-Manager aktivieren, um das Repository von Google zu verwenden. Klicken Sie dafür erst auf das Zahnradsymbol unten rechts und anschließend auf **Repository > Google (nicht unterstützt)**:
+Der Android SDK-Manager lädt standardmäßig Plattformkomponenten und Tools aus dem von Microsoft verwalteten Repository herunter. Wenn Sie auf Plattformen in der Alpha- bzw. Betaphase und noch nicht verfügbare Tools im Microsoft-Repository zugreifen möchten, können Sie den SDK-Manager aktivieren, um das Repository von Google zu verwenden. Klicken Sie dafür erst auf das Zahnradsymbol unten rechts und anschließend auf **Repository > Google (nicht unterstützt)** :
 
 [![Google-Repository auswählen](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
 
 Wenn das Google-Repository ausgewählt wird, werden möglicherweise weitere Pakete in der Registerkarte **Plattformen** angezeigt, die zuvor nicht verfügbar waren. (Im Screenshot oben wurde **Android SDK Platform 28** hinzugefügt, indem das Google-Repository aktiviert wurde.) Bedenken Sie, dass die Verwendung des Google-Repositorys nicht unterstützt und daher auch nicht für die Entwicklung im Alltag empfohlen wird.
 
-Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktivieren möchten, klicken Sie auf **Microsoft (empfohlen)**. Dadurch wird die Standardliste mit den Paketen und Tools wiederhergestellt.
+Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktivieren möchten, klicken Sie auf **Microsoft (empfohlen)** . Dadurch wird die Standardliste mit den Paketen und Tools wiederhergestellt.
 
 -----
 

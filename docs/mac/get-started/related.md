@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 87987e79fce2bd5277f8092d09752fe715e2f2ce
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2e4c2ebea7783fe2400298b03a54e951d89960fe
+ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667651"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329933"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac: Verwandte Dokumentationen
 
-Zusätzlich zum Mac-Bereich auf [developer.xamarin.com](~/mac/get-started/index.md) gibt es drei Stellen, an denen Sie Dokumentationen finden, die Ihnen helfen können, wenn Sie Fragen zu Xamarin.Mac haben:
+Zusätzlich zum Mac-Bereich auf [Microsoft-Dokumentation](~/mac/get-started/index.md) gibt es drei Stellen, an denen Sie Dokumentationen finden, die Ihnen helfen können, wenn Sie Fragen zu Xamarin.Mac haben:
 
 - [**Die Xamarin.iOS-Dokumentation**](~/ios/get-started/index.md): Für viele APIs (hauptsächlich außerhalb von AppKit und UIKit) bestehen nur geringfügige Unterschiede zwischen den iOS- und den macOS-Versionen. Wenn eine iOS-API z.B. den Namen `UIFoo` hat, können Sie häufig eine ähnliche API mit dem Namen `NSFoo` unter macOS finden. Diese Beispiele sind prinzipiell schon in C#.
 
