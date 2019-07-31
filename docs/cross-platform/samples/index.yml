@@ -11,7 +11,7 @@ abstract:
   description: 'Plattformübergreifende Xamarin-Beispiel-Apps und -Code-Demos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin.'
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
         text: Alle Xamarin-Beispiele
 sections:
   - title: Erste Schritte
@@ -20,11 +20,11 @@ sections:
         style: cards
         className: cardsW
         items:
-          - href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+          - href: 'https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/'
             html: 'In diesem Beispiel wird eine To-Do-Listen-Anwendung veranschaulicht, bei der eine mit Xamarin.Forms erstellte lokale SQLite-Datenbank verwendet wird, um die Daten zu speichern und auf sie zuzugreifen.'
             image:
               src: images/todo.png
-              href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+              href: 'https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/'
             title: Todo
           - href: 'https://github.com/xamarinhq/app-myshoppe'
             html: 'Eine Demo-App, die es Vertriebsmitarbeitern ermöglicht, ihre Vertriebsleistung nachzuverfolgen, Leads zu verwalten, ihre Kontaktpersonen anzuzeigen, Aufträge zu verwalten und den Produktkatalog zu durchsuchen.'
@@ -74,9 +74,9 @@ sections:
         style: cards
         className: cardsW
         items:
-          - href: 'https://developer.xamarin.com/samples/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
             html: Alle plattformübergreifenden Xamarin-Beispiel-Apps und -Codedemos.
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
             title: Alle Xamarin-Beispiele

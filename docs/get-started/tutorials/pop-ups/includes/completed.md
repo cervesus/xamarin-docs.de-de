@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 467855da6a691d1661f04e12f481db83b1848717
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 030321c63b9c3494027fc79d010c8b5888871822
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66193782"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669661"
 ---
 Glückwunsch, Sie haben das Tutorial erfolgreich abgeschlossen und Folgendes gelernt:
 
@@ -21,6 +21,6 @@ Wenn Sie mehr über die Grundlagen bei der Erstellung mobiler Apps mit Xamarin.F
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PopupsTutorial (sample) (Tutorial zu Popupelementen (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/PopupsTutorial)
+- [PopupsTutorial (sample) (Tutorial zu Popupelementen (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-popupstutorial/)
 - [Anzeigen von Popupelementen (Leitfaden)](~/xamarin-forms/user-interface/pop-ups.md)
 - [Page API (Seiten-API)](xref:Xamarin.Forms.Page)

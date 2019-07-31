@@ -11,7 +11,7 @@ abstract:
   description: 'Xamarin.Forms-Beispiel-Apps und -Code-Demos, die Ihnen beim Einstieg und beim Verstehen der Konzepte in Xamarin.Forms helfen sollen.'
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
         text: Alle Xamarin.Forms-Beispiele
 sections:
   - title: null
@@ -56,9 +56,9 @@ sections:
               src: images/xuzzle.png
               href: 'https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/'
             title: Xuzzle
-          - href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
             html: Alle Xamarin.Forms-Beispiel-Apps und -Code-Demos.
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
             title: Alle Xamarin.Forms-Beispiele

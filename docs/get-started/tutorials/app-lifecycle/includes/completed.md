@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b18f6d88c5694415d2082a6db112143fc421471c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c3e78badbea16205565757058e9226b5dc7606cd
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187511"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669657"
 ---
 Glückwunsch, Sie haben das Tutorial erfolgreich abgeschlossen und Folgendes gelernt:
 
@@ -21,7 +21,7 @@ Wenn Sie mehr über die Grundlagen bei der Erstellung mobiler Apps mit Xamarin.F
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [AppLifecycleTutorial (sample) (Tutorial zum App-Lebenszyklus (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/AppLifecycleTutorial)
+- [AppLifecycleTutorial (sample) (Tutorial zum App-Lebenszyklus (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-applifecycletutorial/)
 - [Xamarin.Forms App Lifecycle (guide) (App-Lebenszyklus in Xamarin.Forms (Leitfaden))](~/xamarin-forms/app-fundamentals/app-lifecycle.md)
 - [Xamarin.Forms App Class (guide) (App-Klassen in Xamarin.Forms (Leitfaden))](~/xamarin-forms/app-fundamentals/application-class.md)
 - [Application API (Anwendungs-API)](xref:Xamarin.Forms.Application)

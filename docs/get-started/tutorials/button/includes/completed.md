@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 623802729bd5ef0429e329b193a4b331cd1cbc3f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d1aa70c5cfeeccbbb29d600c4ac92aff0d5aacfd
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61372941"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669651"
 ---
 Glückwunsch, Sie haben das Tutorial erfolgreich abgeschlossen und Folgendes gelernt:
 
@@ -22,6 +22,6 @@ Wenn Sie mehr über die Grundlagen bei der Erstellung mobiler Apps mit Xamarin.F
 
 ## <a name="related-links"></a>Verwandte Links
 
-- Tutorial zu [Button](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/ButtonTutorial) (Beispiel)
+- Tutorial zu [Button](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-buttontutorial/) (Beispiel)
 - [Xamarin.Forms Button (Leitfaden zum Xamarin.Forms-Button-Element)](~/xamarin-forms/user-interface/button.md)
 - [Button-API](xref:Xamarin.Forms.Button)

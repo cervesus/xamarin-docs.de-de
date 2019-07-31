@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0c07199a8f839d8dc9d334ae06c96a9b363c36e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61388811"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669659"
 ---
 REST-Anforderungen erfolgen über HTTP mit den gleichen HTTP-Verben, mit denen Webbrowser Seiten abrufen und Daten an Server senden. In dieser Übung erstellen Sie eine Klasse, die mit dem GET-Verb Daten aus der Web-API [OpenWeatherMap](https://openweathermap.org/) abruft. Diese Web-API kann zum Abrufen von Wettervorhersagedaten für einen bestimmten Standort verwendet werden. Diese Web-API erfordert, dass Sie sich für einen API-Schlüssel registrieren.
 
@@ -82,7 +82,7 @@ REST-Anforderungen erfolgen über HTTP mit den gleichen HTTP-Verben, mit denen W
     Dieser Code definiert vier Klassen, die verwendet werden, um die vom Webdienst abgerufenen JSON-Daten zu modellieren. Jede Eigenschaft verfügt über ein `JsonProperty`-Attribut, das einen JSON-Feldnamen enthält. Beim Deserialisieren der JSON-Daten in Modellobjekte verwendet „Newtonsoft.Json“ diese Zuordnung von JSON-Feldnamen und CLR-Eigenschaften.
 
     > [!NOTE]
-    > Die obigen Klassendefinitionen wurden vereinfacht und modellieren die vom Webdienst abgerufenen JSON-Daten nicht vollständig. Ein Beispiel für ein vollständiges Datenmodell finden Sie unter [Weather App](https://developer.xamarin.com/samples/xamarin-forms/Weather/).
+    > Die obigen Klassendefinitionen wurden vereinfacht und modellieren die vom Webdienst abgerufenen JSON-Daten nicht vollständig. Ein Beispiel für ein vollständiges Datenmodell finden Sie unter [Weather App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/).
 
 1. Fügen Sie im **Projektmappen-Explorer** dem Projekt **WebServiceTutorial** eine neue Klasse mit dem Namen `RestService` hinzu. Entfernen Sie dann in **RestService.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -202,7 +202,7 @@ REST-Anforderungen erfolgen über HTTP mit den gleichen HTTP-Verben, mit denen W
     Dieser Code definiert vier Klassen, die verwendet werden, um die vom Webdienst abgerufenen JSON-Daten zu modellieren. Jede Eigenschaft verfügt über ein `JsonProperty`-Attribut, das einen JSON-Feldnamen enthält. Beim Deserialisieren der JSON-Daten in Modellobjekte verwendet „Newtonsoft.Json“ diese Zuordnung von JSON-Feldnamen und CLR-Eigenschaften.
 
     > [!NOTE]
-    > Die obigen Klassendefinitionen wurden vereinfacht und modellieren die vom Webdienst abgerufenen JSON-Daten nicht vollständig. Ein Beispiel für ein vollständiges Datenmodell finden Sie unter [Weather App](https://developer.xamarin.com/samples/xamarin-forms/Weather/).
+    > Die obigen Klassendefinitionen wurden vereinfacht und modellieren die vom Webdienst abgerufenen JSON-Daten nicht vollständig. Ein Beispiel für ein vollständiges Datenmodell finden Sie unter [Weather App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/).
 
 1. Fügen Sie im **Lösungspad** dem Projekt **WebServiceTutorial** eine neue Klasse mit dem Namen `RestService` hinzu. Entfernen Sie dann in **RestService.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 

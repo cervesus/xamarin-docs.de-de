@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d7af34feb7ca9526efef067bdce79a59164d0e3f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5155752f9bcf87eab8a9d48552071c51ffd10b15
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61375377"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669650"
 ---
 Glückwunsch, Sie haben das Tutorial erfolgreich abgeschlossen und Folgendes gelernt:
 
@@ -22,7 +22,7 @@ Um mehr über die Grundlagen bei der Erstellung mobiler Apps mit Xamarin.Forms z
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [GridTutorial (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/GridTutorial)
+- [GridTutorial (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-gridtutorial/)
 - [Xamarin.Forms-Raster (Leitfaden)](~/xamarin-forms/user-interface/layouts/grid.md)
 - [Ränder und Abstände (Leitfaden)](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)
 - [Raster-API](xref:Xamarin.Forms.Grid)
