@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: aaecc0da52fe692840ed928946963a995364fa9f
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 360ea18de0c9d30988d63602ba3c17c3d00ed83a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509186"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644091"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Ausführen von Android-Diensten in Remote Prozessen
 
@@ -488,4 +488,4 @@ In diesem Leitfaden wurde erläutert, wie Sie einen Android-Dienst in einem Remo
 - [Prozesse und Threads](https://developer.android.com/guide/components/processes-and-threads.html)
 - [Android-Manifest: Berechtigungen](https://developer.android.com/guide/topics/manifest/manifest-intro.html#perms)
 - [Tipps zur Sicherheit](https://developer.android.com/training/articles/security-tips.html)
-- [Messengerservicedemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/MessengerServiceDemo/)
+- [Messengerservicedemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-messengerservicedemo)
