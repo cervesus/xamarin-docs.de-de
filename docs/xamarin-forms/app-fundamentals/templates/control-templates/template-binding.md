@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: e4e67ba63d2040bff264498bc9c00124dfd22164
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 41e5bbc42ccde5cdd5223a7d2cb0a77da66e10c1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926337"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647003"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>Bindung von einer Xamarin.Forms-Steuerelementvorlage
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleThemeWithTemplateBinding/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplates-simplethemewithtemplatebinding)
 
 _Durch Vorlagenbindungen können Steuerelemente in einer Steuerelementvorlage eine Datenbindung zu öffentlichen Eigenschaften herstellen, sodass Eigenschaftswerte von Steuerelementen in der Steuerelementvorlage leicht angepasst werden können. In diesem Artikel wird veranschaulicht, wie Sie mit Vorlagenbindungen Datenbindungen aus einer Steuerelementvorlage herstellen können._
 
@@ -181,8 +181,8 @@ In diesem Artikel wurde veranschaulicht, wie Sie mit Vorlagenbindungen Datenbind
 
 - [Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 - [Von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
-- [Einfaches Design mit Vorlagenbindung (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleThemeWithTemplateBinding/)
-- [Einfaches Design mit Vorlagenbindung und "ViewModel" (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
+- [Einfaches Design mit Vorlagenbindung (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplates-simplethemewithtemplatebinding)
+- [Einfaches Design mit Vorlagenbindung und "ViewModel" (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplates-simplethemewithtemplatebindingandviewmodel)
 - [TemplateBinding](xref:Xamarin.Forms.TemplateBinding)
 - [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
 - [ContentView](xref:Xamarin.Forms.ContentView)

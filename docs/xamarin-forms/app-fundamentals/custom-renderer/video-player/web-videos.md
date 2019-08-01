@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 784c4d22a112de1adc98d6b7f183f9fa2081a897
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 9beff615c39fc34b5a58a93d309bb20543cad77f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926277"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650415"
 ---
 # <a name="playing-a-web-video"></a>Wiedergeben eines Webvideos
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Die `VideoPlayer`-Klasse definiert eine `Source`-Eigenschaft, die zum Festlegen der Quelle der Videodatei verwendet wird, sowie eine `AutoPlay`-Eigenschaft. `AutoPlay` verfügt über die Standardeinstellung `true`, d.h., das Video sollte automatisch abgespielt werden, nachdem `Source` festgelegt wurde:
 
@@ -449,7 +449,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>Festlegen einer URL-Quelle
 
-Wenn diese Eigenschaften in die drei Renderer implementiert sind, können Sie ein Video aus einer URL-Quelle wiedergeben. Die Seite **Play Web Video** (Webvideo abspielen) im Programm [**VideoPlayDemos**]( https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) wird von der folgenden XAML-Datei definiert:
+Wenn diese Eigenschaften in die drei Renderer implementiert sind, können Sie ein Video aus einer URL-Quelle wiedergeben. Die Seite **Play Web Video** (Webvideo abspielen) im Programm [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) wird von der folgenden XAML-Datei definiert:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -525,4 +525,4 @@ Alternativ können Sie die `Source`-Eigenschaft einer Videodatei wie im nächste
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 505b2ab60a4fc828790aa2b351460de8980c6b9d
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 269d9d1ff658217a49ff56057c01c011f920b5df
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926796"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650516"
 ---
 # <a name="loading-application-resource-videos"></a>Laden von Anwendungsressourcenvideos
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Die benutzerdefinierten Renderer der Ansicht `VideoPlayer` können Videodateien wiedergeben, die als Anwendungsressourcen in die einzelnen Plattformprojekte eingebettet wurden. Mit der aktuellen Version von `VideoPlayer` kann jedoch nicht auf Ressourcen zugegriffen werden, die in eine .NET Standard-Bibliothek eingebettet sind.
 
@@ -184,4 +184,4 @@ Sie haben nun die Vorgehensweise zum [Laden von Videos aus einem Web-URI](web-vi
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

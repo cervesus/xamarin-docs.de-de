@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: b6e68f6b99803edd8d50a172d598a3410aa1bbf4
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: b40617dc9ed2054540ce04d5527fae8de6e2285b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740766"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644897"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 _Xamarin.Forms umfasst einen einfachen Messagingdienst zum Senden und Empfangen von Nachrichten._
 
@@ -113,6 +113,6 @@ MessagingCenter ist ein einfacher Weg, Kopplung zu reduzieren, besonders zwische
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MessagingCenterSample (MessagingCenter – Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
+- [MessagingCenterSample (MessagingCenter – Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)
 - [Kommunikation zwischen lose gekoppelten Komponenten](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)

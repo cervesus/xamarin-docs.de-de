@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 01db31a797efc4b383f3bda3fbcf3bb91e0d38e1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 45a85c8ac2f40e92078d46f5765aaf2af1518b77
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926037"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650740"
 ---
 # <a name="highlighting-a-region-on-a-map"></a>Hervorheben eines Bereichs auf einer Karte
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polygon/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polygon)
 
 _In diesem Artikel wurde beschrieben, wie Sie einer Karte eine polygonale Überlagerung hinzufügen, um einen Bereich auf der Karte hervorzuheben. Polygone sind geschlossene ausgefüllte Formen._
 
@@ -308,6 +308,6 @@ In diesem Artikel wurde beschrieben, wie Sie einer Karte eine polygonale Überla
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Polygon Map Overlay (sample) (Polygonale Kartenüberlagerung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polygon/)
+- [Polygon Map Overlay (sample) (Polygonale Kartenüberlagerung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polygon)
 - [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps Namespace (Xamarin.Forms.Maps-Namespace)](xref:Xamarin.Forms.Maps)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 43f8b1185900ff20f8e4c53680c1adf62ac8316a
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5d3635ccc61a0be50e4a4b6d8bc44e60515cc21e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829695"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509070"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -127,7 +127,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Es darf nur ein Projekt mit `<AndroidApplication>True</AndroidApplication>` in einem Android-Paket vorhanden sein. (Leider wurde dies noch nicht bestätigt, was zu subtilen und bizarren Fehlern in Bezug auf Android-Ressourcen führen kann.)
 
--   **AndroidApplicationJavaClass** &ndash; Der vollständige Java-Klassenname, der anstelle von `android.app.Application` verwendet werden soll, wenn eine Klasse von [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) erbt.
+-   **AndroidApplicationJavaClass** &ndash; Der vollständige Java-Klassenname, der anstelle von `android.app.Application` verwendet werden soll, wenn eine Klasse von [Android.App.Application](xref:Android.App.Application) erbt.
 
     Diese Eigenschaft wird im Allgemeinen durch *andere* Eigenschaften festgelegt, z.B. durch die MSBuild-Eigenschaft `$(AndroidEnableMultiDex)`.
 

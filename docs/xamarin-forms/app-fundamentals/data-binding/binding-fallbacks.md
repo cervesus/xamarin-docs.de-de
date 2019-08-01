@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
-ms.openlocfilehash: 505b5bfb9681e5bc30ff84aa90c8e148ed6db4b1
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 67fd8070ae36bdc1a90b8a33b25f13369d8d995d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058284"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650210"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Fallbacks für Xamarin.Forms-Bindungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Manchmal schlagen Datenbindungen fehl, weil die Bindungsquelle nicht aufgelöst werden kann oder weil eine erfolgreiche Bindung einen `null`-Wert zurückgibt. Während diese Szenarios mit Wertkonvertern behandelt werden können, oder einem anderen zusätzlichen Code, können Datenbindungen stabiler gemacht werden, indem Fallback-Werte festgelegt werden, die verwendet werden, wenn der Bindungsprozess fehlschlägt. Dies kann erreicht werden, indem die Eigenschaften [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) und [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) in einem Bindungsausdruck definiert werden. Da sich diese Eigenschaften in der [`BindingBase`](xref:Xamarin.Forms.BindingBase)-Klasse befinden, können sie mit Bindungen, kompilierten Bindungen und mit der `Binding`-Markuperweiterung verwendet werden.
 
@@ -106,4 +106,4 @@ Wenn die `TargetNullValue`-Eigenschaft nicht in einem Bindungsausdruck festgeleg
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

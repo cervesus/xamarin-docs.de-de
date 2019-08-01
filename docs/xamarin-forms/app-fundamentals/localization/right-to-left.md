@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: e74231133c0a52ba0fe4e5589f09aab15e1b9924
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 78288680a1a522b2c6c413e1f8a2cec2a07835d6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978601"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656985"
 ---
 # <a name="right-to-left-localization"></a>Lokalisierung von rechts nach links
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
 _Durch die Lokalisierung von rechts nach links kann Text in der Leserichtung von rechts nach links in Xamarin.Forms-Anwendungen dargestellt werden._
 
@@ -154,4 +154,4 @@ Für die Lokalisierung von rechts nach links gelten in Xamarin.Forms derzeit die
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel-App „TodoLocalizedRTL“](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
+- [Beispiel-App „TodoLocalizedRTL“](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)

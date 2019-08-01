@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
-ms.openlocfilehash: 9175c60c436f2e808f3658bae717a747e0401c28
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 8f5be75c750a6ee7efc52300382ca2241b87ecd3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855314"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656925"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac: Exemplarische Vorgehensweise
 
@@ -33,7 +33,7 @@ Die folgenden Konzepte werden besprochen:
 - **Outlets und Aktionen:** Verwendung von Outlets und Aktionen zum Verbinden von Steuerelementen auf der Benutzeroberfläche
 - **Bereitstellung/Tests**: So führen Sie eine Xamarin.Mac-App aus und testen diese.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Zum Entwickeln von Xamarin.Mac-Anwendungen benötigen Sie Folgendes:
 
@@ -59,7 +59,7 @@ So beginnen Sie
 
     [![](hello-mac-images/setup01-sml.png "Die Hauptoberfläche für Visual Studio für Mac")](hello-mac-images/setup01.png#lightbox)
 
-2. Klicken Sie auf die Schaltfläche **Neues Projekt...**, um das Dialogfeld **Neues Projekt** zu öffnen, wählen Sie dann **Mac** > **App** > **Cocoa-App** aus, und klicken Sie auf die Schaltfläche **Weiter**:
+2. Klicken Sie auf die Schaltfläche **Neues Projekt...** , um das Dialogfeld **Neues Projekt** zu öffnen, wählen Sie dann **Mac** > **App** > **Cocoa-App** aus, und klicken Sie auf die Schaltfläche **Weiter**:
 
     [![](hello-mac-images/setup02-sml.png "Eine Cocoa-App auswählen")](hello-mac-images/setup02.png#lightbox)
 
@@ -579,9 +579,9 @@ Jetzt wo Sie die Grundlagen einer Xamarin.Mac-App kennen, sehen Sie sich die fol
 - [Auflistungsansichten](~/mac/user-interface/collection-view.md): In diesem Artikel wird beschrieben, wie Sie mit Auflistungsansichten in einer Xamarin.Mac-Anwendung arbeiten. Sie erfahren, wie Sie Auflistungsansichten in Xcode und Interface Builder erstellen und verwalten, wie Sie die Auflistungsansichtelemente für Code mit Outlets und Aktionen verfügbar machen, Auflistungselemente auffüllen und in C#-Code auf Auflistungsansichtelemente reagieren.
 - [Arbeiten mit Bildern](~/mac/app-fundamentals/image.md): In diesem Artikel wird beschrieben, wie Sie mit Bildern und Symbolen in einer Xamarin.Mac-Anwendung arbeiten. Sie erfahren, wie Sie die erforderlichen Bilder erstellen und verwalten, die Sie für das App-Symbol benötigen, und wie Sie Bilder sowohl in C#-Code als auch in Interface Builder von Xcode verwenden.
 
-Der [Mac-Beispielkatalog](https://developer.xamarin.com/samples/mac/all/) enthält fertige Codebeispiele zum Erlernen von Xamarin.Mac.
+Der [Mac-Beispielkatalog](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac) enthält fertige Codebeispiele zum Erlernen von Xamarin.Mac.
 
-Eine vollständige Xamarin.Mac-App, die viele Funktionen enthält, die ein Benutzer in einer typischen Mac-Anwendung erwarten würde, finden Sie unter [SourceWriter-Beispiel-App](https://developer.xamarin.com/samples/mac/SourceWriter/). SourceWriter ist ein einfacher Quellcode-Editor, der Unterstützung für die Codevervollständigung und die einfache Syntaxhervorhebung bietet.
+Eine vollständige Xamarin.Mac-App, die viele Funktionen enthält, die ein Benutzer in einer typischen Mac-Anwendung erwarten würde, finden Sie unter [SourceWriter-Beispiel-App](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter). SourceWriter ist ein einfacher Quellcode-Editor, der Unterstützung für die Codevervollständigung und die einfache Syntaxhervorhebung bietet.
 
 Der SourceWriter-Code wurde vollständig kommentiert und es wurden, wenn möglich, Links der Schlüsseltechnologien und -methoden zu wichtigen Informationen in der Xamarin.Mac-Dokumentation bereitgestellt.
 
@@ -591,5 +591,5 @@ In diesem Artikel wurden die Grundlagen einer Standard-Xamarin.Mac-App beschrieb
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [„Hallo, Mac“-Beispiel](https://developer.xamarin.com/samples/mac/Hello_Mac/)
+- [„Hallo, Mac“-Beispiel](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
 - [macOS-Eingaberichtlinien](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: f5a7dd9cca006157589f6fc43b41764129d90c86
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: db666fc6a547e3fa089475ba5912774c1af3be0d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926647"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650748"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Hervorheben eines kreisförmigen Bereiches auf einer Karte
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Circle/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
 
 _In diesem Artikel wird beschrieben, wie Sie einer Karte eine kreisförmige Überlagerung hinzufügen, um einen kreisförmigen Bereich auf der Karte hervorzuheben._
 
@@ -335,6 +335,6 @@ In diesem Artikel wurde beschrieben, wie Sie einer Karte eine kreisförmige Übe
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Circular Map Ovlerlay (sample) (Kreisförmige Kartenüberlagerung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Circle/)
+- [Circular Map Ovlerlay (sample) (Kreisförmige Kartenüberlagerung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
 - [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps Namespace (Xamarin.Forms.Maps-Namespace)](xref:Xamarin.Forms.Maps)

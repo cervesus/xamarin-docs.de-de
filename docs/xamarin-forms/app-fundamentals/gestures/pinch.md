@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 2eb6e6f94887301b78f401bf73a4ffaa01559c37
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: be7a145e93aa4720b38921efc895ca3f3f33edb3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059391"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656029"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Zusammendrückbewegungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PinchGesture/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 
 _Die Zusammendrückbewegung wird zum Ausführen des interaktiven Zooms verwendet und mit der Klasse „PinchGestureRecognizer“ implementiert. Allgemein wird die Zusammendrückbewegung verwendet, um einen interaktiven Zoom eines Bildes im Speicherort der Zusammendrückbewegung auszuführen. Dies wird durch Skalierung des Anzeigebereichs erreicht und in diesem Artikel veranschaulicht._
 
@@ -164,6 +164,6 @@ Diese Methode aktualisiert die Zoomstufe des umschlossenen Benutzeroberflächene
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PinchGesture (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PinchGesture/)
+- [PinchGesture (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [PinchGestureRecognizer](xref:Xamarin.Forms.PinchGestureRecognizer)

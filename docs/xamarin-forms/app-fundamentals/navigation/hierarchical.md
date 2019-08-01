@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 01bb3d19b5e79a6ce9942447b5ddd4afb04574cc
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: b1f2dbe87fed951223e731912b696c649d0b6edb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978596"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647193"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
 _Die NavigationPage-Klasse stellt eine hierarchische Navigation bereit, bei welcher der Benutzer wie gewünscht in der Vorwärts- und in der Rückwärtsrichtung durch Seiten navigieren kann. Die Klasse implementiert die Navigation als LIFO-Stapel (Last-In-First-out) von Page-Objekten. In diesem Artikel wird gezeigt, wie die NavigationPage-Klasse verwendet werden kann, um die Navigation in einem Stapel von Seiten auszuführen._
 
@@ -310,7 +310,7 @@ Vorausgesetzt, dass die Anmeldeinformationen des Benutzers richtig sind, wird di
 
 Jede [`View`](xref:Xamarin.Forms.View)-Klasse von Xamarin.Forms kann in der Navigationsleiste einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) angezeigt werden. Dafür muss die angefügte [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)-Eigenschaft für `View` festgelegt werden. Die angefügte Eigenschaft kann für eine beliebige [`Page`](xref:Xamarin.Forms.Page)-Klasse festgelegt werden. Wenn die `Page` per Push auf eine `NavigationPage` übertragen wird, respektiert die `NavigationPage` den Wert der Eigenschaft.
 
-Im folgenden Beispiel, das aus dem [Title View-Beispiel (Titelansicht)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/) von Xamarin stammt, wird dargestellt, wie die angefügte [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)-Eigenschaft von XAML festgelegt wird:
+Im folgenden Beispiel, das aus dem [Title View-Beispiel (Titelansicht)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview) von Xamarin stammt, wird dargestellt, wie die angefügte [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)-Eigenschaft von XAML festgelegt wird:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -362,9 +362,9 @@ Es gibt mehrere Einschränkungen, die Sie beachten sollten, wenn Sie eine [`View
 ## <a name="related-links"></a>Verwandte Links
 
 - [Seitennavigation](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [Hierarchical Navigation (Hierarchische Navigation: Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
-- [PassingData (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
-- [LoginFlow (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
-- [TitleView (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
+- [Hierarchical Navigation (Hierarchische Navigation: Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+- [PassingData (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
+- [LoginFlow (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
+- [TitleView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)
 - [Video zum Erstellen eines Anmeldebildschirmflows in Xamarin.Forms](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

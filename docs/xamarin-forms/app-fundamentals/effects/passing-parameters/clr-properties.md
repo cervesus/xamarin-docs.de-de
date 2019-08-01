@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 9f3d95b3901295c29c2276bfdd85579b321f9795
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c5271aab5342f065694e598bd5c2892ef1f18aeb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925432"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656662"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Übergeben von Effect-Parametern als Eigenschaften der Common Language Runtime
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _CLR-Eigenschaften können verwendet werden, um Effect-Parameter zu definieren, die nicht auf Änderungen der Runtimeeigenschaften reagieren. In diesem Artikel wird veranschaulicht, wie CLR-Eigenschaften verwendet werden, um Parameter an einen Effekt zu übergeben._
 
@@ -185,7 +185,7 @@ namespace EffectsDemo.Droid
 }
 ```
 
-Die `OnAttached`-Methode ruft die `ShadowEffect`-Instanz ab und ruft die Methode [`TextView.SetShadowLayer`](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) auf, um mithilfe der bestimmten Eigenschaftswerte einen Schatteneffekt zu erstellen. Diese Funktion wird von einem `try`/`catch`-Block umschlossen, falls das Steuerelement, an das der Effekt angefügt ist, nicht über die `Control.Layer`-Eigenschaften verfügt. Von der `OnDetached`-Methode wird keine Implementierung bereitgestellt, da keine Bereinigung erforderlich ist.
+Die `OnAttached`-Methode ruft die `ShadowEffect`-Instanz ab und ruft die Methode [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) auf, um mithilfe der bestimmten Eigenschaftswerte einen Schatteneffekt zu erstellen. Diese Funktion wird von einem `try`/`catch`-Block umschlossen, falls das Steuerelement, an das der Effekt angefügt ist, nicht über die `Control.Layer`-Eigenschaften verfügt. Von der `OnDetached`-Methode wird keine Implementierung bereitgestellt, da keine Bereinigung erforderlich ist.
 
 ### <a name="universal-windows-platform-project"></a>Projekt für die Universelle Windows-Plattform
 
@@ -245,4 +245,4 @@ In diesem Artikel wurde veranschaulicht, wie CLR-Eigenschaften verwendet werden,
 - [Effect class (Effect-Klasse)](xref:Xamarin.Forms.Effect)
 - [PlatformEffect (PlatformEffect-Klasse)](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect Class (RoutingEffect-Klasse)](xref:Xamarin.Forms.RoutingEffect)
-- [Shadow Effect (Schatteneffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+- [Shadow Effect (Schatteneffekt (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

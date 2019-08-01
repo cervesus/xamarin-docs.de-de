@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 8e80016e33e8bebba715be4f02060e76086884fc
-ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
+ms.openlocfilehash: 8df5b373fccdef93a8ffbc66fd53a94378f47a6e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386192"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650835"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartenstecknadel
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Pin/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
 
 _In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Map-Steuerelement erstellen, der eine native Karte mit einer benutzerdefinierten Stecknadel und einer benutzerdefinierten Ansicht der Stecknadeldaten auf jeder Plattform anzeigt._
 
@@ -658,4 +658,4 @@ Weitere Informationen zum Anpassen von einer `MapControl`-Instanz finden Sie auf
 - [Maps Control (Kartensteuerelement)](~/xamarin-forms/user-interface/map.md)
 - [Maps in Xamarin.iOS (Karten in Xamarin.iOS)](~/ios/user-interface/controls/ios-maps/index.md)
 - [Karten-API](~/android/platform/maps-and-location/maps/maps-api.md)
-- [Customized Pin (Benutzerdefinierte Stecknadel (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Pin/)
+- [Customized Pin (Benutzerdefinierte Stecknadel (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)

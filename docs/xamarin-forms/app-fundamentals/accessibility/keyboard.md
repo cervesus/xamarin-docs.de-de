@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 7f469dab92793eeaa38bd2b73e9d94b138495379
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ba29e57008bfea420562d88ab1612c09f4460e85
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830347"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651059"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Barrierefreiheit der Tastatur in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 Benutzer, die Sprachausgaben verwenden oder Mobilitätseinschränkungen haben, können bei der Nutzung von Anwendungen Probleme haben, bei denen die Verwendung passender Zugriffstasten nicht möglich ist. Für Xamarin.Forms-Anwendungen kann eine erwartete Aktivierreihenfolge angegeben sein, um die Nutzbarkeit und Barrierefreiheit zu optimieren. Durch das Festlegen einer Aktivierreihenfolge für Steuerelemente wird die Tastaturnavigation aktiviert, und Anwendungsseiten werden entsprechend eingerichtet, Eingaben in einer bestimmten Abfolge zu empfangen. Zudem kann die Sprachausgabe dem Benutzer fokussierbare Elemente vorlesen.
 
@@ -146,4 +146,4 @@ Die `TabIndex`- und `IsTapStop`-Eigenschaften werden bei den folgenden Steuerele
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Accessibility (Barrierefreiheit (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+- [Accessibility (Barrierefreiheit (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

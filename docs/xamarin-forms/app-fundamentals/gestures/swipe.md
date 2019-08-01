@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 2e28d3e7035eb570b2053d39cec8b8d91dada6f0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ae9b5eb5b768b50ddcbc199040074de855f220de
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059417"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649458"
 ---
 # <a name="adding-a-swipe-gesture-recognizer"></a>Hinzuf체gen einer Gestenerkennung f체r Wischbewegungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 
-_Eine Wischbewegung tritt auf, wenn ein Finger in horizontaler oder vertikaler Richtung 체ber den Bildschirm bewegt wird. Diese Bewegung wird oft genutzt, um durch Inhalte zu navigieren. Die Codebeispiele in diesem Artikel stammen aus dem Beispiel [SwipeGesture](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)._
+_Eine Wischbewegung tritt auf, wenn ein Finger in horizontaler oder vertikaler Richtung 체ber den Bildschirm bewegt wird. Diese Bewegung wird oft genutzt, um durch Inhalte zu navigieren. Die Codebeispiele in diesem Artikel stammen aus dem Beispiel [SwipeGesture](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)._
 
 Damit eine [`View`](xref:Xamarin.Forms.View)-Klasse eine Wischbewegung erkennt, erstellen Sie eine [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer)-Instanz, legen die [`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction)-Eigenschaft auf einen [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection)-Enumerationswert (`Left`, `Right`, `Up` oder `Down`) fest, legen optional die [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold)-Eigenschaft fest, bearbeiten das [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)-Ereignis und f체gen die neue Gestenerkennung f체r Wischbewegungen zur [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers)-Collection auf der Ansicht hinzu. Das folgende Codebeispiel zeigt eine `SwipeGestureRecognizer`-Klasse, die an eine [`BoxView`](xref:Xamarin.Forms.BoxView)-Klasse angef체gt ist:
 
@@ -207,6 +207,6 @@ Wenn die [`BoxView`](xref:Xamarin.Forms.BoxView)-Klasse eine Wischbewegung empf�
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SwipeGesture (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)
+- [SwipeGesture (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [SwipeGestureRecognizer](xref:Xamarin.Forms.SwipeGestureRecognizer)

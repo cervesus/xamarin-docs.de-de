@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 8926813e8efae72efa9af2221318d6f1ff1e344f
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 6979b4d3e0d750ee962346a94dd832c86c92d995
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970922"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652953"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Die Xamarin.Forms-Klasse „TabbedPage“
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
 _Die TabbedPage-Klasse von Xamarin.Forms besteht aus einer Liste von Registerkarten und aus einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. In diesem Artikel wird veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Auflistung von Seiten navigieren können._
 
@@ -262,6 +262,6 @@ In diesem Artikel wurde veranschaulicht, wie Sie mit einer TabbedPage-Klasse dur
 ## <a name="related-links"></a>Verwandte Links
 
 - [Page Varieties (Seitenvarianten)](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [TabbedPage mit NavigationPage (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage)
-- [TabbedPage (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPage/)
+- [TabbedPage mit NavigationPage (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+- [TabbedPage (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
 - [TabbedPage](xref:Xamarin.Forms.TabbedPage)

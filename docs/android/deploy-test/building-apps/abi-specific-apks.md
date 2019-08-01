@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 8c79075c9e01ef5da73255b152b4cbbd676b4f4e
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 20e7385c16324643545e156950efaca565eb0e0c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674734"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643945"
 ---
 # <a name="building-abi-specific-apks"></a>Erstellen ABI-spezifischer Android-Anwendungspakete (APKs)
 
@@ -185,6 +185,6 @@ Diese Anleitung enthält Vorschläge zur Erstellung von Android APKs, die auf ei
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [OneABIPerAPK (Beispiel)](https://developer.xamarin.com/samples/monodroid/OneABIPerAPK/)
+- [OneABIPerAPK (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/oneabiperapk)
 - [Veröffentlichen einer Anwendung](~/android/deploy-test/publishing/index.md)
 - [Unterstützung mehrerer APKs für Google Play](https://developer.android.com/google/play/publishing/multiple-apks.html)

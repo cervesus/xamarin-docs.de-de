@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 650c341ab4b599a4eaf0cab81ba6f9129699e15d
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: addb367d8e730919b621b5858f458444ace62024
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926026"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650996"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Erstellen von Xamarin.Forms-Verhalten
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehavior/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
 _Xamarin.Forms-Verhalten werden von der Klasse „Behavior“ oder „Behavior&lt;T&gt; abgeleitet. In diesem Artikel wird veranschaulicht, wie Sie Xamarin.Forms-Verhalten erstellen und verwenden können._
 
@@ -211,7 +211,7 @@ In diesem Artikel wurde veranschaulicht, wie Sie Xamarin.Forms-Verhalten erstell
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin.Forms Behavior (sample) (Xamarin.Forms-Verhalten (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehavior/)
-- [Xamarin.Forms Behavior applied with a Style (sample) (Xamarin.Forms-Verhalten mit angewendeter Formatvorlage (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehaviorStyle/)
+- [Xamarin.Forms Behavior (sample) (Xamarin.Forms-Verhalten (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+- [Xamarin.Forms Behavior applied with a Style (sample) (Xamarin.Forms-Verhalten mit angewendeter Formatvorlage (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
 - [Behavior-Klasse](xref:Xamarin.Forms.Behavior)
 - [Behavior<T>-Klasse<T>](xref:Xamarin.Forms.Behavior`1)

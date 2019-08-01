@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 9b5150eff0290ef5858198459108699be9f9b273
-ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
+ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411764"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651678"
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen über Effekte
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
 _Effekte können Ereignisse definieren und auslösen, die Änderungen in der zugrunde liegenden nativen Ansicht signalisieren. In diesem Artikel wird beschrieben, wie Sie eine umfassende Multitouchverfolgung implementieren und Ereignisse generieren, die eine Touchaktivität signalisieren._
 
@@ -52,7 +52,7 @@ Aus diesem Grund implementiert der in diesem Artikel beschriebene Touchverfolgun
 
 ## <a name="the-touch-tracking-effect-api"></a>Die API für den Touchverfolgungseffekt
 
-Die [**Touch Tracking Effect Demos (Demos zum Touchverfolgungseffekt)**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) umfassen die Klassen (und eine Enumeration), die die umfassende Touchverfolgung implementieren. Diese Typen gehören zum Namespace `TouchTracking` und beginnen mit dem Wort `Touch`. Das **TouchTrackingEffectDemos**-Projekt für eine .NET Standard-Bibliothek umfasst die `TouchActionType`-Enumeration für den Touchereignistyp:
+Die [**Touch Tracking Effect Demos (Demos zum Touchverfolgungseffekt)** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) umfassen die Klassen (und eine Enumeration), die die umfassende Touchverfolgung implementieren. Diese Typen gehören zum Namespace `TouchTracking` und beginnen mit dem Wort `Touch`. Das **TouchTrackingEffectDemos**-Projekt für eine .NET Standard-Bibliothek umfasst die `TouchActionType`-Enumeration für den Touchereignistyp:
 
 ```csharp
 public enum TouchActionType
@@ -359,7 +359,7 @@ Die `TouchRecognizer`-Klasse ähnelt der Android-Klasse `TouchEffect` weitestgeh
 
 ## <a name="putting-the-touch-effect-to-work"></a>Einsetzen des Toucheffekts
 
-Das [**TouchTrackingEffectDemos**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)-Programm enthält fünf Seiten, die den Touchverfolgungseffekt auf häufig auftretende Tasks untersuchen.
+Das [**TouchTrackingEffectDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)-Programm enthält fünf Seiten, die den Touchverfolgungseffekt auf häufig auftretende Tasks untersuchen.
 
 Über die Seite **BoxView Dragging** (BoxView ziehen) können Sie `BoxView`-Elemente zu einem `AbsoluteLayout` hinzufügen und anschließend an eine andere Position auf dem Bildschirm ziehen. Die [XAML-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml) instanziiert zwei `Button`-Ansichten zum Hinzufügen von `BoxView`-Elementen zum `AbsoluteLayout` und zum Löschen des `AbsoluteLayout`.
 
@@ -809,4 +809,4 @@ In diesem Artikel wurde erläutert, wie Sie Ereignisse in einem Effekt auslösen
 
 - [Multi-Touch Finger Tracking in iOS (Multitouchverfolgung unter iOS)](~/ios/app-fundamentals/touch/touch-tracking.md)
 - [Multi-Touch Finger Tracking in Android (Multitouchverfolgung unter Android)](~/android/app-fundamentals/touch/touch-tracking.md)
-- [Touch Tracking Effect (sample) (Touchverfolgungseffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
+- [Touch Tracking Effect (sample) (Touchverfolgungseffekt (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)

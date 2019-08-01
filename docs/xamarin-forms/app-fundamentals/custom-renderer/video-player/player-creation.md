@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 21a707ebd189e9cbfa6735b233a6c0af65138e0c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: e14008341e531844851452daeee4c730565a2843
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926644"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650490"
 ---
 # <a name="creating-the-platform-video-players"></a>Erstellen von Plattformen für Videoplayer
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-Die [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)-Projektmappe enthält den gesamten Code, der in einen Videoplayer für Xamarin.Forms implementiert werden soll. Außerdem beinhaltet sie mehrere Seiten, auf denen gezeigt wird, wie der Videoplayer innerhalb einer Anwendung zu verwenden ist. Der gesamte `VideoPlayer`-Code und die betreffenden Plattformrenderer sind in einem Projektordner mit dem Namen `FormsVideoLibrary` gespeichert und verwenden den Namespace `FormsVideoLibrary`. Dies vereinfacht das Kopieren der Dateien in Ihre Anwendung sowie das Herstellen von Verweisen auf die Klassen.
+Die [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)-Projektmappe enthält den gesamten Code, der in einen Videoplayer für Xamarin.Forms implementiert werden soll. Außerdem beinhaltet sie mehrere Seiten, auf denen gezeigt wird, wie der Videoplayer innerhalb einer Anwendung zu verwenden ist. Der gesamte `VideoPlayer`-Code und die betreffenden Plattformrenderer sind in einem Projektordner mit dem Namen `FormsVideoLibrary` gespeichert und verwenden den Namespace `FormsVideoLibrary`. Dies vereinfacht das Kopieren der Dateien in Ihre Anwendung sowie das Herstellen von Verweisen auf die Klassen.
 
 ## <a name="the-video-player"></a>Der Videoplayer
 
@@ -120,7 +120,7 @@ In der Regel bezieht sich dann die `Control`-Eigenschaft der Rendererklasse auf 
 
 ### <a name="the-android-video-view"></a>Die Videoansicht unter Android
 
-Der Android-Renderer für `VideoPlayer` basiert auf der Android-Klasse [`VideoView`](https://developer.xamarin.com/api/type/Android.Widget.VideoView/). Wenn allerdings `VideoView` alleine verwendet wird, um ein Video in einer Xamarin.Forms-Anwendung abzuspielen, füllt das Video den Bereich aus, der dem `VideoPlayer` zugewiesen ist und behält dabei nicht das richtige Seitenverhältnis bei. Aus diesem Grund (wie gleich deutlich werden sollte) ist die `VideoView` ein untergeordnetes Element des Android-`RelativeLayout`. Eine `using`-Direktive definiert das `ARelativeLayout`, um dieses von der `RelativeLayout` für Xamarin.Forms zu unterscheiden. Dies stellt das zweite generische Argument im `ViewRenderer` dar:
+Der Android-Renderer für `VideoPlayer` basiert auf der Android-Klasse [`VideoView`](xrtef:Android.Widget.VideoView). Wenn allerdings `VideoView` alleine verwendet wird, um ein Video in einer Xamarin.Forms-Anwendung abzuspielen, füllt das Video den Bereich aus, der dem `VideoPlayer` zugewiesen ist und behält dabei nicht das richtige Seitenverhältnis bei. Aus diesem Grund (wie gleich deutlich werden sollte) ist die `VideoView` ein untergeordnetes Element des Android-`RelativeLayout`. Eine `using`-Direktive definiert das `ARelativeLayout`, um dieses von der `RelativeLayout` für Xamarin.Forms zu unterscheiden. Dies stellt das zweite generische Argument im `ViewRenderer` dar:
 
 ```csharp
 using System;
@@ -365,7 +365,7 @@ Die `Element`-Eigenschaft des Renderers bezieht sich auf die `VideoPlayer`-Klass
 
 ### <a name="the-android-media-controller"></a>Der Android-Media-Controller
 
-Damit die Transportsteuerelemente unter Android angezeigt werden, muss ein [`MediaController`](https://developer.xamarin.com/api/type/Android.Widget.MediaController/)-Objekt erstellt und dem `VideoView`-Objekt zugeordnet werden. Die Abläufe werden in der `SetAreTransportControlsEnabled`-Methode dargestellt:
+Damit die Transportsteuerelemente unter Android angezeigt werden, muss ein [`MediaController`](xref:Android.Widget.MediaController)-Objekt erstellt und dem `VideoView`-Objekt zugeordnet werden. Die Abläufe werden in der `SetAreTransportControlsEnabled`-Methode dargestellt:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -467,4 +467,4 @@ Damit das Video abgespielt werden kann, wird eine weitere Eigenschaft benötigt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -6,16 +6,16 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
-ms.openlocfilehash: bc88a5eb977ea49b761df22407329dfaf20fa122
-ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
+ms.openlocfilehash: 1318d8e1563239d5215d8cfc03c971be8b2cff35
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477572"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647643"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Herstellen einer Verbindung mit lokalen Webdiensten aus iOS-Simulatoren und Android-Emulatoren
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 
 Webdienste werden von vielen mobilen Anwendungen genutzt. Während der Entwicklungsphase ist es üblich, einen Webdienst lokal bereitzustellen und aus einer mobilen Anwendung zu nutzen, die im iOS-Simulator oder Android-Emulator ausgeführt wird. Auf diese Weise wird die Notwendigkeit vermieden, den Webdienst an einem gehosteten Endpunkt bereitzustellen, und es wird eine unkomplizierte Debugerfahrung ermöglicht, weil sowohl die mobile Anwendung als auch der Webdienst lokal ausgeführt werden.
 
@@ -121,7 +121,7 @@ In diesem Codebeispiel wird das Ergebnis der Serverzertifikatvalidierung zurück
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TodoREST (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+- [TodoREST (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 - [Aktivieren von lokalem HTTPS](/aspnet/core/getting-started#enable-local-https)
 - [HttpClient- und SSL/TLS-Implementierungsselektor für iOS/macOS](~/cross-platform/macios/http-stack.md)
 - [HttpClient-Stapel und SSL/TLS-Implementierungsselektor für Android](~/android/app-fundamentals/http-stack.md)

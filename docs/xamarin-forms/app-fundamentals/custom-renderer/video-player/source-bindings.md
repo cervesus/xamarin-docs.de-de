@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 93383376c9167900bd69e43e8d83044bfdc3b607
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8a83fd7fca15214711dd90dcbf80eb0d56a3df34
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924979"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650454"
 ---
 # <a name="binding-video-sources-to-the-player"></a>Binden von Videoquellen an den Player
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-Das vorhandene Video wird angehalten und das neue Video startet, wenn die `Source`-Eigenschaft der `VideoPlayer`-Ansicht auf eine neue Videodatei festgelegt wird. Dies wird anhand der Seite **Auswählen des Webvideos** des Beispiels [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) veranschaulicht. Die Seite enthält auch eine `ListView`-Klasse mit den Titelnamen der drei Videos, auf die in der Datei **App.xaml** verwiesen wird:
+Das vorhandene Video wird angehalten und das neue Video startet, wenn die `Source`-Eigenschaft der `VideoPlayer`-Ansicht auf eine neue Videodatei festgelegt wird. Dies wird anhand der Seite **Auswählen des Webvideos** des Beispiels [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) veranschaulicht. Die Seite enthält auch eine `ListView`-Klasse mit den Titelnamen der drei Videos, auf die in der Datei **App.xaml** verwiesen wird:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -142,4 +142,4 @@ Wie bei der ersten Seite **Auswählen des Webvideos** ist anfänglich kein Eleme
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

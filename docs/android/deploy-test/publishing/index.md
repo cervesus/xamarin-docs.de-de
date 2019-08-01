@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 4b50d230be642466de68c54957a3fe9a79c1093b
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ebf29e99e1145c23bf476cb80e068e79f72816f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670945"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643901"
 ---
 # <a name="publishing-an-application"></a>Veröffentlichen einer Anwendung
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wurde gezeigt, wie die Anwendung in einem Store wie Google P
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [HelloWorldPublishing (Beispiel)](https://developer.xamarin.com/samples/monodroid/HelloWorldPublishing/)
+- [HelloWorldPublishing (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/helloworldpublishing)
 - [Buildprozess](~/android/deploy-test/building-apps/build-process.md)
 - [Verknüpfen](~/android/deploy-test/linker.md)
 - [Abrufen eines API-Schlüssels für Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)

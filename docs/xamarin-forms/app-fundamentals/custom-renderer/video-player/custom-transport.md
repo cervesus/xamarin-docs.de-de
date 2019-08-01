@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3e5db00a73047aaadb1162fa1cc8a21f6e77b3a0
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ab3ed8895a4f7c6b44c978e52e0b00fc32850f75
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926197"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650639"
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte Transportsteuerelemente für Videos
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Die Transportsteuerelemente eines Videoplayers umfassen die Schaltflächen für Funktionen wie **Wiedergabe**, **Pause** und **Stopp**. In der Regel werden diese Schaltflächen mit bekannten Symbolen anstelle von Text dargestellt, und die Funktionen **Wiedergabe** und **Pause** werden in eine Schaltfläche kombiniert.
 
@@ -364,7 +364,7 @@ Auf zwei Eigenschaften von `AVPlayer` muss zugegriffen werden: Die [`Status`](xr
 
 ### <a name="the-android-status-setting"></a>Die Statuseinstellung unter Android
 
-Die [`IsPlaying`](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/)-Eigenschaft des `VideoView` von Android entspricht einem booleschen Wert, der nur angibt, ob das Video abgespielt wird oder pausiert ist. Das `Prepared`-Ereignis von `VideoView` muss verarbeitet werden, um zu ermitteln, ob `VideoView` das Video bereits wiedergeben oder pausieren kann. Diese zwei Handler werden in der `OnElementChanged`-Methode festgelegt und während der `Dispose`-Überschreibung getrennt:
+Die [`IsPlaying`](xref:Android.Widget.VideoView.IsPlaying)-Eigenschaft des `VideoView` von Android entspricht einem booleschen Wert, der nur angibt, ob das Video abgespielt wird oder pausiert ist. Das `Prepared`-Ereignis von `VideoView` muss verarbeitet werden, um zu ermitteln, ob `VideoView` das Video bereits wiedergeben oder pausieren kann. Diese zwei Handler werden in der `OnElementChanged`-Methode festgelegt und während der `Dispose`-Überschreibung getrennt:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -660,4 +660,4 @@ In einer Produktionsanwendung sollten Sie Ihre eigenen Bitmap-Bilder für die Sc
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: fbc5ccda4e798b818b4c21dd459bab6b467cba31
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d40e1657eb39543023490892b8765ee1fe956ec4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925439"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645374"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Übergeben von Effect-Parametern als angefügte Eigenschaften
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _Angefügte Eigenschaften können verwendet werden, um Effect-Parameter zu definieren, die auf Änderungen der Runtimeeigenschaften reagieren. In diesem Artikel wird veranschaulicht, wie Sie angefügte Eigenschaften verwenden können, um Parameter an einen Effekt zu übergeben, und wie Sie einen Parameter zur Laufzeit anpassen können._
 
@@ -318,7 +318,7 @@ namespace EffectsDemo.Droid
     }
 ```
 
-Die `OnAttached`-Methode ruft Methoden auf, die die Werte der angefügten Eigenschaft mithilfe von `ShadowEffect`-Gettern abrufen. Außerdem wird eine Methode aufgerufen, die die [`TextView.SetShadowLayer`](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/)-Methode aufruft, um einen Schatten auf Grundlage der Eigenschaftswerte zu erstellen. Diese Funktion wird von einem `try`/`catch`-Block umschlossen, falls das Steuerelement, an das der Effekt angefügt ist, nicht über die `Control.Layer`-Eigenschaften verfügt. Von der `OnDetached`-Methode wird keine Implementierung bereitgestellt, da keine Bereinigung erforderlich ist.
+Die `OnAttached`-Methode ruft Methoden auf, die die Werte der angefügten Eigenschaft mithilfe von `ShadowEffect`-Gettern abrufen. Außerdem wird eine Methode aufgerufen, die die [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*)-Methode aufruft, um einen Schatten auf Grundlage der Eigenschaftswerte zu erstellen. Diese Funktion wird von einem `try`/`catch`-Block umschlossen, falls das Steuerelement, an das der Effekt angefügt ist, nicht über die `Control.Layer`-Eigenschaften verfügt. Von der `OnDetached`-Methode wird keine Implementierung bereitgestellt, da keine Bereinigung erforderlich ist.
 
 #### <a name="responding-to-property-changes"></a>Reaktion auf Änderungen bei den Eigenschaften
 
@@ -440,4 +440,4 @@ In diesem Artikel wurde veranschaulicht, wie Sie angefügte Eigenschaften verwen
 - [Effect class (Effect-Klasse)](xref:Xamarin.Forms.Effect)
 - [PlatformEffect (PlatformEffect-Klasse)](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect Class (RoutingEffect-Klasse)](xref:Xamarin.Forms.RoutingEffect)
-- [Shadow Effect (Schatteneffekt (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+- [Shadow Effect (Schatteneffekt (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)

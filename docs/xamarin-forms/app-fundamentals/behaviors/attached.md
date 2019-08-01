@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 8553eb57ca33efd23b2fedf78413eb1df00bb63e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 094f980922762ff33c19af6c9210e2e533bf5196
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925981"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651026"
 ---
 # <a name="attached-behaviors"></a>Angefügte Verhaltensweisen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/AttachedNumericValidationBehavior/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
 _Angefügte Verhaltensweisen sind statische Klassen mit mindestens einer angefügten Eigenschaft. In diesem Artikel wird veranschaulicht, wie Sie angefügte Verhaltensweisen erstellen und verwenden können._
 
@@ -132,4 +132,4 @@ In diesem Artikel wurde veranschaulicht, wie Sie angefügte Verhaltensweisen ers
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Angefügte Verhaltensweisen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/AttachedNumericValidationBehavior/)
+- [Angefügte Verhaltensweisen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: c64714974f6467bcd7e0e4705a1426c83aa691b5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fe2cc5fb7c51425c8030d31015236473a5264efb
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667589"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509017"
 ---
 # <a name="gdb"></a>GDB
 
@@ -147,7 +147,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 Die Berechtigung `INTERNET` ist standardmäßig in Debug-Apps aktiviert. Wenn Sie noch nicht in Ihrer App vorhanden ist, können Sie sie entweder hinzufügen, indem Sie **Properties/AndroidManifest.xml** oder die [Projekteigenschaften](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest) bearbeiten.
 
-Das App-Debuggen kann durch das Festlegen der benutzerdefinierten Attributeigenschaft [ApplicationAttribute.Debugging](https://developer.xamarin.com/api/property/Android.App.ApplicationAttribute.Debuggable/) auf `true` oder durch das Bearbeiten von **Properties/AndroidManifest.xml** und Festlegen des Attributs `//application/@android:debuggable` auf `true` aktiviert werden:
+Das App-Debuggen kann durch das Festlegen der benutzerdefinierten Attributeigenschaft [ApplicationAttribute.Debugging](xref:Android.App.ApplicationAttribute.Debuggable) auf `true` oder durch das Bearbeiten von **Properties/AndroidManifest.xml** und Festlegen des Attributs `//application/@android:debuggable` auf `true` aktiviert werden:
 
 ```xml
 <application android:label="Example.Name.Here" android:debuggable="true">

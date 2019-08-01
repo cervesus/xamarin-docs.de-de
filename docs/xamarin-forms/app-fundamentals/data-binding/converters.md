@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4594da09d48a0888a88cbce9ab135a007eb6f4cd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 34b449aa358874f06a495ec52578dcca2dd13767
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054330"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654728"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Bindungswertkonverter für Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Datenbindungen wandeln Daten in der Regel von einer Quelleigenschaft in eine Zieleigenschaft und in einigen Fällen von der Zieleigenschaft in die Quelleigenschaft um. Diese Umwandlung ist einfach, wenn die Quell- und Zieleigenschaften vom gleichen Typ sind oder wenn ein Typ über eine implizite Konvertierung in den anderen Typ konvertiert werden kann. Wenn dies nicht der Fall ist, muss eine Typkonvertierung durchgeführt werden.
 
@@ -51,7 +51,7 @@ Die `ConvertBack`-Methode wird aufgerufen, wenn Daten vom Ziel zur Quelle in `Tw
 
 Wenn in der Datenbindung auch eine `StringFormat`-Einstellung enthalten ist, wird der Wertkonverter aufgerufen, bevor das Ergebnis als Zeichenfolge formatiert wird.
 
-Die Seite **Enable Buttons** (Aktivieren von Schaltflächen) im Beispiel [**Data Binding Demos (Demos für die Datenbindung)**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) veranschaulicht, wie dieser Wertkonverter in einer Datenbindung verwendet wird. Der Konstruktor `IntToBoolConverter` wird im Ressourcenverzeichnis der Seite instanziiert. Anschließend wird mit einer `StaticResource`-Markuperweiterung auf diesen verwiesen, um die Eigenschaft `Converter` in zwei Datenbindungen festzulegen. Es ist üblich, dass Datenkonverter zwischen mehreren Datenbindungen auf der Seite gemeinsam genutzt werden:
+Die Seite **Enable Buttons** (Aktivieren von Schaltflächen) im Beispiel [**Data Binding Demos (Demos für die Datenbindung)** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) veranschaulicht, wie dieser Wertkonverter in einer Datenbindung verwendet wird. Der Konstruktor `IntToBoolConverter` wird im Ressourcenverzeichnis der Seite instanziiert. Anschließend wird mit einer `StaticResource`-Markuperweiterung auf diesen verwiesen, um die Eigenschaft `Converter` in zwei Datenbindungen festzulegen. Es ist üblich, dass Datenkonverter zwischen mehreren Datenbindungen auf der Seite gemeinsam genutzt werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -467,5 +467,5 @@ So sieht das Ergebnis aus:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

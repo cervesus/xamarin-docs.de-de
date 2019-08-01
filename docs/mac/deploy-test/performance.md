@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 808d7aa8f886dac38ed8ff5f274ca8f4a02c8dbf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 76ce6cd3a78e56acb9d77c0c6a4b942e5bdc3f2e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112428"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656077"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac-Leistung
 
@@ -59,7 +59,7 @@ Desktopanwendungen verarbeiten häufig große Datenmengen. Daher ist es sehr lei
 
 Verwenden Sie deshalb wenn möglich [async](~/cross-platform/platform/async.md) und Threads, um das Blockieren der UI zu verhindern.
 
-Ziehen Sie für lange Vorgänge [NSProgressIndicator](https://developer.xamarin.com/samples/mac/ProgressBarExample/) oder andere in den [Benutzeroberflächen-Richtlinien](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) von Apple erklärte Optionen in Betracht, um Benutzer zu benachrichtigen.
+Ziehen Sie für lange Vorgänge [NSProgressIndicator](https://docs.microsoft.com/samples/xamarin/mac-samples/progressbarexample) oder andere in den [Benutzeroberflächen-Richtlinien](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) von Apple erklärte Optionen in Betracht, um Benutzer zu benachrichtigen.
 
 
 ## <a name="related-links"></a>Verwandte Links

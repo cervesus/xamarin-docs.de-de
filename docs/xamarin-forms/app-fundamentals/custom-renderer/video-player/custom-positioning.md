@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a962c61027fa6f9f05c59272c900a3ca32e1b01f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926128"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650642"
 ---
 # <a name="custom-video-positioning"></a>Benutzerdefinierte Videopositionierung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Die von jeder Plattform implementierten Transportsteuerelemente umfassen auch eine Fortschrittsleiste. Diese Leiste ähnelt einem Schieberegler oder einer Scrollleiste und zeigt die aktuelle Zeitposition in der Gesamtdauer des Videos an. Der Benutzer kann die Fortschrittsleiste außerdem ändern, um das Video vor- oder zurückzuspulen.
 
@@ -481,4 +481,4 @@ Damit ist die Erläuterung des `VideoPlayer`-Steuerelements abgeschlossen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Videoplayerdemos (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Video Player Demos (Videoplayerdemos (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

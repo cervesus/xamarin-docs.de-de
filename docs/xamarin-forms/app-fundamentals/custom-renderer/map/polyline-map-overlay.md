@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 5c67684f7d8cb763d4698de86c904e2887185361
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 19da0de80819a48259a28b30e003c32923d37378
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925188"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650682"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>Markieren einer Route auf einer Karte
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polyline/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polyline)
 
 _In diesem Artikel wird erläutert, wie Sie eine Polylinienüberlagerung zu einer Karte hinzufügen. Eine Polylinienüberlagerung ist eine Reihe verbundener Liniensegmente, die in der Regel verwendet werden, um eine Route auf einer Karte anzuzeigen oder eine andere erforderliche Form zu bilden._
 
@@ -304,6 +304,6 @@ In diesem Artikel wurde erläutert, wie Sie eine Polylinienüberlagerung einer K
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Polyline Map Overla (Polylinienkartenüberlagerung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polyline/)
+- [Polyline Map Overla (Polylinienkartenüberlagerung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polyline)
 - [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps Namespace (Xamarin.Forms.Maps-Namespace)](xref:Xamarin.Forms.Maps)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 8cf6c11675f0f3ddca0d5aea69e5e07160ef8454
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: edd6fc92603783dc9de64b10304e8d48f97bdef3
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114781"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509213"
 ---
 # <a name="android-debug-log"></a>Android-Debugprotokoll
 
@@ -35,7 +35,7 @@ Das **Debugprotokoll** zeigt keine Protokollmeldungen an, die generiert werden, 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Klicken Sie auf das **Geräteprotokollsymbol (Logcat)**, um das **Debugprotokolltool** zu öffnen:
+Klicken Sie auf das **Geräteprotokollsymbol (Logcat)** , um das **Debugprotokolltool** zu öffnen:
 
 [![Position des Geräteprotokolltools in der Symbolleiste](android-debug-log-images/vswin-01-logcat-sml.png)](android-debug-log-images/vswin-01-logcat.png#lightbox)
 
@@ -137,8 +137,8 @@ Weitere Befehle können gefunden werden, indem **adb** eingegeben wird oder die 
 
 ## <a name="writing-to-the-debug-log"></a>Schreiben in das Debugprotokoll
 
-Nachrichten können mit Methoden der Klasse [Android.Util.Log**in das**Debugprotokoll](https://developer.xamarin.com/api/type/Android.Util.Log/) geschrieben werden.
-Zum Beispiel: 
+Nachrichten können mit Methoden der Klasse [Android.Util.Log**in das**Debugprotokoll](xref:Android.Util.Log) geschrieben werden.
+Beispiel: 
 
 ```csharp
 string tag = "myapp";

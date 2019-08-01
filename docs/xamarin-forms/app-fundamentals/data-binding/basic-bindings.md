@@ -8,16 +8,16 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d1759701708c337a804471167223ef68cc3f2910
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 8cec67ec582edad506aecb0945257b9baae3da90
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479744"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650351"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Einfache Xamarin.Forms-Bindungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Eine Xamarin.Forms-Datenbindung verknüpft ein Eigenschaftenpaar zwischen zwei Objekten, von denen mindestens eines ein Benutzeroberflächenobjekt ist. Diese beiden Objekte sind das *Ziel* und die *Quelle*:
 
@@ -332,7 +332,7 @@ Im [nächsten Artikel](binding-mode.md) erfahren Sie, wie sich der *Bindungsmodu
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 
 ## <a name="related-video"></a>Zugehörige Videos

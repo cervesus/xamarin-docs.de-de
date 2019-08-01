@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 4583b703d6c6b15105d60a98e7a1064e6a2e9263
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 20a6dab34f290c6e5f170d861183dabbfe382970
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977778"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650222"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms-Bindungsmodus
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Im [vorherigen Artikel](basic-bindings.md) hatten die Seiten **Alternative Code Binding** (Alternative Codebindung) und **Alternative XAML Binding** (Alternative XAML-Bindung) ein `Label`, dessen `Scale`-Eigenschaft an die `Value`-Eigenschaft eines `Slider` gebunden war. Da der anfängliche Wert des `Slider` 0 (null) ist, wurde die `Scale`-Eigenschaft des `Label` auf 0 (null) statt auf 1 festgelegt, und das `Label` wurde nicht mehr angezeigt.
 
-Im Beispiel [**Data Binding Demos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (Demos zur Datenbindung) ähnelt die Seite **Reverse Binding** (Umgekehrte Bindung) den Programmen im vorherigen Artikel. Der einzige Unterschied besteht darin, dass die Datenbindung im `Slider`-Objekt statt im `Label`-Objekt definiert wird:
+Im Beispiel [**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (Demos zur Datenbindung) ähnelt die Seite **Reverse Binding** (Umgekehrte Bindung) den Programmen im vorherigen Artikel. Der einzige Unterschied besteht darin, dass die Datenbindung im `Slider`-Objekt statt im `Label`-Objekt definiert wird:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -684,5 +684,5 @@ Im nächsten Artikel erfahren Sie, wie Sie die [**Zeichenfolgenformatierung**](s
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

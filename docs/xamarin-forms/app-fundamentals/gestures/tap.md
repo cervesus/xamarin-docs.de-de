@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: e2e5a71d7cddee66612c12bc6091c57426b3ed47
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 959729fc21ba59133e2a92c1121fdb93d608f635
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059959"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653823"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Tippbewegungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 
 _Die Tippbewegung wird zur Tipperkennung verwendet und wurde mit der Klasse TapGestureRecognizer implementiert._
 
@@ -117,6 +117,6 @@ public class TapViewModel : INotifyPropertyChanged
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TapGesture (sample) (TapGesture (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
+- [TapGesture (sample) (TapGesture (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [TapGestureRecognizer Class (TapGestureRecognizer-Klasse)](xref:Xamarin.Forms.TapGestureRecognizer)

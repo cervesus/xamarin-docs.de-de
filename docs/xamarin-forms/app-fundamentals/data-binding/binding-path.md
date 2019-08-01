@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0c63e33309802f0945ad94a858af45f6b29b2cc4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b9658aa0a4222fb9d257299ea3c6fd69016abdb4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050778"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646748"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms-Bindungspfad
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 In allen vorherigen Datenbindungsbeispielen wurde die [`Path`](xref:Xamarin.Forms.Binding.Path)-Eigenschaft der `Binding`-Klasse (bzw. die [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path)-Eigenschaft der `Binding`-Markuperweiterung) auf eine einzelne Eigenschaft festgelegt. Es ist tatsächlich möglich, `Path` auf eine *untergeordnete Eigenschaft* (die Eigenschaft einer Eigenschaft) oder auf einen Collectionmember festzulegen.
 
@@ -167,5 +167,5 @@ Wenn eine Eigenschaft im Bindungspfad `INotifyPropertyChanged` nicht implementie
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

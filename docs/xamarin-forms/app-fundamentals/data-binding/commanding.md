@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 37fbc0107414521a87c263d327ffd9b8940384eb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9c6edddd70fa7a74a72857a94dbed613b5b0d66d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053463"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657148"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Die Befehlsschnittstelle in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 In der MVVM-Architektur (Model View ViewModel) werden Datenbindungen zwischen den Eigenschaften in ViewModel (üblicherweise eine von `INotifyPropertyChanged` abgeleitete Klasse) und den Eigenschaften in View (üblicherweise die XAML-Datei) definiert. Manchmal ist für eine Anwendung mehr als Eigenschaftenbindungen erforderlich, beispielsweise, wenn der Benutzer Befehle initiieren muss, die Auswirkungen auf ViewModel haben. Diese Befehle werden in der Regel ausgeführt, indem Sie auf Schaltflächen klicken oder auf den Bildschirm tippen. Normalerweise werden sie in der CodeBehind-Datei in einem Handler für das `Clicked`-Ereignis von `Button` oder das `Tapped`-Ereignis von `TapGestureRecognizer` verarbeitet.
 
@@ -86,7 +86,7 @@ Wenn das Freigeben von ViewModel-Klassen zwischen Windows und Xamarin.Forms für
 
 ## <a name="basic-commanding"></a>Grundlegende Befehle
 
-Die Seite **Person Entry** im Beispielprogramm für [**Datenbindungen**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) veranschaulicht einige einfache Befehle, die in eine ViewModel-Klasse implementiert werden.
+Die Seite **Person Entry** im Beispielprogramm für [**Datenbindungen**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) veranschaulicht einige einfache Befehle, die in eine ViewModel-Klasse implementiert werden.
 
 Die `PersonViewModel`-Klasse definiert drei Eigenschaften namens `Name`, `Age` und `Skills`, über die eine Person definiert wird. Diese Klasse enthält *keine* `ICommand`-Eigenschaften:
 
@@ -689,11 +689,11 @@ Alle `execute`-Methoden rufen die `RefreshCanExecutes`-Methode auf, die dann `Ch
 
 ## <a name="adding-commands-to-existing-views"></a>Hinzufügen von Befehlen zu vorhandenen Ansichten
 
-Wenn Sie die Befehlsschnittstelle für Ansichten verwenden möchten, die diese nicht unterstützen, können Sie ein Xamarin.Forms-Verhalten verwenden, das ein Ereignis in einen Befehl konvertiert. Dieser Vorgang wird im Artikel [**Reusable EventToCommandBehavior (Wiederverwendbare EventToCommandBehavior-Klasse)**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md) erläutert.
+Wenn Sie die Befehlsschnittstelle für Ansichten verwenden möchten, die diese nicht unterstützen, können Sie ein Xamarin.Forms-Verhalten verwenden, das ein Ereignis in einen Befehl konvertiert. Dieser Vorgang wird im Artikel [**Reusable EventToCommandBehavior (Wiederverwendbare EventToCommandBehavior-Klasse)** ](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md) erläutert.
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>Asynchrone Befehle für Navigationsmenüs
 
-Befehle sind für die Implementierung von Navigationsmenüs gut geeignet und werden auch im [**Beispielprogramm für Datenbindungen**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) verwendet. Hier sehen Sie einen Teil von **MainPage.xaml**:
+Befehle sind für die Implementierung von Navigationsmenüs gut geeignet und werden auch im [**Beispielprogramm für Datenbindungen**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) verwendet. Hier sehen Sie einen Teil von **MainPage.xaml**:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -767,5 +767,5 @@ Datenbindungen können manchmal kompliziert sein. In dieser Artikelreihe wurde j
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

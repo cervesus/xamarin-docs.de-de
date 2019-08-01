@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2018
-ms.openlocfilehash: c607cecf6c7044fa4c8d0270a5b8d1471d3f9227
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ace1129397251c02c5ffb682344ff2308a24c62a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059060"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653370"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms-Datenbindung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 _Bei der Datenbindung werden die Eigenschaften von zwei Objekten verknüpft. Dadurch werden Änderungen an einer Eigenschaft automatisch in der anderen widergespiegelt. Die Datenbindung ist ein integraler Teil der „Model View ViewModel“-Anwendungsarchitektur (MVVM)._
 
@@ -35,7 +35,7 @@ Eines der beiden Objekte, das an einer Datenbindung beteiligt ist, ist immer ein
 - Ein weiteres `View`-Derivat, meist auf der gleichen Seite
 - Ein Objekt in einer Codedatei
 
-In Beispielprogrammen wie dem [**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)-Beispiel werden zu Demonstrationszwecken und der Einfachheit halber oft zwei `View`-Derivate verwendet. Die gleichen Prinzipien können jedoch auch auf Datenbindungen zwischen einem `View`-Objekt und einem anderen Objekt angewendet werden. Wenn eine Anwendung mit einer MVVM-Architektur erstellt wird, wird die Klasse mit den zugrunde liegenden Daten oft als ViewModel bezeichnet.
+In Beispielprogrammen wie dem [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)-Beispiel werden zu Demonstrationszwecken und der Einfachheit halber oft zwei `View`-Derivate verwendet. Die gleichen Prinzipien können jedoch auch auf Datenbindungen zwischen einem `View`-Objekt und einem anderen Objekt angewendet werden. Wenn eine Anwendung mit einer MVVM-Architektur erstellt wird, wird die Klasse mit den zugrunde liegenden Daten oft als ViewModel bezeichnet.
 
 In den folgenden Artikeln wird ausführlicher auf Datenbindungen eingegangen:
 
@@ -73,6 +73,6 @@ Verwenden Sie kompilierte Datenbindungen, um die Leistung von Datenbindungen zu 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/index.md)

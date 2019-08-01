@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: bb65f5702579f83f56b30e556859a122d0e7fcbb
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 684820a646527b382b1dbb936b9256fd4457803e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926928"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651901"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Erstellen einer Xamarin.Forms-DataTemplateSelector-Klasse
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplateSelector/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
 
 _Eine DataTemplateSelector-Klasse kann verwendet werden zum Auswählen einer DataTemplate-Klasse zur Laufzeit, basierend auf dem Wert der datengebundenen Eigenschaft. Dadurch können mehrere DataTemplate-Klassen auf den gleichen Objekttyp angewendet werden, um die Darstellung bestimmter Objekte anzupassen. In diesem Artikel wird veranschaulicht, wie Sie eine DataTemplateSelector-Klasse erstellen und nutzen können._
 
@@ -137,5 +137,5 @@ In diesem Artikel wurde veranschaulicht, wie eine [`DataTemplateSelector`](xref:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Template Selector (Datenvorlagenauswahl (Beispiel))](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplateSelector/)
+- [Data Template Selector (Datenvorlagenauswahl (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
 - [DataTemplateSelector](xref:Xamarin.Forms.DataTemplateSelector)
