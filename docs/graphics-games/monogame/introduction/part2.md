@@ -1,75 +1,75 @@
 ---
-title: Teil 2 – Implementieren von WalkingGame
-description: In dieser exemplarischen Vorgehensweise veranschaulicht fügen Sie die Spiellogik und Inhalte, um ein leeres MonoGame-Projekt zum Erstellen einer animierten Sprite verschoben wird, wobei einer Demo Fingereingaben.
+title: Teil 2 – Implementieren von walkinggame
+description: In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie Spiellogik und Inhalt einem leeren monogame-Projekt hinzufügen, um eine Demo eines animierten Sprite zu erstellen, das sich mit der Fingereingabe bewegt
 ms.prod: xamarin
 ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c9e0cf2f29d304f042bc56ee91029adadcaba570
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 7c7b58266b4f5168fdb231258390fa64278963f8
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832500"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680955"
 ---
-# <a name="part-2--implementing-the-walkinggame"></a>Teil 2 – Implementieren von WalkingGame
+# <a name="part-2--implementing-the-walkinggame"></a>Teil 2 – Implementieren von walkinggame
 
-_In dieser exemplarischen Vorgehensweise veranschaulicht fügen Sie die Spiellogik und Inhalte, um ein leeres MonoGame-Projekt zum Erstellen einer animierten Sprite verschoben wird, wobei einer Demo Fingereingaben._
+_In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie Spiellogik und Inhalt einem leeren monogame-Projekt hinzufügen, um eine Demo eines animierten Sprite zu erstellen, das sich mit der Fingereingabe bewegt_
 
-Die vorherigen Teilen der in dieser exemplarischen Vorgehensweise wurde gezeigt, wie leere MonoGame-Projekte zu erstellen. Wir werden auf diese Teile des vorherigen erstellen Sie dazu ein einfaches Spiels Demo. Dieser Artikel enthält folgende Abschnitte:
+In den vorherigen Abschnitten dieser exemplarischen Vorgehensweise wurde gezeigt, wie leere monogame-Projekte erstellt werden. Wir bauen auf diese vorherigen Teile auf, indem wir eine einfache Spiele Demo durchführen. Dieser Artikel enthält folgende Abschnitte:
 
-- Entzippen unsere Spiele Inhalte
-- Übersicht über MonoGame-Klasse
-- Unsere erste Sprite rendern
-- Erstellen die CharacterEntity
-- Das Spiel CharacterEntity hinzugefügt
-- Erstellen der Animation-Klasse
-- Hinzufügen von der ersten Animation zu CharacterEntity
-- Hinzufügen von Bewegung auf das Zeichen
-- Übereinstimmende verschieben und animation
+- Entpacken von Spielinhalten
+- Monogame-Klassen Übersicht
+- Rendern des ersten Sprite
+- Erstellen der Entität "Merkmal"
+- Hinzufügen von "Merkmal Entity" zum Spiel
+- Erstellen der Animations Klasse
+- Hinzufügen der ersten Animation zu "Merkmal Entität"
+- Hinzufügen von Bewegung zum Zeichen
+- Übereinstimmende Bewegung und Animation
 
 
-## <a name="unzipping-our-game-content"></a>Entzippen unsere Spiele Inhalte
+## <a name="unzipping-our-game-content"></a>Entpacken von Spielinhalten
 
-Bevor wir das Schreiben von Code beginnen, sollten wir unser Spiel Entzippen *Inhalt*. Spieleentwickler verwenden oft den Begriff *Inhalt* um auf nicht-Codedateien zu verweisen, die in der Regel vom visual Künstler, game-Designer oder audio-Designer erstellt werden. Allgemeine Arten von Inhalten Includedateien, die zum Anzeigen von visuellen Elementen, sound wiedergeben oder künstliche Intelligenz (KI) Verhalten zu steuern. Von einem Spiel wird Teams Perspektive Inhalt in der Regel von nicht-Programmierern erstellt.
+Bevor wir mit dem Schreiben von Code beginnen, möchten wir unsere Spiel *Inhalte*entzippen. Spieleentwickler verwenden häufig den Begriff *Inhalt* , um auf nicht-Code Dateien zu verweisen, die normalerweise von visuellen Künstlern, Spiel-Designern oder audiodesignern erstellt werden. Zu den gängigen Inhaltstypen gehören Dateien, die zum Anzeigen von Visuals, Abspielen von Sound oder zum Steuern von künstlicher Intelligenz Verhalten verwendet werden. Aus der Perspektive eines Spiel Entwicklungsteams wird in der Regel von nicht Programmierern erstellt.
 
-Finden Sie der Inhalt, der hier verwendete [auf Github](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true). Wir benötigen diese Dateien an einen Speicherort an, dem wir später in dieser exemplarischen Vorgehensweise zugreifen wird heruntergeladen.
+Den hier verwendeten Inhalt finden Sie [auf GitHub](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true). Diese Dateien müssen an einen Speicherort heruntergeladen werden, auf den wir später in dieser exemplarischen Vorgehensweise zugreifen werden.
 
-## <a name="monogame-class-overview"></a>Übersicht über MonoGame-Klasse
+## <a name="monogame-class-overview"></a>Monogame-Klassen Übersicht
 
-Zunächst einmal wird die grundlegende Rendering verwendeten MonoGame-Klassen erläutert:
+Zunächst werden die monogame-Klassen erläutert, die beim einfachen Rendering verwendet werden:
 
-- `SpriteBatch` – verwendet, um die 2D-Grafiken auf dem Bildschirm gezeichnet. *Sprites* 2D visuelle Elemente, die verwendet werden, um Bilder auf dem Bildschirm angezeigt werden. Die `SpriteBatch` -Objekt kann ein einzelnes Sprite zeichnen, zu einem Zeitpunkt zwischen der `Begin` und `End` Methoden oder mehrere Sprites können gruppiert werden, oder *im Batchmodus*.
-- `Texture2D` – ein Image-Objekt zur Laufzeit darstellt. `Texture2D` Instanzen werden häufig von Dateiformaten wie z. B. PNG oder BMP, erstellt, obwohl sie auch dynamisch zur Laufzeit erstellt werden können. `Texture2D` Instanzen werden verwendet, wenn das rendering mit `SpriteBatch` Instanzen.
-- `Vector2` – Stellt eine Position in einem 2D-Koordinatensystem, die häufig verwendet wird, für die Positionierung von visuellen Objekten dar. MonoGame enthält auch `Vector3` und `Vector4` wird aber nur `Vector2` in dieser exemplarischen Vorgehensweise.
-- `Rectangle` – einem Bereich vier Seiten mit der Position, Breite und Höhe. Wir verwenden diese zum definieren, welcher Teils unserer `Texture2D` rendern, sofern wir mit Animationen arbeiten.
+- `SpriteBatch`– wird verwendet, um 2D-Grafiken auf dem Bildschirm zu zeichnen. *Sprites* sind visuelle 2D-Elemente, die verwendet werden, um Bilder auf dem Bildschirm anzuzeigen. Das `SpriteBatch` -Objekt kann jeweils ein einzelnes Sprite zwischen seinen `Begin` -und- `End` Methoden zeichnen, oder es können mehrere Sprites gruppiert oder in einem *Batch*zusammengefasst werden.
+- `Texture2D`– stellt ein Bild Objekt zur Laufzeit dar. `Texture2D`Instanzen werden oft aus Dateiformaten wie PNG oder bmp erstellt, obwohl Sie auch zur Laufzeit dynamisch erstellt werden können. `Texture2D`-Instanzen werden beim Rendern `SpriteBatch` mit-Instanzen verwendet.
+- `Vector2`– stellt eine Position in einem 2D-Koordinatensystem dar, das häufig zum Positionieren von visuellen Objekten verwendet wird. Monogame umfasst `Vector3` auch und `Vector4` , aber wir verwenden `Vector2` nur in dieser exemplarischen Vorgehensweise.
+- `Rectangle`– Ein vierseitiger Bereich mit Position, Breite und Höhe. Wir verwenden dies, um zu definieren, welcher Teil des `Texture2D` zu Rendering ist, wenn wir mit der Arbeit mit Animationen beginnen.
 
-Wir sollten außerdem Beachten Sie, dass MonoGame nicht von Microsoft –, ungeachtet dessen Namespace verwaltet wird. Die `Microsoft.Xna` -Namespace werden in MonoGame zum Migrieren von vorhandener XNA-Projekten monogame erleichtern.
+Beachten Sie auch, dass monogame nicht von Microsoft verwaltet wird – trotz seines Namespace. Der `Microsoft.Xna` Namespace wird in monogame verwendet, um die Migration vorhandener XNA-Projekte zu monogame zu vereinfachen.
 
-## <a name="rendering-our-first-sprite"></a>Unsere erste Sprite rendern
+## <a name="rendering-our-first-sprite"></a>Rendern des ersten Sprite
 
-Als Nächstes zeichnen wir eine einzelne Sprites auf dem Bildschirm, um zu zeigen, wie 2D-Rendering in MonoGame ausführen können.
+Als nächstes zeichnen wir eine einzelne Sprite auf dem Bildschirm, um zu zeigen, wie das 2D-Rendering in monogame durchgeführt wird.
 
-### <a name="creating-a-texture2d"></a>Erstellen ein Texture2D
+### <a name="creating-a-texture2d"></a>Erstellen eines Texture2D
 
-Müssen wir erstellen eine `Texture2D` Instanz zur Verwendung beim Rendern von unserem Sprite. Alle Spiele Inhalt befindet sich letztlich in einem Ordner namens **Inhalt** im plattformspezifischen Projekt befindet. MonoGame freigegebenen Projekte können keinen Inhalt, enthalten, wie der Inhalt auf Buildvorgänge, die spezifisch für die Plattform verwenden muss. Der Ordner "Content" finden Sie im iOS-Projekt, und klicken Sie im Ordner "Assets" in der Android-Projekt.
+Wir müssen eine `Texture2D` -Instanz erstellen, die beim Rendern des Sprite verwendet werden soll. Alle Spielinhalte sind letztendlich in einem Ordner namens " **Content** " enthalten, der sich im plattformspezifischen Projekt befindet. Freigegebene monogame-Projekte dürfen keinen Inhalt enthalten, da der Inhalt Buildaktionen verwenden muss, die für die Plattform spezifisch sind. Den Inhalts Ordner finden Sie im IOS-Projekt und im Ordner "Assets" im Android-Projekt.
 
-Zum Hinzufügen des Spiels Inhalt mit der Maustaste auf die **Inhalt** Ordner, und wählen **hinzufügen > Dateien hinzufügen...** Navigieren Sie zum Speicherort, in denen die content.zip-Datei extrahiert wurde, und wählen Sie die **charactersheet.png** Datei. Wenn Sie gefragt werden, dazu, wie Sie die Datei zu Ordner hinzufügen, wählen wir die **Kopie** Option:
+Um den Inhalt unseres Spiels hinzuzufügen, klicken Sie mit der rechten Maustaste auf den **Inhalts** Ordner, und wählen Sie **Hinzufügen > Dateien hinzufügen...** Navigieren Sie zu dem Speicherort, an dem die Datei Content. zip extrahiert wurde, und wählen Sie die Datei " **Merkmal Blatt. png** ". Wenn Sie gefragt werden, wie die Datei dem Ordner hinzugefügt werden soll, sollten Sie die Option **Kopieren** auswählen:
 
-![](part2-images/image1.png "Wenn Sie gefragt werden, dazu, wie Sie die Datei zu Ordner hinzufügen, wählen Sie die Option zum Kopieren")
+![](part2-images/image1.png "Wenn Sie gefragt werden, wie die Datei dem Ordner hinzugefügt werden soll, wählen Sie die Option Kopieren aus.")
 
-Der Ordner "Content" enthält nun die charactersheet.png-Datei:
+Der Inhalts Ordner enthält jetzt die Datei "Merkmal Blatt. png":
 
-![](part2-images/image2.png "Der Ordner \"Content\" enthält jetzt die charactersheet.png-Datei")
+![](part2-images/image2.png "Der Inhalts Ordner enthält jetzt die Datei \"Merkmal Blatt. png\".")
 
-Als Nächstes fügen wir Code zum Laden Sie die Datei charactersheet.png und erstellen eine `Texture2D`. Öffnen Sie dafür die `Game1.cs` Datei, und fügen Sie das folgende Feld den Game1.cs Klasse hinzu:
+Als Nächstes fügen Sie Code hinzu, um die Datei "Merkmal Blatt. png" zu `Texture2D`laden und eine zu erstellen. Öffnen Sie hierzu die `Game1.cs` Datei, und fügen Sie der Game1.cs-Klasse das folgende Feld hinzu:
 
 ```csharp
 Texture2D characterSheetTexture;
 ```
 
-Als Nächstes erstellen wir die `characterSheetTexture` in die `LoadContent` Methode. Bevor Sie Änderungen `LoadContent` Methode sieht wie folgt aus:
+Als Nächstes erstellen wir den `characterSheetTexture` in der `LoadContent` -Methode. Vor einer beliebigen `LoadContent` Änderungs Methode sieht dies wie folgt aus:
 
 ```csharp
 protected override void LoadContent()
@@ -80,7 +80,7 @@ protected override void LoadContent()
 }
 ```
 
-Sollten wir darauf hinweisen, dass das Standardprojekt bereits instanziiert die `spriteBatch` Instanz für uns. Wir verwenden dies später noch Mal, aber wir hinzufügen wird nicht die zusätzlichen Code zum Vorbereiten der `spriteBatch` für die Verwendung. Andererseits, unsere `spriteSheetTexture` Initialisierung ist erforderlich, damit wir ihn nach dem Initialisieren wird der `spriteBatch` wird erstellt:
+Beachten Sie, dass das Standard Projekt bereits die `spriteBatch` Instanz für uns instanziiert. Wir verwenden dies später, aber wir werden keinen zusätzlichen Code hinzufügen, um die für `spriteBatch` die Verwendung vorzubereiten. Andererseits ist für unsere `spriteSheetTexture` eine Initialisierung erforderlich, daher wird Sie nach der `spriteBatch` Erstellung von initialisiert:
 
 ```csharp
 protected override void LoadContent()
@@ -95,7 +95,7 @@ protected override void LoadContent()
 }
 ```
 
-Nun, wir haben eine `SpriteBatch` Instanz und ein `Texture2D` Instanz können wir unser Renderingcode zum Hinzufügen der `Game1.Draw` Methode:
+Nachdem wir nun über eine `SpriteBatch` -Instanz und `Texture2D` eine-Instanz verfügen, können wir den `Game1.Draw` Renderingcode zur-Methode hinzufügen:
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -115,37 +115,37 @@ protected override void Draw(GameTime gameTime)
 }
 ```
 
-Ausführen des Spiels jetzt zeigt ein einzelnes Sprite, das Anzeigen der Textur aus charactersheet.png erstellt:
+Die Ausführung des Spiels zeigt nun ein einzelnes Sprite an, das die Textur anzeigt, die aus "Merkmal Sheet. png" erstellt wurde
 
-![](part2-images/image3.png "Ausführen des Spiels jetzt wird ein einzelnes Sprite, das Anzeigen der Textur aus charactersheet.png erstellt")
+![](part2-images/image3.png "Beim Ausführen des Spiels wird jetzt ein einzelner Sprite angezeigt, der die Textur anzeigt, die aus \"Merkmal Sheet. png\"")
 
-## <a name="creating-the-characterentity"></a>Erstellen die CharacterEntity
+## <a name="creating-the-characterentity"></a>Erstellen der Entität "Merkmal"
 
-Bisher haben wir Code zum Rendern eines einzelnen Sprites auf dem Bildschirm hinzugefügt; würden wir eine vollständige Spiel zu entwickeln, ohne andere Klassen bilden, würden wir jedoch Code Organisation Probleme auftreten.
+Bisher haben wir Code zum Rendering eines einzelnen Sprite auf dem Bildschirm hinzugefügt. Wenn wir jedoch ein vollständiges Spiel entwickeln, ohne andere Klassen zu erstellen, würden wir uns mit Code-Organisations Problemen befassen.
 
 ### <a name="what-is-an-entity"></a>Was ist eine Entität?
 
-Ein allgemeines Muster für die Organisation von spielcode ist, erstellen Sie eine neue Klasse für jedes Spiel *Entität* Typ. Eine Entität in der Entwicklung von Spielen, ist ein Objekt, das einige der folgenden Eigenschaften enthalten kann (nicht alle sind erforderlich):
+Ein gängiges Muster für das Organisieren von Spiel Code besteht darin, eine neue Klasse für jeden Game-Entitätstyp zu erstellen. Eine Entität in der Spieleentwicklung ist ein Objekt, das einige der folgenden Eigenschaften enthalten kann (nicht alle sind erforderlich):
 
-- Ein visuelles Element, z. B. ein Sprite, Text oder 3D-Modell
-- Physik oder jeder Frame-Verhalten, z. B. eine Einheit patrolling einen Set-Pfad oder ein Player-Zeichen, das Reagieren auf eine Eingabe
-- Erstellt und zerstört dynamisch, z. B.-Power-Up angezeigt werden und vom Player erfasst werden können
+- Ein visuelles Element, z. b. ein Sprite-, Text-oder 3D-Modell
+- Physik oder jedes Frame Verhalten, z. b. ein Einheiten Patroll für einen Set-Pfad oder ein Spieler Zeichen, das auf die Eingabe reagiert
+- Kann dynamisch erstellt und zerstört werden, z. b. Wenn ein Energiespar Tool angezeigt wird und vom Player erfasst wird.
 
-Entität Organisation Systeme können komplex sein und viele Spiel-Engines bieten Klassen zum Verwalten von Entitäten. Wir werden ein sehr einfaches Entity-System, implementieren, sodass es zu beachten, dass vollständige Spiele in der Regel weitere Organisation auf des Entwicklers erforderlich ist.
+Entity Organization Systems kann komplex sein, und viele Spiel-Engines bieten Klassen zur Unterstützung der Verwaltung von Entitäten. Wir implementieren ein sehr einfaches Entitäts System. es ist also erwähnenswert, dass vollständige Spiele in der Regel mehr Organisationseinheiten im Entwickler Teil erfordern.
 
 
-### <a name="defining-the-characterentity"></a>Definieren der CharacterEntity
+### <a name="defining-the-characterentity"></a>Definieren der Merkmal Entität
 
-Unsere-Entität, die wir den Namen `CharacterEntity`, müssen Sie die folgenden Eigenschaften:
+Unsere von uns aufzurufende `CharacterEntity`Entität weist die folgenden Eigenschaften auf:
 
-- Die Fähigkeit, eine eigene laden `Texture2D`
-- Die Möglichkeit, selbst rendern, einschließlich mit Aufrufen von Methoden zum Aktualisieren der walkingstrecken animation
-- `X` und Y-Eigenschaften zum Steuern der Position des Zeichens.
-- Die Möglichkeit, sich selbst – insbesondere zu aktualisieren, um Werte aus der die Berührung Bildschirm, und passen Sie die Position entsprechend zu lesen.
+- Die Möglichkeit, eine eigene zu laden`Texture2D`
+- Die Möglichkeit, sich selbst zu Rendering, einschließlich der enthaltenden Aufruf Methoden zum Aktualisieren der Animation für das durchlaufen
+- `X`und Y-Eigenschaften, um die Position des Zeichens zu steuern.
+- Die Möglichkeit, sich selbst zu aktualisieren – insbesondere, um Werte vom Touchscreen zu lesen und die Position entsprechend anzupassen.
 
-Hinzufügen der `CharacterEntity` auf unser Spiel, mit der rechten Maustaste oder Strg + Klick auf die **WalkingGame** Projekt, und wählen **hinzufügen > neue Datei...** . Wählen Sie die **leere Klasse** aus, und nennen Sie die neue Datei **CharacterEntity**, klicken Sie dann auf **neu**.
+Um dem `CharacterEntity` Spiel hinzuzufügen, klicken Sie mit der rechten Maustaste auf das Projekt **walkinggame** , und klicken Sie auf **Hinzufügen > neue Datei...** . Wählen Sie die Option **leere Klasse** aus, benennen Sie die neue Datei **Merkmal Entität**, und klicken Sie dann auf **neu**.
 
-Zunächst fügen wir die Möglichkeit, dass die `CharacterEntity` zum Laden einer `Texture2D` sowie um sich selbst zu zeichnen. Ändern wir die neu hinzugefügte `CharacterEntity.cs` -Datei wie folgt:
+Zuerst fügen wir die Möglichkeit `CharacterEntity` hinzu, eine `Texture2D` zu laden und selbst zu zeichnen. Die neu hinzugefügte `CharacterEntity.cs` Datei wird wie folgt geändert:
 
 ```csharp
 using System;
@@ -193,32 +193,32 @@ namespace WalkingGame
 }
 ```
 
-Der obige Code fügt die Verantwortung für die Positionierung, rendern und Laden von Inhalt an die `CharacterEntity`. Werfen Sie einen Moment Zeit, einige Überlegungen getroffen, die im obigen Code hinweisen.
+Der obige Code erhöht die Verantwortung für die Positionierung, das `CharacterEntity`Rendering und das Laden von Inhalten in. Nehmen wir uns einen Moment Zeit, um auf einige Überlegungen im obigen Code zu verweisen.
 
-### <a name="why-are-x-and-y-floats"></a>Warum werden von X und Y-Gleitkommazahlen?
+### <a name="why-are-x-and-y-floats"></a>Warum sind X und Y nicht verfügbar?
 
-Entwickler, die in der game-Programmierung sind vielleicht, warum die `float` Typ wird im Gegensatz zu `int` oder `double`. Der Grund ist, dass es sich bei 32-Bit-Wert wird am häufigsten für die Positionierung im Code auf niedriger Ebene rendern. Die double-Typ nimmt ein 64-Bit für die Genauigkeit, die nur selten benötigt wird, für die Positionierung von Objekten. Während ein 32-Bit-Unterschied unbedeutend erscheinen, enthalten viele moderne Spiele Grafiken, die Zehntausende von Positionswerte verarbeitet werden müssen und jeden Frame (30 oder 60-Mal pro Sekunde). Verkürzt der Menge an Arbeitsspeicher, die verschieben muss über die Grafik Pipeline, um die Hälfte haben erhebliche Auswirkungen auf die Leistung von des Spiels.
+Entwickler, die mit der Spielprogrammierung noch nicht vertraut sind `float` , Fragen sich vielleicht, warum `int` der `double`Typ anstelle von oder verwendet wird. Der Grund hierfür ist, dass ein 32-Bit-Wert am häufigsten für die Positionierung in Renderingcode auf niedriger Ebene gilt. Der Double-Typ belegt 64 Bits für die Genauigkeit, die nur selten zum Positionieren von Objekten benötigt werden. Während ein 32-Bit-Unterschied unbedeutend erscheinen mag, enthalten viele moderne Spiele Grafiken, die die Verarbeitung von Zehntausenden von Positions Werten pro Frame erfordern (30 oder 60 mal pro Sekunde). Das Abschneiden der Menge an Arbeitsspeicher, die durch die Grafik Pipeline halbiert werden muss, kann einen erheblichen Einfluss auf die Leistung eines Spiels haben.
 
-Die `int` -Datentyp kann eine entsprechende Maßeinheit für die Positionierung, aber sie können Einschränkungen auf die Möglichkeit, die Entitäten werden positioniert platzieren. Z. B. mithilfe von ganzzahligen Werten erschwert es gleichmäßige Drehbewegung für Spiele zu implementieren, die Unterstützung von vergrößern oder 3D Kameras (die zulässig sind, indem `SpriteBatch`).
+Der `int` -Datentyp kann eine geeignete Maßeinheit für die Positionierung sein, aber es kann Einschränkungen bei der Positionierung von Entitäten platzieren. Beispielsweise ist die Verwendung von ganzzahligen Werten schwieriger, eine reibungslose Bewegung für Spiele zu implementieren, die das Zoomen in oder 3D-Kameras `SpriteBatch`unterstützen (die von zugelassen werden).
 
-Abschließend sehen wir, dass die Logik, die unsere Zeichen auf dem Bildschirm verschoben wird dies mithilfe des Spiels zeitliche Steuerungswerte werden auch tun. Das Ergebnis der Multiplikation der Geschwindigkeit mit wie viel Zeit, in einem bestimmten Frame verstrichen ist führt nur selten in eine ganze Zahl, daher wir verwenden müssen `float` für `X` und `Y`.
+Schließlich werden wir sehen, dass die Logik, mit der das Zeichen auf dem Bildschirm verschoben wird, die Zeit Steuerungs Werte des Spiels verwendet. Das Ergebnis der Multiplikation der Geschwindigkeit, wie viel Zeit in einem bestimmten Frame vergangen ist, führt selten zu einer ganzen Zahl, daher müssen wir `float` für `X` und `Y`verwenden.
 
-### <a name="why-is-charactersheettexture-static"></a>Warum CharacterSheetTexture ist statisch?
+### <a name="why-is-charactersheettexture-static"></a>Warum ist "charakterisheettexture" statisch?
 
-Die `characterSheetTexture` `Texture2D` Instanz ist eine laufzeitdarstellung der charactersheet.png-Datei. Das heißt, sie Farbwerte für jedes Pixel enthält, wie aus der Datenquelle extrahiert **charactersheet.png** Datei. Wenn unser Spiel erstellen zwei `CharacterEntity` Instanzen, und klicken Sie dann jeweils Zugriff auf Informationen von charactersheet.png benötigen würde. In diesem Fall möchten wir wäre nicht fallen die Leistungseinbußen durch charactersheet.png zweimal geladen und in unserem Beispiel sollen doppelte Texturspeicher im Arbeitsspeicher gespeichert haben. Mit einem `static` Feld ermöglicht uns, die denselben `Texture2D` in allen `CharacterEntity` Instanzen.
+`characterSheetTexture` Die`Texture2D` -Instanz ist eine Lauf Zeit Darstellung der Datei "Merkmal Blatt. png". Mit anderen Worten, Sie enthält die Farbwerte für jedes Pixel, die aus der PNG-Datei des Quell **Zeichenblatts** extrahiert wurden. Wenn unser Spiel zwei `CharacterEntity` Instanzen erstellen würde, benötigt jedes eine den Zugriff auf Informationen von "charakterisheet. png". In diesem Fall möchten wir nicht die Leistungskosten für das doppelte Laden von "Merkmal Blatt. png" verursachen, und es wäre auch nicht gewünscht, dass ein doppelter Texturspeicher im RAM gespeichert wird. Durch die `static` Verwendung eines Felds können wir das gleiche `Texture2D` für alle `CharacterEntity` Instanzen freigeben.
 
-Mithilfe von `static` Elemente für die Common Language Runtime-Darstellung des Inhalts ist eine vereinfachte Lösung, und es behandelt nicht die Probleme, die in größeren Spiele wie z. B. entladen Inhalt beim Verschieben von einer Ebene auf einen anderen. Ausgereiftere Projektmappen, die über den Rahmen dieser exemplarischen Vorgehensweise hinaus sind, gehören MonoGames-inhaltspipelines verwenden, oder erstellen ein benutzerdefiniertes Content Managementsystem.
+Die `static` Verwendung von Membern für die Lauf Zeit Darstellung von Inhalten ist eine vereinfachte Lösung und behandelt keine Probleme, die bei größeren spielen auftreten, wie z. b. das Entladen von Inhalten beim Wechsel von einer Ebene zu einer anderen. Komplexere Lösungen, die über den Rahmen dieser exemplarischen Vorgehensweise hinausgehen, beinhalten die Verwendung der Inhalts Pipeline von monogame oder das Erstellen eines benutzerdefinierten Inhalts Verwaltungssystems.
 
-### <a name="why-is-spritebatch-passed-as-an-argument-instead-of-instantiated-by-the-entity"></a>Warum SpriteBatch übergeben als ein Argument Instead Of instanziiert, indem die Entität ist?
+### <a name="why-is-spritebatch-passed-as-an-argument-instead-of-instantiated-by-the-entity"></a>Warum wird SpriteBatch als Argument, anstatt von der Entität instanziiert?
 
-Die `Draw` Methode wie oben verwendet implementiert eine `SpriteBatch` Argument, aber im Gegensatz dazu die `characterSheetTexture` instanziiert, indem die `CharacterEntity`.
+Die `Draw` oben implementierte Methode nimmt ein `SpriteBatch` -Argument an, aber im Gegensatz `characterSheetTexture` dazu wird der von `CharacterEntity`instanziiert.
 
-Der Grund dafür ist, da das am effizientesten Rendern möglich Wenn ist gleich `SpriteBatch` Instanz wird verwendet, für alle `Draw` aufrufen, und wann alle `Draw` werden Aufrufe zwischen einem einzelnen Satz von `Begin` und `End` Aufrufe. Natürlich unser Spiel enthält nur eine einzelne Entitätsinstanz, aber etwas komplizierteren Spiele profitieren davon, Muster, die mehrere Entitäten in den gleichen ermöglicht `SpriteBatch` Instanz.
+Der Grund hierfür liegt darin, dass das effizienteste Rendering möglich ist, wenn dieselbe `SpriteBatch` Instanz für alle `Draw` Aufrufe verwendet wird, und wenn alle `Draw` Aufrufe zwischen einem einzelnen Satz von-und- `Begin` `End` aufrufen durchgeführt werden. Natürlich enthält unser Spiel nur eine einzelne Entitäts Instanz, aber kompliziertere Spiele profitieren von einem Muster, das es mehreren Entitäten ermöglicht, dieselbe `SpriteBatch` Instanz zu verwenden.
 
 
-## <a name="adding-characterentity-to-the-game"></a>Das Spiel CharacterEntity hinzugefügt
+## <a name="adding-characterentity-to-the-game"></a>Hinzufügen von "Merkmal Entity" zum Spiel
 
-Nun, wir hinzugefügt haben unsere `CharacterEntity` mit Code zum Rendern von sich selbst ersetzen wir den Code in `Game1.cs` eine Instanz dieser neuen Entität verwenden. Hierzu wir ersetzen die `Texture2D` Feld mit einem `CharacterEntity` Feld `Game1`:
+Nun, da wir unseren `CharacterEntity` Code für das Rendering hinzugefügt haben, können wir den Code in `Game1.cs` ersetzen, um eine Instanz dieser neuen Entität zu verwenden. Zu diesem Zweck ersetzen wir das `Texture2D` Feld durch ein `CharacterEntity` Feld in `Game1`:
 
 ```csharp
 public class Game1 : Game
@@ -233,7 +233,7 @@ public class Game1 : Game
     ...
 ```
 
-Als Nächstes fügen wir die Instanziierung dieser Entität in `Game1.Initialize`:
+Als Nächstes fügen wir die Instanziierung dieser Entität in `Game1.Initialize`hinzu:
 
 ```csharp
 protected override void Initialize()
@@ -244,7 +244,7 @@ protected override void Initialize()
 }
 ```
 
-Wir müssen auch Entfernen der `Texture2D` erstellen `LoadContent` da, in der jetzt behandelt wird unsere `CharacterEntity`. `Game1.LoadContent` sollte wie folgt aussehen:
+Wir müssen auch die `Texture2D` Erstellung von `LoadContent` entfernen, da diese jetzt in unserer `CharacterEntity`verarbeitet wird. `Game1.LoadContent`sollte wie folgt aussehen:
 
 ```csharp
 protected override void LoadContent()
@@ -254,7 +254,7 @@ protected override void LoadContent()
 }
 ```
 
-Es ist erwähnenswert, die trotz seines Namens der `LoadContent` Methode ist nicht der einzige Ort, in dem Inhalte geladen werden kann – viele Spiele implementieren, die Inhalt geladen wird, in deren Initialize-Methode oder sogar in ihren Update-Code als Inhalt möglicherweise nicht erforderlich, bis der Player erreicht, eine bestimmte Punkt des Spiels.
+Beachten Sie, dass die `LoadContent` Methode trotz ihres Namens nicht die einzige Stelle ist, an der Inhalte geladen werden können – viele Spiele implementieren das Laden von Inhalten in ihrer Initialisierungs Methode oder sogar in Ihrem Aktualisierungs Code als Inhalt. möglicherweise ist dies erst erforderlich, wenn der Player einen ein bestimmter Punkt des Spiels.
 
 Schließlich können wir die Draw-Methode wie folgt ändern:
 
@@ -276,20 +276,20 @@ protected override void Draw(GameTime gameTime)
 }
 ```
 
-Wenn wir das Spiel ausführen, sehen wir jetzt das Zeichen. Da 0 X und Y standardmäßig verwenden, klicken Sie dann das Zeichen für den oberen linken Ecke des Bildschirms befindet sich:
+Wenn wir das Spiel ausführen, wird jetzt das Zeichen angezeigt. Da X und Y standardmäßig auf 0 (null) eingestellt sind, wird das Zeichen in der oberen linken Ecke des Bildschirms positioniert:
 
-![](part2-images/image4.png "Da 0 X und Y standardmäßig verwenden, klicken Sie dann das Zeichen für den oberen linken Ecke des Bildschirms befindet")
+![](part2-images/image4.png "Da X und Y standardmäßig auf 0 (null) eingestellt sind, wird das Zeichen in der oberen linken Ecke des Bildschirms positioniert.")
 
-## <a name="creating-the-animation-class"></a>Erstellen der Animationsklasse
+## <a name="creating-the-animation-class"></a>Erstellen der Animations Klasse
 
-Derzeit unsere `CharacterEntity` zeigt die vollständige **charactersheet.png** Datei. Diese Anordnung von mehrere Abbilder in einer Datei wird als bezeichnet ein *Sprite-Sheet*. Ein Sprite wird in der Regel nur einen Teil des Sprite-Sheet gerendert. Ändern wir die `CharacterEntity` zum Rendern eines Teils davon **charactersheet.png**, und dieses Bereichs ändert sich im Laufe der Zeit, um eine Animation walkingstrecken anzuzeigen.
+Zurzeit zeigt die Datei mit dem vollständigen **Merkmal Blatt. png** an. `CharacterEntity` Diese Anordnung mehrerer Bilder in einer Datei wird als *Sprite-Tabelle*bezeichnet. In der Regel wird ein Sprite nur einen Teil des Sprite-Blatts Rendering. Wir ändern den `CharacterEntity` , um einen Teil dieser " **Merkmal Sheet. png**" zu erzeugen, und dieser Teil ändert sich im Laufe der Zeit, um eine "Walking Animation" anzuzeigen.
 
-Wir erstellen den `Animation` Klasse, um die Logik und Zustand der CharacterEntity Animation zu steuern. Die Animation-Klasse wird eine allgemeine Klasse, die für jede Entität, nicht nur verwendet werden können `CharacterEntity` Animationen. Ultimate die `Animation` Klasse bereit eine `Rectangle` die der `CharacterEntity` verwenden, wenn sich selbst zu zeichnen. Wir erstellen auch eine `AnimationFrame` Klasse, die zum Definieren der Animation verwendet wird.
+Wir erstellen die `Animation` -Klasse, um die Logik und den Zustand der charakteritätsentitäts Animation zu steuern. Bei der Animations Klasse handelt es sich um eine allgemeine Klasse, die für jede Entität und `CharacterEntity` nicht nur für Animationen verwendet werden kann. Ultimate die `Animation` -Klasse stellt eine `Rectangle` bereit, `CharacterEntity` die von verwendet wird, um sich selbst zu zeichnen. Wir erstellen auch eine `AnimationFrame` -Klasse, die zum Definieren der Animation verwendet wird.
 
 
-### <a name="defining-animationframe"></a>Definieren von AnimationFrame
+### <a name="defining-animationframe"></a>Definieren von animationframe
 
-`AnimationFrame` enthält keine Logik, die im Zusammenhang mit der Animation nicht. Wir werden ihn verwenden, nur zum Speichern von Daten. Hinzufügen der `AnimationFrame` -Klasse, mit der rechten Maustaste oder Strg + Klick auf die **WalkingGame** freigegebenen Projekt, und wählen **hinzufügen > neue Datei...** Geben Sie den Namen **AnimationFrame** , und klicken Sie auf die **neu** Schaltfläche. Ändern wir die `AnimationFrame.cs` Datei, sodass sie den folgenden Code enthält:
+`AnimationFrame`enthält keine Logik im Zusammenhang mit der Animation. Wir verwenden Sie nur zum Speichern von Daten. Klicken Sie zum `AnimationFrame` hinzufügen der Klasse mit der rechten Maustaste auf das freigegebene Projekt " **walkinggame** ", und klicken Sie auf **Hinzufügen > neue Datei....** Geben Sie den Namen **animationframe** ein, und klicken Sie auf die Schaltfläche **neu** . Die `AnimationFrame.cs` Datei wird so geändert, dass Sie den folgenden Code enthält:
 
 
 ```csharp
@@ -306,16 +306,16 @@ namespace WalkingGame
 }
 ```
 
-Die `AnimationFrame` -Klasse enthält zwei Angaben:
+Die `AnimationFrame` -Klasse enthält zwei Informationen:
 
-- `SourceRectangle` : Definiert den Bereich des der `Texture2D` die angezeigt, auf die `AnimationFrame`. Dieser Wert wird in Pixel, wobei der oberen linken (0, 0) gemessen.
-- `Duration` : Definiert, wie lange ein `AnimationFrame` wird angezeigt, bei der Verwendung in einer `Animation`.
+- `SourceRectangle`– Definiert den Bereich des `Texture2D` , der von der `AnimationFrame`angezeigt wird. Dieser Wert wird in Pixel gemessen, wobei die obere linke Ecke (0,0) ist.
+- `Duration`– Definiert, wie lange `AnimationFrame` eine angezeigt wird, wenn Sie `Animation`in einer verwendet wird.
 
-### <a name="defining-animation"></a>Definieren der Animation
+### <a name="defining-animation"></a>Definieren von Animationen
 
-Die `Animation` Klasse enthält eine `List<AnimationFrame>` sowie die Logik zum Wechseln der Frame gerade angezeigt wird, entsprechend, wie viel Zeit verstrichen ist.
+Die `Animation` -Klasse `List<AnimationFrame>` enthält sowie die Logik, um zu wechseln, welcher Frame aktuell angezeigt wird, je nachdem, wie viel Zeit vergangen ist.
 
-Hinzufügen der `Animation` -Klasse, mit der rechten Maustaste oder Strg + Klick auf die **WalkingGame** freigegebenen Projekt, und wählen **hinzufügen > neue Datei...** . Geben Sie den Namen **Animation** , und klicken Sie auf die **neu** Schaltfläche. Ändern wir die `Animation.cs` Datei, sodass sie den folgenden Code enthält:
+Klicken Sie zum `Animation` hinzufügen der Klasse mit der rechten Maustaste auf das freigegebene Projekt " **walkinggame** ", und klicken Sie auf **Hinzufügen > neue Datei...** . Geben Sie die namens **Animation** ein, und klicken Sie auf die Schaltfläche **neu** Wir ändern die `Animation.cs` Datei, sodass Sie den folgenden Code enthält:
 
 
 ```csharp
@@ -370,25 +370,25 @@ namespace WalkingGame
 }
 ```
 
-Sehen wir uns einige Details über die `Animation` Klasse.
+Sehen wir uns einige Details `Animation` der-Klasse an.
 
-### <a name="frames-list"></a>Liste von Frames
+### <a name="frames-list"></a>Frames-Liste
 
-Die `frames` angehört wie der Datenspeicher für unsere Animation. Fügen der Code mit dem die Animationen instanziiert `AnimationFrame` auf Instanzen der `frames` durch Auflisten der `AddFrame` Methode. Eine umfassendere Implementierung bieten möglicherweise `public` Methoden oder Eigenschaften zum Ändern von `frames`, aber beschränken wir uns die Funktionalität zum Hinzufügen von Frames in dieser exemplarischen Vorgehensweise.
+Der `frames` Member speichert die Daten für unsere Animation. Der Code, der die Animationen instanziiert, `AnimationFrame` fügt der `frames` Liste mithilfe der `AddFrame` -Methode Instanzen hinzu. Eine umfassendere Implementierung bietet `public` möglicherweise Methoden oder Eigenschaften zum Ändern `frames`, aber wir schränken die Funktionalität ein, um Rahmen für diese exemplarische Vorgehensweise hinzuzufügen.
 
 ### <a name="duration"></a>Dauer
 
-Dauer gibt die gesamte Dauer des der `Animation,` erhalten Sie durch die Dauer aller enthaltenen hinzufügen `AnimationFrame` Instanzen. Dieser Wert zwischengespeichert werden kann, wenn `AnimationFrame` ein unveränderliches Objekt wurden, aber da wir AnimationFrame als eine Klasse die geändert werden können implementiert, nachdem die Animation hinzugefügt wird, müssen wir diesen Wert zu berechnen, wenn die Eigenschaft zugegriffen wird.
+Duration gibt die Gesamtdauer `Animation,` der-Instanz zurück, die durch Hinzufügen der Dauer aller enthaltenen `AnimationFrame` -Instanzen abgerufen wird. Dieser Wert kann zwischengespeichert werden `AnimationFrame` , wenn ein unveränderliches Objekt wäre, aber da wir animationframe als eine Klasse implementiert haben, die nach dem Hinzufügen zur Animation geändert werden kann, müssen wir diesen Wert berechnen, wenn auf die Eigenschaft zugegriffen wird.
 
 ### <a name="update"></a>Update
 
-Die `Update` -Methode jedes Einzelbild (d. h. jedes Mal, das ganze Spiel wird aktualisiert) aufgerufen werden soll. Dient zum Erhöhen der `timeIntoAnimation` Member, die verwendet wird, um den aktuell angezeigten Frame zurückzugeben. Die Logik in `Update` wird verhindert, dass die `timeIntoAnimation` jemals nicht größer als die Dauer der gesamten Animation.
+Die `Update` -Methode sollte alle Frames aufgerufen werden (d. h. jedes Mal, wenn das gesamte Spiel aktualisiert wird). Der Zweck besteht darin, den `timeIntoAnimation` Member zu vergrößern, der verwendet wird, um den aktuell angezeigten Frame zurückzugeben. Durch die Logik `Update` in wird `timeIntoAnimation` verhindert, dass die Dauer der gesamten Animation überschreitet.
 
-Da wir verwenden die `Animation` Klasse, um eine Animation walkingstrecken anzuzeigen, und wir möchten diese Animation wiederholt werden, wenn sie das Ende erreicht hat. Wir können dies erreichen, indem Sie überprüfen, ob die `timeIntoAnimation` ist größer als die `Duration` Wert. Wenn dies der Fall ist es wieder von vorn durchlaufen und den Rest der, in einer Schleife Animation beibehalten.
+Da wir die `Animation` -Klasse verwenden, um eine "Walking Animation" anzuzeigen, möchten wir, dass diese Animation wiederholt wird, wenn Sie das Ende erreicht hat. Dies können Sie erreichen, indem Sie über `timeIntoAnimation` prüfen, ob größer `Duration` als der Wert ist. Wenn dies der Fall ist, werden Sie wieder auf den Anfang zurückgeführt und den Rest beibehalten. Dies führt zu einer Schleifen Animation.
 
-### <a name="obtaining-the-current-frames-rectangle"></a>Abrufen des aktuellen Frames Rechteck
+### <a name="obtaining-the-current-frames-rectangle"></a>Abrufen des Rechtecks des aktuellen Frames
 
-Der Zweck der `Animation` Klasse ist letztendlich zu einer `Rectangle` verwendet werden kann, wenn ein Sprite zeichnen. Derzeit die `Animation` Klasse enthält Logik zum Ändern der `timeIntoAnimation` Member, mit der die zum Abrufen der `Rectangle` angezeigt werden soll. Hierzu müssen wir erstellen eine `CurrentRectangle` -Eigenschaft in der `Animation` Klasse. Kopieren Sie diese Eigenschaft in der `Animation` Klasse:
+Der Zweck `Animation` der-Klasse besteht letztendlich darin, eine `Rectangle` bereitzustellen, die beim Zeichnen eines Sprite verwendet werden kann. Die `Animation` -Klasse enthält derzeit Logik zum Ändern `timeIntoAnimation` des Members, mit dem wir abrufen können, `Rectangle` welche angezeigt werden soll. Hierzu erstellen Sie eine `CurrentRectangle` Eigenschaft in der `Animation` Klasse. Kopieren Sie diese Eigenschaft in `Animation` die-Klasse:
 
 ```csharp
 public Rectangle CurrentRectangle
@@ -433,18 +433,18 @@ public Rectangle CurrentRectangle
 }
 ```
 
-## <a name="adding-the-first-animation-to-characterentity"></a>Hinzufügen von der ersten Animation zu CharacterEntity
+## <a name="adding-the-first-animation-to-characterentity"></a>Hinzufügen der ersten Animation zu "Merkmal Entität"
 
-Die `CharacterEntity` enthält Animationen für durchlaufen und ständigen sowie einen Verweis auf die aktuelle `Animation` angezeigt wird.
+Der `CharacterEntity` enthält Animationen für das laufen und die Position sowie einen Verweis auf den aktuellen `Animation` , der angezeigt wird.
 
-Zunächst fügen wir unserer ersten `Animation,` mit der die die Funktionalität testen, wie Sie bereits geschrieben. Fügen Sie die folgenden Member der Klasse CharacterEntity an:
+Zuerst fügen wir unsere erste `Animation,` hinzu, die wir verwenden werden, um die Funktionalität zu testen, wie bisher geschrieben. Fügen Sie der Entitäts Klasse "Merkmal" die folgenden Member hinzu:
 
 ```csharp
 Animation walkDown;
 Animation currentAnimation;
 ```
 
-Als Nächstes definieren wir die `walkDown` Animation. Ändern Sie die `CharacterEntity` Konstruktor wie folgt:
+Als nächstes definieren wir die `walkDown` Animation. Um dies zu tun, `CharacterEntity` ändern Sie den Konstruktor wie folgt:
 
 ```csharp
 public CharacterEntity (GraphicsDevice graphicsDevice)
@@ -465,7 +465,7 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 }
 ```
 
-Wie bereits erwähnt, müssen wir Aufrufen `Animation.Update` für zeitbasierten Animationen zum Abspielen. Wir müssen auch weisen die `currentAnimation`. Für jetzt wir zuweisen werde die `currentAnimation` zu `walkDown`, jedoch werden werden ersetzt diesen Code später beim Implementieren wir unsere Logik verschieben. Wir fügen die `Update` Methode, um `CharacterEntity` wie folgt:
+Wie bereits erwähnt, müssen wir für Zeit `Animation.Update` basierte Animationen zum Abspielen aufzurufen. Wir müssen auch das `currentAnimation`zuweisen. Vorerst weisen wir den `currentAnimation` zu `walkDown`, aber wir werden diesen Code später ersetzen, wenn wir unsere Verschiebungs Logik implementieren. Wir fügen die `Update` - `CharacterEntity` Methode wie folgt hinzu:
 
 
 ```csharp
@@ -479,7 +479,7 @@ public void Update(GameTime gameTime)
 }
 ```
 
-Nun, wir haben die `currentAnimation` wird zugewiesen, und aktualisiert, wir können sie um unsere Zeichnung zu erstellen. Ändern wir `CharacterEntity.Draw` wie folgt:
+Nachdem wir nun die zugewiesen `currentAnimation` und aktualisiert haben, können wir Sie zum Durchführen der Zeichnung verwenden. Wir werden wie `CharacterEntity.Draw` folgt ändern:
 
 ```csharp
 public void Draw(SpriteBatch spriteBatch)
@@ -492,7 +492,7 @@ public void Draw(SpriteBatch spriteBatch)
 }
 ```
 
-Der letzte Schritt zum Abrufen der `CharacterEntity` Animation besteht darin, die neu hinzugefügte aufzurufen `Update` aus `Game1`. Ändern Sie `Game1.Update` wie folgt:
+Der letzte Schritt zum Animieren der `CharacterEntity` Animation besteht darin, die neu hinzugefügte `Update` Methode `Game1`von aufzurufen. Ändern `Game1.Update` Sie wie folgt:
 
 ```csharp
 protected override void Update(GameTime gameTime)
@@ -502,17 +502,17 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
-Jetzt die `CharacterEntity` spielen die `walkDown` Animation:
+Nun wird `CharacterEntity` `walkDown` die Animation wiedergegeben:
 
-![](part2-images/image5.gif "Die CharacterEntity wird jetzt die WalkDown Animation wiedergegeben.")
+![](part2-images/image5.gif "Nun wird die charakteritätsentität die Exemplare Exemplare Animation wiedergeben")
 
-## <a name="adding-movement-to-the-character"></a>Hinzufügen von Bewegung auf das Zeichen
+## <a name="adding-movement-to-the-character"></a>Hinzufügen von Bewegung zum Zeichen
 
-Als Nächstes werden wir Bewegung in unserer Zeichen mithilfe der Fingereingabe-Steuerelemente hinzufügen. Wenn der Benutzer den Bildschirm berührt, wird das Zeichen für den Zeitpunkt verschoben, in dem der Bildschirm berührt wird. Wenn keine Workflows erkannt werden, wird das Zeichen an Stelle stehen.
+Als Nächstes fügen wir mithilfe von Berührungs Steuerelementen eine Bewegung zum Zeichen hinzu. Wenn der Benutzer den Bildschirm berührt, wird das Zeichen an den Punkt verschoben, an dem der Bildschirm berührt wird. Wenn keine Berührungen erkannt werden, wird das Zeichen vorhanden sein.
 
-### <a name="defining-getdesiredvelocityfrominput"></a>Definieren von GetDesiredVelocityFromInput
+### <a name="defining-getdesiredvelocityfrominput"></a>Definieren von getdesiredvelocityfrominput
 
-Wir verwenden die MonoGame `TouchPanel` -Klasse, die Informationen zu den aktuellen Zustand des den Touchscreen bereitstellt. Fügen Sie eine Methode, die überprüft, die `TouchPanel` und gewünschten Geschwindigkeit des Zeichens zurück:
+Wir verwenden die `TouchPanel` Klasse von monogame, die Informationen über den aktuellen Zustand des Touchscreens bereitstellt. Fügen wir eine Methode hinzu, mit der `TouchPanel` überprüft wird und die gewünschte Geschwindigkeit des Zeichens zurückgegeben wird:
 
 
 ```csharp
@@ -539,23 +539,23 @@ Vector2 GetDesiredVelocityFromInput()
 }
 ```
 
-Die `TouchPanel.GetState` Methode gibt eine `TouchCollection` enthält Informationen, in denen der Benutzer den Bildschirm berührt. Wenn der Benutzer den Bildschirm nicht berührt die `TouchCollection` werden leer ist, wir sollten nicht in diesem Fall das Zeichen verschoben.
+Die `TouchPanel.GetState` -Methode gibt `TouchCollection` einen zurück, der Informationen darüber enthält, wo der Benutzer den Bildschirm berührt. Wenn der Benutzer den Bildschirm nicht berührt, ist das `TouchCollection` leer. in diesem Fall sollte das Zeichen nicht verschoben werden.
 
-Wenn der Benutzer den Bildschirm berührt, werden wir das Zeichen für die erste Berührung, anders ausgedrückt: verschoben, die `TouchLocation` am Index 0. Zunächst legen Sie die gewünschte Geschwindigkeit auf den Unterschied zwischen des Zeichens Speicherort und die erste Fingereingabe-Speicherort:
+Wenn der Benutzer den Bildschirm berührt, verschieben wir das Zeichen in den ersten touchabdruck, d. h., `TouchLocation` bei Index 0. Zunächst legen wir die gewünschte Geschwindigkeit so fest, dass Sie dem Unterschied zwischen dem Speicherort des Zeichens und dem Speicherort des ersten Berührungs Zeichens entspricht:
 
 ```csharp
         desiredVelocity.X = touchCollection [0].Position.X - this.X;
         desiredVelocity.Y = touchCollection [0].Position.Y - this.Y;
 ```
 
-Im folgenden finden etwas Mathematik, die das Verschieben von Zeichen mit derselben Geschwindigkeit erhalten bleiben. Um zu erklären, warum dies wichtig ist, sehen Sie sich eine Situation, in denen der Benutzer den Bildschirm 500 Pixel berührt von auf dem sich das Zeichen befindet. Die erste Zeile Where `desiredVelocity.X` wird den Wert 500 würden zuzuweisen. Jedoch, wenn der Benutzer den Bildschirm in einer Entfernung von nur 100 Einheiten aus dem Zeichen berühren wurden die `desiredVelocity.X` würde auf 100 festgelegt sein. Das Ergebnis wäre, dass die Bewegung Geschwindigkeit des Zeichens, wie weit entfernt reagieren würden, dass die Touch-Punkt vom Zeichen ist. Da wir das Zeichen, das immer mit derselben Geschwindigkeit verschieben möchten, müssen wir die DesiredVelocity zu ändern.
+Im folgenden finden Sie ein bisschen Mathematik, das das Zeichen mit der gleichen Geschwindigkeit bewegt. Um zu erläutern, warum dies wichtig ist, betrachten wir eine Situation, in der der Benutzer den Bildschirm 500 Pixel vom Speicherort des Zeichens berührt. Die erste Zeile, `desiredVelocity.X` in der festgelegt wird, weist den Wert 500 zu. Wenn der Benutzer den Bildschirm jedoch nur mit einem Abstand von nur 100 Einheiten vom Zeichen berührt, wird der `desiredVelocity.X` auf 100 festgelegt. Das Ergebnis wäre, dass die Verschiebungs Geschwindigkeit des Zeichens darauf zurückzuführen wäre, wie weit der Berührungspunkt vom-Zeichen entfernt ist. Da das Zeichen immer mit der gleichen Geschwindigkeit bewegt werden soll, muss die desiredvelocity geändert werden.
 
-Die `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)` Anweisung überprüft, wenn die Geschwindigkeit nicht-0 (null) – mit anderen Worten ist, um sicherzustellen, dass der Benutzer nicht die gleichen Position wie die aktuelle Position des Zeichens berührt überprüfen. Wenn nicht der Fall, dann wir das Zeichen, die Geschwindigkeit konstant, unabhängig davon, wie weit entfernt sein. Legen Sie die Fingereingabe müssen ist. Dies erreichen wir durch Normalisieren des Geschwindigkeitsvektors, was davon eine Länge von 1 führt. Ein Vektor der Geschwindigkeit von 1 bedeutet, dass das Zeichen bei 1 Pixel pro Sekunde verschoben wird. Wir werden dies beschleunigen, indem der Wert multipliziert wird durch die gewünschte Geschwindigkeit von 200.
+Die `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)` Anweisung überprüft, ob die Geschwindigkeit ungleich NULL ist – mit anderen Worten, Sie prüft, ob der Benutzer dieselbe Stelle wie die aktuelle Position des Zeichens berührt. Wenn dies nicht der Wert ist, müssen wir die Geschwindigkeit des Zeichens so festlegen, dass es konstant ist, unabhängig davon, wie weit die Berührungs Geschwindigkeit ist. Dies erreichen Sie, indem der Geschwindigkeitsvektor normalisiert wird. Dies ergibt eine Länge von 1. Ein Geschwindigkeitsvektor von 1 bedeutet, dass das Zeichen bei 1 Pixel pro Sekunde verschoben wird. Wir werden dies beschleunigen, indem wir den Wert mit der gewünschten Geschwindigkeit von 200 multiplizieren.
 
 
-### <a name="applying-velocity-to-position"></a>Anwenden von Geschwindigkeit auf Position
+### <a name="applying-velocity-to-position"></a>Anwenden der Geschwindigkeit auf die Position
 
-Die Geschwindigkeit von zurückgegebenen `GetDesiredVelocityFromInput` muss auf des Zeichens, die angewendet werden `X` und `Y` Werte zur Laufzeit eine Auswirkung hat. Ändern wir die `Update` -Methode wie folgt:
+Die von `GetDesiredVelocityFromInput` zurückgegebene Geschwindigkeit muss auf die-und `Y` - `X` Werte des Zeichens angewendet werden, damit Sie zur Laufzeit wirksam werden. Wir ändern die `Update` Methode wie folgt:
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -574,22 +574,22 @@ public void Update(GameTime gameTime)
 }
 ```
 
-Was wir hier implementiert haben, heißt *zeitbasierte* Bewegung (im Gegensatz zu *framebasierte* datenverschiebung). Verschieben eines zeitbasierten multipliziert einen Wert für die Geschwindigkeit (in unserem Fall die Werte, in gespeichert der `velocity` Variable) durch, wie viel Zeit seit der letzten Aktualisierung verstrichen ist, die in gespeichert ist `gameTime.ElapsedGameTime.TotalSeconds`. Wenn das Spiel mit weniger Bildern pro Sekunde ausgeführt wird, verlängert sich, die verstrichene Zeit zwischen den Frames – das Endergebnis ist, dass Objekte mit zeitbasierten Bewegung immer mit derselben Geschwindigkeit unabhängig von der Einzelbildrate verschoben werden.
+Was wir hier implementiert haben, ist eine *zeitbasierte* Bewegung (im Gegensatz zur *Frame basierten* Bewegung). Die zeitbasierte Verschiebung multipliziert einen Geschwindigkeitswert (in unserem Fall die Werte, die in der `velocity` Variablen gespeichert sind) nach der Zeit, die seit dem letzten Update, das `gameTime.ElapsedGameTime.TotalSeconds`in gespeichert ist, verstrichen ist. Wenn das Spiel mit weniger Frames pro Sekunde ausgeführt wird, wird die verstrichene Zeit zwischen Frames erreicht – das Endergebnis besteht darin, dass Objekte, die zeitbasierte Verschiebungen verwenden, unabhängig von der Framerate immer dieselbe Geschwindigkeit verschieben.
 
-Wenn wir jetzt unser Spiel ausführen, sehen wir, dass das Zeichen in Richtung Touch-Position verschoben werden:
+Wenn wir jetzt unser Spiel ausführen, sehen wir, dass das Zeichen in die Berührungs Position wechselt:
 
-![](part2-images/image6.gif "Das Zeichen wird in Richtung Touch-Position verschoben werden.")
+![](part2-images/image6.gif "Das Zeichen wird an die Berührungs Position verschoben.")
 
-## <a name="matching-movement-and-animation"></a>Übereinstimmende verschieben und Animation
+## <a name="matching-movement-and-animation"></a>Übereinstimmende Bewegung und Animation
 
-Sobald wir unsere Zeichen verschieben und die Wiedergabe einer einzelnen Animation haben, können wir definieren die restlichen unsere Animationen und dann verwenden, um die Bewegung des Zeichens widerzuspiegeln. Wenn abgeschlossen haben wir acht Animationen insgesamt:
+Nachdem wir das Zeichen bewegt und eine einzelne Animation wiedergegeben haben, können wir den Rest unserer Animationen definieren und Sie dann verwenden, um die Bewegung des Zeichens widerzuspiegeln. Nach Abschluss der Fertigstellung haben wir insgesamt acht Animationen:
 
-- Animationen für Schritt für Schritt nach oben, unten, links und rechts
-- Animationen für die Bereitstellung weiterhin und nach oben, unten, links und rechts
+- Animationen zum nach oben, nach unten, Links und rechts
+- Animationen für die Position nach oben, unten, Links und rechts
 
-### <a name="defining-the-rest-of-the-animations"></a>Definieren die Rest-Animationen
+### <a name="defining-the-rest-of-the-animations"></a>Definieren der restlichen Animationen
 
-Wir fügen zunächst die `Animation` auf Instanzen der `CharacterEntity` -Klasse für alle unsere Animationen am selben Ort, an dem wir hinzugefügt `walkDown`. Sobald wir Sie dazu die `CharacterEntity` müssen die folgenden `Animation` Mitglieder:
+Zuerst fügen wir die `Animation` -Instanzen der- `CharacterEntity` Klasse für alle Animationen an derselben Stelle hinzu, an der wir hinzugefügt `walkDown`haben. Nachdem dies erfolgt ist, verfügt `CharacterEntity` die über die folgenden `Animation` Member:
 
 ```csharp
 Animation walkDown;
@@ -605,7 +605,7 @@ Animation standRight;
 Animation currentAnimation;
 ```
 
-Nachdem ich, die Animationen in definieren möchte der `CharacterEntity` Konstruktor wie folgt:
+Nun definieren wir die Animationen im `CharacterEntity` Konstruktor wie folgt:
 
 ```csharp
 public CharacterEntity (GraphicsDevice graphicsDevice)
@@ -657,9 +657,9 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 }
 ```
 
-Sollten wir darauf hinweisen, dass der obige Code hinzugefügt wurde die `CharacterEntity` Konstruktor, um in dieser exemplarischen Vorgehensweise kürzer beibehalten. Spiele werden in der Regel die Definition von Animationen von Zeichen in ihre eigenen Klassen zu trennen oder laden diese Informationen aus der ein Format wie z. B. XML oder JSON.
+Beachten Sie, dass der obige Code dem `CharacterEntity` Konstruktor hinzugefügt wurde, um diese exemplarische Vorgehensweise zu verkürzen. Games trennt die Definition von Zeichen Animationen in der Regel in Ihre eigenen Klassen oder lädt diese Informationen aus einem Datenformat, wie z. b. XML oder JSON.
 
-Als Nächstes passen wir die Logik zum Verwenden von Animationen entsprechend der Richtung, die das Zeichen verschoben wird oder nach der letzten Animation, wenn das Zeichen gerade beendet hat. Zu diesem Zweck ändern wir die `Update` Methode:
+Als nächstes passen wir die Logik an, um die Animationen entsprechend der Richtung zu verwenden, in der das Zeichen verschoben wird, oder entsprechend der letzten Animation, wenn das Zeichen gerade beendet wurde. Zu diesem Zweck ändern wir die `Update` -Methode:
 
 
 ```csharp
@@ -730,19 +730,19 @@ public void Update(GameTime gameTime)
 }
 ```
 
-Der Code, um die Animationen zu wechseln, wird in zwei Blöcke unterteilt. Die erste überprüft wird, wenn der Velocity nicht gleich ist `Vector2.Zero` – Dies gibt an, ob das Zeichen verschoben werden. Wenn das Zeichen bewegt wird, sehen wir die `velocity.X` und `velocity.Y` Werte, um zu bestimmen, welche walkingstrecken Animation wiedergegeben.
+Der Code zum Wechseln der Animationen wird in zwei Blöcke aufgeteilt. Der erste prüft, `Vector2.Zero` ob die Geschwindigkeit nicht gleich ist – dies gibt an, ob das Zeichen verschoben wird. Wenn das Zeichen verschoben wird, können wir die `velocity.X` -und- `velocity.Y` Werte überprüfen, um zu bestimmen, welche Animation abgespielt werden soll.
 
-Wenn das Zeichen ist nicht das Verschieben, möchten wird für des Zeichens des `currentAnimation` zu einem ständigen-Animation –, aber wir nur tun, wenn die `currentAnimation` ist ein Schritt für Schritt Animation oder wenn eine Animation nicht festgelegt wurde. Wenn die `currentAnimation` ist keiner der vier walkingstrecken Animationen, und klicken Sie dann das Zeichen bereits verfügbar ist, sodass wir nicht ändern müssen `currentAnimation`.
+Wenn das Zeichen nicht verschoben wird, möchten wir die Zeichen `currentAnimation` Folge auf eine permanente Animation festlegen – aber wir tun dies nur, `currentAnimation` wenn es sich bei um eine durch laufende Animation handelt, oder wenn eine Animation nicht festgelegt wurde. Wenn keine der vier durch laufenden Animationen `currentAnimation` ist,wirddasZeichenbereitsangezeigt,sodasskeineÄnderungenvorgenommenwerdenmüssen.`currentAnimation`
 
-Das Ergebnis dieses Codes ist, dass das Zeichen ordnungsgemäß zu animieren, wenn durchlaufen wird, und klicken Sie dann stehen vor der letzten Richtung, in die sie durchlaufen wurde, nachdem dieser gestoppt wurde:
+Das Ergebnis dieses Codes ist, dass das Zeichen beim Durchlaufen ordnungsgemäß animiert und anschließend die letzte Richtung angezeigt wird, in der es angehalten wurde:
 
-![](part2-images/image7.gif "Das Ergebnis dieses Codes ist, dass das Zeichen ordnungsgemäß zu animieren, wenn durchlaufen wird, und klicken Sie dann stehen vor der letzten Richtung, in die sie durchlaufen wurde, nachdem dieser gestoppt wurde")
+![](part2-images/image7.gif "Das Ergebnis dieses Codes ist, dass das Zeichen beim Durchlaufen ordnungsgemäß animiert und anschließend die letzte Richtung angezeigt wird, in der es angehalten wurde.")
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser exemplarischen Vorgehensweise wurde gezeigt, wie Arbeiten mit MonoGame erstellen Sie eine plattformübergreifende Spiele mit Sprites, das Verschieben von Objekten, eingabeerkennung und Animation. Es wird beschrieben, wie eine allgemeines Animation-Klasse. Es hat auch gezeigt, wie Sie eine Zeichenentität für die Organisation von der Codelogik zu erstellen.
+In dieser exemplarischen Vorgehensweise wurde die Verwendung von monogame zum Erstellen eines plattformübergreifenden Spiels mit Sprites, dem Verschieben von Objekten, der Eingabe Erkennung und der Animation veranschaulicht. Es wird das Erstellen einer allgemeinen Animations Klasse behandelt. Außerdem wurde gezeigt, wie eine Zeichen Entität zum Organisieren von Code Logik erstellt wird.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [CharacterSheet Bildressource (Beispiel)](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)
-- [Durchlaufen eines Spiels abgeschlossen (Beispiel)](https://developer.xamarin.com/samples/mobile/WalkingGameMG/)
+- [Bildressource "Merkmal Blatt" (Beispiel)](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)
+- [Durchlaufen des Spiels (Beispiel)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)

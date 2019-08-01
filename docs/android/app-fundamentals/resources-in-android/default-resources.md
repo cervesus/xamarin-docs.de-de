@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 3be63eb8909f129f046b2959ec7963e493674914
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b3a6dfb11b49f9ab3b09cf09594eb374f63fe304
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644228"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680230"
 ---
 # <a name="default-resources"></a>Standardressourcen
 
@@ -38,7 +38,7 @@ Eine komplette Liste der Ressourcentypen finden Sie unten:
  
 -  **Layout** &ndash; XML-Dateien, die ein Benutzeroberflächen Layout beschreiben, z. b. eine Aktivität oder eine Zeile in einer Liste.
 
--  **Menü** XML-Dateien, die Anwendungs Menüs beschreiben, z. b. *options Menüs*, *Kontextmenüs*und *Untermenüs.* &ndash; Ein Beispiel für Menüs finden Sie in der [Popup-Menü Demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) oder im Beispiel für [Standard Steuerelemente](https://developer.xamarin.com/samples/mobile/StandardControls/) .
+-  **Menü** XML-Dateien, die Anwendungs Menüs beschreiben, z. b. *options Menüs*, *Kontextmenüs*und *Untermenüs.* &ndash; Ein Beispiel für Menüs finden Sie in der [Popup-Menü Demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) oder im Beispiel für [Standard Steuerelemente](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
 
 -  **Rohdaten** &ndash; Beliebige Dateien, die in Ihrem unformatierten Binärformat gespeichert werden. Diese Dateien werden in einer Android-Anwendung in einem Binärformat kompiliert.
 
@@ -70,7 +70,7 @@ Eine komplette Liste der Ressourcentypen finden Sie unten:
 
 -  **Layout** &ndash; XML-Dateien, die ein Benutzeroberflächen Layout beschreiben, z. b. eine Aktivität oder eine Zeile in einer Liste.
 
--  **Menü** XML-Dateien, die Anwendungs Menüs beschreiben, z. b. *options Menüs*, *Kontextmenüs*und *Untermenüs.* &ndash; Ein Beispiel für Menüs finden Sie in der [Popup-Menü Demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) oder im Beispiel für [Standard Steuerelemente](https://developer.xamarin.com/samples/mobile/StandardControls/) .
+-  **Menü** XML-Dateien, die Anwendungs Menüs beschreiben, z. b. *options Menüs*, *Kontextmenüs*und *Untermenüs.* &ndash; Ein Beispiel für Menüs finden Sie in der [Popup-Menü Demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) oder im Beispiel für [Standard Steuerelemente](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
 
 -  **Rohdaten** &ndash; Beliebige Dateien, die in Ihrem unformatierten Binärformat gespeichert werden. Diese Dateien werden in einer Android-Anwendung in einem Binärformat kompiliert.
 

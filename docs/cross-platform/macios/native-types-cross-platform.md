@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: deb4caa4d23d23b2997361cca161b218c1ff7b61
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e400191b40775cef5d1ab1cba0bd6c4544f8c5fe
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511287"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680208"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>Arbeiten mit nativen Typen in plattformübergreifenden Apps
 
@@ -207,7 +207,7 @@ namespace NativeShared
 }
 ```
 
-Beachten Sie, dass hier die `CalculateArea` -Methode so geändert wurde, dass `nfloat` anstelle des `float`Standard-zurückgegeben wird. Dies wurde erreicht, damit keine Kompilierungsfehler auftreten, wenn versucht wird  , das Ergebnis `nfloat` der Berechnung implizit zu konvertieren (da beide Werte, die multipliziert werden `nfloat`, vom Typ `float` sind), in einen Rückgabewert.
+Beachten Sie, dass hier die `CalculateArea` -Methode so geändert wurde, dass `nfloat` anstelle des `float`Standard-zurückgegeben wird. Dies wurde erreicht, damit keine Kompilierungsfehler auftreten, wenn versucht wird , das Ergebnis `nfloat` der Berechnung implizit zu konvertieren (da beide Werte, die multipliziert werden `nfloat`, vom Typ `float` sind), in einen Rückgabewert.
 
 Wenn der Code auf einem nicht Unified API Gerät kompiliert und ausgeführt wird, ordnet `using nfloat = global::System.Single;` die einem `nfloat` `Single` zu, das implizit in eine `float` konvertiert, sodass die Anwendung `CalculateArea` die Methode ohne Änderungs.
 
@@ -251,4 +251,4 @@ In diesem Artikel haben wir gesehen, wann die systemeigenen Datentypen in einer 
 - [Unified API](~/cross-platform/macios/unified/index.md)
 - [Native Typen](~/cross-platform/macios/nativetypes.md)
 - [Freigeben von Code Optionen](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Beispiel für Code Freigabe](https://developer.xamarin.com/samples/mobile/SharingCode/)
+- [Beispiel für Code Freigabe](https://docs.microsoft.com/samples/xamarin/mobile-samples/sharingcode/)
