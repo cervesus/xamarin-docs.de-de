@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: ad1c033b35da548921ec47d8cc2f3a8ef87d2fa8
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 00e48907f3044fab8dcf23d0bbb5838bc587bb2f
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486067"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68681081"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -294,7 +294,7 @@ Xamarin.Forms ist ein plattformübergreifendes Toolkit für Android, iOS, Mac un
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/app-fundamentals/index.md">
+                                <a href="~/xamarin-forms/app-fundamentals/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -305,7 +305,7 @@ Xamarin.Forms ist ein plattformübergreifendes Toolkit für Android, iOS, Mac un
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Application Fundamentals (Anwendungsgrundlagen)</h3>
-                                                    <p>Alles, was Sie zum Erstellen von Apps wissen müssen, z.B. Arbeiten mit Dateien, Images, Datenbanken und mehr.</p>
+                                                    <p>Hier lernen Sie alle nötigen Grundlagen für die Entwicklung von Xamarin.Forms-Apps kennen (z. B. Navigation, Gesten, Datenbindung).</p>
                                                 </div>
                                             </div>
                                         </div>

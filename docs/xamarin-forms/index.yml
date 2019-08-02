@@ -2,7 +2,7 @@
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
-  description: 'Xamarin.Forms macht ein vollständiges plattformübergreifendes Toolkit für die Benutzeroberfläche verfügbar, mit dem .NET-Entwickler mobile, Tablet- und Desktop-Apps erstellen können.'
+  description: 'Xamarin.Forms macht ein vollständiges plattformübergreifendes Toolkit für die Benutzeroberfläche verfügbar, mit dem .NET-Entwickler mobile Apps, Tablet-Apps und Desktop-Apps erstellen können.'
   author: conceptdev
   ms.author: crdun
   ms.date: 04/22/2019
@@ -57,7 +57,7 @@ sections:
         className: cardsB
         items:
           - href: ~/xamarin-forms/app-fundamentals/
-            html: 'Alles, was Sie zum Erstellen von Xamarin.Forms-Apps wissen müssen, z.B. Arbeiten mit Dateien, Images, Datenbanken und mehr.'
+            html: "Hier lernen Sie alle nötigen Grundlagen für die Entwicklung von Xamarin.Forms-Apps kennen (z.\_B. Navigation, Gesten, Datenbindung)."
             image:
               src: ~/media/icons/i_app-build.svg
               href: ~/xamarin-forms/app-fundamentals/
