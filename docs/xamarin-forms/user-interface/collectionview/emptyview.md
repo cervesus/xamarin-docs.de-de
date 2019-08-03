@@ -1,42 +1,42 @@
 ---
-title: Xamarin.Forms CollectionView EmptyView
-description: In CollectionView kann eine leere Ansicht angegeben werden, dass, Feedback an den Benutzer bereitstellt, wenn keine Daten für die Anzeige verfügbar sind. Die leere Sicht kann es sich um eine Zeichenfolge, eine Sicht oder mehrere Ansichten sein.
+title: Xamarin. Forms CollectionView emptyview
+description: In CollectionView kann eine leere Ansicht angegeben werden, die dem Benutzer Feedback bietet, wenn keine Daten zur Anzeige verfügbar sind. Die leere Ansicht kann eine Zeichenfolge, eine Ansicht oder mehrere Ansichten sein.
 ms.prod: xamarin
 ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 6bf24cb81bbd40c7e3f5b0f65ed2a2af7cbbe98b
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: c6a2a53f267a7f6764ec441944193e8c5ecd9189
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005327"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739191"
 ---
-# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
+# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin. Forms CollectionView emptyview
 
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert die folgenden Eigenschaften, die mit dem Benutzer Feedback, wenn keine Daten angezeigt werden können:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert die folgenden Eigenschaften, die verwendet werden können, um Benutzer Feedback bereitzustellen, wenn keine anzuzeigenden Daten vorhanden sind:
 
-- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), des Typs `object`, die Zeichenfolge, die Bindung oder die Ansicht, die angezeigt wird, wenn die [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource) -Eigenschaft ist `null`, oder wenn die Auflistung, die vom angegebenen die `ItemsSource` -Eigenschaft ist `null` oder leer. Der Standardwert ist `null`.
-- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), des Typs [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate), die Vorlage, mit dem angegebenen format `EmptyView`. Der Standardwert ist `null`.
+- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), vom Typ `object`, der Zeichenfolge, der Bindung oder der Ansicht, die angezeigt wird [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) , wenn `null`die-Eigenschaft ist, oder, wenn `ItemsSource` die von `null` der-Eigenschaft angegebene Auflistung oder leer ist. Der Standardwert ist `null`.
+- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), die Vorlage, die zum Formatieren des `EmptyView`angegebenen verwendet werden soll. Der Standardwert ist `null`.
 
-Diese Eigenschaften verfügen über [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Objekte, was bedeutet, dass die Eigenschaften, Ziele von datenbindungen werden können.
+Diese Eigenschaften werden von [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. Dies bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
-Die wichtigsten Verwendungsszenarien für die Einstellung der [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) Eigenschaft werden bei einem Filtervorgang auf Feedback von Benutzern angezeigt ein [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) ergibt keine Daten und Anzeigen von Feedback von Benutzern beim Daten werden von einem Webdienst abgerufen wird.
+Die wichtigsten Verwendungs Szenarien für das Festlegen [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) der-Eigenschaft sind das Anzeigen von Benutzer Feedback, wenn [`CollectionView`](xref:Xamarin.Forms.CollectionView) ein Filter Vorgang für ein-Objekt keine Daten ergibt und das Benutzer Feedback anzeigt, während Daten von einem Webdienst abgerufen werden.
 
 > [!NOTE]
-> Die [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) Eigenschaft kann festgelegt werden, um einer Sicht, interaktiven Inhalt enthält, falls erforderlich.
+> Die [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaft kann auf eine Ansicht festgelegt werden, die bei Bedarf interaktiven Inhalt enthält.
 
 Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
-## <a name="display-a-string-when-data-is-unavailable"></a>Eine Zeichenfolge angezeigt, wenn Daten nicht verfügbar ist.
+## <a name="display-a-string-when-data-is-unavailable"></a>Zeigt eine Zeichenfolge an, wenn Daten nicht verfügbar sind.
 
-Die [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) Eigenschaft kann festgelegt werden, in eine Zeichenfolge, die angezeigt wird, wenn die [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft `null`, oder wenn die Auflistung, die vom angegebenen der `ItemsSource` Eigenschaft `null` oder leer sein. Der folgende XAML zeigt ein Beispiel für dieses Szenario:
+Die [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaft kann auf eine Zeichenfolge festgelegt werden, die angezeigt wird [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) , wenn `null`die-Eigenschaft ist, oder wenn die `ItemsSource` von der `null` -Eigenschaft angegebene Auflistung oder leer ist. Der folgende XAML-Code zeigt ein Beispiel für dieses Szenario:
 
 ```xaml
 <CollectionView ItemsSource="{Binding EmptyMonkeys}"
@@ -53,13 +53,13 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 ```
 
-Das Ergebnis ist, dass, da das datengebundene Auflistung `null`, legen Sie die Zeichenfolge als das [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaftswert angezeigt wird:
+Das Ergebnis ist, dass die Zeichenfolge, die `null` [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) als Eigenschafts Wert festgelegt ist, angezeigt wird, da die Daten gebundene Auflistung ist:
 
-[![Screenshot von einer vertikalen Liste der CollectionView mit einer leeren Textansicht, für iOS und Android](emptyview-images/null-itemssource.png "CollectionView vertikale Liste mit leeren Textansicht")](emptyview-images/null-itemssource-large.png#lightbox "CollectionView vertikale Liste mit Text leer ansehen")
+[ ![Screenshot einer vertikalen CollectionView-Liste mit leerer Textansicht in IOS und Android](emptyview-images/null-itemssource.png "CollectionView vertikale Liste mit leerer Textansicht") ] (emptyview-images/null-itemssource-large.png#lightbox "Vertikale Auflistung von CollectionView mit leerer Textansicht")
 
-## <a name="display-views-when-data-is-unavailable"></a>Ansichten angezeigt, wenn Daten nicht verfügbar ist.
+## <a name="display-views-when-data-is-unavailable"></a>Anzeigen von Sichten, wenn Daten nicht verfügbar sind
 
-Die [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) Eigenschaft kann festgelegt werden, um eine Ansicht, die angezeigt wird, wenn die [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft `null`, oder wenn die Auflistung, die vom angegebenen die `ItemsSource` Eigenschaft `null` oder leer sein. Dies kann sein, eine einzelne Ansicht oder eine Sicht, die mehrere untergeordnete Ansichten enthält. Das folgende XAML-Beispiel zeigt die `EmptyView` -Eigenschaft auf eine Ansicht, die mehrere untergeordnete Ansichten enthält:
+Die [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaft kann auf eine Ansicht festgelegt werden, die angezeigt wird, [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) wenn die `null`-Eigenschaft ist, oder wenn die von `ItemsSource` der- `null` Eigenschaft angegebene Auflistung oder leer ist. Dabei kann es sich um eine einzelne Ansicht oder eine Ansicht handeln, die mehrere untergeordnete Sichten enthält. Das folgende XAML-Beispiel zeigt `EmptyView` , wie die-Eigenschaft auf eine Ansicht festgelegt ist, die mehrere untergeordnete Sichten enthält:
 
 ```xaml
 <StackLayout Margin="20">
@@ -110,13 +110,13 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-Bei der [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) führt die `FilterCommand`, der Auflistung, die angezeigt wird der [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) wird gefiltert, für der gesuchten Begriff als gespeichert der [ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text) Eigenschaft. Wenn der Filtervorgang keine Daten, ergibt die [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) als Festlegen der [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaftswert angezeigt wird:
+Wenn die [`SearchBar`](xref:Xamarin.Forms.SearchBar) [`CollectionView`](xref:Xamarin.Forms.CollectionView) ausführt, wird die von der angezeigte Auflistung nach dem in der [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text) -Eigenschaft gespeicherten Suchbegriff gefiltert. `FilterCommand` Wenn der Filter Vorgang keine Daten ergibt, wird [`StackLayout`](xref:Xamarin.Forms.StackLayout) der Satz [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) als Eigenschafts Wert angezeigt:
 
-[![Screenshot einer CollectionView vertikale Liste mit benutzerdefinierten leere Sicht, für iOS und Android](emptyview-images/filter-multiple-views.png "CollectionView vertikale Liste mit benutzerdefinierten leere Ansicht")](emptyview-images/filter-multiple-views-large.png#lightbox "CollectionView vertikale Liste mit benutzerdefinierten leere Ansicht")
+[ ![Screenshot einer vertikalen CollectionView-Liste mit benutzerdefinierter leerer Ansicht in IOS und Android](emptyview-images/filter-multiple-views.png "CollectionView vertikal Liste mit benutzerdefinierter leerer Ansicht") ] (emptyview-images/filter-multiple-views-large.png#lightbox "Vertikale Auflistung von CollectionView mit benutzerdefinierter leerer Ansicht")
 
-## <a name="display-a-templated-custom-type-when-data-is-unavailable"></a>Einen auf Vorlagen basierenden, benutzerdefinierten Typ angezeigt wird, wenn Daten nicht verfügbar ist.
+## <a name="display-a-templated-custom-type-when-data-is-unavailable"></a>Anzeigen eines benutzerdefinierten Typs mit Vorlagen, wenn Daten nicht verfügbar sind
 
-Die [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) Eigenschaft kann festgelegt werden, um einen benutzerdefinierten Typ, dessen Vorlage wird angezeigt, wenn die [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource) -Eigenschaft ist `null`, oder wenn die Auflistung, die durch die angegeben`ItemsSource`Eigenschaft `null` oder leer sein. Die [ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) Eigenschaft kann festgelegt werden, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) , definiert die Darstellung der `EmptyView`. Der folgende XAML zeigt ein Beispiel für dieses Szenario:
+Die [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaft kann auf einen benutzerdefinierten Typ festgelegt werden, dessen Vorlage angezeigt [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) wird, `null`wenn die-Eigenschaft ist, oder wenn `ItemsSource` die von `null` der-Eigenschaft angegebene Auflistung oder leer ist. Die [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) -Eigenschaft kann auf einen [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) festgelegt werden, der die Darstellung `EmptyView`des definiert. Der folgende XAML-Code zeigt ein Beispiel für dieses Szenario:
 
 ```xaml
 <StackLayout Margin="20">
@@ -161,7 +161,7 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-Die `FilterData` Typ definiert ein `Filter` -Eigenschaft und einem entsprechenden [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty):
+Der `FilterData` -Typ definiert `Filter` eine-Eigenschaft und eine [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)entsprechende:
 
 ```csharp
 public class FilterData : BindableObject
@@ -176,16 +176,16 @@ public class FilterData : BindableObject
 }
 ```
 
-Die [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaftensatz auf eine `FilterData` -Objekt, und die `Filter` Eigenschaftendaten bindet an die [ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text) Eigenschaft. Bei der [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) führt die `FilterCommand`, der Auflistung, die angezeigt wird der [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) wird gefiltert, für der gesuchten Begriff als gespeichert der `Filter` Eigenschaft. Wenn der Filtervorgang keine Daten ergibt die [ `Label` ](xref:Xamarin.Forms.Label) in definiert die [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate), festgelegt ist, als die [ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) ist der Wert der Eigenschaft, angezeigt:
+Die [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaft ist auf ein `FilterData` -Objekt festgelegt `Filter` , und die Eigenschaften Daten [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text) werden an die-Eigenschaft gebunden. Wenn die [`SearchBar`](xref:Xamarin.Forms.SearchBar) [`CollectionView`](xref:Xamarin.Forms.CollectionView) ausführt, wird die von der angezeigte Auflistung nach dem in der `Filter` -Eigenschaft gespeicherten Suchbegriff gefiltert. `FilterCommand` Wenn der Filter Vorgang keine Daten ergibt, wird [`Label`](xref:Xamarin.Forms.Label) die in der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)definierte, die als [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) Eigenschafts Wert festgelegt ist, angezeigt:
 
-[![Screenshot von einer vertikalen Liste der CollectionView mit einer Vorlage leere Ansicht unter iOS und Android](emptyview-images/emptyviewtemplate.png "CollectionView vertikale Liste mit einer ansichtsvorlage der leeren")](emptyview-images/emptyviewtemplate-large.png#lightbox "CollectionView vertikale Liste mit Vorlage für leere Ansicht")
+[ ![Screenshot einer vertikalen CollectionView-Liste mit einer leeren Ansichts Vorlage, auf der IOS-und Android](emptyview-images/emptyviewtemplate.png "CollectionView-vertikale Liste mit leerer Ansichts Vorlage") ] (emptyview-images/emptyviewtemplate-large.png#lightbox "Vertikale Auflistung von CollectionView mit leerer Ansichts Vorlage")
 
 > [!NOTE]
-> Wenn einen auf Vorlagen basierenden, benutzerdefinierten Typ angezeigt werden soll, wenn Daten nicht verfügbar ist, sind die [ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) Eigenschaft kann festgelegt werden, um eine Ansicht, die mehrere untergeordnete Ansichten enthält.
+> Wenn ein benutzerdefinierter Typ mit Vorlagen angezeigt wird, wenn Daten nicht [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) verfügbar sind, kann die-Eigenschaft auf eine Ansicht festgelegt werden, die mehrere untergeordnete Sichten enthält.
 
-## <a name="choose-an-emptyview-at-runtime"></a>Wählen Sie eine EmptyView zur Laufzeit
+## <a name="choose-an-emptyview-at-runtime"></a>Emptyview zur Laufzeit auswählen
 
-Sichten, die als angezeigt werden ein [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) Wenn Daten nicht verfügbar ist, kann als definiert werden [ `ContentView` ](xref:Xamarin.Forms.ContentView) Objekte in einem [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Die `EmptyView` können dann Eigenschaftensatz für eine bestimmte `ContentView`basierend auf Geschäftslogik zur Laufzeit. Im folgende XAML-Beispiel zeigt ein Beispiel für dieses Szenario:
+Sichten, die als [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) angezeigt werden, wenn Daten nicht verfügbar sind, können in einer [`ContentView`](xref:Xamarin.Forms.ContentView) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)als-Objekte definiert werden. Die `EmptyView` -Eigenschaft kann dann zur Laufzeit auf einen `ContentView`bestimmten festgelegt werden, der auf einer Geschäftslogik basiert. Das folgende XAML-Beispiel zeigt ein Beispiel für dieses Szenario:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -242,7 +242,7 @@ Sichten, die als angezeigt werden ein [ `EmptyView` ](xref:Xamarin.Forms.ItemsVi
 </ContentPage>
 ```
 
-Dieses XAML definiert zwei [ `ContentView` ](xref:Xamarin.Forms.ContentView) Objekte in der auf Seitenebene [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), mit der [ `Switch` ](xref:Xamarin.Forms.Switch) -Objekt, das `ContentView` Objekt wird als festgelegt werden die [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaftswert. Wenn die [ `Switch` ](xref:Xamarin.Forms.Switch) ein-/ausgeschaltet ist, die `OnEmptyViewSwitchToggled` -Ereignishandler ausgeführt wird die `ToggleEmptyView` Methode:
+Dieser XAML-Code [`ContentView`](xref:Xamarin.Forms.ContentView) definiert zwei Objekte auf Seitenebene [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary), wobei das [`Switch`](xref:Xamarin.Forms.Switch) Objekt [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) steuert, `ContentView` welches Objekt als Eigenschafts Wert festgelegt wird. Wenn das [`Switch`](xref:Xamarin.Forms.Switch) -Objekt ein-/ausgeschaltet `OnEmptyViewSwitchToggled` wird, führt der `ToggleEmptyView` Ereignishandler die-Methode aus:
 
 ```csharp
 void ToggleEmptyView(bool isToggled)
@@ -251,15 +251,15 @@ void ToggleEmptyView(bool isToggled)
 }
 ```
 
-Die `ToggleEmptyView` Methode wird die [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) Eigenschaft der `collectionView` Objekt, das eine der beiden [ `ContentView` ](xref:Xamarin.Forms.ContentView) im gespeicherten Objekte die [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)basierend auf den Wert des der [ `Switch.IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled) Eigenschaft. Bei der [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) führt die `FilterCommand`, der Auflistung, die angezeigt wird der [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) wird gefiltert, für der gesuchten Begriff als gespeichert der [ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text) Eigenschaft. Wenn der Filtervorgang keine Daten, ergibt die `ContentView` Objekt festgelegt werden, als die `EmptyView` Eigenschaft wird angezeigt:
+Die `ToggleEmptyView` -Methode legt [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) die-Eigenschaft `collectionView` des-Objekts basierend auf dem [`ContentView`](xref:Xamarin.Forms.ContentView) Wert der- [`Switch.IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) Eigenschaft [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf eines der beiden-Objekte fest, die im gespeichert sind. Wenn die [`SearchBar`](xref:Xamarin.Forms.SearchBar) [`CollectionView`](xref:Xamarin.Forms.CollectionView) ausführt, wird die von der angezeigte Auflistung nach dem in der [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text) -Eigenschaft gespeicherten Suchbegriff gefiltert. `FilterCommand` Wenn der Filter Vorgang keine Daten ergibt, wird `ContentView` das `EmptyView` als Eigenschaft festgelegte Objekt angezeigt:
 
-[![Screenshot von einer vertikalen Liste der CollectionView mit vertauscht leere Ansichten unter iOS und Android](emptyview-images/swap.png "CollectionView vertikale Liste mit vertauscht leere Ansichten")](emptyview-images/swap-large.png#lightbox "CollectionView vertikale Liste mit Vertauscht die leere Ansichten")
+[ ![Screenshot einer vertikalen CollectionView-Liste mit vertauschten leeren Ansichten auf der vertikalen Liste von IOS und Android](emptyview-images/swap.png "CollectionView mit vertauschten leeren Ansichten") ] (emptyview-images/swap-large.png#lightbox "Vertikale CollectionView-Liste mit vertauschten leeren Ansichten")
 
-Weitere Informationen zu Ressourcenwörterbüchern, finden Sie unter [Xamarin.Forms Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md).
+Weitere Informationen zu Ressourcen Wörterbüchern finden Sie unter [xamarin. Forms-Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md).
 
-## <a name="choose-an-emptyviewtemplate-at-runtime"></a>Wählen Sie eine EmptyViewTemplate zur Laufzeit
+## <a name="choose-an-emptyviewtemplate-at-runtime"></a>Emptyviewtemplate zur Laufzeit auswählen
 
-Die Darstellung der [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) kann ausgewählt werden, zur Laufzeit basierend auf den Wert festlegen die [ `CollectionView.EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) Eigenschaft, um eine [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector) Objekt:
+Die Darstellung des [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) kann zur Laufzeit basierend auf seinem Wert ausgewählt werden, indem die [`CollectionView.EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) -Eigenschaft auf ein [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) -Objekt festgelegt wird:
 
 ```xaml
 <ContentPage ...
@@ -302,11 +302,11 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-Die [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaftensatz auf die [ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text) -Eigenschaft, und die [ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) -Eigenschaftensatz auf eine `SearchTermDataTemplateSelector` Objekt.
+Die [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) -Eigenschaft wird auf die [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text) -Eigenschaft festgelegt [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) , und die-Eigenschaft `SearchTermDataTemplateSelector` wird auf ein-Objekt festgelegt.
 
-Bei der [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) führt die `FilterCommand`, der Auflistung, die angezeigt wird der [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) wird gefiltert, für der gesuchten Begriff als gespeichert der [ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text) Eigenschaft. Wenn der Filtervorgang keine Daten ergibt die [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) vom ausgewählten der `SearchTermDataTemplateSelector` Objekt festgelegt ist, als die [ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) Eigenschaft angezeigt.
+Wenn die [`SearchBar`](xref:Xamarin.Forms.SearchBar) [`CollectionView`](xref:Xamarin.Forms.CollectionView) ausführt, wird die von der angezeigte Auflistung nach dem in der [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text) -Eigenschaft gespeicherten Suchbegriff gefiltert. `FilterCommand` Wenn beim Filter Vorgang keine Daten angezeigt werden, [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) wird der, `SearchTermDataTemplateSelector` der vom-Objekt ausgewählt [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) wird, als die-Eigenschaft festgelegt und angezeigt.
 
-Das folgende Beispiel zeigt die `SearchTermDataTemplateSelector` Klasse:
+Das folgende Beispiel zeigt die `SearchTermDataTemplateSelector` -Klasse:
 
 ```csharp
 public class SearchTermDataTemplateSelector : DataTemplateSelector
@@ -322,15 +322,15 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-Die `SearchTermTemplateSelector` -Klasse definiert `DefaultTemplate` und `OtherTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Eigenschaften, die auf verschiedene Datenvorlagen festgelegt sind. Die `OnSelectTemplate` außer Kraft setzen gibt `DefaultTemplate`, die in einer Meldung für den Benutzer bei die Abfrage nicht gleich "Xamarin" ist. Wenn die Suchabfrage "Xamarin" entspricht der `OnSelectTemplate` außer Kraft setzen gibt `OtherTemplate`, die eine einfache Nachricht dem Benutzer werden angezeigt:
+Die `SearchTermTemplateSelector` -Klasse `DefaultTemplate` definiert `OtherTemplate` die Eigenschaften und [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die auf unterschiedliche Datenvorlagen festgelegt sind. Die `OnSelectTemplate` außer Kraft `DefaultTemplate`Setzung gibt zurück, wodurch dem Benutzer eine Meldung angezeigt wird, wenn die Suchabfrage nicht gleich "xamarin" ist. Wenn die Suchabfrage gleich "xamarin" ist, gibt die `OnSelectTemplate` Überschreibung `OtherTemplate`zurück, wodurch dem Benutzer eine grundlegende Meldung angezeigt wird:
 
-[![Screenshot einer CollectionView Runtime leere Ansicht Vorlage Auswahl unter iOS und Android](emptyview-images/datatemplateselector.png "Vorlagenauswahl der Common Language Runtime-leere Ansicht in einem CollectionView")](emptyview-images/datatemplateselector-large.png#lightbox "runtimevorlage-leere Ansicht Auswahl in einem CollectionView")
+[ ![Screenshot einer Vorlage für die leere Ansichts Vorlage der CollectionView-Laufzeit unter IOS und Android](emptyview-images/datatemplateselector.png "Runtime leere Ansichts Vorlagen Auswahl in einer CollectionView") ] (emptyview-images/datatemplateselector-large.png#lightbox "Vorlage für leere Lauf Zeitansicht in einer CollectionView")
 
-Weitere Informationen zu Daten Vorlage Selektoren, finden Sie unter [Erstellen einer Xamarin.Forms-DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
+Weitere Informationen zu Datenvorlagen-Selektoren finden Sie unter [Erstellen eines xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [CollectionView (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
-- [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.Forms-Ressourcenwörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Erstellen einer Xamarin.Forms-DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [CollectionView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin. Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin. Forms-Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Erstellen eines xamarin. Forms-DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

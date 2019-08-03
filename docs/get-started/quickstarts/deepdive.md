@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: c0e772e0207d2ccc9a94aefd9655dc1bb6776bba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 997c9e023a743b8e5128ffc566e50da63652f945
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653488"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739003"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin. Forms-Schnellstart Deep Dive
 
@@ -352,7 +352,7 @@ In der hierarchischen Navigation [`NavigationPage`](xref:Xamarin.Forms.Navigatio
 
 Die `NavigationPage`-Klasse platziert außerdem eine Navigationsleiste oben auf der Seite, in der ein Titel und eine für die Plattform angemessene **Zurück**-Schaltfläche, über die man zurück auf die vorherige Seite wechseln kann, angezeigt wird.
 
-Die erste Seite, die einem Navigations Stapel hinzugefügt wird, wird als *Stamm Seite der* Anwendung bezeichnet. das folgende Codebeispiel zeigt, wie dies in der Notes-Anwendung erfolgt:
+Die erste Seite, die einem Navigations Stapel hinzugefügt wird, wird als Stamm Seite der Anwendung bezeichnet. das folgende Codebeispiel zeigt, wie dies in der Notes-Anwendung erfolgt:
 
 ```csharp
 public App ()
@@ -532,7 +532,7 @@ Alternativ enthält das Buch [_Creating Mobile Apps with Xamarin.Forms_](~/xamar
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Extensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.md)
+- [Extensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Steuerelementreferenz](~/xamarin-forms/user-interface/controls/index.md)
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/index.md)

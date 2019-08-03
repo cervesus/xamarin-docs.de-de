@@ -1,33 +1,33 @@
 ---
-title: Xamarin.Forms-Kontrollkästchen
-description: Das Kontrollkästchen für die Xamarin.Forms ist eine Art von Schaltfläche, die entweder geprüft werden kann oder leer sein. Wenn ein Kontrollkästchen aktiviert ist, gilt dies als auf. Wenn ein Kontrollkästchen leer ist, gilt dies als deaktiviert werden.
+title: Xamarin. Forms (Kontrollkästchen)
+description: Das Kontrollkästchen xamarin. Forms ist ein Typ von Schaltfläche, der entweder aktiviert oder leer ist. Wenn ein Kontrollkästchen aktiviert ist, gilt es als aktiviert. Wenn ein Kontrollkästchen leer ist, wird es als deaktiviert angesehen.
 ms.prod: xamarin
 ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 42631b1b67dc1d342e9f8666916604e68ee158d8
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: f78ca9d2cf7a9e57b81c5d923c64b36a7982c4b0
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67517919"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739148"
 ---
-# <a name="xamarinforms-checkbox"></a>Xamarin.Forms-Kontrollkästchen
+# <a name="xamarinforms-checkbox"></a>Xamarin. Forms (Kontrollkästchen)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CheckBoxDemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
-Die Xamarin.Forms `CheckBox` ist eine Art von Schaltfläche, die können entweder überprüfte oder leer sein. Wenn ein Kontrollkästchen aktiviert ist, gilt dies als auf. Wenn ein Kontrollkästchen leer ist, gilt dies als deaktiviert werden.
+Xamarin. Forms `CheckBox` ist ein Typ von Schaltfläche, der entweder aktiviert oder leer sein kann. Wenn ein Kontrollkästchen aktiviert ist, gilt es als aktiviert. Wenn ein Kontrollkästchen leer ist, wird es als deaktiviert angesehen.
 
-`CheckBox` definiert eine `bool` Eigenschaft mit dem Namen `IsChecked`, das angibt, ob die `CheckBox` aktiviert ist. Diese Eigenschaft wird auch unterstützt von einem [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) -Objekt, das bedeutet, dass es formatiert werden kann, und das Ziel von datenbindungen.
+`CheckBox`definiert eine `bool` Eigenschaft mit `IsChecked`dem Namen, die angibt `CheckBox` , ob die aktiviert ist. Diese Eigenschaft wird auch durch ein [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekt unterstützt. Dies bedeutet, dass Sie formatiert werden kann und das Ziel von Daten Bindungen ist.
 
 > [!NOTE]
-> Die `IsChecked` bindbare Eigenschaft verfügt über einen Standardmodus für die Bindung der [ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay).
+> Die `IsChecked` bindbare Eigenschaft verfügt über einen Standard Bindungs Modus [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)von.
 
-`CheckBox` definiert eine `CheckedChanged` -Ereignisses, wenn ausgelöst hat, die `IsChecked` eigenschaftsänderungen, entweder durch Bearbeitung durch Benutzer oder wenn eine Anwendung festlegt der `IsChecked` Eigenschaft. Die `CheckedChangedEventArgs` Objekt an, die mit der `CheckedChanged` Ereignis verfügt über eine einzelne Eigenschaft namens `Value`, des Typs `bool`. Wenn das Ereignis ausgelöst wird, wird den Wert des der `Value` -Eigenschaftensatz auf den neuen Wert der `IsChecked` Eigenschaft.
+`CheckBox`definiert ein `CheckedChanged` -Ereignis, das ausgelöst wird `IsChecked` , wenn die-Eigenschaft geändert wird, entweder durch Benutzer Bearbeitung oder `IsChecked` wenn eine Anwendung die-Eigenschaft festlegt. Das `CheckedChangedEventArgs` Objekt, das das `CheckedChanged` Ereignis begleitet, verfügt über eine `Value`einzelne Eigenschaft namens `bool`vom Typ. Wenn das Ereignis ausgelöst wird, wird der Wert `Value` der Eigenschaft auf den neuen Wert `IsChecked` der Eigenschaft festgelegt.
 
-## <a name="create-a-checkbox"></a>Erstellen Sie ein Kontrollkästchen
+## <a name="create-a-checkbox"></a>Kontrollkästchen erstellen
 
 Das folgende Beispiel zeigt, wie Sie instanziieren ein `CheckBox` in XAML:
 
@@ -35,29 +35,29 @@ Das folgende Beispiel zeigt, wie Sie instanziieren ein `CheckBox` in XAML:
 <CheckBox />
 ```
 
-Dieses XAML ergibt das in den folgenden Screenshots gezeigt aussehen:
+Dieses XAML-Code Ergebnis wird in den folgenden Screenshots angezeigt:
 
-![Screenshot des ist das Kontrollkästchen, unter iOS und Android](checkbox-images/checkbox-empty.png "ist das Kontrollkästchen")
+![Screenshot eines leeren Kontrollkästchens unter IOS und Android](checkbox-images/checkbox-empty.png "Leeres Kontrollkästchen")
 
-In der Standardeinstellung die `CheckBox` ist leer. Die `CheckBox` kann überprüft werden, von der Bearbeitung durch Benutzer oder durch Festlegen der `IsChecked` Eigenschaft `true`:
+Standardmäßig `CheckBox` ist leer. Kann durch Benutzer Bearbeitung oder durch Festlegen der `IsChecked` -Eigenschaft auf `true`festgelegt werden: `CheckBox`
 
 ```xaml
 <CheckBox IsChecked="true" />
 ```
 
-Dieses XAML ergibt das in den folgenden Screenshots gezeigt aussehen:
+Dieses XAML-Code Ergebnis wird in den folgenden Screenshots angezeigt:
 
-![Screenshot der ein aktiviertes Kontrollkästchen an, unter iOS und Android](checkbox-images/checkbox-checked.png "aktiviert Kontrollkästchen")
+![Screenshot eines aktivierten Kontrollkästchens unter IOS und Android](checkbox-images/checkbox-checked.png "Kontrollkästchen aktiviert")
 
-Sie können auch eine `CheckBox` im Code erstellt werden können:
+Alternativ kann eine `CheckBox` im Code erstellt werden:
 
 ```csharp
 CheckBox checkBox = new CheckBox { IsChecked = true };
 ```
 
-## <a name="respond-to-a-checkbox-changing-state"></a>Reagieren Sie auf eine Zustandsänderung Kontrollkästchen
+## <a name="respond-to-a-checkbox-changing-state"></a>Reagieren auf das Kontrollkästchen zum Ändern des Status
 
-Wenn die `IsChecked` eigenschaftsänderungen, entweder durch Bearbeitung durch Benutzer oder wenn eine Anwendung festlegt der `IsChecked` -Eigenschaft, die `CheckedChanged` Ereignis wird ausgelöst. Ein Ereignishandler für dieses Ereignis kann registriert werden, um auf die Änderung reagieren:
+Wenn sich `IsChecked` die-Eigenschaft ändert, entweder über die Benutzer Manipulation oder wenn eine `IsChecked` Anwendung die- `CheckedChanged` Eigenschaft festlegt, wird das-Ereignis ausgelöst. Ein Ereignishandler für dieses Ereignis kann registriert werden, um auf die Änderung zu reagieren:
 
 ```xaml
 <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" />
@@ -74,7 +74,7 @@ void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
 
 Die `sender` Argument ist der `CheckBox` für dieses Ereignis verantwortlich. Hiermit können Sie den Zugriff auf die `CheckBox` Objekt oder zur Unterscheidung zwischen mehreren `CheckBox` Objekte, die gemeinsame Verwendung desselben `CheckedChanged` Ereignis.
 
-Sie können auch einen Ereignishandler für die `CheckedChanged` Ereignis registriert werden kann, im Code:
+Alternativ kann ein Ereignishandler für das `CheckedChanged` -Ereignis im Code registriert werden:
 
 ```csharp
 CheckBox checkBox = new CheckBox { ... };
@@ -84,9 +84,9 @@ checkBox.CheckedChanged += (sender, e) =>
 };
 ```
 
-## <a name="data-bind-a-checkbox"></a>Ein Kontrollkästchen zum Binden von Daten
+## <a name="data-bind-a-checkbox"></a>Kontrollkästchen "Datenbindung"
 
-Die `CheckedChanged` -Ereignishandler kann behoben werden, mithilfe von Datenbindung und Trigger reagieren auf eine `CheckBox` aktiviert bzw. leer:
+Der `CheckedChanged` Ereignishandler kann durch die Verwendung von Datenbindung und Triggern gelöscht werden, `CheckBox` um auf ein zu überprüfende oder leeres Ereignis zu reagieren:
 
 ```xaml
 <CheckBox x:Name="checkBox" />
@@ -104,33 +104,33 @@ Die `CheckedChanged` -Ereignishandler kann behoben werden, mithilfe von Datenbin
 </Label>
 ```
 
-In diesem Beispiel die [ `Label` ](xref:Xamarin.Forms.Label) verwendet einen Bindungsausdruck in einem Datentrigger zum Überwachen der `IsChecked` Eigenschaft der `CheckBox`. Wenn diese Eigenschaft wird `true`, `FontAttributes` und `FontSize` Eigenschaften der `Label` ändern. Wenn der `IsChecked` -Eigenschaft gibt, `false`, wird die `FontAttributes` und `FontSize` Eigenschaften der `Label` auf ihren ursprünglichen Status zurückgesetzt.
+In diesem Beispiel [`Label`](xref:Xamarin.Forms.Label) verwendet einen Bindungs Ausdruck in einem Daten-Triggern, um die `IsChecked` -Eigenschaft von `CheckBox`zu überwachen. Wenn diese Eigenschaft wird `true`, werden `FontAttributes` die-Eigenschaft und `Label` die- `FontSize` Eigenschaft der geändert. Wenn die `IsChecked` -Eigenschaft `false`zurückkehrt, `FontAttributes` werden`Label` die-Eigenschaft und die- `FontSize` Eigenschaft des auf den ursprünglichen Zustand zurückgesetzt.
 
-In den folgenden Screenshots der iOS-Screenshot zeigt die [ `Label` ](xref:Xamarin.Forms.Label) Formatierung verwenden, wenn die `CheckBox` leer ist, während der Android-Screenshot zeigt die `Label` Formatierung verwenden, wenn die `CheckBox` aktiviert ist:
+In den folgenden Screenshots zeigt der IOS-Screenshot die [`Label`](xref:Xamarin.Forms.Label) Formatierung, wenn `CheckBox` der leer ist, während der Android-Screenshot `Label` die Formatierung anzeigt `CheckBox` , wenn das aktiviert ist:
 
-[![Screenshot eines gebundenen Kontrollkästchen unter iOS und Android](checkbox-images/checkbox-databinding.png "datengebundene Kontrollkästchen")](checkbox-images/checkbox-databinding-large.png#lightbox "datengebundene Kontrollkästchen")
+[ ![Screenshot des Kontrollkästchens "Daten gebunden", Kontrollkästchen für IOS und Android-](checkbox-images/checkbox-databinding.png "Daten gebunden") ] (checkbox-images/checkbox-databinding-large.png#lightbox "Kontrollkästchen für Daten gebunden")
 
-Weitere Informationen zu Triggern finden Sie unter [Xamarin.Forms Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
+Weitere Informationen zu Triggern finden Sie unter [xamarin. Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
 
-## <a name="disable-a-checkbox"></a>Deaktivieren Sie ein Kontrollkästchen
+## <a name="disable-a-checkbox"></a>Kontrollkästchen deaktivieren
 
-Manchmal eine Anwendung in einen Zustand wechselt, in denen eine `CheckBox` überprüft wird, ist kein gültiger Vorgang. In solchen Fällen die `CheckBox` können deaktiviert werden, indem die `IsEnabled` Eigenschaft `false`.
+Manchmal wird eine Anwendung in einen Zustand versetzt `CheckBox` , in dem eine überprüfte keine gültige Operation ist. In solchen Fällen kann der `CheckBox` deaktiviert werden, indem die zugehörige- `false` `IsEnabled` Eigenschaft auf festgelegt wird.
 
-## <a name="checkbox-appearance"></a>Kontrollkästchen-Darstellung
+## <a name="checkbox-appearance"></a>CheckBox-Darstellung
 
-Zusätzlich zu den Eigenschaften, die `CheckBox` erbt von der [ `View` ](xref:Xamarin.Forms.View) -Klasse, `CheckBox` definiert auch eine `Color` -Eigenschaft, die die Farbe wird auf eine [ `Color` ](xref:Xamarin.Forms.Color):
+Zusätzlich zu den Eigenschaften `CheckBox` , die von der [`View`](xref:Xamarin.Forms.View) -Klasse erben, `CheckBox` definiert auch [`Color`](xref:Xamarin.Forms.Color)eine `Color` -Eigenschaft, die die Farbe auf festlegt:
 
 ```xaml
 <CheckBox Color="Red" />
 ```
 
-Die folgenden Screenshots zeigen eine Reihe von aktivierten `CheckBox` Objekte, wobei jedes Objekt verfügt über seine `Color` -Eigenschaft auf einen anderen [ `Color` ](xref:Xamarin.Forms.Color):
+Die folgenden Screenshots zeigen eine Reihe von `CheckBox` aktivierten Objekten, wobei für jedes Objekt die- `Color` Eigenschaft auf einen [`Color`](xref:Xamarin.Forms.Color)anderen Wert festgelegt ist:
 
-![Screenshot der farbige Kontrollkästchen an, unter iOS und Android](checkbox-images/checkbox-colors.png "farbige Kontrollkästchen")
+![Screenshot der farbigen Kontrollkästchen unter IOS und Android](checkbox-images/checkbox-colors.png "Farbiges Kontrollkästchen")
 
-## <a name="checkbox-visual-states"></a>Visuelle Zustände von Kontrollkästchen
+## <a name="checkbox-visual-states"></a>Kontrollkästchen visuelle Zustände
 
-`CheckBox` verfügt über eine `IsChecked` [ `VisualState` ](xref:Xamarin.Forms.VisualState) , die verwendet werden kann, initiieren Sie eine visuelle Änderung an der `CheckBox` Wenn diese Option aktiviert wird.
+`CheckBox`verfügt über `IsChecked` ein [`VisualState`](xref:Xamarin.Forms.VisualState) -Element, das zum Initiieren einer visuellen Änderung am `CheckBox` verwendet werden kann, wenn es aktiviert wird.
 
 Im folgende XAML-Beispiel zeigt, wie definieren Sie einen visuellen Zustand für die `IsChecked` Zustand:
 
@@ -156,12 +156,12 @@ Im folgende XAML-Beispiel zeigt, wie definieren Sie einen visuellen Zustand für
 </CheckBox>
 ```
 
-In diesem Beispiel die `IsChecked` [ `VisualState` ](xref:Xamarin.Forms.VisualState) gibt an, dass die `CheckBox` aktiviert ist, wird die `Color` Eigenschaft wird auf Grün festgelegt werden. Die `Normal` `VisualState` gibt an, dass die `CheckBox` befindet sich in einem normalen Status, seine `Color` Eigenschaft wird auf Rot festgelegt. Aus diesem Grund der Gesamteffekt besteht, die die `CheckBox` ist rot, wenn es leer ist, und Grün ist, wenn diese Option aktiviert ist.
+In diesem Beispiel gibt das `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) an, dass die `CheckBox` - `Color` Eigenschaft bei aktivierter-Eigenschaft auf grün festgelegt wird. Der `Normal` `CheckBox` `Color` gibt an, dass die-Eigenschaft auf "rot" festgelegt wird, wenn sich der in einem normalen Zustand befindet. `VisualState` Der Gesamteffekt besteht daher darin, dass `CheckBox` das rot ist, wenn es leer ist, und grün, wenn es aktiviert ist.
 
-Weitere Informationen zu visuellen Status finden Sie unter [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+Weitere Informationen zu visuellen Zuständen finden Sie unter [xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Kontrollkästchen-Demos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CheckBoxDemos)
-- [Xamarin.Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms visuellen Zustands-Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [CheckBox-Demos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+- [Xamarin. Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

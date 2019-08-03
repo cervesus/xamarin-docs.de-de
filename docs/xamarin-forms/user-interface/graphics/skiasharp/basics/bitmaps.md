@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: f43779fd0a61bd3ad04f3f7445faa6517fb9c989
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645888"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738892"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Bitmap-Grundlagen in SkiaSharp
 
@@ -22,7 +22,7 @@ _Bitmaps aus verschiedenen Quellen laden und anzeigen._
 
 Die Unterstützung von Bitmaps in SkiaSharp ist sehr umfangreich. Dieser Artikel behandelt nur die Grundlagen &mdash; Bitmaps zu laden und wie diese angezeigt:
 
-![](bitmaps-images/bitmapssample.png "Die Anzeige von zwei bitmaps")
+![](bitmaps-images/basicbitmaps-small.png "Die Anzeige von zwei bitmaps")
 
 Eine viel detailliertere Untersuchung der Bitmaps finden Sie im Abschnitt [SkiaSharp Bitmaps](../bitmaps/index.md).
 
@@ -98,7 +98,7 @@ protected override async void OnAppearing()
 
 Android-Betriebssysteme löst eine Ausnahme aus, wenn Sie verwenden die `Stream` Merry `GetStreamAsync` in die `SKBitmap.Decode` Methode da es einen langwierigen Vorgang in einem Hauptthread ausgeführt wird. Aus diesem Grund werden in den Inhalt der Bitmapdatei kopiert eine `MemoryStream` -Objekt unter Verwendung der `CopyToAsync`.
 
-Die statische `SKBitmap.Decode` Methode ist verantwortlich für das Bitmap-Dateien decodieren. Es funktioniert mit JPEG, PNG oder GIF Bitmapformate, und speichert die Ergebnisse in einem internen SkiaSharp-Format. An diesem Punkt die `SKCanvasView` muss für ungültig erklärt werden, damit kann die `PaintSurface` Handler, der die Anzeige zu aktualisieren. 
+Die statische `SKBitmap.Decode` Methode ist verantwortlich für das Bitmap-Dateien decodieren. Es funktioniert mit JPEG, PNG oder GIF Bitmapformate, und speichert die Ergebnisse in einem internen SkiaSharp-Format. An diesem Punkt die `SKCanvasView` muss für ungültig erklärt werden, damit kann die `PaintSurface` Handler, der die Anzeige zu aktualisieren.
 
 ## <a name="loading-a-bitmap-resource"></a>Beim Laden einer Bitmapressource
 

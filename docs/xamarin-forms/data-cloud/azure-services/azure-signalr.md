@@ -1,66 +1,66 @@
 ---
-title: Azure SignalR-Dienst mit Xamarin.Forms
-description: Erste Schritte mit Azure SignalR Service und Azure Functions mit Xamarin.Forms
+title: Azure signalr Service mit xamarin. Forms
+description: Einstieg in den Azure signalr-Dienst und Azure Functions mit xamarin. Forms
 ms.prod: xamarin
 ms.assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 06/07/2019
-ms.openlocfilehash: 587f3dbbd46b65ec92c4e0eff18a56e89337f191
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: a4d0f5c5ceefcfe9a36a5fcf10c6fb4937c1db90
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658757"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739213"
 ---
-# <a name="azure-signalr-service-with-xamarinforms"></a>Azure SignalR-Dienst mit Xamarin.Forms
+# <a name="azure-signalr-service-with-xamarinforms"></a>Azure signalr Service mit xamarin. Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/WebServices/AzureSignalR)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
 
-ASP.NET Core SignalR handelt es sich um ein Anwendungsmodell, die das Hinzufügen von Kommunikation in Echtzeit zu Anwendungen vereinfacht. Der Azure SignalR Service ermöglicht eine schnelle Entwicklung und Bereitstellung skalierbarer SignalR-Anwendungen. Azure-Funktionen sind kurzlebige, serverlosen Codemethoden, die zum Formular das ereignisgesteuerte, skalierbare Anwendungen kombiniert werden können.
+ASP.net Core signalr ist ein Anwendungsmodell, das das Hinzufügen von Echtzeitkommunikation zu Anwendungen vereinfacht. Der Azure signalr Service ermöglicht eine schnelle Entwicklung und Bereitstellung skalierbarer signalr-Anwendungen. Azure Functions sind kurzlebige und Server lose Code Methoden, die kombiniert werden können, um ereignisgesteuerte, skalierbare Anwendungen zu bilden.
 
-Dieser Artikel und Beispiel zeigen, wie Azure SignalR Service und Azure Functions mit Xamarin.Forms zum Übermitteln von Nachrichten in Echtzeit an verbundene Clients zu kombinieren.
+In diesem Artikel und Beispiel wird gezeigt, wie Sie den Azure signalr-Dienst und Azure Functions mit xamarin. Forms kombinieren, um Echtzeitnachrichten an verbundene Clients zu übermitteln.
 
-## <a name="create-an-azure-signalr-service-and-azure-functions-app"></a>Erstellen Sie eine der Azure SignalR Service und Azure Functions-App
+## <a name="create-an-azure-signalr-service-and-azure-functions-app"></a>Erstellen eines Azure signalr-Dienstanbieter und einer Azure Functions-App
 
-Die beispielanwendung umfasst drei Hauptkomponenten: einen Hub Azure SignalR Service, eine Azure Functions-Instanz mit zwei Funktionen und eine mobile Anwendung, die zu senden und Empfangen von Nachrichten kann. Diese Komponenten Zusammenwirken wie folgt aus:
+Die Beispielanwendung umfasst drei Hauptkomponenten: einen Azure signalr Service-Hub, eine Azure Functions Instanz mit zwei Funktionen und eine mobile Anwendung, die Nachrichten senden und empfangen kann. Diese Komponenten interagieren wie folgt:
 
-1. Die mobile Anwendung ruft eine **Negotiate** Azure-Funktion zum Abrufen von Informationen zu den SignalR-Hub.
-1. Die mobile Anwendung verwendet die Aushandlung-Informationen, um sich mit den SignalR-Hub zu registrieren und bildet eine Verbindung.
-1. Nach der Registrierung die mobile Anwendung Nachrichten sendet die **sprechen** Azure-Funktion.
-1. Die **sprechen** Funktion übergibt die eingehende Nachricht an den SignalR-Hub.
-1. Der SignalR-Hub sendet die Nachricht an alle verbundenen mobilen Anwendungen-Instanzen, einschließlich von den ursprünglichen Absender.
+1. Die Mobile Anwendung ruft eine **Aushandlungs** -Azure-Funktion auf, um Informationen über den signalr-Hub zu erhalten.
+1. Die Mobile Anwendung verwendet die Aushandlungs Informationen, um sich selbst beim signalr-Hub zu registrieren, und bildet eine Verbindung.
+1. Nach der Registrierung sendet die Mobile Anwendung Nachrichten an die Azure-Funktion von **Talk** .
+1. Die **Talk** -Funktion übergibt die eingehende Nachricht an den signalr-Hub.
+1. Der signalr-Hub überträgt die Nachricht an alle verbundenen mobilen Anwendungs Instanzen, einschließlich des ursprünglichen Absenders.
 
 > [!NOTE]
-> Die **Negotiate** und **sprechen** Funktionen in diesem Beispiel können lokal mit Visual Studio-2019 und die Azure-Laufzeit-Tools ausgeführt werden. Jedoch des Azure SignalR Service kann nicht lokal emuliert werden, und es ist schwierig, physische oder virtuelle Geräte zu Testzwecken Azure Funktionen lokal gehostet werden können. Es wird empfohlen, dass Sie Azure Functions mit einer Instanz von Azure Functions-App bereitstellen, da Sie plattformübergreifende Tests ermöglicht. Ausführlichere Informationen zur Bereitstellung, finden Sie unter [Bereitstellen von Azure Functions mit Visual Studio-2019](#deploy-azure-functions-with-visual-studio-2019).
+> Die **Aushandlungs** -und **Talk** -Funktionen in der Beispielanwendung können lokal mit Visual Studio 2019 und den Azure-Lauf Zeit Tools ausgeführt werden. Allerdings kann der Azure signalr-Dienst nicht lokal emuliert werden, und es ist schwierig, Lokal gehostete Azure Functions auf physischen oder virtuellen Geräten zu Testzwecken verfügbar zu machen. Es wird empfohlen, die Azure Functions in einer Azure Functions-app-Instanz bereitzustellen, da dies plattformübergreifende Tests ermöglicht. Weitere Informationen zur Bereitstellung finden Sie unter Bereitstellen von [Azure Functions mit Visual Studio 2019](#deploy-azure-functions-with-visual-studio-2019).
 
-### <a name="create-an-azure-signalr-service"></a>Erstellen von Azure SignalR Service
+### <a name="create-an-azure-signalr-service"></a>Erstellen eines Azure signalr-Dienstanbieter
 
-Azure SignalR Service erstellt werden, indem Sie die Auswahl **erstellen Sie eine Ressource** in der linken oberen Ecke des Azure-Portal und die Suche nach **SignalR**. Der Azure SignalR Service kann auf den free-Tarif erstellt werden. Der Azure SignalR Service muss im **serverlose** Dienstmodus. Wenn Sie versehentlich den Standardwert oder einen klassischen Service-Modus auswählen, können Sie es später in den Azure SignalR Service-Eigenschaften ändern.
+Ein Azure signalr-Dienst kann erstellt werden, indem Sie in der linken oberen Ecke der Azure-Portal **Ressource erstellen** auswählen und nach **signalr**suchen. Der Azure signalr Service kann im Free-Tarif erstellt werden. Der Azure signalr-Dienst muss sich im **Server losen** Dienst Modus befinden. Wenn Sie versehentlich den Dienst Modus Standard oder klassisch ausgewählt haben, können Sie ihn später in den Eigenschaften des Azure signalr-Dienstanbieter ändern.
 
-Der folgende Screenshot zeigt die Erstellung eines neuen Azure SignalR Service:
+Der folgende Screenshot zeigt die Erstellung eines neuen Azure signalr-Dienstanbieter:
 
-![Screenshot des Azure SignalR Service-Erstellung im Azure-Portal](azure-signalr-images/azure-signalr-create.png "erstellen eine Azure SignalR Service")
+![Screenshot der Azure signalr-Dienst Erstellung im Azure-Portal](azure-signalr-images/azure-signalr-create.png "Erstellen eines Azure signalr-Dienstanbieter")
 
-Nach der Erstellung der **Schlüssel** Abschnitt der Azure SignalR Service enthält einen **Verbindungszeichenfolge**, dem wird verwendet, um die Azure-Funktionen-App mit dem SignalR-Hub herstellen. Der folgende Screenshot zeigt, wo Sie die Verbindungszeichenfolge in der Azure SignalR Service finden:
+Nach der Erstellung enthält der Abschnitt " **Schlüssel** " eines Azure signalr-Dienstanbieter eine **Verbindungs Zeichenfolge**, die verwendet wird, um die Azure Functions-App mit dem signalr-Hub zu verbinden. Der folgende Screenshot zeigt, wo Sie die Verbindungs Zeichenfolge im Azure signalr-Dienst finden:
 
-![Screenshot des Azure SignalR-Verbindungszeichenfolge im Azure-Portal](azure-signalr-images/azure-signalr-connection-string.png "Azure SignalR-Verbindungszeichenfolge")
+![Screenshot der Azure signalr-Verbindungs Zeichenfolge im Azure-Portal](azure-signalr-images/azure-signalr-connection-string.png "Azure signalr-Verbindungs Zeichenfolge")
 
-Diese Verbindungszeichenfolge wird verwendet, um [Bereitstellen von Azure Functions mit Visual Studio-2019](#deploy-azure-functions-with-visual-studio-2019).
+Diese Verbindungs Zeichenfolge wird zum Bereitstellen von [Azure Functions mit Visual Studio 2019](#deploy-azure-functions-with-visual-studio-2019)verwendet.
 
-### <a name="create-an-azure-functions-app"></a>Erstellen einer Azure-Funktionen-App
+### <a name="create-an-azure-functions-app"></a>Erstellen einer Azure Functions-App
 
-Um die beispielanwendung zu testen, sollten Sie eine neue Azure-Funktionen-App im Azure-Portal erstellen. Notieren Sie sich die **App-Namen** wie diese URL, in der beispielanwendung verwendet wird **"Constants.cs"** Datei. Der folgende Screenshot zeigt die Erstellung einer neuen Azure-Funktionen-App namens "Xdocsfunctions":
+Um die Beispielanwendung zu testen, sollten Sie eine neue Azure Functions-app in der Azure-Portal erstellen. Notieren Sie sich den **APP-Namen** , da diese URL in der **Constants.cs** -Beispieldatei verwendet wird. Der folgende Screenshot zeigt die Erstellung einer neuen Azure Functions-App mit dem Namen "xdocsfunctions":
 
-[![Screenshot des Azure Functions-App-Erstellung](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[![Screenshot der Azure Functions App-Erstellung](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
-Azure-Funktionen können mit einer Instanz von Azure Functions-App aus Visual Studio-2019 bereitgestellt werden. In den folgenden Abschnitten wird die Bereitstellung von zwei Funktionen in der beispielanwendung mit einer Instanz von Azure Functions-App beschrieben.
+Azure Functions kann in einer Azure Functions-app-Instanz aus Visual Studio 2019 bereitgestellt werden. In den folgenden Abschnitten wird die Bereitstellung von zwei Funktionen in der Beispielanwendung für eine Azure Functions-app-Instanz beschrieben.
 
-### <a name="build-azure-functions-in-visual-studio-2019"></a>Erstellen von Azure Functions in Visual Studio-2019
+### <a name="build-azure-functions-in-visual-studio-2019"></a>Erstellen Azure Functions in Visual Studio 2019
 
-Die beispielanwendung enthält eine Klassenbibliothek mit dem Namen **ChatServer**, darunter zwei serverlose Azure Functions in Dateien namens **Negotiate.cs** und **Talk.cs**.
+Die Beispielanwendung enthält eine Klassenbibliothek mit dem Namen **Chatserver**, die zwei Server lose Azure Functions in Dateien mit dem Namen **Negotiate.cs** und **Talk.cs**enthält.
 
-Die `Negotiate` Funktion antwortet auf webanforderungen mit einem `SignalRConnectionInfo` -Objekt, enthält ein `AccessToken` Eigenschaft und eine `Url` Eigenschaft. Die mobile Anwendung verwendet diese Werte selbst den SignalR-Hub registrieren. Der folgende code zeigt die `Negotiate` Funktion:
+Die `Negotiate` -Funktion antwortet auf Webanforderungen `SignalRConnectionInfo` mit einem-Objekt `AccessToken` , das eine `Url` -Eigenschaft und eine-Eigenschaft enthält. Die Mobile Anwendung verwendet diese Werte, um sich selbst beim signalr-Hub zu registrieren. Der folgende Code zeigt die `Negotiate` -Funktion:
 
 ```csharp
 [FunctionName("Negotiate")]
@@ -74,7 +74,7 @@ public static SignalRConnectionInfo GetSignalRInfo(
 }
 ```
 
-Die `Talk` Funktion antwortet auf HTTP POST-Anforderungen, die ein Nachrichtenobjekt in der POST-Text zu bieten. POST-Text wird umgewandelt in ein `SignalRMessage` und an den SignalR-Hub weitergeleitet. Der folgende code zeigt die `Talk` Funktion:
+Die `Talk` Funktion antwortet auf HTTP POST-Anforderungen, die im Post-Text ein Nachrichten Objekt bereitstellen. Der Post-Text wird in einen `SignalRMessage` transformiert und an den signalr-Hub weitergeleitet. Der folgende Code zeigt die `Talk` -Funktion:
 
 ```csharp
 [FunctionName("Talk")]
@@ -116,31 +116,31 @@ public static async Task<IActionResult> Run(
 }
 ```
 
-Weitere Informationen zu Azure Functions und Azure Functions-Apps finden Sie unter [Dokumentation zu Azure Functions](/azure/azure-functions/).
+Weitere Informationen zu Azure Functions und Azure Functions-apps finden Sie in [Azure Functions Dokumentation](/azure/azure-functions/).
 
-### <a name="deploy-azure-functions-with-visual-studio-2019"></a>Bereitstellen von Azure Functions mit Visual Studio-2019
+### <a name="deploy-azure-functions-with-visual-studio-2019"></a>Bereitstellen von Azure Functions mit Visual Studio 2019
 
-Visual Studio-2019 können Sie Funktionen für eine Azure Functions-App bereitstellen. Azure gehosteten Funktionen vereinfachen, Cross-Platform zu testen, indem Sie einen zugänglichen Endpunkt für die Testen für alle Geräte bereitstellen.
+Mit Visual Studio 2019 können Sie Funktionen für eine Azure Functions-App bereitstellen. In Azure gehostete Funktionen vereinfachen plattformübergreifende Tests durch Bereitstellung eines verfügbaren Test Endpunkts für alle Geräte.
 
-Mit der rechten Maustaste in der Beispiel-Funktionen-app und auswählen **veröffentlichen** Öffnet das Dialogfeld zum Veröffentlichen von Funktionen in Ihre Azure-Funktions-App. Wenn Sie die vorherigen Schritte zum Einrichten einer Azure-Funktionen-App haben, können Sie **vorhandene auswählen** die Beispielanwendungen, die Ihre Azure-Funktions-App zu veröffentlichen. Der folgende Screenshot zeigt die veröffentlichen Dialogfeldoptionen in Visual Studio-2019:
+Wenn Sie Azure Functions mit der rechten Maustaste auf die Beispiel Funktions-APP klicken und **veröffentlichen** auswählen, wird das Dialogfeld geöffnet Wenn Sie die vorherigen Schritte zum Einrichten einer Azure-Funktionen-App befolgt haben, können Sie **vorhandene auswählen** auswählen, um die Beispielanwendungen in ihrer Azure Functions-APP zu veröffentlichen. Der folgende Screenshot zeigt die Optionen für das Veröffentlichen von Dialogfeld in Visual Studio 2019:
 
-![Dialogfeld "Veröffentlichen Optionen" in Visual Studio-2019](azure-signalr-images/vs-publish-target.png "Veröffentlichungsoptionen in Visual Studio-2019")
+![Dialogfeld "Auswahl veröffentlichen" in Visual Studio 2019](azure-signalr-images/vs-publish-target.png "Veröffentlichungs Optionen in Visual Studio 2019")
 
-Nachdem Sie sich mit Ihrem Microsoft-Konto angemeldet haben, können Sie suchen und wählen Sie Ihre Azure-Funktionen-App als Ziel für die Veröffentlichung. Der folgende Screenshot zeigt ein Beispiel für Azure Functions-App in der Visual Studio-2019-veröffentlichungsdialogfeld:
+Nachdem Sie sich bei Ihrem Microsoft-Konto angemeldet haben, können Sie Ihre Azure Functions-App als Veröffentlichungsziel suchen und auswählen. Der folgende Screenshot zeigt ein Beispiel Azure Functions-App im Visual Studio 2019-Veröffentlichungs Dialogfeld:
 
-![Eine Azure Functions-App in der Visual Studio-2019 veröffentlichungsdialogfeld](azure-signalr-images/vs-app-selection.png "Azure Functions-App im Visual Studio-2019 – Dialogfeld \"Veröffentlichen\"")
+![Eine Azure Functions-App im Visual Studio 2019-Veröffentlichungs Dialogfeld](azure-signalr-images/vs-app-selection.png "Azure Functions-App im Visual Studio 2019-Veröffentlichungs Dialogfeld")
 
-Nach dem Auswählen einer Azure-Funktionen-App-Instanz, die Website-URL, Konfiguration und andere Informationen über die Azure Functions-App-Ziel angezeigt. Wählen Sie **Azure App Service-Einstellungen bearbeiten** , und geben Sie die Verbindungszeichenfolge in der **Remote** Feld. Die Verbindungszeichenfolge wird verwendet, durch die **Negotiate** und **sprechen** zur Verbindung mit der Azure SignalR Service-Funktionen und steht in der **Schlüssel** Teil der Azure SignalR Der Dienst in Ihrem Azure-Portal. Weitere Informationen zu Verbindungszeichenfolgen finden Sie unter [erstellen Sie eine Azure SignalR Service](#create-an-azure-signalr-service).
+Nachdem Sie eine Azure Functions app-Instanz ausgewählt haben, werden die Website-URL, die Konfiguration und andere Informationen über die Ziel Azure Functions-App angezeigt. Wählen Sie **Azure App Service Einstellungen bearbeiten** aus, und geben Sie die Verbindungs Zeichenfolge im Feld **Remote** ein. Die Verbindungs Zeichenfolge wird von den Aushandlungs-und **Talk** -Funktionen verwendet, um eine Verbindung mit dem Azure signalr-Dienst herzustellen, und ist im Abschnitt " **Schlüssel** " des Azure signalr-Dienstanbieter im Azure-Portal verfügbar Weitere Informationen zur Verbindungs Zeichenfolge finden Sie unter [Erstellen eines Azure signalr-Dienstanbieter](#create-an-azure-signalr-service).
 
-Sobald Sie die Verbindungszeichenfolge eingegeben haben, klicken Sie auf **veröffentlichen** Ihrer Funktionen in der Azure-Funktionen-App bereitstellen. Nach Abschluss des Vorgangs werden die Funktionen in der Azure Functions-App im Azure-Portal aufgeführt werden. Der folgende Screenshot zeigt die veröffentlichten Funktionen im Azure-Portal:
+Nachdem Sie die Verbindungs Zeichenfolge eingegeben haben, können Sie auf **veröffentlichen** klicken, um die Funktionen für die Azure Functions-App bereitzustellen. Nach Abschluss des Vorgangs werden die Funktionen in der Azure Functions-App im Azure-Portal aufgelistet. Der folgende Screenshot zeigt die veröffentlichten Funktionen in der Azure-Portal:
 
-![Funktionen, die in der Azure Functions-App veröffentlicht](azure-signalr-images/azure-functions-deployed.png "Funktionen, die in der Azure Functions-App veröffentlicht wurden")
+![In der Azure Functions-App veröffentlichte Funktionen](azure-signalr-images/azure-functions-deployed.png "In der Azure Functions-App veröffentlichte Funktionen")
 
-## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>Integrieren von Azure SignalR-Dienst mit Xamarin.Forms
+## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>Integrieren von Azure signalr Service mit xamarin. Forms
 
-Die Integration zwischen Azure SignalR Service und die Xamarin.Forms-Anwendung ist eine SignalR-Dienst-Klasse, die in instanziiert wird die `MainPage` Klasse mit Ereignishandlern, die drei Ereignisse zugewiesen. Weitere Informationen zu diesen Ereignishandlern finden Sie unter [verwenden Sie die SignalR-Dienstklasse in Xamarin.Forms](#use-the-signalr-service-class-in-xamarinforms).
+Die Integration zwischen dem Azure signalr-Dienst und der xamarin. Forms-Anwendung ist eine signalr-Dienstklasse, die in `MainPage` der-Klasse mit Ereignis Handlern instanziiert wird, die drei Ereignissen zugewiesen sind. Weitere Informationen zu diesen Ereignis Handlern finden Sie unter [Verwenden der signalr-Dienstklasse in xamarin. Forms](#use-the-signalr-service-class-in-xamarinforms).
 
-Die beispielanwendung enthält einen **"Constants.cs"** -Klasse, die mit dem URL-Endpunkt Ihrer Azure-Funktionen-App angepasst werden muss. Legen Sie den Wert, der die `HostName` Eigenschaft, um Ihre Azure Functions-App-Adresse. Der folgende code zeigt die **"Constants.cs"** Eigenschaften mit einem Beispiel `HostName` Wert:
+Die Beispielanwendung enthält eine **Constants.cs** -Klasse, die mit dem URL-Endpunkt ihrer Azure Functions-App angepasst werden muss. Legen Sie den Wert `HostName` der-Eigenschaft auf Ihre Azure Functions-App-Adresse fest. Der folgende Code zeigt die **Constants.cs** -Eigenschaften mit einem `HostName` Beispiel Wert:
 
 ```csharp
 public static class Constants
@@ -162,13 +162,13 @@ public static class Constants
 ```
 
 > [!NOTE]
-> Die `Username` Eigenschaft in der beispielanwendung **"Constants.cs"** -Datei verwendet des Geräts die `RuntimePlatform` Wert als Benutzernamen. Dies erleichtert das Testen von Geräten – plattformübergreifend und zu identifizieren, welches Gerät die Nachricht sendet. In einer realen Anwendung wäre wahrscheinlich einen eindeutigen Benutzernamen dieser Wert immer dann, während ein gesammelt werden, um oder melden Sie sich den Vorgang.
+> Die `Username` -Eigenschaft in der **Constants.cs** - `RuntimePlatform` Beispieldatei verwendet den Wert des Geräts als Benutzername. Dies vereinfacht das Testen von Geräten plattformübergreifend und identifiziert das Gerät, das die Nachricht sendet. In einer realen Anwendung wäre dieser Wert wahrscheinlich ein eindeutiger Benutzername, der während der Registrierung oder Anmeldung erfasst wird.
 
-### <a name="the-signalr-service-class"></a>Der SignalR Service-Klasse
+### <a name="the-signalr-service-class"></a>Die signalr-Dienstklasse
 
-Die `SignalRService` -Klasse in der **ChatClient** Projekt in der beispielanwendung zeigt eine Implementierung, die Funktionen in einer Azure-Funktionen-App für die Verbindung mit einem Azure SignalR Service aufruft.
+Die `SignalRService` -Klasse im **Chatclient** -Projekt in der Beispielanwendung zeigt eine-Implementierung, die Funktionen in einer Azure Functions-App zum Herstellen einer Verbindung mit einem Azure signalr-Dienst aufruft.
 
-Die `SendMessageAsync` -Methode in der die `SignalRService` Klasse dient zum Senden von Nachrichten für Clients, die mit den Azure SignalR-Dienst verbunden sind. Diese Methode führt eine HTTP POST-Anforderung an die **sprechen** Funktion, die in der Azure Functions-App, einschließlich einer JSON-serialisierten gehosteten `Message` -Objekt als der POST-Nutzlast. Die **sprechen** Funktion übergibt die Nachricht an den Azure SignalR Service per broadcast an alle verbundenen Clients. Der folgende Code veranschaulicht die `SendMessageAsync`-Methode:
+Die `SendMessageAsync` -Methode in `SignalRService` der-Klasse wird zum Senden von Nachrichten an Clients verwendet, die mit dem Azure signalr-Dienst verbunden sind. Diese Methode führt eine HTTP POST-Anforderung an die **Talk** -Funktion aus, die in der Azure Functions-App gehostet wird, `Message` einschließlich eines JSON-serialisierten Objekts als Post-Nutzlast. Die Funktion **Talk** übergibt die Nachricht an den Azure signalr-Dienst für die Übertragung an alle verbundenen Clients. Der folgende Code veranschaulicht die `SendMessageAsync`-Methode:
 
 ```csharp
 public async Task SendMessageAsync(string username, string message)
@@ -189,9 +189,9 @@ public async Task SendMessageAsync(string username, string message)
 }
 ```
 
-Die `ConnectAsync` -Methode in der die `SignalRService` Klasse führt eine HTTP GET-Anforderung an die **Negotiate** Funktion, die in der Azure Functions-App gehostet. Die **Negotiate** Funktionsergebnis ist JSON, das deserialisiert wird, wird in eine Instanz von der `NegotiateInfo` Klasse. Sobald die `NegotiateInfo` Objekt abgerufen wird, es wird verwendet, um direkt auf die Verwendung einer Instanz von Azure SignalR Service registrieren der `HubConnection` Klasse.
+Die `ConnectAsync` -Methode in `SignalRService` der-Klasse führt eine HTTP Get- Anforderung an die Aushandlungs Funktion aus, die in der Azure Functions App gehostet wird. Die **Aushandlungs** Funktion gibt JSON zurück, das in eine Instanz der `NegotiateInfo` -Klasse deserialisiert wird. Nachdem das `NegotiateInfo` Objekt abgerufen wurde, wird es verwendet, um sich direkt beim Azure signalr-Dienst mithilfe einer Instanz `HubConnection` der-Klasse zu registrieren.
 
-ASP.NET Core SignalR eingehende Daten über die offene Verbindung in Nachrichten übersetzt und ermöglicht es Entwicklern, definieren die Nachrichtentypen und Binden von Ereignishandlern auf eingehende Nachrichten nach Typ. Die `ConnectAsync` Methode registriert einen Ereignishandler für den Namen der definiert, in der beispielanwendung **"Constants.cs"** -Datei, die "NewMessage" in der Standardeinstellung ist.
+ASP.net Core signalr überträgt eingehende Daten von der geöffneten Verbindung in Nachrichten und ermöglicht Entwicklern das Definieren von Nachrichten Typen und das Binden von Ereignis Handlern an eingehende Nachrichten nach Typ. Die `ConnectAsync` -Methode registriert einen Ereignishandler für den Nachrichten Namen, der in der **Constants.cs** -Datei der Beispielanwendung definiert ist. diese ist standardmäßig "newMessage".
 
 Der folgende Code veranschaulicht die `ConnectAsync`-Methode:
 
@@ -226,7 +226,7 @@ public async Task ConnectAsync()
 }
 ```
 
-Die `AddNewMessage` Methode gebunden ist, als der Ereignishandler in der `ConnectAsync` Meldung wie im vorherigen Code gezeigt. Wenn eine Nachricht empfangen wird, die `AddNewMessage` Methode wird aufgerufen, mit den Nachrichtendaten, die als eine `JObject`. Die `AddNewMessage` Methode konvertiert die `JObject` mit einer Instanz von der `Message` Klasse, und klicken Sie dann ruft der Handler für `NewMessageReceived` Wenn eine gebunden wurde. Der folgende Code veranschaulicht die `AddNewMessage`-Methode:
+Die `AddNewMessage` -Methode wird wie im vorherigen Code gezeigt als `ConnectAsync` Ereignishandler in der Nachricht gebunden. Wenn eine Nachricht empfangen wird, wird `AddNewMessage` die-Methode mit den Nachrichten Daten aufgerufen, die `JObject`als bereitgestellt werden. Die `AddNewMessage` -Methode konvertiert `JObject` den `Message` in eine Instanz der-Klasse und ruft dann den Handler `NewMessageReceived` für auf, wenn ein solcher gebunden ist. Der folgende Code veranschaulicht die `AddNewMessage`-Methode:
 
 ```csharp
 public void AddNewMessage(JObject message)
@@ -242,11 +242,11 @@ public void AddNewMessage(JObject message)
 }
 ```
 
-### <a name="use-the-signalr-service-class-in-xamarinforms"></a>Verwenden Sie die SignalR-Dienstklasse in Xamarin.Forms
+### <a name="use-the-signalr-service-class-in-xamarinforms"></a>Verwenden der signalr-Dienstklasse in xamarin. Forms
 
-Nutzen die SignalR-Dienst-Klasse in Xamarin.Forms wird erreicht, indem Sie die Bindung der `SignalRService` Klasse Ereignisse in der `MainPage` Code-Behind-Klasse.
+Die Verwendung der signalr-Dienstklasse in xamarin. Forms erfolgt durch das `SignalRService` Binden der Klassen Ereignisse `MainPage` in der Code-Behind-Klasse.
 
-Die `Connected` Ereignis in der `SignalRService` Klasse wird ausgelöst, wenn es sich bei eine SignalR-Verbindung erfolgreich abgeschlossen wurde. Die `ConnectionFailed` Ereignis in der `SignalRService` Klasse wird ausgelöst, wenn es sich bei eine SignalR-Verbindung ein Fehler auftritt. Die `SignalR_ConnectionChanged` Ereignishandlermethode gebunden ist, auf beide Ereignisse in der `MainPage` Konstruktor. Dieser Ereignishandler aktualisiert die Schaltflächenstatus verbinden und senden basierend auf der Verbindung `success` -Argument, und fügt die Nachricht, die bereitgestellt werden, durch das Ereignis, das die Chat-Warteschlange mithilfe der `AddMessage` Methode. Der folgende code zeigt die `SignalR_ConnectionChanged` Ereignishandlermethode:
+Das `Connected` -Ereignis in `SignalRService` der-Klasse wird ausgelöst, wenn eine signalr-Verbindung erfolgreich abgeschlossen wurde. Das `ConnectionFailed` -Ereignis in `SignalRService` der-Klasse wird ausgelöst, wenn eine signalr-Verbindung fehlschlägt. Die `SignalR_ConnectionChanged` Ereignishandlermethode ist an beide Ereignisse `MainPage` im Konstruktor gebunden. Dieser Ereignishandler aktualisiert die Verbindungs-und sende Schaltflächen Zustände basierend `success` auf dem Verbindungs Argument und fügt die von dem Ereignis bereitgestellte Meldung mithilfe der `AddMessage` -Methode der Chat Warteschlange hinzu. Der folgende Code zeigt die `SignalR_ConnectionChanged` Ereignishandlermethode:
 
 ```csharp
 void SignalR_ConnectionChanged(object sender, bool success, string message)
@@ -259,7 +259,7 @@ void SignalR_ConnectionChanged(object sender, bool success, string message)
 }
 ```
 
-Die `NewMessageReceived` Ereignis in der `SignalRService` Klasse wird ausgelöst, wenn eine neue Nachricht aus dem Azure SignalR-Dienst empfangen wird. Die `SignalR_NewMessageReceived` Ereignishandlermethode gebunden ist, um die `NewMessageReceived` Ereignis in der `MainPage` Konstruktor. Dieser Ereignishandler konvertiert die eingehende `Message` Objekt in eine Zeichenfolge und fügt es der Chat-Warteschlange mit hinzu der `AddMessage` Methode. Der folgende code zeigt die `SignalR_NewMessageReceived` Ereignishandlermethode:
+Das `NewMessageReceived` Ereignis in der `SignalRService` -Klasse wird ausgelöst, wenn eine neue Nachricht vom Azure signalr-Dienst empfangen wird. Die `SignalR_NewMessageReceived` Ereignishandlermethode ist an `NewMessageReceived` das-Ereignis `MainPage` im-Konstruktor gebunden. Dieser Ereignishandler konvertiert das Eingeh `Message` Ende Objekt in eine Zeichenfolge und fügt es mithilfe der `AddMessage` -Methode der Chat Warteschlange hinzu. Der folgende Code zeigt die `SignalR_NewMessageReceived` Ereignishandlermethode:
 
 ```csharp
 void SignalR_NewMessageReceived(object sender, Model.Message message)
@@ -269,7 +269,7 @@ void SignalR_NewMessageReceived(object sender, Model.Message message)
 }
 ```
 
-Die `AddMessage` Methode fügt eine neue Nachricht als eine `Label` Objekt, das die Chat-Warteschlange. Die `AddMessage` Methode wird von Ereignishandlern, die von außerhalb der Hauptthread der Benutzeroberfläche, häufig aufgerufen, damit es erzwingt, die Aktualisierungen der Benutzeroberfläche im Hauptthread dass, um zu verhindern, dass Ausnahmen auftreten. Der folgende Code veranschaulicht die `AddMessage`-Methode:
+Die `AddMessage` -Methode fügt der Chat Warteschlange eine neue Nachricht `Label` als-Objekt hinzu. Die `AddMessage` -Methode wird häufig von Ereignis Handlern von außerhalb des Hauptbenutzer Oberflächen-Threads aufgerufen, sodass die Aktualisierungen der Benutzeroberfläche im Haupt Thread erzwungen werden, um Ausnahmen zu verhindern. Der folgende Code veranschaulicht die `AddMessage`-Methode:
 
 ```csharp
 void AddMessage(string message)
@@ -290,18 +290,18 @@ void AddMessage(string message)
 
 ## <a name="test-the-application"></a>Testen der Anwendung
 
-Der SignalR Chat-Anwendung kann auf iOS, Android und UWP getestet werden, vorausgesetzt, Sie haben:
+Die signalr Chat-Anwendung kann auf Ios, Android und UWP getestet werden, sofern Sie über Folgendes verfügen:
 
-1. Erstellt einen Azure SignalR-Dienst.
-1. Erstellt eine Azure Functions-App.
-1. Angepasste der **"Constants.cs"** -Datei mit der Azure Functions-App-Endpunkt.
+1. Sie haben einen Azure signalr-Dienst erstellt.
+1. Eine Azure Functions-App wurde erstellt.
+1. Die **Constants.cs** -Datei wurde mit dem Azure Functions App-Endpunkt angepasst.
 
-Nach Abschluss dieser Schritte und die Anwendung ausgeführt wird, auf die **Connect** Schaltfläche Forms eine Verbindung mit dem Azure SignalR-Dienst. Eine Nachricht eingeben und auf die **senden** Schaltfläche führt diese Nachrichten ständig erhalten die Chat-Warteschlange auf einem verbundenen mobilen Anwendung.
+Sobald diese Schritte abgeschlossen sind und die Anwendung ausgeführt wird, wird durch Klicken auf die Schaltfläche **verbinden** eine Verbindung mit dem Azure signalr-Dienst hergestellt. Wenn Sie eine Nachricht eingeben und auf die Schaltfläche " **senden** " klicken, werden Meldungen in der Chat Warteschlange für jede verbundene Mobile Anwendung angezeigt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Erstellen in Echtzeit mobiler apps mit Xamarin und SignalR](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
+* [Erstellen von mobilen Echtzeitanwendungen mit xamarin und signalr](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
 * [Einführung zu SignalR](/aspnet/signalr/overview/getting-started/introduction-to-signalr)
 * [Einführung in Azure Functions](/azure/azure-functions/functions-overview)
 * [Dokumentation zu Azure Functions](/azure/azure-functions/)
-* [MVVM SignalR-chatbeispiel](https://github.com/lbugnion/sample-xamarin-signalr)
+* [MVVM signalr Chat-Beispiel](https://github.com/lbugnion/sample-xamarin-signalr)

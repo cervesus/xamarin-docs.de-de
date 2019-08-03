@@ -1,86 +1,86 @@
 ---
-title: Xamarin.Forms "ProgressBar".
-description: Die Xamarin.Forms "ProgressBar" handelt es sich um ein Steuerelement, das visuelle Bearbeitung als horizontalen Balken, der gefüllt ist, und basierend auf einer "float"-Eigenschaft darstellt.
+title: Xamarin. Forms ProgressBar
+description: Das xamarin. Forms ProgressBar-Steuerelement ist ein Steuerelement, das den Fortschritt visuell als horizontalen Balken darstellt, der auf der Grundlage einer float-Eigenschaft ausgefüllt wird.
 ms.prod: xamarin
 ms.assetId: C2F85FED-797C-466B-A0FD-E73CFB79B267
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/09/2019
-ms.openlocfilehash: 2e2917077575ebc78dbdda8ae55aa230a39a7ba1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 78c5f38428e20a2e0c6a15d0964f8fd505a8d082
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67837010"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739412"
 ---
-# <a name="xamarinforms-progressbar"></a>Xamarin.Forms "ProgressBar".
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ProgressBarDemos)
+# <a name="xamarinforms-progressbar"></a>Xamarin. Forms ProgressBar
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
-Die Xamarin.Forms [ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar) ist ein Steuerelement, das visuell Fortschritt als horizontalen Balken darstellt, das auf eine Prozentangabe, ausgedrückt durch gefüllt wird eine `float` Wert. Die `ProgressBar` Klasse erbt von [ `View` ](xref:Xamarin.Forms.View).
+Xamarin. Forms [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) ist ein Steuerelement, das den Fortschritt visuell als horizontalen Balken darstellt, der zu einem durch einen `float` -Wert dargestellten Prozentsatz gefüllt wird. Die `ProgressBar` Klasse erbt von [`View`](xref:Xamarin.Forms.View).
 
-Der folgende Screenshot zeigt ein `ProgressBar` unter iOS und Android:
+Der folgende Screenshot zeigt ein `ProgressBar` unter IOS und Android:
 
-![Screenshot der "ProgressBar" unter iOS und Android](progressbar-images/progressbars-default.png "\"ProgressBar\" unter iOS und Android")
+![Screenshot von ProgressBar unter IOS und Android](progressbar-images/progressbars-default.png "ProgressBar unter IOS und Android")
 
-Die `ProgressBar` -Steuerelement definiert zwei Eigenschaften:
+Das `ProgressBar` -Steuerelement definiert zwei Eigenschaften:
 
-* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress) ist eine `float` Wert, der den aktuellen Status als Wert von 0 auf 1 darstellt. `Progress` Werte kleiner als 0 wird auf 0 (null) Werte größer als 1 wird auf 1 bindende geklammert.
-* [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor) ist eine `Color` , beeinflusst das innere Leiste Farbe, die den aktuellen Status darstellt.
+* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)ein `float` -Wert, der den aktuellen Fortschritt als Wert zwischen 0 und 1 darstellt. `Progress`Werte, die kleiner als 0 sind, werden an 0 gebunden, Werte, die größer als 1 sind, werden an 1 gebunden.
+* [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor)ist eine `Color` , die die Farbe der inneren Leiste beeinflusst, die den aktuellen Fortschritt darstellt.
 
-Diese Eigenschaften verfügen über [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) -Objekte, die das bedeutet, dass die `ProgressBar` formatiert werden können und das Ziel von datenbindungen verwendet werden.
+Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekte gestützt. Dies bedeutet, dass das `ProgressBar` formatiert werden kann und das Ziel von Daten Bindungen ist.
 
-Die `ProgressBar` Steuerelement definiert auch eine `ProgressTo` -Methode, die die Leiste der aktuelle Wert auf einen angegebenen Wert animiert. Weitere Informationen finden Sie unter [animieren Sie eine Statusanzeige](#animate-a-progressbar).
+Das `ProgressBar` -Steuerelement definiert `ProgressTo` auch eine Methode, die die Leiste von Ihrem aktuellen Wert auf einen angegebenen Wert animiert. Weitere Informationen finden Sie unter [Animieren einer ProgressBar](#animate-a-progressbar).
 
 > [!NOTE]
-> Die `ProgressBar` akzeptiert keine Bearbeitung durch Benutzer aus, damit er wird übersprungen, wenn die Tab-Taste verwenden, zum Auswählen von Steuerelementen.
+> Akzeptiert `ProgressBar` die Benutzer Manipulation nicht, sodass Sie übersprungen wird, wenn die Tab-Taste verwendet wird, um Steuerelemente auszuwählen.
 
-## <a name="create-a-progressbar"></a>Erstellen Sie eine Statusanzeige
+## <a name="create-a-progressbar"></a>Erstellen einer ProgressBar
 
-Ein `ProgressBar` in XAML instanziiert werden. Die `Progress` Eigenschaft kann festgelegt werden, um zu bestimmen, den Fill-Prozentsatz, der die innere, farbige Leiste. Wenn die `Progress` Eigenschaft nicht festgelegt ist, wird standardmäßig auf 0. Das folgende Beispiel zeigt, wie Sie instanziieren ein `ProgressBar` in XAML mit dem optionalen `Progress` Eigenschaftensatz:
+Eine `ProgressBar` kann in XAML instanziiert werden. Die `Progress` -Eigenschaft kann festgelegt werden, um den Füll Prozentsatz der inneren, farbigen Leiste zu bestimmen. Wenn die `Progress` Eigenschaft nicht festgelegt ist, wird der Standardwert 0 verwendet. Im folgenden Beispiel wird gezeigt, wie ein `ProgressBar` in XAML mit dem optionalen `Progress` Eigenschaften Satz instanziiert wird:
 
 ```xaml
 <ProgressBar Progress="0.5" />
 ```
 
-Ein `ProgressBar` können auch im Code erstellt werden:
+Ein `ProgressBar` kann auch im Code erstellt werden:
 
 ```csharp
 ProgressBar progressBar = new ProgressBar { Progress = 0.5f };
 ```
 
 > [!WARNING]
-> Verwenden Sie keine uneingeschränkte horizontales Layout-Optionen wie z. B. `Center`, `Start`, oder `End` mit `ProgressBar`. Auf UWP die `ProgressBar` reduziert auf einen Balken, der größer als NULL sein. Behalten Sie den Standardwert `HorizontalOptions` Wert `Fill` und keine Breite von `Auto` beim Festlegen einer `ProgressBar` in einer `Grid` Layout.
+> Verwenden Sie keine eingeschränkten horizontalen Layoutoptionen `Center`wie, `Start`oder `End` mit `ProgressBar`. Bei UWP reduziert sich `ProgressBar` der auf einen Balken der Breite 0 (null). Behalten Sie den `HorizontalOptions` Standardwert `Fill` von bei, und verwenden Sie `Auto` keine Breite von `ProgressBar` , wenn `Grid` Sie eine in einem Layout platzieren.
 
-## <a name="progressbar-appearance-properties"></a>ProgressBar-Darstellungseigenschaften
+## <a name="progressbar-appearance-properties"></a>ProgressBar-Darstellungs Eigenschaften
 
-Die `ProgressColor` Eigenschaft kann festgelegt werden, definieren Sie die innere Leiste Farbe, wenn die `Progress` -Eigenschaft ist größer als 0 (null). Das folgende Beispiel zeigt, wie Sie instanziieren ein `ProgressBar` in XAML mit dem `ProgressColor` Eigenschaftensatz:
+Die `ProgressColor` -Eigenschaft kann so festgelegt werden, dass die Farbe der `Progress` inneren Leiste definiert wird, wenn die-Eigenschaft größer als NULL ist. Im folgenden Beispiel wird gezeigt, wie ein `ProgressBar` in XAML mit dem `ProgressColor` -Eigenschaften Satz instanziiert wird:
 
 ```xaml
 <ProgressBar OnColor="Orange" />
 ```
 
-Die `ProgressColor` Eigenschaft kann auch festgelegt werden, beim Erstellen einer `ProgressBar` im Code:
+Die `ProgressColor` -Eigenschaft kann auch festgelegt werden, `ProgressBar` wenn ein-Objekt im Code erstellt wird:
 
 ```csharp
 ProgressBar progressBar = new ProgressBar { ProgressColor = Color.Orange };
 ```
 
-Der folgende Screenshot zeigt die `ProgressBar` mit der `ProgressColor` -Eigenschaftensatz auf `Color.Orange` unter iOS und Android:
+Der folgende Screenshot zeigt das `ProgressBar` -Objekt `ProgressColor` , bei dem `Color.Orange` die-Eigenschaft unter IOS und Android auf festgelegt ist:
 
-![Screenshot des formatierten "ProgressBar" unter iOS und Android](progressbar-images/progressbars-styled.png "im Stil von \"ProgressBar\" unter iOS und Android")
+![Screenshot der formatierten ProgressBar unter IOS und Android](progressbar-images/progressbars-styled.png "ProgressBar im Stil für IOS und Android")
 
-## <a name="animate-a-progressbar"></a>Animieren Sie eine Statusanzeige
+## <a name="animate-a-progressbar"></a>Animieren einer ProgressBar
 
-Die `ProgressTo` Methode erstellt eine Animation die `ProgressBar` von seinem aktuellen `Progress` Wert mit einem angegebenen Wert im Laufe der Zeit. Die Methode akzeptiert eine `float` Status-Wert, ein `uint` Dauer in Millisekunden, ein `Easing` Enum-Wert und gibt eine `Task<bool>`. Der folgende Code zeigt, wie zum Animieren einer `ProgressBar`:
+Mit `ProgressTo` der-Methode wird `ProgressBar` die von Ihrem `Progress` aktuellen Wert zu einem bereitgestellten Wert im Laufe der Zeit animiert. Die-Methode akzeptiert `float` einen Fortschritts Wert, `uint` eine Dauer `Easing` in Millisekunden, einen Enumerationswert und `Task<bool>`gibt einen zurück. Der folgende Code veranschaulicht, wie Sie eine `ProgressBar`animieren:
 
 ```csharp
 // animate to 75% progress over 500 milliseconds with linear easing
 await progressBar.ProgressTo(0.75, 500, Easing.Linear);
 ```
 
-Weitere Informationen zu den `Easing` -Enumeration finden Sie unter [Beschleunigungsfunktionen in Xamarin.Forms](~/xamarin-forms/user-interface/animation/easing.md).
+Weitere Informationen `Easing` zur-Enumeration finden Sie unter Beschleunigungs [Funktionen in xamarin. Forms](~/xamarin-forms/user-interface/animation/easing.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [ProgressBar-Demos](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ProgressBarDemos)
+* [ProgressBar-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)

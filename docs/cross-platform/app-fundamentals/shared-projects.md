@@ -1,148 +1,142 @@
 ---
 title: Verwenden von freigegebenen Projekten zum Freigeben von Code
-description: Freigegebene Projekte können Sie die gemeinsamen Code zu schreiben, der durch eine Reihe von verschiedenen Anwendungsprojekte verwiesen wird. Der Code wird als Teil jeder verweisende Projekt kompiliert und zählen Compiler-Direktiven können plattformspezifische Funktionalität in die gemeinsame Codebasis zu integrieren.
+description: Mit freigegebenen Projekten können Sie allgemeinen Code schreiben, auf den von einer Reihe verschiedener Anwendungsprojekte verwiesen wird. Der Code wird als Teil jedes verweisenden Projekts kompiliert und kann Compilerdirektiven einschließen, um die plattformspezifische Funktionalität in die freigegebene Codebasis zu integrieren.
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: 61096635cd94d0fdd0abe6fda59c4efa41eeceb1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61193226"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739057"
 ---
-# <a name="shared-projects-code-sharing"></a>Freigegebene Projekte freigeben von code
+# <a name="shared-projects-code-sharing"></a>Freigegebene Projekte Code Freigabe
 
-_Freigegebene Projekte können Sie die gemeinsamen Code zu schreiben, der durch eine Reihe von verschiedenen Anwendungsprojekte verwiesen wird. Der Code wird als Teil jeder verweisende Projekt kompiliert und zählen Compiler-Direktiven können plattformspezifische Funktionalität in die gemeinsame Codebasis zu integrieren._
+_Mit freigegebenen Projekten können Sie allgemeinen Code schreiben, auf den von einer Reihe verschiedener Anwendungsprojekte verwiesen wird. Der Code wird als Teil jedes verweisenden Projekts kompiliert und kann Compilerdirektiven einschließen, um die plattformspezifische Funktionalität in die freigegebene Codebasis zu integrieren._
 
-Freigegebene Projekte (manchmal auch als "freigegebene Asset-Projekte" bezeichnet) können Sie Code schreiben, der mehrere Zielprojekte, einschließlich Xamarin-Anwendungen gemeinsam verwendet wird.
+Freigegebene Projekte (auch als freigegebene Ressourcen Projekte bezeichnet) ermöglichen Ihnen das Schreiben von Code, der von mehreren zielprojekten, einschließlich xamarin-Anwendungen, gemeinsam genutzt wird.
 
-Sie unterstützt die Compiler-Direktiven, sodass Sie bedingt einschließen, können plattformspezifischen Code in eine Teilmenge der Projekte kompiliert werden, die das freigegebene Projekt verweisen. Es gibt auch IDE-Unterstützung zum Verwalten der Compiler-Direktiven und visualisieren, wie der Code in jeder Anwendung aussehen wird.
+Sie unterstützen Compilerdirektiven, damit Sie plattformspezifischen Code bedingt einschließen können, der in eine Teilmenge der Projekte kompiliert werden soll, die auf das freigegebene Projekt verweisen. Es gibt auch IDE-Unterstützung, um die Compilerdirektiven zu verwalten und zu visualisieren, wie der Code in den einzelnen Anwendungen aussehen soll.
 
-Wenn Sie in der Vergangenheit dateiverknüpfungen zum Freigeben von Code zwischen Projekten verwendet haben, funktioniert freigegebene Projekte auf ähnliche Weise, aber mit viel bessere IDE-Unterstützung.
+Wenn Sie in der Vergangenheit Datei Verknüpfungen für die gemeinsame Nutzung von Code zwischen Projekten verwendet haben, funktionieren freigegebene Projekte auf ähnliche Weise, aber mit einer deutlich verbesserten IDE-Unterstützung.
 
-## <a name="what-is-a-shared-project"></a>Was ist ein freigegebenes Projekt?
+## <a name="what-is-a-shared-project"></a>Was ist ein frei gegebenes Projekt?
 
-Im Gegensatz zu den meisten anderen Projekttypen ein freigegebenes Projekt verfügt nicht über keine Ausgabe (in Form der DLL), stattdessen wird der Code kompiliert, in jedem Projekt, die darauf verweist. Dies wird im folgenden Diagramm veranschaulicht: der gesamte Inhalt des freigegebenen Projekts vom Konzept her ist "in kopiert" jedes Projekt verweisen und kompiliert, als wäre es ein Teil war.
+Im Gegensatz zu den meisten anderen Projekttypen verfügt ein frei gegebenes Projekt nicht über eine Ausgabe (in dll-Form), sondern der Code wird in jedes Projekt kompiliert, das darauf verweist. Dies wird im folgenden Diagramm veranschaulicht: konzeptionell wird der gesamte Inhalt des freigegebenen Projekts in jedes verweisende Projekt kopiert und so kompiliert, als wäre es ein Teil davon.
 
-![](shared-projects-images/sharedassetproject.png "Freigegebenen Projekt-Architektur")
+![](shared-projects-images/sharedassetproject.png "Architektur des freigegebenen Projekts")
 
-Der Code in ein freigegebenes Projekt kann es sich um Compiler-Direktiven enthalten, die aktivieren oder Deaktivieren von Codeabschnitten, abhängig von der Anwendung Projekt Code verwendet wird, die durch die farbige Plattform Felder im Diagramm wird empfohlen.
+Der Code in einem freigegebenen Projekt kann Compilerdirektiven enthalten, die Code Abschnitte abhängig vom Anwendungsprojekt, das den Code verwendet, aktivieren oder deaktivieren. Dies wird von den farbigen Platt Form Feldern im Diagramm vorgeschlagen.
 
-Ein freigegebenes Projekt ist nicht allein kompiliert, es vorhanden ist, rein als eine Gruppierung von Quellcodedateien, die in anderen Projekten enthalten sein können. Wenn von einem anderen Projekt verwiesen wird, wird der Code effektiv als kompiliert *Teil* dieses Projekts. Freigegebene Projekte können nicht auf einem anderen Projekttyp (einschließlich andere Projekte freigegeben) verweisen.
+Ein frei gegebenes Projekt wird nicht selbst kompiliert, sondern ist ausschließlich als Gruppierung von Quell Code Dateien vorhanden, die in andere Projekte eingeschlossen werden können. Wenn von einem anderen Projekt auf Sie verwiesen wird, wird der Code effektiv als *Teil* dieses Projekts kompiliert. Freigegebene Projekte können nicht auf einen anderen Projekttyp (einschließlich anderer frei gegebener Projekte) verweisen.
 
-Beachten Sie, dass Android-Anwendungsprojekten können nicht auf andere Android-Anwendungsprojekten verweisen – z. B. ein Android Komponententestprojekt kann nicht auf einem Android-Anwendungsprojekt verweisen. Weitere Informationen zu dieser Einschränkung finden Sie in diesem [Forumsdiskussion](http://forums.xamarin.com/discussion/comment/98092/).
+Beachten Sie, dass Android-Anwendungsprojekte nicht auf andere Android-Anwendungsprojekte verweisen können. beispielsweise kann ein Android-Komponenten Testprojekt nicht auf ein Android-Anwendungsprojekt verweisen. Weitere Informationen zu dieser Einschränkung finden Sie in dieser [Forumsdiskussion](http://forums.xamarin.com/discussion/comment/98092/).
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Exemplarische Vorgehensweise für Visual Studio für Mac
 
-In diesem Abschnitt führt Sie durch die Schritte zum Erstellen und verwenden ein freigegebenes Projekt mit Visual Studio für Mac. Finden Sie die zu [freigegebenen Projekt Beispiel](#Shared_Project_Example) Abschnitt, um ein vollständiges Beispiel.
+In diesem Abschnitt werden die Schritte zum Erstellen und Verwenden eines freigegebenen Projekts mit Visual Studio für Mac erläutert. Ein umfassendes Beispiel finden Sie im Abschnitt zu frei [gegebenen Projekten](#Shared_Project_Example) .
 
 ## <a name="creating-a-shared-project"></a>Erstellen eines freigegebenen Projekts
 
-Zum Erstellen ein neues freigegebenes Projekt, navigieren Sie zu **Datei > neue Projektmappe...**  (oder klicken Sie mit der rechten Maustaste auf eine vorhandene Projektmappe und Auswahl **hinzufügen > Neues Projekt hinzufügen...** ):
+Um ein neues frei gegebenes Projekt zu erstellen, navigieren Sie zu **Datei > neue Projekt Mappe...** (oder klicken Sie mit der rechten Maustaste auf eine vorhandene Projekt Mappe, und wählen Sie **Hinzufügen > Neues Projekt hinzufügen**aus):
 
-[![Neues freigegebenes Projekt](shared-projects-images/xs-newsolution-sml.png "neue Projektmappe")](shared-projects-images/xs-newsolution.png#lightbox)
+[![Neues] frei gegebenes Projekt (shared-projects-images/xs-newsolution-sml.png "Neue Lösung")](shared-projects-images/xs-newsolution.png#lightbox)
 
-Klicken Sie auf dem nächsten Bildschirm Wählen Sie den Namen des Projekts, und klicken Sie auf **erstellen**.
+Wählen Sie auf dem nächsten Bildschirm den Projektnamen aus, und klicken Sie auf **Erstellen**.
 
-Ein neues freigegebenes Projekt wird im folgenden dargestellt: Es sind keine Verweise oder Komponentenknoten; Diese werden für freigegebene Projekte nicht unterstützt.
+Ein neues frei gegebenes Projekt wird unten angezeigt. Beachten Sie, dass es keine Verweise oder Komponenten Knoten gibt. Diese werden für freigegebene Projekte nicht unterstützt.
 
-![Leere freigegebenes Projekt](shared-projects-images/xs-empty.png "leere freigegebenes Projekt")
+![Leeres] frei gegebenes Projekt (shared-projects-images/xs-empty.png "Leeres") frei gegebenes Projekt
 
-Für ein freigegebenes Projekt nützlich ist muss sie mindestens einen Build kann Projekt (z. B. eine iOS oder Android-Anwendung oder Bibliothek bzw. ein PCL-Projekt) verwiesen werden. Ein freigegebenes Projekt wird nicht kompiliert, wenn es nichts verweisen, dies der Fall ist die Syntax (oder andere) hat Fehler werden nicht hervorgehoben werden, bis er von einem anderen Element verwiesen wurde.
+Damit ein frei gegebenes Projekt nützlich ist, muss es von mindestens einem buildfähigen Projekt (z. b. einer IOS-oder Android-Anwendung oder-Bibliothek oder einem PCL-Projekt) referenziert werden. Ein frei gegebenes Projekt wird nicht kompiliert, wenn es nichts referenziert. Daher werden Syntax Fehler (oder andere) erst dann hervorgehoben, wenn von etwas anderem darauf verwiesen wird.
 
-Hinzufügen eines Verweises auf ein freigegebenes Projekt erfolgt die gleiche Weise wie die verweisende eines regulären Library-Projekts. Dieser Screenshot zeigt ein Xamarin.iOS-Projekt verweisen auf ein freigegebenes Projekt.
+Das Hinzufügen eines Verweises auf ein frei gegebenes Projekt erfolgt auf die gleiche Weise wie das verweisen auf ein reguläres Bibliotheksprojekt. Dieser Screenshot zeigt ein xamarin. IOS-Projekt, das auf ein frei gegebenes Projekt verweist.
 
-![](shared-projects-images/xs-reference.png "Projektverweis auf freigegebenes Projekt")
+![](shared-projects-images/xs-reference.png "Projekt Verweis auf frei gegebenes Projekt")
 
-Sobald das freigegebene Projekt von einer anderen Bibliothek oder einer Anwendung verwiesen wird, können Sie erstellen Sie die Projektmappe und zeigen Sie alle Fehler im Code. Wenn das freigegebene Projekt verwiesen wird, indem _zwei oder mehr_ anderen Projekten ein Menü wird angezeigt in der oberen linken Ecke des der Quellcode-Editor zeigt auswählen, welche Projekte diese Datei verweisen.
+Wenn von einer anderen Bibliothek oder Anwendung auf das freigegebene Projekt verwiesen wird, können Sie die Projekt Mappe erstellen und alle Fehler im Code anzeigen. Wenn von _zwei oder mehr_ anderen Projekten auf das freigegebene Projekt verwiesen wird, wird in der linken oberen Ecke des Quell Code-Editors ein Menü angezeigt, in dem Sie auswählen können, welche Projekte auf diese Datei verweisen.
 
-## <a name="shared-project-options"></a>Shared-Projektoptionen
+## <a name="shared-project-options"></a>Optionen für freigegebene Projekte
 
-Wenn Sie mit der rechten Maustaste auf ein freigegebenes Projekt, und wählen Sie **Optionen** gibt es weniger Einstellungen als andere Projekttypen. Da freigegebene Projekte (selbstständig) nicht kompiliert werden, können keine Ausgabe- oder Compiler-Optionen, Projektkonfigurationen, Signieren von Assemblys oder benutzerdefinierten Befehlen festgelegt werden. Der Code in ein freigegebenes Projekt erbt effektiv, dass diese Werte was auch immer sie verweist.
+Wenn Sie mit der rechten Maustaste auf ein frei gegebenes Projekt klicken und **Optionen** auswählen, sind weniger Einstellungen vorhanden als bei anderen Projekttypen. Da freigegebene Projekte nicht (eigenständig) kompiliert werden, können Sie keine Ausgabe-oder Compileroptionen, Projekt Konfigurationen, Assemblysignierung oder benutzerdefinierte Befehle festlegen. Der Code in einem freigegebenen Projekt erbt diese Werte effektiv von allen verweisen, die auf Sie verweisen.
 
+Der Bildschirm **Optionen** wird unten angezeigt: der Projekt **Name** und der **Standard Namespace** sind die einzigen beiden Einstellungen, die Sie in der Regel ändern werden.
 
-
-Die **Optionen** unterhalb - Projekt angezeigt wird **Name** und **Default Namespace** sind die nur zwei Einstellungen, die Sie in der Regel geändert wird.
-
-
-![](shared-projects-images/xs-sharedprojectoptions.png "Shared-Projektoptionen")
-
-
+![](shared-projects-images/xs-sharedprojectoptions.png "Optionen für freigegebene Projekte")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
-
 ## <a name="visual-studio-walkthrough"></a>Visual Studio: Exemplarische Vorgehensweise
 
-
-In diesem Abschnitt erläutert, wie zum Erstellen und verwenden ein freigegebenes Projekt mithilfe von Visual Studio. Finden Sie die zu [freigegebenen Projekt Beispiel](#Shared_Project_Example) Abschnitt, um eine vollständige Implementierung.
+In diesem Abschnitt wird erläutert, wie Sie ein frei gegebenes Projekt mithilfe von Visual Studio erstellen und verwenden. Eine komplette Implementierung finden Sie im Abschnitt zu frei [gegebenen Projektbeispielen](#Shared_Project_Example) .
 
 ### <a name="creating-a-shared-project"></a>Erstellen eines freigegebenen Projekts
 
-Zum Erstellen ein neues freigegebenes Projekt, navigieren Sie zu **Datei > neue Projektmappe...**  , und wählen Sie einen Namen für das Projekt und Projektmappe.
+Um ein neues frei gegebenes Projekt zu erstellen, navigieren Sie zu **Datei** > **Neues** > **Projekt**.
 
-![](shared-projects-images/vs-newsolution.png "Neue Projektmappe")
+Geben Sie in Visual Studio 2019 im Suchfeld auf der Seite **Neues Projekt erstellen** den Wert frei **gegeben** ein. Wählen Sie die Vorlage für frei **gegebene Projekte** und dann **weiter**aus. Geben Sie einen Namen für das Projekt ein, und wählen Sie dann **Erstellen**aus.
 
-Sie können auch ein neues freigegebenes Projekt zu einer Projektmappe hinzufügen, indem mit der rechten Maustaste auf die Projektmappendatei und **hinzufügen > Neues Projekt...** . Ein neues freigegebenes Projekt sieht aus wie unten dargestellt (nachdem eine Datei hinzugefügt wurde): Beachten Sie, dass keine Verweise vorhanden sind oder Komponentenknoten; Diese werden für freigegebene Projekte nicht unterstützt.
+Wählen Sie in Visual Studio 2017 die Vorlage für das frei **gegebene Projekt** aus, und wählen Sie dann einen Namen für das Projekt aus.
 
-![](shared-projects-images/vs-empty.png "Leere freigegebenes Projekt")
+![Vorlage für freigegebene Projekte in Visual Studio 2017](shared-projects-images/vs-newsolution.png)
 
-Für ein freigegebenes Projekt nützlich ist muss sie mindestens einen Build kann Projekt (z. B. eine iOS oder Android-Anwendung oder Bibliothek bzw. ein PCL-Projekt) verwiesen werden. Ein freigegebenes Projekt wird nicht kompiliert, wenn es nichts verweisen, dies der Fall ist die Syntax (oder andere) hat Fehler werden nicht hervorgehoben werden, bis er von einem anderen Element verwiesen wurde.
+Sie können einer vorhandenen Projekt Mappe auch ein neues frei gegebenes Projekt hinzufügen, indem Sie mit der rechten Maustaste auf die Projektmappendatei klicken und **> Neues Projekt hinzufügen**auswählen Ein neues frei gegebenes Projekt sieht wie unten dargestellt aus (nachdem eine Klassendatei hinzugefügt wurde). Beachten Sie, dass es keine Verweise oder Komponenten Knoten gibt. Diese werden für freigegebene Projekte nicht unterstützt.
 
-Hinzufügen eines Verweises auf ein freigegebenes Projekt erfolgt die gleiche Weise wie die verweisende eines regulären Library-Projekts. Dieser Screenshot zeigt ein Xamarin.iOS-Projekt verweisen auf ein freigegebenes Projekt.
+![](shared-projects-images/vs-empty.png "Leeres frei gegebenes Projekt")
 
-![](shared-projects-images/vs-reference.png "Projektverweis auf freigegebenes Projekt")
+Damit ein frei gegebenes Projekt nützlich ist, muss es von mindestens einem buildfähigen Projekt (z. b. einer IOS-oder Android-Anwendung oder-Bibliothek oder einem PCL-Projekt) referenziert werden. Ein frei gegebenes Projekt wird nicht kompiliert, wenn es nichts referenziert. Daher werden Syntax Fehler (oder andere) erst dann hervorgehoben, wenn von etwas anderem darauf verwiesen wird.
 
-Sobald das freigegebene Projekt von einer anderen Bibliothek oder einer Anwendung verwiesen wird, können Sie erstellen Sie die Projektmappe und zeigen Sie alle Fehler im Code. Wenn das freigegebene Projekt verwiesen wird, indem _zwei oder mehr_ anderen Projekten ein Menü wird angezeigt, in der linken oberen Ecke im Source Code-Editor, um festzustellen, welche Projekte die aktuellen Codedatei verweisen.
+Das Hinzufügen eines Verweises auf ein frei gegebenes Projekt erfolgt auf die gleiche Weise wie das verweisen auf ein reguläres Bibliotheksprojekt. Dieser Screenshot zeigt ein xamarin. IOS-Projekt, das auf ein frei gegebenes Projekt verweist.
 
+![](shared-projects-images/vs-reference.png "Projekt Verweis auf frei gegebenes Projekt")
 
-### <a name="shared-project-properties"></a>Eigenschaften des freigegebenen Projekts
+Wenn von einer anderen Bibliothek oder Anwendung auf das freigegebene Projekt verwiesen wird, können Sie die Projekt Mappe erstellen und alle Fehler im Code anzeigen. Wenn von _zwei oder mehr_ anderen Projekten auf das freigegebene Projekt verwiesen wird, wird in der linken oberen Ecke des Quell Code-Editors ein Menü angezeigt, um zu sehen, welche Projekte auf die aktuelle Codedatei verweisen.
 
+### <a name="shared-project-properties"></a>Freigegebene Projekteigenschaften
 
-Wenn Sie ein freigegebenes Projekt gibt es weniger Einstellungen im Bereich "Eigenschaften" als andere Projekttypen auswählen. Da freigegebene Projekte (selbstständig) nicht kompiliert werden, können keine Ausgabe- oder Compiler-Optionen, Projektkonfigurationen, Signieren von Assemblys oder benutzerdefinierten Befehlen festgelegt werden. Der Code in ein freigegebenes Projekt erbt effektiv, dass diese Werte was auch immer sie verweist.
+Wenn Sie ein frei gegebenes Projekt auswählen, sind im Eigenschaften Panel weniger Einstellungen als bei anderen Projekttypen vorhanden. Da freigegebene Projekte nicht (eigenständig) kompiliert werden, können Sie keine Ausgabe-oder Compileroptionen, Projekt Konfigurationen, Assemblysignierung oder benutzerdefinierte Befehle festlegen. Der Code in einem freigegebenen Projekt erbt diese Werte effektiv von allen verweisen, die auf Sie verweisen.
 
-Die **Eigenschaften** Bereich wird unten – die **Stamm-Namespace** ist die einzige Einstellung, die Sie ändern können.
+Der **Eigenschaften** Bereich wird unten angezeigt. der Stamm **Namespace** ist die einzige Einstellung, die Sie ändern können.
 
-![](shared-projects-images/vs-sharedprojectproperties.png "Eigenschaften des freigegebenen Projekts")
+![](shared-projects-images/vs-sharedprojectproperties.png "Freigegebene Projekteigenschaften")
 
 -----
 
 <a name="Shared_Project_Example"/>
 
-## <a name="shared-project-example"></a>Beispiel für freigegebenen Projekt
+## <a name="shared-project-example"></a>Beispiel für einen gemeinsam genutzten
 
-Die [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) Beispiel verwendet ein freigegebenes Projekt enthält den allgemeinen Code, der von der sowohl iOS, Android und Windows Phone-Anwendungen verwendet. Sowohl die `SQLite.cs` und `TaskRepository.cs` Quellcodedateien Nutzung compileranweisungen (z. b. `#if __ANDROID__`), die andere Ausgabe für jede der Anwendungen zu erstellen, die darauf verweisen.
+Das [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) -Beispiel verwendet ein frei gegebenes Projekt, das sowohl von der IOS-, Android-als auch der Windows Phone-Anwendung verwendet wird. Sowohl die `SQLite.cs` - `TaskRepository.cs` als auch die-Quell Code Dateien nutzen Compilerdirektiven (z.b. `#if __ANDROID__`), um für jede der Anwendungen, die auf Sie verweisen, eine andere Ausgabe zu liefern.
 
-Die Struktur der vollständigen Lösung wird unten gezeigt (in Visual Studio für Mac und Visual Studio entsprechend):
+Die gesamte Projektmappenstruktur ist unten dargestellt (in Visual Studio für Mac bzw. in Visual Studio):
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![](shared-projects-images/xs-examplesolution.png "Visual Studio für Mac-Lösung")
+![](shared-projects-images/xs-examplesolution.png "Visual Studio für Mac Lösung")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](shared-projects-images/vs-examplesolution.png "Visual Studio-Projektmappe")
+![](shared-projects-images/vs-examplesolution.png "Visual Studio-Projekt Mappe")
 
 -----
 
-Das Windows Phone-Projekt kann innerhalb von Visual Studio für Mac, gewechselt werden, obwohl Sie diesen Projekttyp nicht unterstützt wird, für die Kompilierung in Visual Studio für Mac.
+Das Windows Phone Projekt kann innerhalb Visual Studio für Mac navigiert werden, auch wenn dieser Projekttyp nicht für die Kompilierung in Visual Studio für Mac unterstützt wird.
 
-Die ausgeführten Anwendungen werden unten angezeigt:
+Die laufenden Anwendungen sind unten dargestellt:
 
-![](shared-projects-images/example.png "iOS, Android, Windows Phone-Beispielen")
+![](shared-projects-images/example.png "IOS-, Android-Windows Phone Beispiele")
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Dokument beschrieben, wie freigegebene Projekte zu arbeiten, wie sie erstellt und in Visual Studio für Mac und Visual Studio verwendet werden, und eine einfache beispielanwendung, die ein freigegebenes Projekt in Aktion zeigt eingeführt.
+In diesem Dokument wurde beschrieben, wie freigegebene Projekte funktionieren, wie Sie in Visual Studio für Mac und Visual Studio erstellt und verwendet werden können, und es wurde eine einfache Beispielanwendung eingeführt, die ein frei gegebenes Projekt in Aktion veranschaulicht.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Tasky Beispiel-App](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
+- [Tasky-Beispiel-App](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
 - [Portable Klassenbibliotheken (Beispiel)](~/cross-platform/app-fundamentals/pcl.md)
-- [Optionen (Beispiel) für die Codefreigabe](~/cross-platform/app-fundamentals/code-sharing.md)
+- [Freigabe von Code Optionen (Beispiel)](~/cross-platform/app-fundamentals/code-sharing.md)

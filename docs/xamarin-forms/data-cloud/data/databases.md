@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 321448453ebe38bd7d43665a3c8bade4fe0f68c2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645254"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739176"
 ---
 # <a name="xamarinforms-local-databases"></a>Lokale Datenbanken von Xamarin.Forms
 
@@ -24,7 +24,7 @@ _Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über die SQLite-Dat
 
 Xamarin.Forms-Apps können das Paket [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) verwenden, um Datenbankvorgänge in freigegebenen Code zu integrieren, indem auf die `SQLite`-Klassen verwiesen wird, die im NuGet-Paket enthalten sind. Datenbankvorgänge können im Projekt der .NET Standard-Bibliothek der Xamarin.Forms-Projektmappe definiert werden.
 
-Bei der zugehörigen [Beispielanwendung](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) handelt es sich um eine einfache App für To-do-Listen. Auf den folgenden Screenshots wird veranschaulicht, wie das Beispiel auf jeder Plattform angezeigt wird:
+Bei der zugehörigen [Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo) handelt es sich um eine einfache App für To-do-Listen. Auf den folgenden Screenshots wird veranschaulicht, wie das Beispiel auf jeder Plattform angezeigt wird:
 
 [![Screenshots der Xamarin.Forms-Beispieldatenbank](databases-images/todo-list-sml.png "Screenshots der ersten Seite von TodoList")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite von TodoList") [![Screenshots der Xamarin.Forms-Beispieldatenbank](databases-images/todo-list-sml.png "Screenshots der ersten Seite von TodoList")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite von TodoList")
 
@@ -124,4 +124,3 @@ Im Artikel wird hauptsächlich der **Zugriff** auf eine SQLite-Datenbank mit Xam
 
 - [Todo Sample (Todo (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-

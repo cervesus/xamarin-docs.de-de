@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
-ms.openlocfilehash: 66d947c8b80546e68c68915b960587a48bd2448d
-ms.sourcegitcommit: 25be5acf979f6b18b6d0e64392c9ab307259c032
+ms.openlocfilehash: 391820cf2e94c1131f4082798ee9efa05d8489b8
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68610490"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739401"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms-Suchleiste
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SearchBar)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das `SearchBar` -Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch. Der folgende Screenshot zeigt eine `SearchBar` Abfrage mit Ergebnissen, die in `ListView`einer angezeigt werden:
 
@@ -184,7 +184,7 @@ Weitere Informationen `ICommand` zur-Schnittstelle und-Bindungen finden Sie unte
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Searchbar-Demos](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SearchBar)
+* [Searchbar-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 * [Xamarin. Forms-Text Steuerelemente](~/xamarin-forms/user-interface/text/index.md)
 * [Schriftarten in xamarin. Forms](~/xamarin-forms/user-interface/text/fonts.md)
 * [Xamarin. Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
