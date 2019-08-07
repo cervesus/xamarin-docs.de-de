@@ -128,7 +128,8 @@
 ##### [Erstellen von Datenvorlagen](app-fundamentals/templates/data-templates/creating.md)
 ##### [Auswählen von Datenvorlagen](app-fundamentals/templates/data-templates/selector.md)
 ### [Trigger](app-fundamentals/triggers.md)
-## [Benutzeroberfläche](user-interface/index.md)
+## Benutzeroberfläche
+### [Übersicht](user-interface/index.yml)
 ### [Aktivitätsindikator](user-interface/activityindicator.md)
 ### [Animation](user-interface/animation/index.md)
 #### [Einfache Animationen](user-interface/animation/simple.md)
