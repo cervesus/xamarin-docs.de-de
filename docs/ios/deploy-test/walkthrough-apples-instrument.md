@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: d0c79a5eb417762531245256ff062c5c34ca394c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f06af6a2121fc037f5c3f496ee8bd6b91e2969e6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112324"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656746"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>Exemplarische Vorgehensweise: Verwenden des Apple-Tools „Instruments“
 
 _Dieser Artikel erläutert die Verwendung des Apple-Tools Instruments, um Speicherprobleme in einer iOS-Anwendung zu diagnostizieren, die mit Xamarin erstellt wurde. Es wird gezeigt, wie Instruments gestartet wird, wie Heap-Momentaufnahmen erfasst werden und wie der Anstieg des benötigten Speichers analysiert wird. Ebenfalls wird beschrieben, wie Instruments dafür verwendet wird, die genauen Codezeilen zu ermitteln und anzuzeigen, die das Speicherproblem verursachen._
 
 Diese Seite erläutert, wie das **Xcode-Tool Instruments** dafür verwendet wird, Arbeitsspeicherprobleme in einer iOS-Anwendung zu diagnostizieren.
-Laden Sie zunächst das [MemoryDemo-Beispiel](https://developer.xamarin.com/samples/monotouch/Profiling/MemoryDemo/) herunter und öffnen Sie die Projektmappe **before** in Visual Studio für Mac.
+Laden Sie zunächst das [MemoryDemo-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo) herunter und öffnen Sie die Projektmappe **before** in Visual Studio für Mac.
 
 ## <a name="diagnosing-the-memory-issues"></a>Diagnostizieren von Arbeitsspeicherproblemen
 
@@ -33,11 +33,11 @@ Laden Sie zunächst das [MemoryDemo-Beispiel](https://developer.xamarin.com/samp
 
     ![](walkthrough-apples-instrument-images/01-mem-demo.png "Auswählen der „Memory Demo“-Anwendung")
 
-5. Drücken Sie auf die Schaltfläche **Auswählen** (unten rechts im Fenster), um **Instrumente** zu starten. Diese Vorlage zeigt zwei Elemente im oberen Bereich an: Zuordnungen und VM-Tracker.
+5. Drücken Sie auf die Schaltfläche **Auswählen** (unten rechts im Fenster), um **Instrumente** zu starten. Durch die Auswahl dieser Vorlage werden zwei Elemente im oberen Bereich angezeigt: „Allocations“ (Speicherbelegung) und „VM Tracker“ (VM-Tracker).
 
 6. Klicken Sie auf in Instruments auf die Schaltfläche **Aufnehmen** (roter Kreis oben links), um die Anwendung zu starten.
 
-7. Wählen Sie im oberen Bereich die Zeile **VM-Tracker** aus. Da die App nun ausgeführt wird, enthält diese zwei Abschnitte: Dirty Size und Resident Size. Wählen Sie im Bereich **Inspektor** die Option **Show Display Settings** (Anzeigeeinstellungen anzeigen) (das Zahnradsymbol) aus, und aktivieren Sie dann das Kontrollkästchen **Automatic Snapshotting** (Automatische Momentaufnahme), das unten rechts auf diesem Screenshot angezeigt wird:
+7. Wählen Sie im oberen Bereich die Zeile **VM Tracker** aus. Da die App nun ausgeführt wird, werden zwei Abschnitte angezeigt: „Dirty Size“ (Größe des geänderten Speichers) und „Resident Size“ (Größe des belegten physischen Speichers). Wählen Sie im Bereich **Inspektor** die Option **Show Display Settings** (Anzeigeeinstellungen anzeigen) (das Zahnradsymbol) aus, und aktivieren Sie dann das Kontrollkästchen **Automatic Snapshotting** (Automatische Momentaufnahme), das unten rechts auf diesem Screenshot angezeigt wird:
 
     ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "Auswählen der Option „Show Display Settings“ (Anzeigeeinstellungen anzeigen) (Zahnradsymbol) und anschließendes Aktivieren des Kontrollkästchens „Automatic Snapshotting“ (Automatische Momentaufnahme)")
 
@@ -85,7 +85,7 @@ Nun, da die Anwendung ausgeführt wird, ist die Arbeitsspeicherauslastung erhebl
 
 ![](walkthrough-apples-instrument-images/06-reduced-memory.png "Anzeigen der Anwendungsspeichernutzung")
 
-Der verbesserte Code ist in Visual Studio für Mac in der Projektmappe **after** im [MemoryDemo-Beispiel](https://developer.xamarin.com/samples/monotouch/Profiling/MemoryDemo/) verfügbar.
+Der verbesserte Code ist in Visual Studio für Mac in der Projektmappe **after** im [MemoryDemo-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo) verfügbar.
 
 Dieser Communityblog über [Xamarin.iOS-Garbage Collection](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/) ist hilfreich für den Umgang mit Arbeitsspeicherproblemen mit Xamarin.iOS.
 
@@ -97,5 +97,5 @@ Schließlich wurde die Anwendung erneut überprüft, um sicherzustellen, dass da
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MemoryDemo-Beispiel](https://developer.xamarin.com/samples/monotouch/Profiling/MemoryDemo/)
+- [MemoryDemo-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
 - [Xamarin.iOS-Garbage Collection (Blogbeitrag)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

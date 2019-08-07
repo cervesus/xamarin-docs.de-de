@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 3f51b61cd7dcc3c7b17881b3576aa2c22a45e470
-ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.openlocfilehash: aea82b5946d12bc75aef18953d61cd88e5329329
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64987056"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511390"
 ---
 # <a name="system-requirements"></a>Systemanforderungen
 
@@ -70,7 +70,7 @@ Mobile Xamarin-Anwendungen können über USB oder drahtlos für Tests und das De
 
 Das neueste Xamarin-Release für macOS kann mit [Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation) heruntergeladen werden. Folgen Sie für Windows den [Installationsanweisungen für Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio).
 
-Eine vollständige Liste unserer aktuellen Produktversionen ist auf der [Seite für die aktuellen Releases](https://developer.xamarin.com/releases/current/) verfügbar. Dort sind auch die einzelnen Produktversionen (und Links zu den Anmerkungen zur Version) für unsere Beta- und Alphakanäle erklärt.
+Eine vollständige Liste der aktuellen Produktreleases finden Sie auf der Seite [Neuerungen](~/whats-new/index.yml). Auf dieser Seite sind auch die Versionshinweise verlinkt.
 
 Spezifische Anleitungen für die [Installation](~/get-started/installation/index.md) auf den einzelnen Plattformen finden Sie hier:
 

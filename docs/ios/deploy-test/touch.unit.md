@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f488ebe1df814a476346de15c740093fc6de54df
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 6757f25cb54adc464f7e41a1cd59db8cf6c7d22a
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854690"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511711"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Komponententests bei Xamarin.iOS-Apps
 
@@ -119,11 +119,10 @@ Im Anwendungsausgabefenster in Ihrer IDE können Sie auch die aktuell ausgeführ
 ## <a name="writing-new-tests"></a>Schreiben neuer Tests
 
 NUnitLite ist eine geänderte Version von NUnit mit dem Namen [Touch.Unit](https://github.com/xamarin/Touch.Unit)-Projekt. Es ist ein einfaches Testframework für .NET, das auf den Ideen von [NUnit](http://nunit.com/) basiert und einen Teil seiner Funktionen bietet.
-Es zeichnet sich durch minimalen Ressourcenverbrauch aus und kann so auch auf Plattformen mit eingeschränkten Ressourcen ausgeführt werden, die z.B. für die Entwicklung eingebetteter oder mobiler Lösungen verwendet werden. Sie können [die NUnitLite-API durchsuchen](https://developer.xamarin.com/api/namespace/NUnitLite/), die Ihnen in Xamarin.iOS zur Verfügung steht. Mit dem durch die Komponententestvorlage bereitgestellten grundlegenden Skelett, sind die Methoden [Assert class](https://developer.xamarin.com/api/type/NUnit.Framework.Assert/) Ihr Haupteinstiegspunkt.
+Es zeichnet sich durch minimalen Ressourcenverbrauch aus und kann so auch auf Plattformen mit eingeschränkten Ressourcen ausgeführt werden, die z.B. für die Entwicklung eingebetteter oder mobiler Lösungen verwendet werden. Die NUnitLite-API steht Ihnen in Xamarin.iOS zur Verfügung. Mit dem durch die Komponententestvorlage bereitgestellten grundlegenden Skelett, sind die Methoden [Assert class](xref:NUnit.Framework.Assert) Ihr Haupteinstiegspunkt.
 
 Zusätzlich zu den Methoden der Assert-Klasse sind die Funktionen der Komponententests in die folgenden Namespaces aufgeteilt, die Teil von NUnitLite sind:
 
-- [NUnit.Framework](https://developer.xamarin.com/api/namespace/NUnit.Framework/)
-- [NUnit.Constraints](https://developer.xamarin.com/api/namespace/NUnit.Framework.Constraints/)
-- [NUnitLite](https://developer.xamarin.com/api/namespace/NUnitLite/)
-- [NUniteLite.Runner](https://developer.xamarin.com/api/namespace/NUnitLite.Runner/)
+- [NUnit.Framework](xref:NUnit.Framework)
+- [NUnit.Constraints](xref:NUnit.Framework.Constraints)
+- [NUniteLite.Runner](xref:NUnitLite.Runner)

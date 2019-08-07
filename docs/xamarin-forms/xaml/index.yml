@@ -1,0 +1,129 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: eXtensible Application Markup Language (XAML)
+metadata:
+  title: eXtensible Application Markup Language (XAML)
+  description: 'Erfahren Sie, wie Sie XAML zum Definieren von Xamarin.Forms-Benutzeroberflächen verwenden.'
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 07/31/2019
+abstract:
+  description: 'Erfahren Sie, wie Sie XAML zum Definieren von Xamarin.Forms-Benutzeroberflächen verwenden.'
+sections:
+  - title: Erste Schritte
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: xaml-basics/index.md
+            html: Lernen Sie die Grundlagen der Entwicklung von Xamarin.Forms-Benutzeroberflächen mit XAML kennen.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
+              href: xaml-basics/index.md
+            title: Grundlagen
+          - href: xaml-controls.md
+            html: 'Lernen Sie die Xamarin.Forms-Ansichten kennen, die aus XAML-Dateien referenziert werden können.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_form.svg'
+              href: xaml-controls.md
+            title: Steuerelemente
+          - href: xamlc.md
+            html: 'Erfahren Sie, wie Sie XAML mit dem XAML-Compiler direkt in eine Zwischensprache kompilieren.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_build.svg'
+              href: xamlc.md
+            title: Kompilierung
+          - href: markup-extensions/index.md
+            html: 'Lernen Sie XAML-Markuperweiterungen kennen, die es ermöglichen, Elementattribute aus anderen Quellen als Literal-Textzeichenfolgen festzulegen.'
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: markup-extensions/index.md
+            title: Markuperweiterungen
+  - title: Tools
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: toolbox.md
+            html: 'Erfahren Sie, wie Sie die XAML-Toolbox verwenden, um Xamarin.Forms-Steuerelemente und -Layouts in den XAML-Editor zu ziehen.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_tools.svg'
+              href: toolbox.md
+            title: Werkzeugkasten
+          - href: xaml-previewer/index.md
+            html: 'Erfahren Sie, wie Sie die XAML-Vorschau verwenden, um eine Livevorschau einer Seite neben dem zugehörigen XAML-Markup anzuzeigen.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_responsive.svg'
+              href: xaml-previewer/index.md
+            title: Vorschau
+  - title: Namespaces
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: namespaces.md
+            html: 'Erfahren Sie mehr über die XAML-Namespacesyntax, und finden Sie heraus, wie Sie einen XAML-Namespace deklarieren, um auf einen Typ zuzugreifen.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_namespace.svg'
+              href: namespaces.md
+            title: Namespaces
+          - href: custom-namespace-schemas.md
+            html: 'Erfahren Sie, wie Sie benutzerdefinierte XAML-Namespaceschemas erstellen, die eine Zuordnung zwischen einer benutzerdefinierten URL und mindestens einem CLR-Namespace angeben.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-blocks.svg'
+              href: custom-namespace-schemas.md
+            title: Benutzerdefinierte Namespaceschemas
+          - href: custom-prefix.md
+            html: 'Erfahren Sie, wie Sie ein empfohlenes Präfix angeben, um für die XAML-Verwendung eine Zuordnung zu einem XAML-Namespace zu erstellen.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-automate.svg'
+              href: custom-prefix.md
+            title: Empfohlene Präfixe für den Namespace
+  - title: Weitere Funktionen
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: bindable-properties.md
+            html: 'Erfahren Sie, wie Sie Eigenschaften erstellen, die gebunden werden können, und wie Sie diese aus XAML verwenden.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-edit.svg'
+              href: bindable-properties.md
+            title: Bindbare Eigenschaften
+          - href: attached-properties.md
+            html: 'Erfahren Sie, wie Sie Eigenschaften erstellen, die angefügt werden können, und wie Sie diese aus XAML verwenden.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
+              href: bindable-properties.md
+            title: Angefügte Eigenschaften
+          - href: resource-dictionaries.md
+            html: 'Erfahren Sie, wie Sie XAML-Ressourcen erstellen und in einer Xamarin.Forms-Anwendung wiederverwenden.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_reference.svg'
+              href: resource-dictionaries.md
+            title: Ressourcenverzeichnisse
+          - href: passing-arguments.md
+            html: 'Erfahren Sie, wie Sie XAML verwenden, um Argumente an Konstruktoren zu übergeben, Factorymethoden aufzurufen und den Typ eines generischen Arguments anzugeben.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_learn-about.svg'
+              href: passing-arguments.md
+            title: Übergeben von Argumenten
+          - href: field-modifiers.md
+            html: 'Erfahren Sie mehr über XAML-Feldmodifizierer, die die Zugriffsebene für generierte Felder für benannte XAML-Elemente angeben.'
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: field-modifiers.md
+            title: Feldmodifizierer
+          - href: runtime-load.md
+            html: 'Erfahren Sie, wie Sie XAML zur Laufzeit laden und analysieren.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+              href: runtime-load.md
+            title: Laden von XAML zur Laufzeit

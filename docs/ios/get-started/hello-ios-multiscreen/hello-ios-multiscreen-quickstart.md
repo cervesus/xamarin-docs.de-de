@@ -9,16 +9,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 849c60507fe0ff7b8bf1743be5bbf89ca94b9d6f
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 61bf1c99b90d21d701dd923dcca4a203c96b69a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865568"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657043"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Schnellstart: Hallo, iOS Multiscreen
 
-In diesem Teil der exemplarischen Vorgehensweise wird der Phoneword-Anwendung ein zweiter Bildschirm hinzugefügt mit einer Liste der Telefonnummern, die mit der App angerufen wurden. Die endgültige Anwendung verfügt dann über einen zweiten Bildschirm, auf dem, wie im folgenden Screenshot veranschaulicht, die Anrufliste angezeigt wird:
+In diesem Teil des Tutorials wird der Phoneword-Anwendung eine zweite Anzeige hinzugefügt, auf der die Liste der Telefonnummern aufgeführt wird, die mit der App angerufen wurden. Die endgültige Anwendung verfügt dann über einen zweiten Bildschirm, auf dem, wie im folgenden Screenshot veranschaulicht, die Anrufliste angezeigt wird:
 
 [![](hello-ios-multiscreen-quickstart-images/00.png "Die endgültige Anwendung verfügt dann über eine zweite Anzeige, auf der, wie in diesem Screenshot veranschaulicht, die Anrufliste angezeigt wird")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
@@ -26,7 +26,7 @@ In den [entsprechenden ausführlichen Erläuterungen](~/ios/get-started/hello-io
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-Dieser Leitfaden macht an der Stelle weiter, an der das Dokument „Hallo, iOS“ aufgehört hat. Zuvor müssen Sie den [Schnellstart: Hallo, iOS](~/ios/get-started/hello-ios/index.md) abgeschlossen haben. Die vollständige Version der Phoneword-App kann auf der Seite [Beispiel: Hallo, iOS](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) heruntergeladen werden.
+Dieser Leitfaden macht an der Stelle weiter, an der das Dokument „Hallo, iOS“ aufgehört hat. Zuvor müssen Sie den [Schnellstart: Hallo, iOS](~/ios/get-started/hello-ios/index.md) abgeschlossen haben. Die vollständige Version der Phoneword-App kann auf der Seite [Beispiel: Hallo, iOS](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) heruntergeladen werden.
 
 ::: zone pivot="macos"
 
@@ -34,7 +34,7 @@ Dieser Leitfaden macht an der Stelle weiter, an der das Dokument „Hallo, iOS�
 
 In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein Bildschirm für die Anrufliste hinzugefügt.
 
-1. Öffnen Sie in Visual Studio für Mac die **Phoneword**-Anwendung. Bei Bedarf können Sie [hier](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) die vollständige Phoneword-Anwendung aus dem Leitfaden [Exemplarische Vorgehensweise: Hallo, iOS](~/ios/get-started/hello-ios/index.md) herunterladen.
+1. Öffnen Sie in Visual Studio für Mac die **Phoneword**-Anwendung. Bei Bedarf können Sie [hier](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) die vollständige Phoneword-Anwendung aus dem Leitfaden [Exemplarische Vorgehensweise: Hallo, iOS](~/ios/get-started/hello-ios/index.md) herunterladen.
 
 2. Öffnen Sie im **Projektmappenpad** die Datei **Main.storyboard**:
 
@@ -256,7 +256,7 @@ Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscon
 
     Es gibt hierbei einige Punkte zu beachten:
 
-    - Die Variable `translatedNumber` von der `ViewDidLoad`-Methode wurde zu einer _Variable auf Klassenebene_ verschoben.
+    - Die Variable `translatedNumber` der `ViewDidLoad`-Methode wurde verschoben und ist nun eine _Variable auf Klassenebene_.
     - Der **CallButton**-Code wurde verändert, um gewählte Rufnummern zur Liste der Telefonnummern hinzuzufügen, indem `PhoneNumbers.Add(translatedNumber)` aufgerufen wird.
     - Die `PrepareForSegue`-Methode wurde hinzugefügt.
 
@@ -275,7 +275,7 @@ Herzlichen Glückwunsch, Sie haben die Xamarin.iOS-Multiscreen-Anwendung fertigg
 
 In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein Bildschirm für die Anrufliste hinzugefügt.
 
-1. Öffnen Sie in Visual Studio die **Phoneword**-Anwendung. Bei Bedarf können Sie hier die [vollständige Phoneword-Anwendung](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) aus dem Leitfaden [Exemplarische Vorgehensweise: Hallo, iOS](~/ios/get-started/hello-ios/index.md) herunterladen. Beachten Sie, dass für die Verwendung des iOS-Designers und des iOS-Simulators eine Verbindung mit einem [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) erforderlich ist.
+1. Öffnen Sie in Visual Studio die **Phoneword**-Anwendung. Bei Bedarf können Sie hier die [vollständige Phoneword-Anwendung](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) aus dem Leitfaden [Exemplarische Vorgehensweise: Hallo, iOS](~/ios/get-started/hello-ios/index.md) herunterladen. Beachten Sie, dass für die Verwendung des iOS-Designers und des iOS-Simulators eine Verbindung mit einem [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) erforderlich ist.
 
 2. Beginnen Sie mit der Bearbeitung der Benutzeroberfläche. Öffnen Sie im **Projektmappen-Explorer** die Datei **Main.storyboard**, und stellen Sie sicher, dass **Anzeigen als** auf _iPhone 6_ festgelegt ist:
 
@@ -517,6 +517,6 @@ Die App kann die Navigation jetzt sowohl mithilfe von Storyboard-Segues als auch
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Hallo, iOS (Beispiel)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
+- [Hallo, iOS (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [iOS-Eingaberichtlinien](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS-Bereitstellungsportal](https://developer.apple.com/ios/manage/overview/index.action)

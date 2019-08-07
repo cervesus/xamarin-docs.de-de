@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: f0ad51738e0bbe785773f653b06fe5f582527f0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 722dfbb301d6698ee58d42029c8f6b82ecddc37b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120878"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508994"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android-Umgebung
 
@@ -36,7 +36,7 @@ Kommentare sind Zeilen, die mit `#` beginnen. Leere Zeilen werden ignoriert.
 
 Wenn *key* mit einem Großbuchstaben beginnt, wird *key* als Umgebungsvariable behandelt und **setenv**(3) wird verwendet, um Umgebungsvariablen beim Prozessstart auf den angegebenen *Wert* festzulegen.
 
-Wenn *key* mit einem Kleinbuchstaben beginnt, wird *key* als Android-Systemeigenschaft behandelt, und *value* ist der *Standardwert*: Android-Systemeigenschaften, die das Ausführungsverhalten von Xamarin.Android steuern, werden zuerst vom Android-Systemeigenschaftsspeicher gesucht, und wenn kein Wert vorhanden ist, wird der Wert verwendet, der in der Umgebungsdatei angegeben wurde. Dadurch ist es möglich, `adb shell setprop` zum Überschreiben von Werten zu Diagnosezwecken zu verwenden, die aus der Umgebungsdatei stammen.
+Wenn *key* mit einem Kleinbuchstaben beginnt, wird *key* als Android-Systemeigenschaft behandelt, und *value* ist der *Standardwert*: Android-Systemeigenschaften, die das Ausführungsverhalten von Xamarin.Android steuern, werden zuerst im Speicher für Android-Systemeigenschaften gesucht. Wenn kein Wert vorhanden ist, wird der Wert verwendet, der in der Umgebungsdatei angegeben ist. Dadurch ist es möglich, `adb shell setprop` zum Überschreiben von Werten zu Diagnosezwecken zu verwenden, die aus der Umgebungsdatei stammen.
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android-Umgebungsvariablen
 
@@ -49,7 +49,7 @@ Der Typ mit Assemblyqualifikation, der vom [HttpMessageHandler](https://docs.mic
 
 In Xamarin.Android 6.1 ist diese Umgebungsvariable standardmäßig nicht festgelegt. [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) wird verwendet.
 
-Alternativ kann der Wert `Xamarin.Android.Net.AndroidClientHandler` angegeben werden, um [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/)
+Alternativ kann der Wert `Xamarin.Android.Net.AndroidClientHandler` angegeben werden, um [`java.net.URLConnection`](xref:Java.Net.URLConnection)
 für den Netzwerkzugriff zu verwenden, der *möglicherweise* die Verwendung von TLS 1.2 zulässt, wenn dies von Android unterstützt wird.
 
 In Xamarin.Android 6.1 hinzugefügt.
@@ -90,15 +90,15 @@ Die ist genauso, als würde die Systemeigenschaft `debug.mono.log` `gc` enthalte
 Steuert, welche Zusatzinformationen Xamarin.Android in `adb logcat` erfasst.
 Dabei handelt es sich um eine Zeichenfolge mit Trennzeichen (`,`), die einen der folgenden Werte enthält:
 
-* `all`: Ausgeben *aller* Meldungen. Das ist nur selten sinnvoll, da es auch `lref`-Meldungen einschließt.
-* `assembly`: Ausgeben von `.apk` und Assemblyanalysemeldungen.
-* `gc`: Ausgeben von Meldungen, die mit GC in Verbindung stehen.
-* `gref`: Ausgeben von Meldungen zu globalen JNI-Verweisen.
-* `lref`: Ausgeben von Meldungen zu lokalen JNI-Verweisen.  
-    *Hinweis:* Dadurch wird *sehr viel* an `adb logcat` gesendet.  
+* `all`: *Alle* Meldungen werden ausgegeben. Das ist nur selten sinnvoll, da es auch `lref`-Meldungen einschließt.
+* `assembly`: `.apk` und Assemblyanalysemeldungen werden ausgegeben.
+* `gc`: Meldungen, die mit GC in Verbindung stehen, werden ausgegeben.
+* `gref`: Meldungen zu globalen JNI-Verweisen werden ausgegeben.
+* `lref`: Meldungen zu lokalen JNI-Verweisen werden ausgegeben.  
+    *Hinweis:* Dadurch wird eine *große Anzahl von Einträgen* in `adb logcat` erstellt.  
     In Xamarin.Android 5.1 wird dadurch auch eine `.__override__/lrefs.txt`-Datei erstellt, die *sehr groß* werden kann.  
     Vermeiden Sie dies.
-* `timing`: Ausgeben von Informationen zur zeitlichen Steuerung von Methoden. Dadurch werden auch die Dateien `.__override__/methods.txt` und `.__override__/counters.txt` erstellt.
+* `timing`: Informationen zur zeitlichen Steuerung von Methoden werden ausgegeben. Dadurch werden auch die Dateien `.__override__/methods.txt` und `.__override__/counters.txt` erstellt.
 
 
 ### `debug.mono.max_grefc`
@@ -106,7 +106,7 @@ Dabei handelt es sich um eine Zeichenfolge mit Trennzeichen (`,`), die einen der
 Der Wert der Systemeigenschaft `debug.mono.max_grefc` ist eine ganze Zahl.
 Er *überschreibt* den erkannten maximalen Standard-GREF-Wert für das Zielgerät.
 
-*Hinweis:* Dies kann nur mit `adb shell setprop
+*Hinweis:* Diese Eigenschaft kann nur mit `adb shell setprop
 debug.mono.max_grefc` verwendet werden, da der Wert nicht gleichzeitig mit der Datei **environment.txt** verfügbar ist.
 
 ### `debug.mono.profile`
@@ -131,15 +131,15 @@ Sie entspricht der Option `mono --trace` und verwendet die gleichen Werte. (Weit
 
 Die Systemeigenschaft `debug.mono.wref` ermöglicht das Überschreiben des erkannten schwachen JIN-Verweismechanismus (Weak Reference). Es gibt zwei unterstützte Werte:
 
-* `jni`: Verwenden von schwachen JIN-Verweisen, die von `JNIEnv::NewWeakGlobalRef()` erstellt und von `JNIEnv::DeleteWeakGlobalREf()` gelöscht werden.
-* `java`: Verwenden von globalen JIN-Verweisen, die auf `java.lang.WeakReference`-Instanzen verweisen.
+* `jni`: Schwache JNI-Verweise werden verwendet. Diese werden von `JNIEnv::NewWeakGlobalRef()` erstellt und von `JNIEnv::DeleteWeakGlobalREf()` gelöscht.
+* `java`: Globale JNI-Verweise werden verwendet. Diese verweisen auf `java.lang.WeakReference`-Instanzen.
 
 `java` wird standardmäßig von API-7 bis API-19 (Kit Kat) mit aktiviertem ART verwendet. (API-8 hat `jni`-Verweise hinzugefügt, und ART hat `jni`-Verweise *kaputt gemacht*.)
 
 Diese Systemeigenschaft ist zum Testen und Untersuchen nützlich.
 *Unter normalen Umständen* sollte sie nicht geändert werden.
 
-### <a name="xahttpclienthandlertype"></a>XA\_HTTP\_CLIENT\_HANDLER\_TYPE
+### <a name="xa_http_client_handler_type"></a>XA\_HTTP\_CLIENT\_HANDLER\_TYPE
 
 Diese Umgebungsvariable, die zuerst in Xamarin.Android 6.1 eingeführt wurde, deklariert die `HttpMessageHandler`-Standardimplementierung, die vom `HttpClient` verwendet wird. Standardmäßig ist diese Variable nicht festgelegt, und Xamarin.Android verwendet den `HttpClientHandler`.
 

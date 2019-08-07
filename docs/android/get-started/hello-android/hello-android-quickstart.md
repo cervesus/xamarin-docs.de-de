@@ -9,18 +9,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 71343aa69cc7fa34fb716ea39454e6437a64169f
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: c9f9fb7eecd41c3aeffb7a28042f944c9d6a320b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855080"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644071"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: Schnellstart
 
 _In diesem zweiteiligen Handbuch erstellen Sie Ihre erste Xamarin.Android-Anwendung mit Visual Studio. Außerdem entwickeln Sie ein Verständnis für die grundlegenden Aspekte der Entwicklung von Android-Anwendungen mit Xamarin._
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://developer.xamarin.com/samples/monodroid/Phoneword/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
 
 Sie erstellen eine Anwendung, die eine vom Benutzer eingegebene alphanumerische Telefonnummer in eine numerische Telefonnummer übersetzt und diese dem Benutzer anzeigt. Die endgültige Anwendung sieht wie folgt aus:
 
@@ -72,6 +72,11 @@ Klicken Sie im Dialogfeld **Neue Android-App** auf die Option **Leere App** und 
 
 ## <a name="create-a-layout"></a>Erstellen eines Layouts
 
+> [!TIP]
+> Neuere Releases von Visual Studio unterstützen das Öffnen von XML-Dateien in Android Designer.
+>
+> Sowohl AXML- als auch XML-Dateien werden in Android Designer unterstützt.
+
 Nachdem das neue Projekt erstellt wurde, erweitern Sie den **Ressourcen**-Ordner und dann den **Layout**-Ordner im **Projektmappen-Explorer**.
 Doppelklicken Sie auf **activity_main.axml**, um sie in Android Designer zu öffnen. Dies ist die Layoutdatei für den App-Bildschirm:
 
@@ -83,7 +88,7 @@ Doppelklicken Sie auf **activity_main.axml**, um sie in Android Designer zu öff
 > 1. Statt **activity_main.axml** ist das Layout **content_main.axml**.
 > 2. Das Standardlayout ist `RelativeLayout`. Ändern Sie für die restlichen Schritte auf dieser Seite das Tag `<RelativeLayout>` in `<LinearLayout>`, und fügen Sie dem öffnenden Tag `LinearLayout` ein anderes `android:orientation="vertical"`-Attribut hinzu.
 
-Geben Sie in der **Toolbox** (der Bereich auf der linken Seite) `text` in das Suchfeld ein, und ziehen Sie ein **Text (groß)**-Widget auf die Entwurfsoberfläche (Bereich in der Mitte):
+Geben Sie in der **Toolbox** (der Bereich auf der linken Seite) `text` in das Suchfeld ein, und ziehen Sie ein **Text (groß)** -Widget auf die Entwurfsoberfläche (Bereich in der Mitte):
 
 [![Ein großes Text-Widget hinzufügen](hello-android-quickstart-images/vs/04-large-text-w158-sml.png)](hello-android-quickstart-images/vs/04-large-text-w158.png#lightbox)
 
@@ -91,7 +96,7 @@ Wählen Sie das Steuerelement **Text (Large)** auf der Designoberfläche aus, un
 
 [![Legen Sie große Texteigenschaften fest](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158.png#lightbox)
 
-Ziehen Sie ein **Plain Text**-Widget aus der **Toolbox** auf die Designoberfläche, und platzieren Sie es unterhalb des **Text (Large)**-Widgets. Die Platzierung des Widgets erfolgt erst, wenn Sie den Mauszeiger an eine Stelle im Layout ziehen, die das Widget akzeptieren kann. In den folgenden Screenshots kann das Widget (wie auf der linken Seite gezeigt) nicht platziert werden, bis der Mauszeiger (wie auf der rechten Seite gezeigt) direkt unter das vorherige `TextView`-Element bewegt wird:
+Ziehen Sie ein **Plain Text**-Widget aus der **Toolbox** auf die Designoberfläche, und platzieren Sie es unterhalb des **Text (Large)** -Widgets. Die Platzierung des Widgets erfolgt erst, wenn Sie den Mauszeiger an eine Stelle im Layout ziehen, die das Widget akzeptieren kann. In den folgenden Screenshots kann das Widget (wie auf der linken Seite gezeigt) nicht platziert werden, bis der Mauszeiger (wie auf der rechten Seite gezeigt) direkt unter das vorherige `TextView`-Element bewegt wird:
 
 [![Mauszeiger zeigt an, wo das Widget platziert werden kann](hello-android-quickstart-images/vs/06a-cant-drop-w158-sml.png)](hello-android-quickstart-images/vs/06a-cant-drop-w158.png#lightbox)
 
@@ -277,7 +282,7 @@ Informationen zum Ausführen der App auf einem Android-Gerät finden Sie unter [
 
 Starten Sie Visual Studio für Mac im Ordner **Anwendungen** oder aus **Spotlight**.
 
-Klicken Sie auf **Neues Projekt...**, um ein neues Projekt zu erstellen.
+Klicken Sie auf **Neues Projekt...** , um ein neues Projekt zu erstellen.
 
 Klicken Sie im Dialogfeld **Vorlage für neues Projekt auswählen** auf **Android > App**, und wählen Sie die **Android-App**-Vorlage aus. Klicken Sie auf **Weiter**.
 
@@ -291,6 +296,11 @@ Belassen Sie im Dialogfeld **Configure your new Android App** (Neue Android-App 
 
 ## <a name="create-a-layout"></a>Erstellen eines Layouts
 
+> [!TIP]
+> Neuere Releases von Visual Studio unterstützen das Öffnen von XML-Dateien in Android Designer.
+>
+> Sowohl AXML- als auch XML-Dateien werden in Android Designer unterstützt.
+
 Nachdem das neue Projekt erstellt wurde, erweitern Sie den **Ressourcen**-Ordner und dann den **Layout**-Ordner im **Projektmappenpad**.
 Doppelklicken Sie auf **Main.axml**, um sie in Android Designer zu öffnen. Dies ist die Layoutdatei für den Bildschirm, wenn diese im Android Designer angezeigt wird:
 
@@ -298,15 +308,15 @@ Doppelklicken Sie auf **Main.axml**, um sie in Android Designer zu öffnen. Dies
 
 Wählen Sie **Hello World, Click Me!** (Hallo, Welt! Hier klicken!) aus **Schaltfläche** auf der Entwurfsoberfläche. Klicken Sie auf **Löschen**, um sie zu entfernen. 
 
-Geben Sie in der **Toolbox** (der Bereich auf der rechten Seite) `text` in das Suchfeld ein, und ziehen Sie ein **Text (groß)**-Widget auf die Entwurfsoberfläche (Bereich in der Mitte):
+Geben Sie in der **Toolbox** (der Bereich auf der rechten Seite) `text` in das Suchfeld ein, und ziehen Sie ein **Text (groß)** -Widget auf die Entwurfsoberfläche (Bereich in der Mitte):
 
 [![Ein großes Text-Widget hinzufügen](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png#lightbox)
 
-Wählen Sie das **Text (groß)**-Widget auf der Entwurfsoberfläche aus, und verwenden Sie den **Eigenschaften**-Bereich, um die `Text`-Eigenschaft des **Text (groß)**-Widgets in `Enter a Phoneword:` zu ändern, wie hier gezeigt:
+Wählen Sie das **Text (groß)** -Widget auf der Entwurfsoberfläche aus, und verwenden Sie den **Eigenschaften**-Bereich, um die `Text`-Eigenschaft des **Text (groß)** -Widgets in `Enter a Phoneword:` zu ändern, wie hier gezeigt:
 
 [![Festlegen großer Text-Widgeteigenschaften](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
 
-Ziehen Sie danach ein **Klartext**-Widget aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie es unterhalb des **Text (groß)**-Widgets. Beachten Sie, dass Sie das Suchfeld zum Auffinden von Widgets nach Namen verwenden können:
+Ziehen Sie danach ein **Klartext**-Widget aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie es unterhalb des **Text (groß)** -Widgets. Beachten Sie, dass Sie das Suchfeld zum Auffinden von Widgets nach Namen verwenden können:
 
 [![Klartext-Widget hinzufügen](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
 
@@ -525,4 +535,4 @@ Jetzt ist es an der Zeit, sich die Tools und Fertigkeiten, die Sie gerade gelern
 ## <a name="related-links"></a>Verwandte Links
 
 - [Xamarin Android-App-Symbole (ZIP)](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)
-- [Phoneword (Beispiel)](https://developer.xamarin.com/samples/monodroid/Phoneword)
+- [Phoneword (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)

@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 3d34ce3d5cb6e8e4931eafcc7cd82d141f5db8d7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2595ff23dcc0688c141f943d4ea61e13c970b7aa
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670180"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509576"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: Ausführliche Erläuterungen
 
@@ -32,7 +32,7 @@ Dieser Leitfaden befasst sich mit folgenden Themen:
 
 - **Grundlagen zu Apps und Architektur**: Einführung in Aktivitäten, das Android-Manifest und die Grundlagen der Android-Entwicklung
 
-- **Benutzeroberfläche (User Interface, UI)**: Erstellen von Benutzeroberflächen mit dem Android Designer
+- **Benutzeroberfläche (User Interface, UI)** : Erstellen von Benutzeroberflächen mit dem Android Designer
 
 - **Aktivitäten und Aktivitätslebenszyklus**: Eine Einführung in den Aktivitätslebenszyklus und das Schreiben der Benutzeroberfläche in Code
 
@@ -47,7 +47,7 @@ Dieser Leitfaden befasst sich mit folgenden Themen:
 
 - **Grundlagen zu Apps und Architektur**: Einführung in Aktivitäten, das Android-Manifest und die Grundlagen der Android-Entwicklung
 
-- **Benutzeroberfläche (User Interface, UI)**: Erstellen von Benutzeroberflächen mit dem Android Designer
+- **Benutzeroberfläche (User Interface, UI)** : Erstellen von Benutzeroberflächen mit dem Android Designer
 
 - **Aktivitäten und Aktivitätslebenszyklus**: Eine Einführung in den Aktivitätslebenszyklus und das Schreiben der Benutzeroberfläche in Code
 
@@ -153,6 +153,11 @@ In den nächsten Abschnitten werden die Beziehungen zwischen den verschiedenen T
 
 ## <a name="user-interface"></a>Benutzeroberfläche
 
+> [!TIP]
+> Neuere Releases von Visual Studio unterstützen das Öffnen von XML-Dateien in Android Designer.
+>
+> Sowohl AXML- als auch XML-Dateien werden in Android Designer unterstützt.
+
 ::: zone pivot="windows"
 
 **activity_main.axml** ist die Layoutdatei der Benutzeroberfläche für den ersten Bildschirm in der Anwendung. Die Endung „.axml“ gibt an, dass es sich dabei um eine Android Designer-Datei handelt (AXML steht für *Android XML*). Der Name *Main* ist aus Sicht von Android willkürlich &ndash; die Layoutdatei kann auch anders benannt werden. Wenn Sie **activity_main.axml** in der IDE öffnen, wird der visuelle Editor (*Android Designer*) für Android-Layoutdateien aufgerufen:
@@ -193,7 +198,7 @@ Alles, was auf der Entwurfsoberfläche definiert ist, wird für Xamarin.Android 
 
 ::: zone-end
 
-Dieser XML-Quellcode sollte **Text (Large)**, **Plain Text** und zwei **Button**-Elemente enthalten. Weitere Informationen zum Android Designer finden Sie im Xamarin Android-Leitfaden [Designer Overview (Übersicht über den Designer)](~/android/user-interface/android-designer/index.md).
+Dieser XML-Quellcode sollte vier Steuerelemente enthalten: zwei **TextView**-Elemente, ein **EditText**-Element und ein **Button**-Element. Weitere Informationen zum Android Designer finden Sie im Xamarin Android-Leitfaden [Designer Overview (Übersicht über den Designer)](~/android/user-interface/android-designer/index.md).
 
 Die Tools und Konzepte hinter dem visuellen Teil der Benutzeroberfläche sind nun abgedeckt. Nun ist es an der Zeit, sich den Code anzusehen, der die Benutzeroberfläche steuert, während die Aktivitäten und der Aktivitätslebenszyklus erläutert werden.
 
@@ -207,7 +212,7 @@ In diesem Abschnitt wird die `Activity`-Klasse eingeführt, der Aktivitätsleben
 
 Die Anwendung **Phoneword** besitzt nur einen Bildschirm (Aktivität). Die `MainActivity`-Klasse steuert den Bildschirm und befindet sich in der Datei **MainActivity.cs**. Der Name `MainActivity` hat keine besondere Bedeutung in Android. Obwohl die erste Aktivität in einer Anwendung üblicherweise `MainActivity` benannt wird, ist es für Android unerheblich, wenn diese anders benannt wird.
 
-Wenn Sie **MainActivity.cs** öffnen, können Sie sehen, dass die `MainActivity`-Klasse eine *Unterklasse* der `Activity`-Klasse ist und dass die Aktivität mit dem Attribut [Activity](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) versehen ist:
+Wenn Sie **MainActivity.cs** öffnen, können Sie sehen, dass die `MainActivity`-Klasse eine *Unterklasse* der `Activity`-Klasse ist und dass die Aktivität mit dem Attribut [Activity](xref:Android.App.ActivityAttribute) versehen ist:
 
 ```csharp
 [Activity (Label = "Phone Word", MainLauncher = true)]
@@ -404,7 +409,7 @@ Weitere Informationen zu Symbolgrößen und Anforderungen finden Sie im Leitfade
 _Google Play Services_ ist eine Reihe von Add-On-Bibliotheken, die es Android-Entwicklern ermöglichen, von den neuesten Funktionen von Google zu profitieren, z.B. von Google Maps, Google Cloud Messaging und der In-App-Abrechnung.
 Zuvor wurden die Bindungen für alle Google Play Services-Bibliotheken von Xamarin in Form eines einzelnen Pakets bereitgestellt. Ab Visual Studio für Mac ist ein neues Dialogfeld für Projekte verfügbar, um auszuwählen, welche Google Play Services-Pakete in Ihre App eingeschlossen werden sollen.
 
-Klicken Sie mit der rechten Maustaste auf den Knoten **Pakete** in Ihrer Projektstruktur, und klicken Sie auf **Google Play-Dienst hinzufügen...**:
+Klicken Sie mit der rechten Maustaste auf den Knoten **Pakete** in Ihrer Projektstruktur, und klicken Sie auf **Google Play-Dienst hinzufügen...** :
 
 [![Hinzufügen von Google Play-Diensten](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 

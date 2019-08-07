@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: f3fb083457fa1fbf6590eb53eea504257e93ecc6
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: d59d4fc3ff9df3ea883ab4d5845da193e6cb8c51
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617773"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643786"
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin für Java-Entwickler
 
@@ -43,7 +43,7 @@ Sowohl Java als auch C# werden zu einer Zwischensprache kompiliert, die in einer
 Beide Sprachen verwenden eine Klassenhierarchie mit nur einem Stamm. Wie Java unterstützt auch C# nur die einfache Vererbung und erlaubt keine globalen Methoden.
 In beiden Sprachen werden Objekte mit dem Schlüsselwort `new` auf dem Heap erstellt, und für Objekte wird Garbage Collection ausgeführt, wenn sie nicht mehr verwendet werden. Beide Sprachen bieten formale Ausnahmebehandlung mit `try`/`catch`-Semantik. Beide bieten Unterstützung für die Verwaltung und Synchronisierung von Threads.
 
-Es gibt jedoch auch zahlreiche Unterschiede zwischen Java und C#. Zum Beispiel:
+Es gibt jedoch auch zahlreiche Unterschiede zwischen Java und C#. Beispiel:
 
 -   Java unterstützt keine implizit typisierten lokalen Variablen (C# unterstützt das Schlüsselwort `var`).
 
@@ -74,7 +74,7 @@ C# bringt viele wichtige Features in Xamarin.Android ein, die zurzeit für Java-
 
 -   [Eigenschaften](#properties) &ndash; Mit dem Eigenschaftensystem von C# können Sie sicher und direkt auf Membervariablen zugreifen, ohne Setter- und Getter-Methoden schreiben zu müssen.
 
--   [Lambdaausdrücke](#lambdas) &ndash; In C# können Sie anonyme Methoden (auch als *Lambdaausdrücke* bezeichnet) verwenden, um Ihre Funktionalität prägnanter und effizienter auszudrücken. Sie können den Mehraufwand für das Schreiben von Objekten vermeiden, die nur ein Mal verwendet werden, und Sie können den lokalen Zustand an eine Methode übergeben, ohne Parameter hinzufügen zu müssen.
+-   [Lambdaausdrücke](#lambdas): In C# können Sie anonyme Methoden (auch als *Lambdaausdrücke* bezeichnet) verwenden, um eine bestimmte Logik prägnanter und effizienter auszudrücken. Sie können den Mehraufwand für das Schreiben von Objekten vermeiden, die nur ein Mal verwendet werden, und Sie können den lokalen Zustand an eine Methode übergeben, ohne Parameter hinzufügen zu müssen.
 
 -   [Ereignisbehandlung](#events) &ndash; C# bietet Sprachunterstützung für *ereignisgesteuerte Programmierung*, bei der ein Objekt registriert werden kann, um benachrichtigt zu werden, wenn ein Ereignis von Interesse eintritt. Das Schlüsselwort `event` definiert einen Multicast-Broadcast-Mechanismus, den eine Publisher-Klasse verwenden kann, um Ereignisabonnenten zu benachrichtigen.
 
@@ -148,7 +148,7 @@ Diese Anweisungen importieren Funktionalität aus den Namespaces `System`, `Andr
 
 Sowohl Java als auch C# unterstützen *Generics*. Dabei handelt es sich um Platzhalter, mit denen Sie verschiedene Typen zur Kompilierungszeit einbinden können. Generics funktionieren jedoch in C# etwas anders. In Java stellt [Type Erasure](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) Typinformationen nur zur Kompilierungszeit, nicht aber zur Laufzeit zur Verfügung. Im Gegensatz dazu bietet die .NET-CLR (Common Language Runtime) explizite Unterstützung für generische Typen. Dies bedeutet, dass C# zur Laufzeit Zugriff auf Typinformationen besitzt. In der täglichen Xamarin.Android-Entwicklung ist die Wichtigkeit dieser Unterscheidung häufig nicht offensichtlich, aber wenn Sie [Reflektion](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection) verwenden, sind Sie von diesem Feature abhängig, um zur Laufzeit auf Typinformationen zuzugreifen.
 
-In Xamarin.Android wird Ihnen auffallen, dass häufig die generische Methode `FindViewById` verwendet wird, um einen Verweis auf ein Layoutsteuerelement zu erhalten. Diese Methode akzeptiert einen generischen Typparameter, der den Typ des Steuerelements angibt, der nachgeschlagen werden soll. Zum Beispiel:
+In Xamarin.Android wird Ihnen auffallen, dass häufig die generische Methode `FindViewById` verwendet wird, um einen Verweis auf ein Layoutsteuerelement zu erhalten. Diese Methode akzeptiert einen generischen Typparameter, der den Typ des Steuerelements angibt, der nachgeschlagen werden soll. Beispiel:
 
 ```csharp
 TextView label = FindViewById<TextView> (Resource.Id.Label);
@@ -174,7 +174,7 @@ Sowohl Java als auch C# verwenden sehr ähnliche objektorientierte Programmierid
 
 -   Alle Klasseninstanzen werden auf dem Heap über den `new`-Operator erstellt.
 
--   Da beide Sprachen Garbage Collection verwenden, besteht die Möglichkeit, nicht verwendete Objekte explizit freizugeben (d.h. es gibt kein Schlüsselwort `delete` wie in C++).
+-   Da beide Sprachen Garbage Collection verwenden, gibt es keine Möglichkeit, nicht verwendete Objekte explizit freizugeben (es gibt also kein Schlüsselwort wie `delete`, das in C++ verwendet wird).
 
 -   Sie können Klassen durch Vererbung erweitern, und beide Sprachen erlauben nur eine einzige Basisklasse pro Typ.
 
@@ -228,7 +228,7 @@ Weitere Informationen zu C#-Klassendefinitionen finden Sie in den Artikeln [Klas
 In Java werden häufig Mutatormethoden (Setter) und Inspektormethoden (Getter) verwendet, um zu steuern, wie Änderungen an Klassenmembern vorgenommen werden, während diese Member vor externem Code verborgen und geschützt werden. Beispielsweise stellt die Android-Klasse `TextView` die `getText`- und `setText`-Methoden zur Verfügung. C# bietet einen ähnlichen, aber direkteren Mechanismus, der als *Eigenschaften* bezeichnet wird.
 Benutzer einer C#-Klasse können auf eine Eigenschaft auf die gleiche Weise zugreifen wie auf ein Feld, aber jeder Zugriff führt tatsächlich zu einem Methodenaufruf, der für den Aufrufer transparent ist. Diese Methode „hinter den Kulissen“ kann Nebenwirkungen wie das Festlegen anderer Werte, das Ausführen von Konvertierungen oder das Ändern des Objektzustands implementieren.
 
-Eigenschaften werden häufig für den Zugriff auf und die Änderung von UI-Objektmembern (Benutzeroberfläche) verwendet. Zum Beispiel:
+Eigenschaften werden häufig für den Zugriff auf und die Änderung von UI-Objektmembern (Benutzeroberfläche) verwendet. Beispiel:
 
 ```csharp
 int width = rulerView.MeasuredWidth;
@@ -327,7 +327,7 @@ In C# werden Lambdaausdrücke mit dem Operator `=>` erstellt, wie hier gezeigt:
 };
 ```
 
-In Xamarin.Android werden Lambdaausdrücke häufig zum Definieren von Ereignishandlern verwendet. Zum Beispiel:
+In Xamarin.Android werden Lambdaausdrücke häufig zum Definieren von Ereignishandlern verwendet. Beispiel:
 
 ```csharp
 button.Click += (sender, args) => {
@@ -372,7 +372,7 @@ startActivityButton.Click += delegate {
 
 ```
 
-Allerdings können Sie auch einen Lambdaausdruck verwenden, um sich für Ereignisse zu registrieren, und das Schlüsselwort `delegate` ganz auslassen. Zum Beispiel:
+Allerdings können Sie auch einen Lambdaausdruck verwenden, um sich für Ereignisse zu registrieren, und das Schlüsselwort `delegate` ganz auslassen. Beispiel:
 
 ```csharp
 startActivityButton.Click += (sender, e) => {
@@ -433,7 +433,7 @@ Weitere Informationen zur Xamarin-Unterstützung von asynchronen Programmierfeat
 
 Viele Sprachschlüsselwörter, die in Java verwendet werden, werden auch in C# verwendet. Es gibt auch eine Reihe von Java-Schlüsselwörtern, die ein äquivalentes, aber anders benanntes Gegenstück in C# haben, wie in der folgenden Tabelle aufgeführt:
 
-|Java|C#|Beschreibung |
+|Java|C#|BESCHREIBUNG|
 |---|---|---|
 |`boolean`|[bool](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/bool)|Wird zum Deklarieren der booleschen Werte „true“ und „false“ verwendet.|
 |`extends`|`:`|Wird der Klasse und den Schnittstellen, von denen geerbt werden soll, vorangestellt.|
@@ -448,9 +448,9 @@ Viele Sprachschlüsselwörter, die in Java verwendet werden, werden auch in C# v
 |`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|Umschließt einen wichtigen Abschnitt des Codes durch den Abruf und die Freigabe von Sperren.|
 
 
-Außerdem gibt es viele Schlüsselwörter, die einzigartig in C# sind und kein Gegenstück in Java besitzen. Xamarin.Android-Code verwendet häufig die folgenden C#-Schlüsselwörter (diese Tabelle ist nützlich, um sich auf sie zu beziehen, wenn Sie Xamarin.Android-[Beispielcode](https://developer.xamarin.com/samples/android/all/) lesen):
+Außerdem gibt es viele Schlüsselwörter, die einzigartig in C# sind und kein Gegenstück in Java besitzen. Xamarin.Android-Code verwendet häufig die folgenden C#-Schlüsselwörter (diese Tabelle ist nützlich, um sich auf sie zu beziehen, wenn Sie Xamarin.Android-[Beispielcode](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android) lesen):
 
-|C#|Beschreibung |
+|C#|BESCHREIBUNG|
 |---|---|
 |[as](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/as)|Führt Konvertierungen zwischen kompatiblen Verweistypen oder Nullwerte zulassenden Typen aus.|
 |[async](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)|Gibt an, dass eine Methode oder ein Lambdaausdruck asynchron ist.|
@@ -473,7 +473,7 @@ Außerdem gibt es viele Schlüsselwörter, die einzigartig in C# sind und kein G
 |[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|Ein Werttyp, der eine Gruppe in Beziehung stehender Variablen kapselt.|
 |[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|Ruft den Typ eines Objekts ab.|
 |[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|Deklariert eine implizit typisierte lokale Variable.|
-|[Wert](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|Verweist auf den Wert, den der Clientcode einer Eigenschaft zuweisen möchte.|
+|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|Verweist auf den Wert, den der Clientcode einer Eigenschaft zuweisen möchte.|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|Ermöglicht das Überschreiben einer Methode in einer abgeleiteten Klasse.|
 
 
