@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 03b9c5f903cea67032a9560754a32ac552635e92
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 73e312a1af56091a7e579d3fcbcea810ee0efb1e
+ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653876"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68820968"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Schwenkbewegungen
 
@@ -48,9 +48,6 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
   // Handle the pan
 }
 ```
-
-> [!NOTE]
-> Für richtiges Schwenken unter Android ist mindestens das [Xamarin.Forms 2.1.0-pre1-NuGet-Paket](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1) erforderlich.
 
 ## <a name="creating-a-pan-container"></a>Erstellen eines Schwenkcontainers
 
@@ -147,7 +144,7 @@ Diese Methode aktualisiert den sichtbaren Inhalt des umschlossenen Benutzeroberf
 Wenn Inhalt in einem Element geschwenkt wird, das nicht den gesamten Bildschirm einnimmt, können die Höhe und Breite des Anzeigebereichs von den Eigenschaften [`Height`](xref:Xamarin.Forms.VisualElement.Height) und [`Width`](xref:Xamarin.Forms.VisualElement.Width) des Elements abgerufen werden.
 
 > [!NOTE]
-> Das Anzeigen von Bildern mit hoher Auflösung kann den Speicherbedarf einer App erheblich erhöhen. Sie sollten daher nur erstellt werden, wenn dies erforderlich ist. Sie sollten freigegeben werden, sobald die App sie nicht mehr benötigt. Weitere Informationen finden Sie unter [Optimieren von Bildressourcen](~/xamarin-forms/deploy-test/performance.md#optimizeimages).
+> Das Anzeigen von Bildern mit hoher Auflösung kann den Speicherbedarf einer App erheblich erhöhen. Sie sollten daher nur erstellt werden, wenn dies erforderlich ist. Sie sollten freigegeben werden, sobald die App sie nicht mehr benötigt. Weitere Informationen finden Sie unter [Optimieren von Bildressourcen](~/xamarin-forms/deploy-test/performance.md#optimize-image-resources).
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: 365e580d7d1182cca55a53a714ebb2b9be45ce35
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 25fcf40f7ad94bf5c2ba03fca7413fcaaedba09e
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650734"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739236"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms-Shell-Registerkarten
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Wenn das Navigationsmuster für eine Anwendung einen Flyout beinhaltet, ist die nächste Navigationsebene in der Anwendung die untere Registerkartenleiste. Außerdem kann die untere Registerkartenleiste als oberste Ebene der Navigation betrachtet werden, wenn das Flyout geschlossen ist.
 
@@ -290,6 +290,6 @@ Darüber hinaus können Registerkarten auch mit Cascading Stylesheets (CSS) form
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Navigation in der Xamarin.Forms-Shell](navigation.md)
 - [Spezifische Eigenschaften der Xamarin.Forms CSS-Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
