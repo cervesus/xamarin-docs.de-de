@@ -1,5 +1,5 @@
 ---
-title: Mithilfe der Gesichtserkennungs-API zur Erkennung von Emotionen
+title: Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
 description: Die Gesichtserkennungs-API Gesichtsausdrücke in einem Bild als Eingabe akzeptiert und gibt die Daten, die Vertrauensgrade auf eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit der Gesichtserkennungs-API zur Erkennung von Emotionen, um eine Xamarin.Forms-Anwendung zu bewerten.
 ms.prod: xamarin
 ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
@@ -7,22 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 6f03ae1030ef4a69b15c5e219785eee12c4e603b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05dfa69a70bcd43b66cf6b572aee7d5720a81d76
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656564"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869392"
 ---
-# <a name="emotion-recognition-using-the-face-api"></a>Mithilfe der Gesichtserkennungs-API zur Erkennung von Emotionen
+# <a name="perceived-emotion-recognition-using-the-face-api"></a>Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Die Gesichtserkennungs-API Gesichtsausdrücke in einem Bild als Eingabe akzeptiert und gibt die Daten, die Vertrauensgrade auf eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit der Gesichtserkennungs-API zur Erkennung von Emotionen, um eine Xamarin.Forms-Anwendung zu bewerten._
+Der Gesichtserkennungs-API kann eine Emotions Erkennung durchführen, um Ärger, Verachtung, Verschleierung, Angst, Glück, neutral, traurig und überraschend in einem Gesichtsausdruck zu erkennen, der auf wahrgenommenen Anmerkungen durch menschliche Programmierer basiert. Es ist jedoch wichtig zu beachten, dass Gesichtsausdrücke nicht notwendigerweise die internen Zustände von Personen darstellen.
 
-## <a name="overview"></a>Übersicht
-
-Die Gesichtserkennungs-API können Erkennung von Emotionen zu erkennen, Wut, verachtung, ekel, Angst, Neutralität, traurigkeit und Überraschung, im Gesichtsausdrücke ausführen. Diese Emotionen werden allgemein und kulturübergreifend über die gleichen grundlegenden gesichtsausdrücken kommuniziert. Sowie eine Emotion-Ergebnis für Gesichtsausdrücke zurückgegeben, können der Gesichtserkennungs-API auch die gibt ein umgebendes Feld für die erkannten Gesichtern. Beachten Sie, dass ein API-Schlüssel abgerufen werden muss, um die Gesichtserkennungs-API zu verwenden. Dadurch erhalten Sie unter [Cognitive Services versuchen](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+Zusätzlich zum Zurückgeben eines Emotions Ergebnisses für einen Gesichtsausdruck kann die Gesichtserkennungs-API auch ein Begrenzungsfeld für erkannte Gesichter zurückgeben. Beachten Sie, dass ein API-Schlüssel abgerufen werden muss, um die Gesichtserkennungs-API zu verwenden. Dadurch erhalten Sie unter [Cognitive Services versuchen](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
 
 Zur Erkennung von Emotionen kann über eine Clientbibliothek und über eine REST-API ausgeführt werden. Dieser Artikel konzentriert sich auf die zur Erkennung von Emotionen über die REST-API ausführen. Weitere Informationen über die REST-API finden Sie unter [Gesichtserkennungs-REST-API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
@@ -44,7 +42,7 @@ public FaceRecognitionService()
 
 Fehler beim Übergeben eines gültigen API-Schlüssels, der Gesichtserkennungs-API führt zu einem Fehler 401-Antwort.
 
-## <a name="performing-emotion-recognition"></a>Ausführen des zur Erkennung von Emotionen
+## <a name="perform-emotion-recognition"></a>Durchführen der Emotions Erkennung
 
 Zur Erkennung von Emotionen wird durchgeführt, indem eine POST-Anforderung mit einem Bild an der `detect` -API zu `https://[location].api.cognitive.microsoft.com/face/v1.0`, wobei `[location]]` ist die Region, die Sie verwendet, um Ihren API-Schlüssel abzurufen. Die mit optionalen Anforderungsparameter sind:
 
@@ -81,7 +79,7 @@ Diese Methode generiert einen Anforderungs-URI und sendet dann die Anforderung a
 > [!NOTE]
 > Sie müssen die gleiche Region in Ihren Gesichtserkennungs-API-aufrufen, als Sie zum Abrufen Ihrer Abonnementschlüssel verwenden. Z. B., wenn Sie Ihre Abonnementschlüssel aus erhalten die `westus` , der Endpunkt der gesichtserkennungs-Erkennung werden `https://westus.api.cognitive.microsoft.com/face/v1.0/detect`.
 
-### <a name="sending-the-request"></a>Senden der Anforderung
+### <a name="send-the-request"></a>Anforderung senden
 
 Die `SendRequestAsync` Methode macht die POST-Anforderung der Gesichtserkennungs-API und gibt das Ergebnis als eine `Face` Array:
 
@@ -132,7 +130,7 @@ Anschließend wird die POST-Anforderung an gesendet `detect` API. Die Antwort wi
 
 Die `detect` API sendet HTTP-Statuscode 200 (OK) in der Antwort angegeben, dass die Anforderung gültig ist, was bedeutet, dass die Anforderung erfolgreich war, und dass die angeforderte Informationen in der Antwort ist. Eine Liste der möglichen Fehlerantworten, finden Sie unter [Gesichtserkennungs-REST-API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
-### <a name="processing-the-response"></a>Verarbeiten der Antwort
+### <a name="process-the-response"></a>Verarbeiten der Antwort
 
 Die API-Antwort wird im JSON-Format zurückgegeben. Die folgenden JSON-Daten zeigt eine typische Antwort, die erfolgreich-Nachricht, die die von der beispielanwendung angeforderten Daten bereitstellt:
 
@@ -173,10 +171,6 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 Der folgende Screenshot zeigt das Ergebnis des Prozesses Emotionen erkennen, in der beispielanwendung:
 
 ![](emotion-recognition-images/emotion-recognition.png "Zur Erkennung von Emotionen")
-
-## <a name="summary"></a>Zusammenfassung
-
-In diesem Artikel erläutert, wie Sie mit der Gesichtserkennungs-API zur Erkennung von Emotionen, um eine Xamarin.Forms-Anwendung zu bewerten. Die Gesichtserkennungs-API Gesichtsausdrücke in einem Bild als Eingabe akzeptiert und gibt die Daten, die die Zuverlässigkeit der über eine Bandbreite von Emotionen für jedes Gesicht im Bild enthalten.
 
 ## <a name="related-links"></a>Verwandte Links
 

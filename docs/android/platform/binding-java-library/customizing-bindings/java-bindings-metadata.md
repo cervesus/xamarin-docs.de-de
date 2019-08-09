@@ -1,32 +1,32 @@
 ---
 title: Metadaten für Java-Bindungen
-description: C#Code in Xamarin.Android ruft Java-Bibliotheken über Bindungen, die einen Mechanismus, der die Details auf niedriger Ebene abstrahiert, die in Java Native Interface (JNI) angegeben werden. Xamarin.Android bietet ein Tool, das diese Bindungen generiert werden. Dieser Tools können die Developer-Steuerelement wie eine Bindung erstellt wird, mithilfe von Metadaten, die Prozeduren, z. B. das Ändern von Namespaces und Umbenennen von Elementen ermöglicht. In diesem Dokument wird erläutert, wie Metadaten funktioniert, werden die Attribute aufgeführt, dass Metadaten unterstützt, und erläutert, wie Bindungsprobleme zu beheben, indem Sie diese Metadaten zu ändern.
+description: C#Code in xamarin. Android ruft Java-Bibliotheken über Bindungen auf, bei denen es sich um einen Mechanismus handelt, der die in Java Native Interface (JNI) angegebenen Low-Level-Details abstrahiert. Xamarin. Android stellt ein Tool bereit, das diese Bindungen generiert. Mit diesem Tool kann der Entwickler steuern, wie eine Bindung mithilfe von Metadaten erstellt wird, die Prozeduren wie das Ändern von Namespaces und das Umbenennen von Membern ermöglicht. In diesem Dokument wird erläutert, wie Metadaten funktionieren, fasst die von Metadaten unterstützten Attribute zusammen und erläutert, wie Bindungsprobleme durch Ändern dieser Metadaten gelöst werden.
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 06a7a3b00934b7a2f3eeb4fcfa6fc90071901ba0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f0f15647e439381c2aa291234b444d668d1b63d0
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60955660"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869357"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
-_C#Code in Xamarin.Android ruft Java-Bibliotheken über Bindungen, die einen Mechanismus, der die Details auf niedriger Ebene abstrahiert, die in Java Native Interface (JNI) angegeben werden. Xamarin.Android bietet ein Tool, das diese Bindungen generiert werden. Dieser Tools können die Developer-Steuerelement wie eine Bindung erstellt wird, mithilfe von Metadaten, die Prozeduren, z. B. das Ändern von Namespaces und Umbenennen von Elementen ermöglicht. In diesem Dokument wird erläutert, wie Metadaten funktioniert, werden die Attribute aufgeführt, dass Metadaten unterstützt, und erläutert, wie Bindungsprobleme zu beheben, indem Sie diese Metadaten zu ändern._
+_C#Code in xamarin. Android ruft Java-Bibliotheken über Bindungen auf, bei denen es sich um einen Mechanismus handelt, der die in Java Native Interface (JNI) angegebenen Low-Level-Details abstrahiert. Xamarin. Android stellt ein Tool bereit, das diese Bindungen generiert. Mit diesem Tool kann der Entwickler steuern, wie eine Bindung mithilfe von Metadaten erstellt wird, die Prozeduren wie das Ändern von Namespaces und das Umbenennen von Membern ermöglicht. In diesem Dokument wird erläutert, wie Metadaten funktionieren, fasst die von Metadaten unterstützten Attribute zusammen und erläutert, wie Bindungsprobleme durch Ändern dieser Metadaten gelöst werden._
 
 
 ## <a name="overview"></a>Übersicht
 
-Eine xamarin.Android-Anwendung **Java Bindungsbibliothek** versucht, den Großteil der Arbeit erforderlich, für die Bindung einer vorhandenen Android-Bibliothek mithilfe eines Tools, auch bezeichnet als automatisieren die _Bindungen Generator_. Beim Binden einer Java-Bibliothek Xamarin.Android überprüfen Sie die Java-Klassen und generiert eine Liste mit allen Paketen, Typen und Member werden die gebunden werden soll. Diese Liste der APIs befindet sich in einer XML-Datei, die finden Sie unter  **\{Projekt directory}\obj\Release\api.xml** für eine **Version** erstellen und zur  **\{Projekt Directory}\obj\Debug\api.XML** für eine **DEBUGGEN** erstellen.
+Eine xamarin. Android- **Java-Bindungs Bibliothek** versucht, einen Großteil der Arbeit zu automatisieren, die erforderlich ist, um eine vorhandene Android-Bibliothek mithilfe eines Tools zu binden, das manchmal als _Bindungs Generator_bezeichnet wird. Beim Binden einer Java-Bibliothek prüft xamarin. Android die Java-Klassen und generiert eine Liste aller Pakete, Typen und Member, die gebunden werden sollen. Diese Liste der APIs wird in einer XML-Datei gespeichert, die im  **\{Projektverzeichnis} \obj\release\api.XML** für einen **Releasebuild** und im  **\{Projektverzeichnis} \obj\debug\api.XML** für einen **Debugbuild** zu finden ist.
 
-![Speicherort der Datei im Ordner "Obj/Debug" api.xml](java-bindings-metadata-images/java-bindings-metadata-01.png)
+![Speicherort der Datei "API. xml" im Ordner "obj/Debug"](java-bindings-metadata-images/java-bindings-metadata-01.png)
 
-Der Generator Bindungen verwenden die **api.xml** Datei als Richtlinie zum Generieren von erforderlichen C# Wrapperklassen. Der Inhalt dieser XML-Datei ist eine Variation des Google _Android Open Source-Projekt_ Format.
-Der folgende Codeausschnitt zeigt ein Beispiel für den Inhalt der **api.xml**:
+Der Bindungs Generator verwendet die **API. XML** -Datei als Richtlinie zum Generieren der erforderlichen C# Wrapper Klassen. Der Inhalt dieser XML-Datei ist eine Variation des Android- _Open-Source-Projekt_ Formats von Google.
+Der folgende Code Ausschnitt ist ein Beispiel für den Inhalt von " **API. XML**":
 
 ```xml
 <api>
@@ -46,44 +46,44 @@ Der folgende Codeausschnitt zeigt ein Beispiel für den Inhalt der **api.xml**:
 </api>
 ```
 
-In diesem Beispiel **api.xml** deklariert eine Klasse in der `android` Paket mit dem Namen `Manifest` , reicht die `java.lang.Object`.
+In diesem Beispiel deklariert " **API. XML** " im `android` Paket eine Klasse mit dem Namen `Manifest` , `java.lang.Object`die erweitert.
 
-In vielen Fällen ist die menschliche Unterstützung erforderlich, um die Java-API können Sie weitere ".NET wie" machen oder um Probleme zu beheben, die verhindern, die bindungsassembly kompilieren dass. Beispielsweise ist es möglicherweise notwendig, Java-Paketnamen .NET Namespaces, benennen Sie eine Klasse, oder ändern den Rückgabetyp einer Methode.
+In vielen Fällen ist die Benutzerunterstützung erforderlich, damit die Java-API mehr ".net like" oder Probleme korrigiert, die die Kompilierung der bindungsassembly verhindern. Beispielsweise kann es erforderlich sein, Java-Paketnamen in .NET-Namespaces zu ändern, eine Klasse umzubenennen oder den Rückgabetyp einer Methode zu ändern.
 
-Diese Änderungen werden nicht erreicht, indem **api.xml** direkt.
-Stattdessen werden die Änderungen in bestimmten XML-Dateien aufgezeichnet, die von der Vorlage binden von Java-Bibliothek bereitgestellt werden. Beim Kompilieren der Assembly der Xamarin.Android-Bindung wird der Bindings-Generator von diesen Zuordnungsdateien beeinflusst werden beim Erstellen der bindungsassembly
+Diese Änderungen werden nicht durch direktes Ändern von **API. XML** erreicht.
+Stattdessen werden Änderungen in speziellen XML-Dateien aufgezeichnet, die von der Vorlage für die Java-Bindungs Bibliothek bereitgestellt werden. Beim Kompilieren der xamarin. Android-bindungsassembly wird der Bindungs Generator beim Erstellen der bindungsassembly von diesen Zuordnungs Dateien beeinflusst.
 
-Diese XML-Zuordnungsdateien finden Sie unter den **transformiert** -Ordner des Projekts:
+Diese XML-Zuordnungs Dateien befinden sich möglicherweise im Ordner " **Transformationen** " des Projekts:
 
--   **MetaData.xml** &ndash; ermöglicht Änderungen an der endgültigen-API, wie z. B. das Ändern des Namespaces der generierten Bindung hergestellt werden. 
+-   " **Metadata. XML** &ndash; " ermöglicht Änderungen an der endgültigen API, z. b. das Ändern des Namespace der generierten Bindung. 
 
--   **EnumFields.xml** &ndash; enthält die Zuordnung zwischen Java `int` Konstanten und C# `enums` . 
+-   **EnumFields. XML** &ndash; enthält die Zuordnung zwischen Java `int` -Konstanten C# `enums` und. 
 
--   **EnumMethods.xml** &ndash; ermöglicht das Ändern von Methodenparametern und Rückgabetypen von Java `int` Konstanten C# `enums` . 
+-   **EnumMethods. XML** &ndash; ermöglicht das Ändern von Methoden Parametern und Rückgabe Typen `int` aus Java C# `enums` -Konstanten in. 
 
-Die **MetaData.xml** Datei sind die meisten Importieren dieser Dateien allgemeine Änderungen an der Bindung, z. B.:
+Die Datei " **Metadata. XML** " ist der größte Import dieser Dateien, da Sie allgemeine Änderungen an der Bindung zulässt, wie z. b.:
 
--   Namespaces, Klassen, Methoden oder Felder umbenannt werden, damit sie .NET-Konventionen beachten. 
+-   Umbenennen von Namespaces, Klassen, Methoden oder Feldern, sodass Sie .net-Konventionen entsprechen. 
 
--   Entfernen von Namespaces, Klassen, Methoden oder Felder, die nicht benötigt werden. 
+-   Entfernen von Namespaces, Klassen, Methoden oder Feldern, die nicht benötigt werden. 
 
--   Verschieben von Klassen zu unterschiedlichen Namespaces. 
+-   Verschieben von Klassen in verschiedene Namespaces. 
 
--   Hinzufügen zusätzlicher Support-Klassen, stellen den Entwurf der Bindung führen Sie die .NET Framework-Muster. 
+-   Wenn Sie zusätzliche Unterstützungs Klassen hinzufügen, um den Entwurf der Bindung vorzunehmen, befolgen Sie die .NET Framework-Muster. 
 
-Ermöglicht, fahren Sie mit diskutieren **Metadata.xml** im Detail.
+Fahren Sie mit fort, um **Metadata. XML** ausführlicher zu erörtern.
 
 
-## <a name="metadataxml-transform-file"></a>Metadata.XML-Transform-Datei
+## <a name="metadataxml-transform-file"></a>Metadatendatei "Metadata. xml"
 
-Wie wir haben bereits gesehen haben, die Datei **Metadata.xml** von den Bindungen-Generator verwendet, um die Erstellung der bindungsassembly beeinflussen.
-Im Metadaten-Format [XPath](https://www.w3.org/TR/xpath/) Syntax und ist nahezu identisch mit der *GAPI Metadaten* beschriebenen [GAPI Metadaten](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata) Guide. Diese Implementierung ist beinahe eine vollständige Implementierung von XPath 1.0 und unterstützt daher in der standard 1.0-Elemente. Diese Datei ist ein leistungsstarker Mechanismus für XPath-Basis zu ändern, hinzufügen, ausblenden oder Verschieben jedes Element oder Attribut in der API-Datei. Alle Elemente der Regel in der Spezifikation für die Metadaten enthalten ein Path-Attribut, um den Knoten zu identifizieren, für den die Regel angewendet wird. Die Regeln werden in der folgenden Reihenfolge angewendet:
+Wie bereits gelernt, wird die Datei " **Metadata. XML** " vom Bindungs Generator verwendet, um die Erstellung der bindungsassembly zu beeinflussen.
+Das Metadatenformat verwendet die [XPath](https://www.w3.org/TR/xpath/) -Syntax und ist nahezu identisch mit den im [gapi-metadatenhandbuch](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata) beschriebenen *gapi-Metadaten* . Diese Implementierung ist fast eine komplette Implementierung von XPath 1,0 und unterstützt daher Elemente im 1,0-Standard. Diese Datei ist ein leistungsfähiger XPath-basierter Mechanismus zum ändern, hinzufügen, ausblenden oder Verschieben von Elementen oder Attributen in der API-Datei. Alle Regel Elemente in der Metadatenspezifikation enthalten ein Pfad Attribut zum Identifizieren des Knotens, auf den die Regel angewendet werden soll. Die Regeln werden in der folgenden Reihenfolge angewendet:
 
-* **Hinzufügen von Knoten** &ndash; Fügt einen untergeordneten Knoten auf den Knoten, die durch den Path-Attribut angegeben.
-* **Attr** &ndash; legt den Wert eines Attributs für das durch den Path-Attribut angegebene Element fest.
-* **Entfernen von Knoten** &ndash; entfernt einen angegebenen XPath-Ausdruck übereinstimmenden Knoten.
+* **Knoten hinzufügen** &ndash; Fügt einen untergeordneten Knoten an den Knoten an, der durch das path-Attribut angegeben wird.
+* **attr** &ndash; Legt den Wert eines Attributs des Elements fest, das durch das path-Attribut angegeben wird.
+* **Remove-Node** &ndash; Entfernt Knoten, die mit einem angegebenen XPath übereinstimmen.
 
-Folgendes ist ein Beispiel für eine **Metadata.xml** Datei:
+Im folgenden finden Sie ein Beispiel für eine Datei " **Metadata. XML** ":
 
 ```xml
 <metadata>
@@ -101,21 +101,21 @@ Folgendes ist ein Beispiel für eine **Metadata.xml** Datei:
 </metadata>
 ```
 
-Die folgende Liste enthält einige der häufiger verwendeten XPath-Elemente für die Java-API:
+Im folgenden sind einige der gängigsten XPath-Elemente für die Java-APIs aufgeführt:
 
--   `interface` &ndash; Zum Suchen einer Java-Schnittstelle verwendet. z. B. `/interface[@name='AuthListener']`.
+-   `interface`&ndash; Wird verwendet, um eine Java-Schnittstelle zu suchen. z. `/interface[@name='AuthListener']`b.
 
--   `class` &ndash; Verwendet, um eine Klasse nicht gefunden. z. B. `/class[@name='MapView']`.
+-   `class`&ndash; Wird verwendet, um nach einer Klasse zu suchen. z. `/class[@name='MapView']`b.
 
--   `method` &ndash; Verwendet, um eine Methode für eine Java-Klasse oder Schnittstelle zu suchen. z. B. `/class[@name='MapView']/method[@name='setTitleSource']`.
+-   `method`&ndash; Wird verwendet, um eine Methode in einer Java-Klasse oder-Schnittstelle zu suchen. z. `/class[@name='MapView']/method[@name='setTitleSource']`b.
 
--   `parameter` &ndash; Identifizieren Sie einen Parameter für eine Methode an. Beispiel: `/parameter[@name='p0']`
+-   `parameter`&ndash; Identifizieren Sie einen Parameter für eine Methode. e.g.`/parameter[@name='p0']`
 
 
 
 ### <a name="adding-types"></a>Hinzufügen von Typen
 
-Die `add-node` Element informiert das Xamarin.Android-Bindung-Projekt hinzufügen zu eine neuen Wrapperklasse **api.xml**. Im folgende Codeausschnitt wird beispielsweise der Binding-Generator zum Erstellen einer Klasse mit einem Konstruktor und ein einzelnes Feld leiten:
+Das `add-node` -Element teilt dem xamarin. Android-Bindungs Projekt mit, dass " **API. XML**" eine neue Wrapper Klasse hinzugefügt wird. Der folgende Code Ausschnitt leitet z. b. den Bindungs Generator an die Erstellung einer Klasse mit einem Konstruktor und einem einzelnen Feld weiter:
 
 ```xml
 <add-node path="/api/package[@name='org.alljoyn.bus']">
@@ -129,7 +129,7 @@ Die `add-node` Element informiert das Xamarin.Android-Bindung-Projekt hinzufüge
 
 ### <a name="removing-types"></a>Entfernen von Typen
 
-Es ist möglich, weisen Sie den Xamarin.Android-Bindungen-Generator einen Java-Typ ignoriert und nicht gebunden. Dies erfolgt durch Hinzufügen einer `remove-node` zu XML-Element der **metadata.xml** Datei:
+Es ist möglich, den xamarin. Android-Bindungs Generator anzuweisen, einen Java-Typ zu ignorieren und ihn nicht zu binden. Dies erfolgt durch Hinzufügen eines `remove-node` XML-Elements zur Datei " **Metadata. XML** ":
 
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
@@ -137,26 +137,26 @@ Es ist möglich, weisen Sie den Xamarin.Android-Bindungen-Generator einen Java-T
 
 ### <a name="renaming-members"></a>Umbenennen von Elementen
 
-Umbenennen von Elementen kann nicht durchgeführt werden, durch direktes Bearbeiten der **api.xml** -Datei, da Xamarin.Android die ursprünglichen Namen der Java Native Interface (JNI) ist erforderlich. Aus diesem Grund die `//class/@name` Attribut kann nicht geändert werden, wenn es sich handelt, die Bindung funktioniert nicht.
+Das Umbenennen von Membern kann nicht durch direktes Bearbeiten der Datei " **API. XML** " erfolgen, da xamarin. Android die ursprünglichen jni-Namen (Java Native Interface) erfordert. Daher kann das `//class/@name` -Attribut nicht geändert werden. ist dies der Fall, kann die Bindung nicht verwendet werden.
 
-Betrachten Sie den Fall, wollen wir einen Typ umbenennen `android.Manifest`.
-Zu diesem Zweck können wir versuchen, direkt zu bearbeiten **api.xml** und benennen Sie die Klasse wie folgt:
+Beachten Sie den Fall, `android.Manifest`in dem wir einen Typ umbenennen möchten.
+Um dies zu erreichen, können wir versuchen, " **API. XML** " direkt zu bearbeiten und die Klasse wie folgt umzubenennen:
 
 ```xml
 <attr path="/api/package[@name='android']/class[@name='Manifest']" 
     name="name">NewName</attr>
 ```
 
-Dies führt zu den Bindungen-Generator, erstellen die folgenden C# Code für die Wrapperklasse:
+Dies führt dazu, dass der Bindungs Generator den folgenden C# Code für die Wrapper Klasse erstellt:
 
 ```csharp
 [Register ("android/NewName")]
 public class NewName : Java.Lang.Object { ... }
 ```
 
-Beachten Sie, die die Wrapperklasse um umbenannt wurde `NewName`, während die ursprüngliche Java-Typ noch `Manifest`. Es ist nicht mehr möglich, dass die Xamarin.Android-Binding-Klasse zum Zugriff auf alle Methoden in `android.Manifest`; die Wrapperklasse in einen nicht vorhandenen Java-Typ gebunden ist.
+Beachten Sie, dass die Wrapper Klasse in `NewName`umbenannt wurde, während der ursprüngliche Java-Typ weiterhin `Manifest`ist. Es ist nicht mehr möglich, dass die xamarin. Android-Bindungs Klasse auf Methoden in `android.Manifest`zugreift, da die Wrapper Klasse an einen nicht vorhandenen Java-Typ gebunden ist.
 
-Um der verwaltete Name der umschlossenen Typs (oder einer Methode) ordnungsgemäß zu ändern, es ist notwendig, legen Sie die `managedName` -Attribut wie im folgenden Beispiel gezeigt:
+Um den verwalteten Namen eines umschließenden Typs (oder einer Methode) ordnungsgemäß zu ändern, muss das `managedName` -Attribut wie im folgenden Beispiel gezeigt festgelegt werden:
 
 ```xml
 <attr path="/api/package[@name='android']/class[@name='Manifest']" 
@@ -165,21 +165,21 @@ Um der verwaltete Name der umschlossenen Typs (oder einer Methode) ordnungsgemä
 
 <a name="Renaming_EventArg_Wrapper_Classes" />
 
-#### <a name="renaming-eventarg-wrapper-classes"></a>Umbenennen von `EventArg` Wrapperklassen
+#### <a name="renaming-eventarg-wrapper-classes"></a>Umbenennen `EventArg` von Wrapper Klassen
 
-Bei der Xamarin.Android-Bindung Generator identifiziert eine `onXXX` Setter-Methode für eine _Listenertyp_, C# Ereignis und `EventArgs` Unterklasse generiert werden Zusatz Sie zur Unterstützung von .NET API für die Java-basierte Listener-Muster. Betrachten Sie beispielsweise die folgende Java-Klasse und Methode ein:
+Wenn der xamarin. Android-Bindungs Generator eine `onXXX` Setter-Methode für einen _Listenertyp_identifiziert, werden ein C# -Ereignis und `EventArgs` eine Unterklasse generiert, um eine .net-geprägte API für das Java-basierte listenermuster zu unterstützen. Sehen Sie sich als Beispiel die folgende Java-Klasse und-Methode an:
 
 ```xml
 com.someapp.android.mpa.guidance.NavigationManager.on2DSignNextManuever(NextManueverListener listener);
 ```
 
-Xamarin.Android löscht das Präfix `on` aus der Settermethode und verwenden Sie stattdessen `2DSignNextManuever` als Grundlage für den Namen der `EventArgs` Unterklasse. Die Unterklasse wird etwas Ähnliches wie in benannt werden:
+Xamarin. Android löscht das Präfix `on` aus der Setter-Methode und verwendet `2DSignNextManuever` stattdessen als Grundlage `EventArgs` für den Namen der Unterklasse. Die Unterklasse wird in etwa wie folgt benannt:
 
 ```csharp
 NavigationManager.2DSignNextManueverEventArgs
 ```
 
-Dies ist nicht zulässigen C# Klassenname. Um dieses Problem zu beheben, muss der Autor der Bindung verwenden die `argsType` Attribut, und geben Sie einen gültigen C# für die `EventArgs` Unterklasse:
+Dies ist kein gültiger C# Klassenname. Um dieses Problem zu beheben, muss der Bindungs Autor das `argsType` -Attribut verwenden und einen C# gültigen Namen für `EventArgs` die Unterklasse angeben:
  
 ```xml
 <attr path="/api/package[@name='com.someapp.android.mpa.guidance']/
@@ -192,27 +192,27 @@ Dies ist nicht zulässigen C# Klassenname. Um dieses Problem zu beheben, muss de
 
 ## <a name="supported-attributes"></a>Unterstützte Attribute
 
-In den folgenden Abschnitten werden einige der Attribute für das Transformieren von Java-APIs beschrieben.
+In den folgenden Abschnitten werden einige der Attribute zum Transformieren von Java-APIs beschrieben.
 
 ### <a name="argstype"></a>argsType
 
-Dieses Attribut befindet sich auf die Setter-Methoden zum Benennen der `EventArg` Unterklasse, die zur Unterstützung von Java-Listener generiert werden. Hierzu finden Sie weiter unten ausführlicher im Abschnitt [EventArg-Wrapperklassen umbenennen](#Renaming_EventArg_Wrapper_Classes) später in diesem Handbuch.
+Dieses Attribut wird in Setter-Methoden eingefügt, um `EventArg` die Unterklasse zu benennen, die zur Unterstützung von Java-Listenern generiert wird. Dies wird weiter unten im Abschnitt Umbenennen von [EventArg-Wrapper Klassen](#Renaming_EventArg_Wrapper_Classes) weiter unten in diesem Handbuch ausführlich beschrieben.
 
 ### <a name="eventname"></a>eventName
 
-Gibt einen Namen für ein Ereignis. Wenn die Sequenz leer ist, unterdrückt sie ereignisgenerierung.
-Dies wird in den Abschnittstiteln ausführlicher beschrieben [EventArg-Wrapperklassen umbenennen](#Renaming_EventArg_Wrapper_Classes).
+Gibt einen Namen für ein Ereignis an. Wenn der Wert leer ist, wird die Ereignis Generierung verhindert.
+Dies wird im Abschnitttitel Umbenennen von [EventArg-Wrapper Klassen](#Renaming_EventArg_Wrapper_Classes)ausführlicher beschrieben.
 
 ### <a name="managedname"></a>managedName
 
-Dies wird verwendet, um den Namen des Pakets, Klasse, Methode oder Parameter zu ändern. Z. B. der Java-Klasse umbenennen `MyClass` zu `NewClassName`:
+Diese wird verwendet, um den Namen eines Pakets, einer Klasse, einer Methode oder eines Parameters zu ändern. So ändern Sie z. b. den Namen der `MyClass` Java `NewClassName`-Klasse in:
 
 ```xml
 <attr path="/api/package[@name='com.my.application']/class[@name='MyClass']" 
     name="managedName">NewClassName</attr>
 ```
 
-Das folgende Beispiel veranschaulicht einen XPath-Ausdruck für die Methode umbenennen `java.lang.object.toString` zu `Java.Lang.Object.NewManagedName`:
+Im nächsten Beispiel wird ein XPath-Ausdruck zum Umbenennen `java.lang.object.toString` der `Java.Lang.Object.NewManagedName`-Methode in veranschaulicht:
 
 ```xml
 <attr path="/api/package[@name='java.lang']/class[@name='Object']/method[@name='toString']" 
@@ -221,21 +221,21 @@ Das folgende Beispiel veranschaulicht einen XPath-Ausdruck für die Methode umbe
 
 ### <a name="managedtype"></a>managedType
 
-`managedType` wird verwendet, um den Rückgabetyp einer Methode ändern. In einigen Situationen folgert den Generator Bindungen nicht ordnungsgemäß den Rückgabetyp einer Java-Methode, was zu einem Fehler zur Kompilierzeit führt. Eine mögliche Lösung in diesem Fall ist den Rückgabetyp der Methode ändern.
+`managedType`wird verwendet, um den Rückgabetyp einer Methode zu ändern. In einigen Situationen führt der Bindungs Generator fälschlicherweise den Rückgabetyp einer Java-Methode aus, was zu einem Kompilierzeitfehler führt. Eine mögliche Lösung in dieser Situation besteht darin, den Rückgabetyp der Methode zu ändern.
 
-Der Generator Bindungen beispielsweise davon ausgeht, die die Java-Methode `de.neom.neoreadersdk.resolution.compareTo()` zurückgeben sollte ein `int`, was dazu führt, in der Fehlermeldung **Fehler CS0535: ' DE. Neom.Neoreadersdk.Resolution' ist nicht implementiert den Schnittstellenmember "Java.Lang.IComparable.CompareTo(Java.Lang.Object)"**. Der folgende Codeausschnitt zeigt, wie Sie den Rückgabetyp der generierten ändern C# Methode aus einem `int` auf eine `Java.Lang.Object`: 
+Der Bindungs Generator geht z. b. davon aus, `de.neom.neoreadersdk.resolution.compareTo()` dass die Java `int`-Methode einen zurückgeben soll. **Dies führt zu einer Fehlermeldung CS0535: Liga. "Netom. netoreadersdk. Resolution" implementiert den Schnittstellenmember "java. lang. ivergleichbare. CompareTo (Java. lang. Object)** " nicht. Der folgende Code Ausschnitt veranschaulicht, wie der paramtertyp der generierten C# Methode von einem `DE.Neom.Neoreadersdk.Resolution` in einen `Java.Lang.Object`geändert wird: 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
     class[@name='Resolution']/
     method[@name='compareTo' and count(parameter)=1 and
     parameter[1][@type='de.neom.neoreadersdk.Resolution']]/
-    parameter[1]"name="managedType">Java.Lang.Object</attr> 
+    parameter[1]" name="managedType">Java.Lang.Object</attr> 
 ```
 
-### <a name="managedreturn"></a>managedReturn
+### <a name="managedreturn"></a>managedreturn
 
-Ändert sich den Rückgabetyp einer Methode. Dies ändert die return-Attribut nicht (wie Änderungen zurückgegeben, dass Attribute auf die JNI-Signatur nicht kompatiblen Änderungen führen können). Im folgenden Beispiel ist der Rückgabetyp von den `append` Methode von geändert wird `SpannableStringBuilder` zu `IAppendable` (zur Erinnerung: C# kovariante Rückgabetypen nicht unterstützt):
+Ändert den Rückgabetyp einer Methode. Dadurch wird das Return-Attribut nicht geändert (da Änderungen an Rückgabe Attributen zu inkompatiblen Änderungen an der jni-Signatur führen können). Im folgenden Beispiel wird der `append` Rückgabetyp der-Methode von `SpannableStringBuilder` in `IAppendable` geändert (Rückruf, C# der keine kovariant-Rückgabe Typen unterstützt):
 
 ```xml
 <attr path="/api/package[@name='android.text']/
@@ -244,14 +244,14 @@ Der Generator Bindungen beispielsweise davon ausgeht, die die Java-Methode `de.n
     name="managedReturn">Java.Lang.IAppendable</attr>
 ```
 
-### <a name="obfuscated"></a>verborgen
+### <a name="obfuscated"></a>verborgenen
 
-Tools, mit denen Verschleiern von Java-Bibliotheken der Generator für die Xamarin.Android-Bindung und die Möglichkeit zum Generieren beeinträchtigen C# Wrapperklassen. Merkmale der verborgenen Klassen umfassen: 
+Tools, die Java-Bibliotheken verbergen, können den xamarin. Android-Bindungs Generator und seine Fähigkeit zum Generieren C# von Wrapper Klassen beeinträchtigen. Zu den Merkmalen von verfugenten Klassen gehören: 
 
-* Enthält den Namen der Klasse eine **$**, d. h. **eine$ .class**
-* Den Namen der Klasse von Kleinbuchstaben, d. h. vollständig gefährdet **a.class**
+* Der Klassenname enthält eine **$** , d. h. **eine $.-Klasse** .
+* Der Klassenname ist vollständig in Kleinbuchstaben gefährdet, d. h. **eine.-Klasse** .
 
-Dieser Codeausschnitt ist ein Beispiel zum Generieren einer "nicht verborgenen" C# Typ:
+Dieser Code Ausschnitt ist ein Beispiel für die Generierung eines Typs "nicht verdeckt" C# :
 
 ```xml
 <attr path="/api/package[@name='{package_name}']/class[@name='{name}']" 
@@ -260,9 +260,9 @@ Dieser Codeausschnitt ist ein Beispiel zum Generieren einer "nicht verborgenen" 
 
 ### <a name="propertyname"></a>propertyName
 
-Dieses Attribut kann verwendet werden, um den Namen einer verwalteten Eigenschaft ändern.
+Dieses Attribut kann verwendet werden, um den Namen einer verwalteten Eigenschaft zu ändern.
 
-Ein spezialisierter Fall der Verwendung von `propertyName` umfasst die Situation, in denen eine Java-Klasse nur eine Getter-Methode für ein Feld hat. In diesem Fall möchten den Generator Bindung eine Nur-Schreiben-Eigenschaft, etwas zu erstellen, die in .NET wird nicht empfohlen. Der folgende Codeausschnitt zeigt die Eigenschaften von .NET durch Festlegen von "entfernen" die `propertyName` auf eine leere Zeichenfolge:
+Ein spezieller Fall der Verwendung `propertyName` von umfasst die Situation, in der eine Java-Klasse nur über eine Getter-Methode für ein Feld verfügt. In diesem Fall möchte der Bindungs Generator eine schreibgeschützte Eigenschaft erstellen, etwas, das in .net nicht empfohlen wird. Der folgende Code Ausschnitt zeigt, wie die .net-Eigenschaften "entfernt" werden, `propertyName` indem auf eine leere Zeichenfolge festgelegt wird:
 
 ```xml
 <attr path="/api/package[@name='org.java_websocket.handshake']/class[@name='HandshakeImpl1Client']/method[@name='setResourceDescriptor' 
@@ -274,11 +274,11 @@ Ein spezialisierter Fall der Verwendung von `propertyName` umfasst die Situation
     name="propertyName"></attr>
 ```
 
-Beachten Sie, dass die Setter- und Getter-Methoden immer noch durch den Generator Bindungen erstellt werden.
+Beachten Sie, dass die Setter-und Getter-Methoden weiterhin vom Bindungs Generator erstellt werden.
 
 ### <a name="sender"></a>sender
 
-Gibt an, welche Parameter einer Methode sein, sollte die `sender` Parameter an, wenn die Methode nicht auf ein Ereignis zugeordnet ist. Der Wert kann sein `true` oder `false`. Zum Beispiel:
+Gibt an, welcher Parameter einer Methode der `sender` -Parameter sein soll, wenn die-Methode einem Ereignis zugeordnet wird. Der Wert kann oder `true` `false`lauten. Beispiel:
 
 ```xml
 <attr path="/api/package[@name='android.app']/
@@ -290,7 +290,7 @@ Gibt an, welche Parameter einer Methode sein, sollte die `sender` Parameter an, 
 
 ### <a name="visibility"></a>Sichtbarkeit
 
-Dieses Attribut wird verwendet, um die Sichtbarkeit der Klasse, Methode oder Eigenschaft zu ändern. Angenommen, sie müssen ggf. Förderung einer `protected` Java-Methode so, dass die It entsprechende C# Wrapper `public`:
+Dieses Attribut wird verwendet, um die Sichtbarkeit einer Klasse, Methode oder Eigenschaft zu ändern. Beispielsweise kann es erforderlich sein, eine `protected` Java-Methode höher zu Stufen, damit Sie den entsprechenden `public` C# Wrapper hat:
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -300,13 +300,13 @@ Dieses Attribut wird verwendet, um die Sichtbarkeit der Klasse, Methode oder Eig
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-## <a name="enumfieldsxml-and-enummethodsxml"></a>EnumFields.xml und EnumMethods.xml
+## <a name="enumfieldsxml-and-enummethodsxml"></a>"EnumFields. xml" und "EnumMethods. xml"
 
-Es gibt Fälle, in dem Android-Bibliotheken ganzzahlige Konstanten verwenden, um Zustände darzustellen, die auf Eigenschaften oder Methoden der Clientbibliotheken übergeben werden. In vielen Fällen ist es sinnvoll, diese ganzzahlige Konstanten, Enumerationen in binden C#. Um diese Zuordnung zu erleichtern, verwenden Sie die **EnumFields.xml** und **EnumMethods.xml** Dateien in Ihrem bindungsprojekt. 
+Es gibt Fälle, in denen Android-Bibliotheken ganzzahlige Konstanten zum Darstellen von Zuständen verwenden, die an Eigenschaften oder Methoden der Bibliotheken übermittelt werden. In vielen Fällen ist es hilfreich, diese ganzzahligen Konstanten an enumeraten C#in zu binden. Um diese Zuordnung zu vereinfachen, verwenden Sie die Dateien " **EnumFields. XML** " und " **EnumMethods. XML** " in Ihrem Bindungs Projekt. 
 
-### <a name="defining-an-enum-using-enumfieldsxml"></a>Definieren einer Enumeration mit EnumFields.xml
+### <a name="defining-an-enum-using-enumfieldsxml"></a>Definieren einer Enumeration mithilfe von "EnumFields. xml"
 
-Die **EnumFields.xml** -Datei enthält die Zuordnung zwischen Java `int` Konstanten und C# `enums`. Im folgende Beispiel sehen wir uns ein C# Enumeration, die für einen Satz von zu erstellenden `int` Konstanten: 
+Die Datei " **EnumFields. XML** " enthält die Zuordnung `int` zwischen Java C# `enums`-Konstanten und. Betrachten wir das folgende Beispiel für eine C# Enumeration, die für einen Satz von `int` Konstanten erstellt wird: 
 
 ```xml 
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings" clr-enum-type="Skobbler.Ngx.Map.RealReach.SKMeasurementUnit">
@@ -316,13 +316,13 @@ Die **EnumFields.xml** -Datei enthält die Zuordnung zwischen Java `int` Konstan
 </mapping>
 ```
 
-Hier habe ich die Java-Klasse `SKRealReachSettings` und definiert eine C# Enumeration namens `SKMeasurementUnit` im Namespace `Skobbler.Ngx.Map.RealReach`. Die `field` Einträge definiert den Namen der Java-Konstante (Beispiel `UNIT_SECOND`), den Namen der Enum-Eintrags (Beispiel `Second`), und der ganzzahlige Wert durch beide Entitäten dargestellt (Beispiel `0`). 
+Hier haben wir die Java-Klasse `SKRealReachSettings` übernommen und eine C# Enumeration mit `SKMeasurementUnit` dem Namen im- `Skobbler.Ngx.Map.RealReach`Namespace definiert. Die `field` Einträge definieren den Namen der Java-Konstante (z `UNIT_SECOND`. b.), den Namen des enumerationseintrags (Beispiel `Second`) und den ganzzahligen Wert, `0`der von beiden Entitäten (Beispiel) dargestellt wird. 
 
-### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>Definieren mithilfe von EnumMethods.xml Getter/Setter-Methoden
+### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>Definieren von Getter/Setter-Methoden mithilfe von "EnumMethods. xml"
 
-Die **EnumMethods.xml** Datei ermöglicht das Ändern von Methodenparametern und Rückgabetypen von Java `int` Konstanten C# `enums`. Das heißt, es zugeordnet, das Lesen und Schreiben von C# Enumerationen (definiert der **EnumFields.xml** Datei) zu Java `int` Konstanten `get` und `set` Methoden.
+Die Datei " **EnumMethods. XML** " ermöglicht das Ändern von Methoden Parametern und `int` Rückgabe Typen C# `enums`von Java-Konstanten in. Das C# heißt, das Lesen und Schreiben von enumeraten (definiert in der Datei " **EnumFields. XML** ") wird den `int` Java `get` - `set` Konstanten und-Methoden zugeordnet.
 
-Erhält die `SKRealReachSettings` -Enumeration definiert, über die folgenden **EnumMethods.xml** Datei würde die Getter/Setter für diese Enumeration definieren:
+Bei der `SKRealReachSettings` oben definierten Enumeration würde die folgende Datei " **EnumMethods. XML** " den Getter/Setter für diese Enumeration definieren:
 
 ```xml
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings">
@@ -331,9 +331,9 @@ Erhält die `SKRealReachSettings` -Enumeration definiert, über die folgenden **
 </mapping>
 ```
 
-Die erste `method` Zeile zugeordnet, den Rückgabewert von der Java `getMeasurementUnit` Methode, um die `SKMeasurementUnit` Enum. Die zweite `method` Zeile zugeordnet, den ersten Parameter der `setMeasurementUnit` der gleichen-Enumeration.
+In der `method` ersten Zeile wird der Rückgabewert der Java `getMeasurementUnit` -Methode der `SKMeasurementUnit` Enum zugeordnet. `setMeasurementUnit` In der zweiten `method` Zeile wird der erste Parameter von der gleichen Enum zugeordnet.
 
-Alle diese Änderungen vorgenommen, Sie können den folgenden Code in Xamarin.Android Festlegen der `MeasurementUnit`: 
+Wenn alle diese Änderungen vorhanden sind, können Sie den folgenden Code in xamarin. Android verwenden, um Folgendes fest `MeasurementUnit`zulegen: 
 
 ```csharp
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
@@ -342,12 +342,12 @@ realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel beschrieben, wie Xamarin.Android zum Transformieren einer API-Definition von Metadaten verwendet die *Google* *AOSP Format*. Verwenden Sie nach der Behandlung von Änderungen, die möglich sind *Metadata.xml*, er überprüft die Einschränkungen, die auftreten, wenn Sie Mitglieder umbenennen und es angezeigt, dass die Liste der unterstützten XML-Attribute, die beschreiben, wann die einzelnen Attribute verwendet werden sollten.
+In diesem Artikel wurde erläutert, wie xamarin. Android Metadaten verwendet, um eine API-Definition aus dem *Google* *aosp-Format*zu transformieren. Nach dem abdecken der Änderungen, die mithilfe von *Metadata. XML*möglich sind, wurden die Einschränkungen beim Umbenennen von Membern sowie die Liste der unterstützten XML-Attribute untersucht, die beschreiben, wann die einzelnen Attribute verwendet werden sollen.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Arbeiten mit JNI](~/android/platform/java-integration/working-with-jni.md)
+- [Arbeiten mit jni](~/android/platform/java-integration/working-with-jni.md)
 - [Binden einer Java-Bibliothek](~/android/platform/binding-java-library/index.md)
-- [GAPI-Metadaten](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [Gapi-Metadaten](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)

@@ -1,28 +1,26 @@
 ---
 title: Steuerelementreferenz
-description: Eine Beschreibung aller visuellen Elemente, die zum Erstellen einer Xamarin.Forms-Anwendung verwendet werden soll. Dieser Artikel führt die Gruppen, aus denen die Benutzeroberfläche einer Xamarin.Forms-Anwendung besteht.
+description: Eine Beschreibung aller Benutzeroberflächen Elemente, die verwendet werden, um eine xamarin. Forms-Anwendung zu erstellen. Dieser Artikel führt die Gruppen, aus denen die Benutzeroberfläche einer Xamarin.Forms-Anwendung besteht.
 ms.prod: xamarin
 ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: 85a1f34e1115c29840b08cfc85969d10d3971939
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 08/08/2019
+ms.openlocfilehash: 9456512931822abd59a081485744846a11cdea88
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655589"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869373"
 ---
 # <a name="controls-reference"></a>Steuerelementreferenz
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
-_Eine Beschreibung aller visuellen Elemente, die zum Erstellen einer Xamarin.Forms-Anwendung verwendet werden soll._
+Die Benutzeroberfläche einer xamarin. Forms-Anwendung wird von Objekten erstellt, die den nativen Steuerelementen der einzelnen Zielplattformen zugeordnet werden. Dies ermöglicht plattformspezifischen Anwendungen für IOS, Android und die universelle Windows-Plattform die Verwendung von xamarin. Forms-Code, der in einer [.NET Standard Bibliothek](~/cross-platform/app-fundamentals/net-standard.md)enthalten ist.
 
-Die grafische Schnittstelle der einer Xamarin.Forms-Anwendung wird von Objekten erstellt, die den nativen Steuerelementen der für jede Zielplattform zugeordnet. Dadurch, dass plattformspezifische Anwendungen für iOS, Android und die universelle Windows-Plattform mit Xamarin.Forms-Code innerhalb einer [.NET Standard-Bibliothek](~/cross-platform/app-fundamentals/net-standard.md) oder [freigegebenes Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
-
-Die vier hauptsteuerelementgruppen, um die Benutzeroberfläche einer Xamarin.Forms-Anwendung zu erstellen, sind in den folgenden vier Artikeln dargestellt:
+Die vier Haupt Steuerungsgruppen, die zum Erstellen der Benutzeroberfläche einer xamarin. Forms-Anwendung verwendet werden, lauten wie folgt:
 
 - [**Seiten**](pages.md)
 - [**Layouts**](layouts.md)
@@ -31,7 +29,9 @@ Die vier hauptsteuerelementgruppen, um die Benutzeroberfläche einer Xamarin.For
 
 Eine Xamarin.Forms-Startseite nimmt in der Regel den gesamten Bildschirm ein. Diese Seite enthält in der Regel ein Layout, die Ansichten und möglicherweise anderer Layouts enthält. Zellen sind spezielle Komponenten, die in Verbindung mit verwendet [ `TableView` ](views.md#tableView) und [ `ListView` ](views.md#listView).
 
-In den vier Artikeln auf [ **Seiten**](pages.md), [ **Layouts**](layouts.md), [ **Ansichten** ](views.md), und [ **Zellen**](cells.md), jeder Typ von Steuerelement wird mit Links zu ihrer API-Dokumentation, einen Artikel beschreiben die Verwendung (falls vorhanden) und eine oder mehrere Beispielprogramme (sofern vorhanden) beschrieben. Jeder Typ von Steuerelement umfasst auch dieser Screenshot zeigt eine Seite aus der [ **FormsGallery** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) Beispiel, die Ausführung auf iOS, Android und UWP-Geräten. Im folgenden einzelnen Screenshots finden Sie Links auf den Quellcode für die C#-Seite der entsprechenden XAML-Seite, und (wenn geeignet) die C#-Code-Behind-Datei für die XAML-Seite.
+In den vier Artikeln auf [ **Seiten**](pages.md), [ **Layouts**](layouts.md), [ **Ansichten** ](views.md), und [ **Zellen**](cells.md), jeder Typ von Steuerelement wird mit Links zu ihrer API-Dokumentation, einen Artikel beschreiben die Verwendung (falls vorhanden) und eine oder mehrere Beispielprogramme (sofern vorhanden) beschrieben. Jede Art von Steuerelement wird auch von einem Screenshot begleitet, der eine Seite des [**formsgallery**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) -Beispiels anzeigt, die auf IOS-und Android-Geräten ausgeführt wird. Im folgenden einzelnen Screenshots finden Sie Links auf den Quellcode für die C#-Seite der entsprechenden XAML-Seite, und (wenn geeignet) die C#-Code-Behind-Datei für die XAML-Seite.
+
+Zusätzlich zu den Steuerelementen, die mit xamarin. Forms bereitgestellt werden, sind Steuerelemente von Drittanbietern verfügbar. Weitere Informationen finden Sie unter Steuer [Elemente von Drittanbietern](thirdparty.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

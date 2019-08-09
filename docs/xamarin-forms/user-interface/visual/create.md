@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 71836021b29094911f9d1ad43639ed103fa18b73
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8173ebcc174df6e34a53f226a43083bd28941031
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652818"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869380"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>Erstellen eines visuellen xamarin. Forms-Renderers
 
@@ -104,20 +104,23 @@ Der `CustomVisual` Typ kann dann für die rendererklassen registriert werden [`B
 
 ## <a name="register-the-ivisual-type"></a>Registrieren des ivisual-Typs
 
-Ergänzen Sie in den Platt Form Projekten die rendererklassen `ExportRendererAttribute`mit dem:
+Ergänzen Sie in den Platt Form Projekten die Renderer-Namespaces `ExportRendererAttribute`mit dem:
 
 ```csharp
 [assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer), new[] { typeof(CustomVisual) })]
-public class CustomButtonRenderer : ButtonRenderer
+namespace VisualDemos.iOS
 {
-    protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+    public class CustomButtonRenderer : ButtonRenderer
     {
-        ...
+        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+        {
+            // ...
+        }
     }
 }
 ```
 
-In diesem Beispiel gibt die `ExportRendererAttribute` -Klasse an `CustomButtonRenderer` , dass die-Klasse verwendet wird [`Button`](xref:Xamarin.Forms.Button) , um die verwendeten `IVisual` Objekte zu Rendering, wobei der Typ als drittes Argument registriert ist. Ein Renderer, der einen `IVisual` -Typ als Teil seines `ExportRendererAttribute`angibt, wird verwendet, um die ausgewählten Ansichten anstelle des standardrenderers zu renderzieren.
+In diesem Beispiel für das IOS-Platt Form Projekt `ExportRendererAttribute` gibt das an `CustomButtonRenderer` , dass die-Klasse zum Rendering [`Button`](xref:Xamarin.Forms.Button) von nutzenden Objekten `IVisual` verwendet wird, wobei der Typ als drittes Argument registriert ist. Ein Renderer, der einen `IVisual` -Typ als Teil seines `ExportRendererAttribute`angibt, wird verwendet, um die ausgewählten Ansichten anstelle des standardrenderers zu renderzieren.
 
 ## <a name="consume-the-visual-renderer"></a>Verwenden des visuellen Renderers
 
