@@ -829,6 +829,8 @@
               href: troubleshooting/questions/exception-marshal-obj-c.md
             - name: 'Laufzeitfehler: Die Assembly „mscorlib.dll“ wurde nicht gefunden oder konnte nicht geladen werden.'
               href: troubleshooting/questions/error-mscorlib-not-found.md
+            - name: 'Kompilierungsfehler: Offset X kann aufgrund der resultierenden verteilten Verlagerung nicht codiert werden.'
+              href: troubleshooting/questions/error-encode-offset-scattered-relocation.md
             - name: IPA-Datei hat 0 Byte
               href: troubleshooting/questions/ipa-zero-bytes.md
             - name: 'IBTool-Fehler: Der Vorgang konnte nicht abgeschlossen werden.'

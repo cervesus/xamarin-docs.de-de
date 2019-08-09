@@ -1,0 +1,195 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Benutzeroberfläche von Xamarin.Forms
+metadata:
+  title: Benutzeroberfläche von Xamarin.Forms
+  description: Informationen zum Erstellen von Benutzeroberflächen mit Xamarin.Forms
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 07/31/2019
+abstract:
+  description: Informationen zum Erstellen von Benutzeroberflächen mit Xamarin.Forms
+sections:
+  - title: null
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: activityindicator.md
+            html: 'Erfahren Sie, wie Sie eine ActivityIndicator-Klasse verwenden, um Benutzern anzuzeigen, dass die Anwendung eine langwierige Aktivität ausführt, ohne dass der Fortschritt angegeben wird.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: activityindicator.md
+            title: ActivityIndicator
+          - href: animation/index.md
+            html: Informationen zum Erstellen von Animationen in Xamarin.Forms
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: animation/index.md
+            title: Animation
+          - href: boxview.md
+            html: Informationen zur Verwendung der BoxView-Klasse zum Erstellen farbiger Rechtecke
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: boxview.md
+            title: BoxView
+          - href: button.md
+            html: 'Informationen zur Verwendung einer Button-Klasse zum Weiterleiten einer Anwendung, um eine bestimmte Aufgabe auszuführen'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: button.md
+            title: Schaltfläche
+          - href: checkbox.md
+            html: Informationen zur Festlegung eines booleschen Werts mithilfe von CheckBox
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: checkbox.md
+            title: CheckBox
+          - href: collectionview/index.md
+            html: Informationen zur Verwendung von CollectionView zum Darstellen von Datenlisten mithilfe unterschiedlicher Layoutspezifikationen
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: collectionview/index.md
+            title: CollectionView
+          - href: colors.md
+            html: Informationen zur Verwendung der Color-Klasse zum Definieren und Verwenden von Farben für Plattformen
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: colors.md
+            title: Farben
+          - href: controls/index.md
+            html: 'Informationen zu den in Xamarin.Forms verfügbaren Seiten, Layouts, Ansichten und Zellen'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: controls/index.md
+            title: Steuerelementreferenz
+          - href: datepicker.md
+            html: 'Informationen zur Verwendung der DatePicker-Klasse, um zuzulassen, dass ein bestimmtes Datum innerhalb eines bestimmten Bereichs ausgewählt wird'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: datepicker.md
+            title: DatePicker
+          - href: pop-ups.md
+            html: 'Informationen zum Anzeigen von Dialogfeldern, die einfache Fragen an Benutzer stellen und diese durch Aufgaben führen'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: pop-ups.md
+            title: Anzeigen von Popupelementen
+          - href: graphics/skiasharp/index.md
+            html: Informationen zum Integrieren von Grafiken in Xamarin.Forms-Anwendungen mithilfe von SkiaSharp
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: graphics/skiasharp/index.md
+            title: Grafiken mit SkiaSharp
+          - href: images.md
+            html: Informationen zur Verwendung des Image-Steuerelements zum Anzeigen eines Images
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: images.md
+            title: Bilder
+          - href: imagebutton.md
+            html: 'Informationen zur Verwendung des ImageButton-Steuerelements zum Anzeigen eines Images und zum Reagieren auf eine Tippbewegung, über die eine Anwendung eine bestimmte Aufgabe durchführt'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: imagebutton.md
+            title: ImageButton
+          - href: layouts/index.md
+            html: Informationen zum Organisieren von Inhalt mithilfe der Layoutsteuerelemente und -features in Xamarin.Forms
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: layouts/index.md
+            title: Layouts
+          - href: listview/index.md
+            html: Informationen zum Darstellen von Datenlisten mithilfe des ListView-Steuerelements
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: listview/index.md
+            title: ListView
+          - href: map.md
+            html: 'Informationen zur Verwendung des Kartensteuerelements (Map), einschließlich der erforderlichen Plattformkonfiguration und zum Auffüllen der Karte mit Pins'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: map.md
+            title: Karten
+          - href: picker/index.md
+            html: Informationen zur Verwendung des Picker-Steuerelements zum Auswählen eines Textelements aus einer Datenliste
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: picker/index.md
+            title: Auswahl
+          - href: progressbar.md
+            html: 'Informationen zur Verwendung von ProgressBar, um anzugeben, dass eine Anwendung eine langwierige Aktivität ausführt'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: progressbar.md
+            title: ProgressBar
+          - href: searchbar.md
+            html: Informationen zum Initiieren einer Suche mithilfe des SearchBar-Steuerelements
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: searchbar.md
+            title: SearchBar
+          - href: slider.md
+            html: 'Informationen darüber, wie einem Benutzer ermöglicht wird, einen numerischen Wert aus einem kontinuierlichen Bereich mit dem Schieberegler-Steuerelement auszuwählen'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: slider.md
+            title: Slider
+          - href: stepper.md
+            html: 'Informationen darüber, wie einem Benutzer ermöglicht wird, einen numerischen Wert aus mehreren Werten mit dem Stepper-Steuerelement auszuwählen'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: stepper.md
+            title: Stepper
+          - href: styles/index.md
+            html: Informationen zum Formatieren einer Benutzeroberfläche mit XAML-Formatvorlagen und Cascading Stylesheets (CSS)
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: styles/index.md
+            title: Stile
+          - href: switch.md
+            html: Informationen zur Festlegung eines booleschen Werts mithilfe der Switch-Klasse
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: switch.md
+            title: Schalter
+          - href: tableview.md
+            html: 'Informationen zur Verwendung von TableView zum Anzeigen scrollbarer Datenlisten oder einer Auswahl, bei der die Dateien nicht die gleiche Vorlage vorweisen'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: tableview.md
+            title: TableView
+          - href: text/index.md
+            html: 'Informationen zu den Xamarin.Forms-Steuerelementen, die Text darstellen und empfangen'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: text/index.md
+            title: Text
+          - href: timepicker.md
+            html: 'Informationen zur Verwendung einer TimePicker-Klasse, um zuzulassen, dass eine Zeitauswahl getroffen wird'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: timepicker.md
+            title: TimePicker
+          - href: visual/index.md
+            html: 'Informationen zur Verwendung des visuellen Materialobjekts von Xamarin.Forms, um Anwendungen auf iOS und Android zu erstellen, die identisch oder größtenteils identisch aussehen'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: visual/index.md
+            title: Grafisches Element
+          - href: visual-state-manager.md
+            html: Informationen zum Definieren des Zustands eines visuellen Elements für die Benutzeroberfläche und zum Aktivieren des Zustands mit der VisualStateManager-Klasse
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: visual-state-manager.md
+            title: Manager für den visuellen Zustand
+          - href: webview.md
+            html: Informationen zur Darstellung von HTML- und Webinhalten in einer Xamarin.Forms-Anwendung
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: webview.md
+            title: WebView
