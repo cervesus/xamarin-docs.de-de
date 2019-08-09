@@ -101,7 +101,7 @@ sections:
             html: 'Erfahren Sie, wie Sie Eigenschaften erstellen, die angefügt werden können, und wie Sie diese aus XAML verwenden.'
             image:
               src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
-              href: bindable-properties.md
+              href: attached-properties.md
             title: Angefügte Eigenschaften
           - href: resource-dictionaries.md
             html: 'Erfahren Sie, wie Sie XAML-Ressourcen erstellen und in einer Xamarin.Forms-Anwendung wiederverwenden.'
