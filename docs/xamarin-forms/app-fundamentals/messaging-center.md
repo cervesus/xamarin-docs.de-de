@@ -1,118 +1,104 @@
 ---
 title: Xamarin.Forms MessagingCenter
-description: In diesem Artikel wird erläutert, wie Xamarin.Forms MessagingCenter zum Senden und Empfangen von Nachrichten verwendet wird, um die Kopplung zwischen Klassen wie ViewModels zu reduzieren.
+description: Die Xamarin.Forms-Klasse MessagingCenter implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist.
 ms.prod: xamarin
 ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/01/2016
-ms.openlocfilehash: b40617dc9ed2054540ce04d5527fae8de6e2285b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 07/30/2019
+ms.openlocfilehash: a4d246419c7449c2395759cf5a8b04469e7a2309
+ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644897"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68821010"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
-_Xamarin.Forms umfasst einen einfachen Messagingdienst zum Senden und Empfangen von Nachrichten._
+Das Veröffentlichen-Abonnieren-Muster ist ein Messagingmuster, bei dem Herausgeber Nachrichten senden, ohne über Kenntnisse zu Empfängern zu verfügen, die als Abonnenten bezeichnet werden. Auf ähnliche Weise lauschen Abonnenten auf bestimmte Nachrichten, ohne dass sie über Kenntnisse zu Herausgebern verfügen.
 
-<a name="Overview" />
+Die Xamarin.Forms-Klasse [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist. Dieser Mechanismus ermöglicht es Herausgebern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, und trägt dazu bei, Abhängigkeiten zwischen ihnen zu verringern.
 
-## <a name="overview"></a>Übersicht
+Die [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)-Klasse bietet Multicast-Funktionen zum Veröffentlichen und Abonnieren. Dies bedeutet, dass mehrere Herausgeber vorhanden sein können, die eine einzelne Nachricht veröffentlichen, und es können mehrere Abonnenten vorhanden sein, die auf dieselbe Nachricht lauschen:
 
-Mit Xamarin.Forms `MessagingCenter` können ViewModels und andere Komponenten kommunizieren, ohne etwas über die andere Partei wissen zu müssen, nur mit einem einfachen Nachrichtenvertrag.
+![](messaging-center-images/messaging-center.png "Multicast-Funktionen zum Veröffentlichen und Abonnieren")
 
-<a name="How_the_MessagingCenter_Works" />
+Herausgeber senden Nachrichten mithilfe der [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Methode, während Abonnenten mithilfe der [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Methode auf Nachrichten lauschen. Darüber hinaus können Abonnenten bei Bedarf mit der [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)-Methode auch Nachrichtenabonnements kündigen.
 
-## <a name="how-the-messagingcenter-works"></a>Wie funktioniert MessagingCenter?
+> [!IMPORTANT]
+> Intern verwendet die [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)-Klasse schwache Verweise. Dies bedeutet, dass Objekte nicht aktiv bleiben und Garbage Collection ermöglicht wird. Daher sollte es nur erforderlich sein, eine Nachricht zu kündigen, wenn eine Klasse die Nachricht nicht mehr empfangen möchte.
 
-Es gibt zwei Teile von `MessagingCenter`:
+## <a name="publish-a-message"></a>Veröffentlichen einer Nachricht
 
--  **Abonnieren:** Lauschen auf Nachrichten mit einer bestimmten Signatur und Ausführen einiger Aktionen, wenn sie empfangen werden. Mehrere Abonnenten können auf dieselbe Nachricht warten.
--  **Senden:** Veröffentlichen einer Nachricht für Zuhörer, um entsprechend zu handeln. Wenn eine Nachricht von keinem Zuhörer abonniert wurde, wird sie ignoriert.
-
-`MessagingCenter` ist eine statische Klasse mit `Subscribe`- und `Send`-Methoden, die bei dieser Lösung verwendet werden.
-
-Nachrichten besitzen einen `message`-Zeichenfolgenparameter, der verwendet wird, um Nachrichten zu *adressieren*. Die Methoden `Subscribe` und `Send` verwenden generische Parameter, um weiter zu steuern, wie Nachrichten geliefert werden. Zwei Nachrichten mit demselben `message`-Text aber unterschiedlichen generischen Typargumenten werden nicht an denselben Abonnenten geliefert.
-
-Die API für `MessagingCenter` ist einfach:
-
-- `Subscribe<TSender> (object subscriber, string message, Action<TSender> callback, TSender source = null)`
-- `Subscribe<TSender, TArgs> (object subscriber, string message, Action<TSender, TArgs> callback, TSender source = null)`
-- `Send<TSender> (TSender sender, string message)`
-- `Send<TSender, TArgs> (TSender sender, string message, TArgs args)`
-- `Unsubscribe<TSender, TArgs> (object subscriber, string message)`
-- `Unsubscribe<TSender> (object subscriber, string message)`
-
-Diese Methoden werden nachfolgend erklärt.
-
-<a name="Using_the_MessagingCenter" />
-
-## <a name="using-the-messagingcenter"></a>Verwenden von MessagingCenter
-
-Nachrichten können als Ergebnis von Benutzerinteraktionen (z. B. Klicken auf eine Schaltfläche), eines Systemereignisses (z. B. Ändern des Steuerelementstatus) oder einiger anderer Incidents (z. B. Abschluss eines asynchronen Downloads) gesendet werden. Abonnenten könnten warten, um die Darstellung der Benutzeroberfläche zu ändern, Daten zu speichern oder einige andere Vorgänge auszulösen.
-
-Weitere Informationen zur Verwendung der `MessagingCenter`-Klasse finden Sie unter [Kommunikation zwischen lose gekoppelten Komponenten](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md).
-
-### <a name="simple-string-message"></a>Einfache Zeichenfolgennachricht
-
-Die einfachste Nachricht enthält nur eine Zeichenfolge im `message`-Parameter. Eine `Subscribe`-Methode, die nach einfachen Zeichenfolgennachrichten *lauscht*, wird unten gezeigt. Beachten Sie den generischen Typ, der die Erwartung angibt, dass der Sender vom Typ `MainPage` ist. Alle Klassen in der Projektmappe können die Nachricht mit der folgenden Syntax abonnieren:
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)-Nachrichten sind Zeichenfolgen. Herausgeber benachrichtigen Abonnenten einer Nachricht mit einer der [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Überladungen. Im folgenden Codebeispiel wird eine `Hi`-Nachricht veröffentlicht:
 
 ```csharp
-MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
-    // do something whenever the "Hi" message is sent
+MessagingCenter.Send<MainPage>(this, "Hi");
+```
+
+In diesem Beispiel gibt die [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Methode ein generisches Argument an, das den Absender darstellt. Zum Empfangen der Nachricht muss ein Abonnent das gleiche generische Argument angeben, das anzeigt, dass er auf eine Nachricht von diesem Absender lauscht. Außerdem gibt dieses Beispiel zwei Methodenargumente an:
+
+- Mit dem ersten Argument wird die Absenderinstanz angegeben.
+- Das zweite Argument gibt die Nachricht an.
+
+Nutzlastdaten können ebenfalls mit einer Nachricht gesendet werden:
+
+```csharp
+MessagingCenter.Send<MainPage, string>(this, "Hi", "John");
+```
+
+In diesem Beispiel gibt die [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Methode zwei generische Argumente an. Das erste Argument ist der Typ, der die Nachricht sendet, und das zweite Argument gibt den Typ der zu sendenden Nutzlastdaten an. Zum Empfangen der Nachricht muss ein Abonnent dieselben generischen Argumente angeben. Dies ermöglicht mehrere Nachrichten, die eine Nachrichtenidentität gemeinsam nutzen, aber unterschiedliche Nutzlastdatentypen senden, die von verschiedenen Abonnenten empfangen werden. Außerdem gibt dieses Beispiel ein drittes Methodenargument an, das die Nutzlastdaten darstellt, die an den Abonnenten gesendet werden sollen. In diesem Fall handelt es sich bei den Nutzlastdaten um ein `string`-Element.
+
+Die [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Methode veröffentlicht die Nachricht und alle Nutzlastdaten unter Verwendung eines Fire-and-Forget-Ansatzes. Daher wird die Nachricht auch dann gesendet, wenn für den Empfang der Nachricht keine Abonnenten registriert sind. Unter diesen Umständen wird die gesendete Nachricht ignoriert.
+
+## <a name="subscribe-to-a-message"></a>Abonnieren einer Nachricht
+
+Abonnenten können sich registrieren, um eine Nachricht mit einer der [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Überladungen zu empfangen. Das folgende Codebeispiel veranschaulicht dieses Verhalten:
+
+```csharp
+MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) =>
+{
+    // Do something whenever the "Hi" message is received
 });
 ```
 
-In der `MainPage`-Klasse *sendet* der folgende Code die Nachricht. Der `this`-Parameter ist eine Instanz von `MainPage`.
+In diesem Beispiel abonniert die [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Methode das `this`-Objekt für `Hi`-Nachrichten, die vom `MainPage`-Typ gesendet werden, und führt als Antwort auf den Empfang der Nachricht einen Rückrufdelegaten aus. Der als Lambdaausdruck angegebene Rückrufdelegat könnte Code sein, der die Benutzeroberfläche aktualisiert, einige Daten speichert oder einen anderen Vorgang auslöst.
+
+> [!NOTE]
+> Ein Abonnent muss möglicherweise nicht jede Instanz einer veröffentlichten Nachricht verarbeiten, und dies kann durch die generischen Typargumente gesteuert werden, die für die [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Methode angegeben werden.
+
+Im folgenden Beispiel wird gezeigt, wie eine Nachricht abonniert wird, die Nutzlastdaten enthält:
 
 ```csharp
-MessagingCenter.Send<MainPage> (this, "Hi");
-```
-
-Die Zeichenfolge ändert sich nicht: gibt den *Nachrichtentyp* an und wird zur Ermittlung des zu benachrichtigenden Abonnenten verwendet. Diese Art Nachricht wird verwendet, um anzugeben, dass ein bestimmtes Ereignis aufgetreten ist (z. B. „Upload abgeschlossen“) bei dem keine weiteren Informationen benötigt werden.
-
-### <a name="passing-an-argument"></a>Übergeben von Argumenten
-
-Wenn Sie ein Argument mit der Nachricht übergeben möchten, geben Sie den Argumenttyp in den generischen `Subscribe`-Argumenten und in der Signatur der Aktion an.
-
-```csharp
-MessagingCenter.Subscribe<MainPage, string> (this, "Hi", (sender, arg) => {
-    // do something whenever the "Hi" message is sent
-    // using the 'arg' parameter which is a string
+MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
+{
+    await DisplayAlert("Message received", "arg=" + arg, "OK");
 });
 ```
 
-Wenn Sie die Nachricht mit Argument senden möchten, schließen Sie den generischen Typparameter und den Wert des Arguments im Aufruf der `Send`-Methode ein.
+In diesem Beispiel abonniert die [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Methode `Hi`-Nachrichten, die vom `MainPage`-Typ gesendet werden, dessen Nutzlastdaten ein `string`-Objekt sind. Ein Rückrufdelegat wird als Reaktion auf den Empfang einer solchen Nachricht ausgeführt, der die Nutzlastdaten in einer Benachrichtigung anzeigt.
+
+## <a name="unsubscribe-from-a-message"></a>Kündigen des Abonnements einer Nachricht
+
+Abonnenten können Nachrichten kündigen, die Sie nicht mehr erhalten möchten. Dies wird mit einer der [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)-Überladungen erreicht:
 
 ```csharp
-MessagingCenter.Send<MainPage, string> (this, "Hi", "John");
+MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
 ```
 
-In diesem einfachen Beispiel wird zwar ein `string`-Argument verwendet, es kann jedoch jedes beliebige C#-Objekt übergeben werden.
+In diesem Beispiel kündigt die [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)-Methode das Abonnement des `this`-Objekts aus der vom `MainPage`-Typ gesendeten `Hi`-Nachricht.
 
-### <a name="unsubscribe"></a>Abonnement kündigen
-
-Ein Objekt kann eine Nachrichtensignatur abbestellen, so dass keine weiteren Nachrichten mehr gesendet werden. Die Syntax der `Unsubscribe`-Methode sollte die Signatur der Nachricht reflektieren (möglicherweise müssen Sie den generischen Typparameter für das Nachrichtenargument einschließen).
+Das Abonnement von Nachrichten, die Nutzlastdaten enthalten, sollte mithilfe der [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)-Überladung gekündigt werden, die zwei generische Argumente angibt:
 
 ```csharp
-MessagingCenter.Unsubscribe<MainPage> (this, "Hi");
-MessagingCenter.Unsubscribe<MainPage, string> (this, "Hi");
+MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
 ```
 
-<a name="Summary" />
-
-## <a name="summary"></a>Zusammenfassung
-
-MessagingCenter ist ein einfacher Weg, Kopplung zu reduzieren, besonders zwischen Anzeigemodellen. Es kann verwendet werden zum Senden und Empfangen einfacher Nachrichten oder zum Übergeben eines Arguments zwischen Klassen. Klassen sollten Nachrichten abbestellen, die sie nicht länger empfangen möchten.
-
+In diesem Beispiel kündigt die [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)-Methode das Abonnement des `this`-Objekts aus der vom `MainPage`-Typ gesendeten `Hi`-Nachricht, deren Nutzlastdaten ein `string`-Objekt sind.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [MessagingCenterSample (MessagingCenter – Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
-- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)
-- [Kommunikation zwischen lose gekoppelten Komponenten](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)

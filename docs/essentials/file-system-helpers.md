@@ -5,12 +5,12 @@ ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 74089d55006555168d9774924c484cb8866cfb37
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5b155e4976a67bda36e66d2ca3565c9237fde3c6
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898849"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738866"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Dateisystemhilfsprogramme
 
@@ -28,7 +28,7 @@ Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 using Xamarin.Essentials;
 ```
 
-So rufen Sie das Anwendungsverzeichnis zum Speichern von **Cachedaten** ab. Cachedaten können für alle Daten verwendet werden, die länger als temporäre Daten aufbewahrt werden müssen. Dabei sollte es sich aber nicht um Daten handeln, die für den ordnungsgemäßen Betrieb erforderlich sind.
+So rufen Sie das Anwendungsverzeichnis zum Speichern von **Cachedaten** ab. Cachedaten können für alle Daten verwendet werden, die länger als temporäre Daten aufbewahrt werden müssen. Dabei sollte es sich aber nicht um Daten handeln, die für den ordnungsgemäßen Betrieb erforderlich sind, da das Betriebssystem vorgibt, wann dieser Speicher gelöscht wird.
 
 ```csharp
 var cacheDir = FileSystem.CacheDirectory;
