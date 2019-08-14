@@ -1,6 +1,6 @@
 ---
-title: Regeln für Xamarin.iOS-Analyse
-description: Dieses Dokument beschreibt eine Reihe von Regeln für die Codeanalyse, mit denen überprüft Xamarin.iOS-projekteinstellungen, um zu ermitteln, wenn mehr/better-optimized Einstellungen verfügbar sind.
+title: Xamarin. IOS-Analyse Regeln
+description: In diesem Dokument wird ein Satz von Analyse Regeln beschrieben, mit denen xamarin. IOS-Projekteinstellungen überprüft werden, um zu bestimmen, ob mehr/besser optimierte Einstellungen verfügbar sind.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C29B69F5-08E4-4DCC-831E-7FD692AB0886
@@ -8,63 +8,70 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 8a4990ce7b2bcacbd4b97b214458531b3d94122e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5f968e01cc0b866f94f524728b4bba1e759e8bf8
+ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61416382"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012385"
 ---
-# <a name="xamarinios-analysis-rules"></a>Regeln für Xamarin.iOS-Analyse
+# <a name="xamarinios-analysis-rules"></a>Xamarin. IOS-Analyse Regeln
 
-Xamarin.iOS-Analyse ist ein Satz von Regeln, mit die überprüft die projekteinstellungen, mit denen Sie bestimmen, ob optimierte Einstellungen besser/mehr verfügbar sind.
+Bei der xamarin. IOS-Analyse handelt es sich um einen Satz von Regeln, mit denen Sie Ihre Projekteinstellungen überprüfen, um festzustellen, ob bessere/optimierte Einstellungen verfügbar sind.
 
-Führen Sie so oft wie möglich ist, finden mögliche Verbesserungen am Anfang, und speichern Sie die Entwicklungszeit Analyseregeln.
+Führen Sie die Analyse Regeln so oft wie möglich aus, um mögliche Verbesserungen frühzeitig zu finden und Entwicklungszeit zu sparen.
 
-Führen Sie die Regeln an, in Visual Studio für Mac Menü wählen **Projekt > Codeanalyse ausführen**.
+Um die Regeln auszuführen, klicken Sie im Menü Visual Studio für Mac auf **Projekt > Code Analyse ausführen**.
 
 > [!NOTE]
-> Xamarin.iOS-Analyse kann nur auf die ausgewählte Konfiguration ausgeführt. Es wird dringend empfohlen Ausführen des Tools zum Debuggen **und** Releasekonfigurationen.
+> Die xamarin. IOS-Analyse wird nur für die aktuell ausgewählte Konfiguration ausgeführt. Es wird dringend empfohlen, das Tool für Debug **-und** Releasekonfigurationen ausführen.
 
 <a name="XIA0001" />
 
 ## <a name="xia0001-disabledlinkerrule"></a>XIA0001: DisabledLinkerRule
 
-- **Problem:** Der Linker ist für den Debugmodus auf Gerät deaktiviert.
-- **Fix:** Sie sollten zum Ausführen des Codes mit dem Linker, um überraschungen zu vermeiden.
-Informationen zum Einrichten, zu Projekt wechseln > iOS-Build > Linker anders verhält.
+- **Problem:** Der Linker ist auf dem Gerät für den Debugmodus deaktiviert.
+- **Zusetzen** Sie sollten versuchen, Ihren Code mit dem Linker auszuführen, um Überraschungen zu vermeiden.
+Um dies einzurichten, wechseln Sie zu Projekt > IOS-Build > Linker-Verhalten.
 
 <a name="XIA0002" />
 
 ## <a name="xia0002-testcloudagentreleaserule"></a>XIA0002: TestCloudAgentReleaseRule
 
-- **Problem:** App-Builds, die der Test Cloud Agent initialisiert werden von Apple, die bei der Übermittlung, zurückgewiesen, wie private-API zu verwenden.
-- **Fix:** Hinzufügen oder korrigieren Sie die erforderlichen #if und im Code definiert.
+- **Problem:** App-Builds, die den Test Cloud-Agent initialisieren, werden von Apple bei der Übermittlung abgelehnt, da Sie die private API verwenden.
+- **Zusetzen** Fügen Sie die erforderliche #if hinzu, und definieren Sie Sie im Code.
 
 <a name="XIA0003" />
 
 ## <a name="xia0003-ipadebugbuildsrule"></a>XIA0003: IPADebugBuildsRule
 
-- **Problem:** Debug-Konfiguration, die Entwickler Signaturschlüssel verwendet sollte keine IPA-Datei generieren, Bedarf nur für die Verteilung, die jetzt den Veröffentlichen-Assistenten verwendet.
-- **Fix:** Deaktivieren Sie die Erstellung der IPA-Datei in den Projektoptionen für die Debugkonfiguration.
+- **Problem:** Die Debugkonfiguration, die Entwickler Signatur Schlüssel verwendet, sollte keine IPA-Datei generieren, da Sie nur für die Verteilung erforderlich ist, die jetzt den Veröffentlichungs-Assistenten verwendet.
+- **Zusetzen** Deaktivieren Sie IPA Build in den Projektoptionen für die Debugkonfiguration.
 
 <a name="XIA0004" />
 
 ## <a name="xia0004-missing64bitsupportrule"></a>XIA0004: Missing64BitSupportRule
 
-- **Problem:** Der unterstützte Architektur für die "release | Gerät"wird nicht auf 64-Bit-kompatibel, ARM64 fehlt. Dies ist ein Problem, da es sich bei Apple 32 Bits nur iOS-apps in den App Store nicht akzeptiert.
-- **Fix:** Doppelklicken Sie auf Ihrem iOS-Projekt, wechseln Sie zum Erstellen > iOS zu erstellen und ändern Sie die unterstützten Architekturen, es gelten somit ARM64.
+- **Problem:** Die unterstützte Architektur für "Release | das Gerät "ist nicht 64 Bit kompatibel, ARM64 fehlt. Dies ist ein Problem, da Apple nur IOS-apps mit 32 Bits im AppStore akzeptiert.
+- **Zusetzen** Doppelklicken Sie auf Ihr IOS-Projekt, navigieren Sie zu Build > IOS-Build, und ändern Sie die unterstützten Architekturen, damit Sie über ARM64 verfügen.
 
 <a name="XIA0005" />
 
 ## <a name="xia0005-float32rule"></a>XIA0005: Float32Rule
 
-- **Problem:** Nicht mit der float32-Option (--Aot-Options = O = float32) führt zu einer Supportdateien Leistungseinbußen, insbesondere für Mobile, in denen double Precision mathematische merklich langsamer ist. Beachten Sie, dass .NET mit doppelten Genauigkeit intern, auch wenn "float", also durch Aktivieren dieser Option wirkt sich auf Genauigkeit und möglicherweise Kompatibilität.
-- **Fix:** Doppelklicken Sie auf Ihrem iOS-Projekt, wechseln Sie zum Erstellen > iOS zu erstellen, und deaktivieren Sie die "Alle 32-Bit-Gleitkommaoperationen als 64-Bit-Gleitkommaoperationen ausführen".
+- **Problem:** Wenn die Option float32 (--AOT-Options =-O = float32) nicht verwendet wird, führt dies zu einem hohen Leistungs Aufwand, insbesondere bei mobilen Geräten, bei denen die mathematische Genauigkeit mit doppelter Genauigkeit measurisch langsamer ist. Beachten Sie, dass .net die doppelte Genauigkeit intern verwendet, sogar für float. das Aktivieren dieser Option wirkt sich daher auf die Genauigkeit und möglicherweise auf Kompatibilität aus.
+- **Zusetzen** Doppelklicken Sie auf Ihr IOS-Projekt, navigieren Sie zu Build > IOS-Build, und deaktivieren Sie die Option "alle 32-Bit-Float-Vorgänge als 64 Bit Float" ausführen.
 
 <a name="XIA0006" />
 
 ## <a name="xia0006-httpclientavoidmanaged"></a>XIA0006: HttpClientAvoidManaged
 
-- **Problem:** Es wird empfohlen, den Handler für native "HttpClient" anstelle des verwalteten zur Verbesserung der Leistung kleiner Größe der ausführbaren Datei, und um einfach den neueren Standards zu unterstützen.
-- **Fix:** Doppelklicken Sie auf Ihrem iOS-Projekt, wechseln Sie zum Erstellen > iOS erstellen und ändern Sie die "HttpClient"-Implementierung von NSUrlSession (iOS 7 und höher) oder CFNetwork Version vor iOS 7 unterstützen.
+- **Problem:** Wir empfehlen die Verwendung des systemeigenen httpclient-Handlers anstelle des verwalteten httpclient-Handlers für eine bessere Leistung, eine geringere ausführbare Größe und eine einfache Unterstützung neuer Standards.
+- **Zusetzen** Doppelklicken Sie auf Ihr IOS-Projekt, navigieren Sie zu Build > IOS-Build, und ändern Sie die HttpClient-Implementierung in nsurlsession (IOS 7 +) oder CFNetwork, um die Version vor IOS 7 zu unterstützen.
+
+<a name="XIA0007" />
+
+## <a name="xia0007-usellvmrule"></a>XIA0007: "US-vmrule"
+
+- **Problem:** Für Release | iPhone-Konfiguration empfiehlt es sich, den llvm-Compiler zu aktivieren, der Code generiert, der auf Kosten der Buildzeit schneller ausgeführt werden kann.
+- **Zusetzen** Doppelklicken Sie auf Ihr IOS-Projekt, navigieren Sie zu Build > IOS-Build, und aktivieren Sie für Release | iPhone die Option llvm-Optimierungs Compiler.
