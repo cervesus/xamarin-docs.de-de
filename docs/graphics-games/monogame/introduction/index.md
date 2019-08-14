@@ -6,12 +6,12 @@ ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 47ed7fc1b4485864646a17940aceed395a4a8983
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 1a94a29f0da6f7916eca697a24ad504a0af46b7c
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680908"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978393"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>Einführung in die Spieleentwicklung mit monogame
 
@@ -23,7 +23,7 @@ Monogame ist eine plattformübergreifende, hardwarebeschleunigte API zur Bereits
 
 Im ersten Abschnitt dieser exemplarischen Vorgehensweise wird das Einrichten eines leeren Projekts behandelt. Im letzten Abschnitt wird das Schreiben all unserer Spiellogik und ihrer Inhalte erläutert – die meisten sind plattformübergreifend.
 
-Am Ende dieser exemplarischen Vorgehensweise haben wir ein einfaches Spiel erstellt, in dem der Player ein animiertes Zeichen mit Berührungs Eingaben steuern kann.  Obwohl es sich hierbei nicht um ein vollständiges Spiel handelt (da es keine Gewinn-oder Verlust Bedingungen hat), werden zahlreiche Konzepte der Spielentwicklung veranschaulicht, die als Grundlage für viele Arten von Spielen verwendet werden können. 
+Am Ende dieser exemplarischen Vorgehensweise haben wir ein einfaches Spiel erstellt, in dem der Player ein animiertes Zeichen mit Berührungs Eingaben steuern kann.  Obwohl es sich hierbei nicht um ein vollständiges Spiel handelt (da es keine Gewinn-oder Verlust Bedingungen hat), werden zahlreiche Konzepte der Spielentwicklung veranschaulicht, die als Grundlage für viele Arten von Spielen verwendet werden können.
 
 Im folgenden wird das Ergebnis dieser exemplarischen Vorgehensweise gezeigt:
 
@@ -31,10 +31,9 @@ Im folgenden wird das Ergebnis dieser exemplarischen Vorgehensweise gezeigt:
 
 ## <a name="monogame-and-xna"></a>Monogame und XNA
 
-Die monogame-Bibliothek ist dazu gedacht, die XNA-Bibliothek von Microsoft in Syntax und Funktionalität zu imitieren.  Alle monogame-Objekte sind unter dem Microsoft. XNA-Namespace vorhanden – sodass der meiste XNA-Code in monogame ohne Änderung verwendet werden kann. 
+Die monogame-Bibliothek ist dazu gedacht, die XNA-Bibliothek von Microsoft in Syntax und Funktionalität zu imitieren.  Alle monogame-Objekte sind unter dem Microsoft. XNA-Namespace vorhanden – sodass der meiste XNA-Code in monogame ohne Änderung verwendet werden kann.
 
 Entwickler, die mit XNA vertraut sind, sind bereits mit der Syntax von monogame vertraut, und Entwickler, die nach zusätzlichen Informationen zum Arbeiten mit monogame suchen, können auf vorhandene Online-XNA-Exemplarische Vorgehensweisen, eine API-Dokumentation und Diskussionen verweisen.
-
 
 ## <a name="walkthrough-parts"></a>Exemplarische Vorgehensweise
 

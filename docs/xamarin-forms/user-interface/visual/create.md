@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 8173ebcc174df6e34a53f226a43083bd28941031
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: bc95b9be0605c353ee9f914cb065f79711b9f92b
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869380"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978280"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>Erstellen eines visuellen xamarin. Forms-Renderers
 
@@ -104,7 +104,7 @@ Der `CustomVisual` Typ kann dann für die rendererklassen registriert werden [`B
 
 ## <a name="register-the-ivisual-type"></a>Registrieren des ivisual-Typs
 
-Ergänzen Sie in den Platt Form Projekten die Renderer-Namespaces `ExportRendererAttribute`mit dem:
+Fügen Sie in den Platt Form Projekten `ExportRendererAttribute` das auf Assemblyebene hinzu:
 
 ```csharp
 [assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer), new[] { typeof(CustomVisual) })]

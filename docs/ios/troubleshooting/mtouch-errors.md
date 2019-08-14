@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: da19b9071695f11a7c5591b7e715d85daa01841b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 3291589f4a61fad7d7465e0ac2bd4844ae4a0655
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508717"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980738"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. IOS-Fehler
 
@@ -137,7 +137,7 @@ Dies kann in den folgenden Situationen vorkommen:
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: Ungültige ABI: *. Unterstützte ABIS: i386, x86_64, armv7, armv7 + llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 und arm64 + llvm.
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x86_64--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: Ungültige ABI: *. Unterstützte ABIS: i386, x86_64, armv7, armv7 + llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 und arm64 + llvm.
 
 Es wurde eine ungültige ABI an mberühren übermittelt. Geben Sie eine gültige ABI an.
 
@@ -252,7 +252,7 @@ Um dieses Problem zu beheben, ändern Sie "Anwendungsname" in den Build-/IOS-Anw
 
 <a name="MT0037" />
 
-### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x8664"></a>MT0037: MonoTouch. dll ist nicht 64-Bit-kompatibel. Verweisen Sie entweder auf xamarin. IOS. dll, oder erstellen Sie nicht für eine 64-Bit-Architektur (ARM64 und/oder x86_64).
+### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037: MonoTouch. dll ist nicht 64-Bit-kompatibel. Verweisen Sie entweder auf xamarin. IOS. dll, oder erstellen Sie nicht für eine 64-Bit-Architektur (ARM64 und/oder x86_64).
 
 <a name="MT0038" />
 
@@ -838,7 +838,7 @@ Weitere Informationen finden Sie unter Bug #[52727](https://bugzilla.xamarin.com
 
 Beim berühren einer Datei ist ein Fehler aufgetreten (um sicherzustellen, dass teilweise Builds ordnungsgemäß durchgeführt werden).
 
-Diese Warnung kann wahrscheinlich ignoriert werden. bei Problemen wird ein Fehler (https://bugzilla.xamarin.com ] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) und wird untersucht.
+Diese Warnung kann wahrscheinlich ignoriert werden. bei Problemen wird ein Fehler angezeigt, und [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) der Fehler wird untersucht.
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx: Projektbezogene Fehlermeldungen
 
@@ -1678,7 +1678,7 @@ Manchmal ist es möglich, dieses Problem zu umgehen, indem inkrementelle Builds 
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvancedtopicslimitationsreversecallbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002: AOT-Einschränkung: Die ' * '-Methode muss statisch sein, da Sie mit [' monopinvokecallback] ' versehen ist. Siehe [Developer.xamarin.com/Guides/IOS/advanced_topics/Limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002: AOT-Einschränkung: Die ' * '-Methode muss statisch sein, da Sie mit [' monopinvokecallback] ' versehen ist. Siehe [Developer.xamarin.com/Guides/IOS/advanced_topics/Limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 Diese Fehlermeldung stammt vom AOT-Compiler.
 
@@ -1824,7 +1824,7 @@ Dies ist immer ein Fehler in xamarin. IOS. Melden Sie einen Fehlerbericht unter 
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112: Die Registrierungsstelle hat einen ungültigen Typ `*`gefunden. Das Registrieren von generischen Typen mit dem Ziel-C wird nicht unterstützt und kann zu zufälligem Verhalten und/oder Abstürzen führen (aus Gründen der Abwärtskompatibilität mit älteren Versionen von xamarin. IOS ist es `--unsupported--enable-generics-in-registrar` möglich, diesen Fehler zu ignorieren, indem er als zusätzliches mtouchscreen übergeben wird). -Argument auf der Seite IOS-Buildoptionen des Projekts. Weitere Informationen finden Sie unter [Developer.xamarin.com/Guides/IOS/advanced_topics/Registrar](~/ios/internals/registrar.md) ).
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112: Die Registrierungsstelle hat einen ungültigen Typ `*`gefunden. Das Registrieren von generischen Typen mit dem Ziel-C wird nicht unterstützt und kann zu zufälligem Verhalten und/oder Abstürzen führen (aus Gründen der Abwärtskompatibilität mit älteren Versionen von xamarin. IOS ist es `--unsupported--enable-generics-in-registrar` möglich, diesen Fehler zu ignorieren, indem er als zusätzliches mtouchscreen übergeben wird). -Argument auf der Seite IOS-Buildoptionen des Projekts. Weitere Informationen finden Sie unter [Developer.xamarin.com/Guides/IOS/advanced_topics/Registrar](~/ios/internals/registrar.md) ).
 
 <a name="MT4113" />
 
@@ -2110,7 +2110,7 @@ Dies weist normalerweise auf einen Fehler in xamarin. IOS hin. Bitte melden Sie 
 
 <a name="MT4168" />
 
-### <a name="mt4168-cannot-register-the-type-managedname-because-its-objective-c-name-exportedname-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168: Der Typ "{Managed\_Name}" kann nicht registriert werden, da der Ziel-c-Name "{exportierter\_Name}" ein Schlüsselwort der Ziel-c ist. Verwenden Sie einen anderen Namen.
+### <a name="mt4168-cannot-register-the-type-managed_name-because-its-objective-c-name-exported_name-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168: Der Typ "{Managed\_Name}" kann nicht registriert werden, da der Ziel-c-Name "{exportierter\_Name}" ein Schlüsselwort der Ziel-c ist. Verwenden Sie einen anderen Namen.
 
 Der Ziel-c-Name für den fraglichen Typ ist kein gültiger Ziel-c-Bezeichner.
 
@@ -2931,7 +2931,7 @@ Dies weist darauf hin, dass im Buildprozess etwas falsch ist. Bitte melden Sie e
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: Der Delegat zum Blockieren des Konvertierungs Attributs ([delegateproxy]) für den Rückgabewert *der Methode konnte*nicht gefunden werden. Bitte melden Sie einen Fehler http://bugzilla.xamarin.com unter.
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: Der Delegat zum Blockieren des Konvertierungs Attributs ([delegateproxy]) für den Rückgabewert der Methodekonnte nicht gefunden werden. Bitte melden Sie einen Fehler http://bugzilla.xamarin.com unter.
 
 Xamarin. IOS konnte eine erforderliche Methode zur Laufzeit nicht finden (zum Konvertieren eines Delegaten in einen-Block).
 
@@ -3017,6 +3017,6 @@ Dies weist auf einen Fehler in xamarin. IOS hin. Bitte melden Sie einen Fehler [
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: Es wurde kein gültiger Erweiterungstyp für die Smart Enumeration "{smart_type}" gefunden. Bitte melden Sie einen Fehler https://bugzilla.xamarin.com unter.
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: Es wurde kein gültiger Erweiterungstyp für die Smart Enumeration "{smart_type}" gefunden. Bitte melden Sie einen Fehler https://bugzilla.xamarin.com unter.
 
 Dies weist auf einen Fehler in xamarin. IOS hin. Bitte melden Sie einen Fehler [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)unter.

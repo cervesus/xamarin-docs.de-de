@@ -1,76 +1,76 @@
 ---
-title: Xamarin.Forms DataPages
-description: Dieser Artikel enthält die Xamarin.Forms-DataPages, stellen eine API, um schnell und problemlos eine Datenquelle mit vordefinierten Ansichten binden.
+title: Xamarin. Forms-DataPages
+description: In diesem Artikel werden xamarin. Forms-DataPages vorgestellt, die eine API bereitstellen, mit der eine Datenquelle schnell und einfach an vordefinierte Sichten gebunden werden kann.
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9dc34f412549c4be6099b373ddae7cbd2e8d21c8
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407672"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980769"
 ---
-# <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
+# <a name="xamarinforms-datapages"></a>Xamarin. Forms-DataPages
 
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorschauversion")
 
 > [!IMPORTANT]
-> DataPages erfordert eine [Xamarin.Forms Design](~/xamarin-forms/user-interface/themes/index.md) Verweis auf das Rendern.
+> Für DataPages ist ein xamarin. Forms-Design Verweis zum Rendering erforderlich. Dies umfasst das Installieren des [xamarin. Forms. Theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) -nuget-Pakets in Ihrem Projekt, gefolgt von den nuget-Paketen [xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
 
-Xamarin.Forms DataPages auf Evolve 2016 angekündigt wurden und sind als Vorschau für Kunden, testen und Feedback zur Verfügung.
+Xamarin. Forms-Datentypen wurden bei Weiterentwicklung 2016 angekündigt und stehen als Vorschau für Kunden zur Verfügung, um uns Feedback zu senden.
 
-DataPages Geben Sie eine API, um schnell und einfach zu eine Datenquelle mit vordefinierten Ansichten binden. Auflisten von Elementen Detailseiten rendert die Daten automatisch und können unter Verwendung von Designs angepasst werden.
+DataPages Geben Sie eine API, um schnell und einfach zu eine Datenquelle mit vordefinierten Ansichten binden. Listenelemente und Detailseiten werden die Daten automatisch Rendering und können mithilfe von Designs angepasst werden.
 
-Um anzuzeigen, wie die Evolve-Keynote-Demo funktioniert, sehen Sie sich die [Handbuch mit ersten Schritten](get-started.md).
+Sehen Sie sich die [Anleitung](get-started.md)für die ersten Schritte an.
 
 [![](images/demo-sml.png "Beispielanwendung DataPages")](images/demo.png#lightbox "DataPages-Beispielanwendung")
 
 ## <a name="introduction"></a>Einführung
 
-Datenquellen und den zugehörigen Seiten ermöglichen Entwicklern, schnell und einfach eine unterstützte Datenquelle verwenden und es mithilfe des integrierten Gerüstbau, die Benutzeroberfläche angepasst werden kann, mit Designs zu rendern.
+Mithilfe von Datenquellen und den zugehörigen Datenseiten können Entwickler schnell und einfach eine unterstützte Datenquelle nutzen und diese mithilfe des integrierten UI-Gerüsts, das mit Designs angepasst werden kann, wiedergeben.
 
-DataPages werden zu einer Xamarin.Forms-Anwendung hinzugefügt, durch Einschließen der **Xamarin.Forms.Pages** Nuget-Paket.
+DataPages werden einer xamarin. Forms-Anwendung hinzugefügt, indem das nuget-Paket **xamarin. Forms. Pages** eingeschlossen wird.
 
 ### <a name="data-sources"></a>Datenquellen
 
-Die Vorschau hat einige vorgefertigte Datenquellen, die für die Verwendung zur Verfügung:
+Die Vorschau bietet einige vorgefertigte Datenquellen, die für die Verwendung zur Verfügung stehen:
 
 * **JsonDataSource**
-* **AzureDataSource** (trennen Sie Nuget)
-* **AzureEasyTableDataSource** (separate Nuget)
+* **Azuredatasource** (separates nuget)
+* **Azureeasytabledatasource** (separates nuget)
 
-Finden Sie unter den [Handbuch mit ersten Schritten](get-started.md) ein Beispiel mit einem `JsonDataSource`.
+Ein Beispiel für die Verwendung von finden Sie `JsonDataSource`im [Leitfaden zu](get-started.md) den ersten Schritten.
 
 
-### <a name="pages--controls"></a>Seiten und Steuerelemente
+### <a name="pages--controls"></a>Seiten & Steuerelementen
 
-Die folgenden Seiten und Steuerelemente werden eingeschlossen, um die einfache Bindung mit den angegebenen Datenquellen zuzulassen:
+Die folgenden Seiten und Steuerelemente sind enthalten, um eine einfache Bindung an die angegebenen Datenquellen zu ermöglichen:
 
-* **ListDataPage** – finden Sie unter den [Einstieg Beispiel](get-started.md).
-* **"Directorypage"** – eine Liste mit aktivierter Gruppierung.
-* **PersonDetailPage** – ein einzelnes Datenelement anzeigen, die für einen bestimmten Objekttyp (einen Kontakteintrag) angepasst.
-* **DataView** – eine Ansicht, um Daten aus der Quelle in generischer Form verfügbar zu machen.
-* **CardView** – im Stil an, die ein Bild, Titeltext und Beschreibungstext enthält.
-* **HeroImage** – eine Image-Rendering-Ansicht.
-* **ListItem** : eine vorkonfigurierte Ansicht mit einem Layout ähnelt native IOS- und Android-Listenelemente.
+* **Listdatapage** – siehe das [Beispiel](get-started.md)für die ersten Schritte.
+* **Directoriypage** – eine Liste mit aktivierter Gruppierung.
+* **Persondetailpage** – eine einzelne Datenelement Sicht, die für einen bestimmten Objekttyp (einen Kontakt Eintrag) angepasst ist.
+* **DataView** – eine Sicht, mit der Daten aus der Quelle generisch zugänglich gemacht werden.
+* **CardView** – eine formatierte Ansicht, die ein Bild, einen Titeltext und einen Beschreibungstext enthält.
+* **Heroimage** – eine Bild Rendering-Ansicht.
+* **ListItem** – eine vorgefertigte Ansicht mit einem Layout, das den nativen IOS-und Android-Listenelementen ähnelt.
 
-Finden Sie unter den [DataPages Steuerelemente Referenz](controls.md) Beispiele.
+Beispiele finden Sie in der [Referenz zu DataPages](controls.md) -Steuerelementen.
 
 
 
 ### <a name="under-the-hood"></a>Im Hintergrund
 
-Eine Xamarin.Forms-Datenquelle entspricht der `IDataSource` Schnittstelle.
+Eine xamarin. Forms-Datenquelle entspricht der `IDataSource` -Schnittstelle.
 
-Die Xamarin.Forms-Infrastruktur interagiert mit einer Datenquelle über die folgenden Eigenschaften:
+Die xamarin. Forms-Infrastruktur interagiert mit einer Datenquelle über die folgenden Eigenschaften:
 
-* `Data` – eine schreibgeschützte Liste von Datenelementen, die angezeigt werden können.
-* `IsLoading` – Ein boolescher Wert, der angibt, ob die Daten geladen und für das verfügbar ist.
-* `[key]` – ein Indexer zum Abrufen von Elementen.
+* `Data`– eine schreibgeschützte Liste von Datenelementen, die angezeigt werden können.
+* `IsLoading`– ein boolescher Wert, der angibt, ob die Daten geladen und zum Rendern verfügbar sind.
+* `[key]`– ein Indexer zum Abrufen von Elementen.
 
-Es gibt zwei Methoden `MaskKey` und `UnmaskKey` , die verwendet werden kann, (oder ausblenden) Elementeigenschaften (d. h. verhindern sie gerenderte).
-Der Schlüssel entspricht das eine benannte Eigenschaft für das Datenobjekt für das Element.
+Es gibt zwei Methoden `MaskKey` `UnmaskKey` , die verwendet werden können, um Datenelement Eigenschaften auszublenden (oder anzuzeigen). verhindern, dass Sie gerendert werden.)
+Der Schlüssel entspricht der benannten Eigenschaft für das Datenelement Objekt.

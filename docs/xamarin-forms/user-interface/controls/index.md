@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2019
-ms.openlocfilehash: 9456512931822abd59a081485744846a11cdea88
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 925e97292d19745b0b89fb98103d205ab8476157
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869373"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980764"
 ---
 # <a name="controls-reference"></a>Steuerelementreferenz
 
@@ -27,7 +27,7 @@ Die vier Haupt Steuerungsgruppen, die zum Erstellen der Benutzeroberfläche eine
 - [**Ansichten**](views.md)
 - [**Zellen**](cells.md)
 
-Eine Xamarin.Forms-Startseite nimmt in der Regel den gesamten Bildschirm ein. Diese Seite enthält in der Regel ein Layout, die Ansichten und möglicherweise anderer Layouts enthält. Zellen sind spezielle Komponenten, die in Verbindung mit verwendet [ `TableView` ](views.md#tableView) und [ `ListView` ](views.md#listView).
+Eine Xamarin.Forms-Startseite nimmt in der Regel den gesamten Bildschirm ein. Diese Seite enthält in der Regel ein Layout, die Ansichten und möglicherweise anderer Layouts enthält. Zellen sind spezielle Komponenten, die in Verbindung mit verwendet [ `TableView` ](views.md#tableView) und [ `ListView` ](views.md#listView). Ein Klassendiagramm, das die Hierarchie von Typen anzeigt, die in der Regel zum Erstellen einer Benutzeroberfläche in xamarin. Forms verwendet werden, finden Sie unter [xamarin. Forms](~/xamarin-forms/internals/class-hierarchy.md)-Steuerelement-Klassenhierarchie.
 
 In den vier Artikeln auf [ **Seiten**](pages.md), [ **Layouts**](layouts.md), [ **Ansichten** ](views.md), und [ **Zellen**](cells.md), jeder Typ von Steuerelement wird mit Links zu ihrer API-Dokumentation, einen Artikel beschreiben die Verwendung (falls vorhanden) und eine oder mehrere Beispielprogramme (sofern vorhanden) beschrieben. Jede Art von Steuerelement wird auch von einem Screenshot begleitet, der eine Seite des [**formsgallery**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) -Beispiels anzeigt, die auf IOS-und Android-Geräten ausgeführt wird. Im folgenden einzelnen Screenshots finden Sie Links auf den Quellcode für die C#-Seite der entsprechenden XAML-Seite, und (wenn geeignet) die C#-Code-Behind-Datei für die XAML-Seite.
 
@@ -36,4 +36,5 @@ Zusätzlich zu den Steuerelementen, die mit xamarin. Forms bereitgestellt werden
 ## <a name="related-links"></a>Verwandte Links
 
 - [Beispiel für Xamarin.Forms FormsGallery](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Xamarin. Forms-Steuerelement-Klassenhierarchie](~/xamarin-forms/internals/class-hierarchy.md)
 - [API-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

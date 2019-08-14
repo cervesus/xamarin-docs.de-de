@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 1889579a48364204a977d63bd9bdb875df37a2bf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7d63dafbb17a3757f5d15f65e977b4b0cb8bc44a
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657034"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980864"
 ---
 # <a name="layouts-in-xamarinforms"></a>Layouts in Xamarin.Forms
 
@@ -32,6 +32,7 @@ Jedes Layoutsteuerelement ist, sowie weitere Details zur Verarbeitung von Änder
 * **[Relativelayout](relative-layout.md)** – wird zum Anordnen von Sichten durch Festlegen von Einschränkungen in Relation zu den Dimensionen der übergeordneten Dimensionen & Position verwendet.
 * **[Raster](grid.md)** – wird zum Anordnen von Sichten in einem Raster verwendet. Zeilen und Spalten können in Bezug auf Absolute Werte oder Verhältnisse angegeben werden.
 * **[Flexlayout](flex-layout.md)** – wird verwendet, um Ansichten horizontal oder vertikal mit Umbrüchen anzuordnen.
+* **[Frame](frame.md)** : wird verwendet, um eine Ansicht mit einem Rahmen oder Rahmen zu umschließen, der mit Farbe, Schlag Schatten und mehr konfiguriert werden kann.
 * **[ScrollView](scroll-view.md)** – wird verwendet, um einen Bildlauf bereitzustellen, wenn eine Ansicht nicht vollständig innerhalb der Bildschirm Begrenzungen passen kann.
 * **[Layoutoptions](layout-options.md)** – definieren Sie die Ausrichtung und Erweiterung für eine Sicht relativ zum übergeordneten Element.
 * **[Eingabe Transparenz](#input_transparency)** – gibt an, ob ein Element Eingaben empfängt.
@@ -179,6 +180,10 @@ Beachten Sie die folgenden Aspekte des obigen Codes ein:
 - Rastern und Spalten werden explizit angegeben nicht aus dem Inhalt abgeleitet.
 - `Height` und `Width` können festgelegt werden auf den Stern, was bedeutet, dass das Raster auf diese Werte mit den verfügbaren Platz ausfüllen festgelegt wird.
 - Jede Schaltfläche auf die Position wird angegeben, indem `Grid.Row`  &  `Grid.Column` Eigenschaften.
+
+### <a name="frameframemd"></a>[Frame](frame.md)
+
+Ein `Frame` Layout wird zum Erstellen eines anpassbaren Rahmens `View`um das untergeordnete Element verwendet. Ein `Frame` kann verwendet werden, um ein Steuerelement, z `Button` . b. oder `Label` , zu platzieren, oder es kann andere Layouts umschließen, um komplexere Benutzeroberflächen Objekte, wie z. b. eine Karte
 
 ### <a name="layoutoptionslayout-optionsmd"></a>[LayoutOptions](layout-options.md)
 

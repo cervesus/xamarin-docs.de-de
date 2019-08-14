@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: a77ebd8a6c64d2ee44011e8d51977adf88b52be9
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d47a8d4a0fa72cee59a054554e9868f20323d00b
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832440"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980789"
 ---
 # <a name="getting-started-with-datapages"></a>Erste Schritte mit DataPages
 
@@ -21,8 +21,7 @@ ms.locfileid: "67832440"
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorschauversion")
 
 > [!IMPORTANT]
-> DataPages erfordert eine [Xamarin.Forms Design](~/xamarin-forms/user-interface/themes/index.md) Verweis auf das Rendern.
-
+> Für DataPages ist ein xamarin. Forms-Design Verweis zum Rendering erforderlich. Dies umfasst das Installieren des [xamarin. Forms. Theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) -nuget-Pakets in Ihrem Projekt, gefolgt von den nuget-Paketen [xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
 
 Zunächst erstellen eine einfache datengesteuerte-Seite mithilfe der Vorschau DataPages führen Sie die folgenden Schritte aus. Diese Demo verwendet ein hartcodierten-Stil ("Ereignisse") in der Preview-Builds funktioniert nur mit bestimmten JSON-Format im Code.
 
@@ -34,7 +33,7 @@ Fügen Sie diese Nuget-Pakete zu Ihrer Xamarin.Forms .NET Standard-Bibliothek un
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
-* Eine Implementierung Design Nuget (z. b. Xamarin.Forms.Theme.Light)
+* Eine Implementierung Design Nuget (z. b. Xamarin. Forms. Theme. Light)
 
 ## <a name="2-add-theme-reference"></a>2. Design-Verweis hinzufügen
 
@@ -52,7 +51,7 @@ In der **"App.xaml"** hinzufügen ein benutzerdefinierten `xmlns:mytheme` für d
 ```
 
 > [!IMPORTANT]
-> Sie sollten auch die Schritte zum [Design-Assemblys (siehe unten) laden](#loadtheme) durch Hinzufügen von Bausteincode für den iOS- `AppDelegate` und Android `MainActivity`. Dies wird in einer kommenden Vorschau-Version verbessert werden.
+> Sie sollten auch die Schritte zum Laden von Design-Assemblys [(unten)](#loadtheme) ausführen, indem Sie dem IOS `AppDelegate` -und Android `MainActivity`-Code Code hinzufügen. Dies wird in einer kommenden Vorschau-Version verbessert werden.
 
 
 ## <a name="3-add-a-xaml-page"></a>3. Fügen Sie eine XAML-Seite
@@ -100,7 +99,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 Löschen der `Content` Element, und Ersetzen Sie ihn mit einer `p:ListDataPage.DataSource` auf die Seite mit Daten aufzufüllen. Im Beispiel unten eine remote-Json ist-Datendatei aus einer URL geladen wird.
 
 > [!NOTE]
-> Die Vorschau *erfordert* eine `StyleClass` Attribut, der Renderinghinweise für die Datenquelle angeben. Die `StyleClass="Events"` bezieht sich auf einem Layout, das ist in der Vorschau vordefiniert und enthält die Stile *hartcodiert* entsprechend die JSON-Datenquelle verwendet wird.
+> Die Vorschau *erfordert* ein `StyleClass` -Attribut, um Renderinghinweise für die Datenquelle bereitzustellen. Die `StyleClass="Events"` bezieht sich auf einem Layout, das ist in der Vorschau vordefiniert und enthält die Stile *hartcodiert* entsprechend die JSON-Datenquelle verwendet wird.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,7 +176,7 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
 
-Es ist etwas mehr Arbeit Designs von Grund auf neu erstellen (finden Sie unter der [Designs Handbuch](~/xamarin-forms/user-interface/themes/index.md)) jedoch künftigen Vorschauversionen werden dies einfacher.
+Es ist ein wenig mehr Arbeit, Designs von Grund auf neu zu erstellen, aber zukünftige Vorschau Versionen machen dies einfacher.
 
 
 ## <a name="troubleshooting"></a>Problembehandlung

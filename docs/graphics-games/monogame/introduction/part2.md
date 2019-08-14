@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 7c7b58266b4f5168fdb231258390fa64278963f8
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 44ba9188a059cc28c7b4d89143cef1921a0b1701
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680955"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978483"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Teil 2 – Implementieren von walkinggame
 
@@ -28,7 +28,6 @@ In den vorherigen Abschnitten dieser exemplarischen Vorgehensweise wurde gezeigt
 - Hinzufügen der ersten Animation zu "Merkmal Entität"
 - Hinzufügen von Bewegung zum Zeichen
 - Übereinstimmende Bewegung und Animation
-
 
 ## <a name="unzipping-our-game-content"></a>Entpacken von Spielinhalten
 
@@ -57,11 +56,11 @@ Wir müssen eine `Texture2D` -Instanz erstellen, die beim Rendern des Sprite ver
 
 Um den Inhalt unseres Spiels hinzuzufügen, klicken Sie mit der rechten Maustaste auf den **Inhalts** Ordner, und wählen Sie **Hinzufügen > Dateien hinzufügen...** Navigieren Sie zu dem Speicherort, an dem die Datei Content. zip extrahiert wurde, und wählen Sie die Datei " **Merkmal Blatt. png** ". Wenn Sie gefragt werden, wie die Datei dem Ordner hinzugefügt werden soll, sollten Sie die Option **Kopieren** auswählen:
 
-![](part2-images/image1.png "Wenn Sie gefragt werden, wie die Datei dem Ordner hinzugefügt werden soll, wählen Sie die Option Kopieren aus.")
+![Wenn Sie gefragt werden, wie die Datei dem Ordner hinzugefügt werden soll, wählen Sie die Option Kopieren aus.](part2-images/image1.png)
 
 Der Inhalts Ordner enthält jetzt die Datei "Merkmal Blatt. png":
 
-![](part2-images/image2.png "Der Inhalts Ordner enthält jetzt die Datei \"Merkmal Blatt. png\".")
+![Der Inhalts Ordner enthält jetzt die Datei "Merkmal Blatt. png".](part2-images/image2.png)
 
 Als Nächstes fügen Sie Code hinzu, um die Datei "Merkmal Blatt. png" zu `Texture2D`laden und eine zu erstellen. Öffnen Sie hierzu die `Game1.cs` Datei, und fügen Sie der Game1.cs-Klasse das folgende Feld hinzu:
 
@@ -117,7 +116,7 @@ protected override void Draw(GameTime gameTime)
 
 Die Ausführung des Spiels zeigt nun ein einzelnes Sprite an, das die Textur anzeigt, die aus "Merkmal Sheet. png" erstellt wurde
 
-![](part2-images/image3.png "Beim Ausführen des Spiels wird jetzt ein einzelner Sprite angezeigt, der die Textur anzeigt, die aus \"Merkmal Sheet. png\"")
+![Beim Ausführen des Spiels wird jetzt ein einzelner Sprite angezeigt, der die Textur anzeigt, die aus "Merkmal Sheet. png"](part2-images/image3.png)
 
 ## <a name="creating-the-characterentity"></a>Erstellen der Entität "Merkmal"
 
@@ -132,7 +131,6 @@ Ein gängiges Muster für das Organisieren von Spiel Code besteht darin, eine ne
 - Kann dynamisch erstellt und zerstört werden, z. b. Wenn ein Energiespar Tool angezeigt wird und vom Player erfasst wird.
 
 Entity Organization Systems kann komplex sein, und viele Spiel-Engines bieten Klassen zur Unterstützung der Verwaltung von Entitäten. Wir implementieren ein sehr einfaches Entitäts System. es ist also erwähnenswert, dass vollständige Spiele in der Regel mehr Organisationseinheiten im Entwickler Teil erfordern.
-
 
 ### <a name="defining-the-characterentity"></a>Definieren der Merkmal Entität
 
@@ -215,7 +213,6 @@ Die `Draw` oben implementierte Methode nimmt ein `SpriteBatch` -Argument an, abe
 
 Der Grund hierfür liegt darin, dass das effizienteste Rendering möglich ist, wenn dieselbe `SpriteBatch` Instanz für alle `Draw` Aufrufe verwendet wird, und wenn alle `Draw` Aufrufe zwischen einem einzelnen Satz von-und- `Begin` `End` aufrufen durchgeführt werden. Natürlich enthält unser Spiel nur eine einzelne Entitäts Instanz, aber kompliziertere Spiele profitieren von einem Muster, das es mehreren Entitäten ermöglicht, dieselbe `SpriteBatch` Instanz zu verwenden.
 
-
 ## <a name="adding-characterentity-to-the-game"></a>Hinzufügen von "Merkmal Entity" zum Spiel
 
 Nun, da wir unseren `CharacterEntity` Code für das Rendering hinzugefügt haben, können wir den Code in `Game1.cs` ersetzen, um eine Instanz dieser neuen Entität zu verwenden. Zu diesem Zweck ersetzen wir das `Texture2D` Feld durch ein `CharacterEntity` Feld in `Game1`:
@@ -278,7 +275,7 @@ protected override void Draw(GameTime gameTime)
 
 Wenn wir das Spiel ausführen, wird jetzt das Zeichen angezeigt. Da X und Y standardmäßig auf 0 (null) eingestellt sind, wird das Zeichen in der oberen linken Ecke des Bildschirms positioniert:
 
-![](part2-images/image4.png "Da X und Y standardmäßig auf 0 (null) eingestellt sind, wird das Zeichen in der oberen linken Ecke des Bildschirms positioniert.")
+![Da X und Y standardmäßig auf 0 (null) eingestellt sind, wird das Zeichen in der oberen linken Ecke des Bildschirms positioniert.](part2-images/image4.png)
 
 ## <a name="creating-the-animation-class"></a>Erstellen der Animations Klasse
 
@@ -286,11 +283,9 @@ Zurzeit zeigt die Datei mit dem vollständigen **Merkmal Blatt. png** an. `Chara
 
 Wir erstellen die `Animation` -Klasse, um die Logik und den Zustand der charakteritätsentitäts Animation zu steuern. Bei der Animations Klasse handelt es sich um eine allgemeine Klasse, die für jede Entität und `CharacterEntity` nicht nur für Animationen verwendet werden kann. Ultimate die `Animation` -Klasse stellt eine `Rectangle` bereit, `CharacterEntity` die von verwendet wird, um sich selbst zu zeichnen. Wir erstellen auch eine `AnimationFrame` -Klasse, die zum Definieren der Animation verwendet wird.
 
-
 ### <a name="defining-animationframe"></a>Definieren von animationframe
 
 `AnimationFrame`enthält keine Logik im Zusammenhang mit der Animation. Wir verwenden Sie nur zum Speichern von Daten. Klicken Sie zum `AnimationFrame` hinzufügen der Klasse mit der rechten Maustaste auf das freigegebene Projekt " **walkinggame** ", und klicken Sie auf **Hinzufügen > neue Datei....** Geben Sie den Namen **animationframe** ein, und klicken Sie auf die Schaltfläche **neu** . Die `AnimationFrame.cs` Datei wird so geändert, dass Sie den folgenden Code enthält:
-
 
 ```csharp
 using System;
@@ -504,7 +499,7 @@ protected override void Update(GameTime gameTime)
 
 Nun wird `CharacterEntity` `walkDown` die Animation wiedergegeben:
 
-![](part2-images/image5.gif "Nun wird die charakteritätsentität die Exemplare Exemplare Animation wiedergeben")
+![Nun wird die charakteritätsentität die Exemplare Exemplare Animation wiedergeben](part2-images/image5.gif)
 
 ## <a name="adding-movement-to-the-character"></a>Hinzufügen von Bewegung zum Zeichen
 
@@ -513,7 +508,6 @@ Als Nächstes fügen wir mithilfe von Berührungs Steuerelementen eine Bewegung 
 ### <a name="defining-getdesiredvelocityfrominput"></a>Definieren von getdesiredvelocityfrominput
 
 Wir verwenden die `TouchPanel` Klasse von monogame, die Informationen über den aktuellen Zustand des Touchscreens bereitstellt. Fügen wir eine Methode hinzu, mit der `TouchPanel` überprüft wird und die gewünschte Geschwindigkeit des Zeichens zurückgegeben wird:
-
 
 ```csharp
 Vector2 GetDesiredVelocityFromInput()
@@ -552,7 +546,6 @@ Im folgenden finden Sie ein bisschen Mathematik, das das Zeichen mit der gleiche
 
 Die `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)` Anweisung überprüft, ob die Geschwindigkeit ungleich NULL ist – mit anderen Worten, Sie prüft, ob der Benutzer dieselbe Stelle wie die aktuelle Position des Zeichens berührt. Wenn dies nicht der Wert ist, müssen wir die Geschwindigkeit des Zeichens so festlegen, dass es konstant ist, unabhängig davon, wie weit die Berührungs Geschwindigkeit ist. Dies erreichen Sie, indem der Geschwindigkeitsvektor normalisiert wird. Dies ergibt eine Länge von 1. Ein Geschwindigkeitsvektor von 1 bedeutet, dass das Zeichen bei 1 Pixel pro Sekunde verschoben wird. Wir werden dies beschleunigen, indem wir den Wert mit der gewünschten Geschwindigkeit von 200 multiplizieren.
 
-
 ### <a name="applying-velocity-to-position"></a>Anwenden der Geschwindigkeit auf die Position
 
 Die von `GetDesiredVelocityFromInput` zurückgegebene Geschwindigkeit muss auf die-und `Y` - `X` Werte des Zeichens angewendet werden, damit Sie zur Laufzeit wirksam werden. Wir ändern die `Update` Methode wie folgt:
@@ -578,7 +571,7 @@ Was wir hier implementiert haben, ist eine *zeitbasierte* Bewegung (im Gegensatz
 
 Wenn wir jetzt unser Spiel ausführen, sehen wir, dass das Zeichen in die Berührungs Position wechselt:
 
-![](part2-images/image6.gif "Das Zeichen wird an die Berührungs Position verschoben.")
+![Das Zeichen wird an die Berührungs Position verschoben.](part2-images/image6.gif)
 
 ## <a name="matching-movement-and-animation"></a>Übereinstimmende Bewegung und Animation
 
@@ -661,7 +654,6 @@ Beachten Sie, dass der obige Code dem `CharacterEntity` Konstruktor hinzugefügt
 
 Als nächstes passen wir die Logik an, um die Animationen entsprechend der Richtung zu verwenden, in der das Zeichen verschoben wird, oder entsprechend der letzten Animation, wenn das Zeichen gerade beendet wurde. Zu diesem Zweck ändern wir die `Update` -Methode:
 
-
 ```csharp
 public void Update(GameTime gameTime)
 {
@@ -736,7 +728,7 @@ Wenn das Zeichen nicht verschoben wird, möchten wir die Zeichen `currentAnimati
 
 Das Ergebnis dieses Codes ist, dass das Zeichen beim Durchlaufen ordnungsgemäß animiert und anschließend die letzte Richtung angezeigt wird, in der es angehalten wurde:
 
-![](part2-images/image7.gif "Das Ergebnis dieses Codes ist, dass das Zeichen beim Durchlaufen ordnungsgemäß animiert und anschließend die letzte Richtung angezeigt wird, in der es angehalten wurde.")
+![Das Ergebnis dieses Codes ist, dass das Zeichen beim Durchlaufen ordnungsgemäß animiert und anschließend die letzte Richtung angezeigt wird, in der es angehalten wurde.](part2-images/image7.gif)
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 775675e11b85bb53bb51c36b71129a086d9dd60f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ccb10829f10ddd76fe7402143d66a32949daccc1
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651260"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980801"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Erweiterte Benutzer Benachrichtigungen in xamarin. IOS
 
@@ -78,7 +78,7 @@ Einige Beispiele für Remote Benachrichtigungen sind:
 Für eine IOS-App stehen zwei Arten von Remote Benachrichtigungen zur Verfügung:
 
 - **Benutzer mit** Zugriff: Diese werden dem Benutzer auf dem Gerät angezeigt.
-- Automatische **Updates** : Diese bieten einen Mechanismus, mit dem der Inhalt einer IOS-App im Hintergrund aktualisiert wird. Wenn ein unbeaufsichtigtes update empfangen wird, kann die APP den neuesten Inhalt abrufen, um den Server zu entfernen.
+- Automatische **Updates** : Diese bieten einen Mechanismus, mit dem der Inhalt einer IOS-App im Hintergrund aktualisiert wird. Wenn ein automatisches Update empfangen wird, kann die APP sich an die Remote Server wenden, um den neuesten Inhalt abzurufen.
 
 Weitere Informationen finden Sie in der Dokumentation zum [lokalen und Remote Benachrichtigungs Programmier Handbuch](https://developer.apple.com/documentation/usernotifications) von Apple.
 
