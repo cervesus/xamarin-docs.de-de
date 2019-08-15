@@ -1,5 +1,5 @@
 ---
-title: Erstellen eines benutzerdefinierten Layouts
+title: Erstellen eines benutzerdefinierten Layouts in xamarin. Forms
 description: In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layout-Klasse schreiben, und veranschaulicht eine Ausrichtung keine Unterscheidung nach Kanatyp WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente auf zusätzliche Zeilen.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
@@ -7,20 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 11707a1e871b0988847ab4a2c266d268db063000
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0f2136aa4a07d289e1e8aecc6cb37460fdc5727c
+ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645204"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69024530"
 ---
-# <a name="creating-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
+# <a name="create-a-custom-layout-in-xamarinforms"></a>Erstellen eines benutzerdefinierten Layouts in xamarin. Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms definiert vier Klassen für Layout – StackLayout, die von "AbsoluteLayout", RelativeLayout und Raster, und jedes seiner untergeordneten Elemente auf andere Weise angeordnet. Allerdings ist es manchmal notwendig, mit einem Layout, die nicht von Xamarin.Forms bereitgestelltes Seiteninhalt zu organisieren. In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layout-Klasse schreiben, und veranschaulicht eine Ausrichtung keine Unterscheidung nach Kanatyp WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente auf zusätzliche Zeilen._
-
-## <a name="overview"></a>Übersicht
 
 In Xamarin.Forms alle Layout Klassen leiten sich von der [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) -Klasse und beschränken Sie den generischen Typ um [ `View` ](xref:Xamarin.Forms.View) und seine abgeleiteten Typen. Im Gegenzug die `Layout<T>` Klasse leitet sich von der [ `Layout` ](xref:Xamarin.Forms.Layout) -Klasse, die den Mechanismus für die Positionierung und größenanpassung untergeordnete Elemente bereitstellt.
 
@@ -67,7 +65,7 @@ Die [ `Layout` ](xref:Xamarin.Forms.Layout) -Klasse definiert außerdem eine [ `
 
 Die [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) überschrieben werden, um einen Zwischenspeicher, um wiederholte Aufrufe von minimieren implementieren die [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) Methoden, der das Layout der untergeordneten Elemente. Überschreiben der `InvalidateLayout` Methode erhalten eine Benachrichtigung, wenn untergeordnete Elemente hinzugefügt oder aus dem Layout entfernt werden. Auf ähnliche Weise die [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) Methode kann überschrieben werden, um eine Benachrichtigung bereitzustellen, wenn das Layout der untergeordneten Elemente eines Größe ändert. Für beide methodenüberschreibungen sollten ein benutzerdefiniertes Layout reagieren, indem Sie zum Löschen des Zwischenspeichers. Weitere Informationen finden Sie unter [berechnen und Zwischenspeichern von Daten](#caching).
 
-## <a name="creating-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
+## <a name="create-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
 
 Der Prozess zum Erstellen eines benutzerdefinierten Layouts lautet wie folgt aus:
 
@@ -89,7 +87,7 @@ Die Layoutklasse kann dann verwendet werden, fügen es zu einem [ `Page` ](xref:
 
 <a name="creating" />
 
-### <a name="creating-a-wraplayout"></a>Erstellen eine WrapLayout
+### <a name="create-a-wraplayout"></a>Erstellen eines wraplayout
 
 Die beispielanwendung zeigt eine Ausrichtung keine Unterscheidung nach Kanatyp `WrapLayout` -Klasse, ordnet die untergeordneten Elemente horizontal über die Seite und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente auf zusätzliche Zeilen.
 
@@ -107,7 +105,7 @@ public class WrapLayout : Layout<View>
 
 <a name="caching" />
 
-#### <a name="calculating-and-caching-layout-data"></a>Berechnen und Zwischenspeichern von Daten
+#### <a name="calculate-and-cache-layout-data"></a>Berechnen und Zwischenspeichern von Layoutdaten
 
 Die `LayoutData` -Struktur speichert die Daten über eine Auflistung von untergeordneten Elementen in eine Reihe von Eigenschaften:
 
@@ -200,7 +198,7 @@ Die `GetLayoutData` Methode führt die folgenden Vorgänge:
 
 <a name="adding_properties" />
 
-#### <a name="adding-properties-backed-by-bindable-properties"></a>Hinzufügen von Eigenschaften, die von bindbare Eigenschaften unterstützt wird
+#### <a name="add-properties-backed-by-bindable-properties"></a>Hinzufügen von Eigenschaften, die von bindbaren Eigenschaften gestützt werden
 
 Die `WrapLayout` -Klasse definiert `ColumnSpacing` und `RowSpacing` Eigenschaften, deren Werte werden verwendet, um die Zeilen und Spalten im Layout zu trennen, und die werden durch bindbare Eigenschaften unterstützt. Die bindbare Eigenschaften werden im folgenden Codebeispiel dargestellt:
 
@@ -230,7 +228,7 @@ Ruft der Handler durch geänderte Eigenschaften ausgelöste jeder bindbare Eigen
 
 <a name="onmeasure" />
 
-#### <a name="overriding-the-onmeasure-method"></a>Überschreiben der OnMeasure-Methode
+#### <a name="override-the-onmeasure-method"></a>Überschreiben der onmeasure-Methode
 
 Die `OnMeasure` außer Kraft setzen, wird im folgenden Codebeispiel wird dargestellt:
 
@@ -256,7 +254,7 @@ Ruft die Überschreibung der `GetLayoutData` -Methode und Konstrukte ein `SizeRe
 
 <a name="layoutchildren" />
 
-#### <a name="overriding-the-layoutchildren-method"></a>Überschreiben der LayoutChildren-Methode
+#### <a name="override-the-layoutchildren-method"></a>Überschreiben der layoutchildren-Methode
 
 Die `LayoutChildren` außer Kraft setzen, wird im folgenden Codebeispiel wird dargestellt:
 
@@ -307,7 +305,7 @@ Weitere Informationen zu den `GetLayoutData` -Methode finden Sie unter [berechne
 
 <a name="invalidatelayout" />
 
-#### <a name="overriding-the-invalidatelayout-method"></a>Überschreiben der InvalidateLayout-Methode
+#### <a name="overridethe-invalidatelayout-method"></a>Overridethe invalidatelayout-Methode
 
 Die [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) Außerkraftsetzung wird immer dann aufgerufen, wenn untergeordnete Elemente hinzugefügt oder entfernt aus dem Layout oder wenn eine von der `WrapLayout` eigenschaftenänderungen-Wert, wie im folgenden Codebeispiel gezeigt:
 
@@ -326,7 +324,7 @@ Die Außerkraftsetzung erklärt das Layout und verwirft alle zwischengespeichert
 
 <a name="onchildmeasureinvalidated" />
 
-#### <a name="overriding-the-onchildmeasureinvalidated-method"></a>Überschreiben der OnChildMeasureInvalidated-Methode
+#### <a name="override-the-onchildmeasureinvalidated-method"></a>Überschreiben der onchildmessreinvaliveralteten-Methode
 
 Die [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) außer Kraft setzen wird immer dann aufgerufen, wenn eine der das Layout der untergeordneten Elemente die Größe ändert und wird im folgenden Codebeispiel wird dargestellt:
 
@@ -342,7 +340,7 @@ Die Außerkraftsetzung führt das Layout der untergeordneten, und verwirft alle 
 
 <a name="consuming" />
 
-### <a name="consuming-the-wraplayout"></a>Nutzen die WrapLayout
+### <a name="consume-the-wraplayout"></a>Verwenden des wraplayout
 
 Die `WrapLayout` Klasse kann genutzt werden, indem Sie diesen auf eine [ `Page` ](xref:Xamarin.Forms.Page) abgeleiteten Typ, aus, wie in den folgenden XAML-Codebeispiel veranschaulicht:
 
