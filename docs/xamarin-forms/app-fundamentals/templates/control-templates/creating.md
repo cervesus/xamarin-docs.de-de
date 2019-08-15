@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/14/2019
-ms.openlocfilehash: fbc966fdf1d79ecc9794d2156db81b583694ce36
-ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
+ms.openlocfilehash: 523113a7b54541733e14f947eefa247e4f774b99
+ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68665687"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69024516"
 ---
 # <a name="create-a-controltemplate"></a>Erstellen einer ControlTemplate
 
@@ -152,7 +152,7 @@ Beim Hinzufügen einer [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-K
 
 ## <a name="create-a-controltemplate-in-c35"></a>Erstellen einer ControlTemplate in C&#35;
 
-Zum Definieren einer [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse auf Anwendungsebene müssen Sie eine Klasse (`class`) erstellen, die die `ControlTemplate`-Klasse repräsentiert. Die Klasse sollte aus dem für die Vorlage verwendeten Layout ([layout](~/xamarin-forms/user-interface/layouts/index.md)) stammen, wie im folgenden Codebeispiel gezeigt:
+Zum Definieren einer [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse auf Anwendungsebene müssen Sie eine Klasse (`class`) erstellen, die die `ControlTemplate`-Klasse repräsentiert. Die Klasse sollte aus dem für die Vorlage verwendeten Layout ([layout](~/xamarin-forms/user-interface/layouts/index.yml)) stammen, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 class TealTemplate : Grid
