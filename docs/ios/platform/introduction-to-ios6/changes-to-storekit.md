@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 03c18c50b15db05d26e1cec20e571367219f8643
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 818d5c734e8e662c271e20c26347e5e941ddad3e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643070"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527869"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>Änderungen an StoreKit in iOS 6
 
@@ -244,8 +244,8 @@ Das Erstellen von Inhalts Paketen für in-App-Produkte erfordert derzeit Xcode. 
 
 Unsere Beispielanwendung enthält Buchkapitel für den Verkauf – jedes Kapitel Inhalts Paket enthält Folgendes:
 
--  eine Textdatei, und
--  ein Bild, das das Kapitel darstellt.
+- eine Textdatei, und
+- ein Bild, das das Kapitel darstellt.
 
 
 Wählen Sie zunächst im Menü **Datei > Neues Projekt** aus, und wählen Sie **in-App-Kauf Inhalt**aus:
@@ -368,7 +368,7 @@ Die folgenden Klassen wurden zur Unterstützung von gehosteten Inhalten in ios 6
 
 Details der neuen `SKDownload` Klasse:
 
-- Status **– ein** Wert zwischen 0-1, den Sie verwenden können, um einen Prozentwert Indikator für den Benutzer anzuzeigen. Verwenden Sie "Progress = = 1" nicht, um zu ermitteln, ob der Download abgeschlossen ist, überprüfen Sie den Status = = abgeschlossen.
+- Status – ein Wert zwischen 0-1, den Sie verwenden können, um einen Prozentwert Indikator für den Benutzer anzuzeigen. Verwenden Sie "Progress = = 1" nicht, um zu ermitteln, ob der Download abgeschlossen ist, überprüfen Sie den Status = = abgeschlossen.
 - **Timeremaineing** – Schätzung der verbleibenden Downloadzeit (in Sekunden). -1 bedeutet, dass die Schätzung noch berechnet wird.
 - **Status** – aktiv, gewartet, abgeschlossen, Fehler, angehalten, abgebrochen.
 - **Contenturl** – Datei Speicherort, an dem der Inhalt auf der Festplatte `Cache` abgelegt wurde, im Verzeichnis. Wird nur aufgefüllt, sobald der Download abgeschlossen ist.
@@ -415,7 +415,7 @@ public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransac
 }
 ```
 
-Die neue überschriebene Methode `UpdatedDownloads` wird unten dargestellt. Das Store-Kit ruft diese `StartDownloads` Methode auf, `UpdatedTransactions`nachdem in ausgelöst wurde. Diese Methode wird mehrmals in unbestimmten *Intervallen aufgerufen,* um den Fortschritt des Downloads bereitzustellen, und dann erneut, wenn der Download abgeschlossen ist. Beachten Sie, dass die-Methode `SKDownload` ein Array von-Objekten akzeptiert, sodass jeder Methoden aufrufzug den Status mehrerer Downloads in der Warteschlange bereitstellen kann. Wie in der folgenden-Implementierung gezeigt, werden die Download Status jedes Mal geprüft, und die entsprechende Aktion wird durchgeführt.
+Die neue überschriebene Methode `UpdatedDownloads` wird unten dargestellt. Das Store-Kit ruft diese `StartDownloads` Methode auf, `UpdatedTransactions`nachdem in ausgelöst wurde. Diese Methode wird mehrmals in unbestimmten Intervallen aufgerufen, um den Fortschritt des Downloads bereitzustellen, und dann erneut, wenn der Download abgeschlossen ist. Beachten Sie, dass die-Methode `SKDownload` ein Array von-Objekten akzeptiert, sodass jeder Methoden aufrufzug den Status mehrerer Downloads in der Warteschlange bereitstellen kann. Wie in der folgenden-Implementierung gezeigt, werden die Download Status jedes Mal geprüft, und die entsprechende Aktion wird durchgeführt.
 
 ```csharp
 // ENTIRELY NEW METHOD IN iOS6

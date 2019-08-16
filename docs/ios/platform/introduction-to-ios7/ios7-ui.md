@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 5ebfa7348e13e5b168dd7f2decbef921bd7d69e3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e943b10623507278c073e73e5b755bcb5954bdaa
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652116"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528333"
 ---
 # <a name="ios-7-user-interface-overview"></a>Übersicht über die iOS 7-Benutzeroberfläche
 
@@ -130,9 +130,9 @@ Andere UIKit-Steuerelemente wurden ebenfalls geändert, einschließlich Schieber
 
 Zusätzlich zu den Änderungen in UIKit führt IOS 7 eine Reihe von visuellen Änderungen an der Benutzeroberfläche ein, einschließlich:
 
--  Vollbild-Inhalt
--  Balken Darstellung
--  Tint-Farbe
+- Vollbild-Inhalt
+- Balken Darstellung
+- Tint-Farbe
 
 <a name="fullscreen" />
 

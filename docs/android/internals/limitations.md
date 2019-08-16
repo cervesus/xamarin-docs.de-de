@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 18e6e82011460a51a96df4694f15b36c5ec94ab5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 57d9d6a91f88d117f0889a8dba9e6198ec6b7f62
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510711"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524773"
 ---
 # <a name="limitations"></a>Einschränkungen
 
@@ -90,7 +90,7 @@ class MyIntentService : IntentService {
 Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschränkungen sind vorhanden:
 
 
--   Generische Typen dürfen nicht oder `[Export]` `[ExportField`verwenden. Wenn Sie versuchen, dies zu tun `XA4207` , wird ein Fehler generiert.
+- Generische Typen dürfen nicht oder `[Export]` `[ExportField`verwenden. Wenn Sie versuchen, dies zu tun `XA4207` , wird ein Fehler generiert.
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -103,7 +103,7 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
--   Generische Methoden dürfen nicht oder `[Export]` `[ExportField]`verwenden:
+- Generische Methoden dürfen nicht oder `[Export]` `[ExportField]`verwenden:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -118,7 +118,7 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
--   `[ExportField]`darf nicht für Methoden verwendet werden, die `void`Folgendes zurückgeben:
+- `[ExportField]`darf nicht für Methoden verwendet werden, die `void`Folgendes zurückgeben:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -131,7 +131,7 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
--   Instanzen generischer Typen _dürfen nicht_ aus Java-Code erstellt werden.
+- Instanzen generischer Typen _dürfen nicht_ aus Java-Code erstellt werden.
     Sie können nur sicher aus verwaltetem Code erstellt werden:
 
     ```csharp

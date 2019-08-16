@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a57273005df45c2f8035563efe9562c27cdfa732
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6a9bb5fae84b6883943410d0c2585ce60a1208a4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648407"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526454"
 ---
 # <a name="introduction-to-android-wear"></a>Einführung in Android Wear
 
@@ -90,15 +90,15 @@ Beim [Arbeiten mit der Paket](~/android/wear/deploy-test/packaging.md) Erstellun
 
 Die beste Möglichkeit, sich mit Android Wear vertraut zu machen, besteht darin, Ihre erste APP zu erstellen und zu testen. Die folgende Liste enthält eine empfohlene Lesereihenfolge, mit der Sie schnell loslegen können:
 
-1.  [Setup & Installation](~/android/wear/get-started/installation.md) enthält ausführliche Anweisungen zum Installieren und Konfigurieren der Entwicklungsumgebung für die Erstellung von xamarin. Android Wear-apps. 
+1. [Setup & Installation](~/android/wear/get-started/installation.md) enthält ausführliche Anweisungen zum Installieren und Konfigurieren der Entwicklungsumgebung für die Erstellung von xamarin. Android Wear-apps. 
 
-2.  Nachdem Sie die erforderlichen Pakete installiert und einen Emulator oder ein Gerät konfiguriert haben, finden Sie unter [Hello, Wear](~/android/wear/get-started/hello-wear.md) eine Schritt-für-Schritt-Anleitung, in der erläutert wird, wie ein kleines Android Wear-Projekt erstellt wird, das Schaltflächen Klicks behandelt und einen Klick-Counter auf dem Wear anzeigt. Schutz. 
+2. Nachdem Sie die erforderlichen Pakete installiert und einen Emulator oder ein Gerät konfiguriert haben, finden Sie unter [Hello, Wear](~/android/wear/get-started/hello-wear.md) eine Schritt-für-Schritt-Anleitung, in der erläutert wird, wie ein kleines Android Wear-Projekt erstellt wird, das Schaltflächen Klicks behandelt und einen Klick-Counter auf dem Wear anzeigt. Schutz. 
 
-3.  Das [Bereitstellungs & testet](~/android/wear/deploy-test/index.md) ausführlichere Informationen zum Konfigurieren und Bereitstellen von Emulatoren und Geräten, einschließlich Anweisungen zum Bereitstellen der APP auf einem Wear-Gerät über Bluetooth.
+3. Das [Bereitstellungs & testet](~/android/wear/deploy-test/index.md) ausführlichere Informationen zum Konfigurieren und Bereitstellen von Emulatoren und Geräten, einschließlich Anweisungen zum Bereitstellen der APP auf einem Wear-Gerät über Bluetooth.
 
-4.  [Bei der Arbeit mit Bildschirmgrößen](~/android/wear/screen-sizes.md) wird erläutert, wie Sie die Benutzeroberfläche für die verschiedenen verfügbaren Bildschirmgrößen von Geräten in der Vorschau anzeigen und optimieren. 
+4. [Bei der Arbeit mit Bildschirmgrößen](~/android/wear/screen-sizes.md) wird erläutert, wie Sie die Benutzeroberfläche für die verschiedenen verfügbaren Bildschirmgrößen von Geräten in der Vorschau anzeigen und optimieren. 
 
-5.  Beim [Arbeiten mit der Paket](~/android/wear/deploy-test/packaging.md) Erstellung werden die Schritte zum manuellen Verpacken von Wear-Apps für die Verteilung auf Google Play beschrieben.
+5. Beim [Arbeiten mit der Paket](~/android/wear/deploy-test/packaging.md) Erstellung werden die Schritte zum manuellen Verpacken von Wear-Apps für die Verteilung auf Google Play beschrieben.
 
 Nachdem Sie Ihre erste Wear-App erstellt haben, möchten Sie möglicherweise versuchen, ein benutzerdefiniertes Überwachungs Gesicht für Android Wear zu erstellen. 
 Das [Erstellen eines Watch-Gesichts](~/android/wear/platform/creating-a-watchface.md) enthält schrittweise Anleitungen und Beispielcode für die Entwicklung eines abzurufenden Digital Watch-Gesichts dienstanweises, gefolgt von mehr Code, der ihn auf eine Uhr des analogen Stils mit zusätzlichen Features erweitert. 
@@ -169,8 +169,8 @@ Android Wear 2,0-Apps können unabhängig von Handheld-Apps verwendet werden. Di
 
 Handgesten ermöglichen es Benutzern, mit Ihrer APP zu interagieren, ohne den Touchscreen &ndash; zu verwenden, mit dem Benutzer auf die APP mit einer einzigen Hand Antworten können. Zwei Handgesten werden unterstützt: 
 
--   Handgelenk ausgeflicke
--   Handgelenk im Handumdrehen
+- Handgelenk ausgeflicke
+- Handgelenk im Handumdrehen
 
 Weitere Informationen finden Sie im Thema Android- [Hand Handgesten](https://developer.android.com/wear/preview/features/gestures.html) . 
 

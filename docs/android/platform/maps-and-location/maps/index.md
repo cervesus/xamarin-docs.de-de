@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 80ec7a2ae13b3c76bccae80d2c6956533b027047
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e36a8e25c5924ac82356c0f1c3110d1596f81cbf
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643260"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523885"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Verwenden von Google Maps und Location mit xamarin. Android
 
@@ -22,9 +22,9 @@ _In diesem Artikel wird erläutert, wie Maps und Location mit xamarin. Android v
 
 Mapping-Technologien sind eine universelle Ergänzung für mobile Geräte. Desktop Computer und Laptops sind nicht in der Lage, die Standortinformationen integriert zu haben. Auf der anderen Seite verwenden mobile Geräte solche Anwendungen, um Geräte zu suchen und sich ändernde Standortinformationen anzuzeigen. Android verfügt über eine leistungsstarke, integrierte Technologie, die Standortdaten in Maps mithilfe von Standort Hardware anzeigt, die auf dem Gerät verfügbar sein kann. In diesem Artikel wird ein Spektrum der Zuordnungen von Anwendungen unter xamarin. Android behandelt, einschließlich: 
 
--  Mithilfe der integrierten Maps-Anwendung können Sie schnell Zuordnungs Funktionen hinzufügen.
--  Arbeiten mit der Maps-API, um die Anzeige einer Karte zu steuern.
--  Verwenden verschiedener Techniken zum Hinzufügen grafischer Überlagerungen.
+- Mithilfe der integrierten Maps-Anwendung können Sie schnell Zuordnungs Funktionen hinzufügen.
+- Arbeiten mit der Maps-API, um die Anzeige einer Karte zu steuern.
+- Verwenden verschiedener Techniken zum Hinzufügen grafischer Überlagerungen.
 
 Die Themen in diesem Abschnitt behandeln eine Vielzahl von Karten Features.
 Zuerst wird erläutert, wie die integrierte Maps-Anwendung von Android genutzt wird und wie eine Panoramaansicht eines Orts angezeigt wird. Anschließend wird erläutert, wie Sie mit der Maps-API Zuordnungs Features direkt in eine Anwendung integrieren. Außerdem wird erläutert, wie Sie die Position und Anzeige einer Karte Steuern und grafische Überlagerungen hinzufügen.

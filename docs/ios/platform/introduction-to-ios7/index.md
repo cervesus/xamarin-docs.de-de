@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 067d97e6a36dae6c11f056241c08c21899e96c08
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 885cf4b77d4eac0668a2e70c57187e9b23a91dd1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649332"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527570"
 ---
 # <a name="introduction-to-ios-7"></a>Einführung in iOS 7
 
@@ -28,8 +28,8 @@ IOS 7 erweitert die Animations Unterstützung in UIKit und ermöglicht Anwendung
 
  `UIView`unterstützt jetzt das Animieren von Eigenschafts Änderungen mit Spring Effect. Um dies hinzuzufügen, geben Sie `AnimateNotify` entweder `AnimateNotifyAsync` die-oder die-Methode an, und übergeben Sie Werte für das Spring Dämpfung-Verhältnis und die anfängliche Spring Velocity, wie unten beschrieben:
 
--  `springWithDampingRatio`– Ein Wert zwischen 0 und 1, bei dem die Schwingung für einen kleineren Wert zunimmt.
--  `initialSpringVelocity`– Die anfängliche Spring Velocity als Prozentsatz des gesamten Animations Abstands pro Sekunde.
+- `springWithDampingRatio`– Ein Wert zwischen 0 und 1, bei dem die Schwingung für einen kleineren Wert zunimmt.
+- `initialSpringVelocity`– Die anfängliche Spring Velocity als Prozentsatz des gesamten Animations Abstands pro Sekunde.
 
 
 Der folgende Code erzeugt eine Spring Effect-Struktur, wenn sich der Mittelpunkt der Bildansicht ändert:
@@ -97,19 +97,19 @@ Die API ist in der Natur deklarativ. Sie deklarieren, wie sich die Physik Intera
 
 Es gibt mehrere verschiedene primitive Verhalten, um komplexe Interaktionen zu initiieren, einschließlich:
 
--  `UIAttachmentBehavior`– Fügt zwei dynamische Elemente so an, dass Sie aufeinander verschoben werden, oder fügt ein dynamisches Element an einen Anlage Punkt an.
--  `UICollisionBehavior`– Ermöglicht, dass dynamische Elemente an Konflikten beteiligt sind.
--  `UIDynamicItemBehavior`– Gibt einen allgemeinen Satz von Eigenschaften an, die auf dynamische Elemente (z. b. Elastizität, Dichte und Reibung) angewendet werden sollen.
--  `UIGravityBehavior`: Wendet die Schwerkraft auf ein dynamisches Element an und bewirkt, dass Elemente in der Gravitations Richtung beschleunigt werden.
--  `UIPushBehavior`– Wendet Force auf ein dynamisches Element an.
--  `UISnapBehavior`– Ermöglicht einem dynamischen Element das Andocken an einer Position mit einem Spring Effekt.
+- `UIAttachmentBehavior`– Fügt zwei dynamische Elemente so an, dass Sie aufeinander verschoben werden, oder fügt ein dynamisches Element an einen Anlage Punkt an.
+- `UICollisionBehavior`– Ermöglicht, dass dynamische Elemente an Konflikten beteiligt sind.
+- `UIDynamicItemBehavior`– Gibt einen allgemeinen Satz von Eigenschaften an, die auf dynamische Elemente (z. b. Elastizität, Dichte und Reibung) angewendet werden sollen.
+- `UIGravityBehavior`: Wendet die Schwerkraft auf ein dynamisches Element an und bewirkt, dass Elemente in der Gravitations Richtung beschleunigt werden.
+- `UIPushBehavior`– Wendet Force auf ein dynamisches Element an.
+- `UISnapBehavior`– Ermöglicht einem dynamischen Element das Andocken an einer Position mit einem Spring Effekt.
 
 
 Obwohl viele primitive vorhanden sind, ist der allgemeine Prozess zum Hinzufügen von Physik-basierten Interaktionen zu einer Ansicht mithilfe von UIKit Dynamics zwischen Verhalten konsistent:
 
-1.  Erstellen Sie einen dynamischen Animator.
-1.  Erstellungs Verhalten (en).
-1.  Fügen Sie dem dynamischen Animator Verhalten hinzu.
+1. Erstellen Sie einen dynamischen Animator.
+1. Erstellungs Verhalten (en).
+1. Fügen Sie dem dynamischen Animator Verhalten hinzu.
 
 
 ### <a name="dynamics-example"></a>Dynamics-Beispiel
@@ -230,9 +230,9 @@ Weitere Informationen finden Sie in unserem [textkit](~/ios/platform/textkit.md)
 
 IOS 7 ändert sich, wann und wie Hintergrundarbeit durchgeführt wird. Durch den Abschluss der Aufgabe in ios 7 werden Anwendungen nicht mehr wach, wenn Aufgaben im Hintergrund ausgeführt werden, und Anwendungen werden für die Hintergrundverarbeitung in einer nicht zusammenhängenden Weise aktiviert. IOS 7 fügt auch drei neue APIs zum Aktualisieren von Anwendungen mit neuen Inhalten im Hintergrund hinzu:
 
--  Hintergrund Abruf – ermöglicht Anwendungen, Inhalte im Hintergrund in regelmäßigen Abständen zu aktualisieren.
--  Remote Benachrichtigungen: Hiermit können Anwendungen Inhalte aktualisieren, wenn Sie eine Pushbenachrichtigung erhalten. Die Benachrichtigungen können entweder unbeaufsichtigt sein oder ein Banner auf dem Sperrbildschirm anzeigen.
--  Background Transfer Service – ermöglicht das Hochladen und Herunterladen von Daten, z. b. große Dateien, ohne festes Zeit Limit.
+- Hintergrund Abruf – ermöglicht Anwendungen, Inhalte im Hintergrund in regelmäßigen Abständen zu aktualisieren.
+- Remote Benachrichtigungen: Hiermit können Anwendungen Inhalte aktualisieren, wenn Sie eine Pushbenachrichtigung erhalten. Die Benachrichtigungen können entweder unbeaufsichtigt sein oder ein Banner auf dem Sperrbildschirm anzeigen.
+- Background Transfer Service – ermöglicht das Hochladen und Herunterladen von Daten, z. b. große Dateien, ohne festes Zeit Limit.
 
 
 Weitere Informationen zu den neuen Multitasking-Funktionen finden Sie in den IOS-Abschnitten des xamarin- [backerden-Handbuchs](~/ios/app-fundamentals/backgrounding/index.md).

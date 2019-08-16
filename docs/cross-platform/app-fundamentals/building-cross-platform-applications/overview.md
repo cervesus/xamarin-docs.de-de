@@ -1,65 +1,65 @@
 ---
-title: Erstellen von plattformübergreifenden Anwendungen Plattformübersicht
-description: Dieses Dokument enthält einen allgemeinen Überblick über das Erstellen von plattformübergreifenden Anwendungen. Es wird erläutert, den Wert der C#, Entwurfsmuster, z. B. MVC/MVVM und systemeigenen Benutzeroberflächen.
+title: Übersicht über die plattformübergreifenden Anwendungen
+description: Dieses Dokument enthält eine allgemeine Übersicht über das Entwickeln von plattformübergreifenden Anwendungen. Er erläutert den Wert von C#, Entwurfsmuster wie MVC/MVVM und Native Benutzeroberflächen.
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 1eb308e0095c29d8ab0d0bdf1f74b807fd2ab97f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c97cfda836f59d4cdbcd234744f723eb9429ace4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61275623"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526846"
 ---
-# <a name="building-cross-platform-applications-overview"></a>Erstellen von plattformübergreifenden Anwendungen Plattformübersicht
+# <a name="building-cross-platform-applications-overview"></a>Übersicht über die plattformübergreifenden Anwendungen
 
-Dieser Leitfaden beschreibt die Xamarin-Plattform und Gewusst wie: entwerfen eine plattformübergreifenden Anwendung maximieren Wiederverwendungsrate für Code und bieten eine qualitativ hochwertige systemeigene Erfahrung auf allen mobilen hauptplattformen: iOS, Android und Windows Phone.
+Dieses Handbuch bietet eine Einführung in die xamarin-Plattform und erläutert, wie Sie eine plattformübergreifende Anwendung erstellen, um die Wiederverwendung von Code zu maximieren, und eine hochwertige Native Oberfläche für alle wichtigen mobilen Plattformen bereitzustellen: IOS, Android und Windows phone.
 
-Der in diesem Dokument verwendete Ansatz gilt im Allgemeinen für sowohl Produktivitäts-apps und Spiele-apps, aber der Schwerpunkt auf Produktivität und -Hilfsprogramm (nicht-Game-Anwendungen). Finden Sie unter den [Einführung in MonoGame Dokument](~/graphics-games/monogame/introduction/index.md) oder sehen Sie sich [Visual Studio-Tools für Unity](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity) plattformübergreifende Spieleentwicklung Anleitungen.
+Der Ansatz, der in diesem Dokument verwendet wird, gilt in der Regel für Produktivitäts-apps und Spiele-Apps, der Schwerpunkt liegt jedoch auf der Produktivität und dem Hilfsprogramm (Anwendungen ohne Spiel). Weitere Informationen finden Sie [in der Einführung in das monogame-Dokument](~/graphics-games/monogame/introduction/index.md) oder unter [Visual Studio-Tools für Unity](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity) für plattformübergreifende Spiele Entwicklungs Anleitungen.
 
-Der Ausdruck "Schreiben-einmal ausführen, überall" häufig verwendet, um jedoch die Vorzüge einer einzelnen Codebasis, die Ausführungen auf mehreren Plattformen unverändert. Während Sie den Vorteil, dass Code erneut zu verwenden ist, führt dieser Ansatz häufig Anwendungen, die eine featuresammlung niedrigsten gemeinsamen Nenner haben und eine generische aussehende Benutzeroberfläche, die nicht passen gut in einer der Zielplattformen.
+Der Ausdruck "Write-Once, Run Everywhere" wird häufig verwendet, um die Vorzüge einer einzelnen Codebasis zu verfassen, die auf mehreren Plattformen unverändert ausgeführt wird. Dies hat den Vorteil, dass die Wiederverwendung von Code möglich ist. diese Vorgehensweise führt jedoch häufig zu Anwendungen, die eine featuremenge mit dem niedrigsten gemeinsamen Nenner und einer allgemein aussehenden Benutzeroberfläche haben, die sich nicht gut in eine der Zielplattformen einfügt.
 
-Xamarin ist nicht nur eine "Write-überall einmal ausgeführt"-Plattform, da eine seiner Stärken die Möglichkeit, native Benutzeroberflächen, die speziell für jede Plattform zu implementieren ist. Allerdings mit durchdachter Entwurf, es weiterhin möglich ist, teilen, die meisten der nichtbenutzer-Schnittstelle Code und erhalten das beste aus beiden Welten: Ihre Daten Datenspeicher- und Business Logic-Code einmal schreiben und native Benutzeroberflächen auf jeder Plattform darstellen. In diesem Dokument wird erläutert, einen allgemeinen architektonischen Ansatz zur Erreichung dieses Ziels.
+Xamarin ist nicht nur eine "Write-Once, Run Everywhere"-Plattform, denn eine seiner Stärken ist die Möglichkeit, Native Benutzeroberflächen speziell für jede Plattform zu implementieren. Bei einem durchdachten Entwurf ist es jedoch immer noch möglich, den größten Teil des Codes der Nichtbenutzer Oberfläche zu nutzen und das Beste aus beiden Welten zu erstellen: Schreiben Sie Ihren Datenspeicher und Ihren Code für die Geschäftslogik einmal, und stellen Sie auf jeder Plattform Native Benutzeroberflächen dar. In diesem Dokument wird ein allgemeiner Architekturansatz erläutert, um dieses Ziel zu erreichen.
 
-Hier ist eine Zusammenfassung der wichtigsten Punkte zum Erstellen von plattformübergreifenden Xamarin-apps:
+Hier finden Sie eine Zusammenfassung der wichtigsten Punkte zum Erstellen von plattformübergreifenden xamarin-apps:
 
--   **Verwendung C#**  – entwickeln Sie Ihre apps in C#. Code in der C# portiert für IOS- und Android mithilfe von Xamarin sehr einfach und natürlich in Windows-apps verwendet werden kann.
--   **Nutzen Sie MVC- oder MVVM-Entwurfsmuster** -Entwickeln Ihrer Anwendungsverzeichnis die Benutzeroberfläche mit dem Modell/Ansicht/Controller-Muster. Entwerfen Sie Ihre Anwendung mit einem Modell/Ansicht/Controller-Ansatz oder ein Modell/View/ViewModel-Ansatz ist es eine klare Trennung zwischen der "Model" und den Rest. Bestimmen Sie, welche Teile der Anwendung verwendet systemeigenen Elemente der Benutzeroberfläche für jede Plattform (iOS, Android, Windows, Mac), und verwenden Sie diese als Richtlinie zum Aufteilen Ihrer Anwendung in zwei Komponenten: "Core" und "Benutzeroberfläche".
--   **Erstellen Sie native Benutzeroberflächen** -jede Anwendung für ein bestimmtes Betriebssystem stellt eine andere Benutzeroberfläche bereit (in implementiert C# mit Unterstützung des nativen Benutzeroberflächen-Entwurfstools):
+- **Verwenden C#**  : Schreiben Sie Ihre apps C#in. Vorhandener Code, C# der in geschrieben ist, kann mit xamarin sehr einfach zu IOS und Android portiert werden und wird offensichtlich in Windows-Apps verwendet.
+- **Verwenden von MVC-oder MVVM-Entwurfsmustern** : entwickeln Sie die Benutzeroberfläche Ihrer Anwendung mit dem mustermodell/Ansicht/Controller. Entwerfen Sie Ihre Anwendung mit einem Modell-/Ansicht-/controlleransatz oder einem Modell-/Ansicht-/viewmodell-Ansatz, bei dem es eine klare Trennung zwischen dem "Modell" und dem Rest gibt. Legen Sie fest, welche Teile der Anwendung Native Benutzeroberflächen Elemente jeder Plattform (Ios, Android, Windows, Mac) verwenden, und verwenden Sie diese als Richtlinie, um Ihre Anwendung in zwei Komponenten aufzuteilen: "Core" und "User-Interface".
+- **Native** Benutzeroberflächen erstellen: jede betriebssystemspezifische Anwendung stellt eine andere Benutzeroberflächen Ebene bereit (Implementiert in C# mit der Unterstützung von nativen UI-Entwurfs Tools):
 
-1.  Verwenden Sie unter iOS die UIKit-APIs zum Erstellen von Anwendungen nativ aussehende, optional mit Xamarin iOS-Designer, um die Benutzeroberfläche visuell zu erstellen.
-1.  Verwenden Sie für Android Android.Views systemeigene Anwendungen nutzen die Xamarin Benutzeroberflächen-Designer erstellen.
-1.  Auf Windows werden XAML verwenden Sie für die Darstellungsschicht, in Visual Studio oder Blend-Benutzeroberflächen-Designer erstellt.
-1.  Unter Mac verwenden Sie Storyboards für die Darstellungsschicht, die in Xcode erstellt.
+1. Verwenden Sie unter IOS die UIKit-APIs, um nativ aussehende Anwendungen zu erstellen. verwenden Sie optional den IOS-Designer von xamarin, um die Benutzeroberfläche visuell zu erstellen.
+1. Unter Android können Sie mithilfe von Android. views systemeigene Anwendungen erstellen und den Benutzeroberflächen-Designer von xamarin nutzen.
+1. Unter Windows verwenden Sie XAML für die Darstellungs Ebene, die in Visual Studio oder im Benutzeroberflächen-Designer von Blend erstellt wurde.
+1. Auf dem Mac verwenden Sie Storyboards für die Darstellungs Ebene, die in Xcode erstellt wird.
 
-Xamarin.Forms-Projekte, die auf allen Plattformen unterstützt werden, und zulassen, dass Sie Benutzeroberflächen erstellen, die auf Plattformen mit Xamarin.Forms XAML gemeinsam genutzt werden können. 
+Xamarin. Forms-Projekte werden auf allen Plattformen unterstützt und ermöglichen es Ihnen, Benutzeroberflächen zu erstellen, die plattformübergreifend mithilfe von xamarin. Forms-XAML freigegeben werden können. 
 
-Die Menge der Wiederverwendungsrate für Code, hängt größtenteils wie viel Code in gemeinsam genutzten Kerns, und wie viel Code Benutzeroberfläche bestimmte gehalten wird. Der Kerncode ist etwas, die interagiert nicht direkt mit dem Benutzer, sondern stattdessen bietet Dienste zum Teilen der Anwendung, die erfasst und diese Informationen anzeigen.
+Der Umfang der erneuten Verwendung von Code hängt größtenteils davon ab, wie viel Code im gemeinsamen Kern beibehalten wird und wie viel Code Benutzeroberflächen spezifisch ist. Der Kerncode ist alles, was nicht direkt mit dem Benutzer interagiert, sondern Dienste für Teile der Anwendung bereitstellt, die diese Informationen erfassen und anzeigen.
 
-Um die Menge der Wiederverwendungsrate für Code zu erhöhen, können Sie Cross-Platform-Komponenten verwenden, die gemeinsame Dienste auf allen diesen Systemen, z. B. bereitstellen:
+Um die Wiederverwendung von Code zu erhöhen, können Sie plattformübergreifende Komponenten übernehmen, die allgemeine Dienste für all diese Systeme bereitstellen, wie z. b.:
 
-1.   [SQLite-Net-](https://www.nuget.org/packages/sqlite-net-pcl/) für den lokalen SQL-Speicher
-1.   [Xamarin-Plugins](https://xamarin.com/plugins) für den Zugriff auf die gerätespezifische Funktionen wie z.B. die Kamera und Kontakte Geolocation
-1.   [NuGet-Pakete](https://nuget.org) , z. B. mit Xamarin-Projekten kompatibel sind [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/),
-1.  Mithilfe von .NET Framework-Funktionen für Netzwerke, Webdienste, e/a und mehr.
+1. [SQLite-net](https://www.nuget.org/packages/sqlite-net-pcl/) für lokalen SQL-Speicher,
+1. [Xamarin](https://xamarin.com/plugins) -Plug-Ins für den Zugriff auf gerätespezifische Funktionen wie Kamera, Kontakte und geolozierung,
+1. [Nuget-Pakete](https://nuget.org) , die mit xamarin-Projekten kompatibel sind, z. b. [JSON.net](https://www.nuget.org/packages/Newtonsoft.Json/)
+1. Verwenden von .NET Framework-Features für Netzwerke, Webdienste, e/a und mehr.
 
 
-Einige dieser Komponenten sind in implementiert die *Tasky* Fallstudie.
+Einige dieser Komponenten werden in der *Tasky* -Fallstudie implementiert.
 
  <a name="Separate_Reusable_Code_into_a_Core_Library" />
 
 
-## <a name="separate-reusable-code-into-a-core-library"></a>Trennen von Wiederverwendbarem Code in eine Core-Bibliothek
+## <a name="separate-reusable-code-into-a-core-library"></a>Trennen von wiederverwendbarem Code in eine Kernbibliothek
 
-Befolgen Sie das Prinzip der Trennung der Verantwortungsbereiche Schichten der Architektur Ihrer Anwendung, und klicken Sie dann verschieben Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Core-Bibliothek ist, können Sie die Freigabe für Benutzeroberflächencode, wie die Abbildung unten optimieren. veranschaulicht:
+Indem Sie das Prinzip der Trennung von Zuständigkeiten durch die Schichtung ihrer Anwendungsarchitektur und das anschließende Verschieben von Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Kernbibliothek sind, befolgen, können Sie die Code Freigabe plattformübergreifend maximieren (siehe Abbildung unten). Illustri
 
- ![](overview-images/layers2.png "Befolgen Sie das Prinzip der Trennung der Verantwortungsbereiche Schichten der Architektur Ihrer Anwendung, und klicken Sie dann verschieben Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Core-Bibliothek ist, können Sie die Freigabe für Benutzeroberflächencode maximieren.")
+ ![](overview-images/layers2.png "Indem Sie das Prinzip der Trennung von Zuständigkeiten durch die Schichtung ihrer Anwendungsarchitektur und das anschließende Verschieben von Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Kernbibliothek sind, befolgen, können Sie die Code Freigabe plattformübergreifend maximieren.")
 
  <a name="Case_Studies" />
 
 
 ## <a name="case-studies"></a>Fallstudien
 
-Es gibt eine Fallstudie, die in diesem Dokument – mit *Tasky Pro*. Jede Fallstudie wird erläutert, die Implementierung der in diesem Dokument in ein praktisches Beispiel beschriebenen Konzepte. Der Code ist open Source und verfügbar [Github](https://github.com/xamarin/mobile-samples/).
+Es gibt eine Fallstudie, die dieses Dokument begleitet – *Tasky pro*. Jede Fallstudie erläutert die Implementierung der in diesem Dokument beschriebenen Konzepte in einem realen Beispiel. Der Code ist Open Source und auf [GitHub](https://github.com/xamarin/mobile-samples/)verfügbar.

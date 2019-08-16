@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: dac81a40983ea8414ec730f10c4c1f17e4d9915c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0c606e001552f1c4267ffc29bd69b2f38f2ec971
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653808"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527928"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Kern Grafiken in xamarin. IOS
 
@@ -24,10 +24,10 @@ Kern Grafiken ist ein 2D-Grafik Framework auf niedriger Ebene, das das Zeichnen 
 
 Kern Grafiken unterstützen das Zeichnen in einer Reihe von Szenarien, einschließlich:
 
--  [Zeichnen auf dem Bildschirm über `UIView` eine](#Drawing_in_a_UIView_Subclass) .
--  [Zeichnen von Bildern im Arbeitsspeicher oder auf dem Bildschirm](#Drawing_Images_and_Text).
--  Erstellen und zeichnen in eine PDF-Datei.
--  Lesen und Zeichnen einer vorhandenen PDF-Datei.
+- [Zeichnen auf dem Bildschirm über `UIView` eine](#Drawing_in_a_UIView_Subclass) .
+- [Zeichnen von Bildern im Arbeitsspeicher oder auf dem Bildschirm](#Drawing_Images_and_Text).
+- Erstellen und zeichnen in eine PDF-Datei.
+- Lesen und Zeichnen einer vorhandenen PDF-Datei.
 
 
 ## <a name="geometric-space"></a>Geometrischer Raum
@@ -36,9 +36,9 @@ Unabhängig vom Szenario werden alle Zeichnungen, die mit Kern Grafiken durchgef
 
 Dieser Ansatz bietet einige Vorteile:
 
--  Das Zeichnen von Code wird dynamisch und kann anschließend Grafiken zur Laufzeit ändern.
--  Wenn Sie die Notwendigkeit statischer Images im Anwendungs Bündel verringern, kann die Anwendungs Größe verringert werden.
--  Grafiken werden für Geräte übergreifende Lösungs Änderungen stabiler.
+- Das Zeichnen von Code wird dynamisch und kann anschließend Grafiken zur Laufzeit ändern.
+- Wenn Sie die Notwendigkeit statischer Images im Anwendungs Bündel verringern, kann die Anwendungs Größe verringert werden.
+- Grafiken werden für Geräte übergreifende Lösungs Änderungen stabiler.
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
@@ -270,10 +270,10 @@ Der resultierende Text wird mit dem Bild angezeigt, wie unten dargestellt:
 
 Zusätzlich zum Zeichnen in den Grafik Kontext einer Ansicht unterstützt die Kern Grafik das Zeichnen von Speicher gestützten Bildern, auch als zeichnen außerhalb des Bildschirms bezeichnet. Hierfür ist Folgendes erforderlich:
 
--  Erstellen eines Grafik Kontexts, der durch eine in-Memory-Bitmap unterstützt wird
--  Festlegen des Zeichnungs Zustands und Ausgeben von Zeichnungs Befehlen
--  Das Bild wird aus dem Kontext abgeraten.
--  Der Kontext wird entfernt.
+- Erstellen eines Grafik Kontexts, der durch eine in-Memory-Bitmap unterstützt wird
+- Festlegen des Zeichnungs Zustands und Ausgeben von Zeichnungs Befehlen
+- Das Bild wird aus dem Kontext abgeraten.
+- Der Kontext wird entfernt.
 
 
 Anders als `Draw` bei der-Methode, in der der Kontext von der Sicht bereitgestellt wird, erstellen Sie in diesem Fall den Kontext auf zwei Arten:

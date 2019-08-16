@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 12bb8fe6f8ed77ea9091c165d4656da292266679
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9412012949cd012d572b65b7af6e2890160338dc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656620"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527944"
 ---
 # <a name="core-animation-in-xamarinios"></a>Core-Animation in xamarin. IOS
 
@@ -40,9 +40,9 @@ UIKit bietet verschiedene Funktionen, die das Hinzufügen von Animationen zu ein
 
 In diesem Abschnitt werden UIKit-Animations Features erläutert, einschließlich:
 
--  Übergänge zwischen Controllern
--  Übergänge zwischen Sichten
--  Eigenschaften Animation anzeigen
+- Übergänge zwischen Controllern
+- Übergänge zwischen Sichten
+- Eigenschaften Animation anzeigen
 
 
 ### <a name="view-controller-transitions"></a>Übergänge von Ansichtscontrollern
@@ -59,9 +59,9 @@ SecondViewController vc2 = new SecondViewController {
 
 In diesem Fall wird `PartialCurl` eine Animation verwendet, obwohl mehrere andere verfügbar sind, einschließlich:
 
--  `CoverVertical`– Wird vom unteren Bildschirmrand nach oben verschoben.
--  `CrossDissolve`– Die alte Ansicht wird ausgeblendet, & die neue Ansicht ausgeblendet wird.
--  `FlipHorizontal`-Ein horizontaler, von rechts nach links. Bei einer Kündigung wird der Übergang von links nach rechts zurück geflippt.
+- `CoverVertical`– Wird vom unteren Bildschirmrand nach oben verschoben.
+- `CrossDissolve`– Die alte Ansicht wird ausgeblendet, & die neue Ansicht ausgeblendet wird.
+- `FlipHorizontal`-Ein horizontaler, von rechts nach links. Bei einer Kündigung wird der Übergang von links nach rechts zurück geflippt.
 
 
 Um den Übergang zu animieren, `true` übergeben Sie als zweites Argument `PresentViewController`an:
@@ -100,12 +100,12 @@ Der folgende Screenshot zeigt den animierten Übergang zwischen den Bildansichte
 
 UIKit unterstützt eine Vielzahl von Eigenschaften für die `UIView` -Klasse kostenlos, einschließlich:
 
--  Frame
--  Fugen
--  Center
--  Alpha
--  Transformation
--  Farbe
+- Frame
+- Fugen
+- Center
+- Alpha
+- Transformation
+- Farbe
 
 
 Diese Animationen werden implizit durch Angeben von Eigenschafts Änderungen `NSAction` in einem an die statische `UIView.Animate` Methode übergebenen Delegaten ausgeführt. Mit dem folgenden Code wird beispielsweise der Mittelpunkt eines `UIImageView`animiert:

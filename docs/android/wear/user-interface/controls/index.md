@@ -6,36 +6,36 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9620362b48e9cf1db4c25e4470851fb518a8e0f3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 821e50b345a7b00d7b545ce7b7890ee5971e5cf1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285588"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526650"
 ---
 # <a name="android-wear-controls"></a>Android Wear-Steuerelemente
 
-Android Wear-apps können viele verwenden die gleichen Steuerelemente bereits in Verwendung für die reguläre Android-apps, einschließlich `Button`, `TextView`, und das image zeichenbarer Ressourcen. Formularlayout-Steuerelemente, einschließlich `ScrollView`, `LinearLayout`, und `RelativateLayout` kann auch verwendet werden.
+Android Wear-Apps können viele der gleichen Steuerelemente verwenden, die bereits für reguläre Android-Apps `Button`verwendet `TextView`werden, einschließlich, und Bild drawables. Layout-Steuer `ScrollView`Elemente `LinearLayout`, einschließlich `RelativateLayout` , und, können ebenfalls verwendet werden.
 
-Diese Seite enthält links zu den Steuerelementen Android Wear-spezifische aus der [tragbare UI-Bibliothek](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary) zur Verfügung, in der Xamarin-Projekte über die [tragbare Unterstützung](https://www.nuget.org/packages/Xamarin.Android.Wear/) NuGet-Paket. Diese Steuerelemente umfassen Folgendes:
+Diese Seite ist mit den Android-Wear-spezifischen Steuerelementen aus der [tragbaren UI Library](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary) verknüpft, die in xamarin-Projekten über das nuget-Paket " [tragbaren Support](https://www.nuget.org/packages/Xamarin.Android.Wear/) " verfügbar ist. Diese Steuerelemente umfassen Folgendes:
 
--   **GridViewPager** &ndash; erstellen Sie eine zweidimensionale Navigationsschnittstelle, in denen der Benutzer einen Bildlauf nach unten und dann auf, um eine Auswahl zu treffen (Weitere Informationen finden Sie unter [GridViewPager](~/android/wear/user-interface/controls/gridviewpager.md)):
+- **GridViewPager** Erstellen Sie eine zweidimensionale Navigationsschnittstelle, bei der der Benutzer einen Bildlauf nach unten durchführt, um eine Auswahl zu treffen (Weitere Informationen finden Sie unter [GridViewPager):](~/android/wear/user-interface/controls/gridviewpager.md) &ndash;
 
-    ![Beispielscreenshot, der eine GridViewPager](images/gridviewpager.png)
+    ![Beispiel Bildschirm eines GridViewPager](images/gridviewpager.png)
 
-Andere wichtige Steuerelemente für Wear apps gehören:
+Andere wichtige Steuerelemente für Wear-apps sind:
 
-* `BoxInsetLayout` (finden Sie unter [arbeiten mit Bildschirmen](~/android/wear/screen-sizes.md)),
+* `BoxInsetLayout`(siehe [Arbeiten mit Bildschirmgrößen](~/android/wear/screen-sizes.md)),
 
-* `WatchViewStub` (finden Sie unter [arbeiten mit Bildschirmen](~/android/wear/screen-sizes.md)),
+* `WatchViewStub`(siehe [Arbeiten mit Bildschirmgrößen](~/android/wear/screen-sizes.md)),
 
-* `CardFrame` (finden Sie unter [Android Erstellen von Karten](https://developer.android.com/training/wearables/ui/cards.html)),
+* `CardFrame`(siehe [Android-Erstellen von Karten](https://developer.android.com/training/wearables/ui/cards.html)),
 
-* `CardScrollView` (finden Sie unter [Android Erstellen von Karten](https://developer.android.com/training/wearables/ui/cards.html)),
+* `CardScrollView`(siehe [Android-Erstellen von Karten](https://developer.android.com/training/wearables/ui/cards.html)),
 
-* `WearableListView` (finden Sie unter [Android Listen erstellen](https://developer.android.com/training/wearables/ui/lists.html)).
+* `WearableListView`(siehe [Android](https://developer.android.com/training/wearables/ui/lists.html)-Erstellungs Listen).
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android.Support.Wearable-Dokumentation](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+- [Android. Support. Wearable docs](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)

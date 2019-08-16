@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f772bf1309330b41f9faea812e2cdcdba8e969cb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653125"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527057"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von "berühren" in xamarin. IOS
 
@@ -36,7 +36,7 @@ Befolgen Sie die nachfolgenden Anweisungen, um dem Storyboard Code hinzuzufügen
 In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie die folgenden Schritte aus, um den Code hinzuzufügen, der zum Implementieren von Berührungs Ereignissen
 
 
-1. Öffnen Sie das Projekt **Touch_Start**. Führen Sie zuerst das Projekt aus, um sicherzustellen, dass alles okay ist, und tippen Sie **auf die Schalt** Fläche mit den Es sollte ein Bildschirm angezeigt werden, der dem folgenden ähnelt (obwohl keine der Schaltflächen funktioniert):
+1. Öffnen Sie das Projekt **Touch_Start**. Führen Sie zuerst das Projekt aus, um sicherzustellen, dass alles okay ist, und tippen Sie auf die Schaltfläche mit den Es sollte ein Bildschirm angezeigt werden, der dem folgenden ähnelt (obwohl keine der Schaltflächen funktioniert):
     
     [![](ios-touch-walkthrough-images/image4.png "Beispiel-App mit nicht funktionierenden Schaltflächen ausführen")](ios-touch-walkthrough-images/image4.png#lightbox)
 
@@ -181,8 +181,8 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
 Im [vorherigen Abschnitt](#Touch_Samples) wurde gezeigt, wie Sie ein Objekt mithilfe von touchereignissen auf den Bildschirm ziehen.
 In diesem Abschnitt werden die Berührungs Ereignisse beseitigt und gezeigt, wie die folgenden Gesten Erkennungs Tools verwendet werden:
 
--  Der `UIPanGestureRecognizer` zum Ziehen eines Bilds auf dem Bildschirm.
--  Der `UITapGestureRecognizer` , der auf doppelte Seiten auf dem Bildschirm antwortet.
+- Der `UIPanGestureRecognizer` zum Ziehen eines Bilds auf dem Bildschirm.
+- Der `UITapGestureRecognizer` , der auf doppelte Seiten auf dem Bildschirm antwortet.
 
 Wenn Sie den Code für das [Start Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start) ausführen und auf die Schaltfläche " **Gesten Erkennungs Beispiele** " klicken, sollte der folgende Bildschirm angezeigt werden:
 

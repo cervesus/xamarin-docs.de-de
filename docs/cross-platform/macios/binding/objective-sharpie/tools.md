@@ -1,28 +1,26 @@
 ---
-title: Objektive Sharpie Tools und Befehle
-description: Dieses Dokument enthält eine Übersicht über die Tools, die in Objective Sharpie und die Befehlszeilenargumente für die Verwendung mit diesen enthalten.
+title: Ziel-Sharpie-Tools & Befehle
+description: Dieses Dokument enthält eine Übersicht über die Tools, die im Ziel-Sharpie enthalten sind, und die Befehlszeilenargumente, die mit Ihnen verwendet werden.
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 51a0b81204b743824e24cfed83bd73308fa8d506
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: ddfe0f99991808214a6006c9504d267179adf2ab
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977661"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521856"
 ---
-# <a name="objective-sharpie-tools--commands"></a>Objektive Sharpie Tools und Befehle
+# <a name="objective-sharpie-tools--commands"></a>Ziel-Sharpie-Tools & Befehle
 
-_Übersicht über die Tools von Ziel Sharpie, und die Befehlszeilenargumente zu verwenden._
+_Übersicht über die Tools, die im Ziel-Sharpie enthalten sind, und die Befehlszeilenargumente, um Sie zu verwenden._
 
-<style type="text/css"> .terminal-blue { color: rgb(10,96,254); } .terminal-green { color: rgb(12,156,26); } .terminal-magenta { color: rgb(152,12,103); } </style>
+Nachdem das Ziel "Sharpie" erfolgreich [installiert](~/cross-platform/macios/binding/objective-sharpie/get-started.md)wurde, öffnen Sie ein Terminal, und machen Sie sich mit den *Befehlen* vertraut, die der Sharpie bietet:
 
-
-Sobald der erfolgreiche Objective Sharpie ist [installiert](~/cross-platform/macios/binding/objective-sharpie/get-started.md), öffnen Sie ein Terminal, und informieren Sie sich über die <em>Befehle</em> Ziel Sharpie zu bieten hat:
-
-<pre>$ <b>sharpie -help</b>
+```
+$ sharpie -help
 usage: sharpie [OPTIONS] TOOL [TOOL_OPTIONS]
 
 Options:
@@ -48,22 +46,24 @@ Available Tools:
   bind               Create a Xamarin C# binding to Objective-C APIs
   update             Update to the latest release of Objective Sharpie
   verify-docs        Show cross reference documentation for [Verify] attributes
-  docs               Open the Objective Sharpie online documentation</pre>
+  docs               Open the Objective Sharpie online documentation
+```
 
-Objektive Sharpie bietet die folgenden Tools:
+Ziel-Sharpie stellt die folgenden Tools bereit:
 
 |Tool|Beschreibung|
 |--- |--- |
-|**xcode**|Enthält Informationen zu aktuellen Xcode-Installation sowie die Versionen von iOS und Mac-SDKs, die verfügbar sind. Wir werden diese Informationen später verwenden werden, wenn wir unsere Bindungen generieren.|
-|**pod**|Sucht nach, konfiguriert, installiert wird (in einem lokalen Verzeichnis), und Binden von Objective-C- [CocoaPod](https://cocoapods.org/) Bibliotheken, die aus der master-Spec-Repository verfügbar sind. Dieses Tool auswertet, um die Übergabe an die richtige Eingabe automatisch hergeleitet werden die installierten CocoaPod der `bind` der folgenden Tools. Neues in 3.0!|
-|**bind**|Analysiert die Header-Dateien (`*.h`) in der Objective-C-Bibliothek, in dem ersten [ApiDefinition.cs und StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) Dateien.|
-|**update**|Überprüft, ob neuere Versionen des Ziel-Sharpie und downloads, und startet das Installationsprogramm aus, sofern verfügbar.|
-|**verify-docs**|Zeigt detaillierte Informationen zu `[Verify]` Attribute.|
-|**docs**|Navigiert zu diesem Dokument in Ihrem Standardwebbrowser.|
+|**xcode**|Enthält Informationen zur aktuellen Xcode-Installation sowie zu den verfügbaren Versionen von IOS-und Mac-SDOs. Diese Informationen werden später verwendet, wenn wir unsere Bindungen generieren.|
+|**Pfund**|Sucht nach, konfiguriert, installiert (in einem lokalen Verzeichnis) und bindet Ziel-C- [cocoapod-](https://cocoapods.org/) Bibliotheken, die im Repository für Master Spezifikationen verfügbar sind. Dieses Tool wertet die installierte cocoapod aus, um automatisch die korrekte Eingabe abzuleiten, die an `bind` das Tool weiter unten übergeben werden soll. Neu in 3,0!|
+|**bind**|Analysiert die Header Dateien (`*.h`) in der Ziel-C-Bibliothek in die anfänglichen [ApiDefinition.cs-und StructsAndEnums.cs-](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) Dateien.|
+|**update**|Prüft, ob neuere Versionen von Ziel-Sharpie vorhanden sind, und lädt das Installationsprogramm herunter, sofern ein solches verfügbar ist.|
+|**verify-docs**|Zeigt ausführliche Informationen über `[Verify]` Attribute an.|
+|**docs**|Navigiert zu diesem Dokument in Ihrem Standard Webbrowser.|
 
-Geben Sie den Namen des Tools, um Hilfe für ein bestimmtes Ziel Sharpie-Tool zu erhalten, und die `-help` Option. Z. B. `sharpie xcode -help` gibt die folgende Ausgabe zurück:
+Um Hilfe zu einem bestimmten Ziel-Sharpie-Tool zu erhalten, geben Sie den Namen des `-help` Tools und die Option ein. Beispielsweise `sharpie xcode -help` gibt die folgende Ausgabe zurück:
 
-<pre>$ <b>sharpie xcode -help</b>
+```
+$ sharpie xcode -help
 usage: sharpie xcode [OPTIONS]
 
 Options:
@@ -71,17 +71,20 @@ Options:
   -v, -verbose     Be verbose with output
 
 Xcode Options:
-  -sdks            List all available Xcode SDKs. Pass -verbose for more details.</pre>
+  -sdks            List all available Xcode SDKs. Pass -verbose for more details.
+```
 
-Bevor wir den Bindungsprozess beginnen können, müssen wir Informationen über unsere aktuellen installierten SDKs erhalten Sie mithilfe des folgenden Befehls in das Terminal `sharpie xcode -sdks`. Die Ausgabe kann abweichen, je nachdem, welche Versionen von Xcode, die Sie installiert haben. Objektive Sharpie sucht in allen installierten SDKs `Xcode*.app` unter der `/Applications` Verzeichnis:
+Bevor wir den Bindungsprozess starten können, müssen wir den folgenden Befehl in das Terminal `sharpie xcode -sdks`eingeben, um Informationen zu unseren aktuell installierten sdden zu erhalten. Die Ausgabe kann sich je nach Version (n) von Xcode, die Sie installiert haben, unterscheiden. Der Ziel-Sharpie sucht in einem `Xcode*.app` der `/Applications` folgenden Verzeichnisse nach SDI-Daten:
 
-<pre>$ <b>sharpie xcode -sdks</b>
-<span class="terminal-blue">sdk:</span> appletvos9.0    <span class="terminal-green">arch:</span> arm64
-<span class="terminal-blue">sdk:</span> iphoneos9.1     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> iphoneos9.0     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> iphoneos8.4     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> macosx10.11     <span class="terminal-green">arch:</span> x86_64  i386
-<span class="terminal-blue">sdk:</span> macosx10.10     <span class="terminal-green">arch:</span> x86_64  i386
-<span class="terminal-blue">sdk:</span> watchos2.0      <span class="terminal-green">arch:</span> armv7</pre>
+```
+$ sharpie xcode -sdks
+sdk: appletvos9.0    arch: arm64
+sdk: iphoneos9.1     arch: arm64   armv7
+sdk: iphoneos9.0     arch: arm64   armv7
+sdk: iphoneos8.4     arch: arm64   armv7
+sdk: macosx10.11     arch: x86_64  i386
+sdk: macosx10.10     arch: x86_64  i386
+sdk: watchos2.0      arch: armv7
+```
 
-Von oben sehen wir, dass wir haben die `iphoneos9.1` SDK auf dem Computer installiert und kann `arm64` Architektur unterstützt. Wir werden diesen Wert für alle Beispiele in diesem Abschnitt verwenden. Mit diesen Informationen vorhanden, wir möchten Sie ein Objective-C-Bibliothek-Header-Dateien in den ersten zu analysieren sind `ApiDefinition.cs` und `StructsAndEnums.cs` für das Projekt für die Bindung.
+In der obigen Ansicht sehen wir, dass das SDK auf `iphoneos9.1` dem Computer installiert ist `arm64` und die Architektur unterstützt wird. Dieser Wert wird für alle Beispiele in diesem Abschnitt verwendet. Nachdem diese Informationen vorhanden sind, können wir eine Ziel-C-Bibliotheks Header Datei in den ursprünglichen `ApiDefinition.cs` und `StructsAndEnums.cs` für das Bindungs Projekt analysieren.

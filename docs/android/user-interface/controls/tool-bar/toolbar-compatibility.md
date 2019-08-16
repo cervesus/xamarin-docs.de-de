@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: ce13532026e2c49cb733e5afc0f6abd41ff1abdd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 31602b14179691d13d8058c90cf20a6f7f667124
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645035"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522823"
 ---
 # <a name="toolbar-compatibility"></a>Kompatibilität von Symbolleisten
 
@@ -24,13 +24,13 @@ Da `Toolbar` Teil der Android V7-Unterstützungs Bibliothek ist, kann Sie auf Ge
 
 So ändern Sie eine APP für die Verwendung der AppCompat-Version der Symbolleiste: 
 
-1.  Legen Sie die Mindest-und Ziel-Android-Versionen für die APP fest.
+1. Legen Sie die Mindest-und Ziel-Android-Versionen für die APP fest.
 
-2.  Installieren Sie das nuget-Paket "AppCompat".
+2. Installieren Sie das nuget-Paket "AppCompat".
 
-3.  Verwenden Sie ein AppCompat-Design anstelle eines integrierten Android-Designs.
+3. Verwenden Sie ein AppCompat-Design anstelle eines integrierten Android-Designs.
 
-4.  Ändern `MainActivity` Sie so, dass es `AppCompatActivity` Unterklassen `Activity`anstelle von ist. 
+4. Ändern `MainActivity` Sie so, dass es `AppCompatActivity` Unterklassen `Activity`anstelle von ist. 
 
 Jeder dieser Schritte wird in den folgenden Abschnitten ausführlich erläutert.
 

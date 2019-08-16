@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 82320b069156828101d17e79ca48a8933b8a8777
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655079"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528465"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Erstellen einer xamarin. IOS-Anwendung mit der Elements-API
 
 _Dieser Artikel baut auf den Informationen auf, die im Dialog Feld Einführung in MonoTouch vorgestellt wurden. Sie enthält eine exemplarische Vorgehensweise, die zeigt, wie Sie das MonoTouch. Dialog (MT) verwenden. D) Elemente-API, um schnell mit dem Entwickeln einer Anwendung mit MT zu beginnen. D._
 
-In dieser exemplarischen Vorgehensweise verwenden wir das Mt. D Elements-API zum Erstellen eines Master/Detail-Anwendungs Stils, in dem eine Aufgabenliste angezeigt wird. Wenn der Benutzer die <span class="ui">+</span> Schaltfläche in der Navigationsleiste auswählt, wird der Tabelle für den Task eine neue Zeile hinzugefügt. Wenn Sie die Zeile auswählen, navigieren Sie zum Detailbildschirm, mit dem wir die Aufgabenbeschreibung und das Fälligkeitsdatum aktualisieren können, wie unten dargestellt:
+In dieser exemplarischen Vorgehensweise verwenden wir das Mt. D Elements-API zum Erstellen eines Master/Detail-Anwendungs Stils, in dem eine Aufgabenliste angezeigt wird. Wenn der Benutzer die **+** Schaltfläche in der Navigationsleiste auswählt, wird der Tabelle für den Task eine neue Zeile hinzugefügt. Wenn Sie die Zeile auswählen, navigieren Sie zum Detailbildschirm, mit dem wir die Aufgabenbeschreibung und das Fälligkeitsdatum aktualisieren können, wie unten dargestellt:
 
  [![](elements-api-walkthrough-images/01-task-list-app.png "Wenn Sie die Zeile auswählen, navigieren Sie zum Detailbildschirm, mit dem wir die Aufgabenbeschreibung und das Fälligkeitsdatum aktualisieren können.")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
@@ -36,11 +36,11 @@ Um den Prozess der Bildschirm Erstellung zu starten, wird von MonoTouch `DialogV
 
 Zum Erstellen einer Anwendung mit mehreren Bildschirmen mit MonoTouch. Dialog ist Folgendes erforderlich:
 
-1.  Erstellen einer `UINavigationController.`
-1.  Erstellen einer `DialogViewController.`
-1.  Fügen Sie `DialogViewController` als Stammverzeichnis des`UINavigationController.` 
-1.  Fügen Sie `RootElement` einen hinzu.`DialogViewController.`
-1.  Fügen `Sections` Sie `Elements` und hinzu.`RootElement.` 
+1. Erstellen einer `UINavigationController.`
+1. Erstellen einer `DialogViewController.`
+1. Fügen Sie `DialogViewController` als Stammverzeichnis des`UINavigationController.` 
+1. Fügen Sie `RootElement` einen hinzu.`DialogViewController.`
+1. Fügen `Sections` Sie `Elements` und hinzu.`RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>Verwenden eines UINavigationController
 
@@ -77,14 +77,14 @@ Die Abschnitte bestehen aus Elementen, anderen Abschnitten oder sogar aus andere
 
 ### <a name="using-dialogviewcontroller"></a>Verwenden von dialogviewcontroller
 
-Der `DialogViewController`, der eine `UITableViewController` Unterklasse ist, verfügt `UITableView` über eine als Ansicht. In diesem Beispiel möchten wir jedes Mal, wenn die <span class="ui">+</span> Schaltfläche angetippt wird, Elemente zur Tabelle hinzufügen. Da der `DialogViewController` `UINavigationController`einem hinzugefügt wurde `NavigationItem`, können Sie die- `RightBarButton` Eigenschaft verwenden, um die <span class="ui">+</span> Schaltfläche hinzuzufügen, wie unten dargestellt:
+Der `DialogViewController`, der eine `UITableViewController` Unterklasse ist, verfügt `UITableView` über eine als Ansicht. In diesem Beispiel möchten wir jedes Mal, wenn die **+** Schaltfläche angetippt wird, Elemente zur Tabelle hinzufügen. Da der `DialogViewController` `UINavigationController`einem hinzugefügt wurde `NavigationItem`, können Sie die- `RightBarButton` Eigenschaft verwenden, um die **+** Schaltfläche hinzuzufügen, wie unten dargestellt:
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-Als wir die `RootElement` frühere Version erstellt haben, haben wir Ihr `Section` eine einzelne Instanz hinzugefügt, damit wir Elemente <span class="ui">+</span> hinzufügen können, wenn die Schaltfläche vom Benutzer getippt wird. Sie können den folgenden Code verwenden, um dies im-Ereignishandler für die Schaltfläche zu erreichen:
+Als wir die `RootElement` frühere Version erstellt haben, haben wir Ihr `Section` eine einzelne Instanz hinzugefügt, damit wir Elemente **+** hinzufügen können, wenn die Schaltfläche vom Benutzer getippt wird. Sie können den folgenden Code verwenden, um dies im-Ereignishandler für die Schaltfläche zu erreichen:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {                

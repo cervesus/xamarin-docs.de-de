@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: cad7378e3d569454606a9d472cf30c42956553e4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 24f5ce0daddab090b5486af99eebc0d6e7a2b1dd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644945"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528667"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>Anpassen der Darstellung einer Tabelle in xamarin. IOS
 
@@ -22,10 +22,10 @@ Die einfachste Möglichkeit, die Darstellung einer Tabelle zu ändern, besteht d
 
 Es gibt vier integrierte Stile:
 
--  **Standard** – unterstützt `UIImageView`.
--  Unter **Titel** – unter `UIImageView` stützt einen Untertitel und.
--  **Value1** – rechtsbündig ausgerichtete Untertitel `UIImageView`unterstützt.
--  **Value2** – Titel ist rechtsbündig ausgerichtet, und Untertitel ist linksbündig (aber kein Bild).
+- **Standard** – unterstützt `UIImageView`.
+- Unter **Titel** – unter `UIImageView` stützt einen Untertitel und.
+- **Value1** – rechtsbündig ausgerichtete Untertitel `UIImageView`unterstützt.
+- **Value2** – Titel ist rechtsbündig ausgerichtet, und Untertitel ist linksbündig (aber kein Bild).
 
 
 Diese Screenshots zeigen, wie die einzelnen Stile angezeigt werden:
@@ -53,10 +53,10 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 
 Zellen können das folgende Zubehör auf der rechten Seite der Ansicht hinzugefügt werden:
 
--   **Häkchen–** kann verwendet werden, um die Mehrfachauswahl in einer Tabelle anzugeben.
--   **Detailbutton** – antwortet unabhängig vom Rest der Zelle und ermöglicht es, eine andere Funktion zum Berühren der Zelle selbst auszuführen (z. b. das Öffnen eines Popups oder eines neuen Fensters, das nicht Teil `UINavigationController` eines Stapels ist).
--   " **Disclosure sureindicator** " – wird normalerweise verwendet, um anzugeben, dass durch Berühren der Zelle eine andere Ansicht geöffnet wird
--   **Detaildisclosure surebutton** – eine Kombination aus `DetailButton` und `DisclosureIndicator`.
+- **Häkchen–** kann verwendet werden, um die Mehrfachauswahl in einer Tabelle anzugeben.
+- **Detailbutton** – antwortet unabhängig vom Rest der Zelle und ermöglicht es, eine andere Funktion zum Berühren der Zelle selbst auszuführen (z. b. das Öffnen eines Popups oder eines neuen Fensters, das nicht Teil `UINavigationController` eines Stapels ist).
+- " **Disclosure sureindicator** " – wird normalerweise verwendet, um anzugeben, dass durch Berühren der Zelle eine andere Ansicht geöffnet wird
+- **Detaildisclosure surebutton** – eine Kombination aus `DetailButton` und `DisclosureIndicator`.
 
 
 Dies sieht wie folgt aus:
@@ -124,9 +124,9 @@ Das cellcustomtable-Beispiel implementiert `UITableViewCell` eine Unterklasse, d
 
 Die benutzerdefinierte Cell-Klasse besteht nur aus drei Methoden:
 
--   **Konstruktor** – erstellt die UI-Steuerelemente und legt die benutzerdefinierten Stileigenschaften fest (z. b. Schriftart, Größe und Farben).
--   **Updatecell** – eine Methode `UITableView.GetCell` , mit der die Eigenschaften der Zelle festgelegt werden können.
--   **Layoutsubviews** – legen Sie den Speicherort der UI-Steuerelemente fest. In dem Beispiel hat jede Zelle das gleiche Layout, aber eine komplexere Zelle (insbesondere diejenigen mit unterschiedlichen Größen) benötigt je nach angezeigter Inhalte möglicherweise unterschiedliche Layoutpositionen.
+- **Konstruktor** – erstellt die UI-Steuerelemente und legt die benutzerdefinierten Stileigenschaften fest (z. b. Schriftart, Größe und Farben).
+- **Updatecell** – eine Methode `UITableView.GetCell` , mit der die Eigenschaften der Zelle festgelegt werden können.
+- **Layoutsubviews** – legen Sie den Speicherort der UI-Steuerelemente fest. In dem Beispiel hat jede Zelle das gleiche Layout, aber eine komplexere Zelle (insbesondere diejenigen mit unterschiedlichen Größen) benötigt je nach angezeigter Inhalte möglicherweise unterschiedliche Layoutpositionen.
 
 
 Der gesamte Beispielcode in **cellcustomtable > CustomVegeCell.cs** folgt:

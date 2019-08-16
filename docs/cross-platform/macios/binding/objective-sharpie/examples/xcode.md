@@ -1,30 +1,31 @@
 ---
-title: Real-World-Beispiel unter Verwendung eines Xcode-Projekts
-description: In diesem Dokument wird beschrieben, wie die Verwendung ein Xcode-Projekts als eine direkte Eingabe, Ziel-Sharpie, vereinfacht den Prozess der Erstellung C# -Bindungen mit Objective-C-Code.
+title: Beispiel für eine reale Verwendung eines Xcode-Projekts
+description: In diesem Dokument wird beschrieben, wie Sie ein Xcode-Projekt als direkte Eingabe für den Ziel-Sharpie verwenden, C# wodurch der Prozess zum Erstellen von Bindungen zum Ziel-C-Code vereinfacht wird.
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: ccfc2f1760d8971e2d824cf65344fa2a5e158c12
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 083bebd093a8db92b0e64ba11d13bd32da88f604
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978371"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521941"
 ---
-# <a name="real-world-example-using-an-xcode-project"></a>Real-World-Beispiel unter Verwendung eines Xcode-Projekts
+# <a name="real-world-example-using-an-xcode-project"></a>Beispiel für eine reale Verwendung eines Xcode-Projekts
 
-**Dieses Beispiel verwendet die [POP-Bibliothek von Facebook](https://github.com/facebook/pop).**
+**In diesem Beispiel wird die [Pop-Bibliothek von Facebook](https://github.com/facebook/pop)verwendet.**
 
-In Version 3.0 unterstützt Objective Sharpie neue Xcode-Projekte als Eingabe. Diese Projekte Geben Sie den richtigen Headerdateien und Compilerflags erforderlich, um die native Bibliothek zu kompilieren, und daher erforderlich, um ihn zu binden. Objektive Sharpie wählt das erste _Ziel_ und seine Standardkonfiguration eines Projekts aus, wenn Sie keine nicht angewiesen.
+Neu in Version 3,0 unterstützt das Ziel "Sharpie" Xcode-Projekte als Eingabe. Diese Projekte geben die richtigen Header Dateien und Compilerflags an, die zum Kompilieren der systemeigenen Bibliothek erforderlich sind, und müssen daher ebenfalls gebunden werden. Ziel-Sharpie wählt das erste _Ziel_ und seine Standardkonfiguration für ein Projekt aus, wenn es nicht zur anderen Anweisung aufgefordert wird.
 
-Vor dem Ziel Sharpie versucht, die die Projekt und Header-Dateien zu analysieren, müssen sie es erstellt werden. Projekte haben häufig buildphasen, die ordnungsgemäß die Headerdateien für die externe Nutzung und Integration, Struktur werden daher wird empfohlen, immer das vollständige Projekt erstellen, bevor Sie versuchen, bindet, bindet es an.
+Bevor das Ziel "Sharpie" versucht, die Projekt-und Header Dateien zu analysieren, muss es erstellt werden. Projekte verfügen häufig über buildphasen, die Header Dateien für die externe Nutzung und Integration ordnungsgemäß strukturieren. Daher empfiehlt es sich, immer das vollständige Projekt zu erstellen, bevor versucht wird, es zu binden.
 
-<pre>$ <b>git clone https://github.com/facebook/pop.git</b>
+```
+$ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
-   <em>(more git clone output)</em>
+   (more git clone output)
 
-$ <b>cd pop</b>
-$ <b>sharpie bind pop.xcodeproj -sdk iphoneos9.0</b></pre>
-
+$ cd pop
+$ sharpie bind pop.xcodeproj -sdk iphoneos9.0
+```

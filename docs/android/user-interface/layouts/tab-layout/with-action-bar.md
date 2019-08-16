@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 92278fb84cba6329c33ac8a972a686fff7186f67
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4673b178512a886e5fdb154c57c8d659276bb392
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647439"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522329"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Layouts im Registerkarten Format mit der Aktionsleiste
 
@@ -47,17 +47,17 @@ Wenn die Aktionsleiste nicht alle Registerkarten anzeigen kann, werden die Regis
 
 Jede Registerkarte in der Aktionsleiste sollte einem [*Fragment*](~/android/platform/fragments/index.md)zugeordnet werden. Wenn der Benutzer eine Registerkarte auswählt, zeigt die Anwendung das Fragment an, das der Registerkarte zugeordnet ist. Die Aktionsleiste ist nicht für die Anzeige des passenden Fragments für den Benutzer verantwortlich. Stattdessen benachrichtigt die Aktionsleiste eine Anwendung über Zustandsänderungen auf einer Registerkarte über eine Klasse, die die Aktionsleiste. itablistener-Schnittstelle implementiert. Diese Schnittstelle stellt drei Rückruf Methoden bereit, die von Android aufgerufen werden, wenn sich der Status der Registerkarte ändert: 
 
--  **Ontabselected** : Diese Methode wird aufgerufen, wenn der Benutzer die Registerkarte auswählt. Das Fragment sollte angezeigt werden.
+- **Ontabselected** : Diese Methode wird aufgerufen, wenn der Benutzer die Registerkarte auswählt. Das Fragment sollte angezeigt werden.
 
--  **Ontabreselected** : Diese Methode wird aufgerufen, wenn die Registerkarte bereits ausgewählt ist, aber vom Benutzer erneut ausgewählt wird. Dieser Rückruf wird normalerweise verwendet, um das angezeigte Fragment zu aktualisieren/zu aktualisieren.
+- **Ontabreselected** : Diese Methode wird aufgerufen, wenn die Registerkarte bereits ausgewählt ist, aber vom Benutzer erneut ausgewählt wird. Dieser Rückruf wird normalerweise verwendet, um das angezeigte Fragment zu aktualisieren/zu aktualisieren.
 
--  **Ontabunselected** : Diese Methode wird aufgerufen, wenn der Benutzer eine andere Registerkarte auswählt. Dieser Rückruf wird zum Speichern des Zustands im angezeigten Fragment verwendet, bevor es verschwindet.
+- **Ontabunselected** : Diese Methode wird aufgerufen, wenn der Benutzer eine andere Registerkarte auswählt. Dieser Rückruf wird zum Speichern des Zustands im angezeigten Fragment verwendet, bevor es verschwindet.
 
 Xamarin. Android umschließt `ActionBar.ITabListener` den mit Ereignissen für `ActionBar.Tab` die-Klasse. Anwendungen können einem oder mehreren dieser Ereignisse Ereignishandler zuweisen. Es gibt drei Ereignisse (eine für jede Methode in `ActionBar.ITabListener`), die von einer Aktionsleisten Registerkarte angezeigt wird: 
 
--  Tabselected
--  Tabreselected
--  Tabunselected
+- Tabselected
+- Tabreselected
+- Tabunselected
 
 
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9a5186fe49edc81f5d6ec8ca297146a27a0274fa
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1c477f030dc69394ba601b31d71a772f5037af48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509682"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522296"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin. Android tablelayout
 
@@ -128,11 +128,8 @@ Führen Sie die Anwendung aus. Folgendes sollte angezeigt werden:
 
 ## <a name="references"></a>Verweise
 
--   [`TableLayout`](xref:Android.Widget.TableLayout) 
+- [`TableLayout`](xref:Android.Widget.TableLayout)
+- [`TableRow`](xref:Android.Widget.TableRow)
+- [`TextView`](xref:Android.Widget.TextView)
 
--   [`TableRow`](xref:Android.Widget.TableRow) 
-
--   [`TextView`](xref:Android.Widget.TextView) 
-
-*Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der*
-[*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden.
+_Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der [Creative Commons 2,5-Zuweisungs Lizenz](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden._

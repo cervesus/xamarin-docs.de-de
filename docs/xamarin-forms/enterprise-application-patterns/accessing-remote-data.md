@@ -1,63 +1,63 @@
 ---
 title: Zugreifen auf Remotedaten
-description: In diesem Kapitel wird erläutert, wie die "eshoponcontainers" mobile app aus der Microservices in Containern auf Daten zugreift.
+description: In diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App auf Daten aus den containerisierten microservices zugreift.
 ms.prod: xamarin
 ms.assetid: 42eba6f5-9784-4e1a-9943-5c1fbeea7452
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a4c58139b0ddbaaedf5769eeac6585bac4c013e4
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 7edbe96a6c32b4ebd4fc788e7361cddbae40601a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832114"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529196"
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
-Viele moderne webbasierte Lösungen stellen Verwendung von Webdiensten, Webservern gehostete Webdienste, um Funktionen für remote-Client-Anwendungen bereitzustellen. Die Vorgänge, die einen Webdienst verfügbar macht, bilden eine Web-API.
+Viele moderne webbasierte Lösungen nutzen Webdienste, die von Webservern gehostet werden, um Funktionen für Remote Client Anwendungen bereitzustellen. Die von einem Webdienst verfügbar gemachten Vorgänge bilden eine Web-API.
 
-Client-apps sollte die Web-API nutzen, ohne zu wissen, wie die Daten oder Vorgänge, die die-API implementiert werden können. Dies erfordert, dass die API allgemeine Standards befolgt, mit denen einen Client-app und Web-Dienst zuzustimmen Datenformate zu verwenden und die Struktur der Daten, die zwischen Client-apps und dem Webdienst ausgetauscht werden.
+Client-apps sollten in der Lage sein, die Web-API zu verwenden, ohne zu wissen, wie die von der API verfügbar gemachten Daten oder Vorgänge implementiert werden. Dies erfordert, dass die API gängige Standards befolgt, mit denen eine Client-App und ein Webdienst die zu verwendenden Datenformate und die Struktur der Daten, die zwischen Client-apps und dem Webdienst ausgetauscht werden, zustimmen können.
 
 ## <a name="introduction-to-representational-state-transfer"></a>Einführung in Representational State Transfer
 
-Representational State Transfer (REST) ist ein Architekturstil zum Erstellen verteilter Systeme, die auf Hypermedia basieren. Ein wichtiger Vorteil des REST-Modells ist, dass es auf offenen Standards basierende hat und nicht die Implementierung für das Modell oder die Client-apps, die es den Zugriff auf eine bestimmte Implementierung gebunden. Aus diesem Grund könnte ein REST-Webdienst mit Microsoft ASP.NET Core MVC implementiert werden, und Client-apps können Entwickeln mit allen Sprachen und Toolsets, die HTTP-Anforderungen generieren und HTTP-Antworten analysieren kann.
+Der Representational State Transfer (Rest) ist ein Architekturstil zum entwickeln verteilter Systeme auf der Grundlage von Hypermedia. Ein primärer Vorteil des Rest-Modells besteht darin, dass es auf offenen Standards basiert und die Implementierung des Modells oder der Client-apps, die darauf zugreifen, nicht an eine bestimmte Implementierung bindet. Aus diesem Grund könnte ein Rest-Webdienst mit Microsoft ASP.net Core MVC implementiert werden, und Client-Apps können unter Verwendung beliebiger Sprachen und Toolsets entwickelt werden, die HTTP-Anforderungen generieren und HTTP-Antworten analysieren können.
 
-REST-Modell verwendet ein Navigationsschema zur Darstellung von Objekten und-Diensten über ein Netzwerk, die als Ressourcen bezeichnet. Systeme, die in der Regel implementieren Sie REST verwenden das HTTP-Protokoll zum Übertragen von Anforderungen auf diese Ressourcen zugreifen. In solchen Systemen sendet eine Client-app eine Anforderung in Form von ein URI, der eine Ressource kennzeichnet, und eine HTTP-Methode (z. B. GET, POST, PUT oder DELETE), die den Vorgang, für die Ressource ausgeführt werden angibt. Der Text der HTTP-Anforderung enthält alle Daten, die zum Ausführen des Vorgangs erforderlich.
+Das Rest-Modell verwendet ein Navigations Schema zur Darstellung von Objekten und Diensten über ein Netzwerk (als Ressourcen bezeichnet). Systeme, die Rest implementieren, verwenden normalerweise das HTTP-Protokoll zum Übertragen von Anforderungen für den Zugriff auf diese Ressourcen In solchen Systemen übermittelt eine Client-App eine Anforderung in Form eines URI, der eine Ressource identifiziert, und eine HTTP-Methode (z. b. Get, Post, Put oder DELETE), die den Vorgang angibt, der für diese Ressource ausgeführt werden soll. Der Text der HTTP-Anforderung enthält alle Daten, die erforderlich sind, um den Vorgang auszuführen.
 
 > [!NOTE]
-> REST definiert ein Zustandsloses Anforderungsmodell. Aus diesem Grund werden die HTTP-Anforderungen müssen unabhängig sein und können in beliebiger Reihenfolge auftreten.
+> Rest definiert ein Zustands Loses Anforderungsmodell. Daher müssen HTTP-Anforderungen unabhängig sein und können in beliebiger Reihenfolge auftreten.
 
-Die Antwort von einem REST-Anforderung ist der standard-HTTP-Statuscodes verwendet. Beispielsweise sollte eine Anforderung, die gültige Daten zurückgibt HTTP-Antwortcode 200 (OK), enthalten, während eine Anforderung, die nicht finden oder löschen eine angegebene Ressource auf eine Antwort zurückgeben sollte, die HTTP-Statuscode 404 (nicht gefunden) enthält.
+Die Antwort von einer Rest-Anforderung verwendet die standardmäßigen HTTP-Statuscodes. Eine Anforderung, die gültige Daten zurückgibt, sollte z. b. den HTTP-Antwort Code 200 (OK) enthalten, während eine Anforderung, bei der eine angegebene Ressource nicht gefunden oder gelöscht werden kann, eine Antwort zurückgibt, die den HTTP-Statuscode 404 (nicht gefunden) enthält.
 
-Eine RESTful-Web-API macht eine Reihe von verbundenen Ressourcen verfügbar, und stellt die Core-Vorgänge, mit denen eine app zum Bearbeiten dieser Ressourcen und problemlos zwischen diesen navigieren. Aus diesem Grund sind die URIs, die eine typische RESTful-Web-API bilden auf die Daten, die sie verfügbar macht, und verwenden die Funktionen von HTTP zum Verarbeiten von Daten ausgerichtet.
+Eine Rest-Web-API macht eine Gruppe verbundener Ressourcen verfügbar und bietet die wichtigsten Vorgänge, mit denen eine APP diese Ressourcen bearbeiten und problemlos zwischen ihnen navigieren kann. Aus diesem Grund sind die URIs, die eine typische Rest-Web-API bilden, auf die Daten ausgerichtet, die Sie verfügbar macht, und die von http bereitgestellten Funktionen zum Verarbeiten dieser Daten verwenden.
 
-Eine Client-app in einer HTTP-Anforderung und die entsprechenden Antwortnachrichten vom Webserver, enthaltenen Daten können in einer Vielzahl von Formaten, die als Medientypen angezeigt. Wenn eine Clientanwendung eine Anforderung, die Daten im Text einer Nachricht zurückgibt sendet, können sie angeben, die Medientypen, die sie verarbeitet werden kann die `Accept` -Header der Anforderung. Wenn der Webserver diesen Medientyp unterstützt, können die Antworten mit einer Antwort, umfasst die `Content-Type` Header, der das Format der Daten im Text der Nachricht angibt. Es ist dann die Verantwortung für die Client-app zu analysieren, die Response-Nachricht die Ergebnisse im Nachrichtentext richtig interpretieren.
+Die Daten, die von einer Client-app in einer HTTP-Anforderung und den entsprechenden Antwort Nachrichten vom Webserver eingeschlossen werden, können in einer Vielzahl von Formaten dargestellt werden, die als Medientypen bezeichnet werden. Wenn eine Client-App eine Anforderung sendet, die Daten im Nachrichtentext zurückgibt, kann Sie die Medientypen angeben, die Sie im `Accept` Header der Anforderung verarbeiten kann. Wenn der Webserver diesen Medientyp unterstützt, kann er mit einer Antwort Antworten, die den `Content-Type` -Header enthält, der das Format der Daten im Text der Nachricht angibt. Es ist dann die Aufgabe der Client-App, die Antwortnachricht zu analysieren und die Ergebnisse im Nachrichtentext entsprechend zu interpretieren.
 
-Weitere Informationen zu REST finden Sie unter [API-Design](/azure/architecture/best-practices/api-design/) und [-API-Implementierung](/azure/architecture/best-practices/api-implementation/).
+Weitere Informationen zu Rest finden Sie unter [API-Entwurf](/azure/architecture/best-practices/api-design/) und [API-Implementierung](/azure/architecture/best-practices/api-implementation/).
 
-## <a name="consuming-restful-apis"></a>Nutzen von RESTful-APIs
+## <a name="consuming-restful-apis"></a>Nutzen von Rest-APIs
 
-Die eShopOnContainers-mobile-app verwendet das Model-View-ViewModel (MVVM) Muster und die Modellelemente, der das Muster dar, die die Domänenentitäten in der app verwendet. Die Controller und Repository-Klassen in der referenzanwendung "eshoponcontainers" akzeptieren und viele dieser Modellobjekte zurück. Aus diesem Grund werden sie als datenübertragungsobjekte (DTOs) verwendet, die alle Daten enthalten, die zwischen der mobilen app und die Microservices in Containern übergeben wird. Der Hauptvorteil der Verwendung von DTOs zum Übergeben von Daten an und Empfangen von Daten von einem Webdienst ist, dass mehr Daten übertragen werden in einem einzelnen Remoteaufruf, die app die Anzahl von Remoteaufrufen reduzieren kann, die vorgenommen werden müssen.
+Der eshoponcontainers-Mobile App verwendet das Model-View-ViewModel (MVVM)-Muster, und die Modellelemente des Musters stellen die Domänen Entitäten dar, die in der APP verwendet werden. Die Controller-und Repository-Klassen in der eshoponcontainers-Verweis Anwendung akzeptieren und geben viele dieser Modell Objekte zurück. Aus diesem Grund werden Sie als Datenübertragungs Objekte (DTOs) verwendet, die alle Daten enthalten, die zwischen dem Mobile App und den containerisierten microservices übergeben werden. Der Hauptvorteil der Verwendung von DTOs zum Übergeben von Daten an und zum Empfangen von Daten von einem Webdienst besteht darin, dass die APP die Anzahl der Remote Aufrufe verringern kann, die durchgeführt werden müssen, indem Sie mehr Daten in einem einzelnen Remote Aufruf übermittelt.
 
 ### <a name="making-web-requests"></a>Ausführen von Webanforderungen
 
-Die eShopOnContainers-mobile app verwendet die `HttpClient` Klasse, um Anfragen über HTTP mit JSON als Medientyp verwendet wird. Diese Klasse bietet Funktionen für die asynchrone HTTP-Anforderungen senden und Empfangen von HTTP-Antworten aus einem URI identifizierte Ressource. Die `HttpResponseMessage` Klasse stellt eine HTTP-Antwortnachricht, die von einer REST-API empfangen werden, nachdem eine HTTP-Anforderung erfolgt ist. Es enthält Informationen über die Antwort, einschließlich der Statuscode, Header und alle Text. Die `HttpContent` Klasse stellt die HTTP-Text und die Inhaltsheader, z. B. `Content-Type` und `Content-Encoding`. Der Inhalt kann mit einer der gelesen werden die `ReadAs` Methoden, wie z. B. `ReadAsStringAsync` und `ReadAsByteArrayAsync`, je nachdem, auf das Format der Daten.
+Der eshoponcontainers-Mobile App verwendet `HttpClient` die-Klasse, um Anforderungen über HTTP zu senden, wobei JSON als Medientyp verwendet wird. Diese Klasse stellt Funktionen zum asynchronen Senden von HTTP-Anforderungen und empfangen von HTTP-Antworten aus einer vom URI identifizierten Ressource bereit. Die `HttpResponseMessage` -Klasse stellt eine von einer Rest-API empfangene http-Antwortnachricht dar, nachdem eine HTTP-Anforderung durchgeführt wurde. Es enthält Informationen über die Antwort, einschließlich der Statuscode, Header und alle Text. Die `HttpContent` Klasse stellt die HTTP-Text und die Inhaltsheader, z. B. `Content-Type` und `Content-Encoding`. Der Inhalt kann mit einer beliebigen `ReadAs` Methode `ReadAsStringAsync` wie und `ReadAsByteArrayAsync`gelesen werden, abhängig vom Format der Daten.
 
 <a name="making_a_get_request" />
 
-#### <a name="making-a-get-request"></a>Eine GET-Anforderung
+#### <a name="making-a-get-request"></a>Erstellen einer GET-Anforderung
 
-Die `CatalogService` Klasse dient zum Abrufen von Daten aus dem katalogmicroservice zu verwalten. In der `RegisterDependencies` -Methode in der die `ViewModelLocator` -Klasse, die `CatalogService` Klasse wird als eine Typzuordnung für registriert die `ICatalogService` Typ mit dem Container für Abhängigkeitsinjektion Autofac. Klicken Sie dann, wenn eine Instanz von der `CatalogViewModel` Klasse wird erstellt, die ihr Konstruktor nimmt eine `ICatalogService` eingeben, die Autofac aufgelöst wird, Zurückgeben von einer Instanz von der `CatalogService` Klasse. Weitere Informationen zur Abhängigkeitsinjektion finden Sie unter [Einführung in Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+Die `CatalogService` -Klasse wird verwendet, um den Datenabruf Vorgang aus dem Catalog-Mikro Dienst zu verwalten. In der `RegisterDependencies` -Methode in `ViewModelLocator` der-Klasse `CatalogService` wird die-Klasse als Typzuordnung für den `ICatalogService` -Typ mit dem Container für die Abhängigkeitsinjektion von autofac registriert. Wenn dann eine Instanz der `CatalogViewModel` -Klasse erstellt wird, akzeptiert der Konstruktor einen `ICatalogService` -Typ, den autofac auflöst, und gibt eine Instanz der `CatalogService` -Klasse zurück. Weitere Informationen zur Abhängigkeitsinjektion finden [Sie unter Einführung in die Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
-Abbildung 10-1 zeigt die Interaktion von Klassen, die gelesen werden der katalogmicroservice für die Anzeige von Daten im Katalog die `CatalogView`.
+In Abbildung 10-1 wird die Interaktion von Klassen veranschaulicht, die Katalogdaten aus dem Katalog-mikrodienst zum `CatalogView`Anzeigen von lesen.
 
-[![](accessing-remote-data-images/catalogdata.png "Abrufen von Daten aus dem katalogmicroservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Abrufen von Daten aus dem katalogmicroservice")
+[Abrufen von Daten aus dem Katalog-mikroservice ![(accessing-remote-data-images/catalogdata.png " ")]] (accessing-remote-data-images/catalogdata-large.png#lightbox "Abrufen von Daten aus dem Katalog-mikroservice")
 
-**Abbildung 10-1**: Abrufen von Daten aus dem katalogmicroservice
+**Abbildung 10-1**: Abrufen von Daten aus dem Katalog-mikroservice
 
-Wenn die `CatalogView` navigiert wird, die `OnInitialize` -Methode in der die `CatalogViewModel` -Klasse aufgerufen wird. Diese Methode ruft Katalogdaten aus den katalogmicroservice ab, wie im folgenden Codebeispiel gezeigt:
+Wenn auf `CatalogView` die navigiert wird, wird `OnInitialize` die-Methode `CatalogViewModel` in der-Klasse aufgerufen. Diese Methode ruft Katalogdaten aus dem Katalog-mikrodienst ab, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public override async Task InitializeAsync(object navigationData)  
@@ -68,7 +68,7 @@ public override async Task InitializeAsync(object navigationData)
 }
 ```
 
-Diese Methode ruft die `GetCatalogAsync` Methode der `CatalogService` -Instanz, die in eingefügt wurde die `CatalogViewModel` von Autofac. Die `GetCatalogAsync`-Methode wird in folgendem Codebeispiel veranschaulicht:
+Diese Methode ruft die `GetCatalogAsync` -Methode `CatalogService` der-Instanz auf, die von `CatalogViewModel` autofac in den eingefügt wurde. Die `GetCatalogAsync`-Methode wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
@@ -83,9 +83,9 @@ public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()
 }
 ```
 
-Diese Methode den URI, der die Ressource identifiziert, an die Anforderung, erstellt und verwendet die `RequestProvider` Klasse, um die HTTP GET-Methode für diese Ressource aufzurufen, vor der Rückgabe der Ergebnisse an die `CatalogViewModel`. Die `RequestProvider` -Klasse enthält Funktionen, die eine Anforderung in Form eines URI sendet, die eine Ressource, die eine HTTP-Methode identifiziert, der den Vorgang für diese Ressource auszuführende angibt und ein Text ein, die keine Daten enthält, die zum Ausführen des Vorgangs erforderlich sind. Informationen darüber, wie die `RequestProvider` Klasse injiziert den `CatalogService class`, finden Sie unter [Einführung in Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+Diese Methode erstellt den URI, der die Ressource identifiziert, an die die Anforderung gesendet wird, und `RequestProvider` verwendet die-Klasse, um die Get HTTP-Methode für die Ressource aufzurufen, `CatalogViewModel`bevor die Ergebnisse an zurückgegeben werden. Die `RequestProvider` -Klasse enthält Funktionen, die eine Anforderung in Form eines URI übermittelt, der eine Ressource identifiziert, eine HTTP-Methode, die den für diese Ressource auszuführenden Vorgang angibt, und einen Text, der alle Daten enthält, die zum Ausführen des Vorgangs erforderlich sind. Informationen dazu, wie die `RequestProvider` -Klasse in eingefügt wird `CatalogService class`, finden [Sie unter Einführung in die Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
-Das folgende Codebeispiel zeigt die `GetAsync` -Methode in der die `RequestProvider` Klasse:
+Das folgende Codebeispiel zeigt die `GetAsync` -Methode in `RequestProvider` der-Klasse:
 
 ```csharp
 public async Task<TResult> GetAsync<TResult>(string uri, string token = "")  
@@ -103,9 +103,9 @@ public async Task<TResult> GetAsync<TResult>(string uri, string token = 
 }
 ```
 
-Diese Methode ruft die `CreateHttpClient` -Methode, die eine Instanz der zurückgibt der `HttpClient` Klasse mit den entsprechenden Header. Es sendet dann eine asynchrone GET-Anforderung an die Ressource, die durch den URI identifiziert wird, mit der Antwort, die in gespeichert werden die `HttpResponseMessage` Instanz. Die `HandleResponse` Methode dann aufgerufen werden kann, die eine Ausnahme auslöst, wenn die Antwort auf Erfolg HTTP-Statuscode enthalten nicht. Und dann die Antwort als Zeichenfolge aus einer JSON-Code für konvertierte gelesen wird eine `CatalogRoot` Objekt aus, und zurückgegeben werden, um die `CatalogService`.
+Diese Methode ruft die `CreateHttpClient` -Methode `HttpClient` auf, die eine Instanz der-Klasse zurückgibt, für die die entsprechenden Header festgelegt sind. Anschließend sendet er eine asynchrone Get-Anforderung an die Ressource, die durch den URI identifiziert wird, wobei die Antwort `HttpResponseMessage` in der-Instanz gespeichert wird. Anschließend `HandleResponse` wird die-Methode aufgerufen, die eine Ausnahme auslöst, wenn die Antwort keinen HTTP-Erfolgsstatus Code enthält. Anschließend wird die Antwort als Zeichenfolge gelesen, von JSON in ein `CatalogRoot` -Objekt konvertiert und an das `CatalogService`-Objekt zurückgegeben.
 
-Die `CreateHttpClient` Methode ist im folgenden Codebeispiel gezeigt:
+Die `CreateHttpClient` -Methode wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 private HttpClient CreateHttpClient(string token = "")  
@@ -123,9 +123,9 @@ private HttpClient CreateHttpClient(string token = "")
 }
 ```
 
-Diese Methode erstellt eine neue Instanz der der `HttpClient` Klasse, wobei die `Accept` Header, der alle Anforderungen, die von der `HttpClient` -Instanz, auf `application/json`, was bedeutet, dass es erwartet, dass den Inhalt der jede Antwort auf die mit JSON formatiert werden. Klicken Sie dann, wenn ein Zugriffstoken als Argument übergeben wurde die `CreateHttpClient` -Methode, die sie hinzugefügt wird, auf die `Authorization` Header, der alle Anforderungen von der `HttpClient` Instanz, mit der Zeichenfolge das Präfix `Bearer`. Weitere Informationen zur Autorisierung finden Sie unter [Autorisierung](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
+Diese Methode erstellt eine `HttpClient` neue Instanz der-Klasse und legt den `Accept` -Header von Anforderungen, die von der `HttpClient` -Instanz `application/json`gestellt werden, auf fest. Dies bedeutet, dass erwartet wird, dass der Inhalt einer beliebigen Antwort mithilfe von JSON formatiert wird. Wenn ein Zugriffs Token als Argument an `CreateHttpClient` die-Methode weitergegeben wurde, wird es dann dem `Authorization` -Header aller von der `HttpClient` -Instanz vorgenommenen Anforderungen hinzugefügt, die der- `Bearer`Zeichenfolge vorangestellt sind. Weitere Informationen zur Autorisierung finden Sie unter [Autorisierung](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
 
-Wenn die `GetAsync` -Methode in der die `RequestProvider` -Klasse ruft `HttpClient.GetAsync`, wird die `Items` -Methode in der die `CatalogController` Klasse im Catalog.API-Projekt aufgerufen, die im folgenden Codebeispiel dargestellt ist:
+Wenn die `GetAsync` -Methode in `RequestProvider` der- `HttpClient.GetAsync`Klasse aufruft `Items` , wird die `CatalogController` -Methode in der-Klasse im Catalog. API-Projekt aufgerufen, was im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 [HttpGet]  
@@ -150,19 +150,19 @@ public async Task<IActionResult> Items(
 }
 ```
 
-Diese Methode ruft die Katalogdaten aus der SQL-Datenbank mithilfe von EntityFramework. ab und gibt ihn als eine Response-Nachricht, die eine erfolgreiche HTTP-Statuscode enthält, und eine Sammlung von JSON-formatierte `CatalogItem` Instanzen.
+Diese Methode ruft die Katalogdaten mithilfe von EntityFramework aus der SQL-Datenbank ab und gibt Sie als Antwortnachricht zurück, die den HTTP-Statuscode Success und eine Auflistung von JSON `CatalogItem` -formatierten Instanzen enthält.
 
-#### <a name="making-a-post-request"></a>Eine POST-Anforderung
+#### <a name="making-a-post-request"></a>Senden einer POST-Anforderung
 
-Die `BasketService` Klasse wird verwendet, um das Abrufen von Daten zu verwalten und den Aktualisierungsvorgang mit Warenkorb-Microservice. In der `RegisterDependencies` -Methode in der die `ViewModelLocator` -Klasse, die `BasketService` Klasse wird als eine Typzuordnung für registriert die `IBasketService` Typ mit dem Container für Abhängigkeitsinjektion Autofac. Klicken Sie dann, wenn eine Instanz von der `BasketViewModel` Klasse wird erstellt, die ihr Konstruktor nimmt eine `IBasketService` eingeben, die Autofac aufgelöst wird, Zurückgeben von einer Instanz von der `BasketService` Klasse. Weitere Informationen zur Abhängigkeitsinjektion finden Sie unter [Einführung in Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+Die `BasketService` -Klasse wird verwendet, um den Datenabruf und den Update Prozess mit dem Warenkorb-microservice zu verwalten. In der `RegisterDependencies` -Methode in `ViewModelLocator` der-Klasse `BasketService` wird die-Klasse als Typzuordnung für den `IBasketService` -Typ mit dem Container für die Abhängigkeitsinjektion von autofac registriert. Wenn dann eine Instanz der `BasketViewModel` -Klasse erstellt wird, akzeptiert der Konstruktor einen `IBasketService` -Typ, den autofac auflöst, und gibt eine Instanz der `BasketService` -Klasse zurück. Weitere Informationen zur Abhängigkeitsinjektion finden [Sie unter Einführung in die Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
-Abbildung 10-2 zeigt die Interaktion von Klassen, die die Warenkorb angezeigten Daten durch Senden der `BasketView`, mit dem warenkorbmicroservice.
+In Abbildung 10-2 wird die Interaktion von Klassen gezeigt, die die von der `BasketView`angezeigten Korb Daten an den Warenkorb-microservice senden.
 
-[![](accessing-remote-data-images/basketdata.png "Senden von Daten mit dem warenkorbmicroservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Senden von Daten mit dem warenkorbmicroservice")
+[Senden von Daten an den Warenkorb-microservice ![(accessing-remote-data-images/basketdata.png " ")]] (accessing-remote-data-images/basketdata-large.png#lightbox "Senden von Daten an den Warenkorb-microservice")
 
-**Abbildung 10-2**: Senden von Daten mit dem warenkorbmicroservice
+**Abbildung 10-2**: Senden von Daten an den Warenkorb-microservice
 
-Wenn ein Element, im Warenkorb abgelegt hinzugefügt wird, der `ReCalculateTotalAsync` -Methode in der die `BasketViewModel` -Klasse aufgerufen wird. Diese Methode aktualisiert den Gesamtwert der Artikel im Warenkorb, und sendet die Warenkorb-Daten an die Warenkorb-Microservice, wie im folgenden Codebeispiel wird veranschaulicht:
+Wenn ein Element dem Warenkorb hinzugefügt wird, wird die `ReCalculateTotalAsync` -Methode in `BasketViewModel` der-Klasse aufgerufen. Diese Methode aktualisiert den Gesamtwert der Elemente im Warenkorb und sendet die Warenkorb-Daten an den Warenkorb-microservice, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 private async Task ReCalculateTotalAsync()  
@@ -176,7 +176,7 @@ private async Task ReCalculateTotalAsync()
 }
 ```
 
-Diese Methode ruft die `UpdateBasketAsync` Methode der `BasketService` -Instanz, die in eingefügt wurde die `BasketViewModel` von Autofac. Die folgende Methode zeigt die `UpdateBasketAsync` Methode:
+Diese Methode ruft die `UpdateBasketAsync` -Methode `BasketService` der-Instanz auf, die von `BasketViewModel` autofac in den eingefügt wurde. Die folgende Methode zeigt die `UpdateBasketAsync` -Methode:
 
 ```csharp
 public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBasket, string token)  
@@ -188,9 +188,9 @@ public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerB
 }
 ```
 
-Diese Methode den URI, der die Ressource identifiziert, an die Anforderung, erstellt und verwendet die `RequestProvider` Klasse, um die HTTP POST-Methode für diese Ressource aufzurufen, vor der Rückgabe der Ergebnisse an die `BasketViewModel`. Ein Zugriffstoken aus Identity Server während des Authentifizierungsprozesses ist erforderlich, um Anforderungen mit dem warenkorbmicroservice zu autorisieren. Weitere Informationen zur Autorisierung finden Sie unter [Autorisierung](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
+Diese Methode erstellt den URI, der die Ressource identifiziert, an die die Anforderung gesendet wird, und `RequestProvider` verwendet die-Klasse, um die Post http-Methode für die Ressource aufzurufen, `BasketViewModel`bevor die Ergebnisse an zurückgegeben werden. Beachten Sie, dass ein Zugriffs Token, das von identityserver während des Authentifizierungsprozesses abgerufen wird, erforderlich ist, um Anforderungen an den Warenkorb-microservice zu autorisieren. Weitere Informationen zur Autorisierung finden Sie unter [Autorisierung](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
 
-Im folgenden Codebeispiel wird veranschaulicht, eines der `PostAsync` Methoden in der `RequestProvider` Klasse:
+Das folgende Codebeispiel zeigt eine der `PostAsync` Methoden in der `RequestProvider` -Klasse:
 
 ```csharp
 public async Task<TResult> PostAsync<TResult>(  
@@ -212,9 +212,9 @@ public async Task<TResult> PostAsync<TResult>(
 }
 ```
 
-Diese Methode ruft die `CreateHttpClient` -Methode, die eine Instanz der zurückgibt der `HttpClient` Klasse mit den entsprechenden Header. Es sendet dann eine asynchrone POST-Anforderung an die Ressource durch den URI mit den serialisierten Warenkorb-Daten gesendet werden, in der JSON-Format und die Antwort, die in gespeichert werden die `HttpResponseMessage` Instanz. Die `HandleResponse` Methode dann aufgerufen werden kann, die eine Ausnahme auslöst, wenn die Antwort auf Erfolg HTTP-Statuscode enthalten nicht. Klicken Sie dann die Antwort wird als eine Zeichenfolge, die aus einer JSON-Code für konvertierte gelesen eine `CustomerBasket` Objekt aus, und zurückgegeben werden, um die `BasketService`. Weitere Informationen zu den `CreateHttpClient` -Methode finden Sie unter [vornehmen, eine GET-Anforderung](#making_a_get_request).
+Diese Methode ruft die `CreateHttpClient` -Methode `HttpClient` auf, die eine Instanz der-Klasse zurückgibt, für die die entsprechenden Header festgelegt sind. Anschließend sendet er eine asynchrone Post-Anforderung an die Ressource, die durch den URI identifiziert wird, wobei die serialisierten Warenkorb-Daten im JSON-Format gesendet werden und die `HttpResponseMessage` Antwort in der-Instanz gespeichert wird. Anschließend `HandleResponse` wird die-Methode aufgerufen, die eine Ausnahme auslöst, wenn die Antwort keinen HTTP-Erfolgsstatus Code enthält. Anschließend wird die Antwort als Zeichenfolge gelesen, von JSON in ein `CustomerBasket` -Objekt konvertiert und an das `BasketService`-Objekt zurückgegeben. Weitere Informationen `CreateHttpClient` zur-Methode finden Sie unter [Erstellen einer GET-Anforderung](#making_a_get_request).
 
-Wenn die `PostAsync` -Methode in der die `RequestProvider` -Klasse ruft `HttpClient.PostAsync`, `Post` -Methode in der die `BasketController` Klasse im Projekt "Basket.API" wird aufgerufen, die im folgenden Codebeispiel dargestellt ist:
+Wenn die `PostAsync` -Methode in `RequestProvider` der- `HttpClient.PostAsync`Klasse aufruft `Post` , wird die `BasketController` -Methode in der-Klasse im Basket. API-Projekt aufgerufen, was im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 [HttpPost]  
@@ -225,17 +225,17 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 }
 ```
 
-Diese Methode wird eine Instanz der dem `RedisBasketRepository` Klasse, um die Warenkorb-Daten auf der Redis-Cache beizubehalten, und gibt zurück, wie eine Response-Nachricht, die eine erfolgreiche HTTP-Statuscode und eine JSON-Code enthält formatiert `CustomerBasket` Instanz.
+Diese Methode verwendet eine Instanz der `RedisBasketRepository` -Klasse, um die Warenkorb-Daten im redis Cache beizubehalten, und gibt Sie als Antwortnachricht zurück, die den HTTP-Statuscode Success und eine JSON-formatierte `CustomerBasket` Instanz enthält.
 
-#### <a name="making-a-delete-request"></a>Eine DELETE-Anforderung
+#### <a name="making-a-delete-request"></a>Erstellen einer Löschanforderung
 
-Abbildung 10-3 zeigt die Interaktionen von Klassen, die Warenkorb-Daten aus der warenkorbmicroservice Löschen der `CheckoutView`.
+Abbildung 10-3 zeigt die Interaktionen von Klassen, die waren Korb Daten aus dem Warenkorb-microservice für `CheckoutView`das Löschen.
 
-![](accessing-remote-data-images/checkoutdata.png "Löschen von Daten aus dem warenkorbmicroservice")
+![](accessing-remote-data-images/checkoutdata.png "Daten aus dem Warenkorb-microservice")
 
-**Abbildung 10-3**: Löschen von Daten aus dem warenkorbmicroservice
+**Abbildung 10-3**: Löschen von Daten aus dem Warenkorb-microservice
 
-Beim Aufrufen des Auscheckvorgangs der `CheckoutAsync` -Methode in der die `CheckoutViewModel` -Klasse aufgerufen wird. Diese Methode erstellt einen neuen Auftrag vor dem Löschen der Einkaufswagen, wie im folgenden Codebeispiel gezeigt:
+Wenn der Checkout-Prozess aufgerufen wird, `CheckoutAsync` wird die- `CheckoutViewModel` Methode in der-Klasse aufgerufen. Diese Methode erstellt vor dem Löschen des Warenkorbs eine neue Bestellung, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 private async Task CheckoutAsync()  
@@ -246,7 +246,7 @@ private async Task CheckoutAsync()
 }
 ```
 
-Diese Methode ruft die `ClearBasketAsync` Methode der `BasketService` -Instanz, die in eingefügt wurde die `CheckoutViewModel` von Autofac. Die folgende Methode zeigt die `ClearBasketAsync` Methode:
+Diese Methode ruft die `ClearBasketAsync` -Methode `BasketService` der-Instanz auf, die von `CheckoutViewModel` autofac in den eingefügt wurde. Die folgende Methode zeigt die `ClearBasketAsync` -Methode:
 
 ```csharp
 public async Task ClearBasketAsync(string guidUser, string token)  
@@ -258,9 +258,9 @@ public async Task ClearBasketAsync(string guidUser, string token)
 }
 ```
 
-Diese Methode erstellt den URI, der die Ressource identifiziert, die an die Anforderung gesendet wird, und verwendet die `RequestProvider` Klasse, um die DELETE HTTP-Methode für die Ressource aufzurufen. Ein Zugriffstoken aus Identity Server während des Authentifizierungsprozesses ist erforderlich, um Anforderungen mit dem warenkorbmicroservice zu autorisieren. Weitere Informationen zur Autorisierung finden Sie unter [Autorisierung](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
+Diese Methode erstellt den URI, der die Ressource identifiziert, an die die Anforderung gesendet wird, und verwendet `RequestProvider` die-Klasse, um die Delete HTTP-Methode für die Ressource aufzurufen. Beachten Sie, dass ein Zugriffs Token, das von identityserver während des Authentifizierungsprozesses abgerufen wird, erforderlich ist, um Anforderungen an den Warenkorb-microservice zu autorisieren. Weitere Informationen zur Autorisierung finden Sie unter [Autorisierung](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
 
-Das folgende Codebeispiel zeigt die `DeleteAsync` -Methode in der die `RequestProvider` Klasse:
+Das folgende Codebeispiel zeigt die `DeleteAsync` -Methode in `RequestProvider` der-Klasse:
 
 ```csharp
 public async Task DeleteAsync(string uri, string token = "")  
@@ -270,9 +270,9 @@ public async Task DeleteAsync(string uri, string token = "")
 }
 ```
 
-Diese Methode ruft die `CreateHttpClient` -Methode, die eine Instanz der zurückgibt der `HttpClient` Klasse mit den entsprechenden Header. Er sendet dann eine asynchrone DELETE-Anforderung an die durch den URI identifizierte Ressource. Weitere Informationen zu den `CreateHttpClient` -Methode finden Sie unter [vornehmen, eine GET-Anforderung](#making_a_get_request).
+Diese Methode ruft die `CreateHttpClient` -Methode `HttpClient` auf, die eine Instanz der-Klasse zurückgibt, für die die entsprechenden Header festgelegt sind. Anschließend sendet er eine asynchrone DELETE-Anforderung an die Ressource, die durch den URI identifiziert wird. Weitere Informationen `CreateHttpClient` zur-Methode finden Sie unter [Erstellen einer GET-Anforderung](#making_a_get_request).
 
-Wenn die `DeleteAsync` -Methode in der die `RequestProvider` -Klasse ruft `HttpClient.DeleteAsync`, `Delete` -Methode in der die `BasketController` Klasse im Projekt "Basket.API" wird aufgerufen, die im folgenden Codebeispiel dargestellt ist:
+Wenn die `DeleteAsync` -Methode in `RequestProvider` der- `HttpClient.DeleteAsync`Klasse aufruft `Delete` , wird die `BasketController` -Methode in der-Klasse im Basket. API-Projekt aufgerufen, was im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 [HttpDelete("{id}")]  
@@ -282,47 +282,47 @@ public void Delete(string id)
 }
 ```
 
-Diese Methode wird eine Instanz der dem `RedisBasketRepository` Klasse, um die Warenkorb-Daten aus dem Redis-Cache zu löschen.
+Diese Methode verwendet eine Instanz der `RedisBasketRepository` -Klasse, um die Warenkorb-Daten aus dem redis Cache zu löschen.
 
 ## <a name="caching-data"></a>Zwischenspeichern von Daten
 
-Die Leistung einer App kann verbessert werden, durch das Zwischenspeichern von häufig verwendete Daten in einen schnellen Speicher, der Nähe befindet der app. Wenn der schnellere Speicher ist näher an die app als die ursprüngliche Datenquelle befindet, Zwischenspeichern kann die Antwort erheblich verbessern Timeout beim Abrufen von Daten.
+Die Leistung einer APP kann durch das Zwischenspeichern von Daten, auf die häufig zugegriffen wird, in der Nähe der app in fast Storage verbessert werden. Wenn sich der schnelle Speicher näher an der APP befindet als die ursprüngliche Quelle, kann das Caching die Reaktionszeiten beim Abrufen von Daten erheblich verbessern.
 
-Die häufigste Form des Cachings ist Read-through-caching, in denen eine app Daten von Verweisen auf den Cache abruft. Wenn die Daten im Cache nicht ist, wurde es aus dem Datenspeicher abgerufen und dem Cache hinzugefügt. Apps können die Read-through-caching mit dem Cache-Aside-Muster implementieren. Dieses Muster wird bestimmt, ob das Element derzeit im Cache vorhanden ist. Wenn das Element nicht im Cache befinden, aus dem Datenspeicher gelesene und dem Cache hinzugefügt. Weitere Informationen finden Sie unter den [Cache-Aside](/azure/architecture/patterns/cache-aside/) Muster.
-
-> [!TIP]
-> Zwischenspeichern von Daten, die häufig gelesen und selten. Diese Daten können hinzugefügt werden, in den Cache bei Bedarf beim ersten, dass sie von einer app abgerufen werden. Dies bedeutet, dass die app benötigt, um die Daten nur einmal aus dem Datenspeicher abzurufen, und der nachfolgende Zugriff mit dem Cache erfüllt werden kann.
-
-Verteilte Anwendungen sollten wie z. B. die eShopOnContainers-Anwendung verweisen eine oder beide der folgenden Caches bereitstellen:
-
--   Einen freigegebenen Cache, die von mehreren Prozessen oder Computern zugegriffen werden kann.
--   Eines privaten Caches, in dem Daten lokal auf dem Gerät, das Ausführen der app gespeichert wird.
-
-Die eShopOnContainers-mobile-app verwendet einen privaten Cache, in dem Daten lokal auf dem Gerät befindet, die eine Instanz der app ausgeführt wird. Weitere Informationen zu den Cache, die von der referenzanwendung "eshoponcontainers" verwendet, finden Sie unter [.NET Microservices: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
+Die häufigste Form der Zwischenspeicherung ist das Zwischenspeichern von Lesevorgängen, bei dem eine APP Daten durch Verweise auf den Cache abruft. Wenn sich die Daten nicht im Cache befinden, werden Sie aus dem Datenspeicher abgerufen und dem Cache hinzugefügt. Apps können das Zwischenspeichern mit Zwischenspeicherung mit dem Cache--Muster implementieren. Dieses Muster bestimmt, ob sich das Element derzeit im Cache befindet. Wenn sich das Element nicht im Cache befindet, wird es aus dem Datenspeicher gelesen und dem Cache hinzugefügt. Weitere Informationen finden Sie unter [Cache-off-](/azure/architecture/patterns/cache-aside/) Muster.
 
 > [!TIP]
-> Stellen Sie sich den Cache als vorübergehende Datenspeicher, der jederzeit entfernt werden konnte. Stellen Sie sicher, dass Daten in den ursprünglichen Datenspeicher als auch für den Cache erhalten bleibt. Die Wahrscheinlichkeit eines Datenverlusts werden dann minimiert werden, wenn der Cache nicht verfügbar ist.
+> Zwischenspeichern von Daten, die häufig gelesen werden und die sich nur selten ändern. Diese Daten können nach Bedarf dem Cache hinzugefügt werden, wenn Sie zum ersten Mal von einer APP abgerufen werden. Dies bedeutet, dass die APP die Daten nur einmal aus dem Datenspeicher abrufen muss und dass der nachfolgende Zugriff über den Cache erfüllt werden kann.
 
-### <a name="managing-data-expiration"></a>Verwalten von Ablauf von Daten
+Verteilte Anwendungen, wie z. b. die eshoponcontainers-Referenz Anwendung, sollten einen oder beide der folgenden Caches bereitstellen:
 
-Es ist nicht erwartet, dass zwischengespeicherte Daten immer mit den ursprünglichen Daten konsistent ist. Daten in den ursprünglichen Datenspeicher möglicherweise ändern, nachdem er ist verursacht die zwischengespeicherten Daten zwischengespeichert wurde veralten. Aus diesem Grund sollten apps implementieren eine Strategie, um sicherzustellen, dass die Daten im Cache so aktuell wie möglich, jedoch können auch erkennen und Behandeln von Situationen, in denen auftreten, wenn die Daten im Cache veraltet sind. Die meisten Zwischenspeicherungsmechanismen aktivieren den Cache konfiguriert werden, um die Daten ablaufen, und daher reduzieren den Zeitraum für den Daten möglicherweise nicht mehr aktuell.
+- Ein frei gegebener Cache, auf den von mehreren Prozessen oder Computern aus zugegriffen werden kann.
+- Ein privater Cache, in dem Daten lokal auf dem Gerät gespeichert werden, auf dem die app ausgeführt wird.
+
+Der Mobile App eshoponcontainers verwendet einen privaten Cache, bei dem Daten lokal auf dem Gerät gespeichert werden, auf dem eine Instanz der app ausgeführt wird. Informationen zu dem von der eshoponcontainers-Referenz Anwendung verwendeten Cache finden [Sie unter .net-mikrodienste: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
 
 > [!TIP]
-> Legen Sie eine Standardablaufdauer von Zeit, wenn Sie einen Cache zu konfigurieren. Viele Caches implementieren Ablauf, der Daten ungültig gemacht und entfernt sie aus dem Cache ein, wenn es für einen bestimmten Zeitraum nicht zugegriffen werden kann. Allerdings muss darauf geachtet werden bei der Auswahl der Ablaufzeitraum fest. Wenn sie nicht zu kurz festgelegt ist, Daten zu schnell abläuft und die Vorteile des Zwischenspeicherns werden reduziert. Wenn sie zu lang, Risiken Daten veraltet sind nicht festgelegt ist. Aus diesem Grund sollte die Ablaufzeit das Muster des Zugriffs für apps übereinstimmen, die die Daten zu verwenden.
+> Stellen Sie sich den Cache als vorübergehenden Datenspeicher vor, der jederzeit verschwinden könnte. Stellen Sie sicher, dass die Daten im ursprünglichen Datenspeicher und im Cache beibehalten werden. Die Wahrscheinlichkeit, dass Daten verloren gehen, wird dann minimiert, wenn der Cache nicht mehr verfügbar ist.
 
-Zwischengespeicherte Daten laufen ab, es sollte entfernt werden, aus dem Cache und die app abrufen muss die Daten aus der ursprünglichen Daten speichern, und platzieren Sie es wieder in den Cache.
+### <a name="managing-data-expiration"></a>Verwalten des Daten Ablaufs
 
-Es ist auch möglich, dass ein Cache ansammeln kann, wenn die Daten bleiben für einen zu langen Zeitraum zugelassen werden. Aus diesem Grund Anforderungen zum Hinzufügen neuer Elemente in den Cache erforderlich sein, entfernen Sie einige Elemente in einem Prozess namens *Entfernung*. Cachingdienste entfernen in der Regel Daten für die Least-recently-used. Es gibt jedoch andere entfernungsrichtlinien, einschließlich der vor kurzem verwendet und First-in-First-Out. Weitere Informationen finden Sie unter [zum Caching](/azure/architecture/best-practices/caching/).
+Es ist nicht zu erwarten, dass zwischengespeicherte Daten immer mit den ursprünglichen Daten konsistent sind. Die Daten im ursprünglichen Datenspeicher können sich ändern, nachdem Sie zwischengespeichert wurden, wodurch die zwischengespeicherten Daten veraltet werden. Daher sollten apps eine Strategie implementieren, mit der sichergestellt werden kann, dass die Daten im Cache so aktuell wie möglich sind. Sie können jedoch auch Situationen erkennen und behandeln, die auftreten, wenn die Daten im Cache veraltet sind. Bei den meisten zwischen Speicherungs Mechanismen kann der Cache so konfiguriert werden, dass Daten ablaufen, sodass der Zeitraum, in dem die Daten möglicherweise veraltet sind, verringert wird.
+
+> [!TIP]
+> Legen Sie beim Konfigurieren eines Caches eine Standard Ablaufzeit fest. Viele Caches implementieren den Ablauf, wodurch Daten ungültig gemacht und aus dem Cache entfernt werden, wenn für einen bestimmten Zeitraum nicht darauf zugegriffen wird. Sie müssen jedoch sorgfältig vorgehen, wenn Sie den Ablauf Zeitraum auswählen. Wenn Sie zu kurz gemacht wird, laufen die Daten zu schnell ab, und die Vorteile der Zwischenspeicherung werden verringert. Wenn der Vorgang zu lange dauert, ist das Risiko von Daten gefährdet. Daher sollte die Ablaufzeit dem Zugriffsmuster für apps entsprechen, die die Daten verwenden.
+
+Wenn zwischengespeicherte Daten ablaufen, sollten Sie aus dem Cache entfernt werden, und die APP muss die Daten aus dem ursprünglichen Datenspeicher abrufen und wieder im Cache platzieren.
+
+Es ist auch möglich, dass ein Cache aufgefüllt wird, wenn Daten für einen zu langen Zeitraum beibehalten werden. Daher sind Anforderungen zum Hinzufügen neuer Elemente zum Cache möglicherweise erforderlich, um einige Elemente in einem Prozess zu entfernen, der als Entfernungs Vorgang bezeichnet wird. Cache Dienste entfernen in der Regel Daten auf der Grundlage der zuletzt verwendeten Daten. Es gibt jedoch noch weitere Entfernungs Richtlinien, einschließlich der zuletzt verwendeten, der zuletzt verwendeten und der First-in-First-out. Weitere Informationen finden Sie unter [Leitfaden](/azure/architecture/best-practices/caching/)zum Zwischenspeichern.
 
 <a name="caching_images" />
 
 ### <a name="caching-images"></a>Zwischenspeichern von Bildern
 
-Die "eshoponcontainers" mobile app nutzt remote produktabbildungen, die aus der Zwischenspeicherung profitieren. Diese Images werden angezeigt, indem die [ `Image` ](xref:Xamarin.Forms.Image) -Steuerelement, und die `CachedImage` Kontrolle durch die [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) Bibliothek.
+Die eshoponcontainers-Mobile App verbraucht Remote Produkt Images, die von der Zwischenspeicherung profitieren. Diese Bilder werden vom [`Image`](xref:Xamarin.Forms.Image) `CachedImage` -Steuerelement und vom-Steuerelement angezeigt, das von der [ffimageloading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) -Bibliothek bereitgestellt wird.
 
-Die Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) -Steuerelement unterstützt das Zwischenspeichern der heruntergeladenen Bilder. Caching ist standardmäßig aktiviert, und speichert das Bild lokal für 24 Stunden. Darüber hinaus kann die Ablaufzeit konfiguriert werden, mit der [ `CacheValidity` ](xref:Xamarin.Forms.UriImageSource.CacheValidity) Eigenschaft. Weitere Informationen finden Sie unter [heruntergeladene Bild zwischenspeichern](~/xamarin-forms/user-interface/images.md#downloaded-image-caching).
+Das xamarin. Forms [`Image`](xref:Xamarin.Forms.Image) -Steuerelement unterstützt das Zwischenspeichern von heruntergeladenen Bildern. Caching ist standardmäßig aktiviert und speichert das Image für 24 Stunden lokal. Außerdem kann die Ablaufzeit mit der [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity) -Eigenschaft konfiguriert werden. Weitere Informationen finden Sie unter [Herunterladen von Bild Caching](~/xamarin-forms/user-interface/images.md#downloaded-image-caching).
 
-Die FFImageLoading `CachedImage` Steuerelement ist ein Ersatz für die Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) -Steuerelement zusätzliche Eigenschaften, die zusätzliche Funktionalität zu aktivieren. Für diese Funktion bietet die Steuerung, konfigurierbare zwischenspeichern, während Fehler unterstützt, und laden die Image-Platzhalter. Im folgenden Codebeispiel wird veranschaulicht, wie die mobile app "eshoponcontainers" verwendet die `CachedImage` steuern, der `ProductTemplate`, die die Datenvorlage ein, die die [ `ListView` ](xref:Xamarin.Forms.ListView) steuern, der `CatalogView`:
+Das Steuerelement von ffimageloading ist ein Ersatz für das xamarin [`Image`](xref:Xamarin.Forms.Image) . Forms- `CachedImage` Steuerelement, das zusätzliche Eigenschaften bereitstellt, die zusätzliche Funktionalität ermöglichen. Unter dieser Funktionalität bietet das Steuerelement konfigurierbare Zwischenspeicherung und unterstützt gleichzeitig Fehler und lade Platzhalter. Im folgenden `CachedImage` Codebeispiel wird veranschaulicht `ProductTemplate`, wie der eshoponcontainers-Mobile App das-Steuerelement in verwendet, bei dem es sich [`ListView`](xref:Xamarin.Forms.ListView) `CatalogView`um die Daten Vorlage handelt, die vom-Steuerelement im verwendet wird
 
 ```xaml
 <ffimageloading:CachedImage
@@ -344,76 +344,76 @@ Die FFImageLoading `CachedImage` Steuerelement ist ein Ersatz für die Xamarin.F
 </ffimageloading:CachedImage>
 ```
 
-Die `CachedImage` -Steuerelement legt die `LoadingPlaceholder` und `ErrorPlaceholder` Eigenschaften, die plattformspezifische Images. Die `LoadingPlaceholder` Eigenschaft gibt an, das Bild, während das angegebene Bild angezeigt werden die `Source` Eigenschaft wird abgerufen, und die `ErrorPlaceholder` Eigenschaft gibt an, das Bild angezeigt werden, wenn ein Fehler auftritt, wenn versucht wird, um das Bild abzurufen gemäß der `Source` Eigenschaft.
+Das `CachedImage` -Steuerelement `LoadingPlaceholder` legt `ErrorPlaceholder` die Eigenschaften und auf plattformspezifische Bilder fest. Die `LoadingPlaceholder` -Eigenschaft gibt das Bild an, das angezeigt wird, während das `Source` von der-Eigenschaft angegebene Bild `ErrorPlaceholder` abgerufen wird, und die-Eigenschaft gibt das Bild an, das angezeigt werden soll, wenn beim Versuch, das Bild abzurufen, ein Fehler auftritt. wird von der `Source` -Eigenschaft angegeben.
 
-Wie der Name schon sagt, den `CachedImage` Steuerelement speichert remote-Images auf dem Gerät für die durch den Wert der angegebenen Zeit der `CacheDuration` Eigenschaft. Wenn der Wert dieser Eigenschaft nicht explizit festgelegt ist, wird der Standardwert von 30 Tagen angewendet.
+Wie der Name schon sagt, `CachedImage` speichert das-Steuerelement Remote Abbilder auf dem Gerät für die Zeit, die `CacheDuration` durch den Wert der-Eigenschaft angegeben wird. Wenn dieser Eigenschafts Wert nicht explizit festgelegt wird, wird der Standardwert von 30 Tagen angewendet.
 
 ## <a name="increasing-resilience"></a>Erhöhen der Resilienz
 
-Alle apps, die mit Remotediensten und Ressourcen kommunizieren müssen gegenüber vorübergehenden Fehlern empfindlich sein. Vorübergehende Fehler umschließen den vorübergehenden Verlust der Netzwerkkonnektivität mit Diensten, die vorübergehende nichtverfügbarkeit eines Diensts oder Timeouts, die auftreten, wenn ein Dienst ausgelastet ist. Diese Fehler werden häufig automatisch behoben, und wenn die Aktion nach einer angemessenen Verzögerung wiederholt wird, die wahrscheinlich erfolgreich ausgeführt werden kann.
+Alle apps, die mit Remote Diensten und Ressourcen kommunizieren, müssen bei vorübergehenden Fehlern empfindlich sein. Vorübergehende Fehler umfassen den vorübergehenden Verlust der Netzwerk Konnektivität mit Diensten, die vorübergehende Nichtverfügbarkeit eines Diensts oder Timeouts, die auftreten, wenn ein Dienst ausgelastet ist. Diese Fehler werden häufig selbst korrigiert, und wenn die Aktion nach einer angemessenen Verzögerung wiederholt wird, ist es wahrscheinlich, dass Sie erfolgreich ausgeführt wird.
 
-Vorübergehende Fehler haben eine große Auswirkung auf die wahrgenommene Qualität einer App muss, auch wenn es unter allen vorhersehbaren Umständen gründlich getestet wurde. Um sicherzustellen, dass eine app, die mit Remotediensten kommuniziert zuverlässig funktioniert, muss es möglich, alle der folgenden sein:
+Vorübergehende Fehler können enorme Auswirkungen auf die wahrgenommene Qualität einer APP haben, auch wenn Sie unter allen vorhersehbaren Umständen gründlich getestet wurde. Um sicherzustellen, dass eine APP, die mit Remote Diensten kommuniziert, zuverlässig funktioniert, muss Sie in der Lage sein, Folgendes durchzuführen:
 
--   Erkennen Sie Fehler, wenn diese auftreten, und bestimmen, ob der Fehler wahrscheinlich vorübergehend sind.
--   Wiederholen Sie den Vorgang aus, wenn es feststellt, dass der Fehler wahrscheinlich vorübergehend und verfolgen Sie die Anzahl der Wiederholungsversuche für der Vorgang.
--   Verwenden Sie eine geeignete wiederholungsstrategie, die angibt, die Anzahl der Wiederholungsversuche ausführt, wird die Verzögerung zwischen jedem Versuch und die Aktionen nach einem fehlgeschlagenen Versuch durchzuführen.
+- Erkennen Sie Fehler, wenn Sie auftreten, und stellen Sie fest, ob die Fehler wahrscheinlich vorübergehend sind.
+- Wiederholen Sie den Vorgang, wenn er feststellt, dass der Fehler wahrscheinlich vorübergehend ist, und verfolgen Sie, wie oft der Vorgang erneut versucht wurde.
+- Verwenden Sie eine geeignete Wiederholungs Strategie, die die Anzahl der Wiederholungen, die Verzögerung zwischen den einzelnen versuchen und die nach einem fehlgeschlagenen Versuch auszuführenden Aktionen angibt.
 
-Diese Behandlung vorübergehender Fehler kann durch Umschließen alle Zugriffsversuche auf einen Remotedienst in Code, der das Wiederholungsmuster implementiert erreicht werden.
+Diese Behandlung vorübergehender Fehler kann erreicht werden, indem alle Versuche, auf einen Remote Dienst zuzugreifen, in Code, der das Wiederholungsmuster implementiert, eingebunden werden.
 
-### <a name="retry-pattern"></a>Muster "Wiederholung"
+### <a name="retry-pattern"></a>Wiederholungsmuster
 
-Wenn eine app einen Fehler erkennt, wenn er versucht, eine Anforderung an einen Remotedienst senden, können Fehler in einem der folgenden Arten behandelt werden:
+Wenn eine APP einen Fehler erkennt, wenn versucht wird, eine Anforderung an einen Remote Dienst zu senden, kann Sie den Fehler auf eine der folgenden Arten behandeln:
 
--   Der Vorgang wiederholt wird. Die app konnte die fehlgeschlagene Anforderung sofort wiederholen.
--   Der Vorgang nach einer Verzögerung wiederholt wird. Die app sollte eine geeignete Menge an Zeit, bevor ein Wiederholungsversuch der Anforderung warten.
--   Den Vorgang wird abgebrochen. Die Anwendung sollte den Vorgang abbrechen und eine Ausnahme melden.
+- Der Vorgang wird wiederholt. Die APP kann die fehlgeschlagene Anforderung sofort wiederholen.
+- Wiederholen Sie den Vorgang nach einer Verzögerung. Die APP sollte nach einem angemessenen Zeitraum warten, bis die Anforderung erneut versucht wird.
+- Der Vorgang wird abgebrochen. Die Anwendung sollte den Vorgang abbrechen und eine Ausnahme melden.
 
-Die wiederholungsstrategie sollte optimiert werden, um die geschäftlichen Anforderungen der app entsprechen. Beispielsweise ist es wichtig, optimieren die Anzahl der Wiederholungsversuche und das Wiederholungsintervall aufzurufen, um den Vorgang. Wenn der Vorgang Teil einer Benutzerinteraktion ist, sollte das Wiederholungsintervall kurz und nur wenige Wiederholungsversuche zu vermeiden, dass der Benutzer auf eine Antwort warten. Wenn der Vorgang Teil eines lang andauernden Workflows, wobei ist abbrechen oder Neustarten des Workflows teuer oder zeitaufwändig, empfiehlt es zwischen den versuchen länger zu warten und weitere Male zu wiederholen.
+Die Wiederholungs Strategie sollte so angepasst werden, dass Sie den geschäftlichen Anforderungen der APP entspricht. Beispielsweise ist es wichtig, die Anzahl der Wiederholungs Versuche und das Wiederholungsintervall für den Vorgang zu optimieren, der versucht wird. Wenn der Vorgang Teil einer Benutzerinteraktion ist, sollte das Wiederholungsintervall kurz sein, und es sollten nur wenige Wiederholungs Versuche unternommen werden, um zu vermeiden, dass Benutzer auf eine Antwort warten. Wenn der Vorgang Teil eines Workflows mit langer Laufzeit ist, bei dem das Abbrechen oder Neustarten des Workflows aufwendig oder zeitaufwändig ist, ist es angebracht, länger zwischen den versuchen zu warten und mehrmals zu versuchen.
 
 > [!NOTE]
-> Eine aggressive wiederholungsstrategie mit minimaler Verzögerung zwischen versuchen und eine große Anzahl von Wiederholungen kann einen Remotedienst beeinträchtigt werden, der nahe oder an Kapazität ausgeführt wird. Darüber hinaus beeinträchtigt diese eine wiederholungsstrategie die Reaktionsfähigkeit der app, wenn ständig versucht wird, einen fehlgeschlagenen Vorgang auszuführen.
+> Eine aggressive Wiederholungs Strategie mit minimaler Verzögerung zwischen versuchen und einer großen Anzahl von Wiederholungen könnte einen Remote Dienst beeinträchtigen, der in der Nähe der Kapazität oder der Kapazität ausgeführt wird. Außerdem könnte eine solche Wiederholungs Strategie auch die Reaktionsfähigkeit der APP beeinflussen, wenn Sie ständig versucht, einen fehlgeschlagenen Vorgang auszuführen.
 
-Wenn eine Anforderung immer noch nach einer Anzahl von Wiederholungen fehlschlägt, ist es besser für die app aus, um weitere Anforderungen an die gleiche Ressource zu verhindern und einen Fehler melden. Nach einer festgelegten Dauer, kann die app stellen Sie dann eine oder mehrere Anforderungen an die Ressource, um festzustellen, ob diese erfolgreich ausgeführt werden. Weitere Informationen finden Sie unter [Trennschalter-Muster](#circuit_breaker_pattern).
+Wenn eine Anforderung nach einer Reihe von Wiederholungen weiterhin fehlschlägt, ist es für die APP besser, weitere Anforderungen an dieselbe Ressource zu verhindern und einen Fehler zu melden. Anschließend kann die APP nach einem bestimmten Zeitraum eine oder mehrere Anforderungen an die Ressource senden, um festzustellen, ob Sie erfolgreich sind. Weitere Informationen finden Sie unter Trenn [Schalter-Muster](#circuit_breaker_pattern).
 
 > [!TIP]
-> Implementieren Sie niemals einen endlosen Wiederholungsmechanismus. Verwenden Sie eine endliche Anzahl von Wiederholungen oder implementieren Sie die [Circuit-Breaker](/azure/architecture/patterns/circuit-breaker/) Muster, um einen Dienst für die Wiederherstellung zu ermöglichen.
+> Implementieren Sie niemals einen unendlichen Wiederholungs Mechanismus. Verwenden Sie eine begrenzte Anzahl von Wiederholungen, oder implementieren Sie das Trenn [Schalter](/azure/architecture/patterns/circuit-breaker/) -Muster, damit ein Dienst wieder hergestellt werden kann.
 
-Die mobile app von eShopOnContainers implementiert des Wiederholungsmusters, das bei RESTful-Web-Anforderungen nicht aktuell. Allerdings die `CachedImage` Kontrolle, durch die [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) Bibliothek unterstützt die Behandlung vorübergehender Fehler durch eine Wiederholung Bild laden. Wenn Sie laden ein Fehler auftritt, weitere Versuche erfolgen. Die Anzahl der Versuche wird angegeben, durch die `RetryCount` -Eigenschaft und Wiederholungen erfolgt nach einer Verzögerung, die gemäß der `RetryDelay` Eigenschaft. Wenn diese Eigenschaftswerte werden nicht explizit festgelegt, ihren standardmäßigen Werte gelten – 3 für die `RetryCount` -Eigenschaft und 250ms für die `RetryDelay` Eigenschaft. Weitere Informationen zu den `CachedImage` steuern, finden Sie unter [Zwischenspeichern von Bildern](#caching_images).
+Die eshoponcontainers-Mobile App implementiert das Wiederholungsmuster derzeit nicht, wenn Sie Rest-Webanforderungen vornehmen. Das-Steuer `CachedImage` Element, das von der [ffimageloading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) -Bibliothek bereitgestellt wird, unterstützt jedoch die Behandlung vorübergehender Fehler, indem das Laden von Bildern Wenn beim Laden des Bilds ein Fehler auftritt, werden weitere Versuche unternommen. Die Anzahl der Versuche wird durch die `RetryCount` -Eigenschaft angegeben, und Wiederholungen erfolgen nach einer Verzögerung, die durch die `RetryDelay` -Eigenschaft angegeben wird. Wenn diese Eigenschaftswerte nicht explizit festgelegt sind, werden die Standardwerte für die `RetryCount` -Eigenschaft auf – 3 und für `RetryDelay` die-Eigenschaft auf 250 MS angewendet. Weitere Informationen `CachedImage` zum-Steuerelement finden Sie unter zwischen [Speichern von Bildern](#caching_images).
 
-Die referenzanwendung "eshoponcontainers" wird das Wiederholungsmuster implementiert. Weitere Informationen, einschließlich einer Erläuterung der kombinieren des Wiederholungsmusters, das mit der `HttpClient` Klasse, finden Sie unter [.NET Microservices: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
+Die eshoponcontainers-Verweis Anwendung implementiert das Wiederholungsmuster. Weitere Informationen, einschließlich einer Erläuterung zum Kombinieren des Wiederholungs Musters mit der `HttpClient` -Klasse, finden [Sie unter .net-mikrodienste: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
 
-Weitere Informationen zu des Wiederholungsmusters, finden Sie unter den [wiederholen](/azure/architecture/patterns/retry/) Muster.
+Weitere Informationen zum Wiederholungsmuster finden Sie unter dem [Wiederholungs](/azure/architecture/patterns/retry/) Muster.
 
 <a name="circuit_breaker_pattern" />
 
 ### <a name="circuit-breaker-pattern"></a>Trennschalter-Muster
 
-In einigen Fällen können Fehler aufgrund von erwarteten Ereignisse auftreten, die länger dauern, bis zu beheben. Diese Fehler reichen von einem teilverlust der Konnektivität bis zum vollständigen Ausfall eines Diensts. In diesen Situationen ist es sinnlos ist, dass eine app einen Vorgang zu wiederholen, der wahrscheinlich nicht erfolgreich ausgeführt werden, und stattdessen sollte akzeptieren, dass der Vorgang fehlgeschlagen ist, und diesen Fehler entsprechend behandeln.
+In einigen Situationen können Fehler aufgrund von erwarteten Ereignissen auftreten, deren Behebung länger dauert. Diese Fehler können von einem partiellen Verlust der Konnektivität bis hin zum vollständigen Ausfall eines Diensts reichen. In diesen Fällen ist es nicht sinnlos, dass eine APP einen Vorgang wiederholt, der wahrscheinlich nicht erfolgreich ist. Stattdessen sollte angenommen werden, dass der Vorgang fehlgeschlagen ist, und diesen Fehler entsprechend behandeln.
 
-Trennschalter-Musters kann eine app wiederholt versucht einen Vorgang auszuführen, die wahrscheinlich nicht ausgeführt wird als auch die app aus, um festzustellen, ob der Fehler behoben wurde, verhindern.
+Das Trennschalter-Muster kann verhindern, dass eine APP wiederholt versucht, einen Vorgang auszuführen, bei dem der Fehler wahrscheinlich fehlschlägt, während die APP gleichzeitig erkennt, ob der Fehler behoben wurde.
 
 > [!NOTE]
-> Der Zweck des Trennschalter-Musters unterscheidet sich von der Wiederholung (Muster). Das Wiederholungsmuster kann es sich um eine app einen Vorgang in der Annahme zu wiederholen, die er erfolgreich ausgeführt wird. Das Trennschalter-Muster wird verhindert, dass eine app Ausführen eines Vorgangs, das vermutlich fehlschlägt.
+> Der Zweck des Trennschalter Musters unterscheidet sich von dem Wiederholungsmuster. Das Wiederholungsmuster ermöglicht einer APP, in der Annahme, dass Sie erfolgreich ausgeführt wird, einen Vorgang zu wiederholen. Das Trennschalter-Muster verhindert, dass eine APP einen Vorgang ausführt, der vermutlich fehlschlägt.
 
-Ein Trennschalter fungiert als Proxy für Vorgänge, die möglicherweise Fehler auftreten. Der Proxy sollte Überwachen der Anzahl der letzten Fehler, die aufgetreten sind, und anhand dieser Informationen entscheiden, können Sie den Vorgang, um den Vorgang fortzusetzen, oder eine Ausnahme sofort zurückgegeben.
+Ein Trennschalter fungiert als Proxy für Vorgänge, die möglicherweise fehlschlagen. Der Proxy sollte die Anzahl der zuletzt aufgetretenen Fehler überwachen und anhand dieser Informationen entscheiden, ob der Vorgang fortgesetzt werden darf, oder eine Ausnahme sofort zurückgeben.
 
-Die eShopOnContainers-mobile-app implementiert derzeit nicht das Circuit-Breaker-Muster. Allerdings ist die "eshoponcontainers". Weitere Informationen finden Sie unter [.NET Microservices: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
+Der Mobile App "eshoponcontainers" implementiert derzeit nicht das Trennschalter-Muster. Eshoponcontainers hingegen. Weitere Informationen finden [Sie unter .net-mikrodienste: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
 
 > [!TIP]
-> Kombinieren Sie die Wiederholung und Circuit-Breaker-Muster. Eine app kann die Wiederholung und Circuit-Breaker-Muster kombinieren, mithilfe des Wiederholungsmusters, einen Vorgang über einen Trennschalter aufzurufen. Die Wiederholungslogik sollte jedoch alle Ausnahmen, die durch den Trennschalter zurückgegeben werden, und Wiederholungsversuche Abbrechen, wenn der Trennschalter anzeigt, dass es sich bei ein Fehler nicht vorübergehend ist.
+> Kombinieren Sie die Muster für Wiederholung und Trennschalter. Eine APP kann die Wiederholungs-und Trennschalter Muster mithilfe des Wiederholungs Musters kombinieren, um einen Vorgang über einen Trennschalter aufzurufen. Die Wiederholungs Logik sollte jedoch für alle vom Trennschalter zurückgegebenen Ausnahmen empfindlich sein und Wiederholungs Versuche abbrechen, wenn der Trennschalter angibt, dass ein Fehler nicht vorübergehend ist.
 
-Weitere Informationen über das Circuit-Breaker-Muster finden Sie unter den [Circuit-Breaker](/azure/architecture/patterns/circuit-breaker/) Muster.
+Weitere Informationen zum Trennschalter-Muster finden Sie unter dem Trenn [Schalter](/azure/architecture/patterns/circuit-breaker/) -Muster.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Viele moderne webbasierte Lösungen stellen Verwendung von Webdiensten, Webservern gehostete Webdienste, um Funktionen für remote-Client-Anwendungen bereitzustellen. Die Vorgänge, die einen Webdienst verfügbar macht, bilden eine Web-API und Client-apps muss die Web-API nutzen, ohne zu wissen, wie die Daten oder Vorgänge, die die-API implementiert werden können.
+Viele moderne webbasierte Lösungen nutzen Webdienste, die von Webservern gehostet werden, um Funktionen für Remote Client Anwendungen bereitzustellen. Die von einem Webdienst verfügbar gemachten Vorgänge bilden eine Web-API, und Client-apps sollten in der Lage sein, die Web-API zu verwenden, ohne zu wissen, wie die von der API verfügbar gemachten Daten oder Vorgänge implementiert werden.
 
-Die Leistung einer App kann verbessert werden, durch das Zwischenspeichern von häufig verwendete Daten in einen schnellen Speicher, der Nähe befindet der app. Apps können die Read-through-caching mit dem Cache-Aside-Muster implementieren. Dieses Muster wird bestimmt, ob das Element derzeit im Cache vorhanden ist. Wenn das Element nicht im Cache befinden, aus dem Datenspeicher gelesene und dem Cache hinzugefügt.
+Die Leistung einer APP kann durch das Zwischenspeichern von Daten, auf die häufig zugegriffen wird, in der Nähe der app in fast Storage verbessert werden. Apps können das Zwischenspeichern mit Zwischenspeicherung mit dem Cache--Muster implementieren. Dieses Muster bestimmt, ob sich das Element derzeit im Cache befindet. Wenn sich das Element nicht im Cache befindet, wird es aus dem Datenspeicher gelesen und dem Cache hinzugefügt.
 
-Bei der Kommunikation mit Web-APIs müssen apps gegenüber vorübergehenden Fehlern empfindlich sein. Vorübergehende Fehler umschließen den vorübergehenden Verlust der Netzwerkkonnektivität mit Diensten, die vorübergehende nichtverfügbarkeit eines Diensts oder Timeouts, die auftreten, wenn ein Dienst ausgelastet ist. Diese Fehler werden häufig automatisch behoben, und falls die Aktion nach einer angemessenen Verzögerung wiederholt wird, dann ist es wahrscheinlich erfolgreich ausgeführt werden kann. Aus diesem Grund sollten apps zu umschließen, alle Zugriffsversuche auf eine Web-API im Code, der einen Mechanismus zur Behandlung vorübergehender implementiert.
+Bei der Kommunikation mit Web-APIs müssen Apps bei vorübergehenden Fehlern empfindlich sein. Vorübergehende Fehler umfassen den vorübergehenden Verlust der Netzwerk Konnektivität mit Diensten, die vorübergehende Nichtverfügbarkeit eines Diensts oder Timeouts, die auftreten, wenn ein Dienst ausgelastet ist. Diese Fehler werden häufig selbst korrigiert, und wenn die Aktion nach einer angemessenen Verzögerung wiederholt wird, ist es wahrscheinlich, dass Sie erfolgreich ausgeführt wird. Daher sollten apps alle Versuche, auf eine Web-API zuzugreifen, in Code einschließen, der einen Mechanismus zur Behandlung vorübergehender Fehler implementiert.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [E-Book (2Mb PDF-Datei) herunterladen](https://aka.ms/xamarinpatternsebook)
-- ["eshoponcontainers" (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
+- [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

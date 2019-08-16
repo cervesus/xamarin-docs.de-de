@@ -6,59 +6,59 @@ ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
 author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
-ms.openlocfilehash: 3f5c5f75ae1c7a44537afa59ff4a15d54b1df50b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 524456a5d5419c9ef2f2cef741135c90e624b620
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357435"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521593"
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>Vereinheitlichen von Google Play-Dienstkomponenten und NuGet
 
 ## <a name="history"></a>Versionsgeschichte
 
-Es werden mehrere Google Play-Dienstkomponenten und NuGet-Pakete verwendet:
+Es wurden mehrere Google Play Services Komponenten und nuget-Pakete verwendet:
 
--   Google Play-Dienste (Froyo)
--   Google Play-Dienste (Gingerbread)
--   Google Play Services (ICS)
--   Google Play-Dienste (JellyBean)
--   Google Play-Dienste (KitKat)
+- Google Play Services (Froyo)
+- Google Play Services (Lebkuchen)
+- Google Play Services (ICS)
+- Google Play Services (Jellybean)
+- Google Play Services (KitKat)
 
-Google tatsächlich nur umfasst zwei JAR-Dateien für Google Play-Dienste:
+Google gibt eigentlich nur zwei JAR-Dateien für Google Play Services aus:
 
--   `google-play-services-froyo.jar`
--   `google-play-services.jar`
+- `google-play-services-froyo.jar`
+- `google-play-services.jar`
 
-Die Abweichung vorhanden waren, da unsere Tools nicht ordnungsgemäß mitteilen würden `aapt.exe` was die maximale Ressource-API-Ebene für eine bestimmte app verwendet werden. Dies bedeutete, dass wir Kompilierungsfehler erhalten, wenn wir versuchen, die Google Play-Dienste (KitKat)-Bindung auf einer niedrigeren API-Ebene wie Gingerbread verwenden.
+Die Diskrepanz ist aufgetreten, da unsere Tools nicht `aapt.exe` richtig feststellen, was die maximale Ressourcen-API-Ebene für eine bestimmte App verwendet werden sollte. Dies bedeutete, dass wir Kompilierungsfehler erhalten haben, wenn wir versuchten, die Google Play Services (KitKat)-Bindung auf einer niedrigeren API-Ebene wie Lebkuchen zu verwenden.
 
-## <a name="unifying-google-play-services"></a>Vereinheitlichen von Google Play-Dienste
+## <a name="unifying-google-play-services"></a>Vereinheitlichung Google Play Services
 
-In neueren Versionen von Xamarin.Android können wir jetzt sagen `aapt.exe` welche maximale Version zu verwenden, damit dieses Problem für uns verschwindet,.
+In neueren Versionen von xamarin. Android haben wir nun `aapt.exe` festzustellen, welche maximale Ressourcen Version verwendet werden soll, sodass dieses Problem für uns nicht mehr auftritt.
 
-Dies bedeutet, dass Sie keinen triftigen Grund haben separate Pakete für Gingerbread/ICS/JellyBean/KitKat (jedoch wir weiterhin benötigen eine separate Bindung für Froyo, da es eine andere JAR-Datei vollständig ist) besteht.
+Dies bedeutet, dass es keinen wirklichen Grund gibt, separate Pakete für Lebkuchen/ICS/Jellybean/KitKat zu verwenden (es wird jedoch immer noch eine separate Bindung für Froyo benötigt, da es sich um eine andere JAR-Datei handelt).
 
-Um die Dinge für Entwickler zu vereinfachen, haben wir jetzt unsere Dienstkomponenten und NuGet unified Pakete in zwei:
+Um Entwicklern die Arbeit zu erleichtern, haben wir nun die Komponenten und nuget-Pakete in zwei vereinheitlicht:
 
--   Google Play-Dienste (Froyo) (bindet `google-play-services-froyo.jar`)
--   Google Play-Dienste (bindet `google-play-services.jar`)
+- Google Play Services (Froyo) (Bindungen `google-play-services-froyo.jar`)
+- Google Play Services (Bindungen `google-play-services.jar`)
 
-### <a name="which-one-should-be-used"></a>Welche sollte verwendet werden?
+### <a name="which-one-should-be-used"></a>Welches sollte verwendet werden?
 
-In fast allen Fällen sollte die Google Play-Dienste verwendet werden. Der einzige Grund für das Paket (Froyo) verwenden, ist, wenn Sie aktiv Froyo verwenden möchten. Ist der einzige Grund, dass diese separate JAR-Datei von Google vorhanden ist, da Froyo mit einem kleinen Prozentsatz der Geräte ist, die sie selbst haben sich entschieden, beenden, daher ist diese JAR-Datei eine fixiert, nicht unterstützte Momentaufnahme von Google Play Services unterstützen.
+In nahezu jedem Fall sollten Google Play Services verwendet werden. Der einzige Grund für die Verwendung des Pakets (Froyo) ist, dass Sie "Froyo" aktiv als Ziel verwenden. Der einzige Grund, aus dem diese separate JAR-Datei von Google besteht, liegt darin, dass Froyo auf einem so kleinen Prozentsatz von Geräten liegt, dass Sie sich selbst nicht mehr unterstützen müssen, sodass diese JAR-Datei eine fixierte, nicht unterstützte Momentaufnahme von Google Play Services ist.
 
-### <a name="note-about-gingerbread"></a>Hinweis zur Gingerbread
+### <a name="note-about-gingerbread"></a>Hinweis zu Lebkuchen
 
-Gingerbread besitzt keine Fragment standardmäßig unterstützt, und aus diesem Grund einige der Klassen in der Bindung nicht verwendet werden in einer app zur Laufzeit auf einem Gerät Gingerbread. Klassen wie `MapFragment` auf Gingerbread nicht funktionsfähig, und stattdessen ihre Support-Variante verwendet werden `SupportMapFragment`. Es liegt an der Entwickler wissen, was Sie verwenden. Diese Inkompatibilität wird von Google in der Dokumentation von Google Play-Dienste aufgeführt.
+Lebkuchen hat standardmäßig keine fragmentunterstützung, und aus diesem Grund können einige Klassen in der Bindung in einer App zur Laufzeit auf einem Lebkuchen Gerät nicht verwendet werden. Klassen wie `MapFragment` können nicht für Lebkuchen verwendet werden, und stattdessen `SupportMapFragment`sollte Ihre Support Variante verwendet werden. Der Entwickler muss wissen, welche zu verwenden sind. Diese Inkompatibilität wird in der Google Play Services-Dokumentation von Google vermerkt.
 
-### <a name="what-happens-to-the-old-componentsnugets"></a>Was geschieht mit den alten Komponenten/NuGet?
+### <a name="what-happens-to-the-old-componentsnugets"></a>Was geschieht mit den alten Komponenten/nuget?
 
-Da sie nicht mehr benötigt werden, haben wir die folgenden Komponenten/NuGet-Pakete deaktiviert/Delisted:
+Da Sie nicht mehr benötigt werden, haben wir die folgenden Komponenten/nugets deaktiviert/getrennt:
 
--   Google Play-Dienste (Gingerbread)
--   Google Play-Dienste (JellyBean)
--   Google Play-Dienste (KitKat)
+- Google Play Services (Lebkuchen)
+- Google Play Services (Jellybean)
+- Google Play Services (KitKat)
 
-Die vorhandene _(Google Play Services, ICS)_ Komponente/Nuget wurde umbenannt in _Google Play Services_ und bleiben auf dem neuesten Stand in Zukunft. Alle Projekte verweisen auf eines der Pakete deaktiviert/Delisted sollte aktualisiert werden, um diese zu verwenden.
+Die vorhandene _Google Play Services (ICS)_ -Komponente/nuget wurde in _Google Play Services_ umbenannt und wird in Zukunft auf dem neuesten Stand gehalten. Alle Projekte, die auf eines der deaktivierten/Delisted-Pakete verweisen, sollten aktualisiert werden, um dieses zu verwenden.
 
-Die deaktivierten Komponenten sollte weiterhin vorhanden und für Projekte, denen sie immer noch, verwiesen werden, um zu vermeiden, dass sie wiederherstellbare. Die delisted NuGet-Pakete wird auf ähnliche Weise weiterhin vorhanden, und der wiederhergestellt werden können. Sie werden in Zukunft nicht aktualisiert werden.
+Die deaktivierten Komponenten sind noch vorhanden und sollten für Projekte wiederherstellbar sein, in denen Sie weiterhin referenziert werden, um eine Unterbrechung zu vermeiden. Auf ähnliche Weise sind auch die Delisted nuget-Pakete vorhanden und können wieder hergestellt werden. Sie werden nicht weiter aktualisiert.

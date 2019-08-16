@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 19ac5a023b1f97b2e08bbe1821a2b9259280fc98
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d59acaec36c63c62fe934f145d06bfbb78d11f6c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645150"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522856"
 ---
 # <a name="replacing-the-action-bar"></a>Ersetzen der Aktionsleiste
 
@@ -21,15 +21,15 @@ Eine der gängigsten Verwendungsmöglichkeiten von `Toolbar` besteht darin, die 
 
 So ersetzen Sie die Standard Aktionsleiste einer APP durch `Toolbar`: 
 
-1.  Erstellen Sie ein neues benutzerdefiniertes Design, und ändern Sie die Eigenschaften der APP, sodass dieses neue Design verwendet wird. 
+1. Erstellen Sie ein neues benutzerdefiniertes Design, und ändern Sie die Eigenschaften der APP, sodass dieses neue Design verwendet wird. 
 
-2.  Deaktivieren Sie `windowActionBar` das-Attribut im benutzerdefinierten Design, `windowNoTitle` und aktivieren Sie das-Attribut.
+2. Deaktivieren Sie `windowActionBar` das-Attribut im benutzerdefinierten Design, `windowNoTitle` und aktivieren Sie das-Attribut.
 
-3.  Definieren Sie ein Layout für `Toolbar`das.
+3. Definieren Sie ein Layout für `Toolbar`das.
 
-4.  Fügen Sie `Toolbar` das Layout in die **Main. axml** -Layoutdatei der Aktivität ein. 
+4. Fügen Sie `Toolbar` das Layout in die **Main. axml** -Layoutdatei der Aktivität ein. 
 
-5.  Fügen Sie der-Methode der `OnCreate` -Aktivität Code hinzu `Toolbar` , um `SetActionBar` den zu suchen `ToolBar` , und den-Befehl zum Installieren von als Aktionsleiste.
+5. Fügen Sie der-Methode der `OnCreate` -Aktivität Code hinzu `Toolbar` , um `SetActionBar` den zu suchen `ToolBar` , und den-Befehl zum Installieren von als Aktionsleiste.
 
 In den folgenden Abschnitten wird dieser Prozess ausführlich erläutert. Eine einfache APP wird erstellt, und die Aktionsleiste wird durch eine angepasste `Toolbar`ersetzt. 
 
@@ -175,13 +175,13 @@ In diesem Abschnitt werden die `Toolbar`Menüs hinzugefügt. Der obere rechte Be
 
 So fügen Sie Menüs `Toolbar`hinzu: 
 
-1.  Fügen Sie den `mipmap-` Ordnern des App-Projekts ggf. Menü Symbole hinzu. Google stellt auf der Seite [Material Symbole](https://design.google.com/icons/) einen Satz von freien Menü Symbolen bereit. 
+1. Fügen Sie den `mipmap-` Ordnern des App-Projekts ggf. Menü Symbole hinzu. Google stellt auf der Seite [Material Symbole](https://design.google.com/icons/) einen Satz von freien Menü Symbolen bereit. 
 
-2.  Definieren Sie den Inhalt der Menü Elemente, indem Sie im **Menü Ressourcen/Menü**eine neue Menü Ressourcen Datei hinzufügen. 
+2. Definieren Sie den Inhalt der Menü Elemente, indem Sie im **Menü Ressourcen/Menü**eine neue Menü Ressourcen Datei hinzufügen. 
 
-3.  Implementieren Sie `OnCreateOptionsMenu` die-Methode der &ndash; -Aktivität, mit der diese Methode die Menü Elemente auffüllt. 
+3. Implementieren Sie `OnCreateOptionsMenu` die-Methode der &ndash; -Aktivität, mit der diese Methode die Menü Elemente auffüllt. 
 
-4.  Implementieren Sie `OnOptionsItemSelected` die-Methode der &ndash; -Aktivität diese Methode führt eine Aktion aus, wenn ein Menü Element getippt wird. 
+4. Implementieren Sie `OnOptionsItemSelected` die-Methode der &ndash; -Aktivität diese Methode führt eine Aktion aus, wenn ein Menü Element getippt wird. 
 
 In den folgenden Abschnitten wird dieser Prozess ausführlich veranschaulicht, indem die Menü Elemente **Bearbeiten** und **Speichern** der `Toolbar`angepassten hinzugefügt werden. 
 
@@ -218,11 +218,11 @@ Erstellen Sie ein neues **Menü** Unterverzeichnis unter **Ressourcen**. Erstell
 
 Dieser XML-Code erstellt drei Menü Elemente:
 
--   Ein **Bearbeitungs** Menü Element, das das `ic_action_content_create.png` Symbol (einen Stift) verwendet. 
+- Ein **Bearbeitungs** Menü Element, das das `ic_action_content_create.png` Symbol (einen Stift) verwendet. 
 
--   Ein Menü Element **Speichern** , das das `ic_action_content_save.png` Symbol (eine Diskette) verwendet. 
+- Ein Menü Element **Speichern** , das das `ic_action_content_save.png` Symbol (eine Diskette) verwendet. 
 
--   Ein Menü Element " **Einstellungen** ", das kein Symbol enthält.
+- Ein Menü Element " **Einstellungen** ", das kein Symbol enthält.
 
 Die `showAsAction` Attribute der Menü Elemente **Bearbeiten** und **Speichern** werden auf diese Einstellung `ifRoom` festgelegt, &ndash; sodass diese Menü Elemente in der `Toolbar` angezeigt werden, wenn ausreichend Platz vorhanden ist, um angezeigt zu werden. Das Menü Element "Einstellungen `showAsAction` " `never` legt fest &ndash; , dass das Menü " **Einstellungen** " im *Überlauf* Menü angezeigt wird (drei vertikale Punkte). 
 

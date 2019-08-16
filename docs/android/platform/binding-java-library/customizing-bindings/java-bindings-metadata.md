@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: f0f15647e439381c2aa291234b444d668d1b63d0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869357"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524620"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
@@ -55,21 +55,21 @@ Stattdessen werden Änderungen in speziellen XML-Dateien aufgezeichnet, die von 
 
 Diese XML-Zuordnungs Dateien befinden sich möglicherweise im Ordner " **Transformationen** " des Projekts:
 
--   " **Metadata. XML** &ndash; " ermöglicht Änderungen an der endgültigen API, z. b. das Ändern des Namespace der generierten Bindung. 
+- " **Metadata. XML** &ndash; " ermöglicht Änderungen an der endgültigen API, z. b. das Ändern des Namespace der generierten Bindung. 
 
--   **EnumFields. XML** &ndash; enthält die Zuordnung zwischen Java `int` -Konstanten C# `enums` und. 
+- **EnumFields. XML** &ndash; enthält die Zuordnung zwischen Java `int` -Konstanten C# `enums` und. 
 
--   **EnumMethods. XML** &ndash; ermöglicht das Ändern von Methoden Parametern und Rückgabe Typen `int` aus Java C# `enums` -Konstanten in. 
+- **EnumMethods. XML** &ndash; ermöglicht das Ändern von Methoden Parametern und Rückgabe Typen `int` aus Java C# `enums` -Konstanten in. 
 
 Die Datei " **Metadata. XML** " ist der größte Import dieser Dateien, da Sie allgemeine Änderungen an der Bindung zulässt, wie z. b.:
 
--   Umbenennen von Namespaces, Klassen, Methoden oder Feldern, sodass Sie .net-Konventionen entsprechen. 
+- Umbenennen von Namespaces, Klassen, Methoden oder Feldern, sodass Sie .net-Konventionen entsprechen. 
 
--   Entfernen von Namespaces, Klassen, Methoden oder Feldern, die nicht benötigt werden. 
+- Entfernen von Namespaces, Klassen, Methoden oder Feldern, die nicht benötigt werden. 
 
--   Verschieben von Klassen in verschiedene Namespaces. 
+- Verschieben von Klassen in verschiedene Namespaces. 
 
--   Wenn Sie zusätzliche Unterstützungs Klassen hinzufügen, um den Entwurf der Bindung vorzunehmen, befolgen Sie die .NET Framework-Muster. 
+- Wenn Sie zusätzliche Unterstützungs Klassen hinzufügen, um den Entwurf der Bindung vorzunehmen, befolgen Sie die .NET Framework-Muster. 
 
 Fahren Sie mit fort, um **Metadata. XML** ausführlicher zu erörtern.
 
@@ -103,13 +103,13 @@ Im folgenden finden Sie ein Beispiel für eine Datei " **Metadata. XML** ":
 
 Im folgenden sind einige der gängigsten XPath-Elemente für die Java-APIs aufgeführt:
 
--   `interface`&ndash; Wird verwendet, um eine Java-Schnittstelle zu suchen. z. `/interface[@name='AuthListener']`b.
+- `interface`&ndash; Wird verwendet, um eine Java-Schnittstelle zu suchen. z. `/interface[@name='AuthListener']`b.
 
--   `class`&ndash; Wird verwendet, um nach einer Klasse zu suchen. z. `/class[@name='MapView']`b.
+- `class`&ndash; Wird verwendet, um nach einer Klasse zu suchen. z. `/class[@name='MapView']`b.
 
--   `method`&ndash; Wird verwendet, um eine Methode in einer Java-Klasse oder-Schnittstelle zu suchen. z. `/class[@name='MapView']/method[@name='setTitleSource']`b.
+- `method`&ndash; Wird verwendet, um eine Methode in einer Java-Klasse oder-Schnittstelle zu suchen. z. `/class[@name='MapView']/method[@name='setTitleSource']`b.
 
--   `parameter`&ndash; Identifizieren Sie einen Parameter für eine Methode. e.g.`/parameter[@name='p0']`
+- `parameter`&ndash; Identifizieren Sie einen Parameter für eine Methode. e.g.`/parameter[@name='p0']`
 
 
 

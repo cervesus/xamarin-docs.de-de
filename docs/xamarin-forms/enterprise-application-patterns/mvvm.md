@@ -1,95 +1,95 @@
 ---
-title: Das Model-View-ViewModel-Muster
-description: In diesem Kapitel wird erläutert, wie die eShopOnContainers-mobile-app das MVVM-Muster verwendet, um die Logik für die Business und Darstellung der app aus der Benutzeroberfläche sauber zu trennen.
+title: Model-View-ViewModel-Muster
+description: In diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App das MVVM-Muster verwendet, um die Geschäfts-und Präsentationslogik der APP von der Benutzeroberfläche zu trennen.
 ms.prod: xamarin
 ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 87448c556c66ea086db70699848227e1f671792b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1e3e1a2165c9acee127a543301f00262aa4bdc4f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61299628"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529087"
 ---
-# <a name="the-model-view-viewmodel-pattern"></a>Das Model-View-ViewModel-Muster
+# <a name="the-model-view-viewmodel-pattern"></a>Model-View-ViewModel-Muster
 
-Die Xamarin.Forms-Entwicklungsumgebung umfasst in der Regel erstellen eine Benutzeroberfläche in XAML, und klicken Sie dann hinzufügen Code-Behind, die auf der Benutzeroberfläche verwendet wird. Wie apps geändert werden, und in der Größe und Umfang wachsen, können eine komplexe Wartungsprobleme auftreten. Zu diesen Problemen zählen die enge Bindung zwischen der UI-Steuerelemente und die Geschäftslogik, die wodurch die Kosten einer Änderungen der Benutzeroberfläche und die Schwierigkeit der Komponententests, die Art von Code erhöht wird.
+Die xamarin. Forms-Entwickler Oberfläche umfasst in der Regel das Erstellen einer Benutzeroberfläche in XAML und das anschließende Hinzufügen von Code Behind, der auf der Benutzeroberfläche funktioniert. Wenn apps geändert und die Größe und der Umfang vergrößert werden, können komplexe Wartungsprobleme auftreten. Zu diesen Problemen zählen die enge Kopplung zwischen den UI-Steuerelementen und der Geschäftslogik, wodurch die Kosten für Änderungen an der Benutzeroberfläche erhöht werden, sowie die Schwierigkeit von Komponententests für diesen Code.
 
-Das Model-View-ViewModel (MVVM)-Muster hilft, sauber trennen Sie die Logik für die Business und Präsentation von einer Anwendung über die Benutzeroberfläche (UI). Eine saubere Trennung zwischen der Anwendungslogik und die Benutzeroberfläche verwalten kann kann, um zahlreiche Probleme bei der Entwicklung zu beheben und eine Anwendung einfacher zu testen, verwalten und entwickeln. Sie können Code wiederverwenden Verkaufschancen erheblich verbessern und ermöglicht es Entwicklern und Benutzeroberflächen-Designer eine problemlose Zusammenarbeit ermöglichen, bei der Entwicklung ihrer jeweiligen Teile einer app.
+Das Model-View-ViewModel (MVVM)-Muster hilft bei der ordnungsgemäßen Trennung der Geschäfts-und Präsentationslogik einer Anwendung von der Benutzeroberfläche (User Interface, UI). Wenn Sie eine saubere Trennung zwischen Anwendungslogik und Benutzeroberfläche gewährleisten, können Sie zahlreiche Entwicklungsprobleme beheben und eine Anwendung leichter testen, warten und entwickeln. Sie kann auch die Möglichkeiten zur Wiederverwendung von Code erheblich verbessern und ermöglicht Entwicklern und UI-Designern, bei der Entwicklung ihrer jeweiligen Teile einer APP leichter zusammenzuarbeiten.
 
 ## <a name="the-mvvm-pattern"></a>Das MVVM-Muster
 
-Es gibt drei Hauptkomponenten in das MVVM-Muster: das Modell, Ansicht und Ansichtsmodell. Jede dient jeweils einen unterschiedlichen Zweck. Abbildung 2 – 1 zeigt die Beziehungen zwischen den drei Komponenten.
+Es gibt drei Kernkomponenten im MVVM-Muster: das Modell, die Ansicht und das Ansichts Modell. Jeder dient einem bestimmten Zweck. In Abbildung 2-1 werden die Beziehungen zwischen den drei Komponenten dargestellt.
 
 ![](mvvm-images/mvvm.png "Das MVVM-Muster")
 
 **Abbildung 2-1**: Das MVVM-Muster
 
-Zusätzlich zu verstehen, die Verantwortlichkeiten der einzelnen Komponenten, ist es auch wichtig zu verstehen, wie sie miteinander interagieren. Auf hoher Ebene die Ansicht "kennt" das Ansichtsmodell und das Ansichtsmodell "kennt" das Modell, das Modell ist jedoch des Ansichtsmodells und das Ansichtsmodell ist keine Kenntnis von der Ansicht. Aus diesem Grund das Ansichtsmodell isoliert die Ansicht aus dem Modell, und kann das Modell unabhängig von der Ansicht zu entwickeln.
+Zusätzlich zum Verständnis der Zuständigkeiten der einzelnen Komponenten ist es auch wichtig zu verstehen, wie Sie miteinander interagieren. Die Ansicht "kennt" das Ansichts Modell, und das Ansichts Modell "kennt" das Modell, aber das Modell kennt das Ansichts Modell nicht, und das Ansichts Modell kennt die Sicht nicht. Aus diesem Grund isoliert das Ansichts Modell die Ansicht vom Modell und ermöglicht es, das Modell unabhängig von der Ansicht zu entwickeln.
 
-Die Vorteile der Verwendung des MVVM-Musters sind wie folgt:
+Die Verwendung des MVVM-Musters bietet folgende Vorteile:
 
--   Ist eine vorhandene modellimplementierung, die vorhandene Geschäftslogik kapselt, kann es schwierig oder riskante, um ihn zu ändern. In diesem Szenario wird das Ansichtsmodell fungiert als Adapter für die Modellklassen und können Sie vermeiden, dass wichtigeren Änderungen an der Model-Code.
--   Entwickler können die Komponententests für das Ansichtsmodell und das Modell erstellen, ohne die Ansicht. Die Komponententests für das Ansichtsmodell können genau die gleiche Funktionalität wie von der Sicht ausführen.
--   Die Benutzeroberfläche die app kann ohne Änderung des Codes, überarbeitet werden, vorausgesetzt, dass die Ansicht vollständig in XAML implementiert wird. Aus diesem Grund sollten eine neue Version der Ansicht mit dem vorhandenen Modell der Sicht arbeiten.
--   Designer und Entwickler können unabhängig voneinander und gleichzeitig ihre Komponenten während des Entwicklungsprozesses arbeiten. Designer können auf die Ansicht konzentrieren, während Entwickler auf dem Ansichtsmodell und die Modellkomponenten arbeiten können.
+- Wenn eine vorhandene Modell Implementierung vorhanden ist, die vorhandene Geschäftslogik kapselt, kann es schwierig oder riskant sein, Sie zu ändern. In diesem Szenario fungiert das Ansichts Modell als Adapter für die Modellklassen und ermöglicht es Ihnen, größere Änderungen am Modellcode zu vermeiden.
+- Entwickler können Komponententests für das Ansichts Modell und das Modell erstellen, ohne die Ansicht zu verwenden. Die Komponententests für das Ansichts Modell können exakt die gleiche Funktionalität wie die Ansicht verwenden.
+- Die Benutzeroberfläche der APP kann ohne berühren des Codes umgestaltet werden, vorausgesetzt, die Ansicht wird vollständig in XAML implementiert. Daher sollte eine neue Version der Sicht mit dem vorhandenen Ansichts Modell funktionieren.
+- Designer und Entwickler können während des Entwicklungsprozesses unabhängig und gleichzeitig auf ihren Komponenten arbeiten. Designer können sich auf die Ansicht konzentrieren, während Entwickler mit dem Ansichts Modell und den Modellkomponenten arbeiten können.
 
-Der Schlüssel für die effektive Verwendung von MVVM liegt im Verständnis, app-Code in die richtigen Klassen zu berücksichtigen und zu verstehen, wie die Klassen interagieren. Den folgenden Abschnitten werden die Verantwortlichkeiten der einzelnen Klassen in das MVVM-Muster.
+Der Schlüssel zur Verwendung von MVVM besteht darin, zu verstehen, wie der app-Code in die richtigen Klassen eingeteilt wird, und um zu verstehen, wie die Klassen interagieren. In den folgenden Abschnitten werden die Zuständigkeiten der einzelnen Klassen im MVVM-Muster erörtert.
 
 ### <a name="view"></a>Ansicht
 
-Die Ansicht ist dafür verantwortlich zu definieren, die Struktur, Layout und Darstellung von was der Benutzer auf dem Bildschirm angezeigt wird. In XAML, wird im Idealfall jede Ansicht mit einer begrenzten Code-Behind definiert, die keine Geschäftslogik enthalten. Jedoch kann das Code-Behind in einigen Fällen UI-Logik enthalten, das visuelle Verhalten implementiert, das zum Ausdrücken in XAML, wie z.B. Animationen schwierig ist.
+Die Sicht ist dafür verantwortlich, die Struktur, das Layout und die Darstellung des Benutzers zu definieren, der auf dem Bildschirm angezeigt wird. Im Idealfall wird jede Ansicht in XAML definiert, mit einem eingeschränkten Code Behind, das keine Geschäftslogik enthält. In einigen Fällen kann der Code Behind jedoch UI-Logik enthalten, die ein visuelles Verhalten implementiert, das in XAML, wie z. b. Animationen, schwer auszudrücken ist.
 
-In einer Xamarin.Forms-Anwendung ist eine Ansicht in der Regel eine [ `Page` ](xref:Xamarin.Forms.Page)-abgeleitet oder [ `ContentView` ](xref:Xamarin.Forms.ContentView)-abgeleitete Klasse. Sichten können jedoch auch durch eine Datenvorlage dargestellt werden, die angibt, die Elemente der Benutzeroberfläche verwendet werden, um ein Objekt visuell darzustellen, wenn er angezeigt wird. Eine Datenvorlage als Sicht keine Code-Behind, und dient zum Binden an eine bestimmte ansichtsmodelltyp.
+In einer xamarin. Forms-Anwendung ist eine Sicht in der [`Page`](xref:Xamarin.Forms.Page)Regel eine von [`ContentView`](xref:Xamarin.Forms.ContentView)abgeleitete oder abgeleitete Klasse. Sichten können jedoch auch durch eine Daten Vorlage dargestellt werden, die die Benutzeroberflächen Elemente angibt, die zur visuellen Darstellung eines Objekts verwendet werden sollen, wenn es angezeigt wird. Eine Daten Vorlage als Sicht weist keinen Code Behind auf und ist für die Bindung an einen bestimmten Ansichts Modelltyp konzipiert.
 
 > [!TIP]
-> Vermeiden Sie aktivieren und Deaktivieren von Elementen der Benutzeroberfläche in Code-Behind. Stellen Sie sicher, dass Ansichtsmodelle zum Definieren von logischen Zustandsänderungen, die Auswirkungen auf einige Aspekte von der Ansicht angezeigt, z. B. dienen, ob ein Befehl verfügbar ist oder ein Hinweis, dass ein Vorgang aussteht. Aus diesem Grund aktivieren Sie und deaktivieren Sie die Elemente der Benutzeroberfläche durch Bindung an Eigenschaften des Modells, anstatt aktivieren und deaktivieren diese im Code-Behind.
+> Vermeiden Sie das Aktivieren und Deaktivieren von Benutzeroberflächen Elementen im Code Behind. Stellen Sie sicher, dass Ansichts Modelle für das Definieren logischer Zustandsänderungen verantwortlich sind, die einige Aspekte der Anzeige der Sicht beeinflussen, z. b. ob ein Befehl verfügbar ist, oder ob ein Vorgang aussteht. Daher können Sie Benutzeroberflächen Elemente aktivieren und deaktivieren, indem Sie an die Ansicht von Modell Eigenschaften binden, anstatt Sie im Code Behind zu aktivieren und zu deaktivieren.
 
-Es gibt verschiedene Optionen zum Ausführen von Code im Ansichtsmodell in Reaktion auf Interaktionen für die Sicht, z. B. eine Schaltfläche klicken oder die Auswahl von Listenelementen. Wenn ein Steuerelement unterstützt die Befehle aus, das Steuerelement des `Command` Eigenschaft kann werden Datenbindung an ein `ICommand` Eigenschaft im Ansichtsmodell. Wenn das Steuerelement der Befehl aufgerufen wird, wird der Code in das Ansichtsmodell ausgeführt werden. Zusätzlich zu den Befehlen Verhalten können zu einem Objekt in der Ansicht angefügt werden und können für den aufzurufenden Hilfebefehl oder Ereignis ausgelöst wird lauscht. In der Antwort, das Verhalten dann aufrufen, eine `ICommand` auf das View Model oder eine Methode für das Ansichtsmodell.
+Es gibt mehrere Optionen zum Ausführen von Code für das Ansichts Modell als Reaktion auf Interaktionen in der Ansicht, z. b. ein Klick auf eine Schaltfläche oder eine Elementauswahl. Wenn ein Steuerelement-Befehle unterstützt, `Command` kann die-Eigenschaft des-Steuer Elements `ICommand` an eine-Eigenschaft im Ansichts Modell gebunden werden. Wenn der Befehl des-Steuer Elements aufgerufen wird, wird der Code im Ansichts Modell ausgeführt. Zusätzlich zu Befehlen können Verhaltensweisen an ein Objekt in der Ansicht angefügt werden, und es kann entweder auf einen aufzurufenden Befehl oder ein auszuwerendes Ereignis lauschen. In der Antwort kann das Verhalten dann ein für `ICommand` das Ansichts Modell oder eine Methode für das Ansichts Modell aufrufen.
 
 ### <a name="viewmodel"></a>ViewModel
 
-Das Ansichtsmodell implementiert, Eigenschaften und Befehle, die in dem Sie die Ansicht kann die Datenbindung an und benachrichtigt den Überblick über alle Änderungen des Ansichtszustands durch Änderungsereignisse für die Benachrichtigung. Definieren die Eigenschaften und Befehle, die das Ansichtsmodell enthält die Funktionalität über die Benutzeroberfläche angeboten werden, aber die Ansicht bestimmt, wie diese Funktion, die angezeigt werden.
+Das Ansichts Modell implementiert Eigenschaften und Befehle, an die die Sicht Daten binden kann, und benachrichtigt die Ansicht von Zustandsänderungen über Änderungs Benachrichtigungs Ereignisse. Die Eigenschaften und Befehle, die das Ansichts Modell bereitstellt, definieren die Funktionen, die von der Benutzeroberfläche angeboten werden, aber die Ansicht bestimmt, wie diese Funktionalität angezeigt werden soll.
 
 > [!TIP]
-> Halten Sie die Benutzeroberfläche reaktionsfähig mit asynchronen Vorgängen. Mobile apps sollte im UI-Thread nicht mehr blockiert, um die Wahrnehmung des Benutzers, der Leistung zu verbessern beibehalten werden. Klicken Sie daher im Ansichtsmodell, verwenden Sie asynchrone Methoden für e/a-Vorgänge und Auslösen von Ereignissen, um Ansichten der eigenschaftenänderungen asynchron zu benachrichtigen.
+> Halten Sie die Benutzeroberfläche mit asynchronen Vorgängen reaktionsfähig. Bei mobilen apps sollte der UI-Thread nicht blockiert werden, um die Leistung des Benutzers zu verbessern. Verwenden Sie daher im Ansichts Modell asynchrone Methoden für e/a-Vorgänge, und rufen Sie Ereignisse auf, um Ansichten von Eigenschafts Änderungen asynchron zu benachrichtigen.
 
-Das Ansichtsmodell ist auch verantwortlich für die Koordination der Ansicht Interaktionen mit jeder Modellklassen, die erforderlich sind. In der Regel besteht eine 1: n Beziehung zwischen dem Ansichtsmodell und ViewModel-Klassen. Das Ansichtsmodell kann auch ViewModel-Klassen direkt auf die Sicht verfügbar zu machen, damit die Steuerelemente in der Ansicht die Daten direkt an diese gebunden werden können. In diesem Fall müssen die ViewModel-Klassen entworfen werden, die Datenbindung unterstützen, und Ändern von Benachrichtigungsereignissen.
+Das Ansichts Modell ist auch dafür verantwortlich, die Interaktionen der Ansicht mit allen erforderlichen Modellklassen zu koordinieren. Es gibt in der Regel eine 1: n-Beziehung zwischen dem Ansichts Modell und den Modellklassen. Das Ansichts Modell kann Modellklassen direkt für die Ansicht verfügbar machen, sodass Steuerelemente in der Ansicht direkt an Sie gebunden werden können. In diesem Fall müssen die Modellklassen entworfen werden, um Daten Bindungs-und Änderungs Benachrichtigungs Ereignisse zu unterstützen.
 
-Jedes Ansichtsmodell enthält Daten über ein Modell in ein Formular, das die Ansicht nutzen kann. Um dies zu erreichen, führt das Ansichtsmodell manchmal der Datenkonvertierung. Platzieren diese Datenkonvertierung in das Ansichtsmodell ist eine gute Idee, da sie Eigenschaften enthält, denen die Sicht gebunden werden kann. Das Ansichtsmodell kann z. B. die Werte von zwei Eigenschaften, die für die Anzeige von der Sicht erleichtern kombinieren.
+Jedes Ansichts Modell stellt Daten aus einem Modell in einem Format bereit, das von der Ansicht problemlos verwendet werden kann. Um dies zu erreichen, führt das Ansichts Modell manchmal eine Datenkonvertierung durch. Das Platzieren dieser Datenkonvertierung im Ansichts Modell ist eine gute Idee, da Sie Eigenschaften bereitstellt, an die die Ansicht gebunden werden kann. Das Ansichts Modell kann z. b. die Werte von zwei Eigenschaften kombinieren, um die Anzeige durch die Sicht zu vereinfachen.
 
 > [!TIP]
-> Zentralisieren Sie die Konvertierung von Daten in einer Konvertierungsebene. Es ist auch möglich, Konverter als eine separate Datenschicht für die Konvertierung zu verwenden, die zwischen dem Ansichtsmodell und der Ansicht befindet. Dies kann z. B. erforderlich, sein, wenn Daten erfordert spezielle Formatierung, die das Ansichtsmodell nicht zur Verfügung stellt.
+> Zentralisieren von Datenkonvertierungen in einer Konvertierungs Schicht. Es ist auch möglich, Konverter als separate Daten Konvertierungs Schicht zu verwenden, die sich zwischen dem Ansichts Modell und der Ansicht befindet. Dies kann z. b. erforderlich sein, wenn Daten eine spezielle Formatierung erfordern, die das Ansichts Modell nicht bereitstellt.
 
-In der Reihenfolge für das Ansichtsmodell an bidirektionale Datenbindung mit der Ansicht teilzunehmen, müssen seine Eigenschaften Auslösen der `PropertyChanged` Ereignis. Ansichtsmodelle diese Anforderung erfüllen, durch die Implementierung der `INotifyPropertyChanged` Schnittstelle und Auslösen der `PropertyChanged` Ereignis aus, wenn eine Eigenschaft geändert wird.
+Damit das Ansichts Modell an der bidirektionalen Datenbindung mit der Sicht teilnehmen kann, müssen seine Eigenschaften `PropertyChanged` das-Ereignis erhöhen. Ansichts Modelle erfüllen diese Anforderung, indem `INotifyPropertyChanged` Sie die-Schnittstelle `PropertyChanged` implementieren und das-Ereignis lösen, wenn eine Eigenschaft geändert wird.
 
-Für Sammlungen, die geeignete Ansicht `ObservableCollection<T>` wird bereitgestellt. Diese Auflistung implementiert die geänderte Auflistung Benachrichtigung sind daher weniger den Entwickler zu implementieren die `INotifyCollectionChanged` Schnittstelle für Sammlungen.
+Für Sammlungen `ObservableCollection<T>` wird die Anzeige Anzeige bereitgestellt. Diese Auflistung implementiert eine Auflistung geänderter Benachrichtigungen, sodass der Entwickler die `INotifyCollectionChanged` -Schnittstelle für Sammlungen nicht implementieren muss.
 
 ### <a name="model"></a>Modell
 
-ViewModel-Klassen sind nicht-Visual-Klassen, die die Daten der app zu kapseln. Aus diesem Grund kann das Modell der Darstellung der app-Domänenmodell, in der Regel enthält ein Datenmodell, zusammen mit Business und Validierungslogik betrachtet werden. Beispiele für Modellobjekte sind datentransferobjekte (DTOs), Plain Old CLR Objects (POCOs) und erstellte Entität und Proxyobjekten.
+Modellklassen sind nicht visuelle Klassen, die die Daten der APP Kapseln. Daher kann sich das Modell als das Domänen Modell der APP vorstellen, das in der Regel ein Datenmodell zusammen mit der Geschäfts-und Validierungs Logik enthält. Beispiele für Modell Objekte sind Data Transfer Objects (DTOs), Plain Old CLR Objects (POCOS) und generierte Entitäts-und Proxy Objekte.
 
-ViewModel-Klassen werden in der Regel verwendet, in Verbindung mit Diensten oder -Repositorys, die Zugriff auf Daten und Zwischenspeichern zu kapseln.
+Modellklassen werden in der Regel in Verbindung mit Diensten oder Depots verwendet, die Datenzugriff und Caching Kapseln.
 
-## <a name="connecting-view-models-to-views"></a>Herstellen einer Verbindung Ansichten mit Anzeigemodelle
+## <a name="connecting-view-models-to-views"></a>Verbinden von Ansichts Modellen mit Ansichten
 
-Ansichtsmodelle können über die Datenbindungsfunktionen von Xamarin.Forms mit Ansichten verbunden sein. Es gibt verschiedene Methoden, die zum Erstellen von Ansichten und Ansichtsmodelle und ordnen Sie sie zur Laufzeit verwendet werden können. Diese Ansätze fallen in zwei Kategorien, bekannt als Zusammenstellung der ersten und der ersten Ansicht Komposition von Modellen. Auswählen zwischen Zusammenstellung der ersten und der Ansicht, dass die erste Komposition von Modellen ein Problem des Geschmacks und die Komplexität ist. Alle Methoden verwenden jedoch das gleiche Ziel, die für die Ansicht, damit ein Ansichtsmodell, das die Eigenschaft "BindingContext" zugewiesen ist.
+Ansichts Modelle können mit Ansichten verknüpft werden, indem die Daten Bindungsfunktionen von xamarin. Forms verwendet werden. Es gibt viele Ansätze, die zum Erstellen von Sichten und Anzeigen von Modellen verwendet und zur Laufzeit zugeordnet werden können. Diese Ansätze werden in zwei Kategorien unterteilt, die als "View First Composition" und "View Model First Composition" bezeichnet werden. Die Auswahl zwischen der ersten Komposition der Ansicht erste Komposition und dem Anzeigen des Modells ist ein Problem der Präferenz und Komplexität. Allerdings verwenden alle Ansätze dasselbe Ziel, sodass die Ansicht über ein Ansichts Modell verfügt, das ihrer BindingContext-Eigenschaft zugewiesen ist.
 
-Ansicht erste Komposition der app im Prinzip Ansichten besteht, die mit den Ansichtsmodellen zu verbinden, von denen sie abhängen. Der Hauptvorteil dieses Ansatzes ist, dass es einfach, zum Erstellen von lose gekoppelten Einheit testfähiger apps vereinfacht, da die Ansichtsmodelle keine Abhängigkeit mehr von den Ansichten selbst haben. Es ist auch einfach zu verstehen die Struktur der app durch die visuelle Struktur folgt, anstatt zum Nachverfolgen der codeausführung, um zu verstehen, wie Klassen erstellt und verknüpft sind. Darüber hinaus entspricht das Xamarin.Forms Navigationssystem, das Erstellen von Seiten verantwortlich ist, bei der Navigation werden dadurch eine Zusammenstellung der ersten Modell komplex und mit der Plattform falsch ausgerichtete erste Erstellung der Ansicht.
+Mit der ersten Komposition der Ansicht besteht die APP konzeptionell aus Sichten, die eine Verbindung mit den Ansichts Modellen herstellen, von denen Sie abhängig sind. Der Hauptvorteil dieses Ansatzes besteht darin, dass es einfach ist, lose gekoppelte, Komponenten testbare apps zu erstellen, da die Ansichts Modelle nicht von den Sichten selbst abhängig sind. Es ist auch einfach, die Struktur der APP zu verstehen, indem Sie der visuellen Struktur folgt, anstatt die Codeausführung zu verfolgen, um zu verstehen, wie Klassen erstellt und zugeordnet werden. Außerdem richtet sich die Ansicht erste Konstruktion mit dem xamarin. Forms-Navigationssystem aus, das für das Erstellen von Seiten bei der Navigation zuständig ist. Dadurch wird die erste Komposition eines Ansichts Modells komplex und mit der Plattform falsch ausgerichtet.
 
-Ansicht erste Komposition von Modellen in der app im Prinzip Modelle anzeigen, mit einem Dienst wird für die Suche nach der Ansicht für ein Ansichtsmodell verantwortlich besteht. Erste Komposition von Modellen Ansicht natürlichere für einige Entwickler, da es sich bei die Erstellung der Sicht, abstrahiert werden kann, sodass sie sich auf die logische nicht-UI-Struktur der app konzentrieren. Darüber hinaus können sie Modelle anzeigen, von der anderen Modelle anzeigen erstellt werden. Allerdings dieser Ansatz ist häufig komplexe, und es kann schwierig zu verstehen, wie Sie die verschiedenen Teile der app erstellt und verknüpft werden.
+Bei der ersten Komposition des Ansichts Modells besteht die APP konzeptionell aus Ansichts Modellen, wobei ein Dienst für die Suche nach der Ansicht für ein Ansichts Modell verantwortlich ist. Die Ansichts Modell erste Komposition ist für einige Entwickler natürlicher, da die Ansichts Erstellung abstrahiert werden kann, sodass Sie sich auf die logische Struktur der nicht-UI-Struktur der APP konzentrieren können. Außerdem können Ansichts Modelle von anderen Ansichts Modellen erstellt werden. Dieser Ansatz ist jedoch oft komplex, und es kann schwierig werden, zu verstehen, wie die verschiedenen Teile der App erstellt und zugeordnet werden.
 
 > [!TIP]
-> Halten Sie ViewModels und Ansichten unabhängig. Die Bindung von Ansichten auf eine Eigenschaft in einer Datenquelle sollte die principal Abhängigkeit von der Ansicht auf die entsprechende Ansichtsmodell. Insbesondere keine Verweistypen anzeigen, wie z. B. [ `Button` ](xref:Xamarin.Forms.Button) und [ `ListView` ](xref:Xamarin.Forms.ListView), aus der anzeigemodelle. Befolgen Sie die hier beschriebenen Prinzipien, können anzeigemodelle isoliert, wodurch die Wahrscheinlichkeit, dass von Softwarefehlern vom Bereich einschränken getestet werden.
+> Halten Sie Ansichts Modelle und Ansichten unabhängig voneinander. Die Bindung von Sichten an eine Eigenschaft in einer Datenquelle sollte die Prinzipal Abhängigkeit der Sicht des entsprechenden Ansichts Modells sein. Verweisen Sie insbesondere nicht auf Ansichts Typen, [`Button`](xref:Xamarin.Forms.Button) z [`ListView`](xref:Xamarin.Forms.ListView). b. und, von Ansichts Modellen. Mithilfe der hier beschriebenen Prinzipien können Ansichts Modelle isoliert getestet werden. Dadurch wird die Wahrscheinlichkeit von Softwarefehlern verringert, indem der Bereich eingeschränkt wird.
 
-Den folgenden Abschnitten werden die Hauptmethoden der Ansichten mit anzeigemodelle.
+In den folgenden Abschnitten werden die wichtigsten Ansätze zum Verbinden von Ansichts Modellen mit Ansichten erläutert.
 
-### <a name="creating-a-view-model-declaratively"></a>Erstellen ein Ansichtsmodell deklarativ
+### <a name="creating-a-view-model-declaratively"></a>Deklaratives Erstellen eines Ansichts Modells
 
-Der einfachste Ansatz ist für die Ansicht, um die entsprechende Ansichtsmodell in XAML deklarativ zu instanziieren. Wenn die Sicht erstellt wird, wird auch das entsprechende ViewModel-Objekt erstellt werden. Dieser Ansatz wird im folgenden Codebeispiel veranschaulicht:
+Der einfachste Ansatz besteht darin, dass die Sicht das zugehörige Ansichts Modell in XAML deklarativ instanziiert. Wenn die Sicht erstellt wird, wird auch das entsprechende Ansichts Modell Objekt erstellt. Dieser Ansatz wird im folgenden Codebeispiel veranschaulicht:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:eShop">  
@@ -100,13 +100,13 @@ Der einfachste Ansatz ist für die Ansicht, um die entsprechende Ansichtsmodell 
 </ContentPage>
 ```
 
-Wenn die [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) erstellt wird, wird eine Instanz von der `LoginViewModel` wird automatisch erstellt und als der Ansicht [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext).
+Wenn erstellt `LoginViewModel`wird, wird automatisch eine Instanz von erstellt und als der der Ansicht [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)festgelegt. [`ContentPage`](xref:Xamarin.Forms.ContentPage)
 
-Diese deklarativen Erstellung und Zuweisung des Ansichtsmodells durch die Sicht hat den Vorteil, dass es einfach ist, aber den Nachteil hat, dass es sich um einen (parameterlosen) Standardkonstruktor im Ansichtsmodell erfordert.
+Diese deklarative Erstellung und Zuweisung des Ansichts Modells durch die Sicht hat den Vorteil, dass Sie einfach ist, aber hat den Nachteil, dass Sie einen standardmäßigen (Parameter losen) Konstruktor im Ansichts Modell erfordert.
 
-### <a name="creating-a-view-model-programmatically"></a>Programmgesteuertes Erstellen von Anzeigemodellen
+### <a name="creating-a-view-model-programmatically"></a>Programm gesteuertes Erstellen eines Ansichts Modells
 
-Eine Sicht kann Code verfügen, in der Code-Behind-Datei, die sich im Ansichtsmodell zuzuweisende ergibt die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Eigenschaft. Dies erfolgt häufig im Konstruktor der Ansicht, wie im folgenden Codebeispiel gezeigt:
+Eine Sicht kann Code in der Code Behind-Datei enthalten, die dazu [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) führt, dass das Ansichts Modell der-Eigenschaft zugewiesen wird. Dies wird häufig im Konstruktor der Sicht erreicht, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public LoginView()  
@@ -116,23 +116,23 @@ public LoginView()
 }
 ```
 
-Die programmgesteuerte Erstellung und die Zuweisung des Ansichtsmodells in der Ansicht CodeBehind hat den Vorteil, dass es einfach ist. Der wichtigste Nachteil dieses Ansatzes ist jedoch, dass die Sicht, um das Ansichtsmodell alle erforderlichen Abhängigkeiten bereitzustellen muss. Mithilfe von DI-Containern kann dabei helfen, lose Kopplung zwischen der Ansicht und Ansichtsmodell beizubehalten. Weitere Informationen finden Sie unter [Dependency Injection](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
+Die programmgesteuerte Erstellung und Zuweisung des Ansichts Modells im Code-Behind der Ansicht hat den Vorteil, dass es einfach ist. Der Hauptnachteil dieses Ansatzes besteht jedoch darin, dass die Sicht das Ansichts Modell mit allen erforderlichen Abhängigkeiten bereitstellen muss. Die Verwendung eines Containers für die Abhängigkeitsinjektion kann die lose Kopplung zwischen dem Ansichts-und dem Ansichts Modell unterstützen Weitere Informationen finden Sie unter [Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
-### <a name="creating-a-view-defined-as-a-data-template"></a>Erstellen einer Ansicht definiert als eine Datenvorlage
+### <a name="creating-a-view-defined-as-a-data-template"></a>Erstellen einer Ansicht, die als Daten Vorlage definiert ist
 
-Eine Sicht kann definiert wird, als eine Datenvorlage und einen ansichtsmodelltyp zugeordnet werden. Datenvorlagen können als Ressourcen definiert werden, oder sie verwendet werden können innerhalb des Steuerelements, die das Ansichtsmodell angezeigt werden. Der Inhalt des Steuerelements ist die Modellinstanz anzeigen und die Datenvorlage wird verwendet, um sie darzustellen. Dieses Verfahren ist ein Beispiel für eine Situation, in der das View Model zuerst gefolgt von der Erstellung der Sicht instanziiert wird.
+Eine Sicht kann als Daten Vorlage definiert und einem Ansichts Modelltyp zugeordnet werden. Datenvorlagen können als Ressourcen definiert werden, oder Sie können Inline innerhalb des Steuer Elements definiert werden, in dem das Ansichts Modell angezeigt wird. Der Inhalt des Steuer Elements ist die Ansichts Modell Instanz, und die Daten Vorlage wird zur visuellen Darstellung verwendet. Diese Technik ist ein Beispiel für eine Situation, in der zuerst das Ansichts Modell instanziiert wird, gefolgt von der Erstellung der Sicht.
 
 <a name="automatically_creating_a_view_model_with_a_view_model_locator" />
 
-### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>Automatisch erstellen ein Ansichtsmodell mit einem View Model-Locator
+### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>Automatisches Erstellen eines Ansichts Modells mit einem Ansichts Modell-Locator
 
-Ein View-Model-Locator ist eine benutzerdefinierte Klasse, die die Instanziierung der anzeigemodelle und ihre Zuordnung zu Ansichten verwaltet. In der mobilen Anwendung "eshoponcontainers" die `ViewModelLocator` -Klasse verfügt über eine angefügte Eigenschaft, `AutoWireViewModel`, wird verwendet, um Sichten Ansichtsmodelle zugeordnet werden. In der Ansicht XAML ist angefügte Eigenschaft festgelegt, auf "true", um anzugeben, dass das Ansichtsmodell automatisch mit der Ansicht verbunden werden sollen, wie im folgenden Codebeispiel gezeigt:
+Ein Ansichts Modell-Serverlocatorpunkt ist eine benutzerdefinierte Klasse, die die Instanziierung von Ansichts Modellen und deren Zuordnung zu Sichten verwaltet. Im eshoponcontainers-Mobile App verfügt die `ViewModelLocator` -Klasse über die angefügte `AutoWireViewModel`-Eigenschaft, die verwendet wird, um Ansichts Modelle Ansichten zuzuordnen. In der XAML der Ansicht wird diese angefügte Eigenschaft auf true festgelegt, um anzugeben, dass das Ansichts Modell automatisch mit der Ansicht verbunden werden soll, wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
 viewModelBase:ViewModelLocator.AutoWireViewModel="true"
 ```
 
-Die `AutoWireViewModel` -Eigenschaft ist eine bindbare Eigenschaft, die auf "false" initialisiert, und wenn der Wert ändert, die `OnAutoWireViewModelChanged` Ereignishandler wird aufgerufen. Diese Methode löst das Ansichtsmodell für die Ansicht. Im folgenden Codebeispiel wird veranschaulicht, wie dies erreicht wird:
+Die `AutoWireViewModel` -Eigenschaft ist eine bindbare Eigenschaft, die mit false initialisiert wird. wenn deren Wert geändert `OnAutoWireViewModelChanged` wird, wird der Ereignishandler aufgerufen. Diese Methode löst das Ansichts Modell für die Sicht auf. Das folgende Codebeispiel zeigt, wie dies erreicht wird:
 
 ```csharp
 private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)  
@@ -159,34 +159,34 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, obj
 }
 ```
 
-Die `OnAutoWireViewModelChanged` -Methode versucht, die das Ansichtsmodell mit einem konventionsbasierten Ansatz zu beheben. Diese Konvention wird vorausgesetzt, dass:
+Die `OnAutoWireViewModelChanged` -Methode versucht, das Ansichts Modell mithilfe eines auf der Konvention basierenden Ansatzes aufzulösen. Diese Konvention setzt Folgendes voraus:
 
--   Anzeigemodelle, sind in der gleichen Assembly wie Ansichtstypen.
--   Sichten befinden sich in einem. Untergeordneter Ansichten-Namespace.
--   Ansichtsmodelle befinden sich in einem. ViewModels untergeordneter Namespace.
--   Sichtnamen-Modell mit Ansichtsnamen entsprechen und enden mit "ViewModel".
+- Ansichts Modelle befinden sich in derselben Assembly wie Ansichts Typen.
+- Sichten befinden sich in einer. Views untergeordneter Namespace.
+- Ansichts Modelle befinden sich in einer. Untergeordneter ViewModels-Namespace.
+- Anzeigen von Modellnamen entsprechen Ansichts Namen und enden mit "ViewModel".
 
-Schließlich die `OnAutoWireViewModelChanged` Methode legt die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) des Typs aufgelöst ansichtsmodelltyp anzeigen. Weitere Informationen zum Beheben von ansichtsmodelltyp finden Sie unter [Auflösung](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution).
+Schließlich legt die `OnAutoWireViewModelChanged` -Methode den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) des Ansichts Typs auf den aufgelösten Ansichts Modelltyp fest. Weitere Informationen zum Auflösen des Ansichts Modell Typs finden Sie unter [Resolution](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution).
 
-Dieser Ansatz hat den Vorteil, dass eine app verfügt über eine einzelne Klasse, die für die Instanziierung der anzeigemodelle und die Verbindung mit Ansichten zuständig ist.
+Diese Vorgehensweise hat den Vorteil, dass eine APP über eine einzelne Klasse verfügt, die für die Instanziierung von Ansichts Modellen und deren Verbindung mit Ansichten zuständig ist.
 
 > [!TIP]
-> Verwenden Sie einen Ansicht-Modell-Locator, zur Vereinfachung der Ersetzung. Ein Ansicht-Modell-Locator kann auch als ein Punkt, der Ersatz für alternative Implementierungen von Abhängigkeiten, wie z. B. für Unit Tests oder Entwurf Zeitdaten verwendet werden.
+> Verwenden Sie für die einfache Ersetzung einen Ansichts Modell-Serverlocatorpunkt. Ein Ansichts Modell-Serverlocatorpunkt kann auch als Ersatz Punkt für alternative Implementierungen von Abhängigkeiten verwendet werden, z. b. für Komponententests oder Entwurfszeit Daten.
 
-## <a name="updating-views-in-response-to-changes-in-the-underlying-view-model-or-model"></a>Aktualisieren von Sichten als Reaktion auf Änderungen in der zugrunde liegenden anzeigen, Modell oder das Modell
+## <a name="updating-views-in-response-to-changes-in-the-underlying-view-model-or-model"></a>Aktualisieren von Sichten als Reaktion auf Änderungen am zugrunde liegenden Ansichts Modell oder Modell
 
-Alle Ansichtsmodell und ViewModel-Klassen, die an eine Ansicht verfügbar sind, sollten implementieren die `INotifyPropertyChanged` Schnittstelle. Diese Schnittstelle in einem Ansichtsmodell oder Modellklasse implementiert, ermöglicht der Klasse, die änderungsbenachrichtigungen von datengebundenen Steuerelementen in der Ansicht bereitstellen, wenn der zugrunde liegende Eigenschaftswert geändert wird.
+Alle Ansichts Modell-und Modellklassen, die für eine Sicht zugänglich sind `INotifyPropertyChanged` , sollten die-Schnittstelle implementieren. Durch Implementieren dieser Schnittstelle in einem Ansichts Modell oder einer Modell Klasse kann die Klasse Änderungs Benachrichtigungen für alle Daten gebundenen Steuerelemente in der Ansicht bereitstellen, wenn sich der zugrunde liegende Eigenschafts Wert ändert.
 
-Apps sollten für die korrekte Verwendung von Benachrichtigung der Eigenschaftenänderung, so entworfen werden, indem Sie die folgenden Anforderungen erfüllen:
+Apps sollten für die korrekte Verwendung der Benachrichtigung über Eigenschafts Änderungen entworfen werden, indem die folgenden Anforderungen erfüllt werden:
 
--   Immer das Auslösen einer `PropertyChanged` Ereignis, wenn eine öffentliche Eigenschaft-Wert ändert. Nehmen Sie nicht an, das Auslösen der `PropertyChanged` Ereignis kann aufgrund von Kenntnisse wie XAML-Bindung tritt auf, ignoriert werden.
--   Immer das Auslösen einer `PropertyChanged` -Ereignis für eine berechnete Eigenschaften, deren Werte durch andere Eigenschaften in der Ansicht verwendet werden-Modell oder das Modell.
--   Auslösen von immer die `PropertyChanged` Ereignis am Ende der Methode, die eine Eigenschaft geändert wird, oder wenn das Objekt in einen sicheren Zustand bekannt ist. Auslösen des Ereignisses unterbricht den Vorgang, durch die Ereignishandler synchron aufrufen. Gerade ein Vorgang in diesem Fall kann es das Objekt, das Rückruffunktionen verfügbar, wenn es in einem unsicheren, teilweise aktualisierten Zustand befindet. Darüber hinaus ist es möglich, dass überlappende Änderungen, die von ausgelöst werden `PropertyChanged` Ereignisse. Kaskadierende Änderungen erfordern in der Regel Updates abgeschlossen sein, bevor die kaskadierende Änderung sicher ausgeführt werden.
--   Auslösen von nie eine `PropertyChanged` Ereignis, wenn die Eigenschaft nicht geändert wird. Dies bedeutet, dass Sie die alten und neuen Werte, vor dem Auslösen vergleichen müssen der `PropertyChanged` Ereignis.
--   Auslösen von nie die `PropertyChanged` Ereignis während des Ansichtsmodells-Konstruktor, wenn Sie eine Eigenschaft initialisieren. Datengebundene Steuerelemente in der Ansicht werden nicht für die Änderung an diesem Punkt Benachrichtigungen abonniert haben.
--   Auslösen von nie mehr als eine `PropertyChanged` -Ereignis mit dem gleichen Argument der Eigenschaft Name innerhalb einer einzelnen synchronen Aufruf eine öffentliche Methode einer Klasse. Angenommen, ein `NumberOfItems` -Eigenschaft, deren Sicherungsspeicher der `_numberOfItems` Feld, wenn eine Methode inkrementiert `_numberOfItems` 50 Mal während der Ausführung einer Schleife, es sollte nur auslösen Benachrichtigung der Eigenschaftenänderung auf die `NumberOfItems` einmal-Eigenschaft Nachdem die gesamte Arbeit abgeschlossen ist. Für asynchrone Methoden, auslösen, die `PropertyChanged` -Ereignis für einen angegebenen Eigenschaftsnamen in jedem Segment Verwenden einer Kette asynchrone Fortsetzung synchron.
+- Ein `PropertyChanged` -Ereignis immer dann aufhebt, wenn sich der Wert einer öffentlichen Eigenschaft ändert. Gehen Sie nicht davon aus, `PropertyChanged` dass das Auslassen des Ereignisses ignoriert werden kann, da die XAML-Bindung nicht ausgeführt werden kann.
+- Immer ein `PropertyChanged` -Ereignis für alle berechneten Eigenschaften, deren Werte von anderen Eigenschaften im Ansichts Modell oder Modell verwendet werden.
+- Das `PropertyChanged` Ereignis wird immer am Ende der Methode, die eine Eigenschafts Änderung durchführt, oder, wenn das Objekt bekanntermaßen in einem sicheren Zustand ist, erhöht. Durch das Auslösen des Ereignisses wird der Vorgang unterbrochen, indem die Handler des Ereignisses synchron aufgerufen werden. Wenn dies in der Mitte eines Vorgangs geschieht, kann das Objekt für Rückruf Funktionen verfügbar gemacht werden, wenn es sich in einem unsicheren, teilweise aktualisierten Zustand befindet. Darüber hinaus können kaskadierende Änderungen durch `PropertyChanged` Ereignisse ausgelöst werden. Bei kaskadierenden Änderungen müssen Updates im allgemeinen vollständig ausgeführt werden, damit die kaskadierende Änderung sicher ausgeführt werden kann.
+- Ein `PropertyChanged` -Ereignis niemals aufhebt, wenn sich die-Eigenschaft nicht ändert. Dies bedeutet, dass Sie die alten und neuen Werte vergleichen müssen, bevor `PropertyChanged` Sie das Ereignis erhöhen.
+- Wenn Sie eine `PropertyChanged` Eigenschaft initialisieren, wird das Ereignis niemals während des Konstruktors eines Ansichts Modells angehoben. Daten gebundene Steuerelemente in der Ansicht haben keine Änderungs Benachrichtigungen an dieser Stelle abonniert.
+- Es werden niemals mehr als `PropertyChanged` ein Ereignis mit dem gleichen Eigenschaftsnamen Argument in einem einzigen synchronen Aufruf einer öffentlichen Methode einer Klasse aufgerufen. Wenn z. b. `NumberOfItems` eine Eigenschaft, deren Sicherungs Speicher `_numberOfItems` das Feld ist, eine Methode während der Ausführung einer Schleife `NumberOfItems` 50-Malerhöhtwird,solltenureineBenachrichtigungüberdieEigenschaftenÄnderungfürdieEigenschaftausgegebenwerden.`_numberOfItems` Nachdem die Arbeit vollständig ausgeführt wurde. Für asynchrone Methoden wird das `PropertyChanged` -Ereignis für einen angegebenen Eigenschaften Namen in jedem synchronen Segment einer asynchronen Fortsetzungs Kette erhoben.
 
-Die eShopOnContainers-mobile app verwendet die `ExtendedBindableObject` Klasse änderungsbenachrichtigungen, die im folgenden Codebeispiel dargestellt ist:
+Der eshoponcontainers-Mobile App verwendet `ExtendedBindableObject` die-Klasse zum Bereitstellen von Änderungs Benachrichtigungen, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public abstract class ExtendedBindableObject : BindableObject  
@@ -204,9 +204,9 @@ public abstract class ExtendedBindableObject : BindableObject
 }
 ```
 
-Die Xamarin.Form [ `BindableObject` ](xref:Xamarin.Forms.BindableObject) -Klasse implementiert die `INotifyPropertyChanged` Schnittstelle, und bietet eine [ `OnPropertyChanged` ](xref:Xamarin.Forms.BindableObject.OnPropertyChanged(System.String)) Methode. Die `ExtendedBindableObject` -Klasse bietet die `RaisePropertyChanged` Methode aufzurufende Eigenschaft änderungsbenachrichtigung und auf diese Weise wird die Funktionalität der `BindableObject` Klasse.
+Die xamarin. Form [`BindableObject`](xref:Xamarin.Forms.BindableObject) -Klasse implementiert `INotifyPropertyChanged` die-Schnittstelle und [`OnPropertyChanged`](xref:Xamarin.Forms.BindableObject.OnPropertyChanged(System.String)) stellt eine-Methode bereit. Die `ExtendedBindableObject` -Klasse stellt `RaisePropertyChanged` die-Methode bereit, um Benachrichtigungen über eine Eigenschaften Änderung aufzurufen, und verwendet dabei `BindableObject` die von der-Klasse bereitgestellte Funktionalität.
 
-Jede ViewModel-Klasse in der mobilen app für "eshoponcontainers" leitet sich von der `ViewModelBase` -Klasse, die wiederum von abgeleitet ist die `ExtendedBindableObject` Klasse. Aus diesem Grund jede ViewModel-Klasse verwendet die `RaisePropertyChanged` -Methode in der die `ExtendedBindableObject` -Klasse, Benachrichtigung der Eigenschaftenänderung bereitzustellen. Im folgenden Codebeispiel wird veranschaulicht, wie die mobile app "eshoponcontainers" Benachrichtigung der Eigenschaftenänderung mithilfe eines Lambda-Ausdrucks aufgerufen:
+Jede Ansichts Modell Klasse im eshoponcontainers-Mobile App wird von `ViewModelBase` der-Klasse abgeleitet, die wiederum von `ExtendedBindableObject` der-Klasse abgeleitet wird. Daher verwendet jede Ansichts Modell Klasse die `RaisePropertyChanged` -Methode in `ExtendedBindableObject` der-Klasse, um Benachrichtigungen über eine Eigenschafts Änderung bereitzustellen. Im folgenden Codebeispiel wird veranschaulicht, wie der eshoponcontainers-Mobile App die Benachrichtigung über Eigenschafts Änderungen mithilfe eines Lambda-Ausdrucks aufruft:
 
 ```csharp
 public bool IsLogin  
@@ -223,47 +223,47 @@ public bool IsLogin
 }
 ```
 
-Beachten Sie, dass es sich bei Verwendung eines Lambda-Ausdrucks auf diese Weise umfasst leichten Leistungseinbußen, da der Lambda-Ausdruck muss für jeden Aufruf ausgewertet werden. Obwohl die Leistungskosten klein ist und eine app normalerweise nicht beeinträchtigt wird, können die Kosten entstehen, wenn vorhanden sind, dass viele Benachrichtigungen ändern. Der Vorteil dieses Ansatzes ist jedoch, dass es während der Kompilierung typsicherheit und refactoring-Unterstützung beim Umbenennen von Eigenschaften bereitstellt.
+Beachten Sie, dass die Verwendung eines Lambda-Ausdrucks auf diese Weise geringe Leistungseinbußen erfordert, da der Lambda-Ausdruck für jeden-Befehl ausgewertet werden muss. Obwohl die Leistungskosten gering sind und sich normalerweise nicht auf eine APP auswirken, können die Kosten anfallen, wenn viele Änderungs Benachrichtigungen vorhanden sind. Der Vorteil dieser Vorgehensweise besteht jedoch darin, dass Sie beim Umbenennen von Eigenschaften die Typsicherheit für die Kompilierzeit und Refactoring unterstützt.
 
-## <a name="ui-interaction-using-commands-and-behaviors"></a>UI-Interaktion mithilfe von Befehlen und Verhaltensweisen
+## <a name="ui-interaction-using-commands-and-behaviors"></a>UI-Interaktion mithilfe von Befehlen und Verhalten
 
-In mobilen apps werden Aktionen in der Regel als Reaktion auf eine Benutzeraktion wie z. B. Klicken auf eine Schaltfläche, aufgerufen werden, die durch das Erstellen eines ereignishandlers in der CodeBehind-Datei implementiert werden können. Allerdings in das MVVM-Muster, die Verantwortung für die Implementierung der Aktions und dem Ansichtsmodell liegt, und Einfügen von Code im Code-Behind sollte vermieden werden.
+In mobilen apps werden Aktionen in der Regel als Reaktion auf eine Benutzeraktion aufgerufen, z. b. ein Klick auf die Schaltfläche, die durch Erstellen eines Ereignis Handlers in der Code-Behind-Datei implementiert werden kann. Im MVVM-Muster liegt jedoch die Verantwortung für die Implementierung der Aktion beim Ansichts Modell, und das Platzieren von Code im Code Behind sollte vermieden werden.
 
-Befehle bieten eine bequeme Möglichkeit, die Aktionen darstellen, die an Steuerelemente der Benutzeroberfläche gebunden werden kann. Diese kapseln des Codes, der die Aktion implementiert, und dabei helfen, die sie von dessen visuelle Darstellung in der Ansicht entkoppelt bleiben. Xamarin.Forms enthält Steuerelemente, die deklarativ mit einem Befehl verbunden werden können, und diese Steuerelemente werden der Befehl aufgerufen, wenn der Benutzer mit dem Steuerelement interagiert.
+Befehle stellen eine bequeme Möglichkeit zum Darstellen von Aktionen dar, die an Steuerelemente in der Benutzeroberfläche gebunden werden können. Sie kapseln den Code, der die Aktion implementiert, und tragen dazu bei, dass Sie von ihrer visuellen Darstellung in der Ansicht getrennt bleiben. Xamarin. Forms enthält Steuerelemente, die deklarativ mit einem Befehl verbunden werden können, und diese Steuerelemente rufen den Befehl auf, wenn der Benutzer mit dem Steuerelement interagiert.
 
-Verhaltensweisen können auch Steuerelemente deklarativ mit einem Befehl verbunden sein. Verhalten können jedoch verwendet werden, um eine Aktion aufzurufen, die eine Reihe von Ereignissen, die ausgelöst wird, wird von einem Steuerelement zugeordnet ist. Aus diesem Grund Adresse Verhalten vieler dieselben Szenarios wie die Befehls-Steuerelementen, und gleichzeitig ein größeres Maß an Flexibilität und Kontrolle. Darüber hinaus können Verhalten auch Befehlsobjekte oder Methoden mit Steuerelementen zuordnen, die nicht speziell entworfen wurden, für die Interaktion mit Befehlen verwendet werden.
+Durch Verhalten können auch Steuerelemente deklarativ mit einem Befehl verbunden werden. Allerdings können Verhalten verwendet werden, um eine Aktion aufzurufen, die einem Bereich von Ereignissen zugeordnet ist, die von einem Steuerelement ausgelöst werden. Daher behandeln Verhalten viele der gleichen Szenarien wie Befehls aktivierte Steuerelemente und bieten gleichzeitig ein höheres Maß an Flexibilität und Kontrolle. Außerdem können Verhalten verwendet werden, um Befehls Objekten oder Methoden Steuerelementen zuzuordnen, die nicht speziell für die Interaktion mit Befehlen entwickelt wurden.
 
 ### <a name="implementing-commands"></a>Implementieren von Befehlen
 
-Ansichtsmodelle machen in der Regel Befehlseigenschaften, für die Bindung aus der Ansicht, die Objektinstanzen, implementieren die `ICommand` Schnittstelle. Geben Sie eine Reihe von Xamarin.Forms-Steuerelementen ein `Command` -Eigenschaft, die Daten werden kann, die an gebunden ein `ICommand` Objekt des Modells anzeigen. Die `ICommand` Schnittstelle definiert eine `Execute` -Methode, die den Vorgang selbst kapselt, ein `CanExecute` Methode, die angibt, ob der Befehl aufgerufen werden kann, und ein `CanExecuteChanged` Ereignis tritt auf, wenn Änderungen, die sich auf, gibt an, ob auftreten der Befehl ausgeführt wird. Die [ `Command` ](xref:Xamarin.Forms.Command) und [ `Command<T>` ](xref:Xamarin.Forms.Command) von Xamarin.Forms bereitgestellten Klassen implementieren die `ICommand` -Schnittstelle, in denen `T` ist der Typ der Argumente für `Execute`und `CanExecute`.
+Ansichts Modelle machen in der Regel Befehls Eigenschaften für die Bindung aus der Ansicht verfügbar, die Objektinstanzen `ICommand` sind, die die-Schnittstelle implementieren. Eine Reihe von xamarin. Forms-Steuerelementen `Command` stellt eine Eigenschaft bereit, die an ein vom `ICommand` Ansichts Modell bereitgestelltes Objekt gebunden werden kann. Die `ICommand` -Schnittstelle `Execute` definiert eine-Methode, die den Vorgang selbst kapselt, eine `CanExecute` Methode, die angibt, ob der Befehl aufgerufen werden `CanExecuteChanged` kann, und ein-Ereignis, das auftritt, wenn Änderungen auftreten, die beeinflussen, ob der Befehl sollte ausgeführt werden. Die [`Command`](xref:Xamarin.Forms.Command) -und-Klassen, die von xamarin. Forms bereit `ICommand` gestellt werden, `T` implementieren die [`Command<T>`](xref:Xamarin.Forms.Command) -Schnittstelle, wobei `Execute` der `CanExecute`Typ der Argumente für und ist.
 
-In ein Ansichtsmodell, muss ein Objekt des Typs [ `Command` ](xref:Xamarin.Forms.Command) oder [ `Command<T>` ](xref:Xamarin.Forms.Command) für jede öffentliche Eigenschaft im Ansichtsmodell vom Typ `ICommand`. Die `Command` oder `Command<T>` -Konstruktor erfordert eine `Action` Rückrufobjekt, das aufgerufen wurde die `ICommand.Execute` -Methode wird aufgerufen. Die `CanExecute` -Methode ist eine optionale Konstruktorparameter, und eine `Func` zurückgibt, die eine `bool`.
+Innerhalb eines Ansichts Modells sollte ein Objekt vom Typ [`Command`](xref:Xamarin.Forms.Command) oder [`Command<T>`](xref:Xamarin.Forms.Command) für jede öffentliche Eigenschaft im Ansichts Modell vom Typ `ICommand`vorhanden sein. Der `Command` - `Command<T>` oder-Konstruktor `Action` erfordert ein Rückruf Objekt, das aufgerufen `ICommand.Execute` wird, wenn die-Methode aufgerufen wird. Die `CanExecute` -Methode ist ein optionaler Konstruktorparameter, und `Func` ist ein, `bool`der einen zurückgibt.
 
-Der folgende code zeigt, wie eine [ `Command` ](xref:Xamarin.Forms.Command) -Instanz, die einen Registrierungsbefehl darstellt, wird erstellt, indem gibt dabei einen Delegaten, der `Register` Methode anzeigen:
+Der folgende Code zeigt, wie [`Command`](xref:Xamarin.Forms.Command) eine-Instanz, die einen Register-Befehl darstellt, durch Angabe eines Delegaten `Register` für die Ansichts Modell Methode erstellt wird:
 
 ```csharp
 public ICommand RegisterCommand => new Command(Register);
 ```
 
-Der Befehl wird verfügbar gemacht, an die Ansicht über eine Eigenschaft, die ein Verweis ein `ICommand`. Wenn die `Execute` Methode wird aufgerufen, auf die [ `Command` ](xref:Xamarin.Forms.Command) -Objekts können sie einfach den Aufruf der Methode im Ansichtsmodell über der Delegat, der im angegebenen leitet die `Command` Konstruktor.
+Der Befehl wird über eine Eigenschaft, die einen Verweis auf einen `ICommand`zurückgibt, für die Ansicht verfügbar gemacht. Wenn die `Execute` -Methode für das [`Command`](xref:Xamarin.Forms.Command) -Objekt aufgerufen wird, wird der Aufruf an die-Methode im Ansichts Modell einfach über den Delegaten weitergeleitet `Command` , der im Konstruktor angegeben wurde.
 
-Eine asynchrone Methode kann von einem Befehl aufgerufen werden, mithilfe der `async` und `await` Schlüsselwörter, die beim Angeben des Befehls `Execute` delegieren. Dies bedeutet, dass der Rückruf ist ein `Task` und gewartet werden soll. Z. B. der folgende code zeigt, wie eine [ `Command` ](xref:Xamarin.Forms.Command) -Instanz, die einen Befehl Anmeldung darstellt, wird erstellt, indem Sie einen Delegaten angeben der `SignInAsync` Methode anzeigen:
+Eine asynchrone Methode kann von einem Befehl mithilfe der `async` Schlüsselwörter und `await` aufgerufen werden, `Execute` wenn der Delegat des Befehls angegeben wird. Dies gibt an, dass der Rückruf `Task` eine ist und gewartet werden sollte. Der folgende Code zeigt z. b., [`Command`](xref:Xamarin.Forms.Command) wie eine-Instanz, die einen Anmelde Befehl darstellt, durch Angabe eines Delegaten für die `SignInAsync` Ansichts Modell Methode erstellt wird:
 
 ```csharp
 public ICommand SignInCommand => new Command(async () => await SignInAsync());
 ```
 
-Parameter können übergeben werden, um die `Execute` und `CanExecute` Aktionen mithilfe der [ `Command<T>` ](xref:Xamarin.Forms.Command) Klasse, um den Befehl zu instanziieren. Beispielsweise der folgende code zeigt, wie eine `Command<T>` Instanz wird verwendet, um anzugeben, dass die `NavigateAsync` Methode müssen ein Argument des Typs `string`:
+Parameter können mithilfe der `Execute` [`Command<T>`](xref:Xamarin.Forms.Command) -Klasse an `CanExecute` die Aktionen und übermittelt werden, um den Befehl zu instanziieren. Der folgende Code zeigt z. b., `Command<T>` wie eine-Instanz verwendet wird, `NavigateAsync` um anzugeben, dass die-Methode `string`ein Argument vom Typ erfordert:
 
 ```csharp
 public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 ```
 
-Sowohl die [ `Command` ](xref:Xamarin.Forms.Command) und [ `Command<T>` ](xref:Xamarin.Forms.Command) Klassen, die der Delegat, der die `CanExecute` -Methode in jeder Konstruktor ist optional. Wenn Sie ein Delegaten nicht angegeben ist, die `Command` zurück `true` für `CanExecute`. Das Ansichtsmodell kann jedoch eine Änderung des Befehls angeben `CanExecute` Status durch Aufrufen der `ChangeCanExecute` Methode für die `Command` Objekt. Dies bewirkt, dass die `CanExecuteChanged` Ereignis ausgelöst wurde. Alle Steuerelemente in der Benutzeroberfläche, die an den Befehl gebunden sind werden deren Aktivierungsstatus entsprechend die Verfügbarkeit des Befehls von datengebundenen dann aktualisiert werden.
+In der [`Command`](xref:Xamarin.Forms.Command) -Klasse und der-Klasse ist der `CanExecute` Delegat für die- [`Command<T>`](xref:Xamarin.Forms.Command) Methode in jedem Konstruktor optional. Wenn kein Delegat angegeben wird, `Command` gibt den `true` für `CanExecute`zurück. Das Ansichts Modell kann jedoch eine Änderung des Befehlsstatus anzeigen, `CanExecute` indem die `ChangeCanExecute` -Methode für das `Command` -Objekt aufgerufen wird. Dies bewirkt, `CanExecuteChanged` dass das-Ereignis ausgelöst wird. Alle Steuerelemente in der Benutzeroberfläche, die an den Befehl gebunden sind, aktualisieren dann Ihren aktivierten Status, um die Verfügbarkeit des Daten gebundenen Befehls widerzuspiegeln.
 
-#### <a name="invoking-commands-from-a-view"></a>Aufrufen von Befehlen aus einer Sicht
+#### <a name="invoking-commands-from-a-view"></a>Aufrufen von Befehlen aus einer Ansicht
 
-Im folgenden Codebeispiel wird veranschaulicht, wie eine [ `Grid` ](xref:Xamarin.Forms.Grid) in die `LoginView` bindet an die `RegisterCommand` in die `LoginViewModel` Klasse, indem eine [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Instanz:
+Im folgenden Codebeispiel wird gezeigt, [`Grid`](xref:Xamarin.Forms.Grid) wie ein `LoginView` in der mithilfe `RegisterCommand` einer [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) - `LoginViewModel` Instanz an die in der-Klasse bindet:
 
 ```xaml
 <Grid Grid.Column="1" HorizontalOptions="Center">  
@@ -274,23 +274,23 @@ Im folgenden Codebeispiel wird veranschaulicht, wie eine [ `Grid` ](xref:Xamarin
 </Grid>
 ```
 
-Ein Befehlsparameter kann auch optional definiert werden mithilfe der [ `CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) Eigenschaft. Der Typ des erwarteten Arguments wird angegeben, der `Execute` und `CanExecute` Methoden als Ziel. Die [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) wird automatisch der Zielbefehl aufgerufen, wenn der Benutzer das angefügte Steuerelement interagiert. Der Befehlsparameter, falls angegeben, wird als Argument übergeben werden, um der Befehls `Execute` delegieren.
+Ein Befehlsparameter kann auch optional mithilfe der [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) -Eigenschaft definiert werden. Der Typ des erwarteten Arguments wird in den `Execute` Ziel Methoden und `CanExecute` angegeben. Der [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) Ruft den Ziel Befehl automatisch auf, wenn der Benutzer mit dem angefügten Steuerelement interagiert. Wenn bereitgestellt, wird der Befehlsparameter als Argument an den Delegaten des Befehls `Execute` übergeben.
 
 <a name="implementing_behaviors" />
 
-### <a name="implementing-behaviors"></a>Implementieren von Verhaltensweisen
+### <a name="implementing-behaviors"></a>Implementieren von Verhalten
 
-Verhaltensweisen können Funktionen für die UI-Steuerelemente hinzugefügt werden, ohne dass sie um eine Unterklasse. Stattdessen wird die Funktion in einer Verhaltensklasse implementiert und an das Steuerelement angefügt, als wäre sie ein Teil des Steuerelements selbst. Verhalten ermöglichen es, Code zu implementieren, die Sie normalerweise schreiben müsste, als Code-Behind, da Sie direkt mit der API eines Steuerelements in einer Weise interagiert werden soll, es kann präzise angefügt an das Steuerelement, und für die Wiederverwendung über mehr als eine Sicht oder app gepackt. Im Kontext von MVVM sind die Verhaltensweisen eine nützliche Methode für das Verbinden von Steuerelementen mit Befehlen.
+Das Verhalten ermöglicht das Hinzufügen von Funktionen zu UI-Steuerelementen, ohne diese zu unterbinden. Stattdessen wird die Funktion in einer Verhaltensklasse implementiert und an das Steuerelement angefügt, als wäre sie ein Teil des Steuerelements selbst. Mithilfe von Verhalten können Sie Code implementieren, der normalerweise als Code Behind geschrieben werden muss, da er direkt mit der API des Steuer Elements interagiert, so dass er dem Steuerelement in gewisser Weise an das Steuerelement angefügt werden kann und für die Wiederverwendung über mehrere Ansichten oder apps gepackt ist. Im Kontext von MVVM bilden Verhalten einen nützlichen Ansatz zum Verbinden von Steuerelementen mit Befehlen.
 
-Ein Verhalten, das ein Steuerelement über angefügte Eigenschaften zugeordnet ist, wird als bezeichnet ein *Verhalten angefügt*. Das Verhalten können Sie dann die verfügbar gemachte API des Elements, dem sie Funktionen hinzufügen möchten, die steuern, oder andere Steuerelemente, in der visuellen Struktur der Sicht zugeordnet ist. Die eShopOnContainers-mobile-app enthält die `LineColorBehavior` -Klasse, die ein Verhalten angefügt ist. Weitere Informationen zu diesem Verhalten finden Sie unter [Anzeigen von Validierungsfehlern](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors).
+Ein Verhalten, das über angefügte Eigenschaften an ein Steuerelement angefügt wird, wird als *angefügtes Verhalten*bezeichnet. Das Verhalten kann dann die verfügbar gemachte API des Elements, an das es angefügt ist, zum Hinzufügen von Funktionen zu diesem Steuerelement oder anderen Steuerelementen in der visuellen Struktur der Ansicht verwenden. Die eshoponcontainers-Mobile App enthält `LineColorBehavior` die-Klasse, die ein angefügtes Verhalten ist. Weitere Informationen zu diesem Verhalten finden Sie unter [Anzeigen von Validierungs Fehlern](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors).
 
-Eine Xamarin.Forms-Verhaltensweise ist eine abgeleitete Klasse die [ `Behavior` ](xref:Xamarin.Forms.Behavior) oder [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) -Klasse, in denen `T `ist der Typ des Steuerelements auf die das Verhalten angewendet werden soll. Diese Klassen bieten `OnAttachedTo` und `OnDetachingFrom` -Methoden, die Logik bereitstellen, die ausgeführt werden, wenn das Verhalten ist angefügt und von Steuerelementen getrennt überschrieben werden sollen.
+Ein xamarin. Forms-Verhalten ist eine Klasse, die von [`Behavior`](xref:Xamarin.Forms.Behavior) der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) -Klasse oder `T `der-Klasse abgeleitet wird, wobei der Typ des Steuer Elements ist, auf das das Verhalten angewendet werden soll. Diese Klassen stellen `OnAttachedTo` - `OnDetachingFrom` und-Methoden bereit, die überschrieben werden sollten, um Logik bereitzustellen, die ausgeführt wird, wenn das Verhalten an Steuerelemente angefügt und von diesen getrennt wird.
 
-In der mobilen Anwendung "eshoponcontainers" die `BindableBehavior<T>` Klasse leitet sich von der [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) Klasse. Der Zweck der `BindableBehavior<T>` Klasse ist eine Basisklasse für Xamarin.Forms-Verhaltensweisen, die erfordern die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) des Verhaltens, das auf das angefügte Steuerelement festgelegt werden.
+Im eshoponcontainers-Mobile App wird die `BindableBehavior<T>` -Klasse von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) -Klasse abgeleitet. Der Zweck `BindableBehavior<T>` der-Klasse besteht darin, eine Basisklasse für xamarin. Forms-Verhalten bereitzustellen [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) , die erfordert, dass das-Verhalten auf das angefügte-Steuerelement festgelegt wird.
 
-Die `BindableBehavior<T>` -Klasse stellt eine überschreibbare `OnAttachedTo` Methode, die festlegt der [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) das Verhalten und eine überschreibbare `OnDetachingFrom` -Methode, die bereinigt die `BindingContext`. Darüber hinaus speichert die Klasse einen Verweis auf das angefügte Steuerelement in der `AssociatedObject`-Eigenschaft.
+Die `BindableBehavior<T>` -Klasse stellt eine über schreibbare `OnAttachedTo` Methode bereit [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) , die die des Verhaltens festlegt, und eine `OnDetachingFrom` über schreibbare Methode, `BindingContext`die die bereinigt. Darüber hinaus speichert die Klasse einen Verweis auf das angefügte Steuerelement in der `AssociatedObject`-Eigenschaft.
 
-Die eShopOnContainers-mobile-app enthält eine `EventToCommandBehavior` -Klasse, die als Reaktion auf das Auftreten eines Ereignisses ein Befehl ausgeführt wird. Diese Klasse wird von der `BindableBehavior<T>` -Klasse so, dass das Verhalten kann zu binden und Ausführen einer `ICommand` gemäß einer `Command` Eigenschaft, wenn das Verhalten genutzt wird. Das folgende Codebeispiel zeigt die `EventToCommandBehavior`-Klasse:
+Die eshoponcontainers-Mobile App enthält `EventToCommandBehavior` eine-Klasse, die einen Befehl als Reaktion auf ein Ereignis ausführt, das eintritt. Diese Klasse wird von der `BindableBehavior<T>` -Klasse abgeleitet, sodass das-Verhalten eine Bindung an `ICommand` ausführen und eine `Command` durch eine-Eigenschaft angegebene ausführen kann, wenn das Verhalten verwendet wird. Das folgende Codebeispiel zeigt die `EventToCommandBehavior`-Klasse:
 
 ```csharp
 public class EventToCommandBehavior : BindableBehavior<View>  
@@ -334,13 +334,13 @@ public class EventToCommandBehavior : BindableBehavior<View>
 }
 ```
 
-Die `OnAttachedTo` und `OnDetachingFrom` Methoden zum Registrieren und Aufheben der Registrierung eines ereignishandlers für das Ereignis definiert, der `EventName` Eigenschaft. Klicken Sie dann, wenn das Ereignis ausgelöst wird, die `OnFired` Methode wird aufgerufen, die den Befehl ausführt.
+Die `OnAttachedTo` - `OnDetachingFrom` Methode und die-Methode werden zum Registrieren und Aufheben der Registrierung eines Ereignis Handlers für das `EventName` in der-Eigenschaft definierte Ereignis verwendet. Wenn das Ereignis ausgelöst wird, wird die `OnFired` -Methode aufgerufen, die den Befehl ausführt.
 
-Der Vorteil der Verwendung der `EventToCommandBehavior` zum Ausführen eines Befehls, wenn ein Ereignis ausgelöst wird, ist, dass Befehle mit Steuerelementen verknüpft werden können, die entworfen wurden, für die Interaktion mit den Befehlen. Darüber hinaus verschiebt diese Ereignisbehandlungscode in Modelle anzeigen, in der sie Komponententests sein.
+Der Vorteil der Verwendung des `EventToCommandBehavior` zum Ausführen eines Befehls beim Auslösen eines Ereignisses besteht darin, dass Befehle mit Steuerelementen verknüpft werden können, die nicht für die Interaktion mit Befehlen entworfen wurden. Außerdem wird dadurch der Code für die Ereignis Behandlung zum Anzeigen von Modellen verschoben, in denen Komponenten getestet werden können.
 
-#### <a name="invoking-behaviors-from-a-view"></a>Aufrufen von Verhaltensweisen aus einer Sicht
+#### <a name="invoking-behaviors-from-a-view"></a>Aufrufen von Verhalten aus einer Ansicht
 
-Die `EventToCommandBehavior` ist besonders nützlich für das Anfügen eines Befehls an ein Steuerelement, das Befehle nicht unterstützt. Z. B. die `ProfileView` verwendet die `EventToCommandBehavior` zum Ausführen der `OrderDetailCommand` bei der [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignis ausgelöst wird, auf die [ `ListView` ](xref:Xamarin.Forms.ListView) , des Benutzers Bestellungen aufgelistet sind, siehe Im folgenden Code:
+Das `EventToCommandBehavior` ist besonders nützlich, um einen Befehl an ein Steuerelement anzufügen, das keine Befehle unterstützt. `ProfileView` Beispielsweise `OrderDetailCommand` [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) [`ListView`](xref:Xamarin.Forms.ListView) verwendet die zumAusführenvon,wenndas-Ereignisfürdieausgelöstwird,diedieBestellungendesBenutzersauflistet,wieimfolgendenCodegezeigt:`EventToCommandBehavior`
 
 ```xaml
 <ListView>  
@@ -354,18 +354,18 @@ Die `EventToCommandBehavior` ist besonders nützlich für das Anfügen eines Bef
 </ListView>
 ```
 
-Zur Laufzeit die `EventToCommandBehavior` reagiert auf die Interaktion mit der [ `ListView` ](xref:Xamarin.Forms.ListView). Wenn ein Element ausgewählt ist, der `ListView`, [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignis wird ausgelöst, die ausgeführt werden die `OrderDetailCommand` in die `ProfileViewModel`. Standardmäßig werden die Ereignisargumente für das Ereignis an den Befehl übergeben. Diese Daten konvertiert werden, wie sie zwischen Quelle und Ziel, vom Konverter im angegebenen übergeben wird die `EventArgsConverter` -Eigenschaft, die zurückgibt der [ `Item` ](xref:Xamarin.Forms.ItemTappedEventArgs.Item) von der `ListView` aus der [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs). Aus diesem Grund, wenn die `OrderDetailCommand` ausgeführt wird, den ausgewählten `Order` der registrierten Aktion als Parameter übergeben wird.
+Zur Laufzeit antwortet der `EventToCommandBehavior` auf die [`ListView`](xref:Xamarin.Forms.ListView)Interaktion mit. Wenn ein `ListView`Element in der ausgewählt wird, wird das [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) -Ereignis ausgelöst, wodurch die `OrderDetailCommand` in der `ProfileViewModel`ausgeführt wird. Standardmäßig werden die Ereignis Argumente für das-Ereignis an den Befehl übermittelt. Diese Daten werden konvertiert, wenn Sie zwischen Quelle und Ziel durch den Konverter, der in der `EventArgsConverter` -Eigenschaft angegeben ist, [`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item) übermittelt werden, [`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs)der die der `ListView` aus der zurückgibt. Daher wird beim `OrderDetailCommand` Ausführen von der ausgewählte `Order` als Parameter an die registrierte Aktion übergeben.
 
-Weitere Informationen zu Verhalten finden Sie unter [Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/index.md).
+Weitere Informationen zu Verhalten finden Sie unter [Verhalten](~/xamarin-forms/app-fundamentals/behaviors/index.md).
 
 ## <a name="summary"></a>Zusammenfassung
 
-Das Model-View-ViewModel (MVVM)-Muster hilft, sauber trennen Sie die Logik für die Business und Präsentation von einer Anwendung über die Benutzeroberfläche (UI). Eine saubere Trennung zwischen der Anwendungslogik und die Benutzeroberfläche verwalten kann kann, um zahlreiche Probleme bei der Entwicklung zu beheben und eine Anwendung einfacher zu testen, verwalten und entwickeln. Sie können Code wiederverwenden Verkaufschancen erheblich verbessern und ermöglicht es Entwicklern und Benutzeroberflächen-Designer eine problemlose Zusammenarbeit ermöglichen, bei der Entwicklung ihrer jeweiligen Teile einer app.
+Das Model-View-ViewModel (MVVM)-Muster hilft bei der ordnungsgemäßen Trennung der Geschäfts-und Präsentationslogik einer Anwendung von der Benutzeroberfläche (User Interface, UI). Wenn Sie eine saubere Trennung zwischen Anwendungslogik und Benutzeroberfläche gewährleisten, können Sie zahlreiche Entwicklungsprobleme beheben und eine Anwendung leichter testen, warten und entwickeln. Sie kann auch die Möglichkeiten zur Wiederverwendung von Code erheblich verbessern und ermöglicht Entwicklern und UI-Designern, bei der Entwicklung ihrer jeweiligen Teile einer APP leichter zusammenzuarbeiten.
 
-Mithilfe des MVVM-Muster, die Benutzeroberfläche der app und die zugrunde liegende Logik der Präsentations- und ist in drei separate Klassen aufgeteilt: die Ansicht, die die Benutzeroberfläche und die Benutzeroberfläche kapselt Logik zu verwenden. Das Ansichtsmodell, das Darstellungslogik und Status kapselt; und das Modell, das Geschäftslogik und Daten der app kapselt.
+Mithilfe des MVVM-Musters werden die Benutzeroberfläche der APP und die zugrunde liegende Präsentations-und Geschäftslogik in drei separate Klassen unterteilt: die Sicht, die die Benutzeroberfläche und die Benutzeroberflächen Logik kapselt. das Ansichts Modell, das Darstellungs Logik und Zustand kapselt. und das Modell, das die Geschäftslogik und die Daten der APP kapselt.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [E-Book (2Mb PDF-Datei) herunterladen](https://aka.ms/xamarinpatternsebook)
-- ["eshoponcontainers" (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
+- [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

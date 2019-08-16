@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: f577af88140c5797182617a22efbb2e7991a8abc
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 22c3217eec1b2e531ad4534fc1cb35a701a06e34
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510566"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524088"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>Java-Integration mit xamarin. Android
 
@@ -24,11 +24,11 @@ Angesichts des Umfangs des Java-Ökosystems ist es sehr wahrscheinlich, dass ein
 
 Es gibt drei Möglichkeiten zur Wiederverwendung von Java-Bibliotheken in einer xamarin. Android-Anwendung: 
 
--   **Erstellen einer Bibliothek für Java-Bindungen** Bei dieser Technik wird ein xamarin. Android-Projekt verwendet, um Wrapper für die Java-Typen zu erstellen C# &ndash; Eine xamarin. Android-Anwendung kann dann auf C# die Wrapper verweisen, die von diesem Projekt erstellt wurden, `.jar` und dann die Datei verwenden. 
+- **Erstellen einer Bibliothek für Java-Bindungen** Bei dieser Technik wird ein xamarin. Android-Projekt verwendet, um Wrapper für die Java-Typen zu erstellen C# &ndash; Eine xamarin. Android-Anwendung kann dann auf C# die Wrapper verweisen, die von diesem Projekt erstellt wurden, `.jar` und dann die Datei verwenden. 
 
--   **Native Java-Schnittstelle** C++ C#   Die Java Native Interface (JNI) ist ein Framework, das es ermöglicht, dass nicht-Java-Code (z. b. oder) von Java-Code aufgerufen oder aufgerufen wird, der in einer JVM ausgeführt wird. &ndash; 
+- **Native Java-Schnittstelle** C++ C# Die Java Native Interface (JNI) ist ein Framework, das es ermöglicht, dass nicht-Java-Code (z. b. oder) von Java-Code aufgerufen oder aufgerufen wird, der in einer JVM ausgeführt wird. &ndash; 
 
--   **Portieren des Codes** Bei dieser Methode wird der Java-Quellcode übernommen und anschließend in C#umgerechnet. &ndash; Dies kann manuell oder mithilfe eines automatisierten Tools wie z. b. "schärfen" erfolgen. 
+- **Portieren des Codes** Bei dieser Methode wird der Java-Quellcode übernommen und anschließend in C#umgerechnet. &ndash; Dies kann manuell oder mithilfe eines automatisierten Tools wie z. b. "schärfen" erfolgen. 
 
 Die ersten beiden Techniken sind die *Java Native Interface* (JNI). Jni ist ein Framework, mit dem Anwendungen, die nicht in Java geschrieben sind, mit Java-Code interagieren können, der in einem Java Virtual Machine ausgeführt wird Xamarin. Android verwendet JNI, um *Bindungen* für C# Code zu erstellen. 
 

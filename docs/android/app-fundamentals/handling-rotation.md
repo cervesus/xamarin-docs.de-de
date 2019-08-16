@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b1039dd433456731b775399ab42222fe0e4cc6d9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 198d667ea52fcad4758c2845e5f2e935d1f74a0b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644372"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521124"
 ---
 # <a name="handling-rotation"></a>Verarbeiten der Drehung
 
@@ -25,9 +25,9 @@ Da mobile Geräte problemlos gedreht werden, ist die integrierte Rotation ein St
 
 In diesem Leitfaden werden die folgenden Themen zur Orientierung erläutert:
 
--   **Deklarative layoutdrehung** &ndash; Verwenden des Android-ressourcensystems zum Erstellen von nach Orientierung unterstützenden Anwendungen, einschließlich des Ladens von Layouts und drawables für bestimmte Ausrichtungen.
+- **Deklarative layoutdrehung** &ndash; Verwenden des Android-ressourcensystems zum Erstellen von nach Orientierung unterstützenden Anwendungen, einschließlich des Ladens von Layouts und drawables für bestimmte Ausrichtungen.
 
--   Programmgesteuerte **layoutdrehung** &ndash; Gewusst wie: Programm gesteuertes Hinzufügen von Steuerelementen und Gewusst wie: Manuelles behandeln von Orientierungsänderungen.
+- Programmgesteuerte **layoutdrehung** &ndash; Gewusst wie: Programm gesteuertes Hinzufügen von Steuerelementen und Gewusst wie: Manuelles behandeln von Orientierungsänderungen.
 
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>Deklarative Behandlung der Drehung mit Layouts
@@ -35,9 +35,9 @@ In diesem Leitfaden werden die folgenden Themen zur Orientierung erläutert:
 Wenn Sie Dateien in Ordner einschließen, die den Benennungs Konventionen folgen, lädt Android automatisch die entsprechenden Dateien, wenn sich die Ausrichtung ändert.
 Dies umfasst die Unterstützung für:
 
--   *Layoutressourcen* &ndash; Angeben, welche Layoutdateien für jede Ausrichtung aufgeblasen werden.
+- *Layoutressourcen* &ndash; Angeben, welche Layoutdateien für jede Ausrichtung aufgeblasen werden.
 
--   *Drawable-Ressourcen* &ndash; Angeben, welche drawables für jede Ausrichtung geladen werden.
+- *Drawable-Ressourcen* &ndash; Angeben, welche drawables für jede Ausrichtung geladen werden.
 
 
 ### <a name="layout-resources"></a>Layoutressourcen
@@ -133,12 +133,12 @@ Manchmal werden Layouts im Code definiert. Dies kann aus verschiedenen Gründen 
 
 Zum programmgesteuerten Hinzufügen von Steuerelementen muss eine Anwendung die folgenden Schritte ausführen:
 
--  Erstellen Sie ein Layout.
--  Legen Sie Layoutparameter fest.
--  Erstellen von Steuerelementen
--  Festlegen von Steuerelement Layout-Parametern
--  Fügen Sie dem Layout Steuerelemente hinzu.
--  Legen Sie das Layout als Inhaltsansicht fest.
+- Erstellen Sie ein Layout.
+- Legen Sie Layoutparameter fest.
+- Erstellen von Steuerelementen
+- Festlegen von Steuerelement Layout-Parametern
+- Fügen Sie dem Layout Steuerelemente hinzu.
+- Legen Sie das Layout als Inhaltsansicht fest.
 
 Angenommen, eine Benutzeroberfläche besteht aus einem einzelnen `TextView` Steuerelement, das einem `RelativeLayout`hinzugefügt wurde, wie im folgenden Code gezeigt.
 

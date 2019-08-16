@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 99723c390b217600e6aaea570195cf21b177abf0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e09d8511dc74bdf9368497ff8fe39bd87b62565c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648166"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528292"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Erwerben nicht nutzbarer Produkte in xamarin. IOS
 
@@ -55,14 +55,14 @@ Der Code sollte eine Kauf Schaltfläche normalerweise ausblenden oder wiederhole
    
  Es gibt Situationen, in denen eine Anwendung nicht erkennen kann, ob bereits ein nicht nutzbares Produkt gekauft wurde:
 
--  Wenn eine Anwendung auf einem Gerät gelöscht und erneut installiert wird, werden alle Kauf Datensätze entfernt (es sei denn, der Benutzer führt eine Sicherungs Wiederherstellung durch). 
--  , Wenn der Benutzer die Anwendung auf zwei (oder mehr) Geräten installiert hat und einen Einkauf auf einem der Geräte durchführt. Die anderen Geräte zeigen weiterhin das Produkt an, das für den Kauf zur Verfügung steht. 
--  Wenn ein Kunde versucht, ein nicht verwendbar bares Produkt in diesen Fällen erneut zu erwerben, wird das Produkt vom App Store ohne Aufpreis erneut untersucht. Die Benutzeroberfläche wird anfänglich angezeigt, um einen Kauf auszuführen (z. b. wird eine Bestätigungs Warnung angezeigt, und die Apple-ID ist erforderlich). dem Benutzer wird jedoch eine Meldung angezeigt, in der er darüber informiert wird, dass das Produkt bereits gekauft wurde.  
+- Wenn eine Anwendung auf einem Gerät gelöscht und erneut installiert wird, werden alle Kauf Datensätze entfernt (es sei denn, der Benutzer führt eine Sicherungs Wiederherstellung durch). 
+- , Wenn der Benutzer die Anwendung auf zwei (oder mehr) Geräten installiert hat und einen Einkauf auf einem der Geräte durchführt. Die anderen Geräte zeigen weiterhin das Produkt an, das für den Kauf zur Verfügung steht. 
+- Wenn ein Kunde versucht, ein nicht verwendbar bares Produkt in diesen Fällen erneut zu erwerben, wird das Produkt vom App Store ohne Aufpreis erneut untersucht. Die Benutzeroberfläche wird anfänglich angezeigt, um einen Kauf auszuführen (z. b. wird eine Bestätigungs Warnung angezeigt, und die Apple-ID ist erforderlich). dem Benutzer wird jedoch eine Meldung angezeigt, in der er darüber informiert wird, dass das Produkt bereits gekauft wurde.  
    
    
    
  Der Codepfad in diesem Szenario ist genau mit einem regulären Kauf identisch. die einzigen Unterschiede sind:
 
--  Der Benutzer wird für das Produkt nicht erneut in Rechnung gestellt.
--  Das `SKPaymentTransaction` an die Anwendung über gegebene-Objekt verfügt `OriginalTransaction` über eine-Eigenschaft, die auf die Transaktion verweist, die beim anfänglichen Erwerb des Produkts generiert wurde. 
--  Anwendungen, die nicht nutzbare Produkte verkaufen, müssen auch die **Wiederherstellungs** Funktion von storekit implementieren, damit Benutzer vorhandene Einkäufe abrufen können. 
+- Der Benutzer wird für das Produkt nicht erneut in Rechnung gestellt.
+- Das `SKPaymentTransaction` an die Anwendung über gegebene-Objekt verfügt `OriginalTransaction` über eine-Eigenschaft, die auf die Transaktion verweist, die beim anfänglichen Erwerb des Produkts generiert wurde. 
+- Anwendungen, die nicht nutzbare Produkte verkaufen, müssen auch die **Wiederherstellungs** Funktion von storekit implementieren, damit Benutzer vorhandene Einkäufe abrufen können. 

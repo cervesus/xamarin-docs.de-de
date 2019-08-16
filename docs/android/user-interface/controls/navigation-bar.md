@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c017ab96bdd78a41b31a3305021c5bc1f8e472d0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3bb2b47623c03d335ae1edc4bf87881622823ea1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644911"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522919"
 ---
 # <a name="xamarinandroid-navigation-bar"></a>Xamarin. Android-Navigationsleiste
 
@@ -22,9 +22,9 @@ Der folgende Screenshot zeigt die Navigationsleiste von einem Nexus-Prim Gerät:
 
 Es sind mehrere neue Flags verfügbar, die die Sichtbarkeit der Navigationsleiste und deren Steuerelemente steuern, sowie die Sichtbarkeit der System Leiste, die in Android 3 eingeführt wurde. Die Flags sind in der `Android.View.View` -Klasse definiert und sind im folgenden aufgeführt:
 
--   `SystemUiFlagVisible`&ndash; Macht die Navigationsleiste sichtbar. 
--   `SystemUiFlagLowProfile`&ndash; Gibt die Steuerelemente in der Navigationsleiste aus. 
--   `SystemUiFlagHideNavigation`&ndash; Blendet die Navigationsleiste aus. 
+- `SystemUiFlagVisible`&ndash; Macht die Navigationsleiste sichtbar. 
+- `SystemUiFlagLowProfile`&ndash; Gibt die Steuerelemente in der Navigationsleiste aus. 
+- `SystemUiFlagHideNavigation`&ndash; Blendet die Navigationsleiste aus. 
 
 
 Diese Flags können auf jede Sicht in der Ansichts Hierarchie angewendet werden, `SystemUiVisibility` indem die-Eigenschaft festgelegt wird. Wenn diese Eigenschaft in mehreren Ansichten festgelegt ist, werden Sie vom System mit einer OR-Operation kombiniert und angewendet, solange das Fenster, in dem die Flags festgelegt sind, den Fokus erhält. Wenn Sie eine Ansicht entfernen, werden alle festgelegten Flags ebenfalls entfernt.

@@ -1,37 +1,41 @@
 ---
 title: Binden von nativen Frameworks
-description: Dieses Dokument beschreibt, wie Sie mit der Ziel-Sharpie des - Framework-Option, um eine Bindung an eine Bibliothek erstellen, die als ein Framework verteilt.
+description: In diesem Dokument wird beschrieben, wie Sie die Option "-Framework" von Target Sharpie verwenden, um eine Bindung an eine als Framework verteilte Bibliothek zu erstellen.
 ms.prod: xamarin
 ms.assetid: 91AE058A-3A1F-41A9-9DE4-4B96880A1869
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 0da40918c8ae36c4ab3d4c41128429b49706d653
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: cb6c39b2110161b3f839b8adc03701007f09cc4d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977653"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521885"
 ---
 # <a name="binding-native-frameworks"></a>Binden von nativen Frameworks
 
-Eine native Bibliothek wird manchmal als verteilt eine [Framework](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html). Objektive Sharpie verfügt über eine Funktion der Einfachheit halber für Frameworks über Bindung ordnungsgemäß definiert werden. die `-framework` Option.
+Manchmal wird eine native Bibliothek als [Framework](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)verteilt. Ziel-Sharpie bietet eine praktische Funktion zum Binden ordnungsgemäß definierter Frame `-framework` Works mithilfe der-Option.
 
-Binden Sie z. B. die [Adobe Creative SDK-Framework](https://creativesdk.adobe.com/downloads.html) für iOS einfach ist:
+Beispielsweise ist die Bindung des [Adobe Creative SDK-Frameworks](https://creativesdk.adobe.com/downloads.html) für IOS unkompliziert:
 
-<pre>$ <b>sharpie bind \
+```
+$ sharpie bind \
     -framework AdobeCreativeSDKFoundation.framework \
-    -sdk iphoneos8.1</b></pre>
+    -sdk iphoneos8.1
+```
 
-In einigen Fällen ein Framework geben einen **"Info.plist"** mit welcher SDK das Framework womit kompiliert werden soll. Wenn diese Informationen vorhanden ist und keine explizite `-sdk` Option übergeben, das Ziel Sharpie folgert er aus der Frameworks des **"Info.plist"** (entweder die `DTSDKName` Schlüssel oder eine Kombination der `DTPlatformName` und `DTPlatformVersion`Schlüssel).
+In einigen Fällen gibt ein Framework eine **Info. plist** -Datei an, die angibt, mit welchem SDK das Framework kompiliert werden soll. Wenn diese Informationen vorhanden sind und keine `-sdk` explizite Option übergeben wird, leitet der Ziel-Sharpie ihn aus der " **Info. plist** "-Datei `DTSDKName` des Frameworks (entweder dem `DTPlatformName` Schlüssel `DTPlatformVersion` oder einer Kombination der Schlüssel und) ab.
 
-Die `-framework` Option lässt keine explizite Headerdateien übergeben werden. Die Dach-Headerdatei wird gemäß der Konvention, die basierend auf den Namen des ausgewählt. Wenn ein Schirm-Header wurde nicht gefunden, Ziel Sharpie versucht nicht, um das Framework zu binden und Sie die Bindung manuell ausführen müssen, durch die Bereitstellung der richtigen Kategorie Header-Dateien analysiert werden, zusammen mit beliebigen Argumenten Framework für die Clang (z. B. die `-F`Framework Suchoption-Pfad).
+Die `-framework` -Option lässt nicht zu, dass explizite Header Dateien übermittelt werden. Die Header Datei des Headers wird anhand der Konvention basierend auf dem frameworknamen ausgewählt. Wenn ein Ober Schirm nicht gefunden werden kann, versucht der Ziel-Sharpie nicht, das Framework zu binden, und Sie müssen die Bindung manuell ausführen, indem Sie die richtigen zu pargenden Header Dateien und alle frameworgumente für clang bereitstellen (z. b. die `-F`frameworksuchpfad-Option).
 
-Hinter den Kulissen angeben `-framework` ist nur eine Verknüpfung. Die folgenden Argumente für die Bindung sind identisch mit der `-framework` Kurzform, die oben genannten.
-Von besonderer Bedeutung ist die `-F .` bereitgestellt, um die clang-Framework-Suchpfad (Beachten Sie den Speicherplatz und den Zeitraum, die als Teil des Befehls erforderlich sind).
+Unter der Haube ist die `-framework` Angabe von nur eine Verknüpfung. Die folgenden Bindungs Argumente sind mit der `-framework` Kurzweile identisch.
+Eine besondere Wichtigkeit ist `-F .` der frameworksuchpfad, der für clang bereitgestellt wird (Beachten Sie den Bereich und den Zeitraum, der als Teil des Befehls erforderlich ist).
 
-<pre>$ <b>sharpie bind \
+```
+$ sharpie bind \
     -sdk iphoneos8.1 \
     AdobeCreativeSDKFoundation.framework/Headers/AdobeCreativeSDKFoundation.h \
     -scope AdobeCreativeSDKFoundation.framework/Headers \
-    -c -F .</b></pre>
+    -c -F .
+```

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: c5348ab754139dbd4012f6bfe9d22068ac16d12b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d5b3f084be7adc664dcb52342af617788f4dde48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509259"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526222"
 ---
 # <a name="creating-a-service"></a>Erstellen eines Diensts
 
@@ -75,7 +75,7 @@ Der nächste Schritt besteht darin, zu untersuchen, wie Sie einen Dienst starten
 
 Die einfachste Möglichkeit, einen Dienst in Android zu starten, besteht darin, `Intent` einen zu senden, der Metadaten enthält, um zu ermitteln, welcher Dienst gestartet werden sollte. Es gibt zwei verschiedene Arten von Intents, die zum Starten eines dienstanzen verwendet werden können:
 
--   **Explizite Absicht** Eine _explizite Absicht_ gibt genau an, welcher Dienst verwendet werden soll, um eine bestimmte Aktion abzuschließen. &ndash; Eine explizite Absicht kann als Buchstabe angesehen werden, der über eine bestimmte Adresse verfügt. Android leitet die Absicht an den Dienst weiter, der explizit identifiziert wird. Dieser Code Ausschnitt ist ein Beispiel für die Verwendung einer expliziten Absicht, einen Dienst `DownloadService`mit dem Namen zu starten:
+- **Explizite Absicht** Eine _explizite Absicht_ gibt genau an, welcher Dienst verwendet werden soll, um eine bestimmte Aktion abzuschließen. &ndash; Eine explizite Absicht kann als Buchstabe angesehen werden, der über eine bestimmte Adresse verfügt. Android leitet die Absicht an den Dienst weiter, der explizit identifiziert wird. Dieser Code Ausschnitt ist ein Beispiel für die Verwendung einer expliziten Absicht, einen Dienst `DownloadService`mit dem Namen zu starten:
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ Die einfachste Möglichkeit, einen Dienst in Android zu starten, besteht darin, 
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **Implizite Absicht** &ndash; Diese Art der Absicht identifiziert lose den der Aktion, die der Benutzer ausführen möchte, aber der genaue Dienst zum Abschluss dieser Aktion ist unbekannt. Eine implizite Absicht kann als Buchstabe angesehen werden, der adressiert wird, dass es sich um ein Problem handelt.
+- **Implizite Absicht** &ndash; Diese Art der Absicht identifiziert lose den der Aktion, die der Benutzer ausführen möchte, aber der genaue Dienst zum Abschluss dieser Aktion ist unbekannt. Eine implizite Absicht kann als Buchstabe angesehen werden, der adressiert wird, dass es sich um ein Problem handelt.
     Android prüft den Inhalt der Absicht und ermittelt, ob ein vorhandener Dienst vorhanden ist, der mit der Absicht übereinstimmt.
 
     Ein beabsichtigter _Filter_ wird verwendet, um die implizite Absicht mit einem registrierten Dienst abzugleichen. Ein Intent Filter ist ein XML-Element, das der Datei " **androidmanifest. XML** " hinzugefügt wird, die die erforderlichen Metadaten enthält, um einen Dienst mit einer impliziten Absicht abzugleichen.

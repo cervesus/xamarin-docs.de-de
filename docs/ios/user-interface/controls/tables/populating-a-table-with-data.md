@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a27bc699d6c7a77c8a970e363ca55bf54751df66
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 32cb0e376646478ad01a6ea7784094d23529b0b4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655643"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528622"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Auffüllen einer Tabelle mit Daten in xamarin. IOS
 
@@ -34,8 +34,8 @@ In dieser Anleitung wird Folgendes behandelt:
 
 Zum Erstellen von Daten in einer Tabelle sind nur zwei obligatorische Methoden erforderlich:
 
--   **Rowsinsection** – gibt [`nint`](~/cross-platform/macios/nativetypes.md) die Anzahl der Daten Zeilen an, die in der Tabelle angezeigt werden sollen.
--   **Getcell** – gibt eine `UITableCellView` mit Daten für den entsprechenden Zeilen Index zurück, der an die-Methode übermittelt wird.
+- **Rowsinsection** – gibt [`nint`](~/cross-platform/macios/nativetypes.md) die Anzahl der Daten Zeilen an, die in der Tabelle angezeigt werden sollen.
+- **Getcell** – gibt eine `UITableCellView` mit Daten für den entsprechenden Zeilen Index zurück, der an die-Methode übermittelt wird.
 
 
 Die basierbaren Beispieldatei **TableSource.cs** verfügt über die einfachste mögliche Implementierung `UITableViewSource`von. Im folgenden Code Ausschnitt sehen Sie, dass Sie ein Array von Zeichen folgen akzeptiert, die in der Tabelle angezeigt werden, und einen Standard Zellstil zurückgibt, der jede Zeichenfolge enthält:
@@ -239,9 +239,9 @@ keys = indexedTableItems.Keys.ToArray ();
 
 Die `UITableViewSource` Unterklasse benötigt dann die folgenden Methoden, die für die `Dictionary<>` Verwendung von hinzugefügt oder geändert werden:
 
--   **Nummeriofsection** – diese Methode ist optional. die Tabelle nimmt standardmäßig einen Abschnitt an. Beim Anzeigen eines Indexes sollte diese Methode die Anzahl der Elemente im Index zurückgeben (z. b. 26, wenn der Index alle Buchstaben des englischen Alphabets enthält).
--   **Rowsinsection** – gibt die Anzahl der Zeilen in einem angegebenen Abschnitt zurück.
--   **Sectionindextiteln** – gibt das Array von Zeichen folgen zurück, das zum Anzeigen des Indexes verwendet wird. Der Beispielcode gibt ein Array von Buchstaben zurück.
+- **Nummeriofsection** – diese Methode ist optional. die Tabelle nimmt standardmäßig einen Abschnitt an. Beim Anzeigen eines Indexes sollte diese Methode die Anzahl der Elemente im Index zurückgeben (z. b. 26, wenn der Index alle Buchstaben des englischen Alphabets enthält).
+- **Rowsinsection** – gibt die Anzahl der Zeilen in einem angegebenen Abschnitt zurück.
+- **Sectionindextiteln** – gibt das Array von Zeichen folgen zurück, das zum Anzeigen des Indexes verwendet wird. Der Beispielcode gibt ein Array von Buchstaben zurück.
 
 
 Die aktualisierten Methoden in der Beispieldatei **basictableindex/tablesource. cs** sehen wie folgt aus:
@@ -275,8 +275,8 @@ Die Ausgabe sieht wie folgt aus:
 
 Zum Anzeigen von Kopf-und Fußzeilen benötigt die `UITableViewSource` Unterklasse diese zusätzlichen Methoden:
 
--   **Titleforheader** – gibt den Text zurück, der als Header verwendet werden soll.
--   **Titleforfooter** – gibt den Text zurück, der als Fußzeile verwendet werden soll.
+- **Titleforheader** – gibt den Text zurück, der als Header verwendet werden soll.
+- **Titleforfooter** – gibt den Text zurück, der als Fußzeile verwendet werden soll.
 
 
 Die aktualisierten Methoden in der Beispieldatei **basictableheaderfooter/Code/tablesource. cs** sehen wie folgt aus:

@@ -1,114 +1,114 @@
 ---
 title: 'Teil 4: Umgang mit mehreren Plattformen'
-description: Dieses Dokument beschreibt, wie Application abweichungen, die basierend auf der Plattform oder der Funktion behandelt wird. Es wird erläutert, Bildschirmgröße, Navigation Metaphern, Touch und Gesten, erste Schritte mit Pushbenachrichtigungen und Schnittstelle-Paradigmen wie z. B. Listen und Registerkarten.
+description: In diesem Dokument wird beschrieben, wie die Anwendungs Abweichung basierend auf Plattform oder Funktion behandelt wird. Es werden Bildschirmgröße, Navigations Metaphern, toucheingaben und Gesten, Pushbenachrichtigungen und Schnittstellen Paradigmen wie Listen und Registerkarten erläutert.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 8fb373aa5081c8937da5110bad47c3f0decf0126
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 773bc5a6f80fa16de8fd7dc2ae86664d6250c4fc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61275538"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526824"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>Teil 4: Umgang mit mehreren Plattformen
 
-## <a name="handling-platform-divergence-amp-features"></a>Behandeln von Plattform Abweichungen &amp; Features
+## <a name="handling-platform-divergence-amp-features"></a>Behandeln von Platt &amp; Form Abweichungen-Features
 
-Abweichungen nicht nur ein "Cross-Platform"-Problem. Geräte, auf der "gleichen" Plattform haben unterschiedliche Funktionen (insbesondere die Vielzahl von Android-Geräte, die verfügbar sind). Die offensichtlichsten und am meisten basic ist die Bildschirmgröße, aber andere Geräteattribute können variieren und muss eine Anwendung bestimmte Funktionen zu prüfen und Verhalten sich unterschiedlich auf Basis ihres vorhanden (oder fehlen).
+Die Abweichung ist nicht nur ein plattformübergreifendes Problem. Geräte auf der gleichen Plattform verfügen über unterschiedliche Funktionen (insbesondere die Vielzahl von verfügbaren Android-Geräten). Der offensichtlichste und einfachste Wert ist die Bildschirmgröße, andere Geräte Attribute können jedoch variieren und erfordern, dass eine Anwendung bestimmte Funktionen prüft und sich je nach Anwesenheit (oder Abwesenheit) unterschiedlich verhält.
 
-Dies bedeutet, dass alle Anwendungen müssen im Umgang mit sinnvolle Herabstufung der Funktionalität, andernfalls eine unschöne, niedrigste gemeinsamen Nenner Featuregruppe vorhanden. Xamarin Tiefe Integration mit der nativen SDKs für jede Plattform können Anwendungen nutzen plattformspezifische Funktionalität, sodass es sinnvoll, diese Funktionen-apps zu entwerfen.
+Dies bedeutet, dass alle Anwendungen eine ordnungsgemäße Verschlechterung der Funktionalität durchführen müssen, oder Sie stellen eine unattraktive, niedrigste und gemeinsame Nenner dar. Die Deep-Integration von xamarin in die nativen sdgs der einzelnen Plattformen ermöglicht Anwendungen, plattformspezifische Funktionen zu nutzen. Daher ist es sinnvoll, Apps für die Verwendung dieser Features zu entwerfen.
 
-Finden Sie unter der Dokumentation Plattformfunktionen eine Übersicht über die Unterschiede zwischen der Plattformen an der Funktionalität.
+In der Dokumentation zu den Plattformfunktionen finden Sie eine Übersicht über die Unterschiede zwischen den Plattformen und Funktionen.
 
-## <a name="examples-of-platform-divergence"></a>Beispiele für Abweichungen der Plattform
+## <a name="examples-of-platform-divergence"></a>Beispiele für Platt Form Abweichungen
 
-### <a name="fundamental-elements-that-exist-across-platforms"></a>Grundlegende Elemente, die plattformübergreifend vorhanden sind.
+### <a name="fundamental-elements-that-exist-across-platforms"></a>Grundlegende Elemente, die plattformübergreifend vorhanden sind
 
-Es gibt einige Merkmale von mobilen Anwendungen, die universellen sind.
-Dies sind die Konzepte auf höherer Ebene, die in der Regel "true", der alle Geräte und können daher bilden die Grundlage Ihrer Anwendung:
+Es gibt einige Merkmale von universellen mobilen Anwendungen.
+Dabei handelt es sich um Konzepte höherer Ebene, die im Allgemeinen für alle Geräte zutreffen und daher die Grundlage für den Entwurf Ihrer Anwendung bilden:
 
--  Funktionsauswahl über Registerkarten oder Menüs
--  Listen der Daten und Durchführen eines Bildlaufs
--  Einzelne Ansichten der Daten
--  Bearbeiten einzelne Ansichten der Daten
--  Zurück navigieren
+- Funktionsauswahl über Registerkarten oder Menüs
+- Listen der Daten und scrollen
+- Einzelne Ansichten von Daten
+- Bearbeiten einzelner Ansichten von Daten
+- Navigieren zurück
 
-Beim Entwerfen des Flows auf hoher Ebene Bildschirm können Sie eine übergreifende benutzerfreundlichkeit zu diesen Konzepten basieren.
+Wenn Sie den bildschirmfluss auf hoher Ebene entwerfen, können Sie eine gängige Benutzer Darstellung auf diese Konzepte aufbauen.
 
-### <a name="platform-specific-attributes"></a>Clientplattform-spezifische Attribute
+### <a name="platform-specific-attributes"></a>Plattformspezifische Attribute
 
-Zusätzlich zur grundlegenden Elemente, die auf allen Plattformen vorhanden sind, müssen Sie an Adresse wichtige Unterschiede in Ihrem Entwurf. Möglicherweise müssen Sie diese Unterschiede berücksichtigen (und Schreiben von Code speziell für die Behandlung):
+Zusätzlich zu den grundlegenden Elementen, die auf allen Plattformen vorhanden sind, müssen Sie die wichtigsten Platt Form Unterschiede in Ihrem Entwurf berücksichtigen. Sie müssen möglicherweise die folgenden Unterschiede in Erwägung gezogen (und Code speziell für die Behandlung von Code schreiben):
 
--   **Bildschirmgrößen** – einige Plattformen (wie iOS und früheren Versionen von Windows Phone) haben Bildschirmgrößen, die relativ einfach, die als Ziel sind standardisiert. Android-Geräte haben eine große Vielfalt von bildschirmabmessungen, die mehr Aufwand, die in Ihrer Anwendung unterstützen.
--   **Navigation Metaphern** – unterscheiden Sie sich auf Plattformen (z. b. Hardware "zurück"-Schaltfläche, Panorama-UI-Steuerelement) und innerhalb von Plattformen (Android 2 bis 4, iPhone und iPad).
--   **Tastaturen** – einige Android-Geräte sind physische Tastaturen, während andere nur über ein Software-Tastatur verfügen. Code, der erkennt, wenn eine Soft-Tastatur Teil des Bildschirms versteckt ist muss diese unterschieden werden.
--   **Berührung und Gesten** – insbesondere in älteren Versionen von jedem Betriebssystem variiert betriebssystemunterstützung für gestenerkennung. Frühere Versionen von Android haben sehr eingeschränkte Unterstützung für Touch-Vorgänge, was bedeutet, dass ältere Geräte unterstützen möglicherweise unterschiedlichen Code erfordern
--   **Senden von Pushbenachrichtigungen** – es gibt verschiedene Funktionen/Implementierungen auf jeder Plattform (z. b. Live-Kacheln für Windows).
+- **Bildschirmgrößen** – einige Plattformen (z. b. IOS und frühere Versionen von Windows Phone) verfügen über standardisierte Bildschirmgrößen, die relativ einfach zu erreichen sind. Android-Geräte verfügen über eine große Bandbreite an Bildschirm Abmessungen, bei denen mehr Aufwand für die Unterstützung von in Ihrer Anwendung erforderlich ist.
+- **Navigations Metaphern** – unterscheiden sich plattformübergreifend (z. b. Schaltfläche "zurück" für Hardware, Panorama-UI-Steuerelement) und innerhalb von Plattformen (Android 2 und 4, iPhone vs iPad).
+- **Tastaturen** – einige Android-Geräte verfügen über physische Tastaturen, während andere nur über eine Software Tastatur verfügen. Code, der erkennt, wenn eine weiche Tastatur einen Teil des Bildschirms verdeckt, muss für diese Unterschiede sensibel sein.
+- **Toucheingabe und Gesten** – die Betriebssystemunterstützung für die Gestenerkennung variiert, insbesondere in älteren Versionen der einzelnen Betriebssysteme. Frühere Versionen von Android bieten sehr eingeschränkte Unterstützung für Berührungs Vorgänge, was bedeutet, dass die Unterstützung älterer Geräte unter Umständen separaten Code erfordert.
+- **Pushbenachrichtigungen** – es gibt verschiedene Funktionen/Implementierungen auf jeder Plattform (z. b. Live-Kacheln unter Windows).
 
-### <a name="device-specific-features"></a>Gerätespezifische Funktionen
+### <a name="device-specific-features"></a>Gerätespezifische Features
 
-Bestimmen Sie, welche die für die Anwendung erforderlichen Features sein müssen; oder wenn festlegen, welche weiteren Features auf jeder Plattform nutzen. Code muss erkennen die Features und Funktionen zu deaktivieren oder bieten alternativen (z. b. eine Alternative zum geografischen Standort konnte, damit der Benutzer aus, geben Sie einen Speicherort aus, oder wählen Sie aus einer Zuordnung sein):
+Bestimmen Sie, welche Mindestanforderungen für die Anwendung benötigt werden müssen. oder wenn Sie entscheiden, welche zusätzlichen Features auf den einzelnen Plattformen genutzt werden. Code ist erforderlich, um Features zu erkennen und Funktionen zu deaktivieren oder Alternativen anzubieten (z. b. eine Alternative zur georedunzierung könnte darin bestehen, dass der Benutzer einen Speicherort eingeben oder aus einer Karte auswählen kann:
 
--   **Kamera** – Funktionalität, die auf Geräten unterscheidet sich: Einige Geräte keine Kamera, andere haben sowohl Front-End- und Rear Kameras. Einige Kameras sind funktionsfähig videoaufzeichnung.
--   **GeoLocation & Zuordnungen** – Unterstützung für GPS oder Wi-Fi-Speicherort ist nicht auf allen Geräten vorhanden. Apps müssen auch für die verschiedenen Vertrauensebenen Genauigkeit zu behandeln, die von jeder Methode unterstützt wird.
--   **Beschleunigungsmesser, Gyroskop und vom Kompass** – diese Features häufig befinden sich unter nur eine Auswahl an Geräten, die auf jeder Plattform, damit apps müssen fast immer ein Fallback bereitzustellen, wenn die Hardware nicht unterstützt wird.
--   **Twitter und Facebook** – nur "integrierte" iOS5 und iOS6 bzw. Unter früheren Versionen und anderen Plattformen müssen Sie Ihre eigenen Authentifizierungsfunktionen und eine Verbindung direkt mit einzelnen Services-API.
--   **NEAR Field Communications (NFC)** – (einige) nur auf Android-Telefone (zum Zeitpunkt der Verfassung).
+- **Kamera** – unterscheidet sich von Geräten: einige Geräte verfügen nicht über eine Kamera, andere verfügen über Front-und rückwärts-Kameras. Einige Kameras sind in der Lage, Video aufzuzeichnen.
+- Der Standort **& Maps** – Unterstützung für GPS oder WLAN ist nicht auf allen Geräten vorhanden. Apps müssen auch für die unterschiedlichen Genauigkeits Stufen geeignet sein, die von den einzelnen Methoden unterstützt werden.
+- **Beschleunigungsmesser, Gyroskop und Compass** – diese Features sind häufig nur in einer Auswahl von Geräten auf jeder Plattform zu finden, sodass apps fast immer einen Fall Back bereitstellen müssen, wenn die Hardware nicht unterstützt wird.
+- **Twitter und Facebook** – nur "integriert" auf iOS5 und iOS6. In früheren Versionen und anderen Plattformen müssen Sie Ihre eigenen Authentifizierungsfunktionen und-Schnittstellen direkt mit den einzelnen Dienst-APIs bereitstellen.
+- **Near Field Communications (NFC)** – nur auf (einigen) Android-Telefonen (zum Zeitpunkt des Schreibens).
 
-## <a name="dealing-with-platform-divergence"></a>Umgang mit Abweichungen der Plattform
+## <a name="dealing-with-platform-divergence"></a>Umgang mit Platt Form Abweichungen
 
-Es gibt zwei verschiedene Ansätze zur Unterstützung von mehreren Plattformen aus der gleichen Codebasis, jeweils einen eigenen Satz von vor- und Nachteile.
+Es gibt zwei unterschiedliche Ansätze zur Unterstützung mehrerer Plattformen aus derselben Codebasis, die jeweils über einen eigenen Satz von Vorteilen und Nachteile verfügen.
 
--   **Plattformabstraktion** – für BusinessRules-Muster bietet eine einheitliche Zugriff auf Plattformen und abstrahiert die plattformimplementierungen aus bestimmten in einer einzigen, einheitlichen API.
--   **Unterschiedliche Implementierung** : Aufruf von einer bestimmten Plattform Funktionen über unterschiedliche Implementierungen über die Architektur Tools wie Schnittstellen und Vererbung oder für die bedingte Kompilierung.
+- **Platform Abstraktion** – Business Fassaden Pattern bietet einen einheitlichen Zugriff auf Plattformen und abstrahiert die einzelnen Platt Form Implementierungen in eine einzelne, einheitliche API.
+- **Abweichende Implementierung** – Aufruf spezifischer Platt Form Features über abweichende Implementierungen über Architektur Tools wie Schnittstellen und Vererbung oder bedingte Kompilierung.
 
 ## <a name="platform-abstraction"></a>Plattformabstraktion
 
-### <a name="class-abstraction"></a>Abstraktion der Kandidatenklassen
+### <a name="class-abstraction"></a>Klassen Abstraktion
 
-Mithilfe von Schnittstellen oder Basisklassen in den freigegebenen Code definiert und implementiert oder in den plattformspezifischen Projekten erweitert. Schreiben, und Erweitern von freigegebenem Code mit den Klassenabstraktionen ist besonders für Portable Klassenbibliotheken geeignet, da sie eine begrenzte Teilmenge der das Framework zur Verfügung haben und darf keine Compiler-Direktiven zur Unterstützung von plattformspezifischem codeverzweigungen enthalten.
+Verwenden von Schnittstellen oder Basisklassen, die im freigegebenen Code definiert und in plattformspezifischen Projekten implementiert oder erweitert wurden. Das Schreiben und Erweitern von frei gegebenem Code mit Klassen Abstraktionen eignet sich besonders für Portable Klassenbibliotheken, da Ihnen eine begrenzte Teilmenge des Frameworks zur Verfügung steht und keine Compilerdirektiven zur Unterstützung plattformspezifischer codebranches enthalten kann.
 
 #### <a name="interfaces"></a>Schnittstellen
 
-Mithilfe der Schnittstellen, können Sie plattformspezifischen Klassen implementieren, die in gemeinsam genutzten Bibliotheken gemeinsamen Code nutzen weiterhin übergeben werden kann.
+Durch die Verwendung von Schnittstellen können Sie plattformspezifische Klassen implementieren, die weiterhin an Ihre freigegebenen Bibliotheken weitergegeben werden können, um gemeinsamen Code zu nutzen.
 
-Die Schnittstelle ist in den freigegebenen Code definiert, und die freigegebene Bibliothek als Parameter oder Eigenschaft übergeben.
+Die-Schnittstelle wird im freigegebenen Code definiert und als Parameter oder Eigenschaft an die freigegebene Bibliothek übergeben.
 
-Die plattformspezifische Anwendungen können dann die Schnittstelle implementieren und dennoch nutzen freigegebenen Code "verarbeiten".
+Die plattformspezifischen Anwendungen können dann die-Schnittstelle implementieren und weiterhin freigegebenen Code nutzen, um ihn zu verarbeiten.
 
  **Vorteile**
 
-Die Implementierung kann plattformspezifischen Code enthalten und auch plattformspezifische externe Bibliotheken zu verweisen.
+Die-Implementierung kann plattformspezifischen Code enthalten und sogar plattformspezifische externe Bibliotheken referenzieren.
 
  **Nachteile**
 
-Wenn zum Erstellen und übergeben Implementierungen in den freigegebenen Code. Wenn die Schnittstelle, tief in den freigegebenen Code verwendet wird gewöhnlichen, klicken Sie dann über mehrere Parameter der Methode übergeben, oder andernfalls über der Aufrufkette weitergegeben. Wenn der freigegebene Code viele unterschiedliche Schnittstellen verwendet müssen dann diese alle erstellt und legen Sie im freigegebenen Code an einer beliebigen Stelle.
+Es müssen Implementierungen erstellt und in den freigegebenen Code übergeben werden. Wenn die Schnittstelle tief innerhalb des freigegebenen Codes verwendet wird, wird Sie schließlich über mehrere Methoden Parameter übergeben oder anderweitig durch die-Aufrufkette übertragen. Wenn für den freigegebenen Code viele verschiedene Schnittstellen verwendet werden, müssen Sie alle erstellt und im freigegebenen Code irgendwo festgelegt werden.
 
 #### <a name="inheritance"></a>Vererbung
 
-Der freigegebene Code könnten die abstrakte oder virtuelle-Klassen, die erweitert werden können implementieren, in ein oder mehrere plattformspezifische Projekte. Dies ist vergleichbar mit Schnittstellen jedoch mit einigen bereits implementiertes Verhalten. Es gibt verschiedene Standpunkte auf Schnittstellen oder Vererbung werden, ob eine bessere entwurfsentscheidung: besonders da C# -Code nur die einfache Vererbung ermöglicht es kann diktieren die Möglichkeit, Ihre APIs kann in Zukunft entworfen werden. Verwenden Sie Vererbung mit Vorsicht.
+Mit dem freigegebenen Code können abstrakte oder virtuelle Klassen implementiert werden, die in einem oder mehreren plattformspezifischen Projekten erweitert werden könnten. Dies ähnelt der Verwendung von Schnittstellen, aber mit einem bereits implementierten Verhalten. Es gibt unterschiedliche Gesichtspunkte, ob Schnittstellen oder Vererbung eine bessere Entwurfs Entscheidung sind C# : insbesondere, da nur die einfache Vererbung zulässt, kann es die Art und Weise vorschreiben, wie Ihre APIs weiterentwickelt werden können. Verwenden Sie die Vererbung mit Vorsicht.
 
-Die vor- und Nachteile von Schnittstellen gelten gleichermaßen, Vererbung, mit den zusätzlichen Vorteil, den die Basisklasse kann einigen Code zur Implementierung (z. B. eine gesamte Plattform unabhängig Implementierung, die optional erweitert werden kann) enthalten.
+Die vor-und Nachteile von Schnittstellen gelten auch für die Vererbung, mit dem zusätzlichen Vorteil, dass die Basisklasse Implementierungs Code enthalten kann (z. b. eine gesamte plattformunabhängige Implementierung, die optional erweitert werden kann).
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-Finden Sie unter den [Xamarin.Forms](~/get-started/index.yml) Dokumentation.
+Weitere Informationen finden Sie in der Dokumentation zu [xamarin. Forms](~/get-started/index.yml) .
 
 ### <a name="other-cross-platform-libraries"></a>Andere plattformübergreifende Bibliotheken
 
-Diese Bibliotheken bieten auch die plattformübergreifende Funktionalität für C# Entwickler:
+Diese Bibliotheken bieten auch plattformübergreifende Funktionen für C# Entwickler:
 
-- [**Xamarin.Essentials** ](~/essentials/index.md) – plattformübergreifende APIs für allgemeine Funktionen.
-- [**SkiaSharp** ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) – plattformübergreifende 2D-Grafiken.
+- [**Xamarin. Essentials**](~/essentials/index.md) – plattformübergreifende APIs für allgemeine Features.
+- [**Skiasharp**](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) – plattformübergreifende 2D-Grafiken.
 
 ## <a name="conditional-compilation"></a>Bedingte Kompilierung
 
-Es gibt einige Situationen, in dem freigegebene Code trotzdem nichts anders funktionieren auf jeder Plattform, die möglicherweise den Zugriff auf Klassen oder Funktionen, die sich anders verhalten. Für die bedingte Kompilierung funktioniert am besten bei Asset Projekten freigegeben ist, in derselben Quelldatei in mehreren Projekten verwiesen werden wird, die andere Symbole definiert haben.
+Es gibt einige Situationen, in denen der freigegebene Code auf jeder Plattform unterschiedlich funktionieren muss und möglicherweise auf Klassen oder Funktionen zugreift, die sich anders Verhalten. Die bedingte Kompilierung funktioniert am besten mit freigegebenen Asset-Projekten, bei denen in mehreren Projekten, für die verschiedene Symbole definiert sind, auf dieselbe Quelldatei verwiesen wird.
 
-Definieren Sie die Xamarin-Projekte immer `__MOBILE__` welche trifft für iOS und Android-Anwendungsprojekten (Beachten Sie die zwei Unterstriche vor und nach der Korrektur auf diese Symbole).
+Xamarin-Projekte definieren `__MOBILE__` immer, was für IOS-und Android-Anwendungsprojekte zutrifft (Beachten Sie den doppelten unterstrich vor und nach der Behebung dieser Symbole).
 
 ```csharp
 #if __MOBILE__
@@ -117,7 +117,7 @@ Definieren Sie die Xamarin-Projekte immer `__MOBILE__` welche trifft für iOS un
 ```
 #### <a name="ios"></a>iOS
 
-Xamarin.iOS definiert `__IOS__` die Sie verwenden können, um iOS-Geräten zu erkennen.
+Xamarin. IOS definiert `__IOS__` , welche Sie zum Erkennen von IOS-Geräten verwenden können.
 
 ```csharp
 #if __IOS__
@@ -125,7 +125,7 @@ Xamarin.iOS definiert `__IOS__` die Sie verwenden können, um iOS-Geräten zu er
 #endif
 ```
 
-Es gibt auch überwachen und TV-spezifische Symbole:
+Es gibt auch Überwachungs-und TV-spezifische Symbole:
 
 ```csharp
 #if __TVOS__
@@ -139,7 +139,7 @@ Es gibt auch überwachen und TV-spezifische Symbole:
 
 #### <a name="android"></a>Android
 
-Code, der nur in Xamarin.Android-Anwendungen kompiliert werden soll kann Folgendes verwenden.
+Code, der nur in xamarin. Android-Anwendungen kompiliert werden soll, kann Folgendes verwenden:
 
 ```csharp
 #if __ANDROID__
@@ -147,7 +147,7 @@ Code, der nur in Xamarin.Android-Anwendungen kompiliert werden soll kann Folgend
 #endif
 ```
 
-Jede API-Version definiert auch eine neue Compilerdirektive, daher Code wie diesen können Sie Funktionen hinzufügen, wenn neuere APIs als Ziel verwendet werden. Jeder API-Ebene enthält die "niedriger" Level-Symbole. Dieses Feature ist nicht sehr nützlich für die Unterstützung von mehreren Plattformen; in der Regel die `__ANDROID__` Symbol ausreichen.
+Jede API-Version definiert auch eine neue Compilerdirektive, sodass Sie mit diesem Code Features hinzufügen können, wenn neuere APIs als Ziel verwendet werden. Jede API-Ebene enthält alle Symbole der Ebene "Lower". Diese Funktion ist für die Unterstützung mehrerer Plattformen nicht wirklich nützlich. in der `__ANDROID__` Regel ist das Symbol ausreichend.
 
 ```csharp
 #if __ANDROID_11__
@@ -157,7 +157,7 @@ Jede API-Version definiert auch eine neue Compilerdirektive, daher Code wie dies
 
 #### <a name="mac"></a>Mac
 
-Zurzeit ist kein integriertes Symbol für Xamarin.Mac, aber Sie können Ihren eigenen Mac-app-Projekt hinzufügen **Optionen > Erstellen > Compiler** in die **Symbole definieren** , oder bearbeiten Sie die **csproj**  Datei, und fügen dort (z. B. `__MAC__`)
+Derzeit gibt es kein integriertes Symbol für xamarin. Mac, Sie können jedoch in den Projektoptionen für Mac-apps **> Build > Compiler** im Feld **Symbole definieren** hinzufügen oder die **csproj** -Datei bearbeiten und dort hinzufügen (z `__MAC__`. b.).
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -165,7 +165,7 @@ Zurzeit ist kein integriertes Symbol für Xamarin.Mac, aber Sie können Ihren ei
 
 #### <a name="universal-windows-platform-uwp"></a>Universelle Windows-Plattform (UWP)
 
-Verwenden Sie `WINDOWS_UWP`. Es gibt keine Unterstriche Zusammenhang mit der Zeichenfolge wie etwa die Xamarin-Plattform-Symbole.
+Verwenden Sie `WINDOWS_UWP`. Es gibt keine Unterstriche, die die Zeichenfolge wie die xamarin-Platt Form Symbole umschließen.
 
 ```csharp
 #if WINDOWS_UWP
@@ -173,16 +173,16 @@ Verwenden Sie `WINDOWS_UWP`. Es gibt keine Unterstriche Zusammenhang mit der Zei
 #endif
 ```
 
-#### <a name="using-conditional-compilation"></a>Verwenden für die bedingte Kompilierung
+#### <a name="using-conditional-compilation"></a>Verwenden der bedingten Kompilierung
 
-Ein einfaches Beispiel-Fallstudie für die bedingte Kompilierung ist der Speicherort für die SQLite-Datenbank-Datei festlegen. Die drei Plattformen haben geringfügig unterschiedliche Anforderungen an den Dateispeicherort angeben:
+Ein einfaches Beispiel für die bedingte Kompilierung besteht darin, den Datei Speicherort für die SQLite-Datenbankdatei festzulegen. Die drei Plattformen haben etwas andere Anforderungen zum Angeben des Dateispeicher Orts:
 
--   **iOS** – Apple bevorzugt nichtbenutzer-Daten in einem bestimmten Speicherort (das Verzeichnis mit der Bibliothek) platziert werden, aber keine System-Konstante für dieses Verzeichnis vorhanden ist. Plattformspezifischen Code ist erforderlich, um den richtigen Pfad erstellen.
--   **Android** – zurückgegebenes Systempfad `Environment.SpecialFolder.Personal` ein zulässiger Speicherort zum Speichern der Datenbank ist.
--   **Windows Phone** – der isolierten Speichermechanismus lässt sich nicht auf einen vollständigen Pfad angegeben werden, nur einen relativen Pfad und Dateinamen.
--   **Universelle Windows-Plattform** – verwendet `Windows.Storage` APIs.
+- **IOS** – Apple bevorzugt, dass sich Nichtbenutzer Daten an einem bestimmten Speicherort (dem Bibliotheksverzeichnis) befinden, es gibt jedoch keine System Konstante für dieses Verzeichnis. Der plattformspezifische Code ist erforderlich, um den korrekten Pfad zu erstellen.
+- **Android** – der von `Environment.SpecialFolder.Personal` zurückgegebene Systempfad ist ein akzeptabler Speicherort zum Speichern der Datenbankdatei.
+- **Windows Phone** – der isolierte Speichermechanismus lässt nicht zu, dass ein vollständiger Pfad angegeben wird, sondern nur ein relativer Pfad und Dateiname.
+- **Universelle Windows-Plattform** – verwendet `Windows.Storage` APIs.
 
-Der folgende Code für die bedingte Kompilierung verwendet, um sicherzustellen, dass die `DatabaseFilePath` für jede Plattform korrekt ist:
+Der folgende Code verwendet die bedingte Kompilierung, `DatabaseFilePath` um sicherzustellen, dass für jede Plattform richtig ist:
 
 ```csharp
 public static string DatabaseFilePath {
@@ -212,4 +212,4 @@ public static string DatabaseFilePath {
 }
 ```
 
-Das Ergebnis ist eine Klasse, die erstellt und auf allen Plattformen, platzieren die SQLite-Datenbank-Datei an einem anderen Speicherort auf jeder Plattform verwendet werden kann.
+Das Ergebnis ist eine Klasse, die auf allen Plattformen erstellt und verwendet werden kann, wobei die SQLite-Datenbankdatei an einem anderen Speicherort auf jeder Plattform platziert wird.

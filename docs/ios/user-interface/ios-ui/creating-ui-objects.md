@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dd935e6feb14d9077c1ad98a2e7e10e67646dc4f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f77a4f2f31c72726515e33dc273616f175df2891
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650115"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528529"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Erstellen von Benutzeroberflächen Objekten in xamarin. IOS
 
@@ -28,9 +28,9 @@ Alle in diesem Kapitel erörterten Steuerelemente sind im UIKit-Namespace und je
 
 Sie können UI-Steuerelemente und Layouts auf drei Arten bearbeiten:
 
--  **[Xamarin IOS-Designer](~/ios/user-interface/designer/index.md)** – verwenden Sie den integrierten layoutdesigner von xamarin, um Bildschirme zu entwerfen. Doppelklicken Sie auf Storyboard-oder XIb-Dateien, um Sie mit dem integrierten Designer zu bearbeiten.
--  **Xcode Interface Builder** – ziehen Sie Steuerelemente mit Interface Builder auf die Bildschirmlayouts. Öffnen Sie die Storyboard-oder XIb-Datei in Xcode, indem Sie im **Lösungspad** mit der rechten Maustaste auf die Datei klicken und dann **mit > Xcode Interface Builder öffnen**auswählen.
--  **Die C# Verwendung** von –-Steuerelementen kann auch Programm gesteuert mit Code erstellt und der Ansichts Hierarchie hinzugefügt werden.
+- **[Xamarin IOS-Designer](~/ios/user-interface/designer/index.md)** – verwenden Sie den integrierten layoutdesigner von xamarin, um Bildschirme zu entwerfen. Doppelklicken Sie auf Storyboard-oder XIb-Dateien, um Sie mit dem integrierten Designer zu bearbeiten.
+- **Xcode Interface Builder** – ziehen Sie Steuerelemente mit Interface Builder auf die Bildschirmlayouts. Öffnen Sie die Storyboard-oder XIb-Datei in Xcode, indem Sie im **Lösungspad** mit der rechten Maustaste auf die Datei klicken und dann **mit > Xcode Interface Builder öffnen**auswählen.
+- **Die C# Verwendung** von –-Steuerelementen kann auch Programm gesteuert mit Code erstellt und der Ansichts Hierarchie hinzugefügt werden.
 
 Neue Storyboard-und XIb-Dateien können hinzugefügt werden, indem Sie mit der rechten Maustaste auf ein IOS-Projekt klicken und **Hinzufügen > neue Datei...** auswählen.
 
@@ -92,12 +92,12 @@ Weitere Informationen zur Integration von Xcode Interface Builder in Visual Stud
 
 Wenn Sie sich entscheiden, ein Benutzeroberflächen Objekt mithilfe C# von (z. b. in einem Ansichts-oder Ansichts Controller) Programm gesteuert zu erstellen, führen Sie die folgenden Schritte aus:
 
--  Deklarieren Sie ein Feld auf Klassenebene für das Benutzeroberflächen Objekt. Erstellen Sie das Steuerelement selbst einmal `ViewDidLoad` , z. b. Auf das Objekt kann dann in den Lebenszyklus Methoden des Ansichts Controllers verwiesen werden (z. b.
+- Deklarieren Sie ein Feld auf Klassenebene für das Benutzeroberflächen Objekt. Erstellen Sie das Steuerelement selbst einmal `ViewDidLoad` , z. b. Auf das Objekt kann dann in den Lebenszyklus Methoden des Ansichts Controllers verwiesen werden (z. b.
 `ViewWillAppear`) angezeigt wird.
--  Erstellen Sie `CGRect` einen, der den Rahmen des Steuer Elements definiert (seine X-und Y-Koordinaten auf dem Bildschirm sowie seine Breite und Höhe). Sie müssen sicherstellen, dass Sie über eine `using CoreGraphics` -Direktive für diese verfügen.
--  Rufen Sie den Konstruktor auf, um das Steuerelement zu erstellen und zuzuweisen.
--  Legen Sie alle Eigenschaften oder Ereignishandler fest.
--  Wird `Add()` aufgerufen, um der Ansichts Hierarchie das Steuerelement hinzuzufügen.
+- Erstellen Sie `CGRect` einen, der den Rahmen des Steuer Elements definiert (seine X-und Y-Koordinaten auf dem Bildschirm sowie seine Breite und Höhe). Sie müssen sicherstellen, dass Sie über eine `using CoreGraphics` -Direktive für diese verfügen.
+- Rufen Sie den Konstruktor auf, um das Steuerelement zu erstellen und zuzuweisen.
+- Legen Sie alle Eigenschaften oder Ereignishandler fest.
+- Wird `Add()` aufgerufen, um der Ansichts Hierarchie das Steuerelement hinzuzufügen.
 
 Im folgenden finden Sie ein einfaches Beispiel für `UILabel` das Erstellen einer in einem C#Ansichts Controller mit:
 

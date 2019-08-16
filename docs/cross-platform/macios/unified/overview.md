@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 9d36101c1416ea8ddf451f5677258972c4f34990
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1e8723fd8cc2119c6d65ea760d514373d00ce1d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511132"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521822"
 ---
 # <a name="unified-api-overview"></a>Übersicht über Unified API
 
@@ -40,8 +40,8 @@ Unabhängig davon, welche Anwendungen migriert werden, sehen Sie sich [diese Tip
 
 Ab diesem Zeitpunkt werden unsere APIs auf zwei Arten angezeigt:
 
--  **Classic API:** Beschränkt auf 32 Bits (nur) und in den `monotouch.dll` Assemblys und `XamMac.dll` verfügbar gemacht.
--  **Unified API:** Unterstützung der 32-und 64-Bit-Entwicklung mit einer einzelnen `Xamarin.iOS.dll` API `Xamarin.Mac.dll` , die in den Assemblys und verfügbar
+- **Classic API:** Beschränkt auf 32 Bits (nur) und in den `monotouch.dll` Assemblys und `XamMac.dll` verfügbar gemacht.
+- **Unified API:** Unterstützung der 32-und 64-Bit-Entwicklung mit einer einzelnen `Xamarin.iOS.dll` API `Xamarin.Mac.dll` , die in den Assemblys und verfügbar
 
 Dies bedeutet, dass Sie für Unternehmensentwickler (nicht für den App Store) die vorhandenen klassischen APIs weiterhin verwenden können, da wir Sie dauerhaft beibehalten werden, oder Sie können ein Upgrade auf die neuen APIs durchführen.
 
@@ -55,8 +55,8 @@ Wir löschen das Präfix "MonoTouch" aus unserem IOS-Produkt und "monomac" aus d
 
 Dies vereinfacht das Freigeben von Code zwischen den Mac-und IOS-Plattformen, ohne dass auf die bedingte Kompilierung zurückgegriffen wird. Dadurch wird das Rauschen am Anfang der Quell Code Dateien reduziert.
 
--  **Classic API:** Namespaces verwenden `MonoTouch.` oder `MonoMac.` Präfix.
--  **Unified API:** Kein Namespace Präfix
+- **Classic API:** Namespaces verwenden `MonoTouch.` oder `MonoMac.` Präfix.
+- **Unified API:** Kein Namespace Präfix
 
 ## <a name="runtime-defaults"></a>Laufzeit-Standardwerte
 
@@ -83,7 +83,7 @@ Eine vollständige Liste der Änderungen beim Wechsel von der klassischen zum Un
 
 ## <a name="updating-to-unified"></a>Aktualisieren auf Unified
 
-Einige alte/unterbrochene/veraltete **APIs sind in** der **vereinheitlichten** API nicht verfügbar. Es kann einfacher sein, die `CS0616` Warnungen zu beheben, bevor Sie mit der (manuellen oder automatisierten) Aktualisierung beginnen, da Sie über die `[Obsolete]` Attribut Meldung (Teil der Warnung) zur richtigen API gelangen.
+Einige alte/unterbrochene/veraltete APIs sind in der **vereinheitlichten** API nicht verfügbar. Es kann einfacher sein, die `CS0616` Warnungen zu beheben, bevor Sie mit der (manuellen oder automatisierten) Aktualisierung beginnen, da Sie über die `[Obsolete]` Attribut Meldung (Teil der Warnung) zur richtigen API gelangen.
 
 Beachten Sie, dass wir einen [*diff*](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md) der klassischen vs Unified API-Änderungen veröffentlichen, die entweder vor oder nach dem Projekt aktualisiert werden können. Immer noch eine Korrektur der veralteten Aufrufe in klassischem, ist oft ein Zeitersparnis (weniger Dokumentations Suchvorgänge).
 
@@ -179,9 +179,9 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 In der klassischen xamarin. IOS-API (MonoTouch. dll `[Obsolete]` ) wurde das-Attribut auf zwei verschiedene Arten verwendet:
 
--  **Als veraltet markierte IOS-API:** Dies ist der Fall, wenn Apple Ihnen Hinweise zum Beenden der Verwendung einer API gibt, da Sie durch eine neuere ersetzt wird. Der Classic API ist weiterhin in Ordnung und oft erforderlich (wenn Sie die ältere Version von IOS unterstützen).
+- **Als veraltet markierte IOS-API:** Dies ist der Fall, wenn Apple Ihnen Hinweise zum Beenden der Verwendung einer API gibt, da Sie durch eine neuere ersetzt wird. Der Classic API ist weiterhin in Ordnung und oft erforderlich (wenn Sie die ältere Version von IOS unterstützen).
  Eine derartige API (und `[Obsolete]` das-Attribut) ist in den neuen xamarin. IOS-Assemblys enthalten.
--  **Falsche API** Für einige APIs gab es Tippfehler in ihren Namen.
+- **Falsche API** Für einige APIs gab es Tippfehler in ihren Namen.
 
 Bei den ursprünglichen Assemblys ("MonoTouch. dll" und "xammac. dll") wurde der alte Code aus Kompatibilitätsgründen verfügbar gehalten, aber aus den Unified API Assemblys (xamarin. IOS. dll und xamarin. Mac) entfernt.
 
@@ -195,7 +195,9 @@ In Classic war dies ein `public` Konstruktor. Es war jedoch einfach, dieses Feat
 
 Um diese Art von Problemen zu vermeiden `IntPtr` , befinden sich die `protected` Konstruktoren jetzt in der **vereinheitlichten** API, sodass Sie nur für die Unterklassen verwendet werden können. Dadurch wird sichergestellt, dass die richtige/sichere API verwendet wird, um verwaltete Instanzen aus Handles zu erstellen, d. h.
 
-    var label = Runtime.GetNSObject<UILabel> (handle);
+```csharp
+var label = Runtime.GetNSObject<UILabel> (handle);
+```
 
 Diese API gibt eine vorhandene verwaltete Instanz zurück (falls Sie bereits vorhanden ist) oder erstellt eine neue Instanz (falls erforderlich). Es ist bereits in klassischer und einheitlicher API verfügbar.
 
@@ -222,15 +224,17 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 Früher `NSAction`war dies ein Compilerfehler, da `Action` kein zugewiesen werden kann. da `UITapGestureRecognizer` nun jedoch einen `Action` anstelle von `NSAction` erfordert, ist er in den vereinheitlichten APIs gültig.
 
-### <a name="custom-delegates-replaced-with-actiont"></a>Durch Aktion ersetzte benutzerdefinierte Delegaten<T>
+### <a name="custom-delegates-replaced-with-actiont"></a>Benutzerdefinierte Delegaten,\<die durch Action T ersetzt wurden >
 
 In **vereinheitlichten** (z. b. einem Parameter) wurden .net-Delegaten durch ersetzt `Action<T>`. Beispiel:
 
-    public delegate void NSNotificationHandler (NSNotification notification);
+```csharp
+public delegate void NSNotificationHandler (NSNotification notification);
+```
 
 kann nun als `Action<NSNotification>`verwendet werden. Dies fördert die Wiederverwendung von Code und verringert die Code Duplizierung in xamarin. IOS und ihren eigenen Anwendungen.
 
-### <a name="taskbool-replaced-with-taskbooleannserror"></a>Der<bool> Task wurde durch den Task < Boolean, nserror > ersetzt >
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>Der\<Task "bool" > durch Task < Boolean, nserror > ersetzt >
 
 Im **klassischen** Modell gab es einige Async- `Task<bool>`APIs, die zurückkehrten. Einige von Ihnen sind jedoch zu verwenden, wenn ein `NSError` Teil der Signatur war, d. h. `bool` , der `true` war bereits vorhanden, und Sie mussten eine Ausnahme abfangen, um das `NSError`zu erhalten.
 
@@ -242,11 +246,15 @@ In einigen Fällen mussten einige Konstanten von `string` in `NSString`geändert
 
 **Ern**
 
-    public virtual string ReuseIdentifier { get; }
+```csharp
+public virtual string ReuseIdentifier { get; }
+```
 
 **Unified**
 
-    public virtual NSString ReuseIdentifier { get; }
+```csharp
+public virtual NSString ReuseIdentifier { get; }
+```
 
 Im allgemeinen bevorzugen wir den .net `System.String` -Typ. Trotz der Apple-Richtlinien hingegen vergleichen einige Native API Konstante Zeiger (nicht die Zeichenfolge selbst), und dies kann nur funktionieren, wenn wir die `NSString`Konstanten als verfügbar machen.
 
@@ -260,11 +268,15 @@ Diese Einschränkungen wurden in den vereinheitlichten APIs entfernt und bereini
 
 **Ern**
 
-    public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```
 
 **Unified**
 
-    public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```
 
 Das `I` Präfix bedeutet, dass **Unified** eine Schnittstelle anstelle eines bestimmten Typs für das ObjC-Protokoll verfügbar macht. Dies erleichtert Fälle, in denen der von xamarin. IOS bereitgestellte spezifische Typ nicht unterteilt werden soll.
 
@@ -272,11 +284,15 @@ Außerdem war es möglich, eine API präziser und benutzerfreundlicher zu verwen
 
 **Ern**
 
-    public virtual void SelectionDidChange (NSObject uiTextInput);
+```csharp
+public virtual void SelectionDidChange (NSObject uiTextInput);
+```
 
 **Unified**
 
-    public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```csharp
+public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```
 
 Diese API ist jetzt einfacher zu nutzen, ohne auf die Dokumentation zu verweisen, und ihre IDE-Codevervollständigung bietet Ihnen auf der Grundlage des Protokolls/der Schnittstelle ausführlichere Vorschläge.
 

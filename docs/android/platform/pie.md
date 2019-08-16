@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 52141141ab525c7407fa2f3ff2dca749473b39c1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d4d7379e1d4d2dd605331b30d692df299f5f5c13
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511452"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523663"
 ---
 # <a name="android-pie-features"></a>Android-Kreis Features
 
@@ -95,13 +95,13 @@ Weitere Informationen zum Verwenden des Android-Emulators zum Testen und Debugge
 
 Mit dem Android-Kreis wird eine Reihe neuer Features eingeführt. Einige dieser neuen Features sind darauf ausgelegt, neue Hardwarefunktionen zu nutzen, die von den neuesten Android-Geräten angeboten werden, während andere die Benutzer Funktionalität von Android weiter verbessern können:
 
--   **Unterstützung für Ausschneide Anzeige** Stellt APIs bereit, um den Speicherort und die Form des Ausschneide Fensters auf neueren Android-Geräten im oberen Bildschirmbereich zu finden.  &ndash;
+- **Unterstützung für Ausschneide Anzeige** Stellt APIs bereit, um den Speicherort und die Form des Ausschneide Fensters auf neueren Android-Geräten im oberen Bildschirmbereich zu finden. &ndash;
 
--   **Benachrichtigungs Erweiterungen** Benachrichtigungs Meldungen können jetzt Bilder anzeigen, und eine `Person` neue Klasse wird verwendet, um Konversations Teilnehmer zu vereinfachen. &ndash;
+- **Benachrichtigungs Erweiterungen** Benachrichtigungs Meldungen können jetzt Bilder anzeigen, und eine `Person` neue Klasse wird verwendet, um Konversations Teilnehmer zu vereinfachen. &ndash;
 
--   **Innen Positionierung** &ndash; Platt Form Unterstützung für das WLAN-Roundtrip-Zeitprotokoll, das es Apps ermöglicht, WiFi-Geräte für die Navigation in den Einstellungen von innen zu verwenden.
+- **Innen Positionierung** &ndash; Platt Form Unterstützung für das WLAN-Roundtrip-Zeitprotokoll, das es Apps ermöglicht, WiFi-Geräte für die Navigation in den Einstellungen von innen zu verwenden.
 
--   **Unterstützung für mehrere Kameras** &ndash; Bietet die Möglichkeit, gleichzeitig von mehreren physischen Kameras aus auf Streams zuzugreifen (z. b. Dual-Front-und Dual-Back-Kameras).
+- **Unterstützung für mehrere Kameras** &ndash; Bietet die Möglichkeit, gleichzeitig von mehreren physischen Kameras aus auf Streams zuzugreifen (z. b. Dual-Front-und Dual-Back-Kameras).
 
 
 In den folgenden Abschnitten werden diese Features hervorgehoben und kurze Codebeispiele bereitgestellt, die Ihnen bei der Verwendung in Ihrer APP helfen.
@@ -115,11 +115,11 @@ Der folgende Screenshot zeigt ein emulatorbeispiel für einen Ausschnitt:
 
 Um zu verwalten, wie Ihr App-Fenster seinen Inhalt auf Geräten anzeigt, auf denen ein Ausschnitt angezeigt wird, hat Android-Kreis ein neues [layoutunbestrilaycutoutmode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode) -Fenster Layout-Attribut hinzugefügt. Dieses Attribut kann auf einen der folgenden Werte festgelegt werden:
 
--   [Layoutunbestrilaycutoutmumuever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; Das Fenster darf sich niemals mit dem Ausschneide Bereich überlappen.
+- [Layoutunbestrilaycutoutmumuever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; Das Fenster darf sich niemals mit dem Ausschneide Bereich überlappen.
 
--   [Layoutunbestreitlaycutoutmodeshortedges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; Das Fenster darf nur auf den kurzen Rand des Bildschirms in den Ausschneide Bereich ausgedehnt werden. 
+- [Layoutunbestreitlaycutoutmodeshortedges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; Das Fenster darf nur auf den kurzen Rand des Bildschirms in den Ausschneide Bereich ausgedehnt werden. 
 
--   [Layoutunbestreitlaycutoutmodedefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; Das Fenster kann in den Ausschneide Bereich erweitert werden, wenn das Ausschneide in einer Systemleiste enthalten ist.
+- [Layoutunbestreitlaycutoutmodedefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; Das Fenster kann in den Ausschneide Bereich erweitert werden, wenn das Ausschneide in einer Systemleiste enthalten ist.
 
 Um beispielsweise zu verhindern, dass sich das Fenster der APP mit dem Ausschneide Bereich überschneidet, legen Sie den layoutausschneide Modus auf *nie*fest: 
 
@@ -145,13 +145,13 @@ Weitere Informationen zu den neuen Ausschneide Features in Android P finden Sie 
 
 Der Android-Kreis bietet die folgenden Verbesserungen, um das Messaging zu verbessern:
 
--   Benachrichtigungs Kanäle (eingeführt in [Android Oreo](~/android/platform/oreo.md)) unterstützen jetzt das Blockieren von Kanalgruppen.
+- Benachrichtigungs Kanäle (eingeführt in [Android Oreo](~/android/platform/oreo.md)) unterstützen jetzt das Blockieren von Kanalgruppen.
 
--   Das Benachrichtigungssystem verfügt über drei neue, nicht störende Kategorien (Priorisieren von Alarmen, Systemsounds und Medienquellen). Außerdem gibt es sieben neue do-not-stört-Modi, die verwendet werden können, um visuelle Unterbrechungen (z. b. Abzeichen, Benachrichtigungs Beleuchtung, Status leisten Auftritte und das Starten von voll Bild Aktivitäten) zu unterdrücken.
+- Das Benachrichtigungssystem verfügt über drei neue, nicht störende Kategorien (Priorisieren von Alarmen, Systemsounds und Medienquellen). Außerdem gibt es sieben neue do-not-stört-Modi, die verwendet werden können, um visuelle Unterbrechungen (z. b. Abzeichen, Benachrichtigungs Beleuchtung, Status leisten Auftritte und das Starten von voll Bild Aktivitäten) zu unterdrücken.
 
--   Eine neue [Person](https://developer.android.com/reference/android/app/Person.html) -Klasse wurde hinzugefügt, um den Absender einer Nachricht darzustellen. Mit dieser Klasse können Sie das Rendering der einzelnen Benachrichtigungen optimieren, indem Sie die an einer Konversation beteiligten Personen (einschließlich ihrer Avatare und URIs) identifizieren.
+- Eine neue [Person](https://developer.android.com/reference/android/app/Person.html) -Klasse wurde hinzugefügt, um den Absender einer Nachricht darzustellen. Mit dieser Klasse können Sie das Rendering der einzelnen Benachrichtigungen optimieren, indem Sie die an einer Konversation beteiligten Personen (einschließlich ihrer Avatare und URIs) identifizieren.
 
--   Benachrichtigungen können jetzt Bilder anzeigen. 
+- Benachrichtigungen können jetzt Bilder anzeigen. 
 
 Im folgenden Beispiel wird veranschaulicht, wie die neuen APIs verwendet werden, um eine Benachrichtigung zu generieren, die ein Bild enthält. In den folgenden Screenshots wird eine Text Benachrichtigung gesendet, auf die eine Benachrichtigung mit einem eingebetteten Bild folgt. Wenn die Benachrichtigungen erweitert werden (wie auf der rechten Seite angezeigt), wird der Text der ersten Benachrichtigung angezeigt, und das in der zweiten Benachrichtigung eingebettete Bild wird vergrößert:
 
@@ -230,13 +230,13 @@ Weitere Informationen zur Unterstützung mehrerer Kameras in Android P finden Si
 
 Außerdem unterstützt Android-Kreis eine Reihe weiterer neuer Features:
 
--   Die neue [animatedimagedrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html) -Klasse, die zum Zeichnen und anzeigen animierter Bilder verwendet werden kann.
+- Die neue [animatedimagedrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html) -Klasse, die zum Zeichnen und anzeigen animierter Bilder verwendet werden kann.
 
--   Eine neue [imagedecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) -Klasse, `BitmapFactory`die ersetzt. `ImageDecoder`kann verwendet werden, um eine `AnimatedImageDrawable`zu decodieren.
+- Eine neue [imagedecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) -Klasse, `BitmapFactory`die ersetzt. `ImageDecoder`kann verwendet werden, um eine `AnimatedImageDrawable`zu decodieren.
 
--   Unterstützung für Video-und heif-Bilder (High Efficiency Image File Format) für HDR (Hochdynamisches Bereich).
+- Unterstützung für Video-und heif-Bilder (High Efficiency Image File Format) für HDR (Hochdynamisches Bereich).
 
--   [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html) wurde verbessert, um netzwerkbezogene Aufträge intelligenter verarbeiten zu können. Die neue [getnetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29) -Methode der [jobparameters](https://developer.android.com/reference/android/app/job/JobParameters) -Klasse gibt das beste Netzwerk zum Ausführen beliebiger Netzwerk Anforderungen für einen bestimmten Auftrag zurück.
+- [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html) wurde verbessert, um netzwerkbezogene Aufträge intelligenter verarbeiten zu können. Die neue [getnetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29) -Methode der [jobparameters](https://developer.android.com/reference/android/app/job/JobParameters) -Klasse gibt das beste Netzwerk zum Ausführen beliebiger Netzwerk Anforderungen für einen bestimmten Auftrag zurück.
 
 Weitere Informationen zu den neuesten Android-Kreis Features finden Sie unter [Android 9 Features und APIs](https://developer.android.com/about/versions/pie/android-9.0).
 
@@ -245,11 +245,11 @@ Weitere Informationen zu den neuesten Android-Kreis Features finden Sie unter [A
 
 Wenn die Android-Ziel Version auf API-Ebene 28 festgelegt ist, gibt es mehrere Platt Formänderungen, die sich auf das Verhalten Ihrer APP auswirken können, auch wenn Sie die oben beschriebenen neuen Features nicht implementieren. Die folgende Liste stellt eine kurze Zusammenfassung dieser Änderungen dar:
 
--  Apps müssen jetzt die Vordergrund Berechtigung anfordern, bevor Sie Vordergrund Dienste verwenden.
+- Apps müssen jetzt die Vordergrund Berechtigung anfordern, bevor Sie Vordergrund Dienste verwenden.
 
--  Wenn Ihre APP mehr als einen Prozess umfasst, kann Sie ein einzelnes [WebView](xref:Android.Webkit.WebView) -Datenverzeichnis nicht Prozess übergreifend freigeben.
+- Wenn Ihre APP mehr als einen Prozess umfasst, kann Sie ein einzelnes [WebView](xref:Android.Webkit.WebView) -Datenverzeichnis nicht Prozess übergreifend freigeben.
 
--  Der direkte Zugriff auf das Datenverzeichnis einer anderen APP über den Pfad ist nicht mehr zulässig.
+- Der direkte Zugriff auf das Datenverzeichnis einer anderen APP über den Pfad ist nicht mehr zulässig.
 
 Weitere Informationen zu Verhaltensänderungen für apps, die auf Android P abzielen, finden Sie unter [Verhaltensänderungen](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps).
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4878f2516e764f3ea01ac89569ab4dfdbdbd37e6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5e0f096e5f2c05452a285182db4e455769aa737b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647579"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529022"
 ---
 # <a name="xib-files-in-xamarinmac"></a>XIb-Dateien in xamarin. Mac
 
@@ -79,14 +79,14 @@ Im Abschnitt **Eigenschaften** gibt es wie in der folgenden Abbildung gezeigt ac
 
 Es gibt die folgenden Registerkarten (von links nach rechts):
 
--   **Dateiinspektor**: Der Dateiinspektor zeigt Dateiinformationen an, wie z.B. den Dateinamen der XIB-Datei, die bearbeitet wird.
--   **Schnellhilfe**: Die Registerkarte „Schnellhilfe“ bietet Kontexthilfe, je nachdem, was in Xcode ausgewählt ist.
--   **Identitätsinspektor**: Der Identitätsinspektor bietet Informationen zu dem ausgewählten Steuerelement bzw. der ausgewählten Ansicht.
--   **Attribut Inspektor** – mit dem Attribut Inspektor können Sie verschiedene Attribute des ausgewählten Steuer Elements/der ausgewählten Ansicht anpassen.
--   **Größen Inspektor** – mit dem Größen Inspektor können Sie die Größe und das Größenänderung des ausgewählten Steuer Elements/der ausgewählten Ansicht steuern.
--   **Verbindungs Inspektor** – der Verbindungs Inspektor zeigt die Ausgangs-und Aktions Verbindungen der ausgewählten Steuerelemente an. Wir untersuchen die Outlets und Aktionen in Kürze.
--   **Bindungs Inspektor** – mit dem Bindungs Inspektor können Sie Steuerelemente so konfigurieren, dass ihre Werte automatisch an Datenmodelle gebunden werden.
--   **View Effects Inspector** – mit dem View Effects Inspector können Sie Auswirkungen auf die Steuerelemente, z. b. Animationen, angeben.
+- **Dateiinspektor**: Der Dateiinspektor zeigt Dateiinformationen an, wie z.B. den Dateinamen der XIB-Datei, die bearbeitet wird.
+- **Schnellhilfe**: Die Registerkarte „Schnellhilfe“ bietet Kontexthilfe, je nachdem, was in Xcode ausgewählt ist.
+- **Identitätsinspektor**: Der Identitätsinspektor bietet Informationen zu dem ausgewählten Steuerelement bzw. der ausgewählten Ansicht.
+- **Attribut Inspektor** – mit dem Attribut Inspektor können Sie verschiedene Attribute des ausgewählten Steuer Elements/der ausgewählten Ansicht anpassen.
+- **Größen Inspektor** – mit dem Größen Inspektor können Sie die Größe und das Größenänderung des ausgewählten Steuer Elements/der ausgewählten Ansicht steuern.
+- **Verbindungs Inspektor** – der Verbindungs Inspektor zeigt die Ausgangs-und Aktions Verbindungen der ausgewählten Steuerelemente an. Wir untersuchen die Outlets und Aktionen in Kürze.
+- **Bindungs Inspektor** – mit dem Bindungs Inspektor können Sie Steuerelemente so konfigurieren, dass ihre Werte automatisch an Datenmodelle gebunden werden.
+- **View Effects Inspector** – mit dem View Effects Inspector können Sie Auswirkungen auf die Steuerelemente, z. b. Animationen, angeben.
 
 Im Abschnitt **Library** finden Sie Steuerelemente und Objekte, die Sie im Designer platzieren können, um Ihre Benutzeroberfläche grafisch zu erstellen:
 
@@ -271,8 +271,8 @@ Führen Sie folgende Schritte aus:
 
 Was sind Outlets und Aktionen? Bei der herkömmlichen .NET-Benutzeroberflächenprogrammierung wird ein Steuerelement auf der Benutzeroberfläche automatisch als Eigenschaft verfügbar gemacht, wenn es hinzugefügt wird. Unter Mac ist dies anders. Wenn Sie ein Steuerelement zu einer Ansicht hinzufügen, wird es dadurch nicht automatisch für Code zugänglich. Der Entwickler muss die UI-Elemente explizit für Code verfügbar machen. In der richtigen Reihenfolge gibt Apple zwei Optionen:
 
--  **Outlets**: Outlets sind vergleichbar mit Eigenschaften. Wenn Sie ein Steuerelement an ein Outlet anschließen, wird es über eine Eigenschaft für den Code verfügbar gemacht, sodass Sie z. b. Anfügen von Ereignis Handlern, Methodenaufrufe usw. durchführen können.
--  **Aktionen**: Aktionen sind vergleichbar mit dem Befehlsmuster in WPF. Wenn z. b. eine Aktion für ein Steuerelement ausgeführt wird, z. b. durch Klicken auf eine Schaltfläche, ruft das Steuerelement automatisch eine Methode in Ihrem Code auf. Aktionen sind leistungsstark und praktisch, da Sie viele Steuerelemente an dieselbe Aktion übertragen können.
+- **Outlets**: Outlets sind vergleichbar mit Eigenschaften. Wenn Sie ein Steuerelement an ein Outlet anschließen, wird es über eine Eigenschaft für den Code verfügbar gemacht, sodass Sie z. b. Anfügen von Ereignis Handlern, Methodenaufrufe usw. durchführen können.
+- **Aktionen**: Aktionen sind vergleichbar mit dem Befehlsmuster in WPF. Wenn z. b. eine Aktion für ein Steuerelement ausgeführt wird, z. b. durch Klicken auf eine Schaltfläche, ruft das Steuerelement automatisch eine Methode in Ihrem Code auf. Aktionen sind leistungsstark und praktisch, da Sie viele Steuerelemente an dieselbe Aktion übertragen können.
 
 In Xcode werden Outlets und Aktionen direkt im Code über das *ziehen von Steuer*Elementen hinzugefügt. Genauer gesagt bedeutet dies, dass Sie zum Erstellen eines Outlets oder einer Aktion ein Steuerelement auswählen, das Sie ein Outlet oder eine Aktion hinzufügen möchten, indem Sie die Schaltfläche **Control** auf der Tastatur gedrückt halten und das Steuerelement direkt in den Code ziehen.
 
@@ -301,7 +301,7 @@ Führen Sie folgende Schritte aus:
 
     [![Die richtige Datei ist ausgewählt] . (xib-images/outlet03.png "Die richtige Datei ist ausgewählt") .](xib-images/outlet03-large.png#lightbox)
 6. **Der letzte Schritt war sehr wichtig!** Wenn Sie die richtige Datei nicht ausgewählt haben, können Sie keine Outlets und Aktionen erstellen, oder Sie werden in C#der falschen Klasse verfügbar gemacht.
-7. Halten Sie im **Schnitt**stellen-Editor die STRG **-Taste gedrückt** , und klicken Sie auf die oben erstellte Bezeichnung auf den Code-Editor direkt unterhalb des `@interface MainWindow : NSWindow { }` Codes:
+7. Halten Sie im Schnittstellen- **Editor**die STRG-Taste gedrückt, und klicken Sie auf die oben erstellte Bezeichnung auf den Code-Editor direkt unterhalb des `@interface MainWindow : NSWindow { }` Codes:
 
     [![Ziehen, um ein neues Outlet zu erstellen](xib-images/outlet04.png "Ziehen, um ein neues Outlet zu erstellen")](xib-images/outlet04-large.png#lightbox)
 8. Es wird ein Dialogfeld geöffnet. Lassen Sie die **Verbindung** auf "Outlet" `ClickedLabel` festgelegt, und geben Sie als **Namen**ein:
@@ -320,7 +320,7 @@ Als nächstes sehen wir uns das Erstellen einer Aktion an, um eine Benutzerinter
 Führen Sie folgende Schritte aus:
 
 1. Stellen Sie sicher, dass Sie sich noch im **Assistenten-Editor** befinden und dass die Datei " **MainWindow. h** " im **Code-Editor**angezeigt wird.
-2. Halten Sie im Schnittstellen- **Editor**die **STRG** -Taste gedrückt, und klicken Sie auf die Schaltfläche, die wir oben erstellt haben, auf den `@property (assign) IBOutlet NSTextField *ClickedLabel;` Code-Editor direkt unterhalb des Codes:
+2. Halten Sie im Schnittstellen- **Editor**die STRG-Taste gedrückt, und klicken Sie auf die Schaltfläche, die wir oben erstellt haben, auf den `@property (assign) IBOutlet NSTextField *ClickedLabel;` Code-Editor direkt unterhalb des Codes:
 
     [![Ziehen zum Erstellen einer Aktion](xib-images/action01.png "Ziehen zum Erstellen einer Aktion")](xib-images/action01-large.png#lightbox)
 3. Ändern Sie den Verbindungstyp in Aktion:

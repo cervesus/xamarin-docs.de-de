@@ -1,56 +1,56 @@
 ---
-title: Xamarin.iOS-Datenzugriff
-description: Dieses Dokument enthält Links zu Anleitungen, die beschreiben, wie Sie mit lokalen Datenbanken in einer Xamarin.iOS-Anwendung arbeiten. Verknüpfter Inhalt wird von SQLite.NET ADO.NET und vieles mehr erläutert.
+title: Xamarin. IOS-Datenzugriff
+description: Dieses Dokument ist mit Anleitungen verknüpft, die beschreiben, wie lokale Datenbanken in einer xamarin. IOS-Anwendung verwendet werden. In verknüpften Inhalten werden sqlite.net, ADO.net und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 420f52a055dc1c03a017723ab34c2fc3b5363656
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 110d6c95c1bcc93d541b908807fe26c700eb656e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650226"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526589"
 ---
-# <a name="xamarinios-data-access"></a>Xamarin.iOS-Datenzugriff
+# <a name="xamarinios-data-access"></a>Xamarin. IOS-Datenzugriff
 
-Xamarin.iOS unterstützt, z.B. Datenbankzugriff APIs:
+Xamarin. IOS unterstützt Datenbankzugriffs-APIs wie z. b.:
 
--  ADO.NET-Framework.
--  SQLite-NET-3rd party Bibliothek.
+- ADO.NET Framework.
+- SQLite-net-Drittanbieter Bibliothek.
 
-Dieses Handbuch bietet einen allgemeinen Überblick über die Datenbanken in der Regel vor beschreibt, wie ADO.NET und von SQLite.NET auf SQLite-Datenbanken in Ihrer Xamarin.iOS-Anwendungen einrichten. 
+Dieses Handbuch bietet eine allgemeine Übersicht über Datenbanken im Allgemeinen, bevor beschrieben wird, wie Sie ADO.net und SQLite.net für den Zugriff auf SQLite-Datenbanken in ihren xamarin. IOS-Anwendungen einrichten. 
 
-Der Großteil des Codes in diesem Dokument ist plattformübergreifend und ohne Änderungen unter iOS oder Android ausgeführt wird. Es gibt zwei Beispiel-apps erläutert:
+Der Großteil des Codes in diesem Dokument ist vollständig plattformübergreifend und kann ohne Änderungen unter IOS oder Android ausgeführt werden. Es gibt zwei Beispiel-apps, die erläutert werden:
 
--  [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) – einfache Datenvorgänge schreibt Anzeigen der Ergebnisse in einem Text-Steuerelement
--  [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) – Datenvorgänge in eine kleine Anwendung, die aufgelistet und eine einfache Datenstruktur bearbeitet integriert.
+- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) – einfache Daten Vorgänge schreiben die Ergebnisse in ein Textanzeige Steuerelement;
+- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) – integriert Daten Vorgänge in eine kleine funktionierende Anwendung, die eine einfache Datenstruktur auflistet und bearbeitet.
 
-Sowohl vollständige, gepackte Anwendungen enthalten, iOS und Android-Beispiel-Anwendungsprojekte.
+Beide Beispiel Lösungen enthalten IOS-und Android-Beispiel Anwendungsprojekte.
 
-Xamarin.Forms-Anwendungen finden Sie in [arbeiten mit Datenbanken](~/xamarin-forms/data-cloud/data/databases.md) das Arbeiten mit SQLite in einer PCL-Bibliothek mit Xamarin.Forms erläutert.
+Informationen zu xamarin. Forms-Anwendungen finden Sie unter [Arbeiten mit Datenbanken](~/xamarin-forms/data-cloud/data/databases.md) , in denen erläutert wird, wie mit sqlite in einer PCL-Bibliothek mit xamarin. Forms gearbeitet wird.
 
 ## <a name="sections"></a>Abschnitte
 
--  [Introduction (Einführung)](introduction.md)
--  [Konfiguration](configuration.md)
--  [Verwenden von SQLite.NET ORM](using-sqlite-orm.md)
--  [Verwenden von ADO.NET](using-adonet.md)
--  [Verwenden von Daten in einer App](using-data-in-an-app.md)
+- [Introduction (Einführung)](introduction.md)
+- [Configuration](configuration.md)
+- [Verwenden von SQLite.NET ORM](using-sqlite-orm.md)
+- [Verwenden von ADO.NET](using-adonet.md)
+- [Verwenden von Daten in einer App](using-data-in-an-app.md)
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Kapitel erläutert-Datenzugriff in Xamarin.iOS mithilfe von SQLite als die Datenbank-Engine. Die Datenbank "direkt" mit ADO.NET-Syntax zugegriffen werden kann oder Sie enthalten die von SQLite.NET ORM und Ausführen von Datenvorgängen in C# geschrieben.
+In diesem Kapitel wurde der Datenzugriff in xamarin. IOS mithilfe von SQLite als Datenbank-Engine erläutert. Der Zugriff auf die Datenbank kann direkt mithilfe der ADO.NET-Syntax erfolgen, oder Sie können den sqlite.net ORM einschließen und Daten C#Vorgänge in ausführen.
 
-Wir gesehen, dass zwei Beispiele: sehr einfach den Datenzugriffscode enthält, die Ausgaben in einem Textfeld und eine einfache Anwendung, die enthält erstellen, lesen, aktualisieren und Löschen von Funktionen. Außerdem wird erläutert, threading und wie Sie Ihre Anwendung mit einer voraufgefüllten SQLite-Datenbank ein Seeding.
+Wir haben zwei Beispiele überprüft: einen, der sehr einfachen Datenzugriffs Code enthält, der in ein Textfeld ausgibt, und eine einfache Anwendung, die Funktionen zum Erstellen, lesen, aktualisieren und löschen umfasst. Außerdem wurde das Threading erläutert und erläutert, wie Sie Ihre Anwendung mit einer vorab aufgefüllten SQLite-Datenbank als Ausgangs Ausgangs festlegen.
 
-Weitere Beispiele für plattformübergreifende Datenzugriff finden Sie in unserem [Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) Fallstudie.
+Weitere Beispiele für plattformübergreifenden Datenzugriff finden Sie in unserer [Tasky pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) -Fallstudie.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS-Daten-Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)
+- [DataAccess (erweitert) (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [IOS-Daten Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
+- [Xamarin. Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)

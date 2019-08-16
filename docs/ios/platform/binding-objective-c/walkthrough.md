@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: b73f00eb704d80da6b0bab3a34f08f2d1cb70a16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0870139def82317646981f154116a704d84cfa0e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646179"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527994"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek
 
@@ -45,10 +45,10 @@ Die Beispielanwendung zeigt, wie Sie einen starken Delegaten für die Kommunikat
 
 In diesem Artikel wird davon ausgegangen, dass Sie mit Xcode und der Programmiersprache "Ziel-c" vertraut sind und dass Sie unsere [Bindungs Ziel-c-](~/cross-platform/macios/binding/index.md) Dokumentation gelesen haben. Außerdem ist Folgendes erforderlich, um die folgenden Schritte auszuführen:
 
--  **Xcode und IOS SDK** : der Xcode von Apple und die neueste IOS-API müssen auf dem Computer des Entwicklers installiert und konfiguriert werden.
--  **[Xcode-Befehlszeilen Tools](#Installing_the_Xcode_Command_Line_Tools)** : die Xcode-Befehlszeilen Tools müssen für die aktuell installierte Version von Xcode installiert werden (Weitere Informationen zur Installation finden Sie unten).
--  **Visual Studio für Mac oder Visual Studio** : die neueste Version von Visual Studio für Mac oder Visual Studio sollte auf dem Entwicklungs Computer installiert und konfiguriert werden. Zum Entwickeln einer xamarin. IOS-Anwendung ist ein Apple Mac erforderlich, und wenn Sie Visual Studio verwenden, müssen Sie mit [einem xamarin. IOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md) -buildhost verbunden sein.
--  **Die neueste Version von Target Sharpie** : eine aktuelle Kopie des Ziel-Sharpie-Tools, das [hier](~/cross-platform/macios/binding/objective-sharpie/get-started.md)heruntergeladen wird. Wenn Sie bereits das Ziel "Sharpie" installiert haben, können Sie es mithilfe der`sharpie update`
+- **Xcode und IOS SDK** : der Xcode von Apple und die neueste IOS-API müssen auf dem Computer des Entwicklers installiert und konfiguriert werden.
+- **[Xcode-Befehlszeilen Tools](#Installing_the_Xcode_Command_Line_Tools)** : die Xcode-Befehlszeilen Tools müssen für die aktuell installierte Version von Xcode installiert werden (Weitere Informationen zur Installation finden Sie unten).
+- **Visual Studio für Mac oder Visual Studio** : die neueste Version von Visual Studio für Mac oder Visual Studio sollte auf dem Entwicklungs Computer installiert und konfiguriert werden. Zum Entwickeln einer xamarin. IOS-Anwendung ist ein Apple Mac erforderlich, und wenn Sie Visual Studio verwenden, müssen Sie mit [einem xamarin. IOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md) -buildhost verbunden sein.
+- **Die neueste Version von Target Sharpie** : eine aktuelle Kopie des Ziel-Sharpie-Tools, das [hier](~/cross-platform/macios/binding/objective-sharpie/get-started.md)heruntergeladen wird. Wenn Sie bereits das Ziel "Sharpie" installiert haben, können Sie es mithilfe der`sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 
@@ -332,7 +332,7 @@ Gehen Sie folgendermaßen vor, um die Bibliothek hinzuzufügen:
 
 -----
 
-Wenn die Datei " **. a** " dem Projekt hinzugefügt wird, legt xamarin. IOS automatisch **den** Buildvorgang der Datei auf **objcbindingnativelibrary**fest und erstellt eine spezielle Datei `libInfColorPickerSDK.linkwith.cs`mit dem Namen.
+Wenn die Datei " **. a** " dem Projekt hinzugefügt wird, legt xamarin. IOS automatisch den Buildvorgang der Datei auf **objcbindingnativelibrary**fest und erstellt eine spezielle Datei `libInfColorPickerSDK.linkwith.cs`mit dem Namen.
 
 
 Diese Datei enthält das `LinkWith` Attribut, das xamarin. IOS anweist, wie die soeben hinzugefügte statische Bibliothek behandelt werden soll. Der Inhalt dieser Datei wird im folgenden Code Ausschnitt gezeigt:

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e4676314b361bac17b3c6df64631572e62f4d870
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6960fe3db1ddf7d6d911fe8151e49b1a42388d26
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653729"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527858"
 ---
 # <a name="core-image-in-xamarinios"></a>Core-Image in xamarin. IOS
 
@@ -22,9 +22,9 @@ Das Core-Image ist ein neues in ios 5 eingeführte Framework, das eine Reihe int
 
 Dieses Dokument enthält einfache Beispiele für:
 
--  Gesichtserkennung.
--  Anwenden von Filtern auf ein Bild
--  Auflisten der verfügbaren Filter.
+- Gesichtserkennung.
+- Anwenden von Filtern auf ein Bild
+- Auflisten der verfügbaren Filter.
 
 
 Diese Beispiele sollen Ihnen beim Einstieg in Ihre xamarin. IOS-Anwendungen helfen.
@@ -49,12 +49,12 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 
 Das featurearray wird mit `CIFaceFeature` -Objekten aufgefüllt (sofern irgendwelche Gesichter erkannt wurden). Es gibt eine `CIFaceFeature` für jede Seite. `CIFaceFeature`verfügt über die folgenden Eigenschaften:
 
--  Hasmundposition – gibt an, ob ein Mund für dieses Gesicht erkannt wurde.
--  Haslefteyeposition – gibt an, ob das linke Auge für dieses Gesicht erkannt wurde.
--  Hasrechtschaffyeposition – gibt an, ob für dieses Gesicht das rechte Auge erkannt wurde. 
--  Mundposition – die Koordinaten des Mundes für dieses Gesicht.
--  Lefteyeposition – die Koordinaten des linken Auges für dieses Gesicht.
--  Rechtschaffyeposition – die Koordinaten des rechten Auges für dieses Gesicht.
+- Hasmundposition – gibt an, ob ein Mund für dieses Gesicht erkannt wurde.
+- Haslefteyeposition – gibt an, ob das linke Auge für dieses Gesicht erkannt wurde.
+- Hasrechtschaffyeposition – gibt an, ob für dieses Gesicht das rechte Auge erkannt wurde. 
+- Mundposition – die Koordinaten des Mundes für dieses Gesicht.
+- Lefteyeposition – die Koordinaten des linken Auges für dieses Gesicht.
+- Rechtschaffyeposition – die Koordinaten des rechten Auges für dieses Gesicht.
 
 
 Die Koordinaten für alle diese Eigenschaften haben den Ursprung unten links – im Gegensatz zu UIKit, bei dem die linke obere Seite als Ursprung verwendet wird. Wenn Sie die Koordinaten in `CIFaceFeature` verwenden, sollten Sie Sie "Kippen". Diese sehr grundlegende benutzerdefinierte Bildansicht in coreimage\coreimageviewcontroller.cs veranschaulicht, wie Sie "Gesicht Indikator"-Dreiecke im Bild `FlipForBottomOrigin` zeichnen (Beachten Sie die-Methode):

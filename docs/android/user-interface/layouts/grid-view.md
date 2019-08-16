@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: a1bcb83d6057cb7d4a43c510d7b5805b574812e6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: f71c275dd2beee6aedf41ecd19c8a4a39ab5a36f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510064"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522642"
 ---
 # <a name="xamarinandroid-gridview"></a>Xamarin. Android-GridView
 
@@ -166,5 +166,4 @@ Elemente durch Anpassen ihrer Eigenschaften. Verwenden [`LayoutParams`](xref:And
 - [`ImageView`](xref:Android.Widget.ImageView)
 - [`BaseAdapter`](xref:Android.Widget.BaseAdapter)
 
-*Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der*
-[*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden.
+_Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der [Creative Commons 2,5-Zuweisungs Lizenz](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden._

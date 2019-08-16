@@ -1,38 +1,38 @@
 ---
 title: Binden einer Java-Bibliothek
-description: Die Android-Community hat viele Java-Bibliotheken, die Sie in Ihrer app verwenden möchten. Dieses Handbuch wird erläutert, wie Java-Bibliotheken in Ihre Xamarin.Android-Anwendung zu integrieren, indem Sie eine Bibliothek Bindungen erstellen.
+description: Die Android-Community verfügt über viele Java-Bibliotheken, die Sie möglicherweise in Ihrer APP verwenden möchten. in diesem Handbuch wird erläutert, wie Sie Java-Bibliotheken in Ihre xamarin. Android-Anwendung integrieren, indem Sie eine Bindungs Bibliothek erstellen.
 ms.prod: xamarin
 ms.assetid: B39FF1D5-69C3-8A76-D268-C227A23C9485
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 016ac7269f334f6df7fba9635897b9608f459284
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 4c01022e01c5ba6a9099b88e99558bd7d7ce728d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970215"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524544"
 ---
 # <a name="binding-a-java-library"></a>Binden einer Java-Bibliothek
 
-_Die Android-Community hat viele Java-Bibliotheken, die Sie in Ihrer app verwenden möchten. Dieses Handbuch wird erläutert, wie Java-Bibliotheken in Ihre Xamarin.Android-Anwendung zu integrieren, indem Sie eine Bibliothek Bindungen erstellen._
+_Die Android-Community verfügt über viele Java-Bibliotheken, die Sie möglicherweise in Ihrer APP verwenden möchten. in diesem Handbuch wird erläutert, wie Sie Java-Bibliotheken in Ihre xamarin. Android-Anwendung integrieren, indem Sie eine Bindungs Bibliothek erstellen._
 
 ## <a name="overview"></a>Übersicht
 
-Das Ökosystem der Drittanbieter-Bibliothek für Android ist massive. Aus diesem Grund ist es häufig sinnvoll, eine vorhandene Android-Bibliothek als So erstellen eine neue Ressourcengruppe zu verwenden. Xamarin.Android bietet zwei Möglichkeiten, diese Bibliotheken verwenden:
+Das Drittanbieter-Bibliotheks Ökosystem für Android ist enorm. Aus diesem Grund ist es häufig sinnvoll, eine vorhandene Android-Bibliothek zu verwenden, als eine neue zu erstellen. Xamarin. Android bietet zwei Möglichkeiten, diese Bibliotheken zu verwenden:
 
--   Erstellen Sie eine *Bindungsbibliothek* , die automatisch dient als Wrapper für die Bibliothek mit C# Wrapper, damit Sie, Java aufrufen können-code über C# aufrufen.
+- Erstellen Sie eine *Bindungs Bibliothek* , die die Bibliothek automatisch C# mit Wrappern umschließt, damit Sie C# Java-Code über Aufrufe aufrufen können.
 
--   Verwenden der *Java Native Interface* (*JNI*) Aufrufe im Code der Java-Bibliothek direkt aufrufen. JNI ist ein Programmierframework, mit dem Sie Java-Code zum Aufrufen und von systemeigenen Anwendungen oder Bibliotheken aufgerufen werden kann.
+- Verwenden Sie die *Java Native Interface* (*jni*), um Aufrufe im Java-Bibliotheks Code direkt aufzurufen. Jni ist ein Programmier Framework, mit dem Java-Code aufrufen und von nativen Anwendungen oder Bibliotheken aufgerufen werden kann.
 
-Dieser Leitfaden erläutert die erste Option: Vorgehensweise: Erstellen einer *Bindungsbibliothek* , umschließt eine oder mehrere vorhandene Java-Bibliotheken in eine Assembly, die Sie in Ihrer Anwendung mit verknüpfen können. Weitere Informationen zur Verwendung von JNI finden Sie unter [arbeiten mit JNI](~/android/platform/java-integration/working-with-jni.md).
+In diesem Handbuch wird die erste Option erläutert: Erstellen einer *Bindungs Bibliothek* , die eine oder mehrere vorhandene Java-Bibliotheken in eine Assembly umschließt, die Sie in Ihrer Anwendung verknüpfen können. Weitere Informationen zur Verwendung von jni finden Sie unter [Arbeiten mit jni](~/android/platform/java-integration/working-with-jni.md).
 
-Xamarin.Android implementiert Bindungen mit *Callable Wrapper verwaltet* (*MCW*). MCW ist eine JNI-Brücke, die verwendet wird, wenn verwalteter Code zum Aufrufen von Java-Code muss. Verwaltete callable Wrapper bieten auch Unterstützung für das Erstellen von Unterklassen für Java-Typen und zum Überschreiben von virtueller Methoden in Java-Typen. Ebenso, wenn Android-Laufzeit (ART) Code verwalteten Code aufrufen möchte, geschieht dies über eine andere JNI-Brücke, die als Android Callable Wrapper (Inhaltsfehler) bezeichnet. Dies [Architektur](~/android/internals/architecture.md) ist in der folgenden Abbildung dargestellt:
+Xamarin. Android implementiert Bindungen mit *verwalteten Callable Wrapper* (*MCW*). MCW ist eine jni-Bridge, die verwendet wird, wenn verwalteter Code Java-Code aufrufen muss. Verwaltete Aufruf Bare Wrapper bieten außerdem Unterstützung für die Unterklassen von Java-Typen und zum Überschreiben virtueller Methoden in Java-Typen. Ebenso, wenn Android Runtime (Art)-Code verwalteten Code aufrufen möchte, erfolgt dies über eine andere jni-Bridge, die als Android Callable Wrapper (ACW) bezeichnet wird. Diese [Architektur](~/android/internals/architecture.md) wird im folgenden Diagramm veranschaulicht:
 
-[![Android JNI-Bridge-Architektur](images/architecture.png)](images/architecture.png#lightbox)
+[![Android jni Bridge-Architektur](images/architecture.png)](images/architecture.png#lightbox)
 
-Bindungsbibliothek ist eine Assembly mit verwalteten Callable Wrapper für die Java-Typen. Hier ist beispielsweise eine Java-Typen – `MyClass`, der in einer Bibliothek Bindungen umschlossen werden soll:
+Eine Bindungs Bibliothek ist eine Assembly, die verwaltete Aufruf Bare Wrapper für Java-Typen enthält. Hier ist z. b. der Java- `MyClass`Typ,, den wir in einer Bindungs Bibliothek einschließen möchten:
 
 ```java
 package com.xamarin.mycode;
@@ -43,7 +43,7 @@ public class MyClass
 }
 ```
 
-Nachdem wir eine Bibliothek mit Bindungen generiert die **JAR** , enthält `MyClass`, können wir instanziieren und rufen Sie Methoden dafür aus C#:
+Nachdem wir eine Bindungs Bibliothek für die **jar** -Datei generiert haben `MyClass`, die enthält, können wir Sie instanziieren und Methoden für C#Sie von folgenden Methoden abrufen:
 
 ```csharp
 var instance = new MyClass ();
@@ -51,99 +51,99 @@ var instance = new MyClass ();
 string result = instance.MyMethod (42);
 ```
 
-Um diese Bibliothek Bindungen zu erstellen, verwenden Sie die Xamarin.Android *Java Bindungsbibliothek* Vorlage. Das resultierende bindungsprojekt erstellt eine .NET Framework-Assembly mit den Klassen MCW **JAR** Dateien und Ressourcen für die Bibliothek für Android-Projekte, die in den es eingebettet. Sie können auch Bindungen Bibliotheken erstellen, für die Android-Archiv (. AAR)-Dateien und Eclipse-Bibliothek-Android-Projekte. Verweise auf die resultierende Bindings Library-DLL-Assembly, können Sie eine vorhandene Java-Bibliothek in Ihr Xamarin.Android-Projekt wiederverwenden.
+Um diese Bindungs Bibliothek zu erstellen, verwenden Sie die Vorlage xamarin. Android *Java-Bindungs Bibliothek* . Das resultierende Bindungs Projekt erstellt eine .NET-Assembly mit den MCW-Klassen, **jar** -Dateien und Ressourcen für Android-Bibliotheks Projekte, die darin eingebettet sind. Sie können auch Bindungs Bibliotheken für Android Archive erstellen (. Aar) Dateien und Eclipse-Android-Bibliotheks Projekte. Wenn Sie auf die resultierende Bindungs Bibliotheks-dll-Assembly verweisen, können Sie eine vorhandene Java-Bibliothek in Ihrem xamarin. Android-Projekt wieder verwenden.
 
-Wenn Sie Typen in der Bibliothek Bindung verweisen, müssen Sie den Namespace der bindungsbibliothek verwenden. In der Regel fügen Sie eine `using` -Direktive am Anfang Ihrer C# Quelldateien, die .NET Namespace-Version von der Java-Paketname. Wenn der name des Java-Pakets für die gebundenen z. B. **JAR** lautet wie folgt:
+Wenn Sie auf Typen in der Bindungs Bibliothek verweisen, müssen Sie den Namespace der Bindungs Bibliothek verwenden. In der Regel fügen Sie `using` eine-Direktive am Anfang C# der Quelldateien hinzu, die die .NET-Namespace Version des Java-Paket namens ist. Wenn z **. b.** der Java-Paketname für die gebundene jar-Datenbankname lautet:
 
 ```csharp
 com.company.package
 ```
 
-Würden Sie platzieren Sie die folgenden `using` Anweisung am Anfang Ihrer C# Quelldateien Zugriff auf Typen in den gebundenen **JAR** Datei:
+Dann fügen Sie die folgende `using` Anweisung am Anfang der C# Quelldateien ein, um auf Typen in der gebundenen **jar** -Datei zuzugreifen:
 
 ```csharp
 using Com.Company.Package;
 ```
 
 
-Wenn Sie eine vorhandene Android-Bibliothek zu binden, ist es erforderlich, die folgenden Punkte bedenken:
+Beim Binden einer vorhandenen Android-Bibliothek müssen folgende Punkte berücksichtigt werden:
 
-* **Gibt es keine externen Abhängigkeiten für die Bibliothek?** &ndash; Alle Java-Abhängigkeiten, die erforderlich sind, von der Android-Bibliothek enthalten sein müssen, in das Xamarin.Android-Projekt als eine **ReferenceJar** oder als ein **EmbeddedReferenceJar**. Alle systemeigenen Assemblys müssen hinzugefügt werden, für das bindungsprojekt "als eine **EmbeddedNativeLibrary**.  
+* **Gibt es externe Abhängigkeiten für die Bibliothek?** &ndash;Alle Java-Abhängigkeiten, die für die Android-Bibliothek erforderlich sind, müssen im xamarin. Android-Projekt als **referencejar** oder als **embeddedreferencejar**enthalten sein. Alle systemeigenen Assemblys müssen dem Bindungs Projekt als **embeddednativelibrary**hinzugefügt werden.  
 
-* **Welche der Android-API-Version die Android ist bibliotheksziel?** &ndash; Es ist nicht möglich, die Android-API-Ebene "heruntergestuft" Stellen Sie sicher, dass die Bindung Xamarin.Android-Projekt die gleiche API (oder höher) als Ziel verwendet als die Android-Bibliothek.
+* **Welche Version der Android-API führt das Ziel der Android-Bibliothek aus?** &ndash;Das "herabstufen" der Android-API-Ebene ist nicht möglich. Stellen Sie sicher, dass das xamarin. Android-Bindungs Projekt auf dieselbe API-Ebene (oder höher) wie die Android-Bibliothek abzielt.
 
-* **Welche Version des JDK wurde verwendet, um die Bibliothek zu kompilieren?** &ndash; Bindungsfehler kann auftreten, wenn die Android-Bibliothek mit einer anderen Version des JDK als in der Verwendung von Xamarin.Android erstellt wurde. Wenn möglich, kompilieren Sie erneut mit der Android-Bibliothek mit derselben Version des JDK, die durch die Installation von Xamarin.Android verwendet wird.
+* **Welche Version des JDK wurde verwendet, um die Bibliothek zu kompilieren?** &ndash;Bindungs Fehler können auftreten, wenn die Android-Bibliothek mit einer anderen Version von JDK erstellt wurde, als von xamarin. Android verwendet wird. Wenn möglich, kompilieren Sie die Android-Bibliothek mit derselben Version des JDK neu, das von Ihrer Installation von xamarin. Android verwendet wird.
 
 
 ## <a name="build-actions"></a>Buildvorgänge
 
-Bei der Erstellung einer Bindungsbibliothek festlegen *Buildvorgänge* auf die **JAR** oder. Zusätzlich zum AAR-Dateien, die Sie in Ihrem Projekt Bindungsbibliothek integrieren &ndash; bestimmt jeder Buildaktion wie die **JAR** oder. Zusätzlich zum AAR-Datei wird in eingebettet (oder verweist) Ihre Bindungen-Bibliothek. Die folgende Liste enthält diese Aktionen zu erstellen:
+Wenn Sie eine Bindungs Bibliothek erstellen, legen Sie Buildaktionen für die **jar** -Datei oder fest. AAR-Dateien, die Sie in Ihr Bindungs Bibliotheks &ndash; Projekt integrieren jede Buildaktion bestimmt, wie die **jar** -Datei oder. Die Aar-Datei wird in Ihre Bindungs Bibliothek eingebettet (oder von ihr referenziert). In der folgenden Liste sind diese Buildaktionen zusammengefasst:
 
-* `EmbeddedJar` &ndash; Bettet die **JAR** in die resultierende Bindings Library-DLL als eingebettete Ressource. Dies ist die einfachste und die meisten häufig verwendeten Buildvorgang. Verwenden Sie diese Option aus, wenn Sie möchten die **JAR** automatisch in Bytecode kompiliert und in der Bindings-Bibliothek gepackt.
+* `EmbeddedJar`Bettet die jar-in die resultierende Bindungs Bibliotheks-DLL als eingebettete Ressource ein. &ndash; Dies ist die einfachste und am häufigsten verwendete Buildaktion. Verwenden Sie diese Option, wenn Sie möchten, dass die **jar** -Datei automatisch in Bytecode kompiliert und in die Bindungs Bibliothek gepackt wird.
 
-* `InputJar` &ndash; Können Sie nicht einbetten der **JAR** in die resultierende Bindungen-Bibliothek. DLL. Ihre Bindungsbibliothek. DLL weist eine Abhängigkeit dazu **JAR** zur Laufzeit. Verwenden Sie diese Option aus, wenn Sie nicht einschließen möchten die **JAR** in Ihrer Bibliothek Bindungen (z. B. für aus Gründen der Lizenzierung). Wenn Sie diese Option verwenden, Sie müssen sicherstellen, dass die Eingabe **JAR** steht auf dem Gerät, das Ihre app ausgeführt wird.
+* `InputJar`Bindet die. jar--Bindung nicht in die resultierende Bindungs Bibliothek ein. &ndash; DLL. Ihre Bindungs Bibliothek. Die dll weist zur Laufzeit eine Abhängigkeit von dieser **jar** -Datei auf. Verwenden Sie diese Option, wenn Sie die **jar** -Bibliothek nicht in die Bindungs Bibliothek einschließen möchten (z. b. aus Lizenzierungs Gründen). Wenn Sie diese Option verwenden, müssen Sie sicherstellen, dass die Eingabe **. jar** auf dem Gerät verfügbar ist, das Ihre APP ausführt.
 
-* `LibraryProjectZip` &ndash; Bettet eine. Zusätzlich zum AAR-Datei in die resultierende Bindungen-Bibliothek. DLL. Dies ähnelt der EmbeddedJar, außer dass Sie in der gebundenen Ressourcen (sowie Code) zugreifen können. Zusätzlich zum AAR-Datei. Verwenden Sie diese Option aus, wenn Sie einbetten möchten ein. Zusätzlich zum AAR in die Bindungsbibliothek.
+* `LibraryProjectZip`&ndash; Bettet eine ein. AAR-Datei in die resultierende Bindungs Bibliothek. DLL. Dies ist vergleichbar mit embeddedjar, mit dem Unterschied, dass Sie auf Ressourcen (und Code) in der gebundenen zugreifen können. AAR-Datei. Verwenden Sie diese Option, wenn Sie einen einbetten möchten. Aar in Ihre Bindungs Bibliothek.
 
-* `ReferenceJar` &ndash; Gibt einen Verweis **JAR**: ein Verweis **JAR** ist eine **JAR** , dass eine mit Ihrem Grenze **JAR** oder. Hängt von AAR-Dateien. Dieser Verweis **JAR** dient ausschließlich zum Kompilieren Abhängigkeit erfüllen. Bei Verwendung dieser Buildaktion C# Bindungen werden nicht für den Verweis erstellt **JAR** und es wird nicht in der resultierenden Bindungen-Bibliothek eingebettet. DLL. Verwenden Sie diese Option aus, wenn Sie eine Bindungsbibliothek für den Verweis machen werden **JAR** , aber nicht noch geschehen. Diese Buildaktion ist nützlich für das Packen mehrerer **JAR**s (und/oder. AARs) in mehrere voneinander abhängige Bibliotheken von Bindungen.
+* `ReferenceJar` Gibt "Reference. jar" an: ein "Reference. jar" ist eine. jar--oder-Bindung. &ndash; AAR-Dateien sind abhängig von. This Reference **. jar** wird nur zum erfüllen der Abhängigkeiten der Kompilierzeit verwendet. Wenn Sie diese Buildaktion verwenden C# , werden keine Bindungen für "Reference **. jar** " erstellt und nicht in die resultierende Bindungs Bibliothek eingebettet. DLL. Verwenden Sie diese Option, wenn Sie eine Bindungs Bibliothek für den Verweis **. jar** erstellen, dies jedoch noch nicht getan haben. Diese Buildaktion ist hilfreich beim Verpacken mehrerer **jar**-s (und/oder). AARS) in mehrere abhängige Bindungs Bibliotheken.
 
-* `EmbeddedReferenceJar` &ndash; Bettet einen Verweis **JAR** in die resultierende Bindungen-Bibliothek. DLL. Verwenden Sie diese Buildaktion aus, wenn Sie erstellen möchten C# Bindungen für die beiden **JAR** (oder). Zusätzlich zum AAR) und alle zugehörigen Verweis **JAR**(s) in der Bindings-Bibliothek.
+* `EmbeddedReferenceJar`Bettet ein Reference **. jar** in die resultierende Bindungs Bibliothek ein. &ndash; DLL. Verwenden Sie diese Buildaktion, wenn Sie C# Bindungen für die Eingabe **. jar** -Datei (oder) erstellen möchten. Aar) und alle zugehörigen Reference **. jar**-(e) in der Bindungs Bibliothek.
 
-* `EmbeddedNativeLibrary` &ndash; Bettet eine systemeigene **so** in die Bindung. Diese Buildaktion wird zum **so** Dateien, die erforderlich sind die **JAR** Datei gebunden wird. Möglicherweise manuell laden, müssen die **so** Bibliothek vor der Ausführung von Code aus der Java-Bibliothek. Dies wird nachfolgend beschrieben.
+* `EmbeddedNativeLibrary`Bettet eine native **. so** in die Bindung ein. &ndash; Diese Buildaktion wird für **.** -Dateien verwendet, die von der **jar** -Datei benötigt werden, die gebunden wird. Es kann erforderlich sein, die **. so** -Bibliothek vor dem Ausführen von Code aus der Java-Bibliothek manuell zu laden. Dies wird nachfolgend beschrieben.
 
-Diese Aktionen werden ausführlicher in den folgenden Handbüchern Build.
+Diese Buildaktionen werden in den folgenden Leitfäden ausführlicher erläutert.
 
-Darüber hinaus werden die folgenden Buildaktionen verwendet, um Hilfe Java-API-Dokumentation importieren und Konvertieren in C# XML-Dokumentation:
+Außerdem werden die folgenden Buildaktionen verwendet, um die Java-API-Dokumentation zu importieren C# und in die XML-Dokumentation zu konvertieren:
 
-* `JavaDocJar` wird verwendet, um die Javadoc-Archiv-JAR-Datei für eine Java-Bibliothek zu verweisen, die auf ein Maven-Paket-Format entspricht (in der Regel `FOOBAR-javadoc**.jar**`).
-* `JavaDocIndex` wird verwendet, um zu zeigen `index.html` Datei innerhalb der API-Referenzdokumentation HTML.
-* `JavaSourceJar` Dient als Ergänzung zu `JavaDocJar`JavaDoc zuerst aus Quellen zu generieren und behandeln Sie die Ergebnisse als `JavaDocIndex`, Paket-Stil für eine Java-Bibliothek, die eine Maven entspricht (in der Regel `FOOBAR-sources**.jar**`).
+* `JavaDocJar`wird verwendet, um auf Javadoc Archive JAR für eine Java-Bibliothek zu verweisen, die einem Maven-Paketstil (in der Regel `FOOBAR-javadoc**.jar**`) entspricht.
+* `JavaDocIndex`wird verwendet, um auf `index.html` die Datei in der API-Referenz Dokumentation HTML zu verweisen.
+* `JavaSourceJar`wird verwendet `JavaDocJar`, um zuerst Javadoc aus Quellen zu generieren und anschließend die Ergebnisse als `JavaDocIndex`für eine Java-Bibliothek zu behandeln, die einem Maven-Paketstil entspricht `FOOBAR-sources**.jar**`(in der Regel).
 
-Die API-Dokumentation sollte die standardmäßige Doclet Java8, Java7 oder Java6-SDK (sie sind alle anderen Format), oder den DroidDoc-Stil.
+Die API-Dokumentation sollte das standardmäßige Doclet aus Java8, Java7 oder java6 SDK (alle unterschiedlichen Format) oder den droiddoc-Stil sein.
 
-## <a name="including-a-native-library-in-a-binding"></a>Eine Native Bibliothek einzuschließen, in einer Bindung
+## <a name="including-a-native-library-in-a-binding"></a>Einschließen einer nativen Bibliothek in eine Bindung
 
-Es kann erforderlich sein, enthalten eine **so** -Bibliothek in eine Xamarin.Android-Bindung-Projekt als Teil der Bindung einer Java-Bibliothek. Wenn die umschlossene Java-Code ausgeführt wird, Xamarin.Android der JNI-Aufruf und die Fehlermeldung fehl _java.lang.UnsatisfiedLinkError: Native Methode wurde nicht gefunden:_ wird in der Logcat, für die Anwendung angezeigt.
+Es kann erforderlich sein, eine **. so** -Bibliothek in ein xamarin. Android-Bindungs Projekt als Teil der Bindung einer Java-Bibliothek einzuschließen. Wenn der umschließende Java-Code ausgeführt wird, kann xamarin. Android den jni-Befehl nicht ausführen _und die Fehlermeldung "java. lang. unbefriefedlinkerror": Native Methode nicht gefunden:_ wird in der logcat-Ausgabe für die Anwendung angezeigt.
 
-Die Lösung manuell laden, wird die **so** Bibliothek mit einem Aufruf von `Java.Lang.JavaSystem.LoadLibrary`. Zum Beispiel davon aus, dass ein Xamarin.Android-Projekt über eine freigegebene Bibliothek verfügt **libpocketsphinx_jni.so** enthalten, die im bindungsprojekt mit einer Buildaktion von **EmbeddedNativeLibrary**, der folgende Codeausschnitt (wird ausgeführt, bevor Sie die freigegebene Bibliothek verwenden) lädt die **so** Bibliothek:
+Die Behebung hierfür besteht darin, die **. so** -Bibliothek mit einem-Befehl manuell `Java.Lang.JavaSystem.LoadLibrary`zu laden. Angenommen, ein xamarin. Android-Projekt hat eine freigegebene Bibliothek libpocketsphinx_jni, die im Bindungs Projekt mit einer Buildaktion von **embeddednativelibrary**enthalten ist, den folgenden Code Ausschnitt (vor der Verwendung der freigegebenen Bibliothek ausgeführt) **.** lädt die **. so** -Bibliothek:
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="adapting-java-apis-to-ceparsl"></a>Anpassen von Java-APIs in C&eparsl;
+## <a name="adapting-java-apis-to-ceparsl"></a>Anpassen von Java-APIs an C&eparsl;
 
-Der Generator für die Xamarin.Android-Bindung ändert einige Java-Ausdrücke und Mustern mit .NET Mustern entsprechen. Die folgende Liste beschreibt, wie Java zugeordnet wird C#/.NET:
+Der xamarin. Android-Bindungs Generator ändert einige Java-Ausdrücke und-Muster entsprechend den .net-Mustern. In der folgenden Liste wird beschrieben, C#wie Java/.NET zugeordnet wird:
 
--   _Setter/Abrufmethoden_ in Java werden _Eigenschaften_ in .NET.
+- _Setter/Getter-Methoden_ in Java sind _Eigenschaften_ in .net.
 
--   _Felder_ in Java werden _Eigenschaften_ in .NET.
+- _Felder_ in Java sind _Eigenschaften_ in .net.
 
--   _Listener/Listenerschnittstellen_ in Java werden _Ereignisse_ in .NET. Die Parameter der Methoden in den Rückrufschnittstellen durch dargestellt werden ein `EventArgs` Unterklasse.
+- _Listener/Listenerschnittstellen_ in Java sind _Ereignisse_ in .net. Die Parameter der Methoden in den Rückruf Schnittstellen werden durch eine `EventArgs` Unterklasse dargestellt.
 
--   Ein _statische geschachtelte Klasse_ in Java ist eine _der geschachtelten Klasse_ in .NET.
+- Eine _statische_ , in Java erbt Klasse ist eine in .net erbt.
 
--   Ein _inneren Klasse_ in Java ist eine _der geschachtelten Klasse_ mit einem Instanzenkonstruktor in C#.
+- Eine _innere Klasse_ in Java ist eine geschachtelte _Klasse_ mit einem Instanzkonstruktor in C#.
 
 
 
-## <a name="binding-scenarios"></a>Datenbindungsszenarien
+## <a name="binding-scenarios"></a>Bindungs Szenarien
 
-Die folgenden Anleitungen zu Szenarien Bindung können Sie eine Java-Bibliothek (oder Bibliotheken) für die Integration in Ihre app zu binden:
+Die folgenden Bindungs szenariohandbücher können Ihnen helfen, eine Java-Bibliothek (oder Bibliotheken) für die Einbindung in Ihre APP zu binden:
 
--   [Bindung ein. JAR-](~/android/platform/binding-java-library/binding-a-jar.md) ist eine exemplarische Vorgehensweise zum Erstellen von Bindungen-Bibliotheken für **JAR** Dateien.
+- [Binden einer. JAR](~/android/platform/binding-java-library/binding-a-jar.md) ist eine exemplarische Vorgehensweise zum Erstellen von Bindungs Bibliotheken für **jar** -Dateien.
 
--   [Bindung ein. Zusätzlich zum AAR](~/android/platform/binding-java-library/binding-an-aar.md) ist eine exemplarische Vorgehensweise zum Erstellen von Bindungen für Bibliotheken. Zusätzlich zum AAR-Dateien. Lesen Sie diese exemplarische Vorgehensweise zum erfahren, wie Sie Android Studio-Bibliotheken binden.
+- [Binden einer. AAR](~/android/platform/binding-java-library/binding-an-aar.md) ist eine exemplarische Vorgehensweise zum Erstellen von Bindungs Bibliotheken für. AAR-Dateien. Lesen Sie diese exemplarische Vorgehensweise, um zu erfahren, wie Android Studio Bibliotheken gebunden werden.
 
--   [Binden eine Eclipse-Bibliotheksprojekts](~/android/platform/binding-java-library/binding-a-library-project.md) ist eine exemplarische Vorgehensweise zum Erstellen von Bibliotheken der Bindung von Android-Bibliotheksprojekten. Lesen Sie diese exemplarische Vorgehensweise, um Informationen zum Binden von Eclipse Android-Bibliotheksprojekten.
+- [Die Bindung eines Eclipse-Bibliotheks Projekts](~/android/platform/binding-java-library/binding-a-library-project.md) ist eine exemplarische Vorgehensweise zum Erstellen von Bindungs Bibliotheken aus Android-Bibliotheks Projekten. Lesen Sie diese exemplarische Vorgehensweise, um zu erfahren, wie Sie Eclipse-Android-Bibliotheks Projekte
 
--   [Anpassen von Bindungen](~/android/platform/binding-java-library/customizing-bindings/index.md) wird erläutert, wie Sie manuelle Änderungen an die Bindung für den Buildfehler zu beheben und die Form vom Typ der resultierenden-API, sodass ist "C#-wie".
+- [Anpassen von Bindungen](~/android/platform/binding-java-library/customizing-bindings/index.md) erläutert, wie manuelle Änderungen an der Bindung vorgenommen werden, um Buildfehler aufzulösen und die resultierende API so zu strukturieren,C#dass Sie eher "-like" ist.
 
--   [Problembehandlung von Bindungen](~/android/platform/binding-java-library/troubleshooting-bindings.md) Listet allgemeine Fehlerszenarien für die Bindung, erläutert mögliche Ursachen und Vorschläge zur Behebung dieser Fehler bietet.
+- [Problem](~/android/platform/binding-java-library/troubleshooting-bindings.md) Behandlung bei Bindungen werden häufige Bindungs Fehler Szenarios aufgelistet, mögliche Ursachen erläutert und Vorschläge zum Beheben dieser Fehler angezeigt.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Arbeiten mit JNI](~/android/platform/java-integration/working-with-jni.md)
-- [GAPI-Metadaten](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [Arbeiten mit jni](~/android/platform/java-integration/working-with-jni.md)
+- [Gapi-Metadaten](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
 - [Verwenden nativer Bibliotheken](~/android/platform/native-libraries.md)

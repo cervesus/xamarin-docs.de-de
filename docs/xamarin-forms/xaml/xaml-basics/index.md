@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 7d46744c20874dd122b63e56ec92c7aa5ae6562e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d8b522ce75b2b594242dca167242ad0362f6cbfc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656989"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528302"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms-XAML-Grundlagen
 
@@ -35,35 +35,13 @@ Sie können zusätzlich zu diesen Artikeln XAML-Grundlagen Kapiteln des Buchs he
 
 XAML-Themen werden behandelt, ausführlicher in viele Kapiteln des Buchs, einschließlich:
 
-<table style="border:0px; box-shadow:0 0px 0px" cellpadding="0" cellspacing="2" border="0" width="85%">
-<tr style="background:#ecf0f1">
-  <td style="border:0px;">
-    <h4>Kapitel 7. Visual Studio mit XAML. Code</h4>
-  </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf">PDF herunterladen</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md">Zusammenfassung</a></td>
-</tr>
-<tr style="background:#f8f9fa">
-  <td style="border:0px;">
-    <h4>Kapitel 8. Code und XAML in Harmonie</h4>
-  </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf">PDF herunterladen</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter08.md">Zusammenfassung</a></td>
-</tr>
-<tr style="background:#f8f9fa">
-  <td style="border:0px;">
-    <h4>Kapitel 10. XAML-Markuperweiterungen</h4>
-  </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf">PDF herunterladen</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md">Zusammenfassung</a></td>
-</tr>
-<tr style="background:#f8f9fa">
-  <td style="border:0px;">
-    <h4>Kapitel 18. MVVM</h4>
-  </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf">PDF herunterladen</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md">Zusammenfassung</a></td></tr>
-</table>
+
+| Kapitel | Herunterladen | Zusammenfassung |
+|---------|---------|---------|
+| Kapitel 7. Visual Studio mit XAML. Code | [PDF herunterladen](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf) | [Zusammenfassung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md) |
+| Kapitel 8. Code und XAML in Harmonie | [PDF herunterladen](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf) | [Zusammenfassung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter08.md) |
+| Kapitel 10. XAML-Markuperweiterungen | [PDF herunterladen](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf) | [Zusammenfassung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md) |
+| Kapitel 18. MVVM | [PDF herunterladen](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf) | [Zusammenfassung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md) |
 
 Diese Kapitel möglich [kostenlos heruntergeladen](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
 
@@ -77,17 +55,17 @@ XAML ist auch Teil von Xamarin.Forms, die plattformübergreifende nativ-basierte
 
 XAML hat mehrere Vorteile gegenüber der entsprechende Code:
 
--  XAML ist häufig kompakt und besser lesbar als die entsprechenden Code.
--  Die XML-eigenen über-/ unterordnungshierarchie kann XAML, um für mehr visual Klarheit der über-/ unterordnungshierarchie von Benutzeroberflächenobjekten zu imitieren.
--  XAML kann leicht von Programmierern handschriftlichen, aber eignet sich Tools bearbeitbaren und von visuellen Entwurfstools generiert werden.
+- XAML ist häufig kompakt und besser lesbar als die entsprechenden Code.
+- Die XML-eigenen über-/ unterordnungshierarchie kann XAML, um für mehr visual Klarheit der über-/ unterordnungshierarchie von Benutzeroberflächenobjekten zu imitieren.
+- XAML kann leicht von Programmierern handschriftlichen, aber eignet sich Tools bearbeitbaren und von visuellen Entwurfstools generiert werden.
 
 Es gibt natürlich auch Nachteile, Einschränkungen, die von Markupsprachen für das systeminterne indexspeicherkosten beziehen:
 
--  XAML kann nicht mit Code enthalten. Alle Ereignishandler müssen in einer Codedatei definiert werden.
--  XAML kann keine Schleifen zur wiederholten Verarbeitung enthalten. (Allerdings mehrere Xamarin.Forms visuelle Objekte – insbesondere [ `ListView` ](xref:Xamarin.Forms.ListView) – kann mehrere untergeordnete Elemente erstellt auf der Grundlage der Objekte in der `ItemsSource` Sammlung.)
--  XAML kann nicht als bedingte Verarbeitung enthalten (jedoch kann eine Datenbindung einen codebasierten Binding-Konverter, der eine bedingte Verarbeitung ermöglicht verweisen.)
--  XAML kann nicht in der Regel Klassen instanziiert, die einen parameterlosen Konstruktor nicht definieren. (Allerdings es ist manchmal eine Methode zur Umgehung dieser Einschränkung.)
--  XAML kann nicht in der Regel Methoden aufrufen. (In diesem Fall kann diese Einschränkung manchmal überwunden werden.)
+- XAML kann nicht mit Code enthalten. Alle Ereignishandler müssen in einer Codedatei definiert werden.
+- XAML kann keine Schleifen zur wiederholten Verarbeitung enthalten. (Allerdings mehrere Xamarin.Forms visuelle Objekte – insbesondere [ `ListView` ](xref:Xamarin.Forms.ListView) – kann mehrere untergeordnete Elemente erstellt auf der Grundlage der Objekte in der `ItemsSource` Sammlung.)
+- XAML kann nicht als bedingte Verarbeitung enthalten (jedoch kann eine Datenbindung einen codebasierten Binding-Konverter, der eine bedingte Verarbeitung ermöglicht verweisen.)
+- XAML kann nicht in der Regel Klassen instanziiert, die einen parameterlosen Konstruktor nicht definieren. (Allerdings es ist manchmal eine Methode zur Umgehung dieser Einschränkung.)
+- XAML kann nicht in der Regel Methoden aufrufen. (In diesem Fall kann diese Einschränkung manchmal überwunden werden.)
 
 Es ist noch kein visuellen Designer für die Generierung von XAML in Xamarin.Forms-Anwendungen. Alle XAML handschriftlich, es ist jedoch ein [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer/index.md). Neue XAML Programmierer sollten so häufig erstellen, und führen ihre Anwendungen, insbesondere nach der alle Elemente, die möglicherweise nicht offensichtlich richtig. Sogar Entwickler, die mit viel Erfahrung in XAML wissen, dass es sich bei experimentieren belohnen ist.
 

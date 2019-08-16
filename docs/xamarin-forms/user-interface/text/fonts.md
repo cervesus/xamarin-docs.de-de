@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/28/2019
-ms.openlocfilehash: 329f7dc9cc43582f630a4895fba452a8496bae9a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c18c4e63831a03cbe28accfe10f4c7da31130803
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656170"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529307"
 ---
 # <a name="fonts-in-xamarinforms"></a>Schriftarten in Xamarin.Forms
 
@@ -58,9 +58,9 @@ Xamarin. Forms definiert auch Felder in der [`NamedSize`](xref:Xamarin.Forms.Nam
 
 Schriftart formatiert z. B. **fett** und *Kursiv* kann festgelegt werden, auf die `FontAttributes` Eigenschaft. Die folgenden Werte werden zurzeit unterstützt:
 
--  **Keine**
--  **Fett**
--  **Kursiv**
+- **Keine**
+- **Fett**
+- **Kursiv**
 
 Die `FontAttribute` Enumeration kann wie folgt verwendet werden (Sie können angeben, dass ein einzelnes Attribut oder `OR` sie):
 
@@ -100,7 +100,7 @@ Es ist ein integrierte Konverter für die `FontSize` -Eigenschaft, die alle Eins
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) kann auch in XAML verwendet werden um zu eine andere Schriftart auf jeder Plattform zu rendern. Im folgenden Beispiel wird eine benutzerdefinierte Schriftart unter iOS (<span style="font-family:MarkerFelt-Thin">MarkerFelt-dünn</span>) und gibt nur die Größe/Attribute auf den anderen Plattformen:
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) kann auch in XAML verwendet werden um zu eine andere Schriftart auf jeder Plattform zu rendern. Im folgenden Beispiel wird eine benutzerdefinierte Schriftart in ios (markerfelt-Thin) verwendet, und es werden nur Größe/Attribute auf den anderen Plattformen angegeben:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -183,7 +183,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Xamarin.Forms für Windows-Plattformen kann es sich um eine benutzerdefinierte Schriftart verweisen, die durch einen bestimmten Benennungsstandard folgen dem Projekt hinzugefügt wurde. Fügen Sie zuerst die Schriftartdatei, die **befände/Schriftarten/** Ordner im Projekt-Anwendung und legen die <span class="UIItem">erstellen: der Inhalt der Aktion</span>. Verwenden Sie dann den vollständigen Pfad und der Schriftart Dateinamen, gefolgt von einem Nummernzeichen (#) und die <span class="UIItem">Schriftartname</span>, wie der folgende Codeausschnitt veranschaulicht:
+Xamarin.Forms für Windows-Plattformen kann es sich um eine benutzerdefinierte Schriftart verweisen, die durch einen bestimmten Benennungsstandard folgen dem Projekt hinzugefügt wurde. Fügen Sie zuerst die Schriftartdatei, die **befände/Schriftarten/** Ordner im Projekt-Anwendung und legen die **erstellen: der Inhalt der Aktion**. Verwenden Sie dann den vollständigen Pfad und der Schriftart Dateinamen, gefolgt von einem Nummernzeichen (#) und die **Schriftartname**, wie der folgende Codeausschnitt veranschaulicht:
 
 ```csharp
 new Label

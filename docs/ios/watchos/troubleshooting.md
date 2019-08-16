@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6826088dcc192f4bc4dcfa7424236f98391e0bd6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656702"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528394"
 ---
 # <a name="watchos-troubleshooting"></a>Problembehandlung bei watchos
 
@@ -105,37 +105,39 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
 4. Schließen Sie das Storyboard, und kehren Sie zu Visual Studio für Mac zurück. Erstellen Sie eine C# neue Datei **MyInterfaceController.cs** (oder einen beliebigen Namen) im **App-Erweiterungs** Projekt (nicht in der Watch-APP selbst, in der sich das Storyboard befindet). Fügen Sie den folgenden Code hinzu (Aktualisieren von Namespace, Klassenname und Konstruktorname):
 
-        using System;
-        using WatchKit;
-        using Foundation;
-        
-        namespace WatchAppExtension  // remember to update this
+    ```csharp
+    using System;
+    using WatchKit;
+    using Foundation;
+
+    namespace WatchAppExtension  // remember to update this
+    {
+        public partial class MyInterfaceController // remember to update this
+        : WKInterfaceController
         {
-            public partial class MyInterfaceController // remember to update this
-            : WKInterfaceController
+            public MyInterfaceController // remember to update this
+            (IntPtr handle) : base (handle)
             {
-                public MyInterfaceController // remember to update this
-                (IntPtr handle) : base (handle)
-                {
-                }
-                public override void Awake (NSObject context)
-                {
-                    base.Awake (context);
-                    // Configure interface objects here.
-                    Console.WriteLine ("{0} awake with context", this);
-                }
-                public override void WillActivate ()
-                {
-                    // This method is called when the watch view controller is about to be visible to the user.
-                    Console.WriteLine ("{0} will activate", this);
-                }
-                public override void DidDeactivate ()
-                {
-                    // This method is called when the watch view controller is no longer visible to the user.
-                    Console.WriteLine ("{0} did deactivate", this);
-                }
+            }
+            public override void Awake (NSObject context)
+            {
+                base.Awake (context);
+                // Configure interface objects here.
+                Console.WriteLine ("{0} awake with context", this);
+            }
+            public override void WillActivate ()
+            {
+                // This method is called when the watch view controller is about to be visible to the user.
+                Console.WriteLine ("{0} will activate", this);
+            }
+            public override void DidDeactivate ()
+            {
+                // This method is called when the watch view controller is no longer visible to the user.
+                Console.WriteLine ("{0} did deactivate", this);
             }
         }
+    }
+    ```
 
 5. Erstellen Sie eine C# weitere neue Datei **MyInterfaceController.Designer.cs** im **App-Erweiterungs** Projekt, und fügen Sie den folgenden Code hinzu. Achten Sie darauf, dass Sie den Namespace, den Klassennamen `Register` und das Attribut aktualisieren:
 
@@ -188,22 +190,22 @@ Wenn alles ordnungsgemäß funktioniert hat, sollte es automatisch in der Dropdo
 
 11. Nachdem die storyboardänderungen gespeichert und Xcode geschlossen wurde, kehren Sie zu Visual Studio für Mac zurück. Die Header Dateiänderungen werden erkannt, und der **Designer.cs** -Datei wird automatisch Code hinzugefügt:
 
+    ```csharp
+    [Register ("MyInterfaceController")]
+    partial class MyInterfaceController
+    {
+        [Outlet]
+        WatchKit.WKInterfaceButton myButton { get; set; }
 
-        [Register ("MyInterfaceController")]
-        partial class MyInterfaceController
+        void ReleaseDesignerOutlets ()
         {
-            [Outlet]
-            WatchKit.WKInterfaceButton myButton { get; set; }
-        
-            void ReleaseDesignerOutlets ()
-            {
-                if (myButton != null) {
-                    myButton.Dispose ();
-                    myButton = null;
-                }
+            if (myButton != null) {
+                myButton.Dispose ();
+                myButton = null;
             }
         }
-
+    }
+    ```
 
 Sie können jetzt auf C#das-Steuerelement verweisen (oder die-Aktion implementieren).
 

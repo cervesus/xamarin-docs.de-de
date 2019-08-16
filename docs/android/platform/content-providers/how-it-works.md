@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 64a12f4f797630ad37e5821cd04a14a9d561c53e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8fb0b5136cc75463fc35ced2336e0ea321e8aecd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510680"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524421"
 ---
 # <a name="how-content-providers-work"></a>Funktionsweise von Inhaltsanbietern
 
@@ -73,10 +73,10 @@ Der Zweck der einzelnen Klassen wird im folgenden beschrieben:
 
 Die `ContentProvider` API ermöglicht es Consumern, eine Vielzahl von Vorgängen für die Daten auszuführen, z. b.:
 
--  Abfragen von Daten, um Listen oder einzelne Datensätze zurückzugeben.
--  Ändern einzelner Datensätze.
--  Fügen Sie neue Datensätze hinzu.
--  Löschen von Datensätzen.
+- Abfragen von Daten, um Listen oder einzelne Datensätze zurückzugeben.
+- Ändern einzelner Datensätze.
+- Fügen Sie neue Datensätze hinzu.
+- Löschen von Datensätzen.
 
 Dieses Dokument enthält ein Beispiel, in dem ein vom System `ContentProvider`bereitgestelltes verwendet wird, sowie ein einfaches Schreib geschütztes Beispiel, in `ContentProvider`dem ein benutzerdefiniertes implementiert wird.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 90bffc2360654f571728f76810f144e702a81e57
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0657e89e3026cbe2d146d538ca0158ed1d1806d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646102"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522740"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager mit Fragmenten
 
@@ -106,11 +106,11 @@ protected override void OnCreate(Bundle bundle)
 
 Dieser Code führt folgende Schritte aus:
 
-1.  Legt die Ansicht aus der **Main. axml** -layoutressource fest.
+1. Legt die Ansicht aus der **Main. axml** -layoutressource fest.
 
-2.  Ruft einen Verweis auf den `ViewPager` aus dem Layout ab.
+2. Ruft einen Verweis auf den `ViewPager` aus dem Layout ab.
 
-3.  Instanziiert eine neue `FlashCardDeck` als Datenquelle.
+3. Instanziiert eine neue `FlashCardDeck` als Datenquelle.
 
 Wenn Sie diesen Code erstellen und ausführen, sollte eine Anzeige angezeigt werden, die dem folgenden Screenshot ähnelt: 
 
@@ -248,9 +248,9 @@ Die `answer` Variable wird hier nicht verwendet, Sie wird jedoch später verwend
 
 Wenn Sie einen `FragmentPagerAdapter`implementieren, müssen Sie Folgendes überschreiben:
 
--   **Anzahl** &ndash; Schreibgeschützte Eigenschaft, die die Anzahl der verfügbaren Sichten (Seiten) zurückgibt.
+- **Anzahl** &ndash; Schreibgeschützte Eigenschaft, die die Anzahl der verfügbaren Sichten (Seiten) zurückgibt.
 
--   **GetItem** &ndash; Gibt das Fragment zurück, das für die angegebene Seite angezeigt werden soll.
+- **GetItem** &ndash; Gibt das Fragment zurück, das für die angegebene Seite angezeigt werden soll.
 
 Fügen Sie eine neue Datei mit dem Namen **FlashCardDeckAdapter.cs** hinzu, und ersetzen Sie Ihren Inhalt durch den folgenden Code:
 
@@ -335,13 +335,13 @@ public override Android.Support.V4.App.Fragment GetItem(int position)
 
 Dieser Code führt folgende Schritte aus:
 
-1.  Sucht die mathematische Problem Zeichenfolge im `FlashCardDeck` Stapel für die angegebene Position. 
+1. Sucht die mathematische Problem Zeichenfolge im `FlashCardDeck` Stapel für die angegebene Position. 
 
-2.  Sucht die Antwort Zeichenfolge im `FlashCardDeck` Stapel für die angegebene Position. 
+2. Sucht die Antwort Zeichenfolge im `FlashCardDeck` Stapel für die angegebene Position. 
 
-3.  Ruft die `FlashCardFragment` Factory- `newInstance`Methode auf und übergibt das Flash Karten Problem und die Antwort Zeichenfolgen. 
+3. Ruft die `FlashCardFragment` Factory- `newInstance`Methode auf und übergibt das Flash Karten Problem und die Antwort Zeichenfolgen. 
 
-4.  Erstellt eine neue Flash Karte `Fragment` , die den Frage-und Antworttext für diese Position enthält, und gibt diese zurück. 
+4. Erstellt eine neue Flash Karte `Fragment` , die den Frage-und Antworttext für diese Position enthält, und gibt diese zurück. 
 
 `Fragment` `TextBox` Wenn das bei `ViewPager` `position` rendert, wird das mit der mathematischen Problem Zeichenfolge angezeigt, die sich auf dem Flash Kartenstapel befindet. `position` 
 

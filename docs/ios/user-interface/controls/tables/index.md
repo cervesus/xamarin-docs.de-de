@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/06/2016
-ms.openlocfilehash: d01814bc241dcfb7b62f40bef226ee720a96ff23
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0dd3830b4903658d0b014eceaad9c57859963c04
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657004"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528629"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Arbeiten mit Tabellen und Zellen in xamarin. IOS
 
@@ -22,10 +22,10 @@ Bei der Verwendung von plattformübergreifenden Anwendungen mit xamarin. Android
 
 Diese Artikel machen einen umfassenden Einblick in die Arbeit mit Tabellen, einschließlich der folgenden:
 
--   **Tabellen Teile** – Einführung und Erläuterung der visuellen Elemente des `UITableView` Steuer Elements. 
--   **Anzeigen von Daten in Tabellen** – veranschaulichen, wie Sie eine Tabelle erstellen und Auffüllen, verschiedene Tabellen-und Zell Stile verwenden und Speicherprobleme vermeiden, indem Sie Zellen Objekte wieder verwenden. 
--   **Erweiterte Verwendung** – das Entwickeln von benutzerdefinierten Zellen und das Verwenden der Bearbeitungsfunktionen der uitableview-Klasse. 
--   **Visuelles Erstellen einer Tabelle** – mithilfe der Xamarin Designer für IOS, um eine Tabellen gesteuerte Schnittstelle mit einem Storyboard zu erstellen. 
+- **Tabellen Teile** – Einführung und Erläuterung der visuellen Elemente des `UITableView` Steuer Elements. 
+- **Anzeigen von Daten in Tabellen** – veranschaulichen, wie Sie eine Tabelle erstellen und Auffüllen, verschiedene Tabellen-und Zell Stile verwenden und Speicherprobleme vermeiden, indem Sie Zellen Objekte wieder verwenden. 
+- **Erweiterte Verwendung** – das Entwickeln von benutzerdefinierten Zellen und das Verwenden der Bearbeitungsfunktionen der uitableview-Klasse. 
+- **Visuelles Erstellen einer Tabelle** – mithilfe der Xamarin Designer für IOS, um eine Tabellen gesteuerte Schnittstelle mit einem Storyboard zu erstellen. 
 
 ## <a name="contents"></a>Inhalt
 

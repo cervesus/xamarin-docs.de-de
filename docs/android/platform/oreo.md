@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 08339ba3017983cf79d75adc1c6c21a2fb9ad98b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 798819176c741d8afc07f9cd097a61d753debbc9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643431"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523770"
 ---
 # <a name="oreo-features"></a>Oreo-Features
 
@@ -30,11 +30,11 @@ Dieser Artikel ist für den Einstieg in die Entwicklung von xamarin. Android-App
 
 Folgendes ist erforderlich, um Android Oreo-Features in xamarin-basierten apps zu verwenden:
 
--   **Visual Studio** &ndash; Wenn Sie Windows verwenden, ist Version 15,5 oder höher von Visual Studio erforderlich.  Wenn Sie einen Mac verwenden, ist Visual Studio für Mac Version 7.2.0 erforderlich.
+- **Visual Studio** &ndash; Wenn Sie Windows verwenden, ist Version 15,5 oder höher von Visual Studio erforderlich.  Wenn Sie einen Mac verwenden, ist Visual Studio für Mac Version 7.2.0 erforderlich.
 
--   **Xamarin. Android** &ndash; xamarin. Android 8,0 oder höher muss mit Visual Studio installiert und konfiguriert werden.
+- **Xamarin. Android** &ndash; xamarin. Android 8,0 oder höher muss mit Visual Studio installiert und konfiguriert werden.
 
--   **Android SDK** &ndash; Android SDK 8,0 (API 26) oder höher muss über den Android SDK-Manager installiert werden.
+- **Android SDK** &ndash; Android SDK 8,0 (API 26) oder höher muss über den Android SDK-Manager installiert werden.
 
 
 
@@ -141,26 +141,26 @@ Gehen Sie folgendermaßen vor, um ein neues virtuelles Gerät mithilfe von **avd
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Öffnen Sie ein Eingabe Aufforderungs Fenster `JAVA_HOME` , und legen Sie auf den Speicherort des Java SDK auf Ihrem Computer fest. Für eine typische xamarin-Installation können Sie den folgenden Befehl verwenden:
+1. Öffnen Sie ein Eingabe Aufforderungs Fenster `JAVA_HOME` , und legen Sie auf den Speicherort des Java SDK auf Ihrem Computer fest. Für eine typische xamarin-Installation können Sie den folgenden Befehl verwenden:
 
     ```cmd
     setx JAVA_HOME "C:\Program Files\Java\jdk1.8.0_131"
     ```
 
-2.  Fügen Sie der den Speicherort `bin` des Ordners `PATH`Android SDK hinzu.
+2. Fügen Sie der den Speicherort `bin` des Ordners `PATH`Android SDK hinzu.
     Für eine typische xamarin-Installation können Sie den folgenden Befehl verwenden:
 
     ```cmd
     setx PATH "%PATH%;C:\Program Files (x86)\Android\android-sdk\tools\bin"
     ```
 
-3.  Schließen Sie das Eingabe Aufforderungs Fenster, und öffnen Sie ein neues Eingabe Aufforderungs Fenster. Erstellen Sie mit dem [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) -Befehl ein neues virtuelles Gerät. Um z. b. eine AVD mit dem Namen **AVD-Oreo-8,0** zu erstellen, indem Sie das x86-System Image für API-Ebene 26 verwenden, verwenden Sie den folgenden Befehl:
+3. Schließen Sie das Eingabe Aufforderungs Fenster, und öffnen Sie ein neues Eingabe Aufforderungs Fenster. Erstellen Sie mit dem [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) -Befehl ein neues virtuelles Gerät. Um z. b. eine AVD mit dem Namen **AVD-Oreo-8,0** zu erstellen, indem Sie das x86-System Image für API-Ebene 26 verwenden, verwenden Sie den folgenden Befehl:
 
     ```cmd
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-4.  Wenn Sie dazu aufgefordert werden **, ein benutzerdefiniertes Hardwareprofil [No] zu erstellen,** können Sie **Nein** eingeben und das standardmäßige Hardwareprofil übernehmen. Wenn Sie " **Ja**" sagen, werden Sie von **avdmanager** aufgefordert, eine Liste mit Fragen zum Anpassen des Hardware Profils zu erhalten.
+4. Wenn Sie dazu aufgefordert werden **, ein benutzerdefiniertes Hardwareprofil [No] zu erstellen,** können Sie **Nein** eingeben und das standardmäßige Hardwareprofil übernehmen. Wenn Sie " **Ja**" sagen, werden Sie von **avdmanager** aufgefordert, eine Liste mit Fragen zum Anpassen des Hardware Profils zu erhalten.
 
 Nachdem Sie das virtuelle Gerät von **avdmanager** erstellt haben, wird es in das Pulldownmenü des Geräts eingefügt:
 
@@ -168,19 +168,19 @@ Nachdem Sie das virtuelle Gerät von **avdmanager** erstellt haben, wird es in d
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1.  Öffnen Sie ein **Terminal** Fenster, und wechseln Sie zum Speicherort des Verzeichnisses Android SDK Tools auf Ihrem Mac. Für eine typische xamarin-Installation können Sie den folgenden Befehl verwenden:
+1. Öffnen Sie ein **Terminal** Fenster, und wechseln Sie zum Speicherort des Verzeichnisses Android SDK Tools auf Ihrem Mac. Für eine typische xamarin-Installation können Sie den folgenden Befehl verwenden:
 
     ```bash
     cd ~/Library/Developer/Xamarin/android-sdk-macosx/tools/bin
     ```
 
-2.  Erstellen Sie mit dem [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) -Befehl ein neues virtuelles Gerät. Um z. b. eine AVD mit dem Namen **AVD-Oreo-8,0** zu erstellen, indem Sie das x86-System Image für API-Ebene 26 verwenden, verwenden Sie den folgenden Befehl:
+2. Erstellen Sie mit dem [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) -Befehl ein neues virtuelles Gerät. Um z. b. eine AVD mit dem Namen **AVD-Oreo-8,0** zu erstellen, indem Sie das x86-System Image für API-Ebene 26 verwenden, verwenden Sie den folgenden Befehl:
 
     ```bash
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  Wenn Sie dazu aufgefordert werden **, ein benutzerdefiniertes Hardwareprofil [No] zu erstellen,** können Sie **Nein** eingeben und das standardmäßige Hardwareprofil übernehmen. Wenn Sie " **Ja**" sagen, werden Sie von **avdmanager** aufgefordert, eine Liste mit Fragen zum Anpassen des Hardware Profils zu erhalten.
+3. Wenn Sie dazu aufgefordert werden **, ein benutzerdefiniertes Hardwareprofil [No] zu erstellen,** können Sie **Nein** eingeben und das standardmäßige Hardwareprofil übernehmen. Wenn Sie " **Ja**" sagen, werden Sie von **avdmanager** aufgefordert, eine Liste mit Fragen zum Anpassen des Hardware Profils zu erhalten.
 
 Nachdem Sie das virtuelle Gerät mithilfe von **avdmanager** erstellt haben, wird es in das Pulldownmenü des Geräts eingefügt:
 
@@ -250,15 +250,15 @@ Ab Android Oreo können apps Schriftarten von einem Anbieter anfordern, anstatt 
 
 Wenn Ihre APP eine Schriftart benötigt, erstellen Sie ein `FontsRequest` -Objekt (indem Sie die herunter zuladbare Schriftart angeben), `FontsContract` und übergeben Sie Sie dann an eine Methode zum Herunterladen der Schriftart. In den folgenden Schritten wird der Schriftart Downloadvorgang ausführlicher beschrieben:
 
-1.  Instanziieren Sie ein [fontrequest](https://developer.android.com/reference/android/provider/FontRequest.html) -Objekt. 
+1. Instanziieren Sie ein [fontrequest](https://developer.android.com/reference/android/provider/FontRequest.html) -Objekt. 
 
-2.  Unterklasse und instanziieren Sie [fongscontract. fontrequestcallback](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html).
+2. Unterklasse und instanziieren Sie [fongscontract. fontrequestcallback](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html).
 
-3.  Implementieren Sie die Methode " [fontrequestcallback. ontypefaceretrieved](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRetrieved%28android.graphics.Typeface%29) ", die verwendet wird, um den Abschluss der Schriftart Anforderung zu behandeln.
+3. Implementieren Sie die Methode " [fontrequestcallback. ontypefaceretrieved](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRetrieved%28android.graphics.Typeface%29) ", die verwendet wird, um den Abschluss der Schriftart Anforderung zu behandeln.
 
-4.  Implementieren Sie die Methode " [fontrequestcallback. ontypefacerequestfailed](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRequestFailed%28int%29) ", die verwendet wird, um Ihre APP über Fehler zu informieren, die während des Schriftart Anforderungs Prozesses stattfinden.
+4. Implementieren Sie die Methode " [fontrequestcallback. ontypefacerequestfailed](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRequestFailed%28int%29) ", die verwendet wird, um Ihre APP über Fehler zu informieren, die während des Schriftart Anforderungs Prozesses stattfinden.
 
-5.  Rufen Sie die Methode " [fontcontract. requestfonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback)) " auf, um die Schriftart aus dem Schriftart Anbieter abzurufen. 
+5. Rufen Sie die Methode " [fontcontract. requestfonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback)) " auf, um die Schriftart aus dem Schriftart Anbieter abzurufen. 
 
 Wenn Sie die `RequestFonts` -Methode aufzurufen, wird zuerst überprüft, ob die Schriftart lokal zwischengespeichert ist (von einem vorherigen `RequestFont`-Aufrufvorgang). Wenn Sie nicht zwischengespeichert wird, wird der Schriftart Anbieter aufgerufen. die Schriftart wird asynchron abgerufen, und die Ergebnisse werden an Ihre APP zurückgeleitet, indem `OnTypeFaceRetrieved` die-Methode aufgerufen wird.
 
@@ -290,9 +290,9 @@ android:supportsPictureInPicture
 
 Wenn Sie angeben möchten, wie sich die Aktivität im PIP-Modus Verhalten soll, verwenden Sie das neue-Objekt " [pictureinpictureparams](https://developer.android.com/reference/android/app/PictureInPictureParams.html) ". `PictureInPictureParams`stellt einen Satz von Parametern dar, die Sie verwenden, um eine Aktivität im PIP-Modus zu initialisieren und zu aktualisieren (z. b. das bevorzugte Seitenverhältnis der Aktivität). `Activity` In Android Oreo wurden die folgenden neuen PIP-Methoden hinzugefügt:
 
--   [Enterpictureinpicturemode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; versetzt die Aktivität in den PIP-Modus. Die Aktivität wird in der Ecke des Bildschirms platziert, und der restliche Bildschirm wird mit der vorherigen Aktivität aufgefüllt, die sich auf dem Bildschirm befand.
+- [Enterpictureinpicturemode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; versetzt die Aktivität in den PIP-Modus. Die Aktivität wird in der Ecke des Bildschirms platziert, und der restliche Bildschirm wird mit der vorherigen Aktivität aufgefüllt, die sich auf dem Bildschirm befand.
 
--   [Setpictureinpictuneu](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; Aktualisiert die PIP-Konfigurationseinstellungen der Aktivität (z. b. eine Änderung des Seitenverhältnisses).
+- [Setpictureinpictuneu](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; Aktualisiert die PIP-Konfigurationseinstellungen der Aktivität (z. b. eine Änderung des Seitenverhältnisses).
 
 Das Beispiel " [pictureinpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) " veranschaulicht die grundlegende Verwendung des PIP-Modus (Bild-in-Bild) für in Oreo eingeführte Hand Held Geräte. Im Beispiel wird ein Video abgespielt, das beim Wechseln zwischen Anzeigemodi oder anderen Aktivitäten ununterbrochen fortgesetzt wird.
 
@@ -313,9 +313,9 @@ Android Oreo umfasst eine Reihe von Änderungen am System-und API-Verhalten, die
 
 Um die Benutzererfahrung zu verbessern, erzwingt Android Oreo Einschränkungen, welche apps bei der Ausführung im Hintergrund ausgeführt werden können. Wenn der Benutzer z. b. ein Video ansehen oder ein Spiel spielt, könnte eine im Hintergrund ausgeführten APP die Leistung einer Video intensiven App beeinträchtigen, die im Vordergrund ausgeführt wird. Folglich werden von Android Oreo die folgenden Einschränkungen für apps, die nicht direkt mit dem Benutzer interagieren, platziert:
 
-1.  **Einschränkungen für den Hintergrunddienst** &ndash; Wenn eine APP im Hintergrund ausgeführt wird, verfügt sie über ein Fenster von einigen Minuten, in dem Sie weiterhin Dienste erstellen und verwenden können. Am Ende dieses Fensters hält Android den Hintergrunddienst der APP an und behandelt ihn als im _Leerlauf_befindlich.
+1. **Einschränkungen für den Hintergrunddienst** &ndash; Wenn eine APP im Hintergrund ausgeführt wird, verfügt sie über ein Fenster von einigen Minuten, in dem Sie weiterhin Dienste erstellen und verwenden können. Am Ende dieses Fensters hält Android den Hintergrunddienst der APP an und behandelt ihn als im _Leerlauf_befindlich.
 
-2.  **Übertragungs Einschränkungen** &ndash; Android 7,0 (API 25) hat Einschränkungen für Übertragungen festgelegt, die von einer APP für den Empfang registriert werden. Android Oreo macht diese Einschränkungen strenger. Android Oreo-Apps können z. b. Broadcast Empfänger nicht mehr für implizite Sendungen in ihren Manifesten registrieren.
+2. **Übertragungs Einschränkungen** &ndash; Android 7,0 (API 25) hat Einschränkungen für Übertragungen festgelegt, die von einer APP für den Empfang registriert werden. Android Oreo macht diese Einschränkungen strenger. Android Oreo-Apps können z. b. Broadcast Empfänger nicht mehr für implizite Sendungen in ihren Manifesten registrieren.
 
 Weitere Informationen zu den neuen Grenzwerten für die Hintergrund Ausführung finden Sie im Thema Android Developer [Background Execution Limits](https://developer.android.com/about/versions/oreo/background.html) .
 
@@ -333,19 +333,19 @@ Apps, die auf Android Oreo oder höher ausgerichtet sind, müssen Ihre apps änd
 
 Es stehen mehrere xamarin. Android-Beispiele zur Verfügung, die Ihnen zeigen, wie Sie die Funktionen von Android Oreo nutzen können:
 
--   [Notificationschannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels) zeigt die Verwendung des neuen Benachrichtigungs Kanalsystems, das in Android Oreo eingeführt wurde. In diesem Beispiel werden zwei Benachrichtigungs Kanäle verwaltet: eine mit der Standard Wichtigkeit und die andere mit hoher Wichtigkeit.
+- [Notificationschannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels) zeigt die Verwendung des neuen Benachrichtigungs Kanalsystems, das in Android Oreo eingeführt wurde. In diesem Beispiel werden zwei Benachrichtigungs Kanäle verwaltet: eine mit der Standard Wichtigkeit und die andere mit hoher Wichtigkeit.
 
--   " [Pictureinpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) " veranschaulicht die grundlegende Verwendung des PIP-Modus (Bild-in-Bild) für in Oreo eingeführte Handheld-Geräte. Im Beispiel wird ein Video abgespielt, das beim Wechseln zwischen Anzeigemodi oder anderen Aktivitäten ununterbrochen fortgesetzt wird.
+- " [Pictureinpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) " veranschaulicht die grundlegende Verwendung des PIP-Modus (Bild-in-Bild) für in Oreo eingeführte Handheld-Geräte. Im Beispiel wird ein Video abgespielt, das beim Wechseln zwischen Anzeigemodi oder anderen Aktivitäten ununterbrochen fortgesetzt wird.
 
--   [Autofillframework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework) veranschaulicht die Verwendung des AutoFill-Frameworks. Es umfasst Implementierungen von Client Aktivitäten mit Sichten, die automatisch ausgefüllt werden sollten, und einen Dienst, der Daten für das automatische Auffüllen an Client Aktivitäten bereitstellen kann.
+- [Autofillframework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework) veranschaulicht die Verwendung des AutoFill-Frameworks. Es umfasst Implementierungen von Client Aktivitäten mit Sichten, die automatisch ausgefüllt werden sollten, und einen Dienst, der Daten für das automatische Auffüllen an Client Aktivitäten bereitstellen kann.
 
--   Zum Herunterladen von [Schriftarten](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) finden Sie ein Beispiel für die Verwendung des zuvor beschriebenen Features zum Herunterladen von Schriftarten
+- Zum Herunterladen von [Schriftarten](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) finden Sie ein Beispiel für die Verwendung des zuvor beschriebenen Features zum Herunterladen von Schriftarten
 
--   [Emojicompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat) veranschaulicht die Verwendung der emojicompat-Unterstützungs Bibliothek. Sie können diese Bibliothek verwenden, um zu verhindern, dass Ihre APP fehlende Emoji-Zeichen als "Tofu"-Zeichen anzeigt.
+- [Emojicompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat) veranschaulicht die Verwendung der emojicompat-Unterstützungs Bibliothek. Sie können diese Bibliothek verwenden, um zu verhindern, dass Ihre APP fehlende Emoji-Zeichen als "Tofu"-Zeichen anzeigt.
 
--   [Location Updates Pending Intent](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) veranschaulicht die Verwendung der Location-API, um Updates zum Speicherort eines Geräts mithilfe `PendingIntent`von zu erhalten.
+- [Location Updates Pending Intent](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) veranschaulicht die Verwendung der Location-API, um Updates zum Speicherort eines Geräts mithilfe `PendingIntent`von zu erhalten.
 
--   [Location Updates Vordergrund Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice) veranschaulicht, wie die Location-API verwendet wird, um Updates zum Speicherort eines Geräts mithilfe eines gebundenen und gestarteten Vordergrund Dienstanbieter zu erhalten.
+- [Location Updates Vordergrund Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice) veranschaulicht, wie die Location-API verwendet wird, um Updates zum Speicherort eines Geräts mithilfe eines gebundenen und gestarteten Vordergrund Dienstanbieter zu erhalten.
 
 
 ## <a name="video"></a>Video

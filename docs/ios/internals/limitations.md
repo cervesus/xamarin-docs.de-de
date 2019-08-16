@@ -1,42 +1,42 @@
 ---
-title: Einschränkungen von Xamarin.iOS
-description: Dieses Dokument beschreibt die Einschränkungen von Xamarin.iOS, Erörterung von Generika, generische Unterklassen von NSObjects, P/Invokes in generische Objekte und mehr.
+title: Einschränkungen von xamarin. IOS
+description: In diesem Dokument werden die Einschränkungen von xamarin. IOS beschrieben. dabei werden Generika, generische Unterklassen von NSObjects, P/Aufrufe in generischen Objekten und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: 86f41bf227b97ef24651f482ff133a065226ee14
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f3baa6756b4e72b750ff1b128b72802f8f1ce6d9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830400"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527350"
 ---
-# <a name="limitations-of-xamarinios"></a>Einschränkungen von Xamarin.iOS
+# <a name="limitations-of-xamarinios"></a>Einschränkungen von xamarin. IOS
 
-Da Anwendungen, die unter Verwendung von Xamarin.iOS in statischen Code kompiliert werden, ist es nicht möglich, alle Funktionen verwenden zu können, für die Generierung von Code zur Laufzeit erforderlich.
+Da Anwendungen, die xamarin. IOS verwenden, in statischen Code kompiliert werden, ist es nicht möglich, Funktionen zu verwenden, die zur Laufzeit Codegenerierung erfordern.
 
-Dies sind die Xamarin.iOS-Einschränkungen, die im Vergleich zum Desktop Mono:
+Dies sind die xamarin. IOS-Einschränkungen im Vergleich zu Desktop Mono:
 
  <a name="Limited_Generics_Support" />
 
 
-## <a name="limited-generics-support"></a>Eingeschränkte Generikunterstützung
+## <a name="limited-generics-support"></a>Eingeschränkte Generika Unterstützung
 
-Im Gegensatz zu herkömmlichen Mono und .NET wird Code auf dem iPhone statisch voraus statt bei Bedarf kompiliert wird, die von einem JIT-Compiler kompiliert.
+Im Gegensatz zu herkömmlichem Mono/. net wird Code auf dem iPhone statisch kompiliert, anstatt bei Bedarf von einem JIT-Compiler kompiliert zu werden.
 
-Mono [vollständige AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot) Technologie gelten einige Einschränkungen in Bezug auf Generika, diese werden verursacht, da nicht alle möglichen generische Instanziierung voraus zum Zeitpunkt der Kompilierung nicht bestimmt werden kann. Dies ist kein Problem für reguläre .NET oder Mono-Laufzeiten, wie der Code immer zur Laufzeit über den Just-in-Time-Compiler kompiliert wird. Dies stellt eine Herausforderung für einen statischen Compiler wie Xamarin.iOS aber.
+Die [vollständige AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot) -Technologie von Mono weist einige Einschränkungen in Bezug auf Generika auf. diese sind darauf zurückzuführen, dass nicht jede mögliche generische Instanziierung im Vordergrund zur Kompilierzeit bestimmt werden kann. Dies ist kein Problem für reguläre .net-oder Mono-Laufzeiten, da der Code immer zur Laufzeit mithilfe des Just-in-Time-Compilers kompiliert wird. Dies stellt jedoch eine Herausforderung für einen statischen Compiler wie xamarin. IOS dar.
 
-Einige der häufigsten Probleme, denen Entwickler konfrontiert sind:
+Zu den häufigsten Problemen, die Entwickler ausführen können, gehören:
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Generische Unterklassen von NSObjects sind beschränkt.
 
-Xamarin.iOS verfügt über Unterstützung für das Erstellen von generischer Unterklassen von NSObject-Klasse, z. B. keine Unterstützung für generische Methoden derzeit begrenzt. Ab 7.2.1 ist die generische Unterklassen von NSObjects mit möglich ist, wie die folgende:
+Xamarin. IOS bietet derzeit eingeschränkte Unterstützung für das Erstellen von generischen Unterklassen der NSObject-Klasse, z. b. keine Unterstützung generischer Methoden. Ab 7.2.1 ist die Verwendung generischer Unterklassen von NSObjects wie folgt möglich:
 
 ```csharp
 class Foo<T> : UIView {
@@ -45,20 +45,20 @@ class Foo<T> : UIView {
 ```
 
 > [!NOTE]
-> Da generische Unterklassen von NSObjects möglich sind, gelten einige Einschränkungen. Lesen der [generische Unterklassen von NSObject](~/ios/internals/api-design/nsobject-generics.md) Dokument Weitere Informationen
+> Generische Unterklassen von NSObjects sind zwar möglich, es gibt jedoch einige Einschränkungen. Weitere Informationen finden Sie [in den generischen Unterklassen des NSObject](~/ios/internals/api-design/nsobject-generics.md) -Dokuments.
 
 
  <a name="No_Dynamic_Code_Generation" />
 
 
-## <a name="no-dynamic-code-generation"></a>Keine dynamische Codegenerierung
+## <a name="no-dynamic-code-generation"></a>Keine dynamische Code Generierung
 
-Da der iOS-Kernel wird verhindert, eine Anwendung dynamisch generieren von Code dass, wird jede Form von dynamische codegenerierung von Xamarin.iOS nicht unterstützt. Dazu gehören:
+Da der IOS-Kernel verhindert, dass eine Anwendung Code dynamisch generiert, unterstützt xamarin. IOS keine Form der dynamischen Codegenerierung. Dazu gehören:
 
--  Die System.Reflection.Emit ist nicht verfügbar.
--  Keine Unterstützung für System.Runtime.Remoting.
--  Keine Unterstützung für das Erstellen von Typen dynamisch (keine Type.GetType ("MyType" 1")), obwohl das Nachschlagen von vorhandener Typen (Type.GetType ("System.String") beispielsweise gesehen gut funktioniert). 
--  Reverse-Rückrufe müssen zum Zeitpunkt der Kompilierung mit der Laufzeit registriert werden.
+- Die System. Reflection.-Ausgabe ist nicht verfügbar.
+- Keine Unterstützung für System. Runtime. Remoting.
+- Keine Unterstützung für die dynamische Erstellung von Typen ("No Type. GetType" ("MyType ' 1")), obwohl das Nachschlagen vorhandener Typen (Type. GetType ("System. String") beispielsweise problemlos funktioniert). 
+- Umgekehrte Rückrufe müssen zur Kompilierzeit bei der Laufzeit registriert werden.
 
 
  
@@ -67,26 +67,26 @@ Da der iOS-Kernel wird verhindert, eine Anwendung dynamisch generieren von Code 
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-Das Fehlen von System.Reflection. **Ausgeben** bedeutet, die keinen Code, der von der Common Language Runtime-codegenerierung abhängt geeignet ist. Dazu zählen z. B.:
+Das Fehlen von System. Reflection. Ausgabe bedeutet, dass kein Code funktioniert, der von der Generierung von Lauf Zeit Code abhängt. Dies schließt Folgendes ein:
 
--  Die Dynamic Language Runtime.
--  Alle Sprachen, die die Dynamic Language Runtime aufsetzt.
--  Remoting TransparentProxy o. ä., die die Laufzeit zum Generieren von Code dynamisch verursachen würde. 
+- Die Dynamic Language Runtime.
+- Alle Sprachen, die auf der Dynamic Language Runtime erstellt wurden.
+- Der TransparentProxy von Remoting oder alles andere, das dazu führen würde, dass die Laufzeit Code dynamisch generiert. 
 
 
   > [!IMPORTANT]
-  > Verwechseln Sie nicht **Reflection.Emit** mit **Reflektion**. Reflection.Emit zum Generieren von Code dynamisch ist und dieser Code JIT-kompilierten und zu systemeigen kompilierten Code. Aufgrund von Beschränkungen für iOS (keine JIT-Kompilierung) ist dies nicht unterstützt.
+  > **Reflektion** nicht verwechseln. Ausgabe mit **Reflektion**. "Reflection. Ausgabe" geht über die dynamische Generierung von Code und die Kompilierung des Codes in nativem Code aus. Aufgrund der Einschränkungen bei IOS (keine JIT-Kompilierung) wird dies nicht unterstützt.
 
-Aber der gesamte Reflektions-API, einschließlich der Type.GetType ("" SomeClass "bereitgestellt"), Auflisten von Methoden, Eigenschaften, auflisten, Abrufen von Attributen und Werten funktioniert problemlos.
+Die gesamte Reflection-API, einschließlich Type. GetType ("SomeClass"), Auflistungs Methoden, Auflistungs Eigenschaften, Abrufen von Attributen und Werten funktioniert problemlos.
 
-### <a name="using-delegates-to-call-native-functions"></a>Verwenden von Delegaten zum Aufrufen von systemeigenen Funktionen
+### <a name="using-delegates-to-call-native-functions"></a>Verwenden von Delegaten zum Abrufen nativer Funktionen
 
-Um eine native Funktion über einen C#-Delegaten aufzurufen, muss der Stellvertretung-Deklaration mit einem der folgenden Attribute versehen werden:
+Um eine native Funktion über einen C# Delegaten aufzurufen, muss die Deklaration des Delegaten mit einem der folgenden Attribute versehen werden:
 
-- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (bevorzugt, da es sich um verschiedene Plattformen und kompatibel mit .NET Standard 1.1 und höher ist)
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (bevorzugt, da Sie plattformübergreifend und mit .NET Standard 1.1 + kompatibel ist)
 - [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
-Fehler beim Bereitstellen eines dieser Attribute führt zu einem Laufzeitfehler, wie z. B.:
+Wenn Sie eines dieser Attribute nicht bereitstellen, führt dies zu einem Laufzeitfehler, wie z. b.:
 
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
@@ -95,44 +95,44 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
  <a name="Reverse_Callbacks" />
 
 
-### <a name="reverse-callbacks"></a>Rückrufe umkehren
+### <a name="reverse-callbacks"></a>Umgekehrte Rückrufe
 
-In standard Mono ist es möglich, Instanzen für c#-Delegaten zu nicht verwaltetem Code durch einen Funktionszeiger übergeben. Die Laufzeit würde in der Regel dieser Funktionszeiger in einen kleinen Thunk umgewandelt werden, die nicht verwalteten Code für den Rückruf in verwaltetem Code ermöglicht wird.
+In Standard-Mono ist es möglich, C# Delegatinstanzen anstelle eines Funktions Zeigers an nicht verwalteten Code zu übergeben. Die Laufzeit wandelt diese Funktionszeiger in der Regel in einen kleinen Thunk um, der es nicht verwaltetem Code ermöglicht, den verwalteten Code wieder aufzurufen.
 
-In Mono diesen Bridges implementiert werden, durch den Just-in-Time-Compiler. Wenn mit dem ahead-of-Time-Compiler das iPhone erforderlich, dass es an diesem Punkt sind zwei wichtige Einschränkungen:
+In Mono werden diese Bridges durch den Just-in-Time-Compiler implementiert. Wenn Sie den für das iPhone erforderlichen Ahead-of-Time-Compiler verwenden, gibt es an dieser Stelle zwei wichtige Einschränkungen:
 
--  Sie müssen alle Ihre Rückrufmethoden mit kennzeichnen die [MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)
--  Die Methoden statische Methoden sein müssen, besteht keine Unterstützung für die Instanz Methoden.
+- Sie müssen alle Rückruf Methoden mit dem " [monopinvokecallbackattribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute) " markieren.
+- Bei den Methoden handelt es sich um statische Methoden, es gibt keine Unterstützung für Instanzmethoden.
  
 <a name="No_Remoting" />
 
-## <a name="no-remoting"></a>Keine-Remoting
+## <a name="no-remoting"></a>Kein Remoting
 
-Der remotingstapel ist nicht verfügbar, in Xamarin.iOS.
+Der Remote Stapel ist in xamarin. IOS nicht verfügbar.
 
 
  <a name="Runtime_Disabled_Features" />
 
 
-## <a name="runtime-disabled-features"></a>Runtime deaktiviert Features
+## <a name="runtime-disabled-features"></a>Funktionen zur Laufzeit deaktiviert
 
-Die folgenden Features wurden in iOS-Mono Laufzeit deaktiviert:
+Die folgenden Features wurden in der IOS-Laufzeit von Mono deaktiviert:
 
--  Profiler
--  Reflection.Emit
--  Reflection.Emit.Save-Funktion
--  Com-Bindungen
--  Die JIT-engine
--  Metadaten-Verifier (da es keine JIT-Kompilierung gibt)
+- Profiler
+- Reflektion. ausgeben
+- Reflection. Ausgabe. Save-Funktionalität
+- COM-Bindungen
+- Die JIT-Engine
+- Metadatenüberprüfung (da keine JIT vorhanden ist)
 
 
  <a name=".NET_API_Limitations" />
 
 
-## <a name="net-api-limitations"></a>.NET API-Einschränkungen
+## <a name="net-api-limitations"></a>Einschränkungen der .NET-API
 
-Die .NET API verfügbar gemacht ist eine Teilmenge des vollständigen Frameworks, da nicht alle in iOS verfügbar ist. Finden Sie in den häufig gestellten Fragen ein [Liste der derzeit unterstützten Assemblys](~/cross-platform/internals/available-assemblies.md).
+Die bereitgestellte .NET-API ist eine Teilmenge des vollständigen Frameworks, da nicht alles in ios verfügbar ist. Eine [Liste der derzeit unterstützten](~/cross-platform/internals/available-assemblies.md)Assemblys finden Sie in den FAQ.
 
 
 
-Insbesondere enthält das Xamarin.iOS-API-Profil "System.Configuration", keine daher es nicht möglich ist, externe XML-Dateien zu verwenden, um das Verhalten der Laufzeit zu konfigurieren.
+Insbesondere das von xamarin. IOS verwendete API-Profil enthält nicht "System. Configuration", sodass es nicht möglich ist, externe XML-Dateien zu verwenden, um das Verhalten der Laufzeit zu konfigurieren.

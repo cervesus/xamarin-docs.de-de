@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4d4785d6e556c856b0f7b4db2accd87f5297e277
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655373"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528726"
 ---
 # <a name="textkit-in-xamarinios"></a>Textkit in xamarin. IOS
 
@@ -20,17 +20,17 @@ Textkit ist eine neue API, die leistungsstarke Funktionen für das Layout und Re
 
 Um die Funktionen von textkit für Standard Steuerelemente verfügbar zu machen, wurden mehrere IOS-Text Steuerelemente für die Verwendung von textkit neu implementiert, einschließlich:
 
--  UITextView
--  UITextField
--  UILabel
+- UITextView
+- UITextField
+- UILabel
 
 ## <a name="architecture"></a>Architektur
 
 Textkit bietet eine geschichtete Architektur, die den Text Speicher vom Layout und der Anzeige trennt, einschließlich der folgenden Klassen:
 
--  `NSTextContainer`– Stellt das Koordinatensystem und die Geometrie zur Verfügung, die zum Layouttext verwendet werden.
--  `NSLayoutManager`– Legt Text fest, indem Text in Glyphen verwandelt wird. 
--  `NSTextStorage`– Enthält die Textdaten und verarbeitet Updates von Batch Texteigenschaften. Alle Batch Aktualisierungen werden dem LayoutManager für die tatsächliche Verarbeitung der Änderungen übergeben, z. b. Neuberechnen des Layouts und Neuzeichnen des Texts.
+- `NSTextContainer`– Stellt das Koordinatensystem und die Geometrie zur Verfügung, die zum Layouttext verwendet werden.
+- `NSLayoutManager`– Legt Text fest, indem Text in Glyphen verwandelt wird. 
+- `NSTextStorage`– Enthält die Textdaten und verarbeitet Updates von Batch Texteigenschaften. Alle Batch Aktualisierungen werden dem LayoutManager für die tatsächliche Verarbeitung der Änderungen übergeben, z. b. Neuberechnen des Layouts und Neuzeichnen des Texts.
 
 
 Diese drei Klassen werden auf eine Ansicht angewendet, die Text rendert. Die integrierten Text Behandlungs Sichten, wie `UITextView`z. b., `UITextField`und `UILabel` , haben Sie bereits festgelegt, aber Sie können Sie auch erstellen und `UIView` auf jede beliebige Instanz anwenden.

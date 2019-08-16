@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 0c4f7303d3620dcc2c829d732fe7a5f97f0e3883
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 83fa64ca207358b712341e1923a3a9a67a449e1f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643760"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524734"
 ---
 # <a name="android-beam"></a>Android Beam
 
@@ -23,9 +23,9 @@ Android-Strahl funktioniert, indem Nachrichten über NFC übertragen werden, wen
 
 Android unterstützt zwei Möglichkeiten zum Festlegen von Nachrichten mit Android-Strahl:
 
--   `SetNdefPushMessage`-Bevor der Android-Strahl gestartet wird, kann eine Anwendung setndefpushmessage aufrufen, um eine ndefmessage anzugeben, die per Push über NFC übertragen werden soll, und die Aktivität, die Sie überträgt. Dieser Mechanismus wird am besten verwendet, wenn eine Nachricht nicht geändert wird, während eine Anwendung verwendet wird.
+- `SetNdefPushMessage`-Bevor der Android-Strahl gestartet wird, kann eine Anwendung setndefpushmessage aufrufen, um eine ndefmessage anzugeben, die per Push über NFC übertragen werden soll, und die Aktivität, die Sie überträgt. Dieser Mechanismus wird am besten verwendet, wenn eine Nachricht nicht geändert wird, während eine Anwendung verwendet wird.
 
--   `SetNdefPushMessageCallback`-Wenn der Android-Strahl initiiert wird, kann eine Anwendung einen Rückruf zum Erstellen einer ndefmessage verarbeiten. Dieser Mechanismus ermöglicht, dass die Nachrichten Erstellung verzögert wird, bis sich die Geräte im Gültigkeitsbereich befinden. Es unterstützt Szenarien, in denen die Nachricht je nach den Ereignissen in der Anwendung variieren kann.
+- `SetNdefPushMessageCallback`-Wenn der Android-Strahl initiiert wird, kann eine Anwendung einen Rückruf zum Erstellen einer ndefmessage verarbeiten. Dieser Mechanismus ermöglicht, dass die Nachrichten Erstellung verzögert wird, bis sich die Geräte im Gültigkeitsbereich befinden. Es unterstützt Szenarien, in denen die Nachricht je nach den Ereignissen in der Anwendung variieren kann.
 
 
 In beiden Fällen sendet `NdefMessage`eine Anwendung zum Senden von Daten mit dem Android-Strahl eine, die die Daten in mehreren `NdefRecords`Paketen verpackt. Werfen wir einen Blick auf die wichtigsten Punkte, die behoben werden müssen, bevor wir den Android-Strahl lösen können. Zuerst arbeiten wir mit dem Rückruf Stil der Erstellung eines `NdefMessage`.

@@ -1,43 +1,43 @@
 ---
-title: Bereitstellen von Abwärtskompatibilität mit dem Paket für Android-Unterstützung
+title: Bereitstellen der Abwärtskompatibilität mit dem Android-Unterstützungspaket
 ms.prod: xamarin
 ms.assetid: 7511D2F8-2B4F-4200-C74E-E967153B2E8D
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2017
-ms.openlocfilehash: 48ef40ce8560fd9fbb842dde70622d968591ab98
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f1f886f0e4c14f2da29342a2a651f91ed510fd25
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61022236"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524267"
 ---
-# <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Bereitstellen von Abwärtskompatibilität mit dem Paket für Android-Unterstützung
+# <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Bereitstellen der Abwärtskompatibilität mit dem Android-Unterstützungspaket
 
-Die Nützlichkeit der Fragmente wäre begrenzen, ohne dass rückwärts Kompatibilität mit vor Android 3.0 (API-Ebene 11) Geräte. Eingeführt, um diese Funktion zu gewährleisten, Google der [Support-Bibliothek](https://developer.android.com/sdk/compatibility-library.html) (ursprünglich die *Android Compatibility Library* wann es veröffentlicht wurde) die Backports einige der APIs aus neueren Versionen von Android auf ältere Versionen von Android. Es ist das Android Support-Paket, das Geräte mit Android 1.6 (API-Ebene 4), Android 2.3.3 ermöglicht. (API-Ebene von 10).
+Die Nützlichkeit von Fragmenten wäre ohne Abwärtskompatibilität mit Geräten vor Android 3,0 (API-Ebene 11) eingeschränkt. Um diese Funktion bereitzustellen, hat Google die [Unterstützungs Bibliothek](https://developer.android.com/sdk/compatibility-library.html) (ursprünglich als *Android Compatibility Library* bezeichnet, als Sie veröffentlicht wurde) eingeführt, mit der einige der APIs von neueren Versionen von Android auf ältere Versionen von Android zurückportiert werden. Dabei handelt es sich um das Android-Unterstützungspaket, das Geräten mit Android 1,6 (API-Ebene 4) Android-2.3.3 ermöglicht. (API-Ebene 10).
 
 > [!NOTE]
-> Nur die `ListFragment` und `DialogFragment` über die Android Support-Paket verfügbar sind. Keine der anderen Fragment Unterklassen, z. B. die `PreferenceFragment,` im Android Support-Paket verwendet werden. Sie funktionieren nicht in vor Android 3.0-Anwendungen. 
+> `ListFragment` Nur`DialogFragment` und sind über das Android-Unterstützungspaket verfügbar. Keines der anderen Fragment-Unterklassen, z `PreferenceFragment,` . b., wird im Android-Unterstützungspaket unterstützt. Sie können in Anwendungen vor Android 3,0 nicht verwendet werden. 
 
 
 ## <a name="adding-the-support-package"></a>Hinzufügen des Unterstützungspakets
 
-Das Paket für Android-Unterstützung wird an eine Xamarin.Android-Anwendung nicht automatisch hinzugefügt. Xamarin bietet die [NuGet-Paket für Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) zur Vereinfachung einer Xamarin.Android-Anwendung die Unterstützungsbibliotheken hinzugefügt. Sollen die Supportpakete in Ihre Xamarin.Android-Anwendung enthalten die [Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) Komponente in Ihr Xamarin.Android-Projekt, wie im folgenden Screenshot dargestellt: 
+Das Android-Unterstützungspaket wird nicht automatisch einer xamarin. Android-Anwendung hinzugefügt. Xamarin bietet das [nuget-Paket für Android-Unterstützungs Bibliotheken V4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) , um das Hinzufügen von Unterstützungs Bibliotheken zu einer xamarin. Android-Anwendung zu vereinfachen. Wenn Sie die Support Pakete in Ihre xamarin. Android-Anwendung einschließen möchten, schließen Sie die Komponente [Android-Unterstützungs Bibliothek V4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) in Ihr xamarin. Android-Projekt ein, wie im folgenden Screenshot veranschaulicht: 
 
-[![Screenshot des Android-Unterstützungsbibliothek v4-Paket zum Projekt hinzugefügt wird](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![Screenshot des Android-Unterstützungs Bibliotheken V4-Pakets, das dem Projekt hinzugefügt wird](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
-Nachdem diese Schritte durchgeführt wurden, wird es möglich, Fragmente in früheren Versionen von Android zu verwenden. Die Fragment-APIs funktioniert die gleiche jetzt bei diesen älteren Versionen, mit den folgenden Ausnahmen: 
+Nachdem diese Schritte ausgeführt wurden, ist es möglich, Fragmente in früheren Versionen von Android zu verwenden. Die fragmentapis funktionieren in diesen früheren Versionen jetzt genauso wie die folgenden Ausnahmen: 
 
--   **Ändern Sie die Android-Mindestversion** &ndash; muss die Anwendung nicht mehr Android 3.0 oder höher abzielen, wie unten dargestellt: 
+- **Ändern der Android-Mindestversion** &ndash; Die Anwendung muss Android 3,0 oder höher nicht mehr als Ziel haben, wie unten dargestellt: 
 
-    [![Screenshot des Android-Mindestversion Ziel, die unter Android-Manifest festgelegt wird](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![Screenshot des minimalen festgelegten Android-Ziels unter Android-Manifest](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
--   **Erweitern Sie FragmentActivity** &ndash; der Aktivitäten, die Fragmente hosten müssen erben nun von `Android.Support.V4.App.FragmentActivity` , und nicht von `Android.App.Activity` . 
+- " **Fragmentactivity" erweitern** Die Aktivitäten, die als Host Fragmente dienen, müssen `Android.Support.V4.App.FragmentActivity` jetzt von und nicht `Android.App.Activity` von erben. &ndash; 
 
--   **Aktualisieren Sie die Namespaces** &ndash; Klassen, die von erben `Android.App.Fragment` müssen erben nun von `Android.Support.V4.App.Fragment` . Entfernen Sie die Anweisung " `using Android.App;` " am Anfang des Quellcodes Datei, und Ersetzen Sie diese " `using Android.Support.V4.App` ". 
+- **Namespaces aktualisieren** Klassen, die von `Android.App.Fragment` erben, müssen jetzt `Android.Support.V4.App.Fragment` von erben. &ndash; Entfernen Sie die using- `using Android.App;` Anweisung "" am Anfang der Quell Code Datei, und ersetzen Sie Sie `using Android.Support.V4.App` durch "". 
 
--   **Verwenden SupportFragmentManager** &ndash; `Android.Support.V4.App.FragmentActivity` macht eine `SupportingFragmentManager` -Eigenschaft, die verwendet werden muss, um einen Verweis auf die `FragmentManager` . Zum Beispiel: 
+- **Verwenden von supportfragmentmanager** macht eine -Eigenschaft`FragmentManager` verfügbar, die verwendet werden muss, um einen Verweis auf das zu erhalten. `SupportingFragmentManager` &ndash; `Android.Support.V4.App.FragmentActivity` Beispiel: 
 
 ```csharp
 FragmentTransaction fragmentTx = this.SupportingFragmentManager.BeginTransaction();
@@ -46,9 +46,9 @@ fragmentTx.Add(Resource.Id.fragment_container, detailsFrag);
 fragmentTx.Commit();
 ```
 
-Diese Änderungen vorgenommen wird es möglich, führen Sie eine Fragment-basierten Anwendung auf Android 1.6 oder 2.x sowie Honeycomb und Ice Cream Sandwich sein. 
+Nachdem diese Änderungen vorgenommen wurden, ist es möglich, eine auf einem Fragment basierende Anwendung unter Android 1,6 oder 2. x sowie in Honeycomb und Ice Cream Sandwich auszuführen. 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android Support-Bibliothek v4 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
+- [Android-Unterstützungs Bibliothek V4 nuget](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)

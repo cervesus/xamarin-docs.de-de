@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 0099414529027a9a6e52b79393cfa6f0f3bc24d6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1f6fa57bbe47bbc2fe97bbd0df7018fc1cd3897a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647804"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522172"
 ---
 # <a name="setup-and-installation"></a>Setup und Installation
 
@@ -22,13 +22,13 @@ _In diesem Artikel werden die Installationsschritte und Konfigurationsdetails er
 
 Folgendes ist erforderlich, um xamarin-basierte Android Wear-apps zu erstellen:
 
--   **Visual Studio oder Visual Studio für Mac** &ndash; Visual Studio 2017 Community oder höher ist erforderlich.
+- **Visual Studio oder Visual Studio für Mac** &ndash; Visual Studio 2017 Community oder höher ist erforderlich.
 
--   **Xamarin.Android** &ndash; Xamarin.Android 4.17 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
+- **Xamarin. Android** &ndash; xamarin. Android 4,17 oder höher muss entweder mit Visual Studio oder mit Visual Studio für Mac installiert und konfiguriert werden.
 
--   **Android SDK** -Android SDK 5.0.1 (API 21) oder höher muss über den Android SDK Manager installiert werden.
+- **Android SDK** -Android SDK 5.0.1 (API 21) oder höher muss über den Android SDK Manager installiert werden.
 
--   **Java Developer Kit** Die xamarin Android-Entwicklung erfordert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) , wenn Sie für API-Ebene 24 oder höher entwickeln (JDK 1,8 unterstützt auch API-Ebenen vor 24). &ndash;
+- **Java Developer Kit** Die xamarin Android-Entwicklung erfordert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) , wenn Sie für API-Ebene 24 oder höher entwickeln (JDK 1,8 unterstützt auch API-Ebenen vor 24). &ndash;
 
 Sie können weiterhin [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie speziell für API-Ebene 23 oder früher entwickeln.
 
@@ -39,9 +39,9 @@ Sie können weiterhin [JDK 1,7](https://www.oracle.com/technetwork/java/javase/d
 
 Nachdem Sie xamarin. Android installiert haben, führen Sie die folgenden Schritte aus, sodass Sie zum Erstellen und Testen von Android Wear-apps bereit sind: 
 
-1.  Installieren Sie die erforderlichen Android SDK und Tools.
-2.  Konfigurieren Sie ein Testgerät.
-3.  Erstellen Sie Ihre erste Android Wear-app.
+1. Installieren Sie die erforderlichen Android SDK und Tools.
+2. Konfigurieren Sie ein Testgerät.
+3. Erstellen Sie Ihre erste Android Wear-app.
 
 Diese Schritte werden in den folgenden Abschnitten beschrieben.
 

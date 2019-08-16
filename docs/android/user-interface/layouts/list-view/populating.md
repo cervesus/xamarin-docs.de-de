@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: abc7bb09791df115536f552979b48a3a12b4f443
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e92aada7be8a296baeaa9eebfb18fe906b5c3b63
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646345"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522544"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Auffüllen einer xamarin. Android-ListView mit Daten
 
@@ -62,14 +62,14 @@ Nun kann der Benutzer eine Zeile berühren, und `Toast` es wird eine Warnung ang
 `ArrayAdapter<string>`ist aus Gründen der Einfachheit hervorragend, aber es ist sehr begrenzt. Häufig verfügen Sie jedoch über eine Auflistung von Geschäfts Entitäten und nicht nur über Zeichen folgen, die Sie binden möchten.
 Wenn die Daten z. b. aus einer Sammlung von Mitarbeiter Klassen bestehen, können Sie in der Liste nur die Namen der einzelnen Mitarbeiter anzeigen. Um das Verhalten eines `ListView` anzupassen und zu steuern, welche Daten angezeigt werden, müssen Sie eine Unterklasse implementieren, mit der die folgenden vier Elemente über `BaseAdapter` schrieben werden:
 
--   **Anzahl** &ndash; , Um dem Steuerelement mitzuteilen, wie viele Zeilen in den Daten vorliegen.
+- **Anzahl** &ndash; , Um dem Steuerelement mitzuteilen, wie viele Zeilen in den Daten vorliegen.
 
--   **GetView** &ndash; , Um eine Ansicht für jede Zeile zurückzugeben, die mit Daten aufgefüllt wird.
+- **GetView** &ndash; , Um eine Ansicht für jede Zeile zurückzugeben, die mit Daten aufgefüllt wird.
     Diese Methode verfügt über einen Parameter für `ListView` das, das in einer vorhandenen, nicht verwendeten Zeile zur erneuten Verwendung übergeben werden soll.
 
--   **GetItemID** &ndash; Rückgabe eines Zeilen Bezeichners (in der Regel die Zeilennummer, obwohl es sich um einen beliebigen langen Wert handeln kann, den Sie wünschen).
+- **GetItemID** &ndash; Rückgabe eines Zeilen Bezeichners (in der Regel die Zeilennummer, obwohl es sich um einen beliebigen langen Wert handeln kann, den Sie wünschen).
 
--   **dieser [int]** -Indexer &ndash; gibt die einer bestimmten Zeilennummer zugeordneten Daten zurück.
+- **dieser [int]** -Indexer &ndash; gibt die einer bestimmten Zeilennummer zugeordneten Daten zurück.
 
 Der Beispielcode in **basictableadapter/homeskreenadapter. cs** veranschaulicht, wie Unterklassen `BaseAdapter`:
 
@@ -159,11 +159,11 @@ Ein Abschnitts Index stellt ein zusätzliches Feedback für Benutzer bereit, wen
 
 Zum Implementieren `ISectionIndexer` von müssen Sie drei Methoden zu einem Adapter hinzufügen:
 
--   **Getabschnitts** &ndash; Enthält die komplette Liste der Abschnitts Index Titel, die angezeigt werden können. Diese Methode erfordert ein Array von Java-Objekten, damit der Code einen `Java.Lang.Object[]` aus einer .net-Auflistung erstellen muss. In unserem Beispiel wird eine Liste der anfänglichen Zeichen in der Liste als `Java.Lang.String` zurückgegeben.
+- **Getabschnitts** &ndash; Enthält die komplette Liste der Abschnitts Index Titel, die angezeigt werden können. Diese Methode erfordert ein Array von Java-Objekten, damit der Code einen `Java.Lang.Object[]` aus einer .net-Auflistung erstellen muss. In unserem Beispiel wird eine Liste der anfänglichen Zeichen in der Liste als `Java.Lang.String` zurückgegeben.
 
--   **Getpositionforsection** &ndash; Gibt die erste Zeilen Position für einen angegebenen Abschnitts Index zurück.
+- **Getpositionforsection** &ndash; Gibt die erste Zeilen Position für einen angegebenen Abschnitts Index zurück.
 
--   **Getsectionforposition** &ndash; Gibt den Abschnitts Index zurück, der für eine bestimmte Zeile angezeigt werden soll.
+- **Getsectionforposition** &ndash; Gibt den Abschnitts Index zurück, der für eine bestimmte Zeile angezeigt werden soll.
 
 
 Die Beispiel `SectionIndex/HomeScreenAdapter.cs` Datei implementiert diese Methoden und zusätzlichen Code im Konstruktor. Der-Konstruktor erstellt den Abschnitts Index, indem er jede Zeile durchläuft und das erste Zeichen des Titels extrahiert (die Elemente müssen bereits sortiert sein, damit dies funktioniert).

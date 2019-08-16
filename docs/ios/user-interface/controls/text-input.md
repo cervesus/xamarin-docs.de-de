@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 2bcbdf437956ed2e03e91236125d5e050cf349be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: edabddfeeac7f1c75df298cba6f885ec130972ba
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642764"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528553"
 ---
 # <a name="text-input-in-xamarinios"></a>Text Eingabe in xamarin. IOS
 
@@ -37,15 +37,15 @@ Das `UITextField` Steuerelement wird am häufigsten verwendet, um eine einzelne 
 
 Diese Steuerelemente werden im folgenden erläutert:
 
--  **Platzhalter** – Dies ist optional. Wenn diese Einstellung festgelegt ist, wird Sie angezeigt, wenn das Textfeld leer ist, in der Regel, um dem Benutzer zu erklären, welche Eingaben erwartet werden.
--  **Schaltfläche "Löschen** " – diese steuert, wenn die Standard Schaltfläche "Standard" (der graue Kreis mit (X)) im Textfeld angezeigt wird, damit der Benutzer Text schnell löschen kann. Abhängig davon, ob das Feld bearbeitet wird oder nicht, kann es dauerhaft ausgeblendet, dauerhaft sichtbar oder angezeigt werden.
--  **Minimale Schriftart Größe** und **Anpassung an anpassen** – ermöglicht, dass der Schrift Grad automatisch angepasst wird, sodass er länger Text einfügt und abgeschnitten, aber auf die angegebene Größe beschränkt wird.
--  Groß **Schreibung – gibt** an, ob Wörter, Sätze oder alle Eingaben automatisch groß geschrieben werden sollen.
--  **Korrektur** – gibt an, ob Rechtschreibprüfung und Vorschläge aktiviert sind.
--  **Tastatur** – steuert den Tastatur Stil, der für die Eingabe angezeigt wird, und damit die auf der Tastatur verfügbaren Tasten. Dies schließt das Zahlen Pad, den telefonpad, die e-Mail, die URL und andere Optionen ein.
--  Darstellung **– steuert** den Stil der Tastatur und ist entweder dunkel oder hell.
--  **Return Key** – ändern Sie die Bezeichnung in der Rückgabetaste, um besser widerzuspiegeln, welche Aktion durchgeführt wird. Zu den unterstützten Werten zählen go, Join, Next, Route, done und Search.
--  **Secure** – gibt an, ob die Eingabe maskiert wird (z. b. für eine Kenn Wort Eingabe).
+- **Platzhalter** – Dies ist optional. Wenn diese Einstellung festgelegt ist, wird Sie angezeigt, wenn das Textfeld leer ist, in der Regel, um dem Benutzer zu erklären, welche Eingaben erwartet werden.
+- **Schaltfläche "Löschen** " – diese steuert, wenn die Standard Schaltfläche "Standard" (der graue Kreis mit (X)) im Textfeld angezeigt wird, damit der Benutzer Text schnell löschen kann. Abhängig davon, ob das Feld bearbeitet wird oder nicht, kann es dauerhaft ausgeblendet, dauerhaft sichtbar oder angezeigt werden.
+- **Minimale Schriftart Größe** und **Anpassung an anpassen** – ermöglicht, dass der Schrift Grad automatisch angepasst wird, sodass er länger Text einfügt und abgeschnitten, aber auf die angegebene Größe beschränkt wird.
+- Groß Schreibung – gibt an, ob Wörter, Sätze oder alle Eingaben automatisch groß geschrieben werden sollen.
+- **Korrektur** – gibt an, ob Rechtschreibprüfung und Vorschläge aktiviert sind.
+- **Tastatur** – steuert den Tastatur Stil, der für die Eingabe angezeigt wird, und damit die auf der Tastatur verfügbaren Tasten. Dies schließt das Zahlen Pad, den telefonpad, die e-Mail, die URL und andere Optionen ein.
+- Darstellung – steuert den Stil der Tastatur und ist entweder dunkel oder hell.
+- **Return Key** – ändern Sie die Bezeichnung in der Rückgabetaste, um besser widerzuspiegeln, welche Aktion durchgeführt wird. Zu den unterstützten Werten zählen go, Join, Next, Route, done und Search.
+- **Secure** – gibt an, ob die Eingabe maskiert wird (z. b. für eine Kenn Wort Eingabe).
 
 
 Wenn ein UITextField mit `textfield1` dem Namen einem Bildschirm mit dem Designer hinzugefügt wurde, können Sie seine Eigenschaften in C# wie folgt festlegen oder ändern:
@@ -81,8 +81,8 @@ Das `UITextView` -Steuerelement kann verwendet werden, um schreibgeschützten Te
 
 Zu den spezifischen Eigenschaften gehören:
 
--  **Verhalten** – gibt an, ob der Text bearbeitbar oder schreibgeschützt ist.
--  **Erkennung** – erkennt und konvertiert die ertierten Daten in klickbare Elemente, wie z. b. Telefonnummern, die einen Aufruf auslöst, Adressen, die zu Verknüpfungen zu Zuordnungen werden, URLs, die in Safari geöffnet werden, oder Datums-und Uhrzeitangaben, die im Kalender
+- **Verhalten** – gibt an, ob der Text bearbeitbar oder schreibgeschützt ist.
+- **Erkennung** – erkennt und konvertiert die ertierten Daten in klickbare Elemente, wie z. b. Telefonnummern, die einen Aufruf auslöst, Adressen, die zu Verknüpfungen zu Zuordnungen werden, URLs, die in Safari geöffnet werden, oder Datums-und Uhrzeitangaben, die im Kalender
 
 
 Wenn eine uitextview einem Bildschirm mit dem Designer hinzugefügt wurde, können Sie die Eigenschaften wie folgt festlegen oder ändern:

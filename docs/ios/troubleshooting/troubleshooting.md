@@ -1,6 +1,6 @@
 ---
-title: Tipps zur Problembehandlung für Xamarin.iOS
-description: Dieses Dokument enthält verschiedene Tipps für die Problembehandlung bei der Entwicklung von Xamarin.iOS-Anwendungen nützlich. Es wird beschrieben, Fehlermeldungen sowie andere potenzielle Probleme.
+title: Tipps zur Problembehandlung für xamarin. IOS
+description: Dieses Dokument enthält verschiedene Tipps, die für die Problembehandlung bei der Entwicklung von xamarin. IOS-Anwendungen nützlich sind. Außerdem werden bestimmte Fehlermeldungen sowie andere potenzielle Probleme beschrieben.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
@@ -8,58 +8,58 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 38c0ece3e8f0361f3c891713e53b033351512f94
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 37e5e68aff293910db4638c52f592e10fd60abfa
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829918"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528127"
 ---
-# <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für Xamarin.iOS 
+# <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für xamarin. IOS 
 
-## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin.iOS kann nicht System.ValueTuple aufgelöst werden.
+## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin. IOS kann System. valuetuple nicht auflösen.
 
-Dieser Fehler tritt aufgrund einer Inkompatibilität mit Visual Studio.
+Dieser Fehler tritt aufgrund einer Inkompatibilität mit Visual Studio auf.
 
-- **Visual Studio 2017 Update 1** (Version 15.1 oder früher) ist nur mit kompatibel **System.ValueTuple NuGet 4.3.0** (und früher).
+- **Visual Studio 2017 Update 1** (Version 15,1 oder älter) ist nur mit **System. valuetuple nuget 4.3.0** (oder älter) kompatibel.
 
-- **Visual Studio 2017 Update 2** (Version 15.2 oder höher) ist nur kompatibel mit der **System.ValueTuple NuGet 4.3.1** oder höher.
+- **Visual Studio 2017 Update 2** (Version 15,2 oder höher) ist nur mit dem **System. valuetuple-nuget-4.3.1** oder höher kompatibel.
 
-Wählen Sie die richtige System.ValueTuple NuGet, der mit Ihrer Visual Studio 2017-Installation entspricht.
+Wählen Sie das richtige System. valuetuple-nuget aus, das Ihrer Visual Studio 2017-Installation entspricht.
 
 
-## <a name="receiving-error-retrieving-update-information-error-message"></a>Empfangen die Fehlermeldung "Fehler beim Abrufen von Informationen zu"
+## <a name="receiving-error-retrieving-update-information-error-message"></a>Empfangene Fehlermeldung "Fehler beim Abrufen der Update Informationen"
 
-Beim Versuch der Aktualisierung der Software und diese Fehlermeldung angezeigt wird, versuchen Sie es neu zu starten Ihrer IDE und Abmelden und wieder zurück in Ihrem Konto in der IDE.
+Wenn Sie versuchen, die Software zu aktualisieren, und diese Fehlermeldung angezeigt wird, starten Sie den Neustart Ihrer IDE, und melden Sie sich dann wieder bei Ihrem Konto in der IDE an.
 
-## <a name="how-do-i-create-outlets-or-actions-with-interface-builder"></a>Wie erstelle ich Outlets oder Aktionen mit Interface Builder?
+## <a name="how-do-i-create-outlets-or-actions-with-interface-builder"></a>Gewusst wie Sie mit Interface Builder Outlets oder Aktionen erstellen?
 
-Mit der Einführung des Designers Xamarin für iOS in Visual Studio für Mac und Visual Studio können Entwickler mit Xamarin.iOS jetzt zum Erstellen einer Benutzeroberflächenautomatisierungs mithilfe von Storyboards und .xibs nutzen. Finden Sie in der [Hallo, iOS](~/ios/get-started/hello-ios/index.md) Anleitungen für die Weitere Informationen finden Sie unter den Designer.
+Mit der Einführung der Xamarin Designer für IOS in Visual Studio für Mac und Visual Studio können xamarin. IOS-Entwickler nun die Vorteile der Erstellung einer Benutzeroberfläche über Storyboards und xisb nutzen. Weitere Informationen zur Verwendung des Designers finden Sie in den Handbüchern zu [Hello, IOS](~/ios/get-started/hello-ios/index.md) .
 
-Sie können auch im Apple-verweisen [Outlet](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingOutlet.html) und [Aktionen](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingAction.html) Anleitungen für die Weitere Informationen zur Verwendung von Outlets und Aktionen in IB.
+Weitere Informationen zur Verwendung von Outlets und Aktionen in IB finden Sie auch in den Handbüchern zu den [Outlet](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingOutlet.html) -und [Aktions](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingAction.html) Handbüchern von Apple.
 
-## <a name="systemtextencodinggetencoding-throws-notsupportedexception"></a>Löst eine NotSupportedException aus System.Text.Encoding.GetEncoding
+## <a name="systemtextencodinggetencoding-throws-notsupportedexception"></a>System. Text. Encoding. GetEncoding löst NotSupportedException aus.
 
-Möglicherweise verwenden Sie eine Codierung, die nicht standardmäßig hinzugefügt wird. Überprüfen Sie die [Internationalisierung](~/ios/app-fundamentals/localization/index.md) Seite, um Informationen zum Hinzufügen von Unterstützung für weitere Codierung.
+Möglicherweise verwenden Sie eine Codierung, die nicht standardmäßig hinzugefügt wird. Auf der Seite [Internationalisierung](~/ios/app-fundamentals/localization/index.md) finden Sie Informationen zum Hinzufügen von Unterstützung für weitere Codierungen.
 
-## <a name="systemmissingmethodexception-anything-else"></a>System.MissingMethodException (sonstige)
+## <a name="systemmissingmethodexception-anything-else"></a>System. MissingMethodException (alles andere)
 
-Das Element wurde wahrscheinlich durch den Linker entfernt, und daher nicht in der Assembly zur Laufzeit vorhanden.  Es gibt mehrere Lösungsansätze:
+Der Member wurde wahrscheinlich vom Linker entfernt und ist daher zur Laufzeit nicht in der Assembly vorhanden.  Hierfür gibt es mehrere Lösungen:
 
-- Hinzufügen der [ `[Preserve]` ](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) -Attribut auf den Member.  Dadurch wird verhindert, dass den Linker entfernt.
-- Beim Aufrufen [ **Mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29), verwenden Sie die **- Nolink** oder **- Linksdkonly** Optionen:
-  - **-Nolink** deaktiviert alle Verknüpfungen.
-  - **-Linksdkonly** wird nur an link Xamarin.iOS bereitgestellte Assemblys, wie z. B. **xamarin.ios.dll**, und gleichzeitig alle Typen in Assemblys benutzererstellte (ie. Ihre app-Projekte).
+- Fügen Sie [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) dem-Element das-Attribut hinzu.  Dies hindert den Linker daran, ihn zu entfernen.
+- Wenn Sie [**Mink**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)aufrufen, verwenden Sie die Optionen " **-nolink** " oder " **-linksdkonly** ":
+  - **-nolink** deaktiviert alle Verknüpfungen.
+  - **-linksdkonly** verknüpft nur von xamarin. IOS bereitgestellte Assemblys, z. b. **xamarin. IOS. dll**, während alle Typen in vom Benutzer erstellten Assemblys (d. a. ihren App-Projekten) beibehalten werden.
 
-Beachten Sie, dass die Assemblys verknüpft sind, sodass die resultierende ausführbare Datei kleiner ist. Daher kann das Deaktivieren von Verknüpfungen zu einer größeren ausführbaren Datei als erwünscht ist, führen.
+Beachten Sie, dass Assemblys verknüpft sind, sodass die resultierende ausführbare Datei kleiner ist. Folglich kann das Deaktivieren der Verknüpfung zu einer größeren ausführbaren Datei führen als erwünscht.
 
-## <a name="you-are-getting-a-modelnotimplementedexception"></a>Sie sind ein ModelNotImplementedException erhalten.
+## <a name="you-are-getting-a-modelnotimplementedexception"></a>Sie erhalten eine modelnotimplementedexception.
 
-Wenn Sie diese Ausnahme erhalten, bedeutet dies, dass Sie die Basisklasse aufrufen. -Methode () für eine Klasse, die ein Modell überschreibt. Sie müssen nicht die Basismethode für Modelle in einer Klasse aufrufen (Hierbei handelt es sich um Klassen, die mit dem [Model]-Attribut gekennzeichnet sind).
+Wenn Sie diese Ausnahme erhalten, bedeutet dies, dass Sie die Basis aufrufen. Methode () für eine Klasse, die ein Modell überschreibt. Die Basis Methode muss nicht in einer Klasse für Modelle aufgerufen werden (Hierbei handelt es sich um Klassen, die mit dem [Model]-Attribut gekennzeichnet sind).
 
-## <a name="this-class-is-not-key-value-coding-compliant-for-the-key-xxxx"></a>Diese Klasse ist nicht als Schlüssel-Wert-Codierung kompatible für den Schlüssel XXXX
+## <a name="this-class-is-not-key-value-coding-compliant-for-the-key-xxxx"></a>Diese Klasse ist für den Schlüssel xxxx nicht codierkonform mit Schlüsselwert.
 
-Wenn Sie diese Fehlermeldung beim Laden einer NIB-Datei bedeutet, dass den Wert, den XXXX für Ihre verwaltete Klasse nicht gefunden wurde. Dies bedeutet, dass Sie eine Deklaration wie folgt fehlt:
+Wenn Sie diese Fehlermeldung erhalten, wenn Sie eine NIB-Datei laden, bedeutet dies, dass der Wert xxxx nicht in der verwalteten Klasse gefunden wurde. Dies bedeutet, dass eine Deklaration wie die folgende fehlt:
 
 ```csharp
 [Connect]
@@ -73,9 +73,9 @@ TypeName XXXX {
 }
 ```
 
-Die oben genannten Definition wird automatisch generiert von Visual Studio für Mac für alle XIB-Dateien, die Sie in Visual Studio für Mac im Hinzufügen der `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` Datei.
+Die obige Definition wird automatisch durch Visual Studio für Mac für alle XIb-Dateien generiert, die Sie Visual Studio für Mac in der `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` Datei hinzufügen.
 
-Darüber hinaus werden die Typen, die mit dem obigen Code müssen eine Unterklasse von [NSObject](xref:Foundation.NSObject).  Wenn der enthaltende Typ innerhalb eines Namespace ist, sollten sie außerdem besitzen eine [[registrieren]](xref:Foundation.RegisterAttribute) Attribut, das einen Namen ohne Namespace enthält (wie Interface Builder Namespaces in Typen unterstützt wird):
+Außerdem müssen die Typen, die den obigen Code enthalten, eine Unterklasse von [NSObject](xref:Foundation.NSObject)sein.  Wenn sich der enthaltende Typ innerhalb eines Namespace befindet, sollte er auch über ein [[Register]](xref:Foundation.RegisterAttribute) -Attribut verfügen, das einen Typnamen ohne Namespace bereitstellt (da Interface Builder Namespaces in Typen nicht unterstützt):
 
 ```csharp
 namespace Samples.GLPaint {
@@ -87,94 +87,94 @@ namespace Samples.GLPaint {
 }
 ```
 
-## <a name="unknown-class-xxxx-in-interface-builder-file"></a>Unbekannte Klasse XXXX in Interface Builder-Datei
+## <a name="unknown-class-xxxx-in-interface-builder-file"></a>Unbekannte Klasse XXXX in Interface Builder Datei
 
-Dieser Fehler wird generiert, wenn Sie eine Klasse in Ihren Interface Builder-Dateien definieren, aber Sie nicht die tatsächliche Implementierung für die sie in bieten Ihrem C# Code.
+Dieser Fehler wird generiert, wenn Sie eine Klasse in den Schnittstellen Generator-Dateien definieren, aber die tatsächliche Implementierung nicht im C# Code bereitstellen.
 
-Sie benötigen, fügen Sie Code wie folgt hinzu:
+Sie müssen Code wie den folgenden hinzufügen:
 
 ```csharp
 public partial class MyImageView : UIView {
    public MyImageView (IntPtr handle) : base (handle {}
 }
 ```
-## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System.MissingMethodException: Es wurde kein Konstruktor für Foo.Bar::ctor(System.IntPtr) gefunden.
+## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System. MissingMethodException: Es wurde kein Konstruktor für foo. Bar:: ctor (System. IntPtr) gefunden.
 
-Dieser Fehler wird zur Laufzeit ausgelöst, wenn der Code versucht, eine Instanz der Klassen zu instanziieren, die aus Ihrer Interface Builder-Datei, auf die verwiesen wird. Dies bedeutet, dass Sie vergessen haben, einen Konstruktor hinzufügen, der ein einzelnes IntPtr als Parameter akzeptiert.
+Dieser Fehler wird zur Laufzeit erzeugt, wenn der Code versucht, eine Instanz der Klassen zu instanziieren, auf die Sie in ihrer Interface Builder Datei verwiesen haben. Dies bedeutet, dass Sie vergessen haben, einen Konstruktor hinzuzufügen, der einen einzelnen IntPtr als Parameter annimmt.
 
-Der Konstruktor mit einem IntPtr-Handles wird verwendet, um verwaltete Objekte mit ihren nicht verwaltete Darstellungen zu binden.
+Der Konstruktor mit einem IntPtr-Handle wird verwendet, um verwaltete Objekte mit ihren nicht verwalteten Darstellungen zu binden.
 
-Um dieses Problem zu beheben, fügen Sie der Foo.Bar-Klasse die folgende Codezeile hinzu:
+Um dieses Problem zu beheben, fügen Sie der Klasse foo. Bar die folgende Codezeile hinzu:
 
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Typ {"Foo"} enthält keine Definition für `GetNativeField` und keine Erweiterungsmethode `GetNativeField` des Typs {"Foo"} gefunden
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Der Typ "{foo}" enthält keine Definition `GetNativeField` für, und es `GetNativeField` wurde keine Erweiterungsmethode vom Typ "{foo}" gefunden.
 
-Wenn Sie diese Fehlermeldung erhalten, die sich in den Designer generierten Dateien (*. xib.designer.cs), es bedeutet, dass zwei Möglichkeiten:
+Wenn Sie diesen Fehler in den vom Designer generierten Dateien (*. XIb.Designer.cs) erhalten, bedeutet dies Folgendes:
 
- **(1) fehlt der partiellen Klasse oder Basisklasse**
+ **1) fehlende partielle Klasse oder Basisklasse**
 
-Die vom Designer generierten partiellen Klassen müssen entsprechende partielle Klassen im Benutzercode, der eine Unterklasse von erben `NSObject`häufig `UIViewController`. Stellen Sie sicher, dass Sie eine solche Klasse für den Typ verfügen, die den Fehler erhalten.
+Die vom Designer generierten partiellen Klassen müssen über entsprechende partielle Klassen in Benutzercode verfügen, die häufig `NSObject` `UIViewController`von einer Unterklasse von erben. Stellen Sie sicher, dass Sie über eine solche Klasse für den Typ verfügen, der den Fehler ausgegeben hat.
 
- **(2) Standardnamespaces geändert**
+ **2) Standardnamespaces geändert**
 
-Der Designer-Dateien werden unter Verwendung Ihres Projekts Standardeinstellungen-Namespace generiert. Wenn Sie diese Einstellungen geändert oder das Projekt umbenannt haben, möglicherweise die generierten partiellen Klassen nicht mehr im selben Namespace wie ihre äquivalente Benutzercode.
+Die Designer Dateien werden mithilfe der standardmäßigen Namespace Einstellungen Ihres Projekts generiert. Wenn Sie diese Einstellungen geändert oder das Projekt umbenannt haben, befinden sich die generierten partiellen Klassen möglicherweise nicht mehr im gleichen Namespace wie Ihre Benutzercode Entsprechungen.
 
-Namespace-Einstellungen finden Sie in das Dialogfeld "Projektoptionen". Der Standardnamespace befindet sich der **Allgemein-Einstellungen für die Main >** Abschnitt. Wenn es leer ist, ist der Name des Projekts als Standardwert verwendet. Erweiterte Namespaceeinstellungen finden Sie in der **Quellcode -> .NET Naming Policies** Abschnitt.
+Namespace Einstellungen finden Sie im Dialogfeld "Projektoptionen". Der Standard Namespace finden Sie im Abschnitt **Allgemein-> Haupteinstellungen** . Wenn die Datei leer ist, wird der Name des Projekts als Standard verwendet. Erweiterte Namespace Einstellungen finden Sie im Abschnitt **Quell Code > .net-Benennungs Richtlinien** .
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>Warnung für Aktionen: Die private Methode "Foo" wird nie verwendet. (CS0169)
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>Warnung für Aktionen: Die private Methode "foo" wird nie verwendet. (CS0169)
 
-Aktionen für Interface Builder-Dateien sind mit den Widgets durch Reflektion zur Laufzeit verbunden, damit diese Warnung erwartet wird.
+Aktionen für Interface Builder-Dateien werden durch Reflektion zur Laufzeit mit den Widgets verbunden, sodass diese Warnung erwartet wird.
 
-Sie können "#pragma-Warnung deaktivieren 0169" "#pragma-Warnung aktivieren 0169", um Ihre Aktionen sollten Sie diese Warnung nur für diese Methoden zu unterdrücken oder 0169 auf das Feld "Ignore-Warnungen" in den Compileroptionen hinzufügen, wenn es für Ihr gesamtes Projekt (nicht deaktiviert werden soll empfohlen).
+Wenn Sie diese Warnung nur für diese Methoden unterdrücken möchten, können Sie die Option "#Pragma Warnung deaktivieren 0169" "#Pragma Warnung" 0169 aktivieren "verwenden, wenn Sie diese Warnung nur für diese Methoden unterdrücken möchten. Sie können auch 0169 zum Feld" Warnungen ignorieren "in den Compileroptionen verwenden, wenn Sie es für das gesamte Projekt deaktivieren möchten empfohlen).
 
-## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>Fehler bei der Mtouch mit folgender Meldung: Assembly kann nicht geöffnet werden kann ' / path/to/yourproject.exe "
+## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>Fehler bei mtouchscreen mit folgender Meldung: Die Assembly "/path/to/yourproject.exe" kann nicht geöffnet werden.
 
-Wenn Sie diese Fehlermeldung angezeigt wird, ist im Allgemeinen das Problem, dass der absolute Pfad zu Ihrem Projekt ein Leerzeichen enthält. Dies wird in einer zukünftigen Version von Xamarin.iOS behoben werden, jedoch können Sie das Problem umgehen, indem Sie das Projekt in einen Ordner ohne Leerzeichen verschieben.
+Wenn diese Fehlermeldung angezeigt wird, ist das Problem in der Regel der absolute Pfad zu Ihrem Projekt, das ein Leerzeichen enthält. Dies wird in einer zukünftigen Version von xamarin. IOS behoben, aber Sie können das Problem umgehen, indem Sie das Projekt in einen Ordner ohne Leerzeichen verschieben.
 
-## <a name="your-sqlite3-version-is-old---please-upgrade-to-at-least-v350"></a>Ihre sqlite3-Version ist veraltet: Aktualisieren Sie mindestens auf v3.5.0!
+## <a name="your-sqlite3-version-is-old---please-upgrade-to-at-least-v350"></a>Ihre sqlite3-Version ist veraltet. führen Sie ein Upgrade auf mindestens v 3.5.0 durch!
 
-Dies geschieht, wenn Sie Folgendes tun:
+Dies geschieht, wenn Sie alle folgenden Aktionen ausführen:
 
-1.  Verwenden Sie Mono.Data.Sqlite
-1.  Verwenden von Mac OS X Leopard (10.5)
-1.  Führen Sie die app im Simulator an.
+1. Verwenden von Mono. Data. sqlite
+1. Verwenden von Mac OS X Leopard (10,5)
+1. Führen Sie die APP im Simulator aus.
 
 
-Das Problem besteht darin, dass Mono OS X-Datei übernommen wird `libsqlite3.dylib`, nicht die iPhoneSimulator des `libsqlite3.dylib` Datei. Ihre app *wird* arbeiten an das Gerät, aber nicht nur Ihre Simulator.
+Das Problem ist, dass Mono das Betriebssystem X `libsqlite3.dylib`und nicht die `libsqlite3.dylib` Datei "iphonesimulator" aufnimmt. Ihre APP funktioniert auf dem Gerät, aber nicht auf dem Simulator.
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>Stellen Sie bereit zum Gerät tritt der Fehler "System.Exception": AMDeviceInstallApplication returned 3892346901
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>Fehler bei der Bereitstellung auf dem Gerät mit System. Exception: Aminviceingestallapplication hat 3892346901 zurückgegeben.
 
-Dieser Fehler weist darauf hin, dass die Code-signing-Konfiguration für Ihr Zertifikat/Bündel-Id nicht das Bereitstellungsprofil auf dem Gerät installierten übereinstimmt.  Vergewissern Sie sich, Sie haben das richtige Zertifikat ausgewählt, die in den Projektoptionen Bundle-Signierung iPhone ->, und die richtige Paket-Id, die in den Projekteigenschaften angegeben -> iPhone-Anwendung
+Dieser Fehler weist darauf hin, dass die Code Signierungs Konfiguration für Ihre Zertifikat-/Bundle-ID nicht mit dem Bereitstellungs Profil identisch ist, das auf Ihrem Gerät installiert ist.  Vergewissern Sie sich, dass das entsprechende Zertifikat in den Projektoptionen > iPhone-Bundle-Signierung und die richtige Bündel-ID in den Projektoptionen > iPhone-Anwendung ausgewählt ist.
 
-## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>Vervollständigung von Code funktioniert in Visual Studio für Mac nicht
+## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>Code Vervollständigung funktioniert nicht in Visual Studio für Mac
 
-Stellen Sie sicher, dass Sie die neueste Version von Visual Studio für Mac und Xamarin.iOS verwenden
+Stellen Sie sicher, dass Sie die neueste Version von Visual Studio für Mac und xamarin. IOS verwenden.
 
-Wenn das Problem weiterhin besteht, wenden Sie [einen Fehler](http://monodevelop.com/Developers#Reporting_Bugs), Anfügen der **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**, **AndroidTools-{Zeitstempel} .log**, und **Komponenten – {Zeitstempel} .log** Protokolldateien.
+Wenn das Problem weiterhin besteht, melden Sie [einen Fehler](http://monodevelop.com/Developers#Reporting_Bugs), und fügen Sie die Protokolldateien " **~/Library/Logs/XamarinStudio-{Version}/IDE-{Timestamp}.log**", " **androidtools-{Timestamp}. log**" und " **Components-{Timestamp}. log** " an.
 
-Wenn alle anderen Versuche fehlschlagen, können Sie versuchen, entfernen den Code-Abschluss-Cache, damit sie erneut generiert wird:
+Wenn alle anderen Fehler nicht angezeigt werden, können Sie versuchen, den Code Vervollständigungs Cache zu entfernen, sodass er neu generiert wird:
 
  `[rm -r ~/.config/XamarinStudio-{VERSION}/CodeCompletionData]`
 
-Achten Sie darauf, dass Sie mit diesem Befehl richtig eingeben. Alternativ könnten Sie wichtige Dateien versehentlich entfernen.
+Achten Sie darauf, dass Sie diesen Befehl ordnungsgemäß eingeben oder wichtige Dateien versehentlich entfernen.
 
-## <a name="visual-studio-for-mac-crashes-when-you-copy-text"></a>Visual Studio für Mac stürzt ab, wenn Sie Text kopieren
+## <a name="visual-studio-for-mac-crashes-when-you-copy-text"></a>Visual Studio für Mac stürzt ab, wenn Sie Text kopieren.
 
-Die beliebte Mac QuickSilver, Google-Symbolleiste und Startbereich können Zwischenablage-Funktionen, die Visual Studio für Mac Speicher beschädigt. Unter "die Optionen" können Sie Visual Studio für Mac als Prozess auflisten, die, denen Sie nicht beeinträchtigen sollte.
+Die beliebten Mac-Hilfsprogramme Quicksilver, Google Toolbar und Launchbar verfügen über Zwischenablage Features, die Visual Studio für Mac Arbeitsspeicher beschädigen. In den Optionen können Sie Visual Studio für Mac als Prozess auflisten, der nicht beeinträchtigt werden sollte.
 
-## <a name="visual-studio-for-mac-complains-about-mono-24-required"></a>Visual Studio für Mac meldet die Mono-2.4 erforderlich
+## <a name="visual-studio-for-mac-complains-about-mono-24-required"></a>Visual Studio für Mac über die erforderlichen mono-2,4-Informationen
 
-Wenn Sie Visual Studio für Mac aufgrund von einem kürzlich veröffentlichten Update aktualisiert, und wenn Sie versuchen, starten Sie ihn erneut es meldet die Mono-2.4 wird nicht vorhanden, müssen Sie, lediglich [upgrade Ihrer Installation von Mono 2.4](http://www.go-mono.com/mono-downloads/download.html).  
+Wenn Sie Visual Studio für Mac aufgrund eines aktuellen Updates aktualisiert haben, und wenn Sie versuchen, es erneut zu starten, werden Sie sich darüber beschweren, dass mono 2,4 nicht vorhanden ist. Sie müssen lediglich [die mono 2,4-Installation aktualisieren](http://www.go-mono.com/mono-downloads/download.html).  
 
-Mono 2.4.2.3_6 behebt einige wichtige Probleme, die verhindert, Visual Studio für Mac ausgeführt wird zuverlässig in einigen Fällen blockiert Visual Studio für Mac, beim Start oder verhindert, dass die vervollständigungsdatenbank Code generiert werden.
+Mono 2.4.2.3 _6 korrigiert einige wichtige Probleme, die eine zuverlässige Ausführung von Visual Studio für Mac verhindert haben, manchmal Visual Studio für Mac beim Start nicht reagiert oder das Generieren der Code Vervollständigungs Datenbank verhindert.
 
-Wenn Sie den neue Mono installieren, wird Visual Studio für Mac gestartet, wie erwartet.
+Nachdem Sie die neue Mono-Installation installiert haben, wird Visual Studio für Mac erwartungsgemäß gestartet.
 
-## <a name="assertion-at-monometadatageneric-sharingc704-condition-oti-not-met"></a>Die Assertion am... /.. /.. /.. /Mono/Metadata/Generic-Sharing.c:704, Bedingung 'Oti"nicht erfüllt
+## <a name="assertion-at-monometadatageneric-sharingc704-condition-oti-not-met"></a>Assert-unter.. /.. /.. /.. /Mono/Metadata/Generic-Sharing.c: 704, Bedingung ' Oti ' nicht erfüllt
 
-Wenn Sie die folgenden stapelüberwachung erhalten:
+Wenn Sie die folgende Stapel Überwachung erhalten:
 
 ```csharp
  - Assertion at ../../../../mono/metadata/generic-sharing.c:704, condition `oti' not met
@@ -184,119 +184,119 @@ Stacktrace:
     at (wrapper runtime-invoke) object.runtime_invoke_dynamic (intptr,intptr,intptr,intptr) <0xffffffff>`
 ```
 
-Es bedeutet, dass Sie eine statische Bibliothek mit Thumb-Code kompiliert werden, in Ihr Projekt verknüpft sind. IPhone SDK-Version 3.1 (oder höher zum Zeitpunkt der artikelerstellung) Apple führte einen Fehler in ihren Linker, beim Verknüpfen von nicht-Thumb-Code (Xamarin.iOS) mit Thumb-Code (die statische Bibliothek). Sie müssen zur Verknüpfung mit einer nicht-Thumb-Version Ihrer statischen Bibliothek aus, um dieses Problem zu beheben.
+Dies bedeutet, dass Sie eine mit Thumb-Code kompilierte statische Bibliothek in Ihr Projekt verknüpfen. Seit der iPhone SDK-Version 3,1 (oder höher zum Zeitpunkt der Erstellung dieses Dokuments) hat Apple einen Fehler in seinen Linker eingeführt, als nicht Thumb-Code (xamarin. IOS) mit Thumb-Code (Ihre statische Bibliothek) zu verknüpfen. Sie müssen eine Verknüpfung mit einer nicht-Thumb-Version ihrer statischen Bibliothek herstellen, um dieses Problem zu beheben.
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException: Es wird versucht, JIT-Kompilierung kompilieren (Wrapper verwaltet zu verwaltet)-Methode Foo[]:System.Collections.Generic.ICollection'1.get_Count)
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.ExecutionEngineException: Versuch der JIT-Kompilierungs Methode (Wrapper von verwaltetem zu verwaltetem) foo []: System. Collections. Generic. icollection' 1. get_Count ()
 
-Das []-Suffix gibt an, dass Sie oder der Klassenbibliothek sind Aufrufen einer Methode für ein Array über eine generische Auflistung, z. B. "IEnumerable" <>, ICollection <> oder IList <>. Dieses Problem zu umgehen können Sie explizit erzwingen, dass des AOT-Compilers eine solche Methode durch Aufrufen der Methode selbst einschließen, und sicherstellen, dass dieser Code ausgeführt wird, bevor der Aufruf, der die Ausnahme ausgelöst hat. In diesem Fall könnten Sie Folgendes schreiben:
+Das Suffix [] gibt an, dass Sie oder die Klassenbibliothek eine Methode für ein Array über eine generische Auflistung aufrufen, z. b. IEnumerable < >, ICollection < > oder IList < >. Um dieses Problem zu umgehen, können Sie explizit erzwingen, dass der AOT-Compiler diese Methode einschließt, indem Sie die Methode selbst aufrufen und sicherstellen, dass dieser Code vor dem Aufruf ausgeführt wird, der die Ausnahme ausgelöst hat. In diesem Fall können Sie Folgendes schreiben:
 
 ```csharp
 Foo [] array = null;
 int count = ((ICollection<Foo>) array).Count;
 ```
 
-Die erzwingt, dass des AOT-Compilers die Get_Count-Methode enthalten.
+Dadurch wird der AOT-Compiler gezwungen, die get_Count-Methode einzubeziehen.
 
-## <a name="visual-studio-for-mac-source-editor-is-extremely-slow"></a>Visual Studio für Mac-Quellen-Editor ist sehr langsam.
+## <a name="visual-studio-for-mac-source-editor-is-extremely-slow"></a>Visual Studio für Mac Quellen-Editor ist äußerst langsam.
 
-Manchmal wird die Visual Studio für Mac-Quellen-Editor extrem langsam, nicht mehr reagiert. für einige Sekunden zwischen der Eingabe von Zeichen angezeigt werden.
+Manchmal wird der Quellen-Editor für Visual Studio für Mac extrem langsam, und er scheint mehrere Sekunden lang zwischen Eingabezeichen zu hängen.
 
-Dieses Problem tritt sehr selten und extrem schwer zu reproduzieren: es in der Regel nicht reproduzieren auf demselben Computer nach dem Neustart von Visual Studio für Mac. Aus diesem Grund würden wir es uns freuen, wenn Sie könnten einige Debuggen Schritte durchführen, vor dem Neustart von Visual Studio für Mac und die Ergebnisse an uns senden.
+Dieses Problem ist sehr selten und extrem schwer zu reproduzieren. es ist normalerweise nicht möglich, nach dem Neustart Visual Studio für Mac auf dem gleichen Computer reproduziert zu werden. Aus diesem Grund würden wir uns freuen, wenn Sie mehrere Debugschritte ausführen könnten, bevor Sie Visual Studio für Mac neu starten, und die Ergebnisse an uns senden.
 
-1.  Versuchen Sie die Registerkarte "Editor" zu schließen und erneut öffnen. Dauert es ein wenig bearbeiten oder verschiebt die Einfügemarke um ein, bis die Verlangsamung erneut auftritt?
-1.  Deaktivieren Sie "Balken Sync" mit dem Tool für Entwickler "Quartz Debug" (finden Sie mithilfe von Spotlight), und überprüfen Sie, ob die Quell-Editor-Leistung auf Normal zurückgesetzt wird.
-1.  Versuchen Sie es wiederholen Schritt (1), mit dem Balken Synchronisierung immer noch deaktiviert.
-1.  Wenn der Editor für mehr als ein paar Sekunden stürzt ab, versuchen Sie es ausführen "Killall-beenden [Visual Studio für Mac]" in einem Terminal aus, während es hängen geblieben ist. Es kann schwierig sein, Zeitpunkt den Kill-Befehl ausgeführt wird, während der Editor hängen geblieben ist, aber es ist wichtig, zu diesem Zweck, da der Befehl zwingt, Mono, um das stapelverfolgungen aller Threads in die MD-Protokoll zu schreiben, die wir verwenden können, welcher Zustand zu ermitteln, die Threads in sind, während die XS hängen geblieben ist.
+1. Schließen Sie die Registerkarte Editor, und öffnen Sie Sie erneut. Dauert es etwas, bis die Einfügemarke bearbeitet oder verschoben wird, bis die Verlangsamung wieder auftritt?
+1. Deaktivieren Sie "Balken Synchronisierung" mit dem Entwickler Tool "Quartz Debug" (das Sie mithilfe von Spotlight suchen können), und überprüfen Sie, ob die Leistung des Quell-Editors in normaler Weise wieder hergestellt wird.
+1. Wiederholen Sie den Schritt (1), bei dem die Balken Synchronisierung deaktiviert ist.
+1. Wenn der Editor seit mehr als wenigen Sekunden nicht mehr verfügbar ist, versuchen Sie, "killall-quit [Visual Studio für Mac]" in einem Terminal auszuführen, während es nicht reagiert. Es ist möglicherweise schwierig, den Kill-Befehl zu warten, während der Editor nicht reagiert, aber es ist von entscheidender Bedeutung, da der Befehl Mono erzwingt, Stapel Überwachungen aller Threads in das MD-Protokoll zu schreiben, mit dem wir ermitteln können, in welchem Zustand sich die Threads befinden, während der XS-Dienst nicht reagiert.
 
 
 
-Fügen Sie die Protokolle XS **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**, **AndroidTools-{Zeitstempel} .log**, und **Komponenten – {Zeitstempel} .log**(in älteren Versionen von XS/MonoDevelop, senden Sie einfach **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**).
+Fügen Sie die XS-Protokolle, **~/Library/Logs/XamarinStudio-{Version}/IDE-{Timestamp}.log**, **androidtools-{Timestamp}. log**und **Components-{Timestamp}. log** (in älteren Versionen von XS/monodevelop, Just send **~/Library/Logs /MonoDevelop-(3.0 | 2.8 | 2.6)/monodevelop.log**).
 
- **HINWEIS: Das oben angegebene Problem wurde in XS 2.2 endgültige behoben.**
+ **HINWEIS: Das oben beschriebene Problem wurde in XS 2,2 Final behoben.**
 
-## <a name="compiled-application-is-very-large"></a>Kompilierte Anwendung ist sehr groß.
+## <a name="compiled-application-is-very-large"></a>Kompilierte Anwendung sehr groß
 
-Zur Unterstützung des Debuggens, enthalten die Debug-Builds zusätzlichen Code. Projekte, die im Releasemodus erstellt, einem Bruchteil der Größe sind.
+Zum unterstützen des Debuggens enthalten Debugbuilds zusätzlichen Code. Im Releasemodus integrierte Projekte sind ein Bruchteil der Größe.
 
-Ab Xamarin.iOS 1.3 Debug enthalten Builds die debugging-Unterstützung für jede einzelne Komponente von Mono (jede Methode in jeder Klasse Frameworks).  
+Ab xamarin. IOS 1,3 enthielt die Debug-Builds Debuggingunterstützung für jede einzelne Komponente von Mono (jede Methode in jeder Klasse des Frameworks).  
 
-Mit Xamarin.iOS 1.4 eine Einführung einer eine differenzierte Methode für das Debuggen, ist die Standardeinstellung nur Debuggen Instrumentierung für Code und Ihre Bibliotheken bereitstellen, und dies nicht für alle der [Mono-Assemblys](~/cross-platform/internals/available-assemblies.md) (dies weiterhin möglich sein, aber Sie müssen sich für diese Assemblys Debuggen).
+Mit xamarin. IOS 1,4 wird eine präzisere Methode für das Debuggen eingeführt. Standardmäßig wird nur die Debuginstrumentation für Ihren Code und Ihre Bibliotheken bereitgestellt. Dies geschieht nicht für alle [Mono](~/cross-platform/internals/available-assemblies.md) -Assemblys (Dies ist dennoch möglich, aber Sie muss sich für das Debuggen dieser Assemblys entscheiden.)
 
-## <a name="installation-hangs"></a>Installation hängt
+## <a name="installation-hangs"></a>Installation ist nicht mehr
 
-Sowohl Mono und Xamarin.iOS-Installationsprogramme hängen bleiben, wenn der iPhone-Simulator ausgeführt werden. Dieses Problem ist nicht beschränkt auf Mono oder Xamarin.iOS, ein permanentes Problem handelt es sich für jede Software, die versucht, die Software auf MacOS Schnee Leopard installieren, wenn das iPhone Simulators bei der Installation ausgeführt wird.
+Mono-und xamarin. IOS-Installationsprogramme hängen nicht aus, wenn der iPhone-Simulator ausgeführt wird. Dieses Problem ist nicht auf Mono oder xamarin. IOS beschränkt. Dies ist ein konsistentes Problem für jede Software, die versucht, Software auf MacOS snowleopard zu installieren, wenn der iPhone-Simulator zum Installations Zeitpunkt ausgeführt wird.
 
-Stellen Sie sicher, dass Sie die iPhone-Simulator zu beenden, und wiederholen Sie die Installation.
+Stellen Sie sicher, dass Sie den iPhone-Simulator beenden, und wiederholen Sie die Installation.
 
 <a name="trampolines" />
 
-## <a name="ran-out-of-trampolines-of-type-0"></a>Nicht genügend Trampolines vom Typ 0
+## <a name="ran-out-of-trampolines-of-type-0"></a>Nicht genügend neusprung des Typs 0
 
-Wenn Sie diese Meldung erhalten, während der Ausführung von Gerät, können Sie weiterer geben erstellen 0 Trampolines (Typ spezifische) ändern Ihr Projekt Optionen "iPhone Build"-Abschnitt.  Sie möchten hinzufügen, dass die zusätzlichen Argumente für das Gerät Ziele zu erstellen:
+Wenn Sie diese Meldung erhalten, während das Gerät ausgeführt wird, können Sie weitere Typ 0-Trampolines (typspezifisch) erstellen, indem Sie den Abschnitt "iPhone Build" der Projektoptionen ändern.  Sie möchten zusätzliche Argumente für die gerätebuildziele hinzufügen:
 
  `-aot "ntrampolines=2048"`
 
-Die Standardanzahl von Trampolines ist 1024.  Versuchen Sie diese Zahl erhöhen, bis man genug für Ihre Anwendung.
+Die Standard Anzahl der Trampoline ist 1024. Versuchen Sie, diese Zahl zu erhöhen, bis Sie für Ihre Anwendung ausreichend sind.
 
-## <a name="ran-out-of-trampolines-of-type-1"></a>Nicht genügend Trampolines vom Typ 1
+## <a name="ran-out-of-trampolines-of-type-1"></a>Nicht genügend neusprung des Typs 1.
 
-Wenn Sie die häufige Verwendung rekursiver Generika vornehmen, können Sie diese Meldung auf Gerät erhalten.  Sie können weitere Typ 1 Trampolines (Typ RGCTX) erstellen, durch Ändern Ihrer Projekt-Optionen "iPhone Build"-Abschnitt.  Sie möchten hinzufügen, dass die zusätzlichen Argumente für das Gerät Ziele zu erstellen:
+Wenn Sie rekursive Generika stark verwenden, erhalten Sie diese Meldung möglicherweise auf dem Gerät.  Sie können weitere Type 1-neuteschlangen (Typ rgctx) erstellen, indem Sie den Abschnitt "iPhone Build" der Projektoptionen ändern.  Sie möchten zusätzliche Argumente für die gerätebuildziele hinzufügen:
 
  `-aot "nrgctx-trampolines=2048"`
 
-Die Standardanzahl von Trampolines ist 1024.  Versuchen Sie diese Anzahl erhöhen, bis man genug für die Verwendung von Generika.
+Die Standard Anzahl der Trampoline ist 1024. Versuchen Sie, diese Zahl zu erhöhen, bis Sie für die Verwendung von Generika ausreichend sind.
 
-## <a name="ran-out-of-trampolines-of-type-2"></a>Nicht genügend Trampolines vom Typ 2
+## <a name="ran-out-of-trampolines-of-type-2"></a>Aus dem Typ 2 wurden keine neuwerte entfernt.
 
-Wenn Sie intensiv Schnittstellen verwenden, können Sie diese Meldung auf Gerät erhalten.
-Sie können weiterer Geben Sie 2 Trampolines (Typ IMT Thunks) erstellen, indem Sie Ihr Projekt Optionen "iPhone Build" Abschnitt ändern.  Sie möchten hinzufügen, dass die zusätzlichen Argumente für das Gerät Ziele zu erstellen:
+Wenn Sie hohe Verwendungs Schnittstellen verwenden, erhalten Sie diese Meldung möglicherweise auf dem Gerät.
+Durch Ändern der Projektoptionen "iPhone Build" können Sie weitere Typ-2-Trampolines (IMT-thunkttente) erstellen.  Sie möchten zusätzliche Argumente für die gerätebuildziele hinzufügen:
 
  `-aot "nimt-trampolines=512"`
 
-Die Standardanzahl von IMT Thunk Trampolines ist 128.  Versuchen Sie diese Zahl erhöhen, bis man genug für die Verwendung von Schnittstellen.
+Die Standard Anzahl von IMT-Thunk-Trampoline ist 128. Versuchen Sie, diese Zahl zu erhöhen, bis Sie für die Verwendung von Schnittstellen ausreichend sind.
 
-## <a name="debugger-is-unable-to-connect-with-the-device"></a>Debugger kann keine Verbindung mit dem Gerät herstellen
+## <a name="debugger-is-unable-to-connect-with-the-device"></a>Der Debugger kann keine Verbindung mit dem Gerät herstellen.
 
-Beim Starten des Debuggens einer Gerätekonfiguration, sehen Sie den Debugger angezeigt wird, ein Dialogfeld gibt an, dass es für die Anwendung eine Verbindung herzustellen versucht. Es gibt verschiedene Gründe, die der Debugger möglicherweise nicht an die Anwendung eine Verbindung herstellen können, verwenden Sie abhängig vom Modus eine Verbindung herstellen (USB oder WLAN).
+Wenn Sie mit dem Debuggen einer Gerätekonfiguration beginnen, sehen Sie, dass der Debugger einen Dialog anzeigt, der anzeigt, dass er versucht, eine Verbindung mit der Anwendung herzustellen. Es gibt mehrere Gründe, warum der Debugger möglicherweise nicht in der Lage ist, eine Verbindung mit der Anwendung herzustellen, abhängig vom Modus, den Sie für die Verbindung verwenden (USB oder WiFi).
 
- **Wenn das Gerät und dem Debuggerhost in unterschiedlichen Netzwerken befinden**, eine Firewall oder ein privates Netzwerk möglicherweise verhindert die Anwendung eine Verbindung mit dem Debuggerhost im WLAN-Modus herstellen.
+ **Wenn sich das Gerät und der Debuggerhost in unterschiedlichen Netzwerken befinden**, verhindert eine Firewall oder ein privates Netzwerk möglicherweise, dass die Anwendung im WiFi-Modus eine Verbindung mit dem Debugger-Host herstellt.
 
- **Visual Studio für Mac ist möglicherweise nicht in der Lage, Fragen die richtige IP-Adresse des Hosts**. In WiFi Modus Visual Studio für Mac kann der Anwendung alle IP-Adressen gefunden werden kann von dem Host, und die Anwendung versucht, alle um festzustellen, ob es diese verwenden kann, um die Verbindung mit Visual Studio für Mac.
+ **Visual Studio für Mac ist möglicherweise nicht in der Lage, die richtige IP-Adresse des Hosts abzufragen**. Im WiFi-Modus Visual Studio für Mac die Anwendung alle IPS erhält, die Sie für den Host finden kann, und die Anwendung versucht, Sie zu überprüfen, ob Sie für die Verbindung mit Visual Studio für Mac verwendet werden kann.
 
- **Ein anderes Gerät ist mit einem USB-Anschluss auf dem Host verbunden.** In einigen Fällen, die andere Geräte mit USB verbunden wurden Ports auf dem Host als irgendwie gestört, im Modus für USB-Debuggen.
+ **Ein anderes Gerät ist mit einem USB-Anschluss auf dem Host verbunden.** In einigen Fällen sind andere Geräte, die mit den USB-Ports auf dem Host verbunden sind, mit dem Debuggen im USB-Modus beeinträchtigt.
 
-Wenn entweder "WiFi" oder "USB-Modus nicht ordnungsgemäß funktioniert, können Sie einfach versuchen die andere: Öffnen Sie die Einstellungen in Visual Studio für Mac, wechseln Sie zu der Seite" Einstellungen/Debugger/iPhone-Debugger "und schalten Sie das Kontrollkästchen"Debuggen von iOS-Geräte über WLAN anstelle über USB".   Wenn keines von beiden funktioniert, finden Sie weitere Informationen über den Fehler in der Konsole des Geräts im ausführlichen Modus (durch Hinzufügen von aktiviert "-V - V - V" auf die weitere Mtouch-Argumente in den Projektoptionen).
+Wenn der WiFi-oder USB-Modus nicht funktioniert, können Sie den anderen problemlos ausprobieren: Öffnen Sie in Visual Studio für Mac die Einstellungen, wechseln Sie zur Seite Preferences/Debugger/iPhone Debugger, und schalten Sie das Kontrollkästchen "IOS-Geräte über WiFi anstatt über USB Debuggen".   Wenn keines von beiden funktioniert, können Sie weitere Informationen zu dem Fehler in der Geräte Konsole im ausführlichen Modus anzeigen (dieser wird durch Hinzufügen von "-v-v-v" zu den zusätzlichen mberührungs-Argumenten in den Projektoptionen aktiviert).
 
-## <a name="error-134-mtouch-failed-with-the-following-message"></a>134 Mtouch Fehler mit folgender Meldung:
+## <a name="error-134-mtouch-failed-with-the-following-message"></a>Fehler 134: Fehler bei mtouchscreen mit folgender Meldung:
 
-Dieser Fehler kann ausgelöst werden, wenn Sie versuchen, die mit - Nolink auf den Xamarin.iOS-1.4-Stil, der Releases zu erstellen. Sie können diesen Fehler umgehen, durch die Angabe der zusätzlichen Argumente in der Projektkonfiguration Monodevelop.
+Dieser Fehler kann ausgelöst werden, wenn Sie versuchen, mit-nolink im xamarin. IOS 1,4-Stil von Releases zu erstellen. Sie können diesen Fehler umgehen, indem Sie in der monodevelop-Projekt Konfiguration zusätzliche Argumente angeben.
 
-Fügen Sie das argument
+Argument hinzufügen
 
  `-nosymbolstrip`
 
-und das Problem sollte aufgelöst werden.
+das Problem sollte behoben werden.
 
-## <a name="distribution-identity-is-not-shown-in-visual-studio-for-mac-project-signing-options"></a>Distribution-Identität wird nicht in Visual Studio für Mac-Projekt, die Optionen zum codesignieren angezeigt.
+## <a name="distribution-identity-is-not-shown-in-visual-studio-for-mac-project-signing-options"></a>Die Verteilungs Identität wird in Visual Studio für Mac Projekt Signierungs Optionen nicht angezeigt.
 
-Visual Studio für Mac, 2.2 hat einen Fehler, der bewirkt, dass es keine verteilungszertifikate zu erkennen, die kein Komma enthalten. Aktualisieren Sie Visual Studio für Mac ab 2.2.1.
+Visual Studio für Mac 2,2 weist einen Fehler auf, der bewirkt, dass keine Verteilungs Zertifikate erkannt werden, die ein Komma enthalten. Aktualisieren Sie auf Visual Studio für Mac 2.2.1.
 
-## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>Fehler "AFCFileRefWrite zurückgegeben: 1" beim Hochladen
+## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>Fehler "afcfilerefwrite zurückgegeben: 1 "während des Uploads
 
-Beim Hochladen einer app auf Ihrem Gerät erhalten Sie möglicherweise eine Fehlermeldung "AFCFileRefWrite zurückgegeben: 1". Dies kann vorkommen, wenn Sie eine Datei mit der Länge 0 (null) haben.
+Beim Hochladen einer APP auf Ihr Gerät erhalten Sie möglicherweise die Fehlermeldung "afcfilerefwrite hat Folgendes zurückgegeben: 1". Dies kann vorkommen, wenn Sie eine Datei mit der Länge 0 (null) haben.
 
-## <a name="error-mtouch-failed-with-no-output"></a>Fehler "Mtouch bei der keine Ausgabe"
+## <a name="error-mtouch-failed-with-no-output"></a>Fehler "mfinger Fehler ohne Ausgabe"
 
-Fehl, wenn die aktuelle Version von Xamarin.iOS- und Visual Studio für Mac den Namen des Projekts oder das Verzeichnis, in dem die Projektmappe oder das Projekt gespeichert werden, Leerzeichen enthalten.
+Die aktuelle Version von xamarin. IOS und Visual Studio für Mac schlägt fehl, wenn der Projektname oder das Verzeichnis, in dem die Projekt Mappe oder das Projekt gespeichert ist, Leerzeichen enthält.
 Gehen Sie wie folgt vor, um das Problem zu beheben:
 
 
--  Stellen Sie sicher, dass weder das Projekt oder das Verzeichnis, wo sie gespeichert ist, ein Leerzeichen enthält.
--  Die "Main Projekteinstellungen" Stellen Sie sicher, dass der Projektname keine Leerzeichen enthält.
+- Stellen Sie sicher, dass weder das Projekt noch das Verzeichnis, in dem es gespeichert ist, ein Leerzeichen enthält.
+- Stellen Sie sicher, dass der Projekt Name im Projekt "Haupteinstellungen" keine Leerzeichen enthält.
 
-## <a name="error-the-binary-you-uploaded-was-invalid-a-pre-release-beta-version-of-the-sdk-was-used-to-build-the-application"></a>"Fehler: die Binärdatei, die Sie hochgeladen haben, ungültig. Eine Vorabversion Beta-Version des SDK wurde verwendet, um die Anwendung erstellen"
+## <a name="error-the-binary-you-uploaded-was-invalid-a-pre-release-beta-version-of-the-sdk-was-used-to-build-the-application"></a>Fehler "die von Ihnen hochgeladene Binärdatei war ungültig. Eine Vorabversion der Beta Version des SDK wurde verwendet, um die Anwendung zu erstellen.
 
-Dieser Fehler tritt normalerweise mit einem Projekt, die in der iPad-Entwicklung gestartet wurde, bevor Xamarin.iOS 2.0.0 veröffentlicht wurde, liegt vermutlich einige Schlüssel in Ihrer Datei "Info.plist", z.B.:
+Dieser Fehler wird normalerweise durch ein Projekt verursacht, das in der iPad-Entwicklung vor der Veröffentlichung von xamarin. IOS 2.0.0 gestartet wurde. wahrscheinlich haben Sie einige Schlüssel in der Datei "Info. plist" wie folgt:
 
 ```xml
 <key>UIDeviceFamily</key>
@@ -305,39 +305,39 @@ Dieser Fehler tritt normalerweise mit einem Projekt, die in der iPad-Entwicklung
        </array>
 ```
 
-Dieses Schlüsselpaar sollten entfernt werden, wie in Visual Studio für Mac es für Sie automatisch behandelt.
+Dieses Schlüsselpaar sollte entfernt werden, Visual Studio für Mac es automatisch verarbeitet.
 
-## <a name="error-a-pre-release-beta-version-of-the-sdk-was-used-to-build-the-app"></a>Fehler "eine Vorabversion Beta-Version des SDK wurde verwendet, um die app erstellen"
+## <a name="error-a-pre-release-beta-version-of-the-sdk-was-used-to-build-the-app"></a>Fehler "eine Vorabversion der Beta Version des SDK wurde verwendet, um die APP zu erstellen"
 
-(Die von Ed Anuff beigetragen wurden)
+(Beigetragen von Ed Anuff)
 
 Führen Sie folgende Schritte aus:
 
--  Ändern Sie die SDK-Version in der iPhone-Build, der Version 3.2 oder iTunes connect es beim Hochladen abgelehnt, da eine kompatible iPad-app mit einer SDK-Version, die kleiner als 3.2 erstellt erkannten
--  Erstellen Sie eine benutzerdefinierte Datei "Info.plist" für das Projekt, und explizit MinimumOSVersion auf 3.0 darin festgelegt.   Dies überschreibt die MinimumOSVersion 3.2-Wert, der von Xamarin.iOS festgelegt.   Wenn Sie dies nicht tun, wird die app nicht auf einem iPhone ausgeführt werden können.
--  Neu erstellen "," Zip "und" Upload in iTunes connect.
+- Ändern Sie die SDK-Version in iPhone Build in 3,2, oder iTunes Connect lehnt Sie beim Upload ab, da eine iPad-kompatible App mit einer SDK-Version kleiner als 3,2 erstellt wird.
+- Erstellen Sie eine benutzerdefinierte Datei "Info. plist" für das Projekt, und legen Sie minimumosversion explizit auf 3,0 fest.   Dadurch wird der von xamarin. IOS festgelegte minimumosversion 3,2-Wert überschrieben.   Wenn Sie dies nicht tun, kann die APP nicht auf einem iPhone ausgeführt werden.
+- Neu erstellen, zip und Hochladen in iTunes Connect.
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>Ausnahmefehler: System.Exception: Fehler beim Suchen der Selektor SomeSelector: auf {Type}
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>Ausnahmefehler: System.Exception: Fehler beim Suchen der Auswahl "someselector": on {Type}
 
-Diese Ausnahme wird durch eines von drei Dingen verursacht werden:
-
-
-1.  Sie haben eine Auswahl, um die Objective-C-Laufzeit bereitgestellt, ohne dass das entsprechende [Export]-Attribut an eine Methode angewendet
-1.  Sie haben vollständigen Verknüpfung, und das Attribut [Preserve] nicht angewendet, für die [Export]-Ed-Methode.
-1.  Sie haben das [Export]-Attribut auf eine private Methode in einem geerbten Typ angewendet.
+Diese Ausnahme wird durch eine der folgenden drei Punkte verursacht:
 
 
-## <a name="mainwindowxibdesignercs-file-is-not-updated"></a>MainWindow.xib.designer.cs-Datei wird nicht aktualisiert werden.
+1. Sie haben einen Selektor für die Ziel-C-Laufzeit bereitgestellt, ohne das entsprechende [Export]-Attribut auf eine Methode anzuwenden.
+1. Sie haben das vollständige verknüpfen aktiviert und das Attribut [preserve] nicht auf die [Export] Ed-Methode angewendet.
+1. Sie haben das [Export]-Attribut auf eine private Methode in einem geerbten Typ angewendet.
 
-Gab es ein Fehler in Xamarin Studio 2.4, die nicht mit der Datei MainWindow.xib.designer in neuen Projekten der MainWindow.xib Dateigruppe verursacht hat. Dies bedeutete, dass die Designer-Code für diese bestimmte Datei nicht aktualisiert werden sollen.
 
-Dieses Problem wurde behoben, in der Version von Visual Studio für Mac, die in der integrierten Aktualisierung verfügbar ist damit stellen Sie sicher Sie die neuere Version verwenden.
+## <a name="mainwindowxibdesignercs-file-is-not-updated"></a>Die MainWindow.XIb.Designer.cs-Datei wird nicht aktualisiert.
 
-Sie können vorhandene Projekte beheben, indem Sie entfernt (nicht löschen) Xib und die Designer-Datei, Sichern sie hinzufügen. Dies sollten die Dateien ordnungsgemäß erneut gruppiert werden.
+In Xamarin Studio 2,4 ist ein Fehler aufgetreten, der bewirkt hat, dass die Datei "MainWindow. XIb" nicht mit der Datei "MainWindow. XIb. Designer" in neuen Projekten gruppiert wurde. Dies bedeutete, dass der Designer Code für die jeweilige Datei nicht aktualisiert werden konnte.
 
-## <a name="uialertview-or-uiactionsheet-vanish-after-being-created"></a>Uialertview-Element oder UIActionSheet verschwinden, nach dem Erstellen
+Dieses Problem wurde in der Version von Visual Studio für Mac behoben, die im integrierten Updater verfügbar ist. Stellen Sie daher sicher, dass Sie die neuere Version verwenden.
 
-Wenn Sie Code wie verfügen:
+Sie können vorhandene Projekte reparieren, indem Sie den XIb und seine Designer Datei entfernen (nicht löschen) und dann wieder hinzufügen. Dies sollte die Dateien ordnungsgemäß erneut gruppieren.
+
+## <a name="uialertview-or-uiactionsheet-vanish-after-being-created"></a>UIAlertView oder uiaktionsheet wird nach dem Erstellen nicht mehr angezeigt.
+
+Wenn Sie über Code verfügen, der wie folgt aussieht:
 
 ```csharp
 var actionSheet = new UIActionSheet ("My ActionSheet", null, null, "OK", null){
@@ -349,71 +349,71 @@ actionSheet.Clicked += delegate (sender, args){
 };
 ```
 
-das Objekt "ActionSheet" befindet sich wie eine temporäre Variable in der Funktion, und sobald die Funktion beendet wird, das Objekt ist für die Garbagecollection, damit es am Ende der Garbage collection.
+Das "Aktions Blatt"-Objekt ist als temporäre Variable in der Funktion verfügbar, und sobald die Funktion beendet wird, ist das Objekt für Garbage Collection qualifiziert, sodass es am Ende der Garbage Collection entspricht.
 
-Um dieses Problem zu beheben, müssen Sie einen Verweis auf "ActionSheet" außerhalb Ihrer Methode an, an einer beliebigen Stelle, die sich außerhalb der Methode befinden wird.
+Um dieses Problem zu beheben, müssen Sie einen Verweis auf "Aktions Blatt" außerhalb ihrer Methode aufbewahren, da Sie an einer Stelle, an der Sie sich außerhalb ihrer Methode befinden.
 
-## <a name="project-always-runs-in-the-ipad-simulator"></a>Projekt immer wird in der iPad-Simulator
+## <a name="project-always-runs-in-the-ipad-simulator"></a>Das Projekt wird immer im iPad-Simulator ausgeführt.
 
-Das iPhone SDK 4.0-Installationsprogramm installiert, 2 SDKs – das 3.2 SDK zum Erstellen von nur-iPad-apps, und das 4.0-SDK zum Erstellen von iPhone und universelle apps verwendet wird. Außerdem werden ein 3.2-Simulator, der nur auf einem iPad simuliert, und ein 4.0 Simulator, der simuliert, iPhone oder iPhone 4 installiert. Alle älteren SDKs und-Simulatoren werden entfernt.
+Der iPhone SDK 4,0-Installer installiert 2 SDKs: das 3,2 SDK zum Entwickeln von reinen iPad-apps und das 4,0 SDK, das zum Entwickeln von iPhone-und universellen Apps verwendet wird. Außerdem wird ein 3,2-Simulator installiert, der nur ein iPad simuliert, und ein 4,0-Simulator, der iPhone oder iPhone 4 simuliert. Alle älteren sdche und Simulatoren werden entfernt.
 
-Visual Studio für Mac Build iPhone Projektoptionen enthalten eine Einstellung für die SDK-Version, die verwendet werden, bei der Erstellung Ihrer app. Mit dieser Einstellung finden Sie in **Build-Projektoptionen > -> iPhone Build**.
+Visual Studio für Mac iPhone-projektbuildoptionen enthalten eine Einstellung für die SDK-Version, die beim Erstellen der APP verwendet wird. Diese Einstellung finden Sie unter **Project Options-> Build-> iPhone Build**.
 
-Neue Projekte in Visual Studio für Mac das älteste installierte SDK als die Standardeinstellung für das SDK verwenden, und wenn das angegebene SDK nicht vorhanden ist, Visual Studio für Mac verwendet am ehesten zum Erstellen der app gefunden werden kann. Dies wurde erreicht, sodass Projekte nicht immer das neueste SDK erfordern würde. Dies führt jedoch zu derzeit die 3.2 SDK wird verwendet: was dazu führt, in der iPad-Simulator verwendet wird.
+Neue Projekte in Visual Studio für Mac das älteste installierte SDK als standardmäßige SDK-Einstellung verwenden, und wenn das angegebene SDK nicht vorhanden ist, verwendet Visual Studio für Mac den nächstgelegenen, der zum Erstellen der APP gefunden werden kann. Dies wurde erreicht, damit Projekte nicht immer das neueste SDK benötigen. Dies führt jedoch derzeit dazu, dass das 3,2 SDK verwendet wird. Dies führt dazu, dass der iPad-Simulator verwendet wird.
 
-Zum Beheben dieses Problems mithilfe des SDK 4.0, wechseln Sie zu **Build-Projektoptionen > -> iPhone Build**>, und ändern Sie den SDK-Wert, den Wert "4.0" im Dropdownfeld. Sie müssen dies für jede Konfiguration und plattformkombination, die mithilfe der Dropdownlisten am Anfang des Bereichs zugegriffen.
+Um dies mithilfe des 4,0 SDK zu beheben, wechseln Sie zu **Projektoptionen-> Build-> iPhone Build**>, und ändern Sie den SDK-Wert im Dropdown Feld in "4,0". Dies muss für jede Konfiguration und Platt Form Kombination erfolgen, auf die Sie über die Dropdown Listen oben im Panel zugreifen können.
 
-Die SDK-Version sollte nicht mit der Einstellung "Minimum OS-Version" verwechselt werden.
-Dieser Wert muss nicht mit dem Wert der SDK-Version überein – er wirkt sich auf die Mindestversion des Betriebssystems Ihrer app installieren, die älter sind als das SDK sein kann, solange Sie nur APIs, die in der älteren Betriebssystem vorhanden verwenden, oder schützen die Verwendung von neueren Features, die mit der Common Language Runtime OS Version Auschec KS. Sie sollten es auf die älteste Betriebssystemversion festlegen, auf denen die app zu testen.
+Die SDK-Version sollte nicht mit der Einstellung "minimale Betriebssystemversion" verwechselt werden.
+Dieser Wert muss nicht mit dem SDK-Versions Wert identisch sein. er wirkt sich auf die Mindestversion des Betriebssystems aus, auf dem Ihre APP installiert wird, das älter als das SDK ist, solange Sie nur APIs verwenden, die im älteren Betriebssystem vorhanden sind, oder die Verwendung von neueren Features mithilfe der Laufzeit-Betriebssystemversion (Auschec) schützen. KS. Sie sollten diese auf die älteste Betriebssystemversion festlegen, auf der Sie Ihre APP testen.
 
-Beachten Sie auch, dass die **Projekt -> iPhone-Simulatorziel**> Menü kann verwendet werden, um den Simulator auswählen, die standardmäßig verwendet wird, wenn ein Projekt ausführen/Debuggen. Darüber hinaus die **-Ausführung > Führen Sie mit**> im Menü kann verwendet werden, um einen bestimmten Simulator mit der Ausführung auswählen
+Beachten Sie auch, dass das **Projekt > iPhone-Simulator**> Menü verwendet werden kann, um den Simulator auszuwählen, der beim Ausführen/Debuggen eines Projekts standardmäßig verwendet wird. Darüber hinaus kann das Menü Run **-> Run with**> verwendet werden, um einen bestimmten Simulator auszuwählen, mit dem ausgeführt werden soll.
 
-## <a name="ibtool-returns-error-133"></a>Ibtool gibt Fehler 133 zurück.
+## <a name="ibtool-returns-error-133"></a>ibtool gibt den Fehler 133 zurück.
 
-Dies bedeutet, dass Sie XCode 4 installiert haben.   In XCode 4 die Tool-Ibtool wurde entfernt, da sie nicht mehr möglich ist, Ihrer XIB-Dateien mit einem eigenständigen Tool bearbeiten.
+Dies bedeutet, dass Xcode 4 installiert ist.   In Xcode 4 wurde das Tool ibtool entfernt. es ist nicht mehr möglich, ihre XIb-Dateien mit einem eigenständigen Tool zu bearbeiten.
 
-Wenn Sie die Verwendung von Interface Builder möchten, installieren Sie [XCode-Serie 3](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792), verfügbar über den Apple Website.
+Wenn Sie Interface Builder verwenden möchten, installieren Sie die [Xcode-Serie 3](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792), die auf der Apple-Website verfügbar ist.
 
-## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-wbrinterface-builder"></a>"Display-Bindung für den MIME-Typ kann nicht erstellt werden: application/vnd.apple -<wbr/>Schnittstelle-Builder"
+## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>"Die Anzeige Bindung für den MIME-Typ kann nicht erstellt werden: application/vnd. Apple-Interface-Builder"
 
-Dieser Fehler tritt auf, wenn Sie versuchen, ein iPhone-Benutzeroberfläche aus einem nicht-iPhone-Projekt zu erstellen. Stellen Sie sicher, dass Sie beginnen mit einer iPhone/iPad-Lösung, es ist nicht möglich, einfach die iPhone-UI-Elemente zu einem iPhone/iPad-Projekt hinzuzufügen.
+Dieser Fehler tritt auf, wenn Sie versuchen, eine iPhone-Benutzeroberfläche von einem nicht-iPhone-Projekt aus zu erstellen. Stellen Sie sicher, dass Sie mit einer iPhone/iPad-Lösung beginnen. es ist nicht möglich, iPhone-UI-Elemente einfach einem nicht-iPhone/iPad-Projekt hinzuzufügen.
 
-## <a name="startup-crash-when-executing-inside-the-ios-simulator"></a>Start-Absturz beim Ausführen in der iOS-simulator
+## <a name="startup-crash-when-executing-inside-the-ios-simulator"></a>Start Absturz bei Ausführung innerhalb des IOS-Simulators
 
-Wenn Sie einen Absturz zur Laufzeit (SIGSEGV) innerhalb der Simulator sowie eine stapelüberwachung, die folgendermaßen aussieht erhalten:
+Wenn Sie einen Lauf Zeit Absturz (SIGSEGV) im Simulator zusammen mit einer Stapel Überwachung erhalten, die wie folgt aussieht:
 
 ```csharp
   at (wrapper managed-to-native) System.Reflection.Assembly.GetTypes (System.Reflection.Assembly,bool)
   at MonoTouch.ObjCRuntime.Runtime.RegisterAssembly (System.Reflection.Assembly)
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
-.. .then haben Sie wahrscheinlich eine (oder mehr) veraltete Assembly im Anwendungsverzeichnis Simulator. Solche Assemblys ist möglicherweise vorhanden, Apple iOS-Simulator hinzufügt und anschließend aktualisiert, Dateien, aber nie gelöscht. Klicken Sie dann die einfachste Lösung hierfür ist der Simulator im Menü "Zurückgesetzt und Inhalte und Einstellungen..." aus.   
+... Anschließend verfügen Sie wahrscheinlich über eine (oder mehrere) veraltete Assembly in Ihrem simulatoranwendungsverzeichnis. Solche Assemblys können vorhanden sein, da der Apple IOS-Simulator Dateien hinzufügt und aktualisiert, Sie aber nie löscht. Wenn dies der Fall ist, besteht die einfachste Lösung darin, "zurücksetzen und Inhalt und Einstellungen..." auszuwählen. im Menü Simulator.   
 
 > [!WARNING]
-> Dadurch werden alle Dateien, Anwendungen und Daten im Simulator entfernt.   Beim nächsten die Anwendung ausführen Visual Studio für Mac wird in der Simulator bereitstellen und es werden keine alten, veralteten-Assembly, die den Absturz verursachen.
+> Dadurch werden alle Dateien, Anwendungen und Daten aus dem Simulator entfernt.   Wenn Sie die Anwendung das nächste Mal ausführen, wird Visual Studio für Mac im Simulator bereitgestellt, und es gibt keine alte, veraltete Assembly, die den Absturz verursacht.
 
-## <a name="simulator-hangs-during-application-installation"></a>Simulator-Abstürze während der Anwendungsinstallation
+## <a name="simulator-hangs-during-application-installation"></a>Simulator hängt bei der Anwendungs Installation
 
-Dies kann auftreten, wenn der Anwendungsnamen enthalten, eine "." (Punkt) in ihrem Namen.
-Dies wird als den Namen der ausführbaren Datei in CFBundleExecutable - ist unzulässig, auch wenn es funktioniert in vielen Fällen (z. B. Geräte) können.
+Dies kann vorkommen, wenn Anwendungsnamen ein "." enthalten. (Punkt) im Namen.
+Dies ist unzulässig als Name der ausführbaren Datei in cfbundleausführ Bare Datei, auch wenn Sie in vielen anderen Fällen (z. b. Geräte) funktionieren kann.
 
- \* "Sollte der Wert keine Erweiterungen auf den Namen enthalten." - [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ \* "Der Wert darf keine Erweiterung für den Namen enthalten." -[https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
-## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>Fehler: "0 x 43 Typ des benutzerdefinierten Attributs wird nicht unterstützt" beim Doppelklicken auf XIB-Dateien
+## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>Fehler: Der benutzerdefinierte Attributtyp 0x43 wird beim Doppelklicken auf XIb-Dateien nicht unterstützt.
 
-Dies wird verursacht, versucht, eine XIB-Dateien geöffnet werden, wenn Umgebungsvariablen nicht ordnungsgemäß festgelegt sind. Dies sollte nicht der Fall mit normaler Nutzung von Visual Studio für Mac/Xamarin.iOS und erneutes Öffnen von Visual Studio für Mac unter/Programme sollte das Problem behoben.
+Dies wird durch den Versuch verursacht, XIb-Dateien zu öffnen, wenn Umgebungsvariablen falsch festgelegt sind. Dies sollte nicht bei der normalen Verwendung von Visual Studio für Mac/xamarin. IOS vorkommen, und durch das erneute Öffnen Visual Studio für Mac von/Anwendungen sollte das Problem behoben werden.
 
-Beim Versuch, aktualisieren Sie die Software und diese Fehlermeldung angezeigt wird, Sie-e-Mail *support@xamarin.com*
+Wenn Sie versuchen, die Software zu aktualisieren, und diese Fehlermeldung angezeigt wird, senden Sie eine e-Mail *support@xamarin.com*
 
-## <a name="application-runs-on-simulator-but-fails-on-device"></a>Anwendung wird auf Simulator ausgeführt, aber ein Fehler auftritt, auf dem Gerät
+## <a name="application-runs-on-simulator-but-fails-on-device"></a>Anwendung wird im Simulator ausgeführt, schlägt jedoch auf dem Gerät fehl
 
-Dieses Problem kann auf verschiedene Arten manifest und nicht immer einen konsistente Fehler erzeugen. Wenn die Anwendung eine XIB enthält, stellen Sie sicher, die **Buildvorgang** auf die XIB nastaven NA hodnotu **SchnittstelleDefinition**. Dies ist die Standard-Buildaktion für .xibs.
+Dieses Problem kann sich in mehreren Formularen manifestieren und führt nicht immer zu einem konsistenten Fehler. Wenn die Anwendung eine XIb-Datei enthält, stellen Sie sicher, dass die Buildaktion auf der XIb-Datei auf **interfacedefinition**festgelegt ist. Dies ist die Standard-Buildaktion für. xisb.
 
-Um den Buildvorgang zu überprüfen, klicken Sie mit der rechten Maustaste auf die XIB-Datei, und wählen Sie **Buildvorgang**.
+Um die Buildaktion zu überprüfen, klicken Sie mit der rechten Maustaste aufdie XIb-Datei, und wählen Sie die Option
 
 
-## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: Keine Daten sind für die Codierung 437 verfügbar
+## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar.
 
-Wenn 3. Bibliotheken von Drittanbietern in Ihrer Xamarin.iOS-app einschließen möchten, erhalten Sie möglicherweise einen Fehler in der Form "System.NotSupportedException: Keine Daten ist für die Codierung 437" beim Versuch, kompilieren und Ausführen der app verfügbar. Z. B. Bibliotheken, wie z. B. `Ionic.Zip.ZipFile`, kann diese Ausnahme während des Betriebs.
+Wenn Sie Drittanbieterbibliotheken in Ihre xamarin. IOS-App einschließen, erhalten Sie möglicherweise eine Fehlermeldung in der Form "System. NotSupportedException: Bei dem Versuch, die APP zu kompilieren und auszuführen, sind keine Daten für die Codierung 437 verfügbar. Beispielsweise können Bibliotheken, z `Ionic.Zip.ZipFile`. b., diese Ausnahme während des Vorgangs auslösen.
 
-Dies kann gelöst werden, öffnen Sie die Optionen für die Xamarin.iOS-Projekt, und möchte **iOS-Build** > **Internationalisierung** und die Überprüfung der **West** Internationalisierung.
+Dies kann behoben werden, indem Sie die Optionen für das xamarin. IOS-Projekt öffnen, zu der **IOS** > -buildinternationalisierung navigieren und die **West** Internationalisierung überprüfen.

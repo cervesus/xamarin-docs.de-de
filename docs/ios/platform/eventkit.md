@@ -7,23 +7,23 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 881590b7b2b7277a2f8f2cc17ce1c8bdff68c626
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bb64a0457ad5228e32f233d630576da2836547c1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655789"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528054"
 ---
 # <a name="eventkit-in-xamarinios"></a>Eventkit in xamarin. IOS
 
 IOS verfügt über zwei integrierte Kalender bezogene Anwendungen: die Kalenderanwendung und die Erinnerungs Anwendung. Es ist einfach genug, um zu verstehen, wie Kalenderdaten von der Kalenderanwendung verwaltet werden, aber die Erinnerungs Anwendung ist weniger offensichtlich. Erinnerungen Datumsangaben fällig, wenn sie abgeschlossen sind, werden diese in Form von zugeordnet haben usw. Daher speichert IOS alle Kalenderdaten, unabhängig davon, ob es sich um Kalenderereignisse oder Erinnerungen handelt, an einem Ort, der als *Calendar Database*bezeichnet wird.
 
-Das eventkit-Framework bietet eine Möglichkeit, auf *die Kalender*-, *Kalender*-und *Erinnerungs* Daten zuzugreifen, die von der Kalender Datenbank gespeichert werden. Der Zugriff auf die Kalender-und Kalenderereignisse war seit IOS 4 verfügbar, aber der Zugriff auf Erinnerungen ist neu in ios 6.
+Das eventkit-Framework bietet eine Möglichkeit, aufdie Kalender-, *Kalender*-und *Erinnerungs* Daten zuzugreifen, die von der Kalender Datenbank gespeichert werden. Der Zugriff auf die Kalender-und Kalenderereignisse war seit IOS 4 verfügbar, aber der Zugriff auf Erinnerungen ist neu in ios 6.
 
 In dieser Anleitung wird Folgendes behandelt:
 
--   **Eventkit-Grundlagen** – dadurch werden die grundlegenden Teile von eventkit über die wichtigsten Klassen eingeführt, und es wird ein Verständnis ihrer Verwendung bereitstellt. Dieser Abschnitt muss gelesen werden, bevor der nächste Teil des Dokuments angegangen wird. 
--   **Allgemeine Aufgaben** – der Abschnitt "allgemeine Aufgaben" soll eine kurze Referenz zum Ausführen allgemeiner Aufgaben sein, z. b.: Auflisten von Kalendern, erstellen, speichern und Abrufen von Kalender Ereignissen und-Erinnerungen sowie die Verwendung der integrierten Controller zum Erstellen und Ändern von Kalender Ereignissen. Dieser Abschnitt muss nicht vorab gelesen werden, da er als Referenz für bestimmte Aufgaben dienen soll. 
+- **Eventkit-Grundlagen** – dadurch werden die grundlegenden Teile von eventkit über die wichtigsten Klassen eingeführt, und es wird ein Verständnis ihrer Verwendung bereitstellt. Dieser Abschnitt muss gelesen werden, bevor der nächste Teil des Dokuments angegangen wird. 
+- **Allgemeine Aufgaben** – der Abschnitt "allgemeine Aufgaben" soll eine kurze Referenz zum Ausführen allgemeiner Aufgaben sein, z. b.: Auflisten von Kalendern, erstellen, speichern und Abrufen von Kalender Ereignissen und-Erinnerungen sowie die Verwendung der integrierten Controller zum Erstellen und Ändern von Kalender Ereignissen. Dieser Abschnitt muss nicht vorab gelesen werden, da er als Referenz für bestimmte Aufgaben dienen soll. 
 
 
 Alle Aufgaben in diesem Handbuch sind in der begleitenden Beispielanwendung verfügbar:

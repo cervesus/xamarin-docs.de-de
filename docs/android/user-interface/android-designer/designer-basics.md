@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
-ms.openlocfilehash: 383a49f9baa85d50c956efbdd2ce29e3d62977b4
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: ebe8f483e501c4e34295a889f0d9ae06df8ba1d9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485932"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523699"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Grundlagen von xamarin. Android Designer
 
@@ -34,9 +34,9 @@ Ebenso können Sie ein neues Layout hinzufügen, indem Sie im **Projektmappen-Ex
 Dadurch wird eine neue **axml** -Layoutdatei erstellt und in den Designer geladen.
 
 > [!TIP]
-> Neuere Versionen von Visual Studio unterstützen das Öffnen von XML-Dateien innerhalb der Android Designer.
+> Neuere Releases von Visual Studio unterstützen das Öffnen von XML-Dateien in Android Designer.
 >
-> Beide axml-und XML-Dateien werden in der Android Designer unterstützt.
+> Sowohl AXML- als auch XML-Dateien werden in Android Designer unterstützt.
 
 ## <a name="designer-features"></a>Designer Features
 
@@ -46,17 +46,17 @@ Der Designer besteht aus mehreren Abschnitten, die die verschiedenen Features un
 
 Wenn Sie ein Layout im Designer bearbeiten, verwenden Sie die folgenden Funktionen, um den Entwurf zu erstellen und zu strukturieren:
 
--   **Designoberfläche** &ndash; Ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten. Der **Designoberfläche** wird im **Entwurfs** Bereich angezeigt (mit der **Designer-Symbolleiste** ).
+- **Designoberfläche** &ndash; Ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten. Der **Designoberfläche** wird im **Entwurfs** Bereich angezeigt (mit der **Designer-Symbolleiste** ).
 
--   **Quellen** Bereich Stellt eine Ansicht der zugrunde liegenden XML-Quelle bereit, die dem auf dem Designoberfläche dargestellten Entwurf entspricht. &ndash;
+- **Quellen** Bereich Stellt eine Ansicht der zugrunde liegenden XML-Quelle bereit, die dem auf dem Designoberfläche dargestellten Entwurf entspricht. &ndash;
 
--   **Designer-Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, **Versions**-, Design **-,** Layoutkonfiguration und Aktionsleiste Einstellungen. Die **Designer-Symbolleiste** enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
+- **Designer-Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, **Versions**-, Design-, Layoutkonfiguration und Aktionsleiste Einstellungen. Die **Designer-Symbolleiste** enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
 
--   **Toolbox** Enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf den Designoberfläche verschieben können. &ndash;
+- **Toolbox** Enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf den Designoberfläche verschieben können. &ndash;
 
--   **Eigenschaften Fenster** &ndash; Listet die Eigenschaften des ausgewählten Widgets zum Anzeigen und Bearbeiten auf.
+- **Eigenschaften Fenster** &ndash; Listet die Eigenschaften des ausgewählten Widgets zum Anzeigen und Bearbeiten auf.
 
--   **Dokument** Gliederung &ndash; Zeigt die Struktur der Widgets an, aus denen das Layout besteht. Sie können auf ein Element in der Struktur klicken, damit es auf dem **Designoberfläche**ausgewählt wird. Wenn Sie auf ein Element in der Struktur klicken, werden auch die Eigenschaften des Elements im **Eigenschaften** Fenster geladen.
+- **Dokument** Gliederung &ndash; Zeigt die Struktur der Widgets an, aus denen das Layout besteht. Sie können auf ein Element in der Struktur klicken, damit es auf dem **Designoberfläche**ausgewählt wird. Wenn Sie auf ein Element in der Struktur klicken, werden auch die Eigenschaften des Elements im **Eigenschaften** Fenster geladen.
 
 ## <a name="design-surface"></a>Entwurfsoberfläche
 
@@ -74,31 +74,31 @@ Die **Designer-Symbolleiste** (oberhalb der **Designoberfläche**) zeigt konfigu
 
 Die **Symbolleiste des Designers** bietet Zugriff auf die folgenden Features:
 
--   **Alternativer layoutselektor** &ndash; Ermöglicht die Auswahl aus unterschiedlichen Layoutversionen.
+- **Alternativer layoutselektor** &ndash; Ermöglicht die Auswahl aus unterschiedlichen Layoutversionen.
 
--   **Geräteauswahl** &ndash; Definiert einen Satz von Qualifizierern (z. b. Bildschirmgröße, Auflösung und Tastatur Verfügbarkeit), die einem bestimmten Gerät zugeordnet sind. Sie können auch neue Geräte hinzufügen und löschen.
+- **Geräteauswahl** &ndash; Definiert einen Satz von Qualifizierern (z. b. Bildschirmgröße, Auflösung und Tastatur Verfügbarkeit), die einem bestimmten Gerät zugeordnet sind. Sie können auch neue Geräte hinzufügen und löschen.
 
--   **Android-Versions Auswahl** &ndash; Die Android-Version, auf die das Layout abzielt. Der Designer wird das Layout entsprechend der ausgewählten Android-Version Rendering.
+- **Android-Versions Auswahl** &ndash; Die Android-Version, auf die das Layout abzielt. Der Designer wird das Layout entsprechend der ausgewählten Android-Version Rendering.
 
--   Design **Auswahl** &ndash; Wählt das Design der Benutzeroberfläche für das Layout aus.
+- Design **Auswahl** &ndash; Wählt das Design der Benutzeroberfläche für das Layout aus.
 
--   **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder Querformat. &ndash;
+- **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder *quer*Format. &ndash;
 
--   **Ressourcen qualifiziereroptionen** Öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von Sprache, UI-Modus, Nachtmodus und Optionen für den runden Bildschirmrand darstellt. &ndash;
+- **Ressourcen qualifiziereroptionen** Öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von Sprache, UI-Modus, Nachtmodus und Optionen für den runden Bildschirmrand darstellt. &ndash;
 
--   **Aktionsleiste Einstellungen** &ndash; Konfiguriert die Aktionsleiste Einstellungen für das Layout.
+- **Aktionsleiste Einstellungen** &ndash; Konfiguriert die Aktionsleiste Einstellungen für das Layout.
 
--   Design- **Editor** Öffnet den Design-Editor, der es Ihnen ermöglicht, Elemente des ausgewählten Designs anzupassen. &ndash;
+- Design- **Editor** Öffnet den Design-Editor, der es Ihnen ermöglicht, Elemente des ausgewählten Designs anzupassen. &ndash;
 
--   **Material Entwurfs Raster** Aktiviert oder deaktiviert das *Material Entwurfs Raster.* &ndash; Das Dropdown Menü Element neben dem Material Design-Raster öffnet ein Dialogfeld, in dem Sie das Raster anpassen können.
+- **Material Entwurfs Raster** Aktiviert oder deaktiviert das *Material Entwurfs Raster.* &ndash; Das Dropdown Menü Element neben dem Material Design-Raster öffnet ein Dialogfeld, in dem Sie das Raster anpassen können.
 
 Diese Features werden in den folgenden Themen ausführlicher erläutert:
 
--   [Ressourcen Qualifizierer und Visualisierungs Optionen](~/android/user-interface/android-designer/resource-qualifiers.md) bietet ausführliche Informationen über die **Geräteauswahl**, die **Android-Versions Auswahl**, die Design **Auswahl**, die **Konfigurations Auswahl**, **Ressourcen Qualifizierer Optionen**und **Aktionsleiste Einstellungen**.
+- [Ressourcen Qualifizierer und Visualisierungs Optionen](~/android/user-interface/android-designer/resource-qualifiers.md) bietet ausführliche Informationen über die **Geräteauswahl**, die **Android-Versions Auswahl**, die Design **Auswahl**, die **Konfigurations Auswahl**, **Ressourcen Qualifizierer Optionen**und **Aktionsleiste Einstellungen**.
 
--   [Alternative Layoutansichten](~/android/user-interface/android-designer/alternative-layout-views.md) erläutert, wie die **Alternative Layoutauswahl**verwendet wird.
+- [Alternative Layoutansichten](~/android/user-interface/android-designer/alternative-layout-views.md) erläutert, wie die **Alternative Layoutauswahl**verwendet wird.
 
--   [Xamarin. Android Designer Material Design Features](~/android/user-interface/android-designer/material-design-features.md) bietet eine umfassende Übersicht über den Design- **Editor** und das **Material Design-Raster**.
+- [Xamarin. Android Designer Material Design Features](~/android/user-interface/android-designer/material-design-features.md) bietet eine umfassende Übersicht über den Design- **Editor** und das **Material Design-Raster**.
 
 ### <a name="context-menu-commands"></a>Kontextmenü Befehle
 
@@ -108,9 +108,9 @@ Ein Kontextmenü ist sowohl in der **Designoberfläche** als auch in der **Dokum
 
 Wenn Sie in diesem Beispiel mit der rechten `TextView` Maustaste auf einen klicken, wird ein Kontextmenü geöffnet, das mehrere Optionen enthält:
 
--   **LinearLayout** Öffnet ein Untermenü, das das `LinearLayout` übergeordnete Element `TextView`von bearbeitet. &ndash;
+- **LinearLayout** Öffnet ein Untermenü, das das `LinearLayout` übergeordnete Element `TextView`von bearbeitet. &ndash;
 
--   **Lösch**-, **Kopier**-und **Ausschneide** &ndash; Vorgänge, die für den rechts `TextView`Klick angewendet werden.
+- **Lösch**-, **Kopier**-und **Ausschneide** &ndash; Vorgänge, die für den rechts `TextView`Klick angewendet werden.
 
 
 ### <a name="zoom-controls"></a>Zoom Steuerelemente
@@ -121,15 +121,15 @@ Der **Designoberfläche** unterstützt das Zoomen über mehrere Steuerelemente, 
 
 Diese Steuerelemente erleichtern es, bestimmte Bereiche der Benutzeroberfläche im Designer anzuzeigen:
 
--   **Container markieren** Hebt die Container auf dem Designoberfläche auf, sodass Sie leichter zu finden sind, während Sie zoomen und verkleinern. &ndash;
+- **Container markieren** Hebt die Container auf dem Designoberfläche auf, sodass Sie leichter zu finden sind, während Sie zoomen und verkleinern. &ndash;
 
--   **Normale Größe** &ndash; Rendert das layoutpixel für Pixel, damit Sie sehen können, wie das Layout die Auflösung des ausgewählten Geräts ansieht.
+- **Normale Größe** &ndash; Rendert das layoutpixel für Pixel, damit Sie sehen können, wie das Layout die Auflösung des ausgewählten Geräts ansieht.
 
--   **An Fenster anpassen** &ndash; Legt die Zoomstufe fest, sodass das gesamte Layout auf dem Designoberfläche sichtbar ist.
+- **An Fenster anpassen** &ndash; Legt die Zoomstufe fest, sodass das gesamte Layout auf dem Designoberfläche sichtbar ist.
 
--   **Vergrößern** &ndash; Zoomt inkrementell mit jedem Klick, vergrößert das Layout.
+- **Vergrößern** &ndash; Zoomt inkrementell mit jedem Klick, vergrößert das Layout.
 
--   Verkleinern &ndash; Zoomen Sie mit jedem Klick inkrementell, damit das Layout auf dem Designoberfläche kleiner wird.
+- Verkleinern &ndash; Zoomen Sie mit jedem Klick inkrementell, damit das Layout auf dem Designoberfläche kleiner wird.
 
 Beachten Sie, dass die ausgewählte Zoomeinstellung die Benutzeroberfläche der Anwendung zur Laufzeit nicht beeinträchtigt.
 
@@ -141,18 +141,18 @@ Im mittleren Bereich zwischen dem **Entwurfs** -und dem **Quell** Bereich gibt e
 
 Diese Schaltflächen gehen wie folgt vor:
 
--   **Entwurf** Diese oberste Schaltfläche, **Entwurf**, wählt den Entwurfs Bereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** aktiviert, und die **Symbolleiste Text-Editor** wird nicht angezeigt. Wenn auf **die Schalt** Fläche "reduzieren" geklickt wird (siehe unten), wird der **Entwurfs** Bereich allein ohne den **Quell** Bereich dargestellt.
+- **Entwurf** Diese oberste Schaltfläche, **Entwurf**, wählt den Entwurfs Bereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** aktiviert, und die **Symbolleiste Text-Editor** wird nicht angezeigt. Wenn auf die Schaltfläche "reduzieren" geklickt wird (siehe unten), wird der **Entwurfs** Bereich allein ohne den **Quell** Bereich dargestellt.
 
--   Bereiche **austauschen** Diese Schaltfläche (die zwei gegensätzlichen Pfeilen ähnelt) tauscht den Entwurfs-und den Quellbereich aus, sodass sich der Quellbereich auf der linken Seite befindet und sich der Entwurfs Bereich auf der rechten Seite befindet. &ndash; Wenn Sie erneut auf die Schaltfläche klicken, werden diese Bereiche zurück an Ihre ursprünglichen Speicherorte
+- Bereiche **austauschen** Diese Schaltfläche (die zwei gegensätzlichen Pfeilen ähnelt) tauscht den Entwurfs-und den Quellbereich aus, sodass sich der Quellbereich auf der linken Seite befindet und sich der Entwurfs Bereich auf der rechten Seite befindet. &ndash; Wenn Sie erneut auf die Schaltfläche klicken, werden diese Bereiche zurück an Ihre ursprünglichen Speicherorte
 
--   **Quelle** Diese Schaltfläche (die zwei entgegengesetzten spitzen Klammern ähnelt) wählt den Quellbereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** deaktiviert und die **Symbolleiste Text-Editor** am oberen Rand von Visual Studio angezeigt. Wenn auf die **Schaltfläche "** reduzieren" geklickt wird (siehe unten), wird durch Klicken auf die Schaltfläche " **Quelle** " anstelle des **Entwurfs** Bereichs der **Quell** Bereich angezeigt.
+- **Quelle** Diese Schaltfläche (die zwei entgegengesetzten spitzen Klammern ähnelt) wählt den Quellbereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** deaktiviert und die **Symbolleiste Text-Editor** am oberen Rand von Visual Studio angezeigt. Wenn auf die Schaltfläche "reduzieren" geklickt wird (siehe unten), wird durch Klicken auf die Schaltfläche " **Quelle** " anstelle des **Entwurfs** Bereichs der **Quell** Bereich angezeigt.
 
--   **Vertikale Teilung** Diese Schaltfläche (die einem vertikalen Balken ähnelt) zeigt den **Entwurfs** -und den Quellbereich nebeneinander an. &ndash; Dies ist die Standardanordnung.
+- **Vertikale Teilung** Diese Schaltfläche (die einem vertikalen Balken ähnelt) zeigt den **Entwurfs** -und den Quellbereich nebeneinander an. &ndash; Dies ist die Standardanordnung.
 
--   **Horizontale Aufteilung** Diese Schaltfläche (die einem horizontalen Balken ähnelt) zeigt den **Entwurfs** Bereich oberhalb des Quell Bereichs an. &ndash; Sie **können auf** Auslagerungs Bereiche klicken, um den **Quell** Bereich über dem **Entwurfs** Bereich zu platzieren.
+- **Horizontale Aufteilung** Diese Schaltfläche (die einem horizontalen Balken ähnelt) zeigt den **Entwurfs** Bereich oberhalb des Quell Bereichs an. &ndash; Sie können auf Auslagerungs Bereiche klicken, um den **Quell** Bereich über dem **Entwurfs** Bereich zu platzieren.
 
--   Bereich zuklappen Diese Schaltfläche (die zwei nach rechts zeigenden spitzen Klammern ähnelt) "reduziert" die Dual-Pane-Anzeige von **Design** und Quelle in eine einzelne Ansicht eines dieser Bereiche. &ndash;
-    Diese Schaltfläche wird zur Erweiterungsbereich **-Schaltfläche** (ähnlich zwei nach links zeigenden spitzen Klammern), auf die geklickt werden kann, um die Ansicht wieder in den Dual-Pane-Anzeigemodus (**Entwurf** und **Quelle**) zurückzukehren.
+- Bereich zuklappen Diese Schaltfläche (die zwei nach rechts zeigenden spitzen Klammern ähnelt) "reduziert" die Dual-Pane-Anzeige von **Design** und Quelle in eine einzelne Ansicht eines dieser Bereiche. &ndash;
+    Diese Schaltfläche wird zur Erweiterungsbereich-Schaltfläche (ähnlich zwei nach links zeigenden spitzen Klammern), auf die geklickt werden kann, um die Ansicht wieder in den Dual-Pane-Anzeigemodus (**Entwurf** und **Quelle**) zurückzukehren.
 
 Beim Klicken auf das **Fenster** "reduzieren" wird nur der **Entwurfs** Bereich angezeigt. Sie können jedoch auf die **Quell** Schaltfläche klicken, um stattdessen nur den **Quell** Bereich anzuzeigen. Klicken Sie erneut auf die Schaltfläche **Entwurf** , um zum **Entwurfs** Bereich zurückzukehren.
 
@@ -306,9 +306,9 @@ Ebenso können Sie ein neues Layout hinzufügen, indem Sie im **Lösungspad** mi
 Dadurch wird eine neue axml-Datei erstellt und auf die Designoberfläche geladen.
 
 > [!TIP]
-> Neuere Versionen von Visual Studio unterstützen das Öffnen von XML-Dateien innerhalb der Android Designer.
+> Neuere Releases von Visual Studio unterstützen das Öffnen von XML-Dateien in Android Designer.
 >
-> Beide axml-und XML-Dateien werden in der Android Designer unterstützt.
+> Sowohl AXML- als auch XML-Dateien werden in Android Designer unterstützt.
 
 ## <a name="designer-features"></a>Designer Features
 
@@ -318,15 +318,15 @@ Der Designer besteht aus mehreren Abschnitten, die die verschiedenen Features un
 
 Wenn Sie ein Layout im Designer bearbeiten, verwenden Sie die folgenden Funktionen, um den Entwurf zu erstellen und zu strukturieren:
 
--   **Designoberfläche** &ndash; Ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten.
+- **Designoberfläche** &ndash; Ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten.
 
--   **Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, **Versions**-, Design **-,** Layoutkonfiguration und Aktionsleiste Einstellungen. Die Symbolleiste enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
+- **Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, **Versions**-, Design-, Layoutkonfiguration und Aktionsleiste Einstellungen. Die Symbolleiste enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
 
--   **Toolbox** &ndash; Enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf den Designoberfläche verschieben können.
+- **Toolbox** &ndash; Enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf den Designoberfläche verschieben können.
 
--   **Eigenschaftenpad** &ndash; Listet die Eigenschaften des ausgewählten Widgets zum Anzeigen und Bearbeiten auf.
+- **Eigenschaftenpad** &ndash; Listet die Eigenschaften des ausgewählten Widgets zum Anzeigen und Bearbeiten auf.
 
--   **Dokument** Gliederung &ndash; Zeigt die Struktur der Widgets an, aus denen das Layout besteht. Sie können auf ein Element in der Struktur klicken, damit es im Designer ausgewählt wird. Wenn Sie auf ein Element in der Struktur klicken, werden auch die Eigenschaften des Elements in das Eigenschafts Pad geladen.
+- **Dokument** Gliederung &ndash; Zeigt die Struktur der Widgets an, aus denen das Layout besteht. Sie können auf ein Element in der Struktur klicken, damit es im Designer ausgewählt wird. Wenn Sie auf ein Element in der Struktur klicken, werden auch die Eigenschaften des Elements in das Eigenschafts Pad geladen.
 
 ## <a name="toolbar"></a>Symbolleiste
 
@@ -336,23 +336,23 @@ Die Symbolleiste (oberhalb der Designoberfläche) zeigt konfigurationsselektoren
 
 Die Symbolleiste ermöglicht den Zugriff auf die folgenden Features:
 
--   **Alternativer layoutselektor** &ndash; Ermöglicht die Auswahl aus unterschiedlichen Layoutversionen.
+- **Alternativer layoutselektor** &ndash; Ermöglicht die Auswahl aus unterschiedlichen Layoutversionen.
 
--   **Geräteauswahl** &ndash; Definiert einen Satz von Qualifizierern, die einem bestimmten Gerät zugeordnet sind, z. b. Bildschirmgröße, Auflösung und Tastatur Verfügbarkeit. Sie können auch neue Geräte hinzufügen und löschen.
+- **Geräteauswahl** &ndash; Definiert einen Satz von Qualifizierern, die einem bestimmten Gerät zugeordnet sind, z. b. Bildschirmgröße, Auflösung und Tastatur Verfügbarkeit. Sie können auch neue Geräte hinzufügen und löschen.
 
--   **Android-Versions Auswahl** &ndash; Die Android-Version, auf die das Layout abzielt. Der Designer wird das Layout entsprechend der ausgewählten Android-Version Rendering.
+- **Android-Versions Auswahl** &ndash; Die Android-Version, auf die das Layout abzielt. Der Designer wird das Layout entsprechend der ausgewählten Android-Version Rendering.
 
--   Design **Auswahl** &ndash; Wählt das Design der Benutzeroberfläche für das Layout aus.
+- Design **Auswahl** &ndash; Wählt das Design der Benutzeroberfläche für das Layout aus.
 
--   **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder Querformat. &ndash;
+- **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder *quer*Format. &ndash;
 
--   **Ressourcen qualifiziereroptionen** Öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von Sprache, UI-Modus, Nachtmodus und Optionen für den runden Bildschirmrand darstellt. &ndash;
+- **Ressourcen qualifiziereroptionen** Öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von Sprache, UI-Modus, Nachtmodus und Optionen für den runden Bildschirmrand darstellt. &ndash;
 
--   **Aktionsleiste Einstellungen** &ndash; Konfiguriert die Aktionsleiste Einstellungen für das Layout.
+- **Aktionsleiste Einstellungen** &ndash; Konfiguriert die Aktionsleiste Einstellungen für das Layout.
 
--   Design- **Editor** Öffnet den Design-Editor, der es Ihnen ermöglicht, Elemente des ausgewählten Designs anzupassen. &ndash;
+- Design- **Editor** Öffnet den Design-Editor, der es Ihnen ermöglicht, Elemente des ausgewählten Designs anzupassen. &ndash;
 
--   **Material Entwurfs Raster** Aktiviert oder deaktiviert das *Material Entwurfs Raster.* &ndash; Das Dropdown Menü Element neben dem Material Design-Raster öffnet ein Dialogfeld, in dem Sie das Raster anpassen können.
+- **Material Entwurfs Raster** Aktiviert oder deaktiviert das *Material Entwurfs Raster.* &ndash; Das Dropdown Menü Element neben dem Material Design-Raster öffnet ein Dialogfeld, in dem Sie das Raster anpassen können.
 
 Diese Features werden in den folgenden Themen ausführlicher erläutert:
 
@@ -378,9 +378,9 @@ Ein Kontextmenü ist sowohl in der Designoberfläche als auch in der Dokument Gl
 
 Wenn Sie in diesem Beispiel mit der rechten `Button` Maustaste auf einen klicken, wird ein Kontextmenü geöffnet, das mehrere Optionen enthält:
 
--   **LinearLayout** Öffnet ein Untermenü, das das `LinearLayout` übergeordnete Element `Button`von bearbeitet. &ndash;
+- **LinearLayout** Öffnet ein Untermenü, das das `LinearLayout` übergeordnete Element `Button`von bearbeitet. &ndash;
 
--   **Ausschneide**-, **Kopier**-und **Lösch** &ndash; Vorgänge, die für den rechts `Button`Klick angewendet werden.
+- **Ausschneide**-, **Kopier**-und **Lösch** &ndash; Vorgänge, die für den rechts `Button`Klick angewendet werden.
 
 ### <a name="zoom-controls"></a>Zoom Steuerelemente
 
@@ -390,15 +390,15 @@ Der Designoberfläche unterstützt das Zoomen über mehrere Steuerelemente, wie 
 
 Diese Steuerelemente erleichtern es, bestimmte Bereiche der Benutzeroberfläche im Designer anzuzeigen:
 
--   **Container markieren** &ndash; Hebt die Container auf dem Designoberfläche auf, sodass Sie leichter zu finden sind, während Sie zoomen und verkleinern.
+- **Container markieren** &ndash; Hebt die Container auf dem Designoberfläche auf, sodass Sie leichter zu finden sind, während Sie zoomen und verkleinern.
 
--   **Normale Größe** &ndash; Rendert das layoutpixel für Pixel, damit Sie sehen können, wie das Layout die Auflösung des ausgewählten Geräts ansieht.
+- **Normale Größe** &ndash; Rendert das layoutpixel für Pixel, damit Sie sehen können, wie das Layout die Auflösung des ausgewählten Geräts ansieht.
 
--   **An Fenster anpassen** &ndash; Legt die Zoomstufe fest, sodass das gesamte Layout auf dem Designoberfläche sichtbar ist.
+- **An Fenster anpassen** &ndash; Legt die Zoomstufe fest, sodass das gesamte Layout auf dem Designoberfläche sichtbar ist.
 
--   **Vergrößern** &ndash; Zoomt inkrementell mit jedem Klick, vergrößert das Layout.
+- **Vergrößern** &ndash; Zoomt inkrementell mit jedem Klick, vergrößert das Layout.
 
--   Verkleinern &ndash; Zoomen Sie mit jedem Klick inkrementell, damit das Layout auf dem Designoberfläche kleiner wird.
+- Verkleinern &ndash; Zoomen Sie mit jedem Klick inkrementell, damit das Layout auf dem Designoberfläche kleiner wird.
 
 Beachten Sie, dass die ausgewählte Zoomeinstellung die Benutzeroberfläche der Anwendung zur Laufzeit nicht beeinträchtigt.
 
@@ -412,15 +412,15 @@ Der Designer unterstützt die Bearbeitung von widgeeigenschaftenüber das eigens
 
 Das eigenschaftenpad ist in verschiedene Abschnitte aufgeteilt, in denen &ndash; ähnliche Eigenschaften gruppiert werden. Dadurch können Sie die gewünschten Eigenschaften leichter finden:
 
--   **Widget** Haupteigenschaften des Widgets, `id`z. b. `visibility`, `text`, usw. &ndash; Die Eigenschaften zum Verwalten des widgeinhalts werden in der Regel hier abgelegt.
+- **Widget** Haupteigenschaften des Widgets, `id`z. b. `visibility`, `text`, usw. &ndash; Die Eigenschaften zum Verwalten des widgeinhalts werden in der Regel hier abgelegt.
 
--   **Stil** Eigenschaften, die die visuelle Darstellung des Widgets ändern, `font`z. b `text color`. `background`,, usw. &ndash;
+- **Stil** Eigenschaften, die die visuelle Darstellung des Widgets ändern, `font`z. b `text color`. `background`,, usw. &ndash;
 
--   **Layout** &ndash; Eigenschaften, die den Speicherort und die Größe des Widgets festlegen.
+- **Layout** &ndash; Eigenschaften, die den Speicherort und die Größe des Widgets festlegen.
 
--   **Scrollen** &ndash; Scrolleigenschaften.
+- **Scrollen** &ndash; Scrolleigenschaften.
 
--   **Verhalten** &ndash; Flags, die festlegen, wie das Widget verhält.
+- **Verhalten** &ndash; Flags, die festlegen, wie das Widget verhält.
 
 ### <a name="default-values"></a>Standardwerte
 

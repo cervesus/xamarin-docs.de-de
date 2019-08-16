@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: fd813427836b0250b84941eca54d6bbe6219518e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ea3bfccd9133f6bb4cdf2e2a72bd20a307fb80d1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645333"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522495"
 ---
 # <a name="extending-the-recyclerview-example"></a>Erweitern des recyclerview-Beispiels
 
@@ -26,11 +26,11 @@ Wenn ein Benutzer ein Element im `RecyclerView`berührt, wird ein Element mit ei
 
 Die folgenden Schritte erläutern, wie Sie Elemente mit Element Klick behandeln, um zu veranschaulichen, wie die grundlegende Foto Anzeige-APP geändert wird, um zu melden, welche Fotos vom Benutzer berührt wurden. Wenn ein Element Click-Ereignis in der Beispiel-App auftritt, erfolgt die folgende Sequenz:
 
-1.  Das Element des `CardView` Fotos erkennt das Element-Click-Ereignis und benachrichtigt den Adapter.
+1. Das Element des `CardView` Fotos erkennt das Element-Click-Ereignis und benachrichtigt den Adapter.
 
-2.  Der Adapter leitet das Ereignis (mit Element Positionsinformationen) an den Element-Click-Handler der Aktivität weiter.
+2. Der Adapter leitet das Ereignis (mit Element Positionsinformationen) an den Element-Click-Handler der Aktivität weiter.
 
-3.  Der Element-Click-Handler der Aktivität antwortet auf das Element Click-Ereignis.
+3. Der Element-Click-Handler der Aktivität antwortet auf das Element Click-Ereignis.
 
 Zuerst wird ein ereignishandlermember aufgerufen `ItemClick` , der der `PhotoAlbumAdapter` Klassendefinition hinzugefügt wird:
 

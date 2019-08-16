@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 0746174857f66843ef9a09429b6286f2efca90d6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: af90baf6d7b94973a76bcf391f2cb28c45340602
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420536"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528146"
 ---
 # <a name="mdocarchivetomsxdocconverterexe-not-found-rverbasecommandonrequest"></a>„MDocArchiveToMsxDocConverter.exe“ nicht gefunden. rver.BaseCommand.OnRequest
 
 > [!IMPORTANT]
-> In früheren Versionen von Xamarin hat dieses Problem behoben wurde. Jedoch, wenn das Problem auf die neueste Version der Software auftritt, melden Sie bitte eine [neuer Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) erstellen Sie mit der Ihre vollständige versionsverwaltung Informationen "und" vollständig "Protokollausgabe.
+> Dieses Problem wurde in den letzten Versionen von xamarin gelöst. Wenn das Problem jedoch in der aktuellen Version der Software auftritt, melden Sie einen [neuen Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) mit den vollständigen Versionsinformationen und der vollständigen buildprotokolleausgabe.
 
 
 ## <a name="error-message"></a>Fehlermeldung
 
-Dieser Fehler kann auftreten, der *Mac-Serverprotokoll* in Visual Studio:
+Dieser Fehler wird möglicherweise im *Mac-Server Protokoll* in Visual Studio angezeigt:
 
 ```
 Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found
@@ -30,12 +30,12 @@ Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter
   at Mtb.Server.Listener.OnRequest (System.Object state) [0x00000] in <filename unknown>:0
 ```
 
-Es gibt 2 separate Probleme in dieser Meldung:
+In dieser Meldung gibt es zwei separate Probleme:
 
-1.  `Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found`
+1. `Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found`
 
-    Dieser Fehler ist harmlos, aber es ist ebenfalls irreführend. Es [entfernt](https://bugzilla.xamarin.com/show_bug.cgi?id=21667) in einer zukünftigen Version.
+    Dieser Fehler ist harmlos, aber auch irreführend. Sie [wird](https://bugzilla.xamarin.com/show_bug.cgi?id=21667) in einer zukünftigen Version entfernt.
 
-2.  `rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context …`
+2. `rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context …`
 
-    Dieser Fehler ist das eigentliche Problem. Leider aufgrund von einem [Einschränkung](https://bugzilla.xamarin.com/show_bug.cgi?id=22080) dieser stapelüberwachung der Ausnahme ist *unvollständige*. Wenn Sie eine unvollständige stapelüberwachung wie folgt in die Mac-Serverprotokoll feststellen, können Sie überprüfen die `~/Library/Logs/Xamarin/MonoTouchVS/mtbserver.log` Datei auf dem Mac-buildhost dem kompletten stapelverlauf gefunden.
+    Dieser Fehler ist das wirkliche Problem. Leider ist diese Ausnahme Stapel Überwachung aufgrund einer [Einschränkung](https://bugzilla.xamarin.com/show_bug.cgi?id=22080) *unvollständig*. Wenn eine unvollständige Stapel Überwachung wie diese im Mac-Server Protokoll festgestellt wird, können Sie die `~/Library/Logs/Xamarin/MonoTouchVS/mtbserver.log` Datei auf dem Mac-buildhost überprüfen, um die vollständige Stapel Überwachung zu suchen.

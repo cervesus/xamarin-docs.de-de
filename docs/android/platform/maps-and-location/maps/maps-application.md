@@ -1,31 +1,31 @@
 ---
-title: Starten die Maps-Anwendung
-description: Wie Sie die integrierten Maps-Anwendung in Ihrer Xamarin.Android-app zu starten.
+title: Starten der Maps-Anwendung
+description: Starten der integrierten Maps-Anwendung in ihrer xamarin. Android-App.
 ms.prod: xamarin
 ms.assetid: 929EACB8-8950-50E1-093C-43FB5F1F1CD5
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: fa32783617fce99514560677184f17be904cd42d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b436ea4f5d8c70f0ca641bea72d1230fc07c5086
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61186380"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523785"
 ---
-# <a name="launching-the-maps-application"></a>Starten die Maps-Anwendung
+# <a name="launching-the-maps-application"></a>Starten der Maps-Anwendung
 
-Die einfachste Möglichkeit, das mit Karten in Xamarin.Android funktioniert ist die integrierte Karten-Anwendung, die unten gezeigten nutzen:
+Die einfachste Methode zum Arbeiten mit Maps in xamarin. Android besteht darin, die im folgenden gezeigte integrierte Maps-Anwendung zu nutzen:
 
-[![Beispielhafter Screenshot der integrierten app von Google Maps](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
+[![Screenshot der integrierten Google Maps-APP](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
-Wenn Sie die Maps-Anwendung verwenden, wird die Zuordnung Teil Ihrer Anwendung nicht. Stattdessen wird Ihre Anwendung starten Sie die Maps-Anwendung, und laden die Zuordnung extern. Im nächste Abschnitt wird untersucht, wie Xamarin.Android verwendet wird, um Zuordnungen wie oben zu starten.
+Wenn Sie die Maps-Anwendung verwenden, ist die Zuordnung nicht Teil Ihrer Anwendung. Stattdessen startet die Anwendung die Maps-Anwendung und lädt die Karte extern. Im nächsten Abschnitt wird erläutert, wie mit xamarin. Android Zuordnungen wie oben beschrieben gestartet werden.
 
 
-## <a name="creating-the-intent"></a>Erstellen die Absicht
+## <a name="creating-the-intent"></a>Erstellen der Absicht
 
-Arbeiten mit den Karten ist die Anwendung so einfach wie das Erstellen eines Intents mit einem entsprechenden URI, die Aktion auf ActionView festlegen und die StartActivity-Methode aufrufen. Der folgende Code startet z. B. die Maps-Anwendung, zentriert bei einer angegebenen Längen- und Breitengrad:
+Das Arbeiten mit der Maps-Anwendung ist so einfach wie das Erstellen einer Absicht mit einem geeigneten URI, das Festlegen der Aktion auf Action View und das Aufrufen der startactivity-Methode. Mit dem folgenden Code wird z. b. die Maps-Anwendung mit einem bestimmten breiten-und Längengrad gestartet:
 
 ```csharp
 var geoUri = Android.Net.Uri.Parse ("geo:42.374260,-71.120824");
@@ -33,38 +33,38 @@ var mapIntent = new Intent (Intent.ActionView, geoUri);
 StartActivity (mapIntent);
 ```
 
-Dieser Code ist alles, die was benötigt wird, um die Zuordnung, die im vorherigen Screenshot gezeigt zu starten. Zusätzlich zur Angabe von Längen- und Breitengrad, unterstützt das URI-Schema für Maps zahlreiche andere Optionen.
+Dieser Code ist alles, was zum Starten der im vorherigen Screenshot gezeigten Karte erforderlich ist. Zusätzlich zur Angabe von breiten-und Längengrad unterstützt das URI-Schema für Maps verschiedene andere Optionen.
 
 
-## <a name="geo-uri-scheme"></a>Geo-URI-Schema
+## <a name="geo-uri-scheme"></a>Geografisches URI-Schema
 
-Der obige Code verwendet die Geo-Schema, um einen URI zu erstellen. Dieser URI-Schema unterstützt verschiedene Formate, wie im folgenden aufgeführt:
+Der obige Code hat das geografieschema verwendet, um einen URI zu erstellen. Dieses URI-Schema unterstützt verschiedene Formate, wie unten aufgeführt:
 
--   `geo:latitude,longitude` &ndash; Öffnet die Maps-Anwendung, die am Lon Lat/zentriert. 
+- `geo:latitude,longitude`&ndash; Öffnet die Maps-Anwendung, die sich in einem lat/lon zentriert. 
 
--   `geo:latitude,longitude?z=zoom` &ndash; Öffnet die Zuordnungen Anwendung Lon Lat/zentriert und vergrößert, auf die angegebene Stufe. Die Zoomstufe reichen von 1 bis 23: 1 zeigt die gesamte Erde und 23, wird die nächste Zoomstufe.
+- `geo:latitude,longitude?z=zoom`&ndash; Öffnet die Maps-Anwendung, die sich in einem lat/lon zentriert und auf die angegebene Ebene vergrößert. Der Zoomfaktor kann zwischen 1 und 23 liegen: 1 zeigt die gesamte Erde an, und 23 ist die nächstgelegene Zoomstufe.
 
--   `geo:0,0?q=my+street+address` &ndash; Öffnet die Maps-Anwendung auf den Speicherort der eine Straße und Hausnummer. 
+- `geo:0,0?q=my+street+address`&ndash; Öffnet die Zuordnungs Anwendung zum Speicherort einer Straße. 
 
--   `geo:0,0?q=business+near+city` &ndash; Öffnet die Maps-Anwendung, und zeigt die mit Anmerkungen versehene Suchergebnisse. 
-
-
-Die Versionen des URIS, die eine Abfrage (d. h. die Straßen suchen oder die Adresse-Bedingungen) in Anspruch nehmen Verwenden Googles Geocoder Dienst, um den Speicherort abzurufen, der Sie dann auf der Karte angezeigt wird. Z. B. der URI `geo:0,0?q=coop+Cambridge` in der unten gezeigten Zuordnung führt:
-
-[![Beispielscreenshot Google Maps mit dem Suchbegriff anzeigen](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
+- `geo:0,0?q=business+near+city`&ndash; Öffnet die Maps-Anwendung und zeigt die mit Anmerkungen versehene Suchergebnisse an. 
 
 
+Die Versionen des URIs, die eine Abfrage ausführen (d. h. die Adresse der Straße oder die Suchbegriffe), verwenden den Geocoder-Dienst von Google, um den Speicherort abzurufen, der dann auf der Karte angezeigt wird. Der URI `geo:0,0?q=coop+Cambridge` führt z. b. zu der unten gezeigten Karte:
 
-Weitere Informationen über Geo-URI-Schemas finden Sie unter [Anzeigen von einem Speicherort auf einer Karte](https://developer.android.com/guide/components/intents-common.html#Maps).
+[![Beispiel Bildschirm, das Google Maps mit einem Suchbegriff anzeigt](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 
-## <a name="street-view"></a>Straße anzeigen
 
-Zusätzlich zu der Geo-Schema unterstützt Android auch Straße und Ansichten aus ein Intent-Objekt geladen. Ein Beispiel für die Straße und Ansicht-Anwendung, die von Xamarin.Android gestartet ist unten dargestellt:
+Weitere Informationen zu den URI-Schemas finden Sie unter [Show a Location on a map](https://developer.android.com/guide/components/intents-common.html#Maps).
 
-[![Beispielscreenshot, der eine Straße anzeigen](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
-Um eine Straße Ansicht zu starten, verwenden Sie einfach die `google.streetview` URI-Schema, wie im folgenden Code gezeigt:
+## <a name="street-view"></a>Straße
+
+Zusätzlich zum geografieschema unterstützt Android auch das Laden von Straßenansichten von einer Absicht. Im folgenden finden Sie ein Beispiel für die aus xamarin. Android gestartete Anwendung "Street View":
+
+[![Screenshot eines Beispiels für eine Straßenansicht](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
+
+Um eine Straßenansicht zu starten, verwenden Sie `google.streetview` einfach das URI-Schema, wie im folgenden Code gezeigt:
 
 ```csharp
 var streetViewUri = Android.Net.Uri.Parse (
@@ -73,25 +73,25 @@ var streetViewIntent = new Intent (Intent.ActionView, streetViewUri);
 StartActivity (streetViewIntent);
 ```
 
-Die oben verwendete google.streetview-URI-Schema weist folgende Form:
+Das oben verwendete Google. Streetview-URI-Schema hat die folgende Form:
 
 ```csharp
 google.streetview:cbll=lat,lng&cbp=1,yaw,,pitch,zoom&mz=mapZoom
 ```
 
-Wie Sie sehen können, stehen mehrere Parameter unterstützt, wie im folgenden aufgeführt:
+Wie Sie sehen können, werden mehrere Parameter unterstützt, wie unten aufgeführt:
 
--   `lat` &ndash; Der Breitengrad des Standorts in der Straße Ansicht angezeigt werden.
+- `lat`&ndash; Der Breitengrad des Orts, der in der Straße angezeigt werden soll.
 
--   `lng` &ndash; Der Längengrad des Standorts in der Straße Ansicht angezeigt werden.
+- `lng`&ndash; Der Längengrad des Orts, der in der Straße angezeigt werden soll.
 
--   `pitch` &ndash; Winkel der Straße anzeigen Panorama, gemessen in Grad, um 90 Grad wird direkt nach unten, und-90 Grad aus dem Center ist gerade nach oben.
+- `pitch`&ndash; Der Winkel des Straßen Ansichts Panoramas, gemessen von der Mitte in Grad, bei der 90 Grad direkt nach unten und-90 Grad gerade ist.
 
--   `yaw` &ndash; Center-der-Ansicht der Straße anzeigen Panorama, gemessen im Uhrzeigersinn in Grad von Norden.
+- `yaw`&ndash; Zentrieren der Ansicht des Straßen Ansichts Panoramas, gemessen im Uhrzeigersinn in Grad von Nord.
 
--   `zoom` &ndash; Zoom Multiplikator für die Straße anzeigen Panorama, wobei 1,0 = normal Zoom 2.0 vergrößerten 2 = x "," 3.0 = vergrößerten 4 x usw.
+- `zoom`&ndash; Zoom Multiplikator für das Straßen Ansichts Panorama, wobei 1,0 = normaler Zoom Wert, 2,0 = zoomt 2x, 3,0 = Zoommodus 4X usw.
 
--   `mz` &ndash; Die Zoomstufe, die verwendet wird, wenn an die Maps-Anwendung aus der Straße an.
+- `mz`&ndash; Der Zuordnungs Zoomfaktor, der verwendet wird, wenn die Maps-Anwendung aus der Ansicht "Straße" geht.
 
 
-Arbeiten mit der integrierten ordnet die Anwendung oder die Straße Ansicht ist eine einfache Möglichkeit, schnell Unterstützung hinzuzufügen. Android-API von Maps bietet jedoch eine präzisere Kontrolle über die Benutzeroberfläche für die Zuordnung.
+Das Arbeiten mit der integrierten Maps-Anwendung oder der Straßenansicht ist eine einfache Möglichkeit, um Unterstützung für die Zuordnung schnell hinzuzufügen. Allerdings bietet die Android Maps-API eine präzisere Steuerung der Zuordnungs Funktionen.

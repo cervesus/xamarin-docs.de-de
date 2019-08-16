@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/14/2016
-ms.openlocfilehash: 7bc728360c26321c16839c5d67b93a91d2593602
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 26c418355c83da807d6dfa514e58f9bf1675759f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655514"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528423"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchos – Exemplarische Vorgehensweise
 
@@ -43,10 +43,10 @@ Sie sollten ihre Watch-APP jetzt ausführen können, aber da die storyboarddatei
 Doppelklicken Sie in ihrer Watch-App auf das Interface. Storyboard, um den xamarin IOS-Designer zu starten (wenn Sie sich auf einem Mac befinden, können Sie auch mit der rechten Maustaste klicken und **mit > Xcode-Interface Builder öffnen**).
 
 
-1.  Stellen Sie sicher, dass die Bereiche **Toolbox** und **Eigenschaften** sichtbar sind.
-1.  Klicken Sie, um den Schnittstellen Controller auszuwählen.
-1.  Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf **interfakecontroller** und **Hi Watch**fest.
-1.  Überprüfen, ob die **Klasse** auf **interfacecontroller** festgelegt ist
+1. Stellen Sie sicher, dass die Bereiche **Toolbox** und **Eigenschaften** sichtbar sind.
+1. Klicken Sie, um den Schnittstellen Controller auszuwählen.
+1. Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf **interfakecontroller** und **Hi Watch**fest.
+1. Überprüfen, ob die **Klasse** auf **interfacecontroller** festgelegt ist
 
     ![](hello-watch-images/interfacecontrollerattributes.png "Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf interfakecontroller und Hi Watch fest.")
 
@@ -54,10 +54,10 @@ Doppelklicken Sie in ihrer Watch-App auf das Interface. Storyboard, um den xamar
 
 Doppelklicken Sie in ihrer Watch-App auf das Interface. Storyboard, um es mit dem xamarin IOS-Designer in Visual Studio zu bearbeiten:
 
-1.  Öffnen Sie den Eigenschaften Bereich.
-1.  Ändern Sie die Klasse in **interfacecontroller**;
-1.  Klicken Sie auf den Schnittstellen Controller. immer
-1.  Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf **interfakecontroller** und **Hi Watch**fest.
+1. Öffnen Sie den Eigenschaften Bereich.
+1. Ändern Sie die Klasse in **interfacecontroller**;
+1. Klicken Sie auf den Schnittstellen Controller. immer
+1. Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf **interfakecontroller** und **Hi Watch**fest.
 
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf interfakecontroller und Hi Watch fest.")
 

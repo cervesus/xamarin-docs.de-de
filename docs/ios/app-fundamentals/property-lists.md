@@ -1,50 +1,50 @@
 ---
-title: Arbeiten mit Eigenschaftenlisten in Xamarin.iOS
-description: In diesem Dokument werden die Visual Studio für Mac grafischen und der erweiterten Eigenschaft Eigenschaftenliste (plist)-Editor für die Arbeit mit "Info.plist" und "Entitlements.plist". Es veranschaulicht Einstellung Symbole und startbilder für iOS-Anwendungen in Visual Studio für Mac.
+title: Arbeiten mit Eigenschaften Listen in xamarin. IOS
+description: In diesem Dokument wird der grafische und erweiterte Eigenschaften Listen-Editor (plist) Visual Studio für Mac für die Verwendung von "Info. plist" und "Berechtigungen. plist" eingeführt. Es veranschaulicht die Festlegung von Symbolen und Start Bildern für IOS-Anwendungen in Visual Studio für Mac.
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 87015163eca9fdb2fb8cee35e74d5031314fd42e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ca3622e01d6c7b616dc115b89ffcccf64022b1a1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61245803"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527143"
 ---
-# <a name="working-with-property-lists-in-xamarinios"></a>Arbeiten mit Eigenschaftenlisten in Xamarin.iOS
+# <a name="working-with-property-lists-in-xamarinios"></a>Arbeiten mit Eigenschaften Listen in xamarin. IOS
 
-_In diesem Dokument werden die Visual Studio für Mac grafischen und der erweiterten Eigenschaft Eigenschaftenliste (plist)-Editor für die Arbeit mit "Info.plist" und "Entitlements.plist". Es veranschaulicht Einstellung Symbole und startbilder für iOS-Anwendungen in Visual Studio für Mac._
+_In diesem Dokument wird der grafische und erweiterte Eigenschaften Listen-Editor (plist) Visual Studio für Mac für die Verwendung von "Info. plist" und "Berechtigungen. plist" eingeführt. Es veranschaulicht die Festlegung von Symbolen und Start Bildern für IOS-Anwendungen in Visual Studio für Mac._
 
-Visual Studio für Mac verfügt über eine grafische plist-Editor, der erleichtert die Bearbeitung von app-Eigenschaften und Funktionen, die einfacher. Visual Studio für Mac verfügt über zwei .plists - `Info.plist` zum Bearbeiten von app-Eigenschaften und Symbole, und `Entitlements.plist` für die Verwaltung von app-Funktionen. Dieses Handbuch führt der Info.plists und bietet einen Überblick über die Arbeit mit ihnen in Visual Studio für Mac. Weitere Informationen zu "Entitlements.plist", finden Sie unter den [arbeiten mit Berechtigungen](~/ios/deploy-test/provisioning/entitlements.md) Guide.
+Visual Studio für Mac bietet einen grafischen plist-Editor, der das Bearbeiten von App-Eigenschaften und-Funktionen vereinfacht. Visual Studio für Mac verfügt über zwei. plists `Info.plist` -zum Bearbeiten von App-Eigenschaften und `Entitlements.plist` Symbolen sowie zum Verwalten von App-Funktionen. In diesem Leitfaden wird die Info. plists vorgestellt, und Sie erhalten eine Übersicht über die Arbeit mit Ihnen in Visual Studio für Mac. Weitere Informationen zu "Berechtigungen. plist" finden Sie im Handbuch [Arbeiten mit Berechtigungen](~/ios/deploy-test/provisioning/entitlements.md) .
 
 ## <a name="infoplist"></a>Info.plist
 
-Die Eigenschaftenliste Informationen ( `Info.plist`) ist eine erforderliche iOS-Datei, die Informationen der Konfiguration Ihrer Anwendung auf das System bereitstellt. Visual Studio für Mac die benutzerdefinierte `Info.plist` -Editor-Funktionen, die drei Bereiche, gesteuert durch die Registerkarten am unteren Rand im Editor-Fenster links:
+Die Informations Eigenschaften Liste ( `Info.plist`) ist eine erforderliche IOS-Datei, die Informationen über die Konfiguration Ihrer Anwendung für das System bereitstellt. Der benutzerdefinierte `Info.plist` Editor von Visual Studio für Mac enthält drei Panels, die von Registerkarten unten links im Editor Fenster gesteuert werden:
 
- [![](property-lists-images/tabs.png "Die Datei \"Info.plist\"-Editor-Registerkarten unten links im Editor-Fenster")](property-lists-images/tabs.png#lightbox)
+ [![](property-lists-images/tabs.png "Die Registerkarten Info. plist-Editor unten links im Editor Fenster")](property-lists-images/tabs.png#lightbox)
 
-Jeder Bereich steuert verschiedene Eigenschaften, wie im folgenden erläutert:
+Jeder Bereich steuert verschiedene Eigenschaften, wie unten beschrieben:
 
--  **Panel aplikace** -eine grafische Oberfläche zum Festlegen der allgemeinen Eigenschaften der Anwendung als auch Symbole, und starten Sie Bilder; kartenintegration und hintergrundverarbeitung Modi angeben.
--  **Erweiterte Bereich** -im erweiterten Bereich ist der Ort zum Angeben von unterstützten Dokumenttypen UTIs, und die URL-Typen.
--  **Source-Bereich** -Bereich "Quelle" steuert, weniger häufig Eigenschaften als auch für benutzerdefinierte Eigenschaften für die Anwendung.
+- **Anwendungs Panel** : eine grafische Benutzeroberfläche, um allgemeine Anwendungseigenschaften sowie Symbole und Start Bilder festzulegen. Hiermit werden Karten Integration und backerdmodi angegeben.
+- **Advanced Panel** (erweiterter Bereich): im erweiterten Bereich können Unterstützte Dokumenttypen, utis und URL-Typen angegeben werden.
+- **Quell Panel** : der Quellbereich steuert weniger allgemeine Eigenschaften sowie benutzerdefinierte Eigenschaften für die Anwendung.
 
 
-In den nächsten drei Abschnitten ermitteln Sie die Funktionen der jeder Bereich im Detail.
+In den nächsten drei Abschnitten werden die Features der einzelnen Panels ausführlicher untersucht.
 
-## <a name="application-panel"></a>Panel aplikace
+## <a name="application-panel"></a>Anwendungs Panel
 
-Visual Studio für Mac bietet eine grafische Benutzeroberfläche zum Bearbeiten von allgemeinen `Info.plist` Einträge für eine Anwendung:
+Visual Studio für Mac verfügt über eine grafische Benutzeroberfläche zum `Info.plist` bearbeiten allgemeiner Einträge für eine Anwendung:
 
-1.  Anwendungseigenschaften
-1.  Unterstützter Gerätetypen
-1.  Bündelbezeichners für jeden Gerätetyp
-1.  Stil und Farbe der Statusleiste
-1.  Symbole und Start-Bildschirme
-1.  Karten und Hintergrundmodi
+1. Anwendungseigenschaften
+1. Unterstützte Gerätetypen
+1. Unterstützung von Ausrichtungen für die einzelnen Gerätetypen
+1. Stil und Farbe der Status Leiste
+1. Symbole und Startbildschirme
+1. Karten und hintergrundmodi
 
 
 Diese werden in den nächsten Abschnitten ausführlicher beschrieben.
@@ -52,113 +52,113 @@ Diese werden in den nächsten Abschnitten ausführlicher beschrieben.
  <a name="iOS_Application_Target" />
 
 
-### <a name="ios-application-target"></a>iOS Application Target
+### <a name="ios-application-target"></a>IOS-Anwendungs Ziel
 
-Dieser Abschnitt enthält wichtige Informationen, die Ihre Anwendung beschreibt.
-Die **Bezeichner** gespeicherten übereinstimmen hier die Bündel-ID, die in iTunes Connect (für die App-Store-apps) und auch in der iOS Provisioning Portal App-IDs aus Entwicklungs-als auch verteilungszertifikate eingegeben werden.
+Dieser Abschnitt enthält wichtige Informationen, die Ihre Anwendung beschreiben.
+Der hier gespeicherte Bezeichner muss mit dem Bündel Bezeichner identisch sein, der in iTunes Connect (für App Store-Apps) und auch in der APP-ID-Liste des IOS-Bereitstellungs Portals und in den Entwicklungs-und Verteilungs Zertifikaten eingegeben wird
 
- [![](property-lists-images/image24.png "iOS Application Target")](property-lists-images/image24.png#lightbox)
+ [![](property-lists-images/image24.png "IOS-Anwendungs Ziel")](property-lists-images/image24.png#lightbox)
 
-### <a name="device-deployment"></a>Gerätebereitstellung
+### <a name="device-deployment"></a>Geräte Bereitstellung
 
- [![](property-lists-images/deployment.png "Gerätebereitstellung")](property-lists-images/deployment.png#lightbox)
+ [![](property-lists-images/deployment.png "Geräte Bereitstellung")](property-lists-images/deployment.png#lightbox)
 
-Das Gerät **Bereitstellung** Abschnitten werden selektiv angezeigt, abhängig von der Auswahl in der **Geräte** Dropdownliste in der **Application Target** weiter oben. Die **Hauptschnittstelle** Dropdownliste nastaven NA hodnotu **MainStoryboard** im Storyboard-Anwendungen. Wenn die Benutzeroberfläche vollständig in Code geschrieben ist, und klicken Sie dann diese leer gelassen werden kann.
+Die Abschnitts Informationen zur Geräte **Bereitstellung** werden selektiv angezeigt, abhängig von der Auswahl in der Dropdown Liste " **Geräte** " im obigen Abschnitt " **Anwendungs Ziel** ". Die Dropdown-Seite der **Hauptschnittstelle** wird in Storyboard-gesteuerten Anwendungen auf **mainstoryboard** festgelegt. Wenn die Benutzeroberfläche vollständig im Code geschrieben ist, kann dies leer bleiben.
 
-### <a name="supported-device-orientations"></a>Unterstützte Geräteausrichtungen
+### <a name="supported-device-orientations"></a>Unterstützte Geräte Ausrichtungen
 
- **Unterstützte Geräteausrichtungen** steuert, wie die app auf geräterotation reagiert. Es kommt sehr häufig für iPhone/iPad-apps unterstützen nur **Hochformat**, oder alles, was aber **finden Sie verkehrt herum**. Alle iPad-Anwendungen mit Ausnahme der Spiele unterstützen in der Regel sollten alle Ausrichtungen.
+ **Unterstützte Geräte Ausrichtungen** steuern, wie die APP auf die Geräte Rotation antwortet. Es ist sehr üblich, dass iPhone/iPad-Apps nurdas Hochformat oder alles, aber einen **aufwärts**unterstützen. Im Allgemeinen sollten alle iPad-Anwendungen außer Games alle Ausrichtungen unterstützen.
 
-### <a name="status-bar-styles"></a>Statusleiste-Stile
+### <a name="status-bar-styles"></a>StatusBar-Stile
 
-Die **Status Leiste Stile** Abschnitt ist eine grafische Benutzeroberfläche zum Bearbeiten einer Anwendung `UIStatusBarStyle`:
+Der Abschnitt "Status leisten- **Stile** " ist eine grafische Benutzeroberfläche zum `UIStatusBarStyle`Bearbeiten der Anwendungen:
 
- [![](property-lists-images/status.png "Statusleiste-Stile")](property-lists-images/status.png#lightbox)
+ [![](property-lists-images/status.png "StatusBar-Stile")](property-lists-images/status.png#lightbox)
 
  <a name="Icons" />
 
 
-### <a name="icons-launch-images-and-itunes-artwork"></a>Symbole, Startbilder und iTunes-Grafik
+### <a name="icons-launch-images-and-itunes-artwork"></a>Symbole, Start Bilder und iTunes-Grafiken
 
-Informationen zur Verwendung der Symbole, Bilder und Vorlagen in der Datei "Info.plist" befinden sich die [arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) Guide.
-
-
+Informationen zum Verwenden von Symbolen, Bildern und Grafiken in der Datei "Info. plist" finden Sie im Handbuch [Working with Images (Arbeiten mit Images](~/ios/app-fundamentals/images-icons/index.md) ).
 
 
-### <a name="maps-integration-and-background-modes"></a>Kartenintegration und Hintergrundmodi
 
-Die `Info.plist` enthält spezielle Abschnitte kartenintegration und hintergrundverarbeitung Modi angeben. Wählen die Optionen, die Sie unterstützen möchten werden die erforderlichen Eigenschaften Ihrer Anwendung hinzugefügt werden.
 
- [![](property-lists-images/maps.png "Kartenintegration")](property-lists-images/maps.png#lightbox)
+### <a name="maps-integration-and-background-modes"></a>Zuordnungen von Integrations-und hintergrundmodi
 
-Weitere Informationen zum Arbeiten mit Karten finden Sie in der Xamarin [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md) Guide.
+Die `Info.plist` enthält spezielle Abschnitte zum Angeben von Zuordnungs-und backerden-Modi. Wenn Sie die Optionen auswählen, die Sie unterstützen möchten, fügen Sie der Anwendung die erforderlichen Eigenschaften für Sie hinzu.
+
+ [![](property-lists-images/maps.png "Maps-Integration")](property-lists-images/maps.png#lightbox)
+
+Weitere Informationen zum Arbeiten mit Maps finden Sie im Leitfaden zu xamarin [IOS Maps](~/ios/user-interface/controls/ios-maps/index.md) .
 
  [![](property-lists-images/bging.png "Hintergrundmodi")](property-lists-images/bging.png#lightbox)
 
-Weitere Informationen zu Background Modes, finden Sie in der Xamarin [Hintergrundverarbeitung in iOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) Guide.
+Weitere Informationen zu den hintergrundmodi finden Sie im Leitfaden xamarin [Backgroundin IOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) .
 
-## <a name="advanced-panel"></a>Erweiterte Bereich
+## <a name="advanced-panel"></a>Erweiterter Bereich
 
-Der erweiterte Bereich steuert die Dokumenttypen und URL-Schemas, die die Anwendung unterstützt.
+Der Bereich erweitert steuert die Dokumenttypen und URL-Schemas, die von der Anwendung unterstützt werden.
 
- [![](property-lists-images/image34.png "Erweiterte Bereich")](property-lists-images/image34.png#lightbox)
+ [![](property-lists-images/image34.png "Erweiterter Bereich")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
 
 
 ## <a name="document-types"></a>Dokumenttypen
 
-Für Anwendungen, die Unterstützung für das Öffnen bestimmter Dateien iOS bietet die `CFBundleDocumentTypes` Schlüssel. Wenn wir unsere Anwendung bestimmte bekannte Dateitypen – z. B. PDF-Dateien – unterstützen soll würden wir den PDF-Wert des Schlüssels hinzufügen. Dieser Abschnitt enthält eine einfache Möglichkeit, die Daten einzugeben, die in gespeichert werden, die `CFBundleDocumentTypes` -Schlüssel in der `Info.plist` Datei.
+Für Anwendungen, die das Öffnen bestimmter Dateitypen unterstützen, stellt `CFBundleDocumentTypes` IOS den Schlüssel bereit. Wenn unsere Anwendung bestimmte bekannte Dateitypen unterstützen soll (z. b. pdf), würden wir den PDF-Wert dem Schlüssel hinzufügen. Dieser Abschnitt bietet eine bequeme Möglichkeit, die Daten einzugeben, die im `CFBundleDocumentTypes` -Schlüssel in der `Info.plist` Datei gespeichert werden.
 
-Finden Sie in der Dokumentation unter [die Typen Ihrer App unterstützt Registrierung](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) ausführliche Anleitungen, um diese Werte zu konfigurieren.
+Ausführliche Informationen zum Konfigurieren dieser Werte finden Sie in der Dokumentation zum [Registrieren der von der APP unterstützten Dateitypen](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) .
 
 ## <a name="utis"></a>UTIs
 
-Zuweilen muss eine Anwendung, öffnen einen benutzerdefinierten Dateityp unterstützt. Wir möchten z. B. Bilddateien mit der eine benutzerdefinierte Erweiterung öffnen *.xam*. Um einen benutzerdefinierten Dateityp anzugeben, erstellen wir eine benutzerdefinierte UTI - universellen Typ-ID - mithilfe der `UIExportedTypeDeclarations` Schlüssel. Der folgende Screenshot zeigt, wie Sie eine benutzerdefinierte UTI für die Erweiterung .xam zu erstellen:
+Manchmal muss eine Anwendung das Öffnen eines benutzerdefinierten Dateityps unterstützen. Beispielsweise kann es sein, dass Sie Bilddateien mit einer benutzerdefinierten Erweiterung *. XAM*öffnen möchten. Um einen benutzerdefinierten Dateityp anzugeben, erstellen wir mithilfe des Schlüssels einen benutzerdefinierten Typ Bezeichner `UIExportedTypeDeclarations` mit dem Typ "UTI-Universal". Der folgende Screenshot zeigt, wie Sie eine benutzerdefinierte UTI-Datei für die Erweiterung. XAM erstellen:
 
- [![](property-lists-images/uti.png "UTIs-Editor")](property-lists-images/uti.png#lightbox)
+ [![](property-lists-images/uti.png "Utis-Editor")](property-lists-images/uti.png#lightbox)
 
-Geben Sie nur als exportierter Typ-UTIs benutzerdefinierte UTIs, die spezifisch für Ihre app, die *importierte Typ-UTIs* ( `UIImportedTypeDeclarations` Schlüssel) angeben von benutzerdefinierten Typen unterstützt, aber nicht im Besitz Ihrer Anwendung.
+Ebenso wie exportierte Typ-utis benutzerdefinierte utis angeben, die für Ihre APP spezifisch sind, `UIImportedTypeDeclarations` geben die *importierten Typ-utis* (Key) benutzerdefinierte Typen an, die unterstützt werden, aber nicht Ihrer Anwendung
 
-Weitere Informationen zur Verwendung von benutzerdefinierten UTIs finden Sie im Apple- [Registrieren von Typen Ihrer App unterstützt](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1) Guide.
+Weitere Informationen zur Verwendung von benutzerdefinierten utis finden Sie unter Apple- [Registrierungs Dateitypen, die von ihrer App unterstützt](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1) werden.
 
 ## <a name="custom-urls"></a>Benutzerdefinierte URLs
 
-Ein URL-Schema-Name (auch als "Protokoll" bezeichnet) ist der erste Teil der URL. Z. B. `http://` und `https://` sind allgemeine URL-Schemas. Sie haben die Möglichkeit zum Erstellen eines benutzerdefinierten URL-Schemas für Ihre Anwendung. Benutzerdefinierte URL-Schemas dienen zum kommunizieren und Senden von Daten mit anderen Anwendungen hin und her. Der folgende Screenshot veranschaulicht die Erstellung eines neuen benutzerdefinierten URL-Schemas, die aufgerufen `monkeys://`:
+Ein URL-Schema Name (auch als Protokoll bezeichnet) ist der erste Teil der URL. Beispielsweise `http://` sind und `https://` allgemeine URL-Schemas. Sie haben die Möglichkeit, ein benutzerdefiniertes URL-Schema für Ihre Anwendung zu erstellen. Benutzerdefinierte URL-Schemas werden für die Kommunikation und das Senden von Daten mit anderen Anwendungen verwendet. Der folgende Screenshot veranschaulicht das Erstellen eines neuen benutzerdefinierten URL `monkeys://`-Schemas namens:
 
  [![](property-lists-images/url.png "Benutzerdefinierte URLs")](property-lists-images/url.png#lightbox)
 
 
 
-Weitere Informationen zum Implementieren von benutzerdefinierten URL-Schemas finden Sie im Apple- [Implementieren von benutzerdefinierten URL-Schemas im Abschnitt dieses Handbuchs](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
+Weitere Informationen zum Implementieren von benutzerdefinierten URL-Schemas finden Sie im [Abschnitt Implementieren von benutzerdefinierten URL](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html) -Schemas in Apple in diesem Handbuch.
 
-## <a name="source-panel"></a>Bereich "Quelle"
+## <a name="source-panel"></a>Quell Panel
 
-Die **Quelle** Registerkarte die `Info.plist` -Datei können Sie benutzerdefinierte Werte hinzugefügt oder bearbeitet werden soll. Visual Studio für Mac bietet eine Liste der am häufigsten verwendeten Eigenschaften:
+Die Registerkarte **Quelle** der `Info.plist` Datei ermöglicht das Hinzufügen oder Bearbeiten von benutzerdefinierten Werten. Visual Studio für Mac enthält eine Liste der gängigsten Eigenschaften:
 
- [![](property-lists-images/image31.png "Hinzufügen einer neuen Eigenschaft in einer Dropdownliste")](property-lists-images/image31.png#lightbox)
+ [![](property-lists-images/image31.png "Hinzufügen einer neuen Eigenschaft aus einer Dropdown Liste")](property-lists-images/image31.png#lightbox)
 
-Für bekannte Eigenschaften Visual Studio für Mac wird eine Liste der gültigen Werte wie im folgenden Screenshot dargestellt:
+Für bekannte Eigenschaften Visual Studio für Mac eine Liste gültiger Werte, wie im folgenden Screenshot veranschaulicht:
 
- [![](property-lists-images/image32.png "Wählen Sie einen Wert aus einer Liste der bekannten Wert")](property-lists-images/image32.png#lightbox)
+ [![](property-lists-images/image32.png "Wählen Sie einen Wert aus einer Liste mit bekannten Werten aus.")](property-lists-images/image32.png#lightbox)
 
-Visual Studio für Mac erkennt auch den Typ der Eigenschaft, wie gezeigt:
+Visual Studio für Mac erkennt auch den Eigenschaftentyp, wie hier gezeigt:
 
- [![](property-lists-images/image33.png "Die verfügbaren Eigenschaftentypen")](property-lists-images/image33.png#lightbox)
+ [![](property-lists-images/image33.png "Verfügbare Eigenschafts Typen")](property-lists-images/image33.png#lightbox)
 
-Überprüfen Sie die Apple [verwandte App-Ressourcen](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) Links, um weitere Informationen zu optionalen Eigenschaften.
+Weitere Informationen zu optionalen Eigenschaften finden Sie in den Links zu den [App-bezogenen Ressourcen](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) von Apple.
 
  <a name="Entitlements" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird gezeigt, mit den grafischen und erweiterte plist-Editoren zum Bearbeiten von auch häufig verwendete app-Konfigurationen, geben Sie die Symbole und startbilder. Sie außerdem die `Entitlements.plist` für das Hinzufügen und Verwalten von app-Funktionen.
+In diesem Artikel wurde gezeigt, wie Sie mit den grafischen und erweiterten plist-Editoren gängige App-Konfigurationen bearbeiten sowie Symbole und Start Bilder angeben. Außerdem wurde das `Entitlements.plist` zum Hinzufügen und Verwalten von App-Funktionen eingeführt.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [IDE](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide)
-- [App-Ressourcen](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
-- [Registrieren die Datei Typen Ihrer App unterstützt](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
-- [Implementieren von benutzerdefinierten URL-Schemas](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
-- [Referenz zu Überwachungsprotokollformaten Asset-Katalog](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/index.html#//apple_ref/doc/uid/TP40015170-CH18-SW1)
+- [App-bezogene Ressourcen](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
+- [Registrieren der von Ihrer APP unterstützten Dateitypen](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
+- [Implementieren benutzerdefinierter URL-Schemas](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
+- [Referenz zum Asset Catalog-Format](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/index.html#//apple_ref/doc/uid/TP40015170-CH18-SW1)

@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0ce718bf0380c47033129755d6ca9d40c1136e2c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655485"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529268"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. XAML-Markuperweiterungen
 
@@ -441,9 +441,9 @@ Die Größe der resultierenden `BoxView` relativ zum Bildschirm ist plattformabh
 
 Mehrere Markuperweiterungen für XAML systemintern sind und in Xamarin.Forms XAML-Dateien unterstützt. Einige davon nicht sehr häufig verwendet werden, aber sind wichtig, wenn Sie diese benötigen:
 
--  Wenn eine Eigenschaft eine nicht- `null` möchten, dass Wert durch Sie jedoch den Standardwert festgelegt ist, dass `null`, legen Sie sie auf die `{x:Null}` Markuperweiterung.
--  Wenn eine Eigenschaft vom Typ `Type`, weisen Sie sie einer `Type` -Objekt unter Verwendung der Markuperweiterung `{x:Type someClass}`.
--  Sie können Arrays in XAML mit definieren die `x:Array` Markuperweiterung. Diese Markuperweiterung ist ein erforderliches Attribut, das mit dem Namen `Type` , der den Typ der Elemente im Array angibt.
+- Wenn eine Eigenschaft eine nicht- `null` möchten, dass Wert durch Sie jedoch den Standardwert festgelegt ist, dass `null`, legen Sie sie auf die `{x:Null}` Markuperweiterung.
+- Wenn eine Eigenschaft vom Typ `Type`, weisen Sie sie einer `Type` -Objekt unter Verwendung der Markuperweiterung `{x:Type someClass}`.
+- Sie können Arrays in XAML mit definieren die `x:Array` Markuperweiterung. Diese Markuperweiterung ist ein erforderliches Attribut, das mit dem Namen `Type` , der den Typ der Elemente im Array angibt.
 - Die `Binding` Markuperweiterung ausführlicher [Teil 4. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 ## <a name="the-constraintexpression-markup-extension"></a>Die ConstraintExpression-Markuperweiterung

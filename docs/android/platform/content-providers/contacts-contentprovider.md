@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/22/2018
-ms.openlocfilehash: e83b9a594bad5ee3d29800988eb94812600da8a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e5b23973d7784a9116d4c82ef6d892aacbf584a1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643711"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524472"
 ---
 # <a name="using-the-contacts-contentprovider"></a>Verwenden des ContentProvider für Kontakte
 
@@ -33,11 +33,11 @@ Es gibt drei Möglichkeiten, einen Cursor aus dem URI zu erstellen:
 
 Jede dieser Methoden hat denselben grundlegenden Satz von Eingaben:
 
--  **URI** Der voll qualifizierte Name `ContentProvider` des. &ndash;
--  **Projektion** &ndash; Die Angabe, welche Spalten für den Cursor ausgewählt werden sollen.
--  **Auswahl** Vergleichbar mit einer SQL `WHERE` -Klausel. &ndash;
--  **Selectionargs** &ndash; Parameter, die in der Auswahl ersetzt werden sollen.
--  **Sortor** &ndash; Spalten, nach denen sortiert werden soll.
+- **URI** Der voll qualifizierte Name `ContentProvider` des. &ndash;
+- **Projektion** &ndash; Die Angabe, welche Spalten für den Cursor ausgewählt werden sollen.
+- **Auswahl** Vergleichbar mit einer SQL `WHERE` -Klausel. &ndash;
+- **Selectionargs** &ndash; Parameter, die in der Auswahl ersetzt werden sollen.
+- **Sortor** &ndash; Spalten, nach denen sortiert werden soll.
 
 
 

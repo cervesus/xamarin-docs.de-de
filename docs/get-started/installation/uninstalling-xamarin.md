@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 6a0fe95d6d471bfb464234f0540b8398acb22e6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b870d96a2ffc599e010e049554b51b550a7311
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262989"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521583"
 ---
 # <a name="uninstalling-xamarin"></a>Deinstallieren von Xamarin
 
@@ -29,7 +29,7 @@ Mit diesem Handbuch können Sie jedes Produkt einzeln deinstallieren, indem Sie 
 - [Xamarin.Mac](#uninstallmac)
 - [Workbooks](#uninstallworkbooks)
 - [Xamarin Profiler](#uninstallprofiler)
-- [Installer](#uninstallinstaller)
+- [Installationsprogramm](#uninstallinstaller)
 
 > [!TIP]
 > Wir haben ein [Deinstallationsskript](https://raw.githubusercontent.com/MicrosoftDocs/visualstudio-docs/master/mac/resources/uninstall-vsmac.sh) bereitgestellt, das Sie zum Entfernen von Xamarin von Ihrem macOS-Computer verwenden können. Weitere Informationen zur Verwendung des Skripts finden Sie im Abschnitt [Verwenden des Deinstallationsskripts](#uninstallscript) in diesem Leitfaden.
@@ -94,7 +94,7 @@ sudo rm -rf /Library/Frameworks/Xamarin.Android.framework
 
 #### <a name="uninstall-android-sdk-and-java-sdk"></a>Deinstallieren des Android SDK und des Java SDK
 
-Das Android SDK ist für die Entwicklung von Android-Anwendungen erforderlich. Um alle Bestandteile des Android SDK vollständig zu entfernen, suchen Sie die Datei unter **~/Library/Developer/Xamarin/**, und verschieben Sie sie in den **Papierkorb**.
+Das Android SDK ist für die Entwicklung von Android-Anwendungen erforderlich. Um alle Bestandteile des Android SDK vollständig zu entfernen, suchen Sie die Datei unter **~/Library/Developer/Xamarin/** , und verschieben Sie sie in den **Papierkorb**.
 
 Das Java SDK (JDK) muss nicht deinstalliert werden, da es unter Mac OS X bereits vorab installiert ist.
 
@@ -196,14 +196,18 @@ Führen Sie die folgenden Schritte durch, um das Skript auszuführen:
 
 1. Klicken Sie mit der rechten Maustaste auf das Skript, und klicken Sie auf „Speichern unter...“, um die Datei auf Ihrem Mac zu speichern.
 
-2.  Öffnen Sie das **Terminal**, und legen Sie als Arbeitsverzeichnis den Speicherort des heruntergeladenen Skripts fest:
+2. Öffnen Sie das **Terminal**, und legen Sie als Arbeitsverzeichnis den Speicherort des heruntergeladenen Skripts fest:
 
-        $ cd /location/of/file
+    ```
+    cd /location/of/file
+    ```
 
 3. Machen Sie das Skript ausführbar, und führen Sie es mit **sudo** aus:
 
-        $ chmod +x ./xamarin_uninstall.sh
-        $ sudo ./xamarin_uninstall.sh
+    ```
+    chmod +x ./xamarin_uninstall.sh
+    sudo ./xamarin_uninstall.sh
+    ```
 
 4. Löschen Sie schließlich das Deinstallationsskript.
 
@@ -215,7 +219,7 @@ Xamarin sollte nun auf Ihrem Computer deinstalliert werden.
 
 Xamarin wurde in folgenden Produkten unterstützt:
 
-- [2019 für Visual Studio und Visual Studio 2017](#uninstallvs2017)
+- [Visual Studio 2019 und Visual Studio 2017](#uninstallvs2017)
 - [Visual Studio 2015](#uninstallvs2015)
 - [Visual Studio 2013](#uninstallvs2015) [**nicht unterstützt**]
 - [Xamarin Studio](#uninstallxamarinstudio) [**nicht unterstützt**]
@@ -224,7 +228,7 @@ Xamarin wurde in folgenden Produkten unterstützt:
 
 ### <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2019 und Visual Studio 2017
 
-Xamarin wird in Visual Studio-2019 und Visual Studio 2017 verwenden die Installer-app deinstalliert:
+Xamarin wird von Visual Studio 2019 und Visual Studio 2017 mithilfe der Installer-APP deinstalliert:
 
 1. Verwenden Sie das **Startmenü**, um den **Visual Studio-Installer** zu öffnen.
 

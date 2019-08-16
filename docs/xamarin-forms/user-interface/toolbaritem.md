@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: dfc50defb6eafe705cc9c59b1b9793f1ce48c527
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984302"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522028"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms-ToolBarItem
 
@@ -37,6 +37,9 @@ Die `ToolbarItem` -Klasse erbt die folgenden normalerweise verwendeten Eigenscha
 * [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)ist eine `object` , die den Parameter angibt, der an den `SearchCommand`übergeben werden soll.
 
 Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekte gestützt, sodass eine `ToolbarItem` -Instanz das Ziel von Daten Bindungen sein kann.
+
+> [!NOTE]
+> Eine Alternative zum Erstellen einer Symbolleiste [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) aus Objekten besteht darin, [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) die angefügte-Eigenschaft auf eine Layoutklasse festzulegen, die mehrere Ansichten enthält. Weitere Informationen finden Sie unter [Anzeigen von Ansichten in der Navigationsleiste](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar).
 
 ## <a name="create-a-toolbaritem"></a>Erstellen eines ToolBarItem
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: fb51d0d04c86274d43e23e4912ed16765b7cdc8b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7f1e61f9364a6a59f2bbacd1c773fe49cc338db9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657531"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528827"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Anzeigen von Bildern mit xamarin. IOS
 
@@ -24,7 +24,7 @@ Bilder können einem beliebigen Ordner in Ihrer Visual Studio für Mac Projekt M
 
 Visual Studio für Mac unterstützt auch ein spezielles Verzeichnis namens " **Resources** ", das auch Bilddateien enthalten kann. Für Dateien im Ordner "Resources" sollte die Buildaktion auf **bundleresource**festgelegt sein.
 
-Dieser Screenshot **zeigt die** buildaktions Optionen, die angezeigt werden, wenn mit der rechten Maustaste auf eine Datei geklickt wird:
+Dieser Screenshot zeigt die buildaktions Optionen, die angezeigt werden, wenn mit der rechten Maustaste auf eine Datei geklickt wird:
 
  [![](image-images/image30a.png "Menü \"Build Action\"")](image-images/image30a.png#lightbox)
 
@@ -48,8 +48,8 @@ Das Bild wird dem Projekt hinzugefügt und kann im Code geladen und angezeigt we
 
 Dateien, die im **Ressourcen** Verzeichnis abgelegt werden, werden von regulären Dateien anders behandelt – der Inhalt des Ordners " **Resources** " wird in den Stamm der Anwendung kopiert, und in Ihrem Code kann darauf verwiesen werden. Dies kann aus vielen Gründen nützlich sein:
 
--  Speichern der in den Eigenschaften der Anwendung konfigurierten Images, z. b. der standardmäßigen Start Abbilder und Anwendungs Symbole.
--  Speichern von anderen Bildern und Dateien getrennt vom Code, sodass Sie einfacher zu verwalten sind (Unterverzeichnisse bleiben erhalten, wenn der Inhalt des Ressourcen Verzeichnisses kopiert wird).
+- Speichern der in den Eigenschaften der Anwendung konfigurierten Images, z. b. der standardmäßigen Start Abbilder und Anwendungs Symbole.
+- Speichern von anderen Bildern und Dateien getrennt vom Code, sodass Sie einfacher zu verwalten sind (Unterverzeichnisse bleiben erhalten, wenn der Inhalt des Ressourcen Verzeichnisses kopiert wird).
 
 
 Das **Ressourcen** Verzeichnis ist besonders nützlich in einem Bibliotheksprojekt, da der Code davon ausgehen kann, dass diese Bilder in den Stamm der konsumierenden Anwendung kopiert werden, sodass freigegebene Codebibliotheken, die Bild-, Sound-, Video-, XML-oder andere Dateien.

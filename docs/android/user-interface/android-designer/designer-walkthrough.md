@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 9387b44419af87785d45a25ab254d3361a5615a3
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 71784e18b9becf9851ad9ed9d4730a82d0ff94f7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485924"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523653"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Verwenden von xamarin. Android Designer
 
@@ -25,9 +25,9 @@ Android-Benutzeroberflächen können deklarativ mithilfe von XML-Dateien oder Pr
 In diesem Artikel wird veranschaulicht, wie Sie xamarin. Android Designer verwenden, um eine Benutzeroberfläche visuell zu erstellen.
 
 > [!TIP]
-> Neuere Versionen von Visual Studio unterstützen das Öffnen von XML-Dateien innerhalb der Android Designer.
+> Neuere Releases von Visual Studio unterstützen das Öffnen von XML-Dateien in Android Designer.
 >
-> Beide axml-und XML-Dateien werden in der Android Designer unterstützt.
+> Sowohl AXML- als auch XML-Dateien werden in Android Designer unterstützt.
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
@@ -105,11 +105,11 @@ Wenn sich die `textView` beiden Widgets `linearLayout1`nicht in befinden, könne
 
 Der nächste Schritt besteht darin, die Benutzeroberfläche so zu `ImageView` ändern, dass Sie auf der linken `TextView` Seite angezeigt wird, wobei die beiden `ImageView`Widgets rechts neben gestapelt sind.
 
-1.  Wählen Sie das `ImageView`-Steuerelement aus.
+1. Wählen Sie das `ImageView`-Steuerelement aus.
 
-2.  Geben Sie im **Eigenschaftenfenster**im Suchfeld *Width* ein, und suchen Sie die **Layoutbreite**.
+2. Geben Sie im **Eigenschaftenfenster**im Suchfeld *Width* ein, und suchen Sie die **Layoutbreite**.
 
-3.  Ändern Sie die Einstellung **Layout Width** in `wrap_content`:
+3. Ändern Sie die Einstellung **Layout Width** in `wrap_content`:
 
 ![Wrap-Inhalt festlegen](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
@@ -132,11 +132,11 @@ Beachten Sie, `TextView` dass die Widgets nach rechts `ImageView`von verschoben 
 
 ### <a name="modifying-the-spacing"></a>Ändern des Abstands
 
-Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der Benutzeroberfläche zu ändern, um zwischen den Widgets mehr Platz zu schaffen. Wählen Sie `ImageView` auf der Entwurfs Oberfläche aus. Geben Sie  `min` im Bereich "Eigenschaften" in das Suchfeld ein. Geben `70dp` Sie für **min height** und `50dp` für **minimale Breite**ein:
+Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der Benutzeroberfläche zu ändern, um zwischen den Widgets mehr Platz zu schaffen. Wählen Sie `ImageView` auf der Entwurfs Oberfläche aus. Geben Sie `min` im Bereich "Eigenschaften" in das Suchfeld ein. Geben `70dp` Sie für **min height** und `50dp` für **minimale Breite**ein:
 
 [![Höhe und Breite festlegen](designer-walkthrough-images/vs/18b-set-height-width-sml.png)](designer-walkthrough-images/vs/18b-set-height-width.png#lightbox)
 
-Geben Sie  `padding` im Bereich "Eigenschaften" in das Suchfeld ein, `10dp` und geben **Sie für die**Auffüll Zeichen ein. Diese `minHeight`Einstellungen und`padding`Einstellungen fügen den`ImageView` Leerraum um alle Seiten des hinzu und verlängern ihn vertikal. `minWidth` Beachten Sie, dass sich die Layout-XML ändert, wenn Sie diese Werte eingeben:
+Geben Sie `padding` im Bereich "Eigenschaften" in das Suchfeld ein, `10dp` undgeben Sie für die Auffüll Zeichen ein. Diese `minHeight`Einstellungen und`padding`Einstellungen fügen den`ImageView` Leerraum um alle Seiten des hinzu und verlängern ihn vertikal. `minWidth` Beachten Sie, dass sich die Layout-XML ändert, wenn Sie diese Werte eingeben:
 
 [![Auffüllen festlegen](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
 
@@ -145,7 +145,7 @@ Legen Sie z. b. das **linke** Feld für `5dp` die Auffüll Zeichen auf fest, und
 
 [![Benutzerdefinierte Auffüll Einstellungen](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
 
-Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die `TextView` beiden Widgets enthält. Wählen Sie  `linearLayout1`in der Dokument Gliederung aus. Geben Sie  `margin` im Fenster Eigenschaften in das Suchfeld ein. Legen Sie den **layoutrand unten**, den **layoutrand Links**und `5dp`den **layoutrand oben** auf fest. **Layoutrand rechts** festlegen `0dp`auf:
+Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die `TextView` beiden Widgets enthält. Wählen Sie `linearLayout1`in der Dokument Gliederung aus. Geben Sie `margin` im Fenster Eigenschaften in das Suchfeld ein. Legen Sie den **layoutrand unten**, den **layoutrand Links**und `5dp`den **layoutrand oben** auf fest. **Layoutrand rechts** festlegen `0dp`auf:
 
 [![Ränder festlegen](designer-walkthrough-images/vs/21-margins-w158-sml.png)](designer-walkthrough-images/vs/21-margins-w158.png#lightbox)
 
@@ -153,11 +153,11 @@ Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die `Te
 
 `ImageView` Da zum Anzeigen von Farben (anstelle von Bildern) verwendet wird, besteht der nächste Schritt darin, die von der Vorlage hinzugefügte Standardbild Quelle zu entfernen.
 
-1.  Wählen Sie auf der **Designer Oberfläche aus.** `ImageView`
+1. Wählen Sie auf der **Designer Oberfläche aus.** `ImageView`
 
-2.  Geben Sie im Suchfeld im Feld **Eigenschaften**den Wert *src* ein.
+2. Geben Sie im Suchfeld im Feld **Eigenschaften**den Wert *src* ein.
 
-3.  Klicken Sie auf das kleine Quadrat rechts neben der Eigenschaften Einstellung **src** , und wählen Sie **Zurücksetzen**aus:
+3. Klicken Sie auf das kleine Quadrat rechts neben der Eigenschaften Einstellung **src** , und wählen Sie **Zurücksetzen**aus:
 
 [![Löschen der Einstellung von Image View src](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
@@ -167,7 +167,7 @@ Dadurch wird `android:src="@android:drawable/ic_menu_gallery"` aus der XML `Imag
 
 Nachdem das **list_item** -Layout definiert ist, ist der nächste Schritt das Hinzufügen `ListView` eines zum Hauptlayout. Diese `ListView` enthält eine Liste von **list_item**. 
 
-Öffnen Sie in der Projektmappen-Explorer **Ressourcen/Layout/activity_main. axml**. Suchen Sie in der **Toolbox**das `ListView` Widget, und ziehen Sie es auf den **Designoberfläche**. Der `ListView` im Designer ist leer, außer für blaue Linien, die seinen Rahmen bei der Auswahl gliedern. Sie können die **Dokument** Gliederung anzeigen, um zu überprüfen, ob die **ListView** ordnungsgemäß hinzugefügt wurde:
+Öffnen Siein der Projektmappen-Explorer **Ressourcen/Layout/activity_main. axml**. Suchen Sie in der **Toolbox**das `ListView` Widget, und ziehen Sie es auf den **Designoberfläche**. Der `ListView` im Designer ist leer, außer für blaue Linien, die seinen Rahmen bei der Auswahl gliedern. Sie können die **Dokument** Gliederung anzeigen, um zu überprüfen, ob die **ListView** ordnungsgemäß hinzugefügt wurde:
 
 [![Neue ListView](designer-walkthrough-images/vs/23-new-listview-w158-sml.png)](designer-walkthrough-images/vs/23-new-listview-w158.png#lightbox)
 
@@ -305,7 +305,7 @@ Klicken Sie im nächsten Dialogfeld auf **Erstellen**.
 
 Der nächste Schritt besteht darin, ein **LinearLayout** zu erstellen, das die Elemente der Benutzeroberfläche enthält.
 
-Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Ressourcen/Layout** im lösungspad, und wählen Sie  **> neue Datei hinzufügen...** aus. Wählen Sie im Dialogfeld **neue Datei** die Option **Android-> Layout**aus. Benennen Sie die Datei **list_item** , und klicken Sie auf **neu**:
+Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Ressourcen/Layout** im lösungspad, und wählen Sie **> neue Datei hinzufügen...** aus. Wählen Sie im Dialogfeld **neue Datei** die Option **Android-> Layout**aus. Benennen Sie die Datei **list_item** , und klicken Sie auf **neu**:
 
 [![Neues Layout](designer-walkthrough-images/xs/03-new-layout-m75-sml.png)](designer-walkthrough-images/xs/03-new-layout-m75.png#lightbox)
 
@@ -329,7 +329,7 @@ Alternativ können Sie *ImageView* in die Suchleiste eingeben, um Folgendes zu `
 
 [![ImageView-Suche](designer-walkthrough-images/xs/07-imageview-search-m75-sml.png)](designer-walkthrough-images/xs/07-imageview-search-m75.png#lightbox)
 
-Ziehen Sie `ImageView` diese auf  die `ImageView` Designoberfläche (Sie wird verwendet, um ein Farbmuster in der Farb Browser-App anzuzeigen):
+Ziehen Sie `ImageView` diese auf die `ImageView` Designoberfläche (Sie wird verwendet, um ein Farbmuster in der Farb Browser-App anzuzeigen):
 
 [![ImageView in Canvas](designer-walkthrough-images/xs/08-imageview-on-canvas-m75-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas-m75.png#lightbox)
 
@@ -357,11 +357,11 @@ Wenn sich die `textView` beiden Widgets `linearLayout1`nicht in befinden, könne
 
 Der nächste Schritt besteht darin, die Benutzeroberfläche so zu `ImageView` ändern, dass Sie auf der linken `TextView` Seite angezeigt wird, wobei die beiden `ImageView`Widgets rechts neben gestapelt sind.
 
-1.  Klicken Sie bei  ausgewähltemaufdieRegisterkarte`ImageView` Eigenschaften.
+1. Klicken Sie bei ausgewähltemaufdieRegisterkarte`ImageView` Eigenschaften.
 
-2.  Klicken Sie direkt unterhalb der Registerkarte **Eigenschaften** auf **Layout**.
+2. Klicken Sie direkt unterhalb der Registerkarte **Eigenschaften** auf **Layout**.
 
-3.  Scrollen Sie nach unten zu **viewgroup** , `Width` und ändern `wrap_content`Sie die Einstellung in:
+3. Scrollen Sie nach unten zu **viewgroup** , `Width` und ändern `wrap_content`Sie die Einstellung in:
 
 [![Wrap-Inhalt festlegen](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
 
@@ -380,7 +380,7 @@ Wenn der `LinearLayout` Stamm ausgewählt ist, kehren Sie zur Registerkarte **Ei
 
 ### <a name="modifying-the-spacing"></a>Ändern des Abstands
 
-Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der Benutzeroberfläche zu ändern, um zwischen den Widgets mehr Platz zu schaffen. Wählen Sie aus,  undklickenSieunterEigenschaftenaufdieRegisterkarte`ImageView` **Layout** . `Min Width` Ändern Sie in `50dp`, `Min Height` und`Padding` in. `70dp` `10dp`
+Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der Benutzeroberfläche zu ändern, um zwischen den Widgets mehr Platz zu schaffen. Wählen Sie aus, undklickenSieunterEigenschaftenaufdieRegisterkarte`ImageView` **Layout** . `Min Width` Ändern Sie in `50dp`, `Min Height` und`Padding` in. `70dp` `10dp`
 Dadurch wird die `ImageView` Auffüll Richtung um alle Seiten der angewendet und vertikal gestreckt:
 
 [![Auffüllen festlegen](designer-walkthrough-images/xs/20-padding-widths-m75-sml.png)](designer-walkthrough-images/xs/20-padding-widths-m75.png#lightbox)
@@ -389,7 +389,7 @@ Die Einstellungen oben, rechts, unten und Links können unabhängig voneinander 
 
 [![Benutzerdefinierte Auffüll Einstellungen](designer-walkthrough-images/xs/21-custom-padding-m75-sml.png)](designer-walkthrough-images/xs/21-custom-padding-m75.png#lightbox)
 
-Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die `TextView` beiden Widgets enthält. Wählen Sie  `linearLayout1`in der Dokument Gliederung aus. Wählen Sie im Bereich **Eigenschaften** die Registerkarte **Layout** aus. Scrollen Sie nach unten zum Abschnitt **viewgroup** , und `Left`legen `Top`Sie `Right`die Ränder `Bottom` ,, `5dp`und `5dp`auf `0dp`,, `5dp` bzw. fest:
+Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die `TextView` beiden Widgets enthält. Wählen Sie `linearLayout1`in der Dokument Gliederung aus. Wählen Sie im Bereich **Eigenschaften** die Registerkarte **Layout** aus. Scrollen Sie nach unten zum Abschnitt **viewgroup** , und `Left`legen `Top`Sie `Right`die Ränder `Bottom` ,, `5dp`und `5dp`auf `0dp`,, `5dp` bzw. fest:
 
 [![Ränder festlegen](designer-walkthrough-images/xs/22-margins-m75-sml.png)](designer-walkthrough-images/xs/22-margins-m75.png#lightbox)
 
@@ -397,11 +397,11 @@ Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die `Te
 
 `ImageView` Da zum Anzeigen von Farben (anstelle von Bildern) verwendet wird, besteht der nächste Schritt darin, die von der Vorlage hinzugefügte Standardbild Quelle zu entfernen.
 
-1.  Wählen Sie das `ImageView`-Steuerelement aus.
+1. Wählen Sie das `ImageView`-Steuerelement aus.
 
-2.  Klicken Sie unter **Eigenschaften**auf die Registerkarte **Widget** .
+2. Klicken Sie unter **Eigenschaften**auf die Registerkarte **Widget** .
 
-3.  Deaktivieren Sie `Src` die Einstellung, sodass Sie leer ist:
+3. Deaktivieren Sie `Src` die Einstellung, sodass Sie leer ist:
 
 [![Löschen der Einstellung von Image View src](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
 

@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 1d4c93e625b92275828428917ebbc86d931e8363
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daca6d1cc5ec8a5e47f068f140f835219bd24c86
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649507"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522020"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Ziel-C-Bibliotheken
 
@@ -97,10 +97,10 @@ Eine ausführliche Erläuterung des Formats der API-Datei und der Attribute, die
 
 Zum Herstellen einer kompletten Bindung arbeiten Sie in der Regel mit vier Komponenten:
 
--  Die API-Definitionsdatei`ApiDefinition.cs` (in der Vorlage).
--  Optional: Alle Enumerationstypen, Typen, Strukturen, die von der API`StructsAndEnums.cs` -Definitionsdatei (in der Vorlage) benötigt werden.
--  Optional: zusätzliche Quellen, die die generierte Bindung erweitern können oder eine C# benutzerfreundlichere API (alle C# Dateien, die Sie dem Projekt hinzufügen) bereitstellen.
--  Die native Bibliothek, die Sie binden.
+- Die API-Definitionsdatei`ApiDefinition.cs` (in der Vorlage).
+- Optional: Alle Enumerationstypen, Typen, Strukturen, die von der API`StructsAndEnums.cs` -Definitionsdatei (in der Vorlage) benötigt werden.
+- Optional: zusätzliche Quellen, die die generierte Bindung erweitern können oder eine C# benutzerfreundlichere API (alle C# Dateien, die Sie dem Projekt hinzufügen) bereitstellen.
+- Die native Bibliothek, die Sie binden.
 
 Dieses Diagramm zeigt die Beziehung zwischen den Dateien:
 
@@ -309,10 +309,10 @@ interface MyMutableTree {
 
 Das `btouch-native` Tool generiert automatisch Fours-Konstruktoren in der Klasse, die für eine bestimmte `Foo`Klasse generiert werden:
 
--  `Foo ()`: der Standardkonstruktor (wird dem "init"-Konstruktor von "Ziel-C" zugeordnet)
--  `Foo (NSCoder)`: der Konstruktor, der während der Deserialisierung von nib-Dateien verwendet wird (entspricht dem "initWithCoder:"-Konstruktor von Ziel-C).
--  `Foo (IntPtr handle)`: der Konstruktor für die auf dem Handle basierende Erstellung, der von der Laufzeit aufgerufen wird, wenn die Laufzeit ein verwaltetes Objekt aus einem nicht verwalteten Objekt verfügbar machen muss.
--  `Foo (NSEmptyFlag)`: wird von abgeleiteten Klassen verwendet, um eine doppelte Initialisierung zu verhindern.
+- `Foo ()`: der Standardkonstruktor (wird dem "init"-Konstruktor von "Ziel-C" zugeordnet)
+- `Foo (NSCoder)`: der Konstruktor, der während der Deserialisierung von nib-Dateien verwendet wird (entspricht dem "initWithCoder:"-Konstruktor von Ziel-C).
+- `Foo (IntPtr handle)`: der Konstruktor für die auf dem Handle basierende Erstellung, der von der Laufzeit aufgerufen wird, wenn die Laufzeit ein verwaltetes Objekt aus einem nicht verwalteten Objekt verfügbar machen muss.
+- `Foo (NSEmptyFlag)`: wird von abgeleiteten Klassen verwendet, um eine doppelte Initialisierung zu verhindern.
 
 Für Konstruktoren, die Sie definieren, müssen Sie mit der folgenden Signatur in der Schnittstellen Definition deklariert werden: Sie müssen einen `IntPtr` -Wert zurückgeben, und der Name der Methode sollte Konstruktor sein. Um z. b. `initWithFrame:` den Konstruktor zu binden, verwenden Sie Folgendes:
 
@@ -545,14 +545,14 @@ Im `LonelyClass` obigen Beispiel `NSSomeEventNotification` `NSString` `NSObject`
 
 Das [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) -Attribut kann auf die folgenden Datentypen angewendet werden:
 
--  `NSString`Verweise (nur schreibgeschützte Eigenschaften)
--  `NSArray`Verweise (nur schreibgeschützte Eigenschaften)
--  32-Bit-int`System.Int32`()
--  64-Bit-int`System.Int64`()
--  32-Bit-Gleit`System.Single`Komma Zahlen ()
--  64-Bit-Gleit`System.Double`Komma Zahlen ()
--  `System.Drawing.SizeF`
--  `CGSize`
+- `NSString`Verweise (nur schreibgeschützte Eigenschaften)
+- `NSArray`Verweise (nur schreibgeschützte Eigenschaften)
+- 32-Bit-int`System.Int32`()
+- 64-Bit-int`System.Int64`()
+- 32-Bit-Gleit`System.Single`Komma Zahlen ()
+- 64-Bit-Gleit`System.Double`Komma Zahlen ()
+- `System.Drawing.SizeF`
+- `CGSize`
 
 Zusätzlich zum Namen des systemeigenen Felds können Sie den Namen der Bibliothek, in der sich das Feld befindet, angeben, indem Sie den Bibliotheksnamen übergeben:
 
@@ -1197,9 +1197,9 @@ Wenn Sie das [`[Export]`](~/cross-platform/macios/binding/binding-types-referenc
 
 Der obige Wert würde den Wert als "beibehalten"-Semantik markieren. Die verfügbare Semantik lautet:
 
--  Zuweisen
--  Kopieren
--  Erhalten
+- Zuweisen
+- Kopieren
+- Erhalten
 
 <a name="Style_Guidelines" />
 
@@ -1255,9 +1255,9 @@ interface MyClassDelegate {
 
 Um die Klasse zu schließen, müssen Sie folgende Schritte ausführen:
 
--  Fügen Sie in der Host Klasse zu Ihrem[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
+- Fügen Sie in der Host Klasse zu Ihrem[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
    Deklaration der Typ, der als Delegat und der C# von Ihnen verfügbar gemachte Name fungiert. In unserem obigen Beispiel sind `typeof (MyClassDelegate)` `WeakDelegate` bzw.
--  In ihrer Delegatklasse müssen Sie für jede Methode, die über mehr als zwei Parameter verfügt, den Typ angeben, den Sie für die automatisch generierte EventArgs-Klasse verwenden möchten.
+- In ihrer Delegatklasse müssen Sie für jede Methode, die über mehr als zwei Parameter verfügt, den Typ angeben, den Sie für die automatisch generierte EventArgs-Klasse verwenden möchten.
 
 Der Bindungs Generator ist nicht darauf beschränkt, nur ein einzelnes Ereignis Ziel zu umwickeln. es ist möglich, dass einige Ziel-C-Klassen Nachrichten an mehr als einen Delegaten ausgeben, sodass Sie Arrays zur Unterstützung dieses Setups bereitstellen müssen. Die meisten Setups benötigen Sie nicht, aber der Generator ist bereit, diese Fälle zu unterstützen.
 

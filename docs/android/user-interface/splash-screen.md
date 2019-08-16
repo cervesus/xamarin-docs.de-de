@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: 30e471174d30e58b126c174fd4eacfdbe87d97b0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d8f467b4dcc5e6c4628ed7afa43779cc48b7ef5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646062"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522190"
 ---
 # <a name="splash-screen"></a>Begrüßungsbildschirm
 
@@ -25,11 +25,11 @@ Eine Android-App kann einige Zeit in Anspruch nehmen, insbesondere beim ersten A
 
 In diesem Leitfaden wird eine Technik zum Implementieren eines Begrüßungs Bildschirms in einer Android-Anwendung erläutert. Dabei werden die folgenden Schritte behandelt:
 
-1.  Erstellen einer drawable-Ressource für den Begrüßungsbildschirm.
+1. Erstellen einer drawable-Ressource für den Begrüßungsbildschirm.
 
-2.  Definieren eines neuen Designs, mit dem die drawable-Ressource angezeigt wird.
+2. Definieren eines neuen Designs, mit dem die drawable-Ressource angezeigt wird.
 
-3.  Hinzufügen einer neuen Aktivität zur Anwendung, die als Begrüßungsbildschirm verwendet wird, der von dem im vorherigen Schritt erstellten Design definiert wird.
+3. Hinzufügen einer neuen Aktivität zur Anwendung, die als Begrüßungsbildschirm verwendet wird, der von dem im vorherigen Schritt erstellten Design definiert wird.
 
 [![Beispielbild des xamarin-Logos, gefolgt vom APP-Bildschirm](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
@@ -178,11 +178,11 @@ Zum Hinzufügen eines Begrüßungs Bildschirms für den Querformat führen Sie d
     </layer-list>
     ```
 
-3.  Erstellen Sie den Ordner " **Resources/Values-Land** ", falls er nicht bereits vorhanden ist.
+3. Erstellen Sie den Ordner " **Resources/Values-Land** ", falls er nicht bereits vorhanden ist.
 
-4.  Fügen Sie die Dateien **Colors. XML** und **Style. XML** zu **Values-Land** hinzu (diese können aus den vorhandenen **Werten/Colors. XML** -und **Values/Style. XML** -Dateien kopiert und geändert werden).
+4. Fügen Sie die Dateien **Colors. XML** und **Style. XML** zu **Values-Land** hinzu (diese können aus den vorhandenen **Werten/Colors. XML** -und **Values/Style. XML** -Dateien kopiert und geändert werden).
 
-5.  Ändern Sie **Values-Land/Style. XML** so, dass es die Landscape-Version der drawable `windowBackground`für verwendet. In diesem Beispiel wird **splash_screen_land. XML** verwendet:
+5. Ändern Sie **Values-Land/Style. XML** so, dass es die Landscape-Version der drawable `windowBackground`für verwendet. In diesem Beispiel wird **splash_screen_land. XML** verwendet:
 
     ```xml
     <resources>
@@ -200,7 +200,7 @@ Zum Hinzufügen eines Begrüßungs Bildschirms für den Querformat führen Sie d
     </resources>
     ```
 
-6.  Ändern Sie **Values-Land/Colors. XML** , um die Farben zu konfigurieren, die Sie für die Querformat Version des Begrüßungs Bildschirms verwenden möchten. In diesem Beispiel wird die Begrüßungs Hintergrundfarbe für den Querformat in blau geändert:
+6. Ändern Sie **Values-Land/Colors. XML** , um die Farben zu konfigurieren, die Sie für die Querformat Version des Begrüßungs Bildschirms verwenden möchten. In diesem Beispiel wird die Begrüßungs Hintergrundfarbe für den Querformat in blau geändert:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -213,7 +213,7 @@ Zum Hinzufügen eines Begrüßungs Bildschirms für den Querformat führen Sie d
     </resources>
     ```
 
-7.  Erstellen Sie die APP erneut, und führen Sie Sie aus. Drehen Sie das Gerät in den Querformat, während der Begrüßungsbildschirm weiterhin angezeigt wird. Der Begrüßungsbildschirm ändert sich in die Landscape-Version:
+7. Erstellen Sie die APP erneut, und führen Sie Sie aus. Drehen Sie das Gerät in den Querformat, während der Begrüßungsbildschirm weiterhin angezeigt wird. Der Begrüßungsbildschirm ändert sich in die Landscape-Version:
 
     [![Drehung des Begrüßungs Bildschirms in den Querformat](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 

@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 2efc782386b8ec39ecca21aaf88738c813c260f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511659"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529045"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -143,8 +143,8 @@ Der Xamarin Profiler kann von Ihrer IDE aus gestartet werden, wenn Sie die Profi
 
 #### <a name="launching-from-visual-studio"></a>Starten von Visual Studio aus
 
-1.  Stellen Sie zunächst sicher, dass die Anwendung in Visual Studio geladen ist, und wählen Sie die (standardmäßige) Debugkonfiguration aus, wie oben angegeben.
-2.  Navigieren Sie zum **analysieren > Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie in der folgenden Abbildung veranschaulicht:
+1. Stellen Sie zunächst sicher, dass die Anwendung in Visual Studio geladen ist, und wählen Sie die (standardmäßige) Debugkonfiguration aus, wie oben angegeben.
+2. Navigieren Sie zum **analysieren > Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie in der folgenden Abbildung veranschaulicht:
 
 ![Starten des Profilers aus Visual Studio](images/start-profiling-vs.png)
 
@@ -216,7 +216,7 @@ Am Anfang des Profilers befindet sich das Zuordnungs Diagramm, in dem die Menge 
 
 Es gibt unterschiedliche Datenansichten im Zuordnungs Instrument, mit denen Entwickler die Verwendung und Freigabe von Arbeitsspeicher durch Ihre Anwendung analysieren können. Diese Sichten werden im folgenden beschrieben:
 
-- **Zuordnungen – hiermit** wird eine Liste aller Zuordnungen angezeigt und nach Klassennamen gruppiert. Dies bietet eine gute Übersicht über die verwendeten Klassen und Methoden, die Häufigkeit der Verwendung und die kollektive Größe der verwendeten Klassen. Beim Doppelklicken auf eine Klasse wird der zugeordnete Arbeitsspeicher angezeigt: 
+- Zuordnungen – Hiermit wird eine Liste aller Zuordnungen angezeigt und nach Klassennamen gruppiert. Dies bietet eine gute Übersicht über die verwendeten Klassen und Methoden, die Häufigkeit der Verwendung und die kollektive Größe der verwendeten Klassen. Beim Doppelklicken auf eine Klasse wird der zugeordnete Arbeitsspeicher angezeigt: 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -231,8 +231,8 @@ Es gibt unterschiedliche Datenansichten im Zuordnungs Instrument, mit denen Entw
 Die inspektoransicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren von Objekten, zur Bereitstellung von Statistiken für zugeordnete Arbeitsspeicher und zu den obersten Zuordnungen sowie Ansichten für die Stapel Überwachung und den Pfad zum Stamm.
 
 - **CallTree** – zeigt die gesamte Aufrufstruktur aller Threads in der Anwendung an und enthält Informationen über den Arbeitsspeicher, der auf den einzelnen Knoten zugeordnet wird. Wenn ein Element in der Liste ausgewählt wird, werden alle neben geordneten Knoten grau angezeigt. Sie können die Struktur erweitern oder auf das Element doppelklicken, um einen Drilldown auszuführen. Wenn Sie diese Datenansicht anzeigen, kann die Anzeigeeinstellungen-inspektoransicht verwendet werden, um die dargestellte Darstellung zu ändern. Derzeit gibt es zwei Optionen:
-    1.  **Umgekehrte Aufrufstruktur** – berücksichtigt die Stapel Überwachung von oben nach unten. Dies ist eine bequeme Ansichts Option, da Sie die tiefststen Methoden angibt, bei denen die CPU ihre Zeit aufgewendet hat.
-    2.  **Separat durch Thread** – diese Option organisiert die Aufrufstruktur nach Thread.
+    1. **Umgekehrte Aufrufstruktur** – berücksichtigt die Stapel Überwachung von oben nach unten. Dies ist eine bequeme Ansichts Option, da Sie die tiefststen Methoden angibt, bei denen die CPU ihre Zeit aufgewendet hat.
+    2. **Separat durch Thread** – diese Option organisiert die Aufrufstruktur nach Thread.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

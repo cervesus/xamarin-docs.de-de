@@ -1,31 +1,31 @@
 ---
 title: Einführung in Webdienste
-description: Diese Anleitung veranschaulicht, wie andere webdiensttechnologien genutzt wird. Die behandelten Themen umfassen die Kommunikation mit REST-Diensten, SOAP-Dienste und Windows Communication Foundation-Dienste.
+description: In dieser Anleitung wird veranschaulicht, wie verschiedene Webdienst Technologien genutzt werden. Zu den behandelten Themen gehören die Kommunikation mit Rest-Diensten, SOAP-Diensten und Windows Communication Foundation-Diensten.
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b8edc0141807ead60170ec78b3f6348723ab8e18
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 07ebd61704ed07892eed9ce4d7fd7a21e215bee2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650140"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526725"
 ---
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
-_Diese Anleitung veranschaulicht, wie andere webdiensttechnologien genutzt wird. Die behandelten Themen umfassen die Kommunikation mit REST-Diensten, SOAP-Dienste und Windows Communication Foundation-Dienste._
+_In dieser Anleitung wird veranschaulicht, wie verschiedene Webdienst Technologien genutzt werden. Zu den behandelten Themen gehören die Kommunikation mit Rest-Diensten, SOAP-Diensten und Windows Communication Foundation-Diensten._
 
-Um korrekt zu funktionieren, zahlreichen mobile Anwendungen sind abhängig von der Cloud, und so Web Services in mobilen Anwendungen integrieren, ist ein gängiges Szenario. Die Xamarin-Plattform unterstützt verschiedene webdiensttechnologien Verbrauch, und enthält integrierte und Drittanbieter-Unterstützung für die Nutzung von RESTful-basierten, ASMX und Windows Communication Foundation (WCF)-Dienste.
+Um ordnungsgemäß zu funktionieren, sind viele mobile Anwendungen von der Cloud abhängig, sodass das Integrieren von Webdiensten in Mobile Anwendungen ein gängiges Szenario ist. Die xamarin-Plattform unterstützt die Nutzung verschiedener Webdienst Technologien und umfasst integrierte und Drittanbieter Unterstützung für die Nutzung von Rest-, asmx-und Windows Communication Foundation (WCF)-Diensten.
 
-Für Kunden, die mit Xamarin.Forms, es gibt vollständige Beispiele, die mit einer dieser Technologien in der [Xamarin.Forms-Webdienste](~/xamarin-forms/data-cloud/index.yml) Dokumentation.
+Für Kunden, die xamarin. Forms verwenden, gibt es vollständige Beispiele für die Verwendung dieser Technologien in der Dokumentation zu [xamarin. Forms-Webdiensten](~/xamarin-forms/data-cloud/index.yml) .
 
 > [!IMPORTANT]
-> In iOS 9 setzt App Transport Security (ATS) sichere Verbindungen zwischen der Internet-Ressourcen (z. B. die app Back-End-Server) und die app, und verhindert versehentliche Offenlegung vertraulicher Informationen.
+> In ios 9 erzwingt App-Transport Sicherheit (app Transport Security, ATS) sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und der APP, wodurch eine versehentliche Offenlegung vertraulicher Informationen verhindert wird.
 > Da ATS in apps für iOS 9, die standardmäßig aktiviert ist, werden alle Verbindungen unterliegen ATS-sicherheitsanforderungen. Wenn die Verbindungen nicht über diese Anforderungen erfüllen, werden sie mit einer Ausnahme fehlschlagen.
 
-Sie können opt-Out-of ATS ist dies nicht möglich, verwenden Sie die `HTTPS` -Protokolls und Sichern der Kommunikation für Ressourcen im Internet. Dies kann erreicht werden, durch die Aktualisierung der app **"Info.plist"** Datei. Weitere Informationen finden Sie unter [App Transport Security](~/ios/app-fundamentals/ats.md).
+Sie können das Protokoll ablehnen, wenn es nicht möglich ist, das Protokoll und `HTTPS` die sichere Kommunikation für Internetressourcen zu verwenden. Dies kann erreicht werden, durch die Aktualisierung der app **"Info.plist"** Datei. Weitere Informationen finden Sie unter [App Transport Security](~/ios/app-fundamentals/ats.md).
 
 ## <a name="rest"></a>REST
 
@@ -45,30 +45,30 @@ Webdienst-APIs, die mit REST entsprechen RESTful-APIs aufgerufen werden, und mit
 
 Die Einfachheit von REST hat dazu beigetragen, die primäre Methode für den Zugriff auf Web Services in mobilen Anwendungen zu vereinfachen.
 
-## <a name="consuming-rest-services"></a>Nutzen von REST-Diensten
+## <a name="consuming-rest-services"></a>Verwenden von Rest-Diensten
 
-Es gibt eine Reihe von Bibliotheken und Klassen, die zum Verarbeiten von REST-Diensten verwendet werden können, und in den folgenden Unterabschnitten erläutern. Weitere Informationen zur Nutzung eines REST-Diensts finden Sie unter [verwenden eine RESTful-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md).
+Es gibt eine Reihe von Bibliotheken und Klassen, die verwendet werden können, um Rest-Dienste zu nutzen. in den folgenden Unterabschnitten werden diese erläutert. Weitere Informationen zur Nutzung eines REST-Diensts finden Sie unter verwenden [eines](~/xamarin-forms/data-cloud/web-services/rest.md)Rest-Diensts.
 
 ### <a name="httpclient"></a>HttpClient
 
-Die [Microsoft HTTP Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http) bietet die `HttpClient` -Klasse, die zum Senden und Empfangen von Anforderungen über HTTP verwendet wird. Es stellt Funktionen für HTTP-Anforderungen senden und Empfangen von HTTP-Antworten aus einer URI identifizierte Ressource bereit. Jede Anforderung wird als asynchronen Vorgang gesendet. Weitere Informationen zu asynchronen Vorgängen finden Sie unter [Async-Unterstützung (Übersicht)](~/cross-platform/platform/async.md).
+Die [Microsoft HTTP-Client Bibliotheken](https://www.nuget.org/packages/Microsoft.Net.Http) stellen `HttpClient` die-Klasse bereit, die zum Senden und empfangen von Anforderungen über HTTP verwendet wird. Sie stellt Funktionen zum Senden von HTTP-Anforderungen und empfangen von HTTP-Antworten aus einer durch URI identifizierten Ressource bereit. Jede Anforderung wird als asynchronen Vorgang gesendet. Weitere Informationen zu asynchronen Vorgängen finden Sie unter [Async-Unterstützung (Übersicht)](~/cross-platform/platform/async.md).
 
-Die `HttpResponseMessage` Klasse stellt eine HTTP-Antwortnachricht vom Webdienst empfangen werden, nachdem eine HTTP-Anforderung erfolgt ist. Es enthält Informationen über die Antwort, einschließlich Statuscode, Header und Text. Die `HttpContent` Klasse stellt die HTTP-Text und die Inhaltsheader, z. B. `Content-Type` und `Content-Encoding`. Der Inhalt kann mit einer der gelesen werden die `ReadAs` Methoden, wie z. B. `ReadAsStringAsync` und `ReadAsByteArrayAsync`je nach dem Format der Daten.
+Die `HttpResponseMessage` Klasse stellt eine HTTP-Antwortnachricht vom Webdienst empfangen werden, nachdem eine HTTP-Anforderung erfolgt ist. Sie enthält Informationen über die Antwort, einschließlich Statuscode, Header und Text. Die `HttpContent` Klasse stellt die HTTP-Text und die Inhaltsheader, z. B. `Content-Type` und `Content-Encoding`. Der Inhalt kann mit einer der gelesen werden die `ReadAs` Methoden, wie z. B. `ReadAsStringAsync` und `ReadAsByteArrayAsync`je nach dem Format der Daten.
 
-Weitere Informationen zu den `HttpClient` Klasse, finden Sie unter [Erstellen des Objekts "HttpClient"](~/xamarin-forms/data-cloud/web-services/rest.md).
+Weitere Informationen `HttpClient` zur-Klasse finden Sie unter [Erstellen des httpclient-Objekts](~/xamarin-forms/data-cloud/web-services/rest.md).
 
 <a name="Using_HTTPWebRequest" />
 
 ### <a name="httpwebrequest"></a>HTTPWebRequest
 
-Aufrufen von Webdiensten mit `HTTPWebRequest` umfasst:
+Das Aufrufen von Webdiensten mit `HTTPWebRequest` umfasst Folgendes:
 
--  Erstellen die Anforderungsinstanz für einen bestimmten URI ein.
--  Verschiedene HTTP-Eigenschaften festgelegt für die Anforderungsinstanz.
--  Abrufen einer `HttpWebResponse` aus der Anforderung.
--  Lesen von Daten aus der Antwort.
+- Erstellen der Anforderungs Instanz für einen bestimmten URI.
+- Festlegen verschiedener http-Eigenschaften für die Anforderungs Instanz.
+- Abrufen eines `HttpWebResponse` aus der Anforderung.
+- Lesen von Daten aus der Antwort.
 
-Der folgende Code ruft z. B. Daten aus den USA National-Bibliothek von Medizin-Webdienst:
+Mit dem folgenden Code werden z. b. Daten aus den USA abgerufen. National Library of Medicine Web Service:
 
 ```csharp
 var rxcui = "198440";
@@ -95,13 +95,13 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 }
 ```
 
-Das obige Beispiel erstellt eine `HttpWebRequest` als JSON formatierte Daten zurückgegeben. Die Daten werden zurückgegeben, eine `HttpWebResponse`, von dem eine `StreamReader` zum Lesen der Daten abgerufen werden kann.
+Im obigen Beispiel wird ein `HttpWebRequest` -Wert erstellt, der als JSON formatierte Daten zurückgibt. Die Daten werden in einem `HttpWebResponse`zurückgegeben, aus dem ein `StreamReader` zum Lesen der Daten abgerufen werden kann.
 
 <a name="Using_RESTSHARP" />
 
 ### <a name="restsharp"></a>RestSharp
 
-Ein weiteres Verfahren zum Nutzen von REST-Diensten wird mithilfe der [RestSharp](http://restsharp.org/) Bibliothek. RestSharp kapselt die HTTP-Anforderungen, einschließlich der Unterstützung für das Abrufen von Ergebnissen, die entweder als unformatierte Zeichenfolgeninhalt oder eine deserialisierte C# Objekt. Der folgende Code sendet beispielsweise eine Anforderung in den USA Nationale Webdienst für die Bibliothek der Medizin und ruft die Ergebnisse als JSON-formatierte Zeichenfolge:
+Ein weiterer Ansatz für die Verwendung von Rest-Diensten ist die Verwendung der [restsharp](http://restsharp.org/) -Bibliothek. Restsharp kapselt HTTP-Anforderungen, einschließlich der Unterstützung für das Abrufen von Ergebnissen als unformatierten Zeichen folgen Inhalt C# oder als deserialisiertes Objekt. Der folgende Code führt z. b. eine Anforderung an die USA National Library of Medicine Web Service und ruft die Ergebnisse als JSON-formatierte Zeichenfolge ab:
 
 ```csharp
 var request = new RestRequest(string.Format("{0}/allinfo", rxcui));
@@ -113,15 +113,15 @@ if(string.IsNullOrWhiteSpace(response.Content) || response.StatusCode != System.
 rxTerm = DeserializeRxTerm(response.Content);
 ```
 
-`DeserializeRxTerm` ist eine Methode, mit denen die unformatierte JSON-Zeichenfolge aus gelangen die `RestSharp.RestResponse.Content` Eigenschaft und konvertieren Sie ihn in eine C# Objekt. Deserialisierung von Daten, die von Webdiensten zurückgegeben wird weiter unten in diesem Artikel erläutert.
+`DeserializeRxTerm`ist eine Methode, die die unformatierte JSON-Zeichen `RestSharp.RestResponse.Content` Folge aus der-Eigenschaft übernimmt C# und in ein-Objekt konvertiert. Die Deserialisierung von Daten, die von Webdiensten zurückgegeben werden, wird später in diesem Artikel erläutert.
 
 <a name="Using_NSUrlconnection" />
 
 ### <a name="nsurlconnection"></a>NSUrlConnection
 
-Zusätzlich zu den Klassen zur Verfügung, in der Mono-Basis-Klassenbibliothek (BCL), wie z. B. `HttpWebRequest`, und von Drittanbietern C# Bibliotheken, z. B. RestSharp, plattformspezifischen Klassen sind auch für die Nutzung von Webdiensten verfügbar. In iOS z. B. die `NSUrlConnection` und `NSMutableUrlRequest` Klassen können verwendet werden.
+Zusätzlich zu den Klassen, die in der Mono-Basisklassen Bibliothek (BCL) verfügbar `HttpWebRequest`sind, wie z C# . b. und Bibliotheken von Drittanbietern, wie z. b. restsharp, sind auch plattformspezifische Klassen für die Nutzung von Webdiensten verfügbar. In ios können z. b. `NSUrlConnection` die `NSMutableUrlRequest` Klassen und verwendet werden.
 
-Im folgenden Codebeispiel wird veranschaulicht, wie zum Aufrufen der USA National-Bibliothek von Medizin-Webdienst mithilfe von iOS-Klassen:
+Im folgenden Codebeispiel wird gezeigt, wie Sie den US-amerikanischen National Library of Medicine Web Service using IOS Classes:
 
 ```csharp
 var rxcui = "198440";
@@ -159,13 +159,13 @@ public class RxTermNSURLConnectionDelegate : NSUrlConnectionDelegate
 }
 ```
 
-Im Allgemeinen sollte plattformspezifischen Klassen für die Nutzung von Webdiensten auf Szenarien, in dem systemeigenen Code ist, der auf portiert, beschränkt C#. Nach Möglichkeit sollten Webdienstcode Zugriff portabel sein, damit es auf gemeinsam genutzten plattformübergreifenden sein kann.
+Im Allgemeinen sollten plattformspezifische Klassen für die Verwendung von Webdiensten auf Szenarien beschränkt werden, in denen nativer C#Code zu portiert wird. Wenn möglich, sollte der Webdienst Zugriffs Code portabel sein, damit er plattformübergreifend freigegeben werden kann.
 
 <a name="Using_ServiceStack_Client" />
 
 ### <a name="servicestack"></a>ServiceStack
 
-Eine weitere Möglichkeit zum Aufrufen von Webdiensten ist die [Dienststapel](http://www.servicestack.net/) Bibliothek. Der folgende Code zeigt z. B. wie Sie mit der Dienststapel `IServiceClient.GetAsync` Methode, um eine dienstanforderung ausgeben:
+Eine weitere Option zum Aufrufen von Webdiensten ist die [Dienst Stapel](http://www.servicestack.net/) Bibliothek. Der folgende Code zeigt beispielsweise, wie die-Methode des `IServiceClient.GetAsync` Dienst Stapels verwendet wird, um eine Service Request auszugeben:
 
 ```csharp
 client.GetAsync<CustomersResponse>("",
@@ -180,20 +180,20 @@ client.GetAsync<CustomersResponse>("",
 ```
 
 > [!IMPORTANT]
-> Während Tools wie ServiceStack und RestSharp erleichtern zum Aufrufen und Nutzen von-Dienste Rest, manchmal ist es nicht trivialen nutzen XML oder JSON, die nicht dem Standard entspricht _DataContract_ Serialisierung Konventionen. Falls erforderlich, rufen Sie die Anforderung, und Behandeln der entsprechenden Serialisierungs explizit mithilfe der ServiceStack.Text-Bibliothek, die weiter unten erläutert.
+> Tools wie servicestack und restsharp erleichtern das Aufrufen und Nutzen von Rest-Diensten. manchmal ist es jedoch nicht trivial, XML oder JSON zu verwenden, das nicht den standardserialisierungskonventionen von _DataContract_ entspricht. Rufen Sie ggf. die Anforderung auf, und behandeln Sie die geeignete Serialisierung explizit mithilfe der nachstehend beschriebenen servicestack. Text-Bibliothek.
 
 
 <a name="Options_for_consuming_RESTful_data" />
 
-## <a name="consuming-restful-data"></a>Nutzen von RESTful-Daten
+## <a name="consuming-restful-data"></a>Beanspruchen von Rest-Daten
 
-RESTful-Webdienste verwenden JSON-Nachrichten in der Regel um Daten an den Client zurückzugeben. JSON ist eine textbasierte, Datenaustauschformat, das erstellt, Nutzlasten und komprimiert die Anforderungen an die geringere Netzwerkbandbreite beim Senden von Daten führt. In diesem Abschnitt werden die Mechanismen für die Nutzung von RESTful-Antworten im JSON-"und" Plain-Old-XML (POX) untersucht werden.
+RESTful-Webdienste verwenden JSON-Nachrichten in der Regel um Daten an den Client zurückzugeben. JSON ist ein textbasiertes Datenaustauschformat, das kompakte Nutzlasten erzeugt, was zu geringeren Bandbreitenanforderungen beim Senden von Daten führt. In diesem Abschnitt werden Mechanismen für die Verwendung von Rest-Antworten in JSON und Plain-Old-XML (POX) untersucht.
 
 <a name="Using_System.JSON" />
 
 ### <a name="systemjson"></a>System.JSON
 
-Die Xamarin-Plattform wird mit Unterstützung für JSON standardmäßig geliefert. Mithilfe einer `JsonObject`, Ergebnisse abgerufen werden können, wie im folgenden Codebeispiel gezeigt:
+Die xamarin-Plattform bietet standardmäßig Unterstützung für JSON. Mithilfe eines `JsonObject`können Ergebnisse abgerufen werden, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 var obj = JsonObject.Parse(json);
@@ -206,13 +206,13 @@ term.FullGenericName = properties["fullGenericName"];
 term.Strength = properties["strength"];
 ```
 
-Es ist jedoch unbedingt beachtet werden, die die `System.Json` Tools während des gesamten Entwicklungsprozesses der Daten in den Speicher geladen.
+Es ist jedoch wichtig zu wissen, dass `System.Json` die Tools die gesamten Daten in den Arbeitsspeicher laden.
 
 <a name="Using_JSON.NET" />
 
 ### <a name="jsonnet"></a>JSON.NET
 
-Die [newtonsoft-JSON.NET-Bibliothek](http://www.newtonsoft.com/json) ist eine weit verbreitete Bibliothek zum Serialisieren und Deserialisieren von JSON-Nachrichten. Im folgenden Codebeispiel wird veranschaulicht, wie mit JSON.NET zum Deserialisieren einer JSON-Nachricht in eine C# Objekt:
+Die [newtonsoft JSON.Net Library](http://www.newtonsoft.com/json) ist eine häufig verwendete Bibliothek zum Serialisieren und Deserialisieren von JSON-Nachrichten. Im folgenden Codebeispiel wird gezeigt, wie JSON.NET verwendet wird, um eine JSON-Nachricht in C# ein-Objekt zu deserialisieren:
 
 ```csharp
 var term = new RxTerm();
@@ -230,7 +230,7 @@ term.RxCUI = properties["rxcui"].Value<string>();
 
 ### <a name="servicestacktext"></a>ServiceStack.Text
 
-ServiceStack.Text ist eine JSON-Serialisierungsbibliothek, die mit der Bibliothek ServiceStack funktionieren. Im folgenden Codebeispiel wird veranschaulicht, wie beim Analysieren von JSON-mit einem `ServiceStack.Text.JsonObject`:
+Servicestack. Text ist eine JSON-serialisierungsbibliothek, die für die Arbeit mit der servicestack-Bibliothek konzipiert ist. Im folgenden Codebeispiel wird gezeigt, wie JSON mithilfe eines `ServiceStack.Text.JsonObject`analysiert wird:
 
 ```csharp
 var result = JsonObject.Parse(json).Object("rxtermsProperties")
@@ -252,7 +252,7 @@ var result = JsonObject.Parse(json).Object("rxtermsProperties")
 
 ### <a name="systemxmllinq"></a>System.Xml.Linq
 
-Bei Nutzung eines XML-basierte REST-Webdiensts, LINQ to XML kann verwendet werden, um den XML-Code analysiert, und füllen Sie ein C# Inline, Objekt, wie im folgenden Codebeispiel gezeigt:
+Bei der Verwendung eines XML-basierten Rest-Webdiensts können LINQ to XML verwendet werden, um den XML-Code zu analysieren und ein C# -Objekt wie im folgenden Codebeispiel gezeigt aufzufüllen:
 
 ```csharp
 var doc = XDocument.Parse(xml);
@@ -273,7 +273,7 @@ var result = doc.Root.Descendants("rxtermsProperties")
 
 ## <a name="aspnet-web-service-asmx"></a>ASP.NET-Webdienst (ASMX)
 
-ASMX ermöglicht das Erstellen von Webdiensten, die Nachrichten, die mithilfe der einfachen Objekt Zugriff Protocol (SOAP) senden. SOAP ist ein Plattform- und sprachenunabhängiges Protokoll für die Erstellung und den Zugriff auf Webdienste. Consumer einen ASMX-Dienst müssen nicht alles über die Plattform, das Objektmodell oder zum Implementieren des Diensts verwendete Programmiersprache wissen. Sie müssen nur wissen, wie zum Senden und Empfangen von SOAP-Nachrichten.
+ASMX bietet die Möglichkeit, Webdienste zu erstellen, die Nachrichten mithilfe von SOAP (Simple Object Access Protocol) senden. SOAP ist ein Plattform- und sprachenunabhängiges Protokoll für die Erstellung und den Zugriff auf Webdienste. Consumer einen ASMX-Dienst müssen nicht alles über die Plattform, das Objektmodell oder zum Implementieren des Diensts verwendete Programmiersprache wissen. Sie müssen nur wissen, wie zum Senden und Empfangen von SOAP-Nachrichten.
 
 Eine SOAP-Nachricht ist ein XML-Dokument mit den folgenden Elementen:
 
@@ -284,33 +284,33 @@ Eine SOAP-Nachricht ist ein XML-Dokument mit den folgenden Elementen:
 
 SOAP kann über viele Transportprotokolle verwenden, einschließlich HTTP, SMTP, TCP und UDP-ausgeführt werden. Allerdings kann ein ASMX-Dienst nur über HTTP verwendet werden. Die Xamarin-Plattform unterstützt SOAP 1.1-standardimplementierungen über HTTP, und dies schließt die Unterstützung vieler den Standardkonfigurationen der ASMX-Dienst.
 
-### <a name="generating-a-proxy"></a>Generieren eines Proxys
+### <a name="generating-a-proxy"></a>Erstellen eines Proxys
 
-Ein *Proxy* muss generiert werden, um einen ASMX-Dienst nutzen, die der Anwendung ermöglicht, mit dem Dienst herstellen. Der Proxy wird vom nutzenden Dienst-Metadaten erstellt, die die Methoden und zugeordnete Dienstkonfiguration definiert. Diese Metadaten werden als Web Services Description Language (WSDL)-Dokument verfügbar gemacht, die vom Webdienst generiert wird. Der Proxy wird mithilfe von Visual Studio für Mac oder Visual Studio zum Hinzufügen eines Webverweises für den Webdienst zu den plattformspezifischen Projekten erstellt.
+Ein *Proxy* muss generiert werden, um einen ASMX-Dienst zu nutzen, der der Anwendung das Herstellen einer Verbindung mit dem Dienst ermöglicht. Der Proxy wird vom nutzenden Dienst-Metadaten erstellt, die die Methoden und zugeordnete Dienstkonfiguration definiert. Diese Metadaten werden als Web Services Description Language-Dokument (WSDL) verfügbar gemacht, das vom Webdienst generiert wird. Der Proxy wird erstellt, indem Visual Studio für Mac oder Visual Studio verwendet wird, um den plattformspezifischen Projekten einen Webverweis für den Webdienst hinzuzufügen.
 
-Die Webdienst-URL kann entweder sein, einen gehosteten Remotequelle oder eine lokale Datei System-Ressource über die `file:///` Pfadpräfix, z.B.:
+Die Webdienst-URL kann entweder eine gehostete Remote Quelle oder eine lokale Dateisystem Ressource sein `file:///` , die über das Pfad Präfix zugänglich ist. Beispiel:
 
 ```csharp
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
 ```
 
-[![](images/add-webreference-dialog.png "Die Webdienst-URL kann entweder eine gehostete Remotequelle oder lokalen Dateisystemressource über das Pfadpräfix sein.")](images/add-webreference-dialog.png#lightbox)
+[![](images/add-webreference-dialog.png "Die Webdienst-URL kann entweder eine gehostete Remote Quelle oder eine lokale Dateisystem Ressource sein, auf die über das Dateipfad-Präfix")](images/add-webreference-dialog.png#lightbox)
 
-Dadurch wird den Proxy generiert, im Ordner "Web" oder "Dienstverweise" des Projekts. Da ein Proxy generiert, wird Code sollte nicht geändert werden.
+Dadurch wird der Proxy im Web-oder Dienst Verweis Ordner des Projekts generiert. Da es sich bei einem Proxy um generierten Code handelt, sollte er nicht geändert werden.
 
 <a name="Manually_adding_a_proxy_to_a_project" />
 
-#### <a name="manually-adding-a-proxy-to-a-project"></a>Einen Proxy hinzugefügt manuell zu einem Projekt
+#### <a name="manually-adding-a-proxy-to-a-project"></a>Manuelles Hinzufügen eines Proxys zu einem Projekt
 
-Wenn Sie einen vorhandenen Proxy, der mit kompatiblen-Tools generiert wurde haben, kann diese Ausgabe genutzt werden, wenn als Teil des Projekts enthalten. Verwenden Sie in Visual Studio für Mac die **Dateien hinzufügen...** Menüoption, um den Proxy hinzuzufügen. Darüber hinaus dafür *System.Web.Services.dll* verwiesen werden explizit mit der **Verweise hinzufügen...** Dialogfeld.
+Wenn Sie über einen vorhandenen Proxy verfügen, der mit kompatiblen Tools generiert wurde, kann diese Ausgabe genutzt werden, wenn Sie als Teil des Projekts enthalten ist. Verwenden Sie in Visual Studio für Mac die **Dateien hinzufügen...** Menüoption zum Hinzufügen des Proxys. Außerdem erfordert dies die explizite referenzierte Verwendung von " *System. Web. Services. dll* " mithilfe der **Add-Verweise...** Dialog.
 
-### <a name="consuming-the-proxy"></a>Verwenden den Proxy
+### <a name="consuming-the-proxy"></a>Verwenden des Proxys
 
 Die generierten Proxyklassen bieten Methoden für die Nutzung des Webdiensts, die das asynchrone Programmiermodell (APM)-Entwurfsmuster zu verwenden. In diesem Muster wird ein asynchroner Vorgang implementiert, als zwei Methoden namens *BeginOperationName* und *EndOperationName*, das Starten und beenden Sie den asynchronen Vorgang.
 
 Die *BeginOperationName* Methode startet den asynchronen Vorgang und gibt ein Objekt, implementiert die `IAsyncResult` Schnittstelle. Nach dem Aufruf *BeginOperationName*, eine Anwendung kann weiterhin Ausführen von Anweisungen für den aufrufenden Thread, während der asynchrone Vorgang in einem Threadpoolthread ausgeführt wird.
 
-Für jeden Aufruf von *BeginOperationName*, die Anwendung sollte auch aufrufen *EndOperationName* zum Abrufen der Ergebnisse des Vorgangs. Der Rückgabewert von *EndOperationName* ist der gleiche Typ zurückgegeben, die von der synchronen Webdienstmethode. Das folgende Codebeispiel zeigt ein Beispiel hierfür:
+Für jeden Aufruf von *BeginOperationName*, die Anwendung sollte auch aufrufen *EndOperationName* zum Abrufen der Ergebnisse des Vorgangs. Der Rückgabewert von *EndOperationName* ist der gleiche Typ zurückgegeben, die von der synchronen Webdienstmethode. Das folgende Codebeispiel veranschaulicht dieses Verhalten:
 
 ```csharp
 public async Task<List<TodoItem>> RefreshDataAsync ()
@@ -325,17 +325,17 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 }
 ```
 
-Die Task Parallel Library (TPL) vereinfachen kann ein APM begin/End-Methodenpaar zu nutzen, durch die Kapselung der asynchronen Vorgänge in der gleichen `Task` Objekt. Diese Kapselung durch mehrere Überladungen der dient den `Task.Factory.FromAsync` Methode. Diese Methode erstellt eine `Task` , ausgeführt wird die `TodoService.EndGetTodoItems` -Methode einmal die `TodoService.BeginGetTodoItems` Methode ausgeführt wird, mit der `null` Parameter, der angibt, dass keine Daten an übergeben wird, werden die `BeginGetTodoItems` delegieren. Zum Schluss den Wert, der die `TaskCreationOptions` -Enumeration gibt an, dass das Standardverhalten für die Erstellung und Ausführung von Aufgaben verwendet werden soll.
+Die Task Parallel Library (TPL) vereinfachen kann ein APM begin/End-Methodenpaar zu nutzen, durch die Kapselung der asynchronen Vorgänge in der gleichen `Task` Objekt. Diese Kapselung durch mehrere Überladungen der dient den `Task.Factory.FromAsync` Methode. Diese Methode erstellt eine `Task` , die die `TodoService.EndGetTodoItems` Methode ausführt, `TodoService.BeginGetTodoItems` sobald die Methode abgeschlossen ist `null` . der-Parameter gibt an, dass keine Daten `BeginGetTodoItems` an den Delegaten übergeben werden. Zum Schluss den Wert, der die `TaskCreationOptions` -Enumeration gibt an, dass das Standardverhalten für die Erstellung und Ausführung von Aufgaben verwendet werden soll.
 
-Weitere Informationen zu APM, finden Sie unter [asynchronen Programmiermodells](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) auf MSDN.
+Weitere Informationen zu APM finden Sie unter [asynchrones Programmiermodell](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) auf MSDN.
 
-Weitere Informationen zu einen ASMX-Dienst zu nutzen, finden Sie unter [nutzen Sie eine ASP.NET Web Service (ASMX)](~/xamarin-forms/data-cloud/web-services/asmx.md).
+Weitere Informationen zum Verwenden eines ASMX-Diensts finden Sie unter verwenden [eines ASP.NET-Webdiensts (ASMX)](~/xamarin-forms/data-cloud/web-services/asmx.md).
 
 <a name="wcf" />
 
 ## <a name="windows-communication-foundation-wcf"></a>Windows Communication Foundation (WCF)
 
-WCF ist Microsofts einheitliches Framework zum Erstellen von dienstorientierten Anwendungen. Sie können Entwickler sichere, zuverlässige, transaktionsbasierte und interoperable verteilte Anwendungen erstellen.
+WCF ist das vereinheitlichte Framework von Microsoft zum entwickeln Dienst orientierter Anwendungen. Sie können Entwickler sichere, zuverlässige, transaktionsbasierte und interoperable verteilte Anwendungen erstellen.
 
 WCF wird einen Dienst mit einer Vielzahl von verschiedene Verträge, die im folgenden beschrieben:
 
@@ -347,19 +347,19 @@ WCF wird einen Dienst mit einer Vielzahl von verschiedene Verträge, die im folg
 Es gibt Unterschiede zwischen ASP.NET Web Services (ASMX) und WCF, aber es ist wichtig zu verstehen, dass WCF die gleichen Funktionen, die ASMX bereitgestellt werden: SOAP-Nachrichten über HTTP unterstützt.
 
 > [!IMPORTANT]
-> Die Xamarin-Plattform-Unterstützung für WCF ist gegenüber der Verwendung von HTTP/HTTPS-textcodierten SOAP-Nachrichten auf der `BasicHttpBinding` Klasse. Unterstützung der WCF erfordert außerdem die Verwendung von Tools, die nur verfügbar, in einer Windows-Umgebung in den Proxy zu generieren.
+> Die xamarin-Platt Form Unterstützung für WCF ist mithilfe der `BasicHttpBinding` -Klasse auf Text codierte SOAP-Nachrichten über HTTP/HTTPS beschränkt. Unterstützung der WCF erfordert außerdem die Verwendung von Tools, die nur verfügbar, in einer Windows-Umgebung in den Proxy zu generieren.
 
-### <a name="generating-a-proxy"></a>Generieren eines Proxys
+### <a name="generating-a-proxy"></a>Erstellen eines Proxys
 
-Ein *Proxy* muss generiert werden, um einen WCF-Dienst nutzen, die der Anwendung ermöglicht, mit dem Dienst herstellen. Der Proxy wird erstellt, indem verarbeitende Dienstmetadaten, die die Methoden und zugeordnete Dienstkonfiguration zu definieren. Diese Metadaten werden in die Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, die vom Webdienst generiert wird. Hinzufügen ein Dienstverweises für den Webdienst in einer .NET Standard-Bibliothek mit den Microsoft WCF Web Service Reference Provider in Visual Studio 2017, kann der Proxy erstellt werden.
+Ein *Proxy* muss generiert werden, um einen WCF-Dienst nutzen, die der Anwendung ermöglicht, mit dem Dienst herstellen. Der Proxy wird erstellt, indem verarbeitende Dienstmetadaten, die die Methoden und zugeordnete Dienstkonfiguration zu definieren. Diese Metadaten werden in die Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, die vom Webdienst generiert wird. Der Proxy kann erstellt werden, indem der Microsoft WCF Web Service Reference Provider in Visual Studio 2017 verwendet wird, um einer .NET Standard Bibliothek einen Dienst Verweis für den Webdienst hinzuzufügen.
 
 Eine Alternative zum Erstellen des Proxys verwenden den Microsoft WCF Web Service Reference Provider in Visual Studio 2017 ist das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
-### <a name="configuring-the-proxy"></a>Konfigurieren des Anwendungsproxys
+### <a name="configuring-the-proxy"></a>Konfigurieren des Proxys
 
-Konfigurieren den generierten Proxy gelangen Sie in der Regel zwei konfigurationsargumente (je nach SOAP 1.1/ASMX oder WCF) während der Initialisierung: der `EndpointAddress` und/oder die zugehörigen Bindungsinformationen, wie im folgenden Beispiel gezeigt:
+Beim Konfigurieren des generierten Proxys werden in der Regel zwei Konfigurations Argumente (abhängig von SOAP 1.1/ASMX oder WCF) während `EndpointAddress` der Initialisierung übernommen: die und/oder die zugehörigen Bindungs Informationen, wie im folgenden Beispiel gezeigt:
 
 ```csharp
 var binding = new BasicHttpBinding () {
@@ -382,13 +382,13 @@ client = new Service1Client (binding, new EndpointAddress ("http://192.168.1.100
 
 Eine Bindung wird verwendet, an den Transport, Codierung und Protokolldetails erforderlich für Anwendungen und Dienste miteinander kommunizieren. Die `BasicHttpBinding` gibt an, dass textcodierten SOAP-Nachrichten über das HTTP-Transport-Protokoll gesendet werden. Angeben einer Endpunktadresse kann die Anwendung mit verschiedenen Instanzen von den WCF-Dienst herstellen, vorausgesetzt, dass mehrere veröffentlichte Instanzen vorhanden sind.
 
-### <a name="consuming-the-proxy"></a>Verwenden den Proxy
+### <a name="consuming-the-proxy"></a>Verwenden des Proxys
 
 Die generierten Proxyklassen bieten Methoden für die Nutzung der Webdienste, die das asynchrone Programmiermodell (APM)-Entwurfsmuster verwenden. Bei diesem Muster wird ein asynchroner Vorgang implementiert, als zwei Methoden namens *BeginOperationName* und *EndOperationName*, das Starten und beenden Sie den asynchronen Vorgang.
 
 Die *BeginOperationName* Methode startet den asynchronen Vorgang und gibt ein Objekt, implementiert die `IAsyncResult` Schnittstelle. Nach dem Aufruf *BeginOperationName*, eine Anwendung kann weiterhin Ausführen von Anweisungen für den aufrufenden Thread, während der asynchrone Vorgang in einem Threadpoolthread ausgeführt wird.
 
-Für jeden Aufruf von *BeginOperationName*, die Anwendung sollte auch aufrufen *EndOperationName* zum Abrufen der Ergebnisse des Vorgangs. Der Rückgabewert von *EndOperationName* ist der gleiche Typ zurückgegeben, die von der synchronen Webdienstmethode. Das folgende Codebeispiel zeigt ein Beispiel hierfür:
+Für jeden Aufruf von *BeginOperationName*, die Anwendung sollte auch aufrufen *EndOperationName* zum Abrufen der Ergebnisse des Vorgangs. Der Rückgabewert von *EndOperationName* ist der gleiche Typ zurückgegeben, die von der synchronen Webdienstmethode. Das folgende Codebeispiel veranschaulicht dieses Verhalten:
 
 ```csharp
 public async Task<List<TodoItem>> RefreshDataAsync ()
@@ -403,48 +403,48 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 }
 ```
 
-Die Task Parallel Library (TPL) vereinfachen kann ein APM begin/End-Methodenpaar zu nutzen, durch die Kapselung der asynchronen Vorgänge in der gleichen `Task` Objekt. Diese Kapselung durch mehrere Überladungen der dient den `Task.Factory.FromAsync` Methode. Diese Methode erstellt eine `Task` , ausgeführt wird die `TodoServiceClient.EndGetTodoItems` -Methode einmal die `TodoServiceClient.BeginGetTodoItems` Methode ausgeführt wird, mit der `null` Parameter, der angibt, dass keine Daten an übergeben wird, werden die `BeginGetTodoItems` delegieren. Zum Schluss den Wert, der die `TaskCreationOptions` -Enumeration gibt an, dass das Standardverhalten für die Erstellung und Ausführung von Aufgaben verwendet werden soll.
+Die Task Parallel Library (TPL) vereinfachen kann ein APM begin/End-Methodenpaar zu nutzen, durch die Kapselung der asynchronen Vorgänge in der gleichen `Task` Objekt. Diese Kapselung durch mehrere Überladungen der dient den `Task.Factory.FromAsync` Methode. Diese Methode erstellt eine `Task` , die die `TodoServiceClient.EndGetTodoItems` Methode ausführt, `TodoServiceClient.BeginGetTodoItems` sobald die Methode abgeschlossen ist `null` . der-Parameter gibt an, dass keine Daten `BeginGetTodoItems` an den Delegaten übergeben werden. Zum Schluss den Wert, der die `TaskCreationOptions` -Enumeration gibt an, dass das Standardverhalten für die Erstellung und Ausführung von Aufgaben verwendet werden soll.
 
-Weitere Informationen zu APM, finden Sie unter [asynchronen Programmiermodells](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) auf MSDN.
+Weitere Informationen zu APM finden Sie unter [asynchrones Programmiermodell](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) auf MSDN.
 
-Weitere Informationen zum Verarbeiten eines WCF-Diensts, finden Sie unter [Verwenden eines Windows Communication Foundation (WCF)-Webdiensts](~/xamarin-forms/data-cloud/web-services/wcf.md).
+Weitere Informationen zum Verarbeiten eines WCF-Diensts finden Sie unter verwenden [eines Windows Communication Foundation (WCF)-Webdiensts](~/xamarin-forms/data-cloud/web-services/wcf.md).
 
 <a name="Calling_a_WCF_Service_with_Transport_Security" />
 
-#### <a name="using-transport-security"></a>Unter Berücksichtigung der Transportsicherheit
+#### <a name="using-transport-security"></a>Verwenden der Transport Sicherheit
 
-WCF-Dienste kann Sicherheit auf Transportebene zum Schutz vor Abfangen von Nachrichten einsetzen. Die Xamarin-Plattform unterstützt Bindungen, die Sicherheit der Verwendung von SSL auf Transportebene verwenden. Allerdings gibt es möglicherweise Fälle, in denen der Stapel möglicherweise, zum Überprüfen des Zertifikats, was zu unerwarteten Verhalten führt. Die Überprüfung kann überschrieben werden, durch die Registrierung einer `ServerCertificateValidationCallback` Delegaten vor dem Aufrufen von des Diensts, wie im folgenden Codebeispiel veranschaulicht:
+WCF-Dienste können die Sicherheit auf Transport Ebene nutzen, um das Abfangen von Nachrichten zu schützen Die xamarin-Plattform unterstützt Bindungen, die die Sicherheit auf Transport Ebene mithilfe von SSL verwenden. Es gibt jedoch Fälle, in denen der Stapel das Zertifikat möglicherweise validieren muss, was zu einem unerwarteten Verhalten führt. Die Überprüfung kann durch Registrieren eines `ServerCertificateValidationCallback` Delegaten vor dem Aufrufen des Dienstanbieter überschrieben werden, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 System.Net.ServicePointManager.ServerCertificateValidationCallback +=
 (se, cert, chain, sslerror) => { return true; };
 ```
 
-Dadurch wird die Verschlüsselung auf Transportebene und ignoriert die zertifikatsüberprüfung für serverseitige beibehalten. Dieser Ansatz wird jedoch effektiv ignoriert die Trust-Probleme, die mit dem Zertifikat verknüpft ist, und der eventuell nicht möglich. Weitere Informationen finden Sie unter [mithilfe von vertrauenswürdigen Stämme mit freundlichen Grüßen](https://www.mono-project.com/UsingTrustedRootsRespectfully) auf [Mono-project.com](https://www.mono-project.com).
+Dies behält die transportverschlüsselung bei und ignoriert dabei die serverseitige Zertifikats Überprüfung. Bei dieser Vorgehensweise werden jedoch die dem Zertifikat zugeordneten Vertrauens Probleme effektiv ignoriert und sind möglicherweise nicht geeignet. Weitere Informationen finden Sie unter [respektvolle Verwendung vertrauenswürdiger](https://www.mono-project.com/UsingTrustedRootsRespectfully) Stämme auf [Mono-Project.com](https://www.mono-project.com).
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
-#### <a name="using-client-credential-security"></a>Verwenden die Client-Anmeldeinformationen-Sicherheit
+#### <a name="using-client-credential-security"></a>Verwenden der Client Anmelde Informationen-Sicherheit
 
-WCF-Dienste können auch die Dienstclients für die Authentifizierung mit Anmeldeinformationen erfordern. Die Xamarin-Plattform unterstützt nicht das Protokoll WS-Security, Clients Anmeldeinformationen innerhalb des SOAP-Nachrichtenumschlags senden können. Die Xamarin-Plattform unterstützt jedoch die Möglichkeit zum Senden von HTTP-Standardauthentifizierung-Anmeldeinformationen an den Server durch Angabe der entsprechenden `ClientCredentialType`:
+WCF-Dienste erfordern möglicherweise auch, dass sich die Dienst Clients mithilfe von Anmelde Informationen authentifizieren. Die xamarin-Plattform unterstützt das WS-Security-Protokoll nicht, das es Clients ermöglicht, Anmelde Informationen innerhalb des SOAP-Nachrichten Umschlags zu senden. Die xamarin-Plattform unterstützt jedoch die Möglichkeit, http-Anmelde Informationen für die Standard Authentifizierung an den Server zu `ClientCredentialType`senden, indem Sie den entsprechenden angeben:
 
 ```csharp
 basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
 ```
 
-Anschließend können standardauthentifizierungs-Anmeldeinformationen angegeben werden:
+Anschließend können die Anmelde Informationen für die Standard Authentifizierung angegeben werden:
 
 ```csharp
 client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
 
-Im obigen Beispiel, wenn Sie die Nachricht erhalten "Ran aus Trampolines vom Typ 0" Sie können die Anzahl erhöhen des Typ 0 Trampolines durch Hinzufügen der `–aot “trampolines={number of trampolines}”` Argument für den Build. Weitere Informationen finden Sie unter [Problembehandlung](~/ios/troubleshooting/troubleshooting.md#trampolines).
+Wenn Sie im obigen Beispiel die Meldung "Out of Trampolines of type 0" erhalten, können Sie die Anzahl der basolines vom Typ 0 erhöhen, indem Sie das `–aot “trampolines={number of trampolines}”` Argument zum Build hinzufügen. Weitere Informationen finden Sie unter [Problembehandlung](~/ios/troubleshooting/troubleshooting.md#trampolines).
 
-Weitere Informationen zu HTTP-Standardauthentifizierung zwar im Kontext eines REST-Webdiensts finden Sie [authentifizieren einen RESTful Webdienst](~/xamarin-forms/data-cloud/authentication/rest.md).
+Weitere Informationen zur http-Standard Authentifizierung, obwohl im Kontext eines Rest-Webdiensts, finden Sie unter [Authentifizieren eines](~/xamarin-forms/data-cloud/authentication/rest.md)Rest-Webdiensts.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Webdienste in Xamarin.Forms](~/xamarin-forms/data-cloud/index.yml)
-- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [Webdienste in xamarin. Forms](~/xamarin-forms/data-cloud/index.yml)
+- [Service Model Metadata Utility-Tool (Svcutil. exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

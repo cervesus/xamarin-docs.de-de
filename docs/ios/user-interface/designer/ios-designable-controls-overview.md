@@ -1,54 +1,54 @@
 ---
-title: Benutzerdefinierte Steuerelemente im Xamarin Designer für iOS
-description: Der Xamarin-Designer für iOS unterstützt benutzerdefiniertes Rendern von Steuerelementen im Projekt erstellt oder aus externen Quellen wie der Xamarin Component Store verwiesen wird.
+title: Benutzerdefinierte Steuerelemente im Xamarin Designer für IOS
+description: Der Xamarin Designer für IOS unterstützt das Rendern von benutzerdefinierten Steuerelementen, die in Ihrem Projekt erstellt wurden oder von externen Quellen wie dem xamarin Component Store referenziert
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 267c465fbc10468e70e39831e4f47a4a87f36d00
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: aa6db1403a34b7228352e12e1b2f954308db3744
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66353989"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528503"
 ---
-# <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Benutzerdefinierte Steuerelemente im Xamarin Designer für iOS
+# <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Benutzerdefinierte Steuerelemente im Xamarin Designer für IOS
 
-_Der Xamarin-Designer für iOS unterstützt benutzerdefiniertes Rendern von Steuerelementen im Projekt erstellt oder aus externen Quellen wie der Xamarin Component Store verwiesen wird._
+_Der Xamarin Designer für IOS unterstützt das Rendern von benutzerdefinierten Steuerelementen, die in Ihrem Projekt erstellt wurden oder von externen Quellen wie dem xamarin Component Store referenziert_
 
-Die Xamarin-Designer für iOS ist ein leistungsfähiges Tool für die visuelle Darstellung der Benutzeroberfläche einer Anwendung und bietet WYSIWYG-Bearbeitung Unterstützung für die meisten iOS-Ansichten und ansichtscontroller. Ihre app kann auch benutzerdefinierte Steuerelemente enthalten, die in iOS integriert diejenigen zu erweitern. Wenn diese benutzerdefinierten Steuerelemente mit ein paar Richtlinien wider geschrieben werden, können sie auch vom iOS-Designer bereitstellen noch bessere bearbeitungsmöglichkeiten gerendert werden. Dieses Dokument befasst sich diese Richtlinien.
+Der Xamarin Designer für IOS ist ein leistungsfähiges Tool zum Visualisieren der Benutzeroberfläche einer Anwendung und bietet Unterstützung für die WYSIWYG-Bearbeitung für die meisten IOS-Ansichten und Ansichts Controller. Ihre APP kann auch benutzerdefinierte Steuerelemente enthalten, mit denen die in ios integrierten Erweiterungen erweitert werden. Wenn diese benutzerdefinierten Steuerelemente mit wenigen Richtlinien geschrieben sind, können Sie auch durch den IOS-Designer gerendert werden, was eine noch umfassendere Bearbeitungsfunktion ermöglicht. Dieses Dokument befasst sich mit diesen Richtlinien.
 
 ## <a name="requirements"></a>Anforderungen
 
-Ein Steuerelement, das alle folgenden Anforderungen erfüllt, wird auf der Entwurfsoberfläche gerendert werden:
+Ein Steuerelement, das alle folgenden Anforderungen erfüllt, wird auf der Entwurfs Oberfläche gerendert:
 
-1.  Es ist eine direkte oder indirekte Unterklasse der [UIView](xref:UIKit.UIView) oder [UIViewController](xref:UIKit.UIViewController). Andere [NSObject](xref:Foundation.NSObject) Unterklassen werden als Symbol auf der Entwurfsoberfläche angezeigt.
-2.  Es wurde eine [RegisterAttribute](xref:Foundation.RegisterAttribute) , die sie für Objective-c verfügbar machen
-3.  Sie verfügt über [der erforderliche IntPtr-Konstruktor](~/ios/internals/api-design/index.md).
-4.  Entweder implementiert die [IComponent](xref:System.ComponentModel.IComponent) -Schnittstelle oder verfügt über eine [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute) auf "true" festgelegt.
+1. Es handelt sich um eine direkte oder indirekte Unterklasse von [UIView](xref:UIKit.UIView) oder [UIViewController](xref:UIKit.UIViewController). Andere [NSObject](xref:Foundation.NSObject) -Unterklassen werden als Symbol auf der Entwurfs Oberfläche angezeigt.
+2. Es verfügt über ein [RegisterAttribute](xref:Foundation.RegisterAttribute) , um es für Target-C verfügbar zu machen.
+3. Er verfügt über [den erforderlichen IntPtr-Konstruktor](~/ios/internals/api-design/index.md).
+4. Entweder wird die [IComponent](xref:System.ComponentModel.IComponent) -Schnittstelle implementiert, oder ein [DesignTimeVisibleAttribute-Attribut](xref:System.ComponentModel.DesignTimeVisibleAttribute) ist auf true festgelegt.
 
-Steuerelemente, die im Code definiert, die die oben genannten Anforderungen erfüllen werden im Designer angezeigt, wenn für den Simulator für das enthaltende Projekt kompiliert wird. Standardmäßig werden alle benutzerdefinierten Steuerelemente angezeigt, der **benutzerdefinierte Komponenten** Teil der **Toolbox**. Jedoch [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute) kann angewendet werden, um das benutzerdefinierte Steuerelement-Klasse, um einen anderen Abschnitt anzugeben.
+Im Code definierte Steuerelemente, die die oben genannten Anforderungen erfüllen, werden im Designer angezeigt, wenn Ihr enthaltende Projekt für den Simulator kompiliert wird. Standardmäßig werden alle benutzerdefinierten Steuerelemente im Abschnitt **benutzerdefinierte Komponenten** der **Toolbox**angezeigt. Allerdings kann das [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute) auf die Klasse des benutzerdefinierten Steuer Elements angewendet werden, um einen anderen Abschnitt anzugeben.
 
-Der Designer unterstützt das Laden von Objective-C-Bibliotheken von Drittanbietern nicht.
+Der Designer unterstützt das Laden von Ziel-C-Bibliotheken von Drittanbietern nicht.
 
 ## <a name="custom-properties"></a>Benutzerdefinierte Eigenschaften
 
-Eine Eigenschaft deklariert, indem ein benutzerdefiniertes Steuerelement wird im Eigenschaftenbereich angezeigt, wenn die folgenden Bedingungen erfüllt sind:
+Eine Eigenschaft, die von einem benutzerdefinierten Steuerelement deklariert wird, wird im Eigenschaften Panel angezeigt, wenn die folgenden Bedingungen erfüllt sind:
 
-1.  Die Eigenschaft weist einen öffentlichen Getter und Setter.
-1.  Die Eigenschaft weist einen [ExportAttribute](xref:Foundation.ExportAttribute) als auch ein [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) auf "true" festgelegt.
-1.  Der Eigenschaftentyp ist ein numerischer Typ, den Enumerationstyp, die Zeichenfolge, die "bool", [SizeF](xref:System.Drawing.SizeF), [UIColor](xref:UIKit.UIColor), oder [UIImage](xref:UIKit.UIImage). Diese Liste der unterstützten Typen kann in Zukunft erweitert werden.
+1. Die-Eigenschaft verfügt über einen öffentlichen Getter und Setter.
+1. Die-Eigenschaft verfügt über ein [Export Attribute-Attribut](xref:Foundation.ExportAttribute) , und ein [BrowsableAttribute-Attribut](xref:System.ComponentModel.BrowsableAttribute) ist auf true festgelegt.
+1. Der Eigenschaftentyp ist ein numerischer Typ, Enumerationstyp, String, bool, [SizeF](xref:System.Drawing.SizeF), [uicolor](xref:UIKit.UIColor)oder [uiimage](xref:UIKit.UIImage). Diese Liste der unterstützten Typen kann in Zukunft erweitert werden.
 
 
-Die Eigenschaft kann auch mit ergänzt werden, eine [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) an die Bezeichnung, die Sie im Eigenschaftenbereich angezeigt wird.
+Die-Eigenschaft kann auch mit einem [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) versehen werden, um die Bezeichnung anzugeben, die im Eigenschaften Panel für die Eigenschaft angezeigt wird.
 
 ## <a name="initialization"></a>Initialisierung
 
-Für `UIViewController` Unterklassen, verwenden Sie die [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) -Methode für Code, Sie im Designer erstellten, Ansichten abhängt.
+Für `UIViewController` Unterklassen sollten Sie die [viewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) -Methode für Code verwenden, der von Sichten abhängt, die Sie im Designer erstellt haben.
 
-Für `UIView` und andere `NSObject` Unterklassen, die ["AwakeFromNib"](xref:Foundation.NSObject.AwakeFromNib) Methode ist der empfohlene Platz zum Ausführen der Initialisierung des benutzerdefinierten Steuerelements nach dem sie aus der Layoutdatei geladen wird. Dies ist, da alle benutzerdefinierten Eigenschaften legen Sie in den Eigenschaftenbereich nicht festgelegt werden, wenn es sich bei Konstruktor des Steuerelements ausgeführt wird, aber sie werden festgelegt werden, bevor Sie `AwakeFromNib` aufgerufen wird:
+Für `UIView` und andere `NSObject` Unterklassen ist die [awakeFromNib](xref:Foundation.NSObject.AwakeFromNib) -Methode der empfohlene Ort, um die Initialisierung des benutzerdefinierten Steuer Elements auszuführen, nachdem es aus der Layoutdatei geladen wurde. Dies liegt daran, dass benutzerdefinierte Eigenschaften, die im Eigenschaften Panel festgelegt sind, nicht festgelegt werden, wenn der Konstruktor des Steuer Elements ausgeführt `AwakeFromNib` wird, aber vor dem Aufrufen von festgelegt wird:
 
 
 ```csharp
@@ -64,7 +64,7 @@ public class CustomView : UIView {
 }
 ```
 
-Wenn Sie auch das Steuerelement entworfen wurde, direkt aus dem Code erstellt werden, sollten Sie eine Methode erstellen, die allgemeine Initialisierungscode, wie folgt:
+Wenn das Steuerelement auch direkt aus dem Code erstellt werden soll, empfiehlt es sich, eine Methode zu erstellen, die einen allgemeinen Initialisierungs Code aufweist, wie folgt:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -91,9 +91,9 @@ public class CustomView : UIView {
 }
 ```
 
-## <a name="property-initialization-and-awakefromnib"></a>Initialisierung und "AwakeFromNib"
+## <a name="property-initialization-and-awakefromnib"></a>Eigenschafts Initialisierung und awakeFromNib
 
-Vorsichtig sollte vorgenommen werden, wann und wo initialisieren entworfen Eigenschaften in einer benutzerdefinierten Komponente, die Werte, die im iOS-Designer festgelegt wurden, nicht überschrieben. Führen Sie beispielsweise den folgenden Code ein:
+Es muss darauf geachtet werden, wann und wo die Entwurfs fähigen Eigenschaften in einer benutzerdefinierten Komponente initialisiert werden sollen, um Werte, die innerhalb des IOS-Designers festgelegt wurden, nicht zu überschreiben. Betrachten Sie beispielsweise den folgenden Code:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -124,25 +124,25 @@ public class CustomView : UIView {
 }
 ```
 
-Die `CustomView` Komponente macht eine `Counter` -Eigenschaft, die vom Entwickler in der iOS-Designer festgelegt werden kann. Jedoch unabhängig davon, welcher Wert, in den Designer, den Wert des festgelegt ist der `Counter` Eigenschaft wird immer 0 (null) sein. Erläuterung:
+Die `CustomView` Komponente macht eine `Counter` Eigenschaft verfügbar, die vom Entwickler innerhalb des IOS-Designers festgelegt werden kann. Unabhängig davon, welcher Wert innerhalb des Designers festgelegt wird, ist der Wert `Counter` der-Eigenschaft immer 0 (null). Erläuterung:
 
--  Eine Instanz von der `CustomControl` aus der Storyboard-Datei vergrößert wird.
--  Alle Eigenschaften, die in der iOS-Designer geändert werden festgelegt (wie z. B. das Festlegen des Werts von der `Counter` zu zwei (2), z. B.).
--  Die `AwakeFromNib` Methode ausgeführt wird, und ein Aufruf erfolgt, um der Komponente `Initialize` Methode.
--  In `Initialize` den Wert des der `Counter` Eigenschaft wird auf 0 (null) zurückgesetzt wird.
-
-
-Entweder um die oben genannten Situation zu beheben, Initialisieren der `Counter` Eigenschaft an anderer Stelle (z. B. in den Konstruktor der Komponente) oder nicht überschreiben die `AwakeFromNib` Methode, und rufen `Initialize` Wenn für die Komponente keine weitere Initialisierung außerhalb von was erforderlich ist wird derzeit von seiner Konstruktoren behandelt wird.
-
-## <a name="design-mode"></a>Entwurfsmodus
-
-Ein benutzerdefiniertes Steuerelement muss auf der Entwurfsoberfläche ein paar Einschränkungen entsprechen:
-
--  App-Bundle-Ressourcen sind nicht verfügbar ist, im Entwurfsmodus befindet. Images sind verfügbar, wenn über geladen [UIImage Methoden](xref:UIKit.UIImage) .
--  Asynchrone Vorgänge, z. B. webanforderungen, sollte nicht im Entwurfsmodus ausgeführt werden. Die Entwurfsoberfläche unterstützt keine Animationen oder anderen asynchronen Updates für die Benutzeroberfläche des Steuerelements.
+- Eine Instanz von `CustomControl` wird aus der storyboarddatei aufgeblasen.
+- Alle Eigenschaften, die im IOS-Designer geändert wurden, werden festgelegt (z. `Counter` b. das Festlegen des Werts von auf zwei (2)).
+- Die `AwakeFromNib` -Methode wird ausgeführt, und es wird ein-Rückruf an `Initialize` die-Methode der Komponente vorgenommen.
+- Innerhalb `Initialize` des Werts `Counter` der-Eigenschaft wird auf 0 (null) zurückgesetzt.
 
 
-Ein benutzerdefiniertes Steuerelement implementieren kann [IComponent](xref:System.ComponentModel.IComponent) und verwenden Sie die [DesignMode](xref:System.ComponentModel.ISite.DesignMode) Eigenschaft zu überprüfen, ob sie auf der Entwurfsoberfläche angezeigt wird. In diesem Beispiel wird die Bezeichnung "Entwurfsmodus" auf der Entwurfsoberfläche und die "Runtime" zur Laufzeit angezeigt:
+Um die obige Situation zu beheben, initialisieren Sie `Counter` entweder die-Eigenschaft an anderer Stelle (z. b. im Konstruktor der `AwakeFromNib` Komponente), `Initialize` oder überschreiben Sie die-Methode nicht, und wenden Sie an, wenn die Komponente keine weitere Initialisierung außerhalb der wird derzeit von seinen Konstruktoren verarbeitet.
+
+## <a name="design-mode"></a>Entwurfs Modus
+
+Auf der Entwurfs Oberfläche muss ein benutzerdefiniertes Steuerelement einige Einschränkungen einhalten:
+
+- App-Bündel Ressourcen sind im Entwurfs Modus nicht verfügbar. Bilder sind verfügbar, wenn Sie über [uiimage-Methoden](xref:UIKit.UIImage) geladen werden.
+- Asynchrone Vorgänge, z. b. Webanforderungen, sollten nicht im Entwurfs Modus ausgeführt werden. Die Entwurfs Oberfläche unterstützt keine Animation oder andere asynchrone Aktualisierungen der Benutzeroberfläche des Steuer Elements.
+
+
+Ein benutzerdefiniertes Steuerelement kann [IComponent](xref:System.ComponentModel.IComponent) implementieren und die [designMode](xref:System.ComponentModel.ISite.DesignMode) -Eigenschaft verwenden, um zu überprüfen, ob es sich auf der Entwurfs Oberfläche befindet. In diesem Beispiel wird die Bezeichnung "Entwurfs Modus" auf der Entwurfs Oberfläche und "Runtime" zur Laufzeit angezeigt:
 
 ```csharp
 [Register ("DesignerAwareLabel")]
@@ -167,26 +167,26 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-Sie sollten immer überprüfen die `Site` -Eigenschaft für `null` bevor Sie eines ihrer Elemente zugreifen. Wenn `Site` ist `null`, es ist sicherer, davon aus, das Steuerelement nicht im Designer ausgeführt wird.
-Im Entwurfsmodus `Site` wird festgelegt, nach dem Ausführen der Konstruktor des Steuerelements und vor dem `AwakeFromNib` aufgerufen wird.
+Überprüfen Sie immer die `Site` -Eigenschaft `null` für, bevor Sie versuchen, auf eines seiner Member zuzugreifen. Wenn `Site`den Wert hat,kanndavonausgegangenwerden,dassdasSteuerelementnichtimDesignerausgeführtwird.`null`
+Im Entwurfs Modus wird `Site` festgelegt, nachdem der Konstruktor des Steuer Elements ausgeführt wurde und `AwakeFromNib` bevor aufgerufen wird.
 
 ## <a name="debugging"></a>Debuggen
 
-Ein Steuerelement, das die oben genannten Anforderungen erfüllt werden in der Toolbox angezeigt und auf der Oberfläche gerendert werden.
-Wenn ein Steuerelement nicht gerendert wird, überprüfen Sie Fehler in das Steuerelement oder eine ihrer Abhängigkeiten.
+Ein Steuerelement, das die oben genannten Anforderungen erfüllt, wird in der Toolbox angezeigt und auf der-Oberfläche gerendert.
+Wenn ein Steuerelement nicht gerendert wird, überprüfen Sie das Steuerelement auf Fehler oder eine seiner Abhängigkeiten.
 
-Die Entwurfsoberfläche kann häufig von einzelnen Steuerelementen und anderen Steuerelementen Rendern weiterhin ausgelöste Ausnahmen abfangen. Das fehlerhafte Steuerelement wird mit einem roten Platzhalter ersetzt, und sehen Sie die ausnahmeablaufverfolgung durch Klicken auf das Ausrufezeichensymbol:
+Die Entwurfs Oberfläche kann häufig Ausnahmen abfangen, die von einzelnen Steuerelementen ausgelöst werden, während andere Steuerelemente weitergegeben werden. Das fehlerhafte Steuerelement wird durch einen roten Platzhalter ersetzt, und Sie können die Ausnahme Ablauf Verfolgung anzeigen, indem Sie auf das Ausrufezeichen Symbol klicken:
 
- ![](ios-designable-controls-overview-images/exception-box.png "Ein fehlerhafter Steuerelement als rote Platzhalter und die Details der Ausnahme")
+ ![](ios-designable-controls-overview-images/exception-box.png "Ein fehlerhaftes Steuerelement als roter Platzhalter und Ausnahme Details")
 
-Wenn Debugsymbole für das Steuerelement verfügbar sind, sind für die Ablaufverfolgung müssen Dateinamen und Zeilennummern. Doppelklicken auf eine Zeile in der stapelüberwachung springt zu dieser Zeile im Quellcode.
+Wenn für das Steuerelement Debugsymbole verfügbar sind, enthält die Ablauf Verfolgung Dateinamen und Zeilennummern. Wenn Sie in der Stapel Überwachung auf eine Zeile doppelklicken, wird diese Zeile im Quellcode angezeigt.
 
-Wenn der Designer das fehlerhafte Steuerelement nicht isolieren kann, wird eine Warnmeldung am oberen Rand der Entwurfsoberfläche angezeigt:
+Wenn der Designer das fehlerhafte Steuerelement nicht isolieren kann, wird oben in der Entwurfs Oberfläche eine Warnmeldung angezeigt:
 
- ![](ios-designable-controls-overview-images/info-bar.png "Eine Warnmeldung am oberen Rand der Entwurfsoberfläche")
+ ![](ios-designable-controls-overview-images/info-bar.png "Eine Warnmeldung am oberen Rand der Entwurfs Oberfläche")
 
-Vollständige Rendering wird fortgesetzt, wenn das fehlerhafte Steuerelement ist fixiert oder auf der Entwurfsoberfläche entfernt.
+Das vollständige Rendering wird fortgesetzt, wenn das fehlerhafte Steuerelement korrigiert oder von der Entwurfs Oberfläche entfernt wurde.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde die Erstellung und Anwendung benutzerdefinierter Steuerelemente im iOS Designer eingeführt. Zuerst beschrieben sie Anforderungen, die Steuerelemente erfüllen müssen, um auf der Entwurfsoberfläche gerendert werden, und benutzerdefinierte Eigenschaften im Eigenschaftenbereich verfügbar machen. Sie finden ihn dann an der Code-behind - Initialisierung des Steuerelements und die DesignMode-Eigenschaft. Schließlich es wurde beschrieben, was geschieht, wenn Ausnahmen ausgelöst werden und zur Lösung dieses Problems.
+In diesem Artikel wurde die Erstellung und Anwendung von benutzerdefinierten Steuerelementen im IOS-Designer erläutert. Zuerst wurden Anforderungen beschrieben, die Steuerelemente erfüllen müssen, damit Sie auf der Entwurfs Oberfläche gerendert werden, und benutzerdefinierte Eigenschaften im Eigenschaften Panel verfügbar machen. Anschließend wurde die Code-Behind-Initialisierung des Steuer Elements und der DesignMode-Eigenschaft betrachtet. Schließlich wurde beschrieben, was geschieht, wenn Ausnahmen ausgelöst werden und wie dieses Problem behoben wird.

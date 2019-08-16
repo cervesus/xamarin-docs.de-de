@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9b4f71599ecf85e51899c41c37aecc63e44e7188
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 86198c7a2fa0460070d012afd0b7b9d078d2a5f3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646424"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528564"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in xamarin. IOS
 
@@ -66,11 +66,11 @@ Bei einem Mausklick wird ein Menü angezeigt, in dem wir die Aktion für den seg
 
 Es gibt verschiedene Arten von Übergängen, die jeweils steuern, wie ein neuer Ansichts Controller dem Benutzer präsentiert wird und wie er mit anderen Ansichts Controllern im Storyboard interagiert. Diese werden unten erläutert. Es ist auch möglich, ein segue-Objekt zu unterteilen, um einen benutzerdefinierten Übergang zu implementieren:
 
--  **Anzeigen/pushen** – ein Push-Ziel fügt dem Navigations Stapel den Ansichts Controller hinzu. Dabei wird davon ausgegangen, dass der Ansichts Controller, von dem der Push stammt, Teil desselben Navigations Controllers wie der Ansichts Controller ist, der dem Stapel hinzugefügt wird. Dies geschieht genauso wie `pushViewController` , und wird im Allgemeinen verwendet, wenn zwischen den Daten auf den Bildschirmen eine Beziehung besteht. Die Verwendung von Push-abgue bietet Ihnen den Luxus, eine Navigationsleiste mit einer Schaltfläche "zurück" und einem Titel zu jeder Ansicht auf dem Stapel hinzuzufügen, sodass drilldownnavigation durch die Ansichts Hierarchie ermöglicht wird.
--  **Modal** – ein modaler segue erstellt eine Beziehung zwischen zwei beliebigen Ansichts Controllern in Ihrem Projekt, wobei die Option eines animierten Übergangs angezeigt wird. Der untergeordnete Ansichts Controller verwirft den übergeordneten Ansichts Controller in der Ansicht vollständig. Im Gegensatz zu einem Push-abgue, der eine Schaltfläche "zurück" für uns hinzufügt. Wenn die Verwendung eines modalen `DismissViewController` seegue verwendet werden muss, um zum vorherigen Ansichts Controller zurückzukehren.
--  **Benutzer** definiert – alle benutzerdefinierten Klassen können als Unterklasse von `UIStoryboardSegue`erstellt werden.
--  Entladen **– ein** Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade-*-Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
--  Sourbstbston – ein Ressourcen loser Wert gibt die Szene an, die den anfänglichen Ansichts Controller enthält, und daher die Ansicht, die der Benutzer zuerst sehen wird. Sie wird durch den unten gezeigten-Abschnitt dargestellt:  
+- **Anzeigen/pushen** – ein Push-Ziel fügt dem Navigations Stapel den Ansichts Controller hinzu. Dabei wird davon ausgegangen, dass der Ansichts Controller, von dem der Push stammt, Teil desselben Navigations Controllers wie der Ansichts Controller ist, der dem Stapel hinzugefügt wird. Dies geschieht genauso wie `pushViewController` , und wird im Allgemeinen verwendet, wenn zwischen den Daten auf den Bildschirmen eine Beziehung besteht. Die Verwendung von Push-abgue bietet Ihnen den Luxus, eine Navigationsleiste mit einer Schaltfläche "zurück" und einem Titel zu jeder Ansicht auf dem Stapel hinzuzufügen, sodass drilldownnavigation durch die Ansichts Hierarchie ermöglicht wird.
+- **Modal** – ein modaler segue erstellt eine Beziehung zwischen zwei beliebigen Ansichts Controllern in Ihrem Projekt, wobei die Option eines animierten Übergangs angezeigt wird. Der untergeordnete Ansichts Controller verwirft den übergeordneten Ansichts Controller in der Ansicht vollständig. Im Gegensatz zu einem Push-abgue, der eine Schaltfläche "zurück" für uns hinzufügt. Wenn die Verwendung eines modalen `DismissViewController` seegue verwendet werden muss, um zum vorherigen Ansichts Controller zurückzukehren.
+- **Benutzer** definiert – alle benutzerdefinierten Klassen können als Unterklasse von `UIStoryboardSegue`erstellt werden.
+- Entladen – ein Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade-*-Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
+- Sourbstbston – ein Ressourcen loser Wert gibt die Szene an, die den anfänglichen Ansichts Controller enthält, und daher die Ansicht, die der Benutzer zuerst sehen wird. Sie wird durch den unten gezeigten-Abschnitt dargestellt:  
 
     [![](images/sourcelesssegue.png "Ein Quellen loser-Eintrag")](images/sourcelesssegue.png#lightbox)
 
@@ -142,12 +142,14 @@ Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Sto
     Dies entspricht der Instanziierung des anfänglichen Ansichts Controllers in der `FinishedLaunching` -Methode innerhalb des App-Delegaten. Wenn diese Option festgelegt ist, instanziiert die Anwendung ein Fenster (siehe unten), lädt das Haupt Storyboard und weist eine Instanz des anfänglichen Ansichts Controllers des Storyboards (der neben dem sourloads-segue) als `RootViewController` Eigenschaft des Fensters auf und führt dann Folgendes aus: Das Fenster, das auf dem Bildschirm sichtbar ist.
 
 3. Überschreiben Sie in die- `Window` Standardmethode mit dem folgenden Code, um die Window-Eigenschaft zu implementieren: `AppDelegate`
-        
-        public override UIWindow Window {
-            get;
-            set;
-            }
-            
+
+    ```csharp
+    public override UIWindow Window {
+        get;
+        set;
+    }
+    ```
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Erstellen Sie eine neue Storyboard-Datei, indem Sie mit der rechten Maustaste auf das Projekt klicken, um **> neue Datei > IOS > leeres Storyboard hinzuzufügen**, wie unten dargestellt: 
@@ -162,11 +164,13 @@ Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Sto
 
 3. Überschreiben Sie in die- `Window` Standardmethode mit dem folgenden Code, um die Window-Eigenschaft zu implementieren: `AppDelegate`
 
-        public override UIWindow Window {
-            get;
-            set;
-            }
-            
+    ```csharp
+    public override UIWindow Window {
+        get;
+        set;
+    }
+    ```
+
 -----
 
 ## <a name="creating-a-storyboard-with-the-ios-designer"></a>Erstellen eines Storyboards mit dem IOS-Designer

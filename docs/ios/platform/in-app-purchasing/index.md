@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 2320aa9a611a44d654bcbae18bb2664797054e50
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fb8f4a8e62ea163dc58589382c31c4bf19973c36
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647921"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528273"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>In-App-Käufe in xamarin. IOS
 
@@ -20,11 +20,11 @@ IOS-Anwendungen können digitale Produkte oder Dienste mit storekit verkaufen �
 
 Zum Bereitstellen von in-App-Kauf Funktionen sind einige Schritte erforderlich:
 
--  **Konfigurieren Ihrer APP** – das Bereitstellungs Profil der Anwendung muss ordnungsgemäß eingerichtet werden.
--  **Erstellen von Produkten** – Produktbeschreibungen und Preise müssen im iTunes Connect-Portal erstellt werden.
--  **Implementieren von storekit** – die storekit-API muss gemäß den verkauften Produkttypen implementiert werden.
--  **Erstellen der Benutzeroberfläche und der Produkte selbst** – die Produkte müssen implementiert werden, einschließlich Mechanismen zum Nachverfolgen der einzelnen Käufe und sichern/wiederherstellen, falls erforderlich.
--  Über **Wachen von Verkäufen und Kauf Geldern** – verwenden Sie die von iTunes Connect bereitgestellten Informationen, um Umsatz Trends zu überwachen und Ihr Einkommen zu verfolgen
+- **Konfigurieren Ihrer APP** – das Bereitstellungs Profil der Anwendung muss ordnungsgemäß eingerichtet werden.
+- **Erstellen von Produkten** – Produktbeschreibungen und Preise müssen im iTunes Connect-Portal erstellt werden.
+- **Implementieren von storekit** – die storekit-API muss gemäß den verkauften Produkttypen implementiert werden.
+- **Erstellen der Benutzeroberfläche und der Produkte selbst** – die Produkte müssen implementiert werden, einschließlich Mechanismen zum Nachverfolgen der einzelnen Käufe und sichern/wiederherstellen, falls erforderlich.
+- Über **Wachen von Verkäufen und Kauf Geldern** – verwenden Sie die von iTunes Connect bereitgestellten Informationen, um Umsatz Trends zu überwachen und Ihr Einkommen zu verfolgen
 
 In diesem Dokument wird erläutert, wie Sie alle diese Schritte ausführen, um in-App-Einkäufe mithilfe von xamarin. IOS bereitzustellen.
 
@@ -50,11 +50,11 @@ Um in-App-Käufe zu unterstützen, müssen Sie xamarin. IOS 5,0 oder höher mit 
 
 In diesem Artikel wurde das Konzept des in-App-Einkaufs eingeführt, und es wurde beschrieben, wie Sie Ihre Anwendung so konfigurieren, dass Sie von der APP genutzt und Beispiele mithilfe von xamarin. IOS präsentiert werden. Es hat Folgendes abgedeckt:
 
--  **IOS-Bereitstellungs Portal** – Richtlinien zum Aktivieren der in-App-Kauf Funktionalität.
--  **iTunes Connect** – konfigurieren Sie die Produkte, die in Ihrer APP verkauft werden.
--  **Store Kit** – Erläuterung der Klassen, die zum Erstellen von in-App-Kauf Features verwendet werden.
--  **Codieren Ihrer APP für den Einkauf** – Beispiele für das Erstellen von in-App-Käufen in einer xamarin. IOS-app.
--  **Bericht** Erstellung – Übersicht über die über iTunes Connect verfügbaren Statistiken.
+- **IOS-Bereitstellungs Portal** – Richtlinien zum Aktivieren der in-App-Kauf Funktionalität.
+- **iTunes Connect** – konfigurieren Sie die Produkte, die in Ihrer APP verkauft werden.
+- **Store Kit** – Erläuterung der Klassen, die zum Erstellen von in-App-Kauf Features verwendet werden.
+- **Codieren Ihrer APP für den Einkauf** – Beispiele für das Erstellen von in-App-Käufen in einer xamarin. IOS-app.
+- **Bericht** Erstellung – Übersicht über die über iTunes Connect verfügbaren Statistiken.
 
 
 ## <a name="related-links"></a>Verwandte Links

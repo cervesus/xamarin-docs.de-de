@@ -6,35 +6,35 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 7d402e6f665baa8db68d571945490a8d1ae18881
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 62e3e6944118e82cbd7712a80eb8098f3c6541fc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649551"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525983"
 ---
 # <a name="using-data-in-an-app"></a>Verwenden von Daten in einer App
 
-Die **DataAccess_Adv** Beispiel wird gezeigt, eine Anwendung, die Benutzereingaben und Datenbankfunktionen CRUD (Create, Read, Update und Delete) ermöglicht. Die Anwendung besteht aus zwei Bildschirme: eine Liste und ein Dateneingabeformular. Alle der Datenzugriffscode ist wieder verwendbare in iOS und Android ohne Änderung.
+Das **DataAccess_Adv** -Beispiel zeigt eine funktionierende Anwendung, die die Datenbankfunktionalität Benutzereingaben und CRUD (Create, Read, Update und DELETE) ermöglicht. Die Anwendung besteht aus zwei Bildschirmen: einer Liste und einem Dateneingabe Formular. Der gesamte Datenzugriffs Code kann ohne Änderung in IOS und Android wieder verwendet werden.
 
-Nach dem Hinzufügen von Daten wird unter Android die Bildschirme für die Anwendung wie folgt aussehen:
+Nachdem Sie einige Daten hinzugefügt haben, sehen die Anwendungs Bildschirme auf Android wie folgt aus:
 
-![Beispiel zu Android-Liste](using-data-in-an-app-images/image11.png "Beispiel zu Android-Liste")
+![Android-Beispielliste](using-data-in-an-app-images/image11.png "Android-Beispielliste")
 
-![Beispiel zu Android-Detail](using-data-in-an-app-images/image12.png "Beispiel zu Android-Details")
+![Android-Beispiel Details](using-data-in-an-app-images/image12.png "Android-Beispiel Details")
 
-Das Android-Projekt wird im folgenden dargestellt &ndash; der in diesem Abschnitt gezeigten Code enthaltenen der **Orm** Verzeichnis:
+Das Android-Projekt wird unterhalb &ndash; des in diesem Abschnitt gezeigten Codes angezeigt, der im **ORM** -Verzeichnis enthalten ist:
 
-![Android-Projektstruktur](using-data-in-an-app-images/image14.png "Android-Projekt-Struktur")
+![Android-Projekt] Struktur (using-data-in-an-app-images/image14.png "Android-Projekt") Struktur
 
-Der native UI-Code für die Aktivitäten in Android ist nicht Gegenstand dieses Dokuments. Finden Sie in der [Android ListViews und Adapter](~/android/user-interface/layouts/list-view/index.md) Anleitung finden Sie weitere Informationen auf der UI-Steuerelemente.
+Der Native UI-Code für die Aktivitäten in Android ist für dieses Dokument nicht verfügbar. Weitere Informationen zu den UI-Steuerelementen finden Sie im Handbuch zu den [Android-Listenansichten und-Adaptern](~/android/user-interface/layouts/list-view/index.md) .
 
 ## <a name="read"></a>Lesen
 
-Es gibt eine Reihe von Lesevorgängen, in dem Beispiel aus:
+Das Beispiel enthält eine Reihe von Lesevorgängen:
 
--  Lesen Sie die Liste
--  Lesen Sie die einzelnen Datensätze
+- Lesen der Liste
+- Lesen einzelner Datensätze
 
 Die beiden Methoden in der `StockDatabase` -Klasse sind:
 
@@ -53,11 +53,11 @@ public Stock GetStock (int id)
 }
 ```
 
-Android rendert die Daten als eine `ListView`.
+Android rendert die Daten als `ListView`.
 
 ## <a name="create-and-update"></a>Erstellen und aktualisieren
 
-Um den Anwendungscode zu vereinfachen, wird ein einzelnes save-Methode bereitgestellt, die einen Einfügevorgang ausführt oder aktualisieren, je nachdem, ob die PrimaryKey festgelegt wurde. Da die `Id` Eigenschaft markiert ist, mit einem `[PrimaryKey]` Attribut sollten Sie es nicht im Code festlegen. Diese Methode erkennt, ob der Wert vorherigen wurde (durch Überprüfen der Primärschlüsseleigenschaft) gespeichert und entweder das Einfügen oder aktualisieren das Objekt entsprechend:
+Um den Anwendungscode zu vereinfachen, wird eine einzelne Save-Methode bereitgestellt, die einen INSERT-oder Update-Vorgang durchführt, je nachdem, ob PrimaryKey festgelegt wurde. Da die `Id` -Eigenschaft mit einem `[PrimaryKey]` -Attribut gekennzeichnet ist, sollten Sie Sie nicht im Code festlegen. Diese Methode erkennt, ob der Wert zuvor gespeichert wurde (durch Überprüfen der Primärschlüssel Eigenschaft), und fügt das Objekt entsprechend ein:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -73,11 +73,11 @@ public int SaveStock (Stock item)
 }
 ```
 
-Echte Anwendungen müssen in der Regel eine Validierung (z.B. erforderliche Felder, Mindestlänge oder anderer Geschäftsregeln). Gute plattformübergreifende Anwendungen so großen Teil der Überprüfung logische wie möglich im freigegebenen Code auf und übergibt Validierungsfehler an die Benutzeroberfläche für die Anzeige gemäß der Funktionen der Plattform implementieren.
+Echte Anwendungen erfordern in der Regel eine gewisse Überprüfung (z. b. erforderliche Felder, minimale Längen oder andere Geschäftsregeln). Gute plattformübergreifende Anwendungen implementieren so viel von der Überprüfung logisch wie möglich in frei gegebenem Code, wobei Validierungs Fehler an die Benutzeroberfläche weitergeleitet werden, sodass Sie entsprechend den Funktionen der Plattform angezeigt werden.
 
 ## <a name="delete"></a>Löschen
 
-Im Gegensatz zu den `Insert` und `Update` Methoden, die `Delete<T>` Methode lässt nur den Primärschlüsselwert anstatt ein vollständiges `Stock` Objekt. In diesem Beispiel eine `Stock` Objekt wird an die Methode übergeben, aber nur die Id-Eigenschaft übergeben wird, die `Delete<T>` Methode.
+Im Gegensatz `Insert` zu `Update` den-und `Delete<T>` -Methoden kann die-Methode nur den Primärschlüssel Wert anstelle `Stock` eines Complete-Objekts akzeptieren. In diesem Beispiel wird `Stock` ein-Objekt an die-Methode weitergegeben, aber nur die ID-Eigenschaft `Delete<T>` wird an die-Methode weitergegeben.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -88,17 +88,17 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>Verwenden einer voraufgefüllten SQLite-Datenbankdatei
+## <a name="using-a-pre-populated-sqlite-database-file"></a>Verwenden einer vorab aufgefüllten SQLite-Datenbankdatei
 
-Einige Anwendungen werden mit einer Datenbank, die bereits mit Daten gefüllt ausgeliefert. Sie können ganz einfach in Ihrer mobilen Anwendung dazu durch den Versand von einer vorhandenen Datenbankdatei von SQLite mit Ihrer app, und es in ein beschreibbares Verzeichnis kopiert, bevor Sie darauf zugreifen. Da SQLite ein standard-Dateiformat, die auf vielen Plattformen verwendet wird handelt, gibt es eine Reihe von Tools zur Verfügung, um eine SQLite-Datenbank-Datei zu erstellen:
+Einige Anwendungen werden mit einer Datenbank ausgeliefert, die bereits mit Daten aufgefüllt wurde. Sie können dies problemlos in Ihrer mobilen Anwendung erreichen, indem Sie eine vorhandene SQLite-Datenbankdatei mit Ihrer APP versenden und in ein beschreibbares Verzeichnis kopieren, bevor Sie darauf zugreifen. Da SQLite ein Standarddatei Format ist, das auf vielen Plattformen verwendet wird, stehen eine Reihe von Tools zum Erstellen einer SQLite-Datenbankdatei zur Verfügung:
 
--   **Firefox-Erweiterung für SQLite Manager** &ndash; funktioniert auf Mac und Windows und erstellt Dateien, die mit iOS und Android kompatibel sind.
+- **SQLite Manager Firefox-Erweiterung** &ndash; Funktioniert unter Mac und Windows und erzeugt Dateien, die mit IOS und Android kompatibel sind.
 
--   **Über die Befehlszeile** &ndash; finden Sie unter [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
+- **Befehlszeile** Siehe [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) . &ndash;
 
-Wenn Sie eine Datei für die Verteilung mit Ihrer app zu erstellen, achten Sie mit der Benennung von Tabellen und Spalten, stellen Sie sicher, was Ihr Code erwartet, sie übereinstimmen, insbesondere dann, wenn Sie von SQLite.NET verwenden, der erwartet die Namen Ihrer c#-Klassen und Eigenschaften übereinstimmen (oder die benutzerdefinierte Attribute) zugeordnet.
+Wenn Sie eine Datenbankdatei für die Verteilung mit Ihrer APP erstellen, achten Sie darauf, dass Tabellen und Spalten benannt werden, um sicherzustellen, dass Sie mit den Anforderungen Ihres Codes identisch sind. Dies gilt insbesondere, C# Wenn Sie sqlite.NET verwenden, der davon ausgeht, dass die Namen der Klassen und Eigenschaften entsprechen oder die zugeordneten benutzerdefinierten Attribute).
 
-Um sicherzustellen, dass Code vor allem anderen in Ihrer Android-app ausgeführt wird, kann man diese in der ersten Aktivität geladen, oder erstellen eine `Application` Unterklasse, die vor der Aktivitäten geladen wird. Der folgende Code zeigt eine `Application` Unterklasse, die eine vorhandenen Datenbankdatei kopiert **data.sqlite** aus der **Systemablagen/Raw/** Verzeichnis.
+Um sicherzustellen, dass Code vor anderen in Ihrer Android-App ausgeführt wird, können Sie ihn in der ersten zu ladenden Aktivität platzieren, oder `Application` Sie können eine Unterklasse erstellen, die vor Aktivitäten geladen wird. Der folgende Code zeigt eine `Application` Unterklasse, die eine vorhandene Datenbankdatei **Data. sqlite** aus dem Verzeichnis **/Resources/RAW/** kopiert.
 
 ```csharp
 [Application]
@@ -138,6 +138,6 @@ public class YourAndroidApp : Application {
 ## <a name="related-links"></a>Verwandte Links
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Rezepte für Android-Daten](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)
+- [DataAccess (erweitert) (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android-Daten Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
+- [Xamarin. Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)

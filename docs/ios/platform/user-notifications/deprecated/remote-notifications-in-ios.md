@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 143dd8c5ad2e762235641680e1217a11e1b48bb5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c707cb1afb774d73be7ea441695b88920489eb5f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651322"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528764"
 ---
 # <a name="push-notifications-in-ios"></a>Pushbenachrichtigungen in ios
 
@@ -32,24 +32,24 @@ Apple unterhält zwei Umgebungen von APNs: einen *Sandkasten* und eine *Produkti
 
 Für die Pushbenachrichtigung müssen die folgenden Regeln beachtet werden, die von der Architektur der APNs vorgegeben werden:
 
--  **256 Byte-Nachrichten Limit** : die gesamte Nachrichtengröße der Benachrichtigung darf nicht mehr als 256 Byte betragen.
--  **Keine bestätigungsbestätigung** -APNs stellt dem Absender keine Benachrichtigung bereit, dass eine Nachricht ihn an den beabsichtigten Empfänger gerichtet hat. Wenn das Gerät nicht erreichbar ist und mehrere sequenzielle Benachrichtigungen gesendet werden, gehen alle Benachrichtigungen außer den letzten Benachrichtigungen verloren. Nur die aktuelle Benachrichtigung wird an das Gerät übermittelt.
--  **Jede Anwendung erfordert ein sicheres Zertifikat** : die Kommunikation mit APNs muss über SSL erfolgen.
+- **256 Byte-Nachrichten Limit** : die gesamte Nachrichtengröße der Benachrichtigung darf nicht mehr als 256 Byte betragen.
+- **Keine bestätigungsbestätigung** -APNs stellt dem Absender keine Benachrichtigung bereit, dass eine Nachricht ihn an den beabsichtigten Empfänger gerichtet hat. Wenn das Gerät nicht erreichbar ist und mehrere sequenzielle Benachrichtigungen gesendet werden, gehen alle Benachrichtigungen außer den letzten Benachrichtigungen verloren. Nur die aktuelle Benachrichtigung wird an das Gerät übermittelt.
+- **Jede Anwendung erfordert ein sicheres Zertifikat** : die Kommunikation mit APNs muss über SSL erfolgen.
 
 
 ## <a name="creating-and-using-certificates"></a>Erstellen und Verwenden von Zertifikaten
 
 Für jede der im vorherigen Abschnitt erwähnten Umgebungen ist ein eigenes Zertifikat erforderlich. In diesem Abschnitt wird erläutert, wie Sie ein Zertifikat erstellen, einem Bereitstellungs Profil zuordnen und dann ein persönliches Informationsaustausch Zertifikat für die Verwendung mit pushsharp erhalten.
 
-1.  Wechseln Sie zum Erstellen von Zertifikaten zum IOS-Bereitstellungs Portal auf der Apple-Website, wie im folgenden Screenshot gezeigt (Beachten Sie das Menü Element App-IDs auf der linken Seite):
+1. Wechseln Sie zum Erstellen von Zertifikaten zum IOS-Bereitstellungs Portal auf der Apple-Website, wie im folgenden Screenshot gezeigt (Beachten Sie das Menü Element App-IDs auf der linken Seite):
 
     [![](remote-notifications-in-ios-images/image5new.png "Das IOS-Bereitstellungs Portal auf der Apple-Website")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
-2.  Navigieren Sie als nächstes zum Abschnitt der APP-ID, und erstellen Sie eine neue APP-ID, wie im folgenden Screenshot zu sehen:
+2. Navigieren Sie als nächstes zum Abschnitt der APP-ID, und erstellen Sie eine neue APP-ID, wie im folgenden Screenshot zu sehen:
 
     [![](remote-notifications-in-ios-images/image6new.png "Navigieren Sie zum Abschnitt App-IDs, und erstellen Sie eine neue APP-ID.")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  Wenn Sie auf die **+** Schaltfläche klicken, können Sie die Beschreibung und einen Bündel Bezeichner für die APP-ID eingeben, wie im folgenden Screenshot zu sehen:
+3. Wenn Sie auf die **+** Schaltfläche klicken, können Sie die Beschreibung und einen Bündel Bezeichner für die APP-ID eingeben, wie im folgenden Screenshot zu sehen:
 
     [![](remote-notifications-in-ios-images/image7new.png "Geben Sie die Beschreibung und einen Bündel Bezeichner für die APP-ID ein.")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
@@ -63,7 +63,7 @@ Für jede der im vorherigen Abschnitt erwähnten Umgebungen ist ein eigenes Zert
 
     [![](remote-notifications-in-ios-images/image9new.png "Registrierung der neuen APP-ID bestätigen")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-7.  Als nächstes müssen Sie das Zertifikat für die APP-ID erstellen. Navigieren Sie im linken Navigationsbereich zu **Zertifikate > alle** , und wählen Sie `+` die Schaltfläche aus, wie im folgenden Screenshot zu sehen:
+7. Als nächstes müssen Sie das Zertifikat für die APP-ID erstellen. Navigieren Sie im linken Navigationsbereich zu **Zertifikate > alle** , und wählen Sie `+` die Schaltfläche aus, wie im folgenden Screenshot zu sehen:
 
     [![](remote-notifications-in-ios-images/image10new.png "Erstellen Sie das Zertifikat für die APP-ID.")](remote-notifications-in-ios-images/image8.png#lightbox)
 
@@ -75,24 +75,24 @@ Für jede der im vorherigen Abschnitt erwähnten Umgebungen ist ein eigenes Zert
 
     [![](remote-notifications-in-ios-images/image12new.png "Wählen Sie die soeben erstellte neue APP-ID aus.")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-10.  Dadurch werden Anweisungen angezeigt, die Sie durch die Erstellung einer *Zertifikat Signier Anforderung* mithilfe der **Keychain-Zugriffs** Anwendung auf Ihrem Mac führen.
+10. Dadurch werden Anweisungen angezeigt, die Sie durch die Erstellung einer *Zertifikat Signier Anforderung* mithilfe der **Keychain-Zugriffs** Anwendung auf Ihrem Mac führen.
 
-11.  Nachdem das Zertifikat erstellt wurde, muss es als Teil des Buildprozesses zum Signieren der Anwendung verwendet werden, damit es bei APNs registriert werden kann. Hierfür muss ein Bereitstellungs Profil erstellt und installiert werden, von dem das Zertifikat verwendet wird.
+11. Nachdem das Zertifikat erstellt wurde, muss es als Teil des Buildprozesses zum Signieren der Anwendung verwendet werden, damit es bei APNs registriert werden kann. Hierfür muss ein Bereitstellungs Profil erstellt und installiert werden, von dem das Zertifikat verwendet wird.
 
-12.  Um ein Entwicklungs Bereitstellungs Profil zu erstellen, navigieren Sie zum Abschnitt **Bereitstellungs profile** , und befolgen Sie die Schritte zum Erstellen, indem Sie die soeben erstellte APP-ID verwenden.
+12. Um ein Entwicklungs Bereitstellungs Profil zu erstellen, navigieren Sie zum Abschnitt **Bereitstellungs profile** , und befolgen Sie die Schritte zum Erstellen, indem Sie die soeben erstellte APP-ID verwenden.
 
-13.  Nachdem Sie das Bereitstellungs Profil erstellt haben, öffnen Sie den **Xcode-Planer** , und aktualisieren Sie ihn. Wenn das von Ihnen erstellte Bereitstellungs Profil nicht angezeigt wird, ist es möglicherweise erforderlich, das Profil aus dem IOS-Bereitstellungs Portal herunterzuladen und manuell zu importieren. Der folgende Screenshot zeigt ein Beispiel für den Planer mit dem hinzugefügten Bereitstellungs Profil:  
+13. Nachdem Sie das Bereitstellungs Profil erstellt haben, öffnen Sie den **Xcode-Planer** , und aktualisieren Sie ihn. Wenn das von Ihnen erstellte Bereitstellungs Profil nicht angezeigt wird, ist es möglicherweise erforderlich, das Profil aus dem IOS-Bereitstellungs Portal herunterzuladen und manuell zu importieren. Der folgende Screenshot zeigt ein Beispiel für den Planer mit dem hinzugefügten Bereitstellungs Profil:  
     [![](remote-notifications-in-ios-images/image13new.png "Dieser Screenshot zeigt ein Beispiel für den Planer, bei dem das Bereitstellungs Profil hinzugefügt wurde.")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-14.  An diesem Punkt müssen Sie das xamarin. IOS-Projekt so konfigurieren, dass dieses neu erstellte Bereitstellungs Profil verwendet wird. Dies erfolgt über das Dialogfeld " **Projektoptionen** " unter der Registerkarte " **IOS Bundle Signing** " (so wie im folgenden Screenshot gezeigt):  
+14. An diesem Punkt müssen Sie das xamarin. IOS-Projekt so konfigurieren, dass dieses neu erstellte Bereitstellungs Profil verwendet wird. Dies erfolgt über das Dialogfeld " **Projektoptionen** " unter der Registerkarte " **IOS Bundle Signing** " (so wie im folgenden Screenshot gezeigt):  
     [![](remote-notifications-in-ios-images/image11.png "Konfigurieren des xamarin. IOS-Projekts für die Verwendung dieses neu erstellten Bereitstellungs Profils")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 An diesem Punkt ist die Anwendung für die Verwendung von Pushbenachrichtigungen konfiguriert. Mit dem Zertifikat sind jedoch noch einige weitere Schritte erforderlich. Dieses Zertifikat weist das Format "der" auf, das nicht mit pushsharp kompatibel ist, das ein Zertifikat für den persönlichen Informationsaustausch (PKCS12) erfordert. Um das Zertifikat so zu konvertieren, dass es von pushsharp verwendet werden kann, führen Sie die folgenden abschließenden Schritte aus:
 
-1.  **Herunterladen der Zertifikat Datei** : Melden Sie sich beim IOS-Bereitstellungs Portal an, wählen Sie die Registerkarte Zertifikate aus, wählen Sie das Zertifikat aus, das dem richtigen Bereitstellungs Profil zugeordnet ist, und wählen **Sie**
-1.  **Öffnen des Keychain-Zugriffs** : diese Anwendung ist eine GUI-Schnittstelle für das Kennwort-Verwaltungssystem in OS X.
-1.  **Zertifikat importieren** : Wenn das Zertifikat nicht bereits installiert ist, wird die **Datei... Importieren Sie Elemente** aus dem Menü Keychain-Zugriff. Navigieren Sie zum Zertifikat, das Sie zuvor exportiert haben, und wählen Sie es aus.
-1.  **Exportieren des Zertifikats** : Erweitern Sie das Zertifikat, damit der zugehörige private Schlüssel sichtbar ist, klicken Sie mit der rechten Maustaste auf den Schlüssel, und wählen Sie exportieren aus. Sie werden aufgefordert, einen Dateinamen und ein Kennwort für die exportierte Datei einzugeben.
+1. **Herunterladen der Zertifikat Datei** : Melden Sie sich beim IOS-Bereitstellungs Portal an, wählen Sie die Registerkarte Zertifikate aus, wählen Sie das Zertifikat aus, das dem richtigen Bereitstellungs Profil zugeordnet ist, und wählen **Sie**
+1. **Öffnen des Keychain-Zugriffs** : diese Anwendung ist eine GUI-Schnittstelle für das Kennwort-Verwaltungssystem in OS X.
+1. **Zertifikat importieren** : Wenn das Zertifikat nicht bereits installiert ist, wird die **Datei... Importieren Sie Elemente** aus dem Menü Keychain-Zugriff. Navigieren Sie zum Zertifikat, das Sie zuvor exportiert haben, und wählen Sie es aus.
+1. **Exportieren des Zertifikats** : Erweitern Sie das Zertifikat, damit der zugehörige private Schlüssel sichtbar ist, klicken Sie mit der rechten Maustaste auf den Schlüssel, und wählen Sie exportieren aus. Sie werden aufgefordert, einen Dateinamen und ein Kennwort für die exportierte Datei einzugeben.
 
 An diesem Punkt werden Zertifikate erstellt. Wir haben ein Zertifikat erstellt, das zum Signieren von IOS-Anwendungen verwendet wird, und dieses Zertifikat in ein Format konvertiert, das in einer Serveranwendung mit pushsharp verwendet werden kann. Im nächsten Abschnitt sehen wir uns an, wie IOS-Anwendungen mit APNs interagieren.
 

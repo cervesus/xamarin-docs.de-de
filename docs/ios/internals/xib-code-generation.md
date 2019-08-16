@@ -1,93 +1,93 @@
 ---
-title: XIB-Codegenerierung in Xamarin.iOS
-description: In diesem Dokument wird beschrieben, wie Code zum XIB-Dateien zum Zuordnen von Xamarin.iOS generiert C#, wodurch visuelle Steuerelemente programmgesteuert zugegriffen werden kann.
+title: XIb-Code Generierung in xamarin. IOS
+description: In diesem Dokument C#wird beschrieben, wie xamarin. IOS Code generiert, um XIb-Dateien zuzuordnen. Dadurch können visuelle Steuerelemente Programm gesteuert zugänglich gemacht werden.
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 57988374b4383f5659e29edff3834958b8f99f1b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 280802adbb5326854b4d47045bbb1569dd123f30
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035911"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527329"
 ---
-# <a name="xib-code-generation-in-xamarinios"></a>XIB-Codegenerierung in Xamarin.iOS
+# <a name="xib-code-generation-in-xamarinios"></a>XIb-Code Generierung in xamarin. IOS
 
 > [!IMPORTANT]
->  Dieses Dokument erläutert die Visual Studio für Mac-Integration mit nur Interface Builder von Xcode wie Aktionen und Ergebnisdaten nicht in der Xamarin-Designer für iOS verwendet werden. Weitere Informationen zu den iOS-Designer, finden Sie in der [iOS-Designer](~/ios/user-interface/designer/index.md) Dokument.
+>  In diesem Dokument wird die Integration von Visual Studio für Mac in xInterface Builder Code nur erläutert, da im Xamarin Designer für IOS keine Aktionen und Outlets verwendet werden. Weitere Informationen zum IOS-Designer finden Sie im IOS- [Designer](~/ios/user-interface/designer/index.md) -Dokument.
 
-Das Apple Interface Builder-Tool ("IB") kann verwendet werden, um Benutzeroberflächen visuell zu entwerfen. In die Schnittstellendefinitionen IB erstellt gespeichert **XIB** Dateien. Widgets und anderen Objekten im **XIB** Dateien können ein "-Klasse Identity", die möglicherweise einen benutzerdefinierten Typ für eine benutzerdefinierte zugewiesen werden. Dadurch können Sie zum Anpassen des Verhaltens von Widgets und benutzerdefinierte Widgets zu schreiben.
+Das Apple Interface Builder Tool ("IB") kann zum visuellen Entwerfen von Benutzeroberflächen verwendet werden. Die von IB erstellten Schnittstellendefinitionen werden in **XIb** -Dateien gespeichert. Widgets und andere Objekte in **XIb** -Dateien können eine "klassenidentität" erhalten, bei der es sich um einen benutzerdefinierten Typ handeln kann. Auf diese Weise können Sie das Verhalten von Widgets anpassen und benutzerdefinierte Widgets schreiben.
 
-Diese Benutzerklassen ist normalerweise eine Unterklasse der UI-Controller-Klassen. Sie haben *Outlets* (analog zu den Eigenschaften) und *Aktionen* (analog zu den Ereignissen), können Objekte der Benutzeroberfläche verbunden werden. Zur Laufzeit Wenn die IB-Datei geladen wird, die Objekte werden erstellt, und die Outlets und Aktionen dynamisch mit den verschiedenen UI-Objekte verbunden sind. Wenn Sie diese verwalteten Klassen zu definieren, müssen Sie definieren alle Aktionen und Ergebnisdaten, die mit den Werten übereinstimmen, die IB erwartet. Visual Studio für Mac verwendet eine CodeBehind-Modell, um dies zu vereinfachen. Dies ist vergleichbar mit der Funktionsweise von Xcode für Objective-C, aber die Generation Codemodell und Konventionen für .NET-Entwickler vertrauter werden optimiert wurde.
+Diese Benutzer Klassen sind normalerweise Unterklassen von UI-Controller Klassen. Sie verfügen über *Outlets* (analog zu Eigenschaften) und *Aktionen* (analog zu Ereignissen), die mit Schnittstellen Objekten verbunden werden können. Wenn die IB-Datei geladen wird, werden die Objekte zur Laufzeit erstellt, und die Outlets und Aktionen werden dynamisch mit den verschiedenen UI-Objekten verbunden. Wenn Sie diese verwalteten Klassen definieren, müssen Sie alle Aktionen und Outlets definieren, damit Sie mit den von IB erwarteten Aktionen identisch sind. In Visual Studio für Mac wird ein Code Behind-ähnliches Modell verwendet, um dies zu vereinfachen. Dies ähnelt der Vorgehensweise von Xcode für "Ziel-C", aber das Code Generierungs Modell und die Konventionen wurden optimiert, um .NET-Entwicklern besser vertraut zu sein.
 
-Arbeiten mit **XIB** Dateien wird derzeit nicht unterstützt in Xamarin.iOS für Visual Studio.
+Das Arbeiten mit **XIb** -Dateien wird in xamarin. IOS für Visual Studio derzeit nicht unterstützt.
 
-## <a name="xib-files-and-custom-classes"></a>XIB-Dateien und benutzerdefinierte Klassen
+## <a name="xib-files-and-custom-classes"></a>XIb-Dateien und benutzerdefinierte Klassen
 
-Sowie die Verwendung von vorhandener Typen von Cocoa Touch, es ist möglich, Definieren von benutzerdefinierten Typen in **XIB** Dateien. Es ist auch möglich, Typen zu verwenden, die in anderen definiert sind **XIB** Dateien oder ausschließlich in definierten C# Code. Interface Builder ist derzeit nicht über die Details der Typen, die außerhalb des aktuellen definiert **XIB** Datei, sodass es nicht auflisten oder ihrer benutzerdefinierten Outlets und Aktionen anzeigen. Entfernen diese Einschränkung ist für einige Zeit in der Zukunft geplant.
+Ebenso wie die Verwendung vorhandener Typen aus Cocoa berühren ist es möglich, benutzerdefinierte Typen in **XIb** -Dateien zu definieren. Es ist auch möglich, Typen zu verwenden, die in anderen **XIb** -Dateien definiert oder ausschließlich im C# Code definiert sind. Derzeit sind Interface Builder die Details von Typen, die außerhalb der aktuellen **XIb** -Datei definiert sind, nicht bekannt, sodass Sie nicht aufgelistet werden oder Ihre benutzerdefinierten Outlets und Aktionen nicht anzeigen. Das Entfernen dieser Einschränkung ist für einen späteren Zeitpunkt geplant.
 
-Benutzerdefinierte Klassen definiert werden können, einem **XIB** Datei mithilfe des Befehls "Unterklasse hinzufügen" auf der Registerkarte "Klassen" Interface Builder. Wir bezeichnen diese als "CodeBehind"-Klassen. Wenn die **XIB** Datei hat eine ". xib.designer.cs" welcher Datei im Projekt, klicken Sie dann Visual Studio für Mac füllt er automatisch mit partiellen Klassendefinitionen für alle benutzerdefinierten Klassen in der **XIB**. Wir bezeichnen diese partiellen Klassen als "Designer Classes".
+Benutzerdefinierte Klassen können in einer **XIb** -Datei mithilfe des Befehls "Unterklasse hinzufügen" auf der Registerkarte "Klassen" der Interface Builder definiert werden. Diese werden als "Code Behind"-Klassen bezeichnet. Wenn die **XIb** -Datei im Projekt eine ". XIb.Designer.cs"-Entsprechung enthält, wird Sie von Visual Studio für Mac automatisch mit partiellen Klassendefinitionen für alle benutzerdefinierten Klassen in der **XIb**-Datei aufgefüllt. Diese partiellen Klassen werden als "Designer Klassen" bezeichnet.
 
 ## <a name="generating-code"></a>Generieren von Code
 
-Für alle  **{0}XIB** -Datei mit einer Buildaktion von *Seite*, wenn eine  **{0}. xib.designer.cs** Datei auch im Visual Studio für Mac-Projekt vorhanden ist Generieren von partiellen Klassen werden in der Designerdatei für alle Benutzerklassen sie in finden der **XIB** Datei mit Eigenschaften für die Outlets und partielle Methoden für alle Aktionen. Generierung von Code ist einfach durch das Vorhandensein dieser Datei aktiviert.
+Wenneine  **{0}** **. XIb.Designer.cs-Datei im Projekt vorhanden ist, werden für jede XIb-Datei mit einer Buildaktion der Seite in der Designer Datei Visual Studio für Mac partielle Klassen für alle Benutzer Klassen generiert. {0}** kann in der **XIb** -Datei mit den Eigenschaften für die Outlets und partielle Methoden für alle Aktionen suchen. Die Code Generierung wird einfach durch das vorhanden sein dieser Datei ermöglicht.
 
-Die Designer-Datei wird automatisch aktualisiert, wenn die **XIB** Datei von Änderungen und Visual Studio für Mac den Fokus erhält wieder. Die Designer-Datei sollte nicht manuell geändert werden, da Änderungen auf die Datei überschrieben nächsten Visual Studio für Mac-Updates werden können.
+Die Designer Datei wird automatisch aktualisiert, wenn sich die **XIb** -Datei ändert, und Visual Studio für Mac den Fokus erhält. Die Designer Datei sollte nicht manuell geändert werden, da Änderungen das nächste Mal überschrieben werden, Visual Studio für Mac die Datei aktualisiert wird.
 
 ## <a name="registration-and-namespaces"></a>Registrierung und Namespaces
 
-Visual Studio für Mac generiert die Designer-Klassen mit Standardnamespace des Projekts, für den Designer-Datei an, um es mit normalen .NET Projekt Namespacing konsistent zu machen. Der Namespace des Designer-Dateien wird durch den Namespace des Projekts"Standard" und die zugehörigen Einstellungen "Die .NET-Benennung befolgen Richtlinien" gesteuert. Beachten Sie, dass wenn Standardnamespace des Projekts ändert, MD werden die Klassen neu in den neuen Namespace, generieren damit Sie finden können, dass Ihre partiellen Klassen nicht mehr übereinstimmen.
+Visual Studio für Mac generiert die Designer Klassen mithilfe des Standard Namespace des Projekts für den Datei Speicherort des Designers, um ihn mit dem normalen .net-Projekt Namespace konsistent zu machen. Der Namespace der Designer Dateien wird durch den "Standard Namespace" des Projekts und seine ".net Naming Policies"-Einstellungen gesteuert. Wenn sich der Standard Namespace des Projekts ändert, werden die Klassen im neuen Namespace von MD erneut generiert, sodass Sie möglicherweise feststellen, dass die partiellen Klassen nicht mehr zueinander passen.
 
-Um die Klasse von der Objective-C-Laufzeit erkennbar zu machen, Visual Studio für Mac gilt eine `[Register (name)]` -Attribut der Klasse. Obwohl Sie automatisch registriert, Xamarin.iOS `NSObject`-abgeleitete Klassen, er verwendet den vollqualifizierten Namen von .NET. Das Attribut angewendet, indem Sie Visual Studio für Mac diese, um sicherzustellen, dass jede Klasse überschrieben wird registriert, mit dem Namen verwendet werden, der **XIB** Datei. Wenn Sie benutzerdefinierte Klassen in IB verwenden, ohne Visual Studio für Mac-Designer-Dateien zu generieren, müssen Sie möglicherweise manuell, um Ihre verwalteten Klassen, die auf die erwartete Objective-C-Klassennamen übereinstimmen, anwenden.
+Um die Klasse durch die Ziel-C-Laufzeit auffallen zu machen, wendet `[Register (name)]` Visual Studio für Mac ein-Attribut auf die-Klasse an. Obwohl xamarin. IOS automatisch von `NSObject`abgeleitete Klassen registriert, werden die voll qualifizierten .net-Namen verwendet. Das von Visual Studio für Mac angewendete-Attribut überschreibt dieses, um sicherzustellen, dass jede Klasse mit dem in der **XIb** -Datei verwendeten Namen registriert wird. Wenn Sie benutzerdefinierte Klassen in IB verwenden, ohne Visual Studio für Mac zum Generieren von Designer Dateien zu verwenden, müssen Sie dies möglicherweise manuell anwenden, damit die verwalteten Klassen den erwarteten Ziel-C-Klassennamen entsprechen.
 
-Klassen können nicht definiert werden, in mehr als einer **XIB**, oder sie werden in Konflikt stehen.
+Klassen können nicht in mehr als einer **. XIb**definiert werden, oder Sie verursachen einen Konflikt.
 
-## <a name="non-designer-class-parts"></a>Klassenteile von nicht-Designer
+## <a name="non-designer-class-parts"></a>Nicht-Designer-Klassen Teile
 
-Designer partielle Klassen sollen nicht als verwendet werden – ist. Outlets sind privat, und keine Basisklasse angegeben ist. Es wird erwartet, dass jede Klasse eine entsprechende "nicht-Designer"-Klasse Teil in einer anderen Datei, die legt der Basisklasse der Klasse gewährt wird, verwendet oder macht die Outlets und Konstruktoren, die erforderlich sind, um die Klasse von nativem Code zu instanziieren, beim Laden der definiert**XIB**. Der Standardwert **XIB** Vorlagen hierzu allerdings für zusätzlichen benutzerdefinierte Klassen definieren Sie in einem **XIB**, müssen Sie das Webpart nicht-Designer manuell hinzufügen.
+Die partiellen Klassen des Designers sind nicht für die Verwendung ohne die Verwendung vorgesehen. Outlets sind privat, und es wird keine Basisklasse angegeben. Es wird erwartet, dass jede Klasse einen entsprechenden "Non-Designer"-Klassen Teil in einer anderen Datei hat, die die Basisklasse festlegt, die Outlets verwendet oder verfügbar macht, und definiert Konstruktoren, die zum Instanziieren der Klasse aus nativem Code beim Laden von **XIb erforderlich sind.** . Dies wird in den Vorlagen für "Default **. XIb** " durchführen, aber für alle zusätzlichen benutzerdefinierten Klassen, die Sie in einer **XIb**definieren, müssen Sie den nicht-Designer-Teil manuell hinzufügen.
 
-Der Grund dafür ist die Notwendigkeit der Flexibilität. Z. B. mehrere CodeBehind-Klassen Unterklasse, die eine allgemeine abstrakte Klasse, die Unterklassen die Klasse als Unterklasse definiert werden, indem IB verwaltet.
+Der Grund hierfür ist die Notwendigkeit der Flexibilität. Beispielsweise können mehrere Code Behind-Klassen eine gemeinsame verwaltete abstrakte Klasse Unterklassen Unterklassen aufweisen, die die Klasse Unterklassen von IB Unterklassen unterordnen.
 
-Regel werden diese fügen Sie in einem  **{0}. xib.cs** Datei neben den  **{0}. xib.designer.cs** Designer-Datei.
+Diese Dateien werden in einer  **{0}XIb.cs** -Datei neben der  **{0}XIb.Designer.cs** -Designer-Datei gespeichert.
 
 <a name="generated" />
 
-## <a name="generated-actions-and-outlets"></a>Generierte Aktionen und Ergebnisdaten
+## <a name="generated-actions-and-outlets"></a>Generierte Aktionen und Outlets
 
-In den Designer partiellen Klassen generiert Visual Studio für Mac über Eigenschaften, die für alle verbundenen Outlets IB und partielle Methoden, die für alle verbundenen Aktionen definiert.
+In den partiellen Designer Klassen generiert Visual Studio für Mac Eigenschaften, die den in IB definierten verbundenen Outlets entsprechen, sowie partielle Methoden, die allen verbundenen Aktionen entsprechen.
 
 ### <a name="outlet-properties"></a>Outlet-Eigenschaften
 
-Designer-Klassen enthalten Eigenschaften, die alle Outlets für die benutzerdefinierte Klasse definiert. Die Tatsache, dass diese Eigenschaften sind ist ein Implementierungsdetail der xamarin.IOS Objective-C-Bridge, um eine verzögerte Bindung ermöglichen. Sie sollten diese äquivalent auf private Felder, die nur aus der CodeBehind-Klasse verwendet werden soll. Wenn Sie diese öffentlich machen möchten, fügen Sie Accessoreigenschaften mit dem Webpart nicht-Designer-Klasse, wie bei anderen privaten Feldern.
+Designer Klassen enthalten Eigenschaften, die allen in der benutzerdefinierten Klasse definierten Outlets entsprechen. Die Tatsache, dass es sich hierbei um Eigenschaften handelt, ist ein Implementierungsdetail der xamarin. IOS-zu-Ziel-C-Bridge zum Aktivieren der verzögerten Bindung. Beachten Sie, dass Sie den privaten Feldern entsprechen, die nur von der Code Behind-Klasse verwendet werden sollen. Wenn Sie diese öffentlich machen möchten, fügen Sie dem nicht-Designer-Klassen Teil Accessoreigenschaften hinzu, wie es für jedes andere private Feld der Fall wäre.
 
-Wenn Outlet Eigenschaften definiert sind, damit ein `id` (Äquivalent zu `NSObject`) und dann der Designer-Code-Generator derzeit die stärksten möglich Typs auf Grundlage der Objekte an, an, der Einfachheit halber verbunden bestimmt.
-Allerdings kann dies nicht in zukünftigen Versionen unterstützt werden daher wird empfohlen, dass Sie explizit stark der Outlets eingeben, wenn Sie die benutzerdefinierte Klasse zu definieren.
+Wenn die Outlet-Eigenschaften so definiert sind, dass `id` Sie einen Typ `NSObject`von haben (äquivalent zu), bestimmt der Designer Code Generator aktuell den höchstmöglichen Typ auf der Grundlage von Objekten, die mit diesem Outlet verbunden sind.
+Dies wird jedoch in zukünftigen Versionen möglicherweise nicht unterstützt. Daher wird empfohlen, dass Sie die Outlets beim Definieren der benutzerdefinierten Klasse explizit eingeben.
 
-### <a name="action-properties"></a>Aktionseigenschaften
+### <a name="action-properties"></a>Aktions Eigenschaften
 
-Designerklassen enthalten partielle Methoden, die für alle Aktionen, die für die benutzerdefinierte Klasse definiert. Hierbei handelt es sich um Methoden ohne Implementierung. Die partiellen Methoden wird zwei:
+Designer Klassen enthalten partielle Methoden, die allen Aktionen entsprechen, die für die benutzerdefinierte Klasse definiert sind. Dabei handelt es sich um Methoden ohne Implementierung. Der Zweck der partiellen Methoden ist zweierlei:
 
-1.  Wenn Sie eingeben `partial` im Text des Parts nicht-Designer-Klasse, Visual Studio für Mac bietet automatisch vervollständigt die Signaturen aller nicht implementierte partielle Methoden.
-2.  Die partielle Methodensignaturen haben ein Attribut angewendet, die sie in der Objective-C-Welt verfügbar macht, damit sie als die entsprechende Aktion verarbeitet abrufen können.
+1. Wenn Sie den `partial` Klassen Text des nicht-Designer-Klassen Teils eingeben, bietet Visual Studio für Mac die automatische Vervollständigung der Signaturen aller nicht implementierten partiellen Methoden.
+2. Die partiellen Methoden Signaturen verfügen über ein angewendetes Attribut, das Sie für die Ziel-C-Welt verfügbar macht, sodass Sie als die entsprechende Aktion behandelt werden können.
 
 
-Wenn Sie möchten, können Sie ignorieren partielle Methode, und implementieren die Aktion durch Anwenden des Attributs auf eine andere Methode oder, damit sie sich auf eine Basisklasse fortfahren.
+Wenn Sie möchten, können Sie die partielle-Methode ignorieren und die-Aktion implementieren, indem Sie das-Attribut auf eine andere Methode anwenden oder das Attribut auf eine Basisklasse durchlaufen lassen.
 
-Wenn die Aktionen definiert werden, damit ein Sender `id` (entspricht `NSObject`), und klicken Sie dann die Designer-Code-Generator derzeit stärksten möglich basierend auf Objekten, die mit dieser Aktion verbunden Fensterart hängt es. Allerdings kann dies nicht in zukünftigen Versionen unterstützt werden daher wird empfohlen, dass Sie die Aktionen explizit stark eingeben, wenn Sie die benutzerdefinierte Klasse zu definieren.
+Wenn Aktionen so definiert sind, dass Sie den Absendertyp `id` aufweisen (äquivalent zu `NSObject`), bestimmt der Designer Code Generator aktuell den höchstmöglichen Typ auf der Grundlage von Objekten, die mit dieser Aktion verbunden sind. Dies wird jedoch in zukünftigen Versionen möglicherweise nicht unterstützt. Daher empfiehlt es sich, die Aktionen beim Definieren der benutzerdefinierten Klasse explizit zu eingeben.
 
-Beachten Sie, die diese partiellen Methoden, nur für erstellt werden C#, da CodeDOM partielle Methoden, nicht unterstützt, sodass sie nicht für andere Sprachen generiert werden.
+Beachten Sie, dass diese partiellen Methoden nur C#für erstellt werden, da CodeDom partielle Methoden nicht unterstützt, sodass Sie nicht für andere Sprachen generiert werden.
 
-## <a name="cross-xib-class-usage"></a>Cross-XIB-Verwendung
+## <a name="cross-xib-class-usage"></a>Verwendung von Cross-XIb-Klassen
 
-In einigen Fällen möchten Benutzer die gleiche Klasse von mehreren verweisen **XIB** -Dateien, z. B. mit der Registerkarte "-Controller. Dies ist möglich durch Verweisen auf die Definition der Klasse von einem anderen explizit **XIB** aus, oder durch Definieren von denselben Klassennamen erneut in der zweiten **XIB**.
+Manchmal möchten Benutzer aus mehreren **XIb** -Dateien, z. b. mit Registerkarten Controllern, auf dieselbe Klasse verweisen. Dies kann durch expliziter Verweis auf die Klassendefinition aus einer anderen **XIb** -Datei oder durch das erneute definieren desselben Klassen namens in der zweiten **. XIb**-Datei erfolgen.
 
-Letzteres kann problematisch sein, weil Visual Studio für Mac-Verarbeitung werden **XIB** Dateien einzeln. Es kann nicht automatisch erkennen und Zusammenführen von doppelten Definitionen, damit erhalten Sie möglicherweise Konflikte, die das Register-Attribut mehrmals anwenden, wenn die gleiche partielle Klasse in mehreren Designer-Dateien definiert ist. Neuere Versionen von Visual Studio für Mac zum Beheben dieses Problems versuchen, aber es kann immer funktioniert nicht wie erwartet. Dies wird in Zukunft wahrscheinlich nicht unterstützt werden, und stattdessen Visual Studio für Mac werden alle in allen definierte Typen **XIB** Dateien und verwalteten Code in das Projekt direkt sichtbar ist, von allen **XIB** Dateien.
+Der letztere Fall kann problematisch sein, da Visual Studio für Mac **XIb** -Dateien einzeln verarbeitet. Doppelte Definitionen können nicht automatisch erkannt und zusammengeführt werden. Daher können Konflikte auftreten, wenn das Register Attribut mehrmals angewendet wird, wenn dieselbe partielle Klasse in mehreren Designer Dateien definiert ist. Die neuesten Versionen von Visual Studio für Mac versuchen, dieses Problem zu beheben, aber es funktioniert möglicherweise nicht immer wie erwartet. In Zukunft wird dies wahrscheinlich nicht mehr unterstützt. stattdessen werden Visual Studio für Mac alle Typen, die in allen **XIb** -Dateien und verwaltetem Code im Projekt definiert sind, direkt aus allen **XIb** -Dateien sichtbar gemacht.
 
 ## <a name="type-resolution"></a>Typauflösung
 
-IB verwendete Typen sind Objective-C-Typnamen. Diese werden mithilfe von Attributen der Register-CLR-Typen zugeordnet. Beim Generieren von Code von outlets und Aktionen wird Visual Studio für Mac die entsprechenden CLR-Typen für alle Objective-C-Typen, die von der Xamarin.iOS-Kern umschlossen beheben, und ihre Namen vollständig qualifizieren.
+Typen, die in IB verwendet werden, sind Ziel-C-Typnamen. Diese werden CLR-Typen durch die Verwendung von Register Attributen zugeordnet. Beim Erstellen von Ausgangs-und Aktions Code werden die entsprechenden CLR-Typen für alle vom xamarin. IOS-Kern umschließenden Ziel-C-Typen von Visual Studio für Mac aufgelöst und deren Typnamen vollständig qualifiziert.
 
-Allerdings kann nicht vom Code-Generator derzeit aufgelöst werden CLR-Typen von Objective-C-Typnamen im Benutzercode oder Bibliotheken, und in solchen Fällen den wörtlichen Namen ausgegeben. Dies bedeutet, dass die entsprechende CLR-Typ muss den gleichen Namen wie der Objective-C-Typ und im selben Namespace wie der Code, der sie verwendet werden. Dies ist geplant, einige Zeit in der Zukunft behoben werden, indem geprüft wird, alle Objective-C-Typen in das Projekt während der codegenerierung.
+Der Code-Generator kann jedoch zurzeit keine CLR-Typen von Ziel-C-Typnamen in Benutzercode oder Bibliotheken auflösen. in solchen Fällen wird daher der Typname wörtlich ausgegeben. Dies bedeutet, dass der entsprechende CLR-Typ den gleichen Namen wie der Ziel-C-Typ aufweisen muss und sich im selben Namespace wie der verwendete Code befinden muss. Dies ist so geplant, dass Sie irgendwann in der Zukunft korrigiert werden, indem Sie während der Codegenerierung alle Ziel-C-Typen im Projekt berücksichtigen.

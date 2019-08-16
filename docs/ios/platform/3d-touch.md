@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 209d70c2e158261ca671e6a889e979de39362d53
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 38d58350cf067a2d5f7813250590cc0715b6c9ea
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647986"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527390"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Einführung in 3D-Fingereingabe in xamarin. IOS
 
@@ -274,11 +274,11 @@ Hier definieren wir zwei statische Elemente für schnelle Aktionen mit den folge
   - `UIApplicationShortcutIconTypeTime`
   - `UIApplicationShortcutIconTypeUpdate`
 
-        ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
+  ![](3d-touch-images/uiapplicationshortcuticontype.png "Uiapplicationshortcuticontype-Bilder")
 
-* `UIApplicationShortcutItemSubtitle`: Definiert den Untertitel für das Element.
-* `UIApplicationShortcutItemTitle`: Definiert den Titel des Elements.
-* `UIApplicationShortcutItemType`-Ist ein Zeichen folgen Wert, der zum Identifizieren des Elements in unserer App verwendet wird. Weitere Informationen finden Sie in folgendem Abschnitt.
+- `UIApplicationShortcutItemSubtitle`: Definiert den Untertitel für das Element.
+- `UIApplicationShortcutItemTitle`: Definiert den Titel des Elements.
+- `UIApplicationShortcutItemType`-Ist ein Zeichen folgen Wert, der zum Identifizieren des Elements in unserer App verwendet wird. Weitere Informationen finden Sie in folgendem Abschnitt.
 
 > [!IMPORTANT]
 > Auf die in der `Info.plist` Datei festgelegten Quick Action-Verknüpfungs Elemente kann nicht mit der `Application.ShortcutItems` -Eigenschaft zugegriffen werden. Sie werden nur an den `HandleShortcutItem` -Ereignishandler übermittelt.

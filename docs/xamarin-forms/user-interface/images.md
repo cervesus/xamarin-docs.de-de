@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 40a44b2748b29b21a1456c55cb75514f18506dd7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d4a3ba0ae860f2e6b42fc4cf349ec1bc8e83979e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648569"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527077"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder in Xamarin.Forms
 
@@ -204,7 +204,7 @@ Verwenden Sie diese Erweiterung hinzufügen ein benutzerdefinierten `xmlns` , di
 
 #### <a name="debugging-code"></a>Debuggen von Code
 
-Da es in einigen Fällen schwer ist zu verstehen, warum eine bestimmte imageressource nicht geladen werden ist, kann die folgenden Debuggen von Code vorübergehend hinzugefügt werden, zu einer Anwendung, um zu bestätigen, dass die Ressourcen korrekt konfiguriert sind. Alle bekannte Ressourcen, die in der angegebenen Assembly eingebettet erfolgt die Ausgabe der <span class="UIItem">Konsole</span> zum Debuggen von Problemen Laden der Ressource.
+Da es in einigen Fällen schwer ist zu verstehen, warum eine bestimmte imageressource nicht geladen werden ist, kann die folgenden Debuggen von Code vorübergehend hinzugefügt werden, zu einer Anwendung, um zu bestätigen, dass die Ressourcen korrekt konfiguriert sind. Alle bekannte Ressourcen, die in der angegebenen Assembly eingebettet erfolgt die Ausgabe der **Konsole** zum Debuggen von Problemen Laden der Ressource.
 
 ```csharp
 using System.Reflection;

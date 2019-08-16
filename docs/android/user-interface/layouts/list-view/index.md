@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 79f97382b6d8bd7875e4921c859f92cd6b321687
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3817a6a111bb8a19248127d3be31a719fac68ba8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646321"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522559"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin. Android-ListView
 
@@ -192,26 +192,26 @@ Führen Sie die Anwendung aus. Folgendes sollte angezeigt werden:
 
 Die verbleibenden Themen (links unten) machen einen umfassenden Einblick in die Arbeit `ListView` mit der-Klasse und die unterschiedlichen Typen von Adapter Typen, die Sie mit der-Klasse verwenden können. Die Struktur lautet wie folgt:
 
--   **Visuelle** Darstellung &ndash; Teile`ListView` des Steuer Elements und ihre Funktionsweise.
+- **Visuelle** Darstellung &ndash; Teile`ListView` des Steuer Elements und ihre Funktionsweise.
 
--   **Klassen** Übersicht über die Klassen, die zum Anzeigen `ListView`eines verwendet werden. &ndash;
+- **Klassen** Übersicht über die Klassen, die zum Anzeigen `ListView`eines verwendet werden. &ndash;
 
--   **Anzeigen von Daten in einem ListView** -Steuer Punkt Hier erfahren Sie, wie Sie eine einfache Liste von Daten anzeigen `ListView's` , wie Sie Verwendbarkeits Features implementieren, wie Sie verschiedene integrierte Zeilen Layouts verwenden und wie Adapter Speicher durch wieder verwenden von Zeilen Ansichten speichern. &ndash;
+- **Anzeigen von Daten in einem ListView** -Steuer Punkt Hier erfahren Sie, wie Sie eine einfache Liste von Daten anzeigen `ListView's` , wie Sie Verwendbarkeits Features implementieren, wie Sie verschiedene integrierte Zeilen Layouts verwenden und wie Adapter Speicher durch wieder verwenden von Zeilen Ansichten speichern. &ndash;
 
--   **Benutzerdefinierte** Darstellung Ändern des Stils `ListView` von mit benutzerdefinierten Layouts, Schriftarten und Farben. &ndash;
+- **Benutzerdefinierte** Darstellung Ändern des Stils `ListView` von mit benutzerdefinierten Layouts, Schriftarten und Farben. &ndash;
 
--   **Verwenden von SQLite** Anzeigen von Daten aus einer SQLite-Datenbank mit einem `CursorAdapter`. &ndash;
+- **Verwenden von SQLite** Anzeigen von Daten aus einer SQLite-Datenbank mit einem `CursorAdapter`. &ndash;
 
--   **Aktivitäts Lebenszyklus** Entwurfs Überlegungen bei `ListView` der Implementierung von Aktivitäten, einschließlich der Art und Weise, in der Sie Ihre Daten auffüllen sollten und wann Ressourcen freigegeben werden sollen. &ndash;
+- **Aktivitäts Lebenszyklus** Entwurfs Überlegungen bei `ListView` der Implementierung von Aktivitäten, einschließlich der Art und Weise, in der Sie Ihre Daten auffüllen sollten und wann Ressourcen freigegeben werden sollen. &ndash;
 
 Die Erörterung (in sechs Teile unterteilt) beginnt mit einer Übersicht `ListView` über die Klasse selbst, bevor Sie progressivere Beispiele zur Verwendung von Beispielen einführt.
 
--   [ListView-Komponenten und -Funktionen](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
--   [Auffüllen von ListView mit Daten](~/android/user-interface/layouts/list-view/populating.md)
--   [Anpassen einer ListView-Darstellung](~/android/user-interface/layouts/list-view/customizing-appearance.md)
--   [Verwenden von CursorAdapters](~/android/user-interface/layouts/list-view/cursor-adapters.md)
--   [Verwenden von ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
--   [ListView und der Aktivitätslebenszyklus](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
+- [ListView-Komponenten und -Funktionen](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
+- [Auffüllen von ListView mit Daten](~/android/user-interface/layouts/list-view/populating.md)
+- [Anpassen einer ListView-Darstellung](~/android/user-interface/layouts/list-view/customizing-appearance.md)
+- [Verwenden von CursorAdapters](~/android/user-interface/layouts/list-view/cursor-adapters.md)
+- [Verwenden von ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
+- [ListView und der Aktivitätslebenszyklus](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
 
 ## <a name="summary"></a>Zusammenfassung

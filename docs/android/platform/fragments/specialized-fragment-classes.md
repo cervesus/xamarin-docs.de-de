@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 67fb12fd66d4d218f6e8bd40e21499e6c07e9e15
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e49f12dd656d5e07feccd34e231a00124d81048a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510590"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524277"
 ---
 # <a name="specialized-fragment-classes"></a>Spezielle Fragmentklassen
 
 Die Fragments-API bietet andere Unterklassen, die einige der gängigeren Funktionen in-Anwendungen Kapseln. Diese Unterklassen sind:
 
--   **Listfragment** &ndash; Dieses Fragment wird verwendet, um eine Liste von Elementen anzuzeigen, die an eine Datenquelle gebunden sind, z. b. ein Array oder einen Cursor.
+- **Listfragment** &ndash; Dieses Fragment wird verwendet, um eine Liste von Elementen anzuzeigen, die an eine Datenquelle gebunden sind, z. b. ein Array oder einen Cursor.
 
--   **Dialogfragment** &ndash; Dieses Fragment wird als Wrapper für ein Dialogfeld verwendet. Das Fragment zeigt das Dialogfeld oberhalb der Aktivität an.
+- **Dialogfragment** &ndash; Dieses Fragment wird als Wrapper für ein Dialogfeld verwendet. Das Fragment zeigt das Dialogfeld oberhalb der Aktivität an.
 
--   **Preferencefragment** &ndash; Dieses Fragment wird verwendet, um Preference-Objekte als Listen anzuzeigen.
+- **Preferencefragment** &ndash; Dieses Fragment wird verwendet, um Preference-Objekte als Listen anzuzeigen.
 
 
 
@@ -91,9 +91,9 @@ Das *dialogfragment* ist ein Fragment, das verwendet wird, um ein Dialog Objekt 
 
 Ein `DialogFragment` stellt sicher, dass der Zustand zwischen dem Fragment und dem Dialogfeld konsistent bleibt. Alle Interaktionen und die Steuerung des Dialog Objekts sollten über die `DialogFragment` API erfolgen und nicht mit direkten Aufrufen des Dialog Objekts. Die `DialogFragment` API stellt jeder Instanz eine `Show()` Methode zur Verfügung, mit der ein Fragment angezeigt wird. Es gibt zwei Möglichkeiten, ein Fragment zu entfernen:
 
--  Ruft `DialogFragment.Dismiss()` für die `DialogFragment` -Instanz auf. 
+- Ruft `DialogFragment.Dismiss()` für die `DialogFragment` -Instanz auf. 
 
--  Einen anderen `DialogFragment`anzeigen.
+- Einen anderen `DialogFragment`anzeigen.
 
 Zum Erstellen eines `DialogFragment`erbt eine Klasse von `Android.App.DialogFragment,` und überschreibt dann eine der folgenden beiden Methoden:
 

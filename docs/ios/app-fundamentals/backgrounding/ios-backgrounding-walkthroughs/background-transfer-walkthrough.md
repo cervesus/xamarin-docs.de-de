@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: fad85eadd819c04d087345c6bf4b5e977c9ec279
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a0c659904be2f6755ff4a32853e141ee8572e839
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656529"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521247"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Hintergrund Übertragung und nsurlsession in xamarin. IOS
 
@@ -52,15 +52,15 @@ Nachdem wir nun eine Hintergrund Sitzung konfiguriert haben, beginnen wir mit de
 
 Eine `NSUrlSessionDelegate` stellt die folgenden grundlegenden Methoden zum Überprüfen des Übertragungs Status bereit:
 
--  *Didfinisheventsforbackgroundsession* : Diese Methode wird aufgerufen, wenn alle Tasks abgeschlossen sind und die Übertragung abgeschlossen ist.
--  *Didreceivechallenge* : wird aufgerufen, um Anmelde Informationen anzufordern, wenn eine Autorisierung erforderlich ist.
--  *Didbecomeinvalidwitherror* : wird aufgerufen, `NSURLSession` wenn das ungültig wird.
+- *Didfinisheventsforbackgroundsession* : Diese Methode wird aufgerufen, wenn alle Tasks abgeschlossen sind und die Übertragung abgeschlossen ist.
+- *Didreceivechallenge* : wird aufgerufen, um Anmelde Informationen anzufordern, wenn eine Autorisierung erforderlich ist.
+- *Didbecomeinvalidwitherror* : wird aufgerufen, `NSURLSession` wenn das ungültig wird.
 
 
 Hintergrund Sitzungen erfordern speziellere Delegaten, abhängig von den Tasks, die ausgeführt werden. Hintergrund Sitzungen sind auf zwei Arten von Aufgaben beschränkt:
 
--  *Aufgaben hochladen* : Aufgaben des Typs `NSUrlSessionUploadTask` verwenden den `NSUrlSessionTaskDelegate` , der von `NSUrlSessionDelegate` erbt. Dieser Delegat stellt zusätzliche Methoden zum Nachverfolgen des uploadfortschritts, zum Verarbeiten der HTTP-Umleitung usw.
--  `NSUrlSessionDownloadDelegate` *Tasks herunterladen* : `NSUrlSessionTaskDelegate` verwenden Sie den, der von erbt. `NSUrlSessionDownloadTask` Dieser Delegat stellt alle Methoden zum Hochladen von Aufgaben sowie Download spezifische Methoden bereit, um den Download Fortschritt zu verfolgen und zu ermitteln, wann eine Download Aufgabe fortgesetzt oder abgeschlossen wurde.
+- *Aufgaben hochladen* : Aufgaben des Typs `NSUrlSessionUploadTask` verwenden den `NSUrlSessionTaskDelegate` , der von `NSUrlSessionDelegate` erbt. Dieser Delegat stellt zusätzliche Methoden zum Nachverfolgen des uploadfortschritts, zum Verarbeiten der HTTP-Umleitung usw.
+- `NSUrlSessionDownloadDelegate` *Tasks herunterladen* : `NSUrlSessionTaskDelegate` verwenden Sie den, der von erbt. `NSUrlSessionDownloadTask` Dieser Delegat stellt alle Methoden zum Hochladen von Aufgaben sowie Download spezifische Methoden bereit, um den Download Fortschritt zu verfolgen und zu ermitteln, wann eine Download Aufgabe fortgesetzt oder abgeschlossen wurde.
 
 
 Der folgende Code definiert einen Task, der zum Herunterladen eines Bilds aus einer URL verwendet werden kann. Wir beginnen mit der Aufgabe, indem `CreateDownloadTask` wir in unserer Hintergrund Sitzung aufrufen und die URL-Anforderung übergeben:

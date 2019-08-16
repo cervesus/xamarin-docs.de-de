@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 360ea18de0c9d30988d63602ba3c17c3d00ed83a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 33d0e87e8823db6bf0fd0bc5541f37bd41b6dcde
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644091"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526248"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Ausführen von Android-Diensten in Remote Prozessen
 
@@ -83,7 +83,7 @@ Um einen Dienst als eigenen Prozess auszuführen, `Process` `ServiceAttribute` m
 
 Die Art des Prozesses, in dem der Dienst ausgeführt wird, hängt vom Wert `Process` der-Eigenschaft ab. Android identifiziert drei verschiedene Arten von Prozessen:
 
--   **Privater Prozess** &ndash; Ein privater Prozess ist ein Dienst, der nur für die Anwendung verfügbar ist, von der er gestartet wurde. Um einen Prozess als privat zu identifizieren, muss der Name **mit einem** Semikolon (Semikolon) beginnen. Der Dienst, der im vorherigen Code Ausschnitt und Screenshot dargestellt wurde, ist ein privater Prozess. Der folgende Code Ausschnitt ist ein Beispiel für `ServiceAttribute`:
+- **Privater Prozess** &ndash; Ein privater Prozess ist ein Dienst, der nur für die Anwendung verfügbar ist, von der er gestartet wurde. Um einen Prozess als privat zu identifizieren, muss der Name mit einem Semikolon (Semikolon) beginnen. Der Dienst, der im vorherigen Code Ausschnitt und Screenshot dargestellt wurde, ist ein privater Prozess. Der folgende Code Ausschnitt ist ein Beispiel für `ServiceAttribute`:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -91,7 +91,7 @@ Die Art des Prozesses, in dem der Dienst ausgeführt wird, hängt vom Wert `Proc
              Exported=true)]
     ```
 
--   **Globaler Prozess** &ndash; Ein Dienst, der in einem globalen Prozess ausgeführt wird, ist für alle Anwendungen verfügbar, die auf dem Gerät ausgeführt werden. Ein globaler Prozess muss ein voll qualifizierter Klassenname sein, der mit einem Kleinbuchstaben beginnt.
+- **Globaler Prozess** &ndash; Ein Dienst, der in einem globalen Prozess ausgeführt wird, ist für alle Anwendungen verfügbar, die auf dem Gerät ausgeführt werden. Ein globaler Prozess muss ein voll qualifizierter Klassenname sein, der mit einem Kleinbuchstaben beginnt.
     (Es sei denn, es werden Schritte zum Sichern des diendienstanbieter durchgeführt. andere Anwendungen können diese binden und damit interagieren. Die Sicherung des Dienstanbieter vor nicht autorisierter Verwendung wird weiter unten in diesem Handbuch erläutert.)
 
     ```csharp
@@ -100,7 +100,7 @@ Die Art des Prozesses, in dem der Dienst ausgeführt wird, hängt vom Wert `Proc
              Exported=true)]
     ```
 
--   **Isolierter Prozess** &ndash; Ein isolierter Prozess ist ein Prozess, der in einem eigenen Sandkasten ausgeführt wird, isoliert vom Rest des Systems und ohne eigene Berechtigungen. Um einen Dienst in einem isolierten Prozess auszuführen, `IsolatedProcess` `ServiceAttribute` wird die-Eigenschaft von auf `true` festgelegt, wie im folgenden Code Ausschnitt gezeigt:
+- **Isolierter Prozess** &ndash; Ein isolierter Prozess ist ein Prozess, der in einem eigenen Sandkasten ausgeführt wird, isoliert vom Rest des Systems und ohne eigene Berechtigungen. Um einen Dienst in einem isolierten Prozess auszuführen, `IsolatedProcess` `ServiceAttribute` wird die-Eigenschaft von auf `true` festgelegt, wie im folgenden Code Ausschnitt gezeigt:
     
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -393,7 +393,7 @@ Da `signature` - `normal` und-Berechtigungen zur installierten Zeit von Android 
 
 Es gibt zwei gängige Möglichkeiten, um einen Dienst mit Android-Berechtigungen zu sichern:
 
-1.  **Implementieren der Sicherheit auf Signatur Ebene** &ndash; Sicherheit auf Signatur Ebene bedeutet, dass den Anwendungen, die mit demselben Schlüssel signiert wurden, der zum Signieren des APK mit dem Dienst verwendet wurde, automatisch Berechtigungen erteilt werden. Dies ist eine einfache Möglichkeit für Entwickler, ihren Dienst zu schützen, aber Sie können Sie über ihre eigenen Anwendungen zugänglich halten. Berechtigungen `ServiceAttribute` auf Signatur Ebene werden deklariert, indem `Permission` die-Eigenschaft des `signature`auf festgelegt wird:
+1. **Implementieren der Sicherheit auf Signatur Ebene** &ndash; Sicherheit auf Signatur Ebene bedeutet, dass den Anwendungen, die mit demselben Schlüssel signiert wurden, der zum Signieren des APK mit dem Dienst verwendet wurde, automatisch Berechtigungen erteilt werden. Dies ist eine einfache Möglichkeit für Entwickler, ihren Dienst zu schützen, aber Sie können Sie über ihre eigenen Anwendungen zugänglich halten. Berechtigungen `ServiceAttribute` auf Signatur Ebene werden deklariert, indem `Permission` die-Eigenschaft des `signature`auf festgelegt wird:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -404,7 +404,7 @@ Es gibt zwei gängige Möglichkeiten, um einen Dienst mit Android-Berechtigungen
     }
     ```
 
-2.  **Erstellen einer benutzerdefinierten Berechtigung** &ndash; Der Entwickler des Dienstanbieter kann eine benutzerdefinierte Berechtigung für den Dienst erstellen. Dies eignet sich am besten für den Fall, dass ein Entwickler seinen Dienst für Anwendungen anderer Entwickler freigeben möchte. Eine benutzerdefinierte Berechtigung erfordert etwas mehr Aufwand für die Implementierung von und wird unten behandelt.
+2. **Erstellen einer benutzerdefinierten Berechtigung** &ndash; Der Entwickler des Dienstanbieter kann eine benutzerdefinierte Berechtigung für den Dienst erstellen. Dies eignet sich am besten für den Fall, dass ein Entwickler seinen Dienst für Anwendungen anderer Entwickler freigeben möchte. Eine benutzerdefinierte Berechtigung erfordert etwas mehr Aufwand für die Implementierung von und wird unten behandelt.
 
 Ein vereinfachtes Beispiel für das Erstellen `normal` einer benutzerdefinierten Berechtigung wird im nächsten Abschnitt beschrieben. Weitere Informationen zu Android-Berechtigungen finden Sie in der Google-Dokumentation, um [bewährte Methoden & Sicherheit](https://developer.android.com/training/articles/security-tips.html)zu erhalten. Weitere Informationen zu Android-Berechtigungen finden Sie im [Abschnitt "Berechtigungen](https://developer.android.com/guide/topics/manifest/manifest-intro.html#perms) " in der Android-Dokumentation für das Anwendungs Manifest, um weitere Informationen zu Android-Berechtigungen zu erhalten.
 

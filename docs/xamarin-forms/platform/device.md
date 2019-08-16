@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 1aacd9a29ca13335d14f66175b2d2a4ccb19c9dc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 802f9ff60f74914a9369c7ef281cb2e70ca01d4b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655967"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529059"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms-Device-Klasse
 
@@ -71,12 +71,12 @@ Sie können auch die `OnPlatform` Markuperweiterung in XAML verwendet werden kan
 
 Die `Device.Idiom` Eigenschaft kann verwendet werden, um Layouts zu ändern oder Funktionen, die je nach Gerät die Anwendung ausgeführt wird. Die [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom) Enumeration enthält die folgenden Werte:
 
--  **Phone** – iPhone, iPod Touch und Android-Geräten schmaler als 600 Dips ^
--  **Tablet** : iPad, Windows-Geräte und Android-Geräte mehr als 600 Dips ^
--  **Desktop** – nur in zurückgegeben [UWP-apps](~/xamarin-forms/platform/windows/installation/index.md) auf Windows 10-Desktopcomputern (gibt `Phone` auf mobilen Windows-Geräten, die auch in Szenarien mit Continuum)
--  **TV** – Tizen TV-Geräten
--  **Sehen Sie sich** – Tizen Watch-Geräten
--  **Nicht unterstützte** : nicht verwendeter
+- **Phone** – iPhone, iPod Touch und Android-Geräten schmaler als 600 Dips ^
+- **Tablet** : iPad, Windows-Geräte und Android-Geräte mehr als 600 Dips ^
+- **Desktop** – nur in zurückgegeben [UWP-apps](~/xamarin-forms/platform/windows/installation/index.md) auf Windows 10-Desktopcomputern (gibt `Phone` auf mobilen Windows-Geräten, die auch in Szenarien mit Continuum)
+- **TV** – Tizen TV-Geräten
+- **Sehen Sie sich** – Tizen Watch-Geräten
+- **Nicht unterstützte** : nicht verwendeter
 
 *^ Dips ist nicht unbedingt die Anzahl der physischen Pixel*
 

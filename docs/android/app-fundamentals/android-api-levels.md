@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: e22d1d8a1c2604c1bbe710fcaf1ba7793455e6f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c4050f439f3499289063c286afd255241bf0343
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508860"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521453"
 ---
 # <a name="understanding-android-api-levels"></a>Android API-Ebenen
 
@@ -23,11 +23,11 @@ _Xamarin. Android verfügt über mehrere Einstellungen der Android-API-Ebene, mi
 
 Xamarin. Android stellt drei Projekteinstellungen auf Android-API-Ebene bereit:
 
--   [Ziel Framework](#framework) &ndash; Gibt an, welches Framework beim Entwickeln der Anwendung verwendet werden soll. Diese API-Ebene wird zur *Kompilier* Zeit von xamarin. Android verwendet.
+- [Ziel Framework](#framework) &ndash; Gibt an, welches Framework beim Entwickeln der Anwendung verwendet werden soll. Diese API-Ebene wird zur *Kompilier* Zeit von xamarin. Android verwendet.
 
--   [Android-Mindestversion](#minimum) &ndash; Gibt die älteste Android-Version an, die von ihrer App unterstützt werden soll. Diese API-Ebene wird zur *Laufzeit* von Android verwendet.
+- [Android-Mindestversion](#minimum) &ndash; Gibt die älteste Android-Version an, die von ihrer App unterstützt werden soll. Diese API-Ebene wird zur *Laufzeit* von Android verwendet.
 
--   [Android-Ziel Version](#target) &ndash; Gibt die Android-Version an, auf der Ihre APP ausgeführt werden soll. Diese API-Ebene wird zur *Laufzeit* von Android verwendet.
+- [Android-Ziel Version](#target) &ndash; Gibt die Android-Version an, auf der Ihre APP ausgeführt werden soll. Diese API-Ebene wird zur *Laufzeit* von Android verwendet.
 
 Bevor Sie eine API-Ebene für Ihr Projekt konfigurieren können, müssen Sie die SDK-Platt Form Komponenten für diese API-Ebene installieren. Weitere Informationen zum herunterladen und Installieren von Android SDK-Komponenten finden Sie unter [Android SDK Setup](~/android/get-started/installation/android-sdk.md).
 
@@ -37,7 +37,7 @@ Vorhandene apps müssen ab dem 2018 auf API-Ebene 26 oder höher ausgerichtet se
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Normalerweise werden alle drei xamarin. Android-API-Ebenen auf denselben Wert festgelegt. Legen Sie  auf der Seite Anwendung **Kompilierung mit Android-Version (Ziel Framework)** auf die neueste stabile API-Version (oder zumindest auf die Android-Version mit allen benötigten Features) fest.
+Normalerweise werden alle drei xamarin. Android-API-Ebenen auf denselben Wert festgelegt. Legen Sie auf der Seite Anwendung **Kompilierung mit Android-Version (Ziel Framework)** auf die neueste stabile API-Version (oder zumindest auf die Android-Version mit allen benötigten Features) fest.
 Im folgenden Screenshot ist das Ziel Framework auf **Android 7,1 (API-Ebene 25-Nougat)** festgelegt:
 
 [![Standard-Framework-Version für die Kompilierung mit der Android-Version](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png#lightbox)
@@ -81,9 +81,9 @@ Wenn die Android-Plattform weiterentwickelt wird und neue Android-Versionen ver�
 
 Jede Version von Android wird durch mehrere Namen geleitet:
 
--   Die Android-Version, z. b. **Android 9,0**
--   Ein Code (oder ein Nachtisch), z  . b. Kreis
--   Eine entsprechende API-Ebene, z. b. **API-Ebene 28**
+- Die Android-Version, z. b. **Android 9,0**
+- Ein Code (oder ein Nachtisch), z . b. Kreis
+- Eine entsprechende API-Ebene, z. b. **API-Ebene 28**
 
 Ein Android-Codename kann mehreren Versionen und API-Ebenen entsprechen (wie in der folgenden Tabelle gezeigt), jede Android-Version entspricht jedoch genau einer API-Ebene.
 
@@ -100,9 +100,9 @@ Jedes Android-Gerät wird auf genau *einer* API &ndash; -Ebene ausgeführt. dies
 
 Wenn eine Anwendung erstellt wird, enthält Sie die folgenden API-Ebeneninformationen:
 
--   Die *Ziel* -API-Ebene von Android, auf der die app ausgeführt werden soll.
+- Die *Ziel* -API-Ebene von Android, auf der die app ausgeführt werden soll.
 
--   Die *minimale* Android-API-Ebene, die ein Android-Gerät zum Ausführen der APP benötigt. 
+- Die *minimale* Android-API-Ebene, die ein Android-Gerät zum Ausführen der APP benötigt. 
 
 Diese Einstellungen werden verwendet, um sicherzustellen, dass die erforderliche Funktionalität zum ordnungsgemäßen Ausführen der APP auf dem Android-Gerät zur Installationszeit verfügbar ist. Andernfalls wird die Ausführung der APP auf diesem Gerät blockiert. Wenn die API-Ebene eines Android-Geräts beispielsweise niedriger ist als die API-Ebene, die Sie für Ihre APP angeben, hindert das Android-Gerät den Benutzer daran, Ihre APP zu installieren.
 
@@ -225,7 +225,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
 }
 ```
 
-In diesem Beispiel ist das Ziel Framework unserer App auf **Android 5,0 (API-Ebene 21)** und die Android-Mindestversion auf **Android 4,1 (API-Ebene 16)** festgelegt. Da `SetCategory` auf API-Ebene `Android.OS.BuildVersionCodes.Lollipop` und höher verfügbar ist, wird in diesem Beispiel `SetCategory` Code nur aufgerufen, wenn er &ndash; tatsächlich verfügbar  ist. es wird `SetCategory` nicht versucht, aufzurufen, wenn die API-Ebene 16, 17, 18, 19 oder 20 ist. Die Funktionalität wird in diesen früheren Android-Versionen nur dahingehend reduziert, dass Benachrichtigungen nicht ordnungsgemäß sortiert werden (da Sie nicht nach Typ kategorisiert werden), aber die Benachrichtigungen werden weiterhin veröffentlicht, um den Benutzer zu benachrichtigen. Unsere APP funktioniert weiterhin, die Funktionalität wird jedoch geringfügig beeinträchtigt.
+In diesem Beispiel ist das Ziel Framework unserer App auf **Android 5,0 (API-Ebene 21)** und die Android-Mindestversion auf **Android 4,1 (API-Ebene 16)** festgelegt. Da `SetCategory` auf API-Ebene `Android.OS.BuildVersionCodes.Lollipop` und höher verfügbar ist, wird in diesem Beispiel `SetCategory` Code nur aufgerufen, wenn er &ndash; tatsächlich verfügbar ist. es wird `SetCategory` nicht versucht, aufzurufen, wenn die API-Ebene 16, 17, 18, 19 oder 20 ist. Die Funktionalität wird in diesen früheren Android-Versionen nur dahingehend reduziert, dass Benachrichtigungen nicht ordnungsgemäß sortiert werden (da Sie nicht nach Typ kategorisiert werden), aber die Benachrichtigungen werden weiterhin veröffentlicht, um den Benutzer zu benachrichtigen. Unsere APP funktioniert weiterhin, die Funktionalität wird jedoch geringfügig beeinträchtigt.
 
 Im Allgemeinen unterstützt die Überprüfung der Buildversion dem Code die Entscheidung zur Laufzeit zwischen der neuen Methode und der alten Methode. Beispiel:
 
@@ -263,9 +263,9 @@ Dies liegt daran, dass keine **Build > Android-Anwendungs** Seite vorhanden ist:
 
 Die Android-Mindestversion und die Android-Zielversion sind nicht verfügbar, da es sich bei der resultierenden Bibliothek nicht &ndash; um eine eigenständige App handelt, kann die Bibliothek abhängig von der APP, mit der Sie verpackt ist, unter jeder beliebigen Android-Version ausgeführt werden. Sie können angeben, wie die Bibliothek *kompiliert*werden soll, aber Sie können nicht vorhersagen, auf welcher Plattform-API-Ebene die Bibliothek ausgeführt werden soll. Beachten Sie, dass beim Verarbeiten oder Erstellen von Bibliotheken die folgenden bewährten Methoden beachtet werden sollten:
 
--   **Bei der Nutzung einer Android-Bibliothek** Wenn Sie in Ihrer Anwendung eine Android-Bibliothek verwenden, stellen Sie sicher, dass die Ziel Framework-Einstellung Ihrer APP auf eine API-Ebene festgelegt ist, die *mindestens so hoch ist wie* die Ziel Framework-Einstellung der Bibliothek. &ndash;
+- **Bei der Nutzung einer Android-Bibliothek** Wenn Sie in Ihrer Anwendung eine Android-Bibliothek verwenden, stellen Sie sicher, dass die Ziel Framework-Einstellung Ihrer APP auf eine API-Ebene festgelegt ist, die *mindestens so hoch ist wie* die Ziel Framework-Einstellung der Bibliothek. &ndash;
 
--   **Beim Erstellen einer Android-Bibliothek** &ndash; Wenn Sie eine Android-Bibliothek für die Verwendung durch andere Anwendungen erstellen, achten Sie darauf, dass die Ziel Framework-Einstellung auf die minimale API-Ebene festgelegt wird, die für die Kompilierung benötigt wird.
+- **Beim Erstellen einer Android-Bibliothek** &ndash; Wenn Sie eine Android-Bibliothek für die Verwendung durch andere Anwendungen erstellen, achten Sie darauf, dass die Ziel Framework-Einstellung auf die minimale API-Ebene festgelegt wird, die für die Kompilierung benötigt wird.
 
 Diese bewährten Methoden werden empfohlen, um die Situation zu vermeiden, in der eine Bibliothek versucht, eine API aufzurufen, die zur Laufzeit nicht verfügbar ist (was dazu führen kann, dass die APP abstürzen kann). Wenn Sie ein Bibliotheks Entwickler sind, sollten Sie die Verwendung von API-aufrufen auf eine kleine und gut festgelegte Teilmenge der gesamten API-Oberfläche einschränken. Auf diese Weise können Sie sicherstellen, dass Ihre Bibliothek sicher in einer breiteren Palette von Android-Versionen verwendet werden kann.
 

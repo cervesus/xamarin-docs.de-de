@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 74d626fb1028c630b67888f84153adeb33ae32b9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6daead7962e472c3c7d0b117d545efdbd3c65886
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644695"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523093"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin. Android-Kartenansicht
 
@@ -32,11 +32,11 @@ In diesem Handbuch wird erläutert, wie `CardView` Sie das Paket Ihrem xamarin. 
 
 Folgendes ist erforderlich, um neue Features von Android 5,0 und höher (einschließlich `CardView`) in xamarin-basierten apps zu verwenden:
 
--  **Xamarin.Android** &ndash; Xamarin.Android 4.20 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
+- **Xamarin. Android** &ndash; xamarin. Android 4,20 oder höher muss entweder mit Visual Studio oder mit Visual Studio für Mac installiert und konfiguriert werden.
 
--  **Android SDK** &ndash; Android 5,0 (API 21) oder höher muss über den Android SDK-Manager installiert werden.
+- **Android SDK** &ndash; Android 5,0 (API 21) oder höher muss über den Android SDK-Manager installiert werden.
 
--  **Java JDK 1,8** &ndash; JDK 1,7 kann verwendet werden, wenn Sie genau die API-Ebene 23 und früher verwenden. JDK 1,8 ist in [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)verfügbar.
+- **Java JDK 1,8** &ndash; JDK 1,7 kann verwendet werden, wenn Sie genau die API-Ebene 23 und früher verwenden. JDK 1,8 ist in [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)verfügbar.
 
 Ihre APP muss auch das `Xamarin.Android.Support.v7.CardView` Paket enthalten. So fügen Sie `Xamarin.Android.Support.v7.CardView` das Paket in Visual Studio für Mac hinzu:
 
@@ -103,8 +103,8 @@ Sie können die grundlegenden `CardView` Attribute ändern, um die `CardView` Da
 Im nächsten Layoutbeispiel wird eine angepasste `CardView` zum Erstellen einer Simulation eines Druck Fotos (eine "Momentaufnahme") verwendet. Der `ImageView` `TextView` `ImageView` zum Anzeigen des Bilds wird ein hinzugefügt, und ein wird unter dem positioniert, um den Titel des Bilds anzuzeigen. `CardView`
 In diesem Beispiel Layout `CardView` verfügt über die folgenden Anpassungen:
 
--  Der `cardElevation` wird auf 4DP vergrößert, um einen größeren Schatten umzuwandeln.
--  Der `cardCornerRadius` wird auf 5DP angehoben, damit die Ecken gerundet werden.
+- Der `cardElevation` wird auf 4DP vergrößert, um einen größeren Schatten umzuwandeln.
+- Der `cardCornerRadius` wird auf 5DP angehoben, damit die Ecken gerundet werden.
 
 Da `CardView` von der Android V7-Unterstützungs Bibliothek bereitgestellt wird, sind seine Attribute im `android:` -Namespace nicht verfügbar. Daher müssen Sie einen eigenen XML-Namespace definieren und diesen Namespace als `CardView` Attribut Präfix verwenden. Im folgenden Layoutbeispiel wird diese Zeile verwendet, um einen Namespace mit dem Namen `cardview`zu definieren:
 
@@ -180,15 +180,15 @@ Beachten Sie, dass diese Attribute (mit Ausnahme von Hintergrundfarbe) einen Dim
 
 Die Auffüll Attribute werden wie folgt erläutert:
 
--  `contentPadding`Innere Auffüll Zeichen zwischen den untergeordneten Sichten `CardView` von und allen Rändern der Karte. &ndash;
+- `contentPadding`Innere Auffüll Zeichen zwischen den untergeordneten Sichten `CardView` von und allen Rändern der Karte. &ndash;
 
--  `contentPaddingBottom`Innere Auffüll Zeichen zwischen den untergeordneten Ansichten `CardView` von und dem unteren Rand der Karte. &ndash;
+- `contentPaddingBottom`Innere Auffüll Zeichen zwischen den untergeordneten Ansichten `CardView` von und dem unteren Rand der Karte. &ndash;
 
--  `contentPaddingLeft`Innere Auffüll Zeichen zwischen den untergeordneten Ansichten `CardView` von und dem linken Rand der Karte. &ndash;
+- `contentPaddingLeft`Innere Auffüll Zeichen zwischen den untergeordneten Ansichten `CardView` von und dem linken Rand der Karte. &ndash;
 
--  `contentPaddingRight`Innere Auffüll Zeichen zwischen den untergeordneten Ansichten `CardView` von und dem rechten Rand der Karte. &ndash;
+- `contentPaddingRight`Innere Auffüll Zeichen zwischen den untergeordneten Ansichten `CardView` von und dem rechten Rand der Karte. &ndash;
 
--  `contentPaddingTop`Innere Auffüll Zeichen zwischen den untergeordneten Ansichten `CardView` von und dem oberen Rand der Karte. &ndash;
+- `contentPaddingTop`Innere Auffüll Zeichen zwischen den untergeordneten Ansichten `CardView` von und dem oberen Rand der Karte. &ndash;
 
 Die Attribute für die Inhalts Auffüll Zeichen sind relativ zur Grenze des Inhalts Bereichs und nicht zu einem beliebigen Widget innerhalb des Inhalts Bereichs.
 Wenn `contentPadding` z. b. in der Foto-Anzeige-App ausreichend erweitert `CardView` wurde, würde das Bild und der Text, der auf der Karte angezeigt wird, von zuschneiden.
@@ -203,9 +203,9 @@ Wenn `contentPadding` z. b. in der Foto-Anzeige-App ausreichend erweitert `CardV
 
 Die Attribute für die Rechte Erweiterung werden wie folgt erläutert:
 
--  `cardElevation`&ndash; Die Höhe`CardView` von (stellt die Z-Achse dar).
+- `cardElevation`&ndash; Die Höhe`CardView` von (stellt die Z-Achse dar).
 
--  `cardMaxElevation`Der Höchstwert für die `CardView`Erhöhung der Rechte. &ndash;
+- `cardMaxElevation`Der Höchstwert für die `CardView`Erhöhung der Rechte. &ndash;
 
 Größere Werte von `cardElevation` vergrößern die Schatten Größe `CardView` , sodass Sie zu einer höheren Position über dem Hintergrund fließen. Das `cardElevation` -Attribut bestimmt auch die Zeichnungsreihenfolge von überlappenden Sichten `CardView` , d. h., das wird unter einer anderen überlappenden Ansicht mit einer höheren Erweiterungs Einstellung und überlappenden Sichten mit einer niedrigeren Erweiterungs Einstellung gezeichnet.
 Diese Einstellung ist nützlich, wenn Ihre APP die Rechte Erweiterung &ndash; dynamisch ändert. Dadurch wird verhindert, dass der Schatten das Limit überschreitet, das Sie mit dieser Einstellung definieren. `cardMaxElevation`
@@ -219,9 +219,9 @@ Diese Einstellung ist nützlich, wenn Ihre APP die Rechte Erweiterung &ndash; dy
 
 Diese Attribute werden wie folgt erläutert:
 
--  `cardCornerRadius`Der Eckradius aller Ecken `CardView`des. &ndash;
+- `cardCornerRadius`Der Eckradius aller Ecken `CardView`des. &ndash;
 
--  `cardBackgroundColor`Die Hintergrundfarbe `CardView`des. &ndash;
+- `cardBackgroundColor`Die Hintergrundfarbe `CardView`des. &ndash;
 
 In diesem Diagramm ist `cardCornerRadius` auf einen gerundeten 10dp festgelegt, `cardBackgroundColor` und wird auf `"#FFFFCC"` (hellgelb) festgelegt.
 
@@ -233,15 +233,15 @@ Allerdings müssen Sie das `Xamarin.Android.Support.v7.CardView` Paket wie unter
 
 `CardView`zeigt ein geringfügig anderes Verhalten auf Geräten vor Lollipop (API-Ebene 21):
 
--  `CardView`verwendet eine programmgesteuerte Schatten Implementierung, die zusätzliche Auffüll Zeichen hinzufügt.
+- `CardView`verwendet eine programmgesteuerte Schatten Implementierung, die zusätzliche Auffüll Zeichen hinzufügt.
 
--  `CardView`schneidet keine untergeordneten Ansichten ab, die sich mit `CardView`den abgerundeten Ecken des Bilds schneiden.
+- `CardView`schneidet keine untergeordneten Ansichten ab, die sich mit `CardView`den abgerundeten Ecken des Bilds schneiden.
 
 Zur Unterstützung der Verwaltung dieser Kompatibilitäts `CardView` Unterschiede bietet einige zusätzliche Attribute, die Sie im Layout konfigurieren können:
 
--   `cardPreventCornerOverlap`Legen Sie dieses Attribut `true` auf fest, um Auffüll Zeichen hinzuzufügen, wenn Ihre APP unter früheren Android-Versionen (API-Ebene 20 und früher) ausgeführt wird. &ndash; Diese Einstellung verhindert `CardView` , dass Inhalte mit den `CardView`gerundeten Ecken überschneidet werden.
+- `cardPreventCornerOverlap`Legen Sie dieses Attribut `true` auf fest, um Auffüll Zeichen hinzuzufügen, wenn Ihre APP unter früheren Android-Versionen (API-Ebene 20 und früher) ausgeführt wird. &ndash; Diese Einstellung verhindert `CardView` , dass Inhalte mit den `CardView`gerundeten Ecken überschneidet werden.
 
--   `cardUseCompatPadding`Legen Sie dieses Attribut `true` auf fest, um Auffüll Zeichen hinzuzufügen, wenn Ihre APP in Android-Versionen auf API-Ebene 21 oder höher ausgeführt wird. &ndash; Wenn Sie auf Pre- `CardView` Lollipop-Geräten verwenden möchten und es bei Lollipop (oder höher) genauso aussehen soll, legen Sie dieses Attribut auf `true`fest. Wenn dieses Attribut aktiviert ist, `CardView` fügt zusätzliche Auffüll Zeichen hinzu, um Schatten zu zeichnen, wenn es auf Pre-Lollipop-Geräten ausgeführt wird. Dies trägt dazu bei, die Unterschiede bei der Auffüll Funktion zu überwinden, die eingeführt werden, wenn die programmatischen Schatten Implementierungen vor Lollipop wirksam sind.
+- `cardUseCompatPadding`Legen Sie dieses Attribut `true` auf fest, um Auffüll Zeichen hinzuzufügen, wenn Ihre APP in Android-Versionen auf API-Ebene 21 oder höher ausgeführt wird. &ndash; Wenn Sie auf Pre- `CardView` Lollipop-Geräten verwenden möchten und es bei Lollipop (oder höher) genauso aussehen soll, legen Sie dieses Attribut auf `true`fest. Wenn dieses Attribut aktiviert ist, `CardView` fügt zusätzliche Auffüll Zeichen hinzu, um Schatten zu zeichnen, wenn es auf Pre-Lollipop-Geräten ausgeführt wird. Dies trägt dazu bei, die Unterschiede bei der Auffüll Funktion zu überwinden, die eingeführt werden, wenn die programmatischen Schatten Implementierungen vor Lollipop wirksam sind.
 
 Weitere Informationen zur Aufrechterhaltung der Kompatibilität mit früheren Versionen von Android finden Sie unter [beibehalten der Kompatibilität](https://developer.android.com/training/material/compatibility.html).
 

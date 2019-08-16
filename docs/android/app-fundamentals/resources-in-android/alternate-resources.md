@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: e71e79b58d912ecb697576e92ae921a848f24f4c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7c48244e316854b04234ec8dee4eebeb55a4f119
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013284"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526381"
 ---
 # <a name="alternate-resources"></a>Alternative Ressourcen
 
-Alternative Ressourcen sind Ressourcen, die ein bestimmtes Gerät oder einen Laufzeit-Konfiguration, z. B. die aktuelle Sprache, die bestimmten Bildschirmgröße und die Pixeldichte. Wenn Android eine Ressource werden, die für ein bestimmtes Gerät oder der Konfiguration spezifischer als der Standardressource ist verglichen kann, wird diese Ressource stattdessen verwendet werden. Wenn sie nicht mit eine andere Ressource, die die aktuelle Konfiguration entspricht findet, werden die Standardressourcen geladen werden. Wie Android entscheidet, wird welche Ressourcen von einer Anwendung verwendet werden ausführlicher unten im Abschnitt Ressourcenspeicherort abgedeckt werden
+Alternative Ressourcen sind Ressourcen, die auf ein bestimmtes Gerät oder eine Laufzeitkonfiguration abzielen, z. b. die aktuelle Sprache, bestimmte Bildschirmgröße oder Pixeldichte. Wenn Android eine Ressource finden kann, die für ein bestimmtes Gerät oder eine bestimmte Konfiguration spezifischer ist als die Standardressource, wird stattdessen diese Ressource verwendet. Wenn keine Alternative Ressource gefunden wird, die mit der aktuellen Konfiguration übereinstimmt, werden die Standard Ressourcen geladen. Wie Android entscheidet, welche Ressourcen von einer Anwendung verwendet werden, wird im Abschnitt Ressourcen Speicherort ausführlicher behandelt.
 
-Alternative Ressourcen sind als ein Unterverzeichnis im Ordner "Ressourcen" gemäß den Ressourcentyp, genau wie Standardressourcen organisiert. Der Name des Unterverzeichnisses alternativen Ressource ist in der Form: _ResourceType_-_Qualifier_
+Alternative Ressourcen sind entsprechend dem Ressourcentyp, wie Standard Ressourcen, als Unterverzeichnis im Ressourcen Ordner angeordnet. Der Name des alternativen Unterverzeichnisses der Ressource hat folgendes Format: _ResourceType_--Qualifizierer
 
-*Qualifizierer* ist ein Name, der eine bestimmte Gerätekonfiguration identifiziert.
-Es gibt möglicherweise mehr als einem Qualifizierer in einen Namen ein, jeweils getrennt durch einen Bindestrich. Der folgende Screenshot zeigt beispielsweise ein einfaches Projekt, das alternative Ressourcen für verschiedene Konfigurationen wie z. B. Gebietsschema, Bildschirm Dichte, Bildschirmgröße und-Ausrichtung sind:
+Der Qualifizierer ist ein Name, der eine bestimmte Gerätekonfiguration identifiziert.
+Es können mehrere Qualifizierer in einem Namen vorhanden sein, die jeweils durch einen Bindestrich getrennt sind. Der folgende Screenshot zeigt z. b. ein einfaches Projekt mit alternativen Ressourcen für verschiedene Konfigurationen, z. b. Gebiets Schema, Bildschirm Dichte, Bildschirmgröße und Ausrichtung:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -33,167 +33,177 @@ Es gibt möglicherweise mehr als einem Qualifizierer in einen Namen ein, jeweils
 -----
  
 
-Wenn Sie einen Ressourcentyp Qualifizierer hinzufügen, gelten die folgenden Regeln:
+Die folgenden Regeln gelten für das Hinzufügen von Qualifizierern zu einem Ressourcentyp:
 
-1. Es gibt möglicherweise mehr als einem Qualifizierer, die mit jeder Qualifizierer, die durch einen Bindestrich getrennt.
+1. Es können mehrere Qualifizierer vorhanden sein, wobei jeder Qualifizierer durch einen Bindestrich getrennt ist.
 
-2. Die Qualifizierer, die vielleicht nur einmal angegeben werden.
+2. Die Qualifizierer sind möglicherweise nur einmal angegeben.
 
-3. Qualifizierer muss in der Reihenfolge, die sie in der folgenden Tabelle angezeigt werden.
+3. Qualifizierer müssen in der Reihenfolge angegeben werden, in der Sie in der nachfolgenden Tabelle
 
-Die möglichen Qualifizierer sind zu Referenzzwecken im folgenden aufgeführt:
+Die möglichen Qualifizierer sind unten aufgeführt:
 
-- **MCC und MNC** &ndash; der [Ländercode für Mobilgerät](https://en.wikipedia.org/wiki/List_of_mobile_country_codes) (MCC) und optional die [Netzwerkcode](https://en.wikipedia.org/wiki/Mobile_Network_Code) (MNC). Die SIM-Karte bietet die MCC, während das Netzwerk aus, dem das Gerät, um verbunden ist die MNC bereitstellt. Obwohl es möglich, Ziel-Gebietsschemas, verwenden den Ländercode für Mobilgerät ist, ist der empfohlene Ansatz, den unten angegebenen sprachqualifizierer verwenden. Um beispielsweise Zielressourcen in Deutschland, wäre der Qualifizierer `mcc262`. Um die Zielressourcen für T-Mobile-Geräte in den USA der Qualifizierer ist `mcc310-mnc026`.
-  Eine vollständige Liste der mobilen Ländercodes und mobiles Netzwerk-Fehlercodes finden Sie unter <http://mcc-mnc.com/>.
+- **MCC und MNC** Der Mobile [Country Code](https://en.wikipedia.org/wiki/List_of_mobile_country_codes) (MCC) und optional der [Mobile Network Code](https://en.wikipedia.org/wiki/Mobile_Network_Code) (MNC). &ndash; Der MCC wird von der SIM-Karte bereitgestellt, während das Netzwerk, mit dem das Gerät verbunden ist, das MNC bereitstellt. Obwohl es möglich ist, Gebiets Schemas mithilfe des Codes für das Mobile Land zu verwenden, empfiehlt es sich, den unten angegebenen sprach Qualifizierer zu verwenden. Um z `mcc262`. b. auf Ressourcen in Deutschland zu abzielen, wäre der Qualifizierer. Der Qualifizierer ist `mcc310-mnc026`der Qualifizierer, um Ressourcen für T-Mobile in den USA zu Ziel.
+  Eine umfassende Liste der mobilen Ländercodes und mobilen Netzwerk Codes finden <http://mcc-mnc.com/>Sie unter.
 
-- **Sprache** &ndash; kleingeschriebener zweibuchstabiger [Code nach ISO 639-1-Sprache](https://en.wikipedia.org/wiki/ISO_639-1) und optional gefolgt von den zwei Buchstaben bestehenden [ISO-3166-Alpha-2-Regionscode](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). 
-  Wenn beide Qualifizierer werden bereitgestellt, sie werden getrennt von einem `-r`. Z. B. zum Ziel französischsprachige Gebietsschemas wird der Qualifizierer der `fr` verwendet wird. Kanadischen Französisch Gebietsschemas als Ziel der `fr-rCA` eingesetzt werden. Eine vollständige Liste von Sprachcodes und Landes-/Regionscodes, finden Sie unter [Codes für die Darstellung der Namen von Sprachen](http://www.loc.gov/standards/iso639-2/php/English_list.php) und [Ländernamen und Codeelemente](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm).
+- **Sprache** Der aus zwei Buchstaben bestehende [ISO 639-1-Sprachcode](https://en.wikipedia.org/wiki/ISO_639-1) und optional der aus zwei Buchstaben bestehende [ISO-3166-Alpha-2-Regions Code.](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) &ndash; 
+  Wenn beide Qualifizierer angegeben werden, werden Sie durch eine `-r`getrennt. Wenn Sie z. b. auf Französisch sprechende Gebiets Schemas `fr` abzielen, wird der Qualifizierer von verwendet. Zum Ziel von französisch-kanadischen `fr-rCA` Gebiets Schemas wird verwendet. Eine umfassende Liste der Sprachen Codes und Regions Codes finden Sie unter [Codes für die Darstellung von Namen von Sprachen](http://www.loc.gov/standards/iso639-2/php/English_list.php) und [Ländernamen und Code Elementen](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm).
 
-- **Kleinste Stärke** &ndash; gibt die kleinste Bildschirmbreite, die die Anwendung zum Ausführen dient auf. Ausführlicher behandelt [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
-  In API-Ebene 13 (Android 3.2) und höher verfügbar. Zum Beispiel der Qualifizierer `sw320dp` wird verwendet, um Geräte, deren Höhe und Breite ist mindestens, 320dp.
+- **Kleinste Breite** &ndash; Gibt die kleinste Bildschirmbreite an, auf der die Anwendung ausgeführt werden soll. Ausführliche Informationen [zum Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
+  Verfügbar auf API-Ebene 13 (Android 3,2) und höher. Der Qualifizierer `sw320dp` wird z. b. für Geräte verwendet, deren Höhe und Breite mindestens 320dp ist.
 
-- **Verfügbare Breite** &ndash; die minimale Breite des Bildschirms in der Format-w*N*dp, wobei *N* ist die Breite Dichte in geräteunabhängigen Pixeln.
-  Dieser Wert kann sich ändern, wie der Benutzer das Gerät dreht. Ausführlicher behandelt [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
-  In API-Ebene 13 (Android 3.2) und höher verfügbar. Beispiel: die Qualifizierer w720dp dient, Geräte zu verwenden, die eine Breite von mindestens 720dp aufweisen.
+- **Verfügbare Breite** Die minimale Breite des Bildschirms im Format w*N*DP, wobei N die Breite in Dichte unabhängigen Pixeln ist. &ndash;
+  Dieser Wert kann sich ändern, wenn der Benutzer das Gerät dreht. Ausführliche Informationen [zum Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
+  Verfügbar auf API-Ebene 13 (Android 3,2) und höher. Beispiel: der Qualifizierer w720dp wird für Geräte mit einer Breite von mindestens 720DP verwendet.
 
-- **Verfügbare Höhe** &ndash; die minimale Höhe des Bildschirms in der Format-h*N*dp, wobei *N* ist die Höhe in dp. Dieser Wert kann sich ändern, wie der Benutzer das Gerät dreht. Ausführlicher behandelt [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
-  In API-Ebene 13 (Android 3.2) und höher verfügbar. Beispielsweise wird der Qualifizierer h720dp verwendet, um Geräte zu verwenden, die eine von mindestens 720dp Höhe
+- **Verfügbare Höhe** Die minimale Höhe des Bildschirms im Format h*N*DP, wobei N die Höhe in DP ist. &ndash; Dieser Wert kann sich ändern, wenn der Benutzer das Gerät dreht. Ausführliche Informationen [zum Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
+  Verfügbar auf API-Ebene 13 (Android 3,2) und höher. Beispielsweise wird der Qualifizierer h720dp für Geräte mit einer Höhe von mindestens 720DP verwendet.
 
-- **Bildschirmgröße** &ndash; dieser Qualifizierer ist eine Generalisierung der Größe des Bildschirms, die für diese Ressourcen sind. Es wird ausführlicher behandelt [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
-  Mögliche Werte sind `small`, `normal`, `large` und `xlarge`. In API-Ebene 9 (Android 2.3 oder Android 2.3.1/Android 2.3.2) hinzugefügt
+- **Bildschirmgröße** &ndash; Dieser Qualifizierer ist eine Generalisierung der Bildschirmgröße, für die diese Ressourcen gelten. Weitere Informationen finden Sie unter [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
+  Mögliche Werte sind `small`, `normal`, `large` und `xlarge`. In API-Ebene 9 hinzugefügt (Android 2.3/Android 2.3.1/Android 2.3.2)
 
-- **Bildschirm Aspekt** &ndash; basiert auf das Seitenverhältnis beibehalten, nicht die bildschirmausrichtung. Es ist ein langer Bildschirm breiter. In API-Ebene-4 (Android 1.6) hinzugefügt. Mögliche Werte sind lang und Notlong.
+- **Bildschirm Aspekt** &ndash; Dies basiert auf dem Seitenverhältnis, nicht auf der Bildschirm Ausrichtung. Ein langer Bildschirm ist breiter. In API-Ebene 4 (Android 1,6) hinzugefügt. Mögliche Werte sind Long und notlong.
 
-- **Bildschirm Ausrichtung** &ndash; hoch- oder Querformat bildschirmausrichtung. Dies kann während der Lebensdauer einer Anwendung ändern.
+- **Bildschirm Ausrichtung** &ndash; Bildschirm Ausrichtung für Hochformat oder Querformat. Dies kann sich während der Lebensdauer einer Anwendung ändern.
   Mögliche Werte sind `port` und `land`.
 
-- **Andocken Modus** &ndash; für Geräte in einem Auto andocken oder einen Helpdesk andocken. In API-Ebene 8 (Android 2.2.x) hinzugefügt. Mögliche Werte sind `car` und `desk`.
+- **Andock Modus** &ndash; Für Geräte in einem Fahrzeug-oder Desk-Dock. In API-Ebene 8 (Android 2.2. x) hinzugefügt. Mögliche Werte sind `car` und `desk`.
 
-- **Nachtmodus** &ndash; angibt, ob die Anwendung bei Nacht oder am Tag ausgeführt wird. Dies kann sich während der Lebensdauer einer Anwendung ändern und um Entwicklern die Möglichkeit, je dunkler Versionen einer Schnittstelle in der Nacht verwenden soll. In API-Ebene 8 (Android 2.2.x) hinzugefügt. Mögliche Werte sind `night` und `notnight`.
+- **Nachtmodus** &ndash; Gibt an, ob die Anwendung nachts oder täglich ausgeführt wird. Dies kann sich während der Lebensdauer einer Anwendung ändern und soll Entwicklern die Möglichkeit geben, die dunkleren Versionen einer Schnittstelle zu Nacht zu verwenden. In API-Ebene 8 (Android 2.2. x) hinzugefügt. Mögliche Werte sind `night` und `notnight`.
 
-- **Bildschirm Pixeldichte (dpi)** &ndash; die Anzahl der Pixel in einem bestimmten Gebiet auf dem physischen Bildschirm. In der Regel als Punkte pro Zoll (dpi) ausgedrückt. Dabei sind folgende Werte möglich:
+- **Bildschirm Pixel Dichte (dpi)** &ndash; Die Anzahl der Pixel in einem angegebenen Bereich auf dem physischen Bildschirm. Wird normalerweise als dpi (dpi) ausgedrückt. Dabei sind folgende Werte möglich:
 
-    - `ldpi` &ndash; Geringe Dichte Bildschirme.
+    - `ldpi`&ndash; Bildschirme mit geringer Dichte.
 
-    - `mdpi` &ndash; Mittlere Dichte Bildschirme
+    - `mdpi`&ndash; Bildschirme mit mittlerer Dichte
 
-    - `hdpi` &ndash; Bildschirme mit hoher Dichte
+    - `hdpi`&ndash; Bildschirme mit hoher Dichte
 
-    - `xhdpi` &ndash; Bildschirme mit sehr hoher Dichte
+    - `xhdpi`&ndash; Bildschirme mit hoher Dichte
 
-    - `nodpi` &ndash; Ressourcen, die nicht skaliert werden
+    - `nodpi`&ndash; Ressourcen, die nicht skaliert werden sollen
 
-    - `tvdpi` &ndash; In API-Ebene 13 (Android 3.2) für Bildschirme zwischen Mdpi und Hdpi eingeführt.
+    - `tvdpi`&ndash; Eingeführt in API-Ebene 13 (Android 3,2) für Bildschirme zwischen MDPI und hdpi.
 
-- **Typ der Touchscreen** &ndash; gibt den Typ der Touchscreen, die ein Gerät haben kann. Mögliche Werte sind `notouch` (ohne Touchscreen), `stylus` (ein magnetisierungsresistent Touchscreen für einen Tablettstift geeignet ist), und `finger` (ein Touchscreen).
+- **Touchscreen-Typ** &ndash; Gibt den Typ des Touchscreen an, den ein Gerät haben kann. Mögliche Werte sind `notouch` (kein Touchscreen), `stylus` (ein für einen Tablettstift geeignetes Bildschirm für die resistischtaste) und `finger` (ein Touchscreen).
 
-- **Verfügbarkeit der Tastatur** &ndash; gibt an, welche Art von Tastatur verfügbar ist. Dies kann während der Lebensdauer einer Anwendung ändern &ndash; z. B. wenn ein Benutzer öffnet eine Hardwaretastatur. Dabei sind folgende Werte möglich:
+- **Tastatur Verfügbarkeit** &ndash; Gibt an, welche Art von Tastatur verfügbar ist. Dies kann sich während der Lebensdauer einer Anwendung &ndash; ändern, z. b. Wenn ein Benutzer eine Hardware Tastatur öffnet. Dabei sind folgende Werte möglich:
 
-    - `keysexposed` &ndash; Das Gerät verfügt über eine Tastatur zur Verfügung. Liegt keine Software-Tastatur aktiviert, wird dies nur verwendet, wenn die Hardwaretastatur geöffnet wird.
+    - `keysexposed`&ndash; Auf dem Gerät ist eine Tastatur verfügbar. Wenn keine Software Tastatur aktiviert ist, wird diese nur beim Öffnen der Hardware Tastatur verwendet.
 
-    - `keyshidden` &ndash; Das Gerät verfügt über eine Hardwaretastatur, aber es ausgeblendet ist und keine Tastatur Software aktiviert ist.
+    - `keyshidden`&ndash; Das Gerät verfügt über eine Hardware Tastatur, aber es ist ausgeblendet, und es ist keine Software Tastatur aktiviert.
 
-    - `keyssoft` &ndash; das Gerät besitzt, eine Software-Tastatur aktiviert wird.
+    - `keyssoft`&ndash; auf dem Gerät ist eine Software Tastatur aktiviert.
 
-- **Primäre Texteingabemethode** &ndash; verwenden, um anzugeben, welche Arten von Hardwareschlüssel für die Eingabe zur Verfügung stehen. Dabei sind folgende Werte möglich:
+- **Primäre Text Eingabemethode** &ndash; Verwenden Sie, um anzugeben, welche Arten von Hardware Schlüsseln für die Eingabe verfügbar sind. Dabei sind folgende Werte möglich:
 
-    - `nokeys` &ndash; Es gibt keine Hardwareschlüssel für die Eingabe.
+    - `nokeys`&ndash; Es sind keine Hardwareschlüssel für die Eingabe vorhanden.
 
-    - `qwerty` &ndash; Es ist eine qwerty-Tastatur verfügbar.
+    - `qwerty`&ndash; Eine QWERTY-Tastatur ist verfügbar.
 
-    - `12key` &ndash; Es ist eine mit 12 Tasten-Hardwaretastatur
-
-
-- **Navigation Schlüssel Verfügbarkeit** &ndash; bei 5-Wege- oder Steuerkreuz (direktionale-Pad) Navigation verfügbar ist. Dies kann während der Lebensdauer der Anwendung ändern. Dabei sind folgende Werte möglich:
-
-    - `navexposed` &ndash; die Standardnavigations-Schlüssel sind für den Benutzer verfügbar
-
-    - `navhidden` &ndash; die Navigationstasten sind nicht verfügbar.
-
--  **Nicht-Touch-Navigation Hauptmethode** &ndash; die Art der Navigation auf dem Gerät verfügbar. Dabei sind folgende Werte möglich:
-
-    - `nonav` &ndash; die einzige Navigationsfunktion verfügbar ist, den Touchscreen
-
-    - `dpad` &ndash; ein Steuerkreuz (direktionale-Pad) steht für die navigation
-
-    - `trackball` &ndash; das Gerät verfügt über einen Trackball für die navigation
-
-    - `wheel` &ndash; die ungewöhnliches Szenario, in denen mindestens ein oder mehrere unidirektionale Rädern verfügbar
-
--  **Plattformversion (API-Ebene)** &ndash; die API-Ebene, die vom Gerät im Format V unterstützten*N*, wobei *N* ist die API-Ebene, die als Ziel festgelegt ist. Z. B. v11 wird ein API-Zielebene 11 (Android 3.0) Geräte.
+    - `12key`&ndash; Es ist eine Hardware Tastatur mit 12 Schlüsseln vorhanden.
 
 
-Weitere Informationen zur Ressource Qualifizierer finden Sie unter [Bereitstellen von Ressourcen](https://developer.android.com/guide/topics/resources/providing-resources.html) auf der Android-Entwickler-Website.
+- **Verfügbarkeit von Navigations Schlüsseln** &ndash; Für den Fall, dass die Navigation mit dem 5-Wege-oder d-Pad (direktionaler Pad) verfügbar ist Dies kann sich während der Lebensdauer der Anwendung ändern. Dabei sind folgende Werte möglich:
+
+    - `navexposed`&ndash; die Navigationsschlüssel sind für den Benutzer verfügbar.
+
+    - `navhidden`&ndash; die Navigationsschlüssel sind nicht verfügbar.
+
+- **Primäre Non-Touchscreen-Navigations Methode** &ndash; Die Art der auf dem Gerät verfügbaren Navigation. Dabei sind folgende Werte möglich:
+
+    - `nonav`&ndash; die einzige verfügbare Navigationsfunktion ist der Touchscreen.
+
+    - `dpad`&ndash; ein d-Pad (direktionaler Pad) ist für die Navigation verfügbar.
+
+    - `trackball`&ndash; das Gerät verfügt über einen trackballunterstützung für die Navigation.
+
+    - `wheel`&ndash; das ungewöhnliche Szenario, in dem ein oder mehrere direktionale Räder verfügbar sind
+
+- **Platt Form Version (API-Ebene)** Die API-Ebene, die vom Gerät im Format v*N*unterstützt wird, wobei N für die API-Ebene steht, die Ziel ist. &ndash; Beispielsweise wird für v11 ein Gerät auf API Level 11 (Android 3,0) als Ziel verwendet.
 
 
-## <a name="how-android-determines-what-resources-to-use"></a>Wie Android bestimmt, auf welche Ressourcen zum Verwenden
+Ausführlichere Informationen zu Ressourcen Qualifizierern finden Sie unter [Bereitstellen von Ressourcen](https://developer.android.com/guide/topics/resources/providing-resources.html) auf der Android-Entwickler Website.
 
-Es ist sehr möglich, sondern sogar wahrscheinlich, dass eine Android-Anwendung viele Ressourcen enthält. Es ist wichtig zu verstehen, wie Android auswählen die Ressourcen für eine Anwendung bei der Ausführung auf einem Gerät.
 
-Android bestimmt die grundlegenden Ressourcen durch Iteration über den folgenden Test von Regeln:
+## <a name="how-android-determines-what-resources-to-use"></a>Bestimmen der zu verwendenden Ressourcen durch Android
 
-- **Beseitigen widersprüchlich Qualifizierer** &ndash; z. B. wenn die Ausrichtung auf Hochformat ist, klicken Sie dann alle Querformat Ressourcenverzeichnisse zurückgewiesen.
+Es ist sehr möglich und wahrscheinlich, dass eine Android-Anwendung viele Ressourcen enthält. Es ist wichtig zu verstehen, wie Android die Ressourcen für eine Anwendung auswählt, wenn diese auf einem Gerät ausgeführt wird.
 
-- **Ignorieren Sie die Qualifizierer, die nicht unterstützt** &ndash; nicht alle Qualifizierer sind für alle API-Ebenen verfügbar. Wenn Sie ein Ressourcenverzeichnis einen Qualifizierer enthält, der nicht vom Gerät unterstützt wird, werden diese Ressourcenverzeichnis ignoriert.
+Android bestimmt die Ressourcenbasis durch Iteration des folgenden Regel Tests:
 
-- **Identifizieren Sie den nächsten höchste Priorität Qualifizierer** &ndash; verweisen auf der obigen Tabelle wählen Sie den nächsten höchste Priorität-Qualifizierer (von oben nach unten).
+- **Widersprüchliche Qualifizierer ausschließen** &ndash; Wenn z. b. die Geräte Ausrichtung Hochformat ist, werden alle quer Ressourcen Verzeichnisse zurückgewiesen.
 
-- **Behalten Sie alle Ressourcenverzeichnisse für den Qualifizierer für** &ndash; treten Ressourcenverzeichnisse, die den Qualifizierer, der in der obigen Tabelle entsprechen, wählen Sie den nächsten höchste Priorität-Qualifizierer (von oben nach unten).
+- **Qualifizierer ignorieren nicht unterstützt** &ndash; Nicht alle Qualifizierer sind für alle API-Ebenen verfügbar. Wenn ein Ressourcenverzeichnis einen Qualifizierer enthält, der vom Gerät nicht unterstützt wird, wird dieses Ressourcenverzeichnis ignoriert.
 
-Diese Regeln sind auch im folgenden Flussdiagramm dargestellt:
+- **Bestimmen des Qualifizierers mit der höchsten Priorität** &ndash; Wenn Sie auf die obige Tabelle verweisen, wählen Sie den Qualifizierer mit der höchsten Priorität (von oben nach unten).
 
-[![Ressourcen-Flussdiagramm](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png#lightbox)
+- **Alle Ressourcen Verzeichnisse für Qualifizierer beibehalten** &ndash; wenn Ressourcen Verzeichnisse vorhanden sind, die mit dem Qualifizierer der obigen Tabelle identisch sind, wählen Sie den Qualifizierer mit der höchsten Priorität aus (von oben nach unten).
 
-Wenn das System nach Dichte-spezifischen Ressourcen sucht und nicht werden gefunden, wird versucht, suchen Sie nach anderen bestimmten Dichte-Ressourcen und skalieren. Android sind nicht unbedingt die Standardressourcen verwenden.
-Z. B. bei der Suche nach einer Ressource mit geringer Dichte nicht verfügbar ist, kann Android mit hoher Dichte Version der Ressource für die Standardinstanz oder mittlere Dichte Ressourcen auswählen. Es liegt daran, dass die Ressource mit hoher Dichte um den Faktor 0,5 skaliert werden kann nach unten bei weniger Sichtbarkeit als eine mittlere Dichte-Ressource, die einen Faktor von 0,75 müssten Herunterskalieren führen.
+Diese Regeln werden auch im folgenden Flussdiagramm veranschaulicht:
 
-Betrachten Sie beispielsweise eine Anwendung mit den folgenden drawable Ressourcenverzeichnisse aus:
+[![Flussdiagramm für Ressourcen](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png#lightbox)
 
-    drawable
-    drawable-en
-    drawable-fr-rCA
-    drawable-en-port
-    drawable-en-notouch-12key
-    drawable-en-port-ldpi
-    drawable-port-ldpi
-    drawable-port-notouch-12key
+Wenn das System nach Dichte spezifischen Ressourcen sucht und diese nicht finden kann, wird versucht, andere Dichte spezifische Ressourcen zu finden und zu skalieren. Android verwendet möglicherweise nicht notwendigerweise die Standard Ressourcen.
+Wenn Sie z. b. nach einer Ressource mit geringer Dichte suchen und diese nicht verfügbar ist, kann Android die hochdichte Version der Ressource über die Standard-oder mitteldichte Ressourcen auswählen. Dies liegt daran, dass die Ressource mit hoher Dichte um den Faktor 0,5 herunterskaliert werden kann. Dies führt zu weniger Sichtbarkeits Problemen als das Herunterskalieren einer Ressource mit mittlerer Dichte, die einen Faktor von 0,75 erfordern würde.
 
-Und nun die Anwendung ausgeführt wird, auf einem Gerät mit der folgenden Konfiguration:
+Stellen Sie sich als Beispiel eine Anwendung vor, die über die folgenden drawable-Ressourcen Verzeichnisse verfügt:
 
-- **Gebietsschema** &ndash; En-GB-
+```
+drawable
+drawable-en
+drawable-fr-rCA
+drawable-en-port
+drawable-en-notouch-12key
+drawable-en-port-ldpi
+drawable-port-ldpi
+drawable-port-notouch-12key
+```
+
+Nun wird die Anwendung auf einem Gerät mit der folgenden Konfiguration ausgeführt:
+
+- Gebiets Schema &ndash; en-GB
 - **Ausrichtung** &ndash; Port
-- **Bildschirm Dichte** &ndash; Hdpi
-- **Typ der Touchscreen** &ndash; Notouch
+- **Bildschirm Dichte** &ndash; hdpi
+- **Touchscreen-Typ** &ndash; NoTouch
 - **Primäre Eingabemethode** &ndash; 12key
 
-Zunächst werden die französischen Ressourcen entfernt, wie sie mit dem Gebietsschema des Konflikt `en-GB`, lassen uns:
+Zunächst werden die französischen Ressourcen eliminiert, da Sie mit dem Gebiets Schema von `en-GB`in Konflikt stehen, und wir haben Folgendes:
 
-    drawable
-    drawable-en
-    drawable-en-port
-    drawable-en-notouch-12key
-    drawable-en-port-ldpi
-    drawable-port-ldpi
-    drawable-port-notouch-12key
+```
+drawable
+drawable-en
+drawable-en-port
+drawable-en-notouch-12key
+drawable-en-port-ldpi
+drawable-port-ldpi
+drawable-port-notouch-12key
+```
 
-Als Nächstes wird der erste Qualifizierer aus der obigen Tabelle Qualifizierer ausgewählt: MCC und MNC. Es gibt keine Ressourcenverzeichnisse aus, die dieser Qualifizierer enthalten, sodass der Code MCC/MNC ignoriert wird.
+Als nächstes wird der erste Qualifizierer aus der qualifizierertabelle oben ausgewählt: MCC und MNC. Es sind keine Ressourcen Verzeichnisse vorhanden, die diesen Qualifizierer enthalten, sodass der MCC/MNC-Code ignoriert wird.
 
-Der nächste Qualifizierer ist ausgewählt, die Sprache ist. Es sind Ressourcen, die den Sprachcode entsprechen. Alle Ressourcenverzeichnisse, die nicht den Sprachcode des entsprechen `en` abgelehnt werden, damit, dass die Liste der Ressourcen ist:
+Der nächste Qualifizierer ist ausgewählt (Sprache). Es gibt Ressourcen, die dem Sprachcode entsprechen. Alle Ressourcen Verzeichnisse, die nicht dem Sprachcode von `en` entsprechen, werden abgelehnt, sodass die Liste der Ressourcen jetzt lautet:
 
-    drawable-en-port
-    drawable-en-notouch-12key
-    drawable-en-port-ldpi
+```
+drawable-en-port
+drawable-en-notouch-12key
+drawable-en-port-ldpi
+```
 
-Der nächste Qualifizierer, die vorhanden ist wird für die Ausrichtung des Bildschirms, sodass alle Ressourcenverzeichnisse, die nicht die bildschirmausrichtung des entsprechen `port` werden entfernt:
+Der nächste Qualifizierer, der vorhanden ist, ist für die Bildschirm Ausrichtung vorgesehen, sodass alle Ressourcen Verzeichnisse, die `port` nicht mit der Bildschirm Ausrichtung von identisch sind, gelöscht werden:
 
-    drawable-en-port
-    drawable-en-port-ldpi
+```
+drawable-en-port
+drawable-en-port-ldpi
+```
 
-Als Nächstes wird der Qualifizierer für den Bildschirm Dichte `ldpi`, was dazu führt, in der Ausschluss eines in das Verzeichnis für weitere:
+Als nächstes ist der Qualifizierer für `ldpi`die Bildschirm Dichte,, der zum Ausschluss eines weiteren Ressourcen Verzeichnisses führt:
 
-    drawable-en-port-ldpi
+```
+drawable-en-port-ldpi
+```
 
-Durch diesen Prozess wird Android nutzt die zeichenbaren Ressourcen im Ressourcenverzeichnis `drawable-en-port-ldpi` für das Gerät.
+Im Ergebnis dieses Prozesses verwendet Android die drawable-Ressourcen im Ressourcenverzeichnis `drawable-en-port-ldpi` für das Gerät.
 
 > [!NOTE]
-> Der Bildschirm Größe Qualifizierer Geben Sie eine Ausnahme für diesen Auswahlprozess. Es ist möglich, für Android, Ressourcen auswählen, die für kleinere Bildschirme als welche das aktuelle Gerät stellt entwickelt wurden. Z. B. einem großen Bildschirm Gerät können Sie die Ressourcen für einen normal großen Bildschirm angeben. Jedoch das Gegenteil davon nicht erfüllt ist: das gleiche Gerät mit großen Bildschirmen verwendet nicht die Ressourcen bereitgestellt, die für einen Bildschirm sehr groß. Wenn Android einen Ressourcensatz, der eine bestimmte Bildschirmgröße entspricht nicht finden kann, stürzt die Anwendung.
+> Die Qualifizierer für die Bildschirmgröße stellen eine Ausnahme für diesen Auswahlprozess dar. Android kann Ressourcen auswählen, die für einen kleineren Bildschirm entwickelt wurden, als das aktuelle Gerät bereitstellt. Beispielsweise kann ein großes Bildschirm die Ressourcen verwenden, die für einen Bildschirm mit normaler Größe bereitgestellt werden. Dies trifft jedoch nicht zu: das gleiche Gerät für große Bildschirme verwendet nicht die Ressourcen, die für einen XLarge-Bildschirm bereitgestellt werden. Wenn Android keinen Ressourcen Satz finden kann, der mit einer bestimmten Bildschirmgröße übereinstimmt, stürzt die Anwendung ab.

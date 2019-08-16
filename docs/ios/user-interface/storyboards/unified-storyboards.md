@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 02bc6fe7109f13629e776c800657846fca02641e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 20010fb3704da54ae1e1133c25f332e8481a1b87
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657131"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528541"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in xamarin. IOS
 
@@ -28,8 +28,8 @@ Vor IOS 8 nutzte `UIInterfaceOrientation` der Entwickler und `UIInterfaceIdiom` 
 
 Geräte werden von Größenklassen in vertikalen und horizontalen Achsen definiert, und es gibt zwei Typen von Größenklassen in ios 8:
 
--  **Regulär** – Dies ist entweder für eine große Bildschirmgröße (z. b. ein iPad) oder eine Mini Anwendung, die den Eindruck einer großen Größe (z. b.`UIScrollView`
--  **Compact** – Dies gilt für kleinere Geräte (z. b. ein iPhone). Diese Größe berücksichtigt die Ausrichtung des Geräts.
+- **Regulär** – Dies ist entweder für eine große Bildschirmgröße (z. b. ein iPad) oder eine Mini Anwendung, die den Eindruck einer großen Größe (z. b.`UIScrollView`
+- **Compact** – Dies gilt für kleinere Geräte (z. b. ein iPhone). Diese Größe berücksichtigt die Ausrichtung des Geräts.
 
 
 Wenn die beiden Konzepte gleichzeitig verwendet werden, ist das Ergebnis ein 2 x 2-Raster, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können, wie in der folgenden Abbildung dargestellt:
@@ -51,8 +51,8 @@ Basierend auf der Ausrichtung des Geräts hat das iPhone verschiedene Größenkl
 
  [![](unified-storyboards-images/iphonesizeclasses.png "iPhone size-Klassen")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
--  Wenn sich das Gerät im Hochformat befindet, hat der Bildschirm eine **kompakte** Klasse horizontal **und vertikal vertikal** .
--  Wenn sich das Gerät im Querformat befindet, werden die Bildschirm Klassen aus dem Hochformat Modus zurückgesetzt.
+- Wenn sich das Gerät im Hochformat befindet, hat der Bildschirm eine **kompakte** Klasse horizontal und vertikal vertikal.
+- Wenn sich das Gerät im Querformat befindet, werden die Bildschirm Klassen aus dem Hochformat Modus zurückgesetzt.
 
 ### <a name="iphone-6-plus-size-classes"></a>iPhone 6 Plus Size-Klassen
 
@@ -91,11 +91,11 @@ Alle oben genannten Zustände werden in einem Container umschließt, auf den App
 
 Merkmals Umgebungen sind eine neue Schnittstelle in ios 8 und können eine Merkmals Auflistung für die folgenden Objekte zurückgeben:
 
--  Bildschirme `UIScreens` ().
--  Windows ( `UIWindows` ).
--  Anzeigen von Controllern ( `UIViewController` ).
--  Sichten ( `UIView` ).
--  Präsentations Controller ( `UIPresentationController` ).
+- Bildschirme `UIScreens` ().
+- Windows ( `UIWindows` ).
+- Anzeigen von Controllern ( `UIViewController` ).
+- Sichten ( `UIView` ).
+- Präsentations Controller ( `UIPresentationController` ).
 
 
 Der Entwickler verwendet die von einer Merkmals Umgebung zurückgegebene Merkmals Auflistung, um zu bestimmen, wie eine Benutzeroberfläche angelegt werden soll.
@@ -230,16 +230,16 @@ Der `TraitCollectionDidChange` eignet sich hervorragend für die `UIView` Arbeit
 
 Sehen wir uns nun genauer an, was geschieht, wenn ein Split View Controller von einer zwei Spalte zu einer einzigen Spalten Ansicht reduziert wird. Im Rahmen dieser Änderung müssen zwei Prozesse ausgeführt werden:
 
--  Standardmäßig verwendet der Split View Controller den primären Ansichts Controller als Ansicht, nachdem der Reduzierungs Vorgang aufgetreten ist. Der Entwickler kann dieses Verhalten überschreiben, indem `GetPrimaryViewControllerForCollapsingSplitViewController` er die `UISplitViewControllerDelegate` -Methode von überschreibt und einen beliebigen Ansichts Controller bereitstellt, der im reduzierten Zustand angezeigt werden soll.
--  Der sekundäre Ansichts Controller muss mit dem primären Ansichts Controller zusammengeführt werden. Der Entwickler muss in der Regel keine Aktion für diesen Schritt durchführen. der Split View Controller umfasst die automatische Verarbeitung dieser Phase basierend auf dem Hardware Gerät. Es gibt jedoch möglicherweise einige Sonderfälle, in denen der Entwickler mit dieser Änderung interagieren möchte. Durch Aufrufen `CollapseSecondViewController` der-Methode `UISplitViewControllerDelegate` von kann der Master Ansichts Controller angezeigt werden, wenn der Reduzierungs Vorgang statt der Detailansicht auftritt.
+- Standardmäßig verwendet der Split View Controller den primären Ansichts Controller als Ansicht, nachdem der Reduzierungs Vorgang aufgetreten ist. Der Entwickler kann dieses Verhalten überschreiben, indem `GetPrimaryViewControllerForCollapsingSplitViewController` er die `UISplitViewControllerDelegate` -Methode von überschreibt und einen beliebigen Ansichts Controller bereitstellt, der im reduzierten Zustand angezeigt werden soll.
+- Der sekundäre Ansichts Controller muss mit dem primären Ansichts Controller zusammengeführt werden. Der Entwickler muss in der Regel keine Aktion für diesen Schritt durchführen. der Split View Controller umfasst die automatische Verarbeitung dieser Phase basierend auf dem Hardware Gerät. Es gibt jedoch möglicherweise einige Sonderfälle, in denen der Entwickler mit dieser Änderung interagieren möchte. Durch Aufrufen `CollapseSecondViewController` der-Methode `UISplitViewControllerDelegate` von kann der Master Ansichts Controller angezeigt werden, wenn der Reduzierungs Vorgang statt der Detailansicht auftritt.
 
 
 ### <a name="expanding-the-split-view-controller"></a>Erweitern des Split View-Controllers
 
 Sehen wir uns nun genauer an, was geschieht, wenn ein Split View Controller von einem reduzierten Zustand aus erweitert wird. Noch einmal müssen zwei Schritte ausgeführt werden:
 
--  Definieren Sie zunächst den neuen primären Ansichts Controller. Standardmäßig verwendet der Split View Controller automatisch den primären Ansichts Controller aus der reduzierten Ansicht. Der Entwickler kann dieses Verhalten überschreiben, indem er `GetPrimaryViewControllerForExpandingSplitViewController` die-Methode `UISplitViewControllerDelegate` von verwendet.
--  Nachdem der primäre Ansichts Controller ausgewählt wurde, muss der sekundäre Ansichts Controller neu erstellt werden. Der Split View Controller schließt die automatische Verarbeitung dieser Phase basierend auf dem Hardware Gerät ein. Der Entwickler kann dieses Verhalten überschreiben, indem `SeparateSecondaryViewController` er die- `UISplitViewControllerDelegate` Methode von aufrufen.
+- Definieren Sie zunächst den neuen primären Ansichts Controller. Standardmäßig verwendet der Split View Controller automatisch den primären Ansichts Controller aus der reduzierten Ansicht. Der Entwickler kann dieses Verhalten überschreiben, indem er `GetPrimaryViewControllerForExpandingSplitViewController` die-Methode `UISplitViewControllerDelegate` von verwendet.
+- Nachdem der primäre Ansichts Controller ausgewählt wurde, muss der sekundäre Ansichts Controller neu erstellt werden. Der Split View Controller schließt die automatische Verarbeitung dieser Phase basierend auf dem Hardware Gerät ein. Der Entwickler kann dieses Verhalten überschreiben, indem `SeparateSecondaryViewController` er die- `UISplitViewControllerDelegate` Methode von aufrufen.
 
 
 In einem Split View Controller spielt der primäre Ansichts Controller eine Rolle beim Erweitern und reduzieren der Sichten, indem die `CollapseSecondViewController` -Methode und die- `SeparateSecondaryViewController` Methode von `UISplitViewControllerDelegate`implementiert werden. `UINavigationController`implementiert diese Methoden, um den sekundären Ansichts Controller automatisch per Push zu übermitteln.
@@ -250,8 +250,8 @@ Eine weitere Änderung, die Apple an IOS 8 vorgenommen hat, ist die Art und Weis
 
 Dies führte zu einer sehr engen Kopplung zwischen dem Navigations Controller und der Umgebung, in der er ausgeführt wurde. In ios 8 hat Apple dies durch die Bereitstellung von zwei neuen Methoden entkoppelt:
 
--  `ShowViewController`– Passt sich an, um den neuen Ansichts Controller auf der Grundlage seiner Umgebung anzuzeigen. Beispielsweise wird in einem `UINavigationController` die neue Ansicht einfach auf den Stapel übertragen. In einem Split View-Controller wird der neue Ansichts Controller auf der linken Seite angezeigt, und zwar im neuen primären Ansichts Controller. Wenn kein Container Ansichts Controller vorhanden ist, wird die neue Ansicht als modaler Ansichts Controller angezeigt.
--  `ShowDetailViewController`– Funktioniert ähnlich wie `ShowViewController`, wird jedoch auf einem geteilten Ansichts Controller implementiert, um die Detailansicht durch den neuen Ansichts Controller zu ersetzen, der weitergegeben wird. Wenn der Split View Controller (wie in einer iPhone-Anwendung angezeigt) reduziert wird, wird der-Befehl an die `ShowViewController` -Methode umgeleitet, und die neue Ansicht wird als primärer Ansichts Controller angezeigt. Wenn kein Container Ansichts Controller vorhanden ist, wird die neue Ansicht als modaler Ansichts Controller angezeigt.
+- `ShowViewController`– Passt sich an, um den neuen Ansichts Controller auf der Grundlage seiner Umgebung anzuzeigen. Beispielsweise wird in einem `UINavigationController` die neue Ansicht einfach auf den Stapel übertragen. In einem Split View-Controller wird der neue Ansichts Controller auf der linken Seite angezeigt, und zwar im neuen primären Ansichts Controller. Wenn kein Container Ansichts Controller vorhanden ist, wird die neue Ansicht als modaler Ansichts Controller angezeigt.
+- `ShowDetailViewController`– Funktioniert ähnlich wie `ShowViewController`, wird jedoch auf einem geteilten Ansichts Controller implementiert, um die Detailansicht durch den neuen Ansichts Controller zu ersetzen, der weitergegeben wird. Wenn der Split View Controller (wie in einer iPhone-Anwendung angezeigt) reduziert wird, wird der-Befehl an die `ShowViewController` -Methode umgeleitet, und die neue Ansicht wird als primärer Ansichts Controller angezeigt. Wenn kein Container Ansichts Controller vorhanden ist, wird die neue Ansicht als modaler Ansichts Controller angezeigt.
 
 
 Diese Methoden funktionieren, indem Sie am Blatt Ansichts Controller beginnen und die Ansichts Hierarchie durchlaufen, bis Sie den richtigen Container Ansichts Controller finden, der die Anzeige der neuen Ansicht behandelt.
@@ -266,8 +266,8 @@ In diesem Abschnitt wird erläutert, wie diese Methoden tatsächlich in ios 8 im
 
 Diese Methode durchläuft die Hierarchie Kette, bis der richtige Container Ansichts Controller gefunden wird. Beispiel:
 
-1.  Wenn eine `ShowViewController` Methode aufgerufen wird, ist der erste Ansichts Controller in der Kette, der diese Methode implementiert, der Navigations Controller und wird daher als übergeordnetes Element der neuen Ansicht verwendet.
-1.  Wenn stattdessen `ShowDetailViewController` eine Methode aufgerufen wurde, ist der Split View Controller der erste Ansichts Controller, um ihn zu implementieren, sodass er als übergeordnetes Element verwendet wird.
+1. Wenn eine `ShowViewController` Methode aufgerufen wird, ist der erste Ansichts Controller in der Kette, der diese Methode implementiert, der Navigations Controller und wird daher als übergeordnetes Element der neuen Ansicht verwendet.
+1. Wenn stattdessen `ShowDetailViewController` eine Methode aufgerufen wurde, ist der Split View Controller der erste Ansichts Controller, um ihn zu implementieren, sodass er als übergeordnetes Element verwendet wird.
 
 
 Die `GetTargetForAction` -Methode sucht mithilfe eines Ansichts Controllers, der eine bestimmte Aktion implementiert, und fragt diesen Ansichts Controller ab, wenn er diese Aktion empfangen möchte. Da diese Methode öffentlich ist, können Entwickler ihre eigenen benutzerdefinierten Methoden erstellen, die genau wie die integrierten `ShowViewController` - `ShowDetailViewController` und-Methoden funktionieren.
@@ -558,9 +558,9 @@ Neu in ios 8: Unified Storyboards ermöglichen es dem Entwickler, eine einheitli
 
 Die wichtigsten Vorteile von Unified Storyboards sind:
 
--  Verwenden Sie dieselbe storyboarddatei für iPhone und iPad.
--  Stellen Sie eine rückwärts Bereitstellung auf IOS 6 und IOS 7 bereit.
--  Vorschau des Layouts für verschiedene Geräte, Ausrichtungen und Betriebssystemversionen innerhalb des xamarin IOS-Designers.
+- Verwenden Sie dieselbe storyboarddatei für iPhone und iPad.
+- Stellen Sie eine rückwärts Bereitstellung auf IOS 6 und IOS 7 bereit.
+- Vorschau des Layouts für verschiedene Geräte, Ausrichtungen und Betriebssystemversionen innerhalb des xamarin IOS-Designers.
 
 Diese Funktion wird in Visual Studio für Mac vollständig unterstützt.
 
@@ -704,7 +704,7 @@ Beachten Sie bei den obigen Richtlinien, wie Sie einem vorhandenen xamarin IOS 8
 
 Führen Sie folgende Schritte aus:
 
-1. Öffnen Sie **Visual Studio für Mac** , und laden Sie die Projekt **Mappe, um** den dynamischen Startbildschirm hinzuzufügen.
+1. Öffnen Sie **Visual Studio für Mac** , und laden Sie die Projekt Mappe, um den dynamischen Startbildschirm hinzuzufügen.
 2. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste `MainStoryboard.storyboard` auf die Datei, und wählen Sie **mit** > **Xcode Interface Builder**öffnen:
 
     [![](unified-storyboards-images/dls01.png "Öffnen mit Xcode Interface Builder")](unified-storyboards-images/dls01.png#lightbox)

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: feae1a33b2e090ccfe3573285c75978aacd1799a
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: f4ff4b7b39f589f29f0c4c5df76ff36fe0060d83
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739207"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529215"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Erstellen Mobile Apps mit Xamarin.Forms-Buch
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<p><img src="images/cover-sml.png" title="Erstellen von mobilen Apps mit Xamarin.Forms-Buch" align="left" />Das Buch <i>Erstellen mobiler Apps mit Xamarin.Forms</i> von Charles Petzold ist Sie eine Anleitung für das lernen, wie Sie das Xamarin.Forms-Anwendungen zu schreiben. Die einzige Voraussetzung ist die Kenntnis der C# Programmiersprache. Das Buch bietet eine umfassende Untersuchung in der Benutzeroberfläche Xamarin.Forms und deckt auch Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierten Renderern und vieles mehr.
+<img src="images/cover-sml.png" title="Erstellen von mobilen Apps mit Xamarin.Forms-Buch" align="left" />Das Buch *Erstellen mobiler Apps mit Xamarin.Forms* von Charles Petzold ist Sie eine Anleitung für das lernen, wie Sie das Xamarin.Forms-Anwendungen zu schreiben. Die einzige Voraussetzung ist die Kenntnis der C# Programmiersprache. Das Buch bietet eine umfassende Untersuchung in der Benutzeroberfläche Xamarin.Forms und deckt auch Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierten Renderern und vieles mehr.
 
 Das Buch im Frühjahr 2016 veröffentlicht wurde, und seitdem nicht aktualisiert wurde. Ist viel im Buch, wertvollen bleibt, aber einige der [Material werden veraltete](#ways-in-which-the-book-is-outdated), und einige Themen sind nicht mehr vollständig ordnungsgemäß noch abgeschlossen.
 
@@ -26,11 +26,11 @@ Das Buch im Frühjahr 2016 veröffentlicht wurde, und seitdem nicht aktualisiert
 
 Das Format Ihrer bevorzugten e-Book von Microsoft Virtual Academy herunterladen:
 
-*    [**PDF (56Mb)** ](https://aka.ms/xamebook)
+* [**PDF (56Mb)** ](https://aka.ms/xamebook)
 
-*    [**ePub (151Mb)** ](https://aka.ms/xamebook/epub)
+* [**ePub (151Mb)** ](https://aka.ms/xamebook/epub)
 
-*    [**Kindle Edition (325Mb)** ](https://aka.ms/xamebook/mobi)
+* [**Kindle Edition (325Mb)** ](https://aka.ms/xamebook/mobi)
 
 Sie können auch [Herunterladen der einzelnen Kapitel](#download-chapters-and-summaries) als PDF-Dateien.
 
@@ -85,7 +85,7 @@ Diese Zusammenfassungen auch angeben, wann Material im Kapitel sein könnten, [e
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>Methoden, die in denen das Buch veraltet ist.
 
-Seit der Veröffentlichung der <i>Erstellen mobiler Apps mit Xamarin.Forms</i>, Xamarin.Forms wurden mehrere neue Features hinzugefügt. Diese neuen Features in einzelnen Artikeln beschrieben werden die [Xamarin.Forms](/xamarin/) Dokumentation.
+Seit der Veröffentlichung der *Erstellen mobiler Apps mit Xamarin.Forms*, Xamarin.Forms wurden mehrere neue Features hinzugefügt. Diese neuen Features in einzelnen Artikeln beschrieben werden die [Xamarin.Forms](/xamarin/) Dokumentation.
 
 Andere Änderungen wurde ein Teil des Inhalts des Buchs veraltet sein:
 
@@ -101,7 +101,7 @@ Die Bibliothek .NET Standard 2.0 ermöglicht auch Anwendungen von Xamarin.Forms 
 
 ### <a name="the-role-of-xaml-has-been-elevated"></a>Die Rolle des XAML wurde erhöht wurde
 
-<i>Erstellen Mobile Apps mit Xamarin.Forms</i> beginnt mit der beschreibt, wie Xamarin.Forms-Anwendungen mithilfe von C# zu schreiben. Die Extensible Application Markup Language (XAML) ist nicht eingeführt [Kapitel 7. Visual Studio mit XAML. Code](summaries/chapter07.md).
+*Erstellen Mobile Apps mit Xamarin.Forms* beginnt mit der beschreibt, wie Xamarin.Forms-Anwendungen mithilfe von C# zu schreiben. Die Extensible Application Markup Language (XAML) ist nicht eingeführt [Kapitel 7. Visual Studio mit XAML. Code](summaries/chapter07.md).
 
 XAML ist nun eine viel größere Rolle im Xamarin.Forms. Die Xamarin.Forms-Projektmappe-Vorlagen mit Visual Studio verteilt erstellen XAML-basierte Auslagerungsdateien. Ein Entwickler, die mit Xamarin.Forms sollten so früh wie möglich mit XAML vertraut sein. Die [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml) Abschnitt der Dokumentation Xamarin.Forms enthält verschiedene Artikel zur XAML können Sie sofort loslegen.
 

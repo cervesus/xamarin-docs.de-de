@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 9307e440a780d60a8301c58d70ee882fbbdebab1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a2487fd0f7d90b70ec0dc1fb1978ca06a3108822
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646404"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522619"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Anpassen der Darstellung eines ListView-Steuermoduls mit xamarin. Android
 
@@ -164,17 +164,17 @@ Die vier integrierten Zeilen Sichten sind sehr einfach. Um komplexere Layouts (z
 
 Dieses Beispiel unterscheidet sich in vielerlei Hinsicht von den vorherigen Beispielen:
 
--  Erbt von `Activity` , nicht `ListActivity` . Sie können Zeilen für beliebige `ListView` anpassen, andere Steuerelemente können jedoch auch in ein `Activity` Layout eingefügt werden (z. b. eine Überschrift, Schaltflächen oder andere Elemente der Benutzeroberfläche). In diesem Beispiel wird eine Überschrift `ListView` über der hinzugefügt.
+- Erbt von `Activity` , nicht `ListActivity` . Sie können Zeilen für beliebige `ListView` anpassen, andere Steuerelemente können jedoch auch in ein `Activity` Layout eingefügt werden (z. b. eine Überschrift, Schaltflächen oder andere Elemente der Benutzeroberfläche). In diesem Beispiel wird eine Überschrift `ListView` über der hinzugefügt.
 
--  Erfordert eine axml-Layoutdatei für den Bildschirm. in den vorherigen Beispielen `ListActivity` erfordert keine Layoutdatei. Diese axml enthält eine `ListView` Steuerelement Deklaration.
+- Erfordert eine axml-Layoutdatei für den Bildschirm. in den vorherigen Beispielen `ListActivity` erfordert keine Layoutdatei. Diese axml enthält eine `ListView` Steuerelement Deklaration.
 
--  Erfordert eine axml-Layoutdatei zum Rendering der einzelnen Zeilen. Diese axml-Datei enthält die Text-und Image-Steuerelemente mit benutzerdefinierten Schriftart-und Farbeinstellungen.
+- Erfordert eine axml-Layoutdatei zum Rendering der einzelnen Zeilen. Diese axml-Datei enthält die Text-und Image-Steuerelemente mit benutzerdefinierten Schriftart-und Farbeinstellungen.
 
--  Verwendet eine optionale benutzerdefinierte Selektor-XML-Datei, um die Darstellung der Zeile bei der Auswahl festzulegen.
+- Verwendet eine optionale benutzerdefinierte Selektor-XML-Datei, um die Darstellung der Zeile bei der Auswahl festzulegen.
 
--  Die `Adapter` -Implementierung gibt ein benutzerdefiniertes `GetView` Layout aus der Überschreibung zurück.
+- Die `Adapter` -Implementierung gibt ein benutzerdefiniertes `GetView` Layout aus der Überschreibung zurück.
 
--  `ItemClick`muss anders deklariert werden (ein Ereignishandler ist an angefügt, `ListView.ItemClick` anstelle `OnListItemClick` eines über `ListActivity`schreibenden in).
+- `ItemClick`muss anders deklariert werden (ein Ereignishandler ist an angefügt, `ListView.ItemClick` anstelle `OnListItemClick` eines über `ListActivity`schreibenden in).
 
 
 Diese Änderungen werden im folgenden ausführlich erläutert, beginnend mit dem Erstellen der Aktivitätsansicht und der benutzerdefinierten Zeilen Ansicht und dem anschließenden abdecken der Änderungen am Adapter und der Aktivität, um Sie zu erstellen.

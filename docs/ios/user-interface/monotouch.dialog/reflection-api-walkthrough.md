@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 9dc98480d57dc7d4883306e9f4fc530599af9bd7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6482d0626874b3f2ca5e90efb0e376be60551fd7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652414"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528447"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Erstellen einer xamarin. IOS-Anwendung mit der Reflection-API
 
@@ -26,9 +26,9 @@ UV. D wird mit xamarin. IOS verteilt. Um es zu verwenden, klicken Sie mit der re
 
 Die Verwendung der reflektionserapi ist so einfach wie die folgenden:
 
-1.  Erstellen einer mit MT ergänzten Klasse D-Attribute.
-1.  Erstellen einer `BindingContext` -Instanz, indem Sie eine Instanz der obigen Klasse übergibt. 
-1.  Erstellen eines `DialogViewController` -und übergeben des `BindingContext’s` `RootElement` . 
+1. Erstellen einer mit MT ergänzten Klasse D-Attribute.
+1. Erstellen einer `BindingContext` -Instanz, indem Sie eine Instanz der obigen Klasse übergibt. 
+1. Erstellen eines `DialogViewController` -und übergeben des `BindingContext’s` `RootElement` . 
 
 
 Sehen wir uns ein Beispiel an, um die Verwendung der reflektionsszenarios zu veranschaulichen. In diesem Beispiel erstellen wir einen einfachen Dateneingabe-Bildschirm, wie unten dargestellt:

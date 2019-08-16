@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 8c816bf98d9997d09b73e7c9cb0d2ff436b65fbb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fd34532e647f0595ed8afa5ef7ad044b84b7d918
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643982"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525794"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Remote Benachrichtigungen mit Google Cloud Messaging
 
@@ -31,12 +31,12 @@ Bevor Sie mit dieser exemplarischen Vorgehensweise fortfahren können, müssen S
 
 Wir führen die folgenden Schritte aus, um eine GCM-aktivierte xamarin. Android-Client-App zu erstellen:
 
-1.  Installieren zusätzlicher Pakete, die für die Kommunikation mit GCM-Servern erforderlich sind.
-2.  Konfigurieren Sie App-Berechtigungen für den Zugriff auf GCM-Server.
-3.  Implementieren Sie Code, um zu überprüfen, ob Google Play Services vorhanden ist. 
-4.  Implementieren Sie einen Dienst für die Registrierungs Absicht, der mit GCM für ein Registrierungs Token aushandiert.
-5.  Implementieren Sie einen Instanz-ID-Listenerdienst, der auf registrierungstokenaktualisierungen von GCM lauscht
-6.  Implementieren Sie einen GCM-Listenerdienst, der Remote Nachrichten vom App-Server über GCM empfängt.
+1. Installieren zusätzlicher Pakete, die für die Kommunikation mit GCM-Servern erforderlich sind.
+2. Konfigurieren Sie App-Berechtigungen für den Zugriff auf GCM-Server.
+3. Implementieren Sie Code, um zu überprüfen, ob Google Play Services vorhanden ist. 
+4. Implementieren Sie einen Dienst für die Registrierungs Absicht, der mit GCM für ein Registrierungs Token aushandiert.
+5. Implementieren Sie einen Instanz-ID-Listenerdienst, der auf registrierungstokenaktualisierungen von GCM lauscht
+6. Implementieren Sie einen GCM-Listenerdienst, der Remote Nachrichten vom App-Server über GCM empfängt.
 
 Diese APP verwendet ein neues GCM-Feature, das als *Topic Messaging*bezeichnet wird. Im Thema Messaging sendet der App-Server eine Nachricht an ein Thema und nicht an eine Liste einzelner Geräte. Geräte, die dieses Thema abonnieren, können Thema Nachrichten als Pushbenachrichtigungen empfangen. Weitere Informationen zum Thema Messaging von GCM finden Sie im Artikel zur [Implementierung](https://developers.google.com/cloud-messaging/topic-messaging)von Google in Google. 
 
@@ -87,14 +87,14 @@ Beachten Sie, dass die Client-App kein Registrierungs Token von GCM empfangen ka
 
 Für eine Android-Anwendung müssen die folgenden Berechtigungen konfiguriert sein, bevor Benachrichtigungen von Google Cloud Messaging empfangen werden können: 
 
--   `com.google.android.c2dm.permission.RECEIVE`&ndash; Erteilt der APP die Berechtigung zum Registrieren und empfangen von Nachrichten von Google Cloud Messaging. (Was `c2dm` bedeutet das? Dies steht für _Cloud-zu-Gerät-Messaging_, bei dem es sich um den mittlerweile veralteten Vorgänger für GCM handelt. 
+- `com.google.android.c2dm.permission.RECEIVE`&ndash; Erteilt der APP die Berechtigung zum Registrieren und empfangen von Nachrichten von Google Cloud Messaging. (Was `c2dm` bedeutet das? Dies steht für _Cloud-zu-Gerät-Messaging_, bei dem es sich um den mittlerweile veralteten Vorgänger für GCM handelt. 
     GCM verwendet `c2dm` weiterhin in vielen Ihrer Berechtigungs Zeichenfolgen.) 
 
--   `android.permission.WAKE_LOCK`&ndash; (Optional) verhindert, dass die CPU des Geräts beim lauschen auf eine Nachricht in den Standbymodus wechselt. 
+- `android.permission.WAKE_LOCK`&ndash; (Optional) verhindert, dass die CPU des Geräts beim lauschen auf eine Nachricht in den Standbymodus wechselt. 
 
--   `android.permission.INTERNET`&ndash; Gewährt Internet Zugriff, sodass die Client-App mit GCM kommunizieren kann. 
+- `android.permission.INTERNET`&ndash; Gewährt Internet Zugriff, sodass die Client-App mit GCM kommunizieren kann. 
 
--   *Paketname registriert die Anwendung* `.permission.C2D_MESSAGE` bei Android und fordert die Berechtigung an, alle C2D-Nachrichten (Cloud-zu-Gerät) exklusiv zu empfangen. &ndash; Das *Paketname* -Präfix ist mit der Anwendungs-ID identisch. 
+- *Paketname registriert die Anwendung* `.permission.C2D_MESSAGE` bei Android und fordert die Berechtigung an, alle C2D-Nachrichten (Cloud-zu-Gerät) exklusiv zu empfangen. &ndash; Das *Paketname* -Präfix ist mit der Anwendungs-ID identisch. 
 
 Diese Berechtigungen werden im Android-Manifest festgelegt. Bearbeiten Sie " **androidmanifest. XML** ", und ersetzen Sie den Inhalt durch den folgenden XML-Code: 
 
@@ -205,11 +205,11 @@ Als nächstes schreiben wir Code, um GCM zu kontaktieren und ein Registrierungs 
 
 Bevor die APP Remote Benachrichtigungen vom App-Server empfangen kann, muss Sie sich bei GCM registrieren und ein Registrierungs Token zurückerhalten. Das Registrieren unserer Anwendung bei GCM erfolgt durch eine `IntentService` , die wir erstellen. Unsere `IntentService` führt die folgenden Schritte aus: 
 
-1.  Verwendet die [InstanceId-](https://developers.google.com/instance-id/) API zum Generieren von Sicherheits Token, die die Client-App für den Zugriff auf den App-Server autorisieren. Im Gegenzug erhalten wir ein Registrierungs Token aus GCM zurück.
+1. Verwendet die [InstanceId-](https://developers.google.com/instance-id/) API zum Generieren von Sicherheits Token, die die Client-App für den Zugriff auf den App-Server autorisieren. Im Gegenzug erhalten wir ein Registrierungs Token aus GCM zurück.
 
-2.  Leitet das Registrierungs Token an den App-Server weiter (sofern der App-Server dies erfordert).
+2. Leitet das Registrierungs Token an den App-Server weiter (sofern der App-Server dies erfordert).
 
-3.  Abonniert einen oder mehrere Benachrichtigungs Themen Kanäle.
+3. Abonniert einen oder mehrere Benachrichtigungs Themen Kanäle.
 
 Nachdem wir dies `IntentService`implementiert haben, testen wir es, um festzustellen, ob wir ein Registrierungs Token aus GCM zurückerhalten.
 
@@ -272,11 +272,11 @@ namespace ClientApp
 
 Ändern Sie *YOUR_SENDER_ID* im obigen Beispielcode in die Absender-ID für das Client-App-Projekt. So erhalten Sie die Absender-ID für Ihr Projekt: 
 
-1.  Melden Sie sich bei der [Google Cloud Console](https://console.cloud.google.com/) an, und wählen Sie im Pulldownmenü den Projektnamen aus. Klicken Sie im Bereich **Project Info** , der für das Projekt angezeigt wird, auf **zu Projekteinstellungen**wechseln:
+1. Melden Sie sich bei der [Google Cloud Console](https://console.cloud.google.com/) an, und wählen Sie im Pulldownmenü den Projektnamen aus. Klicken Sie im Bereich **Project Info** , der für das Projekt angezeigt wird, auf **zu Projekteinstellungen**wechseln:
 
     [![Xamaringcm-Projekt auswählen](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
-2.  Suchen Sie auf der Seite " **Einstellungen** " die **Projekt Nummer** &ndash; , die die Absender-ID für Ihr Projekt ist:
+2. Suchen Sie auf der Seite " **Einstellungen** " die **Projekt Nummer** &ndash; , die die Absender-ID für Ihr Projekt ist:
 
     [![Projekt Nummer angezeigt](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 

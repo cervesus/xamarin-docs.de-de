@@ -6,19 +6,19 @@ ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 639a62316d718534677b0ae86f9e5b57791c23e1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 31069199e8ebc89da76b63e58651adea82db6882
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649212"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526768"
 ---
 # <a name="transport-layer-security-tls-12"></a>Transport Layer Security (TLS) 1,2
 
 Die Verwendung der neuesten Version von [ _Transport Layer Security_ (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) ist wichtig, um sicherzustellen, dass die Kommunikation mit dem Anwendungs Netzwerk sicher ist.
 
 > [!WARNING]
-> **April, 2018** – aufgrund erhöhter Sicherheitsanforderungen (einschließlich der PCI-Konformität) erwarten große cloudanbieter und Webserver die Unterstützung von TLS-Versionen, die älter sind als 1,2.  Xamarin-Projekte, die in früheren Versionen von Visual Studio erstellt wurden, verwenden standardmäßig ältere Versionen von TLS.
+> **April, 2018** – aufgrund erhöhter Sicherheitsanforderungen (einschließlich der PCI-Konformität) erwarten große cloudanbieter und Webserver die Unterstützung von TLS-Versionen, die älter sind als 1,2. Xamarin-Projekte, die in früheren Versionen von Visual Studio erstellt wurden, verwenden standardmäßig ältere Versionen von TLS.
 >
 > Um sicherzustellen, dass Ihre apps weiterhin mit diesen Servern und Diensten funktionieren, **sollten Sie Ihre xamarin-Projekte aktualisieren, um die unten aufgeführten Einstellungen zu verwenden. Anschließend können Sie Ihre apps für Ihre Benutzer neu erstellen und erneut** bereitstellen.
 

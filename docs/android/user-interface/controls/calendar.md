@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 027b526815c56e5a0092b68b550129d9ffbf1493
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 610f9be346b761c4d20e4bbf97ecfcda74c0bee0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643035"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523049"
 ---
 # <a name="xamarinandroid-calendar"></a>Xamarin. Android-Kalender
 
@@ -224,10 +224,10 @@ Daraufhin wird eine Liste der Ereignisse angezeigt, wie unten dargestellt:
 
 Wir haben gesehen, wie Kalenderdaten gelesen werden. Sehen wir uns nun an, wie einem Kalender ein Ereignis hinzugefügt wird. Damit dies funktioniert, stellen Sie sicher, dass Sie `android.permission.WRITE_CALENDAR` die zuvor erwähnte Berechtigung einschließen. Zum Hinzufügen eines Ereignisses zu einem Kalender werden folgende Aktionen durchführt:
 
-1.  Erstellen Sie `ContentValues` eine-Instanz.
-1.  Verwenden Sie Schlüssel aus `CalendarContract.Events.InterfaceConsts` der-Klasse, um `ContentValues` die-Instanz aufzufüllen.
-1.  Legen Sie die Zeitzonen für die Start-und Endzeit des Ereignisses fest.
-1.  `ContentResolver` Verwenden Sie, um die Ereignisdaten in den Kalender einzufügen.
+1. Erstellen Sie `ContentValues` eine-Instanz.
+1. Verwenden Sie Schlüssel aus `CalendarContract.Events.InterfaceConsts` der-Klasse, um `ContentValues` die-Instanz aufzufüllen.
+1. Legen Sie die Zeitzonen für die Start-und Endzeit des Ereignisses fest.
+1. `ContentResolver` Verwenden Sie, um die Ereignisdaten in den Kalender einzufügen.
 
 
 Der folgende Code veranschaulicht die folgenden Schritte:

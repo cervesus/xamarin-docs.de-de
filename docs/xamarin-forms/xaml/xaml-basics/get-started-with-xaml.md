@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f4acadc1153c93ebade7453cfd7a79f5b052e513
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656512"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528359"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
@@ -211,9 +211,9 @@ Die `HorizontalTextAlignment` Eigenschaft ist vom Typ `TextAlignment`, eine Enum
 
 Für Eigenschaften komplexer Typen werden jedoch Konverter verwendet für die Analyse der XAML. Hierbei handelt es sich um Klassen in Xamarin.Forms verwenden, die abgeleitet `TypeConverter`. Viele öffentliche Klassen sind, andere dagegen nicht. Für diese bestimmte XAML-Datei spielen einige dieser Klassen eine Rolle hinter den Kulissen:
 
--  `LayoutOptionsConverter` für die `VerticalOptions` Eigenschaft
--  `FontSizeConverter` für die `FontSize` Eigenschaft
--  `ColorTypeConverter` für die `TextColor` Eigenschaft
+- `LayoutOptionsConverter` für die `VerticalOptions` Eigenschaft
+- `FontSizeConverter` für die `FontSize` Eigenschaft
+- `ColorTypeConverter` für die `TextColor` Eigenschaft
 
 Diese Konverter gesteuert, die die zulässige Syntax für die Einstellungen der Eigenschaft.
 

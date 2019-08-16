@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: d9f624084c83b318487f1162a9a2350f9e2cc409
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 750cf801d8ae9dfe63f9b2259d4a3f6a386a4404
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510500"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523239"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Ressourcen Qualifizierer und Visualisierungs Optionen
 
@@ -29,9 +29,9 @@ Sie können auf **Ressourcen qualifiziereroptionen** zugreifen, indem Sie auf da
 
 Dieses Dialogfeld enthält Pulldownmenüs für die folgenden Ressourcen Qualifizierer:
 
--   **Sprache** &ndash; Zeigt verfügbare Sprachressourcen an und bietet eine Option zum Hinzufügen neuer sprach-und Regions Ressourcen.
+- **Sprache** &ndash; Zeigt verfügbare Sprachressourcen an und bietet eine Option zum Hinzufügen neuer sprach-und Regions Ressourcen.
 
--   **UI-Modus** Listet Anzeigemodi (z. b. **autodock** und **Desk Dock**) sowie layoutrichtungen auf. &ndash;
+- **UI-Modus** Listet Anzeigemodi (z. b. **autodock** und **Desk Dock**) sowie layoutrichtungen auf. &ndash;
 
 Jedes dieser Pulldownmenüs öffnet neue Dialogfelder, in denen Sie Ressourcen Qualifizierer auswählen und konfigurieren können (wie im folgenden erläutert).
 
@@ -71,19 +71,19 @@ Das Symbol Aktionsleisten- **Einstellungen** ist links neben dem Pinselsymbol (D
 
 Mit diesem Symbol wird ein Dialogfeld-popover geöffnet, das eine Möglichkeit bietet, eine der drei Aktionsleiste Modi auszuwählen:
 
--   **Standard** &ndash; Besteht aus einem Logo oder einem Symbol und einem Titeltext mit einem optionalen Untertitel.
+- **Standard** &ndash; Besteht aus einem Logo oder einem Symbol und einem Titeltext mit einem optionalen Untertitel.
 
--   **Liste** &ndash; Navigationsmodus auflisten. Anstelle von statischem Titeltext zeigt dieser Modus ein Listen Menü für die Navigation innerhalb der Aktivität an (d. h., es kann dem Benutzer als Dropdown Liste angezeigt werden).
+- **Liste** &ndash; Navigationsmodus auflisten. Anstelle von statischem Titeltext zeigt dieser Modus ein Listen Menü für die Navigation innerhalb der Aktivität an (d. h., es kann dem Benutzer als Dropdown Liste angezeigt werden).
 
--   **Registerkarten** &ndash; Registerkarten-Navigationsmodus. Anstelle von statischem Titeltext stellt dieser Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität dar.
+- **Registerkarten** &ndash; Registerkarten-Navigationsmodus. Anstelle von statischem Titeltext stellt dieser Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität dar.
 
 ## <a name="themes"></a>Designs
 
-Das **Dropdown** Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
+Das Dropdown Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
 
 [![Weitere Themenliste](resource-qualifiers-images/vs/15-theme-menu-sml.png "Weitere Themenliste")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
-Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im **Design Dialogfeld** auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt **in das** Dropdown Menü "Design" eingefügt:
+Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im Design Dialogfeld auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt in das Dropdown Menü "Design" eingefügt:
 
 Das ![helle Design ist jetzt verfügbar] . Das (resource-qualifiers-images/vs/16-light-theme.png "helle Design ist jetzt verfügbar") .
 
@@ -111,9 +111,9 @@ Sie können auf **Ressourcen qualifiziereroptionen** zugreifen, indem Sie auf da
 
 Dieses Dialogfeld enthält Pulldownmenüs für die folgenden Ressourcen Qualifizierer:
 
--   **Sprache** &ndash; Zeigt verfügbare Sprachressourcen an und bietet eine Option zum Hinzufügen neuer sprach-und Regions Ressourcen.
+- **Sprache** &ndash; Zeigt verfügbare Sprachressourcen an und bietet eine Option zum Hinzufügen neuer sprach-und Regions Ressourcen.
 
--   **UI-Modus** Listet Anzeigemodi (z. b. **autodock** und **Desk Dock**) sowie layoutrichtungen auf. &ndash;
+- **UI-Modus** Listet Anzeigemodi (z. b. **autodock** und **Desk Dock**) sowie layoutrichtungen auf. &ndash;
 
 Jedes dieser Pulldownmenüs öffnet neue Dialogfelder, in denen Sie Ressourcen Qualifizierer auswählen und konfigurieren können (wie im folgenden erläutert).
 
@@ -153,19 +153,19 @@ Das Symbol Aktionsleisten- **Einstellungen** ist links neben dem Pinselsymbol (D
 
 Mit diesem Symbol wird ein Dialogfeld-popover geöffnet, das eine Möglichkeit bietet, eine der drei Aktionsleiste Modi auszuwählen:
 
--   **Standard** &ndash; Besteht aus einem Logo oder einem Symbol und einem Titeltext mit einem optionalen Untertitel.
+- **Standard** &ndash; Besteht aus einem Logo oder einem Symbol und einem Titeltext mit einem optionalen Untertitel.
 
--   **Liste** &ndash; Navigationsmodus auflisten. Anstelle von statischem Titeltext zeigt dieser Modus ein Listen Menü für die Navigation innerhalb der Aktivität an (d. h., es kann dem Benutzer als Dropdown Liste angezeigt werden).
+- **Liste** &ndash; Navigationsmodus auflisten. Anstelle von statischem Titeltext zeigt dieser Modus ein Listen Menü für die Navigation innerhalb der Aktivität an (d. h., es kann dem Benutzer als Dropdown Liste angezeigt werden).
 
--   **Registerkarten** &ndash; Registerkarten-Navigationsmodus. Anstelle von statischem Titeltext stellt dieser Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität dar.
+- **Registerkarten** &ndash; Registerkarten-Navigationsmodus. Anstelle von statischem Titeltext stellt dieser Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität dar.
 
 ## <a name="themes"></a>Designs
 
-Das **Dropdown** Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
+Das Dropdown Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
 
 [![Weitere Themenliste](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
 
-Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im **Design Dialogfeld** auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt **in das** Dropdown Menü "Design" eingefügt:
+Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im Design Dialogfeld auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt in das Dropdown Menü "Design" eingefügt:
 
 [![Das helle Design ist jetzt verfügbar.](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
 
@@ -177,7 +177,7 @@ Die Android- **Versions** Auswahl legt die Android-Version fest, die zum Renderi
 
 Die Zielframeworkversion kann in den Projekteinstellungen im Abschnitt **Projektoptionen > Build > Allgemein** festgelegt werden. Weitere Informationen zur Ziel Framework-Version finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 
-Der Satz von Widgets, der in der Toolbox verfügbar ist, wird von der Ziel Framework-Version des Projekts bestimmt. Dies gilt auch für die im eigenschaftenpad verfügbaren Eigenschaften. Die Liste der verfügbaren Widgets wird *nicht* durch den Wert bestimmt, der in der **Versions** Auswahl der Symbolleiste ausgewählt ist. Wenn Sie z. b. die Zielversion des Projekts auf Android 4,4 festgelegt haben, können Sie in der Symbolleiste der Versions Auswahl weiterhin Android 6,0 auswählen, um zu sehen, wie das Projekt in Android 6,0 aussieht, Sie können jedoch keine Widgets hinzufügen, &ndash; die für Android 6,0 spezifisch sind.  Sie sind weiterhin auf die Widgets beschränkt, die in Android 4,4 verfügbar sind.
+Der Satz von Widgets, der in der Toolbox verfügbar ist, wird von der Ziel Framework-Version des Projekts bestimmt. Dies gilt auch für die im eigenschaftenpadverfügbaren Eigenschaften. Die Liste der verfügbaren Widgets wird *nicht* durch den Wert bestimmt, der in der **Versions** Auswahl der Symbolleiste ausgewählt ist. Wenn Sie z. b. die Zielversion des Projekts auf Android 4,4 festgelegt haben, können Sie in der Symbolleiste der Versions Auswahl weiterhin Android 6,0 auswählen, um zu sehen, wie das Projekt in Android 6,0 aussieht, Sie können jedoch keine Widgets hinzufügen, &ndash; die für Android 6,0 spezifisch sind.  Sie sind weiterhin auf die Widgets beschränkt, die in Android 4,4 verfügbar sind.
 
 Weitere Informationen zu Ressourcentypen finden Sie unter [Android-Ressourcen](~/android/app-fundamentals/resources-in-android/index.md).
 

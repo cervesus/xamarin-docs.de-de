@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1f29f283207ed8c1382424b3680177886ad2c806
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f68e192db0b7acceb325ad44f40dce9cb229a26a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653160"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528985"
 ---
 # <a name="colors-in-xamarinforms"></a>Farben in Xamarin.Forms
 
@@ -24,12 +24,12 @@ In diesem Artikel werden die verschiedenen Möglichkeiten der `Color` Klasse kan
 
 Die `Color` Klasse bietet eine Reihe von Methoden, um eine Farbe-Instanz erstellen
 
--  **Mit dem Namen Farben** -eine Auflistung von allgemeinen benannte Farben, einschließlich `Red`, `Green`, und `Blue`.
--  **FromHex** -Zeichen folgen Wert, der der in HTML verwendeten Syntax ähnelt, z. b. "00FF00". Alpha kann optional als erstes Zeichenpaar ("CC00FF00") angegeben werden.
--  **FromHsla** -Farbton, Sättigung und Helligkeit `double` Werte, mit einem optionalen alpha-Wert (0,0-1,0).
--  **FromRgb** – Rot, Grün und Blau `int` Werte (0-255).
--  **FromRgba** – Rot, Grün, Blau und Alpha `int` Werte (0-255).
--  **FromUint** -legen Sie eine einzelne `double` Wert, der **über den Argb**.
+- **Mit dem Namen Farben** -eine Auflistung von allgemeinen benannte Farben, einschließlich `Red`, `Green`, und `Blue`.
+- **FromHex** -Zeichen folgen Wert, der der in HTML verwendeten Syntax ähnelt, z. b. "00FF00". Alpha kann optional als erstes Zeichenpaar ("CC00FF00") angegeben werden.
+- **FromHsla** -Farbton, Sättigung und Helligkeit `double` Werte, mit einem optionalen alpha-Wert (0,0-1,0).
+- **FromRgb** – Rot, Grün und Blau `int` Werte (0-255).
+- **FromRgba** – Rot, Grün, Blau und Alpha `int` Werte (0-255).
+- **FromUint** -legen Sie eine einzelne `double` Wert, der **über den Argb**.
 
 Hier einige Beispiel-Farben, zugewiesen ist die `BackgroundColor` einige Bezeichnungen, die verschiedene Varianten der zulässigen Syntax verwenden:
 
@@ -69,11 +69,11 @@ Unter iOS und Android wird diese Instanz in eine kontrastreicher Farbe festgeleg
 
 `Color` Instanzen umfassen zusätzliche Methoden, die zum Erstellen von neuer Farben verwendet werden können:
 
--  **AddLuminosity** -gibt eine neue Farbe durch die Helligkeit durch das angegebene Delta ändern.
--  **WithHue** -gibt eine neue Farbe, und Ersetzen Sie dabei den Farbton mit dem angegebenen Wert zurück.
--  **WithLuminosity** -gibt eine neue Farbe, und Ersetzen Sie dabei die Helligkeit mit dem angegebenen Wert zurück.
--  **WithSaturation** -gibt eine neue Farbe, und Ersetzen Sie dabei die Sättigung mit dem angegebenen Wert zurück.
--  **MultiplyAlpha** -gibt eine neue Farbe durch Ändern der Alpha, die er mit dem angegebenen Alphawert multipliziert.
+- **AddLuminosity** -gibt eine neue Farbe durch die Helligkeit durch das angegebene Delta ändern.
+- **WithHue** -gibt eine neue Farbe, und Ersetzen Sie dabei den Farbton mit dem angegebenen Wert zurück.
+- **WithLuminosity** -gibt eine neue Farbe, und Ersetzen Sie dabei die Helligkeit mit dem angegebenen Wert zurück.
+- **WithSaturation** -gibt eine neue Farbe, und Ersetzen Sie dabei die Sättigung mit dem angegebenen Wert zurück.
+- **MultiplyAlpha** -gibt eine neue Farbe durch Ändern der Alpha, die er mit dem angegebenen Alphawert multipliziert.
 
 ## <a name="implicit-conversions"></a>Implizite Konvertierungen
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 21d25315aec5c056df90da11b8a51ee1493a45a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656685"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529226"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Dateiverarbeitung in Xamarin.Forms
 
@@ -115,8 +115,8 @@ Freigegebene Projekte können ebenfalls Dateien als eingebettete Ressourcen enth
 
 Für dieses Problem bei freigegebenen Projekten gibt es zwei Lösungsansätze:
 
--  **Synchronisieren des Projekts:** Bearbeiten Sie die Projekteigenschaften für jede Plattform, damit diese den **gleichen** Assemblynamen und den Standardnamespace verwenden. Dieser Wert kann dann als Präfix für die Ressourcen-IDs von eingebetteten Dateien im freigegebenen Projekt hartcodiert werden.
--  **#if-Compilerdirektiven:** Verwenden Sie Compilerdirektiven, um das richtige Präfix für die Ressourcen-ID festzulegen, und verwenden Sie diesen Wert, um die richtige Ressourcen-ID dynamisch zu erstellen.
+- **Synchronisieren des Projekts:** Bearbeiten Sie die Projekteigenschaften für jede Plattform, damit diese den **gleichen** Assemblynamen und den Standardnamespace verwenden. Dieser Wert kann dann als Präfix für die Ressourcen-IDs von eingebetteten Dateien im freigegebenen Projekt hartcodiert werden.
+- **#if-Compilerdirektiven:** Verwenden Sie Compilerdirektiven, um das richtige Präfix für die Ressourcen-ID festzulegen, und verwenden Sie diesen Wert, um die richtige Ressourcen-ID dynamisch zu erstellen.
 
 
 Im Folgenden finden Sie den Code für den zweiten Lösungsansatz. Compilerdirektiven werden verwendet, um das hartcodierte Ressourcenpräfix auszuwählen (das normalerweise dem Standardnamespace für das verweisende Projekt entspricht). Anschließend wird die `resourcePrefix`-Variable verwendet, um eine gültige Ressourcen-ID zu erstellen, indem diese mit dem Dateinamen der eingebetteten Ressource verkettet wird.

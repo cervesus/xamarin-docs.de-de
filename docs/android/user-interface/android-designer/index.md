@@ -1,40 +1,40 @@
 ---
-title: Xamarin.Android Designer
-description: Dieser Artikel beschreibt die Funktionen des Xamarin.Android-Designers. Es wird erläutert, Designer-Grundlagen, veranschaulicht, wie den Designer Widgets visuell gestalten und zu bearbeiten. Außerdem wird veranschaulicht, wie Sie mithilfe des Designers arbeiten mit Benutzeroberflächen und-Ressourcen in verschiedenen Konfigurationen, z.B. Designs, Sprachen und Gerätekonfigurationen, sowie zum Entwurf alternativer Ansichten wie quer- und Hochformat.
+title: Xamarin. Android Designer
+description: In diesem Artikel werden die Funktionen von xamarin. Android Designer beschrieben. Es werden die Grundlagen des Designers erläutert, die veranschaulichen, wie der Designer zum visuellen Anordnen von Widgets und Bearbeiten von Eigenschaften verwendet wird. Außerdem wird veranschaulicht, wie der-Designer verwendet wird, um mit Benutzeroberflächen und Ressourcen über verschiedene Konfigurationen hinweg zu arbeiten, wie z. b. Designs, Sprachen und Geräte Konfigurationen, und wie Sie für alternative Ansichten wie Landscape und Hochformat entwerfen.
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 1923d11829cf96941c8775f5f6b013116e0f2893
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 94f5dd206fb4794d1cdd71792418a2b4a2278c80
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61200373"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523143"
 ---
-# <a name="xamarinandroid-designer"></a>Xamarin.Android Designer
+# <a name="xamarinandroid-designer"></a>Xamarin. Android Designer
 
-_Dieser Artikel beschreibt die Funktionen des Xamarin.Android-Designers. Es wird erläutert, Designer-Grundlagen, veranschaulicht, wie den Designer Widgets visuell gestalten und zu bearbeiten. Außerdem wird veranschaulicht, wie Sie mithilfe des Designers arbeiten mit Benutzeroberflächen und-Ressourcen in verschiedenen Konfigurationen, z.B. Designs, Sprachen und Gerätekonfigurationen, sowie zum Entwurf alternativer Ansichten wie quer- und Hochformat._
+_In diesem Artikel werden die Funktionen von xamarin. Android Designer beschrieben. Es werden die Grundlagen des Designers erläutert, die veranschaulichen, wie der Designer zum visuellen Anordnen von Widgets und Bearbeiten von Eigenschaften verwendet wird. Außerdem wird veranschaulicht, wie der-Designer verwendet wird, um mit Benutzeroberflächen und Ressourcen über verschiedene Konfigurationen hinweg zu arbeiten, wie z. b. Designs, Sprachen und Geräte Konfigurationen, und wie Sie für alternative Ansichten wie z. b. Querformat und Hochformat entwerfen._
 
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Android unterstützt beide einen deklarativen Stil der Entwurf der Benutzeroberfläche basierend auf den XML-Dateien als auch programmgesteuerte Schnittstelle benutzererstellung im Code.
-Bei Verwendung den deklarativen Ansatz können XML-Dateien manuell bearbeitet werden, oder geänderte visuell werden mithilfe des Designers für Xamarin.Android. Verwenden eines Designers ermöglicht unmittelbares Feedback während der Erstellung der Benutzeroberfläche, beschleunigt die Entwicklung und wird das Erstellen der Benutzeroberfläche weniger arbeitsaufwendig.
+Xamarin. Android unterstützt sowohl einen deklarativen Stil des Entwurfs von Benutzeroberflächen, der in XML-Dateien basiert, als auch eine programmgesteuerte Erstellung von Benutzeroberflächen in Code.
+Bei Verwendung des deklarativen Ansatzes können XML-Dateien entweder mithilfe von xamarin. Android Designer Hand bearbeitet oder visuell geändert werden. Die Verwendung eines Designers ermöglicht sofortiges Feedback während der Erstellung der Benutzeroberfläche, beschleunigt die Entwicklung und macht den Prozess der Benutzeroberflächen Erstellung weniger aufwändig.
 
-Dieser Artikel behandelt die zahlreichen Features von den Xamarin.Android-Designer. Es wird Folgendes erläutert:
+In diesem Artikel werden die zahlreichen Features von xamarin. Android Designer erläutert. Es wird Folgendes erläutert:
 
-1.  Die Grundlagen der mithilfe des Designers.
-2.  Die verschiedenen Teile, die dem Designer bilden.
-3.  Wie Sie ein Android-Layout in den Designer zu laden.
-4.  Informationen zum Hinzufügen von Widgets.
-5.  Wie Sie Eigenschaften bearbeiten.
-6.  Informationen zum Arbeiten mit verschiedenen Ressourcen und Konfigurationen.
-7.  Vorgehensweise: Ändern Sie eine Benutzeroberfläche für die alternativen Ansichten wie quer- und Hochformat. 
-8.  Informationen zum Behandeln von Konflikten, die auftreten können, bei der Arbeit mit anderen Ansichten. 
-9.  Wie Sie Material Design-Tools zu verwenden, um Material Design-kompatible apps zu erstellen.
+1. Die Grundlagen der Verwendung des Designers.
+2. Die verschiedenen Teile, die den Designer bilden.
+3. So laden Sie ein Android-Layout in den Designer.
+4. Gewusst wie: Hinzufügen von Widgets
+5. Bearbeiten von Eigenschaften
+6. Arbeiten mit verschiedenen Ressourcen und Geräte Konfigurationen
+7. Vorgehensweise beim Ändern einer Benutzeroberfläche für alternative Ansichten wie z. b. Querformat und Hochformat. 
+8. Behandeln von Konflikten, die beim Arbeiten mit alternativen Sichten auftreten können. 
+9. Verwenden von Material Entwurfs Tools zum Erstellen von Material Design-kompatiblen apps
 
 
 
@@ -54,12 +54,12 @@ Dieser Artikel behandelt die zahlreichen Features von den Xamarin.Android-Design
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel erläutert die Funktionsgruppe von den Xamarin.Android-Designer.
-Es wurde gezeigt, wie Sie mit dem Designer beginnen und ihre einzelnen Teile beschrieben. Es wurde beschrieben, wie Sie ein Layout zu laden als auch das Hinzufügen und Ändern von Widgets, mit der **Designer-Oberfläche** als auch die **Quelle** anzeigen. Darüber hinaus wurde erläutert, wie zum Arbeiten mit verschiedenen Ressourcen und Konfigurationen. Zum Schluss untersucht es den Designer zu verwenden, um Benutzeroberflächen zu entwickeln, die speziell für die alternativen Ansichten, z. B. quer- und Hochformat, gedrehtes erstellt werden und wie Konflikte zu lösen, die zwischen diese Sichten entstehen können.
+In diesem Artikel wurde der Funktions Satz von xamarin. Android Designer erläutert.
+Es wurde gezeigt, wie Sie mit dem Designer loslegen und seine verschiedenen Teile erläutern. Es wurde beschrieben, wie Sie ein Layout laden sowie Widgets hinzufügen und ändern, indem Sie sowohl die **Designer Oberfläche** als auch die **Quell** Ansicht verwenden. Außerdem wurde erläutert, wie Sie mit verschiedenen Ressourcen und Geräte Konfigurationen arbeiten. Schließlich wurde untersucht, wie der Designer zum Entwickeln von Benutzeroberflächen verwendet werden kann, die speziell für alternative Sichten erstellt wurden, z. b. Querformat und Hochformat, und wie Konflikte gelöst werden können, die zwischen diesen Ansichten auftreten können.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Designer Exemplarische Vorgehensweise](~/android/user-interface/android-designer/designer-walkthrough.md)
+- [Exemplarische Vorgehensweise](~/android/user-interface/android-designer/designer-walkthrough.md)
 - [Android-Ressourcen](~/android/app-fundamentals/resources-in-android/index.md)

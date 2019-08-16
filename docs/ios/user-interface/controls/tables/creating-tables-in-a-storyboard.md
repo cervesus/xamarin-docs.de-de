@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e73695046786e4d9949fd46bdbba665ff4f6cc72
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 46729df70d08b8d6d1b5b953d74f5619a5dc5858
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645179"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528685"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen im iOS-Designer
 
@@ -58,9 +58,9 @@ Die Projekt Mappe wird mit einigen C# Dateien geöffnet, `Main.storyboard` und e
 
 Das Storyboard wird in drei Schritten bearbeitet:
 
--  Richten Sie zuerst die erforderlichen Ansichts Controller ein, und legen Sie deren Eigenschaften fest.
--  Erstellen Sie dann die Benutzeroberfläche, indem Sie Objekte per Drag & Drop auf Ihre Ansicht ziehen.
--  Fügen Sie schließlich der Ansicht die erforderliche UIKit-Klasse hinzu, und geben Sie verschiedenen Steuerelementen einen Namen, damit auf Sie im Code verwiesen werden kann.
+- Richten Sie zuerst die erforderlichen Ansichts Controller ein, und legen Sie deren Eigenschaften fest.
+- Erstellen Sie dann die Benutzeroberfläche, indem Sie Objekte per Drag & Drop auf Ihre Ansicht ziehen.
+- Fügen Sie schließlich der Ansicht die erforderliche UIKit-Klasse hinzu, und geben Sie verschiedenen Steuerelementen einen Namen, damit auf Sie im Code verwiesen werden kann.
 
 
 Nachdem das Storyboard vollständig ist, kann Code hinzugefügt werden, damit alles funktioniert.
@@ -71,19 +71,19 @@ Nachdem das Storyboard vollständig ist, kann Code hinzugefügt werden, damit al
 
 Die erste Änderung am Storyboard besteht darin, die vorhandene Detail Ansicht zu löschen und durch einen uitableviewcontroller zu ersetzen. Führen Sie folgende Schritte aus:
 
-1.  Wählen Sie die Leiste am unteren Rand des Ansichts Controllers aus, und löschen Sie Sie.
-2.  Ziehen Sie einen **Navigations Controller** und einen **Tabellen Ansichts Controller** aus der Toolbox auf das Storyboard. 
-3.  Erstellen Sie einen segue vom Root View Controller zum zweiten Tabellen Ansichts Controller, der soeben hinzugefügt wurde. Zum Erstellen des-Steuer Elements + Drag & amp; Drop *aus der Detail Zelle* auf den neu hinzugefügten uitableviewcontroller. Wählen Sie die Option unter **Auswahl** **anzeigen** aus. 
-4.  Wählen Sie den neuen segue aus, den Sie erstellt haben, und weisen Sie ihm einen Bezeichner zu Klicken Sie auf die Tabelle, und `TaskSegue` geben Sie für den Bezeichner in der **Eigenschaftenpad**wie folgt ein:    
+1. Wählen Sie die Leiste am unteren Rand des Ansichts Controllers aus, und löschen Sie Sie.
+2. Ziehen Sie einen **Navigations Controller** und einen **Tabellen Ansichts Controller** aus der Toolbox auf das Storyboard. 
+3. Erstellen Sie einen segue vom Root View Controller zum zweiten Tabellen Ansichts Controller, der soeben hinzugefügt wurde. Zum Erstellen des-Steuer Elements + Drag & amp; Drop *aus der Detail Zelle* auf den neu hinzugefügten uitableviewcontroller. Wählen Sie die Option unter **Auswahl** **anzeigen** aus. 
+4. Wählen Sie den neuen segue aus, den Sie erstellt haben, und weisen Sie ihm einen Bezeichner zu Klicken Sie auf die Tabelle, und `TaskSegue` geben Sie für den Bezeichner in der **Eigenschaftenpad**wie folgt ein:    
   [![Benennen von "*" im Eigenschaften Panel](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. Konfigurieren Sie als nächstes die beiden Tabellen Sichten, indem Sie Sie auswählen und die Eigenschaftenpad verwenden. Stellen Sie sicher, dass Sie "View" und "Not View Controller" auswählen – Sie können die Dokument Gliederung zur Auswahl verwenden.
 
-6.  Ändern Sie den root View Controller in **Content: Dynamische Prototypen** (die Ansicht auf der Designoberfläche wird als **prototypinhalt** gekennzeichnet):
+6. Ändern Sie den root View Controller in **Content: Dynamische Prototypen** (die Ansicht auf der Designoberfläche wird als **prototypinhalt** gekennzeichnet):
 
     [![Festlegen der Content-Eigenschaft auf dynamische Prototypen](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7.  Ändern Sie den neuen " **uitableviewcontroller** " in **"Content": Statische Zellen**. 
+7. Ändern Sie den neuen " **uitableviewcontroller** " in **"Content": Statische Zellen**. 
 
 
 8. Für den neuen uitableviewcontroller müssen der Klassenname und der Bezeichner festgelegt sein. Wählen Sie den Ansichts Controller aus, und geben Sie _taskdetailviewcontroller_ für die- **Klasse** im **Eigenschaftenpad** ein `TaskDetailViewController.cs` – Hierdurch wird eine neue Datei in der Lösungspad erstellt. Geben Sie die **storyboardid** wie im folgenden Beispiel gezeigt als _Detail_ein. Diese wird später verwendet, um diese Ansicht in C# Code zu laden:  
@@ -114,9 +114,9 @@ Als nächstes müssen Sie eine Schaltfläche erstellen, mit der neue Aufgaben hi
 
 Führen Sie folgende Schritte aus: 
 
--  Ziehen Sie ein **Balken-Schaltflächen Element** aus der Toolbox auf die Rechte Seite _der Navigationsleiste_.
--  Wählen Sie **in der Eigenschaftenpad unter leisten- **Schaltflächen Element** Bezeichner aus: Fügen** Sie hinzu (um eine *+* Schaltfläche mit Pluszeichen zu erstellen). 
--  Geben Sie einen Namen ein, damit er zu einem späteren Zeitpunkt im Code identifiziert werden kann. Beachten Sie, dass Sie dem stammansichts Controller einen Klassennamen (z. b. **itemviewcontroller**) geben müssen, damit Sie den Namen des leisten-Schaltflächen Elements festlegen können.
+- Ziehen Sie ein **Balken-Schaltflächen Element** aus der Toolbox auf die Rechte Seite _der Navigationsleiste_.
+- Wählen Sie **in der Eigenschaftenpad unter leisten- **Schaltflächen Element** Bezeichner aus: Fügen** Sie hinzu (um eine *+* Schaltfläche mit Pluszeichen zu erstellen). 
+- Geben Sie einen Namen ein, damit er zu einem späteren Zeitpunkt im Code identifiziert werden kann. Beachten Sie, dass Sie dem stammansichts Controller einen Klassennamen (z. b. **itemviewcontroller**) geben müssen, damit Sie den Namen des leisten-Schaltflächen Elements festlegen können.
 
 
 #### <a name="taskdetail-view-controller"></a>Taskdetail-Ansichts Controller
@@ -129,10 +129,10 @@ Führen Sie die folgenden Schritte aus, um das komplette Layout zu erstellen:
 
 Wählen Sie die Tabellenansicht aus, und öffnen Sie das **Eigenschafts Pad**. Aktualisieren Sie die folgenden Eigenschaften:
 
--  **Abschnitte**: _2_ 
--  **Stil**: _Biere_
--  **Trenn**Zeichen: _Gar_
--  **Auswahl**: _Keine Auswahl_
+- **Abschnitte**: _2_ 
+- **Stil**: _Biere_
+- **Trenn**Zeichen: _Gar_
+- **Auswahl**: _Keine Auswahl_
 
 Wählen Sie den oberen Abschnitt aus, und ändern Sie unter **Eigenschaften > Tabellen Ansichts Abschnitt** **Zeilen** ändern in _3_, wie unten dargestellt:
 
@@ -141,16 +141,16 @@ Wählen Sie den oberen Abschnitt aus, und ändern Sie unter **Eigenschaften > Ta
 
 Öffnen Sie für jede Zelle die **Eigenschaftenpad** , und legen Sie Folgendes fest:
 
--  **Stil**:  _Benutzerdefiniert_
--  **Bezeichner**: Wählen Sie einen eindeutigen Bezeichner für jede Zelle aus (z. b. "_Title_", "_Notizen_", "_done_").
--  Ziehen Sie die erforderlichen Steuerelemente, um das im Screenshot gezeigte Layout (" **UILabel**", " **UITextField** " und " **uiswitch** " in den richtigen Zellen zu platzieren, und legen Sie die Bezeichnungen entsprechend fest. Titel, Notizen und Done).
+- **Stil**:  _Benutzerdefiniert_
+- **Bezeichner**: Wählen Sie einen eindeutigen Bezeichner für jede Zelle aus (z. b. "_Title_", "_Notizen_", "_done_").
+- Ziehen Sie die erforderlichen Steuerelemente, um das im Screenshot gezeigte Layout (" **UILabel**", " **UITextField** " und " **uiswitch** " in den richtigen Zellen zu platzieren, und legen Sie die Bezeichnungen entsprechend fest. Titel, Notizen und Done).
 
 
 Legen Sie im zweiten Abschnitt **Zeilen** auf _1_ fest, und ziehen Sie den unteren Zieh Punkt der Zelle, um ihn zu vergrößern.
 
--  **Legen Sie den Bezeichner**: auf einen eindeutigen Wert fest (z. b. "Speichern"). 
--  **Legen Sie den Hintergrund fest**:  _Farbe löschen_ .
--  Ziehen Sie zwei Schaltflächen in die Zelle, und legen Sie Ihre Titel wie unten dargestellt entsprechend fest (z.b. _Speichern_ und _Löschen_):
+- **Legen Sie den Bezeichner**: auf einen eindeutigen Wert fest (z. b. "Speichern"). 
+- **Legen Sie den Hintergrund fest**:  _Farbe löschen_ .
+- Ziehen Sie zwei Schaltflächen in die Zelle, und legen Sie Ihre Titel wie unten dargestellt entsprechend fest (z.b. _Speichern_ und _Löschen_):
 
    [![Festlegen von zwei Schaltflächen im unteren Abschnitt](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
@@ -160,11 +160,11 @@ An diesem Punkt können Sie auch Einschränkungen für Ihre Zellen und Steuerele
 
 Beim Erstellen des Storyboards sind einige abschließende Schritte erforderlich. Zuerst müssen wir den einzelnen Steuerelementen unter **Identity > Name** einen Namen geben, damit Sie später im Code verwendet werden können. Benennen Sie diese wie folgt:
 
--  **Titel UITextField** : _TitleText_
--  **Notizen UITextField** : _Notestext_
--  **Uiswitch** : _Doneswitch_
--  **UIButton löschen** : _DeleteButton_
--  **UIButton speichern** : _SaveButton_
+- **Titel UITextField** : _TitleText_
+- **Notizen UITextField** : _Notestext_
+- **Uiswitch** : _Doneswitch_
+- **UIButton löschen** : _DeleteButton_
+- **UIButton speichern** : _SaveButton_
 
 
 <a name="Adding_Code" />
@@ -346,10 +346,10 @@ Dadurch wird das Storyboard-Beispiel abgeschlossen – die fertige App sieht wie
 
 Das Beispiel veranschaulicht Folgendes:
 
--  Erstellen einer Tabelle mit prototypinhalten, in denen Zellen zur erneuten Verwendung zum Anzeigen von Listen mit Daten definiert werden. 
--  Erstellen einer Tabelle mit statischem Inhalt zum Erstellen eines Eingabeformulars. Dies umfasste das Ändern des Tabellen Stils und das Hinzufügen von Abschnitten, Zellen und UI-Steuerelementen. 
--  Erstellen eines abgs und Überschreiben der `PrepareForSegue` -Methode, um die Ziel Ansicht aller erforderlichen Parameter zu benachrichtigen. 
--  Die storyboardsichten werden direkt mit `Storyboard.InstantiateViewController` der-Methode geladen.
+- Erstellen einer Tabelle mit prototypinhalten, in denen Zellen zur erneuten Verwendung zum Anzeigen von Listen mit Daten definiert werden. 
+- Erstellen einer Tabelle mit statischem Inhalt zum Erstellen eines Eingabeformulars. Dies umfasste das Ändern des Tabellen Stils und das Hinzufügen von Abschnitten, Zellen und UI-Steuerelementen. 
+- Erstellen eines abgs und Überschreiben der `PrepareForSegue` -Methode, um die Ziel Ansicht aller erforderlichen Parameter zu benachrichtigen. 
+- Die storyboardsichten werden direkt mit `Storyboard.InstantiateViewController` der-Methode geladen.
 
 
 

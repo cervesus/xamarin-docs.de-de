@@ -7,27 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: cd27d5c884086cd0fade4364851039fd0cd915a0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dc84ecc0ee3a71cc4e1d4233f4d6d5f22f597b07
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945460"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523481"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Warum kann mein Android-Releasebuild keine Verbindung mit dem Internet herstellen?
 
 ## <a name="cause"></a>Ursache
 
-Die häufigste Ursache für dieses Problem ist, die die **INTERNET** Berechtigung ist in einem Debugbuild automatisch enthalten, sondern muss manuell für einen Releasebuild festgelegt werden. Dies ist, da die Internet-Berechtigung verwendet wird, um einen Debugger Anfügen an den Prozess zu ermöglichen, für "DebugSymbols" beschriebene [hier](~/android/deploy-test/building-apps/build-process.md).
+Die häufigste Ursache für dieses Problem ist, dass die **Internet** Berechtigung automatisch in einem Debugbuild enthalten ist, aber für einen Releasebuild manuell festgelegt werden muss. Dies liegt daran, dass die Internet-Berechtigung verwendet wird, um einem Debugger das Anfügen an den Prozess zu gestatten, wie [hier](~/android/deploy-test/building-apps/build-process.md)für "DebugSymbols" beschrieben.
 
 
 ## <a name="fix"></a>Korrektur
 
-Um das Problem zu beheben, können Sie die Internet-Berechtigung im Android-Manifest anfordern. Dies kann entweder über den manifest-Editor oder des Manifests Quellcode durchgeführt werden:
+Um das Problem zu beheben, können Sie die Internet-Berechtigung im Android-Manifest anfordern. Dies kann entweder über den Manifest-Editor oder den Sourcecode des Manifests erfolgen:
 
--   Beheben Sie im Editor: Wechseln Sie in Ihrem Android-Projekt zu **Eigenschaften -> "androidmanifest.xml" -> erforderliche Berechtigungen** und überprüfen Sie **Internet**
+- Behebung im Editor: Wechseln Sie in Ihrem Android-Projekt zu **Properties-> androidmanifest. XML-> erforderliche Berechtigungen** , und überprüfen Sie **Internet** .
 
--   Beheben Sie im Quellcode: Öffnen Sie die AndroidManifest in ein Quellcode-Editor, und fügen Sie das Tag Berechtigung in den `<Manifest>` Tags:
+- Behebung in Sourcecode: Öffnen Sie die Datei "androidmanifest" in einem Quellen-Editor, und `<Manifest>` fügen Sie das Berechtigungs Kennzeichen in den Tags
 
     ```xml
     <Manifest>

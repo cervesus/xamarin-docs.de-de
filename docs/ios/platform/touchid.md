@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: fe0f3c6904255284c01cbb3277086b01ec852d7b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 54e910d0a4f3301ca441fd18ddb27da930e9415c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654052"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528770"
 ---
 # <a name="touch-id-in-xamarinios"></a>Berührungs-ID in xamarin. IOS
 
@@ -127,7 +127,7 @@ Sehen wir uns nun an, wie wir der Anwendung eine Fingereingabe-ID-Authentifizier
 3. Ziehen Sie einen neuen **Ansichts Controller** aus der **Toolbox** auf den **Designoberfläche**. Legen Sie diese als Stamm **Ansichts Controller** durch Drücken von **Strg + Drag** vom **Navigations Controller**fest:
 
     [![](touchid-images/image4.png "Festlegen des root View Controller")](touchid-images/image4.png#lightbox)
-4.  Benennen Sie den neuen Ansichts Controller `AuthenticationViewController`.
+4. Benennen Sie den neuen Ansichts Controller `AuthenticationViewController`.
 5. Ziehen Sie als nächstes eine Schaltfläche, und platzieren `AuthenticationViewController`Sie Sie auf dem. Nennen Sie `AuthenticateButton`diese, und versehen Sie Sie `Add a Chore`mit dem Text.
 6. Erstellen Sie ein Ereignis für `AuthenticateButton` den `AuthenticateMe`aufgerufenen.
 7. Erstellen Sie ein manuelles Bild `AuthenticationViewController` aus, indem Sie auf die schwarze Leiste am unteren Rand klicken, **STRG + Ziehen** von `MasterViewController` der Leiste auf die und dann auf **Push** (oder bei Verwendung von Größenklassen **anzeigen** ) klicken:

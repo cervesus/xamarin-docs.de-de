@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: bed8180c513eefd5765be767a5dca7cecefa6101
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 70555a0e2df3bcdd9c3abe47cf8231145891a826
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865961"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528416"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>Arbeiten mit WatchOS Lokalisierung in Xamarin
 
@@ -56,7 +56,7 @@ Standardmäßig ist die Watch-app für die Lokalisierung nicht konfiguriert. Sie
 
 1. Erstellen Sie **Base.lproj** Directory und verschieben Sie die **Interface.storyboard** hinein.
 
-2. Erstellen Sie **<language>.lproj** Verzeichnisse für jede Sprache, die Sie unterstützen möchten.
+2. Erstellen Sie sprach **>. lproj-Verzeichnisse für jede Sprache, die Sie unterstützen möchten. \<**
 
 3. Die **.lproj** Verzeichnisse enthalten sollte ein **Interface.strings** Textdatei (der Dateiname sollte das Storboard Namen entsprechen). Sie können optional alle Bilder ablegen, für die Lokalisierung in diesen Verzeichnissen erforderlich.
 
@@ -125,7 +125,7 @@ displayText.SetText (localizedDisplay);
 
 Images, die vom Code aufgefüllt werden, können auf zwei Arten festgelegt werden.
 
-1. Sie können ändern, eine `Image` Steuerelement durch Festlegen des Werts auf den Namen der Bilddatei, bereits vorhanden ist in der Watch-App, z.B.
+1. Sie können ein `Image` Steuerelement ändern, indem Sie seinen Wert auf den Zeichen folgen Namen eines Images festlegen, das bereits in der Watch-app vorhanden ist, z. b.
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
@@ -139,7 +139,7 @@ Images, die vom Code aufgefüllt werden, können auf zwei Arten festgelegt werde
     }
     ```
 
-    Beachten Sie, die Sie nicht benötigen, geben Sie die **@2x** beim Verweisen auf den Dateinamen des Bildes.
+    Beachten Sie, dass Sie beim Verweis auf den **@2x** Dateinamen des Bilds nicht angeben müssen.
 
 Die zweite Methode ist auch gilt, wenn Sie ein Image von einem Remoteserver Rendern auf der Apple Watch herunterladen. sollte in diesem Fall Sie jedoch sicherstellen, dass das Bild, die, das Sie herunterladen, ordnungsgemäß gemäß den Einstellungen des Benutzers lokalisiert wird.
 

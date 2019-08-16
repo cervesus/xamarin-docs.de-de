@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 209d8a61e6505e34fdf714b94ba40465f7f6aa4b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a3ec307061c47736722c5dacef9a939518586ded
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646371"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528803"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvos Schnellstarthandbuch
 
@@ -38,10 +38,10 @@ In diesem Artikel werden die wichtigsten Konzepte vorgestellt, die zum Erstellen
 
 Wir befassen uns mit den folgenden Konzepten:
 
--  **Visual Studio für Mac** – Einführung in die Visual Studio für Mac und das Erstellen von xamarin. tvos-Anwendungen.
--  **Anatomie einer xamarin. tvos-App** – was eine xamarin. tvos-App besteht.
--  **Erstellen einer Benutzeroberfläche** – Gewusst wie: Verwenden von zum Xamarin Designer für IOS, um eine Benutzeroberfläche zu erstellen.
--  **Bereitstellung und Tests** – ausführen und Testen Ihrer APP im tvos-Simulator und auf echter tvos-Hardware.
+- **Visual Studio für Mac** – Einführung in die Visual Studio für Mac und das Erstellen von xamarin. tvos-Anwendungen.
+- **Anatomie einer xamarin. tvos-App** – was eine xamarin. tvos-App besteht.
+- **Erstellen einer Benutzeroberfläche** – Gewusst wie: Verwenden von zum Xamarin Designer für IOS, um eine Benutzeroberfläche zu erstellen.
+- **Bereitstellung und Tests** – ausführen und Testen Ihrer APP im tvos-Simulator und auf echter tvos-Hardware.
 
 ## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>Starten einer neuen xamarin. tvos-app in Visual Studio für Mac
 
@@ -56,7 +56,7 @@ Gehen Sie dazu wie folgt vor:
 3. Wählen Sie **tvos** > **App** > **Single View App** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
     [![](hello-tvos-images/setup02.png "Einzelansicht-App auswählen")](hello-tvos-images/setup02.png#lightbox)
-4. Geben `Hello, tvOS` Sie als **APP-Namen**ein, geben Sie Ihren **Organisations Bezeichner** ein, und klicken Sie **auf die Schalt** Fläche
+4. Geben `Hello, tvOS` Sie als **APP-Namen**ein, geben Sie Ihren **Organisations Bezeichner** ein, und klicken Sie auf die Schaltfläche
 
     [![](hello-tvos-images/setup04.png "Geben Sie Hello, tvos ein.")](hello-tvos-images/setup04.png#lightbox)
 5. Geben `Hello_tvOS` Sie als **Projektnamen** ein, und klicken Sie auf die Schaltfläche **Erstellen** :
@@ -77,12 +77,12 @@ Wenn Sie mit der IOS-Programmierung vertraut sind, werden Sie hier viele Ähnlic
 
 Werfen wir einen Blick auf die Dateien im Projekt:
 
--   `Main.cs`: Diese Datei enthält den Haupteinstiegspunkt für die Anwendung. Wenn die App gestartet wird, enthält diese Datei die erste Klasse und Methode, die ausgeführt werden.
--   `AppDelegate.cs`– Diese Datei enthält die Haupt Anwendungsklasse, die für das Lauschen auf Ereignisse vom Betriebssystem verantwortlich ist.
--   `Info.plist`– Diese Datei enthält Anwendungseigenschaften, z. b. den Anwendungsnamen, Symbole usw.
--   `ViewController.cs`– Dies ist die Klasse, die das Hauptfenster darstellt und den Lebenszyklus der IT steuert.
--   `ViewController.designer.cs`– Diese Datei enthält grundlegende Codes, die Ihnen bei der Integration in die Benutzeroberfläche des Hauptbildschirms helfen.
--  `Main.storyboard`– Die Benutzeroberfläche für das Hauptfenster. Diese Datei kann vom Xamarin Designer für IOS erstellt und verwaltet werden.
+- `Main.cs`: Diese Datei enthält den Haupteinstiegspunkt für die Anwendung. Wenn die App gestartet wird, enthält diese Datei die erste Klasse und Methode, die ausgeführt werden.
+- `AppDelegate.cs`– Diese Datei enthält die Haupt Anwendungsklasse, die für das Lauschen auf Ereignisse vom Betriebssystem verantwortlich ist.
+- `Info.plist`– Diese Datei enthält Anwendungseigenschaften, z. b. den Anwendungsnamen, Symbole usw.
+- `ViewController.cs`– Dies ist die Klasse, die das Hauptfenster darstellt und den Lebenszyklus der IT steuert.
+- `ViewController.designer.cs`– Diese Datei enthält grundlegende Codes, die Ihnen bei der Integration in die Benutzeroberfläche des Hauptbildschirms helfen.
+- `Main.storyboard`– Die Benutzeroberfläche für das Hauptfenster. Diese Datei kann vom Xamarin Designer für IOS erstellt und verwaltet werden.
 
 In den folgenden Abschnitten werden einige dieser Dateien kurz erläutert. Wir werden Sie später ausführlicher untersuchen, aber es ist ratsam, sich jetzt mit ihren Grundlagen vertraut zu machen.
 
@@ -334,7 +334,7 @@ Wenn eines der beiden hinzugefügt wird, wird die partielle `ViewController.desi
 
 ### <a name="creating-an-event-handler"></a>Erstellen eines Ereignis Handlers
 
-Wenn in dieser Beispielanwendung auf die Schaltfläche geklickt wird, _möchten wir_ , dass ein Ereignishandler zu einem bestimmten Ereignis auf der Schaltfläche hinzugefügt werden muss. Gehen Sie folgendermaßen vor, um dies einzurichten:
+Wenn in dieser Beispielanwendung auf die Schaltfläche geklickt wird, möchten wir, dass ein Ereignishandler zu einem bestimmten Ereignis auf der Schaltfläche hinzugefügt werden muss. Gehen Sie folgendermaßen vor, um dies einzurichten:
 
 1. Wählen Sie im xamarin IOS-Designer die Schaltfläche auf dem Ansichts Controller aus.
 2. Wählen Sie im eigenschaftenpad die Registerkarte **Ereignisse** aus:
@@ -435,8 +435,8 @@ Es ist an der Zeit, die Anwendung zu erstellen und auszuführen, um sicherzustel
 
 Wenn Sie eine Anwendung erstellen, können wir auswählen, welche Art von Build wir wünschen:
 
--   **Debuggen** – ein Debugbuild wird in eine ""-Datei (Anwendung) mit zusätzlichen Metadaten kompiliert, mit der wir Debuggen können, was geschieht, während die Anwendung ausgeführt wird.
--   **Release** – ein Releasebuild erstellt außerdem eine Datei vom Typ "", es enthält jedoch keine Debuginformationen, sodass er kleiner ist und schneller ausgeführt wird.  
+- **Debuggen** – ein Debugbuild wird in eine ""-Datei (Anwendung) mit zusätzlichen Metadaten kompiliert, mit der wir Debuggen können, was geschieht, während die Anwendung ausgeführt wird.
+- **Release** – ein Releasebuild erstellt außerdem eine Datei vom Typ "", es enthält jedoch keine Debuginformationen, sodass er kleiner ist und schneller ausgeführt wird.  
 
 Sie können den Buildtyp aus der **Konfigurations Auswahl** in der oberen linken Ecke des Visual Studio für Mac-Bildschirms auswählen:
 
@@ -452,9 +452,9 @@ Wenn keine Fehler aufgetreten sind, wird in der Statusleiste Visual Studio für 
 
 Zum Ausführen der Anwendung stehen drei Optionen zur Anwendung:
 
--  Drücken Sie **⌘+EINGABE**.
--  Klicken Sie im Menü **Ausführen** auf **Debug**.
--  Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche **Wiedergabe** (über dem **Projektmappen-Explorer**).
+- Drücken Sie **⌘+EINGABE**.
+- Klicken Sie im Menü **Ausführen** auf **Debug**.
+- Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche **Wiedergabe** (über dem **Projektmappen-Explorer**).
 
 Die Anwendung wird erstellt (wenn Sie nicht bereits erstellt wurde), starten Sie im Debugmodus. der tvos-Simulator wird gestartet, und die APP wird gestartet und zeigt das Hauptfenster der Benutzeroberfläche an:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c3be128749b9fd0f67aa83038b3d30f4b2fcd2d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7fe03fbbdff02df9494317abe223ede5ed386c48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657541"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528932"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Registerkartenleisten und Registerkartenleisten-Controller in Xamarin.iOS
 
@@ -26,8 +26,8 @@ Mithilfe von Registerkarten hier durch das Arbeiten über eine exemplarische Vor
 
 Die `UITabBarController` unterstützt im Registerkartenformat Anwendungsentwicklung durch Folgendes:
 
--  So können mehrere Controller hinzugefügt werden.
--  Bereitstellen einer Benutzeroberfläche mit Registerkarten, über die `UITabBar` -Klasse, damit der Benutzer zwischen Controllern und ihre Ansichten wechseln kann. 
+- So können mehrere Controller hinzugefügt werden.
+- Bereitstellen einer Benutzeroberfläche mit Registerkarten, über die `UITabBar` -Klasse, damit der Benutzer zwischen Controllern und ihre Ansichten wechseln kann. 
 
 
 Controller werden hinzugefügt, um die `UITabBarController` über seine `ViewControllers` Eigenschaft, die eine `UIViewController` Array. Die `UITabBarController` selbst kümmert sich um den entsprechenden Controller laden und präsentieren die Ansicht auf Grundlage der ausgewählten Registerkarte.
@@ -69,9 +69,9 @@ Die `TabController` Klasse enthält die Implementierung der `UITabBarController`
 
 Zum Implementieren der `UITabBarController` müssen wir die folgenden Aktionen ausführen:
 
-1.  Legen Sie die Basisklasse der `TabController` zu `UITabBarController` . 
-1.  Erstellen Sie `UIViewController` Instanzen hinzugefügt der `TabController` . 
-1.  Hinzufügen der `UIViewController` Instanzen, um ein Array zugewiesen der `ViewControllers` Eigenschaft der `TabController` . 
+1. Legen Sie die Basisklasse der `TabController` zu `UITabBarController` . 
+1. Erstellen Sie `UIViewController` Instanzen hinzugefügt der `TabController` . 
+1. Hinzufügen der `UIViewController` Instanzen, um ein Array zugewiesen der `ViewControllers` Eigenschaft der `TabController` . 
 
 
 Fügen Sie den folgenden Code der `TabController` Klasse folgendermaßen erreichen:
@@ -283,8 +283,8 @@ Als Nächstes erstellen eine einfache Benutzeroberfläche für jede ViewControll
 
 Wir möchten, ziehen eine `Label` und `Button` auf ViewController1 aus der **ToolBox** auf der rechten Seite. Als Nächstes verwenden wir das Pad "Eigenschaften", so bearbeiten Sie den Namen und den Text der Steuerelemente auf Folgendes:
 
--  **Bezeichnung** : `Text` = **Einseitig**
--  **Schaltfläche** : `Title` = **Benutzer nimmt einige anfängliche Aktionen vor**
+- **Bezeichnung** : `Text` = **Einseitig**
+- **Schaltfläche** : `Title` = **Benutzer nimmt einige anfängliche Aktionen vor**
 
 
 Wir steuern die Sichtbarkeit der Schaltfläche in einem `TouchUpInside` -Ereignis, und wir müssen in der CodeBehind darauf verweisen. Wir identifizieren sie mit der **Namen** `aButton` in das Pad "Eigenschaften", wie im folgenden Screenshot dargestellt:

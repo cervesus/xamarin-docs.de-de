@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: b44bb52dc69aae1d3d058a1eae7c3be13ec5dc53
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f6bc5891e416d7cb6c9b80c0502a9cc5d2d911d1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643337"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523987"
 ---
 # <a name="location-services-on-android"></a>Location Services unter Android
 
@@ -30,11 +30,11 @@ Unabhängig von der API, die Sie für die Arbeit mit Standortdaten ausgewählt h
 
 Mehrere Technologien werden intern verwendet, um den Speicherort des Benutzers zu ermitteln. Welche Hardware verwendet wird, hängt vom Typ des *Orts Anbieters* ab, der für den Auftrag zum Sammeln von Daten ausgewählt wurde. Android verwendet drei Speicherort Anbieter:
 
--   **GPS-Anbieter** &ndash; GPS gibt den genauesten Speicherort an, beansprucht die meiste Stromversorgung und funktioniert am besten im Außenbereich. Dieser Anbieter verwendet eine Kombination aus GPS und unterstütztem GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)), die GPS-Daten zurückgibt, die von Mobil Funktürmen gesammelt werden.
+- **GPS-Anbieter** &ndash; GPS gibt den genauesten Speicherort an, beansprucht die meiste Stromversorgung und funktioniert am besten im Außenbereich. Dieser Anbieter verwendet eine Kombination aus GPS und unterstütztem GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)), die GPS-Daten zurückgibt, die von Mobil Funktürmen gesammelt werden.
 
--   **Netzwerkanbieter** &ndash; Bietet eine Kombination aus WiFi-und Mobilfunk-Daten, einschließlich aGPS-Daten, die von zelltürmen gesammelt werden. Es verwendet weniger Energie als der GPS-Anbieter, gibt aber Positionsdaten mit abweichender Genauigkeit zurück.
+- **Netzwerkanbieter** &ndash; Bietet eine Kombination aus WiFi-und Mobilfunk-Daten, einschließlich aGPS-Daten, die von zelltürmen gesammelt werden. Es verwendet weniger Energie als der GPS-Anbieter, gibt aber Positionsdaten mit abweichender Genauigkeit zurück.
 
--   **Passiver Anbieter** &ndash; Eine "Piggyback"-Option, die Anbieter verwendet, die von anderen Anwendungen oder Diensten angefordert werden, um Standortdaten in einer Anwendung zu generieren. Diese Option ist weniger zuverlässig, aber die Energiespar Option eignet sich ideal für Anwendungen, für die keine Konstanten Speicherort Aktualisierungen erforderlich sind.
+- **Passiver Anbieter** &ndash; Eine "Piggyback"-Option, die Anbieter verwendet, die von anderen Anwendungen oder Diensten angefordert werden, um Standortdaten in einer Anwendung zu generieren. Diese Option ist weniger zuverlässig, aber die Energiespar Option eignet sich ideal für Anwendungen, für die keine Konstanten Speicherort Aktualisierungen erforderlich sind.
 
 Standortanbieter sind nicht immer verfügbar. Beispielsweise können wir GPS für unsere Anwendung verwenden, aber GPS ist möglicherweise in den Einstellungen ausgeschaltet, oder das Gerät verfügt möglicherweise nicht über GPS. Wenn ein bestimmter Anbieter nicht verfügbar ist, kann die Auswahl dieses Anbieters `null`zurückgeben.
 
@@ -43,10 +43,10 @@ Standortanbieter sind nicht immer verfügbar. Beispielsweise können wir GPS fü
 Eine Standort orientierte Anwendung benötigt Zugriff auf die Hardware Sensoren eines Geräts, um GPS-, Wi-Fi-und Mobilfunk-Daten zu erhalten. Der Zugriff wird über die entsprechenden Berechtigungen im Android-Manifest der Anwendung gesteuert.
 Abhängig von den Anforderungen der &ndash; Anwendung und der gewählten API stehen Ihnen zwei Berechtigungen zur Verfügung:
 
--   `ACCESS_FINE_LOCATION`&ndash; Ermöglicht einem Anwendungs Zugriff auf GPS.
+- `ACCESS_FINE_LOCATION`&ndash; Ermöglicht einem Anwendungs Zugriff auf GPS.
     Erforderlich für den *GPS-Anbieter* und *passive Anbieter* Optionen (*passiver Anbieter benötigt Zugriffsberechtigungen für GPS-Daten, die von einer anderen Anwendung oder einem anderen Dienst gesammelt werden*). Optionale Berechtigung für den *Netzwerkanbieter*.
 
--   `ACCESS_COARSE_LOCATION`&ndash; Ermöglicht einem Anwendungs Zugriff auf Mobilfunk-und WLAN-Speicherort. Erforderlich für den *Netzwerkanbieter* , wenn `ACCESS_FINE_LOCATION` nicht festgelegt ist.
+- `ACCESS_COARSE_LOCATION`&ndash; Ermöglicht einem Anwendungs Zugriff auf Mobilfunk-und WLAN-Speicherort. Erforderlich für den *Netzwerkanbieter* , wenn `ACCESS_FINE_LOCATION` nicht festgelegt ist.
 
 Für apps, die auf API-Version 21 (Android 5,0 Lollipop) oder höher ausgerichtet sind `ACCESS_FINE_LOCATION` , können Sie auf Geräten ohne GPS-Hardware aktivieren und trotzdem ausführen. Wenn Ihre APP GPS-Hardware erfordert, sollten Sie dem Android `android.hardware.location.gps` -manifest explizit ein `uses-feature` Element hinzufügen. Weitere Informationen finden Sie in der Referenz zum [Funktions](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) Element von Android.
 
@@ -175,7 +175,7 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
 
 Diese Methode nimmt zwei Parameter an:
 
--   **`Android.Gms.Location.LocationRequest`** &ndash; Ein`LocationRequest` -Objekt ist, wie eine xamarin. Android-Anwendung die Parameter an die Funktionsweise des Dienstanbieters für den Zusammenführungen übergibt. Enthält `LocationRequest` Informationen, wie häufige Anforderungen oder die Wichtigkeit einer exakten Standort Aktualisierung sein sollten. Beispielsweise bewirkt eine wichtige Standort Anforderung, dass das Gerät das GPS verwendet und folglich mehr Energie, wenn der Speicherort bestimmt wird. In diesem Code Ausschnitt wird gezeigt, wie ein `LocationRequest` für einen Speicherort mit hoher Genauigkeit erstellt wird, und es wird ungefähr alle fünf Minuten auf eine Standort Aktualisierung geprüft (aber nicht früher als zwei Minuten zwischen Anforderungen). Der Anbieter für den Anbieter für die `LocationRequest` Zwischenspeicher Orte verwendet einen als Leitfaden, um zu bestimmen, welcher Speicherort Anbieter zum Ermitteln des Gerätespeicher Orts verwendet wird:
+- **`Android.Gms.Location.LocationRequest`** &ndash; Ein`LocationRequest` -Objekt ist, wie eine xamarin. Android-Anwendung die Parameter an die Funktionsweise des Dienstanbieters für den Zusammenführungen übergibt. Enthält `LocationRequest` Informationen, wie häufige Anforderungen oder die Wichtigkeit einer exakten Standort Aktualisierung sein sollten. Beispielsweise bewirkt eine wichtige Standort Anforderung, dass das Gerät das GPS verwendet und folglich mehr Energie, wenn der Speicherort bestimmt wird. In diesem Code Ausschnitt wird gezeigt, wie ein `LocationRequest` für einen Speicherort mit hoher Genauigkeit erstellt wird, und es wird ungefähr alle fünf Minuten auf eine Standort Aktualisierung geprüft (aber nicht früher als zwei Minuten zwischen Anforderungen). Der Anbieter für den Anbieter für die `LocationRequest` Zwischenspeicher Orte verwendet einen als Leitfaden, um zu bestimmen, welcher Speicherort Anbieter zum Ermitteln des Gerätespeicher Orts verwendet wird:
 
     ```csharp
     LocationRequest locationRequest = new LocationRequest()
@@ -184,7 +184,7 @@ Diese Methode nimmt zwei Parameter an:
                                       .SetFastestInterval(60 * 1000 * 2);
     ```
 
--   **`Android.Gms.Location.LocationCallback`** Um Speicherort Aktualisierungen zu erhalten, muss eine xamarin. Android-Anwendung die `LocationProvider` abstrakte Klasse Unterklassen. &ndash; Diese Klasse stellt zwei Methoden zur Verfügung, die möglicherweise vom Anbieter für den Fused-Location aufgerufen werden, um die APP mit Standortinformationen zu aktualisieren Dies wird im folgenden ausführlicher erläutert.
+- **`Android.Gms.Location.LocationCallback`** Um Speicherort Aktualisierungen zu erhalten, muss eine xamarin. Android-Anwendung die `LocationProvider` abstrakte Klasse Unterklassen. &ndash; Diese Klasse stellt zwei Methoden zur Verfügung, die möglicherweise vom Anbieter für den Fused-Location aufgerufen werden, um die APP mit Standortinformationen zu aktualisieren Dies wird im folgenden ausführlicher erläutert.
 
 Um eine xamarin. Android-Anwendung über eine Speicherort Aktualisierung zu benachrichtigen, ruft der Anbieter für `LocationCallBack.OnLocationResult(LocationResult result)`den Fused-Ort die auf. Der `Android.Gms.Location.LocationResult` -Parameter enthält die Informationen zum Update Speicherort.
 
@@ -233,10 +233,10 @@ Der Location-Dienst ist ein spezieller [Diensttyp](https://developer.android.com
 
 Um den Speicherort des Benutzers mithilfe von Android Location Service abzurufen, sind mehrere Schritte erforderlich:
 
-1.  Verschaffen Sie sich einen Verweis `LocationManager` auf den Dienst.
-2.  Implementieren der `ILocationListener` -Schnittstelle und behandeln von Ereignissen, wenn sich der Speicherort ändert
-3.  `LocationManager` Verwenden Sie, um Location-Updates für einen angegebenen Anbieter anzufordern. Der `ILocationListener` aus dem vorherigen Schritt wird verwendet, um Rückrufe aus dem `LocationManager`zu empfangen.
-4.  Beenden Sie Standort Aktualisierungen, wenn die Anwendung nicht mehr für den Empfang von Updates geeignet ist.
+1. Verschaffen Sie sich einen Verweis `LocationManager` auf den Dienst.
+2. Implementieren der `ILocationListener` -Schnittstelle und behandeln von Ereignissen, wenn sich der Speicherort ändert
+3. `LocationManager` Verwenden Sie, um Location-Updates für einen angegebenen Anbieter anzufordern. Der `ILocationListener` aus dem vorherigen Schritt wird verwendet, um Rückrufe aus dem `LocationManager`zu empfangen.
+4. Beenden Sie Standort Aktualisierungen, wenn die Anwendung nicht mehr für den Empfang von Updates geeignet ist.
 
 ### <a name="location-manager"></a>Location Manager
 

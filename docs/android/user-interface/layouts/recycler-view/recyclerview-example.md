@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: b40b2d2d5083f32edcb0fc08c8365096e6d4fda9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82423e48f844cde60bcd5e85c5bbe3cb8bc856b8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645352"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522464"
 ---
 # <a name="a-basic-recyclerview-example"></a>Ein grundlegendes recyclerview-Beispiel
 
@@ -171,11 +171,11 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 Das `mPhotoAlbum` -Element enthält die Datenquelle (das Photo-Album), die an den-Konstruktor übergeben wird. der Konstruktor kopiert das Fotoalbum in diese Element Variable. Die folgenden erforderlichen `RecyclerView.Adapter` Methoden werden implementiert:
 
--   **`OnCreateViewHolder`** &ndash; Instanziiert die elementlayoutdatei und den Ansichts Halter.
+- **`OnCreateViewHolder`** &ndash; Instanziiert die elementlayoutdatei und den Ansichts Halter.
 
--   **`OnBindViewHolder`** &ndash; Lädt die Daten an der angegebenen Position in die Sichten, deren Verweise im angegebenen Ansichts Halter gespeichert werden.
+- **`OnBindViewHolder`** &ndash; Lädt die Daten an der angegebenen Position in die Sichten, deren Verweise im angegebenen Ansichts Halter gespeichert werden.
 
--   **`ItemCount`** &ndash; Gibt die Anzahl der Elemente in der Datenquelle zurück.
+- **`ItemCount`** &ndash; Gibt die Anzahl der Elemente in der Datenquelle zurück.
 
 Der Layout-Manager ruft diese Methoden auf, während Elemente innerhalb von `RecyclerView`positioniert werden. Die Implementierung dieser Methoden wird in den folgenden Abschnitten erläutert.
 

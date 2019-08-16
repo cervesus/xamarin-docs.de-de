@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: d8052e00809b15f0858583ee2919c47cfd8af00b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7526349c1b4b61495af95dfc200a5055cea5650e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646572"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529300"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Essential XAML Syntax
 
@@ -82,9 +82,9 @@ Diese beiden Methoden zum Angeben der `TextColor` Eigenschaft sind funktional ä
 
 Mit dieser neuen Syntax ist kann einige praktische Terminologie eingeführt werden:
 
--  `Label` ist ein *Objektelement*. Es ist ein Xamarin.Forms-Objekt, das als ein XML-Element.
--  `Text`, `VerticalOptions`, `FontAttributes` und `FontSize` sind *Eigenschaftenattribute*. Xamarin.Forms-Eigenschaften, die als XML-Attribute angegeben werden.
--  Im letzten Ausschnitts `TextColor` geworden ist eine *Property-Element*. Es ist eine Xamarin.Forms-Eigenschaft, aber es ist jetzt ein XML-Element.
+- `Label` ist ein *Objektelement*. Es ist ein Xamarin.Forms-Objekt, das als ein XML-Element.
+- `Text`, `VerticalOptions`, `FontAttributes` und `FontSize` sind *Eigenschaftenattribute*. Xamarin.Forms-Eigenschaften, die als XML-Attribute angegeben werden.
+- Im letzten Ausschnitts `TextColor` geworden ist eine *Property-Element*. Es ist eine Xamarin.Forms-Eigenschaft, aber es ist jetzt ein XML-Element.
 
 
 Die Definition der Eigenschaft, die Elemente am möglicherweise zuerst anscheinend zu einer Verletzung der XML-Syntax, aber es ist nicht. Der Zeitraum hat keine besondere Bedeutung in XML-Datei. Ein XML-Decoder `Label.TextColor` einfach ein normales untergeordnetes Element.
@@ -176,13 +176,13 @@ Sie haben gerade gesehen, die die `Grid` erfordert Eigenschaftenelemente für di
 
 Innerhalb des Tags für jedes untergeordnete Element von der `Grid` Geben Sie die Zeile und Spalte mit diesem untergeordneten mithilfe der folgenden Attribute:
 
--  `Grid.Row`
--  `Grid.Column`
+- `Grid.Row`
+- `Grid.Column`
 
 Die Standardwerte dieser Attribute sind 0. Sie können auch angeben, wenn ein untergeordnetes Element über mehr als eine Zeile oder Spalte mit diesen Attributen umfasst:
 
--  `Grid.RowSpan`
--  `Grid.ColumnSpan`
+- `Grid.RowSpan`
+- `Grid.ColumnSpan`
 
 Diese beiden Attribute haben Standardwerte 1.
 

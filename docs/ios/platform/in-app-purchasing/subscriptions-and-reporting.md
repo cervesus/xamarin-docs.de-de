@@ -1,72 +1,72 @@
 ---
-title: Abonnements und Berichterstellung in Xamarin.iOS
-description: Dieses Dokument beschreibt keine monatlichen Abonnements, Abonnements mit einer kostenlosen, automatische erneuerbar Abonnements und iTunes Connect verwenden, um diese Elemente zu melden.
+title: Abonnements und Berichterstellung in xamarin. IOS
+description: In diesem Dokument werden Abonnements ohne Erneuerung, Kostenlose Abonnements, Abonnements für die automatische Wiederherstellung und die Verwendung von iTunes Connect zum Melden dieser Elemente beschrieben.
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 44dd2b2eea31f47ed53d8ef25ff7b0667286179d
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: ea016860bc30d9f6b70f41b85db09bf5544304ba
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674559"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528277"
 ---
-# <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements und Berichterstellung in Xamarin.iOS
+# <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements und Berichterstellung in xamarin. IOS
 
-## <a name="about-non-renewing-subscriptions"></a>Informationen zu nicht-verlängern von Abonnements
+## <a name="about-non-renewing-subscriptions"></a>Informationen zu nicht erneuerten Abonnements
 
-Abonnements nicht erneuert werden für Produkte vorgesehen, die die Verkaufszahlen für einen Dienst mit einem zeitbeschränkungen, z. B. (eine Woche des Zugriffs auf eine navigationsanwendung) oder zeitlich begrenzten Zugriff an ein Datenarchiv darstellen.   
+Abonnements, die nicht erneuert werden, sind für Produkte bestimmt, die den Verkauf eines diengs mit einer Zeitbeschränkung darstellen (z. b. der Zugriff einer Woche auf eine Navigations Anwendung oder der zeitlich eingeschränkte Zugriff auf ein Datenarchiv).   
    
-Die Hauptunterschiede zwischen Abonnements nicht erneuern und andere Produkttypen:
+Wichtige Unterschiede zwischen nicht erneuerten Abonnements und anderen Produkttypen:
 
--  Die Produktdefinition in iTunes Connect umfasst den Begriff nicht. Der Anwendungscode muss Ableiten von der Gültigkeitsdauer aus der Produkt-ID sein. 
--  Sie können mehrere Male (z. B. ein nutzbar Produkt) erworben werden. Anwendungen müssen zum Verwalten der Abonnements Begriff/Ablauf und Verlängerung, und verhindern, dass des Benutzers sich überschneidenden Abonnements erwerben. 
--  Die Käufe werden von der Funktion StoreKit Wiederherstellen nicht unterstützt. Wenn das Abonnement über Geräte eines Benutzers verfügbar sein soll, müssen die Anwendung entwerfen und Implementieren dieses Feature in Verbindung mit einem Remoteserver. Anwendungen sind auch zuständig für die Sicherung des Abonnementstatus für Fälle, wenn ein Gerät gesichert ist. Klicken Sie dann wiederhergestellt-aus-Backup. 
--  Übersicht über die Implementierung
--  Abonnements nicht erneuern sollte normalerweise implementiert werden, mithilfe der Workflow-Server bereitgestellt und verwaltet wie verbrauchsartikeln. 
+- Die Produktdefinition in iTunes Connect enthält nicht den Begriff. Der Anwendungscode muss die Gültigkeitsdauer von der Produkt-ID ableiten können. 
+- Sie können mehrmals gekauft werden (z. b. ein nutzbares Produkt). Anwendungen sind erforderlich, um die Abonnement Laufzeit bzw. den Ablauf und die Erneuerung zu verwalten, und verhindern, dass der Benutzer überlappende Abonnements kauft. 
+- Die Einkäufe werden von der storekit-Wiederherstellungs Funktion nicht unterstützt. Wenn das Abonnement auf allen Geräten eines Benutzers verfügbar sein soll, muss diese Funktion in Verbindung mit einem Remote Server entworfen und implementiert werden. Anwendungen sind auch dafür verantwortlich, den Abonnement Status zu sichern, wenn ein Gerät gesichert und dann wieder hergestellt wird. 
+- Implementierungs Übersicht
+- Abonnements, die nicht erneuert werden, sollten normalerweise mit dem vom Server übermittelten Workflow implementiert und wie z. b. nutzbare Produkte verwaltet werden 
 
 
 ## <a name="about-free-subscriptions"></a>Informationen zu kostenlosen Abonnements
 
-Kostenlose Abonnements ermöglichen Entwicklern, kostenlose Inhalte im Zeitungskiosk-apps (sie können nicht in nicht aus dem Zeitungskiosk-apps verwendet werden). Sobald ein kostenloses Abonnement gestartet wird, wird es auf Geräte des Benutzers verfügbar sein. Kostenlose Abonnements laufen nie ab; Sie enden nur, wenn die Anwendung deinstalliert wird.
+Mit kostenlosen Abonnements können Entwickler kostenlose Inhalte in NewsStand-apps einfügen (Sie können nicht in nicht-News-Kiosk-Apps verwendet werden). Nachdem ein kostenloses Abonnement gestartet wurde, ist es auf allen Geräten des Benutzers verfügbar. Kostenlose Abonnements laufen nie ab. Sie enden nur, wenn die Anwendung deinstalliert wird.
 
-### <a name="implementation-overview"></a>Übersicht über die Implementierung
+### <a name="implementation-overview"></a>Implementierungs Übersicht
 
-Kostenlose Abonnements Verhalten sich viel wie automatische erneuerbar Abonnements verwendet wird. Die Anwendung benötigen in iTunes Connect ein kostenloses Abonnement Produkt für "Purchase" verfügbar. Wenn vom Benutzer erworben werden, sollte der Kauf kostenloses Abonnement z. B. eine automatische erneuerbar Subscription-Produkts überprüft werden. Kostenloses Abonnement Transaktionen können wiederhergestellt werden.
+Kostenlose Abonnements Verhalten sich ähnlich wie Abonnements mit automatischer verfügbaren Abonnements. Die Anwendung muss über ein kostenloses Abonnement Produkt verfügen, das für "Purchase" in iTunes Connect verfügbar ist. Beim Erwerb durch den Benutzer sollte der Erwerb eines kostenlosen Abonnements wie ein Produkt mit automatischer Produktnutzung überprüft werden. Kostenlose Abonnement Transaktionen können wieder hergestellt werden.
 
 
-## <a name="about-auto-renewable-subscriptions"></a>Informationen zu automatischen erneuerbar-Abonnements
+## <a name="about-auto-renewable-subscriptions"></a>Informationen zu automatischen Abonnements
 
-Automatische erneuerbar Abonnements werden hauptsächlich in Zeitungskiosk-Anwendungen verwendet werden. Sie stellen dar, ein Produkt, das den Benutzerzugriff auf dynamische Inhalte für einen bestimmten Zeitraum, gewährt der in iTunes Connect (festgelegt werden, reichen von 7 Tagen bis zu 1 Jahr) konfiguriert wird. Abonnements wird automatisch verlängert, die Apple-ID-Benutzer am Ende jeden Abonnementzeitraum Gebühren, es sei denn, der Benutzer "OPTS"-Out. Diese Produkttyp eignet sich gut für Magazin oder News-Abonnements, in denen erhält der Benutzer den Zugriff auf jedes Problem, das veröffentlicht wird, während ihr Abonnement gültig ist.
+Automatisch-Abonnements werden in NewsStand-Anwendungen verwendet. Sie stellen ein Produkt dar, das dem Benutzer Zugriff auf dynamischen Inhalt für einen bestimmten Zeitraum gewährt, der in iTunes Connect konfiguriert ist (Zeiträume zwischen 7 Tagen und 1 Jahr festlegen). Abonnements werden automatisch erneuert, wobei die Apple-ID des Benutzers am Ende jedes Abonnementzeitraums berechnet wird, es sei denn, der Benutzer gibt den Vorgang aus. Dieser Produkttyp eignet sich gut für Magazine-oder News-Abonnements, bei denen der Benutzer Zugriff auf jedes Problem erhält, das veröffentlicht wird, während das Abonnement gültig ist.
 
-### <a name="implementation-overview"></a>Übersicht über die Implementierung
+### <a name="implementation-overview"></a>Implementierungs Übersicht
 
-Automatische erneuerbar Abonnements sollte mit dem Workflow Server-Delivered Produkte implementiert werden (finden Sie in der *Empfang, Überprüfung und Server-Delivered Produkte* Abschnitt).
+Abonnements mit automatischer Wiederverwendung sollten mithilfe des Workflows für vom Server übermittelte Produkte implementiert werden (Weitere Informationen finden Sie im Abschnitt über *Prüfung der Empfangs-und Server Produkte* ).
 
 #### <a name="shared-secret"></a>Gemeinsamer geheimer Schlüssel
 
-Die In-App-Kauf gemeinsamer geheimer Schlüssel muss in der JSON-Anforderung verwendet werden, bei der Überprüfung der automatischen erneuerbar Abonnements auf dem Server. Der gemeinsame geheime Schlüssel ist über iTunes Connect erstellt/zugegriffen.
+Der gemeinsame geheime Schlüssel in-App-Käufe muss in der JSON-Anforderung verwendet werden, wenn die auf dem Server automatisch zu überprüfenden Abonnements überprüft werden. Der gemeinsame geheime Schlüssel wird über iTunes Connect erstellt/aufgerufen.
 
-Aus dem iTunes Connect-Startseite wählen **meine Apps**:   
+Wählen Sie auf der iTunes Connect-Startseite **meine apps**aus:   
    
  [![](subscriptions-and-reporting-images/image2.png "„My Apps“ (Meine Apps) auswählen")](subscriptions-and-reporting-images/image2.png#lightbox)  
  
-Wählen Sie eine Anwendung, und klicken Sie auf die **In-App-Käufe** Registerkarte:
+Wählen Sie eine Anwendung aus, und klicken Sie auf die Registerkarte **in-App-Käufe** :
 
-[![](subscriptions-and-reporting-images/image6.png "Klicken Sie auf der Registerkarte \"In-App-Käufe\"")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![](subscriptions-and-reporting-images/image6.png "Klicken Sie auf die Registerkarte in-App-Käufe.")](subscriptions-and-reporting-images/image6.png#lightbox)
 
-Wählen Sie in den unteren Rand der Seite, **anzeigen oder einen gemeinsamen geheimen Schlüssel generieren**:
+Wählen Sie am unteren Rand der Seite die Option **zum Anzeigen oder Generieren eines gemeinsamen geheimen**Schlüssels aus:
    
- [![](subscriptions-and-reporting-images/image40.png "Wählen Sie die Ansicht oder generieren einen gemeinsamen geheimen Schlüssel")](subscriptions-and-reporting-images/image40.png#lightbox)
+ [![](subscriptions-and-reporting-images/image40.png "Auswählen eines gemeinsamen geheimen Schlüssels anzeigen oder generieren")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [![](subscriptions-and-reporting-images/image41.png "Generieren Sie einen gemeinsamen geheimen Schlüssel")](subscriptions-and-reporting-images/image41.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image41.png "Generieren eines gemeinsamen geheimen Schlüssels")](subscriptions-and-reporting-images/image41.png#lightbox)   
    
    
    
- Um den gemeinsamen geheimen Schlüssel verwenden zu können, schließen Sie sie in der JSON-Nutzlast, die Apple Server gesendet wird, wenn Sie einen in-app-Käufe Beleg für ein Auto erneuerbar-Abonnement wie folgt überprüfen:
+ Um den gemeinsamen geheimen Schlüssel zu verwenden, fügen Sie ihn in die JSON-Nutzlast ein, die an die Apple-Server gesendet wird, wenn Sie eine in-App-Kaufbestätigung für ein automatisch verlängertes Abonnement überprüfen, wie hier:
 
 ```csharp
 {
@@ -75,11 +75,11 @@ Wählen Sie in den unteren Rand der Seite, **anzeigen oder einen gemeinsamen geh
 }
 ```
 
-Feld "Status der Antwort" werden 0 (null), ist der Kauf gültig ist, als bei anderen Produktarten.
+Das Status Feld der Antwort ist 0 (null), wenn der Kauf gültig ist, wie bei anderen Produkttypen.
 
-#### <a name="downloading-items-after-the-initial-subscription-term"></a>Herunterladen von Elementen nach der ersten Abonnementlaufzeit
+#### <a name="downloading-items-after-the-initial-subscription-term"></a>Herunterladen von Elementen nach der anfänglichen Abonnement Laufzeit
 
-Im Rahmen der Bereitstellung von Abonnementprodukten sollten der Code häufig überprüfen, ob die letzte bekannte Empfangsbestätigung für Apple Server. Wenn ein Abonnement automatisch seit der letzten Überprüfung verlängert wurde, enthält die JSON-Antwort weitere Felder, die die Anwendung der Transaktion zu benachrichtigen, die aufgetreten ist (die sollten die Gültigkeit des Abonnements erweitern). Enthält die JSON-Antwort:
+Im Rahmen der Bereitstellung von Abonnement Produkten sollte der Code häufig den letzten bekannten Empfang der Apple-Server überprüfen. Wenn ein Abonnement seit der letzten Überprüfung automatisch erneuert wurde, enthält die JSON-Antwort zusätzliche Felder, die die Anwendung über die aufgetretene Transaktion Benachrichtigen (wodurch die Gültigkeit der Abonnements verlängert werden sollte). Die JSON-Antwort enthält Folgendes:
 
 ```csharp
 {
@@ -90,33 +90,33 @@ Im Rahmen der Bereitstellung von Abonnementprodukten sollten der Code häufig ü
 }
 ```
 
-Wenn der Status 0 (null) ist, klicken Sie dann das Abonnement noch gültig ist und gültige Daten enthält, die anderen Felder. Wenn der Status 21006 ist, und klicken Sie dann das Abonnement abgelaufen ist. Finden Sie unter den [überprüfen einen automatischen erneuerbares Abonnement Beleg](https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html) Dokumentation für andere Fehlercodes.
+Wenn der Status 0 (null) lautet, ist das Abonnement weiterhin gültig, und die anderen Felder enthalten gültige Daten. Wenn der Status 21006 lautet, ist das Abonnement abgelaufen. Weitere Fehlercodes finden Sie in der Dokumentation zum über [Prüfen der Bestätigung eines automatischen, nachwachsenden Abonnements](https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html) .
 
-#### <a name="restoring-auto-renewable-subscriptions"></a>Automatische erneuerbar Abonnements wiederherstellen
+#### <a name="restoring-auto-renewable-subscriptions"></a>Wiederherstellen automatisch verlänger Abonnements
 
-Sie erhalten wieder mehrere Transaktionen – die ursprüngliche Kauftransaktion und eine separate Transaktion für jeden Zeitraum, die das Abonnement verlängert wurde. Sie müssen nachverfolgen, die Startdaten und Begriffe, um zu verstehen, was die Gültigkeitsdauer ist.   
+Sie erhalten mehrere Transaktionen – die ursprüngliche Kauftransaktion und eine separate Transaktion für jeden Zeitraum, für den das Abonnement erneuert wurde. Sie müssen die Startdatums Angaben und-Bedingungen nachverfolgen, um die Gültigkeitsdauer zu verstehen.   
    
    
    
- Das Objekt SKPaymentTransaction enthält keine Abonnements – verwenden Sie eine andere Produkt-ID für jeden Begriff und Code schreiben, der den Abonnementzeitraum ab dem Kaufdatum der Transaktion extrapolieren kann.
+ Das skpaymenttransaction-Objekt schließt den Abonnement Begriff nicht ein – Sie sollten für jeden Begriff eine andere Produkt-ID verwenden und Code schreiben, der den Abonnementzeitraum vom Kauf Datum der Transaktion extrapolieren kann.
 
-#### <a name="testing-auto-renewal"></a>Testen die automatische Verlängerung
+#### <a name="testing-auto-renewal"></a>Testen der automatischen Verlängerung
 
-Um Abonnements zu testen zu vereinfachen, werden deren Dauer komprimiert, beim Testen in der Sandbox. 1 Woche verlängert die Abonnements alle 3 Minuten, 1 Jahr Verlängerung von Abonnements pro Stunde. Abonnements werden automatisch bis zu 6-Mal während des Testens in der Sandbox verlängert.
+Um das Testen von Abonnements zu vereinfachen, werden deren Dauer beim Testen in der Sandbox komprimiert. 1-Wochen-Abonnements werden alle drei Minuten erneuert, 1 Jahre Abonnements werden stündlich verlängert. Abonnements werden beim Testen in der Sandbox automatisch maximal 6 Mal verlängert.
 
 ## <a name="reporting"></a>Berichterstellung
 
-iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) bietet:   
+iTunes Connect ( [iTunesConnect.Apple.com](http://itunesconnect.apple.com)) bietet Folgendes:   
    
- **Vertrieb und Trends** – zeigt die Details der app-downloads, Updates und in-app-Käufe.   
+ **Vertrieb und Trends** – hier werden Details zu app-Downloads, Updates und in-App-Käufen angezeigt.   
    
- **Zahlungen und Finanzberichte** – erläutert, das Einkommen, die durch Ihre apps sowie die Auflistung von Zahlungen, die vorgenommen wurden und wie viel Sie Zahlen sind.
+ **Zahlungen und Finanzberichte** – erläutert das von ihren apps verdiente Einkommen und listet Zahlungen auf, die an Sie übermittelt wurden, und wie viel Sie Ihnen geschuldet sind.
 
-Ein Beispiel für Vertrieb und Trends Bericht ist unten dargestellt:   
+Im folgenden finden Sie einen Beispiel Bericht "Sales and Trends":   
 
- [![](subscriptions-and-reporting-images/image42.png "Ein Beispiel für Vertrieb und Trends-Bericht")](subscriptions-and-reporting-images/image42.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image42.png "Ein Beispiel für einen Umsatz-und Trendbericht")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
- Es gibt auch eine [ **ITC Verbinden mobiler**iOS-app (iTunes-Link)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
-iPhone-Screenshot für einige der den dazu verfügbaren Statistiken werden hier angezeigt:   
+ Es gibt auch eine [ **ITC Connect Mobile**IOS-app (iTunes-Link)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
+die iPhone-Screenshots für einige der verfügbaren Statistiken werden hier angezeigt:   
    
- [![](subscriptions-and-reporting-images/image43.png "iPhone-Screenshot für einige der den dazu verfügbaren Statistiken")](subscriptions-and-reporting-images/image43.png#lightbox)
+ [![](subscriptions-and-reporting-images/image43.png "iPhone-Screenshots für einige der verfügbaren Statistiken")](subscriptions-and-reporting-images/image43.png#lightbox)

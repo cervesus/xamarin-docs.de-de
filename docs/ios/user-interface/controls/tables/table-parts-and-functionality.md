@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d6ad088f9223dccb1966148fe8f53d76e85040a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff0773b3073221bead48439b7d99f1db993e3353
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645605"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528592"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Tabellen Teile und-Funktionen in xamarin. IOS
 
 Eine uitableview kann einen "gruppierten" oder "Plain"-Stil aufweisen und besteht aus den folgenden Teilen:
 
--  [Abschnitts Kopfzeile](#Section_Header)
--  [Zellen](#Cells) (oder Zeilen, wenn Sie dies bevorzugen)
--  [Abschnitts Fußzeile](#Section_Footer)
--  [Index](#Index)
--  [Bearbeitungsmodus](#Edit_Features) (enthält "Swipe zum Löschen" und Zieh Punkte zum Ändern der Zeilen Reihenfolge) 
+- [Abschnitts Kopfzeile](#Section_Header)
+- [Zellen](#Cells) (oder Zeilen, wenn Sie dies bevorzugen)
+- [Abschnitts Fußzeile](#Section_Footer)
+- [Index](#Index)
+- [Bearbeitungsmodus](#Edit_Features) (enthält "Swipe zum Löschen" und Zieh Punkte zum Ändern der Zeilen Reihenfolge) 
 
 Diese Screenshots zeigen, wie Abschnitts Zeilen, Kopfzeilen, Fußzeilen, Bearbeitungs Steuerelemente und der Index angezeigt werden.
 
