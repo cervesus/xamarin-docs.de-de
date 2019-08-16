@@ -9,7 +9,7 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/31/2019
+  ms.date: 08/07/2019
 abstract:
   description: Informationen zum Erstellen von Benutzeroberflächen mit Xamarin.Forms
 sections:
@@ -115,6 +115,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: map.md
             title: Karten
+          - href: menuitem.md
+            html: 'Erfahren Sie, wie Sie die MenuItem-Klasse verwenden, um Elemente dem Kontextmenü der ListView-Zellen hinzuzufügen.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: menuitem.md
+            title: MenuItem
           - href: picker/index.md
             html: Informationen zur Verwendung des Picker-Steuerelements zum Auswählen eines Textelements aus einer Datenliste
             image:
@@ -169,12 +175,24 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: text/index.md
             title: Text
+          - href: theming.md
+            html: 'Erfahren Sie, wie Sie Designs für Xamarin.Forms-Anwendungen erstellen und das Design zur Laufzeit ändern.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: theming.md
+            title: Design
           - href: timepicker.md
             html: 'Informationen zur Verwendung einer TimePicker-Klasse, um zuzulassen, dass eine Zeitauswahl getroffen wird'
             image:
               src: ~/media/icons/i_user-interface.svg
               href: timepicker.md
             title: TimePicker
+          - href: toolbaritem.md
+            html: 'Erfahren Sie, wie Sie eine ToolbarItem-Klasse verwenden, um Schaltflächen zur Navigationsleiste hinzuzufügen.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: toolbaritem.md
+            title: ToolbarItem
           - href: visual/index.md
             html: 'Informationen zur Verwendung des visuellen Materialobjekts von Xamarin.Forms, um Anwendungen auf iOS und Android zu erstellen, die identisch oder größtenteils identisch aussehen'
             image:

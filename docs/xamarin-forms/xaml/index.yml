@@ -49,6 +49,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: hot-reload.md
+            html: 'Erfahren Sie, wie Sie „Neuladen von XAML im laufenden Betrieb“ verwenden, um Änderungen auf der Benutzeroberfläche schnell zu überprüfen.'
+            image:
+              src: ~/media/icons/i_quickstart-3.svg
+              href: hot-reload.md
+            title: Erneut laden
           - href: toolbox.md
             html: 'Erfahren Sie, wie Sie die XAML-Toolbox verwenden, um Xamarin.Forms-Steuerelemente und -Layouts in den XAML-Editor zu ziehen.'
             image:
