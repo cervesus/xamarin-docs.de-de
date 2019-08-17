@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad20ba50b8ff0f7dcbba3e8d297b2281544a373b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b2660ec18d075279f9cb84be4521429c05974e59
+ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657089"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560276"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
@@ -219,7 +219,7 @@ Der obige Code führt das folgende Layout:
 
 ![](stack-layout-images/stack.png "Komplexe StackLayout")
 
-Beachten Sie, dass `StackLayouts`s geschachtelt sind, da in einigen Fällen Schachteln von Layouts einfacher als die Darstellung aller Elemente innerhalb des gleichen Layouts sein kann. Beachten Sie, dass da `StackLayout` unterstützt keine überlappenden Elemente, die Seite nicht haben einige der Layout-Sicherungsfunktionalität finden Sie auf den Seiten für die anderen Layouts.
+Beachten Sie, `StackLayouts` dass die geschachtelt sind, da in einigen Fällen die Schachtelung von Layouts einfacher sein kann, als alle Elemente innerhalb desselben Layouts darzustellen. Beachten Sie, dass da `StackLayout` unterstützt keine überlappenden Elemente, die Seite nicht haben einige der Layout-Sicherungsfunktionalität finden Sie auf den Seiten für die anderen Layouts.
 
 
 
