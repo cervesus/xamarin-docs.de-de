@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 94a10213f8ae42d6e8f3407b18051021d92be5bc
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651678"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978563"
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen über Effekte
 
@@ -40,7 +40,7 @@ Unter Android definiert die `View`-Klasse eine überschreibbare Methode mit dem 
 
 Auf der UWP definiert die `UIElement`-Klasse die folgenden Ereignisse: `PointerPressed`, `PointerMoved` und `PointerReleased`. Diese Ereignisse werden im MSDN-Artikel [Handle Pointer Input (Zeigereingabe)](/windows/uwp/input-and-devices/handle-pointer-input/) und in der API-Dokumentation für die [`UIElement`](/uwp/api/windows.ui.xaml.uielement/)-Klasse beschrieben.
 
-Die `Pointer`-API auf der UWP soll Maus-, Touch- und Stifteingaben vereinheitlichen. Aus diesem Grund wird das `PointerMoved`-Ereignis ausgelöst, wenn die Maus zwar über ein Element bewegt wird, aber keine Taste gedrückt wird. Das `PointerRoutedEventArgs`-Objekt, das im Zusammenhang mit diesen Ereignissen verwendet wird, umfasst eine Eigenschaft mit dem Namen `Pointer`, die wiederum eine Eigenschaft mit dem Namen `IsInContact` beinhaltet, die angibt, ob eine Maustaste gedrückt wird oder ein Finger den Bildschirm berührt.
+Die `Pointer`-API auf der UWP soll Maus-, Touch- und Stifteingaben vereinheitlichen. Aus diesem Grund wird das Ereignis `PointerMoved` ausgelöst, wenn die Maus zwar über ein Element bewegt, aber keine Taste gedrückt wird. Das `PointerRoutedEventArgs`-Objekt, das im Zusammenhang mit diesen Ereignissen verwendet wird, umfasst eine Eigenschaft mit dem Namen `Pointer`, die wiederum eine Eigenschaft mit dem Namen `IsInContact` beinhaltet, die angibt, ob eine Maustaste gedrückt wird oder ein Finger den Bildschirm berührt.
 
 Zudem definiert die UWP zwei weitere Ereignisse: `PointerEntered` und `PointerExited`. Diese Ereignisse geben an, ob sich eine Maus oder ein Finger von einem Element zu einem anderen bewegt. Betrachten Sie z. B. die beiden angrenzenden Elemente A und B. Beide Elemente verfügen über installierte Handler für die Zeigerereignisse. Wenn mit einem Finger auf A gedrückt wird, wir das Ereignis `PointerPressed` ausgelöst. Wenn sich der Finger bewegt, löst A `PointerMoved`-Ereignisse aus. Wenn sich der Finger von A nach B bewegt, löst A ein `PointerExited`-Ereignis und B ein `PointerEntered`-Ereignis aus. Wenn der Finger den Bildschirm dann nicht mehr berührt, löst B ein `PointerReleased`-Ereignis aus.
 
