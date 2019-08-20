@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5c8b2b20d037edd35fd3c50d1418df2110cb8e4c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b382b7dd66722df6acb4bb7c90e401e5895c0947
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528892"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620903"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Zusätzliche macOS Sierra Framework-Änderungen
 
@@ -33,17 +33,17 @@ Die folgenden Verbesserungen wurden am Beschleunigung-Framework für macOS Sierr
 Die folgenden Verbesserungen wurden am AppKit-Framework für macOS Sierra vorgenommen:
 
 - Eine Reihe von `NSCollectionView` Erweiterungen für:
-    - Reduzier **Bare Abschnitte** : ermöglicht dem Benutzer das Reduzieren eines Auflistungs Ansichts Abschnitts in eine einzelne horizontale Zeile.
-    - Gleit **Komma Kopfzeilen** : Kopf-und Fußzeilen können nun mit derselben API wie [uicollectionview](https://developer.apple.com/reference/uikit/uicollectionview) in ios (in einem Fluss Layout) übertragen werden.
-    - Bild lauffähigen **Hintergrund Ansichten** : ein Auflistungs Ansichten-Hintergrund kann jetzt so festgelegt werden, dass er mit dem Inhalt
+  - Reduzier **Bare Abschnitte** : ermöglicht dem Benutzer das Reduzieren eines Auflistungs Ansichts Abschnitts in eine einzelne horizontale Zeile.
+  - Gleit **Komma Kopfzeilen** : Kopf-und Fußzeilen können nun mit derselben API wie [uicollectionview](https://developer.apple.com/reference/uikit/uicollectionview) in ios (in einem Fluss Layout) übertragen werden.
+  - Bild lauffähigen **Hintergrund Ansichten** : ein Auflistungs Ansichten-Hintergrund kann jetzt so festgelegt werden, dass er mit dem Inhalt
 - Der verzögerte Ansichts Layoutdurchlauf wurde optimiert und erweitert.
 - Die Drag & amp; Drop-API enthält jetzt die `NSFilePromiseProvider` neuen `NSFilePromiseReceiver` Klassen und, um das ziehen zu unterstützen.
 - Vorhandenen Steuerelementen wurden mehrere bequeme Konstruktoren hinzugefügt:
-    - `NSButton`schließt neue Konstruktoren zum Erstellen von pushschaltflächen, Kontrollkästchen und Options Feldern ein.
-    - `NSTextField`enthält neue Konstruktoren zum Erstellen von Wrapping-und nichtwrapping Bezeichnungen, attributierten Bezeichnungen und bearbeitbaren Textfeldern.
-    - `NSSegmentedControl`schließt neue Konstruktoren zum Erstellen von segmentierten Steuerelementen aus einer Gruppe von Bezeichnungen oder Bildern ein.
-    - `NSSlider`enthält neue Konstruktoren zum Erstellen horizontaler linearer Schieberegler.
-    - `NSImageView`schließt neue Konstruktoren zum Erstellen von nicht bearbeitbaren Bild Sichten aus einem `NSImage`angegebenen ein.
+  - `NSButton`schließt neue Konstruktoren zum Erstellen von pushschaltflächen, Kontrollkästchen und Options Feldern ein.
+  - `NSTextField`enthält neue Konstruktoren zum Erstellen von Wrapping-und nichtwrapping Bezeichnungen, attributierten Bezeichnungen und bearbeitbaren Textfeldern.
+  - `NSSegmentedControl`schließt neue Konstruktoren zum Erstellen von segmentierten Steuerelementen aus einer Gruppe von Bezeichnungen oder Bildern ein.
+  - `NSSlider`enthält neue Konstruktoren zum Erstellen horizontaler linearer Schieberegler.
+  - `NSImageView`schließt neue Konstruktoren zum Erstellen von nicht bearbeitbaren Bild Sichten aus einem `NSImage`angegebenen ein.
 - Die neue `NSGridView` wurde hinzugefügt, um eine Auflistung von unter Sichten automatisch in einem Raster mit Zeilen und Spalten variabler Größen und Spalten zu erstellen, die dynamisch ausgeblendet oder angezeigt werden können.
 
 <a name="AVFoundation-Framework-Enhancements" />

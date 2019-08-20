@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ac77977f3832b0ab7ba440a2c795037e8fcf5f2e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529045"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620995"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -68,21 +68,21 @@ Derzeit kann der Xamarin Profiler verwendet werden, um xamarin. Android-Apps unt
 Die Unterstützung für die Xamarin Profiler ist auf den folgenden Plattformen verfügbar:
 
 - Visual Studio für Mac (macOS, mit Enterprise-Lizenz)
-    - Android
-        - Gerät und Emulator
-    - iOS
-        - Gerät und Simulator
-    - tvos (Zeit Instrument wird nicht unterstützt)
-        - Gerät und Simulator
-    - Mac
+  - Android
+    - Gerät und Emulator
+  - iOS
+    - Gerät und Simulator
+  - tvos (Zeit Instrument wird nicht unterstützt)
+    - Gerät und Simulator
+  - Mac
 
 - Visual Studio (nur **Enterprise** -Version)
-    - Android
-        - Gerät und Emulator
-    - IOS [experimentell]
-        - Gerät und Simulator
-    - tvOS
-        - Gerät und Simulator
+  - Android
+    - Gerät und Emulator
+  - IOS [experimentell]
+    - Gerät und Simulator
+  - tvOS
+    - Gerät und Simulator
 
 Beachten Sie, dass Sie **nur** Profile für **Debugkonfigurationen** erstellen können.
 

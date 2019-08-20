@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 77174070b227bf8cba94078b1ed1f0a6a8fcf1f8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 588c46274aa0b4d77742d004bf1fbe91e56a42c6
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528716"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620603"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. IOS-Fehler
 
@@ -24,7 +24,7 @@ Beispiel: Parameter, Umgebung, fehlende Tools.
 <!--
  MT0xxx mtouch itself, e.g. parameters, environment (e.g. missing tools)
  https://github.com/xamarin/xamarin-macios/blob/master/tools/mtouch/error.cs
-    -->
+  -->
 
 <a name="MT0000" />
 
@@ -1975,14 +1975,14 @@ Dies tritt auf, wenn Sie einen Frameworktyp Unterklassen und versuchen, eine "be
 ```csharp
 class MyNSObject : NSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -1995,14 +1995,14 @@ class MyNSObject : NSObject
 
 class MyCustomNSObject : MyNSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -2414,8 +2414,8 @@ Das Befehlszeilenargument `--ignore-dynamic-symbol=symbol` wurde erfolgreich, ab
 Hierfür gibt es zwei Hauptgründe:
 
 * Der Symbol Name ist falsch.
-    * Fügen Sie dem Symbolnamen keinen Unterstrich voran.
-    * Das Symbol für die Ziel-C- `OBJC_CLASS_$_<classname>`Klassen ist.
+  * Fügen Sie dem Symbolnamen keinen Unterstrich voran.
+  * Das Symbol für die Ziel-C- `OBJC_CLASS_$_<classname>`Klassen ist.
 * Das Symbol ist korrekt, aber es ist ein Symbol, das bereits auf normale Weise beibehalten wird (einige Buildoptionen bewirken, dass die genaue Liste dynamischer Symbole variiert).
 
 ### <a name="mt53xx-other-tools"></a>MT53xx: Sonstige Tools

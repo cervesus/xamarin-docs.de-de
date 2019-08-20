@@ -6,13 +6,13 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/03/2019
-ms.openlocfilehash: 0543d35b8bd4160aa84688da21dbc5bda5408444
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.date: 08/19/2019
+ms.openlocfilehash: 0c84b844455b8a792b8cbe2f4dac97097e5ebd97
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560314"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621056"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms in Xamarin Native-Projekten
 
@@ -43,13 +43,11 @@ Unter iOS die `FinishedLaunching` außer Kraft setzen, der `AppDelegate` Klasse 
 [Register("AppDelegate")]
 public class AppDelegate : UIApplicationDelegate
 {
-    public static string FolderPath { get; private set; }
-
     public static AppDelegate Instance;
-
     UIWindow _window;
-    UINavigationController _navigation;
-    UIViewController _noteEntryPage;
+    AppNavigationController _navigation;
+
+    public static string FolderPath { get; private set; }
 
     public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
     {
@@ -67,13 +65,13 @@ public class AppDelegate : UIApplicationDelegate
         UIViewController mainPage = new NotesPage().CreateViewController();
         mainPage.Title = "Notes";
 
-        _navigation = new UINavigationController(mainPage);
+        _navigation = new AppNavigationController(mainPage);
         _window.RootViewController = _navigation;
         _window.MakeKeyAndVisible();
 
         return true;
     }
-    ...
+    // ...
 }
 ```
 
@@ -85,8 +83,8 @@ Die `FinishedLaunching` Methode führt die folgenden Aufgaben:
 - Die `FolderPath` -Eigenschaft wird mit einem Pfad auf dem Gerät initialisiert, auf dem Hinweis Daten gespeichert werden.
 - Die `NotesPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `UIViewController` mithilfe der `CreateViewController` -Erweiterungsmethode.
 - Die `Title` Eigenschaft der `UIViewController` festgelegt ist, wird auf angezeigt werden die `UINavigationBar`.
-- Ein `UINavigationController` wird zum Verwalten von hierarchischen Navigation erstellt. Die `UINavigationController` Klasse verwaltet einen Stapel von View-Controller, und die `UIViewController` übergebenen Konstruktor angezeigt ursprünglich bei der `UINavigationController` geladen wird.
-- Die `UINavigationController` Instanz wird festgelegt, als der obersten Ebene `UIViewController` für die `UIWindow`, und die `UIWindow` ist als die wichtigsten Fenster für die Anwendung festgelegt und sichtbar gemacht wird.
+- Ein `AppNavigationController` wird zum Verwalten von hierarchischen Navigation erstellt. Dabei handelt es sich um eine benutzerdefinierte Navigations Controller Klasse `UINavigationController`, die von abgeleitet wird. Das `AppNavigationController` -Objekt verwaltet einen Stapel von Ansichts Controllern `UIViewController` , und der an den Konstruktor eingegebene wird anfänglich angezeigt, wenn der `AppNavigationController` geladen wird.
+- Das `AppNavigationController` -Objekt wird als die oberste Ebene `UIViewController` für den `UIWindow`festgelegt, und `UIWindow` die wird als Schlüssel Fenster für die Anwendung festgelegt und sichtbar gemacht.
 
 Sobald die `FinishedLaunching` Methode ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `NotesPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
@@ -106,23 +104,42 @@ Die `static` `AppDelegate.Instance` Feld ermöglicht es dem `AppDelegate.Navigat
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
-    _noteEntryPage = new NoteEntryPage
+    var noteEntryPage = new NoteEntryPage
     {
         BindingContext = note
     }.CreateViewController();
-    _noteEntryPage.Title = "Note Entry";
-    _navigation.PushViewController(_noteEntryPage, true);
+    noteEntryPage.Title = "Note Entry";
+    _navigation.PushViewController(noteEntryPage, true);
 }
 ```
 
-Die `NavigateToNoteEntryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, um eine `UIViewController` mit der `CreateViewController` Erweiterungsmethode, und legt die `Title` Eigenschaft der `UIViewController`. Die `UIViewController` klicken Sie dann zu leisten ist `UINavigationController` durch die `PushViewController` Methode. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `NoteEntryPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
+Die `NavigateToNoteEntryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, um eine `UIViewController` mit der `CreateViewController` Erweiterungsmethode, und legt die `Title` Eigenschaft der `UIViewController`. Die `UIViewController` klicken Sie dann zu leisten ist `AppNavigationController` durch die `PushViewController` Methode. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `NoteEntryPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
 [![Screenshot einer xamarin. IOS-Anwendung, die eine in der XAML](native-forms-images/ios-noteentrypage.png "xamarin. IOS-App definierte Benutzeroberfläche mit einer XAML-Benutzeroberfläche") verwendet](native-forms-images/ios-noteentrypage-large.png#lightbox "Xamarin. IOS-App mit XAML-Benutzeroberfläche")
 
-Bei der `NoteEntryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil angezeigt der `UIViewController` für die `NoteEntryPage` -Klasse aus der `UINavigationController`, Zurückgeben des Benutzers die `UIViewController` für die `NotesPage` Klasse.
+Wenn das `NoteEntryPage` angezeigt wird, wird die `UIViewController` rückwärts Navigation für `NoteEntryPage` die-Klasse aus dem `AppNavigationController`Pop, wobei der Benutzer an `UIViewController` den für `NotesPage` die-Klasse zurückgegeben wird. Das Löschen eines `UIViewController` aus dem nativen IOS-Navigations Stapel entfernt jedoch nicht automatisch das angefügte- `Page` Objekt und das `UIViewController` angefügte-Objekt. Daher überschreibt `AppNavigationController` die-Klasse die `PopViewController` -Methode, um die Ansichts Controller bei der rückwärts Navigation zu verwerfen:
+
+```csharp
+public class AppNavigationController : UINavigationController
+{
+    //...
+    public override UIViewController PopViewController(bool animated)
+    {
+        UIViewController topView = TopViewController;
+        if (topView != null)
+        {
+            // Dispose of ViewController on back navigation.
+            topView.Dispose();
+        }
+        return base.PopViewController(animated);
+    }
+}
+```
+
+Mit `PopViewController` der-über `Dispose` Schreibung wird die `UIViewController` -Methode für das Objekt aufgerufen, das aus dem nativen IOS-Navigations Stapel entfernt wurde. Wenn dies nicht der Fall ist, führt `UIViewController` dies dazu `Page` , dass das angefügte Objekt verwaist ist.
 
 > [!IMPORTANT]
-> Durch das popping a `UIViewController` aus dem nativen IOS-Navigations Stapel werden von `UIViewController`nicht automatisch gelöscht. Es liegt in der Verantwortung des Entwicklers sicherzustellen, `UIViewController` dass alle, die nicht mehr benötigt `Dispose` werden, die-Methode `UIViewController` aufgerufen haben `Page` . andernfalls werden die und die angefügten verwaist und werden nicht von der Garbage Collector erfasst. Dies führt zu einem Speicher Verluste.
+> Verwaiste Objekte können nicht in die Garbage Collection aufgenommen werden, und dies führt zu einem Speicher Abfall.
 
 ## <a name="android"></a>Android
 

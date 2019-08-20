@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: bd4c09b7defcc3038919a4dea841d7bd1d02f39e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 77d526fd49ac62788bea1ab885cb1248ffc5697e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654078"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620960"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Suche mit webmarkup in xamarin. IOS
 
@@ -46,7 +46,7 @@ Die einfachste Möglichkeit, Apple die Website Ihrer APP zu finden, ist die Verw
 
 Stellen Sie ein intelligentes App-Banner auf Ihrer Website bereit, um einen klaren Link zu Ihrer APP zu präsentieren. Wenn die APP nicht bereits installiert ist, wird der Benutzer von Safari automatisch aufgefordert, Ihre APP zu installieren. Andernfalls kann die Verwendung auf den Link " **Ansicht** " tippen, um Ihre APP von der Website zu starten. Wenn Sie z. b. ein SmartApp-Banner erstellen möchten, können Sie den folgenden Code verwenden:
 
-```xml
+```html
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
@@ -65,7 +65,7 @@ Universelle Verknüpfungen für IOS 9 bieten eine bessere Alternative zu intelli
 
 Sie können mithilfe einer Twitter-Karte Deep Links zum Inhalt Ihrer APP bereitstellen. Beispiel:
 
-```xml
+```html
 <meta name="twitter:app:name:iphone" content="AppName">
 <meta name="twitter:app:id:iphone" content="AppNameID">
 <meta name="twitter:app:url:iphone" content="AppNameURL">
@@ -77,7 +77,7 @@ Weitere Informationen finden Sie in der Twitter-Dokumentation zum [Twitter-Karte
 
 Sie können mit einem Facebook-App-Link Deep Links zum Inhalt Ihrer APP bereitstellen. Beispiel:
 
-```xml
+```html
 <meta property="al:ios:app_name" content="AppName">
 <meta property="al:ios:app_store_id" content="AppNameID">
 <meta property="al:ios:url" content="AppNameURL">
@@ -93,23 +93,23 @@ Sie müssen Unterstützung für das Öffnen und Anzeigen von Deep-Links in ihrer
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
 {
 
-    // Handling a URL in the form http://company.com/appname/?123
-    try {
-        var components = new NSUrlComponents(url,true);
-        var path = components.Path;
-        var query = components.Query;
+  // Handling a URL in the form http://company.com/appname/?123
+  try {
+    var components = new NSUrlComponents(url,true);
+    var path = components.Path;
+    var query = components.Query;
 
-        // Is this a known format?
-        if (path == "/appname") {
-            // Display the view controller for the content
-            // specified in query (123)
-            return ContentViewController.LoadContent(query);
-        }
-    } catch {
-        // Ignore issue for now
+    // Is this a known format?
+    if (path == "/appname") {
+      // Display the view controller for the content
+      // specified in query (123)
+      return ContentViewController.LoadContent(query);
     }
+  } catch {
+    // Ignore issue for now
+  }
 
-    return false;
+  return false;
 }
 ```
 
@@ -123,7 +123,7 @@ Umfassende Ergebnisse sind ansprechender und können dazu beitragen, ihre Rangfo
 
 Eine Möglichkeit zum Bereitstellen von strukturiertem Daten Markup ist die Verwendung von Open Graph. Beispiel:
 
-```xml
+```html
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
 <meta property="og:audio" content="http://company.com/appname/theme.m4a">
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
@@ -133,22 +133,20 @@ Weitere Informationen finden Sie auf der [Open Graph](http://ogp.me) -Website.
 
 Ein weiteres gängiges Format für strukturiertes Daten Markup ist das Format von Schema. org im Mikrodaten Format. Beispiel:
 
-```xml
+```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <span itemprop="ratingValue">4** stars -
-    <span itemprop="reviewCount">255** reviews
-
-
+  <span itemprop="ratingValue">4** stars -
+  <span itemprop="reviewCount">255** reviews
 ```
 
 Die gleichen Informationen können im JSON-LD-Format von Schema. org dargestellt werden:
 
-```xml
+```html
 <script type="application/ld+json">
-    "@content":"http://schema.org",
-    "@type":"AggregateRating",
-    "ratingValue":"4",
-    "reviewCount":"255"
+  "@content":"http://schema.org",
+  "@type":"AggregateRating",
+  "ratingValue":"4",
+  "reviewCount":"255"
 </script>
 ```
 
@@ -179,34 +177,28 @@ Bestimmte Typen strukturierter Daten ermöglichen, dass ein Suchergebnis vom End
 
 Beispielsweise könnte die Definition einer Aktion, mit der eine Telefonnummer gewählt werden soll, wie folgt aussehen:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/Organization">
-    <span itemprop="telephone">(408) 555-1212**
-
-
+  <span itemprop="telephone">(408) 555-1212**
 ```
 
 Wenn das Suchergebnis für den Endbenutzer angezeigt wird, wird im Ergebnis ein kleines Telefon Symbol angezeigt. Wenn der Benutzer auf das Symbol tippt, wird die angegebene Zahl aufgerufen.
 
 Der folgende HTML-Code würde eine Aktion hinzufügen, um eine Audiodatei aus dem Suchergebnis wiederzugeben:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/AudioObject">
-    <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
-
-
+  <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
 ```
 
 Schließlich würde der folgende HTML-Code eine Aktion hinzufügen, um Anweisungen aus dem Suchergebnis zu erhalten:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/PostalAddress">
-    <span itemprop="streetAddress">1 Infinite Loop**
-    <span itemprop="addressLocality">Cupertino**
-    <span itemprop="addressRegion">CA**
-    <span itemprop="postalCode">95014**
-
-
+  <span itemprop="streetAddress">1 Infinite Loop**
+  <span itemprop="addressLocality">Cupertino**
+  <span itemprop="addressRegion">CA**
+  <span itemprop="postalCode">95014**
 ```
 
 Weitere Informationen finden Sie auf der [App Search-Entwickler Website](https://developer.apple.com/ios/search/)von Apple.

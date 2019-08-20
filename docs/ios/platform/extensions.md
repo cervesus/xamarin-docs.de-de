@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 4137ce7542a213a0a4c27b6a66b38828e4646520
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dbc0802b39e8fa736ec3b71dc23f488d08fd8a42
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653467"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621084"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>IOS-Erweiterungen in xamarin. IOS
 
@@ -91,13 +91,13 @@ Außerdem gelten für das Projekt der Erweiterung die folgenden Anforderungen:
 
 - Sie muss über eine Bündel-ID verfügen, die mit der Bündel-ID Ihrer Container-App beginnt. Wenn die Container-App beispielsweise über eine Bündel-ID von `com.myCompany.ContainerApp`verfügt, kann der Bezeichner der `com.myCompany.ContainerApp.MyExtension`Erweiterung wie folgt lauten: 
 
-    ![](extensions-images/bundleidentifiers.png) 
-- Er `NSExtensionPointIdentifier`muss den Schlüssel mit einem entsprechenden Wert ( `com.apple.widget-extension` z. b. für ein **Aktuelles Benachrichtigungs** Center-Widget) in `Info.plist` seiner Datei definieren.
+  ![](extensions-images/bundleidentifiers.png) 
+- Er muss den Schlüssel `NSExtensionPointIdentifier`mit einem entsprechenden Wert ( `Info.plist` `com.apple.widget-extension` z. b. für ein Aktuelles Benachrichtigungs Center-Widget) in seiner Datei definieren.
 - Außerdem muss *entweder* der `NSExtensionMainStoryboard` Schlüssel oder `Info.plist` der `NSExtensionPrincipalClass` Schlüssel in der Datei mit einem geeigneten Wert definiert werden:
-    - Verwenden Sie `NSExtensionMainStoryboard` den Schlüssel, um den Namen des Storyboards anzugeben, das die Hauptbenutzer Oberfläche für die Erweiterung `.storyboard`(minus) darstellt. Beispielsweise `Main` für die `Main.storyboard` Datei.
-    - Verwenden Sie `NSExtensionPrincipalClass` den Schlüssel, um die Klasse anzugeben, die beim Start der Erweiterung initialisiert wird. Der Wert muss dem **Registrierungs** Wert Ihrer `UIViewController`entsprechen: 
+  - Verwenden Sie `NSExtensionMainStoryboard` den Schlüssel, um den Namen des Storyboards anzugeben, das die Hauptbenutzer Oberfläche für die Erweiterung `.storyboard`(minus) darstellt. Beispielsweise `Main` für die `Main.storyboard` Datei.
+  - Verwenden Sie `NSExtensionPrincipalClass` den Schlüssel, um die Klasse anzugeben, die beim Start der Erweiterung initialisiert wird. Der Wert muss dem **Registrierungs** Wert Ihrer `UIViewController`entsprechen: 
 
-    ![](extensions-images/registerandprincipalclass.png)
+  ![](extensions-images/registerandprincipalclass.png)
 
 Bestimmte Erweiterungs Typen können zusätzliche Anforderungen haben. Beispielsweise muss die Prinzipal Klasse eines **heute** -oder **Notification Center** -Erweiterungs Diensts [incwidget-bereitstellen](xref:NotificationCenter.INCWidgetProviding)implementieren.
 
@@ -182,28 +182,28 @@ using CoreGraphics;
 
 namespace DaysRemaining
 {
-    [Register("CodeBasedViewController")]
-    public class CodeBasedViewController : UIViewController, INCWidgetProviding
+  [Register("CodeBasedViewController")]
+  public class CodeBasedViewController : UIViewController, INCWidgetProviding
+  {
+    public CodeBasedViewController ()
     {
-        public CodeBasedViewController ()
-        {
-        }
-
-        public override void ViewDidLoad ()
-        {
-            base.ViewDidLoad ();
-
-            // Add label to view
-            var TodayMessage = new UILabel (new CGRect (0, 0, View.Frame.Width, View.Frame.Height)) {
-                TextAlignment = UITextAlignment.Center
-            };
-
-            View.AddSubview (TodayMessage);
-            
-            // Insert code to power extension here...
-
-        }
     }
+
+    public override void ViewDidLoad ()
+    {
+      base.ViewDidLoad ();
+
+      // Add label to view
+      var TodayMessage = new UILabel (new CGRect (0, 0, View.Frame.Width, View.Frame.Height)) {
+        TextAlignment = UITextAlignment.Center
+      };
+
+      View.AddSubview (TodayMessage);
+
+      // Insert code to power extension here...
+
+    }
+  }
 }
 ```
 
@@ -216,19 +216,19 @@ Nachdem die Benutzeroberfläche erstellt wurde, öffnen Sie `TodayViewController
 ```csharp
 public override void ViewDidLoad ()
 {
-    base.ViewDidLoad ();
+  base.ViewDidLoad ();
 
-    // Calculate the values
-    var dayOfYear = DateTime.Now.DayOfYear;
-    var leapYearExtra = DateTime.IsLeapYear (DateTime.Now.Year) ? 1 : 0;
-    var daysRemaining = 365 + leapYearExtra - dayOfYear;
+  // Calculate the values
+  var dayOfYear = DateTime.Now.DayOfYear;
+  var leapYearExtra = DateTime.IsLeapYear (DateTime.Now.Year) ? 1 : 0;
+  var daysRemaining = 365 + leapYearExtra - dayOfYear;
 
-    // Display the message
-    if (daysRemaining == 1) {
-        TodayMessage.Text = String.Format ("Today is day {0}. There is one day remaining in the year.", dayOfYear);
-    } else {
-        TodayMessage.Text = String.Format ("Today is day {0}. There are {1} days remaining in the year.", dayOfYear, daysRemaining);
-    }
+  // Display the message
+  if (daysRemaining == 1) {
+    TodayMessage.Text = String.Format ("Today is day {0}. There is one day remaining in the year.", dayOfYear);
+  } else {
+    TodayMessage.Text = String.Format ("Today is day {0}. There are {1} days remaining in the year.", dayOfYear, daysRemaining);
+  }
 }
 ```
 

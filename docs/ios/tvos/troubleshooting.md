@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ad0952bb620645a4cbc5fbc17b21f6a977c889ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2503b8a96e8f1c6f08dfcd19672db3b93a5ce7e1
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657314"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620324"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Problembehandlung bei mit xamarin erstellten tvos-apps
 
@@ -26,10 +26,10 @@ _In diesem Artikel werden Probleme behandelt, die bei der Arbeit mit der tvos-Un
 Die aktuelle Version der tvos-Unterstützung von xamarin hat die folgenden bekannten Probleme:
 
 - **Mono-Framework** – Mono 4,3 Cryptography. ProtectedData kann Daten aus Mono 4,2 nicht entschlüsseln. Daher wird die Wiederherstellung von nuget-Paketen mit dem Fehler `Data unprotection failed` nicht ausgeführt, wenn eine geschützte nuget-Quelle konfiguriert wird.
-    - Problem **Umgehung** – in Visual Studio für Mac müssen Sie alle nuget-Paketquellen, die die Kenn Wort Authentifizierung verwenden, zurück fügen, bevor Sie versuchen, die Pakete wiederherzustellen.
+  - Problem **Umgehung** – in Visual Studio für Mac müssen Sie alle nuget-Paketquellen, die die Kenn Wort Authentifizierung verwenden, zurück fügen, bevor Sie versuchen, die Pakete wiederherzustellen.
 - **Visual Studio für Mac w/ F# Add-in** – Fehler beim Erstellen einer F# Android-Vorlage unter Windows. Dies sollte weiterhin ordnungsgemäß auf dem Mac funktionieren.
 - **Xamarin. Mac** – Wenn Sie das vereinheitlichte xamarin. Mac-Vorlagen Projekt ausführen und das Ziel `Unsupported`Framework auf fest `Could not connect to the debugger` gelegt ist, wird das Popup möglicherweise angezeigt.
-    - **Mögliche Problem Umgehung** – Herabstufen der Mono-Framework-Version, die in unserem stabilen Kanal verfügbar ist.
+  - **Mögliche Problem Umgehung** – Herabstufen der Mono-Framework-Version, die in unserem stabilen Kanal verfügbar ist.
 - **Xamarin Visual Studio & xamarin. IOS** – bei der Bereitstellung von watchkit-Anwendungen in Visual `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist` Studio wird der Fehler möglicherweise angezeigt.
 
 Melden Sie alle Fehler, die Sie auf [GitHub](https://github.com/xamarin/xamarin-macios/issues/new)finden.
@@ -115,7 +115,7 @@ Wenn dies auftritt, bearbeiten `Info.plist` Sie die Datei, und stellen Sie siche
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
 <array>
-    <string>arm64</string>
+  <string>arm64</string>
 </array>
 ```
 

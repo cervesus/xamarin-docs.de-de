@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 14a7fdc21c95b2febcf73497055461830b0df831
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 671a7c8aaa81094157056672c64f0c2dc847d6a7
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645787"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620914"
 ---
 # <a name="alerts-in-xamarinmac"></a>Warnungen in xamarin. Mac
 
@@ -51,9 +51,9 @@ Wie bereits erwähnt, sollten dem Benutzer der Anwendung Warnungen angezeigt wer
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Critical,
-    InformativeText = "We need to save the document here...",
-    MessageText = "Save Document",
+  AlertStyle = NSAlertStyle.Critical,
+  InformativeText = "We need to save the document here...",
+  MessageText = "Save Document",
 };
 alert.RunModal ();
 ```
@@ -65,14 +65,14 @@ Der obige Code zeigt eine Warnung an, bei der das Anwendungssymbol auf dem Warnu
 Apple bietet verschiedene Eigenschaften, die verwendet werden können, um eine Warnung anzupassen:
 
 - **AlertStyle** definiert den Typ einer Warnung als eine der folgenden:
-    - **Warnung** : wird verwendet, um den Benutzer zu einem aktuellen oder bevorstehenden Ereignis zu warnen, das nicht kritisch ist. Dies ist der Standardstil.
-    - **Information** -wird verwendet, um den Benutzer vor einem aktuellen oder bevorstehenden Ereignis zu warnen. Zurzeit gibt es keinen sichtbaren Unterschied zwischen einer **Warnung** und einem **Informations** -
-    - **Kritisch** : wird verwendet, um den Benutzer vor schwerwiegenden Konsequenzen eines bevorstehenden Ereignisses (z. b. Löschen einer Datei) zu warnen. Diese Art von Warnung sollte sparsam verwendet werden.
+  - **Warnung** : wird verwendet, um den Benutzer zu einem aktuellen oder bevorstehenden Ereignis zu warnen, das nicht kritisch ist. Dies ist der Standardstil.
+  - **Information** -wird verwendet, um den Benutzer vor einem aktuellen oder bevorstehenden Ereignis zu warnen. Zurzeit gibt es keinen sichtbaren Unterschied zwischen einer **Warnung** und einem **Informations** -
+  - **Kritisch** : wird verwendet, um den Benutzer vor schwerwiegenden Konsequenzen eines bevorstehenden Ereignisses (z. b. Löschen einer Datei) zu warnen. Diese Art von Warnung sollte sparsam verwendet werden.
 - **MessageText** : Dies ist die Haupt Nachricht oder der Titel der Warnung und sollte schnell die Situation für den Benutzer definieren.
 - **InformativeText** : Hierbei handelt es sich um den Hauptteil der Warnung, bei der Sie die Situation eindeutig definieren und dem Benutzer die Möglichkeit zur Verfügung stellen müssen.
 - **Symbol** : Hiermit kann ein benutzerdefiniertes Symbol für den Benutzer angezeigt werden.
 - **Helpanchor** & **showshelp** : ermöglicht das Binden der Warnung in das Anwendungs helpbook und das Anzeigen der Hilfe für die Warnung.
-- Schalt **Flächen: Standard** mäßig hat eine Warnung nur die Schaltfläche **OK** , aber mit der Auflistung **Buttons** können Sie je nach Bedarf weitere Optionen hinzufügen.
+- Schaltflächen: Standardmäßig hat eine Warnung nur die Schaltfläche **OK** , aber mit der Auflistung **Buttons** können Sie je nach Bedarf weitere Optionen hinzufügen.
 - **Showssuppressionbutton** -if `true` zeigt ein Kontrollkästchen an, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde.
 - **Accessoryview** : ermöglicht das Anfügen einer anderen unter Ansicht an die Warnung, um zusätzliche Informationen bereitzustellen, z. b. das Hinzufügen eines **Textfelds** für die Dateneingabe. Wenn Sie eine neue **accessoryview** festlegen oder eine vorhandene ändern, müssen Sie die `Layout()` -Methode zum Anpassen des sichtbaren Layouts der Warnung aufruft.
 
@@ -84,9 +84,9 @@ Es gibt zwei unterschiedliche Möglichkeiten, wie eine Warnung angezeigt werden 
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.RunModal ();
 ```
@@ -98,9 +98,9 @@ Der folgende Code zeigt dieselbe Warnung an wie ein Blatt:
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.BeginSheet (this);
 ```
@@ -118,9 +118,9 @@ Standardmäßig wird in einer Warnung nur die Schaltfläche **OK** angezeigt. Si
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
@@ -142,15 +142,15 @@ Dies ist der Code für dieselbe Warnung wie ein Blatt:
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
 alert.AddButton ("Maybe");
 alert.BeginSheetForResponse (this, (result) => {
-    Console.WriteLine ("Alert Result: {0}", result);
+  Console.WriteLine ("Alert Result: {0}", result);
 });
 ```
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
@@ -168,9 +168,9 @@ Wenn die- `ShowSuppressButton` Eigenschaft der Warnung `true`ist, wird in der Wa
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
@@ -190,16 +190,16 @@ Dies ist der Code für dieselbe Warnung wie ein Blatt:
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
 alert.AddButton ("Maybe");
 alert.ShowsSuppressionButton = true;
 alert.BeginSheetForResponse (this, (result) => {
-    Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
+  Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 });
 ```
 
@@ -219,7 +219,7 @@ var input = new NSTextField (new CGRect (0, 0, 300, 20));
 var alert = new NSAlert () {
 AlertStyle = NSAlertStyle.Informational,
 InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
@@ -243,9 +243,9 @@ Dies ist dieselbe Warnung wie ein Blatt:
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
 
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
@@ -254,7 +254,7 @@ alert.ShowsSuppressionButton = true;
 alert.AccessoryView = input;
 alert.Layout ();
 alert.BeginSheetForResponse (this, (result) => {
-    Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
+  Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 });
 ```
 

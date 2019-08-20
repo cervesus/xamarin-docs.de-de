@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 1e3e1a2165c9acee127a543301f00262aa4bdc4f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2bd704b17f5aff1b4d3f2da1813d1eb19ef29e59
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529087"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620682"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>Model-View-ViewModel-Muster
 
@@ -284,7 +284,7 @@ Das Verhalten ermöglicht das Hinzufügen von Funktionen zu UI-Steuerelementen, 
 
 Ein Verhalten, das über angefügte Eigenschaften an ein Steuerelement angefügt wird, wird als *angefügtes Verhalten*bezeichnet. Das Verhalten kann dann die verfügbar gemachte API des Elements, an das es angefügt ist, zum Hinzufügen von Funktionen zu diesem Steuerelement oder anderen Steuerelementen in der visuellen Struktur der Ansicht verwenden. Die eshoponcontainers-Mobile App enthält `LineColorBehavior` die-Klasse, die ein angefügtes Verhalten ist. Weitere Informationen zu diesem Verhalten finden Sie unter [Anzeigen von Validierungs Fehlern](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors).
 
-Ein xamarin. Forms-Verhalten ist eine Klasse, die von [`Behavior`](xref:Xamarin.Forms.Behavior) der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) -Klasse oder `T `der-Klasse abgeleitet wird, wobei der Typ des Steuer Elements ist, auf das das Verhalten angewendet werden soll. Diese Klassen stellen `OnAttachedTo` - `OnDetachingFrom` und-Methoden bereit, die überschrieben werden sollten, um Logik bereitzustellen, die ausgeführt wird, wenn das Verhalten an Steuerelemente angefügt und von diesen getrennt wird.
+Ein xamarin. Forms-Verhalten ist eine Klasse, die von [`Behavior`](xref:Xamarin.Forms.Behavior) der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) -Klasse oder `T` der-Klasse abgeleitet wird, wobei der Typ des Steuer Elements ist, auf das das Verhalten angewendet werden soll. Diese Klassen stellen `OnAttachedTo` - `OnDetachingFrom` und-Methoden bereit, die überschrieben werden sollten, um Logik bereitzustellen, die ausgeführt wird, wenn das Verhalten an Steuerelemente angefügt und von diesen getrennt wird.
 
 Im eshoponcontainers-Mobile App wird die `BindableBehavior<T>` -Klasse von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) -Klasse abgeleitet. Der Zweck `BindableBehavior<T>` der-Klasse besteht darin, eine Basisklasse für xamarin. Forms-Verhalten bereitzustellen [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) , die erfordert, dass das-Verhalten auf das angefügte-Steuerelement festgelegt wird.
 

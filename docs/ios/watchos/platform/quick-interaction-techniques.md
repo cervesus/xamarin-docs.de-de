@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 83b8b6b443a794b1001c581f45299dbd22133c80
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ddefae8ad24b74a3c9ed05bf46b54430c00beaea
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656421"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620508"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Schnell Interaktions Techniken für watchos 3 in xamarin
 
@@ -47,12 +47,12 @@ Aufgrund der Blick Apple Watch-apps hat Apple vorgeschlagen, dass die ideale Lä
 Apple hat watchkit mehrere neue Features und APIs hinzugefügt, um den Entwickler beim Hinzufügen schneller Interaktionen mit Ihren Apple Watch-apps zu unterstützen:
 
 - watchos 3 bietet Zugriff auf neue Arten von Benutzereingaben, wie z. b.:
-    - Gesten Erkennungs Tools
-    - Digital Crown Drehung 
+  - Gesten Erkennungs Tools
+  - Digital Crown Drehung 
 - watchos 3 bietet neue Möglichkeiten zum Anzeigen und Aktualisieren von Informationen, wie z. b.:
-    - Erweiterte Tabellennavigation
-    - Unterstützung für neues Benutzer Benachrichtigungs Framework
-    - Spritekit-und scenekit-Integration
+  - Erweiterte Tabellennavigation
+  - Unterstützung für neues Benutzer Benachrichtigungs Framework
+  - Spritekit-und scenekit-Integration
 
 Wenn Sie diese neuen Features implementieren, kann der Entwickler sicherstellen, dass Ihre watchos 3-APP abrechenbar und reaktionsfähig ist.
 
@@ -63,11 +63,11 @@ Wenn der Entwickler Gesten Erkennungs Tools in ios implementiert hat, sollten Si
 watchos 3 unterstützt die vier folgenden Gesten Erkennungs Tools:
 
 - Diskrete Gesten Typen:
-    - Die Schwenkbewegung (`WKSwipeGestureRecognizer`).
-    - Die Tap-Geste`WKTapGestureRecognizer`().
+  - Die Schwenkbewegung (`WKSwipeGestureRecognizer`).
+  - Die Tap-Geste`WKTapGestureRecognizer`().
 - Fortlaufende Gesten Typen:
-    - Die schwenken-Bewegung`WKPanGestureRecognizer`().
-    - Die lange Press Bewegung (`WKLongPressGestureRecognizer`).
+  - Die schwenken-Bewegung`WKPanGestureRecognizer`().
+  - Die lange Press Bewegung (`WKLongPressGestureRecognizer`).
 
 Wenn Sie eine der neuen Gesten Erkennungs Tools implementieren möchten, ziehen Sie Sie einfach auf eine Entwurfs Oberfläche im IOS-Designer in Visual Studio für Mac und konfigurieren Sie die zugehörigen Eigenschaften.
 
@@ -96,8 +96,8 @@ Apple empfiehlt Folgendes bei der Arbeit mit Gesten Erkennungs Programmen in wat
 - Fügen Sie die Gesten erkenungen zum Gruppieren von Elementen anstelle einzelner Steuerelemente hinzu. Da die Apple Watch eine geringere physische Bildschirmgröße aufweist, sind Gruppenelemente tendenziell größere und einfachere Ziele, die der Benutzer erreichen kann. Außerdem können die Gesten Erkennungs Tools mit integrierten Gesten in Konflikt stehen, die bereits in den nativen UI-Steuerelementen vorhanden sind.
 - Legen Sie Abhängigkeitsbeziehungen im Storyboard der Watch-App fest.
 - Einige Gesten haben Vorrang vor anderen Gesten Typen, z. b.:
-    - Scrollen
-    - Force Touch
+  - Scrollen
+  - Force Touch
  
 ### <a name="digital-crown-rotation"></a>Digital Crown Drehung
 
@@ -137,28 +137,28 @@ using Foundation;
 
 namespace MonkeyWatch.MonkeySeeExtension
 {
-    public class CrownDelegate : WKCrownDelegate
+  public class CrownDelegate : WKCrownDelegate
+  {
+    #region Computed Properties
+    public double AccumulatedRotations { get; set;}
+    #endregion
+
+    #region Constructors
+    public CrownDelegate ()
     {
-        #region Computed Properties
-        public double AccumulatedRotations { get; set;}
-        #endregion
-
-        #region Constructors
-        public CrownDelegate ()
-        {
-        }
-        #endregion
-
-        #region Override Methods
-        public override void CrownDidRotate (WKCrownSequencer crownSequencer, double rotationalDelta)
-        {
-            base.CrownDidRotate (crownSequencer, rotationalDelta);
-
-            // Accumulate rotations
-            AccumulatedRotations += rotationalDelta;
-        }
-        #endregion
     }
+    #endregion
+
+    #region Override Methods
+    public override void CrownDidRotate (WKCrownSequencer crownSequencer, double rotationalDelta)
+    {
+      base.CrownDidRotate (crownSequencer, rotationalDelta);
+
+      // Accumulate rotations
+      AccumulatedRotations += rotationalDelta;
+    }
+    #endregion
+  }
 }
 ```
 
@@ -225,8 +225,8 @@ Es gibt mehrere Möglichkeiten, wie ein Benutzer auf die Benachrichtigung reagie
 - Für eine klar definierte und vorgestellte Benachrichtigung wird der Benutzer nichts weiter tun und die Benachrichtigung einfach verwerfen.
 - Möglicherweise Tippen Sie auch auf die Benachrichtigung, um die watchos-APP zu starten.
 - Für eine Benachrichtigung, die benutzerdefinierte Aktionen unterstützt, kann der Benutzer eine der benutzerdefinierten Aktionen auswählen. Folgende Aktionen sind möglich:
-    - **Vordergrund Aktionen** : diese starten die APP, um die Aktion auszuführen.
-    - **Hintergrund Aktionen** : wurden stets an das iPhone in watchos 2 weitergeleitet, können aber an die watchapp in watchos 3 weitergeleitet werden.
+  - **Vordergrund Aktionen** : diese starten die APP, um die Aktion auszuführen.
+  - **Hintergrund Aktionen** : wurden stets an das iPhone in watchos 2 weitergeleitet, können aber an die watchapp in watchos 3 weitergeleitet werden.
 
 Neu für watchos 3:
 

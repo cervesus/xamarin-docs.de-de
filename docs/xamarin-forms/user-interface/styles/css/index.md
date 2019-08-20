@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 5d4d7358ca6188f2528ea200f901823f04324ba3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ed9a376da0fcfebffd707e2e93919237adfef87b
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647478"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620838"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von Xamarin.Forms-apps, die mithilfe von Cascading Stylesheets (CSS)
 
@@ -129,7 +129,7 @@ Alternativ ein Stylesheet geladen und mit analysiert werden kann die [ `StyleShe
 
 Weitere Informationen zu Ressourcenwörterbüchern, finden Sie unter [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md).
 
-### <a name="c"></a>C#
+### <a name="c"></a>C\#
 
 In C#, ein Stylesheet als eingebettete Ressource geladen und hinzugefügt werden kann, eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
 

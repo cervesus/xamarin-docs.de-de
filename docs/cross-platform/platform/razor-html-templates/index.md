@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: c6c279a31b6081f7e20b4047e2a8e82c79aeac23
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d822a4dc50d3f33ba4c217b8fcc557acc2bfdb3e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521806"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621034"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Erstellen von HTML-Ansichten mithilfe von Razor-Vorlagen
 
@@ -167,7 +167,7 @@ und dann den Client in der Webansicht festlegen:
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>Aufrufen von JavaScript ausC#
+### <a name="calling-javascript-from-c"></a>Aufrufen von JavaScript aus C\#
 
 Zusätzlich zur Anzeige einer Webansicht, um eine neue HTML-Seite C# zu laden, kann Code auch JavaScript in der aktuell angezeigten Seite ausführen. Gesamte JavaScript-Code Blöcke können mithilfe C# von Zeichen folgen erstellt und ausgeführt werden, oder Sie können Methodenaufrufe an JavaScript erstellen, die bereits `script` über Tags auf der Seite verfügbar sind.
 
@@ -465,7 +465,7 @@ var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 
 Nachdem die URL verarbeitet wurde, bricht die Methode die Navigation ab, sodass die Webansicht nicht mehr versucht, die Navigation zur benutzerdefinierten URL abzuschließen.
 
-#### <a name="manipulating-the-template-from-c"></a>Bearbeiten der VorlageC#
+#### <a name="manipulating-the-template-from-c"></a>Bearbeiten der Vorlage aus C\#
 
 Die Kommunikation mit einer gerenderten HTML C# -Webansicht von erfolgt durch Aufrufen von JavaScript in der Webansicht. Unter IOS erfolgt dies durch Aufrufen `EvaluateJavascript` von in der UIWebView:
 

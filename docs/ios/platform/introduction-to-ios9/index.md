@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 733f50954c7ea6bd4ada7468eb14443f4f3b1f1d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 69a599b6a7534cb77dd9e023d937f10a6b0523fb
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654419"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620667"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
@@ -29,7 +29,7 @@ Neu bei IOS 9 und der iPhone 6S und iPhone 6S Plus ist eine 3D-Toucheingabe, die
 der 3D-Fingerabdruck bietet die folgenden Features für Ihre APP:
 
 - Unterscheidung nach **Druck** : Apps können nun Messen, wie schwer oder hell der Benutzer den Bildschirm berührt und diese Informationen nutzt. Beispielsweise kann eine Zeichnungs-App abhängig von der Art und Weise, in der der Benutzer den Bildschirm berührt, zu einem dickeren oder dünneren.
-- **Peek und Pop** : Ihre APP kann jetzt den Benutzer mit seinen Daten interagieren, ohne aus dem aktuellen Kontext navigieren zu müssen. Wenn Sie auf dem Bildschirm hart drücken, *können Sie* sich das gewünschte Element ansehen (z. b. eine Vorschau der Nachricht). Durch das Drücken von "Harder" können *Sie in das* Element eingeblendet werden.
+- **Peek und Pop** : Ihre APP kann jetzt den Benutzer mit seinen Daten interagieren, ohne aus dem aktuellen Kontext navigieren zu müssen. Wenn Sie auf dem Bildschirm hart drücken, können Sie sich das gewünschte Element ansehen (z. b. eine Vorschau der Nachricht). Durch das Drücken von "Harder " können Sie in das Element eingeblendet werden.
 - **Schnelle Aktionen** : Stellen Sie sich schnell Aktionen wie die Kontextmenüs vor, die angezeigt werden können, wenn ein Benutzer mit der rechten Maustaste auf ein Element in einer Desktop-App klickt. Mithilfe von schnellen Aktionen können Sie in der APP über das Startbildschirm Symbol auf dem IOS-Gerät allgemeine, schnelle und leicht zu verwendbare Verknüpfungen zu Funktionen in Ihrer APP hinzufügen.
 
 Weitere Informationen finden Sie im Artikel [Einführung in die 3D-](~/ios/platform/3d-touch.md) Eingabe Anleitung.
@@ -124,12 +124,12 @@ Mit IOS 9 erweitert Apple die Erweiterungs Unterstützung durch die Bereitstellu
 - **Neuer AudioUnit-Erweiterungs Punkt** – verwenden Sie diesen Erweiterungs Punkt, um Audioeffekte, Musikinstrumente, Soundgeneratoren usw. zur Verwendung in anderen AudioUnit-Host-Apps (z. b. GarageBand) bereitzustellen. Mit diesem Erweiterungs Punkt können Sie auch _Audioeinheiten_ (Audioplug-ins) im App Store verkaufen.
 - **Neuer Index Wartungs Erweiterungs Punkt** – verwenden Sie diesen Erweiterungs Punkt zur Unterstützung der Neuindizierung von App-Daten, ohne dass ein App-Neustart erforderlich ist.
 - **Neue Netzwerk Erweiterungs Punkte** (diese erfordern eine spezielle Berechtigung von Apple):
-    - Anwendungs **Proxy-Anbieter Erweiterung** – verwenden Sie diesen Erweiterungs Punkt zum Implementieren eines benutzerdefinierten transparenten Client seitigen Netzwerk Proxys.
-    - **Filter Datenanbieter-/filtersteuerungsanbietererweiterung** : Verwenden Sie diese Erweiterungs Punkte, um die dynamische Netzwerk Inhalts Filterung auf dem Gerät zu implementieren.
-    - **Paket Tunnel Anbieter-Erweiterung** – verwenden Sie diesen Erweiterungs Punkt, um ein benutzerdefiniertes VPN-Tunneling-Protokoll auf Clientseite zu implementieren.
+  - Anwendungs **Proxy-Anbieter Erweiterung** – verwenden Sie diesen Erweiterungs Punkt zum Implementieren eines benutzerdefinierten transparenten Client seitigen Netzwerk Proxys.
+  - **Filter Datenanbieter-/filtersteuerungsanbietererweiterung** : Verwenden Sie diese Erweiterungs Punkte, um die dynamische Netzwerk Inhalts Filterung auf dem Gerät zu implementieren.
+  - **Paket Tunnel Anbieter-Erweiterung** – verwenden Sie diesen Erweiterungs Punkt, um ein benutzerdefiniertes VPN-Tunneling-Protokoll auf Clientseite zu implementieren.
 - **Neue Safari-Erweiterungs Punkte**:
-    - **Erweiterung für Inhalts Blockierung** – verwenden Sie diesen Erweiterungs Punkt, um eine Liste der blockierten Inhalte zu definieren, die nicht angezeigt werden, wenn der Benutzer das Internet durchsucht.
-    - **Erweiterung für freigegebene Links** – verwenden Sie diesen Erweiterungs Punkt, um die Anzeige des Inhalts ihrer app in den freigegebenen Links von Safari zu aktivieren.
+  - **Erweiterung für Inhalts Blockierung** – verwenden Sie diesen Erweiterungs Punkt, um eine Liste der blockierten Inhalte zu definieren, die nicht angezeigt werden, wenn der Benutzer das Internet durchsucht.
+  - **Erweiterung für freigegebene Links** – verwenden Sie diesen Erweiterungs Punkt, um die Anzeige des Inhalts ihrer app in den freigegebenen Links von Safari zu aktivieren.
 
 Weitere Informationen finden Sie [in unserer Einführung in Erweiterungen](~/ios/platform/extensions.md) und in der Dokumentation zum [Programmier Handbuch für App](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214) -Erweiterungen von Apple.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 0870139def82317646981f154116a704d84cfa0e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4c4aaeaa451a67da16057cd9b345fbbcd0af6f35
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527994"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621023"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek
 
@@ -74,16 +74,16 @@ Sie müssen eine der folgenden Methoden verwenden, um die Tools zu installieren:
 
 - **Installieren von Xcode** : Wenn Sie Xcode installieren, werden alle Ihre Befehlszeilen Tools gebündelt. In OS X 10,9-Shims (installiert `/usr/bin`in) kann jedes in `/usr/bin` enthaltene Tool dem entsprechenden Tool in Xcode zuordnen. Beispielsweise der `xcrun` -Befehl, mit dem Sie ein beliebiges Tool in Xcode über die Befehlszeile suchen oder ausführen können.
 - **Die Terminalanwendung** : Sie können die Befehlszeilen Tools über die Terminalanwendung installieren, indem Sie den `xcode-select --install` folgenden Befehl ausführen:
-    - Starten Sie die Terminal Anwendung.
-    - Geben **Sie**ein, unddrückenSiedieEingabe`xcode-select --install` Taste:
+  - Starten Sie die Terminal Anwendung.
+  - Geben **Sie**ein, unddrückenSiedieEingabe`xcode-select --install` Taste:
 
-    ```bash
-    Europa:~ kmullins$ xcode-select --install
-    ```
+  ```bash
+  Europa:~ kmullins$ xcode-select --install
+  ```
 
-    - Sie werden aufgefordert, die Befehlszeilen Tools zu installieren. Klicken Sie auf die Schaltfläche **Installieren** :   [![](walkthrough-images/xcode01.png "Installieren der Befehlszeilen Tools")](walkthrough-images/xcode01.png#lightbox)
+  - Sie werden aufgefordert, die Befehlszeilen Tools zu installieren. Klicken Sie auf die Schaltfläche **Installieren** : [![](walkthrough-images/xcode01.png "Installieren der Befehlszeilen Tools")](walkthrough-images/xcode01.png#lightbox)
 
-    - Die Tools werden von Apple-Servern heruntergeladen und installiert:   [![](walkthrough-images/xcode02.png "Herunterladen der Tools")](walkthrough-images/xcode02.png#lightbox)
+  - Die Tools werden von Apple-Servern heruntergeladen und installiert: [![](walkthrough-images/xcode02.png "Herunterladen der Tools")](walkthrough-images/xcode02.png#lightbox)
 
 - **Downloads für Apple-Entwickler** : das Paket mit den Befehlszeilen Tools ist auf der Webseite [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action) verfügbar. Melden Sie sich mit Ihrer Apple-ID an, suchen Sie nach den Befehlszeilen Tools, und laden Sie Sie herunter: [![](walkthrough-images/xcode03.png "Suchen der Befehlszeilen Tools")](walkthrough-images/xcode03.png#lightbox)
 
@@ -186,7 +186,8 @@ Diese drei Schritte sind zwar recht unkompliziert, es kann jedoch erforderlich s
 
 Es stehen zahlreiche Tools zur Verfügung, mit denen Sie Aufgaben wie Shellskripts, [Rake](http://rake.rubyforge.org/), [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)und [make](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)automatisieren können. Wenn die Xcode-Befehlszeilen Tools installiert sind `make` , wird ebenfalls installiert. Dies ist das Buildsystem, das für diese exemplarische Vorgehensweise verwendet wird. Hier ist ein **Makefile** , mit dem Sie eine freigegebene Bibliothek für mehrere Architekturen erstellen können, die auf einem IOS-Gerät und dem Simulator für jede Bibliothek funktioniert:
 
-```bash
+<!--markdownlint-disable MD010 -->
+```makefile
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
 PROJECT_ROOT=./YOUR-PROJECT-NAME
 PROJECT=$(PROJECT_ROOT)/YOUR-PROJECT-NAME.xcodeproj
@@ -212,6 +213,7 @@ lib$(TARGET).a: lib$(TARGET)-i386.a lib$(TARGET)-armv7.a lib$(TARGET)-arm64.a
 clean:
     -rm -f *.a *.dll
 ```
+<!--markdownlint-enable MD010 -->
 
 Geben Sie die **Makefile** -Befehle im nur-Text-Editor Ihrer Wahl ein, und aktualisieren Sie die Abschnitte mit **Ihrem Projektnamen** mit dem Namen Ihres Projekts. Es ist auch wichtig, sicherzustellen, dass Sie die obigen Anweisungen genau einfügen, wobei die Registerkarten in den Anweisungen beibehalten werden.
 
@@ -622,21 +624,21 @@ using UIKit;
 
 namespace InfColorPickerSample
 {
-    public class ColorSelectedDelegate:InfColorPickerControllerDelegate
+  public class ColorSelectedDelegate:InfColorPickerControllerDelegate
+  {
+    readonly UIViewController parent;
+
+    public ColorSelectedDelegate (UIViewController parent)
     {
-        readonly UIViewController parent;
-
-        public ColorSelectedDelegate (UIViewController parent)
-        {
-            this.parent = parent;
-        }
-
-        public override void ColorPickerControllerDidFinish (InfColorPickerController controller)
-        {
-            parent.View.BackgroundColor = controller.ResultColor;
-            parent.DismissViewController (false, null);
-        }
+      this.parent = parent;
     }
+
+    public override void ColorPickerControllerDidFinish (InfColorPickerController controller)
+    {
+      parent.View.BackgroundColor = controller.ResultColor;
+      parent.DismissViewController (false, null);
+    }
+  }
 }
 ```
 
@@ -653,9 +655,9 @@ ColorSelectedDelegate selector;
 ```csharp
 public override void ViewDidLoad ()
 {
-    base.ViewDidLoad ();
-    ChangeColorButton.TouchUpInside += HandleTouchUpInsideWithStrongDelegate;
-    selector = new ColorSelectedDelegate (this);
+  base.ViewDidLoad ();
+  ChangeColorButton.TouchUpInside += HandleTouchUpInsideWithStrongDelegate;
+  selector = new ColorSelectedDelegate (this);
 }
 ```
 **Implementieren Sie die Methode "shandtouchupinsidewithstrongdelegat** -Next implementieren Sie den Ereignishandler für", wenn der Benutzer **colorchangebutton**berührt. Bearbeiten `ViewController`Sie, und fügen Sie die folgende Methode hinzu:

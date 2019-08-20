@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 75affbdb6e919c15c644a68ae45e7ff657a53f6a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: afaba327299461af6b71846a39eb6c455125feae
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652276"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620385"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Einführung in Storyboards in xamarin. Mac
 
@@ -79,9 +79,9 @@ Wenn Sie präsentationsegues verwenden, können Sie `PrepareForSegue` die-Method
 Zur Entwurfszeit (beim Layout der Benutzeroberfläche in Xcode-Interface Builder) wird jedes Element der Benutzeroberfläche der app in seine Bestandteile aufgeteilt:
 
 - **Szenen** , die Folgendes umfassen:
-    - **Ansichts Controller** : Hiermit werden die Beziehungen zwischen Sichten und den Daten definiert, die Sie unterstützen.
-    - **Sichten und unter Ansichten** : die eigentlichen Elemente, die die Benutzeroberfläche bilden.
-    - **Containment** -Elemente, die die Beziehungen zwischen übergeordneten und untergeordneten Elementen definieren.
+  - **Ansichts Controller** : Hiermit werden die Beziehungen zwischen Sichten und den Daten definiert, die Sie unterstützen.
+  - **Sichten und unter Ansichten** : die eigentlichen Elemente, die die Benutzeroberfläche bilden.
+  - **Containment** -Elemente, die die Beziehungen zwischen übergeordneten und untergeordneten Elementen definieren.
 - **Darstellungs** Modi, die einzelne präsentationsmodi definieren. 
 
 Indem jedes Element auf diese Weise definiert wird, ermöglicht es das verzögerte Laden der einzelnen Elemente nur, da es während der Laufzeit benötigt wird. In macOS war der gesamte Prozess so konzipiert, dass der Entwickler komplexe, flexible Benutzeroberflächen erstellen kann, die ein Minimum an sicherem Code erfordern, damit Sie funktionieren und so effizient mit Systemressourcen wie möglich sind.
