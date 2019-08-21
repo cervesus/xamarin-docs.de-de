@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4ce217d31811df82f0779a22d0c64464b5295fcc
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528394"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629661"
 ---
 # <a name="watchos-troubleshooting"></a>Problembehandlung bei watchos
 
@@ -92,7 +92,7 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 *Wenn* Sie Xcode-Interface Builder verwenden, führen Sie die folgenden Schritte aus, um neue Schnittstellen Controller für Ihre Watch-APP zu erstellen und die Synchronisierung mit Xcode zu aktivieren C#, damit die Outlets und Aktionen in verfügbar sind:
 
 1. Öffnen Sie das **Interface. Storyboard** der Watch-app in **Xcode Interface Builder**.
-    
+
     ![](troubleshooting-images/add-6.png "Öffnen des Storyboards in Xcode Interface Builder")
 
 2. Ziehen Sie ein `InterfaceController` neues auf das Storyboard:
@@ -144,7 +144,7 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
     ```csharp
     using Foundation;
     using System.CodeDom.Compiler;
-    
+
     namespace HelloWatchExtension  // remember to update this
     {
         [Register ("MyInterfaceController")] // remember to update this
@@ -156,9 +156,10 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
         }
     }
     ```
-    
-    Tipp: Sie können diese Datei (optional) zu einem untergeordneten Knoten der ersten Datei machen, indem Sie Sie auf C# die andere Datei in der Visual Studio für Mac Lösungspad ziehen. Diese wird dann wie folgt angezeigt:
-    
+
+    > [!TIP]
+    > Sie können diese Datei (optional) zu einem untergeordneten Knoten der ersten Datei machen, indem Sie Sie auf C# die andere Datei in der Visual Studio für Mac Lösungspad ziehen. Diese wird dann wie folgt angezeigt:
+
     ![](troubleshooting-images/add-5.png "Der lösungspad")
 
 6. Wählen Sie **Erstellen > alles erstellen** , damit die Xcode-Synchronisierung die neue Klasse ( `Register` über das-Attribut) erkennt, die wir verwendet haben.
@@ -167,8 +168,8 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
     ![](troubleshooting-images/add-6.png "Öffnen des Storyboards in Interface Builder")
 
-8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`
-Wenn alles ordnungsgemäß funktioniert hat, sollte es automatisch in der Dropdown Liste **Klasse:** angezeigt werden, und Sie können es von dort aus auswählen.
+8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`.
+    Wenn alles ordnungsgemäß funktioniert hat, sollte es automatisch in der Dropdown Liste **Klasse:** angezeigt werden, und Sie können es von dort aus auswählen.
 
     ![](troubleshooting-images/add-4.png "Festlegen einer benutzerdefinierten Klasse")
 
