@@ -1,211 +1,213 @@
 ---
-title: Verwenden von Team City mit Xamarin
-description: Diesem Leitfaden wird erläutert, werden die Schritte zum Verwenden von TeamCity zum Kompilieren von mobiler Anwendungen aus, und diese dann in Xamarin Test Cloud senden.
+title: Verwenden von Team City mit xamarin
+description: In diesem Leitfaden werden die Schritte beschrieben, die bei der Verwendung von TeamCity zum Kompilieren mobiler Anwendungen und deren Übermittlung an Xamarin Test Cloud erläutert werden.
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: a3cb79f33b64d933aa8ab4d3555479cc16238992
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2880fcbc3366079955945c4780af2be82afe5a4a
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218944"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511934"
 ---
-# <a name="using-team-city-with-xamarin"></a>Verwenden von Team City mit Xamarin
+# <a name="using-team-city-with-xamarin"></a>Verwenden von Team City mit xamarin
 
-_Diesem Leitfaden wird erläutert, werden die Schritte zum Verwenden von TeamCity zum Kompilieren von mobiler Anwendungen aus, und diese dann in Xamarin Test Cloud senden._
+_In diesem Leitfaden werden die Schritte beschrieben, die bei der Verwendung von TeamCity zum Kompilieren mobiler Anwendungen und deren Übermittlung an Xamarin Test Cloud erläutert werden._
 
-Siehe die [Einführung in Continuous Integration](~/tools/ci/intro-to-ci.md) Handbuch, continuous Integration (CI) ist nützlich, bei der Entwicklung mobiler qualitätsanwendungen. Es gibt viele geeignete Optionen für continuous Integration-Serversoftware. Dieser Leitfaden konzentriert sich auf [TeamCity](http://www.jetbrains.com/teamcity/) von JetBrains.
+Wie im Leitfaden [Einführung in Continuous Integration](~/tools/ci/intro-to-ci.md) erläutert, ist Continuous Integration (CI) eine nützliche Vorgehensweise bei der Entwicklung mobiler Anwendungen. Es gibt viele geeignete Optionen für Continuous Integration Server-Software. Dieser Leitfaden konzentriert sich auf [TeamCity](http://www.jetbrains.com/teamcity/) von JetBrains.
 
-Es gibt mehrere verschiedene Permutationen einer TeamCity-Installation. Im folgenden finden eine Liste mit einigen der folgenden:
+Es gibt mehrere verschiedene Permutationen einer TeamCity-Installation. Im folgenden finden Sie eine Liste der folgenden:
 
-- **Windows-Dienst** – In diesem Szenario TeamCity gestartet wird, sich bei Windows als Windows-Dienst gestartet wird. Sie müssen mit einem Mac-Buildhost von iOS-Anwendungen kompilieren kombiniert werden.
+- **Windows-Dienst** – in diesem Szenario wird TeamCity gestartet, wenn Windows als Windows-Dienst gestartet wird. Er muss mit einem Mac-buildhost gekoppelt werden, um IOS-Anwendungen kompilieren zu können.
 
-- **Starten Sie Daemon unter OS X** – vom Konzept her, dies ist sehr ähnlich, mit einem Windows-Dienst, der im vorherigen Schritt beschrieben. Standardmäßig werden die Builds mit dem Stammkonto ausgeführt werden.
+- **Der Launch-Daemon unter OS X** – konzeptionell ist dies mit dem Ausführen von als Windows-Dienst vergleichbar, der im vorherigen Schritt beschrieben wurde. Die Builds werden standardmäßig unter dem Root-Konto ausgeführt.
 
-- **Benutzerkonto, unter OS X** – es ist möglich, TeamCity unter einem Benutzerkonto ausgeführt, die jedes Mal startet der Benutzer anmeldet.
+- **Benutzerkonto unter OS X** – es ist möglich, TeamCity unter einem Benutzerkonto auszuführen, das bei jeder Anmeldung des Benutzers gestartet wird.
 
-Die einfachste und am einfachsten mit der Einrichtung von den vorherigen Szenarien auch ist TeamCity über ein Benutzerkonto unter OS X ausgeführt wird.
+In den vorherigen Szenarios ist das Ausführen von TeamCity unter einem Benutzerkonto unter OS X das einfachste und einfachste Setup.
 
-Es sind mehrere Schritte zum Einrichten von TeamCity:
+Die Einrichtung von TeamCity umfasst mehrere Schritte:
 
-- **Installieren von TeamCity** – die Installation von TeamCity wird in diesem Handbuch nicht behandelt. Dieses Handbuch wird davon ausgegangen, dass TeamCity installiert ist und unter einem Benutzerkonto ausgeführt wird. Anweisungen zum [installieren TeamCity](http://confluence.jetbrains.com/display/TCD8/Installation) finden Sie in der [TeamCity 8-Dokumentation](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation) von JetBrains.
+- **Installieren von TeamCity** – die Installation von TeamCity wird in diesem Handbuch nicht behandelt. In dieser Anleitung wird davon ausgegangen, dass TeamCity installiert ist und unter einem Benutzerkonto ausgeführt wird. Anweisungen zum [Installieren von TeamCity](http://confluence.jetbrains.com/display/TCD8/Installation) finden Sie in der [Dokumentation zu TeamCity 8](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation) von JetBrains.
 
-- **Vorbereiten des Servers erstellen** – dieser Schritt umfasst das Installieren der erforderlichen Software, Tools und erforderlichen Zertifikate zum Erstellen von mobilen Anwendungen und für die Verteilung vorzubereiten.
+- **Vorbereiten des** Buildservers – dieser Schritt umfasst die Installation der erforderlichen Software, Tools und Zertifikate, die zum Erstellen mobiler Anwendungen und zur Vorbereitung auf die Verteilung erforderlich sind.
 
-- **Skript für ein erstellen Erstellen** – dieser Schritt ist nicht unbedingt erforderlich, aber ein Buildskript ist eine nützliche Hilfe zum Erstellen von Anwendungen, die für die unbeaufsichtigte. Mithilfe von ein Buildskript können mit der Problembehandlung von Builds, die entstehen können, und bietet eine konsistente, wiederholbare Möglichkeit, die Binärdateien für die Verteilung zu erstellen, auch wenn die fortlaufende Integration nicht geübt wird.
+- **Erstellen eines Buildskripts** – dieser Schritt ist nicht unbedingt erforderlich, aber ein Buildskript ist eine hilfreiche Hilfe zum unbeaufsichtigten Erstellen von Anwendungen. Die Verwendung eines Buildskripts hilft bei der Problembehandlung von Buildproblemen, die auftreten können, und bietet eine konsistente, wiederholbare Möglichkeit zum Erstellen der Binärdateien für die Verteilung, auch wenn Continuous Integration nicht ausgeführt wird.
 
-- **Creating A TeamCity Project** – Wenn die vorangegangenen drei Schritte abgeschlossen sind, müssen wir ein TeamCity-Projekt, das alle Metadaten enthält erstellen erforderlich, den Quellcode, Kompilieren die Projekte und die Tests an Xamarin Test Cloud senden.
+- Erstellen **eines TeamCity-Projekts** – nachdem die vorangegangenen drei Schritte abgeschlossen sind, müssen wir ein TeamCity-Projekt erstellen, das alle Metadaten enthält, die zum Abrufen des Quellcodes, zum Kompilieren der Projekte und zum übermitteln der Tests an Xamarin Test Cloud erforderlich sind.
 
 ## <a name="requirements"></a>Anforderungen
 
-Erfahrung mit [Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud) ist erforderlich.
+Die Verwendung von [App Center Test](https://docs.microsoft.com/appcenter/test-cloud/) ist erforderlich.
 
-Vertrautheit mit TeamCity 8.1 ist erforderlich. Die Installation von TeamCity ist über den Rahmen dieses Dokuments hinaus. Es wird vorausgesetzt, dass TeamCity auf OS X Mavericks installiert ist und ein normales Benutzerkonto und nicht das Root-Konto ausgeführt wird.
+Vertrautheit mit TeamCity 8,1 ist erforderlich. Die Installation von TeamCity geht über den Rahmen dieses Dokuments hinaus. Es wird davon ausgegangen, dass TeamCity auf OS X Mavericks installiert ist und unter einem regulären Benutzerkonto und nicht dem Stammkonto ausgeführt wird.
 
-Der Build-Server sollte auf einem eigenständigen Computer mit OS X, die ausschließlich für continuous Integration verwendet wird. Im Idealfall werden der Build-Server nicht für alle anderen Rollen, wie z. B. eine Datenbank-Server, Webserver oder Entwicklerarbeitsstation verantwortlich.
+Der Buildserver sollte ein eigenständiger Computer mit OS X sein, der für Continuous Integration reserviert ist. Im Idealfall ist der Buildserver nicht für andere Rollen verantwortlich, wie z. b. einen Datenbankserver, einen Webserver oder eine Entwickler Arbeitsstation.
 
 > [!IMPORTANT]
-> Dieses Handbuch deckt sich nicht auf eine "monitorlose" Installation von Xamarin aus.
+> In dieser Anleitung wird nicht die "Monitor lose" Installation von xamarin behandelt.
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
 ## <a name="preparing-the-build-server"></a>Vorbereiten des Buildservers
 
-Ein wichtiger Schritt zum Konfigurieren eines Buildservers ist die erforderlichen Tools, Software und Zertifikate, die zum Erstellen mobiler Anwendungen installieren. Es ist wichtig, dass der Buildserver kompilieren Sie die mobile Projektmappe und alle Tests ausführen können. Um Probleme zu minimieren, sollte die Software und Tools in das gleiche Benutzerkonto installiert werden, die TeamCity gehostet wird. Im folgenden finden eine Übersicht darüber, was erforderlich ist:
+Ein wichtiger Schritt beim Konfigurieren eines Buildservers ist die Installation aller erforderlichen Tools, Software und Zertifikate, um die mobilen Anwendungen zu erstellen. Es ist wichtig, dass der Buildserver in der Lage ist, die mobile Lösung zu kompilieren und alle Tests auszuführen. Um Konfigurationsprobleme zu minimieren, sollten die Software und die Tools in demselben Benutzerkonto installiert werden, das TeamCity gehostet. Im folgenden finden Sie eine Liste der erforderlichen Komponenten:
 
-1. **Visual Studio für Mac** – dazu gehören, Xamarin.iOS und Xamarin.Android.
-2. **Melden Sie sich die Xamarin Component Store** – Dies ist ein optionaler Schritt, und ist nur erforderlich, wenn Ihre Anwendung Komponenten im Xamarin Component Store verwendet werden. Protokollierung proaktiv an diesem Punkt in der Komponentenspeicher verhindert Probleme, wenn ein Build TeamCity versucht wird, um die Anwendung zu kompilieren.
-3. **Xcode** – Xcode zum Kompilieren und melden Sie ein iOS-Anwendungen erforderlich ist.
-4. **Xcode-Befehlszeilentools** – hierzu finden Sie in Schritt 1 von den Abschnitt "Installation" der [Aktualisieren von Ruby mit Rbenv](https://developer.xamarin.com/guides/testcloud/calabash/updating-ruby-using-rbenv/) Guide.
-5. **Signieren von Identität und Bereitstellungsprofile** : Importieren der Zertifikate und das Bereitstellungsprofil über XCode. Informieren Sie sich die Apple-Handbuch auf [Exportieren von Signierungsidentitäten und Bereitstellungsprofile](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) Weitere Details.
-6. **Android Schlüsselspeichern** – kopieren Sie die erforderlichen Android Schlüsselspeichern in ein Verzeichnis an, dass der TeamCity Benutzer zugreifen kann, d. h. `~/Documents/keystores/MyAndroidApp1`.
-7. **Calabash** – Dies ist ein optionaler Schritt, wenn die Anwendung Tests mit Calabash geschrieben wurden. Finden Sie unter den [Calabash installieren, auf OS X Mavericks](https://developer.xamarin.com/guides/testcloud/calabash/osx-installation/) Handbuch und die [Aktualisieren von Ruby mit Rbenv](https://developer.xamarin.com/guides/testcloud/calabash/updating-ruby-using-rbenv/) Anleitung finden Sie weitere Informationen.
+1. **Visual Studio für Mac** – einschließlich xamarin. IOS und xamarin. Android.
+2. **Melden Sie sich beim xamarin-Komponenten Speicher an** – Dies ist ein optionaler Schritt, der nur erforderlich ist, wenn Ihre Anwendung Komponenten aus dem xamarin-Komponenten Speicher verwendet. Wenn Sie sich zu diesem Zeitpunkt proaktiv beim Komponenten Speicher anmelden, werden Probleme vermieden, wenn ein TeamCity-Build versucht, die Anwendung zu kompilieren.
+3. **Xcode** – Xcode ist erforderlich, um IOS-Anwendungen zu kompilieren und zu signieren.
+4. **Xcode-Befehlszeilen Tools** – Dies wird in Schritt 1 des Abschnitts "Installation" des Handbuchs " [Aktualisieren von Ruby mit rbenv](https://github.com/calabash/calabash-ios/wiki) " beschrieben.
+5. **Signieren von Identitäts & Bereitstellungs Profilen** – importieren Sie die Zertifikate und das Bereitstellungs Profil über Xcode. Weitere Informationen finden Sie im Apple-Handbuch zum [Exportieren von Signierungs Identitäten und Bereitstellungs Profilen](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) .
+6. **Android-Keystores** – kopieren Sie die erforderlichen Android-Keystores in ein Verzeichnis, auf das der TeamCity-Benutzer `~/Documents/keystores/MyAndroidApp1`Zugriff hat, d. h.
+7. **Calabash** – Dies ist ein optionaler Schritt, wenn in Ihrer Anwendung Tests mit Calabash geschrieben wurden. Weitere Informationen finden Sie im Handbuch [Installieren von Calabash on OS X Mavericks](https://github.com/calabash/calabash-ios/wiki) und im Leitfaden zum [Aktualisieren von Ruby mit rbenv](https://github.com/calabash/calabash-ios/wiki) .
 
-Das folgende Diagramm zeigt alle diese Komponenten:
+Im folgenden Diagramm werden alle folgenden Komponenten veranschaulicht:
 
-![](teamcity-images/image1.png "Dieses Diagramm veranschaulicht die alle diese Komponenten")
+![](teamcity-images/image1.png "In diesem Diagramm werden alle diese Komponenten veranschaulicht.")
 
-Sobald die Software installiert wurde, melden Sie sich bei dem Benutzerkonto, und bestätigen, dass die Software ordnungsgemäß installiert wurde und funktioniert. Dies sollten die Anpassungen die Projektmappe zu kompilieren und übermitteln der Anwendung in Test Cloud. Dies kann erheblich vereinfacht werden durch Ausführen des Skripts erstellen, wie im nächsten Abschnitt beschrieben.
+Nachdem die Software installiert wurde, melden Sie sich beim Benutzerkonto an, und vergewissern Sie sich, dass die gesamte Software ordnungsgemäß installiert ist und funktioniert. Dies sollte das Kompilieren der Lösung und das übermitteln der Anwendung an Test Cloud einschließen. Dies kann durch Ausführen des Buildskripts erheblich vereinfacht werden, wie im nächsten Abschnitt beschrieben.
 
-## <a name="create-a-build-script"></a>Erstellen Sie ein Skript erstellen
+## <a name="create-a-build-script"></a>Erstellen eines Buildskripts
 
-Obwohl es durchaus möglich, für die TeamCity, alle Aspekte der Kompilierung und übermitteln die mobilen Anwendungen in Test Cloud selbst zu behandeln ist, wird es dringend empfohlen, um einen Buildskript zu erstellen. Ein Buildskript bietet die folgenden Vorteile:
+Es ist zwar durchaus möglich, dass TeamCity alle Aspekte der Kompilierung und Übermittlung der mobilen Anwendungen an die Test Cloud selbst verarbeitet, es wird jedoch dringend empfohlen, ein Buildskript zu erstellen. Ein Buildskript bietet die folgenden Vorteile:
 
-1. **Dokumentation** – ein Buildskript dient als eine Form von Dokumentation wie die Software erstellt wird. Dies entfernt einiger der "magischen", die bei der Bereitstellung der Anwendungs zugeordnet ist, und erlaubt Entwicklern, die auf Funktionalität konzentrieren können.
-1. **Wiederholbarkeit** – ein Buildskript wird sichergestellt, dass jedes Mal die Anwendung kompiliert und bereitgestellt, es erfolgt in genau die gleiche Weise, unabhängig davon, wer oder was die Arbeit übernimmt. Diese repeatable Konsistenz entfernt Probleme oder Fehler, die im aufgrund einer fehlerhaft ausgeführten Build einschleichen können oder Benutzerfehler.
-1. **Versionsverwaltung** – ein Buildskript kann in der Quellcode-Verwaltungssystems eingeschlossen werden. Dies bedeutet, dass Änderungen an das Buildskript können nachverfolgt und überwacht und korrigiert werden, wenn Fehler oder Ungenauigkeiten gefunden werden.
-1. **Vorbereiten der Umgebung** – ein Buildskript zählen Logik, um die erforderlichen 3rd Party-Abhängigkeiten zu installieren. Dadurch wird sichergestellt, dass die Anwendungen mit den richtigen Komponenten erstellt werden.
+1. **Dokumentation** – ein Buildskript dient als Dokumentation zur Art der Software Erstellung. Dies entfernt einige der "Magic", die mit der Bereitstellung der Anwendung verknüpft ist, und ermöglicht es Entwicklern, sich auf die Funktionalität zu konzentrieren.
+1. **Wiederholbarkeit** – ein Buildskript stellt sicher, dass jedes Mal, wenn die Anwendung kompiliert und bereitgestellt wird, auf genau dieselbe Weise erfolgt, unabhängig davon, wer oder was die Arbeit bewirkt. Diese wiederholbare Konsistenz entfernt alle Probleme oder Fehler, die aufgrund eines falsch ausgeführten Builds oder menschlichen Fehlers auftreten können.
+1. **Versionierung** – ein Buildskript kann im Quell Code Verwaltungssystem enthalten sein. Dies bedeutet, dass Änderungen am Buildskript nachverfolgt, überwacht und korrigiert werden können, wenn Fehler oder Ungenauigkeiten gefunden werden.
+1. **Vorbereiten der Umgebung** – ein Buildskript kann Logik zum Installieren erforderlicher Drittanbieter-Abhängigkeiten enthalten. Dadurch wird sichergestellt, dass die Anwendungen mit den entsprechenden Komponenten erstellt werden.
 
-Das Buildskript kann so einfach wie eine Powershell-Datei (unter Windows) oder ein Bash-Skript (unter OS X) sein. Wenn Sie das Build-Skript zu erstellen, stehen mehrere Optionen für Skriptsprachen:
+Das Buildskript kann so einfach wie eine PowerShell-Datei (unter Windows) oder ein Bash-Skript (unter OS X) sein. Beim Erstellen des Buildskripts stehen verschiedene Auswahlmöglichkeiten für Skriptsprachen zur Verfügung:
 
-- [**Rake** ](https://github.com/jimweirich/rake) – Dies ist eine bestimmte Domäne Sprache (DSL) zum Erstellen von Projekten, die basierend auf Ruby. Rake hat den Vorteil, Beliebtheit sowie ein reichhaltiges Ökosystem von Bibliotheken.
+- [**Rake**](https://github.com/jimweirich/rake) – Dies ist eine domänenspezifische Sprache (DSL) zum Entwickeln von Projekten, die auf Ruby basiert. "Rake" hat den Vorteil von Beliebtheit und einem umfangreichen Ökosystem von Bibliotheken.
 
-- [**Psake** ](https://github.com/psake/psake) – Dies ist eine Windows Powershell-Bibliothek für die Entwicklung von Software
+- [**psake**](https://github.com/psake/psake) – Dies ist eine Windows PowerShell-Bibliothek zum Entwickeln von Software.
 
 - [**FAKE** ](http://fsharp.github.io/FAKE/) – Hierbei handelt es sich um eine DSL auf der Basis von F#, mit deren Hilfe ggf. vorhandene .NET-Bibliotheken verwendet werden können.
 
-Welche Skriptsprache verwendet wird, hängt davon ab Ihre Einstellungen und Anforderungen. Die [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) Beispiel enthält ein Beispiel für mithilfe von Rake als eine [Buildskript](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
+Welche Skriptsprache verwendet wird, hängt von Ihren Vorlieben und Anforderungen ab. Das [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash).Beispiel enthält ein Beispiel für die Verwendung von „Rake“ als [Buildskript](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
 
 > [!NOTE]
-> Es ist möglich, ein XML-basierte Buildsystem wie MSBuild oder NAnt, aber diese fehlen die Ausdruckskraft und wartbarkeit einer DSL, die speziell für das Erstellen von Software zu verwenden.
+> Es ist möglich, ein auf XML basierendes Buildsystem wie z. b. MSBuild oder nant zu verwenden, aber diese sind nicht für die Ausdrucksfähigkeit und Wartbarkeit einer DSL vorgesehen, die für das Erstellen von Software reserviert ist
 
-### <a name="parameterizing-the-build-script"></a>Parametrisieren das Skript zum Erstellen
+### <a name="parameterizing-the-build-script"></a>Parametrialisieren des Buildskripts
 
-Der Prozess der Erstellung und das Testen von Software erfordert Informationen, die geheim gehalten werden soll. Erstellen ein APK insbesondere möglicherweise ein Kennwort für den Schlüsselspeicher und/oder des aliasschlüssels im Schlüsselspeicher. Test Cloud erfordert auch einen API-Schlüssel, der für einen Entwickler eindeutig ist. Diese Typen von Werten sollte nicht schwer sein im Buildskript codiert. Stattdessen sollten sie als Variablen an das Buildskript übergeben werden.
+Der Prozess zum entwickeln und Testen von Software erfordert Informationen, die geheim gehalten werden sollten. Insbesondere das Erstellen eines APK erfordert möglicherweise ein Kennwort für den Keystore und/oder den schlüsselalias im keystore. Ebenso erfordert Test Cloud einen API-Schlüssel, der für einen Entwickler eindeutig ist. Diese Wertetypen sollten im Buildskript nicht hart codiert sein. Stattdessen sollten Sie als Variablen an das Buildskript übermittelt werden.
 
-Weniger anfällig sind Werte, wie z. B. der iOS-Geräte-ID oder die Android-Geräte-ID, die identifizieren, welche Geräte, die, denen Test Cloud für die zu verwendende, Testen ausgeführt wird. Dies sind keine Werte, die geschützt werden müssen, aber sie können auch von Build zu Build ändern.
+Weniger sensibel sind Werte wie z. b. die IOS-Geräte-ID oder die Android-Geräte-ID, die identifizieren, welche Geräte Test Cloud für Testläufe verwenden soll. Dabei handelt es sich nicht um Werte, die geschützt werden müssen, aber Sie können sich von Build zu Build ändern.
 
-Speichern diese Arten von Variablen außerhalb des Buildskripts erleichtert auch das Buildskript innerhalb einer Organisation, z. B. mit Entwicklern gemeinsam nutzen. Entwickler können Sie dasselbe Skript wie der Buildserver, aber Sie können ihre eigenen Schlüsselspeichern und API-Schlüssel verwenden.
+Das Speichern dieser Typen von Variablen außerhalb des Buildskripts erleichtert auch das Freigeben des Buildskripts in einer Organisation, z.b. für Entwickler. Entwickler können genau dasselbe Skript wie der Buildserver verwenden, können jedoch eigene Keystores und API-Schlüssel verwenden.
 
-Es gibt zwei Möglichkeiten zum Speichern von diese vertrauliche Werte ein:
+Es gibt zwei mögliche Optionen zum Speichern dieser sensiblen Werte:
 
-- **Eine Konfigurationsdatei** – richtet sich an den Test Cloud-API-Schlüssel zu schützen, dieser Wert nicht in die Versionskontrolle aktiviert sein sollte. Die Datei kann für jeden Computer erstellt werden. Wie die Werte aus dieser Datei gelesen werden, hängt die verwendete Skriptsprache ab.
+- **Eine Konfigurationsdatei** – um den Test Cloud-API-Schlüssel zu schützen, sollte dieser Wert nicht in die Versionskontrolle eingecheckt werden. Die Datei kann für jeden Computer erstellt werden. Wie Werte aus dieser Datei gelesen werden, hängt von der verwendeten Skriptsprache ab.
 
-- **Umgebungsvariablen** – diese können ganz einfach auf einer computerspezifischen Basis und ame Randbereiche unabhängig von der zugrunde liegenden Skriptsprache festgelegt werden.
+- **Umgebungsvariablen** – diese können problemlos auf Computer Basis und unabhängig von der zugrunde liegenden Skriptsprache festgelegt werden.
 
-Es gibt vor- und Nachteile auf jede dieser Optionen. TeamCity funktioniert gut bei Umgebungsvariablen, damit dieser Anleitung diese Technik wird, beim Buildskripts zu erstellen empfohlen wird.
+Jede dieser Optionen hat vor-und Nachteile. TeamCity funktioniert problemlos mit Umgebungsvariablen, sodass diese Vorgehensweise beim Erstellen von Buildskripts empfohlen wird.
 
 ### <a name="build-steps"></a>Buildschritte
 
-Das Buildskript muss die folgenden Schritte ausführen können:
+Das Buildskript muss in der Lage sein, die folgenden Schritte auszuführen:
 
-- **Kompilieren Sie die Anwendung** – dazu gehören das Signieren der Anwendung mit dem richtigen Bereitstellungsprofil.
+- **Kompilieren Sie die Anwendung** – Dies umfasst das Signieren der Anwendung mit dem richtigen Bereitstellungs Profil.
 
-- **Senden Sie die Anwendung in Xamarin Test Cloud** – dazu gehören, Signieren und Ausrichten des APKS mit den entsprechenden Keystore Zip.
+- **Übermitteln Sie die Anwendung an Xamarin Test Cloud** – Dies schließt das Signieren und ZIP-Ausrichten des APK mit dem entsprechenden Keystore ein.
 
 Diese beiden Schritte werden im folgenden ausführlicher erläutert.
 
-#### <a name="compiling-a-xamarinios-application"></a>Kompilieren eine Xamarin.iOS-Anwendung
+#### <a name="compiling-a-xamarinios-application"></a>Kompilieren einer xamarin. IOS-Anwendung
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-#### <a name="compiling-a-xamarinandroid-application"></a>Kompilieren einer Xamarin.Android-Anwendung
+#### <a name="compiling-a-xamarinandroid-application"></a>Kompilieren einer xamarin. Android-Anwendung
 
-Verwenden Sie zum Kompilieren einer Android-Anwendung **Xbuild** (oder **Msbuild** für Windows):
+Verwenden Sie zum Kompilieren einer Android-Anwendung **xbuild** (oder **MSBuild** unter Windows):
 
 ```bash
 /Library/Frameworks/Mono.framework/Commands/xbuild /t:SignAndroidPackage /p:Configuration=Release /path/to/android.csproj
 ```
 
-Beachten Sie, um die Xamarin Android-Anwendung zu kompilieren **Xbuild** verwendet das Projekt, und dass zum Erstellen der iOS-Anwendung **Xbuild** die Lösung erfordert.
+Beachten Sie, dass zum Kompilieren der xamarin Android-Anwendung **xbuild** das Projekt verwendet und dass zum Erstellen der IOS-Anwendung **xbuild** die Projekt Mappe erfordert.
 
-#### <a name="submitting-xamarinuitests-to-test-cloud"></a>Übermitteln von Xamarin.UITests in Testcloud
+#### <a name="submitting-xamarinuitests-to-test-cloud"></a>Übermitteln von xamarin. uitests an Test Cloud
 
-UITests werden gesendet, mit der `test-cloud.exe` Anwendung, wie im folgenden Codeausschnitt gezeigt:
+Uitests werden mithilfe der `test-cloud.exe` Anwendung übermittelt, wie im folgenden Code Ausschnitt gezeigt:
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
 ```
 
-Wenn der Test ausgeführt wird, werden die Testergebnisse in Form einer NUnit Stil XML-Datei mit dem Namen zurückgegeben werden **report.xml**. TeamCity zeigt die Informationen in das Protokoll zu erstellen.
+Beim Ausführen des Tests werden die Testergebnisse in Form einer XML-Datei im nunit-Stil " **Report. XML**" zurückgegeben. TeamCity zeigt die Informationen im Buildprotokoll an.
 
-Weitere Informationen über das Senden von UITests in Test Cloud finden Sie in diesem Handbuch auf [vorbereiten Xamarin.UITests für den Upload](/appcenter/test-cloud/preparing-for-upload/uitest/).
+Weitere Informationen zum Übermitteln von uitests an Test Cloud finden Sie in diesem Handbuch zum [Vorbereiten von xamarin. uitests für den Upload](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest/).
 
-#### <a name="submitting-calabash-tests-to-test-cloud"></a>Übermitteln von Calabash-Tests zum Testen der Cloud
+#### <a name="submitting-calabash-tests-to-test-cloud"></a>Übermitteln von Calabash-Tests an Test Cloud
 
-Tests mit Calabash werden gesendet, mit der `test-cloud` gem, wie im folgenden Codeausschnitt gezeigt:
+Calabash-Tests werden mit dem `test-cloud` gem-Code übermittelt, wie im folgenden Code Ausschnitt gezeigt:
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
 ```
-Um eine Android-Anwendung auf Test Cloud senden zu können, ist es erforderlich, zunächst die APK-Testserver mit Calabash-Android neu erstellen:
+
+Um eine Android-Anwendung an Test Cloud zu übermitteln, müssen Sie zunächst den APK-Test Server mit Calabash-Android neu erstellen:
 
 ```bash
 $ calabash-android build </path/to/signed/APK>
 $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DEVICE_ID> --profile=android --config=config/cucumber.yml --pretty
 ```
-Weitere Informationen zum Übermitteln von Tests mit Calabash finden Sie in Xamarin Handbuch auf [Calabash-Tests in Test Cloud senden](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/).
 
-## <a name="creating-a-teamcity-project"></a>Erstellen eines Projekts TeamCity
+Weitere Informationen zum Übermitteln von Calabash-Tests finden Sie im xamarin-Handbuch zum Übermitteln von [Calabash-Tests an Test Cloud](https://github.com/calabash/calabash-ios/wiki).
 
-Sobald TeamCity installiert ist, und Visual Studio für Mac können Ihr Projekt erstellen, ist es Zeit zum Erstellen eines Projekts in TeamCity das Projekt zu erstellen und in Test Cloud senden.
+## <a name="creating-a-teamcity-project"></a>Erstellen eines TeamCity-Projekts
 
-1. Durch die Anmeldung bei TeamCity über den Webbrowser gestartet. Navigieren Sie zu das Stammprojekt:
+Sobald TeamCity installiert ist und Visual Studio für Mac das Projekt erstellen können, ist es an der Zeit, ein Projekt in TeamCity zu erstellen, um das Projekt zu erstellen und es an Test Cloud zu senden.
 
-    ![Navigieren Sie zu das Stammprojekt](teamcity-images/image2.png "navigieren Sie zu das Stammprojekt") unter das Stammprojekt erstellen ein neues untergeordneten Projekts:
+1. Gestartet durch Anmelden bei TeamCity über den Webbrowser. Navigieren Sie zum Stamm Projekt:
 
-    ![Navigieren Sie zum Stamm Projekt darunter das Stammprojekt, Erstellen eines neuen untergeordneten Projekts](teamcity-images/image3.png "navigieren Sie auf das Projekt darunter the Root Stammprojekt, erstellen ein neues untergeordneten Projekts")
-2. Nachdem das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Build-Konfiguration hinzu:
+    ![Navigieren Sie zum Stamm Projekt] . (teamcity-images/image2.png "Navigieren Sie zum Stamm Projekt") . Erstellen Sie unterhalb des Stamm Projekts ein neues Unterprojekt:
 
-    ![Nachdem das untergeordnete Projekt erstellt wurde, Hinzufügen einer neuen Buildkonfiguration](teamcity-images/image5.png "nach der das untergeordnete Projekt erstellt wurde, Hinzufügen einer neuen Build-Konfiguration")
-3. Fügen Sie ein VCS-Projekt, an die Konfiguration zu erstellen. Dies erfolgt über den Bildschirm für die Einstellung der Version des Steuerelements:
+    ![Navigieren Sie zum Stamm Projekt unterhalb des Stamm Projekts, und erstellen Sie ein neues Unterprojekt] . (teamcity-images/image3.png "Navigieren Sie zum Stamm Projekt unterhalb des Stamm Projekts, und erstellen Sie ein neues Unterprojekt") .
+2. Nachdem das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Buildkonfiguration hinzu:
 
-    ![Dies erfolgt über den Bildschirm-Steuerelement Versionseinstellung](teamcity-images/image6.png "Dies erfolgt mithilfe der Einstellung für Steuerelement-Bildschirm")
+    ![Nachdem das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Buildkonfiguration hinzu] . (teamcity-images/image5.png "Nachdem das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Buildkonfiguration hinzu") .
+3. Fügen Sie ein VCS-Projekt an die Buildkonfiguration an. Dies erfolgt über den Bildschirm zum Festlegen der Versionskontrolle:
 
-    Ist kein VCS-Projekt erstellt haben, können Sie die unten gezeigten neuen VCS-Stamm-Seite erstellen:
+    ![Dies erfolgt über den Bildschirm zum Festlegen der Versionskontrolle] . (teamcity-images/image6.png "Dies erfolgt über den Bildschirm zum Festlegen der Versionskontrolle") .
 
-    ![Ist kein VCS-Projekt erstellt haben, haben Sie die Möglichkeit, ein von der neuen VCS-Stamm-Seite erstellen,](teamcity-images/image7.png "ist kein VCS-Projekt erstellt haben, haben Sie die Möglichkeit, ein von der neuen VCS-Stamm-Seite zu erstellen")
+    Wenn kein VCS-Projekt erstellt wurde, haben Sie die Möglichkeit, eine Datei auf der neuen VCS-Stamm Seite zu erstellen, wie unten gezeigt:
 
-    Nach der Stamm VCS angefügt wurde, erkennen Sie TeamCity wird Auschecken des Projekts und versuchen Sie es zur automatischen Buildschritte. Wenn Sie mit TeamCity vertraut sind, können Sie einen der Buildschritte, erkannten auswählen. Es ist sicher der erkannten Buildschritte ignoriert.
+    ![Wenn kein VCS-Projekt erstellt wurde, haben Sie die Möglichkeit, eine Datei auf der neuen VCS-Stamm Seite zu erstellen] . (teamcity-images/image7.png "Wenn kein VCS-Projekt erstellt wurde, haben Sie die Möglichkeit, eine Datei auf der neuen VCS-Stamm Seite zu erstellen") .
 
-4. Als Nächstes konfigurieren Sie einen Trigger erstellen. Dies wird Einrichten eines Builds zur Warteschlange, wenn bestimmte Bedingungen erfüllt sind, z. B. wenn ein Benutzer Code im Repository committet. Der folgende Screenshot zeigt, wie Sie einen Buildtrigger hinzufügen:
+    Nachdem der VCS-Stamm angefügt wurde, wird das Projekt von TeamCity ausgecheckt, und es wird versucht, die Buildschritte automatisch zu erkennen. Wenn Sie mit TeamCity vertraut sind, können Sie einen der erkannten Buildschritte auswählen. Die erkannten Buildschritte können momentan ignoriert werden.
 
-    ![Dieser Screenshot zeigt, wie Sie einen Buildtrigger hinzufügen](teamcity-images/image8.png "dieser Screenshot zeigt, wie Sie einen Buildtrigger hinzufügen") ein Beispiel zum Konfigurieren eines Build-Triggers im folgenden Screenshot sehen:
+4. Konfigurieren Sie als nächstes einen buildauslösers. Dadurch wird ein Build in die Warteschlange eingereiht, wenn bestimmte Bedingungen erfüllt sind, z. b. Wenn ein Benutzer einen Commit für das Repository ausführt. Der folgende Screenshot zeigt das Hinzufügen eines buildauslösers:
 
-    ![Ein Beispiel zum Konfigurieren eines Build-Triggers finden Sie in diesem Screenshot](teamcity-images/image9.png "ein Beispiel zum Konfigurieren eines Build-Triggers finden Sie in diesem Screenshot")
+    ![Dieser Screenshot zeigt das Hinzufügen eines] buildauslösers. (teamcity-images/image8.png "Dieser Screenshot zeigt das Hinzufügen eines") buildauslösers. Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie im folgenden Screenshot:
 
-5. Im vorherige Abschnitt parametrisieren das Skript zu erstellen, wird empfohlen, einige Werte als Umgebungsvariablen gespeichert. Diese Variablen können für die Buildkonfiguration über den Bildschirm Parameter hinzugefügt werden. Fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die iOS-Geräte-ID und die Android Geräte-ID wie im folgenden Screenshot gezeigt:
+    ![Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie in diesem Screenshot] . (teamcity-images/image9.png "Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie in diesem Screenshot") .
 
-    ![Fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die iOS-Geräte-ID und die Android-Geräte-ID](teamcity-images/image11.png "fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die iOS-Geräte-ID und die Android-Geräte-ID")
+5. Im vorherigen Abschnitt parameteriup the Build Script wurde empfohlen, einige Werte als Umgebungsvariablen zu speichern. Diese Variablen können der Buildkonfiguration über den Parameter-Bildschirm hinzugefügt werden. Fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die IOS-Geräte-ID und die Android-Geräte-ID hinzu, wie im folgenden Screenshot zu sehen:
 
-6. Der letzte Schritt besteht einen Buildschritt hinzufügen, mit der das Buildskript zum Kompilieren der Anwendung und das Einreihen in die Warteschlange der Anwendung in Test Cloud aufgerufen werden. Im folgende Screenshot ist ein Beispiel für einen Buildschritt hinzufügen, der eine Rakefile verwendet, um eine Anwendung zu erstellen:
+    ![Fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die IOS-Geräte-ID und die Android-Geräte-ID hinzu] . (teamcity-images/image11.png "Fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die IOS-Geräte-ID und die Android-Geräte-ID hinzu") .
 
-    ![In diesem Screenshot wird ein Beispiel für einen Buildschritt hinzufügen, die eine Rakefile zum Erstellen einer Anwendung verwendet](teamcity-images/image12.png "in diesem Screenshot wird ein Beispiel für einen Buildschritt hinzufügen, die eine Rakefile verwendet, um eine Anwendung erstellen")
+6. Der letzte Schritt besteht darin, einen Buildschritt hinzuzufügen, der das Buildskript aufruft, um die Anwendung zu kompilieren und die Anwendung in die Warteschlange Test Cloud. Der folgende Screenshot zeigt ein Beispiel für einen Buildschritt, der zum Erstellen einer Anwendung eine "rakefile" verwendet:
 
-7. An diesem Punkt ist die Build-Konfiguration abgeschlossen. Es ist eine gute Idee, lösen Sie einen Buildvorgang aus, um sicherzustellen, dass das Projekt ordnungsgemäß konfiguriert ist. Eine gute Möglichkeit hierzu ist eine kleine, nicht signifikante Änderung im Repository. TeamCity sollte den Commit zu erkennen, und starten Sie einen Build.
+    ![Dieser Screenshot ist ein Beispiel für einen Buildschritt, der zum Erstellen einer Anwendung eine "rakefile" verwendet] . (teamcity-images/image12.png "Dieser Screenshot ist ein Beispiel für einen Buildschritt, der zum Erstellen einer Anwendung eine \"rakefile\" verwendet") .
 
-8. Sobald der Build abgeschlossen ist, überprüfen Sie das Buildprotokoll zu und festzustellen Sie, ob Probleme oder Warnungen mit dem Build, die Ihre Aufmerksamkeit erfordern.
+7. An diesem Punkt ist die Buildkonfiguration fertiggestellt. Es empfiehlt sich, einen Build zu initiieren, um zu bestätigen, dass das Projekt ordnungsgemäß konfiguriert ist. Eine gute Möglichkeit hierfür ist das Ausführen eines Commit für eine kleine, unbedeutende Änderung am Repository. TeamCity sollte den Commit erkennen und einen Build starten.
+
+8. Nachdem der Build abgeschlossen wurde, überprüfen Sie das Buildprotokoll, und prüfen Sie, ob Probleme oder Warnungen mit dem Build vorliegen, die Aufmerksamkeit erfordern.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieses Handbuch behandelt, wie Sie TeamCity mit mobilen Xamarin-Anwendungen erstellen und diese dann in Test Cloud zu senden. Erstellen eines Build-Skripts zum Automatisieren des Buildprozesses erläutert. Das Buildskript kümmert sich die Anwendung kompilieren, in Test Cloud senden und die Ergebnisse wartet
+In dieser Anleitung wurde beschrieben, wie Sie TeamCity zum Erstellen von mobilen xamarin-Anwendungen und zum anschließenden einreichen an Test Cloud verwenden. Wir haben das Erstellen eines Buildskripts zum Automatisieren des Buildprozesses erläutert. Das Buildskript kümmert sich um die Kompilierung der Anwendung, die Übermittlung an Test Cloud und das warten auf die Ergebnisse.
 
-Und wir erläutert, wie Sie ein Projekt in TeamCity zu erstellen, wird einen Build zur Warteschlange jedes Mal ein Entwickler Code committet und ruft das Skript zum Erstellen.
+Dann haben wir erläutert, wie Sie ein Projekt in TeamCity erstellen, das jedes Mal einen Build in die Warteschlange einreiht, wenn ein Entwickler Code committet, und das Buildskript
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Vorbereiten der Xamarin.UITests angewendeter Verwaltungsrichtlinie hochladen](/appcenter/test-cloud/preparing-for-upload/uitest/)
+- [Vorbereiten von xamarin. uitests angewendeter-Upload](/appcenter/test-cloud/preparing-for-upload/uitest/)
 - [Installieren und Konfigurieren von TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

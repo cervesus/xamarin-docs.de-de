@@ -1,123 +1,123 @@
 ---
-title: Eine Einführung in die Renderscript
-description: Dieses Handbuch stellt Renderscript, und es wird erläutert, wie die systeminterne Renderscript APIs in einer Xamarin.Android-Anwendung dieser Ziele API-Ebene 17 oder höher verwenden.
+title: Eine Einführung in RenderScript
+description: In diesem Leitfaden wird RenderScript eingeführt und erläutert, wie die intrinsischen RenderScript-APIs in einer xamarin. Android-Anwendung verwendet werden, die auf API Level 17 oder höher ausgerichtet ist.
 ms.prod: xamarin
 ms.assetid: 378793C7-5E3E-40E6-ABEE-BEAEF64E6A47
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 8364310d23739c05ff97ea8aa8fa4c56f89ea40c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9f15ef73e51a2e94e1a1174134f3e69d2cb2c4a3
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61216410"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511425"
 ---
-# <a name="an-introduction-to-renderscript"></a>Eine Einführung in die Renderscript
+# <a name="an-introduction-to-renderscript"></a>Eine Einführung in RenderScript
 
-_Dieses Handbuch stellt Renderscript, und es wird erläutert, wie die systeminterne Renderscript APIs in einer Xamarin.Android-Anwendung dieser Ziele API-Ebene 17 oder höher verwenden._
+_In diesem Leitfaden wird RenderScript eingeführt und erläutert, wie die intrinsischen RenderScript-APIs in einer xamarin. Android-Anwendung verwendet werden, die auf API Level 17 oder höher ausgerichtet ist._
 
 ## <a name="overview"></a>Übersicht
 
-RenderScript ist ein Programmierframework zum Verbessern der Leistung des Android-Anwendungen, die umfangreiche Compute-Ressourcen erfordern von Google entwickelt. Es ist eine low-Level, high-Performance-API basierend auf [C99](https://en.wikipedia.org/wiki/C99). Da es sich um eine niedrige Sicherheitsstufe API, die auf CPUs oder GPUs DSPs ausgeführt wird handelt, ist Renderscript gut geeignet für Android-apps, die möglicherweise eine der folgenden ausführen:
+RenderScript ist ein von Google erstelltes Programmier Framework zum Verbessern der Leistung von Android-Anwendungen, die umfangreiche Rechenressourcen erfordern. Es handelt sich um eine leistungsstarke API, die auf [C99](https://en.wikipedia.org/wiki/C99)basiert. Da es sich um eine API auf niedriger Ebene handelt, die auf CPUs, GPUs oder DSPs ausgeführt wird, eignet sich RenderScript gut für Android-Apps, die möglicherweise eine der folgenden Aktionen ausführen müssen:
 
 * Grafik
 * Bildverarbeitung
-* Verschlüsselung
-* Signalverarbeitung
+* Verschlüsselungs
+* Signal Verarbeitung
 * Mathematische Routinen
 
-RenderScript verwenden `clang` und kompilieren Sie die Skripts LLVM-Bytecode, der in der APK im Paket enthalten ist. Wenn die app zum ersten Mal ausgeführt wird, wird der LLVM-Byte-Code in Computercode für die Prozessoren auf dem Gerät kompiliert werden. Diese Architektur ermöglicht eine Android-Anwendung, die Vorteile der Computercode müssen die Entwickler müssen sie für jeden Prozessor auf dem Gerät selbst schreiben auszunutzen.
+RenderScript verwendet `clang` und kompiliert die Skripts für den llvm-Bytecode, der in das APK gebündelt ist. Wenn die APP zum ersten Mal ausgeführt wird, wird der llvm-Bytecode für die Prozessoren auf dem Gerät in den Computercode kompiliert. Diese Architektur ermöglicht es einer Android-Anwendung, die Vorteile von Computercode auszunutzen, ohne dass die Entwickler selbst diese für jeden Prozessor auf dem Gerät selbst schreiben müssen.
 
-Es gibt zwei Komponenten, die an eine Routine Renderscript:
+Eine RenderScript-Routine umfasst zwei Komponenten:
 
-1. **Die Laufzeit Renderscript** &ndash; Dies ist die nativen APIs, die für die Ausführung der Renderscript verantwortlich sind. Dies schließt alle Renderscripts für die Anwendung geschrieben.
+1. **Die RenderScript-Laufzeit** &ndash; Dies sind die nativen APIs, die für die Ausführung von RenderScript zuständig sind. Dies schließt alle renderscripts ein, die für die Anwendung geschrieben wurden.
 
-2. **Die verwaltete Wrapper aus dem Android-Framework** &ndash; verwaltete Klassen, mit denen eine Android-app zu steuern und Interaktion mit den Renderscript Common Language Runtime und Skripts. Zusätzlich zu den für die Steuerung der Renderscript Runtime bereitgestellte Framework-Klassen die Android-toolkette den Quellcode Renderscript untersucht und verwaltete Wrapperklassen für die Verwendung von der Android-Anwendung zu generieren.
+2. **Verwaltete Wrapper aus dem Android-Framework** &ndash; Verwaltete Klassen, die es einer Android-App ermöglichen, die RenderScript-Laufzeit und Skripts zu steuern und damit zu interagieren. Zusätzlich zu den vom Framework bereitgestellten Klassen zum Steuern der RenderScript-Laufzeit untersucht die Android-Toolkette den RenderScript-Quellcode und generiert verwaltete Wrapper Klassen für die Verwendung durch die Android-Anwendung.
 
-Das folgende Diagramm veranschaulicht, wie diese Komponenten beziehen:
+Das folgende Diagramm veranschaulicht die Beziehung zwischen diesen Komponenten:
 
-![Diagramm zur Veranschaulichung der Interaktion zwischen der Android-Framework mit der Renderscript-Runtime](renderscript-images/renderscript-01.png)
+![Diagramm, das veranschaulicht, wie das Android-Framework mit der RenderScript-Laufzeit interagiert](renderscript-images/renderscript-01.png)
 
-Es gibt drei wichtige Konzepte für die Verwendung von Renderscripts in einer Android-Anwendung:
+Es gibt drei wichtige Konzepte für die Verwendung von renderscripts in einer Android-Anwendung:
 
-1. **Ein Kontext** &ndash; eine verwaltete API, die vom Android SDK, die Ressourcen Renderscript zugewiesen und können die Android-app übergeben und Empfangen von Daten aus der Renderscript bereitgestellt.
+1. **Ein Kontext** &ndash; Eine verwaltete API, die von der Android SDK bereitgestellt wird, die Ressourcen für RenderScript zuordnet, und ermöglicht der Android-App das übergeben und empfangen von Daten aus dem RenderScript.
 
-2. **Ein _compute-Kernel_**  &ndash; auch bekannt als die _Stamm Kernel_ oder _Kernel_wird in diesem eine Routine, die die Arbeit. Der Kernel ist eine C-Funktion sehr ähnlich, Es ist eine parallelisierbar Routine, die über alle Daten im zugeordneten Speicher ausgeführt wird.
+2. **Ein _computekernel_**  Dies wird auch als kernkernel oder _Kernel_bezeichnet. Dies ist eine Routine, die die Arbeit erledigt. &ndash; Der Kernel ähnelt einer C-Funktion. Dabei handelt es sich um eine parallelisierbare Routine, die über alle Daten im zugeordneten Arbeitsspeicher ausgeführt wird.
 
-3. **Zugeordneter Arbeitsspeicher** &ndash; Daten in und aus einem Kernel durch Übergeben einer  _[Zuordnung](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_. Ein Kernel ist möglicherweise eine Eingabe und/oder ein ausgabedataset Zuordnung.
+3. **Zugewiesener Arbeitsspeicher** &ndash; Daten werden über eine _[Zuordnung](xref:Android.Renderscripts.Allocation)_ an den und aus einem Kernel übermittelt. Ein Kernel kann über eine Eingabe und/oder eine Ausgabe Zuordnung verfügen.
 
-Die [Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) Namespace enthält Klassen für die Interaktion mit der Laufzeit Renderscript. Insbesondere die [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) Klasse verwaltet den Lebenszyklus und die Ressourcen der Renderscript-Engine. Die Android-app muss mindestens eine initialisiert. [`Android.Renderscripts.Allocation`](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)
--Objekte. Eine Zuordnung ist eine verwaltete API, die für die Belegung und den Zugriff auf den Arbeitsspeicher, der von der Android-app und die Laufzeit Renderscript gemeinsam verantwortlich ist. Klicken Sie in der Regel nur einer Zuordnung wird erstellt, für die Eingabe, und optional eine andere Zuordnung erstellt, die die Ausgabe des Kernels enthält. Die Renderscript-Runtime-Engine und die zugehörigen verwalteten Wrapperklassen Zugriff auf den Speicher frei, die Zuordnungen verwalten, besteht keine Notwendigkeit für ein Android-app-Entwickler zusätzliche Arbeit leisten.
+Der [Android. renderscripts](xref:Android.Renderscripts) -Namespace enthält die Klassen für die Interaktion mit der RenderScript-Laufzeit. Insbesondere verwaltet die [`Renderscript`](xref:Android.Renderscripts.RenderScript) -Klasse den Lebenszyklus und die Ressourcen der RenderScript-Engine. Die Android-App muss mindestens eine Initialisierung durch[`Android.Renderscripts.Allocation`](xref:Android.Renderscripts.Allocation)
+Gütern. Eine Zuordnung ist eine verwaltete API, die für die Zuordnung und den Zugriff auf den Arbeitsspeicher verantwortlich ist, der von der Android-App und der RenderScript-Laufzeit gemeinsam genutzt wird. In der Regel wird eine Zuordnung für die Eingabe erstellt, und optional wird eine andere Zuordnung erstellt, um die Ausgabe des Kernels zu speichern. Das RenderScript-Lauf Zeit Modul und die zugeordneten verwalteten Wrapper Klassen verwalten den Zugriff auf den Arbeitsspeicher, der von den Belegungen belegt wird, es ist nicht erforderlich, dass ein Android-App-Entwickler zusätzliche Aufgaben ausführt.
 
-Eine Zuordnung enthält eine oder mehrere [Android.Renderscripts.Elements](https://developer.xamarin.com/api/type/Android.Renderscripts.Element/).
-Elemente sind ein spezieller Typ, die Daten in jeder Zuordnung beschreiben.
-Die Elementtypen der Ausgabe Zuordnung den Typen des input-Elements entsprechen muss. Bei der Ausführung eine Renderscript wird jedes Element in der Eingabe Zuordnungseinheit parallel durchlaufen, und die Ergebnisse in die Ausgabe geschrieben Zuordnung. Es gibt zwei Arten von Elementen:
+Eine Zuordnung enthält mindestens ein [Android. renderscripts. Elements](xref:Android.Renderscripts.Element).
+Elemente sind ein spezieller Typ, der Daten in jeder Zuordnung beschreibt.
+Die Element Typen der Ausgabe Zuordnung müssen mit den Typen des input-Elements identisch sein. Bei der Ausführung durchläuft ein RenderScript alle Elemente in der Eingabe Zuordnung parallel und schreibt die Ergebnisse in die Ausgabe Zuordnung. Es gibt zwei Arten von Elementen:
 
-- **einfacher Typ** &ndash; konzeptionell Dies entspricht der C-Datentyp, `float` oder `char`.
+- **einfacher Typ** Konzeptionell ist dies das gleiche wie ein C- `float` Datentyp oder ein `char`. &ndash;
 
-- **komplexer Typ** &ndash; dieser Typ ist ein von C ähnelt `struct`.
+- **komplexer Typ** Dieser Typ ähnelt einem C `struct`. &ndash;
 
-Die Renderscript-Engine führt eine Überprüfung zur Laufzeit, um sicherzustellen, dass die Elemente in jeder Zuordnung sind kompatibel mit, was durch den Kernel erforderlich ist. Wenn Sie der Datentyp der Elemente in der Zuordnung, den der Kernel erwartet wird den Datentyp nicht übereinstimmen, wird eine Ausnahme ausgelöst werden.
+Die RenderScript-Engine führt eine Lauf Zeit Überprüfung durch, um sicherzustellen, dass die Elemente in den einzelnen Zuordnungen mit den für den Kernel erforderlichen Informationen kompatibel sind. Wenn der Datentyp der Elemente in der Zuordnung nicht mit dem Datentyp, der vom Kernel erwartet wird, identisch ist, wird eine Ausnahme ausgelöst.
 
-Alle Renderscript Kernel werden von einem Typ, der ein Nachfolger des umschlossen werden die [`Android.Renderscripts.Script`](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/)
--Klasse. Die `Script` Klasse dient zum Festlegen von Parametern für eine Renderscript legen Sie die entsprechende `Allocations`, und führen Sie die Renderscript. Es gibt zwei `Script` Unterklassen im Android SDK:
+Alle RenderScript-Kernel werden von einem Typ umschließt, der ein Nachfolger von ist.[`Android.Renderscripts.Script`](xref:Android.Renderscripts.Script)
+-Klasse. Die `Script` -Klasse wird verwendet, um Parameter für ein RenderScript festzulegen, `Allocations`den entsprechenden festzulegen und das RenderScript auszuführen. Der Android SDK enthält `Script` zwei Unterklassen:
 
 
-- **`Android.Renderscripts.ScriptIntrinsic`** &ndash; Einige der häufigeren Renderscript Aufgaben werden im Android SDK gebündelt, und durch eine Unterklasse von zugegriffen werden kann die [ScriptIntrinsic](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic/) Klasse. Besteht keine Notwendigkeit für Entwickler zusätzliche Schritte, die diese Skripts in ihrer Anwendung verwenden, wie sie bereits bereitgestellt werden.
+- **`Android.Renderscripts.ScriptIntrinsic`** Einige der gängigeren RenderScript-Aufgaben werden in der Android SDK gebündelt und können von einer Unterklasse der [scriptintrinsic](xref:Android.Renderscripts.ScriptIntrinsic) -Klasse aufgerufen werden. &ndash; Es ist nicht erforderlich, dass ein Entwickler zusätzliche Schritte durchführt, um diese Skripts in Ihrer Anwendung zu verwenden, da Sie bereits bereitgestellt wurden.
 
-- **`ScriptC_XXXXX`** &ndash; Auch bekannt als _Benutzerskripts_, sind Skripts, die von Entwicklern geschrieben wurde und in das APK verpackt werden. Zum Zeitpunkt der Kompilierung wird die Android-toolkette verwalteten Wrapperklassen generiert, mit dem die Skripts in der Android-app verwendet werden können.
-  Der Name dieser generierten Klassen ist der Name der Renderscript-Datei mit dem Präfix `ScriptC_`. Schreiben und Integrieren von Benutzerskripts wird nicht offiziell von Xamarin.Android und über den Rahmen dieses Handbuchs hinaus unterstützt.
+- **`ScriptC_XXXXX`** Diese Skripts werden auch als _Benutzer Skripts_bezeichnet und sind Skripts, die von Entwicklern geschrieben und im APK verpackt werden. &ndash; Zum Zeitpunkt der Kompilierung generiert die Android-Toolkette verwaltete Wrapper Klassen, mit denen die Skripts in der Android-App verwendet werden können.
+  Der Name dieser generierten Klassen ist der Name der RenderScript-Datei mit `ScriptC_`dem Präfix. Das Schreiben und Einbinden von Benutzer Skripts wird von xamarin. Android nicht offiziell unterstützt und geht über den Rahmen dieses Handbuchs hinaus.
 
-Diese zwei Typen, nur die `StringIntrinsic` von Xamarin.Android unterstützt wird. Dieses Handbuch wird wie systeminterne-Skripts in einer Xamarin.Android-Anwendung verwendet wird.
+Von diesen beiden Typen wird nur der `StringIntrinsic` von xamarin. Android unterstützt. In dieser Anleitung wird erläutert, wie systeminterne Skripts in einer xamarin. Android-Anwendung verwendet werden.
 
 ## <a name="requirements"></a>Anforderungen
 
-Dieses Handbuch ist für Xamarin.Android-Anwendungen, Ziel-API-Ebene 17 oder höher. Die Verwendung von _Benutzerskripts_ wird in diesem Handbuch nicht behandelt.
+Dieses Handbuch richtet sich an xamarin. Android-Anwendungen, die auf API Level 17 oder höher abzielen. Die Verwendung von _Benutzer Skripts_ wird in diesem Handbuch nicht behandelt.
 
-Die [Xamarin.Android V8-Unterstützungsbibliothek](https://www.nuget.org/packages/Xamarin.Android.Support.v8.RenderScript/) Backports die intrinsische Renderscript-APIs für apps, die ältere Versionen des Android SDK als Ziel. Dieses Paket zu einer Xamarin.Android-Projekt hinzufügen sollten, frühere Versionen abzielen des Android SDK, die systeminterne Skripts nutzen apps zulassen.
+Die [xamarin. Android-Unterstützung für die V8-Unterstützung](https://www.nuget.org/packages/Xamarin.Android.Support.v8.RenderScript/) für apps, die auf ältere Versionen der Android SDK abzielen, wird von der xamarin. Android V8-Unterstützungs Bibliothek zurückportiert. Durch das Hinzufügen dieses Pakets zu einem xamarin. Android-Projekt sollten apps, die auf ältere Versionen des Android SDK abzielen, die systeminternen Skripts nutzen können.
 
-## <a name="using-intrinsic-renderscripts-in-xamarinandroid"></a>Verwenden von systeminternen Renderscripts in Xamarin.Android
+## <a name="using-intrinsic-renderscripts-in-xamarinandroid"></a>Verwenden von systeminternen renderscripts in xamarin. Android
 
-Die systeminterne Skripts sind eine hervorragende Möglichkeit zum Ausführen rechenintensiver Aufgaben mit einer minimalen Menge an zusätzlichem Code. Sie wurden manuell optimiert, um eine optimale Leistung auf einen großen Querschnitt von Geräten zu bieten.
-Es ist nicht ungewöhnlich, dass für eine systeminterne Skript, das 10 Mal schneller als verwalteten Code und 2 und 3 X Mal nach der als eine benutzerdefinierte C#-Implementierung ausgeführt. Viele der normalen Verarbeitungsszenarios werden von den systeminternen Skripts behandelt. Diese Liste mit den systeminternen Skripts werden die aktuellen Skripts in Xamarin.Android beschrieben:
+Die systeminternen Skripts eignen sich hervorragend zum Durchführen intensiver Rechenaufgaben mit minimalem zusätzlichen Code. Sie wurden Hand optimiert, um eine optimale Leistung für einen großen Kreuz Abschnitt von Geräten zu ermöglichen.
+Es ist nicht ungewöhnlich, dass ein System internes Skript zehnmal schneller als verwalteter Code ausgeführt wird und 2-3-Mal nach der Implementierung einer benutzerdefinierten C-Implementierung ausgeführt wird. Viele der typischen Verarbeitungs Szenarien werden durch die systeminternen Skripts abgedeckt. In dieser Liste der systeminternen Skripts werden die aktuellen Skripts in xamarin. Android beschrieben:
 
-- [ScriptIntrinsic3DLUT](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic3DLUT//) &ndash; RGB konvertiert, um eine 3D Nachschlagetabelle RGBA. 
+- [ScriptIntrinsic3DLUT](xref:Android.Renderscripts.ScriptIntrinsic3DLUT) &ndash; Konvertiert RGB in RGBA mithilfe einer 3D-Nachschlage Tabelle. 
 
-- [ScriptIntrinsicBLAS](https://developer.android.com/reference/android/renderscript/ScriptIntrinsicBLAS.html) &ndash; Provideshigh Leistung Renderscript APIs zum [BLAS](http://www.netlib.org/blas/). Die BLAS (einfache lineare Algebraunterprogramme) sind Routinen, die Standardbausteinen zum Ausführen von grundlegenden Vektor- und matrixoperationen angeben. 
+- [Scriptintrinsicblas](https://developer.android.com/reference/android/renderscript/ScriptIntrinsicBLAS.html) Provideshigh Performance RenderScript-APIs an [Blas.](http://www.netlib.org/blas/) &ndash; Die Klassen (grundlegende lineare Algebra-Unterprogramme) sind Routinen, die Standard Bausteine zum Durchführen von grundlegenden Vektor-und Matrix Vorgängen bereitstellen. 
 
-- [ScriptIntrinsicBlend](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlend) &ndash; zwei Zuordnungen miteinander kombiniert.
+- [Scriptintrinsicblend](xref:Android.Renderscripts.ScriptIntrinsicBlend) &ndash; Kombiniert zwei Zuordnungen.
 
-- [ScriptIntrinsicBlur](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlur) &ndash; eine Zuordnung einer Gaußschen Blur gilt.
+- [Scriptintrinsicblur](xref:Android.Renderscripts.ScriptIntrinsicBlur) &ndash; Wendet einen gauschen Weichzeichner auf eine Zuordnung an.
 
-- [ScriptIntrinsicColorMatrix](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicColorMatrix/) &ndash; eine Zuordnung (d. h. Farben ändern, passen Sie Hue) eine Farbmatrix gilt.
+- [Scriptintrinsiccolormatrix](xref:Android.Renderscripts.ScriptIntrinsicColorMatrix) &ndash; Wendet eine Farbmatrix auf eine Zuordnung an (d.h. Farben ändern, Farbton anpassen).
 
-- [ScriptIntrinsicConvolve3x3](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve3x3/) &ndash; eine Zuordnung eine 3 x 3-Farbmatrix gilt.
+- [ScriptIntrinsicConvolve3x3](xref:Android.Renderscripts.ScriptIntrinsicConvolve3x3) &ndash; Wendet eine 3X3-Farbmatrix auf eine Zuordnung an.
 
-- [ScriptIntrinsicConvolve5x5](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve5x5/) &ndash; eine Zuordnung eine Farbmatrix von 5 x 5 gilt.
+- [ScriptIntrinsicConvolve5x5](xref:Android.Renderscripts.ScriptIntrinsicConvolve5x5) &ndash; Wendet eine 5 x 5-Farbmatrix auf eine Zuordnung an.
 
-- [ScriptIntrinsicHistogram](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicHistogram/) &ndash; einen systeminternen Histogramm-Filter.
+- [Scriptintrinsichistogram](xref:Android.Renderscripts.ScriptIntrinsicHistogram) &ndash; Ein System interner histogrammfilter.
 
-- [ScriptIntrinsicLUT](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicLUT/) &ndash; gilt eine Nachschlagetabelle pro Kanal in einen Puffer.
+- [Scriptintrinsiclut](xref:Android.Renderscripts.ScriptIntrinsicLUT) &ndash; Wendet eine Such Tabelle pro Kanal auf einen Puffer an.
 
-- [ScriptIntrinsicResize](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicResize/) &ndash; Skript zum Ändern der Größe des der 2D Reservierung ausführen.
+- [Scriptintrinsikresize](xref:Android.Renderscripts.ScriptIntrinsicResize) &ndash; Skript zum Durchführen der Größenänderung einer 2D-Zuordnung.
 
-- [ScriptIntrinsicYuvToRGB](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicYuvToRGB/) &ndash; konvertiert einen Puffer für die YUV in RGB.
+- [Scriptintrinsicyuvtor GB](xref:Android.Renderscripts.ScriptIntrinsicYuvToRGB) &ndash; Konvertiert einen YUV-Puffer in RGB.
 
-Details zu den einzelnen systeminterne Skripts finden Sie in der API-Dokumentation.
+Ausführliche Informationen zu den einzelnen systeminternen Skripts finden Sie in der API-Dokumentation.
 
-Die grundlegenden Schritte für die Verwendung von Renderscript in einer Android-Anwendung beschrieben werden.
+Im folgenden werden die grundlegenden Schritte zum Verwenden von RenderScript in einer Android-Anwendung beschrieben.
 
-**Erstellen Sie einen Kontext Renderscript** &ndash; der [`Renderscript`](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/)
-Klasse ist, einen verwalteten Wrapper für den Kontext Renderscript und steuern Sie die Initialisierung der ressourcenverwaltung, und bereinigt wird. Das Renderscript-Objekt erstellt wird, mit der `RenderScript.Create` -Factorymethode, die einem Android-Kontext (z. B. eine Aktivität) als Parameter annimmt. Die folgende Codezeile veranschaulicht, wie den Renderscript-Kontext zu initialisieren:
+**Erstellen eines RenderScript** -Kontexts &ndash; Das[`Renderscript`](xref:Android.Renderscripts.RenderScript)
+die Klasse ist ein verwalteter Wrapper um den RenderScript-Kontext und steuert die Initialisierung, Ressourcenverwaltung und Bereinigung. Das RenderScript-Objekt wird mithilfe der `RenderScript.Create` Factorymethode erstellt, die einen Android-Kontext (z. b. eine Aktivität) als Parameter annimmt. Die folgende Codezeile veranschaulicht, wie der RenderScript-Kontext initialisiert wird:
 
 ```csharp
 Android.Renderscripts.RenderScript renderScript = RenderScript.Create(this);
 ```
 
-**Erstellen von Zuordnungen** &ndash; abhängig von der systeminterne Skript, es kann erforderlich sein, erstellen Sie ein oder zwei `Allocation`s. Die [`Android.Renderscripts.Allocation`](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)
-Klasse verfügt über mehrere Factorymethoden beim Instanziieren einer Zuordnung für eine systeminterne Funktion. Beispielsweise veranschaulicht der folgende Codeausschnitt, wie Zuordnung für Bitmaps erstellen.
+Zuordnungen **Erstellen** Abhängig vom systeminternen Skript kann es erforderlich sein, ein oder zwei `Allocation`n zu erstellen. &ndash; Die[`Android.Renderscripts.Allocation`](xref:Android.Renderscripts.Allocation)
+die-Klasse verfügt über mehrere Factorymethoden zum Instanziieren einer Zuordnung für eine systeminterne. Der folgende Code Ausschnitt veranschaulicht beispielsweise, wie eine Zuordnung für Bitmaps erstellt wird.
 
 ```csharp
 Android.Graphics.Bitmap originalBitmap;
@@ -127,20 +127,20 @@ Android.Renderscripts.Allocation inputAllocation = Allocation.CreateFromBitmap(r
                                                      AllocationUsage.Script);
 ```
 
-Häufig ist es werden zum Erstellen einer `Allocation` zum Speichern der Ausgabedaten eines Skripts. Diese folgende Codeausschnitt zeigt, wie Sie mit der `Allocation.CreateTyped` Hilfsmethode zum Instanziieren Sie ein zweites `Allocation` , dass vom selben, wie das Original Typ:
+Häufig muss ein `Allocation` erstellt werden, um die Ausgabedaten eines Skripts zu speichern. Der folgende Code Ausschnitt zeigt, wie das `Allocation.CreateTyped` -Hilfsprogramm verwendet wird, um ein zweites `Allocation` zu instanziieren, das den gleichen Typ wie das ursprüngliche hat:
 
 ```csharp
 Android.Renderscripts.Allocation outputAllocation = Allocation.CreateTyped(renderScript, inputAllocation.Type);
 ```
 
-**Instanziieren Sie den Skript-Wrapper** &ndash; die systeminterne Skript-Wrapper-Klassen müssen Helper-Methoden (in der Regel aufgerufen `Create`) für das Instanziieren ein Wrapperobjekt für das Skript. Der folgende Codeausschnitt ist ein Beispiel zum Instanziieren einer `ScriptIntrinsicBlur` blur-Objekt. Die `Element.U8_4` Hilfsmethode erstellt ein Element, einen Datentyp, der 4 Feldern von 8-Bit-Ganzzahl ohne Vorzeichen-Werten, die zur Aufnahme der Daten geeignet ist, beschreibt, eine `Bitmap` Objekt:
+**Instanziieren des Skript Wrappers** Jede der systeminternen Skript Wrapper Klassen sollte über Hilfsmethoden (in der `Create`Regel genannt) zum Instanziieren eines Wrapper Objekts für dieses Skript verfügen. &ndash; Der folgende Code Ausschnitt ist ein Beispiel für das Instanziieren eines `ScriptIntrinsicBlur` weichzeichenobjekts. Die `Element.U8_4` -Hilfsmethode erstellt ein-Element, das einen-Datentyp beschreibt, der vier Felder mit 8-Bit-ganzzahligen Werten ohne Vorzeichen enthält, die `Bitmap` zum Speichern der Daten eines-Objekts geeignet sind:
 
 ```csharp
 Android.Renderscripts.ScriptIntrinsicBlur blurScript = ScriptIntrinsicBlur.Create(renderScript, Element.U8_4(renderScript));
 ```
 
-**Weisen Sie Allocation(s), Festlegen von Parametern und Skript ausführen** &ndash; der `Script` -Klasse stellt eine `ForEach` Methode, um die Renderscript tatsächlich auszuführen. Diese Methode führt eine Iteration für alle `Element` in die `Allocation` , der die Eingabedaten enthält. In einigen Fällen ist es möglicherweise notwendig, eine `Allocation` , die die Ausgabe enthält.
-`ForEach` überschreibt den Inhalt der Ausgabe Zuordnung. Um mit den Codeausschnitten in den vorherigen Schritten ausführen, dieses Beispiel zeigt, wie weisen eine Eingabe Zuordnung und Festlegen eines Parameters zum Schluss führen Sie das Skript (kopieren die Ergebnisse in der Ausgabe Zuweisung):
+**Zuweisen von Zuordnungen, Festlegen von Parametern, & Ausführen eines Skripts** Die-Klasse stellt `ForEach` eine Methode bereit, um das RenderScript-Skript tatsächlich auszuführen. `Script` &ndash; Diese Methode durchläuft alle `Element` in der `Allocation` , die die Eingabedaten enthält. In einigen Fällen kann es erforderlich sein, eine `Allocation` bereitzustellen, die die Ausgabe enthält.
+`ForEach`der Inhalt der Ausgabe Zuordnung wird von überschrieben. Um mit den Code Ausschnitten aus den vorherigen Schritten fortfahren zu können, wird in diesem Beispiel gezeigt, wie Sie eine Eingabe Zuordnung zuweisen, einen Parameter festlegen und schließlich das Skript ausführen (Kopieren der Ergebnisse in die Ausgabe Zuordnung):
 
 ```csharp
 blurScript.SetInput(inputAllocation);
@@ -148,17 +148,17 @@ blurScript.SetRadius(25);  // Set a pamaeter
 blurScript.ForEach(outputAllocation);
 ```
 
-Möglicherweise möchten Sie sehen Sie sich die [Weichzeichnen ein Abbilds mit Renderscript](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript) Rezept, es ist ein vollständiges Beispiel zur Verwendung einer systeminternen Skript in Xamarin.Android.
+Vielleicht möchten Sie das [Bild mit der RenderScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript) -Rezept-Grafik weich sehen. es ist ein vollständiges Beispiel für die Verwendung eines intrinsischen Skripts in xamarin. Android.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Leitfaden wurden Renderscript und wie Sie es in einer Xamarin.Android-Anwendung verwenden. Es wurden kurz behandelt, was Renderscript ist und deren Funktionsweise in einer Android-Anwendung. Es wurde beschrieben, einige der wichtigsten Komponenten in Renderscript und den Unterschied zwischen _Benutzerskripts_ und _intrinsische Skripts_. Dieses Handbuch erläutert schließlich Schritte bei der Verwendung einer systeminternen Skript in einer Xamarin.Android-Anwendung.
+In diesem Handbuch wurde RenderScript eingeführt und erläutert, wie Sie es in einer xamarin. Android-Anwendung verwenden. Es wurde kurz erläutert, was RenderScript ist und wie es in einer Android-Anwendung funktioniert. Es wurden einige der Hauptkomponenten in RenderScript und der Unterschied zwischen _Benutzer_ Skripts und _INSTRINC_-Skripts beschrieben. Schließlich wurden in diesem Handbuch die Schritte zur Verwendung eines intrinsischen Skripts in einer xamarin. Android-Anwendung erläutert.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android.Renderscripts namespace](https://developer.xamarin.com/api/namespace/Android.Renderscripts/)
-- [Ein Bild mit Renderscript Blur](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript)
+- [Android. renderscripts-Namespace](xref:Android.Renderscripts)
+- [Zeichnen eines Bilds mit RenderScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript)
 - [Renderscript](https://developer.android.com/guide/topics/renderscript/compute.html)
-- [Tutorial: Erste Schritte mit Renderscript](https://software.intel.com/en-us/articles/renderscript-basic-sample-for-android-os)
+- [Tutorial: Einstieg in RenderScript](https://software.intel.com/en-us/articles/renderscript-basic-sample-for-android-os)

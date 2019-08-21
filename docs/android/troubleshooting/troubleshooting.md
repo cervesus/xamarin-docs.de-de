@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 5a9bb5164e63afd6649b2f2cb8bafebbf6849dd7
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: MT
+ms.openlocfilehash: f57736238fc01d865d7655d72da427e2c18dca59
+ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510420"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757249"
 ---
 # <a name="troubleshooting-tips"></a>Hinweise zur Fehlerbehebung
 
@@ -95,7 +95,7 @@ Xamarin. Android unterstützt die folgenden Systemeigenschaften:
 
 -   *debug.mono.env*: Eine Pipe-getrennte *|* Liste von Umgebungsvariablen, die beim Starten der Anwendung exportiert werden sollen, *bevor* Mono initialisiert wurde. Dies ermöglicht das Festlegen von Umgebungsvariablen, die Mono-Protokollierung steuern.
 
-    - *Hinweis:* Da der Wert ' *|* ' getrennt ist, muss der Wert über eine zusätzliche Ebene von Anführungszeichen verfügen, da der  \` \`ADB-Shellbefehl eine Reihe von Anführungszeichen entfernt.
+    - *Hinweis:* Da der Wert ' *|* ' getrennt ist, muss der Wert über eine zusätzliche Ebene von Anführungszeichen verfügen, da der \` \`ADB-Shellbefehl eine Reihe von Anführungszeichen entfernt.
 
     - *Hinweis:* Android-System Eigenschaftswerte dürfen nicht länger als 92 Zeichen sein.
 
@@ -114,7 +114,25 @@ Xamarin. Android unterstützt die folgenden Systemeigenschaften:
 
 -   *debug.mono.trace*: Ermöglicht das Festlegen der [Mono-Trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` -Einstellung.
 
+## <a name="deleting-bin-and-obj"></a>Löschen `bin` von und`obj`
 
+Xamarin. Android hat in der Vergangenheit von einer Situation wie z. b.:
+
+- Es tritt ein merkwürdiger Build-oder Laufzeitfehler auf.
+- Sie `Clean`können `Rebuild`Ihre Verzeichnisse`bin` und`obj` manuell löschen.
+- Das Problem wird entfernt.
+
+Wir haben stark investiert, um Probleme zu beheben, z. b. aufgrund ihrer Auswirkung auf die Produktivität von Entwicklern.
+
+Wenn ein Problem wie das folgende auftritt:
+
+1. Notieren Sie sich den Hinweis. Was war die letzte Aktion, die Ihr Projekt in diesen Zustand versetzt hat?
+1. Speichern Sie das aktuelle Buildprotokoll. Versuchen Sie es erneut, und zeichnen Sie ein [Diagnosebuildprotokoll](#diagnostic-msbuild-output) auf.
+1. Senden Sie einen [Fehlerbericht][bug].
+
+Bevor Sie Ihre `bin` Verzeichnisse `obj` und löschen, zippen Sie Sie, und speichern Sie Sie zur späteren Diagnose, wenn dies erforderlich ist. Sie können das xamarin. Android-Anwendungsprojekt wahrscheinlich nur `Clean` in Ihrem xamarin. Android-Anwendungsprojekt ausführen.
+
+[bug]: https://github.com/xamarin/xamarin-android/wiki/Submitting-Bugs,-Feature-Requests,-and-Pull-Requests
 
 ## <a name="xamarinandroid-cannot-resolve-systemvaluetuple"></a>Xamarin. Android kann System. valuetuple nicht auflösen.
 
@@ -323,7 +341,7 @@ emulator -partition-size 512 -avd MonoDroid
 Stellen Sie sicher, dass Sie den richtigen simulatornamen verwenden, also [den Namen, den Sie beim Konfigurieren des Simulators verwendet](~/android/get-started/installation/windows.md#device)haben.
 
 
-## <a name="installfailedinvalidapk-when-installing-a-package"></a>Bei der Installation\_eines Pakets ist ein\_UngültigesAPK installiert.\_
+## <a name="install_failed_invalid_apk-when-installing-a-package"></a>Bei der Installation\_eines Pakets ist ein\_UngültigesAPK installiert.\_
 
 Android-Paketnamen *müssen* einen Zeitraum (" *.* ") enthalten. Bearbeiten Sie den Paketnamen so, dass er einen bestimmten Zeitraum enthält.
 
@@ -340,7 +358,7 @@ Android-Paketnamen *müssen* einen Zeitraum (" *.* ") enthalten. Bearbeiten Sie 
 
 
 
-## <a name="installfailedmissingsharedlibrary-when-installing-a-package"></a>Fehler beim Installieren\_von\_\_fehlenden freigegebenen Bibliotheken beim Installieren eines Pakets\_
+## <a name="install_failed_missing_shared_library-when-installing-a-package"></a>Fehler beim Installieren\_von\_\_fehlenden freigegebenen Bibliotheken beim Installieren eines Pakets\_
 
 Eine "freigegebene Bibliothek" in diesem Kontext ist *keine* Native freigegebene Bibliotheksdatei (*libfoo.so*). Es handelt sich vielmehr um eine Bibliothek, die separat auf dem Zielgerät installiert werden muss, z. b. Google Maps.
 
@@ -353,7 +371,7 @@ Wenn Sie z. b. einen Assemblyverweis auf *Mono. Android. GoogleMaps. dll* hinzuf
 
 
 
-## <a name="installfailedupdateincompatible-when-installing-a-package"></a>Nicht kompatiblesUpdate\_beim Installieren eines Pakets\_\_
+## <a name="install_failed_update_incompatible-when-installing-a-package"></a>Nicht kompatiblesUpdate\_beim Installieren eines Pakets\_\_
 
 Für Android-Pakete gelten drei Anforderungen:
 
@@ -377,7 +395,7 @@ E/PackageManager(  146): Package [PackageName] signatures do not match the previ
 Entfernen Sie die Anwendung vor der erneuten Installation vollständig von Ihrem Gerät, um diesen Fehler zu beheben.
 
 
-## <a name="installfaileduidchanged-when-installing-a-package"></a>Fehler beim Installieren\_der\_UID bei der Installation eines Pakets.\_
+## <a name="install_failed_uid_changed-when-installing-a-package"></a>Fehler beim Installieren\_der\_UID bei der Installation eines Pakets.\_
 
 Wenn ein Android-Paket installiert ist, wird ihm eine *Benutzer-ID* (UID) zugewiesen.
 Gelegentlich tritt `INSTALL_FAILED_UID_CHANGED`bei der Installation aus unbekannten Gründen bei der Installation über eine bereits installierte App ein Fehler auf:
@@ -397,7 +415,7 @@ Um dieses Problem zu umgehen, müssen Sie das Android-Paket *vollständig deinst
 $ adb uninstall @PACKAGE_NAME@
 ```
 
-**nicht verwenden** , da dadurch Anwendungsdaten erhalten bleiben und somit die in Konflikt stehende UID auf dem Zielgerät beibehalten wird.  `adb uninstall -k`
+**nicht verwenden** , da dadurch Anwendungsdaten erhalten bleiben und somit die in Konflikt stehende UID auf dem Zielgerät beibehalten wird. `adb uninstall -k`
 
 
 

@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 65e551669edeebfb3c28d16b4eaa0f9e549eb291
-ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
+ms.openlocfilehash: de0d7ae6ac6a028166c13aa29bf0ea44035eddce
+ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68665694"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012444"
 ---
 # <a name="binding-types-reference-guide"></a>Bindungs Typen-Referenzhandbuch
 
@@ -232,6 +232,13 @@ public interface UIActionSheetDelegate {
 }
 ```
 
+<a name="DesignatedDefaultCtorAttribute" />
+
+### <a name="designateddefaultctorattribute"></a>Designateddefaultctor Attribute
+
+Wenn dieses Attribut auf die Schnittstellen Definition angewendet wird, generiert es ein `[DesignatedInitializer]` -Attribut für den standardmäßigen (generierten) Konstruktor, der dem `init` Selektor zugeordnet wird.
+
+<a name="DisableDefaultCtorAttribute" />
 
 ### <a name="disabledefaultctorattribute"></a>DisableDefaultCtorAttribute
 
@@ -239,6 +246,7 @@ Wenn dieses Attribut auf die Schnittstellen Definition angewendet wird, verhinde
 
 Verwenden Sie dieses Attribut, wenn Sie möchten, dass das-Objekt mit einem der anderen Konstruktoren in der-Klasse initialisiert wird.
 
+<a name="PrivateDefaultCtorAttribute" />
 
 ### <a name="privatedefaultctorattribute"></a>PrivateDefaultCtorAttribute
 
@@ -996,6 +1004,16 @@ Verwenden Sie diese Eigenschaft, um den Wert für das `Task` zurückgegebene Obj
 
 Verwenden Sie diese Eigenschaft, um den Namen der generierten Async-Methoden anzupassen.   Der Standardwert besteht darin, den Namen der Methode zu verwenden und den Text "Async" anzufügen, um diese Standardeinstellung zu ändern.
 
+<a name="DesignatedInitializerAttribute" />
+
+### <a name="designatedinitializerattribute"></a>Designatedinitializerattribute
+
+Wenn dieses Attribut auf einen Konstruktor angewendet wird, generiert es das gleiche `[DesignatedInitializer]` in der endgültigen Plattformassembly. Dies soll der IDE helfen, den Konstruktor anzugeben, der in Unterklassen verwendet werden soll.
+
+Dies sollte der Ziel-C/clang-Verwendung von `__attribute__((objc_designated_initializer))`zugeordnet werden.
+
+<a name="DisableZeroCopyAttribute" />
+
 ### <a name="disablezerocopyattribute"></a>Disablezerocopyattribute
 
 Dieses Attribut wird auf Zeichen folgen Parameter oder Zeichen folgen Eigenschaften angewendet und weist den Code-Generator an, nicht das Marshalling der NULL-Zeichenfolge für diesen Parameter zu verwenden, sondern stattdessen eine neue NSString C# -Instanz aus der Zeichenfolge zu erstellen.
@@ -1010,6 +1028,7 @@ Das folgende Beispiel zeigt zwei dieser Eigenschaften in "Ziel-C":
 @property(nonatomic,assign) NSString *name2;
 ```
 
+<a name="DisposeAttribute" />
 
 ### <a name="disposeattribute"></a>Dispotsattribute
 
@@ -1469,6 +1488,13 @@ interface XyzPanel {
 }
 ```
 
+Wenn das `[Wrap]` -Attribut auf eine Methode innerhalb eines Typs angewendet wird, der `[Category]` mit einem-Attribut versehen ist `This` , müssen Sie als erstes Argument einschließen, da eine Erweiterungsmethode generiert wird. Beispiel:
+
+```csharp
+[Wrap ("Write (This, image, options?.Dictionary, out error)")]
+bool Write (CIImage image, CIImageRepresentationOptions options, out NSError error);
+```
+
 `[Wrap]` Die von generierten Member sind nicht `virtual` standardmäßig, wenn Sie ein `virtual` Element benötigen, das Sie auf `true` den optionalen `isVirtual` Parameter festlegen können.
 
 ```csharp
@@ -1479,6 +1505,40 @@ interface FooExplorer {
 
     [Wrap ("FromUrl (NSUrl.FromString (url))", isVirtual: true)]
     void FromUrl (string url);
+}
+```
+
+`[Wrap]`kann auch direkt in Eigenschaften Getter und-Setter verwendet werden.
+Dies ermöglicht die vollständige Kontrolle über diese und die Anpassung des Codes nach Bedarf.
+Stellen Sie sich beispielsweise die folgende API-Definition vor, die intelligente enums verwendet:
+
+```csharp
+// Smart enum.
+enum PersonRelationship {
+        [Field (null)]
+        None,
+
+        [Field ("FMFather", "__Internal")]
+        Father,
+
+        [Field ("FMMother", "__Internal")]
+        Mother
+}
+```
+
+Schnittstellen Definition:
+
+```csharp
+// Property definition.
+
+[Export ("presenceType")]
+NSString _PresenceType { get; set; }
+
+PersonRelationship PresenceType {
+    [Wrap ("PersonRelationshipExtensions.GetValue (_PresenceType)")]
+    get;
+    [Wrap ("_PresenceType = value.GetConstant ()")]
+    set;
 }
 ```
 
@@ -1905,6 +1965,12 @@ Verwenden Sie dieses Attribut, um Entwicklern einen Hinweis zu anderen APIs zu g
 
 Die Informationen dieses Attributs sind in der Dokumentation und den Tools, die entwickelt werden können, um Benutzer Vorschläge zur Verbesserung der
 
+### <a name="requiressuperattribute"></a>Requirements ssuperattribute
+
+Dies ist eine spezialisierte Unterklasse des `[Advice]` -Attributs, das verwendet werden kann, um dem Entwickler anzuweisen, dass das Überschreiben einer Methode einen aufrufsvorgang der Basis Methode (überschriebene) **erfordert** .
+
+Dies entspricht `clang`[`__attribute__((objc_requires_super))`](https://clang.llvm.org/docs/AttributeReference.html#objc-requires-super)
+
 ### <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
 
 Nur verfügbar in xamarin. IOS 5,4 und höher.
@@ -1942,7 +2008,7 @@ Sie können auch das-Attribut auf Assemblyebene anwenden, und es gilt für alle 
 
 Mit xamarin. IOS 8,0 haben wir Unterstützung für das einfache Erstellen von stark typisierten `NSDictionaries`Klassen eingeführt, die wrappen.
 
-Obwohl es immer möglich war [, den-](xref:Foundation.DictionaryContainer) Datentyp "" von "" in Verbindung mit einer manuellen API zu verwenden, ist dies jetzt sehr viel einfacher.  Weitere Informationen finden Sie unter über Sicht [starke Typen](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types).
+Es war zwar schon immer möglich, den Datentyp [DictionaryContainer](xref:Foundation.DictionaryContainer) mit einer manuellen API zu verwenden, doch nun wurde der Vorgang vereinfacht.  Weitere Informationen finden Sie unter über Sicht [starke Typen](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types).
 
 <a name="StrongDictionary" />
 

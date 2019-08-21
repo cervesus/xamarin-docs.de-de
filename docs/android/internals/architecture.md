@@ -6,126 +6,125 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ea66cda0e2a1935a430c064c9cebd4134d295729
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
+ms.openlocfilehash: 2b8e524d95fb60c8eb45b3dd5b64b68469d97ad1
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954251"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510730"
 ---
 # <a name="architecture"></a>Architektur
 
-Xamarin.Android-Anwendungen, die in der Mono-ausführungsumgebung ausgeführt werden.
-Diese Ausführung-Umgebung ausgeführt wird Seite-an-Seite mit dem Android-Laufzeit (ART) virtuellen Computer. Beide Laufzeitumgebungen werden auf Linux-Kernels ausgeführt und verfügbar machen verschiedene APIs für die der Code des Benutzer, der Entwicklern den Zugriff auf die zugrunde liegende System ermöglicht. Die Mono-Laufzeit wird in der Programmiersprache C geschrieben.
+Xamarin. Android-Anwendungen werden innerhalb der Mono-Ausführungsumgebung ausgeführt.
+Diese Ausführungsumgebung wird parallel zum virtuellen Computer der Android-Laufzeit (Art) ausgeführt. Beide Laufzeitumgebungen werden oberhalb des Linux-Kernels ausgeführt und stellen dem Benutzercode verschiedene APIs zur Verfügung, mit denen Entwickler auf das zugrunde liegende System zugreifen können. Die Mono-Laufzeit wird in der Programmiersprache C geschrieben.
 
-Sie können verwenden werden die [System](xref:System), [System.IO](xref:System.IO), [System.Net](xref:System.Net) und der Rest des .NET Klassenbibliotheken auf die zugrunde liegenden Funktionen des Linux-Betriebssystem.
+Sie können das [System](xref:System), [System.IO](xref:System.IO), [System.net](xref:System.Net) und den Rest der .NET-Klassenbibliotheken verwenden, um auf die zugrunde liegenden Linux-Betriebs System Funktionen zuzugreifen.
 
-Unter Android werden die meisten der System-Funktionen wie Audio, Grafiken, OpenGL und Telefonie sind nicht verfügbar ist, direkt in systemeigenen Anwendungen, sie sind nur verfügbar, über die Android-Runtime-Java-APIs befinden, die in einem der der [Java](https://developer.xamarin.com/api/namespace/Java.Lang/). * Namespaces oder [Android](https://developer.xamarin.com/api/namespace/Android/). * Namespaces. Die Architektur sieht ungefähr folgendermaßen aus:
+Unter Android sind die meisten Systemfunktionen wie Audio, Grafiken, OpenGL und Telefonie nicht direkt für native Anwendungen verfügbar. Sie werden nur über die Android-Runtime-Java-APIs verfügbar gemacht, die sich in einem der [Java](xref:Java.Lang).*-Namespaces oder in [Android](xref:Android).*-Namespaces befinden. Die Architektur sieht ungefähr wie folgt aus:
 
-[![Diagramm von Mono und Grafiken, über den Kernel und unter .NET/Java und Bindungen](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
+[![Diagramm von Mono und Kunst oberhalb des Kernels und unter .net/java +-Bindungen](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
-Xamarin.Android-Entwickler Zugriff auf die verschiedenen Funktionen im Betriebssystem durch Aufrufen von .NET APIs, die sie kennen (für den Zugriff auf niedriger Ebene) oder mithilfe der Klassen, die verfügbar gemacht werden, in der Android-Namespaces, die Brücke auf die Java-APIs bereitstellt, die von verfügbar gemacht werden die Android-Laufzeit.
+Xamarin. Android-Entwickler greifen auf die verschiedenen Features im Betriebssystem zu, indem Sie entweder .NET-APIs aufrufen, die Sie kennen (für den Zugriff auf niedriger Ebene) oder die in den Android-Namespaces verfügbar gemachten Klassen verwenden, die eine Brücke zu den Java-APIs bereitstellen, die von verfügbar gemacht werden. die Android-Laufzeit.
 
-Weitere Informationen zu den Android-Klassen wie mit der Android-Runtime-Klassen zu kommunizieren finden Sie unter den [API-Design](~/android/internals/api-design.md) Dokument.
+Weitere Informationen zur Kommunikation zwischen den Android-Klassen und den Android-Lauf Zeit Klassen finden Sie im [API-Entwurfs](~/android/internals/api-design.md) Dokument.
 
 
 ## <a name="application-packages"></a>Anwendungspakete
 
-Android-Anwendungspakete sind ZIP-Container mit einem *.apk* Dateierweiterung. Xamarin.Android-Anwendungspakete haben die gleiche Struktur und das Layout als normale Android-Pakete mit den folgenden Ergänzungen:
+Android-Anwendungspakete sind ZIP-Container mit der Dateierweiterung *. apk* . Xamarin. Android-Anwendungspakete verfügen über die gleiche Struktur und das gleiche Layout wie normale Android-Pakete mit den folgenden Ergänzungen:
 
--   Werden die Assemblys der Anwendung (mit IL) *gespeicherten* unkomprimierten innerhalb der *Assemblys* Ordner. Während der Prozess erstellt beim Start in der Version der *.apk* ist *mmap()* Ed in den Prozess und die Assemblys aus dem Arbeitsspeicher geladen werden. Dies ermöglicht schnellere app-Starts, wie Assemblys nicht vor der Ausführung extrahiert werden müssen.  
--   *Hinweis*: Informationen zum Speicherort einer Assembly wie z. B. [Assembly.Location](xref:System.Reflection.Assembly.Location) und [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
-    *kann nicht als zuverlässig betrachtet werden, werden* in Releasebuilds. Diese sind nicht als distinct Filesystem-Einträge vorhanden, und sie haben kein Speicherort verwendet werden.
-
-
--   Native Bibliotheken, die die Mono-Laufzeit enthält sind vorhanden, in der *.apk* . Eine Xamarin.Android-Anwendung muss native Bibliotheken für die gewünschten/Ziel Android-Architekturen enthalten, z. B. *Armeabi* , *Armeabi-v7a* , *X86* . Xamarin.Android-Anwendungen können nicht auf einer Plattform ausgeführt, es sei denn, die entsprechenden Common Language Runtime-Bibliotheken.
+-   Die Anwendungsassemblys (mit IL) werden im Assemblyordner unkomprimiert *gespeichert* . Beim Prozessstart in Releasebuilds *wird die* *APK* -Datei in den Prozess integriert, und die Assemblys werden aus dem Arbeitsspeicher geladen. Dies ermöglicht einen schnelleren App-Start, da Assemblys nicht vor der Ausführung extrahiert werden müssen.  
+-   *Hinweis*: Informationen zum Assemblyspeicherort, z [. b. Assembly. Location](xref:System.Reflection.Assembly.Location) und [Assembly. CodeBase](xref:System.Reflection.Assembly.CodeBase)
+    , können in Releasebuilds*nicht darauf basieren* Sie sind nicht als eindeutige Dateisystem Einträge vorhanden, und Sie haben keinen verwendbaren Speicherort.
 
 
-Xamarin.Android-Anwendungen auch enthalten *Android Callable Wrapper* zu Android für verwalteten Code aufzurufen.
+-   Native Bibliotheken, die die Mono-Laufzeit enthalten, sind in der *APK* -Datei vorhanden. Eine xamarin. Android-Anwendung muss systemeigene Bibliotheken für die gewünschten/Ziel-Android-Architekturen enthalten, z. b. *ARMEABI* , *ARMEABI-v7a* , *x86* . Xamarin. Android-Anwendungen können nur auf einer Plattform ausgeführt werden, wenn Sie die entsprechenden Laufzeitbibliotheken enthält.
+
+
+Xamarin. Android-Anwendungen enthalten auch *Android Callable Wrapper* , um Android das Aufrufen von verwaltetem Code zu ermöglichen.
 
 
 
 ## <a name="android-callable-wrappers"></a>Android Callable Wrapper
 
-- **Android callable Wrapper** sind eine [JNI](https://en.wikipedia.org/wiki/Java_Native_Interface) Bridge die jederzeit verwendet werden, die Android-Laufzeit muss verwalteter Code aufgerufen. Android callable Wrapper sind, wie virtuelle Methoden überschrieben werden kann und Java-Schnittstellen implementiert werden können. Finden Sie unter den [Java-Integration (Übersicht)](~/android/platform/java-integration/index.md) Dokument Weitere Informationen.
+- Bei **Android Callable Wrapper** handelt es sich um eine [jni](https://en.wikipedia.org/wiki/Java_Native_Interface) -Bridge, die immer dann verwendet wird, wenn die Android-Laufzeit verwalteten Code aufrufen muss. Bei Android Callable Wrapper können virtuelle Methoden überschrieben werden, und Java-Schnittstellen können implementiert werden. Weitere Informationen finden Sie in der [Übersicht über die Java-Integration](~/android/platform/java-integration/index.md) .
 
 
 <a name="Managed_Callable_Wrappers" />
 
 ## <a name="managed-callable-wrappers"></a>Verwaltete Callable Wrapper
 
-Verwaltete callable Wrapper sind eine JNI-Bridge an verwalteter Code muss Android-Code aufrufen und bieten Unterstützung für die virtuelle Methoden überschreiben und Implementieren von Java-Schnittstellen verwendet werden. Die gesamte [Android](https://developer.xamarin.com/api/namespace/Android/). * und zugehörigen Namespaces sind verwaltete callable Wrapper generiert wurde, über [JAR-Bindung](~/android/platform/binding-java-library/index.md).
-Verwaltete callable Wrapper sind verantwortlich für das Konvertieren zwischen verwalteten und Android-Typen und die zugrunde liegende Android-Plattform-Methoden über JNI aufgerufen.
+Verwaltete Callable Wrapper sind eine jni-Bridge, die immer dann verwendet wird, wenn verwalteter Code Android-Code aufrufen muss und Unterstützung für das Überschreiben von virtuellen Methoden und die Implementierung von Java-Schnittstellen bietet Die gesamten [Android](xref:Android). *-und zugehörigen Namespaces sind verwaltete Aufruf Bare Wrapper, die über die [jar-Bindung](~/android/platform/binding-java-library/index.md)generiert werden.
+Verwaltete Callable Wrapper sind für die Typumwandlung von verwalteten und Android-Typen und das Aufrufen der zugrunde liegenden Android-Platt Form Methoden über jni verantwortlich.
 
-Erstellt jedes verwaltete callable Wrapper enthält einen Java globalen Verweis zugegriffen werden über kann die [Android.Runtime.IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/) Eigenschaft. Globale Verweise werden verwendet, um die Zuordnung zwischen Java-Instanzen und verwaltete Instanzen bereitzustellen. Globale Verweise sind eine eingeschränkte Ressource: Emulatoren können nur 2000 globalen Verweise zu einem Zeitpunkt vorhanden sein, während die meisten Hardware über 52.000 globalen Verweise zu einem Zeitpunkt vorhanden sein kann.
+Jeder erstellte verwaltete Aufruf Bare Wrapper enthält einen globalen Java-Verweis, der über die Eigenschaft " [Android. Runtime. ijavaobject. handle](xref:Android.Runtime.IJavaObject.Handle) " zugänglich ist. Globale Verweise werden verwendet, um die Zuordnung zwischen Java-Instanzen und verwalteten Instanzen bereitzustellen. Globale Verweise sind eine begrenzte Ressource: Emulatoren ermöglichen es, dass nur 2000 globale Verweise gleichzeitig vorhanden sind, während die meisten Hardware mehr als 52.000 globale Verweise gleichzeitig zulässt.
 
-Um nachzuverfolgen, wenn globale Verweise erstellt und zerstört werden, Sie können festlegen, die [debug.mono.log](~/android/troubleshooting/index.md) Systemeigenschaft enthalten [Gref](~/android/troubleshooting/index.md).
+Wenn Sie nachverfolgen möchten, wann globale Verweise erstellt und zerstört werden, können Sie die System Eigenschaft [Debug. Mono. log](~/android/troubleshooting/index.md) auf [Gref](~/android/troubleshooting/index.md)festlegen.
 
-Globale Verweise freigegeben werden können, explizit durch Aufrufen von [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) für den verwalteten callable Wrapper. Entfernt die Zuordnung zwischen Java-Instanz und die verwaltete Instanz und die Java-Instanz gesammelt werden können. Wenn Java-Instanz erneut über verwalteten Code zugegriffen wird, wird ein neuer verwalteter callable Wrapper dafür erstellt werden.
+Globale Verweise können explizit freigegeben werden, indem " [java. lang. Object. verwerfen ()](xref:Java.Lang.Object.Dispose) " für den verwalteten Callable Wrapper aufgerufen wird. Dadurch wird die Zuordnung zwischen der Java-Instanz und der verwalteten Instanz entfernt, und die Java-Instanz kann gesammelt werden. Wenn der Zugriff auf die Java-Instanz von verwaltetem Code aus wieder hergestellt wird, wird ein neuer verwalteter Aufruf barer Wrapper dafür erstellt.
 
-Beim Freigeben von Aufrufwrappern verwaltet werden, ob die Instanz versehentlich kann, können Sie zwischen Threads freigegeben werden, als die Instanz freigegeben Verweise von anderen Threads beeinträchtigt wird, muss sorgfältig vorgegangen werden. Für maximale Sicherheit, nur `Dispose()` Instanzen, die über zugeordnet wurden `new` *oder* von Methoden die Sie *wissen* immer zuordnen neuer Instanzen und nicht zwischengespeicherte Instanzen, die möglicherweise Führen Sie die versehentliche Datenfreigabe zwischen Threads Instanz.
+Beim Verwerfen von verwalteten Aufruf baren Wrappern muss sorgfältig vorgegangen werden, wenn die Instanz versehentlich zwischen Threads freigegeben werden kann, da die verwerfen der Instanz sich auf Verweise von anderen Threads auswirkt. Für maximale Sicherheit nur `Dispose()` für Instanzen, die über `new` oder von Methoden zugeordnet wurden, denen Sie *wissen* , dass Sie immer neue Instanzen zuordnen, nicht zwischengespeicherte Instanzen, die eine versehentliche instanzfreigabe verursachen können. Threads.
 
 
 
-## <a name="managed-callable-wrapper-subclasses"></a>Verwaltete Aufrufwrapper Unterklassen
+## <a name="managed-callable-wrapper-subclasses"></a>Verwaltete Aufruf Bare Wrapper-Unterklassen
 
-Verwaltete Aufrufwrapper Unterklassen sind, in dem die "interessante" anwendungsspezifische Logik gespeichert sein kann. Enthalten diese benutzerdefinierte [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) Unterklassen (z. B. die ["Activity1"](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) Typ in der Standardvorlage für das Projekt). (Insbesondere Hierbei handelt es sich *Java.Lang.Object* Unterklassen wozu *nicht* enthalten eine [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) benutzerdefinierten Attributs oder [ RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) ist *"false"*, dies ist die Standardeinstellung.)
+Verwaltete Aufruf Bare Wrapper-Unterklassen sind, wo die "interessante" anwendungsspezifische Logik möglicherweise Live ist. Hierzu gehören benutzerdefinierte [Android. app. Activity](xref:Android.App.Activity) -Unterklassen (z. b. der [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) -Typ in der Standard Projektvorlage). (Insbesondere alle *java. lang. Object* -Unterklassen, die kein Benutzer definiertes [Register Attribute](xref:Android.Runtime.RegisterAttribute) -Attribut oder [RegisterAttribute enthalten. donotgenerateacw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) ist *false*. Dies ist die Standardeinstellung.)
 
-Wie verwaltet callable Wrapper, verwaltete Aufrufwrapper Unterklassen enthalten auch einen globalen Verweis, der über die [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) Eigenschaft. Ebenso wie globale Verweise mit verwalteten callable Wrapper, explizit durch Aufrufen von freigegeben werden können [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
-Im Gegensatz zu verwalteten callable Wrapper *mit großer Sorgfalt* entnommen werden soll, vor dem Freigeben von solchen Fällen ist als *Dispose()*- Wert der Instanz unterbricht die Zuordnung zwischen Java-Instanz (eine Instanz von einer Android Callable Wrapper) und die verwaltete Instanz.
+Wie verwaltete Callable Wrapper enthalten auch verwaltete Aufruf Bare Wrapper-Unterklassen einen globalen Verweis, auf den über die [java. lang. Object. handle](xref:Java.Lang.Object.Handle) -Eigenschaft zugegriffen werden kann. Ebenso wie bei verwalteten Callable Wrappern können globale Verweise explizit freigegeben werden, indem [java. lang. Object. verwerfen ()](xref:Java.Lang.Object.Dispose)aufgerufen wird.
+Anders als verwaltete Callable Wrapper sollten Sie vor dem Freigeben solcher Instanzen *sehr sorgfältig* Vorgehen *, da die*Zuordnung der Instanz die Zuordnung zwischen der Java-Instanz (einer Instanz eines Android Callable Wrapper) und der verwalteten lichen.
 
 
 ### <a name="java-activation"></a>Java-Aktivierung
 
-Wenn ein [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) (Inhaltsfehler) aus Java erstellt wird, der Inhaltsfehler Konstruktor führt dazu, dass des entsprechenden C#-Konstruktors aufgerufen werden. Z. B. der Inhaltsfehler für *MainActivity* enthält einen standardmäßigen Konstruktor die aufrufen wird *MainActivity*des Standard-Konstruktor. (Dies erfolgt mithilfe der *TypeManager.Activate()* innerhalb der Inhaltsfehler Konstruktoren aufrufen.)
+Wenn ein [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) (ACW) aus Java erstellt wird, bewirkt der ACW-Konstruktor, dass C# der entsprechende Konstruktor aufgerufen wird. Der ACW für *mainactivity* enthält z. b. einen Standardkonstruktor, der den Standardkonstruktor von *mainactivity*aufruft. (Dies erfolgt über den *typemanager. Aktivierung ()* -Befehl innerhalb der ACW-Konstruktoren.)
 
-Es gibt eine andere Konstruktorsignatur Auswirkungen: die *(IntPtr, JniHandleOwnership)* Konstruktor. Die *(IntPtr, JniHandleOwnership)* Konstruktor wird aufgerufen, sobald eine Java-Objekt an verwalteten Code verfügbar gemacht wird und einen verwalteten Callable Wrapper werden, um die JNI-Handle zu verwalten erstellt muss. Dies wird normalerweise automatisch vorgenommen.
+Es gibt eine andere Konstruktorsignatur der Folge: den Konstruktor *(IntPtr, jnihandownership)* . Der *(IntPtr, jnishandownership)* -Konstruktor wird immer dann aufgerufen, wenn ein Java-Objekt für verwalteten Code verfügbar gemacht wird und ein verwalteter Aufruf barer Wrapper erstellt werden muss, um das jni-Handle zu verwalten. Dies erfolgt in der Regel automatisch.
 
-Es gibt zwei Szenarien, in denen die *(IntPtr, JniHandleOwnership)* Konstruktor muss auf eine Unterklasse verwaltet Callable Wrapper manuell bereitgestellt werden:
+Es gibt zwei Szenarien, in denen der Konstruktor *(IntPtr, jnigsownership)* manuell für eine verwaltete Aufruf Bare Wrapper-Unterklasse bereitgestellt werden muss:
 
-1. [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) ist eine Unterklasse. *Anwendung* ist besondere; der Standardwert *Anwendung* Konstruktor wird *nie* aufgerufen werden, und die [(IntPtr, JniHandleOwnership) Konstruktor muss stattdessen angegeben werden ](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/SanityTests/Hello.cs#L105).
+1. [Android. app. Application](xref:Android.App.Application) wird unter klassifiziert. *Anwendung* ist speziell. der standardanwenderkonstruktor wird *nie* aufgerufen, und [stattdessen muss der Konstruktor (IntPtr, jnitorownership) bereitgestellt werden](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/SanityTests/Hello.cs#L105).
 
-2. Virtuelle Methodenaufruf von einem Konstruktor der Basisklasse.
+2. Der Aufruf der virtuellen Methode von einem Basisklassenkonstruktor.
 
+Beachten Sie, dass (2) eine undichte Abstraktion ist. In Java C#rufen Aufrufe von virtuellen Methoden aus einem Konstruktor immer die am weitesten abgeleitete Methoden Implementierung auf. Beispielsweise ruft der [TextView-Konstruktor (context, AttributeSet, int)](xref:Android.Widget.TextView#ctor*) die virtuelle Methode " [TextView. getdefaultmovementmethod ()](https://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod())" auf, die als [TextView. defaultmovementmethod-Eigenschaft](xref:Android.Widget.TextView.DefaultMovementMethod)gebunden ist.
+Wenn also eine [typlogtextbox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) [Unterklasse TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2) [TextView. defaultmovementmethod überschreiben](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45), und (3) [eine Instanz dieser Klasse über XML aktivieren](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29) , würde die überschriebene *defaultmovementmethod* -Eigenschaft wird aufgerufen, bevor der ACW-Konstruktor ausgeführt werden konnte, und es würde eintreten, bevor C# der Konstruktor eine Ausführungs Chance hätte.
 
-Beachten Sie, dass (2) ist eine Abstraktion vor lückenhaften. In Java, wie in c# invoke-Aufrufe an virtuellen Methoden von einem Konstruktor immer die am stärksten abgeleitete Implementierung der Methode. Z. B. die [TextView (Kontext AttributeSet, Int) Konstruktor](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/) Ruft die virtuelle Methode [TextView.getDefaultMovementMethod()](https://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod()), das gebunden ist, als die [ TextView.DefaultMovementMethod Eigenschaft](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/).
-Daher, wenn ein Typ [LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1), würden [Unterklasse TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2) [TextView.DefaultMovementMethod überschreiben](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45), und (3) [aktivieren Sie eine Instanz dieses Klasse per XML](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29) der überschriebenen *DefaultMovementMethod* Eigenschaft würde aufgerufen, bevor der Inhaltsfehler Konstruktor Gelegenheit hatten, führen Sie aus, und es kommt es, bevor Sie die C# Konstruktor Gelegenheit hatten, ausgeführt werden.
+Dies wird durch das Instanziieren eines instanzlogtextfelds über den [logtextview-Konstruktor (IntPtr, jnitorownership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28) unterstützt, wenn die ACW logtextbox-Instanz zuerst verwalteten Code eingibt, und dann das [logtextbox-Element (context, iattributeset, int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41) -Konstruktor *für die gleiche Instanz* , wenn der ACW-Konstruktor ausgeführt wird.
 
-Dies wird durch das Instanziieren einer Instanz LogTextBox unterstützt über den [LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28) Konstruktor, wenn die Instanz Inhaltsfehler LogTextBox zuerst eintritt verwalteten Code, und klicken Sie dann Aufrufen der [ LogTextBox (Kontext IAttributeSet, Int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41) Konstruktor *auf derselben Instanz* Wenn Inhaltsfehler Konstruktor ausgeführt wird.
+Reihenfolge der Ereignisse:
 
-Die Reihenfolge der Ereignisse:
+1.  Layout-XML wird in eine [contentview](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)geladen.
 
-1.  Laden von Layout-XML in eine [ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41).
+2.  Android instanziiert das layoutobjektdiagramm und instanziiert eine Instanz von *monodroid. apidemo. logtextbox* , dem ACW für *logtextbox* .
 
-2.  Android des Layout-Objektdiagramms instanziiert und instanziiert eine Instanz des *monodroid.apidemo.LogTextBox* , der Inhaltsfehler für *LogTextBox* .
+3.  Der *monodroid. apidemo. logtextbox* -Konstruktor führt den [Android. Widget. TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29) -Konstruktor aus.
 
-3.  Die *monodroid.apidemo.LogTextBox* Konstruktor führt die [android.widget.TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29) Konstruktor.
+4.  Der *TextView* -Konstruktor ruft *monodroid. apidemo. logtextbox. getdefaultmovementmethod ()* auf.
 
-4.  Die *TextView* Konstruktor ruft *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* .
+5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* invokes *LogTextBox.n_getDefaultMovementMethod()* , which invokes *TextView.n_GetDefaultMovementMethod()* , which invokes [Java.Lang.Object.GetObject&lt;TextView&gt; (handle, JniHandleOwnership.DoNotTransfer)](xref:Java.Lang.Object.GetObject*) .
 
-5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* invokes *LogTextBox.n_getDefaultMovementMethod()* , which invokes *TextView.n_GetDefaultMovementMethod()* , which invokes [Java.Lang.Object.GetObject&lt;TextView&gt; (handle, JniHandleOwnership.DoNotTransfer)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) .
+6.  *Java. lang. Object. GetObject&lt;TextView&gt;()* prüft, ob bereits eine entsprechende C# Instanz für *handle* vorhanden ist. Wenn dies der Fall ist, wird der Wert zurückgegeben. In diesem Szenario gibt es nicht, daher muss *Object.&lt;GetObject&gt;t ()* eine erstellen.
 
-6.  *Java.Lang.Object.GetObject&lt;TextView&gt;()* überprüft, ob es bereits eine entsprechende c# ist-Instanz für *behandeln* . Wenn vorhanden ist, wird es zurückgegeben. In diesem Szenario nicht vorhanden ist, also *Object.GetObject&lt;T&gt;()* erstellen müssen.
+7.  *Object. GetObject&lt;T&gt;()* sucht nach dem Konstruktor *logtextbox (IntPtr, jnishandowneship)* , ruft ihn auf, erstellt eine Zuordnung zwischen *handle* und der erstellten Instanz und gibt die erstellte Instanz zurück.
 
-7.  *Object.GetObject&lt;T&gt;()* sucht nach dem *LogTextBox (IntPtr, JniHandleOwneship)* Konstruktor aufgerufen wird, erstellt eine Zuordnung zwischen *behandeln* und die erstellte Instanz, und gibt die erstellte Instanz zurück.
+8.  *TextView. n_GetDefaultMovementMethod ()* Ruft die *logtextbox. defaultmovementmethod* -Eigenschaft Getter auf.
 
-8.  *TextView.n_GetDefaultMovementMethod()* Ruft die *LogTextBox.DefaultMovementMethod* Eigenschaftengetter.
+9.  Die Steuerung wird an den *Android. Widget. TextView* -Konstruktor zurückgegeben, der die Ausführung beendet.
 
-9.  Die Kontrolle wieder an die *android.widget.TextView* -Konstruktor, der Ausführung abgeschlossen ist.
+10. Der *monodroid. apidemo. logtextbox* -Konstruktor wird ausgeführt, wobei *typemanager. Aktivierung ()* aufgerufen wird.
 
-10. Die *monodroid.apidemo.LogTextBox* Konstruktor ausgeführt wird, Aufrufen von *TypeManager.Activate()* .
+11. Der *logtextbox-Konstruktor (context, iattributeset, int)* wird *für dieselbe Instanz ausgeführt, die in (7) erstellt wurde* .
 
-11. Die *LogTextBox (Kontext IAttributeSet, Int)* Konstruktor führt *auf die gleiche Instanz (7)* .
-
-12. Wenn die (IntPtr, JniHandleOwnership) Konstruktor kann nicht gefunden werden, und klicken Sie dann eine System.MissingMethodException](xref:System.MissingMethodException) ausgelöst.
+12. Wenn der Konstruktor (IntPtr, jnitorownership) nicht gefunden werden kann, wird eine System. MissingMethodException] (Xref: System. MissingMethodException) ausgelöst.
 
 <a name="Premature_Dispose_Calls" />
 
-### <a name="premature-dispose-calls"></a>Vorzeitige Dispose() aufrufen
+### <a name="premature-dispose-calls"></a>Vorzeitige verwerfen ()-Aufrufe
 
-Es gibt eine Zuordnung zwischen einer JNI-Handle und die entsprechende C#-Instanz. Java.Lang.Object.Dispose() wird diese Zuordnung. Wenn ein Handle JNI verwalteten Code eingibt, nachdem die Zuordnung unterbrochen wurde, sieht Sie Java-Aktivierung und die *(IntPtr, JniHandleOwnership)* Konstruktor überprüft und aufgerufen werden. Wenn der Konstruktor nicht vorhanden ist, wird eine Ausnahme ausgelöst werden.
+Es gibt eine Zuordnung zwischen einem jni-Handle und der C# entsprechenden-Instanz. Java. lang. Object. verwerfen () bricht diese Zuordnung. Wenn ein jni-handle verwalteten Code eingibt, nachdem die Zuordnung beschädigt wurde, sieht er wie die Java-Aktivierung aus, und der-Konstruktor *(IntPtr, jnishandownership)* wird überprüft und aufgerufen. Wenn der Konstruktor nicht vorhanden ist, wird eine Ausnahme ausgelöst.
 
-Betrachten Sie z. B. die folgende verwaltete aufrufbare Wraper-Unterklasse:
+Angenommen, Sie haben die folgende verwaltete Aufruf Bare wraper-Unterklasse:
 
 ```csharp
 class ManagedValue : Java.Lang.Object {
@@ -144,7 +143,7 @@ class ManagedValue : Java.Lang.Object {
 }
 ```
 
-Erstellen Sie eine Instanz, die Dispose(), und führen den verwalteten Callable Wrapper neu erstellt werden:
+Wenn eine Instanz erstellt wird, löschen Sie Sie (), und bewirken Sie, dass der verwaltete Aufruf Bare Wrapper neu erstellt wird:
 
 ```csharp
 var list = new JavaList<IJavaObject>();
@@ -153,7 +152,7 @@ list [0].Dispose ();
 Console.WriteLine (list [0].ToString ());
 ```
 
-Das Programm wird sterben:
+Das Programm wird angezeigt:
 
 ```shell
 E/mono    ( 2906): Unhandled Exception: System.NotSupportedException: Unable to activate instance of type Scratch.PrematureDispose.ManagedValue from native handle 4051c8c8 --->
@@ -166,20 +165,20 @@ E/mono    ( 2906):   at Java.Lang.Object.GetObject (IntPtr handle, JniHandleOwne
 E/mono    ( 2906):   at Java.Lang.Object._GetObject[IJavaObject] (IntPtr handle, JniHandleOwnership transfer) [0x00000
 ```
 
-Wenn die Unterklasse enthält ein *(IntPtr, JniHandleOwnership)* Konstruktor ein *neue* Instanz des Typs erstellt werden. Daher wird die Instanz auf "alle Instanzdaten verloren gehen" angezeigt, da es sich um eine neue Instanz ist. (Beachten Sie, dass der Wert null ist.)
+Wenn die Unterklasse einen-Konstruktor *(IntPtr, jnilenker Ownership)* enthält, wird eine *neue* Instanz des Typs erstellt. Folglich wird die Instanz so angezeigt, dass alle Instanzdaten "verloren gehen", da es sich um eine neue Instanz handelt. (Beachten Sie, dass der Wert NULL ist.)
 
 ```shell
 I/mono-stdout( 2993): [Managed: Value=]
 ```
 
-Nur *Dispose()* von Aufrufwrapper Unterklassen verwaltet, wenn Sie wissen, dass die Java-Objekt nicht mehr verwendet werden wird oder die Unterklasse keine Instanzdaten enthält und ein *(IntPtr, JniHandleOwnership)* Konstruktor wurde angegeben.
+Verwerfen *()* von verwalteten Aufruf baren Wrapper-Unterklassen, wenn Sie wissen, dass das Java-Objekt nicht mehr verwendet wird, oder wenn die Unterklasse keine Instanzdaten enthält und ein-Konstruktor *(IntPtr, jnitorownership)* bereitgestellt wurde.
 
 
 
 ## <a name="application-startup"></a>Anwendungsstart
 
-Wenn eine Aktivität, Dienst wird usw. gestartet Android überprüft zuerst, um festzustellen, ob es bereits ein Prozess ausgeführt wird ist, um die Aktivität, Dienst usw. zu hosten. Wenn kein solcher Prozess vorhanden ist, und klicken Sie dann ein neuer Prozess erstellt wird, die ["androidmanifest.xml"](https://developer.android.com/guide/topics/manifest/manifest-intro.html) gelesen, und im angegebenen Typ der [ /manifest/application/@android:name ](https://developer.android.com/guide/topics/manifest/application-element.html#nm) Attribut geladen und instanziiert wird. Weiter, aber alle Typen, die gemäß der [ /manifest/application/provider/@android:name ](https://developer.android.com/guide/topics/manifest/provider-element.html#nm) Attributwerte instanziiert sind und haben ihre [ContentProvider.attachInfo%28)](https://developer.xamarin.com/api/member/Android.Content.ContentProvider.AttachInfo/p/Android.Content.Context/Android.Content.PM.ProviderInfo/) aufgerufene Methode. Xamarin.Android-Hooks in die durch das Hinzufügen einer *mono. MonoRuntimeProvider* *ContentProvider* auf die Datei "androidmanifest.xml" während des Buildprozesses. Die *mono. MonoRuntimeProvider.attachInfo()* Methode ist verantwortlich für die Mono-Laufzeit in den Prozess geladen.
-Jeder Versuch, Mono vor diesem Zeitpunkt nutzen schlägt fehl. ( *Hinweis*: Deshalb ist die Unterklassen Typen [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) müssen angeben, ein [(IntPtr, JniHandleOwnership) Konstruktor](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103), wie die Instanz der Anwendung erstellt wird, bevor Mono initialisiert werden kann.)
+Wenn eine Aktivität, ein Dienst usw. gestartet wird, prüft Android zunächst, ob bereits ein Prozess zum Hosten von Aktivität/Dienst/usw. ausgeführt wird. Wenn kein solcher Prozess vorhanden ist, wird ein neuer Prozess erstellt, " [androidmanifest. XML](https://developer.android.com/guide/topics/manifest/manifest-intro.html) " gelesen, und der im [/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm) -Attribut angegebene Typ wird geladen und instanziiert. Anschließend werden alle durch die [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm) Attributwerte angegebenen Typen instanziiert, und die [Contentprovider. attachinfo% 28](xref:Android.Content.ContentProvider.AttachInfo*) -Methode wird aufgerufen. Xamarin. Android verknüpft dies durch Hinzufügen eines *Mono. Der monoruntimeprovider* - *Contentprovider* ist während des Buildprozesses "androidmanifest. xml". Der *Mono. Die monoruntimeprovider. attachinfo ()* -Methode ist dafür verantwortlich, die Mono-Laufzeit in den Prozess zu laden.
+Alle Versuche, Mono vor diesem Punkt zu verwenden, schlagen fehl. ( *Hinweis*: Dies ist der Grund, warum die Unterklasse [Android. app. Application](xref:Android.App.Application) einen- [Konstruktor (IntPtr, jnilenker Ownership)](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)bereitstellen muss, da die Anwendungs Instanz erstellt wird, bevor Mono initialisiert werden kann.)
 
-Nach Abschluss der Initialisierung `AndroidManifest.xml` wird verwendet, finden Sie den Namen der die Aktivität, Dienst usw. zu starten. Z. B. die [ /manifest/application/activity/@android:name Attribut](https://developer.android.com/guide/topics/manifest/activity-element.html#nm) wird verwendet, um zu bestimmen, den Namen einer Aktivität geladen. Dieser Typ muss für Aktivitäten erben [android.app.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/).
-Der angegebene Typ wird geladen, über [Class.forName()](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String)) (erfordert, dass der Typ einer Java geben Sie daher die Android Callable Wrapper), dann instanziiert. Erstellen einer Android Callable Wrapper-Instanz löst die Erstellung einer Instanz von den entsprechenden C#-Typ. Android wird dann aufgerufen [Activity.onCreate(Bundle)](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) , wodurch das entsprechende [Activity.OnCreate(Bundle)](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) aufgerufen werden soll, und du anfangen Races.
+Nachdem die Prozess Initialisierung abgeschlossen wurde `AndroidManifest.xml` , wird die untersucht, um den Klassennamen der zu startenden Aktivität/des Diensts bzw. des Diensts zu ermitteln. Beispielsweise wird das [ /manifest/application/activity/@android:name -Attribut](https://developer.android.com/guide/topics/manifest/activity-element.html#nm) verwendet, um den Namen einer Aktivität zu ermitteln, die geladen werden soll. Für Aktivitäten muss dieser Typ " [Android. app. Activity](xref:Android.App.Activity)" erben.
+Der angegebene Typ wird über " [Class. forName ()](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String)) " geladen (was erfordert, dass der Typ ein Java-Typ ist, daher die für Android Callable Wrapper) und dann instanziiert werden. Durch die Erstellung einer Android Callable Wrapper-Instanz wird die Erstellung einer Instanz des entsprechenden C# Typs auslöst. Android ruft dann [Activity. OnCreate (Bundle)](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) auf, was bewirkt, dass die entsprechende [Aktivität. OnCreate (Bundle)](xref:Android.App.Activity.OnCreate*) aufgerufen wird, und Sie sind zu den Races.
