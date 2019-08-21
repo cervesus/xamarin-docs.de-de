@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 37e5e68aff293910db4638c52f592e10fd60abfa
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d26f8f68b2cf4eca2d28a365c921b533e657c64b
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528127"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629610"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für xamarin. IOS 
 
@@ -212,7 +212,8 @@ Dieses Problem ist sehr selten und extrem schwer zu reproduzieren. es ist normal
 
 Fügen Sie die XS-Protokolle, **~/Library/Logs/XamarinStudio-{Version}/IDE-{Timestamp}.log**, **androidtools-{Timestamp}. log**und **Components-{Timestamp}. log** (in älteren Versionen von XS/monodevelop, Just send **~/Library/Logs /MonoDevelop-(3.0 | 2.8 | 2.6)/monodevelop.log**).
 
- **HINWEIS: Das oben beschriebene Problem wurde in XS 2,2 Final behoben.**
+> [!NOTE]
+> Das oben beschriebene Problem wurde in XS 2,2 Final * * behoben.
 
 ## <a name="compiled-application-is-very-large"></a>Kompilierte Anwendung sehr groß
 

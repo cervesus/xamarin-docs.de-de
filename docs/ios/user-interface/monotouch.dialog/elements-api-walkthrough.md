@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 88823aa2d86b7cc5db72b3949453cd6aa464bd74
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528465"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629638"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Erstellen einer xamarin. IOS-Anwendung mit der Elements-API
 
@@ -20,9 +20,9 @@ _Dieser Artikel baut auf den Informationen auf, die im Dialog Feld Einführung i
 
 In dieser exemplarischen Vorgehensweise verwenden wir das Mt. D Elements-API zum Erstellen eines Master/Detail-Anwendungs Stils, in dem eine Aufgabenliste angezeigt wird. Wenn der Benutzer die **+** Schaltfläche in der Navigationsleiste auswählt, wird der Tabelle für den Task eine neue Zeile hinzugefügt. Wenn Sie die Zeile auswählen, navigieren Sie zum Detailbildschirm, mit dem wir die Aufgabenbeschreibung und das Fälligkeitsdatum aktualisieren können, wie unten dargestellt:
 
- [![](elements-api-walkthrough-images/01-task-list-app.png "Wenn Sie die Zeile auswählen, navigieren Sie zum Detailbildschirm, mit dem wir die Aufgabenbeschreibung und das Fälligkeitsdatum aktualisieren können.")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
+[![](elements-api-walkthrough-images/01-task-list-app.png "Wenn Sie die Zeile auswählen, navigieren Sie zum Detailbildschirm, mit dem wir die Aufgabenbeschreibung und das Fälligkeitsdatum aktualisieren können.")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
- ## <a name="setting-up-mtd"></a>Einrichten von Mt. D
+## <a name="setting-up-mtd"></a>Einrichten von Mt. D
 
 UV. D wird mit xamarin. IOS verteilt. Um es zu verwenden, klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** eines xamarin. IOS-Projekts in Visual Studio 2017 oder Visual Studio für Mac, und fügen Sie einen Verweis auf die Assembly **MonoTouch. Dialog-1** hinzu. Fügen Sie dann `using MonoTouch.Dialog` ggf. Anweisungen im Quellcode hinzu.
 
