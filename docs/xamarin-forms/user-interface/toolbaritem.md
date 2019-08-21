@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522028"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658060"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms-ToolBarItem
 
@@ -20,21 +20,21 @@ ms.locfileid: "69522028"
 
 Die xamarin. Forms [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -Klasse ist ein spezieller Typ von Schaltfläche, der der Auflistung `Page` eines- `ToolbarItems` Objekts hinzugefügt werden kann. Jedes `ToolbarItem` Objekt wird in der Navigationsleiste der Anwendung als Schaltfläche angezeigt. Eine `ToolbarItem` -Instanz kann ein Symbol aufweisen und als primäres oder sekundäres Menü Element angezeigt werden. Die `ToolbarItem` Klasse erbt von [`MenuItem`](xref:Xamarin.Forms.MenuItem).
 
-Der folgende Screenshot zeigt `ToolbarItem` Objekte in der Navigationsleiste unter IOS und Android:
+Die folgenden Screenshots zeigen `ToolbarItem` Objekte in der Navigationsleiste unter IOS und Android:
 
 !["Bildschirm Abbildung der ToolBarItem-Demo unter Android und IOS"](toolbaritem-images/toolbaritem-device-screenshot.png "Bildschirm Abbildung von ToolBarItem-Demo unter Android und IOS")
 
-Das `ToolbarItem` -Steuerelement definiert die folgenden Eigenschaften:
+Die `ToolbarItem` -Klasse definiert die folgenden Eigenschaften:
 
 * [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)ein `ToolbarItemOrder` Enumerationswert, der bestimmt, `ToolbarItem` ob die-Instanz im primären oder sekundären Menü angezeigt wird.
 * [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)ein `integer` -Wert, der die Anzeigereihenfolge von Elementen `Page` in der `ToolbarItems` Auflistung eines-Objekts bestimmt.
 
 Die `ToolbarItem` -Klasse erbt die folgenden normalerweise verwendeten Eigenschaften von `MenuItem` der-Klasse:
 
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)ist ein `string` , der den Anzeige Text für ein `ToolbarItem` -Objekt bestimmt.
-* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)ein `ImageSource` -Wert, der das Anzeige Symbol für ein `ToolbarItem` -Objekt bestimmt.
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command)ist eine `ICommand` , die das Binden von Benutzeraktionen (z. b. Finger Tippen oder Klicks) auf Befehle ermöglicht, die für ein ViewModel definiert sind.
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)ist eine `object` , die den Parameter angibt, der an den `SearchCommand`übergeben werden soll.
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)ist eine `object` , die den Parameter angibt, der an den `Command`übergeben werden soll.
+* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)ein `ImageSource` -Wert, der das Anzeige Symbol für ein `ToolbarItem` -Objekt bestimmt.
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text)ist ein `string` , der den Anzeige Text für ein `ToolbarItem` -Objekt bestimmt.
 
 Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekte gestützt, sodass eine `ToolbarItem` -Instanz das Ziel von Daten Bindungen sein kann.
 
@@ -119,3 +119,4 @@ Wenn die `Order` -Eigenschaft auf `Secondary`festgelegt ist, variiert das Verhal
 
 * [ToolBarItem-Demos](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Bilder in xamarin. Forms](~/xamarin-forms/user-interface/images.md)
+* [Xamarin. Forms (MenuItem)](~/xamarin-forms/user-interface/menuitem.md)

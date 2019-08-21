@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/03/2019
-ms.openlocfilehash: 58755c54ce2afe80a8bf43adc25a0cf2d90a0bb5
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739468"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658050"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin. Forms-Schalter
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-Xamarin. Forms [`Switch`](xref:Xamarin.Forms.Switch) ist eine horizontale UMSCHALT Fläche, die vom Benutzer geändert werden kann, um zwischen den Status "ein" und "aus" zu wechseln, die `boolean` durch einen-Wert dargestellt werden. Die `Switch` Klasse erbt von [`View`](xref:Xamarin.Forms.View).
+Das xamarin. Forms [`Switch`](xref:Xamarin.Forms.Switch) -Steuerelement ist eine horizontale UMSCHALT Fläche, die vom Benutzer geändert werden kann, um zwischen den Zuständen "ein" und "aus" zu `boolean` wechseln, die durch einen-Wert dargestellt werden. Die `Switch` Klasse erbt von [`View`](xref:Xamarin.Forms.View).
 
-Der folgende Screenshot zeigt ein `Switch` Steuerelement in seinen **on** -und **Off** -UMSCHALT Zuständen unter IOS und Android:
+Die folgenden Screenshots zeigen ein `Switch` Steuerelement in seinen **on** -und **Off** -UMSCHALT Zuständen unter IOS und Android:
 
 ![Screenshot von Switches in ein-und Ausschalten in IOS und Android](switch-images/switch-states-default.png "Switches unter IOS und Android")
 
@@ -44,7 +44,7 @@ Eine `Switch` kann in XAML instanziiert werden. Die- `Switch`Eigenschaft kann fe
 Ein `Switch` kann auch im Code erstellt werden:
 
 ```csharp
-Switch switch = new Switch { IsToggled = true };
+Switch switchControl = new Switch { IsToggled = true };
 ```
 
 ### <a name="switch-style-properties"></a>Stileigenschaften wechseln
@@ -58,10 +58,10 @@ Die `OnColor` -Eigenschaft kann festgelegt werden, `Switch` um die Farbe zu defi
 Die `OnColor` -Eigenschaft kann auch festgelegt werden, `Switch` wenn ein-Objekt im Code erstellt wird:
 
 ```csharp
-Switch switch = new Switch { OnColor = Color.Orange };
+Switch switchControl = new Switch { OnColor = Color.Orange };
 ```
 
-Der folgende Screenshot zeigt das `Switch` -Objekt in seinen ein-und `Color.Orange` **ausschalten** , bei dem `OnColor` die-Eigenschaft unter IOS und Android auf festgelegt ist:
+Die folgenden Screenshots zeigen die `Switch` in den ein-und **ausschalten** -Status von `OnColor` `Color.Orange` , wobei die-Eigenschaft unter IOS und Android auf festgelegt ist:
 
 ![Screenshot von Switches in ein-und Ausschalten in IOS und Android](switch-images/switch-states-oncolor.png "Switches unter IOS und Android")
 
@@ -87,8 +87,8 @@ Das `sender` -Argument im-Ereignishandler ist `Switch` der Verantwortliche für 
 Der `Toggled` Ereignishandler kann auch im Code zugewiesen werden:
 
 ```csharp
-Switch switch = new Switch {...};
-switch.Toggled += (sender, e) =>
+Switch switchControl = new Switch {...};
+switchControl.Toggled += (sender, e) =>
 {
     // Perform an action after examining e.Value
 }

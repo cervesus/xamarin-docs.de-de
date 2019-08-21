@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 82ca106f29eb28672abcbd282b60841bfdb4da8c
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: ef73462000de90693e527121d1ebad3a9d670ed3
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980832"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658124"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms-Layouts
 
@@ -36,7 +36,7 @@ Diese Klassen werden aus [ `Layout` ](xref:Xamarin.Forms.Layout), die definiert,
 
 |     |     |
 | --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView) enthält ein einzelnes untergeordnetes Element, das mit festgelegt ist die [ `Content` ](xref:Xamarin.Forms.ContentView.Content) Eigenschaft. Die `Content` Eigenschaft kann festgelegt werden, um alle `View` Ableitung, einschließlich anderer `Layout` ableitungen. `ContentView` wird hauptsächlich als ein strukturelles Element und dient als Basisklasse hinzu [ `Frame` ](#frame).<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ContentView) | [![Beispiel für ContentView](layouts-images/ContentView.png "ContentView Beispiel")](layouts-images/ContentView-Large.png#lightbox "ContentView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView) enthält ein einzelnes untergeordnetes Element, das mit festgelegt ist die [ `Content` ](xref:Xamarin.Forms.ContentView.Content) Eigenschaft. Die `Content` Eigenschaft kann festgelegt werden, um alle `View` Ableitung, einschließlich anderer `Layout` ableitungen. `ContentView` wird hauptsächlich als ein strukturelles Element und dient als Basisklasse hinzu [ `Frame` ](#frame).<br /><br />[API-Dokumentations](xref:Xamarin.Forms.ContentView) / [Handbuch](~/xamarin-forms/user-interface/layouts/contentview.md) /[Sample] (https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-cardview/ | [![Beispiel für ContentView](layouts-images/ContentView.png "ContentView Beispiel")](layouts-images/ContentView-Large.png#lightbox "ContentView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />

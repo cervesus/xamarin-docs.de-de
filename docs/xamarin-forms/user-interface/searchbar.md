@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
-ms.openlocfilehash: 391820cf2e94c1131f4082798ee9efa05d8489b8
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 41bb9e082f042e7ca2933d72b4b71a4ff6c4fef4
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739401"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658028"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms-Suchleiste
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
-Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das `SearchBar` -Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch. Der folgende Screenshot zeigt eine `SearchBar` Abfrage mit Ergebnissen, die in `ListView`einer angezeigt werden:
+Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das verwendet wird, um eine Suche zu initiieren. Das `SearchBar` -Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch. Der folgende Screenshot zeigt eine `SearchBar` Abfrage mit Ergebnissen, die in `ListView`einer angezeigt werden:
 
 [ ![Screenshot von Searchbar unter IOS und Android](searchbar-images/device-searchbars-cropped.png "Searchbar unter IOS und Android") ] (searchbar-images/device-searchbars.png#lightbox "Searchbar unter IOS und Android")
 
-`SearchBar` Definiert die folgenden Eigenschaften:
+Die `SearchBar` -Klasse definiert die folgenden Eigenschaften:
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)ist eine `Color` , die die Farbe der Schaltfläche Abbrechen definiert.
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes)ein `FontAttributes` Enumerationswert, der bestimmt, `SearchBar` ob die Schriftart fett, kursiv oder keines von beiden ist.
@@ -66,7 +66,7 @@ Das `SearchBar` -Steuerelement definiert viele Eigenschaften, die die Darstellun
            FontAttributes="Italic" />
 ```
 
-Diese Eigenschaften können auch beim Erstellen eines `SearchBar` in-Code angegeben werden:
+Diese Eigenschaften können auch beim Erstellen eines `SearchBar` -Objekts im Code angegeben werden:
 
 ```csharp
 SearchBar searchBar = new SearchBar
@@ -80,7 +80,7 @@ SearchBar searchBar = new SearchBar
 };
 ```
 
-Der folgende Screenshot zeigt das resultierende `SearchBar`:
+Der folgende Screenshot zeigt das resultierende `SearchBar` Steuerelement:
 
 [ ![Screenshot der angepassten Suchleiste auf IOS-und Android-](searchbar-images/device-searchbars-styled-cropped.png "Suchleiste unter IOS und Android") ] (searchbar-images/device-searchbars-styled.png#lightbox "Angepasste Suchleiste unter IOS und Android")
 
