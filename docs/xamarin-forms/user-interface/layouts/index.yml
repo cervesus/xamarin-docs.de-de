@@ -19,6 +19,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: choose-layout.md
+            html: 'Erfahren Sie mehr darüber, wie die wichtigsten Layoutklassen in Xamarin.Forms ihre untergeordneten Elemente positionieren und dimensionieren.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: choose-layout.md
+            title: Auswählen eines Layouts
           - href: stack-layout.md
             html: 'Erfahren Sie, wie Sie Ansichten in einem eindimensionalen Stapel entweder horizontal oder vertikal anordnen.'
             image:
@@ -37,18 +43,18 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: flex-layout.md
             title: FlexLayout
-          - href: absolute-layout.md
-            html: 'Informationen zum Organisieren von Ansichten durch Festlegen von Koordinaten- und Größenwerten, die proportional oder absolut sein können'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: absolute-layout.md
-            title: AbsoluteLayout
           - href: relative-layout.md
             html: 'Informationen zum Organisieren von Ansichten durch Festlegen von Einschränkungen, die relativ zu den Eigenschaften der Layoutansichten oder gleichgeordneten Ansichten sind'
             image:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: absolute-layout.md
             title: RelativeLayout
+          - href: absolute-layout.md
+            html: 'Informationen zum Organisieren von Ansichten durch Festlegen von Koordinaten- und Größenwerten, die proportional oder absolut sein können'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: AbsoluteLayout
           - href: scroll-view.md
             html: 'Informationen zum Ermöglichen von Scrollen, wenn eine Ansicht nicht innerhalb der Bildschirmgrenzen passt'
             image:
@@ -60,7 +66,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: contentview.md
-            title: Frame
+            title: ContentView
           - href: frame.md
             html: 'Informationen zum Umschließen einer Ansicht mit einem Frame, der mit Farbe, Schlagschatten und anderen Optionen konfiguriert werden kann'
             image:
