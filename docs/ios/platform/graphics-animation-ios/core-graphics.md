@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 0c606e001552f1c4267ffc29bd69b2f38f2ec971
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a5587d5a4ed5201b8f09dfa3b4d2d292abd008d3
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527928"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889842"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Kern Grafiken in xamarin. IOS
 
@@ -106,6 +106,7 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 ...
 }
 ```
+
 Mit dieser Zeile ruft Sie zuerst den aktuellen Grafik Kontext ab, der zum Zeichnen verwendet werden soll. Sie können sich einen Grafik Kontext als den Zeichenbereich vorstellen, in dem die Zeichnung auftritt, der den gesamten Zustand der Zeichnung enthält, wie z. b. Strich-und Füll Farben sowie die zu zeichnende Geometrie.
 
 ```csharp

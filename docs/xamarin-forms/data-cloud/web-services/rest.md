@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: cb569a425bf636a51dd6d132f6efa539e74443a0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9b99421755b1ad979b4beed279bef6e194659ab7
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644579"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888857"
 ---
 # <a name="consume-a-restful-web-service"></a>Nutzen eines Rest-Webdiensts
 
@@ -173,6 +173,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
   ...
 }
 ```
+
 Der Vorgang von der `PutAsync` Methode ist identisch mit der `PostAsync` -Methode, die zum Erstellen von Daten im Webdienst verwendet wird. Unterscheiden sich jedoch der möglichen Antworten vom Webdienst gesendet.
 
 Der REST-Dienst sendet einen HTTP-Statuscode in den `HttpResponseMessage.IsSuccessStatusCode` -Eigenschaft, um anzugeben, ob die HTTP-Anforderung erfolgreich war oder fehlgeschlagen ist. Für diesen Vorgang die häufige Antworten lauten:

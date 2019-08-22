@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/28/2019
-ms.openlocfilehash: d170e37b8bf4ce880f9d8f48d30defb42ee6bba2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 28cb1573262b63cc2b0ccad9f468fe36c682718d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648010"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888848"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Verwenden eines Windows Communication Foundation (WCF)-Webdiensts
 
@@ -232,6 +232,7 @@ In Visual Studio 2017 oder Visual Studio 2019 sollten Sie in der Lage sein, die 
 Standardmäßig antwortet IIS Express nur auf Anforderungen `localhost`von. Remote Geräte (z. b. ein Android-Gerät, ein iPhone oder sogar ein Simulator) haben keinen Zugriff auf Ihren lokalen WCF-Dienst. Sie müssen Ihre Windows 10-Arbeitsstations-IP-Adresse im lokalen Netzwerk kennen. Nehmen Sie für dieses Beispiel an, dass die Arbeitsstation über die IP- `192.168.1.143`Adresse verfügt. In den folgenden Schritten wird erläutert, wie Sie Windows 10 konfigurieren und IIS Express, um Remote Verbindungen zu akzeptieren und von einem physischen oder virtuellen Gerät aus eine Verbindung mit dem Dienst herzustellen:
 
 1. **Fügen Sie der Windows-Firewall eine Ausnahme hinzu**. Sie müssen über die Windows-Firewall einen Port öffnen, der von Anwendungen in Ihrem Subnetz verwendet werden kann, um mit dem WCF-Dienst zu kommunizieren. Erstellen Sie eine eingehende Regel zum Öffnen von Port 49393 in der Firewall. Führen Sie an einer administrativen Eingabeaufforderung den folgenden Befehl aus:
+
     ```
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```

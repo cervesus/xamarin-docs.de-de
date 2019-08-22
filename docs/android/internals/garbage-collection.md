@@ -6,19 +6,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 3b89f63d42b01140d73cd1551c75211d2fea8e27
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 7563dede151d2f72e9496d71041a0f590f0cf68e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510716"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524793"
 ---
 # <a name="garbage-collection"></a>Garbage Collection
 
 Xamarin. Android verwendet das [einfache Generations Garbage Collector](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)von Mono. Dabei handelt es sich um eine Markierungs-und Sweep-Garbage Collector mit zwei Generationen und einem *großen Objekt Raum*mit zwei Arten von Auflistungen: 
 
--   Kleinere Sammlungen (sammelt gen0 Heap) 
--   Hauptsammlungen (sammelt Gen1 und große Objekt Raum Heaps). 
+- Kleinere Sammlungen (sammelt gen0 Heap) 
+- Hauptsammlungen (sammelt Gen1 und große Objekt Raum Heaps). 
 
 > [!NOTE]
 > Wenn keine explizite Sammlung über GC vorhanden ist [. Collect ()](xref:System.GC.Collect) -Auflistungen sind *auf Abruf*basierend auf Heap Zuordnungen. *Dabei handelt es sich nicht um ein Verweis zählungs System*. Objekte werden *nicht erfasst, sobald keine ausstehenden Verweise vorhanden sind*oder wenn ein Bereich beendet wurde. Der GC wird ausgeführt, wenn der kleinere Heap für neue Zuordnungen nicht über genügend Arbeitsspeicher verfügt. Wenn keine Zuordnungen vorhanden sind, wird der Vorgang nicht ausgeführt.
@@ -34,35 +34,35 @@ Größere Auflistungen sind aufwendig und seltener und werden verwendet, um alle
 
 Es gibt drei Kategorien von Objekttypen.
 
--   **Verwaltete Objekte**: Typen, die *nicht* von [java. lang. Object](xref:Java.Lang.Object) erben, z. b. [System. String](xref:System.String). 
+- **Verwaltete Objekte**: Typen, die *nicht* von [java. lang. Object](xref:Java.Lang.Object) erben, z. b. [System. String](xref:System.String). 
     Diese werden normalerweise vom GC gesammelt. 
 
--   **Java-Objekte**: Java-Typen, die auf dem virtuellen Android-Lauf Zeit Computer vorhanden sind, aber nicht für den Mono-VM verfügbar sind Diese sind langweilig und werden nicht weiter erläutert. Diese werden normalerweise von der Android-Lauf Zeit-VM gesammelt. 
+- **Java-Objekte**: Java-Typen, die auf dem virtuellen Android-Lauf Zeit Computer vorhanden sind, aber nicht für den Mono-VM verfügbar sind Diese sind langweilig und werden nicht weiter erläutert. Diese werden normalerweise von der Android-Lauf Zeit-VM gesammelt. 
 
--   **Peer Objekte**: Typen, die [ijavaobject](xref:Android.Runtime.IJavaObject) implementieren, z. b. alle [java. lang. Object](xref:Java.Lang.Object) -und [java. lang. Throwable](xref:Java.Lang.Throwable) -Unterklassen. Instanzen dieser Typen haben zwei "Halfs", einen *verwalteten Peer* und einen *nativen Peer*. Der verwaltete Peer ist eine Instanz der- C# Klasse. Der Native Peer ist eine Instanz einer Java-Klasse innerhalb der Android-Lauf Zeit-VM C# , und die [ijavaobject. handle](xref:Android.Runtime.IJavaObject.Handle) -Eigenschaft enthält einen globalen jni-Verweis auf den nativen Peer. 
+- **Peer Objekte**: Typen, die [ijavaobject](xref:Android.Runtime.IJavaObject) implementieren, z. b. alle [java. lang. Object](xref:Java.Lang.Object) -und [java. lang. Throwable](xref:Java.Lang.Throwable) -Unterklassen. Instanzen dieser Typen haben zwei "Halfs", einen *verwalteten Peer* und einen *nativen Peer*. Der verwaltete Peer ist eine Instanz der- C# Klasse. Der Native Peer ist eine Instanz einer Java-Klasse innerhalb der Android-Lauf Zeit-VM C# , und die [ijavaobject. handle](xref:Android.Runtime.IJavaObject.Handle) -Eigenschaft enthält einen globalen jni-Verweis auf den nativen Peer. 
 
 
 Es gibt zwei Typen von nativen Peers:
 
--   Frameworkpeers: "Normale" Java-Typen, die nichts von xamarin. Android wissen, z. b. [Android. Content. Context](xref:Android.Content.Context).
+- Frameworkpeers: "Normale" Java-Typen, die nichts von xamarin. Android wissen, z. b.   [Android. Content. Context](xref:Android.Content.Context).
 
--   **Benutzer Peers** : [Android Callable Wrapper](~/android/platform/java-integration/working-with-jni.md) , die zur Buildzeit für jede Unterklasse von Java. lang. Object generiert werden, die in der Anwendung vorhanden ist.
+- **Benutzer Peers** :   [Android Callable Wrapper](~/android/platform/java-integration/working-with-jni.md) , die zur Buildzeit für jede Unterklasse von Java. lang. Object generiert werden, die in der Anwendung vorhanden ist.
 
 
 Da in einem xamarin. Android-Prozess zwei virtuelle Computer vorhanden sind, gibt es zwei Arten von Garbage Collections:
 
--   Android-Lauf Zeit Sammlungen 
--   Mono-Sammlungen 
+- Android-Lauf Zeit Sammlungen 
+- Mono-Sammlungen 
 
 Android-Lauf Zeit Sammlungen funktionieren normal, aber mit einem Nachteil: ein globaler jni-Verweis wird als GC-Stamm behandelt. Folglich kann das Objekt nicht gesammelt werden, wenn es einen globalen Verweis auf ein Android-Lauf Zeit-VM-Objekt enthält. Dies ist auch dann *nicht* möglich, wenn es für die Sammlung geeignet ist.
 
 Mono-Auflistungen sind, wo der Spaß passiert Verwaltete Objekte werden normal gesammelt. Peer Objekte werden gesammelt, indem der folgende Vorgang durchgeführt wird:
 
-1.  Für alle Peer Objekte, die für die Mono-Sammlung qualifiziert sind, wird der globale jni-Verweis durch einen globalen jni-Verweis ersetzt. 
+1. Für alle Peer Objekte, die für die Mono-Sammlung qualifiziert sind, wird der globale jni-Verweis durch einen globalen jni-Verweis ersetzt. 
 
-2.  Eine Android-Runtime-VM-GC wird aufgerufen. Es kann eine beliebige Native Peer Instanz gesammelt werden. 
+2. Eine Android-Runtime-VM-GC wird aufgerufen. Es kann eine beliebige Native Peer Instanz gesammelt werden. 
 
-3.  Die in (1) erstellten globalen jni-Verweise werden geprüft. Wenn der schwache Verweis gesammelt wurde, wird das Peer Objekt gesammelt. Wenn der schwache Verweis *nicht* erfasst wurde, wird der schwache Verweis durch einen globalen jni-Verweis ersetzt, und das Peer Objekt wird nicht erfasst. Hinweis: bei API 14 + bedeutet dies, dass sich der Wert, `IJavaObject.Handle` der von zurückgegeben wird, nach einem GC ändern kann. 
+3. Die in (1) erstellten globalen jni-Verweise werden geprüft. Wenn der schwache Verweis gesammelt wurde, wird das Peer Objekt gesammelt. Wenn der schwache Verweis *nicht* erfasst wurde, wird der schwache Verweis durch einen globalen jni-Verweis ersetzt, und das Peer Objekt wird nicht erfasst. Hinweis: bei API 14 + bedeutet dies, dass sich der Wert, `IJavaObject.Handle` der von zurückgegeben wird, nach einem GC ändern kann. 
 
 Das Endergebnis all dies besteht darin, dass eine Instanz eines Peer Objekts so lange aktiv ist, wie entweder von verwaltetem Code (z. b. in einer `static` Variablen gespeichert) oder durch Java-Code darauf verwiesen wird. Darüber hinaus wird die Lebensdauer von nativen Peers über das, was Sie andernfalls Leben, hinaus erweitert, da der Native Peer nicht entladbar ist, bis der Native Peer und der verwaltete Peer entladbar sind.
 
@@ -94,27 +94,27 @@ Xamarin. Android bietet transparente Speicherverwaltung mit Android und der Andr
 
 Die GC-Bridge funktioniert bei einem Mono-Garbage Collection und gibt an, welche Peer Objekte ihre "Elastizität" mit dem Android-Lauf Zeit Heap verifizieren müssen. Die GC-Bridge führt diese Bestimmung durch die folgenden Schritte aus (in der angegebenen Reihenfolge):
 
-1.  Auslösen des Mono-Referenz Diagramms von nicht erreichbaren Peer Objekten in die Java-Objekte, die Sie darstellen. 
+1. Auslösen des Mono-Referenz Diagramms von nicht erreichbaren Peer Objekten in die Java-Objekte, die Sie darstellen. 
 
-2.  Ausführen einer Java-GC
+2. Ausführen einer Java-GC
 
-3.  Überprüfen Sie, welche Objekte wirklich unaktiv sind. 
+3. Überprüfen Sie, welche Objekte wirklich unaktiv sind. 
 
 Dieser komplizierte Prozess ermöglicht es Unterklassen von `Java.Lang.Object` , frei auf beliebige Objekte zu verweisen C#. Dadurch werden alle Einschränkungen entfernt, an die Java-Objekte gebunden werden können. Aufgrund dieser Komplexität kann der Brücken Prozess sehr kostspielig sein und spürbare Pausen in einer Anwendung verursachen. Wenn die Anwendung bedeutende Pausen hat, ist es sinnvoll, eine der folgenden drei GC-Brücken Implementierungen zu untersuchen: 
 
--   **Tarjan** : ein vollständig neuer Entwurf der GC-Bridge basierend auf [dem Algorithmus von Robert Tarjan und der rückwärts Verweis](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)Weitergabe.
+- **Tarjan** : ein vollständig neuer Entwurf der GC-Bridge basierend auf [dem Algorithmus von Robert Tarjan und der rückwärts Verweis](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)Weitergabe.
     Dies hat die beste Leistung bei unseren simulierten Workloads, verfügt aber auch über den größeren Anteil des experimentellen Codes. 
 
--   **Neu** : eine wichtige Überprüfung des ursprünglichen Codes, die zwei Instanzen des quadratischen Verhaltens repariert, aber den Kern Algorithmus beibehalten (basierend auf [dem Algorithmus von kosaraju für die](https://en.wikipedia.org/wiki/Kosaraju's_algorithm) Suche nach stark verbundenen Komponenten). 
+- **Neu** : eine wichtige Überprüfung des ursprünglichen Codes, die zwei Instanzen des quadratischen Verhaltens repariert, aber den Kern Algorithmus beibehalten (basierend auf [dem Algorithmus von kosaraju für die](https://en.wikipedia.org/wiki/Kosaraju's_algorithm) Suche nach stark verbundenen Komponenten). 
 
--   **Old** : die ursprüngliche Implementierung (als die stabilste der drei). Dies ist die Bridge, die eine Anwendung verwenden sollte, `GC_BRIDGE` wenn die Pausen akzeptabel sind. 
+- **Old** : die ursprüngliche Implementierung (als die stabilste der drei). Dies ist die Bridge, die eine Anwendung verwenden sollte, `GC_BRIDGE` wenn die Pausen akzeptabel sind. 
 
 
 Die einzige Möglichkeit, herauszufinden, welche GC-Brücke am besten funktioniert, besteht darin, eine Anwendung zu experimentieren und die Ausgabe zu analysieren. Es gibt zwei Möglichkeiten, die Daten für das Benchmarkverfahren zu erfassen: 
 
--   **Aktivieren Sie die Protokollierung** : Aktivieren Sie die Protokollierung (wie im [Konfigurations](~/android/internals/garbage-collection.md) Abschnitt beschrieben) für jede GC-Bridge-Option, und erfassen und vergleichen Sie dann die Protokoll Ausgaben der einzelnen Einstellungen. Überprüfen `GC` Sie die Nachrichten für die einzelnen Optionen, `GC_BRIDGE` insbesondere für die Nachrichten. Hält bis zu 150 ms für nicht interaktive Anwendungen an, ist aber für sehr interaktive Anwendungen (z. b. Spiele) ein Problem. 
+- **Aktivieren Sie die Protokollierung** : Aktivieren Sie die Protokollierung (wie im [Konfigurations](~/android/internals/garbage-collection.md) Abschnitt beschrieben) für jede GC-Bridge-Option, und erfassen und vergleichen Sie dann die Protokoll Ausgaben der einzelnen Einstellungen. Überprüfen `GC` Sie die Nachrichten für die einzelnen Optionen, `GC_BRIDGE` insbesondere für die Nachrichten. Hält bis zu 150 ms für nicht interaktive Anwendungen an, ist aber für sehr interaktive Anwendungen (z. b. Spiele) ein Problem. 
 
--   **Bridge Accounting aktivieren** : bei Bridge Accounting werden die durchschnittlichen Kosten der Objekte angezeigt, die von den einzelnen auf den Bridge Prozess beteiligten Objekten verwiesen werden. Das Sortieren dieser Informationen nach Größe bietet Hinweise darauf, was die größte Menge an zusätzlichen Objekten enthält. 
+- **Bridge Accounting aktivieren** : bei Bridge Accounting werden die durchschnittlichen Kosten der Objekte angezeigt, die von den einzelnen auf den Bridge Prozess beteiligten Objekten verwiesen werden. Das Sortieren dieser Informationen nach Größe bietet Hinweise darauf, was die größte Menge an zusätzlichen Objekten enthält. 
 
 
 So geben Sie `GC_BRIDGE` die Option an, die eine Anwendung `bridge-implementation=old`uns `bridge-implementation=new` , `bridge-implementation=tarjan` übergeben oder `MONO_GC_PARAMS` an die Umgebungsvariable übergeben soll, z. b.: 
@@ -157,7 +157,7 @@ gibt möglicherweise eine *zwischengespeicherte-Instanz*zurück. Wenn mehrere Th
 
 #### <a name="disposing-bound-java-types"></a>Verwerfen von gebundenen Java-Typen
 
-Wenn die Instanz einen gebundenen Java-Typ hat, kann die Instanz verworfen werden, *solange die Instanz* nicht aus verwaltetem Code wieder verwendet wird *und* die Java-Instanz nicht von Threads gemeinsam genutzt werden kann `Typeface.Create()` (siehe vorherige Erörterung). (Diese Bestimmung ist möglicherweise schwierig.) Wenn die Java-Instanz das nächste Mal in verwalteten Code gelangt, wird ein *neuer* Wrapper für Sie erstellt. 
+Wenn die Instanz einen gebundenen Java-Typ hat, kann die Instanz verworfen werden, solange die Instanz nicht aus verwaltetem Code wieder verwendet wird *und* die Java-Instanz nicht von Threads gemeinsam genutzt werden kann `Typeface.Create()` (siehe vorherige Erörterung). (Diese Bestimmung ist möglicherweise schwierig.) Wenn die Java-Instanz das nächste Mal in verwalteten Code gelangt, wird ein *neuer* Wrapper für Sie erstellt. 
 
 Dies ist häufig nützlich, wenn es um drawables und andere ressourcenintensive Instanzen geht:
 
@@ -171,7 +171,7 @@ Der obige Code ist sicher, weil der von [drawable. kreatefrompath ()](xref:Andro
 
 #### <a name="disposing-other-types"></a>Verwerfen anderer Typen 
 
-Wenn die Instanz auf einen Typ verweist, der keine Bindung eines Java-Typs ist (z. b `Activity`. ein benutzerdefiniertes `Dispose()` ), sollten Sie **nicht** aufzurufen, wenn Sie nicht *wissen* , dass der Java-Code überschriebene Methoden für diese Instanz aufruft. Wenn dies [ `NotSupportedException`nicht der Fall](~/android/internals/architecture.md#Premature_Dispose_Calls)ist, führt dies zu einer. 
+Wenn die Instanz auf einen Typ verweist, der keine Bindung eines Java-Typs ist (z. b `Activity`. ein benutzerdefiniertes `Dispose()` ), sollten Sie **nicht** aufzurufen, wenn Sie nicht *wissen* , dass der Java-Code überschriebene Methoden für diese Instanz aufruft. Wenn dies nicht der [ `NotSupportedException`](~/android/internals/architecture.md#Premature_Dispose_Calls)Fall ist, führt dies zu einer. 
 
 Wenn Sie z. b. einen benutzerdefinierten klicklistener haben:
 
@@ -319,9 +319,9 @@ Kleinere Sammlungen können durch den Aufruf von GC manuell ausgeführt werden [
 
 Wenn die Anwendung über einen "Duty-Cycle" verfügt, in dem dasselbe passiert ist, kann es ratsam sein, eine kleine Sammlung manuell auszuführen, sobald der Duty-Vorgang beendet wurde. Beispiel für Duty Cycles: 
 
--  Der renderingcycle eines einzelnen Spiel Rahmens.
--  Die gesamte Interaktion mit einem bestimmten app-Dialog (öffnen, ausfüllen, schließen) 
--  Eine Gruppe von Netzwerk Anforderungen zum Aktualisieren/Synchronisieren von App-Daten.
+- Der renderingcycle eines einzelnen Spiel Rahmens.
+- Die gesamte Interaktion mit einem bestimmten app-Dialog (öffnen, ausfüllen, schließen) 
+- Eine Gruppe von Netzwerk Anforderungen zum Aktualisieren/Synchronisieren von App-Daten.
 
 
 
@@ -333,9 +333,9 @@ Sie sollten nur selten ausgeführt werden und können eine Pause von einer Sekun
 
 Wichtige Sammlungen sollten nur manuell aufgerufen werden: 
 
--   Am Ende von langwierigen Zeitzyklen und wenn eine lange Pause dem Benutzer kein Problem präsentiert. 
+- Am Ende von langwierigen Zeitzyklen und wenn eine lange Pause dem Benutzer kein Problem präsentiert. 
 
--   Innerhalb einer überschriebenen [Android. app. Activity. onlowmemory ()](xref:Android.App.Activity.OnLowMemory) -Methode. 
+- Innerhalb einer überschriebenen [Android. app. Activity. onlowmemory ()](xref:Android.App.Activity.OnLowMemory) -Methode. 
 
 
 
@@ -351,16 +351,16 @@ Die xamarin. Android-Garbage Collector kann durch Festlegen der `MONO_GC_PARAMS`
 
 Die `MONO_GC_PARAMS` Umgebungsvariable ist eine durch Trennzeichen getrennte Liste mit den folgenden Parametern: 
 
--   `nursery-size` = *Größe* : Legt die Größe der Gärtnerei fest. Die Größe wird in Bytes angegeben und muss eine Potenz von zwei sein. Die Suffixe `k` `m` und`g` können verwendet werden, um Kilo-, Mega-bzw. Gigabyte anzugeben. Der Kindergarten ist die erste Generation (von zwei). Ein größerer Kindergarten beschleunigt das Programm in der Regel, aber es wird offensichtlich mehr Arbeitsspeicher verbrauchen. Die Standardgröße für die Groß-und 512 KB. 
+- `nursery-size` = *Größe* : Legt die Größe der Gärtnerei fest. Die Größe wird in Bytes angegeben und muss eine Potenz von zwei sein. Die Suffixe `k` `m` und`g` können verwendet werden, um Kilo-, Mega-bzw. Gigabyte anzugeben. Der Kindergarten ist die erste Generation (von zwei). Ein größerer Kindergarten beschleunigt das Programm in der Regel, aber es wird offensichtlich mehr Arbeitsspeicher verbrauchen. Die Standardgröße für die Groß-und 512 KB. 
 
--   `soft-heap-limit` = *Größe* : Der für die APP maximal zulässige verwaltete Speicherverbrauch. Wenn die Speicherauslastung unter dem angegebenen Wert liegt, wird der GC für die Ausführungszeit (weniger Auflistungen) optimiert. 
+- `soft-heap-limit` = *Größe* : Der für die APP maximal zulässige verwaltete Speicherverbrauch. Wenn die Speicherauslastung unter dem angegebenen Wert liegt, wird der GC für die Ausführungszeit (weniger Auflistungen) optimiert. 
     Oberhalb dieses Limits ist die GC für die Speicherauslastung optimiert (weitere Sammlungen). 
 
--   `evacuation-threshold` = *Schwellenwert* : Legt den Schwellenwert für die Evakuierung in Prozent fest. Der Wert muss eine ganze Zahl im Bereich zwischen 0 und 100 sein. Der Standardwert ist 66. Wenn die Sweep-Phase der Auflistung feststellt, dass die Belegung eines bestimmten Heap Block Typs kleiner als dieser Prozentsatz ist, wird in der nächsten Haupt Auflistung eine Kopier Auflistung für diesen Blocktyp durchführt, sodass die Belegung auf 100 Prozent wieder hergestellt wird. Bei einem Wert von 0 wird die Evakuierung deaktiviert. 
+- `evacuation-threshold` = *Schwellenwert* : Legt den Schwellenwert für die Evakuierung in Prozent fest. Der Wert muss eine ganze Zahl im Bereich zwischen 0 und 100 sein. Der Standardwert ist 66. Wenn die Sweep-Phase der Auflistung feststellt, dass die Belegung eines bestimmten Heap Block Typs kleiner als dieser Prozentsatz ist, wird in der nächsten Haupt Auflistung eine Kopier Auflistung für diesen Blocktyp durchführt, sodass die Belegung auf 100 Prozent wieder hergestellt wird. Bei einem Wert von 0 wird die Evakuierung deaktiviert. 
 
--   `bridge-implementation` = *Bridge Implementierung* : Dadurch wird die Option GC Bridge festgelegt, um GC-Leistungsprobleme zu beheben. Es gibt drei mögliche Werte: *alt* , *neu* , *Tarjan*.
+- `bridge-implementation` = *Bridge Implementierung* : Dadurch wird die Option GC Bridge festgelegt, um GC-Leistungsprobleme zu beheben. Es gibt drei mögliche Werte: *alt* , *neu* , *Tarjan*.
 
--   `bridge-require-precise-merge`: Die Tarjan-Bridge enthält eine Optimierung, die in seltenen Fällen dazu führen kann, dass ein Objekt nach dem ersten Garbage Collector eine Garbage Collection erfasst. Wenn Sie diese Option einschließen, wird diese Optimierung deaktiviert, sodass die GCS vorhersag barer, aber potenziell langsamer werden.
+- `bridge-require-precise-merge`: Die Tarjan-Bridge enthält eine Optimierung, die in seltenen Fällen dazu führen kann, dass ein Objekt nach dem ersten Garbage Collector eine Garbage Collection erfasst. Wenn Sie diese Option einschließen, wird diese Optimierung deaktiviert, sodass die GCS vorhersag barer, aber potenziell langsamer werden.
 
 Wenn Sie z. b. für die GC eine Heapgröße von 128 MB konfigurieren möchten, fügen Sie dem Projekt eine neue Datei mit der Buildaktion `AndroidEnvironment` mit dem Inhalt hinzu: 
 

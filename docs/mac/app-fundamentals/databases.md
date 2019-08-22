@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: febfa23ecb2f1536631b3009d6ddc614fa355f01
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3e6bc829ec947f8f3c01c7ef9679a5feadf4a42a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656502"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887365"
 ---
 # <a name="databases-in-xamarinmac"></a>Datenbanken in xamarin. Mac
 
@@ -594,7 +594,7 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-Wie **oben** beschrieben erhalten wir eine `SQLiteCommand` `SQLiteConnection`aus dem weiter gegebenen und legen "SQL" fest, um unseren Datensatz zu aktualisieren (Bereitstellen von Parametern):
+Wie oben beschrieben erhalten wir eine `SQLiteCommand` `SQLiteConnection`aus dem weiter gegebenen und legen "SQL" fest, um unseren Datensatz zu aktualisieren (Bereitstellen von Parametern):
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";
@@ -612,6 +612,7 @@ for (nuint n = 0; n < People.Count; ++n) {
     Person.Update (conn);
 }
 ```
+
 #### <a name="loading-a-record"></a>Ein Datensatz wird geladen.
 
 Der folgende Code wurde hinzugefügt, um einen vorhandenen Datensatz aus der SQLite-Datenbank zu laden:
@@ -1971,6 +1972,7 @@ Zuerst fügen wir sqlite.net (`using Sqlite`) ein. dann werden mehrere Eigenscha
 [PrimaryKey, AutoIncrement]
 public int ID { get; set; }
 ```
+
 ### <a name="initializing-the-database"></a>Initialisieren der Datenbank
 
 Mit den Änderungen an unserem Datenmodell zur Unterstützung von Lese-und Schreibvorgängen in der Datenbank müssen wir eine Verbindung mit der Datenbank herstellen und Sie bei der ersten Durchführung initialisieren. Fügen Sie den folgenden Code hinzu:

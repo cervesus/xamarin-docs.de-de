@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 8c7aae672d284d4105c6b09dfe81b72cf4ad519b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: f2272b90f664331959cfc8f60c6e59adc9550a98
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645513"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522766"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -31,10 +31,10 @@ In der Regel wird `ViewPager` zusammen mit [Fragment](~/android/platform/fragmen
 
 In diesem Leitfaden werden beide Ansätze veranschaulicht: 
 
--   In [viewpager mit Ansichten](~/android/user-interface/controls/view-pager/viewpager-and-views.md)wird eine [treepager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager) -app entwickelt, um zu veranschaulichen, `ViewPager` wie Sie zum Anzeigen von Ansichten eines Struktur Katalogs (einem Bildkatalog von Laub-und Evergreen-Strukturen) verwenden können. 
+- In [viewpager mit Ansichten](~/android/user-interface/controls/view-pager/viewpager-and-views.md)wird eine [treepager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager) -app entwickelt, um zu veranschaulichen, `ViewPager` wie Sie zum Anzeigen von Ansichten eines Struktur Katalogs (einem Bildkatalog von Laub-und Evergreen-Strukturen) verwenden können. 
     `PagerTabStrip`und `PagerTitleStrip` werden zum Anzeigen von Titeln verwendet, die bei der Seitennavigation helfen.
 
--   In [viewpager mit Fragmenten](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)wird eine etwas komplexere app " [Flash cardpager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager) " entwickelt, um zu veranschaulichen, `ViewPager` wie `Fragment`mit s verwendet wird, um eine APP zu erstellen, die mathematische Probleme als Flash Karten darstellt und auf Benutzereingaben antwortet. 
+- In [viewpager mit Fragmenten](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)wird eine etwas komplexere app " [Flash cardpager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager) " entwickelt, um zu veranschaulichen, `ViewPager` wie `Fragment`mit s verwendet wird, um eine APP zu erstellen, die mathematische Probleme als Flash Karten darstellt und auf Benutzereingaben antwortet. 
 
 
 ## <a name="requirements"></a>Anforderungen
@@ -46,9 +46,9 @@ Um in `ViewPager` Ihrem App-Projekt zu verwenden, müssen Sie das [Android-Unter
 
 Zum Implementieren der Gestural-Navigation mit `ViewPager`werden drei Komponenten verwendet:
 
--   ViewPager
--   Adapter
--   Pager-Indikator
+- ViewPager
+- Adapter
+- Pager-Indikator
 
 Jede dieser Komponenten wird im folgenden zusammengefasst.
 

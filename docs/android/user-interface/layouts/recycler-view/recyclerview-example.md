@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: 82423e48f844cde60bcd5e85c5bbe3cb8bc856b8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ca80dc9a064e81d9b81b1cd53237df818d409576
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522464"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887545"
 ---
 # <a name="a-basic-recyclerview-example"></a>Ein grundlegendes recyclerview-Beispiel
 
@@ -145,6 +145,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
     }
 }
 ```
+
 In diesem Codebeispiel wird dem `PhotoViewHolder` Konstruktor ein Verweis auf die übergeordnete Element Ansicht `CardView`() `PhotoViewHolder` übergeben, die umschließt. Beachten Sie, dass Sie die übergeordnete Element Ansicht immer an den Basiskonstruktor weiterleiten. Der `PhotoViewHolder` Konstruktor ruft `FindViewById` für die übergeordnete Element Ansicht auf, um alle untergeordneten Ansichts `ImageView` Verweise `TextView`zu finden, und, und `Image` speichert `Caption` die Ergebnisse in den-und-Eigenschaften bzw. Der Adapter ruft später Ansichts Verweise aus diesen Eigenschaften ab, wenn er `CardView`die untergeordneten Sichten dieses Elements mit neuen Daten aktualisiert.
 
 Weitere Informationen zu `RecyclerView.ViewHolder`finden Sie in der [Klasse "recyclerview. viewholder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)".

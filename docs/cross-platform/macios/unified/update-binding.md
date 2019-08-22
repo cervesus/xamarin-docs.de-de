@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 16cf976b252e409ae4302ab51eb594370a6689d1
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e6aac37561d107cb7e3f646c15621b86385dd0ee
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620942"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887509"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrieren einer Bindung zu Unified API
 
@@ -89,6 +89,7 @@ Die neue Bindung wird wie folgt aktualisiert:
 [Export("add:and:")]
 nint Add(nint operandUn, nint operandDeux);
 ```
+
 Wenn eine Zuordnung zu einer neueren Version von Drittanbietern als mit der `.h` ursprünglich verknüpften Version stattfinden soll, müssen die Header Dateien für die Bibliothek überprüft werden, und es wird geprüft, ob es sich um das Beenden, explizite Aufrufe von `int`, `int32_t`, `unsigned int` `uint32_t` oder handelt. wurde aktualisiert, sodass Sie ein `NSInteger`oder `NSUInteger` ein `CGFloat`ist. `float` Wenn dies der Fall ist, müssen die `nint`gleichen `nuint` Änderungen `nfloat` an den-und-Typen auch an Ihren Zuordnungen vorgenommen werden.
 
 Weitere Informationen zu diesen Datentyp Änderungen finden Sie im Dokument [native Typen](~/cross-platform/macios/nativetypes.md) .

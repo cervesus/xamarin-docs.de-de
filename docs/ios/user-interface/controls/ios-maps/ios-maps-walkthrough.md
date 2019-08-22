@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dba8fc3c239a8c20795913d6d1e5409a478c4072
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64b666e8e8621019da4f2acb71ab5b3bf22fad3a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642726"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889761"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Anmerkungen und Überlagerungen in xamarin. IOS
 
@@ -178,6 +178,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
     
     map.AddOverlay (hotelOverlay);  
     ```
+
 Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `MapDelegate` Klasse implementieren, um das Erstellen der Anmerkung und der Überlagerungs Sichten zu verarbeiten.
 
 
@@ -192,6 +193,7 @@ Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `Map
         ...
     }
     ```
+
     Wir haben hier nur eine Anmerkung, sodass der wiederzuverwendenden Code nicht unbedingt erforderlich ist, aber es wird empfohlen, ihn einzuschließen.
 
 1. Implementieren `ConferenceAnnotation` Sie `GetViewForAnnotation` die-Methode, um mithilfe des in dieser exemplarischen Vorgehensweise enthaltenen " **Conference. png** "-Bilds eine Ansicht für zurückzugeben
@@ -261,6 +263,7 @@ Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `Map
         }
     }
     ```
+
     Der Code für die Anmerkung ist nun vorhanden. Zum Erstellen der Ansicht für die `MapDelegate` Überlagerung des Hotels müssen Sie nur noch Code hinzufügen.
 
 1. Fügen Sie die folgende Implementierung `GetViewForOverlay` von `MapDelegate`hinzu:

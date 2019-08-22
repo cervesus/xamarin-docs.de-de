@@ -6,13 +6,13 @@ ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 25e2d9bad11614cf594980480db14ddc18125a96
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 07/24/2019
+ms.openlocfilehash: 5832cb28162602a41d31026bc4a0ed54ac6bfb34
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738909"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888612"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Einführung in xamarin. Forms CollectionView
 
@@ -20,7 +20,7 @@ ms.locfileid: "68738909"
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)ist eine Ansicht für die Darstellung von Listen mit Daten mit unterschiedlichen layoutspezifikationen. Es zielt darauf ab, eine flexiblere und leistungsfähigere Alternative zu [`ListView`](xref:Xamarin.Forms.ListView)bereitzustellen. Die folgenden Screenshots zeigen z. b. `CollectionView` ein, das ein vertikales Raster mit zwei Spalten verwendet und das mehrere Auswahlmöglichkeiten ermöglicht:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) ist eine Ansicht für die Darstellung von Listen mit Daten mit unterschiedlichen Layoutspezifikationen. Es zielt darauf ab, eine flexiblere und leistungsfähigere Alternative zu [`ListView`](xref:Xamarin.Forms.ListView)bereitzustellen. Die folgenden Screenshots zeigen z. b. `CollectionView` ein, das ein vertikales Raster mit zwei Spalten verwendet und das mehrere Auswahlmöglichkeiten ermöglicht:
 
 [ ![Screenshot des vertikalen Raster Layouts von CollectionView unter IOS und Android](introduction-images/verticalgrid-multipleselection.png "CollectionView vertikaler Raster Layout mit Mehrfachauswahl") ] (introduction-images/verticalgrid-multipleselection-large.png#lightbox "CollectionView vertikal Raster Layout mit Mehrfachauswahl")
 
@@ -57,8 +57,8 @@ Obwohl die [`CollectionView`](xref:Xamarin.Forms.CollectionView) - [`ListView`](
 | Auswahl | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)unterstützt die einfache und mehrfache Auswahl. Weitere Informationen finden Sie unter [xamarin. Forms CollectionView-Auswahl](selection.md). |
 | Zeilenhöhe | `HasUnevenRows`, `RowHeight` | In einem `CollectionView`wird die Zeilenhöhe jedes Elements durch die `ItemSizingStrategy` -Eigenschaft bestimmt. Weitere Informationen finden Sie unter [Item Sizing](layout.md#item-sizing).|
 | Zwischenspeicherung | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)verwendet automatisch die von den zugrunde liegenden systemeigenen Steuerelementen bereitgestellte Virtualisierung. |
-| Kopf- und Fußzeilen | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | Kopf-und Fußzeilen werden in `CollectionView`derzeit nicht unterstützt, werden jedoch in einer zukünftigen Version hinzugefügt.|
-| Gruppieren | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | Die Gruppierung wird in `CollectionView`derzeit nicht unterstützt, wird jedoch in einer zukünftigen Version hinzugefügt. |
+| Kopf- und Fußzeilen | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)kann eine Kopfzeile und eine Fußzeile darstellen, die mit den Elementen in der Liste über `Header`die `Footer`Eigenschaften `HeaderTemplate`,, `FooterTemplate` und scrollen. Weitere Informationen finden Sie unter [Kopf-und Fußzeilen](layout.md#headers-and-footers). |
+| Gruppieren | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)zeigt ordnungsgemäß gruppierte Daten durch `IsGrouped` Festlegen der `true`-Eigenschaft auf an. Gruppen Kopfzeilen und-Fußzeilen können durch Festlegen der- `GroupHeaderTemplate` Eigenschaft `GroupFooterTemplate` und der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) -Eigenschaft auf-Objekte angepasst werden. Weitere Informationen finden Sie unter [xamarin. Forms CollectionView-Gruppierung](grouping.md). |
 | Pull zum Aktualisieren | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | Der Pull-Vorgang zum Aktualisieren wird in `CollectionView`derzeit nicht unterstützt, wird jedoch in einer zukünftigen Version hinzugefügt. |
 | Kontextaktionen | `ContextActions` | Kontext Aktionen werden in `CollectionView`derzeit nicht unterstützt, werden jedoch in einer zukünftigen Version hinzugefügt. |
 | Scrollen | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert `ScrollTo` Methoden, die Elemente in der Ansicht scrollen. Weitere Informationen finden Sie unter [scrollvorgänge](scrolling.md). |

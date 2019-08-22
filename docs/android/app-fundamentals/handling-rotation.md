@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 198d667ea52fcad4758c2845e5f2e935d1f74a0b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 394feda6f5a13855be1d1166dc22bb2a5c890d26
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521124"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887774"
 ---
 # <a name="handling-rotation"></a>Verarbeiten der Drehung
 
@@ -228,6 +228,7 @@ Zusätzlich zur Behandlung von Elementen in `OnCreate`kann eine Anwendung auch v
 ```csharp
 [Activity (Label = "CodeLayoutActivity", ConfigurationChanges=Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
 ```
+
 Wenn das Gerät nun gedreht wird, wird die Aktivität nicht neu gestartet. Um die Orientierungs Änderung in diesem Fall manuell zu verarbeiten, kann eine Aktivität die `OnConfigurationChanged` -Methode überschreiben und die Ausrichtung `Configuration` des übergebenen-Objekts, wie in der neuen Implementierung der folgenden Aktivität, bestimmen:
 
 ```csharp

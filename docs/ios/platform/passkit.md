@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
-ms.openlocfilehash: 2bd694d903da9f30f8fffa5fea991c1f386752dd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 9f8a092b63da413974f387aca02d81efef9c1625
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656383"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528318"
 ---
 # <a name="passkit-in-xamarinios"></a>Passkit in xamarin. IOS
 
@@ -31,17 +31,17 @@ Die in diesem Dokument erläuterten passkit-Features erfordern IOS 6 und Xcode 4
 
 Das Hauptproblem, das von passkit gelöst wird, ist die Verteilung und Verwaltung von Barcodes. Im folgenden finden Sie einige Beispiele für die Verwendung von Barcodes in der Praxis:
 
--   **Kaufen von Movie Tickets Online** – Kunden erhalten in der Regel einen Barcode, der Ihre Tickets darstellt. Dieser Barcode wird gedruckt und in das Kino aufgenommen, um auf den Eintrag zu suchen.
--   **Treuekarten** – Kunden haben eine Reihe von unterschiedlichen Speicher spezifischen Karten in Ihre Geldbörse oder Tasche, um Sie beim Kauf von waren anzuzeigen und zu überprüfen.
--   **Coupons** – Coupons werden per e-Mail, als Druck Bare Webseiten, über Brief Fächer und als Barcodes in Zeitungen und Zeitschriften verteilt. Kunden werden Sie in einen Store zum Scannen bringen, um waren, Dienste oder Rabatte im Gegenzug zu erhalten.
--   Das **Boarding geht** – ähnlich wie beim Kauf eines Film Tickets.
+- **Kaufen von Movie Tickets Online** – Kunden erhalten in der Regel einen Barcode, der Ihre Tickets darstellt. Dieser Barcode wird gedruckt und in das Kino aufgenommen, um auf den Eintrag zu suchen.
+- **Treuekarten** – Kunden haben eine Reihe von unterschiedlichen Speicher spezifischen Karten in Ihre Geldbörse oder Tasche, um Sie beim Kauf von waren anzuzeigen und zu überprüfen.
+- **Coupons** – Coupons werden per e-Mail, als Druck Bare Webseiten, über Brief Fächer und als Barcodes in Zeitungen und Zeitschriften verteilt. Kunden werden Sie in einen Store zum Scannen bringen, um waren, Dienste oder Rabatte im Gegenzug zu erhalten.
+- Das **Boarding geht** – ähnlich wie beim Kauf eines Film Tickets.
 
 Passkit bietet eine Alternative für jedes dieser Szenarien:
 
--   **Movie Tickets** – nach dem Kauf fügt der Kunde einen Ereignis Ticket Pass (per e-Mail oder über einen Link zur Website) hinzu. In der Zeit für den Film wird der Durchlauf automatisch als Erinnerung auf dem Sperrbildschirm angezeigt, und bei der Ankunft im Kino wird der Durchlauf problemlos abgerufen und zum Scannen in Wallet angezeigt.
--   **Treuekarten** – anstatt (oder zusätzlich zu), die eine physische Karte bereitstellen, können Filialen (per e-Mail oder nach einer Website Anmeldung) einen Pass Karten Pass ausgeben. Der Speicher kann zusätzliche Features bereitstellen, wie z. b. das Aktualisieren des Saldo des Kontos während des Pass-Through-Pushbenachrichtigungen, und die Verwendung von geolozierungsdiensten der Pass könnte automatisch auf dem Sperrbildschirm angezeigt werden, wenn sich der Kunde in der Nähe eines Speicher Orts befindet
--   **Coupons** – Coupon Pässe können problemlos mit eindeutigen Merkmalen generiert werden, um Sie bei der Nachverfolgung und Verteilung per e-Mail oder Website Links zu unterstützen. Heruntergeladene Coupons können automatisch auf dem Sperrbildschirm angezeigt werden, wenn sich der Benutzer an einem bestimmten Speicherort befindet, und/oder an einem bestimmten Datum (z. b. wenn sich das Ablaufdatum nähert). Da die Coupons auf dem Telefon des Benutzers gespeichert sind, sind Sie immer praktisch und werden nicht falsch platziert. Gutscheine können Kunden ermutigen, Begleit-apps herunterzuladen, da App Store-Links in den Durchlauf integriert werden können, wodurch sich die Einbindung mit dem Kunden erhöht.
--   Das Onboarding – nach einem Online Eincheck Vorgang erhält der Kunde seine Einstiegs Pass per e-Mail oder über einen Link. Eine Begleit-APP, die vom Transportanbieter bereitgestellt wird, kann den Eincheck Vorgang einschließen und es dem Kunden ermöglichen, zusätzliche Funktionen wie die Auswahl seines Arbeitsplatzes oder seiner Mahlzeit auszuführen. Der Transportanbieter kann Pushbenachrichtigungen verwenden, um den Durchlauf zu aktualisieren, wenn der Transport verzögert oder abgebrochen wird. Wenn die Boardingzeit erreicht wird, wird der Durchlauf auf dem Sperrbildschirm als Erinnerung angezeigt und ermöglicht einen schnellen Zugriff auf den Durchlauf.
+- **Movie Tickets** – nach dem Kauf fügt der Kunde einen Ereignis Ticket Pass (per e-Mail oder über einen Link zur Website) hinzu. In der Zeit für den Film wird der Durchlauf automatisch als Erinnerung auf dem Sperrbildschirm angezeigt, und bei der Ankunft im Kino wird der Durchlauf problemlos abgerufen und zum Scannen in Wallet angezeigt.
+- **Treuekarten** – anstatt (oder zusätzlich zu), die eine physische Karte bereitstellen, können Filialen (per e-Mail oder nach einer Website Anmeldung) einen Pass Karten Pass ausgeben. Der Speicher kann zusätzliche Features bereitstellen, wie z. b. das Aktualisieren des Saldo des Kontos während des Pass-Through-Pushbenachrichtigungen, und die Verwendung von geolozierungsdiensten der Pass könnte automatisch auf dem Sperrbildschirm angezeigt werden, wenn sich der Kunde in der Nähe eines Speicher Orts befindet
+- **Coupons** – Coupon Pässe können problemlos mit eindeutigen Merkmalen generiert werden, um Sie bei der Nachverfolgung und Verteilung per e-Mail oder Website Links zu unterstützen. Heruntergeladene Coupons können automatisch auf dem Sperrbildschirm angezeigt werden, wenn sich der Benutzer an einem bestimmten Speicherort befindet, und/oder an einem bestimmten Datum (z. b. wenn sich das Ablaufdatum nähert). Da die Coupons auf dem Telefon des Benutzers gespeichert sind, sind Sie immer praktisch und werden nicht falsch platziert. Gutscheine können Kunden ermutigen, Begleit-apps herunterzuladen, da App Store-Links in den Durchlauf integriert werden können, wodurch sich die Einbindung mit dem Kunden erhöht.
+- Das Onboarding – nach einem Online Eincheck Vorgang erhält der Kunde seine Einstiegs Pass per e-Mail oder über einen Link. Eine Begleit-APP, die vom Transportanbieter bereitgestellt wird, kann den Eincheck Vorgang einschließen und es dem Kunden ermöglichen, zusätzliche Funktionen wie die Auswahl seines Arbeitsplatzes oder seiner Mahlzeit auszuführen. Der Transportanbieter kann Pushbenachrichtigungen verwenden, um den Durchlauf zu aktualisieren, wenn der Transport verzögert oder abgebrochen wird. Wenn die Boardingzeit erreicht wird, wird der Durchlauf auf dem Sperrbildschirm als Erinnerung angezeigt und ermöglicht einen schnellen Zugriff auf den Durchlauf.
 
 Im Kern bietet passkit eine einfache und bequeme Möglichkeit zum Speichern und Anzeigen von Barcodes auf Ihrem IOS-Gerät. Dank der zusätzlichen Zeit-und Speicherort-Lock-Screen-Integration bietet Pushbenachrichtigungen und die Integration von Begleit Anwendungen eine Grundlage für sehr ausgereifte Vertriebs-, Ticket-und Abrechnungsdienste.
 
@@ -53,11 +53,11 @@ Passkit ist nicht nur eine API in cocoatouch, sondern gehört zu einem größere
 
 Alle Teil des Ökosystems verfügen über eine eindeutig definierte Rolle:
 
--   **Wallet** – die integrierte IOS-APP von Apple, die Pass-Stores speichert und anzeigt. Dies ist die einzige Stelle, an der Pass-Through zur Verwendung in der realen Welt gerendert werden (d. h., der Barcode wird zusammen mit allen lokalisierten Daten im Durchlauf angezeigt).
--   **Begleitende apps** – IOS 6-apps, die von den Pass Anbietern erstellt werden, um die Funktionalität der von Ihnen bereitzustellen, z. b. das Hinzufügen eines Werts zu einer Geschäfts Karte, das Ändern des Arbeitsplatzes bei einem boardingdurchlauf oder einer anderen Geschäfts spezifischen Funktion Begleit-apps sind nicht erforderlich, damit ein Pass nützlich ist.
--   **Der Server** – ein sicherer Server, auf dem Durchgänge generiert und für die Verteilung signiert werden kann. Ihre begleitende App kann eine Verbindung mit Ihrem Server herstellen, um neue Pass-oder Anforderungs Updates für vorhandene Pass-ins zu generieren. Sie können optional die Webdienst-API implementieren, die von Wallet zum Aktualisieren von Durchläufen aufgerufen wird.
--   **APNs-Server** – der Server hat die Möglichkeit, Wallet über Updates an einen Pass auf einem bestimmten Gerät mithilfe von APNs zu benachrichtigen. Pushen Sie eine Benachrichtigung an Wallet, um Details zur Änderung an Ihren Server zu wenden. Begleit Anwendungen müssen keine APNs für dieses Feature implementieren (Sie können auf `PKPassLibraryDidChangeNotification` lauschen).
--   **Kanal-apps** – Anwendungen, die keine direkte Bearbeitung (wie begleitende Apps) ausführen, jedoch das Hilfsprogramm verbessern können, indem Sie "Pass" erkennen und zulassen, dass Sie in Wallet eingefügt werden. E-Mail-Clients, Netzwerke für soziale Netzwerke und andere Datenaggregations-Apps können alle Anlagen oder Verknüpfungen zu Durchläufen haben.
+- **Wallet** – die integrierte IOS-APP von Apple, die Pass-Stores speichert und anzeigt. Dies ist die einzige Stelle, an der Pass-Through zur Verwendung in der realen Welt gerendert werden (d. h., der Barcode wird zusammen mit allen lokalisierten Daten im Durchlauf angezeigt).
+- **Begleitende apps** – IOS 6-apps, die von den Pass Anbietern erstellt werden, um die Funktionalität der von Ihnen bereitzustellen, z. b. das Hinzufügen eines Werts zu einer Geschäfts Karte, das Ändern des Arbeitsplatzes bei einem boardingdurchlauf oder einer anderen Geschäfts spezifischen Funktion Begleit-apps sind nicht erforderlich, damit ein Pass nützlich ist.
+- **Der Server** – ein sicherer Server, auf dem Durchgänge generiert und für die Verteilung signiert werden kann. Ihre begleitende App kann eine Verbindung mit Ihrem Server herstellen, um neue Pass-oder Anforderungs Updates für vorhandene Pass-ins zu generieren. Sie können optional die Webdienst-API implementieren, die von Wallet zum Aktualisieren von Durchläufen aufgerufen wird.
+- **APNs-Server** – der Server hat die Möglichkeit, Wallet über Updates an einen Pass auf einem bestimmten Gerät mithilfe von APNs zu benachrichtigen. Pushen Sie eine Benachrichtigung an Wallet, um Details zur Änderung an Ihren Server zu wenden. Begleit Anwendungen müssen keine APNs für dieses Feature implementieren (Sie können auf `PKPassLibraryDidChangeNotification` lauschen).
+- **Kanal-apps** – Anwendungen, die keine direkte Bearbeitung (wie begleitende Apps) ausführen, jedoch das Hilfsprogramm verbessern können, indem Sie "Pass" erkennen und zulassen, dass Sie in Wallet eingefügt werden. E-Mail-Clients, Netzwerke für soziale Netzwerke und andere Datenaggregations-Apps können alle Anlagen oder Verknüpfungen zu Durchläufen haben.
 
 Das gesamte Ökosystem sieht Komplex aus. es ist also erwähnenswert, dass einige Komponenten optional sind und viel einfachere passkit-Implementierungen möglich sind.
 
@@ -69,11 +69,11 @@ Ein Durchlauf ist eine Sammlung von Daten, die ein Ticket, einen Coupon oder ein
 
 Derzeit werden fünf unterstützte Typen unterstützt, die in der Wallet-app durch Layout und oberen Rand des Durchlauf unterschieden werden können:
 
--  **Ereignis Ticket** – kleiner semizirkel Ausschnitt.
--   Das **Boarding von Pass** – gibt an, dass ein Transport spezifisches Symbol angegeben werden kann (z. b. Bus, Train, Flugzeug).
--   **Store Card** – abgerundet, wie z. b. eine Kredit-oder Debitkarte.
--  **Coupon** – am oberen Rand.
--  **Generisch** – identisch mit der Speicherkarte, gerundet.
+- **Ereignis Ticket** – kleiner semizirkel Ausschnitt.
+- Das **Boarding von Pass** – gibt an, dass ein Transport spezifisches Symbol angegeben werden kann (z. b. Bus, Train, Flugzeug).
+- **Store Card** – abgerundet, wie z. b. eine Kredit-oder Debitkarte.
+- **Coupon** – am oberen Rand.
+- **Generisch** – identisch mit der Speicherkarte, gerundet.
 
 
 Die fünf Pass Typen sind in diesem Screenshot dargestellt (in der folgenden Reihenfolge: Coupon, generisch, Store Card, Boarding Pass und Ereignis Ticket):
@@ -84,13 +84,13 @@ Die fünf Pass Typen sind in diesem Screenshot dargestellt (in der folgenden Rei
 
 Eine Pass Datei ist tatsächlich ein ZIP-Archiv mit der Erweiterung **. pkpass** , das einige bestimmte JSON-Dateien (erforderlich), eine Vielzahl von Bilddateien (optional) und lokalisierte Zeichen folgen (auch optional) enthält.
 
--   " **Pass. JSON** " – erforderlich. Enthält alle Informationen für den Durchlauf.
--   **Manifest. JSON** – erforderlich. Enthält SHA1-Hashes für jede Datei im Durchlauf außer der Signatur Datei und dieser Datei (Manifest. Json).
--   **Signatur** – erforderlich. Wird erstellt, indem `manifest.json` die Datei mit dem Zertifikat signiert wird, das im IOS-Bereitstellungs Portal generiert wurde.
--  **Logo. png** – optional.
--  **Background. png** – optional.
--  **Icon. png** – optional.
--  **Lokalisier** bare Zeichen folgen Dateien – optional.
+- " **Pass. JSON** " – erforderlich. Enthält alle Informationen für den Durchlauf.
+- **Manifest. JSON** – erforderlich. Enthält SHA1-Hashes für jede Datei im Durchlauf außer der Signatur Datei und dieser Datei (Manifest. Json).
+- **Signatur** – erforderlich. Wird erstellt, indem `manifest.json` die Datei mit dem Zertifikat signiert wird, das im IOS-Bereitstellungs Portal generiert wurde.
+- **Logo. png** – optional.
+- **Background. png** – optional.
+- **Icon. png** – optional.
+- **Lokalisier** bare Zeichen folgen Dateien – optional.
 
 Die Verzeichnisstruktur einer Pass Datei ist unten dargestellt (Dies ist der Inhalt des ZIP-Archivs):
 
@@ -100,9 +100,9 @@ Die Verzeichnisstruktur einer Pass Datei ist unten dargestellt (Dies ist der Inh
 
 JSON ist das Format, da Pass-in der Regel auf einem Server erstellt werden – dies bedeutet, dass der Generierungs Code auf dem Server plattformunabhängig ist. Die drei wichtigsten Informationen in jedem Durchlauf sind:
 
--   **teamidentifier** – Hiermit werden alle von Ihnen an Ihr App Store-Konto generierten weitergeleitet. Dieser Wert ist im IOS-Bereitstellungs Portal sichtbar.
--   **passtypeidentifier** – registrieren Sie sich im Bereitstellungs Portal, um Pass-by-Gruppen zu gruppieren (wenn Sie mehr als einen Typ entwickeln). Beispielsweise könnte ein Coffee Store einen Pass-Card-Passtyp erstellen, damit Ihre Kunden Treue Gutschriften erhalten können, aber auch einen separaten Coupon passentyp zum Erstellen und Verteilen von Rabattcoupons. Der gleiche Kaffeehandel hält sogar Live Musikereignisse und gibt Ereignis Ticket Pass für diese aus.
--   **serialNumber** – eine eindeutige Zeichenfolge in `passTypeidentifier` diesem. Der Wert ist für Wallet nicht transparent, aber wichtig für die Nachverfolgung spezifischer Durchgänge bei der Kommunikation mit dem Server.
+- **teamidentifier** – Hiermit werden alle von Ihnen an Ihr App Store-Konto generierten weitergeleitet. Dieser Wert ist im IOS-Bereitstellungs Portal sichtbar.
+- **passtypeidentifier** – registrieren Sie sich im Bereitstellungs Portal, um Pass-by-Gruppen zu gruppieren (wenn Sie mehr als einen Typ entwickeln). Beispielsweise könnte ein Coffee Store einen Pass-Card-Passtyp erstellen, damit Ihre Kunden Treue Gutschriften erhalten können, aber auch einen separaten Coupon passentyp zum Erstellen und Verteilen von Rabattcoupons. Der gleiche Kaffeehandel hält sogar Live Musikereignisse und gibt Ereignis Ticket Pass für diese aus.
+- **serialNumber** – eine eindeutige Zeichenfolge in `passTypeidentifier` diesem. Der Wert ist für Wallet nicht transparent, aber wichtig für die Nachverfolgung spezifischer Durchgänge bei der Kommunikation mit dem Server.
 
 Es gibt eine große Anzahl von anderen JSON-Schlüsseln in jedem Durchlauf, ein Beispiel, das unten dargestellt wird:
 
@@ -199,10 +199,10 @@ Das Übersetzen eines Pass-Through in mehrere Sprachen ähnelt dem Lokalisieren 
 
 Pässe werden mit einem privaten Zertifikat signiert, das Sie im IOS-Bereitstellungs Portal generieren. Die Schritte zum Signieren des bestanden lauten wie folgt:
 
-1.  Berechnen Sie einen SHA1-Hash für jede Datei im Pass-Verzeichnis (schließen Sie `manifest.json` weder `signature` die-Datei noch die-Datei ein, die in dieser Phase überhaupt nicht vorhanden sein sollte).
-1.  Schreiben `manifest.json` Sie als JSON-Schlüssel-Wert-Liste jedes Datei namens mit dem Hashwert.
-1.  Verwenden Sie das Zertifikat, um `manifest.json` die Datei zu signieren, und schreiben Sie `signature` das Ergebnis in eine Datei namens.
-1.  Packen Sie alles nach oben, und übergeben Sie der `.pkpass` resultierenden Datei eine Dateierweiterung.
+1. Berechnen Sie einen SHA1-Hash für jede Datei im Pass-Verzeichnis (schließen Sie `manifest.json` weder `signature` die-Datei noch die-Datei ein, die in dieser Phase überhaupt nicht vorhanden sein sollte).
+1. Schreiben `manifest.json` Sie als JSON-Schlüssel-Wert-Liste jedes Datei namens mit dem Hashwert.
+1. Verwenden Sie das Zertifikat, um `manifest.json` die Datei zu signieren, und schreiben Sie `signature` das Ergebnis in eine Datei namens.
+1. Packen Sie alles nach oben, und übergeben Sie der `.pkpass` resultierenden Datei eine Dateierweiterung.
 
 
 Da der private Schlüssel erforderlich ist, um den Durchlauf zu signieren, sollte dieser Vorgang nur auf einem sicheren Server durchgeführt werden, den Sie steuern. Verteilen Sie Ihre Schlüssel nicht zum Testen und Generieren von Durchläufen in einer Anwendung.
@@ -216,8 +216,8 @@ Dieser Abschnitt enthält Anweisungen, mit denen Sie Ihre Bereitstellungs Detail
 
 Damit ein Pass in den App Store eingegeben werden kann, muss er mit einem Entwicklerkonto verknüpft werden. Hierfür sind zwei Schritte erforderlich:
 
-1.  Der Durchlauf muss mithilfe eines eindeutigen Bezeichners registriert werden, der als Passtyp-ID bezeichnet wird.
-1.  Ein gültiges Zertifikat muss generiert werden, um den Durchlauf mit der digitalen Signatur des Entwicklers zu signieren.
+1. Der Durchlauf muss mithilfe eines eindeutigen Bezeichners registriert werden, der als Passtyp-ID bezeichnet wird.
+1. Ein gültiges Zertifikat muss generiert werden, um den Durchlauf mit der digitalen Signatur des Entwicklers zu signieren.
 
 Gehen Sie folgendermaßen vor, um eine Passtyp-ID zu erstellen.
 
@@ -227,23 +227,23 @@ Der erste Schritt besteht darin, eine Passtyp-ID für jeden unterstützten _Typ_
 
 1. Navigieren Sie im [IOS-Bereitstellungs Portal im Abschnitt Zertifikate, Bezeichner und Profile](https://developer.apple.com/account/overview.action)zu **Identifizierer** , und wählen Sie **Passtyp-IDs** aus. Wählen Sie dann **+** die Schaltfläche aus, um einen neuen Passtyp zu erstellen: [![](passkit-images/passid.png "Neuen Passtyp erstellen")](passkit-images/passid.png#lightbox)
 
-2.   Geben Sie eine **Beschreibung** (Name) und einen Bezeichner (eindeutige Zeichenfolge) für den Durchlauf an. Beachten Sie, dass alle Pass-Type-IDs mit `pass.` der Zeichenfolge beginnen müssen `pass.com.xamarin.coupon.banana` , die wir in diesem Beispiel verwenden: [![](passkit-images/register.png "Angeben einer Beschreibung und eines Bezeichners")](passkit-images/register.png#lightbox)
+2. Geben Sie eine **Beschreibung** (Name) und einen Bezeichner (eindeutige Zeichenfolge) für den Durchlauf an. Beachten Sie, dass alle Pass-Type-IDs mit `pass.` der Zeichenfolge beginnen müssen `pass.com.xamarin.coupon.banana` , die wir in diesem Beispiel verwenden: [![](passkit-images/register.png "Angeben einer Beschreibung und eines Bezeichners")](passkit-images/register.png#lightbox)
 
 
-3.   Bestätigen Sie die Pass-ID durch Drücken der Schaltfläche **registrieren** .
+3. Bestätigen Sie die Pass-ID durch Drücken der Schaltfläche **registrieren** .
 
 #### <a name="generate-a-certificate"></a>Generieren eines Zertifikats
 
 Gehen Sie folgendermaßen vor, um ein neues Zertifikat für diese Passtyp-ID zu erstellen:
 
-1.  Wählen Sie die neu erstellte Pass-ID aus der Liste aus, und klicken Sie auf **Bearbeiten** : [![](passkit-images/pass-done.png "Wählen Sie die neue Pass-ID aus der Liste aus.")](passkit-images/pass-done.png#lightbox)
+1. Wählen Sie die neu erstellte Pass-ID aus der Liste aus, und klicken Sie auf **Bearbeiten** : [![](passkit-images/pass-done.png "Wählen Sie die neue Pass-ID aus der Liste aus.")](passkit-images/pass-done.png#lightbox)
 
     Klicken Sie dann auf **Zertifikat erstellen...** :
 
     [![](passkit-images/cert-dist.png "Wählen Sie Zertifikat erstellen.")](passkit-images/cert-dist.png#lightbox)
 
 
-2.  Befolgen Sie die Schritte zum Erstellen einer Zertifikat Signier Anforderung (Certificate Signing Request, CSR).
+2. Befolgen Sie die Schritte zum Erstellen einer Zertifikat Signier Anforderung (Certificate Signing Request, CSR).
   
 3. Klicken Sie im Entwickler Portal auf die Schaltfläche **weiter** , und laden Sie die CSR hoch, um Ihr Zertifikat zu generieren.
 
@@ -258,12 +258,12 @@ Weitere Informationen zur Bereitstellung für Wallet finden Sie im Handbuch [Arb
 
 Nachdem wir den Passtyp erstellt haben, können wir manuell einen Durchlauf zum Testen auf dem Simulator oder auf einem Gerät erstellen. Die Schritte zum Erstellen eines bestanden sind:
 
--  Erstellen Sie ein Verzeichnis, in dem die Pass Dateien enthalten sein sollen.
--  Erstellen Sie eine Datei "Pass. JSON", die alle erforderlichen Daten enthält.
--  Schließt Bilder in den Ordner ein (falls erforderlich).
--  Berechnen Sie SHA1-Hashes für jede Datei im Ordner, und schreiben Sie Sie in "Manifest. JSON".
--  Signieren Sie die Datei Manifest. JSON mit der heruntergeladenen Datei Certificate. P12.
--  Zippen Sie den Inhalt des Verzeichnisses, und benennen Sie ihn mit der Erweiterung. pkpass um
+- Erstellen Sie ein Verzeichnis, in dem die Pass Dateien enthalten sein sollen.
+- Erstellen Sie eine Datei "Pass. JSON", die alle erforderlichen Daten enthält.
+- Schließt Bilder in den Ordner ein (falls erforderlich).
+- Berechnen Sie SHA1-Hashes für jede Datei im Ordner, und schreiben Sie Sie in "Manifest. JSON".
+- Signieren Sie die Datei Manifest. JSON mit der heruntergeladenen Datei Certificate. P12.
+- Zippen Sie den Inhalt des Verzeichnisses, und benennen Sie ihn mit der Erweiterung. pkpass um
 
 
 Im [Beispielcode](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) für diesen Artikel sind einige Quelldateien vorhanden, die verwendet werden können, um einen Durchlauf zu generieren. Verwenden Sie die Dateien im `CouponBanana.raw` Verzeichnis des Verzeichnisses "kreateapassmanual". Die folgenden Dateien sind vorhanden:
@@ -315,12 +315,12 @@ Wallet ist der zentrale Bestandteil des passkit-Ökosystems. Dieser Screenshot z
 
 Zu den Features von Wallet gehören:
 
--  Es ist die einzige Stelle, an der die Überprüfungen mit Ihrem Barcode zum Scannen gerendert werden.
--  Der Benutzer kann die Einstellungen für Updates ändern. Wenn diese Option aktiviert ist, können Pushbenachrichtigungen Updates der Daten im Durchlauf auslöst.
--  Der Benutzer kann die Integration per Lock-Screen aktivieren oder deaktivieren. Wenn diese Option aktiviert ist, kann der Durchlauf automatisch auf dem Sperrbildschirm angezeigt werden, basierend auf relevanten Zeit-und Positionsdaten, die in den Durchlauf eingebettet sind.
--  Die umgekehrte Seite des Pass-to-refresh-Vorgangs unterstützt Pull-to-refresh, wenn eine Web-Server-URL im Pass-JSON-Code bereitgestellt wird.
--  Begleit-Apps können geöffnet (oder heruntergeladen) werden, wenn die APP-ID im Pass-JSON-Code bereitgestellt wird.
--  Durchgänge können gelöscht werden (mit einer süßen Animation).
+- Es ist die einzige Stelle, an der die Überprüfungen mit Ihrem Barcode zum Scannen gerendert werden.
+- Der Benutzer kann die Einstellungen für Updates ändern. Wenn diese Option aktiviert ist, können Pushbenachrichtigungen Updates der Daten im Durchlauf auslöst.
+- Der Benutzer kann die Integration per Lock-Screen aktivieren oder deaktivieren. Wenn diese Option aktiviert ist, kann der Durchlauf automatisch auf dem Sperrbildschirm angezeigt werden, basierend auf relevanten Zeit-und Positionsdaten, die in den Durchlauf eingebettet sind.
+- Die umgekehrte Seite des Pass-to-refresh-Vorgangs unterstützt Pull-to-refresh, wenn eine Web-Server-URL im Pass-JSON-Code bereitgestellt wird.
+- Begleit-Apps können geöffnet (oder heruntergeladen) werden, wenn die APP-ID im Pass-JSON-Code bereitgestellt wird.
+- Durchgänge können gelöscht werden (mit einer süßen Animation).
 
 ## <a name="adding-passes-into-wallet"></a>Hinzufügen von Pass in Wallet
 
@@ -334,9 +334,9 @@ Pässe können auf folgende Weise zu Wallet hinzugefügt werden:
 
 Bei Kanal Anwendungen handelt es sich um zwischengeschaltete apps, die im Auftrag eines Benutzers weitergeleitet werden und so programmiert werden müssen, dass Sie Ihren Inhaltstyp erkennen und Funktionen bereitstellen, die der Wallet hinzugefügt werden. Beispiele für Kanal-apps sind:
 
--   **Mail** – erkennt Anlage als Pass.
--   **Safari** – erkennt den Pass Content-Type, wenn auf einen Pass-URL-Link geklickt wird.
--   **Andere benutzerdefinierte apps** – jede APP, die Anlagen oder offene Links (Social Media-Clients, e-Mail-Reader usw.) empfängt.
+- **Mail** – erkennt Anlage als Pass.
+- **Safari** – erkennt den Pass Content-Type, wenn auf einen Pass-URL-Link geklickt wird.
+- **Andere benutzerdefinierte apps** – jede APP, die Anlagen oder offene Links (Social Media-Clients, e-Mail-Reader usw.) empfängt.
 
 
 Dieser Screenshot zeigt, wie **e-Mail** in ios 6 eine Pass-Anlage erkennt und (wenn Sie berührt) Angebote zum **Hinzufügen zur Wallet hinzufügen** können.
@@ -347,9 +347,9 @@ Dieser Screenshot zeigt, wie **e-Mail** in ios 6 eine Pass-Anlage erkennt und (w
 
 Wenn Sie eine App entwickeln, die möglicherweise ein Kanal für Durchgänge ist, können Sie wie folgt erkannt werden:
 
--  **Dateierweiterung** -. pkpass
--  **MIME-Typ** -application/vnd. Apple. pkpass
--  **UTI** – com. Apple. pkpass
+- **Dateierweiterung** -. pkpass
+- **MIME-Typ** -application/vnd. Apple. pkpass
+- **UTI** – com. Apple. pkpass
 
 
 Der grundlegende Vorgang einer Kanal Anwendung besteht darin, die Pass- `PKAddPassesViewController` Datei abzurufen und passkit aufzurufen, um dem Benutzer die Möglichkeit zu geben, den Pass der Geldbörse hinzuzufügen. Die Implementierung dieses Ansichts Controllers wird im nächsten Abschnitt zu begleitenden **Anwendungen**behandelt.
@@ -419,10 +419,10 @@ dann ist `pass-type-identifiers` das Berechtigungs Array falsch (oder stimmt nic
 
 Die folgenden passkit-Klassen sind für apps verfügbar, die auf Durchläufen zugreifen:
 
--  **Pkpass** – eine Instanz eines bestanden.
--  **Pkpasslibrary** – stellt die API für den Zugriff auf die Passungen auf dem Gerät bereit.
--  **Pkaddpassesviewcontroller** – wird verwendet, um einen Durchlauf anzuzeigen, den der Benutzer in seinem Wallet speichern soll.
--  **Pkaddpassesviewcontrollerdelegat** – xamarin. IOS-Entwickler
+- **Pkpass** – eine Instanz eines bestanden.
+- **Pkpasslibrary** – stellt die API für den Zugriff auf die Passungen auf dem Gerät bereit.
+- **Pkaddpassesviewcontroller** – wird verwendet, um einen Durchlauf anzuzeigen, den der Benutzer in seinem Wallet speichern soll.
+- **Pkaddpassesviewcontrollerdelegat** – xamarin. IOS-Entwickler
 
 ## <a name="example"></a>Beispiel
 

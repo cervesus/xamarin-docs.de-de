@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b0e540bdcdf061f64880ea961a5e07a0a45b22e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642915"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887485"
 ---
 # <a name="maps-in-xamarinios"></a>Zuordnungen in xamarin. IOS
 
@@ -28,28 +28,30 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView`ist eine `UIView` Unterklasse, die eine Karte anzeigt. Durch einfaches Hinzufügen der Zuordnung mit dem obigen Code wird eine interaktive Karte erzeugt:
+`MKMapView`ist eine `UIView` Unterklasse, die eine Karte anzeigt. Durch einfaches Hinzufügen der Zuordnung mit dem obigen Code wird eine interaktive Karte erzeugt:
 
- ![](images/00-map.png "Eine Beispiel Zuordnung")
+![](images/00-map.png "Eine Beispiel Zuordnung")
 
 ## <a name="map-style"></a>Karten Stil
 
- `MKMapView`unterstützt drei verschiedene Arten von Karten. Um einen Karten Stil anzuwenden, legen Sie einfach `MapType` die-Eigenschaft auf einen Wert `MKMapType` aus der-Enumeration fest:
- ```
+`MKMapView`unterstützt drei verschiedene Arten von Karten. Um einen Karten Stil anzuwenden, legen Sie einfach `MapType` die-Eigenschaft auf einen Wert `MKMapType` aus der-Enumeration fest:
+
+```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
- ```
-  Der folgende Screenshot zeigt die verschiedenen verfügbaren Karten Stile:
+```
 
- ![](images/01-mapstyles.png "Dieser Screenshot zeigt die verschiedenen verfügbaren Karten Stile.")
+Der folgende Screenshot zeigt die verschiedenen verfügbaren Karten Stile:
+
+![](images/01-mapstyles.png "Dieser Screenshot zeigt die verschiedenen verfügbaren Karten Stile.")
 
 ## <a name="panning-and-zooming"></a>Schwenken und Zoomen
 
- `MKMapView`bietet Unterstützung für Funktionen der Karten Interaktivität wie z. b.:
+`MKMapView`bietet Unterstützung für Funktionen der Karten Interaktivität wie z. b.:
 
--  Zoomen über eine Pinsel Bewegung
--  Schwenken über eine schwenken-Geste
+- Zoomen über eine Pinsel Bewegung
+- Schwenken über eine schwenken-Geste
 
 
 Diese Funktionen können aktiviert oder deaktiviert werden, indem einfach die `ZoomEnabled` - `ScrollEnabled` Eigenschaft und die `MKMapView` -Eigenschaft der-Instanz festgelegt werden, wobei der Standardwert für beide "true" ist. Wenn Sie z. b. eine statische Karte anzeigen möchten, legen Sie einfach die entsprechenden Eigenschaften auf false fest:
@@ -96,8 +98,8 @@ map.ShowsUserLocation = true;
 
 Eine Anmerkung selbst besteht aus zwei Teilen:
 
--  Das `MKAnnotation` -Objekt, das Modelldaten zur Anmerkung enthält, z. b. den Titel und den Speicherort der Anmerkung.
--  Der `MKAnnotationView` , der das anzuzeigende Bild und optional eine Legende enthält, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt.
+- Das `MKAnnotation` -Objekt, das Modelldaten zur Anmerkung enthält, z. b. den Titel und den Speicherort der Anmerkung.
+- Der `MKAnnotationView` , der das anzuzeigende Bild und optional eine Legende enthält, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt.
 
 
 Das Map-Kit verwendet das IOS-Delegierungs Muster, um Anmerkungen zu einer Zuordnung `Delegate` hinzuzufügen, `MKMapView` wobei die-Eigenschaft des `MKMapViewDelegate`auf eine Instanz von festgelegt ist. Es handelt sich um die Implementierung dieses Delegaten, die für `MKAnnotationView` die Rückgabe von für eine Anmerkung zuständig ist.
@@ -177,9 +179,9 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 Eine andere Möglichkeit zur ebenengrafik auf einer Karte ist die Verwendung von Überlagerungen. Überlagerungen unterstützen das Zeichnen grafischer Inhalte, die beim Zoomen mit der Karte skaliert werden. IOS bietet Unterstützung für verschiedene Arten von Überlagerungen, einschließlich:
 
--  Polygone: wird häufig verwendet, um einen Bereich auf einer Karte hervorzuheben.
--  Polylines: wird häufig angezeigt, wenn eine Route angezeigt wird.
--  Kreise: wird verwendet, um einen kreisförmigen Bereich einer Karte hervorzuheben.
+- Polygone: wird häufig verwendet, um einen Bereich auf einer Karte hervorzuheben.
+- Polylines: wird häufig angezeigt, wenn eine Route angezeigt wird.
+- Kreise: wird verwendet, um einen kreisförmigen Bereich einer Karte hervorzuheben.
 
 
 Darüber hinaus können benutzerdefinierte Überlagerungen erstellt werden, um beliebige Geometrien mit granulartem, angepassten Zeichencode anzuzeigen. Beispielsweise wäre das Wetterradar ein guter Kandidat für eine benutzerdefinierte Überlagerung.
@@ -188,8 +190,8 @@ Darüber hinaus können benutzerdefinierte Überlagerungen erstellt werden, um b
 
 Ähnlich wie bei Anmerkungen umfasst das Hinzufügen einer Überlagerung zwei Teile:
 
--  Erstellen eines Modell Objekts für das Overlay und Hinzufügen des `MKMapView` Objekts zum.
--  Erstellen einer Ansicht für die Überlagerung in `MKMapViewDelegate` .
+- Erstellen eines Modell Objekts für das Overlay und Hinzufügen des `MKMapView` Objekts zum.
+- Erstellen einer Ansicht für die Überlagerung in `MKMapViewDelegate` .
 
 
 Das Modell für die Überlagerung kann eine `MKShape` beliebige Unterklasse sein. Xamarin. IOS enthält `MKShape` Unterklassen für Polygone, Polylinien und Kreise über die `MKPolygon`Klassen, `MKPolyline` und `MKCircle` .
@@ -225,10 +227,10 @@ IOS enthält eine lokale Such-API mit dem Map-Kit, mit der asynchrone Such Punkt
 
 Um eine lokale Suche auszuführen, muss eine Anwendung die folgenden Schritte ausführen:
 
-1.  Erstellen `MKLocalSearchRequest` Sie ein Objekt.
-1.  Erstellen Sie `MKLocalSearch` ein-Objekt `MKLocalSearchRequest` aus der.
-1.  Ruft die `Start` -Methode für `MKLocalSearch` das-Objekt auf.
-1.  Rufen Sie `MKLocalSearchResponse` das-Objekt in einem Rückruf ab.
+1. Erstellen `MKLocalSearchRequest` Sie ein Objekt.
+1. Erstellen Sie `MKLocalSearch` ein-Objekt `MKLocalSearchRequest` aus der.
+1. Ruft die `Start` -Methode für `MKLocalSearch` das-Objekt auf.
+1. Rufen Sie `MKLocalSearchResponse` das-Objekt in einem Rückruf ab.
 
 
 Die lokale Such-API selbst stellt keine Benutzeroberfläche bereit. Es ist nicht einmal erforderlich, eine Karte zu verwenden. Um jedoch eine praktische Verwendung der lokalen Suche zu ermöglichen, muss eine Anwendung eine bestimmte Möglichkeit bieten, eine Suchabfrage anzugeben und Ergebnisse anzuzeigen. Da die Ergebnisse auch Speicherort Daten enthalten, ist es häufig sinnvoll, Sie auf einer Karte anzuzeigen.

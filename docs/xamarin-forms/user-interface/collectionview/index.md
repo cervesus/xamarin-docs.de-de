@@ -1,43 +1,47 @@
 ---
-title: Xamarin.Forms CollectionView
-description: Die CollectionView ist eine flexible und leistungsfähige Ansicht zur Darstellung von Listen mit Daten, die mit anderen Layout-Spezifikationen.
+title: Xamarin. Forms CollectionView
+description: Die CollectionView ist eine flexible und leistungsfähige Ansicht für die Darstellung von Listen mit Daten mithilfe unterschiedlicher layoutspezifikationen.
 ms.prod: xamarin
 ms.assetid: 2BC9B223-2D5C-4B09-849C-B9D578954557
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 79af2bb2ecda8d3d8df9ee9ec40276b0c59b6864
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 07/24/2019
+ms.openlocfilehash: b3841ed1287c980212ce37078f38f4984393c414
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005317"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888591"
 ---
-# <a name="xamarinforms-collectionview"></a>Xamarin.Forms CollectionView
+# <a name="xamarinforms-collectionview"></a>Xamarin. Forms CollectionView
 
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
 ## <a name="introductionintroductionmd"></a>[Introduction (Einführung)](introduction.md)
 
-Die [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) ist eine flexible und leistungsfähige Ansicht zur Darstellung von Listen mit Daten, die mit anderen Layout-Spezifikationen.
+Der [`CollectionView`](xref:Xamarin.Forms.CollectionView) ist eine flexible und leistungsfähige Ansicht für die Darstellung von Listen mit Daten mit unterschiedlichen layoutspezifikationen.
 
-## <a name="datapopulate-datamd"></a>[Data](populate-data.md)
+## <a name="datapopulate-datamd"></a>[Daten](populate-data.md)
 
-Ein [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) mit Daten aufgefüllt wird, durch Festlegen seiner [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft, um eine beliebige Sammlung, die implementiert `IEnumerable`. Die Darstellung der einzelnen Elemente in der Liste definiert werden, indem Sie die Einstellung der [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate) Eigenschaft, um eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate).
+Ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) wird mit Daten aufgefüllt, indem seine [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) -Eigenschaft auf eine beliebige Auflistung `IEnumerable`festgelegt wird, die implementiert. Die Darstellung der einzelnen Elemente in der Liste kann definiert werden [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), indem die-Eigenschaft auf festgelegt wird.
 
 ## <a name="layoutlayoutmd"></a>[Layout](layout.md)
 
-Standardmäßig eine [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) werden die Elemente in einer vertikalen Liste angezeigt. Allerdings können vertikale und horizontale Listen und Raster angegeben werden.
+Standardmäßig [`CollectionView`](xref:Xamarin.Forms.CollectionView) werden die Elemente in einer vertikalen Liste angezeigt. Es können jedoch vertikale und horizontale Listen und Raster angegeben werden.
 
 ## <a name="selectionselectionmd"></a>[Auswahl](selection.md)
 
-In der Standardeinstellung [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) Auswahl ist deaktiviert. Allerdings kann die Auswahl von einzelnen und mehreren aktiviert werden.
+Die [`CollectionView`](xref:Xamarin.Forms.CollectionView) Auswahl ist standardmäßig deaktiviert. Die Auswahl von einzeln und mehrfach kann jedoch aktiviert werden.
 
 ## <a name="empty-viewsemptyviewmd"></a>[Leere Ansichten](emptyview.md)
 
-In [ `CollectionView` ](xref:Xamarin.Forms.CollectionView), eine leere Ansicht kann angegeben werden, Feedback an den Benutzer bereitstellt, wenn keine Daten für die Anzeige verfügbar sind. Die leere Sicht kann es sich um eine Zeichenfolge, eine Sicht oder mehrere Ansichten sein.
+In [`CollectionView`](xref:Xamarin.Forms.CollectionView)kann eine leere Ansicht angegeben werden, die dem Benutzer Feedback bietet, wenn keine Daten zur Anzeige verfügbar sind. Die leere Ansicht kann eine Zeichenfolge, eine Ansicht oder mehrere Ansichten sein.
 
 ## <a name="scrollingscrollingmd"></a>[Scrollen](scrolling.md)
 
-Wenn ein Benutzer Kundenkarte ein Scrollen zu initiieren, kann die Endposition des Bildlaufs gesteuert werden, damit Elemente vollständig angezeigt werden. Darüber hinaus [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) definiert zwei [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden, die programmgesteuert Elemente in der Ansicht zu scrollen. Eine der Überladungen führt einen Bildlauf durch das Element am angegebenen Index in der Ansicht, während die andere das angegebene Element in der Ansicht einen Bildlauf durchführt.
+Wenn ein Benutzer einen Bildlauf initiiert, kann die Endposition des Bildlaufs gesteuert werden, sodass Elemente vollständig angezeigt werden. Außerdem [`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert zwei [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden, die Elemente Programm gesteuert in die Ansicht scrollen. Eine der-über Ladungen führt einen Bildlauf für das Element am angegebenen Index durch, während der andere das angegebene Element in die Ansicht verschiebt.
+
+## <a name="groupinggroupingmd"></a>[Gruppierung](grouping.md)
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)kann ordnungsgemäß gruppierte Daten anzeigen, `IsGrouped` indem Sie `true`die-Eigenschaft auf festlegen.

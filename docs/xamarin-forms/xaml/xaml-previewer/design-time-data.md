@@ -1,26 +1,26 @@
 ---
-title: Verwenden von Entwurfszeitdaten zu benötigen mit dem XAML-Vorschau
-description: In diesem Artikel wird erläutert, wie Entwurfszeitdaten zu verwenden, um Daten mit hohem Layouts in der XAML-Vorschau anzuzeigen, ohne die app ausgeführt wird.
+title: Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
+description: In diesem Artikel wird erläutert, wie Entwurfszeit Daten verwendet werden, um datenintensive Layouts in der XAML-Vorschau anzuzeigen, ohne Ihre APP ausführen zu müssen.
 ms.prod: xamarin
 ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 60074c3c1b69a57d313ad0243246ba6db93dde3d
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557432"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887854"
 ---
-# <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeitdaten zu benötigen mit dem XAML-Vorschau
+# <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
 
-_Einige Layouts sind schwierig, ohne Daten zu visualisieren. Verwenden Sie diese Tipps, um die optimale Nutzung der Vorschau Ihrer Daten mit hohem Seiten in der XAML-Vorschau machen._
+_Einige Layouts sind schwierig zu visualisieren, ohne dass Daten vorliegen. Verwenden Sie diese Tipps, um die Vorschau der datenintensiven Seiten im XAML-Previewer optimal zu nutzen._
 
-## <a name="design-time-data-basics"></a>Entwerfen Sie Time Data-Grundlagen
+## <a name="design-time-data-basics"></a>Grundlagen zur Entwurfszeit Daten
 
-Entwurfszeitdaten ist gefälschten Daten, die Sie festlegen, um die Steuerelemente zur Visualisierung in der XAML-Vorschau zu erleichtern. Fügen Sie zunächst mit dem Header der XAML-Seite die folgenden Codezeilen hinzu:
+Entwurfszeit Daten sind gefälschte Daten, die Sie festlegen, um die Visualisierung Ihrer Steuerelemente im XAML-Previewer zu vereinfachen. Fügen Sie zunächst dem Header der XAML-Seite die folgenden Codezeilen hinzu:
 
 ```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -28,40 +28,41 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-Sie können nach dem Hinzufügen von Namespaces, Ablegen `d:` vor jedes Attribut und das Steuerelement, um sie in der XAML-Vorschau anzuzeigen. Elemente mit `d:` werden nicht zur Laufzeit angezeigt.
+Nachdem Sie die Namespaces hinzugefügt haben, `d:` können Sie ein beliebiges Attribut oder Steuerelement einfügen, um es im XAML-Previewer anzuzeigen. Elemente mit `d:` werden zur Laufzeit nicht angezeigt.
 
-Beispielsweise können Sie Text in eine Bezeichnung hinzufügen, die an sie gebundene Daten in der Regel verfügt.
+Beispielsweise können Sie Text zu einer Bezeichnung hinzufügen, die normalerweise an Sie gebunden ist.
 
 ```xaml
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![Entwerfen von Uhrzeitdaten mit Text in eine Bezeichnung](xaml-previewer-images/designtimedata-label-sm.png "Design time Daten mit eine Bezeichnung")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![Entwerfen von Zeit Daten mit Text in einer Bezeichnung](xaml-previewer-images/designtimedata-label-sm.png "Entwerfen von Zeit Daten mit Text Bezeichnung")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-In diesem Beispiel ohne `d:Text`, die XAML-Vorschau wird mit "nothing" für die Bezeichnung angezeigt. Stattdessen zeigt es "Name". in dem die Bezeichnung um echte Daten zur Laufzeit hat.
+In diesem Beispiel `d:Text`zeigt der XAML-Previewer keine für die Bezeichnung an. Stattdessen wird "Name!" angezeigt. Dabei enthält die Bezeichnung echte Daten zur Laufzeit.
 
-Sie können `d:` mit einem beliebigen Attribut für eine Xamarin.Forms-Steuerelements, wie Farben und Schriftgrade Ihren Bedürfnissen entsprechend Abstand. Sie können auch auf das Steuerelement selbst hinzufügen:
+Sie können mit `d:` jedem-Attribut für ein xamarin. Forms-Steuerelement verwenden, wie z. b. Farben, Schriftgrößen und Abstände. Sie können Sie sogar dem Steuerelement selbst hinzufügen:
 
 ```xaml
 <d:Button Text="Design Time Button" />
 ```
 
-[![Entwerfen von Uhrzeitdaten mit einem Schaltflächen-Steuerelement](xaml-previewer-images/designtimedata-controls-sm.png "Entwerfen von Uhrzeitdaten mit einem Schaltflächen-Steuerelement")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![Entwerfen von Zeit Daten mit einem Schalt] Flächen-Steuerelement (xaml-previewer-images/designtimedata-controls-sm.png "Entwerfen von Zeit Daten mit einem Schalt") Flächen-Steuerelement](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
-In diesem Beispiel wird die Schaltfläche nur zur Entwurfszeit angezeigt. Mit dieser Methode können Sie einen Platzhalter in für put ein [benutzerdefiniertes Steuerelement, die nicht von der XAML-Vorschau unterstützt](render-custom-controls.md).
+In diesem Beispiel wird die Schaltfläche nur zur Entwurfszeit angezeigt. Verwenden Sie diese Methode, um einen Platzhalter für ein benutzerdefiniertes Steuerelement zu platzieren, [das nicht von der XAML-Vorschau unterstützt wird](render-custom-controls.md).
 
-## <a name="preview-images-at-design-time"></a>Vorschaubilder zur Entwurfszeit
+## <a name="preview-images-at-design-time"></a>Anzeigen von Vorschaubildern zur Entwurfszeit
 
-Sie können eine Entwurfszeit-Quelle für Images festlegen, die auf der Seite gebunden oder dynamisch geladen werden. Fügen Sie im Android-Projekt, das Bild, das Sie in der XAML-Vorschau zum anzeigen möchten die **Ressourcen > Drawable** Ordner. Fügen Sie in Ihrem iOS-Projekt, das Bild, das die **Ressourcen** Ordner. Sie können dieses Image dann in der XAML-Vorschau zur Entwurfszeit anzeigen:
+Sie können eine Entwurfszeit Quelle für Bilder festlegen, die an die Seite gebunden sind oder dynamisch geladen werden. Fügen Sie in Ihrem Android-Projekt das Image, das Sie in der XAML-Vorschau anzeigen möchten, dem Ordner **Ressourcen > drawable** hinzu. Fügen Sie im IOS-Projekt das Image dem **Ressourcen** Ordner hinzu. Sie können dieses Bild dann zur Entwurfszeit im XAML-Previewer anzeigen:
 
 ```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
-[![Entwerfen von Uhrzeitdaten mit Bildern](xaml-previewer-images/designtimedata-image-sm.png "Zeitdaten mit Iamges entwerfen")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
-## <a name="design-time-data-for-listviews"></a>Die Entwurfszeitdaten für ListViews
+[![Entwerfen von Zeit Daten mit Bildern](xaml-previewer-images/designtimedata-image-sm.png "Entwerfen von Zeit Daten mit iamges")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
-Listenansichten sind ein beliebtes Verfahren zum Anzeigen von Daten in einer mobilen app. Sie sind jedoch schwierig, ohne sich um echte Daten zu visualisieren. Um Entwurfszeitdaten mit ihnen zu verwenden, müssen Sie ein Design Time Array die Verwendung als ItemsSource zu erstellen. Die XAML-Vorschau zeigt an, was in diesem Array in Ihre ListView zur Entwurfszeit ist.
+## <a name="design-time-data-for-listviews"></a>Entwurfszeit Daten für ListViews
+
+ListViews sind eine beliebte Methode zum Anzeigen von Daten in einem Mobile App. Allerdings ist es schwierig, ohne echte Daten visuell darzustellen. Wenn Sie Entwurfszeit Daten verwenden möchten, müssen Sie ein Entwurfszeit Array erstellen, das als ItemsSource verwendet werden kann. Der XAML-Previewer zeigt zur Entwurfszeit an, was in dem Array in der ListView steht.
 
 ```xaml
 <StackLayout>
@@ -83,26 +84,26 @@ Listenansichten sind ein beliebtes Verfahren zum Anzeigen von Daten in einer mob
 </StackLayout>
 ```
 
-[![Entwerfen von Uhrzeitdaten mit einer ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "entwerfen Zeitdaten mit einer ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![Entwerfen von Zeit Daten mit einer ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "Entwerfen von Zeit Daten mit einer ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-In diesem Beispiel wird eine von drei TextCells ListView, in der XAML-Vorschau angezeigt. Sie können ändern, `x:String` zu einem vorhandenen Datenmodell in Ihrem Projekt.
+In diesem Beispiel wird eine ListView mit drei textcells in der XAML-Vorschau angezeigt. Sie können zu `x:String` einem vorhandenen Datenmodell in Ihrem Projekt wechseln.
 
-Finden Sie unter [montemagnoss Hanselman.Forms app](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47) für ein etwas komplexeres Beispiel.
+Ein komplexeres Beispiel finden Sie in [der Hanselman. Forms-APP von James Montemagno](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47) .
 
-## <a name="alternative-hardcode-a-static-viewmodel"></a>Alternative: Hartcodierung einer statischen "ViewModel"
+## <a name="alternative-hardcode-a-static-viewmodel"></a>Alternative Hardcodieren eines statischen ViewModel
 
-Wenn Sie nicht Entwurfszeitdaten zu einzelnen Steuerelementen hinzufügen möchten, können Sie ein mock Datenspeicher zum Binden an Ihrer Seite einrichten. Finden Sie in der montemagnos [Blogbeitrag zum Hinzufügen von Entwurfszeitdaten](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) zu erfahren, wie Sie an einem statischen ViewModel in XAML zu binden.
+Wenn Sie keine Entwurfszeit Daten zu einzelnen Steuerelementen hinzufügen möchten, können Sie einen Mock-Datenspeicher einrichten, der an die Seite gebunden werden soll. Im Blogbeitrag von James Montemagno finden Sie Informationen zum [Hinzufügen von Entwurfszeit Daten](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) , um zu erfahren, wie Sie eine Bindung an ein statisches ViewModel in XAML erstellen.
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
 ### <a name="requirements"></a>Anforderungen
 
-Entwurfszeitdaten ist mindestens die Version von Xamarin.Forms-3.6.
+Entwurfszeit Daten erfordern mindestens eine Version von xamarin. Forms 3,6.
 
-### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense zeigt Wellenlinien unter meinem Entwurfszeitdaten zu benötigen
+### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense zeigt Wellenlinien unter meine Entwurfszeit Daten an
 
-Dies ist ein bekanntes Problem und wird in einer zukünftigen Version von Visual Studio behoben werden. Das Projekt wird weiterhin ohne Fehler erstellt.
+Dies ist ein bekanntes Problem und wird in einer zukünftigen Version von Visual Studio behoben. Das Projekt wird weiterhin fehlerfrei erstellt.
 
-### <a name="the-xaml-previewer-stopped-working"></a>Die XAML-Vorschau funktioniert nicht
+### <a name="the-xaml-previewer-stopped-working"></a>Der XAML-Previewer funktioniert nicht mehr.
 
-Versuchen Sie es schließen und erneuten Öffnen der XAML-Datei, und bereinigen und das Projekt erneut erstellen.
+Versuchen Sie, die XAML-Datei zu schließen und erneut zu öffnen, und bereinigen Sie das Projekt, und

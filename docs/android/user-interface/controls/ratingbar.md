@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 729daef1a7a003613bebc4f82067bc267dab8e00
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: de63a0f3f6564671a50594c66b55ed095329c95c
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522847"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887625"
 ---
 # <a name="xamarinandroid-ratingbar"></a>Xamarin. Android-ratingleiste
 
@@ -26,13 +26,14 @@ Eine ratingleiste ist ein UI-Widget, das eine Bewertung von einem bis fünf Ster
 1. Öffnen Sie die Datei " **Resource/Layout/Main. axml** ", und fügen Sie das[`RatingBar`](xref:Android.Widget.RatingBar)
    -Element (in [`LinearLayout`](xref:Android.Widget.LinearLayout)):
 
-    ```xml
-    <RatingBar android:id="@+id/ratingbar"
+   ```xml
+   <RatingBar android:id="@+id/ratingbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
             android:stepSize="1.0"/>
-    ```
+   ```
+
    Das `android:numStars` -Attribut definiert, wie viele Sterne für die Bewertungs Leiste angezeigt werden. Das `android:stepSize` -Attribut definiert die Granularität für jeden Stern (z. b., `0.5` wenn ein Wert von halb Stern Bewertungen zulässt).
 
 2. Um etwas zu tun, wenn eine neue Bewertung festgelegt wurde, fügen Sie den folgenden Code am Ende der[`OnCreate()`](xref:Android.App.Activity.OnCreate*)

@@ -6,13 +6,13 @@ ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 07/03/2019
-ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.date: 07/18/2019
+ms.openlocfilehash: 1f2ef838287e32df5df42f73e4b43816d618552d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658050"
+ms.locfileid: "69887887"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin. Forms-Schalter
 
@@ -26,8 +26,9 @@ Die folgenden Screenshots zeigen ein `Switch` Steuerelement in seinen **on** -un
 
 Das `Switch` -Steuerelement definiert zwei Eigenschaften:
 
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)ist eine `Color` , die sich darauf `Switch` auswirkt, wie das-Objekt im ein-oder ausgeschaltet wird.
 * [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)ein `boolean` Wert, der `Switch` angibt, ob **auf on**fest liegt.
+* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)ist eine `Color` , die sich darauf `Switch` auswirkt, wie das-Objekt im ein-oder ausgeschaltet wird.
+* `ThumbColor`ist der `Color` des Zieh Punkts.
 
 Diese Eigenschaften werden durch ein [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekt unterstützt. dies `Switch` bedeutet, dass formatiert werden kann und das Ziel von Daten Bindungen ist.
 
@@ -47,23 +48,24 @@ Ein `Switch` kann auch im Code erstellt werden:
 Switch switchControl = new Switch { IsToggled = true };
 ```
 
-### <a name="switch-style-properties"></a>Stileigenschaften wechseln
+## <a name="switch-appearance"></a>Darstellung wechseln
 
-Die `OnColor` -Eigenschaft kann festgelegt werden, `Switch` um die Farbe zu definieren, wenn Sie in Ihren **on** -Zustand gewechselt wird. Im folgenden Beispiel wird gezeigt, wie ein `Switch` in XAML mit dem `OnColor` -Eigenschaften Satz instanziiert wird:
+Zusätzlich zu den Eigenschaften [`Switch`](xref:Xamarin.Forms.Switch) , die von der [`View`](xref:Xamarin.Forms.View) -Klasse erben, `Switch` definiert `OnColor` auch die `ThumbColor` -Eigenschaft und die-Eigenschaft. Die `OnColor` -Eigenschaft kann festgelegt werden, `Switch` um die Farbe zu definieren, wenn Sie in Ihren **on** -Zustand gewechselt `ThumbColor` wird, und die-Eigenschaft kann `Color` festgelegt werden, um den des Zieh Punkts zu definieren. Im folgenden Beispiel wird gezeigt, wie ein `Switch` in XAML instanziiert wird, wobei diese Eigenschaften festgelegt werden:
 
 ```xaml
-<Switch OnColor="Orange" />
+<Switch OnColor="Orange"
+        ThumbColor="Green" />
 ```
 
-Die `OnColor` -Eigenschaft kann auch festgelegt werden, `Switch` wenn ein-Objekt im Code erstellt wird:
+Die Eigenschaften können auch beim Erstellen einer `Switch` im Code festgelegt werden:
 
 ```csharp
-Switch switchControl = new Switch { OnColor = Color.Orange };
+Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 ```
 
-Die folgenden Screenshots zeigen die `Switch` in den ein-und **ausschalten** -Status von `OnColor` `Color.Orange` , wobei die-Eigenschaft unter IOS und Android auf festgelegt ist:
+Der folgende Screenshot zeigt den `Switch` in seinen **on** -und **Off** -UMSCHALT Zuständen, bei `OnColor` denen `ThumbColor` die-Eigenschaft und die-Eigenschaft festgelegt sind:
 
-![Screenshot von Switches in ein-und Ausschalten in IOS und Android](switch-images/switch-states-oncolor.png "Switches unter IOS und Android")
+![Screenshot von Switches in ein-und Ausschalten in IOS und Android](switch-images/switch-states-colors.png "Switches unter IOS und Android")
 
 ## <a name="respond-to-a-switch-state-change"></a>Reagieren auf eine Änderung des Wechsel Status
 

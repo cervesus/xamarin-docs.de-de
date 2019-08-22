@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: ef1ccd07eb4807cd84094cad1200d8a1ed7cea8b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1aaacae8cebed2396661a28c189af44c25238e7b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524699"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887841"
 ---
 # <a name="working-with-the-android-manifest"></a>Arbeiten mit dem Android-Manifest
 
@@ -227,6 +227,7 @@ Diese Deklaration bewirkt, dass das folgende XML-Fragment in **obj/Debug/Android
              android:theme="@android:style/Theme.Light"
                 ... />
 ```
+
 In diesem Beispiel werden alle Aktivitäten in der App standardmäßig auf den `Theme.Light` -Stil eingestellt. Wenn Sie das Design einer Aktivität `Theme.Dialog`auf festlegen, verwendet nur diese Aktivität den `Theme.Dialog` Stil, während alle anderen Aktivitäten in der App standardmäßig den `Theme.Light` Stil verwenden, der im `<application>` -Element festgelegt ist. 
 
 Das `Application` -Element ist nicht die einzige Möglichkeit, `<application>` Attribute zu konfigurieren. Alternativ können Sie Attribute direkt in das `<application>` -Element von " **Properties/androidmanifest. XML**" einfügen. Diese Einstellungen werden mit dem letzten `<application>` Element zusammengeführt, das sich in **obj/Debug/Android/androidmanifest. XML**befindet. Beachten Sie, dass der Inhalt von **Properties/androidmanifest. XML** immer Daten überschreibt, die von benutzerdefinierten Attributen bereitgestellt werden. 

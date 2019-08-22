@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 32cb0e376646478ad01a6ea7784094d23529b0b4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d700aa8c0744d08e6536614b8cb8b024a99c84e1
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528622"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889794"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Auffüllen einer Tabelle mit Daten in xamarin. IOS
 
@@ -109,6 +109,7 @@ Erstellen Sie als nächstes eine Instanz des Ansichts Controllers:
 ```csharp
 HomeScreen owner;
 ```
+
 Fügen Sie Ihrer uitableviewsource-Klasse einen Konstruktor hinzu, der einen Ansichts Controller als Parameter annimmt und ihn in einem Feld speichert:
 
 ```csharp
@@ -119,11 +120,13 @@ public TableSource (string[] items, HomeScreen owner)
 
 }
 ```
+
 Ändern Sie die viewDidLoad-Methode, in der die uitableviewsource-Klasse `this` erstellt wird, um den Verweis zu übergeben:
 
 ```csharp
 table.Source = new TableSource(tableItems, this);
 ```
+
 Zum Schluss müssen Sie `RowSelected` wieder in der-Methode für das zwischengespeicherte Feld aufzurufen: `PresentViewController`
 
 ```csharp

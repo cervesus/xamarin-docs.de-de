@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: f57736238fc01d865d7655d72da427e2c18dca59
-ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
-ms.translationtype: HT
+ms.openlocfilehash: 5fccc07d35eda1ba420f48a8058d8d2a00b18fd9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757249"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523201"
 ---
 # <a name="troubleshooting-tips"></a>Hinweise zur Fehlerbehebung
 
@@ -22,9 +22,9 @@ ms.locfileid: "68757249"
 Xamarin. Android bietet einige Punkte, die beim Nachverfolgen verschiedener Fehler zu sehen sind.
 Dazu gehören:
 
-1.  Diagnose MSBuild-Ausgabe.
-2.  Geräte Bereitstellungs Protokolle.
-3.  Android-Debug-Protokoll Ausgabe.
+1. Diagnose MSBuild-Ausgabe.
+2. Geräte Bereitstellungs Protokolle.
+3. Android-Debug-Protokoll Ausgabe.
 
 
 <a name="Diagnostic_MSBuild_Output" />
@@ -35,23 +35,23 @@ Die Diagnose MSBuild kann zusätzliche Informationen im Zusammenhang mit der Pak
 
 So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio
 
-1.  Klicken Sie auf Extras **> Optionen...**
-2.  Wählen Sie in der linken Struktur **Projekte und Projektmappen > Erstellen und ausführen** aus.
-3.  Legen Sie im rechten Bereich das Dropdown Menü Ausführlichkeit der MSBuild-Buildausgabe auf Diagnose fest.
-4.  Klicken Sie auf **OK**.
-5.  Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
-6.  Die Diagnoseausgabe ist im Ausgabebereich sichtbar.
+1. Klicken Sie auf Extras **> Optionen...**
+2. Wählen Sie in der linken Struktur **Projekte und Projektmappen > Erstellen und ausführen** aus.
+3. Legen Sie im rechten Bereich das Dropdown Menü Ausführlichkeit der MSBuild-Buildausgabe auf Diagnose fest.
+4. Klicken Sie auf **OK**.
+5. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
+6. Die Diagnoseausgabe ist im Ausgabebereich sichtbar.
 
 
 So aktivieren Sie die MSBuild-Diagnoseausgabe in Visual Studio für Mac/OS X:
 
-1.  Klicken Sie auf **Visual Studio für Mac > Einstellungen...**
-2.  Wählen Sie in der linken Struktur die Option **Projekte > Build** aus.
-3.  Legen Sie im rechten Bereich die Dropdown-Option Protokoll Ausführlichkeit auf Diagnose fest.
-4.  Klicken Sie auf **OK**.
-5.  Starten Sie Visual Studio für Mac neu.
-6.  Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
-7.  Die Diagnoseausgabe wird im Fehler-Pad angezeigt (**Anzeigen von > Pads > Fehlern** ), indem Sie auf die Schaltfläche Ausgabe erstellen klicken.
+1. Klicken Sie auf **Visual Studio für Mac > Einstellungen...**
+2. Wählen Sie in der linken Struktur die Option **Projekte > Build** aus.
+3. Legen Sie im rechten Bereich die Dropdown-Option Protokoll Ausführlichkeit auf Diagnose fest.
+4. Klicken Sie auf **OK**.
+5. Starten Sie Visual Studio für Mac neu.
+6. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
+7. Die Diagnoseausgabe wird im Fehler-Pad angezeigt (**Anzeigen von > Pads > Fehlern** ), indem Sie auf die Schaltfläche Ausgabe erstellen klicken.
 
 
 
@@ -60,16 +60,16 @@ So aktivieren Sie die MSBuild-Diagnoseausgabe in Visual Studio für Mac/OS X:
 
 So aktivieren Sie die Protokollierung der Geräte Bereitstellung in Visual Studio:
 
-1.  **Tools > Optionen...** >
-2.  Wählen Sie in der linken Strukturansicht **xamarin > Android-Einstellungen** aus.
-3.  Aktivieren Sie im rechten Bereich das Kontrollkästchen [X] **Erweiterung Debugprotokollierung (schreibt "monodroid. log" in den Desktop)** .
-4.  Protokollmeldungen werden in die Datei "monodroid. log" auf dem Desktop geschrieben.
+1. **Tools > Optionen...** >
+2. Wählen Sie in der linken Strukturansicht **xamarin > Android-Einstellungen** aus.
+3. Aktivieren Sie im rechten Bereich das Kontrollkästchen [X] **Erweiterung Debugprotokollierung (schreibt "monodroid. log" in den Desktop)** .
+4. Protokollmeldungen werden in die Datei "monodroid. log" auf dem Desktop geschrieben.
 
 
 Von Visual Studio für Mac werden immer Geräte Bereitstellungs Protokolle geschrieben. Die Suche ist etwas schwieriger. eine *androidutils* -Protokolldatei wird für jeden Tag und die Uhrzeit der Bereitstellung erstellt, z. b.: **Androidtools-2012-10 -24 _12-35 -45. log**.
 
--  Unter Windows werden Protokolldateien in `%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`geschrieben.
--  Unter OS X werden Protokolldateien in `$HOME/Library/Logs/XamarinStudio-{VERSION}`geschrieben.
+- Unter Windows werden Protokolldateien in `%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`geschrieben.
+- Unter OS X werden Protokolldateien in `$HOME/Library/Logs/XamarinStudio-{VERSION}`geschrieben.
 
 
 
@@ -91,9 +91,9 @@ System Eigenschaften werden während des Prozess Starts gelesen und müssen dahe
 
 Xamarin. Android unterstützt die folgenden Systemeigenschaften:
 
--   *debug.mono.debug*: Wenn eine nicht leere Zeichenfolge ist, entspricht `*mono-debug*`dies.
+- *debug.mono.debug*: Wenn eine nicht leere Zeichenfolge ist, entspricht `*mono-debug*`dies.
 
--   *debug.mono.env*: Eine Pipe-getrennte *|* Liste von Umgebungsvariablen, die beim Starten der Anwendung exportiert werden sollen, *bevor* Mono initialisiert wurde. Dies ermöglicht das Festlegen von Umgebungsvariablen, die Mono-Protokollierung steuern.
+- *debug.mono.env*: Eine Pipe-getrennte *|* Liste von Umgebungsvariablen, die beim Starten der Anwendung exportiert werden sollen, *bevor* Mono initialisiert wurde. Dies ermöglicht das Festlegen von Umgebungsvariablen, die Mono-Protokollierung steuern.
 
     - *Hinweis:* Da der Wert ' *|* ' getrennt ist, muss der Wert über eine zusätzliche Ebene von Anführungszeichen verfügen, da der \` \`ADB-Shellbefehl eine Reihe von Anführungszeichen entfernt.
 
@@ -101,18 +101,20 @@ Xamarin. Android unterstützt die folgenden Systemeigenschaften:
 
     - Beispiel:
 
-            adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+      ```
+      adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+      ```
 
--   *debug.mono.log*: Eine durch Trennzeichen getrennte (" *,* ") Liste von Komponenten, die zusätzliche Nachrichten in das Android-Debugprotokoll Drucken sollten. Standardmäßig ist nichts festgelegt. Zu den Komponenten gehören:
+- *debug.mono.log*: Eine durch Trennzeichen getrennte (" *,* ") Liste von Komponenten, die zusätzliche Nachrichten in das Android-Debugprotokoll Drucken sollten. Standardmäßig ist nichts festgelegt. Zu den Komponenten gehören:
 
-    -   *alle*: Alle Nachrichten drucken
-    -   *gc*: Drucken von GC-bezogenen Nachrichten.
-    -   *gref*: Drucken (schwache, globale) Verweis Zuordnungs-und Zuordnungs Zuordnungs Nachrichten.
-    -   *lref*: Drucken von lokalen Verweis Zuordnungs-und-Zuordnungs Nachrichten.
+    - *alle*: Alle Nachrichten drucken
+    - *gc*: Drucken von GC-bezogenen Nachrichten.
+    - *gref*: Drucken (schwache, globale) Verweis Zuordnungs-und Zuordnungs Zuordnungs Nachrichten.
+    - *lref*: Drucken von lokalen Verweis Zuordnungs-und-Zuordnungs Nachrichten.
 
     *Hinweis*: Diese sind *sehr* ausführlich. Aktivieren Sie diese Option nur, wenn dies wirklich erforderlich ist.
 
--   *debug.mono.trace*: Ermöglicht das Festlegen der [Mono-Trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` -Einstellung.
+- *debug.mono.trace*: Ermöglicht das Festlegen der [Mono-Trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` -Einstellung.
 
 ## <a name="deleting-bin-and-obj"></a>Löschen `bin` von und`obj`
 
@@ -213,10 +215,10 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 
 Es gibt vier Nachrichten, die Folgen:
 
--  Globale Verweis Erstellung: Hierbei handelt es sich um die Zeilen, die mit *+ g +* beginnen und eine Stapel Überwachung für den erstellten Codepfad bereitstellen.
--  Globale Verweis Zerstörung: Hierbei handelt es sich um die Zeilen, die mit " *-g* " beginnen, und es kann eine Stapel Überwachung für den Codepfad zur Freigabe des globalen Verweises bereitgestellt werden. Wenn der GC die Gref freigibt, wird keine Stapel Überwachung bereitgestellt.
--  Schwache globale Verweis Erstellung: Hierbei handelt es sich um die Zeilen, die mit *+ w +* beginnen.
--  Schwache globale verweiszerstörung: Hierbei handelt es sich um Zeilen, die mit *-w-* beginnen.
+- Globale Verweis Erstellung: Hierbei handelt es sich um die Zeilen, die mit *+ g +* beginnen und eine Stapel Überwachung für den erstellten Codepfad bereitstellen.
+- Globale Verweis Zerstörung: Hierbei handelt es sich um die Zeilen, die mit " *-g* " beginnen, und es kann eine Stapel Überwachung für den Codepfad zur Freigabe des globalen Verweises bereitgestellt werden. Wenn der GC die Gref freigibt, wird keine Stapel Überwachung bereitgestellt.
+- Schwache globale Verweis Erstellung: Hierbei handelt es sich um die Zeilen, die mit *+ w +* beginnen.
+- Schwache globale verweiszerstörung: Hierbei handelt es sich um Zeilen, die mit *-w-* beginnen.
 
 
 In allen Nachrichten ist der *grefc* -Wert die Anzahl der globalen Verweise, die xamarin. Android erstellt hat, während der *grefwc* -Wert die Anzahl der schwachen globalen Verweise ist, die xamarin. Android erstellt hat. Der *handle* *-oder obj-handle-* Wert ist der Wert des jni-Handles, und das */* Zeichen nach ' ' ist der Typ des Handle-Werts: */L* for local Reference, */G* for Global References und */W* for Weak Global References.
@@ -345,15 +347,15 @@ Stellen Sie sicher, dass Sie den richtigen simulatornamen verwenden, also [den N
 
 Android-Paketnamen *müssen* einen Zeitraum (" *.* ") enthalten. Bearbeiten Sie den Paketnamen so, dass er einen bestimmten Zeitraum enthält.
 
--   In Visual Studio:
-    -   Klicken Sie mit der rechten Maustaste auf > Eigenschaften
-    -   Klicken Sie Links auf die Registerkarte Android-Manifest.
-    -   Aktualisieren Sie das Feld Paketname.
-        -   Wenn die Meldung &ldquo;"androidmanifest. xml" wurde nicht gefunden. Klicken Sie, um eine hinzuzufügen. &rdquo;, klicken Sie auf den Link, und aktualisieren Sie dann das Feld Paketname.
--   In Visual Studio für Mac:
-    -   Klicken Sie mit der rechten Maustaste auf das Projekt > Optionen.
-    -   Navigieren Sie zum Abschnitt Build/Android-Anwendung.
-    -   Ändern Sie das Feld Paketname so, dass es ein "." enthält.
+- In Visual Studio:
+    - Klicken Sie mit der rechten Maustaste auf > Eigenschaften
+    - Klicken Sie Links auf die Registerkarte Android-Manifest.
+    - Aktualisieren Sie das Feld Paketname.
+        - Wenn die Meldung &ldquo;"androidmanifest. xml" wurde nicht gefunden. Klicken Sie, um eine hinzuzufügen. &rdquo;, klicken Sie auf den Link, und aktualisieren Sie dann das Feld Paketname.
+- In Visual Studio für Mac:
+    - Klicken Sie mit der rechten Maustaste auf das Projekt > Optionen.
+    - Navigieren Sie zum Abschnitt Build/Android-Anwendung.
+    - Ändern Sie das Feld Paketname so, dass es ein "." enthält.
 
 
 
@@ -375,15 +377,15 @@ Wenn Sie z. b. einen Assemblyverweis auf *Mono. Android. GoogleMaps. dll* hinzuf
 
 Für Android-Pakete gelten drei Anforderungen:
 
--   Sie müssen ein "." enthalten. (siehe vorheriger Eintrag)
--   Sie müssen einen eindeutigen Zeichen folgen-Paketnamen aufweisen (daher die Reverse-TLD-Konvention in Android-App-Namen, z. b. com. Android. Chrome für die Chrome-APP).
--   Beim Aktualisieren von Paketen muss das Paket denselben Signatur Schlüssel aufweisen.
+- Sie müssen ein "." enthalten. (siehe vorheriger Eintrag)
+- Sie müssen einen eindeutigen Zeichen folgen-Paketnamen aufweisen (daher die Reverse-TLD-Konvention in Android-App-Namen, z. b. com. Android. Chrome für die Chrome-APP).
+- Beim Aktualisieren von Paketen muss das Paket denselben Signatur Schlüssel aufweisen.
 
 Stellen Sie sich daher Folgendes Szenario vor:
 
-1.  Sie erstellen & Ihre APP als debuggingapp bereitzustellen.
-2.  Sie ändern den Signatur Schlüssel, z. b. so, dass er als releaseapp verwendet wird (oder weil Ihnen der standardmäßige debugsignaturschlüssel nicht gefällt).
-3.  Sie installieren ihre APP, ohne Sie zuerst zu entfernen, z. b. Debuggen > Starten ohne Debuggen in Visual Studio
+1. Sie erstellen & Ihre APP als debuggingapp bereitzustellen.
+2. Sie ändern den Signatur Schlüssel, z. b. so, dass er als releaseapp verwendet wird (oder weil Ihnen der standardmäßige debugsignaturschlüssel nicht gefällt).
+3. Sie installieren ihre APP, ohne Sie zuerst zu entfernen, z. b. Debuggen > Starten ohne Debuggen in Visual Studio
 
 
 Wenn dies geschieht, schlägt die Paketinstallation mit dem Fehler\_"\_Fehler\_bei der Installation fehlgeschlagen" fehl, da sich der Paketname nicht geändert hat, während der Signatur Schlüssel nicht geändert wurde Das [Android-Debugprotokoll](~/android/deploy-test/debugging/android-debug-log.md) enthält auch eine Meldung ähnlich der folgenden:
@@ -433,10 +435,10 @@ E/AndroidRuntime( 1710):        at java.lang.Runtime.loadLibrary(Runtime.java:36
 
 Wenn dies der Fall ist, gibt es zwei mögliche Ursachen:
 
-1.  Die APK-Datei bietet keine ABI, die das Zielgerät unterstützt.
+1. Die APK-Datei bietet keine ABI, die das Zielgerät unterstützt.
     Die APK-Datei enthält z. b. nur ARMEABI-v7a-Binärdateien, und das Zielgerät unterstützt nur ARMEABI.
 
-2.  Ein [Android-Fehler](http://code.google.com/p/android/issues/detail?id=21670). Wenn dies der Fall ist, deinstallieren Sie die APP, überwinden Sie die Finger, und installieren Sie die APP neu.
+2. Ein [Android-Fehler](http://code.google.com/p/android/issues/detail?id=21670). Wenn dies der Fall ist, deinstallieren Sie die APP, überwinden Sie die Finger, und installieren Sie die APP neu.
 
 Um (1) zu korrigieren, bearbeiten Sie die Projektoptionen/-Eigenschaften, und [fügen Sie die Unterstützung für die erforderliche ABI der Liste der unterstützten ABIS hinzu](~/android/app-fundamentals/cpu-architectures.md). Um zu ermitteln, welche ABI Sie hinzufügen müssen, führen Sie den folgenden ADB-Befehl für das Zielgerät aus:
 
@@ -457,7 +459,7 @@ $ adb shell getprop | grep ro.product.cpu
 
 Dies bedeutet im Allgemeinen, dass Sie über einen HP-Computer &ldquo;verfügen&rdquo; und die Umgebungsvariablen Plattform auf etwa MCD oder HPD festgelegt wurde. Dies steht in Konflikt mit der MSBuild Platform-Eigenschaft, die &ldquo;im allgemeinen&rdquo; auf eine&rdquo;beliebige CPU oder &ldquo;x86 festgelegt ist. Sie müssen diese Umgebungsvariable von Ihrem Computer entfernen, bevor MSBuild funktionsfähig ist:
 
--   System Steuerung > System > Advanced > Umgebungsvariablen
+- System Steuerung > System > Advanced > Umgebungsvariablen
 
 Starten Sie Visual Studio neu, oder führen Sie Visual Studio für Mac erneut aus. Die Dinge sollten jetzt erwartungsgemäß funktionieren.
 
@@ -686,11 +688,11 @@ Um C\# Dynamic in Ihrer Anwendung oder Bibliothek zu verwenden, müssen Sie dem 
 
 ### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>Im Releasebuild tritt MissingMethodException bei dynamischem Code zur Laufzeit auf.
 
--   Es ist wahrscheinlich, dass das Anwendungsprojekt keine Verweise auf "System. Core. dll", "Microsoft. CSharp. dll" oder "Mono. CSharp. dll" enthält. Stellen Sie sicher, dass auf diese Assembly verwiesen wird.
+- Es ist wahrscheinlich, dass das Anwendungsprojekt keine Verweise auf "System. Core. dll", "Microsoft. CSharp. dll" oder "Mono. CSharp. dll" enthält. Stellen Sie sicher, dass auf diese Assembly verwiesen wird.
 
-    -   Denken Sie daran, dass dynamischer Code immer Kosten hat. Wenn Sie effizienten Code benötigen, sollten Sie die Verwendung von dynamischem Code in Erwägung gezogen.
+    - Denken Sie daran, dass dynamischer Code immer Kosten hat. Wenn Sie effizienten Code benötigen, sollten Sie die Verwendung von dynamischem Code in Erwägung gezogen.
 
--   In der ersten Vorschau wurden diese Assemblys ausgeschlossen, es sei denn, die Typen in den einzelnen Assemblys werden explizit vom Anwendungscode verwendet. Im folgenden finden Sie eine Problem Umgehung:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+- In der ersten Vorschau wurden diese Assemblys ausgeschlossen, es sei denn, die Typen in den einzelnen Assemblys werden explizit vom Anwendungscode verwendet. Im folgenden finden Sie eine Problem Umgehung:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 
 ## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>Mit AOT + llvm-abstürzen auf x86-Geräten erstellter Projekte

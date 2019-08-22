@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: d26f8f68b2cf4eca2d28a365c921b533e657c64b
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: 06283987e1d70659653729b4f3d5a00e1877aa5f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629610"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887383"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für xamarin. IOS 
 
@@ -98,6 +98,7 @@ public partial class MyImageView : UIView {
    public MyImageView (IntPtr handle) : base (handle {}
 }
 ```
+
 ## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System. MissingMethodException: Es wurde kein Konstruktor für foo. Bar:: ctor (System. IntPtr) gefunden.
 
 Dieser Fehler wird zur Laufzeit erzeugt, wenn der Code versucht, eine Instanz der Klassen zu instanziieren, auf die Sie in ihrer Interface Builder Datei verwiesen haben. Dies bedeutet, dass Sie vergessen haben, einen Konstruktor hinzuzufügen, der einen einzelnen IntPtr als Parameter annimmt.
@@ -109,6 +110,7 @@ Um dieses Problem zu beheben, fügen Sie der Klasse foo. Bar die folgende Codeze
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
+
 ## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Der Typ "{foo}" enthält keine Definition `GetNativeField` für, und es `GetNativeField` wurde keine Erweiterungsmethode vom Typ "{foo}" gefunden.
 
 Wenn Sie diesen Fehler in den vom Designer generierten Dateien (*. XIb.Designer.cs) erhalten, bedeutet dies Folgendes:
@@ -388,6 +390,7 @@ Wenn Sie einen Lauf Zeit Absturz (SIGSEGV) im Simulator zusammen mit einer Stape
   at MonoTouch.ObjCRuntime.Runtime.RegisterAssembly (System.Reflection.Assembly)
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
+
 ... Anschließend verfügen Sie wahrscheinlich über eine (oder mehrere) veraltete Assembly in Ihrem simulatoranwendungsverzeichnis. Solche Assemblys können vorhanden sein, da der Apple IOS-Simulator Dateien hinzufügt und aktualisiert, Sie aber nie löscht. Wenn dies der Fall ist, besteht die einfachste Lösung darin, "zurücksetzen und Inhalt und Einstellungen..." auszuwählen. im Menü Simulator.   
 
 > [!WARNING]

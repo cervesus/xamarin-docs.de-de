@@ -6,13 +6,13 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: ce745109ea2852b597de3a8a5922a171ad83e289
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/13/2019
+ms.openlocfilehash: 6942baed6af2a2e9b2c713a8fe08cf4c8ed4416b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738919"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888550"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin. Forms CollectionView-Daten
 
@@ -26,6 +26,11 @@ ms.locfileid: "68738919"
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)Gibt die Vorlage [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)an, die auf jedes Element in der Auflistung der anzuzeigenden Elemente angewendet werden soll.
 
 Diese Eigenschaften werden von [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. Dies bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
+
+> [!NOTE]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert eine `ItemsUpdatingScrollMode` Eigenschaft, die das Scrollverhalten von darstellt `CollectionView` , wenn der neue Elemente hinzugefügt werden. Weitere Informationen zu dieser Eigenschaft finden Sie unter [Steuern der Scrollposition, wenn neue Elemente hinzugefügt werden](scrolling.md#control-scroll-position-when-new-items-are-added).
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)kann Daten auch inkrementell laden, wenn der Benutzer einen Bildlauf ausführt Weitere Informationen finden Sie unter [inkrementelles Laden von Daten](#load-data-incrementally).
 
 ## <a name="populate-a-collectionview-with-data"></a>Auffüllen einer CollectionView mit Daten
 
@@ -90,10 +95,10 @@ CollectionView collectionView = new CollectionView();
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-In diesem Beispiel werden die [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaften Daten an die `Monkeys` -Eigenschaft des verbundenen Ansichts Modells gebunden.
+In diesem Beispiel werden die [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaften Daten an die `Monkeys` -Eigenschaft des verbundenen ViewModel gebunden.
 
 > [!NOTE]
-> Kompilierte Bindungen können aktiviert werden, um die Daten bindungsleistung in xamarin. Forms-Anwendungen zu verbessern. Weitere Informationen finden Sie unter [kompilierte Bindungen](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md).
+> Kompilierte Bindungen können aktiviert werden, um die Daten bindungsleistung in xamarin. Forms-Anwendungen zu verbessern. Weitere Informationen finden Sie unter [Kompilierte Bindungen](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md).
 
 Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
@@ -244,6 +249,56 @@ Weitere Informationen zu Datenvorlagen-Selektoren finden Sie unter [Erstellen ei
 
 > [!IMPORTANT]
 > Wenn Sie [`CollectionView`](xref:Xamarin.Forms.CollectionView)verwenden, legen Sie [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) das Stamm Element der Objekte nie auf `ViewCell`einen fest. Dies führt dazu, dass eine Ausnahme ausgelöst wird `CollectionView` , da kein Konzept von Zellen aufweist.
+
+## <a name="load-data-incrementally"></a>Inkrementelles Laden von Daten
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)unterstützt inkrementelles Laden von Daten, wenn Benutzer durch Elemente scrollen. Dies ermöglicht Szenarios, wie z. b. das asynchrone Laden einer Datenseite aus einem Webdienst, während der Benutzer einen Bildlauf ausführt. Außerdem ist der Punkt, an dem mehr Daten geladen werden, so konfigurierbar, dass Benutzern kein leerer Bereich angezeigt wird oder der Bildlauf angehalten wird.
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert die folgenden Eigenschaften zum Steuern des inkrementellen Ladens von Daten:
+
+- `RemainingItemsThreshold`, vom Typ `int`, der Schwellenwert für Elemente, die noch nicht in der Liste sichtbar `RemainingItemsThresholdReached` sind, in der das Ereignis ausgelöst wird.
+- `RemainingItemsThresholdReachedCommand`vom Typ `ICommand`, der ausgeführt wird, `RemainingItemsThreshold` wenn erreicht wird.
+- `RemainingItemsThresholdReachedCommandParameter` vom Typ `object`: der Parameter, der an `RemainingItemsThresholdReachedCommand` übergeben wird.
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert auch ein `RemainingItemsThresholdReached` -Ereignis, das ausgelöst wird `CollectionView` , wenn ein scrollt, `RemainingItemsThreshold` das so weit genug ist, dass Elemente nicht mehr angezeigt werden. Dieses Ereignis kann behandelt werden, um weitere Elemente zu laden. Wenn das `RemainingItemsThresholdReached` Ereignis ausgelöst wird `RemainingItemsThresholdReachedCommand` , wird außerdem ausgeführt, sodass inkrementelles Laden von Daten in einem ViewModel erfolgen kann.
+
+Der Standardwert `RemainingItemsThreshold` der-Eigenschaft ist-1 und gibt an, dass `RemainingItemsThresholdReached` das Ereignis nie ausgelöst wird. Wenn der-Eigenschafts Wert 0 ist `RemainingItemsThresholdReached` , wird das-Ereignis ausgelöst, wenn das letzte [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Element in der angezeigt wird. Bei Werten, die größer als 0 `RemainingItemsThresholdReached` sind, wird das-Ereignis `ItemsSource` ausgelöst, wenn das die Anzahl der Elemente enthält, für die noch kein Rollup durchgeführt wurde.
+
+> [!NOTE]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)überprüft die `RemainingItemsThreshold` -Eigenschaft, sodass Ihr Wert immer größer oder gleich-1 ist.
+
+Das folgende XAML-Beispiel zeigt [`CollectionView`](xref:Xamarin.Forms.CollectionView) einen, der Daten inkrementell lädt:
+
+```xaml
+<CollectionView ItemsSource="{Binding Animals}"
+                RemainingItemsThreshold="5"
+                RemainingItemsThresholdReached="OnCollectionViewRemainingItemsThresholdReached">
+    ...
+</CollectionView>
+```
+
+Der entsprechende C#-Code ist:
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    RemainingItemsThreshold = 5
+};
+collectionView.RemainingItemsThresholdReached += OnCollectionViewRemainingItemsThresholdReached;
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
+```
+
+In diesem Codebeispiel wird das `RemainingItemsThresholdReached` -Ereignis ausgelöst, wenn für fünf Elemente noch kein Rollup durchgeführt wurde und der Ereignis `OnCollectionViewRemainingItemsThresholdReached` Handler in der Antwort ausgeführt wird:
+
+```csharp
+void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
+{
+    // Retrieve more data here and add it to the CollectionView's ItemsSource collection.
+}
+```
+
+> [!NOTE]
+> Daten können auch inkrementell geladen werden, `RemainingItemsThresholdReachedCommand` indem der `ICommand` an eine Implementierung in ViewModel gebunden wird.
 
 ## <a name="related-links"></a>Verwandte Links
 

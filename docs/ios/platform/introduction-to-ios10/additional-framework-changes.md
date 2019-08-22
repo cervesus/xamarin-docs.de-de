@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 5aad72de5d894a83d734cd53fce3ac060125d740
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 85dad3bdd46401b1acf9a1cb5acc206508cd611f
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656940"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620725"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Weitere Änderungen an IOS 10-Frameworks
 
@@ -122,7 +122,7 @@ Weitere Informationen finden Sie [in der Einführung in die homekit](~/ios/platf
 
 Die folgenden Verbesserungen wurden am Metal-Framework in ios 10 vorgenommen:
 
-- 3D-apps und-Spiele können jetzt _Mosaik verwendet werden_ , um komplexe Szenen und Geometrie effizient über die GPU zu erzeugen.
+- 3D-apps und-Spiele können jetzt Mosaik verwendet werden, um komplexe Szenen und Geometrie effizient über die GPU zu erzeugen.
 - Sorgen Sie für eine differenzierte Steuerung der Ressourcen Zuordnung, um die Leistung von Metal-basierten Apps mithilfe von Ressourcen Heaps und Speicher losen Renderingzielen zu optimieren.
 - Verwenden Sie die Funktions Spezialisierung, um eine hochgradig optimierte Sammlung von Material-und Light-Kombinations Funktionen für eine Szene zu erstellen.
 
@@ -182,8 +182,8 @@ Die folgenden Verbesserungen wurden an dem spritekit-Framework in ios 10 vorgeno
 Die folgenden Verbesserungen wurden an dem ScrollView-Steuerelement in ios 10,3 vorgenommen:
 
 - `UIScrollView`Fügen Sie nun `IndexDisplayMode` die-Eigenschaft ein, um zu steuern, wie der Index angezeigt wird, `UIScrollViewIndexDisplayMode` während der Benutzer einen Bildlauf als durchführt:
-    - `Automatic`-Die Index Anzeige wird vom Betriebssystem gesteuert.
-    - `AlwaysHidden`-Die Index Anzeige ist immer ausgeblendet.
+  - `Automatic`-Die Index Anzeige wird vom Betriebssystem gesteuert.
+  - `AlwaysHidden`-Die Index Anzeige ist immer ausgeblendet.
 
 Informationen zur Verwendung finden Sie im [iostenthree-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree) .
 

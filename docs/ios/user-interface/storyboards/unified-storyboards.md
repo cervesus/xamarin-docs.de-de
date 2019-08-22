@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 20010fb3704da54ae1e1133c25f332e8481a1b87
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6085f85a1b13bdeb4fe7b906beeca0bdc7a45a17
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528541"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890171"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in xamarin. IOS
 
@@ -71,6 +71,7 @@ Das Bild Ladeverhalten in ios erkennt auch ein `@3x` Suffix für Bilddateien. Be
 ```csharp
 UIImage icon = UIImage.FromFile("MonkeyImage.png");
 ```
+
 Wenn Sie das Bild einem Benutzeroberflächen Element mithilfe des IOS-Designers als `MonkeyIcon.png`zuweisen, wird der `MonkeyIcon@3x.png` automatisch auf dem iPhone 6 Plus verwendet.
 
 <a name="dynamic-launch-screens" />

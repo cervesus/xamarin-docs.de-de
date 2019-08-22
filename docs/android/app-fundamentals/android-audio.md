@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 256871fd225808af1fdebf14c4eb2b43e575e105
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 960b4eb058209547c65a3b438bed541c3ade257c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644338"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521267"
 ---
 # <a name="android-audio"></a>Android-Audiodatei
 
@@ -25,13 +25,13 @@ Moderne mobile Geräte verfügen über Funktionen, die zuvor spezielle Geräte &
 
 Android bietet umfassende Unterstützung für Multimedia. In diesem Artikel wird das Arbeiten mit Audiodaten in Android erläutert. Außerdem werden die folgenden Themen behandelt.
 
-1.  Wieder **Gabe von Audiodaten mit Media Player** Verwenden der integrierten `MediaPlayer` Klasse zum Wiedergeben von Audiodaten, einschließlich lokaler Audiodateien und streamingaudiodateien `AudioTrack` mit der-Klasse. &ndash;
+1. Wieder **Gabe von Audiodaten mit Media Player** Verwenden der integrierten `MediaPlayer` Klasse zum Wiedergeben von Audiodaten, einschließlich lokaler Audiodateien und streamingaudiodateien `AudioTrack` mit der-Klasse. &ndash;
 
-2.  **Aufzeichnen von Audiodaten** Verwenden der integrierten `MediaRecorder` Klasse zum Aufzeichnen von Audiodaten. &ndash;
+2. **Aufzeichnen von Audiodaten** Verwenden der integrierten `MediaRecorder` Klasse zum Aufzeichnen von Audiodaten. &ndash;
 
-3.  **Arbeiten mit Audiobenachrichtigungen** &ndash; Verwenden Sie Audiobenachrichtigungen, um gut verhaltene Anwendungen zu erstellen, die ordnungsgemäß auf Ereignisse (z. b. eingehende Telefonanrufe) reagieren, indem Sie Ihre Audioausgaben anhalten oder Abbrechen.
+3. **Arbeiten mit Audiobenachrichtigungen** &ndash; Verwenden Sie Audiobenachrichtigungen, um gut verhaltene Anwendungen zu erstellen, die ordnungsgemäß auf Ereignisse (z. b. eingehende Telefonanrufe) reagieren, indem Sie Ihre Audioausgaben anhalten oder Abbrechen.
 
-4.  **Arbeiten mit Low-Level-Audiodaten** Wiedergabe von Audiodaten mithilfe der `AudioTrack` -Klasse durch direktes Schreiben in Speicherpuffer. &ndash; Aufzeichnen von Audiodaten `AudioRecord` mithilfe der-Klasse und Lesen von Speicher Puffern.
+4. **Arbeiten mit Low-Level-Audiodaten** Wiedergabe von Audiodaten mithilfe der `AudioTrack` -Klasse durch direktes Schreiben in Speicherpuffer. &ndash; Aufzeichnen von Audiodaten `AudioRecord` mithilfe der-Klasse und Lesen von Speicher Puffern.
 
 
 ## <a name="requirements"></a>Anforderungen
@@ -228,15 +228,15 @@ Wenn die Anwendung die Audioressourcen nicht mehr verwendet, ruft Sie die `Aband
 
 Die erforderlichen Schritte zum Anfordern der Audioressourcen des Geräts lauten wie folgt:
 
-1.  Abrufen eines Handles für den `AudioManager` -Systemdienst.
+1. Abrufen eines Handles für den `AudioManager` -Systemdienst.
 
-2.  Erstellen Sie eine Instanz der Rückruf Klasse.
+2. Erstellen Sie eine Instanz der Rückruf Klasse.
 
-3.  Fordern Sie die Audioressourcen des Geräts an, indem `RequestAudioFocus` Sie die- `AudioManager` Methode im aufrufen. Bei den Parametern handelt es sich um das Rückruf Objekt, den Streamtyp (Musik, Sprachanruf, Ring usw.) und den Typ des angeforderten Zugriffsrechts (z. b. die Audioressourcen können vorübergehend oder für einen unbestimmten Zeitraum angefordert werden).
+3. Fordern Sie die Audioressourcen des Geräts an, indem `RequestAudioFocus` Sie die- `AudioManager` Methode im aufrufen. Bei den Parametern handelt es sich um das Rückruf Objekt, den Streamtyp (Musik, Sprachanruf, Ring usw.) und den Typ des angeforderten Zugriffsrechts (z. b. die Audioressourcen können vorübergehend oder für einen unbestimmten Zeitraum angefordert werden).
 
-4.  Wenn die Anforderung erteilt wird, wird `playMusic` die-Methode sofort aufgerufen, und die Audiowiedergabe beginnt wieder.
+4. Wenn die Anforderung erteilt wird, wird `playMusic` die-Methode sofort aufgerufen, und die Audiowiedergabe beginnt wieder.
 
-5.  Wenn die Anforderung verweigert wird, wird keine weitere Aktion durchgeführt. In diesem Fall wird das Audioformat nur dann wiedergegeben, wenn die Anforderung zu einem späteren Zeitpunkt erteilt wird.
+5. Wenn die Anforderung verweigert wird, wird keine weitere Aktion durchgeführt. In diesem Fall wird das Audioformat nur dann wiedergegeben, wenn die Anforderung zu einem späteren Zeitpunkt erteilt wird.
 
 
 Das folgende Codebeispiel zeigt die folgenden Schritte:
@@ -267,11 +267,11 @@ Wenn die Wiedergabe des Titels beendet ist, wird `AbandonFocus` die- `AudioManag
 
 Die Low-Level-audioapis bieten eine bessere Kontrolle über das Abspielen und Aufzeichnen von Audiodaten, da Sie direkt mit Speicher Puffern interagieren, anstatt Datei-URIs zu verwenden. Es gibt einige Szenarien, in denen dieser Ansatz vorzuziehen ist. Zu diesen Szenarien gehören:
 
-1.  Bei der Wiedergabe von verschlüsselten Audiodateien.
+1. Bei der Wiedergabe von verschlüsselten Audiodateien.
 
-2.  Wenn eine Abfolge kurzer Clips wiedergegeben wird.
+2. Wenn eine Abfolge kurzer Clips wiedergegeben wird.
 
-3.  Audiostreaming.
+3. Audiostreaming.
 
 
 ### <a name="audiotrack-class"></a>Audiotrack-Klasse
@@ -283,17 +283,17 @@ Die [Audiotrack](xref:Android.Media.AudioTrack) -Klasse verwendet die Low-Level-
 
 Zum Abspielen von Audiodaten muss eine neue `AudioTrack` Instanz von instanziiert werden. Die Argumentliste, die an den [Konstruktor](xref:Android.Media.AudioTrack) übergeben wird, gibt an, wie das im Puffer enthaltene Audiobeispiel wiedergegeben wird. Die Argumente lauten:
 
-1.  Streamtyp &ndash; Stimme, Rington, Musik, System oder Alarm.
+1. Streamtyp &ndash; Stimme, Rington, Musik, System oder Alarm.
 
-2.  Häufigkeit &ndash; der in Hz ausgedrückten Samplingrate.
+2. Häufigkeit &ndash; der in Hz ausgedrückten Samplingrate.
 
-3.  Kanal Konfiguration &ndash; Mono oder Stereo.
+3. Kanal Konfiguration &ndash; Mono oder Stereo.
 
-4.  8- &ndash; Bit-oder 16-Bit-Codierung im Audioformat.
+4. 8- &ndash; Bit-oder 16-Bit-Codierung im Audioformat.
 
-5.  Puffergröße &ndash; in Bytes.
+5. Puffergröße &ndash; in Bytes.
 
-6.  Puffer Modus &ndash; -Streaming oder statisch.
+6. Puffer Modus &ndash; -Streaming oder statisch.
 
 
 Nach der Erstellung wird die [Play](xref:Android.Media.AudioTrack.Play) - `AudioTrack` Methode von aufgerufen, um die Wiedergabe zu starten. Wenn Sie den Audiopuffer in `AudioTrack` schreiben, wird die Wiedergabe gestartet:
@@ -354,17 +354,17 @@ Die [audiorecord](xref:Android.Media.AudioRecord) -Klasse ist die Entsprechung v
 
 Der erste Schritt besteht darin, ein neues [audiorecord](xref:Android.Media.AudioRecord) -Objekt zu erstellen. Die Argumentliste, die an den- [Konstruktor](xref:Android.Media.AudioRecord) übergeben wird, stellt alle für die Aufzeichnung erforderlichen Informationen bereit. Anders als `AudioTrack`bei, bei denen es sich bei den Argumenten größtenteils um Enumerationen `AudioRecord` handelt, sind die entsprechenden Argumente in Integer. Dazu gehören:
 
-1.  Hardware-Audioeingabe Quelle, z. b. Mikrofon.
+1. Hardware-Audioeingabe Quelle, z. b. Mikrofon.
 
-2.  Streamtyp &ndash; Stimme, Rington, Musik, System oder Alarm.
+2. Streamtyp &ndash; Stimme, Rington, Musik, System oder Alarm.
 
-3.  Häufigkeit &ndash; der in Hz ausgedrückten Samplingrate.
+3. Häufigkeit &ndash; der in Hz ausgedrückten Samplingrate.
 
-4.  Kanal Konfiguration &ndash; Mono oder Stereo.
+4. Kanal Konfiguration &ndash; Mono oder Stereo.
 
-5.  8- &ndash; Bit-oder 16-Bit-Codierung im Audioformat.
+5. 8- &ndash; Bit-oder 16-Bit-Codierung im Audioformat.
 
-6.  Puffergröße in Bytes
+6. Puffergröße in Bytes
 
 
 Nachdem der `AudioRecord` erstellt wurde, wird seine [StartRecording](xref:Android.Media.AudioRecord.StartRecording) -Methode aufgerufen. Jetzt kann die Aufzeichnung begonnen werden. Liest `AudioRecord` kontinuierlich den Audiopuffer für die Eingabe und schreibt diese Eingabe in eine Audiodatei.

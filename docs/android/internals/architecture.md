@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 2b8e524d95fb60c8eb45b3dd5b64b68469d97ad1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: ec93083ee3d99dbf748309b23248e982b793ce13
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510730"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524849"
 ---
 # <a name="architecture"></a>Architektur
 
@@ -33,12 +33,11 @@ Weitere Informationen zur Kommunikation zwischen den Android-Klassen und den And
 
 Android-Anwendungspakete sind ZIP-Container mit der Dateierweiterung *. apk* . Xamarin. Android-Anwendungspakete verfügen über die gleiche Struktur und das gleiche Layout wie normale Android-Pakete mit den folgenden Ergänzungen:
 
--   Die Anwendungsassemblys (mit IL) werden im Assemblyordner unkomprimiert *gespeichert* . Beim Prozessstart in Releasebuilds *wird die* *APK* -Datei in den Prozess integriert, und die Assemblys werden aus dem Arbeitsspeicher geladen. Dies ermöglicht einen schnelleren App-Start, da Assemblys nicht vor der Ausführung extrahiert werden müssen.  
--   *Hinweis*: Informationen zum Assemblyspeicherort, z [. b. Assembly. Location](xref:System.Reflection.Assembly.Location) und [Assembly. CodeBase](xref:System.Reflection.Assembly.CodeBase)
-    , können in Releasebuilds*nicht darauf basieren* Sie sind nicht als eindeutige Dateisystem Einträge vorhanden, und Sie haben keinen verwendbaren Speicherort.
+- Die Anwendungsassemblys (mit IL) werden im Assemblyordner unkomprimiert *gespeichert* . Beim Prozessstart in Releasebuilds wird die *APK* -Datei in den Prozess integriert, und die Assemblys werden aus dem Arbeitsspeicher geladen. Dies ermöglicht einen schnelleren App-Start, da Assemblys nicht vor der Ausführung extrahiert werden müssen.  
+- *Hinweis*: Informationen zum Assemblyspeicherort, z [. b. Assembly. Location](xref:System.Reflection.Assembly.Location) und [Assembly. CodeBase](xref:System.Reflection.Assembly.CodeBase) , können in Releasebuilds *nicht darauf basieren* Sie sind nicht als eindeutige Dateisystem Einträge vorhanden, und Sie haben keinen verwendbaren Speicherort.
 
 
--   Native Bibliotheken, die die Mono-Laufzeit enthalten, sind in der *APK* -Datei vorhanden. Eine xamarin. Android-Anwendung muss systemeigene Bibliotheken für die gewünschten/Ziel-Android-Architekturen enthalten, z. b. *ARMEABI* , *ARMEABI-v7a* , *x86* . Xamarin. Android-Anwendungen können nur auf einer Plattform ausgeführt werden, wenn Sie die entsprechenden Laufzeitbibliotheken enthält.
+- Native Bibliotheken, die die Mono-Laufzeit enthalten, sind in der *APK* -Datei vorhanden. Eine xamarin. Android-Anwendung muss systemeigene Bibliotheken für die gewünschten/Ziel-Android-Architekturen enthalten, z. b. *ARMEABI* , *ARMEABI-v7a* , *x86* . Xamarin. Android-Anwendungen können nur auf einer Plattform ausgeführt werden, wenn Sie die entsprechenden Laufzeitbibliotheken enthält.
 
 
 Xamarin. Android-Anwendungen enthalten auch *Android Callable Wrapper* , um Android das Aufrufen von verwaltetem Code zu ermöglichen.
@@ -72,7 +71,7 @@ Beim Verwerfen von verwalteten Aufruf baren Wrappern muss sorgfältig vorgegange
 Verwaltete Aufruf Bare Wrapper-Unterklassen sind, wo die "interessante" anwendungsspezifische Logik möglicherweise Live ist. Hierzu gehören benutzerdefinierte [Android. app. Activity](xref:Android.App.Activity) -Unterklassen (z. b. der [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) -Typ in der Standard Projektvorlage). (Insbesondere alle *java. lang. Object* -Unterklassen, die kein Benutzer definiertes [Register Attribute](xref:Android.Runtime.RegisterAttribute) -Attribut oder [RegisterAttribute enthalten. donotgenerateacw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) ist *false*. Dies ist die Standardeinstellung.)
 
 Wie verwaltete Callable Wrapper enthalten auch verwaltete Aufruf Bare Wrapper-Unterklassen einen globalen Verweis, auf den über die [java. lang. Object. handle](xref:Java.Lang.Object.Handle) -Eigenschaft zugegriffen werden kann. Ebenso wie bei verwalteten Callable Wrappern können globale Verweise explizit freigegeben werden, indem [java. lang. Object. verwerfen ()](xref:Java.Lang.Object.Dispose)aufgerufen wird.
-Anders als verwaltete Callable Wrapper sollten Sie vor dem Freigeben solcher Instanzen *sehr sorgfältig* Vorgehen *, da die*Zuordnung der Instanz die Zuordnung zwischen der Java-Instanz (einer Instanz eines Android Callable Wrapper) und der verwalteten lichen.
+Anders als verwaltete Callable Wrapper sollten Sie vor dem Freigeben solcher Instanzen *sehr sorgfältig* Vorgehen, da die Zuordnungder Instanz die Zuordnung zwischen der Java-Instanz (einer Instanz eines Android Callable Wrapper) und der verwalteten lichen.
 
 
 ### <a name="java-activation"></a>Java-Aktivierung
@@ -94,23 +93,23 @@ Dies wird durch das Instanziieren eines instanzlogtextfelds über den [logtextvi
 
 Reihenfolge der Ereignisse:
 
-1.  Layout-XML wird in eine [contentview](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)geladen.
+1. Layout-XML wird in eine [contentview](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)geladen.
 
-2.  Android instanziiert das layoutobjektdiagramm und instanziiert eine Instanz von *monodroid. apidemo. logtextbox* , dem ACW für *logtextbox* .
+2. Android instanziiert das layoutobjektdiagramm und instanziiert eine Instanz von *monodroid. apidemo. logtextbox* , dem ACW für *logtextbox* .
 
-3.  Der *monodroid. apidemo. logtextbox* -Konstruktor führt den [Android. Widget. TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29) -Konstruktor aus.
+3. Der *monodroid. apidemo. logtextbox* -Konstruktor führt den [Android. Widget. TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29) -Konstruktor aus.
 
-4.  Der *TextView* -Konstruktor ruft *monodroid. apidemo. logtextbox. getdefaultmovementmethod ()* auf.
+4. Der *TextView* -Konstruktor ruft *monodroid. apidemo. logtextbox. getdefaultmovementmethod ()* auf.
 
-5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* invokes *LogTextBox.n_getDefaultMovementMethod()* , which invokes *TextView.n_GetDefaultMovementMethod()* , which invokes [Java.Lang.Object.GetObject&lt;TextView&gt; (handle, JniHandleOwnership.DoNotTransfer)](xref:Java.Lang.Object.GetObject*) .
+5. *monodroid. apidemo. logtextbox. getdefaultmovementmethod ()* ruft *logtextbox. n_getDefaultMovementMethod ()* auf, das " *TextView. n_getDefaultMovementMethod ()* " aufruft, das " [java. lang. Object. GetObject"aufruft.&lt; TextView&gt; (handle, jnishandownership. donottransfer)](xref:Java.Lang.Object.GetObject*) .
 
-6.  *Java. lang. Object. GetObject&lt;TextView&gt;()* prüft, ob bereits eine entsprechende C# Instanz für *handle* vorhanden ist. Wenn dies der Fall ist, wird der Wert zurückgegeben. In diesem Szenario gibt es nicht, daher muss *Object.&lt;GetObject&gt;t ()* eine erstellen.
+6. *Java. lang. Object. GetObject&lt;TextView&gt;()* prüft, ob bereits eine entsprechende C# Instanz für *handle* vorhanden ist. Wenn dies der Fall ist, wird der Wert zurückgegeben. In diesem Szenario gibt es nicht, daher muss *Object.&lt;GetObject&gt;t ()* eine erstellen.
 
-7.  *Object. GetObject&lt;T&gt;()* sucht nach dem Konstruktor *logtextbox (IntPtr, jnishandowneship)* , ruft ihn auf, erstellt eine Zuordnung zwischen *handle* und der erstellten Instanz und gibt die erstellte Instanz zurück.
+7. *Object. GetObject&lt;T&gt;()* sucht nach dem Konstruktor *logtextbox (IntPtr, jnishandowneship)* , ruft ihn auf, erstellt eine Zuordnung zwischen *handle* und der erstellten Instanz und gibt die erstellte Instanz zurück.
 
-8.  *TextView. n_GetDefaultMovementMethod ()* Ruft die *logtextbox. defaultmovementmethod* -Eigenschaft Getter auf.
+8. *TextView. n_GetDefaultMovementMethod ()* Ruft die *logtextbox. defaultmovementmethod* -Eigenschaft Getter auf.
 
-9.  Die Steuerung wird an den *Android. Widget. TextView* -Konstruktor zurückgegeben, der die Ausführung beendet.
+9. Die Steuerung wird an den *Android. Widget. TextView* -Konstruktor zurückgegeben, der die Ausführung beendet.
 
 10. Der *monodroid. apidemo. logtextbox* -Konstruktor wird ausgeführt, wobei *typemanager. Aktivierung ()* aufgerufen wird.
 
