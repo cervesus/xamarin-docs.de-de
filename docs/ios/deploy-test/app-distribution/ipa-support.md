@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 100b98d12d45713b0d5f6dfb435f3aa879e7da9f
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: c430d7771d443b80bec2a3e8a79565e2a7994a8b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899121"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887579"
 ---
 # <a name="ipa-support-in-xamarinios"></a>IPA-Unterstützung in Xamarin.iOS
 
@@ -128,7 +128,7 @@ In einigen Fällen, wie z.B. in einer CI-Umgebung, ist es möglicherweise notwen
     <IpaIncludeArtwork>false</IpaIncludeArtwork>
     ```
 
-1. Wenn Sie eine optionale **iTunesMetadata.plist**-Datei einbeziehen, klicken Sie auf die Schaltfläche **...**, wählen Sie sie aus der Liste aus, und klicken Sie anschließend auf **OK**.
+1. Wenn Sie eine optionale **iTunesMetadata.plist**-Datei einbeziehen, klicken Sie auf die Schaltfläche **...** , wählen Sie sie aus der Liste aus, und klicken Sie anschließend auf **OK**.
 
      ![](ipa-support-images/imagexs03.png "Wählen Sie in der Liste „iTunesMetadata.plist“ aus")
 
@@ -153,7 +153,7 @@ Sobald das Bereitstellungsprofil erstellt und ausgewählt und die optionale **iT
     > [!NOTE]
     > Die Ad-hoc-Konfiguration steht möglicherweise nicht für neuere Xamarin.iOS-Projekte zur Verfügung. Wenn Sie nicht verfügbar ist, wählen Sie die Konfiguration **Release** aus.
 
-3. Wenn Sie eine optionale **iTunesMetadata.plist**-Datei einbeziehen, klicken Sie auf die Schaltfläche **...**, wählen Sie sie aus der Liste aus, und klicken Sie anschließend auf **Öffnen**.
+3. Wenn Sie eine optionale **iTunesMetadata.plist**-Datei einbeziehen, klicken Sie auf die Schaltfläche **...** , wählen Sie sie aus der Liste aus, und klicken Sie anschließend auf **Öffnen**.
 
     ![](ipa-support-images/imagevs03.png "Wählen Sie in der Liste „iTunesMetadata.plist“ aus")
 
@@ -219,6 +219,7 @@ Ein vollständiges Beispiel mit dieser Methode könnte unter Windows etwa folgen
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
+
 Unter Mac könnte es folgendermaßen aussehen:
 
 ```bash

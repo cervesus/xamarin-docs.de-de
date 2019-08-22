@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 2665e45277eccaedbbbbd77f6c7c0ca47700d950
-ms.sourcegitcommit: c2bffcdee5a7c619280c6b9032ba90e4df8b63d9
+ms.openlocfilehash: 75bc540ee518a1f5cfef29886d968648ea5769ed
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68533019"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526706"
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
@@ -262,9 +262,9 @@ Verwaltete Sprachen wie C# verwenden die Garbage Collection, um Speicher freizug
 
 SGen nutzt einen dieser drei Heaps, um Objekten Speicher zuzuweisen:
 
--  **Die Nursery**: Diesem Heap werden neue, kleine Objekte zugewiesen. Wenn in der Nursery kein Speicherplatz mehr verfügbar ist, erfolgt eine kleinere Garbage Collection. Alle Liveobjekte werden dabei zum Major Heap verschoben.
--  **Major Heap**: Hier werden lang ausgeführte Objekte aufbewahrt. Wenn im Major Heap nicht genügend Speicher verfügbar ist, erfolgt eine große Garbage Collection. Wenn dabei nicht genügend Speicher freigegeben wird, fordert SGen beim System mehr Speicher an.
--  **Large Object Space**: Hier werden Objekte aufbewahrt, die mehr als 8.000 Byte erfordern. Große Objekte werden von Anfang an diesem Heap zugewiesen, nicht der Nursery.
+- **Die Nursery**: Diesem Heap werden neue, kleine Objekte zugewiesen. Wenn in der Nursery kein Speicherplatz mehr verfügbar ist, erfolgt eine kleinere Garbage Collection. Alle Liveobjekte werden dabei zum Major Heap verschoben.
+- **Major Heap**: Hier werden lang ausgeführte Objekte aufbewahrt. Wenn im Major Heap nicht genügend Speicher verfügbar ist, erfolgt eine große Garbage Collection. Wenn dabei nicht genügend Speicher freigegeben wird, fordert SGen beim System mehr Speicher an.
+- **Large Object Space**: Hier werden Objekte aufbewahrt, die mehr als 8.000 Byte erfordern. Große Objekte werden von Anfang an diesem Heap zugewiesen, nicht der Nursery.
 
 Einer der Vorteile von SGen ist, dass sich der Zeitaufwand für eine kleinere Garbage Collection proportional zur Anzahl der neuen Liveobjekte verhält, die seit der letzten kleineren Garbage Collection erstellt wurden. Dies verringert die Auswirkungen der Garbage Collection auf die Anwendungsleistung, da kleinere Garbage Collections weniger Zeit in Anspruch nehmen als längere. Größere Garbage Collections finden weiterhin statt, jedoch seltener.
 
@@ -307,16 +307,16 @@ Der folgende Screenshot zeigt die Linkeroptionen in Visual Studio für Mac für 
 
 Der Linker stellt drei unterschiedliche Einstellungen zur Steuerung des Verhaltens bereit:
 
--  **Nicht verknüpfen**: Der Linker entfernt keine nicht verwendeten Typen und Methoden. Aus Leistungsgründen ist dies die Standardeinstellung für Debugbuilds.
--  **Nur Framework SDKs verknüpfen/Nur SDK-Assemblys**: Diese Einstellung reduziert lediglich die Größe der Assemblys, die von Xamarin versendet werden. Der Benutzercode wird nicht beeinflusst.
--  **Alle Assemblys verknüpfen**: Dies ist eine aggressivere Optimierung, die auf die SDK-Assemblys und den Benutzercode abzielt. Diese Einstellung entfernt bei Bindungen nicht verwendete Unterstützungsfelder und verschlankt alle Instanzen (oder gebundenen Objekte), sodass sie weniger Speicher beanspruchen.
+- **Nicht verknüpfen**: Der Linker entfernt keine nicht verwendeten Typen und Methoden. Aus Leistungsgründen ist dies die Standardeinstellung für Debugbuilds.
+- **Nur Framework SDKs verknüpfen/Nur SDK-Assemblys**: Diese Einstellung reduziert lediglich die Größe der Assemblys, die von Xamarin versendet werden. Der Benutzercode wird nicht beeinflusst.
+- **Alle Assemblys verknüpfen**: Dies ist eine aggressivere Optimierung, die auf die SDK-Assemblys und den Benutzercode abzielt. Diese Einstellung entfernt bei Bindungen nicht verwendete Unterstützungsfelder und verschlankt alle Instanzen (oder gebundenen Objekte), sodass sie weniger Speicher beanspruchen.
 
 Die Einstellung *Alle Assemblys verknüpfen* sollte mit Vorsicht verwendet werden, da sie die Anwendung auf unerwartete Weise unterbrechen kann. Die vom Linker ausgeführte statische Analyse kann möglicherweise den gesamten erforderlichen Code nicht richtig ermitteln, woraufhin zu viel Code aus der kompilierten Anwendung entfernt wird. Diese Situation ergibt sich nur zur Laufzeit, wenn die Anwendung abstürzt. Aus diesem Grund ist es wichtig, eine Anwendung nach einer Änderung des Linkerverhaltens gründlich zu testen.
 
 Wenn Tests anzeigen, dass der Linker fälschlicherweise eine Klasse oder Methode entfernt hat, können Sie die Typen oder Methoden, auf die nicht statisch verwiesen wird, die aber von der Anwendung benötigt werden, mit einem der folgenden Attribute markieren:
 
--  `Xamarin.iOS.Foundation.PreserveAttribute`: Dieses Attribut gilt für Xamarin.iOS-Projekte.
--  `Android.Runtime.PreserveAttribute`: Dieses Attribut gilt für Xamarin.Android-Projekte.
+- `Xamarin.iOS.Foundation.PreserveAttribute`: Dieses Attribut gilt für Xamarin.iOS-Projekte.
+- `Android.Runtime.PreserveAttribute`: Dieses Attribut gilt für Xamarin.Android-Projekte.
 
 Es kann z.B. erforderlich sein, die Standardkonstruktoren von Typen beizubehalten, die dynamisch instanziiert werden. Auch für die XML-Serialisierung kann eine Beibehaltung der Eigenschaften von Typen erforderlich sein.
 

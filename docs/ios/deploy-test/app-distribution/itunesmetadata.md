@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: c03815776921a61c1f54136e3f09c0996dff71d3
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: f632b44e087c0e380ecd81c2af7db3d49c072f7e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528415"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887745"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Die Datei „iTunesMetadata.plist“ in Xamarin.iOS-Apps
 
@@ -108,7 +108,7 @@ Die Werte der einzelnen Schlüssel werden weiter unten ausführlich behandelt.
 
 ### <a name="uirequireddevicecapabilities"></a>UIRequiredDeviceCapabilities
 
-Der Schlüssel `UIRequiredDeviceCapabilities` informiert iTunes darüber, welche gerätespezifischen Funktionen für eine iOS-Anwendung vor der Installation auf einem Gerät erforderlich sind. Er wird als Wörterbuch (`<dict>...</dict>`) aus Funktionen (`<key>...</key>`) mit jeweils einem booleschen Wert für jede Funktion bereitgestellt. Wenn der Wert einer Funktion `true` ist, muss die Funktion vorhanden sein. Wenn er `false` ist, muss die Funktion auf dem Gerät nicht vorhanden sein. Zum Beispiel:
+Der Schlüssel `UIRequiredDeviceCapabilities` informiert iTunes darüber, welche gerätespezifischen Funktionen für eine iOS-Anwendung vor der Installation auf einem Gerät erforderlich sind. Er wird als Wörterbuch (`<dict>...</dict>`) aus Funktionen (`<key>...</key>`) mit jeweils einem booleschen Wert für jede Funktion bereitgestellt. Wenn der Wert einer Funktion `true` ist, muss die Funktion vorhanden sein. Wenn er `false` ist, muss die Funktion auf dem Gerät nicht vorhanden sein. Beispiel:
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -119,6 +119,7 @@ Der Schlüssel `UIRequiredDeviceCapabilities` informiert iTunes darüber, welche
     <true/>
 </dict>
 ```
+
 Gibt an, dass das iOS-Gerät den ARM7-Befehlssatz unterstützen und über eine Frontkamera verfügen muss, damit die Anwendung auf dem Gerät installiert werden kann. Eine vollständige Liste der zulässigen Werte finden Sie in der Dokumentation zu [UIRequiredDeviceCapabilities](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW3) von Apple.
 
 ### <a name="artistname-and-playlistartistname"></a>artistName und playlistArtistName
@@ -298,7 +299,7 @@ Die folgenden Schlüssel werden in allen `iTunesMetadata.plist`-Dateien für iOS
 
 Führen Sie folgende Schritte aus:
 
-1. Rechtsklicken Sie im **Projektmappen-Explorer** auf die Xamarin.iOS-Projektdatei, und klicken Sie dann auf **Hinzufügen** > **Neue Datei...**.
+1. Rechtsklicken Sie im **Projektmappen-Explorer** auf die Xamarin.iOS-Projektdatei, und klicken Sie dann auf **Hinzufügen** > **Neue Datei...** .
 2. Klicken Sie im Dialogfeld „Neue Datei“ auf **iOS** > **Eigenschaftenliste**:
 
     ![](itunesmetadata-images/image01.png "Auswählen der iOS-Eigenschaftenliste")
@@ -306,7 +307,7 @@ Führen Sie folgende Schritte aus:
 4. Doppelklicken Sie im `iTunesMetadata.plist`Projektmappen-Explorer**auf die Datei**, um sie zur Bearbeitung zu öffnen:
 
     ![](itunesmetadata-images/image02.png "Der iTunesMetadata.plist-Editor")
-5. Klicken Sie auf das grüne **+**, um einen neuen Eintrag hinzuzufügen, oder geben Sie `UIRequiredDeviceCapabilities` als Schlüsselnamen ein:
+5. Klicken Sie auf das grüne **+** , um einen neuen Eintrag hinzuzufügen, oder geben Sie `UIRequiredDeviceCapabilities` als Schlüsselnamen ein:
 
     ![](itunesmetadata-images/image03.png "Erstellen eines neuen Eintrags und Eingeben des Schlüsselnamens „UIRequiredDeviceCapabilities“")
 6. Klicken Sie auf den Werttyp **String**, und klicken Sie anschließend in der Popupliste auf **Wörterbuch**:
@@ -315,7 +316,7 @@ Führen Sie folgende Schritte aus:
 7. Klicken Sie auf den Pfeil links vom Namen der Eigenschaft, um die Einträge des Wörterbuchs anzuzeigen:
 
     ![](itunesmetadata-images/image05.png "Anzeigen der Wörterbucheinträge")
-8. Klicken Sie auf **Neuen Eintrag hinzufügen**, und klicken Sie dann auf das grüne **+**, um einen Eintrag im Wörterbuch hinzuzufügen:
+8. Klicken Sie auf **Neuen Eintrag hinzufügen**, und klicken Sie dann auf das grüne **+** , um einen Eintrag im Wörterbuch hinzuzufügen:
 
     ![](itunesmetadata-images/image06.png "Hinzufügen eines Eintrags zum Wörterbuch")
 9. Geben Sie `armv7` für den Schlüsselnamen ein, wählen Sie einen **booleschen Wert** aus, und geben Sie **YES** als Wert ein:
@@ -333,7 +334,7 @@ Führen Sie folgende Schritte aus:
 2. Kopieren Sie den Beispielinhalt aus dem oben stehenden Abschnitt [Inhalt der „iTunesMetadata.plist“-Datei](#iTunesMetadata_contents).
 3. Fügen Sie den Inhalt in die Datei ein, und bearbeiten Sie ihn wo nötig.
 4. Speichern Sie die Datei, und kehren Sie zu Visual Studio für Mac zurück.
-5. Rechtsklicken Sie im **Projektmappen-Explorer** auf die Xamarin.iOS-Projektdatei, und klicken Sie dann auf **Hinzufügen** > **Vorhandene Dateien...**.
+5. Rechtsklicken Sie im **Projektmappen-Explorer** auf die Xamarin.iOS-Projektdatei, und klicken Sie dann auf **Hinzufügen** > **Vorhandene Dateien...** .
 6. Klicken Sie im Dialogfeld „Datei öffnen“ auf die `iTunesMetadata.plist`-Datei, die Sie oben erstellt haben, und dann auf **OK**.
 7. Verändern Sie die Einstellung von **Buildaktion** nicht von **None**.
 
@@ -347,7 +348,7 @@ Führen Sie folgende Schritte aus:
 2. Kopieren Sie den Beispielinhalt aus dem oben stehenden Abschnitt [Inhalt der „iTunesMetadata.plist“-Datei](#iTunesMetadata_contents).
 3. Fügen Sie den Inhalt in die Datei ein, und bearbeiten Sie ihn wo nötig.
 4. Speichern Sie die Datei, und kehren Sie zu Visual Studio zurück.
-5. Rechtsklicken Sie im **Projektmappen-Explorer** auf die Xamarin.iOS-Projektdatei, und klicken Sie dann auf **Hinzufügen** > **Vorhandene Dateien...**.
+5. Rechtsklicken Sie im **Projektmappen-Explorer** auf die Xamarin.iOS-Projektdatei, und klicken Sie dann auf **Hinzufügen** > **Vorhandene Dateien...** .
 6. Klicken Sie im Dialogfeld „Datei öffnen“ auf die `iTunesMetadata.plist`-Datei, die Sie oben erstellt haben, und dann auf **Öffnen**.
 7. Verändern Sie die Einstellung von **Buildaktion** nicht von **None**.
 

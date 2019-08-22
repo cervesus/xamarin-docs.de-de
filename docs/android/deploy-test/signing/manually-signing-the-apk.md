@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3c00f074e2f002d82795e9bd445fdf617275089f
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
+ms.openlocfilehash: d20ec990253ff86e7b426baad8da5a919a91ef6c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301265"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525020"
 ---
 # <a name="manually-signing-the-apk"></a>Manuelles Signieren des APK
 
 
 Nachdem die Anwendung für die Veröffentlichung erstellt wurde, muss das APK vor der Verteilung signiert werden, damit es auf einem Android-Gerät ausgeführt werden kann. Dieser Prozess wird in der Regel von der IDE ausgeführt. Es gibt jedoch einige Situationen, in denen es erforderlich ist, das APK manuell in der Befehlszeile zu signieren. Der Signaturvorgang eines APK besteht aus den folgenden Schritten:
 
-1.   **Erstellen eines privaten Schlüssels** &ndash; Dieser Schritt muss nur einmal durchgeführt werden. Ein privater Schlüssel ist für das digitale Signieren des APKs erforderlich.
+1. **Erstellen eines privaten Schlüssels** &ndash; Dieser Schritt muss nur einmal durchgeführt werden. Ein privater Schlüssel ist für das digitale Signieren des APKs erforderlich.
     Nachdem der private Schlüssel vorbereitet wurde, kann dieser Schritt für alle weiteren Releasebuilds übersprungen werden.
 
-2.   **Ausrichten der Anwendung mit Zipalign** &ndash; *Zipalign* ist der Optimierungsvorgang einer Anwendung. Dadurch kann Android zur Laufzeit effizienter mit dem APK interagieren. Xamarin.Android führt zur Laufzeit eine Prüfung der Anwendung durch und verhindert das Ausführen dieser, wenn APK nicht mit Zipalign ausgerichtet wurde.
+2. **Ausrichten der Anwendung mit Zipalign** &ndash; *Zipalign* ist der Optimierungsvorgang einer Anwendung. Dadurch kann Android zur Laufzeit effizienter mit dem APK interagieren. Xamarin.Android führt zur Laufzeit eine Prüfung der Anwendung durch und verhindert das Ausführen dieser, wenn APK nicht mit Zipalign ausgerichtet wurde.
 
-3.  **Signieren des APK** &ndash; In diesem Schritt verwenden Sie das Dienstprogramm **apksigner** aus dem Android SDK und signieren das APK mit dem privaten Schlüssel, den Sie im vorherigen Schritt erstellt haben. Anwendungen, die mit älteren Versionen des Android SDK-Buildtools vor v24.0.3 entwickelt wurden, verwenden die **jarsigner**-App aus dem JDK. Beide Tools werden im Folgenden ausführlicher erläutert. 
+3. **Signieren des APK** &ndash; In diesem Schritt verwenden Sie das Dienstprogramm **apksigner** aus dem Android SDK und signieren das APK mit dem privaten Schlüssel, den Sie im vorherigen Schritt erstellt haben. Anwendungen, die mit älteren Versionen des Android SDK-Buildtools vor v24.0.3 entwickelt wurden, verwenden die **jarsigner**-App aus dem JDK. Beide Tools werden im Folgenden ausführlicher erläutert. 
 
 Die Reihenfolge der Schritte ist wichtig und hängt davon ab, welches Tool zum Signieren des APK verwendet wird. Bei der Verwendung von **apksigner** ist es wichtig, die Anwendung zuerst mit **Zipalign** auszurichten und sie dann mit **Apksigner** zu signieren.  Sollte es nötig sein, **jarsigner** zum Signieren des APK zu verwenden, ist es wichtig, zunächst das APK zu signieren und dann **Zipalign** auszuführen. 
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 4f6a0b45d37252c141b2741dd0b37a980c958a51
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 59b72daecdc1159494d069bec044ee1891916d11
+ms.sourcegitcommit: fd349a121164c85545f4b0881940eefdd0cf3b65
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984532"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896408"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>XAML-Hot-Upload für xamarin. Forms (Vorschau)
 
@@ -30,7 +30,7 @@ Xamarin.Forms | 4,1 oder höher
 
 ## <a name="use-xaml-hot-reload-for-xamarinforms"></a>Verwenden von XAML-Hot-Neuladen für xamarin. Forms
 
-Für die Verwendung von XAML Hot Neuladen ist keine zusätzliche Installation oder Einrichtung erforderlich. Es ist in Visual Studio integriert und kann in den IDE-Einstellungen aktiviert werden. Nach der Aktivierung können Sie mit der Verwendung von XAML Hot Neuladen beginnen, indem Sie Ihre APP auf einem Emulator, Simulator oder einem physischen Gerät Debuggen.
+Für die Verwendung von XAML Hot Neuladen ist keine zusätzliche Installation oder Einrichtung erforderlich. Es ist in Visual Studio integriert und kann in den IDE-Einstellungen aktiviert werden. Nach der Aktivierung können Sie mit der Verwendung von XAML Hot Neuladen beginnen, indem Sie Ihre APP auf einem Emulator, Simulator oder einem physischen Gerät Debuggen. Derzeit funktioniert das Laden von XAML-Hot nur beim Debuggen unter IOS oder Android.
 
 Unter Windows kann das aktive XAML-Neuladen aktiviert werden, indem Sie das Kontrollkästchen **xamarin Hot** Neuladen aktivieren unter > Extras**Optionen** > **xamarin** > **Hot Upload**aktivieren.
 

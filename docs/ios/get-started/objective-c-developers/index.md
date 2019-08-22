@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 6d0e6fe402a657b3df0a03f2a9ce30ce22702f20
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: d64f92c9bb145da6ab4bfa688ea52bffb4de22d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741098"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526490"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin für Objective-C-Entwickler
 
@@ -28,8 +28,8 @@ Dies beschränkt sich nicht nur auf Nicht-Benutzeroberflächencode. Bindungen k�
 
 Auf unserer Dokumentationsseite finden Sie viele Informationen, die Ihnen den Übergang zu Xamarin erleichtern sollen und zeigen, wie Sie mit Ihrem vorhandenen Wissen C#-Code integrieren. Zu Beginn ein paar Highlights:
 
--   [C# Primer for Objective-C Developers (Einführung in C# für Objective-C-Entwickler:)](primer.md) Eine kurze Einführung für Objective-C-Entwickler, die zu Xamarin und zur C#-Sprache wechseln möchten. 
--   [Exemplarische Vorgehensweise: Bindung einer Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md): Eine Schrittanleitung zur Wiederverwendung von vorhandenem Objective-C-Code in einer Xamarin.iOS-Anwendung. 
+- [C# Primer for Objective-C Developers (Einführung in C# für Objective-C-Entwickler:)](primer.md) Eine kurze Einführung für Objective-C-Entwickler, die zu Xamarin und zur C#-Sprache wechseln möchten. 
+- [Exemplarische Vorgehensweise: Bindung einer Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md): Eine Schrittanleitung zur Wiederverwendung von vorhandenem Objective-C-Code in einer Xamarin.iOS-Anwendung. 
 
 
 ## <a name="binding-objective-c"></a>Binden von Objective-C

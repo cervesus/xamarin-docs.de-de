@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 27fd8cac85cdf139278d3824ebf71e54cdc7d140
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5729c32ca671a4fcc309d235a34929dcba6a3d03
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865577"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621115"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Verwenden von TestFlight zum Verteilen von Xamarin.iOS-Apps
 
@@ -55,21 +55,21 @@ Der folgende Workflow beschreibt die erforderlichen Schritte zum Starten der Ver
 3. Verwalten der Beta-Tests:
     - Metadaten hinzufügen.
     - Interne Benutzer hinzufügen:
-        - Maximal 25 Benutzer
+      - Maximal 25 Benutzer
     - Externe Benutzer hinzufügen:
-        - Maximal 1000 Benutzer.
-        - Erfordert eine Beta-Test-Prüfung, die die Einhaltung der Apple-Richtlinien erforderlich macht.
+      - Maximal 1000 Benutzer.
+      - Erfordert eine Beta-Test-Prüfung, die die Einhaltung der Apple-Richtlinien erforderlich macht.
 4. Erhalten Sie Feedback von Benutzern, reagieren Sie darauf, und kehren Sie zu Schritt 2 zurück.
 
 ## <a name="create-an-itunes-connect-record"></a>Erstellen eines iTunes Connect-Eintrags
 
-1.  Melden Sie sich im [iTunes Connect Portal](https://itunesconnect.apple.com/) mithilfe Ihrer Apple-Entwickler-Anmeldeinformationen an.
-2.  Wählen Sie **Meine Apps** aus:
+1. Melden Sie sich im [iTunes Connect Portal](https://itunesconnect.apple.com/) mithilfe Ihrer Apple-Entwickler-Anmeldeinformationen an.
+2. Wählen Sie **Meine Apps** aus:
 
     [![](testflight-images/my-apps.png "„My Apps“ (Meine Apps) auswählen")](testflight-images/my-apps.png#lightbox)
 
 
-3.  Auf dem **Meine Apps**-Bildschirm, klicken Sie auf die **+** -Schaltfläche in der linken oberen Ecke des Bildschirms, um eine neue App hinzuzufügen. Wenn Sie Mac- und iOS-Entwicklerkonten besitzen, werden Sie aufgefordert, hier den neuen App-Typ auszuwählen.
+3. Auf dem **Meine Apps**-Bildschirm, klicken Sie auf die **+** -Schaltfläche in der linken oberen Ecke des Bildschirms, um eine neue App hinzuzufügen. Wenn Sie Mac- und iOS-Entwicklerkonten besitzen, werden Sie aufgefordert, hier den neuen App-Typ auszuwählen.
 
 Es wird Ihnen das Übermittlungsfenster **New iOS App** (Neue iOS-App) angezeigt, in dem genau die gleiche Information wie in der „Info.plist“-Datei Ihrer App enthalten sein muss.
 
@@ -84,12 +84,12 @@ Das Formular sollte genau die gleichen Informationen in der„Info.plist“-Date
 [![](testflight-images/infoplist.png "Die Datei „Info.plist“ der App")](testflight-images/infoplist.png#lightbox)
 [![](testflight-images/newiosapp.png "Das Formular in iTunes Connect")](testflight-images/newiosapp.png#lightbox)
 
--  **Name**: Der beschreibende Name, der beim Einrichten des App Bundles verwendet wird. Diese Angabe muss genau mit dem **Anwendungsnamen**-Eintrag in Ihrer `Info.plist` übereinstimmen.
--  **Primary Language** (Primäre Sprache): Die Basissprache, die innerhalb der App verwendet wird. Dies ist normalerweise irgendeine von Ihnen gesprochene Sprache.
--  **Bundle ID** (Bundle-ID): Ein Dropdownmenü, das alle App-IDs auflistet, die in Ihrem Entwicklerkonto erstellt wurden.
-    *   **Bundle ID Suffix** (Bundle-ID-Suffix): Wenn Sie eine Wildcard Bundle-ID ausgewählt haben (d.h. endend mit einem *, wie im obigen Beispiel), wird ein zusätzliches Feld angezeigt, in dem Sie zur Eingabe des Bundle-ID-Suffixes aufgefordert werden. Im Beispiel ist die **Bundle ID** (Bundle-ID) `mobi.chkn.*`, das Suffix ist **Seitenansicht**. Zusammen bilden sie den **Bundle Identifier** (die Bundle-ID) in unserer `Info.plist`.
--  **Version**: Die Versionsnummer der App, die hochgeladen wird. Dies wird vom Entwickler ausgewählt.
--  **SKU**: Die SKU ist eine eindeutige ID für Ihre App, die nicht für Benutzer angezeigt wird. Sie kann als einer Produkt-ID ähnlich betrachtet werden. Im obigen Beispiel habe ich das Datum und eine Versionsnummer für dieses Datum ausgewählt.
+- **Name**: Der beschreibende Name, der beim Einrichten des App Bundles verwendet wird. Diese Angabe muss genau mit dem **Anwendungsnamen**-Eintrag in Ihrer `Info.plist` übereinstimmen.
+- **Primary Language** (Primäre Sprache): Die Basissprache, die innerhalb der App verwendet wird. Dies ist normalerweise irgendeine von Ihnen gesprochene Sprache.
+- **Bundle ID** (Bundle-ID): Ein Dropdownmenü, das alle App-IDs auflistet, die in Ihrem Entwicklerkonto erstellt wurden.
+  - **Bundle ID Suffix** (Bundle-ID-Suffix): Wenn Sie eine Wildcard Bundle-ID ausgewählt haben (d.h. endend mit einem *, wie im obigen Beispiel), wird ein zusätzliches Feld angezeigt, in dem Sie zur Eingabe des Bundle-ID-Suffixes aufgefordert werden. Im Beispiel ist die **Bundle ID** (Bundle-ID) `mobi.chkn.*`, das Suffix ist **Seitenansicht**. Zusammen bilden sie den **Bundle Identifier** (die Bundle-ID) in unserer `Info.plist`.
+- **Version**: Die Versionsnummer der App, die hochgeladen wird. Dies wird vom Entwickler ausgewählt.
+- **SKU**: Die SKU ist eine eindeutige ID für Ihre App, die nicht für Benutzer angezeigt wird. Sie kann als einer Produkt-ID ähnlich betrachtet werden. Im obigen Beispiel habe ich das Datum und eine Versionsnummer für dieses Datum ausgewählt.
 
 
 ## <a name="upload-your-app"></a>Hochladen Ihrer App
@@ -190,9 +190,9 @@ Das Testen kann jedoch jederzeit deaktiviert werden.
 
 Interne Tester sind Mitglieder des Entwicklungsteams, denen eine der folgenden Rollen in iTunes Connect zugewiesen wurde:
 
--  **Administrator**: Ein Administrator ist verantwortlich für das Hinzufügen und Verwalten von neuen Benutzern in iTunes Connect.
--  **Legal**: Der Team-Agent ist der einzige Administratorbenutzer, dem die Rolle „Legal“ zugewiesen wird. Diese Rolle erlaubt das Signieren von Rechtsverträgen.
--  **Technical** (Technisch): Ein technischer Benutzer kann die meisten Eigenschaften im Zusammenhang mit einer App ändern. Z.B. Informationen zur App bearbeiten, eine Binärdatei hochladen und eine App zur Prüfung übermitteln.
+- **Administrator**: Ein Administrator ist verantwortlich für das Hinzufügen und Verwalten von neuen Benutzern in iTunes Connect.
+- **Legal**: Der Team-Agent ist der einzige Administratorbenutzer, dem die Rolle „Legal“ zugewiesen wird. Diese Rolle erlaubt das Signieren von Rechtsverträgen.
+- **Technical** (Technisch): Ein technischer Benutzer kann die meisten Eigenschaften im Zusammenhang mit einer App ändern. Z.B. Informationen zur App bearbeiten, eine Binärdatei hochladen und eine App zur Prüfung übermitteln.
 
 Jeder Build kann für maximal 25 Mitglieder freigegeben werden.
 

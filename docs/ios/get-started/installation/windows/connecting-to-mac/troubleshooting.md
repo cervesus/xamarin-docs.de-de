@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 864c801597f251940e55232e8c59d3a6ea19c392
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5722a3a208942e8ecef6e5b3c092ac6c9825395f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865802"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890162"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 
@@ -83,6 +83,7 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
     ```bash
     ssh amyb@10.1.8.95
     ```
+
     <a name="stepnine" />
 
 9. Wenn **Schritt 8 erfolgreich ist**, können Sie versuchen, einen einfachen Befehl wie `ls` über die Verbindung auszuführen:
@@ -218,7 +219,7 @@ Diese Meldung kann ignoriert werden, solange der Mac OS X 10.11 (El Capitan) ode
 
 Diese Meldung kann ignoriert werden, es sei denn, Sie stellen fest, dass das Verbindungsdialogfeld die IP-Adresse des Mac-Buildhosts nicht anzeigt. Wenn die IP-Adresse in diesem Dialogfeld _fehlt_, können Sie auch weiterhin [den Mac manuell hinzufügen](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac).
 
-#### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>„Ungültiger Benutzer a von 10.1.8.95“ und „input\_userauth\_request: invalid user a [preauth]"
+#### <a name="invalid-user-a-from-101895-and-input_userauth_request-invalid-user-a-preauth"></a>„Ungültiger Benutzer a von 10.1.8.95“ und „input\_userauth\_request: invalid user a [preauth]"
 
 Möglicherweise fallen Ihnen diese Meldungen auf, wenn Sie sich **sshd.log** ansehen. Diese Meldungen sind Teil des normalen Verbindungsprozesses. Sie werden angezeigt, da Xamarin den Benutzernamen **a** vorübergehend beim Abrufen des _SSH-Fingerabdrucks_ verwendet.
 

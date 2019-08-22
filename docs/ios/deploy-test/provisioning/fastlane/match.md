@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0363f6fa1611a15c6925717f7bdf3905f467831e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 92631fa50dc4826e70df4333bb55f7f69937d053
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107793"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526556"
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane für iOS – match
 
@@ -53,7 +53,9 @@ Wenn Sie der Teamadministrator sind, erstellen Sie entweder über github.com ode
 
 Verwenden Sie Ihr Terminal, um zum Projektverzeichnis zu wechseln und das Projekt auszuführen:
 
-    fastlane match init
+```
+fastlane match init
+```
 
 Geben Sie die URL des Git-Repositorys ein, wenn Sie dazu aufgefordert werden:
 
@@ -76,11 +78,13 @@ Das Initialisieren des Projekts erstellt eine match-Datei. Dabei handelt es sich
 
 Abhängig davon, welche Umgebung Sie benötigen, können Sie jeden der folgenden Befehle verwenden, um ein neues Zertifikat und ein neues Bereitstellungsprofil zu erstellen und dieses in Ihrem neuen Git-Repository zu speichern:
 
-    fastlane match appstore
+```
+fastlane match appstore
 
-    fastlane match adhoc
+fastlane match adhoc
 
-    fastlane match development
+fastlane match development
+```
 
 Zusätzlich zum Erstellen neuer Zertifikate und Profile fügt das Verwenden dieser Befehle jedes der folgenden Elemente zu Ihrem Git-Repository hinzu oder aktualisiert diese, falls sie bereits vorhanden sind:
 
@@ -99,15 +103,21 @@ Bereitstellungsprofile werden in `~/Library/MobileDevice/Provisioning Profiles` 
 
 Wenn Sie unsystematische Zertifikate besitzen, können Sie `nuke` verwenden, um Zertifikate und Profile für jede Umgebung mithilfe der folgenden Befehle zu widerrufen:
 
-    fastlane match nuke
+```
+fastlane match nuke
+```
 
 So widerrufen Sie alle Zertifikate und Bereitstellungsprofile für eine bestimmte Umgebung:
 
-    fastlane match nuke development
+```
+fastlane match nuke development
+```
 
  oder
 
-    fastlane match nuke distribution
+```
+fastlane match nuke distribution
+```
 
 fastlane bestätigt die Dateien, die gelöscht werden sollen, bevor irgendetwas gelöscht wird.
 
@@ -127,15 +137,21 @@ Die folgenden Optionen können für zusätzliche Unterstützung bei der Verwendu
 
 - Verwenden Sie das `-–help`-Flag für eine Liste aller verfügbaren Befehle:
 
-        fastlane match cert --help
+    ```
+    fastlane match cert --help
+    ```
 
 - Verwenden Sie das `-–verbose`-Flag zur Erhöhung des Ausführlichkeitsgrads der Ausgabe:
 
-        fastlane match --development --verbose
+    ```
+    fastlane match --development --verbose
+    ```
 
 - Verwenden Sie das `--force_for_new_devices`-Flag, um die Bereitstellungsprofile zum Erneuern zu zwingen, wenn die Anzahl der Geräte im Entwicklerportal sich geändert hat.
 
-        fastlane match development --force_for_new_devices
+    ```
+    fastlane match development --force_for_new_devices
+    ```
 
 ## <a name="related-links"></a>Verwandte Links
 

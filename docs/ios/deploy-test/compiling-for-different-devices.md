@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: aac558f52423132bef53f1754307e743c69f6f22
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1b3bc6874a8584b60b15d1d373ad97fde565dfc4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121204"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527130"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Kompilieren für verschiedene Geräte in Xamarin.iOS
 
@@ -128,8 +128,8 @@ Wenn Ihr Projekt einige der Funktionen der neueren iOS-Versionen nutzen möchte,
 
 Gehen Sie dazu folgendermaßen vor:
 
--  Öffnen Sie **Projektoptionen**, und navigieren Sie zum Bereich **iOS-Build**.
--  Fügen Sie `'-gcc_flags "-weak_framework iAd"'` zu **Zusätzliche Optionen** für jede Konfiguration hinzu, für die Sie eine schwache Verknüpfung wünschen:
+- Öffnen Sie **Projektoptionen**, und navigieren Sie zum Bereich **iOS-Build**.
+- Fügen Sie `'-gcc_flags "-weak_framework iAd"'` zu **Zusätzliche Optionen** für jede Konfiguration hinzu, für die Sie eine schwache Verknüpfung wünschen:
 
 
 [![](compiling-for-different-devices-images/image3.png "Zusätzliche Optionen")](compiling-for-different-devices-images/image3.png#lightbox)

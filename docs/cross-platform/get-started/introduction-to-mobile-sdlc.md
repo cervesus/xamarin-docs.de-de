@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: conceptdev
 ms.author: crdun
 ms.date: 11/22/2016
-ms.openlocfilehash: 99be69abb11640418917d4d2cb9738a0a843d6d0
-ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
+ms.openlocfilehash: 4e2af0d1746ef1321db39d97a86af2b4bd769c69
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68290139"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526693"
 ---
 # <a name="mobile-software-development-lifecycle"></a>Lebenszyklus der Entwicklung mobiler Software
 
@@ -19,8 +19,8 @@ Das Erstellen mobiler Anwendungen kann so einfach sein: Öffnen Sie Visual Studi
 
 Dieses Dokument enthält eine gründliche, einführende Erläuterung für das Erstellen von mobilen Anwendungen, einschließlich Folgendem:
 
-1.   **Prozess**: Der Prozess der Softwareentwicklung wird als Lebenszyklus der Softwareentwicklung (Software Development Lifecycle, SDLC) bezeichnet. Wir erläutern alle Phasen des SDLC in Bezug auf die Entwicklung mobiler Anwendungen, einschließlich Idee, Entwurf, Entwicklung, Stabilisierung, Bereitstellung und Wartung.
-1.   **Überlegungen**: Es gibt einige Überlegungen zum Erstellen mobiler Anwendung, insbesondere im Gegensatz zu herkömmlichen Web- oder Desktopanwendungen. Diese Überlegungen und ihre Auswirkungen auf die Entwicklung mobiler Anwendungen werden untersucht.
+1. **Prozess**: Der Prozess der Softwareentwicklung wird als Lebenszyklus der Softwareentwicklung (Software Development Lifecycle, SDLC) bezeichnet. Wir erläutern alle Phasen des SDLC in Bezug auf die Entwicklung mobiler Anwendungen, einschließlich Idee, Entwurf, Entwicklung, Stabilisierung, Bereitstellung und Wartung.
+1. **Überlegungen**: Es gibt einige Überlegungen zum Erstellen mobiler Anwendung, insbesondere im Gegensatz zu herkömmlichen Web- oder Desktopanwendungen. Diese Überlegungen und ihre Auswirkungen auf die Entwicklung mobiler Anwendungen werden untersucht.
 
 Dieses Dokument richtet sich sowohl an neue als auch an erfahrene Anwendungsentwickler und soll grundlegende Fragen über die Entwicklung mobiler Apps beantworten. Die meisten Konzepte, denen Sie während des gesamten Lebenszyklus der Softwareentwicklung (SDLC) begegnen, werden umfassend vorgestellt. Dieses Dokument ist jedoch nicht für jeden geeignet. Wenn Sie direkt mit dem Erstellen von Anwendungen beginnen möchten, wird empfohlen, direkt mit dem Leitfaden [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md) weiter zu machen und später zu diesem Dokument zurückzukehren.
 
@@ -28,11 +28,11 @@ Dieses Dokument richtet sich sowohl an neue als auch an erfahrene Anwendungsentw
 
 Der Lebenszyklus der Entwicklung mobiler Anwendungen unterscheidet sich größtenteils nicht vom SDLC für Web- und Desktopanwendungen. Wie bei diesen gibt es in der Regel fünf wichtige Teile des Prozesses:
 
-1.   **Anfang**: Jede App beginnt mit einer Idee. Diese Idee wird üblicherweise in eine solide Grundlage für eine Anwendung weiterentwickelt.
-1.   **Entwurf**: Die Entwurfsphase besteht aus der Definition der Benutzererfahrung (UX) der App, z.B. das allgemeine Layout, wie dieses funktioniert usw., sowie das Entwerfen einer richtigen Benutzeroberfläche (UI) aus der UX. Dies geschieht üblicherweise mithilfe eines Grafikdesigners.
-1.   **Entwicklung**: Üblicherweise die ressourcenintensivste Phase. Hier findet das tatsächliche Erstellen der Anwendung statt.
-1.   **Stabilisierung**: Wenn die Entwicklung weit genug vorangeschritten ist, beginnt die Qualitätssicherung mit dem Testen der Anwendungen und Fehler werden behoben. Oft durchläuft eine Anwendung eine eingeschränkte Betaphase, in der sie ein breiteres Publikum verwenden sowie Feedback geben und Änderungen anregen kann.
-1.  **Bereitstellung**
+1. **Anfang**: Jede App beginnt mit einer Idee. Diese Idee wird üblicherweise in eine solide Grundlage für eine Anwendung weiterentwickelt.
+1. **Entwurf**: Die Entwurfsphase besteht aus der Definition der Benutzererfahrung (UX) der App, z.B. das allgemeine Layout, wie dieses funktioniert usw., sowie das Entwerfen einer richtigen Benutzeroberfläche (UI) aus der UX. Dies geschieht üblicherweise mithilfe eines Grafikdesigners.
+1. **Entwicklung**: Üblicherweise die ressourcenintensivste Phase. Hier findet das tatsächliche Erstellen der Anwendung statt.
+1. **Stabilisierung**: Wenn die Entwicklung weit genug vorangeschritten ist, beginnt die Qualitätssicherung mit dem Testen der Anwendungen und Fehler werden behoben. Oft durchläuft eine Anwendung eine eingeschränkte Betaphase, in der sie ein breiteres Publikum verwenden sowie Feedback geben und Änderungen anregen kann.
+1. **Bereitstellung**
 
 Häufig überlappen einige dieser Teile. So ist es zum Beispiel üblich, dass die Entwicklung fortschreitet, während die Benutzeroberfläche fertiggestellt wird und sogar den UI-Entwurf informiert. Zusätzlich kann eine Anwendung in eine Stabilisierungsphase versetzt werden, während neue Funktionen zu einer neuen Version hinzugefügt werden.
 
@@ -47,16 +47,16 @@ Durch die Verbreitung und den Grad an Interaktion, über die die Menschen durch 
 In der Anfangsphase wird nur die Idee für eine App definiert und verfeinert.
 Es ist wichtig, sich einige grundlegende Fragen zu stellen, um eine erfolgreiche App zu erstellen. Folgendes müssen Sie berücksichtigen, bevor Sie eine App in einem der öffentlichen App Stores veröffentlichen:
 
--   **Wettbewerbsvorteil**: Gibt es bereits ähnliche Apps? Wenn ja, wie unterscheidet sich diese Anwendung von anderen?
+- **Wettbewerbsvorteil**: Gibt es bereits ähnliche Apps? Wenn ja, wie unterscheidet sich diese Anwendung von anderen?
 
 Für Apps, die in einem Unternehmen verteilt werden sollen:
 
--   **Infrastrukturintegration**: Welche vorhandene Infrastruktur wird integriert oder erweitert?
+- **Infrastrukturintegration**: Welche vorhandene Infrastruktur wird integriert oder erweitert?
 
 Zusätzlich sollten Apps im Kontext des mobilen Formfaktors überprüft werden:
 
--   **Wert**: Welchen Wert hat die App für die Benutzer? Wie werden sie sie verwenden?
--   **Form/Mobilität**: Wie arbeitet diese App in einem mobilen Formfaktor? Wie kann ich den Wert durch das Verwenden von mobilen Technologien wie z.B. die Ortserkennung, Kamera usw. erhöhen?
+- **Wert**: Welchen Wert hat die App für die Benutzer? Wie werden sie sie verwenden?
+- **Form/Mobilität**: Wie arbeitet diese App in einem mobilen Formfaktor? Wie kann ich den Wert durch das Verwenden von mobilen Technologien wie z.B. die Ortserkennung, Kamera usw. erhöhen?
 
 Für das Entwerfen der Funktionalität einer App kann es hilfreich sein, Akteure und [Anwendungsfälle](https://en.wikipedia.org/wiki/Use_case) zu definieren. Akteure sind Rollen innerhalb einer Anwendung, die häufig von Benutzern eingenommen werden. Anwendungsfälle sind in der Regel Aktionen oder Absichten.
 
@@ -76,9 +76,9 @@ Die Benutzererfahrung (UX) wird üblicherweise mit Drahtmodellen oder Modellen m
 
 Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzeroberfläche für die verschiedenen Zielplattformen der App zu berücksichtigen. Die App sollte den Anforderungen der verschiedenen Plattformen entsprechen. Die verschiedenen offiziellen Entwurfsrichtlinien für die jeweiligen Plattformen finden Sie unter:
 
-1.   **Apple**: -  [Human Interface Guidelines (Eingaberichtlinien)](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
-1.   **Android**:[Design Guidelines (Entwurfsrichtlinien)](https://developer.android.com/design/index.html)
-1.   **UWP**: [UWP Design basics (Grundlagen des UWP-Entwurfs)](https://docs.microsoft.com/windows/uwp/design/basics/)
+1. **Apple**: -  [Human Interface Guidelines (Eingaberichtlinien)](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
+1. **Android**:[Design Guidelines (Entwurfsrichtlinien)](https://developer.android.com/design/index.html)
+1. **UWP**: [UWP Design basics (Grundlagen des UWP-Entwurfs)](https://docs.microsoft.com/windows/uwp/design/basics/)
 
 Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den einzelnen Abschnitten einer Anwendung wechseln kann. Bei iOS ist die Registerkartenleiste im unteren Bereich des Bildschirms platziert, bei Android im oberen Bereich, während bei UWP eine Ansicht mit [Pivots und Registerkarten](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) verwendet wird.
 
@@ -110,10 +110,10 @@ In den restlichen Tutorials konzentrieren wir uns hauptsächlich auf die Entwick
 
 Im Rahmen der Stabilisierung sollten Sie sich auf das Finden von Fehlern in Ihrer App konzentrieren. Dabei geht es nicht nur um Funktionalität (z. B. „Die App stürzt ab, wenn ich auf eine bestimmte Taste drückt“), sondern auch um Nutzbarkeit und Leistung. Am besten beginnen Sie bereits früh während der Entwicklung mit der Stabilisierung, damit Sie Kurskorrekturen vornehmen können, bevor hohe Kosten entstehen. In der Regel durchlaufen Anwendungen folgende Phasen: *Prototyp*, *Alpha*, *Beta* und *Release Candidate*. Es gibt zwar verschiedene Definitionen für diese Phasen, aber sie folgen für gewöhnlich folgendem Muster:
 
-1.   **Prototyp**: Die App befindet sich noch in der sogenannten Proof-of-Concept-Phase und nur die Kernfunktionalitäten bzw. nur bestimmte Teile der Anwendung funktionieren. Es gibt noch große Fehler.
-1.   **Alpha**: Die Kernfunktionalitäten sind für gewöhnlich Code Complete, d.h. sie wurden erstellt, aber noch nicht vollständig getestet. Es gibt immer noch große Fehler, und möglicherweise sind noch keine äußeren Funktionen vorhanden.
-1.   **Beta**: Die meisten Funktionen wurden nun fertiggestellt und zumindest grob getestet. Außerdem wurden einige Fehler behoben. Es kann immer noch größere bekannte Fehler geben.
-1.   **Release Candidate**: Alle Funktionen wurden fertiggestellt und getestet. Abgesehen von möglichen neuen Fehlern, kann die App auf den Markt gebracht werden.
+1. **Prototyp**: Die App befindet sich noch in der sogenannten Proof-of-Concept-Phase und nur die Kernfunktionalitäten bzw. nur bestimmte Teile der Anwendung funktionieren. Es gibt noch große Fehler.
+1. **Alpha**: Die Kernfunktionalitäten sind für gewöhnlich Code Complete, d.h. sie wurden erstellt, aber noch nicht vollständig getestet. Es gibt immer noch große Fehler, und möglicherweise sind noch keine äußeren Funktionen vorhanden.
+1. **Beta**: Die meisten Funktionen wurden nun fertiggestellt und zumindest grob getestet. Außerdem wurden einige Fehler behoben. Es kann immer noch größere bekannte Fehler geben.
+1. **Release Candidate**: Alle Funktionen wurden fertiggestellt und getestet. Abgesehen von möglichen neuen Fehlern, kann die App auf den Markt gebracht werden.
 
 Sie können nie zu früh mit dem Testen einer Anwendung beginnen. Wenn man z.B. in der Prototypenphase auf ein größeres Problem stößt, kann die UX einer App immer noch geändert werden, um dieses Problem zu beheben. Wenn in der Alphaphase ein Problem hinsichtlich der Leistung gefunden wird, ist immer noch genügend Zeit, um die Architektur zu ändern, bevor aufgrund von falschen Annahmen zu viel Code erstellt worden ist.
 
@@ -131,9 +131,9 @@ Sobald Sie die Anwendung stabilisiert haben, können Sie sie veröffentlichen. E
 
 Apps, die mit Xamarin.iOS und Objective-C erstellt wurden, werden auf dieselbe Art und Weise verteilt:
 
-1.   **Apple App Store**: Der App Store von Apple ist ein global verfügbares Repository für Onlineanwendungen, das in Mac OS X in iTunes eingebaut wurde. Es handelt sich dabei mit Abstand um die beliebteste Verteilungsmethode für Anwendungen, denn Entwickler können darüber ihre Apps mit geringem Aufwand auf den Onlinemarkt bringen und verteilen.
-1.   **Interne Bereitstellung**: Diese Methode wird zur internen Verteilung von Unternehmensanwendungen eingesetzt, die nicht im App Store Für die Öffentlichkeit zugänglich sind.
-1.   **Ad-hoc-Bereitstellung**: Die Ad-hoc-Bereitstellung soll hauptsächlich für die Entwicklung und Tests verwendet werden. Mit dieser Methode können Sie Ihre Anwendung auf eine begrenzte Anzahl von bereitgestellten Geräten verteilen. Beispielsweise handelt es sich um eine Ad-hoc-Bereitstellung, wenn Sie eine Anwendung über Xcode oder Visual Studio für Mac auf einem Gerät bereitstellen.
+1. **Apple App Store**: Der App Store von Apple ist ein global verfügbares Repository für Onlineanwendungen, das in Mac OS X in iTunes eingebaut wurde. Es handelt sich dabei mit Abstand um die beliebteste Verteilungsmethode für Anwendungen, denn Entwickler können darüber ihre Apps mit geringem Aufwand auf den Onlinemarkt bringen und verteilen.
+1. **Interne Bereitstellung**: Diese Methode wird zur internen Verteilung von Unternehmensanwendungen eingesetzt, die nicht im App Store Für die Öffentlichkeit zugänglich sind.
+1. **Ad-hoc-Bereitstellung**: Die Ad-hoc-Bereitstellung soll hauptsächlich für die Entwicklung und Tests verwendet werden. Mit dieser Methode können Sie Ihre Anwendung auf eine begrenzte Anzahl von bereitgestellten Geräten verteilen. Beispielsweise handelt es sich um eine Ad-hoc-Bereitstellung, wenn Sie eine Anwendung über Xcode oder Visual Studio für Mac auf einem Gerät bereitstellen.
 
 #### <a name="android"></a>Android
 
@@ -146,10 +146,10 @@ Stattdessen kann jeder einen App Store erstellen, und auf den meisten Android-Sm
 
 Dadurch haben die Entwickler Zugang zu einem Verteilungskanal für ihre Anwendungen, der zwar größer, aber auch viel komplexer ist. [Google Play](https://play.google.com/store?hl=en) ist zwar der offizielle App Store von Google, aber es gibt noch viele andere. Die Beliebtesten sind:
 
-1.  [AppBrain](http://www.appbrain.com/)
-1.  [Amazon App Store for Android (Amazon Appstore für Android)](http://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
-1.  [Handango](http://www.handango.com/)
-1.  [GetJar](http://www.getjar.com/)
+1. [AppBrain](http://www.appbrain.com/)
+1. [Amazon App Store for Android (Amazon Appstore für Android)](http://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
+1. [Handango](http://www.handango.com/)
+1. [GetJar](http://www.getjar.com/)
 
 #### <a name="uwp"></a>UWP
 
@@ -176,10 +176,10 @@ Der Bildschirmbereich von Smartphones ist eingeschränkt, und auch bei Tablets, 
 
 Es ist wichtig, dass im gesamten Lebenszyklus der Softwareentwicklung verschiedene Geräte berücksichtigt werden.
 
-1.   **Konzeptualisierung und Planung**: Beachten Sie, dass sowohl die Hardware als auch die Funktionen jedes Geräts anders sind – eine Anwendung, die auf bestimmen Funktionen basiert, läuft möglicherweise auf bestimmten Geräten nicht einwandfrei. Beispielsweise ist nicht in allen Geräten eine Kamera eingebaut. D.h., wenn Sie eine Anwendungen für Videonachrichten erstellen, können manche Geräte Videos zwar abspielen, aber nicht aufnehmen.
-1.   **Entwurf**: Berücksichtigen Sie die unterschiedlichen Bildschirmverhältnisse und -größen für die verschiedenen Geräte, wenn Sie die UX einer Anwendung entwerfen. Außerdem sollten Sie die unterschiedlichen Bildschirmauflösungen beachten, wenn Sie die Benutzeroberfläche (UI) einer Anwendung entwerfen.
-1.   **Entwicklung**: Wenn Sie eine Funktion aus dem Code verwenden, sollte diese Funktion zunächst getestet werden. Bevor Sie z.B. zum Beispiel eine Gerätefunktion wie die Kamera verwenden, sollten Sie immer das Betriebssystem dahingehend abfragen, ob es diese Funktion gibt. Wenn Sie anschließend die Funktion bzw. das Gerät initialisieren, sollten Sie derzeit vom Betriebssystem unterstützte Funktionen anfordern und diese Konfigurationseinstellungen anschließend verwenden.
-1.   **Testen**: Es ist wichtig, dass Sie die Anwendung schon früh auf entsprechenden Geräten testen. Sogar Geräte mit denselben Hardwarespezifikationen können stark in ihrem Verhalten voneinander abweichen.
+1. **Konzeptualisierung und Planung**: Beachten Sie, dass sowohl die Hardware als auch die Funktionen jedes Geräts anders sind – eine Anwendung, die auf bestimmen Funktionen basiert, läuft möglicherweise auf bestimmten Geräten nicht einwandfrei. Beispielsweise ist nicht in allen Geräten eine Kamera eingebaut. D.h., wenn Sie eine Anwendungen für Videonachrichten erstellen, können manche Geräte Videos zwar abspielen, aber nicht aufnehmen.
+1. **Entwurf**: Berücksichtigen Sie die unterschiedlichen Bildschirmverhältnisse und -größen für die verschiedenen Geräte, wenn Sie die UX einer Anwendung entwerfen. Außerdem sollten Sie die unterschiedlichen Bildschirmauflösungen beachten, wenn Sie die Benutzeroberfläche (UI) einer Anwendung entwerfen.
+1. **Entwicklung**: Wenn Sie eine Funktion aus dem Code verwenden, sollte diese Funktion zunächst getestet werden. Bevor Sie z.B. zum Beispiel eine Gerätefunktion wie die Kamera verwenden, sollten Sie immer das Betriebssystem dahingehend abfragen, ob es diese Funktion gibt. Wenn Sie anschließend die Funktion bzw. das Gerät initialisieren, sollten Sie derzeit vom Betriebssystem unterstützte Funktionen anfordern und diese Konfigurationseinstellungen anschließend verwenden.
+1. **Testen**: Es ist wichtig, dass Sie die Anwendung schon früh auf entsprechenden Geräten testen. Sogar Geräte mit denselben Hardwarespezifikationen können stark in ihrem Verhalten voneinander abweichen.
 
 #### <a name="limited-resources"></a>Begrenzte Ressourcen
 

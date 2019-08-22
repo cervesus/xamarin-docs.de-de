@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: caf43e6cb975b65240f5c0f8538b9be175978eac
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: bf934d50c90efaba266cbfac00aa5140ea92009b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780459"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526684"
 ---
 # <a name="custom-linker-configuration"></a>Benutzerdefinierte Linkerkonfiguration
 
@@ -20,12 +20,12 @@ Wenn die Standardoptionen nicht ausreichen, können Sie den Linkerprozess mit ei
 Sie können dem Linker zusätzliche Definitionen zur Verfügung stellen, um sicherzustellen, das der Typ, die Methoden und/oder die Felder nicht aus Ihrer Anwendung gelöscht werden. In Ihrem eigenen Code ist die empfohlene Herangehensweise das Verwenden der benutzerdefinierten `[Preserve]`-Attribute. Dies wird in den Artikeln [Linking on iOS (Verknüpfen unter iOS)](~/ios/deploy-test/linker.md) und [Linking on Android (Verknüpfen unter Android)](~/android/deploy-test/linker.md) besprochen.
 Wenn Sie allerdings Definitionen vom SDK oder von Produktassemblys benötigen, ist eine XML-Datei die beste Lösung (und nicht das Hinzufügen von Code, um sicherzustellen, dass der Linker nichts Wichtiges löscht).
 
-Dazu definieren Sie eine XML-Datei mit dem allgemeinen Element <linker>, die *assembly*-Knoten enthält, die wiederum *type*-Knoten enthalten, die *method*- und *field*-Knoten enthalten.
+Dazu definieren Sie eine XML-Datei mit dem allgemeinen Element `<linker>`, die *assembly*-Knoten enthält, die wiederum *type*-Knoten enthalten, die *method*- und *field*-Knoten enthalten.
 
 Sobald Sie über diese Linkerbeschreibungsdatei verfügen, fügen Sie sie Ihrem Projekt hinzu, und führen Sie Folgendes durch:
 
--  **Für Android:** Legen Sie den **Buildvorgang** auf **LinkDescription** fest.
--  **Für iOS:** Legen Sie den **Buildvorgang** auf **LinkDescription** fest.
+- **Für Android:** Legen Sie den **Buildvorgang** auf **LinkDescription** fest.
+- **Für iOS:** Legen Sie den **Buildvorgang** auf **LinkDescription** fest.
 
 
 Im folgenden Beispiel wird gezeigt, wie die XML-Datei aussieht:

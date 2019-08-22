@@ -9,12 +9,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 3dad36dc93f5c23e5d9ef1e05a1b9419b7a724b6
-ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
+ms.openlocfilehash: 989d0fe1d8fffd74ea5f64ae7bd5a13487d25c0e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "58855106"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525739"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Verwalten virtueller Geräte mit Android Device Manager
 
@@ -33,7 +33,7 @@ In diesem Artikel wird erläutert, wie virtuelle Android-Geräte mit Android Dev
 Mit dem Android Device Manager können _virtuelle Android-Geräte_ (AVDs) erstellt und konfiguriert werden, die sich im [Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) ausführen lassen.
 Jedes virtuelle Android-Gerät stellt eine Emulatorkonfiguration dar, die ein physisches Android-Gerät simuliert. Dadurch wird das Ausführen und Testen Ihrer App mit einer Vielzahl von Konfigurationen ermöglicht, die verschiedene physische Android-Geräte simulieren.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Sie benötigen Folgendes, um Android Device Manager verwenden zu können:
 
@@ -208,7 +208,7 @@ Xamarin Studio ist nicht mit Android Device Manager kompatibel.
 Mit dem Android Device Manager können *virtuelle Android-Geräte* (AVDs) erstellt und konfiguriert werden, die sich im [Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) ausführen lassen.
 Jedes virtuelle Android-Gerät stellt eine Emulatorkonfiguration dar, die ein physisches Android-Gerät simuliert. Dadurch wird das Ausführen und Testen Ihrer App mit einer Vielzahl von Konfigurationen ermöglicht, die verschiedene physische Android-Geräte simulieren.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Sie benötigen Folgendes, um Android Device Manager verwenden zu können:
 
@@ -217,9 +217,9 @@ Sie benötigen Folgendes, um Android Device Manager verwenden zu können:
 - Das Android SDK muss installiert sein (siehe [Einrichten des Android SDK für Xamarin.Android](~/android/get-started/installation/android-sdk.md)).
 
 - Die folgenden Pakete müssen (über den [Android SDK-Manager](~/android/get-started/installation/android-sdk.md)) installiert werden: 
-    -  **SDK Tools-Version 26.1.1** oder höher
-    -  **Android SDK-Plattformtools 28.0.1** oder höher 
-    -  **Android SDK-Buildtools 26.0.3** oder höher
+    - **SDK Tools-Version 26.1.1** oder höher
+    - **Android SDK-Plattformtools 28.0.1** oder höher 
+    - **Android SDK-Buildtools 26.0.3** oder höher
 
   Bei diesen Paketen sollte wie im folgenden Screenshot dargestellt der Status **Installiert** angezeigt werden:
 

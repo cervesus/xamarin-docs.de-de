@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 6d595a487d87c7e30c87a0347d25404d0b2f7dbc
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 133550bab03c4d2e3826ea59cf231ac3d85f29cc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527312"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525652"
 ---
 # <a name="debugging-on-the-android-emulator"></a>Debuggen auf dem Android-Emulator
 
@@ -29,13 +29,13 @@ Der Android-Emulator wird zusammen mit der Workload **Mobile-Entwicklung mit .NE
 
 Visual Studio enthält vorkonfigurierte virtuelle Geräte, die im Dropdownmenü „Gerät“ angezeigt werden. Im folgenden Screenshot aus Visual Studio 2017 sind beispielsweise mehrere vorkonfigurierte virtuelle Geräte verfügbar:
 
--   **VisualStudio\_android-23\_arm\_phone**
+- **VisualStudio\_android-23\_arm\_phone**
 
--   **VisualStudio\_android-23\_arm\_tablet**
+- **VisualStudio\_android-23\_arm\_tablet**
 
--   **VisualStudio\_android-23\_x86\_phone** 
+- **VisualStudio\_android-23\_x86\_phone** 
 
--   **VisualStudio\_android-23\_x86\_tablet** 
+- **VisualStudio\_android-23\_x86\_tablet** 
 
 [![Virtuelle Geräte](debug-on-emulator-images/win/01-virtual-devices-sml.png)](debug-on-emulator-images/win/01-virtual-devices.png#lightbox)
 
@@ -52,9 +52,9 @@ Bevor Sie virtuelle Geräte für eine neue API-Ebene konfigurieren können, müs
 
 Visual Studio für Mac enthält vorkonfigurierte virtuelle Geräte, die im Dropdownmenü „Gerät“ angezeigt werden. Im folgenden Screenshot sind beispielsweise zwei vorkonfigurierte virtuelle Geräte verfügbar:
 
--   **Android\_Accelerated\_x86**
+- **Android\_Accelerated\_x86**
 
--   **Android\_ARMv7a**
+- **Android\_ARMv7a**
 
 [![Virtuelle Geräte](debug-on-emulator-images/mac/01-virtual-devices-sml.png)](debug-on-emulator-images/mac/01-virtual-devices.png#lightbox)
 
@@ -96,8 +96,8 @@ Beim Ausführen der App muss der Emulator nicht jedes Mal beendet und anschließ
 Neuere Versionen des Android-Emulators enthalten ein Feature namens _Quick Boot_, mit dem der Emulator in nur wenigen Sekunden gestartet werden kann. Wenn Sie den Emulator schließen, wird eine Momentaufnahme des Zustands des virtuellen Geräts gespeichert, sodass dieser Zustand schnell wiederhergestellt werden kann, wenn der Emulator neugestartet wird.
 Sie benötigen Folgendes, um auf dieses Feature zugreifen zu können:
 
--   Android-Emulator-Version 27.0.2 oder höher
--   Android SDK Tools-Version 26.1.1 oder höher
+- Android-Emulator-Version 27.0.2 oder höher
+- Android SDK Tools-Version 26.1.1 oder höher
 
 Wenn die oben aufgeführten Versionen des Emulators und von SDK Tools installiert sind, ist das „Quick Boot“-Feature standardmäßig aktiviert. 
 
@@ -125,10 +125,10 @@ In diesem Leitfaden wurde das Konfigurieren des Android-Emulators zum Ausführen
 
 Weitere Informationen zur Verwendung des Android-Emulators finden Sie in den folgenden Artikeln für Android-Entwickler:
 
--   [Navigating on the Screen (Navigieren auf dem Bildschirm)](https://developer.android.com/studio/run/emulator.html#navigate)
+- [Navigating on the Screen (Navigieren auf dem Bildschirm)](https://developer.android.com/studio/run/emulator.html#navigate)
 
--   [Performing Basic Tasks in the Emulator (Ausführen von grundlegenden Aufgaben im Emulator)](https://developer.android.com/studio/run/emulator.html#tasks)
+- [Performing Basic Tasks in the Emulator (Ausführen von grundlegenden Aufgaben im Emulator)](https://developer.android.com/studio/run/emulator.html#tasks)
 
--   [Working with Extended Controls, Settings, and Help (Arbeiten mit erweiterten Steuerelementen, Einstellungen und Hilfe)](https://developer.android.com/studio/run/emulator.html#extended)
+- [Working with Extended Controls, Settings, and Help (Arbeiten mit erweiterten Steuerelementen, Einstellungen und Hilfe)](https://developer.android.com/studio/run/emulator.html#extended)
 
--   [Ausführen des Emulators mit Quick Boot](https://developer.android.com/studio/run/emulator#quickboot)
+- [Ausführen des Emulators mit Quick Boot](https://developer.android.com/studio/run/emulator#quickboot)

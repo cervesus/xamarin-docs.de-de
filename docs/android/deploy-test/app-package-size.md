@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: a6fe5cc3a126cc42c07f38b89c5d1de308b3c0dc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109912"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525782"
 ---
 # <a name="application-package-size"></a>Anwendungspaketgröße
 
@@ -63,17 +63,17 @@ Die Buildoption *Schnelle Assemblybereitstellung* kann verwendet werden, um die 
 
 Gehen Sie zum Aktivieren von *Schnelle Assemblybereitstellung* folgendermaßen vor:
 
-1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Android-Projekt, und wählen Sie **Optionen** aus.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Android-Projekt, und wählen Sie **Optionen** aus.
 
-2.  Wählen Sie im Dialogfeld **Android-Build** aus:  
+2. Wählen Sie im Dialogfeld **Android-Build** aus:  
 
     ![Projektoptionen für Android-Build](app-package-size-images/fastdev0.png)
 
-3.  Aktivieren Sie die Kontrollkästchen **Freigebenene Mono-Laufzeit** und **Schnelle Assemblybereitstellung**:  
+3. Aktivieren Sie die Kontrollkästchen **Freigebenene Mono-Laufzeit** und **Schnelle Assemblybereitstellung**:  
 
     ![Auf der Registerkarte „Packen“ aktivierte Kontrollkästchen](app-package-size-images/fastdev.png)
 
-4.  Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern und das Dialogfeld „Projektoptionen“ zu schließen.
+4. Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern und das Dialogfeld „Projektoptionen“ zu schließen.
 
 
 Wenn die Anwendung das nächste Mal zum Debuggen erstellt wird, werden die Assemblys direkt auf dem Gerät installiert (sofern noch nicht vorhanden), und ein kleineres Anwendungspaket (das die Assemblys nicht enthält) wird auf dem Gerät installiert. Dies verkürzt die Zeit, die benötigt wird, um Änderungen an der Anwendung zum Testen in Betrieb zu nehmen.

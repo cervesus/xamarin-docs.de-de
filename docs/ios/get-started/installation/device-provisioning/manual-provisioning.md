@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: ce48296ab6e979241630fe8d039ba6b284eed5dc
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 993588a46c8d7048c7494908d6f59a5bbe2ddda6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865894"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526632"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Manuelle Bereitstellung für Xamarin.iOS
 
@@ -193,14 +193,14 @@ Nachdem das Bereitstellungsprofil erfolgreich erstellt wurde, kann es erforderli
 
 Zertifikate und Bereitstellungsprofile, die im Apple-Entwicklerportal erstellt wurden, werden möglicherweise nicht automatisch in Xcode angezeigt. Aus diesem Grund kann es erforderlich sein, sie herunterzuladen, damit Visual Studio für Mac und Visual Studio darauf zugreifen können. Führen Sie die folgenden Schritte aus, um alle im Apple Developer Portal erstellten Zertifikate zu aktualisieren und herunterzuladen:
 
-1.   Beenden Sie Visual Studio für Mac bzw. Visual Studio.
-2.   Starten Sie Xcode.
-3.   Wählen Sie **Xcode-Menü > Einstellungen...** aus
-4.   Klicken Sie auf die **Konten**-Registerkarte.
-5.   Wählen Sie ein Team aus, und klicken Sie auf die Schaltfläche **Download Manual Profiles** (Manuelle Profile herunterladen): [![](manual-provisioning-images/selectteam1.png "Herunterladen von manuellen Profilen")](manual-provisioning-images/selectteam1.png#lightbox)
+1. Beenden Sie Visual Studio für Mac bzw. Visual Studio.
+2. Starten Sie Xcode.
+3. Wählen Sie **Xcode-Menü > Einstellungen...** aus
+4. Klicken Sie auf die **Konten**-Registerkarte.
+5. Wählen Sie ein Team aus, und klicken Sie auf die Schaltfläche **Download Manual Profiles** (Manuelle Profile herunterladen):  [![](manual-provisioning-images/selectteam1.png "Herunterladen von manuellen Profilen")](manual-provisioning-images/selectteam1.png#lightbox)
 
-6.   Beenden Sie Xcode.
-7.  Starten Sie Visual Studio für Mac bzw. Visual Studio.
+6. Beenden Sie Xcode.
+7. Starten Sie Visual Studio für Mac bzw. Visual Studio.
 
 Die neuen Zertifikate oder Bereitstellungsprofile sind in Visual Studio für Mac oder Visual Studio verfügbar und einsatzbereit.
 

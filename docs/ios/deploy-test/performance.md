@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 4954b83b75618128f32b0e5fceed2f04df183433
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 47211f60d55f1f355a92307eff53ed9af754eda2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511469"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527415"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS-Leistung
 
@@ -62,10 +62,10 @@ Das nicht verwaltete `MyView`-Objekt verfügt über einen `GCHandle`-Zeiger auf 
 
 In Fällen, in denen ein enthaltenes Objekt einen Link zu seinem Container speichert, stehen mehrere Optionen für den Umgang mit den Zirkelverweisen zur Verfügung:
 
--  Unterbrechen Sie den Zyklus manuell, indem Sie den Link zum Container auf `null`setzen.
--  Entfernen Sie die enthaltenen Objekte manuell aus dem Container.
--  Rufen Sie `Dispose` für die Objekte auf.
--  Vermeiden Sie, dass der Zirkelverweis einen Weak-Verweis auf den Container beibehält. Weitere Informationen über Weak-Verweise finden Sie unter:
+- Unterbrechen Sie den Zyklus manuell, indem Sie den Link zum Container auf `null`setzen.
+- Entfernen Sie die enthaltenen Objekte manuell aus dem Container.
+- Rufen Sie `Dispose` für die Objekte auf.
+- Vermeiden Sie, dass der Zirkelverweis einen Weak-Verweis auf den Container beibehält. Weitere Informationen über Weak-Verweise finden Sie unter:
 
 ### <a name="using-weakreferences"></a>Verwenden von Weak-Verweisen
 

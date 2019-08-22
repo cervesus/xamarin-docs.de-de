@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5f8d977c126cfe4bdfdb48470841ee17de6bda31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 421d51cbb1ae3adb80aef6e4bf3cf1da38d6de8e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117732"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887822"
 ---
 # <a name="android-emulator-troubleshooting"></a>Behandlung von Problemen mit dem Android-Emulator
 
@@ -39,7 +39,7 @@ Wenn Sie eine Fehlermeldung erhalten, dass das APK nicht im Emulator installiert
    adb devices
    ```
 
-4. Wenn auf den Emulator vom Android SDK aus zugegriffen werden kann, sollte der Emulator in der Liste der angehängten Geräte aufgelistet sein. Zum Beispiel:
+4. Wenn auf den Emulator vom Android SDK aus zugegriffen werden kann, sollte der Emulator in der Liste der angehängten Geräte aufgelistet sein. Beispiel:
 
    ```shell
    List of devices attached
@@ -180,6 +180,7 @@ In einigen Fällen wird Hyper-V möglicherweise nicht ordnungsgemäß aktiviert,
     ```powershell
     Get-WindowsOptionalFeature -FeatureName HypervisorPlatform -Online
     ```
+
     Wenn der Hypervisor nicht aktiviert ist, wird eine Meldung ähnlich wie im folgenden Beispiel angezeigt, die angibt, dass der Status von HypervisorPlatform **Deaktiviert** ist:
 
     ```
@@ -304,14 +305,16 @@ Wenn Device Guard aktiviert ist, können Sie es mit den folgenden Schritten deak
 
 6. Kopieren Sie die folgenden Befehle und fügen Sie sie in das Eingabeaufforderungsfenster (wenn **Z:** verwendet wird, wählen Sie stattdessen einen nicht verwendeten Laufwerkbuchstaben aus):
 
-        mountvol Z: /s
-        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
-        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
-        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
-        mountvol Z: /d
+    ```cmd
+    mountvol Z: /s
+    copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
+    bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
+    bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
+    mountvol Z: /d
+    ```
 
 7. Starten Sie den Computer neu. Auf dem Startbildschirm sollten Sie eine Aufforderung ähnlich wie die folgende Meldung sehen:
 
@@ -384,7 +387,7 @@ Wenn Sie eine Fehlermeldung erhalten, dass das APK nicht im Emulator installiert
    adb devices
    ```
 
-4. Wenn auf den Emulator vom Android SDK aus zugegriffen werden kann, sollte der Emulator in der Liste der angehängten Geräte aufgelistet sein. Zum Beispiel:
+4. Wenn auf den Emulator vom Android SDK aus zugegriffen werden kann, sollte der Emulator in der Liste der angehängten Geräte aufgelistet sein. Beispiel:
 
    ```shell
    List of devices attached

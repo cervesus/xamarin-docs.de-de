@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ba09afc477ddaadc07aa415376860eea3c8c28d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 30731dda1007127caff84eae20696b45803b74f1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671467"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528999"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Zertifikate und Bezeichner in Xamarin.Mac
 
@@ -32,7 +32,7 @@ Klicken Sie anschließend auf den **Zertifikate-Link** unter dem Abschnitt **Mac
 
 [![Auswählen der Verknüpfung „Zertifikate“](certificates-identifiers-images/devcenter03.png "Selecting the Certificates link")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
-Klicken Sie auf den Link **Alle** und anschließend auf die Schaltfläche **+**:
+Klicken Sie auf den Link **Alle** und anschließend auf die Schaltfläche **+** :
 
 [![Auswählen von „Alle“ und Hinzufügen eines neuen Elements](certificates-identifiers-images/certif01.png "Selecting all and adding a new item")](certificates-identifiers-images/certif01-large.png#lightbox)
 
@@ -40,10 +40,10 @@ Laden Sie von hier die **Zwischenzertifikate** (Worldwide Developer Relations Ce
 
 Im verbleibenden Abschnitt werden Sie zu jedem der vier Abschnitte geführt, um die Einrichtung eines Mac-Entwicklerkontos abzuschließen.
 
--   **Registrieren der Mac-App-ID**: Der Entwickler muss diese Schritte für jeden Anwendung, die von ihm geschrieben werden, befolgen.
--   **Registrieren von macOS-Systemen**: Dieser Schritt ist nur nötig, wenn Sie Computer zum Testen hinzufügen.
--   **Erstellen von Zertifikaten**: Dieser Schritt ist nur einmal bei der Einrichtung der Zertifikate erforderlich oder später, wenn diese erneuert werden.
--   **Erstellen eines Bereitstellungsprofils**: Der Entwickler muss diese Schritte für jede neue Anwendung, die geschrieben wird, befolgen, und wenn neue Systeme hinzugefügt werden.
+- **Registrieren der Mac-App-ID**: Der Entwickler muss diese Schritte für jeden Anwendung, die von ihm geschrieben werden, befolgen.
+- **Registrieren von macOS-Systemen**: Dieser Schritt ist nur nötig, wenn Sie Computer zum Testen hinzufügen.
+- **Erstellen von Zertifikaten**: Dieser Schritt ist nur einmal bei der Einrichtung der Zertifikate erforderlich oder später, wenn diese erneuert werden.
+- **Erstellen eines Bereitstellungsprofils**: Der Entwickler muss diese Schritte für jede neue Anwendung, die geschrieben wird, befolgen, und wenn neue Systeme hinzugefügt werden.
 
 Klicken Sie oben links auf der Seite auf den Link **Übersicht**, um jederzeit zu diesem Menü zurückzukehren.
 
@@ -77,7 +77,7 @@ Von hier aus kann der Entwickler die Datenbanken, die er verwenden wird, konfigu
 
 Um ein Bereitstellungsprofil für Testzwecke zu erstellen, muss der Entwickler seine Mac-Computer registrieren. Entwickler können maximal 100 Computer zum Testen ihrer Mac-Apps registrieren.
 
-Wählen Sie im Mac Developer Center **Alle** aus dem Bereich **Geräte** aus, und klicken Sie auf die Schaltfläche **+**:
+Wählen Sie im Mac Developer Center **Alle** aus dem Bereich **Geräte** aus, und klicken Sie auf die Schaltfläche **+** :
 
 [![Hinzufügen eines neuen Computers](certificates-identifiers-images/devcenter10.png "Adding a new computer")](certificates-identifiers-images/devcenter10-large.png#lightbox)
 
@@ -93,9 +93,9 @@ Verwenden Sie den Abschnitt „Zertifikate“, um unterschiedliche Arten von Zer
 
 Bei Zertifikaten wird zwischen drei Haupttypen unterschieden:
 
--   **Mac-Entwicklungszertifikat**: Optional für die allgemeine App-Entwicklung, jedoch erforderlich, wenn der Entwickler plant, Funktionen wie iCloud oder Pushbenachrichtigungen zu verwenden. Der Entwickler benötigt ein Entwicklungszertifikat, bevor die Erstellung von Bereitstellungsprofilen möglich ist, mit denen er auf diese Funktionen zugreifen kann.
--   **Mac App Store**: Der Entwickler benötigt ein Zertifikat für seine App und ein weiteres für den Installer.
--   **Entwickler-ID**: Zertifikate für die App und den Installer, wenn Sie außerhalb des Mac App Store verteilen möchten.
+- **Mac-Entwicklungszertifikat**: Optional für die allgemeine App-Entwicklung, jedoch erforderlich, wenn der Entwickler plant, Funktionen wie iCloud oder Pushbenachrichtigungen zu verwenden. Der Entwickler benötigt ein Entwicklungszertifikat, bevor die Erstellung von Bereitstellungsprofilen möglich ist, mit denen er auf diese Funktionen zugreifen kann.
+- **Mac App Store**: Der Entwickler benötigt ein Zertifikat für seine App und ein weiteres für den Installer.
+- **Entwickler-ID**: Zertifikate für die App und den Installer, wenn Sie außerhalb des Mac App Store verteilen möchten.
 
 In den folgenden Abschnitten finden Sie Beispiele zum Erstellen jedes Typs der oben genannten Zertifikattypen.
 

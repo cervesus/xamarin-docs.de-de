@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 050f084086df02314faecaca42a93007e6cc5246
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: adfc8e34d64b6091ba8ffc56c0f93bcf560128b1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647047"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527705"
 ---
 # <a name="hello-ios--deep-dive"></a>Hallo, iOS – Ausführliche Erläuterungen
 
@@ -442,14 +442,14 @@ Nicht jedem steht ein Designer zur Verfügung, der benutzerdefinierte Symbole un
 - [**Sketch**](https://www.sketchapp.com"): Sketch ist eine Mac-App für das Entwerfen von Benutzeroberflächen, Symbolen usw. Diese App wurde verwendet, um die Xamarin-App-Symbole und -Startbilder zu entwerfen. Sketch 3 ist im App Store verfügbar. Sie können ebenfalls das kostenlose [Sketch Tool](http://bohemiancoding.com/sketch/tool/) testen.
 - [**Pixelmator**](http://www.pixelmator.com/): Eine vielseitige Mac-App für das Bearbeiten von Bildern, die ungefähr 30 Dollar kostet.
 - [**Glyphish**](http://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
-- [**Fiverr**](http://www.fiverr.com/): Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen.  Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
+- [**Fiverr**](http://www.fiverr.com/): Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
 
 ::: zone-end
 ::: zone pivot="windows"
 
 * Visual Studio: Sie können dies verwenden, um einfache Symbole für Ihre App direkt in der IDE zu erstellen.
 - [**Glyphish**](http://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
-- [**Fiverr**](http://www.fiverr.com/): Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen.  Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
+- [**Fiverr**](http://www.fiverr.com/): Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
 
 ::: zone-end
 

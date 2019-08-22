@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 9ce29df9070ee99bb3de9579025f5b0f366d6331
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c7572c3d3a785264e9f26c17e74c41ee28e8af6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655903"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526522"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Ausführliche Erläuterungen: Hallo, iOS Multiscreen
 
@@ -72,17 +72,17 @@ Der Navigationscontroller wird häufig in iOS-Anwendungen verwendet und stellt d
 
 Der Navigationscontroller erfüllt drei Hauptaufgaben:
 
--  **Bereitstellen von Hooks für die Vorwärtsnavigation**: Der Navigationscontroller verwendet eine hierarchische Navigationsmetapher, bei der die Hierarchien der Inhaltsansicht auf einen *Navigationsstapel* *gepusht* werden. Ein Navigationsstapel ähnelt einem Kartenstapel, von dem nur die oberste Karte, wie im folgenden Diagramm veranschaulicht, sichtbar ist:  
+- **Bereitstellen von Hooks für die Vorwärtsnavigation**: Der Navigationscontroller verwendet eine hierarchische Navigationsmetapher, bei der die Hierarchien der Inhaltsansicht auf einen *Navigationsstapel* *gepusht* werden. Ein Navigationsstapel ähnelt einem Kartenstapel, von dem nur die oberste Karte, wie im folgenden Diagramm veranschaulicht, sichtbar ist:  
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "Dieses Diagramm veranschaulicht die Navigation als Kartenstapel")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
--  **Bereitstellen einer optionalen Zurück-Schaltfläche**: Wird ein neues Element auf dem Navigationsstapel abgelegt, wird in der Titelleiste automatisch eine *Zurück-Schaltfläche* angezeigt, mit der der Benutzer rückwärts navigieren kann. Durch Drücken der Schaltfläche „Zurück“ wird der aktuelle Ansichtscontroller vom Navigationsstapel *per Pop entfernt*, und es wird die vorherige Hierarchie der Inhaltsansicht im Fenster geladen:  
+- **Bereitstellen einer optionalen Zurück-Schaltfläche**: Wird ein neues Element auf dem Navigationsstapel abgelegt, wird in der Titelleiste automatisch eine *Zurück-Schaltfläche* angezeigt, mit der der Benutzer rückwärts navigieren kann. Durch Drücken der Schaltfläche „Zurück“ wird der aktuelle Ansichtscontroller vom Navigationsstapel *per Pop entfernt*, und es wird die vorherige Hierarchie der Inhaltsansicht im Fenster geladen:  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "Dieses Diagramm veranschaulicht das „Herunternehmen“ einer Karte vom Stapel")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
--  **Bereitstellen einer Titelleiste**: Der obere Teil des Navigationscontrollers wird *Titelleiste* genannt. Sie zeigt, wie im folgenden Diagramm dargestellt, den Titel des Ansichtscontroller an:  
+- **Bereitstellen einer Titelleiste**: Der obere Teil des Navigationscontrollers wird *Titelleiste* genannt. Sie zeigt, wie im folgenden Diagramm dargestellt, den Titel des Ansichtscontroller an:  
 
     [![](hello-ios-multiscreen-deepdive-images/04.png "In der Titelleiste wird der Titel des Ansichtscontrollers angezeigt.")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
@@ -191,9 +191,9 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Leitfaden behandelt werden. Dies sind z.B. folgende Konzepte:
 
--  **Automatisches Erstellen des Ansichtscontrollers**: Wenn Sie im **Eigenschaftenpad** einen Klassennamen für den Ansichtscontroller eingeben, wird vom iOS-Designer überprüft, ob diese Klasse vorhanden ist, und anschließend die Sicherungsklasse des Ansichtscontrollers generiert. Weitere Informationen zu dieser und anderen iOS-Designer-Funktionen finden Sie im Leitfaden [Introduction to the iOS Designer](~/ios/user-interface/designer/introduction.md) (Einführung in den iOS-Designer).
--  **Tabellenansichtscontroller**: Der `CallHistoryController` ist ein Tabellenansichtscontroller. Ein Tabellenansichtscontroller enthält eine Tabellenansicht, das häufigste Tool zum Anzeigen von Layout und Daten in iOS. Tabellen sind jedoch nicht Teil dieses Leitfadens. Weitere Informationen zu Tabellenansichtscontrollern finden Sie im Leitfaden [Arbeiten mit Tabellen und Zellen](~/ios/user-interface/controls/tables/index.md).
--   **Storyboard-ID**: Durch das Festlegen der Storyboard-ID wird eine Ansichtscontroller-Klasse in Objective-C erstellt, die den CodeBehind für den Ansichtscontroller im Storyboard enthält. Suchen Sie mit der Storyboard-ID die Objective-C-Klasse, und instanziieren Sie den Ansichtscontroller im Storyboard. Weitere Informationen zu Storyboard-IDs finden Sie im Leitfaden [Introduction to Storyboards](~/ios/user-interface/storyboards/index.md) (Einführung in Storyboards).
+- **Automatisches Erstellen des Ansichtscontrollers**: Wenn Sie im **Eigenschaftenpad** einen Klassennamen für den Ansichtscontroller eingeben, wird vom iOS-Designer überprüft, ob diese Klasse vorhanden ist, und anschließend die Sicherungsklasse des Ansichtscontrollers generiert. Weitere Informationen zu dieser und anderen iOS-Designer-Funktionen finden Sie im Leitfaden [Introduction to the iOS Designer](~/ios/user-interface/designer/introduction.md) (Einführung in den iOS-Designer).
+- **Tabellenansichtscontroller**: Der `CallHistoryController` ist ein Tabellenansichtscontroller. Ein Tabellenansichtscontroller enthält eine Tabellenansicht, das häufigste Tool zum Anzeigen von Layout und Daten in iOS. Tabellen sind jedoch nicht Teil dieses Leitfadens. Weitere Informationen zu Tabellenansichtscontrollern finden Sie im Leitfaden [Arbeiten mit Tabellen und Zellen](~/ios/user-interface/controls/tables/index.md).
+- **Storyboard-ID**: Durch das Festlegen der Storyboard-ID wird eine Ansichtscontroller-Klasse in Objective-C erstellt, die den CodeBehind für den Ansichtscontroller im Storyboard enthält. Suchen Sie mit der Storyboard-ID die Objective-C-Klasse, und instanziieren Sie den Ansichtscontroller im Storyboard. Weitere Informationen zu Storyboard-IDs finden Sie im Leitfaden [Introduction to Storyboards](~/ios/user-interface/storyboards/index.md) (Einführung in Storyboards).
 
 ## <a name="summary"></a>Zusammenfassung
 
