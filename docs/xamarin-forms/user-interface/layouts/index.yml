@@ -55,6 +55,12 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: scroll-view.md
             title: ScrollView
+          - href: contentview.md
+            html: 'Erfahren Sie, wie Sie ein ContentView-Element zum Erstellen eines benutzerdefinierten Steuerelements verwenden.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: contentview.md
+            title: Frame
           - href: frame.md
             html: 'Informationen zum Umschließen einer Ansicht mit einem Frame, der mit Farbe, Schlagschatten und anderen Optionen konfiguriert werden kann'
             image:
