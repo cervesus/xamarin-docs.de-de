@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/06/2019
-ms.openlocfilehash: 329edf455a4778efa5f6fbd1ec88cfb274c5cb49
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 619b29a9d65594b1badd805c3361fe1a174d7174
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984422"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976503"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin. Forms-Frame
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
 Die xamarin. Forms [`Frame`](xref:Xamarin.Forms.Frame) -Klasse ist ein Layout, das verwendet wird, um eine Ansicht mit einem Rahmen zu umschließen, der mit Farbe, Schatten und anderen Optionen konfiguriert werden kann. Frames werden häufig zum Erstellen von Begrenzungen um Steuerelemente verwendet, Sie können jedoch auch verwendet werden, um komplexere Benutzeroberflächen zu erstellen. Weitere Informationen finden Sie unter [Erweiterte Frame Verwendung](#advanced-frame-usage).
 
@@ -193,5 +193,5 @@ Das Image " **Outdoor. jpg** " muss jedem Platt Form Projekt hinzugefügt werden
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Frame-Demos](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+* [Frame-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 * [Bilder in xamarin. Forms](~/xamarin-forms/user-interface/images.md)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: e6ce55f25b130c64b72a5a7e2ec2ec9a00291d14
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658060"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976345"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms-ToolBarItem
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
 Die xamarin. Forms [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -Klasse ist ein spezieller Typ von Schaltfläche, der der Auflistung `Page` eines- `ToolbarItems` Objekts hinzugefügt werden kann. Jedes `ToolbarItem` Objekt wird in der Navigationsleiste der Anwendung als Schaltfläche angezeigt. Eine `ToolbarItem` -Instanz kann ein Symbol aufweisen und als primäres oder sekundäres Menü Element angezeigt werden. Die `ToolbarItem` Klasse erbt von [`MenuItem`](xref:Xamarin.Forms.MenuItem).
 
@@ -117,6 +117,6 @@ Wenn die `Order` -Eigenschaft auf `Secondary`festgelegt ist, variiert das Verhal
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [ToolBarItem-Demos](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+* [ToolBarItem-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Bilder in xamarin. Forms](~/xamarin-forms/user-interface/images.md)
 * [Xamarin. Forms (MenuItem)](~/xamarin-forms/user-interface/menuitem.md)

@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/12/2019
-ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.date: 08/22/2019
+ms.openlocfilehash: ac32e340212dd42c373a39df138436e7ee313958
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888655"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976556"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin. Forms CollectionView-Layout
 
@@ -319,9 +319,6 @@ Standardmäßig zeigt ein Horizont [`GridItemsLayout`](xref:Xamarin.Forms.GridIt
 
 Diese Eigenschaften werden von [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. Dies bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
-> [!IMPORTANT]
-> Kopf-und Fußzeilen werden derzeit nur unter Android unterstützt.
-
 Wenn ein Header einem Layout hinzugefügt wird, das von links nach rechts horizontal vergrößert wird, wird der Header links neben der Liste angezeigt. Wenn eine Fußzeile einem Layout hinzugefügt wird, das von links nach rechts horizontal vergrößert wird, wird der Fußzeile rechts neben der Liste angezeigt.
 
 ### <a name="display-strings-in-the-header-and-footer"></a>Anzeigen von Zeichen folgen in der Kopf-und Fußzeile
@@ -346,6 +343,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+Dieser Code führt zu den folgenden Screenshots, wobei die Kopfzeile im IOS-Bildschirmfoto und die Fußzeile im Android-Bildschirmfoto angezeigt wird:
+
+[ ![Screenshot einer CollectionView-Zeichen folgen Kopfzeile und-Fußzeile unter IOS und Android](layout-images/header-footer-string.png "CollectionView Zeichen folgen Kopfzeile und-Fußzeile") ] (layout-images/header-footer-string-large.png#lightbox "Zeichen folgen Kopfzeile und-Fußzeile der CollectionView")
 
 ### <a name="display-views-in-the-header-and-footer"></a>Anzeigen von Ansichten in der Kopf-und Fußzeile
 
@@ -395,6 +396,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+Dieser Code führt zu den folgenden Screenshots, wobei die Kopfzeile im IOS-Bildschirmfoto und die Fußzeile im Android-Bildschirmfoto angezeigt wird:
+
+[ ![Screenshot einer CollectionView-Kopfzeile und-Fußzeile mithilfe von Ansichten, unter IOS und Android](layout-images/header-footer-view.png "CollectionView Kopfzeile und-Fußzeile") ] (layout-images/header-footer-view-large.png#lightbox "Kopf-und Fußzeile der CollectionView-Ansicht")
 
 ### <a name="display-a-templated-header-and-footer"></a>Anzeigen einer auf Vorlagen basierenden Kopfzeile und-Fußzeile
 
@@ -446,6 +451,10 @@ collectionView.SetBinding(ItemsView.HeaderProperty, ".");
 collectionView.SetBinding(ItemsView.FooterProperty, ".");
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+Dieser Code führt zu den folgenden Screenshots, wobei die Kopfzeile im IOS-Bildschirmfoto und die Fußzeile im Android-Bildschirmfoto angezeigt wird:
+
+[ ![Screenshot einer CollectionView-Kopfzeile und-Fußzeile mithilfe von Vorlagen, unter IOS und Android](layout-images/header-footer-template.png "CollectionView-Vorlagen Kopfzeile und-Fußzeile") ] (layout-images/header-footer-template-large.png#lightbox "CollectionView-Vorlagen Kopfzeile und-Fußzeile")
 
 ## <a name="item-spacing"></a>Element Abstand
 
