@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/20/2017
-ms.openlocfilehash: eedfcfe2ed274ddf541addec67e66250deab7899
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 47b9d76cb0b7b2fc48fe83d291479f7d1ed00eb8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114625"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525219"
 ---
 # <a name="google-licensing-services"></a>Google-Lizenzierungsdienste
 
@@ -30,14 +30,14 @@ Eine Anwendung, die die Google-Lizenzierung implementiert hat, sendet eine Anfor
 
 In dem obenstehenden Diagramm wird der folgende Workflow dargestellt: 
 
--   Die Anwendung stellt einen Paketnamen, eine *Nonce* (ein kryptografischer Authentifikator), die zur Überprüfung der Serverantwort verwendet wird, und einen Rückruf, der die Antwort asynchron bearbeiten kann, bereit. 
+- Die Anwendung stellt einen Paketnamen, eine *Nonce* (ein kryptografischer Authentifikator), die zur Überprüfung der Serverantwort verwendet wird, und einen Rückruf, der die Antwort asynchron bearbeiten kann, bereit. 
 
--   Google Play stellt u.a. Informationen über das Google-Konto, das Gerät an sich und die IMSI-Nummer zur Verfügung. 
+- Google Play stellt u.a. Informationen zum Google-Konto und zum Gerät selbst zur Verfügung (z.B. die IMSI-Nummer). 
 
 Die Google-Lizenzierungsdienste sind ebenfalls Kernkomponenten von APK-Erweiterungsdateien (auf die an späterer Stelle in diesem Dokument eingegangen wird). APK-Erweiterungsdateien verwenden Google-Lizenzierungsdienste, um die URL der Dateien, die heruntergeladen werden sollen, abzurufen.
 
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Anwendungen, die nicht über Google Play erworben werden, profitieren nicht von den Google-Lizenzierungsdiensten. Wenn Google Play nicht auf einem Gerät installiert ist, werden die Anwendungen, die Lizenzierungsdienste verwenden, weiterhin wie gewohnt auf dem Gerät ausgeführt.
 

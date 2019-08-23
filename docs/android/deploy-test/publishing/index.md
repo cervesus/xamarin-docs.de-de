@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ebf29e99e1145c23bf476cb80e068e79f72816f5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b5f09413379de13aaf12e8113e8deb0f3c2bf0c3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643901"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525461"
 ---
 # <a name="publishing-an-application"></a>Veröffentlichen einer Anwendung
 
@@ -22,9 +22,9 @@ Wenn Sie eine praktische App erstellt haben, will diese auch benutzt werden. In 
 
 Der letzte Schritt der Entwicklung einer Xamarin.Android-Anwendung ist die Veröffentlichung dieser. Die Veröffentlichung ist der Vorgang der Kompilierung einer Xamarin.Android-Anwendung, sodass Sie gebrauchsfertig ist und von Benutzern auf deren Geräten installiert werden kann. Sie besteht aus zwei wesentlichen Aufgaben:
 
--   **Vorbereitung für die Veröffentlichung:** Es wird an einer Releaseversion der Anwendung gearbeitet, die für Android-Geräte bereitgestellt werden soll. Weitere Informationen zur Vorbereitung des Releases finden Sie unter [Preparing an Application for Release (Vorbereitung einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md).
+- **Vorbereitung für die Veröffentlichung** &ndash; Es wird an einer Releaseversion der Anwendung gearbeitet, die für Android-Geräte bereitgestellt werden soll. Weitere Informationen zur Vorbereitung des Releases finden Sie unter [Vorbereiten einer Anwendung für die Veröffentlichung](~/android/deploy-test/release-prep/index.md).
 
--   **Verteilung**: Die Releaseversion einer Anwendung wird über mindestens einen Verteilungskanal verfügbar gemacht.
+- **Verteilung** &ndash; Die Releaseversion einer Anwendung wird über mindestens einen Verteilungskanal verfügbar gemacht.
 
 In folgendem Diagramm werden die Schritte zur Veröffentlichung einer Xamarin.Android-Anwendung veranschaulicht:
 
@@ -32,9 +32,9 @@ In folgendem Diagramm werden die Schritte zur Veröffentlichung einer Xamarin.An
 
 Wie Sie im oben stehenden Diagramm erkennen können, unterscheidet sich die Vorbereitung bei unterschiedlichen Verteilungsmethoden nicht. Es gibt mehrere Möglichkeiten, wie Sie eine Android-Anwendung für Benutzer bereitstellen können:
 
--   **Über eine Website**: Eine Xamarin.Android-Anwendung kann auf einer Website zum Download zur Verfügung gestellt werden. Dort können Benutzer die Anwendung über einen Link installieren.
--   **Über eine E-Mail**: Benutzer können eine Xamarin.Android-Anwendung über Ihre E-Mail installieren. Die Anwendung wird installiert, wenn der Anhang mit einem Android-Gerät geöffnet wird.
--   **Über einen Marketplace**: Es gibt mehrere Anwendungsmarketplaces, die der Verteilung dienen, wie z.B. [Google Play](http://play.google.com/) oder der [Amazon Appstore für Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011).
+- **Über eine Website**: Eine Xamarin.Android-Anwendung kann auf einer Website zum Download zur Verfügung gestellt werden. Dort können Benutzer die Anwendung über einen Link installieren.
+- **Über eine E-Mail**: Benutzer können eine Xamarin.Android-Anwendung über Ihre E-Mail installieren. Die Anwendung wird installiert, wenn der Anhang mit einem Android-Gerät geöffnet wird.
+- **Über einen Marketplace**: Es gibt mehrere Anwendungsmarketplaces, die der Verteilung dienen, wie z.B. [Google Play](http://play.google.com/) oder der [Amazon Appstore für Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011).
 
 
 Ein etablierten Marketplace ist die am häufigsten gewählte Methode zur Verteilung einer Anwendung, da so die weiteste Reichweite und die höchstmögliche Kontrolle über die Verteilung erreicht wird. Die Veröffentlichung einer Anwendung auf einem Marketplace geht jedoch mit einem Mehraufwand einher.

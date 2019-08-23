@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643842"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525418"
 ---
 # <a name="linking-on-android"></a>Verknüpfung unter Android
 
@@ -55,9 +55,9 @@ public class MyActivity {
 
 Der primäre Mechanismus für die Steuerung des Linkers ist das Dropdownmenü **Linkerverhalten** (*Verknüpfen* in Visual Studio) im Dialogfeld **Projektoptionen**. Es gibt drei Optionen:
 
-1.  **Nicht verknüpfen** (*Keine* in Visual Studio)
-1.  **SDK-Assemblys verknüpfen** (*nur SDK-Assemblys*)
-1.  **Alle Assemblys verknüpfen** (*SDK- und Benutzerassemblys*)
+1. **Nicht verknüpfen** (*Keine* in Visual Studio)
+1. **SDK-Assemblys verknüpfen** (*nur SDK-Assemblys*)
+1. **Alle Assemblys verknüpfen** (*SDK- und Benutzerassemblys*)
 
 
 Die Option **Nicht verknüpfen** deaktiviert den Linker. Für die Größe der Anwendung „Release ohne Verknüpfen“ oben wurde dieses Verhalten verwendet. Dies ist für die Problembehandlung von Laufzeitfehlern nützlich, um zu sehen, ob der Linker dafür verantwortlich ist. Diese Einstellung wird in der Regel nicht für Produktionsbuilds empfohlen.
@@ -92,11 +92,11 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 Der Linker entfernt manchmal Code, den Sie beibehalten möchten. Beispiel:
 
--   Sie verfügen möglicherweise über Code, den Sie dynamisch über `System.Reflection.MemberInfo.Invoke` aufrufen können.
+- Sie verfügen möglicherweise über Code, den Sie dynamisch über `System.Reflection.MemberInfo.Invoke` aufrufen können.
 
--   Wenn Sie Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten.
+- Wenn Sie Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten.
 
--   Wenn Sei die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
+- Wenn Sie die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
 
 In diesen Fällen können Sie das [Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute)-Attribut verwenden. Jeder Member, der nicht statisch von der Anwendung verknüpft wird, wird entfernt. Dieses Attribut kann demnach verwendet werden, um Member zu kennzeichnen, auf die nicht statisch verwiesen wird, die aber noch immer von Ihrer Anwendung verwendet werden. Sie können dieses Attribut auf alle Member eines Typs oder auf den Typ selbst anwenden.
 
@@ -198,27 +198,27 @@ hinzu. Benutzerdefinierte Linkerkonfigurationsdateien können zum Beibehalten vo
 
 Wenn eine Assembly verknüpft wird, werden die nachstehenden benutzerdefinierten Attributtypen aus allen Membern entfernt:
 
--  System.ObsoleteAttribute
--  System.MonoDocumentationNoteAttribute
--  System.MonoExtensionAttribute
--  System.MonoInternalNoteAttribute
--  System.MonoLimitationAttribute
--  System.MonoNotSupportedAttribute
--  System.MonoTODOAttribute
--  System.Xml.MonoFIXAttribute
+- System.ObsoleteAttribute
+- System.MonoDocumentationNoteAttribute
+- System.MonoExtensionAttribute
+- System.MonoInternalNoteAttribute
+- System.MonoLimitationAttribute
+- System.MonoNotSupportedAttribute
+- System.MonoTODOAttribute
+- System.Xml.MonoFIXAttribute
 
 
 Wenn eine Assembly verknüpft wird, werden die nachstehenden benutzerdefinierten Attributtypen aus allen Membern in Releasebuilds entfernt:
 
--  System.Diagnostics.DebuggableAttribute
--  System.Diagnostics.DebuggerBrowsableAttribute
--  System.Diagnostics.DebuggerDisplayAttribute
--  System.Diagnostics.DebuggerHiddenAttribute
--  System.Diagnostics.DebuggerNonUserCodeAttribute
--  System.Diagnostics.DebuggerStepperBoundaryAttribute
--  System.Diagnostics.DebuggerStepThroughAttribute
--  System.Diagnostics.DebuggerTypeProxyAttribute
--  System.Diagnostics.DebuggerVisualizerAttribute
+- System.Diagnostics.DebuggableAttribute
+- System.Diagnostics.DebuggerBrowsableAttribute
+- System.Diagnostics.DebuggerDisplayAttribute
+- System.Diagnostics.DebuggerHiddenAttribute
+- System.Diagnostics.DebuggerNonUserCodeAttribute
+- System.Diagnostics.DebuggerStepperBoundaryAttribute
+- System.Diagnostics.DebuggerStepThroughAttribute
+- System.Diagnostics.DebuggerTypeProxyAttribute
+- System.Diagnostics.DebuggerVisualizerAttribute
 
 
 ## <a name="related-links"></a>Verwandte Links

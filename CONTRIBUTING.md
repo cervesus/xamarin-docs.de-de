@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: afb4da5e424fd86a386b85d8b64bd2a126af6add
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194940"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521107"
 ---
 # <a name="contributing"></a>Beitragen
 
@@ -45,15 +45,17 @@ Für umfangreichere Beiträge und neue Inhalte [öffnen Sie ein Issue](https://g
 
 Wenn es sich um ein neues Thema handelt, können Sie diese [Vorlagendatei](../contributing-guidelines/template.md) als Ausgangspunkt verwenden. Sie enthält die Richtlinien zum Schreiben und erläutert auch die Metadaten, die für jeden Artikel erforderlich sind (z. B. Informationen zum Autor).
 
-Wenn Sie über Bilder und andere statische Ressourcen verfügen, fügen Sie diese zu dem Unterordner **<mypage>-images** hinzu. Wenn Sie einen neuen Ordner für Inhalte erstellen, fügen Sie diesem neuen Ordner einen Ordner für Bilder hinzu.
+Wenn Sie über Bilder und andere statische Ressourcen verfügen, fügen Sie diese zu dem Unterordner **\<mypage>-images** hinzu. Wenn Sie einen neuen Ordner für Inhalte erstellen, fügen Sie diesem neuen Ordner einen Ordner für Bilder hinzu.
 
 #### <a name="example-structure"></a>Beispielstruktur
 
-    docs
-      /android
-          mypage.md
-          /mypage-images
-              some-image.png
+```
+docs
+    /android
+        mypage.md
+        /mypage-images
+            some-image.png
+```
 
 Achten Sie darauf, die richtige Markdownsyntax einzuhalten. Weitere Informationen finden Sie im [Styleguide](../contributing-guidelines/template.md).
 

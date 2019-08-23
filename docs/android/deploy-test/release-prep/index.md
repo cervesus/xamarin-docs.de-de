@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 605db1c2e0dc0cf41288f9d6c9252582ce91d525
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 4ddae1ae4f49c01220b2f5ce78dc19122b3015a0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58071064"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525272"
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
@@ -19,19 +19,19 @@ Nachdem eine Anwendung codiert und getestet wurde, ist es erforderlich, ein Pake
 
 Führen Sie die folgenden Schritte aus, um die App zur Veröffentlichung zu erstellen:
 
--   **[Angeben des Anwendungssymbols](#Specify_the_Application_Icon)** &ndash; Für jede Xamarin.Android-Anwendung muss ein Anwendungssymbol angegeben werden. Dies ist bei einigen Märkten wie Google Play erforderlich, obwohl keine technische Notwendigkeit besteht.
+- **[Angeben des Anwendungssymbols](#Specify_the_Application_Icon)** &ndash; Für jede Xamarin.Android-Anwendung muss ein Anwendungssymbol angegeben werden. Dies ist bei einigen Märkten wie Google Play erforderlich, obwohl keine technische Notwendigkeit besteht.
 
--   **[Versionieren der Anwendung](#Versioning)**: In diesem Schritt werden die Versionsinformationen initialisiert oder aktualisiert. Dies ist wichtig bei zukünftigen Aktualisierungen der Anwendung und um sicherzustellen, dass die Benutzer wissen, welche Version der Anwendung sie installiert haben.
+- **[Versionieren der Anwendung](#Versioning)** : In diesem Schritt werden die Versionsinformationen initialisiert oder aktualisiert. Dies ist wichtig für zukünftige Anwendungsupdates und um sicherzustellen, dass die Benutzer wissen, welche Version der Anwendung sie installiert haben.
 
--   **[Verkleinern der APK](#shrink_apk)**: Die Größe des endgültigen APKs kann mithilfe des Linkers Xamarin.Android im verwalteten Code sowie ProGuard beim Java-Bytecode beträchtlich verringert werden.
+- **[Verkleinern des APK](#shrink_apk)** &ndash; Die Größe des endgültigen APKs kann mithilfe des Linkers Xamarin.Android für den verwalteten Code sowie von ProGuard für den Java-Bytecode beträchtlich verringert werden.
 
--   **[Schützen der Anwendung](#protect_app)**: Hindern Sie Benutzer oder Angreifer daran, die Anwendung zu debuggen, zu manipulieren oder zurückzuentwickeln, indem Sie Debugging deaktivieren, den verwalteten Code verbergen, Anti-Debug- und Anti-Manipulationsmaßnahmen hinzufügen und native Kompilierung verwenden.
+- **[Schützen der Anwendung](#protect_app)** &ndash; Hindern Sie Benutzer oder Angreifer daran, die Anwendung zu debuggen, zu manipulieren oder zurückzuentwickeln, indem Sie Debugging deaktivieren, den verwalteten Code verbergen, Anti-Debug- und Anti-Manipulationsmaßnahmen hinzufügen und native Kompilierung verwenden.
 
--   **[Festlegen von Paketeigenschaften](#Set_Packaging_Properties)**: Mit Paketeigenschaften wird die Erstellung des Android-Anwendungspakets (APK) gesteuert. Dieser Schritt optimiert das APK, schützt dessen Objekte und modularisiert das Paket nach Bedarf.
+- **[Festlegen von Paketeigenschaften](#Set_Packaging_Properties)** : Mit Paketeigenschaften wird die Erstellung des Android-Anwendungspakets (APK) gesteuert. Dieser Schritt optimiert das APK, schützt dessen Objekte und modularisiert das Paket nach Bedarf.
 
--   **[Kompilieren](#Compile)**: In diesem Schritt werden Code und Objekte kompiliert, um das Erstellen im Releasemodus zu bestätigen.
+- **[Kompilieren](#Compile)** &ndash; In diesem Schritt werden Code und Objekte kompiliert, um das Erstellen im Releasemodus zu bestätigen.
 
--   **[Archivieren zur Veröffentlichung](#archive)**: In diesem Schritt wird die App erstellt und zum Signieren und Veröffentlichen in einem Archiv platziert.
+- **[Archivieren zur Veröffentlichung](#archive)** &ndash; In diesem Schritt wird die App erstellt und zum Signieren und Veröffentlichen in einem Archiv platziert.
 
 Jeder dieser Schritte wird unten genauer beschrieben.
 
@@ -69,9 +69,9 @@ In der Regel wird `using Android.App` am oberen Rand von **AssemblyInfo.cs** dek
 
 Die Versionsverwaltung ist wichtig für die Wartung und Verteilung von Android-Anwendungen. Ohne die Versionsverwaltung ist es schwierig zu bestimmen, ob oder wie eine Anwendung aktualisiert werden soll. Um Sie bei der Versionsverwaltung zu unterstützen, erkennt Android zwei verschiedene Arten von Informationen: 
 
--   **Die Versionsnummer** &ndash; Ein ganzzahliger Wert, der intern von Android und der Anwendung verwendet wird und für die Version der Anwendung steht. In den meisten Anwendungen ist der Wert zunächst auf 1 festgelegt und wird mit jedem weiteren Build inkrementiert. Dieser Wert steht in keiner Verbindung oder Affinität zum Attribut des Versionsnamens (siehe unten). Anwendungen und Veröffentlichungsdienste sollten Benutzern diesen Wert nicht anzeigen. Dieser Wert wird in der Datei **AndroidManifest.xml** als `android:versionCode` gespeichert. 
+- **Die Versionsnummer** &ndash; Ein ganzzahliger Wert, der intern von Android und der Anwendung verwendet wird und für die Version der Anwendung steht. In den meisten Anwendungen ist der Wert zunächst auf 1 festgelegt und wird mit jedem weiteren Build inkrementiert. Dieser Wert steht in keiner Verbindung oder Affinität zum Attribut des Versionsnamens (siehe unten). Anwendungen und Veröffentlichungsdienste sollten Benutzern diesen Wert nicht anzeigen. Dieser Wert wird in der Datei **AndroidManifest.xml** als `android:versionCode` gespeichert. 
 
--   **Der Versionsname** &ndash; Eine Zeichenfolge, deren einziger Zweck es ist, dem Benutzer Informationen zur Version der Anwendung auf einem spezifischen Gerät bereitzustellen. Der Versionsname soll Benutzern angezeigt werden, z.B. in Google Play. Diese Zeichenfolge wird nicht intern von Android verwendet. Der Versionsname kann jeder beliebige Zeichenfolgenwert sein, anhand dessen ein Benutzer den Build bestimmen kann, der auf seinem Gerät installiert ist. Dieser Wert wird in der Datei **AndroidManifest.xml** als `android:versionName` gespeichert. 
+- **Der Versionsname** &ndash; Eine Zeichenfolge, deren einziger Zweck es ist, dem Benutzer Informationen zur Version der Anwendung auf einem spezifischen Gerät bereitzustellen. Der Versionsname soll Benutzern angezeigt werden, z.B. in Google Play. Diese Zeichenfolge wird nicht intern von Android verwendet. Der Versionsname kann jeder beliebige Zeichenfolgenwert sein, anhand dessen ein Benutzer den Build bestimmen kann, der auf seinem Gerät installiert ist. Dieser Wert wird in der Datei **AndroidManifest.xml** als `android:versionName` gespeichert. 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -98,9 +98,9 @@ Xamarin.Android-APKs können durch eine Kombination des Linkers Xamarin.Android 
 
 Der Releasemodus deaktiviert die freigegebene Laufzeit und aktiviert die Verknüpfung, sodass die Anwendung nur die Teile von Xamarin.Android enthält, die zur Laufzeit erforderlich sind. Der *Linker* in Xamarin.Android bestimmt mithilfe von statischen Analysen, welche Assemblys, Typen und Typmember von einer Xamarin.Android-Anwendung verwendet oder referenziert werden. Anschließend verwirft der Linker alle ungenutzten Assemblys, Typen und Member, die nicht verwendet (oder referenziert) werden. Dies kann zu einer erheblichen Verringerung der Paketgröße führen. Betrachten Sie beispielsweise das [HalloWelt](~/android/deploy-test/linker.md)-Beispiel, bei dem sich die endgültige Größe des zugehörigen Android-Anwendungspakets um 83% verringert: 
 
--   Konfiguration: Keine &ndash; Xamarin.Android 4.2.5 Größe = 17,4 MB.
+- Konfiguration: Keine &ndash; Xamarin.Android 4.2.5 Größe = 17,4 MB.
 
--   Konfiguration: Nur SDK-Assemblys &ndash; Xamarin.Android 4.2.5 Größe = 3,0 MB.
+- Konfiguration: Nur SDK-Assemblys &ndash; Xamarin.Android 4.2.5 Größe = 3,0 MB.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -110,12 +110,12 @@ Legen Sie die Optionen des Linkers über den Bereich **Android-Optionen** der **
 
 Das Pulldownmenü **Verknüpfen** enthält die folgenden Optionen zum Steuern des Linkers:
 
--   **Keine**: Der Linker wird deaktiviert, und es erfolgt keine Verknüpfung.
+- **Keine** &ndash; Der Linker wird deaktiviert, und es erfolgt keine Verknüpfung.
 
--   **Nur SDK-Assemblys**: Es werden nur die Assemblys verknüpft, die [von Xamarin.Android benötigt werden](~/cross-platform/internals/available-assemblies.md). 
+- **Nur SDK-Assemblys**: Es werden nur die Assemblys verknüpft, die [von Xamarin.Android benötigt werden](~/cross-platform/internals/available-assemblies.md). 
     Andere Assemblys werden nicht verknüpft.
 
--   **SDK und Benutzerassemblys**: Es werden alle Assemblys verknüpft, die von der Anwendung benötigt werden, nicht nur diejenigen, die von Xamarin.Android benötigt werden.
+- **SDK und Benutzerassemblys** &ndash; Es werden alle Assemblys verknüpft, die von der Anwendung benötigt werden, nicht nur diejenigen, die von Xamarin.Android benötigt werden.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -125,11 +125,11 @@ Legen Sie die Optionen des Linkers wie im folgenden Screenshot gezeigt über die
 
 Es stehen folgende Optionen zum Steuern des Linkers zur Verfügung:
 
--   **Keine Verknüpfung**: Der Linker wird deaktiviert, und es erfolgt keine Verknüpfung.
+- **Keine Verknüpfung** &ndash; Der Linker wird deaktiviert, und es erfolgt keine Verknüpfung.
 
--   **Nur SDK-Assemblys verknüpfen**: Es werden nur die Assemblys verknüpft, die [von Xamarin.Android benötigt werden](~/cross-platform/internals/available-assemblies.md). Andere Assemblys werden nicht verknüpft.
+- **Nur SDK-Assemblys verknüpfen**: Es werden nur die Assemblys verknüpft, die [von Xamarin.Android benötigt werden](~/cross-platform/internals/available-assemblies.md). Andere Assemblys werden nicht verknüpft.
 
--   **Alle Assemblys verknüpfen**: Es werden alle Assemblys verknüpft, die von der Anwendung benötigt werden, nicht nur diejenigen, die von Xamarin.Android benötigt werden.
+- **Alle Assemblys verknüpfen** &ndash; Es werden alle Assemblys verknüpft, die von der Anwendung benötigt werden, nicht nur diejenigen, die von Xamarin.Android benötigt werden.
 
 -----
 
@@ -333,7 +333,7 @@ Im **Bereich „Details“** werden zusätzliche Informationen zu jedem Archiv a
 
 ### <a name="distribution"></a>Verteilung
 
-Wenn eine archivierte Version der Anwendung zur Veröffentlichung bereit ist, wählen Sie das Archiv im **Archiv-Manager** aus und klicken auf die Schaltfläche **Verteilen...**:
+Wenn eine archivierte Version der Anwendung zur Veröffentlichung bereit ist, wählen Sie das Archiv im **Archiv-Manager** aus und klicken auf die Schaltfläche **Verteilen...** :
 
 [![Schaltfläche „Verteilen“](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png#lightbox)
 
@@ -363,10 +363,10 @@ In diesem Beispiel wird im **Archiv-Manager** nur eine archivierte Anwendung auf
 
 Hier können Sie den Vertriebskanal auswählen:
 
--   **Ad-Hoc** &ndash; Es wird ein signiertes APK auf dem Datenträger gespeichert, damit es auf Android-Geräte quergeladen werden kann. Fahren Sie mit dem Artikel [Signing the App Package (Signieren des App-Pakets)](~/android/deploy-test/signing/index.md) fort, um zu erfahren, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt und eine &ldquo;Ad-Hoc&rdquo;-Version der App auf dem Datenträger veröffentlicht werden kann. Dies ist eine gute Möglichkeit, ein APK für Testzwecke zu erstellen.
+- **Ad-Hoc** &ndash; Es wird ein signiertes APK auf dem Datenträger gespeichert, damit es auf Android-Geräte quergeladen werden kann. Fahren Sie mit dem Artikel [Signing the App Package (Signieren des App-Pakets)](~/android/deploy-test/signing/index.md) fort, um zu erfahren, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt und eine &ldquo;Ad-Hoc&rdquo;-Version der App auf dem Datenträger veröffentlicht werden kann. Dies ist eine gute Möglichkeit, ein APK für Testzwecke zu erstellen.
 
 
--   **Google Play**: veröffentlicht ein signiertes APK bei Google Play.
+- **Google Play**: veröffentlicht ein signiertes APK bei Google Play.
     Fahren Sie mit dem Artikel [Publishing to Google Play (Veröffentlichen in Google Play)](~/android/deploy-test/publishing/publishing-to-google-play/index.md) fort, um zu erfahren, wie Sie ein APK im Google Play Store signieren und veröffentlichen können.
 
 -----

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 3be28815441b65df101ac9722a665e01503e1b5c
-ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
+ms.openlocfilehash: 54b57097c7742cb5c09f97b40c68c72b6f9c3bf1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386209"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525107"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Einrichten des Android SDK für Xamarin.Android
 
@@ -41,11 +41,11 @@ Sie benötigen Folgendes, um den Xamarin Android SDK-Manager verwenden zu könne
 
 Der Xamarin Android SDK Manager benötigt auch das Java Development Kit (das automatisch mit Xamarin.Android installiert wird). Es gibt verschiedene JDK-Alternativen, die Sie auswählen können:
 
--   Xamarin.Android verwendet standardmäßig [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), was erforderlich ist, wenn Sie für die API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch niedrigere API-Ebenen).
+- Xamarin.Android verwendet standardmäßig [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), was erforderlich ist, wenn Sie für die API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch niedrigere API-Ebenen als Ebene 24).
 
--   Sie können weiterhin [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
+- Sie können weiterhin [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
 
--   Wenn Sie Visual Studio 15.8, Vorschauversion 5 oder höher, verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
+- Wenn Sie Visual Studio 15.8, Vorschauversion 5 oder höher, verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.
@@ -134,15 +134,15 @@ Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktiviere
 
 Sie benötigen Folgendes, um den Xamarin Android SDK-Manager verwenden zu können:
 
--   Visual Studio für Mac 7.5 (oder höher).
+- Visual Studio für Mac 7.5 (oder höher).
 
 Der Xamarin Android SDK Manager benötigt auch das Java Development Kit (das automatisch mit Xamarin.Android installiert wird). Es gibt verschiedene JDK-Alternativen, die Sie auswählen können:
 
--   Xamarin.Android verwendet standardmäßig [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), was erforderlich ist, wenn Sie für die API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch niedrigere API-Ebenen).
+- Xamarin.Android verwendet standardmäßig [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), was erforderlich ist, wenn Sie für die API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch niedrigere API-Ebenen als Ebene 24).
 
--   Sie können weiterhin [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
+- Sie können weiterhin [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
 
--   Wenn Sie Visual Studio für Mac 7.7 oder höher verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
+- Wenn Sie Visual Studio für Mac 7.7 oder höher verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.

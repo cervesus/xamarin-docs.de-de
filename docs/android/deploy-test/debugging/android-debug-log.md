@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: edd6fc92603783dc9de64b10304e8d48f97bdef3
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fd28143a2d4678a240d9d6f9f1cc3b1c5da80222
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509213"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525708"
 ---
 # <a name="android-debug-log"></a>Android-Debugprotokoll
 
@@ -22,8 +22,8 @@ Ein sehr gängiger Trick, den Entwickler verwenden, um ihre Anwendungen zu debug
 
 Das **Debugprotokolltool** bietet die Möglichkeit, während des Debuggens einer App durch Visual Studio Protokollausgaben anzuzeigen. Das Debugprotokoll unterstützt die folgenden Geräte:
 
--   Physische Android-Smartphones, -Tablets und -Wearables
--   ein virtuelles Android-Gerät, das auf dem Android-Emulator ausgeführt wird 
+- Physische Android-Smartphones, -Tablets und -Wearables
+- ein virtuelles Android-Gerät, das auf dem Android-Emulator ausgeführt wird 
 
 > [!NOTE]
 > Das **Debugprotokolltool** funktioniert nicht mit dem Xamarin Live Player.
@@ -41,24 +41,24 @@ Klicken Sie auf das **Geräteprotokollsymbol (Logcat)** , um das **Debugprotokol
 
 Alternativ können Sie das **Geräteprotokolltool** über eine der folgenden Menüoptionen starten:
 
--   **Ansicht > Andere Fenster > Geräteprotokoll**
--   **Extras > Android > Geräteprotokoll**
+- **Ansicht > Andere Fenster > Geräteprotokoll**
+- **Extras > Android > Geräteprotokoll**
 
 Der folgende Screenshot veranschaulicht die verschiedenen Teile des **Debugtoolfensters**:
 
 [![Bestandteile des Debugtoolfensters](android-debug-log-images/vswin-03-features-sml.png)](android-debug-log-images/vswin-03-features.png#lightbox)
 
--   **Geräteauswahl**: Wählt aus, welches physische Gerät oder welcher ausgeführter Emulator überwacht werden soll.
+- **Geräteauswahl** &ndash; Wählt aus, welches physische Gerät oder welcher ausgeführter Emulator überwacht werden soll.
 
--   **Protokolleinträge**: Eine Tabelle mit Protokollmeldungen von Logcat.
+- **Protokolleinträge**: Eine Tabelle mit Protokollmeldungen von Logcat.
 
--   **Protokolleinträge löschen**: Löscht alle aktuellen Protokolleinträge aus der Tabelle.
+- **Protokolleinträge löschen**: Löscht alle aktuellen Protokolleinträge aus der Tabelle.
 
--   **Wiedergeben/Pause**: Wechsel zwischen Aktualisieren und Anhalten der Anzeige von neuen Protokolleinträgen.
+- **Wiedergeben/Pause** &ndash; Wechsel zwischen Aktualisieren und Anhalten der Anzeige von neuen Protokolleinträgen.
 
--   **Beenden**: Hält das Anzeigen von neuen Protokolleinträgen an.
+- **Beenden**: Hält das Anzeigen von neuen Protokolleinträgen an.
 
--   **Suchfeld**: Geben Sie Suchzeichenfolgen in dieses Feld ein, um nach einer Teilmenge von Protokolleinträgen zu filtern.
+- **Suchfeld** &ndash; Geben Sie Suchzeichenfolgen in dieses Feld ein, um nach einer Teilmenge von Protokolleinträgen zu filtern.
 
 
 Wenn das **Debugprotokoll**-Toolfenster angezeigt wird, verwenden Sie das Pulldownmenü des Geräts, um das Android-Gerät auszuwählen, das überwacht werden soll.
@@ -78,23 +78,23 @@ Der folgende Screenshot veranschaulicht die verschiedenen Teile des **Debugtoolf
 
 [![Features des Debugtoolfensters](android-debug-log-images/vsmac-03-features-sml.png)](android-debug-log-images/vsmac-03-features.png#lightbox)
 
--   **Geräteauswahl**: Wählt aus, welches physische Gerät oder welcher ausgeführter Emulator überwacht werden soll.
+- **Geräteauswahl** &ndash; Wählt aus, welches physische Gerät oder welcher ausgeführter Emulator überwacht werden soll.
 
--   **Protokolleinträge**: Eine Tabelle mit Protokollmeldungen von Logcat.
+- **Protokolleinträge**: Eine Tabelle mit Protokollmeldungen von Logcat.
 
--   **Protokolleinträge löschen**: Löscht alle aktuellen Protokolleinträge aus der Tabelle.
+- **Protokolleinträge löschen**: Löscht alle aktuellen Protokolleinträge aus der Tabelle.
 
--   **Suchfeld**: Geben Sie Suchzeichenfolgen in dieses Feld ein, um nach einer Teilmenge von Protokolleinträgen zu filtern.
+- **Suchfeld** &ndash; Geben Sie Suchzeichenfolgen in dieses Feld ein, um nach einer Teilmenge von Protokolleinträgen zu filtern.
 
--   **Meldungen anzeigen**: Schaltet die Anzeige von Informationsmeldungen um.
+- **Meldungen anzeigen**: Schaltet die Anzeige von Informationsmeldungen um.
 
--   **Warnungen anzeigen**: Schaltet die Anzeige von Warnmeldungen um (Warnmeldungen werden in gelb dargestellt).
+- **Warnungen anzeigen**: Schaltet die Anzeige von Warnmeldungen um (Warnmeldungen werden in gelb dargestellt).
 
--   **Fehler anzeigen**: Schaltet die Anzeige von Fehlermeldungen um (Warnmeldungen werden in rot dargestellt).
+- **Fehler anzeigen**: Schaltet die Anzeige von Fehlermeldungen um (Warnmeldungen werden in rot dargestellt).
 
--   **Verbindung wiederherstellen**: Stellt erneut eine Verbindung zum Gerät her und aktualisiert die Anzeige des Protokolleintrags.
+- **Verbindung wiederherstellen**: Stellt erneut eine Verbindung zum Gerät her und aktualisiert die Anzeige des Protokolleintrags.
 
--   **Marker hinzufügen**: Fügt eine Markernachricht (wie z.B. `--- Marker N ---`) nach dem neuesten Protokolleintrag ein. Dabei ist _N_ ein Zähler, der bei 1 beginnt und bei jedem neu hinzugefügten Marker um 1 erhöht wird.
+- **Marker hinzufügen** &ndash; Fügt eine Markernachricht (wie z.B. `--- Marker N ---`) nach dem neuesten Protokolleintrag ein. Dabei ist _N_ ein Zähler, der bei 1 beginnt und bei jedem neu hinzugefügten Marker um 1 erhöht wird.
 
 Wenn das Debugprotokoll-Toolfenster angezeigt wird, verwenden Sie das Pulldownmenü des Geräts, um das Android-Gerät auszuwählen, das überwacht werden soll.
 

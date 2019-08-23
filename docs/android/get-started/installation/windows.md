@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 0053bf97dbcc98c5ffbd6fbddb1e40f884810e60
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 4aa549258d3261d00c0623c2b21a2cebaa226e54
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670752"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524934"
 ---
 # <a name="windows-installation"></a>Windows-Installation
 
@@ -24,13 +24,13 @@ _In diesem Leitfaden werden die Schritte für die Installation von Xamarin.Andro
 Da Xamarin jetzt ohne zusätzliche Kosten in allen Editionen von Visual Studio enthalten ist und keine separate Lizenz erforderlich macht, können Sie über den Visual Studio-Installer Xamarin.Android-Tools herunterladen und installieren.
 (Die Schritte für die manuelle Installation und Lizenzierung, die in früheren Versionen von Xamarin.Android ausgeführt werden musste, sind nicht mehr erforderlich.) In diesem Leitfaden lernen Sie Folgendes:
 
--   Vorgehensweise beim Konfigurieren benutzerdefinierter Speicherorte für Java Development Kit, Android SDK und Android NDK.
+- Vorgehensweise beim Konfigurieren benutzerdefinierter Speicherorte für Java Development Kit, Android SDK und Android NDK.
 
--   Vorgehensweise beim Starten des Android SDK-Managers zum Herunterladen und Installieren weiterer Android SDK-Komponenten.
+- Vorgehensweise beim Starten des Android SDK-Managers zum Herunterladen und Installieren weiterer Android SDK-Komponenten.
 
--   Vorgehensweise beim Vorbereiten eines Android-Geräts oder -Emulators für das Debuggen und Testen.
+- Vorgehensweise beim Vorbereiten eines Android-Geräts oder -Emulators für das Debuggen und Testen.
 
--   Vorgehensweise beim  Erstellen Ihres ersten Xamarin.Android-App-Projekts.
+- Vorgehensweise beim  Erstellen Ihres ersten Xamarin.Android-App-Projekts.
 
 Bis zum Ende dieses Leitfadens werden Sie über eine funktionierende Xamarin.Android-Installation verfügen, die in Visual Studio integriert ist. Sie sind dann bereit, Ihre erste Xamarin.Android-Anwendung zu erstellen.
 

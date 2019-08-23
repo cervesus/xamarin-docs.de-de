@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 4c0fc5edd309d5ed8103c5fc3e33817001049241
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739267"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888973"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Navigation in der Xamarin.Forms-Shell
 
@@ -91,7 +91,7 @@ about
 Um zum `ShellContent`-Objekt für die `dogs`-Route zu navigieren, lautet der absolute Routen-URI `//animals/domestic/dogs`. Um zum `ShellContent`-Objekt für die `about`-Route zu navigieren, lautet der absolute Routen-URI entsprechend `//about`.
 
 > [!IMPORTANT]
-> Doppelte Routennamen sind zulässig. Doppelte Routen sind jedoch nicht zulässig. Eine `ArgumentException` wird beim Start der Anwendung ausgelöst, wenn eine doppelte Route erkannt wird.
+> Eine `ArgumentException` wird beim Start der Anwendung ausgelöst, wenn eine doppelte Route erkannt wird. Diese Ausnahme wird auch ausgelöst, wenn mindestens zwei Routen auf derselben Ebene in der Hierarchie einen Routennamen gemeinsam verwenden.
 
 #### <a name="register-page-routes"></a>Registrieren von Seitenrouten
 
@@ -123,7 +123,7 @@ Routing.RegisterRoute("elephants/details", typeof(ElephantDetailPage));
 Dieses Beispiel ermöglicht eine kontextbezogene Seitennavigation, bei der die Navigation zur `details`-Route von der Seite für die `monkeys`-Route die `MonkeyDetailPage` anzeigt. Entsprechend zeigt die Navigation zur `details`-Route von der Seite für die `elephants`-Route die `ElephantDetailPage` an.
 
 > [!IMPORTANT]
-> Derzeit sind doppelte Routennamen bei Verwendung der `Routing.RegisterRoute`-Methode zulässig, wobei die doppelte Registrierung die vorherige Registrierung überschreibt.
+> Eine `ArgumentException` wird ausgelöst, wenn die `Routing.RegisterRoute`-Methode versucht, dieselbe Route für mindestens zwei unterschiedliche Typen zu registrieren.
 
 ## <a name="perform-navigation"></a>Durchführen der Navigation
 

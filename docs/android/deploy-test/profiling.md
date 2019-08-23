@@ -8,19 +8,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 400075a1cbd2303f2ecddb9b1cc9465bbcbde32d
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: d2999a21debefb05e5aa3cdaace56cb4f3ac2d81
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680263"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525581"
 ---
 # <a name="profiling-android-apps"></a>Profilerstellung für Android-Apps
 
 Bevor Sie Ihre App in einem App Store bereitstellen, ist es wichtig, jegliche Leistungsengpässe, Probleme mit übermäßiger Speicherauslastung oder ineffiziente Verwendung von Netzwerkressourcen zu identifizieren und zu beheben. Zu diesem Zweck stehen zwei Profilerstellungstools zu Verfügung:
 
--  Xamarin Profiler 
--  Android Profiler in Android Studio
+- Xamarin Profiler 
+- Android Profiler in Android Studio
 
 In diesem Leitfaden wird der Xamarin Profiler vorgestellt und ausführliche Informationen zu den ersten Schritten mit dem Android Profiler bereitgestellt.
 
@@ -40,38 +40,38 @@ Ab Android Studio 3.0 ist ein Android Profiler-Tool enthalten. Sie können den A
 
 In den folgenden Schritten wird erklärt, wie Sie eine Xamarin Android-Anwendung im Android Profiler-Tool von Android Studio starten. In den folgenden Beispiel-Screenshots wird die Xamarin Forms-App [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) erstellt, und die Profilerstellung wird mit dem Android Profiler durchgeführt:
 
-1.  Deaktivieren Sie die Option **Shared Runtime verwenden** in den Optionen für die Android-Projekterstellung. Damit wird sichergestellt, dass das APK ohne eine Abhängigkeit für die zur Entwicklungszeit freigegebene Mono-Laufzeit erstellt wurde.
+1. Deaktivieren Sie die Option **Shared Runtime verwenden** in den Optionen für die Android-Projekterstellung. Damit wird sichergestellt, dass das APK ohne eine Abhängigkeit für die zur Entwicklungszeit freigegebene Mono-Laufzeit erstellt wurde.
 
     ![Deaktivieren von „Shared Runtime verwenden“](profiling-images/vswin/01-turn-off-shared-runtime.png)
 
-2.  Erstellen Sie die App zum **Debuggen**, und stellen Sie diese für ein physisches Gerät oder einen Emulator bereit. Dadurch wird eine signierte **Debugversion** des Android-Anwendungspakets erstellt.
+2. Erstellen Sie die App zum **Debuggen**, und stellen Sie diese für ein physisches Gerät oder einen Emulator bereit. Dadurch wird eine signierte **Debugversion** des Android-Anwendungspakets erstellt.
     Das im **XamagonXuzzle**-Beispiel resultierende APK heißt **com.companyname.XamagonXuzzle-Signed.apk**.
 
-3.  Öffnen Sie den Projektordner, und navigieren Sie zu **bin/Debug**. Suchen Sie in diesem Ordner die **Signed.apk**-Version der App, und kopieren Sie diese in einen einfach zugänglichen Ort (z.B. dem Desktop). Im folgenden Screenshot wird gezeigt, wo sich das APK **com.companyname.XamagonXuzzle-Signed.apk** befindet. Anschließend wird es zum Desktop kopiert:
+3. Öffnen Sie den Projektordner, und navigieren Sie zu **bin/Debug**. Suchen Sie in diesem Ordner die **Signed.apk**-Version der App, und kopieren Sie diese in einen einfach zugänglichen Ort (z.B. dem Desktop). Im folgenden Screenshot wird gezeigt, wo sich das APK **com.companyname.XamagonXuzzle-Signed.apk** befindet. Anschließend wird es zum Desktop kopiert:
 
     [![Speicherort der zum Debuggen signierten APK-Datei](profiling-images/vswin/02-locating-the-debug-apk-sml.png)](profiling-images/vswin/02-locating-the-debug-apk.png#lightbox)
 
-4.  Starten Sie Android Studio, und klicken Sie auf **Profile or debug APK** (APK profilieren oder debuggen):
+4. Starten Sie Android Studio, und klicken Sie auf **Profile or debug APK** (APK profilieren oder debuggen):
 
     ![Starten des Profilers über den Android Studio-Startbildschirm](profiling-images/vswin/03-android-studio.png)
 
-5.  Navigieren Sie im Dialogfeld **Select APK File** (APK-Datei auswählen) zu dem Android-Anwendungspaket, das Sie zuvor erstellt und kopiert haben. Wählen Sie die APK aus, und klicken Sie auf **OK**: 
+5. Navigieren Sie im Dialogfeld **Select APK File** (APK-Datei auswählen) zu dem Android-Anwendungspaket, das Sie zuvor erstellt und kopiert haben. Wählen Sie die APK aus, und klicken Sie auf **OK**: 
     
     ![Auswählen des APK im Dialogfeld „APK auswählen“](profiling-images/vswin/04-select-apk-dialog.png)
 
-6.  Android Studio lädt das APK und disassembliert **classes.dex**:
+6. Android Studio lädt das APK und disassembliert **classes.dex**:
 
     ![Einrichten des APK](profiling-images/vswin/05-setting-up-the-apk.png)
 
-7.  Nachdem das APK geladen wurde, zeigt Android Studio den folgenden Projektbildschirm für das APK an. Klicken Sie in der linken Strukturansicht mit der rechten Maustaste auf den Namen der App, und wählen Sie **Open Module Settings** (Moduleinstellungen öffnen) aus:
+7. Nachdem das APK geladen wurde, zeigt Android Studio den folgenden Projektbildschirm für das APK an. Klicken Sie in der linken Strukturansicht mit der rechten Maustaste auf den Namen der App, und wählen Sie **Open Module Settings** (Moduleinstellungen öffnen) aus:
 
     [![Speicherort des Menüelements „Moduleinstellungen öffnen“](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
 
-8.  Navigieren Sie zu **Projekteinstellungen > Module**, wählen Sie den **-Signed**-Knoten der App aus, und klicken Sie dann auf **&lt;No SDK&gt;** (Kein SDK):
+8. Navigieren Sie zu **Projekteinstellungen > Module**, wählen Sie den **-Signed**-Knoten der App aus, und klicken Sie dann auf **&lt;No SDK&gt;** (Kein SDK):
 
     [![Navigieren zur Einstellung für das SDK](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
 
-9.  Wählen Sie im Pulldownmenü **Module SDK** (Modul SDK) die Ebene des Android SDK aus, das zum Erstellen der App verwendet wurde (in diesem Beispiel wurde die API-Ebene 26 zum Erstellen von **XamagonXuzzle** verwendet):
+9. Wählen Sie im Pulldownmenü **Module SDK** (Modul SDK) die Ebene des Android SDK aus, das zum Erstellen der App verwendet wurde (in diesem Beispiel wurde die API-Ebene 26 zum Erstellen von **XamagonXuzzle** verwendet):
 
     [![Festlegen der Ebene des SDK für das Projekt](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
 
@@ -107,8 +107,8 @@ In den folgenden Schritten wird erklärt, wie Sie eine Xamarin Android-Anwendung
 Ausführliche Informationen zur Verwendung des Android Profilers finden Sie in der [Android Studio-Dokumentation](https://developer.android.com/studio/profile/android-profiler.html).
 Die folgenden Themen sind Interessant für Xamarin Android-Entwickler:
 
--   [CPU-Profiler:](https://developer.android.com/studio/profile/cpu-profiler.html) Überprüfen der CPU-Auslastung und Threadaktivitäten der App in Echtzeit.
+- [CPU-Profiler:](https://developer.android.com/studio/profile/cpu-profiler.html) Überprüfen der CPU-Auslastung und Threadaktivitäten der App in Echtzeit.
 
--   [Arbeitsspeicherprofiler:](https://developer.android.com/studio/profile/memory-profiler.html) Zeigt einen Graph der Arbeitsspeicherauslastung der App in Echtzeit an und enthält eine Schaltfläche zum Aufzeichnen der Speicherbelegungen zur Analyse.
+- [Arbeitsspeicherprofiler](https://developer.android.com/studio/profile/memory-profiler.html) &ndash; Zeigt einen Graph der Arbeitsspeicherauslastung der App in Echtzeit an und enthält eine Schaltfläche zum Aufzeichnen der Speicherbelegungen zur Analyse.
 
--   [Netzwerkprofiler:](https://developer.android.com/studio/profile/network-profiler.html) Zeigt Netzwerkaktivitäten von Daten in Echtzeit an, die durch die App gesendet und empfangen wurden.
+- [Netzwerkprofiler](https://developer.android.com/studio/profile/network-profiler.html) &ndash; Zeigt Netzwerkaktivitäten von Daten in Echtzeit an, die durch die App gesendet und empfangen wurden.

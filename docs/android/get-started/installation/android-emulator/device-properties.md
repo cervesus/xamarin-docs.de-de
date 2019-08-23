@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2018
-ms.openlocfilehash: 9007157cfd96b82a5781b3bdc3ffb4fe63f4e422
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a1906d8c5c001c2328a0dbdce58f92092454e2c0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119617"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525081"
 ---
 # <a name="editing-android-virtual-device-properties"></a>Bearbeiten der Eigenschaften von virtuellen Android-Geräten
 
@@ -31,15 +31,15 @@ Wenn Sie eine Eigenschaft auswählen, wird rechts eine ausführliche Beschreibun
 
 Sie können Eigenschaften mithilfe der folgenden Anleitung ändern:
 
--   Aktivieren Sie das Kontrollkästchen auf der rechten Seite einer booleschen Eigenschaft, um diese zu ändern:
+- Aktivieren Sie das Kontrollkästchen auf der rechten Seite einer booleschen Eigenschaft, um diese zu ändern:
 
     ![Ändern einer booleschen Eigenschaft](device-properties-images/win/02-boolean-value.png)
 
--   Klicken Sie zum Ändern einer *enumerierten* Eigenschaft auf den Dropdownpfeil auf der rechten Seite der Eigenschaft, und wählen Sie einen neuen Wert aus.
+- Klicken Sie zum Ändern einer *enum*-Eigenschaft (enumerierten Eigenschaft) auf den Dropdownpfeil auf der rechten Seite der Eigenschaft, und wählen Sie einen neuen Wert aus.
 
     ![Ändern einer enumerierten Eigenschaft](device-properties-images/win/04-enum-value.png)
 
--   Doppelklicken Sie zum Ändern einer Zeichenfolge oder einer ganzzahligen Eigenschaft auf die aktuelle Zeichenfolge oder auf die ganzzahlige Einstellung in der Wertespalte, und geben Sie einen neuen Wert ein.
+- Doppelklicken Sie zum Ändern einer Zeichenfolge oder einer ganzzahligen Eigenschaft auf die aktuelle Zeichenfolge oder auf die ganzzahlige Einstellung in der Wertespalte, und geben Sie einen neuen Wert ein.
 
     ![Ändern einer ganzzahligen Eigenschaft](device-properties-images/win/03-integer-value.png)
 
@@ -56,15 +56,15 @@ Wenn Sie eine Eigenschaft auswählen, wird rechts eine ausführliche Beschreibun
 
 Sie können Eigenschaften mithilfe der folgenden Anleitung ändern:
 
--   Aktivieren Sie das Kontrollkästchen auf der rechten Seite einer booleschen Eigenschaft, um diese zu ändern:
+- Aktivieren Sie das Kontrollkästchen auf der rechten Seite einer booleschen Eigenschaft, um diese zu ändern:
 
     ![Ändern einer booleschen Eigenschaft](device-properties-images/mac/02-boolean-value.png)
 
--   Klicken Sie zum Ändern einer *enumerierten* Eigenschaft auf das Pulldownmenü auf der rechten Seite der Eigenschaft, und wählen Sie einen neuen Wert aus.
+- Klicken Sie zum Ändern einer *enum*-Eigenschaft (enumerierten Eigenschaft) auf das Pulldownmenü auf der rechten Seite der Eigenschaft, und wählen Sie einen neuen Wert aus.
 
     ![Ändern einer enumerierten Eigenschaft](device-properties-images/mac/04-enum-value.png)
 
--   Doppelklicken Sie zum Ändern einer Zeichenfolge oder einer ganzzahligen Eigenschaft auf die aktuelle Zeichenfolge oder auf die ganzzahlige Einstellung in der Wertespalte, und geben Sie einen neuen Wert ein.
+- Doppelklicken Sie zum Ändern einer Zeichenfolge oder einer ganzzahligen Eigenschaft auf die aktuelle Zeichenfolge oder auf die ganzzahlige Einstellung in der Wertespalte, und geben Sie einen neuen Wert ein.
 
     ![Ändern einer ganzzahligen Eigenschaft](device-properties-images/mac/03-integer-value.png)
 

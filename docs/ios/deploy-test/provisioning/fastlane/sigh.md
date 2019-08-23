@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 88cc4899956b03d7236d7aa5c2bd30a5f6880507
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb2fd504cccb7aa81831288762ba623824e52554
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119513"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526513"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane für iOS – sigh
 
@@ -50,7 +50,7 @@ Weitere Informationen zum Installieren von fastlane finden Sie in der Einführun
 
 ## <a name="what-is-sigh"></a>Was ist sigh?
 
-sigh stellt eine Terminalschnittstelle bereit, die es Ihnen ermöglicht, Bereitstellungsprofile für alle Konfigurationen zu erstellen und zu erneuern: Entwicklung, App Store-Verteilung, Ad-hoc-Verteilung und Unternehmensverteilung. Zusätzlich wird ein einfacher Weg für das Herunterladen und Reparieren von Bereitstellungsprofilen bereitgestellt.
+Sigh bietet eine Terminalschnittstelle, mit der Sie Bereitstellungsprofile für alle Konfigurationen erstellen und erneuern können: Entwicklung, App Store-Verteilung, Ad-hoc-Verteilung und Enterprise-Verteilung. Zusätzlich wird ein einfacher Weg für das Herunterladen und Reparieren von Bereitstellungsprofilen bereitgestellt.
 
 <a name="appid" />
 
@@ -58,7 +58,9 @@ sigh stellt eine Terminalschnittstelle bereit, die es Ihnen ermöglicht, Bereits
 
 Eine App-ID kann mit folgendem Befehl erstellt werden:
 
-    fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
+fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
 
 Hierbei ist `com.company.appname` die Bündel-ID Ihrer App, die wie im Folgenden dargestellt in der Datei „Info.plist“ Ihrer Xamarin.iOS-Anwendung gefunden werden kann:
 

@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: 9f2aecf1bcac8f9603db40e3562f49123e924bfc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 07/19/2019
+ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739292"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889200"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms-Shell-Flyout
 
@@ -130,6 +130,32 @@ Das folgende Beispiel zeigt, wie der Flyout-Header beim Durchblättern der Eleme
     ...
 </Shell>
 ```
+
+## <a name="flyout-background-image"></a>Flyout-Hintergrundbild
+
+Das Flyout kann über ein optionales Hintergrundbild verfügen, das unterhalb des Flyout-Headers und hinter allen Flyout-Elementen und Menüelementen angezeigt wird. Das Hintergrundbild kann angegeben werden, indem die bindbare `FlyoutBackgroundImage`-Eigenschaft vom Typ [`ImageSource`](xref:Xamarin.Forms.ImageSource)auf eine Datei, eine eingebettete Ressource, einen URI oder einen Stream festgelegt wird.
+
+Das Seitenverhältnis des Hintergrundbilds kann konfiguriert werden, indem die bindbare `FlyoutBackgroundImageAspect`-Eigenschaft vom Typ [`Aspect`](xref:Xamarin.Forms.Aspect)auf einen der `Aspect`-Enumerationsmember festgelegt wird:
+
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill): Beschneidet das Bild so, dass es den Anzeigebereich ausfüllt und gleichzeitig das Seitenverhältnis beibehalten wird.
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit): Wendet das Letterboxformat auf das Bild an, wenn erforderlich, damit das Bild in den Anzeigebereich passt, wobei abhängig davon, ob das Bild breit oder hoch ist, Leerraum am oberen bzw. unteren Rand oder seitlich hinzugefügt wird.
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill): Streckt das Bild so, dass es den Anzeigebereich vollständig und genau ausfüllt. Dies kann zu einer Bildverzerrung führen.
+
+Standardmäßig wird die `FlyoutBackgroundImageAspect`-Eigenschaft auf `AspectFit` festgelegt.
+
+Das folgende Beispiel zeigt, wie diese Eigenschaften festgelegt werden:
+
+```xaml
+<Shell ...
+       FlyoutBackgroundImage="photo.jpg"
+       FlyoutBackgroundImageAspect="AspectFill">
+    ...
+</Shell>
+```
+
+Dies führt dazu, dass im Flyout ein Hintergrundbild angezeigt wird:
+
+![Screenshot eines Flyout-Hintergrundbilds](flyout-images/flyout-backgroundimage.png "Flyout-Hintergrundbild")
 
 ## <a name="flyout-items"></a>Flyout-Elemente
 

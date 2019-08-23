@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 20e7385c16324643545e156950efaca565eb0e0c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4a3ba970f8ca32f0bfa2e5297e8052f3eb572ed0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643945"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525714"
 ---
 # <a name="building-abi-specific-apks"></a>Erstellen ABI-spezifischer Android-Anwendungspakete (APKs)
 
@@ -24,19 +24,19 @@ _In diesem Dokument wird erörtert, wie ein APK erstellt wird, das mithilfe von 
 
 In bestimmten Situationen kann es für eine Anwendung vorteilhaft sein, mehrere APKs zu haben. Jedes APK ist mit demselben Keystore signiert und hat denselben Paketnamen, wird aber für ein bestimmtes Gerät oder eine bestimmte Android-Konfiguration kompiliert. Dieser Ansatz wird nicht empfohlen, denn es ist viel einfacher, über ein APK zu verfügen, das mehrere Geräte und Konfigurationen unterstützt. Es gibt allerdings Situationen, in denen das Erstellen mehrerer APKs nützlich sein kann, wie z. B.:
 
--  **Reduzieren der Größe des APK**: Google Play erzwingt für APK-Dateien eine Größenbeschränkung von 100 MB. Das Erstellen gerätespezifischer APKs kann die Größe des APK reduzieren, da Sie nur eine Teilmenge von Objekten und Ressourcen für die Anwendung bereitstellen müssen.
+- **Reduzieren der Größe des APK**: Google Play erzwingt für APK-Dateien eine Größenbeschränkung von 100 MB. Das Erstellen gerätespezifischer APKs kann die Größe des APK reduzieren, da Sie nur eine Teilmenge von Objekten und Ressourcen für die Anwendung bereitstellen müssen.
 
--  **Unterstützung verschiedener CPU-Architekturen**: Wenn Ihre Anwendung über gemeinsam genutzte Bibliotheken für bestimmte CPUs verfügt, können Sie nur die gemeinsam genutzten Bibliotheken für die jeweilige CPU verteilen.
+- **Unterstützung verschiedener CPU-Architekturen**: Wenn Ihre Anwendung über gemeinsam genutzte Bibliotheken für bestimmte CPUs verfügt, können Sie nur die gemeinsam genutzten Bibliotheken für die jeweilige CPU verteilen.
 
 
 Mehrere APKs können die Verteilung erschweren – ein Problem, das von Google Play angegangen wird. Google Play stellt sicher, dass das richtige APK an ein Gerät übermittelt wird, und zwar basierend auf dem Versionscode der Anwendung und anderen Metadaten, die in der Datei **AndroidManifest.XML** enthalten sind. Spezifische Details und Einschränkungen, wie Google Play mehrere APKs für eine Anwendung unterstützt, finden Sie in der [Google- Dokumentation zur Unterstützung mehrerer APKs](https://developer.android.com/google/play/publishing/multiple-apks.html).
 
 In dieser Anleitung wird beschrieben, wie für das Erstellen mehrerer APKs für eine Xamarin.Android-Anwendung ein Skript erstellt wird, wobei jedes APK auf eine bestimmte ABI zugeschnitten ist. Die folgenden Themen werden behandelt:
 
-1.  Erstellen eines eindeutigen *Versionscodes* für das APK
-1.  Erstellen einer temporären Version der Datei **AndroidManifest.XML**, die für dieses APK verwendet wird
-1.  Erstellen der Anwendung mithilfe der Datei **AndroidManifest.XML** aus dem vorherigen Schritt
-1.  Vorbereiten des APK auf die Freigabe, indem es signiert und Zipalign darauf angewendet wird
+1. Erstellen eines eindeutigen *Versionscodes* für das APK
+1. Erstellen einer temporären Version der Datei **AndroidManifest.XML**, die für dieses APK verwendet wird
+1. Erstellen der Anwendung mithilfe der Datei **AndroidManifest.XML** aus dem vorherigen Schritt
+1. Vorbereiten des APK auf die Freigabe, indem es signiert und Zipalign darauf angewendet wird
 
 
 Am Ende dieser Anleitung finden Sie eine exemplarische Vorgehensweise, die demonstriert, wie Sie für diese Schritte mit [Rake](http://martinfowler.com/articles/rake.html) ein Skript erstellen.
@@ -48,20 +48,20 @@ Am Ende dieser Anleitung finden Sie eine exemplarische Vorgehensweise, die demon
 Google empfiehlt einen bestimmten Algorithmus für den siebenstelligen Versionscode (siehe Abschnitt zum *Verwenden eines Versionscodeschemas* im Dokument zur [Unterstützung mehrerer APKs](https://developer.android.com/google/play/publishing/multiple-apks.html)).
 Durch die Erweiterung dieses Versionscodeschemas auf acht Ziffern ist es möglich, einige ABI-Informationen in den Versionscode aufzunehmen, die sicherstellen, dass Google Play das richtige APK an ein Gerät verteilt. Die folgende Liste erläutert dieses Versionscodeformat mit acht Ziffern (Indizierung von links nach rechts):
 
--   **Index 0** (im folgenden Diagramm rot) &ndash; Eine ganze Zahl für die ABI:
-    -   1 &ndash; `armeabi`
-    -   2 &ndash; `armeabi-v7a`
-    -   6 &ndash; `x86`
+- **Index 0** (im folgenden Diagramm rot) &ndash; Eine ganze Zahl für die ABI:
+    - 1 &ndash; `armeabi`
+    - 2 &ndash; `armeabi-v7a`
+    - 6 &ndash; `x86`
 
--   **Index 1-2** (im folgenden Diagramm orange) &ndash; Die API-Mindestebene, die von der Anwendung unterstützt wird.
+- **Index 1-2** (im folgenden Diagramm orange) &ndash; Die API-Mindestebene, die von der Anwendung unterstützt wird.
 
--   **Index 3-4** (im folgenden Diagramm blau) &ndash; Die unterstützten Bildschirmgrößen:
-    -   1 &ndash; klein
-    -   2 &ndash; normal
-    -   3 &ndash; groß
-    -   4 &ndash; sehr groß
+- **Index 3-4** (im folgenden Diagramm blau) &ndash; Die unterstützten Bildschirmgrößen:
+    - 1 &ndash; klein
+    - 2 &ndash; normal
+    - 3 &ndash; groß
+    - 4 &ndash; sehr groß
 
--   **Index 5-7** (im folgenden Diagramm grün) &ndash; Eine eindeutige Zahl für den Versionscode. 
+- **Index 5-7** (im folgenden Diagramm grün) &ndash; Eine eindeutige Zahl für den Versionscode. 
     Diese wird vom Entwickler festgelegt. Sie muss für jede öffentliche Freigabe der Anwendung erhöht werden.
 
 Das folgende Diagramm veranschaulicht die Position jedes Code, der in der obigen Liste beschrieben wird:
@@ -71,17 +71,17 @@ Das folgende Diagramm veranschaulicht die Position jedes Code, der in der obigen
 
 Google Play stellt sicher, dass auf Grundlage der `versionCode`- und APK-Konfiguration das richtige APK an das Gerät übermittelt wird. Das APK mit dem höchsten Versionscode wird an das Gerät übermittelt. Beispielsweise kann eine Anwendung drei APKs mit den folgenden Versionscodes aufweisen:
 
--  11413456: Die ABI ist `armeabi`; für die API-Ebene 14; kleine bis große Bildschirme; mit der Versionsnummer 456.
--  21423456: Die ABI ist `armeabi-v7a`; für die API-Ebene 14; normale und große Bildschirme; mit der Versionsnummer 456.
--  61423456: Die ABI ist `x86`; für die API-Ebene 14; normale und große Bildschirme; mit der Versionsnummer 456.
+- 11413456: Die ABI ist `armeabi`; für die API-Ebene 14; kleine bis große Bildschirme; mit der Versionsnummer 456.
+- 21423456: Die ABI ist `armeabi-v7a`; für die API-Ebene 14; normale und große Bildschirme; mit der Versionsnummer 456.
+- 61423456: Die ABI ist `x86`; für die API-Ebene 14; normale und große Bildschirme; mit der Versionsnummer 456.
 
 Um mit diesem Beispiel fortzufahren, stellen Sie sich vor, dass ein Fehler behoben wurde, der spezifisch für `armeabi-v7a` war. Die Anwendungsversion erhöht sich auf 457, und ein neues APK wird erstellt, wobei die `android:versionCode` auf 21423457 festgelegt wird. Die Versionscodes für die Versionen `armeabi` und `x86` bleiben hingegen unverändert.
 
 Stellen Sie sich nun vor, dass die x86-Version einige Updates oder Fehlerkorrekturen erhält, die auf eine neuere API (API-Ebene 19) abzielen, sodass dies die Version 500 der Anwendung darstellt. Der neue `versionCode` ändert sich in 61923500, während „armeabi/armeabi-v7a“ unverändert bleiben. Zu diesem Zeitpunkt lauten die Versionscodes wie folgt:
 
--  11413456: Die ABI ist `armeabi`; für die API-Ebene 14; kleine bis große Bildschirme; mit dem Versionsnamen 456.
--  21423457: Die ABI ist `armeabi-v7a`; für die API-Ebene 14; kleine bis große Bildschirme; mit dem Versionsnamen 457.
--  61923500: Die ABI ist `x86`; für die API-Ebene 19; kleine bis große Bildschirme; mit dem Versionsnamen 500.
+- 11413456: Die ABI ist `armeabi`; für die API-Ebene 14; kleine bis große Bildschirme; mit dem Versionsnamen 456.
+- 21423457: Die ABI ist `armeabi-v7a`; für die API-Ebene 14; kleine bis große Bildschirme; mit dem Versionsnamen 457.
+- 61923500: Die ABI ist `x86`; für die API-Ebene 19; kleine bis große Bildschirme; mit dem Versionsnamen 500.
 
 
 Die manuelle Pflege dieser Versionscodes kann einen erheblichen Aufwand für den Entwickler bedeuten. Der Prozess der Berechnung des ordnungsgemäßen `android:versionCode` und der anschließenden Erstellung der APKs sollte automatisiert werden.
@@ -106,19 +106,19 @@ Die Erstellung des APK pro ABI erfolgt am besten mit `xbuild` oder `msbuild`, wi
 
 In der folgenden Liste werden die einzelnen Befehlszeilenparameter erläutert:
 
--   `/t:Package` &ndash; Erstellt ein Android APK, das mithilfe des Debug-Keystores signiert ist.
+- `/t:Package` &ndash; Erstellt ein Android APK, das mithilfe des Debug-Keystores signiert ist.
 
--   `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; Diese ist die ABI, auf die abgezielt wird. Entweder `armeabi`, `armeabi-v7a` oder `x86`.
+- `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; Diese ist die ABI, auf die abgezielt wird. Entweder `armeabi`, `armeabi-v7a` oder `x86`.
 
--   `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; Dies ist das Verzeichnis, in dem die Zwischendateien gespeichert werden, die als Teil des Builds erstellt werden. Bei Bedarf erstellt Xamarin.Android ein Verzeichnis, das nach der ABI benannt ist, wie z. B. `obj.armeabi-v7a`. Es wird empfohlen, für jede ABI einen Ordner zu verwenden, um Probleme zu vermeiden, die dazu führen, dass Dateien von einem Build zum anderen „entweichen“. Beachten Sie, dass dieser Wert mit einem Verzeichnistrennzeichen (bei OS X `/`) abgeschlossen wird.
+- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; Dies ist das Verzeichnis, in dem die Zwischendateien gespeichert werden, die als Teil des Builds erstellt werden. Bei Bedarf erstellt Xamarin.Android ein Verzeichnis, das nach der ABI benannt ist, wie z. B. `obj.armeabi-v7a`. Es wird empfohlen, für jede ABI einen Ordner zu verwenden, um Probleme zu vermeiden, die dazu führen, dass Dateien von einem Build zum anderen „entweichen“. Beachten Sie, dass dieser Wert mit einem Verzeichnistrennzeichen (bei OS X `/`) abgeschlossen wird.
 
--   `/p:AndroidManifest` &ndash; Diese Eigenschaft gibt den Pfad zur Datei **AndroidManifest.XML** an, die während des Builds verwendet wird.
+- `/p:AndroidManifest` &ndash; Diese Eigenschaft gibt den Pfad zur Datei **AndroidManifest.XML** an, die während des Builds verwendet wird.
 
--   `/p:OutputPath=bin.<TARGET_ABI>` &ndash; Dies ist das Verzeichnis, in dem das endgültige APK gespeichert wird. Xamarin.Android erstellt ein Verzeichnis, das nach der ABI benannt ist, wie z. B. `bin.armeabi-v7a`.
+- `/p:OutputPath=bin.<TARGET_ABI>` &ndash; Dies ist das Verzeichnis, in dem das endgültige APK gespeichert wird. Xamarin.Android erstellt ein Verzeichnis, das nach der ABI benannt ist, wie z. B. `bin.armeabi-v7a`.
 
--   `/p:Configuration=Release` &ndash; Erstellen Sie einen Releasebuild des APK. Debugbuilds werden möglicherweise nicht auf Google Play hochgeladen.
+- `/p:Configuration=Release` &ndash; Erstellen Sie einen Releasebuild des APK. Debugbuilds werden möglicherweise nicht auf Google Play hochgeladen.
 
--   `<CS_PROJ FILE>` &ndash; Dies ist der Pfad zur Datei `.csproj` für das Xamarin.Android-Projekt.
+- `<CS_PROJ FILE>` &ndash; Dies ist der Pfad zur Datei `.csproj` für das Xamarin.Android-Projekt.
 
 
 
@@ -141,9 +141,9 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 
 Das Beispielprojekt [OneABIPerAPK](https://github.com/xamarin/monodroid-samples/tree/master/OneABIPerAPK) ist ein einfaches Android-Projekt, das veranschaulicht, wie eine ABI-spezifische Versionsnummer berechnet und drei separate APKs für jede der folgenden ABIs erstellt werden können:
 
--  armeabi
--  armeabi-v7a
--  x86
+- armeabi
+- armeabi-v7a
+- x86
 
 
 [rakefile](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb) im Beispielprojekt führt jeden der Schritte aus, die in den vorhergehenden Abschnitten beschrieben wurden:

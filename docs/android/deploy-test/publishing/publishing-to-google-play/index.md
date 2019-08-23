@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8ba0d14fff22d38d9e1a1d062fcce3f9ace88dea
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fc14c2279fd8ca7e1d67dcf58f98af33a5e4d87f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668854"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525468"
 ---
 # <a name="publishing-to-google-play"></a>Veröffentlichung in Google Play
 
@@ -20,7 +20,7 @@ Obwohl es eine Reihe von App-Märkten für das Vertreiben von Anwendungen gibt, 
 Dieser Abschnitt behandelt Themen, die für Google Play spezifisch sind, z.B. die Registrierung, um ein Herausgeber zu werden, das Sammeln von Assets, um Google Play zu helfen, Ihre Anwendungen zu bewerben und anzukündigen, Richtlinien zur Bewertung Ihrer Anwendung in Google Play und Verwenden von Filtern zum Einschränken der Entwicklung einer Anwendungen für bestimmte Geräte.
 
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Um eine Anwendung über Google Play zu verteilen, muss ein Entwicklerkonto erstellt werden. Dieses muss nur einmal erstellt werden und kostet einmalig 25,00 USD.
 
@@ -36,19 +36,19 @@ Google Play ist nicht global verfügbar. Einige Standorte werden für die Vertei
 
 Um Anwendungen in Google Play zu veröffentlichen, müssen Sie über ein Herausgeberkonto verfügen. Befolgen Sie folgende Schritte, um sich für ein Herausgeberkonto zu registrieren:
 
-1.  Besuchen Sie die [Google Play-Entwicklerkonsole](https://play.google.com/apps/publish).
-1.  Geben Sie die grundlegenden Informationen über Ihre Entwickleridentität an.
-1.  Lesen und akzeptieren Sie das Developer Distribution Agreement (Vertriebsvereinbarung für Entwickler) für Ihr Gebietsschema.
-1.  Zahlen Sie die Registrierungsgebühr von 25,00 USD.
-1.  Bestätigen sie die Überprüfung via E-Mail.
-1.  Nachdem das Konto erstellt wurde, können Sie Anwendungen mit Google Play veröffentlichen.
+1. Besuchen Sie die [Google Play-Entwicklerkonsole](https://play.google.com/apps/publish).
+1. Geben Sie die grundlegenden Informationen über Ihre Entwickleridentität an.
+1. Lesen und akzeptieren Sie das Developer Distribution Agreement (Vertriebsvereinbarung für Entwickler) für Ihr Gebietsschema.
+1. Zahlen Sie die Registrierungsgebühr von 25,00 USD.
+1. Bestätigen sie die Überprüfung via E-Mail.
+1. Nachdem das Konto erstellt wurde, können Sie Anwendungen mit Google Play veröffentlichen.
 
 
 Google Play unterstützt nicht alle Länder der Welt. Die neueste Liste der unterstützten Länder finden Sie unter folgenden Links:
 
-1.  [Unterstützte Registrierungsstandorte für Entwickler &amp; Händler](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; Dies ist eine Liste aller Länder, in denen sich Entwickler als Händler registrieren können und bezahlte Anwendungen verkaufen können.
+1. [Unterstützte Registrierungsstandorte für Entwickler &amp; Händler](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; Dies ist eine Liste aller Länder, in denen sich Entwickler als Händler registrieren können und bezahlte Anwendungen verkaufen können.
 
-1.  [Unterstützte Bereitstellungsstandorte für Google Play-Nutzer](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Dies ist eine Liste aller Länder, in denen Anwendungen verteilt werden dürfen.
+1. [Unterstützte Bereitstellungsstandorte für Google Play-Nutzer](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Dies ist eine Liste aller Länder, in denen Anwendungen verteilt werden dürfen.
 
 
 
@@ -62,21 +62,21 @@ Um eine Anwendung in Google Play effektiv hochzustufen und zu bewerben, erlaubt 
 
 Ein *Startprogrammsymbol* ist eine Grafik, die eine Anwendung darstellt. Jedes Startprogrammsymbol sollte eine 32-Bit-PNG-Datei mit einem Alphakanal für die Transparenz sein. Eine Anwendung sollte über Symbole für alle verallgemeinerte Bildschirmdichten, wie in der Liste unten aufgegliedert, verfügen:
 
--   **ldpi** (120dpi) &ndash; 36 x 36 px
--   **mdpi** (160dpi) &ndash; 48 x 48 px
--   **hdpi** (240dpi) &ndash; 72 x 72 px
--   **xhdpi** (320dpi) &ndash; 96 x 96 px
+- **ldpi** (120dpi) &ndash; 36 x 36 px
+- **mdpi** (160dpi) &ndash; 48 x 48 px
+- **hdpi** (240dpi) &ndash; 72 x 72 px
+- **xhdpi** (320dpi) &ndash; 96 x 96 px
 
 
 Startprogrammsymbole sind das Erste, das Benutzer für Anwendungen in Google Play sehen, seien Sie also besonders sorgfältig, damit Startprogrammsymbole visuell ansprechend und aussagekräftig sind.
 
 Tipps für Startprogrammsymbole:
 
-1.  **Einfach und übersichtlich**&ndash; Startprogrammsymbole sollten einfach gehalten werden und übersichtlich sein. Das heißt, dass Sie den Namen der Anwendung aus dem Symbol ausschließen sollten. Einfachere Symbole sind leichter zu merken und können bei kleinerer Größe einfacher voneinander zu unterscheiden sein.
+1. **Einfach und übersichtlich**&ndash; Startprogrammsymbole sollten einfach gehalten werden und übersichtlich sein. Das heißt, dass Sie den Namen der Anwendung aus dem Symbol ausschließen sollten. Einfachere Symbole sind leichter zu merken und können bei kleinerer Größe einfacher voneinander zu unterscheiden sein.
 
-1.  **Symbole dürfen nicht dünn sein**&ndash; Sehr dünne Symbole heben sich nicht gut vom Hintergrund hervor.
+1. **Symbole dürfen nicht dünn sein**&ndash; Sehr dünne Symbole heben sich nicht gut von allen Hintergründen ab.
 
-1.  **Verwenden Sie einen Alphakanal**&ndash; Symbole sollten vom Alphakanal Gebrauch machen und keine Bilder im Vollbildformat sein.
+1. **Verwenden Sie einen Alphakanal**&ndash; Symbole sollten vom Alphakanal Gebrauch machen und keine Bilder im Vollbildformat sein.
 
 
 
@@ -84,9 +84,9 @@ Tipps für Startprogrammsymbole:
 
 Anwendungen in Google Play erfordern eine hochwertige Version des Anwendungssymbols. Diese wird nur von Google Play verwendet und ersetzt nicht das Startprogrammsymbol der Anwendung. Die Spezifikationen für das Symbol mit hoher Auflösung sind Folgende:
 
-1.  32-Bit-PNG mit Alphakanal
-1.  512 x 512 Pixel
-1.  Maximale Größe von 1024 KB
+1. 32-Bit-PNG mit Alphakanal
+1. 512 x 512 Pixel
+1. Maximale Größe von 1024 KB
 
 Das [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) ist ein hilfreiches Tool zum Erstellen passender Startprogrammsymbole und des hochauflösenden Anwendungssymbols.
 
@@ -98,8 +98,8 @@ Google Play erfordert mindestens zwei und maximal acht Screenshots für eine Anw
 
 Die Spezifikationen für Screenshots sind Folgende:
 
-1.  24-Bit-PNG oder JPG ohne Alphakanal
-1.  320 x 480 (B x H) oder 480 x 800 (B x H) oder 480 x 854 (B x H). Bilder im Querformat werden zugeschnitten.
+1. 24-Bit-PNG oder JPG ohne Alphakanal
+1. 320 x 480 (B x H) oder 480 x 800 (B x H) oder 480 x 854 (B x H). Bilder im Querformat werden zugeschnitten.
 
 
 
@@ -107,8 +107,8 @@ Die Spezifikationen für Screenshots sind Folgende:
 
 Die ist ein optionales Bild, das von Google Play verwendet wird:
 
-1.  Es handelt sich um ein 24-Bit-PNG oder JPG mit den Maßen 180 x 120 (B x H) ohne Alphakanal.
-1.  Werbegrafik ohne Kunstrahmen.
+1. Es handelt sich um ein 24-Bit-PNG oder JPG mit den Maßen 180 x 120 (B x H) ohne Alphakanal.
+1. Werbegrafik ohne Kunstrahmen.
 
 
 
@@ -116,9 +116,9 @@ Die ist ein optionales Bild, das von Google Play verwendet wird:
 
 Wird vom Funktionsabschnitt von Google Play verwendet. Dies Grafik kann allein und ohne Anwendungssymbol angezeigt werden.
 
-1.  24-Bit-PNG oder JPG mit den Maßen 1024 x 500 (B x H) ohne Alphakanal und Transparenz.
-1.  Alle wichtigen Inhalte sollten sich innerhalb eines Rahmens von 924 x 500 befinden. Pixel außerhalb dieses Rahmens werden möglicherweise für stilistische Zwecke zugeschnitten.
-1.  Diese Grafik kann womöglich zentral herunterskaliert werden: Verwenden Sie viel Text, und halten Sie Grafiken einfach.
+1. 24-Bit-PNG oder JPG mit den Maßen 1024 x 500 (B x H) ohne Alphakanal und Transparenz.
+1. Alle wichtigen Inhalte sollten sich innerhalb eines Rahmens von 924 x 500 befinden. Pixel außerhalb dieses Rahmens werden möglicherweise für stilistische Zwecke zugeschnitten.
+1. Diese Grafik kann womöglich zentral herunterskaliert werden: Verwenden Sie viel Text, und halten Sie Grafiken einfach.
 
 
 
@@ -151,7 +151,7 @@ Wählen Sie im Dialogfeld **Signierungsidentität** die unter [Creating a New Ce
 
 [![Dialogfeld „Signierungsidentität“](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png#lightbox)
 
-Klicken Sie im Dialogfeld **Google Play-Konten** auf die Schaltfläche **+**, um ein neues Google Play-Konto hinzuzufügen:
+Klicken Sie im Dialogfeld **Google Play-Konten** auf die Schaltfläche **+** , um ein neues Google Play-Konto hinzuzufügen:
 
 [![Dialogfeld „Google Play-Konten“](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png#lightbox)
 
@@ -240,7 +240,7 @@ Klicken Sie auf **Zulassen**, um die App zu autorisieren:
 
 #### <a name="publish"></a>Veröffentlichen
 
-Nachdem Sie auf **Zulassen** geklickt haben, meldet der Browser _Empfangener Überprüfungscode. Wird geschlossen..._, und die App wird der Liste der Google Play-Konten in Visual Studio hinzugefügt. Klicken Sie im Dialogfeld **Google Play-Konten** auf **Weiter**:
+Nachdem Sie auf **Zulassen** geklickt haben, meldet der Browser _Empfangener Überprüfungscode. Wird geschlossen..._ , und die App wird der Liste der Google Play-Konten in Visual Studio hinzugefügt. Klicken Sie im Dialogfeld **Google Play-Konten** auf **Weiter**:
 
 [![Zu den Google Play-Konten hinzugefügtes Konto](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
@@ -299,13 +299,13 @@ Wählen Sie im Dialogfeld **Google Play-Konto** ein Google-Konto und eine Versio
 
 Google Play bietet vier mögliche Versionen zum Hochladen Ihrer App:
 
--   **Alpha**: Wird zum Hochladen einer sehr frühen Version der App zu einer kleinen Liste von Testern verwendet.
+- **Alpha**: Wird zum Hochladen einer sehr frühen Version der App zu einer kleinen Liste von Testern verwendet.
 
--   **Beta**: Wird zum Hochladen einer frühen Version der App zu einer größeren Liste von Testern verwendet.
+- **Beta**: Wird zum Hochladen einer frühen Version der App zu einer größeren Liste von Testern verwendet.
 
--   **Rollout**: Erlaubt, dass ein prozentualer Anteil von Benutzern eine aktualisierte Version der App erhält. Dadurch ist es möglich, den Prozentsatz langsam von etwas 10 % der Benutzer auf 100 % zu erhöhen, während Sie Probleme bereinigen.
+- **Rollout**: Erlaubt, dass ein prozentualer Anteil von Benutzern eine aktualisierte Version der App erhält. Dadurch ist es möglich, den Prozentsatz langsam von etwas 10 % der Benutzer auf 100 % zu erhöhen, während Sie Probleme bereinigen.
 
--   **Production** (Produktion): Wählen Sie diesen Titel aus, wenn die App aus dem Google Play Store vollständig verteilt werden kann.
+- **Production** (Produktion): Wählen Sie diesen Titel aus, wenn die App aus dem Google Play Store vollständig verteilt werden kann.
 
 Weiter Informationen zu Google Play-Tests und gestaffelten Rollouts finden Sie unter [Alpha-/Betatests einrichten](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en).
 
