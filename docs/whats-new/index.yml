@@ -13,17 +13,23 @@ metadata:
 abstract:
   description: Willkommen bei den Neuerungen in der Xamarin-Dokumentation.
 sections:
-  - title: Neuerungen
+  - title: Neuigkeiten
     items:
       - type: list
         style: cards
         className: cardsB
         items:
+          - href: 2019-08.md
+            html: 'Neuerungen in der Xamarin-Dokumentation im August 2019: Veröffentlichung von Xamarin.Forms 4.2, Updates der Benutzeroberfläche und weitere Updates.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-08.md
+            title: August 2019
           - href: 2019-07.md
             html: 'Neuerungen in der Xamarin-Dokumentation im Juli 2019: Veröffentlichung von Xamarin.Forms 4.1, Updates von Daten und Clouddiensten und weitere Updates'
             image:
               src: 'https://docs.microsoft.com/media/common/i_article.svg'
-              href: 2019-06.md
+              href: 2019-07.md
             title: Juli 2019
           - href: 2019-06.md
             html: 'Neuerungen in der Xamarin-Dokumentation im Juni 2019: Veröffentlichung vonXamarin.Forms 4.0, Updates von Daten und Clouddiensten, API-Dokumentation jetzt auf docs.microsoft.com verfügbar.'

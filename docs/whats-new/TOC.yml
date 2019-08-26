@@ -1,10 +1,12 @@
-- name: Neuerungen
+- name: Neues
   href: index.yml
   expanded: true
   items:
     - name: 2019
       expanded: true
       items:
+        - name: August
+          href: 2019-08.md
         - name: Juli
           href: 2019-07.md
         - name: Juni
