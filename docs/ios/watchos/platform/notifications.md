@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 39c77b4016027171a4e76bc4fb15c77d733cf5ba
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645918"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065366"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>WatchOS-Benachrichtigungen in Xamarin
 
@@ -37,7 +37,7 @@ Nachdem Sie den Controller angepasst haben, kann er wie im folgenden Beispiel au
 
 Es gibt zwei Arten von Benachrichtigungen:
 
-- **Kurze aussehen** -nicht bildlauffähige statische Ansicht, die vom System definierte.
+- Nicht **Bild** lauffähierbare statische Ansicht, die vom System definiert wird.
 
 - **Lange aussehen** – ScrollBar, anpassbare Ansicht, die von Ihnen festgelegten! Eine einfachere, statischen und eine komplexere dynamische Version können angegeben werden.
 
@@ -99,21 +99,21 @@ Sie *müssen* Geben Sie eine Test-JSON-Nutzlast aus, wenn der Benachrichtigungsm
 
 Visual Studio für Mac werden zusätzliche Optionen angezeigt, wenn eine Watch-Erweiterung festgelegt ist die **Startprojekt**.
 Mit der rechten Maustaste auf das Projekt der Watch-Erweiterung, und wählen Sie **ausführen mit > benutzerdefinierte Parameter...** :
-    
+
 [![](notifications-images/runwith-customparams-sml.png "Mit benutzerdefinierten Eigenschaften")](notifications-images/runwith-customparams.png#lightbox)
-    
+
 Daraufhin wird die **Ausführungsargumente** Fenster enthält einen **WatchKit** Registerkarte. Wählen Sie **Benachrichtigung** , und geben Sie eine JSON-Nutzlast, drücken Sie dann die **Execute** auf die Watch-app im Simulator zu starten:
-    
+
 [![](notifications-images/runwith-execargs-sml.png "Wählen Sie Notification Payload-Standard")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Zum Festlegen von der benachrichtigungsnutzlast Test in Visual Studio mit der rechten Maustaste auf der Watch-Erweiterung zum Bearbeiten der **Projekteigenschaften**. Wechseln Sie zu der **Debuggen** aus, und wählen Sie eine JSON-Datei von Benachrichtigungen aus der Liste (es wird automatisch Listet alle JSON-Dateien im Projekt enthalten ist).
-    
+
 [![](notifications-images/runwith-execargs-sml-vs.png "Wählen Sie eine JSON-Datei von Benachrichtigungen")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 Wenn die Watch-Erweiterung ist die **Startprojekt**, Visual Studio zeigt zusätzliche Optionen, wie unten dargestellt. Wählen Sie eine der der **Benachrichtigung** Optionen die Watch-app zu starten, in **Benachrichtigung** Modus (mit der JSON-Datei, die im Eigenschaftenfenster ausgewählt):
-    
+
 ![](notifications-images/runwith-vs.png "Klicken Sie im Menü des Geräts")
 
 -----
@@ -128,7 +128,7 @@ Es ist auch möglich, mit der [Befehlszeile](~/ios/watchos/troubleshooting.md#co
 
 In der [Watch Kit Katalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) Beispiel gibt es ist eine JSON-Beispieldatei Nutzlast **NotificationPayload.json** (siehe unten).
 
-```csharp
+```json
 {
     "aps": {
         "alert": "Test message content",

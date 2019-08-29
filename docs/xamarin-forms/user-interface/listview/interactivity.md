@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 833e6d3fc06ceeb5f8f63cb8b8b255b2a940098c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: 180ffa7cf723d841021a8bf7d1f1a285c882c103
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653888"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065548"
 ---
 # <a name="listview-interactivity"></a>ListView-Interaktivität
 
@@ -75,7 +75,7 @@ Kontextaktionen werden mit erstellt `MenuItem`s. Tippen Sie auf Ereignisse für 
 
 Standardmäßig kann ein MenuItem-Element nicht zu wissen, welche Zelle mit dem er angehört. `CommandParameter` finden Sie `MenuItem` zum Speichern von Objekten, z. B. das Objekt hinter die "MenuItem" ViewCell. `CommandParameter` kann in XAML und C# -Code festgelegt werden.
 
-### <a name="c"></a>C#  
+### <a name="c"></a>C\#
 
 Kontextaktionen können implementiert werden, in einem `Cell` Unterklasse (sofern nicht wie eine Gruppenkopfzeile verwendet wird.) durch das Erstellen `MenuItem`s und Hinzufügen der `ContextActions` Auflistung für die Zelle. Sie verfügen über die folgenden Eigenschaften für die kontextaktion konfiguriert werden können:
 

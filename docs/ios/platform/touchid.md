@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 54e910d0a4f3301ca441fd18ddb27da930e9415c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: MT
+ms.openlocfilehash: 0f92dca71f74266e1408cd65c842f729a9a648ce
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528770"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065668"
 ---
 # <a name="touch-id-in-xamarinios"></a>Berührungs-ID in xamarin. IOS
 
@@ -102,15 +102,15 @@ Bei der Sicherheit ist es auch äußerst wichtig zu wissen, dass es **keinen Zug
 
 Um die Berührungs-ID ohne Keychain zu verwenden, indem Sie die lokale Authentifizierungs-API nutzen, gibt es einige Funktionen, die wir verwenden können. Diese werden im folgenden beschrieben:
 
-*   `CanEvaluatePolicy`– Hiermit wird lediglich überprüft, ob das Gerät die Berührungs-ID annehmen kann.
-*   `EvaluatePolicy`– Hiermit wird der Authentifizierungs Vorgang gestartet, und die Benutzeroberfläche wird angezeigt `true` , `false` und es wird eine Antwort oder zurückgegeben.
-*   `DeviceOwnerAuthenticationWithBiometrics`– Dies ist die Richtlinie, die verwendet werden kann, um den Touchscreen der touchkennung anzuzeigen. Beachten Sie, dass hier kein Kennungs Fall Back Mechanismus vorhanden ist. stattdessen sollten Sie diesen Fall Back in Ihre Anwendung implementieren, damit Benutzer die Berührungs-ID-Authentifizierung überspringen können.
+* `CanEvaluatePolicy`– Hiermit wird lediglich überprüft, ob das Gerät die Berührungs-ID annehmen kann.
+* `EvaluatePolicy`– Hiermit wird der Authentifizierungs Vorgang gestartet, und die Benutzeroberfläche wird angezeigt `true` , `false` und es wird eine Antwort oder zurückgegeben.
+* `DeviceOwnerAuthenticationWithBiometrics`– Dies ist die Richtlinie, die verwendet werden kann, um den Touchscreen der touchkennung anzuzeigen. Beachten Sie, dass hier kein Kennungs Fall Back Mechanismus vorhanden ist. stattdessen sollten Sie diesen Fall Back in Ihre Anwendung implementieren, damit Benutzer die Berührungs-ID-Authentifizierung überspringen können.
 
 Es gibt einige Einschränkungen bei der Verwendung der lokalen Authentifizierung, die unten aufgeführt sind:
 
-*   Wie bei Keychain kann Sie nur im Vordergrund ausgeführt werden. Wenn Sie ihn in einem Hintergrund Thread aufrufen, tritt ein Fehler auf.
-*   Beachten Sie, dass die Richtlinien Auswertung möglicherweise fehlschlägt. Eine Kennung-Schaltfläche muss als Fallback implementiert werden.
-*   Sie müssen einen `localizedReason` angeben, um zu erläutern, warum die Authentifizierung erforderlich ist. Dies trägt dazu bei, eine Vertrauensstellung mit dem Benutzer zu erstellen.
+* Wie bei Keychain kann Sie nur im Vordergrund ausgeführt werden. Wenn Sie ihn in einem Hintergrund Thread aufrufen, tritt ein Fehler auf.
+* Beachten Sie, dass die Richtlinien Auswertung möglicherweise fehlschlägt. Eine Kennung-Schaltfläche muss als Fallback implementiert werden.
+* Sie müssen einen `localizedReason` angeben, um zu erläutern, warum die Authentifizierung erforderlich ist. Dies trägt dazu bei, eine Vertrauensstellung mit dem Benutzer zu erstellen.
 
 Im folgenden Abschnitt erfahren Sie, wie Sie die API implementieren, um diese Einschränkungen zu berücksichtigen.
 

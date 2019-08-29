@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 2dde7415f40c9db205351a81d63d273fc211ed2b
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 86e92ee5293b4c9ed902f1c8d9858e06db1aa458
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976586"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065511"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms-contentview
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
 Die xamarin. Forms [`ContentView`](xref:Xamarin.Forms.ContentView) -Klasse ist ein Typ `Layout` von, der ein einzelnes untergeordnetes Element enthält und normalerweise verwendet wird, um benutzerdefinierte, wiederverwendbare Steuerelemente zu erstellen. Die `ContentView` Klasse erbt von [`TemplatedView`](xref:Xamarin.Forms.TemplatedView). In diesem Artikel und dem zugehörigen Beispiel wird erläutert, wie ein Benutzer `CardView` definiertes Steuerelement `ContentView` auf Grundlage der-Klasse erstellt wird.
 
@@ -205,7 +205,7 @@ Weitere Informationen zu Steuerelement Vorlagen finden Sie unter [xamarin. Forms
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Contentview-Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
+* [Contentview-Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin. Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [Bindbare Eigenschaften](~/xamarin-forms/xaml/bindable-properties.md).
 * [Xamarin. Forms-Steuerelement Vorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)

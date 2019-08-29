@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 079c72ee25f3b01c02b854a8a1eb258c885f2a96
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f3e991550cd58f20d52bebb208eedec4d8f7e41e
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642794"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065681"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>watchos-Tabellen Steuerelemente in xamarin
 
@@ -48,7 +48,7 @@ Nachdem die-Klasse für den Controller der Zeile festgelegt wurde, erstellt die 
 
 ```csharp
 myTable.SetNumberOfRows ((nint)rows.Count, "default");
-        // loads row controller by identifier
+    // loads row controller by identifier
 ```
 
 > [!IMPORTANT]
@@ -90,7 +90,7 @@ public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
 
 ### <a name="getcontextforsegue"></a>GetContextForSegue
 
-Ziehen Sie einen Bild-auf dem Storyboard aus der Tabellenzeile in eine andere Szene (halten **Sie die STRG** -Taste gedrückt).
+Ziehen Sie einen Bild-auf dem Storyboard aus der Tabellenzeile in eine andere Szene (halten Sie die STRG-Taste gedrückt).
 Stellen Sie sicher, dass Sie den-Typ auswählen, und geben Sie ihm einen Bezeichner im `secondLevel` eigenschaftenpad (z. b. im folgenden Beispiel).
 
 Implementieren Sie im Interface Controller die `GetContextForSegue` -Methode, und geben Sie den Datenkontext zurück, der für die Szene bereitgestellt werden soll, die von der-Methode dargestellt wird.

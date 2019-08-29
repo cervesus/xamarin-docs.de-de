@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: fc9a8acb2c04d805e7abc52b2996ec5546b0fb69
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: ca3580648d357d2c943274717af66ad5d825ce75
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657367"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065593"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>tvos-Benutzeroberflächen Stile in xamarin
 
@@ -26,7 +26,7 @@ tvos 10 unterstützt jetzt sowohl ein dunkles als auch ein helles Design der Ben
 
 Wie bereits erwähnt, unterstützt tvos 10 jetzt sowohl ein dunkles als auch ein helles Design der Benutzeroberfläche, dass alle in der benutzerdefinierten UIKit-Steuerelemente basierend auf den Benutzereinstellungen automatisch an angepasst werden.
 
-Der Benutzer kann dieses Design ändern, indem er zu **Einstellungen** > **Allgemeine** > Darstellung**wechselt und zwischen** **hell** und **dunkel**wechselt:
+Der Benutzer kann dieses Design ändern , indem er zu **Einstellungen** > **Allgemeine** > Darstellung wechselt und zwischen **hell** und **dunkel**wechselt:
 
 [![](user-interface-styles-images/theme01.png "Die app \"Einstellungen\"")](user-interface-styles-images/theme01.png#lightbox)
 
@@ -48,10 +48,10 @@ Gehen Sie folgendermaßen vor, um die Unterstützung für ein helles und dunkles
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei `Info.plist`, um sie zur Bearbeitung zu öffnen.
 2. Wählen Sie die **Quell** Ansicht aus (vom unteren Rand des Editors).
-3. Fügen Sie einen neuen Schlüssel hinzu, `UIUserInterfaceStyle`und nennen Sie ihn: 
+3. Fügen Sie einen neuen Schlüssel hinzu, `UIUserInterfaceStyle`und nennen Sie ihn:
 
     [![](user-interface-styles-images/theme03.png "Der uiuserinterfakestyle-Schlüssel")](user-interface-styles-images/theme03.png#lightbox)
-4. Legen Sie den Typ auf `String` fest, und geben Sie `Automatic`den folgenden Wert ein: 
+4. Legen Sie den Typ auf `String` fest, und geben Sie `Automatic`den folgenden Wert ein:
 
     [![](user-interface-styles-images/theme04.png "Automatisch eingeben")](user-interface-styles-images/theme04.png#lightbox)
 5. Speichern Sie die Änderungen in der Datei.
@@ -95,7 +95,7 @@ Die neue `UserInterfaceStyle` -Eigenschaft `UITraitCollection` der-Klasse kann v
 - **Nicht angegeben** : die Ansicht wurde noch nicht auf dem Bildschirm angezeigt, sodass das aktuelle UI-Design unbekannt ist.
 
 Außerdem verfügen Merkmals Auflistungen in tvos 10 über die folgenden Features:
- 
+
 - Der Darstellungs Proxy kann basierend auf der `UserInterfaceStyle` eines bestimmten `UITraitCollection` angepasst werden, um Elemente wie Bilder oder Element Farben auf Grundlage des Designs zu ändern.
 - Eine tvos-App kann Merkmals Sammlungs Änderungen durch über `TraitCollectionDidChange` Schreiben der- `UIView` Methode `UIViewController` einer-Klasse oder-Klasse verarbeiten.
 
@@ -137,7 +137,7 @@ Beispiel:
 public override void TraitCollectionDidChange (UITraitCollection previousTraitCollection)
 {
     base.TraitCollectionDidChange (previousTraitCollection);
-    
+
     // Take action based on the Light or Dark theme
     ...
 }
@@ -170,13 +170,13 @@ In tvos 10 kann das Storyboard einer APP so festgelegt werden, dass Sie auf Merk
 
 Gehen Sie folgendermaßen vor, um die Unterstützung von Merkmal Sammlungen zu aktivieren
 
-1. Klicken Sie **mit** > der rechten Maustaste auf die Storyboard-Datei im **Projektmappen-Explorer** , und wählen Sie mit**Xcode Interface Builder**öffnen: 
+1. Klicken Sie **mit** > der rechten Maustaste auf die Storyboard-Datei im **Projektmappen-Explorer** , und wählen Sie mit**Xcode Interface Builder**öffnen:
 
-    [![](user-interface-styles-images/theme05.png "Öffnen mit Xcode Interface Builder")](user-interface-styles-images/theme05.png#lightbox) 
-2. Um die Unterstützung für Merkmals Auflistungen zu aktivieren, wechseln Sie zum **Datei Inspektor** , und aktivieren Sie im Abschnitt **Interface Builder Document** die Eigenschaft **Merkmals Variationen verwenden** : 
+    [![](user-interface-styles-images/theme05.png "Öffnen mit Xcode Interface Builder")](user-interface-styles-images/theme05.png#lightbox)
+2. Um die Unterstützung für Merkmals Auflistungen zu aktivieren, wechseln Sie zum **Datei Inspektor** , und aktivieren Sie im Abschnitt **Interface Builder Document** die Eigenschaft **Merkmals Variationen verwenden** :
 
     [![](user-interface-styles-images/theme06.png "Unterstützung von Merkmal aktivieren")](user-interface-styles-images/theme06.png#lightbox)
-3. Bestätigen Sie die Änderung, um Merkmals Variationen zu verwenden: 
+3. Bestätigen Sie die Änderung, um Merkmals Variationen zu verwenden:
 
     [![](user-interface-styles-images/theme07.png "Warnung \"Merkmals Variationen verwenden\"")](user-interface-styles-images/theme07.png#lightbox)
 4. Speichern Sie die Änderungen in der storyboarddatei.
@@ -184,23 +184,23 @@ Gehen Sie folgendermaßen vor, um die Unterstützung von Merkmal Sammlungen zu a
 Apple hat beim Bearbeiten von tvos-Storyboards in Interface Builder die folgenden Funktionen hinzugefügt:
 
 * Der Entwickler kann verschiedene Variationen von Benutzeroberflächen Elementen angeben, die auf dem UI-Design im **Attribut Inspektor**basieren:
-    
-    * Mehrere Eigenschaften verfügen jetzt über **+** eine neben Ihnen, auf die Sie klicken können, um eine spezifische Version des Benutzeroberflächen Designs hinzuzufügen: 
 
-        [![](user-interface-styles-images/theme08.png "Benutzeroberflächen-designspezifische Version hinzufügen")](user-interface-styles-images/theme08.png#lightbox) 
-    
-    * Der Entwickler kann eine neue Eigenschaft angeben oder auf die Schaltfläche **x** klicken, um Sie zu entfernen: 
+  * Mehrere Eigenschaften verfügen jetzt über **+** eine neben Ihnen, auf die Sie klicken können, um eine spezifische Version des Benutzeroberflächen Designs hinzuzufügen:
 
-        [![](user-interface-styles-images/theme09.png "Geben Sie eine neue Eigenschaft an, oder klicken Sie auf die Schaltfläche \"x\"")](user-interface-styles-images/theme09.png#lightbox)
+    [![](user-interface-styles-images/theme08.png "Benutzeroberflächen-designspezifische Version hinzufügen")](user-interface-styles-images/theme08.png#lightbox)
+
+  * Der Entwickler kann eine neue Eigenschaft angeben oder auf die Schaltfläche **x** klicken, um Sie zu entfernen:
+
+    [![](user-interface-styles-images/theme09.png "Geben Sie eine neue Eigenschaft an, oder klicken Sie auf die Schaltfläche \"x\"")](user-interface-styles-images/theme09.png#lightbox)
 * Der Entwickler kann einen Design der Benutzeroberfläche im hellen oder dunklen Design innerhalb Interface Builder anzeigen:
-    
-    * Der untere Teil des Designoberfläche ermöglicht es dem Entwickler, das aktuelle UI-Design zu wechseln: 
 
-        [![](user-interface-styles-images/theme10.png "Der untere Teil des Designoberfläche")](user-interface-styles-images/theme10.png#lightbox)
-        
-    * Das neue Design wird in Interface Builder angezeigt, und alle spezifischen Anpassungen der Merkmals Sammlung werden angezeigt: 
+  * Der untere Teil des Designoberfläche ermöglicht es dem Entwickler, das aktuelle UI-Design zu wechseln:
 
-        [![](user-interface-styles-images/theme11.png "Das in Interface Builder angezeigte Design")](user-interface-styles-images/theme11.png#lightbox)
+    [![](user-interface-styles-images/theme10.png "Der untere Teil des Designoberfläche")](user-interface-styles-images/theme10.png#lightbox)
+
+  * Das neue Design wird in Interface Builder angezeigt, und alle spezifischen Anpassungen der Merkmals Sammlung werden angezeigt:
+
+    [![](user-interface-styles-images/theme11.png "Das in Interface Builder angezeigte Design")](user-interface-styles-images/theme11.png#lightbox)
 
 Außerdem verfügt der tvos-Simulator jetzt über eine Tastenkombination, die es dem Entwickler ermöglicht, beim Debuggen einer tvos-app schnell zwischen den hellen und dunklen Designs zu wechseln. Verwenden Sie die **Command-Shift-D-** Tastatursequenz, um zwischen hell und dunkel zu wechseln.
 

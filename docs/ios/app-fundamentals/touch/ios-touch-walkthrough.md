@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: MT
+ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527057"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065443"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von "berühren" in xamarin. IOS
 
@@ -37,7 +37,7 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
 
 
 1. Öffnen Sie das Projekt **Touch_Start**. Führen Sie zuerst das Projekt aus, um sicherzustellen, dass alles okay ist, und tippen Sie auf die Schaltfläche mit den Es sollte ein Bildschirm angezeigt werden, der dem folgenden ähnelt (obwohl keine der Schaltflächen funktioniert):
-    
+
     [![](ios-touch-walkthrough-images/image4.png "Beispiel-App mit nicht funktionierenden Schaltflächen ausführen")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
@@ -164,11 +164,11 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
         touchStartedInside = false;
     }
     ```
-    
+
     Beide Methoden setzen das `touchStartedInside` Flag auf false zurück. `TouchesEnded`wird auch auf `TouchesEnded` dem Bildschirm angezeigt.
 
 1. An diesem Punkt ist der Bildschirm mit den touchbeispielen fertiggestellt. Beachten Sie, wie sich der Bildschirm ändert, während Sie mit jedem der Bilder interagieren, wie im folgenden Screenshot zu sehen:
-        
+
     [![](ios-touch-walkthrough-images/image4.png "Der Bildschirm zum Starten der APP")](ios-touch-walkthrough-images/image4.png#lightbox)
     
     [![](ios-touch-walkthrough-images/image5.png "Der Bildschirm, nachdem der Benutzer eine Schaltfläche gezogen hat")](ios-touch-walkthrough-images/image5.png#lightbox)

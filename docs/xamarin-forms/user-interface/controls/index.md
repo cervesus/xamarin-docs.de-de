@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2019
-ms.openlocfilehash: dfc6c71a252b57bb39b464425b89fe8f5bda7d3e
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: f3aa8249b0e94721b8e35437997b74b24e31f689
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976513"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065251"
 ---
 # <a name="controls-reference"></a>Steuerelementreferenz
 
@@ -30,6 +30,9 @@ Die vier Haupt Steuerungsgruppen, die zum Erstellen der Benutzeroberfläche eine
 Eine Xamarin.Forms-Startseite nimmt in der Regel den gesamten Bildschirm ein. Diese Seite enthält in der Regel ein Layout, die Ansichten und möglicherweise anderer Layouts enthält. Zellen sind spezielle Komponenten, die in Verbindung mit verwendet [ `TableView` ](views.md#tableView) und [ `ListView` ](views.md#listView). Ein Klassendiagramm, das die Hierarchie von Typen anzeigt, die in der Regel zum Erstellen einer Benutzeroberfläche in xamarin. Forms verwendet werden, finden Sie unter [xamarin. Forms](~/xamarin-forms/internals/class-hierarchy.md)-Steuerelement-Klassenhierarchie.
 
 In den vier Artikeln auf [ **Seiten**](pages.md), [ **Layouts**](layouts.md), [ **Ansichten** ](views.md), und [ **Zellen**](cells.md), jeder Typ von Steuerelement wird mit Links zu ihrer API-Dokumentation, einen Artikel beschreiben die Verwendung (falls vorhanden) und eine oder mehrere Beispielprogramme (sofern vorhanden) beschrieben. Jede Art von Steuerelement wird auch von einem Screenshot begleitet, der eine Seite des [**formsgallery**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) -Beispiels anzeigt, die auf IOS-und Android-Geräten ausgeführt wird. Im folgenden einzelnen Screenshots finden Sie Links auf den Quellcode für die C#-Seite der entsprechenden XAML-Seite, und (wenn geeignet) die C#-Code-Behind-Datei für die XAML-Seite.
+
+> [!NOTE]
+> Seiten, Layouts und Sichten werden von der `VisualElement` -Klasse abgeleitet. Die `VisualElement` -Klasse bietet eine Vielzahl von Eigenschaften, Methoden und Ereignissen, die beim Ableiten von Klassen nützlich sind. Weitere Informationen finden Sie unter [visualelement-Eigenschaften,-Methoden und-Ereignisse](common-properties.md).
 
 Zusätzlich zu den Steuerelementen, die mit xamarin. Forms bereitgestellt werden, sind Steuerelemente von Drittanbietern verfügbar. Weitere Informationen finden Sie unter Steuer [Elemente von Drittanbietern](thirdparty.md).
 
