@@ -154,6 +154,7 @@
 #### [Layouts](user-interface/controls/layouts.md)
 #### [Ansichten](user-interface/controls/views.md)
 #### [Zellen](user-interface/controls/cells.md)
+#### [Allgemeine Eigenschaften, Methoden und Ereignisse](user-interface/controls/common-properties.md)
 #### [Steuerelemente von Drittanbietern](user-interface/controls/thirdparty.md)
 ### [DataPages](user-interface/datapages/index.md)
 #### [Erste Schritte](user-interface/datapages/get-started.md)
@@ -324,6 +325,7 @@
 ### [Einheitenkonverter](~/essentials/unit-converters.md?context=xamarin/xamarin-forms)
 ### [Versionsnachverfolgung](~/essentials/version-tracking.md?context=xamarin/xamarin-forms)
 ### [Vibrieren](~/essentials/vibrate.md?context=xamarin/xamarin-forms)
+### [Versionshinweise für Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 ### [Problembehandlung](~/essentials/troubleshooting.md?context=xamarin/xamarin-forms)
 
 ## Daten und Azure Cloud Services
@@ -379,7 +381,7 @@
 #### [Warum funktioniert der Visual Studio-XAML-Designer nicht für Xamarin.Forms-XAML-Dateien?](troubleshooting/questions/forms-xaml-designer.md)
 #### [Android-Buildfehler: Unerwarteter Fehler beim Task „LinkAssemblies“](troubleshooting/questions/android-linkassemblies-error.md)
 #### [Warum schlägt mein Xamarin.Forms.Maps-Android-Projekt mit COMPILETODALVIK: UNERWARTETER FEHLER AUF DER OBERSTEN EBENE fehl?](troubleshooting/questions/maps-compiletodalvik-error.md)
-## [Anmerkungen zu dieser Version](https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/)
+## [Versionshinweise](https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/)
 ## [Beispiele](samples/index.yml)
 ## [Buch über das Erstellen von mobilen Apps mit Xamarin.Forms](creating-mobile-apps-xamarin-forms/index.md)
 ## [E-Book zu Mustern von Unternehmensanwendungen](enterprise-application-patterns/index.md)
