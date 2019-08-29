@@ -1,54 +1,54 @@
 ---
 title: Android-Lokalisierung
-description: In diesem Dokument werden die Lokalisierungsfeatures von Android SDK und wie Sie sie mit Xamarin zugreifen.
+description: Dieses Dokument enthält eine Einführung in die Lokalisierungs Features der Android SDK und wie Sie mit xamarin darauf zugreifen können.
 ms.prod: xamarin
 ms.assetid: D1277939-A1E8-468E-B136-820D816AF853
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f6a7f8859340dcc8e48b6a4e6f56847168f4b71e
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: c76eb8c6553768af68687ab6a45447a16775940e
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829765"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119140"
 ---
 # <a name="android-localization"></a>Android-Lokalisierung
 
-_In diesem Dokument werden die Lokalisierungsfeatures von Android SDK und wie Sie sie mit Xamarin zugreifen._
+_Dieses Dokument enthält eine Einführung in die Lokalisierungs Features der Android SDK und wie Sie mit xamarin darauf zugreifen können._
 
 ## <a name="android-platform-features"></a>Android-Plattformfeatures
 
-Dieser Abschnitt beschreibt die wichtigsten Lokalisierungsfeatures von Android. Fahren Sie mit der [nächsten Abschnitt](#basics) zu spezifischen Code und Beispiele finden Sie unter.
+In diesem Abschnitt werden die wichtigsten Lokalisierungs Features von Android beschrieben. Fahren Sie mit dem [nächsten Abschnitt](#basics) fort, um einen bestimmten Code und Beispiele anzuzeigen.
 
 ### <a name="locale"></a>Gebietsschema
 
-Benutzer wählen die Sprache in **Einstellungen > Language & Eingabe**. Diese Option steuert die Anzeigesprache und die regionalen Einstellungen verwendet (z. b. für Datum und die zahlenformatierung).
+Benutzer wählen Ihre Sprache in den **Einstellungen > sprach & Eingabe**aus. Diese Auswahl steuert sowohl die angezeigte Sprache als auch die verwendeten regionalen Einstellungen (z. b. für Datums-und Zahlen Formatierung).
 
-Das aktuelle Gebietsschema abgefragt werden kann, über des aktuellen Kontexts `Resources`:
+Das aktuelle Gebiets Schema kann über den aktuellen Kontext `Resources`abgefragt werden:
 
 ```csharp
 var lang = Resources.Configuration.Locale; // eg. "es_ES"
 ```
 
-Dieser Wert wird eine Gebietsschema-ID sein, das ein Sprachcode und einem Code des Gebietsschemas, getrennt durch einen Unterstrich enthält. Zu Referenzzwecken hier ist ein [Liste der Gebietsschemas, Java](https://www.oracle.com/technetwork/java/javase/locales-137662.html) und [Android unterstützte Gebietsschemas über StackOverflow](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android).
+Dieser Wert ist ein Gebiets Schema Bezeichner, der sowohl einen Sprachcode als auch einen Gebiets Schema Code enthält, der durch einen Unterstrich getrennt ist. Im folgenden finden Sie eine [Liste der Java](https://www.oracle.com/technetwork/java/javase/locales-137662.html) -Gebiets Schemas und von [Android unterstützten Gebiets Schemas über StackOverflow](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android).
 
 Gängige Beispiele:
 
-* `en_US` für Englisch (USA)
-* `es_ES` für Spanisch (Spanien)
-* `ja_JP` für Japanisch (Japan)
-* `zh_CN` für Chinesisch (China)
-* `zh_TW` für Chinesisch (Taiwan)
-* `pt_PT` Portugiesisch (Portugal)
-* `pt_BR` Portugiesisch (Brasilien)
+- `en_US`für Englisch (USA)
+- `es_ES`für Spanisch (Spanien)
+- `ja_JP`für Japanisch (Japan)
+- `zh_CN`für Chinesisch (China)
+- `zh_TW`für Chinesisch (Taiwan)
+- `pt_PT`für Portugiesisch (Portugal)
+- `pt_BR`für Portugiesisch (Brasilien)
 
-### <a name="localechanged"></a>LOCALE_CHANGED
+### <a name="locale_changed"></a>LOCALE_CHANGED
 
-Android generiert `android.intent.action.LOCALE_CHANGED` Wenn der Benutzer die Auswahl der Sprache ändert.
+Android generiert `android.intent.action.LOCALE_CHANGED` , wenn der Benutzer seine Sprachauswahl ändert.
 
-Aktivitäten können sich entscheiden, zum Behandeln dieses durch Festlegen der `android:configChanges` Attribut für die Aktivität wie folgt:
+Aktivitäten können dies durch Festlegen des `android:configChanges` -Attributs auf die-Aktivität, wie folgt, festlegen:
 
 ```csharp
 [Activity (Label = "@string/app_name", MainLauncher = true, Icon="@drawable/launcher",
@@ -57,43 +57,43 @@ Aktivitäten können sich entscheiden, zum Behandeln dieses durch Festlegen der 
 
 <a name="basics" />
 
-## <a name="internationalization-basics-in-android"></a>Internationalisierung-Grundlagen in Android
+## <a name="internationalization-basics-in-android"></a>Grundlagen der Internationalisierung in Android
 
-Android-Lokalisierungsstrategie hat die folgenden wichtigen Teile:
+Die Lokalisierungsstrategie von Android besteht aus den folgenden Hauptkomponenten:
 
-- Ressourcenordner lokalisierte Zeichenfolgen, Bilder und andere Ressourcen enthält.
+- Ressourcen Ordner, die lokalisierte Zeichen folgen, Bilder und andere Ressourcen enthalten.
 
-- `GetText` Methode, die zum Abrufen von lokalisierter Zeichenfolgen im Code verwendet wird
+- `GetText`-Methode, die verwendet wird, um lokalisierte Zeichen folgen im Code abzurufen.
 
-- `@string/id` in AXML-Dateien, um lokalisierte Zeichenfolgen automatisch in Layouts zu platzieren.
+- `@string/id`in axml-Dateien, um lokalisierte Zeichen folgen automatisch in Layouts zu platzieren.
 
-### <a name="resource-folders"></a>Ressourcenordner
+### <a name="resource-folders"></a>Ressourcen Ordner
 
-Android-Anwendungen verwalten die meisten Inhalte im Ressourcenordner, z.B.:
+Android-Anwendungen verwalten die meisten Inhalte in Ressourcen Ordnern, wie z. b.:
 
-* **Layout** -AXML-Layoutdateien enthält.
-* **drawable** -Bilder und andere zeichenbaren Ressourcen enthält.
-* **Werte** -Zeichenfolgen enthält.
-* **unformatierte** -Datendateien enthält.
+- **Layout** : enthält axml-Layoutdateien.
+- **drawable** -enthält Bilder und andere drawable-Ressourcen.
+- **Values** -enthält Zeichen folgen.
+- **RAW** -enthält Datendateien.
 
-Die meisten Entwickler sind bereits vertraut sind, mit der Verwendung von **dpi** Suffixe für die **drawable** Verzeichnis mehrere Versionen eines Bilds, sodass Android wählen Sie die richtige Version für jedes Gerät bereitstellen. Derselbe Mechanismus wird verwendet, mehrere sprachübersetzungen zu ermöglichen, indem Sie die Ressourcenverzeichnisse Sprache und Kultur Bezeichner durchzuführen.
+Die meisten Entwickler sind bereits mit der Verwendung von **dpi** -Suffixen im **drawable** -Verzeichnis vertraut, um mehrere Versionen eines Images bereitzustellen, sodass Android die richtige Version für jedes Gerät auswählen kann. Der gleiche Mechanismus wird zum Bereitstellen mehrerer Sprachübersetzungen verwendet, indem Ressourcen Verzeichnisse mit Sprach-und Kultur bezeichlern angehängt werden.
 
-![Bildschirmabbildung von Ressourcen/Werte und Ressourcen/drawable-Ordner für mehrere kulturellen Bezeichner](localization-images/resources.png)
+![Screenshot der Ordner "Resources/drawable" und "Resources/values" für mehrere Kultur Bezeichner](localization-images/resources.png)
 
 > [!NOTE]
-> Beim Angeben einer Sprache auf oberster Ebene, wie `es` nur zwei Zeichen erforderlich; jedoch wenn Sie ein vollständiges Gebietsschema angeben, das Format des Verzeichnisses einen Bindestrich und dem Kleinbuchstaben erfordert **r** trennen die beiden Teile, z. B. **pt-rBR** oder **Zh-rCN**. Vergleichen Sie dies mit den Rückgabewert in Code mit einem Unterstrich (z. b. `pt_BR`) angezeigt wird. Beide unterscheiden sich auf den Wert .NET `CultureInfo` Klasse verwendet, der hat eines Bindestrich nur (z. b. `pt-BR`) angezeigt wird. Behalten Sie unter Berücksichtigung dieser Unterschiede bei der Arbeit auf Xamarin-Plattformen.
+> Wenn eine Sprache `es` der obersten Ebene angegeben wird, sind nur zwei Zeichen erforderlich. Wenn Sie jedoch ein vollständiges Gebiets Schema angeben, benötigt das Verzeichnisnamen Format einen Bindestrich und einen Kleinbuchstaben, um die beiden Teile voneinander zu trennen, z. **b. pt-RBR** oder  **ZH-RCN**. Vergleichen Sie dies mit dem im Code zurückgegebenen Wert, der einen Unterstrich aufweist (z. b. `pt_BR`) angezeigt wird. Beide unterscheiden sich von dem Wert, der `CultureInfo` von der .NET-Klasse verwendet wird, der nur einen Bindestrich aufweist (z. b. `pt-BR`) angezeigt wird. Beachten Sie diese Unterschiede, wenn Sie über xamarin-Plattformen arbeiten.
 
-#### <a name="stringsxml-file-format"></a>Dateiformat von "Strings.xml"
+#### <a name="stringsxml-file-format"></a>Strings. XML-Dateiformat
 
-Eine lokalisierte **Werte** Verzeichnis (z. b. **Werte-es** oder **Werte – pt-rBR**) sollte eine Datei namens "enthalten" **von "Strings.xml"** , den übersetzten Text für dieses Gebietsschema enthält.
+Ein lokalisiertes **Werte** Verzeichnis (z. b. **Values-es** oder **Values-PT-RBR**) sollte eine Datei mit dem Namen **Strings. XML** enthalten, die den übersetzten Text für dieses Gebiets Schema enthält.
 
-Jede übersetzbarer Zeichenfolge ist ein XML-Element mit den Ressourcen-ID angegeben wird, als die `name` -Attribut und die übersetzte Zeichenfolge als Wert:
+Jede übersetzbare Zeichenfolge ist ein XML-Element mit der Ressourcen- `name` ID, die als-Attribut angegeben ist, und der übersetzten Zeichenfolge als Wert:
 
 ```xml
 <string name="app_name">TaskyL10n</string>
 ```
 
-Entsprechend den üblichen XML-Regeln, mit Escapezeichen versehen werden sollen und die `name` muss eine gültige Android-Ressourcen-ID (keine Leerzeichen oder Bindestriche) sein. Hier ist ein Beispiel für die Standarddatei für die (in englischer Sprache) Zeichenfolgen für das Beispiel aus:
+Sie müssen gemäß den `name` normalen XML-Regeln eine Escapesequenz durcharbeiten, und muss eine gültige Android-Ressourcen-ID (keine Leerzeichen oder Bindestriche) sein. Im folgenden finden Sie ein Beispiel für die Standard Zeichenfolgen-Datei (Englisch) für das Beispiel:
 
 **values/Strings.xml**
 
@@ -108,7 +108,7 @@ Entsprechend den üblichen XML-Regeln, mit Escapezeichen versehen werden sollen 
 </resources>
 ```
 
-Das Verzeichnis Spanisch **Werte-es** enthält eine Datei mit dem gleichen Namen (**von "Strings.xml"** ), die Übersetzungen enthält:
+Die spanischen Verzeichnis **Werte-es** enthält eine Datei mit dem gleichen Namen (**Strings. XML**), die die Übersetzungen enthält:
 
 **values-es/Strings.xml**
 
@@ -124,13 +124,13 @@ Das Verzeichnis Spanisch **Werte-es** enthält eine Datei mit dem gleichen Namen
 </resources>
 ```
 
-![Screenshot der mehrere Werte von Ordnern, jeweils eine Datei von "Strings.xml"](localization-images/values.png)
+![Screenshot mehrerer Werte Ordner, die jeweils eine Strings. XML-Datei enthalten](localization-images/values.png)
 
-Mit den Zeichenfolgen Dateien eingerichtet ist können die übersetzten Werte in Layouts und Code verwiesen werden.
+Bei der Einrichtung der Zeichen folgen Dateien können sowohl in Layouts als auch im Code auf die übersetzten Werte verwiesen werden.
 
-### <a name="axml-layout-files"></a>AXML-Layoutdateien
+### <a name="axml-layout-files"></a>Axml-Layoutdateien
 
-Um lokalisierte Zeichenfolgen in Layout-Dateien zu verweisen, verwenden die `@string/id` Syntax. Diese XML-Ausschnitt des Beispiels zeigt `text` mit festzulegende Eigenschaften lokalisierte Ressourcen-IDs (andere Attribute wurden ausgelassen):
+Verwenden Sie die `@string/id` Syntax, um auf lokalisierte Zeichen folgen in Layoutdateien zu verweisen. Dieser XML-Code Ausschnitt aus dem Beispiel `text` zeigt die Eigenschaften, die mit lokalisierten Ressourcen-IDs festgelegt werden (einige andere Attribute wurden ausgelassen):
 
 ```xml
 <TextView
@@ -145,22 +145,22 @@ Um lokalisierte Zeichenfolgen in Layout-Dateien zu verweisen, verwenden die `@st
 
 ### <a name="gettext-method"></a>GetText-Methode
 
-Verwenden Sie zum Abrufen von übersetzter Zeichenfolgen im Code die `GetText` Methode und übergeben Sie die Ressourcen-ID:
+Um übersetzte Zeichen folgen im Code abzurufen, `GetText` verwenden Sie die-Methode, und übergeben Sie die Ressourcen-ID:
 
 ```csharp
 var cancelText = Resources.GetText (Resource.String.taskcancel);
 ```
 
-#### <a name="quantity-strings"></a>Menge von Zeichenfolgen
+#### <a name="quantity-strings"></a>Mengen Zeichenfolgen
 
-Zeichenfolgenressourcen für Android können Sie erstellen auch *Menge Zeichenfolgen* , mit denen Übersetzer unterschiedliche Übersetzungen für unterschiedliche Mengen, wie z. B. angeben:
+Mit Android-Zeichen folgen Ressourcen können Sie auch *Mengen* Zeichenfolgen erstellen, mit denen Konvertierungen verschiedene Übersetzungen für unterschiedliche Mengen bereitstellen können, z.b.:
 
-* "Es gibt 1 Aufgabe nach links."
-* "Es gibt 2 Aufgaben immer noch dazu."
+- "Es ist 1 Aufgabe übrig."
+- "Es sind noch zwei Aufgaben zu erledigen."
 
-(statt einer generischen "Es sind n Aufgabe(n) links").
+(anstelle eines generischen "Es sind n Aufgaben vorhanden").
 
-In der **von "Strings.xml"**
+In der Datei " **Strings. XML** "
 
 ```xml
 <plurals name="numberOfTasks">
@@ -174,7 +174,7 @@ In der **von "Strings.xml"**
  </plurals>
 ```
 
-Die Verwendung der vollständigen Zeichenfolge Rendern der `GetQuantityString` Methode und übergeben die Ressourcen-ID und den Wert angezeigt werden sollen (die übergeben werden zweimal). Der zweite Parameter von Android verwendet wird, um zu bestimmen, *die* `quantity` die Zeichenfolge, die verwenden, der dritte Parameter ist der Wert, der tatsächlich in der Zeichenfolge (beide sind erforderlich) ersetzt.
+Verwenden Sie zum Rendering der gesamten Zeichen `GetQuantityString` Folge die-Methode, und übergeben Sie dabei die Ressourcen-ID und den anzuzeigenden Wert (der zweimal übergeben wird). Der zweite Parameter wird von Android verwendet, um zu bestimmen, *welche* `quantity` Zeichenfolge verwendet werden soll. der dritte Parameter ist der Wert, der tatsächlich in die Zeichenfolge ersetzt wird (beides ist erforderlich).
 
 ```csharp
 var translated = Resources.GetQuantityString (
@@ -183,38 +183,38 @@ var translated = Resources.GetQuantityString (
 
 Gültige `quantity` Switches sind:
 
-* Null
-* one
-* Zwei
-* Einige
-* many
-* andere
+- Null
+- one
+- Zweikampf
+- nur
+- many
+- andere
 
-Ausführlicher beschrieben die [Android-Dokumentation](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals). Wenn eine bestimmte Sprache keine benötigt "spezielle" behandeln, bei denen `quantity` Zeichenfolgen ignoriert werden (z. B. Englisch verwendet nur `one` und `other`; die Angabe einer `zero` Zeichenfolge hat keine Auswirkungen, es wird nicht verwendet werden).
+Diese werden in der [Android](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals)-Dokumentation ausführlicher beschrieben. Wenn eine bestimmte Sprache keine ' besondere ' Behandlung erfordert, werden diese `quantity` Zeichen folgen ignoriert (z. b. wird nur in `one` englischer `other`Sprache verwendet, `zero` und die Angabe einer Zeichenfolge hat keine Auswirkung, Sie wird nicht verwendet).
 
 ### <a name="images"></a>Bilder
 
-Lokalisierter Bilder gelten dieselben Regeln als Zeichenfolgen-Dateien: alle Images, die auf die verwiesen wird in der Anwendung platziert werden soll, im **drawable** Verzeichnisse, es gibt also ein Fallback.
+Lokalisierte Images folgen denselben Regeln wie Zeichen folgen Dateien: alle Bilder, auf die in der Anwendung verwiesen wird, sollten in **drawable** -Verzeichnissen abgelegt werden, sodass ein Fallback vorliegt.
 
-Gebietsschemaspezifische Images dann platziert werden soll in qualifizierten drawable-Ordner z. B. **drawable-es** oder **drawable-ja** (dpi-Spezifizierer können auch hinzugefügt werden).
+Gebiets Schema spezifische Images sollten dann in qualifizierte drawable-Ordner platziert werden, z. b. **drawable-es** oder **drawable-ja** (dpi-Spezifizierer können auch hinzugefügt werden).
 
-In diesem Screenshot vier Bilder gespeichert sind, der **drawable** Directory, aber nur eine **flag.png**, wurde die Kopien in anderen Verzeichnissen lokalisiert.
+In diesem Screenshot werden vier Bilder im **drawable** -Verzeichnis gespeichert, aber nur eine, " **Flag. png**", hat lokalisierte Kopien in anderen Verzeichnissen.
 
-![Bildschirmabbildung von mehreren drawable-Ordner, jeweils eine oder mehrere lokalisierte PNG-Dateien](localization-images/drawable.png)
+![Screenshot mehrerer drawable-Ordner, die jeweils eine oder mehrere lokalisierte PNG-Dateien enthalten](localization-images/drawable.png)
 
 
 #### <a name="other-resource-types"></a>Andere Ressourcentypen
 
-Sie können auch andere Arten von Alternativ sprachspezifische Ressourcen, einschließlich Layouts, Animationen und raw-Dateien bereitstellen. Dies bedeutet, Sie einem bestimmten Bildschirmlayout für eine oder mehrere der Ihre Zielsprache bereitstellen konnte, könnte z. B. Sie ein Layout speziell für Deutsch erstellen, die sehr lange Beschriftungen ermöglicht.
+Sie können auch andere Arten alternativer, sprachspezifischer Ressourcen bereitstellen, einschließlich Layouts, Animationen und Rohdatendateien. Dies bedeutet, dass Sie ein bestimmtes Bildschirmlayout für eine oder mehrere Zielsprachen bereitstellen können, z. b. Wenn Sie ein Layout speziell für Deutsch erstellen, das sehr lange Text Bezeichnungen zulässt.
 
-Android 4.2 führte die Unterstützung für [von rechts nach links (RTL) Sprachen](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html) setzen Sie die anwendungseinstellung `android:supportsRtl="true"`. Die ressourcenqualifizierer `"ldrtl"` kann in den Namen eines Verzeichnisses, um benutzerdefinierte Layouts enthalten, die entwickelt wurden, für die Anzeige von RNL eingeschlossen werden.
+Android 4,2 hat Unterstützung für [Sprachen von rechts nach links (RTL)](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html) eingeführt, wenn Sie `android:supportsRtl="true"`die Anwendungs Einstellung festlegen. Der Ressourcen Qualifizierer `"ldrtl"` kann in einen Verzeichnisnamen eingefügt werden, um benutzerdefinierte Layouts zu enthalten, die für die RTL-Anzeige entworfen wurden.
 
-Weitere Informationen zu Resource Directory-Namen und Fallback, finden Sie in der Android-Dokumentation [Bereitstellen alternativer Ressourcen](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
+Weitere Informationen zur Benennung und zum Fallback von Ressourcen Verzeichnissen finden Sie in der Android-Dokumentation zum [Bereitstellen alternativer Ressourcen](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
 
 
-### <a name="app-name"></a>App-name
+### <a name="app-name"></a>App-Name
 
-Der Anwendungsname ist einfach, mit dem Lokalisieren einer `@string/id` im für die `MainLauncher` Aktivität:
+Der Anwendungsname kann leicht lokalisiert werden, indem ein `@string/id` in für die `MainLauncher` -Aktivität verwendet wird:
 
 ```csharp
 [Activity (Label = "@string/app_name", MainLauncher = true, Icon="@drawable/launcher",
@@ -223,27 +223,27 @@ Der Anwendungsname ist einfach, mit dem Lokalisieren einer `@string/id` im für 
 
 ### <a name="right-to-left-rtl-languages"></a>Rechts-nach-links (RTL)-Sprachen
 
-Android 4.2 und höher bietet vollständige Unterstützung für RTL-Layouts, ausführlich beschrieben die [Native Unterstützung von RTL Blog](http://android-developers.blogspot.dk/2013/03/native-rtl-support-in-android-42.html).
+Android 4,2 und neuere Version bieten vollständige Unterstützung für RTL-Layouts, die im systemeigenen [Support Blog von RTL](http://android-developers.blogspot.dk/2013/03/native-rtl-support-in-android-42.html)ausführlich beschrieben werden.
 
-Bei Verwendung von Android 4.2 (API-Ebene 17) und höher, Ausrichtung, die Werte angegeben werden können, mit `start` und `end` anstelle von `left` und `right` (z. B. `android:paddingStart`). Es gibt auch neue APIs wie `LayoutDirection`, `TextDirection`, und `TextAlignment` zum Erstellen von Bildschirmen, die sich anpassen für RTL-Reader.
+Bei Verwendung von Android 4,2 (API-Ebene 17) und neuer können Ausrichtungs Werte mit `start` und `end` anstelle von `left` und `right` angegeben werden ( `android:paddingStart`z. b.). Es gibt auch neue APIs `LayoutDirection`, z. b., `TextDirection`und `TextAlignment` , um Bildschirme zu erstellen, die sich für RTL-Leser anpassen.
 
-Der folgende Screenshot zeigt die [lokalisierte **Tasky** Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Arabisch:
+Der folgende Screenshot zeigt das [lokalisierte **Tasky** -Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) auf Arabisch:
 
-[![Screenshot der app, die arabische Tasky](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
+[![Screenshot der Tasky-App auf Arabisch](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
 
-Der nächste Screenshot zeigt die [lokalisierte **Tasky** Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) – Hebräisch:
+Der nächste Screenshot zeigt das [lokalisierte **Tasky** -Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Hebräisch:
 
-[![Screenshot der Tasky app – Hebräisch](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
+[![Screenshot der Tasky-app in Hebräisch](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
 
-RNL-Text ist mit dem lokalisiert **von "Strings.xml"** Dateien in die gleiche Weise wie LTR-Text.
+Der RTL-Text wird mithilfe von **Strings. XML** -Dateien auf dieselbe Weise wie Ltr-Text lokalisiert.
 
 ## <a name="testing"></a>Test
 
-Stellen Sie sicher, dass das Standardgebietsschema gründlich zu testen. Die Anwendung stürzt ab, wenn die Standardressourcen aus irgendeinem Grund nicht geladen werden können, (d. h. sind sie nicht vorhanden).
+Stellen Sie sicher, dass Sie das Standard Gebiets Schema gründlich testen. Die Anwendung stürzt ab, wenn die Standard Ressourcen aus irgendeinem Grund nicht geladen werden können (d. h., Sie fehlen).
 
-### <a name="emulator-testing"></a>Emulator testen
+### <a name="emulator-testing"></a>Emulator-Tests
 
-Finden Sie in Google [Tests auf einem Android-Emulator](https://developer.android.com/guide/topics/resources/localization.html#testing) Abschnitt Anweisungen zum Festlegen ein Emulators auf ein bestimmtes Gebietsschema, das mit der ADB-Shell.
+Anweisungen zum Festlegen eines Emulators auf ein bestimmtes Gebiets Schema mithilfe der ADB-Shell finden Sie im Abschnitt [Testen von Google in einem Android-Emulator](https://developer.android.com/guide/topics/resources/localization.html#testing) Abschnitt.
 
 ```shell
 adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
@@ -251,22 +251,22 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 
 ### <a name="device-testing"></a>Gerätetests
 
-Um auf einem Gerät zu testen, ändern Sie die Sprache in der **Einstellungen** app.
+Um auf einem Gerät zu testen, ändern Sie die Sprache in der App " **Einstellungen** ".
 
 > [!TIP]
-> Stellen Sie sich die Symbole und den Speicherort der Menüelemente, damit Sie die Sprache, die die ursprüngliche Einstellung wiederherstellen können.
+> Notieren Sie sich die Symbole und den Speicherort der Menü Elemente, damit Sie die Sprache auf die ursprüngliche Einstellung zurücksetzen können.
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel behandelt die Grundlagen der Android-Anwendungen mit der integrierten Ressourcenbehandlung lokalisieren. Finden Sie weitere Informationen zu i18n und L10n für iOS, Android und Cross-Platform (einschließlich Xamarin.Forms)-apps in [in der vorliegenden plattformübergreifende](~/cross-platform/app-fundamentals/localization.md).
+In diesem Artikel werden die Grundlagen der Lokalisierung von Android-Anwendungen mithilfe der integrierten Ressourcen Behandlung behandelt. Weitere Informationen zu i18n und l10n für IOS-, Android-und plattformübergreifende Apps (einschließlich xamarin. Forms) finden Sie in [diesem plattformübergreifenden Leitfaden](~/cross-platform/app-fundamentals/localization.md).
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Tasky (im Code lokalisiert) (Beispiel)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
-- [Lokalisieren von Ressourcen von Android](https://developer.android.com/guide/topics/resources/localization.html)
+- [Tasky (lokalisiert im Code) (Beispiel)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
+- [Android-Lokalisierung mit Ressourcen](https://developer.android.com/guide/topics/resources/localization.html)
 - [Übersicht über die plattformübergreifende Lokalisierung](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin.Forms-Lokalisierung](~/xamarin-forms/app-fundamentals/localization/index.md)
+- [Xamarin. Forms-Lokalisierung](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [iOS Localization (iOS-Lokalisierung)](~/ios/app-fundamentals/localization/index.md)

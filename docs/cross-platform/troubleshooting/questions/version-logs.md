@@ -7,12 +7,12 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 1977da75e430e72bee151814abc4502ee090b40c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b421378f8aa99728fa13f104e284b9c410abe2b3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521494"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119963"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Wo finde ich meine Versionsinformationen und Protokolle?
 
@@ -182,9 +182,9 @@ Siehe auch die Seite [Android-Debugprotokoll](~/android/deploy-test/debugging/an
 
 ### <a name="a-idios-simulator-logs-nameios-simulator-logs-ios-simulator-logs-on-mac"></a><a id="ios-simulator-logs" name="ios-simulator-logs" />IOS-simulatorprotokolle (auf Mac)
 
-* Um auf das System Protokoll zuzugreifen, wählen Sie **Debuggen > System Protokoll öffnen...** in der IOS-Simulator-App aus.
+- Um auf das System Protokoll zuzugreifen, wählen Sie **Debuggen > System Protokoll öffnen...** in der IOS-Simulator-App aus.
 
-* Öffnen Sie zum Anzeigen von Absturzberichten aus dem Simulator Console. app, und `~/Library/Logs > DiagnosticReports`navigieren Sie zu.
+- Öffnen Sie zum Anzeigen von Absturzberichten aus dem Simulator Console. app, und `~/Library/Logs > DiagnosticReports`navigieren Sie zu.
 
 ### <a name="a-idios-device-logs-nameios-device-logs-ios-device-logs-on-mac"></a><a id="ios-device-logs" name="ios-device-logs" />IOS-Geräte Protokolle (auf Mac)
 

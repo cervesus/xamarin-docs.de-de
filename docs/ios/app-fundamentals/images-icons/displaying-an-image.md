@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 2c69c995317d5121f203946cf1a4196bce9b4177
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 41f1b96a39bde7b94f67f972bfd4ace7e454e2c0
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643088"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120601"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Anzeigen eines Bilds in xamarin. IOS
 
@@ -68,7 +68,7 @@ Gehen Sie folgendermaßen vor, um einen Bildsatz umzubenennen:
 2. Wählen Sie das umzubenennende **Bild** aus:
 
     ![](displaying-an-image-images/rename02.png "Wählen Sie das umzubenennende Bild aus.")
-3. Scrollen Sie im **Eigenschaften-Explorer**nach unten, und wählen Sie " **Name**" ( **im Abschnitt "** Sonstige") aus:
+3. Scrollen Sie im **Eigenschaften-Explorer**nach unten, und wählen Sie " **Name**" (im Abschnitt "Sonstige") aus:
 
     ![](displaying-an-image-images/rename03.png "Wählen Sie im Abschnitt Verschiedenes den Namen aus.")
 4. Geben Sie einen neuen **Namen** für die **Abbild Gruppe** ein, und speichern Sie die Änderungen.
@@ -159,9 +159,9 @@ Da die `RenderMode` -Eigenschaft `UIImage` eines schreibgeschützt ist, verwende
 
 Es gibt drei mögliche Einstellungen für `UIImage.RenderMode` über die `UIImageRenderingMode` -Aufzählung:
 
-* `AlwaysOriginal`: Erzwingt, dass das Bild ohne Änderungen als ursprüngliche Quell Bilddatei gerendert wird.
-* `AlwaysTemplate`-Erzwingt, dass das Bild als Vorlagen Bild gerendert wird, indem die Pixel mit `Tint` der angegebenen Farbe eingefärbt werden.
-* `Automatic`: Rendert das Bild entweder als Vorlage oder als ursprüngliches, das auf der Umgebung basiert, in der es verwendet wird. Wenn das Bild beispielsweise `UIToolBar`in einem `UITabBar` , `UINavigationBar`oder `UISegmentControl` verwendet wird, wird es als Vorlage behandelt.
+- `AlwaysOriginal`: Erzwingt, dass das Bild ohne Änderungen als ursprüngliche Quell Bilddatei gerendert wird.
+- `AlwaysTemplate`-Erzwingt, dass das Bild als Vorlagen Bild gerendert wird, indem die Pixel mit `Tint` der angegebenen Farbe eingefärbt werden.
+- `Automatic`: Rendert das Bild entweder als Vorlage oder als ursprüngliches, das auf der Umgebung basiert, in der es verwendet wird. Wenn das Bild beispielsweise `UIToolBar`in einem `UITabBar` , `UINavigationBar`oder `UISegmentControl` verwendet wird, wird es als Vorlage behandelt.
 
 ## <a name="adding-new-assets-collections"></a>Neue Ressourcen Sammlungen werden hinzugefügt
 

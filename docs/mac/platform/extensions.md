@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5138062cec6ee71f1db17d0118001b59dd7bc02c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 58250770b925c20b912b71e5591b1d0e252c801a
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642955"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119040"
 ---
 # <a name="xamarinmac-extension-support"></a>Unterstützung für Xamarin.Mac-Erweiterungen
 
@@ -28,9 +28,9 @@ In xamarin. Mac 2,10 wurde für mehrere macOS-Erweiterungs Punkte eine Unterstü
 
 Im folgenden finden Sie die Einschränkungen und bekannten Probleme, die beim Entwickeln von Erweiterungen in xamarin. Mac auftreten können:
 
-* Derzeit gibt es keine Debuggingunterstützung in Visual Studio für Mac. Das Debuggen muss über **NSLog** und die- **Konsole**durchgeführt werden. Weitere Informationen finden Sie im Abschnitt Tipps.
-* Erweiterungen müssen in einer Host Anwendung enthalten sein, die bei einem einmaligen ausführen mit Register beim System ausgeführt wird. Sie müssen dann im **Erweiterungs** Abschnitt der **System Einstellungen**aktiviert werden. 
-* Einige Erweiterungs Abstürze können die Host Anwendung destabilisieren und ein seltsames Verhalten verursachen. Insbesondere der **Finder** und der **heutige** Abschnitt des **Benachrichtigungs Centers** werden möglicherweise "Jammed" und werden nicht mehr reagiert. Dies ist auch in Erweiterungs Projekten in Xcode zu verzeichnen und wird zurzeit nicht in Zusammenhang mit xamarin. Mac angezeigt. Dies kann häufig im System Protokoll (über die **Konsole**, siehe Tipps für Details) zum Drucken von wiederholten Fehlermeldungen angezeigt werden. Dieser Fehler wird durch das Neustarten von macOS behoben.
+- Derzeit gibt es keine Debuggingunterstützung in Visual Studio für Mac. Das Debuggen muss über **NSLog** und die- **Konsole**durchgeführt werden. Weitere Informationen finden Sie im Abschnitt Tipps.
+- Erweiterungen müssen in einer Host Anwendung enthalten sein, die bei einem einmaligen ausführen mit Register beim System ausgeführt wird. Sie müssen dann im **Erweiterungs** Abschnitt der **System Einstellungen**aktiviert werden. 
+- Einige Erweiterungs Abstürze können die Host Anwendung destabilisieren und ein seltsames Verhalten verursachen. Insbesondere der **Finder** und der **heutige** Abschnitt des **Benachrichtigungs Centers** werden möglicherweise "Jammed" und werden nicht mehr reagiert. Dies ist auch in Erweiterungs Projekten in Xcode zu verzeichnen und wird zurzeit nicht in Zusammenhang mit xamarin. Mac angezeigt. Dies kann häufig im System Protokoll (über die **Konsole**, siehe Tipps für Details) zum Drucken von wiederholten Fehlermeldungen angezeigt werden. Dieser Fehler wird durch das Neustarten von macOS behoben.
 
 <a name="Tips" />
 

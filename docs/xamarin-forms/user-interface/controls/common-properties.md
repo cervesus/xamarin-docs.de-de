@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/21/2019
-ms.openlocfilehash: c487442af7df4e4b8dc8860dcea4cd6065087a7f
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 6d10e665c6461655440ddfb2c524cb56a14337f6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70075656"
+ms.locfileid: "70121347"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Allgemeine xamarin. Forms-Steuerelement Eigenschaften,-Methoden und-Ereignisse
 
@@ -80,11 +80,15 @@ Die `IsVisible` -Eigenschaft ist `bool` ein Wert, der bestimmt, ob das Steuerele
 
 ### [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest)
 
-Die `MinimumHeightRequest` -Eigenschaft ist `double` ein Wert, der die kleinste gewünschte Höhe des Steuer Elements bestimmt. Weitere Informationen finden Sie unter [Anforderungs Eigenschaften](#request-properties).
+Die `MinimumHeightRequest` -Eigenschaft ist `double` ein Wert, der bestimmt, wie der Überlauf behandelt wird, wenn zwei Elemente um begrenzten Platz konkurrieren. Das Festlegen `MinimumHeightRequest` der-Eigenschaft ermöglicht es dem Layoutprozess, das Element auf die angeforderte minimale Dimension zu skalieren. Wenn kein `MinimumHeightRequest` angegeben wird, ist der Standardwert-1, und der Layoutprozess `HeightRequest` berücksichtigt als Minimalwert. Dies bedeutet, dass Elemente ohne `MinimumHeightRequest` Wert keine skalierbare Höhe haben.
+
+Weitere Informationen finden Sie unter [minimale Anforderungs Eigenschaften](#minimum-request-properties).
 
 ### [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest)
 
-Die `MinimumWidthRequest` -Eigenschaft ist `double` ein Wert, der die kleinste gewünschte Breite des Steuer Elements bestimmt. Weitere Informationen finden Sie unter [Anforderungs Eigenschaften](#request-properties).
+Die `MinimumWidthRequest` -Eigenschaft ist `double` ein Wert, der bestimmt, wie der Überlauf behandelt wird, wenn zwei Elemente um begrenzten Platz konkurrieren. Das Festlegen `MinimumWidthRequest` der-Eigenschaft ermöglicht es dem Layoutprozess, das Element auf die angeforderte minimale Dimension zu skalieren. Wenn kein `MinimumWidthRequest` angegeben wird, ist der Standardwert-1, und der Layoutprozess `WidthRequest` berücksichtigt als Minimalwert. Dies bedeutet, dass Elemente ohne `MinimumWidthRequest` Wert keine skalierbare Breite haben.
+
+Weitere Informationen finden Sie unter [minimale Anforderungs Eigenschaften](#minimum-request-properties).
 
 ### [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity)
 
@@ -229,6 +233,35 @@ Android-, IOS-und UWP-Plattformen verfügen jeweils über unterschiedliche Maße
 ## <a name="request-properties"></a>Anforderungseigenschaften
 
 Eigenschaften, deren Namen "Request" enthalten, definieren einen gewünschten Wert, der möglicherweise nicht dem tatsächlich gerenderten Wert entspricht. `HeightRequest` Kann z. b. auf 150 festgelegt werden, aber wenn das Layout nur Platz für 100 Einheiten zulässt `Height` , ist der gerenderte des Steuer Elements nur 100. Die gerenderte Größe ist von verfügbarem Speicherplatz und enthaltenen Komponenten betroffen.
+
+## <a name="minimum-request-properties"></a>Minimale Anforderungs Eigenschaften
+
+Die Mindestanzahl von `MinimumHeightRequest` Anforderungs `MinimumWidthRequest`Eigenschaften umfasst und, und soll eine präzisere Kontrolle darüber ermöglichen, wie Elemente den Überlauf relativ zueinander verarbeiten. Das Layoutverhalten im Zusammenhang mit diesen Eigenschaften hat jedoch einige wichtige Überlegungen.
+
+### <a name="unspecified-minimum-property-values"></a>Nicht angegebene minimale Eigenschaftswerte
+
+Wenn kein Minimalwert festgelegt ist, ist die minimale Eigenschaft standardmäßig auf-1 festgelegt. Der Layoutprozess ignoriert diesen Wert und berücksichtigt den absoluten Wert als Minimalwert. Die praktische Folge dieses Verhaltens ist, dass ein Element ohne minimalen Wert nicht verkleinert **wird** . Ein Element, bei dem ein Minimalwert angegeben ist, **wird** verkleinert.
+
+Der folgende XAML-Code `BoxView` zeigt zwei Elemente in `StackLayout`einem horizontalen:
+
+```xaml
+<StackLayout Orientation="Horizontal">
+    <BoxView HeightRequest="100" BackgroundColor="Purple" WidthRequest="500"></BoxView>
+    <BoxView HeightRequest="100" BackgroundColor="Green" WidthRequest="500" MinimumWidthRequest="250"></BoxView>
+</StackLayout>
+```
+
+Die erste `BoxView` Instanz fordert eine Breite von 500 an und gibt keine Mindestbreite an. Die zweite `BoxView` Instanz fordert eine Breite von 500 und eine Mindestbreite von 250 an. Wenn das über `StackLayout` geordnete Element nicht breit genug ist, um beide Komponenten mit der angeforderten Breite zu enthalten `BoxView` , wird die erste Instanz vom Layoutprozess als Mindestbreite von 500 betrachtet, da kein anderes gültiges Minimalwert angegeben wird. Die zweite `BoxView` Instanz kann auf 250 zentral herunterskaliert werden, und die Größe wird verkleinert, bis die Breite 250 Einheiten erreicht.
+
+Wenn das gewünschte Verhalten dafür gilt, dass `BoxView` die erste Instanz ohne minimale Breite herunterskaliert werden `MinimumWidthRequest` soll, muss auf einen gültigen Wert festgelegt werden, z. b. 0.
+
+### <a name="minimum-and-absolute-property-values"></a>Minimale und absolute Eigenschaftswerte
+
+Das Verhalten ist nicht definiert, wenn der minimale Wert größer ist als der absolute Wert. Wenn `MinimumWidthRequest` beispielsweise auf 100 festgelegt ist, sollte `WidthRequest` die-Eigenschaft niemals den Wert 100 überschreiten. Beim Angeben eines minimalen Eigenschafts Werts sollten Sie immer einen absoluten Wert angeben, um sicherzustellen, dass der absolute Wert größer als der minimale Wert ist.
+
+### <a name="minimum-properties-within-a-grid"></a>Minimale Eigenschaften innerhalb eines Rasters
+
+`Grid`Layouts verfügen über ein eigenes System für die relative Größenänderung von Zeilen und Spalten. Die `MinimumWidthRequest` Verwendung `MinimumHeightRequest` von oder `Grid` innerhalb eines Layouts hat keinen Effekt. Weitere Informationen finden Sie unter [xamarin. Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

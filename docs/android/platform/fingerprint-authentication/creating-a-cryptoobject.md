@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8e5d4cf50874a0976c1dd10e35e7bd84518f14c4
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 03796af880aaef74c2d4b54007ac34ef1c5dc180
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511156"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119839"
 ---
 # <a name="creating-a-cryptoobject"></a>Erstellen eines cryptoobject
 
@@ -105,10 +105,10 @@ Die Chiffre wird mit einem `Cipher.GetInstance`-Befehl instanziiert, wobei eine 
 
 Beachten Sie, dass es einige Situationen gibt, in denen Android den Schlüssel ungültig machen kann: 
 
-* Ein neuer Fingerabdruck wurde bei dem Gerät registriert.
-* Es sind keine Fingerabdrücke für das Gerät registriert.
-* Der Benutzer hat die Bildschirmsperre deaktiviert.
-* Der Benutzer hat die Bildschirmsperre geändert (der Typ der Bildschirmsperre oder des verwendeten Pin/Musters).
+- Ein neuer Fingerabdruck wurde bei dem Gerät registriert.
+- Es sind keine Fingerabdrücke für das Gerät registriert.
+- Der Benutzer hat die Bildschirmsperre deaktiviert.
+- Der Benutzer hat die Bildschirmsperre geändert (der Typ der Bildschirmsperre oder des verwendeten Pin/Musters).
 
 In diesem Fall `Cipher.Init` wird von eine [`KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)ausgelöst. Im obigen Beispielcode wird diese Ausnahme abgefangen, der Schlüssel gelöscht und anschließend ein neuer erstellt.
 
@@ -122,11 +122,11 @@ Eine `KeyGenerator` wird mithilfe der `GetInstance` Factory-Methode instanziiert
 
 Als nächstes wird `KeyGenParameterSpec` eine mit dem `KeyGenParameterSpec.Builder`erstellt. `KeyGenParameterSpec.Builder` Umschließt die folgenden Informationen über den Schlüssel, der erstellt werden soll:
 
-* Der Name des Schlüssels.
-* Der Schlüssel muss sowohl für die Verschlüsselung als auch für die Entschlüsselung gültig sein.
-* Im Beispielcode wird der `BLOCK_MODE` auf _Chiffre Block Verkettung_ (`KeyProperties.BlockModeCbc`) festgelegt, was bedeutet, dass jeder Block mit dem vorherigen Block XoReD ist (das Erstellen von Abhängigkeiten zwischen den einzelnen Blöcken). 
-* Der `CryptoObjectHelper` verwendet die Verschlüsselungs [_Standard-#7 (Public Key Cryptography Standard_](https://tools.ietf.org/html/rfc2315) ) (_PKCS7_), um die Blöcke zu generieren, die die Blöcke auffüllen, um sicherzustellen, dass Sie die gleiche Größe haben.
-* `SetUserAuthenticationRequired(true)`bedeutet, dass eine Benutzerauthentifizierung erforderlich ist, bevor der Schlüssel verwendet werden kann.
+- Der Name des Schlüssels.
+- Der Schlüssel muss sowohl für die Verschlüsselung als auch für die Entschlüsselung gültig sein.
+- Im Beispielcode wird der `BLOCK_MODE` auf _Chiffre Block Verkettung_ (`KeyProperties.BlockModeCbc`) festgelegt, was bedeutet, dass jeder Block mit dem vorherigen Block XoReD ist (das Erstellen von Abhängigkeiten zwischen den einzelnen Blöcken). 
+- Der `CryptoObjectHelper` verwendet die Verschlüsselungs [_Standard-#7 (Public Key Cryptography Standard_](https://tools.ietf.org/html/rfc2315) ) (_PKCS7_), um die Blöcke zu generieren, die die Blöcke auffüllen, um sicherzustellen, dass Sie die gleiche Größe haben.
+- `SetUserAuthenticationRequired(true)`bedeutet, dass eine Benutzerauthentifizierung erforderlich ist, bevor der Schlüssel verwendet werden kann.
 
 Nachdem der `KeyGenParameterSpec` erstellt wurde, wird er verwendet, um den `KeyGenerator`zu initialisieren, der einen Schlüssel generiert und ihn sicher auf dem Gerät speichert. 
 

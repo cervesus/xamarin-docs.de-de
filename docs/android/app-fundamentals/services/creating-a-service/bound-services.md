@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: 6b585783f21cc18112ef766819c9851baac96ef1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ae1e8332f1d62a4690863a97f63c0c1bef1ee127
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644186"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119085"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Gebundene Dienste in xamarin. Android
 
@@ -22,9 +22,9 @@ _Gebundene Dienste sind Android-Dienste, die eine Client-Server-Schnittstelle be
 
 Dienste, die eine Client-/Serverschnittstelle bereitstellen, mit der Clients direkt mit dem Dienst interagieren können, werden als _gebundene Dienste_bezeichnet.  Es können mehrere Clients gleichzeitig mit einer einzelnen Instanz eines Dienstanbieter verbunden sein. Der gebundene Dienst und der Client sind voneinander isoliert. Stattdessen stellt Android eine Reihe von zwischen Objekten bereit, die den Status der Verbindung zwischen den beiden verwalten. Dieser Zustand wird von einem Objekt verwaltet, das die [`Android.Content.IServiceConnection`](xref:Android.Content.IServiceConnection) -Schnittstelle implementiert.  Dieses Objekt wird vom Client erstellt und als Parameter an die [`BindService`](xref:Android.Content.Context.BindService*) -Methode übergeben. Der `BindService` ist für ein beliebiges [`Android.Content.Context`](xref:Android.Content.Context) Objekt (z. b. eine Aktivität) verfügbar. Es ist eine Anforderung an das Android-Betriebssystem, den Dienst zu starten und einen Client an ihn zu binden. Es gibt drei Möglichkeiten, wie ein Client mithilfe der `BindService` -Methode eine Bindung an einen Dienst herstellen kann:
 
-* **Ein Dienst Binder** Ein Dienst Binder ist eine Klasse, die die [`Android.OS.IBinder`](xref:Android.OS.IBinder) -Schnittstelle implementiert. &ndash; Die meisten Anwendungen implementieren diese Schnittstelle nicht direkt, sondern erweitern die [`Android.OS.Binder`](xref:Android.OS.Binder) Klasse. Dies ist der häufigste Ansatz und eignet sich für den Fall, dass der Dienst und der Client im selben Prozess vorhanden sind.
-* **Verwenden eines Messenger** &ndash; Diese Methode eignet sich für den Fall, dass der Dienst in einem separaten Prozess vorhanden ist. Stattdessen werden Dienst Anforderungen über einen [`Android.OS.Messenger`](xref:Android.OS.Messenger)zwischen dem Client und dem Dienst gemarshallt. Im [`Android.OS.Handler`](xref:Android.OS.Handler) Dienst wird eine erstellt, die die `Messenger` Anforderungen verarbeitet. Dies wird in einem anderen Handbuch behandelt.
-* **Die Verwendung der Android Interface Definition Language (AIDL)** &ndash; [AIDL](https://developer.android.com/guide/components/aidl) ist eine fortgeschrittene Technik, die in diesem Leitfaden nicht behandelt wird.
+- **Ein Dienst Binder** Ein Dienst Binder ist eine Klasse, die die [`Android.OS.IBinder`](xref:Android.OS.IBinder) -Schnittstelle implementiert. &ndash; Die meisten Anwendungen implementieren diese Schnittstelle nicht direkt, sondern erweitern die [`Android.OS.Binder`](xref:Android.OS.Binder) Klasse. Dies ist der häufigste Ansatz und eignet sich für den Fall, dass der Dienst und der Client im selben Prozess vorhanden sind.
+- **Verwenden eines Messenger** &ndash; Diese Methode eignet sich für den Fall, dass der Dienst in einem separaten Prozess vorhanden ist. Stattdessen werden Dienst Anforderungen über einen [`Android.OS.Messenger`](xref:Android.OS.Messenger)zwischen dem Client und dem Dienst gemarshallt. Im [`Android.OS.Handler`](xref:Android.OS.Handler) Dienst wird eine erstellt, die die `Messenger` Anforderungen verarbeitet. Dies wird in einem anderen Handbuch behandelt.
+- **Die Verwendung der Android Interface Definition Language (AIDL)** &ndash; [AIDL](https://developer.android.com/guide/components/aidl) ist eine fortgeschrittene Technik, die in diesem Leitfaden nicht behandelt wird.
 
 Nachdem ein Client an einen Dienst gebunden wurde, erfolgt die Kommunikation zwischen den beiden über `Android.OS.IBinder` das-Objekt.  Dieses Objekt ist verantwortlich für die-Schnittstelle, die es dem Client ermöglicht, mit dem Dienst zu interagieren. Es ist nicht erforderlich, dass jede xamarin. Android-Anwendung diese Schnittstelle von Grund auf neu implementiert. [`Android.OS.Binder`](xref:Android.OS.Binder) die Android SDK stellt die-Klasse bereit, die den größten Teil des Codes übernimmt, der beim Marshalling des Objekts zwischen dem Client und dem Dienst erforderlich ist.
 
@@ -53,10 +53,10 @@ Jeder dieser Schritte wird in den folgenden Abschnitten ausführlicher erläuter
 
 Um einen Dienst mithilfe von xamarin. Android zu erstellen, ist es erforderlich, `Service` die Klasse zu Unterklassen und zu [`ServiceAttribute`](xref:Android.App.ServiceAttribute)verwenden, um die Klasse mit zu schmücken. Das-Attribut wird von den xamarin. Android-Buildtools verwendet, um den Dienst in der Datei " **androidmanifest. XML** " der APP ordnungsgemäß zu registrieren, ähnlich wie bei einer Aktivität. ein gebundener Dienst hat seine eigenen Lebenszyklus-und Rückruf Methoden, die den bedeutenden Ereignissen in zugeordnet sind IT-Lebenszyklus. Die folgende Liste ist ein Beispiel für einige der gängigeren Rückruf Methoden, die von einem Dienst implementiert werden:
 
-* `OnCreate`&ndash; Diese Methode wird von Android aufgerufen, während Sie den Dienst instanziiert. Sie wird verwendet, um alle Variablen oder Objekte zu initialisieren, die während ihrer Lebensdauer vom Dienst benötigt werden. Diese Methode ist optional.
-* `OnBind`&ndash; Diese Methode muss von allen gebundenen Diensten implementiert werden. Sie wird aufgerufen, wenn der erste Client versucht, eine Verbindung mit dem Dienst herzustellen. Es wird eine Instanz von `IBinder` zurückgegeben, damit der Client mit dem Dienst interagieren kann. Solange der Dienst ausgeführt wird, wird das `IBinder` -Objekt verwendet, um zukünftige Client Anforderungen zu erfüllen, die an den Dienst gebunden werden.
-* `OnUnbind`&ndash; Diese Methode wird aufgerufen, wenn alle gebundenen Clients ungebunden sind. Durch die `true` Rückgabe von dieser Methode wird der Dienst später mit `OnRebind` der Absicht aufgerufen, die `OnUnbind` an weitergegeben wird, wenn neue Clients eine Bindung an ihn herstellen. Dies würden Sie tun, wenn ein Dienst weiterhin ausgeführt wird, nachdem die Bindung aufgehoben wurde. Dies wäre der Fall, `StopService` wenn der vor kurzem nicht gebundene Dienst auch ein gestarteter Dienst wäre oder `StopSelf` nicht aufgerufen wurde. In einem solchen Szenario `OnRebind` ermöglicht das Abrufen der Absicht. Der Standardwert `false` gibt zurück, was nichts bewirkt. Optional.
-* `OnDestroy`&ndash; Diese Methode wird aufgerufen, wenn der Dienst von Android zerstört wird. Alle erforderlichen Bereinigungs Vorgänge, z. b. das Freigeben von Ressourcen, sollten in dieser Methode durchgeführt werden. Optional.
+- `OnCreate`&ndash; Diese Methode wird von Android aufgerufen, während Sie den Dienst instanziiert. Sie wird verwendet, um alle Variablen oder Objekte zu initialisieren, die während ihrer Lebensdauer vom Dienst benötigt werden. Diese Methode ist optional.
+- `OnBind`&ndash; Diese Methode muss von allen gebundenen Diensten implementiert werden. Sie wird aufgerufen, wenn der erste Client versucht, eine Verbindung mit dem Dienst herzustellen. Es wird eine Instanz von `IBinder` zurückgegeben, damit der Client mit dem Dienst interagieren kann. Solange der Dienst ausgeführt wird, wird das `IBinder` -Objekt verwendet, um zukünftige Client Anforderungen zu erfüllen, die an den Dienst gebunden werden.
+- `OnUnbind`&ndash; Diese Methode wird aufgerufen, wenn alle gebundenen Clients ungebunden sind. Durch die `true` Rückgabe von dieser Methode wird der Dienst später mit `OnRebind` der Absicht aufgerufen, die `OnUnbind` an weitergegeben wird, wenn neue Clients eine Bindung an ihn herstellen. Dies würden Sie tun, wenn ein Dienst weiterhin ausgeführt wird, nachdem die Bindung aufgehoben wurde. Dies wäre der Fall, `StopService` wenn der vor kurzem nicht gebundene Dienst auch ein gestarteter Dienst wäre oder `StopSelf` nicht aufgerufen wurde. In einem solchen Szenario `OnRebind` ermöglicht das Abrufen der Absicht. Der Standardwert `false` gibt zurück, was nichts bewirkt. Optional.
+- `OnDestroy`&ndash; Diese Methode wird aufgerufen, wenn der Dienst von Android zerstört wird. Alle erforderlichen Bereinigungs Vorgänge, z. b. das Freigeben von Ressourcen, sollten in dieser Methode durchgeführt werden. Optional.
 
 Die wichtigsten Lebenszyklus Ereignisse eines gebundenen Dienstanbieter werden in diesem Diagramm dargestellt:
 
@@ -232,9 +232,9 @@ Die `OnServiceDisconnected` -Methode wird nur aufgerufen, wenn die Verbindung zw
 
 Um einen gebundenen Dienst zu verwenden, muss ein Client (z. b. eine-Aktivität) ein Objekt instanziieren, `BindService` das implementiert `Android.Content.IServiceConnection` und die-Methode aufruft. `BindService`Gibt zurück `true` , wenn der Dienst an gebunden ist `false` , andernfalls. Die Methode `BindService` akzeptiert drei Parameter:
 
-* Mit der Absicht sollte explizit identifiziert werden, mit welchem Dienst **eine `Intent`**  &ndash; Verbindung hergestellt werden soll.
-* **Ein`IServiceConnection`**  Objekt&ndash; dieses Objekt ist ein Vermittler, der Rückruf Methoden bereitstellt, um den Client zu benachrichtigen, wenn der gebundene Dienst gestartet und beendet wird.
-* Enumeration&ndash; dieser Parameter ist ein Satz von Flags, die vom System verwendet werden, wenn das Objekt gebunden wird. **[`Android.Content.Bind`](xref:Android.Content.Bind)** Der am häufigsten verwendete Wert ist [`Bind.AutoCreate`](xref:Android.Content.Bind.AutoCreate), wodurch der Dienst automatisch gestartet wird, wenn er nicht bereits ausgeführt wird.
+- Mit der Absicht sollte explizit identifiziert werden, mit welchem Dienst **eine `Intent`**  &ndash; Verbindung hergestellt werden soll.
+- **Ein`IServiceConnection`**  Objekt&ndash; dieses Objekt ist ein Vermittler, der Rückruf Methoden bereitstellt, um den Client zu benachrichtigen, wenn der gebundene Dienst gestartet und beendet wird.
+- Enumeration&ndash; dieser Parameter ist ein Satz von Flags, die vom System verwendet werden, wenn das Objekt gebunden wird. **[`Android.Content.Bind`](xref:Android.Content.Bind)** Der am häufigsten verwendete Wert ist [`Bind.AutoCreate`](xref:Android.Content.Bind.AutoCreate), wodurch der Dienst automatisch gestartet wird, wenn er nicht bereits ausgeführt wird.
 
 Der folgende Code Ausschnitt ist ein Beispiel dafür, wie ein gebundener Dienst in einer Aktivität mithilfe einer expliziten Absicht gestartet wird:
 

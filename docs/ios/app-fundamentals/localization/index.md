@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 604313009129ad3c7133098d8e7880b0e07eef6e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 70e9f403e40cff8e1af536acf3a5efc3d12ad20b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527106"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121402"
 ---
 # <a name="localization-in-xamarinios"></a>Lokalisierung in xamarin. IOS
 
@@ -145,9 +145,9 @@ Die Syntax für lokalisierte Zeichen folgen Werte lautet:
 
 Sie sollten die folgenden Zeichen in Zeichen folgen mit Escapezeichen versehen:
 
-* `\"`ATS
-* `\\`umgekehrten Schrägstrich
-* `\n`Zeilenumbruch
+- `\"`ATS
+- `\\`umgekehrten Schrägstrich
+- `\n`Zeilenumbruch
 
 Dies ist ein Beispiel für **es/lokalisierbare. Strings** (d.h. Spanisch) aus dem Beispiel:
 

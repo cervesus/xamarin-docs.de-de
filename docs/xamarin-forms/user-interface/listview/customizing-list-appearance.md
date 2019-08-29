@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 49bb3f901f2b1f8ed4ae26650cb0509aabfd2369
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1355f65a192cf8f7f119a2ee77f334c115650578
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647620"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121638"
 ---
 # <a name="customizing-listview-appearance"></a>Anpassen der Darstellung der ListView
 
@@ -214,8 +214,8 @@ Um eine benutzerdefinierte Kopf- und Fußzeile zu erstellen, definieren Sie die 
 ## <a name="row-separators"></a>Zeilentrennzeichen
 Trennzeichen für Zeilen werden angezeigt, zwischen `ListView` Elemente werden standardmäßig unter iOS und Android. Wenn Sie die Trennlinien unter iOS und Android ausblenden möchten, legen Sie die `SeparatorVisibility` Eigenschaft Ihre ListView. Die Optionen für `SeparatorVisibility` sind:
 
-* **Standard** -zeigt eine Trennlinie unter iOS und Android.
-* **Keine** -Blendet das Trennzeichen auf allen Plattformen.
+- **Standard** -zeigt eine Trennlinie unter iOS und Android.
+- **Keine** -Blendet das Trennzeichen auf allen Plattformen.
 
 Standardmäßige Sichtbarkeit:
 

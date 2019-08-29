@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: df13c1080be5fd466c4875ed8a3bdc2012a70df0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a7276b6a3269c012ad57e13510b6479266c43209
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526161"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119795"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Remote Benachrichtigungen mit Firebase Cloud Messaging
 
@@ -731,9 +731,9 @@ Infolge dieser Änderungen wird immer dann ausgeführt `SendNotification` , wenn
 
 Wenn eine APP im Hintergrund ist, bestimmt die [Nutzlast der Nachricht](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages) , wie die Nachricht behandelt wird:
 
-* **Benachrichtigung** Nachrichten werden an die Task **Leiste gesendet.** &ndash; Dort wird eine lokale Benachrichtigung angezeigt. Wenn der Benutzer auf die Benachrichtigung tippt, wird die APP gestartet.
-* **Daten** Nachrichten werden von `OnMessageReceived`verarbeitet. &ndash;
-* **Beides** &ndash; Nachrichten, die über eine Benachrichtigung und eine Daten Nutzlast verfügen, werden an die Taskleiste übermittelt. Wenn die APP gestartet wird, wird die Daten Nutzlast in `Extras` `Intent` der der angezeigt, die zum Starten der APP verwendet wurde.
+- **Benachrichtigung** Nachrichten werden an die Task **Leiste gesendet.** &ndash; Dort wird eine lokale Benachrichtigung angezeigt. Wenn der Benutzer auf die Benachrichtigung tippt, wird die APP gestartet.
+- **Daten** Nachrichten werden von `OnMessageReceived`verarbeitet. &ndash;
+- **Beides** &ndash; Nachrichten, die über eine Benachrichtigung und eine Daten Nutzlast verfügen, werden an die Taskleiste übermittelt. Wenn die APP gestartet wird, wird die Daten Nutzlast in `Extras` `Intent` der der angezeigt, die zum Starten der APP verwendet wurde.
 
 In diesem Beispiel `SendNotification` wird ausgeführt, wenn die APP mit einer Daten Nutzlast übereinstimmt. Andernfalls wird eine Hintergrund Benachrichtigung (weiter oben in dieser exemplarischen Vorgehensweise veranschaulicht) gestartet.
 

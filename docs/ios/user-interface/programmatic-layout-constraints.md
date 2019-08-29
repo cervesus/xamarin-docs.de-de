@@ -1,55 +1,55 @@
 ---
-title: Einschränkungen für programmgesteuerte Layouts in Xamarin.iOS
-description: Dieses Handbuch bietet arbeiten mit iOS Automatisches Layout-Einschränkungen in C# Code nicht in der iOS-Designer erstellt.
+title: Einschränkungen für programmatische Layouts in xamarin. IOS
+description: In dieser Anleitung wird die Verwendung von Einschränkungen für das C# automatische IOS-Layout im Code erläutert, anstatt Sie im IOS-Designer zu erstellen.
 ms.prod: xamarin
 ms.assetid: 119C8365-B470-4CD4-85F7-086F0A46DCBB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 089ada051b6780a15acfcdd7f9e32ddda1384d05
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: c26e064a32762dcb1d088e614830a7a9632f9b1b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832048"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120726"
 ---
-# <a name="programmatic-layout-constraints-in-xamarinios"></a>Einschränkungen für programmgesteuerte Layouts in Xamarin.iOS
+# <a name="programmatic-layout-constraints-in-xamarinios"></a>Einschränkungen für programmatische Layouts in xamarin. IOS
 
-_Dieses Handbuch bietet arbeiten mit iOS Automatisches Layout-Einschränkungen in C# Code nicht in der iOS-Designer erstellt._
+_In dieser Anleitung wird die Verwendung von Einschränkungen für das C# automatische IOS-Layout im Code erläutert, anstatt Sie im IOS-Designer zu erstellen._
 
-Automatisches Layout (auch als "adaptive Layout" bezeichnet) ist ein reaktionsfähiges Design-Ansatz. Im Gegensatz zu transitional Layoutsystem, in dem Speicherort des Elements zu einem Zeitpunkt auf dem Bildschirm hartcodiert ist, automatisches Layout geht es um *Beziehungen* -die Positionen der Elemente relativ zu anderen Elementen auf der Entwurfsoberfläche angezeigt. Den Kern des automatischen Layouts bildet das Konzept der Einschränkungen oder Regeln, die die Platzierung eines Elements oder einer Gruppe von Elementen im Kontext von anderen Elementen auf dem Bildschirm zu definieren. Da die Elemente nicht auf eine bestimmte Position auf dem Bildschirm gebunden sind, können Einschränkungen an, ein Layout für die adaptive zu erstellen, die für verschiedene Bildschirmgrößen und geräteausrichtungen in Ordnung ist.
+Das automatische Layout (auch als "Adaptive Layout" bezeichnet) ist ein reaktionsfähiges Entwurfskonzept. Anders als das Übergangs Layoutsystem, bei dem die Position jedes Elements an einem Punkt auf dem Bildschirm hart codiert ist, bezieht sich das automatische Layout auf *Beziehungen* -die Positionen von Elementen relativ zu anderen Elementen auf der Entwurfs Oberfläche. Das Herzstück des automatischen Layouts ist die Idee von Einschränkungen oder Regeln, die die Platzierung eines Elements oder einer Gruppe von Elementen im Kontext anderer Elemente auf dem Bildschirm definieren. Da die Elemente nicht an eine bestimmte Position auf dem Bildschirm gebunden sind, helfen Einschränkungen bei der Erstellung eines adaptiven Layouts, das in verschiedenen Bildschirmgrößen und Geräte Ausrichtungen gut aussieht.
 
-In der Regel bei der Arbeit mit Automatisches Layout in iOS-verwenden Sie die iOS-Designer grafisch Layout-Einschränkungen für Ihre UI-Elemente zu platzieren. Allerdings gibt es möglicherweise gelegentlich müssen Sie zum Erstellen und Anwenden von Einschränkungen in C# Code. Z. B. dynamisch mit der Erstellung UI-Elemente hinzugefügt, ein `UIView`.
+Wenn Sie mit dem automatischen Layout in ios arbeiten, verwenden Sie in der Regel den IOS-Designer, um Layouteinschränkungen für Ihre UI-Elemente grafisch zu platzieren. Es kann jedoch vorkommen, dass Sie Einschränkungen im C# Code erstellen und anwenden müssen. Beispielsweise bei der Verwendung dynamisch erstellter Benutzeroberflächen Elemente, `UIView`die zu einem hinzugefügt werden.
 
-Dieser Anleitung erfahren Sie, wie zum Erstellen und Verwenden von Einschränkungen mithilfe von C# Code nicht grafisch im iOS-Designer erstellt.
+In dieser Anleitung erfahren Sie, wie Sie Einschränkungen mithilfe C# von Code erstellen und mit Ihnen arbeiten, anstatt sie grafisch im IOS-Designer zu erstellen.
 
 <a name="Creating-Constraints-Programmatically" />
 
-## <a name="creating-constraints-programmatically"></a>Programmgesteuertes Erstellen von Einschränkungen
+## <a name="creating-constraints-programmatically"></a>Programm gesteuertes Erstellen von Einschränkungen
 
-Wie bereits erwähnt, in der Regel arbeiten mit automatischen Layouts Einschränkungen in der iOS-Designer Sie. Für die Fälle, die Sie die Einschränkungen programmgesteuert zu erstellen, haben Sie drei Optionen zur Auswahl:
+Wie bereits erwähnt, arbeiten Sie in der Regel mit automatischen Layouteinschränkungen im IOS-Designer. Wenn Sie Ihre Einschränkungen Programm gesteuert erstellen müssen, stehen Ihnen drei Optionen zur Auswahl:
 
-* [Layout Anker](#Layout-Anchors) -diese API ermöglicht den Zugriff auf die Ankereigenschaften (z. B. `TopAnchor`, `BottomAnchor` oder `HeightAnchor`) von der UI-Elemente, die eingeschränkt wird.
-* [Layout Einschränkungen](#Layout-Constraints) -können Sie Einschränkungen, die direkt mit erstellen die `NSLayoutConstraint` Klasse.
-* [Visuelle Formatierung Sprache](#Visual-Format-Language) -stellt eine ASCII-Zeichnungen, wie die Methode, um die Einschränkungen zu definieren.
+- [Layoutanker](#Layout-Anchors) : Diese API ermöglicht den Zugriff auf die Anker Eigenschaften ( `TopAnchor`z `BottomAnchor` . `HeightAnchor`b. oder) der Benutzeroberflächen Elemente, die eingeschränkt werden.
+- [Layouteinschränkungen](#Layout-Constraints) : Sie können Einschränkungen direkt mithilfe der `NSLayoutConstraint` -Klasse erstellen.
+- [Visuelle Formatierungs Sprache](#Visual-Format-Language) : stellt eine ASCII-Kunst Like-Methode bereit, um die Einschränkungen zu definieren.
 
-In den folgenden Abschnitten werden die einzelnen Optionen im Detail besprochen.
+In den folgenden Abschnitten werden die einzelnen Optionen ausführlich erläutert.
 
 <a name="Layout-Anchors" />
 
-### <a name="layout-anchors"></a>Anker für Layout
+### <a name="layout-anchors"></a>Layoutanker
 
-Mithilfe der `NSLayoutAnchor` -Klasse haben Sie eine fluent-Schnittstelle zum Erstellen von Einschränkungen, die auf Basis der Ankereigenschaften der UI-Elemente, die eingeschränkt wird. Z. B. einen Ansichtscontroller oberen und unteren Layoutführungslinien macht die `TopAnchor`, `BottomAnchor` und `HeightAnchor` Eigenschaften verankern, während eine Sicht Edge "," Center "," Größe "und" Baseline-Eigenschaften verfügbar macht.
+Mithilfe der `NSLayoutAnchor` -Klasse verfügen Sie über eine fließende Oberfläche zum Erstellen von Einschränkungen basierend auf den Anker Eigenschaften der eingeschränkten Elemente der Benutzeroberfläche. Beispielsweise werden in den oberen und unteren layouthandbüchern eines Ansichts `BottomAnchor` Controllers `HeightAnchor` die `TopAnchor`Eigenschaften, und verankert, während eine Ansicht Edge-, Mittel-, Größen-und Basis Linien Eigenschaften verfügbar macht.
 
 > [!IMPORTANT]
-> Zusätzlich zum Standardsatz der Ankereigenschaften, iOS-Sichten auch enthalten die `LayoutMarginsGuides` und `ReadableContentGuide` Eigenschaften. Diese Eigenschaften machen `UILayoutGuide` Objekte für die Arbeit mit der Ansicht Ränder und besser lesbar Inhalt Handbücher bzw.
+> Zusätzlich zu den standardmäßigen Anker Eigenschaften enthalten IOS-Ansichten auch die `LayoutMarginsGuides` Eigenschaften und. `ReadableContentGuide` Diese Eigenschaften `UILayoutGuide` machen Objekte zum Arbeiten mit den Seitenrändern und lesbaren Inhalts Handbüchern der Ansicht verfügbar.
 
-Layout Anker bieten mehrere Methoden zum Erstellen von Einschränkungen in einem leicht lesbaren, kompakten Format an:
+Layoutanker bieten verschiedene Methoden zum Erstellen von Einschränkungen in einem leicht lesbaren, kompakten Format:
 
-- **ConstraintEqualTo** -definiert eine Beziehung, in denen `first attribute = second attribute + [constant]` mit einer optional angegebenen `constant` Offsetwert.
-- **ConstraintGreaterThanOrEqualTo** -definiert eine Beziehung, in denen `first attribute >= second attribute + [constant]` mit einer optional angegebenen `constant` Offsetwert.
-- **ConstraintLessThanOrEqualTo** -definiert eine Beziehung, in denen `first attribute <= second attribute + [constant]` mit einer optional angegebenen `constant` Offsetwert.
+- **Einschränintequalto** : definiert eine Beziehung, `first attribute = second attribute + [constant]` bei der ein optional `constant` angegebener Offset Wert vorhanden ist.
+- **Einschränintgreaterthanorequalto** : definiert eine Beziehung, `first attribute >= second attribute + [constant]` bei der ein optional `constant` angegebener Offset Wert vorhanden ist.
+- **Einschränintlessthanorequalto** : definiert eine Beziehung, `first attribute <= second attribute + [constant]` bei der ein optional `constant` angegebener Offset Wert vorhanden ist.
 
 Beispiel:
 
@@ -67,35 +67,35 @@ OrangeView.TrailingAnchor.ConstraintEqualTo (margins.TrailingAnchor).Active = tr
 OrangeView.HeightAnchor.ConstraintEqualTo (OrangeView.WidthAnchor, 2.0f);
 ```
 
-Eine typische Layout-Einschränkung kann einfach als lineare Ausdruck ausgedrückt werden. Betrachten Sie das folgende Beispiel:
+Eine typische layouteinschränkung kann einfach als linearer Ausdruck ausgedrückt werden. Betrachten Sie das folgende Beispiel:
 
-[![](programmatic-layout-constraints-images/graph01.png "Eine Layout-Einschränkung, ausgedrückt als lineare Ausdruck")](programmatic-layout-constraints-images/graph01.png#lightbox)
+[![](programmatic-layout-constraints-images/graph01.png "Eine layouteinschränkung, ausgedrückt als linearer Ausdruck.")](programmatic-layout-constraints-images/graph01.png#lightbox)
 
-Die konvertiert der folgenden Codezeile C# code mit Layout-Anker:
+Die in die folgende C# Codezeile konvertiert werden, indem layoutanker verwendet werden:
 
 ```csharp
 PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Active = true; 
 ```
 
-In denen die Teile der C# Code entsprechen, die bestimmte Teile der Formel wie folgt:
+Die Teile des C# Codes entsprechen den angegebenen Teilen der Gleichung wie folgt:
 
 |Gleichung|Code|
 |---|---|
 |Element 1|PurpleView|
-|Das 1-Attribut|LeadingAnchor|
+|Attribut 1|Leadinganchor|
 |Beziehung|ConstraintEqualTo|
-|Multiplikator|Der Standardwert ist 1,0 also nicht angegeben|
-|Element 2|OrangeView|
-|Attribut 2|TrailingAnchor|
+|Oren|Der Standardwert ist 1,0, daher nicht angegeben.|
+|Element 2|Orangeansicht|
+|Attribut 2|Trailinganchor|
 |Konstante|10.0|
 
-Zusätzlich zur Bereitstellung von nur die Parameter, die erforderlich sind, um eine angegebene Layout Einschränkung Gleichung zu lösen, der Layout-Anchor-Methoden erzwingen die typsicherheit der an sie übergebenen Parameter. Also horizontale Einschränkung verankert, z. B. `LeadingAnchor` oder `TrailingAnchor` kann nur verwendet werden, mit anderen horizontale Anker Typen und Multiplikatoren werden nur bereitgestellt, um größenbeschränkungen.
+Zusätzlich zu den Parametern, die zum Lösen einer vorgegebenen layouteinschränkungs Gleichung erforderlich sind, erzwingt jede der Layoutobjekte die Typsicherheit der an Sie übergebenen Parameter. Horizontale Einschränkungs Anker, wie `LeadingAnchor` z `TrailingAnchor` . b. oder, können nur mit anderen horizontalen Ankertypen verwendet werden, und Multiplikatoren werden nur für Größenbeschränkungen bereitgestellt.
 
 <a name="Layout-Constraints" />
 
-### <a name="layout-constraints"></a>Layout-Einschränkungen
+### <a name="layout-constraints"></a>Layouteinschränkungen
 
-Sie können Einschränkungen für automatisches Layout manuell hinzufügen, indem Sie direkt zu erstellen einen `NSLayoutConstraint` in C# Code. Anders als bei Layout-Anker, müssen Sie einen Wert für alle Parameter angeben, auch wenn es keine Auswirkung auf die Einschränkung definiert haben. Daher werden letztlich eine beträchtliche schwer zu lesen, Standardcode zu erzeugen. Beispiel:
+Sie können automatische Layouteinschränkungen manuell hinzufügen, indem `NSLayoutConstraint` Sie C# eine direkt im Code erstellen. Anders als bei der Verwendung von layoutankern müssen Sie für jeden Parameter einen Wert angeben, auch wenn er keine Auswirkungen auf die definierte Einschränkung hat. Folglich erzeugen Sie am Ende eine beträchtliche Menge an schwer zu lesenden Code Bausteinen. Beispiel:
 
 ```csharp
 //// Pin the leading edge of the view to the margin
@@ -108,31 +108,31 @@ NSLayoutConstraint.Create (OrangeView, NSLayoutAttribute.Trailing, NSLayoutRelat
 NSLayoutConstraint.Create (OrangeView, NSLayoutAttribute.Height, NSLayoutRelation.Equal, OrangeView, NSLayoutAttribute.Width, 2.0f, 0.0f).Active = true;
 ```
 
-In denen die `NSLayoutAttribute` Enumeration definiert den Wert für die Ansicht der Ränder und entsprechen der `LayoutMarginsGuide` Eigenschaften, z. B. `Left`, `Right`, `Top` und `Bottom` und `NSLayoutRelation` Enumeration definiert die Beziehung, erstellt werden, zwischen den angegebenen Attributen als `Equal`, `LessThanOrEqual` oder `GreaterThanOrEqual`.
+Dabei definiert `NSLayoutAttribute` die Enumeration den Wert für die Ränder der Sicht und entspricht den `Bottom` `LayoutMarginsGuide` `Top` Eigenschaften, z `Left`. b `Right`., und, `NSLayoutRelation` und die Enumeration definiert die Beziehung, die wird zwischen den angegebenen Attributen als `Equal` `LessThanOrEqual` oder `GreaterThanOrEqual`erstellt.
 
-Im Gegensatz zu mit der Layout-Anchor-API, die `NSLayoutConstraint` Erstellungsmethoden kein Hervorheben von wichtigen Aspekte des einer bestimmten Einschränkung, und es gibt keine Kompilierung Zeit ausgeführt werden, auf die Einschränkung überprüft. Daher ist es einfach, die eine ungültige-Einschränkung erstellen, die zur Laufzeit eine Ausnahme ausgelöst wird.
+Anders als bei der Layoutobjekt `NSLayoutConstraint` -API heben die Erstellungs Methoden nicht die wichtigen Aspekte einer bestimmten Einschränkung hervor, und für die Einschränkung werden keine Kompilierzeit Überprüfungen durchgeführt. Daher ist es einfach, eine ungültige Einschränkung zu erstellen, die zur Laufzeit eine Ausnahme auslöst.
 
 <a name="Visual-Format-Language" />
 
-### <a name="visual-format-language"></a>Visuellen Formatsprache
+### <a name="visual-format-language"></a>Sprache des visuellen Formats
 
-Das Format der Sprache Visual können Sie zum Definieren von Einschränkungen mithilfe von ASCII-Zeichnungen, wie Zeichenfolgen, die bieten eine visuelle Darstellung der Einschränkung erstellt wird. Dies hat die folgenden vor- und Nachteile:
+Die visuelle Format Sprache ermöglicht Ihnen das Definieren von Einschränkungen mithilfe von ASCII-Grafiken wie Zeichen folgen, die eine visuelle Darstellung der zu erstellenden Einschränkung bereitstellen. Dies hat die folgenden vor-und Nachteile:
 
-- Das Format der Sprache Visual erzwingt die Erstellung von nur gültige Einschränkungen.
-- Automatisches Layout gibt die Einschränkungen an die Konsole mit visuellen Formatsprache aus, damit die debugging-Meldungen der Code, der zum Erstellen der Einschränkung entsprechen werden.
-- Das Format der Sprache Visual können Sie mehrere Einschränkungen zur gleichen Zeit mit einem sehr kompakt Ausdruck zu erstellen.
-- Da keine Validierung Kompilieren der Visual Formatsprache Zeichenfolgen ist, können Probleme nur zur Laufzeit ermittelt werden.
-- Da das Format der Sprache Visual Visualisierung über Vollständigkeit einige Einschränkungstypen mit (z. B. Verhältnisse) können nicht erstellt werden verdeutlicht.
+- Die Sprache des visuellen Formats erzwingt nur die Erstellung gültiger Einschränkungen.
+- Das automatische Layout gibt Einschränkungen an die Konsole mithilfe der visuellen Format Sprache aus, sodass die Debugmeldungen dem Code ähneln, der zum Erstellen der Einschränkung verwendet wurde.
+- Mithilfe der visuellen Format Sprache können Sie mehrere Einschränkungen gleichzeitig mit einem sehr kompakten Ausdruck erstellen.
+- Da keine Kompilier seitige Validierung der sprach Zeichenfolgen des visuellen Formats vorhanden ist, können Probleme nur zur Laufzeit ermittelt werden.
+- Da in der visuellen Formatierungs Sprache die Visualisierung aus Gründen der Vollständigkeit hervorgehoben ist, können einige Einschränkungs Typen nicht mit ihr erstellt werden (z. b.
 
-Wenn das Format der Sprache Visual zu verwenden, um eine Einschränkung erstellen, gehen Sie folgendermaßen vor:
+Sie führen die folgenden Schritte aus, wenn Sie die Sprache des visuellen Formats verwenden, um eine Einschränkung zu erstellen:
 
-1. Erstellen Sie eine `NSDictionary` , enthält die Objekte anzeigen und Layoutführungslinien und einem Zeichenfolgenschlüssel, der verwendet wird, wenn die Formate zu definieren.
-2. Erstellen Sie optional eine `NSDictionary` , definiert einen Satz von Schlüsseln und Werten (`NSNumber`) als konstanten Wert für die Einschränkung verwendet.
-3. Erstellen Sie die Formatzeichenfolge, Layout, eine einzelne Spalte oder Zeile von Elementen.
-4. Rufen Sie die `FromVisualFormat` Methode der `NSLayoutConstraint` Klasse, um die Einschränkungen zu generieren.
-5. Rufen Sie die `ActivateConstraints` -Methode der der `NSLayoutConstraint` Klasse zum Aktivieren und die Einschränkungen gelten.
+1. Erstellen Sie `NSDictionary` eine, die die Ansichts Objekte und layouthandbücher sowie einen Zeichen folgen Schlüssel enthält, der beim Definieren der Formate verwendet wird.
+2. Erstellen Sie optional `NSDictionary` eine, die einen Satz von Schlüsseln und Werten`NSNumber`definiert (), die als konstanter Wert für die Einschränkung verwendet werden.
+3. Erstellen Sie die Format Zeichenfolge, um eine einzelne Spalte oder Zeile von Elementen zu formatieren.
+4. Rufen Sie `FromVisualFormat` die-Methode `NSLayoutConstraint` der-Klasse auf, um die Einschränkungen zu generieren.
+5. Ruft die `ActivateConstraints` -Methode `NSLayoutConstraint` der-Klasse auf, um die Einschränkungen zu aktivieren und anzuwenden.
 
-Um sowohl vorangestellte als auch eine nachfolgende Einschränkung im visuellen Formatsprache zu erstellen, können Sie beispielsweise Folgendes verwenden:
+Wenn Sie z. b. eine führende und eine nachfolgende Einschränkung in der visuellen Format Sprache erstellen möchten, können Sie Folgendes verwenden:
 
 ```csharp
 // Get views being constrained
@@ -147,22 +147,22 @@ var constraints = NSLayoutConstraint.FromVisualFormat (format, NSLayoutFormatOpt
 NSLayoutConstraint.ActivateConstraints (constraints);
 ```
 
-Da das Format der Sprache Visual immer 0 (null) an der übergeordneten Ansicht Ränder angefügten, wenn es sich bei den Standardabstand mit Punkt-Einschränkungen erstellt, erzeugt dieser Code identische Ergebnisse in den Beispielen oben dargestellt.
+Da in der visuellen Format Sprache immer NULL Punkt Einschränkungen erstellt werden, die an die Ränder der übergeordneten Ansicht angefügt sind, wenn der Standardabstand verwendet wird, liefert dieser Code identische Ergebnisse für die oben dargestellten Beispiele.
 
-Für komplexere UI-Designs, wie z. B. mehrere untergeordnete Ansichten in einer einzelnen Zeile gibt das Format der Sprache Visual sowohl den horizontalen Abstand und die vertikale Ausrichtung an. Wie im obigen Beispiel, in dem er gibt an, die `AlignAllTop` `NSLayoutFormatOptions` richtet alle Ansichten in einer Zeile oder Spalte, die am Anfang.
+Für komplexere UI-Entwürfe, wie z. b. mehrere untergeordnete Sichten in einer einzelnen Zeile, gibt die visuelle Format Sprache sowohl den horizontalen Abstand als auch die vertikale Ausrichtung an. Wie im obigen Beispiel, in dem angegeben `AlignAllTop` `NSLayoutFormatOptions` wird, werden alle Sichten in einer Zeile oder Spalte an ihre Spitzen ausgerichtet.
 
-Finden Sie unter Apple [Visual Format Sprache Anhang](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html#//apple_ref/doc/uid/TP40010853-CH27-SW1) finden Sie Beispiele für allgemeine Einschränkungen und die Visual Grammatik des Format-Zeichenfolge angeben.
+Einige Beispiele für das Angeben allgemeiner Einschränkungen und die Grammatik der visuellen Format Zeichenfolge finden Sie im [Anhang der Visual-Format Sprache](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html#//apple_ref/doc/uid/TP40010853-CH27-SW1) von Apple.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Leitfaden angezeigt, und erstellen und Verwenden von Auto-Layout-Einschränkungen in C# im Gegensatz zu diese grafisch im iOS-Designer erstellt. Zunächst, wurde es mit Layout-Anker (`NSLayoutAnchor`), automatisches Layout zu behandeln. Anschließend wurde erläutert, wie für die Arbeit mit Layout-Einschränkungen (`NSLayoutConstraint`). Abschließend können sie präsentiert, verwenden das Format der Sprache Visual für automatisches Layout.
+In dieser Anleitung wurde das Erstellen und arbeiten mit Einschränkungen für C# das automatische Layout in dargestellt, anstatt sie grafisch im IOS-Designer zu erstellen. Zuerst wurde das automatische Layout mithilfe von layoutankern (`NSLayoutAnchor`) behandelt. Im nächsten Schritt wird gezeigt, wie Sie mit Layouteinschränkungen arbeiten (`NSLayoutConstraint`). Schließlich wird die visuelle Format Sprache für das automatische Layout verwendet.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md)
-- [iOS entworfen Steuerelemente Exemplarische Vorgehensweise](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
-- [Automatisches Layout mit dem Xamarin-Designer für iOS](~/ios/user-interface/designer/designer-auto-layout.md#modifying-in-code)
-- [Apple – Programmgesteuertes Erstellen von Einschränkungen](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html#//apple_ref/doc/uid/TP40010853-CH16-SW1)
-- [Apple - visuellen Format Sprache-Anhang](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html#//apple_ref/doc/uid/TP40010853-CH27-SW1)
+- [Exemplarische Vorgehensweise für Steuerelemente für IOS](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
+- [Automatisches Layout mit dem Xamarin Designer für IOS](~/ios/user-interface/designer/designer-auto-layout.md#modifying-in-code)
+- [Apple: Programm gesteuertes Erstellen von Einschränkungen](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html#//apple_ref/doc/uid/TP40010853-CH16-SW1)
+- [Sprach Anhang für das Apple-Visual-Format](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html#//apple_ref/doc/uid/TP40010853-CH27-SW1)

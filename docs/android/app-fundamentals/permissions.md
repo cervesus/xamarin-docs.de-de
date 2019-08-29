@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1426054b60d182f7f40bf3c4b0bf69b2287ad57e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ef73b8e1cf9747c9ba426894f37aab620ac0095f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509406"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119156"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Berechtigungen in xamarin. Android
 
@@ -22,15 +22,15 @@ Android-Anwendungen werden in einem eigenen Sandkasten ausgeführt und haben aus
 
 Berechtigungen werden vom Anwendungsentwickler in der Datei " **androidmanifest. XML** " deklariert, wenn die APP entwickelt wird. Android verfügt über zwei unterschiedliche Workflows zum Abrufen der Zustimmung des Benutzers für diese Berechtigungen:
  
-* Für apps, die auf Android 5,1 (API-Ebene 22) oder niedriger abzielen, erfolgte die Berechtigungs Anforderung, als die APP installiert wurde. Wenn der Benutzer die Berechtigungen nicht erteilt hat, würde die APP nicht installiert werden. Nachdem die APP installiert wurde, gibt es keine Möglichkeit, die Berechtigungen aufzuheben, außer indem Sie die APP deinstallieren.
-* Ab Android 6,0 (API-Ebene 23) haben Benutzer mehr Kontrolle über Berechtigungen erhalten. Sie können Berechtigungen erteilen oder widerrufen, solange die APP auf dem Gerät installiert ist. Dieser Screenshot zeigt die Berechtigungseinstellungen für die Google Contacts-app. Sie listet die verschiedenen Berechtigungen auf und ermöglicht dem Benutzer das Aktivieren oder Deaktivieren von Berechtigungen:
+- Für apps, die auf Android 5,1 (API-Ebene 22) oder niedriger abzielen, erfolgte die Berechtigungs Anforderung, als die APP installiert wurde. Wenn der Benutzer die Berechtigungen nicht erteilt hat, würde die APP nicht installiert werden. Nachdem die APP installiert wurde, gibt es keine Möglichkeit, die Berechtigungen aufzuheben, außer indem Sie die APP deinstallieren.
+- Ab Android 6,0 (API-Ebene 23) haben Benutzer mehr Kontrolle über Berechtigungen erhalten. Sie können Berechtigungen erteilen oder widerrufen, solange die APP auf dem Gerät installiert ist. Dieser Screenshot zeigt die Berechtigungseinstellungen für die Google Contacts-app. Sie listet die verschiedenen Berechtigungen auf und ermöglicht dem Benutzer das Aktivieren oder Deaktivieren von Berechtigungen:
 
 ![Bildschirm für Beispiel Berechtigungen](permissions-images/01-permissions-check.png) 
 
 Android-Apps müssen sich zur Laufzeit überprüfen, um festzustellen, ob Sie über die Berechtigung zum Zugriff auf eine geschützte Ressource verfügen. Wenn die APP nicht über die erforderliche Berechtigung verfügt, muss Sie mithilfe der neuen APIs, die von der Android SDK bereitgestellt werden, damit der Benutzer die Berechtigungen erteilt. Berechtigungen werden in zwei Kategorien unterteilt:
 
-* **Normale Berechtigungen** &ndash; Dies sind Berechtigungen, die ein wenig Sicherheitsrisiko für die Sicherheit und den Datenschutz des Benutzers darstellen. Android 6,0 gewährt zum Zeitpunkt der Installation automatisch normale Berechtigungen. Eine [komplette Liste der normalen Berechtigungen](https://developer.android.com/guide/topics/permissions/normal-permissions.html)finden Sie in der Android-Dokumentation.
-* **Gefährliche Berechtigungen** &ndash; Im Gegensatz zu normalen Berechtigungen sind gefährliche Berechtigungen diejenigen, die die Sicherheit und den Datenschutz des Benutzers schützen. Diese müssen explizit vom Benutzer erteilt werden. Das Senden oder Empfangen einer SMS-Nachricht ist ein Beispiel für eine Aktion, die eine gefährliche Berechtigung erfordert.
+- **Normale Berechtigungen** &ndash; Dies sind Berechtigungen, die ein wenig Sicherheitsrisiko für die Sicherheit und den Datenschutz des Benutzers darstellen. Android 6,0 gewährt zum Zeitpunkt der Installation automatisch normale Berechtigungen. Eine [komplette Liste der normalen Berechtigungen](https://developer.android.com/guide/topics/permissions/normal-permissions.html)finden Sie in der Android-Dokumentation.
+- **Gefährliche Berechtigungen** &ndash; Im Gegensatz zu normalen Berechtigungen sind gefährliche Berechtigungen diejenigen, die die Sicherheit und den Datenschutz des Benutzers schützen. Diese müssen explizit vom Benutzer erteilt werden. Das Senden oder Empfangen einer SMS-Nachricht ist ein Beispiel für eine Aktion, die eine gefährliche Berechtigung erfordert.
 
 > [!IMPORTANT]
 > Die Kategorie, zu der eine Berechtigung gehört, kann sich im Laufe der Zeit ändern.  Es ist möglich, dass eine Berechtigung, die als "normale"-Berechtigung kategorisiert wurde, in zukünftigen API-Ebenen auf eine gefährliche Berechtigung erhöht werden kann.
@@ -121,8 +121,8 @@ Für apps, die auf Android 5.1 (API-Ebene 22) oder niedriger abzielen, müssen S
 
 Die `ContextCompat.CheckSelfPermission` -Methode (verfügbar mit der Android-Unterstützungs Bibliothek) wird verwendet, um zu überprüfen, ob eine bestimmte Berechtigung erteilt wurde. Diese Methode gibt eine [`Android.Content.PM.Permission`](xref:Android.Content.PM.Permission) Enumeration zurück, die einen von zwei Werten hat:
 
-* **`Permission.Granted`** &ndash; Die angegebene Berechtigung wurde erteilt.
-* **`Permission.Denied`** &ndash; Die angegebene Berechtigung wurde nicht erteilt.
+- **`Permission.Granted`** &ndash; Die angegebene Berechtigung wurde erteilt.
+- **`Permission.Denied`** &ndash; Die angegebene Berechtigung wurde nicht erteilt.
 
 Dieser Code Ausschnitt ist ein Beispiel dafür, wie die Kamera Berechtigung in einer Aktivität überprüft wird: 
 
@@ -145,9 +145,9 @@ Die `ActivityCompat.ShouldShowRequestPermissionRationale` -Methode wird verwende
 
 Wenn der Benutzer die Berechtigung erteilt, sollte `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` die-Methode aufgerufen werden. Diese Methode erfordert die folgenden Parameter:
 
-* **Aktivität** &ndash; Dies ist die Aktivität, die die Berechtigungen anfordert und von Android der Ergebnisse informiert werden soll.
-* **Berechtigungen** &ndash; Eine Liste der Berechtigungen, die angefordert werden.
-* **requestcode** Ein ganzzahliger Wert, der verwendet wird, um die Ergebnisse der Berechtigungs `RequestPermissions` Anforderung an einen-Befehl abzugleichen. &ndash; Dieser Wert muss größer als null sein.
+- **Aktivität** &ndash; Dies ist die Aktivität, die die Berechtigungen anfordert und von Android der Ergebnisse informiert werden soll.
+- **Berechtigungen** &ndash; Eine Liste der Berechtigungen, die angefordert werden.
+- **requestcode** Ein ganzzahliger Wert, der verwendet wird, um die Ergebnisse der Berechtigungs `RequestPermissions` Anforderung an einen-Befehl abzugleichen. &ndash; Dieser Wert muss größer als null sein.
 
 Dieser Code Ausschnitt ist ein Beispiel für die beiden Methoden, die besprochen wurden. Zuerst wird geprüft, ob die Berechtigungs Begründung angezeigt werden soll. Wenn die Begründung angezeigt werden soll, wird eine Snackbar mit der Begründung angezeigt. Wenn der Benutzer in der Snackbar auf **OK** klickt, werden die Berechtigungen von der APP angefordert. Wenn der Benutzer die Begründung nicht annimmt, sollte die APP nicht mit den Anforderungs Berechtigungen fortfahren. Wenn die Begründung nicht angezeigt wird, wird die-Berechtigung von der-Aktivität angefordert:
 

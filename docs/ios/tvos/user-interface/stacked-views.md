@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7dd3889e9fcbb2260165a96f32f56f437df15ade
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528835"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120738"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Arbeiten mit gestapelten Ansichten von tvos in xamarin
 
@@ -61,16 +61,16 @@ Die Stapel Ansicht hat die gesamte Kontrolle über das Layout einer beliebigen u
 
 Im Allgemeinen bedeutet dies, dass mindestens zwei Ränder der Stapel Ansicht angeheftet werden, um Sie zu erweitern und zu verkleinern und so die Position zu definieren. Ohne zusätzliche Einschränkungen wird die Stapel Ansicht automatisch so angepasst, dass Sie alle untergeordneten Sichten wie folgt einfügt:
 
-* Die Größe der unter `Axis` geordneten Ansichts Größe und des zwischen den einzelnen untergeordneten Sichten definierten Speicherplatzes ist gleich.
-* Wenn die `LayoutMarginsRelativeArrangement` -Eigenschaft `true`ist, enthalten die Stapel Ansichts Größe auch Platz für die Ränder.
-* Die Größe, die senkrecht `Axis` zum ist, wird auf die größte unter Ansicht in der Auflistung festgelegt.
+- Die Größe der unter `Axis` geordneten Ansichts Größe und des zwischen den einzelnen untergeordneten Sichten definierten Speicherplatzes ist gleich.
+- Wenn die `LayoutMarginsRelativeArrangement` -Eigenschaft `true`ist, enthalten die Stapel Ansichts Größe auch Platz für die Ränder.
+- Die Größe, die senkrecht `Axis` zum ist, wird auf die größte unter Ansicht in der Auflistung festgelegt.
 
 Darüber hinaus können Sie Einschränkungen für die **Höhe** und **Breite**der Stapel Ansicht angeben. In diesem Fall werden die untergeordneten Sichten angeordnet (mit der Größenangabe), um den von der Stapel Ansicht festgelegten Platz entsprechend der `Distribution` - `Alignment` Eigenschaft und der-Eigenschaft auszufüllen.
 
 Wenn die `BaselineRelativeArrangement` -Eigenschaft `true`auf festgelegt ist, werden die untergeordneten Sichten basierend auf der Baseline der ersten oder letzten unter Ansicht angelegt, anstatt die **obere**, **untere** oder **zentrierte*- **Y** -Position zu verwenden. Diese werden im Inhalt der Stapel Ansicht wie folgt berechnet:
 
-* Eine vertikale Stapel Ansicht gibt die erste unter Ansicht für die erste Baseline und die letzte für den letzten zurück. Wenn eine dieser unter Sichten selbst Stapel Ansichten ist, wird Ihre erste oder letzte Baseline verwendet.
-* In einer horizontalen Stapel Ansicht wird die höchste unter Ansicht für die erste und die letzte Baseline verwendet. Wenn die höchste Ansicht auch eine Stapel Ansicht ist, wird Sie mit der höchsten unter Ansicht als Baseline verwendet.
+- Eine vertikale Stapel Ansicht gibt die erste unter Ansicht für die erste Baseline und die letzte für den letzten zurück. Wenn eine dieser unter Sichten selbst Stapel Ansichten ist, wird Ihre erste oder letzte Baseline verwendet.
+- In einer horizontalen Stapel Ansicht wird die höchste unter Ansicht für die erste und die letzte Baseline verwendet. Wenn die höchste Ansicht auch eine Stapel Ansicht ist, wird Sie mit der höchsten unter Ansicht als Baseline verwendet.
 
 > [!IMPORTANT]
 > Die Baseline-Ausrichtung funktioniert nicht bei gestreckten oder komprimierten untergeordneten Ansichts Größen, da die Baseline an die falsche Position berechnet wird. Stellen Sie bei der Baseline-Ausrichtung sicher, dass die **Höhe** der unter Ansicht mit der **Höhe**der intrinsischen Inhaltsansicht übereinstimmt.

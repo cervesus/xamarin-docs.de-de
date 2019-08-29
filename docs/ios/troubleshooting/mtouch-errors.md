@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 588c46274aa0b4d77742d004bf1fbe91e56a42c6
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: d75f46f8b06ef0e743218d5f42d5b2732b6e4158
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620603"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120976"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. IOS-Fehler
 
@@ -32,9 +32,9 @@ Beispiel: Parameter, Umgebung, fehlende Tools.
 
 Es ist ein unerwarteter Fehler aufgetreten. Bitte melden Sie ein neues Problem auf [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) mit so vielen Informationen wie möglich, einschließlich:
 
-* Vollständige Buildprotokolle mit maximaler Ausführlichkeit (z `-v -v -v -v` . b. in den **zusätzlichen mberührungs-Argumenten**);
-* Ein minimaler Testfall, der den Fehler reproduziert. immer
-* Alle Versionsinformationen
+- Vollständige Buildprotokolle mit maximaler Ausführlichkeit (z `-v -v -v -v` . b. in den **zusätzlichen mberührungs-Argumenten**);
+- Ein minimaler Testfall, der den Fehler reproduziert. immer
+- Alle Versionsinformationen
 
 Die einfachste Möglichkeit, um genaue Versionsinformationen zu erhalten, ist die Verwendung des Menüs " **Visual Studio für Mac** ", Informationen zu **Visual Studio für Mac** Element, Schaltfläche " **Details anzeigen** " und Kopieren/Einfügen der Versionsinformationen (die Schaltfläche " **Informationen kopieren** " können Sie verwenden) .
 
@@ -130,8 +130,8 @@ Sgen (--Sgen) muss aktiviert sein, wenn die Profilerstellung (--Profilerstellung
 
 Dies kann in den folgenden Situationen vorkommen:
 
-* ARMv6 ist aktiviert, und Xcode 4,5 oder höher ist installiert.
-* ARMv7s ist aktiviert, und Xcode 4,4 oder früher ist installiert.
+- ARMv6 ist aktiviert, und Xcode 4,5 oder höher ist installiert.
+- ARMv7s ist aktiviert, und Xcode 4,4 oder früher ist installiert.
 
 Überprüfen Sie, ob die installierte Version von Xcode die ausgewählten Architekturen unterstützt.
 
@@ -673,15 +673,15 @@ Weitere Informationen finden Sie unter Bug #[51634](https://bugzilla.xamarin.com
 
 Es gibt mehrere Gründe, warum die Code Freigabe deaktiviert werden kann:
 
-* Da das Bereitstellungs Ziel der Container-App älter als IOS 8,0 ist (*)).
+- Da das Bereitstellungs Ziel der Container-App älter als IOS 8,0 ist (*)).
 
 Die Freigabe von nativem Code erfordert IOS 8,0, da die Freigabe von nativem Code mithilfe von Benutzer-Frameworks implementiert wird, die mit IOS 8,0 eingeführt wurden
 
-* Da die Container-App i18n-Assemblys (*) enthält.
+- Da die Container-App i18n-Assemblys (*) enthält.
 
 Die Freigabe von nativem Code wird derzeit nicht unterstützt, wenn die Container-App i18n-Assemblys
 
-* die Container-App verfügt über benutzerdefinierte XML-Definitionen für den verwalteten Linker (*).
+- die Container-App verfügt über benutzerdefinierte XML-Definitionen für den verwalteten Linker (*).
 
 Die Freigabe von nativem Code erfordert für Projekte, die benutzerdefinierte XML-Definitionen für den verwalteten Linker verwenden, nicht unterstützt.
 
@@ -689,59 +689,59 @@ Die Freigabe von nativem Code erfordert für Projekte, die benutzerdefinierte XM
 
 ### <a name="mt0113-native-code-sharing-has-been-disabled-for-the-extension--because-"></a>MT0113: Die Freigabe von nativem Code wurde für die Erweiterung "*" deaktiviert, da *.
 
-* Da sich die Bitcode Optionen zwischen der Container-APP\*() und der Erweiterung\*() unterscheiden.
+- Da sich die Bitcode Optionen zwischen der Container-APP\*() und der Erweiterung\*() unterscheiden.
 
   Die Freigabe von nativem Code erfordert, dass die Bitcode Optionen zwischen den Projekten, die Code freigeben, entsprechen.
 
-* die Optionen "--Assembly-Build-target" unterscheiden sich zwischen der Container\*-app () und\*der Erweiterung ().
+- die Optionen "--Assembly-Build-target" unterscheiden sich zwischen der Container\*-app () und\*der Erweiterung ().
 
   Die Freigabe von nativem Code erfordert, dass die Optionen "--Assembly-Build-target" zwischen den Projekten identisch sind, die Code gemeinsam verwenden.
 
   Diese Bedingung kann auftreten, wenn inkrementelle Builds in allen Projekten weder aktiviert noch deaktiviert sind.
 
-* die i18n-Assemblys unterscheiden sich zwischen der\*Container-app ()\*und der Erweiterung ().
+- die i18n-Assemblys unterscheiden sich zwischen der\*Container-app ()\*und der Erweiterung ().
 
   Die Freigabe von nativem Code wird derzeit nicht für Erweiterungen unterstützt, die i18n-Assemblys
 
-* die Argumente für den AOT-Compiler unterscheiden sich zwischen der Container-\*app () und der\*Erweiterung ().
+- die Argumente für den AOT-Compiler unterscheiden sich zwischen der Container-\*app () und der\*Erweiterung ().
 
   Die Freigabe von nativem Code erfordert, dass sich die Argumente für den AOT-Compiler nicht zwischen Projekten unterscheiden, die Code gemeinsam verwenden.
 
-* Da sich die anderen Argumente des AOT-Compilers zwischen der Container-APP\*() und der Erweiterung\*() unterscheiden.
+- Da sich die anderen Argumente des AOT-Compilers zwischen der Container-APP\*() und der Erweiterung\*() unterscheiden.
 
   Die Freigabe von nativem Code erfordert, dass sich die Argumente für den AOT-Compiler nicht zwischen Projekten unterscheiden, die Code gemeinsam verwenden.
 
   Diese Bedingung tritt auf, wenn sich die "alle 32-Bit-Gleit Komma Operationen als 64-Bit Float" unterscheiden.
 
-* Da llvm nicht in der Container-app (\*) und der Erweiterung (\*) aktiviert oder deaktiviert ist.
+- Da llvm nicht in der Container-app (\*) und der Erweiterung (\*) aktiviert oder deaktiviert ist.
 
   Die Freigabe von nativem Code erfordert, dass llvm für alle Projekte, die Code gemeinsam nutzen, entweder aktiviert oder deaktiviert ist.
 
-* Da die verwalteten Linker-Einstellungen zwischen der Container-app (\*) und der Erweiterung (\*) unterschiedlich sind.
+- Da die verwalteten Linker-Einstellungen zwischen der Container-app (\*) und der Erweiterung (\*) unterschiedlich sind.
 
   Die Freigabe von nativem Code erfordert, dass die verwalteten Linker-Einstellungen für alle Projekte identisch sind, die Code gemeinsam verwenden.
 
-* die übersprungenen Assemblys für den verwalteten Linker unterscheiden sich zwischen\*der Container-app (\*) und der Erweiterung ().
+- die übersprungenen Assemblys für den verwalteten Linker unterscheiden sich zwischen\*der Container-app (\*) und der Erweiterung ().
 
   Die Freigabe von nativem Code erfordert, dass die verwalteten Linker-Einstellungen für alle Projekte identisch sind, die Code gemeinsam verwenden.
 
-* Da die Erweiterung über benutzerdefinierte XML-Definitionen für den verwalteten Linker (*) verfügt.
+- Da die Erweiterung über benutzerdefinierte XML-Definitionen für den verwalteten Linker (*) verfügt.
 
   Die Freigabe von nativem Code erfordert für Projekte, die benutzerdefinierte XML-Definitionen für den verwalteten Linker verwenden, nicht unterstützt.
 
-* Da die Container-APP nicht für die ABI * erstellt wird (während die Erweiterung für diese ABI erstellt wird).
+- Da die Container-APP nicht für die ABI * erstellt wird (während die Erweiterung für diese ABI erstellt wird).
 
   Die Freigabe von nativem Code erfordert, dass die Container-App für alle Architekturen erstellt wird, für die APP-Erweiterungen erstellt werden.
 
   Beispiel: Diese Bedingung tritt auf, wenn eine Erweiterung für ARM64 + ARMv7 erstellt wird, aber die Container-app nur für ARM64 erstellt wird.
 
-* Da die Container-App für die ABI \*aufbaut, die nicht mit der ABI (\*) der Erweiterung kompatibel ist.
+- Da die Container-App für die ABI \*aufbaut, die nicht mit der ABI (\*) der Erweiterung kompatibel ist.
 
   Die Freigabe von nativem Code erfordert, dass alle Projekte für genau dieselbe API erstellt werden.
 
   Beispiel: Diese Bedingung tritt auf, wenn eine Erweiterung für ARMv7 + llvm + thumb2 erstellt wird, aber die Container-app nur für ARMv7 + llvm erstellt wird.
 
-* Da die Container-App auf die Assembly '\*' von '\*' verweist, während die Erweiterung auf eine andere Version als ' * ' verweist.
+- Da die Container-App auf die Assembly '\*' von '\*' verweist, während die Erweiterung auf eine andere Version als ' * ' verweist.
 
   Die Freigabe von nativem Code erfordert, dass alle Projekte, die Code gemeinsam verwenden, für alle Assemblys die gleichen Versionen verwenden.
 
@@ -973,11 +973,11 @@ Entfernen Sie das `NOTICE` Verzeichnis aus dem Projekt.
 
 Dies kann bei folgenden Aktionen vorkommen:
 
-* Ihre Anwendung verfügt über Berechtigungen, die das aktuelle Bereitstellungs Profil nicht unterstützt.
+- Ihre Anwendung verfügt über Berechtigungen, die das aktuelle Bereitstellungs Profil nicht unterstützt.
   Folgende Lösungen sind möglich:
   - Geben Sie ein anderes Bereitstellungs Profil an, das die von Ihrer Anwendung benötigten Berechtigungen unterstützt.
   - Entfernen Sie die Berechtigungen, die im aktuellen Bereitstellungs Profil nicht unterstützt werden.
-* Das Gerät, das Sie bereitstellen möchten, ist nicht im Bereitstellungs Profil enthalten, das Sie verwenden.
+- Das Gerät, das Sie bereitstellen möchten, ist nicht im Bereitstellungs Profil enthalten, das Sie verwenden.
   Folgende Lösungen sind möglich:
   - Erstellen Sie eine neue APP aus einer Vorlage in Xcode, wählen Sie das gleiche Bereitstellungs Profil aus, und stellen Sie es auf demselben Gerät bereit. Manchmal kann Xcode Bereitstellungs Profile automatisch mit neuen Geräten aktualisieren (in anderen Fällen werden Sie von Xcode gefragt, was zu tun ist).
   : Wechseln Sie zum IOS dev Center, aktualisieren Sie das Bereitstellungs Profil mit dem neuen Gerät, und laden Sie dann das aktualisierte Bereitstellungs Profil auf Ihren Computer herunter.
@@ -1008,10 +1008,10 @@ Fehler beim Versuch, eine Anwendung auf dem Gerät zu suchen.
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
 
 <a name="MT1024" />
 
@@ -1029,11 +1029,11 @@ Fehler beim Auflisten der Absturzberichte auf dem Gerät.
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <a name="MT1026" />
 
@@ -1043,11 +1043,11 @@ Fehler beim Versuch, die Absturzberichte vom Gerät herunterzuladen.
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <a name="MT1027" />
 
@@ -1259,9 +1259,9 @@ Dies weist in der Regel auf ein Problem mit Xcode hin.
 
 Problembehebung:
 
-* Verwenden Sie den Simulator einmal in Xcode.
-* Übergeben Sie mithilfe der--SDK \<-Version > eine explizite SDK-Version.
-* Installieren Sie Xcode neu.
+- Verwenden Sie den Simulator einmal in Xcode.
+- Übergeben Sie mithilfe der--SDK \<-Version > eine explizite SDK-Version.
+- Installieren Sie Xcode neu.
 
 <a name="MT1221" />
 
@@ -1323,11 +1323,11 @@ Beim Versuch, auf Absturzberichte vom Gerät zuzugreifen, ist ein Fehler aufgetr
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <a name="MT1401" />
 
@@ -1337,11 +1337,11 @@ Beim Versuch, auf Absturzberichte vom Gerät zuzugreifen, ist ein Fehler aufgetr
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <a name="MT1402" />
 
@@ -1351,11 +1351,11 @@ Beim Versuch, auf Absturzberichte vom Gerät zuzugreifen, ist ein Fehler aufgetr
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <a name="MT1403" />
 
@@ -1365,11 +1365,11 @@ Beim Versuch, auf Absturzberichte vom Gerät zuzugreifen, ist ein Fehler aufgetr
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <a name="MT1404" />
 
@@ -1379,11 +1379,11 @@ Beim Versuch, auf Absturzberichte vom Gerät zuzugreifen, ist ein Fehler aufgetr
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <a name="MT1405" />
 
@@ -1393,11 +1393,11 @@ Beim Versuch, auf Absturzberichte vom Gerät zuzugreifen, ist ein Fehler aufgetr
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <a name="MT1406" />
 
@@ -1407,11 +1407,11 @@ Beim Versuch, auf Absturzberichte vom Gerät zuzugreifen, ist ein Fehler aufgetr
 
 Dinge, die Sie zu lösen versuchen:
 
-* Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
-* Trennen Sie das Gerät, und verbinden Sie es erneut.
-* Starten Sie das Gerät neu.
-* Starten Sie den Mac neu.
-* Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
+- Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
+- Trennen Sie das Gerät, und verbinden Sie es erneut.
+- Starten Sie das Gerät neu.
+- Starten Sie den Mac neu.
+- Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
 <!--- 1407 used by mmp -->
 
@@ -1598,9 +1598,9 @@ Die Stammassembly konnte nicht geladen werden. Überprüfen Sie, ob der Pfad in 
 Beim Versuch, generierten Bindungs Code zu optimieren, ist ein unerwartetes Problem aufgetreten. Das Element, das das Problem verursacht, wird in der Fehlermeldung benannt. Um dieses Problem zu beheben, muss die Assembly mit dem Namen (oder mit dem Typ oder der Methode mit dem Namen) in einem neuen Problem auf [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) zusammen mit einem vollständigen Buildprotokoll mit aktivierter Ausführlichkeit (d. h. `-v -v -v -v` in den **zusätzlichen maddress-Argumenten**) bereitgestellt werden.
 
 Die letzte Ziffer `x` lautet:
-* `0`für einen Assemblynamen;
-* `1`für einen Typnamen;
-* `3`für einen Methodennamen;
+- `0`für einen Assemblynamen;
+- `1`für einen Typnamen;
+- `3`für einen Methodennamen;
 
 <a name="MT2030" />
 
@@ -1610,8 +1610,8 @@ Unerwarteter Fehler beim Versuch, Benutzerressourcen zu entfernen. Die Assembly,
 
 Benutzerressourcen sind Dateien, die in Assemblys (als Ressourcen) enthalten sind, die zur Buildzeit extrahiert werden müssen, um das Anwendungspaket zu erstellen. Dies umfasst Folgendes:
 
-* `__monotouch_content_*`und `__monotouch_pages_*` -Ressourcen und
-* Native Bibliotheken, die in eine bindungsassembly eingebettet sind.
+- `__monotouch_content_*`und `__monotouch_pages_*` -Ressourcen und
+- Native Bibliotheken, die in eine bindungsassembly eingebettet sind.
 
 <a name="MT2040" />
 
@@ -2238,7 +2238,7 @@ Dies weist normalerweise auf einen Fehler in xamarin. IOS hin. Bitte melden Sie 
 
 Dies ist der Fall, wenn der Native Linker kein Symbol finden kann, auf das irgendwo verwiesen wird. Dies kann verschiedene Ursachen haben:
 
-* Eine Drittanbieter Bindung erfordert ein Framework, aber die Bindung gibt dies nicht in Ihrem `[LinkWith]` -Attribut an. Lösungen
+- Eine Drittanbieter Bindung erfordert ein Framework, aber die Bindung gibt dies nicht in Ihrem `[LinkWith]` -Attribut an. Lösungen
   - Wenn Sie der Autor der Drittanbieter Bindung sind oder Zugriff auf die zugehörige Quelle haben, ändern Sie das- `[LinkWith]` Attribut der Bindung, um das Framework, das es benötigt, einzubeziehen:
 
     ```csharp
@@ -2246,11 +2246,11 @@ Dies ist der Fall, wenn der Native Linker kein Symbol finden kann, auf das irgen
     ```
 
   - Wenn Sie die Bindung von Drittanbietern nicht ändern können, können Sie manuell eine Verknüpfung mit dem erforderlichen Framework `-gcc_flags '-framework SystemFramework'` herstellen `mtouch` , indem Sie an übergeben. (Dies erfolgt durch Ändern der zusätzlichen mtouchscreen-Argumente auf der Seite IOS-Buildoptionen des Projekts. Beachten Sie, dass dies für jede Projekt Konfiguration erfolgen muss.
-* In einigen Fällen besteht eine verwaltete Bindung aus mehreren nativen Bibliotheken, die alle in den Bindungen enthalten sein müssen. Es ist möglich, in jedem Bindungs Projekt mehr als eine systemeigene Bibliothek zu haben. Daher besteht die Lösung darin, dem Bindungs Projekt lediglich alle erforderlichen nativen Bibliotheken hinzuzufügen.</li>
-* Eine verwaltete Bindung verweist auf native Symbole, die in der nativen Bibliothek nicht vorhanden sind.
+- In einigen Fällen besteht eine verwaltete Bindung aus mehreren nativen Bibliotheken, die alle in den Bindungen enthalten sein müssen. Es ist möglich, in jedem Bindungs Projekt mehr als eine systemeigene Bibliothek zu haben. Daher besteht die Lösung darin, dem Bindungs Projekt lediglich alle erforderlichen nativen Bibliotheken hinzuzufügen.</li>
+- Eine verwaltete Bindung verweist auf native Symbole, die in der nativen Bibliothek nicht vorhanden sind.
     Dies geschieht normalerweise, wenn eine Bindung für einige Zeit vorhanden ist, und der systemeigene Code wurde während dieser Zeit geändert, sodass eine bestimmte Native Klasse entweder entfernt oder umbenannt wurde, während die Bindung nicht aktualisiert wurde.
-* Ein P/-Aufruf verweist auf ein natives Symbol, das nicht vorhanden ist. Ab xamarin. IOS 7,4 wird ein <a href="#MT5214">MT5214</a> -Fehler in diesem Fall gemeldet (Weitere Informationen finden Sie unter MT5214).
-* Eine Bindung/Bibliothek eines Drittanbieters wurde mit C++erstellt, aber die Bindung gibt dies nicht im- `[LinkWith]` Attribut an. Dies ist normalerweise recht leicht zu erkennen, da die Symbole über gescholtete C++ Symbole verfügen (ein häufiges `__ZNKSt9exception4whatEv`Beispiel ist).
+- Ein P/-Aufruf verweist auf ein natives Symbol, das nicht vorhanden ist. Ab xamarin. IOS 7,4 wird ein <a href="#MT5214">MT5214</a> -Fehler in diesem Fall gemeldet (Weitere Informationen finden Sie unter MT5214).
+- Eine Bindung/Bibliothek eines Drittanbieters wurde mit C++erstellt, aber die Bindung gibt dies nicht im- `[LinkWith]` Attribut an. Dies ist normalerweise recht leicht zu erkennen, da die Symbole über gescholtete C++ Symbole verfügen (ein häufiges `__ZNKSt9exception4whatEv`Beispiel ist).
   - Wenn Sie der Autor der Drittanbieter Bindung sind oder Zugriff auf die zugehörige Quelle haben, ändern Sie das-Attribut `[LinkWith]` der Bindung, um `IsCxx` das-Flag festzulegen:
 
     ```csharp
@@ -2265,7 +2265,7 @@ Dies ist der Fall, wenn der Native Linker kein Symbol finden kann, auf das irgen
 
 Dies ist der Fall, wenn der Native Linker eine Ziel-C-Klasse nicht finden kann, auf die irgendwo verwiesen wird. Dies kann verschiedene Ursachen haben: das gleiche wie bei [MT5210](#MT5210) und zusätzlich:
 
-* Eine Bindung eines Drittanbieters hat ein Ziel-C-Protokoll gebunden, aber es nicht mit dem `[Protocol]` -Attribut in seiner API-Definition versehen. Lösungen
+- Eine Bindung eines Drittanbieters hat ein Ziel-C-Protokoll gebunden, aber es nicht mit dem `[Protocol]` -Attribut in seiner API-Definition versehen. Lösungen
   - Fügen Sie das `[Protocol]` fehlende Attribut hinzu:
 
     ```csharp
@@ -2282,9 +2282,9 @@ Dies ist der Fall, wenn der Native Linker eine Ziel-C-Klasse nicht finden kann, 
 
 Dies ist der Fall, wenn der Native Linker duplizierte Symbole zwischen allen nativen Bibliotheken findet. Bei diesem Fehler kann es sich um einen oder mehrere [MT5213](#MT5213) -Fehler mit dem Speicherort für jedes Vorkommen des Symbols handeln. Mögliche Ursachen für diesen Fehler:
 
-* Die gleiche native Bibliothek ist zweimal enthalten.
-* Es gibt zwei unterschiedliche Native Bibliotheken, die dieselben Symbole definieren.
-* Eine native Bibliothek ist nicht ordnungsgemäß erstellt und enthält dasselbe Symbol mehrmals.
+- Die gleiche native Bibliothek ist zweimal enthalten.
+- Es gibt zwei unterschiedliche Native Bibliotheken, die dieselben Symbole definieren.
+- Eine native Bibliothek ist nicht ordnungsgemäß erstellt und enthält dasselbe Symbol mehrmals.
   Dies können Sie überprüfen, indem Sie die folgenden Befehle von einem Terminal verwenden (ersetzen Sie "i386" durch x86_64/armv7/armv7s/arm64 entsprechend der Architektur, für die Sie aufbauen):
 
   ```
@@ -2391,19 +2391,19 @@ Normalerweise wird der Native Linker von xamarin. IOS mithilfe des `-u symbol` L
 
 Es gibt einige mögliche Quellen für solche dynamischen Symbole:
 
-* Ruft Methoden in statisch verknüpften Bibliotheken auf (wobei der DLL-Name im DllImport-Attribut `__Internal` `[DllImport ("__Internal")]`enthalten ist).
-* Feldverweise auf Speicherorte in statisch verknüpften Bibliotheken aus Bindungs Projekten (`[Field]` Attribute).
-* Ziel-C-Klassen, auf die in statisch verknüpften Bibliotheken aus Bindungs Projekten verwiesen wird (bei Verwendung von inkrementellen Builds oder bei Verwendung der statischen Registrierungsstelle).
+- Ruft Methoden in statisch verknüpften Bibliotheken auf (wobei der DLL-Name im DllImport-Attribut `__Internal` `[DllImport ("__Internal")]`enthalten ist).
+- Feldverweise auf Speicherorte in statisch verknüpften Bibliotheken aus Bindungs Projekten (`[Field]` Attribute).
+- Ziel-C-Klassen, auf die in statisch verknüpften Bibliotheken aus Bindungs Projekten verwiesen wird (bei Verwendung von inkrementellen Builds oder bei Verwendung der statischen Registrierungsstelle).
 
 Folgende Lösungen sind möglich:
 
-* Aktivieren Sie den verwalteten Linker (falls möglich, für alle Assemblys anstelle von SDK-Assemblys). Dadurch werden möglicherweise genug Quellen für dynamische Symbole entfernt, damit die Befehlszeile des Linkers den maximalen Wert nicht überschreitet.
-* Reduzieren Sie die Anzahl von P/aufruft-, Field References-und/oder Ziel-C-Klassen.
-* Schreiben Sie die dynamischen Symbole so um, dass Sie kürzere Namen haben.
-* Übergeben `-dlsym:false` Sie als zusätzliches mberührungs-Argument in den IOS-Buildoptionen des Projekts. Mit dieser Option generiert xamarin. IOS einen systemeigenen Verweis im AOT-kompilierten Code und muss den Linker nicht auffordern, dieses Symbol zu behalten. Dies funktioniert jedoch nur bei gerätebuilds, und es werden Linker-Fehler ausgelöst, wenn Funktionen vorhanden sind, die in der statischen Bibliothek nicht vorhanden sind.
-* Übergeben `--dynamic-symbol-mode=code` Sie als zusätzliche mberührungs-Argumente in den IOS-Buildoptionen des Projekts. Mit dieser Option generiert xamarin. IOS zusätzlichen systemeigenen Code, der auf diese Symbole verweist, anstatt den systemeigenen Linker aufzufordern, diese Symbole mit Befehlszeilen Argumenten zu speichern. Der Nachteil dieses Ansatzes besteht darin, dass die Größe der ausführbaren Datei etwas vergrößert wird.
-* Aktivieren Sie die statische Registrierungsstelle `--registrar:static` , indem Sie als zusätzliches mberührungs-Argument in den IOS-Buildoptionen des Projekts übergeben (für simulatorbuilds, da die statische Registrierungsstelle bereits die Standardeinstellung für gerätebuilds ist). Die statische Registrierungsstelle generiert Code, der Ziel-C-Klassen statisch referenziert, sodass es nicht erforderlich ist, den nativen Linker aufzufordern, solche Klassen beizubehalten.
-* Inkrementelle Builds deaktivieren (für gerätebuilds). Wenn inkrementelle Builds aktiviert sind, wird der von der statischen Registrierungsstelle generierte Code vom systemeigenen Linker nicht berücksichtigt. Dies bedeutet, dass xamarin. IOS weiterhin den Linker auffordern muss, referenzierte Ziel-C-Klassen beizubehalten. Dadurch wird die Deaktivierung inkrementeller Builds verhindert.
+- Aktivieren Sie den verwalteten Linker (falls möglich, für alle Assemblys anstelle von SDK-Assemblys). Dadurch werden möglicherweise genug Quellen für dynamische Symbole entfernt, damit die Befehlszeile des Linkers den maximalen Wert nicht überschreitet.
+- Reduzieren Sie die Anzahl von P/aufruft-, Field References-und/oder Ziel-C-Klassen.
+- Schreiben Sie die dynamischen Symbole so um, dass Sie kürzere Namen haben.
+- Übergeben `-dlsym:false` Sie als zusätzliches mberührungs-Argument in den IOS-Buildoptionen des Projekts. Mit dieser Option generiert xamarin. IOS einen systemeigenen Verweis im AOT-kompilierten Code und muss den Linker nicht auffordern, dieses Symbol zu behalten. Dies funktioniert jedoch nur bei gerätebuilds, und es werden Linker-Fehler ausgelöst, wenn Funktionen vorhanden sind, die in der statischen Bibliothek nicht vorhanden sind.
+- Übergeben `--dynamic-symbol-mode=code` Sie als zusätzliche mberührungs-Argumente in den IOS-Buildoptionen des Projekts. Mit dieser Option generiert xamarin. IOS zusätzlichen systemeigenen Code, der auf diese Symbole verweist, anstatt den systemeigenen Linker aufzufordern, diese Symbole mit Befehlszeilen Argumenten zu speichern. Der Nachteil dieses Ansatzes besteht darin, dass die Größe der ausführbaren Datei etwas vergrößert wird.
+- Aktivieren Sie die statische Registrierungsstelle `--registrar:static` , indem Sie als zusätzliches mberührungs-Argument in den IOS-Buildoptionen des Projekts übergeben (für simulatorbuilds, da die statische Registrierungsstelle bereits die Standardeinstellung für gerätebuilds ist). Die statische Registrierungsstelle generiert Code, der Ziel-C-Klassen statisch referenziert, sodass es nicht erforderlich ist, den nativen Linker aufzufordern, solche Klassen beizubehalten.
+- Inkrementelle Builds deaktivieren (für gerätebuilds). Wenn inkrementelle Builds aktiviert sind, wird der von der statischen Registrierungsstelle generierte Code vom systemeigenen Linker nicht berücksichtigt. Dies bedeutet, dass xamarin. IOS weiterhin den Linker auffordern muss, referenzierte Ziel-C-Klassen beizubehalten. Dadurch wird die Deaktivierung inkrementeller Builds verhindert.
 
 <a name="MT5218" />
 
@@ -2413,10 +2413,10 @@ Das Befehlszeilenargument `--ignore-dynamic-symbol=symbol` wurde erfolgreich, ab
 
 Hierfür gibt es zwei Hauptgründe:
 
-* Der Symbol Name ist falsch.
-  * Fügen Sie dem Symbolnamen keinen Unterstrich voran.
-  * Das Symbol für die Ziel-C- `OBJC_CLASS_$_<classname>`Klassen ist.
-* Das Symbol ist korrekt, aber es ist ein Symbol, das bereits auf normale Weise beibehalten wird (einige Buildoptionen bewirken, dass die genaue Liste dynamischer Symbole variiert).
+- Der Symbol Name ist falsch.
+  - Fügen Sie dem Symbolnamen keinen Unterstrich voran.
+  - Das Symbol für die Ziel-C- `OBJC_CLASS_$_<classname>`Klassen ist.
+- Das Symbol ist korrekt, aber es ist ein Symbol, das bereits auf normale Weise beibehalten wird (einige Buildoptionen bewirken, dass die genaue Liste dynamischer Symbole variiert).
 
 ### <a name="mt53xx-other-tools"></a>MT53xx: Sonstige Tools
 

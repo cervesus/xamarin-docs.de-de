@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 2def6280a159203fd2c8d3db01a8e66c9ae61688
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1e1e86c6301214c7117b8f3b21b19554499d7fbd
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657401"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121445"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri-Remote-und Bluetooth-Controller für tvos in xamarin
 
@@ -58,10 +58,10 @@ Die Touch-Oberfläche von Siri ist in der Lage, eine Vielzahl von Einzel Fingerg
 
 Apple bietet die folgenden Vorschläge zum Arbeiten mit touchoberflächen Gesten:
 
-* Die unter **Scheidung zwischen Klicks und tippen** auf das Klicken ist eine absichtliche Aktion durch den Benutzer und eignet sich gut für Auswahl, Aktivierung und die primäre Schaltfläche eines Spiels. Das Tippen ist geringer und sollte sparsam verwendet werden, da der Benutzer oft die Siri-Remote Verbindung hält und das Tap-Ereignis versehentlich problemlos aktivieren kann.
-* **Standard Gesten nicht neu definieren** : der Benutzer hat die Erwartung, dass bestimmte Gesten bestimmte Aktionen ausführen. Sie sollten die Bedeutung oder Funktion dieser Gesten in Ihrer APP nicht neu definieren. Die einzige Ausnahme ist eine Spiele-APP während des aktiven Spiels.
-* **Definieren Sie neue Gesten sparsam** . der Benutzer hat eine Erwartung, dass bestimmte Gesten bestimmte Aktionen ausführen. Sie sollten keine benutzerdefinierten Gesten definieren, um Standard Aktionen auszuführen. Spiele sind die häufigste Ausnahme, bei der benutzerdefinierte Gesten dem Spiel Spaß machen können.
-* Antworten Sie ggf. auf **d-Pad** -Abzweigungen: bei einem leichten tippen an den eckrändern der Touchoberfläche wird wie ein D-Pad auf einem Spielcontroller reagiert, der den Fokus oder die Richtung nach oben, unten, Links oder rechts verschiebt. Gegebenenfalls sollten Sie diese Gesten in Ihrer APP oder Ihrem Spiel beantworten.
+- Die unter **Scheidung zwischen Klicks und tippen** auf das Klicken ist eine absichtliche Aktion durch den Benutzer und eignet sich gut für Auswahl, Aktivierung und die primäre Schaltfläche eines Spiels. Das Tippen ist geringer und sollte sparsam verwendet werden, da der Benutzer oft die Siri-Remote Verbindung hält und das Tap-Ereignis versehentlich problemlos aktivieren kann.
+- **Standard Gesten nicht neu definieren** : der Benutzer hat die Erwartung, dass bestimmte Gesten bestimmte Aktionen ausführen. Sie sollten die Bedeutung oder Funktion dieser Gesten in Ihrer APP nicht neu definieren. Die einzige Ausnahme ist eine Spiele-APP während des aktiven Spiels.
+- **Definieren Sie neue Gesten sparsam** . der Benutzer hat eine Erwartung, dass bestimmte Gesten bestimmte Aktionen ausführen. Sie sollten keine benutzerdefinierten Gesten definieren, um Standard Aktionen auszuführen. Spiele sind die häufigste Ausnahme, bei der benutzerdefinierte Gesten dem Spiel Spaß machen können.
+- Antworten Sie ggf. auf **d-Pad** -Abzweigungen: bei einem leichten tippen an den eckrändern der Touchoberfläche wird wie ein D-Pad auf einem Spielcontroller reagiert, der den Fokus oder die Richtung nach oben, unten, Links oder rechts verschiebt. Gegebenenfalls sollten Sie diese Gesten in Ihrer APP oder Ihrem Spiel beantworten.
 
 <a name="Siri-Remote-Buttons" />
 
@@ -86,7 +86,7 @@ Gehen Sie folgendermaßen vor, um eine Gestenerkennung hinzuzufügen:
 2. Ziehen Sie eine **Tap-Gestenerkennung** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab: 
 
     [![](remote-bluetooth-images/storyboard01.png "Eine Tap-Gestenerkennung")](remote-bluetooth-images/storyboard01.png#lightbox)
-3. Aktivieren **Sie im** **Schalt** Flächen Abschnitt des **Attribut Inspektors**Folgendes: 
+3. Aktivieren Sie im **Schalt** Flächen Abschnitt des **Attribut Inspektors**Folgendes: 
 
     [![](remote-bluetooth-images/storyboard02.png "Auswahl aktivieren")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Select** bedeutet, dass die Geste auf den Benutzer reagiert, indem er auf die **Touchoberfläche** der Siri-Remote klickt. Sie haben auch die Möglichkeit, auf die Schaltflächen **Menü**, wieder **Gabe/Pause**, nach **oben**, **nach unten**, **Links** und **Rechts** zu antworten.

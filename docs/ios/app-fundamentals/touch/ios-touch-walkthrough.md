@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: bd6f40a117734712941585b6ce0d630105e54693
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065443"
+ms.locfileid: "70121037"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von "berühren" in xamarin. IOS
 
@@ -96,9 +96,9 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
     
     Diese Methode überprüft, ob ein- `UITouch` Objekt vorhanden ist. ist dies der Fall, führen Sie eine Aktion aus, die auf dem Speicherort der Fingereingabe basiert:
 
-    * In _touchimage_ – zeigen Sie den `Touches Began` Text in einer Bezeichnung an, und ändern Sie das Bild.
-    * _In doubletouchimage_ – ändern Sie das Bild, das angezeigt wird, wenn es sich um eine doppelte Abzweigung handelt.
-    * Legen Sie _in DragImage_ – ein Flag fest, das angibt, dass der Fingerabdruck gestartet wurde. Die- `TouchesMoved` Methode verwendet dieses Flag, um zu `DragImage` bestimmen, ob auf dem Bildschirm verschoben werden soll oder nicht, wie im nächsten Schritt zu sehen ist.
+    - In _touchimage_ – zeigen Sie den `Touches Began` Text in einer Bezeichnung an, und ändern Sie das Bild.
+    - _In doubletouchimage_ – ändern Sie das Bild, das angezeigt wird, wenn es sich um eine doppelte Abzweigung handelt.
+    - Legen Sie _in DragImage_ – ein Flag fest, das angibt, dass der Fingerabdruck gestartet wurde. Die- `TouchesMoved` Methode verwendet dieses Flag, um zu `DragImage` bestimmen, ob auf dem Bildschirm verschoben werden soll oder nicht, wie im nächsten Schritt zu sehen ist.
 
     Der obige Code befasst sich nur mit einzelnen Berührungen, es gibt immer noch kein Verhalten, wenn der Benutzer seinen Finger auf dem Bildschirm verschiebt. Um auf Bewegung zu reagieren, `TouchesMoved` implementieren Sie, wie im folgenden Code gezeigt:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: f4ff4b7b39f589f29f0c4c5df76ff36fe0060d83
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a350a3ae37b66b8701f977370fcbe79940d84f50
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529215"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120492"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Erstellen Mobile Apps mit Xamarin.Forms-Buch
 
@@ -26,11 +26,11 @@ Das Buch im Frühjahr 2016 veröffentlicht wurde, und seitdem nicht aktualisiert
 
 Das Format Ihrer bevorzugten e-Book von Microsoft Virtual Academy herunterladen:
 
-* [**PDF (56Mb)** ](https://aka.ms/xamebook)
+- [**PDF (56Mb)** ](https://aka.ms/xamebook)
 
-* [**ePub (151Mb)** ](https://aka.ms/xamebook/epub)
+- [**ePub (151Mb)** ](https://aka.ms/xamebook/epub)
 
-* [**Kindle Edition (325Mb)** ](https://aka.ms/xamebook/mobi)
+- [**Kindle Edition (325Mb)** ](https://aka.ms/xamebook/mobi)
 
 Sie können auch [Herunterladen der einzelnen Kapitel](#download-chapters-and-summaries) als PDF-Dateien.
 

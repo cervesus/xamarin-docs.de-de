@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ca3580648d357d2c943274717af66ad5d825ce75
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: f4004b4b9cdc8f8c6555be82cf1da5b92a83d45c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065593"
+ms.locfileid: "70120059"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>tvos-Benutzeroberflächen Stile in xamarin
 
@@ -183,22 +183,22 @@ Gehen Sie folgendermaßen vor, um die Unterstützung von Merkmal Sammlungen zu a
 
 Apple hat beim Bearbeiten von tvos-Storyboards in Interface Builder die folgenden Funktionen hinzugefügt:
 
-* Der Entwickler kann verschiedene Variationen von Benutzeroberflächen Elementen angeben, die auf dem UI-Design im **Attribut Inspektor**basieren:
+- Der Entwickler kann verschiedene Variationen von Benutzeroberflächen Elementen angeben, die auf dem UI-Design im **Attribut Inspektor**basieren:
 
-  * Mehrere Eigenschaften verfügen jetzt über **+** eine neben Ihnen, auf die Sie klicken können, um eine spezifische Version des Benutzeroberflächen Designs hinzuzufügen:
+  - Mehrere Eigenschaften verfügen jetzt über **+** eine neben Ihnen, auf die Sie klicken können, um eine spezifische Version des Benutzeroberflächen Designs hinzuzufügen:
 
     [![](user-interface-styles-images/theme08.png "Benutzeroberflächen-designspezifische Version hinzufügen")](user-interface-styles-images/theme08.png#lightbox)
 
-  * Der Entwickler kann eine neue Eigenschaft angeben oder auf die Schaltfläche **x** klicken, um Sie zu entfernen:
+  - Der Entwickler kann eine neue Eigenschaft angeben oder auf die Schaltfläche **x** klicken, um Sie zu entfernen:
 
     [![](user-interface-styles-images/theme09.png "Geben Sie eine neue Eigenschaft an, oder klicken Sie auf die Schaltfläche \"x\"")](user-interface-styles-images/theme09.png#lightbox)
-* Der Entwickler kann einen Design der Benutzeroberfläche im hellen oder dunklen Design innerhalb Interface Builder anzeigen:
+- Der Entwickler kann einen Design der Benutzeroberfläche im hellen oder dunklen Design innerhalb Interface Builder anzeigen:
 
-  * Der untere Teil des Designoberfläche ermöglicht es dem Entwickler, das aktuelle UI-Design zu wechseln:
+  - Der untere Teil des Designoberfläche ermöglicht es dem Entwickler, das aktuelle UI-Design zu wechseln:
 
     [![](user-interface-styles-images/theme10.png "Der untere Teil des Designoberfläche")](user-interface-styles-images/theme10.png#lightbox)
 
-  * Das neue Design wird in Interface Builder angezeigt, und alle spezifischen Anpassungen der Merkmals Sammlung werden angezeigt:
+  - Das neue Design wird in Interface Builder angezeigt, und alle spezifischen Anpassungen der Merkmals Sammlung werden angezeigt:
 
     [![](user-interface-styles-images/theme11.png "Das in Interface Builder angezeigte Design")](user-interface-styles-images/theme11.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b865f08c9f6506996b5303bb80677977f1d0fa21
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ac373d20cbe08719fd7aa8e3888bbd608d8549c7
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643565"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119521"
 ---
 # <a name="fingerprint-authentication"></a>Fingerabdruckauthentifizierung
 
@@ -27,9 +27,9 @@ Die fingerprintmanager-APIs richten sich an Geräte mit einem Fingerabdruckscann
 
 Der [fingerprintmanager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (und das zugehörige Unterstützungs Bibliotheks Pendant, [fingerprintmanagercompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) ist die primäre Klasse für die Verwendung der Fingerabdruck-Scan Hardware. Bei dieser Klasse handelt es sich um einen Android SDK Wrapper um den systemebenendienst, der Interaktionen mit der Hardware selbst verwaltet. Er ist verantwortlich für das Starten des Fingerabdruckscanners und das reagieren auf Feedback des Scanners. Diese Klasse verfügt über eine relativ unkomplizierte Schnittstelle mit nur drei Membern:
 
-* **`Authenticate`** &ndash; Mit dieser Methode wird die Hardware Überprüfung initialisiert und der Dienst im Hintergrund gestartet, und es wird darauf gewartet, dass der Benutzer den Fingerabdruck scannt.
-* **`EnrolledFingerprints`** Diese Eigenschaft gibt zurück `true` , wenn der Benutzer mindestens einen Fingerabdruck beim Gerät registriert hat. &ndash;
-* **`HardwareDetected`** &ndash; Diese Eigenschaft wird verwendet, um zu bestimmen, ob das Gerät Fingerabdruck Scans unterstützt.
+- **`Authenticate`** &ndash; Mit dieser Methode wird die Hardware Überprüfung initialisiert und der Dienst im Hintergrund gestartet, und es wird darauf gewartet, dass der Benutzer den Fingerabdruck scannt.
+- **`EnrolledFingerprints`** Diese Eigenschaft gibt zurück `true` , wenn der Benutzer mindestens einen Fingerabdruck beim Gerät registriert hat. &ndash;
+- **`HardwareDetected`** &ndash; Diese Eigenschaft wird verwendet, um zu bestimmen, ob das Gerät Fingerabdruck Scans unterstützt.
 
 Die `FingerprintManager.Authenticate` -Methode wird von einer Android-Anwendung verwendet, um den Fingerabdruckscanner zu starten. Der folgende Code Ausschnitt ist ein Beispiel dafür, wie Sie ihn mit den Kompatibilitäts-APIs der Unterstützungs Bibliothek aufrufen:
 

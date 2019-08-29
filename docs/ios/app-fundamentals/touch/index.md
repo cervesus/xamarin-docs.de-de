@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/23/2017
-ms.openlocfilehash: f11e72e433c443fbb9639b1f972ec4d87adf8b58
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 60bd87adb56e311407280ba98f48d8c3e2160836
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526903"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121008"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Behandeln von Berührungen in xamarin. IOS-apps
 
@@ -34,8 +34,8 @@ Es gibt jedoch Zeiten, in denen Sie die Touch-Verarbeitung auf niedriger Ebene v
 
 Dieses Handbuch bietet eine Einführung in die Kontaktaufnahme in ios. Weitere Informationen zur Verwendung von 3D Toucheingabe und haptisches Feedback in Ios, die in ios 9 und 10 eingeführt wurden, finden Sie in den folgenden Anleitungen:
 
-* [3D Touch](~/ios/platform/3d-touch.md)
-* [Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
+- [3D Touch](~/ios/platform/3d-touch.md)
+- [Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
 ## <a name="related-links"></a>Verwandte Links
 

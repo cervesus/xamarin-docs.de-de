@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: c0e4152574cf400f5b77b504955b248dd8477a7c
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 2b82de58b9d2f9e8acb8996f484845f9a71b6e80
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509510"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120311"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>Tipps zum Aktualisieren von Code für Unified API
 
@@ -55,38 +55,38 @@ Speichern Sie die Datei, starten Sie Visual Studio für Mac neu, und führen Sie
 Nachdem Sie das Migrationstool verwendet haben, erhalten Sie möglicherweise trotzdem einige Compilerfehler, die einen manuellen Eingriff erfordern.
 Einige Dinge, die möglicherweise manuell korrigiert werden müssen, sind:
 
-* Das `enum`Vergleichen von s erfordert `(int)` möglicherweise eine Umwandlung.
+- Das `enum`Vergleichen von s erfordert `(int)` möglicherweise eine Umwandlung.
 
-* `NSDictionary.IntValue`gibt jetzt ein `nint`zurück, `Int32Value` das stattdessen verwendet werden kann.
+- `NSDictionary.IntValue`gibt jetzt ein `nint`zurück, `Int32Value` das stattdessen verwendet werden kann.
 
-* `nfloat`die `nint` Typen und können nicht `const`markiert werden.   `static readonly nint` ist eine sinnvolle Alternative.
+- `nfloat`die `nint` Typen und können nicht `const`markiert werden.   `static readonly nint` ist eine sinnvolle Alternative.
 
-* Dinge, die direkt `MonoTouch.` im-Namespace verwendet werden, befinden sich jetzt in der `ObjCRuntime.` Regel im- `MonoTouch.Constants.Version` Namespace (z `ObjCRuntime.Constants.Version`. b. ist jetzt).
+- Dinge, die direkt `MonoTouch.` im-Namespace verwendet werden, befinden sich jetzt in der `ObjCRuntime.` Regel im- `MonoTouch.Constants.Version` Namespace (z `ObjCRuntime.Constants.Version`. b. ist jetzt).
 
-* Code, der-Objekte serialisiert, kann beim Serialisieren `nint` von `nfloat` -und-Typen unterbrechen. Vergewissern Sie sich, dass der Serialisierungscode nach der Migration erwartungsgemäß funktioniert.
+- Code, der-Objekte serialisiert, kann beim Serialisieren `nint` von `nfloat` -und-Typen unterbrechen. Vergewissern Sie sich, dass der Serialisierungscode nach der Migration erwartungsgemäß funktioniert.
 
-* Manchmal verpasst das automatisierte Tool Code in `#if #else` bedingten Compilerdirektiven. In diesem Fall müssen Sie die Korrekturen manuell vornehmen (siehe die folgenden allgemeinen Fehler).
+- Manchmal verpasst das automatisierte Tool Code in `#if #else` bedingten Compilerdirektiven. In diesem Fall müssen Sie die Korrekturen manuell vornehmen (siehe die folgenden allgemeinen Fehler).
 
-* Manuell exportierte Methoden `[Export]` , die verwenden, werden möglicherweise nicht automatisch vom Migrationstool korrigiert, z. b. in diesem Code-Snippert müssen `nfloat`Sie den Rückgabetyp manuell auf Aktualisieren:
+- Manuell exportierte Methoden `[Export]` , die verwenden, werden möglicherweise nicht automatisch vom Migrationstool korrigiert, z. b. in diesem Code-Snippert müssen `nfloat`Sie den Rückgabetyp manuell auf Aktualisieren:
 
     ```csharp
     [Export("tableView:heightForRowAtIndexPath:")]
     public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
     ```
 
-* Der Unified API bietet keine implizite Konvertierung zwischen nsdate und .NET DateTime, da es sich nicht um eine Verlust lose Konvertierung handelt. Um Fehler zu verhindern, `DateTimeKind.Unspecified` die sich auf `DateTime` das Konvertieren von .net in local oder `NSDate`UTC vor dem umwandeln in beziehen.
+- Der Unified API bietet keine implizite Konvertierung zwischen nsdate und .NET DateTime, da es sich nicht um eine Verlust lose Konvertierung handelt. Um Fehler zu verhindern, `DateTimeKind.Unspecified` die sich auf `DateTime` das Konvertieren von .net in local oder `NSDate`UTC vor dem umwandeln in beziehen.
 
-* Ziel-C-kategoriemethoden werden nun als Erweiterungs Methoden im Unified API generiert. Beispielsweise würde Code, der zuvor `UIView.DrawString` verwendet wurde, `NSString.DrawString` jetzt in der Unified API auf verweisen.
+- Ziel-C-kategoriemethoden werden nun als Erweiterungs Methoden im Unified API generiert. Beispielsweise würde Code, der zuvor `UIView.DrawString` verwendet wurde, `NSString.DrawString` jetzt in der Unified API auf verweisen.
 
-* Code, der AVFoundation- `VideoSettings` Klassen mit verwendet, sollte `WeakVideoSettings` sich ändern, sodass die-Eigenschaft verwendet Hierfür ist ein `Dictionary`erforderlich, das als Eigenschaft für die Einstellungs Klassen verfügbar ist, z. b.:
+- Code, der AVFoundation- `VideoSettings` Klassen mit verwendet, sollte `WeakVideoSettings` sich ändern, sodass die-Eigenschaft verwendet Hierfür ist ein `Dictionary`erforderlich, das als Eigenschaft für die Einstellungs Klassen verfügbar ist, z. b.:
 
     ```csharp
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
-* Der NSObject `.ctor(IntPtr)` -Konstruktor wurde von "Public" in "Protected" geändert (um eine nicht ordnungsgemäße[Verwendung zu verhindern](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
+- Der NSObject `.ctor(IntPtr)` -Konstruktor wurde von "Public" in "Protected" geändert (um eine nicht ordnungsgemäße[Verwendung zu verhindern](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
 
-* `NSAction` wurde durch das standardmäßige `Action`-Element von .NET [ersetzt](~/cross-platform/macios/unified/overview.md#NSAction). Einige einfache Delegaten (einzelner Parameter) wurden auch durch ersetzt `Action<T>`.
+- `NSAction` wurde durch das standardmäßige `Action`-Element von .NET [ersetzt](~/cross-platform/macios/unified/overview.md#NSAction). Einige einfache Delegaten (einzelner Parameter) wurden auch durch ersetzt `Action<T>`.
 
 Lesen Sie abschließend die [Unterschiede zu den klassischen v-Unified API](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md) , um Änderungen an APIs in Ihrem Code zu suchen. Durch [das Durchsuchen dieser Seite](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md) können Sie klassische APIs und deren Aktualisierung finden.
 
@@ -152,13 +152,13 @@ public override nint NumberOfSections (UITableView tableView)
 
 Zusetzen Korrekte Schreibweise `AddEllipseInRect`in. Weitere Namensänderungen sind:
 
-* Ändern Sie "Color. Black" `NSColor.Black`in.
-* Ändern Sie MapKit "AddAnnotation" `AddAnnotations`in.
-* Ändern Sie AVFoundation ' datausingencoding ' `Encode`in.
-* Ändern Sie AVFoundation ' AVMetadataObject. typeqrcode ' `AVMetadataObjectType.QRCode`in.
-* Ändern Sie AVFoundation ' videosettings ' `WeakVideoSettings`in.
-* Ändern Sie popviewcontrolleranimierte `PopViewController`in.
-* Ändern Sie CoreGraphics "cgbitmapcontext. abtrgbfillcolor" `SetFillColor`in.
+- Ändern Sie "Color. Black" `NSColor.Black`in.
+- Ändern Sie MapKit "AddAnnotation" `AddAnnotations`in.
+- Ändern Sie AVFoundation ' datausingencoding ' `Encode`in.
+- Ändern Sie AVFoundation ' AVMetadataObject. typeqrcode ' `AVMetadataObjectType.QRCode`in.
+- Ändern Sie AVFoundation ' videosettings ' `WeakVideoSettings`in.
+- Ändern Sie popviewcontrolleranimierte `PopViewController`in.
+- Ändern Sie CoreGraphics "cgbitmapcontext. abtrgbfillcolor" `SetFillColor`in.
 
 **Fehler CS0546: Überschreiben nicht möglich, da ' MapKit. mkannotation. Koordinate ' nicht über einen über schreibbaren Set-Accessor (CS0546) verfügt.**
 
@@ -166,10 +166,10 @@ Beim Erstellen einer benutzerdefinierten Anmerkung durch Unterklassen-mkannotati
 
 [Behebung](https://forums.xamarin.com/discussion/comment/109505/#Comment_109505):
 
-* Fügen Sie ein Feld hinzu, um die Koordinate nachzuverfolgen.
-* Dieses Feld im Getter der Koordinaten Eigenschaft zurückgeben
-* Überschreiben der setkoordinatenmethode und Festlegen des Felds
-* Aufrufen von setkoordinate in Ihrem ctor mit dem übergebenen Koordinaten Parameter
+- Fügen Sie ein Feld hinzu, um die Koordinate nachzuverfolgen.
+- Dieses Feld im Getter der Koordinaten Eigenschaft zurückgeben
+- Überschreiben der setkoordinatenmethode und Festlegen des Felds
+- Aufrufen von setkoordinate in Ihrem ctor mit dem übergebenen Koordinaten Parameter
 
 Der Inhalt sollte Folgendem ähnlich sehen:
 

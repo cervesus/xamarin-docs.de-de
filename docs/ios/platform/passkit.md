@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
-ms.openlocfilehash: 9f8a092b63da413974f387aca02d81efef9c1625
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c434c39c12403bfc61e146041eb2a0780f29eb3e
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528318"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119173"
 ---
 # <a name="passkit-in-xamarinios"></a>Passkit in xamarin. IOS
 
@@ -326,9 +326,9 @@ Zu den Features von Wallet gehören:
 
 Pässe können auf folgende Weise zu Wallet hinzugefügt werden:
 
-* **Kanal-apps** – diese werden nicht direkt übermittelt, Sie laden einfach Pass Dateien und stellen dem Benutzer die Möglichkeit, Sie der Wallet hinzuzufügen. 
+- **Kanal-apps** – diese werden nicht direkt übermittelt, Sie laden einfach Pass Dateien und stellen dem Benutzer die Möglichkeit, Sie der Wallet hinzuzufügen. 
 
-* **Begleit Anwendungen** – diese werden von Anbietern geschrieben, um Pass-und-Funktionen zu verteilen und zusätzliche Funktionen zum Durchsuchen oder bearbeiten zu bieten. Xamarin. IOS-Anwendungen verfügen über vollständigen Zugriff auf die passkit-API zum Erstellen und Bearbeiten von Durchläufen. Durch Pass können dann mithilfe von der `PKAddPassesViewController`Wallet hinzugefügt werden. Dieser Vorgang wird im Abschnitt " **begleitende Anwendungen** " dieses Dokuments ausführlicher beschrieben.
+- **Begleit Anwendungen** – diese werden von Anbietern geschrieben, um Pass-und-Funktionen zu verteilen und zusätzliche Funktionen zum Durchsuchen oder bearbeiten zu bieten. Xamarin. IOS-Anwendungen verfügen über vollständigen Zugriff auf die passkit-API zum Erstellen und Bearbeiten von Durchläufen. Durch Pass können dann mithilfe von der `PKAddPassesViewController`Wallet hinzugefügt werden. Dieser Vorgang wird im Abschnitt " **begleitende Anwendungen** " dieses Dokuments ausführlicher beschrieben.
 
 ### <a name="conduit-applications"></a>Kanalanwendungen
 

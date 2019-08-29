@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d6cb1e407740fa4c182639a77e3725baec4286ac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524620"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119846"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
@@ -79,9 +79,9 @@ Fahren Sie mit fort, um **Metadata. XML** ausführlicher zu erörtern.
 Wie bereits gelernt, wird die Datei " **Metadata. XML** " vom Bindungs Generator verwendet, um die Erstellung der bindungsassembly zu beeinflussen.
 Das Metadatenformat verwendet die [XPath](https://www.w3.org/TR/xpath/) -Syntax und ist nahezu identisch mit den im [gapi-metadatenhandbuch](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata) beschriebenen *gapi-Metadaten* . Diese Implementierung ist fast eine komplette Implementierung von XPath 1,0 und unterstützt daher Elemente im 1,0-Standard. Diese Datei ist ein leistungsfähiger XPath-basierter Mechanismus zum ändern, hinzufügen, ausblenden oder Verschieben von Elementen oder Attributen in der API-Datei. Alle Regel Elemente in der Metadatenspezifikation enthalten ein Pfad Attribut zum Identifizieren des Knotens, auf den die Regel angewendet werden soll. Die Regeln werden in der folgenden Reihenfolge angewendet:
 
-* **Knoten hinzufügen** &ndash; Fügt einen untergeordneten Knoten an den Knoten an, der durch das path-Attribut angegeben wird.
-* **attr** &ndash; Legt den Wert eines Attributs des Elements fest, das durch das path-Attribut angegeben wird.
-* **Remove-Node** &ndash; Entfernt Knoten, die mit einem angegebenen XPath übereinstimmen.
+- **Knoten hinzufügen** &ndash; Fügt einen untergeordneten Knoten an den Knoten an, der durch das path-Attribut angegeben wird.
+- **attr** &ndash; Legt den Wert eines Attributs des Elements fest, das durch das path-Attribut angegeben wird.
+- **Remove-Node** &ndash; Entfernt Knoten, die mit einem angegebenen XPath übereinstimmen.
 
 Im folgenden finden Sie ein Beispiel für eine Datei " **Metadata. XML** ":
 
@@ -248,8 +248,8 @@ Der Bindungs Generator geht z. b. davon aus, `de.neom.neoreadersdk.resolution.co
 
 Tools, die Java-Bibliotheken verbergen, können den xamarin. Android-Bindungs Generator und seine Fähigkeit zum Generieren C# von Wrapper Klassen beeinträchtigen. Zu den Merkmalen von verfugenten Klassen gehören: 
 
-* Der Klassenname enthält eine **$** , d. h. **eine $.-Klasse** .
-* Der Klassenname ist vollständig in Kleinbuchstaben gefährdet, d. h. **eine.-Klasse** .
+- Der Klassenname enthält eine **$** , d. h. **eine $.-Klasse** .
+- Der Klassenname ist vollständig in Kleinbuchstaben gefährdet, d. h. **eine.-Klasse** .
 
 Dieser Code Ausschnitt ist ein Beispiel für die Generierung eines Typs "nicht verdeckt" C# :
 

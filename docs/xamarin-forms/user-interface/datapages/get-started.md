@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d47a8d4a0fa72cee59a054554e9868f20323d00b
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: e6f26fb96c0a538543c8e0b0574461ea99709631
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980789"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119486"
 ---
 # <a name="getting-started-with-datapages"></a>Erste Schritte mit DataPages
 
@@ -31,9 +31,9 @@ Zunächst erstellen eine einfache datengesteuerte-Seite mithilfe der Vorschau Da
 
 Fügen Sie diese Nuget-Pakete zu Ihrer Xamarin.Forms .NET Standard-Bibliothek und Anwendungsprojekten hinzu:
 
-* Xamarin.Forms.Pages
-* Xamarin.Forms.Theme.Base
-* Eine Implementierung Design Nuget (z. b. Xamarin. Forms. Theme. Light)
+- Xamarin.Forms.Pages
+- Xamarin.Forms.Theme.Base
+- Eine Implementierung Design Nuget (z. b. Xamarin. Forms. Theme. Light)
 
 ## <a name="2-add-theme-reference"></a>2. Design-Verweis hinzufügen
 

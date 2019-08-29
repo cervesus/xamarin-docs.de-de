@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b5ffa884def5acb01dc07ce39a2189e2570209c3
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 09e4ca561f962e46dfe4eccbaf1cf284f4bb2827
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620577"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120831"
 ---
 # <a name="table-views-in-xamarinmac"></a>Tabellen Ansichten in xamarin. Mac
 
@@ -40,8 +40,8 @@ Das Verhalten einer Tabellenansicht kann angepasst werden, indem eine Unterklass
 
 Beim Erstellen von Tabellen Sichten schlägt Apple folgendes vor:
 
-* Ermöglicht dem Benutzer das Sortieren der Tabelle durch Klicken auf Spaltenüberschriften.
-* Erstellen Sie Spaltenüberschriften, bei denen es sich um Nomen oder kurze Substantiv-Ausdrücke handelt, die die in dieser Spalte angezeigten Daten beschreiben.
+- Ermöglicht dem Benutzer das Sortieren der Tabelle durch Klicken auf Spaltenüberschriften.
+- Erstellen Sie Spaltenüberschriften, bei denen es sich um Nomen oder kurze Substantiv-Ausdrücke handelt, die die in dieser Spalte angezeigten Daten beschreiben.
 
 Weitere Informationen finden Sie im Abschnitt " [Inhalts Ansichten](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) " in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/).
 

@@ -6,26 +6,26 @@ ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
-ms.openlocfilehash: df29a7f595973a0447899666838e21418ff69330
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d1d05c75b8026112e8b81c91144361b65ad3a8e0
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650072"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120035"
 ---
 # <a name="getting-started-with-android"></a>Einstieg in Android
 
 Zusätzlich zu den Anforderungen aus dem Leitfaden für die ersten Schritte [mit Java](~/tools/dotnet-embedding/get-started/java/index.md) benötigen Sie auch Folgendes:
 
-* [Xamarin. Android 7,5](https://visualstudio.microsoft.com/xamarin/) oder höher
-* [Android Studio 3. x](https://developer.android.com/studio/index.html) mit Java 1,8
+- [Xamarin. Android 7,5](https://visualstudio.microsoft.com/xamarin/) oder höher
+- [Android Studio 3. x](https://developer.android.com/studio/index.html) mit Java 1,8
 
 Als Übersicht werden folgende Aktionen durchführt:
 
-* Erstellen eines C# Android-Bibliotheks Projekts
-* Installieren von .net-Einbettungen über nuget
-* Ausführen der .net-Einbettung in der Android-Bibliotheksassembly
-* Verwenden Sie die generierte Aar-Datei in einem Java-Projekt in Android Studio
+- Erstellen eines C# Android-Bibliotheks Projekts
+- Installieren von .net-Einbettungen über nuget
+- Ausführen der .net-Einbettung in der Android-Bibliotheksassembly
+- Verwenden Sie die generierte Aar-Datei in einem Java-Projekt in Android Studio
 
 ## <a name="create-an-android-library-project"></a>Erstellen eines Android-Bibliotheks Projekts
 
@@ -159,17 +159,17 @@ Beim Starten der APP:
 
 Beachten Sie, was hier passiert ist:
 
-* Wir haben eine C# Klasse, `HelloActivity`, die Unterklassen Java
-* Wir verfügen über Android-Ressourcen Dateien.
-* Wir haben diese aus Java in Android Studio verwendet.
+- Wir haben eine C# Klasse, `HelloActivity`, die Unterklassen Java
+- Wir verfügen über Android-Ressourcen Dateien.
+- Wir haben diese aus Java in Android Studio verwendet.
 
 Damit dieses Beispiel funktioniert, werden alle folgenden Schritte im endgültigen APK eingerichtet:
 
-* Xamarin. Android ist beim Anwendungsstart konfiguriert.
-* In **Assets/** Assemblys enthaltene .NET-Assemblys
-* " **Androidmanifest. XML** "- C# Änderungen für ihre Aktivitäten usw.
-* Android-Ressourcen und-Assets aus .NET-Bibliotheken
-* [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) für eine beliebige `Java.Lang.Object` Unterklasse
+- Xamarin. Android ist beim Anwendungsstart konfiguriert.
+- In **Assets/** Assemblys enthaltene .NET-Assemblys
+- " **Androidmanifest. XML** "- C# Änderungen für ihre Aktivitäten usw.
+- Android-Ressourcen und-Assets aus .NET-Bibliotheken
+- [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) für eine beliebige `Java.Lang.Object` Unterklasse
 
 Wenn Sie nach einer zusätzlichen exemplarischen Vorgehensweise suchen, sehen Sie sich das folgende Video an, in dem das Einbetten der [fingerpaint-Demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) von Charles Petzold in ein Android Studio Projekt veranschaulicht wird:
 
@@ -223,8 +223,8 @@ public class ViewSubclass : TextView
 }
 ```
 
-* `[Register]`ist erforderlich, um einem gewünschten Java-Paketnamen zuzuordnen.
-* `[Export]`ist erforderlich, um eine Methode für Java sichtbar zu machen.
+- `[Register]`ist erforderlich, um einem gewünschten Java-Paketnamen zuzuordnen.
+- `[Export]`ist erforderlich, um eine Methode für Java sichtbar zu machen.
 
 Wir können in `ViewSubclass` Java wie folgt verwenden:
 
@@ -243,18 +243,18 @@ Das Einbetten einer einzelnen Assembly ist unkompliziert. Es ist jedoch viel wah
 
 Dies verursacht ein Problem, da .net-Einbettungen viele Typen von Dateien in das abschließende Aar einschließen müssen, wie z. b.:
 
-* Android-Ressourcen
-* Android-Ressourcen
-* Native Android-Bibliotheken
-* Android-Java-Quelle
+- Android-Ressourcen
+- Android-Ressourcen
+- Native Android-Bibliotheken
+- Android-Java-Quelle
 
 Sie möchten diese Dateien höchstwahrscheinlich nicht aus der Android-Unterstützungs Bibliothek einschließen oder Google Play Services in Ihr Aar, sondern verwenden stattdessen die offizielle Version von Google in Android Studio.
 
 Dies ist die empfohlene Vorgehensweise:
 
-* Übergeben Sie .net Einbettungen für eine beliebige Assembly, deren Besitzer Sie sind (für die Sie über eine Quelle verfügen), und möchten Sie
-* Übergeben Sie .net-Einbettungen für beliebige Assemblys, für die Sie Android-Objekte, Native Bibliotheken oder Ressourcen benötigen
-* Fügen Sie Java-Abhängigkeiten wie die Android-Unterstützungs Bibliothek hinzu, oder Google Play Services in Android Studio
+- Übergeben Sie .net Einbettungen für eine beliebige Assembly, deren Besitzer Sie sind (für die Sie über eine Quelle verfügen), und möchten Sie
+- Übergeben Sie .net-Einbettungen für beliebige Assemblys, für die Sie Android-Objekte, Native Bibliotheken oder Ressourcen benötigen
+- Fügen Sie Java-Abhängigkeiten wie die Android-Unterstützungs Bibliothek hinzu, oder Google Play Services in Android Studio
 
 Der Befehl könnte also wie folgt lauten:
 
@@ -277,11 +277,11 @@ dependencies {
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
-* [Rückrufe unter Android](~/tools/dotnet-embedding/android/callbacks.md)
-* [Vorläufige Android-Recherche](~/tools/dotnet-embedding/android/index.md)
-* [.Net-Einbettungs Einschränkungen](~/tools/dotnet-embedding/limitations.md)
-* [Mitwirken am Open Source-Projekt](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
-* [Fehlercodes und Beschreibungen](~/tools/dotnet-embedding/errors.md)
+- [Rückrufe unter Android](~/tools/dotnet-embedding/android/callbacks.md)
+- [Vorläufige Android-Recherche](~/tools/dotnet-embedding/android/index.md)
+- [.Net-Einbettungs Einschränkungen](~/tools/dotnet-embedding/limitations.md)
+- [Mitwirken am Open Source-Projekt](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+- [Fehlercodes und Beschreibungen](~/tools/dotnet-embedding/errors.md)
 
 ## <a name="related-links"></a>Verwandte Links
 

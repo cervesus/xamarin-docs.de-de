@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 648b03dc34daa8906adab316c552a9615649800d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa4744ba217d602dbd3134e616ac3bc4d47f7b76
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655825"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120815"
 ---
 # <a name="introduction-to-ios-11"></a>Einführung in iOS 11
 
@@ -61,24 +61,24 @@ Bietet eine Vielzahl von Abbild Verarbeitungs-und Analyse Features für IOS, ein
 
 Wir haben eine Reihe von C# [Beispielen](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11) , um Ihnen den Einstieg zu erleichtern:
 
-* [Arkit-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
-* [Arkit-Platzieren von Objekten](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
-* [Arkit und urhusharp](arkit/urhosharp.md)
-* [Beispiel für coreml-Bild Erkennung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
-* [Coreml mit benutzerdefiniertem Azure-Modell](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
-* [Correfc-TagReader-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
-* [Ziehen Sie & Drop Table-Sicht.](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
-* [& Drop-Auflistungs Ansicht ziehen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
-* [Ziehen Sie & benutzerdefinierte Ansicht ablegen.](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
-* [Dragboard-Drag & Drop-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
-* [MapKit-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
-* [Beispiel für Sirikit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
-* [Aktualisiertes Foto-Framework-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
-* [Vision & coreml-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
-* [Beispiel zur Erkennung von Vision Rechtecke](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
-* [Beispiel zur Erkennung der Vision Gesichter](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
-* [Pdkfit-widgets (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
-* [PDFKit-Wasserzeichen Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
+- [Arkit-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
+- [Arkit-Platzieren von Objekten](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [Arkit und urhusharp](arkit/urhosharp.md)
+- [Beispiel für coreml-Bild Erkennung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+- [Coreml mit benutzerdefiniertem Azure-Modell](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+- [Correfc-TagReader-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+- [Ziehen Sie & Drop Table-Sicht.](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
+- [& Drop-Auflistungs Ansicht ziehen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+- [Ziehen Sie & benutzerdefinierte Ansicht ablegen.](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
+- [Dragboard-Drag & Drop-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
+- [MapKit-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
+- [Beispiel für Sirikit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+- [Aktualisiertes Foto-Framework-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
+- [Vision & coreml-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
+- [Beispiel zur Erkennung von Vision Rechtecke](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
+- [Beispiel zur Erkennung der Vision Gesichter](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+- [Pdkfit-widgets (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
+- [PDFKit-Wasserzeichen Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
 
 ## <a name="related-links"></a>Verwandte Links
 

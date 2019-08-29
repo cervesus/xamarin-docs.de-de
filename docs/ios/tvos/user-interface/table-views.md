@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3df0d8f686ec521a55948a9eb4632d77e5c3691f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 42749bf07f3b0239a550e66247fc0377fdc1a0b4
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652320"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121374"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Arbeiten mit tvos-Tabellen Ansichten in xamarin
 
@@ -101,7 +101,7 @@ Um zu beginnen, machen Sie Folgendes:
 1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen Bezeichner zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel `AttrCell`: 
 
     [![](table-views-images/table12.png "Die Widget-Registerkarte")](table-views-images/table12.png#lightbox)
-1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über **die Dropdown** Liste Formatvorlagen angezeigt werden soll, oder Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere **UI-Widgets** aus der **Toolbox**ziehen: 
+1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über die Dropdown Liste Formatvorlagen angezeigt werden soll, oder Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
 
     [![](table-views-images/table13.png "Das Zellen Layout")](table-views-images/table13.png#lightbox)
 1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später C# im Code darauf zugreifen können: 
@@ -115,7 +115,7 @@ Um zu beginnen, machen Sie Folgendes:
     
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
     
-1. Starten Sie in Visual Studio ein neues tvos-App-Projekt, und wählen Sie **tvos** > **Single View App** aus, und geben Sie einen Namen für Ihre APP ein. Klicken Sie **auf die Schalt** Fläche OK, um eine neue Lösung zu erstellen: 
+1. Starten Sie in Visual Studio ein neues tvos-App-Projekt, und wählen Sie **tvos** > **Single View App** aus, und geben Sie einen Namen für Ihre APP ein. Klicken Sie auf die Schaltfläche OK, um eine neue Lösung zu erstellen: 
 
     [![](table-views-images/table02-vs.png "Einzelansicht-App auswählen")](table-views-images/table02-vs.png#lightbox)
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, um Sie im IOS-Designer zu öffnen: 
@@ -142,7 +142,7 @@ Um zu beginnen, machen Sie Folgendes:
 1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen Bezeichner zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel `AttrCell`: 
 
     [![](table-views-images/table12-vs.png "Zuweisen eines Bezeichners")](table-views-images/table12-vs.png#lightbox)
-1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über **die Dropdown** Liste Formatvorlagen angezeigt werden soll, oder Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere **UI-Widgets** aus der **Toolbox**ziehen: 
+1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über die Dropdown Liste Formatvorlagen angezeigt werden soll, oder Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
 
     [![](table-views-images/table13-vs.png "Die Dropdown Liste \"Style\"")](table-views-images/table13-vs.png#lightbox)
 1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später C# im Code darauf zugreifen können: 
@@ -172,7 +172,7 @@ Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Lösun
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie**Neues Element** **Hinzufügen** > ... aus. Wählen Sie **Klasse** aus `AttractionInformation` , geben Sie für den **Namen** ein, und klicken Sie auf **die Schaltfläche** 
+Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie**Neues Element** **Hinzufügen** > ... aus. Wählen Sie **Klasse** aus `AttractionInformation` , geben Sie für den **Namen** ein, und klicken Sie auf die Schaltfläche 
 
 [![](table-views-images/data01-vs.png "Wählen Sie Klasse aus, und geben Sie \"attractioninformation\" als Namen")](table-views-images/data01-vs.png#lightbox)
 
@@ -883,8 +883,8 @@ namespace tvTable
 
 Diese Klasse definiert nur einige Verknüpfungen, um die Kommunikation über die beiden Seiten des Split View Controller zu vereinfachen:
 
-* `SplitView`-Ist ein Link zum Split View Controller (`MainSpiltViewController`), zu dem der Navigations Ansichts Controller gehört.
-* `TableController`-Ruft den Tabellen Ansichts Controller`AttractionTableViewController`() ab, der im Navigations Ansichts Controller als obere Ansicht dargestellt wird.
+- `SplitView`-Ist ein Link zum Split View Controller (`MainSpiltViewController`), zu dem der Navigations Ansichts Controller gehört.
+- `TableController`-Ruft den Tabellen Ansichts Controller`AttractionTableViewController`() ab, der im Navigations Ansichts Controller als obere Ansicht dargestellt wird.
 
 <a name="The-Split-View-Controller" />
 

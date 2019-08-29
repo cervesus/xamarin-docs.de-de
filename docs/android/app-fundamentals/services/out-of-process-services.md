@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 33d0e87e8823db6bf0fd0bc5541f37bd41b6dcde
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2794a1d23cd7c1eab9cf4e94eaa805ad2b8bca61
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526248"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119128"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Ausführen von Android-Diensten in Remote Prozessen
 
@@ -33,9 +33,9 @@ Im Allgemeinen ist es nicht erforderlich, dass eine Anwendung einen Remote Diens
 
 In vielerlei Hinsicht ist das Binden an einen Dienst, der in einem anderen Prozess ausgeführt wird, identisch mit der [Bindung an einen lokalen Dienst](~/android/app-fundamentals/services/creating-a-service/bound-services.md). Der Client wird `BindService` aufgerufen, um den Dienst zu binden (und ggf. zu starten). Ein `Android.OS.IServiceConnection` -Objekt wird erstellt, um die Verbindung zwischen dem Client und dem Dienst zu verwalten. Wenn der Client erfolgreich an den Dienst gebunden wird, gibt Android ein Objekt über das `IServiceConnection` zurück, das zum Aufrufen von Methoden für den Dienst verwendet werden kann. Der Client interagiert dann mit dem Dienst und verwendet dieses Objekt. Um dies zu überprüfen, finden Sie hier die Schritte zum Binden an einen Dienst:
 
-* **Absicht erstellen** &ndash; Zum Binden an den Dienst muss eine explizite Absicht verwendet werden.
-* **Implementieren und instanziieren Sie `IServiceConnection` ein Objekt** &ndash; , das das `IServiceConnection` Objekt als Vermittler zwischen dem Client und dem Dienst fungiert.  Er ist für die Überwachung der Verbindung zwischen Client und Server zuständig.
-* **Rufen Sie `BindService` die Methode** &ndash; auf, die aufruft `BindService` , die beabsichtigte und die in den vorherigen Schritten erstellte Dienst Verbindung an Android weiterzuleiten, um den Dienst zu starten und die Kommunikation zwischen Client und Dienst.
+- **Absicht erstellen** &ndash; Zum Binden an den Dienst muss eine explizite Absicht verwendet werden.
+- **Implementieren und instanziieren Sie `IServiceConnection` ein Objekt** &ndash; , das das `IServiceConnection` Objekt als Vermittler zwischen dem Client und dem Dienst fungiert.  Er ist für die Überwachung der Verbindung zwischen Client und Server zuständig.
+- **Rufen Sie `BindService` die Methode** &ndash; auf, die aufruft `BindService` , die beabsichtigte und die in den vorherigen Schritten erstellte Dienst Verbindung an Android weiterzuleiten, um den Dienst zu starten und die Kommunikation zwischen Client und Dienst.
 
 Die Notwendigkeit, prozessübergreifende Grenzen zu überschreiten, führt zu einer zusätzlichen Komplexität: die Kommunikation erfolgt unidirektional (Client zu Server), und der Client kann Methoden für die Dienstklasse nicht direkt aufrufen. Beachten Sie, dass Android ein `IBinder` Objekt bereitstellt, das möglicherweise eine bidirektionale Kommunikation zulässt, wenn ein Dienst denselben Prozess wie der Client ausgeführt hat. Dies ist nicht der Fall, wenn der Dienst in einem eigenen Prozess ausgeführt wird. Ein Client kommuniziert mit einem Remote Dienst mithilfe `Android.OS.Messenger` der-Klasse.
 
@@ -68,9 +68,9 @@ Obwohl es möglich ist, implizite Intents mit apps zu verwenden, die auf ältere
 
 Wie oben beschrieben, bedeutet die Tatsache, dass ein Dienst in einem eigenen Prozess ausgeführt wird, dass einige verschiedene APIs beteiligt sind. Im folgenden finden Sie eine kurze Übersicht über die Schritte zum Binden und Verwenden eines Remote Dienstanbieter:  
 
-* **Erstellen Sie die Unterklasse des Typs, und implementieren Sie die Lebenszyklus Methoden für einen gebundenen Dienst. `Service`**  &ndash; `Service` Es ist auch erforderlich, Metadaten festzulegen, die Android darüber informieren, dass der Dienst in einem eigenen Prozess ausgeführt werden soll.
-* **Implementieren Sie `Handler` einen** &ndash; , der`Handler` für die Analyse der Client Anforderungen, für das Extrahieren von Parametern, die vom Client weitergegeben wurden, und für den Aufruf der entsprechenden Methoden für den Dienst zuständig ist.
-* **`Messenger` Instanziieren** Sie wie oben `Service` beschrieben eine &ndash; Instanz der `Messenger` -Klasse, die Client Anforderungen an die `Handler` weiterleitet, die im vorherigen Schritt erstellt wurde.
+- **Erstellen Sie die Unterklasse des Typs, und implementieren Sie die Lebenszyklus Methoden für einen gebundenen Dienst. `Service`**  &ndash; `Service` Es ist auch erforderlich, Metadaten festzulegen, die Android darüber informieren, dass der Dienst in einem eigenen Prozess ausgeführt werden soll.
+- **Implementieren Sie `Handler` einen** &ndash; , der`Handler` für die Analyse der Client Anforderungen, für das Extrahieren von Parametern, die vom Client weitergegeben wurden, und für den Aufruf der entsprechenden Methoden für den Dienst zuständig ist.
+- **`Messenger` Instanziieren** Sie wie oben `Service` beschrieben eine &ndash; Instanz der `Messenger` -Klasse, die Client Anforderungen an die `Handler` weiterleitet, die im vorherigen Schritt erstellt wurde.
 
 Ein Dienst, der in einem eigenen Prozess ausgeführt werden soll, ist im Grunde noch ein gebundener Dienst. Die Dienstklasse erweitert die Basis `Service` Klasse und wird `ServiceAttribute` mit dem versehen, das die Metadaten enthält, die Android im Android-Manifest bündeln muss. Zunächst sind die folgenden Eigenschaften von `ServiceAttribute` wichtig für einen Out-of-Process-Dienst:
 
@@ -133,8 +133,8 @@ Um Client Anforderungen zu verarbeiten, muss der Dienst eine `Handler` implement
 
 Der folgende Code Ausschnitt aus der Beispielanwendung zeigt ein Beispiel für `HandleMessage`. In diesem Beispiel gibt es zwei Aktionen, die von einem Client für den Dienst angefordert werden können:
 
-* Die erste Aktion ist eine " _Hello, World_ "-Meldung, dass der Client eine einfache Nachricht an den Dienst gesendet hat.
-* Die zweite Aktion ruft eine Methode für den Dienst auf und ruft eine Zeichenfolge ab. in diesem Fall handelt es sich bei der Zeichenfolge um eine Meldung, die die Uhrzeit zurückgibt, zu der der Dienst gestartet wurde und wie lange er ausgeführt wurde:
+- Die erste Aktion ist eine " _Hello, World_ "-Meldung, dass der Client eine einfache Nachricht an den Dienst gesendet hat.
+- Die zweite Aktion ruft eine Methode für den Dienst auf und ruft eine Zeichenfolge ab. in diesem Fall handelt es sich bei der Zeichenfolge um eine Meldung, die die Uhrzeit zurückgibt, zu der der Dienst gestartet wurde und wie lange er ausgeführt wurde:
 
 ```csharp
 public class TimestampRequestHandler : Android.OS.Handler
@@ -384,10 +384,10 @@ Berechtigungen können durch die `Permission` -Eigenschaft `ServiceAttribute` de
 
 Android bietet vier verschiedene Berechtigungsstufen:
 
-* **Normal** &ndash; Dies ist die Standard Berechtigungsebene. Sie wird verwendet, um Berechtigungen mit geringem Risiko zu identifizieren, die von Android automatisch für Clients erteilt werden können, von denen Sie angefordert werden. Der Benutzer muss diese Berechtigungen nicht explizit erteilen, aber die Berechtigungen können in den App-Einstellungen angezeigt werden.
-* **Signatur** &ndash; Dies ist eine spezielle Kategorie der Berechtigung, die von Android automatisch für Anwendungen gewährt wird, die alle mit demselben Zertifikat signiert sind. Diese Berechtigung dient dazu, einem Anwendungsentwickler das Freigeben von Komponenten oder Daten zwischen ihren apps zu erleichtern, ohne den Benutzer für konstante Genehmigungen zu stören.
-* **signatureorsystem** Dies ist sehr ähnlich wie die oben beschriebenen Signatur Berechtigungen. &ndash; Zusätzlich zur automatischen Gewährung von apps, die mit demselben Zertifikat signiert sind, wird diese Berechtigung auch apps erteilt, die mit demselben Zertifikat signiert sind, das zum Signieren der mit dem Android-System Abbild installierten Apps verwendet wurde. Diese Berechtigung wird in der Regel nur von Android Rom-Entwicklern verwendet, damit Ihre Anwendungen mit Drittanbieter-apps arbeiten können. Sie wird häufig nicht von apps verwendet, die für die öffentliche Öffentlichkeit allgemein verteilt sind.
-* **gefährlich** &ndash; Gefährliche Berechtigungen sind solche, die Probleme für den Benutzer verursachen könnten. Aus diesem Grund müssen die **gefährlichen** Berechtigungen explizit vom Benutzer genehmigt werden.
+- **Normal** &ndash; Dies ist die Standard Berechtigungsebene. Sie wird verwendet, um Berechtigungen mit geringem Risiko zu identifizieren, die von Android automatisch für Clients erteilt werden können, von denen Sie angefordert werden. Der Benutzer muss diese Berechtigungen nicht explizit erteilen, aber die Berechtigungen können in den App-Einstellungen angezeigt werden.
+- **Signatur** &ndash; Dies ist eine spezielle Kategorie der Berechtigung, die von Android automatisch für Anwendungen gewährt wird, die alle mit demselben Zertifikat signiert sind. Diese Berechtigung dient dazu, einem Anwendungsentwickler das Freigeben von Komponenten oder Daten zwischen ihren apps zu erleichtern, ohne den Benutzer für konstante Genehmigungen zu stören.
+- **signatureorsystem** Dies ist sehr ähnlich wie die oben beschriebenen Signatur Berechtigungen. &ndash; Zusätzlich zur automatischen Gewährung von apps, die mit demselben Zertifikat signiert sind, wird diese Berechtigung auch apps erteilt, die mit demselben Zertifikat signiert sind, das zum Signieren der mit dem Android-System Abbild installierten Apps verwendet wurde. Diese Berechtigung wird in der Regel nur von Android Rom-Entwicklern verwendet, damit Ihre Anwendungen mit Drittanbieter-apps arbeiten können. Sie wird häufig nicht von apps verwendet, die für die öffentliche Öffentlichkeit allgemein verteilt sind.
+- **gefährlich** &ndash; Gefährliche Berechtigungen sind solche, die Probleme für den Benutzer verursachen könnten. Aus diesem Grund müssen die **gefährlichen** Berechtigungen explizit vom Benutzer genehmigt werden.
 
 Da `signature` - `normal` und-Berechtigungen zur installierten Zeit von Android automatisch erteilt werden, ist es wichtig, dass das APK, das den Dienst gehostet, **vor** dem APK installiert wird, das den-Client enthält. Wenn der Client zuerst installiert wird, werden die Berechtigungen von Android nicht erteilt. In diesem Fall ist es erforderlich, das Client-APK zu deinstallieren, das Dienst-APK zu installieren und dann das Client-APK erneut zu installieren.
 

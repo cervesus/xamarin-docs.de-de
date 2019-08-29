@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d1a96c81da8d71d92e3ce5acd9928b293f3cf3dd
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9ca14ff360fb3f1d7fdc8df277a93b0d30c4394c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524708"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119695"
 ---
 # <a name="app-linking-in-android"></a>App-Verknüpfung in Android
 
@@ -55,12 +55,12 @@ Das Einrichten von App-Links in Android 6,0 umfasst zwei Hauptschritte:
 
 Es ist erforderlich, einen beabsichtigten Filter zu konfigurieren, der einen URI (oder einen Satz von URIs) von einer Website einer Aktivität in einer Android-Anwendung zuordnet. In xamarin. Android wird diese Beziehung erstellt, indem eine Aktivität mit dem [intentfilterattribute](xref:Android.App.IntentFilterAttribute)versehen wird. Der Intent-Filter muss die folgenden Informationen deklarieren:
 
-* **`Intent.ActionView`** &ndash; Dadurch wird der Intent-Filter registriert, um auf Anforderungen zum Anzeigen von Informationen zu antworten.
-* **`Categories`** Der Intent-Filter sollte sowohl **[Intent. CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** als auch **[Intent. categorydefault](xref:Android.Content.Intent.CategoryDefault)** registrieren, damit der Web-URI ordnungsgemäß verarbeitet werden kann. &ndash;
-* **`DataScheme`** Der Intent-Filter muss und/oder `https`deklarieren `http`. &ndash; Dies sind die einzigen beiden gültigen Schemas.
-* **`DataHost`** &ndash; Dies ist die Domäne, von der die URIs stammen.
-* **`DataPathPrefix`** &ndash; Dies ist ein optionaler Pfad zu Ressourcen auf der Website.
-* **`AutoVerify`** &ndash; Das`autoVerify` -Attribut weist Android an, die Beziehung zwischen der Anwendung und der Website zu überprüfen. Dies wird weiter unten erläutert.
+- **`Intent.ActionView`** &ndash; Dadurch wird der Intent-Filter registriert, um auf Anforderungen zum Anzeigen von Informationen zu antworten.
+- **`Categories`** Der Intent-Filter sollte sowohl **[Intent. CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** als auch **[Intent. categorydefault](xref:Android.Content.Intent.CategoryDefault)** registrieren, damit der Web-URI ordnungsgemäß verarbeitet werden kann. &ndash;
+- **`DataScheme`** Der Intent-Filter muss und/oder `https`deklarieren `http`. &ndash; Dies sind die einzigen beiden gültigen Schemas.
+- **`DataHost`** &ndash; Dies ist die Domäne, von der die URIs stammen.
+- **`DataPathPrefix`** &ndash; Dies ist ein optionaler Pfad zu Ressourcen auf der Website.
+- **`AutoVerify`** &ndash; Das`autoVerify` -Attribut weist Android an, die Beziehung zwischen der Anwendung und der Website zu überprüfen. Dies wird weiter unten erläutert.
 
 Im folgenden Beispiel wird gezeigt, wie das [intentfilterattribute](xref:Android.App.IntentFilterAttribute) verwendet wird, um `https://www.recipe-app.com/recipes` Links von `http://www.recipe-app.com/recipes`und aus zu behandeln:
 
@@ -90,9 +90,9 @@ Die Datei wird vom Webmaster der Domäne am Speicherort **https://domain/.well-k
 
 Die Digital Asset-Datei enthält die Metadaten, die für Android erforderlich sind, um die Zuordnung zu überprüfen. Die Datei " **assetlinks. JSON** " verfügt über die folgenden Schlüssel-Wert-Paare:
 
-* `namespace`&ndash; der Namespace der Android-Anwendung.
-* `package_name`&ndash; der Paketname der Android-Anwendung (im Anwendungs Manifest deklariert).
-* `sha256_cert_fingerprints`&ndash; die SHA256-Fingerabdrücke der signierten Anwendung. Weitere Informationen zum Abrufen des SHA1-Fingerabdrucks einer Anwendung finden Sie im Handbuch [Ermitteln der MD5-oder SHA1-Signatur ihres Keystores](~/android/deploy-test/signing/keystore-signature.md) .
+- `namespace`&ndash; der Namespace der Android-Anwendung.
+- `package_name`&ndash; der Paketname der Android-Anwendung (im Anwendungs Manifest deklariert).
+- `sha256_cert_fingerprints`&ndash; die SHA256-Fingerabdrücke der signierten Anwendung. Weitere Informationen zum Abrufen des SHA1-Fingerabdrucks einer Anwendung finden Sie im Handbuch [Ermitteln der MD5-oder SHA1-Signatur ihres Keystores](~/android/deploy-test/signing/keystore-signature.md) .
 
 Der folgende Code Ausschnitt ist ein Beispiel für die **Datei "assetlinks. JSON** " mit einer einzelnen aufgelisteten Anwendung:
 
@@ -173,9 +173,9 @@ Es können zwei Tests durchgeführt werden, um sicherzustellen, dass die beabsic
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    * **`Package`** &ndash; Der Paketname der Anwendung.
-    * **`Domain`** &ndash; Die Domänen (durch Leerzeichen getrennt), deren Weblinks von der Anwendung behandelt werden.
-    * **`Status`** &ndash; Dies ist der aktuelle Status der Verbindungs Behandlung für die app. Der Wert bedeutet **immer** , dass die Anwendung deklariert `android:autoVerify=true` hat und die Systemüberprüfung durchgeführt hat. Danach folgt eine hexadezimale Zahl, die den Daten Satz der Einstellung des Android-Systems darstellt.
+    - **`Package`** &ndash; Der Paketname der Anwendung.
+    - **`Domain`** &ndash; Die Domänen (durch Leerzeichen getrennt), deren Weblinks von der Anwendung behandelt werden.
+    - **`Status`** &ndash; Dies ist der aktuelle Status der Verbindungs Behandlung für die app. Der Wert bedeutet **immer** , dass die Anwendung deklariert `android:autoVerify=true` hat und die Systemüberprüfung durchgeführt hat. Danach folgt eine hexadezimale Zahl, die den Daten Satz der Einstellung des Android-Systems darstellt.
 
     Beispiel:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: fe871985700c5a40db2736ded78588b0b7d4f616
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 65644673bde426fff92530a7a36812d1c95b5995
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655387"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121291"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Spracherkennung in xamarin. IOS
 
@@ -89,8 +89,8 @@ Der Entwickler muss vier wichtige Schritte ausführen, um die Spracherkennung in
 - Geben Sie mithilfe des `Info.plist` `NSSpeechRecognitionUsageDescription` Schlüssels eine Verwendungs Beschreibung in der Datei der APP an. Eine Kamera-APP könnte z. b. die folgende Beschreibung enthalten: _"Dies ermöglicht es Ihnen, ein Foto zu nehmen, indem Sie das Wort" Käse "sagen._
 - Fordern Sie eine Autorisierung `SFSpeechRecognizer.RequestAuthorization` durch Aufrufen der-Methode an, um eine `NSSpeechRecognitionUsageDescription` Erläuterung (im obigen Schlüssel bereitgestellt) anzuzeigen, warum die APP sprach Erkennungs Zugriff auf den Benutzer in einem Dialogfeld wünscht, damit Sie akzeptiert oder abgelehnt werden kann.
 - Erstellen Sie eine sprach Erkennungs Anforderung:
-    * Verwenden Sie für vorab aufgezeichnete Audiodaten auf dem `SFSpeechURLRecognitionRequest` Datenträger die-Klasse.
-    * Verwenden Sie für liveaudiodaten (oder Audiodateien aus dem Arbeits `SFSPeechAudioBufferRecognitionRequest` Speicher) die-Klasse.
+    - Verwenden Sie für vorab aufgezeichnete Audiodaten auf dem `SFSpeechURLRecognitionRequest` Datenträger die-Klasse.
+    - Verwenden Sie für liveaudiodaten (oder Audiodateien aus dem Arbeits `SFSPeechAudioBufferRecognitionRequest` Speicher) die-Klasse.
 - Übergeben Sie die sprach Erkennungs Anforderung an eine sprach Erkennungsfunktion`SFSpeechRecognizer`(), um die Erkennung zu beginnen. Die APP kann optional auf dem zurückgegebenen `SFSpeechRecognitionTask` enthalten, um die Erkennungsergebnisse zu überwachen und zu verfolgen.
 
 Diese Schritte werden im folgenden ausführlich beschrieben.

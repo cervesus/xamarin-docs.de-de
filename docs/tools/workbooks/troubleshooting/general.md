@@ -6,12 +6,12 @@ ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 21f61b4504367dafc2907fd6471af333f636b521
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 3701a2a111c5c18f694def241b1e888fa6f4ce19
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889406"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120318"
 ---
 # <a name="known-issues--workarounds"></a>Bekannte Probleme & Problem Umgehungen
 
@@ -21,20 +21,20 @@ Das `System.Threading.CurrentThread.CurrentCulture` festlegen `System.Globalizat
 
 ### <a name="workarounds"></a>Problemumgehung
 
-* Legen Sie "Application-Domain- `DefaultThreadCurrentCulture`local" fest:
+- Legen Sie "Application-Domain- `DefaultThreadCurrentCulture`local" fest:
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* Oder aktualisieren Sie die Arbeitsmappen 1.2.1 oder höher, wodurch Zuweisungen zu `System.Threading.CurrentThread.CurrentCulture` und für das gewünschte Verhalten neu geschrieben werden (umgehen des Mono- `System.Globalization.CultureInfo.CurrentCulture` Fehlers).
+- Oder aktualisieren Sie die Arbeitsmappen 1.2.1 oder höher, wodurch Zuweisungen zu `System.Threading.CurrentThread.CurrentCulture` und für das gewünschte Verhalten neu geschrieben werden (umgehen des Mono- `System.Globalization.CultureInfo.CurrentCulture` Fehlers).
 
 ## <a name="unable-to-use-newtonsoftjson"></a>"Newtonsoft. JSON" kann nicht verwendet werden.
 
 ### <a name="workaround"></a>Problemumgehung
 
-* Aktualisieren Sie die Arbeitsmappen 1.2.1, mit denen die newtonsoft. JSON-9.0.1 installiert wird.
+- Aktualisieren Sie die Arbeitsmappen 1.2.1, mit denen die newtonsoft. JSON-9.0.1 installiert wird.
   Arbeitsmappen 1,3, derzeit im Alphakanal, unterstützen Version 10 und höher.
 
 ### <a name="details"></a>Details
@@ -51,9 +51,9 @@ Nuget-Pakete, die explizit in Abhängigkeit von Newton Soft. JSON 10 oder neuere
 
 ### <a name="workaround"></a>Problemumgehung
 
-* Wenn Sie auf die QuickInfo klicken, nachdem Sie angezeigt wird, wird der Text zum Rendering gezwungen.
+- Wenn Sie auf die QuickInfo klicken, nachdem Sie angezeigt wird, wird der Text zum Rendering gezwungen.
 
-* Oder aktualisieren Sie die Arbeitsmappen 1.2.1 oder neuer.
+- Oder aktualisieren Sie die Arbeitsmappen 1.2.1 oder neuer.
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
@@ -64,7 +64,7 @@ Beginnend mit den Arbeitsmappen 1,3 haben wir die skiasharp-Renderer entfernt, d
 
 ### <a name="workaround"></a>Problemumgehung
 
-* Aktualisieren Sie skiasharp auf die neueste Version von nuget. Zum Zeitpunkt des Schreibens ist dies 1.57.1.
+- Aktualisieren Sie skiasharp auf die neueste Version von nuget. Zum Zeitpunkt des Schreibens ist dies 1.57.1.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,118 +1,118 @@
 ---
-title: Problembehandlung bei Xamarin Live Player
-description: Dieses Dokument beschreibt bekannte Probleme mit dem Xamarin Live Player und mögliche Korrekturen. Es wird erläutert, Verbindungsprobleme, Konfigurationsprobleme und mehr.
+title: Problembehandlung Xamarin Live Player
+description: In diesem Dokument werden bekannte Probleme mit dem Xamarin Live Player und potenziellen Fixes beschrieben. Es werden Verbindungsprobleme, Konfigurationsprobleme und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2019
-ms.openlocfilehash: bf0186b55b14d9797397b98390f4d825d669d0f4
-ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
+ms.openlocfilehash: 56ffa280481ba6331b01ff27c6fd5bc3ab585f53
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67157686"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121578"
 ---
-# <a name="troubleshooting-xamarin-live-player"></a>Problembehandlung bei Xamarin Live Player
+# <a name="troubleshooting-xamarin-live-player"></a>Problembehandlung Xamarin Live Player
 
 ![Feature der Vorschauversion](~/media/shared/preview.png)
 
 > [!WARNING]
-> Die Xamarin Live Player-Vorschauversion wurde beendet. Die app ist nicht mehr verfügbar. Die folgenden Anweisungen sind für Kunden, die Sie weiterhin die Vorschau mit Visual Studio 2017 verwenden bereitgestellt...
+> Die Xamarin Live Player Vorschau wurde beendet. Die APP ist nicht mehr verfügbar. Die folgenden Anweisungen werden für Kunden bereitgestellt, die die Vorschauversion mit Visual Studio 2017 weiterhin verwenden.
 
 > [!TIP]
-> Sie können die [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer/index.md) in 2019 für Visual Studio oder Visual Studio für Mac Ihre Entwürfe Bildschirm anzuzeigen, wie Sie sie bearbeiten.
+> Sie können den [XAML-Previewer](~/xamarin-forms/xaml/xaml-previewer/index.md) in Visual Studio 2019 oder Visual Studio für Mac verwenden, um die Bildschirm Entwürfe während der Bearbeitung anzuzeigen.
 
-Dieser Artikel beschreibt die Einschränkungen von Live Player und einige der häufigsten Probleme mit den Schritten zu beheben.
+In diesem Artikel werden die Einschränkungen von Live Player und einige häufige Probleme mit den Schritten zum Beheben der Fehler erläutert.
 
-## <a name="limitations-of-xamarin-live-player"></a>Einschränkungen von Xamarin Live Player
+## <a name="limitations-of-xamarin-live-player"></a>Einschränkungen für Xamarin Live Player
 
 ### <a name="ide-requirements"></a>IDE-Anforderungen
 
-Der Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
+Die Live Player-Vorschau ist nur in Visual Studio 2017 verfügbar.
 
-### <a name="device-requirements"></a>Anforderungen für Geräte
+### <a name="device-requirements"></a>Geräteanforderungen
 
-Die Xamarin Live Player-app unterstützt folgende Android-Geräte:
+Die Xamarin Live Player-App unterstützt die folgenden Android-Geräte:
 
-- Android 4.2 oder höher.
-- ARM-v7a, ARM-v8a "," ARM64-v8a, x 86- oder x86_64-Prozessor.
+- Android 4,2 oder höher.
+- Arm-v7a, Arm-V8A, ARM64-V8A, x86 oder x86_64-Prozessor.
 
-### <a name="ios-limitations"></a>iOS-Einschränkungen
+### <a name="ios-limitations"></a>IOS-Einschränkungen
 
-Live Player ist nicht verfügbar für iOS.
+Live Player ist für IOS nicht verfügbar.
 
-### <a name="xamarinforms-limitations"></a>Xamarin.Forms-Einschränkungen
+### <a name="xamarinforms-limitations"></a>Xamarin. Forms-Einschränkungen
 
 - Benutzerdefinierte Renderer werden nicht unterstützt.
 - Effekte werden nicht unterstützt.
-- Benutzerdefinierte Steuerelemente mit benutzerdefinierten bindbare Eigenschaften werden nicht unterstützt.
-- Eingebettete Ressourcen werden nicht unterstützt (d. h. Einbetten von Bildern oder anderen Ressourcen in einer PCL).
-- MVVM-Frameworks von Drittanbietern werden (d. h. nicht unterstützt. Prism, Mvvm Cross, Mvvm Light usw.).
+- Benutzerdefinierte Steuerelemente mit benutzerdefinierten bindbaren Eigenschaften werden nicht unterstützt.
+- Eingebettete Ressourcen werden nicht unterstützt (d.h. das Einbetten von Bildern oder anderen Ressourcen in einer PCL).
+- MVVM-Frameworks von Drittanbietern werden nicht unterstützt (d... Prism, MVVM Cross, MVVM Light usw.).
 
-### <a name="other-project-type-limitations"></a>Weitere Einschränkungen der Projekt-Typ
+### <a name="other-project-type-limitations"></a>Einschränkungen für andere Projekttypen
 
-- Live Player dient nicht für native Android-Projekte (die Android XML für die Benutzeroberfläche zu verwenden).
+- Live Player ist nicht für Native Android-Projekte gedacht (die Android XML für die Benutzeroberfläche verwenden).
 
-### <a name="miscellaneous-limitations"></a>Verschiedene Einschränkungen
+### <a name="miscellaneous-limitations"></a>Sonstige Einschränkungen
 
-- Eingeschränkte Unterstützung für die Reflektion (derzeit einige beliebte NuGet-Pakete, z. B. SQLite und Json.NET betrifft). Andere NuGet-Pakete werden möglicherweise immer noch unterstützt.
-- Einige Systemklassen können nicht überschrieben werden (z. B. eine Unterklasse kann nicht implementiert werden).
-- Einige Features der Plattform, für die Bereitstellung erforderlich können nicht funktionieren, in die Xamarin Live Player-app (jedoch sie bei allgemeinen Vorgängen, z. B. Photo Gallery-Zugriff konfiguriert wurde).
-- Benutzerdefinierte Ziele und Schritte werden ignoriert. Beispielsweise können keine Tools wie Fody, einpassen, AutoFac und AutoMapper integriert werden.
+- Eingeschränkte Unterstützung für Reflektion (wirkt sich zurzeit auf einige beliebte nugets aus, wie sqlite und JSON.net). Andere nugets können weiterhin unterstützt werden.
+- Einige System Klassen können nicht überschrieben werden (z. b. können Sie keine Unterklasse implementieren).
+- Einige Platt Form Features, die eine Bereitstellung erfordern, können nicht in der Xamarin Live Player-App funktionieren (Sie wurde jedoch für gängige Vorgänge wie den Zugriff auf Fotogalerie) konfiguriert.
+- Benutzerdefinierte Ziele und Buildschritte werden ignoriert. Beispielsweise können Tools wie fody, Refit, autofac und AutoMapper nicht integriert werden.
 - F#Projekte werden nicht unterstützt.
-- Erweiterte Szenarien mit benutzerdefinierten generische Klassen und Schnittstellen werden möglicherweise nicht unterstützt.
+- Erweiterte Szenarien mit benutzerdefinierten generischen Klassen und Schnittstellen werden möglicherweise nicht unterstützt.
 
-## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobiler Geräte wird nicht nach Scan Barcode (oder Eingeben von Code) eine Verbindung herstellen.
+## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobiles Gerät stellt keine Verbindung nach dem Scannen des Barcodes her (oder wechselt in den Code)
 
-Tritt auf, wenn das mobile Gerät, das Ausführen von Xamarin Live Player nicht im gleichen Netzwerk wie der Computer mit der IDE ist. Sehen Sie sich Folgendes:
+Tritt auf, wenn sich das Mobile Gerät, auf dem Xamarin Live Player ausgeführt wird, nicht im selben Netzwerk wie der Computer befindet, auf dem die IDE Sehen Sie sich die folgenden Informationen an:
 
-- Vergewissern Sie sich, dass das Gerät und die Computer im gleichen WLAN-Netzwerk sind.
-  - Wenn der Computer auch mit einem verkabelten Netzwerk verbunden ist, versuchen Sie die verdrahtete Verbindung trennen.
-- Das Netzwerk kann umfassend geschützt werden (z. B. Unternehmensnetzwerken), die von Xamarin Live Player benötigte Ports blockiert.
-- Schließen Sie die Xamarin Live Player-app, und starten Sie ihn neu.
+- Vergewissern Sie sich, dass sich sowohl das Gerät als auch der Computer im gleichen WLAN befinden.
+  - Wenn der Computer auch mit einem verkabelten Netzwerk verbunden ist, versuchen Sie, die verdrahtete Verbindung wiederherzustellen.
+- Das Netzwerk ist möglicherweise eng geschützt (z. b. einige Unternehmensnetzwerke), sodass die von Xamarin Live Player benötigten Ports blockiert werden.
+- Schließen Sie die Xamarin Live Player App, und starten Sie Sie neu.
 
-## <a name="error-while-trying-to-deploy-message-in-ide"></a>"Fehler beim Bereitstellen von"-Nachricht in der IDE
+## <a name="error-while-trying-to-deploy-message-in-ide"></a>"Fehler beim Bereitstellen der Meldung in der IDE
 
-**"IOException: kann nicht zum Lesen von Daten aus der transportverbindung: Vorgang auf Socket nicht blockierend würde blockieren."**
+**"IOException: Daten können nicht aus der Transport Verbindung gelesen werden: Der Vorgang für einen nicht blockierenden Socket würde den Block "**
 
-Dieser Fehler häufig auftritt, wenn das mobile Gerät, das Ausführen von Xamarin Live Player nicht im gleichen Netzwerk wie der Computer mit Visual Studio ist; Dies geschieht häufig, wenn auf einem Gerät eine Verbindung herstellen, die zuvor erfolgreich zugeordnet wurde.
+Dieser Fehler tritt häufig auf, wenn sich das Mobile Gerät, das Xamarin Live Player ausgeführt wird, nicht im selben Netzwerk wie der Computer befindet, auf dem Visual Studio ausgeführt wird. Dies geschieht häufig, wenn eine Verbindung mit einem Gerät hergestellt wird, das zuvor erfolgreich gekoppelt wurde.
 
-* Überprüfen Sie, dass das Gerät und die Computer im gleichen WLAN-Netzwerk sind.
-* Das Netzwerk kann umfassend geschützt werden (z. B. Unternehmensnetzwerken), die von Xamarin Live Player benötigte Ports blockiert. Die folgenden Ports sind für den Xamarin Live Player erforderlich:
-  * 37847 – internen Netzwerkzugriff 
-  * 8090 – externe Netzwerkzugriff
+- Überprüfen Sie, ob sich das Gerät und der Computer im gleichen WLAN befinden.
+- Das Netzwerk ist möglicherweise eng geschützt (z. b. einige Unternehmensnetzwerke), sodass die von Xamarin Live Player benötigten Ports blockiert werden. Die folgenden Ports sind für die Xamarin Live Player erforderlich:
+  - 37847 – interner Netzwerk Zugriff 
+  - 8090 – externer Netzwerk Zugriff
 
-## <a name="manually-configure-device"></a>Konfigurieren Sie Gerät manuell.
+## <a name="manually-configure-device"></a>Manuelles Konfigurieren des Geräts
 
-Wenn Sie nicht auf Ihr Gerät über WLAN verbinden können können Sie versuchen, Ihr Gerät über die XML-Konfigurationsdatei mit den folgenden Schritten manuell zu konfigurieren:
+Wenn Sie über Wi-Fi keine Verbindung mit Ihrem Gerät herstellen können, können Sie versuchen, Ihr Gerät mithilfe der Konfigurationsdatei manuell zu konfigurieren, indem Sie die folgenden Schritte ausführen:
 
 **Schritt 1: Konfigurationsdatei öffnen**
 
-Navigieren Sie zum Anwendungsordner für Daten:
+Wechseln Sie zum Ordner "Anwendungsdaten":
 
-* Windows: **%userprofile%\AppData\Roaming**
-* macOS: **~/Users/$USER/.config**
+- Windows: **%UserProfile%\appdata\roaming**
+- macOS: **~/Users/$USER/.config**
 
-In diesem Ordner finden Sie **PlayerDeviceList.xml** , wenn er nicht vorhanden ist, müssen zum Erstellen.
+In diesem Ordner finden Sie " **playerdevicelist. XML** ", wenn es nicht vorhanden ist. Sie müssen eines erstellen.
 
-**Schritt 2: IP-Adresse abrufen**
+**Schritt 2: IP-Adresse erhalten**
 
-Wechseln Sie in der Xamarin Live Player-app zu **über > Verbindungstest > Verbindungstest starten**.
+Wechseln Sie in der Xamarin Live Player-App zu info **> Verbindungstest > starten Sie den Verbindungstest**.
 
-Notieren Sie sich die IP-Adresse, benötigen Sie die IP-Adresse aufgelistet, wenn Sie Ihr Gerät zu konfigurieren.
+Notieren Sie sich die IP-Adresse. Sie benötigen die IP-Adresse, die beim Konfigurieren des Geräts aufgeführt wird.
 
-**Schritt 3: Abrufen von Kopplungscode**
+**Schritt 3: Paarcode für Kopplung**
 
-In den Xamarin Live Player-Tap **Paar** oder **Paar erneut**, drücken Sie dann die **manuell eingeben**. Ein numerischer Code wird angezeigt werden die müssen Sie die Konfigurationsdatei aktualisieren.
+Klicken Sie erneut auf **paar** oder **paar**, und drücken Sie dann Xamarin Live Player die **EINGABETASTE manuell**. Es wird ein numerischer Code angezeigt, den Sie aktualisieren müssen, um die Konfigurationsdatei zu aktualisieren.
 
-**Schritt 4: GUID zu generieren**
+**Schritt 4: GUID generieren**
 
-Wechseln Sie zu: https://www.guidgenerator.com/online-guid-generator.aspx und generiert eine neue Guid und sicherzustellen, dass Großbuchstaben auf.
+Wechseln Sie zu https://www.guidgenerator.com/online-guid-generator.aspx :, und generieren Sie eine neue GUID, und stellen Sie sicher, dass Großbuchstaben auf on.
 
 **Schritt 5: Gerät konfigurieren**
 
-Öffnen Sie die **PlayerDeviceList.xml** in einem Editor wie z. B. Visual Studio oder Visual Studio Code einrichten. Sie müssen Ihr Gerät in dieser Datei manuell zu konfigurieren. Standardmäßig sollte die Datei den folgenden leeren enthalten `Devices` XML-Element:
+Öffnen Sie die Datei " **playerdevicelist. XML** " in einem Editor wie z. b. Visual Studio oder Visual Studio Code. Sie müssen Ihr Gerät manuell in dieser Datei konfigurieren. Standardmäßig sollte die Datei das folgende leere `Devices` XML-Element enthalten:
 
 ```xml
 <DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -122,7 +122,7 @@ Wechseln Sie zu: https://www.guidgenerator.com/online-guid-generator.aspx und ge
 </DeviceList>
 ```
 
-**Hinzufügen von Android-Gerät:**
+**Android-Gerät hinzufügen:**
 
 ```xml
 <PlayerDevice>
@@ -140,28 +140,28 @@ Wechseln Sie zu: https://www.guidgenerator.com/online-guid-generator.aspx und ge
 </PlayerDevice>
 ```
 
-**Schließen Sie und öffnen Sie Visual Studio erneut.** Ihr Gerät sollte in der Liste angezeigt werden.
+**Schließen Sie Visual Studio, und öffnen Sie es erneut.** Ihr Gerät sollte in der Liste angezeigt werden.
 
-## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>Nachricht "der Typ oder Namespace wurde nicht gefunden", in der IDE
+## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>Meldung "der Typ oder Namespace wurde nicht gefunden" in der IDE
 
-Überprüfen Sie, die Sie ausgewählt haben eine **Startprojekt** , entspricht den Gerätetyp (z. b. Android) und dass Sie mit der Konfiguration übereinstimmt, Gerätetyp (z. b. **Debuggen von** für Android).
+Überprüfen Sie, ob Sie ein **Startprojekt** ausgewählt haben, das dem Gerätetyp entspricht (z. b. Android) und die Konfiguration mit dem Gerätetyp übereinstimmt (z. b. **Debuggen** für Android).
 
-## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>"Konstruktor für Typ 'InterpretedXamarin.Forms.Button' wurde nicht gefunden"-Nachricht im Player
+## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>"Der Konstruktor für den Typ ' interpretedxamarin. Forms. Button ' wurde nicht gefunden"-Nachricht in Player
 
-Einige "System"-Klassen nicht möglich, z. B. überschrieben werden:
+Einige System Klassen können nicht überschrieben werden, z. b.:
 
 ```csharp
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs: "Resource.Layout" enthält keine Definition für 'Main' "
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs: "Resource. Layout" enthält keine Definition für "Main".
 
-Dieser Fehler tritt auf, für Android-Projekte mit Benutzeroberflächen in AXML-Dateien definiert.
-AXML-Dateien werden in Xamarin Live Player derzeit nicht unterstützt.
+Dieser Fehler tritt für Android-Projekte mit in axml-Dateien definierten Benutzeroberflächen auf.
+Axml-Dateien werden in Xamarin Live Player zurzeit nicht unterstützt.
 
-### <a name="android-toolbar-and-tabs-render-incorrectly-using-xamarinforms"></a>Android-Symbolleiste und Registerkarten rendern nicht ordnungsgemäß mit Xamarin.Forms
+### <a name="android-toolbar-and-tabs-render-incorrectly-using-xamarinforms"></a>Android-Symbolleiste und Registerkarten werden mithilfe von xamarin. Forms falsch dargestellt.
 
-Xamarin.Forms-Android-Projekte müssen "Toolbar.axml" und "Tabbar.axml" für die Namen der relevanten Layoutdateien verwenden. Die Standardvorlage verwendet diesen Namen. Umbenennen wird Renderingprobleme verursachen.
+Xamarin. Forms Android-Projekte müssen "Toolbar. axml" und "Tabbar. axml" für die Namen der relevanten Layoutdateien verwenden. Die Standardvorlage verwendet diese Namen. Das Umbenennen führt zu Renderingproblemen.
 
 ## <a name="related-links"></a>Verwandte Links
 

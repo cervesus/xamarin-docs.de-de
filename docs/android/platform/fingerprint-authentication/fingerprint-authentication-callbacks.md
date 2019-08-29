@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: cb4933695d34a0805be4139c7b345f7a70f33613
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f1fc484931ba7a574ac660b4856f20b1cb1e08a3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524333"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119587"
 ---
 # <a name="responding-to-authentication-callbacks"></a>Reagieren auf Authentifizierungsrückrufe
 
 Der Fingerabdruckscanner wird im Hintergrund in seinem eigenen Thread ausgeführt. nach Abschluss des Vorgangs werden die Ergebnisse der Überprüfung gemeldet, indem eine Methode von `FingerprintManager.AuthenticationCallback` im UI-Thread aufgerufen wird. Eine Android-Anwendung muss einen eigenen Handler bereitstellen, der diese abstrakte Klasse erweitert und dabei alle folgenden Methoden implementiert:
 
-* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; Wird aufgerufen, wenn ein nicht BEHEB barer Fehler vorliegt. Es gibt nichts anderes, was eine Anwendung oder ein Benutzer tun kann, um die Situation zu beheben, außer möglicherweise wiederholen.
-* **`OnAuthenticationFailed()`** &ndash; Diese Methode wird aufgerufen, wenn ein Fingerabdruck erkannt, aber vom Gerät nicht erkannt wird.
-* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; Wird aufgerufen, wenn ein BEHEB barer Fehler vorliegt, z. b. der Finger, der über dem Scanner zum schnellen überspringen geleitet wird.
-* **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash; Dies wird aufgerufen, wenn ein Fingerabdruck erkannt wurde.
+- **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; Wird aufgerufen, wenn ein nicht BEHEB barer Fehler vorliegt. Es gibt nichts anderes, was eine Anwendung oder ein Benutzer tun kann, um die Situation zu beheben, außer möglicherweise wiederholen.
+- **`OnAuthenticationFailed()`** &ndash; Diese Methode wird aufgerufen, wenn ein Fingerabdruck erkannt, aber vom Gerät nicht erkannt wird.
+- **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; Wird aufgerufen, wenn ein BEHEB barer Fehler vorliegt, z. b. der Finger, der über dem Scanner zum schnellen überspringen geleitet wird.
+- **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash; Dies wird aufgerufen, wenn ein Fingerabdruck erkannt wurde.
 
 Wenn beim `CryptoObject` aufrufen `Authenticate`von ein verwendet wurde, wird empfohlen, in `Cipher.DoFinal` `OnAuthenticationSuccessful`aufzurufen.
 `DoFinal`löst eine Ausnahme aus, wenn die Verschlüsselung manipuliert oder nicht ordnungsgemäß initialisiert wurde. Dies deutet darauf hin, dass das Ergebnis des Fingerabdruckscanners außerhalb der Anwendung manipuliert wurde.

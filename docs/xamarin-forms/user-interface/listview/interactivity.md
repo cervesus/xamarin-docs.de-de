@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 180ffa7cf723d841021a8bf7d1f1a285c882c103
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 3949dd85492a8181ee53e23b3ba2e986e59f8f47
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065548"
+ms.locfileid: "70121625"
 ---
 # <a name="listview-interactivity"></a>ListView-Interaktivität
 
@@ -79,9 +79,9 @@ Standardmäßig kann ein MenuItem-Element nicht zu wissen, welche Zelle mit dem 
 
 Kontextaktionen können implementiert werden, in einem `Cell` Unterklasse (sofern nicht wie eine Gruppenkopfzeile verwendet wird.) durch das Erstellen `MenuItem`s und Hinzufügen der `ContextActions` Auflistung für die Zelle. Sie verfügen über die folgenden Eigenschaften für die kontextaktion konfiguriert werden können:
 
-* **Text** &ndash; die Zeichenfolge, die im Menüelement angezeigt wird.
-* **Geklickt** &ndash; das Ereignis, wenn das Element geklickt wird.
-* **IsDestructive** &ndash; (optional) Wenn "true" das Element gerendert wird anders unter iOS.
+- **Text** &ndash; die Zeichenfolge, die im Menüelement angezeigt wird.
+- **Geklickt** &ndash; das Ereignis, wenn das Element geklickt wird.
+- **IsDestructive** &ndash; (optional) Wenn "true" das Element gerendert wird anders unter iOS.
 
 Mehrere kontextaktionen können in eine Zelle hinzugefügt werden, jedoch nur eine muss `IsDestructive` festgelegt `true`. Der folgende Code zeigt, wie kontextaktionen hinzugefügt werden würde eine `ViewCell`:
 

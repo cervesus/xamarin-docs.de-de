@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: ddefae8ad24b74a3c9ed05bf46b54430c00beaea
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e04b6be1547183869fb49955703245e19365bdb3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620508"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120171"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Schnell Interaktions Techniken für watchos 3 in xamarin
 
@@ -230,16 +230,16 @@ Es gibt mehrere Möglichkeiten, wie ein Benutzer auf die Benachrichtigung reagie
 
 Neu für watchos 3:
 
-* Bei der Benachrichtigung wird eine ähnliche API auf allen Plattformen verwendet (Ios, watchos, tvos und macOS).
-* Lokale Benachrichtigungen können auf dem Apple Watch geplant werden.
-* Die Hintergrund Benachrichtigung wird an die APP-Erweiterung weitergeleitet, wenn Sie auf dem Apple Watch geplant wurden.
+- Bei der Benachrichtigung wird eine ähnliche API auf allen Plattformen verwendet (Ios, watchos, tvos und macOS).
+- Lokale Benachrichtigungen können auf dem Apple Watch geplant werden.
+- Die Hintergrund Benachrichtigung wird an die APP-Erweiterung weitergeleitet, wenn Sie auf dem Apple Watch geplant wurden.
 
 #### <a name="notification-scheduling-and-delivery"></a>Benachrichtigungs Planung und-Übermittlung
 
 Die Benachrichtigung vom iPhone des Benutzers wird an die Apple Watch weiterleiten, wenn Folgendes geschieht:
 
-* Der Bildschirm des iPhones ist deaktiviert.
-* Der Apple Watch wird bereits genutzt und wurde entsperrt.
+- Der Bildschirm des iPhones ist deaktiviert.
+- Der Apple Watch wird bereits genutzt und wurde entsperrt.
 
 In watchos 3 können lokale Benachrichtigungen auf dem Apple Watch geplant werden und werden nur auf der überwachen übermittelt. Der Entwickler kann eine entsprechende iPhone-Benachrichtigung planen, wenn er von der APP benötigt wird.
 
