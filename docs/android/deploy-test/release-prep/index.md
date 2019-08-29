@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 4ddae1ae4f49c01220b2f5ce78dc19122b3015a0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3560c58c6fbb9920cfaf9c3830cd442bca443571
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525272"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119630"
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
@@ -319,15 +319,15 @@ Der **Archiv-Manager** besteht aus den Bereichen **Projektmappenliste**, **Archi
 
 In der **Projektmappenliste** werden alle Projektmappen mit mindestens einem archivierten Projekt angezeigt. Die **Projektmappenliste** enthält die folgenden Bereiche:
 
-* **Aktuelle Projektmappe**: Die aktuelle Projektmappe wird angezeigt. Beachten Sie, dass dieser Bereich möglicherweise leer ist, wenn die aktuelle Projektmappe kein vorhandenes Archiv aufweist.
-* **Alle Projektmappen**: Es werden alle Projektmappen angezeigt, die ein Archiv aufweisen.
-* **Suchen** Textfeld (oben): Die in der Liste **Alle Projektmappen** aufgeführten Projektmappen werden entsprechend der Suchzeichenfolge gefiltert, die in das Textfeld eingegeben wurde.
+- **Aktuelle Projektmappe**: Die aktuelle Projektmappe wird angezeigt. Beachten Sie, dass dieser Bereich möglicherweise leer ist, wenn die aktuelle Projektmappe kein vorhandenes Archiv aufweist.
+- **Alle Projektmappen**: Es werden alle Projektmappen angezeigt, die ein Archiv aufweisen.
+- **Suchen** Textfeld (oben): Die in der Liste **Alle Projektmappen** aufgeführten Projektmappen werden entsprechend der Suchzeichenfolge gefiltert, die in das Textfeld eingegeben wurde.
 
 In der **Archivliste** werden alle Archive der ausgewählten Projektmappe angezeigt. Die **Archivliste** enthält die folgenden Bereiche:
 
-* **Name der ausgewählten Projektmappe**: Es wird der Name der Projektmappe angezeigt, die in der **Projektmappenliste** ausgewählt wurde. Alle Informationen in der **Archivliste** beziehen sich auf diese ausgewählte Projektmappe.
-* **Plattformfilter**: In diesem Feld können Archive nach Plattformtyp (z.B. iOS oder Android) gefiltert werden.
-* **Elemente archivieren**: Es wird eine Liste der Archive der ausgewählten Projektmappe angezeigt. Jedes Element in dieser Liste enthält Projektnamen, Erstellungsdatum und Plattform. Es können auch zusätzliche Informationen wie der Fortschritt beim Archivieren oder Veröffentlichen eines Elements angezeigt werden.
+- **Name der ausgewählten Projektmappe**: Es wird der Name der Projektmappe angezeigt, die in der **Projektmappenliste** ausgewählt wurde. Alle Informationen in der **Archivliste** beziehen sich auf diese ausgewählte Projektmappe.
+- **Plattformfilter**: In diesem Feld können Archive nach Plattformtyp (z.B. iOS oder Android) gefiltert werden.
+- **Elemente archivieren**: Es wird eine Liste der Archive der ausgewählten Projektmappe angezeigt. Jedes Element in dieser Liste enthält Projektnamen, Erstellungsdatum und Plattform. Es können auch zusätzliche Informationen wie der Fortschritt beim Archivieren oder Veröffentlichen eines Elements angezeigt werden.
 
 Im **Bereich „Details“** werden zusätzliche Informationen zu jedem Archiv angezeigt. Hier können Benutzer auch den Workflow für die Verteilung starten oder den Ordner öffnen, in dem die Verteilung erstellt wurde. Im Bereich **Kommentare erstellen** können Build-Kommentare in das Archiv eingeschlossen werden.
 
@@ -343,9 +343,9 @@ Im Dialogfeld **Vertriebskanal** werden Informationen zur App, zum Fortschritt d
 
 Es kann einer der folgenden Vertriebskanäle ausgewählt werden:
 
-* **Ad-Hoc**: Es wird ein signiertes APK auf dem Datenträger gespeichert, das auf Android-Geräte quergeladen werden kann. Fahren Sie mit dem Artikel [Signing the App Package (Signieren des App-Pakets)](~/android/deploy-test/signing/index.md) fort, um zu erfahren, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt und eine _Ad-Hoc_-Version der App auf dem Datenträger veröffentlicht werden kann. Dies ist eine gute Möglichkeit, ein APK für Testzwecke zu erstellen.
+- **Ad-Hoc**: Es wird ein signiertes APK auf dem Datenträger gespeichert, das auf Android-Geräte quergeladen werden kann. Fahren Sie mit dem Artikel [Signing the App Package (Signieren des App-Pakets)](~/android/deploy-test/signing/index.md) fort, um zu erfahren, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt und eine _Ad-Hoc_-Version der App auf dem Datenträger veröffentlicht werden kann. Dies ist eine gute Möglichkeit, ein APK für Testzwecke zu erstellen.
 
-* **Google Play**: veröffentlicht ein signiertes APK bei Google Play. Fahren Sie mit dem Artikel [Publishing to Google Play (Veröffentlichen in Google Play)](~/android/deploy-test/publishing/publishing-to-google-play/index.md) fort, um zu erfahren, wie Sie ein APK im Google Play Store signieren und veröffentlichen können.
+- **Google Play**: veröffentlicht ein signiertes APK bei Google Play. Fahren Sie mit dem Artikel [Publishing to Google Play (Veröffentlichen in Google Play)](~/android/deploy-test/publishing/publishing-to-google-play/index.md) fort, um zu erfahren, wie Sie ein APK im Google Play Store signieren und veröffentlichen können.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

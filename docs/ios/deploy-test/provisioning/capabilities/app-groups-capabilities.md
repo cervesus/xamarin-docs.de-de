@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 0dcc0c9499a1f4085e489fe6d8dcfa3fbf2fa3e0
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 20aa1da478916bf4c8949103a5ce7fbf1f5d8f93
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832409"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70064827"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>App-Gruppen-Funktionen in Xamarin.iOS
 
@@ -20,9 +20,9 @@ _Um Funktionen einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitst
 
 Durch eine App-Gruppe können unterschiedliche Anwendungen (oder eine Anwendung und ihre Erweiterungen) auf einen freigegebenen Dateispeicherort zugreifen. App-Gruppen können für folgende Daten verwendet werden:
 
-*   [Apple Watch-Einstellungen](~/ios/watchos/app-fundamentals/settings.md)
-*   [Freigegebene NSUserDefaults](~/ios/app-fundamentals/user-defaults.md)
-*   [Freigegebene Dateien](~/ios/watchos/app-fundamentals/parent-app.md#files)
+* [Apple Watch-Einstellungen](~/ios/watchos/app-fundamentals/settings.md)
+* [Freigegebene NSUserDefaults](~/ios/app-fundamentals/user-defaults.md)
+* [Freigegebene Dateien](~/ios/watchos/app-fundamentals/parent-app.md#files)
 
 ## <a name="configure-a-new-app-group"></a>Konfigurieren einer neuen App-Gruppe
 

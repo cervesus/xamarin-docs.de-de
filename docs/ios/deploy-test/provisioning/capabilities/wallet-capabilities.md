@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 25ebf101dfe0cc3d51e8411b7977e6dc0b061f2d
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 8cb5d1cb29f5668194d15102c0b2fb4118388e94
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978404"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065476"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Wallet-Funktionen in Xamarin.iOS
 
@@ -22,11 +22,11 @@ Wallet ist eine App zum Speichern und Anzeigen von Barcodes und anderen Inhalten
 
 Entwickler haben mit Wallet eine Vielzahl von Möglichkeiten:
 
-*   Eine Anwendung muss nicht erstellt werden, um einen Pass zu erstellen. Eine Passdatei ist ein ZIP-Archiv, das mehrere JSON-Dateien und optionale Metadatendateien enthält. Dafür sind eine [Passtyp-ID](~/ios/platform/passkit.md) und ein [Passzertifikat](~/ios/platform/passkit.md) erforderlich. Diese Informationen werden anschließend in einer JSON-Datei deklariert. Weitere Informationen zur Bereitstellung einer Passdatei finden Sie im Leitfaden [Introduction to PassKit](~/ios/platform/passkit.md) (Einführung in PassKit).
+* Eine Anwendung muss nicht erstellt werden, um einen Pass zu erstellen. Eine Passdatei ist ein ZIP-Archiv, das mehrere JSON-Dateien und optionale Metadatendateien enthält. Dafür sind eine [Passtyp-ID](~/ios/platform/passkit.md) und ein [Passzertifikat](~/ios/platform/passkit.md) erforderlich. Diese Informationen werden anschließend in einer JSON-Datei deklariert. Weitere Informationen zur Bereitstellung einer Passdatei finden Sie im Leitfaden [Introduction to PassKit](~/ios/platform/passkit.md) (Einführung in PassKit).
 
-*   Für die Verteilung der Pässe werden Begleit-Apps verwendet. Diese verfügen auch über Funktionen zum Erstellen, Bearbeiten und Aktualisieren von Pässen, die dann der Wallet-App hinzugefügt werden. Ein Beispiel für eine Begleit-App ist etwa eine Kino-App: Wenn ein Benutzer über die Kino-App eine Eintrittskarte kauft, kann sie direkt aus der App zu Wallet hinzugefügt werden. Damit Sie Begleit-Apps verwenden können, muss Ihr Bereitstellungsprofil eine App-ID mit den Wallet-Funktionen enthalten, die Sie mithilfe der nachfolgenden Schritte festlegen können. Die App muss zudem über die erforderlichen Berechtigungen verfügen.
+* Für die Verteilung der Pässe werden Begleit-Apps verwendet. Diese verfügen auch über Funktionen zum Erstellen, Bearbeiten und Aktualisieren von Pässen, die dann der Wallet-App hinzugefügt werden. Ein Beispiel für eine Begleit-App ist etwa eine Kino-App: Wenn ein Benutzer über die Kino-App eine Eintrittskarte kauft, kann sie direkt aus der App zu Wallet hinzugefügt werden. Damit Sie Begleit-Apps verwenden können, muss Ihr Bereitstellungsprofil eine App-ID mit den Wallet-Funktionen enthalten, die Sie mithilfe der nachfolgenden Schritte festlegen können. Die App muss zudem über die erforderlichen Berechtigungen verfügen.
 
-*   Kanal-Apps sind Apps, die Pässe nicht direkt bearbeiten. Sie empfangen den Pass und ermöglichen dem Benutzer, ihn Wallet hinzuzufügen. Darüber hinaus interagieren sie mit dem Pass nur minimal. Eine spezielle Bereitstellung oder Berechtigungen sind dafür nicht erforderlich. Kanal-Apps verwenden jedoch einige Methoden aus dem PassKit-Framework.
+* Kanal-Apps sind Apps, die Pässe nicht direkt bearbeiten. Sie empfangen den Pass und ermöglichen dem Benutzer, ihn Wallet hinzuzufügen. Darüber hinaus interagieren sie mit dem Pass nur minimal. Eine spezielle Bereitstellung oder Berechtigungen sind dafür nicht erforderlich. Kanal-Apps verwenden jedoch einige Methoden aus dem PassKit-Framework.
 
 ## <a name="developer-center"></a>Developer Center
 
@@ -57,7 +57,7 @@ Diese App-ID kann jetzt zum Generieren oder erneuten Generieren eines neuen Bere
 
 Weitere Informationen zur Verwendung von Wallet finden Sie im folgenden Leitfaden:
 
-*   [Introduction to PassKit](~/ios/platform/passkit.md) (Einführung in PassKit)
+* [Introduction to PassKit](~/ios/platform/passkit.md) (Einführung in PassKit)
  
 ## <a name="next-steps"></a>Nächste Schritte
  

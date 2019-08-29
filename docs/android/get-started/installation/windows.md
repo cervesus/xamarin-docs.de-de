@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 4aa549258d3261d00c0623c2b21a2cebaa226e54
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 32ededcda1fdfc463269c7e4a2db444edab51d22
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524934"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119774"
 ---
 # <a name="windows-installation"></a>Windows-Installation
 
@@ -74,9 +74,9 @@ Der [Android-Emulator](https://developer.android.com/studio/run/emulator) kann e
 
 Das Emulieren eines Android-Geräts auf einem Computer umfasst die folgenden Komponenten:
 
-* **Google Android-Emulator** &ndash; Dies ist ein Emulator, der auf [QEMU](https://www.qemu.org/) basiert und ein virtualisiertes Gerät erstellt, das auf der Arbeitsstation des Entwicklers ausgeführt wird.
-* **Emulator-Image** &ndash; Ein _Emulator-Image_ ist eine Vorlage oder eine Spezifikation der Hardware und des Betriebssystems, die virtualisiert werden sollen. Beispielsweise würde ein Emulator-Image die Hardwareanforderungen für ein Nexus 5X mit Android 7.0 und installierten Google Play-Diensten identifizieren. Ein anderes Emulator-Image spezifiziert möglicherweise ein 10"-Tablet mit Android 6.0.
-* **Virtuelles Android-Gerät (AVD)** &ndash; Ein _virtuelles Android-Gerät_ ist ein aus einem Emulator-Image erstelltes „emuliertes“ Android-Gerät. Beim Ausführen und Testen von Android-Apps startet Xamarin.Android den Android-Emulator, startet ein bestimmtes AVD, installiert die APK und führt dann die App aus.
+- **Google Android-Emulator** &ndash; Dies ist ein Emulator, der auf [QEMU](https://www.qemu.org/) basiert und ein virtualisiertes Gerät erstellt, das auf der Arbeitsstation des Entwicklers ausgeführt wird.
+- **Emulator-Image** &ndash; Ein _Emulator-Image_ ist eine Vorlage oder eine Spezifikation der Hardware und des Betriebssystems, die virtualisiert werden sollen. Beispielsweise würde ein Emulator-Image die Hardwareanforderungen für ein Nexus 5X mit Android 7.0 und installierten Google Play-Diensten identifizieren. Ein anderes Emulator-Image spezifiziert möglicherweise ein 10"-Tablet mit Android 6.0.
+- **Virtuelles Android-Gerät (AVD)** &ndash; Ein _virtuelles Android-Gerät_ ist ein aus einem Emulator-Image erstelltes „emuliertes“ Android-Gerät. Beim Ausführen und Testen von Android-Apps startet Xamarin.Android den Android-Emulator, startet ein bestimmtes AVD, installiert die APK und führt dann die App aus.
 
 Eine erhebliche Verbesserung der Leistung bei der Entwicklung auf x86-Computern kann erreicht werden, indem Sie spezielle für die x86-Architektur optimierte Emulator-Images und eine der beiden Virtualisierungstechnologien verwenden:
 

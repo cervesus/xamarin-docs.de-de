@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 7249b699a5f692269d124550a9e7d291f4315903
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 7bb4e142a8b7bd0cf0691da381729dc226028193
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832183"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121361"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Arbeiten mit Funktionen in Xamarin.iOS
 
@@ -21,28 +21,28 @@ _Um Funktionen einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitst
 Apple stellt Entwicklern _Funktionen_, häufig auch _App-Dienste_ genannt, als Werkzeug zur Erweiterung der Funktionen und des Verwendungsspielraums von iOS-Apps zur Verfügung. Mit diesen Funktionen können Entwickler ihrer Anwendung eine umfassendere Integration von Plattformfunktionen hinzufügen, wie z.B. das Einleiten finanzieller Transaktionen in der App, weitere Gerätedienste wie Siri und viele mehr.
 Diese Funktionen können mit Xamarin.iOS-Projekten verwendet werden. Die vollständige Liste der Dienste lautet wie folgt:
 
-* App-Gruppen
-* Zugehörige Bereiche
-* Datenschutz
-* Game Center
-* HealthKit
-* HomeKit
-* Konfiguration für drahtloses Zubehör
-* iCloud
-* In-App-Käufe
-* Inter-App-Audio
-* Apple Pay
-* Wallet
-* Pushbenachrichtigung
-* Persönliches VPN
-* Siri
-* Karten
-* Hintergrundmodi
-* Keychain-Freigabe
-* Netzwerkerweiterungen
-* Hotspotkonfiguration
-* Multipfad
-* Lesen von NFC-Tags
+- App-Gruppen
+- Zugehörige Bereiche
+- Datenschutz
+- Game Center
+- HealthKit
+- HomeKit
+- Konfiguration für drahtloses Zubehör
+- iCloud
+- In-App-Käufe
+- Inter-App-Audio
+- Apple Pay
+- Wallet
+- Pushbenachrichtigung
+- Persönliches VPN
+- Siri
+- Karten
+- Hintergrundmodi
+- Keychain-Freigabe
+- Netzwerkerweiterungen
+- Hotspotkonfiguration
+- Multipfad
+- Lesen von NFC-Tags
 
 Funktionen können entweder über Visual Studio für Mac und Visual Studio 2019 oder manuell im Apple Developer Portal aktiviert werden. Bestimmte Funktionen, wie z.B. Wallet, Apple Pay und iCloud, erfordern eine zusätzliche Konfiguration der App-IDs.
 
@@ -57,16 +57,16 @@ In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von
 > [!IMPORTANT]
 > Nicht alle Funktionen können mit der automatischen Bereitstellung hinzugefügt und verwaltet werden. Die folgende Liste enthält die unterstützten Funktionen:
 >
->* HealthKit 
->* HomeKit 
->* Persönliches VPN 
->* Konfiguration für drahtloses Zubehör 
->* Inter-App-Audio 
->* SiriKit 
->* Hotspot 
->* Netzwerkerweiterungen 
->* Lesen von NFC-Tags
->* Multipfad 
+>- HealthKit 
+>- HomeKit 
+>- Persönliches VPN 
+>- Konfiguration für drahtloses Zubehör 
+>- Inter-App-Audio 
+>- SiriKit 
+>- Hotspot 
+>- Netzwerkerweiterungen 
+>- Lesen von NFC-Tags
+>- Multipfad 
 >
 >Funktionen für Pushbenachrichtigungen, Game Center, In App-Käufe, Zuordnungen, Keychain-Freigabe, verknüpfte Domänen und Datenschutz werden derzeit nicht unterstützt. Um diese Funktionen hinzuzufügen, verwenden Sie die manuelle Bereitstellung, und führen Sie die Schritte im Abschnitt [Developer Center](#devcenter) aus.
 
@@ -85,8 +85,8 @@ Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hin
     ![Hinzufügen von Funktionen zur Datei „entitlements.plist“](images/image17.png)
 
     Das Auswählen einer Funktion bewirkt zwei Dinge:
-    * Diese Funktion wird Ihrer App-ID hinzugefügt.
-    * Die Schlüssel-Wert-Paar für Berechtigungen wird Ihrer Datei „entitlements.plist“ hinzugefügt.
+    - Diese Funktion wird Ihrer App-ID hinzugefügt.
+    - Die Schlüssel-Wert-Paar für Berechtigungen wird Ihrer Datei „entitlements.plist“ hinzugefügt.
 
     Visual Studio für Mac informiert Sie, wenn diese Aufgaben ausgeführt wurden, indem die folgende Erfolgsmeldung angezeigt wird:
 
@@ -108,8 +108,8 @@ Funktionen werden der Datei **Entitlements.plist** hinzugefügt. Wenn Sie Funkti
 
     Durch Speichern von **Entitlement.plist** geschehen zwei Dinge:
 
-    * Diese Funktion wird Ihrer App-ID hinzugefügt.
-    * Die Schlüssel-Wert-Paar für Berechtigungen wird Ihrer Datei „entitlements.plist“ hinzugefügt.
+    - Diese Funktion wird Ihrer App-ID hinzugefügt.
+    - Die Schlüssel-Wert-Paar für Berechtigungen wird Ihrer Datei „entitlements.plist“ hinzugefügt.
 
 -----
 
@@ -196,8 +196,8 @@ Erstellen Sie nun ein Bereitstellungsprofil, das diese App-ID enthält. Führen 
 
 Wenn eine Funktion auf der Serverseite aktiviert wurde, sind weitere Schritte erforderlich, damit Ihre App die Funktionen auch verwenden kann. In der folgenden Liste werden mögliche weitere Schritte aufgeführt:
 
-*   Verwenden des Framework-Namespaces in Ihrer App
-*   Hinzufügen der erforderlichen Berechtigungen zu Ihrer App Informationen zu den erforderlichen Berechtigungen und wie sie hinzugefügt werden finden Sie im Leitfaden [Introduction to Entitlements](~/ios/deploy-test/provisioning/entitlements.md) (Einführung in Berechtigungen).
+- Verwenden des Framework-Namespaces in Ihrer App
+- Hinzufügen der erforderlichen Berechtigungen zu Ihrer App Informationen zu den erforderlichen Berechtigungen und wie sie hinzugefügt werden finden Sie im Leitfaden [Introduction to Entitlements](~/ios/deploy-test/provisioning/entitlements.md) (Einführung in Berechtigungen).
 
 <a name="troubleshooting" />
 

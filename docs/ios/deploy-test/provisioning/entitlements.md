@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 0314ec958b2c38e702c56ef64d1cc2bba1383060
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: bbc01416fe49b361b163808f3502533db8e39d8c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865843"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121325"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Arbeiten mit Berechtigungen in Xamarin.iOS
 
@@ -94,13 +94,13 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 ### <a name="wallet"></a>Wallet
 
-*   **Beschreibung:** Wallet (früher als „Passbook“ bekannt) ist eine App, in der Pässe und Tickets gespeichert und verwaltet werden. Diese Pässe können Kreditkarten, Kundenkarten, Bordkarten oder Tickets sein.
+- **Beschreibung:** Wallet (früher als „Passbook“ bekannt) ist eine App, in der Pässe und Tickets gespeichert und verwaltet werden. Diese Pässe können Kreditkarten, Kundenkarten, Bordkarten oder Tickets sein.
 
     - **Passtypbezeichner**
-        * **Schlüssel**: com.apple.developer.pass-type-identifiers
-        * **Zeichenfolge**: `$(TeamIdentifierPrefix)*`
+        - **Schlüssel**: com.apple.developer.pass-type-identifiers
+        - **Zeichenfolge**: `$(TeamIdentifierPrefix)*`
 
-* **Anmerkungen**:
+- **Anmerkungen**:
     - So akzeptiert Ihre App alle Passtypen. Um Ihre App einzuschränken und nur eine Teilmenge von Teampasstypen zu erlauben, legen Sie den Zeichenfolgenwert auf `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)` fest.
 
     Dort wo „$(CFBundleIdentifier)“ die Pass-ID ist, die [oben](~/ios/platform/passkit.md) erstellt wurde
@@ -109,7 +109,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 ### <a name="icloud"></a>iCloud
 
-*   **Beschreibung**: iCloud stellt iOS-Benutzern einen praktischen und einfachen Weg bereit, um ihre Inhalte zu speichern und diese zwischen Geräten freizugeben. Entwicklern stehen vier Methoden zur Verwendung von iCloud zur Verfügung, um ihren Benutzern eine Speichermöglichkeit bereitzustellen: Der Key-Value-Speicher, der UIDocument-Speicher, CoreData und die direkte Verwendung von CloudKit, um Speicher für einzelne Dateien und Verzeichnisse bereitzustellen. Weitere Informationen dazu finden Sie im Handbuch „Introduction to iCloud (Einführung in iCloud)“.
+- **Beschreibung**: iCloud stellt iOS-Benutzern einen praktischen und einfachen Weg bereit, um ihre Inhalte zu speichern und diese zwischen Geräten freizugeben. Entwicklern stehen vier Methoden zur Verwendung von iCloud zur Verfügung, um ihren Benutzern eine Speichermöglichkeit bereitzustellen: Der Key-Value-Speicher, der UIDocument-Speicher, CoreData und die direkte Verwendung von CloudKit, um Speicher für einzelne Dateien und Verzeichnisse bereitzustellen. Weitere Informationen dazu finden Sie im Handbuch „Introduction to iCloud (Einführung in iCloud)“.
 
     - **iCloud-Dokumente & CloudKit**
         - **Schlüssel**: com.apple.developer.ubiquity-container-identifiers
@@ -118,7 +118,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
         - **Schlüssel**: com.apple.developer.ubiquity-kvstore-identifier
         - **Zeichenfolge**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
-* **Anmerkungen**:
+- **Anmerkungen**:
     - Die Zeichenfolge `$(TeamIdentifierPrefix)` können Sie finden, indem Sie sich bei developer.apple.com anmelden und zu **Member Center > Your Account > Developer Account Summary** (Mitgliedcenter > Ihr Konto > Zusammenfassung Developer-Konto) navigieren, um Ihre Team-ID abzurufen (oder Ihre eigene ID, wenn Sie ein einzelner Entwickler sind). Dabei handelt es sich um eine 10-stellige Zeichenfolge (z.B. A93A5CM278).
     - Die Zeichenfolge `$(CFBundleIdentifier)` beginnt mit `iCloud` und wird festgelegt, wenn der iCloud-Container mit den in [Arbeit mit Funktionen](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) beschriebenen Schritten erstellt wird.
     - Die Platzhalter $`(TeamIdentifierPrefix)` und `$(CFBundleIdentifier)` können verwendet werden und werden bei der Erstellung durch die entsprechenden Werte ersetzt.

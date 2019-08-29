@@ -5,12 +5,12 @@ ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 61d0a77d7a6a862ec5e06c7b693f8e23e4cdb975
-ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
+ms.openlocfilehash: 9c0eb4f856dbbb05e891a07326f40528a4e99bea
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986236"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120103"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Geräteanzeigeinformationen
 
@@ -91,7 +91,7 @@ Keine Unterschiede.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* Der Zugriff auf `DeviceDisplay` muss im UI-Thread erfolgen. Sonst wird eine Ausnahme ausgelöst. Sie können die Methode [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) verwenden, um diesen Code im UI-Thread auszuführen.
+- Der Zugriff auf `DeviceDisplay` muss im UI-Thread erfolgen. Sonst wird eine Ausnahme ausgelöst. Sie können die Methode [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) verwenden, um diesen Code im UI-Thread auszuführen.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

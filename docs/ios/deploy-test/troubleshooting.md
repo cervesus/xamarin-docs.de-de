@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: e57254ce724c5660e53dcd9deaa0f4a27bf91400
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: a290f29707bd59a22f612f31e544a211488eba0d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675187"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121498"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Tests und Bereitstellung für Xamarin.iOS: Problembehandlung
 
@@ -20,19 +20,19 @@ ms.locfileid: "67675187"
 
 Das Hinzufügen von Codesignaturen und Bereitstellen von Code mit iOS kann mühsam sein. Es ist daher wichtig, sicherzustellen, dass Codesignaturzertifikate und Bereitstellungsprofile richtig konfiguriert sind.
 
-* Große Entwicklerteams sollten nicht die im Folgenden dargestellte Schaltfläche „Fix issue“ (Problem beheben) in Xcode verwenden:
+- Große Entwicklerteams sollten nicht die im Folgenden dargestellte Schaltfläche „Fix issue“ (Problem beheben) in Xcode verwenden:
 
     [![](troubleshooting-images/fixissue.png "Das Dialogfeld „Problem beheben“")](troubleshooting-images/fixissue.png#lightbox)
 
     Über diese Schaltfläche werden neue Bereitstellungsprofile und Zertifikate erstellt. Bestenfalls wird immer dann ein Bereitstellungsprofil erstellt, wenn ein Teammitglied auf die Schaltfläche klickt, was lediglich zu einer unübersichtlichen Verwaltung von Profilen führt. Im schlimmsten Fall werden jedoch die Zertifikate aller Personen im Unternehmen widerrufen, sodass deren Apps nicht mehr funktionieren.
 
-* Behalten Sie beim Keychain-Zugriff den Überblick, und löschen Sie abgelaufene Zertifikate und Profile. Enterprise-Zertifikate sind drei Jahre lang gültig, während andere Zertifikate bereits nach einem Jahr ablaufen. Zertifikate können nicht erneuert werden. Es müssen daher kurz vor Ablauf der alten Zertifikate neue erstellt werden. Achten Sie darauf, alte Zertifikate zu widerrufen und zu löschen und Apps mit neuen Zertifikaten erneut zu signieren.
+- Behalten Sie beim Keychain-Zugriff den Überblick, und löschen Sie abgelaufene Zertifikate und Profile. Enterprise-Zertifikate sind drei Jahre lang gültig, während andere Zertifikate bereits nach einem Jahr ablaufen. Zertifikate können nicht erneuert werden. Es müssen daher kurz vor Ablauf der alten Zertifikate neue erstellt werden. Achten Sie darauf, alte Zertifikate zu widerrufen und zu löschen und Apps mit neuen Zertifikaten erneut zu signieren.
 
-* Entfernen Sie beim Installieren der neuen Bereitstellungsprofile die alten Profile. Dies bedeutet, dass Visual Studio für Mac nicht entscheiden muss, welches Profil verwendet werden soll. Löschen Sie hierzu zunächst das Profil im Apple Developer Center, und navigieren Sie anschließend zu *Preferences > Your Account > View Details...* (Einstellungen > Ihr Konto > Details anzeigen... ). Wählen Sie das Bereitstellungsprofil aus, und klicken Sie auf **Show in Finder** (Im Finder anzeigen). Dadurch wird der Speicherort des Profils im Mac-Dateisystem angezeigt. Anschließend kann es mit dem Finder gelöscht werden.
+- Entfernen Sie beim Installieren der neuen Bereitstellungsprofile die alten Profile. Dies bedeutet, dass Visual Studio für Mac nicht entscheiden muss, welches Profil verwendet werden soll. Löschen Sie hierzu zunächst das Profil im Apple Developer Center, und navigieren Sie anschließend zu *Preferences > Your Account > View Details...* (Einstellungen > Ihr Konto > Details anzeigen... ). Wählen Sie das Bereitstellungsprofil aus, und klicken Sie auf **Show in Finder** (Im Finder anzeigen). Dadurch wird der Speicherort des Profils im Mac-Dateisystem angezeigt. Anschließend kann es mit dem Finder gelöscht werden.
 
-* Stellen Sie sicher, dass alle erforderlichen Zertifikate und die zugehörigen privaten Schlüssel verfügbar sind. Jedes Team benötigt ein Entwicklerzertifikat zur Installation von Apps auf eigenen Geräten und ein Verteilungszertifikat zur Installation auf anderen Geräten.
+- Stellen Sie sicher, dass alle erforderlichen Zertifikate und die zugehörigen privaten Schlüssel verfügbar sind. Jedes Team benötigt ein Entwicklerzertifikat zur Installation von Apps auf eigenen Geräten und ein Verteilungszertifikat zur Installation auf anderen Geräten.
 
-* Starten Sie Xcode und Visual Studio für Mac/Visual Studio neu, wenn ein neues Bereitstellungsprofil oder Zertifikat installiert wird.
+- Starten Sie Xcode und Visual Studio für Mac/Visual Studio neu, wenn ein neues Bereitstellungsprofil oder Zertifikat installiert wird.
 
 ## <a name="testflight"></a>TestFlight
 

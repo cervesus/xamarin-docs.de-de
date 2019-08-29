@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: fc14c2279fd8ca7e1d67dcf58f98af33a5e4d87f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b976f540fb5b9aa7ea86cabb5b50276e53bed9a6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525468"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119810"
 ---
 # <a name="publishing-to-google-play"></a>Veröffentlichung in Google Play
 
@@ -246,10 +246,10 @@ Nachdem Sie auf **Zulassen** geklickt haben, meldet der Browser _Empfangener Üb
 
 Als Nächstes wird das Dialogfeld **Google Play-Titel** angezeigt. Google Play bietet vier mögliche Versionen zum Hochladen Ihrer App:
 
-* **Alpha**: Wird zum Hochladen einer sehr frühen Version der App zu einer kleinen Liste von Testern verwendet.
-* **Beta**: Wird zum Hochladen einer frühen Version der App zu einer größeren Liste von Testern verwendet.
-* **Rollout**: Erlaubt, dass ein prozentualer Anteil von Benutzern eine aktualisierte Version der App erhält. Dadurch ist es möglich, den Prozentsatz langsam von etwas 10 % der Benutzer auf 100 % zu erhöhen, während Sie Probleme bereinigen.
-* **Production** (Produktion): Wählen Sie diesen Titel aus, wenn die App aus dem Google Play Store vollständig verteilt werden kann.
+- **Alpha**: Wird zum Hochladen einer sehr frühen Version der App zu einer kleinen Liste von Testern verwendet.
+- **Beta**: Wird zum Hochladen einer frühen Version der App zu einer größeren Liste von Testern verwendet.
+- **Rollout**: Erlaubt, dass ein prozentualer Anteil von Benutzern eine aktualisierte Version der App erhält. Dadurch ist es möglich, den Prozentsatz langsam von etwas 10 % der Benutzer auf 100 % zu erhöhen, während Sie Probleme bereinigen.
+- **Production** (Produktion): Wählen Sie diesen Titel aus, wenn die App aus dem Google Play Store vollständig verteilt werden kann.
 
 Wählen Sie aus, welcher Google Play-Track zum Hochladen der App verwendet werden soll, und klicken Sie auf **Hochladen**. Wenn Sie **Rollout** auswählen, stellen Sie sicher, dass sie einen Prozentwert eingeben:
 

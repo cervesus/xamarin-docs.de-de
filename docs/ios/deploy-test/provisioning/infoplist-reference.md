@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/18/2017
-ms.openlocfilehash: 654eca1098f9486e0c41fd296b3f8d381ac7ea34
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2a61a4a313fa23b5cdc629279bee39f1eed792cc
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105375"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120506"
 ---
 # <a name="infoplist-reference-for-xamarinios"></a>Info.plist-Referenz für Xamarin.iOS
 
@@ -22,8 +22,8 @@ Weitere Informationen zur Verwendung von Info.plist-Schlüsseln finden Sie im Ar
 
 Das Zugreifen auf den Standort des Benutzers erfordert Änderungen an „Info.plist“. Die folgenden Schlüssel, die mit den Standortdaten zusammenhängen, sollten festgelegt werden: 
 
-* **NSLocationWhenInUseUsageDescription**: Für den Zugriff auf den Standort des Benutzers während dieser mit Ihrer App interagiert. 
-* **NSLocationAlwaysUsageDescription**: Für den Zugriff Ihrer App auf den Standort des Benutzers aus dem Hintergrund.
+- **NSLocationWhenInUseUsageDescription**: Für den Zugriff auf den Standort des Benutzers während dieser mit Ihrer App interagiert. 
+- **NSLocationAlwaysUsageDescription**: Für den Zugriff Ihrer App auf den Standort des Benutzers aus dem Hintergrund.
 
 ## <a name="photos"></a>Fotos 
 
@@ -49,7 +49,7 @@ NSBluetoothPeripheralUsageDescription
 
 NSMicrophoneUsageDescription 
 
-## <a name="camera"></a>Kamera 
+## <a name="camera"></a>Camera 
     
 NSCameraUsageDescription 
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 993588a46c8d7048c7494908d6f59a5bbe2ddda6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0702241b5dbc744bf40c59928103d92a73a4c462
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526632"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121219"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Manuelle Bereitstellung für Xamarin.iOS
 
@@ -222,9 +222,9 @@ Die neuen Zertifikate oder Bereitstellungsprofile sind in Visual Studio für Mac
 
 Apple stellt eine Auswahl an speziellen Anwendungsdiensten, auch Funktionen genannt, bereit, die für eine Xamarin.iOS-Anwendung aktiviert werden können. Diese Anwendungsdienste müssen im iOS-Bereitstellungsportal beim Erstellen der **App-ID** und auch in der **Entitlements.plist**-Datei, die Teil des Xamarin.iOS-Anwendungsprojekts ist, konfiguriert werden. Informationen zum Hinzufügen von Anwendungsdiensten zu Ihrer App finden Sie in den Leitfäden [Introduction to Capabilities (Einführung in Funktionen)](~/ios/deploy-test/provisioning/capabilities/index.md) und [Working with Entitlements (Arbeiten mit Berechtigungen)](~/ios/deploy-test/provisioning/entitlements.md).
 
-* Erstellen Sie eine App-ID mit den erforderlichen App-Diensten.
-* Erstellen Sie ein neues [Bereitstellungsprofil](#provisioningprofile), das diese App-ID enthält.
-* Legen Sie Berechtigungen im Xamarin.iOS-Projekt fest
+- Erstellen Sie eine App-ID mit den erforderlichen App-Diensten.
+- Erstellen Sie ein neues [Bereitstellungsprofil](#provisioningprofile), das diese App-ID enthält.
+- Legen Sie Berechtigungen im Xamarin.iOS-Projekt fest
 
 ## <a name="deploying-to-a-device"></a>Bereitstellen auf einem Gerät
 

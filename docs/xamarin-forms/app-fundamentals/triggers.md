@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: e21ae2c335a1ffe410317ef8870ee074a3a5ebe2
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: d9e3055130a66fe240bf378ad2f63679e71bec14
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629629"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121136"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -24,13 +24,13 @@ Sie können einen Trigger direkt zu einem Steuerelement zuweisen oder zu einem R
 
 Es gibt vier Typen von Triggern:
 
-* [Eigenschaftstrigger:](#property) tritt auf, wenn eine Eigenschaft eines Steuerelements auf einen bestimmten Wert festgelegt wird.
+- [Eigenschaftstrigger:](#property) tritt auf, wenn eine Eigenschaft eines Steuerelements auf einen bestimmten Wert festgelegt wird.
 
-* [Datentrigger:](#data) nutzt Datenbindung, um auf Grundlage der Eigenschaften eines anderen Steuerelements auszulösen.
+- [Datentrigger:](#data) nutzt Datenbindung, um auf Grundlage der Eigenschaften eines anderen Steuerelements auszulösen.
 
-* [Ereignistrigger:](#event) tritt auf, wenn ein Ereignis auf dem Steuerelement auftritt.
+- [Ereignistrigger:](#event) tritt auf, wenn ein Ereignis auf dem Steuerelement auftritt.
 
-* [Multitrigger:](#multi) ermöglicht das Festlegen mehrerer Triggerbedingungen, unter denen eine Aktion auftritt.
+- [Multitrigger:](#multi) ermöglicht das Festlegen mehrerer Triggerbedingungen, unter denen eine Aktion auftritt.
 
 <a name="property" />
 
@@ -52,15 +52,15 @@ In diesem Beispiel wird ein Trigger veranschaulicht, der eine `Entry`-Hintergrun
 
 Die folgenden Bestandteile der Deklaration des Triggers sind wichtig:
 
-* **TargetType:** der Steuerelementtyp, für den der Trigger gilt.
+- **TargetType:** der Steuerelementtyp, für den der Trigger gilt.
 
-* **Property:** die Eigenschaft des Steuerelements, das überwacht wird.
+- **Property:** die Eigenschaft des Steuerelements, das überwacht wird.
 
-* **Value:** der Wert, der die Aktivierung des Triggers auslöst, wenn er bei der überwachten Eigenschaft auftritt.
+- **Value:** der Wert, der die Aktivierung des Triggers auslöst, wenn er bei der überwachten Eigenschaft auftritt.
 
-* **Setter:** eine Sammlung von `Setter`-Elementen kann hinzugefügt werden, wenn die Bedingung des Triggers erfüllt wird. Sie müssen `Property` und `Value` angeben, um diese Eigenschaft festzulegen.
+- **Setter:** eine Sammlung von `Setter`-Elementen kann hinzugefügt werden, wenn die Bedingung des Triggers erfüllt wird. Sie müssen `Property` und `Value` angeben, um diese Eigenschaft festzulegen.
 
-* **EnterActions und ExitActions:** werden im Code geschrieben und können zusätzlich zu (oder anstelle von) `Setter`-Elementen verwendet werden (nicht gezeigt). Sie werden [unten beschrieben](#enterexit).
+- **EnterActions und ExitActions:** werden im Code geschrieben und können zusätzlich zu (oder anstelle von) `Setter`-Elementen verwendet werden (nicht gezeigt). Sie werden [unten beschrieben](#enterexit).
 
 ### <a name="applying-a-trigger-using-a-style"></a>Anwenden eines Triggers mit einer Formatvorlage
 
@@ -140,11 +140,11 @@ Die Klasse selbst implementiert `TriggerAction`, d.h. sie sollte die `Invoke`-Me
 
 Eine Implementierung einer Triggeraktion sollte folgende Aktionen durchführen:
 
-* Die generische `TriggerAction<T>`-Klasse mit dem generischen Parameter implementieren, der dem Typ des Steuerelements entspricht, auf das der Trigger angewendet wird. Sie können übergeordnete Klassen wie `VisualElement` verwenden, um Triggeraktionen zu schreiben, die für eine Vielzahl von Steuerelementen funktionieren, oder ein Steuerelementtyp wie `Entry` anzugeben.
+- Die generische `TriggerAction<T>`-Klasse mit dem generischen Parameter implementieren, der dem Typ des Steuerelements entspricht, auf das der Trigger angewendet wird. Sie können übergeordnete Klassen wie `VisualElement` verwenden, um Triggeraktionen zu schreiben, die für eine Vielzahl von Steuerelementen funktionieren, oder ein Steuerelementtyp wie `Entry` anzugeben.
 
-* Die `Invoke`-Methode überschreiben. Diese wird immer dann aufgerufen, wenn die Triggerbedingungen erfüllt werden.
+- Die `Invoke`-Methode überschreiben. Diese wird immer dann aufgerufen, wenn die Triggerbedingungen erfüllt werden.
 
-* Eigenschaften optional zur Verfügung stellen, die im XAML-Code festgelegt werden können, wenn der Trigger deklariert wird (z.B. `Anchor`, `Scale` und `Length` im folgenden Beispiel).
+- Eigenschaften optional zur Verfügung stellen, die im XAML-Code festgelegt werden können, wenn der Trigger deklariert wird (z.B. `Anchor`, `Scale` und `Length` im folgenden Beispiel).
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -236,9 +236,9 @@ Um diesen Konverter in einem Multitrigger zu verwenden, fügen Sie ihn zunächst
 
 Der XAML-Code wird unten veranschaulicht. Beachten Sie die folgenden Unterschiede gegenüber dem ersten Beispiel für einen Multitrigger:
 
-* Für die Schaltfläche ist standardmäßig `IsEnabled="false"` festgelegt.
-* Die Bedingungen des Multitriggers verwenden den Konverter, um den Wert `Text.Length` in einen `boolean`-Wert zu konvertieren.
-* Wenn alle Bedingungen den Wert `true` aufweisen, das Setter-Element legt `true` für die `IsEnabled`-Eigenschaft der Schaltfläche fest.
+- Für die Schaltfläche ist standardmäßig `IsEnabled="false"` festgelegt.
+- Die Bedingungen des Multitriggers verwenden den Konverter, um den Wert `Text.Length` in einen `boolean`-Wert zu konvertieren.
+- Wenn alle Bedingungen den Wert `true` aufweisen, das Setter-Element legt `true` für die `IsEnabled`-Eigenschaft der Schaltfläche fest.
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />

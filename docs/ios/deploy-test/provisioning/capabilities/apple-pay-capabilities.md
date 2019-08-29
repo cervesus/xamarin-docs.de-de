@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: de748fc184106d63db4f267fd4ae8bfd4e866c14
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 856ed31cd2ee8fdc657cd1437f21052e1d7a79f2
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830959"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065494"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Apple Pay-Funktionen in Xamarin.iOS
 
@@ -146,7 +146,7 @@ Führen Sie die folgenden Schritte aus, um ein Zertifikat zu erstellen:
 
 Weitere Informationen zur Verwendung von Apple Pay finden Sie im folgenden Handbuch:
 
-*   [Introduction to Apple Pay (Einführung in Apple Pay)](~/ios/platform/apple-pay.md)
+* [Introduction to Apple Pay (Einführung in Apple Pay)](~/ios/platform/apple-pay.md)
 
 ## <a name="next-steps"></a>Nächste Schritte
  

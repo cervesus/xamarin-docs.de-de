@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 722dfbb301d6698ee58d42029c8f6b82ecddc37b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 14be0fec50138aed7b2b3e8d48d49cad86abbb2b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508994"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119418"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android-Umgebung
 
@@ -58,16 +58,16 @@ In Xamarin.Android 6.1 hinzugefügt.
 
 Xamarin.Android unterstützt die folgenden Systemeigenschaften, die entweder über `adb shell setprop` oder den Buildvorgang `$(AndroidEnvironment)` festgelegt werden können.
 
-* `debug.mono.debug`
-* `debug.mono.env`
-* `debug.mono.gc`
-* `debug.mono.log`
-* `debug.mono.max_grefc`
-* `debug.mono.profile`
-* `debug.mono.runtime_args`
-* `debug.mono.trace`
-* `debug.mono.wref`
-* `XA_HTTP_CLIENT_HANDLER_TYPE`
+- `debug.mono.debug`
+- `debug.mono.env`
+- `debug.mono.gc`
+- `debug.mono.log`
+- `debug.mono.max_grefc`
+- `debug.mono.profile`
+- `debug.mono.runtime_args`
+- `debug.mono.trace`
+- `debug.mono.wref`
+- `XA_HTTP_CLIENT_HANDLER_TYPE`
 
 ### `debug.mono.debug`
 
@@ -90,15 +90,15 @@ Die ist genauso, als würde die Systemeigenschaft `debug.mono.log` `gc` enthalte
 Steuert, welche Zusatzinformationen Xamarin.Android in `adb logcat` erfasst.
 Dabei handelt es sich um eine Zeichenfolge mit Trennzeichen (`,`), die einen der folgenden Werte enthält:
 
-* `all`: *Alle* Meldungen werden ausgegeben. Das ist nur selten sinnvoll, da es auch `lref`-Meldungen einschließt.
-* `assembly`: `.apk` und Assemblyanalysemeldungen werden ausgegeben.
-* `gc`: Meldungen, die mit GC in Verbindung stehen, werden ausgegeben.
-* `gref`: Meldungen zu globalen JNI-Verweisen werden ausgegeben.
-* `lref`: Meldungen zu lokalen JNI-Verweisen werden ausgegeben.  
+- `all`: *Alle* Meldungen werden ausgegeben. Das ist nur selten sinnvoll, da es auch `lref`-Meldungen einschließt.
+- `assembly`: `.apk` und Assemblyanalysemeldungen werden ausgegeben.
+- `gc`: Meldungen, die mit GC in Verbindung stehen, werden ausgegeben.
+- `gref`: Meldungen zu globalen JNI-Verweisen werden ausgegeben.
+- `lref`: Meldungen zu lokalen JNI-Verweisen werden ausgegeben.  
     *Hinweis:* Dadurch wird eine *große Anzahl von Einträgen* in `adb logcat` erstellt.  
     In Xamarin.Android 5.1 wird dadurch auch eine `.__override__/lrefs.txt`-Datei erstellt, die *sehr groß* werden kann.  
     Vermeiden Sie dies.
-* `timing`: Informationen zur zeitlichen Steuerung von Methoden werden ausgegeben. Dadurch werden auch die Dateien `.__override__/methods.txt` und `.__override__/counters.txt` erstellt.
+- `timing`: Informationen zur zeitlichen Steuerung von Methoden werden ausgegeben. Dadurch werden auch die Dateien `.__override__/methods.txt` und `.__override__/counters.txt` erstellt.
 
 
 ### `debug.mono.max_grefc`
@@ -131,8 +131,8 @@ Sie entspricht der Option `mono --trace` und verwendet die gleichen Werte. (Weit
 
 Die Systemeigenschaft `debug.mono.wref` ermöglicht das Überschreiben des erkannten schwachen JIN-Verweismechanismus (Weak Reference). Es gibt zwei unterstützte Werte:
 
-* `jni`: Schwache JNI-Verweise werden verwendet. Diese werden von `JNIEnv::NewWeakGlobalRef()` erstellt und von `JNIEnv::DeleteWeakGlobalREf()` gelöscht.
-* `java`: Globale JNI-Verweise werden verwendet. Diese verweisen auf `java.lang.WeakReference`-Instanzen.
+- `jni`: Schwache JNI-Verweise werden verwendet. Diese werden von `JNIEnv::NewWeakGlobalRef()` erstellt und von `JNIEnv::DeleteWeakGlobalREf()` gelöscht.
+- `java`: Globale JNI-Verweise werden verwendet. Diese verweisen auf `java.lang.WeakReference`-Instanzen.
 
 `java` wird standardmäßig von API-7 bis API-19 (Kit Kat) mit aktiviertem ART verwendet. (API-8 hat `jni`-Verweise hinzugefügt, und ART hat `jni`-Verweise *kaputt gemacht*.)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 59df461c52cd01187ca3a9fc25fe741342910061
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: e5f322ece2775f975ab3737eb20ebbd854afa6c4
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854534"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70064837"
 ---
 # <a name="debugging-xamarinios-apps"></a>Debuggen von Xamarin.iOS-Apps
 
@@ -108,11 +108,11 @@ Greifen Sie auf das **Fenster für Haltepunkteigenschaften** zu, um einen beding
 
 - Um einen neuen bedingten Haltepunkt hinzuzufügen, klicken Sie mit der rechten Maustaste links der Zeilennummer des Codes, an der Sie einen Haltepunkt setzen möchten, auf den Rand des Editors, und wählen Sie „Neuer Haltepunkt“:
 
-    [![](debugging-in-xamarin-ios-images/image4.png "„Neuer Haltepunkt“ auswählen")](debugging-in-xamarin-ios-images/image4.png#lightbox)
+  [![](debugging-in-xamarin-ios-images/image4.png "„Neuer Haltepunkt“ auswählen")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - Klicken Sie mit der rechten Maustaste auf den Haltepunkt, und klicken Sie auf **Haltepunkteigenschaften**, oder wählen Sie im **Pad für Haltepunkte** die unten dargestellte Schaltfläche „Einstellungen“ aus, um eine Bedingung zu einem bestehenden Haltepunkt hinzuzufügen.
 
-    [![](debugging-in-xamarin-ios-images/image5.png "Das Pad „Haltepunkte“")](debugging-in-xamarin-ios-images/image5.png#lightbox)
+  [![](debugging-in-xamarin-ios-images/image5.png "Das Pad „Haltepunkte“")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 
 Anschließend können Sie die Bedingung eingeben, unter der der Haltepunkt auftreten soll:
@@ -161,9 +161,9 @@ In Visual Studio sehen diese wie folgt aus:
 Diese lauten wie folgt:
 
 - **Wiedergabe/Anhalten**: Dadurch wird die Ausführung des Codes gestartet oder angehalten, bis der nächste Haltepunkt erreicht wird.
-- **Prozedurschritt (F11)**: Dadurch wird die nächste Codezeile ausgeführt. Wenn die nächste Zeile ein Funktionsaufruf ist, wird der Prozedurschritt die Funktion ausführen und in der nächsten Codezeile _nach_ der Funktion anhalten.
-- **Einzelschritt (F10)**: Dadurch wird ebenfalls die nächste Codezeile ausgeführt. Wenn die nächste Zeile ein Funktionsaufruf ist, wird der Einzelschritt in der ersten Zeile der Funktion anhalten, wodurch Sie die Funktion dann Zeile für Zeile debuggen können. Wenn die nächste Zeile keine Funktion ist, funktioniert diese Schaltfläche genauso wie der Prozedurschritt.
-- **Rücksprung (Umschalttaste + F11)**: Dadurch wird zu der Zeile zurückgekehrt, in der die aktuelle Funktion aufgerufen wurde.
+- **Prozedurschritt (F11)** : Dadurch wird die nächste Codezeile ausgeführt. Wenn die nächste Zeile ein Funktionsaufruf ist, wird der Prozedurschritt die Funktion ausführen und in der nächsten Codezeile _nach_ der Funktion anhalten.
+- **Einzelschritt (F10)** : Dadurch wird ebenfalls die nächste Codezeile ausgeführt. Wenn die nächste Zeile ein Funktionsaufruf ist, wird der Einzelschritt in der ersten Zeile der Funktion anhalten, wodurch Sie die Funktion dann Zeile für Zeile debuggen können. Wenn die nächste Zeile keine Funktion ist, funktioniert diese Schaltfläche genauso wie der Prozedurschritt.
+- **Rücksprung (Umschalttaste + F11)** : Dadurch wird zu der Zeile zurückgekehrt, in der die aktuelle Funktion aufgerufen wurde.
 
 Detailliertere Dokumentationen zum Debuggen finden Sie unter [Navigate Code with the Visual Studio Debugger (Navigieren durch den Code mit dem Visual Studio Debugger)](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger).
 

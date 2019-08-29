@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f0d6d2343350455a101033aced7cec0c31695503
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: 477bb7289588d0ab1b1dd29909c7dc36f2b2dfac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353229"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121427"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Gerätebereitstellung für Xamarin.iOS
 
@@ -47,17 +47,17 @@ Anhand dieser Schritte stellen Sie sicher, dass alle Komponenten, die während d
 
 Es gibt zwei Möglichkeiten zum Bereitstellen Ihres iOS-Geräts:
 
-* **Automatisch (Empfohlen)**: Wählen Sie das Schema **Automatische Bereitstellung** in Ihrem Projekt aus, um Visual Studio Ihre Signieridentitäten, App-IDs und Bereitstellungsprofile automatisch erstellen und verwalten zu lassen. Weitere Informationen zur automatischen Verwaltung der Bereitstellung finden Sie im Leitfaden [Automatische Bereitstellung](automatic-provisioning.md). Dies ist die empfohlene Methode der Bereitstellung eines iOS-Geräts.
+- **Automatisch (Empfohlen)** : Wählen Sie das Schema **Automatische Bereitstellung** in Ihrem Projekt aus, um Visual Studio Ihre Signieridentitäten, App-IDs und Bereitstellungsprofile automatisch erstellen und verwalten zu lassen. Weitere Informationen zur automatischen Verwaltung der Bereitstellung finden Sie im Leitfaden [Automatische Bereitstellung](automatic-provisioning.md). Dies ist die empfohlene Methode der Bereitstellung eines iOS-Geräts.
 
-* **Manuell**: Signieridentitäten, App-IDs und Bereitstellungsprofile können über das Apple Developer Portal erstellt und verwaltet werden, wie im Leitfaden [Manuelle Bereitstellung](manual-provisioning.md) beschrieben. Diese Artefakte können dann wie im Leitfaden [Apple Account Management](~/cross-platform/macios/apple-account-management.md) beschrieben verwaltet werden.
+- **Manuell**: Signieridentitäten, App-IDs und Bereitstellungsprofile können über das Apple Developer Portal erstellt und verwaltet werden, wie im Leitfaden [Manuelle Bereitstellung](manual-provisioning.md) beschrieben. Diese Artefakte können dann wie im Leitfaden [Apple Account Management](~/cross-platform/macios/apple-account-management.md) beschrieben verwaltet werden.
 
 ## <a name="provisioning-for-application-services"></a>Bereitstellung für Anwendungsdienste
 
 Apple stellt eine Auswahl an speziellen Anwendungsdiensten, auch Funktionen genannt, bereit, die für eine Xamarin.iOS-Anwendung aktiviert werden können. Diese Anwendungsdienste müssen im iOS-Bereitstellungsportal beim Erstellen der **App-ID** und auch in der **Entitlements.plist**-Datei, die Teil des Xamarin.iOS-Anwendungsprojekts ist, konfiguriert werden. Informationen zum Hinzufügen von Anwendungsdiensten zu Ihrer App finden Sie in den Leitfäden [Introduction to Capabilities (Einführung in Funktionen)](~/ios/deploy-test/provisioning/capabilities/index.md) und [Working with Entitlements (Arbeiten mit Berechtigungen)](~/ios/deploy-test/provisioning/entitlements.md).
 
-* Erstellen Sie eine App-ID mit den erforderlichen App-Diensten.
-* Erstellen Sie ein neues [Bereitstellungsprofil](#provisioning-your-device), das diese App-ID enthält.
-* Legen Sie Berechtigungen im Xamarin.iOS-Projekt fest
+- Erstellen Sie eine App-ID mit den erforderlichen App-Diensten.
+- Erstellen Sie ein neues [Bereitstellungsprofil](#provisioning-your-device), das diese App-ID enthält.
+- Legen Sie Berechtigungen im Xamarin.iOS-Projekt fest
 
 ## <a name="related-links"></a>Verwandte Links
 

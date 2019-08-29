@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5722a3a208942e8ecef6e5b3c092ac6c9825395f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 842738d45bf7c8e86f7d6a748bd9968105ece785
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890162"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121532"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 
@@ -35,13 +35,13 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
 > [!IMPORTANT]
 > Diese Schritte zur Problembehandlung sind in erster Linie für Probleme gedacht, die während der ersten Einrichtung auf einem neuen System auftreten.  Wenn Sie die Verbindung zuvor erfolgreich in einer bestimmten Umgebung genutzt haben und diese plötzlich oder zeitweilig nicht mehr funktioniert, können Sie (in den meisten Fällen) direkt mit der Überprüfung, ob eine der folgenden Methoden hilfreich ist, fortfahren: 
-> * Beenden Sie die verbliebenen Prozesse, wie unten unter [Fehler aufgrund von vorhandenen Buildprozessen](#errors) beschrieben wird. 
-> * Deaktivieren Sie die Agents, wie unter [Deaktivieren der Broker-, IDB-, Build- und Designer-Agents](#clearing) beschrieben, und verwenden Sie dann eine LAN-Internetverbindung, und stellen Sie eine Verbindung direkt über die IP-Adresse her wie unter [Es konnte keine Verbindung mit MacBuildHost.local hergestellt werden. Versuchen Sie es erneut.](#tryagain) beschrieben.  
+> - Beenden Sie die verbliebenen Prozesse, wie unten unter [Fehler aufgrund von vorhandenen Buildprozessen](#errors) beschrieben wird. 
+> - Deaktivieren Sie die Agents, wie unter [Deaktivieren der Broker-, IDB-, Build- und Designer-Agents](#clearing) beschrieben, und verwenden Sie dann eine LAN-Internetverbindung, und stellen Sie eine Verbindung direkt über die IP-Adresse her wie unter [Es konnte keine Verbindung mit MacBuildHost.local hergestellt werden. Versuchen Sie es erneut.](#tryagain) beschrieben.  
 > Wenn keine dieser Maßnahmen das Problem lösen kann, befolgen Sie die Anweisungen in [Schritt 9](#stepnine), um einen neuen Fehlerbericht einzureichen.
 
 1. Überprüfen Sie, dass Sie kompatible Xamarin.iOS-Versionen auf Ihrem Mac installiert haben. Um dies mit Visual Studio 2017 durchzuführen, stellen Sie sicher, dass Sie sich im **stabilen** Verteilungskanal in Visual Studio für Mac befinden. Stellen Sie in Visual Studio 2015 und früher sicher, dass Sie sich auf beiden IDEs auf dem gleichen Vertriebskanal befinden.
-    * Wechseln Sie in Visual Studio für Mac zu **Visual Studio für Mac > Nach Updates suchen...** , um den **Updatekanal** anzuzeigen oder zu ändern.
-    * Überprüfen Sie in Visual Studio 2015 und früher den Verteilungskanal unter **Extras > Optionen > Xamarin > Andere**.
+    - Wechseln Sie in Visual Studio für Mac zu **Visual Studio für Mac > Nach Updates suchen...** , um den **Updatekanal** anzuzeigen oder zu ändern.
+    - Überprüfen Sie in Visual Studio 2015 und früher den Verteilungskanal unter **Extras > Optionen > Xamarin > Andere**.
 
 2. Stellen Sie sicher, dass die **Remoteanmeldung** auf dem Mac aktiviert ist. Legen Sie den Zugriff für **Nur diese Benutzer** fest, und stellen Sie sicher, dass Ihr Mac-Benutzer in der Liste oder Gruppe inbegriffen ist:
 

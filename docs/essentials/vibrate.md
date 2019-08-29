@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: Vibrieren'
+title: 'Xamarin.Essentials: Vibration'
 description: In diesem Dokument wird die Klasse „Vibration“ in Xamarin.Essentials beschrieben, mit der Sie die Vibrationsfunktion für eine gewünschte Zeitspanne starten und anhalten können.
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: d9bf7a1e5e0d15f1fdc909745cd439115b6f8463
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898935"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120112"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Vibrieren
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Vibration
 
 Mit der Klasse **Vibration** können Sie die Vibrationsfunktion für eine gewünschte Zeitspanne starten und anhalten.
 
@@ -40,7 +40,7 @@ Alternativ können Sie das Android-Manifest aktualisieren:
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie unter **Android-Manifest** den Bereich **Erforderliche Berechtigungen:**, und aktivieren Sie die Berechtigung **VIBRATE** (Vibrieren). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
+Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie unter **Android-Manifest** den Bereich **Erforderliche Berechtigungen:** , und aktivieren Sie die Berechtigung **VIBRATE** (Vibrieren). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -107,9 +107,9 @@ Keine Plattformunterschiede.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* Vibriert nur, wenn das Gerät auf „Beim Klingeln vibrieren“ eingestellt ist.
-* Vibriert immer für 500 Millisekunden.
-* Es ist nicht möglich, die Vibration abzubrechen.
+- Vibriert nur, wenn das Gerät auf „Beim Klingeln vibrieren“ eingestellt ist.
+- Vibriert immer für 500 Millisekunden.
+- Es ist nicht möglich, die Vibration abzubrechen.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
