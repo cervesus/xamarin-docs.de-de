@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: eac7d316b65b57231d2fc25ef6b859293650d3f8
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: e4c8e404f447dd88b338123335a291bc9f23e449
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "53709591"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119008"
 ---
 # <a name="metadata-and-markdown-template"></a>Metadaten und Markdownvorlage
 
@@ -65,12 +65,12 @@ Markdown verwendet Sonderzeichen wie z.B. \*, \`, und \# für die Formatierung. 
 ## <a name="file-name"></a>Dateiname
 
 Dateinamen verwenden die folgenden Regeln:
-* Es sollten nur Kleinbuchstaben, Zahlen und Bindestriche enthalten sein.
-* Keine Leer- oder Interpunktionszeichen. Verwenden Sie die Bindestriche zum Trennen von Wörtern und Zahlen im Dateinamen.
-* Verwenden Sie genaue Aktionsverben wie „entwickeln“, „kaufen“, „erstellen“ oder „beheben“. Keine englischen Wörter mit der Endung „-ing“
-* Keine kurzen Wörter – verwenden Sie nicht „ein/eine/einer“, „und“, „der/die/das“, „in“, „oder“ usw.
-* Muss in Markdown geschrieben werden und die Dateierweiterung .md verwenden.
-* Halten Sie Dateinamen einigermaßen kurz. Sie sind Teil der URL für Ihre Artikel.
+- Es sollten nur Kleinbuchstaben, Zahlen und Bindestriche enthalten sein.
+- Keine Leer- oder Interpunktionszeichen. Verwenden Sie die Bindestriche zum Trennen von Wörtern und Zahlen im Dateinamen.
+- Verwenden Sie genaue Aktionsverben wie „entwickeln“, „kaufen“, „erstellen“ oder „beheben“. Keine auf „-ing“ endenden Worte dürfen verwendet werden.
+- Keine kurzen Worte wie a, and, the, in, or usw. sind erlaubt.
+- Muss in Markdown geschrieben werden und die Dateierweiterung .md verwenden.
+- Halten Sie Dateinamen einigermaßen kurz. Sie sind Teil der URL für Ihre Artikel.
 
 
 
