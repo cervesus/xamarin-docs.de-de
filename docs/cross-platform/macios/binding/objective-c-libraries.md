@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 36b5ace881ba8f7fb45fef9d0350ffca67e0c951
-ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
-ms.translationtype: HT
+ms.openlocfilehash: df90bc764200434e8d546a1ebf61e039498517bb
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169260"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199410"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Ziel-C-Bibliotheken
 
@@ -378,23 +378,23 @@ Für jede Protokoll Definition `MyProtocol` in Ziel-C gibt es jetzt eine `IMyPro
 Jede Definition, die das [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) -Attribut enthält, generiert tatsächlich drei unterstützende Klassen, die die Vorgehensweise bei der Nutzung von Protokollen erheblich verbessern:
 
 ```csharp
-    // Full method implementation, contains all methods
-    class MyProtocol : IMyProtocol {
-        public void Say (string msg);
-        public void Listen (string msg);
-    }
+// Full method implementation, contains all methods
+class MyProtocol : IMyProtocol {
+    public void Say (string msg);
+    public void Listen (string msg);
+}
 
-    // Interface that contains only the required methods
-    interface IMyProtocol: INativeObject, IDisposable {
-        [Export ("say:")]
-        void Say (string msg);
-    }
+// Interface that contains only the required methods
+interface IMyProtocol: INativeObject, IDisposable {
+    [Export ("say:")]
+    void Say (string msg);
+}
 
-    // Extension methods
-    static class IMyProtocol_Extensions {
-        public static void Optional (this IMyProtocol this, string msg);
-        }
+// Extension methods
+static class IMyProtocol_Extensions {
+    public static void Optional (this IMyProtocol this, string msg);
     }
+}
 ```
 
 Die **Klassen Implementierung** stellt eine vollständige abstrakte Klasse bereit, mit der Sie einzelne Methoden von überschreiben und vollständige Typsicherheit erhalten können.  Da es jedoch C# nicht möglich ist, mehrere Vererbung zu unterstützen, gibt es Szenarios, in denen Sie möglicherweise eine andere Basisklasse haben, aber trotzdem eine Schnittstelle implementieren möchten, wo die
