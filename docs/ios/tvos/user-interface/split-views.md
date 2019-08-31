@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 52160d11c8c17a67a5db92e6a95f94815d54a0a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7735f53d96977041f518a0ee56fb103a449e6cba
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648926"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198199"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Arbeiten mit tvos Split View Controllers in xamarin
 
@@ -85,7 +85,7 @@ Die einfachste Möglichkeit, mit Split View-Controllern in einer xamarin. tvos-A
     [![](split-views-images/activity04.png "Inhalts Layout")](split-views-images/activity04.png#lightbox)
 1. Weisen Sie im **Eigenschaften-Explorer** auf der **Registerkarte widget** **Namen** zu, um mit Ihren C# UI-Steuerelementen im Code zu arbeiten.
 1. Speichern Sie die Änderungen.
-    
+
 -----
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).

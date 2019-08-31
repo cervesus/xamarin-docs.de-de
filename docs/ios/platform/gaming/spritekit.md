@@ -1,61 +1,61 @@
 ---
-title: SpriteKit in Xamarin.iOS
-description: Dieses Dokument beschreibt SpriteKit, dem Apple 2D-Grafiken-Framework, das SceneKit integriert, enthält die Physik und Animationen, bietet Unterstützung für die Beleuchtung und Schattierung und vieles mehr. SpriteKit kann verwendet werden, um 2D-Spiele zu erstellen.
+title: Spritekit in xamarin. IOS
+description: Dieses Dokument beschreibt das spritekit, das 2D-Grafik Framework von Apple, das in scenekit integriert ist, die Physik und Animation umfasst, Unterstützung für Beleuchtung und Schattierung bietet und vieles mehr. Spritekit kann zum Erstellen von 2D-Spielen verwendet werden.
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: ef1e9a98b76166f4ee5638d1ab9762896d1e3bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 432ae6013988946eb516a632ae054f072ca25f9a
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61293898"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200359"
 ---
-# <a name="spritekit-in-xamarinios"></a>SpriteKit in Xamarin.iOS
+# <a name="spritekit-in-xamarinios"></a>Spritekit in xamarin. IOS
 
-SpriteKit, dem die 2D-Grafiken-Framework von Apple, verfügt über einige interessante neue Features in iOS 8 und OS X Yosemite. Dazu gehören die Integration von SceneKit, Unterstützung für Shader, Beleuchtung, Schatten, Einschränkungen, Normalmap-Generierung und physikalische Enhancements. Insbesondere vereinfachen die neuen Funktionen der Physik, realistische Effekte zu einem Spiel hinzufügen.
+Spritekit, das 2D-Grafik Framework von Apple, verfügt über einige interessante neue Features in ios 8 und OS X Yosemite. Dazu zählen die Integration in scenekit, shaderunterstützung, Beleuchtung, Schatten, Einschränkungen, normale Zuordnungs Generierung und physikalische Erweiterungen. Insbesondere die neuen Physik Features erleichtern das Hinzufügen realistischer Effekte zu einem Spiel.
 
-## <a name="physics-bodies"></a>Physik Texte
+## <a name="physics-bodies"></a>Physik Körper
 
-SpriteKit umfasst eine 2D, rigidbody Physik API. Jedes Sprite verfügt über einen zugeordneten Physik Text (`SKPhysicsBody`), definiert die Physik-Eigenschaften wie Massenspeicher und Reibung, als auch die Geometrie des Texts in der Physik-Welt.
+Spritekit enthält eine 2D-, starre Body-Physik-API. Jedes Sprite verfügt über einen zugeordneten Physik`SKPhysicsBody`Text (), der die Physik Eigenschaften definiert, wie z. b. Masse und Reibung, sowie die Geometrie des Texts in der Physik-Welt.
 
-## <a name="creating-a-physics-body-from-a-texture"></a>Erstellen einen Physik Text aus einer Textur
-SpriteKit unterstützt jetzt an, dessen Struktur mit den Physik-Text, der ein Sprite abgeleitet. Dies erleichtert die Konflikte zu implementieren, die natürliche Aussehen.
+## <a name="creating-a-physics-body-from-a-texture"></a>Erstellen eines Physik Texts aus einer Textur
+Spritekit unterstützt jetzt das Ableiten des Physik Texts eines Sprite aus seiner Textur. Dadurch wird die Implementierung von Kollisionen, die natürlicher aussehen, vereinfacht.
 
-Sehen Sie sich beispielsweise in den folgenden Konflikt wie die Banana "und" Monkey-Objekt fast in der Oberfläche der einzelnen Bilder Konflikt stehen:
+Beachten Sie z. b. im folgenden Konflikt, wie sich der Banane und der Affe beinahe auf der Oberfläche jedes Bilds Konflikten:
  
-![](spritekit-images/image13.png "Die Banana \"und\" Monkey-Objekt fast in der Oberfläche der einzelnen Bilder in Konflikt stehen")
+![](spritekit-images/image13.png "Die Banane und der Affe kollidieren fast auf der Oberfläche jedes Bilds.")
 
-Ein SpriteKit kann erstellt werden solche Physik Text mit einer einzelnen Zeile des Codes möglich. Rufen Sie ganz einfach `SKPhysicsBody.Create` mit der Textur und die Größe: Sprite. PhysicsBody = SKPhysicsBody.Create (Sprite. Textur "," Sprite ". Die Größe);
+Spritekit ermöglicht das Erstellen eines solchen Physik Texts mit einer einzelnen Codezeile. Nennen `SKPhysicsBody.Create` Sie einfach mit der Textur und der Größe: Sprite. Physicsbody = skphysicsbody. Create (Sprite. Textur, Sprite. Größe);
 
-## <a name="alpha-threshold"></a>Der Alpha-Schwellenwert
+## <a name="alpha-threshold"></a>Alpha Schwellenwert
 
-Zusätzlich zu einfach die `PhysicsBody` Eigenschaft direkt auf die Geometrie, die von der Textur abgeleitet, die Anwendungen festlegen können und alpha-Schwellenwert zu steuern, wie die Geometrie abgeleitet wird. 
+Wenn Sie die `PhysicsBody` -Eigenschaft nicht nur direkt auf die von der Textur abgeleitete Geometrie festlegen, können Anwendungen einen Alpha Schwellenwert festlegen, um zu steuern, wie die Geometrie abgeleitet wird. 
 
-Der alpha Schwellenwert definiert, der minimale Alphawert, die eine Pixel in der resultierenden Physik-Text aufgenommen werden muss. Der folgende Code verursacht z. B. in einem etwas anderen Physik Text:
+Der Alpha-Schwellenwert definiert den minimalen Alpha Wert, den ein Pixel aufweisen muss, damit er in den resultierenden Physik Körper eingeschlossen werden muss. Der folgende Code führt z. b. zu einem etwas anderen Physik Körper:
 
 ```chsarp
 sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 ```
 
-Die Auswirkungen der Anpassung des alpha Schwellenwerts folgendermaßen Feinabstimmung den vorherigen Konflikt, so, dass das Monkey-Objekt greift über, wenn Sie mit der Banane Konflikt zu geraten:
+Durch die Optimierung des Alpha Schwellenwerts, wie dies der Fall ist, wird der vorherige Konflikt so optimiert, dass der Affe bei einem Konflikt mit der Banane überschritten wird:
 
-![](spritekit-images/image14.png "Das Monkey-Objekt greift über, wenn mit der Banane Konflikt zu geraten.")
+![](spritekit-images/image14.png "Der Affe wird bei einem Konflikt mit der Banane überschritten.")
  
-## <a name="physics-fields"></a>Felder für physikalisches Verhalten
+## <a name="physics-fields"></a>Physik-Felder
 
-Eine andere wunderbare Ergänzung zur SpriteKit ist das neue Physik-Feld unterstützen. Diese ermöglichen es Ihnen beispielsweise Vortex Felder hinzufügen radiale Schwerkraft und Spring-Felder, um nur einige zu nennen.
+Eine weitere hervor artige Ergänzung zu spritekit ist die neue Unterstützung für Physik-Felder. Diese ermöglichen es Ihnen, Elemente wie z. b. die Felder "Vortex", "Radiale Schwerkraft" und "Spring Fields" hinzuzufügen.
 
-Physik-Felder werden erstellt, die mithilfe der SKFieldNode-Klasse, die in einer Szene wie jede andere hinzugefügt wird `SKNode`. Es gibt eine Vielzahl von Factorymethoden auf `SKFieldNode` Physik der verschiedenen Felder erstellen. Können Sie eine Spring-Feld erstellen, durch den Aufruf `SKFieldNode.CreateSpringField()`, ein Feld radiale Schwerkraft durch Aufrufen von `SKFieldNode.CreateRadialGravityField()`und so weiter.
+Physik Felder werden mithilfe der skfieldnode-Klasse erstellt, die einer Szene wie jeder anderen `SKNode`hinzugefügt wird. Es gibt eine Vielzahl von Factorymethoden `SKFieldNode` zum Erstellen verschiedener Physik Felder. Sie können ein Spring-Feld erstellen, `SKFieldNode.CreateSpringField()`indem Sie aufrufen, ein radiales `SKFieldNode.CreateRadialGravityField()`Schweregrad Feld durch Aufrufen von usw.
 
-`SKFieldNode` Außerdem verfügt über Eigenschaften zum Steuern von Feldattributen wie z. B. die Stärke der, den Bereich des Felds und die Abnahme Feld bewirkt, dass ein.
+`SKFieldNode`verfügt auch über Eigenschaften zum Steuern von Feld Attributen, wie z. b. die Feldstärke, den Feld Bereich und die Dämpfung von Feld Erzwingung.
 
-## <a name="spring-field"></a>Spring-Feld
+## <a name="spring-field"></a>Spring Feld
 
-Beispielsweise der folgende Code erstellt ein Spring-Feld und fügt es der Szene hinzu:
+Mit dem folgenden Code wird beispielsweise ein Spring Field erstellt und der Szene hinzugefügt:
 
 ```csharp
 SKFieldNode fieldNode = SKFieldNode.CreateSpringField ();
@@ -66,7 +66,7 @@ fieldNode.Region = new SKRegion(Frame.Size);
 AddChild (fieldNode);
 ```
 
-Sie können dann füge Sprites hinzu und legen Sie ihre `PhysicsBody` Eigenschaften, damit das Feld "Physik" wie im folgenden Code wird, wenn der Benutzer den Bildschirm berührt die Sprites, betreffen:
+Anschließend können Sie Sprites hinzufügen und Ihre `PhysicsBody` Eigenschaften so festlegen, dass sich das Feld "Physik" auf die Sprites auswirkt, wie der folgende Code bewirkt, wenn der Benutzer den Bildschirm berührt:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -83,13 +83,13 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-Dies bewirkt, dass die Bananen, wie eine Feder rund um den Feldknoten einer:
+Dies bewirkt, dass die Bananen wie eine Spring um den Feld Knoten laufen:
 
-![](spritekit-images/image15.png "Die Bananen einer wie einer Feder rund um den Feldknoten")
+![](spritekit-images/image15.png "Die Bananen laufen wie eine Spring um den Feld Knoten.")
  
-## <a name="radial-gravity-field"></a>Radiale Schwerkraft-Feld
+## <a name="radial-gravity-field"></a>Radiales Schweregrad Feld
 
-Hinzufügen eines anderen Felds ist ähnlich. Der folgende Code erstellt z. B. ein Feld für die radiale Schwerkraft:
+Das Hinzufügen eines anderen Felds ist ähnlich. Mit dem folgenden Code wird beispielsweise ein radiales Schwerpunkt Feld erstellt:
 
 ```csharp
 SKFieldNode fieldNode = SKFieldNode.CreateRadialGravityField ();
@@ -99,6 +99,6 @@ fieldNode.Strength = 10.0f;
 fieldNode.Falloff = 1.0f;
 ```
 
-Dies ergibt ein anderes-Force-Feld, in denen die Bananen Radial über das Feld abgerufen werden:
+Dies führt zu einem anderen Feld "Force", in dem die Bananen durch radiale Informationen über das Feld gezogen werden:
 
-![](spritekit-images/image16.png "Die Bananen werden Radial um das Feld abgerufen werden.")
+![](spritekit-images/image16.png "Die Bananen werden um das Feld herumgezogen.")

@@ -1,58 +1,58 @@
 ---
-title: Installieren von Einbetten von .NET
-description: 'Dieses Dokument beschreibt die Vorgehensweise: Einbetten von .NET zu installieren. Es wird erläutert, wie führen Sie die Tools von Hand, wie Bindungen generiert automatisch, wie Sie benutzerdefinierte MSBuild-Ziele, und die erforderlichen Schritte für nach der Erstellung zu verwenden.'
+title: Installieren der .net-Einbettung
+description: In diesem Dokument wird beschrieben, wie Sie .net-Einbettungen installieren. Es wird erläutert, wie die Tools Hand gesteuert ausgeführt werden, wie Bindungen automatisch generiert werden, wie benutzerdefinierte MSBuild-Ziele verwendet werden und erforderliche Postbuildschritte ausgeführt werden.
 ms.prod: xamarin
 ms.assetid: 47106AF3-AC6E-4A0E-B30B-9F73C116DDB3
 author: chamons
 ms.author: chhamo
 ms.date: 04/18/2018
-ms.openlocfilehash: 2a572748c21d2a640add3346d1162f4b6bdc8e99
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7da163e85b04791c276f9cb14f5b21615b7909fb
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076611"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200160"
 ---
-# <a name="installing-net-embedding"></a>Installieren von Einbetten von .NET
+# <a name="installing-net-embedding"></a>Installieren der .net-Einbettung
 
-## <a name="installing-net-embedding-from-nuget"></a>Installieren von .NET Einbetten von NuGet
+## <a name="installing-net-embedding-from-nuget"></a>Installieren von .net-Einbettungen über nuget
 
-Wählen Sie **hinzufügen > NuGet-Pakete hinzufügen...**  und installieren Sie **Embeddinator-4000** aus der NuGet-Paket-Manager:
+Wählen Sie **Hinzufügen > nuget-Pakete hinzufügen...** aus, und installieren Sie **embeddinator-4000** über den nuget-Paket-Manager:
 
 ![NuGet-Paket-Manager](images/visualstudionuget.png)
 
-Dadurch werden installiert **Embeddinator-4000.exe** und **Objcgen** in die **Pakete/Embeddinator-4000/Tools** Verzeichnis.
+Dadurch werden **Embeddinator-4000. exe** und **objcgen** im Verzeichnis **Packages/embeddinator-4000/Tools** installiert.
 
-Im Allgemeinen muss die neueste Version von der Embeddinator-4000 für das Herunterladen von ausgewählt werden. Objective-C-Unterstützung erfordert 0.4 oder höher.
+Im Allgemeinen sollte die neueste Version von embeddinator-4000 zum Herunterladen ausgewählt werden. Für die Unterstützung von Ziel-C ist 0,4 oder höher erforderlich.
 
 ## <a name="running-manually"></a>Manuelles Ausführen
 
-Nach der Installation des NuGet-Pakets, können Sie das Tool manuell ausführen.
+Nachdem Sie das nuget installiert haben, können Sie die Tools von Hand ausführen.
 
-- Öffnen Sie ein Terminal (MacOS) oder eine Eingabeaufforderung (Windows)
-- Wechseln Sie zu Ihrer Projektmappenstamm
-- Das Tool ist im installiert:
-    - **. / Packages/Embeddinator-4000. [VERSION] / Tools/Objcgen** (Objective-C)
-    - **. / Packages/Embeddinator-4000. [VERSION]/tools/Embeddinator-4000.exe** (Java/C)
-- Unter MacOS **Objcgen** kann direkt ausgeführt werden.
-- Auf Windows **Embeddinator-4000.exe** kann direkt ausgeführt werden.
-- Unter MacOS **Embeddinator-4000.exe** muss für die Ausführung mit **mono**:
+- Öffnen Sie ein Terminal (macOS) oder eine Eingabeaufforderung (Windows).
+- Wechseln Sie zum Stammverzeichnis Ihrer Lösung.
+- Die Tools werden in installiert:
+    - **./Packages/Embeddinator-4000. [Version]/Tools/objcgen** (Ziel-C)
+    - **./Packages/Embeddinator-4000. [Version]/Tools/Embeddinator-4000.exe** (Java/C)
+- Unter macOS kann **objcgen** direkt ausgeführt werden.
+- Unter Windows kann **Embeddinator-4000. exe** direkt ausgeführt werden.
+- Unter macOS muss **Embeddinator-4000. exe** mit **Mono**ausgeführt werden:
     - `mono ./packages/Embeddinator-4000.[VERSION]/tools/Embeddinator-4000.exe`
 
-Jede Befehlsaufruf benötigen etliche Parameter, die in der Dokumentation zu plattformspezifischen aufgeführt.
+Jeder Befehls Aufruf benötigt eine Reihe von Parametern, die in der plattformspezifischen Dokumentation aufgeführt sind.
 
-## <a name="automatic-binding-generation"></a>Automatische Generierung
+## <a name="automatic-binding-generation"></a>Automatische Bindungs Generierung
 
-Es gibt zwei Ansätze für die automatische Ausführung Einbetten von .NET Teil des Buildprozesses.
+Es gibt zwei Ansätze zum automatischen Ausführen des .net-Einbettungs Teils des Buildprozesses.
 
 - Benutzerdefinierte MSBuild-Ziele
-- Schritt nach dem Erstellen
+- Schritte nach dem Build
 
-In diesem Dokument beide beschrieben wird, ist ein benutzerdefiniertes MSBuild-Ziel mit bevorzugten. Nachbearbeitungsschritte der Build wird nicht unbedingt ausgeführt werden, wenn Sie über die Befehlszeile zu erstellen.
+Obwohl in diesem Dokument beides beschrieben wird, wird die Verwendung eines benutzerdefinierten MSBuild-Ziels bevorzugt. Postbuildschritte werden nicht notwendigerweise ausgeführt, wenn Sie über die Befehlszeile erstellen.
 
 ### <a name="custom-msbuild-targets"></a>Benutzerdefinierte MSBuild-Ziele
 
-Um den Build mit MSbuild-Ziele anpassen möchten, erstellen Sie zunächst eine **Embeddinator-4000.targets** Datei neben Ihrer CSPROJ-Datei dem folgenden ähnelt:
+Wenn Sie den Build mit MSBuild-Zielen anpassen möchten, erstellen Sie zuerst eine Datei " **embeddinator-4000. targets** " neben Ihrem csproj ähnlich der folgenden:
 
 ```xml
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -62,48 +62,49 @@ Um den Build mit MSbuild-Ziele anpassen möchten, erstellen Sie zunächst eine *
 </Project>
 ```
 
-Hier sollte die Befehls Text sich mit einem der Aufrufe Einbetten von .NET aufgelistet, die in der Dokumentation zu plattformspezifischen gefüllt werden.
+Hier sollte der Text des Befehls mit einem der .net-Einbettungs Aufrufe ausgefüllt werden, die in der plattformspezifischen Dokumentation aufgeführt sind.
 
-Um dieses Ziel zu verwenden:
+So verwenden Sie dieses Ziel:
 
 - Schließen Sie das Projekt in Visual Studio 2017 oder Visual Studio für Mac
-- Öffnen Sie die Bibliothek Csproj in einem Text-editor
-- Fügen Sie diese Zeile im unteren Bereich über die endgültige `</Project>` Zeile:
+- Öffnen der Bibliothek "csproj" in einem Text-Editor
+- Fügen Sie diese Zeile unten oberhalb der letzten `</Project>` Zeile hinzu:
 
 ```xml
  <Import Project="Embeddinator-4000.targets" />
 ```
 
-- Öffnen Sie Ihr Projekt
+- Erneutes Öffnen des Projekts
 
-### <a name="post-build-steps"></a>Schritt nach dem Erstellen
+### <a name="post-build-steps"></a>Schritte nach dem Build
 
-Die Schritte zum Hinzufügen von Postbuildschritt zum Einbetten von .NET ausführen, hängt von der IDE:
+Die Schritte zum Hinzufügen eines Schritts nach dem Build zum Ausführen der .net-Einbettung variieren abhängig von der IDE:
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
-Wechseln Sie in Visual Studio für Mac zu **Projektoptionen > Erstellen > benutzerdefinierte Befehle** und Hinzufügen einer **nach dem Erstellen** Schritt.
+Wechseln Sie in Visual Studio für Mac zu den **Projektoptionen > Erstellen Sie > benutzerdefinierte Befehle** , und fügen Sie einen **nach** dem Buildschritt hinzu.
 
-Richten Sie den Befehl in der Dokumentation zu plattformspezifischen aufgeführt.
+Richten Sie den Befehl ein, der in der plattformspezifischen Dokumentation aufgeführt ist.
 
 > [!NOTE]
-> Stellen Sie sicher, dass die Versionsnummer zu verwenden, die Sie von NuGet installiert
+> Stellen Sie sicher, dass Sie die von nuget installierte Versionsnummer verwenden.
 
-Wenn Sie beabsichtigen, fortlaufende Entwicklung auf Ausführen, werden die C# -Projekt können Sie auch einen benutzerdefinierten Befehl bereinigt Hinzufügen der **Ausgabe** Verzeichnis vor der Ausführung, Einbetten von .NET:
+Wenn Sie eine laufende Entwicklung für das C# Projekt durchführen möchten, können Sie auch einen benutzerdefinierten Befehl hinzufügen, um das **Ausgabe** Verzeichnis vor dem Ausführen der .net-Einbettung zu bereinigen:
 
 ```shell
 rm -Rf '${SolutionDir}/output/'
 ```
 
-![Benutzerdefinierte Build-Aktion](images/visualstudiocustombuild.png)
+![Benutzerdefinierte Buildaktion](images/visualstudiocustombuild.png)
 
 > [!NOTE]
-> Die generierte Bindung befinden sich im Verzeichnis von der `--outdir` oder `--out` Parameter. Der Name der generierten Bindung kann variieren, da einige Plattformen Einschränkungen auf Paketnamen haben.
+> Die generierte Bindung wird in dem Verzeichnis abgelegt, das durch den `--outdir` - `--out` Parameter oder den-Parameter angegeben wird. Der generierte Bindungs Name kann variieren, da bei einigen Plattformen Einschränkungen für Paketnamen vorliegen.
 
 #### <a name="visual-studio-2017"></a>Visual Studio 2017
 
-Wir im Wesentlichen das gleiche eingerichtet wird, aber die Menüs in Visual Studio 2017 sind etwas anders. Die Shellbefehle sind auch etwas anders.
+Wir richten im Grunde dasselbe ein, aber die Menüs in Visual Studio 2017 unterscheiden sich etwas. Die Shellbefehle sind ebenfalls etwas anders.
 
-Wechseln Sie zu **Projektoptionen > Buildereignisse** und geben Sie den Befehl aufgeführt, die in der Clientplattform-spezifische Dokumentation in der **Postbuildereignis-Befehlszeile** Feld. Zum Beispiel:
+Wechseln Sie zu **Projektoptionen > Buildereignisse** , und geben Sie den in der plattformspezifischen Dokumentation aufgelisteten Befehl in das **Befehlszeilen Feld Postbuildereignis** ein. Beispiel:
 
-![Das in Windows .NET](images/visualstudiowindows.png)
+![.Net-Einbettung unter Windows](images/visualstudiowindows.png)
+ 

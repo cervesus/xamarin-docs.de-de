@@ -1,45 +1,45 @@
 ---
-title: Schritt 1. Registrieren einer app zum Azure Active Directory verwenden
-description: Dieses Dokument beschreibt, wie Sie eine Azure-Anwendung in Azure Active Directory zu registrieren, sodass es von mobilen Clients sicher zugegriffen werden kann.
+title: Schritt 1. Registrieren einer APP für die Verwendung Azure Active Directory
+description: In diesem Dokument wird beschrieben, wie Sie eine Azure-Anwendung mit Azure Active Directory registrieren, damit Mobile Clients sicher darauf zugreifen können.
 ms.prod: xamarin
 ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 3e852e3e7ab3ac5db28052a47af1ebec4dbd2416
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 732c1ee241b39a4bb1422b8c27820631bf8c6b0c
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864672"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199047"
 ---
-# <a name="step-1-register-an-app-to-use-azure-active-directory"></a>Schritt 1. Registrieren einer app zum Azure Active Directory verwenden
+# <a name="step-1-register-an-app-to-use-azure-active-directory"></a>Schritt 1. Registrieren einer APP für die Verwendung Azure Active Directory
 
-1. Navigieren Sie zu [windowsazure.com](https://manage.windowsazure.com) und melden Sie sich mit Ihrem Microsoft Account oder Organisations-Konto im Azure-Portal. Wenn Sie nicht über ein Azure-Abonnement verfügen, erhalten Sie eine Testversion von [azure.com](https://www.azure.com)
+1. Navigieren Sie zu [windowsazure.com](https://manage.windowsazure.com) , und melden Sie sich mit Ihrem Microsoft-Konto oder Organisations Konto im Azure-Portal an. Wenn Sie über kein Azure-Abonnement verfügen, können Sie eine Testversion von [Azure.com](https://www.azure.com) erhalten.
 
-2. Nach der Anmeldung finden Sie unter den **Active Directory** Abschnitt (1), und wählen Sie das Verzeichnis, in der Anwendung (2)
+2. Wechseln Sie nach der Anmeldung zum Abschnitt **Active Directory** (1), und wählen Sie das Verzeichnis aus, in dem Sie die Anwendung registrieren möchten (2).
 
-   [![](register-images/01.-active-directory-in-azure-portal-sml.jpg "Abschnitt, und wählen Sie das Verzeichnis, in dem Sie die Anwendung registrieren möchten")](register-images/01.-active-directory-in-azure-portal.jpg#lightbox)
+   [![](register-images/01.-active-directory-in-azure-portal-sml.jpg "aus, und wählen Sie das Verzeichnis aus, in dem Sie die Anwendung registrieren möchten.")](register-images/01.-active-directory-in-azure-portal.jpg#lightbox)
 
-3. Klicken Sie auf **hinzufügen** um die neue Anwendung erstellen, und wählen Sie dann **eine von meinem Unternehmen entwickelte Anwendung hinzufügen**
+3. Klicken Sie auf **Hinzufügen** , um eine neue Anwendung zu erstellen, und wählen Sie dann **eine von meiner Organisation entwickelte Anwendung**
 
-   [![](register-images/02.-add-new-application-sml.jpg "Fügen Sie eine von meinem Unternehmen entwickelte Anwendung hinzu")](register-images/02.-add-new-application.jpg#lightbox)
+   [![](register-images/02.-add-new-application-sml.jpg "Eine von meinem Unternehmen entwickelte Anwendung hinzufügen")](register-images/02.-add-new-application.jpg#lightbox)
 
-4. Geben Sie auf dem nächsten Bildschirm der app einen Namen (z. b. XAM-DEMO).
-   Stellen Sie sicher, dass Sie **systemeigene Clientanwendung** als den Typ der Anwendung.
+4. Legen Sie auf dem nächsten Bildschirm Ihrer APP einen Namen (z. b. XAM-DEMO).
+   Stellen Sie sicher, dass Sie die **Native Client-Anwendung** als Anwendungstyp auswählen.
 
-   ![](register-images/03.-app-name.jpg "Stellen Sie sicher, dass Sie eine systemeigene Clientanwendung mit dem Typ der Anwendung auswählen")
+   ![](register-images/03.-app-name.jpg "Stellen Sie sicher, dass Sie die Native Client-Anwendung als Anwendungstyp auswählen.")
 
-5. Geben Sie auf der letzten Seite, ein **Umleitungs-URI* , die für Ihre Anwendung eindeutig ist, wie sie an diesen URI zurückgibt, wenn es sich bei Authentifizierung abgeschlossen ist.
+5. Geben Sie auf dem letzten Bildschirm einen **Umleitungs-URI* an, der für Ihre Anwendung eindeutig ist, da er nach Abschluss der Authentifizierung an diesen URI zurückgegeben wird.
 
-   ![](register-images/04.-app-redirect.jpg "Geben Sie auf der letzten Seite ein Umleitungs-URI, der für Ihre Anwendung eindeutig ist, wie sie an diesen URI zurückgibt, wenn es sich bei Authentifizierung abgeschlossen ist")
+   ![](register-images/04.-app-redirect.jpg "Geben Sie auf dem letzten Bildschirm einen Umleitungs-URI an, der für Ihre Anwendung eindeutig ist, da Sie nach Abschluss der Authentifizierung an diesen URI zurückgegeben wird.")
 
-6. Sobald die app erstellt wurde, navigieren Sie zu der **konfigurieren** Registerkarte. Notieren Sie sich die **Client-ID** die wir in unserer Anwendung später verwenden werden. Sie können auch auf diesem Bildschirm erhalten Ihre mobile Anwendungszugriff auf Active Directory oder Hinzufügen einer anderen Anwendung wie Web-API oder Office 365, die durch die Verwaltungsrichtlinie für mobile Anwendungen verwendet werden kann, nachdem die Authentifizierung abgeschlossen ist.
+6. Nachdem die App erstellt wurde, navigieren Sie zur Registerkarte **Konfigurieren** . Notieren Sie sich die **Client-ID** , die wir später in unserer Anwendung verwenden werden. Auf diesem Bildschirm können Sie außerdem Ihrer mobilen Anwendung Zugriff auf Active Directory oder eine weitere Anwendung hinzufügen, wie z. b. Web-API oder Office 365, die von der mobilen Anwendung verwendet werden kann, sobald die Authentifizierung vollständig ist.
 
-     ![](register-images/05.-configure.jpg "Darüber hinaus auf diesem Bildschirm können Sie Ihre mobile Anwendungszugriff auf Active Directory gewähren oder Hinzufügen einer anderen Anwendung wie Web-API oder Office 365")
+   ![](register-images/05.-configure.jpg "Außerdem können Sie auf diesem Bildschirm Ihrer mobilen Anwendung Zugriff auf Active Directory oder eine weitere Anwendung wie Web-API oder Office 365 hinzufügen.")
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Microsoft NativeClient-Beispiel](https://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet)
+- [Microsoft nativeClient-Beispiel](https://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet)

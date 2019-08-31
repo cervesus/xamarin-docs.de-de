@@ -1,61 +1,61 @@
 ---
-title: Neue Verweiszählung-Systems in Xamarin.iOS
-description: Dieses Dokument beschreibt die erweiterten verweiszählung Xamarin System, das alle Xamarin.iOS-Anwendungen standardmäßig aktiviert.
+title: Neues Verweis zählungs System in xamarin. IOS
+description: In diesem Dokument wird das erweiterte Verweis zählungs System von xamarin beschrieben, das in allen xamarin. IOS-Anwendungen standardmäßig aktiviert ist.
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
-ms.openlocfilehash: 8c7b1a88284156cb5d4261f18d5659ed66dfaf64
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 221c3a3bb82b5b46f4afea5ec43fcdd5c00b0556
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037180"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199326"
 ---
-# <a name="new-reference-counting-system-in-xamarinios"></a>Neue Verweiszählung-Systems in Xamarin.iOS
+# <a name="new-reference-counting-system-in-xamarinios"></a>Neues Verweis zählungs System in xamarin. IOS
 
-Xamarin.iOS 9.2.1 eingeführt, die verbesserte verweiszählung System für alle Anwendungen standardmäßig. Es kann verwendet werden, um viele Speicherprobleme zu vermeiden, die schwer zu verfolgen und korrigieren Sie in früheren Versionen von Xamarin.iOS.
+Xamarin. IOS 9.2.1 hat das erweiterte Verweis Zählsystem standardmäßig für alle Anwendungen eingeführt. Sie kann verwendet werden, um viele Speicherprobleme zu vermeiden, die in früheren Versionen von xamarin. IOS schwer zu verfolgen und zu beheben waren.
 
-## <a name="enabling-the-new-reference-counting-system"></a>Aktivieren die neue Verweiszählung-System
+## <a name="enabling-the-new-reference-counting-system"></a>Aktivieren des neuen Verweis zählungs Systems
 
-Ab Xamarin 9.2.1 zählen System neue Ref aktiviert ist, um **alle** Anwendungen standardmäßig.
+Ab xamarin 9.2.1 wird das neue Verweis Zählsystem standardmäßig für **alle** Anwendungen aktiviert.
 
-Wenn Sie eine vorhandene Anwendung entwickeln, sehen Sie die CSPROJ-Datei, um sicherzustellen, dass alle Vorkommen von `MtouchUseRefCounting` festgelegt `true`, z.B. unter:
+Wenn Sie eine vorhandene Anwendung entwickeln, können Sie die CSPROJ-Datei überprüfen, um sicherzustellen, dass `MtouchUseRefCounting` alle Vorkommen von `true`auf festgelegt sind, wie unten dargestellt:
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-Wenn sie, um festgelegt ist `false` wird Ihre Anwendung nicht die neue Tools verwendet werden.
+Wenn Sie auf festgelegt `false` ist, werden die neuen Tools nicht von der Anwendung verwendet.
 
-### <a name="using-older-versions-of-xamarin"></a>Ältere Versionen von Xamarin verwenden
+### <a name="using-older-versions-of-xamarin"></a>Verwenden älterer Versionen von xamarin
 
-Xamarin.iOS 7.2.1 und Funktionen Sie über eine verbesserte Vorschau auf unser neues verweiszählung-System.
+Xamarin. IOS 7.2.1 und höher bietet eine erweiterte Vorschau unseres neuen Referenz zählungs Systems.
 
-**Klassische-API:**
+**Classic API:**
 
-Um diese neue zählen Referenzsystem zu aktivieren, aktivieren die **verweiszählungserweiterung verwenden** Kontrollkästchen finden Sie in der **erweitert** Ihres Projekts auf der Registerkarte **iOS-Buildoptionen** , wie unten dargestellt: 
+Aktivieren Sie zum Aktivieren dieses neuen Verweis zählungs Systems das Kontrollkästchen **Verweis Zähl Erweiterung verwenden** auf der Registerkarte **erweitert** der **IOS**-Buildoptionen Ihres Projekts, wie unten dargestellt: 
 
-[![](newrefcount-images/image1.png "Aktivieren Sie die neue zählen Referenzsystem")](newrefcount-images/image1.png#lightbox)
+[![](newrefcount-images/image1.png "Aktivieren des neuen Verweis zählungs Systems")](newrefcount-images/image1.png#lightbox)
 
-Beachten Sie, dass diese Optionen in neueren Versionen von Visual Studio für Mac entfernt wurden
+Beachten Sie, dass diese Optionen in neueren Versionen von Visual Studio für Mac entfernt wurden.
 
- **[Einheitliche API:](~/cross-platform/macios/unified/index.md)**
+ **[Unified API:](~/cross-platform/macios/unified/index.md)**
 
- Neue verweiszählungserweiterung ist erforderlich, für die Unified API und in der Standardeinstellung aktiviert werden soll. Ältere Versionen Ihrer IDE können keine dieser Wert automatisch aktiviert, und Sie möglicherweise mit einem Häkchen von ihm selbst.
+ Die neue Verweis Zähl Erweiterung ist für die Unified API erforderlich und sollte standardmäßig aktiviert sein. Bei älteren Versionen Ihrer IDE ist dieser Wert möglicherweise nicht automatisch aktiviert, und Sie müssen möglicherweise selbst eine Prüfung durchgeführt haben.
 
-    
+
 > [!IMPORTANT]
-> Eine frühere Version dieser Funktion schon seit MonoTouch 5.2 jedoch nur zur **Sgen** als eine experimentelle Vorschau. Diese neue, erweiterte Version steht jetzt auch für die **Boehm** Garbage Collector.
+> Eine frühere Version dieses Features ist seit MonoTouch 5,2 verfügbar, war aber nur für **Sgen** als experimentelle Vorschau verfügbar. Diese neue, erweiterte Version ist jetzt auch für den **Boehm** -Garbage Collector verfügbar.
 
 
-In der Vergangenheit gab es zwei Arten von Objekten, die von Xamarin.iOS verwaltet: solche, die lediglich einen Wrapper für ein systemeigenes Objekt (Peer-Objekte), und diejenigen, die erweitert oder neue Funktionalität (abgeleitete Objekte) - integriert in der Regel durch zusätzliche im Speicher enthaltenen Status beibehalten wurden. Zuvor war es möglich, dass wir ein Peerobjekt, mit dem Status erweitern können (z. B. durch Hinzufügen einer C# -Ereignishandler), aber wir zulassen, dass das Objekt, das nicht referenzierte, und klicken Sie dann die gesammelten finden Sie unter. Dies kann einen Absturz später verursachen (z. B. Wenn Sie die Objective-C-Laufzeit wieder in das verwaltete Objekt aufgerufen wird).
+In der Vergangenheit gab es zwei Arten von Objekten, die von xamarin. IOS verwaltet werden: solche, die lediglich ein Wrapper um ein natives Objekt (Peer-Objekte) waren, und diejenigen, die neue Funktionen (abgeleitete Objekte) erweitert oder integriert haben (in der Regel durch die Beibehaltung des zusätzlichen Speicher internen Zustands). Bisher war es möglich, ein Peer Objekt mit dem Zustand zu vergrößern (z. b. durch C# Hinzufügen eines-Ereignis Handlers), aber das Objekt kann nicht referenziert und dann gesammelt werden. Dies kann später zu einem Absturz führen (z. b. wenn die Ziel-C-Laufzeit wieder in das verwaltete Objekt aufgerufen wurde).
 
-Das neue System aktualisiert automatisch die Objekte auf derselben Ebene in Objekte, die von der Laufzeit verwaltet werden, wenn sie zusätzliche Informationen zu speichern.
+Das neue System aktualisiert Peer Objekte automatisch in Objekte, die von der Laufzeit verwaltet werden, wenn zusätzliche Informationen gespeichert werden.
 
-Dies löst verschiedene stürzt ab, die in Situationen wie diesen zu aufgetreten ist:
+Dadurch werden verschiedene Abstürze gelöst, die in Situationen wie der folgenden aufgetreten sind:
 
 ```csharp
 class MyTableSource : UITableViewSource {
@@ -73,10 +73,10 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-Dieser Code würde ohne die Erweiterung der Referenz-Anzahl von Abstürzen, da `cell` entladbaren, wird und daher seine `TouchDown` zu delegieren, die in einen Zeiger zum verbleibende übersetzt.
+Ohne die Verweis Zähler Erweiterung würde dieser Code abstürzen, `cell` weil entladbar ist, und `TouchDown` somit seinen Delegaten, der in einen verbleibenden Zeiger übersetzt wird.
 
-Die Verweis-Count-Erweiterung wird sichergestellt, das verwaltete Objekt bleibt aktiv, und verhindert, dass die Sammlung, vorausgesetzt das systemeigene Objekt von systemeigenem Code beibehalten wird.
+Die Erweiterung für Verweis Zähler stellt sicher, dass das verwaltete Objekt aktiv bleibt und seine Auflistung verhindert, vorausgesetzt, dass das systemeigene Objekt durch nativen Code beibehalten wird.
 
-Das neue System auch beseitigt die Notwendigkeit *die meisten* private unterstützungsfelder verwendet Bindungen - der Standardansatz Instanz beibehalten wird. Der verwaltete Linker ist intelligent genug, um alle Mitarbeiter entfernen *nicht benötigte* Felder aus Anwendungen, die mit der neue Verweis zählen Erweiterung.
+Das neue System entfernt auch die Notwendigkeit der *meisten* privaten Unterstützungs Felder, die in Bindungen verwendet werden. Dies ist der Standardansatz, um die Instanz aktiv zu halten. Der verwaltete Linker ist intelligent genug, um alle *nicht benötigten* Felder aus Anwendungen mithilfe der neuen Verweis Anzahl Erweiterung zu entfernen.
 
-Dies bedeutet, dass jeder verwaltete Objektinstanzen weniger Arbeitsspeicher als je zuvor nutzen. Es lässt sich auch um ein ähnliches Problem, in dem einige dahinter liegenden Felder Verweise enthalten würde, die nicht mehr von der Objective-C-Laufzeit, macht es schwierig, um Speicherplatz freizugeben erforderlich waren.
+Dies bedeutet, dass jede Instanz des verwalteten Objekts weniger Arbeitsspeicher beansprucht als zuvor. Außerdem wird ein verwandtes Problem gelöst, bei dem einige Sicherungs Felder Verweise enthalten, die von der Ziel-C-Laufzeit nicht mehr benötigt werden. dadurch ist es schwierig, Arbeitsspeicher freizugeben.

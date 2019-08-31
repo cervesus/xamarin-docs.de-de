@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9fcd4820b5e22254356250ef2d26714dc32a59f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c818cac3b26e94710a64938a80690b8d4946320
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655209"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200216"
 ---
 # <a name="ios-security-and-privacy-features"></a>Sicherheits-und Datenschutzfunktionen für IOS
 
 _In diesem Artikel wird das Arbeiten mit Sicherheit und Datenschutz in IOS und deren Auswirkungen auf eine xamarin. IOS-App behandelt._
 
 Apple hat mehrere Verbesserungen hinsichtlich Sicherheit und Datenschutz in ios 10 (und höher) vorgenommen, die dem Entwickler dabei helfen, die Sicherheit Ihrer apps zu verbessern und den Datenschutz für den Endbenutzer zu gewährleisten. In diesem Artikel wird die Implementierung dieser Features in einer xamarin. IOS-App behandelt.
-    
+
 <a name="General-Enhancements" />
 
 ## <a name="general-enhancements"></a>Allgemeine Erweiterungen
@@ -51,9 +51,9 @@ Die folgenden Datenschutz bezogenen Schlüssel sind verfügbar:
 - **Datenschutz: Nutzungs Beschreibung** für Integritäts Aktualisierung (`NSHealthUpdateUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP die Integritäts Daten des Benutzers bearbeiten möchte. Weitere Informationen finden Sie in der [hkhealthstore-Klassenreferenz](https://developer.apple.com/reference/healthkit/hkhealthstore)von Apple.
 - **Datenschutz: Nutzungs Beschreibung für homekit** (`NSHomeKitUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP auf die homekit-Konfigurationsdaten des Benutzers zugreifen möchte.
 - **Datenschutz-Beschreibung der ortsbasierten Verwendung** (`NSLocationAlwaysUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP immer Zugriff auf den Speicherort des Benutzers haben möchte.
-- Veraltet **Datenschutz-Beschreibung der Standort Verwendung** (`NSLocationUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP auf den Speicherort des Benutzers zugreifen möchte. *NEBENBEI Dieser Schlüssel wurde in ios 8 (und höher) als veraltet markiert. Verwenden `NSLocationAlwaysUsageDescription` Sie `NSLocationWhenInUseUsageDescription` stattdessen oder.*
+- Veraltet **Datenschutz-Beschreibung der Standort Verwendung** (`NSLocationUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP auf den Speicherort des Benutzers zugreifen möchte. *HINWEIS: Dieser Schlüssel wurde in ios 8 (und höher) als veraltet markiert. Verwenden `NSLocationAlwaysUsageDescription` Sie `NSLocationWhenInUseUsageDescription` stattdessen oder.*
 - **Datenschutz: Nutzungs Beschreibung für "Standort in Verwendung** " (`NSLocationWhenInUseUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP während der Ausführung auf den Speicherort des Benutzers zugreifen möchte.
-- Veraltet **Datenschutz: Nutzungs Beschreibung für Medienbibliothek** : ermöglicht es dem Entwickler zu beschreiben, warum die APP auf die Medienbibliothek des Benutzers zugreifen möchte. *NEBENBEI Dieser Schlüssel wurde in ios 8 (und höher) als veraltet markiert. Verwenden `NSAppleMusicUsageDescription` Sie stattdessen.*
+- Veraltet **Datenschutz: Nutzungs Beschreibung für Medienbibliothek** : ermöglicht es dem Entwickler zu beschreiben, warum die APP auf die Medienbibliothek des Benutzers zugreifen möchte. *HINWEIS: Dieser Schlüssel wurde in ios 8 (und höher) als veraltet markiert. Verwenden `NSAppleMusicUsageDescription` Sie stattdessen.*
 - **Datenschutz-Beschreibung der Mikrofon Verwendung** (`NSMicrophoneUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP auf das Mikrofon zugreifen möchte.
 - **Datenschutz: Nutzungs Beschreibung für Motion** (`NSMotionUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP auf den Beschleunigungsmesser des Geräts zugreifen möchte.
 - **Datenschutz: Nutzungs Beschreibung für Fotobibliothek** (`NSPhotoLibraryUsageDescription`): Hiermit kann der Entwickler beschreiben, warum die APP auf die Fotobibliothek des Benutzers zugreifen möchte.

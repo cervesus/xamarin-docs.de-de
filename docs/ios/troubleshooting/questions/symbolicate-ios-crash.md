@@ -7,38 +7,38 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/09/2018
-ms.openlocfilehash: 0b8f3aa736cba6e70fbf346766499c23a9bbe270
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1e746a44deb024894a5d1f94fab21128126287e8
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61418212"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198797"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>Wo finde ich die DSYM-Datei zum Ersetzen der iOS-Absturzprotokolle durch Symbole?
 
-Beim Erstellen einer iOS-app mit Visual Studio für Mac oder Visual Studio 2017 wird die dsym-Datei, die erforderlich sind, um Absturzberichte zu symbolifizieren in der gleichen Verzeichnishierarchie Ihrer app-Projektdatei (.csproj) platziert werden. Der exakte Speicherort hängt von Buildeinstellungen Ihres Projekts:
+Beim Entwickeln einer IOS-App mit Visual Studio für Mac oder Visual Studio 2017 wird die dsym-Datei, die zum symbolisieren von Absturzberichten benötigt wird, in derselben Verzeichnishierarchie platziert wie die Projektdatei Ihrer APP (. csproj). Der genaue Speicherort hängt von den Buildeinstellungen des Projekts ab:
 
-- Wenn Sie gerätespezifische Builds aktiviert haben, können die dsym im folgenden Verzeichnis befinden:
+- Wenn Sie gerätespezifische Builds aktiviert haben, finden Sie die dsym-Datei im folgenden Verzeichnis:
 
-    **&lt;Projektverzeichnis&gt;/bin /&lt;Plattform&gt;/&lt;Konfiguration&gt;/device-builds /&lt;Gerät&gt; - &lt; Version des Betriebssystems&gt;/**
+    **&lt;Projektverzeichnis&gt;/bin/&lt;Platt&gt;FormKonfiguration/Device-Builds/&gt;Gerät/&lt;&lt;&gt; - &lt; Betriebssystemversion&gt;/**
 
-    Zum Beispiel:
+    Beispiel:
   
-    **TestApp/bin/iPhone/Release/device-builds/iphone8.4-11.3.1/**
+    **TestApp/bin/iPhone/Release/Device-Builds/iPhone 8.4-11.3.1/**
 
-- Wenn Sie keine gerätespezifische Builds aktiviert haben, können die dsym im folgenden Verzeichnis befinden:
+- Wenn Sie gerätespezifische Builds nicht aktiviert haben, finden Sie die dsym-Datei im folgenden Verzeichnis:
 
-    **&lt;Projektverzeichnis&gt;/bin /&lt;Plattform&gt;/&lt;Konfiguration&gt;/**
+    **&lt;Projektverzeichnis&gt;/bin/&lt;Platt&gt;FormKonfiguration/&lt;&gt;/**
 
-    Zum Beispiel:
+    Beispiel:
 
     **TestApp/bin/iPhone/Release/**
 
 > [!NOTE]
-> Im Rahmen des Buildprozesses kopiert Visual Studio 2017 die dsym-Datei, aus der Mac-buildhost zu Windows. Wenn Sie eine dsym-Datei auf dem Windows nicht angezeigt werden, werden Sie sicher, dass Sie die Buildeinstellungen so konfiguriert, Ihrer app konfiguriert haben [erstellen Sie eine IPA-Datei](~/ios/deploy-test/app-distribution/ipa-support.md).
+> Im Rahmen des Buildprozesses wird die dsym-Datei von Visual Studio 2017 vom Mac-buildhost auf Windows kopiert. Wenn eine dsym-Datei unter Windows nicht angezeigt wird, stellen Sie sicher, dass Sie die Buildeinstellungen Ihrer APP so konfiguriert haben, dass [eine IPA-Datei erstellt](~/ios/deploy-test/app-distribution/ipa-support.md)wird.
 
 ## <a name="see-also"></a>Siehe auch
 
-- [Symbolicating iOS abstürzen Dateien (Xamarin.iOS)](http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
-- [Die Enträtselung der iOS-Crash-Anwendungsprotokolle](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
+- [Symbolizieren von IOS-Absturz Dateien (xamarin. IOS)](https://www.jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
+- [Entmystifizierung von Absturz Protokollen für IOS-Anwendungen](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
 

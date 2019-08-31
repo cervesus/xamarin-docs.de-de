@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie in xamarin. IOS mit de
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/12/2018
-ms.openlocfilehash: e52f9abb31090f3acc361eb5a3f9ae2e12600b36
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daa9625ccbac3661d3678889d4efd6319e0bd424
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653519"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198126"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Dateisystem Zugriff in xamarin. IOS
 
@@ -22,7 +22,7 @@ Sie können xamarin. IOS und die `System.IO` Klassen in der .net- *Basisklassen 
 
 IOS erzwingt einige Einschränkungen, die eine Anwendung mit dem Dateisystem ausführen kann, um die Sicherheit der Anwendungsdaten zu erhalten und Benutzer vor bösartigen apps zu schützen. Diese Einschränkungen sind Teil der *Anwendungs Sandbox* – ein Satz von Regeln, die den Zugriff einer Anwendung auf Dateien, Einstellungen, Netzwerkressourcen, Hardware usw. einschränken. Eine Anwendung ist auf das Lesen und Schreiben von Dateien innerhalb Ihres Basisverzeichnisses (installierter Speicherort) beschränkt. der Zugriff auf die Dateien einer anderen Anwendung ist nicht möglich.
 
-IOS verfügt auch über einige Dateisystem spezifische Features: bestimmte Verzeichnisse erfordern eine besondere Behandlung in Bezug auf Sicherungen und Upgrades, und Anwendungen können auch Dateien untereinander **und die Datei** -app (seit IOS 11) und über iTunes gemeinsam nutzen.
+IOS verfügt auch über einige Dateisystem spezifische Features: bestimmte Verzeichnisse erfordern eine besondere Behandlung in Bezug auf Sicherungen und Upgrades, und Anwendungen können auch Dateien untereinander und die Datei- app (seit IOS 11) und über iTunes gemeinsam nutzen.
 
 In diesem Artikel werden die Features und Einschränkungen des IOS-Dateisystems beschrieben. es enthält eine Beispielanwendung, die veranschaulicht, wie mit xamarin. IOS einige einfache Dateisystem Vorgänge ausgeführt werden:
 
@@ -241,7 +241,7 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 ## <a name="sharing-with-the-files-app"></a>Freigabe mit der App "Dateien"
 
-IOS 11 hat die Datei **-App eingeführt** : einen Dateibrowser für IOS, mit dem Benutzer Ihre Dateien in icloud anzeigen und mit ihr interagieren und auch von einer beliebigen Anwendung, die Sie unterstützt, gespeichert werden können. Damit der Benutzer direkt auf Dateien in der App zugreifen kann, erstellen Sie einen neuen booleschen Schlüssel in der **Info. plist** -Datei `LSSupportsOpeningDocumentsInPlace` , und legen Sie ihn wie folgt auf `true`fest:
+IOS 11 hat die Datei-App eingeführt: einen Dateibrowser für IOS, mit dem Benutzer Ihre Dateien in icloud anzeigen und mit ihr interagieren und auch von einer beliebigen Anwendung, die Sie unterstützt, gespeichert werden können. Damit der Benutzer direkt auf Dateien in der App zugreifen kann, erstellen Sie einen neuen booleschen Schlüssel in der **Info. plist** -Datei `LSSupportsOpeningDocumentsInPlace` , und legen Sie ihn wie folgt auf `true`fest:
 
 ![Lssupportsopeningdocumentsinplace in "Info. plist" festlegen](file-system-images/51-supports-opening.png)
 
@@ -292,7 +292,7 @@ Das Sichern einer großen Datenmenge kann einige Zeit in Anspruch nehmen. Wenn S
 
 Apple hat eine *icloud-Sicherungs* Funktion mit IOS 5 eingeführt. Wenn die icloud-Sicherung aktiviert ist, werden alle Dateien im Stammverzeichnis Ihrer Anwendung (ausgenommen Verzeichnisse, die normalerweise nicht gesichert werden, z. b. `Caches`die APP Bundle `tmp`, und) auf icloud-Servern gesichert. Diese Funktion bietet dem Benutzer eine komplette Sicherung für den Fall, dass das Gerät verloren geht, gestohlen wird oder beschädigt ist.
 
-Da icloud nur 5 GB freien Speicherplatz für jeden Benutzer bereitstellt und die Bandbreite unnötig vermeiden kann, erwartet Apple, dass Anwendungen nur wichtige benutzergenerierte Daten sichern. Zur Einhaltung der IOS-Daten Speicherungs Richtlinien sollten Sie die Menge der zu sichernden Daten einschränken, indem Sie die folgenden Elemente einhalten:
+Da icloud den einzelnen Benutzern nur 5 GB freien Speicherplatz zur Verfügung stellt, damit die Bandbreite unnötig vermieden wird, erwartet Apple, dass Anwendungen nur grundlegende benutzergenerierte Daten sichern. Zur Einhaltung der IOS-Daten Speicherungs Richtlinien sollten Sie die Menge der zu sichernden Daten einschränken, indem Sie die folgenden Elemente einhalten:
 
 - Speichern Sie nur benutzergenerierte Daten oder Daten, die anderweitig nicht neu erstellt werden können, im Verzeichnis "Dokumente" (das gesichert ist).
 - Speichern Sie alle anderen Daten, die einfach neu erstellt oder heruntergeladen `Library/Caches` werden können, oder `tmp` (die nicht gesichert und möglicherweise "bereinigt" werden).

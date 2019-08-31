@@ -9,12 +9,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2019
-ms.openlocfilehash: 245b41eea556ef36c81b337b57ce58d922e4e8fd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2c50ffb37f0fd1d7b0d9fad063c4d6195d6b1f08
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653680"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199758"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>Erstellen Ihrer ersten Xamarin.Forms-App
 
@@ -48,15 +48,37 @@ Führen Sie die folgenden Schritte zum Video oben aus:
 
 5. Warten Sie, bis die NuGet-Pakete wiederhergestellt sind (wenn die Wiederherstellung abgeschlossen wurde, wird eine Meldung in der Statusleiste angezeigt).
 
-6. Starten Sie den Android-Emulator, indem Sie auf „Debuggen“ klicken (alternativ können Sie auf die Menüelemente **Debuggen > Debuggen starten** klicken).
+6. In neuen Visual Studio 2019-Installationen ist kein Android-Emulator konfiguriert. Klicken Sie auf den Dropdown Pfeil auf der Schaltfläche " **Debuggen** ", und wählen Sie **Android-Emulator erstellen** aus, um den Bildschirm
 
-7. Bearbeiten Sie die Datei **MainPage.xaml**, und fügen Sie den folgenden XAML-Code vor dem Ende von `</StackLayout>` ein:
+    ![Android-Emulator Dropdown Liste erstellen](images/win-2019/debug-dropdown.png)
+
+7. Verwenden Sie auf dem Bildschirm Emulator-Erstellung die Standardeinstellungen, und klicken Sie auf die Schaltfläche **Erstellen** :
+
+    [![Android-Emulator-Erstellungs Bildschirm](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
+
+8. Wenn Sie einen Emulator erstellen, werden Sie zum Fenster Geräte-Manager zurückgegeben. Klicken Sie auf die Schaltfläche **starten** , um den neuen Emulator zu starten:
+
+    ![Android-Emulator im Geräte-Manager](images/win-2019/start-emulator.png)
+
+9. Visual Studio 2019 sollte nun den Namen des neuen Emulators auf der Schaltfläche " **Debuggen** " anzeigen:
+
+    ![Android-emulatorname auf der Schaltfläche "Debug"](images/win-2019/debug-emulator-name.png)
+
+10. Klicken Sie auf die Schaltfläche **Debuggen** , um die Anwendung zu erstellen und im Android-Emulator bereitzustellen
+
+    ![Android-Emulator, der die Anwendung anzeigt](images/win-2019/android-emulator.png)
+
+## <a name="customize-the-application"></a>Anpassen der Anwendung
+
+Die Anwendung kann angepasst werden, um interaktive Funktionen hinzuzufügen. Führen Sie die folgenden Schritte aus, um der Anwendung Benutzerinteraktion hinzuzufügen:
+
+1. Bearbeiten Sie die Datei **MainPage.xaml**, und fügen Sie den folgenden XAML-Code vor dem Ende von `</StackLayout>` ein:
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
     ```
 
-8. Bearbeiten Sie die Datei **MainPage.xaml.cs**, und fügen Sie den folgenden Code am Ende der Klasse ein:
+2. Bearbeiten Sie die Datei **MainPage.xaml.cs**, und fügen Sie den folgenden Code am Ende der Klasse ein:
 
     ```csharp
     int count = 0;
@@ -67,14 +89,16 @@ Führen Sie die folgenden Schritte zum Video oben aus:
     }
     ```
 
-9. Debuggen Sie die App unter Android:
+3. Debuggen Sie die App unter Android:
 
     ![Android-App](images/win/07-sml.png)
 
-    > [!TIP]
-    > Es ist möglich, die iOS-App mit einem Mac-Computer im Netzwerk über Visual Studio zu erstellen und zu debuggen. Weitere Informationen finden Sie in den [Setupanweisungen](~/ios/get-started/installation/windows/index.md).
+> [!NOTE]
+> Die Beispielanwendung enthält die zusätzlichen interaktiven Funktionen, die im Video nicht behandelt werden.
 
 ## <a name="build-an-ios-app-in-visual-studio-2019"></a>Erstellen einer IOS-app in Visual Studio 2019
+
+Es ist möglich, die IOS-App aus Visual Studio mit einem vernetzten Mac-Computer zu erstellen und zu debuggen. Weitere Informationen finden Sie in den [Setupanweisungen](~/ios/get-started/installation/windows/index.md).
 
 In diesem Video wird der Prozess zum entwickeln und Testen einer IOS-App mit Visual Studio 2019 unter Windows behandelt:
 

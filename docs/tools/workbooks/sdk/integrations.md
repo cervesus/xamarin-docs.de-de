@@ -1,35 +1,35 @@
 ---
 title: Erweiterte Integrationsthemen
-description: Dieses Dokument beschreibt die erweiterten Themen, die im Zusammenhang mit Xamarin Workbooks-Integrationen. Es erläutert die Xamarin.Workbook.Integrations NuGet-Paket und die API-Anfälligkeit in einer Xamarin-Arbeitsmappe.
+description: In diesem Dokument werden erweiterte Themen im Zusammenhang mit Xamarin Workbooks Integrationen beschrieben. Darin werden das nuget-Paket xamarin. Workbook. Integrationen und API-verfügbar in einer xamarin-Arbeitsmappe erläutert.
 ms.prod: xamarin
 ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 56ee709b78b8587c2717dc9d25a6357041812d23
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 07dd0e64b90bb0aa11f0a7050e3b86f3203ce7de
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382244"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199981"
 ---
 # <a name="advanced-integration-topics"></a>Erweiterte Integrationsthemen
 
-Integrationsassemblys verweisen sollten die [ `Xamarin.Workbooks.Integrations` NuGet][nuget]. Sehen Sie sich unsere [Dokumentation für den Schnellstart](~/tools/workbooks/sdk/index.md) für Weitere Informationen zu den ersten Schritten mit dem NuGet-Paket.
+Integrationsassemblys sollten auf das [ `Xamarin.Workbooks.Integrations` nuget][nuget]verweisen. Weitere Informationen zu den ersten Schritten mit dem nuget-Paket finden Sie in unserer [Schnellstart Dokumentation](~/tools/workbooks/sdk/index.md) .
 
-Client-Integrationen werden ebenfalls unterstützt, und platzieren Sie JavaScript- oder CSS-Dateien mit dem gleichen Namen wie die Agent-Integration-Assembly im gleichen Verzeichnis initiiert. Z. B., wenn die Agent-Integration-Assembly (das im NuGet Verweise auf) heißt `SampleExternalIntegration.dll`, klicken Sie dann `SampleExternalIntegration.js` und `SampleExternalIntegration.css` wird in den Client auch integriert werden, wenn sie vorhanden sind. Client-Integrationen sind optional.
+Client Integrationen werden ebenfalls unterstützt und durch das Platzieren von JavaScript-oder CSS-Dateien mit demselben Namen wie die Agent-integrationsassembly im gleichen Verzeichnis initiiert. Wenn beispielsweise die Agent-integrationsassembly (die auf den nuget verweist) `SampleExternalIntegration.dll`benannt ist `SampleExternalIntegration.js` , `SampleExternalIntegration.css` dann werden und in den Client integriert, sofern Sie vorhanden sind. Client Integrationen sind optional.
 
-Die externe Integration selbst kann als ein NuGet-Paket verpackt, bereitgestellt und direkt innerhalb der Anwendung, die den Agent hostet, oder einfach nebeneinander platziert eine `.workbook` -Datei, die es nutzen möchte.
+Die externe Integration selbst kann als nuget verpackt werden, bereitgestellt und direkt in der Anwendung referenziert werden, die den Agent gehostet, oder einfach neben `.workbook` einer Datei platziert werden, die Sie verwenden möchte.
 
-Externe Integrationen in NuGet-Paketen (Agent und Client) werden automatisch geladen, wenn das Paket, wie in der Dokumentation für den Schnellstart verwiesen hat, wird während integrationsassemblys versendet, zusammen mit der Arbeitsmappe benötigen, also als darauf zu verweisen:
+Externe Integrationen (Agent und Client) in nuget-Paketen werden automatisch geladen, wenn auf das Paket verwiesen wird, und zwar gemäß der Schnellstart Dokumentation, während Integrationsassemblys, die zusammen mit der Arbeitsmappe ausgeliefert werden, wie folgt darauf verweisen müssen:
 
 ```csharp
 #r "SampleExternalIntegration.dll"
 ```
 
-Wenn Sie eine Integration auf diese Weise verweisen, es wird nicht geladen vom Client sofort&mdash;müssen Sie das Aufrufen von Code über die Integration zu laden. Wir werden diesen Fehler in der Zukunft Punkte eingehen.
+Wenn auf diese Weise auf eine Integration verwiesen wird, wird Sie nicht sofort&mdash;vom Client geladen, sondern es muss Code aus der Integration aufgerufen werden, um Sie zu laden. Dieser Fehler wird in Zukunft behandelt.
 
-Die `Xamarin.Interactive` PCL bietet einige wichtige-Integration-APIs. Jeder Integration muss mindestens einen Einstiegspunkt für die Integration bereitstellen:
+Die `Xamarin.Interactive` PCL bietet einige wichtige Integrations-APIs. Jede Integration muss mindestens einen Integrations Einstiegspunkt bereitstellen:
 
 ```csharp
 using Xamarin.Interactive;
@@ -47,15 +47,15 @@ class AgentIntegration : IAgentIntegration
 }
 ```
 
-An diesem Punkt nach die Integration Assembly verwiesen wird, lädt der Client implizit JavaScript und CSS-Integration-Dateien.
+Nachdem auf die integrationsassembly verwiesen wurde, lädt der Client dann implizit JavaScript-und CSS-Integrations Dateien.
 
 ## <a name="apis"></a>APIs
 
-Wie mit einer beliebigen Assembly, die auf die verwiesen wird von einer Arbeitsmappe oder live-Sitzung ansehen, werden alle seine öffentlichen APIs für die Sitzung zugegriffen werden kann. Aus diesem Grund ist es wichtig, damit eine sichere und sinnvolle API-Oberfläche für Benutzer untersuchen.
+Wie bei allen Assemblys, auf die von einer Arbeitsmappe oder einer Live Prüfungssitzung verwiesen wird, ist eine ihrer öffentlichen APIs für die Sitzung zugänglich. Daher ist es wichtig, dass Sie über eine sichere und sinnvolle API-Oberfläche verfügen, die Benutzer untersuchen können.
 
-Die Assembly für die Integration ist tatsächlich eine Brücke zwischen einer Anwendung oder SDK von Interesse sind und die Sitzung. Sie können neue APIs, die sinnvoll, insbesondere im Kontext einer Arbeitsmappe oder live-Sitzung zu überprüfen, oder geben keine öffentlichen APIs, und führen Sie einfach "hinter den Kulissen"-Aufgaben, z.B. die Rückgabe des Objekts bereitstellen [Darstellungen](~/tools/workbooks/sdk/representations.md).
+Die integrationsassembly ist praktisch eine Brücke zwischen einer Anwendung oder einem SDK, die von Interesse ist, und der Sitzung. Sie kann neue APIs bereitstellen, die speziell im Kontext einer Arbeitsmappe oder einer Live Prüfungssitzung sinnvoll sind. Sie können auch keine öffentlichen APIs bereitstellen und einfach "im Hintergrund" Aufgaben ausführen, wie das Bereitstellen von Objekt [Darstellungen](~/tools/workbooks/sdk/representations.md).
 
 > [!NOTE]
-> APIs, die müssen öffentlich sein, aber nicht über IntelliSense verfügbar gemacht werden soll, können mit der üblichen markiert werden `[EditorBrowsable (EditorBrowsableState.Never)]` Attribut.
+> APIs, die öffentlich sein müssen, aber nicht über IntelliSense angezeigt werden sollten, können mit dem üblichen `[EditorBrowsable (EditorBrowsableState.Never)]` -Attribut gekennzeichnet werden.
 
 [nuget]: https://nuget.org/packages/Xamarin.Workbooks.Integration

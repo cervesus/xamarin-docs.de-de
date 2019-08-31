@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 42749bf07f3b0239a550e66247fc0377fdc1a0b4
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 0d93978d6f7b3dff6d0d7ebf7c9f9afbe3572079
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121374"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199908"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Arbeiten mit tvos-Tabellen Ansichten in xamarin
 
@@ -69,7 +69,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Tabellen Sichten in einer xamarin. 
 Um zu beginnen, machen Sie Folgendes:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-    
+
 1. Starten Sie in Visual Studio für Mac ein neues tvos-App-Projekt, wählen Sie **tvos** > **App** > **Single View App** aus, und klicken Sie auf die Schaltfläche **weiter** : 
 
     [![](table-views-images/table02.png "Einzelansicht-App auswählen")](table-views-images/table02.png#lightbox)
@@ -112,9 +112,9 @@ Um zu beginnen, machen Sie Folgendes:
 
     [![](table-views-images/table15.png "Das Layout der Benutzeroberfläche")](table-views-images/table15.png#lightbox)
 1. Speichern Sie die Änderungen am Storyboard.
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Starten Sie in Visual Studio ein neues tvos-App-Projekt, und wählen Sie **tvos** > **Single View App** aus, und geben Sie einen Namen für Ihre APP ein. Klicken Sie auf die Schaltfläche OK, um eine neue Lösung zu erstellen: 
 
     [![](table-views-images/table02-vs.png "Einzelansicht-App auswählen")](table-views-images/table02-vs.png#lightbox)
@@ -153,7 +153,7 @@ Um zu beginnen, machen Sie Folgendes:
 
     [![](table-views-images/table15.png "Das Layout der Benutzeroberfläche")](table-views-images/table15.png#lightbox)
 1. Speichern Sie die Änderungen am Storyboard.
-    
+
 -----
 
 <a name="Designing-a-Data-Model" />

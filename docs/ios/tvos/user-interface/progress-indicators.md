@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/25/2018
-ms.openlocfilehash: 6ab1b4ad5493075e8806190e77f6d234354af9ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab82b98351b95fbdea9c33a9eae7142c7a54fc77
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648972"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200304"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Arbeiten mit tvos-Status Indikatoren in xamarin
 
@@ -46,7 +46,7 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Status leisten:
 Die einfachste Möglichkeit, mit einer Statusanzeige in einer xamarin. tvos-APP zu arbeiten, besteht darin, Sie mithilfe des IOS-Designers zur Benutzeroberfläche der APP hinzuzufügen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-    
+
 1. Doppelklicken Sie im **Lösungspad**auf die Datei **Main. Storyboard** , und öffnen Sie Sie zur Bearbeitung.
 
 2. Ziehen Sie einen **Aktivitätsindikator** aus der **Toolbox** , und legen Sie ihn in der Ansicht ab: 
@@ -72,7 +72,7 @@ Die einfachste Möglichkeit, mit einer Statusanzeige in einer xamarin. tvos-APP 
 6. Speichern Sie die Änderungen.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die Datei **Main. Storyboard** , und öffnen Sie Sie zur Bearbeitung.
 
 2. Ziehen Sie einen **Aktivitätsindikator** aus der **Toolbox** , und legen Sie ihn in der Ansicht ab: 

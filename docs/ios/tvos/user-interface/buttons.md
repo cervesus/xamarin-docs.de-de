@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/07/2017
-ms.openlocfilehash: e0f2939c534c009e54d6812c3a45ac6c759d1247
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c53344d2e2e9458585439fd90a1f71a4869026be
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657303"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200187"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Arbeiten mit tvos-Schaltflächen in xamarin
 
@@ -221,7 +221,7 @@ Und Sie können den Schatten des Titels mithilfe `SetTitleShadowColor`von anpass
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-*Wenn die* Schaltfläche mit folgendem Code markiert wird, können Sie den Titel Schatten so festlegen, dass *er von der* einschaltfläche in einen Wert geändert wird:
+Wenn die Schaltfläche mit folgendem Code markiert wird , können Sie den Titel Schatten so festlegen, dass er von der einschaltfläche in einen Wert geändert wird:
 
 ```csharp
 button.ReverseTitleShadowWhenHighlighted = true;

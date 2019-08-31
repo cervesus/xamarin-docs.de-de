@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 236a64736bc5f92537c858b9cdf938410cf4b0f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64b114cad16095a2afd80b690a4654b91b2aa203
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649663"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199938"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Arbeiten mit tvos-Registerkarten leisten-Controllern in xamarin
 
@@ -59,7 +59,7 @@ Jede Kategorie (Registerkarte) in der Registerkarten Leiste wird durch ein Tabst
 Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu arbeiten, besteht darin, Sie mithilfe des IOS-Designers zur Benutzeroberfläche der APP hinzuzufügen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-    
+
 1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos** >  > -App im**Register**Kartenformat aus: 
 
     [![](tab-bars-images/tab02.png "Auswählen der APP im Registerkarten Format")](tab-bars-images/tab02.png#lightbox)
@@ -84,7 +84,7 @@ Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu 
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos** >  > -App im**Register**Kartenformat aus: 
 
     [![](tab-bars-images/tab02vs.png "Auswählen der APP im Registerkarten Format")](tab-bars-images/tab02vs.png#lightbox)
@@ -107,7 +107,7 @@ Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu 
 1. Machen Sie alle erforderlichen Ereignisse verfügbar, um mit ihren UI C# -Steuerelementen im Code zu arbeiten.
 1. Benennen Sie alle UI-Steuerelemente, die Sie C# im Code verfügbar machen möchten.
 1. Speichern Sie die Änderungen.
-    
+
 -----
 
 > [!IMPORTANT]

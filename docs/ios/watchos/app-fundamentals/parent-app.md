@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 0dc3c8e4c8b4db99b07114e855910ccfe5fe180f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05dfb419834c2eee94f98d023df3a3fe8d6eee90
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654556"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198116"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Arbeiten mit dem WatchOS übergeordnete Anwendung in Xamarin
 
@@ -22,11 +22,11 @@ ms.locfileid: "68654556"
 
 Es gibt verschiedene Möglichkeiten für die Kommunikation zwischen der Watch-app und dem iOS-app, der sie mit gebündelt wird:
 
-- Sehen Sie sich Erweiterungen können [Aufrufen einer Methode](#code) für die übergeordnete-app, die im Hintergrund ausgeführt, auf dem iPhone wird.
+- Watch-Erweiterungen können eine Methode für die übergeordnete APP [aufzurufen](#code) , die im Hintergrund auf dem iPhone ausgeführt wird.
 
 - Sehen Sie sich Erweiterungen können [freigeben einen Speicherort](#storage) mit der übergeordneten iPhone-app.
 
-- Verwenden Übergabe, um Daten aus einem Blick oder eine Benachrichtigung an die Watch-app, die Benutzer an eine bestimmte Schnittstelle Controller in der app senden zu übergeben.
+- Übergeben Sie mithilfe von Handoff Daten von einem Blick oder einer Benachrichtigung an die Watch-APP, und senden Sie den Benutzer an einen bestimmten Schnittstellen Controller in der app.
 
 Die übergeordnete-App wird manchmal auch als der Container-App bezeichnet.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2016
-ms.openlocfilehash: 7cb079beac7fd97072333bccf3ff387a9e8c5465
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8f029084982237d7dd16c8f3e5e5ae46f5d0223c
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654319"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198995"
 ---
 # <a name="message-app-integration-in-xamarinios"></a>Integration von Message-apps in xamarin. IOS
 
@@ -20,7 +20,6 @@ _In diesen Artikeln wird erläutert, wie Sie eine Erweiterung der Nachrichten-AP
 
 Neu bei IOS 10. eine Erweiterung der Nachrichten-APP wird in die **Nachrichten** -app integriert und stellt dem Benutzer neue Funktionen zur Anwendung. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden.
 
-    
 ## <a name="message-app-extension-basicsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[Grundlagen der Erweiterung von Nachrichten-Apps](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 
 In diesem Artikel wird gezeigt, wie Sie eine Erweiterung der Nachrichten-APP in eine xamarin. IOS-Projekt Mappe einschließen, die in die **Nachrichten** -app integriert wird und dem Benutzer neue Funktionen bietet

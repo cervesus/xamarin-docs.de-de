@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 667a3726a2d214c9e33e20a73f629c9ca532eab1
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: MT
+ms.openlocfilehash: 36b5ace881ba8f7fb45fef9d0350ffca67e0c951
+ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120476"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169260"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Ziel-C-Bibliotheken
 
@@ -325,7 +325,7 @@ IntPtr Constructor (CGRect frame);
 
 ### <a name="binding-protocols"></a>Bindungs Protokolle
 
-Wie im Dokument zum API-Design beschrieben, ordnet xamarin. IOS die Ziele-C-Protokolle im Abschnitt [erörtern von Modellen und Protokollen](~/ios/internals/api-design/index.md#Models)den Klassen zu, die mit dem[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
+Wie im Dokument zum API-Design beschrieben, ordnet xamarin. IOS die Ziele-C-Protokolle im Abschnitt [erörtern von Modellen und Protokollen](~/ios/internals/api-design/index.md#models)den Klassen zu, die mit dem[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
 versehen. Dies wird in der Regel verwendet, wenn Ziel-C-Delegatklassen implementiert werden.
 
 Der große Unterschied zwischen einer regulären gebundenen Klasse und einer Delegatklasse besteht darin, dass die Delegatklasse eine oder mehrere optionale Methoden aufweisen kann.
@@ -1404,4 +1404,3 @@ In der Vergangenheit mussten wir das Protokoll in jede Implementierung kopieren,
 ## <a name="related-links"></a>Verwandte Links
 
 - [Bindungs Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
- 
