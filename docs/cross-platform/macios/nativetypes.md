@@ -6,12 +6,12 @@ ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 9d43bbdb49fe4ab1ff909f709a37f979c360ceb9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 6b6a7b8bb2efdd099d7fde6bb5397e6330258bcc
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509589"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199392"
 ---
 # <a name="native-types-for-ios-and-macos"></a>Native Typen für IOS und macOS
 
@@ -45,9 +45,9 @@ Implizite Konvertierungs Operatoren werden bereitgestellt, wenn es keine Möglic
 
 Explizite Konvertierungs Operatoren werden bereitgestellt, wenn ein Datenverlust möglich ist (64-Bit-Wert wird an einem 32-oder potenziell 32-Speicherort gespeichert).
 
- `int`, `uint` und `float` sindimplizit`nfloat` in konvertierbar `nuint`,und da 32 Bits immer in 32 oder 64 Bits passen. `nint`
+`int`, `uint` und `float` sindimplizit`nfloat` in konvertierbar `nuint`,und da 32 Bits immer in 32 oder 64 Bits passen. `nint`
 
- `nint`, `nuint` `long`und `nfloat` sind implizit in konvertierbar. als 32-oder 64 `ulong` -Bit-Werte werden immer in den 64-Bit- `double` Speicher passen.
+`nint`, `nuint` `long`und `nfloat` sind implizit in konvertierbar. als 32-oder 64 `ulong` -Bit-Werte werden immer in den 64-Bit- `double` Speicher passen.
 
 Sie müssen explizite Konvertierungen von `nint` `nuint` und `nfloat` in `int`verwenden, `uint` und `float` da die systemeigenen Typen möglicherweise 64 Bits Speicher enthalten.
 

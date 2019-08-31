@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 76e9d91b735f2ae5041330d8e290347ae9314487
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 43c9ee599fe96c107bf10996834d9bcf60847603
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654807"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200105"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Startbildschirme für xamarin. IOS-apps
 
@@ -54,7 +54,7 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
 
 4. Öffnen Sie **launchscreen. Storyboard** zur Bearbeitung, indem Sie in der **Lösungspad**auf die Datei doppelklicken.
 
-5. Wählen Sie ein Gerät und eine Ausrichtung aus, um eine Vorschau des Storyboards für den Startbildschirm im IOS-Designer anzuzeigen. Öffnen Sie den Bereich Geräteauswahl in der unteren Symbolleiste, und wählen Sie **iPhone 4S** **und hoch**Format aus.
+5. Wählen Sie ein Gerät und eine Ausrichtung aus, um eine Vorschau des Storyboards für den Startbildschirm im IOS-Designer anzuzeigen. Öffnen Sie den Bereich Geräteauswahl in der unteren Symbolleiste, und wählen Sie **iPhone 4S** und Hochformat aus.
 
     ![Die Geräteauswahl-Symbolleiste](launch-screens-images/launch05.png)
 
@@ -130,7 +130,7 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
 
     - Um eine storyboarddatei zu bearbeiten, benötigt Visual Studio eine aktive Verbindung mit einem Mac-buildhost. Weitere Informationen finden Sie im Leitfaden zum [Herstellen einer Verbindung mit dem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) .
 
-7. Wählen Sie ein Gerät und eine Ausrichtung aus, um eine Vorschau des Storyboards für den Startbildschirm im IOS-Designer anzuzeigen. Öffnen Sie den Bereich Geräteauswahl auf der unteren Symbolleiste, und wählen Sie **iPhone 4S** **und hoch**Format aus: 
+7. Wählen Sie ein Gerät und eine Ausrichtung aus, um eine Vorschau des Storyboards für den Startbildschirm im IOS-Designer anzuzeigen. Öffnen Sie den Bereich Geräteauswahl auf der unteren Symbolleiste, und wählen Sie **iPhone 4S** und Hochformat aus: 
  
     ![Die Geräteauswahl-Symbolleiste](launch-screens-images/launch07-vs.png)
 

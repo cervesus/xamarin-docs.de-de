@@ -1,36 +1,36 @@
 ---
-title: Xamarin.iOS-dateikomprimierung
-description: Dieses Dokument beschreibt, wie Sie mit der API Libcompression in Xamarin.iOS arbeiten. Erläutert Entleeren, jedoch ist, und die verschiedenen Algorithmen unterstützt.
+title: Dateikomprimierung in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie mit der libcompression-API in xamarin. IOS arbeiten. Er erläutert das deflating, das erhöhen und die unterstützten Algorithmen.
 ms.prod: xamarin
 ms.assetid: 94D05DAB-01E8-4C62-9CEF-9D6417EEA8EB
 ms.technology: xamarin-ios
 author: mandel-macaque
 ms.author: mandel
 ms.date: 03/04/2019
-ms.openlocfilehash: f7a1df65047fd8040dd40e9f7f057d6bfe6dea61
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bcc63aa4e1926f5502d571bf47c83b0c8ea7e429
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61403030"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199522"
 ---
-# <a name="file-compression-in-xamarinios"></a>Xamarin.iOS-dateikomprimierung
+# <a name="file-compression-in-xamarinios"></a>Dateikomprimierung in xamarin. IOS
 
-Xamarin-apps für iOS 9.0 oder Mac OS 10.11 (und höher) können die _Komprimierung Framework_ komprimieren (Codierung) und Dekomprimieren von (decodieren) Daten. Xamarin.iOS enthält dieses Framework, befolgen die Stream-API. Die Komprimierung-Framework ermöglicht es Entwicklern, für die Interaktion mit dem Komprimieren und dekomprimiert Daten, als wären sie normale Streams ohne Rückrufe oder Delegaten verwendet werden müssen.
+Xamarin-apps, die IOS 9,0 oder macOS 10,11 (und höher) als Ziel verwenden, können das _Komprimierungs Framework_ zum Komprimieren (Codieren) und Dekomprimieren (decodieren) von Daten verwenden. Xamarin. IOS stellt dieses Framework nach der Stream-API bereit. Das Komprimierungs Framework ermöglicht es Entwicklern, mit den komprimierten und entkomprimierten Daten zu interagieren, als ob es sich um normale Streams handelt, ohne Rückrufe oder Delegaten verwenden zu müssen.
 
-Die Komprimierung-Framework bietet Unterstützung für die folgenden Algorithmen:
+Das Komprimierungs Framework bietet Unterstützung für die folgenden Algorithmen:
 
 * LZ4
-* Unformatierte LZ4
+* LZ4 RAW
 * Lzfse
 * Lzma
 * Zlib
 
-Mit dem Framework für die Komprimierung ermöglicht Entwicklern, die Komprimierung Vorgänge ohne Drittanbieter-Bibliotheken oder NuGet-Pakete ausführen. Dies reduziert die externe Abhängigkeiten und stellt sicher, dass die Komprimierung-Vorgänge (solange sie die Betriebssystem-Mindestanforderungen erfüllen) auf allen Plattformen unterstützt werden.
+Mithilfe des Komprimierungs Frameworks können Entwickler Komprimierungs Vorgänge ausführen, ohne dass Bibliotheken von Drittanbietern oder nugets verwendet werden. Dadurch werden externe Abhängigkeiten reduziert, und es wird sichergestellt, dass die Komprimierungs Vorgänge auf allen Plattformen unterstützt werden (vorausgesetzt, Sie erfüllen die Mindestanforderungen an das Betriebssystem).
 
-## <a name="general-file-decompression"></a>Allgemeine dekomprimiert.
+## <a name="general-file-decompression"></a>Allgemeine Datei Dekomprimierung
 
-Das Framework für die Komprimierung verwendet einen Stream-API in Xamarin.iOS- und Xamarin.Mac. Diese API bedeutet, um Daten zu komprimieren, die Entwickler, die normalen Muster, die in anderen e/a-APIs in .NET verwendet verwenden kann. Das folgende Beispiel zeigt, wie Sie Daten mit dem Framework Komprimierung Dekomprimieren handelt es sich ähnlich wie die API finden Sie in der `System.IO.Compression.DeflateStream` API:
+Das Komprimierungs Framework verwendet eine Stream-API in xamarin. IOS und xamarin. Mac. Diese API bedeutet, dass der Entwickler zum Komprimieren von Daten die normalen Muster verwenden kann, die in anderen IO-APIs in .NET verwendet werden. Im folgenden Beispiel wird gezeigt, wie Daten mit dem Komprimierungs Framework, das der API in der `System.IO.Compression.DeflateStream` -API ähnelt, deaktiviert werden:
 
 ```csharp
 // sample zlib data
@@ -45,11 +45,11 @@ using (var reader = new StreamReader (decompressing))
 }
 ```
 
-Die `CompressionStream` implementiert die `IDisposable` -Schnittstelle, wie andere `System.IO.Streams`, sodass Entwickler sichergestellt wird, dass die Ressourcen freigegeben werden, sobald sie nicht mehr benötigt werden.
+Implementiert die `IDisposable` -Schnittstelle wie andere `System.IO.Streams`, damit Entwickler sicherstellen sollten, dass Ressourcen freigegeben werden, sobald Sie nicht mehr benötigt werden. `CompressionStream`
 
-## <a name="general-file-compression"></a>Allgemeine dateikomprimierung
+## <a name="general-file-compression"></a>Allgemeine Dateikomprimierung
 
-Die Komprimierung-API ermöglicht es auch Entwickler beim Komprimieren von Daten, die die gleiche API befolgen. Daten können komprimiert werden, mithilfe eines der bereitgestellten Algorithmen angegeben, der `CompressionAlgorithm` Enumerator.
+Die Komprimierungs-API ermöglicht es Entwicklern auch, Daten nach derselben API zu komprimieren. Daten können mit einem der im `CompressionAlgorithm` -Enumerator angegebenen Algorithmen komprimiert werden.
 
 ```csharp
 // sample method that copies the data from the source stream to the destination stream
@@ -85,4 +85,4 @@ static void CompressExample ()
 
 ## <a name="async-support"></a>Asynchrone Unterstützung
 
-Die `CompressionStream` alle asynchronen Vorgänge, die von Microsoft Intune unterstützt die `System.IO.DeflateStream`, was bedeutet, dass Entwickler das Schlüsselwort "Async" verwenden können, um die komprimieren und Dekomprimieren-Vorgänge auszuführen, ohne Blockierung im UI-Thread.
+Unterstützt alle asynchronen Vorgänge `System.IO.DeflateStream`, die von unterstützt werden. Dies bedeutet, dass Entwickler das Async-Schlüsselwort verwenden können, um die Vorgänge zum Komprimieren und Dekomprimieren auszuführen, ohne den UI-Thread zu blockieren. `CompressionStream`

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 245c406a1b62b454ff9935ebb7cd3531a624aea3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6446bd7ef196fadae25c0e4dc18542d269424d6d
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656587"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200274"
 ---
 # <a name="healthkit-in-xamarinios"></a>Healthkit in xamarin. IOS
 
@@ -83,7 +83,7 @@ Klicken Sie auf **weiter** , und arbeiten Sie die verbleibenden Bildschirme durc
 
 [![](healthkit-images/image04.png "Das Bereitstellungs Profil wird erstellt.")](healthkit-images/image04.png#lightbox)
 
-Klicken Sie auf **generieren** , und warten Sie auf die Erstellung Ihres Profils. Laden Sie die Datei herunter, und doppelklicken Sie darauf, um Sie in Xcode zu installieren. Sie können überprüfen, ob die Installation unter **Xcode > Einstellungen > Konten > Details anzeigen...** Das soeben installierte Bereitstellungs Profil sollte angezeigt werden, und es sollte das Symbol für das Integritäts-Kit und alle anderen speziellen Dienste in der Berechtigungs **Zeile enthalten** :
+Klicken Sie auf **generieren** , und warten Sie auf die Erstellung Ihres Profils. Laden Sie die Datei herunter, und doppelklicken Sie darauf, um Sie in Xcode zu installieren. Sie können überprüfen, ob die Installation unter **Xcode > Einstellungen > Konten > Details anzeigen...** Das soeben installierte Bereitstellungs Profil sollte angezeigt werden, und es sollte das Symbol für das Integritäts-Kit und alle anderen speziellen Dienste in der Berechtigungs Zeile enthalten:
 
 [![](healthkit-images/image05.png "Profil in Xcode anzeigen")](healthkit-images/image05.png#lightbox)
 

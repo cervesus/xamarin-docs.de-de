@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2019
-ms.openlocfilehash: 89afb106320ce77e86a66f2c78bd6e32de8c38f3
-ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.openlocfilehash: 33a121c97df435d3423e3e0f525e6a3d32c780ad
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986992"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197470"
 ---
 # <a name="xamarinforms-requirements"></a>Anforderungen für Xamarin.Forms
 
@@ -25,10 +25,10 @@ Im Artikel [Installation](installation/index.md) finden Sie eine Übersicht übe
 Xamarin.Forms-Anwendungen können für die folgenden Betriebssysteme geschrieben werden:
 
 - iOS 8 oder höher
-- Android 5.0 (API 21) oder höher ([mehr](#android))
+- Android 5,0 (API 21) oder höher ([Weitere Informationen](#android))
 - Windows 10 Universelle Windows-Plattform ([weitere Informationen](#windows10))
 
-Davon aus, dass Entwickler Kenntnisse verfügen [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md).
+Es wird davon ausgegangen, dass Entwickler Vertrautheit mit [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)haben.
 
 ### <a name="additional-platform-support"></a>Unterstützung für zusätzliche Plattformen
 
@@ -49,17 +49,17 @@ Außerdem **muss** die Ziel-/Kompilierversion für Android-Projekte auf *Zuletzt
 
 **Projektoptionen > Anwendung > Anwendungseigenschaften**
 
-![Buildoptionen für Android in Visual Studio](requirements-images/options-android-vs-sml.png)
+![Android-Buildoptionen in Visual Studio](requirements-images/options-android-vs-sml.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 **Erstellen > Allgemein**
 
-![Wählen Sie das aktuelle Zielframework](requirements-images/options-general-sml.png)
+![Wählen Sie das neueste Ziel Framework aus.](requirements-images/options-general-sml.png)
 
 **Erstellen > Android-Anwendung**
 
-![Wählen Sie die niedrigste und Android-Versionen für Ihre app](requirements-images/options-android-sml.png)
+![Wählen Sie mindestens die Android-Ziel Versionen für Ihre APP aus.](requirements-images/options-android-sml.png)
 
 -----
 
@@ -69,7 +69,7 @@ Xamarin.Forms-Apps können unter macOS und Windows entwickelt werden. Mit Window
 
 ## <a name="mac-system-requirements"></a>Systemanforderungen für Mac
 
-Sie können Visual Studio für Mac verwenden, zum Entwickeln von Xamarin.Forms-apps unter MacOS High Sierra (10.13) oder höher. Es wird empfohlen, zum Entwickeln von iOS-apps mit mindestens das iOS 10 SDK und Xcode 9 installiert.
+Sie können Visual Studio für Mac verwenden, um xamarin. Forms-apps auf macOS High Sierra (10,13) oder höher zu entwickeln. Zum Entwickeln von IOS-apps empfiehlt es sich, mindestens das IOS 10 SDK und Xcode 9 installiert zu haben.
 
 > [!NOTE]
 >  Windows-Apps können nicht unter macOS entwickelt werden.
@@ -84,17 +84,17 @@ Xamarin.Forms-Apps für iOS und Android können auf allen Windows-Installationen
 
 Das Entwickeln von Xamarin.Forms-Apps für die universelle Windows-Plattform erfordert Folgendes:
 
-- Windows 10 (neueste Version zu empfehlen, mindestens der Fall Creators Update)
+- Windows 10 (neueste Version empfohlen, Fall Creators Update minimal)
 
-- Visual Studio-2019 empfohlen (Visual Studio 2017 Version 15.8 minimale)
+- Visual Studio 2019 empfohlen (Visual Studio 2017, Version 15,8, Minimum)
 
 - [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
 Sie können einer vorhandenen Xamarin.Forms-Projektmappe jederzeit eine [universelle Windows-Plattform-App (UWP)](~/xamarin-forms/platform/windows/installation/index.md) hinzufügen.
 
-## <a name="deprecated-platforms"></a>Nicht mehr unterstützte Plattformen
+## <a name="deprecated-platforms"></a>Veraltete Plattformen
 
-Diese Plattformen werden nicht unterstützt, wenn Sie Xamarin.Forms, 3.0 oder höher verwenden:
+Diese Plattformen werden bei Verwendung von xamarin. Forms 3,0 oder neuer nicht unterstützt:
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*
