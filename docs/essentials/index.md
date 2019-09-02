@@ -4,13 +4,13 @@ description: Dieses Dokument verweist auf verschiedene Anleitungen für Xamarin.
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 08f97263ccb5b4c91a541d06534e82aaaebbae1e
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.date: 08/27/2019
+ms.openlocfilehash: 2101d2e3948cb917e62725731c4895cc57282b3b
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175394"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065127"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -63,6 +63,10 @@ Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anw
 ## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[Problembehandlung](troubleshooting.md?context=xamarin/xamarin-forms)
 
 Nutzen Sie die verfügbaren Ressourcen, wenn Probleme auftreten.
+
+## <a name="release-noteshttpsdocsmicrosoftcomxamarinessentialsrelease-notes"></a>[Anmerkungen zu dieser Version](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+
+Sehen Sie sich die vollständigen Versionshinweise zu jedem Xamarin.Essentials-Release an.
 
 ## <a name="api-documentationxrefxamarinessentials"></a>[API-Dokumentation](xref:Xamarin.Essentials)
 

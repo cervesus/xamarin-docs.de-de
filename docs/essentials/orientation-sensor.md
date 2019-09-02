@@ -5,12 +5,12 @@ ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: f1fceaef93e7ac30bbbe0f13da7dde3cde5275fd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5423872da7966bc7e4bb88e278d76b709f114158
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898669"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120713"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
@@ -98,13 +98,13 @@ Dies sind rechtshändige Koordinatensysteme: Zeigt der Daumen der rechten Hand i
 
 Beispiele:
 
-* Wenn das Gerät flach auf einem Tisch mit dem Bildschirm nach oben liegt und die Oberseite des Geräts (im Hochformat) nach Norden zeigt, werden die beiden Koordinatensysteme ausgerichtet. Der `Quaternion`-Wert stellt die Identitätsquaternion (0, 0, 0, 1) dar. Alle Rotationen lassen sich relativ zu dieser Position analysieren.
+- Wenn das Gerät flach auf einem Tisch mit dem Bildschirm nach oben liegt und die Oberseite des Geräts (im Hochformat) nach Norden zeigt, werden die beiden Koordinatensysteme ausgerichtet. Der `Quaternion`-Wert stellt die Identitätsquaternion (0, 0, 0, 1) dar. Alle Rotationen lassen sich relativ zu dieser Position analysieren.
 
-* Wenn das Gerät flach auf einem Tisch mit dem Bildschirm nach oben liegt und die Oberseite des Geräts (im Hochformat) nach Westen zeigt, entspricht der `Quaternion`-Wert (0, 0, 0,707, 0,707). Das Gerät wurde um 90 Grad um die Z-Achse der Erde gedreht.
+- Wenn das Gerät flach auf einem Tisch mit dem Bildschirm nach oben liegt und die Oberseite des Geräts (im Hochformat) nach Westen zeigt, entspricht der `Quaternion`-Wert (0, 0, 0,707, 0,707). Das Gerät wurde um 90 Grad um die Z-Achse der Erde gedreht.
 
-* Wenn das Gerät aufrecht gehalten wird, sodass seine Oberseite (im Hochformat) zum Himmel und die Rückseite nach Norden zeigt, wurde das Gerät um 90 Grad um die X-Achse gedreht. Der `Quaternion`-Wert lautet 0,707, 0, 0, 0,707.
+- Wenn das Gerät aufrecht gehalten wird, sodass seine Oberseite (im Hochformat) zum Himmel und die Rückseite nach Norden zeigt, wurde das Gerät um 90 Grad um die X-Achse gedreht. Der `Quaternion`-Wert lautet 0,707, 0, 0, 0,707.
 
-* Wenn das Gerät so positioniert ist, dass sein linker Rand auf einem Tisch liegt und die Oberseite nach Norden zeigt, wurde das Gerät um &ndash;90 Grad um die Y-Achse (bzw. 90 Grad um die negative Y-Achse) gedreht. Der `Quaternion`-Wert ist (0, –0,707, 0, 0,707).
+- Wenn das Gerät so positioniert ist, dass sein linker Rand auf einem Tisch liegt und die Oberseite nach Norden zeigt, wurde das Gerät um &ndash;90 Grad um die Y-Achse (bzw. 90 Grad um die negative Y-Achse) gedreht. Der `Quaternion`-Wert ist (0, –0,707, 0, 0,707).
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

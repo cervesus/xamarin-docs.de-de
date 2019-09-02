@@ -5,12 +5,12 @@ ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 342ae1b64fefebaa4b3fa82e9f48c6e9a58d4751
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899043"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976439"
 ---
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: Barometer
 
@@ -82,6 +82,8 @@ Keine plattformspezifischen Implementierungsangaben.
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 Diese API verwendet [CMAltimeter](https://developer.apple.com/documentation/coremotion/cmaltimeter#//apple_ref/occ/cl/CMAltimeter) zum Überwachen von Druckänderungen. Diese Hardwarefunktion wurde iPhone 6 und neueren Geräten hinzugefügt. `FeatureNotSupportedException` wird auf Geräten ausgelöst, die Altimeter nicht unterstützen.
+
+`SensorSpeed` wird aufgrund der fehlenden Unterstützung unter iOS nicht verwendet.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

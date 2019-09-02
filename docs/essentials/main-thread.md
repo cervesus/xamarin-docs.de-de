@@ -4,13 +4,13 @@ description: Mit der MainThread-Klasse können Anwendungen Code im Hauptausführ
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7ec1420d87c898f63614eb6d980c28834e980afd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 08/20/2019
+ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899004"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060115"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
 
@@ -93,6 +93,18 @@ else
 Möglicherweise vermuten Sie, dass diese Überprüfung die Leistung verbessert, wenn der Codeblock bereits auf dem Hauptthread läuft.
 
 _Diese Überprüfung ist jedoch nicht erforderlich._ Die Plattformimplementierungen von `BeginInvokeOnMainThread` überprüfen selbst, ob der Aufruf im Hauptthread erfolgt. Es gibt nur sehr geringe Leistungseinbußen, wenn Sie `BeginInvokeOnMainThread` aufrufen, ohne dass es wirklich notwendig ist.
+
+## <a name="additional-methods"></a>Weitere Methoden
+
+Die `MainThread`-Klasse umfasst die folgenden zusätzlichen `static`-Methoden, die für die Interaktion mit Elementen der Benutzeroberfläche aus Hintergrundthreads verwendet werden können:
+
+| Methode | Argumente | Rückgabe | Zweck |
+|---|---|---|---|
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Ruft `Func<T>` auf dem Hauptthread auf, und wartet auf den Abschluss |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | Ruft `Action` auf dem Hauptthread auf, und wartet auf den Abschluss |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Ruft `Func<Task<T>>` auf dem Hauptthread auf, und wartet auf den Abschluss |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Ruft `Func<Task>` auf dem Hauptthread auf, und wartet auf den Abschluss |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | Gibt `SynchronizationContext` für den Hauptthread zurück |
 
 ## <a name="api"></a>API
 

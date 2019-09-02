@@ -1,38 +1,38 @@
 ---
 ms.topic: include
-ms.openlocfilehash: e2ab71fa96be44168a52e5dde24967136e9a06fb
-ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.openlocfilehash: 9cee898775fd10a924f14abfe913fe4dfff940f5
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64992202"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206226"
 ---
-Xamarin kann installiert werden, als Teil einer _neue_ 2019 für Visual Studio-Installation, die folgenden Schritte aus:
+Xamarin kann im Rahmen einer _neuen_ Visual Studio 2019-Installation installiert werden, mit den folgenden Schritten:
 
-1. Laden Sie Visual Studio-Community 2019, Visual Studio Professional oder Visual Studio Enterprise von der [Visual Studio](https://visualstudio.microsoft.com/vs/) Seite (Download Sie Links unten finden).
+1. Laden Sie Visual Studio 2019 Community, Visual Studio Professional oder Visual Studio Enterprise von der [Visual Studio](https://visualstudio.microsoft.com/vs/) -Seite herunter (Download Links werden unten bereitgestellt).
 
 2. Doppelklicken Sie auf das heruntergeladene Paket, um die Installation zu starten.
 
 3. Wählen Sie im Installationsbildschirm die **Mobile-Entwicklung mit .NET**-Workload aus:
 
-    [![Mobile Entwicklung mit .NET-Auswahl](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
+    [![Mobile-Entwicklung mit .net-Auswahl](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
 
-4. Wenn Sie Visual Studio-2019-Installation zu beginnen möchten, klicken Sie auf die **installieren** -Schaltfläche in der unteren rechten Ecke:
+4. Wenn Sie bereit sind, die Installation von Visual Studio 2019 zu starten, klicken Sie in der unteren rechten Ecke auf die Schaltfläche **Installieren** :
 
     ![Schaltfläche „Installieren“](~/get-started/installation/windows-images/vs2019-click-install.png)
 
-   Verwenden Sie die Statusanzeigen, um die Installation zu überwachen:
+   Verwenden Sie die Statusanzeige, um die Installation zu überwachen:
 
     ![Statusleisten während der Installation](~/get-started/installation/windows-images/vs2019-progress-bars.png)
 
-5. Wenn Visual Studio-2019-Installation abgeschlossen ist, klicken Sie auf die **starten** Schaltfläche zum Starten von Visual Studio:
+5. Wenn die Installation von Visual Studio 2019 abgeschlossen ist, klicken Sie auf die Schaltfläche **starten** , um Visual Studio zu starten:
 
     ![Position der Schaltfläche „Start“](~/get-started/installation/windows-images/vs2019-launch.png)
 
 <a name="vs2019" />
 
-### <a name="adding-xamarin-to-visual-studio-2019"></a>Hinzufügen von Xamarin zu Visual Studio-2019
+### <a name="adding-xamarin-to-visual-studio-2019"></a>Hinzufügen von xamarin zu Visual Studio 2019
 
-Wenn Visual Studio-2019 bereits installiert ist, Xamarin hinzufügen, indem Sie die erneute Ausführung des 2019 für Visual Studio-Installers, um Workloads zu ändern (finden Sie unter [Ändern von Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) Einzelheiten). Führen Sie als Nächstes die oben genannten Schritte zum Installieren von Xamarin aus.
+Wenn Visual Studio 2019 bereits installiert ist, fügen Sie xamarin hinzu, indem Sie den Visual Studio 2019-Installer erneut ausführen, um Arbeits Auslastungen zu ändern (Weitere Informationen finden Sie unter [Ändern von Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) ). Führen Sie als Nächstes die oben genannten Schritte zum Installieren von Xamarin aus.
 
-Weitere Informationen zum Herunterladen und installieren Visual Studio-2019 finden Sie unter [installieren Sie Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio).
+Weitere Informationen zum herunterladen und Installieren von Visual Studio 2019 finden Sie unter [Installieren von Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio).
