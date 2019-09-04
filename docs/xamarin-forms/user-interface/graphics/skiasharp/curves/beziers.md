@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 7802360c95d31f237cf69c69728cffe02ad47e5a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646225"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228270"
 ---
 # <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
@@ -24,7 +24,7 @@ Die Bézierkurve ist nach Pierre Bézier (1910: 1999), einem französischen Engi
 
 Die Bézier-Kurven sind bekanntermaßen für den interaktiven Entwurf geeignet: Sie Verhalten &mdash; sich mit anderen Worten: Es gibt keine Singularitäten, die bewirken, dass die Kurve unendlich oder unhandlich &mdash; wird, und Sie sind im allgemeinen ästhetisch ansprechend.
 
-![](beziers-images/beziersample.png "Ein Beispiel Bezier-Kurve")
+![Ein Beispiel für eine Bezier-Kurve](beziers-images/beziersample.png)
 
 Zeichenumrisse computerbasierte Schriftarten werden in der Regel mit Bézierkurven definiert.
 
@@ -93,7 +93,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird ausgeführt:
 
-[![](beziers-images/beziercurve-small.png "Dreifacher Screenshot der Seite Bezier-Kurve")](beziers-images/beziercurve-large.png#lightbox "dreifachen Screenshot der Seite Bezier-Kurve")
+[![Dreifacher Screenshot der Bezier-kurvenseite](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
 
 Aus mathematischer Sicht ist die Kurve einen kubischen Polynom. Die Kurve wird eine gerade Linie an drei Punkten höchstens überschneidet. Auf den Anfangspunkt die Kurve ist immer eine gerade Linie von Anfang Tangens, und klicken Sie in die gleiche Richtung wie, zeigen Sie auf den ersten Kontrollpunkt. Auf den Endpunkt die Kurve ist immer eine gerade Linie von das zweite Steuerelement Tangens, und klicken Sie in die gleiche Richtung wie, zeigen Sie auf den Endpunkt.
 
@@ -125,7 +125,7 @@ Manchmal ist es sinnvoll, eine Bézierkurve verwenden, um ein Kreisbogensegment 
 
 Das folgende Diagramm zeigt die vier Punkte, die mit der Bezeichnung `pto`, `pt1`, `pt2`, und `pt3` definieren eine Bézierkurve (in Rot dargestellt), die ein Kreisbogensegment entspricht:
 
-![](beziers-images/bezierarc45.png "Ein Kreisbogensegment mit eine Bézierkurve Näherung")
+![Näherung eines kreisförmigen Bogens mit einer Bézier-Kurve](beziers-images/bezierarc45.png)
 
 Die Zeilen aus der Start- und Endpunkt der Control-Punkte sind Tangens auf den Kreis und die Bézierkurve aus, und sie haben eine Länge von *L*. Im erste Artikel, die oben genannten gibt an, dass die beste Bézierkurve ein Kreisbogensegment entspricht bei der diese Länge *L* wird wie folgt berechnet:
 
@@ -211,13 +211,13 @@ Die Start- und Endpunkt (`point0` und `point3`) werden basierend auf den normale
 
 So sieht das Programm ausgeführt wird, mit verschiedenen Blickwinkeln aus:
 
-[![](beziers-images/beziercirculararc-small.png "Dreifacher Screenshot der Seite Bezier-Kreisbogen")](beziers-images/beziercirculararc-large.png#lightbox "dreifachen Screenshot der Kreisbogen Bezier-Seite")
+[![Dreifacher Screenshot der Bezier-Kreisbogen Seite](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
 
 Sehen Sie sich im dritten Screenshot aus, und sehen Sie, dass die Bézierkurve wird vor allem aus ein Halbkreis abweicht, wenn der Winkel um 180 Grad, aber iOS-Bildschirms zeigt, dass es scheint, passen Viertelkreis-einwandfrei, wenn der Winkel 90 Grad ist.
 
 Berechnen die Koordinaten der die beiden Steuerpunkte ist recht einfach, wenn die Viertelkreis wie folgt ausgerichtet ist:
 
-![](beziers-images/bezierarc90.png "Ein Viertel Kreis mit einem Bézierkurve Näherung")
+![Näherung eines Quartals Kreises mit einer Bézier-Kurve](beziers-images/bezierarc90.png)
 
 Wenn der Radius des Kreises 100, dann ist *L* 55 ist und das ist eine einfache Anzahl merken müssen.
 
@@ -293,7 +293,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Punkte werden basierend auf den Sinusförmig oszillierenden Wert interpoliert `t`. Die interpolierte Punkte werden dann verwendet, um eine Reihe von vier verbundenen Bézierkurven zu erstellen. Hier ist die Animation ausgeführt wird:
 
-[![](beziers-images/squaringthecircle-small.png "Dreifacher Screenshot, der die Squaring der Seite \"Kreis\"")](beziers-images/squaringthecircle-large.png#lightbox "dreifachen Screenshot, der die Squaring der Seite \"Kreis\"")
+[![Dreifacher Screenshot der quadvon der kreisseite](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
 
 Eine solche Animation wäre ohne Kurven unmöglich, die algorithmisch flexibel genug ist, als Kreisbögen und gerade Linien gerendert werden soll.
 
@@ -342,7 +342,7 @@ Es kann sein, dass eine gute Übung zum Zeichnen diese Koordinaten auf Graph Pap
 
 Hier ist der Infinity-Zeichen:
 
-[![](beziers-images/bezierinfinity-small.png "Dreifacher Screenshot der Seite Bézier unendlich")](beziers-images/bezierinfinity-large.png#lightbox "dreifachen Screenshot der Seite Bézier unendlich")
+[![Dreifacher Screenshot der Bézier-unendlich Seite](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
 Es ist etwas glatter in Richtung der Mitte als das Infinity-Zeichen, die von gerendert der **Bogen unendlich** Seite die [ **drei Möglichkeiten, einen Bogen zu zeichnen** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) Artikel.
 
@@ -405,7 +405,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Und hier er ausgeführt wird:
 
-[![](beziers-images/quadraticcurve-small.png "Dreifacher Screenshot der Seite quadratischen Kurve")](beziers-images/quadraticcurve-large.png#lightbox "dreifachen Screenshot der Seite quadratischen Kurve")
+[![Dreifacher Screenshot der Seite mit der quadratischen Kurve](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
 
 Die gepunkteten Linien Tangente der Kurve in den Startpunkt und Endpunkt sind und an dem Punkt des Steuerelements zu erfüllen.
 
@@ -483,7 +483,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird ausgeführt:
 
-[![](beziers-images/coniccurve-small.png "Dreifacher Screenshot der Seite konischen Kurve")](beziers-images/coniccurve-large.png#lightbox "dreifachen Screenshot der Seite konischen Kurve")
+[![Dreifacher Screenshot der Seite mit der Seite "Seite"](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
 
 Wie Sie sehen können, scheint der Kontrollpunkt die Kurve für es abrufen, wenn das Gewicht größer ist. Wenn die Gewichtung auf 0 (null) ist, wird die Kurve eine gerade Linie von den Anfangspunkt, an den Endpunkt an.
 
@@ -491,7 +491,7 @@ In der Theorie negative Gewichtungen zulässig ist, und führen Sie die Kurve Bi
 
 Es ist sehr einfach, den Kontrollpunkt und die zu verwendende seitengewichtung, leiten die `ConicTo` -Methode zum Zeichnen von bis zu ein Kreisbogensegment (aber nicht einschließlich) ein Halbkreis. Im folgenden Diagramm erfüllen Tangenten aus der Start- und Endpunkt am Steuerungspunkts für das.
 
-![](beziers-images/conicarc.png "Eine Darstellung konischen Bogen ein Kreisbogensegment")
+![Ein konstanter Bogen Rendering eines Kreis Bogens](beziers-images/conicarc.png)
 
 Sie können trigonometrische verwenden, um den Abstand des Steuerungs Punkts von der Mitte des Kreises zu bestimmen: Dabei handelt es sich um den Radius des Kreises dividiert durch den Kosinus der Hälfte des Winkels. Um einen Kreisbogen zwischen den Start- und Endpunkt zu zeichnen, legen Sie die Gewichtung dieses gleiche Kosinus der Hälfte der Winkel aus. Beachten Sie, dass wenn der Winkel um 180 Grad ist, klicken Sie dann die Tangenten nie erfüllen und die Gewichtung ist 0 (null). Aber für Winkel ist kleiner als 180 Grad, wird die mathematischen Grundlagen von gut funktioniert.
 
@@ -547,7 +547,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Wie Sie sehen können, besteht keine visuellen Unterschied zwischen der `ConicTo` in Rot gezeigten Pfad und den zugrunde liegenden Kreis zu Referenzzwecken angezeigt:
 
-[![](beziers-images/coniccirculararc-small.png "Dreifacher Screenshot der Seite konischen Kreisbogen")](beziers-images/coniccirculararc-large.png#lightbox "dreifachen Screenshot der Seite konischen Kreisbogensegment verwendet")
+[![Dreifacher Screenshot der Seite "Konkel Kreisbogen"](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
 
 Aber legen Sie den Winkel um 180 Grad und der Mathematik fehlschlägt.
 

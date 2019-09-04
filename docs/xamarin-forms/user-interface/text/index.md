@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7b7cd9445ec9f28211037608ab04ffc45bec705c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656190"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227975"
 ---
 # <a name="text-in-xamarinforms"></a>Text in Xamarin.Forms
 
@@ -34,7 +34,7 @@ Textdarstellung kann geändert werden, mithilfe von integrierten oder benutzerde
 
 Die `Label` Ansicht zum Anzeigen von Text verwendet wird. Sie können mehrere Zeilen Text oder eine einzelne Textzeile anzeigen. `Label` kann Text mit mehreren Formatierungsoptionen in Inline verwendet darstellen. Die Bezeichnung kann umschließen oder Abschneiden von Text, wenn es nicht in einer Zeile passen.
 
-![](images/label.png "Beispiel für Bezeichnung")
+![Beispiel für eine Bezeichnung](images/label.png)
 
 Finden Sie unter den [Bezeichnung](label.md) Artikel Weitere Informationen.
 
@@ -46,7 +46,7 @@ Informationen zum Anpassen der Schriftart in eine Bezeichnung verwendet, finden 
 
 `Entry` Dient zum einzeiligen Texteingaben akzeptieren. `Entry` Angebote Steuerung Farben und Schriftarten. `Entry` verfügt über eine Kennwortmodus und Platzhaltertext können angezeigt werden, solange Sie Text eingegeben wurde.
 
-![](images/entry.png "Beispiel für einen Indexeintrag")
+![Beispiel für den Eintrag](images/entry.png)
 
 Finden Sie unter den [Eintrag](entry.md) Weitere Informationen.
 
@@ -58,7 +58,7 @@ Beachten Sie, dass im Gegensatz zu `Label`, `Entry` sind keine Einstellungen fü
 
 `Editor` wird verwendet, um mehrzeilige Texteingabe zu akzeptieren. `Editor` Angebote Steuerung Farben und Schriftarten.
 
-![](images/editor.png "Beispiel für den Editor")
+![Editor-Beispiel](images/editor.png)
 
 Finden Sie unter den [Editor](editor.md) Weitere Informationen.
 

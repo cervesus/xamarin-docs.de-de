@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f2ac37676dbdfc96c853c9bc679e79c2aae1adb1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 71c58baee5e98efcfb38b75ffed2b85c90f8a131
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656234"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227364"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Verbesserungen bei der Suche und dem Startbildschirm Widget in ios 10
 
@@ -71,7 +71,7 @@ var vibrancy2 = UIVibrancyEffect.CreateSecondaryVibrancyEffectForNotificationCen
 
 In ios 10 gibt es jetzt eine [ncwidgetdisplaymode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) -Eigenschaft, mit der Entwickler beschreiben können, wie viel Inhalt verfügbar ist und der Benutzer den Inhalt erweitern und reduzieren kann.
 
-Wenn ein Widget anfänglich angezeigt wird, befindet es sich in einem reduzierten Zustand. Ein reduziertes Widget hat eine Höhe von ungefähr zwei und einer halben Standard-IOS-Tabellenzeile. Der Entwickler kann die Größe für ein erweitertes Widget anfordern, sollte jedoch idealerweise kleiner sein als die Höhe des Bildschirms. 
+Wenn ein Widget anfänglich angezeigt wird, befindet es sich in einem reduzierten Zustand. Ein reduziertes Widget hat eine Höhe von ungefähr zwei und einer halben Standard-IOS-Tabellenzeile. Der Entwickler kann die Größe für ein erweitertes Widget anfordern, sollte jedoch idealerweise kleiner sein als die Höhe des Bildschirms.
 
 Im reduzierten Zustand sollte das Widget nur wichtige, eigenständige Informationen anzeigen. Wenn Sie erweitert ist, sollte das Widget zusätzliche Informationen anzeigen, mit denen der im reduzierten Zustand angezeigte primäre Inhalt erweitert wird. Die Wetter-APP zeigt z. b. die aktuellen Wetterbedingungen an, wenn Sie reduziert ist, und fügt die stündliche Vorhersage hinzu
 

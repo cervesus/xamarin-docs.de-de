@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 27eff717fd1390f54a177cc7636e7d107b69cd24
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ec7523ac2adc3a6b4ba18a7b8a0fe21749bd7856
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656279"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227405"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Erweiterungen der APP-Suche in xamarin. IOS
 
@@ -44,13 +44,13 @@ Weitere Informationen zum Implementieren von Deep-Linking in einer xamarin. IOS-
 
 Durch Implementieren der neuen [cssearchquery](https://developer.apple.com/reference/corespotlight/cssearchquery) -Klasse kann eine APP Such-und abgleichsregeln für Spotlight bereitstellen, um Inhalte in sich selbst zu finden, ohne dass der Benutzer die app verlassen muss (ähnlich wie die Mail-, Nachrichten-und Notizen-App funktionieren).
 
-Apps, die unterstützen `CSSearchQuery` , müssen in der Regel keinen eigenen, separaten Suchindex aufbewahren. 
+Apps, die unterstützen `CSSearchQuery` , müssen in der Regel keinen eigenen, separaten Suchindex aufbewahren.
 
 ## <a name="search-continuation"></a>Fortsetzung durchsuchen
 
 In ios 9 wurden die Such-APIs (z. b. kernspotlight `NSUserActivity` und webmarkup) von Apple eingeführt, um den Inhalt in einer APP ausführlich zu nutzen, damit Benutzer mit den Such Schnittstellen Spotlight und Safari nach diesen Inhalten suchen können. Weitere Informationen finden Sie in der Dokumentation zu [neuen Such-APIs](~/ios/platform/search/index.md) .
 
-In ios 10 baut Apple auf diesem Feature auf, indem es dem Benutzer ermöglicht, eine Suche in Spotlight oder Safari zu starten, und dann die Suche fortzusetzen, wenn eine APP geöffnet wird. 
+In ios 10 baut Apple auf diesem Feature auf, indem es dem Benutzer ermöglicht, eine Suche in Spotlight oder Safari zu starten, und dann die Suche fortzusetzen, wenn eine APP geöffnet wird.
 
 Um dieses Feature zu implementieren, bearbeiten Sie die `Info.plist` Datei der APP, `CoreSpotlightContinuation` fügen Sie den Schlüssel des Typs " **Boolean** " `YES`hinzu, und legen Sie Ihren Wert auf fest:
 

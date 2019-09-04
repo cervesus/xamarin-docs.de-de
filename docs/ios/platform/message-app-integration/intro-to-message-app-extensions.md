@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 7004c4692158be2e51eca93dece349da2a735bab
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 92b16e4a802411c70bef7d5810a161dbdfedfa09
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654396"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227494"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Grundlagen der Nachrichten-APP-Erweiterung in xamarin. IOS
 
@@ -118,14 +118,14 @@ Gehen Sie folgendermaßen vor, um eine benutzerdefinierte Aufkleber-Darstellung 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Starten Sie Visual Studio für Mac.
-2. Öffnen Sie die Projekt Mappe, um eine Erweiterung der Nachrichten-APP hinzuzufügen. 
-3. Wählen Sie **IOS** > **Extensions** > **IMESS Age Extension** aus, und klicken Sie auf die Schaltfläche **weiter** : 
+2. Öffnen Sie die Projekt Mappe, um eine Erweiterung der Nachrichten-APP hinzuzufügen.
+3. Wählen Sie **IOS** > **Extensions** > **IMESS Age Extension** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
     [![](intro-to-message-app-extensions-images/message01.png "IMESS Age-Erweiterung auswählen")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. Geben Sie einen **Namen** ein, und klicken Sie auf die Schaltfläche **weiter** : 
+4. Geben Sie einen **Namen** ein, und klicken Sie auf die Schaltfläche **weiter** :
 
     [![](intro-to-message-app-extensions-images/message02.png "Eingeben eines Erweiterungs namens")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. Klicken Sie auf die Schaltfläche **Erstellen** , um die Erweiterung zu erstellen: 
+5. Klicken Sie auf die Schaltfläche **Erstellen** , um die Erweiterung zu erstellen:
 
     [![](intro-to-message-app-extensions-images/message03.png "Klicken Sie auf die Schaltfläche erstellen")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
@@ -158,7 +158,7 @@ Führen Sie folgende Schritte aus:
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Klicken Sie im **Lösungspad**mit der rechten Maustaste auf den Projektnamen der Erweiterung, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.  >  **IOS |** AppleWatch > **Schnittstellen Controller**.
-2. Geben `StickerBrowserViewController` Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** : 
+2. Geben `StickerBrowserViewController` Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
 
     [![](intro-to-message-app-extensions-images/browser01.png "Geben Sie stickerbrowserviewcontroller als Name ein.")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. Öffnen Sie `StickerBrowserViewController.cs` die Datei zur Bearbeitung.
@@ -166,7 +166,7 @@ Führen Sie folgende Schritte aus:
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen der Erweiterung, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.  >  **IOS |** AppleWatch > **Schnittstellen Controller**.
-2. Geben `StickerBrowserViewController` Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** : 
+2. Geben `StickerBrowserViewController` Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
 
     [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Geben Sie stickerbrowserviewcontroller als Name ein.")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. Öffnen Sie `StickerBrowserViewController.cs` die Datei zur Bearbeitung.
@@ -537,7 +537,7 @@ namespace MessageExtension
                 MessagesAppViewController.AddStickerToCollection (NewSticker);
             };
             View.AddSubview (doneButton);
-            
+
             ...
         }
         #endregion
@@ -702,7 +702,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
         break;
     }
 }
-``` 
+```
 
 ## <a name="summary"></a>Zusammenfassung
 

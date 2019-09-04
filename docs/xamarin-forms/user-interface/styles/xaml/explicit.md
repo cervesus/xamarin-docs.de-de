@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 567985b1d6c6aff87e0a6879f05ab711a0095d6f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b7888ea29dd02733059346bca21fec0a4c510c2e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647204"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227993"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>Explizite Stile in Xamarin.Forms
 
@@ -66,7 +66,7 @@ Das folgende Codebeispiel zeigt *explizite* Stile, die in XAML in einer Seite de
 
 Die [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) definiert drei *explizite* Stile, die auf der Seite angewendet werden [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Jede `Style` dient zum Anzeigen von Text in eine andere Farbe, beim Festlegen von Schriftart auch Optionen für Größe und horizontalen und vertikalen Layout. Jede `Style` wird angewendet auf einen anderen `Label` durch Festlegen seiner [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften mithilfe der `StaticResource` Markuperweiterung. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
-[![](explicit-images/explicit-styles.png "Beispiel für explizite Stile")](explicit-images/explicit-styles-large.png#lightbox "explizite Stile-Beispiel")
+[![Beispiel für explizite Stile](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
 Darüber hinaus die endgültige [ `Label` ](xref:Xamarin.Forms.Label) verfügt über eine [ `Style` ](xref:Xamarin.Forms.Style) angewendet wird, aber überschreibt auch die [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) Eigenschaft, um einen anderen `Color`Wert.
 

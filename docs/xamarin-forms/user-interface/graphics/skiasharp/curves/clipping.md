@@ -7,12 +7,12 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 8978bd386ec2f2ea0f9960f079ce82750941cfad
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 133d7ffdeafdced3f909c21cf08f2241666015fa
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655952"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228256"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Schneiden mit Pfaden und Regionen
 
@@ -22,7 +22,7 @@ _Pfade zu Clip-Grafiken zu verwenden, auf bestimmte Bereiche und Regionen erstel
 
 Manchmal ist es erforderlich, um das Rendern von Grafiken auf einem bestimmten Bereich zu beschränken. Dies bezeichnet man als *Clipping*. Sie können die Clipping für Spezialeffekte zu erzeugen, z. B. mit diesem Image von einem Monkey-Objekt über eine Keyhole angezeigt:
 
-![](clipping-images/clippingsample.png "Monkey-Objekt über eine keyhole")
+![Affen durch eine Keyhole](clipping-images/clippingsample.png)
 
 Die *Clippingbereichs* ist der Bereich des Bildschirms in der Grafik gerendert werden. Alle Elemente, die außerhalb des Clippingbereichs angezeigt wird, wird nicht gerendert. Clippingbereichs in der Regel durch ein Rechteck definiert ist oder ein [ `SKPath` ](xref:SkiaSharp.SKPath) -Objekt, aber Sie können alternativ definieren ein Clipping mithilfe einer [ `SKRegion` ](xref:SkiaSharp.SKRegion) Objekt. Diese beiden Arten von Objekten an scheint zunächst Verwandte, da Sie eine Region aus einem Pfad erstellen können. Es ist jedoch nicht möglich, einen Pfad aus einer Region zu erstellen, und Sie unterscheiden sich intern stark: Ein Pfad besteht aus einer Reihe von Linien und Kurven, während ein Bereich durch eine Reihe von horizontalen Scan Linien definiert wird.
 
@@ -100,7 +100,7 @@ canvas.ClipPath(keyholePath);
 
 Die `PaintSurface` Handler setzt dann die Transformationen durch einen Aufruf von `ResetMatrix` und zeichnet die Bitmap um auf die Höhe des Bildschirms zu erweitern. Dieser Code wird davon ausgegangen, dass die Bitmap Quadrat, ist diese spezielle Bitmap. Die Bitmap wird nur innerhalb des Bereichs, der durch den Clipping-Pfad definierten gerendert:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Dreifacher Screenshot, der das Monkey-Objekt über die Seite \"Keyhole\"")](clipping-images/monkeythroughkeyhole-large.png#lightbox "dreifachen Screenshot, der das Monkey-Objekt über die Seite \"Keyhole\"")
+[![Dreifacher Screenshot der Seite "Monkey through Keyhole"](clipping-images/monkeythroughkeyhole-small.png)](clipping-images/monkeythroughkeyhole-large.png#lightbox)
 
 Des Freistellungspfads unterliegt die Transformationen in Kraft bei der `ClipPath` Methode wird aufgerufen, und nicht zu den Transformationen in Kraft bei ein grafisches Objekts (z. B. eine Bitmap) wird angezeigt. Die Freistellungspfad ist Teil der Canvas-Zustand, der mit gespeichert wird die `Save` Methode und wiederhergestellt, mit der `Restore` Methode.
 
@@ -167,7 +167,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Nun muss nur noch ist die Schnittmenge von diesen vier Gruppen:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Dreifacher Screenshot der Seite für vier Kreis Intersect Clip")](clipping-images/fourcircleintersectclip-large.png#lightbox "dreifachen Screenshot, der vier Kreis Intersect Clip-Seite")
+[![Dreifacher Screenshot der vier Kreis übergreifenden Intersect-Clip page](clipping-images//fourcircleintersectclip-small.png)](clipping-images/fourcircleintersectclip-large.png#lightbox)
 
 Die [ `SKClipOperation` ](xref:SkiaSharp.SKClipOperation) -Enumeration hat nur zwei Mitglieder:
 
@@ -177,13 +177,13 @@ Die [ `SKClipOperation` ](xref:SkiaSharp.SKClipOperation) -Enumeration hat nur z
 
 Wenn Sie die vier ersetzen `SKClipOperation.Intersect` Argumente in der `FourCircleIntersectClipPage` Klasse mit `SKClipOperation.Difference`, sehen Sie Folgendes:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Dreifacher Screenshot der Seite vier Kreis Intersect Clip mit differenzbildung")](clipping-images/fourcircledifferenceclip-large.png#lightbox "dreifachen Screenshot der Seite vier Kreis Intersect Clip mit differenzbildung")
+[![Dreifacher Screenshot der vier Kreis übergreifenden Intersect-Clip Page mit Differenz Vorgang](clipping-images//fourcircledifferenceclip-small.png)](clipping-images/fourcircledifferenceclip-large.png#lightbox)
 
 Vier überlappende Kreise wurden aus Clippingbereichs entfernt.
 
 Die **Clip Vorgänge** Seite veranschaulicht den Unterschied zwischen diese beiden Vorgänge mit nur einem Paar von Kreisen. Der Kreis auf der linken Seite wird hinzugefügt, in den Clippingbereich mit der standardmäßigen Clip-Operation von `Intersect`, während der zweite Kreis auf der rechten Seite mit den Clip-Operation, angegeben durch die textbezeichnung Clippingbereichs hinzugefügt wird:
 
-[![](clipping-images//clipoperations-small.png "Dreifacher Screenshot der Seite Clip Vorgänge")](clipping-images/clipoperations-large.png#lightbox "dreifachen Screenshot der Seite Clip-Vorgänge")
+[![Dreifacher Screenshot der Seite "Clip Vorgänge"](clipping-images//clipoperations-small.png)](clipping-images/clipoperations-large.png#lightbox)
 
 Die [ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) -Klasse definiert zwei `SKPaint` Objekte als Felder, und klicken Sie dann den Bildschirm nach oben in zwei rechteckige Bereiche unterteilt. Diese Bereiche unterscheiden sich abhängig davon, ob das Smartphone im Hoch-oder Querformat. Die `DisplayClipOp` Klasse zeigt dann die Text und ruft `ClipPath` mit den zwei Kreis-Pfaden zu jeder Clip-Operation zu veranschaulichen:
 
@@ -282,7 +282,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 Der folgende Screenshot zeigt Clipping Bereiche basieren auf den sechs Region-Vorgängen. Der linke Kreis ist die Region, die die `Op` für die Methode aufgerufen wird, und der richtige Kreis ist die Region, die an die `Op` Methode:
 
-[![](clipping-images//regionoperations-small.png "Dreifacher Screenshot der Seite Bereichsvorgänge")](clipping-images/regionoperations-large.png#lightbox "dreifachen Screenshot der Seite Bereichsvorgänge")
+[![Dreifacher Screenshot der Seite "Regions Vorgänge"](clipping-images//regionoperations-small.png)](clipping-images/regionoperations-large.png#lightbox)
 
 Sind diese alle die Möglichkeiten der Kombination dieser beiden Kreise? Betrachten Sie das resultierende Image als eine Kombination aus drei Komponenten, die sich in angezeigt werden die `Difference`, `Intersect`, und `ReverseDifference` Vorgänge. Die Gesamtanzahl der Kombinationen wird zwei die dritte Potenz oder acht. Die fehlen handelt es sich um die ursprüngliche Region (was dazu führt, aus dem Aufruf nicht `Op` überhaupt) und eine Region vollständig leer.
 
@@ -423,7 +423,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die `DrawRegion` Aufruf füllt den Bereich in orange dargestellt, während die `DrawPath` Aufruf die Striche des ursprünglichen Pfads in Blau dargestellt, für den Vergleich:
 
-[![](clipping-images//regionpaint-small.png "Dreifacher Screenshot der Seite Region Paint")](clipping-images/regionpaint-large.png#lightbox "dreifachen Screenshot der Seite für die Region Paint")
+[![Dreifacher Screenshot der Seite "Regions Farbe"](clipping-images//regionpaint-small.png)](clipping-images/regionpaint-large.png#lightbox)
 
 Die Region ist natürlich eine Reihe von diskreten Koordinaten.
 
@@ -509,7 +509,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Sehen sie nicht wirklich wie ein vier – Leaf Clover, aber es ist ein Bild an, die andernfalls schwer ohne Clipping gerendert werden kann:
 
-[![](clipping-images//fourleafclover-small.png "Dreifacher Screenshot der Seite für vier – Blatt Clover")](clipping-images/fourleafclover-large.png#lightbox "dreifachen Screenshot der Seite für vier – Blatt Clover")
+[![Dreifacher Screenshot der vier Blatt-Clover-Seite](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
 
 
 ## <a name="related-links"></a>Verwandte Links

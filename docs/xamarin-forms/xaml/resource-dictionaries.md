@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2019
 ms.custom: video
-ms.openlocfilehash: a9b9b2d12193161e0cb4514600381c3a7a38495a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7c0fffbe626a740c15d85b1277c5158a5e564a15
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529319"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228075"
 ---
 # <a name="resource-dictionaries"></a>Ressourcenverzeichnisse
 
@@ -107,7 +107,7 @@ Jede Ressource verfügt über einen Schlüssel, der angegebenen unter Verwendung
 
 Die erste [ `Label` ](xref:Xamarin.Forms.Label) Instanz abruft und verarbeitet die `LabelPageHeadingStyle` Ressource auf Anwendungsebene definiert `ResourceDictionary`, mit dem zweiten `Label` Instanz abrufen und Verarbeiten der `LabelNormalStyle`in die Steuerungsebene definierte Ressource `ResourceDictionary`. Auf ähnliche Weise die [ `Button` ](xref:Xamarin.Forms.Button) Instanz abruft und verarbeitet die `NormalTextColor` Ressource auf Anwendungsebene definiert `ResourceDictionary`, und die `MediumBoldText` in die Steuerungsebene definierte Ressource `ResourceDictionary`. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
-[![](resource-dictionaries-images/screenshots-sml.png "Ressourcenverbrauch ResourceDictionary")](resource-dictionaries-images/screenshots.png#lightbox "ResourceDictionary-Ressourcen zu verbrauchen.")
+[![Verbrauchen von ResourceDictionary-Ressourcen](resource-dictionaries-images/screenshots-sml.png)](resource-dictionaries-images/screenshots.png#lightbox)
 
 > [!NOTE]
 > Ressourcen, die auf eine einzelne Seite spezifisch sind, darf nicht in einer Anwendung auf Ressourcenverzeichnis, daher enthalten sein, die Ressourcen dann beim Start der Anwendung nicht analysiert werden soll, bei einer Seite erforderlich. Weitere Informationen finden Sie unter [Reduzieren der Größe des Ressourcenverzeichnisses der Anwendung](~/xamarin-forms/deploy-test/performance.md).
@@ -142,7 +142,7 @@ Wenn `ResourceDictionary` Ressourcen freigeben `x:Key` Attributwerte niedriger i
 
 Die ursprüngliche `PageBackgroundColor` und `NormalTextColor` Instanzen, die auf der Anwendungsebene definiert werden überschrieben, indem die `PageBackgroundColor` und `NormalTextColor` Instanzen auf Seitenebene definiert. Aus diesem Grund die Hintergrundfarbe ist Blau, und der Text auf der Seite wird Gelb, wie in den folgenden Screenshots veranschaulicht:
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "Überschreiben ResourceDictionary Ressourcen")](resource-dictionaries-images/overridding-screenshots.png#lightbox "ResourceDictionary Ressourcen überschreiben")
+[![Überschreiben von ResourceDictionary-Ressourcen](resource-dictionaries-images/overridding-screenshots-sml.png)](resource-dictionaries-images/overridding-screenshots.png#lightbox)
 
 Beachten Sie jedoch, dass der Hintergrund-Leiste des der [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) weiterhin Gelb ist, da die [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) -Eigenschaftensatz auf den Wert des der `PageBackgroundColor` Ressource, die in der Anwendung definiert Ebene `ResourceDictionary`.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a57363ef0fec4668fe35e1d7198372a543d672e7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3b045d18d66463a1464e446847cb5dbfd531bbf3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655335"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227881"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Gliedern von Ansichten in xamarin. Mac
 
@@ -78,7 +78,7 @@ Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, un
 - **Columns** : definiert die Anzahl der angezeigten Spalten.
 - **Headers** : Wenn `true`, enthalten die Spaltenheader.
 - **Neuanordnen** : Wenn `true`, kann der Benutzer die Reihenfolge der Spalten in der Tabelle verschieben.
-- Größen **Änderung:** Wenn `true`, kann der Benutzer Spaltenüberschriften ziehen, um die Größe der Spalten zu ändern.
+- Größenänderung: Wenn `true`, kann der Benutzer Spaltenüberschriften ziehen, um die Größe der Spalten zu ändern.
 - **Spaltengröße** : steuert die automatische Größenanpassung von Spalten durch die Tabelle.
 - **Hervor** Hebung: steuert den Typ der Hervorhebung, die die Tabelle verwendet, wenn eine Zelle ausgewählt wird.
 - **Alternative Zeilen** : Wenn `true`, hat eine andere Zeile eine andere Hintergrundfarbe.
@@ -87,10 +87,10 @@ Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, un
 - **Raster Farbe** : legt die Farbe für den Zell Rahmen fest.
 - **Background** : legt die Hintergrundfarbe der Zelle fest.
 - **Auswahl** : Hiermit können Sie steuern, wie der Benutzer Zellen in der Tabelle auswählen kann:
-    - **Multiple** -if `true`, der Benutzer kann mehrere Zeilen und Spalten auswählen.
-    - **Spalte** : Wenn `true`, kann der Benutzer Spalten auswählen.
-    - **Typ SELECT** -if `true`, der Benutzer kann ein Zeichen eingeben, um eine Zeile auszuwählen.
-    - **Leer** : Wenn `true`, der Benutzer ist nicht erforderlich, um eine Zeile oder Spalte auszuwählen, kann die Tabelle überhaupt keine Auswahl treffen.
+  - **Multiple** -if `true`, der Benutzer kann mehrere Zeilen und Spalten auswählen.
+  - **Spalte** : Wenn `true`, kann der Benutzer Spalten auswählen.
+  - **Typ SELECT** -if `true`, der Benutzer kann ein Zeichen eingeben, um eine Zeile auszuwählen.
+  - **Leer** : Wenn `true`, der Benutzer ist nicht erforderlich, um eine Zeile oder Spalte auszuwählen, kann die Tabelle überhaupt keine Auswahl treffen.
 - **Autosave** : der Name, unter dem das Tabellenformat automatisch gespeichert wird.
 - **Spalten Informationen** : Wenn `true`, werden die Reihenfolge und Breite der Spalten automatisch gespeichert.
 - **Zeilenumbrüche** : Wählen Sie aus, wie die Zelle Zeilenumbrüche behandelt.
@@ -157,14 +157,14 @@ Genau wie jedes andere Cocoa UI-Steuerelement müssen wir unsere Gliederungs Ans
 
 Der Prozess ist für ein beliebiges Gliederungs Ansichts Element identisch, das wir verfügbar machen möchten:
 
-1. Wechseln Sie zum **Assistenten-Editor** , und stellen `ViewController.h` Sie sicher, dass die Datei ausgewählt ist: 
+1. Wechseln Sie zum **Assistenten-Editor** , und stellen `ViewController.h` Sie sicher, dass die Datei ausgewählt ist:
 
     [![](outline-view-images/edit11.png "Auswählen der richtigen h-Datei")](outline-view-images/edit11.png#lightbox)
 2. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie**aus, und ziehen `ViewController.h` Sie Sie in die Datei.
-3. Erstellen Sie ein **Outlet** für die Gliederungs Ansicht mit dem Namen `ProductOutline`: 
+3. Erstellen Sie ein **Outlet** für die Gliederungs Ansicht mit dem Namen `ProductOutline`:
 
     [![](outline-view-images/edit13.png "Konfigurieren eines Outlets")](outline-view-images/edit13.png#lightbox)
-4. Erstellen Sie **Outlets** für die Tabellen Spalten ebenso wie `ProductColumn` und `DetailsColumn`: 
+4. Erstellen Sie **Outlets** für die Tabellen Spalten ebenso wie `ProductColumn` und `DetailsColumn`:
 
     [![](outline-view-images/edit14.png "Konfigurieren eines Outlets")](outline-view-images/edit14.png#lightbox)
 5. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
@@ -263,7 +263,7 @@ namespace MacOutlines
             } else {
                 return ((Product)item).Products [childIndex];
             }
-                
+
         }
 
         public override bool ItemExpandable (NSOutlineView outlineView, NSObject item)
@@ -273,7 +273,7 @@ namespace MacOutlines
             } else {
                 return ((Product)item).IsProductGroup;
             }
-        
+
         }
         #endregion
     }
@@ -298,7 +298,7 @@ namespace MacOutlines
 {
     public class ProductOutlineDelegate : NSOutlineViewDelegate
     {
-        #region Constants 
+        #region Constants
         private const string CellIdentifier = "ProdCell";
         #endregion
 
@@ -578,7 +578,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
             break;
         case "Details":
             prod.Description = view.StringValue;
-            break; 
+            break;
         }
     };
 
@@ -649,7 +649,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
             break;
         case "Details":
             prod.Description = view.TextField.StringValue;
-            break; 
+            break;
         }
     };
 

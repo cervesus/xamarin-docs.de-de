@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 4ce217d31811df82f0779a22d0c64464b5295fcc
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: 1777bfe627d0dc579169c954f7799348befbf6b8
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629661"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227030"
 ---
 # <a name="watchos-troubleshooting"></a>Problembehandlung bei watchos
 
@@ -168,7 +168,7 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
     ![](troubleshooting-images/add-6.png "Öffnen des Storyboards in Interface Builder")
 
-8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`.
+8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`
     Wenn alles ordnungsgemäß funktioniert hat, sollte es automatisch in der Dropdown Liste **Klasse:** angezeigt werden, und Sie können es von dort aus auswählen.
 
     ![](troubleshooting-images/add-4.png "Festlegen einer benutzerdefinierten Klasse")

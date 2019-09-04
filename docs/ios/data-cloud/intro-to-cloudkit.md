@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: 29e737e5a6cb6abdae099c0224a2da058c2ea025
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: af0765adb7e059bdc80c0b851b4bdcad8be0e3e4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527734"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227831"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Cloudkit in xamarin. IOS
 
@@ -55,7 +55,7 @@ Bevor eine xamarin-Anwendung das cloudkit-Framework verwenden kann, muss die Anw
 
 1. Öffnen Sie das Projekt in Visual Studio für Mac oder Visual Studio.
 2. Öffnen Sie im **Projektmappen-Explorer**die Datei " **Info. plist** ", und stellen Sie sicher, dass die **Bündel** -ID mit der ID übereinstimmt, die in der im Rahmen der Einrichtung der Bereitstellung erstellten **App-ID** definiert wurde:
- 
+
     [![](intro-to-cloudkit-images/image26a.png "Bündel-ID eingeben")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3. Scrollen Sie nach unten in der Datei **Info. plist** , und wählen Sie **aktivierte hintergrundmodi**, **Speicherort Aktualisierungen** und **Remote Benachrichtigungen**aus:
@@ -471,42 +471,42 @@ Cloudkit unterstützt die folgenden Typen `NSPredicates` von beim Arbeiten mit A
 
 
 1. Übereinstimmende Datensätze, bei denen der Name gleich einem in einer Variablen gespeicherten Wert ist:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("name = '{0}'", recordName))
     ```
-   
+
 2. Ermöglicht, dass die Übereinstimmung auf einem dynamischen Schlüsselwert basiert, damit der Schlüssel zum Zeitpunkt der Kompilierung nicht bekannt sein muss:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("{0} = '{1}'", key, value))
     ```
-    
+
 3. Übereinstimmende Datensätze, bei denen der Wert des Datensatzes größer ist als der angegebene Wert:
-   
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0}", (NSDate)date))
     ```
 
 4. Übereinstimmende Datensätze, bei denen der Speicherort des Datensatzes innerhalb von 100 Meter des angegebenen Standorts liegt
-    
-    ```
+
+    ```csharp
     var location = new CLLocation(37.783,-122.404);
     var predicate = NSPredicate.FromFormat(string.Format("distanceToLocation:fromLocation(Location,{0}) < 100", location));
     ```
 
 5. Cloudkit unterstützt eine tokenisierte Suche. Mit diesem-Befehl werden zwei Token erstellt: `after` eine für und `session`eine andere für. Es wird ein Datensatz zurückgegeben, der diese beiden Token enthält:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
-    
+
 6. Cloudkit unterstützt Verbund Prädikate, `AND` die mithilfe des Operators verknüpft sind.
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
     ```
-    
+
 
 
 #### <a name="creating-queries"></a>Erstellen von Abfragen
@@ -820,40 +820,40 @@ Vor dem Versand einer Anwendung, die cloudkit verwendet, muss Sie für die **clo
 
 Führen Sie folgende Schritte aus:
 
-1. Kompilieren Sie die Anwendung für das IOS- **Freigabe** > **Gerät**in Visual Studio für MA: 
+1. Kompilieren Sie die Anwendung für das IOS- **Freigabe** > **Gerät**in Visual Studio für MA:
 
     [![](intro-to-cloudkit-images/shipping01.png "Kompilieren der Anwendung für die Veröffentlichung")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
-2. Wählen Sie im Menü **Erstellen** die Option **Archive**: 
+2. Wählen Sie im Menü **Erstellen** die Option **Archive**:
 
     [![](intro-to-cloudkit-images/shipping02.png "Archiv auswählen")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
-3. Das **Archiv** wird erstellt und in Visual Studio für Mac angezeigt: 
+3. Das **Archiv** wird erstellt und in Visual Studio für Mac angezeigt:
 
     [![](intro-to-cloudkit-images/shipping03.png "Das Archiv wird erstellt und angezeigt.")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. Starten Sie **Xcode**.
-5. Wählen Sie im Menü **Fenster** die Option **Planer**aus: 
+5. Wählen Sie im Menü **Fenster** die Option **Planer**aus:
 
     [![](intro-to-cloudkit-images/shipping04.png "Planer auswählen")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
-6. Wählen Sie das Archiv der Anwendung aus, und klicken Sie auf die Schaltfläche **exportieren...** : 
+6. Wählen Sie das Archiv der Anwendung aus, und klicken Sie auf die Schaltfläche **exportieren...** :
 
     [![](intro-to-cloudkit-images/shipping05.png "Das Archiv der Anwendung")](intro-to-cloudkit-images/shipping05.png#lightbox)
-    
-7. Wählen Sie eine Export Methode aus, und klicken Sie auf die Schaltfläche **weiter** : 
+
+7. Wählen Sie eine Export Methode aus, und klicken Sie auf die Schaltfläche **weiter** :
 
     [![](intro-to-cloudkit-images/shipping06.png "Methode für den Export auswählen")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
-8. Wählen Sie in der Dropdown Liste das **Entwicklungs Team** aus, und klicken Sie auf die Schaltfläche **auswählen** : 
+8. Wählen Sie in der Dropdown Liste das **Entwicklungs Team** aus, und klicken Sie auf die Schaltfläche **auswählen** :
 
     [![](intro-to-cloudkit-images/shipping07.png "Wählen Sie das Entwicklungs Team aus der Dropdown Liste aus.")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
-9. Wählen Sie in der Dropdown Liste **Production** aus, und klicken Sie auf die Schaltfläche **weiter** : 
+9. Wählen Sie in der Dropdown Liste **Production** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
     [![](intro-to-cloudkit-images/shipping08.png "Produktion in der Dropdown Liste auswählen")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
-10. Prüfen Sie die Einstellung, und klicken Sie auf die Schaltfläche **exportieren** : 
+10. Prüfen Sie die Einstellung, und klicken Sie auf die Schaltfläche **exportieren** :
 
     [![](intro-to-cloudkit-images/shipping09.png "Überprüfen der Einstellung")](intro-to-cloudkit-images/shipping09.png#lightbox)
 

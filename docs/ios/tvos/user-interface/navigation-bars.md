@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bde37c907d2cad327dd2a72f26ee357a4391c43
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 14fbbd72d3ec80d15d2dcae5938f8df28923ca4c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649044"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226607"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Arbeiten mit tvos-Navigationsleisten in xamarin
 
@@ -34,16 +34,16 @@ Die einfachste Möglichkeit, mit Navigationsleisten in einer xamarin. tvos-APP z
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken `Main.storyboard` Sie im Lösungspad auf Datei, und öffnen Sie Sie zur Bearbeitung.
-1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** , und legen Sie Sie in der Ansicht am oberen Rand des Bildschirms ab: 
+1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** , und legen Sie Sie in der Ansicht am oberen Rand des Bildschirms ab:
 
     [![](navigation-bars-images/navbar02.png "Navigationsleiste")](navigation-bars-images/navbar02.png#lightbox)
-1. Doppelklicken Sie auf die **Navigationsleiste** , um das **Navigationselement**auszuwählen. Auf der Registerkarte **Widget** des **Eigenschaftenpad**können Sie den **Titel**festlegen: 
+1. Doppelklicken Sie auf die **Navigationsleiste** , um das **Navigationselement**auszuwählen. Auf der Registerkarte **Widget** des **Eigenschaftenpad**können Sie den **Titel**festlegen:
 
     [![](navigation-bars-images/navbar03.png "Festlegen des Titels")](navigation-bars-images/navbar03.png#lightbox)
-1. Als nächstes können Sie am Ende der Leiste ein oder mehrere leisten- **Schaltflächen Elemente** hinzufügen: 
+1. Als nächstes können Sie am Ende der Leiste ein oder mehrere leisten- **Schaltflächen Elemente** hinzufügen:
 
     [![](navigation-bars-images/navbar04.png "Ein leisten-Schaltflächen Element")](navigation-bars-images/navbar04.png#lightbox)
-1. Verknüpfen Sie schließlich die leisten- **Schaltflächen Elemente** mit Aktionen auf der Registerkarte **Ereignisse** des **Eigenschaften-Explorers**: 
+1. Verknüpfen Sie schließlich die leisten- **Schaltflächen Elemente** mit Aktionen auf der Registerkarte **Ereignisse** des **Eigenschaften-Explorers**:
 
     [![](navigation-bars-images/navbar05.png "Eine Schaltfläche für eine Element Aktion")](navigation-bars-images/navbar05.png#lightbox)
 1. Speichern Sie die Änderungen.
@@ -53,16 +53,16 @@ Die einfachste Möglichkeit, mit Navigationsleisten in einer xamarin. tvos-APP z
 
 
 1. Doppelklicken `Main.storyboard` Sie im Projektmappen-Explorer auf Datei, und öffnen Sie Sie zur Bearbeitung.
-1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** , und legen Sie Sie in der Ansicht am oberen Rand des Bildschirms ab: 
+1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** , und legen Sie Sie in der Ansicht am oberen Rand des Bildschirms ab:
 
     [![](navigation-bars-images/navbar02-vs.png "Navigationsleiste")](navigation-bars-images/navbar02-vs.png#lightbox)
-1. Doppelklicken Sie auf die **Navigationsleiste** , um das **Navigationselement**auszuwählen. Auf der Registerkarte **Widget** des **Eigenschaften-Explorers**können Sie den **Titel**festlegen: 
+1. Doppelklicken Sie auf die **Navigationsleiste** , um das **Navigationselement**auszuwählen. Auf der Registerkarte **Widget** des **Eigenschaften-Explorers**können Sie den **Titel**festlegen:
 
     [![](navigation-bars-images/navbar03-vs.png "Festlegen des Titels")](navigation-bars-images/navbar03-vs.png#lightbox)
-1. Als nächstes können Sie am Ende der Leiste ein oder mehrere leisten- **Schaltflächen Elemente** hinzufügen: 
+1. Als nächstes können Sie am Ende der Leiste ein oder mehrere leisten- **Schaltflächen Elemente** hinzufügen:
 
     [![](navigation-bars-images/navbar04-vs.png "Leisten-Schaltflächen Elemente")](navigation-bars-images/navbar04-vs.png#lightbox)
-1. Verknüpfen Sie schließlich die leisten- **Schaltflächen Elemente** mit Aktionen auf der Registerkarte **Ereignisse** des **Eigenschaften-Explorers**: 
+1. Verknüpfen Sie schließlich die leisten- **Schaltflächen Elemente** mit Aktionen auf der Registerkarte **Ereignisse** des **Eigenschaften-Explorers**:
 
     [![](navigation-bars-images/navbar05-vs.png "Element Aktionen für eine leisten Schaltfläche")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
@@ -126,7 +126,7 @@ namespace MySingleView
 
 Solange die-Eigenschaft einer Schalt `Enabled` Fläche ist `true` und Sie nicht von einem anderen Steuerelement oder einer anderen Ansicht abgedeckt wird, kann Sie mithilfe von Siri Remote als Element im Fokus erstellt werden.
 
-Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md). 
+Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 
 <a name="Summary" />
 

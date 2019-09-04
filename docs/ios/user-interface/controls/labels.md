@@ -1,26 +1,26 @@
 ---
-title: Bezeichnungen in Xamarin.iOS
-description: In diesem Dokument wird erläutert, wie Bezeichnungen in Xamarin.iOS verwendet wird. Es wird beschrieben, wie Bezeichnungen programmgesteuert oder mit der iOS-Designer erstellen.
+title: Bezeichnungen in xamarin. IOS
+description: In diesem Dokument wird erläutert, wie Bezeichnungen in xamarin. IOS verwendet werden. Es wird beschrieben, wie Bezeichnungen Programm gesteuert und mit dem IOS-Designer erstellt werden.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: cca74ac74e5077822193f6dd97a69f8d9b823561
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 41cd0eb93cee216311ea42f7ca027a1556b322e6
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227828"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227077"
 ---
-# <a name="labels-in-xamarinios"></a>Bezeichnungen in Xamarin.iOS
+# <a name="labels-in-xamarinios"></a>Bezeichnungen in xamarin. IOS
 
-Die `UILabel` Steuerelement dient zum Anzeigen von einzelnen und mehrzeilige, nur-Text zu lesen. 
+Das `UILabel` -Steuerelement wird zum Anzeigen von einzeiligen und mehrzeiligen schreibgeschützten Text verwendet.
 
-## <a name="implementing-a-label"></a>Implementieren eine Bezeichnung
+## <a name="implementing-a-label"></a>Implementieren einer Bezeichnung
 
-Eine neue Bezeichnung wird erstellt, durch die Instanziierung einer [ `UILabel` ](xref:UIKit.UILabel):
+Eine neue Bezeichnung wird erstellt, indem eine [`UILabel`](xref:UIKit.UILabel)instanziiert wird:
 
 ```csharp
 UILabel label = new UILabel();
@@ -28,33 +28,33 @@ UILabel label = new UILabel();
 
 ### <a name="labels-and-storyboards"></a>Bezeichnungen und Storyboards
 
-Sie können auch eine Bezeichnung an Ihrer Benutzeroberfläche hinzufügen, bei Verwendung des iOS-Designers. Suchen Sie nach **Bezeichnung** in die **Toolbox** und ziehen Sie es in der Ansicht:
+Sie können Ihrer Benutzeroberfläche auch eine Bezeichnung hinzufügen, wenn Sie den IOS-Designer verwenden. Suchen Sie in der **Toolbox** nach **Bezeichnung** , und ziehen Sie Sie in die Ansicht:
 
-![-Bezeichnung in toolbox](labels-images/image3.png)
+![Bezeichnung in Toolbox](labels-images/image3.png)
 
-Die folgenden Eigenschaften können auf das Pad "Eigenschaften" angepasst werden:
+Die folgenden Eigenschaften können im eigenschaftenpad angepasst werden:
 
-![Bereich für Bezeichnung-Eigenschaft](labels-images/image2.png)
+![Eigenschaften Panel "Bezeichnung"](labels-images/image2.png)
 
-- **Textkontext** : einfache oder attributierte. Nur-Text können Sie die [Formatierungsattribute](#Formatting_Text_and_Label) auf die gesamte Zeichenfolge. Attributierte Texte können Sie festlegen, andere Zeichen oder Wörtern in der Zeichenfolge formatieren.
-- **Farbe, Schriftart Ausrichtung** – Formatierung Attribute, die auf die Bezeichnung angewendet werden können.
-- **Zeilen** – legt die Anzahl der Zeilen, die die Bezeichnung erstrecken können. Legen Sie diesen Wert auf 0, um die Größe der Bezeichnung auf beliebig viele Positionen nach Bedarf verwenden.
-- **Verhalten** – kann entweder "aktiviert" oder "hervorgehobener festgelegt werden. Aktiviert ist standardmäßig festgelegt, deaktivierten Text erscheint in einer helleren graue Farbe. Hervorgehoben ist standardmäßig deaktiviert, und die Bezeichnung aus, wenn sie von einem Benutzer ausgewählt wird mit dem markierten Status neu gezeichnet werden können.
-- **Baselane und Zeilenumbruch** : 
-    - Der Grundwerte bestimmt, wie der Text positioniert, wenn die Schriftgrade unterscheidet sich von dem angegebenen.
-    - Zeilenumbrüche bestimmen, wie eine Zeichenfolge eingeschlossen oder wird abgeschnitten, wenn er länger als eine einzelne Zeile ist.
-- **Automatische Verkleinerung** – bestimmt wie die Schriftart, Größe in eine Bezeichnung, minimiert wird, falls erforderlich.
-- **Hervorgehoben, Schatten, Offset** – können Sie die Farbe der markiert und Schattenkopien festgelegt, und der Schatten versetzt.
+- **Text Kontext** – plain oder attributiert. Mit nur-Text können Sie die [Formatierungs Attribute](#Formatting_Text_and_Label) für die gesamte Zeichenfolge festlegen. Mit attributierten Texten können Sie die Formatierung auf verschiedene Zeichen oder Wörter in der Zeichenfolge festlegen.
+- **Farbe, Schriftart, Ausrichtung** – Formatierungs Attribute, die auf die Bezeichnung angewendet werden können.
+- **Lines** – legt die Anzahl der Zeilen fest, die die Bezeichnung umfassen kann. Legen Sie diese Einstellung auf 0 fest, damit die Bezeichnung beliebig viele Zeilen verwenden kann.
+- **Behavior** – kann entweder auf aktiviert oder hervorgehoben festgelegt werden. Aktiviert ist standardmäßig festgelegt. deaktivierter Text wird in einer helleren grauen Farbe angezeigt. Hervorgehoben ist standardmäßig deaktiviert und ermöglicht, dass die Bezeichnung mit einem markierten Zustand neu gezeichnet wird, wenn Sie von einem Benutzer ausgewählt wird.
+- **Baselane und Zeilenumbruch** –
+  - Basline bestimmt, wie der Text positioniert wird, wenn sich die Schriftart Größen von der angegebenen unterscheiden.
+  - Zeilenumbrüche bestimmen, wie eine Zeichenfolge umschließt oder abgeschnitten wird, wenn Sie länger als eine einzelne Zeile ist.
+- **Autoshrink** – bestimmt, wie die Schriftgröße bei Bedarf in einer Bezeichnung minimiert wird.
+- **Hervorgehoben, Schatten, Offset** – ermöglicht es Ihnen, die hoch-und Schatten Farbe sowie den Schatten Offset festzulegen.
 
-## <a name="truncating-and-wrapping"></a>Abschneiden sowie das Umbrechen
+## <a name="truncating-and-wrapping"></a>Abschneiden und umwickeln
 
-Informationen über die Befehlszeile in iOS unterbrochen wird, finden Sie in der [abgeschnitten und Umbrechen von Text](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) Anleitung.
+Informationen zum Verwenden der Zeilenumbrüche in ios finden Sie in der Anleitung zum [kürzen und](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) umschließen von Text.
 
 <a name="Formatting_Text_and_Label"/>
 
-## <a name="formatting-text-and-label"></a>Formatieren von Text und Beschriftung
+## <a name="formatting-text-and-label"></a>Formatieren von Text und Bezeichnung
 
-Klicken Sie zum Formatieren der Zeichenfolge, die Sie in einer Bezeichnung verwenden können Sie entweder die Formatierungsattribute auf die gesamte Zeichenfolge, oder Sie können attributierte Zeichenfolgen verwenden. Die folgenden Beispiele zeigen, wie dies implementiert wird:
+Zum Formatieren der Zeichenfolge, die Sie in einer Bezeichnung verwenden, können Sie entweder Formatierungs Attribute für die gesamte Zeichenfolge festlegen, oder Sie können attributierte Zeichen folgen verwenden. In den folgenden Beispielen wird gezeigt, wie diese implementiert werden:
 
 ```csharp
 label = new UILabel(){
@@ -74,19 +74,19 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Weitere Informationen zur Verwendung von formatieren Text `NSAttributedString` finden Sie in der [Text mit dem Format](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) Anleitung.
+Weitere Informationen zum Formatieren von Text `NSAttributedString` mithilfe von finden Sie im [Stil Text](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) Rezept.
 
-Standardmäßig Bezeichnungen auf der `Enabled` auf True festgelegt, aber es ist möglich, festgelegt ist, dass deaktiviert, um dem Benutzer geben einen Hinweis, dass ein bestimmtes Steuerelement deaktiviert ist:
+Standardmäßig ist für Bezeichnungen `Enabled` der Wert true festgelegt, aber es ist möglich, ihn auf deaktiviert festzulegen, um dem Benutzer einen Hinweis zu bieten, dass ein bestimmtes Steuerelement deaktiviert ist:
 
 ```csharp
 label.Enabled = false;
 ```
 
-Hiermit wird die Bezeichnung auf eine einfache graue Farbe an, wie im folgenden Beispielbild des Bildschirms Einschränkungen in iOS dargestellt:
+Dadurch wird die Bezeichnung auf eine helle graue Farbe festgelegt, wie im folgenden Beispiel Bild des Bildschirms "Einschränkungen" in ios veranschaulicht:
 
-![Deaktivierte Schaltfläche im iOS](labels-images/image1.png)
+![Schaltfläche "deaktiviert" in ios](labels-images/image1.png)
 
-Sie können auch die Textfarben hervorheben und Schatten zu Ihrem Beschriftungstext für weitere Effekte festlegen:
+Sie können auch die Farben für Hervorhebung und Schatten Text auf den Beschriftungs Text festlegen, um zusätzliche Effekte zu haben:
 
 ```csharp
 label.Highlighted = true;
@@ -96,11 +96,11 @@ label.ShadowColor = UIColor.Black;
 label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 ```
 
-Die den Text wie folgt angezeigt:
+Dadurch wird der Text angezeigt, der wie folgt aussieht:
 
-![Hervorhebung und Schattenkopien, die für Text festlegen](labels-images/image4.png)
+![Hervorhebung und Schatten Satz für Text](labels-images/image4.png)
 
-Weitere Informationen zum Ändern der Schriftart von einer UILabel finden Sie in der [die Schriftart ändern](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font) Anleitung.
+Weitere Informationen zum Ändern der Schriftart eines UILabel finden Sie unter [Ändern der Schriftart](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font) .
 
 
 

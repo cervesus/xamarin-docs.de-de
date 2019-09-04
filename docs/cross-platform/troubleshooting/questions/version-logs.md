@@ -7,38 +7,38 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b421378f8aa99728fa13f104e284b9c410abe2b3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cd7a2026a4d1d1458455733a6f2710364cc7fec7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119963"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226783"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Wo finde ich meine Versionsinformationen und Protokolle?
 
 ## <a name="outline"></a>Umriss
 
 - [Versionsinformationen](#version-information)
-    - Informationen zur Windows-Version
-    - Mac-Versionsinformationen
-    - Android SDK Tools, Platt Form Tools, Build-Tools
+  - Informationen zur Windows-Version
+  - Mac-Versionsinformationen
+  - Android SDK Tools, Platt Form Tools, Build-Tools
 - [IDE-und Installer-Protokolle](#ide-and-installer-logs)
-    - [Windows-Protokolle](#windows-logs)
-        - Xamarin Studio
-        - Xamarin für Visual Studio
-        - Universeller xamarin-Installer
-        - Einzelne `.msi` Installationsprogramme, ausführliche Protokolle
-        - Visual Studio-Start, ausführliche Protokolle
-    - [Mac-Protokolle](#mac-logs)
-        - Buildhost
-    - Visual Studio für Mac
-        - Xamarin Studio
-        - Xamarin-Installer
+  - [Windows-Protokolle](#windows-logs)
+    - Xamarin Studio
+    - Xamarin für Visual Studio
+    - Universeller xamarin-Installer
+    - Einzelne `.msi` Installationsprogramme, ausführliche Protokolle
+    - Visual Studio-Start, ausführliche Protokolle
+  - [Mac-Protokolle](#mac-logs)
+    - Buildhost
+  - Visual Studio für Mac
+    - Xamarin Studio
+    - Xamarin-Installer
 - [Ausführliche Buildausgabe](#verbose-build-output-logs)
 - [Debugprotokolle für xamarin. Android-und xamarin. IOS-apps](#debug-logs-for-xamarin-apps)
-    - Android `adb` logcat-Protokolle
-    - IOS-simulatorprotokolle (auf Mac)
-    - IOS-Geräte Protokolle (auf Mac)
+  - Android `adb` logcat-Protokolle
+  - IOS-simulatorprotokolle (auf Mac)
+  - IOS-Geräte Protokolle (auf Mac)
 
 ## <a name="a-idversion-information-nameversion-information-version-information"></a><a id="version-information" name="version-information" />Versionsinformationen
 

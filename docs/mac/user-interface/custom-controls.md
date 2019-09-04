@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: aee3d81375ab619fa2016a87951cce3e72cdbe47
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 537816213208ed6e71f0986558c9a94a327759e2
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650194"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227905"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Erstellen von benutzerdefinierten Steuerelementen in xamarin. Mac
 
@@ -157,7 +157,7 @@ public bool Value {
 
 Wenn sich der Status des Schalters ändert, benötigen wir eine Möglichkeit, die Benutzeroberfläche zu aktualisieren. Dazu erzwingen Sie, dass das Steuerelement die Benutzeroberfläche mit `NeedsDisplay = true`neu zeichnet.
 
-Wenn für das Steuerelement mehr als ein/aus-Status (z. b. ein Switch mit mehreren Zuständen mit drei Positionen) benötigt wird, könnte eine-Aufzählung verwendet werden **, um den** Status zu verfolgen. In unserem Beispiel wird ein einfacher boolescher Code dargestellt.
+Wenn für das Steuerelement mehr als ein/aus-Status (z. b. ein Switch mit mehreren Zuständen mit drei Positionen) benötigt wird, könnte eine-Aufzählung verwendet werden, um den Status zu verfolgen. In unserem Beispiel wird ein einfacher boolescher Code dargestellt.
 
 Wir haben auch eine Hilfsmethode hinzugefügt, um den Status des Schalters zwischen on und Off auszutauschen:
 
@@ -206,7 +206,7 @@ public override void DrawRect (CGRect dirtyRect)
 }
 ```
 
-Die visuelle Darstellung des Steuer Elements wird **angepasst, wenn** sich der Zustand ändert (z. b. durch ein-oder **ausschalten**). Wenn sich der Status ändert, können wir mit dem `NeedsDisplay = true` Befehl erzwingen, dass das Steuerelement für den neuen Zustand neu gezeichnet wird.
+Die visuelle Darstellung des Steuer Elements wird angepasst, wenn sich der Zustand ändert (z. b. durch ein-oder **ausschalten**). Wenn sich der Status ändert, können wir mit dem `NeedsDisplay = true` Befehl erzwingen, dass das Steuerelement für den neuen Zustand neu gezeichnet wird.
 
 <a name="Responding-to-User-Input" />
 
@@ -221,7 +221,7 @@ Es gibt zwei grundlegende Möglichkeiten, Benutzereingaben zum benutzerdefiniert
 
 #### <a name="handling-user-input-with-override-methods"></a>Behandeln von Benutzereingaben mit Überschreibungs Methoden
 
-Objekte, die von `NSControl` (oder `NSView`) erben, verfügen über mehrere Überschreibungs Methoden zur Behandlung von Maus-oder Tastatureingaben. In unserem Beispiel Steuerelement möchten wir den Zustand des Schalters **zwischen ein** -und **ausschalten** , wenn der Benutzer mit der linken Maustaste auf das Steuerelement klickt. Wir können der- `NSFlipSwitch` Klasse die folgenden Überschreibungs Methoden hinzufügen, um Folgendes zu behandeln:
+Objekte, die von `NSControl` (oder `NSView`) erben, verfügen über mehrere Überschreibungs Methoden zur Behandlung von Maus-oder Tastatureingaben. In unserem Beispiel Steuerelement möchten wir den Zustand des Schalters zwischen ein- und **ausschalten** , wenn der Benutzer mit der linken Maustaste auf das Steuerelement klickt. Wir können der- `NSFlipSwitch` Klasse die folgenden Überschreibungs Methoden hinzufügen, um Folgendes zu behandeln:
 
 ```csharp
 #region Mouse Handling Methods
@@ -285,7 +285,7 @@ Die Methode, die wir verwenden, hängt wiederum davon ab, was wir mit unserem be
 
 ### <a name="responding-to-state-change-events"></a>Reagieren auf Status Änderungs Ereignisse
 
-Wenn der Benutzer den Zustand des benutzerdefinierten Steuer Elements ändert, benötigen wir eine Möglichkeit, auf die Statusänderung im Code zu reagieren (z. b. durch das durch Klicken auf eine benutzerdefinierte Schaltfläche). 
+Wenn der Benutzer den Zustand des benutzerdefinierten Steuer Elements ändert, benötigen wir eine Möglichkeit, auf die Statusänderung im Code zu reagieren (z. b. durch das durch Klicken auf eine benutzerdefinierte Schaltfläche).
 
 Um diese Funktionalität bereitzustellen, bearbeiten `NSFlipSwitch` Sie die-Klasse, und fügen Sie den folgenden Code hinzu:
 
@@ -299,7 +299,7 @@ internal void RaiseValueChanged() {
 
     // Perform any action bound to the control from Interface Builder
     // via an Action.
-    if (this.Action !=null) 
+    if (this.Action !=null)
         NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 }
 ## endregion
@@ -320,7 +320,7 @@ Zuerst wird ein `ValueChanged` Ereignis bereitgestellt, dem wir im C# Code einen
 Zweitens: da das benutzerdefinierte Steuerelement von `NSControl`erbt, verfügt es automatisch über eine **Aktion** , die in der Interface Builder von Xcode zugewiesen werden kann. Um diese **Aktion** aufzurufen, wenn sich der Status ändert, verwenden wir den folgenden Code:
 
 ```csharp
-if (this.Action !=null) 
+if (this.Action !=null)
     NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 ```
 
@@ -361,7 +361,7 @@ public override void ViewDidLoad ()
         Console.WriteLine("Option Two: {0}", OptionTwo.Value);
     };
 }
-``` 
+```
 
 Hier reagieren wir auf das `ValueChanged` Ereignis, das wir oben in der `NSFlipSwitch` Klasse definiert haben, und schreiben den aktuellen **Wert** , wenn der Benutzer auf das Steuerelement klickt.
 

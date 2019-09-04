@@ -1,24 +1,24 @@
 ---
-title: Generische Unterklassen von NSObject in Xamarin.iOS
-description: Dieses Dokument enthält Informationen zum Erstellen generische Unterklassen von NSObject zu erstellen. Er untersucht, was können und kann nicht durchgeführt werden, wird erläutert, die statische Registrierungsstelle und wirft einen Blick auf die Leistung.
+title: Generische Unterklassen von NSObject in xamarin. IOS
+description: In diesem Dokument wird das Erstellen generischer Unterklassen von NSObject beschrieben. Es wird untersucht, was möglich ist und was nicht, und erläutert die statische Registrierungsstelle und berücksichtigt die Leistung.
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4d2ab7a546925e92bb59f626279dcbf9c3c4ab4f
-ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
+ms.openlocfilehash: 2e84ec85fac933f579f961300d242bafa1f0b838
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67157702"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226051"
 ---
-# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Generische Unterklassen von NSObject in Xamarin.iOS
+# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Generische Unterklassen von NSObject in xamarin. IOS
 
 ## <a name="using-generics-with-nsobjects"></a>Verwenden von Generika mit NSObjects
 
-Es ist möglich, zum Verwenden von Generika in Unterklassen der `NSObject`, z. B. [UIView](xref:UIKit.UIView):
+Es ist möglich, Generika in Unterklassen von `NSObject`, z. b. [UIView](xref:UIKit.UIView), zu verwenden:
 
 ```csharp
 class Foo<T> : UIView {
@@ -30,17 +30,17 @@ class Foo<T> : UIView {
 }
 ```
 
-Da Objekte diese Unterklasse `NSObject` registriert sind mit den Objective-C-Laufzeit gelten einige Einschränkungen hinsichtlich der Möglichkeiten generische Unterklassen von `NSObject` Typen.
-    
-## <a name="considerations-for-generic-subclasses-of-nsobject"></a>Überlegungen für generische Unterklassen von NSObject
+Da Objekte, die unter `NSObject` Klassen bei der Ziel-C-Laufzeit registriert sind, einige Einschränkungen hinsichtlich der möglichen Möglichkeiten mit generischen Unterklassen `NSObject` von Typen aufweisen.
 
-In diesem Dokument werden die Einschränkungen bei der eingeschränkten Unterstützung für generische Unterklassen von `NSObjects`.
-    
-### <a name="generic-type-arguments-in-member-signatures"></a>Generische Typargumente in Membersignaturen
+## <a name="considerations-for-generic-subclasses-of-nsobject"></a>Überlegungen zu generischen Unterklassen von NSObject
 
-Alle generischen Typargumente in eine Membersignatur verfügbar gemacht werden, mit Objective-C benötigen eine `NSObject` Einschränkung.
+In diesem Dokument werden die Einschränkungen der eingeschränkten Unterstützung für generische Unterklassen `NSObjects`von ausführlich erläutert.
 
-**Good**:
+### <a name="generic-type-arguments-in-member-signatures"></a>Generische Typargumente in Element Signaturen
+
+Alle generischen Typargumente in einer für "Ziel-C" verfügbar `NSObject` gemachten Element Signatur müssen über eine Einschränkung verfügen.
+
+**Gut**:
 
 ```csharp
 class Generic<T> : NSObject where T: NSObject
@@ -52,9 +52,9 @@ class Generic<T> : NSObject where T: NSObject
 }
 ```
 
-**Reason**: Der generische Typparameter ist eine `NSObject`, sodass die Auswahl-Signatur für `myMethod:` sicher verfügbar gemacht werden können mit Objective-C (sie werden immer `NSObject` oder eine Unterklasse dieser).
+**Grund**: Der generische Typparameter ist ein `NSObject`, sodass die Auswahl Signatur für `myMethod:` sicher für "Ziel-C" verfügbar gemacht werden kann (es `NSObject` wird immer oder eine Unterklasse davon sein).
 
-**Ungültige**:
+**Schlecht**:
 
 ```csharp
 class Generic<T> : NSObject
@@ -66,9 +66,9 @@ class Generic<T> : NSObject
 }
 ```
 
-**Grund**: Es ist nicht möglich, die eine Objective-C-Signatur für die exportierten Elemente zu erstellen, die Objective-C-Code aufrufen kann, da die Signatur, hängt von der genaue Typ des generischen Typs würden, `T`.
+**Grund**: Es ist nicht möglich, eine Ziel-c-Signatur für die exportierten Elemente zu erstellen, die von Ziel-c-Code aufgerufen werden können, da die Signatur sich abhängig vom exakten `T`Typ des generischen Typs unterscheiden würde.
 
-**Good**:
+**Gut**:
 
 ```csharp
 class Generic<T> : NSObject
@@ -82,9 +82,9 @@ class Generic<T> : NSObject
 }
 ```
 
-**Grund**: Es ist möglich, die generischen Typargumente uneingeschränkt haben, solange sie keinen Teil der Signatur der exportierten Member belegen.
+**Grund**: Es ist möglich, dass nicht eingeschränkte generische Typargumente vorhanden sind, solange Sie nicht Teil der Signatur des exportierten Elements sind.
 
-**Good**:
+**Gut**:
 
 ```csharp
 class Generic<T, U> : NSObject where T: NSObject
@@ -97,14 +97,14 @@ class Generic<T, U> : NSObject where T: NSObject
 }
 ```
 
-**Grund**: die `T` Parameter in die Objective-C exportiert `MyMethod` beschränkt sein ein `NSObject`, die beschränkten Typ `U` ist nicht Teil der Signatur.
-    
-### <a name="instantiations-of-generic-types-from-objective-c"></a>Instanziierungen von generischen Typen von Objective-C
+**Grund**: der `T` -Parameter im Ziel-C- `MyMethod` Export ist auf einen `NSObject`beschränkt, der nicht eingeschränkte Typ `U` ist nicht Teil der Signatur.
 
-Instanziierung von generischen Typen von Objective-C ist nicht zulässig. Dies tritt normalerweise auf, wenn ein verwalteter Typ in eine Xib oder Storyboard verwendet wird.
+### <a name="instantiations-of-generic-types-from-objective-c"></a>Instanziierungen generischer Typen aus Ziel-C
 
-Betrachten Sie diese Klassendefinition, die einen Konstruktor verfügbar macht, die akzeptiert eine `IntPtr` (die Methode zum Erstellen von Xamarin.iOS ein C# Objekt von einer nativen Objective-C-Instanz):
-    
+Die Instanziierung von generischen Typen aus Ziel-C ist nicht zulässig. Dies tritt normalerweise auf, wenn ein verwalteter Typ in einem XIb oder einem Storyboard verwendet wird.
+
+Beachten Sie diese Klassendefinition, die einen Konstruktor verfügbar macht, `IntPtr` der einen-Wert annimmt (die xamarin. C# IOS-Methode, um ein-Objekt aus einer nativen Ziel-C-Instanz zu erstellen):
+
 ```csharp
 class Generic<T> : NSObject where T : NSObject
 {
@@ -113,12 +113,12 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-Obwohl das obige Konstrukt in Ordnung, zur Laufzeit ist, wird dies zur eine Ausnahme auslöst, wenn Objective-C-versucht wird, um eine Instanz davon erstellen.
+Obwohl das obige Konstrukt in Ordnung ist, löst dies zur Laufzeit eine Ausnahme aus, wenn Ziel-C versucht, eine Instanz davon zu erstellen.
 
-Ist dies liegt daran, dass Objective-C kein Konzept für generische Typen hat und können nicht den genauen generischen Typ erstellen angeben.
+Dies liegt daran, dass Ziel-C kein Konzept generischer Typen hat und nicht den genauen generischen Typ angeben kann, der erstellt werden soll.
 
-Dieses Problem kann umgangen werden, indem Sie eine spezielle Unterklasse des generischen Typs erstellen. Zum Beispiel:
-    
+Sie können dieses Problem umgehen, indem Sie eine spezialisierte Unterklasse des generischen Typs erstellen. Beispiel:
+
 ```csharp
 class Generic<T> : NSObject where T : NSObject
 {
@@ -131,7 +131,7 @@ class GenericUIView : Generic<UIView>
 }
 ```
 
-Jetzt gibt es keine Mehrdeutigkeit, nicht mehr die Klasse `GenericUIView` in Xibs "oder" Storyboards verwendet werden können.
+Jetzt gibt es keine Mehrdeutigkeit mehr, da `GenericUIView` die Klasse in XIb-oder Storyboards verwendet werden kann.
 
 ## <a name="no-support-for-generic-methods"></a>Keine Unterstützung für generische Methoden
 
@@ -149,9 +149,9 @@ class MyClass : NSObject
 }
 ```
 
-**Reason**: Dies ist nicht zulässig, da Xamarin.iOS nicht weiß, welchen Typ, der für das Typargument verwendet `T` Wenn die Methode von Objective-C aufgerufen wird.
+**Grund**: Dies ist nicht zulässig, da xamarin. IOS nicht weiß, welcher Typ für das Typargument `T` verwendet werden soll, wenn die Methode von Ziel-C aufgerufen wird.
 
-Eine Alternative ist stattdessen exportieren und erstellen Sie eine spezielle Methode:
+Eine Alternative besteht darin, eine spezialisierte Methode zu erstellen und stattdessen zu exportieren:
 
 ```csharp
 class MyClass : NSObject
@@ -167,9 +167,9 @@ class MyClass : NSObject
 }
 ```
 
-### <a name="no-exported-static-members-allowed"></a>Keine exportierten statische Member zulässig
+### <a name="no-exported-static-members-allowed"></a>Keine exportierten statischen Member zulässig.
 
-Sie können nicht verfügbar machen eine statische Member mit Objective-C innerhalb einer generischen Unterklasse von gehostet ist `NSObject`.
+Sie können keine statischen Member für "Ziel-C" verfügbar machen, wenn Sie in einer generischen unter `NSObject`Klasse von gehostet wird.
 
 Beispiel für ein nicht unterstütztes Szenario:
 
@@ -186,13 +186,13 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**Reason:** Genau wie generische Methoden muss die Xamarin.iOS-Runtime in der Lage, zu wissen, welcher Typ für das generische Typargument verwendet `T`.
+**Weshalb** Ebenso wie generische Methoden muss die xamarin. IOS-Laufzeit wissen, welcher Typ für das generische Typargument `T`verwendet werden muss.
 
-Z. B. Elemente, die die Instanz selbst wird verwendet (da es nie eine Instanz werden `Generic<T>`, sie werden immer `Generic<SomeSpecificClass>`), für statische Member dieser Informationen ist jedoch nicht vorhanden.
+Für Instanzmember wird die Instanz selbst verwendet (da nie eine Instanz `Generic<T>`vorhanden ist, Sie ist `Generic<SomeSpecificClass>`immer), aber für statische Member sind diese Informationen nicht vorhanden.
 
-Beachten Sie, dass dies gilt auch, wenn das betreffende Element nicht das Typargument verwendet `T` in keiner Weise.
+Beachten Sie, dass dies auch dann gilt, wenn der betreffende Member das Typargument `T` nicht verwendet.
 
-Die Alternative ist in diesem Fall eine spezialisierte Unterklasse erstellen:
+Die Alternative besteht in diesem Fall darin, eine spezialisierte Unterklasse zu erstellen:
 
 ```csharp
 class GenericUIView : Generic<UIView>
@@ -219,5 +219,5 @@ class Generic<T> : NSObject where T : NSObject
 
 ## <a name="performance"></a>Leistung
 
-Die statische Registrierungsstelle kann keinen exportierten Member in einem generischen Typ zum Zeitpunkt der Erstellung aufgelöst, wie dies in der Regel der Fall ist, müssen sie zur Laufzeit gesucht werden soll. Dies bedeutet, dass eine solche Methode von Objective-C aufrufen etwas langsamer als das Aufrufen der Member von nicht generischen Klassen.
+Die statische Registrierungsstelle kann einen exportierten Member bei der Buildzeit nicht in einem generischen Typ auflösen, da er in der Regel zur Laufzeit gesucht werden muss. Dies bedeutet, dass das Aufrufen einer solchen Methode von Ziel-C etwas langsamer ist als das Aufrufen von Membern aus nicht generischen Klassen.
 

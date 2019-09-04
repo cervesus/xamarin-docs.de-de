@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 438d3462c123cc9c9a8730405bb64a5e9492bfdf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4a353d64f0e7e29da6c64f93b8554c3661f4d389
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645552"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228130"
 ---
 # <a name="xamarinforms-style-classes"></a>Klassen im xamarin. Forms-Stil
 
@@ -203,7 +203,7 @@ Im folgenden Beispiel werden drei [`BoxView`](xref:Xamarin.Forms.BoxView) -Insta
 
 In diesem Beispiel wird das erste [`BoxView`](xref:Xamarin.Forms.BoxView) als Zeilen Trennzeichen formatiert, während das dritte `BoxView` zirkulär ist. Die zweite `BoxView` Klasse verfügt über zwei auf Sie angewendete Formatklassen, die ihr gerundete Ecken und um 45 Grad drehen:
 
-![](style-class-images/boxviews.png "Boxviews mit Stil Klassen formatieren")
+![Boxviews mit Stil Klassen formatieren](style-class-images/boxviews.png)
 
 > [!IMPORTANT]
 > Mehrere Formatklassen können auf ein-Steuerelement angewendet werden [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) , da die- `IList<string>`Eigenschaft vom Typ ist. Wenn dies auftritt, werden Stil Klassen in aufsteigender Listen Reihenfolge angewendet. Wenn also mehrere Formatklassen identische Eigenschaften festlegen, hat die Eigenschaft in der Style-Klasse, die sich in der höchsten Listenposition befindet, Vorrang.

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2018
-ms.openlocfilehash: 9817ac2df7a60b5358316599ce02702448b0c307
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c761290f43d780b2eafcf416fb9edf1e069f65c3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199723"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226032"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Typregistrierungs Stelle für xamarin. IOS
 
@@ -129,10 +129,10 @@ Beginnend mit der stabilen 6.2.6-Version und der Beta Version 6.3.4 haben wir ei
 Dieses neue Registrierungssystem bietet die folgenden neuen Features:
 
 - Erkennung von Programmierern zur Kompilierzeit:
-    - Zwei Klassen, die mit demselben Namen registriert werden.
-    - Es wurde mehr als eine Methode exportiert, um auf denselben Selektor zu reagieren.
+  - Zwei Klassen, die mit demselben Namen registriert werden.
+  - Es wurde mehr als eine Methode exportiert, um auf denselben Selektor zu reagieren.
 - Entfernen von nicht verwendetem nativem Code:
-    - Das neue Registrierungssystem fügt starke Verweise auf den Code hinzu, der in statischen Bibliotheken verwendet wird, sodass der Native Linker nicht verwendeten systemeigenen Code aus der resultierenden Binärdatei entfernen kann. Bei den Beispiel Bindungen von xamarin werden die meisten Anwendungen mindestens 300 KB kleiner.
+  - Das neue Registrierungssystem fügt starke Verweise auf den Code hinzu, der in statischen Bibliotheken verwendet wird, sodass der Native Linker nicht verwendeten systemeigenen Code aus der resultierenden Binärdatei entfernen kann. Bei den Beispiel Bindungen von xamarin werden die meisten Anwendungen mindestens 300 KB kleiner.
 
 - Unterstützung für generische Unterklassen `NSObject`von. Weitere Informationen finden Sie unter [NSObject Generika](~/ios/internals/api-design/nsobject-generics.md) . Außerdem fängt das neue Registrierungssystem nicht unterstützte generische Konstrukte ab, die vorher ein zufälliges Verhalten zur Laufzeit verursacht haben.
 
@@ -142,37 +142,37 @@ Im folgenden finden Sie einige Beispiele für die Fehler, die von der neuen Regi
 
 - Der gleiche Selektor wird in derselben Klasse mehrmals exportiert:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo:")]
-        void Foo (NSString str);
-        [Export ("foo:")]
-        void Foo (string str)
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo:")]
+      void Foo (NSString str);
+      [Export ("foo:")]
+      void Foo (string str)
+  }
+  ```
 
 - Exportieren von mehr als einer verwalteten Klasse mit dem gleichen Ziel-C-Namen:
 
-    ```csharp
-    [Register ("Class")]
-    class MyClass : NSObject {}
+  ```csharp
+  [Register ("Class")]
+  class MyClass : NSObject {}
 
-    [Register ("Class")]
-    class YourClass : NSObject {}
-    ```
+  [Register ("Class")]
+  class YourClass : NSObject {}
+  ```
 
 - Exportieren von generischen Methoden:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo")]
-        void Foo<T> () {}
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo")]
+      void Foo<T> () {}
+  }
+  ```
 
 ### <a name="limitations-of-the-new-registrar"></a>Einschränkungen der neuen Registrierungsstelle
 

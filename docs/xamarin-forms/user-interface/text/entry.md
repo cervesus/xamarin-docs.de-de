@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e712f0b69f87659499f7eab4955a9f943716f5b5
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650274"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227991"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms-Eintrag
 
@@ -105,7 +105,7 @@ In C#:
 var MyEntry = new Entry { IsPassword = true };
 ```
 
-![](entry-images/password.png "Beispiel für einen Indexeintrag IsPassword")
+![Eintrag IsPassword-Beispiel](entry-images/password.png)
 
 Platzhalter können verwendet werden, mit Instanzen von `Entry` , der als Kennwortfelder konfiguriert werden:
 
@@ -121,7 +121,7 @@ In C#:
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 ```
 
-![](entry-images/passwordplaceholder.png "Eintrag IsPassword und Platzhalter-Beispiel")
+![Eintrag IsPassword und Platzhalter Beispiel](entry-images/passwordplaceholder.png)
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>Festlegen der Cursorposition und Textlänge-Auswahl
 
@@ -294,7 +294,7 @@ var entry = new Entry();
 entry.TextColor = Color.Green;
 ```
 
-![](entry-images/textcolor.png "Beispiel für einen Indexeintrag TextColor")
+![Eintrag TextColor-Beispiel](entry-images/textcolor.png)
 
 Beachten Sie, dass der Platzhalter nicht betroffen, mit dem angegebenen `TextColor`.
 
@@ -311,7 +311,7 @@ var entry = new Entry();
 entry.BackgroundColor = Color.FromHex("#2c3e50");
 ```
 
-![](entry-images/textbackgroundcolor.png "Beispiel für einen Indexeintrag BackgroundColor")
+![Beispiel für den Eintrag BackgroundColor](entry-images/textbackgroundcolor.png)
 
 Achten Sie darauf, um sicherzustellen, dass die Hintergrund- und Textfarben können auf jeder Plattform verwendet werden können und keine Platzhaltertext verdecken.
 

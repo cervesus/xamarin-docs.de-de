@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655252"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227929"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
 
@@ -102,7 +102,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 Hier ist das aktive Programm:
 
-[![](data-binding-basics-images/sliderbinding.png "Ansicht-zu-Ansicht Bindungen")](data-binding-basics-images/sliderbinding-large.png#lightbox "Ansicht-zu-Ansicht-Bindungen ")
+[![Ansicht-zu-Ansicht-Bindungen](data-binding-basics-images/sliderbinding.png)](data-binding-basics-images/sliderbinding-large.png#lightbox)
 
 ## <a name="the-binding-mode"></a>Den Bindungsmodus
 
@@ -201,7 +201,7 @@ Die Bindungen für drei der `Slider` Ansichten sind `OneWayToSource`. Dies bedeu
 
 Allerdings die Bindung für die `Scale` Eigenschaft `TwoWay`. Grund hierfür ist die `Scale` Eigenschaft hat den Standardwert 1 und mit einer `TwoWay` Bindung bewirkt, dass die `Slider` Initialwert auf 1 statt 0 festgelegt werden. Wäre, dass die Bindung `OneWayToSource`, `Scale` Eigenschaft anfangs auf 0 aus fest der `Slider` default-Wert. Die `Label` würde nicht sichtbar, und für dem Benutzer eine gewissen Verwirrung verursachen können.
 
- [![](data-binding-basics-images/slidertransforms.png "Abwärtskompatibilität Bindungen")](data-binding-basics-images/slidertransforms-large.png#lightbox "rückwärts Bindungen")
+ [![Rückwärts Bindungen](data-binding-basics-images/slidertransforms.png)](data-binding-basics-images/slidertransforms-large.png#lightbox)
 
  > [!NOTE]
  > Die [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) -Klasse verfügt auch über [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) und [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) Eigenschaften, die Skalierung der `VisualElement` auf der x-Achse und y-Achse bzw.
@@ -234,7 +234,7 @@ Festlegen der statischen `NamedColor.All` Eigenschaft, um die `ItemsSource` von 
 
 Die resultierenden Anzeige gibt an, dass die Elemente wirklich vom Typ sind `XamlSamples.NamedColor`:
 
-[![](data-binding-basics-images/listview1.png "Binden an eine Auflistung")](data-binding-basics-images/listview1-large.png#lightbox "Binden an eine Auflistung")
+[![Binden an eine Sammlung](data-binding-basics-images/listview1.png)](data-binding-basics-images/listview1-large.png#lightbox)
 
 Es ist nicht viele Informationen, aber die `ListView` ist bildlauffähigen und ausgewählt werden.
 
@@ -259,7 +259,7 @@ Um eine Vorlage für die Elemente zu definieren, sollten Sie sich die `ItemTempl
 
 Die `Label` -Elementgruppe ist die `View` Eigenschaft der `ViewCell`. (Die `ViewCell.View` Tags sind nicht erforderlich, da die `View` -Eigenschaft ist die Content-Eigenschaft des `ViewCell`.) Dieses Markup zeigt die `FriendlyName` Eigenschaft der einzelnen `NamedColor` Objekt:
 
-[![](data-binding-basics-images/listview2.png "Binden an eine Auflistung mit einem DataTemplate")](data-binding-basics-images/listview2-large.png#lightbox "Binden an eine Auflistung mit einem DataTemplate")
+[![Binden an eine Sammlung mit einem DataTemplate](data-binding-basics-images/listview2.png)](data-binding-basics-images/listview2-large.png#lightbox)
 
 Viel besser. Jetzt ist alles, was erforderlich ist, um die Elementvorlage mit Informationen und die tatsächliche Farbe Fichte. Um diese Vorlage zu unterstützen, haben einige Werte und Objekte im Ressourcenverzeichnis der Seite definiert wurde:
 
@@ -396,7 +396,7 @@ Drei datenbindungen verweisen auf diese einzelne Instanz. Beachten Sie, dass die
 
 Hier ist das Ergebnis:
 
-[![](data-binding-basics-images/listview3.png "Binden an eine Auflistung mit einem DataTemplate und Konverter")](data-binding-basics-images/listview3-large.png#lightbox "Binden an eine Auflistung mit einem DataTemplate und Konverter")
+[![Binden an eine Sammlung mit DataTemplate und Konvertern](data-binding-basics-images/listview3.png)](data-binding-basics-images/listview3-large.png#lightbox)
 
 Die `ListView` ist ziemlich ausgereift ist, bei der Verarbeitung von Änderungen, die dynamisch in der zugrunde liegenden Daten, aber nur auftreten, wenn Sie bestimmte Schritte ausführen. Wenn die Auflistung von Elementen zugewiesen der `ItemsSource` Eigenschaft der `ListView` Änderungen während der Laufzeit –, ist, wenn Elemente hinzugefügt werden können, oder aus der Auflistung entfernt – verwenden Sie eine `ObservableCollection` -Klasse für diese Elemente. `ObservableCollection` implementiert die `INotifyCollectionChanged` -Schnittstelle und `ListView` installiert einen Handler für die `CollectionChanged` Ereignis.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: f3baa6756b4e72b750ff1b128b72802f8f1ce6d9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7d5c9ebec2a1d79df7a9a16da91c79772746f6fc
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527350"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227527"
 ---
 # <a name="limitations-of-xamarinios"></a>Einschränkungen von xamarin. IOS
 
@@ -57,11 +57,11 @@ Da der IOS-Kernel verhindert, dass eine Anwendung Code dynamisch generiert, unte
 
 - Die System. Reflection.-Ausgabe ist nicht verfügbar.
 - Keine Unterstützung für System. Runtime. Remoting.
-- Keine Unterstützung für die dynamische Erstellung von Typen ("No Type. GetType" ("MyType ' 1")), obwohl das Nachschlagen vorhandener Typen (Type. GetType ("System. String") beispielsweise problemlos funktioniert). 
+- Keine Unterstützung für die dynamische Erstellung von Typen ("No Type. GetType" ("MyType ' 1")), obwohl das Nachschlagen vorhandener Typen (Type. GetType ("System. String") beispielsweise problemlos funktioniert).
 - Umgekehrte Rückrufe müssen zur Kompilierzeit bei der Laufzeit registriert werden.
 
 
- 
+
  <a name="System.Reflection.Emit" />
 
 
@@ -71,7 +71,7 @@ Das Fehlen von System. Reflection. Ausgabe bedeutet, dass kein Code funktioniert
 
 - Die Dynamic Language Runtime.
 - Alle Sprachen, die auf der Dynamic Language Runtime erstellt wurden.
-- Der TransparentProxy von Remoting oder alles andere, das dazu führen würde, dass die Laufzeit Code dynamisch generiert. 
+- Der TransparentProxy von Remoting oder alles andere, das dazu führen würde, dass die Laufzeit Code dynamisch generiert.
 
 
   > [!IMPORTANT]
@@ -91,7 +91,7 @@ Wenn Sie eines dieser Attribute nicht bereitstellen, führt dies zu einem Laufze
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
 ```
- 
+
  <a name="Reverse_Callbacks" />
 
 
@@ -103,7 +103,7 @@ In Mono werden diese Bridges durch den Just-in-Time-Compiler implementiert. Wenn
 
 - Sie müssen alle Rückruf Methoden mit dem " [monopinvokecallbackattribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute) " markieren.
 - Bei den Methoden handelt es sich um statische Methoden, es gibt keine Unterstützung für Instanzmethoden.
- 
+
 <a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>Kein Remoting

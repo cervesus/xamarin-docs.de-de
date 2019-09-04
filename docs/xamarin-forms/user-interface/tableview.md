@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: fc3837cd0d69d49b9939b04da667010aac919fe2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 195ed82325ed681f31f9963d5ff0ca0a7fef48ab
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657123"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228140"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
@@ -20,7 +20,7 @@ ms.locfileid: "68657123"
 
 [`TableView`](xref:Xamarin.Forms.TableView)ist eine Ansicht für die Anzeige von Bild lauffähigen Listen mit Daten oder Optionen, bei denen Zeilen vorhanden sind, die nicht dieselbe Vorlage verwenden. Im Gegensatz zu [ListView](~/xamarin-forms/user-interface/listview/index.md) `TableView` hat nicht `ItemsSource`das Konzept von, sodass Elemente manuell als untergeordnete Elemente hinzugefügt werden müssen.
 
-![](tableview-images/tableview-all-sml.png "TableView-Beispiel")
+![TableView-Beispiel](tableview-images/tableview-all-sml.png)
 
 <a name="Use_Cases" />
 
@@ -106,7 +106,7 @@ Alle diese Eigenschaften sind bindbar.
 
 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)macht auch das `OnChanged` -Ereignis verfügbar, sodass Sie auf Änderungen im Zustand der Zelle reagieren können.
 
-![](tableview-images/switch-cell.png "SwitchCell-Beispiel")
+![Switchcell-Beispiel](tableview-images/switch-cell.png)
 
 <a name="entrycell" />
 
@@ -123,7 +123,7 @@ Alle diese Eigenschaften sind bindbar.
 
 [`EntryCell`](xref:Xamarin.Forms.EntryCell)macht auch das `Completed` -Ereignis verfügbar, das ausgelöst wird, wenn der Benutzer beim Bearbeiten von Text auf die Schaltfläche "Done" auf der Tastatur trifft.
 
-![](tableview-images/entry-cell.png "EntryCell-Beispiel")
+![Entrycell-Beispiel](tableview-images/entry-cell.png)
 
 <a name="Custom_Cells" />
 
@@ -135,7 +135,7 @@ Alle benutzerdefinierte Zellen abgeleitet müssen [ `ViewCell` ](xref:Xamarin.Fo
 
 Dies ist ein Beispiel für eine benutzerdefinierte Zelle:
 
-![](tableview-images/custom-cell.png "Beispiel für die benutzerdefinierte Zelle")
+![Beispiel für benutzerdefinierte Zelle](tableview-images/custom-cell.png)
 
 Das folgende Beispiel zeigt den XAML-Code, der [`TableView`](xref:Xamarin.Forms.TableView) verwendet wird, um den in den obigen Screenshots zu erstellen:
 
@@ -252,11 +252,11 @@ Die `OnViewCellTapped` Ereignishandler zeigt, oder blendet Sie aus der zweiten [
 
 Die folgenden Screenshots zeigen die Zelle vor der wird beim Tippen:
 
-![](tableview-images/cell-beforeresize.png "ViewCell vor dem Ändern der Größe")
+![Viewcell vor der Größenänderung](tableview-images/cell-beforeresize.png)
 
 Die folgenden Screenshots zeigen die Zelle nach wird beim Tippen:
 
-![](tableview-images/cell-afterresize.png "ViewCell nach dem Ändern der Größe")
+![Viewcell nach der Größenänderung](tableview-images/cell-afterresize.png)
 
 > [!IMPORTANT]
 > Es gibt sehr wahrscheinlich, dass eine Verringerung der Leistung auf, wenn dieses Feature übermäßig beansprucht wird.

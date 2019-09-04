@@ -6,12 +6,12 @@ ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: f125f8f20d22da4e988440cbaa936771d86a7673
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 8bdef9bff975365172a4c215b21cbb07a37e8492
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680981"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227724"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>Zeichnen von 3D-Grafiken mit Vertices in monogame
 
@@ -85,7 +85,7 @@ Unsere Ebene dient als Fußboden, und wir möchten eine Textur anwenden, wenn wi
 Zuerst fügen wir der Game1-Klasse einen Member hinzu:
 
 ```csharp
-VertexPositionTexture[] floorVerts; 
+VertexPositionTexture[] floorVerts;
 ```
 
 Definieren Sie als nächstes die Vertices `Game1.Initialize`in. Beachten Sie, dass die bereitgestellte Vorlage, auf die weiter oben in `Game1.Initialize` diesem Artikel verwiesen wird, keine-Methode enthält, daher `Game1`müssen wir die gesamte-Methode hinzufügen:
@@ -179,7 +179,7 @@ void DrawGround()
             PrimitiveType.TriangleList,
             // The array of verts that we want to render
             floorVerts,
-            // The offset, which is 0 since we want to start 
+            // The offset, which is 0 since we want to start
             // at the beginning of the floorVerts array
             0,
             // The number of triangles to draw
@@ -213,7 +213,7 @@ Die `View` - `Projection` Eigenschaft und die-Eigenschaft steuern die Anzeige de
 
 ### <a name="techniques-and-passes"></a>Techniken und Durchgänge
 
-Nachdem wir unseren Effekten Eigenschaften zugewiesen haben, können wir das tatsächliche Rendering durchführen. 
+Nachdem wir unseren Effekten Eigenschaften zugewiesen haben, können wir das tatsächliche Rendering durchführen.
 
 In dieser exemplarischen Vorgehens `CurrentTechnique` Weise wird die-Eigenschaft nicht geändert, aber erweiterte Spiele können einen einzelnen Effekt haben, der das Zeichnen auf unterschiedliche Weise (z. b. wie der Farbwert angewendet wird) durchführen kann. Jeder dieser Renderingmodi kann als Technik dargestellt werden, die vor dem Rendering zugewiesen werden kann. Außerdem erfordert jede Technik möglicherweise, dass mehrere Durchgänge ordnungsgemäß dargestellt werden. Wenn komplexe visuelle Elemente wie eine leuchtende Oberfläche oder ein Fell gerendert werden, werden möglicherweise mehrere Durchgänge
 
@@ -231,7 +231,7 @@ Schließlich geben wir an, wie viele Dreiecke zu Rendering sind. Unser Scheitelp
 
 ## <a name="rendering-with-a-texture"></a>Rendering mit einer Textur
 
-An diesem Punkt rendert unsere App eine weiße Ebene (in der Perspektive). Als Nächstes fügen wir dem Projekt eine Textur hinzu, die beim Rendern unserer Ebene verwendet werden soll. 
+An diesem Punkt rendert unsere App eine weiße Ebene (in der Perspektive). Als Nächstes fügen wir dem Projekt eine Textur hinzu, die beim Rendern unserer Ebene verwendet werden soll.
 
 Um dies zu gewährleisten, fügen wir die PNG-Datei direkt in das Projekt ein, anstatt das monogame-Pipeline Tool zu verwenden. Laden Sie hierzu die [PNG-Datei](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true) auf Ihren Computer herunter. Klicken Sie nach dem herunterladen mit der rechten Maustaste auf den **Inhalts** Ordner im lösungspad, und wählen Sie **Hinzufügen > Dateien hinzufügen** aus. Wenn Sie an Android arbeiten, befindet sich dieser Ordner unter dem Ordner **Assets** im Android-spezifischen Projekt. Wenn unter IOS, wird dieser Ordner im Stammverzeichnis des IOS-Projekts angezeigt. Navigieren Sie zu dem Speicherort, an dem **Checkerboard. png** gespeichert ist, und wählen Sie diese Datei aus. Aktivieren Sie diese Option, um die Datei in das Verzeichnis zu kopieren.
 
@@ -332,7 +332,7 @@ protected override void Initialize ()
     effect = new BasicEffect (graphics.GraphicsDevice);
 
     base.Initialize ();
-} 
+}
 ```
 
 Wenn wir den Code ausführen, sehen wir, dass unsere Ebene nun ein checkboard-Muster anzeigt:
@@ -404,7 +404,7 @@ protected override void Draw(GameTime gameTime)
     DrawModel (new Vector3 ( 4, 4, 3));
 
     base.Draw(gameTime);
-} 
+}
 ```
 
 Außerdem wird ein `Vector3` in `Game1` erstellt, um die Position der Kamera darzustellen. Wir fügen ein Feld unter `checkerboardTexture` der Deklaration hinzu:
@@ -413,7 +413,7 @@ Außerdem wird ein `Vector3` in `Game1` erstellt, um die Position der Kamera dar
 ...
 Texture2D checkerboardTexture;
 // new code:
-Vector3 cameraPosition = new Vector3(0, 10, 10); 
+Vector3 cameraPosition = new Vector3(0, 10, 10);
 ```
 
 Entfernen Sie als nächstes die `cameraPosition` lokale Variable aus `DrawModel` der-Methode:
@@ -434,7 +434,7 @@ void DrawModel(Vector3 modelPosition)
             var cameraUpVector = Vector3.UnitZ;
 
             effect.View = Matrix.CreateLookAt (
-                cameraPosition, cameraLookAtVector, cameraUpVector); 
+                cameraPosition, cameraLookAtVector, cameraUpVector);
             ...
 ```
 
@@ -450,7 +450,7 @@ void DrawGround()
 
     effect.View = Matrix.CreateLookAt (
         cameraPosition, cameraLookAtVector, cameraUpVector);
-    ... 
+    ...
 ```
 
 Wenn wir nun den Code ausführen, sehen wir die Modelle und den Grund für die gleiche Zeit:

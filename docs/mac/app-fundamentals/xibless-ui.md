@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 1f49f3c24bc4c89edb005206b953176639214481
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d51e1b20e1409d228db2f38e6c31ad1165897654
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647176"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226895"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>Storyboard/. XIb-Loses Design der Benutzeroberfläche in xamarin. Mac
 
@@ -35,16 +35,16 @@ Wenn Sie eine neue xamarin. Mac-Cocoa-Anwendung erstellen, erhalten Sie standard
 Gehen Sie folgendermaßen vor, um zu einem xibless-Fenster für eine Anwendung zu wechseln:
 
 1. Öffnen Sie die Anwendung, die Sie nicht mehr `.storyboard` verwenden möchten, oder XIb-Dateien, um die Benutzeroberfläche in Visual Studio für Mac zu definieren.
-2. Klicken Sie in der **Lösungspad**mit der rechten Maustaste auf die Datei " **Main. Storyboard** " oder " **MainWindow. XIb** ", und wählen Sie **Entfernen**aus: 
+2. Klicken Sie in der **Lösungspad**mit der rechten Maustaste auf die Datei " **Main. Storyboard** " oder " **MainWindow. XIb** ", und wählen Sie **Entfernen**aus:
 
     ![Entfernen des Haupt Storyboards oder Fensters](xibless-ui-images/switch01.png "Entfernen des Haupt Storyboards oder Fensters")
-3. Klicken Sie im **Dialog Feld entfernen**auf die Schaltfläche **Löschen** , um die Storyboard-oder XIb-Datei vollständig aus dem Projekt zu entfernen: 
+3. Klicken Sie im **Dialog Feld entfernen**auf die Schaltfläche **Löschen** , um die Storyboard-oder XIb-Datei vollständig aus dem Projekt zu entfernen:
 
     ![Bestätigen des Lösch] Vorgangs (xibless-ui-images/switch02.png "Bestätigen des Lösch") Vorgangs
 
 Nun müssen wir die **MainWindow.cs** -Datei ändern, um das Fenster Layout zu definieren und die **ViewController.cs** -oder **MainWindowController.cs** -Datei zu ändern, um eine `MainWindow` Instanz der Klasse zu erstellen, da wir nicht mehr verwenden. Storyboard-oder XIb-Datei.
 
-Moderne xamarin. Mac-apps, die Storyboards für Ihre Benutzeroberfläche verwenden, enthalten möglicherweise nicht automatisch die Dateien **MainWindow.cs**, **ViewController.cs** oder **MainWindowController.cs** . Fügen Sie dem Projekt einfach eine neue leere C# Klasse hinzu (neue Datei**Hinzufügen** >  **...**  > Allgemeineleere > **Klasse**), und benennen Sie Sie mit der fehlenden Datei. 
+Moderne xamarin. Mac-apps, die Storyboards für Ihre Benutzeroberfläche verwenden, enthalten möglicherweise nicht automatisch die Dateien **MainWindow.cs**, **ViewController.cs** oder **MainWindowController.cs** . Fügen Sie dem Projekt einfach eine neue leere C# Klasse hinzu (neue Datei**Hinzufügen** >  **...**  > Allgemeineleere > **Klasse**), und benennen Sie Sie mit der fehlenden Datei.
 
 
 ### <a name="defining-the-window-in-code"></a>Definieren des Fensters im Code
@@ -160,7 +160,7 @@ Die `AutoresizingMask = NSViewResizingMask.MinYMargin` -Eigenschaft teilt der Sc
 
 `ContentView.AddSubview (ClickMeButton)` Schließlich`NSButton` fügt die-Methode der Inhaltsansicht hinzu, sodass Sie auf dem Bildschirm angezeigt wird, wenn die Anwendung ausgeführt wird und das Fenster angezeigt wird.
 
-Im nächsten Schritt wird dem Fenster eine Bezeichnung hinzugefügt, in der angezeigt wird, wie `NSButton` oft auf das geklickt wurde: 
+Im nächsten Schritt wird dem Fenster eine Bezeichnung hinzugefügt, in der angezeigt wird, wie `NSButton` oft auf das geklickt wurde:
 
 ```csharp
 ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width - 130, 20)) {
@@ -172,7 +172,7 @@ ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width 
     StringValue = "Button has not been clicked yet."
 };
 ContentView.AddSubview (ClickMeLabel);
-``` 
+```
 
 Da macOS nicht über ein bestimmtes Benutzeroberflächen Element der _Bezeichnung_ verfügt, haben wir eine speziell formatierte, nicht `NSTextField` bearbeitbare Funktion hinzugefügt, die als Bezeichnung fungiert. Genau wie die Schaltfläche vor berücksichtigt Größe und Position, dass sich (0,0) unten links im Fenster befindet. Die `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` -Eigenschaft verwendet den **or** -Operator, um `NSViewResizingMask` zwei-Funktionen zu kombinieren. Dadurch bleibt die Bezeichnung am oberen Rand des Fensters am gleichen Ort, wenn die Größe des Fensters vertikal geändert wird, und die Größe wird verkleinert und vergrößert, wenn die Größe des Fensters horizontal angepasst wird.
 
@@ -239,7 +239,7 @@ Der Speicherort des Fenster Fensters wird mit einem `CGRect`definiert. Ebenso wi
 
 ```csharp
 ... (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable) ...
-``` 
+```
 
 Die folgenden `NSWindowStyle` Funktionen sind verfügbar:
 
@@ -249,7 +249,7 @@ Die folgenden `NSWindowStyle` Funktionen sind verfügbar:
 - **Miniaturierbar** : das Fenster verfügt über die Schaltfläche "minimieren" und kann minimiert werden.
 - **Größe** kann geändert werden: das Fenster hat eine Schaltfläche zum Ändern der Größe und kann die Größe ändern.
 - **Hilfsprogramm** : das Fenster ist ein Fenster des hilfsprogrammstils (Panel).
-- **Docmodal** : Wenn es sich bei dem Fenster um einen Bereich handelt, wird es als dokumentmodaler anstelle eines systemmodalen verwendet. 
+- **Docmodal** : Wenn es sich bei dem Fenster um einen Bereich handelt, wird es als dokumentmodaler anstelle eines systemmodalen verwendet.
 - **Nonactivatingpanel** : Wenn das Fenster ein Panel ist, wird es nicht zum Hauptfenster.
 - **Texturedbackground** : das Fenster verfügt über einen strukturierten Hintergrund.
 - Nicht **skaliert** : das Fenster wird nicht skaliert.
@@ -292,7 +292,7 @@ Wenn die Anwendung ausgeführt wird und die Schaltfläche mehrmals geklickt hat,
 
 Wenn Sie einer vorhandenen xamarin. Mac-Anwendung ein Code only, xibless-Fenster hinzufügen möchten, klicken Sie im **Lösungspad** mit der rechten Maustaste auf das Projekt, und wählen Sie**neue Datei** **Hinzufügen** > ... aus. Wählen Sie im Dialogfeld **neue Datei** die Option **xamarin. Mac** > **Cocoa-Fenster mit Controller**aus, wie unten dargestellt:
 
-![Hinzufügen eines neuen Fenster Controllers](xibless-ui-images/add01.png "Hinzufügen eines neuen Fenster Controllers") 
+![Hinzufügen eines neuen Fenster Controllers](xibless-ui-images/add01.png "Hinzufügen eines neuen Fenster Controllers")
 
 Ebenso wie zuvor löschen wir die default. Storyboard-oder XIb-Datei aus dem Projekt (in diesem Fall **secondwindow. XIb**) und führen die Schritte im Abschnitt [Wechseln eines Fensters zur Verwendung von Code](#Switching_a_Window_to_use_Code) aus, um die Definition des Fensters in Code abzudecken.
 

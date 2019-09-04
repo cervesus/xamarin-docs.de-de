@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: be4d10eceb4ddf7da44409815f3e9c08117a06f7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120738"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227218"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Arbeiten mit gestapelten Ansichten von tvos in xamarin
 
@@ -24,7 +24,7 @@ Das Layout aller untergeordneten Sichten, die an eine Stapel Ansicht angefügt s
 
 Wenn Sie `UIStackView` in einer xamarin. tvos-App verwenden, kann der Entwickler entweder die unter Ansichten entweder innerhalb eines Storyboards im IOS-Designer oder durch Hinzufügen und Entfernen von unter Ansichten C# im Code definieren.
 
-## <a name="about-stacked-view-controls"></a>Informationen zu gestapelten Sicht Steuerelementen 
+## <a name="about-stacked-view-controls"></a>Informationen zu gestapelten Sicht Steuerelementen
 
 Der `UIStackView` ist als nicht Rendering-Container Ansicht konzipiert und wird daher nicht wie andere Unterklassen von `UIView`in den Zeichenbereich gezeichnet. Das Festlegen von Eigenschaften `BackgroundColor` , z `DrawRect` . b. oder überschreiben, hat keinen visuellen Effekt.
 
@@ -98,21 +98,21 @@ Die einfachste Möglichkeit, mit Stapel Ansichten in einer xamarin. tvos-APP zu 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
-1. Entwerfen Sie das Layout der einzelnen Elemente, die der Stapel Ansicht hinzugefügt werden sollen: 
+1. Entwerfen Sie das Layout der einzelnen Elemente, die der Stapel Ansicht hinzugefügt werden sollen:
 
     [![](stacked-views-images/layout01.png "Beispiel für Element Layout")](stacked-views-images/layout01.png#lightbox)
 1. Fügen Sie den Elementen alle erforderlichen Einschränkungen hinzu, um sicherzustellen, dass Sie korrekt skaliert werden Dieser Schritt ist wichtig, wenn das Element der Stapel Ansicht hinzugefügt wird.
-1. Nehmen Sie die erforderliche Anzahl von Kopien (in diesem Fall vier) vor: 
+1. Nehmen Sie die erforderliche Anzahl von Kopien (in diesem Fall vier) vor:
 
     [![](stacked-views-images/layout02.png "Die erforderliche Anzahl von Kopien")](stacked-views-images/layout02.png#lightbox)
-1. Ziehen Sie eine **Stapel Ansicht** aus der **Toolbox** , und legen Sie Sie in der Ansicht ab: 
+1. Ziehen Sie eine **Stapel Ansicht** aus der **Toolbox** , und legen Sie Sie in der Ansicht ab:
 
     [![](stacked-views-images/layout03.png "Eine Stapel Ansicht")](stacked-views-images/layout03.png#lightbox)
-1. Wählen Sie die Stapel Ansicht aus, undwählen Sie auf der **Registerkarte widget** des **Eigenschaftenpad** für die **Ausrichtung** **Ausfüllen** aus, und geben `25` Sie für die **Verteilung** **gleichermaßen** ein: 
+1. Wählen Sie die Stapel Ansicht aus, undwählen Sie auf der **Registerkarte widget** des **Eigenschaftenpad** für die **Ausrichtung** **Ausfüllen** aus, und geben `25` Sie für die **Verteilung** **gleichermaßen** ein:
 
     [![](stacked-views-images/layout04.png "Die Widget-Registerkarte")](stacked-views-images/layout04.png#lightbox)
 1. Positionieren Sie die Stapel Ansicht auf dem Bildschirm, wo Sie Sie möchten, und fügen Sie Einschränkungen hinzu, um Sie am erforderlichen Speicherort zu speichern.
-1. Wählen Sie die einzelnen Elemente aus, und ziehen Sie Sie in die Stapel Ansicht: 
+1. Wählen Sie die einzelnen Elemente aus, und ziehen Sie Sie in die Stapel Ansicht:
 
     [![](stacked-views-images/layout05.png "Die einzelnen Elemente in der Stapel Ansicht")](stacked-views-images/layout05.png#lightbox)
 1. Das Layout wird angepasst, und die Elemente werden in der Stapel Ansicht basierend auf den Attributen, die Sie oben festgelegt haben, angeordnet.
@@ -122,21 +122,21 @@ Die einfachste Möglichkeit, mit Stapel Ansichten in einer xamarin. tvos-APP zu 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
-1. Entwerfen Sie das Layout der einzelnen Elemente, die der Stapel Ansicht hinzugefügt werden sollen: 
+1. Entwerfen Sie das Layout der einzelnen Elemente, die der Stapel Ansicht hinzugefügt werden sollen:
 
     [![](stacked-views-images/layout01.png "Beispiel für Element Layout")](stacked-views-images/layout01.png#lightbox)
 1. Fügen Sie den Elementen alle erforderlichen Einschränkungen hinzu, um sicherzustellen, dass Sie korrekt skaliert werden Dieser Schritt ist wichtig, wenn das Element der Stapel Ansicht hinzugefügt wird.
-1. Nehmen Sie die erforderliche Anzahl von Kopien (in diesem Fall vier) vor: 
+1. Nehmen Sie die erforderliche Anzahl von Kopien (in diesem Fall vier) vor:
 
     [![](stacked-views-images/layout02.png "Die erforderliche Anzahl von Kopien")](stacked-views-images/layout02.png#lightbox)
-1. Ziehen Sie eine **Stapel Ansicht** aus der **Toolbox** , und legen Sie Sie in der Ansicht ab: 
+1. Ziehen Sie eine **Stapel Ansicht** aus der **Toolbox** , und legen Sie Sie in der Ansicht ab:
 
     [![](stacked-views-images/layout03-vs.png "Eine Stapel Ansicht")](stacked-views-images/layout03-vs.png#lightbox)
-1. Wählen Sie die Stapel Ansicht aus, wählen Sie im Eigenschaften- **Explorer** auf der **Registerkarte widget** die Option **Ausfüllen** für die **Ausrichtung**aus, `25` und geben Sie für den **Abstand** **gleich** ein: 
+1. Wählen Sie die Stapel Ansicht aus, wählen Sie im Eigenschaften- **Explorer** auf der **Registerkarte widget** die Option **Ausfüllen** für die **Ausrichtung**aus, `25` und geben Sie für den **Abstand** **gleich** ein:
 
     [![](stacked-views-images/layout04-vs.png "Die Widget-Registerkarte")](stacked-views-images/layout04-vs.png#lightbox)
 1. Positionieren Sie die Stapel Ansicht auf dem Bildschirm, wo Sie Sie möchten, und fügen Sie Einschränkungen hinzu, um Sie am erforderlichen Speicherort zu speichern.
-1. Wählen Sie die einzelnen Elemente aus, und ziehen Sie Sie in die Stapel Ansicht: 
+1. Wählen Sie die einzelnen Elemente aus, und ziehen Sie Sie in die Stapel Ansicht:
 
     [![](stacked-views-images/layout05-vs.png "Die einzelnen Elemente in der Stapel Ansicht")](stacked-views-images/layout05-vs.png#lightbox)
 1. Das Layout wird angepasst, und die Elemente werden in der Stapel Ansicht basierend auf den Attributen, die Sie oben festgelegt haben, angeordnet.

@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: ac77977f3832b0ab7ba440a2c795037e8fcf5f2e
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: b62c8453049a1e014cd75cbee562c8f1a2c16c31
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620995"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227900"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -100,13 +100,13 @@ Bevor Sie ein Profil für Ihre APP erstellen können, müssen Sie die Profilerst
 
   **Erstellen > IOS-debug> Aktivieren der Profilerstellung**
 
-  ![](images/ios-options-mac.png "Dialog Feld für IOS-Optionen in Visual Studio für Mac")
+  ![Dialog Feld für IOS-Optionen in Visual Studio für Mac](images/ios-options-mac.png)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
   **Eigenschaften > IOS-Build > Profilerstellung aktivieren**
 
-  ![](images/ios-project-options-vs.png "Dialog Feld \"IOS-Optionen\" in Visual Studio")
+  ![Dialog Feld "IOS-Optionen" in Visual Studio](images/ios-project-options-vs.png)
 
 -----
 
@@ -137,7 +137,7 @@ Der Xamarin Profiler kann von Ihrer IDE aus gestartet werden, wenn Sie die Profi
 1. Stellen Sie zunächst sicher, dass die Anwendung in Visual Studio für Mac geladen ist, und wählen Sie die (standardmäßige) Debugkonfiguration aus.
 2. Navigieren Sie zu **ausführen, > starten Sie die Profilerstellung**in Visual Studio für Mac, oder analysieren Sie **> Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie in der folgenden Abbildung gezeigt:
 
-  ![](images/start-profiling-xs.png "Der Profiler wird von Visual Studio für Mac gestartet.")
+  ![Der Profiler wird von Visual Studio für Mac gestartet.](images/start-profiling-xs.png)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -164,13 +164,13 @@ Um eine Profil Erstellungs Sitzung zu einem beliebigen Zeitpunkt zu speichern, w
 
 Nachdem es installiert wurde, finden Sie die Xamarin Profiler wie im folgenden Screenshot gezeigt im Ordner "Anwendungen":
 
-![](images/applications.png "Eigenständigen Profiler über Mac öffnen")
+![Eigenständigen Profiler über Mac öffnen](images/applications.png)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Nachdem die Anwendung installiert wurde, befindet sich die Xamarin Profiler Anwendung im Anwendungsverzeichnis:
 
-![](images/applications-vs.png "Öffnen Sie den eigenständigen Profiler unter Windows.")
+![Öffnen Sie den eigenständigen Profiler unter Windows.](images/applications-vs.png)
 
 -----
 
@@ -184,11 +184,11 @@ Der Xamarin Profiler besteht aus fünf Abschnitten, wie unten dargestellt:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](images/profiler-mac-sml.png "Profiler-Abschnitte in Visual Studio für Mac")](images/profiler-mac.png#lightbox) 
+[![Profiler-Abschnitte in Visual Studio für Mac](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](images/profiler-vs.png "Profiler-Abschnitte in Visual Studio")](images/profiler-vs.png#lightbox)
+[![Profiler-Abschnitte in Visual Studio](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -206,11 +206,11 @@ Am Anfang des Profilers befindet sich das Zuordnungs Diagramm, in dem die Menge 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](images/allocations1.png "Zuordnungs Instrument")](images/allocations1.png#lightbox) 
+[![Zuordnungs Instrument](images/allocations1.png)](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](images/allocations1-vs.png "Zuordnungs Instrument")](images/allocations1-vs.png#lightbox)
+[![Zuordnungs Instrument](images/allocations1-vs.png)](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -220,11 +220,11 @@ Es gibt unterschiedliche Datenansichten im Zuordnungs Instrument, mit denen Entw
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![](images/allocations3.png "Registerkarte \"Zuweisungen")](images/allocations3.png#lightbox) 
+  [![Registerkarte "Zuweisungen](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations2-vs.png "Registerkarte \"Zuweisungen")](images/allocations2-vs.png#lightbox)
+  [![Registerkarte "Zuweisungen](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -236,11 +236,11 @@ Die inspektoransicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![](images/allocations2.png "Registerkarte \"Callcenter\"")](images/allocations2.png#lightbox) 
+  [![Registerkarte "Callcenter"](images/allocations2.png)](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations3-vs.png "Registerkarte \"Callcenter\"")](images/allocations3-vs.png#lightbox)
+  [![Registerkarte "Callcenter"](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -248,11 +248,11 @@ Die inspektoransicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![](images/allocations4.png "Momentaufnahmen")](images/allocations4.png#lightbox) 
+  [![Momentaufnahmen](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations4-vs.png "Momentaufnahmen")](images/allocations4-vs.png#lightbox)
+  [![Momentaufnahmen](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -280,11 +280,11 @@ Das Zeichnungs Diagramm zeigt, wie im folgenden Screenshot gezeigt, die Anzahl d
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![](images/time2.png "Zeit Profil Erstellungs Instrument – Aufruf Struktur")](images/time2.png#lightbox) 
+  [![Zeit Profil Erstellungs Instrument – Aufruf Struktur](images/time2.png)](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/time2-vs.png "Zeit Profil Erstellungs Instrument – Aufruf Struktur")](images/time2-vs.png#lightbox) 
+  [![Zeit Profil Erstellungs Instrument – Aufruf Struktur](images/time2-vs.png)](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -315,7 +315,7 @@ Wenn Sie ein Profil für eine APP mit einer anderen Konfiguration erstellen, wir
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](images/image1vs.png "Profil Erstellungs Fehler")](images/image1vs.png#lightbox) 
+[![Profil Erstellungs Fehler](images/image1vs.png)](images/image1vs.png#lightbox) 
 
 -----
 

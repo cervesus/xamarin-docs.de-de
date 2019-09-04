@@ -6,12 +6,12 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 61562eed8867b7a2e12b3d2e96feed28d957696b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 021139c817d2b0eb430a6c8fe09dbd07b7c17813
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511206"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226154"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Aktualisieren vorhandener apps auf die Unified API
 
@@ -40,7 +40,7 @@ Vorhandene xamarin. IOS-Apps können mit dem automatisierten Migrationstool, das
 
 Vorhandene xamarin. Mac-Apps können mit dem automatisierten Migrationstool, das in Visual Studio für Mac integriert ist, auf die Unified API aktualisiert werden. Einige zusätzliche Korrekturen sind möglicherweise erforderlich, wie in [diesen Anweisungen](~/cross-platform/macios/unified/updating-mac-apps.md) und [Tipps](~/cross-platform/macios/unified/updating-tips.md)erläutert.
 
-### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms apps](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms-Apps](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
 Befolgen Sie diese Anweisungen, um eine vorhandene xamarin. Forms-Projekt Mappe mit einem IOS-Projekt zu aktualisieren, um die Unified API zu verwenden. Unified API-Unterstützung ist nur in xamarin. Forms 1,3 und höher verfügbar. Außerdem wird in [den Anweisungen](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md) erläutert, wie Sie Ihre xamarin. Forms-App auf Version 1,3 aktualisieren. Diese [Tipps](~/cross-platform/macios/unified/updating-tips.md) können dabei helfen, den systemeigenen IOS-Code in benutzerdefinierten renderatoren oder Abhängigkeits Diensten zu aktualisieren.
 

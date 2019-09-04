@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 6890846a1cb5cd44429c9157b3aeb75c7a1f2f4b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 67fbd3fb7fb9c7bf1e326404d0d63bc42a3fd8ed
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521430"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227670"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>App-Transport Sicherheit in xamarin. IOS
 
@@ -41,7 +41,7 @@ ATS erzwingt die folgenden Anforderungen für alle Internetverbindungen:
 - Das TLS-Protokoll (Transport Layer Security) muss mindestens eine Version 1,2 aufweisen.
 - Für alle Zertifikate muss mindestens ein SHA256-Fingerabdruck mit einem 2048-Bit-oder einem höheren RSA-Schlüssel oder einem 256-Bit-oder einem höheren Elliptic Curve-Schlüssel (ECC) verwendet werden.
 
-Da ATS standardmäßig in ios 9 aktiviert ist, wird bei jedem Versuch, eine Verbindung herzustellen, die diese Anforderungen nicht erfüllt, eine Ausnahme ausgelöst. 
+Da ATS standardmäßig in ios 9 aktiviert ist, wird bei jedem Versuch, eine Verbindung herzustellen, die diese Anforderungen nicht erfüllt, eine Ausnahme ausgelöst.
 
 <a name="ATS-Compatible-Ciphers" />
 
@@ -132,7 +132,7 @@ Vorteile
 Nachteile
 
 - Erfordert IOS 7 oder höher.
-- Einige Features und Optionen für httpclient sind nicht verfügbar. 
+- Einige Features und Optionen für httpclient sind nicht verfügbar.
 
 ## <a name="diagnosing-ats-issues"></a>Diagnostizieren von ATS-Problemen
 
@@ -153,7 +153,7 @@ Apple stellt außerdem die [tlstool-Beispiel-App](https://developer.apple.com/li
 
 Sie können mehrere Funktionen von ATS konfigurieren, indem Sie Werte für bestimmte Schlüssel in der **Info. plist** -Datei Ihrer APP festlegen. Die folgenden Schlüssel sind zum Steuern von ATS verfügbar (_eingerückt, um zu veranschaulichen, wie Sie eingefügt werden_):
 
-```csharp
+```
 NSAppTransportSecurity
     NSAllowsArbitraryLoads
     NSAllowsArbitraryLoadsInWebContent

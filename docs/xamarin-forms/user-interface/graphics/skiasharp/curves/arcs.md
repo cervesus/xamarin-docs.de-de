@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 97c168460b091b9ada954cacd895a670c31805b2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ada7ce8fc9365ab4133ddf439353e97e640f39d6
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655180"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228115"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen zu zeichnen
 
@@ -22,7 +22,7 @@ _Erfahren Sie, wie SkiaSharp zu verwenden, um Bögen auf drei verschiedene Arten
 
 Ein Bogen ist eine Kurve auf den Umfang einer Ellipse, z. B. die abgerundeten Teile dieses Infinity-Zeichen:
 
-![](arcs-images/arcsample.png "Infinity-Anmeldung")
+![Unendlichkeitszeichen](arcs-images/arcsample.png)
 
 Trotz der Einfachheit dieser Definition, es gibt keine Möglichkeit, eine Bogen-Zeichnung-Funktion definiert, die jeden Anlass, erfüllt und daher keine Konsens Grafiksysteme die beste Möglichkeit, einen Bogen zu zeichnen. Aus diesem Grund die `SKPath` Klasse beschränkt sich nicht auf nur einen Ansatz.
 
@@ -42,21 +42,21 @@ Diese Methoden sind identisch mit den Methoden [`AddArc`](xref:Android.Graphics.
 
 Beide Methoden beginnen mit einem `SKRect` -Wert, der Speicherort und die Größe einer Ellipse definiert:
 
-![](arcs-images/anglearcoval.png "Ovals, die einen Winkel Bogen beginnt.")
+![Das Oval, das einen Winkel Bogen startet.](arcs-images/anglearcoval.png)
 
 Der Bogen ist ein Teil der Umfang dieser Ellipse.
 
 Die `startAngle` Argument ist, einen Winkel im Uhrzeigersinn in Grad relativ zu einer horizontalen Linie, die von der Mitte der Ellipse gezeichnet wird, auf der rechten Seite. Die `sweepAngle` Argument ist relativ zu den `startAngle`. Hier sind `startAngle` und `sweepAngle` bzw. Werte von 60 Grad und 100 Grad:
 
-![](arcs-images/anglearcangles.png "Der Winkel, die definieren, einen Winkel Bogen")
+![Die Winkel, die einen Winkel Bogen definieren.](arcs-images/anglearcangles.png)
 
 Der Startwinkel beginnt des Bogens. Der mittelpunktswinkel unterliegt längenbeschränkungen. Der Bogen wird in Rot hier gezeigt:
 
-![](arcs-images/anglearchighlight.png "Die hervorgehobenen Winkel einen Bogen konvertiert.")
+![Der hervorgehobene Winkel Bogen](arcs-images/anglearchighlight.png)
 
 Die Kurve, die hinzugefügt werden, um den Pfad mit der `AddArc` oder `ArcTo` Methode ist einfach, Teil der Ellipse Umfang:
 
-![](arcs-images/anglearc.png "Der Winkel Bogen selbst")
+![Der Winkel Bogen allein](arcs-images/anglearc.png)
 
 Das `startAngle` - `sweepAngle` Argument oder das-Argument kann negativ sein: Der Bogen steht im Uhrzeigersinn für positive `sweepAngle` Werte von und gegen den Uhrzeigersinn für negative Werte.
 
@@ -103,7 +103,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Wie Sie sehen können, können sowohl den Startwinkel und den mittelpunktswinkel negative Werte annehmen:
 
-[![](arcs-images/anglearc-small.png "Dreifacher Screenshot der Seite Winkel Bogen")](arcs-images/anglearc-large.png#lightbox "dreifachen Screenshot der Seite Winkel einen Bogen konvertiert.")
+[![Dreifacher Screenshot der Seite "Winkel Bogen"](arcs-images/anglearc-small.png)](arcs-images/anglearc-large.png#lightbox)
 
 Diese Vorgehensweise zum Erstellen von einen Bogen algorithmisch am einfachsten ist, und es ist einfach, die parametrischen Formeln abgeleitet werden, die den Bogen mit Strichen zu beschreiben. Kennen die Größe und Position des der Ellipse, die Start- und Sweep Winkel, kann die Start- und Endpunkt des Bogens berechnet werden mithilfe von einfachen trigonometrische:
 
@@ -208,11 +208,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Ein neues `SKPath` -Objekt wird erstellt für jeden kreisslice angezeigt. Der Pfad besteht aus einer Zeile aus dem Center ein `ArcTo` den Bogen mit Strichen und eine neue Zeile zurück an die Center-Ergebnisse aus gezeichnet der `Close` aufrufen. Dieses Programm zeigt "explodierten" Kreissegmente durch Verschieben all aus dem Center 50 Pixel. Diese Aufgabe erfordert einen Vektor in Richtung der Mitte des der mittelpunktswinkel für jeden Slice:
 
-[![](arcs-images/explodedpiechart-small.png "Dreifacher Screenshot der Seite Kreisdiagramm explodiert")](arcs-images/explodedpiechart-large.png#lightbox "dreifachen Screenshot der Seite Kreisdiagramm explodiert")
+[![Dreifacher Screenshot der Seite "explodiertes Kreis Diagramm"](arcs-images/explodedpiechart-small.png)](arcs-images/explodedpiechart-large.png#lightbox)
 
 Um anzuzeigen, ohne die "Auflösung" sieht es, einfach Auskommentieren der `Translate` aufrufen:
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Dreifacher Screenshot der Seite Kreisdiagramm explodiert ohne die Datenexplosion")](arcs-images/explodedpiechartunexploded-large.png#lightbox "dreifachen Screenshot der Seite Kreisdiagramm explodiert ohne die Datenexplosion")
+[![Dreifacher Screenshot der explodierten Kreis Diagramm Seite ohne die Explosion](arcs-images/explodedpiechartunexploded-small.png)](arcs-images/explodedpiechartunexploded-large.png#lightbox)
 
 ## <a name="the-tangent-arc"></a>Der Tangens Bogen
 
@@ -234,31 +234,31 @@ Die `ArcTo` Methode umfasst die drei Punkte:
 - Das erste Argument der Punkt für die `ArcTo` aufgerufene Methode die *Ecke zeigen*
 - Das zweite Argument der Punkt für `ArcTo`Namens der *Zielpunkt*:
 
-![](arcs-images/tangentarcthreepoints.png "Drei Punkte, die einen Tangenten Bogen zu beginnen")
+![Drei Punkte, die einen Tangens Bogen beginnen](arcs-images/tangentarcthreepoints.png)
 
 Diese drei Punkte definieren zwei verbundene Linien:
 
-![](arcs-images/tangentarcconnectinglines.png "Verbindungslinien zwischen die drei Punkten einem Tangens Bogen")
+![Zeilen, die die drei Punkte eines Tangens Bogens verbinden](arcs-images/tangentarcconnectinglines.png)
 
 Wenn die drei Punkte kollineare sind &mdash; , also wenn sie auf einer geraden Linie liegen &mdash; kein Bogen gezeichnet.
 
 Die `ArcTo` -Methode enthält auch eine `radius` Parameter. Den Radius eines Kreises definiert:
 
-![](arcs-images/tangentarccircle.png "Der Kreis einen Tangens einen Bogen konvertiert.")
+![Der Kreis eines Tangens Bogens.](arcs-images/tangentarccircle.png)
 
 Der Tangente Bogen ist nicht für eine Ellipse generalisiert werden.
 
 Wenn die beiden Zeilen in einem beliebigen Winkel erfüllen, kann diese Kreis zwischen diesen Zeilen eingefügt werden, damit es tangential zur beide Zeilen ist:
 
-![](arcs-images/tangentarctangentcircle.png "Der Kreis Tangens Bogen zwischen den beiden Zeilen")
+![Der Tangens Bogen Kreis zwischen den beiden Linien.](arcs-images/tangentarctangentcircle.png)
 
 Die Kurve, die die Kontur hinzugefügt wird, nicht touch entweder von der Punkte in der `ArcTo` Methode. Sie besteht aus einer geraden Linie vom aktuellen Punkt der ersten tangenspunkt und einen Bogen, der an den zweiten tangenspunkt, hier in Rot dargestellt:
 
-![](arcs-images/tangentarchighlight.png "Der hervorgehobenen Tangens Bogen zwischen den beiden Zeilen")
+![Der markierte Tangens Bogen zwischen den beiden Zeilen.](arcs-images/tangentarchighlight.png)
 
 Hier ist die endgültige gerade Linie und Bogen, der die Kontur hinzugefügt wird:
 
-![](arcs-images/tangentarc.png "Der hervorgehobenen Tangens Bogen zwischen den beiden Zeilen")
+![Der markierte Tangens Bogen zwischen den beiden Zeilen.](arcs-images/tangentarc.png)
 
 Die Kontur kann aus der zweiten tangenspunkt fortgesetzt werden.
 
@@ -416,7 +416,7 @@ public partial class TangentArcPage : InteractivePage
 
 Hier ist die **Tangens Bogen** Seite ausgeführt wird:
 
-[![](arcs-images/tangentarc-small.png "Dreifacher Screenshot der Seite Tangens Bogen")](arcs-images/tangentarc-large.png#lightbox "dreifachen Screenshot der Seite Tangens einen Bogen konvertiert.")
+[![Dreifacher Screenshot der Tangens Bogen Seite](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
 
 Der Tangente Bogen ist ideal zum Erstellen der abgerundeten Ecken, z. B. ein abgerundetes Rechteck. Da `SKPath` enthält bereits eine `AddRoundedRect` -Methode, die **gerundet Siebeneck** Seite veranschaulicht, wie `ArcTo` zum Runden der Ecken eines Polygons Gleichseitiges. (Der Code ist für alle regulären Polygon generalisiert werden.)
 
@@ -491,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird das Programm ausgeführt wird:
 
-[![](arcs-images/roundedheptagon-small.png "Dreifacher Screenshot der Seite gerundet Siebeneck")](arcs-images/roundedheptagon-large.png#lightbox "dreifachen Screenshot der Seite Siebeneck gerundet")
+[![Dreifacher Screenshot der gerundeten heptagon-Seite](arcs-images/roundedheptagon-small.png)](arcs-images/roundedheptagon-large.png#lightbox)
 
 ## <a name="the-elliptical-arc"></a>Elliptischen Bogens
 
@@ -507,31 +507,31 @@ Elliptischen Bogens ist konsistent mit der [elliptischen Bogens](http://www.w3.o
 
 Diese `ArcTo` zeichnen Methoden einen Bogen zwischen zwei Punkten, die dem aktuellen Punkt der Kontur sind, und der letzte Parameter, die `ArcTo` Methode (die `xy` Parameter oder die separaten `x` und `y` Parameter):
 
-![](arcs-images/ellipticalarcpoints.png "Die beiden Punkte, die einen elliptischen Bogen definiert.")
+![Die zwei Punkte, die einen elliptischen Bogen definiert haben](arcs-images/ellipticalarcpoints.png)
 
 Der erste Punktparameter für die `ArcTo` Methode (`r`, oder `rx` und `ry`) ist kein Punkt überhaupt aber stattdessen gibt die horizontalen und senkrechten RADIUS einer Ellipse;
 
-![](arcs-images/ellipticalarcellipse.png "Die Ellipse, die einen elliptischen Bogen definiert.")
+![Die Ellipse, die einen elliptischen Bogen definiert hat.](arcs-images/ellipticalarcellipse.png)
 
 Die `xAxisRotate` Parameter entspricht der Anzahl von Grad im Uhrzeigersinn um dieser Ellipse gedreht:
 
-![](arcs-images/ellipticalarctiltedellipse.png "Geneigter Ellipse, die einen elliptischen Bogen definiert.")
+![Die gekippte Ellipse, die einen elliptischen Bogen definiert hat.](arcs-images/ellipticalarctiltedellipse.png)
 
 Wenn dieser Geneigter Ellipse dann so, dass es sich um die beiden Punkte berührt positioniert ist, sind die Punkte durch zwei unterschiedliche Bögen verbunden:
 
-![](arcs-images/ellipticalarcellipse1.png "Der erste Satz von elliptische Bogen")
+![Der erste Satz elliptischer Bögen](arcs-images/ellipticalarcellipse1.png)
 
 Diese beiden Bögen können auf zwei Arten unterschieden werden: Der obere Bogen ist größer als der untere Bogen, und wenn der Bogen von links nach rechts gezeichnet wird, wird der obere Bogen in einer Richtung im Uhrzeigersinn gezeichnet, während der untere Bogen in einer Richtung gegen den Uhrzeigersinn gezeichnet wird.
 
 Es ist auch möglich, das die Ellipse zwischen den beiden Punkten auf andere Weise anpassen:
 
-![](arcs-images/ellipticalarcellipse2.png "Die zweite Gruppe von elliptische Bogen")
+![Der zweite Satz elliptischer Bögen](arcs-images/ellipticalarcellipse2.png)
 
 Jetzt ist gibt es ein kleiner Bogen im Vordergrund, das im Uhrzeigersinn gezeichnet wird, und eine größere Bogen im unteren Bereich, der gezeichnet wird gegen den Uhrzeigersinn.
 
 Diese beiden Punkte können durch einen Bogen, der durch die Geneigter Ellipse insgesamt vier Arten definiert daher verbunden werden:
 
-![](arcs-images/ellipticalarccolors.png "Alle vier elliptische Bogen")
+![Alle vier Ellipsen Bögen](arcs-images/ellipticalarccolors.png)
 
 Diese vier Bögen unterscheiden sich durch die vier Kombinationen von der [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize) und [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection) Enumeration Typargumente für die `ArcTo` Methode:
 
@@ -586,21 +586,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird ausgeführt:
 
-[![](arcs-images/ellipticalarc-small.png "Dreifacher Screenshot der Seite für elliptischen Bogens")](arcs-images/ellipticalarc-large.png#lightbox "dreifachen Screenshot der Seite für elliptischen Bogens")
+[![Dreifacher Screenshot der elliptischen Bogen Seite](arcs-images/ellipticalarc-small.png)](arcs-images/ellipticalarc-large.png#lightbox)
 
 Die **Bogen unendlich** Seite elliptischen Bogens verwendet, um eine Anmeldung unendlich zu zeichnen. Die Vorzeichen unendlich basiert auf zwei Kreise mit Radien von 100 Einheiten von 100 Einheiten getrennt:
 
-![](arcs-images/infinitycircles.png "Zwei Kreise")
+![Zwei Kreise](arcs-images/infinitycircles.png)
 
 Zwei überschreiten miteinander Linien sind Tangens auf beide Kreise:
 
-![](arcs-images/infinitycircleslines.png "Zwei Kreise mit Tangenten")
+![Zwei Kreise mit Tangenten Linien](arcs-images/infinitycircleslines.png)
 
 Die Vorzeichen unendlich ist eine Kombination von Teilen von diesen Gruppen und die beiden Zeilen. Um elliptischen Bogens verwenden, die die Vorzeichen Unendlich gezeichnet werden soll, müssen die Koordinaten, wo die beiden Zeilen Tangens auf die Kreise sind, ermittelt werden.
 
 Erstellen Sie eine richtige Rechteck in einen der Kreise:
 
-![](arcs-images/infinitytriangle.png "Zwei Kreise mit Tangenten und eingebettete Kreis")
+![Zwei Kreise mit Tangenten Linien und eingebettetem Kreis](arcs-images/infinitytriangle.png)
 
 Der Radius des Kreises ist 100 Einheiten und Hypotenuse des Dreiecks ist 150 Einheiten, daher ist der Winkel α den Arkussinus (Arkussinus) von 100 dividiert x 150 oder 41.8 Grad. Die Länge der anderen Seite des Dreiecks ist 150 Mal den Kosinus des 41.8 Grad oder 112, der auch von den Satz des Pythagoras berechnet werden kann.
 
@@ -612,7 +612,7 @@ Mithilfe dieser Informationen können dann die Koordinaten des Punkts Tangens be
 
 Die vier Tangentenpunkten sind alles, die was erforderlich ist, ein unendlich Vorzeichen zentriert auf den Punkt (0, 0) mit Kreis Radien 100 gezeichnet werden soll:
 
-![](arcs-images/infinitycoordinates.png "Zwei Kreise mit Tangenten und Koordinaten")
+![Zwei Kreise mit Tangenten Linien und Koordinaten](arcs-images/infinitycoordinates.png)
 
 Die `PaintSurface` Ereignishandler in der [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) Klasse positioniert die Infinity-Zeichen, damit die (0, 0) ist in der Mitte der Seite positioniert und skaliert den Pfad zu die Größe des Bildschirms:
 
@@ -654,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Der Code verwendet die `Bounds` Eigenschaft `SKPath` um die Abmessungen des Sinus unendlich für die Skalierung der Größe des Zeichenbereichs zu bestimmen:
 
-[![](arcs-images/arcinfinity-small.png "Dreifacher Screenshot der Seite Bogen unendlich")](arcs-images/arcinfinity-large.png#lightbox "dreifachen Screenshot der Seite Bogen unendlich")
+[![Dreifacher Screenshot der Bogen unendlich Seite](arcs-images/arcinfinity-small.png)](arcs-images/arcinfinity-large.png#lightbox)
 
 Es erscheint das Ergebnis ein wenig klein ist, was darauf hindeutet, die die `Bounds` Eigenschaft `SKPath` meldet eine Größe, die größer als der Pfad.
 
@@ -662,7 +662,7 @@ Intern erfolgt eine Skia Annäherung an den Bogen mit mehreren quadratischen Bé
 
 Um eine engere Wahl abzurufen, verwenden Sie die `TightBounds` -Eigenschaft, die die Control-Punkte ausschließt. Hier ist das Programm im Querformatmodus ausgeführt werden soll, und Verwenden der `TightBounds` Eigenschaft, um die Grenzen des Pfads zu erhalten:
 
-[![](arcs-images/arcinfinitytightbounds-small.png "Dreifacher Screenshot der Seite Bogen unendlich mit engen Begrenzungen")](arcs-images/arcinfinitytightbounds-large.png#lightbox "dreifachen Screenshot der Seite Bogen unendlich mit engen Begrenzungen")
+[![Dreifacher Screenshot der Bogen unendlich Seite mit engen Begrenzungen](arcs-images/arcinfinitytightbounds-small.png)](arcs-images/arcinfinitytightbounds-large.png#lightbox)
 
 Auch die Verbindungen zwischen dem Bögen und gerade Linien mathematisch smooth sind, scheinen die Änderung von Bogen gerade etwas abrupten. Ein besseren Infinity-Zeichen werden im nächsten Artikel angezeigt, auf [ **drei Typen von Bézierkurven**](beziers.md).
 

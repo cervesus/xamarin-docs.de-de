@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: c752f4acf4bf43c138a7b359b94620dae5e8d46e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2137ff95e65c6841b3e525f0c9755e013310c7e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524522"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225594"
 ---
 # <a name="troubleshooting-bindings"></a>Problembehandlung von Bindungen
 
@@ -51,8 +51,8 @@ Nachdem Sie die Android-Bibliothek dekompiliert haben, untersuchen Sie den Quell
 
 - **Klassen, die Merkmale der Verschleierung** aufweisen &ndash; Zu den Merkmalen von verfugenten Klassen gehören:
 
-    - Der Klassenname enthält eine **$** , d. h. **eine $.-Klasse** .
-    - Der Klassenname ist vollständig in Kleinbuchstaben gefährdet, d. h. **eine.-Klasse** .      
+  - Der Klassenname enthält eine **$** , d. h. **eine $.-Klasse** .
+  - Der Klassenname ist vollständig in Kleinbuchstaben gefährdet, d. h. **eine.-Klasse** .      
 
 - &ndash; **Anweisungen für nicht referenzierte Bibliotheken identifizieren die Bibliothek, auf die nicht verwiesen wird, und fügen diese Abhängigkeiten dem xamarin. Android-Bindungs Projekt mit einer Buildaktion von referencejar oder hinzu. `import`**   **Embedddebug ferencejar**.
 
@@ -114,19 +114,19 @@ Dieser Fehler kann aus verschiedenen Gründen auftreten, wie unten aufgeführt:
 
 - Java ermöglicht das Ableiten einer öffentlichen Klasse von einer nicht öffentlichen Klasse, aber dies wird in .net nicht unterstützt. Da der Bindungs Generator keine Bindungen für nicht öffentliche Klassen generiert, können abgeleitete Klassen wie diese nicht ordnungsgemäß generiert werden. Um dieses Problem zu beheben, entfernen Sie entweder den Metadateneintrag für die abgeleiteten Klassen mithilfe des Remove-Node in der Datei " **Metadata. XML**", oder korrigieren Sie die Metadaten, die die nicht öffentliche Klasse öffentlich macht. Obwohl die zweite Lösung die Bindung so erstellt, dass die C# Quelle erstellt wird, sollte die nicht öffentliche Klasse nicht verwendet werden.
 
-    Beispiel:
+  Beispiel:
 
-    ```xml
-    <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
-        name="visibility">public</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
+      name="visibility">public</attr>
+  ```
 
 - Tools, die Java-Bibliotheken verbergen, können den xamarin. Android-Bindungs Generator und seine Fähigkeit zum Generieren C# von Wrapper Klassen beeinträchtigen. Der folgende Code Ausschnitt zeigt, wie Sie **Metadata. XML** aktualisieren, um einen Klassennamen zu verbergen:
 
-    ```xml
-    <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
-        name="obfuscated">false</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
+      name="obfuscated">false</attr>
+  ```
 
 ### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>Problem: Die C# generierte Quelle wird aufgrund eines Parametertyp Konflikts nicht erstellt.
 
@@ -134,7 +134,7 @@ Die generierte C# Quelle wird nicht erstellt. Die Parametertypen der überschrie
 
 #### <a name="possible-causes"></a>Mögliche Ursachen:
 
-Xamarin. Android enthält eine Vielzahl von Java-Feldern, die den-Auflistungen C# in den-Bindungen zugeordnet werden. Diese können typinkompatibilitäten in den generierten Bindungen verursachen. Um dieses Problem zu beheben, müssen die vom Bindungs Generator erstellten Methoden Signaturen so geändert werden, dass Sie die-enums verwenden. Weitere Informationen finden Sie unter Korrigieren von [Enums](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md).
+Xamarin. Android enthält eine Vielzahl von Java-Feldern, die den-Auflistungen C# in den-Bindungen zugeordnet werden. Diese können typinkompatibilitäten in den generierten Bindungen verursachen. Um dieses Problem zu beheben, müssen die vom Bindungs Generator erstellten Methoden Signaturen so geändert werden, dass Sie die-enums verwenden. Weitere Informationen finden Sie unter [korrigieren](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)von Aufständen.
 
 ### <a name="problem-noclassdeffounderror-in-packaging"></a>Problem: Noclassde ffounderror beim Verpacken
 
@@ -203,24 +203,24 @@ Dies ist ein Problem, das bei der Bindung von Java-Methoden mit kovarianten Rüc
 
 - Fügen Sie eine partielle Klassen `HttpURLConnectionRequestAdapter` Deklaration für `IHttpRequest.Unwrap()`und explizit implementieren:
 
-    ```csharp
-    namespace Oauth.Signpost.Basic {
-        partial class HttpURLConnectionRequestAdapter {
-            Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
-                return Unwrap();
-            }
-        }
-    }
-    ```
+  ```csharp
+  namespace Oauth.Signpost.Basic {
+      partial class HttpURLConnectionRequestAdapter {
+          Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
+              return Unwrap();
+          }
+      }
+  }
+  ```
 
 - Entfernen Sie die Kovarianz aus C# dem generierten Code. Dies umfasst das Hinzufügen der folgenden Transformation in **Transforms\Metadata.XML** , die dazu C# führt, dass der generierte Code den `Java.Lang.Object`Rückgabetyp hat:
 
-    ```xml
-    <attr
-        path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
-        name="managedReturn">Java.Lang.Object
-    </attr>
-    ```
+  ```xml
+  <attr
+      path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
+      name="managedReturn">Java.Lang.Object
+  </attr>
+  ```
 
 ### <a name="problem-name-collisions-on-inner-classes--properties"></a>Problem: Namenskonflikte bei inneren Klassen/Eigenschaften
 

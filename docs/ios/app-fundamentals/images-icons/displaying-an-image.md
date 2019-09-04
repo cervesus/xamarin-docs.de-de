@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 41f1b96a39bde7b94f67f972bfd4ace7e454e2c0
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8082fc6ab2625e68d64ee9d42a9b630f885d9002
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120601"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227746"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Anzeigen eines Bilds in xamarin. IOS
 
@@ -41,7 +41,7 @@ Gehen Sie folgendermaßen vor, um eine neue Abbild Gruppe zu erstellen und Ihr B
 3. Wählen Sie den neuen Bildsatz aus, und der Editor wird angezeigt:
 
     ![](displaying-an-image-images/imageset03.png "Der bildrsatz-Editor")
-4. Ziehen Sie von hier aus Bilder für jedes der verschiedenen Geräte und Auflösungen, die erforderlich sind. 
+4. Ziehen Sie von hier aus Bilder für jedes der verschiedenen Geräte und Auflösungen, die erforderlich sind.
 5. Doppelklicken Sie auf den **Namen** des neuen Image Satzes in der **Liste Assets** , um ihn zu bearbeiten: ![](displaying-an-image-images/imageset04.png "Der Name des neuen Image Satzes wird bearbeitet.")
 
 Wenn Sie ein **Bild** im IOS-Designer verwenden, wählen Sie einfach den Namen der Gruppe in der Dropdown Liste im Eigenschaften-Editor aus:
@@ -54,7 +54,7 @@ Wenn Sie ein **Bild** im IOS-Designer verwenden, wählen Sie einfach den Namen d
 
     ![](displaying-an-image-images/asset5.png "Klicken Sie auf die Schaltfläche Plus")
 
-2. Wählen Sie **Bild Satz hinzufügen** aus, und der Bild Satz-Editor wird für die neue Bildmenge angezeigt. Ziehen Sie von hier aus Bilder für jedes der verschiedenen Geräte und Auflösungen, die erforderlich sind. 
+2. Wählen Sie **Bild Satz hinzufügen** aus, und der Bild Satz-Editor wird für die neue Bildmenge angezeigt. Ziehen Sie von hier aus Bilder für jedes der verschiedenen Geräte und Auflösungen, die erforderlich sind.
 
     ![](displaying-an-image-images/asset7.png "Der bildrsatz-Editor")
 
@@ -193,7 +193,7 @@ Zusätzlich zur Verwendung von Images zur Unterstützung einer App verwendet IOS
 
 ### <a name="frombundle"></a>Frombundle
 
-Der `FromBundle` Methodenaufrufe ist ein synchroner (blockierender) Befehl, der über eine integrierte Anzahl von Abbild Lade-und-Verwaltungsfunktionen verfügt, wie z. b. Caching-Unterstützung und automatische Behandlung von Bilddateien für verschiedene Auflösungen.  
+Der `FromBundle` Methodenaufrufe ist ein synchroner (blockierender) Befehl, der über eine integrierte Anzahl von Abbild Lade-und-Verwaltungsfunktionen verfügt, wie z. b. Caching-Unterstützung und automatische Behandlung von Bilddateien für verschiedene Auflösungen.
 
 Im folgenden Beispiel wird gezeigt, wie das Image eines `UITabBarItem` auf einem `UITabBar`festgelegt wird:
 

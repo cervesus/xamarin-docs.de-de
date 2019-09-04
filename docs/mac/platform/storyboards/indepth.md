@@ -7,22 +7,22 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 06d3127bbe7766a70efc570bd455a8d570548731
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2f3bdc70928dc06719bf7cfb775bf70fae9695a4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653784"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227867"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Arbeiten mit Storyboards in xamarin. Mac
 
 Ein Storyboard definiert alle Benutzeroberflächen für eine bestimmte APP, die in einer funktionalen Übersicht der zugehörigen Ansichts Controller aufgeschlüsselt sind. In der Interface Builder von Xcode befindet sich jeder dieser Controller in einer eigenen Szene.
 
-[![](indepth-images/intro01.png "Ein Storyboard in der Interface Builder von Xcode")](indepth-images/intro01.png#lightbox)
+[![Ein Storyboard in der Interface Builder von Xcode](indepth-images/intro01.png)](indepth-images/intro01.png#lightbox)
 
 Beim Storyboard handelt es sich um eine Ressourcen Datei (mit `.storyboard`der Erweiterung), die beim Kompilieren und versenden in das Paket der xamarin. Mac-app eingeschlossen wird. Um das Storyboard für die APP zu definieren, bearbeiten Sie `Info.plist` die Datei, und wählen Sie im Dropdown Feld die **Hauptschnittstelle** aus: 
 
-[![](indepth-images/sb01.png "Der Info. plist-Editor")](indepth-images/sb01.png#lightbox)
+[![Der Info. plist-Editor](indepth-images/sb01.png)](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 
@@ -41,11 +41,11 @@ controller.ShowWindow(this);
 
 Das `FromName` lädt die storyboarddatei mit dem angegebenen Namen, der im Paket der App enthalten ist. `InstantiateControllerWithIdentifier` Erstellt eine Instanz des Ansichts Controllers mit der angegebenen Identität. Beim Entwerfen der Benutzeroberfläche wird die Identität in der Interface Builder von Xcode festgelegt:
 
-[![](indepth-images/sb02.png "Festlegen der Storyboard-ID")](indepth-images/sb02.png#lightbox)
+[![Festlegen der Storyboard-ID](indepth-images/sb02.png)](indepth-images/sb02.png#lightbox)
 
 Optional können Sie die `InstantiateInitialController` -Methode verwenden, um den Ansichts Controller zu laden, dem der anfängliche Controller in Interface Builder zugewiesen wurde:
 
-[![](indepth-images/sb03.png "Festlegen des ersten Controllers")](indepth-images/sb03.png#lightbox)
+[![Festlegen des ersten Controllers](indepth-images/sb03.png)](indepth-images/sb03.png#lightbox)
 
 Sie wird durch den **Einstiegspunkt des Storyboards** und den obigen geöffneten Pfeil gekennzeichnet.
 
@@ -76,7 +76,7 @@ Der `NSViewController` -Klasse wurden mehrere neue Methoden hinzugefügt, um Sto
 
 Außerdem sind Sie nun Teil der _Responder-Kette_des Fensters: `NSViewControllers`
 
-[![](indepth-images/vc01.png "Die Responder-Kette")](indepth-images/vc01.png#lightbox)
+[![Die Responder-Kette](indepth-images/vc01.png)](indepth-images/vc01.png#lightbox)
 
 Daher sind Sie miteinander verknüpft, um Ereignisse wie Ausschneiden, kopieren und Einfügen (Menü Elementauswahl) zu empfangen und darauf zu reagieren. Diese automatische Ansichts Controller Verbindung tritt nur bei apps auf, die auf macOS Sierra (10,12) und höher ausgeführt werden.
 
@@ -84,15 +84,15 @@ Daher sind Sie miteinander verknüpft, um Ereignisse wie Ausschneiden, kopieren 
 
 ### <a name="containment"></a>Kapselung
 
-In Storyboards können Ansichts Controller (z. b. der Split View Controller und der Registerkarten Ansichts Controller) nun die Kapselung _implementieren,_ sodass Sie andere Sub-View-Controller enthalten können:
+In Storyboards können Ansichts Controller (z. b. der Split View Controller und der Registerkarten AnsichtsController) nun die Kapselung implementieren, sodass Sie andere Sub-View-Controller enthalten können:
 
-[![](indepth-images/vc02.png "Ein Beispiel für die Sicht Controller Kapselung")](indepth-images/vc02.png#lightbox)
+[![Ein Beispiel für die Sicht Controller Kapselung](indepth-images/vc02.png)](indepth-images/vc02.png#lightbox)
 
 Untergeordnete Ansichts Controller enthalten Methoden und Eigenschaften, um Sie zurück an ihren übergeordneten Ansichts Controller zu binden und um mit dem anzeigen und Entfernen von Ansichten auf dem Bildschirm zu arbeiten.
 
 Alle in macOS integrierten Container Ansichts Controller verfügen über ein bestimmtes Layout, das Apple vorschlägt, wenn Sie Ihre eigenen benutzerdefinierten Container Ansichts Controller erstellen:
 
-[![](indepth-images/vc03.png "Das Ansichts Controller Layout")](indepth-images/vc03.png#lightbox)
+[![Das Ansichts Controller Layout](indepth-images/vc03.png)](indepth-images/vc03.png#lightbox)
 
 Der Sammlungs Ansichts Controller enthält ein Array von Auflistungs Ansichts Elementen, von denen jedes einen oder mehrere Ansichts Controller enthält, die eigene Sichten enthalten.
 
@@ -131,7 +131,7 @@ PerformSegue("MyNamedSegue", this);
 
 Die segue-ID wird in der Interface Builder von Xcode definiert, wenn Sie die Benutzeroberfläche der APP festlegen:
 
-[![](indepth-images/sg02.png "Eingeben eines Namens für den Namen")](indepth-images/sg02.png#lightbox)
+[![Eingeben eines Namens für den Namen](indepth-images/sg02.png)](indepth-images/sg02.png#lightbox)
 
 Im Ansichts Controller, der als Quelle des segue fungiert, sollten Sie die `PrepareForSegue` -Methode überschreiben und jede Initialisierung durchführen, die vor der Ausführung von Segue erforderlich ist, und der angegebene Ansichts Controller wird angezeigt:
 
@@ -215,7 +215,7 @@ Hier sind einige Punkte zu beachten:
 
 Um diesen neuen segue-Typ in der Interface Builder von Xcode zu verwenden, müssen wir zuerst die APP kompilieren, dann zu Xcode wechseln und einen neuen segue zwischen zwei Kulissen hinzufügen. Legen Sie den **Stil** auf **Custom** und die **segue-Klasse** auf `ReplaceViewSegue` (den Namen der benutzerdefinierten segue-Klasse) fest:
 
-[![](indepth-images/sg01.png "Festlegen der Klasse \"Klasse\"")](indepth-images/sg01.png#lightbox)
+[![Festlegen der Klasse "Klasse"](indepth-images/sg01.png)](indepth-images/sg01.png#lightbox)
 
 <a name="Triggered-Segues" />
 
@@ -271,21 +271,21 @@ Gehen Sie folgendermaßen vor, um einen Verweis auf ein externes Storyboard hinz
 
 1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.  > Mac- > **Storyboard**. Geben Sie einen **Namen** für das neue Storyboard ein, und klicken Sie auf die Schaltfläche **neu** : 
 
-    [![](indepth-images/ref01.png "Hinzufügen eines neuen Storyboards")](indepth-images/ref01.png#lightbox)
+    [![Hinzufügen eines neuen Storyboards](indepth-images/ref01.png)](indepth-images/ref01.png#lightbox)
 2. Doppelklicken Sie im **Projektmappen-Explorer**auf den neuen Storyboardnamen, um ihn für die Bearbeitung in der Interface Builder von Xcode zu öffnen.
 3. Entwerfen Sie das Layout der neuen Storyboard-Szenen wie gewohnt, und speichern Sie die Änderungen: 
 
-    [![](indepth-images/ref02.png "Entwerfen der Schnittstelle")](indepth-images/ref02.png#lightbox)
+    [![Entwerfen der Schnittstelle](indepth-images/ref02.png)](indepth-images/ref02.png#lightbox)
 4. Wechseln Sie in das Storyboard, dem Sie den Verweis hinzufügen möchten, in der Interface Builder.
 5. Ziehen Sie einen **storyboardverweis** aus der **Objektbibliothek** auf den Designoberfläche: 
 
-    [![](indepth-images/ref03.png "Auswählen eines storyboardverweises in der Bibliothek")](indepth-images/ref03.png#lightbox)
+    [![Auswählen eines storyboardverweises in der Bibliothek](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 6. Wählen Sie im **Attribut Inspektor**den Namen des **Storyboards** aus, das Sie oben erstellt haben: 
 
-    [![](indepth-images/ref04.png "Konfigurieren des Verweises")](indepth-images/ref04.png#lightbox)
+    [![Konfigurieren des Verweises](indepth-images/ref04.png)](indepth-images/ref04.png#lightbox)
 7. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den soeben erstellten **storyboardverweis** .  Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen: 
 
-    [![](indepth-images/ref06.png "Festlegen des Typs \"Typ\"")](indepth-images/ref06.png#lightbox) 
+    [![Festlegen des Typs "Typ"](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. Speichern Sie die Änderungen am Storyboard.
 9. Kehren Sie zu Visual Studio für Mac zurück, um die Änderungen zu synchronisieren.
 
@@ -300,20 +300,20 @@ Gehen Sie folgendermaßen vor, um einen Verweis auf eine bestimmte Szene zu eine
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf das externe Storyboard, um es für die Bearbeitung in der Interface Builder von Xcode zu öffnen.
 2. Fügen Sie eine neue Szene hinzu, und entwerfen Sie das Layout wie gewohnt: 
 
-    [![](indepth-images/ref07.png "Entwerfen des Layouts in Xcode")](indepth-images/ref07.png#lightbox)
+    [![Entwerfen des Layouts in Xcode](indepth-images/ref07.png)](indepth-images/ref07.png#lightbox)
 3. Geben Sie im **Identitäts Inspektor**eine **Storyboard-ID** für den Fenster Controller der neuen Szene ein: 
 
-    [![](indepth-images/ref08.png "Festlegen der Storyboard-ID")](indepth-images/ref08.png#lightbox)
+    [![Festlegen der Storyboard-ID](indepth-images/ref08.png)](indepth-images/ref08.png#lightbox)
 4. Öffnen Sie das Storyboard, dem Sie den Verweis hinzufügen möchten, in Interface Builder.
 5. Ziehen Sie einen **storyboardverweis** aus der **Objektbibliothek** auf den Designoberfläche: 
 
-    [![](indepth-images/ref03.png "Auswählen eines storyboardverweises aus der Bibliothek")](indepth-images/ref03.png#lightbox)
+    [![Auswählen eines storyboardverweises aus der Bibliothek](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 6. Wählen Sie im **Identitäts Inspektor**den Namen des **Storyboards** und die Verweis- **ID** (Storyboard-ID) der Szene aus, die Sie oben erstellt haben: 
 
-    [![](indepth-images/ref09.png "Festlegen der Verweis-ID")](indepth-images/ref09.png#lightbox)
+    [![Festlegen der Verweis-ID](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
 7. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den soeben erstellten **storyboardverweis** . Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen: 
 
-    [![](indepth-images/ref06.png "Festlegen des Typs \"Typ\"")](indepth-images/ref06.png#lightbox) 
+    [![Festlegen des Typs "Typ"](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. Speichern Sie die Änderungen am Storyboard.
 9. Kehren Sie zu Visual Studio für Mac zurück, um die Änderungen zu synchronisieren.
 
@@ -328,19 +328,19 @@ Gehen Sie folgendermaßen vor, um einem Storyboard einen Verweis auf eine bestim
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf das Storyboard, um es zur Bearbeitung zu öffnen.
 2. Fügen Sie eine neue Szene hinzu, und entwerfen Sie das Layout wie gewohnt: 
 
-    [![](indepth-images/ref11.png "Bearbeiten des Storyboards in Xcode")](indepth-images/ref11.png#lightbox)
+    [![Bearbeiten des Storyboards in Xcode](indepth-images/ref11.png)](indepth-images/ref11.png#lightbox)
 3. Geben Sie im **Identitäts Inspektor**eine **Storyboard-ID** für den Fenster Controller der neuen Szene ein: 
 
-    [![](indepth-images/ref12.png "Festlegen der Storyboard-ID")](indepth-images/ref12.png#lightbox)
+    [![Festlegen der Storyboard-ID](indepth-images/ref12.png)](indepth-images/ref12.png#lightbox)
 4. Ziehen Sie einen **storyboardverweis** aus der **Toolbox** auf den Designoberfläche: 
 
-    [![](indepth-images/ref03.png "Auswählen eines storyboardverweises aus der Bibliothek")](indepth-images/ref03.png#lightbox)
+    [![Auswählen eines storyboardverweises aus der Bibliothek](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 5. Wählen Sie in **Attribut Inspektor**die **Verweis-ID** (Storyboard-ID) der Szene aus, die Sie oben erstellt haben: 
 
-    [![](indepth-images/ref13.png "Festlegen der Verweis-ID")](indepth-images/ref13.png#lightbox)
+    [![Festlegen der Verweis-ID](indepth-images/ref13.png)](indepth-images/ref13.png#lightbox)
 6. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den soeben erstellten **storyboardverweis** . Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen: 
 
-    [![](indepth-images/ref06.png "Auswählen des Typs \"Typ\"")](indepth-images/ref06.png#lightbox) 
+    [![Auswählen des Typs "Typ"](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 7. Speichern Sie die Änderungen am Storyboard.
 8. Kehren Sie zu Visual Studio für Mac zurück, um die Änderungen zu synchronisieren.
 

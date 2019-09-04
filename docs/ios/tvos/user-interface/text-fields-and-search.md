@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: cb8520a223a2bc10706c7e5bcebf8fc412d4e64e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b1f4712e87762acb81a366700174db33e0c557bf
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652303"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226692"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Arbeiten mit tvos-Text-und-Suchfeldern in xamarin
 
@@ -30,7 +30,7 @@ In diesem Dokument werden die Details zum Arbeiten mit Text-und Suchfeldern in e
 
 ## <a name="about-text-and-search-fields"></a>Informationen zu Text-und Suchfeldern
 
-Wie bereits erwähnt, kann Ihre xamarin. tvos bei Bedarf ein oder mehrere Textfelder darstellen, um kleine Mengen von Text vom Benutzer mithilfe einer Bildschirm Abbildung (oder einer optionalen Bluetooth-Tastatur abhängig von der vom Benutzer installierten tvos-Version) zu erfassen. 
+Wie bereits erwähnt, kann Ihre xamarin. tvos bei Bedarf ein oder mehrere Textfelder darstellen, um kleine Mengen von Text vom Benutzer mithilfe einer Bildschirm Abbildung (oder einer optionalen Bluetooth-Tastatur abhängig von der vom Benutzer installierten tvos-Version) zu erfassen.
 
 Wenn Ihre APP außerdem große Mengen an Inhalten für den Benutzer bereitstellt (z. b. eine Musik, Filme oder eine Bild Auflistung), möchten Sie möglicherweise ein Suchfeld einschließen, das es dem Benutzer ermöglicht, eine kleine Menge an Text einzugeben, um die Liste der verfügbaren Elemente zu filtern.
 
@@ -59,7 +59,7 @@ Wenn der Benutzer auf ein Textfeld in der Benutzeroberfläche klickt, wird eine 
 
 [![](text-fields-and-search-images/keyboard01.png "Die Siri-Remote Tastatur")](text-fields-and-search-images/keyboard01.png#lightbox)
 
-Wenn in der aktuellen Ansicht mehr als ein Textfeld vorhanden ist, wird automatisch eine Schaltfläche " **weiter** " angezeigt, um den Benutzer zum nächsten Textfeld zu gelangen. Eine **done** -Schaltfläche wird für das letzte Textfeld angezeigt, das den Text Eintrag beendet und den Benutzer an den vorherigen Bildschirm zurückgibt. 
+Wenn in der aktuellen Ansicht mehr als ein Textfeld vorhanden ist, wird automatisch eine Schaltfläche " **weiter** " angezeigt, um den Benutzer zum nächsten Textfeld zu gelangen. Eine **done** -Schaltfläche wird für das letzte Textfeld angezeigt, das den Text Eintrag beendet und den Benutzer an den vorherigen Bildschirm zurückgibt.
 
 Der Benutzer kann jederzeit auch die **Menü** Schaltfläche auf der Seite "Siri-Remote-zu-Ende-Text" drücken und wieder zum vorherigen Bildschirm zurückkehren.
 
@@ -99,37 +99,37 @@ Führen Sie folgende Schritte aus:
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, um Sie zur Bearbeitung zu öffnen.
-1. Ziehen Sie ein oder mehrere **Text Felder** auf der Entwurfs Oberfläche auf eine Ansicht: 
+1. Ziehen Sie ein oder mehrere **Text Felder** auf der Entwurfs Oberfläche auf eine Ansicht:
 
     [![](text-fields-and-search-images/text02.png "Ein Textfeld")](text-fields-and-search-images/text02.png#lightbox)
-1. Wählen Sie die **Text Felder** aus, und versehen Sie jeden eindeutigen **Namen** auf der Registerkarte **Widget** der **Eigenschaftenpad**: 
+1. Wählen Sie die **Text Felder** aus, und versehen Sie jeden eindeutigen **Namen** auf der Registerkarte **Widget** der **Eigenschaftenpad**:
 
     [![](text-fields-and-search-images/text03.png "Die Registerkarte \"Widget\" des Eigenschaftenpad")](text-fields-and-search-images/text03.png#lightbox)
-1. Im **Text Feld** Abschnitt können Sie Elemente wie den **Platzhalter** Hinweis und den Standard **Wert**definieren: 
+1. Im **Text Feld** Abschnitt können Sie Elemente wie den **Platzhalter** Hinweis und den Standard **Wert**definieren:
 
     [![](text-fields-and-search-images/text04.png "Der Text Feld Abschnitt")](text-fields-and-search-images/text04.png#lightbox)
-1. Scrollen Sie nach unten, um Eigenschaften wie **Rechtschreibprüfung** **, groß** -/Kleinschreibung und den Standard **Tastatur Typ**zu definieren: 
+1. Scrollen Sie nach unten, um Eigenschaften wie **Rechtschreibprüfung**, Groß-/Kleinschreibung und den Standard **Tastatur Typ**zu definieren:
 
-    [![](text-fields-and-search-images/text05.png "Rechtschreibprüfung, groß-und Kleinschreibung und der Standardtastatur-Typ")](text-fields-and-search-images/text05.png#lightbox) 
+    [![](text-fields-and-search-images/text05.png "Rechtschreibprüfung, groß-und Kleinschreibung und der Standardtastatur-Typ")](text-fields-and-search-images/text05.png#lightbox)
 1. Speichern Sie die Änderungen in Ihrem Storyboard.
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei `Main.storyboard`, um sie zur Bearbeitung zu öffnen.
-1. Ziehen Sie ein oder mehrere **Text Felder** auf der Entwurfs Oberfläche auf eine Ansicht: 
+1. Ziehen Sie ein oder mehrere **Text Felder** auf der Entwurfs Oberfläche auf eine Ansicht:
 
     [![](text-fields-and-search-images/text02-vs.png "Ein Textfeld")](text-fields-and-search-images/text02-vs.png#lightbox)
-1. Wählen Sie die **Text Felder** aus, und legen Sie jedem im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Namen** zu: 
+1. Wählen Sie die **Text Felder** aus, und legen Sie jedem im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Namen** zu:
 
     [![](text-fields-and-search-images/text03-vs.png "Die Widget-Registerkarte")](text-fields-and-search-images/text03-vs.png#lightbox)
-1. Im **Text Feld** Abschnitt können Sie Elemente wie den **Platzhalter** Hinweis und den Standard **Wert**definieren: 
+1. Im **Text Feld** Abschnitt können Sie Elemente wie den **Platzhalter** Hinweis und den Standard **Wert**definieren:
 
     [![](text-fields-and-search-images/text04-vs.png "Der Text Feld Abschnitt")](text-fields-and-search-images/text04-vs.png#lightbox)
-1. Scrollen Sie nach unten, um Eigenschaften wie **Rechtschreibprüfung** **, groß** -/Kleinschreibung und den Standard **Tastatur Typ**zu definieren: 
+1. Scrollen Sie nach unten, um Eigenschaften wie **Rechtschreibprüfung**, Groß-/Kleinschreibung und den Standard **Tastatur Typ**zu definieren:
 
-    [![](text-fields-and-search-images/text05-vs.png "Rechtschreibprüfung, groß-und Kleinschreibung und der Standardtastatur-Typ")](text-fields-and-search-images/text05-vs.png#lightbox) 
+    [![](text-fields-and-search-images/text05-vs.png "Rechtschreibprüfung, groß-und Kleinschreibung und der Standardtastatur-Typ")](text-fields-and-search-images/text05-vs.png#lightbox)
 1. Speichern Sie die Änderungen in Ihrem Storyboard.
-    
+
 -----
 
 Im Code können Sie den Wert eines Textfelds mithilfe der `Text` -Eigenschaft erhalten oder festlegen:
@@ -149,41 +149,41 @@ Die einfachste Möglichkeit zum Arbeiten mit Suchfeldern in einer xamarin. tvos-
 Führen Sie folgende Schritte aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-    
+
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, um Sie zur Bearbeitung zu öffnen.
-1. Ziehen Sie einen neuen Sammlungs Ansichts Controller in das Storyboard, um die Ergebnisse der Benutzersuche anzuzeigen: 
+1. Ziehen Sie einen neuen Sammlungs Ansichts Controller in das Storyboard, um die Ergebnisse der Benutzersuche anzuzeigen:
 
     [![](text-fields-and-search-images/search02.png "Einen Sammlungs Ansichts Controller")](text-fields-and-search-images/search02.png#lightbox)
-1. `SearchResults` Verwenden Sie`SearchResultsViewController` auf der Registerkarte widget des Eigenschaftenpad für die-Klasse und für die **Storyboard-ID**: 
+1. `SearchResults` Verwenden Sie`SearchResultsViewController` auf der Registerkarte widget des Eigenschaftenpad für die-Klasse und für die **Storyboard-ID**:
 
     [![](text-fields-and-search-images/search03.png "Die Widget-Registerkarte")](text-fields-and-search-images/search03.png#lightbox)
 1. Wählen Sie auf der Entwurfs Oberfläche den **Zellen Prototyp** aus.
-1. Verwenden `ImageCell` SieaufderRegisterkartewidgetdesEigenschaften-Explorersfürdie-Klasse`SearchResultCell` und für den Bezeichner: 
+1. Verwenden `ImageCell` SieaufderRegisterkartewidgetdesEigenschaften-Explorersfürdie-Klasse`SearchResultCell` und für den Bezeichner:
 
     [![](text-fields-and-search-images/search04.png "Die Widget-Registerkarte")](text-fields-and-search-images/search04.png#lightbox)
-1. Layout des Entwurfs des **Zellen Prototyps** und verfügbar machen jedes Elements mit einem **eindeutigen Namen** auf der Registerkarte " **Widget** " des **Eigenschaften-Explorers**: 
+1. Layout des Entwurfs des **Zellen Prototyps** und verfügbar machen jedes Elements mit einem **eindeutigen Namen** auf der Registerkarte " **Widget** " des **Eigenschaften-Explorers**:
 
     [![](text-fields-and-search-images/search05.png "Layout des Entwurfs des Zellen Prototyps")](text-fields-and-search-images/search05.png#lightbox)
 1. Speichern Sie die Änderungen in Ihrem Storyboard.
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei `Main.storyboard`, um sie zur Bearbeitung zu öffnen.
-1. Ziehen Sie einen neuen Sammlungs Ansichts Controller in das Storyboard, um die Ergebnisse der Benutzersuche anzuzeigen: 
+1. Ziehen Sie einen neuen Sammlungs Ansichts Controller in das Storyboard, um die Ergebnisse der Benutzersuche anzuzeigen:
 
     [![](text-fields-and-search-images/seach02-vs.png "Einen Sammlungs Ansichts Controller")](text-fields-and-search-images/seach02-vs.png#lightbox)
-1. Verwenden `SearchResults`Sie auf der Registerkarte widget des Eigenschaften-Explorers für die-Klasse und für die `SearchResultsViewController` Storyboard-ID: 
+1. Verwenden `SearchResults`Sie auf der Registerkarte widget des Eigenschaften-Explorers für die-Klasse und für die `SearchResultsViewController` Storyboard-ID:
 
     [![](text-fields-and-search-images/search03-vs.png "Die Widget-Registerkarte")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. Wählen Sie auf der Entwurfs Oberfläche den **Zellen Prototyp** aus.
-1. Verwenden `ImageCell` SieaufderRegisterkartewidgetdesEigenschaften-Explorersfürdie-Klasse`SearchResultCell` und für den Bezeichner: 
+1. Verwenden `ImageCell` SieaufderRegisterkartewidgetdesEigenschaften-Explorersfürdie-Klasse`SearchResultCell` und für den Bezeichner:
 
     [![](text-fields-and-search-images/search04-vs.png "Die Widget-Registerkarte")](text-fields-and-search-images/search04-vs.png#lightbox)
-1. Layout des Entwurfs des **Zellen Prototyps** und verfügbar machen jedes Elements mit einem **eindeutigen Namen** auf der Registerkarte " **Widget** " des **Eigenschaften-Explorers**: 
+1. Layout des Entwurfs des **Zellen Prototyps** und verfügbar machen jedes Elements mit einem **eindeutigen Namen** auf der Registerkarte " **Widget** " des **Eigenschaften-Explorers**:
 
     [![](text-fields-and-search-images/search05-vs.png "Layout des Entwurfs des Zellen Prototyps")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. Speichern Sie die Änderungen in Ihrem Storyboard.
-    
+
 -----
 
 <a name="Provide-a-Data-Model" />
@@ -192,13 +192,13 @@ Führen Sie folgende Schritte aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Als nächstes müssen Sie eine Klasse bereitstellen, die als Datenmodell für die Ergebnisse fungiert, nach denen der Benutzer suchen wird. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.AllgemeineleereKlasse,undgebenSieeinenNamenan > :  >  
+Als nächstes müssen Sie eine Klasse bereitstellen, die als Datenmodell für die Ergebnisse fungiert, nach denen der Benutzer suchen wird. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.AllgemeineleereKlasse,undgebenSieeinenNamenan > :  > 
 
 [![](text-fields-and-search-images/search06.png "Leere Klasse auswählen und einen Namen angeben")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Als nächstes müssen Sie eine Klasse bereitstellen, die als Datenmodell für die Ergebnisse fungiert, nach denen der Benutzer suchen wird. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie**Neues Element** **Hinzufügen** > ... aus. **Apple misc**-Klasse, und geben Sie einen Namen an: >   >  >  
+Als nächstes müssen Sie eine Klasse bereitstellen, die als Datenmodell für die Ergebnisse fungiert, nach denen der Benutzer suchen wird. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie**Neues Element** **Hinzufügen** > ... aus. **Apple misc**-Klasse, und geben Sie einen Namen an: >   >  > 
 
 [![](text-fields-and-search-images/search06-vs.png "Klasse auswählen und einen Namen angeben")](text-fields-and-search-images/search06-vs.png#lightbox)
 
@@ -613,7 +613,7 @@ Weitere Informationen zu Sammlungs Ansichten finden Sie in unserer Dokumentation
 
 ### <a name="presenting-the-search-field"></a>Präsentieren des Suchfelds
 
-Es gibt zwei Hauptmethoden, mit denen ein Suchfeld (und die zugehörigen Bildschirmtastatur und Suchergebnisse) dem Benutzer in tvos angezeigt werden können: 
+Es gibt zwei Hauptmethoden, mit denen ein Suchfeld (und die zugehörigen Bildschirmtastatur und Suchergebnisse) dem Benutzer in tvos angezeigt werden können:
 
 - **Modale Dialogfeld Ansicht** : das Suchfeld kann über den aktuellen Ansichts-und Ansichts Controller als Vollbild-modale Dialogfeld Ansicht dargestellt werden. Dies erfolgt in der Regel als Reaktion darauf, dass der Benutzer auf eine Schaltfläche oder ein anderes UI-Element klickt. Das Dialogfeld wird verworfen, wenn der Benutzer ein Element aus den Suchergebnissen auswählt.
 - **Inhalt anzeigen** : das Suchfeld ist ein direkter Teil einer angegebenen Ansicht. Beispielsweise als Inhalt einer Registerkarte Suchen in einem Registerkarten Ansichts Controller.

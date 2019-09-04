@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 4aae2a206f07ea6caa7fc0d7530fb9fec05ce5f0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f05703babd3f6e67713dfccdb1a1fc6a4ea6966e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648431"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228025"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms-ListView
 
@@ -21,7 +21,7 @@ ms.locfileid: "68648431"
 [`ListView`](xref:Xamarin.Forms.ListView)ist eine Ansicht für die Darstellung von Listen mit Daten, insbesondere für lange Listen, die einen Bildlauf erfordern.
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)ist eine Ansicht für die Darstellung von Listen mit Daten mit unterschiedlichen layoutspezifikationen. Es zielt darauf ab, eine flexiblere und leistungsfähigere Alternative zu [`ListView`](xref:Xamarin.Forms.ListView)bereitzustellen. Weitere Informationen finden Sie unter [xamarin. Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md).
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) ist eine Ansicht für die Darstellung von Listen mit Daten mit unterschiedlichen Layoutspezifikationen. Es zielt darauf ab, eine flexiblere und leistungsfähigere Alternative zu [`ListView`](xref:Xamarin.Forms.ListView)bereitzustellen. Weitere Informationen finden Sie unter [Xamarin.Forms: CollectionView](~/xamarin-forms/user-interface/collectionview/index.md).
 
 ## <a name="use-cases"></a>Anwendungsfälle
 
@@ -41,8 +41,8 @@ ListView verfügt über eine Reihe von Komponenten, führen Sie die systemeigene
 
 - **[Zellen](customizing-cell-appearance.md)**  &ndash; Daten in einer ListView werden in Zellen angezeigt. Jede Zelle entspricht eine Zeile mit Daten. Integrierte Zellen zur Auswahl vorhanden sind, oder Sie können eigene benutzerdefinierte Zelle definieren. Integrierte und benutzerdefinierte Zellen können in XAML oder Code verwendet oder definiert werden.
   - **[Integrierte](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; erstellt in Zellen, insbesondere TextCell und ImageCell, kann sich hervorragend für die Leistung zu erzielen, sein, da diese in native Steuerelemente für jede Plattform entsprechen.
-       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; zeigt eine Zeichenfolge mit Text, optional mit zusätzlichen Text. Detail-Text wird als eine zweite Zeile in einer kleineren Schriftart mit einer Farbe für Akzente gerendert.
-       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; zeigt ein Bild mit Text. Wird als eine TextCell mit einem Bild auf der linken Seite angezeigt.
+    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; zeigt eine Zeichenfolge mit Text, optional mit zusätzlichen Text. Detail-Text wird als eine zweite Zeile in einer kleineren Schriftart mit einer Farbe für Akzente gerendert.
+    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; zeigt ein Bild mit Text. Wird als eine TextCell mit einem Bild auf der linken Seite angezeigt.
   - **[Benutzerdefinierte Zellen](customizing-cell-appearance.md#customcells)**  &ndash; benutzerdefinierte Zellen sind großartig, wenn Sie komplexe Daten präsentieren möchten. Beispielsweise könnte eine benutzerdefinierte Ansicht verwendet werden, um eine Liste von Songs, einschließlich Alben und Interpreteninformationen darzustellen:
 
 ![](images/image-cell-default.png "ListView mit ImageCells")

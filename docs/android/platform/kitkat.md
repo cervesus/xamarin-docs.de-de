@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b61924c78f85c8a1a835cef87f357ec262926935
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 1aa4e6dcf5137d12647fb2a5531218839b6db9a1
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197731"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225797"
 ---
 # <a name="kitkat-features"></a>Kitkat-Features
 
@@ -80,12 +80,12 @@ und erfordern genaue Alarme, damit Sie funktionieren, müssen Sie nun jeden Alar
 Externer Speicher ist nun in zwei Typen unterteilt: Speicher, der für Ihre Anwendung eindeutig ist, und Daten, die von mehreren Anwendungen gemeinsam genutzt werden. Für das Lesen und schreiben an den spezifischen Speicherort Ihrer APP im externen Speicher sind keine besonderen Berechtigungen erforderlich. Die Interaktion mit Daten im freigegebenen Speicher erfordert `READ_EXTERNAL_STORAGE` jetzt `WRITE_EXTERNAL_STORAGE` die Berechtigung oder. Die beiden Typen können als solche klassifiziert werden:
 
 - Wenn Sie einen Datei `Context` -oder Verzeichnispfad abrufen, indem Sie eine Methode für aufrufen, z. b.[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
-   noch[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
-   - Ihre APP erfordert keine zusätzlichen Berechtigungen.
+  noch[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
+  - Ihre APP erfordert keine zusätzlichen Berechtigungen.
 
 - Wenn Sie einen Datei-oder Verzeichnispfad abrufen, indem Sie auf eine Eigenschaft zugreifen oder eine `Environment` Methode für aufrufen, z. b.[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
-   noch[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
-   , Ihre APP erfordert die `READ_EXTERNAL_STORAGE` - `WRITE_EXTERNAL_STORAGE` Berechtigung oder die-Berechtigung.
+  noch[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
+  , Ihre APP erfordert die `READ_EXTERNAL_STORAGE` - `WRITE_EXTERNAL_STORAGE` Berechtigung oder die-Berechtigung.
 
 > [!NOTE]
 > `WRITE_EXTERNAL_STORAGE`impliziert die `READ_EXTERNAL_STORAGE` -Berechtigung, daher sollten Sie immer nur eine Berechtigung festlegen müssen.
@@ -681,27 +681,27 @@ Zusätzlich zu den oben beschriebenen Änderungen ermöglicht KitKat Folgendes:
 - *Verwenden Sie den voll Bild* Modus. KitKat führt einen neuen [immersiven Modus](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int)) zum Durchsuchen von Inhalten, spielen von spielen und Ausführen anderer Anwendungen ein, die von einem voll Bildschirm profitieren können.
 
 - *Anpassen von Benachrichtigungen* : Weitere Informationen zu System Benachrichtigungen erhalten Sie mit der[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
-   . Auf diese Weise können Sie die Informationen in Ihrer APP auf andere Weise präsentieren.
+  . Auf diese Weise können Sie die Informationen in Ihrer APP auf andere Weise präsentieren.
 
 - *Spiegel drawable-Ressourcen* : für drawable-Ressourcen gibt es eine neue[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
-   Attribut, das dem System mitteilt, dass eine gespiegelte Version für Bilder erstellt wird, die das Kippen von links nach rechts Layouts erfordern.
+  Attribut, das dem System mitteilt, dass eine gespiegelte Version für Bilder erstellt wird, die das Kippen von links nach rechts Layouts erfordern.
 
 - Anhalten von *Animationen* : anhalten und Fortsetzen von Animationen, die mit dem[`Animator`](xref:Android.Animation.Animator)
-   -Klasse.
+  -Klasse.
 
 - *Lesen dynamisch ändernder Text* : Teile der Benutzeroberfläche, die dynamisch aktualisiert werden, mit neuem Text als "Live Bereiche" mit dem neuen[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
-   -Attribut, sodass der neue Text automatisch im Barrierefreiheits Modus gelesen wird.
+  -Attribut, sodass der neue Text automatisch im Barrierefreiheits Modus gelesen wird.
 
 - *Verbessern* Sie die Audiodarstellung: machen Sie Ihre Spuren mit der[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
-   , ermitteln Sie die Spitzen und RMS eines Audiodatenstroms mit dem[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
-   und erhalten Informationen aus einem [Audiozeit Stempel](xref:Android.Media.AudioTimestamp) , um die audiovideosynchronisierung zu unterstützen.
+  , ermitteln Sie die Spitzen und RMS eines Audiodatenstroms mit dem[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
+  und erhalten Informationen aus einem [Audiozeit Stempel](xref:Android.Media.AudioTimestamp) , um die audiovideosynchronisierung zu unterstützen.
 
 - *Synchronisierungs-contentresolver in benutzerdefiniertem Intervall* : KitKat erhöht die Zeitspanne, in der eine Synchronisierungs Anforderung ausgeführt wird. Synchronisieren Sie `ContentResolver` eine zu einer benutzerdefinierten Zeit oder `ContentResolver.RequestSync` einem bestimmten Intervall, `SyncRequest`indem Sie aufrufen und einen übergeben.
 
 - Unter *scheiden zwischen Controllern* : in KitKat werden Controllern eindeutige ganzzahlige Bezeichner zugewiesen, auf die über `ControllerNumber` die-Eigenschaft des Geräts zugegriffen werden kann. Dadurch ist es einfacher, die Spieler in einem Spiel zu teilen.
 
 - *Remote Steuerung* : mit einigen Änderungen auf der Hardware-und Software Seite können Sie mithilfe `ConsumerIrService`von KitKat ein Gerät, das mit einem IR-Sender ausgerüstet ist, in eine Remote Steuerung umwandeln und mit den neuen[`RemoteController`](xref:Android.Media.RemoteController)
-   APIs.
+  APIs.
 
 Weitere Informationen zu den oben genannten API-Änderungen finden Sie in der Übersicht über Google [Android 4,4-APIs](https://developer.android.com/about/versions/android-4.4.html) .
 

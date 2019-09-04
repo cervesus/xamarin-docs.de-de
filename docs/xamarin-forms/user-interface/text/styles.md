@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: b639a7fdefb8fca67d833b07ef9aa1a85da67ef6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642885"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228012"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms-Textformate
 
@@ -48,7 +48,7 @@ In c# werden die integrierte Formatvorlagen aus ausgewählt `Device.Styles`:
 label.Style = Device.Styles.TitleStyle;
 ```
 
-![](styles-images/builtinstyles.png "Stile-Gerätebeispiel")
+![Beispiel für Geräte Stile](styles-images/builtinstyles.png)
 
 <a name="Custom_Styles" />
 
@@ -90,7 +90,7 @@ In XAML:
 
 Beachten Sie, dass die Ressourcen (einschließlich alle Stile) in definierten `ContentPage.Resources`, d.h. ein gleichgeordnetes Element eines je vertrauter `ContentPage.Content` Element.
 
-![](styles-images/customstyle.png "Beispiel für benutzerdefinierte Stile")
+![Beispiel für benutzerdefinierte Stile](styles-images/customstyle.png)
 
 <a name="Applying_Styles" />
 
@@ -137,11 +137,11 @@ Beachten Sie im folgende Beispiel der gleichen Seite Sichten erstellt, in denen 
 
 Deaktiviert:
 
-![](styles-images/pre-access.png "Gerätestile mit Barrierefreiheit deaktiviert")
+![Geräte Stile mit deaktiviertem Zugriff](styles-images/pre-access.png)
 
 Aktiviert:
 
-![](styles-images/post-access.png "Gerätestile Barrierefreiheit aktiviert")
+![Geräte Stile mit aktiviertem Zugriff](styles-images/post-access.png)
 
 Um Zugriff zu gewährleisten, stellen Sie sicher, dass die integrierte Formatvorlagen, die als Grundlage für alle textbezogenen Formatvorlagen in Ihrer app verwendet werden, und Sie konsistent Formatvorlagen verwenden. Finden Sie unter [Stile](~/xamarin-forms/user-interface/styles/index.md) ausführliche Informationen zum Erweitern von und Arbeiten mit Stilen im Allgemeinen.
 

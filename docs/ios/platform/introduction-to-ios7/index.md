@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 885cf4b77d4eac0668a2e70c57187e9b23a91dd1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 962f06367542cc0e5d0d17f3261411c96f215e44
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527570"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227478"
 ---
 # <a name="introduction-to-ios-7"></a>Einführung in iOS 7
 
@@ -36,14 +36,14 @@ Der folgende Code erzeugt eine Spring Effect-Struktur, wenn sich der Mittelpunkt
 
 ```csharp
 void AnimateWithSpring ()
-{ 
+{
     float springDampingRatio = 0.25f;
     float initialSpringVelocity = 1.0f;
-    
+
     UIView.AnimateNotify (3.0, 0.0, springDampingRatio, initialSpringVelocity, 0, () => {
-    
-        imageView.Center = new CGPoint (imageView.Center.X, 400);   
-            
+
+        imageView.Center = new CGPoint (imageView.Center.X, 400);
+
     }, null);
 }
 ```
@@ -67,11 +67,11 @@ void AnimateViewWithKeyframes ()
     // can now use keyframes directly on UIView without needing to drop directly into Core Animation
 
     UIView.AnimateKeyframes (2.0, 0, UIViewKeyframeAnimationOptions.Autoreverse, () => {
-        UIView.AddKeyframeWithRelativeStartTime (0.0, 0.5, () => { 
+        UIView.AddKeyframeWithRelativeStartTime (0.0, 0.5, () => {
             imageView.Center = new CGPoint (200, 200);
         });
 
-        UIView.AddKeyframeWithRelativeStartTime (0.5, 0.5, () => { 
+        UIView.AddKeyframeWithRelativeStartTime (0.5, 0.5, () => {
             imageView.Transform = CGAffineTransform.MakeRotation ((float)Math.PI / 2);
         });
     }, (finished) => {
@@ -156,7 +156,7 @@ dynAnimator.AddBehavior (gravity);
 
 Dies führt dazu, dass das Bild nach unten mit der Schwerkraft animiert wird, wie unten dargestellt:
 
-![](images/gravity2.png "Der") 
+![](images/gravity2.png "Der")
 Speicherort des Start Images(images/gravity3.png "") ![]
 
 Da die Begrenzungen des Bildschirms nicht eingeschränkt sind, wird die Bildansicht einfach vom unteren Rand entfernt. Um die Ansicht so einzuschränken, dass das Bild mit den Rändern des Bildschirms kollidiert, können wir eine `UICollisionBehavior`hinzufügen. Dies wird im nächsten Abschnitt behandelt.

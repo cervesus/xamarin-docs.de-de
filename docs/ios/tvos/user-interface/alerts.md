@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3f1761df5c2b638c5777e6384f4c0c06e9b3071f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: de7c8918ff500cb2353214fd84eaa4c97713493e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657288"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227275"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Arbeiten mit tvos-Warnungen in xamarin
 
@@ -34,7 +34,7 @@ Wie bereits erwähnt, werden Warnungen verwendet, um die Aufmerksamkeit des Benu
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit Warnungen:
 
-- **Verwenden Sie Warnungen sparsam** : Warnungen stören den Benutzer Fluss mit der APP und unterbrechen die Benutzer Abläufe und sollten daher nur für wichtige Situationen wie Fehler Benachrichtigungen, in-App-Käufe und zerstörerische Aktionen verwendet werden. 
+- **Verwenden Sie Warnungen sparsam** : Warnungen stören den Benutzer Fluss mit der APP und unterbrechen die Benutzer Abläufe und sollten daher nur für wichtige Situationen wie Fehler Benachrichtigungen, in-App-Käufe und zerstörerische Aktionen verwendet werden.
 - **Bietet nützliche** Optionen: Wenn die Warnung dem Benutzeroptionen anzeigt, sollten Sie sicherstellen, dass jede Option wichtige Informationen bietet und nützliche Aktionen für den Benutzer bereitstellt.
 
 <a name="Alert-Titles-and-Messages" />
@@ -44,7 +44,7 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Warnungen:
 Apple bietet die folgenden Vorschläge, um den Titel einer Warnung und die optionale Nachricht zu präsentieren:
 
 - **Verwendung von Multiword-Titeln** : der Titel einer Warnung sollte den Punkt der Situation eindeutig erkennen, während Sie weiterhin einfach bleibt. Ein einzelner Word-Titel stellt selten genug Informationen bereit.
-- **Verwenden Sie beschreibende Titel, für die keine Meldung erforderlich** ist. wenn möglich, sollten Sie den Titel der Warnung so beschreiben, dass der optionale Meldungs Text nicht erforderlich ist. 
+- **Verwenden Sie beschreibende Titel, für die keine Meldung erforderlich** ist. wenn möglich, sollten Sie den Titel der Warnung so beschreiben, dass der optionale Meldungs Text nicht erforderlich ist.
 - **Richten Sie einen kurzen, vollständigen Satz ein,** wenn die optionale Nachricht erforderlich ist, um den Punkt der Warnung zu erhalten, halten Sie Sie so einfach wie möglich, und machen Sie einen vollständigen Satz mit ordnungsgemäßer groß-und Kleinschreibung.
 
 <a name="Alert-Buttons" />
@@ -70,15 +70,15 @@ const string acceptButtonTitle = "OK";
 const string cancelButtonTitle = "Cancel";
 const string deleteButtonTitle = "Delete";
 ...
-        
+
 var alertController = UIAlertController.Create (title, message, UIAlertControllerStyle.Alert);
 
 // Create the action.
-var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ => 
+var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
-var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ => 
+var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
@@ -97,7 +97,7 @@ UIAlertController.Create (title, message, UIAlertControllerStyle.Alert)
 Als Nächstes erstellen wir für jede Schaltfläche, die in der Warnung angezeigt werden soll, eine Aktion, die den Titel der Schaltfläche definiert, den Stil und die Aktion, die Sie durchführen möchten, wenn die Schaltfläche gedrückt wird:
 
 ```csharp
-UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ => 
+UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
     // Do something when the button is pressed
     ...
 );

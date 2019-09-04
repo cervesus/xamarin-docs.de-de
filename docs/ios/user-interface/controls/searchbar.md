@@ -1,45 +1,45 @@
 ---
-title: Search-Balken in Xamarin.iOS
-description: In diesem Dokument wird beschrieben, wie Suchleisten in Xamarin.iOS verwendet wird. Es wird erläutert, wie Suchleisten programmgesteuert und in einem Storyboard zu erstellen.
+title: Suchleisten in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Suchleisten in xamarin. IOS verwendet werden. Es wird erläutert, wie Suchleisten Programm gesteuert und in einem Storyboard erstellt werden.
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 75abb943dbc56d7b4213e0c36c19ff338182ae8a
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 78776b669b9f389398c54d72a9080a90f8664429
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674873"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226319"
 ---
-# <a name="search-bars-in-xamarinios"></a>Search-Balken in Xamarin.iOS
+# <a name="search-bars-in-xamarinios"></a>Suchleisten in xamarin. IOS
 
-Die UISearchBar wird verwendet, um über eine Liste von Werten zu suchen. 
+Uisearchbar wird verwendet, um eine Liste von Werten zu durchsuchen.
 
-Es enthält drei Hauptkomponenten: 
+Sie enthält drei Hauptkomponenten:
 
-- Ein Feld zum Eingeben von Text. Benutzer können diese Option, um ihren Suchbegriff eingeben nutzen.
-- Eine Schaltfläche "löschen", um einen beliebigen Text in das Suchfeld zu entfernen.
-- Eine Schaltfläche "Abbrechen", bei der Suchfunktion zu beenden.
+- Ein Feld, das zum Eingeben von Text verwendet wird. Benutzer können diese verwenden, um Ihren Suchbegriff einzugeben.
+- Eine Schaltfläche zum Löschen, um Text aus dem Suchfeld zu entfernen.
+- Eine Schaltfläche "Abbrechen", um die Suchfunktion zu beenden.
 
 ![Suchleiste](searchbar-images/image1.png)
 
 ## <a name="implementing-the-search-bar"></a>Implementieren der Suchleiste
 
-Zu Beginn Leiste suchen implementieren, indem Sie eine neue zu instanziieren:
+Um die Suchleiste zu implementieren, beginnen Sie, indem Sie eine neue instanziieren:
 
 ```csharp
 searchBar = new UISearchBar();
 ```
 
-Ein, und legen Sie es. Das folgende Beispiel zeigt, wie sie in der Navigationsleiste oder in der HeaderView einer Tabelle platziert wird:
+Und dann platzieren. Das folgende Beispiel zeigt, wie Sie es in der Navigationsleiste oder in der Header View einer Tabelle platzieren:
 
 ```csharp
 NavigationItem.TitleView = searchBar;
 
-\\or
+// or
 
 TableView.TableHeaderView = searchBar;
 ```
@@ -55,9 +55,9 @@ Festlegen von Eigenschaften auf der Suchleiste:
             };
 ```
 
-![Suchleiste-Eigenschaften](searchbar-images/image6.png)
+![Eigenschaften der Suchleiste](searchbar-images/image6.png)
 
-Auslösen der `SearchButtonClicked` Ereignis aus, wenn die Durchsuchen-Schaltfläche gedrückt wird. Dadurch wird Ihre Logik für die Suche aufgerufen:
+Gibt das `SearchButtonClicked` -Ereignis aus, wenn die Such Schaltfläche gedrückt wird. Dadurch wird Ihre Suchlogik aufgerufen:
 
 ```csharp
 searchBar.SearchButtonClicked += (sender, e) => {
@@ -65,37 +65,37 @@ searchBar.SearchButtonClicked += (sender, e) => {
             };
 ```
 
-Informationen zum Verwalten der Präsentation der Suchleiste und Suchergebnisse finden Sie in der [Suche Controller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller) Anleitung.
+Informationen zum Verwalten der Darstellung der Suchleiste und der Suchergebnisse finden Sie in der Anleitung für den [Such Controller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller) .
 
-## <a name="using-the-search-bar-in-the-designer"></a>Verwenden die Suchleiste im Designer
+## <a name="using-the-search-bar-in-the-designer"></a>Verwenden der Suchleiste im Designer
 
-Der Designer bietet zwei Optionen für die Implementierung eine Suchleiste im designer
+Der Designer bietet zwei Optionen für die Implementierung einer Suchleiste im Designer.
 
 - Suchleiste
-- Suchleiste mit Search-Anzeige-Controller (veraltet)
+- Suchleiste mit Suchanzeige Controller (veraltet)
 
-![Search-Steuerelemente im designer](searchbar-images/image2.png)
+![Suchleisten-Steuerelemente im Designer](searchbar-images/image2.png)
 
-Verwenden Sie den Bereich für die Eigenschaft zum Festlegen von Eigenschaften in der Suchleiste
+Verwenden Sie den Eigenschaften Bereich, um Eigenschaften auf der Suchleiste festzulegen.
 
-![Suche Leiste Eigenschaften-designer](searchbar-images/image3.png)
+![Suchleisten Eigenschaften-Designer](searchbar-images/image3.png)
 
 Diese Eigenschaften werden im folgenden erläutert:
 
-- **Text und Platzhalter Eingabeaufforderung** – diese Eigenschaften werden zum vorschlagen und anweisen, wie Benutzer auf die Suchleiste verwenden sollten. Beispielsweise wenn Ihre app eine Liste der Speicher angezeigt. können die Prompt-Eigenschaft Sie darauf hinzuweisen, dass der Benutzer "City, Story-Name oder Postleitzahl eingeben können"
-- **Suchen Sie Stil** – Sie können festlegen, dass die Suchleiste, um entweder **Prominent** oder **minimale**. Verwenden die deutliche wird alles auf dem Bildschirm mit Ausnahme der Suchleiste, sodass des Fokus auf die Suchleiste gezeichnet werden getönt werden soll. Die minimale Style-Suchleiste einfügen mit dessen Umgebung.
-- **Funktionen** – aktivieren diese Eigenschaften nur das Element der Benutzeroberfläche angezeigt. Die Funktionalität muss implementiert werden, diese durch das richtige Ereignis wie im Auslösen der [Leiste-Websuche-API-Dokumentation](xref:UIKit.UISearchBar)
-    - Suchergebnisse zeigt / Schaltfläche "Lesezeichen" – zeigt ein Symbol "Suchergebnisse" oder "Lesezeichen" auf der Suchleiste
-    - Zeigt die Schaltfläche "Abbrechen" – ermöglicht Benutzern bei der Suchfunktion zu beenden. Es wird empfohlen, dass diese Option ausgewählt ist.
-    - Zeigt Bereichsleiste – Dies ermöglicht, dass Benutzer, um den Umfang ihrer Suche einzuschränken. Beispielsweise kann bei der Suche in der Musik-app der Benutzer auswählen, ob sie Apple Music oder ihre Bibliothek für einen bestimmten Titel oder Künstler suchen möchten. Um verschiedene Optionen anzuzeigen, fügen Sie ein Array von Titeln zu den **ScopeBarTitles** Eigenschaft.
-    ![Leiste Bereich-Titel suchen](searchbar-images/image4.png)
+- **Text, Platzhalter, Aufforderung** – diese Eigenschaften werden verwendet, um vorzuschlagen und anzuweisen, wie Benutzer die Suchleiste verwenden sollten. Wenn Ihre APP z. b. eine Liste von Stores angezeigt hat, können Sie mithilfe der Prompt-Eigenschaft anzeigen, dass Benutzer "Ort", "textabame" oder "Postleitzahl" eingeben können.
+- **Suchart** – Sie können festlegen, dass die Suchleiste entweder sehr **auffällig** oder **Minimal**ist. Wenn Sie den prominenten verwenden, wird alles auf dem Bildschirm angezeigt, mit Ausnahme der Suchleiste, wodurch der Fokus auf die Suchleiste gezogen wird. Die Suchleiste im minimalen Stil wird in die Umgebung integriert.
+- **Funktionen** – durch Aktivieren dieser Eigenschaften wird nur das UI-Element angezeigt. Die Funktionalität muss für diese implementiert werden, indem das richtige Ereignis wie in den Suchleisten- [API](xref:UIKit.UISearchBar) -Dokumentation ausführlich aufgeführt wird.
+  - Zeigt die Schaltfläche "Suchergebnisse/Lesezeichen" – zeigt ein Suchergebnis oder Lesezeichen Symbol auf der Suchleiste an
+  - Zeigt die Schaltfläche "Abbrechen" – ermöglicht Benutzern das Beenden der Suchfunktion. Es wird empfohlen, diese Option auszuwählen.
+  - Zeigt die Bereichs Leiste an – dadurch können Benutzer den Umfang Ihrer Suche einschränken. Wenn Sie z. b. in der Music-App suchen, kann der Benutzer auswählen, ob Apple Music oder seine Bibliothek nach einem bestimmten Song oder einer bestimmten Künstlerin durchsucht werden soll. Zum Anzeigen verschiedener Optionen fügen Sie der Eigenschaft **scopebartiteln** ein Array von Titeln hinzu.
+  ![Titel des Suchleisten Bereichs](searchbar-images/image4.png)
 
-- **Textverhalten** – diese Optionen werden verwendet, um die Adresse, wie die Benutzereingabe formatiert werden, wenn sie eine Eingabe vornehmen. Großschreibung wird festgelegt, den Anfang jedes Wort oder einen Satz ein, oder alle Zeichen als Großbuchstaben. Korrektur und Rechtschreibprüfung mit auffordern den Benutzer mit der vorgeschlagenen Schreibweisen Wörter homophone.
-- **Tastatur** – Steuerelemente der Tastatur-Stil angezeigt, für die Eingabe, und welche Schlüssel sind daher verfügbar, auf der Tastatur. Dies schließt Pad "Anzahl" "," Phone Pad ","-e-Mail "," URL zusammen mit anderen Optionen.
-- **Darstellung** – steuert die Darstellungsart des der Tastatur und werden entweder dunkel oder helles Design.
-- **Schlüssel zurückgegeben,** – ändern Sie die Bezeichnung für die Return-Taste, besser widerzuspiegeln, welche Aktion durchgeführt wird. Unterstützte Werte sind Go, Join, weiter, Route, Fertig, und suchen.
-- **Sichere** – gibt an, ob die Eingabe maskiert wird (z. B. eine Kennworteingabe).
+- **Text Verhalten** – diese Optionen werden verwendet, um zu adressieren, wie die Benutzereingabe bei der Eingabe formatiert wird. Durch die Groß-/Kleinschreibung wird der Anfang jedes Worts oder Satzes oder jedes Zeichen als Großbuchstabe festgelegt. Korrektur-und Rechtschreibprüfung, bei der der Benutzer zur Eingabe von empfohlenen rechtschreibweisen bei der Eingabe aufgefordert wird.
+- **Tastatur** – steuert den Tastatur Stil, der für die Eingabe angezeigt wird, und damit die auf der Tastatur verfügbaren Tasten. Dies schließt das Zahlen Pad, den telefonpad, die e-Mail, die URL und andere Optionen ein.
+- Darstellung – steuert den Stil der Tastatur und ist entweder dunkel oder hell.
+- **Return Key** – ändern Sie die Bezeichnung in der Rückgabetaste, um besser widerzuspiegeln, welche Aktion durchgeführt wird. Zu den unterstützten Werten zählen go, Join, Next, Route, done und Search.
+- **Secure** – gibt an, ob die Eingabe maskiert wird (z. b. für eine Kenn Wort Eingabe).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Search-Controller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
+- [Controller suchen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)

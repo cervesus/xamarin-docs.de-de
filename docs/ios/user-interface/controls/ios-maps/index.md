@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 157f797ebb19de1ae00a00328a9c63b051c7224f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887485"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226450"
 ---
 # <a name="maps-in-xamarinios"></a>Zuordnungen in xamarin. IOS
 
@@ -36,7 +36,7 @@ View = map;
 
 `MKMapView`unterstützt drei verschiedene Arten von Karten. Um einen Karten Stil anzuwenden, legen Sie einfach `MapType` die-Eigenschaft auf einen Wert `MKMapType` aus der-Enumeration fest:
 
-```
+```csharp
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
@@ -87,7 +87,7 @@ map.ShowsUserLocation = true;
 ```
 
  ![](images/02-location-alert.png "Die Warnung \"Speicherort Zugriff zulassen\"")
- 
+
 ## <a name="annotations"></a>Anmerkungen
 
  `MKMapView`unterstützt auch das Anzeigen von Bildern, die als Anmerkungen bezeichnet werden, auf einer Karte. Dabei kann es sich entweder um benutzerdefinierte Images oder um System definierte Pins verschiedener Farben handeln. Der folgende Screenshot zeigt z. b. eine Karte mit einer PIN und einem benutzerdefinierten Bild:
@@ -250,7 +250,7 @@ var searchResultsController = new SearchResultsViewController (map);
 //Creates a search controller updater
 var searchUpdater = new SearchResultsUpdator ();
 searchUpdater.UpdateSearchResults += searchResultsController.Search;
-            
+
 //add the search controller
 searchController = new UISearchController (searchResultsController) {
                 SearchResultsUpdater = searchUpdater
@@ -264,7 +264,7 @@ searchController.SearchBar.Placeholder = "Enter a search query";
 //the search bar is contained in the navigation bar, so it should be visible
 searchController.HidesNavigationBarDuringPresentation = false;
 
-//Ensure the searchResultsController is presented in the current View Controller 
+//Ensure the searchResultsController is presented in the current View Controller
 DefinesPresentationContext = true;
 
 //Set the search bar in the navigation bar
@@ -279,7 +279,7 @@ Wir sehen uns nun an, wie Sie `searchResultsController` `searchResultsUpdater` u
 Dies führt dazu, dass eine Suchleiste über der Karte angezeigt wird, wie unten dargestellt:
 
  ![](images/07-searchbar.png "Eine Suchleiste, die über der Karte angezeigt wird.")
- 
+
 
 
 ### <a name="displaying-the-search-results"></a>Anzeigen der Suchergebnisse
@@ -358,7 +358,7 @@ public class SearchResultsViewController : UITableViewController
 
 ### <a name="updating-the-search-results"></a>Aktualisieren der Suchergebnisse
 
-Fungiert als Vermittler zwischen der Suchleiste `searchController`und den Suchergebnissen von. `SearchResultsUpdater` 
+Fungiert als Vermittler zwischen der Suchleiste `searchController`und den Suchergebnissen von. `SearchResultsUpdater`
 
 In diesem Beispiel müssen Sie zuerst die Suchmethode in `SearchResultsViewController`erstellen. Zu diesem `MKLocalSearch` Zweck müssen wir ein-Objekt erstellen und es verwenden, um eine Suche nach einem `MKLocalSearchRequest`auszugeben. die Ergebnisse werden in einem Rückruf abgerufen, `Start` der `MKLocalSearch` an die-Methode des-Objekts übermittelt wird. Die Ergebnisse werden dann in einem `MKLocalSearchResponse` -Objekt zurückgegeben, das ein Array von `MKMapItem` -Objekten enthält:
 
@@ -403,7 +403,7 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 Die obige Implementierung fügt der Karte eine Anmerkung hinzu, wenn ein Element aus den Ergebnissen ausgewählt wird, wie unten dargestellt:
 
  ![](images/08-search-results.png "Eine Anmerkung, die der Karte hinzugefügt wird, wenn ein Element aus den Ergebnissen ausgewählt wird.")
- 
+
 > [!IMPORTANT]
 > `UISearchController`wurde in ios 8 implementiert. Wenn Sie Geräte vor diesem Zeitpunkt unterstützen möchten, müssen Sie verwenden `UISearchDisplayController`.
 

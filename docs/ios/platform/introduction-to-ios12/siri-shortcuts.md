@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 4fa15e73575e20541df7ee8f606b01ec6e3d875a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f0927a6d6d5e3b9db6f203f779fbd50a026ce7e8
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656717"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226566"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Siri-Verknüpfungen in xamarin. IOS
 
@@ -20,7 +20,7 @@ In [IOS 10](~/ios/platform/sirikit/index.md)hat Apple das Sirikit eingeführt, d
 
 In [IOS 11](~/ios/platform/introduction-to-ios11/sirikit.md)hat das Sirikit Unterstützung für mehr App-Typen und mehr Flexibilität bei der Anpassung der Benutzeroberfläche erhalten.
 
-IOS 12 fügt Siri-Verknüpfungen hinzu, sodass alle App-Typen ihre Funktionalität für Siri verfügbar machen können. Siri erfährt, wenn bestimmte App-basierte Aufgaben für den Benutzer am relevantesten sind, und verwendet dieses wissen, um _über_Verknüpfungen potenzielle Aktionen vorzuschlagen. Wenn Sie auf eine Verknüpfung tippen oder Sie mit einem Sprachbefehl aufrufen, wird eine APP geöffnet oder eine Hintergrundaufgabe ausgeführt.
+IOS 12 fügt Siri-Verknüpfungen hinzu, sodass alle App-Typen ihre Funktionalität für Siri verfügbar machen können. Siri erfährt, wenn bestimmte App-basierte Aufgaben für den Benutzer am relevantesten sind, und verwendet dieses wissen, umüber Verknüpfungen potenzielle Aktionen vorzuschlagen. Wenn Sie auf eine Verknüpfung tippen oder Sie mit einem Sprachbefehl aufrufen, wird eine APP geöffnet oder eine Hintergrundaufgabe ausgeführt.
 
 Verknüpfungen sollten verwendet werden, um die Fähigkeit eines Benutzers zu beschleunigen, eine gängige Aufgabe zu erledigen – in vielen Fällen, ohne dass die betreffende APP überhaupt geöffnet wird.
 
@@ -264,19 +264,19 @@ Führen Sie die folgenden Schritte aus, C# um die statische Bibliothek zu erstel
 
 - Konfigurieren Sie Ihr System für die Verwendung von Xcode 10-Befehlszeilen Tools:
 
-    > [!WARNING]
-    > Das Aktualisieren der ausgewählten Befehlszeilen Tools wirkt sich auf alle installierten Versionen von Xcode auf dem System aus. Wenn Sie die Beispiel-app "Soup Chef" verwendet haben, stellen Sie sicher, dass diese Einstellung auf die ursprüngliche Konfiguration zurückgesetzt wird.
+  > [!WARNING]
+  > Das Aktualisieren der ausgewählten Befehlszeilen Tools wirkt sich auf alle installierten Versionen von Xcode auf dem System aus. Wenn Sie die Beispiel-app "Soup Chef" verwendet haben, stellen Sie sicher, dass diese Einstellung auf die ursprüngliche Konfiguration zurückgesetzt wird.
 
-    - Wählen Sie in Xcode die Option **Xcode > Einstellungen > Speicherorte** aus, und legen Sie **Befehlszeilen Tools** auf die aktuelle auf Ihrem System verfügbare Xcode 10-Installation fest.
+  - Wählen Sie in Xcode die Option **Xcode > Einstellungen > Speicherorte** aus, und legen Sie **Befehlszeilen Tools** auf die aktuelle auf Ihrem System verfügbare Xcode 10-Installation fest.
 
 - Im Terminal `cd` zum Verzeichnis **ordersoupintentstaticlib** .
 
 - Typ `make`, der erstellt:
 
-    - Die statische Bibliothek, **libordersoupintentstaticlib. a**
-    - Im Verzeichnis " **Bo** Output" C# sind Bindungen Definitionen:
-        - **ApiDefinitions.cs**
-        - **StructsAndEnums.cs**
+  - Die statische Bibliothek, **libordersoupintentstaticlib. a**
+  - Im Verzeichnis " **Bo** Output" C# sind Bindungen Definitionen:
+    - **ApiDefinitions.cs**
+    - **StructsAndEnums.cs**
 
 Das **ordersoupintentbinding** -Projekt, das von dieser statischen Bibliothek und den zugehörigen Bindungs Definitionen abhängig ist, erstellt diese Elemente automatisch.
 Wenn Sie den obigen Prozess jedoch manuell ausführen, stellen Sie sicher, dass er erwartungsgemäß erstellt wird.
@@ -647,14 +647,14 @@ Gehen Sie im Abschnitt **Zertifikate, IDs & profile** des [Apple Developer Porta
 
 - Erstellen Sie drei App-IDs: eine für die APP selbst, eine für die Intents-Erweiterung und eine für die Intents-Benutzeroberflächen Erweiterung. Beispiel:
 
-    - App: **com.yourcompanyname.SoupChef**
-        - Weisen Sie dieser APP-ID die Funktionen "Sirikit" und " **App Groups** " zu.
+  - App: **com.yourcompanyname.SoupChef**
+    - Weisen Sie dieser APP-ID die Funktionen "Sirikit" und " **App Groups** " zu.
 
-    - Intents-Erweiterung: **com. YourCompanyName. soupchef. Intents**
-        - Weisen Sie dieser APP-ID die Funktion **App-Gruppen** zu.
+  - Intents-Erweiterung: **com. YourCompanyName. soupchef. Intents**
+    - Weisen Sie dieser APP-ID die Funktion **App-Gruppen** zu.
 
-    - Intents-Benutzeroberflächen Erweiterung: **com. YourCompanyName. soupchef. intentsui**
-        - Diese APP-ID benötigt keine speziellen Funktionen.
+  - Intents-Benutzeroberflächen Erweiterung: **com. YourCompanyName. soupchef. intentsui**
+    - Diese APP-ID benötigt keine speziellen Funktionen.
 
 - Nachdem Sie die oben genannten App-IDs erstellt haben, bearbeiten Sie die Funktionen der APP- **Gruppen** , die der APP und der Intents-Erweiterung zugewiesen sind, und geben die oben erstellte Anwendungs Gruppe an
 
@@ -668,16 +668,16 @@ Führen Sie in Visual Studio für Mac oder Visual Studio 2017 die folgenden Schr
 
 - Aktualisieren Sie die verschiedenen **Info. plist** -Dateien in der Projekt Mappe. Legen Sie die Anwendungs-, Intents-Erweiterung und Intents-UI-Erweiterungs **Bündel** -ID auf die oben definierten App-IDs fest:
 
-    - App: **com.yourcompanyname.SoupChef**
-    - Intents-Erweiterung: **com. YourCompanyName. soupchef. Intents**
-    - Intents-Benutzeroberflächen Erweiterung: **com. YourCompanyName. soupchef. intentsui**
+  - App: **com.yourcompanyname.SoupChef**
+  - Intents-Erweiterung: **com. YourCompanyName. soupchef. Intents**
+  - Intents-Benutzeroberflächen Erweiterung: **com. YourCompanyName. soupchef. intentsui**
 
 - Aktualisieren Sie die Datei " **Berechtigungen. plist** " für das Projekt " **soupchef** ":
-    - Legen Sie für die Funktion **App-Gruppen** die Gruppe auf die neue APP-Gruppe fest, die oben erstellt wurde (im obigen Beispiel war Sie **Group. com. YourCompanyName. soupchef**).
-    - Stellen Sie sicher, dass das **Sirikit** aktiviert ist.
+  - Legen Sie für die Funktion **App-Gruppen** die Gruppe auf die neue APP-Gruppe fest, die oben erstellt wurde (im obigen Beispiel war Sie **Group. com. YourCompanyName. soupchef**).
+  - Stellen Sie sicher, dass das **Sirikit** aktiviert ist.
 
 - Aktualisieren Sie die Datei " **Berechtigungen. plist** " für das Projekt " **soupchefintents** ":
-    - Legen Sie für die Funktion **App-Gruppen** die Gruppe auf die neue APP-Gruppe fest, die oben erstellt wurde (im obigen Beispiel war Sie **Group. com. YourCompanyName. soupchef**).
+  - Legen Sie für die Funktion **App-Gruppen** die Gruppe auf die neue APP-Gruppe fest, die oben erstellt wurde (im obigen Beispiel war Sie **Group. com. YourCompanyName. soupchef**).
 
 - Öffnen Sie abschließend **NSUserDefaultsHelper.cs**. Legen Sie `AppGroup` die Variable auf den Wert ihrer neuen App-Gruppe fest (legen Sie diese z `group.com.yourcompanyname.SoupChef`. b. auf fest).
 

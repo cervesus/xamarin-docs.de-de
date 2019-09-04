@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 7c48244e316854b04234ec8dee4eebeb55a4f119
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 05c3816d0cc01beb3ed99994788b58e5f187171a
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526381"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225779"
 ---
 # <a name="alternate-resources"></a>Alternative Ressourcen
 
@@ -73,52 +73,52 @@ Die möglichen Qualifizierer sind unten aufgeführt:
 
 - **Bildschirm Pixel Dichte (dpi)** &ndash; Die Anzahl der Pixel in einem angegebenen Bereich auf dem physischen Bildschirm. Wird normalerweise als dpi (dpi) ausgedrückt. Dabei sind folgende Werte möglich:
 
-    - `ldpi`&ndash; Bildschirme mit geringer Dichte.
+  - `ldpi`&ndash; Bildschirme mit geringer Dichte.
 
-    - `mdpi`&ndash; Bildschirme mit mittlerer Dichte
+  - `mdpi`&ndash; Bildschirme mit mittlerer Dichte
 
-    - `hdpi`&ndash; Bildschirme mit hoher Dichte
+  - `hdpi`&ndash; Bildschirme mit hoher Dichte
 
-    - `xhdpi`&ndash; Bildschirme mit hoher Dichte
+  - `xhdpi`&ndash; Bildschirme mit hoher Dichte
 
-    - `nodpi`&ndash; Ressourcen, die nicht skaliert werden sollen
+  - `nodpi`&ndash; Ressourcen, die nicht skaliert werden sollen
 
-    - `tvdpi`&ndash; Eingeführt in API-Ebene 13 (Android 3,2) für Bildschirme zwischen MDPI und hdpi.
+  - `tvdpi`&ndash; Eingeführt in API-Ebene 13 (Android 3,2) für Bildschirme zwischen MDPI und hdpi.
 
 - **Touchscreen-Typ** &ndash; Gibt den Typ des Touchscreen an, den ein Gerät haben kann. Mögliche Werte sind `notouch` (kein Touchscreen), `stylus` (ein für einen Tablettstift geeignetes Bildschirm für die resistischtaste) und `finger` (ein Touchscreen).
 
 - **Tastatur Verfügbarkeit** &ndash; Gibt an, welche Art von Tastatur verfügbar ist. Dies kann sich während der Lebensdauer einer Anwendung &ndash; ändern, z. b. Wenn ein Benutzer eine Hardware Tastatur öffnet. Dabei sind folgende Werte möglich:
 
-    - `keysexposed`&ndash; Auf dem Gerät ist eine Tastatur verfügbar. Wenn keine Software Tastatur aktiviert ist, wird diese nur beim Öffnen der Hardware Tastatur verwendet.
+  - `keysexposed`&ndash; Auf dem Gerät ist eine Tastatur verfügbar. Wenn keine Software Tastatur aktiviert ist, wird diese nur beim Öffnen der Hardware Tastatur verwendet.
 
-    - `keyshidden`&ndash; Das Gerät verfügt über eine Hardware Tastatur, aber es ist ausgeblendet, und es ist keine Software Tastatur aktiviert.
+  - `keyshidden`&ndash; Das Gerät verfügt über eine Hardware Tastatur, aber es ist ausgeblendet, und es ist keine Software Tastatur aktiviert.
 
-    - `keyssoft`&ndash; auf dem Gerät ist eine Software Tastatur aktiviert.
+  - `keyssoft`&ndash; auf dem Gerät ist eine Software Tastatur aktiviert.
 
 - **Primäre Text Eingabemethode** &ndash; Verwenden Sie, um anzugeben, welche Arten von Hardware Schlüsseln für die Eingabe verfügbar sind. Dabei sind folgende Werte möglich:
 
-    - `nokeys`&ndash; Es sind keine Hardwareschlüssel für die Eingabe vorhanden.
+  - `nokeys`&ndash; Es sind keine Hardwareschlüssel für die Eingabe vorhanden.
 
-    - `qwerty`&ndash; Eine QWERTY-Tastatur ist verfügbar.
+  - `qwerty`&ndash; Eine QWERTY-Tastatur ist verfügbar.
 
-    - `12key`&ndash; Es ist eine Hardware Tastatur mit 12 Schlüsseln vorhanden.
+  - `12key`&ndash; Es ist eine Hardware Tastatur mit 12 Schlüsseln vorhanden.
 
 
 - **Verfügbarkeit von Navigations Schlüsseln** &ndash; Für den Fall, dass die Navigation mit dem 5-Wege-oder d-Pad (direktionaler Pad) verfügbar ist Dies kann sich während der Lebensdauer der Anwendung ändern. Dabei sind folgende Werte möglich:
 
-    - `navexposed`&ndash; die Navigationsschlüssel sind für den Benutzer verfügbar.
+  - `navexposed`&ndash; die Navigationsschlüssel sind für den Benutzer verfügbar.
 
-    - `navhidden`&ndash; die Navigationsschlüssel sind nicht verfügbar.
+  - `navhidden`&ndash; die Navigationsschlüssel sind nicht verfügbar.
 
 - **Primäre Non-Touchscreen-Navigations Methode** &ndash; Die Art der auf dem Gerät verfügbaren Navigation. Dabei sind folgende Werte möglich:
 
-    - `nonav`&ndash; die einzige verfügbare Navigationsfunktion ist der Touchscreen.
+  - `nonav`&ndash; die einzige verfügbare Navigationsfunktion ist der Touchscreen.
 
-    - `dpad`&ndash; ein d-Pad (direktionaler Pad) ist für die Navigation verfügbar.
+  - `dpad`&ndash; ein d-Pad (direktionaler Pad) ist für die Navigation verfügbar.
 
-    - `trackball`&ndash; das Gerät verfügt über einen trackballunterstützung für die Navigation.
+  - `trackball`&ndash; das Gerät verfügt über einen trackballunterstützung für die Navigation.
 
-    - `wheel`&ndash; das ungewöhnliche Szenario, in dem ein oder mehrere direktionale Räder verfügbar sind
+  - `wheel`&ndash; das ungewöhnliche Szenario, in dem ein oder mehrere direktionale Räder verfügbar sind
 
 - **Platt Form Version (API-Ebene)** Die API-Ebene, die vom Gerät im Format v*N*unterstützt wird, wobei N für die API-Ebene steht, die Ziel ist. &ndash; Beispielsweise wird für v11 ein Gerät auf API Level 11 (Android 3,0) als Ziel verwendet.
 

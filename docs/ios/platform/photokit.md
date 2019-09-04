@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 5e5cc20e9fbeaf2b00e022ccdbf67286aed6d5ef
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3920445c234344fe7f2a1cdd93ed7f4f6405727d
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528812"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226581"
 ---
 # <a name="photokit-in-xamarinios"></a>Photokit in xamarin. IOS
 
@@ -25,13 +25,13 @@ Entsprechend enthalten die `PHAssetCollection` Klassen `PHCollectionList` und Me
 
 ## <a name="querying-model-data"></a>Abfragen von Modelldaten
 
-Mit photokit können Sie Modelldaten problemlos über eine Vielzahl von Abruf Methoden Abfragen. Wenn Sie z. b. alle Images abrufen möchten, `PFAsset.Fetch`rufen Sie auf `PHAssetMediaType.Image` , und übergeben Sie den Medientyp.
+Mit photokit können Sie Modelldaten problemlos über eine Vielzahl von Abruf Methoden Abfragen. Wenn Sie z. b. alle Images abrufen möchten, `PHAsset.Fetch`rufen Sie auf `PHAssetMediaType.Image` , und übergeben Sie den Medientyp.
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-Die `PHFetchResult` Instanz würde dann `PFAsset` alle Instanzen enthalten, die Bilder darstellen. Um die Images selbst abzurufen, verwenden `PHImageManager` Sie (oder die Cache `PHCachingImageManager`Version), um eine Anforderung für das Image durch Aufrufen `RequestImageForAsset`von zu erstellen. Der folgende Code ruft beispielsweise ein Bild für jedes Medienobjekt in einem `PHFetchResult` ab, das in einer Auflistungs Ansichts Zelle angezeigt werden soll:
+Die `PHFetchResult` Instanz würde dann `PHAsset` alle Instanzen enthalten, die Bilder darstellen. Um die Images selbst abzurufen, verwenden `PHImageManager` Sie (oder die Cache `PHCachingImageManager`Version), um eine Anforderung für das Image durch Aufrufen `RequestImageForAsset`von zu erstellen. Der folgende Code ruft beispielsweise ein Bild für jedes Medienobjekt in einem `PHFetchResult` ab, das in einer Auflistungs Ansichts Zelle angezeigt werden soll:
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)

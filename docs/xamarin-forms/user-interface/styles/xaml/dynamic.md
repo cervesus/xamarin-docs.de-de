@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: 1b4732e87fb09a4846bfe12b7a476dfef2d6f4f9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9a26532d13b843b812da94739be071c7accac212
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647231"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228191"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Dynamische Stile in Xamarin.Forms
 
@@ -84,8 +84,8 @@ public partial class DynamicStylesPage : ContentPage
 
 Wenn die `OnButtonClicked` -Ereignishandler ausgeführt wird, `searchBarStyle` wechselt zwischen `blueSearchBarStyle` und `greenSearchBarStyle`. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
-[![](dynamic-images/dynamic-style-blue.png "Blue Dynamic Style Beispiel")](dynamic-images/dynamic-style-blue-large.png#lightbox "Blue Dynamic Style Beispiel")
-[![](dynamic-images/dynamic-style-green.png "Dynamic Style Beispiel Grün") ] (dynamic-images/dynamic-style-green-large.png#lightbox "Grün Dynamic Style-Beispiel")
+[![](dynamic-images/dynamic-style-blue.png)](dynamic-images/dynamic-style-blue-large.png#lightbox)
+Beispiel für ein blaues dynamisches Stil Beispiel[![für ein grünes Beispiel](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
 
 Im folgenden Codebeispiel wird veranschaulicht, die entsprechende Seite in C# geschrieben wird:
 
@@ -163,8 +163,8 @@ Die [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) Instanzen verwenden den `Stati
 
 In der CodeBehind-Datei, die der Konstruktor erstellt ein [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Eintrag mit dem Schlüssel `searchBarStyle`gemäß dem vorherigen Beispiel, das dynamische Formate veranschaulicht. Wenn die `OnButtonClicked` -Ereignishandler ausgeführt wird, `searchBarStyle` wechselt zwischen `blueSearchBarStyle` und `greenSearchBarStyle`. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "Blue Dynamic Style-Vererbungsbeispiel")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "Blue Dynamic Style-Vererbungsbeispiel")
-[![](dynamic-images/dynamic-style-inheritance-green.png "Dynamic Style Grün Vererbungsbeispiel für")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "Dynamic Style-Vererbungsbeispiel Grün")
+[![Blaue dynamische Stil Vererbung Beispiel](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
+[![Beispiel für grünes dynamisches Format Vererbung](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
 
 Im folgenden Codebeispiel wird veranschaulicht, die entsprechende Seite in C# geschrieben wird:
 

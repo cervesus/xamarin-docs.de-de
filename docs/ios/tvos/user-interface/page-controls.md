@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bb53c11612cf492cda39067db861c1d67e0d3e16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: decbbdab09b514bd49784f6ba45575ae845c547f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648983"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226473"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Arbeiten mit tvos-Seiten Steuerelementen in xamarin
 
@@ -35,37 +35,37 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-    
+
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
-1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab: 
+1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
 
     [![](page-controls-images/page02.png "Ein Seiten Steuerelement")](page-controls-images/page02.png#lightbox)
-1. Auf der **Registerkarte widget** des **Eigenschaftenpad**können Sie verschiedene Eigenschaften des Seiten Steuer Elements anpassen, z. b. die **aktuelle Seite** und die Anzahl **der Seiten**: 
+1. Auf der **Registerkarte widget** des **Eigenschaftenpad**können Sie verschiedene Eigenschaften des Seiten Steuer Elements anpassen, z. b. die **aktuelle Seite** und die Anzahl **der Seiten**:
 
     [![](page-controls-images/page03.png "Die Widget-Registerkarte")](page-controls-images/page03.png#lightbox)
 1. Fügen Sie als nächstes der Ansicht Steuerelemente oder Gesten hinzu, um die Auflistung der Seiten rückwärts und vorwärts zu bewegen.
-1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel: 
+1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel:
 
     [![](page-controls-images/page04.png "Benennen des Steuer Elements")](page-controls-images/page04.png#lightbox)
 1. Speichern Sie die Änderungen.
-    
+
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
+
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
-1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab: 
+1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
 
     [![](page-controls-images/page02-vs.png "Ein Seiten Steuerelement")](page-controls-images/page02-vs.png#lightbox)
-1. Auf der **Registerkarte widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Seiten Steuer Elements anpassen, z. b. die **aktuelle Seite** und die Anzahl **der Seiten**: 
+1. Auf der **Registerkarte widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Seiten Steuer Elements anpassen, z. b. die **aktuelle Seite** und die Anzahl **der Seiten**:
 
     [![](page-controls-images/page03-vs.png "Die Widget-Registerkarte")](page-controls-images/page03-vs.png#lightbox)
 1. Fügen Sie als nächstes der Ansicht Steuerelemente oder Gesten hinzu, um die Auflistung der Seiten rückwärts und vorwärts zu bewegen.
-1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel: 
+1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel:
 
     [![](page-controls-images/page04-vs.png "Benennen des Steuer Elements")](page-controls-images/page04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
-    
+
 
 -----
 
@@ -160,7 +160,7 @@ PageView.CurrentPage = PageNumber;
 
 Die `CurrentPage` -Eigenschaft ist auf NULL (0) basiert, sodass die erste Seite 0 (null) und der letzte eine minus der maximalen Anzahl von Seiten sein wird.
 
-Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md). 
+Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 
 <a name="Summary" />
 

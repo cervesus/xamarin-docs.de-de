@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 41aabb5e8b6d3eb46a92ee194c6b6b5e3ca51943
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e90e108e6b02055a585129b6412641a726afaab4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655628"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226294"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Arbeiten mit Zeilen Aktionen in xamarin. IOS
 
@@ -22,7 +22,7 @@ _In dieser Anleitung wird veranschaulicht, wie benutzerdefinierte wischen-Aktion
 
 IOS bietet zwei Möglichkeiten zum Ausführen von Aktionen für eine Tabelle `UISwipeActionsConfiguration` : `UITableViewRowAction`und.
 
-`UISwipeActionsConfiguration`wurde in ios 11 eingeführt und wird verwendet, um eine Reihe von Aktionen zu definieren, die durchgeführt werden sollten, wenn der Benutzer in einer der Zeilen in einer Tabellenansicht _in beide Richtungen bewegt_ wird. Dieses Verhalten ähnelt dem der nativen Mail-app. 
+`UISwipeActionsConfiguration`wurde in ios 11 eingeführt und wird verwendet, um eine Reihe von Aktionen zu definieren, die durchgeführt werden sollten, wenn der Benutzer in einer der Zeilen in einer Tabellenansicht _in beide Richtungen bewegt_ wird. Dieses Verhalten ähnelt dem der nativen Mail-app.
 
 Die `UITableViewRowAction` -Klasse wird verwendet, um eine Aktion zu definieren, die ausgeführt wird, wenn der Benutzer in einer Zeile in einer Tabellenansicht horizontal nach links bewegt.
 Wenn Sie z. b. eine Tabelle bearbeiten, wird die Schaltfläche **Löschen** standardmäßig in einer Zeile nach links angezeigt. Indem mehrere Instanzen der `UITableViewRowAction` Klasse an einen `UITableView`angefügt werden, können mehrere benutzerdefinierte Aktionen definiert werden, jeweils mit eigenem Text, Formatierung und Verhalten.
@@ -32,7 +32,7 @@ Wenn Sie z. b. eine Tabelle bearbeiten, wird die Schaltfläche **Löschen** stan
 
 Zum Implementieren von wischen-Aktionen mit `UISwipeActionsConfiguration`sind drei Schritte erforderlich:
 
-1. Über `GetLeadingSwipeActionsConfiguration` schreiben Sie die `GetTrailingSwipeActionsConfiguration` Methoden und/oder. Diese Methoden geben einen `UISwipeActionsConfiguration`zurück. 
+1. Über `GetLeadingSwipeActionsConfiguration` schreiben Sie die `GetTrailingSwipeActionsConfiguration` Methoden und/oder. Diese Methoden geben einen `UISwipeActionsConfiguration`zurück.
 2. Instanziieren Sie `UISwipeActionsConfiguration` die, die zurückgegeben werden soll. Diese Klasse nimmt ein-Array `UIContextualAction`an.
 3. Erstellen Sie eine `UIContextualAction`.
 
@@ -40,7 +40,7 @@ Diese werden in den folgenden Abschnitten ausführlicher erläutert.
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. Implementieren der swipeactionskonfigurationen-Methoden
 
-`UITableViewController`(und auch `UITableViewSource` und `UITableViewDelegate`) enthalten zwei Methoden: `GetLeadingSwipeActionsConfiguration` und `GetTrailingSwipeActionsConfiguration`, die zum Implementieren eines Satzes von Schwenk Aktionen für eine Tabellen Ansichts Zeile verwendet werden. Die führende wischen-Aktion verweist auf einen Schwenk von der linken Seite des Bildschirms in einer Sprache von links nach rechts und von der rechten Seite des Bildschirms in einer Sprache von rechts nach links. 
+`UITableViewController`(und auch `UITableViewSource` und `UITableViewDelegate`) enthalten zwei Methoden: `GetLeadingSwipeActionsConfiguration` und `GetTrailingSwipeActionsConfiguration`, die zum Implementieren eines Satzes von Schwenk Aktionen für eine Tabellen Ansichts Zeile verwendet werden. Die führende wischen-Aktion verweist auf einen Schwenk von der linken Seite des Bildschirms in einer Sprache von links nach rechts und von der rechten Seite des Bildschirms in einer Sprache von rechts nach links.
 
 Das folgende Beispiel (aus dem [tableswipeer Actions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions) -Beispiel) veranschaulicht die Implementierung der führenden wischen-Konfiguration. Aus den kontextbezogenen Aktionen werden zwei Aktionen erstellt, die nach [folgend](#create-uicontextualaction)erläutert werden. Diese Aktionen werden dann an eine neu initialisierte [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)weitergegeben, die als Rückgabewert verwendet wird.
 
@@ -54,11 +54,11 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
     //UISwipeActionsConfiguration
     var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { flagAction, definitionAction });
-    
+
     leadingSwipe.PerformsFirstActionWithFullSwipe = false;
-    
+
     return leadingSwipe;
-}  
+}
 ```
 
 <a name="create-uiswipeactionsconfigurations" />
@@ -99,10 +99,10 @@ public UIContextualAction ContextualFlagAction(int row)
                         "Flag",
                         (FlagAction, view, success) => {
                             var alertController = UIAlertController.Create($"Report {words[row]}?", "", UIAlertControllerStyle.Alert);
-                            alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null)); 
+                            alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                             alertController.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Destructive, null));
                             PresentViewController(alertController, true, null);
-                            
+
                             success(true);
                         });
 

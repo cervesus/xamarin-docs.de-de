@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1e1e86c6301214c7117b8f3b21b19554499d7fbd
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 99fafe0ae0186ac68609ebe22dabe64e588ee5e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121445"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226674"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri-Remote-und Bluetooth-Controller für tvos in xamarin
 
@@ -67,7 +67,7 @@ Apple bietet die folgenden Vorschläge zum Arbeiten mit touchoberflächen Gesten
 
 ## <a name="siri-remote-buttons"></a>Siri Remote Schaltflächen
 
-Zusätzlich zu Gesten auf der Touchoberfläche kann Ihre APP darauf reagieren, dass der Benutzer auf die Berührungs Oberfläche klickt oder die Schaltfläche Wiedergabe/Pause drückt. Wenn Sie über das Game Controller-Framework auf die Siri-Remote zugreifen, können Sie auch die Menü Schaltfläche erkennen, die gedrückt wird. 
+Zusätzlich zu Gesten auf der Touchoberfläche kann Ihre APP darauf reagieren, dass der Benutzer auf die Berührungs Oberfläche klickt oder die Schaltfläche Wiedergabe/Pause drückt. Wenn Sie über das Game Controller-Framework auf die Siri-Remote zugreifen, können Sie auch die Menü Schaltfläche erkennen, die gedrückt wird.
 
 Außerdem können Menü Schaltflächen mit einer Gestenerkennung mit Standard `UIKit` Elementen erkannt werden. Wenn Sie die Menü Schaltfläche abfangen, die gedrückt wird, sind Sie dafür verantwortlich, die aktuelle Ansicht und den Ansichts Controller zu schließen und zur vorherigen Ansicht zurückzukehren.
 
@@ -83,14 +83,14 @@ Die einfachste Möglichkeit, mit der Siri-Remote Verbindung in ihrer xamarin. tv
 Gehen Sie folgendermaßen vor, um eine Gestenerkennung hinzuzufügen:
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zum Bearbeiten des Schnittstellen-Designers.
-2. Ziehen Sie eine **Tap-Gestenerkennung** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab: 
+2. Ziehen Sie eine **Tap-Gestenerkennung** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab:
 
     [![](remote-bluetooth-images/storyboard01.png "Eine Tap-Gestenerkennung")](remote-bluetooth-images/storyboard01.png#lightbox)
-3. Aktivieren Sie im **Schalt** Flächen Abschnitt des **Attribut Inspektors**Folgendes: 
+3. Aktivieren Sie im **Schalt** Flächen Abschnitt des **Attribut Inspektors**Folgendes:
 
     [![](remote-bluetooth-images/storyboard02.png "Auswahl aktivieren")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Select** bedeutet, dass die Geste auf den Benutzer reagiert, indem er auf die **Touchoberfläche** der Siri-Remote klickt. Sie haben auch die Möglichkeit, auf die Schaltflächen **Menü**, wieder **Gabe/Pause**, nach **oben**, **nach unten**, **Links** und **Rechts** zu antworten.
-5. Richten Sie als nächstes eine **Aktion** aus dem **Tap-Gesten Erkennungs** Modul ein, `TouchSurfaceClicked`und nennen Sie es: 
+5. Richten Sie als nächstes eine **Aktion** aus dem **Tap-Gesten Erkennungs** Modul ein, `TouchSurfaceClicked`und nennen Sie es:
 
     [![](remote-bluetooth-images/storyboard03.png "Eine Aktion aus der TAP-Gestenerkennung.")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück.
@@ -142,7 +142,7 @@ namespace tvRemote
         #region Override Methods
         public override void ViewDidLoad ()
         {
-            base.ViewDidLoad ();    
+            base.ViewDidLoad ();
 
             // Wire-up gestures
             var upGesture = new UISwipeGestureRecognizer (() => {
@@ -186,9 +186,9 @@ namespace tvRemote
 
 ## <a name="low-level-event-handling"></a>Ereignis Behandlung auf niedriger Ebene
 
-Wenn Sie einen benutzerdefinierten Typ erstellen, der `UIKit` auf in ihrer xamarin. tvos-App basiert `UIView`(z. b.), können Sie auch die Behandlung von Schaltflächen auf niedriger `UIPress` Ebene über Ereignisse bereitstellen. 
+Wenn Sie einen benutzerdefinierten Typ erstellen, der `UIKit` auf in ihrer xamarin. tvos-App basiert `UIView`(z. b.), können Sie auch die Behandlung von Schaltflächen auf niedriger `UIPress` Ebene über Ereignisse bereitstellen.
 
-Ein `UIPress` Ereignis besteht darin, `UITouch` das Ereignis für IOS zu optimieren, außer `UIPress` dass Informationen zu Schaltflächen auf der Siri-Remote Verbindung oder anderen angeschlossenen Bluetooth-Geräten (z. b. ein Spiele Controller) zurückgegeben werden. `UIPress`Ereignisse beschreiben die gedrückte Schaltfläche und ihren Zustand (gestartet, abgebrochen, geändert oder beendet). 
+Ein `UIPress` Ereignis besteht darin, `UITouch` das Ereignis für IOS zu optimieren, außer `UIPress` dass Informationen zu Schaltflächen auf der Siri-Remote Verbindung oder anderen angeschlossenen Bluetooth-Geräten (z. b. ein Spiele Controller) zurückgegeben werden. `UIPress`Ereignisse beschreiben die gedrückte Schaltfläche und ihren Zustand (gestartet, abgebrochen, geändert oder beendet).
 
 Für analoge Schaltflächen auf Geräten wie Bluetooth Game Controllers `UIPress` gibt auch die Menge der auf die Schaltfläche angewendeten Force zurück. Die `Type` -Eigenschaft `UIPress` des-Ereignisses definiert, welche physische Schaltfläche den Zustand geändert hat, während die restlichen Eigenschaften die aufgetretene Änderung beschreiben.
 
@@ -211,7 +211,7 @@ namespace tvRemote
         }
         #endregion
 
-        #region 
+        #region
         public EventView (IntPtr handle) : base (handle)
         {
         }

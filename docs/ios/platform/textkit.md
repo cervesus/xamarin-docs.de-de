@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c0ee125090a2bb817f09a18c34033a1f8a788569
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528726"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227278"
 ---
 # <a name="textkit-in-xamarinios"></a>Textkit in xamarin. IOS
 
@@ -29,7 +29,7 @@ Um die Funktionen von textkit für Standard Steuerelemente verfügbar zu machen,
 Textkit bietet eine geschichtete Architektur, die den Text Speicher vom Layout und der Anzeige trennt, einschließlich der folgenden Klassen:
 
 - `NSTextContainer`– Stellt das Koordinatensystem und die Geometrie zur Verfügung, die zum Layouttext verwendet werden.
-- `NSLayoutManager`– Legt Text fest, indem Text in Glyphen verwandelt wird. 
+- `NSLayoutManager`– Legt Text fest, indem Text in Glyphen verwandelt wird.
 - `NSTextStorage`– Enthält die Textdaten und verarbeitet Updates von Batch Texteigenschaften. Alle Batch Aktualisierungen werden dem LayoutManager für die tatsächliche Verarbeitung der Änderungen übergeben, z. b. Neuberechnen des Layouts und Neuzeichnen des Texts.
 
 
@@ -160,7 +160,7 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 
 Der folgende Screenshot veranschaulicht, wie sich das Textlayout um den gezeichneten Pfad ändert:
 
-<!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")--> 
+<!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")-->
 ![](textkit-images/exclusionpath2.png "Dieser Screenshot veranschaulicht, wie sich das Textlayout um den gezeichneten Pfad ändert.")
 
 Beachten Sie, dass die- `AllowsNonContiguousLayout` Eigenschaft des Layout-Managers in diesem Fall auf false festgelegt ist. Dadurch wird das Layout für alle Fälle neu berechnet, in denen sich der Text ändert. Wenn diese Einstellung auf "true" festgelegt wird, kann die Leistung beeinträchtigt werden, indem eine Aktualisierung des vollständigen Layouts vermieden wird, insbesondere bei großen Dokumenten. Wenn Sie jedoch `AllowsNonContiguousLayout` auf true festlegen, wird verhindert, dass der Ausschluss Pfad das Layout in einigen Fällen aktualisiert, z. b. Wenn Text zur Laufzeit ohne nachfolgende Wagen Rücklauf Eingabe eingegeben wird, bevor der Pfad festgelegt wird.

@@ -1,24 +1,24 @@
 ---
-title: Einführung in Xamarin.Forms-Stile
-description: Stile ermöglichen die Darstellung der visuellen Elemente angepasst werden. Stile werden für einen bestimmten Typ definiert und enthalten Werte für die Eigenschaften für diesen Typ verfügbar.
+title: Einführung in xamarin. Forms-Stile
+description: Mit Stilen können visuelle Elemente angepasst werden. Stile werden für einen bestimmten Typ definiert und enthalten Werte für die Eigenschaften, die für diesen Typ verfügbar sind.
 ms.prod: xamarin
 ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 9e5fb0196b67e23a034856ee0dd7b9c7d4846b31
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 35f8dad3590c07ceb3c93aa735b8c02d75098498
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971116"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228174"
 ---
-# <a name="introduction-to-xamarinforms-styles"></a>Einführung in Xamarin.Forms-Stile
+# <a name="introduction-to-xamarinforms-styles"></a>Einführung in xamarin. Forms-Stile
 
-_Stile ermöglichen die Darstellung der visuellen Elemente angepasst werden. Stile werden für einen bestimmten Typ definiert und enthalten Werte für die Eigenschaften für diesen Typ verfügbar._
+_Mit Stilen können visuelle Elemente angepasst werden. Stile werden für einen bestimmten Typ definiert und enthalten Werte für die Eigenschaften, die für diesen Typ verfügbar sind._
 
-Xamarin.Forms-Anwendungen enthalten häufig mehrere Steuerelemente, die eine identische Darstellung. Z. B. eine Anwendung möglicherweise mehrere [ `Label` ](xref:Xamarin.Forms.Label) Instanzen, in denen die Schriftartoptionen für den gleichen Optionen und das Layout, wie in den folgenden XAML-Codebeispiel gezeigt:
+Xamarin. Forms-Anwendungen enthalten häufig mehrere Steuerelemente mit identischer Darstellung. Beispielsweise kann eine Anwendung über mehrere [`Label`](xref:Xamarin.Forms.Label) Instanzen verfügen, die die gleichen Schriftart Optionen und Layoutoptionen aufweisen, wie im folgenden XAML-Codebeispiel gezeigt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -82,35 +82,35 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-Jede [ `Label` ](xref:Xamarin.Forms.Label) Instanz verfügt über identische Eigenschaftswerte für die Steuerung der Darstellung des Texts angezeigt werden, indem die `Label`. Dies ergibt die in den folgenden Screenshots gezeigte Darstellung:
+Jede [`Label`](xref:Xamarin.Forms.Label) Instanz verfügt über identische Eigenschaftswerte zum Steuern der Darstellung des Texts, der `Label`von angezeigt wird. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
-[![](introduction-images/no-styles.png "Bezeichnung Darstellung ohne Stile")](introduction-images/no-styles-large.png#lightbox "Bezeichnung Darstellung ohne Stile")
+[![Darstellung der Bezeichnung ohne Stile](introduction-images/no-styles.png)](introduction-images/no-styles-large.png#lightbox)
 
-Die Darstellung der einzelnen Steuerelemente festlegen kann sein, sich wiederholende und fehleranfällig. Stattdessen kann ein Stil erstellt werden, die definiert die Darstellung, und klicken Sie dann auf die erforderlichen Steuerelemente angewendet.
+Das Festlegen der Darstellung der einzelnen Steuerelemente kann sich wiederholt und fehleranfällig sein. Stattdessen kann ein Stil erstellt werden, der die Darstellung definiert und dann auf die erforderlichen Steuerelemente angewendet wird.
 
 ## <a name="create-a-style"></a>Erstellen eines Stils
 
-Die [ `Style` ](xref:Xamarin.Forms.Style) Klasse gruppiert eine Auflistung von Eigenschaftswerten in ein Objekt, das Sie dann auf mehrere Instanzen für visuelles Element angewendet werden kann. Dies hilft beim Reduzieren von repetitivem Markup und eine Darstellung Anwendungen leichter geändert werden kann.
+Die [`Style`](xref:Xamarin.Forms.Style) -Klasse gruppiert eine Auflistung von Eigenschafts Werten in ein Objekt, das dann auf mehrere visuelle Element Instanzen angewendet werden kann. Dadurch wird wiederholtes Markup reduziert, und die Darstellung einer Anwendung kann einfacher geändert werden.
 
-Obwohl Formate in erster Linie für XAML-basierte Anwendungen entwickelt wurden, können sie auch in c# erstellt werden:
+Obwohl Stile in erster Linie für XAML-basierte Anwendungen entwickelt wurden, können Sie auch in C#erstellt werden:
 
-- [`Style`](xref:Xamarin.Forms.Style) in XAML erstellte Instanzen werden in der Regel definiert, einem [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) , zugewiesen ist die [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung eines Steuerelements, Seite oder die [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Auflistung von der Anwendung.
-- [`Style`](xref:Xamarin.Forms.Style) Instanzen, die in c# erstellt wurde, werden in der Regel definiert, in der Klasse von der Seite oder in eine Klasse, die Global zugegriffen werden kann.
+- [`Style`](xref:Xamarin.Forms.Style)Instanzen, die in XAML erstellt werden, werden [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) in der Regel in einer [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) definiert, die der-Auflistung eines Steuer Elements, [`Resources`](xref:Xamarin.Forms.Application.Resources) einer Seite oder der-Auflistung der Anwendung zugewiesen ist.
+- [`Style`](xref:Xamarin.Forms.Style)Instanzen, die C# in erstellt werden, werden in der Regel in der-Klasse der Seite oder in einer Klasse definiert, die Global aufgerufen werden kann.
 
 Die Entscheidung, wo Sie eine [`Style`](xref:Xamarin.Forms.Style)-Klasse definieren, hat Einfluss darauf, wo Sie sie verwenden können:
 
-- [`Style`](xref:Xamarin.Forms.Style) Instanzen, die auf der Steuerelementebene definiert können nur auf das Steuerelement und seinen untergeordneten Elementen angewendet werden.
-- [`Style`](xref:Xamarin.Forms.Style) auf Seitenebene definierte Instanzen können nur auf der Seite und seinen untergeordneten Elementen angewendet werden.
-- [`Style`](xref:Xamarin.Forms.Style) auf Anwendungsebene definierte Instanzen können in der gesamten Anwendung angewendet werden.
+- [`Style`](xref:Xamarin.Forms.Style)Instanzen, die auf der Steuerelement Ebene definiert sind, können nur auf das Steuerelement und seine untergeordneten Elemente angewendet werden.
+- [`Style`](xref:Xamarin.Forms.Style)auf der Seitenebene definierte Instanzen können nur auf die Seite und ihre untergeordneten Elemente angewendet werden.
+- [`Style`](xref:Xamarin.Forms.Style)Instanzen, die auf Anwendungsebene definiert werden, können in der gesamten Anwendung angewendet werden.
 
-Jede [ `Style` ](xref:Xamarin.Forms.Style) Instanz enthält eine Auflistung einer oder mehreren [ `Setter` ](xref:Xamarin.Forms.Setter) Objekte mit jeweils `Setter` müssen eine [ `Property` ](xref:Xamarin.Forms.Setter.Property) und ein [`Value`](xref:Xamarin.Forms.Setter.Value). Die `Property` ist der Name der bindbare Eigenschaft des Elements, der Stil angewendet wird, und die `Value` ist der Wert, der auf die Eigenschaft angewendet wird.
+Jede [`Style`](xref:Xamarin.Forms.Style) Instanz enthält eine Auflistung von einem oder mehreren [`Setter`](xref:Xamarin.Forms.Setter) -Objekten, wobei `Setter` jede eine [`Property`](xref:Xamarin.Forms.Setter.Property) -und [`Value`](xref:Xamarin.Forms.Setter.Value)eine-Instanz enthält. Der `Property` ist der Name der bindbaren Eigenschaft des Elements, auf das der Stil angewendet wird, `Value` und ist der Wert, der auf die Eigenschaft angewendet wird.
 
-Jede [ `Style` ](xref:Xamarin.Forms.Style) Instanz möglich *explizite*, oder *implizite*:
+Jede [`Style`](xref:Xamarin.Forms.Style) Instanz kann *explizit*oder *implizit*sein:
 
-- Ein *explizite* [ `Style` ](xref:Xamarin.Forms.Style) -Instanz wird durch die Angabe definiert eine [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) und ein `x:Key` Wert ein, und durch Festlegen des Target-Elements [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaft, um die `x:Key` Verweis. Weitere Informationen zu *explizite* Stilen finden Sie unter [explizite Stile](~/xamarin-forms/user-interface/styles/explicit.md).
-- Ein *implizite* [ `Style` ](xref:Xamarin.Forms.Style) -Instanz wird definiert, durch Angeben von nur einem [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType). Die `Style` Instanz dann automatisch angewendet werden, um alle Elemente dieses Typs. Beachten Sie diese Unterklassen von der `TargetType` automatisch müssen nicht die `Style` angewendet. Weitere Informationen zu *implizite* Stilen finden Sie unter [impliziten Stilen](~/xamarin-forms/user-interface/styles/implicit.md).
+- Eine *explizite* [`Style`](xref:Xamarin.Forms.Style) -Instanz wird definiert, indem [`TargetType`](xref:Xamarin.Forms.Style.TargetType) ein und `x:Key` ein-Wert angegeben werden, und durch Festlegen [`Style`](xref:Xamarin.Forms.NavigableElement.Style) der-Eigenschaft `x:Key` des Ziel Elements auf den Verweis. Weitere Informationen zu *expliziten* Stilen finden Sie unter [explizite Stile](~/xamarin-forms/user-interface/styles/explicit.md).
+- Eine *implizite* [`Style`](xref:Xamarin.Forms.Style) -Instanz wird definiert, indem nur [`TargetType`](xref:Xamarin.Forms.Style.TargetType)ein angegeben wird. Die `Style` Instanz wird dann automatisch auf alle Elemente dieses Typs angewendet. Beachten Sie, dass Unterklassen `TargetType` von nicht automatisch `Style` auf angewendet werden. Weitere Informationen zu *impliziten* Stilen finden Sie unter [implizite Stile](~/xamarin-forms/user-interface/styles/implicit.md).
 
-Beim Erstellen einer [ `Style` ](xref:Xamarin.Forms.Style), [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) Eigenschaft ist immer erforderlich. Das folgende Codebeispiel zeigt eine *explizite* Stil (Beachten Sie die `x:Key`) in XAML erstellt:
+Beim Erstellen eines [`Style`](xref:Xamarin.Forms.Style)ist die [`TargetType`](xref:Xamarin.Forms.Style.TargetType) -Eigenschaft immer erforderlich. Das folgende Codebeispiel zeigt einen *expliziten* Stil (beachten `x:Key`Sie den), der in XAML erstellt wurde:
 
 ```xaml
 <Style x:Key="labelStyle" TargetType="Label">
@@ -120,20 +120,20 @@ Beim Erstellen einer [ `Style` ](xref:Xamarin.Forms.Style), [ `TargetType` ](xre
 </Style>
 ```
 
-Anzuwendende eine `Style`, das Zielobjekt muss ein [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) , entspricht die [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) Eigenschaftswert, der die `Style`, wie in den folgenden XAML-Codebeispiel gezeigt:
+Zum Anwenden eines `Style`muss das Zielobjekt ein [`VisualElement`](xref:Xamarin.Forms.VisualElement) sein, das mit `Style`dem [`TargetType`](xref:Xamarin.Forms.Style.TargetType) Eigenschafts Wert von übereinstimmt, wie im folgenden XAML-Codebeispiel gezeigt:
 
 ```xaml
 <Label Text="Demonstrating an explicit style" Style="{StaticResource labelStyle}" />
 ```
 
-Formatvorlagen, die weiter unten in der Hierarchie von Inhaltsansichten haben Vorrang vor den definierten höher einrichten. Z. B. eine [ `Style` ](xref:Xamarin.Forms.Style) festlegt [ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor) zu `Red` in der Anwendung wird von einem Seite-Level-Stil, der festlegt Ebene überschrieben werden `Label.TextColor` zu `Green`. Auf ähnliche Weise wird ein Servicelevel-Seite-Style von einem Steuerelementstil Ebene überschrieben werden. Darüber hinaus, wenn `Label.TextColor` direkt auf eine Steuerelementeigenschaft, dies hat Vorrang vor alle Formatvorlagen festgelegt ist.
+Formatvorlagen, die weiter unten in der Hierarchie von Inhaltsansichten haben Vorrang vor den definierten höher einrichten. Z. B. eine [ `Style` ](xref:Xamarin.Forms.Style) festlegt [ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor) zu `Red` in der Anwendung wird von einem Seite-Level-Stil, der festlegt Ebene überschrieben werden `Label.TextColor` zu `Green`. Auf ähnliche Weise wird ein Servicelevel-Seite-Style von einem Steuerelementstil Ebene überschrieben werden. Wenn `Label.TextColor` außerdem direkt für eine Steuerelement Eigenschaft festgelegt wird, hat dies Vorrang vor beliebigen Stilen.
 
-Die Artikel in diesem Abschnitt veranschaulichen und erläutern, wie zum Erstellen und anwenden *explizite* und *implizite* Stile, wie Sie globale Stile erstellen, formatieren die Vererbung, zum Reagieren auf Änderungen an Formatvorlagen zur Laufzeit und wie Sie mit der integrierten Formatvorlagen in Xamarin.Forms enthalten.
+In den Artikeln in diesem Abschnitt wird erläutert, wie *explizite* und *implizite* Stile erstellt und angewendet werden, wie globale Stile erstellt werden, wie Stil Vererbung verwendet wird, wie auf Stiländerungen zur Laufzeit reagiert wird und wie die in enthaltenen integrierten Stile verwendet werden. Xamarin. Forms.
 
 > [!NOTE]
-> **Was ist StyleId?**
+> **Was ist styleId?**
 >
-> Vor dem Xamarin.Forms 2.2 die [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) Eigenschaft zum Identifizieren der einzelnen Elemente in einer Anwendung für die Identifikation in UI-Tests und Design-Engines wie z.B. Pixate verwendet wurde. Xamarin.Forms 2.2 führte jedoch die [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId) -Eigenschaft, die ersetzt wird, hat die [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) Eigenschaft.
+> Vor xamarin. Forms 2,2 wurde die [`StyleId`](xref:Xamarin.Forms.Element.StyleId) -Eigenschaft verwendet, um einzelne Elemente in einer Anwendung zur Identifizierung beim Testen der Benutzeroberfläche und in Design Modulen wie "pixate" zu identifizieren. Xamarin. Forms 2,2 hat jedoch die [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) -Eigenschaft eingeführt, die die [`StyleId`](xref:Xamarin.Forms.Element.StyleId) -Eigenschaft abgelöst hat.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 65644673bde426fff92530a7a36812d1c95b5995
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 40aa36fa8a89eacd8be7914020c06f3fec75baff
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121291"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227341"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Spracherkennung in xamarin. IOS
 
@@ -89,8 +89,8 @@ Der Entwickler muss vier wichtige Schritte ausführen, um die Spracherkennung in
 - Geben Sie mithilfe des `Info.plist` `NSSpeechRecognitionUsageDescription` Schlüssels eine Verwendungs Beschreibung in der Datei der APP an. Eine Kamera-APP könnte z. b. die folgende Beschreibung enthalten: _"Dies ermöglicht es Ihnen, ein Foto zu nehmen, indem Sie das Wort" Käse "sagen._
 - Fordern Sie eine Autorisierung `SFSpeechRecognizer.RequestAuthorization` durch Aufrufen der-Methode an, um eine `NSSpeechRecognitionUsageDescription` Erläuterung (im obigen Schlüssel bereitgestellt) anzuzeigen, warum die APP sprach Erkennungs Zugriff auf den Benutzer in einem Dialogfeld wünscht, damit Sie akzeptiert oder abgelehnt werden kann.
 - Erstellen Sie eine sprach Erkennungs Anforderung:
-    - Verwenden Sie für vorab aufgezeichnete Audiodaten auf dem `SFSpeechURLRecognitionRequest` Datenträger die-Klasse.
-    - Verwenden Sie für liveaudiodaten (oder Audiodateien aus dem Arbeits `SFSPeechAudioBufferRecognitionRequest` Speicher) die-Klasse.
+  - Verwenden Sie für vorab aufgezeichnete Audiodaten auf dem `SFSpeechURLRecognitionRequest` Datenträger die-Klasse.
+  - Verwenden Sie für liveaudiodaten (oder Audiodateien aus dem Arbeits `SFSPeechAudioBufferRecognitionRequest` Speicher) die-Klasse.
 - Übergeben Sie die sprach Erkennungs Anforderung an eine sprach Erkennungsfunktion`SFSpeechRecognizer`(), um die Erkennung zu beginnen. Die APP kann optional auf dem zurückgegebenen `SFSpeechRecognitionTask` enthalten, um die Erkennungsergebnisse zu überwachen und zu verfolgen.
 
 Diese Schritte werden im folgenden ausführlich beschrieben.
@@ -380,8 +380,8 @@ Es ist wichtig, dass `RecognitionTask.Cancel` aufgerufen wird, wenn der Benutzer
 Apple erzwingt bei der Arbeit mit der Spracherkennung in einer IOS-APP die folgenden Einschränkungen:
 
 - Die Spracherkennung ist für alle apps kostenlos, aber Ihre Nutzung ist nicht unbegrenzt:
-    - Einzelne IOS-Geräte verfügen über eine begrenzte Anzahl von erkenungen, die pro Tag ausgeführt werden können.
-    - Apps werden pro Tag Global gedrosselt.
+  - Einzelne IOS-Geräte verfügen über eine begrenzte Anzahl von erkenungen, die pro Tag ausgeführt werden können.
+  - Apps werden pro Tag Global gedrosselt.
 - Die APP muss für die Behandlung von Fehlern bei der sprach Erkennungs Netzwerkverbindung und bei Verwendungsraten Limits vorbereitet sein.
 - Die Spracherkennung kann sowohl für den Akku-als auch für den hohen Netzwerkverkehr auf dem IOS-Gerät des Benutzers einen hohen Kostenaufwand haben. daher erzwingt Apple eine strikte Audiodauer von ungefähr einer Minute sprach Maximum.
 
