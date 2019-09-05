@@ -4,15 +4,15 @@ description: In diesem Leitfaden wird erläutert, wie Sie die Option „Mit Mac 
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: e77a5d7863428d743c536b5aa7b2bb88d12cffc0
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 5889859543deaecccb72740fccbc2b3343a8297f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978323"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292124"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
 
@@ -39,12 +39,12 @@ Das Feature „Mit Mac koppeln“ ermöglicht den folgenden Entwicklungsworkflow
 - Die Windows-Befehlszeile kann zur Erstellung von iOS-Anwendungen verwendet werden.
 
 > [!NOTE]
-> 
+>
 > Führen Sie zunächst die folgenden Schritte aus, bevor Sie die Anweisungen in diesem Leitfaden beachten:
-> 
+>
 > - Installieren Sie [Visual Studio 2019](~/get-started/installation/windows.md) auf einem Windows-Computer.
 > - Installieren Sie auf einem Mac [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) und [Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation).
->    - _Nach der Installation müssen Sie Xcode manuell öffnen_, damit sie weitere Komponenten hinzufügen können.
+>   - _Nach der Installation müssen Sie Xcode manuell öffnen_, damit sie weitere Komponenten hinzufügen können.
 >
 > Wenn Sie Visual Studio für Mac nicht installieren möchten, kann Visual Studio 2019 automatisch den Mac-Buildhost mit Xamarin.iOS und Mono konfigurieren.
 > Sie müssen noch Xcode installieren und ausführen.
@@ -74,28 +74,28 @@ Nachdem Sie die Remoteanmeldung aktiviert haben, können Sie Visual Studio 2019 
 
 1. Öffnen Sie in Visual Studio 2019 ein vorhandenes iOS-Projekt, oder erstellen Sie über **Datei > Neu > Projekt** ein neues, und wählen Sie anschließend eine iOS-Projektvorlage aus.
 
-2. Öffnen Sie das Dialogfeld **Mit Mac koppeln**. 
+2. Öffnen Sie das Dialogfeld **Mit Mac koppeln**.
 
     - Klicken Sie dazu auf die Schaltfläche **Mit Mac koppeln** in der iOS-Symbolleiste:
 
-        ![iOS-Symbolleiste mit der hervorgehobenen Schaltfläche „Mit Mac koppeln“](images/ios-toolbar.png "The iOS toolbar, with the Pair to Mac button highlighted")
+      ![iOS-Symbolleiste mit der hervorgehobenen Schaltfläche „Mit Mac koppeln“](images/ios-toolbar.png "The iOS toolbar, with the Pair to Mac button highlighted")
 
     - Alternativ können Sie auch **Extras > iOS > Mit Mac koppeln** aufrufen.
 
     - Im Dialogfeld **Mit Mac koppeln** wird eine Liste aller zuvor verbundenen und zurzeit verfügbaren Mac-Buildhosts angezeigt:
 
-        ![Dialogfeld „Mit Mac koppeln“](images/pairtomac.png "The Pair to Mac dialog")
+      ![Dialogfeld „Mit Mac koppeln“](images/pairtomac.png "The Pair to Mac dialog")
 
-3. Wählen Sie einen Mac aus der Liste aus. Klicken Sie auf **Verbinden**. 
+3. Wählen Sie einen Mac aus der Liste aus. Klicken Sie auf **Verbinden**.
 
 4. Geben Sie Ihren Benutzernamen und Ihr Kennwort ein.
 
     - Beim erstmaligen Herstellen einer Verbindung mit einem Mac werden Sie aufgefordert, Ihren Benutzernamen und Ihr Kennwort für diesen Computer einzugeben:
 
-        ![Eingeben eines Benutzernamens und eines Kennworts für den Mac](images/auth.png "Entering a username and password for the Mac")
+      ![Eingeben eines Benutzernamens und eines Kennworts für den Mac](images/auth.png "Entering a username and password for the Mac")
 
-        > [!TIP]
-        > Verwenden Sie bei der Anmeldung Ihren Systembenutzernamen anstelle des vollständigen Namens.
+      > [!TIP]
+      > Verwenden Sie bei der Anmeldung Ihren Systembenutzernamen anstelle des vollständigen Namens.
 
     - Die Anmeldeinformationen werden vom Feature „Mit Mac koppeln“ verwendet, um eine neue SSH-Verbindung mit dem Mac herzustellen. Wenn dieser Vorgang erfolgreich ist, wird der Datei **authorized_keys** auf dem Mac ein Schlüssel hinzugefügt. Bei allen weiteren Verbindungen mit demselben Mac wird die Anmeldung automatisch vorgenommen.
 
@@ -107,12 +107,12 @@ Nachdem Sie die Remoteanmeldung aktiviert haben, können Sie Visual Studio 2019 
 
     - Wenn Visual Studio 2019 mit einem Mac verbunden wird, wird für das Mac-Element im Dialogfeld **Mit Mac koppeln** ein Symbol angezeigt, das darauf hinweist, dass aktuell eine Verbindung besteht:
 
-        ![Ein verbundener Mac](images/connected.png "A connected Mac")
+      ![Ein verbundener Mac](images/connected.png "A connected Mac")
 
       Es kann immer nur ein Mac gleichzeitig verbunden sein.
 
       > [!TIP]
-      > Wenn Sie mit der rechten Maustaste auf einen Mac in der Liste **Mit Mac koppeln** klicken, wird ein Kontextmenü angezeigt, in dem Sie die Aktion **Verbinden...**, **Diesen Mac vergessen** oder **Verbindung trennen** ausführen können.
+      > Wenn Sie mit der rechten Maustaste auf einen Mac in der Liste **Mit Mac koppeln** klicken, wird ein Kontextmenü angezeigt, in dem Sie die Aktion **Verbinden...** , **Diesen Mac vergessen** oder **Verbindung trennen** ausführen können.
       >
       > ![Kontextmenüelemente des Features „Mit Mac koppeln“](images/contextmenu.png "The Pair to Mac context menus")
       >
@@ -126,22 +126,22 @@ Wenn die Kopplung fehlschlägt, können Sie versuchen, den Mac [manuell hinzuzuf
 
 Wenn ein bestimmter Mac nicht im Dialogfeld **Mit Mac koppeln** aufgeführt wird, können Sie diesen manuell hinzufügen:
 
-1. Ermitteln Sie die IP-Adresse Ihres Macs. 
+1. Ermitteln Sie die IP-Adresse Ihres Macs.
 
     - Öffnen Sie **Systemeinstellungen > Freigaben > Entfernte Anmeldung** auf Ihrem Mac:
 
-        [![Die IP-Adresse des Macs unter „Systemeinstellungen“ > „Freigaben“](images/sharing-ipaddress.png "The Mac's IP address in System Preferences > Sharing")](images/sharing.png#lightbox)
+      [![Die IP-Adresse des Macs unter „Systemeinstellungen“ > „Freigaben“](images/sharing-ipaddress.png "The Mac's IP address in System Preferences > Sharing")](images/sharing.png#lightbox)
 
-    - Alternativ können Sie auch die Befehlszeile verwenden. Führen Sie im Terminal den folgenden Befehl aus: 
+    - Alternativ können Sie auch die Befehlszeile verwenden. Führen Sie im Terminal den folgenden Befehl aus:
 
-        ```bash
-        $ ipconfig getifaddr en0
-        196.168.1.8
-        ```
+      ```bash
+      $ ipconfig getifaddr en0
+      196.168.1.8
+      ```
 
       Abhängig von Ihrer Netzwerkkonfiguration müssen Sie möglicherweise nicht `en0`, sondern einen anderen Schnittstellennamen verwenden. Beispiele sind `en1` und `en2`.
 
-2. Klicken Sie in Visual Studio 2019 im Dialogfeld **Mit Mac koppeln** auf **Mac hinzufügen...**:
+2. Klicken Sie in Visual Studio 2019 im Dialogfeld **Mit Mac koppeln** auf **Mac hinzufügen...** :
 
     [![Schaltfläche „Mac hinzufügen...“ im Dialogfeld „Mit Mac koppeln“](images/addtomac.png "The Add Mac button in the Pair to Mac dialog")](images/addtomac-large.png#lightbox)
 
@@ -171,7 +171,7 @@ Das Feature „Mit Mac koppeln“ installiert die erforderliche Software oder ak
 
 ### <a name="mono"></a>Mono
 
-Das Feature „Mit Mac koppeln“ überprüft, ob Mono installiert ist. Wenn dies nicht der Fall ist, lädt das Feature die neueste stabile Version von Mono auf den Mac herunter. 
+Das Feature „Mit Mac koppeln“ überprüft, ob Mono installiert ist. Wenn dies nicht der Fall ist, lädt das Feature die neueste stabile Version von Mono auf den Mac herunter.
 
 In mehreren Eingabeaufforderungen wird der Status angezeigt. Dies ist auf den folgenden Screenshots zu sehen (zum Vergrößern klicken):
 

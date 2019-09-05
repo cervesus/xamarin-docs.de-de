@@ -3,15 +3,15 @@ title: Installieren von NUnit 2.6.4 mithilfe von NuGet
 description: In diesem Dokument wird beschrieben, wie NUnit 3.0 mithilfe von NuGet auf NUnit 2.6.4 herabgestuft wird. Dies ist erforderlich, wenn Sie mit Xamarin.UITest arbeiten, da NUnit 3.x dort nicht unterstützt wird.
 ms.prod: xamarin
 ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: bc983fb43e0c649e3b7e231f42fce9d6af40e047
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8fc4ca3063e88f17fc1e22ad35667b2086e63e89
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526745"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280474"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>Installieren von NUnit 2.6.4 mithilfe von NuGet
 

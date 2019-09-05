@@ -4,15 +4,15 @@ description: In diesem Dokument wird die Bereitstellung einer Xamarin.Mac-App mi
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 601e8f0e47c07aab6d3c56b4799716e10ec606ab
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9454d1b7144bc41c0a4510314a59dd90971fbbc6
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105869"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285534"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Veröffentlichen von Xamarin.Mac-Apps im Mac App Store
 

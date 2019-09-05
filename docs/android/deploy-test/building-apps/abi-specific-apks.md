@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 4a3ba970f8ca32f0bfa2e5297e8052f3eb572ed0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e7c8721254157565461e00657a3ee8a786e3ea00
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525714"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225769"
 ---
 # <a name="building-abi-specific-apks"></a>Erstellen ABI-spezifischer Android-Anwendungspakete (APKs)
 
@@ -49,17 +49,17 @@ Google empfiehlt einen bestimmten Algorithmus für den siebenstelligen Versionsc
 Durch die Erweiterung dieses Versionscodeschemas auf acht Ziffern ist es möglich, einige ABI-Informationen in den Versionscode aufzunehmen, die sicherstellen, dass Google Play das richtige APK an ein Gerät verteilt. Die folgende Liste erläutert dieses Versionscodeformat mit acht Ziffern (Indizierung von links nach rechts):
 
 - **Index 0** (im folgenden Diagramm rot) &ndash; Eine ganze Zahl für die ABI:
-    - 1 &ndash; `armeabi`
-    - 2 &ndash; `armeabi-v7a`
-    - 6 &ndash; `x86`
+  - 1 &ndash; `armeabi`
+  - 2 &ndash; `armeabi-v7a`
+  - 6 &ndash; `x86`
 
 - **Index 1-2** (im folgenden Diagramm orange) &ndash; Die API-Mindestebene, die von der Anwendung unterstützt wird.
 
 - **Index 3-4** (im folgenden Diagramm blau) &ndash; Die unterstützten Bildschirmgrößen:
-    - 1 &ndash; klein
-    - 2 &ndash; normal
-    - 3 &ndash; groß
-    - 4 &ndash; sehr groß
+  - 1 &ndash; klein
+  - 2 &ndash; normal
+  - 3 &ndash; groß
+  - 4 &ndash; sehr groß
 
 - **Index 5-7** (im folgenden Diagramm grün) &ndash; Eine eindeutige Zahl für den Versionscode. 
     Diese wird vom Entwickler festgelegt. Sie muss für jede öffentliche Freigabe der Anwendung erhöht werden.
