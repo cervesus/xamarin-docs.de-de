@@ -4,15 +4,15 @@ description: In diesem Artikel werden die hellen und dunklen UI-Designs behandel
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f4004b4b9cdc8f8c6555be82cf1da5b92a83d45c
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 4df67221c367386cddd485fcd1853523d77158e0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120059"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290683"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>tvos-Benutzeroberflächen Stile in xamarin
 
@@ -26,7 +26,7 @@ tvos 10 unterstützt jetzt sowohl ein dunkles als auch ein helles Design der Ben
 
 Wie bereits erwähnt, unterstützt tvos 10 jetzt sowohl ein dunkles als auch ein helles Design der Benutzeroberfläche, dass alle in der benutzerdefinierten UIKit-Steuerelemente basierend auf den Benutzereinstellungen automatisch an angepasst werden.
 
-Der Benutzer kann dieses Design ändern , indem er zu **Einstellungen** > **Allgemeine** > Darstellung wechselt und zwischen **hell** und **dunkel**wechselt:
+Der Benutzer kann dieses Design ändern, indem er zu **Einstellungen** > **Allgemeine** > Darstellung**wechselt und zwischen** **hell** und **dunkel**wechselt:
 
 [![](user-interface-styles-images/theme01.png "Die app \"Einstellungen\"")](user-interface-styles-images/theme01.png#lightbox)
 

@@ -4,15 +4,15 @@ description: Dieser Artikel bietet eine Einführung in die Arbeit mit Storyboard
 ms.prod: xamarin
 ms.assetid: F37BA503-0B25-489F-80A8-58C493291A55
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: afaba327299461af6b71846a39eb6c455125feae
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 722e09cc292bad682a49ee0cba4ff0ca0f39a844
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620385"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291646"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Einführung in Storyboards in xamarin. Mac
 
@@ -68,7 +68,7 @@ Wie bereits erwähnt, stellen die Beziehungen zwischen allen Szenen bereit, in d
 
 Unter macOS gruppieren die meisten apps ihre Ansichten tendenziell innerhalb desselben Fensters mithilfe von Benutzeroberflächen Elementen wie z. b. geteilten Sichten und Registerkarten. Anders als bei IOS, bei dem Ansichten aufgrund von eingeschränktem physischem Anzeigebereich ein-und ausgeschaltet werden müssen.
 
-Bei den Tendenzen von macOS in Bezug auf die Kapselung gibt es Situationen, in denen _Präsentations_ Seiten verwendet werden, wie z. b. modale Fenster, Blatt Ansichten und popovers.
+Bei den Tendenzen von macOS in Bezug auf die _Kapselung_ gibt es Situationen, in denen Präsentationsseiten verwendet werden, wie z. b. modale Fenster, Blatt Ansichten und popovers.
 
 Wenn Sie präsentationsegues verwenden, können Sie `PrepareForSegue` die-Methode des übergeordneten Ansichts Controllers überschreiben, um die Präsentation zu initialisieren und Variablen zu erstellen und dem Ansichts Controller alle Daten bereitzustellen.
 

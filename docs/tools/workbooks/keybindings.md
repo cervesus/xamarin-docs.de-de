@@ -1,27 +1,27 @@
 ---
-title: Xamarin Workbooks-Editor-Tastenkombinationen
-description: Dieses Dokument beschreibt die Tastenkombinationen für die Verwendung in der Xamarin Workbooks-Editor. Insbesondere überprüft er verschiedene Möglichkeiten, die die Return-Taste verwendet wird.
+title: Tastenkombinationen für den Xamarin Workbooks-Editor
+description: In diesem Dokument werden die für die Verwendung im Xamarin Workbooks-Editor verfügbaren Tastenkombinationen beschrieben. Insbesondere werden verschiedene Möglichkeiten zum Verwenden der Rückgabetaste untersucht.
 ms.prod: xamarin
 ms.assetid: 6375A371-3215-4A7C-B97B-A19E58BE96D6
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 87af9f824117b20250c02a3e070652607626de44
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9904d0f9fb1acfc3c3c197b9881c2add00aba534
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61341049"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285324"
 ---
-# <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Xamarin Workbooks-Editor-Tastenkombinationen
+# <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Tastenkombinationen für den Xamarin Workbooks-Editor
 
-## <a name="the-return-key-and-its-nuances"></a>Die zurück-Taste, und die Details in Bezug auf
+## <a name="the-return-key-and-its-nuances"></a>Der Rückgabe Schlüssel und seine Nuancen
 
-Die folgende Tabelle beschreibt die verschiedenen tastenzuordnungen für die Ausführung von Code, und erstellen Markdown. Wir haben mit großer Sorgfalt sinnvolle und konsistente tastenzuordnungen auswählen, die bekannte und flüssig ausgeführt.
+In der folgenden Tabelle werden die verschiedenen Tastenkombinationen zum Ausführen von Code und zum Erstellen von markdown beschrieben. Wir haben sehr sorgfältig darauf geachtet, sinnvolle und konsistente Tastenkombinationen auszuwählen, die sowohl vertraut als auch flüssig sind.
 
-|Tastenzuordnung|Codezelle|Markdown Cell|
+|Schlüsselbindung|Codezelle|Markdown-Zelle|
 |--- |--- |--- |
-|<kbd>Return</kbd>|<p>Wenn sich die Einfügemarke befindet sich am Ende des Puffers Zelle, und die Zelle erfolgreich analysiert werden kann, ausgeführt wird und Ergebnisse werden unterhalb des Puffers angezeigt werden und eine neue codezelle eingefügt werden soll, und konzentriert sich Zelle nach der ausgeführten Zelle.</p><p>Wenn die Analyse nicht erfolgreich ist, wird eine neue Zeile in den Puffer eingefügt werden. Compilerdiagnose wird nicht erstellt werden, wenn die Analyse nicht erfolgreich ist.</p>|<p><kbd>Zurückgeben</kbd> ist das unterschiedliches Verhalten je nach Kontext Markdown, an der Einfügemarke.</p><ul><li>Wenn die Einfügemarke in einem Markdown-Codeblock, wird eine literale neue Zeile eingefügt.</li><li>Wenn die Einfügemarke in einem Markdown-Liste-Block, erstellen Sie ein neues Listenelement, oder Teilen Sie das aktuelle Listenelement aus.</li><li>Wenn die Einfügemarke in eine andere Art von Markdown-Block, erstellen Sie einen neuen absatzblock, oder Teilen Sie des aktuellen Codeblocks.</li></ul>|
-|<dl><dt>Mac</dt><dd><kbd>Command‑Return</kbd></dd><dt>Win</dt><dd><kbd>Control‑Return</kbd></dd></dl>|<p>Versucht immer, zu analysieren, führen Sie den Zelleninhalt. Wenn die Kompilierung erfolgreich ist, Ergebnisse (einschließlich Ausführungsausnahmen) unter den Puffer angezeigt, und wenn keine weiteren Zellen vorhanden sind, eine neue Ressourcengruppe wird erstellt und mit Fokus.</p><p>Treten Fehler bei der Kompilierung, Diagnose wird angezeigt, und der Puffer bleibt mit der Position der Einfügemarke unverändert mit Fokus.</p>|Fügt ein, und der Schwerpunkt liegt eine neue codezelle nach der aktuellen Zelle mit Markdown.|
-|<dl><dt>Mac</dt><dd><kbd>Command‑Shift‑Return</kbd><dd><dt>Win</dt><dd><kbd>Control‑Shift‑Return</kbd></dd></dl>|Fügt ein, und konzentriert sich eine neuen Markdown-Zelle nach der aktuellen Zelle.|Dasselbe Verhalten wie <kbd>zurückgeben</kbd>|
-|<kbd>Shift‑Return</kbd>|Fügt immer eine neue Zeile, unabhängig von der Einfügemarke oder Inhalt ein.|Fügt einen Festplatte Zeilenumbruch innerhalb des aktuellen Codeblocks mit Markdown.|
+|<kbd>Return</kbd>|<p>Wenn sich die Einfügemarke am Ende des Zellen Puffers befindet und die Zelle erfolgreich analysiert werden kann, wird Sie ausgeführt, und die Ergebnisse werden unterhalb des Puffers angezeigt, und nach der ausgeführten Zelle wird eine neue codezelle eingefügt und eine fokussierte Zelle eingefügt.</p><p>Wenn die Verarbeitung nicht erfolgreich ist, wird eine neue Zeile in den Puffer eingefügt. Die Compilerdiagnose wird nicht erstellt, wenn die Verarbeitung nicht erfolgreich ist.</p>|<p><kbd>Gibt</kbd> abhängig vom markdown-Kontext am Caretzeichen ein anderes Verhalten aus.</p><ul><li>Wenn sich die Einfügemarke in einem markdown-Codeblock befindet, wird eine Literale neue Zeile eingefügt.</li><li>Wenn sich die Einfügemarke in einem markdown-Listen Block befindet, erstellen Sie ein neues Listenelement, oder Teilen Sie das aktuelle Listenelement.</li><li>Wenn die Einfügemarke in einem anderen Typ von markdown-Block vorhanden ist, erstellen Sie einen neuen Absatz Block, oder Teilen Sie den aktuellen Block auf.</li></ul>|
+|<dl><dt>Mac</dt><dd><kbd>Command‑Return</kbd></dd><dt>Erringen</dt><dd><kbd>Control‑Return</kbd></dd></dl>|<p>Versucht immer, den Zellen Inhalt zu analysieren und auszuführen. Wenn die Kompilierung erfolgreich ist, werden die Ergebnisse (einschließlich der Ausführungs Ausnahmen) unterhalb des Puffers angezeigt, und wenn keine nachfolgenden Zellen vorhanden sind, wird eine neue erstellt und konzentriert.</p><p>Wenn Kompilierungsfehler vorliegen, wird die Diagnose angezeigt, und der Puffer bleibt mit dem Fokus der Position der Einfügemarke unverändert.</p>|Fügt eine neue codezelle nach der aktuellen markdown-Zelle ein und legt diese fest.|
+|<dl><dt>Mac</dt><dd><kbd>Command‑Shift‑Return</kbd><dd><dt>Erringen</dt><dd><kbd>Control‑Shift‑Return</kbd></dd></dl>|Fügt eine neue markdown-Zelle nach der aktuellen Zelle ein und legt diese fest.|Gleiches Verhalten wie bei <kbd>Rückgabe</kbd>|
+|<kbd>Shift‑Return</kbd>|Fügt immer eine neue Zeile ein, unabhängig von der Position oder dem Inhalt der Einfügemarke.|Fügt einen harten Zeilenumbruch innerhalb des aktuellen markdown-Blocks ein.|

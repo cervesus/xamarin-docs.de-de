@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie eine APP im Apple TV A
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: aaffaf3d66bb51d467c40bc3e5707a149154c0a7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 350cd7e2d0dd79b876a6c1277d40a9c96d97c102
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528734"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282715"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Veröffentlichen im Apple TV App Store
 
@@ -77,7 +77,7 @@ Apple bietet eine Auswahl spezieller Anwendungsdienste (auch als Berechtigungen 
 
 Führen Sie die folgenden Schritte mithilfe des webbasierten iOS-Bereitstellungsportals von Apple aus, um eine App-ID zu erstellen und optional Berechtigungen auszuwählen:
 
-1. Wählen > Sie Bereitstellungs**Entwicklung**aus.
+1. Wählen Sie **Bereitstellungs** > **Entwicklung**aus.
 2. Klicken Sie auf die **+** -Schaltfläche, und stellen Sie einen **Namen** und eine **Bündel-ID** für die neue Anwendung bereit.
 3. Scrollen Sie zum unteren Rand des Bildschirms, und wählen Sie alle **App Services** aus, die von der xamarin. tvos-App benötigt werden.
 4. Klicken Sie auf die Schaltfläche **Weiter**, und folgen Sie den Anweisungen auf dem Bildschirm, um die neue App-ID zu erstellen.
@@ -117,7 +117,7 @@ Führen Sie für die Bereitstellung die folgenden Schritte mithilfe des webbasie
 4. Wählen Sie das zum Signieren der Anwendung erforderliche Zertifikat aus.
 5. Geben Sie einen **Namen** für das neue **Verteilungsprofil** ein, und generieren Sie das Profil.
 6. Aktualisieren Sie die Liste der verfügbaren Profile in Xcode.
-7. Wählen Sie das Verteilungs Bereitstellungs Profil in Visual Studio für die **App Store**-Buildkonfiguration aus.
+7. Wählen Sie das Verteilungs Bereitstellungs Profil in Visual Studio für die **App Store** -Buildkonfiguration aus.
 
 Eine ausführliche Anleitung finden Sie unter [Creating a Distribution Profile](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#creatingprofile) (Erstellen eines Verteilungsprofils) und [Selecting a Distribution Profile in a Xamarin.iOS Project](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile) (Auswählen eines Verteilungsprofils in einem Xamarin.iOS-Projekt). Beide Dokumente sind zwar für IOS spezifisch, aber die gleiche Technik wird für tvos-Apps verwendet.
 
@@ -126,7 +126,7 @@ Eine ausführliche Anleitung finden Sie unter [Creating a Distribution Profile](
 
 ### <a name="setting-the-build-configuration-for-your-application"></a>Festlegen der Buildkonfiguration für die Anwendung
 
-Wenn Sie eine neue xamarin. tvos-app erstellen, werden Standard mäßig Buildkonfigurationen sowohl für die **Debug** -als auch für die **releasebereitstellung** erstellt. Vor der endgültigen Erstellung Ihrer APP, die Sie an Apple übermitteln, müssen Sie einige Änderungen an der Basis **Releasekonfiguration** vornehmen.
+Wenn Sie eine neue xamarin. tvos-app erstellen, werden standardmäßig _Buildkonfigurationen_ sowohl für die **Debug** -als auch für die **releasebereitstellung** erstellt. Vor der endgültigen Erstellung Ihrer APP, die Sie an Apple übermitteln, müssen Sie einige Änderungen an der Basis **Releasekonfiguration** vornehmen.
 
 Führen Sie folgende Schritte aus:
 

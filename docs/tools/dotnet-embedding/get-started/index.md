@@ -1,40 +1,40 @@
 ---
-title: Erste Schritte mit .NET einbetten
-description: In diesem Dokument verknüpft werden, in den verschiedenen Anleitungen, die beschreiben, wie Sie mit Einbetten von .NET in C, Java, Android, Objective-C-, IOS- und MacOS-Projekte.
+title: Einstieg in die .net-Einbettung
+description: In diesem Dokument finden Sie Links zu verschiedenen Leitfäden, in denen die Verwendung der .net-Einbettung in C-, Java-, Android-, Ziel-C-, IOS-und macOS-Projekten
 ms.prod: xamarin
 ms.assetid: AF8A4798-EBDD-4E73-997B-C3D4FC5E9685
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 96a80d76afb769dae456e7ff9bdad32b137c6fed
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f47da3dbd9c7000955a3ed0ec2bc24b722ecf5d3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61282782"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287536"
 ---
-# <a name="getting-started-with-net-embedding"></a>Erste Schritte mit .NET einbetten
+# <a name="getting-started-with-net-embedding"></a>Einstieg in die .net-Einbettung
 
 ## <a name="ccmd"></a>[C](c.md)
 
-.NET Code in Ihre C#-apps einbetten.
+Betten Sie .NET-Code in Ihre C-apps ein.
 
 ## <a name="javajavaindexmd"></a>[Java](java/index.md)
 
-Informationen zum Einbetten in Java-apps auf verschiedenen Plattformen.
+Einbetten in Java-apps auf verschiedenen Plattformen.
 
 ### <a name="androidjavaandroidmd"></a>[Android](java/android.md)
 
-Android-spezifische Tipps zum Einbetten von Code für .NET.
+Android-spezifische Empfehlung zum Einbetten von .NET-Code.
 
 ## <a name="objective-cobjective-cindexmd"></a>[Objective-C](objective-c/index.md)
 
-Zum Einbetten in Objective-c
+Einbetten in Ziel-C
 
 ### <a name="iosobjective-ciosmd"></a>[iOS](objective-c/ios.md)
 
-iOS-spezifische Tipps zum Einbetten von Code für .NET.
+IOS-spezifische Tipps zum Einbetten von .NET-Code.
 
 ### <a name="macosobjective-cmacosmd"></a>[macOS](objective-c/macos.md)
 
-MacOS-spezifische Tipps zum Einbetten von Code für .NET.
+macOS-spezifische Tipps zum Einbetten von .NET-Code.

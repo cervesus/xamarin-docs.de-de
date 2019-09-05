@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Hintergrundaufgaben verwen
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 56ee93146bb84de0b48885d80407316e81cb512c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0d001c39b2111785911d678bdeb2e83d761fba11
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521366"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287001"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS-Hintergrundverarbeitung mit Aufgaben
 

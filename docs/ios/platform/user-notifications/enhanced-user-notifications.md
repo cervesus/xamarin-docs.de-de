@@ -4,15 +4,15 @@ description: In diesem Artikel wird das in ios 10 eingeführte Framework für Be
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: ccb10829f10ddd76fe7402143d66a32949daccc1
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: adabf66e008dc2f49d7787d62ebad8aadf263ac7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980801"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290571"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Erweiterte Benutzer Benachrichtigungen in xamarin. IOS
 
@@ -113,7 +113,7 @@ Das neue Benutzer Benachrichtigungs Framework bietet eine einheitliche Benachric
 - **tvos** : fügt die Möglichkeit hinzu, App-Symbole für lokale und Remote Benachrichtigungen zu kennzeichnen.
 - **watchos** : fügt die Möglichkeit hinzu, Benachrichtigungen vom gekoppelten IOS-Gerät des Benutzers an den Apple Watch weiterzuleiten, und ermöglicht es den Überwachungs-apps, lokale Benachrichtigungen direkt auf der überwachen selbst durchzuführen.
 
-Weitere Informationen finden Sie in der usernotification [Framework-Referenz](https://developer.apple.com/reference/usernotifications) von Apple und in der [usernotificationsui](https://developer.apple.com/reference/usernotificationsui) -Dokumentation.
+Weitere Informationen finden Sie in der [usernotification Framework-Referenz](https://developer.apple.com/reference/usernotifications) von Apple und in der [usernotificationsui](https://developer.apple.com/reference/usernotificationsui) -Dokumentation.
 
 ## <a name="preparing-for-notification-delivery"></a>Vorbereiten der Benachrichtigungs Übermittlung
 
@@ -543,7 +543,7 @@ Gehen Sie folgendermaßen vor, um eine Dienst Erweiterung in einer xamarin. IOS-
 4. Geben Sie einen **Namen** für die Erweiterung ein, und klicken Sie auf die Schaltfläche **weiter** : 
 
     [![](enhanced-user-notifications-images/extension03.png "Geben Sie einen Namen für die Erweiterung ein.")](enhanced-user-notifications-images/extension03.png#lightbox)
-5. Passen Sie den **Projektnamen** und/ oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** 
+5. Passen Sie den **Projektnamen** und/oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** 
 
     [![](enhanced-user-notifications-images/extension04.png "Anpassen des Projekt namens und/oder Projektmappennamens")](enhanced-user-notifications-images/extension04.png#lightbox) 
 

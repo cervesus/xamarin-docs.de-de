@@ -1,40 +1,40 @@
 ---
 title: Benutzeroberflächen in iOS
-description: Dieses Dokument enthält Links zu Leitfäden, die zum Erstellen von Benutzeroberflächen in xamarin IOS-app beschrieben. Die verknüpften Handbüchern behandelt die Darstellung-API erstellen, Benutzeroberflächenobjekte, Layoutoptionen und mehr.
+description: Dieses Dokument ist mit Anleitungen verknüpft, die beschreiben, wie Benutzeroberflächen in der xamarin. IOS-App erstellt werden. Die verknüpften Handbücher umfassen die Darstellungs-API, das Erstellen von Benutzeroberflächen Objekten, Layoutoptionen und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: efb88ada8a4b4c36dd49de137eb64acd63552968
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 106cadc6fef43c06597cf1e3b846bd48cecb6fa5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382335"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287055"
 ---
 # <a name="user-interfaces-in-ios"></a>Benutzeroberflächen in iOS
 
 ## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[Darstellungs-API](introduction-to-the-appearance-api.md)
 
-iOS kann viele visuellen Attribute die Steuerelemente der Benutzeroberfläche zum Design mithilfe der UIAppearance-APIs.
+IOS ermöglicht das Design vieler visueller Attribute der Steuerelemente der Benutzeroberfläche mithilfe der uiappearance-APIs.
 
 ## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[Erstellen von Benutzeroberflächenobjekten](~/ios/user-interface/ios-ui/creating-ui-objects.md)
 
-Apple-Gruppen im Zusammenhang mit Funktionen in "Frameworks" die Xamarin.iOS-Namespaces entsprechen. `UIKit` ist der Namespace, der alle Steuerelemente der Benutzeroberfläche für iOS enthält.
+Apple gruppiert verwandte Funktionen in "Frameworks", die xamarin. IOS-Namespaces entsprechen. `UIKit`der Namespace, der alle Benutzeroberflächen-Steuerelemente für IOS enthält.
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[Layoutoptionen](~/ios/user-interface/ios-ui/layout-options.md)
 
-Es gibt zwei unterschiedliche Mechanismen für die Steuerung des Layouts, wenn eine Sicht geändert oder gedreht wird: Automatisches Anpassen der Größe und automatisches Layout.
+Es gibt zwei verschiedene Mechanismen, um das Layout zu steuern, wenn die Größe einer Ansicht geändert oder gedreht wird: AutoSizing und AutoLayout.
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
-Dieser Artikel behandelt die neuen Typen für das Übermitteln von haptischem Feedback in iOS 10 und implementieren Sie diese in Xamarin.iOS zur Verfügung.
+In diesem Artikel werden die neuen Typen von willkürlich verfügbarem Feedback in ios 10 und deren Implementierung in xamarin. IOS behandelt.
 
 ## <a name="working-with-the-ui-threadiosuser-interfaceios-uiui-threadmd"></a>[Arbeiten mit dem UI-Thread](~/ios/user-interface/ios-ui/ui-thread.md)
 
-Ihr Code sollte nur Änderungen an den Benutzer Steuerelemente der Benutzeroberfläche aus der primären (oder UI) Thread vornehmen. Alle Aktualisierungen der Benutzeroberfläche, die auf einem anderen Thread (z. B. einen Rückruf oder Hintergrund-Thread) auftreten können nicht auf dem Bildschirm gerendert zu erhalten, oder es können auch einen Absturz verursachen.
+Der Code sollte nur Änderungen an den Steuerelementen der Benutzeroberfläche vom Hauptthread (oder UI) aus vornehmen. Alle Aktualisierungen der Benutzeroberfläche, die in einem anderen Thread (z. b. einem Rückruf oder einem Hintergrund Thread) auftreten, werden möglicherweise nicht auf dem Bildschirm gerendert oder können sogar zu einem Absturz führen.
 
 
 

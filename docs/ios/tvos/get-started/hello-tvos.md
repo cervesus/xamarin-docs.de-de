@@ -4,15 +4,15 @@ description: Dieser Leitfaden führt Sie durch die Erstellung Ihrer ersten xamar
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 59019e08c279a9910281de98fe64db798379e1a4
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 30fcf586a280688834e1ae9af61630c2611964a5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119167"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281817"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvos Schnellstarthandbuch
 
@@ -56,7 +56,7 @@ Gehen Sie dazu wie folgt vor:
 3. Wählen Sie **tvos** > **App** > **Single View App** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
     [![](hello-tvos-images/setup02.png "Einzelansicht-App auswählen")](hello-tvos-images/setup02.png#lightbox)
-4. Geben `Hello, tvOS` Sie als **APP-Namen**ein, geben Sie Ihren **Organisations Bezeichner** ein, und klicken Sie auf die Schaltfläche
+4. Geben `Hello, tvOS` Sie als **APP-Namen**ein, geben Sie Ihren **Organisations Bezeichner** ein, und klicken Sie **auf die Schalt** Fläche
 
     [![](hello-tvos-images/setup04.png "Geben Sie Hello, tvos ein.")](hello-tvos-images/setup04.png#lightbox)
 5. Geben `Hello_tvOS` Sie als **Projektnamen** ein, und klicken Sie auf die Schaltfläche **Erstellen** :
@@ -273,7 +273,7 @@ Führen Sie folgende Schritte aus:
 2. Ziehen Sie eine **Bezeichnung** aus der **Toolbox** auf die Entwurfs Oberfläche:
 
     [![](hello-tvos-images/designer04.png "Ziehen Sie eine Bezeichnung aus der Toolbox.")](hello-tvos-images/designer04.png#lightbox)
-3. Klicken Sie im eigenschaftenpad auf die **Title** -Eigenschaft, und ändern Sie `Hello, tvOS` den Titel der Schaltfläche in, und legen Sie den **Schrift** Grad auf 128 fest:
+3. Klicken Sie im **eigenschaftenpad** auf die **Title** -Eigenschaft, und ändern Sie `Hello, tvOS` den Titel der Schaltfläche in, und legen Sie den **Schrift** Grad auf 128 fest:
 
     [![](hello-tvos-images/designer05.png "Legen Sie den Titel auf Hello, tvos fest, und legen Sie den Schrift Grad auf 128 fest.")](hello-tvos-images/designer05.png#lightbox)
 4. Ändern Sie die Größe der Bezeichnung so, dass alle Wörter sichtbar sind, und platzieren Sie Sie zentriert am oberen Rand des Fensters:
@@ -299,7 +299,7 @@ Führen Sie folgende Schritte aus:
 
     [![](hello-tvos-images/designer11.png "Beispiel Einschränkungen")](hello-tvos-images/designer11.png#lightbox)
 10. Ziehen Sie eine **Schaltfläche** aus der **Toolbox** , und platzieren Sie Sie unter der Bezeichnung.
-11. Klicken Sie im eigenschaftenpad auf die `Click Me` **Title** -Eigenschaft, und ändern Sie den Titel der Schaltfläche in:
+11. Klicken Sie im **eigenschaftenpad** auf die `Click Me` **Title** -Eigenschaft, und ändern Sie den Titel der Schaltfläche in:
 
     [![](hello-tvos-images/designer12.png "Ändern Sie den Titel der Schaltflächen, um auf me")](hello-tvos-images/designer12.png#lightbox)
 12. Wiederholen Sie die Schritte 5 bis 8 oben, um die Schaltfläche im tvos-Fenster einzuschränken. Anstatt das T-handle jedoch an den oberen Rand des Fensters zu ziehen (wie in Schritt #7), ziehen Sie es an den unteren Rand der Bezeichnung:
@@ -334,7 +334,7 @@ Wenn eines der beiden hinzugefügt wird, wird die partielle `ViewController.desi
 
 ### <a name="creating-an-event-handler"></a>Erstellen eines Ereignis Handlers
 
-Wenn in dieser Beispielanwendung auf die Schaltfläche geklickt wird, möchten wir, dass ein Ereignishandler zu einem bestimmten Ereignis auf der Schaltfläche hinzugefügt werden muss. Gehen Sie folgendermaßen vor, um dies einzurichten:
+Wenn in dieser Beispielanwendung auf die Schaltfläche geklickt wird, _möchten wir_ , dass ein Ereignishandler zu einem bestimmten Ereignis auf der Schaltfläche hinzugefügt werden muss. Gehen Sie folgendermaßen vor, um dies einzurichten:
 
 1. Wählen Sie im xamarin IOS-Designer die Schaltfläche auf dem Ansichts Controller aus.
 2. Wählen Sie im eigenschaftenpad die Registerkarte **Ereignisse** aus:

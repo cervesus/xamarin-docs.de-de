@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Xamarin.iOS-Entwickler Ihre
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/16/2018
-ms.openlocfilehash: 533ab09a73116402e39da65933f26b8f3065357c
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855067"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291435"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Kostenlose Bereitstellung für Xamarin.iOS-Apps
 
@@ -27,7 +27,7 @@ So verwenden Sie die kostenlose Bereitstellung zum Bereitstellen einer App auf e
 > [!IMPORTANT]
 > Durch die [automatische Bereitstellung](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) kann Visual Studio für Mac oder Visual Studio 2019 automatisch ein Gerät zum Testen für den Entwickler einrichten. Die automatische Bereitstellung ist bei der kostenlosen Bereitstellung nicht möglich. Um die automatische Bereitstellung nutzen zu können, müssen Sie über ein kostenpflichtiges Apple Developer Program-Konto verfügen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 So stellen Sie Ihre Xamarin.iOS-Anwendungen auf einem Gerät mit kostenloser Bereitstellung bereit:
 
@@ -47,7 +47,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 
 1. Wenn Sie noch keine Apple-ID besitzen, [erstellen Sie eine Apple-ID](https://appleid.apple.com).
 2. Öffnen Sie Xcode, und navigieren Sie zu **Xcode > Einstellungen**.
-3. Klicken Sie unter **Konten** auf die **+**-Schaltfläche, um Ihre vorhandene Apple-ID hinzuzufügen. Dies sollte ungefähr wie folgt aussehen:
+3. Klicken Sie unter **Konten** auf die **+** -Schaltfläche, um Ihre vorhandene Apple-ID hinzuzufügen. Dies sollte ungefähr wie folgt aussehen:
 
     ![Xcode-Einstellungen > Konten](free-provisioning-images/launchapp1.png "Xcode Preferences – Accounts")
 

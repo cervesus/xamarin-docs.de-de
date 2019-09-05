@@ -1,43 +1,43 @@
 ---
-title: Erste Schritte mit iOS 12, 12-TvOS und WatchOS 5
-description: In diesem Dokument wird beschrieben, wie abzurufenden Build iOS 12, 12-TvOS und WatchOS-5-apps mit Xamarin eingerichtet wird. Es wird erläutert, wie Xcode 10 herunterladen und Aktualisieren von Visual Studio für Mac und Visual Studio 2017.
+title: Einstieg in IOS 12, tvos 12 und watchos 5
+description: In diesem Dokument wird beschrieben, wie Sie einrichten, um IOS 12-, tvos 12-und watchos 5-apps mit xamarin zu erstellen. Darin wird erläutert, wie Sie Xcode 10 herunterladen und Visual Studio für Mac und Visual Studio 2017 aktualisieren.
 ms.prod: xamarin
 ms.assetid: 6C0F0133-1A5F-408B-8BCA-BDCA313A55C2
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/19/2018
-ms.openlocfilehash: 71799e4299f01a881c6bc265baa7ad721ec5fc79
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 480e7c1d5ff0aa7335b3f45d8e05f276bc5be208
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268884"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287013"
 ---
-# <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>Erste Schritte mit iOS 12, 12-TvOS und WatchOS 5
+# <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>Einstieg in IOS 12, tvos 12 und watchos 5
 
-In diesem Dokument wird beschrieben, wie mit dem Erstellen von Xamarin-apps, die mit Xcode-10, veröffentlichten APIs für iOS 12, 12-TvOS und WatchOS 5 aufgerufen wird.
+In diesem Dokument wird beschrieben, wie Sie mit dem Entwickeln von xamarin-apps beginnen, die mit Xcode 10, für IOS 12, tvos 12 und watchos 5 veröffentlichte APIs aufgerufen werden.
 
 ## <a name="download-and-install"></a>Herunterladen und installieren
 
-1. **Installieren Sie Xcode 10** – registrierten Apple-Entwickler können herunterladen und installieren Sie die neueste Version von Xcode 10 aus der [Apple Developer Portal](https://developer.apple.com/download/) oder **App Store**.
+1. **Installieren von Xcode 10** – registrierte Apple-Entwickler können die neueste Version von Xcode 10 aus dem [Apple-Entwickler Portal](https://developer.apple.com/download/) oder dem **App Store**herunterladen und installieren.
 
-2. **Führen Sie die Xcode-10** – führen Sie Xcode 10 vor dem Aktualisieren und Ausführen von Visual Studio für Mac oder Visual Studio 2017, während sie einige installiert wird, Xamarin-tools erfordert.
+2. **Ausführen von Xcode 10** – Ausführen von Xcode 10 vor dem Aktualisieren und Ausführen von Visual Studio für Mac oder Visual Studio 2017, da einige von xamarin erforderliche Tools installiert werden.
 
-3. **Aktualisieren von Visual Studio für Mac und Visual Studio 2017** – sicherzustellen, dass Sie die neueste stabile Version von Xamarin.
+3. **Update Visual Studio für Mac und Visual Studio 2017** – stellen Sie sicher, dass Sie über die neueste stabile Version von xamarin verfügen.
 
-4. _(optional) _ **IOS 12 auf iOS-Geräten installieren** :
+4. _(optional)_ **Installieren von IOS 12 auf Ihren IOS-Geräten** –
 
-   Für Apps, die die Xcode-10 APIs eingeführt, mit dem Test des Geräts, registrierten Apple-Entwickler können [herunterladen](https://developer.apple.com/download) und das Betriebssystem auf ihren Geräten installieren.
+   Für Gerätetests von apps, die mit Xcode 10 eingeführte APIs verwenden, können registrierte Apple-Entwickler das Betriebssystem [herunterladen](https://developer.apple.com/download) und auf Ihren Geräten installieren.
 
    > [!TIP]
-   > Auch wenn Ihre app keine neuen APIs nicht verwendet, achten Sie darauf, dass Sie mit den neuesten Xcode-10-SDKs zu erstellen und testen, um sicherzustellen, dass alles wie erwartet funktioniert. Wenn eine app keine neuen APIs nicht aufruft, können Sie mit diesen neuen SDKs neu kompilieren und Testen auf Geräten, die noch nicht auf das neue Betriebssystem aktualisiert wurden.
+   > Auch wenn Ihre APP keine neuen APIs verwendet, stellen Sie sicher, dass Sie Sie mit den neuesten Xcode 10 sdys erstellen und testen, um sicherzustellen, dass alles wie erwartet funktioniert. Wenn eine APP keine neuen APIs aufruft, können Sie Sie mit diesen neuen sdchen neu kompilieren und auf Geräten testen, für die noch kein Upgrade auf das neue Betriebssystem durchgeführt wurde.
    >
-   > Bevor Sie von Apple, um Ihre Xamarin-apps zu testen. aktualisieren Ihre Geräte, auf das neueste Betriebssystem veröffentlicht werden, achten Sie darauf, dass Sie zu:
+   > Bevor Sie Ihre Geräte auf die neuesten Betriebssystemversionen von Apple aktualisieren, um Ihre xamarin-apps zu testen, stellen Sie Folgendes sicher:
    >
-   > - Lesen [Apple – Anmerkungen zu dieser](https://developer.apple.com/download/) für das Aktualisieren des Betriebssystems.
-   > - Lesen die Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-6/).
+   > - Lesen Sie die Anmerkungen zu dieser [Version](https://developer.apple.com/download/) für die Betriebssystemupdates.
+   > - Lesen Sie den [Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-6/)zur xamarin-Vorschauversion.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xcode herunterladen](https://developer.apple.com/download/)
+- [XCode herunterladen](https://developer.apple.com/download/)

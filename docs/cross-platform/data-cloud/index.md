@@ -1,65 +1,65 @@
 ---
-title: Microsoft Azure und Xamarin
-description: Dieses Dokument enthält Links zur Dokumentation zu verbundenen Diensten in Visual Studio für Mac, die Azure Mobile Apps, die Active Directory-Authentifizierung und die Web-API.
+title: Microsoft Azure und xamarin
+description: Dieses Dokument ist mit der Dokumentation zu verbundene Dienste in Visual Studio für Mac, Azure Mobile Apps, Active Directory Authentifizierung und WebAPI verknüpft.
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/09/2017
-ms.openlocfilehash: 723970a4ad7e2ced85147dbcc6c22f9a45519121
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 0979a0b65cc3d5b4944dadaf67aaa14cf1b3cf73
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864601"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287598"
 ---
-# <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure und Xamarin
+# <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure und xamarin
 
-[![](images/evolve-mikej-azure-sml.png "Azure App Services-Funktionen sind einfach zu Xamarin-apps, einschließlich cloudspeicher für Daten und plattformübergreifende Pushbenachrichtigungen hinzufügen")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![](images/evolve-mikej-azure-sml.png "Das Hinzufügen von Azure-App Services-Funktionen zu xamarin-apps, einschließlich clouddatenspeicherung und plattformübergreifender Pushbenachrichtigungen, ist einfach.")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
-[Weiterentwicklung 2016: Entwickeln von verbundenen Apps mit Azure und Xamarin](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[Weiterentwicklung 2016: Entwickeln von verbundenen apps mit Azure und xamarin](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Verbundene Dienste in Visual Studio für Mac
 
-Die neue [verbundene Dienste](connected-services.md) Feature von Visual Studio für Mac kann Entwickler schnell und einfach Azure-Funktionen für mobile Anwendungen aus der IDE hinzugefügt. Derzeit verfügbar für das Testen in der Alpha-Kanal.
+Das neue [verbundene Dienste](connected-services.md) Feature von Visual Studio für Mac unterstützt Entwickler bei der schnellen und einfachen Hinzufügen von Azure-Funktionen zu mobilen Anwendungen innerhalb der IDE. Derzeit zum Testen im Alpha Kanal verfügbar.
 
-## <a name="azure-app-services"></a>Azure App Services
+## <a name="azure-app-services"></a>Azure-App Dienste
 
-Es ist eine Sammlung von [Azure Mobile Apps-Dokumentation](~/cross-platform/data-cloud/mobile-apps.md) führt, die Sie durch die Implementierung der [Azure Mobile Client](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/).
-Xamarin bietet auch eine Azure-Messaging-NuGet-Pakete für [iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/) und [Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/) , um erste Schritte mit Pushbenachrichtigungen über Plattformen hinweg zu implementieren.
+Es gibt eine Sammlung von [Azure Mobile Apps-Dokumentation](~/cross-platform/data-cloud/mobile-apps.md) , die Sie durch den Prozess der Implementierung von [Azure Mobile Client](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)führt.
+Xamarin bietet auch ein Azure Messaging-nuget-Paket für [IOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/) und [Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/) , um die plattformübergreifende Implementierung von Pushbenachrichtigungen zu unterstützen.
 
-Konfigurieren Sie Ihre apps auf die [Azure App Services-Portal](https://portal.azure.com/) auf Mobile Apps, Web-APIs, Speicher und vieles mehr zuzugreifen. Erfahren Sie mehr über [wie app-Dienste unterscheiden](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/) und sehen Sie sich [diese Videos von Microsoft](https://azure.microsoft.com/campaigns/azure-march-announcement/).
+Konfigurieren Sie Ihre apps im [Azure-App Services-Portal](https://portal.azure.com/) , um auf Mobile Apps, Web-APIs, Speicher und vieles mehr zuzugreifen. Erfahren Sie, [wie sich app Services unterscheiden](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/) , und sehen Sie sich [Diese Videos von Microsoft](https://azure.microsoft.com/campaigns/azure-march-announcement/)an.
 
-## <a name="active-directory-authentication"></a>Active Directory-Authentifizierung
+## <a name="active-directory-authentication"></a>Active Directory Authentifizierung
 
-[Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md) kann verwendet werden, um Benutzer anzumelden, in Xamarin-apps über die [Xamarin.Auth-Komponente](https://www.nuget.org/packages/Xamarin.Auth/).
-Die apps können anschließend zusätzliche Dienste wie Office 365 zugreifen.
+[Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md) können zum Anmelden von Benutzern in xamarin-Apps über die [xamarin. auth-Komponente](https://www.nuget.org/packages/Xamarin.Auth/)verwendet werden.
+Die apps können dann auf weitere Dienste wie Office 365 zugreifen.
 
 ## <a name="webapi"></a>WebAPI
 
-Microsoft Web-API macht eine REST-ähnliche-Schnittstelle, die leicht von Xamarin-Anwendungen genutzt werden kann.
-Sie können leicht Hochfahren ein [Azure-Website](https://trywebsites.azurewebsites.net/) , und erstellen Sie eine Web-API-basierte Anwendung für die Verbindung mit Xamarin-apps.
+Die Web-API von Microsoft macht eine Rest-ähnliche Schnittstelle verfügbar, die problemlos von xamarin-Anwendungen genutzt werden kann.
+Sie können problemlos eine [Azure-Website](https://trywebsites.azurewebsites.net/) einrichten und eine WebAPI-basierte App zum Herstellen einer Verbindung mit xamarin-Apps erstellen.
 
 
 ### <a name="introduction-to-web-servicescross-platformdata-cloudweb-servicesindexmd"></a>[Einführung in Webdienste](~/cross-platform/data-cloud/web-services/index.md)
 
-In diesem Tutorial wird erläutert, wie Sie integrieren von REST, WCF und SOAP-web-Technologien mit mobile Xamarin-Anwendungen. Verschiedene dienstimplementierungen untersucht, ausgewertet wird, verfügbaren Tools und Bibliotheken zu integrieren und Beispiel-Muster für die Nutzung von Daten bietet. Zum Schluss wird eine grundlegende Übersicht über die zum Erstellen eines RESTful-Webdiensts für die Nutzung mit einer mobilen Xamarin-Anwendung.
+In diesem Tutorial wird erläutert, wie Sie Rest-, WCF-und SOAP-Webdienst Technologien mit mobilen xamarin-Anwendungen integrieren. Es werden verschiedene Dienst Implementierungen untersucht, verfügbare Tools und Bibliotheken für die Integration ausgewertet und Beispiel Muster zum Verarbeiten von Dienst Daten bereitgestellt. Schließlich bietet es einen grundlegenden Überblick über die Erstellung eines Rest-Webdiensts für die Verwendung mit einer mobilen xamarin-Anwendung.
 
 ## <a name="samples"></a>Proben
 
-Zusätzlich zu den [Dokumentationsbeispiele](https://github.com/xamarin/mobile-samples/tree/master/Azure), die folgenden vollständigen Anwendungen veranschaulichen die verschiedenen Azure-Features, die in Xamarin-apps integriert:
+Zusätzlich zu den [Dokumentations Beispielen](https://github.com/xamarin/mobile-samples/tree/master/Azure)veranschaulichen die folgenden vollständigen Anwendungen verschiedene Azure-Features, die in xamarin-Apps integriert sind:
 
-- [Sport](https://github.com/xamarin/Sport) – benutzerfreundliche Sportliga-nachverfolgung-app, die Data-Speicher und Push-Benachrichtigungen verwendet.
-- [Minuten](https://github.com/pierceboggan/Moments) – sofortige, die zum Teilen von Fotos verwendet Azure-Speicher für Bilder.
-- [Xamarin CRM](https://github.com/xamarin/app-crm) – Web-API für das Back-End verwendet.
-- [MyShoppe](https://github.com/jamesmontemagno/MyShoppe) – Azure Mobile Apps.
+- [Sport](https://github.com/xamarin/Sport) – freundliche Sport-Liga-nach Verfolgungs-APP, die Datenspeicher & Pushbenachrichtigungen verwendet.
+- [Augenblicke](https://github.com/pierceboggan/Moments) – sofortige Freigabe von Fotos, die Azure Storage für Bilder verwendet.
+- [Xamarin CRM](https://github.com/xamarin/app-crm) – verwendet die Web-API für das Back-End.
+- [Myshoppe](https://github.com/jamesmontemagno/MyShoppe) : Azure-Mobile Apps.
 
-- [Shopping](https://github.com/dotnet-architecture/eShopOnContainers) – Beispiel für die [Architektur Reihe](https://www.microsoft.com/net/learn/architecture) der e-Books.
-- [MyDriving](https://azure.microsoft.com/campaigns/mydriving/) – Azure und IoT-Beispiel von der Build 2016.
+- [eShop](https://github.com/dotnet-architecture/eShopOnContainers) – Beispiel für die [Architektur Reihe](https://www.microsoft.com/net/learn/architecture) von eBooks.
+- [Mydriving](https://azure.microsoft.com/campaigns/mydriving/) – Azure + IOT-Beispiel von Build 2016.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiel für eine Azure PCL (von @paulbatum) (Beispiel)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
-- [Azure-portal](https://azure.microsoft.com/)
-- [Mobiler Client für Xamarin (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Azure PCL-Beispiel ( @paulbatumvon) (Beispiel)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
+- [Azure-Portal](https://azure.microsoft.com/)
+- [Mobile Client für xamarin (nuget)](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

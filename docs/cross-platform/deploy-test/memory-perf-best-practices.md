@@ -3,15 +3,15 @@ title: Plattformübergreifende Leistung
 description: In diesem Dokument werden verschiedene Techniken beschrieben, die zum Verbessern der Leistung einer mobilen App verwendet werden können. Dabei werden unter anderem Profiler, IDisposable-Ressourcen, schwache Verweise, der SGen-Garbage Collector und Techniken zur Verringerung der Größe erläutert.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 75bc540ee518a1f5cfef29886d968648ea5769ed
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f31fd699aad95ff785ff887b2a2a8b6f2601ad7b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526706"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290186"
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 

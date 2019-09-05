@@ -4,15 +4,15 @@ description: Bei der Verwendung von xamarin. tvos werden bei der Verwendung von 
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 1029f1b99e37899bf1ab33a25fc070c565223954
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9d83be4eec793f571fe3d308c80ca9c023828f56
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649027"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288905"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>Entwickeln von tvos-Benutzeroberflächen mit xamarin
 

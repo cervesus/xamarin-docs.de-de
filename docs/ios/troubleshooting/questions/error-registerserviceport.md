@@ -4,30 +4,30 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 929A0080-B126-4744-BF88-A4A1EFBB6CC2
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: fc4c143d6b5f7c211d24e6e3ed2ed3bb8d264410
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 68c87355a2a6a081e0fff741ffe8a4466abb540a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421969"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292601"
 ---
 # <a name="ios-designer-error-with-registerserviceport"></a>iOS-Designer-Fehler mit RegisterServicePort
 
-## <a name="sample-error"></a>Beispielfehler
-> System.AggregateException: Eine oder mehrere Fehler---> System.SystemException: RegisterServicePort(com.xamarin.MTHosting.2a0b1, com.apple.PowerManagement.control): Kernel zurückgegeben:-308 (-308): (Ipc/Mig)-Server wurde unerwartet beendet
+## <a name="sample-error"></a>Beispiel Fehler
+> System.AggregateException: ---> System. SystemException ist mindestens ein Fehler aufgetreten: Registerserviceport (com. xamarin. mthosting. 2a0b1, com. Apple. Powermanagement. Control): Zurückgegebener Kernel:-308 (-308): (IPC/MIG) Server ist ausgefallen.
 
 ## <a name="explanation"></a>Erklärung
-Fehler bei `RegisterServicePort` und ähnliche Fehlermeldungen wie oben sind häufig ein Problem mit Spyware/Schadsoftware auf dem Computer. Erwägen Sie die [Kommentar auf dieser Fehlerbericht](https://bugzilla.xamarin.com/show_bug.cgi?id=21907#c4) zusammen mit den Link, um weitere Informationen die [Apple Forumsdiskussion](https://discussions.apple.com/thread/5596008) auf eine mögliche Infektion entfernen. 
+Fehler mit `RegisterServicePort` und ähnlichen Fehlermeldungen wie oben sind häufig ein Problem mit Spyware und Schadsoftware auf dem Computer. Sehen Sie sich den [Kommentar zu diesem Fehlerbericht](https://bugzilla.xamarin.com/show_bug.cgi?id=21907#c4) an, um weitere Informationen zu erhalten, sowie den Link zur [Apple-Forumsdiskussion](https://discussions.apple.com/thread/5596008) zum Entfernen einer möglichen Infektion. 
 
-Hilft bei der Diagnose des Problems, öffnen Sie die MacOS-Anwendung **Konsole** und löschen Sie jede Datei innerhalb der **Benutzer Diagnoseberichte** Abschnitt [ http://screencast.com/t/y9i3NKcuMy ](http://screencast.com/t/y9i3NKcuMy). Klicken Sie dann starten Sie Visual Studio für Mac, und versuchen Sie es den Designer verwendet. Wenn neuen Protokolldateien in diesem Abschnitt angezeigt, nachdem der Designer konnte nicht initialisiert wurde, speichern Sie diese für uns zu analysieren.  
+Um die Diagnose des Problems zu unterstützen, öffnen Sie die macOS-Anwendungs **Konsole** , und löschen Sie alle Dateien im Abschnitt [http://screencast.com/t/y9i3NKcuMy](http://screencast.com/t/y9i3NKcuMy) **Benutzer Diagnose Berichte** . Starten Sie Visual Studio für Mac, und versuchen Sie, den Designer zu verwenden. Wenn nach dem fehlgeschlagenen Initialisieren des Designers in diesem Abschnitt neue Protokolldateien angezeigt werden, speichern Sie diese, damit Sie analysiert werden können.  
 
-Beachten Sie, dass das wichtigste zu prüfen, um diese Datei ist: 
+Beachten Sie unbedingt die folgende Datei: 
 > /usr/lib/libimckit.dylib
 
-Wenn diese Datei vorhanden ist, ist das oben genannte Spyware/Malware-Problem unabhängig von den oben aufgeführten Ergebnissen auf dem Computer vorhanden.  
+Unabhängig von den oben aufgeführten Ergebnissen, wenn diese Datei vorhanden ist, ist das oben beschriebene Problem mit Spyware und Schadsoftware auf Ihrem Computer vorhanden.  
 
-Im folgende Link verfügt über die Schritte zum Entfernen dieser Spyware/Malware: [http://www.thesafemac.com/arg-genieo/](http://www.thesafemac.com/arg-genieo/)  
+Der folgende Link enthält die Schritte zum Entfernen dieser Spyware/Malware:[http://www.thesafemac.com/arg-genieo/](http://www.thesafemac.com/arg-genieo/)  
 

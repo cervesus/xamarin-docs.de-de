@@ -1,57 +1,57 @@
 ---
 title: Binden von Objective-C
-description: Dieses Dokument enthält Links zu verschiedenen Anleitungen, die beschreiben, wie Sie erstellen C# -Bindungen mit Objective-C-Code ermöglicht es Entwicklern, die sofort einsetzbare Bibliotheken in Xamarin-Anwendungen zu nutzen.
+description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, in denen beschrieben C# wird, wie Bindungen mit dem Ziel-C-Code erstellt werden, sodass Entwickler in xamarin-Anwendungen offline-Bibliotheken verwenden können.
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/25/2016
-ms.openlocfilehash: 923ec41443feff67d851a0c2f3cba1b948aed580
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 8975bb899127d0761359bec695cd084f89c12972
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864415"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290560"
 ---
 # <a name="binding-objective-c"></a>Binden von Objective-C
 
-Dieser Abschnitt enthält eine Reihe von Dokumenten Erstellen von Bindungen für Objective-C-Bibliotheken, damit sie von aufgerufen werden können C# Anwendungen, die mit Xamarin.iOS oder Xamarin.Mac erstellt wurden.
+Dieser Abschnitt enthält eine Vielzahl von Dokumenten, die das Erstellen von Bindungen zu Ziel-C-Bibliotheken abdecken, sodass Sie C# von Anwendungen aufgerufen werden können, die mit xamarin. IOS oder xamarin. Mac erstellt wurden.
 
 ## <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[Übersicht](~/cross-platform/macios/binding/overview.md)
 
-Dieses Dokument enthält einige der die Interna der wie eine Bindung durchgeführt wird. Es ist eine erweiterte Dokument mit technischen Informationen.
+Dieses Dokument enthält einige der internale für die Art und Weise, wie eine Bindung erfolgt. Es handelt sich um ein erweitertes Dokument mit einigen technischen Informationen.
 
 ## <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
 
-Dieses Dokument beschreibt den Prozess zum Erstellen C# Bindungen von Objective-C-APIs und wie die Ausdrücke in .NET verwendet, die Ausdrücke in Objective-C zugeordnet werden.
-Wenn Sie nur die C-APIs binden, sollten Sie den Standardmechanismus für .NET dafür das P/Invoke-Framework verwenden.
+In diesem Dokument wird der Prozess zum Erstellen C# von Bindungen von Ziel-c-APIs und die Zuordnung der Ausdrücke in Ziel-c zu den in .NET verwendeten Ausdrücke beschrieben.
+Wenn Sie nur C-APIs binden, sollten Sie hierfür den standardmäßigen .net-Mechanismus verwenden.
 
-## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[Bindung Definition – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
+## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[Referenzhandbuch zur Bindungs Definition](~/cross-platform/macios/binding/binding-types-reference.md)
 
-Dies ist die Referenz-Anleitung, die alle Attribute für Autoren von Bindungen, die den Generierungsprozess der Bindung Laufwerk beschreibt.
+Dies ist die Referenzanleitung, in der alle Attribute beschrieben werden, die für die Bindung von Autoren zum Steuern der Bindungs Generierung verfügbar sind.
 
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objektive Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-Objektive Sharpie ist ein Befehlszeilentool können Sie das erste Element des eine Bindung zu starten. Es funktioniert, indem Sie die Analyse der Headerdateien zuordnen die öffentliche API in einer nativen Bibliothek die [Bindungsdefinition](~/cross-platform/macios/binding/objective-c-libraries.md) (ein Prozess, die auch manuell ausgeführt werden können).
+Ziel-Sharpie ist ein Befehlszeilen Tool, mit dem der erste Durchlauf einer Bindung Bootstrap wird. Dies funktioniert durch das Überprüfen der Header Dateien einer nativen Bibliothek, um die öffentliche API der [Bindungs Definition](~/cross-platform/macios/binding/objective-c-libraries.md) zuzuordnen (ein Prozess, der auch manuell ausgeführt werden kann).
 
 ## <a name="ios"></a>iOS
 
-Die [iOS Bindung Seite](~/ios/platform/binding-objective-c/index.md) Links zurück in diese gemeinsamen Ressourcen für die Bindung zusätzlich zu den Beispielen weiter unten.
+Die [Seite IOS-Bindung](~/ios/platform/binding-objective-c/index.md) wird zusätzlich zu den folgenden Beispielen mit diesen gemeinsamen Bindungs Ressourcen verknüpft.
 
-### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[Exemplarische Vorgehensweise: Binden eine Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
+### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[Exemplarische Vorgehensweise: Binden einer Ziel-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
 
-Dieser Artikel enthält eine schrittweise Anleitung zum Erstellen einer Bindung-Projekts mithilfe des open Source [InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective-C-Projekt als Beispiel. Die InfColorPicker-Bibliothek bietet es sich um einen wieder verwendbaren View-Controller, mit denen den Benutzer eine Farbe basierend auf seiner HSB-Darstellung, sodass Farbauswahl Benutzerfreundlicher auswählen können. Objektive Sharpie dienen zur Unterstützung des Bindungsvorgangs.
+Dieser Artikel enthält eine schrittweise exemplarische Vorgehensweise zum Erstellen eines Bindungs Projekts mithilfe des Open Source-Projekts " [infcolorpicker](https://github.com/InfinitApps/InfColorPicker) " als Beispiel. Die infcolorpicker-Bibliothek bietet einen wiederverwendbaren Ansichts Controller, mit dem der Benutzer eine Farbe basierend auf der HSB-Darstellung auswählen kann, sodass die Farbauswahl benutzerfreundlicher wird. Ziel-Sharpie wird verwendet, um den Bindungsprozess zu unterstützen.
 
-### <a name="binding-sampleshttpsgithubcommonomonotouch-bindings"></a>[Beispiele für Bindungen](https://github.com/mono/monotouch-bindings)
+### <a name="binding-sampleshttpsgithubcommonomonotouch-bindings"></a>[Bindungs Beispiele](https://github.com/mono/monotouch-bindings)
 
-Eine Auflistung von Drittanbieter-Bindungen, die als Verweis verwendet werden kann, bei der Bindung von Projekten neu zu erstellen.
+Eine Auflistung von Bindungen von Drittanbietern, die als Verweis verwendet werden kann, wenn neue Bindungs Projekte erstellt werden.
 
 ## <a name="mac"></a>Mac
 
-In der Vergangenheit [Mac Bindung](~/mac/platform/binding.md) wurde ein sehr manueller Prozess. Es gibt derzeit ein [herunterladbare Vorschau](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview) Binden von Mac-Projekt Unterstützung für eine zukünftige Version von Visual Studio für Mac.
+In der Vergangenheit war die [Mac-Bindung](~/mac/platform/binding.md) ein sehr manueller Prozess. Zurzeit ist eine [herunterladbare Vorschau](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview) der Mac-Bindungs Projektunterstützung für eine zukünftige Version von Visual Studio für Mac verfügbar.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS binden](~/ios/platform/binding-objective-c/index.md)
+- [IOS-Bindung](~/ios/platform/binding-objective-c/index.md)
 - [Mac-Bindung](~/mac/platform/binding.md)

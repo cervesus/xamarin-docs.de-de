@@ -1,60 +1,60 @@
 ---
-title: Erste Schritte mit objektive Sharpie
-description: Dieses Dokument enthält eine allgemeine Übersicht über Objective Sharpie, das Tool verwendet, um die Erstellung von automatisieren C# -Bindungen mit Objective-C-Code.
+title: Die ersten Schritte mit dem Ziel-Sharpie
+description: Dieses Dokument enthält eine allgemeine Übersicht über den Ziel-Sharpie, das Tool, das zum Automatisieren der Erstellung C# von Bindungen an den Ziel-C-Code verwendet wird.
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: 4fb5e503a82a2b666bf6f8d7d7166475e94546e7
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: c34a6c09bf1298fd710e3e39a244294821a714ae
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978407"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290737"
 ---
-# <a name="getting-started-with-objective-sharpie"></a>Erste Schritte mit objektive Sharpie
+# <a name="getting-started-with-objective-sharpie"></a>Die ersten Schritte mit dem Ziel-Sharpie
 
 > [!IMPORTANT]
-> Objektive Sharpie ist ein Tool für erfahrene Xamarin-Entwickler mit Kenntnissen von Objective-C (und durch Erweiterung, C). Bevor Sie versuchen, binden Sie eine Objective-C-Bibliothek sollten Sie wissen, wie Sie die native Bibliothek erstellen, auf der Befehlszeile aus (und ein gutes Verständnis der Funktionsweise der nativen Bibliothek) verfügen.
+> Ziel-Sharpie ist ein Tool für erfahrene xamarin-Entwickler mit erweiterten Kenntnissen von Target-C (und der Erweiterung C). Bevor Sie versuchen, eine Ziel-C-Bibliothek zu binden, sollten Sie fundierte Kenntnisse darüber haben, wie Sie die native Bibliothek in der Befehlszeile erstellen (und ein gutes Verständnis der Funktionsweise der systemeigenen Bibliothek).
 
 <a name="installing" />
 
-## <a name="installing-objective-sharpie"></a>Installieren von objektive Sharpie
+## <a name="installing-objective-sharpie"></a>Ziel-Sharpie wird installiert
 
-Objektive Sharpie befindet sich derzeit ein eigenständiges-Befehlszeilentool für Mac OS X 10.10 oder höher und wird _nicht auf eine vollständig unterstützte Xamarin-Produkt_. Es sollte nur von erfahrenen Entwicklern verwendet werden, zur Unterstützung beim Erstellen eines Projekts für die Bindung an eine 3. Objective-C-Bibliothek.
+Der Ziel-Sharpie ist derzeit ein eigenständiges Befehlszeilen Tool für Mac OS X 10,10 und neuer und _kein vollständig unterstütztes xamarin-Produkt_. Sie sollte nur von erweiterten Entwicklern verwendet werden, um ein Bindungs Projekt für eine Ziel-C-Bibliothek eines Drittanbieters zu erstellen.
 
-Objektive Sharpie kann als standard OS X Installer-Paket heruntergeladen werden.
-Führen Sie das Installationsprogramm aus, und befolgen Sie alle die aufforderungen auf dem Bildschirm vom Installations-Assistenten:
+Ziel-Sharpie kann als Standard Installationsprogramm für OS X-Pakete heruntergeladen werden.
+Führen Sie das Installationsprogramm aus, und folgen Sie den Anweisungen auf dem Bildschirm des Installations-Assistenten:
 
-- **Aktuelle Version: 3.4**
-  - [Herunterladen der neuesten Version](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
-  - [Forum-Ankündigung](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
+- **Aktuelle Version: 3,4**
+  - [Neueste Version herunterladen](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
+  - [Forums Ankündigung](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
 > [!TIP]
-> Verwenden der `sharpie update` Befehl aus, um auf die neueste Version zu aktualisieren.
+> Verwenden Sie `sharpie update` den Befehl, um ein Update auf die neueste Version durchführen.
 
 ## <a name="basic-walkthrough"></a>Einfache Exemplarische Vorgehensweise
 
-Objektive Sharpie ist ein Befehlszeilentool, das von Xamarin, der dabei hilft, erstellen die Definitionen, die zum Binden einer 3rd Party Objective-C-Bibliothek in erforderliche bereitgestellten C#.
-Auch wenn Objective Sharpie, den Entwickler verwenden *wird* müssen die generierten Dateien zu ändern, nachdem Ziel Sharpie abgeschlossen ist, um Probleme zu beheben, die vom Tool nicht automatisch verarbeitet werden konnte.
+Ziel-Sharpie ist ein von xamarin bereitgestelltes Befehlszeilen Tool, das die Erstellung der Definitionen unterstützt, die zum Binden einer Drittanbieter C#-Ziel-C-Bibliothek an erforderlich sind.
+Selbst bei Verwendung von Ziel-Sharpie muss *der Entwickler die* generierten Dateien ändern, nachdem der Ziel-Sharpie abgeschlossen ist, um Probleme zu beheben, die nicht automatisch vom Tool behandelt werden konnten.
 
-Nach Möglichkeit Ziel Sharpie wird mit einer Anmerkung versehen APIs, die mit dem sie eine unsichere hat, auf wie ordnungsgemäß gebunden (viele Konstrukte in systemeigenen Code sind nicht eindeutig).
-Diese Anmerkungen werden [ `[Verify]` Attribute](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md).
+Wenn möglich, wird der Ziel-Sharpie APIs mit Anmerkungen versehen, mit denen es zweifelhaft ist, wie die ordnungsgemäße Bindung erfolgt (viele Konstrukte im nativen Code sind mehrdeutig).
+Diese Anmerkungen werden als [ `[Verify]` Attribute](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)angezeigt.
 
-Die Ausgabe des Ziel-Sharpie ist ein Dateipaar - [ `ApiDefinition.cs` und `StructsAndEnums.cs` ](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) -, die verwendet werden kann, um ein bindungsprojekt zu erstellen, Kompilieren in eine Bibliothek in Xamarin-apps verwendet werden können.
+Bei der Ausgabe des [ `ApiDefinition.cs` `StructsAndEnums.cs` Ziel-](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) sharkreises handelt es sich um ein Datei Paar, das zum Erstellen eines Bindungs Projekts verwendet werden kann, das in eine Bibliothek kompiliert wird, die Sie in xamarin-Apps verwenden können.
 
 > [!IMPORTANT]
-> Objektive Sharpie ist mit einem **wichtigen** Regel für die richtige Verwendung: müssen Sie unbedingt übergeben sie die richtige Clang Compiler-Befehlszeilenargumente um sicherzustellen, dass der richtige analysieren. Dies liegt daran die Ziel-Sharpie Analyse einfaches Tool [implementiert, die für die Clang-Libtooling API](http://clang.llvm.org/docs/LibTooling.html).
+> Der Ziel-Sharpie enthält eine **wesentliche** Regel für die richtige Verwendung: Sie müssen die richtigen clang-compilerbefehlszeilenargumente übergeben, um eine ordnungsgemäße Parsing sicherzustellen. Dies liegt daran, dass die Ziel-Sharpie-Testphase einfach ein Tool ist, das für [die clang-libtooling-API implementiert](http://clang.llvm.org/docs/LibTooling.html)ist.
 
-Dies bedeutet, dass das Ziel Sharpie hat das volle Potenzial von Clang (der C/Objective-C/C++-Compiler, die tatsächlich die native Bibliothek kompiliert, die Sie binden soll) und alle internen sein Wissen um die Headerdateien für die Bindung.
-Anstelle von übersetzt den analysierten [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) in Objektcode, Ziel Sharpie übersetzt die AST zu einer C# binden "erstellen" für die Eingabe geeignet ist die `bmac` und `btouch` Tools für Xamarin-Bindung.
+Dies bedeutet, dass der Ziel-sharkreis die volle Leistungsfähigkeit von clang hat (der c/C++ Target-C/Compiler, der die native Bibliothek, die Sie binden würden, tatsächlich kompiliert) und alle internen Kenntnisse der Header Dateien für die Bindung.
+Anstatt die analysierte [Ast](https://en.wikipedia.org/wiki/Abstract_syntax_tree) in den Objektcode zu übersetzen, übersetzt Target Sharpie die AST- C# Datei in eine Bindung "Gerüst", die für `bmac` die `btouch` Eingabe in die-und xamarin-Bindungs Tools geeignet ist.
 
-Wenn Objective Sharpie Fehler auftreten, während der Analyse, es, Clang, die während der fehlerhaften bedeutet Analysieren von der phase die AST erstellen möchten, und Sie müssen herausfinden, warum.
+Wenn bei der Analyse-Anforderung ein Fehler auftritt, bedeutet dies, dass clang während der Testphase einen Fehler verursacht hat, wenn versucht wird, die Ast zu erstellen, und Sie müssen herausfinden, warum.
 
-**NEU!** Version 3.0 versucht, die einen Teil dieser Komplexität durch die Unterstützung von Xcode-Projekten direkt behandeln. Verfügt eine native Bibliothek über ein gültiges Xcode-Projekt, kann das Projekt für ein angegebenes Ziel und die Konfiguration, um die erforderlichen Eingabe Headerdateien und Compilerflags Herleiten Ziel Sharpie ausgewertet werden.
+**NEU!** in Version 3,0 werden einige dieser Komplexität durch die direkte Unterstützung von Xcode-Projekten behandelt. Wenn eine native Bibliothek über ein gültiges Xcode-Projekt verfügt, kann Ziel-Sharpie das Projekt für ein angegebenes Ziel und eine bestimmte Konfiguration auswerten, um die erforderlichen Eingabe Header Dateien und Compilerflags herzuleiten.
 
-Wenn kein Xcode-Projekt verfügbar ist, müssen Sie immer vertrauter mit dem Projekt werden, indem Sie davon ausgehen, die richtige Eingabe-Header-Dateien, Suchpfade Header und anderen erforderlichen Compilerflags. Es ist wichtig zu wissen, dass die Compilerflags verwendet, um die native Bibliothek identisch sind, die zum Ziel Sharpie übergeben werden müssen. Dies ist eine manuelle Vorgehensweise und, die ein wenig vertraut sind, mit der Kompilierung von nativem Code in der Befehlszeile mit dem Clang-toolkette erforderlich ist.
+Wenn kein Xcode-Projekt verfügbar ist, müssen Sie sich mit dem Projekt vertraut machen, indem Sie die richtigen Eingabe Header Dateien, Header Datei Suchpfade und andere erforderliche Compilerflags ableiten. Beachten Sie, dass die Compilerflags, mit denen die native Bibliothek erstellt wird, identisch sind, die an das Ziel-Sharpie übermittelt werden müssen. Dabei handelt es sich um einen manuellen Prozess, bei dem ein wenig Vertrautheit mit der Kompilierung von nativem Code in der Befehlszeile mit der clang-Toolkette erforderlich ist.
 
-**NEU!** Version 3.0 führt außerdem ein Tool für die einfache Bindung [CocoaPods](https://cocoapods.org) über die `sharpie pod` Befehl.
-Wenn die Bibliothek, der Sie interessiert sind als ein CocoaPod verfügbar ist, empfehlen wir, dass Sie zunächst die CocoaPod mit Ziel Sharpie (im Gegensatz zu versuchen, direkt für die Quelle die Bindung) zu binden.
+**NEU!** Version 3,0 führt außerdem ein Tool zum einfachen Binden von [cocoapods](https://cocoapods.org) über `sharpie pod` den Befehl ein.
+Wenn die Bibliothek, an der Sie interessiert sind, als cocoapod verfügbar ist, empfiehlt es sich, zunächst zu versuchen, die cocoapod mit dem Ziel-Sharpie zu binden (im Gegensatz zur direkten Bindung an die Quelle).

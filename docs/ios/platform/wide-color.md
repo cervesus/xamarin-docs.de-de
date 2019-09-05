@@ -1,75 +1,75 @@
 ---
-title: Breite Farbskala in Xamarin.iOS
-description: In diesem Dokument wird erläutert, Breite Farbskala und wie es in einer Xamarin.iOS oder Xamarin.Mac-app verwendet werden kann.
+title: Breite Farbe in xamarin. IOS
+description: In diesem Dokument wird die Breite und die Verwendung in einer xamarin. IOS-oder xamarin. Mac-app erläutert.
 ms.prod: xamarin
 ms.assetid: 576E978A-F182-489A-83E4-D8CDC6890B24
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 523aa1a97e1c536b5afbdb66c52f605382fa338d
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: a1f5301d0c5c0674e162b3d7689c83bbb4f6ae90
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268808"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290534"
 ---
-# <a name="wide-color-in-xamarinios"></a>Breite Farbskala in Xamarin.iOS
+# <a name="wide-color-in-xamarinios"></a>Breite Farbe in xamarin. IOS
 
-_Dieser Artikel behandelt die Breite Farbskala, und wie es in einer Xamarin.iOS oder Xamarin.Mac-app verwendet werden kann._
+_Dieser Artikel befasst sich mit der breiten Farbe und der Verwendung in einer xamarin. IOS-oder xamarin. Mac-app._
 
-iOS 10 und MacOS Sierra verbessert die Unterstützung für erweiterte-Range-Pixelformate "und" Wide-Farbskala Farbräume im gesamten System einschließlich Frameworks wie z. B. Core Graphics, Core-Image, -Metal-Computern und AVFoundation. Unterstützung für Geräte mit Breite Farbskala zeigt wird weiter durch die Bereitstellung dieses Verhalten in der gesamten Grafikstapel geringer.
+IOS 10 und macOS Sierra verbessern die Unterstützung für erweiterte Pixel Formate und große Farbbereiche im gesamten System, einschließlich Frameworks wie Kern Grafiken, Core-Bild, Metal und AVFoundation. Die Unterstützung für Geräte mit breit Farbanzeige wird weiter vereinfacht, indem dieses Verhalten im gesamten Grafik Stapel bereitgestellt wird.
 
-## <a name="asset-catalogs"></a>Ressourcenkataloge
+## <a name="asset-catalogs"></a>Asset-Kataloge
 
-### <a name="supporting-wide-color-with-asset-catalogs"></a>Breite Farbskala mit Ressourcenkataloge unterstützen
+### <a name="supporting-wide-color-with-asset-catalogs"></a>Unterstützen von breit Farben mit Asset-Katalogen
 
-In iOS 10 und MacOS Sierra hat Apple Ressourcenkataloge und kategorisieren statischen Inhalt in der app-Paket verwendet, um Breite Farbskala unterstützen erweitert.
+In ios 10 und macOS Sierra hat Apple die Asset-Kataloge erweitert, die zum einschließen und Kategorisieren von statischem Bildinhalt im Paket der APP verwendet werden, um die Breite der Farbe zu unterstützen.
 
-Mithilfe von Ressourcenkataloge bieten folgende Vorteile für eine app:
+Die Verwendung von Asset-Katalogen bietet die folgenden Vorteile für eine APP:
 
-- Sie bieten die beste Bereitstellungsoption für statisches Bild Assets.
-- Automatische Farbkorrektur unterstützt.
-- Optimierung der automatische Pixel-Format unterstützt.
-- Sie unterstützen App Aufteilen in Slices und Einhaltung der Regeln für App Dadurch wird sichergestellt, dass nur der Inhalt des relevanten Get an Gerät des Benutzers übermittelt.
+- Sie bieten die beste Bereitstellungs Option für statische Image Ressourcen.
+- Sie unterstützen die automatische Farbkorrektur.
+- Sie unterstützen die automatische Pixel Format Optimierung.
+- Sie unterstützen das Aufteilen von apps und die APP-Verdünnung, wodurch sichergestellt wird, dass nur die relevanten Inhalte an das Gerät des Endbenutzers übermittelt werden.
 
-Apple hat Ressourcenkataloge die folgenden Verbesserungen für die Breite Farbskala-Unterstützung vorgenommen:
+Apple hat die folgenden Verbesserungen an Asset-Katalogen für die Unterstützung von breit Farben vorgenommen:
 
-- Inhalt der 16-Bit-(pro Farbkanal) unterstützt.
-- Sie unterstützen dieses Inhalts durch Anzeige Farbskala. Inhalte kann für das sRGB oder Display P3 Farbumfänge gekennzeichnet werden.
+- Sie unterstützen den Inhalt von 16-Bit-Quellen (pro Farbkanal).
+- Sie unterstützen das Katalogisieren von Inhalten nach Anzeige Gamut. Der Inhalt kann entweder für den sRGB-oder den Display P3-Gamuts gekennzeichnet werden.
 
-Der Entwickler hat drei Optionen für die Unterstützung von Breite Farbskala Inhalt in ihre apps:
+Der Entwickler bietet drei Optionen für die Unterstützung von breit Farbinhalten in ihren apps:
 
-1. **Nichts Unternehmen** -da Breite Farbskala Inhalt nur in Situationen verwendet werden soll, in dem die app muss lebendige Farben angezeigt (wobei wird erhöht, wenn Sie die benutzerfreundlichkeit), sollte auch außerhalb dieser Anforderung Inhalte bleiben als-ist. Diese Funktion bleibt weiterhin in allen Situationen von Hardware ordnungsgemäß gerendert werden soll.
-2. **Aktualisieren Sie vorhandene Inhalt auf Display P3** -dies erfordert, dass den Entwickler, ersetzen Sie den Inhalt des vorhandenen in ihrer Asset-Katalog durch eine neue, aktualisierte Datei im Format P3, und markieren es als solches im Ressourcen-Editor. Zur Erstellungszeit wird ein abgeleitetes sRGB-Image aus diesen Ressourcen generiert werden.
-3. **Optimierte Asset Inhalt bereitstellen** -Entwickler werden In diesem Fall geben Sie eine 8-Bit-sRGB und eine 16-Bit-Display P3 Vision jedes Bilds in den Asset-Katalog (ordnungsgemäß gekennzeichnet in den Ressourcen-Editor).
+1. **Nichts Unternehmen** : da Breite Farb Inhalte nur in Situationen verwendet werden sollen, in denen die APP anschauliche Farben anzeigen muss (wo Sie die Benutzer Funktionalität verbessern), sollte der Inhalt außerhalb dieser Anforderung unverändert bleiben. Sie wird in allen Hardware Situationen weiterhin ordnungsgemäß gerendert.
+2. **Aktualisieren vorhandener Inhalte zum Anzeigen von P3** : Dies erfordert, dass der Entwickler den vorhandenen Bildinhalt in seinem Ressourcen Katalog durch eine neue, aktualisierte Datei im P3-Format ersetzt und ihn im Asset-Editor als solche kennzeichnen muss. Zum Zeitpunkt der Erstellung wird ein von diesen Assets abgeleitetes sRGB-Abbild generiert.
+3. **Bereitstellen von optimierten Asset-Inhalten** : in diesem Fall stellt der Entwickler sowohl eine 8-Bit-sRGB als auch eine 16-Bit-Display-P3-Vision für jedes Image im Asset-Katalog bereit (im Asset-Editor ordnungsgemäß gekennzeichnet).
 
-### <a name="asset-catalog-deployment"></a>Asset-Katalog-Bereitstellung
+### <a name="asset-catalog-deployment"></a>Asset Catalog-Bereitstellung
 
-Folgendes geschieht, wenn der Entwickler eine app in der App-Store mit Ressourcenkataloge übermittelt, die Breite Farbskala Inhalt enthalten:
+Folgendes wird angezeigt, wenn der Entwickler eine APP mit Asset-Katalogen an den App Store übermittelt, die Bildinhalte für Breite Farben enthalten:
 
-- Wenn die app für den Endbenutzer bereitgestellt wird, werden App Aufteilen in Slices stellen Sie sicher, dass nur die entsprechenden Inhalte Variante an das Gerät des Benutzers gesendet wird.
-- Auf Gerät, das breite Farbskala nicht unterstützen, fallen es keine Kosten Nutzlast für Breite Farbskala Inhalt, einschließlich, wie sie nie auf dem Gerät geliefert wird.
-- `NSImage` unter MacOS Sierra (und höher) wählt automatisch die beste Darstellung des Inhalte für den Hardware Anzeige.
-- Der angezeigte Inhalt wird automatisch aktualisiert werden, wann oder ob die Geräte-Hardware Ändern der Eigenschaften anzuzeigen.
+- Wenn die APP für den Endbenutzer bereitgestellt wird, stellt die APP-slizierung sicher, dass nur die entsprechende Inhalts Variante an das Gerät des Benutzers übermittelt wird.
+- Auf Geräten, die keine Breite Farbe unterstützen, gibt es keine Nutz Last Kosten für die Einbeziehung von breit Farbinhalten, da diese nie an das Gerät ausgeliefert werden.
+- `NSImage`auf macOS Sierra (und höher) wird automatisch die beste Inhalts Darstellung für die Hardware Anzeige ausgewählt.
+- Der angezeigte Inhalt wird automatisch aktualisiert, wenn oder die Merkmale der Hardware Anzeige der Geräte geändert werden.
 
-### <a name="asset-catalog-storage"></a>Asset-Katalog-Speicher
+### <a name="asset-catalog-storage"></a>Asset Catalog-Speicher
 
-Asset-Katalog-Speicher hat die folgenden Eigenschaften und die Auswirkungen auf die für eine app:
+Der Asset Catalog-Speicher verfügt über die folgenden Eigenschaften und Implikationen für eine APP:
 
-- Apple versucht, beim Erstellen der Speicherung von den Bildinhalt über hohe Qualität Image Konvertierungen zu optimieren.
-- 16 Bits werden pro Farbkanal für Breite Farbskala Inhalt verwendet.
-- Inhalt der abhängigen bildkomprimierung wird verwendet, lieferleistungen Inhaltsgrößen zu senken. Neue "verlustbehaftete" protokollkomprimierungen wurden hinzugefügt, um Inhaltsgrößen weiter zu optimieren.
+- Zum Zeitpunkt der Erstellung versucht Apple, den Speicher des Bildinhalts über qualitativ hochwertige Bild Konvertierungen zu optimieren.
+- 16 Bits werden pro Farbkanal für Breite Farb Inhalte verwendet.
+- Die Inhalts abhängige Bildkomprimierung wird verwendet, um die Größe des Inhalts zu verringern. Zur weiteren Optimierung der Inhalts Größen wurden neue "Lossy"-Komprimierungen hinzugefügt.
 
-## <a name="rendering-off-screen-images-in-app"></a>Rendern von außerhalb des Bildschirms Bildern in-App
+## <a name="rendering-off-screen-images-in-app"></a>Rendern von Offscreen-Bildern in der APP
 
-Basierend auf den Typ der app, die erstellt wird, kann es ermöglicht dem Benutzer den Inhalt einschließen, sie über das Internet erfasst haben, oder erstellen Sie den Inhalt direkt innerhalb der app (z. B. einen Vektor, zeichnen die app z. B.).
+Basierend auf dem Typ der zu erstellenden App kann der Benutzer möglicherweise Bildinhalte einschließen, die er aus dem Internet gesammelt hat, oder Bildinhalte direkt in der APP erstellen (z. b. eine Vector Drawing APP).
 
-In beiden Fällen kann die app die erforderlichen Bilder außerhalb des Bildschirms in Breite Farbskala Verwenden erweiterter Features hinzugefügt, die für IOS- und MacOS rendern.
+In beiden Fällen kann die APP die erforderlichen Bilder in der breiten Farbe von einem Bildschirm mit erweiterten Features, die IOS-und macOS-Funktionen hinzugefügt werden
 
-### <a name="drawing-wide-color-in-ios"></a>Zeichnen Breite Farbskala in iOS
+### <a name="drawing-wide-color-in-ios"></a>Zeichnen von breit Farben in ios
 
-Vor dem erörtert, wie Sie eine Breite Farbskala-Bild unter iOS 10 ordnungsgemäß zu zeichnen, sehen Sie sich die folgenden allgemeinen iOS-Zeichencode:
+Sehen Sie sich den folgenden gängigen IOS-Zeichnungs Code an, bevor Sie erfahren, wie Sie ein breit farbiges Bild in ios 10 korrekt zeichnen:
 
 ```csharp
 public UIImage DrawWideColorImage ()
@@ -84,13 +84,13 @@ public UIImage DrawWideColorImage ()
     }
 ```
 
-Es gibt Probleme mit der standard-Code, die berücksichtigt werden müssen, _vor_ dienen zum Zeichnen eines Bilds Breite Farbskala. Die `UIGraphics.BeginImageContext (size)` Methode, die zum Zeichnen der iOS-Image starten, gelten die folgenden Einschränkungen:
+Es gibt Probleme mit dem Standard Code, der behandelt werden muss, _bevor_ er zum Zeichnen eines breiten Farbbilds verwendet werden kann. Die `UIGraphics.BeginImageContext (size)` zum Starten der IOS-Image Zeichnung verwendete Methode weist die folgenden Einschränkungen auf:
 
-- Es kann nicht Image-Kontexten mit mehr als 8 Bits pro Farbkanal erstellen.
-- Es kann keine Farben in den Extended Range sRGB-Farbraum dar.
-- Es muss nicht die Möglichkeit, eine Schnittstelle zum Erstellen von Kontexten in einer nicht-sRGB-Farbraums aufgrund der aufgerufen wird, im Hintergrund C-Routine auf niedriger Ebene bereitzustellen.
+- Es können keine Bild Kontexte mit mehr als 8 Bits pro Farbkanal erstellt werden.
+- Sie kann keine Farben im erweiterten Bereich der sRGB-Farbraum darstellen.
+- Sie verfügt nicht über die Möglichkeit, eine Schnittstelle bereitzustellen, um Kontexte in einem nicht-sRGB-Farbraum zu erstellen, da die C-Routinen auf niedriger Ebene im Hintergrund aufgerufen werden.
 
-Um diese Einschränkungen zu verarbeiten, und zeichnen ein Image Breite Farbskala unter iOS 10, verwenden Sie stattdessen den folgenden Code:
+Verwenden Sie stattdessen den folgenden Code, um diese Einschränkungen zu behandeln und ein breit farbiges Bild in ios 10 zu zeichnen:
 
 ```csharp
 public UIImage DrawWideColorImage ()
@@ -118,22 +118,22 @@ public UIImage DrawWideColorImage ()
 }
 ```
 
-Die neue `UIGraphicsImageRenderer` Klasse erstellt einen neuen Image-Kontext, der den Extended Range sRGB-Farbraum verarbeiten kann, und es bietet die folgenden Features:
+Die neue `UIGraphicsImageRenderer` -Klasse erstellt einen neuen Bildkontext, der den erweiterten Bereich von sRGB-Farbraum verarbeiten kann und über die folgenden Funktionen verfügt:
 
-- Er ist vollständig Farbe, die standardmäßig verwaltet.
-- Der Extended Range sRGB-Farbraum standardmäßig unterstützt.
-- Es legt auf intelligente Weise auf, wenn es im sRGB oder Extended Range sRGB-Farbraum basierend auf den Funktionen des iOS-Geräts, die die app ausgeführt wird, auf gerendert werden soll.
-- Vollständig und automatisch verwaltet den Image-Kontext (`CGContext`) Lebensdauer, sodass der Entwickler nicht um Aufruf kümmern Begin- und end-Befehle im Kontext.
-- Es ist kompatibel mit der `UIGraphics.GetCurrentContext()` Methode.
+- Der Standardwert ist vollständig Farben verwaltet.
+- Der erweiterte Bereich von sRGB-Farbraum wird standardmäßig unterstützt.
+- Basierend auf den Funktionen des IOS-Geräts, auf dem die app ausgeführt wird, entscheidet es intelligent, ob es im sRGB-oder erweiterten Bereich der sRGB-farbliche Größe renderert werden sollte.
+- Die Lebensdauer des Bild Kontexts (`CGContext`) wird vollständig und automatisch verwaltet, sodass sich der Entwickler nicht um das Aufrufen von BEGIN-und End-Kontext Befehlen kümmern muss.
+- Es ist mit der `UIGraphics.GetCurrentContext()` -Methode kompatibel.
 
-Die `CreateImage` Methode der `UIGraphicsImageRenderer` Klasse aufgerufen, um eine Breite Farbskala-Image zu erstellen ist, und übergeben Sie einen Abschlusshandler mit dem Image-Kontext zum Zeichnen in. Alle der Zeichnung erfolgt innerhalb dieser Abschlusshandler wie folgt:
+Die `CreateImage` -Methode `UIGraphicsImageRenderer` der-Klasse wird aufgerufen, um ein breit Farbbild zu erstellen und einen Vervollständigungs Handler mit dem Bildkontext zu übertragen, in den gezeichnet werden soll. Alle Zeichnungen werden innerhalb dieses Vervollständigungs Handlers wie folgt durchgeführt:
 
-- Die `UIColor.FromDisplayP3` -Methode erstellt eine neue gesättigte rote Farbe in der Breite Farbskala Display P3-Farbraum und es wird verwendet, um die erste Hälfte des Rechtecks gezeichnet werden soll. 
-- Die zweite Hälfte des Rechtecks gezeichnet wird in den normalen sRGB vollständig ausgelastet rote Farbe für den Vergleich.
+- Die `UIColor.FromDisplayP3` -Methode erstellt eine neue vollständig satte rote Farbe im großen Bereich, um P3-Farbraum anzuzeigen, und Sie wird verwendet, um die erste Hälfte des Rechtecks zu zeichnen. 
+- Die zweite Hälfte des Rechtecks wird in der normalen sRGB vollständig satte rote Farbe für den Vergleich gezeichnet.
 
-### <a name="drawing-wide-color-in-macos"></a>Zeichnen Breite Farbskala in macOS
+### <a name="drawing-wide-color-in-macos"></a>Zeichnen von breit Farben in macOS
 
-Die `NSImage` Klasse wurde erweitert, unter MacOS Sierra, um die Anzeige der Breite Farbskala Images zu unterstützen. Zum Beispiel:
+Die `NSImage` -Klasse wurde in macOS Sierra erweitert, um das Zeichnen von breit Farbbildern zu unterstützen. Beispiel:
 
 ```csharp
 var size = CGSize(250,250);
@@ -151,13 +151,13 @@ var wideColorImage = new NSImage(size, false, (drawRect) =>{
 });
 ```
 
-## <a name="rendering-on-screen-images-in-app"></a>In-App-Images auf dem Bildschirm rendern
+## <a name="rendering-on-screen-images-in-app"></a>Rendern von Bildschirmbildern in der APP
 
-Um Breite Farbskala Images auf dem Bildschirm zu rendern, verläuft der Prozess ähnelt, Zeichnen eines Bilds außerhalb des Bildschirms Breite Farbskala für MacOS und iOS oben angezeigt.
+Um breite Farbbilder auf dem Bildschirm zu Rendering, funktioniert der Prozess ähnlich wie das Zeichnen eines Bildschirms für die Bildschirmbreite für macOS und IOS.
 
-### <a name="rendering-on-screen-in-ios"></a>Rendern von auf dem Bildschirm in iOS
+### <a name="rendering-on-screen-in-ios"></a>Rendering auf dem Bildschirm in ios
 
-Überschreiben, wenn die app ein Bild in der Breite Farbskala in iOS auf dem Bildschirm gerendert werden soll muss, die `Draw` Methode der `UIView` fraglichen wie gewohnt. Zum Beispiel:
+Wenn die APP ein Bild auf der Bildschirm Breite auf dem Bildschirm in ios Rendering muss, `Draw` überschreiben Sie `UIView` die-Methode des fraglichen, wie üblich. Beispiel:
 
 ```csharp
 using System;
@@ -183,23 +183,23 @@ namespace MonkeyTalk
 }
 ```
 
-IOS 10 ebenso mit der `UIGraphicsImageRenderer` Klasse, die oben dargestellte Intelligent entscheidet, wenn es im sRGB oder Extended Range sRGB-Farbraum basierend auf den Funktionen des iOS-Geräts, die die app, wann ausgeführt wird gerendert werden sollen die `Draw` Methode wird aufgerufen. Darüber hinaus die `UIImageView` Farbe, die seit iOS 9.3 auch verwaltet wurde.
+Da IOS 10 mit der `UIGraphicsImageRenderer` oben gezeigten Klasse ausgeführt wird, entscheidet es intelligent, ob es im sRGB-oder erweiterten Bereich sRGB-Farbraum renderingbasiert, abhängig von den Funktionen des IOS-Geräts, auf dem die app ausgeführt wird, wenn die `Draw` -Methode aufgerufen wird. Darüber hinaus wurde `UIImageView` die Farbverwaltung seit IOS 9,3 ebenfalls durchgeführt.
 
-Wenn die app muss wissen, wie Rendering auf erfolgt eine `UIView` oder `UIViewController`, sehen sie die neue `DisplayGamut` Eigenschaft der `UITraitCollection` Klasse. Dieser Wert eine `UIDisplayGamut` Enumeration der folgenden:
+Wenn die APP wissen muss, wie das Rendering in `UIView` einem oder `UIViewController`ausgeführt wird, kann Sie `UITraitCollection` die neue `DisplayGamut` -Eigenschaft der-Klasse überprüfen. Bei diesem Wert handelt es `UIDisplayGamut` sich um eine Enumeration der folgenden:
 
 - P3
-- Srgb
+- SRGB
 - Nicht angegeben.
 
-Wenn die app steuern möchte, die Farbraum verwendet wird dass, um ein Bild zu zeichnen, können sie ein neues verwenden `ContentsFormat` Eigenschaft der `CALayer` an die gewünschte-Farbraum. Dieser Wert kann eine `CAContentsFormat` Enumeration der folgenden:
+Wenn die App steuern möchte, welcher Farbraum zum Zeichnen eines Bilds verwendet wird, kann eine neue `ContentsFormat` Eigenschaft `CALayer` von verwendet werden, um den gewünschten Farbraum anzugeben. Dieser Wert kann eine `CAContentsFormat` Enumeration der folgenden sein:
 
 - Gray8Uint
 - Rgba16Float
 - Rgba8Uint
 
-### <a name="rendering-on-screen-in-macos"></a>Rendern von auf dem Bildschirm in macOS
+### <a name="rendering-on-screen-in-macos"></a>Rendering auf dem Bildschirm unter macOS
 
-Überschreiben, wenn die app ein Bild in der Breite Farbskala in MacOS auf dem Bildschirm gerendert werden soll muss, die `DrawRect` Methode der `NSView` fraglichen wie gewohnt. Zum Beispiel:
+Wenn die APP ein Bild auf der Bildschirm Breite auf dem Bildschirm in macOS Rendering muss, `DrawRect` überschreiben Sie `NSView` die-Methode des fraglichen, wie üblich. Beispiel:
 
 ```csharp
 using System;
@@ -226,9 +226,9 @@ namespace MonkeyTalkMac
 }
 ```
 
-In diesem Fall es auf intelligente Weise entscheidet, ob es rendern soll, im sRGB oder Extended Range sRGB-Farbraum basierend auf den Funktionen der Mac-Hardware, die die app, wann ausgeführt wird die `DrawRect` Methode wird aufgerufen.
+Es wird auch hier Intelligent entschieden, ob es im sRGB-oder erweiterten sRGB-Farbraum renderingbasiert, basierend auf den Funktionen der Macintosh-Hardware, auf `DrawRect` der die app ausgeführt wird, wenn die-Methode aufgerufen wird.
 
-Wenn die app steuern möchte, die Farbraum verwendet wird dass, um ein Bild zu zeichnen, können sie ein neues verwenden `DepthLimit` Eigenschaft der `NSWindow` Klasse, um den gewünschten Farbraum anzugeben. Dieser Wert kann eine `NSWindowDepth` Enumeration der folgenden:
+Wenn die App steuern möchte, welcher Farbraum zum Zeichnen eines Bilds verwendet wird, kann eine neue `DepthLimit` Eigenschaft `NSWindow` der-Klasse verwendet werden, um den gewünschten Farbraum anzugeben. Dieser Wert kann eine `NSWindowDepth` Enumeration der folgenden sein:
 
 - OneHundredTwentyEightBitRgb
 - SixtyfourBitRgb

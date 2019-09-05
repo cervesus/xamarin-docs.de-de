@@ -4,15 +4,15 @@ description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste 
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/15/2017
-ms.openlocfilehash: 0702241b5dbc744bf40c59928103d92a73a4c462
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5f56a99e341f58bc06e8bf49305b5527a92f0413
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121219"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289715"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Manuelle Bereitstellung für Xamarin.iOS
 

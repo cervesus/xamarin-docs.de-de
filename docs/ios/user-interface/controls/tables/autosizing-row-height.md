@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie xamarin. IOS-apps Tabe
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 4b00efe1132f5588ee896fc2044c247acfe0723a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 00c2284a12d17e0dcd5a89cb0c39c1064665c6d7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198471"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288443"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>Automatische Größenanpassung der Zeilenhöhe in xamarin. IOS
 
@@ -40,7 +40,7 @@ Nachdem wir nun die Elemente in der Zelle vollständig eingeschränkt haben, mü
 
 Legen Sie das Element, das Sie erweitern möchten, auf einen **niedrigeren** Wert für die hugging-Priorität und einen **niedrigeren** Prioritätswert für die Komprimierung fest.
 
-Als nächstes müssen wir den Zellen Prototyp auswählen und ihm einen eindeutigen Bezeichnerzuordnen:
+Als nächstes müssen wir den Zellen Prototyp auswählen und ihm einen eindeutigen **Bezeichner**zuordnen:
 
 [![](autosizing-row-height-images/table04.png "Geben Sie dem Zellen Prototyp einen eindeutigen Bezeichner.")](autosizing-row-height-images/table04.png#lightbox)
 

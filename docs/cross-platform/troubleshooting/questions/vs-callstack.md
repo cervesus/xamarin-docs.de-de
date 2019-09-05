@@ -3,19 +3,19 @@ title: Wie erfasse ich die aktuellen Aufruflisten des Visual Studio-Prozesses?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 64c24b09-2c4a-43ad-b94d-6cd05a1aee44
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 6d9cabdb22425bdc057f6d52de5aa943537dd1ca
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f07bc4437293bdc49e4811c0104fd7245ccf9738
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864481"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282945"
 ---
 # <a name="how-do-i-collect-the-current-call-stacks-of-the-visual-studio-process"></a>Wie erfasse ich die aktuellen Aufruflisten des Visual Studio-Prozesses?
 
-Bei die grafischen Benutzeroberfläche nach oben (Abstürze, fixiert) in Visual Studio gesperrt wurde, ist ein wichtiger Bestandteil von Diagnoseinformationen sammeln der Satz von Aufruflisten aller Threads der Visual Studio-Prozesses. Um diese Informationen für einen nicht reagierenden Instanz von Visual Studio zu speichern, können Sie eine zweite Instanz von Visual Studio verwenden:
+Wenn die GUI in Visual Studio gesperrt ist (hängt von der Sperre ab), ist ein wichtiger Teil der zu sammelnden Diagnoseinformationen der Satz von Aufruf Listen aller Threads des Visual Studio-Prozesses. Um diese Informationen für eine nicht reagierende Instanz von Visual Studio zu speichern, können Sie eine zweite Instanz von Visual Studio verwenden:
 
 1. Starten Sie eine zweite Instanz (ein neues Fenster) von Visual Studio.
 
@@ -23,20 +23,20 @@ Bei die grafischen Benutzeroberfläche nach oben (Abstürze, fixiert) in Visual 
 
 3. Klicken Sie auf **Debuggen > An den Prozess anhängen**.
 
-   ![](vs-callstack-images/image1.png "Die Option Debuggen > an den Prozess anhängen")
+   ![](vs-callstack-images/image1.png "Wählen Sie Debuggen > an Prozess anhängen.")
 
-4. Wählen Sie die nicht reagierende ursprüngliche Instanz der `devenv.exe` aus der Liste der **verfügbare Prozesse**.
+4. Wählen Sie in der Liste der `devenv.exe` **verfügbaren Prozesse**die ursprüngliche nicht reagierende Instanz von aus.
 
-5. Wählen Sie **Debuggen > Alle unterbrechen**.
+5. Wählen Sie **Debuggen > Alle abbrechen**aus.
 
-   ![](vs-callstack-images/image2.png "Die Option Debuggen > Alle unterbrechen")
+   ![](vs-callstack-images/image2.png "Wählen Sie Debuggen > Alle abbrechen")
 
-6. Wählen Sie **Debuggen > Dump speichern unter**.
+6. Wählen Sie **Debuggen aus, > dump speichern**unter.
 
-   ![](vs-callstack-images/image3.png "Die Option Debuggen > Dump speichern unter")
+   ![](vs-callstack-images/image3.png "Wählen Sie Debuggen > dump speichern unter.")
 
-7. Änderung **Dateityp** zu **Minidump (\*.dmp)** . Dies erzeugt eine kleinere Datei als **Minidump mit Heap**, und der Heap ist in der Regel nicht relevant, für die Diagnose von gesperrt.
+7. Ändern Sie den **Dateityp** in **\*Minidump (. dmp)** . Dadurch wird eine viel kleinere Datei als **Minidump mit Heap**erzeugt, und der Heap ist in der Regel nicht für die Diagnose von friert relevant.
 
-   ![](vs-callstack-images/image4.png "Dies erzeugt eine kleinere Datei als Minidump mit Heap und der Heap ist in der Regel nicht relevant, für die Diagnose von gesperrt")
+   ![](vs-callstack-images/image4.png "Dadurch wird eine viel kleinere Datei als Minidump mit Heap erzeugt, und der Heap ist normalerweise nicht für die Diagnose von friert relevant.")
 
-8. Speichern Sie die Abbilddatei ein. Wenn die Datei online übermitteln zu können, können Sie darauf, um die Größe zu verringern zip.
+8. Speichern Sie die Dumpdatei. Wenn Sie die Datei online übermitteln, können Sie Sie zippen, um die Größe zu verringern.

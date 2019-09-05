@@ -1,47 +1,47 @@
 ---
 title: Einbetten von .NET
-description: Einbetten von .NET können Ihre vorhandenen .NET Code (C#, F#, usw.) von in anderen Programmiersprachen geschriebenen Code genutzt werden soll.
+description: .Net-Einbettung ermöglicht, dass Ihr vorhandener .NET-Code (C#, F#und andere) von Code verwendet werden können, der in anderen Programmiersprachen geschrieben wurde.
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 23233ea8b06e0db580ba99edf2705e3dae5b931f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: af068e5a09cc11eec33508a4f2eb33186168aae6
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363470"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290228"
 ---
 # <a name="net-embedding"></a>Einbetten von .NET
 
 ![Vorschau](~/media/shared/preview.png)
 
-Einbetten von .NET können Ihre vorhandenen .NET Code (C#, F#, usw.) von anderen Programmiersprachen und in verschiedenen Umgebungen verwendet werden.
+.Net-Einbettung ermöglicht, dass Ihr vorhandener .NET-Code (C#, F#und andere) von anderen Programmiersprachen und in verschiedenen Umgebungen genutzt werden können.
 
-Dies bedeutet, dass wenn Sie eine Bibliothek für .NET, die Sie aus Ihrer vorhandenen iOS-app verwenden möchten verfügen, können Sie dies tun.   Oder wenn Sie es mit einem systemeigenen C++-Bibliothek verknüpfen möchten, ist auch möglich, die.   Oder nutzen Sie .NET Code von Java.
+Dies bedeutet, dass Sie, wenn Sie über eine .NET-Bibliothek verfügen, die Sie in Ihrer vorhandenen IOS-App verwenden möchten, dies tun können.   Oder wenn Sie es mit einer nativen C++ Bibliothek verknüpfen möchten, können Sie dies auch tun.   Oder verwenden Sie .NET-Code aus Java.
 
-Einbetten von .NET basiert auf der [Embeddinator-4000](https://github.com/mono/Embeddinator-4000) open Source-Projekt.
+Die .net-Einbettung basiert auf dem Open Source [-Projekt embeddinator-4000](https://github.com/mono/Embeddinator-4000) .
 
 ## <a name="environments-and-languages"></a>Umgebungen und Sprachen
 
-Das Tool ist sowohl über die Umgebung, die dazu verwendet werden, sowie die Sprache, die sie nutzen.   Beispielsweise ist die iOS-Plattform nicht just-in-Time (JIT)-Kompilierung, sodass Einbetten von .NET statisch .NET Code in systemeigenen Code kompiliert wird, die in iOS verwendet werden kann.  In diesen Umgebungen, entscheiden wir uns auf JIT kompiliert, und andere Umgebungen erlauben JIT-Kompilierung.
+Das Tool kennt sowohl die Umgebung, die es verwendet, als auch die Sprache, in der es verwendet wird.   Beispielsweise lässt die IOS-Plattform keine Just-in-time (JIT)-Kompilierung zu, sodass der .NET-Code durch die .net-Einbettung statisch in systemeigenen Code kompiliert wird, der in ios verwendet werden kann.  In anderen Umgebungen ist die JIT-Kompilierung möglich, und in diesen Umgebungen wird JIT-Kompilierung durchzuführen.
 
-Damit Sie ihn als idiomatischen Code in der Zielsprache .NET Code zeigt unterstützt verschiedene Verbraucher für Sprache.   Dies ist die Liste der unterstützten Sprachen, derzeit:
+Es unterstützt verschiedene sprachconsumer, sodass .NET-Code als idiomatischen Code in der Zielsprache angezeigt wird.   Dies ist die Liste der unterstützten Sprachen, die derzeit verfügbar sind:
 
-- [**Objective-C-** ](objective-c/index.md) : Zuordnen von .NET zu idiomatische Objective-C-APIs
-- [**Java** ](android/index.md) : Zuordnen von .NET zu idiomatische Java-APIs
-- [**C** ](get-started/c.md) : Zuordnen von .NET zu objektorientierten wie C-APIs
+- [**Ziel-c**](objective-c/index.md) – Zuordnung von .net zu idiomatischen Ziel-c-APIs
+- [**Java**](android/index.md) – Mapping von .net zu idiomatischen Java-APIs
+- [**C**](get-started/c.md) – Zuordnung von .net zu objektorientierten Objekten wie c-APIs
 
-Weitere Sprachen werden später bereitgestellt.
+Weitere Sprachen werden später angezeigt.
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Überprüfen Sie unsere Leitfäden für jede der derzeit unterstützten Sprachen finden Sie Informationen zum Einstieg:
+Überprüfen Sie zunächst eine unserer Handbücher für jede der derzeit unterstützten Sprachen:
 
-- [**Objective-C-** ](get-started/objective-c/index.md) – behandelt, MacOS und iOS
-- [**Java** ](get-started/java/index.md) – behandelt, MacOS und Android
-- [**C** ](get-started/c.md) – behandelt die Programmiersprache C auf Desktopplattformen
+- [**Ziel-C**](get-started/objective-c/index.md) – deckt macOS und IOS ab
+- [**Java**](get-started/java/index.md) – deckt macOS und Android ab
+- [**C**](get-started/c.md) – deckt die Programmiersprache c auf Desktop Plattformen ab
 
 ## <a name="related-links"></a>Verwandte Links
 

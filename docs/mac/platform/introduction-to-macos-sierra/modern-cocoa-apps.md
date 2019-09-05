@@ -4,15 +4,15 @@ description: In diesem Artikel werden verschiedene Tipps, Features und Techniken
 ms.prod: xamarin
 ms.assetid: F20EE590-246E-40EB-B309-D9D8C090C7F1
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: f79e7f3576748737a4feb9204fb9840afdbb1ef4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 04bcf1012800ef2883fef80580bcec869bd8e5a3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645438"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291469"
 ---
 # <a name="building-modern-macos-apps"></a>Erstellen moderner macOS-Apps
 
@@ -584,7 +584,7 @@ Dadurch kann der Entwickler eine Person `NSDraggingItem` für jedes Element in d
 
 Wenn Sie mit `NSCollectionViews`arbeiten, verwenden Sie `PasteboardWriterForItemAt` erneut die-Methode im `WriteItemsAt` Gegensatz zur-Methode, wenn der Zieh Vorgang beginnt.
 
-Der Entwickler sollte immer vermeiden, große Dateien auf dem pasteboard zu platzieren. Neues in _macOS Sierra ermöglicht es_ dem Entwickler, Verweise auf die angegebenen Dateien auf dem Zwischenablage zu platzieren, die später erfüllt werden, wenn der Benutzer den Drop-Vorgang mit den `NSFilePromiseProvider` neuen `NSFilePromiseReceiver` -und-Klassen abschließt.
+Der Entwickler sollte immer vermeiden, große Dateien auf dem pasteboard zu platzieren. Neues in macOS Sierra ermöglicht es dem Entwickler, Verweise auf die angegebenen Dateien auf dem Zwischenablage zu _platzieren, die_ später erfüllt werden, wenn der Benutzer den Drop-Vorgang mit den `NSFilePromiseProvider` neuen `NSFilePromiseReceiver` -und-Klassen abschließt.
 
 <a name="Using-Modern-Event-Tracking" />
 
@@ -813,7 +813,7 @@ Die **Spiegel** Eigenschaft weist das System an, bestimmte Steuerelement Eigensc
 - **Rechts-nach-links-Schnittstelle** : die Position wird nur in der Sprache rechts in Links geändert.
 - **Nie** : die Position ändert sich nie.
 
-Wenn der Entwickler den Inhalt einer textbasierten Ansicht **zentriert,** **rechtfertigen** oder **vollständig** ausrichten hat, werden diese nicht basierend auf ausgewählter Sprache gekippt.
+Wenn der Entwickler den Inhalt einer textbasierten Ansicht zentriert, **rechtfertigen** oder **vollständig** ausrichten **hat, werden**diese nicht basierend auf ausgewählter Sprache gekippt.
 
 Vor macOS Sierra werden Steuerelemente, die im Code erstellt wurden, nicht automatisch gespiegelt. Der Entwickler musste Code wie den folgenden verwenden, um die Spiegelung zu behandeln:
 

@@ -3,15 +3,15 @@ title: Apple-Kontoverwaltung
 description: In diesem Dokument wird beschrieben, wie die Features der Apple-Kontoverwaltung in Visual Studio für Mac und Visual Studio 2019 verwendet werden.
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: bb51550518c723a72a29637ad8972cb61c687c6b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 9629d775b45951279178dffa3600e7cd5073dd38
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118974"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290626"
 ---
 # <a name="apple-account-management"></a>Apple-Kontoverwaltung
 
@@ -70,7 +70,7 @@ Sie müssen über ein Apple-Entwicklerkonto verfügen, um diese Funktion verwend
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Bevor Sie mit dem Hinzufügen Ihrer Apple-ID zu Visual Studio 2019 beginnen, sollten Sie sicherstellen, dass Ihre Entwicklungsumgebung [mit einem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)-buildhost gekoppelt ist.
+1. Bevor Sie mit dem Hinzufügen Ihrer Apple-ID zu Visual Studio 2019 beginnen, sollten Sie sicherstellen, dass Ihre Entwicklungsumgebung [mit einem Mac-buildhost gekoppelt](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ist.
 
 1. Um das Fenster "Kontoverwaltung" zu öffnen, navigieren Sie zu Extras **> Optionen > xamarin > Apple-Konten**:
 

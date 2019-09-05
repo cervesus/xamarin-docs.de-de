@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: dbc0802b39e8fa736ec3b71dc23f488d08fd8a42
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621084"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290604"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>IOS-Erweiterungen in xamarin. IOS
 
@@ -92,7 +92,7 @@ Außerdem gelten für das Projekt der Erweiterung die folgenden Anforderungen:
 - Sie muss über eine Bündel-ID verfügen, die mit der Bündel-ID Ihrer Container-App beginnt. Wenn die Container-App beispielsweise über eine Bündel-ID von `com.myCompany.ContainerApp`verfügt, kann der Bezeichner der `com.myCompany.ContainerApp.MyExtension`Erweiterung wie folgt lauten: 
 
   ![](extensions-images/bundleidentifiers.png) 
-- Er muss den Schlüssel `NSExtensionPointIdentifier`mit einem entsprechenden Wert ( `Info.plist` `com.apple.widget-extension` z. b. für ein Aktuelles Benachrichtigungs Center-Widget) in seiner Datei definieren.
+- Er `NSExtensionPointIdentifier`muss den Schlüssel mit einem entsprechenden Wert ( `com.apple.widget-extension` z. b. für ein **Aktuelles Benachrichtigungs** Center-Widget) in `Info.plist` seiner Datei definieren.
 - Außerdem muss *entweder* der `NSExtensionMainStoryboard` Schlüssel oder `Info.plist` der `NSExtensionPrincipalClass` Schlüssel in der Datei mit einem geeigneten Wert definiert werden:
   - Verwenden Sie `NSExtensionMainStoryboard` den Schlüssel, um den Namen des Storyboards anzugeben, das die Hauptbenutzer Oberfläche für die Erweiterung `.storyboard`(minus) darstellt. Beispielsweise `Main` für die `Main.storyboard` Datei.
   - Verwenden Sie `NSExtensionPrincipalClass` den Schlüssel, um die Klasse anzugeben, die beim Start der Erweiterung initialisiert wird. Der Wert muss dem **Registrierungs** Wert Ihrer `UIViewController`entsprechen: 

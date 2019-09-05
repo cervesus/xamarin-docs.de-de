@@ -4,23 +4,23 @@ description: In diesem Artikel wird die neue callkit-API behandelt, die Apple in
 ms.prod: xamarin
 ms.assetid: 738A142D-FFD2-4738-B3ED-57C273179848
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 92e4cd45a7fe49a7a78a8922bf70ac87870db095
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: ef2894d91604f0bc315b38eb525862858428c405
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200402"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292166"
 ---
 # <a name="callkit-in-xamarinios"></a>Callkit in xamarin. IOS
 
-Die neue callkit-API in ios 10 bietet eine Möglichkeit für VoIP-Apps, mit der iPhone-Benutzeroberfläche zu integrieren und eine vertraute Schnittstelle und Benutzeroberfläche für den Endbenutzer bereitzustellen. Mit dieser API können Benutzer VoIP-Anrufe über den Sperrbildschirm des IOS-Geräts anzeigen und mit ihnen interagieren und Kontakte mithilfe der **Favoriten** -und Wiederholungs Ansichten der Phone-App verwalten.
+Die neue callkit-API in ios 10 bietet eine Möglichkeit für VoIP-Apps, mit der iPhone-Benutzeroberfläche zu integrieren und eine vertraute Schnittstelle und Benutzeroberfläche für den Endbenutzer bereitzustellen. Mit dieser API können Benutzer VoIP-Anrufe über den Sperrbildschirm des IOS-Geräts anzeigen und mit ihnen interagieren und Kontakte mithilfe der **Favoriten** **-und Wiederholungs** Ansichten der Phone-App verwalten.
 
 ## <a name="about-callkit"></a>Informationen über callkit
 
-Laut Apple handelt es sich bei callkit um ein neues Framework, mit dem Sie VoIP-Apps (Voice over IP) von Drittanbietern auf eine erste Seite mit IOS 10 herauf Stufen können. Mit der callkit-API können VoIP-Apps in die iPhone-Benutzeroberfläche integriert werden und eine vertraute Oberfläche für den Endbenutzer bereitstellen. Ebenso wie die integrierte Phone-App kann ein Benutzer VoIP-Anrufe über den Sperrbildschirm des IOS-Geräts anzeigen und mit ihm interagieren und Kontakte mithilfe der **Favoriten** -und Wiederholungs Ansichten der Phone-App verwalten.
+Laut Apple handelt es sich bei callkit um ein neues Framework, mit dem Sie VoIP-Apps (Voice over IP) von Drittanbietern auf eine erste Seite mit IOS 10 herauf Stufen können. Mit der callkit-API können VoIP-Apps in die iPhone-Benutzeroberfläche integriert werden und eine vertraute Oberfläche für den Endbenutzer bereitstellen. Ebenso wie die integrierte Phone-App kann ein Benutzer VoIP-Anrufe über den Sperrbildschirm des IOS-Geräts anzeigen und mit ihm interagieren und Kontakte mithilfe der **Favoriten** **-und Wiederholungs** Ansichten der Phone-App verwalten.
 
 Außerdem bietet die callkit-API die Möglichkeit, App-Erweiterungen zu erstellen, die eine Telefonnummer mit einem Namen (Aufrufer-ID) verknüpfen oder dem System mitteilen können, wenn eine Zahl blockiert werden soll (Aufruf Sperre).
 
@@ -1054,7 +1054,7 @@ Beachten Sie Folgendes Beispiel:
 
 1. Die APP hat eine Aktion zum Starten des Aufrufes empfangen und begonnen, den Prozess der Initialisierung eines neuen VoIP-Aufrufes mit dem Kommunikationsnetzwerk zu starten.
 2. Aufgrund der eingeschränkten oder keinen Netzwerk Kommunikationsfunktion tritt bei dieser Verbindung ein Fehler auf.
-3. Die APP *muss* die Fehlermeldung zurück an die Aktion zum Starten des Aufrufens ( `Action.Fail()`) senden, um das System über den Fehler zu informieren.
+3. Die APP *muss* die **Fehlermeldung zurück** an die Aktion zum Starten des Aufrufens (`Action.Fail()`) senden, um das System über den Fehler zu informieren.
 4. Dadurch kann das System den Benutzer über den Status des Aufrufes informieren. Beispielsweise, um die Benutzeroberfläche für den Aufrufen eines Fehlers anzuzeigen.
 
 Darüber hinaus muss eine IOS 10 VoIP-App auf _Timeout Fehler_ reagieren, die auftreten können, wenn eine erwartete Aktion nicht innerhalb eines bestimmten Zeitraums verarbeitet werden kann. Jedem Aktionstyp, der von callkit bereitgestellt wird, ist ein maximaler Timeout Wert zugeordnet. Diese Timeout Werte stellen sicher, dass jede vom Benutzer angeforderte callkit-Aktion reaktionsfähig verarbeitet wird, sodass das Betriebssystem auch flüssig und reaktionsfähig bleibt.
@@ -1140,7 +1140,7 @@ Gehen Sie folgendermaßen vor, um eine Erweiterung des Callcenter in einer xamar
 4. Geben Sie einen **Namen** für die Erweiterung ein, und klicken Sie auf die Schaltfläche **weiter** : 
 
     [![](callkit-images/calldir02.png "Eingeben eines Namens für die Erweiterung")](callkit-images/calldir02.png#lightbox)
-5. Passen Sie den **Projektnamen** und/ oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** 
+5. Passen Sie den **Projektnamen** und/oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** 
 
     [![](callkit-images/calldir03.png "Erstellen des Projekts")](callkit-images/calldir03.png#lightbox) 
 

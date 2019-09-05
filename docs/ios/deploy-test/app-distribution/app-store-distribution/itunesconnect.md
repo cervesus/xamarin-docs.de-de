@@ -4,15 +4,15 @@ description: Dieser Artikel beschreibt die Einrichtung und Verwaltung einer Xama
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 24cf255d5cf9269a7d0d485ad8a88abe6842b07a
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 910f91478eeb6894e11748c929cc94bc2c0dbe64
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865609"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283589"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurieren einer App in iTunes Connect
 
@@ -200,7 +200,7 @@ In diesem Abschnitt des iTunes Connect-Anwendungsdatensatzes wird die eindeutige
 ### <a name="app-icon"></a>App-Symbol
 
 > [!IMPORTANT]
->  App-Symbole werden nicht mehr über iTunes Connect übermittelt. Sie müssen durch ein **AppIcon**-Bild übermittelt werden, das in der Datei **Assets.xcassets** des Projekts festgelegt ist. Weitere Informationen finden Sie im Handbuch zu [App Store-Symbolen](~/ios/app-fundamentals/images-icons/app-store-icon.md).
+> App-Symbole werden nicht mehr über iTunes Connect übermittelt. Sie müssen durch ein **AppIcon**-Bild übermittelt werden, das in der Datei **Assets.xcassets** des Projekts festgelegt ist. Weitere Informationen finden Sie im Handbuch zu [App Store-Symbolen](~/ios/app-fundamentals/images-icons/app-store-icon.md).
 
 Das App-Symbol ist das Gesicht Ihrer Anwendung den Benutzern gegenüber. Es muss daher einprägsam und auch bei kleiner Größe gut erkennbar sein. Einprägsame Symbole sind übersichtlich, einfach und sofort wiedererkennbar.
 

@@ -4,15 +4,15 @@ description: Mit IOS 12 kann eine Erweiterung für Benachrichtigungs Inhalte die
 ms.prod: xamarin
 ms.assetid: 6B34AD78-5117-42D0-B6E7-C8B4B453EAFF
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 1a4380e321035b8948f9b40bdce052161025d5f3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5be233e9b07069dc7c9842a3ddd00e7d46d9c22f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652585"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291276"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Schaltflächen für dynamische Benachrichtigungs Aktionen in xamarin. IOS
 

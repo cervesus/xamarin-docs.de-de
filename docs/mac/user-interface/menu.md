@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Menüs in einer xamarin. Ma
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 0879fcc529e72e03df4eaba7790a534ace38856f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 27eb5679bbc4825ab2bf0e1990b00d97ab207619
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657344"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292434"
 ---
 # <a name="menus-in-xamarinmac"></a>Menüs in xamarin. Mac
 
@@ -26,7 +26,7 @@ Menüs sind ein wesentlicher Bestandteil der Benutzeroberfläche einer Mac-Anwen
 - **Kontextmenüs** : Diese werden angezeigt, wenn der Benutzer mit der rechten Maustaste klickt oder auf ein Element in einem Fenster klickt.
 - **Die Statusleiste** : Dies ist der Bereich ganz rechts in der Anwendungsmenü Leiste, der oben auf dem Bildschirm angezeigt wird (auf der linken Seite der Menüleiste) und nach links vergrößert wird, wenn Elemente hinzugefügt werden.
 - **Menü Andocken** : das Menü für jede Anwendung im andocken, das angezeigt wird, wenn der Benutzer mit der rechten Maustaste klickt oder auf das Symbol der Anwendung klickt, oder wenn der Benutzer auf das Symbol klickt und die Maustaste gedrückt hält.
-- **Popup Schaltfläche und** pulldownlisten: eine Popup Schaltfläche zeigt ein ausgewähltes Element an und zeigt eine Liste der Optionen an, die Sie auswählen können, wenn der Benutzer darauf klickt. Eine Pulldownliste ist ein Typ von Popup Schaltfläche, der in der Regel für die Auswahl von Befehlen verwendet wird, die für den Kontext der aktuellen Aufgabe spezifisch sind. Beides kann an beliebiger Stelle in einem Fenster angezeigt werden.
+- **Popup Schaltfläche und pulldownlisten** : eine Popup Schaltfläche zeigt ein ausgewähltes Element an und zeigt eine Liste der Optionen an, die Sie auswählen können, wenn der Benutzer darauf klickt. Eine Pulldownliste ist ein Typ von Popup Schaltfläche, der in der Regel für die Auswahl von Befehlen verwendet wird, die für den Kontext der aktuellen Aufgabe spezifisch sind. Beides kann an beliebiger Stelle in einem Fenster angezeigt werden.
 
 [![Ein Beispiel Menü](menu-images/intro01.png "Ein Beispiel Menü")](menu-images/intro01-large.png#lightbox)
 
@@ -108,7 +108,7 @@ Speichern Sie die Änderungen am Design der Benutzeroberfläche, und wechseln Si
 
 ![Die Menü Elemente werden automatisch aktiviert/deaktiviert] . (menu-images/appmenu07.png "Die Menü Elemente werden automatisch aktiviert/deaktiviert") .
 
-Beachten Sie, dass die **Ausschneide**-, **Kopier**-und Einfüge Elemente automatisch aktiviert und voll funktionsfähig sind, ohne eine einzige Codezeile schreiben zu müssen. 
+Beachten Sie, dass die **Ausschneide**-, **Kopier**-und **Einfüge** Elemente automatisch aktiviert und voll funktionsfähig sind, ohne eine einzige Codezeile schreiben zu müssen. 
 
 Was ist hier los? Merken Sie sich die integrierten vordefinieren-Aktionen, die mit den Standardmenü Elementen verknüpft sind (wie oben dargestellt). die meisten Cocoa-Benutzeroberflächen Elemente, die Teil von macOS sind, haben in bestimmte Aktionen integriert (z `copy:`. b.). Wenn Sie also einem Fenster hinzugefügt, aktiv und ausgewählt werden, werden die entsprechenden Menü Elemente bzw. Elemente, die an diese Aktion angefügt sind, automatisch aktiviert. Wenn der Benutzer das Menü Element auswählt, wird die Funktionalität, die in das UI-Element integriert ist, aufgerufen und ausgeführt, alle ohne Eingriff des Entwicklers.
 
@@ -117,7 +117,7 @@ Was ist hier los? Merken Sie sich die integrierten vordefinieren-Aktionen, die m
 Standardmäßig wird jedes Mal, wenn ein Benutzer Ereignis `NSMenu` auftritt, automatisch jedes sichtbare Menü und Menü Element basierend auf dem Kontext der Anwendung aktiviert und deaktiviert. Es gibt drei Möglichkeiten, ein Element zu aktivieren/deaktivieren:
 
 - **Automatisches Aktivieren des Menüs** : ein Menü Element ist aktiviert `NSMenu` , wenn von ein entsprechendes Objekt gefunden werden kann, das auf die Aktion antwortet, mit der das Element verknüpft ist. Beispielsweise die oben genannte Textansicht, die über einen integrierten Hook für die `copy:` Aktion verfügt.
-- **Benutzerdefinierte Aktionen und validatemenuitem::** für ein beliebiges Menü Element, das an ein [Fenster oder eine benutzerdefinierte Aktion](#Working-with-Custom-Window-Actions)des Ansichts `validateMenuItem:` Controllers gebunden ist, können Sie die Aktion hinzufügen und Menü Elemente manuell aktivieren bzw. deaktivieren.
+- **Benutzerdefinierte Aktionen und validatemenuitem::** für ein beliebiges Menü Element, das an ein [Fenster oder eine benutzerdefinierte Aktion des Ansichts Controllers](#Working-with-Custom-Window-Actions)gebunden ist, können Sie die `validateMenuItem:` Aktion hinzufügen und Menü Elemente manuell aktivieren bzw. deaktivieren.
 - **Manuelles** Aktivieren des Menüs: Sie legen `Enabled` die-Eigenschaft `NSMenuItem` jedes manuell fest, um jedes Element einzeln in einem Menü zu aktivieren bzw. zu deaktivieren.
 
 Um ein System auszuwählen, legen Sie `AutoEnablesItems` die-Eigenschaft `NSMenu`eines fest. `true`ist automatisch (Standardverhalten) und `false` ist manuell. 
@@ -207,7 +207,7 @@ Wenn Sie auf die Schaltfläche " **Öffnen** " klicken, wird unsere Warnmeldung 
 
 ![Beispiel Dialogfeld Meldung](menu-images/appmenu11.png "Beispiel Dialogfeld Meldung")
 
-Die wichtigste `[Export ("openDocument:")]`Zeile ist, `NSMenu` dass der appdelegat über eine-Methode `void OpenDialog (NSObject sender)` verfügt, die auf die `openDocument:` Aktion antwortet. Wenn Sie sich weiter oben merken, wird das Menü Element **Öffnen** in Interface Builder standardmäßig automatisch mit dieser Aktion verknüpft:
+Die wichtigste `[Export ("openDocument:")]`Zeile ist, `NSMenu` dass der **appdelegat** über eine-Methode `void OpenDialog (NSObject sender)` verfügt, die auf die `openDocument:` Aktion antwortet. Wenn Sie sich weiter oben merken, wird das Menü Element **Öffnen** in Interface Builder standardmäßig automatisch mit dieser Aktion verknüpft:
 
 [![Anzeigen der angefügten Aktionen](menu-images/defaultbar03.png "Anzeigen der angefügten Aktionen")](menu-images/defaultbar03-large.png#lightbox)
 
@@ -483,7 +483,7 @@ Das Menü sollte nun wie folgt aussehen:
 
 [![Die Elemente am neuen Speicherort](menu-images/maint05.png "Die Elemente am neuen Speicherort")](menu-images/maint05-large.png#lightbox)
 
-Ziehen Sie als nächstes das textsubmenü aus dem Menü **Format** aus, und platzieren Sie es in der Hauptmenüleiste zwischen den Menüs **Format** und **Fenster** :
+Ziehen Sie als nächstes das **textsubmenü** aus dem Menü **Format** aus, und platzieren Sie es in der Hauptmenüleiste zwischen den Menüs **Format** und **Fenster** :
 
 [![Das Textmenü](menu-images/maint06.png "Das Textmenü")](menu-images/maint06-large.png#lightbox)
 
@@ -491,7 +491,7 @@ Wechseln wir zurück zum Menü **Format** , und löschen Sie das unter Menü Ele
 
 [![Das Schriftart Menü](menu-images/maint07.png "Das Schriftart Menü")](menu-images/maint07-large.png#lightbox)
 
-Als Nächstes erstellen wir ein benutzerdefiniertes Menü mit vordefinierenden Ausdrücken, die automatisch an den Text in der Textansicht angehängt werden, wenn Sie ausgewählt werden. Geben Sie im Suchfeld im unteren Bereich des **Bibliothek** inspektortyps in "Menu" ein. Dies erleichtert die Suche nach und die Arbeit mit allen Menü Elemente der Benutzeroberfläche:
+Als Nächstes erstellen wir ein benutzerdefiniertes Menü mit vordefinierenden Ausdrücken, die automatisch an den Text in der Textansicht angehängt werden, wenn Sie ausgewählt werden. Geben Sie im Suchfeld im unteren Bereich des **Bibliothek inspektortyps** in "Menu" ein. Dies erleichtert die Suche nach und die Arbeit mit allen Menü Elemente der Benutzeroberfläche:
 
 ![Der Bibliotheks Inspektor](menu-images/maint08.png "Der Bibliotheks Inspektor")
 
@@ -523,8 +523,8 @@ Nun erstellen wir einen Satz benutzerdefinierter Aktionen, damit unsere neuen Me
 
 Führen Sie die folgenden Schritte aus:
 
-1. Steuerelement: ziehen Sie das **Adress** Menü Element in die Datei appdelegat **. h** .
-2. Wechseln Sie zum Verbindungstyp in **Aktion**: 
+1. Steuerelement: ziehen Sie das **Adress** Menü Element in die Datei **appdelegat. h** .
+2. Wechseln Sie zum **Verbindungstyp** in **Aktion**: 
 
     [![Auswählen des Aktions Typs](menu-images/maint17.png "Auswählen des Aktions Typs")](menu-images/maint17-large.png#lightbox)
 3. Geben Sie den **Namen** "phrasaddress" ein, und klicken Sie auf die Schaltfläche **verbinden** , um die neue Aktion zu erstellen: 
@@ -1048,9 +1048,9 @@ Eine Popup Schaltfläche zeigt ein ausgewähltes Element an und zeigt eine Liste
 
 Erstellen Sie eine benutzerdefinierte Popup Schaltfläche für die Anwendung, indem Sie die folgenden Schritte ausführen:
 
-1. Bearbeiten Sie die Datei " **Main. Storyboard** " in Xcode, und ziehen Sie eine **Popup** Schaltfläche aus dem **Bibliotheks Inspektor** in das **Panel** Fenster, das im Abschnitt " [Kontextmenüs](#Contextual_Menus) " erstellt wurde: 
+1. Bearbeiten Sie die Datei " **Main. Storyboard** " in Xcode, und ziehen Sie eine **Popup Schaltfläche** aus dem **Bibliotheks Inspektor** in das **Panel** Fenster, das im Abschnitt " [Kontextmenüs](#Contextual_Menus) " erstellt wurde: 
 
-    [![Hinzufügen einer Popup] Schaltfläche (menu-images/popup01.png "Hinzufügen einer Popup") Schaltfläche](menu-images/popup01-large.png#lightbox)
+    [![Hinzufügen einer Popup Schaltfläche](menu-images/popup01.png "Hinzufügen einer Popup Schaltfläche")](menu-images/popup01-large.png#lightbox)
 2. Fügen Sie ein neues Menü Element hinzu, und legen Sie die Titel der Elemente im Popup auf Folgendes fest: **Adresse**, **Datum**, **Begrüßung**und **Signatur** 
 
     [![Konfigurieren der Menü Elemente](menu-images/popup02.png "Konfigurieren der Menü Elemente")](menu-images/popup02-large.png#lightbox)

@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F5E5DCC6-F7CC-48E2-89E8-709E9C269502
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 6a51529e5a8c2878e46946608455f409ece9e43a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: b8006b1ffe253ac57c1ab435690c5b378cc709fb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200227"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278673"
 ---
 # <a name="can-i-change-the-output-path-of-the-ipa-file"></a>Kann ich den Ausgabepfad der IPA-Datei ändern?
 
@@ -47,7 +47,7 @@ Diese Schritte funktionieren für alle IOS-Projekte, die die MSBuild-Build-Engin
 ## <a name="notes"></a>Hinweise
 - Die `CreateIpaDependsOn` -Eigenschaft wird in der `Xamarin.iOS.Common.targets` Datei definiert, die Teil von xamarin. IOS ist. Dies verhält sich wie im Abschnitt Überschreiben von [vordefinierten Zielen](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) im Artikel [Vorgehensweise: Erweitern Sie den Visual Studio-](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)Buildprozess.
 
-- Sie können eine Verschiebungs Aufgabe anstelle einer **Kopier** Aufgabe verwenden, wenn Sie dies bevorzugen. Wenn Sie diese Option auswählen und unter Windows aufbauen, müssen Sie den voll qualifizierten Aufgaben Namen `<Microsoft.Build.Tasks.Move>` verwenden, um eine Mehrdeutigkeit mit den xamarinvs-Buildaufgaben zu vermeiden.
+- Sie können eine Verschiebungs Aufgabe anstelle einer **Kopier** **Aufgabe verwenden** , wenn Sie dies bevorzugen. Wenn Sie diese Option auswählen und unter Windows aufbauen, müssen Sie den voll qualifizierten Aufgaben Namen `<Microsoft.Build.Tasks.Move>` verwenden, um eine Mehrdeutigkeit mit den xamarinvs-Buildaufgaben zu vermeiden.
 
 ## <a name="for-versions-before-xamarin-studio-6005174--xamarin-for-visual-studio-410530"></a>Für Versionen vor Xamarin Studio 6.0.0.5174 | Xamarin für Visual Studio 4.1.0.530
 
@@ -81,4 +81,4 @@ Diese Schritte funktionieren für alle IOS-Projekte, die die MSBuild-Build-Engin
 ## <a name="notes"></a>Hinweise
 - Die `CreateIpaDependsOn` -Eigenschaft wird in der `Xamarin.iOS.Common.targets` Datei definiert, die Teil von xamarin. IOS ist. t verhält sich wie im Abschnitt Überschreiben von [vordefinierten Zielen](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) im Artikel [Vorgehensweise: Erweitern Sie den Visual Studio-](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)Buildprozess.
 
-- Sie können eine Verschiebungs Aufgabe anstelle einer **Kopier** Aufgabe verwenden, wenn Sie dies bevorzugen. Wenn Sie diese Option auswählen und unter Windows aufbauen, müssen Sie den voll qualifizierten Aufgaben Namen `<Microsoft.Build.Tasks.Move>` verwenden, um eine Mehrdeutigkeit mit den xamarinvs-Buildaufgaben zu vermeiden.
+- Sie können eine Verschiebungs Aufgabe anstelle einer **Kopier** **Aufgabe verwenden** , wenn Sie dies bevorzugen. Wenn Sie diese Option auswählen und unter Windows aufbauen, müssen Sie den voll qualifizierten Aufgaben Namen `<Microsoft.Build.Tasks.Move>` verwenden, um eine Mehrdeutigkeit mit den xamarinvs-Buildaufgaben zu vermeiden.

@@ -3,15 +3,15 @@ title: Einführung in Webdienste
 description: In dieser Anleitung wird veranschaulicht, wie verschiedene Webdienst Technologien genutzt werden. Zu den behandelten Themen gehören die Kommunikation mit Rest-Diensten, SOAP-Diensten und Windows Communication Foundation-Diensten.
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 07ebd61704ed07892eed9ce4d7fd7a21e215bee2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3e5ce4496b4a2deb86bb2b7dd6d36e5e9b3f446c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526725"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287578"
 ---
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
@@ -441,7 +441,7 @@ client.ClientCredentials.UserName.Password = @"mrsnuggles";
 
 Wenn Sie im obigen Beispiel die Meldung "Out of Trampolines of type 0" erhalten, können Sie die Anzahl der basolines vom Typ 0 erhöhen, indem Sie das `–aot “trampolines={number of trampolines}”` Argument zum Build hinzufügen. Weitere Informationen finden Sie unter [Problembehandlung](~/ios/troubleshooting/troubleshooting.md#trampolines).
 
-Weitere Informationen zur http-Standard Authentifizierung, obwohl im Kontext eines Rest-Webdiensts, finden Sie unter [Authentifizieren eines](~/xamarin-forms/data-cloud/authentication/rest.md)Rest-Webdiensts.
+Weitere Informationen zur http-Standard Authentifizierung, obwohl im Kontext eines Rest-Webdiensts, finden Sie unter [Authentifizieren eines Rest-Webdiensts](~/xamarin-forms/data-cloud/authentication/rest.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

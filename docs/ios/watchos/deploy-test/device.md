@@ -1,159 +1,159 @@
 ---
-title: Tests auf der Apple Watch-Geräte
-description: Dieses Dokument beschreibt, wie zum Bereitstellen einer WatchOS-app, die für Tests auf einem tatsächlichen Apple Watch mit Xamarin erstellt wurde. Es wird erläutert, Geräte, Profile, Tests, Bereitstellung und bietet einige Tipps zur Problembehandlung.
+title: Testen auf Apple Watch Geräten
+description: In diesem Dokument wird beschrieben, wie Sie eine watchos-App bereitstellen, die mit xamarin erstellt wurde, um eine tatsächliche Apple Watch zu testen Es werden Geräte, Bereitstellungs Profile und Tests erläutert, und es werden einige Tipps zur Problembehandlung bereitgestellt.
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 9c15e9205b96a02caa182e47b71c6d36c8bff1aa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4b1e232259d7b1816e64298b5c0b8853d8385c20
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61282951"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283858"
 ---
-# <a name="testing-on-apple-watch-devices"></a>Tests auf der Apple Watch-Geräte
+# <a name="testing-on-apple-watch-devices"></a>Testen auf Apple Watch Geräten
 
-Nachdem Sie ausgeführt haben die [Bereitstellungsschritte](~/ios/watchos/deploy-test/index.md) zum Erstellen von App-IDs und App-Gruppen (falls erforderlich), verwenden Sie die Anweisungen auf dieser Seite:
+Nachdem Sie die [Bereitstellungs Schritte](~/ios/watchos/deploy-test/index.md) zum Erstellen von App-IDs und App-Gruppen ausgeführt haben (falls erforderlich), befolgen Sie die Anweisungen auf dieser Seite für Folgendes:
 
-- [Einrichten Ihrer Geräte](#devices) im Apple Developer Center, und
-- [Erstellen von Entwicklungsbereitstellungsprofilen](#profiles), klicken Sie dann
-- [Bereitstellen und testen](#testing) auf einer Apple Watch.
+- [Richten Sie Ihre Geräte](#devices) im Apple dev Center ein, und
+- [Erstellen Sie Entwicklungs Bereitstellungs profile](#profiles), und
+- Stellen Sie eine Apple Watch bereit [und testen](#testing) Sie Sie.
 
 <a name="devices" />
 
 ## <a name="devices"></a>Geräte
 
-Testen von iOS-apps auf einem echten iPhone oder iPad arbeiten, ist das Gerät im Dev Center registriert werden immer erforderlich. Die Geräteliste sieht wie folgt aus (klicken Sie auf das Pluszeichen **+** ein neues Gerät hinzufügen):
+Das Testen von IOS-apps auf einem echten iPhone oder iPad erforderte immer das Registrieren des Geräts im dev Center. Die Geräteliste sieht wie folgt aus (Klicken Sie auf **+** das Pluszeichen, um ein neues Gerät hinzuzufügen):
 
 ![](device-images/devices-sml.png "Die Geräteliste sieht wie folgt aus.")
 
-Überwachungen unterscheiden sich nicht – nun müssen Sie Ihrer Apple Watch-Geräte hinzufügen, vor dem Bereitstellen von apps für sie. Suchen Sie der Überwachung des UDID mithilfe **Xcode** (**Windows > Geräte** Liste). Wenn das Telefon gekoppelte verbunden ist wird auch die Überwachung der Informationen angezeigt:
+Uhren sind nicht anders. Sie müssen nun Ihr Apple Watch Gerät hinzufügen, bevor Sie Apps für das Gerät bereitstellen. Suchen Sie die Benutzerkontensteuerung mithilfe von **Xcode** (**Windows >-Geräte** Liste). Wenn das gekoppelte Telefon verbunden ist, werden die Überwachungsinformationen ebenfalls angezeigt:
 
-[![](device-images/xcode-devices-sml.png "Gekoppelte Watch-Informationen")](device-images/xcode-devices.png#lightbox)
+[![](device-images/xcode-devices-sml.png "Gekoppelte Überwachungsinformationen")](device-images/xcode-devices.png#lightbox)
 
-Wenn Sie wissen, dass der Überwachung des UDID, fügen Sie es der Geräteliste im Developer Center hinzu:
+Wenn Sie das UDID der Überwachung kennen, fügen Sie es der Geräteliste im dev Center hinzu:
 
-![](device-images/devices-watch-sml.png "Der Überwachung des UDID in der Geräteliste")
+![](device-images/devices-watch-sml.png "UDID der Überwachung in der Geräteliste")
 
-Nachdem das Gerät für die Überwachung hinzugefügt wurde, stellen Sie sicher, dass diese Option ausgewählt ist, die in neuen oder vorhandenen Entwicklung oder Ad-hoc-bereitstellungsprofile, die Sie erstellen:
+Nachdem das Überwachungsgerät hinzugefügt wurde, stellen Sie sicher, dass es in neuen oder vorhandenen Entwicklungs-oder Ad-hoc-Bereitstellungs Profilen ausgewählt ist, die Sie erstellen:
 
 ![](device-images/devices-provisioning.png "Liste der verfügbaren Geräte")
 
-Vergessen Sie nicht: Wenn Sie ein vorhandenes Bereitstellungsprofil herunterladen und installieren Sie es erneut bearbeiten
+Vergessen Sie nicht, wenn Sie ein vorhandenes Bereitstellungs Profil bearbeiten, um es herunterzuladen und erneut zu installieren.
 
 <a name="profiles" />
 
-## <a name="development-provisioning-profiles"></a>Entwicklungsbereitstellungsprofilen
+## <a name="development-provisioning-profiles"></a>Entwicklungs Bereitstellungs profile
 
-Erstellen Sie zum Testen auf Ihrem Gerät, das Sie erstellen müssen eine **Entwicklungsbereitstellungsprofil** für jede App-ID in der Projektmappe.
+Zum Erstellen von Tests auf Ihrem Gerät müssen Sie ein **Entwicklungs Bereitstellungs Profil** für jede APP-ID in ihrer Projekt Mappe erstellen.
 
-Wenn Sie einen Platzhalter-App-ID, haben *nur ein Bereitstellungsprofil wird erforderlich sein,*; aber wenn Sie eine separate App-ID für jedes Projekt benötigen Sie ein Bereitstellungsprofil für jede App-ID:
+Wenn Sie über eine Platzhalter-APP-ID verfügen, *wird nur ein Bereitstellungs Profil benötigt*. Wenn Sie jedoch über eine separate App-ID für jedes Projekt verfügen, benötigen Sie ein Bereitstellungs Profil für jede APP-ID:
 
-![](device-images/provisioningprofile-development.png "Das Entwicklungsbereitstellungsprofil")
+![](device-images/provisioningprofile-development.png "Das Entwicklungs Bereitstellungs Profil")
 
-Nachdem Sie alle drei Profile erstellt haben, werden sie in der Liste angezeigt. Denken Sie daran, herunterladen und installieren jeweils:
+Nachdem Sie alle drei Profile erstellt haben, werden Sie in der Liste angezeigt. Denken Sie daran, die einzelnen herunterzuladen und zu installieren:
 
-![](device-images/provisioningprofiles.png "Die verfügbaren Development-Bereitstellungsprofile")
+![](device-images/provisioningprofiles.png "Die verfügbaren Entwicklungs Bereitstellungs profile")
 
-Sie können überprüfen, ob das Bereitstellungsprofil in die **Projektoptionen** durch Auswählen der **erstellen > iOS Bundle-Signierung** Bildschirm- und Auswählen der **Version** oder **Debuggen iPhone** Konfiguration.
+Sie können das Bereitstellungs Profil in den **Projektoptionen** überprüfen, indem Sie den Bildschirm zum **Erstellen > IOS-Bundle-Signierung** auswählen und die iPhone-Konfiguration **Release** oder **Debug** auswählen.
 
-Die **Bereitstellungsprofil** Liste werden alle übereinstimmenden Profile angezeigt – sollte die entsprechenden Profilen, die Sie in der Dropdown-Liste erstellt haben:
+In der Liste der **Bereitstellungs profile** werden alle übereinstimmenden Profile angezeigt. Sie sollten die entsprechenden Profile sehen, die Sie in dieser Dropdown Liste erstellt haben:
 
-![](device-images/options-selectprofile.png "Die Liste Bereitstellungsprofil")
+![](device-images/options-selectprofile.png "Die Liste der Bereitstellungs profile")
 
 
 <a name="testing" />
 
-## <a name="testing-on-a-watch-device"></a>Testen auf einem Gerät ansehen
+## <a name="testing-on-a-watch-device"></a>Testen auf einem Überwachungsgerät
 
-Nachdem Sie Ihre Geräte, App-IDs und Bereitstellungsprofile konfiguriert haben, können Sie testen.
+Nachdem Sie das Gerät, App-IDs und Bereitstellungs Profile konfiguriert haben, können Sie es testen.
 
-1. Stellen Sie sicher, dass auf Ihrem iPhone angeschlossen ist, und die Überwachung wurde bereits gekoppelt mit dem iPhone.
+1. Stellen Sie sicher, dass Ihr iPhone angeschlossen ist und die Überwachung bereits mit dem iPhone gekoppelt ist.
 
-2. Stellen Sie sicher, die Konfiguration wird festgelegt, um **Version** oder **Debuggen**.
+2. Stellen Sie sicher, dass die Konfiguration auf **Release** oder **Debug**festgelegt ist.
 
-3. Stellen Sie sicher, dass die verbundenen iPhone-Geräte in der Liste ausgewählt ist.
+3. Stellen Sie sicher, dass das verbundene iPhone-Gerät in der Zielliste ausgewählt ist.
 
-4. Mit der rechten Maustaste auf das iOS-App-Projekt (nicht überwachen oder Erweiterung), und wählen Sie **als Startprojekt festlegen**.
+4. Klicken Sie mit der rechten Maustaste auf das IOS-App-Projekt (nicht die Überwachung oder Erweiterung), und wählen Sie **als Startprojekt festlegen**aus.
 
-5. Klicken Sie auf der **ausführen** Schaltfläche (oder wählen Sie eine **starten** option die **ausführen** Menü).
+5. Klicken Sie auf die Schaltfläche **Ausführen** , oder wählen Sie im Menü **Ausführen** die Option **Start** aus.
 
-6. Die Projektmappe zu erstellen, und die iOS-app wird für das iPhone bereitgestellt werden.
-  Wenn die iOS-app oder eine Watch-Erweiterung Bereitstellung nicht ordnungsgemäß festgelegt ist misslingt Bereitstellung für das iPhone.
+6. Die Lösung wird erstellt, und die IOS-APP wird auf dem iPhone bereitgestellt.
+  Wenn die Bereitstellung der IOS-APP oder der Überwachungs Erweiterung nicht ordnungsgemäß festgelegt ist, schlägt die Bereitstellung auf dem iPhone fehl.
 
-7. Wenn die Bereitstellung erfolgreich abgeschlossen wurde, versucht das iPhone automatisch der gekoppelte Apple Watch der Watch-app an. Ihr app-Symbol wird angezeigt, auf dem Bildschirm sehen Sie sich eine zirkuläre *installieren* Statusanzeige.
+7. Wenn die Bereitstellung erfolgreich abgeschlossen wird, versucht das iPhone automatisch, die Watch-APP an die gekoppelte Überwachung zu senden. Das App-Symbol wird auf dem Bildschirm überwachen mit einer zirkulären *Installations* Fortschrittsanzeige angezeigt.
 
-8. Wenn die Watch-app erfolgreich installiert wurde, kann das Symbol verbleibt auf dem Bildschirm sehen Sie sich - touch, um das Testen Ihrer app!
+8. Wenn die Watch-App erfolgreich installiert wurde, verbleibt das Symbol auf dem Bildschirm überwachen, um die APP zu testen.
 
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-Bei einem bei der Verwendung der Bereitstellung Fehler der **Ansicht > Bereiche > Geräteprotokoll** um weitere Informationen zum Fehler anzuzeigen. Im folgenden sind einige Fehler und deren Ursachen aufgeführt:
+Wenn während der Bereitstellung ein Fehler auftritt, verwenden Sie die **Ansicht > Pads > Geräte Protokoll** , um weitere Informationen zum Fehler anzuzeigen. Einige Fehler und deren Gründe sind unten aufgeführt:
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>Fehler-MT3001: Konnte kein AOT der assembly
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>Fehler MT3001: Die Assembly konnte nicht gefunden werden.
 
-Dies kann auftreten, wenn für die Erstellung im DEBUGMODUS befinden, um auf einem Apple Watch-Gerät bereitstellen.
+Dies kann bei der Erstellung im Debugmodus zur Bereitstellung auf einem Apple Watch Gerät auftreten.
 
-Um *vorübergehend* dieses Problem umgehen, deaktivieren Sie **inkrementelle Builds** in der Watch-Erweiterung **Projektoptionen > Erstellen > WatchOS-Build** Fenster:
+Um dieses Problem *vorübergehend* zu umgehen, deaktivieren Sie **inkrementelle Builds** in den Optionen für das Überwachungs Erweiterungs **Projekt > Build > watchos Build** -Fensters:
 
-[![](device-images/disable-incremental-sml.png "Das Kontrollkästchen inkrementelle Builds")](device-images/disable-incremental.png#lightbox)
+[![](device-images/disable-incremental-sml.png "Kontrollkästchen inkrementelle Builds")](device-images/disable-incremental.png#lightbox)
 
-Dies wird in einer zukünftigen Version behoben werden, nach dem inkrementelle Builds erneut aktiviert werden können, um schnellere Builds zu nutzen.
-
-
-### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>Watch-App kann nicht gestartet werden, während des Debuggens auf Gerät
-
-Wenn der Versuch, eine Watch-app auf einem physischen Gerät, das nur auf das Symbol & wartekreisel für Ladevorgang Debuggen angezeigt werden (und schließlich Timeout). Dies wird in einer zukünftigen Version behoben werden; Dieses Problem zu umgehen, ist einen Releasebuild ausgeführt wird (sodass kein Debuggen).
+Dies wird in einer zukünftigen Version korrigiert, nach der inkrementelle Builds erneut aktiviert werden können, um schnellere Buildzeiten zu nutzen.
 
 
-### <a name="invalid-application-executable-or-application-verification-failed"></a>Ungültiger ausführbare Datei "oder" Fehler beim Überprüfen der Anwendung
+### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>Watch-App kann beim Debuggen auf dem Gerät nicht gestartet werden
+
+Wenn Sie versuchen, eine Watch-App auf einem physischen Gerät zu debuggen, wird nur das Symbol & Lade Spinner angezeigt (und schließlich ein Timeout). Dies wird in einer zukünftigen Version behoben werden. eine Problem Umgehung besteht darin, einen Releasebuild auszuführen (was das Debugging nicht zulässt).
+
+
+### <a name="invalid-application-executable-or-application-verification-failed"></a>Ungültige ausführbare Datei der Anwendung oder Anwendungs Überprüfung
 
 ```csharp
 Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "Warnung für ungültigen ausführbare Datei der Anwendung")
+![](device-images/invalid-application-executable.png "Ungültige anwendungsausführ Bare Warnung")
 
-Wenn diese Nachrichten werden *auf dem Bildschirm sehen Sie sich* nachdem die app installieren versucht hat, gibt es möglicherweise einige Probleme:
+Wenn diese Nachrichten *auf dem Bildschirm überwachen* angezeigt werden, nachdem die APP versucht hat, zu installieren, können einige Probleme auftreten:
 
-- Das Watch-Gerät selbst wurde nicht als ein Gerät im Apple Dev Center hinzugefügt. Führen Sie die Anweisungen, um [Konfigurieren von Geräten ordnungsgemäß](#devices).
+- Das Überwachungsgerät selbst wurde im Apple dev Center nicht als Gerät hinzugefügt. Befolgen Sie die Anweisungen, um [Geräte ordnungsgemäß zu konfigurieren](#devices).
 
-- Das Watch-Gerät enthalten keine Development-bereitstellungsprofile, die für Tests verwendet wird; oder nachdem sie erneut heruntergeladen und erneut installiert waren nicht den bereitstellungsprofilen die Apple Watch hinzugefügt wurde. Führen Sie die Anweisungen, um [konfigurieren Sie die bereitstellungsprofile richtig](#profiles).
+- Für die für den Test verwendeten Entwicklungs Bereitstellungs profile wurde das Überwachungsgerät nicht eingeschlossen. oder nachdem die Überwachung den Bereitstellungs Profilen hinzugefügt wurde, wurden Sie nicht erneut heruntergeladen und erneut installiert. Befolgen Sie die Anweisungen, um [die Bereitstellungs profile ordnungsgemäß zu konfigurieren](#profiles).
 
-- Wenn die **iOS Geräteprotokoll** enthält `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` klicken Sie dann die Watch-App die **"Info.plist"** hat die falsche **MinimumOSVersion** Wert.
-  Dies dürfte **8.2** – Wenn Sie Xcode 6.3 installiert haben, möglicherweise manuell bearbeiten, die Quelle müssen, Insert, legen Sie ihn auf 8.2.
+- Wenn das **IOS-Geräte Protokoll** enthält `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` , weist die Datei " **Info. plist** " der Watch-App den falschen **minimumosversion** -Wert auf.
+  Dieser Wert sollte **8,2** lauten. Wenn Sie Xcode 6,3 installiert haben, müssen Sie möglicherweise die Quelle manuell bearbeiten, um Sie auf 8,2 festzulegen.
 
-- Die Watch-App **"Entitlements.plist"** falsch verfügt über eine Berechtigung aktiviert (z. B. App-Gruppen), sollte nicht zu verwenden.
+- Die Berechtigung " **Berechtigungen. plist** " der Watch-APP ist fälschlicherweise aktiviert (z. b. app-Gruppen).
 
-- Die Watch-App **App-ID** falsch verfügt über eine Berechtigung aktiviert (z. B. App-Gruppen) im Developer Center, die darf nicht.
+- Die **App-ID** der Watch-App weist fälschlicherweise eine Berechtigung (z. b. app-Gruppen) im dev Center auf, die Sie nicht haben sollte.
 
 
 
-### <a name="install-never-finished"></a>Installieren Sie nie abgeschlossen
+### <a name="install-never-finished"></a>Installation nie abgeschlossen
 
 ```csharp
 SPErrorGizmoInstallNeverFinishedErrorMessage
 ```
 
-Dieser Fehler deutet nicht erforderlich (und ungültig) Schlüssel in der Watch-App **"Info.plist"** Datei. Sie darf keine Schlüssel vorgesehen, die für die iOS-app oder sehen Sie sich die Erweiterung in der Watch-App enthalten.
+Dieser Fehler kann auf unnötige (und ungültige) Schlüssel in der **Info. plist** -Datei der Watch-App hindeuten. Sie sollten keine Schlüssel für die IOS-APP oder die Watch-Erweiterung in der Watch-App einschließen.
 
 <!--eg. NSLocationAlwaysUsageDescription -->
 
 
-### <a name="waiting-for-debugger-to-connect"></a>"Warten Debugger eine Verbindung herstellen"
+### <a name="waiting-for-debugger-to-connect"></a>"warten auf Verbindungs Debugger"
 
-Wenn die **Anwendungsausgabe** Fenster bleibt anzeigen
+Wenn das **Anwendungs Ausgabe** Fenster nicht mehr angezeigt wird
 
 ```csharp
 waiting for debugger to connect
 ```
 
-Überprüfen Sie, ob eines der NuGet-Pakete, die in Ihrem Projekt hinzugefügt wurden Abhängigkeiten bestehen **Microsoft.Bcl.Build**. Dies wird automatisch hinzugefügt, und einige Microsoft veröffentlichten Bibliotheken, darunter die gängigen [Microsoft Http Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http/).
+Überprüfen Sie, ob eines der nugets, die in Ihrem Projekt enthalten sind, von **Microsoft. BCL. Build**abhängig ist. Diese wird automatisch mit einigen von Microsoft veröffentlichten Bibliotheken hinzugefügt, einschließlich der gängigen [Microsoft HTTP-Client Bibliotheken](https://www.nuget.org/packages/Microsoft.Net.Http/).
 
-Die **Microsoft.Bcl.Build.targets** -Datei, die hinzugefügt wird die **csproj** kann mit der paketerstellung während der Bereitstellung von iOS-Erweiterungen beeinträchtigen. Sie können verfolgen, die [Fehler](https://bugzilla.xamarin.com/show_bug.cgi?id=29912).
-Eine mögliche problemumgehung besteht darin, auf die CSPROJ-Datei bearbeiten und verschieben Sie manuell die **Microsoft.Bcl.Build.targets** auf das letzte Element sein.
+Die Datei " **Microsoft. BCL. Build. targets** ", die der **csproj** -Datei hinzugefügt wird, kann die Paket Erstellung von IOS-Erweiterungen während der Bereitstellung beeinträchtigen. Sie können den [Fehler](https://bugzilla.xamarin.com/show_bug.cgi?id=29912)nachverfolgen.
+Eine mögliche Problem Umgehung ist das Bearbeiten der CSPROJ-Datei und das manuelle Verschieben von **Microsoft. BCL. Build. targets** als letztes Element.
 

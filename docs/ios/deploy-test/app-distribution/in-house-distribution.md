@@ -4,15 +4,15 @@ description: Dieses Dokument bietet einen kurzen Überblick über die interne Ve
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a2dc974fba7beb70f1caecf8198181193d32e4c2
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865531"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289889"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
 
@@ -22,7 +22,7 @@ Nachdem Ihre Xamarin.iOS-Anwendung entwickelt wurde, ist der nächste Schritt im
 
 - Die Anwendung muss nicht zur Überprüfung durch Apple übermittelt werden.
 - Es gibt keine Beschränkungen für die Anzahl an Geräten, auf denen Sie eine Anwendung bereitstellen können
-    - Beachten Sie, dass Apple deutlich macht, dass interne Anwendungen nur für die interne Verwendung bestimmt sind.
+  - Beachten Sie, dass Apple deutlich macht, dass interne Anwendungen nur für die interne Verwendung bestimmt sind.
 
 Es ist auch wichtig zu beachten, dass die Enterprise-Anwendung
 

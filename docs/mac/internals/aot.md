@@ -4,15 +4,15 @@ description: In diesem Dokument wird die vorab Kompilierung in xamarin. Mac besc
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 08bc93e7a17cef35bc992afe0f6fb655a4e69aef
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e1f1e2e1e5dbec7dc8f2310b3f9565d0bc209c00
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528917"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283689"
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin. Mac-Vorkompilierung vor der Zeit
 
@@ -35,7 +35,7 @@ Jede Option bietet eine Reihe von Vorteilen und Kompromisse:
 - **AOT**
   - **Startzeit** – das Laden vorkompilierter dylisb ist erheblich schneller als JIT-Assemblys.
   - **Speicherplatz** – diese dylisb können einen erheblichen Speicherplatz beanspruchen. Je nachdem, welche Assemblys erstellt werden, kann die Größe des Codeteils der Anwendung doppelt oder mehr betragen.
-  - Buildzeit – die AOT-Kompilierung ist erheblich langsamer als die JIT-Kompilierung und verlangsamt Builds mit der Anwendung. Diese Verlangsamung kann je nach Größe und Anzahl der kompilierten Assemblys von Sekunden bis zu einer Minute liegen.
+  - **Buildzeit** – die AOT-Kompilierung ist erheblich langsamer als die JIT-Kompilierung und verlangsamt Builds mit der Anwendung. Diese Verlangsamung kann je nach Größe und Anzahl der kompilierten Assemblys von Sekunden bis zu einer Minute liegen.
   - **Obfuskations** – da die Il, die wesentlich einfacher umzukehren ist als Computercode, nicht unbedingt erforderlich ist, ist Sie nicht unbedingt erforderlich, um den sensiblen Code zu verbergen. Hierfür ist die Option "Hybrid" erforderlich.
 
 ## <a name="enabling-aot"></a>Aktivieren von AOT

@@ -1,35 +1,35 @@
 ---
-title: Eingabehilfen unter iOS
-description: Dieses Dokument beschreibt die Eingabehilfen in iOS, erläutern die verschiedenen Eigenschaften und Funktionen, die von wie vielen Benutzern, Ihre Anwendung verwendet werden kann verwendet werden können, wie möglich.
+title: Barrierefreiheit unter IOS
+description: Dieses Dokument beschreibt die Barrierefreiheit in IOS und erläutert verschiedene Eigenschaften und Features, mit denen die Anwendung von so vielen Benutzern wie möglich verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: 88D59B36-05A3-4356-AE29-EC2B69CE7162
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/18/2016
-ms.openlocfilehash: aa3e15797ae1dac621ea8a78345044be1387ebaa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4a04f0ed4cbb336e331528c3d8265efb31388328
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61179548"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289518"
 ---
-# <a name="accessibility-on-ios"></a>Eingabehilfen unter iOS
+# <a name="accessibility-on-ios"></a>Barrierefreiheit unter IOS
 
-Diese Seite beschreibt, wie die iOS-Eingabehilfen-APIs zum Erstellen von apps, die gemäß der [Checkliste für die Barrierefreiheit](~/cross-platform/app-fundamentals/accessibility.md).
-Finden Sie in der [Android Barrierefreiheit](~/android/app-fundamentals/accessibility.md) und [OS X Accessibility](~/mac/app-fundamentals/accessibility.md) Seiten für andere Plattform-APIs.
+Auf dieser Seite wird beschrieben, wie Sie die IOS-Barrierefreiheits-APIs zum Erstellen von apps entsprechend der [Eincheck Checkliste](~/cross-platform/app-fundamentals/accessibility.md)verwenden.
+Weitere Plattform-APIs finden Sie auf der Seite zu den Barrierefreiheits Seiten für [Android-Barrierefreiheit](~/android/app-fundamentals/accessibility.md) und [OS X](~/mac/app-fundamentals/accessibility.md) .
 
-## <a name="describing-ui-elements"></a>Beschreibt die Elemente der Benutzeroberfläche
+## <a name="describing-ui-elements"></a>Beschreiben von UI-Elementen
 
-iOS bietet die `AccessibilityLabel` und `AccessibilityHint` Bildschirmsprachausgabe der Steuerelemente leichter zugänglich machen Eigenschaften für Entwickler zum Hinzufügen von beschreibendem Text der von der VoiceOver verwendet werden kann. Steuerelemente können auch mit mindestens eine "traits" gekennzeichnet werden, die zusätzlichen Kontext zugegriffen werden kann Modi bereitstellen.
+IOS stellt die `AccessibilityLabel` - `AccessibilityHint` und-Eigenschaften für Entwickler bereit, um beschreibenden Text hinzuzufügen, der vom VoiceOver-Bildschirm Reader verwendet werden kann, um den Zugriff auf die Steuerelemente zu erleichtern Steuerelemente können auch mit einem oder mehreren Merkmalen gekennzeichnet werden, die zusätzlichen Kontext in zugänglichen Modi bereitstellen.
 
-Einige Steuerelemente müssen nicht darauf zugreifen können (z. B. eine Bezeichnung für eine Texteingabe, oder ein Bild, das nur dekorativen Zwecken dient) – die `IsAccessibilityElement` wird bereitgestellt, um die Barrierefreiheit in diesen Fällen deaktivieren.
+Einige Steuerelemente müssen möglicherweise nicht zugänglich sein (z. b. eine Bezeichnung in einer Texteingabe oder ein Bild, das rein dekorativ `IsAccessibilityElement` ist) – das wird bereitgestellt, um die Barrierefreiheit in diesen Fällen zu deaktivieren.
 
-**Benutzeroberflächen-Designer**
+**UI-Designer**
 
-Die **Pad "Eigenschaften"** enthält einen Eingabehilfen-Abschnitt, der diese Einstellungen bearbeitet werden, wenn ein Steuerelement, in der iOS-Benutzeroberflächen-Designer ausgewählt ist ermöglicht:
+Die **Eigenschaftenpad** enthält einen Abschnitt zur Barrierefreiheit, mit dem diese Einstellungen bearbeitet werden können, wenn ein Steuerelement im IOS-Benutzeroberflächen-Designer ausgewählt wird:
 
-![](accessibility-images/ios-designer-sml.png "Einstellungen für die Barrierefreiheit")
+![](accessibility-images/ios-designer-sml.png "Barrierefreiheits Einstellungen")
 
 **C#**
 
@@ -42,21 +42,21 @@ someLabel.IsAccessibilityElement = false;
 displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibilityTrait.Selected;
 ```
 
-### <a name="what-is-accessibilityidentifier"></a>Was ist AccessibilityIdentifier?
+### <a name="what-is-accessibilityidentifier"></a>Was ist accessibilityidentifier?
 
-Die `AccessibilityIdentifier` wird verwendet, um einen eindeutigen Schlüssel festlegen, die zum Verweisen auf Elemente der Benutzeroberfläche über die UIAutomation-API verwendet werden kann.
+Wird `AccessibilityIdentifier` verwendet, um einen eindeutigen Schlüssel festzulegen, der zum Verweisen auf Benutzeroberflächen Elemente über die UIAutomation-API verwendet werden kann.
 
-Der Wert des `AccessibilityIdentifier` wird nie gesprochene oder dem Benutzer angezeigt.
+Der Wert von `AccessibilityIdentifier` wird niemals gesprochen oder für den Benutzer angezeigt.
 
 <a name="postnotification" />
 
-## <a name="postnotification"></a>PostNotification
+## <a name="postnotification"></a>Postnotification
 
-Die `UIAccessibility.PostNotification` Methode können Sie Ereignisse ausgelöst werden, für den Benutzer außerhalb der direkte Interaktion (z. B., wenn eine Interaktion mit einem bestimmten Steuerelement).
+Mit `UIAccessibility.PostNotification` der-Methode können Ereignisse außerhalb der direkten Interaktion an den Benutzer ausgelöst werden (z. b. Wenn Sie mit einem bestimmten Steuerelement interagieren).
 
 ### <a name="announcement"></a>Ankündigung
 
-Eine Ankündigung kann aus Code gesendet werden, um den Benutzer zu informieren, den ein Status sich geändert hat (z. B. ein Vorgang im Hintergrund abgeschlossen wurde). Dies könnte durch einen visuellen Hinweis auf der Benutzeroberfläche begleitet werden:
+Eine Ankündigung kann vom Code gesendet werden, um den Benutzer darüber zu informieren, dass sich ein Zustand geändert hat (z. b. Wenn ein Hintergrund Vorgang abgeschlossen wurde). Dies kann mit einem visuellen Hinweis auf der Benutzeroberfläche einhergehen:
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -77,11 +77,11 @@ UIAccessibility.PostNotification (
 
 ## <a name="accessibility-and-localization"></a>Barrierefreiheit und Lokalisierung
 
-Eigenschaften von Bedienungshilfen wie die Bezeichnung und einen Hinweis nur lokalisiert werden können wie andere Text in der Benutzeroberfläche.
+Barrierefreiheits Eigenschaften wie die Bezeichnung und der Hinweis können genau wie andere Text in der Benutzeroberfläche lokalisiert werden.
 
 **MainStoryboard.strings**
 
-Wenn die Benutzeroberfläche in einem Storyboard angeordnet ist, können Sie Übersetzungen für die Eigenschaften von Bedienungshilfen auf die gleiche Weise wie andere Eigenschaften bereitstellen. Im folgenden Beispiel wird eine `UITextField` verfügt über eine **Lokalisierungs-ID** von `Pqa-aa-ury` und zwei Eigenschaften von Bedienungshilfen auf Spanisch festgelegt wird:
+Wenn die Benutzeroberfläche in einem Storyboard angeordnet ist, können Sie Übersetzungen für Barrierefreiheits Eigenschaften auf die gleiche Weise wie andere Eigenschaften bereitstellen. Im folgenden Beispiel verfügt ein `UITextField` über eine Lokalisierungs- **ID** von `Pqa-aa-ury` und zwei Barrierefreiheits Eigenschaften, die auf Spanisch festgelegt werden:
 
 ```csharp
 /* Accessibility */
@@ -89,11 +89,11 @@ Wenn die Benutzeroberfläche in einem Storyboard angeordnet ist, können Sie Üb
 "Pqa-aa-ury.accessibilityHint" = "escriba más información";
 ```
 
-Diese Datei würde platziert werden, der **es.lproj** Verzeichnis für Spanisch Inhalt.
+Diese Datei befindet sich im Verzeichnis " **es. lproj** " für spanische Inhalte.
 
 **Localizable.strings**
 
-Alternativ können die Übersetzungen hinzugefügt werden, um die **Localizable.strings** -Datei im lokalisierten Verzeichnis mit Inhalt (z. b. **es.lproj** für Spanisch):
+Alternativ können die Übersetzungen der **lokalisierbaren Strings** -Datei im lokalisierten Inhaltsverzeichnis hinzugefügt werden (z. b. **es. lproj** für Spanisch):
 
 ```csharp
 /* Accessibility */
@@ -101,45 +101,45 @@ Alternativ können die Übersetzungen hinzugefügt werden, um die **Localizable.
 "Provide more information" = "escriba más información";
 ```
 
-Diese Übersetzungen können verwendet werden, C# über die `LocalizedString` Methode:
+Diese Übersetzungen können in C# über die `LocalizedString` -Methode verwendet werden:
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
 notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more information", "");
 ```
 
-Finden Sie in der [iOS Lokalisierung Entwicklerhandbuch](~/ios/app-fundamentals/localization/index.md) ausführliche Informationen zum Lokalisieren von Inhalten.
+Weitere Informationen zum Lokalisieren von Inhalten finden Sie im [IOS-Lokalisierungs Handbuch](~/ios/app-fundamentals/localization/index.md) .
 
 <a name="testing" />
 
 ## <a name="testing-accessibility"></a>Testen der Barrierefreiheit
 
-VoiceOver aktiviert ist, der **Einstellungen** app durch Navigieren zu **Allgemein > Zugriff > VoiceOver**:
+VoiceOver ist in der App " **Einstellungen** " aktiviert, indem Sie zu **Allgemein > Barrierefreiheits > VoiceOver**navigieren:
 
-![](accessibility-images/settings-sml.png "Die sprechrate festlegen")
+![](accessibility-images/settings-sml.png "Festlegen der Sprech Rate")
 
-Die **Barrierefreiheit** Bildschirm bietet auch die Einstellungen für Zoom, Textgröße, Farbe und Kontrast Optionen, Einstellungen für Sprache und andere Konfigurationsoptionen.
+Der Bildschirm **Barrierefreiheit** enthält auch Einstellungen für Zoom, Textgröße, Farbe & Kontrast Optionen, Spracheinstellungen und andere Konfigurationsoptionen.
 
-Befolgen Sie diese [VoiceOver Anweisungen](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) zum Zugriff auf iOS-Geräten zu testen.
+Befolgen Sie diese [VoiceOver-Anweisungen](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) , um die Barrierefreiheit auf IOS-Geräten zu testen.
 
 
 ## <a name="simulator-testing"></a>Simulatortests
 
-Beim Testen im Simulator die **Barrierefreiheit Inspektor** verfügbar, mit denen überprüfen, ob Zugriff auf Eigenschaften und Ereignisse sind richtig konfiguriert ist. Aktivieren Sie den Inspektor in die **Einstellungen** app durch Navigieren zu **Allgemein > Zugriff > Barrierefreiheit Inspektor**:
+Wenn Sie im Simulator testen, steht Ihnen der **Barrierefreiheits Inspektor** zur Verfügung, um zu überprüfen, ob Barrierefreiheits Eigenschaften und Ereignisse richtig konfiguriert sind. Aktivieren Sie den Inspektor in der App " **Einstellungen** ", indem Sie zu **Allgemein > Barrierefreiheit > Barrierefreiheits Inspektor**navigieren:
 
-![](accessibility-images/settings-inspector-sml.png "Aktivieren von Eingabehilfen-Inspektor")
+![](accessibility-images/settings-inspector-sml.png "Zugriffs Inspektor aktivieren")
 
-Nach der Aktivierung können Sie Inspektor-Fenster auf iOS-Bildschirms zeigen, zu jeder Zeit.
-Hier ist ein Beispiel der Ausgabe, wenn eine Zeile einer Tabelle aktiviert ist – Beachten Sie, dass der **Bezeichnung** enthält einen Satz, der die Inhalte der Zeile aus, und auch, die es "done" (ie. die Teilstriche angezeigt wird):
+Nach der Aktivierung zeigt das Inspektor-Fenster jederzeit auf den IOS-Bildschirm.
+Im folgenden finden Sie ein Beispiel für die Ausgabe, wenn eine Tabellen Ansichts Zeile ausgewählt ist – beachten Sie, dass die **Bezeichnung** einen Satz enthält, der den Inhalt der Zeile und auch "Done" enthält (d. h. der Tick ist sichtbar):
 
-![](accessibility-images/tableview-a11y-sml.png "Verwenden Accessibility Seitenprüfung")
+![](accessibility-images/tableview-a11y-sml.png "Verwenden des Zugriffs Inspektors")
 
-Während der Inspektor angezeigt wird, verwenden Sie das Symbol "X" auf der linken oberen Ecke, um vorübergehend anzeigen und Ausblenden der Überlagerung und Einstellungen für die Barrierefreiheit aktivieren/deaktivieren.
+Während der Inspektor sichtbar ist, verwenden Sie das Symbol "X" in der oberen linken Ecke, um das Overlay vorübergehend anzuzeigen und auszublenden und Barrierefreiheits Einstellungen zu aktivieren/deaktivieren.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Cross-platform Accessibility (Plattformübergreifende Barrierefreiheit)](~/cross-platform/app-fundamentals/accessibility.md)
-- [iOS-Zugriff (Apple)](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
-- [iOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)
+- [IOS-Barrierefreiheit (Apple)](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
+- [IOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)

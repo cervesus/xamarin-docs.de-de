@@ -4,15 +4,15 @@ description: In dieser Anleitung wird das Einrichten der xamarin. IOS-Umgebung f
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 538778d70e175afb8de0c61648f646c4a1669982
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1cf28f83302d5035652df05aee26a6646df29fc0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655058"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291810"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Apple Pay in xamarin. IOS
 
@@ -39,7 +39,7 @@ Der primäre Unterschied zwischen Apple Pay und *in-App-Einkauf* (IAP) bezieht s
 
 Die verwendeten Frameworks sind auch ein wichtiger Unterschied. [Passkit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) wird für Apple Pay verwendet, während [storekit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) die Framework-API für IAP bereitstellt.
 
-Mit Apple Pay [gibt Apple an](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) , dass es den Benutzern, Händlern oder Entwicklern nicht berechnet, Apple Pay für Zahlungen zu verwenden. Im Vergleich dazu hat IAP für jede Transaktion eine Abrechnung von 30%. Außerdem wird bei Apple Pay die Transaktion überhaupt nicht durch Apple durchlaufen, sondern eine Zahlungsplattform.
+Mit Apple Pay gibt Apple an, dass [es den Benutzern](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) , Händlern oder Entwicklern nicht berechnet, Apple Pay für Zahlungen zu verwenden. Im Vergleich dazu hat IAP für jede Transaktion eine Abrechnung von 30%. Außerdem wird bei Apple Pay die Transaktion überhaupt nicht durch Apple durchlaufen, sondern eine Zahlungsplattform.
 
 ## <a name="using-a-payment-processor-platform"></a>Verwenden einer Payment Processor-Plattform
 

@@ -4,19 +4,19 @@ description: Dieses Dokument enthält eine exemplarische Vorgehensweise, in der 
 ms.prod: xamarin
 ms.assetid: 6960E025-3D5C-457A-B893-25B734F8626D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: a0c659904be2f6755ff4a32853e141ee8572e839
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3e27cffa9e2605c3697536f226fe87fbbf1bfbbd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521247"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286877"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Hintergrund Übertragung und nsurlsession in xamarin. IOS
 
-Eine Hintergrund Übertragung wird durch Konfigurieren eines Hintergrunds `NSURLSession` und Einreihen von Upload-oder Download Tasks initiiert. Wenn Aufgaben abgeschlossen sind, während die Anwendung mit einem Sicherungs Satz, einer Unterbrechung oder einem Abbruch abgeschlossen ist, wird die Anwendung von IOS benachrichtigt,indem der Abschluss Handler im appdelegaten der Anwendung aufgerufen wird. Dies wird in der folgenden Abbildung veranschaulicht:
+Eine Hintergrund Übertragung wird durch Konfigurieren eines Hintergrunds `NSURLSession` und Einreihen von Upload-oder Download Tasks initiiert. Wenn Aufgaben abgeschlossen sind, während die Anwendung mit einem Sicherungs Satz, einer Unterbrechung oder einem Abbruch abgeschlossen ist, wird die Anwendung von IOS benachrichtigt, indem der Abschluss Handler im *appdelegaten*der Anwendung aufgerufen wird. Dies wird in der folgenden Abbildung veranschaulicht:
 
  [![](background-transfer-walkthrough-images/transfer.png "Eine Hintergrund Übertragung wird durch Konfigurieren einer nsurlsession-Hintergrund Sitzung und Einreihen von Upload-oder Download Aufgaben in die Warteschlange initiiert.")](background-transfer-walkthrough-images/transfer.png#lightbox)
 
@@ -102,7 +102,7 @@ Die Sitzungs delegatapi bietet ein breites Toolkit für die Interaktion mit Aufg
 
 Der letzte Schritt besteht darin, die Anwendung zu informieren, wenn alle der Sitzung zugeordneten Aufgaben abgeschlossen sind, und den neuen Inhalt zu verarbeiten.
 
-Abonnieren Siedas `HandleEventsForBackgroundUrl` Ereignis im appdelegaten. Wenn die Anwendung in den Hintergrund wechselt und eine Übertragungs Sitzung ausgeführt wird, wird diese Methode aufgerufen, und das System übergibt uns einen Abschluss Handler:
+Abonnieren Sie das `HandleEventsForBackgroundUrl` Ereignis im *appdelegaten*. Wenn die Anwendung in den Hintergrund wechselt und eine Übertragungs Sitzung ausgeführt wird, wird diese Methode aufgerufen, und das System übergibt uns einen Abschluss Handler:
 
 ```csharp
 public System.Action backgroundSessionCompletionHandler;

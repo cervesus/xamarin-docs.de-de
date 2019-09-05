@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit XIb-Dateien erläutert, die
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: bdb27d42e872bff4004e8f43d13019dbc8bfeab9
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f0889ecc428c595509fb23710bf3110c1bacad4e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227854"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290292"
 ---
 # <a name="xib-files-in-xamarinmac"></a>XIb-Dateien in xamarin. Mac
 
@@ -301,7 +301,7 @@ Führen Sie folgende Schritte aus:
 
     [![Die richtige Datei ist ausgewählt] . (xib-images/outlet03.png "Die richtige Datei ist ausgewählt") .](xib-images/outlet03-large.png#lightbox)
 6. **Der letzte Schritt war sehr wichtig!** Wenn Sie die richtige Datei nicht ausgewählt haben, können Sie keine Outlets und Aktionen erstellen, oder Sie werden in C#der falschen Klasse verfügbar gemacht.
-7. Halten Sie im Schnittstellen- **Editor**die STRG-Taste gedrückt, und klicken Sie auf die oben erstellte Bezeichnung auf den Code-Editor direkt unterhalb des `@interface MainWindow : NSWindow { }` Codes:
+7. Halten Sie im **Schnitt**stellen-Editor die STRG **-Taste gedrückt** , und klicken Sie auf die oben erstellte Bezeichnung auf den Code-Editor direkt unterhalb des `@interface MainWindow : NSWindow { }` Codes:
 
     [![Ziehen, um ein neues Outlet zu erstellen](xib-images/outlet04.png "Ziehen, um ein neues Outlet zu erstellen")](xib-images/outlet04-large.png#lightbox)
 8. Es wird ein Dialogfeld geöffnet. Lassen Sie die **Verbindung** auf "Outlet" `ClickedLabel` festgelegt, und geben Sie als **Namen**ein:
@@ -320,10 +320,10 @@ Als nächstes sehen wir uns das Erstellen einer Aktion an, um eine Benutzerinter
 Führen Sie folgende Schritte aus:
 
 1. Stellen Sie sicher, dass Sie sich noch im **Assistenten-Editor** befinden und dass die Datei " **MainWindow. h** " im **Code-Editor**angezeigt wird.
-2. Halten Sie im Schnittstellen- **Editor**die STRG-Taste gedrückt, und klicken Sie auf die Schaltfläche, die wir oben erstellt haben, auf den `@property (assign) IBOutlet NSTextField *ClickedLabel;` Code-Editor direkt unterhalb des Codes:
+2. Halten Sie im **Schnitt**stellen-Editor die STRG-Taste gedrückt, und klicken Sie auf die Schaltfläche **, die wir** oben erstellt haben, auf den `@property (assign) IBOutlet NSTextField *ClickedLabel;` Code-Editor direkt unterhalb des Codes:
 
     [![Ziehen zum Erstellen einer Aktion](xib-images/action01.png "Ziehen zum Erstellen einer Aktion")](xib-images/action01-large.png#lightbox)
-3. Ändern Sie den Verbindungstyp in Aktion:
+3. Ändern Sie den **Verbindungstyp** in Aktion:
 
     [![Aktionstyp auswählen](xib-images/action02.png "Aktionstyp auswählen")](xib-images/action02-large.png#lightbox)
 4. Geben Sie `ClickedButton` als **Namen** ein:
@@ -396,7 +396,7 @@ void OpenDialog (NSObject sender)
 }
 ```
 
-Die Schlüssel Zeile hier ist `[Export ("openDocument:")]`. Sie weist `NSMenu` darauf hin , dass der appdelegat über eine `void OpenDialog (NSObject sender)` Methode `openDocument:` verfügt, die auf die Aktion antwortet.
+Die Schlüssel Zeile hier ist `[Export ("openDocument:")]`. Sie weist `NSMenu` darauf hin, dass der **appdelegat** über eine `void OpenDialog (NSObject sender)` Methode `openDocument:` verfügt, die auf die Aktion antwortet.
 
 Weitere Informationen zum Arbeiten mit Menüs finden Sie in unserer [Menüs](~/mac/user-interface/menu.md) -Dokumentation.
 

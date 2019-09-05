@@ -4,15 +4,15 @@ description: Dieser Artikel enthält eine praktische Exemplarische Vorgehensweis
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: ffd244a77ae75fefcf42f185bad1e8f7ccdbe560
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: b53799f4b1c8d9299ab23191f6a702c2ec0983fb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121340"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285766"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek
 
@@ -47,7 +47,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie mit Xcode und der Programmier
 
 - **Xcode und IOS SDK** : der Xcode von Apple und die neueste IOS-API müssen auf dem Computer des Entwicklers installiert und konfiguriert werden.
 - **[Xcode-Befehlszeilen Tools](#Installing_the_Xcode_Command_Line_Tools)** : die Xcode-Befehlszeilen Tools müssen für die aktuell installierte Version von Xcode installiert werden (Weitere Informationen zur Installation finden Sie unten).
-- **Visual Studio für Mac oder Visual Studio** : die neueste Version von Visual Studio für Mac oder Visual Studio sollte auf dem Entwicklungs Computer installiert und konfiguriert werden. Zum Entwickeln einer xamarin. IOS-Anwendung ist ein Apple Mac erforderlich, und wenn Sie Visual Studio verwenden, müssen Sie mit [einem xamarin. IOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md) -buildhost verbunden sein.
+- **Visual Studio für Mac oder Visual Studio** : die neueste Version von Visual Studio für Mac oder Visual Studio sollte auf dem Entwicklungs Computer installiert und konfiguriert werden. Zum Entwickeln einer xamarin. IOS-Anwendung ist ein Apple Mac erforderlich, und wenn Sie Visual Studio verwenden, müssen Sie mit [einem xamarin. IOS-buildhost](~/ios/get-started/installation/windows/connecting-to-mac/index.md) verbunden sein.
 - **Die neueste Version von Target Sharpie** : eine aktuelle Kopie des Ziel-Sharpie-Tools, das [hier](~/cross-platform/macios/binding/objective-sharpie/get-started.md)heruntergeladen wird. Wenn Sie bereits das Ziel "Sharpie" installiert haben, können Sie es mithilfe der`sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
@@ -126,7 +126,7 @@ Der erste Schritt besteht darin, dass wir den infocolorpicker-Quellcode der stat
 2. Wählen Sie im Menü **Datei** die Option **Neues** > **Projekt...** aus:
 
     [![](walkthrough-images/image04.png "Starten eines neuen Projekts")](walkthrough-images/image04.png#lightbox)
-3. Wählen Sie **Framework & Bibliothek**aus , und klicken Sie dann auf die Schaltfläche **weiter** :
+3. Wählen Sie **Framework & Bibliothek**aus, und klicken Sie dann **auf die Schalt** Fläche **weiter** :
 
     [![](walkthrough-images/image05.png "Vorlage für die statische Cocoa-Eingabe Vorlage auswählen")](walkthrough-images/image05.png#lightbox)
 
@@ -156,7 +156,7 @@ Der erste Schritt besteht darin, dass wir den infocolorpicker-Quellcode der stat
 
 11. Wir müssen jetzt überprüfen, ob für die Bibliothek Frameworks erforderlich sind. Sie finden diese Informationen entweder in der Infodatei oder indem Sie eines der bereitgestellten Beispiel Projekte öffnen. In diesem Beispiel `Foundation.framework`werden `UIKit.framework`, und `CoreGraphics.framework` hinzugefügt.
 
-12. Wählen Sie das **Ziel >** buildphasen aus, und erweitern Sie den Abschnitt **Link Binary with Libraries** :
+12. Wählen Sie das **Ziel > buildphasen** aus, und erweitern Sie den Abschnitt **Link Binary with Libraries** :
 
     [![](walkthrough-images/image16b.png "Erweitern Sie den Abschnitt Link Binary with Libraries.")](walkthrough-images/image16b.png#lightbox)
 
@@ -320,7 +320,7 @@ Gehen Sie folgendermaßen vor, um die Bibliothek hinzuzufügen:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Kopieren Sie `libInfColorPickerSDK.a` die von Ihrem **Mac** -buildhost, und fügen Sie Sie in das Bindungs Projekt ein.
+1. Kopieren Sie `libInfColorPickerSDK.a` die von Ihrem Mac-buildhost, und fügen Sie Sie in das Bindungs Projekt ein.
 
 1. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **> vorhandenes Element hinzufügen...** :
 
@@ -334,7 +334,7 @@ Gehen Sie folgendermaßen vor, um die Bibliothek hinzuzufügen:
 
 -----
 
-Wenn die Datei " **. a** " dem Projekt hinzugefügt wird, legt xamarin. IOS automatisch den Buildvorgang der Datei auf **objcbindingnativelibrary**fest und erstellt eine spezielle Datei `libInfColorPickerSDK.linkwith.cs`mit dem Namen.
+Wenn die Datei " **. a** " dem Projekt hinzugefügt wird, legt xamarin. IOS automatisch den Buildvorgang der Datei auf **objcbindingnativelibrary**fest und erstellt eine spezielle Datei `libInfColorPickerSDK.linkwith.cs` **mit dem** Namen.
 
 
 Diese Datei enthält das `LinkWith` Attribut, das xamarin. IOS anweist, wie die soeben hinzugefügte statische Bibliothek behandelt werden soll. Der Inhalt dieser Datei wird im folgenden Code Ausschnitt gezeigt:
@@ -363,7 +363,7 @@ Ziel-Sharpie ist ein von xamarin bereitgestelltes Befehlszeilen Tool, das beim E
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-Ziel-Sharpie ist ein von xamarin bereitgestelltes Befehlszeilen Tool, das beim Erstellen der Definitionen helfen kann, die erforderlich sind, um eine Ziel-C C#-Bibliothek von Drittanbietern an zu binden. In diesem Abschnitt verwenden wir den Ziel-Sharpie auf dem **Mac** -buildhost, um die anfängliche **ApiDefinition.cs** für das infcolorpicker-Projekt zu erstellen.
+Ziel-Sharpie ist ein von xamarin bereitgestelltes Befehlszeilen Tool, das beim Erstellen der Definitionen helfen kann, die erforderlich sind, um eine Ziel-C C#-Bibliothek von Drittanbietern an zu binden. In diesem Abschnitt verwenden wir den Ziel-Sharpie auf dem **Mac-buildhost** , um die anfängliche **ApiDefinition.cs** für das infcolorpicker-Projekt zu erstellen.
 
 
 -----
@@ -475,7 +475,7 @@ Und die **InfColorPicker.enums.cs** -und **InfColorPicker.cs** -Dateien werden i
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-Öffnen Sie beide Dateien im Bindungs Projekt, das wir oben erstellt haben. Kopieren Sie den Inhalt der **Datei InfColorPicker.cs** (auf dem **Mac**-buildhost), und fügen Sie ihn in die Datei ApiDefinition.cs `namespace ...` ein. ersetzen Sie dabei den vorhandenen Codeblock durch den Inhalt der **InfColorPicker.cs** -Datei ( die `using` Anweisungen bleiben unverändert).
+Öffnen Sie beide Dateien im Bindungs Projekt, das wir oben erstellt haben. Kopieren Sie den Inhalt der Datei **InfColorPicker.cs** (auf dem **Mac-buildhost**), und fügen Sie ihn in die Datei ApiDefinition.cs `namespace ...` ein. ersetzen Sie dabei den vorhandenen Codeblock durch den Inhalt der **InfColorPicker.cs** -Datei ( die `using` Anweisungen bleiben unverändert).
 
 
 -----
@@ -561,7 +561,7 @@ Gehen Sie folgendermaßen vor, um eine Beispiel-iPhone-Anwendung zur Verwendung 
 
     ![](walkthrough-images/use03vs.png "Erstellen der iPhone-Benutzeroberfläche")
 
-1. **Fügen Sie infcolorpickerview. XIb hinzu** : die infcolorpicker-Ziel-C-Bibliothek enthält eine **XIb** -Datei. Xamarin. IOS schließt this **. XIb** nicht in das Bindungs Projekt ein, was zu Laufzeitfehlern in der Beispielanwendung führt. Um dieses Problem zu umgehen, fügen Sie dem xamarin. IOS-Projekt auf dem **Mac**-buildhost die **XIb** -Datei hinzu. Wählen Sie das xamarin. IOS-Projekt aus, klicken Sie mit der rechten Maustaste, wählen Sie**Vorhandenes Element** **Hinzufügen** > aus, und fügen Sie die **XIb** -Datei hinzu.
+1. **Fügen Sie infcolorpickerview. XIb hinzu** : die infcolorpicker-Ziel-C-Bibliothek enthält eine **XIb** -Datei. Xamarin. IOS schließt this **. XIb** nicht in das Bindungs Projekt ein, was zu Laufzeitfehlern in der Beispielanwendung führt. Um dieses Problem zu umgehen, fügen Sie dem xamarin. IOS-Projekt auf dem **Mac-buildhost**die **XIb** -Datei hinzu. Wählen Sie das xamarin. IOS-Projekt aus, klicken Sie mit der rechten Maustaste, wählen Sie**Vorhandenes Element** **Hinzufügen** > aus, und fügen Sie die **XIb** -Datei hinzu.
 
 -----
 

@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 1027E16C-2C14-4BB5-AAAB-342F3E28E22E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 84bb6815c19bcacb4a9d1bddc44d340d51199c32
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4a8e3827deadd5c5d183c61c53cbe8346949759b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421982"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290501"
 ---
 # <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loaded"></a>Laufzeitfehler: The assembly mscorlib.dll was not found or could not be loaded (Die Assembly „mscorlib.dll“ wurde nicht gefunden oder konnte nicht geladen werden).
 
@@ -22,5 +22,5 @@ ms.locfileid: "61421982"
 <Warning>: Service exited with abnormal code: 1
 ```
 
-Dieses Problem tritt auf, wenn die *ausgeblendete* `.monotouch-32` und `.monotouch-64` Ordner fehlen die `.xcarchive` zum Signieren / IPA-Datei erstellen, die Laufzeitfehler ausgelöst.
+Dieses Problem tritt auf, wenn `.monotouch-32` die `.monotouch-64` ausgeblendeten Ordner `.xcarchive` und in der zum Signieren/ *IPA-erstellen* fehlen, wodurch der Laufzeitfehler ausgelöst wird.
 
