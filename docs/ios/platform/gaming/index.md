@@ -4,15 +4,15 @@ description: In diesem Artikel werden die neuen Spiele Erweiterungen von IOS 9 b
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: e647169a9059edab3593ec2986e16358b4e574aa
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: fa78a596495b22ebb2c8b148aadb76261845ccdc
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065565"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281263"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>IOS-Gaming-APIs in xamarin. IOS
 
@@ -462,7 +462,7 @@ Apple hat das spritekit für IOS 9 die folgenden neuen Features hinzugefügt:
 - Einfache scrollspiel Unterstützung mit neuen Kamera Knoten (`SKCameraNode`)-Objekten.
 - Auf IOS-Geräten, die Metal unterstützen, wird das spritekit automatisch für das Rendering verwendet, auch wenn Sie bereits benutzerdefinierte OpenGL es-Shader verwendet haben.
 
-Weitere Informationen finden Sie in unserer [spritekit-Dokumentation](~/ios/platform/introduction-to-ios8.md#spritekit) zur [spritekit](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041) -frameworkreferenz von [Apple und ihren demobots: Entwickeln eines plattformübergreifenden Spiels mit der spritekit-und](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179) gameplaykit-Beispiel-app.
+Weitere Informationen finden Sie in unserer [spritekit-Dokumentation](~/ios/platform/introduction-to-ios8.md#spritekit) zur [spritekit-frameworkreferenz](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041) von [Apple und ihren demobots: Entwickeln eines plattformübergreifenden Spiels mit der spritekit-und](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179) gameplaykit-Beispiel-app.
 
 ## <a name="summary"></a>Zusammenfassung
 

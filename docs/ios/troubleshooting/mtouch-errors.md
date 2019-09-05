@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: aa8f25af4a394b981fdc7d5dc5a8836b7ff240cc
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: b8a7353ee67ee0686ad97428222c69dd095ee83a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200263"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290426"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. IOS-Fehler
 
@@ -1577,7 +1577,7 @@ Um diese Warnung zu beheben, öffnen Sie die Projektdatei in einem Text-Editor, 
 
 ### <a name="mt2017-could-not-process-xml-description"></a>MT2017: Die XML-Beschreibung konnte nicht verarbeitet werden.
 
-Dies bedeutet, dass die von Ihnen bereitgestellte [benutzerdefinierte XML](~/cross-platform/deploy-test/linker.md) -linkerkonfigurationsdatei einen Fehler enthält. Überprüfen Sie die Datei.
+Dies bedeutet, dass die von Ihnen bereitgestellte [benutzerdefinierte XML-linkerkonfigurationsdatei](~/cross-platform/deploy-test/linker.md) einen Fehler enthält. Überprüfen Sie die Datei.
 
 <a name="MT2018" />
 
@@ -2970,7 +2970,7 @@ Dies weist darauf hin, dass im Buildprozess etwas falsch ist. Bitte melden Sie e
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: Der Delegat zum Blockieren des Konvertierungs Attributs ([delegateproxy]) für den Rückgabewert der Methodekonnte nicht gefunden werden. Bitte melden Sie einen Fehler http://bugzilla.xamarin.com unter.
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: Der Delegat zum Blockieren des Konvertierungs Attributs ([delegateproxy]) für den Rückgabewert *der Methode konnte*nicht gefunden werden. Bitte melden Sie einen Fehler http://bugzilla.xamarin.com unter.
 
 Xamarin. IOS konnte eine erforderliche Methode zur Laufzeit nicht finden (zum Konvertieren eines Delegaten in einen-Block).
 

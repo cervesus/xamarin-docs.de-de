@@ -1,51 +1,51 @@
 ---
-title: MacOS-Plattformfeatures
-description: 'Dieses Dokument enthält Links zu Leitfäden, die wichtige MacOS und Xamarin.Mac-Plattformfeatures beschreiben: OpenTK, Storyboards, Extensions und mehr.'
+title: Funktionen der macOS-Plattform
+description: 'Dieses Dokument enthält Links zu Anleitungen, in denen wichtige macOS-und xamarin. Mac-Platt Form Features beschrieben werden: Opentk, Storyboards, Erweiterungen und mehr.'
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 7e91645fb92814c88c3711645ea294ac701b67ac
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9587548becf840a06c0cbf198c0afe716a7156a2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032552"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284453"
 ---
-# <a name="macos-platform-features"></a>MacOS-Plattform-Funktionen
+# <a name="macos-platform-features"></a>Funktionen der macOS-Plattform
 
-Dokumente in diesem Abschnitt behandelt die Arbeit mit dem Schlüssel, plattformspezifischen Features von MacOS in einer Xamarin.Mac-Anwendung.
+In den Dokumenten in diesem Abschnitt wird das Arbeiten mit Schlüssel, plattformspezifischen Features von macOS in einer xamarin. Mac-Anwendung behandelt.
 
 ## <a name="introduction-to-macos-mojavemacplatformintroduction-to-macos-mojaveindexmd"></a>[Einführung in macOS Mojave](~/mac/platform/introduction-to-macos-mojave/index.md)
 
-Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte Features in MacOS Mojave, die beim Erstellen von Xamarin.Mac-Anwendungen für die Verwendung verfügbar sind.
+Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte Features in macOS, die für die Erstellung von xamarin. Mac-Anwendungen verfügbar sind.
 
 ## <a name="introduction-to-macos-high-sierramacplatformintroduction-to-macos-high-sierraindexmd"></a>[Einführung in macOS High Sierra](~/mac/platform/introduction-to-macos-high-sierra/index.md)
 
-Dieses Dokument beschreibt die neuen und verbesserten Features in MacOS High Sierra.
+In diesem Dokument werden neue und erweiterte Features in macOS High Sierra beschrieben.
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[Einführung in macOS Sierra](~/mac/platform/introduction-to-macos-sierra/index.md)
 
-MacOS Sierra ist die neuesten Versionen des Betriebssystems der Apple desktop für Mac. Dieses Dokument behandelt die Änderungen von Mac OS X El Capitan und wie sie in einer Xamarin.Mac-app zu implementieren.
+macOS Sierra ist die neueste Inkarnation des Desktop Betriebssystems von Apple für Mac. In diesem Dokument werden die Änderungen von Mac OS X El Capitan und deren Implementierung in einer xamarin. Mac-app behandelt.
 
-## <a name="binding-objective-c-libraries-for-macbindingmd"></a>[Binden von Objective-C-Bibliotheken für Mac](binding.md)
+## <a name="binding-objective-c-libraries-for-macbindingmd"></a>[Bindungs Ziel-C-Bibliotheken für Mac](binding.md)
 
-Informationen Sie zum Binden von Objective-C-Mac-Bibliotheken für die Verwendung in einer Xamarin.Mac-Projekte.
-Finden Sie in der [Seite "Problembehandlung"](~/cross-platform/macios/binding/troubleshooting.md) um eventuelle Probleme zu beheben.
+Erfahren Sie, wie Sie die Ziel-C-Mac-Bibliotheken für die Verwendung in xamarin. Mac-Projekten binden.
+Weitere Informationen finden Sie auf der [Seite zur Problem](~/cross-platform/macios/binding/troubleshooting.md) Behandlung.
 
 ## <a name="introduction-to-opentkmacplatformopentkmd"></a>[Einführung in OpenTK](~/mac/platform/opentk.md)
 
-OpenTK (das Open-Toolkit) ist eine erweiterte, Low-Level C#-Bibliothek, die Arbeit mit OpenGL, OpenCL und OpenAL einfacher macht. OpenTK kann für die Spiele, wissenschaftliche Anwendungen oder andere Projekte, die 3D-Grafiken erfordern, Audio- oder COMPUTE-Funktionen verwendet werden. Dieser Artikel bietet eine kurze Einführung in OpenTK in einer Xamarin.Mac-app verwenden.
+Opentk (das Open Toolkit) ist eine erweiterte Bibliothek auf niedriger Ebene C# , die das Arbeiten mit OpenGL, OpenCL und OpenAL erleichtert. Opentk kann für Spiele, wissenschaftliche Anwendungen oder andere Projekte verwendet werden, für die 3D-Grafiken, Audiodaten oder Berechnungsfunktionen erforderlich sind. Dieser Artikel bietet eine kurze Einführung in die Verwendung von opentk in einer xamarin. Mac-app.
 
-## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[Einführung in storyboards](~/mac/platform/storyboards/index.md)
+## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[Einführung in Storyboards](~/mac/platform/storyboards/index.md)
 
-Storyboards können Sie eine Benutzeroberfläche für die Xamarin.Mac-app zu entwickeln, die enthält nicht nur die Definitionen für Fenster und Steuerelemente, sondern enthält auch die Verknüpfungen zwischen verschiedenen Fenstern (über segues) und Ansichtszustand. Dieser Artikel bietet eine Einführung in Storyboards in einer Xamarin.Mac-app verwenden.
+Storyboards ermöglichen es Ihnen, eine Benutzeroberfläche für die xamarin. Mac-app zu entwickeln, die nicht nur die Fenster Definitionen und Steuerelemente enthält, sondern auch die Verknüpfungen zwischen verschiedenen Fenstern (über Seiten und Ansichts Zuständen) enthält. Dieser Artikel bietet eine Einführung in die Verwendung von Storyboards in einer xamarin. Mac-app.
 
-## <a name="xamarinmac-extension-supportmacplatformextensionsmd"></a>[Unterstützung von Xamarin.Mac](~/mac/platform/extensions.md)
+## <a name="xamarinmac-extension-supportmacplatformextensionsmd"></a>[Xamarin. Mac-Erweiterungs Unterstützung](~/mac/platform/extensions.md)
 
-In der Vorschau von Xamarin.Mac 2.10 wurde Unterstützung für mehrere MacOS-Erweiterungspunkte hinzugefügt:
+In xamarin. Mac 2,10 wurde die Unterstützung für mehrere macOS-Erweiterungs Punkte hinzugefügt:
 
 - Finder
 - Freigeben
@@ -53,4 +53,4 @@ In der Vorschau von Xamarin.Mac 2.10 wurde Unterstützung für mehrere MacOS-Erw
 
 ## <a name="target-frameworksmacplatformtarget-frameworkmd"></a>[Zielframeworks](~/mac/platform/target-framework.md)
 
-Dieser Artikel behandelt die Typen von Zielframeworks (Base Class Libraries), die in Xamarin.Mac und die Auswirkungen auf die Auswahl eines bestimmten Ziels für die Xamarin.Mac-Anwendung verfügbar sind.
+In diesem Artikel werden die Typen von Ziel-Frameworks (Basisklassen Bibliotheken) behandelt, die in xamarin. Mac verfügbar sind, und die Auswirkungen der Auswahl eines bestimmten Ziels für Ihre xamarin. Mac-Anwendung.

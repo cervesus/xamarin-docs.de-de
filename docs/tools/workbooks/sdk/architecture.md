@@ -1,34 +1,34 @@
 ---
 title: Architekturübersicht
-description: Dieses Dokument beschreibt die Architektur von Xamarin Workbooks, überprüfen, wie die interaktive Agent und die interaktiven Client zusammenarbeiten.
+description: In diesem Dokument wird die Architektur von Xamarin Workbooks beschrieben und erläutert, wie der interaktive Agent und der interaktive Client zusammenarbeiten.
 ms.prod: xamarin
 ms.assetid: 6C0226BE-A0C4-4108-B482-0A903696AB04
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 352e8d0191512184ffd7d82fa0dfa0bc79fa24ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7129d0bedddb272ef87e3d209cb05c2ca0c0acf4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61257424"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285279"
 ---
 # <a name="architecture-overview"></a>Architekturübersicht
 
-Xamarin Workbooks bietet zwei Hauptkomponenten, die miteinander zusammenarbeiten müssen: _Agent_ und _Client_.
+Xamarin Workbooks verfügt über zwei Hauptkomponenten, die zusammenarbeiten müssen: _Agent_ und _Client_.
 
-## <a name="interactive-agent"></a>Interaktive Agent
+## <a name="interactive-agent"></a>Interaktiver Agent
 
-Die Agent-Komponente ist eine kleine plattformspezifische-Assembly, die im Kontext einer Anwendung .NET ausgeführt wird.
+Bei der Agent-Komponente handelt es sich um eine kleine plattformspezifische Assembly, die im Kontext einer .NET-Anwendung ausgeführt wird.
 
-Xamarin Workbooks enthält vorgefertigte "empty" Anwendungen für eine Reihe von Plattformen wie iOS, Android, Mac und WPF. Diese Anwendungen hosten explizit den Agent.
+Xamarin Workbooks bietet vorgefertigte "leere" Anwendungen für eine Reihe von Plattformen, wie z. b. IOS, Android, Mac und WPF. Diese Anwendungen hosten den Agent explizit.
 
-Während der Untersuchung (Xamarin Inspector) wird der Agent über den IDE-Debugger in eine vorhandene Anwendung als Teil der regulären Entwicklung & debuggingworkflow eingefügt.
+Während der Live Untersuchung (Xamarin Inspector) wird der Agent über den IDE-Debugger in eine vorhandene Anwendung als Teil des regulären Entwicklung& debuggingworkflows eingefügt.
 
-## <a name="interactive-client"></a>Interaktiven Client
+## <a name="interactive-client"></a>Interaktiver Client
 
-Der Client ist eine native Shell (Cocoa unter Mac, WPF für Windows), die eine Web-Browser-Oberfläche für die Darstellung der Arbeitsmappe/REPL-Oberfläche hostet. Aus Sicht der SDK werden alle Client-Integrationen in JavaScript und CSS-implementiert.
+Der Client ist eine native Shell (Cocoa on Mac, WPF unter Windows), die eine Webbrowser Oberfläche zum Darstellen der Arbeitsmappen/repl-Schnittstelle hostet. Aus der SDK-Perspektive werden alle Client Integrationen in JavaScript und CSS implementiert.
 
-Der Client ist (über Roslyn) zuständig für das Kompilieren von Quellcode in kleinen Assemblys und diese über mit dem verbundenen Agent zur Ausführung gesendet. Ergebnisse der Ausführung werden für das Rendering an den Client gesendet. Jede Zelle in einer Arbeitsmappe führt zu einer Assembly, die auf die Assembly der vorherigen Zelle verweist.
+Der Client ist verantwortlich (über Roslyn), um Quellcode in kleine Assemblys zu kompilieren und zur Ausführung an den verbundenen Agent zu senden. Die Ergebnisse der Ausführung werden zum Rendern zurück an den Client gesendet. Jede Zelle in einer Arbeitsmappe ergibt eine Assembly, die auf die Assembly der vorherigen Zelle verweist.
 
-Da ein Agent auf jede Art von .NET Plattform ausgeführt werden kann und Zugriff auf alle Elemente in der ausgeführten Anwendung hat, muss darauf geachtet werden Ergebnisse auf plattformunabhängige Weise serialisiert.
+Da ein Agent auf jeder Art von .NET-Plattform ausgeführt werden kann und Zugriff auf alle Elemente in der laufenden Anwendung hat, muss darauf geachtet werden, dass die Ergebnisse Platt Form agnostisch serialisiert werden.

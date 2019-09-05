@@ -1,50 +1,50 @@
 ---
-title: Änderungen bei WebKit und Safari in iOS 11
-description: Dieses Dokument erläutert die Änderungen an WebKit und die Safari-Services-Framework in iOS 11. Es wird beschrieben, wie mit Formatierung SFSafariViewController Updates und neuen Funktionen in WKWebView arbeiten.
+title: Änderungen an WebKit und Safari in ios 11
+description: In diesem Dokument werden Änderungen erläutert, die an WebKit und dem Safari Services-Framework in ios 11 vorgenommen wurden. Es wird beschrieben, wie Sie mit Formatierungs Updates in sfsafariviewcontroller und neuen Features in wkwebview arbeiten.
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/12/2017
-ms.openlocfilehash: 5ced73b1f3f5b8207ae1258dcb01a78c94df217d
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: b90673559d0b8a3728898b7d8dbc3207bb22520b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268921"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280083"
 ---
-# <a name="webkit-and-safari-changes-in-ios-11"></a>Änderungen bei WebKit und Safari in iOS 11
+# <a name="webkit-and-safari-changes-in-ios-11"></a>Änderungen an WebKit und Safari in ios 11
 
-iOS 11 führt eine neue Version des Safari-Webbrowser – Safari 11.0 – Änderungen an WebKit und SafariServices enthält. Dieses Handbuch beschreibt diese Änderungen.
+IOS 11 führt eine neue Version des Safari-Webbrowsers – Safari 11,0 – ein, die Änderungen an WebKit und safariservices umfasst. In dieser Anleitung werden diese Änderungen erläutert.
 
-## <a name="safariservices"></a>SafariServices
+## <a name="safariservices"></a>Safariservices
 
-`SFSafariViewController` wurde als Option für die Anzeige von Webinhalten oder zum Authentifizieren von Benutzern aus Ihrer app in iOS 9 eingeführt. Weitere Informationen zu Features finden Sie der [Webansichten](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller) Guide.
+`SFSafariViewController`wurde in ios 9 als Option zum Anzeigen von Webinhalten oder Authentifizieren von Benutzern in Ihrer APP eingeführt. Weitere Informationen zu den Funktionen finden Sie im Handbuch für [Webansichten](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller) .
 
-iOS 11 wurde Style-Updates auf den Safari-Ansichtscontroller, erteilen Ihren Benutzern mehr nahtlos zwischen einer app und das Web eingeführt. Z. B. das Entfernen der Adressleiste zeigt Ihnen nun die Safari-View-Controller das Verhalten einer in-app-Browser, statt einen Minibrowser. Sie können auch anpassen, das Farbschema passen sich des Farbschemas für Ihre app durch Festlegen der `preferredBarTintColor` und `PreferredControlTintColor` Eigenschaften:
+IOS 11 hat Stil Updates für den Safari-Ansichts Controller eingeführt, sodass Ihre Benutzer eine nahtlose Benutzer Darstellung zwischen einer APP und dem Web erhalten. Beispielsweise gibt das Entfernen der Adressleiste nun dem Safari-Ansichts Controller das Gefühl eines in-App-Browsers und nicht eines Mini Browsers. Sie können das Farbschema auch anpassen, um das Farbschema Ihrer APP anzupassen, indem Sie die `preferredBarTintColor` Eigenschaften und `PreferredControlTintColor` festlegen:
 
 ```csharp
 sfViewController.PreferredControlTintColor = UIColor.White;
 sfViewController.PreferredBarTintColor = UIColor.Purple;
 ```
 
-Der folgende Codeausschnitt rendert die Balken in Violett und weiß, wie in der folgenden Abbildung angezeigt:
+Der folgende Code Ausschnitt rendert die Balken in violett und weiß, wie in der folgenden Abbildung dargestellt:
 
-![SFSafariViewController Balken in Violett und weiß gerendert](web-images/image1.png)
+![Sfsafariviewcontroller-Balken in violett und weiß gerendert](web-images/image1.png)
 
-Die Schaltfläche "Schließen" angezeigt, in der Safari-View-Controller kann auch geändert werden, durch Festlegen der `DismissButtonStyle` Eigenschaft entweder `Done`, `Close`, oder `Cancel`:
+Die im Safari-Ansichts Controller dargestellte Schaltfläche verwerfen kann auch durch Festlegen `DismissButtonStyle` der-Eigenschaft `Done`auf `Close`, oder `Cancel`geändert werden:
 
 ```csharp
 sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.Close;
 ```
 
-![Schließen der Text der Schaltfläche geändert](web-images/image2.png)
+![Schaltflächen Text verwerfen geändert](web-images/image2.png)
 
-Dieser Wert kann geändert werden zwar `SFSafariViewController` wird angezeigt.
+Dieser Wert kann geändert werden, `SFSafariViewController` während präsentiert wird.
 
 
-Je nach Inhalt, der in einem Safari-View-Controller angezeigt wird, ist es möglicherweise erforderlich, um sicherzustellen, dass die Menüleisten als der Benutzer einen Bildlauf zu reduzieren, nicht. Dies wird aktiviert, indem die neue `BarCollapsedEnabled` Eigenschaft `false`:
+Abhängig von dem Inhalt, der in einem Safari-Ansichts Controller angezeigt wird, kann es erforderlich sein, sicherzustellen, dass die Menüleisten nicht reduziert werden, wenn der Benutzer einen Bildlauf ausführt. Dies wird aktiviert, indem die neue `BarCollapsedEnabled` Eigenschaft auf `false`festgelegt wird:
 
 ```csharp
 var config = new SFSafariViewControllerConfiguration();
@@ -53,28 +53,28 @@ config.BarCollapsingEnabled = false;
 var sfViewController = new SFSafariViewController(url, config);
 ```
 
-![Leiste reduzieren, deaktiviert](web-images/image3.png)
+![Die Leiste wird deaktiviert.](web-images/image3.png)
 
-Apple hat auch Aktualisierungen zum Datenschutz in der Safari-View-Controller in iOS 11 vorgenommen. Durchsuchen von Daten, z. B. Cookies und lokaler Speicher nur auf einer pro-app-Basis und nicht für alle Instanzen des Safari-ansichtscontroller vorhanden. Auf diese Weise die Suchaktivitäten privat innerhalb Ihrer app.
+Außerdem hat Apple im Safari View Controller in ios 11 Updates für den Datenschutz durchgeführt. Das Durchsuchen von Daten, wie z. b. Cookies und lokaler Speicher, ist nun nur auf App-Basis und nicht in allen Instanzen von Safari View Controller vorhanden. Dadurch wird die Benutzer Browseraktivität innerhalb Ihrer APP privat.
 
-Zusätzliche Features wie z. B. ziehen und drop-Unterstützung für URLs und Unterstützung für `window.open()` wurden ebenfalls hinzugefügt `SFSafariViewController` in iOS 11. Weitere Informationen zu diesen neuen Features in finden Sie [Apple SFSafariViewController Dokumentation](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor).
+Zusätzliche Funktionen wie Drag & Drop-Unterstützung für URLs und unter `window.open()` Stützung für wurden `SFSafariViewController` in ios 11 ebenfalls hinzugefügt. Weitere Informationen zu diesen neuen Features finden Sie in [der Dokumentation zu sfsafariviewcontroller von Apple](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor).
 
 
 ## <a name="webkit"></a>WebKit
 
-`WKWebView` wurde als Teil des WebKit IOS 8 als Mittel zum Anzeigen von Webinhalten auf den Benutzer eingeführt. Es ist viel besser angepasst werden als `SFSafariViewController`, sodass Sie Ihre eigenen Navigation und der Benutzeroberfläche zu erstellen.
+`WKWebView`wurde als Teil von WebKit in ios 8 eingeführt, um dem Benutzer Webinhalte anzuzeigen. Es ist viel besser anpassbarer `SFSafariViewController`als, sodass Sie eine eigene Navigations-und Benutzeroberfläche erstellen können.
 
-Apple wurden die drei wichtigsten Verbesserungen für `WKWebView` IOS 11: 
+Apple hat drei wesentliche Verbesserungen `WKWebView` für mit IOS 11 eingeführt: 
 
-- Die Möglichkeit zum Verwalten von cookies
-- Inhaltsfilterung
-- Benutzerdefinierte Ressource geladen. 
+- Die Fähigkeit zum Verwalten von Cookies
+- Inhalts Filterung
+- Laden von benutzerdefinierten Ressourcen. 
 
-Cookieverwaltung erfolgt über die neue [ `WKHttpCookieStore` ](https://developer.apple.com/documentation/webkit/wkhttpcookiestore) -Klasse, die Ihnen die Möglichkeit zum Hinzufügen und Löschen von Cookies, um alle in einem WKWebView gespeicherten Cookies zu erhalten, und beobachten das Cookie für die Änderungen zu speichern.
+Die Cookieverwaltung erfolgt über die [`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore) neue-Klasse, die es Ihnen ermöglicht, Cookies hinzuzufügen und zu löschen, alle in einer wkwebview gespeicherten Cookies zu erhalten und den Cookiespeicher für Änderungen zu beobachten.
 
-Inhalt filtern können Sie den Typ des Inhalts zu verwalten, die Ihre Benutzer angezeigt wird, können Sie sicherstellen, dass es ist sicherer, Familie geeignet, und, falls erforderlich, nur verfügbar für eine ausgewählte Gruppe von Benutzern. Dies wird implementiert, über die neue [ `WKContentRuleList` ](https://developer.apple.com/documentation/webkit/wkcontentrulelist) -Klasse, indem Sie Paare von Triggern und Aktionen im JSON-Format. Weitere Informationen zu diesen Trigger und Aktionen finden Sie im Apple [Inhaltsregeln blockieren](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html) Guide.
+Die Inhalts Filterung ermöglicht Ihnen die Verwaltung der Art von Inhalt, der dem Benutzer angezeigt wird, sodass Sie sicherstellen können, dass er sicher, familienfreundlich und ggf. nur für eine ausgewählte Benutzergruppe verfügbar ist. Dies wird durch die neue [`WKContentRuleList`](https://developer.apple.com/documentation/webkit/wkcontentrulelist) -Klasse implementiert, indem paar Trigger und Aktionen in JSON bereitgestellt werden. Weitere Informationen zu diesen Triggern und Aktionen finden Sie im Handbuch zu den [Inhalts Blockierungs Regeln](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html) von Apple.
 
-iOS 11 können Sie anpassen, jetzt `WKWebView` mit benutzerdefinierten Ressource, die für Ihre Webinhalte werden geladen. Dies wird implementiert, über die `IWKUrlSchemeHandler` -Schnittstelle, die können Sie die URL-Schemas zu behandeln, die nicht im einheitlichen Modus zum Web Kit enthalten sind. Diese Schnittstelle verfügt über eine Start- und Stop-Methode, die implementiert werden muss:
+IOS 11 ermöglicht Ihnen jetzt das anpassen `WKWebView` von benutzerdefiniertem Laden von Ressourcen für Ihre Webinhalte. Dies wird über die `IWKUrlSchemeHandler` -Schnittstelle implementiert, mit der Sie URL-Schemas verarbeiten können, die nicht im Web-Kit einheitlich sind. Diese Schnittstelle verfügt über eine Start-und Stoppmethode, die implementiert werden muss:
 
 ```csharp
 public class MyHandler : NSObject, IWKUrlSchemeHandler {
@@ -97,7 +97,7 @@ public class MyHandler : NSObject, IWKUrlSchemeHandler {
 }
 ``` 
 
-Nachdem der Handler implementiert wurde, verwenden Sie diesen zum Festlegen der `SetUrlSchemeHandler` Eigenschaft für die `WKWebViewConfiguration`. Laden Sie dann die URL von etwas, das das benutzerdefinierte Schema verwendet:
+Nachdem der Handler implementiert wurde, verwenden Sie ihn, um die `SetUrlSchemeHandler` -Eigenschaft `WKWebViewConfiguration`auf festzulegen. Laden Sie dann die URL eines etwas, das das benutzerdefinierte Schema verwendet:
 
 ```csharp
 var config = new WKWebViewConfiguration();

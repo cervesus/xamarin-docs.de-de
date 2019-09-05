@@ -4,15 +4,15 @@ description: In diesem Dokument werden kleinere Änderungen und Erweiterungen vo
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b382b7dd66722df6acb4bb7c90e401e5895c0947
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 1de3a0a67fb6abbd4423435b38d7712f583ab74d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620903"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284439"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Zusätzliche macOS Sierra Framework-Änderungen
 
@@ -125,7 +125,7 @@ Die folgenden Verbesserungen wurden am gameplaykit-Framework für macOS Sierra v
 
 Die folgenden Verbesserungen wurden am Metal-Framework für macOS Sierra vorgenommen:
 
-- 3D-apps und-Spiele können jetzt Mosaik verwendet werden, um komplexe Szenen und Geometrie effizient über die GPU zu erzeugen.
+- 3D-apps und-Spiele können jetzt _Mosaik verwendet werden_ , um komplexe Szenen und Geometrie effizient über die GPU zu erzeugen.
 - Verwenden Sie die Funktions Spezialisierung, um eine hochgradig optimierte Sammlung von Material-und Light-Kombinations Funktionen für eine Szene zu erstellen.
 - Sorgen Sie für eine differenzierte Steuerung der Ressourcen Zuordnung, um die Leistung von Metal-basierten Apps mithilfe von Ressourcen Heaps und Speicher losen Renderingzielen zu optimieren.
 

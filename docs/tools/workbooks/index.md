@@ -1,44 +1,44 @@
 ---
 title: Xamarin Workbooks
-description: Xamarin Workbooks bieten eine Mischung aus Dokumentation und Code, der perfekt für experimentier-, gelernt haben, und das Erstellen von Führungslinien und unterrichten Hilfsmittel.
+description: Xamarin Workbooks eine Mischung aus Dokumentation und Code bereitstellen, die perfekt zum Experimentieren, erlernen und Erstellen von Handbüchern und Lehrhilfen geeignet ist.
 ms.prod: xamarin
 ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/23/2018
-ms.openlocfilehash: d0aed1b501b86a23d4008ba9618b0e459178ca24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ea065a0eea9be95b0513acd4ee3950efe9a4e53d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61257740"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288097"
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 
-Xamarin Workbooks bieten eine Mischung aus Dokumentation und Code, der perfekt für experimentier-, gelernt haben, und das Erstellen von Führungslinien und unterrichten Hilfsmittel.
+Xamarin Workbooks eine Mischung aus Dokumentation und Code bereitstellen, die perfekt zum Experimentieren, erlernen und Erstellen von Handbüchern und Lehrhilfen geeignet ist.
 
-Erstellen Sie eine umfassende C# Arbeitsmappe für Android, iOS, Mac, WPF oder -Konsole und sofortige live Ergebnisse erzielen Sie erfahren Sie, diese APIs.
+Erstellen Sie eine C# umfangreiche Arbeitsmappe für Android, Ios, Mac, WPF oder Console, und erhalten Sie sofortige Live Ergebnisse, wenn Sie diese APIs erlernen.
 
-Xamarin Workbooks ist eine open-Source-Software. Entwicklung erfolgt in der geöffneten auf GitHub. Interessierte Benutzer und Entwickler, mit dem Projekt beginnen sind herzlich eingeladen.
+Xamarin Workbooks ist Open Source-Software. Die Entwicklung erfolgt in Open auf GitHub. Wir laden interessierte Benutzer und Entwickler ein, sich mit dem Projekt zu beschäftigen.
 
-[Nehmen Sie an, auf GitHub.](https://github.com/Microsoft/workbooks)
+[Besuchen Sie uns auf GitHub!](https://github.com/Microsoft/workbooks)
 
-Probieren sie es aus, und lassen Sie uns wissen, was Sie denken, oder wenn Sie [Auftreten von Fehlern](~/tools/workbooks/install.md#reporting-bugs). Wir haben auch ein [Forum](https://forums.xamarin.com/categories/inspector)!
+Probieren Sie es aus, und lassen Sie uns wissen, was Sie denken oder ob [Fehler](~/tools/workbooks/install.md#reporting-bugs)auftreten. Wir haben auch ein [Forum](https://forums.xamarin.com/categories/inspector)!
 
-[![](images/interactive-1.0.0-urho-planet-earth-small.png "Eine von UrhoSharp basierend Beispielarbeitsmappe")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "Ein Beispiel für eine auf urhusharp basierende Arbeitsmappe")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
 ## <a name="installation-and-requirementsinstallmd"></a>[Installation und Voraussetzungen](install.md)
 
-Informationen zum Abrufen von Arbeitsmappen, die auf Ihrem Mac oder Windows-Computer installiert.
+Informationen zum Installieren von Arbeitsmappen auf Ihrem Mac-oder Windows-Computer.
 
 ## <a name="interactive-workbooksworkbookmd"></a>[Interaktive Workbooks](workbook.md)
 
-Eine Einführung in Xamarin Workbooks zu verwenden.
+Eine Einführung in die Verwendung von Xamarin Workbooks.
 
 ## <a name="samples"></a>Proben
 
-Es gibt eine Vielzahl von [beispielsarbeitsmappen auf GitHub verfügbar](https://github.com/xamarin/workbooks).
+[Auf GitHub stehen eine Vielzahl von Beispiel Arbeitsmappen zur Verfügung](https://github.com/xamarin/workbooks).
 
 ## <a name="integration-sdksdkindexmd"></a>[Integrations-SDK](sdk/index.md)
 
-Es ist möglich, Xamarin Workbooks mit benutzerdefinierten datendarstellungen und Renderer erweitern. Integrationen mit verfasst wurden C# und TypeScript und JavaScript.
+Es ist möglich, Xamarin Workbooks durch benutzerdefinierte Daten Darstellungen und Renderer zu erweitern. Integrationen werden mit C# und typescript/JavaScript geschrieben.

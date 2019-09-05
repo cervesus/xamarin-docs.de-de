@@ -4,15 +4,15 @@ description: In diesem Dokument werden die Schritte beschrieben, die zum Impleme
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 78d39b080a136f66c81b48d6cceb5fbdd9d24c11
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c891943d0d23c24169a6d226a10f83964c9257a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654939"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290639"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implementieren von Sirikit in xamarin. IOS
 
@@ -218,7 +218,7 @@ Führen Sie auf Ihrem Mac die folgenden Schritte aus:
 
     [![](implementing-sirikit-images/setup03.png "\"Sirikit\" auswählen")](implementing-sirikit-images/setup03.png#lightbox)
 7. Überprüfen Sie alle Einstellungen, und über **Mitteln** Sie dann die APP-ID.
-8. Wählen **Sie Bereitstellungs profile** > **Entwicklung**, klicken **+** Sie auf die Schaltfläche, wählen Sie die **Apple-ID**aus, und klicken Sie auf **weiter**
+8. Wählen Sie **Bereitstellungs profile** > **Entwicklung**, klicken **+** Sie auf die Schaltfläche, wählen Sie die **Apple-ID**aus, und klicken Sie auf **weiter**
 9. Klicken Sie auf **alle**auswählen und dann auf **weiter**.
 10. Klicken Sie erneut auf **Alles auswählen** , und klicken Sie dann auf **weiter**.
 11. Geben Sie mithilfe der Namensvorschläge von Apple einen **Profilnamen** ein, und klicken Sie dann auf **weiter**.

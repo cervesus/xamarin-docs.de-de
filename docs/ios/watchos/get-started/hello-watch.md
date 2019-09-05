@@ -4,15 +4,15 @@ description: Dieses Dokument enthält eine exemplarische Vorgehensweise zum Aufb
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/14/2016
-ms.openlocfilehash: dba84c32390be8017952206de9e23facd58931fe
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c5527db543a0b0d5218c37f0d75e22afcd59297a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199033"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293144"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchos – Exemplarische Vorgehensweise
 
@@ -80,9 +80,9 @@ Erstellen Sie die Benutzeroberfläche:
 
 -----
 
-1. Legen Sie den **Namen** für jedes Steuerelement im eigenschaftenpad fest. In diesem Beispiel haben wir und `myButton` `myLabel`verwendet.
+1. Legen Sie den **Namen** für jedes Steuerelement im **eigenschaftenpad** fest. In diesem Beispiel haben wir und `myButton` `myLabel`verwendet.
 
-1. Wählen Sie die Schaltfläche auf dem Storyboard aus, und navigieren Sie zur **Ereignis** Liste des eigenschaftenpad.
+1. Wählen Sie die Schaltfläche auf dem Storyboard aus, und navigieren Sie zur **Ereignis** Liste des **eigenschaftenpad** .
 
 1. Erstellen Sie eine neue **Aktion** , `OnButtonPress` indem **Sie eingeben**und die EINGABETASTE drücken.
   Die Aktion wird in der Liste angezeigt, und in C#wird automatisch eine partielle Methode erstellt.

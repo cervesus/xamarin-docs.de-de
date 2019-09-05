@@ -4,15 +4,15 @@ description: In diesem Dokument werden kleinere Änderungen und Verbesserungen a
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 230da58bba68b9411b67baacd53b534ae832510d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 88039da5faf911386232d2b189b27a2921f8144c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657435"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289575"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Weitere tvos 10-Frameworks-Änderungen
 
@@ -181,7 +181,7 @@ Die folgenden Verbesserungen wurden an dem UIKit-Framework in tvos 10 vorgenomme
 - Die Fokus-API wurde erweitert, um den Fokus des nicht Sicht Elements zusätzlich zu zu `UIViews`unterstützen. Elemente, die den Fokus unterstützen `IUIFocusItem` , müssen die Schnittstelle implementieren.
 - Die neue `UIGraphicsRender` -Klasse stellt eine objektorientierte Methode zum Erstellen von Bitmaps oder PDF-Code aus dem UIKit-Rendering oder Kern Grafiken `UIGraphicsBeginImageContext` bereit und ersetzt die veraltete-Methode.
 - Die `UIUserInterfaceStyle` -Klasse wurde hinzugefügt, um zu bestimmen, welches Design der Benutzeroberfläche (dunkel oder hell) derzeit aktiv ist.
-- Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt, und van ist mit Gesten verknüpft. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der uitimingcurrveprovider- [Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und [ Uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) für weitere Informationen.
+- Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt, und van ist mit Gesten verknüpft. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der [uitimingcurrveprovider-Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und [ Uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) für weitere Informationen.
 - Der neue `UIPreviewInteraction` und `UIPreviewInteractionDelegate` ermöglicht der APP, eine benutzerdefinierte Schnittstelle für Peek-und Pop-Vorgänge bereitzustellen.
 - Die neue `UIAccessibilityCustomRotor` Klasse ermöglicht der APP, benutzerdefinierte kontextspezifische Funktionen für Hilfstechnologien wie Voice over bereitzustellen.
 - Verwenden Sie `UIAccessibilityIsAssistiveTouchRunning` die `UIAccessibilityAssistiveTouchStatusDidChangeNotification` Symbole und, um zu bestimmen, ob assistivetouch aktiviert ist.

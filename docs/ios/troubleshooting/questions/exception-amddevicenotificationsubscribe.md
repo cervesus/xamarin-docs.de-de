@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7E4ACC7E-F4FB-46C1-8837-C7FBAAFB2DC7
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d834c06c5fa5ee55e5e3b91bd16b5b4d326c42ee
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8ae465c98dee25cd0f1fe635da45f4d399b42ee3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528163"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284483"
 ---
 # <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe zurückgegeben ...
 
@@ -42,7 +42,7 @@ AMDeviceNotificationSubscribe returned: 3892314211
   at Mtb.Application.MainClass.Main (System.String[] args) [0x00000] in <filename unknown="">:0
 ```
 
-Diese Meldung kann beim ersten Start Visual Studio für Mac in einem Fehler Dialogfeld oder in der `mtbserver.log` Datei in der xamarin. IOS-buildhost-app (**xamarin. IOS-buildhost > anzeigen**des buildhostprotokolls) angezeigt werden.
+Diese Meldung kann beim ersten Start Visual Studio für Mac in einem Fehler Dialogfeld oder in der `mtbserver.log` Datei in der xamarin. IOS-buildhost-app (**xamarin. IOS-buildhost > Anzeigen des buildhostprotokolls**) angezeigt werden.
 
 Beachten Sie, dass dies ein ungewöhnliches Problem ist. Wenn Visual Studio Probleme beim Herstellen einer Verbindung mit dem Mac-buildhost hat, gibt es weitere Fehler, die in der `mtbserver.log` Datei wahrscheinlicher erscheinen.
 

@@ -3,15 +3,15 @@ title: Binden von nativen Frameworks
 description: In diesem Dokument wird beschrieben, wie Sie die Option "-Framework" von Target Sharpie verwenden, um eine Bindung an eine als Framework verteilte Bibliothek zu erstellen.
 ms.prod: xamarin
 ms.assetid: 91AE058A-3A1F-41A9-9DE4-4B96880A1869
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/15/2016
-ms.openlocfilehash: cb6c39b2110161b3f839b8adc03701007f09cc4d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 560db570e915cc9bf261f482f03d972973968585
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521885"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279042"
 ---
 # <a name="binding-native-frameworks"></a>Binden von nativen Frameworks
 

@@ -3,15 +3,15 @@ title: Verwenden von Team City mit xamarin
 description: In diesem Leitfaden werden die Schritte beschrieben, die bei der Verwendung von TeamCity zum Kompilieren mobiler Anwendungen und deren Übermittlung an Xamarin Test Cloud erläutert werden.
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 2880fcbc3366079955945c4780af2be82afe5a4a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 6ffd1c3e42dbaf0a82b07cd9e0a00228c5fa0604
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511934"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293140"
 ---
 # <a name="using-team-city-with-xamarin"></a>Verwenden von Team City mit xamarin
 
@@ -33,7 +33,7 @@ Die Einrichtung von TeamCity umfasst mehrere Schritte:
 
 - **Installieren von TeamCity** – die Installation von TeamCity wird in diesem Handbuch nicht behandelt. In dieser Anleitung wird davon ausgegangen, dass TeamCity installiert ist und unter einem Benutzerkonto ausgeführt wird. Anweisungen zum [Installieren von TeamCity](http://confluence.jetbrains.com/display/TCD8/Installation) finden Sie in der [Dokumentation zu TeamCity 8](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation) von JetBrains.
 
-- **Vorbereiten des** Buildservers – dieser Schritt umfasst die Installation der erforderlichen Software, Tools und Zertifikate, die zum Erstellen mobiler Anwendungen und zur Vorbereitung auf die Verteilung erforderlich sind.
+- **Vorbereiten des Buildservers** – dieser Schritt umfasst die Installation der erforderlichen Software, Tools und Zertifikate, die zum Erstellen mobiler Anwendungen und zur Vorbereitung auf die Verteilung erforderlich sind.
 
 - **Erstellen eines Buildskripts** – dieser Schritt ist nicht unbedingt erforderlich, aber ein Buildskript ist eine hilfreiche Hilfe zum unbeaufsichtigten Erstellen von Anwendungen. Die Verwendung eines Buildskripts hilft bei der Problembehandlung von Buildproblemen, die auftreten können, und bietet eine konsistente, wiederholbare Möglichkeit zum Erstellen der Binärdateien für die Verteilung, auch wenn Continuous Integration nicht ausgeführt wird.
 
@@ -185,7 +185,7 @@ Sobald TeamCity installiert ist und Visual Studio für Mac das Projekt erstellen
 
 4. Konfigurieren Sie als nächstes einen buildauslösers. Dadurch wird ein Build in die Warteschlange eingereiht, wenn bestimmte Bedingungen erfüllt sind, z. b. Wenn ein Benutzer einen Commit für das Repository ausführt. Der folgende Screenshot zeigt das Hinzufügen eines buildauslösers:
 
-    ![Dieser Screenshot zeigt das Hinzufügen eines] buildauslösers. (teamcity-images/image8.png "Dieser Screenshot zeigt das Hinzufügen eines") buildauslösers. Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie im folgenden Screenshot:
+    ![Dieser Screenshot zeigt das Hinzufügen eines buildauslösers] . (teamcity-images/image8.png "Dieser Screenshot zeigt das Hinzufügen eines buildauslösers") . Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie im folgenden Screenshot:
 
     ![Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie in diesem Screenshot] . (teamcity-images/image9.png "Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie in diesem Screenshot") .
 

@@ -4,15 +4,15 @@ description: In diesem Artikel werden alle neuen und geänderten APIs und Featur
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/07/2017
-ms.openlocfilehash: 5abd28dc9a6fc2a0dca5fa31908731a5496ce5fa
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 50278eaa6d3518b8de85685c1faf64eabac4531d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621049"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292205"
 ---
 # <a name="introduction-to-watchos-3"></a>Einführung in watchOS 3
 
@@ -32,7 +32,7 @@ In diesem Dokument werden die folgenden Themen behandelt:
   - In watchos 3 wurden mehrere [Verbesserungen der konnektivitätsframeworkerweiterungen](#Watch-Connectivity-Framework-Enhancements) vorgenommen.
   - In watchos 3 wurden mehrere [Verbesserungen des watchkit-Frameworks](#WatchKit-Framework-Enhancements) vorgenommen.
   - Dank der [Verbesserungen](#Workout-App-Enhancements) bei der APP-Steigerung können Sie die Apple Watch-Apps für das Training
-- In watchos 3 wurden [zusätzliche](#Additional-Framework-Changes) frameworkänderungen vorgenommen.
+- In watchos 3 wurden [zusätzliche frameworkänderungen](#Additional-Framework-Changes) vorgenommen.
 - Als [veraltet markierte APIs](#Deprecated-APIs) in watchos 3.
 
 <a name="Whats-New-in-watchOS-3" />

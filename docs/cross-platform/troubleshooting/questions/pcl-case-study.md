@@ -4,14 +4,14 @@ description: 'PLC-Fallstudie: Wie kann ich Probleme im Zusammenhang mit System.D
 ms.prod: xamarin
 ms.assetid: 7986A556-382D-4D00-ACCF-3589B4029DE8
 ms.date: 04/17/2018
-author: asb3993
-ms.author: amburns
-ms.openlocfilehash: 09aef14efdce93e28326deb78292da98f1969ea1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: e3ced3c989a88c6e759a5bc497147128b0a79868
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521565"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288190"
 ---
 # <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-package"></a>PLC-Fallstudie: Wie kann ich Probleme im Zusammenhang mit System.Diagnostics.Tracing für das NuGet-Paket für den Microsoft-TPL-Datenfluss lösen?
 

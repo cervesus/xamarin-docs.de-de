@@ -4,15 +4,15 @@ description: In diesem Artikel werden alle neuen und geänderten APIs und Featur
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 69a599b6a7534cb77dd9e023d937f10a6b0523fb
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: c162912d6762ac1ee9d2896f96bbb35e9fef06f4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620667"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285208"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
@@ -29,7 +29,7 @@ Neu bei IOS 9 und der iPhone 6S und iPhone 6S Plus ist eine 3D-Toucheingabe, die
 der 3D-Fingerabdruck bietet die folgenden Features für Ihre APP:
 
 - Unterscheidung nach **Druck** : Apps können nun Messen, wie schwer oder hell der Benutzer den Bildschirm berührt und diese Informationen nutzt. Beispielsweise kann eine Zeichnungs-App abhängig von der Art und Weise, in der der Benutzer den Bildschirm berührt, zu einem dickeren oder dünneren.
-- **Peek und Pop** : Ihre APP kann jetzt den Benutzer mit seinen Daten interagieren, ohne aus dem aktuellen Kontext navigieren zu müssen. Wenn Sie auf dem Bildschirm hart drücken, können Sie sich das gewünschte Element ansehen (z. b. eine Vorschau der Nachricht). Durch das Drücken von "Harder " können Sie in das Element eingeblendet werden.
+- **Peek und Pop** : Ihre APP kann jetzt den Benutzer mit seinen Daten interagieren, ohne aus dem aktuellen Kontext navigieren zu müssen. Wenn Sie auf dem Bildschirm hart drücken, *können Sie sich das* gewünschte Element ansehen (z. b. eine Vorschau der Nachricht). Durch das Drücken von "Harder" können *Sie in das* Element eingeblendet werden.
 - **Schnelle Aktionen** : Stellen Sie sich schnell Aktionen wie die Kontextmenüs vor, die angezeigt werden können, wenn ein Benutzer mit der rechten Maustaste auf ein Element in einer Desktop-App klickt. Mithilfe von schnellen Aktionen können Sie in der APP über das Startbildschirm Symbol auf dem IOS-Gerät allgemeine, schnelle und leicht zu verwendbare Verknüpfungen zu Funktionen in Ihrer APP hinzufügen.
 
 Weitere Informationen finden Sie im Artikel [Einführung in die 3D-](~/ios/platform/3d-touch.md) Eingabe Anleitung.

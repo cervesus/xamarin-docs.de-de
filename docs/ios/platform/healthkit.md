@@ -4,15 +4,15 @@ description: In diesem Dokument wird healthkit beschrieben. dabei handelt es sic
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 6446bd7ef196fadae25c0e4dc18542d269424d6d
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 7e8230af1e9d4eef43b4142834afc0e90973c768
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200274"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288668"
 ---
 # <a name="healthkit-in-xamarinios"></a>Healthkit in xamarin. IOS
 
@@ -72,7 +72,7 @@ Um eine explizite **App-ID**zu erstellen, **+** klicken Sie auf die Schaltfläch
 
 [![](healthkit-images/image02.png "Registrieren einer APP im Apple-Entwickler Portal")](healthkit-images/image02.png#lightbox)
 
-Verwenden Sie nach dem Erstellen einer APP-Beschreibung den Abschnitt **explizite APP-ID** , um eine ID für Ihre Anwendung zu erstellen. Aktivieren Sie im Abschnitt " **App Services** " im Abschnitt **Dienste aktivieren** den integritätskit.
+Verwenden Sie nach dem Erstellen einer APP-Beschreibung den Abschnitt **explizite APP-ID** , um eine ID für Ihre Anwendung zu erstellen. Aktivieren Sie im Abschnitt " **App Services** " im Abschnitt **Dienste aktivieren** den **integritätskit** .
 
 Wenn Sie dies abgeschlossen haben, klicken Sie auf die Schaltfläche **weiter** , um die **App-ID** in Ihrem Konto zu registrieren. Sie werden auf die Seite **Zertifikate, Bezeichner und Profile** zurückgeführt. Klicken Sie auf **Bereitstellungs profile** , um zur Liste Ihrer aktuellen Bereitstellungs Profile zu gelangen, und klicken **+** Sie auf die Schaltfläche in der oberen rechten Ecke, um zur Seite **IOS-Bereitstellungs Profil hinzufügen** zu gelangen. Wählen Sie die Option **IOS App Development** aus, und klicken Sie auf **weiter** , um zur Seite **App-ID auswählen** zu gelangen. Wählen Sie hier die explizite **App-ID** aus, die Sie zuvor angegeben haben:
 
@@ -83,7 +83,7 @@ Klicken Sie auf **weiter** , und arbeiten Sie die verbleibenden Bildschirme durc
 
 [![](healthkit-images/image04.png "Das Bereitstellungs Profil wird erstellt.")](healthkit-images/image04.png#lightbox)
 
-Klicken Sie auf **generieren** , und warten Sie auf die Erstellung Ihres Profils. Laden Sie die Datei herunter, und doppelklicken Sie darauf, um Sie in Xcode zu installieren. Sie können überprüfen, ob die Installation unter **Xcode > Einstellungen > Konten > Details anzeigen...** Das soeben installierte Bereitstellungs Profil sollte angezeigt werden, und es sollte das Symbol für das Integritäts-Kit und alle anderen speziellen Dienste in der Berechtigungs Zeile enthalten:
+Klicken Sie auf **generieren** , und warten Sie auf die Erstellung Ihres Profils. Laden Sie die Datei herunter, und doppelklicken Sie darauf, um Sie in Xcode zu installieren. Sie können überprüfen, ob die Installation unter **Xcode > Einstellungen > Konten > Details anzeigen...** Das soeben installierte Bereitstellungs Profil sollte angezeigt werden, und es sollte das Symbol für das Integritäts-Kit und alle anderen speziellen Dienste in **der Berechtigungs Zeile enthalten** :
 
 [![](healthkit-images/image05.png "Profil in Xcode anzeigen")](healthkit-images/image05.png#lightbox)
 
@@ -97,7 +97,7 @@ Anstatt den Prozess der Erstellung eines xamarin IOS 8-Projekts per Hand zu durc
 
 [![](healthkit-images/image06.png "Explizite APP-ID eingeben")](healthkit-images/image06.png#lightbox)
 
-Wechseln Sie jetzt zum **IOS-Bündel** -Signierungs Panel. Ihr kürzlich installiertes **Bereitstellungs Profil**mit seiner Zuordnung zur expliziten **App-ID**ist nun als **Bereitstellungs Profil**verfügbar:
+Wechseln Sie jetzt zum **IOS-Bündel-Signierungs** Panel. Ihr kürzlich installiertes **Bereitstellungs Profil**mit seiner Zuordnung zur expliziten **App-ID**ist nun als **Bereitstellungs Profil**verfügbar:
 
 [![](healthkit-images/image07.png "Wählen Sie das Bereitstellungs Profil aus.")](healthkit-images/image07.png#lightbox)
 

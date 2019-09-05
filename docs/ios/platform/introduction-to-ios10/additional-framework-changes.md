@@ -4,15 +4,15 @@ description: In diesem Dokument werden kleinere Änderungen und Verbesserungen a
 ms.prod: xamarin
 ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 85dad3bdd46401b1acf9a1cb5acc206508cd611f
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 620b89ba4682d65552fa5555c978b7eb5f437714
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620725"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290775"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Weitere Änderungen an IOS 10-Frameworks
 
@@ -122,7 +122,7 @@ Weitere Informationen finden Sie [in der Einführung in die homekit](~/ios/platf
 
 Die folgenden Verbesserungen wurden am Metal-Framework in ios 10 vorgenommen:
 
-- 3D-apps und-Spiele können jetzt Mosaik verwendet werden, um komplexe Szenen und Geometrie effizient über die GPU zu erzeugen.
+- 3D-apps und-Spiele können jetzt _Mosaik verwendet werden_ , um komplexe Szenen und Geometrie effizient über die GPU zu erzeugen.
 - Sorgen Sie für eine differenzierte Steuerung der Ressourcen Zuordnung, um die Leistung von Metal-basierten Apps mithilfe von Ressourcen Heaps und Speicher losen Renderingzielen zu optimieren.
 - Verwenden Sie die Funktions Spezialisierung, um eine hochgradig optimierte Sammlung von Material-und Light-Kombinations Funktionen für eine Szene zu erstellen.
 
@@ -192,7 +192,7 @@ Informationen zur Verwendung finden Sie im [iostenthree-Beispiel](https://docs.m
 Die folgenden Verbesserungen wurden an dem UIKit-Framework in ios 10 vorgenommen:
 
 - Die neue [uipasteboard](xref:UIKit.UIPasteboard) -API bietet neue Optionen (z. b. Lebensdauer Einschränkungen) und deklariert automatisch kompatible Inhaltstypen für allgemeine Klassentypen.
-- Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt und kann mit Gesten verknüpft werden. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der uitimingcurrveprovider- [Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und [ Uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) für weitere Informationen.
+- Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt und kann mit Gesten verknüpft werden. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der [uitimingcurrveprovider-Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und [ Uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) für weitere Informationen.
 - Der neue `UIPreviewInteraction` und `UIPreviewInteractionDelegate` ermöglicht der Entwickler-App, eine benutzerdefinierte Schnittstelle für Peek-und Pop-Vorgänge bereitzustellen.
 - Die neue `UIAccessibilityCustomRotor` Klasse ermöglicht der APP, benutzerdefinierte kontextspezifische Funktionen für Hilfstechnologien wie Voice over bereitzustellen.
 - Verwenden Sie `UIAccessibilityIsAssistiveTouchRunning` die `UIAccessibilityAssistiveTouchStatusDidChangeNotification` Symbole und, um zu bestimmen, ob assistivetouch aktiviert ist.

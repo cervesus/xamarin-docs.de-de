@@ -1,27 +1,27 @@
 ---
 title: Erste Schritte mit C
-description: Dieses Dokument beschreibt, wie Sie Einbetten von .NET mit .NET Code in einer C-Anwendung einzubetten. Es wird erläutert, wie zum Einbetten von .NET in Visual Studio-2019 und Visual Studio für Mac verwenden.
+description: In diesem Dokument wird beschrieben, wie Sie .net-Einbettungen mithilfe von .net embed in eine C-Anwendung einbetten. Darin wird erläutert, wie .net-Einbettungen sowohl in Visual Studio 2019 als auch Visual Studio für Mac verwendet werden.
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/19/2018
-ms.openlocfilehash: 342ba2a6b51483983df7bd04034a4cef62fd57ff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1dc68a709f8e1f864961bbe87af112b648b0dd2a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61213591"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278736"
 ---
 # <a name="getting-started-with-c"></a>Erste Schritte mit C
 
 ## <a name="requirements"></a>Anforderungen
 
-Zum Einbetten von .NET mit C verwenden, benötigen Sie ein Mac oder Windows-Computer ausgeführt wird:
+Um die .net-Einbettung mit C zu verwenden, benötigen Sie einen Mac-oder Windows-Computer unter:
 
 ### <a name="macos"></a>macOS
 
-* MacOS 10.12 (Sierra) oder höher
+* macOS 10,12 (Sierra) oder höher
 * Xcode 8.3.2 oder höher
 * [Mono](https://www.mono-project.com/download/)
 
@@ -30,11 +30,11 @@ Zum Einbetten von .NET mit C verwenden, benötigen Sie ein Mac oder Windows-Comp
 * Windows 7, 8, 10 oder höher
 * Visual Studio 2015 oder höher
 
-## <a name="installing-net-embedding-from-nuget"></a>Installieren von .NET Einbetten von NuGet
+## <a name="installing-net-embedding-from-nuget"></a>Installieren von .net-Einbettungen über nuget
 
-Befolgen Sie diese [Anweisungen](~/tools/dotnet-embedding/get-started/install/install.md) installieren und konfigurieren Sie für Ihr Projekt Einbetten von .NET.
+Befolgen Sie diese [Anweisungen](~/tools/dotnet-embedding/get-started/install/install.md) , um .net-Einbettungen für Ihr Projekt zu installieren und zu konfigurieren.
 
-Der Befehlsaufruf, die, den Sie konfigurieren sollten, sieht so aus wie (möglicherweise mit einer anderen Versionsnummer erneut und Pfade):
+Der Befehls Aufruf, den Sie konfigurieren sollten, sieht wie folgt aus (möglicherweise mit verschiedenen Versionsnummern und Pfaden):
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
@@ -52,7 +52,7 @@ $(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe -
 
 ### <a name="output-files"></a>Ausgabedateien
 
-Wenn alles gut geht, werden Sie mit der folgenden Ausgabe angezeigt:
+Wenn alles gut funktioniert, wird die folgende Ausgabe angezeigt:
 
 ```shell
 Parsing assemblies...
@@ -71,12 +71,12 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-Da die `--compile` Flag für das Tool übergeben wurde, Einbetten von .NET sollte auch kompiliert haben die Ausgabedateien in eine freigegebene Bibliothek, die sich neben die generierten Dateien, eine **libmanaged.dylib** Datei unter MacOS und **managed.dll** auf Windows.
+Da das `--compile` Flag an das Tool weitergegeben wurde, sollte die .net-Einbettung auch die Ausgabedateien in eine freigegebene Bibliothek kompiliert haben, die Sie neben den generierten Dateien finden können, eine **libmanaged. dylib** -Datei unter macOS und **Managed. dll** unter Windows.
 
-Um die freigegebene Bibliothek nutzen zu können, zählen Sie die **managed.h** C-Headerdatei, bietet der C-Deklarationen, die auf die jeweils entsprechenden verwalteten Bibliotheks-APIs und Verknüpfung mit den oben genannten kompiliert, freigegebenen Bibliothek.
+Um die freigegebene Bibliothek zu nutzen, können Sie die **verwaltete h** -c-Header Datei einschließen, die die c-Deklarationen bereitstellt, die den entsprechenden verwalteten Bibliotheks-APIs entsprechen, und die Verknüpfung mit der zuvor erwähnten kompilierten freigegebenen Bibliothek.
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
-* [Einbetten von .NET-Einschränkungen](~/tools/dotnet-embedding/limitations.md)
-* [Mitwirkung an open Source-Projekt](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+* [.Net-Einbettungs Einschränkungen](~/tools/dotnet-embedding/limitations.md)
+* [Mitwirken am Open Source-Projekt](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [Fehlercodes und Beschreibungen](~/tools/dotnet-embedding/errors.md)

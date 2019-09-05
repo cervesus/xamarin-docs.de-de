@@ -4,15 +4,15 @@ description: In diesem Dokument werden in-App-Käufe in xamarin. IOS beschrieben
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 0c24c0f3a57847a7ecf1a1410a1745419517e0c6
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9347a801c939fd715101253c6953eeec840af47d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198861"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288588"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Grundlagen und Konfiguration von in-App-Käufen in xamarin. IOS
 
@@ -69,7 +69,7 @@ Sie sind nicht in der Lage, storekit-Funktionen zu testen, bis Sie einen Vertrag
 
 ### <a name="ios-provisioning-portal"></a>iOS-Bereitstellungsportal
 
-Neue Anwendungen werden im **IOS-Bereitstellungs Portal**im Abschnitt **App-IDs** eingerichtet. Um eine neue APP-ID zu erstellen, wechseln Sie zum [Member Center im IOS-Bereitstellungs Portal](https://developer.apple.com/membercenter/index.action), navigieren Sie im Portal zum Abschnitt **Zertifikate, Bezeichner und Profile** , und klicken Sie unter *IOS-apps*auf Bezeichner. Klicken Sie dann oben rechts auf "+", um eine neue APP-ID zu generieren.
+Neue Anwendungen werden im **IOS-Bereitstellungs Portal**im Abschnitt **App-IDs** eingerichtet. Um eine neue APP-ID zu erstellen, wechseln Sie zum [Member Center im IOS-Bereitstellungs Portal](https://developer.apple.com/membercenter/index.action), navigieren Sie im Portal zum Abschnitt **Zertifikate, Bezeichner und Profile** , und klicken **Sie unter** IOS- *apps*auf Bezeichner. Klicken Sie dann oben rechts auf "+", um eine neue APP-ID zu generieren.
 
 
 Das Formular zum Erstellen neuer **App-IDs** .

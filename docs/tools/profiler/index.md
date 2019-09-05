@@ -3,15 +3,15 @@ title: Xamarin Profiler
 description: In diesem Leitfaden werden die wichtigsten Features der Xamarin Profiler erläutert. Dabei werden Profiler, Profilerstellung und Zeitpunkt der Verwendung sowie ein Standard Workflow für die Profilerstellung von xamarin-Anwendungen untersucht.
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/03/2018
-ms.openlocfilehash: b62c8453049a1e014cd75cbee562c8f1a2c16c31
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: ca26edc0311de2028af529dc43ea1ffde2383cf4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227900"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283666"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -216,7 +216,7 @@ Am Anfang des Profilers befindet sich das Zuordnungs Diagramm, in dem die Menge 
 
 Es gibt unterschiedliche Datenansichten im Zuordnungs Instrument, mit denen Entwickler die Verwendung und Freigabe von Arbeitsspeicher durch Ihre Anwendung analysieren können. Diese Sichten werden im folgenden beschrieben:
 
-- Zuordnungen – Hiermit wird eine Liste aller Zuordnungen angezeigt und nach Klassennamen gruppiert. Dies bietet eine gute Übersicht über die verwendeten Klassen und Methoden, die Häufigkeit der Verwendung und die kollektive Größe der verwendeten Klassen. Beim Doppelklicken auf eine Klasse wird der zugeordnete Arbeitsspeicher angezeigt: 
+- **Zuordnungen – hiermit** wird eine Liste aller Zuordnungen angezeigt und nach Klassennamen gruppiert. Dies bietet eine gute Übersicht über die verwendeten Klassen und Methoden, die Häufigkeit der Verwendung und die kollektive Größe der verwendeten Klassen. Beim Doppelklicken auf eine Klasse wird der zugeordnete Arbeitsspeicher angezeigt: 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

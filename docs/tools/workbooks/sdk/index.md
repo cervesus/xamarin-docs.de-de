@@ -3,15 +3,15 @@ title: Einstieg in das Xamarin Workbooks SDK
 description: In diesem Dokument wird beschrieben, wie Sie mit dem Xamarin Workbooks SDK beginnen, das zum Entwickeln von Integrationen für Xamarin Workbooks verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: dd75270b3b14b0b770808bbc3ffc88240f868eae
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8e3dc65f9f615ff893f3526d53d99da25045c794
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511010"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283966"
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Einstieg in das Xamarin Workbooks SDK
 

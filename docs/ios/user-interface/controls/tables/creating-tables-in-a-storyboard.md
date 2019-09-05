@@ -4,15 +4,15 @@ description: In den vorherigen Abschnitten wurde das entwickeln mithilfe von Tab
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 46729df70d08b8d6d1b5b953d74f5619a5dc5858
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 58e57f9406642a3bb0ff108bffa89d77c3f2cebb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528685"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291383"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen im iOS-Designer
 
@@ -74,7 +74,7 @@ Die erste Änderung am Storyboard besteht darin, die vorhandene Detail Ansicht z
 1. Wählen Sie die Leiste am unteren Rand des Ansichts Controllers aus, und löschen Sie Sie.
 2. Ziehen Sie einen **Navigations Controller** und einen **Tabellen Ansichts Controller** aus der Toolbox auf das Storyboard. 
 3. Erstellen Sie einen segue vom Root View Controller zum zweiten Tabellen Ansichts Controller, der soeben hinzugefügt wurde. Zum Erstellen des-Steuer Elements + Drag & amp; Drop *aus der Detail Zelle* auf den neu hinzugefügten uitableviewcontroller. Wählen Sie die Option unter **Auswahl** **anzeigen** aus. 
-4. Wählen Sie den neuen segue aus, den Sie erstellt haben, und weisen Sie ihm einen Bezeichner zu Klicken Sie auf die Tabelle, und `TaskSegue` geben Sie für den Bezeichner in der **Eigenschaftenpad**wie folgt ein:    
+4. Wählen Sie den neuen segue aus, den Sie erstellt haben, und weisen Sie ihm einen Bezeichner zu Klicken Sie auf die Tabelle, und `TaskSegue` geben Sie für den **Bezeichner** in der **Eigenschaftenpad**wie folgt ein:    
   [![Benennen von "*" im Eigenschaften Panel](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. Konfigurieren Sie als nächstes die beiden Tabellen Sichten, indem Sie Sie auswählen und die Eigenschaftenpad verwenden. Stellen Sie sicher, dass Sie "View" und "Not View Controller" auswählen – Sie können die Dokument Gliederung zur Auswahl verwenden.
@@ -104,7 +104,7 @@ Nachdem die Ansichten und die-Elemente konfiguriert wurden, müssen die Benutzer
 
 #### <a name="root-view-controller"></a>Root View Controller
 
-Wählen Sie zunächst die prototypenzelle im Master Ansichts Controller aus , und legen Sie den Bezeichner als _taskcell_fest, wie unten gezeigt. Diese wird später im Code zum Abrufen einer Instanz dieser uitableviewcell verwendet:
+Wählen Sie zunächst die prototypenzelle im Master Ansichts Controller aus, und legen Sie den **Bezeichner** als _taskcell_fest, wie unten gezeigt. Diese wird später im Code zum Abrufen einer Instanz dieser uitableviewcell verwendet:
 
  [![Festlegen des Zellen Bezeichners](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 

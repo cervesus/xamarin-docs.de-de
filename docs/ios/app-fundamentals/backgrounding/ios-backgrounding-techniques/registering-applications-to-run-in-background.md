@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie eine xamarin. IOS-Anwe
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 67cc2028276b6e1415c88cb8957e2cd567fa5bae
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 044ae7e4a77abb77e766df58b9cda5938ce8fe7b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521276"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290611"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Registrieren von xamarin. IOS-apps, die im Hintergrund ausgeführt werden sollen
 
@@ -25,7 +25,7 @@ Das Registrieren einer APP signalisiert IOS, dass der Anwendung spezielle Berech
 Registrierte Apps können in verschiedene Kategorien unterteilt werden:
 
 - **Audiomusik** -Player und andere Anwendungen, die mit Audioinhalten arbeiten, können registriert werden, um weiterhin Audioinhalte zu spielen, auch wenn sich die APP nicht mehr im Vordergrund befindet. Wenn eine app in dieser Kategorie versucht, etwas anderes zu tun, als die Audiowiedergabe oder den Download im Hintergrund durchzuführen, wird Sie von IOS beendet.
-- VoIP-Voice over Internet Protocol (VoIP)-Anwendungen erhalten dieselben Berechtigungen wie Audioanwendungen, um die Verarbeitung von Audiodaten im Hintergrund beizubehalten. Sie können auch nach Bedarf für die VoIP-Dienste reagieren, die Sie unterstützt, um Ihre Verbindungen aufrechtzuerhalten.
+- **VoIP-Voice** over Internet Protocol (VoIP)-Anwendungen erhalten dieselben Berechtigungen wie Audioanwendungen, um die Verarbeitung von Audiodaten im Hintergrund beizubehalten. Sie können auch nach Bedarf für die VoIP-Dienste reagieren, die Sie unterstützt, um Ihre Verbindungen aufrechtzuerhalten.
 - **Externe Zubehör und Bluetooth** -reserviert für Anwendungen, die mit Bluetooth-Geräten und anderen externen Hardware Zubehör kommunizieren müssen. bei der Registrierung in diesen Kategorien kann die APP mit der Hardware verbunden bleiben.
 - **NewsStand** : eine NewsStand-Anwendung kann weiterhin Inhalte im Hintergrund synchronisieren.
 - **Standort** : Anwendungen, die GPS-oder Netzwerk Speicherort Daten verwenden, können Standort Aktualisierungen im Hintergrund senden und empfangen.

@@ -4,15 +4,15 @@ description: In diesem Handbuch werden xamarin. Mac und seine Beziehung zu Ziel-
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: 61a5757c20f3a39df583bda10a11145e04560bf8
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 2c9bbd663257e937e35e062f03b4aa84813edb27
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198206"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287782"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin. Mac-Architektur
 
@@ -28,7 +28,7 @@ Das folgende Diagramm zeigt eine grundlegende Übersicht über diese Architektur
 
 ### <a name="native-and-managed-code"></a>Nativer und verwalteter Code
 
-Bei der Entwicklung für xamarin werden die Begriffe System eigener und *verwalteter* Code häufig verwendet. Verwalteter Code ist Code, dessen Ausführung von der .NET Framework Common Language Runtime verwaltet wird, oder im Fall von xamarin: der Mono-Laufzeit.
+Bei der Entwicklung für xamarin werden die *Begriffe System* eigener und *verwalteter* Code häufig verwendet. Verwalteter Code ist Code, dessen Ausführung von der .NET Framework Common Language Runtime verwaltet wird, oder im Fall von xamarin: der Mono-Laufzeit.
 
 Bei System eigenem Code handelt es sich um Code, der auf der jeweiligen Plattform nativ ausgeführt wird (z. b. mit Ziel-C oder sogar AOT-kompiliertem Code auf einem Arm-Chip). In dieser Anleitung wird erläutert, wie der verwaltete Code in nativen Code kompiliert wird, und es wird erläutert, wie eine xamarin. Mac-Anwendung funktioniert, und die Mac-APIs von Apple werden mithilfe von Bindungen vollständig genutzt, während gleichzeitig auf zugegriffen werden kann. BCL von NET und eine ausgereifte Sprache wie C#.
 

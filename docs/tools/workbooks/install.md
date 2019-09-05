@@ -3,15 +3,15 @@ title: Arbeitsmappen-Installation und-Anforderungen
 description: In diesem Dokument wird beschrieben, wie Sie Xamarin Workbooks herunterladen und installieren, welche unterstützten Plattformen und Systemanforderungen erörtert werden
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: dd1e0838fbd3c3606021ddc996bf94cabc084f77
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5292a052d4f93af9b21cc7cbc51891c99d6f9403
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119990"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285250"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Arbeitsmappen-Installation und-Anforderungen
 
@@ -105,7 +105,7 @@ Wenn Sie Probleme beim Verbinden Ihrer IOS-oder Android-Arbeitsmappe haben und d
 - Android: Überprüfen Sie, ob Sie einen x86-Emulator verwenden
 - Android: Welche Emulatorplattform verwenden Sie? Google-Emulatoren?
   Visual Studio-Emulator für Android? Xamarin Android Player?
-- IOS unter Windows: Welche Version des IOS-remoteios-Simulators haben Sie installiert (über prüfen Sie die Option "Software" in der **Systemsteuerung**)?
+- IOS unter Windows: Welche Version des IOS-remoteios-Simulators haben Sie installiert **(überprüfen Sie die** Option "Software" in der **Systemsteuerung**)?
 - IOS unter Windows: Geben Sie auch Informationen zur Platt Form Version für den Mac-buildhost an
 - Hat das Gerät Netzwerk Konnektivität (überprüfen Sie den Webbrowser)?
 
@@ -123,7 +123,7 @@ Wenn Sie über Visual Studio 2017 verfügen, öffnen Sie **Visual Studio-Install
 
 #### <a name="system-uninstall"></a>System Deinstallation
 
-Wenn Sie Arbeitsmappen selbst mit einem heruntergeladenen Installationsprogramm installiert haben, muss es über die Seite " **Apps & Features** Systemeinstellungen" unter Windows 10 oder über "Software" in der Systemsteuerung unter älteren Versionen von Windows deinstalliert werden.
+Wenn Sie Arbeitsmappen selbst mit einem heruntergeladenen Installationsprogramm installiert haben, muss es über die Seite " **Apps & Features** Systemeinstellungen" unter Windows 10 oder über "Software **" in der Systemsteuerung unter älteren** Versionen von Windows deinstalliert werden.
 
 > **Starten der > Einstellungen > System > Apps & Features**
 

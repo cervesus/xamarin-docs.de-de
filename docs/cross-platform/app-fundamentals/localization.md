@@ -1,194 +1,194 @@
 ---
-title: Lokalisierung der Anwendung Benutzeroberfläche
-description: Dieses Dokument beschreibt die Konzepte plattformübergreifende Internationalisierung und Lokalisierung und untersucht, wie sie den Entwurf auswirken.
+title: Lokalisierung der Anwendungs Benutzeroberfläche
+description: In diesem Dokument werden die plattformübergreifenden Konzepte der Internationalisierung und Lokalisierung beschrieben und erläutert, wie sich diese auf das Anwendungsdesign auswirken.
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: a1218d836aad827390d9f5e70de189a869b7c6b8
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 8ecc0cf0ed1fe77f55044d44ecdfc43d6cb6b448
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830999"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289105"
 ---
 # <a name="localization"></a>Lokalisierung
 
-Dieser Leitfaden beschreibt die Konzepte hinter der *Internationalisierung* und *Lokalisierung* und Links zu Anweisungen zum Erstellen von mobiler Anwendungen diese Konzepte mit Xamarin.
+Dieses Handbuch bietet eine Einführung in die Konzepte hinter *Internationalisierung* und *Lokalisierung* und enthält Links zu Anleitungen zum Entwickeln von mobilen xamarin-Anwendungen mithilfe dieser Konzepte.
 
-Wenn Sie direkt zum Lokalisieren von Xamarin-apps die technischen Details überspringen möchten, beginnen Sie mit einem der folgenden plattformspezifischen Gewusst-wie-Artikel:
+Wenn Sie die technischen Details der Lokalisierung von xamarin-apps direkt überspringen möchten, beginnen Sie mit einem der folgenden plattformspezifischen Anleitungen:
 
-- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization/index.md) plattformübergreifende Lokalisierung mit RESX-Dateien.
-- [**Xamarin.iOS** ](~/ios/app-fundamentals/localization/index.md) Lokalisierung der nativen Plattform.
-- [**Xamarin.Android** ](~/android/app-fundamentals/localization.md) Lokalisierung der nativen Plattform.
+- [**Xamarin. Forms**](~/xamarin-forms/app-fundamentals/localization/index.md) plattformübergreifende Lokalisierung mithilfe von RESX-Dateien.
+- Native [**xamarin. IOS**](~/ios/app-fundamentals/localization/index.md) -Platt Form Lokalisierung.
+- Native [**xamarin. Android**](~/android/app-fundamentals/localization.md) -Platt Form Lokalisierung.
 
-## <a name="i18n-and-l10n"></a>I18N und L10n
+## <a name="i18n-and-l10n"></a>i18n und l10n
 
-*Internationalisierung* ist der Prozess der macht Ihren Code in verschiedenen Sprachen anzeigen und die Anzeige für verschiedene Gebietsschemas (z.B. Anzahl und die Formatierung des Datums) anpassen kann. Dies wird auch als bezeichnet *Globalisierung*.
+*Internationalisierung* ist der Prozess, mit dem Ihr Code verschiedene Sprachen anzeigen und die Anzeige für verschiedene Gebiets Schemas anpassen kann (z. b. die Zahlen-und Datums Formatierung). Dies wird auch als *Globalisierung*bezeichnet.
 
-*Lokalisierung* ist der Schritt die folgende Ressourcen (z. B. Zeichenfolgen und Bilder) für jede Sprache erstellen und Bündeln dieser mit der app Internationalize –.
+Die *Lokalisierung* ist der folgende Schritt – Erstellen von Ressourcen (z. b. Zeichen folgen und Images) für jede Sprache und bündeln der APP mit der Internationalize-app.
 
-Internationalisierung, die sie häufig auf i18n: Kurzform für 18 Buchstaben zwischen "i" und "n" gekürzt wird. Lokalisierung wird auf ähnliche Weise verkürzt, um L10n – für 10 Buchstaben zwischen "L" und "n".
+Internationalisierung wird häufig zu i18n – Kurzform und 18 Buchstaben zwischen "i" und "n" gekürzt. Die Lokalisierung wird auf ähnliche Weise auf l10n verkürzt – für 10 Buchstaben zwischen "L" und "n".
 
 ## <a name="overview"></a>Übersicht
 
-In diesem Dokument werden, die Konzepte, die Internationalisierung und Lokalisierung und deren Entwicklung mobiler Anwendungen im Allgemeinen Anwendung zugeordnet wird.
-Beim Entwerfen und Erstellen einer Anwendung, Schritte, die Sie zuvor möglicherweise hart codiert, aber die müssen parametrisiert werden, für die Lokalisierung enthalten:
+Dieses Dokument enthält eine Einführung in die Konzepte der Internationalisierung und Lokalisierung und deren Anwendung auf die Entwicklung mobiler Anwendungen im Allgemeinen.
+Beim Entwerfen und entwickeln einer Anwendung sind möglicherweise bereits hart codierte Elemente vorhanden, die für die Lokalisierung parametrisiert werden müssen:
 
-- Layouts für Startbildschirm und dem Fehlertext
+- Bildschirmlayouts und Text
 - Symbole, Grafiken und Farben
-- Video- und Audiodateien,
-- Dynamischer Text und Text-Formatierung (z. B. Zahlen, Währung und Datumsangaben)
-- Änderungen am Layout für Sprachen für rechts-nach-links (RTL), und
+- Video-und Audiodateien,
+- Dynamischer Text und Textformatierung (z. b. Zahlen, Währungen und Datumsangaben)
+- Layoutänderungen für rechts-nach-links (RTL)-Sprachen und
 - Sortieren von Daten.
 
-Unabhängig davon, welche hilft mobile Plattformen, die Ihre app diese Tipps ausgerichtet ist Ihnen eine qualitativ hochwertige lokalisierte app erstellen.
+Unabhängig davon, auf welchen mobilen Plattformen Ihre APP diese Tipps als Ziel hat, können Sie eine hochwertige Lokalisierte app erstellen.
 
 
 ## <a name="design-considerations"></a>Entwurfsüberlegungen
 
-Entwerfen einer Anwendung, sodass es möglich ist, dessen Inhalte zu lokalisieren, heißt Internationalisierung. Internationalisierung richtig ist, dass mehr als für andere Sprache ermöglichen Zeichenfolgen zur Laufzeit geladen werden: eine gut entworfene app sollte für alle Ressourcen, die geändert werden, können auf Sprache und Gebietsschema (einschließlich Bildern, Sound und Videos) basieren und anpassen können formatierungs- und Layoutinformationen zu verschiedenen bewältigen Größe Zeichenfolgen.
+Das Entwerfen einer Anwendung, sodass Ihre Inhalte lokalisiert werden können, wird als Internationalisierung bezeichnet. Die ordnungsgemäße Durchführung von Internationalisierung besteht darin, dass unterschiedliche sprach Zeichenfolgen zur Laufzeit geladen werden können – eine gut entworfene app sollte es Ihnen ermöglichen, alle Ressourcen basierend auf Sprache und Gebiets Schema (einschließlich Bildern, Sounds und Videos) zu ändern. Formatierung und Layout für die Bewältigung unterschiedlicher Zeichen folgen.
 
-Dieser Abschnitt beschreibt einige Überlegungen zum Entwurf beim Erstellen einer internationalisierten Anwendung berücksichtigt werden.
+In diesem Abschnitt werden einige Entwurfs Überlegungen erläutert, die beim Erstellen einer internationalisierten Anwendung berücksichtigt werden müssen.
 
-### <a name="layouts-and-string-length"></a>Layouts und die Länge der Zeichenfolge
+### <a name="layouts-and-string-length"></a>Layouts und Zeichen folgen Länge
 
-Chinesische und japanische Zeichensätze Zeichenfolgen können sehr kurz sein – manchmal ein oder zwei Zeichen vorhanden sind, die für eine Bezeichnung Eingabefeld aussagekräftig genug.
+Chinesische und japanische Zeichen folgen können sehr kurz sein – manchmal kann ein oder zwei Zeichen für eine Eingabefeld Bezeichnung sinnvoll sein.
 
-Deutsche Zeichenfolgen können sehr lange sein (z. B.); Manchmal wird ein relativ kurze Wort in englischer Sprache in anderen Sprachen – entweder zu abgeschnittenen oder else unerwartet Umfließen Ihr Layout sehr lange.
+Deutsche Zeichen folgen (z. b.) können sehr lang sein. Manchmal wird ein relativ kurzes Wort in englischer Sprache in anderen Sprachen sehr lange dauern – entweder werden Sie abgeschnitten, oder Sie werden Ihr Layout unerwartet wieder fließen.
 
-Vergleichen Sie die Länge der Zeichenfolge für einige Elemente auf der Startseite für iOS in Englisch, Deutsch und Japanisch:
+Vergleichen Sie die Zeichen folgen Längen für einige Elemente auf dem IOS-Startbildschirm auf Englisch, Deutsch und Japanisch:
 
-[![](localization-images/language-compare-sml.png "Deutsch und Japanisch Zeichenfolgenlänge")](localization-images/language-compare.png#lightbox)
+[![](localization-images/language-compare-sml.png "Deutsch und Japanisch Zeichen folgen Länge")](localization-images/language-compare.png#lightbox)
 
-Beachten Sie, dass **Einstellungen** in englischer Sprache (8 Zeichen) ist 13 Zeichen für die deutsche Übersetzung jedoch nur 2 Zeichen in japanischer Sprache erforderlich.
+Beachten Sie, dass die **Einstellungen** in Englisch (8 Zeichen) 13 Zeichen für die deutsche Übersetzung, aber nur 2 Zeichen in Japanisch erfordern.
 
-Layouts, in denen die Beschriftung anzeigen und das Eingabefeld Seite-an-Seite sind, sind schwierig zu zusammenarbeiten, wenn die Bezeichnungslänge stark variieren kann. Häufig ist ein Layout, in dem die Bezeichnung, über ein Feld angezeigt wird, zu lokalisieren, da die gesamte Breite des Bildschirms für die Beschriftung und die Eingabe verfügbar ist.
+Layouts, bei denen die Anzeige Bezeichnung und das Eingabefeld nebeneinander sind, sind schwer zu bearbeiten, wenn die Bezeichnungs Länge stark variieren kann. Häufig ist ein Layout, in dem die Bezeichnung oberhalb eines Felds angezeigt wird, einfacher zu lokalisieren, da die gesamte Breite des Bildschirms sowohl für die Bezeichnung als auch für die Eingabe verfügbar ist.
 
-Bei der Erstellung werden, können festen Layouts (insbesondere Seite-an-Seite-Elemente) als in der Regel mindestens 50 % mehr die Breite als die englischsprachigen Zeichenfolgen für Bezeichnungen und Texte erfordern. Dies wird nicht jedes Problem lösen, jedoch bietet einen Puffer, der in vielen Fällen funktioniert.
+Als allgemeine Regel gilt: Wenn Sie fixierte Layouts (besonders parallele Elemente) entwickeln, lassen Sie mindestens 50% mehr Breite zu, als die englischen Zeichen folgen für Bezeichnungen und Text benötigen. Dadurch wird nicht jedes Problem gelöst, sondern es wird ein Puffer bereitgestellt, der in vielen Fällen funktioniert.
 
-### <a name="input-validation"></a>Eingabeüberprüfung
+### <a name="input-validation"></a>Eingabevalidierung
 
-Beachten Sie, dass der Annahmen beim Schreiben von Validierungsregeln. Es mag zulässig, benötigen ein Textfeld, die Eingabe für die "mindestens drei Zeichen im englischen erforderlich", da ein einzelner Buchstabe verwendet nur sehr selten keine Bedeutung hat. In der chinesische und japanische Zeichensätze ist jedoch ein einzelnes Zeichen handelt es sich möglicherweise um eine gültige Eingabe und eine Überprüfung Nachricht "mindestens 3 Zeichen ist erforderlich" nicht für diese Sprachen sinnvoll.
+Beachten Sie die Annahmen beim Schreiben von Validierungsregeln. Es ist möglicherweise gültig, dass eine Textfeld Eingabe erforderlich ist, um mindestens drei Zeichen in englischer Sprache anzufordern, da ein einzelner Buchstabe sehr selten eine Bedeutung hat. In Chinesisch und Japanisch kann ein einzelnes Zeichen jedoch eine gültige Eingabe sein, und eine Validierungs Meldung "mindestens 3 Zeichen ist erforderlich" ist für diese Sprachen nicht sinnvoll.
 
-Andere scheinbar einfachen Aufgaben wie Überprüfung eine e-Mail-Adresse oder Website-URL, die komplizierter mit den Zeichen sind nicht auf die Teilmenge von ASCII-beschränkt.
+Andere scheinbar einfache Aufgaben wie das Überprüfen einer e-Mail-Adresse oder Website-URL werden komplizierter, da die Zeichen nicht auf die ASCII-Teilmenge beschränkt sind.
 
-Schreiben Sie die Validierungsregeln mit Internationalisierung Denken Sie daran: Wählen Sie die am wenigsten restriktive Regeln oder schreiben die Logik, sodass es sich anders als für jede Sprache funktioniert.
+Schreiben Sie Ihre Validierungsregeln bei der Internationalisierung – wählen Sie entweder die am wenigsten einschränkenden Regeln aus, oder schreiben Sie die Logik, damit Sie für jede Sprache unterschiedlich funktioniert.
 
-### <a name="images-and-color"></a>Bilder und Farben
+### <a name="images-and-color"></a>Bilder und Farbe
 
-Nicht jedes Bild muss so ändern Sie basierend auf Ihrer Wahl eines Benutzers. Viele Symbole oder Fotos wird für alle Benutzer geeignet ist, spielt keine Rolle, welche Sprache sprechen.
-Sinnvoll, einige Ressourcen So lokalisieren Sie jedoch, wie z. B.:
+Nicht jedes Image muss basierend auf der Sprachauswahl eines Benutzers geändert werden. Viele Symbole oder Fotos sind für alle Benutzer geeignet, unabhängig von der Sprache, in der Sie gesprochen werden.
+Einige Ressourcen sind jedoch für die Lokalisierung von Bedeutung, wie z. b.:
 
-- Bilder mit Personen oder bestimmte Speicherorte – Ihre app fühlen sich möglicherweise für Benutzer relevantere lokalen Personen/Standorte angezeigt.
-- Symbole – kann einige ikonographie kulturspezifische und Sie können die app einfacher zu verwenden von der Lokalisierung der Bilder entsprechend der lokalen Grundlegendes zu machen.
-- Farben – einige Kulturen Farben anders – verstehen kann Rot bedeuten, Warnung, die in einer Region, aber viel Glück in einem anderen. Wenden Sie Muttersprache beim Entwerfen Ihrer app zu bestimmen, ob Sie einen Mechanismus zum Lokalisieren von Farben erstellen soll.
+- Images, die Personen oder bestimmte Orte darstellen – Ihre APP mag für Benutzer relevanter sein, wenn Sie lokale Personen/Orte anzeigt.
+- Symbole – einige Ikonographie können Kultur spezifisch sein, und Sie können die Verwendung Ihrer APP vereinfachen, indem Sie die Bilder lokalisieren, um das lokale Verständnis widerzuspiegeln.
+- Farben – einige Kulturen verstehen Farben anders – Rot bedeutet möglicherweise eine Warnung in einer Region, aber ein gutes Glück in einer anderen Region. Informieren Sie sich beim Entwerfen Ihrer APP mit systemeigenen Referenten, um zu bestimmen, ob Sie einen Mechanismus zum Lokalisieren von Farben aufbauen sollten.
 
 
 ### <a name="videos-and-sound"></a>Videos und Sound
 
-Videos und sound vorhanden besondere Herausforderungen beim Lokalisieren einer Anwendung, da es zwar relativ einfach, die übersetzte Zeichenfolgen abgerufen, mehrere Voiceover aufzeichnen überwacht oder Videoclips teuer und schwierig sein können.
+Videos und Sound sind besondere Herausforderungen bei der Lokalisierung einer Anwendung, denn während es relativ einfach ist, Zeichen folgen zu übersetzen, kann das Aufzeichnen mehrerer VoiceOver-Spuren oder Videoclips sowohl aufwendig als auch schwierig sein.
 
-Mehrere Kopien von Video- und Audio-Dateien können auch die Größe Ihrer Anwendung deutlich (insbesondere, wenn Sie in eine große Anzahl von Sprachen lokalisieren werden oder verfügen über zahlreiche Mediendateien). Sie sollten nur die erforderliche Sprachressourcen herunterladen, nachdem der Benutzer hat Ihre app installiert, jedoch auch eine schlechte benutzererfahrung in langsamen Netzwerken Dies könnte.
+Mehrere Kopien von Video-und Audiodateien können auch die Größe Ihrer Anwendung erheblich erhöhen (insbesondere, wenn Sie eine Lokalisierung in eine große Anzahl von Sprachen haben oder viele Mediendateien haben). Sie können in Erwägung gezogen, dass Sie nur die erforderlichen Sprachressourcen herunterladen, nachdem der Benutzer die APP installiert hat. Dies kann jedoch auch zu einem schlechten Benutzer Verhalten in langsamen Netzwerken führen.
 
-Es gibt oftmals mehrere Möglichkeiten, um Lokalisierungsprobleme zu lösen – sehr wichtig, dass diese Investitionen zu berücksichtigen, und stellen Sie sicher, dass Ihre Anwendung konzipiert ist, um diese abzudecken.
+Es gibt oftmals mehrere Möglichkeiten, Lokalisierungs Probleme zu lösen – das wichtigste dabei ist, Sie vorab in Erwägung zu ziehen und sicherzustellen, dass Ihre Anwendung darauf ausgelegt ist.
 
 
-### <a name="dates-times-numbers-and-currency"></a>Datumsangaben, Uhrzeiten, Zahlen und Währung
+### <a name="dates-times-numbers-and-currency"></a>Datumsangaben, Uhrzeiten, Zahlen und Währungen
 
-Wenn Sie die Formatierungsfunktionen von .NET nutzen, denken Sie daran, um die Kultur anzugeben, damit Dezimaltrennzeichen korrekt analysiert werden (und Konvertierung Ausnahmen vermeiden). Beispielsweise sind sowohl für 1,99 1,99 gültige dezimaldarstellungen je nach Ihrem Gebietsschema.
+Wenn Sie .net-Formatierungsfunktionen verwenden, denken Sie daran, die Kultur anzugeben, sodass dezimale Trennzeichen ordnungsgemäß analysiert werden (und vermeiden, dass Konvertierungs Ausnahmen ausgelöst werden). Beispielsweise sind 1,99 und 1, 99, abhängig von Ihrem Gebiets Schema, gültige Dezimal Darstellungen.
 
-Wenn die Daten aus einer bekannten Quelle stammt (d. h. aus Ihren eigenen Code oder einen Webdienst, den Sie steuern) Sie können zwar ein, das dieselbe Formatierung wie das funktioniert für die englische sprachformatierung InvariantCulture Kulturbezeichner.
+Wenn die Daten aus einer bekannten Quelle stammen (d. h. aus Ihrem eigenen Code oder einem von Ihnen kontrollierten Webdienst), können Sie einen Kultur Bezeichner hart codieren, der der Formatierung entspricht, z. b. der InvariantCulture, die für die Standard Formatierung in englischer Sprache funktioniert.
 
 ```csharp
 double.Parse("1,999.99", CultureInfo.InvariantCulture);
 ```
 
-Wenn die Daten von der app-Benutzer eingegeben werden, analysieren sie mit der ein CultureInfo-Instanz, die ihrem Gebietsschema wiedergibt:
+Wenn die Daten vom App-Benutzer eingegeben werden, analysieren Sie Sie mithilfe einer CultureInfo-Instanz, die ihr Gebiets Schema wieder gibt:
 
 ```csharp
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-Finden Sie unter den [analysieren numerischer Zeichenfolgen](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) und [Analysieren von Zeichenfolgen für Datum und Uhrzeit](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) MSDN-Artikel Weitere Informationen.
+Weitere Informationen finden Sie in den MSDN-Artikeln zum Auswerten [numerischer](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) Zeichen folgen und zum Auswerten von [Datums-und Uhrzeit](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) Zeichenfolgen.
 
 <a name="rtl" />
 
 ### <a name="right-to-left-rtl-languages"></a>Rechts-nach-links (RTL)-Sprachen
 
-Einige Sprachen wie Arabisch und Hebräisch Urdu werden (z. B.), von rechts nach links gelesen werden.
-Anwendungen, die diese Sprachen zu unterstützen, sollten Bildschirm Entwürfe verwenden, die für rechts-nach-links-Reader an, z. B. anpassen:
+Einige Sprachen, z. b. Arabisch, Hebräisch und Urdu (z. b.), werden von rechts nach links gelesen.
+Anwendungen, die diese Sprachen unterstützen, sollten Bildschirm Entwürfe verwenden, die für Leser von rechts nach links angepasst werden, z. b.:
 
-- Rechts ausgerichtete sollte angezeigt werden.
-- Bezeichnungen sollten rechts neben den Eingabefeldern angezeigt werden.
-- Befehlsschaltflächen-Platzierung der Standard ist in der Regel rückgängig gemacht werden.
-- Wischen hierarchische Navigation und Animation (und andere Navigation Metaphern und Animationen) verwenden, die Richtung, für Kontext auch umgekehrt werden soll.
+- Der Text muss rechtsbündig ausgerichtet werden.
+- Bezeichnungen sollten rechts von Eingabefeldern angezeigt werden.
+- Die Standard Platzierung der Schaltfläche wird im allgemeinen umgekehrt.
+- Hierarchische Navigations Streifen und Animationen (und andere Navigations Metaphern und Animationen), die die Richtung für den Kontext verwenden, sollten ebenfalls umgekehrt werden.
 
-IOS und Android unterstützt rechts-nach-links-Layouts und Schriftart-Rendering mit integrierten Features, mit denen Sie die oben aufgeführten Anpassungen vornehmen. Xamarin.Forms unterstützt keine derzeit automatisch RTL-Rendering.
+Sowohl IOS als auch Android unterstützen Layouts von von rechts nach links und Schriftart Rendering mit integrierten Features, mit deren Hilfe Sie die oben beschriebenen Anpassungen vornehmen können. Xamarin. Forms unterstützt derzeit nicht automatisch das RTL-Rendering.
 
 ### <a name="sorting"></a>Sortieren
 
-Verschiedene Sprachen definieren die Sortierreihenfolge von ihrem Alphabet unterschiedlich, auch wenn sie den gleichen Zeichensatz verwenden.
+In verschiedenen Sprachen wird die Sortierreihenfolge ihrer Alphabete anders definiert, auch wenn Sie denselben Zeichensatz verwenden.
 
-Finden Sie unter den [Details der Zeichenfolgenvergleich](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) in [bewährte Methoden für die Verwendung von Zeichenfolgen in .NET Framework](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx) ein Beispiel, in denen Sprache (CultureInfo) wirkt sich auf die Sortierreihenfolge.
+Sehen Sie sich die [Details zum Vergleich von Zeichen](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) folgen in [bewährte Methoden für die Verwendung](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx) von Zeichen folgen im .NET Framework für ein Beispiel an, in dem Sprache (CultureInfo) die Sortierreihenfolge beeinflusst
 
-Es ist unwahrscheinlich, dass die integrierte Datenbank-Funktionen auf den mobilen Plattformen unterstützen sprachspezifische sortieren, die Reihenfolge, also Sie möglicherweise zusätzlichen Code in der Geschäftslogik zu implementieren müssen.
+Es ist unwahrscheinlich, dass die integrierten Datenbankfunktionen auf den mobilen Plattformen die sprachspezifische Sortierreihenfolge unterstützen, sodass Sie möglicherweise zusätzlichen Code in Ihrer Geschäftslogik implementieren müssen.
 
 ### <a name="text-search"></a>Textsuche
 
-Stellen Sie sicher, schreiben und Testen Sie Ihre Suchalgorithmus mit mehreren Sprachen, denken Sie daran. Zu berücksichtigende Aspekte umfassen:
+Stellen Sie sicher, dass Sie Ihren Suchalgorithmus mit mehreren Sprachen schreiben und testen. Zu berücksichtigende Punkte:
 
-- Automatische Vervollständigung – Wenn Sie eine AutoVervollständigen-Funktion erstellt haben, stellen Sie sicher, dass sie Vorschläge für die Sprache des Benutzers relevanten Datenquellen.
-- Übereinstimmende Abfrage zu Daten – werden Suchabfragen eingegeben haben, in einer bestimmten Sprache nur Inhalte, die in dieser Sprache geschrieben wurde, oder für alle Inhalte in Ihrer app ausgeführt werden?
-- Wortstammerkennung – Wenn die Suche erstellt wird, um ähnliche Wörter suchen, Word Stämme und andere Optimierungen suchen, suchen, sind diese Optimierungen, die für alle Sprachen, die Sie unterstützen erstellt?
-- Sortierung – stellen Sie sicher, dass die Sortierung der Ergebnisse ordnungsgemäß (siehe oben).
+- Auto Vervollständigen – Wenn Sie eine Funktion für automatisches Vervollständigen erstellt haben, stellen Sie sicher, dass Sie Vorschläge für die Sprache des Benutzers eingibt.
+- Abgleichen von Abfragen mit Data – Durchsuchen Sie Abfragen, die in einer bestimmten Sprache eingegeben wurden, nur für Inhalte, die in dieser Sprache geschrieben wurden, oder für alle Inhalte in der APP?
+- Wort Stamm Erkennung – Wenn die Suche erstellt wurde, um nach ähnlichen Wörtern zu suchen, sind diese Optimierungen für alle Sprachen konzipiert, die Sie unterstützen?
+- Sortieren – stellen Sie sicher, dass die Ergebnisse ordnungsgemäß sortiert sind (siehe oben).
 
 
 ### <a name="data-from-external-sources"></a>Daten aus externen Quellen
 
-Viele Anwendungen Herunterladen von Daten aus externen Quellen, von Twitter und RSS-feeds, zum Wetter, Nachrichten oder Aktienkurse. Wenn dies zu einem Benutzer angezeigt, müssen Sie die Möglichkeit berücksichtigen, dass Sie einen Bildschirm von irrelevanten oder unlesbar werden angezeigt werden.
+Viele Anwendungen laden Daten aus externen Quellen herunter, von Twitter-und RSS-Feeds bis hin zu Wetter-, Nachrichten-oder Aktienkursen. Wenn Sie dies für einen Benutzer anzeigen, müssen Sie in Erwägung gezogen werden, dass Sie einen Bildschirm mit nicht relevanten oder unlesbaren Informationen anzeigen.
 
-Es gibt einige Strategien, die Sie verwenden können, versuchen Sie es aus, und stellen Sie sicher, dass Ihre app relevanten Daten für den Benutzer anzeigt:
+Es gibt einige Strategien, die Sie verwenden können, um sicherzustellen, dass Ihre APP Daten anzeigt, die für den Benutzer relevant sind:
 
-- Unterschiedliche Quellen – kann Ihre Anwendung die Daten aus einer anderen Quelle abhängig von Sprache oder Gebietsschema des Benutzers herunterladen. Gebietsschema News, Wetter und Stock Preise möglicherweise sinnvoller als etwas von einem nordamerikanischen Feed heruntergeladen.
-- Lokalisierte anzeigen – wenn Sie eine Twitter oder Foto-feed angezeigt werden Sie sollte anzeigen, die Metadaten (z.B. die angefallene Zeit) in sein eigenes Sprache, selbst wenn der Inhalt selbst in der ursprünglichen Sprache bleibt.
-- Übersetzung: könnten Sie eine Übersetzungsoption in Ihre app eine maschinelle Übersetzung der eingehenden Daten erstellen. Dies kann Automatic oder Ermessen des Benutzers – Achten Sie nur auf den Benutzer zu benachrichtigen, wenn dies stattfindet, da Computer Übersetzungen nie perfekt sind!
+- Verschiedene Quellen – Ihre Anwendung kann die Daten abhängig von der Sprache oder dem Gebiets Schema des Benutzers aus einer anderen Quelle herunterladen. Gebiets Schema Nachrichten, Wetter-und Kurspreise sind möglicherweise sinnvoller als etwas, das aus einem North American-Feed heruntergeladen wird.
+- Lokalisierte Anzeige – wenn Sie einen Twitter-oder fotofeed anzeigen, sollten Sie die Metadaten (z. b. die ergriffene Zeit) in der eigenen Sprache anzeigen, auch wenn der Inhalt selbst in der ursprünglichen Sprache verbleibt.
+- Übersetzung – Sie können eine Übersetzungs Option in Ihrer APP erstellen, um eine maschinelle Übersetzung eingehender Daten durchzuführen. Dies kann automatisch oder nach dem Ermessen des Benutzers erfolgen – achten Sie darauf, dass der Benutzer benachrichtigt wird, wenn der Computer Übersetzungen nie perfekt ist.
 
-Videos – beim Entwerfen Ihrer Anwendung im Voraus planen Sie für die Ermittlung werden übersetzt, Inhalt oder sicherstellen, dass Benutzer von der Benutzeroberfläche angemessen informiert werden, wenn der Inhalt nicht in angezeigt wird bzw. externe Links zu den Audiospuren auch Auswirkungen auf ihre die Sprache.
+Dies kann sich auch auf externe Links zu Audiospuren oder Videos auswirken – wenn Sie Ihre Anwendung entwerfen, planen Sie die Beschaffung von übersetzten Inhalten, oder stellen Sie sicher, dass Benutzer von der Benutzeroberfläche ausreichend informiert werden, wenn Inhalte nicht in ihren Kurse.
 
 
-### <a name="dont-over-translate"></a>Nicht zu übersetzen.
+### <a name="dont-over-translate"></a>Nicht übersetzen
 
-Einige Zeichenfolgen in Ihrer app möglicherweise nicht benötigen, übersetzen oder benötigen zumindest die besondere Aufmerksamkeit vom Übersetzer. Beispiele:
+Einige Zeichen folgen in Ihrer APP müssen möglicherweise nicht übersetzt werden, oder Sie benötigen zumindest eine besondere Aufmerksamkeit durch den Übersetzer. Beispiele hierfür sind:
 
-- URLs – Wenn Sie eine URL auflisten möglicherweise oder kann nicht nach Sprache angepasst werden müssen. Z. B. erforderlich keine facebook.com Übersetzung, die es erkennt automatisch-Sprache am zentralen Standort. Gebietsschemaspezifische-Inhalte für andere Standorte haben, und Sie eine andere URL ein, z. B. yahoo.com im Vergleich zu yahoo.fr oder yahoo.it anbieten möchten.
-- Telefonnummern – vor allem solche mit verschiedenen Ländercodes oder Zahlen für Aufrufer, die eine bestimmte Sprache zu sprechen.
-- Details für sicherheitskontakt – Adressen und andere Informationen unterscheiden sich von Sprache oder Gebietsschema.
-- Marken & aus Produktnamen besteht – nicht einige Zeichenfolgen erforderlich, übersetzen, weil sie immer in derselben Sprache geschrieben werden.
+- URLs – Wenn Sie eine URL auflisten, muss Sie möglicherweise nach Sprache angepasst werden. Facebook.com erfordert z. b. keine automatische Übersetzung, wenn die Sprache am Hauptstandort automatisch erkannt wird. Andere Standorte verfügen über Gebiets Schema spezifischen Inhalt, und Sie möchten möglicherweise eine andere URL anbieten, z. b. yahoo.com im Vergleich zu Yahoo.fr oder Yahoo.it.
+- Telefonnummern – insbesondere diejenigen mit unterschiedlichen Ländercodes oder Zahlen für Aufrufer, die eine bestimmte Sprache sprechen.
+- Kontakt Details – Adressen und andere Informationen können je nach Sprache oder Gebiets Schema variieren.
+- Marken & Produktnamen – einige Zeichen folgen müssen nicht übersetzt werden, da Sie immer in derselben Sprache geschrieben sind.
 
-Schließlich müssen Sie detaillierte Anweisungen für das Konvertierungsprogramm einschließen, wenn bestimmte Zeichenfolgen besondere Behandlung erfordern.
+Stellen Sie abschließend sicher, dass Sie ausführliche Anweisungen für den Translator einschließen, wenn bestimmte Zeichen folgen eine besondere Behandlung erfordern.
 
 
 ### <a name="formatted-text"></a>Formatierter Text
 
-Nicht in der Regel ein Problem mit den mobilen apps, da Zeichenfolgen in der Regel Rich-Text formatiert sind. Jedoch sicherstellen der Übersetzer weiß, wie für die Eingabe, die Formatierung, die Zeichenfolgen-Dateien speichern richtig und sie ist ordnungsgemäß formatiert, bevor Sie dem Benutzer angezeigt wird, wenn rich-Text (z. B. fett bzw. kursiv formatiert) in Ihrer app erforderlich ist (d. h. lassen nicht versehentlich die Formatierungscodes selbst werden dem Benutzer angezeigt).
+In der Regel ein Problem mit Mobile Apps, weil Zeichen folgen in der Regel nicht umfangreich formatiert Wenn jedoch Rich-Text (z. b. Fett Formatierung oder kursiv Formatierung) in Ihrer APP erforderlich ist, stellen Sie sicher, dass der Konvertierer die Formatierung eingibt, die Zeichen folgen Dateien den Wert ordnungsgemäß speichern und ordnungsgemäß formatieren, bevor Sie dem Benutzer angezeigt werden (d. h. nicht versehentlich die Formatierungscodes selbst werden dem Benutzer angezeigt.)
 
 
 
-## <a name="translation-tips"></a>Translation-Tipps
+## <a name="translation-tips"></a>Übersetzungstipps
 
-Übersetzen die Zeichenfolgen, die von einer Anwendung verwendeten gilt als Teil der Lokalisierungsprozess sein. In der Regel wird diese Aufgabe, ein Übersetzungsdienst ausgelagert und ausgeführt, die mehrsprachige Personal, die Ihre Anwendung oder Ihr Unternehmen möglicherweise nicht bekannt ist.
+Das Übersetzen der von einer Anwendung verwendeten Zeichen folgen wird als Teil des Lokalisierungsprozesses betrachtet. In der Regel wird diese Aufgabe an einen Übersetzungsdienst ausgelagert und von mehrsprachigen Mitarbeitern durchgeführt, die Ihre Anwendung oder Ihr Unternehmen nicht kennen.
 
-Die folgenden Tipps hilft Ihnen das Erstellen von Zeichenfolgen, die einfacher zu übersetzen, genau und verbessert die Qualität der lokalisierten apps sind.
+Die folgenden Tipps helfen Ihnen, Zeichen folgen zu entwickeln, die einfacher zu übersetzen sind, und damit die Qualität ihrer lokalisierten apps zu verbessern.
 
 
 
-### <a name="localize-complete-strings-not-words"></a>Lokalisieren Sie vollständige Zeichenfolgen, die keine Wörter
+### <a name="localize-complete-strings-not-words"></a>Lokalisieren von kompletten Zeichen folgen, nicht von Wörtern
 
-Manchmal sind Entwickler versuchen, um einzelne Wörter oder einen Satz "Snippets" anzugeben, damit sie sie in der gesamten Anwendung erneut verwenden können. Z. B. müssen"für den Text 5 Nachrichten." Sie können die folgenden Zeichenfolgen für die Übersetzung angeben.
+Manchmal verwenden Entwickler den Ansatz, einzelne Wörter oder "Ausschnitte" anzugeben, damit Sie Sie in der gesamten Anwendung wieder verwenden können. Beispielsweise für den Text "Sie haben 5 Nachrichten". Sie können die folgenden Zeichen folgen für die Übersetzung angeben.
 
-**Ungültige**:
+**Schlecht**:
 
 ```csharp
 "You have"
@@ -197,42 +197,42 @@ Manchmal sind Entwickler versuchen, um einzelne Wörter oder einen Satz "Snippet
 "messages"
 ```
 
-und dann versuchen, die richtige Ausdruck auf dynamisch im Code mithilfe von zeichenfolgenverkettung zu erstellen:
+versuchen Sie dann, den richtigen Ausdruck im Code mithilfe der Zeichen folgen Verkettung dynamisch zu erstellen:
 
-**Ungültige**:
+**Schlecht**:
 
 ```csharp
 "You have" + " " + numMsgs + " " + "messages"
 "You have" + " no " + "messages"
 ```
 
-**Dies wird davon abgeraten,** daran, dass es nicht unbedingt für alle Sprachen funktioniert und nur des konvertierers schwer, damit Sie den Kontext der einzelnen kurze Segmente zu verstehen. Er führt auch zu einer übersetzten Zeichenfolgen, erneut verwenden, die später Probleme verursachen können, wenn sie in unterschiedlichen Kontexten verwendet werden (und anschließend aktualisiert).
+**Dies wird** nicht empfohlen, da es nicht notwendigerweise für alle Sprachen funktioniert und es für den Übersetzer schwierig ist, den Kontext jedes kurzen Segments zu verstehen. Dies führt auch dazu, dass übersetzte Zeichen folgen wieder verwendet werden, die später Probleme verursachen können, wenn Sie in unterschiedlichen Kontexten verwendet werden (und dann aktualisiert werden).
 
 
-### <a name="allow-for-parameter-re-ordering"></a>Die Reihenfolge von Parameter ermöglichen
+### <a name="allow-for-parameter-re-ordering"></a>Neuanordnung von Parametern zulassen
 
-Einige Programmiersprachen erfordern zusätzliche Syntax zum Angeben der Reihenfolge von Parametern in einer Zeichenfolge, aber .NET bereits also das Konzept der nummerierte Platzhalter unterstützt
+Einige Programmiersprachen erfordern zusätzliche Syntax, um die Reihenfolge der Parameter in einer Zeichenfolge anzugeben. .NET unterstützt jedoch bereits das Konzept nummerierter Platzhalter.
 
-**Good**:
+**Gut**:
 
 ```csharp
 "a {0} b {1} cde {3}"
 ```
 
-ist möglicherweise die folgenden (die Position und die Reihenfolge der Platzhalter ist geänderter) übersetzt
+kann wie folgt übersetzt werden (wobei Position und Reihenfolge der Platzhalter geändert werden).
 
 ```csharp
 "{2} {3} f g h {0}"
 ```
 
-und die Token werden als das Konvertierungsprogramm soll sortiert werden. Achten Sie darauf, dass Sie erläutert, was jeder Platzhalter enthält, wenn die Zeichenfolge an einen Übersetzer zu senden.
+und die Token werden als der Konvertierer bestimmt. Stellen Sie sicher, dass die einzelnen Platzhalter beim Senden der Zeichenfolge an einen Konvertierer eine Erläuterung enthalten.
 
 
-### <a name="use-multiple-strings-for-cardinality"></a>Verwenden Sie mehrere Zeichenfolgen für die Kardinalität
+### <a name="use-multiple-strings-for-cardinality"></a>Verwenden mehrerer Zeichen folgen für die Kardinalität
 
-Vermeiden Sie Zeichenfolgen wie `"You have {0} message/s."` Zeichenfolgen für die einzelnen Zustände verwenden, um eine bessere benutzererfahrung bereitzustellen:
+Vermeiden Sie Zeichen `"You have {0} message/s."` Folgen wie die Verwendung bestimmter Zeichen folgen für jeden Zustand, um eine bessere Benutzer Leistung zu bieten:
 
-**Good**:
+**Gut**:
 
 ```csharp
 "You have no messages."
@@ -241,16 +241,16 @@ Vermeiden Sie Zeichenfolgen wie `"You have {0} message/s."` Zeichenfolgen für d
 "You have {0} messages."
 ```
 
-Sie müssen zum Schreiben von Code in Ihrer app, die angezeigt wird ausgewertet, und wählen die entsprechende Zeichenfolge. Einige Plattformen (einschließlich iOS und Android) verfügen über integrierte automatisch die beste Zeichenfolge im plural basierend auf den Einstellungen für das aktuelle Sprache/Gebietsschema auswählen.
+Sie müssen Code in ihrer app schreiben, um die angezeigte Zahl auszuwerten und die entsprechende Zeichenfolge auszuwählen. Einige Plattformen (einschließlich IOS und Android) verfügen über integrierte Funktionen, die automatisch die beste Plural Zeichenfolge basierend auf den Voreinstellungen für die aktuelle Sprache/das aktuelle Gebiets Schema auswählen.
 
 
-### <a name="allowing-for-gender"></a>Für das Geschlecht zulassen
+### <a name="allowing-for-gender"></a>Zulassen von Geschlecht
 
-Lateinische Sprachen verwenden gelegentlich andere Wörtern abhängig von das Geschlecht des Antragstellers. Wenn Ihre app zu Geschlecht bekannt ist, sollten Sie die übersetzten Zeichenfolgen entsprechend dies zulassen.
+In lateinischen Sprachen werden manchmal andere Wörter verwendet, je nach Geschlecht des Subjekts. Wenn Ihre APP über das Geschlecht Bescheid weiß, sollten Sie den übersetzten Zeichen folgen diese Darstellung ermöglichen.
 
-Es gibt auch weitere offensichtliche Fall auch in Englisch, Zeichenfolgen, in dem für einen bestimmten Benutzer oder die Benutzer Ihrer App zu verweisen. Beispielsweise einige Websites angezeigt wie `"Bob commented on his post"` benötigen Sie Zeichenfolgen für eine Geschlecht "Male", "female", und nicht-Binärdaten oder unbekannt:
+Außerdem gibt es auch in englischer Sprache einen offensichtlicheren Fall, bei dem Zeichen folgen auf eine bestimmte Person oder einen bestimmten Benutzer Ihrer APP verweisen. Beispielsweise zeigen einige Websites Nachrichten `"Bob commented on his post"` so an, dass Sie Zeichen folgen sowohl für ein männlich-, weiblich-als auch für ein nicht binäres oder unbekanntes Geschlecht benötigen:
 
-**Good**:
+**Gut**:
 
 ```csharp
 "{0} commented on his post"
@@ -258,59 +258,59 @@ Es gibt auch weitere offensichtliche Fall auch in Englisch, Zeichenfolgen, in de
 "{0} commented on their post"
 ```
 
-### <a name="dont-reuse-strings"></a>Nicht erneut Zeichenfolgen
+### <a name="dont-reuse-strings"></a>Zeichen folgen nicht wieder verwenden
 
-Oder genauer gesagt keine Zeichenfolgen wiederverwenden, nur weil sie ähnlich sind, wenn die Zeichenfolge eine anderen Zweck oder die Bedeutung hat.
+Oder es ist genauer, Zeichen folgen nicht wiederzuverwenden, da Sie ähnlich sind, wenn die Zeichenfolge selbst einen anderen Zweck oder eine andere Bedeutung hat.
 
-Zum Beispiel: Angenommen, Sie haben eine Ein-/Ausschalter in Ihrer app und das Switch-Steuerelement ist des Texts für 'on' und 'off' lokalisiert werden soll. Sie zeigt auch den Wert dieser Einstellung an anderer Stelle in der app in einer textbezeichnung. Verwenden Sie verschiedene Zeichenfolgen für die Switch-Anzeige und des Switches Status (auch wenn sie die gleiche Zeichenfolge in die Standardsprache sind) – zum Beispiel:
+Beispiel: angenommen, Sie verfügen über einen ein-/ausschalten in Ihrer APP, und für das switchsteuerelement muss der Text für ' on ' und ' off ' lokalisiert werden. Sie zeigen auch den Wert dieser Einstellung an anderer Stelle in der app in einer Text Bezeichnung an. Sie sollten verschiedene Zeichen folgen für die Anzeige des Switchs im Vergleich zum Status des Schalters verwenden (auch wenn es sich um die gleiche Zeichenfolge in der Standardsprache handelt) – z. b.:
 
-- "On" – auf dem Switch selbst angezeigt.
-- "Off": auf dem Switch selbst angezeigt.
-- "On" – in einer Bezeichnung angezeigt.
-- "Off" – in einer Bezeichnung angezeigt.
+- "On" – wird auf dem Switch selbst angezeigt.
+- "Off" – wird auf dem Switch selbst angezeigt.
+- "On" – in einer Bezeichnung angezeigt
+- "Off" – in einer Bezeichnung angezeigt
 
-Dies bietet maximale Flexibilität für das Konvertierungsprogramm:
+Dies bietet maximale Flexibilität für den Translator:
 
-- Aus Gründen der Entwurf vielleicht der Switch auch Kleinbuchstaben "on" und "off" verwendet die Bezeichnung für die Anzeige verwendet jedoch Großbuchstaben "On" und "Off".
-- Einige Sprachen möglicherweise den Schalterwert abgekürzt werden soll, in das Benutzeroberflächensteuerelement, angepasst werden, während die wortvervollständigung (übersetzte) in der Bezeichnung angezeigt werden kann.
-- Alternativ kann das Rendering des Switches für einige Sprachen sein "I" und "O" kulturellen vertraut zu machen, aber Sie sollten immer noch die Bezeichnung "On" oder "Off" zu lesen.
+- Aus Entwurfs Gründen verwendet der Switch möglicherweise den Kleinbuchstaben "on" und "Off", aber die Anzeige Bezeichnung verwendet Großbuchstaben "ein" und "aus".
+- In einigen Sprachen muss der switchwert möglicherweise so abgekürzt werden, dass er in das Steuerelement der Benutzeroberfläche passt, während das gesamte (übersetzte) Wort in der Bezeichnung angezeigt werden kann.
+- Alternativ kann das Rendering Ihres Schalters für einige Sprachen "I" und "O" für die Kultur Vertrautheit verwenden, aber Sie möchten möglicherweise dennoch, dass die Bezeichnung "on" oder "Off" liest.
 
 ### <a name="translation-services"></a>Übersetzungsdienste
 
-#### <a name="machine-translation"></a>Maschinelle Übersetzungen
+#### <a name="machine-translation"></a>Maschinelle Übersetzung
 
-Um Übersetzungsfunktionen in Ihrer app zu erstellen, sollten Sie die [Textübersetzungs-API von Azure](https://azure.microsoft.com/services/cognitive-services/translator-text-api/).
+Um Übersetzungsfunktionen in Ihre APP zu erstellen, berücksichtigen Sie die [Azure-Textübersetzungs-API](https://azure.microsoft.com/services/cognitive-services/translator-text-api/).
 
-Zu Testzwecken können eines der vielen online-Übersetzungstools Sie lokalisierten Text in Ihrer app während der Entwicklung umfassen:
+Zu Testzwecken können Sie eine der zahlreichen Online Übersetzungstools verwenden, um während der Entwicklung einen lokalisierten Text in Ihre APP einzubeziehen:
 
-- [Bing-Übersetzer](https://www.bing.com/translator/)
-- [Google Translate](http://translate.google.com/)
+- [Übersetzer](https://www.bing.com/translator/)
+- [Google Translation](http://translate.google.com/)
 
-Es gibt noch viele andere verfügbar. Die Qualität der maschinellen Übersetzung ist nicht in der Regel gut genug, um eine Anwendung freigeben betrachtet, ohne zuerst überprüft und von professionellen Übersetzer oder Muttersprache getestet.
+Es stehen zahlreiche weitere Möglichkeiten zur Verfügung. Die Qualität der maschinellen Übersetzung wird in der Regel nicht als ausreichend erachtet, um eine Anwendung freizugeben, ohne dass Sie zuerst von professionellen Konvertierungsprogramme oder systemeigenen Referenten geprüft
 
 #### <a name="professional-translation"></a>Professionelle Übersetzung
 
-Es gibt auch professionelle Übersetzung-Dienste, die Ihre Zeichenfolgen und verteilen Sie sie an ihre eigenen Übersetzer, bietet Ihnen das fertige Übersetzungen gegen eine Gebühr.
+Es gibt auch professionelle Übersetzungsdienste, die ihre Zeichen folgen an Ihre eigenen Konvertierungen verteilen und Ihnen die abgeschlossenen Übersetzungen für eine Gebühr bereitstellen.
 
-Einer der bekanntesten Dienste ist [LionBridge](http://www.lionbridge.com/). Die meisten professional-Dienste unterstützen allen gängigen Dateiformaten, die z. B. Zeichenfolgen "," XML "," RESX "und" TEAPOT/PO.
+Einer der bekanntesten Dienste ist [Lionbridge](http://www.lionbridge.com/). Die meisten professionellen Dienste unterstützen alle gängigen Dateitypen, einschließlich Zeichen folgen, XML, resx und Pot/po.
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel eingeführt, einige der Konzepte sollten, vor dem Ihrer app über die Internationalisierung und Lokalisierung klicken Sie dann auf Ihre Ressourcen mit vertraut sein und auch erläutert, wie Sie die spracheinstellungen für jede Plattform zu ändern.
+In diesem Artikel wurden einige der Konzepte vorgestellt, mit denen Sie sich vertraut machen sollten, bevor Sie Ihre APP internationalisieren und dann Ihre Ressourcen lokalisieren. Außerdem wird erläutert, wie Sie die Spracheinstellungen für die einzelnen Plattformen ändern.
 
-Unterschiedliche plattformspezifischen und plattformübergreifende Internationalisierung Verfahren beschrieben, die mit Xamarin möglich sind, können diese Konzepte angewendet werden.
+Diese Konzepte können auf die verschiedenen plattformspezifischen und plattformübergreifenden Internationalisierungs Techniken angewendet werden, die mit xamarin möglich sind.
 
-Fahren Sie mit technischen Details für die Plattform, die, der Sie interessiert sind:
+Lesen Sie weiterhin technische Details zu der Plattform, an der Sie interessiert sind:
 
-- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization/index.md) plattformübergreifende Lokalisierung mit RESX-Dateien.
-- [Xamarin.iOS](~/ios/app-fundamentals/localization/index.md) Lokalisierung der nativen Plattform.
-- [Xamarin.Android](~/android/app-fundamentals/localization.md) Lokalisierung der nativen Plattform.
+- [Xamarin. Forms](~/xamarin-forms/app-fundamentals/localization/index.md) plattformübergreifende Lokalisierung mithilfe von RESX-Dateien.
+- Native [xamarin. IOS](~/ios/app-fundamentals/localization/index.md) -Platt Form Lokalisierung.
+- Native [xamarin. Android](~/android/app-fundamentals/localization.md) -Platt Form Lokalisierung.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Übersicht über die Apple-Lokalisierung](https://developer.apple.com/internationalization/)
+- [Übersicht über die Lokalisierung von Apple](https://developer.apple.com/internationalization/)
 - [Checkliste für die Lokalisierung von Android](https://developer.android.com/distribute/tools/localization-checklist.html)
-- [Bewährte Methoden für die Entwicklung weltweit einsatzfähiger Anwendungen (MSDN)](https://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)
+- [Bewährte Methoden für die Entwicklung von weltweit einsatzfähigen Anwendungen (MSDN)](https://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

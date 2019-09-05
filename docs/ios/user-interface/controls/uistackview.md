@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 6f9fd193bda16e3b5e048faf5ec7c5eb09b58bcf
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: a3adbf18e18e4f2a42ed3c89162455040a9fe699
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199145"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282686"
 ---
 # <a name="stack-views-in-xamarinios"></a>Stapel Ansichten in xamarin. IOS
 
@@ -72,7 +72,7 @@ Konfigurieren Sie die horizontale Stapel Ansicht mit den folgenden Optionen:
 
 [![](uistackview-images/quick04.png "Konfigurieren der Optionen für die horizontale Stapel Ansicht")](uistackview-images/quick04.png#lightbox)
 
-Da das Symbol, das die einzelnen "Punkte" in der Bewertung darstellt, nicht gestreckt werden soll, wenn es der horizontalen Stapel Ansicht hinzugefügt wird, haben wir die **Ausrichtung** auf "zentriert" und die **Verteilung** so festgelegt, dass Sie **gleichmäßig ausgefüllt**wird.
+Da das Symbol, das die einzelnen "Punkte" in der Bewertung darstellt, nicht gestreckt werden soll, wenn es der horizontalen Stapel Ansicht hinzugefügt wird, haben wir die **Ausrichtung** auf "zentriert" und die **Verteilung** so fest **gelegt, dass** Sie **gleichmäßig ausgefüllt**wird.
 
 Richten Sie schließlich die folgenden **Outlets** und **Aktionen**ein:
 
@@ -185,7 +185,7 @@ Nun, da wir eine allgemeine Vorstellung davon haben, `UIStackView` was das Steue
 
 Wie bereits erwähnt, wird beim Hinzufügen einer unter Ansicht zu einer Stapel Ansicht das Layout vollständig von dieser Stapel Ansicht gesteuert, indem die Klassen für automatisches Layout und Größe verwendet werden, um die angeordneten Sichten zu positionieren und zu verkleinern.
 
-In der Stapel Ansicht wird die erste und letzte untergeordnete Sicht in der Auflistung an den **oberen** und **unteren** Rand für vertikale Stapel Ansichten oder den **linken** und **rechten** Rand für horizontale Stapel Ansichten angeheftet. Wenn Sie die `LayoutMarginsRelativeArrangement` -Eigenschaft auf `true`festlegen, werden die untergeordneten Sichten in der Ansicht an die relevanten Ränder anstatt an den Rand angeheftet.
+In _der Stapel Ansicht wird die_ erste und letzte untergeordnete Sicht in der Auflistung an den **oberen** und **unteren** Rand für vertikale Stapel Ansichten oder den **linken** und **rechten** Rand für horizontale Stapel Ansichten angeheftet. Wenn Sie die `LayoutMarginsRelativeArrangement` -Eigenschaft auf `true`festlegen, werden die untergeordneten Sichten in der Ansicht an die relevanten Ränder anstatt an den Rand angeheftet.
 
 Die Stapel Ansicht verwendet die-Eigenschaft der `IntrinsicContentSize` untergeordneten Ansicht beim Berechnen der untergeordneten Ansichts `Axis` Größe entlang der definierten `FillEqually Distribution`(mit Ausnahme von). Die `FillEqually Distribution` ändert die Größe aller untergeordneten Sichten, sodass Sie die gleiche Größe haben. Dadurch wird die Stapel Ansicht `Axis`entlang des aufgefüllt.
 

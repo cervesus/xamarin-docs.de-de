@@ -4,16 +4,16 @@ description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste 
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 4f5c28c4ad9b673ac50b404e7d34f718366bd11d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: bb8a969a930f2e169d19738ddaafab04a4e8a057
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121452"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287349"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
@@ -101,12 +101,12 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 Wenn das automatische Signieren aktiviert wurde, aktualisiert Visual Studio für Mac diese Artefakte bei Bedarf, sobald eines der folgenden Ereignisse eintritt:
 
 - Ein iOS-Gerät wird an Ihren Mac angeschlossen
-    - Hierbei wird automatisch geprüft, ob das Gerät im Apple Developer Portal registriert ist. Falls nicht, wird es hinzugefügt. Außerdem wird ein neues Bereitstellungsprofil generiert, das es enthält.
+  - Hierbei wird automatisch geprüft, ob das Gerät im Apple Developer Portal registriert ist. Falls nicht, wird es hinzugefügt. Außerdem wird ein neues Bereitstellungsprofil generiert, das es enthält.
 - Die Bündel-ID der App wird geändert.
-    - Dadurch wird die App-ID aktualisiert. Ein neues Bereitstellungsprofil wird erstellt, das diese App-ID enthält.
+  - Dadurch wird die App-ID aktualisiert. Ein neues Bereitstellungsprofil wird erstellt, das diese App-ID enthält.
 - Eine unterstützte Funktion wird in der Datei „Entitlements.plist“ aktiviert.
-    - Diese Funktion wird der App-ID hinzugefügt, und es wird ein neues Bereitstellungsprofil mit der aktualisierten App-ID erstellt.
-    - Nicht alle Funktionen werden derzeit unterstützt. Weitere Informationen zu den unterstützten Funktionen finden Sie in der Anleitung zum [Arbeiten mit Funktionen](~/ios/deploy-test/provisioning/capabilities/index.md).
+  - Diese Funktion wird der App-ID hinzugefügt, und es wird ein neues Bereitstellungsprofil mit der aktualisierten App-ID erstellt.
+  - Nicht alle Funktionen werden derzeit unterstützt. Weitere Informationen zu den unterstützten Funktionen finden Sie in der Anleitung zum [Arbeiten mit Funktionen](~/ios/deploy-test/provisioning/capabilities/index.md).
 
 ## <a name="wildcard-app-ids"></a>Platzhalter-App-IDs
 

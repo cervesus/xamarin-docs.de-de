@@ -4,15 +4,15 @@ description: In diesem Dokument wird die Texteingabe in einer xamarin. IOS-App b
 ms.prod: xamarin
 ms.assetid: 03A7F1DC-017D-4501-91FD-82C78272CDB1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: edabddfeeac7f1c75df298cba6f885ec130972ba
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ef9067f3a0694c66d21d6614277e8543aebbc299
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528553"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279340"
 ---
 # <a name="text-input-in-xamarinios"></a>Text Eingabe in xamarin. IOS
 
@@ -40,10 +40,10 @@ Diese Steuerelemente werden im folgenden erläutert:
 - **Platzhalter** – Dies ist optional. Wenn diese Einstellung festgelegt ist, wird Sie angezeigt, wenn das Textfeld leer ist, in der Regel, um dem Benutzer zu erklären, welche Eingaben erwartet werden.
 - **Schaltfläche "Löschen** " – diese steuert, wenn die Standard Schaltfläche "Standard" (der graue Kreis mit (X)) im Textfeld angezeigt wird, damit der Benutzer Text schnell löschen kann. Abhängig davon, ob das Feld bearbeitet wird oder nicht, kann es dauerhaft ausgeblendet, dauerhaft sichtbar oder angezeigt werden.
 - **Minimale Schriftart Größe** und **Anpassung an anpassen** – ermöglicht, dass der Schrift Grad automatisch angepasst wird, sodass er länger Text einfügt und abgeschnitten, aber auf die angegebene Größe beschränkt wird.
-- Groß Schreibung – gibt an, ob Wörter, Sätze oder alle Eingaben automatisch groß geschrieben werden sollen.
+- Groß **Schreibung – gibt** an, ob Wörter, Sätze oder alle Eingaben automatisch groß geschrieben werden sollen.
 - **Korrektur** – gibt an, ob Rechtschreibprüfung und Vorschläge aktiviert sind.
 - **Tastatur** – steuert den Tastatur Stil, der für die Eingabe angezeigt wird, und damit die auf der Tastatur verfügbaren Tasten. Dies schließt das Zahlen Pad, den telefonpad, die e-Mail, die URL und andere Optionen ein.
-- Darstellung – steuert den Stil der Tastatur und ist entweder dunkel oder hell.
+- Darstellung **– steuert** den Stil der Tastatur und ist entweder dunkel oder hell.
 - **Return Key** – ändern Sie die Bezeichnung in der Rückgabetaste, um besser widerzuspiegeln, welche Aktion durchgeführt wird. Zu den unterstützten Werten zählen go, Join, Next, Route, done und Search.
 - **Secure** – gibt an, ob die Eingabe maskiert wird (z. b. für eine Kenn Wort Eingabe).
 

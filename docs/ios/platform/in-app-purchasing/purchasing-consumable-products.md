@@ -4,15 +4,15 @@ description: In diesem Dokument werden nutzbare Produkte in xamarin. IOS beschri
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 818412cef7359e134dea51e76567aa65bba8e613
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c23515c7fc7a3fef836cba76ec30279c94150da2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651631"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281534"
 ---
 # <a name="purchasing-consumable-products-in-xamarinios"></a>Erwerben von nutzbaren Produkten in xamarin. IOS
 
@@ -331,7 +331,7 @@ Um diese Methode zu testen, verwenden Sie das Feature " **Einschränkungen** " v
    
    
    
- Dieser Beispielcode von `ConsumableViewController` reagiert auf `CanMakePayments` die Rückgabe von false, indem der deaktivierte **AppStore** -Text auf den Schaltflächen deaktiviert angezeigt wird
+ Dieser Beispielcode von `ConsumableViewController` reagiert auf `CanMakePayments` die Rückgabe von false, indem der **Deaktivierte AppStore** -Text auf den Schaltflächen deaktiviert angezeigt wird
 
 ```csharp
 // only if we can make payments, request the prices

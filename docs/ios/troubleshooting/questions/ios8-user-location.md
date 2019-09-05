@@ -4,19 +4,19 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9BE92C99-C9C5-427E-ADE4-789DF258BACE
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 8b800d0c5639d4679b5e17c6c6a4689690529b85
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4b7f4239f97b7199f9b0eb7f1be9907a2c54cb0b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421164"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288103"
 ---
 # <a name="user-location-not-working-in-ios-8"></a>Standort des Benutzers funktioniert in iOS 8 nicht
 
-In einem Text-Editor: Öffnen Sie Ihre Datei "Info.plist" aus, und fügen Sie Folgendes hinzu:
+In einem Text-Editor: Öffnen Sie die Datei "Info. plist", und fügen Sie Folgendes hinzu:
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -26,13 +26,13 @@ In einem Text-Editor: Öffnen Sie Ihre Datei "Info.plist" aus, und fügen Sie Fo
 <string>This will be called if location is used behind the scenes</string>
 ```
 
-Und innerhalb der MainViewController.cs müssen Sie Folgendes aufrufen:
+Und innerhalb der MainViewController.cs müssen Sie Folgendes aufzurufen:
 
 ```csharp
 iPhoneLocationManager.RequestWhenInUseAuthorization ();
 ```
 
-BEISPIEL:
+FERN
 
 ```cs
 if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {

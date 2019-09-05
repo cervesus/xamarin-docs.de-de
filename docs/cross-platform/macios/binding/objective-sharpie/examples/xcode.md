@@ -3,15 +3,15 @@ title: Beispiel für eine reale Verwendung eines Xcode-Projekts
 description: In diesem Dokument wird beschrieben, wie Sie ein Xcode-Projekt als direkte Eingabe für den Ziel-Sharpie verwenden, C# wodurch der Prozess zum Erstellen von Bindungen zum Ziel-C-Code vereinfacht wird.
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/15/2016
-ms.openlocfilehash: 083bebd093a8db92b0e64ba11d13bd32da88f604
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e460994994c1383f29028be7b13cec216f2d12f7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521941"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290652"
 ---
 # <a name="real-world-example-using-an-xcode-project"></a>Beispiel für eine reale Verwendung eines Xcode-Projekts
 

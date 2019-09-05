@@ -1,37 +1,37 @@
 ---
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
-title: Plattformübergreifende für Desktop-Entwickler
-description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die Xamarin.Forms für Entwickler von WPF- und Windows Forms beschrieben werden. Der verknüpfte Inhalt untersucht Anwendungslebenszyklus, Benutzeroberflächen-Steuerelemente, portieren, Leitfäden und Beispielen.
-author: asb3993
-ms.author: amburns
+title: Plattformübergreifende Entwicklung für Desktop Entwickler
+description: Dieses Dokument stellt Links zu verschiedenen Handbüchern dar, die xamarin. Forms für WPF-und Windows Forms-Entwickler beschreiben. Der verknüpfte Inhalt untersucht den Anwendungslebenszyklus, UI-Steuerelemente, Portierungs Anleitungen und Beispiele.
+author: conceptdev
+ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 21c74b8c0ccaffb2b3b8205a3bdda9101b99f072
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e4c14b3f6458180c6da9f123cab5aad406091667
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270516"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290361"
 ---
-# <a name="cross-platform-for-desktop-developers"></a>Plattformübergreifende für Desktop-Entwickler
+# <a name="cross-platform-for-desktop-developers"></a>Plattformübergreifende Entwicklung für Desktop Entwickler
 
-Dieser Abschnitt enthält Informationen zum ermöglicht es Entwicklern, WPF- und Windows Forms Entwicklung mobiler Apps mit Xamarin, Lernen durch Querverweise bei ihre vorhandenen Kenntnisse und Erfahrungen auf mobilen Idiome und Bereitstellung Beispiele des portierens von desktop-apps auf mobile.
+Dieser Abschnitt enthält Informationen, die es WPF-und Windows Forms Entwicklern erleichtern, Mobile App Entwicklung mit xamarin zu erlernen, indem Sie auf Ihr vorhandenes Wissen und ihre Erfahrungen mit der mobilen Idiome verweisen und Beispiele für das Portieren von Desktop-Apps auf Mobilgeräte bereitstellen.
 
-## <a name="app-lifecycle-comparisonlifecyclemd"></a>[App-Lebenszyklusvergleich](lifecycle.md)
+## <a name="app-lifecycle-comparisonlifecyclemd"></a>[App-Lebenszyklus Vergleich](lifecycle.md)
 
-Grundlegendes zu den Unterschieden zwischen WPF und Xamarin.Forms-app-Start und Hintergrund Zustand ein.
+Grundlegendes zu den Unterschieden zwischen WPF-und xamarin. Forms-App-Start-und Hintergrund Zuständen
 
-## <a name="ui-controls-comparisoncontrolsindexmd"></a>[Vergleich der Steuerelemente der Benutzeroberfläche](controls/index.md)
+## <a name="ui-controls-comparisoncontrolsindexmd"></a>[Vergleichen von Benutzeroberflächen-](controls/index.md)
 
-Kurzübersicht Äquivalente Steuerelemente in Windows Forms, WPF und Xamarin.Forms, einschließlich Weitere Anleitungen zu den Unterschieden zwischen WPF und Xamarin.Forms zu finden.
+Kurzübersicht, um äquivalente Steuerelemente in Windows Forms, WPF und xamarin. Forms zu finden, einschließlich zusätzlicher Anleitungen zu den Unterschieden zwischen WPF und xamarin. Forms.
 
-## <a name="porting-guidanceportingmd"></a>[Portierungsanleitung](porting.md)
+## <a name="porting-guidanceportingmd"></a>[Leitfaden zum Portieren](porting.md)
 
-Verwendung von Portability Analyzer können Sie die desktop-App-Code (mit Ausnahme der Benutzeroberfläche) xamarin.Forms zu migrieren.
+Verwenden der Portabilitäts Analyse zum Migrieren von Desktop Anwendungscode (ohne die Benutzeroberfläche) zu xamarin. Forms.
 
 ## <a name="samplessamplesmd"></a>[Beispiele](samples.md)
 
-Referenz-Beispiele veranschaulichen unternehmensanwendungsarchitektur und Portieren von Code aus WPF zu Xamarin.Forms.
+Beispiele für die Architektur von Unternehmensanwendungen und das Portieren von Code von WPF zu xamarin. Forms.
 
 ## <a name="learn-more"></a>Weitere Informationen
 
-[![Erstellen Mobile Apps-e-Book](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [ ![Mustern von Unternehmensanwendungen e-Book](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)
+Erstellen Mobile Apps e-book- [ UnternehmensAnwendungsMustern-![](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [ ![eBook](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)

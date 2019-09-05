@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: f6bc5891e416d7cb6c9b80c0502a9cc5d2d911d1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8366796af47e8915bf0bd9ba680e6144e1cfaebc
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523987"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280608"
 ---
 # <a name="location-services-on-android"></a>Location Services unter Android
 
@@ -336,15 +336,15 @@ else
 ```
 
 > [!NOTE]
->  Wenn der Benutzer alle standortanbieter deaktiviert hat, `GetBestProvider` wird von `null`zurückgegeben. Um zu sehen, wie dieser Code auf einem echten Gerät funktioniert, stellen Sie sicher, dass Sie GPS, Wi-Fi und Mobilfunk-Netzwerke unter **Google Settings > Location >-Modus** aktivieren, wie in diesem Screenshot gezeigt:
-
-[![Bildschirm "Einstellungs Speicherort" auf einem Android-Telefon](location-images/location-02.png)](location-images/location-02.png#lightbox)
-
-Der folgende Screenshot zeigt die Standort Anwendung, die `GetBestProvider`mithilfe von ausgeführt wird:
-
-[![Getbestprovider-APP, die Breitengrad, Längengrad und Anbieter anzeigt](location-images/location-03.png)](location-images/location-03.png#lightbox)
-
-Denken Sie daran, `GetBestProvider` dass den Anbieter nicht dynamisch ändert. Stattdessen wird der am besten verfügbare Anbieter während des Aktivitäts Lebenszyklus einmal bestimmt. Wenn sich der Anbieter Status ändert, nachdem er festgelegt wurde, benötigt die Anwendung zusätzlichen Code in `ILocationListener` den &ndash; Methoden `OnProviderDisabled` `OnProviderEnabled`, und `OnStatusChanged` &ndash; , um alle Möglichkeiten zu behandeln, die im Zusammenhang mit dem Anbieter Switch.
+> Wenn der Benutzer alle standortanbieter deaktiviert hat, `GetBestProvider` wird von `null`zurückgegeben. Um zu sehen, wie dieser Code auf einem echten Gerät funktioniert, stellen Sie sicher, dass Sie GPS, Wi-Fi und Mobilfunk-Netzwerke unter **Google Settings > Location >-Modus** aktivieren, wie in diesem Screenshot gezeigt:
+>
+> [![Bildschirm "Einstellungs Speicherort" auf einem Android-Telefon](location-images/location-02.png)](location-images/location-02.png#lightbox)
+>
+> Der folgende Screenshot zeigt die Standort Anwendung, die `GetBestProvider`mithilfe von ausgeführt wird:
+>
+> [![Getbestprovider-APP, die Breitengrad, Längengrad und Anbieter anzeigt](location-images/location-03.png)](location-images/location-03.png#lightbox)
+>
+> Denken Sie daran, `GetBestProvider` dass den Anbieter nicht dynamisch ändert. Stattdessen wird der am besten verfügbare Anbieter während des Aktivitäts Lebenszyklus einmal bestimmt. Wenn sich der Anbieter Status ändert, nachdem er festgelegt wurde, benötigt die Anwendung zusätzlichen Code in `ILocationListener` den &ndash; Methoden `OnProviderDisabled` `OnProviderEnabled`, und `OnStatusChanged` &ndash; , um alle Möglichkeiten zu behandeln, die im Zusammenhang mit dem Anbieter Switch.
 
 ## <a name="summary"></a>Zusammenfassung
 

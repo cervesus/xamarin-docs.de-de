@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Bilder in xamarin. IOS ang
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 7f1e61f9364a6a59f2bbacd1c773fe49cc338db9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 191d037d12d27e2c6ab475467853023f440c71d4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528827"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291365"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Anzeigen von Bildern mit xamarin. IOS
 
@@ -20,15 +20,15 @@ Zum Hinzufügen von Bildern zu Ihrer APP sind zwei Schritte erforderlich: zuerst
 
 ## <a name="adding-images-to-your-app"></a>Hinzufügen von Bildern zu Ihrer APP
 
-Bilder können einem beliebigen Ordner in Ihrer Visual Studio für Mac Projekt Mappe hinzugefügt werden. Wenn die Buildaktion auf " **Content** " festgelegt ist, wird die Datei in Ihre APP eingeschlossen und kann angezeigt werden.
+Bilder können einem beliebigen Ordner in Ihrer Visual Studio für Mac Projekt Mappe hinzugefügt werden. wenn die **Buildaktion** auf " **Content** " festgelegt ist, wird die Datei in Ihre APP eingeschlossen und kann angezeigt werden.
 
-Visual Studio für Mac unterstützt auch ein spezielles Verzeichnis namens " **Resources** ", das auch Bilddateien enthalten kann. Für Dateien im Ordner "Resources" sollte die Buildaktion auf **bundleresource**festgelegt sein.
+Visual Studio für Mac unterstützt auch ein spezielles Verzeichnis namens " **Resources** ", das auch Bilddateien enthalten kann. Für Dateien im Ordner "Resources" sollte die **Buildaktion** auf **bundleresource**festgelegt sein.
 
-Dieser Screenshot zeigt die buildaktions Optionen, die angezeigt werden, wenn mit der rechten Maustaste auf eine Datei geklickt wird:
+Dieser Screenshot zeigt die buildaktions Optionen **, die angezeigt** werden, wenn mit der rechten Maustaste auf eine Datei geklickt wird:
 
  [![](image-images/image30a.png "Menü \"Build Action\"")](image-images/image30a.png#lightbox)
 
-Visual Studio für Mac wählt in der Regel die richtige Buildaktion automatisch aus, aber Sie sollten diese Einstellungen beachten, insbesondere, wenn Sie Dateien in Ihrem Projekt verschieben.
+Visual Studio für Mac wählt in der Regel die richtige **Buildaktion** automatisch aus, aber Sie sollten diese Einstellungen beachten, insbesondere, wenn Sie Dateien in Ihrem Projekt verschieben.
 
 ### <a name="adding-an-image-file"></a>Hinzufügen einer Bilddatei
 

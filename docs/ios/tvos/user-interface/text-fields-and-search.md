@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie in einer mit xamarin e
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: b1f4712e87762acb81a366700174db33e0c557bf
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 2d62651f85aab49c8e28b54053aba4882961c35b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226692"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292500"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Arbeiten mit tvos-Text-und-Suchfeldern in xamarin
 
@@ -108,7 +108,7 @@ Führen Sie folgende Schritte aus:
 1. Im **Text Feld** Abschnitt können Sie Elemente wie den **Platzhalter** Hinweis und den Standard **Wert**definieren:
 
     [![](text-fields-and-search-images/text04.png "Der Text Feld Abschnitt")](text-fields-and-search-images/text04.png#lightbox)
-1. Scrollen Sie nach unten, um Eigenschaften wie **Rechtschreibprüfung**, Groß-/Kleinschreibung und den Standard **Tastatur Typ**zu definieren:
+1. Scrollen Sie nach **unten, um** Eigenschaften wie **Rechtschreibprüfung**, Groß-/Kleinschreibung und den Standard **Tastatur Typ**zu definieren:
 
     [![](text-fields-and-search-images/text05.png "Rechtschreibprüfung, groß-und Kleinschreibung und der Standardtastatur-Typ")](text-fields-and-search-images/text05.png#lightbox)
 1. Speichern Sie die Änderungen in Ihrem Storyboard.
@@ -125,7 +125,7 @@ Führen Sie folgende Schritte aus:
 1. Im **Text Feld** Abschnitt können Sie Elemente wie den **Platzhalter** Hinweis und den Standard **Wert**definieren:
 
     [![](text-fields-and-search-images/text04-vs.png "Der Text Feld Abschnitt")](text-fields-and-search-images/text04-vs.png#lightbox)
-1. Scrollen Sie nach unten, um Eigenschaften wie **Rechtschreibprüfung**, Groß-/Kleinschreibung und den Standard **Tastatur Typ**zu definieren:
+1. Scrollen Sie nach **unten, um** Eigenschaften wie **Rechtschreibprüfung**, Groß-/Kleinschreibung und den Standard **Tastatur Typ**zu definieren:
 
     [![](text-fields-and-search-images/text05-vs.png "Rechtschreibprüfung, groß-und Kleinschreibung und der Standardtastatur-Typ")](text-fields-and-search-images/text05-vs.png#lightbox)
 1. Speichern Sie die Änderungen in Ihrem Storyboard.
@@ -158,7 +158,7 @@ Führen Sie folgende Schritte aus:
 
     [![](text-fields-and-search-images/search03.png "Die Widget-Registerkarte")](text-fields-and-search-images/search03.png#lightbox)
 1. Wählen Sie auf der Entwurfs Oberfläche den **Zellen Prototyp** aus.
-1. Verwenden `ImageCell` SieaufderRegisterkartewidgetdesEigenschaften-Explorersfürdie-Klasse`SearchResultCell` und für den Bezeichner:
+1. Verwenden `ImageCell`Sie auf der Registerkarte widget des Eigenschaften-Explorers für die-Klasse und für den Bezeichner: `SearchResultCell`
 
     [![](text-fields-and-search-images/search04.png "Die Widget-Registerkarte")](text-fields-and-search-images/search04.png#lightbox)
 1. Layout des Entwurfs des **Zellen Prototyps** und verfügbar machen jedes Elements mit einem **eindeutigen Namen** auf der Registerkarte " **Widget** " des **Eigenschaften-Explorers**:
@@ -176,7 +176,7 @@ Führen Sie folgende Schritte aus:
 
     [![](text-fields-and-search-images/search03-vs.png "Die Widget-Registerkarte")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. Wählen Sie auf der Entwurfs Oberfläche den **Zellen Prototyp** aus.
-1. Verwenden `ImageCell` SieaufderRegisterkartewidgetdesEigenschaften-Explorersfürdie-Klasse`SearchResultCell` und für den Bezeichner:
+1. Verwenden `ImageCell`Sie auf der Registerkarte widget des Eigenschaften-Explorers für die-Klasse und für den Bezeichner: `SearchResultCell`
 
     [![](text-fields-and-search-images/search04-vs.png "Die Widget-Registerkarte")](text-fields-and-search-images/search04-vs.png#lightbox)
 1. Layout des Entwurfs des **Zellen Prototyps** und verfügbar machen jedes Elements mit einem **eindeutigen Namen** auf der Registerkarte " **Widget** " des **Eigenschaften-Explorers**:

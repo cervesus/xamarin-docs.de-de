@@ -1,20 +1,20 @@
 ---
-title: Arbeiten mit WatchOS-App-Gruppen in Xamarin
-description: Dieses Dokument beschreibt die app-Gruppen und deren Verwendung in einer WatchOS-Anwendung. Es wird erläutert, wie eine app-Gruppe, die Bereitstellung von Anforderungen und "Entitlements.plist" Überlegungen zur Bereitstellung zu konfigurieren.
+title: Arbeiten mit watchos-App-Gruppen in xamarin
+description: In diesem Dokument werden App-Gruppen und deren Verwendung in einer watchos-Anwendung beschrieben. Darin wird erläutert, wie Sie eine APP-Gruppe, Bereitstellungs Anforderungen, Berechtigungen. plist-Überlegungen und die Bereitstellung konfigurieren.
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 78f6c03f73f0e4d8a74f826dd7bc25bbe325d545
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c75db8bd29b7a57c46610abdd5e4024938fc9e1b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61411703"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280329"
 ---
-# <a name="working-with-watchos-app-groups-in-xamarin"></a>Arbeiten mit WatchOS-App-Gruppen in Xamarin
+# <a name="working-with-watchos-app-groups-in-xamarin"></a>Arbeiten mit watchos-App-Gruppen in xamarin
 
 
 Durch eine App-Gruppe können unterschiedliche Anwendungen (oder eine Anwendung und ihre Erweiterungen) auf einen freigegebenen Dateispeicherort zugreifen. App-Gruppen können für folgende Daten verwendet werden:
@@ -23,26 +23,26 @@ Durch eine App-Gruppe können unterschiedliche Anwendungen (oder eine Anwendung 
 - Freigegebene [NSUserDefaults](~/ios/watchos/app-fundamentals/parent-app.md#nsuserdefaults).
 - Freigegebene [Dateien](~/ios/watchos/app-fundamentals/parent-app.md#files).
 
-## <a name="configure-an-app-group"></a>Konfigurieren Sie eine App-Gruppe
+## <a name="configure-an-app-group"></a>Konfigurieren einer APP-Gruppe
 
-Der freigegebene Speicherort erfolgt über eine [App-Gruppe](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19), die konfiguriert wird, der **Zertifikate, Bezeichner & Profile** im Abschnitt [iOS Developer Center](https://developer.apple.com/devcenter/ios/). Dieser Wert muss außerdem in jedem Projekt auf die verwiesen werden **"Entitlements.plist"**.
+Der freigegebene Speicherort wird mit einer [App-Gruppe](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)konfiguriert, die im Abschnitt Zertifikate, Bezeichner **& profile** im [IOS dev Center](https://developer.apple.com/devcenter/ios/)konfiguriert ist. Auf diesen Wert muss in den **Berechtigungen. plist**jedes Projekts verwiesen werden.
 
 ### <a name="provisioning"></a>Bereitstellung
 
-Die app-Gruppe müssen Bezeichner, der in der Regel Ihre Paket-ID ist mit einem `group.` Präfix. Wir könnten z. B. Verwenden der Paket-ID `com.xamarin.WatchSettings` und die app-Gruppe `group.com.xamarin.WatchSettings`.
+Die APP-Gruppe verfügt über einen Bezeichner, der in der Regel die Bündel `group.` -ID mit einem Präfix ist. Beispielsweise könnten wir die Bündel-ID `com.xamarin.WatchSettings` und die APP-Gruppe `group.com.xamarin.WatchSettings`verwenden.
 
-[![](app-groups-images/app-group-sml.png "Verwenden Sie die Bündel-ID com.xamarin.WatchSettings und group.com.xamarin.WatchSettings der app-Gruppe")](app-groups-images/app-group.png#lightbox)
+[![](app-groups-images/app-group-sml.png "Verwenden Sie die Bündel-ID com. xamarin. watchsettings und die APP-Gruppen Gruppe. com. xamarin. watchsettings.")](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
-Und konfigurieren das Bereitstellungsprofil **App-Gruppen aktivieren** in die **"Entitlements.plist"** , und geben Sie die ID, die Sie ausgewählt haben:
+Aktivieren Sie auch das Bereitstellungs Profil, **Aktivieren Sie App-Gruppen** in der Liste " **Berechtigungen. plist** ", und geben Sie die ID ein, die Sie ausgewählt haben:
 
-[![](app-groups-images/entitlements-sml.png "Konfigurieren Sie die plist-Datei, und geben Sie die ID")](app-groups-images/entitlements.png#lightbox)
+[![](app-groups-images/entitlements-sml.png "Plist konfigurieren und die ID eingeben")](app-groups-images/entitlements.png#lightbox)
 
 
 ### <a name="deployment"></a>Bereitstellung
 
-Stellen Sie sicher, Sie konfigurieren, dass die App-Gruppe, die in Ihrem [Bereitstellung](~/ios/watchos/deploy-test/index.md#App_Groups) bereitstellen.
+Stellen Sie sicher, dass Sie die APP-Gruppe in der [Bereitstellungs Bereitstellung](~/ios/watchos/deploy-test/index.md#App_Groups) richtig konfigurieren.
 
 
 Weitere Informationen finden Sie unter den [App-Gruppen-Funktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Dokumentation.
@@ -51,4 +51,4 @@ Weitere Informationen finden Sie unter den [App-Gruppen-Funktionen](~/ios/deploy
 ## <a name="related-links"></a>Verwandte Links
 
 - [Apple Freigeben von Daten mit Ihrer App mit](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
-- [Apple App-Gruppen-doc](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)
+- [App-Gruppen Dokument von Apple](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)

@@ -1,38 +1,38 @@
 ---
-title: Wiedergabe von Sound im TvOS mit AVAudioPlayer in Xamarin
-description: In diesem Artikel zeigt, wie eine Hilfsklasse zum Steuern der Wiedergabe von sound mithilfe einer AVAudioPlayer in einer Xamarin.iOS-Anwendung verwendet wird.
+title: Wiedergabe von Sound in tvos mit AVAudioPlayer in xamarin
+description: In diesem Artikel wird gezeigt, wie Sie eine Hilfsklasse verwenden, um die Wiedergabe von Sound mithilfe von AVAudioPlayer in einer xamarin. IOS-Anwendung zu steuern.
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: bc1e9febea9529c3fadbacd689404562952276fe
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b34c769eaa3aef5bf47a9bfa891859289b195f03
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61414099"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283783"
 ---
-# <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>Wiedergabe von Sound im TvOS mit AVAudioPlayer in Xamarin
+# <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>Wiedergabe von Sound in tvos mit AVAudioPlayer in xamarin
 
-## <a name="about-the-avaudioplayer"></a>Informationen zu den AVAudioPlayer
+## <a name="about-the-avaudioplayer"></a>Informationen zu AVAudioPlayer
 
-Die `AVAudioPlayer` dient zum Wiedergeben von Audiodaten aus Speicher oder eine Datei. Apple empfiehlt die Verwendung dieser Klasse, die audio in Ihrer app wiedergeben, es sei denn, Sie machen die streaming-Netzwerk oder mit geringer Latenz audio-e/a erfordern.
+`AVAudioPlayer` Wird verwendet, um Audiodaten entweder aus dem Arbeitsspeicher oder aus einer Datei wiederzugeben. Apple empfiehlt die Verwendung dieser Klasse, um Audiodaten in der APP wiederzugeben, es sei denn, Sie verwenden das Netzwerk Streaming oder benötigen audioe/a mit niedriger Latenz.
 
-Sie können die `AVAudioPlayer` die folgenden Schritte ausführen:
+Mit dem `AVAudioPlayer` können Sie folgende Aufgaben ausführen:
 
-- Wiedergeben von Sound beliebiger Dauer mit optionalen Schleifen.
-- Mehrere Sound zur gleichen Zeit mit optionalen Synchronisierung.
-- Steuern Sie Volumes, Playback-Geschwindigkeit und Stereo-Positionierung für jede Sounds wiedergeben.
-- Unterstützung von Funktionen wie ein Zeitsprung oder Rewind.
-- Wiedergabe-Ebene, die Verwendungsdaten zu erhalten.
+- Wiedergabe von Sounds beliebiger Dauer mit optionalen Schleifen.
+- Gleich Zeitangabe mehrerer Sounds mit optionaler Synchronisierung.
+- Steuern Sie das Volumen, die Wiedergabe Rate und die Stereo Positionierung der einzelnen Sounds.
+- Unterstützung von Features wie "schneller vorwärts" oder "Zurückspulen".
+- Abrufen von Messungs Daten auf Wiedergabe Ebene.
 
-`AVAudioPlayer` unterstützt von Sounds in einem beliebigen audio Format, das von iOS, TvOS und OS X angegeben sind, z. B. `.aif`, `.wav` oder `.mp3`.
+`AVAudioPlayer`unterstützt Sounds in beliebigen Audioformaten, die von IOS, tvos und OS X `.aif`bereit `.wav` gestellt `.mp3`werden, z. b. oder.
 
-## <a name="playing-sounds-in-tvos"></a>Wiedergabe von Sound in tvOS
+## <a name="playing-sounds-in-tvos"></a>Abspielen von Sounds in tvos
 
-Da TvOS dieselben Audio Toolbox Klassen als iOS unterstützt, finden Sie unserem iOS [spielen Sound mit AVAudioPlayer](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/sound/avaudioplayer) Dokumentation für die vollständigen Details der Audiowiedergabe in einer Xamarin.tvOS-app.
+Da tvos die gleichen Audio-Toolbox-Klassen wie IOS unterstützt, finden Sie in unserer Dokumentation zu den IOS- [spielen mit der AVAudioPlayer](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/sound/avaudioplayer) -Dokumentation ausführliche Informationen zur Wiedergabe von Audio in einer xamarin. tvos-app.
 
 
 

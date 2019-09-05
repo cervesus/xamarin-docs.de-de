@@ -3,15 +3,15 @@ title: Erstellen von HTML-Ansichten mithilfe von Razor-Vorlagen
 description: " Die Verwendung einer Vollbild-Webseite zum Rendering von HTML kann eine einfache und effektive Möglichkeit zum Rendering komplexer Formatierungen auf plattformübergreifende Weise darstellen, insbesondere dann, wenn Sie bereits über HTML, JavaScript und CSS aus einem Website Projekt verfügen."
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: d822a4dc50d3f33ba4c217b8fcc557acc2bfdb3e
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: ccad60f749732ae2d0bf8e9852859b13af3a629e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621034"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284919"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Erstellen von HTML-Ansichten mithilfe von Razor-Vorlagen
 
@@ -385,7 +385,7 @@ Das **neue** projektmappenfenster sieht für iPhone-und Android-Projekte wie fol
 
  ![Erstellen von iPhone-und Android-Lösungen](images/image13_1139x959.png)
 
-Beachten Sie, dass Sie einem vorhandenen xamarin-Projekt problemlos eine **. cshtml** -Razor-Vorlage hinzufügen können. es ist nicht erforderlich, diese Lösungs Vorlagen zu verwenden. für IOS-Projekte ist ein Storyboard nicht erforderlich, um Razor zu verwenden. Fügen Sie einer Ansicht einfach ein UIWebView-Steuerelement Programm gesteuert hinzu, und Sie können Razor C# -Vorlagen vollständig im Code darstellen.
+Beachten *Sie, dass Sie einem vorhandenen* xamarin-Projekt problemlos eine **. cshtml** -Razor-Vorlage hinzufügen können. es ist nicht erforderlich, diese Lösungs Vorlagen zu verwenden. für IOS-Projekte ist ein Storyboard nicht erforderlich, um Razor zu verwenden. Fügen Sie einer Ansicht einfach ein UIWebView-Steuerelement Programm gesteuert hinzu, und Sie können Razor C# -Vorlagen vollständig im Code darstellen.
 
 Die Standardvorlagen projektmappeninhalte für iPhone-und Android-Projekte sind unten dargestellt:
 

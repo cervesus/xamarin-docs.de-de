@@ -4,15 +4,15 @@ description: In diesem Artikel wird die Verwendung von Schlüssel-Wert-Codierung
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 893a3f76fe21bfe831ae81ffcd64c1538d9f05e1
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 3bcf52d33ebfaba6117a2089419673e0152cbe88
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200167"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289124"
 ---
 # <a name="databases-in-xamarinmac"></a>Datenbanken in xamarin. Mac
 
@@ -594,7 +594,7 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-Wie oben beschrieben erhalten wir eine `SQLiteCommand` `SQLiteConnection`aus dem weiter gegebenen und legen "SQL" fest, um unseren Datensatz zu aktualisieren (Bereitstellen von Parametern):
+Wie **oben** beschrieben erhalten wir eine `SQLiteCommand` `SQLiteConnection`aus dem weiter gegebenen und legen "SQL" fest, um unseren Datensatz zu aktualisieren (Bereitstellen von Parametern):
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit tvos-gestapelten A
 ms.prod: xamarin
 ms.assetid: 00B07F85-F30B-4DD4-8664-A61D0A1CDB0E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: be4d10eceb4ddf7da44409815f3e9c08117a06f7
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: a48e7bd780783a7b33008a5d86011f5497b042d5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227218"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287972"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Arbeiten mit gestapelten Ansichten von tvos in xamarin
 
@@ -47,7 +47,7 @@ Sie können die Benutzeroberflächen Darstellung weiter optimieren, indem Sie de
 
 Wenn eine unter Ansicht zu einer Stapel Ansicht hinzugefügt wird, wird das Layout vollständig von dieser Stapel Ansicht gesteuert, wobei die Klassen für automatisches Layout und Größe verwendet werden, um die angeordneten Sichten zu positionieren und deren Größe
 
-In der Stapel Ansicht wird die erste und letzte untergeordnete Sicht in der Auflistung an den **oberen** und **unteren** Rand für vertikale Stapel Ansichten oder den **linken** und **rechten** Rand für horizontale Stapel Ansichten angeheftet. Wenn Sie die `LayoutMarginsRelativeArrangement` -Eigenschaft auf `true`festlegen, werden die untergeordneten Sichten in der Ansicht an die relevanten Ränder anstatt an den Rand angeheftet.
+In _der Stapel Ansicht wird die_ erste und letzte untergeordnete Sicht in der Auflistung an den **oberen** und **unteren** Rand für vertikale Stapel Ansichten oder den **linken** und **rechten** Rand für horizontale Stapel Ansichten angeheftet. Wenn Sie die `LayoutMarginsRelativeArrangement` -Eigenschaft auf `true`festlegen, werden die untergeordneten Sichten in der Ansicht an die relevanten Ränder anstatt an den Rand angeheftet.
 
 Die Stapel Ansicht verwendet die-Eigenschaft der `IntrinsicContentSize` untergeordneten Ansicht beim Berechnen der untergeordneten Ansichts `Axis` Größe entlang der definierten `FillEqually Distribution`(mit Ausnahme von). Die `FillEqually Distribution` ändert die Größe aller untergeordneten Sichten, sodass Sie die gleiche Größe haben. Dadurch wird die Stapel Ansicht `Axis`entlang des aufgefüllt.
 
@@ -108,7 +108,7 @@ Die einfachste Möglichkeit, mit Stapel Ansichten in einer xamarin. tvos-APP zu 
 1. Ziehen Sie eine **Stapel Ansicht** aus der **Toolbox** , und legen Sie Sie in der Ansicht ab:
 
     [![](stacked-views-images/layout03.png "Eine Stapel Ansicht")](stacked-views-images/layout03.png#lightbox)
-1. Wählen Sie die Stapel Ansicht aus, undwählen Sie auf der **Registerkarte widget** des **Eigenschaftenpad** für die **Ausrichtung** **Ausfüllen** aus, und geben `25` Sie für die **Verteilung** **gleichermaßen** ein:
+1. Wählen Sie die Stapel Ansicht aus, und wählen Sie auf der **Registerkarte widget** des **Eigenschaftenpad** für die **Ausrichtung** **Ausfüllen** aus , und geben `25` Sie für **die**Verteilung **gleichermaßen** ein:
 
     [![](stacked-views-images/layout04.png "Die Widget-Registerkarte")](stacked-views-images/layout04.png#lightbox)
 1. Positionieren Sie die Stapel Ansicht auf dem Bildschirm, wo Sie Sie möchten, und fügen Sie Einschränkungen hinzu, um Sie am erforderlichen Speicherort zu speichern.
@@ -132,7 +132,7 @@ Die einfachste Möglichkeit, mit Stapel Ansichten in einer xamarin. tvos-APP zu 
 1. Ziehen Sie eine **Stapel Ansicht** aus der **Toolbox** , und legen Sie Sie in der Ansicht ab:
 
     [![](stacked-views-images/layout03-vs.png "Eine Stapel Ansicht")](stacked-views-images/layout03-vs.png#lightbox)
-1. Wählen Sie die Stapel Ansicht aus, wählen Sie im Eigenschaften- **Explorer** auf der **Registerkarte widget** die Option **Ausfüllen** für die **Ausrichtung**aus, `25` und geben Sie für den **Abstand** **gleich** ein:
+1. Wählen Sie die Stapel Ansicht aus, wählen Sie im **Eigenschaften-Explorer** auf der **Registerkarte widget** die Option **Ausfüllen** für die **Ausrichtung**aus, `25` **und geben Sie für den** **Abstand** **gleich** ein:
 
     [![](stacked-views-images/layout04-vs.png "Die Widget-Registerkarte")](stacked-views-images/layout04-vs.png#lightbox)
 1. Positionieren Sie die Stapel Ansicht auf dem Bildschirm, wo Sie Sie möchten, und fügen Sie Einschränkungen hinzu, um Sie am erforderlichen Speicherort zu speichern.

@@ -3,15 +3,15 @@ title: Aktualisieren vorhandener Mac-apps
 description: In diesem Dokument werden die Schritte beschrieben, die zum Aktualisieren einer xamarin. Mac-app von der Classic API auf die Unified API ausgeführt werden müssen.
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: c1a374feaadf28898b7fde8e364cf0adab83acd5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 43498c0609fdbe6dba59b9ed5926c9c58b72d4db
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509604"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280868"
 ---
 # <a name="updating-existing-mac-apps"></a>Aktualisieren vorhandener Mac-apps
 
@@ -56,7 +56,7 @@ Nachdem die Warnungen korrigiert wurden, führen Sie die folgenden Schritte aus,
 
 ![](updating-mac-apps-images/csproj.png "Bearbeiten Sie die CSPROJ-Datei in einem Text-Editor, und ersetzen Sie das erste Element im projecttypguids-Element wie gezeigt.")
 
-Ändern Sie  `Xamarin.Mac.targets` dasImport-Element,dasenthält,wieimfolgenden`Xamarin.Mac.CSharp.targets` gezeigt:
+Ändern Sie `Xamarin.Mac.targets` dasImport-Element,dasenthält,wieimfolgenden`Xamarin.Mac.CSharp.targets` gezeigt:
 
 ![](updating-mac-apps-images/csproj2.png "Ändern Sie das Import-Element, das xamarin. Mac. targets enthält, in xamarin. Mac. CSharp. targets, wie hier gezeigt.")
 
@@ -70,7 +70,7 @@ Fügen Sie nach dem `<AssemblyName>` -Element die folgenden Codezeilen hinzu:
 
 Beispiel:
 
-![](updating-mac-apps-images/csproj3.png "Fügen Sie nach dem < AssemblyName >-Element diese Codezeilen hinzu.")
+![Fügen Sie nach dem Element AssemblyName > die \<folgenden Codezeilen hinzu.](updating-mac-apps-images/csproj3.png)
 
 ### <a name="2-update-project-references"></a>2. Projekt Verweise aktualisieren
 
@@ -118,7 +118,7 @@ Bis zu diesem Zeitpunkt müssen Sie, genau wie die Komponenten, ein beliebiges n
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Aktivieren von 64-Bit-Builds von xamarin. Mac-apps
 
 Für eine Mobile xamarin. Mac-Anwendung, die in die Unified API konvertiert wurde, muss der Entwickler weiterhin das Entwickeln der Anwendung für 64-Bit-Computer aus den Optionen der APP aktivieren. Ausführliche Anweisungen zum Aktivieren von 64-Bit-Builds finden Sie im Dokument " **Aktivieren von 64-Bit-Builds von xamarin. Mac-apps** " des Dokuments mit der [32/64-Bit-Plattform](~/cross-platform/macios/32-and-64/index.md)
-    
+
 ## <a name="finishing-up"></a>Wird fertiggestellt
 
 Unabhängig davon, ob Sie die automatische oder manuelle Methode zum Konvertieren Ihrer xamarin. Mac-Anwendung aus dem klassischen Modell in die vereinheitlichten APIs verwenden möchten, gibt es mehrere Instanzen, die einen weiteren manuellen Eingriff erfordern. Informationen zu bekannten Problemen und Arbeitsaufgaben finden Sie [in den Tipps zum Aktualisieren von Code auf das Unified API](~/cross-platform/macios/unified/updating-tips.md) Dokument.

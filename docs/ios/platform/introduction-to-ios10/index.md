@@ -4,15 +4,15 @@ description: In diesem Artikel werden alle neuen und geänderten APIs und Featur
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: edc585364df2e0b2129135e7bf5977c33a77a6e0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 465c8df864669ad47acd47ae380574e247a0acd6
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647422"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292866"
 ---
 # <a name="introduction-to-ios-10"></a>Einführung in iOS 10
 

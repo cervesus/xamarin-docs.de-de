@@ -4,15 +4,15 @@ description: In diesem Dokument werden die wichtigsten Konzepte beschrieben, die
 ms.prod: xamarin
 ms.assetid: 99EC5C1E-484F-4371-8555-58C9F60DE37F
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: bce2c1e543084ea80908946b1e37e43cf53c1676
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 797bc4199b79944c7b2b6e9c939e2584bb21246a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227347"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292566"
 ---
 # <a name="understanding-sirikit-concepts"></a>Grundlegendes zu SiriKit-Konzepten
 
@@ -95,7 +95,7 @@ _Bedienungs Mein bester PAL-Bobo._<br />
 
 Außerdem gibt es viele Möglichkeiten, wie Siri auf eine Anforderung reagieren kann, und zwar basierend auf der Art der Anforderung:
 
-- **Durch die Verwendung der Schaltfläche "Home** " (Start Schaltfläche) werden mehr visuelle Antworten mit eingeschränktem verbalen Feedback
+- **Durch die Verwendung der Schaltfläche "Home" (Start Schaltfläche** ) werden mehr visuelle Antworten mit eingeschränktem verbalen Feedback
 - **Von "Hey Siri"** -Siri ist eher verbal und bietet weniger visuelle Antworten.
 
 Siri ist auch darauf abgestimmt, den Barrierefreiheits Anforderungen des Benutzers gerecht zu werden und auf der Grundlage dieser Anforderungen zu interagieren.
@@ -182,7 +182,7 @@ Die häufigste Lösungs Antwort von der APP ist **erfolgreich**, was bedeutet, d
 
 Es kann vorkommen, dass die APP sicherstellen muss, dass eine bestimmte Anforderung mit der richtigen Information übereinstimmt, die Sie kennt. In diesen Fällen sendet Sie eine **confirmationrequired** -Antwort, um dem Benutzer eine Ja-oder keine Frage zu stellen, z. b. *"Nachricht an Bobo das großartige senden"* .
 
-Möglicherweise gibt es in anderen Fällen, in denen die APP den Benutzer benötigt, eine kurze Liste von Optionen auszuwählen. In diesem Fall stellt die APP eine mehrdeutigkeits Antwort mit einer Liste von zwei bis zehn Optionen bereit, aus denen der Benutzer auswählen kann:
+Möglicherweise gibt es in anderen Fällen, in denen die APP den Benutzer benötigt, eine kurze Liste von Optionen auszuwählen. In diesem Fall stellt die APP eine **mehrdeutigkeits** Antwort mit einer Liste von zwei bis zehn Optionen bereit, aus denen der Benutzer auswählen kann:
 
 ```csharp
 Who do you want to message?

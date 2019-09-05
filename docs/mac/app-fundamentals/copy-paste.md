@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit dem Zwischenablage erläute
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 43da869cfdb4ccbf5fcd8836a6fa5ca5ca732bfa
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 42ac6c9c729498ad4b70e1e209d63c1ec2e11f8d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199888"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291219"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Kopieren und Einfügen in xamarin. Mac
 
@@ -547,7 +547,7 @@ Von dort aus wird die `ImageDocument` Klasseninstanz dieses Fensters aufgerufen,
 window.Document.CopyImage (sender);
 ```
 
-Es sollen nur **Ausschneide**-, **Kopier** -und Einfügemenü Elemente verfügbar sein, wenn im Standard-Zwischenablage oder im Bildbereich des aktuellen aktiven Fensters Bild Daten vorhanden sind.
+Es sollen nur **Ausschneide** **-,** **Kopier** -und Einfügemenü Elemente verfügbar sein, wenn im Standard-Zwischenablage oder im Bildbereich des aktuellen aktiven Fensters Bild Daten vorhanden sind.
 
 Fügen Sie dem xamarin. Mac-Projekt eine **EditMenuDelegate.cs** -Datei hinzu, und machen Sie Sie wie folgt:
 
@@ -659,9 +659,9 @@ In ihrer einfachsten Form werden mithilfe von "pasteboards" Daten innerhalb eine
 
 Ein Zwischenablage kann öffentlich oder privat sein und kann für eine Vielzahl von Zwecken innerhalb einer Anwendung oder zwischen mehreren Apps verwendet werden. macOS bietet mehrere Standard-pasteboards, von denen jede über eine bestimmte, klar definierte Verwendung verfügt:
 
-- `NSGeneralPboard`: Das Standard-Zwischenablage für **Ausschneide**- , **Kopier** -und Einfügevorgänge.
-- `NSRulerPboard`-Unterstützt **Ausschneide**- , **Kopier** -und Einfügevorgänge für **Line**
-- `NSFontPboard`-Unterstützt **Ausschneide**- , **Kopier** - `NSFont` und Einfügevorgänge für Objekte
+- `NSGeneralPboard`: Das Standard-Zwischenablage für Ausschneide- **,** **Kopier** -und **Einfügevorgänge**.
+- `NSRulerPboard`-Unterstützt **Ausschneide**- **,** **Kopier** -und Einfügevorgänge für **Line**
+- `NSFontPboard`-Unterstützt Ausschneide- **,** **Kopier** - `NSFont` und **Einfügevorgänge**für Objekte
 - `NSFindPboard`: Unterstützt anwendungsspezifische Such Bereiche, die Suchtext gemeinsam verwenden können.
 - `NSDragPboard`-Unterstützt **Drag & Drop** -Vorgänge.
 

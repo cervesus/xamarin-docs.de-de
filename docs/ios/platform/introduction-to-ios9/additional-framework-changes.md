@@ -4,15 +4,15 @@ description: In diesem Dokument werden zusätzliche in ios 9 eingeführte Framew
 ms.prod: xamarin
 ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 886a6145851720c088e39818b3a6e42a7b66e4bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 706efdd9cb39db63ab0c7b9cd4404b7b84f4c14b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654403"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292405"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Weitere Änderungen an IOS 9-Frameworks
 
@@ -78,8 +78,8 @@ Apple umfasste die folgenden Änderungen am Foundation Framework in ios 9:
 
 Die folgenden Änderungen wurden an der [NSBundle](xref:Foundation.NSBundle) -Klasse für IOS 9 vorgenommen:
 
-* `GetPreservationPriorityForTag (NSString tag)`-Ruft die aktuelle Beibehaltungs Priorität für Ressourcen mit dem angegebenen Tag ab. Gültige Werte liegen im Bereich `0.0` von `1.0`, Ressourcen mit der niedrigsten Priorität werden zuerst gelöscht.
-* `SetPreservationPriorityForTag (double priority, NSSet tags)`: Legt die aktuelle Beibehaltungs Priorität für Ressourcen mit den angegebenen Tags fest. Gültige Werte liegen im Bereich `0.0` von `1.0`, Ressourcen mit der niedrigsten Priorität werden zuerst gelöscht.
+- `GetPreservationPriorityForTag (NSString tag)`-Ruft die aktuelle Beibehaltungs Priorität für Ressourcen mit dem angegebenen Tag ab. Gültige Werte liegen im Bereich `0.0` von `1.0`, Ressourcen mit der niedrigsten Priorität werden zuerst gelöscht.
+- `SetPreservationPriorityForTag (double priority, NSSet tags)`: Legt die aktuelle Beibehaltungs Priorität für Ressourcen mit den angegebenen Tags fest. Gültige Werte liegen im Bereich `0.0` von `1.0`, Ressourcen mit der niedrigsten Priorität werden zuerst gelöscht.
 
 Weitere Informationen finden Sie in der Referenz zu [NSBundle](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle)von Apple.
 
@@ -159,7 +159,7 @@ Apple enthielt die folgenden Änderungen am [MapKit](xref:MapKit) -Framework in 
 - Die Suchergebnisse, die von MapKit und der [clgeocoder](xref:CoreLocation.CLGeocoder) -Klasse zurückgegeben werden, können auch die Zeitzone des Ergebnisses bereitstellen.
 - Sie können nun mit der-Eigenschaft der [mkannotationview](xref:MapKit.MKAnnotationView) -Klasse `DetailCalloutAccessoryView` die von ihrer IOS-App dargestellten Karten Anmerkungen vollständig anpassen.
 
-Weitere Informationen zum Arbeiten mit Zuordnungen und Anmerkungen finden Sie [in der Dokumentation](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder) zu den [IOS-Karten](~/ios/user-interface/controls/ios-maps/index.md) und exemplarischen Vorgehensweisen zum Untersuchen von [Anmerkungen und Überlagerungen in MapKit](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md) .
+Weitere Informationen zum Arbeiten mit Zuordnungen und Anmerkungen finden Sie [in der Dokumentation zu den](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder) [IOS-Karten](~/ios/user-interface/controls/ios-maps/index.md) und exemplarischen Vorgehensweisen zum Untersuchen von [Anmerkungen und Überlagerungen in MapKit](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md) .
 
 ## <a name="passkit-framework-additions"></a>Passkit Framework-Ergänzungen
 

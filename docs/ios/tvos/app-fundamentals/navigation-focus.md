@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Konzept des Fokus behandelt und erläute
 ms.prod: xamarin
 ms.assetid: DD72E95F-AE9B-47D2-B132-5FA5FBD8026E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: a65509184611ae8fc4102f7c4f198cef7a5ff9d2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fdf675e37bec07ef03576313befbaa9309ab9349
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645488"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291575"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Arbeiten mit der tvos-Navigation und dem Fokus in xamarin
 
@@ -44,9 +44,9 @@ Mit jedem neuen Bildschirm navigiert der Benutzer tiefer zu diesem Stapel von Bi
 Apple empfiehlt Folgendes, wenn Sie die Navigation für Ihre tvos-App entwerfen:
 
 - **Layout Ihrer Navigation, um das Auffinden von Inhalten schnell und einfach zu gestalten** , wenn Sie mit der geringsten Anzahl von Abzweigungen auf Inhalte in ihrer App zugreifen möchten, auf die Sie wie möglich klickt. Vereinfachen Sie die Navigation, und organisieren Sie Inhalte für die minimale Anzahl von Bildschirmen.
-- **Erstellen einer fließenden Benutzeroberfläche mithilfe** der Toucheingabe: Stellen Sie sicher, dass ein Benutzer mit minimaler Reibung zwischen _fokussierbaren Elementen_ wechseln kann, indem er die geringste Anzahl von Gesten ermöglicht.
+- **Erstellen einer fließenden Benutzeroberfläche mithilfe der Toucheingabe** : Stellen Sie sicher, dass ein Benutzer mit minimaler Reibung zwischen _fokussierbaren Elementen_ wechseln kann, indem er die geringste Anzahl von Gesten ermöglicht.
 - **Design mit Fokus** : da der Benutzer über den Raum mit Inhalten interagiert, muss er den Fokus auf ein Benutzeroberflächen Element verschieben, bevor es mit der Siri-Remote Interaktion interagiert. Benutzer werden mit Ihrer APP frustriert, wenn Sie zu viele Gesten für Sie benötigen, um Ihre Ziele zu erreichen.
-- **Bereitstellen der rückwärts Navigation über die Menü** Schaltfläche: um eine einfache und vertraute Benutzerfunktion zu erstellen, können Benutzer mithilfe der **Menü** Schaltfläche der Siri-Remote Navigation rückwärts navigieren. Wenn Sie die **Menü** Schaltfläche drücken, müssen Sie immer zum vorherigen Bildschirm zurückkehren oder zum Hauptmenü der APP zurückkehren. Auf der obersten Ebene der APP sollte durch Drücken der **Menü** Schaltfläche zum Apple TV-Startbildschirm zurückzukehren.
+- **Bereitstellen der rückwärts Navigation über die Menü Schaltfläche** : um eine einfache und vertraute Benutzerfunktion zu erstellen, können Benutzer mithilfe der **Menü** Schaltfläche der Siri-Remote Navigation rückwärts navigieren. Wenn Sie die **Menü** Schaltfläche drücken, müssen Sie immer zum vorherigen Bildschirm zurückkehren oder zum Hauptmenü der APP zurückkehren. Auf der obersten Ebene der APP sollte durch Drücken der **Menü** Schaltfläche zum Apple TV-Startbildschirm zurückzukehren.
 - **Vermeiden Sie die Anzeige der Schaltfläche "zurück** ", da durch Drücken der **Menü** Schaltfläche auf der Siri-Remote Seite der Bildschirm Stapel rückwärts navigiert wird. vermeiden Sie ein zusätzliches Steuerelement, das dieses Verhalten dupliziert. Eine Ausnahme von dieser Regel ist das erwerben von Bildschirmen oder Bildschirmen mit destruktiven Aktionen (z. b. das Löschen von Inhalt), wenn auch eine Schaltfläche **Abbrechen** angezeigt werden soll.
 - Zeigen Sie große Auflistungen **auf einem einzelnen Bildschirm anstelle von vielen** an. die Siri-Remote wurde so entworfen, dass Sie eine umfangreiche Sammlung von Inhalten schnell und einfach mithilfe von Gesten durchläuft. Wenn Ihre APP mit einer großen Auflistung von Fokus verwendbaren Elementen funktioniert, sollten Sie Sie auf einem einzelnen Bildschirm aufbewahren, anstatt Sie in viele Bildschirme zu unterteilen, die eine größere Navigation im Benutzer Teil erfordern.
 - **Verwenden Sie Standard Steuerelemente für die Navigation** . verwenden Sie zum Erstellen einer einfachen und vertrauten Benutzer Darstellung, soweit möglich, integrierte `UIKit` Steuerelemente wie z. b. Seiten Steuerelemente, Registerkarten, segmentierte Steuerelemente, Tabellen Sichten, Sammlungs Sichten und geteilte Ansichten für die Navigation Ihrer APP. Da Benutzer bereits mit diesen Elementen vertraut sind, können Sie intuitiv durch Ihre APP navigieren.
@@ -74,7 +74,7 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Fokus und Auswahl:
 - **Verwenden Sie "Parser", um fokussierte Elemente reaktionsfähig zu machen** : kleine, zirkuläre Gesten auf dem Siri-Remote Ergebnis in sanfter echtzeitbewegung des Fokus Elements. Dieser Teil des [Effekts](#Focus-and-Parallax) ist in `UIKit` _geschichtete Bilder_ integriert, um dem Benutzer einen Eindruck von der Verbindung mit dem fokussierten Element zu vermitteln.
 - **Erstellen Sie Fokussier Bare Elemente der entsprechenden Größe** : große Elemente mit ausreichendem Abstand sind einfacher auszuwählen und können als kleinere Elemente navigiert werden.
 - **Design der Benutzeroberfläche, um entweder fokussiert oder nicht fokussiert zu** sein. in der Regel stellt Apple TV das fokussierte Element dar, indem es seine Größe vergrößert. Stellen Sie sicher, dass die Benutzeroberflächen Elemente Ihrer Apps in jeder Präsentations Größe hervorragend aussehen, und stellen Sie, falls erforderlich, Ressourcen für Elemente mit größerer Größe bereit.
-- **Stellen Sie die Fokus Änderungen** in der Animation auf fließende Weise ein, um **zwischen Elementen mit** Fokus und **ohne Fokus** zu wechseln, um die Übergänge von jarringvorgängen zu erhalten.
+- **Stellen Sie die Fokus Änderungen** in der Animation auf fließende Weise ein, um **zwischen Elementen mit Fokus und** **ohne Fokus** zu wechseln, um die Übergänge von jarringvorgängen zu erhalten.
 - **Cursor nicht anzeigen** : Benutzer erwarten, dass Sie die Benutzeroberfläche Ihrer App mithilfe des Fokus navigieren, und nicht durch Verschieben eines Cursors auf den Bildschirm. Die Benutzeroberfläche sollte immer das Fokus Modell verwenden, um eine konsistente Benutzeroberfläche zu bieten.
 
 <a name="Working-with-Focus" />

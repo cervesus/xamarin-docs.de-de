@@ -4,15 +4,15 @@ description: In diesem Dokument wird der grafische und erweiterte Eigenschaften 
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ca3622e01d6c7b616dc115b89ffcccf64022b1a1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ac1ded56137cf85ec5852358f75240176dbc7671
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527143"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286795"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Arbeiten mit Eigenschaften Listen in xamarin. IOS
 
@@ -55,7 +55,7 @@ Diese werden in den nächsten Abschnitten ausführlicher beschrieben.
 ### <a name="ios-application-target"></a>IOS-Anwendungs Ziel
 
 Dieser Abschnitt enthält wichtige Informationen, die Ihre Anwendung beschreiben.
-Der hier gespeicherte Bezeichner muss mit dem Bündel Bezeichner identisch sein, der in iTunes Connect (für App Store-Apps) und auch in der APP-ID-Liste des IOS-Bereitstellungs Portals und in den Entwicklungs-und Verteilungs Zertifikaten eingegeben wird
+Der hier gespeicherte **Bezeichner** muss mit dem Bündel Bezeichner identisch sein, der in iTunes Connect (für App Store-Apps) und auch in der APP-ID-Liste des IOS-Bereitstellungs Portals und in den Entwicklungs-und Verteilungs Zertifikaten eingegeben wird
 
  [![](property-lists-images/image24.png "IOS-Anwendungs Ziel")](property-lists-images/image24.png#lightbox)
 
@@ -67,7 +67,7 @@ Die Abschnitts Informationen zur Geräte **Bereitstellung** werden selektiv ange
 
 ### <a name="supported-device-orientations"></a>Unterstützte Geräte Ausrichtungen
 
- **Unterstützte Geräte Ausrichtungen** steuern, wie die APP auf die Geräte Rotation antwortet. Es ist sehr üblich, dass iPhone/iPad-Apps nurdas Hochformat oder alles, aber einen **aufwärts**unterstützen. Im Allgemeinen sollten alle iPad-Anwendungen außer Games alle Ausrichtungen unterstützen.
+ **Unterstützte Geräte Ausrichtungen** steuern, wie die APP auf die Geräte Rotation antwortet. Es ist sehr üblich, dass iPhone/iPad- **Apps nur das**Hochformat oder alles, aber einen **aufwärts**unterstützen. Im Allgemeinen sollten alle iPad-Anwendungen außer Games alle Ausrichtungen unterstützen.
 
 ### <a name="status-bar-styles"></a>StatusBar-Stile
 
@@ -130,7 +130,7 @@ Ein URL-Schema Name (auch als Protokoll bezeichnet) ist der erste Teil der URL. 
 
 
 
-Weitere Informationen zum Implementieren von benutzerdefinierten URL-Schemas finden Sie im [Abschnitt Implementieren von benutzerdefinierten URL](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html) -Schemas in Apple in diesem Handbuch.
+Weitere Informationen zum Implementieren von benutzerdefinierten URL-Schemas finden Sie im [Abschnitt Implementieren von benutzerdefinierten URL-Schemas](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html) in Apple in diesem Handbuch.
 
 ## <a name="source-panel"></a>Quell Panel
 

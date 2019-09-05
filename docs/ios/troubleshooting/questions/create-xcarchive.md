@@ -1,42 +1,42 @@
 ---
-title: Ist es möglich, ein xcarchive-Archivs in Visual Studio zu erstellen?
+title: Ist es möglich, ein. xcarchive-Archiv aus Visual Studio zu erstellen?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 417D84FB-1BA9-4DB9-A683-66E960BA3D0D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 952777b3178b82657c8f64d5882c532c188c7a79
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d35827b00a4ccc9bbe3e71444536425e4e1c3b1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61422021"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288120"
 ---
-# <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>Ist es möglich, ein xcarchive-Archivs in Visual Studio zu erstellen?
+# <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>Ist es möglich, ein. xcarchive-Archiv aus Visual Studio zu erstellen?
 
-## <a name="for-xamarin-4"></a>Für Xamarin 4
+## <a name="for-xamarin-4"></a>Für xamarin 4
 
-Ab Xamarin 4.x, es ist jetzt möglich, erstellen Sie eine `.xcarchive` von Windows durch Festlegen der `ArchiveOnBuild` Eigenschaft `true`. Verwenden Sie beispielsweise `MSBuild` in der Befehlszeile:
+Ab xamarin 4. x ist es nun möglich, eine `.xcarchive` aus Windows zu erstellen, indem die `ArchiveOnBuild` -Eigenschaft auf `true`festgelegt wird. Verwenden Sie `MSBuild` z. b. in der Befehlszeile:
 
 ```bash
 msbuild /p:Configuration=Release /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhone /p:ArchiveOnBuild=true /t:"Build" MyProject.csproj
 ```
 
-Die `.xcarchive` platziert werden, der `$HOME/Library/Developer/Xcode/Archives` Verzeichnis auf dem Mac-buildhost, die sowohl Xcode und Xamarin Studio zum Anzeigen, die zuvor erstellte Archive zu suchen.
+Die `.xcarchive` wird in das `$HOME/Library/Developer/Xcode/Archives` Verzeichnis auf dem Mac-buildhost platziert, das sowohl von Xcode als auch Xamarin Studio durchsuchen, um zuvor erstellten Archive anzuzeigen.
 
-Finden Sie in diesem [Xamarin-Foren Posten](https://forums.xamarin.com/discussion/comment/156635/#Comment_156635) für einige weitere Hinweise zu kurze der `ArchiveOnBuild` Eigenschaft. Finden Sie in der Dokumentation zu [Xamarin.iOS-Befehlszeilenbuilds auf Windows](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Weitere Einzelheiten zu den `ServerAddress` und `ServerUser` Eigenschaften.
+In diesem [xamarin Forums-Beitrag](https://forums.xamarin.com/discussion/comment/156635/#Comment_156635) finden Sie einige kurze Hinweise `ArchiveOnBuild` zur-Eigenschaft. Weitere Informationen zu den `ServerAddress` -und- `ServerUser` Eigenschaften finden Sie in der Dokumentation zu [xamarin. IOS-Befehlszeilenbuilds unter Windows](~/ios/get-started/installation/windows/connecting-to-mac/index.md) .
 
 * * *
 
-## <a name="for-xamarin-3-and-earlier"></a>Für Xamarin, 3 oder höher
+## <a name="for-xamarin-3-and-earlier"></a>Für xamarin 3 und früher
 
-Die Xamarin-3.x-Visual Studio-Erweiterung bietet einen Mechanismus zum erzeugen keine `.xcarchive` archiviert. Dies bedeutet, dass die Logik zum Erstellen `.xcarchive` archiviert in Xamarin Studio unter Mac [wird hier beschrieben](https://bugzilla.xamarin.com/show_bug.cgi?id=35#c5), sodass Sie wahrscheinlich Ihre eigenen erstellen konnte `.xcarchive` manuell, wenn eingesetzt werden.
+Die Visual Studio-Erweiterung xamarin 3. x stellt keinen Mechanismus zum Erstellen `.xcarchive` von Archiven bereit. Die Logik, die zum Erstellen `.xcarchive` von Archiven in Xamarin Studio auf dem Mac verwendet wird, [wird hier beschrieben](https://bugzilla.xamarin.com/show_bug.cgi?id=35#c5), sodass Sie ggf `.xcarchive` . ihre eigene erstellen können, wenn gewünscht.
 
-Es ist erwähnenswert, dass Sie nicht benötigen jedoch eine `.xcarchive` an den App Store übermitteln. Sie können eine IPA-Datei übermitteln, solange sie mit einer App Store-Verteilungsprofil (keine Ad-hoc-Verteilung-Clientprofil) signiert wird.
+Es ist jedoch erwähnenswert, dass Sie keine `.xcarchive` zum Übermitteln an den App Store benötigen. Sie können eine IPA-Datei übermitteln, sofern Sie mit einem App Store-Verteilungs Profil (kein Ad-hoc-Verteilungs Profil) signiert ist.
 
-Sie können sogar noch zippen Sie den `.app` Bundle (die mit einem App Store-Verteilungsprofil signiert ist), und Sende Sie ab `.zip` Datei an den appstore.
+Tatsächlich können Sie sogar einfach das `.app` Paket (das mit einem App Store-Verteilungs Profil signiert ist) packen und diese `.zip` Datei an den App Store übermitteln.
 
-In beiden Fällen können Sie den Application Loader-app zum Übermitteln der app (anstelle von Xcode).
+In beiden Fällen können Sie die Anwendungs Lade Anwendung verwenden, um die APP (anstelle von Xcode) zu übermitteln.
 

@@ -2,15 +2,15 @@
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
 title: 'WPF im Vergleich zu Xamarin. Forms: Ähnlichkeiten & Unterschiede'
 description: Dieses Dokument vergleicht und vergleicht WPF mit xamarin. Forms. Es werden Steuerungs Vorlagen, XAML, Bindungs Infrastruktur, Datenvorlagen, ItemsControl, UserControl, Navigation und URL-Navigation erläutert.
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 149636719c7f8046b8a32d8d2f4157b663388cb1
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: d23b449382183b0385eac38c0b9205e48dbe0a34
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227611"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290412"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF im Vergleich zu Xamarin. Forms: Ähnlichkeiten & Unterschiede
 
@@ -177,4 +177,4 @@ Der `NavigationPage` ist der gängigste Ansatz, und jede Seite verfügt über `N
 
 ### <a name="url-navigation"></a>URL-Navigation
 
-WPF ist eine Desktop orientierte Technologie, die Befehlszeilenparameter zum direkten Startverhalten annehmen kann. Xamarin. Forms kann [Deep URL](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) -Verknüpfungen verwenden, um zu einer Seite beim Start zu springen.
+WPF ist eine Desktop orientierte Technologie, die Befehlszeilenparameter zum direkten Startverhalten annehmen kann. Xamarin. Forms kann [Deep URL-Verknüpfungen](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) verwenden, um zu einer Seite beim Start zu springen.

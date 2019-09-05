@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie benutzerdefinierte Steuere
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 537816213208ed6e71f0986558c9a94a327759e2
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 24e4113f0437c626ba93f12c1124407c472fef8d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227905"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284943"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Erstellen von benutzerdefinierten Steuerelementen in xamarin. Mac
 
@@ -157,7 +157,7 @@ public bool Value {
 
 Wenn sich der Status des Schalters ändert, benötigen wir eine Möglichkeit, die Benutzeroberfläche zu aktualisieren. Dazu erzwingen Sie, dass das Steuerelement die Benutzeroberfläche mit `NeedsDisplay = true`neu zeichnet.
 
-Wenn für das Steuerelement mehr als ein/aus-Status (z. b. ein Switch mit mehreren Zuständen mit drei Positionen) benötigt wird, könnte eine-Aufzählung verwendet werden, um den Status zu verfolgen. In unserem Beispiel wird ein einfacher boolescher Code dargestellt.
+Wenn für das Steuerelement mehr als ein/aus-Status (z. b. ein Switch mit mehreren Zuständen mit drei Positionen) benötigt wird, könnte eine-Aufzählung verwendet werden **, um den** Status zu verfolgen. In unserem Beispiel wird ein einfacher **boolescher** Code dargestellt.
 
 Wir haben auch eine Hilfsmethode hinzugefügt, um den Status des Schalters zwischen on und Off auszutauschen:
 
@@ -206,13 +206,13 @@ public override void DrawRect (CGRect dirtyRect)
 }
 ```
 
-Die visuelle Darstellung des Steuer Elements wird angepasst, wenn sich der Zustand ändert (z. b. durch ein-oder **ausschalten**). Wenn sich der Status ändert, können wir mit dem `NeedsDisplay = true` Befehl erzwingen, dass das Steuerelement für den neuen Zustand neu gezeichnet wird.
+Die visuelle Darstellung des Steuer Elements wird **angepasst, wenn** sich der Zustand ändert (z. b. durch ein-oder **ausschalten**). Wenn sich der Status ändert, können wir mit dem `NeedsDisplay = true` Befehl erzwingen, dass das Steuerelement für den neuen Zustand neu gezeichnet wird.
 
 <a name="Responding-to-User-Input" />
 
 ### <a name="responding-to-user-input"></a>Reagieren auf Benutzereingaben
 
-Es gibt zwei grundlegende Möglichkeiten, Benutzereingaben zum benutzerdefinierten Steuerelement hinzuzufügen: Über **Schreiben** von mousehandlerroutinen oder **Gesten erkenzern**. Welche Methode wir verwenden, basiert auf der Funktionalität, die von unserem Steuerelement benötigt wird.
+Es gibt zwei grundlegende Möglichkeiten, Benutzereingaben zum benutzerdefinierten Steuerelement hinzuzufügen: Über **Schreiben von mousehandlerroutinen** oder **Gesten erkenzern**. Welche Methode wir verwenden, basiert auf der Funktionalität, die von unserem Steuerelement benötigt wird.
 
 > [!IMPORTANT]
 > Für ein beliebiges benutzerdefiniertes Steuerelement, das Sie erstellen, sollten Sie entweder **Überschreibungs Methoden** _oder_ **Gesten Erkennungs**Tools verwenden, aber nicht beides gleichzeitig, da Sie miteinander in Konflikt stehen können.
@@ -221,7 +221,7 @@ Es gibt zwei grundlegende Möglichkeiten, Benutzereingaben zum benutzerdefiniert
 
 #### <a name="handling-user-input-with-override-methods"></a>Behandeln von Benutzereingaben mit Überschreibungs Methoden
 
-Objekte, die von `NSControl` (oder `NSView`) erben, verfügen über mehrere Überschreibungs Methoden zur Behandlung von Maus-oder Tastatureingaben. In unserem Beispiel Steuerelement möchten wir den Zustand des Schalters zwischen ein- und **ausschalten** , wenn der Benutzer mit der linken Maustaste auf das Steuerelement klickt. Wir können der- `NSFlipSwitch` Klasse die folgenden Überschreibungs Methoden hinzufügen, um Folgendes zu behandeln:
+Objekte, die von `NSControl` (oder `NSView`) erben, verfügen über mehrere Überschreibungs Methoden zur Behandlung von Maus-oder Tastatureingaben. In unserem Beispiel Steuerelement möchten wir den Zustand des Schalters **zwischen ein** -und **ausschalten** , wenn der Benutzer mit der linken Maustaste auf das Steuerelement klickt. Wir können der- `NSFlipSwitch` Klasse die folgenden Überschreibungs Methoden hinzufügen, um Folgendes zu behandeln:
 
 ```csharp
 #region Mouse Handling Methods

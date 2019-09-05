@@ -1,36 +1,36 @@
 ---
 title: Microsoft Azure Active Directory
-description: Dieses Dokument beschreibt, wie Azure Active Directory zum Authentifizieren von Benutzern in mobile Anwendungen mit Xamarin erstellt wurde.
+description: In diesem Dokument wird beschrieben, wie Sie mit Azure Active Directory Benutzer in mobilen Anwendungen authentifizieren, die mit xamarin erstellt wurden.
 ms.prod: xamarin
 ms.assetid: 0A74766A-B583-47AF-986C-FEA8F5CBF9CD
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: b9a136c3c5e0e9edff063de5a7eab8e54f52ef92
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c8fa3e6f9e941e0c48570f5d691e7ef83eeffae8
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187199"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287634"
 ---
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
 
 
-Azure Active Directory können Entwickler sichere Ressourcen wie z. B. Dateien, Verknüpfungen und Web-APIs, Office 365 und mehr mit dem gleichen organisationskonto an, die Mitarbeiter verwenden, melden Sie sich mit ihren Systemen oder Überprüfen Sie ihre e-Mails.
+Azure Active Directory ermöglicht es Entwicklern, Ressourcen wie z. b. Dateien, Links und Web-APIs, Office 365 und mehr zu schützen, indem dasselbe Organisations Konto verwendet wird, mit dem sich die Mitarbeiter bei ihren Systemen anmelden oder Ihre e-Mails überprüfen.
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Führen Sie die [Anweisungen zum Einstieg in](~/cross-platform/data-cloud/active-directory/get-started/index.md) zum Konfigurieren von Azure-Portal und Active Directory-Authentifizierung zu Ihrer Xamarin-apps hinzufügen.
+Befolgen Sie die [Anweisungen](~/cross-platform/data-cloud/active-directory/get-started/index.md) in den ersten Schritten, um die Azure-Portal zu konfigurieren und ihren xamarin-apps Active Directory Authentifizierung hinzuzufügen.
 
-1. [Registrieren bei Azure Active Directory](~/cross-platform/data-cloud/active-directory/get-started/register.md) auf die *windowsazure.com* Portal, klicken Sie dann
+1. [Registrieren bei Azure Active Directory](~/cross-platform/data-cloud/active-directory/get-started/register.md) im *windowsazure.com* -Portal, dann
 2. [Konfigurieren von Diensten](~/cross-platform/data-cloud/active-directory/get-started/configure.md).
-3. Verknüpfen Sie mit einer der folgenden:
+3. Richten Sie einen der folgenden Schritte ein:
 
 ## <a name="office-365"></a>Office 365
 
-Nachdem Sie Active Directory-Authentifizierung für eine app hinzugefügt haben, können Sie auch die Anmeldeinformationen für die Interaktion mit Office 365 verwenden.
+Nachdem Sie einer APP Active Directory Authentifizierung hinzugefügt haben, können Sie auch die Anmelde Informationen für die Interaktion mit Office 365 verwenden.
 
 ## <a name="graph-api"></a>Graph-API
 
-Erfahren Sie, wie Sie den Zugriff auf die [Graph-API](~/cross-platform/data-cloud/active-directory/graph.md) mithilfe von Xamarin (behandelt auch unseren [Blog](https://blog.xamarin.com/authenticate-xamarin-mobile-apps-using-azure-active-directory/)).
+Erfahren Sie, wie Sie mit xamarin auf die [Graph-API](~/cross-platform/data-cloud/active-directory/graph.md) zugreifen (auch in unserem [Blog](https://blog.xamarin.com/authenticate-xamarin-mobile-apps-using-azure-active-directory/)beschrieben).
 

@@ -4,15 +4,15 @@ description: Dieses Dokument bietet eine Einführung in Storyboards in xamarin. 
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 86198c7a2fa0460070d012afd0b7b9d078d2a5f3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 145c616cc0af8156f10b9db1d3fa36264cecd18b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528564"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284331"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in xamarin. IOS
 
@@ -69,8 +69,8 @@ Es gibt verschiedene Arten von Übergängen, die jeweils steuern, wie ein neuer 
 - **Anzeigen/pushen** – ein Push-Ziel fügt dem Navigations Stapel den Ansichts Controller hinzu. Dabei wird davon ausgegangen, dass der Ansichts Controller, von dem der Push stammt, Teil desselben Navigations Controllers wie der Ansichts Controller ist, der dem Stapel hinzugefügt wird. Dies geschieht genauso wie `pushViewController` , und wird im Allgemeinen verwendet, wenn zwischen den Daten auf den Bildschirmen eine Beziehung besteht. Die Verwendung von Push-abgue bietet Ihnen den Luxus, eine Navigationsleiste mit einer Schaltfläche "zurück" und einem Titel zu jeder Ansicht auf dem Stapel hinzuzufügen, sodass drilldownnavigation durch die Ansichts Hierarchie ermöglicht wird.
 - **Modal** – ein modaler segue erstellt eine Beziehung zwischen zwei beliebigen Ansichts Controllern in Ihrem Projekt, wobei die Option eines animierten Übergangs angezeigt wird. Der untergeordnete Ansichts Controller verwirft den übergeordneten Ansichts Controller in der Ansicht vollständig. Im Gegensatz zu einem Push-abgue, der eine Schaltfläche "zurück" für uns hinzufügt. Wenn die Verwendung eines modalen `DismissViewController` seegue verwendet werden muss, um zum vorherigen Ansichts Controller zurückzukehren.
 - **Benutzer** definiert – alle benutzerdefinierten Klassen können als Unterklasse von `UIStoryboardSegue`erstellt werden.
-- Entladen – ein Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade-*-Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
-- Sourbstbston – ein Ressourcen loser Wert gibt die Szene an, die den anfänglichen Ansichts Controller enthält, und daher die Ansicht, die der Benutzer zuerst sehen wird. Sie wird durch den unten gezeigten-Abschnitt dargestellt:  
+- Entladen **– ein** Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade-*-Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
+- **Sourbstbston** – ein Ressourcen loser Wert gibt die Szene an, die den anfänglichen Ansichts Controller enthält, und daher die Ansicht, die der Benutzer zuerst sehen wird. Sie wird durch den unten gezeigten-Abschnitt dargestellt:  
 
     [![](images/sourcelesssegue.png "Ein Quellen loser-Eintrag")](images/sourcelesssegue.png#lightbox)
 
@@ -203,7 +203,7 @@ Der folgende Screenshot zeigt zwei Ansichts Controller auf unserer Entwurfs Ober
 
 4. Später müssen wir unsere Ansichts Controller aus dem Storyboard instanziieren und die Storyboard-ID verwenden, um Sie im Code zu referenzieren. Wenn die Wiederherstellungs-ID entsprechend der Storyboard-ID festgelegt wird, wird sichergestellt, dass der Ansichts Controller ordnungsgemäß neu erstellt wird, wenn der Zustand wieder hergestellt
 
-5. Zurzeit ist nur ein Ansichts Controller vorhanden. Ziehen Sie einen anderen Ansichts Controller auf die Entwurfs Oberfläche. Legen Sieim eigenschaftenpad unter Identität die Klasse und die Storyboard- `PinkViewController`ID auf fest, wie unten dargestellt:
+5. Zurzeit ist nur ein Ansichts Controller vorhanden. Ziehen Sie einen anderen Ansichts Controller auf die Entwurfs Oberfläche. Legen Sie im **eigenschaftenpad**unter Identität die Klasse und die Storyboard- `PinkViewController`ID auf fest, wie unten dargestellt:
 
     [![](images/pinkvcnew.png "Das eigenschaftenpad")](images/pinkvcnew.png#lightbox)
     
@@ -219,7 +219,7 @@ Der folgende Screenshot zeigt zwei Ansichts Controller auf unserer Entwurfs Ober
 
     [![](images/pinkbutton.png "Schaltflächen Name festlegen")](images/pinkbutton.png#lightbox)
 
-Das Storyboard ist vollständig, aber wenn wir das Projekt jetzt bereitstellen, wird ein leerer Bildschirm angezeigt. Das liegt daran, dass wir die IDE weiterhin auffordern müssen, unser Storyboard zu verwenden, und einen Stamm Ansichts Controller einrichten, der als erste Ansicht fungiert. Normalerweise kann dies über unsere Projektoptionen erfolgen, wie oben gezeigt. In diesem Beispiel erzielen wir jedoch dasselbe Ergebnis im Code, indem wir Folgendes zum appdelegaten hinzufügen:
+Das Storyboard ist vollständig, aber wenn wir das Projekt jetzt bereitstellen, wird ein leerer Bildschirm angezeigt. Das liegt daran, dass wir die IDE weiterhin auffordern müssen, unser Storyboard zu verwenden, und einen Stamm Ansichts Controller einrichten, der als erste Ansicht fungiert. Normalerweise kann dies über unsere Projektoptionen erfolgen, wie oben gezeigt. In diesem Beispiel erzielen wir jedoch dasselbe Ergebnis im Code, indem wir Folgendes zum **appdelegaten**hinzufügen:
 
 ```csharp
 public partial class AppDelegate : UIApplicationDelegate
@@ -242,7 +242,7 @@ public partial class AppDelegate : UIApplicationDelegate
     }
 ```
 
-Das ist viel Code, aber nur ein paar Zeilen sind nicht vertraut. Zuerst registrieren wir unser Storyboard beim appdelegaten, indem wir den Namen des Storyboards, **mainstoryboard**, übergeben. Als Nächstes weisen Sie der Anwendung an, einen anfänglichen Ansichts Controller aus dem Storyboard zu instanziieren, indem Sie in unserem Storyboard aufrufen `InstantiateInitialViewController` und diesen Ansichts Controller als root View Controller der Anwendung festlegen. Diese Methode bestimmt den ersten Bildschirm, den der Benutzer sieht, und erstellt eine neue Instanz dieses Ansichts Controllers.
+Das ist viel Code, aber nur ein paar Zeilen sind nicht vertraut. Zuerst registrieren wir unser Storyboard beim **appdelegaten** , indem wir den Namen des Storyboards, **mainstoryboard**, übergeben. Als Nächstes weisen Sie der Anwendung an, einen anfänglichen Ansichts Controller aus dem Storyboard zu instanziieren, indem Sie in unserem Storyboard aufrufen `InstantiateInitialViewController` und diesen Ansichts Controller als root View Controller der Anwendung festlegen. Diese Methode bestimmt den ersten Bildschirm, den der Benutzer sieht, und erstellt eine neue Instanz dieses Ansichts Controllers.
 
 Beachten Sie im projektmappenbereich, dass die IDE `MainViewcontroller.cs` eine-Klasse erstellt `corresponding designer.cs` hat, und ihre, als wir den Klassennamen dem Eigenschaftenpad in Schritt 4 hinzugefügt haben. Wir können sehen, dass diese Klasse einen speziellen Konstruktor erstellt hat, der eine Basisklasse enthält:
 
@@ -337,7 +337,7 @@ Bevor wir beginnen, befolgen Sie die obigen Schritte 1 – 8. In den folgenden S
     
 2. Erstellen Sie einen segue zwischen der Schaltfläche Gehe zu Rosa und dem Ansichts Controller, indem Sie von der *PinkButton-Taste* auf den *pinkviewcontroller*ziehen und bei der Maus auf **Push drücken** . 
 
-3. Klicken Sie auf den Namen, und legen Sie `SegueToPink`ihm den Bezeichner:
+3. Klicken Sie auf den Namen, und legen Sie ihm den *Bezeichner* `SegueToPink`:
 
     [![](images/namesegue.png "Klicken Sie auf den Namen \"*\", und versehen Sie ihn mit dem Bezeichner \"".")](images/namesegue.png#lightbox)  
     

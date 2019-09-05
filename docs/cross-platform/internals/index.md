@@ -1,28 +1,28 @@
 ---
 redirect_url: /xamarin/cross-platform/internals/available-assemblies/
-title: Xamarin-Interna
-description: Dieses Dokument enthält Links zu Leitfäden, die die interne Funktionsweise von Xamarin zu beschreiben. Derzeit verknüpft er mit dem Dokument verfügbaren Assemblys.
+title: Xamarin – Internals
+description: Dieses Dokument ist mit Anleitungen verknüpft, in denen die interne Funktionsweise von xamarin beschrieben wird. Zurzeit verknüpft Sie mit dem Dokument verfügbare Assemblys.
 ms.prod: xamarin
 ms.assetid: 0bec99a9-ab79-4f10-8d7b-35f9338c0728
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: d7c001023cd1f29ac85659235b5954dc8d054562
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 43e06ec1baccefa6184ca19409cf6646d33408d9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61200409"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277589"
 ---
-# <a name="xamarin-internals"></a>Xamarin-Interna
+# <a name="xamarin-internals"></a>Xamarin – Internals
 
-Dieser Abschnitt enthält Dokumente, die einige erweiterte Features von Cross-Platform-Anwendung und die Konzepte zu erläutern.
+Dieser Abschnitt enthält Dokumente, in denen einige erweiterte plattformübergreifende Anwendungs Features und-Konzepte erläutert werden.
 
 ## <a name="available-assembliescross-platforminternalsavailable-assembliesmd"></a>[Verfügbare Assemblys](~/cross-platform/internals/available-assemblies.md)
 
-Xamarin.iOS, Xamarin.Android und Xamarin.Mac alle im Lieferumfang von mehr als ein Dutzend Assemblys. Genau wie Silverlight eine erweiterte Teilmenge der desktop .NET Assemblys ist, ist Xamarin-Plattformen auch eine erweiterte Teilmenge von mehreren Silverlight und desktop .NET-Assemblys.
+Xamarin. IOS, xamarin. Android und xamarin. Mac werden mit mehr als einem Dutzend Assemblys ausgeliefert. Ebenso wie Silverlight eine erweiterte Teilmenge der Desktop-.NET-Assemblys ist, ist xamarin Platforms auch eine erweiterte Teilmenge von mehreren Silverlight-und Desktop-.NET-Assemblys.
 
-Dieses Handbuch enthält eine Liste aller verfügbaren Assemblys, die im Lieferumfang von jeder Plattform und anzeigen, die auf jeder Plattform verwendet werden kann.
+Dieses Handbuch enthält eine Liste aller verfügbaren Assemblys, die mit jeder Plattform ausgeliefert werden, und zeigt, welche auf den einzelnen Plattformen verwendet werden kann.
 
 
 

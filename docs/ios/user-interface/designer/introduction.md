@@ -4,15 +4,15 @@ description: In diesem Leitfaden werden die Xamarin Designer für IOS vorgestell
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: 2f47e655da60c05fe57e5c57b3a3236fee7cbd65
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f37905f483ad31d05276383718a3295d4a288f28
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528656"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285867"
 ---
 # <a name="ios-designer-basics"></a>IOS Designer-Grundlagen
 
@@ -96,7 +96,7 @@ Im **Projektmappen-Explorer**wird durch Navigieren zu **ViewController.cs** und 
 
 - **ViewController.cs** sollte mit benutzerdefiniertem Code aufgefüllt werden, `ViewController` der mit der-Klasse verknüpft ist. In dieser Datei kann die `ViewController` Klasse auf verschiedene IOS-Ansichts Controller-Lebenszyklus Methoden reagieren, die Benutzeroberfläche anpassen und auf Benutzereingaben, wie z. b. Schaltflächen tippen, reagieren.
 
-- **ViewController.Designer.cs** ist eine generierte Datei, die vom IOS-Designer erstellt wurde, um die visuell erstellte Schnittstelle dem Code zuzuordnen. Da Änderungen an dieser Datei überschrieben werden, sollte Sie nicht geändert werden. Mithilfe von Eigenschafts Deklarationen in dieser Datei kann der Code `ViewController` in der-Klasse aufdie im IOS-Designer eingerichteten Steuerelemente zugreifen. Öffnen **ViewController.Designer.cs** zeigt den folgenden Code:
+- **ViewController.Designer.cs** ist eine generierte Datei, die vom IOS-Designer erstellt wurde, um die visuell erstellte Schnittstelle dem Code zuzuordnen. Da Änderungen an dieser Datei überschrieben werden, sollte Sie nicht geändert werden. Mithilfe von Eigenschafts Deklarationen in dieser Datei **kann der**Code `ViewController` in der-Klasse auf die im IOS-Designer eingerichteten Steuerelemente zugreifen. Öffnen **ViewController.Designer.cs** zeigt den folgenden Code:
 
 ```csharp
 namespace Designer
@@ -298,7 +298,7 @@ Beachten Sie, dass beim Auswählen eines Geräts und einer Ausrichtung nur die V
 
 Wenn [Größenklassen](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) [aktiviert](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)sind, wird die Schaltfläche zum **Bearbeiten von Merkmalen** in der erweiterten unteren Symbolleiste angezeigt.  Wenn Sie auf die Schaltfläche " **Merkmale bearbeiten** " klicken, werden Optionen zum Erstellen einer Schnittstellen Variation basierend auf der Größenklasse angezeigt, die vom ausgewählten Gerät und der ausgewählten Ausrichtung Betrachten Sie die folgenden Beispiele:
 
-- Wenn **iPhone SE** / -Hochformat ausgewählt ist, stellt das popover Optionen zum Erstellen einer Schnittstellen Variation für die Klasse Compact Width, Regular Height size bereit. 
+- Wenn **iPhone SE** / -Hochformat ausgewählt**ist, stellt**das popover Optionen zum Erstellen einer Schnittstellen Variation für die Klasse Compact Width, Regular Height size bereit. 
 - Wenn **iPad pro 9,7 "**  / **Landscape** / **Full Screen** " ausgewählt ist, stellt das popover Optionen zum Erstellen einer Schnittstellen Variation für die reguläre Breite, reguläre Height size-Klasse bereit.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)

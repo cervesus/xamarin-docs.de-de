@@ -4,15 +4,15 @@ description: In diesem Dokument wird erläutert, wie Sie native C-Bibliotheken i
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/28/2016
-ms.openlocfilehash: eb49be3e52258864d61521bbe1dc388e9f6d1210
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 75180152c3ed7056102038b9019f8017183c17ee
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198296"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279947"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>Verweisen auf Native Bibliotheken in xamarin. IOS
 
@@ -82,7 +82,7 @@ Wenn Sie die Bibliothek "libmylibrary. a", die Sie aus dem Internet erhalten hab
 - Greifen Sie auf die Methoden aus der Bibliothek zu.
 
 
-Um **die Bibliothek in das Projekt**zu übertragen, wählen Sie das Projekt aus dem Projektmappen-Explorer aus, und drücken Sie **Command + Option + a**. Navigieren Sie zur Datei libmylibrary. a, und fügen Sie Sie dem Projekt hinzu. Wenn Sie dazu aufgefordert werden, geben Sie Visual Studio für Mac oder Visual Studio an, um Sie in das Projekt zu kopieren. Suchen Sie nach dem Hinzufügen des Projekts die Datei libfoo. a, klicken Sie mit der rechten Maustaste darauf , und legen Sie die Buildaktion auf **keine**fest.
+Um **die Bibliothek in das Projekt**zu übertragen, wählen Sie das Projekt aus dem Projektmappen-Explorer aus, und drücken Sie **Command + Option + a**. Navigieren Sie zur Datei libmylibrary. a, und fügen Sie Sie dem Projekt hinzu. Wenn Sie dazu aufgefordert werden, geben Sie Visual Studio für Mac oder Visual Studio an, um Sie in das Projekt zu kopieren. Suchen Sie nach dem Hinzufügen des Projekts die Datei libfoo. a, klicken Sie mit der rechten Maustaste darauf, und legen Sie die **Buildaktion** auf **keine**fest.
 
 Zum **Konfigurieren von xamarin. IOS zum Verknüpfen der Bibliothek**müssen Sie in den Projektoptionen für Ihre endgültige ausführbare Datei (nicht für die Bibliothek selbst, aber das endgültige Programm) das zusätzliche Argument von **IOS-Builds**hinzufügen (diese sind Teil der Projektoptionen), "-gcc_flags". , gefolgt von einer Zeichenfolge in Anführungszeichen, die alle zusätzlichen Bibliotheken enthält, die für das Programm erforderlich sind, z. b.:
 

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie watchos-Tabellen Steuerele
 ms.prod: xamarin
 ms.assetid: 7C14126D-9591-4387-A588-3C4521F11C55
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: f3e991550cd58f20d52bebb208eedec4d8f7e41e
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: d1e5602643ba5578c4bc2a26e6db2d9f49033469
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065681"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291693"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>watchos-Tabellen Steuerelemente in xamarin
 
@@ -27,13 +27,13 @@ Ziehen Sie das **Table** -Steuerelement in eine Szene. Standardmäßig sieht Sie
 
 [![](table-images/add-table-sml.png "Hinzufügen einer Tabelle")](table-images/add-table.png#lightbox)
 
-Geben Sie der Tabelle einen Namen im Feld **Name** des eigenschaftenpad, damit Sie im Code darauf verweisen kann.
+Geben Sie der Tabelle einen Namen im Feld **Name** des **eigenschaftenpad** , damit Sie im Code darauf verweisen kann.
 
 ## <a name="add-a-row-controller"></a>Hinzufügen eines Zeilen Controllers
 
 Die Tabelle enthält automatisch eine einzelne Zeile, die von einem Zeilen Controller dargestellt wird, der standardmäßig ein **Gruppen** Steuerelement enthält.
 
-Um die- **Klasse** für den Zeilen Controller festzulegen, wählen Sie die Zeile in der **Dokument** Gliederung aus, und geben Sie im eigenschaftenpad einen Klassennamen ein:
+Um die- **Klasse** für den Zeilen Controller festzulegen, wählen Sie die Zeile in der **Dokument** Gliederung aus, und geben Sie im **eigenschaftenpad** einen Klassennamen ein:
 
 [![](table-images/add-row-controller-sml.png "Eingeben eines Klassen namens im eigenschaftenpad")](table-images/add-row-controller.png#lightbox)
 
@@ -90,8 +90,8 @@ public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
 
 ### <a name="getcontextforsegue"></a>GetContextForSegue
 
-Ziehen Sie einen Bild-auf dem Storyboard aus der Tabellenzeile in eine andere Szene (halten Sie die STRG-Taste gedrückt).
-Stellen Sie sicher, dass Sie den-Typ auswählen, und geben Sie ihm einen Bezeichner im `secondLevel` eigenschaftenpad (z. b. im folgenden Beispiel).
+Ziehen Sie einen Bild-auf dem Storyboard aus der Tabellenzeile in eine andere Szene (halten **Sie die STRG** -Taste gedrückt).
+Stellen Sie sicher, dass Sie den-Typ auswählen, und geben Sie ihm einen Bezeichner im `secondLevel` **eigenschaftenpad** (z. b. im folgenden Beispiel).
 
 Implementieren Sie im Interface Controller die `GetContextForSegue` -Methode, und geben Sie den Datenkontext zurück, der für die Szene bereitgestellt werden soll, die von der-Methode dargestellt wird.
 
@@ -109,11 +109,11 @@ Diese Daten werden in `Awake` der-Methode an die Ziel Storyboard-Szene übermitt
 
 ## <a name="multiple-row-types"></a>Mehrere Zeilen Typen
 
-Standardmäßig verfügt das Tabellen Steuerelement über einen einzelnen Zeilentyp, den Sie entwerfen können. Zum Hinzufügen von weiteren Zeilen "Vorlagen" verwenden Sie das Feld **Zeilen** im eigenschaftenpad, um weitere Zeilen Controller zu erstellen:
+Standardmäßig verfügt das Tabellen Steuerelement über einen einzelnen Zeilentyp, den Sie entwerfen können. Zum Hinzufügen von weiteren Zeilen "Vorlagen" verwenden Sie das Feld **Zeilen** im **eigenschaftenpad** , um weitere Zeilen Controller zu erstellen:
 
 ![](table-images/prototype-rows1.png "Festlegen der Anzahl von prototypzeilen")
 
-Wenn Sie die **Rows** -Eigenschaft auf **3** festlegen, werden zusätzliche Zeilen Platzhalter erstellt, in die Sie Steuerelemente ziehen können. Legen Sie für jede Zeile den **Klassen** Namen im eigenschaftenpad fest, um sicherzustellen, dass die Row Controller-Klasse erstellt wird.
+Wenn Sie die **Rows** -Eigenschaft auf **3** festlegen, werden zusätzliche Zeilen Platzhalter erstellt, in die Sie Steuerelemente ziehen können. Legen Sie für jede Zeile den **Klassen** Namen im **eigenschaftenpad** fest, um sicherzustellen, dass die Row Controller-Klasse erstellt wird.
 
 ![](table-images/prototype-rows2.png "Die prototypzeilen im Designer")
 

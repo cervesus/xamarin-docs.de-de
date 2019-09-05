@@ -1,29 +1,29 @@
 ---
-title: Problembehandlung von Xamarin.Mac
-description: Dieses Dokument enthält Links, um eine Anleitung, die allgemeine Problembehandlung für die Xamarin.Mac-Entwicklung zu beschreiben und einem anderen Handbuch beschrieben, die von Mmp, das Tool, mit der Assemblys in einer Mac-Anwendung verpackt generierten Fehler enthält.
+title: Problembehandlung bei xamarin. Mac
+description: Dieses Dokument enthält Links zu einem Leitfaden, in dem allgemeine Tipps zur Problembehandlung für die xamarin. Mac-Entwicklung beschrieben werden, sowie eine weitere Anleitung, in der die von MMP generierten Fehler aufgeführt sind.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: EB81B998-6931-4CD3-8BB0-4679D5B5F39A
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: e2868828b7c4fce29413d136db6e9b02b74c10ee
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 341689e53d6654cb68316c17e2f263062cfc1fd5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865814"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292694"
 ---
-# <a name="xamarinmac-troubleshooting"></a>Problembehandlung von Xamarin.Mac 
+# <a name="xamarinmac-troubleshooting"></a>Problembehandlung bei xamarin. Mac 
 
-_Dokumente in diesem Abschnitt behandeln die Funktionen, die für die Behandlung von mit Xamarin.Mac._
+_Die Dokumente in diesem Abschnitt behandeln Features, die für die Problembehandlung mit xamarin. Mac spezifisch sind._
 
 ## <a name="troubleshooting-tipsmactroubleshootingtroubleshootingmd"></a>[Tipps zur Problembehandlung](~/mac/troubleshooting/troubleshooting.md)
 
-Zur Problembehandlung, Tipps und Tricks.
+Tipps und Tricks zur Problembehandlung.
 
-## <a name="errors-messages-mmpmactroubleshootingmmp-errorsmd"></a>[Fehlermeldungen (Mmp)](~/mac/troubleshooting/mmp-errors.md)
+## <a name="errors-messages-mmpmactroubleshootingmmp-errorsmd"></a>[Fehlermeldungen (MMP)](~/mac/troubleshooting/mmp-errors.md)
 
-Eine Fehler-Referenzhandbuch, mit den häufigsten Fehlern, die beim Erstellen von Xamarin.Mac-Anwendungen auftreten können.
+Ein Fehler Referenzhandbuch mit den am häufigsten auftretenden Fehlern bei der Erstellung von xamarin. Mac-Anwendungen.
 

@@ -4,15 +4,15 @@ description: In diesem Dokument werden Unified Storyboards in xamarin. IOS besch
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 6085f85a1b13bdeb4fe7b906beeca0bdc7a45a17
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: cf3a3f6638547acf8d22854b6d8a32622c304932
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890171"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280866"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in xamarin. IOS
 
@@ -51,7 +51,7 @@ Basierend auf der Ausrichtung des Geräts hat das iPhone verschiedene Größenkl
 
  [![](unified-storyboards-images/iphonesizeclasses.png "iPhone size-Klassen")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
-- Wenn sich das Gerät im Hochformat befindet, hat der Bildschirm eine **kompakte** Klasse horizontal und vertikal vertikal.
+- Wenn sich das Gerät im Hochformat befindet, hat der Bildschirm eine **kompakte** Klasse horizontal **und vertikal vertikal** .
 - Wenn sich das Gerät im Querformat befindet, werden die Bildschirm Klassen aus dem Hochformat Modus zurückgesetzt.
 
 ### <a name="iphone-6-plus-size-classes"></a>iPhone 6 Plus Size-Klassen
@@ -705,7 +705,7 @@ Beachten Sie bei den obigen Richtlinien, wie Sie einem vorhandenen xamarin IOS 8
 
 Führen Sie folgende Schritte aus:
 
-1. Öffnen Sie **Visual Studio für Mac** , und laden Sie die Projekt Mappe, um den dynamischen Startbildschirm hinzuzufügen.
+1. Öffnen Sie **Visual Studio für Mac** , und **Laden Sie die Projekt Mappe, um** den dynamischen Startbildschirm hinzuzufügen.
 2. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste `MainStoryboard.storyboard` auf die Datei, und wählen Sie **mit** > **Xcode Interface Builder**öffnen:
 
     [![](unified-storyboards-images/dls01.png "Öffnen mit Xcode Interface Builder")](unified-storyboards-images/dls01.png#lightbox)

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie die System. Threading-APIs
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: a5c453fc6ac7500c8ade43c38049875a8774657b
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9de12f234bb4d18cb7a78f84f72f5e431409dac1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200201"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283047"
 ---
 # <a name="threading-in-xamarinios"></a>Threading in xamarin. IOS
 

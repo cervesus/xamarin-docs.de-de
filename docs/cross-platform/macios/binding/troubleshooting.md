@@ -1,48 +1,48 @@
 ---
-title: Binden die Problembehandlung
-description: Dieses Handbuch beschreibt, was zu tun, wenn Sie eine Objective-C-Bibliothek binden können. Insbesondere erläutert er fehlende Bindungen Argumentausnahmen beim Übergeben von null eine Bindung, und Melden von Fehlern.
+title: Bindungs Problembehandlung
+description: In diesem Leitfaden wird beschrieben, was Sie tun sollten, wenn Sie Schwierigkeiten beim Binden einer Ziel-C-Bibliothek haben. Insbesondere werden fehlende Bindungen, Argument Ausnahmen bei der Übergabe von NULL an eine Bindung und das Melden von Fehlern erläutert.
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: 686ce3b46f268b650c63cace2a29b9d501a4063c
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 8fd4a11208be1271785a7e02ad8d45db66d6f1fd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977601"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280892"
 ---
-# <a name="binding-troubleshooting"></a>Binden die Problembehandlung
+# <a name="binding-troubleshooting"></a>Bindungs Problembehandlung
 
-Einige Tipps zur Problembehandlung von Bindungen in MacOS (früher als OS X)-APIs in Xamarin.Mac.
+Einige Tipps zur Problembehandlung von Bindungen an macOS-APIs (früher als OS X bezeichnet) in xamarin. Mac.
 
-## <a name="missing-bindings"></a>Fehlender Bindungen
+## <a name="missing-bindings"></a>Fehlende Bindungen
 
-Während der Xamarin.Mac ein Großteil der Apple-APIs behandelt, manchmal müssen Sie möglicherweise eine Apple-API aufrufen, das eine Bindung keine noch. In anderen Fällen müssen Sie zum Aufrufen von Drittanbietern C/Objective-C, dass die It außerhalb des Bereichs der Xamarin.Mac Bindungen.
+Obwohl xamarin. Mac einen Großteil der Apple-APIs abdeckt, muss möglicherweise eine Apple-API aufgerufen werden, die noch keine Bindung besitzt. In anderen Fällen müssen Sie den Drittanbieter c/Ziel-c anrufen, der außerhalb des Bereichs der xamarin. Mac-Bindungen liegt.
 
-Wenn Sie mit einer Apple-API arbeiten, ist der erste Schritt, können Sie Xamarin wissen, dass Sie einen Teil der API erreichen, die wir Coverage noch keine besitzen. [Einen Fehler](#reporting-bugs) Beachten Sie die fehlenden-API. Wir verwenden die Berichte von Kunden, um welche APIs zu priorisieren, wir an weiter arbeiten. Darüber hinaus, wenn Sie eine Business oder Enterprise-Lizenz und dieses fehlen einer Bindung wird durch Ihren Fortschritt blockiert, auch anhand der Schritte unter [Unterstützung](http://xamarin.com/support) um ein Ticket. Wir können nicht versprechen, eine Bindung, wurde jedoch in einigen Fällen können Sie eine Arbeit rund um.
+Wenn Sie mit einer Apple-API arbeiten, besteht der erste Schritt darin, dass xamarin weiß, dass Sie einen Abschnitt der API erreichen, für den wir noch keine Abdeckung haben. Melden Sie [einen Fehler](#reporting-bugs) , der die fehlende API beachtet. Wir verwenden Berichte von Kunden, um zu priorisieren, bei welchen APIs wir als nächstes arbeiten. Wenn Sie darüber hinaus über eine Geschäfts-oder Unternehmenslizenz verfügen und diese fehlende Bindung ihren Fortschritt blockiert, befolgen Sie die Anweisungen [unter Support](http://xamarin.com/support) , um ein Ticket zu melden. Wir können keine Bindung Zusagen, aber in einigen Fällen können wir Ihnen eine Problem Umgehung zukommen lassen.
 
-Nachdem Sie Xamarin (falls zutreffend) der fehlenden Bindung zu benachrichtigen, besteht der nächste Schritt, berücksichtigt er sich selbst gebunden. Wir haben eine vollständige Anleitung [hier](~/cross-platform/macios/binding/overview.md) und eine inoffizielle Dokumentation [hier](http://brendanzagaeski.appspot.com/xamarin/0002.html) für das Umschließen von Objective-C-Bindungen von Hand. Wenn Sie eine C-API aufrufen, können Sie C#des P/Invoke-Mechanismus, um die Dokumentation ist [hier](https://www.mono-project.com/docs/advanced/pinvoke/).
+Nachdem Sie xamarin (falls zutreffend) über die fehlende Bindung benachrichtigt haben, müssen Sie den nächsten Schritt in Erwägung ziehen, ihn selbst zu binden. [Hier](~/cross-platform/macios/binding/overview.md) finden Sie eine vollständige Anleitung und eine inoffizielle [Dokumentation,](http://brendanzagaeski.appspot.com/xamarin/0002.html) mit der Sie Ziel-C-Bindungen per Hand Umpacken können. Wenn Sie eine C-API aufrufen, können Sie den C#P/Call-Mechanismus von verwenden. die Dokumentation finden Sie [hier](https://www.mono-project.com/docs/advanced/pinvoke/).
 
-Wenn Sie sich entscheiden, funktioniert für die Bindung selbst, Bedenken Sie, dass alle möglichen interessanten Abstürzen in der nativen Runtime von Fehlern in der Bindung erstellt werden können. Insbesondere sehr vorsichtig sein, die Ihre Signatur in C# der Signatur entspricht, systemeigene in Anzahl von Argumenten und die Größe der einzelnen Argumente. Bei unterlassen kann Speicher und/oder der Stapel beschädigt, und Sie stürzt ab sofort oder zu einem beliebigen Zeitpunkt in der Zukunft oder Daten beschädigt werden könnten.
+Wenn Sie sich selbst entscheiden, an der Bindung zu arbeiten, sollten Sie Bedenken, dass Fehler in der Bindung alle möglichen Abstürze in der nativen Laufzeit erzeugen können. Achten Sie insbesondere darauf, dass Ihre Signatur in C# mit der systemeigenen Signatur in der Anzahl von Argumenten und der Größe der einzelnen Argumente übereinstimmt. Wenn dies nicht der Fall ist, kann der Arbeitsspeicher und/oder der Stapel beschädigt werden, und Sie können sofort oder an einem beliebigen Punkt in der Zukunft abstürzen oder beschädigte Daten beschädigen.
 
-## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>Argumentausnahmen beim Übergeben von null zu einer Bindung
+## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>Argument Ausnahmen beim Übergeben von NULL an eine Bindung
 
-Xamarin funktioniert zum Bereitstellen von hoher Qualität und gut getestete Bindungen für die Apple-APIs, manchmal Programmierfehler und Fehlern Verteiler in. Bei weitem der am häufigsten auftretende Problem, die auftreten können, ist eine API auszulösen `ArgumentNullException` , wenn Sie übergeben NULL, wenn die zugrunde liegende API akzeptiert `nil`. Die native Headerdateien, definieren die API häufig sind nicht genügend Informationen bereitstellt, die APIs nil akzeptieren und die stürzt, wenn Sie ihn in übergeben.
+Obwohl xamarin funktioniert, um hochwertige und gut getestete Bindungen für die Apple-APIs bereitzustellen, können Fehler und Fehler manchmal behoben werden. Das häufigste Problem, das Sie möglicherweise auftreten, ist eine API `ArgumentNullException` , die auslöst, wenn Sie NULL übergeben, wenn die zugrunde liegende API akzeptiert. `nil` Die systemeigenen Header Dateien, die die API definieren, bieten oft nicht genügend Informationen darüber, welche APIs Nil akzeptieren und welche abstürzen, wenn Sie Sie übergeben.
 
-Wenn ein Fall auftreten, übergeben `null` löst eine `ArgumentNullException` denken sollte es funktioniert, gehen Sie folgendermaßen vor:
+Wenn Sie in einem Fall ausgeführt werden, in `null` dem die `ArgumentNullException` Übergabe von eine auslöst
 
-1. Überprüfen Sie die Apple-Dokumentation und/oder Beispielen, um festzustellen, ob Sie Beweis, der diesen akzeptiert `nil`. Wenn Sie mit Objective-C vertraut sind, können Sie ein Programm kleinen Test durch, um sie zu überprüfen schreiben.
-2. [Einen Fehler](#reporting-bugs).
-3. Umgehen Sie können den Fehler? Wenn Sie vermeiden können, Aufrufen der API mit `null`, eine einfache null-Überprüfung, um die Aufrufe, kann eine einfache problemumgehung sein.
-4. Allerdings erfordern einige APIs übergeben von Null ausschalten oder deaktivieren einige Funktionen. In diesen Fällen können Sie umgehen das Problem durch die Einbindung von der Assembly-Browser (finden Sie unter [Suchen der C# Member für einen angegebenen Selektor](~/mac/app-fundamentals/mac-apis.md#finding_selector)), kopieren die Bindung und die Überprüfung auf null löschen. Stellen Sie sicher, einen Fehler (Schritt 2) Wenn Sie dazu, wie die kopierte Bindung wird nicht empfangen, Updates und Korrekturen, die wir in Xamarin.Mac stellen, und dies eine kurzfristige problemumgehung berücksichtigt werden sollte.
+1. Überprüfen Sie die Apple-Dokumentation und/oder Beispiele, um zu ermitteln, ob Sie `nil`die von ihr akzeptiert werden können. Wenn Sie mit "Ziel-C" vertraut sind, können Sie ein kleines Testprogramm schreiben, um es zu überprüfen.
+2. [Einen Fehler melden](#reporting-bugs).
+3. Können Sie den Fehler umgehen? Wenn Sie das Aufrufen der API mit `null`vermeiden können, kann eine einfache NULL-Überprüfung der Aufrufe eine einfache Problem Umgehung sein.
+4. Einige APIs erfordern jedoch das Übergeben von NULL, um einige Features zu deaktivieren oder zu deaktivieren. In diesen Fällen können Sie das Problem umgehen, indem Sie den assemblybrowser aufrufen (Weitere Informationen finden Sie unter [Suchen des C# Members für eine bestimmte Auswahl](~/mac/app-fundamentals/mac-apis.md#finding_selector)), Kopieren der Bindung und Entfernen der NULL-Überprüfung. Stellen Sie sicher, dass Sie einen Fehler melden (Schritt 2), da die kopierte Bindung keine Updates und Korrekturen erhält, die wir in xamarin. Mac erstellen, und dies sollte als kurzfristige Umgehung angesehen werden.
 
 <a name="reporting-bugs"/>
 
 ## <a name="reporting-bugs"></a>Melden von Fehlern
 
-Ihr Feedback ist uns wichtig. Wenn Sie Probleme mit Xamarin.Mac finden:
+Ihr Feedback ist für uns wichtig. Wenn Sie Probleme mit xamarin. Mac finden:
 
 - Überprüfen Sie die [Xamarin.Mac-Foren](https://forums.xamarin.com/categories/mac).
 - Durchsuchen Sie das [Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues). 

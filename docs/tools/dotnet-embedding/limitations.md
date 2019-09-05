@@ -1,52 +1,52 @@
 ---
-title: Einbetten von .NET-Einschränkungen
-description: Dieses Dokument beschreibt die Einschränkungen für das Einbetten von .NET, das Tool, das Ihnen ermöglicht, die .NET Code in anderen Programmiersprachen nutzen.
+title: .Net-Einbettungs Einschränkungen
+description: In diesem Dokument werden die Einschränkungen der .net-Einbettung beschrieben, das Tool, mit dem .NET-Code in anderen Programmiersprachen verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 7a162d632c98b4e412fa1b7b0c0c40ac945ff09f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cf431d4e3d30ac2ec06bfebc9cebe101411faa1c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945783"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292710"
 ---
-# <a name="net-embedding-limitations"></a>Einbetten von .NET-Einschränkungen
+# <a name="net-embedding-limitations"></a>.Net-Einbettungs Einschränkungen
 
-Dieses Dokument beschreibt die Einschränkungen für das Einbetten von .NET und nach Möglichkeit werden mögliche problemumgehungen für sie bereitgestellt.
+In diesem Dokument werden die Einschränkungen der .net-Einbettung erläutert und, wann immer möglich, Problem Umgehungen für Sie bereitstellt.
 
 ## <a name="general"></a>Allgemein
 
-### <a name="use-more-than-one-embedded-library-in-a-project"></a>Verwenden von mehr als eine eingebettete Bibliothek in einem Projekt
+### <a name="use-more-than-one-embedded-library-in-a-project"></a>Verwenden Sie mehr als eine eingebettete Bibliothek in einem Projekt.
 
-Es ist nicht möglich, dass zwei Mono Laufzeiten, die in der gleichen Anwendung koexistieren. Dies bedeutet, dass Sie nicht zwei verschiedene Einbetten von .NET generierter Bibliotheken in der gleichen Anwendung verwenden können.
+Es ist nicht möglich, zwei Mono-Laufzeiten innerhalb derselben Anwendung gemeinsam zu haben. Dies bedeutet, dass Sie in derselben Anwendung nicht zwei verschiedene .net-Einbettungs generierte Bibliotheken verwenden können.
 
-**Problemumgehung:** Sie können den Generator verwenden, eine einzelne Bibliothek erstellen, die mehrere Assemblys (von verschiedenen Projekten) enthält.
+**Problemumgehung:** Sie können den Generator verwenden, um eine einzelne Bibliothek zu erstellen, die mehrere Assemblys (aus verschiedenen Projekten) enthält.
 
-### <a name="subclassing"></a>Erstellen von Unterklassen für
+### <a name="subclassing"></a>Unterklassen
 
-Einbetten von .NET erleichtert die Integration von die Mono-Laufzeit in Anwendungen durch die Bereitstellung einer Reihe von sofort zu verwendende APIs für die Ziel-Sprache und Plattform.
+.Net-Einbettung vereinfacht die Integration der Mono-Laufzeit in Anwendungen, indem eine Reihe von einsatzbereiten APIs für die Zielsprache und-Plattform verfügbar gemacht wird.
 
-Obwohl dies nicht über eine bidirektionale Integration ist, z. B. nicht die Unterklasse einen verwalteten Typ und erwarten, dass verwalteten Code in nativen Code ab, Rückruf, da der verwaltete Code nicht über diese objektkoexistenz ist.
+Dabei handelt es sich jedoch nicht um eine bidirektionale Integration, z. b. können Sie keinen verwalteten Typ unterteilen und erwarten, dass verwalteter Code einen Rückruf innerhalb des nativen Codes durchgeführt wird, da der verwaltete Code diese Co-Existenz nicht kennt.
 
-Je nach Ihren Anforderungen entspricht kann es möglich, dieses Problem zu umgehen, Teile dieser Einschränkung können z. B. sein
+Abhängig von Ihren Anforderungen kann es möglich sein, Teile dieser Einschränkung zu umgehen, z. b.
 
-* der verwaltete Code in Ihrem nativen Code können p/invoke. Dies erfordert das Anpassen von Ihren verwalteten Code, um Anpassungen von nativem Code zu ermöglichen;
+* Ihr verwalteter Code kann in ihrem nativen Code p/aufrufen. Hierfür muss der verwaltete Code angepasst werden, um Anpassungen von nativem Code zuzulassen.
 
-* Verwenden Sie Produkte wie Xamarin.iOS, und machen Sie eine verwaltete Bibliothek, die ermöglichen, dass die Objective-C (in diesem Fall) um eine Unterklasse einige Unterklassen von NSObject verwaltet.
+* Verwenden Sie Produkte wie xamarin. IOS, und machen Sie eine verwaltete Bibliothek verfügbar, die Ziel-C (in diesem Fall) die Unterklasse einiger verwalteter NSObject-Unterklassen ermöglicht.
 
-## <a name="objective-c-generated-code"></a>Objective-C-generierten code
+## <a name="objective-c-generated-code"></a>Ziel-C-generierter Code
 
-### <a name="nullability"></a>NULL-Zulässigkeit
+### <a name="nullability"></a>Zulässigkeit
 
-Es gibt keine Metadaten, die in .NET, der an, ob ein null-Verweis akzeptabel ist oder nicht für eine API aus. Die meisten APIs lösen `ArgumentNullException` , wenn sie bewältigen können keinem `null` Argument. Dies ist problematisch, da Objective-C-Behandlung von Ausnahmen, die etwas besser vermieden wird.
+Es gibt keine Metadaten in .net, die uns mitteilen, ob ein NULL-Verweis akzeptabel ist oder nicht für eine API. Die meisten APIs `ArgumentNullException` lösen eine Ausnahme aus, wenn Sie `null` nicht mit einem-Argument zurechtkommen. Dies ist problematisch, da die Ziel-C-Behandlung von Ausnahmen etwas besseres vermieden wird.
 
-Da wir genau NULL-Zulässigkeit Anmerkungen in den Headerdateien zu generieren und verwaltete Ausnahmen minimieren möchten kann nicht in Zukunft Standard werden für nicht-Null-Argumente (`NS_ASSUME_NONNULL_BEGIN`), und fügen Sie einige spezifisch ist, wenn Genauigkeit möglich ist, die NULL-Zulässigkeit Anmerkungen hinzu.
+Da es nicht möglich ist, genaue NULL-Zulässigkeit-Anmerkungen in den Header Dateien zu generieren und verwaltete Ausnahmen zu minimieren, werden Standard`NS_ASSUME_NONNULL_BEGIN`mäßig nicht-NULL-Argumente () hinzugefügt, und es werden einige spezifische, bei einer Genauigkeit der NULL-Zulässigkeit angegebene Anmerkungen hinzugefügt.
 
-### <a name="bitcode-ios"></a>Bitcode (iOS)
+### <a name="bitcode-ios"></a>Bitcode (IOS)
 
-Einbetten von .NET unterstützt derzeit keine Bitcode unter iOS, die für einige Vorlagen der Xcode-Projekt aktiviert ist. Dies müssen erfolgreich generiert Link Frameworks deaktiviert werden.
+Derzeit unterstützt .net-Einbettungen keinen Bitcode unter IOS, der für einige Xcode-Projektvorlagen aktiviert ist. Dies muss deaktiviert werden, damit generierte Frameworks erfolgreich verknüpft werden können.
 
 ![Bitcode-Option](images/ios-bitcode-option.png)

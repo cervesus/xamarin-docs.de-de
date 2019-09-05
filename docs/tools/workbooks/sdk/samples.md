@@ -1,30 +1,30 @@
 ---
 title: Beispielintegrationen
-description: Dieses Dokument enthält Links zu Beispielen, die die Integration von Xamarin Workbooks zu veranschaulichen. Verknüpfte Beispiele funktionieren mit Ihrer Darstellung in Rendering und SkiaSharp.
+description: Dieses Dokument stellt Links zu Beispielen dar, die Xamarin Workbooks Integrationen veranschaulichen. Verknüpfte Beispiele funktionieren mit Darstellungs Rendering und skiasharp.
 ms.prod: xamarin
 ms.assetid: 327DAD2E-1F76-4EB5-BCD0-9E7384D99E48
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: e35577b116180d2745e2f6afb792547f63873214
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fbe471aa7f08d85a870d68505cf2c983b7e442e9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61424600"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292813"
 ---
 # <a name="sample-integrations"></a>Beispielintegrationen
 
-Finden Sie unter den [Küche Senke][KitchenSink] Beispiel ein funktionsfähiges Beispiel eines Integration. Erstellen Sie einfach `KitchenSink.sln` in Visual Studio für Mac oder Visual Studio und öffnen Sie dann `KitchenSink.workbook`.
+Ein funktionierendes Beispiel für eine-Integration finden Sie im Beispiel " [Kitchen Sink][KitchenSink] ". Erstellen `KitchenSink.sln` Sie einfach in Visual Studio für Mac oder Visual Studio, und `KitchenSink.workbook`öffnen Sie dann.
 
-[![Bildschirmabbildung von Küche Senke-Integration](samples-images/kitchensinkintegrationscreenshot.png)](samples-images/kitchensinkintegrationscreenshot.png#lightbox)
+[![Bildschirm Abbildung der Küchen Senke Integration](samples-images/kitchensinkintegrationscreenshot.png)](samples-images/kitchensinkintegrationscreenshot.png#lightbox)
 
-Die Senke Küche veranschaulicht beide Sätze von Konzepten:
+Das Beispiel "Kitchen Sink" veranschaulicht beide Sätze von Konzepten:
 
-* Die Teile der Darstellung wird veranschaulicht, wie mit `RepresentationManager` , der Rendering zu verbessern, indem Sie die integrierte Darstellungen.
-* Die `Person` -Objekt und seine zugeordneten JavaScript-Renderer veranschaulicht die Verwendung `ISerializableObject` ohne Umweg über einen Anbieter für die Darstellung.
+* Die Darstellungs Teile veranschaulichen, wie `RepresentationManager` verwendet wird, um das Rendering mithilfe der integrierten Darstellungen zu verbessern.
+* Das `Person` -Objekt und der zugehörige JavaScript-Renderer veranschaulichen mithilfe `ISerializableObject` von, ohne einen Darstellungs Anbieter zu durchlaufen.
 
-Siehe auch [SkiaSharp][skiasharp] für ein praktisches Beispiel eines Integration, die die vorhandene verwendet [Darstellungen](~/tools/workbooks/sdk/representations.md) von Xamarin Workbooks zum Rendern seiner Typen bereitgestellt.
+Siehe auch [skiasharp][skiasharp] für ein praktisches Beispiel für eine Integration, bei der die vorhandenen von Xamarin Workbooks bereitgestellten [Darstellungen](~/tools/workbooks/sdk/representations.md) zum Rendering der zugehörigen Typen verwendet werden.
 
 [KitchenSink]: https://github.com/xamarin/Workbooks/tree/master/SDK/Samples/KitchenSink
 [skiasharp]: https://github.com/mono/SkiaSharp/tree/master/source/SkiaSharp.Workbooks

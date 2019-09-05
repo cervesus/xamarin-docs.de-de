@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Dialogfeldern und modalen F
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 03fad33d49f1454700c118ad44c8582453a75eee
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 723f751b93af304c7d70fb1250dbda2f0220e77e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645656"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292217"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Dialogfelder in xamarin. Mac
 
@@ -124,7 +124,7 @@ Gehen Sie folgendermaßen vor, um ein neues Fenster hinzuzufügen:
 5. Kehren Sie zu Xcode zurück, und entwerfen Sie Ihre Schnittstelle: 
 
     [![](dialog-images/new03.png "Entwerfen der Benutzeroberfläche in Xcode")](dialog-images/new03.png#lightbox)
-6. Erstellen Sie aus dem Hauptfenster der APP auf den neuen Ansichts Controller eine **modale** Tabelle, indem Sie das Steuerelement aus dem UI-Element ziehen, das das Dialogfeld in das Fenster des Dialog Felds öffnet. Weisen Sie `ModalSegue`den Bezeichner zu: 
+6. Erstellen Sie aus dem Hauptfenster der APP auf den neuen Ansichts Controller eine **modale** Tabelle, indem Sie das Steuerelement aus dem UI-Element ziehen, das das Dialogfeld in das Fenster des Dialog Felds öffnet. Weisen Sie den **Bezeichner** `ModalSegue`zu: 
 
     [![](dialog-images/new06.png "Ein modaler *")](dialog-images/new06.png#lightbox)
 7. Richten Sie alle **Aktionen** und **Outlets**ein: 
@@ -770,7 +770,7 @@ Wie oben erwähnt, werden die Änderungen in einer typischen macOS-APP, wenn der
 
 Die sorgfältige Planung und der Entwurf der Einstellungen Ihrer APP ermöglicht die reibungslose und transparente Ausführung dieses Prozesses für den Endbenutzer mit minimalem Codierungsaufwand.
 
-Fügen Sie für jedes Fenster, das die App-Einstellungen verbraucht, dem Content View Controller die folgende Hilfseigenschaft hinzu, um den Zugriff auf den appdelegaten zu vereinfachen:
+Fügen Sie für jedes Fenster, das die App-Einstellungen verbraucht, dem Content View Controller die folgende Hilfseigenschaft hinzu, um den Zugriff auf den **appdelegaten** zu vereinfachen:
 
 ```csharp
 #region Application Access
@@ -946,7 +946,7 @@ Die folgenden Eigenschaften sind beim Arbeiten mit einem `NSOpenPanel`verfügbar
 - **Canchoogdirectories** : Wenn `true` der Benutzerverzeichnisse auswählen kann.
 - **Allowsmultipleselection** : gibt `true` an, ob der Benutzer mehrere Dateien gleichzeitig auswählen kann.
 - **Resolvealiases** : Wenn `true` Sie und Alias auswählen, wird Sie in den Pfad der ursprünglichen Datei aufgelöst.
-- "" Ist ein Zeichen folgen Array von Dateitypen, die der Benutzer als Erweiterung oder " _UTI_" auswählen kann. Der Standardwert ist `null`, wodurch eine beliebige Datei geöffnet werden kann.
+- "" Ist ein Zeichen folgen Array von **Dateitypen,** die der Benutzer als Erweiterung oder " _UTI_" auswählen kann. Der Standardwert ist `null`, wodurch eine beliebige Datei geöffnet werden kann.
 
 Die `RunModal ()` -Methode zeigt das Dialog Feld Öffnen an und ermöglicht dem Benutzer die Auswahl von Dateien oder Verzeichnissen (wie von den Eigenschaften `1` angegeben) und gibt zurück, wenn der Benutzer auf die Schaltfläche **Öffnen** klickt.
 

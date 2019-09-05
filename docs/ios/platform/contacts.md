@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit den neuen Benutzeroberfläc
 ms.prod: xamarin
 ms.assetid: 7b6fb66a-5e19-4a5a-9ed2-f6b02af099af
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 8b551a17fc54ec1557cd385b4c91b33720316879
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 96dbb60b8754223203394745bc86af2297cb5ff3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225974"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278540"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Kontakte und contactsui in xamarin. IOS
 

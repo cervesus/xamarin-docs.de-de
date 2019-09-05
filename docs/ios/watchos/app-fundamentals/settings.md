@@ -1,52 +1,52 @@
 ---
-title: Arbeiten mit WatchOS-Einstellungen in Xamarin
-description: Dieses Dokument beschreibt das Arbeiten mit Einstellungen für WatchOS in Xamarin. Es wird erläutert, Hinzufügen von Einstellungen für eine Watch-app-Lösung, verwenden diese Einstellungen in der app, und der Apple Watch-app auf dem iPhone.
+title: Arbeiten mit watchos-Einstellungen in xamarin
+description: In diesem Dokument wird beschrieben, wie Sie mit den watchos-Einstellungen in xamarin arbeiten. Er erläutert das Hinzufügen von Einstellungen zu einer Watch-App-Lösung mithilfe dieser Einstellungen in der APP und der Apple Watch-App auf dem iPhone.
 ms.prod: xamarin
 ms.assetid: 4B2EB192-F0A2-4010-B141-0431520594C0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: a8fe2c2765676db52c23fd7c475f218f14697caf
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: bcb719451529cd5a9ca829b8693c425d752cc93b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675227"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283225"
 ---
-# <a name="working-with-watchos-settings-in-xamarin"></a>Arbeiten mit WatchOS-Einstellungen in Xamarin
+# <a name="working-with-watchos-settings-in-xamarin"></a>Arbeiten mit watchos-Einstellungen in xamarin
 
-Apple Watch-apps können die gleiche Einstellungen für Funktionen wie iOS-apps – die Settings-Benutzeroberfläche wird angezeigt, der **Apple Watch** iPhone-app, aber die Werte stehen in der iPhone-app und auch der Watch-Erweiterung.
+Apple Watch-Apps die gleichen Einstellungen wie IOS-Apps verwenden können, wird die Benutzeroberfläche "Einstellungen" in der **Apple Watch** iPhone-App angezeigt, aber die Werte sind sowohl in der iPhone-App als auch in der Watch-Erweiterung verfügbar.
 
-![](settings-images/intro.png "Apple Watch-apps können die gleiche Funktionalität für die Einstellungen als iOS-apps verwenden.")
+![](settings-images/intro.png "Apple Watch-Apps können die gleichen Einstellungs Funktionen wie IOS-Apps verwenden.")
 
-Die Einstellungen werden gespeichert werden, in einen freigegebenen Dateispeicherort, die für die iOS-app und der Watch-app-Erweiterung, durch definiert zugänglich ist ein **App-Gruppe**. Sie sollten [konfigurieren einen App-Gruppe](~/ios/watchos/app-fundamentals/app-groups.md) vor dem Hinzufügen der Einstellungen mithilfe der folgenden Anweisungen.
+Die Einstellungen werden an einem freigegebenen Speicherort gespeichert, auf den sowohl die IOS-App als auch die APP-Erweiterung "Watch", die durch eine **App-Gruppe**definiert ist, zugreifen können. Sie sollten [eine APP-Gruppe konfigurieren](~/ios/watchos/app-fundamentals/app-groups.md) , bevor Sie die Einstellungen mithilfe der folgenden Anweisungen hinzufügen.
 
-## <a name="add-settings-in-a-watch-solution"></a>Hinzufügen von Einstellungen in einer Projektmappe ansehen
+## <a name="add-settings-in-a-watch-solution"></a>Hinzufügen von Einstellungen in einer Überwachungslösung
 
-In der **iPhone-app** in der Projektmappe (*nicht* der Watch-app oder die Erweiterung):
+In der **iPhone-App** in ihrer Projekt Mappe (*nicht* in der Watch-APP oder-Erweiterung):
 
-1. Mit der rechten Maustaste **hinzufügen > neue Datei...**  , und wählen Sie **"Settings.Bundle"** (Sie können nicht den Namen im Bearbeiten der **neue Datei** Dialogfeld):
+1. Klicken Sie mit der rechten Maustaste auf **> neue Datei hinzufügen...** , und wählen Sie **Settings. Bundle** (Sie können den Namen im Dialogfeld " **neue Datei** " nicht bearbeiten):
 
-   [![](settings-images/settings-add-sml.png "Hinzufügen eines neuen Einstellungsbundles")](settings-images/settings-add.png#lightbox)
+   [![](settings-images/settings-add-sml.png "Hinzufügen eines neuen Einstellungs Pakets")](settings-images/settings-add.png#lightbox)
 
-2. Ändern Sie den Namen in **Einstellungen-Watch.bundle** (Wählen Sie aus, und geben Sie **Befehl + R** umbenannt):
+2. Ändern Sie den Namen in **Settings-Watch. Bundle** (Wählen Sie aus, und geben Sie **Command + R** zum Umbenennen ein):
 
-   ![](settings-images/settings-rename.png "Benennen Sie das Paket")
+   ![](settings-images/settings-rename.png "Umbenennen des Pakets")
 
-3. Fügen Sie einen neuen Schlüssel `ApplicationGroupContainerIdentifier` auf die **"Root.plist"** mit dem Wert, legen Sie auf die app-Gruppe, die Sie, (z. b konfiguriert haben. `group.com.xamarin.WatchSettings` Im Beispiel):
+3. Fügen Sie der Datei `ApplicationGroupContainerIdentifier` " **root. plist** " einen neuen Schlüssel mit dem Wert hinzu, der auf die konfigurierte App-Gruppe festgelegt ist (z. b. `group.com.xamarin.WatchSettings`im Beispiel):
 
-   [![](settings-images/settings-appgroup-sml.png "Fügen Sie einen ApplicationGroupContainerIdentifier-Schlüssel in der \"Root.plist\"")](settings-images/settings-appgroup.png#lightbox)
+   [![](settings-images/settings-appgroup-sml.png "Fügen Sie der Datei \"root. plist\" einen applicationgroupcontaineridentifier-Schlüssel hinzu.")](settings-images/settings-appgroup.png#lightbox)
 
-4. Bearbeiten der **Settings-Watch.bundle/Root.plist** Optionen enthalten soll: die Vorlagendatei enthält eine Gruppe.
-  TextField, Umschalter und Schieberegler in der Standardeinstellung (die Sie löschen und Ersetzen Sie dies durch Ihre eigenen Einstellungen können):
+4. Bearbeiten Sie die Datei " **Settings-Watch. Bundle/root. plist** " mit den Optionen, die Sie verwenden möchten. die Vorlagen Datei enthält eine Gruppe.
+  TextField, Switch und Schieberegler standardmäßig umschalten (diese können gelöscht und durch ihre eigenen Einstellungen ersetzt werden):
 
-  [![](settings-images/rootplist-sml.png "Bearbeiten Sie die Settings-Watch.bundle/Root.plist")](settings-images/rootplist.png#lightbox)
+  [![](settings-images/rootplist-sml.png "Bearbeiten Sie die Datei \"Settings-Watch. Bundle/root. plist\".")](settings-images/rootplist.png#lightbox)
 
 
-## <a name="use-settings-in-the-watch-app"></a>Verwenden Sie die Einstellungen in der Watch-App
+## <a name="use-settings-in-the-watch-app"></a>Verwenden von Einstellungen in der Watch-App
 
-Um die vom Benutzer ausgewählten Werte zuzugreifen, erstellen eine `NSUserDefaults` -Instanz unter Verwendung der app-Gruppe und Angeben von `NSUserDefaultsType.SuiteName`:
+Erstellen Sie zum Zugreifen auf die vom Benutzer ausgewählten Werte eine `NSUserDefaults` Instanz mithilfe der APP `NSUserDefaultsType.SuiteName`-Gruppe, und geben Sie Folgendes an:
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -59,9 +59,9 @@ var userName = shared.StringForKey ("name_preference");
 
 ## <a name="apple-watch-app"></a>Apple Watch-App
 
-[![](settings-images/settings-app-sml.png "Die neue Apple Watch-app auf dem iPhone")](settings-images/settings-app.png#lightbox)
+[![](settings-images/settings-app-sml.png "Die neue Apple Watch-App auf dem iPhone")](settings-images/settings-app.png#lightbox)
 
-Benutzer interagieren mit den Einstellungen über das neue **Apple Watch** -app auf ihren iPhone. Diese app kann der Benutzer zum Ein-/Ausblenden von apps für die Überwachung, und auch bearbeiten, die mit die Einstellungen verfügbar gemacht werden die **Einstellungen-Watch.bundle**.
+Benutzer interagieren mit den Einstellungen über die neue **Apple Watch** -App auf Ihrem iPhone. Diese APP ermöglicht dem Benutzer das Anzeigen/Ausblenden von apps auf der Überwachung und das Bearbeiten der Einstellungen, die mithilfe der **Settings-Watch. Bundle**verfügbar gemacht werden.
 
 ![](settings-images/applewatch-1.png "Beispiel für app-Einstellungen") ![](settings-images/applewatch-2.png "Beispiel-app-Einstellungen")
 
@@ -69,4 +69,4 @@ Benutzer interagieren mit den Einstellungen über das neue **Apple Watch** -app 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Einstellungen von Apple-Dokumentation](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Settings.html#//apple_ref/doc/uid/TP40014969-CH22-SW1)
+- [Dokument mit den Einstellungen von Apple](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Settings.html#//apple_ref/doc/uid/TP40014969-CH22-SW1)

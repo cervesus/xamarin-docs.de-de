@@ -4,15 +4,15 @@ description: In diesem Artikel werden erweiterte Techniken zum Arbeiten mit Mess
 ms.prod: xamarin
 ms.assetid: 394A1FDA-AF70-4493-9B2C-4CFE4BE791B6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: e55e6d908bbeb9b4b42ccbcad8121a1b410b79af
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 4e488f43f966ca8efd58de4d2bb8f16997d1322e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200130"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290956"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Erweiterte Message-App-Erweiterungen in xamarin. IOS
 

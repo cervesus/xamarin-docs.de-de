@@ -1,40 +1,40 @@
 ---
-title: Binden von Mac-Bibliotheken für Xamarin.Mac
-description: Dieses Dokument enthält Links zu Leitfäden, die zum Arbeiten mit Objective-C-Bindungen in einer Xamarin.Mac-Anwendung, einschließlich Ziel Sharpie und Beispielcode zu beschreiben.
+title: Binden von Mac-Bibliotheken für xamarin. Mac
+description: Dieses Dokument enthält Links zu Anleitungen, in denen beschrieben wird, wie Sie mit Ziel-C-Bindungen in einer xamarin. Mac-Anwendung arbeiten, einschließlich Ziel-Sharpie und Beispielcode.
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/13/2017
-ms.openlocfilehash: fde21b2056d56cbf1c4768b287e29f559390f500
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 59ac5a4f9949f1e65e67b9629c43ddb4b822bf43
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032480"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290050"
 ---
-# <a name="binding-mac-libraries-for-xamarinmac"></a>Binden von Mac-Bibliotheken für Xamarin.Mac
+# <a name="binding-mac-libraries-for-xamarinmac"></a>Binden von Mac-Bibliotheken für xamarin. Mac
 
-Führen Sie diesen Links, um zu erfahren Sie mehr über das Binden von Objective-C-Bibliotheken für Xamarin.Mac aus:
+Befolgen Sie diese Links, um mehr über das Binden von Ziel-C-Bibliotheken auf xamarin. Mac zu erfahren:
 
-- [**Übersicht über die** ](~/cross-platform/macios/binding/overview.md) -
-  beschreibt, wie die Bindung funktioniert.
-- [**Binden von Objective-C-Bibliotheken** ](~/cross-platform/macios/binding/objective-c-libraries.md) -
-  Anleitungen zum Binden von Objective-C-Bibliotheken für die Verwendung in Xamarin-Projekte.
-- [**Geben Sie die Definition Referenzhandbuch** ](~/cross-platform/macios/binding/binding-types-reference.md) -
-  beschreibt alle Attribute für Autoren von Bindungen, die den Generierungsprozess der Bindung Laufwerk verfügbar.
+- [**Übersicht**](~/cross-platform/macios/binding/overview.md) -
+  Beschreibt, wie die Bindung funktioniert.
+- [**Binden von Ziel-C-Bibliotheken**](~/cross-platform/macios/binding/objective-c-libraries.md) -
+  Anweisungen zum Binden von Ziel-C-Bibliotheken für die Verwendung in xamarin-Projekten.
+- [**Referenzhandbuch zur Typdefinition**](~/cross-platform/macios/binding/binding-types-reference.md) -
+  Beschreibt alle verfügbaren Attribute für das Binden von Autoren, um den Bindungs Generierungsprozess zu steuern.
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objektive Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-Objektive Sharpie ist ein Befehlszeilentool zum unterstützen das erste Element des eine Bindung zu starten.
-Es funktioniert, indem Sie die Analyse der Headerdateien zuordnen die öffentliche API in einer nativen Bibliothek die [Bindungsdefinition](~/cross-platform/macios/binding/binding-types-reference.md) (ein Prozess, die andernfalls manuell durchgeführt werden). Objektive Sharpie Erstellen einer Bindung nicht allein, aber sie können Ihnen beim Einstieg helfen!
+Ziel-Sharpie ist ein Befehlszeilen Tool, mit dem der erste Durchlauf einer Bindung Bootstrap gestartet werden kann.
+Dies funktioniert durch das Überprüfen der Header Dateien einer nativen Bibliothek, um die öffentliche API der [Bindungs Definition](~/cross-platform/macios/binding/binding-types-reference.md) zuzuordnen (ein Prozess, der andernfalls manuell ausgeführt wird). Der Ziel-Sharpie erstellt nicht allein eine Bindung, aber er kann Ihnen beim Einstieg helfen!
 
 ## <a name="examples"></a>Beispiele
 
-Finden Sie in der [XMBindingExample Mac Beispiel](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample) erfahren, wie zum Erstellen einer Mac-Bindung, die mithilfe von bindungsprojekte.
+Weitere Informationen zum Erstellen einer Mac-Bindung mithilfe von Bindungs Projekten finden Sie im [XMBindingExample Mac-Beispiel](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample) .
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Binden von Objective-C](~/cross-platform/macios/binding/index.md)
-- [Binden von iOS-Bibliotheken](~/ios/platform/binding-objective-c/index.md)
+- [Binden von IOS-Bibliotheken](~/ios/platform/binding-objective-c/index.md)

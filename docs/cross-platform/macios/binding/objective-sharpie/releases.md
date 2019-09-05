@@ -3,15 +3,15 @@ title: Ziel-Sharpie-releaseverlauf
 description: In diesem Dokument wird der releaseverlauf von Ziel-Sharpie beschrieben, das Tool, das C# zum Automatisieren der Erstellung von Bindungen an den Ziel-C-Code verwendet wird.
 ms.prod: xamarin
 ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: 86c9f46064b66dc31f805e830309cb061a78a2c8
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: b5362c0a809423e2782ee60faa96658cf132d752
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509636"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290859"
 ---
 # <a name="objective-sharpie-release-history"></a>Ziel-Sharpie-releaseverlauf
 
@@ -101,7 +101,7 @@ Ziel-Sharpie 2,0 basiert auf clang-3.6.1.
 
 ### <a name="verify-attribute"></a>Attribut überprüfen
 
-Sie werden häufig feststellen, dass Bindungen, die von Ziel-Sharpie erzeugt werden, jetzt `[Verify]` mit dem-Attribut kommentiert werden. Diese Attribute geben an, dass Sie sicher _stellen sollten,_ dass Ziel-Sharpie das richtige ist, indem Sie die Bindung mit der ursprünglichen c/Ziel-c-Deklaration vergleichen (die in einem Kommentar oberhalb der gebundenen Deklaration bereitgestellt wird).
+Sie werden häufig feststellen, dass Bindungen, die von Ziel-Sharpie erzeugt werden, jetzt `[Verify]` mit dem-Attribut kommentiert werden. Diese Attribute geben an, dass Sie sicherstellen sollten, dass Ziel-Sharpie das richtige _ist, indem_ Sie die Bindung mit der ursprünglichen c/Ziel-c-Deklaration vergleichen (die in einem Kommentar oberhalb der gebundenen Deklaration bereitgestellt wird).
 
 Die Überprüfung wird für alle gebundenen Deklarationen _empfohlen_ , ist aber wahrscheinlich für Deklarationen _erforderlich_ , die `[Verify]` mit dem-Attribut kommentiert werden. Dies liegt daran, dass in vielen Situationen nicht genügend Metadaten im ursprünglichen systemeigenen Quellcode vorhanden sind, um abzuleiten, wie eine Bindung am besten erzeugt wird. Möglicherweise müssen Sie in den Header Dateien auf Dokumentation oder Code Kommentare verweisen, um die beste Bindungs Entscheidung zu treffen.
 

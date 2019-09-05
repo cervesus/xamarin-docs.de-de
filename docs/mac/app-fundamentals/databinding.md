@@ -4,15 +4,15 @@ description: In diesem Artikel wird die Verwendung von Schlüssel-Wert-Codierung
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 0816afe7831338348f7612576041623abe8ba283
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: ab5355459f12c8b3cb7fa5f262f015bfd64d3e08
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227255"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290163"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Datenbindung und Schlüssel-Wert-Codierung in xamarin. Mac
 
@@ -333,7 +333,7 @@ public NSArray People {
 
 Hier sind zwei Punkte zu beachten:
 
-1. Wir haben eine `NSMutableArray` anstelle eines Standard Arrays C# oder einer Standard Auflistung verwendet, da dies eine Voraussetzung für die Datenbindung an AppKit-Steuerelemente wie **Tabellen Sichten**, Gliederungs **Sichten** und Auflistungen ist.
+1. Wir haben eine `NSMutableArray` anstelle eines Standard Arrays C# oder einer Standard Auflistung verwendet, da dies eine Voraussetzung für die Datenbindung an AppKit **-Steuer**Elemente wie **Tabellen Sichten**, Gliederungs **Sichten** und Auflistungen ist.
 2. Wir haben das Array von Mitarbeitern zur Verfügung gestellt, indem `NSArray` wir es zu Daten Bindungs Zwecken in C# eine umwandeln und `People`den von der Datenbindung `personModelArray` erwarteten formatierten Namen in der Form " **{class_name} Array** " geändert haben (Beachten Sie, dass die erste das Zeichen wurde in Kleinbuchstaben geschrieben.)
 
 Als nächstes müssen wir einige besondere öffentliche Methoden hinzufügen, um **Array Controller** und Struktur **Controller**zu unterstützen:
@@ -419,7 +419,7 @@ Wir verwenden das `PersonModel` Datenmodell im restlichen Verlauf dieses Artikel
 
 Wenn wir unser Datenmodell definiert haben, sehen wir uns ein einfaches Beispiel für die Datenbindung in Xcode Interface Builder an. Fügen Sie beispielsweise der xamarin. Mac-Anwendung ein Formular hinzu, das zum Bearbeiten der verwendet werden kann `PersonModel` , die wir zuvor definiert haben. Wir fügen einige Text Felder und ein Kontrollkästchen hinzu, um die Eigenschaften des Modells anzuzeigen und zu bearbeiten.
 
-Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen `SimpleViewController` **Ansichts Controller** hinzu, und benennen Sie die Klasse:
+Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen **Ansichts Controller** hinzu, und benennen `SimpleViewController`Sie die Klasse:
 
 [![Hinzufügen eines neuen Ansichts Controllers](databinding-images/simple01.png "Hinzufügen eines neuen Ansichts Controllers")](databinding-images/simple01-large.png#lightbox)
 
@@ -479,7 +479,7 @@ Gehen Sie folgendermaßen vor, um `PersonModel` das Formular an den zu `Person` 
 
     [![Eingeben des Schlüssel Pfads](databinding-images/simple06.png "Eingeben des Schlüssel Pfads")](databinding-images/simple06-large.png#lightbox)
 6. Wenn der Mitarbeiter kein Manager ist, möchten wir die Anzahl von Mitarbeitern, die verwaltete Bezeichnung und das Textfeld haben, ausblenden.
-7. Wählen Sie die Bezeichnung **Anzahl der verwalteten Mitarbeiter** aus, erweitern Sie den ausgeblendeten Pfeil, und aktivieren Sie das Kontrollkästchen **binden an** , und wählen Sie in der Dropdown Liste die Option Geben Sie `self.Person.isManager` als nächstes den **Schlüssel Pfad**ein:
+7. Wählen Sie die Bezeichnung **Anzahl der verwalteten Mitarbeiter** aus, erweitern Sie den ausgeblendeten Pfeil, und aktivieren **Sie das Kontroll** Kästchen **binden an** , **und wählen Sie** in der Dropdown Liste die Option Geben Sie `self.Person.isManager` als nächstes den **Schlüssel Pfad**ein:
 
     [![Eingeben des Schlüssel Pfads](databinding-images/simple07.png "Eingeben des Schlüssel Pfads")](databinding-images/simple07-large.png#lightbox)
 8. Wählen `NSNegateBoolean` Sie aus der Dropdown Liste **Wert Transformator** Folgendes aus:
@@ -503,7 +503,7 @@ Alle Änderungen, die die Benutzer an dem Formular vornehmen, werden in der- `Pe
 
 Nachdem wir nun über die Grundlagen der Datenbindung verfügen, sehen wir uns eine komplexere Daten Bindungs Aufgabe an, indem wir einen _Array Controller_ und eine Datenbindung an eine Tabellenansicht verwenden. Weitere Informationen zum Arbeiten mit Tabellen Sichten finden Sie in der Dokumentation der [Tabellen Sichten](~/mac/user-interface/table-view.md) .
 
-Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen `TableViewController` **Ansichts Controller** hinzu, und benennen Sie die Klasse:
+Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen **Ansichts Controller** hinzu, und benennen `TableViewController`Sie die Klasse:
 
 [![Hinzufügen eines neuen Ansichts Controllers](databinding-images/table01.png "Hinzufügen eines neuen Ansichts Controllers")](databinding-images/table01-large.png#lightbox)
 
@@ -618,7 +618,7 @@ Wenn die Anwendung ausgeführt wird, wird die Tabelle mit dem folgenden Array `P
 
 die Datenbindung für eine Gliederungs Ansicht ähnelt der Bindung an eine Tabellen Sicht. Der Hauptunterschied besteht darin, dass wir anstelle eines **Array Controllers** einen Struktur **Controller** verwenden, um die gebundenen Daten für die Gliederungs Ansicht bereitzustellen. Weitere Informationen zum Arbeiten mit Gliederungs Ansichten finden Sie in der Dokumentation zu den Gliederungs [Ansichten](~/mac/user-interface/outline-view.md) .
 
-Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen `OutlineViewController` **Ansichts Controller** hinzu, und benennen Sie die Klasse:
+Fügen Sie zunächst der Datei " **Main. Storyboard** " in Interface Builder einen neuen **Ansichts Controller** hinzu, und benennen `OutlineViewController`Sie die Klasse:
 
 [![Hinzufügen eines neuen Ansichts Controllers](databinding-images/outline01.png "Hinzufügen eines neuen Ansichts Controllers")](databinding-images/outline01-large.png#lightbox)
 
@@ -704,7 +704,7 @@ Wir müssen einen Struktur **Controller** hinzufügen, um dem Umriss gebundene D
 
     ![Hinzufügen der erforderlichen Schlüssel Pfade](databinding-images/outline05.png "Hinzufügen der erforderlichen Schlüssel Pfade")
 4. Dadurch wird dem Struktur Controller mitgeteilt, worum es sich bei der Verwaltung eines Arrays von handelt und welche Eigenschaften (über Schlüssel) verfügbar gemacht werden sollen.
-5. Geben Sieim Abschnitt `NumberOfEmployees` `personModelArray` Struktur **Controller** für untergeordnete Elemente ein, geben Sie unter der `isEmployee` **Anzahl** ein, und geben Sie unter **Blatt**ein:
+5. Geben Sie im Abschnitt `personModelArray` Struktur Controller **für unter**geordnete Elemente ein `NumberOfEmployees` , geben Sie unter der `isEmployee` **Anzahl** ein, und geben Sie unter **Blatt**ein:
 
     ![Festlegen der Struktur Controller-Schlüssel Pfade](databinding-images/outline05.png "Festlegen der Struktur Controller-Schlüssel Pfade")
 6. Dadurch wird dem Struktur Controller mitgeteilt, wo alle untergeordneten Knoten zu finden sind, wie viele untergeordnete Knoten vorhanden sind und ob der aktuelle Knoten über untergeordnete Knoten verfügt.
@@ -715,7 +715,7 @@ Wir müssen einen Struktur **Controller** hinzufügen, um dem Umriss gebundene D
 
 Nun müssen wir unsere Gliederungs Ansicht an den Struktur Controller binden, um Folgendes durchzuführen:
 
-1. Wählen Sie die Gliederungs Ansicht und in der **Bindungs** Prüfung Folgendes aus:
+1. Wählen Sie die **Gliederungs** Ansicht und in der Bindungs Prüfung Folgendes aus:
 
     [![Auswählen des Bindungs Inspektors](databinding-images/outline07.png "Auswählen des Bindungs Inspektors")](databinding-images/outline07-large.png#lightbox)
 2. Wählen Sie unter der **Ansicht Inhalt der Umriss Ansicht** die Option **binden an** und Struktur **Controller**aus. Geben `arrangedObjects` Sie für das Feld **Controller Schlüssel** Folgendes ein:

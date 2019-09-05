@@ -1,66 +1,66 @@
 ---
-title: Apple Pay auf WatchOS in Xamarin
-description: Dieser Artikel behandelt die Verbesserungen Apple hat zu Apple Pay in WatchOS 3 und deren Implementierung in Xamarin.iOS für Apple Watch.
+title: Apple Pay auf watchos in xamarin
+description: In diesem Artikel werden die Verbesserungen erläutert, die Apple zum Apple Pay in watchos 3 vorgenommen hat, und wie diese in xamarin. IOS für Apple Watch implementiert werden.
 ms.prod: xamarin
 ms.assetid: 32FF5D21-C252-485D-83AC-A7E592237962
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 354e03ee1e07ba99fcdeb05617bc65ed89f0e8c2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7180ccd03429e3a23633744bae35f35b4d9a6678
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364132"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292228"
 ---
-# <a name="apple-pay-on-watchos-in-xamarin"></a>Apple Pay auf WatchOS in Xamarin
+# <a name="apple-pay-on-watchos-in-xamarin"></a>Apple Pay auf watchos in xamarin
 
-Apple hat mehrere Erweiterungen zu Apple Pay in WatchOS 3, das Unterstützung für In-App-Zahlungen. Dadurch kann der Benutzer für die sichere stellen Zahlungsgatewaydienste bereit und wenden Sie sich an Informationen zum physischen waren und Dienstleistungen direkt von der Apple Watch-bezahlen.
+Apple hat mehrere Verbesserungen an Apple Pay in watchos 3 vorgenommen, die Unterstützung für in-App-Zahlungen bietet. Dadurch kann der Benutzer auf sichere Weise Zahlungs-und Kontaktinformationen bereitstellen, um physische waren und Dienste direkt aus der Apple Watch zu bezahlen.
 
 
-## <a name="about-apple-pay-enhancements"></a>Zu den Verbesserungen für Apple Pay
+## <a name="about-apple-pay-enhancements"></a>Informationen zu Apple Pay Erweiterungen
 
-Als Stated oben hat Apple mehrere Erweiterungen zu Apple Pay in WatchOS 3 vorgenommen, die Kontaktinformationen an für physische waren und Dienstleistungen direkt von der Apple Watch und sichere Bezahlung ermöglicht. Diese Verbesserungen werden durch Änderungen an dem PassKit-Framework bereitgestellt.
+Wie bereits erwähnt, hat Apple mehrere Verbesserungen an Apple Pay in watchos 3 vorgenommen, die eine sichere Zahlung und Kontaktinformationen ermöglichen, um die physischen waren und Dienste direkt vom Apple Watch zu bezahlen. Diese Verbesserungen werden durch Änderungen am passkit-Framework bereitgestellt.
 
-Mit iOS 10 und WatchOS 3 wurden verschiedene neue APIs mit iOS und WatchOS zur Unterstützung von dynamischen Zahlung Netzwerke und eine neue Sandkasten-Test-Umgebung hinzugefügt.
+Mit IOS 10 und watchos 3 wurden mehrere neue APIs hinzugefügt, die mit IOS und watchos funktionieren, um dynamische Zahlungs Netzwerke und eine neue Sandkasten Testumgebung zu unterstützen.
 
-## <a name="passkit-framework-enhancements"></a>PassKit-Framework-Erweiterungen
+## <a name="passkit-framework-enhancements"></a>Passkit-Framework-Erweiterungen
 
-In iOS 10, das PassKit-Framework wurde erweitert, um Unterstützung von Apple Pay außerhalb von `UIKit` und belastungsrisiken präsentieren Sie ihre Karten in ihren apps zu ermöglichen. 
+In ios 10 wurde das passkit-Framework erweitert, um Apple Pay außerhalb von `UIKit` und zu unterstützen, damit Kartenaussteller Ihre Karten innerhalb Ihrer Apps präsentieren können. 
 
 ### <a name="supporting-apple-pay-outside-of-uikit"></a>Unterstützung von Apple Pay außerhalb von UIKit
 
-Mithilfe von [PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller) und [PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate), eine app kann die gleiche Funktionalität von bereitgestellten unterstützen [ PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) ohne Verwendung von UIKit. Während dieser neuen API für die Unterstützung von Apple Pay auf der Apple Watch (und in bestimmten Intents sowie) erforderlich ist, ist es in anderen Situationen (z. B. vorhandener apps) optional. Allerdings empfiehlt Apple verschieben so bald wie möglich auf die neue API für eine Breite Apple Pay Unterstützung in allen von der Entwickler-apps mit einer einzigen Codebasis. Weitere Informationen zu Intents und Siri-Integration, informieren Sie sich unsere [Einführung in SiriKit](~/ios/platform/sirikit/index.md) Dokumentation.
+Durch die Verwendung von [pkpaymentauthorizationcontroller](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller) und [pkpaymentautorisierungscontrollerdelegaten](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate)kann eine APP die gleiche Funktionalität unterstützen, die von [pkpaymentauthorizationviewcontroller](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) bereitgestellt wird, ohne dass UIKit verwendet wird. Diese neue API ist zwar für die Unterstützung von Apple Pay auf der Apple Watch erforderlich (und auch in bestimmten Intents), ist aber in anderen Situationen (z. b. vorhandenen apps) optional. Apple empfiehlt jedoch, so bald wie möglich auf die neue API zu wechseln, um eine umfassende Apple Pay Unterstützung für alle Entwickler Anwendungen mit einer einzigen Codebasis bereitzustellen. Weitere Informationen zur Intents-und Siri-Integration finden Sie [in der Einführung in die Sirikit](~/ios/platform/sirikit/index.md) -Dokumentation.
 
-### <a name="presenting-issuer-cards-from-within-apps"></a>Darstellen von Aussteller Karten in Apps
+### <a name="presenting-issuer-cards-from-within-apps"></a>Präsentieren von Aussteller Karten innerhalb von apps
 
-Mit iOS 10 und WatchOS 3 wurden neue Features hinzugefügt, dem PassKit-Framework, die belastungsrisiken präsentieren Sie ihre Zahlungskarten in ihren eigenen apps zu ermöglichen. Entwickler kann Hinzufügen einer `PKPaymentButtonTypeInStore` UIButton an der app-Benutzeroberfläche, die eine Schaltfläche "Apple Pay" für eine Karte angezeigt werden.
+Mit IOS 10 und watchos 3 wurden neue Features zum passkit-Framework hinzugefügt, mit denen Kartenaussteller ihre Zahlungskarten in ihren eigenen apps präsentieren können. Der Entwickler kann der Benutzer `PKPaymentButtonTypeInStore` Oberfläche der APP einen UIButton hinzufügen, der eine Apple Pay Schaltfläche für eine Karte anzeigt.
 
-Die `PresentPaymentPass` Methode der [PKPassLibrary](https://developer.apple.com/reference/passkit/pkpasslibrary) Klasse kann auch verwendet werden, um programmgesteuert auf die Karte angezeigt.
+Die `PresentPaymentPass` -Methode der [pkpasslibrary](https://developer.apple.com/reference/passkit/pkpasslibrary) -Klasse kann auch verwendet werden, um die Karte Programm gesteuert anzuzeigen.
 
-## <a name="new-payment-network-support"></a>Neue Zahlungsmethode Netzwerkunterstützung
+## <a name="new-payment-network-support"></a>Unterstützung für neue Zahlungs Netzwerke
 
-Neue iOS 10 und WatchOS 3, eine app unterstützen automatisch ein neues Netzwerk für die Zahlung ab, wenn es ohne dass der Entwickler zu ändern, kompilieren Sie die app neu und erneut auf den App Store verfügbar wird.
+Neu bei IOS 10 und watchos 3: eine APP kann automatisch ein neues Zahlungsnetzwerk unterstützen, wenn Sie verfügbar wird, ohne dass der Entwickler die APP ändern, neu kompilieren und erneut an den App Store übermitteln muss.
 
-Die neue [AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks) Methode der `PKPaymentNetwork` Klasse ermöglicht einer app aus, um die Netzwerke, die auf dem Gerät des Benutzers zur Laufzeit zu ermitteln. Darüber hinaus die [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks) Eigenschaft wurde erweitert, um die Zahlung des Anbieters Namen als Argument annehmen. Mit diesen Methoden kann eine app automatisch jedes Netzwerk unterstützen, die die Zahlungsdienstanbieter unterstützt.
+Mit der neuen [availablenetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks) -Methode `PKPaymentNetwork` der-Klasse kann eine APP die Netzwerke ermitteln, die auf dem Gerät des Benutzers zur Laufzeit verfügbar sind. Außerdem wurde die [supportednetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks) -Eigenschaft erweitert, um den Namen des Zahlungsanbieters als Argument zu verwenden. Mithilfe dieser Methoden kann eine APP automatisch jedes Netzwerk unterstützen, das der Zahlungsanbieter unterstützt.
 
-Weitere Informationen finden Sie unter unserem [Apple Zahlen Konfiguration](~/ios/platform/apple-pay.md) und Apple [Zahlen Apple-Handbuch](https://developer.apple.com/apple-pay/).
+Weitere Informationen finden Sie in unserer [Apple Pay-Konfiguration](~/ios/platform/apple-pay.md) und in der [Apple Pay Anleitung](https://developer.apple.com/apple-pay/)von Apple.
 
 ## <a name="new-testing-environment"></a>Neue Testumgebung
 
-Mit iOS 10 und WatchOS 3 eingeführt Apple eine neue testumgebung, die dem Entwickler erlaubt, Test-Zahlungskarten direkt auf einem iOS-Gerät bereitstellen. Diese neue testumgebung gibt verschlüsselten-Testdaten für die Zahlung für die app zurück.
+Mit IOS 10 und watchos 3 hat Apple eine neue Testumgebung eingeführt, die es dem Entwickler ermöglicht, Test Zahlungskarten direkt auf einem IOS-Gerät bereitzustellen. Diese neue Testumgebung gibt dann verschlüsselte Test Zahlungsdaten an die APP zurück.
 
-Führen Sie folgende Schritte aus, um die neue testumgebung zu aktivieren:
+Gehen Sie folgendermaßen vor, um die neue Testumgebung zu aktivieren:
 
-1. Erstellen Sie einen neuen Test iCloud-Konto in iTunes Connect.
-2. Melden Sie sich das iOS-Gerät mit dem neuen Konto für Tests.
-3. Legen Sie zum Testen der app in die gewünschte Region ein.
-4. Verwenden Sie eine der der Test-Zahlungskarten über die [Zahlen Apple-Handbuch](https://developer.apple.com/apple-pay/) tätigen von Zahlungen.
+1. Erstellen Sie ein neues icloud-Test Konto in iTunes Connect.
+2. Melden Sie sich mit dem neuen Testkonto beim IOS-Gerät an.
+3. Legen Sie die gewünschte Region fest, um die APP zu testen.
+4. Verwenden Sie eine der Test Zahlungskarten aus dem [Apple Pay Handbuch](https://developer.apple.com/apple-pay/) , um Zahlungen zu tätigen.
 
 > [!NOTE]
-> Durch den Wechsel von iCloud-Konten, wechselt das Gerät automatisch zur neuen Umgebung testen. Allerdings weiterhin von Apple **erfordert** die app mit echten getestet werden, können in einer produktionsumgebung vor der Übermittlung im iTunes App Store.
+> Wenn Sie icloud-Konten wechseln, wechselt das Gerät automatisch zur neuen Testumgebung. Apple **verlangt** jedoch weiterhin, dass die APP mit echten Karten in einer Produktionsumgebung getestet wird, bevor Sie Sie an den iTunes App Store übermitteln.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden die Verbesserungen behandelt Apple hat zu Apple Pay in WatchOS 3 und wie Sie sie in Xamarin.iOS zu implementieren.
+In diesem Artikel wurden die Verbesserungen erläutert, die Apple zum Apple Pay in watchos 3 gemacht hat und wie Sie in xamarin. IOS implementiert werden.

@@ -3,15 +3,15 @@ title: Transport Layer Security (TLS) 1,2
 description: In diesem Dokument wird beschrieben, wie Sie TLS 1,2 für xamarin. IOS-, xamarin. Android-und xamarin. Mac-Projekte aktivieren. Es zeigt, wie dies in Visual Studio 2019 und Visual Studio für Mac durchzuführen ist.
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 31069199e8ebc89da76b63e58651adea82db6882
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6175725ae3eea805680b4da81aa0458aa3f8a68c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526768"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280355"
 ---
 # <a name="transport-layer-security-tls-12"></a>Transport Layer Security (TLS) 1,2
 

@@ -3,15 +3,15 @@ title: Debugintegrationen
 description: In diesem Dokument wird beschrieben, wie Sie Xamarin Workbooks-Integrationen sowohl auf Agent-Seite als auch auf Clientseite unter Windows und Mac Debuggen.
 ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 6b89c0855b35a10a2afcbb69c4a011079c2aaf1d
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fbb5673a70328ad6edde78af1b35d2801fe65ca8
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511859"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283927"
 ---
 # <a name="debugging-integrations"></a>Debugintegrationen
 

@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Handoff in einer xamarin. I
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 28c5086833ceb1dc8550e513b120f7355aa9bebe
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9fa0d51e02382458535b065377af55542d87913a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656576"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290758"
 ---
 # <a name="handoff-in-xamarinios"></a>Übergabe in xamarin. IOS
 

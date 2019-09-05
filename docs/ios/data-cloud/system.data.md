@@ -1,44 +1,44 @@
 ---
-title: "\"System.Data\", in Xamarin.iOS"
-description: Dieses Dokument beschreibt, wie "System.Data" und Mono.Data.Sqlite.dll auf SQLite-Daten in einer Xamarin.iOS-Anwendung zugreifen.
+title: System. Data in xamarin. IOS
+description: In diesem Dokument wird beschrieben, wie Sie mithilfe von "System. Data" und "Mono. Data. sqlite. dll" auf SQLite-Daten in einer xamarin. IOS-Anwendung zugreifen.
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: e6df2d9d45eb2f898bb3c4957ec7960956a184e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 36eeb517fee69742f900a0cf18e1d19d093dfc52
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61240222"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290116"
 ---
-# <a name="systemdata-in-xamarinios"></a>"System.Data", in Xamarin.iOS
+# <a name="systemdata-in-xamarinios"></a>System. Data in xamarin. IOS
 
-Xamarin.iOS 8.10 bietet Unterstützung für ["System.Data"](xref:System.Data), einschließlich der `Mono.Data.Sqlite.dll` ADO NET-Anbieter. Unterstützung umfasst das Hinzufügen der folgenden [Assemblys](~/cross-platform/internals/available-assemblies.md):
+Xamarin. IOS 8,10 bietet Unterstützung für [System. Data](xref:System.Data), einschließlich `Mono.Data.Sqlite.dll` des ADO.NET-Anbieters. Die Unterstützung umfasst das Hinzufügen [der folgenden](~/cross-platform/internals/available-assemblies.md)Assemblys:
 
--  `System.Data.dll`
--  `System.Data.Service.Client.dll`
--  `System.Transactions.dll`
--  `Mono.Data.Tds.dll`
--  `Mono.Data.Sqlite.dll`
+- `System.Data.dll`
+- `System.Data.Service.Client.dll`
+- `System.Transactions.dll`
+- `Mono.Data.Tds.dll`
+- `Mono.Data.Sqlite.dll`
 
 <a name="Example" />
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Programm erstellt eine Datenbank in `Documents/mydb.db3`, und wenn die Datenbank zuvor noch nicht mit Beispieldaten gefüllt ist. Die Datenbank wird dann abgefragt, mit der Ausgabe geschrieben, um `stderr`.
+Das folgende Programm erstellt eine Datenbank in `Documents/mydb.db3`, und wenn die Datenbank nicht bereits vorhanden ist, wird Sie mit Beispiel Daten aufgefüllt. Die Datenbank wird dann abgefragt, und die Ausgabe wird in `stderr`geschrieben.
 
-### <a name="add-references"></a>Fügen Sie Verweise hinzu
+### <a name="add-references"></a>Verweise hinzufügen
 
-Zunächst mit der rechten Maustaste auf die **Verweise** Knoten, und wählen Sie **Verweise bearbeiten...**  wählen Sie dann `System.Data` und `Mono.Data.Sqlite`:
+Klicken Sie zunächst mit der rechten Maustaste auf den Knoten **Verweise** , und wählen Sie **Verweise bearbeiten...** aus, `System.Data` und `Mono.Data.Sqlite`wählen Sie dann aus:
 
-[![](system.data-images/edit-references-sml.png "Hinzufügen von neuen verweisen")](system.data-images/edit-references.png#lightbox)
+[![](system.data-images/edit-references-sml.png "Neue Verweise werden hinzugefügt")](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>Beispielcode
 
-Der folgende Code zeigt ein einfaches Beispiel für eine Tabelle zu erstellen und Einfügen von Zeilen, die über eingebettete SQL-Befehle:
+Der folgende Code zeigt ein einfaches Beispiel für das Erstellen einer Tabelle und das Einfügen von Zeilen mithilfe von eingebetteten SQL-Befehlen:
 
 ```csharp
 using System;
@@ -108,12 +108,12 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> Wie im obigen Codebeispiel erwähnt, ist es nicht üblich, Zeichenfolgen in SQL-Befehlen eingebettet werden, weil Ihr Code anfällig ist [SQL-Einschleusung](https://en.wikipedia.org/wiki/SQL_injection).
+> Wie im obigen Codebeispiel erwähnt, empfiehlt es sich, Zeichen folgen in SQL-Befehle einzubetten, da der Code für die [SQL-Injektion](https://en.wikipedia.org/wiki/SQL_injection)anfällig ist.
 
 
 ### <a name="using-command-parameters"></a>Verwenden von CommandParameter-Eigenschaften
 
-Der folgende Code zeigt, wie Sie die Befehlsparameter zu verwenden, um Benutzer eingegebener Text sicher in die Datenbank eingefügt werden soll, (selbst wenn der Text SQL-Sonderzeichen wie z. B. einzelne-Apostroph):
+Der folgende Code zeigt, wie Befehlsparameter verwendet werden, um den von Benutzern eingegebenen textsicher in die Datenbank einzufügen (auch wenn der Text spezielle SQL-Zeichen wie Single-Apostroph enthält):
 
 ```csharp
 // user input from Textbox control
@@ -132,42 +132,42 @@ using (var addCmd = conn.CreateCommand ()) {
 
 <a name="Missing_Functionality" />
 
-## <a name="missing-functionality"></a>Fehlende Funktionen
+## <a name="missing-functionality"></a>Fehlende Funktionalität
 
-Beide **"System.Data"** und **Mono.Data.Sqlite** fehlen einige Funktionen.
+In " **System. Data** " und " **Mono. Data. sqlite** " fehlen einige Funktionen.
 
 <a name="System.Data" />
 
 ### <a name="systemdata"></a><legacyBold>System.Data</legacyBold>
 
-Funktionen, die fehlen **"System.Data.dll"** besteht aus:
+Die in " **System. Data. dll** " fehlenden Funktionen bestehen aus folgendem:
 
--  Alles, was erfordern [System.CodeDom](xref:System.CodeDom) (z.B.)  [System.Data.TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
--  XML-Konfiguration Datei unterstützen (z.B.)  [System.Data.Common.DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
--   [System.Data.Common.DbProviderFactories](xref:System.Data.Common.DbProviderFactories) (hängt mit Unterstützung für XML-Config-Dateien)
--   [System.Data.OleDb](xref:System.Data.OleDb)
--   [System.Data.Odbc](xref:System.Data.Odbc)
--  Die `System.EnterpriseServices.dll` Abhängigkeit wurde *entfernt* aus `System.Data.dll` , wodurch das Entfernen der [SqlConnection.EnlistDistributedTransaction(ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) Methode.
+- Alles, was [System. CodeDom](xref:System.CodeDom) erfordert (z. b.  [System. Data. TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
+- Unterstützung der XML-Konfigurationsdatei (z. b.  [System. Data. Common. dbproviderconfigurationhandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
+- [System. Data. Common. dbproviderfactorys](xref:System.Data.Common.DbProviderFactories) (abhängig von der Unterstützung der XML-Konfigurationsdatei)
+- [System.Data.OleDb](xref:System.Data.OleDb)
+- [System.Data.Odbc](xref:System.Data.Odbc)
+- Die `System.EnterpriseServices.dll` Abhängigkeit wurde aus `System.Data.dll` entfernt, was zum Entfernen der Methode [SqlConnection. endlistdistributedtransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) führte.
 
 
 <a name="Mono.Data.Sqlite" />
 
-### <a name="monodatasqlite"></a>Mono.Data.Sqlite
+### <a name="monodatasqlite"></a>Mono. Data. sqlite
 
-In der Zwischenzeit **Mono.Data.Sqlite.dll** ist keine Änderungen am Quellcode, aber stattdessen möglicherweise Host mit der Anzahl von *Runtime* seit Probleme `Mono.Data.Sqlite.dll` SQLite 3.5 bindet. iOS 8 umfasst in der Zwischenzeit SQLite 3.8.5. Naja, haben einige Dinge zwischen den beiden Versionen geändert werden.
+In der Zwischenzeit hat **Mono. Data. sqlite. dll** keine Quell Codeänderungen, sondern möglicherweise als Host für eine Reihe von Lauf `Mono.Data.Sqlite.dll` Zeitproblemen, da SQLite 3,5 bindet. IOS 8 wird in der Zwischenzeit mit SQLite 3.8.5 ausgeliefert. Es genügt, dass sich einige Dinge zwischen den beiden Versionen geändert haben.
 
-Im Lieferumfang von älteren iOS-Version sind der folgenden Versionen von SQLite:
+Die ältere Version von IOS wird mit den folgenden Versionen von SQLite ausgeliefert:
 
-- **iOS 7** -Version 3.7.13.
-- **iOS 6** -Version 3.7.13.
-- **iOS 5** -Version 3.7.7.
-- **iOS 4** -Version 3.6.22.
+- **IOS 7** -Version 3.7.13.
+- **IOS 6** -Version 3.7.13.
+- **IOS 5** -Version 3.7.7.
+- **IOS 4** -Version 3.6.22.
 
-Am häufigsten auftretenden Probleme angezeigt, in Bezug auf Schemas Abfragen, z. B. zur Laufzeit die Spalten einer Tabelle, wie z. B. vorhanden bestimmen `Mono.Data.Sqlite.SqliteConnection.GetSchema` (überschreiben [DbConnection.GetSchema](xref:System.Data.Common.DbConnection.GetSchema) und `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` (und damit überschreiben [DbDataReader.GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable). Kurz gesagt: Es scheint, dass alles, was mit [DataTable](xref:System.Data.DataTable) funktioniert wahrscheinlich nicht.
+Die häufigsten Probleme stehen im Zusammenhang mit Datenbankschema Abfragen, z. b. der Bestimmung der Laufzeit, welche Spalten in einer bestimmten Tabelle vorhanden `Mono.Data.Sqlite.SqliteConnection.GetSchema` sind, z. b. (über `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` Schreiben von [DbConnection. GetSchema](xref:System.Data.Common.DbConnection.GetSchema) und ( [Überschreiben von DbDataReader. getschemsierbar](xref:System.Data.Common.DbDataReader.GetSchemaTable). Kurz gesagt: Es ist unwahrscheinlich, dass alles, was die [Daten](xref:System.Data.DataTable) Tabelle verwendet, funktioniert.
 
 <a name="Data_Binding" />
 
 ## <a name="data-binding"></a>Datenbindung
 
-Die Datenbindung wird zu diesem Zeitpunkt nicht unterstützt.
+Die Datenbindung wird zurzeit nicht unterstützt.
 

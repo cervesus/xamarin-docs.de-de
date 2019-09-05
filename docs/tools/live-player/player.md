@@ -3,15 +3,15 @@ title: Xamarin Live Player-App
 description: In diesem Dokument wird die Xamarin Live Player-App beschrieben, die verwendet werden kann, um eine Vorschau der Codeänderungen auf dem Gerät anzuzeigen. Es werden Setup, Beispiele, Protokolle, Einstellungen, Verwaltung von Geräten und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/13/2019
-ms.openlocfilehash: b09ea4e8ec09db5e9bf443476cd3a67e16f02d19
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d725cb0687cce85f10dbf6915e4eeec785c0ae54
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651223"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290214"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player-App
 

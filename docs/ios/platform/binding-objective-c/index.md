@@ -1,48 +1,48 @@
 ---
-title: Binden von iOS-Bibliotheken
-description: Dieses Dokument enthält Informationen zum Erstellen C# -Bindungen mit Objective-C-Code, wodurch sie systemeigene Bibliotheken und CocoaPods in einer Xamarin.iOS-Anwendung zu nutzen.
+title: Binden von IOS-Bibliotheken
+description: In diesem Dokument wird beschrieben, C# wie Sie Bindungen mit dem Ziel-C-Code erstellen, sodass Native Bibliotheken und cocoapods in einer xamarin. IOS-Anwendung verwendet werden können.
 ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 8c4dcbe0baf74479e94f8663280e7654b4d58a9d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 24203d8a3a4356fb4de08d132c164d9f2d19a0c9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978155"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291800"
 ---
-# <a name="binding-ios-libraries"></a>Binden von iOS-Bibliotheken
+# <a name="binding-ios-libraries"></a>Binden von IOS-Bibliotheken
 
-Führen Sie diesen Links, um zu erfahren Sie mehr über das Binden von Objective-C-Bibliotheken und CocoaPods für Xamarin.iOS- und Xamarin.Mac aus:
+Befolgen Sie diese Links, um mehr über das Binden von Ziel-C-Bibliotheken und cocoapods für xamarin. IOS und xamarin. Mac zu erfahren:
 
-- [**Übersicht über die** ](~/cross-platform/macios/binding/overview.md) -
-  beschreibt, wie die Bindung funktioniert.
-- [**Binden von Objective-C-Bibliotheken** ](~/cross-platform/macios/binding/objective-c-libraries.md) -
-  Anleitungen zum Binden von Objective-C-Bibliotheken für die Verwendung in Xamarin-Projekte.
-- [**Geben Sie die Definition Referenzhandbuch** ](~/cross-platform/macios/binding/binding-types-reference.md) -
-  beschreibt alle Attribute für Autoren von Bindungen, die den Generierungsprozess der Bindung Laufwerk verfügbar.
+- [**Übersicht**](~/cross-platform/macios/binding/overview.md) -
+  Beschreibt, wie die Bindung funktioniert.
+- [**Binden von Ziel-C-Bibliotheken**](~/cross-platform/macios/binding/objective-c-libraries.md) -
+  Anweisungen zum Binden von Ziel-C-Bibliotheken für die Verwendung in xamarin-Projekten.
+- [**Referenzhandbuch zur Typdefinition**](~/cross-platform/macios/binding/binding-types-reference.md) -
+  Beschreibt alle verfügbaren Attribute für das Binden von Autoren, um den Bindungs Generierungsprozess zu steuern.
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objektive Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-Objektive Sharpie ist ein Befehlszeilentool können Sie das erste Element des eine Bindung zu starten.
-Es funktioniert, indem Sie die Analyse der Headerdateien zuordnen die öffentliche API in einer nativen Bibliothek die [Bindungsdefinition](~/cross-platform/macios/binding/objective-c-libraries.md) (ein Prozess, die andernfalls manuell durchgeführt werden). Objektive Sharpie Erstellen einer Bindung nicht allein, aber sie können Ihnen beim Einstieg helfen!
+Ziel-Sharpie ist ein Befehlszeilen Tool, mit dem der erste Durchlauf einer Bindung Bootstrap wird.
+Dies funktioniert durch das Überprüfen der Header Dateien einer nativen Bibliothek, um die öffentliche API der [Bindungs Definition](~/cross-platform/macios/binding/objective-c-libraries.md) zuzuordnen (ein Prozess, der andernfalls manuell ausgeführt wird). Der Ziel-Sharpie erstellt nicht allein eine Bindung, aber er kann Ihnen beim Einstieg helfen!
 
-Objektive Sharpie 3.0 wurde die Möglichkeit, direkte Binden von Cocoapods eingeführt.
+Mit dem Ziel-Sharpie 3,0 wurde die Möglichkeit eingeführt, cocoapods direkt zu binden.
 
-## <a name="walkthrough---binding-an-ios-objective-c-librarywalkthroughmd"></a>[Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek](walkthrough.md)
+## <a name="walkthrough---binding-an-ios-objective-c-librarywalkthroughmd"></a>[Exemplarische Vorgehensweise: Binden einer IOS-Ziel-C-Bibliothek](walkthrough.md)
 
-Diese Seite enthält eine schrittweise Anleitung zum Erstellen einer iOS-Bindung-Projekts mithilfe des open Source [ **InfColorPicker** ](https://github.com/InfinitApps/InfColorPicker) Objective-C-Projekt als Beispiel. Die **InfColorPicker** -Bibliothek bietet einen wieder verwendbaren View-Controller, mit denen den Benutzer eine Farbe basierend auf seiner HSB-Darstellung, sodass Farbauswahl Benutzerfreundlicher auswählen können.
-Objektive Sharpie dienen zur Unterstützung des Bindungsvorgangs.
+Auf dieser Seite finden Sie eine schrittweise exemplarische Vorgehensweise zum Erstellen eines IOS-Bindungs Projekts mithilfe des Open Source-Projekts " [**infcolorpicker**](https://github.com/InfinitApps/InfColorPicker) " als Beispiel. Die **infcolorpicker** -Bibliothek bietet einen wiederverwendbaren Ansichts Controller, mit dem der Benutzer eine Farbe basierend auf der HSB-Darstellung auswählen kann, sodass die Farbauswahl benutzerfreundlicher wird.
+Ziel-Sharpie wird verwendet, um den Bindungsprozess zu unterstützen.
 
 ## <a name="video"></a>Video
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 
-**iOS-Bindungen in C /C++ video**
+**IOS-Bindungen in CC++ /Video**
 
 ## <a name="related-links"></a>Verwandte Links
 

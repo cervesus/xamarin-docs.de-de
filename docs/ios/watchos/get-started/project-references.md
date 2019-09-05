@@ -4,15 +4,15 @@ description: In diesem Dokument wird die Beziehung zwischen einer IOS-APP, einer
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 9108f83d76e07d12d70b400075142d9c73519716
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 72a1fe3541eb4ece67dd137ebcd33f8e81ae9553
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065594"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292266"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchos-Projekt Verweise in xamarin
 
@@ -24,11 +24,11 @@ Die drei Projekte in einer watchos-Lösung werden *automatisch so konfiguriert* 
 
 Zeigen Sie die Verweise durch Doppelklicken auf die Knoten Verweise für jedes Projekt an:
 
-- App-Referenz für **iPhone-App**
+- **App-Referenz für** **iPhone-App**
 
   ![](project-references-images/catalog-reference1.png "App-Referenz für iPhone-App")
 
-- App-Verweise ansehen APP- **Erweiterung** ansehen
+- **App-Verweise ansehen** APP- **Erweiterung** ansehen
 
   ![](project-references-images/catalog-reference2.png "App-Referenz für iPhone-App")
 
@@ -58,7 +58,7 @@ Stellen Sie außerdem sicher, dass diese Einstellungen für " **Info. plist** " 
 
 Sie können die Bezeichner bearbeiten, indem Sie in jedem Projekt auf die **Info. plist** -Datei doppelklicken.
 
-Dieser Screenshot zeigt die Info. plist-Datei der **Watch-Erweiterung** , in der auch der Bezeichner der **Watch-App** angezeigt wird:
+Dieser Screenshot zeigt die Info. plist-Datei der **Watch-Erweiterung** , in der auch der **Bezeichner der Watch-App** angezeigt wird:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

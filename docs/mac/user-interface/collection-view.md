@@ -4,15 +4,15 @@ description: Dieser Artikel beschreibt das Arbeiten mit Auflistungs Ansichten in
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/24/2017
-ms.openlocfilehash: ee1b3043033ea1d6e024619e6a176947733e9f24
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: a3673f017a5dd50e5cc3ae44790bf359c2871440
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065484"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279623"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Auflistungs Ansichten in xamarin. Mac
 
@@ -486,7 +486,7 @@ Die `MakeItem` `EmployeeItemController` -Methode der Auflistungs Ansicht wird au
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ``` 
 
-Der im-`EmployeeCell`Befehl verwendete Bezeichner `MakeItem` () _muss_ mit dem Namen des Ansichts Controllers, der in der Auflistungs Ansicht registriert wurde, identisch sein. Dieser Schritt wird im folgenden ausführlich beschrieben.
+Der im-`EmployeeCell`Befehl verwendete **Bezeichner** ( `MakeItem` ) _muss_ mit dem Namen des Ansichts Controllers, der in der Auflistungs Ansicht registriert wurde, identisch sein. Dieser Schritt wird im folgenden ausführlich beschrieben.
 
 <a name="Handling-Item-Selection"/>
 
@@ -744,7 +744,7 @@ Die `ConfigureCollectionView` -Klasse wird verwendet, um den Ansichts Controller
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ```
 
-Beachten Sie, dass der`EmployeeCell`Bezeichner (), der zum Registrieren des Prototyps verwendet `GetItem` wird, mit `CollectionViewDataSource` dem in der-Methode der oben definierten-Methode aufgerufenen
+Beachten Sie, dass der`EmployeeCell` **Bezeichner** (), der zum Registrieren des Prototyps verwendet `GetItem` wird, mit `CollectionViewDataSource` dem in der-Methode der oben definierten-Methode aufgerufenen
 
 ```csharp
 var item = collectionView.MakeItem("EmployeeCell", indexPath) as EmployeeItemController;

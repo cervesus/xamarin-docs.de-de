@@ -1,50 +1,50 @@
 ---
 title: Aktualisieren Ihrer App auf iOS 11
-description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die neuen Features, die für Xamarin.iOS-Entwickler, mit der Veröffentlichung von iOS 11 beschrieben. Klicken Sie z. B. visuelle designupdates, App-Store Änderungen, und App-Symbol aktualisiert.
+description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, in denen neue Features beschrieben werden, die für xamarin. IOS-Entwickler mit der Veröffentlichung von IOS 11 verfügbar sind. Zum Beispiel visuelle Design Updates, App Store-Änderungen und App-Symbol Updates.
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 3193f27c30080a4335abfe969acb3c8b33516469
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3f331c38d470ba77de7b3fc4ef0143bb673683e8
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386343"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286342"
 ---
 # <a name="updating-your-app-to-ios-11"></a>Aktualisieren Ihrer App auf iOS 11
 
-In iOS 11 hat Apple Architektur Updates, neuen visuellen Änderungen und eine aktualisierte iTunes Connect-Prozess eingeführt. Dieses Handbuch beschreibt jede dieser Änderungen, so können Sie zum Abrufen Ihrer Xamarin.iOS-app für iOS 11 aktualisiert.
+In ios 11 hat Apple Architektur Updates, neue visuelle Änderungen und einen aktualisierten iTunes Connect-Prozess eingeführt. In dieser Anleitung werden diese Änderungen erläutert, sodass Sie Ihre xamarin. IOS-App für IOS 11 aktualisieren können.
 
 ## <a name="architecture-changesarchitecture-changesmd"></a>[Architekturänderungen](architecture-changes.md)
 
-Eine der wichtigsten Änderungen, die Sie mit iOS 11 bewusst sein sollten ist die Einstellung 32-Bit-Unterstützung für apps, wie im [Apple](https://developer.apple.com/news/?id=06282017b) Pressemitteilung.
+Eine der größten Änderungen, die Sie mit IOS 11 beachten sollten, ist die Veraltung der 32-Bit-Unterstützung für apps, wie in [der Apple-](https://developer.apple.com/news/?id=06282017b) Presse Version ausführlich beschrieben.
 
-Dieses Handbuch führt Sie durch Aktualisieren Ihrer app für 64-Bit-Version.
+Dieser Leitfaden führt Sie durch die Aktualisierung Ihrer APP für 64-Bit.
 
 ## <a name="visual-design-updatesvisual-designmd"></a>[Visuelle Designupdates](visual-design.md)
 
-IOS 11 hat Apple neue visuelle Änderungen, einschließlich Updates für die Navigationsleiste, eine Suchleiste und eine Tabellenansichten eingeführt. Darüber hinaus wurden Verbesserungen vorgenommen, um für mehr Flexibilität über Ränder und Vollbild-Inhalte zu ermöglichen. Diese Änderungen werden in diesem Handbuch behandelt.
+In ios 11 hat Apple neue visuelle Änderungen eingeführt, einschließlich Aktualisierungen der Navigationsleiste, der Suchleiste und der Tabellen Ansichten. Außerdem wurden Verbesserungen vorgenommen, um mehr Flexibilität über Ränder und voll Bildinhalte zu ermöglichen. Diese Änderungen werden in diesem Handbuch behandelt.
 
 ## <a name="app-store-changesapp-store-changesmd"></a>[App Store-Änderungen](app-store-changes.md)
 
-Der iOS App Store hatte völlig neu entworfen, die nicht nur Benutzer den Store effizient zu navigieren können, jedoch Sie auch als Entwickler, um die app Benutzern höher zu stufen können. Diese heraufstufungen umfassen Updates für in-app-Käufe und Updates für die Seite "Product". iOS 11 bietet außerdem die laufenden mit Benutzern kommunizieren, wie Sie Ihr app-Symbol hinzufügen und wie Sie Ihre app öffentlich freigeben.
+Der IOS App Store hat eine komplette Umgestaltung vorgenommen, die Benutzern nicht nur die effiziente Navigation im Store ermöglicht, sondern auch als Entwickler die herauf Stufung Ihrer APP zu den Benutzern ermöglicht. Diese Aktionen umfassen Updates für in-App-Käufe und Aktualisierungen der Produktseite. IOS 11 fügt außerdem Updates zum kommunizieren mit Benutzern, zum Hinzufügen des App-Symbols und zum Freigeben der APP auf der Öffentlichkeit hinzu.
 
-## <a name="app-icon-updates"></a>Symbol der App-Updates
+## <a name="app-icon-updates"></a>App-Symbol Updates
 
 > [!NOTE]
-> App-Symbole sollten nun übermittelt werden, durch eine _Asset-Katalog_. 
+> App-Symbole sollten nun von einem _Asset-Katalog_geliefert werden. 
 
-Informationen zur Verwendung von Asset-Katalogs finden Sie in der [App Store-Symbol](~/ios/app-fundamentals/images-icons/app-store-icon.md) Guide. Um Hilfe bei der Migration Symbole aus einer Datei "Info.plist" aus, um einen Ressourcenkatalog, finden Sie unter den [Migrieren von Datei "Info.plist" zu Ressourcenkataloge](~/ios/app-fundamentals/images-icons/app-icons.md) Guide.
+Weitere Informationen zur Verwendung von Asset-Katalogen finden Sie im [App Store-Symbol](~/ios/app-fundamentals/images-icons/app-store-icon.md) Handbuch. Hilfe zum Migrieren von Symbolen aus einer Info. plist zu einem Asset-Katalog finden Sie im Handbuch [Migrieren von Info. plist zu Asset-Katalogen](~/ios/app-fundamentals/images-icons/app-icons.md) .
 
-Das erforderliche Symbole im Ressourcenkatalog heißt **App Store** und 1024 x 1024 Größe. Laut Apple kann das App Store-Symbol im Ressourcenkatalog nicht transparent sein oder einen Alphakanal enthalten.
+Das erforderliche Symbol im Asset-Katalog heißt **App Store** und sollte 1024 x 1024 betragen. Laut Apple kann das App Store-Symbol im Ressourcenkatalog nicht transparent sein oder einen Alphakanal enthalten.
 
-![App speichern Symbols in den Asset-Katalog.](images/image1.png)
+![App Store-Symbol Speicherort in Asset catalog.](images/image1.png)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Was ist neu in iOS 11 (Apple)](https://developer.apple.com/ios/)
-- [Aktualisierte App-Store-Produktseite (Apple)](https://developer.apple.com/app-store/product-page/)
-- [Aktualisieren Ihrer App für iOS 11 (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/204/)
+- [Neuerungen in ios 11 (Apple)](https://developer.apple.com/ios/)
+- [Aktualisierte App Store-Produktseite (Apple)](https://developer.apple.com/app-store/product-page/)
+- [Aktualisieren Ihrer APP für IOS 11 (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/204/)

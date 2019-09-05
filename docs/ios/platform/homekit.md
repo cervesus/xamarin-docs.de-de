@@ -4,15 +4,15 @@ description: Homekit ist das Apple-Framework zum Steuern von Home Automation-Ger
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: e8acec18785ff5017aa012a646f40f8a866070f8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f98cd3110719827d8cfeceef4dc9e73776c79f3f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656632"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292715"
 ---
 # <a name="homekit-in-xamarinios"></a>Homekit in xamarin. IOS
 
@@ -671,7 +671,7 @@ In diesem Artikel wurden die grundlegenden Features behandelt, die für die Arbe
 - **Aktionen und Aktions Sätze** : Aktionen ändern die Eigenschaften des Zubehör Dienstanbieter und können in Mengen gruppiert werden. Aktions Sätze fungieren als Skripts, um eine Gruppe von Zubehör zu steuern und ihre Aktionen zu koordinieren. Beispielsweise kann ein "Watch TV"-Skript die Jalousien schließen, die Lichter ausblenden und das Fernsehen und sein Soundsystem einschalten. Weitere Informationen zum Erstellen und Verwalten von Aktionen und Aktions Sätzen finden Sie in der Dokumentation zu [hmaction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction) und [hmactionset](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet) von Apple.
 - **Trigger** : ein Trigger kann einen oder mehrere Aktions Sätze aktivieren, wenn ein bestimmter Satz von Bedingungen erfüllt ist. Aktivieren Sie z. b. den portch-Licht, und Sperren Sie alle externen Türen, wenn Sie sich außerhalb von befinden. Weitere Informationen zum Erstellen und Verwalten von Triggern finden Sie in der [hmtrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger) -Dokumentation von Apple.
 
-Da diese Features die oben dargestellten Techniken verwenden, sollten Sie einfach zu implementieren sein, indem Sie das [homekitdeveloper-Handbuch](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)von Apple, die [homekit-Richtlinien zur Benutzeroberfläche](https://developer.apple.com/homekit/ui-guidelines/) und die [homekit](https://developer.apple.com/library/ios/home_kit_framework_ref)-frameworkreferenz verwenden.
+Da diese Features die oben dargestellten Techniken verwenden, sollten Sie einfach zu implementieren sein, indem Sie das [homekitdeveloper-Handbuch](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)von Apple, die [homekit-Richtlinien zur Benutzeroberfläche](https://developer.apple.com/homekit/ui-guidelines/) und die [homekit-frameworkreferenz](https://developer.apple.com/library/ios/home_kit_framework_ref)verwenden.
 
 ## <a name="homekit-app-review-guidelines"></a>Homekit-App-Überprüfungs Richtlinien
 

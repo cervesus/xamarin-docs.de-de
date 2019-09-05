@@ -3,15 +3,15 @@ title: Übersicht über Unified API
 description: Die Unified API von xamarin ermöglicht die gemeinsame Nutzung von Code zwischen Mac und IOS sowie die Unterstützung von 32-und 64-Bit-Anwendungen mit derselben Binärdatei.
 ms.prod: xamarin
 ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 99347ccc2490361bedda926b25076158a12e39bf
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 75177daa2f8bd1faa271940713ff8543db3b97c0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065175"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287388"
 ---
 # <a name="unified-api-overview"></a>Übersicht über Unified API
 
@@ -83,7 +83,7 @@ Eine vollständige Liste der Änderungen beim Wechsel von der klassischen zum Un
 
 ## <a name="updating-to-unified"></a>Aktualisieren auf Unified
 
-Einige alte/unterbrochene/veraltete APIs sind in der **vereinheitlichten** API nicht verfügbar. Es kann einfacher sein, die `CS0616` Warnungen zu beheben, bevor Sie mit der (manuellen oder automatisierten) Aktualisierung beginnen, da Sie über die `[Obsolete]` Attribut Meldung (Teil der Warnung) zur richtigen API gelangen.
+Einige alte/unterbrochene/veraltete **APIs sind in** der **vereinheitlichten** API nicht verfügbar. Es kann einfacher sein, die `CS0616` Warnungen zu beheben, bevor Sie mit der (manuellen oder automatisierten) Aktualisierung beginnen, da Sie über die `[Obsolete]` Attribut Meldung (Teil der Warnung) zur richtigen API gelangen.
 
 Beachten Sie, dass wir einen [*diff*](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md) der klassischen vs Unified API-Änderungen veröffentlichen, die entweder vor oder nach dem Projekt aktualisiert werden können. Immer noch eine Korrektur der veralteten Aufrufe in klassischem, ist oft ein Zeitersparnis (weniger Dokumentations Suchvorgänge).
 

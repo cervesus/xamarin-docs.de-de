@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Sandkasten einer xamarin. Mac-Anwendung 
 ms.prod: xamarin
 ms.assetid: 06A2CA8D-1E46-410F-8C31-00EA36F0735D
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 5c697ebc4621fa8287bd001bcc4b44bb23fc163e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 052d81ccaefe123eb375ddcd92bee0b1f2a395e2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227243"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290317"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing einer xamarin. Mac-app
 
@@ -115,9 +115,9 @@ Gehen Sie folgendermaßen vor:
 2. Wählen Sie **Zertifikate, Bezeichner & profile**aus:
 
     [![Auswählen von „Zertifikate, Bezeichner und Profile“](sandboxing-images/sign02.png "Selecting Certificates, Identifiers & Profiles")](sandboxing-images/sign02-large.png#lightbox)
-3. Wählen Sie unter Mac- **apps**die Option Bezeichner aus:
+3. **Wählen Sie**unter **Mac-apps**die Option Bezeichner aus:
 
-    [![Auswählen] von bezeichlern (sandboxing-images/sign03.png "Auswählen") von bezeichlern](sandboxing-images/sign03-large.png#lightbox)
+    [![Auswählen von bezeichlern](sandboxing-images/sign03.png "Auswählen von bezeichlern")](sandboxing-images/sign03-large.png#lightbox)
 4. Erstellen Sie eine neue ID für die Anwendung:
 
     [![Erstellen einer neuen APP-ID](sandboxing-images/sign04.png "Erstellen einer neuen APP-ID")](sandboxing-images/sign04-large.png#lightbox)
@@ -557,7 +557,7 @@ Weitere Informationen finden Sie im Programmier Handbuch [Erstellen von XPC-Dien
 
 Wenn Sie eine neue Sandkasten Version einer xamarin. Mac-Anwendung freigeben, die zuvor nicht in einem Sandkasten enthalten war, müssen Sie sicherstellen, dass die aktuellen Benutzer über einen Smooth-Upgradepfad verfügen.
 
- Ausführliche Informationen zum Implementieren eines Container Migrations Manifests finden Sie unter Apple migrieren [einer APP in eine Sandbox](https://developer.apple.com/library/prerelease/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/MigratingALegacyApp/MigratingAnAppToASandbox.html#//apple_ref/doc/uid/TP40011183-CH6-SW1) -Dokumentation.
+ Ausführliche Informationen zum Implementieren eines Container Migrations Manifests finden Sie unter Apple [Migrieren einer APP in eine Sandbox](https://developer.apple.com/library/prerelease/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/MigratingALegacyApp/MigratingAnAppToASandbox.html#//apple_ref/doc/uid/TP40011183-CH6-SW1) -Dokumentation.
 
 ## <a name="summary"></a>Zusammenfassung
 

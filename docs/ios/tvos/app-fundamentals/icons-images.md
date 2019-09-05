@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit Symbolen und Bilde
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4c3739f7d1583966a58ebf102a3d3b2a0a9f93ab
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f3a0525a42a59edfe08e5b478bf6af801008ef05
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653210"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277853"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit tvos-Symbolen und-Bildern in xamarin
 
@@ -315,7 +315,7 @@ Führen Sie folgende Schritte aus:
 2. Wählen Sie im **Info. plist-Editor**den Ressourcen Katalog (oben im Abschnitt [Festlegen der APP-Symbole](#Setting-the-App-Icons) konfiguriert) für die **App-Symbole**aus: 
 
     [![](icons-images-images/info02.png "Der Info. plist-Editor")](icons-images-images/info02.png#lightbox)
-3. Wählen Sie als nächstes den Ressourcen Katalog (oben im Abschnitt [Festlegen des Start](#Setting-the-Launch-Image) Abbilds konfiguriert) für die **Start Images**aus.
+3. Wählen Sie als nächstes den Ressourcen Katalog (oben im Abschnitt [Festlegen des Start Abbilds](#Setting-the-Launch-Image) konfiguriert) für die **Start Images**aus.
 4. Speichern Sie die Änderungen.
 
 <a name="Summary" />

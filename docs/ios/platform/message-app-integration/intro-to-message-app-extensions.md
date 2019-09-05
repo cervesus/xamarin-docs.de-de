@@ -4,15 +4,15 @@ description: In diesem Artikel wird gezeigt, wie Sie eine Erweiterung der Nachri
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 92b16e4a802411c70bef7d5810a161dbdfedfa09
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1d6edb9107c3d6ae04c91ebcf874fb92a7f911b3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227494"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280041"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Grundlagen der Nachrichten-APP-Erweiterung in xamarin. IOS
 

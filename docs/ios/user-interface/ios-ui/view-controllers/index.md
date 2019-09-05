@@ -1,24 +1,24 @@
 ---
-title: View-Controller in Xamarin.iOS
-description: Dieses Dokument enthält Links, um eine Anleitung, die beschreibt, wie der animierten Übergänge zwischen ansichtscontrollern in Xamarin.iOS angepasst wird.
+title: Anzeigen von Controllern in xamarin. IOS
+description: Dieses Dokument enthält Links zu einem Leitfaden, in dem beschrieben wird, wie die animierten Übergänge zwischen Ansichts Controllern in xamarin. IOS angepasst werden.
 ms.prod: xamarin
 ms.assetid: 15846D93-26A7-4E7E-B6DA-8E20FCD995E7
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/21/2017
-ms.openlocfilehash: ff440721cfb3217371f91b97425751f325dcaa50
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5e7fe2604df44b1c171fd028cf47dbe2e54ac5cf
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61246271"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291552"
 ---
-# <a name="view-controllers-in-xamarinios"></a>View-Controller in Xamarin.iOS
+# <a name="view-controllers-in-xamarinios"></a>Anzeigen von Controllern in xamarin. IOS
 
 ## <a name="view-controller-transitionstransitionsmd"></a>[Übergänge von Ansichtscontrollern](transitions.md)
 
-UIKit fügt die Unterstützung der Anpassung der animierten Übergangs, der tritt auf, wenn der ansichtscontroller darstellen. Diese Unterstützung ist im Lieferumfang von integrierten Controller als auch alle benutzerdefinierten Controller, die direkt von erben `UIViewController`. Darüber hinaus `UICollectionViewController` nutzt die Vorteile der Controller-Übergang-Anpassung animierten Übergänge in den Ansichtslayouts Sammlung nutzen.
+UIKit bietet Unterstützung für das Anpassen des animierten Übergangs, der beim darstellen von Ansichts Controllern auftritt. Diese Unterstützung ist in integrierten Controllern sowie allen benutzerdefinierten Controllern enthalten, die direkt von `UIViewController`erben. `UICollectionViewController` Außerdem nutzt die Anpassung des Controller Übergangs, um die animierten Übergänge in Auflistungs Ansichts Layouts zu nutzen.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -4,15 +4,15 @@ description: In diesem Dokument wird das erweiterte Verweis zählungs System von
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 221c3a3bb82b5b46f4afea5ec43fcdd5c00b0556
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 8b1b82a1707a4aa58ef1e3dadbaeb79ada1ad6a1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199326"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291871"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Neues Verweis zählungs System in xamarin. IOS
 
@@ -36,7 +36,7 @@ Xamarin. IOS 7.2.1 und höher bietet eine erweiterte Vorschau unseres neuen Refe
 
 **Classic API:**
 
-Aktivieren Sie zum Aktivieren dieses neuen Verweis zählungs Systems das Kontrollkästchen **Verweis Zähl Erweiterung verwenden** auf der Registerkarte **erweitert** der **IOS**-Buildoptionen Ihres Projekts, wie unten dargestellt: 
+Aktivieren Sie zum Aktivieren dieses neuen Verweis zählungs Systems das Kontrollkästchen **Verweis Zähl Erweiterung verwenden** auf der Registerkarte **erweitert** der IOS- **Buildoptionen**Ihres Projekts, wie unten dargestellt: 
 
 [![](newrefcount-images/image1.png "Aktivieren des neuen Verweis zählungs Systems")](newrefcount-images/image1.png#lightbox)
 

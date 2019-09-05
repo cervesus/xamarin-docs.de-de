@@ -1,24 +1,24 @@
 ---
-title: Konfigurieren von SQLite in Xamarin.iOS
+title: Konfigurieren von sqlite in xamarin. IOS
 description: Dieses Dokument beschreibt, wie Sie den Speicherort für eine SQLite-Datenbank in einer Xamarin.iOS-Anwendung bestimmen. Diese Konzepte sind unabhängig von dem Mechanismus für die ausgewählten Daten relevant.
 ms.prod: xamarin
 ms.assetid: E5582F4B-AD74-420F-9E6D-B07CFB420B3A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: afb582129a5587e6a386a0ce2c23368af9bcd619
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: c0a8f57e3f4f351cf5b874ded2639b975ea71cad
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650252"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281909"
 ---
-# <a name="configuring-sqlite-in-xamarinios"></a>Konfigurieren von SQLite in Xamarin.iOS
+# <a name="configuring-sqlite-in-xamarinios"></a>Konfigurieren von sqlite in xamarin. IOS
 
 Xamarin.iOS-Anwendungen können SQLite-Datenbanken verwenden. Dazu muss nur ein korrekter Speicherort für die Datenbankdatei angegeben werden.
 
-## <a name="database-file-path"></a>Pfad der Datenbankdatei
+## <a name="database-file-path"></a>Datenbankdatei Pfad
 
 Bevor Sie Daten in einer SQLite-Datenbank speichern können, müssen Sie eine Datenbankdatei erstellen. Diese muss immer erstellt werden, unabhängig von der verwendeten Datenzugriffsmethode. Der Speicherort unterscheidet sich lediglich je nach Zielplattform. Für iOS wird für die Erstellung eines gültigen Pfads die "Environment"-Klasse verwendet:
 
@@ -69,6 +69,6 @@ Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.) sollt
 ## <a name="related-links"></a>Verwandte Links
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS-Daten-Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)
+- [DataAccess (erweitert) (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [IOS-Daten Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
+- [Xamarin. Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)

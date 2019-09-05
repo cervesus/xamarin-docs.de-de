@@ -3,24 +3,24 @@ title: Kontrollkästchen für die Bereitstellung in Configuration Manager deakti
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: aaf675cd-d885-4dac-9754-77dbcaea3be9
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: 35efb00a721062ad3217300f7e3a5430b1bd1560
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 82ff1a684ffad75a301f0db6b0f8e3116be6746d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357751"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285065"
 ---
 # <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>Kontrollkästchen für die Bereitstellung in Configuration Manager deaktiviert
 
-Da Xamarin 3.5, Xamarin.iOS-Projekte automatisch bereitgestellt, wenn Sie drücken die **starten** Symbolleisten-Schaltfläche, oder wählen Sie die **Debuggen > Debuggen starten** Menüelement. Sie müssen weiterhin das gewünschte Xamarin.iOS-app-Projekt als Festlegen der **Startprojekt** vor dem Ausführen dieser Befehle.
+Xamarin 3,5-Projekte, xamarin. IOS-Projekte, werden automatisch bereitgestellt, wenn Sie auf die Schaltfläche " **Start** " klicken, oder wählen Sie das Menü Element **Debuggen >** Sie müssen das gewünschte xamarin. IOS-App-Projekt weiterhin als **Startprojekt** festlegen, bevor Sie einen dieser Befehle ausführen.
 
-Aus diesem Grund die **bereitstellen** Kontrollkästchen sind absichtlich im Visual Studio Konfigurations-Manager für Xamarin.iOS-Projekte deaktiviert:
+Aus diesem Grund sind die **Kontrollkästchen** bereitstellen absichtlich in der Visual Studio-Configuration Manager für xamarin. IOS-Projekte deaktiviert:
 
-![](deploy-checkboxes-images/configuration.png "Configuration Manager in Visual Studio mit der \"Bereitstellen\" das Kontrollkästchen für eine Xamarin.iOS-Projekt in Xamarin 3.5 deaktiviert")
+![](deploy-checkboxes-images/configuration.png "Visual Studio Configuration Manager zeigt das Kontrollkästchen \"Bereitstellen\" für ein xamarin. IOS-Projekt in xamarin 3,5 an")
 
-Diese Änderung schließt einen Fehler, der in früheren Versionen von Xamarin (Version 3.3 und früher) angezeigt werden kann, wenn das Xamarin.iOS-app-Projekt nicht, zum Bereitstellen festgelegt wurde:
+Diese Änderung beseitigt einen Fehler, der in älteren Versionen von xamarin (Version 3,3 und früher) angezeigt werden kann, wenn das xamarin. IOS-App-Projekt nicht für die Bereitstellung festgelegt wurde:
 
-![](deploy-checkboxes-images/error.png "Dialogfeld \"Fehler: Das Projekt iPhoneApp1 muss bereitgestellt werden, bevor es gestartet werden kann. Stellen Sie sicher, dass das Projekt im Projektmappenkonfigurations-Manager bereitgestellt werden, ausgewählt ist.")
+![](deploy-checkboxes-images/error.png "Fehler Dialogfeld: Das Projekt iPhoneApp1 muss bereitgestellt werden, bevor es gestartet werden kann. Vergewissern Sie sich, dass das Projekt für die Bereitstellung in der Projekt Mappe Configuration Manager ausgewählt ist.")

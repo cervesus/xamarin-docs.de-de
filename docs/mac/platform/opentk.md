@@ -4,15 +4,15 @@ description: Dieser Artikel bietet eine Einführung in die Arbeit mit opentk in 
 ms.prod: xamarin
 ms.assetid: BDE05645-7273-49D3-809B-8642347678D2
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 806f58ae6a79f935916008e93deed0136920951a
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 908ed187d8d3d341f8d65e3a3d417588492f325f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227820"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292965"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Einführung in opentk in xamarin. Mac
 
@@ -52,7 +52,7 @@ Als schnelle Einführung in die Verwendung von opentk in einer xamarin. Mac-app 
 
 ### <a name="starting-a-new-project"></a>Starten eines neuen Projekts
 
-Starten Sie Visual Studio für Mac, und erstellen Sie eine neue xamarin. Mac-Projekt Mappe. Wählen Sie die > **Allgemeine** > Mac > -APP, Cocoa-**App**:
+Starten Sie Visual Studio für Mac, und erstellen Sie eine neue xamarin. Mac-Projekt Mappe. Wählen > Sie > die**Allgemeine**Mac-app, > Cocoa-App:
 
 [![](opentk-images/sample01.png "Hinzufügen einer neuen Cocoa-App")](opentk-images/sample01.png#lightbox)
 

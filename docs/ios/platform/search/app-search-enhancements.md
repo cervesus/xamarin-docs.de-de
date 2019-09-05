@@ -4,15 +4,15 @@ description: In diesem Artikel werden die Verbesserungen erläutert, die Apple b
 ms.prod: xamarin
 ms.assetid: 30124DB6-6A02-4F66-A2D9-BBC8008E6B48
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: ec7523ac2adc3a6b4ba18a7b8a0fe21749bd7856
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 2a2475bcc5eea48584c4aa128aafeeb326e41f8d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227405"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280373"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Erweiterungen der APP-Suche in xamarin. IOS
 
@@ -36,7 +36,7 @@ In den folgenden Abschnitten werden diese Themen ausführlicher behandelt.
 
 IOS 10 bietet einen Mechanismus zum zählen der Häufigkeit, mit der beliebte Deep-Links zu einer APP vom Benutzer befolgt werden. diese Informationen werden verwendet, um die Rangfolge der Inhalte einer APP in den Suchergebnissen zu verbessern, während die Identität des Benutzers weiterhin mithilfe von differenziell geschützt wird.  *Datenschutz*.
 
-Für apps, die- `NSUserActivity` Objekte verwenden, um Deep-Link-URLs bereit `EligibleForPublicIndexing` zustellen und die `true`-Eigenschaft auf festgelegt ist, übermittelt IOS 10 eine Teilmenge differenzieller *Datenschutz* Hashs an die Server von Apple. Diese Informationen werden dann verwendet, um beliebte in-App-Inhalte in den Suchergebnissen zu bewerben.
+Für apps, die- `NSUserActivity` Objekte verwenden, um Deep-Link-URLs bereit `EligibleForPublicIndexing` zustellen und die `true`-Eigenschaft auf festgelegt ist, übermittelt IOS 10 eine Teilmenge *differenzieller Datenschutz* Hashs an die Server von Apple. Diese Informationen werden dann verwendet, um beliebte in-App-Inhalte in den Suchergebnissen zu bewerben.
 
 Weitere Informationen zum Implementieren von Deep-Linking in einer xamarin. IOS-App finden Sie in der Dokumentation zur [Suche mit nsuseractivity](~/ios/platform/search/nsuseractivity.md) .
 

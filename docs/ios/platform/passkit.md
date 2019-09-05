@@ -4,15 +4,15 @@ description: Die Wallet-App ermöglicht IOS-Benutzern das Speichern digitaler Pa
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: c434c39c12403bfc61e146041eb2a0780f29eb3e
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8039482175465a67867f3c70f17518dee8b9500b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119173"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277868"
 ---
 # <a name="passkit-in-xamarinios"></a>Passkit in xamarin. IOS
 
@@ -41,7 +41,7 @@ Passkit bietet eine Alternative für jedes dieser Szenarien:
 - **Movie Tickets** – nach dem Kauf fügt der Kunde einen Ereignis Ticket Pass (per e-Mail oder über einen Link zur Website) hinzu. In der Zeit für den Film wird der Durchlauf automatisch als Erinnerung auf dem Sperrbildschirm angezeigt, und bei der Ankunft im Kino wird der Durchlauf problemlos abgerufen und zum Scannen in Wallet angezeigt.
 - **Treuekarten** – anstatt (oder zusätzlich zu), die eine physische Karte bereitstellen, können Filialen (per e-Mail oder nach einer Website Anmeldung) einen Pass Karten Pass ausgeben. Der Speicher kann zusätzliche Features bereitstellen, wie z. b. das Aktualisieren des Saldo des Kontos während des Pass-Through-Pushbenachrichtigungen, und die Verwendung von geolozierungsdiensten der Pass könnte automatisch auf dem Sperrbildschirm angezeigt werden, wenn sich der Kunde in der Nähe eines Speicher Orts befindet
 - **Coupons** – Coupon Pässe können problemlos mit eindeutigen Merkmalen generiert werden, um Sie bei der Nachverfolgung und Verteilung per e-Mail oder Website Links zu unterstützen. Heruntergeladene Coupons können automatisch auf dem Sperrbildschirm angezeigt werden, wenn sich der Benutzer an einem bestimmten Speicherort befindet, und/oder an einem bestimmten Datum (z. b. wenn sich das Ablaufdatum nähert). Da die Coupons auf dem Telefon des Benutzers gespeichert sind, sind Sie immer praktisch und werden nicht falsch platziert. Gutscheine können Kunden ermutigen, Begleit-apps herunterzuladen, da App Store-Links in den Durchlauf integriert werden können, wodurch sich die Einbindung mit dem Kunden erhöht.
-- Das Onboarding – nach einem Online Eincheck Vorgang erhält der Kunde seine Einstiegs Pass per e-Mail oder über einen Link. Eine Begleit-APP, die vom Transportanbieter bereitgestellt wird, kann den Eincheck Vorgang einschließen und es dem Kunden ermöglichen, zusätzliche Funktionen wie die Auswahl seines Arbeitsplatzes oder seiner Mahlzeit auszuführen. Der Transportanbieter kann Pushbenachrichtigungen verwenden, um den Durchlauf zu aktualisieren, wenn der Transport verzögert oder abgebrochen wird. Wenn die Boardingzeit erreicht wird, wird der Durchlauf auf dem Sperrbildschirm als Erinnerung angezeigt und ermöglicht einen schnellen Zugriff auf den Durchlauf.
+- Das **Onboarding** – nach einem Online Eincheck Vorgang erhält der Kunde seine Einstiegs Pass per e-Mail oder über einen Link. Eine Begleit-APP, die vom Transportanbieter bereitgestellt wird, kann den Eincheck Vorgang einschließen und es dem Kunden ermöglichen, zusätzliche Funktionen wie die Auswahl seines Arbeitsplatzes oder seiner Mahlzeit auszuführen. Der Transportanbieter kann Pushbenachrichtigungen verwenden, um den Durchlauf zu aktualisieren, wenn der Transport verzögert oder abgebrochen wird. Wenn die Boardingzeit erreicht wird, wird der Durchlauf auf dem Sperrbildschirm als Erinnerung angezeigt und ermöglicht einen schnellen Zugriff auf den Durchlauf.
 
 Im Kern bietet passkit eine einfache und bequeme Möglichkeit zum Speichern und Anzeigen von Barcodes auf Ihrem IOS-Gerät. Dank der zusätzlichen Zeit-und Speicherort-Lock-Screen-Integration bietet Pushbenachrichtigungen und die Integration von Begleit Anwendungen eine Grundlage für sehr ausgereifte Vertriebs-, Ticket-und Abrechnungsdienste.
 
@@ -227,7 +227,7 @@ Der erste Schritt besteht darin, eine Passtyp-ID für jeden unterstützten _Typ_
 
 1. Navigieren Sie im [IOS-Bereitstellungs Portal im Abschnitt Zertifikate, Bezeichner und Profile](https://developer.apple.com/account/overview.action)zu **Identifizierer** , und wählen Sie **Passtyp-IDs** aus. Wählen Sie dann **+** die Schaltfläche aus, um einen neuen Passtyp zu erstellen: [![](passkit-images/passid.png "Neuen Passtyp erstellen")](passkit-images/passid.png#lightbox)
 
-2. Geben Sie eine **Beschreibung** (Name) und einen Bezeichner (eindeutige Zeichenfolge) für den Durchlauf an. Beachten Sie, dass alle Pass-Type-IDs mit `pass.` der Zeichenfolge beginnen müssen `pass.com.xamarin.coupon.banana` , die wir in diesem Beispiel verwenden: [![](passkit-images/register.png "Angeben einer Beschreibung und eines Bezeichners")](passkit-images/register.png#lightbox)
+2. Geben Sie eine **Beschreibung** (Name) und einen **Bezeichner** (eindeutige Zeichenfolge) für den Durchlauf an. Beachten Sie, dass alle Pass-Type-IDs mit `pass.` der Zeichenfolge beginnen müssen `pass.com.xamarin.coupon.banana` , die wir in diesem Beispiel verwenden: [![](passkit-images/register.png "Angeben einer Beschreibung und eines Bezeichners")](passkit-images/register.png#lightbox)
 
 
 3. Bestätigen Sie die Pass-ID durch Drücken der Schaltfläche **registrieren** .
@@ -405,7 +405,7 @@ Hierbei entspricht `pass.$(CFBundleIdentifier)` der Pass-ID, die [zuvor](~/ios/p
 
 ### <a name="debugging"></a>Debuggen
 
-Wenn bei der Bereitstellung der Anwendung Probleme auftreten, überprüfen Sie, ob Sie das richtige Bereitstellungs Profil `Entitlements.plist` verwenden und ob in den **iPhone Bundle** -Signierungs Optionen als **benutzerdefinierte** Berechtigungsdatei ausgewählt ist.
+Wenn bei der Bereitstellung der Anwendung Probleme auftreten, überprüfen Sie, ob Sie das richtige **Bereitstellungs Profil** verwenden und ob in den `Entitlements.plist` **iPhone Bundle-Signierungs** Optionen als **benutzerdefinierte** Berechtigungsdatei ausgewählt ist.
 
 Wenn bei der Bereitstellung dieser Fehler auftritt:
 

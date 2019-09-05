@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Sie in tvos-apps, die mit x
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 99fafe0ae0186ac68609ebe22dabe64e588ee5e0
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 32deee1ea1e47438f4f671ac3ccaa09f4218a88b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226674"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290738"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri-Remote-und Bluetooth-Controller für tvos in xamarin
 
@@ -86,7 +86,7 @@ Gehen Sie folgendermaßen vor, um eine Gestenerkennung hinzuzufügen:
 2. Ziehen Sie eine **Tap-Gestenerkennung** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab:
 
     [![](remote-bluetooth-images/storyboard01.png "Eine Tap-Gestenerkennung")](remote-bluetooth-images/storyboard01.png#lightbox)
-3. Aktivieren Sie im **Schalt** Flächen Abschnitt des **Attribut Inspektors**Folgendes:
+3. Aktivieren **Sie im** **Schalt** Flächen Abschnitt des **Attribut Inspektors**Folgendes:
 
     [![](remote-bluetooth-images/storyboard02.png "Auswahl aktivieren")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Select** bedeutet, dass die Geste auf den Benutzer reagiert, indem er auf die **Touchoberfläche** der Siri-Remote klickt. Sie haben auch die Möglichkeit, auf die Schaltflächen **Menü**, wieder **Gabe/Pause**, nach **oben**, **nach unten**, **Links** und **Rechts** zu antworten.

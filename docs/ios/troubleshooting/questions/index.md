@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 65E04188-185D-493D-BA3C-A89711CB6CAF
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 101e27d3ebb26295418c63c1be703976091e50d6
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 57908027c6e9215504f410c0f9c989d6fbe3adad
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869346"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290507"
 ---
 # <a name="ios-frequently-asked-questions"></a>häufig gestellte Fragen zu IOS
 
@@ -74,7 +74,7 @@ Diese Fehlermeldung tritt auf, wenn das betreffende Projekt nach gültigen Code 
 API-Änderungen in ios 9 erfordern, dass ein Rückruf Konstruktor verwendet wird, wenn nicht verwalteter Code aufgerufen wird, da die zugrunde liegende API dies nun erwartet.
 
 ### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[Laufzeitfehler: The assembly mscorlib.dll was not found or could not be loaded (Die Assembly „mscorlib.dll“ wurde nicht gefunden oder konnte nicht geladen werden).](error-mscorlib-not-found.md)
-Dieses Problem tritt auf, `.monotouch-32` wenn die `.monotouch-64` ausgeblendeten Ordner `.xcarchive` und in der zum Signieren/IPA-erstellen fehlen, wodurch der Laufzeitfehler ausgelöst wird.
+Dieses Problem tritt auf, wenn `.monotouch-32` die `.monotouch-64` ausgeblendeten Ordner `.xcarchive` und in der zum Signieren/ *IPA-erstellen* fehlen, wodurch der Laufzeitfehler ausgelöst wird.
 
 ### <a name="compile-error-can-not-encode-offset-x-in-resulting-scattered-relocationerror-encode-offset-scattered-relocationmd"></a>[Kompilierungsfehler: Offset X kann in der resultierenden verstreuten Verschiebung nicht codiert werden.](error-encode-offset-scattered-relocation.md)
 Dieses Problem tritt auf, wenn für 32-Bit-Architekturen, wie z. b. ARMv7, eine zu hohe Binärdatei für die systemeigene Toolkette entsteht.

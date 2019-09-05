@@ -3,15 +3,15 @@ title: Schritt 1. Registrieren einer APP für die Verwendung Azure Active Direct
 description: In diesem Dokument wird beschrieben, wie Sie eine Azure-Anwendung mit Azure Active Directory registrieren, damit Mobile Clients sicher darauf zugreifen können.
 ms.prod: xamarin
 ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 732c1ee241b39a4bb1422b8c27820631bf8c6b0c
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 2811297e24aac726ae3c91e5354675499d4b9ddb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199047"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290077"
 ---
 # <a name="step-1-register-an-app-to-use-azure-active-directory"></a>Schritt 1. Registrieren einer APP für die Verwendung Azure Active Directory
 

@@ -1,105 +1,105 @@
 ---
-title: Xamarin Live Player-Visual-Studio-Konfiguration
-description: Dieses Dokument beschreibt, wie Sie mit dem Xamarin Live Player live Änderungen an einer ausgeführten Anwendung vornehmen.
+title: Xamarin Live Player der Visual Studio-Konfiguration
+description: In diesem Dokument wird beschrieben, wie Sie die Xamarin Live Player verwenden, um Live-Änderungen an einer laufenden Anwendung vorzunehmen.
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/13/2019
-ms.openlocfilehash: a29a637526c2829b44ae89d505dac37a648dee77
-ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
+ms.openlocfilehash: 94f1d36bf97aab7eabb57e6f2712c9850b390ab1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67157742"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290489"
 ---
-# <a name="xamarin-live-player-visual-studio-configuration"></a>Xamarin Live Player-Visual-Studio-Konfiguration
+# <a name="xamarin-live-player-visual-studio-configuration"></a>Xamarin Live Player der Visual Studio-Konfiguration
 
 ![Feature der Vorschauversion](~/media/shared/preview.png)
 
 > [!WARNING]
-> Die Xamarin Live Player-Vorschauversion wurde beendet. Die app ist nicht mehr verfügbar. Die folgenden Anweisungen dienen für Kunden, die Sie weiterhin die Vorschau mit Visual Studio 2017 verwenden.
+> Die Xamarin Live Player Vorschau wurde beendet. Die APP ist nicht mehr verfügbar. Die folgenden Anweisungen werden für Kunden bereitgestellt, die die Vorschauversion mit Visual Studio 2017 weiterhin verwenden.
 
 > [!TIP]
-> Sie können die [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer/index.md) in 2019 für Visual Studio oder Visual Studio für Mac Ihre Entwürfe Bildschirm anzuzeigen, wie Sie sie bearbeiten.
+> Sie können den [XAML-Previewer](~/xamarin-forms/xaml/xaml-previewer/index.md) in Visual Studio 2019 oder Visual Studio für Mac verwenden, um die Bildschirm Entwürfe während der Bearbeitung anzuzeigen.
 
 # <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
-## <a name="using-xamarin-live-player"></a>Mithilfe von Xamarin Live Player
+## <a name="using-xamarin-live-player"></a>Verwenden von Xamarin Live Player
 
-Sie müssen die Xamarin Live Player-app bereits auf Ihrem Gerät verfügen. Es ist nicht mehr zum download zur Verfügung.
+Sie müssen bereits über die Xamarin Live Player-App auf Ihrem Gerät verfügen. Der Download ist nicht mehr möglich.
 
-1. Open **Visual Studio 2017**.
-2. Wechseln Sie zu **Tools > Optionen...**  , und wählen Sie die **Xamarin > andere** Registerkarte.
-3. Teilstriche **Xamarin Live Player aktivieren**:
+1. Öffnen Sie **Visual Studio 2017**.
+2. Wechseln Sie zu Extras **> Optionen...** , und wählen Sie die Registerkarte **xamarin > andere** aus.
+3. **Xamarin Live Player Tick aktivieren**:
 
-    ![Aktivieren Sie das Kontrollkästchen "Xamarin Live Player aktivieren" in das Fenster "Optionen"](install-images/vs2017-options.png)
+    ![Aktivieren Sie das Kontrollkästchen Xamarin Live Player aktivieren im Fenster "Optionen".](install-images/vs2017-options.png)
 
-4. Erstellen oder öffnen Sie ein Xamarin-Projekt (oder ein [Beispiel](~/tools/live-player/samples.md)).
-5. Wählen Sie **Live Player** in der Geräteliste:
+4. Erstellen oder öffnen Sie ein xamarin-Projekt (oder ein [Beispiel](~/tools/live-player/samples.md)).
+5. Wählen Sie **Live Player** in der Geräteliste aus:
 
-    ![Geräteliste enthält eine Option für die Xamarin Live Player](install-images/devices-empty-windows.png)
+    ![Die Geräteliste enthält eine Xamarin Live Player-Option.](install-images/devices-empty-windows.png)
 
-    - Wenn Sie bereits ein Gerät verbunden haben, werden sie als Option verfügbar.
-    - Andernfalls werden Sie aufgefordert, ein Gerät im Bedarfsfall zu koppeln.
+    - Wenn Sie bereits ein Gerät gekoppelt haben, ist es als Option verfügbar.
+    - Andernfalls werden Sie aufgefordert, bei Bedarf ein Gerät zu koppeln.
 
-6. Drücken Sie die **ausführen** Schaltfläche, oder wählen Sie eine der folgenden Optionen aus der **ausführen** oder mit der rechten Maustaste im Menü:
+6. Klicken Sie auf die Schaltfläche **Ausführen** , oder wählen Sie im Menü **Ausführen** oder Rechtsklick eine der folgenden Optionen aus:
 
-    - **Starten ohne Debugging** – Sie können die app und die Änderungen, auf dem Gerät auftreten bearbeiten (app wird gestartet, wie Änderungen vorgenommen werden, und die Datei gespeichert).
-    - **Debuggen starten** – Sie können Haltepunkte festlegen und untersuchen Sie Variablen, aber Code kann nicht bearbeitet werden.
+    - **Starten ohne Debugging** – Sie können die APP bearbeiten und sehen, dass die Änderungen auf dem Gerät auftreten (die APP wird neu gestartet, wenn Änderungen vorgenommen und die Datei gespeichert wird).
+    - **Debuggen starten** – Sie können Breakpoints festlegen und Variablen überprüfen, aber der Code kann nicht bearbeitet werden.
 
-    Wählen Sie alternativ **Tools > Xamarin Live Player > aktuelle Ansicht der Liveausführung**, mit dem Sie die app und die Änderungen, auf dem Gerät auftreten bearbeiten. Die aktuelle Ansicht wird (anstelle von Hauptbildschirm von der Anwendung) angezeigt.
+    Alternativ können Sie Extras **> Xamarin Live Player > Aktuelle Ansicht Live ausführen**auswählen, um die APP zu bearbeiten und die Änderungen auf dem Gerät anzuzeigen. Die aktuelle Ansicht wird angezeigt (anstelle des Hauptbildschirms der Anwendung).
 
-7. Wenn ein Gerät wurde bereits gekoppelt, und die Xamarin Live Player-app auf dem Gerät ausgeführt wird, wird der Code sofort ausgeführt.
+7. Wenn ein Gerät bereits gekoppelt ist und die Xamarin Live Player-App auf dem Gerät ausgeführt wird, wird der Code direkt ausgeführt.
 
-    Wenn kein Gerät verbunden ist, wird ein QR-Code mit Anweisungen dazu, ein Gerät koppeln angezeigt:
+    Wenn kein Gerät gekoppelt ist, wird ein QR-Code mit Anweisungen zum Koppeln eines Geräts angezeigt:
 
-    ![Ein Gerätefenster koppeln](install-images/manage-empty-windows.png)
+    ![Koppeln eines Geräte Fensters](install-images/manage-empty-windows.png)
 
-    Wenn das Gerät nicht erreichbar ist, für die Paarung, möglicherweise ein Fehler angezeigt.
+    Wenn für das Gerät keine Verbindung hergestellt werden kann, wird möglicherweise ein Fehler angezeigt.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="using-xamarin-live-player"></a>Mithilfe von Xamarin Live Player
+## <a name="using-xamarin-live-player"></a>Verwenden von Xamarin Live Player
 
-Sie müssen die Xamarin Live Player-app bereits auf Ihrem Gerät verfügen. Es ist nicht mehr zum download zur Verfügung.
+Sie müssen bereits über die Xamarin Live Player-App auf Ihrem Gerät verfügen. Der Download ist nicht mehr möglich.
 
-1. Open **Visual Studio für Mac**.
-2. Wechseln Sie zu **Visual Studio > Einstellungen...**  , und wählen Sie die **Projekte > Xamarin Live Player (Vorschauversion)** Registerkarte.
-3. Teilstriche **Xamarin Live Player aktivieren**:
+1. Öffnen Sie **Visual Studio für Mac**.
+2. Wechseln Sie zu **Visual Studio > Einstellungen...** , und wählen Sie die Registerkarte **Projekte > Xamarin Live Player (Vorschau)** aus.
+3. **Xamarin Live Player Tick aktivieren**:
 
-    [![Aktivieren Sie das Kontrollkästchen "Xamarin Live Player aktivieren" in das Fenster "Optionen"](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
+    [![Aktivieren Sie das Kontrollkästchen Xamarin Live Player aktivieren im Fenster "Optionen".](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
 
-4. Erstellen oder öffnen Sie ein Xamarin-Projekt (oder ein [Beispiel](~/tools/live-player/samples.md)).
-5. Wählen Sie **Live Player** in der Geräteliste.
+4. Erstellen oder öffnen Sie ein xamarin-Projekt (oder ein [Beispiel](~/tools/live-player/samples.md)).
+5. Wählen Sie **Live Player** in der Geräteliste aus.
 
-    ![Geräteliste enthält eine Option für die Xamarin Live Player](install-images/devices.png)
+    ![Die Geräteliste enthält eine Xamarin Live Player-Option.](install-images/devices.png)
 
-    - Wenn Sie bereits ein Gerät verbunden haben, werden sie als Option verfügbar.
-    - Andernfalls werden Sie aufgefordert, ein Gerät im Bedarfsfall zu koppeln.
-    - Wählen Sie **Xamarin Live Player-Geräte...**  zum Verwalten der Geräte mit Xamarin Live Player verwenden möchten.
+    - Wenn Sie bereits ein Gerät gekoppelt haben, ist es als Option verfügbar.
+    - Andernfalls werden Sie aufgefordert, bei Bedarf ein Gerät zu koppeln.
+    - Wählen Sie **Xamarin Live Player Geräte...** aus, um die Geräte zu verwalten, die Sie mit Xamarin Live Player verwenden möchten.
 
-6. Drücken Sie die **ausführen** Schaltfläche, oder wählen Sie eine der folgenden Optionen aus der **ausführen** oder mit der rechten Maustaste im Menü:
+6. Klicken Sie auf die Schaltfläche **Ausführen** , oder wählen Sie im Menü **Ausführen** oder Rechtsklick eine der folgenden Optionen aus:
 
-    ![Führen Sie die Optionen der Menüs](install-images/run-menu.png)
+    ![Menü Optionen ausführen](install-images/run-menu.png)
 
-    - **Starten ohne Debugging** – Sie können die app und die Änderungen, auf dem Gerät auftreten bearbeiten (app wird gestartet, wie Änderungen vorgenommen werden, und die Datei gespeichert).
-    - **Debuggen starten** – Sie können Haltepunkte festlegen und untersuchen Sie Variablen, aber Code kann nicht bearbeitet werden.
-    - **Führen Sie aktuellen Ansicht der liveausführung** – Sie können die app und die Änderungen, auf dem Gerät auftreten bearbeiten. Die aktuelle Ansicht wird (anstelle von Hauptbildschirm von der Anwendung) angezeigt.
+    - **Starten ohne Debugging** – Sie können die APP bearbeiten und sehen, dass die Änderungen auf dem Gerät auftreten (die APP wird neu gestartet, wenn Änderungen vorgenommen und die Datei gespeichert wird).
+    - **Debuggen starten** – Sie können Breakpoints festlegen und Variablen überprüfen, aber der Code kann nicht bearbeitet werden.
+    - **Aktuelle Ansicht Live ausführen** – Sie können die APP bearbeiten und sehen, dass die Änderungen auf dem Gerät erfolgen. Die aktuelle Ansicht wird angezeigt (anstelle des Hauptbildschirms der Anwendung).
 
-7. Wenn ein Gerät wurde bereits gekoppelt, und die Xamarin Live Player-app auf dem Gerät ausgeführt wird, wird der Code sofort ausgeführt.
+7. Wenn ein Gerät bereits gekoppelt ist und die Xamarin Live Player-App auf dem Gerät ausgeführt wird, wird der Code direkt ausgeführt.
 
-    Wenn kein Gerät verbunden ist, wird ein QR-Code mit Anweisungen dazu, ein Gerät koppeln angezeigt:
+    Wenn kein Gerät gekoppelt ist, wird ein QR-Code mit Anweisungen zum Koppeln eines Geräts angezeigt:
 
-    ![Ein Gerätefenster koppeln](install-images/manage-empty.png)
+    ![Koppeln eines Geräte Fensters](install-images/manage-empty.png)
 
-    Wenn das Gerät nicht erreichbar ist, für die Paarung, wird ein Fehler angezeigt:
+    Wenn für das Gerät keine Verbindung hergestellt werden kann, wird ein Fehler angezeigt:
 
-    ![Keine Verbindung mit Gerät Fehlermeldung](install-images/error-cannot-connect.png)
+    ![Verbindung mit Geräte Fehlermeldung nicht möglich](install-images/error-cannot-connect.png)
 
 -----
 
-Wenn Sie Probleme auftreten oder keine Verbindung herstellen können, finden Sie unter [Einschränkungen und Problembehandlung](~/tools/live-player/troubleshooting.md).
+Wenn Probleme auftreten oder keine Verbindung hergestellt werden kann, finden Sie weitere Informationen unter [Einschränkungen und Problem](~/tools/live-player/troubleshooting.md)Behandlung.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -3,15 +3,15 @@ title: Erstellen von plattformübergreifenden Anwendungen
 description: In diesem Abschnitt wird in Zusammenfassung und sechs Teilen erläutert, wie Sie Anwendungen mithilfe der xamarin-Entwicklungsplattform Erstellen – von der Funktionsweise von xamarin bis zum Entwerfen mobiler apps und anschließendes testen und Bereitstellen in den verschiedenen App Stores.
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/28/2016
-ms.openlocfilehash: 4485f25ac2f81747132ccd92d73c52118f70e545
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680928"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288058"
 ---
 # <a name="building-cross-platform-applications"></a>Erstellen von plattformübergreifenden Anwendungen
 

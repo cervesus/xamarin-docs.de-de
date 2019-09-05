@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit Tabstopp leisten C
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 64b114cad16095a2afd80b690a4654b91b2aa203
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 799dd40caae0323b71cae2c6715bf8cd16f78356
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199938"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283981"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Arbeiten mit tvos-Registerkarten leisten-Controllern in xamarin
 
@@ -60,12 +60,12 @@ Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos** >  > -App im**Register**Kartenformat aus: 
+1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos** >  >  **-App im** **Register**Kartenformat aus: 
 
     [![](tab-bars-images/tab02.png "Auswählen der APP im Registerkarten Format")](tab-bars-images/tab02.png#lightbox)
 1. Befolgen Sie alle Aufforderungen, um eine neue xamarin. tvos-Lösung zu erstellen.
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
-1. Um das **Symbol** oder den **Titel** für eine bestimmte Kategorie zu ändern, wählen Sie in der **Dokument**Gliederung das Element der **Registerkarten Leiste** für den Ansichts **Controller** aus:
+1. Um das **Symbol** oder den **Titel** für eine bestimmte Kategorie zu ändern, wählen Sie in der **Dokument**Gliederung das Element der **Registerkarten Leiste** für den **Ansichts Controller** aus:
 
     [![](tab-bars-images/tab03a.png "Das Element der Registerkarten Leiste für den Ansichts Controller in der Dokument Gliederung.")](tab-bars-images/tab03a.png#lightbox)
 1. Legen Sie dann im **Eigenschaften-Explorer**auf der **Registerkarte widget** die erforderlichen Eigenschaften fest: 
@@ -85,12 +85,12 @@ Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos** >  > -App im**Register**Kartenformat aus: 
+1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos** >  >  **-App im** **Register**Kartenformat aus: 
 
     [![](tab-bars-images/tab02vs.png "Auswählen der APP im Registerkarten Format")](tab-bars-images/tab02vs.png#lightbox)
 1. Befolgen Sie alle Aufforderungen, um eine neue xamarin. tvos-Lösung zu erstellen.
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
-1. Um das **Symbol** oder den **Titel** für eine bestimmte Kategorie zu ändern, wählen Sie in der **Dokument**Gliederung das Element der **Registerkarten Leiste** für den Ansichts **Controller** aus:
+1. Um das **Symbol** oder den **Titel** für eine bestimmte Kategorie zu ändern, wählen Sie in der **Dokument**Gliederung das Element der **Registerkarten Leiste** für den **Ansichts Controller** aus:
 
     [![](tab-bars-images/tab03avs.png "Der Ansichts Controller in der Dokument Gliederung")](tab-bars-images/tab03avs.png#lightbox)
 1. Legen Sie dann im **Eigenschaften-Explorer**auf der **Registerkarte widget** die erforderlichen Eigenschaften fest: 

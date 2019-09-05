@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: d6bcecd27e0380221febc34f787f71d20e0fcaf9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526952"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292576"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Erstellen eines benutzerdefinierten Layouts in xamarin. Forms
 
@@ -74,8 +74,8 @@ Der Prozess zum Erstellen eines benutzerdefinierten Layouts lautet wie folgt aus
 1. Überschreiben der [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) aufzurufende Methode der [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) Methode auf alle des Layouts der untergeordneten Elemente und Rückgabe einer angeforderten Größe für das Layout. Weitere Informationen finden Sie unter [Überschreiben der Methode OnMeasure](#onmeasure).
 1. Überschreiben der [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) aufzurufende Methode der [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) Methode für alle das Layout der untergeordneten Elemente. Fehler beim Aufrufen der [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) Methode für jedes untergeordnete Element in einem Layout führt dazu, in der untergeordneten nie empfangen eine richtige Größe oder Position, und daher das untergeordnete Element wird nicht auf der Seite sichtbar. Weitere Informationen finden Sie unter [Überschreiben der Methode LayoutChildren](#layoutchildren).
 
-  > [!NOTE]
->  Beim Auflisten der untergeordneten Elemente in der [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) und [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Außerkraftsetzungen, überspringen Sie alle untergeordneten, deren [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) -Eigenschaftensatz auf `false`. Dadurch wird sichergestellt, dass das benutzerdefinierte Layout für nicht sichtbare untergeordnete Elemente Platz wird nicht.
+    > [!NOTE]
+    > Beim Auflisten der untergeordneten Elemente in der [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) und [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Außerkraftsetzungen, überspringen Sie alle untergeordneten, deren [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) -Eigenschaftensatz auf `false`. Dadurch wird sichergestellt, dass das benutzerdefinierte Layout für nicht sichtbare untergeordnete Elemente Platz wird nicht.
 
 1. [*optional*] außer Kraft setzen der [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) Methode, um benachrichtigt werden, wenn ein untergeordnetes Element hinzugefügt oder aus dem Layout entfernt werden. Weitere Informationen finden Sie unter [Überschreiben der Methode InvalidateLayout](#invalidatelayout).
 1. [*optional*] außer Kraft setzen der [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) -Methode benachrichtigt werden, wenn das Layout der untergeordneten Elemente eines Größe ändert. Weitere Informationen finden Sie unter [Überschreiben der Methode OnChildMeasureInvalidated](#onchildmeasureinvalidated).

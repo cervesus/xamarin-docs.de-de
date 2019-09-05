@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 06283987e1d70659653729b4f3d5a00e1877aa5f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: a888c29a6409fc803b8a0d06bcc6f8a668e64f5e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887383"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292057"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für xamarin. IOS 
 
@@ -144,7 +144,7 @@ Dies geschieht, wenn Sie alle folgenden Aktionen ausführen:
 1. Führen Sie die APP im Simulator aus.
 
 
-Das Problem ist, dass Mono das Betriebssystem X `libsqlite3.dylib`und nicht die `libsqlite3.dylib` Datei "iphonesimulator" aufnimmt. Ihre APP funktioniert auf dem Gerät, aber nicht auf dem Simulator.
+Das Problem ist, dass Mono das Betriebssystem X `libsqlite3.dylib`und nicht die `libsqlite3.dylib` Datei "iphonesimulator" aufnimmt. Ihre APP *funktioniert* auf dem Gerät, aber nicht auf dem Simulator.
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>Fehler bei der Bereitstellung auf dem Gerät mit System. Exception: Aminviceingestallapplication hat 3892346901 zurückgegeben.
 
@@ -411,9 +411,9 @@ Wenn Sie versuchen, die Software zu aktualisieren, und diese Fehlermeldung angez
 
 ## <a name="application-runs-on-simulator-but-fails-on-device"></a>Anwendung wird im Simulator ausgeführt, schlägt jedoch auf dem Gerät fehl
 
-Dieses Problem kann sich in mehreren Formularen manifestieren und führt nicht immer zu einem konsistenten Fehler. Wenn die Anwendung eine XIb-Datei enthält, stellen Sie sicher, dass die Buildaktion auf der XIb-Datei auf **interfacedefinition**festgelegt ist. Dies ist die Standard-Buildaktion für. xisb.
+Dieses Problem kann sich in mehreren Formularen manifestieren und führt nicht immer zu einem konsistenten Fehler. Wenn die Anwendung eine XIb-Datei enthält, stellen Sie sicher, dass die **Buildaktion** auf der XIb-Datei auf **interfacedefinition**festgelegt ist. Dies ist die Standard-Buildaktion für. xisb.
 
-Um die Buildaktion zu überprüfen, klicken Sie mit der rechten Maustaste aufdie XIb-Datei, und wählen Sie die Option
+Um die Buildaktion zu überprüfen, klicken Sie mit der rechten Maustaste auf die XIb-Datei, **und wählen Sie**die Option
 
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar.

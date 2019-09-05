@@ -1,26 +1,26 @@
 ---
 title: Leitfaden für die iOS-Hintergrundverarbeitung
-description: Diese Diagramme angezeigt, die in diesem Dokument bieten Anleitungen dazu, welche der iOS viele backgrounding Optionen für eine bestimmte Anforderungen gewählt werden sollte.
+description: Diese Diagramme in diesem Dokument bieten Anleitungen dazu, welche IOS-Optionen für eine bestimmte Anforderung ausgewählt werden sollten.
 ms.prod: xamarin
 ms.assetid: BC629536-F179-4EC2-AD72-8F45081F8EE0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: f2ccd7cd531dba8e5fcf6d4e3d1970a9ebf3e84d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3953d6ac9aa31b9694be421c5120dfa8c860b8a4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169687"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290001"
 ---
 # <a name="ios-backgrounding-guidance"></a>Leitfaden für die iOS-Hintergrundverarbeitung
 
-Finden Sie in das folgende Diagramm und eine backgrounding Technik in iOS 6 auswählen:
+Im folgenden Diagramm finden Sie eine Methode zum zurückziehen in ios 6:
 
- [![](ios-backgrounding-guidance-images/image10.png "Wählen Sie eine backgrounding Technik in iOS 6")](ios-backgrounding-guidance-images/image10.png#lightbox)
+ [![](ios-backgrounding-guidance-images/image10.png "Auswählen einer Sicherungsmethode in ios 6")](ios-backgrounding-guidance-images/image10.png#lightbox)
 
-Finden Sie in das folgende Diagramm und eine backgrounding Technik in iOS 7 auswählen:
+Im folgenden Diagramm finden Sie eine Methode zum zurückziehen in ios 7:
 
- [![](ios-backgrounding-guidance-images/image10b.png "Wählen Sie eine backgrounding Technik in iOS 7")](ios-backgrounding-guidance-images/image10b.png#lightbox)
+ [![](ios-backgrounding-guidance-images/image10b.png "Auswählen einer Sicherungsmethode in ios 7")](ios-backgrounding-guidance-images/image10b.png#lightbox)
 

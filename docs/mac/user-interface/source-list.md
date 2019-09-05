@@ -4,15 +4,15 @@ description: In diesem Artikel wird die Arbeit mit Quell Listen in einer xamarin
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 499edcb1420b311c519f1665b4d2effd9088e9e7
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 63ce931abfbe7a39108ae3f8210209b7d43827ed
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065383"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278555"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Quell Listen in xamarin. Mac
 
@@ -530,11 +530,11 @@ Dadurch wird eine benutzerdefinierte, wiederverwendbare `NSOutlineView` unter`So
 
 ## <a name="creating-and-maintaining-source-lists-in-xcode"></a>Erstellen und Verwalten von Quell Listen in Xcode
 
-Nun entwerfen wir unsere Quell Liste in Interface Builder. Doppelklicken Sie auf `Main.storyboard` die Datei, um Sie in Interface Builder zu bearbeiten, und ziehen Sie eine geteilte Ansicht aus dem **Bibliotheks Inspektor**, fügen Sie Sie dem Ansichts Controller hinzu, und legen Sie fest, dass die Größe mit der Ansicht im Einschränkungs- **Editor**geändert wird:
+Nun entwerfen wir unsere Quell Liste in Interface Builder. Doppelklicken Sie auf `Main.storyboard` die Datei, um Sie in Interface Builder zu bearbeiten, und ziehen Sie eine geteilte Ansicht aus dem **Bibliotheks Inspektor**, fügen Sie Sie dem Ansichts Controller hinzu, und legen Sie fest, dass die Größe mit der Ansicht im **Einschränkungs-Editor**geändert wird:
 
 [![](source-list-images/source00.png "Bearbeitungs Einschränkungen")](source-list-images/source00.png#lightbox)
 
-Ziehen Sie als nächstes eine Quell Liste aus dem **Bibliotheks Inspektor**, fügen Sie Sie auf der linken Seite der geteilten Ansicht ein, und legen Sie fest, dass die Größe mit der Ansicht im Einschränkungs- **Editor**geändert wird:
+Ziehen Sie als nächstes eine Quell Liste aus dem **Bibliotheks Inspektor**, fügen Sie Sie auf der linken Seite der geteilten Ansicht ein, und legen Sie fest, dass die Größe mit der Ansicht im **Einschränkungs-Editor**geändert wird:
 
 [![](source-list-images/source02.png "Bearbeitungs Einschränkungen")](source-list-images/source02.png#lightbox)
 

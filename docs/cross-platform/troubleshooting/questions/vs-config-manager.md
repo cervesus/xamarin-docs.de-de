@@ -3,29 +3,29 @@ title: Warum integriert Visual Studio mein referenziertes Bibliotheksprojekt nic
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: b9009db8-e716-43aa-b40e-6f28a8eb1b82
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: d7aeac2f433e8fdf231f5887f1537f15e2bd1976
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 37fa93ef7377456d61d1a5f5de56d5de6b0f3c7f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61341307"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282913"
 ---
 # <a name="why-doesnt-visual-studio-include-my-referenced-library-project-in-my-build"></a>Warum integriert Visual Studio mein referenziertes Bibliotheksprojekt nicht in meinen Build?
 
-Visual Studio verwendet die **Configuration Manager** um zu bestimmen, welche Projekte in einer Projektmappe automatisch in einer bestimmten erstellungs- oder bereitstellungs-Konfiguration enthalten sind.
+Visual Studio verwendet die **Configuration Manager** , um zu bestimmen, welche Projekte in einer Projekt Mappe automatisch in einer bestimmten Build-oder Bereitstellungs Konfiguration enthalten sind.
 
-Einige Vorlagen, die mit einem Projekt referenzierte Bibliothek generiert werden, werden bereits die referenzierte Bibliothek, die in der Konfiguration enthaltenen verfügen. aber Andernfalls müssen sie manuell festgelegt werden.
+Für einige Vorlagen, die mit einem referenzierten Bibliotheksprojekt generiert werden, ist die Bibliothek, auf die verwiesen wird, bereits in der Konfiguration enthalten. Andernfalls muss Sie manuell festgelegt werden.
 
-## <a name="how-to-use-the-configuration-manager"></a>Gewusst wie: Verwenden Sie den Konfigurations-Manager
+## <a name="how-to-use-the-configuration-manager"></a>Verwenden des Configuration Manager
 
-1. Open **erstellen > Configuration Manager**
-2. Wählen Sie die Konfiguration anpassen, z. B. **Debuggen | iPhone**
-3. Wählen Sie die Kontrollkästchen für die Projekte, die Sie einschließen möchten.
+1. **Build > Configuration Manager** öffnen
+2. Wählen Sie die Konfiguration zum Anpassen aus, z. b. **Debug | iPhone**
+3. Aktivieren Sie die Kontrollkästchen für die Projekte, die Sie einschließen möchten.
 
 > [!NOTE]
-> Abgeblendeter Felder werden automatisch verarbeitet und keine Änderungen sollten nicht benötigt.
+> Ausgegraute Felder werden automatisch behandelt und sollten keine Änderungen erfordern.
 
-Standbild aus dem für die folgenden Schritte aus: [http://screencast.com/t/zLoQOpEn](http://screencast.com/t/zLoQOpEn)
+Screencast der folgenden Schritte:[http://screencast.com/t/zLoQOpEn](http://screencast.com/t/zLoQOpEn)

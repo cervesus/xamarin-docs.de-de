@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Fenstern und Bereichen in e
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 6d766e74f99e3c69259a41ce13501de80cf0231a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b6b370ebbcad04dfe829379685a3a9c5a6b5662b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653114"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291536"
 ---
 # <a name="windows-in-xamarinmac"></a>Fenster in xamarin. Mac
 
@@ -45,7 +45,7 @@ Gemäß Apple gibt es fünf Haupttypen von Windows in einer macOS-App:
 
 - **Dokument Fenster** : ein Dokument Fenster enthält dateibasierte Benutzerdaten, z. b. eine Kalkulations Tabelle oder ein Textdokument.
 - **App-Fenster** : ein App-Fenster ist das Hauptfenster einer Anwendung, die nicht Dokument basiert ist (z. b. die Kalender-APP auf einem Mac).
-- Bereich **: ein** Panel schwebt oberhalb von anderen Fenstern und stellt Tools oder Steuerelemente bereit, mit denen Benutzer arbeiten können, während Dokumente geöffnet sind. In einigen Fällen kann ein Bereich durchsichtig sein (z. b. bei der Arbeit mit großen Grafiken).
+- Bereich **: ein Panel schwebt** oberhalb von anderen Fenstern und stellt Tools oder Steuerelemente bereit, mit denen Benutzer arbeiten können, während Dokumente geöffnet sind. In einigen Fällen kann ein Bereich durchsichtig sein (z. b. bei der Arbeit mit großen Grafiken).
 - **Dialog** : ein Dialogfeld wird als Reaktion auf eine Benutzeraktion angezeigt und bietet in der Regel Möglichkeiten, wie Benutzer die Aktion durchführen können. Ein Dialogfeld erfordert eine Antwort vom Benutzer, bevor es geschlossen werden kann. (Siehe [Arbeiten mit Dialog](~/mac/user-interface/dialog.md)Feldern)
 - **Warnungen** : eine Warnung ist eine besondere Art von Dialogfeld, das angezeigt wird, wenn ein schwerwiegendes Problem auftritt (z. b. ein Fehler) oder eine Warnung (z. b. das Löschen einer Datei). Da es sich bei einer Warnung um ein Dialogfeld handelt, ist auch eine Benutzer Antwort erforderlich, bevor Sie geschlossen werden kann. (Siehe [Arbeiten mit Warnungen](~/mac/user-interface/alert.md))
 
@@ -136,11 +136,11 @@ Im **Attribut Inspektor**gibt es mehrere Eigenschaften, die Sie verwenden könne
 - **Einheitlicher Titel und Symbolleiste** : Wenn das Fenster eine Symbolleiste enthält, sollte es Teil der Titelleiste sein.
 - **Inhaltsansicht mit voller Größen** Anpassung: der Inhalts Bereich des Fensters kann in der Titelleiste angezeigt werden.
 - **Shadow** : das Fenster hat einen Schatten.
-- In texturierten Fenstern können Effekte (wie vibrancy) verwendet werden, die durchziehen an eine beliebige Stelle in Ihren Text verschoben werden können.
+- In **texturierten** Fenstern können Effekte (wie vibrancy) verwendet werden, die durchziehen an eine beliebige Stelle in Ihren Text verschoben werden können.
 - **Schließen** : das Fenster weist eine Schaltfläche zum Schließen auf.
 - **Minimieren** : bewirkt, dass das Fenster die Schaltfläche Minimieren hat.
 - **Größe** : bewirkt, dass das Fenster über ein Steuerelement zur Größenänderung verfügt.
-- **Symbol** leisten Schaltfläche: führt das Fenster zum Ausblenden/Anzeigen der Symbolleisten Schaltfläche.
+- **Symbolleisten Schaltfläche** : führt das Fenster zum Ausblenden/Anzeigen der Symbolleisten Schaltfläche.
 - Wieder **herstellbar** : die Position und Einstellungen des Fensters werden automatisch gespeichert und wieder hergestellt.
 - **Sichtbar beim Start** : das Fenster wird automatisch angezeigt, wenn `.xib` die Datei geladen wird.
 - **Beim Deaktivieren ausblenden** : das Fenster wird ausgeblendet, wenn die Anwendung in den Hintergrund wechselt.

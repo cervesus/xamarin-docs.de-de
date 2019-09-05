@@ -3,15 +3,15 @@ title: Debuggen mit mehreren Prozessen
 description: In diesem Artikel wird beschrieben, wie Sie Visual Studio für Mac zum Debuggen mehrerer gleichzeitig ausgeführten Prozesse verwenden. Dieses Feature kann beispielsweise zum gleichzeitigen Debuggen einer mobilen Anwendung und eines Webdienstprojekts verwendet werden.
 ms.prod: xamarin
 ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: d20e6e0fd567d0aa0febe21bfe12a5237049b22a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: db5d2dfcf96cdc1a89c0ecb2192b86f564e584ed
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781851"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290441"
 ---
 # <a name="multi-process-debugging"></a>Debuggen mit mehreren Prozessen
 
@@ -19,7 +19,7 @@ Es kommt sehr häufig vor, dass moderne, in Visual Studio für Mac entwickelte P
 
 Dieser Leitfaden enthält Informationen zu einigen an Visual Studio für Mac vorgenommenen Änderungen, um das Debuggen mehrerer Prozesse zu unterstützen. Er erläutert zudem die Konfiguration von Projektmappen zum Debuggen mehrerer Prozesse und das Anfügen an vorhandene Prozesse mit Visual Studio für Mac.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Das Debuggen mehrerer Prozesse erfordert Visual Studio für Mac.
 
@@ -56,7 +56,7 @@ Wenn die Konfiguration mehrerer Projektmappen gestartet wird, werden einige der 
 
 ![](multi-process-debugging-images/mpd05-xs.png "Ausgabepad für eine Projektmappenkonfiguration")
 
-### <a name="multiple-processes-and-the-active-thread"></a>Mehrere Prozesse und der _aktive Thread_
+### <a name="multiple-processes-and-the-_active-thread_"></a>Mehrere Prozesse und der _aktive Thread_
 
 Wenn in einem Prozess ein Breakpoint ermittelt wurde, wird die Ausführung dieses Prozesses angehalten, während die anderen Prozesse weiter ausgeführt werden. Visual Studio für Mac kann in einem Einzelprozessszenario ohne großen Aufwand Informationen in einer einzelnen Gruppe von Pads anzeigen, z.B. Threads, lokale Variablen oder die Anwendungsausgabe. Wenn es jedoch mehrere Prozesse mit mehreren Breakpoints gibt, und möglicherweise auch mehrere Threads, kann es für den Entwickler zu einer Herausforderung werden, mit den Informationen aus einer Debugsitzung zurechtzukommen, die versucht, alle Informationen aus allen Threads (und Prozessen) gleichzeitig anzuzeigen.
 

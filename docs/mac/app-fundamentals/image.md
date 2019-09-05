@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Bildern und Symbolen in ein
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: bdd4ba57dfce96e469639e4b90b06c73c339b0f0
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: b014c84a7bb23e723fbfbb7ead5e8dc9d9fdc549
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065397"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281706"
 ---
 # <a name="images-in-xamarinmac"></a>Bilder in xamarin. Mac
 
@@ -158,7 +158,7 @@ Alle Image-Ressourcen, die Sie dem **Ressourcen** Ordner in Ihrem xamarin. Mac-P
 
 Gehen Sie folgendermaßen vor, um ein Bild in Interface Builder zu verwenden:
 
-1. Fügen Sie dem **Ressourcen** Ordner ein Bild mit einer Buildaktion `BundleResource`von hinzu: 
+1. Fügen Sie dem **Ressourcen** Ordner ein Bild mit einer **Buildaktion** von `BundleResource`hinzu: 
 
      ![Eine Bildressource in der Lösungspad](image-images/ib00.png "Eine Bildressource in der Lösungspad")
 2. Doppelklicken Sie auf die Datei **Main. Storyboard** , um Sie für die Bearbeitung in Interface Builder zu öffnen: 
@@ -178,7 +178,7 @@ Gehen Sie folgendermaßen vor, um ein Bild in Interface Builder zu verwenden:
 Die obigen Schritte funktionieren für alle Benutzeroberflächen Elemente, die die Festlegung der Bild Eigenschaft im **Attribut Inspektor**ermöglichen. Auch hier gilt: Wenn Sie eine **@2x** Version der Abbild Datei eingefügt haben, wird Sie automatisch auf Retina-bildschirmbasierten Macs verwendet.
 
 > [!IMPORTANT]
-> Wenn das Bild in der Dropdown Liste **Bildname** nicht verfügbar ist, schließen Sie das Storyboard-Projekt in Xcode, und öffnen Sie es in Visual Studio für Mac. Wenn das Image immer noch nicht verfügbar ist, stellen Sie sicher, `BundleResource` dass seine Buildaktion ist und dass das Image dem **Ressourcen** Ordner hinzugefügt wurde.
+> Wenn das Bild in der Dropdown Liste **Bildname** nicht verfügbar ist, schließen Sie das Storyboard-Projekt in Xcode, und öffnen Sie es in Visual Studio für Mac. Wenn das Image immer noch nicht verfügbar ist, stellen Sie sicher, `BundleResource` dass seine **Buildaktion** ist und dass das Image dem **Ressourcen** Ordner hinzugefügt wurde.
 
 ## <a name="using-images-in-c-code"></a>Verwenden von Bildern C# im Code
 

@@ -4,15 +4,15 @@ description: In diesem Artikel werden alle neuen und geänderten APIs und Featur
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: be59ee3f51801c67277aac1a3ec274e81997ff3b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2da3e919ec792297f26670c43275bb0c54040835
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657326"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290723"
 ---
 # <a name="introduction-to-tvos-9"></a>Einführung in tvOS 9
 
@@ -174,7 +174,7 @@ Das obere Regal Bild kann entweder als einzelne statische `.png` Datei oder `.ls
 
 Anstatt ein statisches Top-Regal Bild anzuzeigen, kann es eine dynamische Zeile oder Fokussier Bare Elemente oder einen dynamischen Satz von scrollbanner enthalten. Beide dynamischen Stile ermöglichen es Ihnen, den von der APP bereitgestellten Inhalt hervorzuheben oder zu den am häufigsten verwendeten Features zu springen.
 
-Weitere Informationen finden Sie in der Dokumentation [Arbeiten mit Symbolen und Images](~/ios/tvos/app-fundamentals/icons-images.md) und in der [tvservices](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) -frameworkreferenz von Apple, um weitere Informationen zum Hinzufügen einer Top-Regal-Erweiterung zu Ihrer APP zu erhalten, um dynamische Top-Shelf-Inhalte bereitzustellen
+Weitere Informationen finden Sie in der Dokumentation [Arbeiten mit Symbolen und Images](~/ios/tvos/app-fundamentals/icons-images.md) und in der [tvservices-frameworkreferenz](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) von Apple, um weitere Informationen zum Hinzufügen einer Top-Regal-Erweiterung zu Ihrer APP zu erhalten, um dynamische Top-Shelf-Inhalte bereitzustellen
 
 
 

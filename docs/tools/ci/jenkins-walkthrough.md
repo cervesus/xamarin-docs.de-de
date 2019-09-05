@@ -3,15 +3,15 @@ title: Verwenden von Jenkins mit Xamarin
 description: In diesem Dokument wird beschrieben, wie Jenkins für Continuous Integration mit xamarin-Anwendungen verwendet wird. Es wird erläutert, wie Jenkins installiert, konfiguriert und verwendet wird.
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: d44e7232529386b7cb6b3db5fbb8bc4a285972fb
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 40f3443fb7c6fc6240e016106d9b6bbe0e0b666d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529111"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290822"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Verwenden von Jenkins mit Xamarin
 
@@ -25,8 +25,8 @@ Nachdem Jenkins konfiguriert wurde und alle erforderlichen Plug-ins installiert 
 
 - **Quell Code Verwaltung (Source Code Management, SCM)** – Dies ist ein Metadateneintrag in den Jenkins-Konfigurationsdateien, der Informationen darüber enthält, wie eine Verbindung mit der Quell Code Verwaltung hergestellt und welche Dateien abgerufen werden sollen.
 - **Trigger** – Trigger werden verwendet, um einen Auftrag auf der Grundlage bestimmter Aktionen zu starten, z. b. Wenn ein Entwickler Änderungen an dem Quellcoderepository committet.
-- Buildanweisungen – hierbei handelt es sich um ein Plug-in oder ein Skript, mit dem der Quellcode kompiliert und eine Binärdatei erstellt wird, die auf mobilen Geräten installiert werden kann.
-- **Optionale** Buildaktionen – Dies kann das Ausführen von Komponententests, das Ausführen statischer Analysen des Codes, das Signieren von Code oder das Starten eines anderen Auftrags zum Ausführen anderer buildbezogener Aufgaben umfassen.
+- **Buildanweisungen** – hierbei handelt es sich um ein Plug-in oder ein Skript, mit dem der Quellcode kompiliert und eine Binärdatei erstellt wird, die auf mobilen Geräten installiert werden kann.
+- **Optionale Buildaktionen** – Dies kann das Ausführen von Komponententests, das Ausführen statischer Analysen des Codes, das Signieren von Code oder das Starten eines anderen Auftrags zum Ausführen anderer buildbezogener Aufgaben umfassen.
 - **Benachrichtigungen** – ein Auftrag sendet möglicherweise eine Benachrichtigung über den Status eines Builds.
 - **Sicherheit** – Obwohl optional, wird dringend empfohlen, die Jenkins-Sicherheitsfeatures ebenfalls zu aktivieren.
 
@@ -221,8 +221,8 @@ Dieser Ordner enthält alle Dateien und Artefakte, die für den Auftrag spezifis
 Nachdem der anfängliche Auftrag erstellt wurde, muss er mit einem oder mehreren der folgenden Schritte konfiguriert werden:
 
 - Das Quell Code Verwaltungssystem muss angegeben werden.
-- Mindestens eine Buildaktion muss dem Projekt hinzugefügt werden. Dies sind die Schritte oder Aufgaben, die zum Erstellen der Anwendung erforderlich sind.
-- Dem Auftrag muss ein buildauslösers zugewiesen werden – ein Satz von Anweisungen, der Jenkins mitteilt, wie oft der Code abgerufen und das endgültige Projekt erstellt wird.
+- Mindestens eine *Buildaktion* muss dem Projekt hinzugefügt werden. Dies sind die Schritte oder Aufgaben, die zum Erstellen der Anwendung erforderlich sind.
+- Dem Auftrag muss ein *buildauslösers* zugewiesen werden – ein Satz von Anweisungen, der Jenkins mitteilt, wie oft der Code abgerufen und das endgültige Projekt erstellt wird.
 
 ### <a name="configuring-source-code-control"></a>Konfigurieren der Quell Code Verwaltung
 
@@ -266,7 +266,7 @@ Wenn ein Build gestartet wurde, wird im Dialogfeld "buildverlauf" ein blinkender
 
 Wenn der Auftrag erfolgreich ist, wird ein blauer Kreis angezeigt. Wenn der Auftrag fehlschlägt, wird ein roter Kreis angezeigt.
 
-Zur Unterstützung bei der Behebung von Problemen, die möglicherweise als Teil des Builds auftreten, erfasst Jenkins alle Konsolen Ausgaben für den Auftrag. Klicken Sie zum Anzeigen der Konsolenausgabe in buildverlaufauf den Auftrag, und klicken Sie dann im linken Menü auf den Link **Konsolenausgabe** . Der folgende Screenshot zeigt den **Konsolenausgabe** Link sowie einen Teil der Ausgabe eines erfolgreichen Auftrags:
+Zur Unterstützung bei der Behebung von Problemen, die möglicherweise als Teil des Builds auftreten, erfasst Jenkins alle Konsolen Ausgaben für den Auftrag. Klicken Sie zum Anzeigen der Konsolenausgabe in **buildverlauf**auf den Auftrag, und klicken Sie dann im linken Menü auf den Link **Konsolenausgabe** . Der folgende Screenshot zeigt den **Konsolenausgabe** Link sowie einen Teil der Ausgabe eines erfolgreichen Auftrags:
 
 ![](jenkins-walkthrough-images/image31.png "Dieser Screenshot zeigt den Konsolenausgabe Link sowie einen Teil der Ausgabe eines erfolgreichen Auftrags.")
 
@@ -286,7 +286,7 @@ Es ist möglich, den Arbeitsbereichs Ordner in Jenkins zu durchsuchen, indem Sie
 
 ### <a name="build-triggers"></a>Buildtrigger
 
-Es gibt mehrere verschiedene Strategien zum Initiieren von Builds in Jenkins – diese werden alsBuildtrigger bezeichnet. Ein buildauslösers unterstützt Jenkins bei der Entscheidung, wann ein Auftrag gestartet und das Projekt erstellt wird. Zwei der gängigeren Buildtrigger sind:
+Es gibt mehrere verschiedene Strategien zum Initiieren von Builds in Jenkins – diese werden als *Buildtrigger*bezeichnet. Ein buildauslösers unterstützt Jenkins bei der Entscheidung, wann ein Auftrag gestartet und das Projekt erstellt wird. Zwei der gängigeren Buildtrigger sind:
 
 - **Regelmäßiges Erstellen** – dieser Vorgang bewirkt, dass Jenkins einen Auftrag in angegebenen Intervallen startet, z. b. alle zwei Stunden oder Mitternacht an Wochentagen. Der Build wird unabhängig davon gestartet, ob Änderungen im Quellcoderepository vorgenommen wurden.
 - Abruf **SCM** – mit diesem Triggern wird die Quell Code Verwaltung regelmäßig abgerufen. Wenn Änderungen an das Quellcoderepository übertragen wurden, startet Jenkins einen neuen Build.
@@ -298,7 +298,7 @@ Periodische Builds werden häufig verwendet, um eine Version der Anwendung zu er
 ### <a name="compiling-a-xamarinios-applications"></a>Kompilieren von xamarin. IOS-Anwendungen
 Xamarin. IOS-Projekte können mithilfe `xbuild` von oder `msbuild`in der Befehlszeile kompiliert werden. Der Shellbefehl wird im Kontext des Benutzerkontos ausgeführt, auf dem Jenkins ausgeführt wird. Es ist wichtig, dass das Benutzerkonto Zugriff auf das Bereitstellungs Profil hat, damit die Anwendung ordnungsgemäß für die Verteilung gepackt werden kann. Es ist möglich, diesen Shellbefehl der Auftrags Konfigurationsseite hinzuzufügen.
 
-Scrollen Sie nach unten zum Abschnitt **Build** . Klicken Sie auf die Schaltfläche Buildschritt **Hinzufügen** , und wählen Sie **Shell ausführen**aus, wie im folgenden Screenshot veranschaulicht:
+Scrollen Sie nach unten zum Abschnitt **Build** . Klicken Sie auf die Schaltfläche **Buildschritt hinzufügen** , und wählen Sie **Shell ausführen**aus, wie im folgenden Screenshot veranschaulicht:
 
 ![](jenkins-walkthrough-images/image33.png "Klicken Sie auf die Schaltfläche Buildschritt hinzufügen und wählen Sie Shell")
 
@@ -315,7 +315,7 @@ Diese beiden Schritte werden in den nächsten beiden Abschnitten ausführlicher 
 
 ### <a name="creating-the-apk"></a>Erstellen des APK
 
-Klicken Sie auf die Schaltfläche Buildschritt **Hinzufügen** , und wählen Sie **ein Visual Studio-Projekt oder eine Projekt Mappe mit MSBuild erstellen**aus, wie im folgenden Screenshot gezeigt:
+Klicken Sie auf die Schaltfläche **Buildschritt hinzufügen** , und wählen Sie **ein Visual Studio-Projekt oder eine Projekt Mappe mit MSBuild erstellen**aus, wie im folgenden Screenshot gezeigt:
 
 ![](jenkins-walkthrough-images/image36.png "Wenn Sie das APK erstellen, klicken Sie auf die Schaltfläche Buildschritt hinzufügen, und wählen Sie Visual Studio-Projekt oder Projekt Mappe mit MSBuild erstellen")
 
@@ -368,7 +368,7 @@ Beachten Sie, dass einige Umgebungsvariablen für die APK-Dateien auf der `WORKS
 
 Die letzte Umgebungsvariable ist das Kennwort für den Zugriff auf den Inhalt des Keystores: `STORE_PASS`. Kenn Wörter sind sensible Werte, die in Protokolldateien verdeckt oder ausgelassen werden sollten. Das Plug-in-Plug-in kann so konfiguriert werden, dass diese Werte so geschützt werden, dass Sie nicht in Protokollen angezeigt werden.
 
-Unmittelbar vor dem Abschnitt **Build** der Auftrags Konfiguration ist ein Abschnitt für die Buildumgebung. Wenn das Kontrollkästchen Kenn **Wörter einfügen** ein-/ausgeschaltet wird, werden einige Formularfelder angezeigt. Diese Formularfelder werden verwendet, um den Namen und den Wert der Umgebungsvariablen aufzuzeichnen. Der folgende Screenshot zeigt ein Beispiel für das hinzu `STORE_PASS` fügen der Umgebungsvariablen:
+Unmittelbar vor dem Abschnitt **Build** der Auftrags Konfiguration ist ein Abschnitt für die **Buildumgebung** . Wenn das Kontrollkästchen Kenn **Wörter einfügen** ein-/ausgeschaltet wird, werden einige Formularfelder angezeigt. Diese Formularfelder werden verwendet, um den Namen und den Wert der Umgebungsvariablen aufzuzeichnen. Der folgende Screenshot zeigt ein Beispiel für das hinzu `STORE_PASS` fügen der Umgebungsvariablen:
 
 ![](jenkins-walkthrough-images/image41.png "Dieser Screenshot ist ein Beispiel für das Hinzufügen der Umgebungsvariablen storepass.")
 

@@ -1,35 +1,35 @@
 ---
-title: Einbetten von .NET bewährte Methoden für Objective-C
-description: Dieses Dokument beschreibt die verschiedenen best Practices für die Verwendung von Einbetten von .NET mit Objective-c Es wird erläutert, eine Teilmenge von verwaltetem Code verfügbar zu machen, eine übersichtlichere API verfügbar zu machen, benennen und mehr.
+title: Bewährte Methoden für die .net-Einbettung für Ziel-C
+description: In diesem Dokument werden verschiedene bewährte Methoden für die Verwendung der .net-Einbettung mit Ziel-C beschrieben. Es wird erläutert, wie eine Teilmenge des verwalteten Codes verfügbar gemacht wird, und die Bereitstellung einer Segl-API, Benennung und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 33138b7858b8bc04a5be30f9fad1709e916f5575
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364097"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285117"
 ---
-# <a name="net-embedding-best-practices-for-objective-c"></a>Einbetten von .NET bewährte Methoden für Objective-C
+# <a name="net-embedding-best-practices-for-objective-c"></a>Bewährte Methoden für die .net-Einbettung für Ziel-C
 
-Dies ist ein Entwurf, und möglicherweise nicht synchron mit den Funktionen derzeit unterstützt durch das Tool. Wir hoffen, dass in diesem Dokument wird separat weiterentwickelt und schließlich auswählen der endgültigen Tools, d. h. werden empfohlen langfristig bewährte Ansätze – nicht problemumgehungen.
+Dies ist ein Entwurf, der möglicherweise nicht mit den Funktionen synchronisiert ist, die derzeit vom Tool unterstützt werden. Wir hoffen, dass sich dieses Dokument separat entwickeln und schließlich mit dem fertigen Tool übereinstimmt, d. h. Wir empfehlen Ihnen, langfristige, nicht unmittelbare Problem Umgehungen zu erzielen.
 
-Ein großer Teil dieses Dokuments gilt auch für andere unterstützte Sprachen. Jedoch alle bereitgestellten Beispiele sind C# und Objective-c
+Ein großer Teil dieses Dokuments gilt auch für andere unterstützte Sprachen. Alle bereitgestellten Beispiele sind jedoch C# in und Ziel-C.
 
-## <a name="exposing-a-subset-of-the-managed-code"></a>Eine Teilmenge von verwaltetem Code verfügbar zu machen
+## <a name="exposing-a-subset-of-the-managed-code"></a>Verfügbar machen einer Teilmenge des verwalteten Codes
 
-Die generierte systemeigene Bibliothek bzw. ein Framework enthält die Objective-C-Code, um jede der verwalteten APIs aufrufen, die verfügbar gemacht wird. Die weitere-API, die Sie der Entwurfsoberfläche (Öffentliche Stellen) klicken Sie dann größer der systemeigenen _"Klebstoff"_ Bibliothek werden.
+Die generierte native Bibliothek/das generierte Framework enthält den Ziel-C-Code zum Abrufen der einzelnen verwalteten APIs, die verfügbar gemacht werden. Je mehr API Sie nutzen (öffentlich machen), desto größer wird _die native Verbindungs_ Bibliothek.
 
-Es kann eine gute Idee, erstellen Sie eine andere, kleinere Assembly aus, um nur die erforderlichen APIs für den systemeigenen Entwickler verfügbar zu machen sein. Dieser Fassade ermöglichen Ihnen auch mehr Kontrolle über die Sichtbarkeit, Benennung, Fehler beim Überprüfen der... des generierten Codes.
+Es könnte eine gute Idee sein, eine andere, kleinere Assembly zu erstellen, um nur die erforderlichen APIs für den systemeigenen Entwickler verfügbar zu machen. Diese Fassade ermöglicht Ihnen außerdem mehr Kontrolle über die Sichtbarkeit, Benennung, Fehlerüberprüfung... des generierten Codes.
 
-## <a name="exposing-a-chunkier-api"></a>Eine übersichtlichere API verfügbar zu machen
+## <a name="exposing-a-chunkier-api"></a>Verfügbar machen einer Segl-API
 
-Es gibt ein Preis für den Übergang von nativem zu verwalteten (und zurück). Daher ist es besser, verfügbar machen _anstelle von ' geschwätzige ' grobe_ APIs, um die Entwickler systemeigenen Anwendungen, z. B.
+Es gibt einen Preis, der für den Übergang vom systemeigenen zum verwalteten (und zurück) zu zahlen ist. Daher ist es besser, segmentierte APIs _anstelle von ' geschwätzige '_ -APIs für Native Entwickler verfügbar zu machen, z. b.
 
-**Chatty**
+**' Geschwätzige '**
 
 ```csharp
 public class Person {
@@ -58,17 +58,17 @@ public class Person {
 Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 ```
 
-Die Leistung wird besser sein, da die Anzahl der Übergänge kleiner ist. Außerdem müssen weniger Code generiert werden, damit dies auch eine kleinere native Bibliothek erstellt wird.
+Da die Anzahl der Übergänge kleiner ist, ist die Leistung besser. Außerdem ist es erforderlich, dass weniger Code generiert wird, sodass auch eine kleinere native Bibliothek erstellt wird.
 
-## <a name="naming"></a>Benennen
+## <a name="naming"></a>Ernannte
 
-Benennung ist eines der beiden schwierigsten Probleme in Informatik, die anderen Cache-invalidierung und off-von-1-Fehler angezeigt wird. Hoffentlich können Einbetten von .NET Sie geschützt werden, über alle außer benennen.
+Das Benennen von Dingen ist eines von zwei schwierigsten Problemen in der Computerwissenschaft, bei anderen handelt es sich um eine Cache Validierung und um nicht-1-Fehler. Hoffen Sie, dass .net-Einbettung Sie von allen außer den Namen abschirmen kann
 
 ### <a name="types"></a>Typen
 
-Objective-C-unterstützt Namespaces nicht. Im Allgemeinen die Typen werden mit dem Präfix mit einer 2 (für Apple) oder 3 (für die 3. Parteien) Zeichen-Präfix, z. B. `UIView` für UIKit Ansicht, das das Framework bezeichnet.
+"Ziel-C" unterstützt keine Namespaces. Im Allgemeinen werden den zugehörigen Typen das Zeichen Präfix 2 (für Apple) oder 3 (für Dritte) vorangestellt, `UIView` z. b. für die Ansicht "UIKit", die das Framework bezeichnet.
 
-Für Typen in .NET ist wird übersprungen, den Namespace nicht möglich, da sie verwirrende, oder doppelte Namen führen kann. Dadurch vorhandene .NET Typen, die sehr lang werden, z. B.
+Bei .NET-Typen ist das Überspringen des Namespaces nicht möglich, da er doppelte oder verwirrende Namen verursachen kann. Dies macht vorhandene .NET-Typen sehr lang, z. b.
 
 ```csharp
 namespace Xamarin.Xml.Configuration {
@@ -76,19 +76,19 @@ namespace Xamarin.Xml.Configuration {
 }
 ```
 
-würde z. B. verwendet werden:
+wird wie folgt verwendet:
 
 ```objc
 id reader = [[Xamarin_Xml_Configuration_Reader alloc] init];
 ```
 
-Jedoch können Sie den Typ als wieder verfügbar machen:
+Sie können den Typ jedoch wie folgt wieder verfügbar machen:
 
 ```csharp
 public class XAMXmlConfigReader : Xamarin.Xml.Configuration.Reader {}
 ```
 
-somit benutzerfreundlicheren Objective-C verwenden, z.B.:
+die Verwendung der Ziel-C-Benutzerfreundlichkeit, z. b.:
 
 ```objc
 id reader = [[XAMXmlConfigReader alloc] init];
@@ -96,20 +96,20 @@ id reader = [[XAMXmlConfigReader alloc] init];
 
 ### <a name="methods"></a>Methoden
 
-Sogar .NET Namen möglicherweise nicht ideal für eine Objective-C-API.
+Selbst gute .net-Namen sind möglicherweise nicht ideal für eine Ziel-C-API.
 
-Benennungskonventionen in Objective-C-unterscheiden sich .NET (Camel-Case anstelle der Pascal-Schreibweise, ausführlicher) zur Verfügung.
-Lesen Sie die [Codierungsrichtlinien für Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF).
+Benennungs Konventionen in Ziel-C unterscheiden sich von .net (Camel Case anstelle von Pascal Case, more verbose).
+Lesen Sie die [Codierungs Richtlinien für Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF).
 
-Gesichtspunkt ein Objective-C-Entwickler, eine Methode mit einem `Get` Präfix bedeutet, Sie besitzen die Instanz, d. h. keine der [Regel abrufen](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1).
+Aus Sicht eines Ziel-C-Entwicklers impliziert eine Methode mit einem `Get` Präfix, dass Sie die Instanz nicht besitzen, d. h. die get- [Regel](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1).
 
-Diese Benennungsregel wurde keine Übereinstimmung in der Welt .NET GC; eine .NET-Methode übergeben wird mit einem `Create` Präfix verhält sich genauso wie in .NET. Allerdings für Objective-C-Entwickler normalerweise bedeutet dies Sie besitzen die zurückgegebene Instanz ist, d. h. die [erstellen Regel](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029).
+Diese Benennungs Regel entspricht nicht der .NET GC-Welt. eine .NET-Methode mit `Create` einem Präfix verhält sich in .net identisch. Für Ziel-C-Entwickler bedeutet dies jedoch normalerweise, dass Sie die zurückgegebene Instanz besitzen, d. h. die [Create-Regel](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029).
 
 ## <a name="exceptions"></a>Ausnahmen
 
-Es ist durchaus üblich, in .NET mit Ausnahmen, die häufig zum Melden von Fehlern verwendet. Allerdings sind sie langsam und nicht mit ihr identisch in Objective-c Nach Möglichkeit sollten Sie sie aus der Objective-C-Entwickler verbergen.
+In .net ist es häufig üblich, dass Ausnahmen häufig zum Melden von Fehlern verwendet werden. Sie sind jedoch langsam und in Ziel-C nicht ganz identisch. Wenn möglich, sollten Sie Sie beim Ziel-C-Entwickler ausblenden.
 
-Z. B. .NET `Try` Muster werden wesentlich einfacher, Objective-C-Code verwenden:
+Beispielsweise kann das .net `Try` -Muster viel einfacher aus dem Ziel-C-Code verwendet werden:
 
 ```csharp
 public int Parse (string number)
@@ -118,7 +118,7 @@ public int Parse (string number)
 }
 ```
 
-im Vergleich zu
+Gegensatz
 
 ```csharp
 public bool TryParse (string number, out int value)
@@ -127,18 +127,18 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>Ausnahmen in `init*`
+### <a name="exceptions-inside-init"></a>Ausnahmen in`init*`
 
-In .NET ein Konstruktor muss entweder erfolgreich ausgeführt werden, und Zurückgeben einer (_hoffentlich_) gültige Instanz oder eine Ausnahme ausgelöst.
+In .NET muss ein Konstruktor entweder erfolgreich sein und eine (_hoffentlich_) gültige Instanz zurückgeben oder eine Ausnahme auslösen.
 
-Im Gegensatz dazu Objective-C erlaubt `init*` zurückzugebenden `nil` Wenn eine Instanz kann nicht erstellt werden kann. Dies ist ein häufig, jedoch keine allgemeine Muster, die in vielen der Apple Frameworks verwendet. In anderen Fällen einer `assert` können auftreten, (und den aktuellen Prozess).
+Im Gegensatz dazu ermöglicht `init*` Ziel-C die Rückgabe `nil` von, wenn eine Instanz nicht erstellt werden kann. Dies ist ein allgemeines, aber nicht allgemeines Muster, das in vielen Frameworks von Apple verwendet wird. In einigen anderen Fällen kann `assert` ein Vorkommen (und den aktuellen Prozess beenden).
 
-Der Generator führen Sie die gleichen `return nil` Muster für generierte `init*` Methoden. Wenn eine verwaltete Ausnahme wird ausgelöst, wird es gedruckt werden (mit `NSLog`) und `nil` wird an den Aufrufer zurückgegeben werden.
+Der Generator folgt dem gleichen `return nil` Muster für generierte `init*` Methoden. Wenn eine verwaltete Ausnahme ausgelöst wird, wird sie gedruckt (verwendet `NSLog`) und `nil` an den Aufrufer zurückgegeben.
 
 ## <a name="operators"></a>Operatoren
 
-Objective-C erlaubt keine Operatoren überladen werden, als C# ausgeführt, sodass diese in Klassenselektoren konvertiert werden.
+Ziel-C lässt nicht zu, dass Operatoren wie C# verwendet werden, sodass diese in Klassenselektoren konvertiert werden.
 
-["Anzeigename"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) benannte Methoden generiert werden, statt die überladenen Wenn gefunden, und eine einfachere API nutzen liefern.
+["Friendly"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) benannte Methoden werden im Gegensatz zu den Operator Überladungen generiert, wenn Sie gefunden werden, und können eine leichter zu nutzende API erzeugen.
 
-Klassen, die die Operatoren überschreiben `==` und/oder `!=` sollten auch die standardmäßige Equals (Objekt)-Methode überschreiben.
+Klassen, die die Operatoren `==` und/oder `!=` überschreiben, sollten auch die standardmäßige Gleichheits Methode (Object) überschreiben.

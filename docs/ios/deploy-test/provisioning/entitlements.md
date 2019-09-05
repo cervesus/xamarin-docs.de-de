@@ -4,15 +4,15 @@ description: Berechtigungen sind besondere App-Funktionen und Sicherheitsberecht
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/13/2018
-ms.openlocfilehash: bbc01416fe49b361b163808f3502533db8e39d8c
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 381cddcef826d00b09f9928746bb4f60ce78a7e0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121325"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284806"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Arbeiten mit Berechtigungen in Xamarin.iOS
 
@@ -96,14 +96,14 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 - **Beschreibung:** Wallet (früher als „Passbook“ bekannt) ist eine App, in der Pässe und Tickets gespeichert und verwaltet werden. Diese Pässe können Kreditkarten, Kundenkarten, Bordkarten oder Tickets sein.
 
-    - **Passtypbezeichner**
-        - **Schlüssel**: com.apple.developer.pass-type-identifiers
-        - **Zeichenfolge**: `$(TeamIdentifierPrefix)*`
+  - **Passtypbezeichner**
+    - **Schlüssel**: com.apple.developer.pass-type-identifiers
+    - **Zeichenfolge**: `$(TeamIdentifierPrefix)*`
 
 - **Anmerkungen**:
-    - So akzeptiert Ihre App alle Passtypen. Um Ihre App einzuschränken und nur eine Teilmenge von Teampasstypen zu erlauben, legen Sie den Zeichenfolgenwert auf `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)` fest.
+  - So akzeptiert Ihre App alle Passtypen. Um Ihre App einzuschränken und nur eine Teilmenge von Teampasstypen zu erlauben, legen Sie den Zeichenfolgenwert auf `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)` fest.
 
-    Dort wo „$(CFBundleIdentifier)“ die Pass-ID ist, die [oben](~/ios/platform/passkit.md) erstellt wurde
+  Dort wo „$(CFBundleIdentifier)“ die Pass-ID ist, die [oben](~/ios/platform/passkit.md) erstellt wurde
 
 <a name="icloud" />
 
@@ -111,17 +111,17 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 - **Beschreibung**: iCloud stellt iOS-Benutzern einen praktischen und einfachen Weg bereit, um ihre Inhalte zu speichern und diese zwischen Geräten freizugeben. Entwicklern stehen vier Methoden zur Verwendung von iCloud zur Verfügung, um ihren Benutzern eine Speichermöglichkeit bereitzustellen: Der Key-Value-Speicher, der UIDocument-Speicher, CoreData und die direkte Verwendung von CloudKit, um Speicher für einzelne Dateien und Verzeichnisse bereitzustellen. Weitere Informationen dazu finden Sie im Handbuch „Introduction to iCloud (Einführung in iCloud)“.
 
-    - **iCloud-Dokumente & CloudKit**
-        - **Schlüssel**: com.apple.developer.ubiquity-container-identifiers
-        - **Zeichenfolge**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
-    - **iCloud-Schlüsselwertspeicher**
-        - **Schlüssel**: com.apple.developer.ubiquity-kvstore-identifier
-        - **Zeichenfolge**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+  - **iCloud-Dokumente & CloudKit**
+    - **Schlüssel**: com.apple.developer.ubiquity-container-identifiers
+    - **Zeichenfolge**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+  - **iCloud-Schlüsselwertspeicher**
+    - **Schlüssel**: com.apple.developer.ubiquity-kvstore-identifier
+    - **Zeichenfolge**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
 - **Anmerkungen**:
-    - Die Zeichenfolge `$(TeamIdentifierPrefix)` können Sie finden, indem Sie sich bei developer.apple.com anmelden und zu **Member Center > Your Account > Developer Account Summary** (Mitgliedcenter > Ihr Konto > Zusammenfassung Developer-Konto) navigieren, um Ihre Team-ID abzurufen (oder Ihre eigene ID, wenn Sie ein einzelner Entwickler sind). Dabei handelt es sich um eine 10-stellige Zeichenfolge (z.B. A93A5CM278).
-    - Die Zeichenfolge `$(CFBundleIdentifier)` beginnt mit `iCloud` und wird festgelegt, wenn der iCloud-Container mit den in [Arbeit mit Funktionen](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) beschriebenen Schritten erstellt wird.
-    - Die Platzhalter $`(TeamIdentifierPrefix)` und `$(CFBundleIdentifier)` können verwendet werden und werden bei der Erstellung durch die entsprechenden Werte ersetzt.
+  - Die Zeichenfolge `$(TeamIdentifierPrefix)` können Sie finden, indem Sie sich bei developer.apple.com anmelden und zu **Member Center > Your Account > Developer Account Summary** (Mitgliedcenter > Ihr Konto > Zusammenfassung Developer-Konto) navigieren, um Ihre Team-ID abzurufen (oder Ihre eigene ID, wenn Sie ein einzelner Entwickler sind). Dabei handelt es sich um eine 10-stellige Zeichenfolge (z.B. A93A5CM278).
+  - Die Zeichenfolge `$(CFBundleIdentifier)` beginnt mit `iCloud` und wird festgelegt, wenn der iCloud-Container mit den in [Arbeit mit Funktionen](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) beschriebenen Schritten erstellt wird.
+  - Die Platzhalter $`(TeamIdentifierPrefix)` und `$(CFBundleIdentifier)` können verwendet werden und werden bei der Erstellung durch die entsprechenden Werte ersetzt.
 
 > [!IMPORTANT]
 > Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
@@ -130,16 +130,16 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 
 - **Beschreibung:** Durch eine App-Gruppe können unterschiedliche Anwendungen (oder eine Anwendung und ihre Erweiterungen) auf einen freigegebenen Dateispeicherort zugreifen.
 
-    - **Schlüssel**: com.apple.security.application-groups
-    - **Zeichenfolge**: group.$(CFBundleIdentifier)
+  - **Schlüssel**: com.apple.security.application-groups
+  - **Zeichenfolge**: group.$(CFBundleIdentifier)
 
 <a name="apple-pay" />
 
 ### <a name="apple-pay"></a>Apple Pay
 
 - **Beschreibung:** Apple Pay ermöglicht Benutzern das Bezahlen physischer Güter über das iOS-Gerät.
-    - **Schlüssel**: com.apple.developer.in-app-payments
-    - **Zeichenfolge**: merchant.your.mechantid
+  - **Schlüssel**: com.apple.developer.in-app-payments
+  - **Zeichenfolge**: merchant.your.mechantid
 
 ### <a name="push-notifications"></a>Pushbenachrichtigungen
 
@@ -149,7 +149,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 ### <a name="siri"></a>Siri
 
 - **Beschreibung:** Durch SiriKit kann eine iOS-App Dienste bereitstellen, auf die die Apps „Siri“ und „Karten“ auf einem iOS-Gerät mit App-Erweiterungen und den neuen Intents- und Intents UI-Frameworks zugreifen können. Weitere Informationen dazu finden Sie im Handbuch „Introduction to iCloud (Einführung in SiriKit)“.
-    - **Schlüssel**: com.apple.developer.siri
+  - **Schlüssel**: com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>Persönliches VPN
 
@@ -159,50 +159,50 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 ### <a name="keychain-sharing"></a>Keychain-Freigabe
 
 - **Beschreibung:** Durch die Freigabe mit Keychain können App-Entwickler Kennwörter für andere vom selben Team entwickelten Apps freigeben, die auf dem Gerät in Keychain gespeichert sind. Der Zugriff kann eingeschränkt werden, indem Sie eine Gruppen-ID für den Zugriff auf Keychain in der Zeichenfolge übergeben.
-    - **Schlüssel**: keychain-access-groups
-    - **Zeichenfolge**: $(AppIdentifierPrefix) $(CFBundleIdentifier)
+  - **Schlüssel**: keychain-access-groups
+  - **Zeichenfolge**: $(AppIdentifierPrefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>Inter-App-Audio
 
 - **Beschreibung:** Mit Inter-App-Audio können Entwickler Audio zwischen Apps streamen.
-    - **Schlüssel**: inter-app-audio
-    - **Boolesch**: YES
+  - **Schlüssel**: inter-app-audio
+  - **Boolesch**: YES
 
 ### <a name="associated-domains"></a>Zugehörige Domänen
 
 - **Beschreibung:** Zugehörige Domänen, die als universelle Links behandelt werden sollen, sollten mit dieser Berechtigung übergeben werden. Universelle Links können implementiert werden, um Deep Linking zwischen Ihrer App und Ihrer Website zu ermöglichen. Sie sollten einen Eintrag für jede Domäne bereitstellen, die Ihre App unterstützt. Dabei sollte jeder Eintrag mit `applinks:` beginnen.
-    - **Schlüssel**: com.apple.developer.associated-domains
-    - **Zeichenfolge**: webcredentials:example.com
+  - **Schlüssel**: com.apple.developer.associated-domains
+  - **Zeichenfolge**: webcredentials:example.com
 
 ### <a name="data-protection"></a>Schutz von Daten
 
 - **Beschreibung:** Beim Aktivieren des Schutzes von Daten wird die integrierte Verschlüsselungshardware verwendet, um sensible Daten zu speichern, die in Ihrer App in verschlüsseltem Format verwendet werden. Die Standardschutzebene ist auf vollständigen Schutz festgelegt. Dabei kann nur auf Dateien zugegriffen werden, wenn das Gerät entsperrt ist.
-    - **Schlüssel**: com.apple.developer.default-data-protection
-    - **Zeichenfolge:** NSFileProtectionComplete
+  - **Schlüssel**: com.apple.developer.default-data-protection
+  - **Zeichenfolge:** NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
 - **Beschreibung:** Das HomeKit-Framework bietet eine Plattform zum Einrichten, Konfigurieren und Verwalten unterstützter Heimautomatisierungsgeräte – und das alles von einem iOS-Gerät aus. Weitere Informationen zu HomeKit finden Sie im Leitfaden „Introduction to HomeKit (Einführung in HomeKit)“.
-    - **Schlüssel**: com.apple.developer.homekit
-    - **Boolesch**: YES
+  - **Schlüssel**: com.apple.developer.homekit
+  - **Boolesch**: YES
 
 ### <a name="healthkit"></a>HealthKit
 
 - **Beschreibung:** HealthKit ist ein mit iOS 8 eingeführtes Framework, das einen zentralisierten, koordinierten und sicheren Datenspeicher für Informationen bietet, die mit der Integrität der App in Verbindung stehen. Weitere Informationen zu HomeKit finden Sie im Leitfaden „Introduction to HealthKit (Einführung in HealthKit)“.
-    - **Schlüssel**: com.apple.developer.healthkit
-    - **Boolesch**: YES
+  - **Schlüssel**: com.apple.developer.healthkit
+  - **Boolesch**: YES
 
 ### <a name="wireless-accessory-configuration"></a>Konfiguration für drahtloses Zubehör
 
 - **Beschreibung:** Die Konfiguration für drahtloses Zubehör ermöglicht Ihrer Anwendung die Konfiguration von MFi-WLAN-Zubehör.
-    - **Schlüssel**: com.apple.external-accessory.wireless-configuration
-    - **Boolesch**: YES
+  - **Schlüssel**: com.apple.external-accessory.wireless-configuration
+  - **Boolesch**: YES
 
 ### <a name="classkit"></a>ClassKit
 
 - **Beschreibung:** ClassKit ermöglicht es Lehrkräften, den Fortschritt der Schüler und Studenten bei den zugewiesenen Aktivitäten in der App anzuzeigen.
-    - **Schlüssel**: com.apple.developer.ClassKit-environment
-    - **Zeichenfolge**: `development` oder `production`
+  - **Schlüssel**: com.apple.developer.ClassKit-environment
+  - **Zeichenfolge**: `development` oder `production`
 
 ## <a name="summary"></a>Zusammenfassung
 

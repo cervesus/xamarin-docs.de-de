@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie die Toucheingabe in xa
 ms.prod: xamarin
 ms.assetid: 13F8289B-7A80-4959-AF3F-57874D866DCA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: bd6f40a117734712941585b6ce0d630105e54693
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: d78363bf7d38f19a14f689c2825ea9c9934653e4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121037"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280253"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von "berühren" in xamarin. IOS
 
@@ -36,7 +36,7 @@ Befolgen Sie die nachfolgenden Anweisungen, um dem Storyboard Code hinzuzufügen
 In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie die folgenden Schritte aus, um den Code hinzuzufügen, der zum Implementieren von Berührungs Ereignissen
 
 
-1. Öffnen Sie das Projekt **Touch_Start**. Führen Sie zuerst das Projekt aus, um sicherzustellen, dass alles okay ist, und tippen Sie auf die Schaltfläche mit den Es sollte ein Bildschirm angezeigt werden, der dem folgenden ähnelt (obwohl keine der Schaltflächen funktioniert):
+1. Öffnen Sie das Projekt **Touch_Start**. Führen Sie zuerst das Projekt aus, um sicherzustellen, dass alles okay ist, und tippen Sie **auf die Schalt** Fläche mit den Es sollte ein Bildschirm angezeigt werden, der dem folgenden ähnelt (obwohl keine der Schaltflächen funktioniert):
 
     [![](ios-touch-walkthrough-images/image4.png "Beispiel-App mit nicht funktionierenden Schaltflächen ausführen")](ios-touch-walkthrough-images/image4.png#lightbox)
 

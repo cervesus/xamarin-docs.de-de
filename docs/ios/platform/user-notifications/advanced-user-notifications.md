@@ -4,15 +4,15 @@ description: Dieser Artikel bietet einen tieferen Einblick in das Benutzer Benac
 ms.prod: xamarin
 ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 28734af7c3d9958462e47ff6b11a0f9d0e06bcfb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a22e0d6979173ca29596687da8a0b54c6fc565a7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655402"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279053"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Erweiterte Benutzer Benachrichtigungen in xamarin. IOS
 
@@ -173,7 +173,7 @@ Gehen Sie folgendermaßen vor, um eine benutzerdefinierte Benutzeroberfläche f�
 4. Geben Sie einen **Namen** für die Erweiterung ein, und klicken Sie auf die Schaltfläche **weiter** : 
 
     [![](advanced-user-notifications-images/notify02.png "Geben Sie einen Namen für die Erweiterung ein.")](advanced-user-notifications-images/notify02.png#lightbox)
-5. Passen Sie den **Projektnamen** und/ oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** 
+5. Passen Sie den **Projektnamen** und/oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** 
 
     [![](advanced-user-notifications-images/notify03.png "Anpassen des Projekt namens und/oder Projektmappennamens")](advanced-user-notifications-images/notify03.png#lightbox)
 
@@ -266,7 +266,7 @@ Das System muss darüber informiert werden, wie die Benachrichtigungs Inhalts Er
 
 -----
 
-Erweiterungs Kategorien für Benachrichtigungs`UNNotificationExtensionCategory`Inhalte () verwenden die gleichen Kategoriewerte, die zum Registrieren von Benachrichtigungs Aktionen verwendet werden. Wechseln `UNNotificationExtensionCategory` Sie in der Situation, in der die APP dieselbe Benutzeroberfläche für mehrere Kategorien verwendet, in das typanray, und stellen Sie alle erforderlichen Kategorien bereit. Beispiel:
+Erweiterungs Kategorien für Benachrichtigungs`UNNotificationExtensionCategory`Inhalte () verwenden die gleichen Kategoriewerte, die zum Registrieren von Benachrichtigungs Aktionen verwendet werden. Wechseln `UNNotificationExtensionCategory` Sie in der Situation, in der die APP dieselbe Benutzeroberfläche für mehrere Kategorien verwendet, in das **typanray** , und stellen Sie alle erforderlichen Kategorien bereit. Beispiel:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

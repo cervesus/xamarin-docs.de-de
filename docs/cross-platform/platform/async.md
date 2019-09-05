@@ -3,15 +3,15 @@ title: Async Support Overview (Übersicht über die asynchrone Unterstützung)
 description: In diesem Dokument wird die Programmierung mit Async und Erwartung der in C# 5 eingeführten Konzepte beschrieben, um das Schreiben von asynchronem Code zu vereinfachen.
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: fb58cb000d8179422979d9661950db82d1884414
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 90c391f79d7aa0ffdee0072c84cbdba0c504d551
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680939"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280630"
 ---
 # <a name="async-support-overview"></a>Async Support Overview (Übersicht über die asynchrone Unterstützung)
 
@@ -120,9 +120,9 @@ public async Task<int> DownloadHomepage()
 
 Beachten Sie die folgenden Punkte:
 
--  Die Methoden Deklaration enthält `async` das-Schlüsselwort.
--  Der Rückgabetyp ist `Task<int>` , sodass der Aufruf `int` Code auf den Wert zugreifen kann, der in dieser Methode berechnet wird.
--  Die Return-Anweisung `return exampleInt;` ist ein ganzzahliges Objekt – die Tatsache, dass die `Task<int>` Methode zurückgibt, ist Teil der Verbesserungen der Sprache.
+- Die Methoden Deklaration enthält `async` das-Schlüsselwort.
+- Der Rückgabetyp ist `Task<int>` , sodass der Aufruf `int` Code auf den Wert zugreifen kann, der in dieser Methode berechnet wird.
+- Die Return-Anweisung `return exampleInt;` ist ein ganzzahliges Objekt – die Tatsache, dass die `Task<int>` Methode zurückgibt, ist Teil der Verbesserungen der Sprache.
 
 
 ### <a name="calling-an-async-method-1"></a>Aufrufen einer Async-Methode 1
@@ -148,11 +148,11 @@ GetButton.Click += async (sender, e) => {
 
 Notizen:
 
--  Der anonyme Delegat hat das Schlüsselwort "Async".
--  Die asynchrone Methode Download Homepage gibt eine Aufgabe <int> zurück, die in der sizetask-Variablen gespeichert ist.
--  Der Code wartet auf die sizetask-Variable.  *Dies* ist der Speicherort, an dem die Methode angehalten und die Steuerung an den aufrufenden Code zurückgegeben wird, bis die asynchrone Aufgabe in einem eigenen Thread abgeschlossen ist.
--  Die Ausführung wird *nicht* angehalten, wenn die Aufgabe in der ersten Zeile der-Methode erstellt wird, trotz der Aufgabe, die dort erstellt wird. Das Erwartungs Wort erwartet gibt den Speicherort an, an dem die Ausführung angehalten wird.
--  Wenn die asynchrone Aufgabe abgeschlossen ist, wird "intresult" festgelegt, und die Ausführung wird im ursprünglichen Thread von der Warteschlange fortgesetzt.
+- Der anonyme Delegat hat das Schlüsselwort "Async".
+- Die asynchrone Methode Download Homepage gibt eine Task\<int-> zurück, die in der sizetask-Variablen gespeichert ist.
+- Der Code wartet auf die sizetask-Variable.  *Dies* ist der Speicherort, an dem die Methode angehalten und die Steuerung an den aufrufenden Code zurückgegeben wird, bis die asynchrone Aufgabe in einem eigenen Thread abgeschlossen ist.
+- Die Ausführung wird *nicht* angehalten, wenn die Aufgabe in der ersten Zeile der-Methode erstellt wird, trotz der Aufgabe, die dort erstellt wird. Das Erwartungs Wort erwartet gibt den Speicherort an, an dem die Ausführung angehalten wird.
+- Wenn die asynchrone Aufgabe abgeschlossen ist, wird "intresult" festgelegt, und die Ausführung wird im ursprünglichen Thread von der Warteschlange fortgesetzt.
 
 
 ### <a name="calling-an-async-method-2"></a>Aufrufen einer Async-Methode 2
@@ -181,9 +181,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 Einige wichtige Punkte:
 
--  Die Methode ist als `async` markiert, gibt jedoch zurück. `void` Dies erfolgt in der Regel nur bei Ereignis Handlern (andernfalls würden Sie `Task` oder `Task<TResult>` zurückgeben).
--  Der Code `await` für die `DownloadHomepage` Methode wird direkt für eine Zuweisung zu einer Variablen ( `intResult` ) im Gegensatz zum vorherigen Beispiel verwendet, bei dem `Task<int>` eine zwischen Variable verwendet wurde, um auf die Aufgabe zu verweisen.  *Dies* ist der Speicherort, an den die Steuerung an den Aufrufer zurückgegeben wird, bis die asynchrone Methode in einem anderen Thread abgeschlossen wurde.
--  Wenn die asynchrone Methode abgeschlossen und zurückgegeben wird, wird die Ausführung `await` bei der fortgesetzt, was bedeutet, dass das ganz Zahl Ergebnis zurückgegeben und dann in einem UI-Widget gerendert
+- Die Methode ist als `async` markiert, gibt jedoch zurück. `void` Dies erfolgt in der Regel nur bei Ereignis Handlern (andernfalls würden Sie `Task` oder `Task<TResult>` zurückgeben).
+- Der Code `await` für die `DownloadHomepage` Methode wird direkt für eine Zuweisung zu einer Variablen ( `intResult` ) im Gegensatz zum vorherigen Beispiel verwendet, bei dem `Task<int>` eine zwischen Variable verwendet wurde, um auf die Aufgabe zu verweisen.  *Dies* ist der Speicherort, an den die Steuerung an den Aufrufer zurückgegeben wird, bis die asynchrone Methode in einem anderen Thread abgeschlossen wurde.
+- Wenn die asynchrone Methode abgeschlossen und zurückgegeben wird, wird die Ausführung `await` bei der fortgesetzt, was bedeutet, dass das ganz Zahl Ergebnis zurückgegeben und dann in einem UI-Widget gerendert
 
 
 ## <a name="summary"></a>Zusammenfassung

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b7a6c6d9c9c541e1d5e821fc2dac202e98bec62
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 676523e461737d7820278ca8c319794d3347088d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994424"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289790"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Einführung in Xamarin.Forms-Steuerelementvorlagen
 
@@ -38,7 +38,7 @@ Sie können die [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse a
 Wenn Sie eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse erstellt und diesen Typen zugewiesen haben, wird die Darstellung entsprechend der `ControlTemplate`-Klasse angepasst. Zusätzlich zur Festlegung der Darstellung mithilfe der Eigenschaft `ControlTemplate` können Sie auch über Formatvorlagen Steuerelementvorlagen anwenden. So haben Sie noch mehr Designmöglichkeiten.
 
 > [!NOTE]
->  *Was sind `TemplatedPage` und `TemplatedView` für Typen?* `TemplatedPage` ist die Basisklasse für `ContentPage` und der einfachste Seitentyp in Xamarin.Forms. Im Gegensatz zu `ContentPage` hat `TemplatedPage` nicht die Eigenschaft `Content`. Deshalb können Sie einer `TemplatedPage`-Instanz nicht direkt Inhalt hinzufügen. Stattdessen wird der Inhalt durch Festlegen der Steuerelementvorlage für die `TemplatedPage`-Instanz hinzugefügt. Bei `TemplatedView` ist es ähnlich. Dieser Typ ist die Basisklasse für `ContentView`. Im Gegensatz zu `ContentView` hat `TemplatedView` nicht die Eigenschaft `Content`. Deshalb können Sie einer `TemplatedView`-Instanz nicht direkt Inhalt hinzufügen. Stattdessen wird der Inhalt durch Festlegen der Steuerelementvorlage für die `TemplatedView`-Instanz hinzugefügt.
+> *Was sind `TemplatedPage` und `TemplatedView` für Typen?* `TemplatedPage` ist die Basisklasse für `ContentPage` und der einfachste Seitentyp in Xamarin.Forms. Im Gegensatz zu `ContentPage` hat `TemplatedPage` nicht die Eigenschaft `Content`. Deshalb können Sie einer `TemplatedPage`-Instanz nicht direkt Inhalt hinzufügen. Stattdessen wird der Inhalt durch Festlegen der Steuerelementvorlage für die `TemplatedPage`-Instanz hinzugefügt. Bei `TemplatedView` ist es ähnlich. Dieser Typ ist die Basisklasse für `ContentView`. Im Gegensatz zu `ContentView` hat `TemplatedView` nicht die Eigenschaft `Content`. Deshalb können Sie einer `TemplatedView`-Instanz nicht direkt Inhalt hinzufügen. Stattdessen wird der Inhalt durch Festlegen der Steuerelementvorlage für die `TemplatedView`-Instanz hinzugefügt.
 
 Steuerelementvorlagen können Sie in XAML und C# erstellen:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: e2cab7191bb4877deacb3f3f3235a3a4d5c65612
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6df393d59207cea9c316189059f8d0e08a5e5137
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656363"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290069"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Auflösung von Abhängigkeiten in Xamarin.Forms
 
@@ -29,9 +29,9 @@ Kontrolle über die Erstellung und Lebensdauer von Typen in Projekten-Plattform 
 
 ## <a name="injecting-a-dependency-resolution-method"></a>Einfügen einer Abhängigkeit Auflösung-Methode
 
-Die [ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Klasse bietet die Möglichkeit, eine Abhängigkeit Auflösungsmethode in Xamarin.Forms einfügen mit der [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) Methode. Klicken Sie dann, wenn Xamarin.Forms eine Instanz eines bestimmten Typs benötigt, die Auflösungsmethode Abhängigkeit die Möglichkeit, die Instanz erhält. Wenn die Auflösungsmethode Abhängigkeit zurückgibt `null` für einen angeforderten Typ Xamarin.Forms liegt an der Versuch, den Typ zu erstellen-Instanz mithilfe der `Activator.CreateInstance` Methode.
+Die [ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Klasse bietet die Möglichkeit, eine Abhängigkeit Auflösungsmethode in Xamarin.Forms einfügen mit der [ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) Methode. Klicken Sie dann, wenn Xamarin.Forms eine Instanz eines bestimmten Typs benötigt, die Auflösungsmethode Abhängigkeit die Möglichkeit, die Instanz erhält. Wenn die Auflösungsmethode Abhängigkeit zurückgibt `null` für einen angeforderten Typ Xamarin.Forms liegt an der Versuch, den Typ zu erstellen-Instanz mithilfe der `Activator.CreateInstance` Methode.
 
-Im folgende Beispiel veranschaulicht die legen Sie der Abhängigkeit Auflösung-Methode, mit der [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) Methode:
+Im folgende Beispiel veranschaulicht die legen Sie der Abhängigkeit Auflösung-Methode, mit der [ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) Methode:
 
 ```csharp
 using Autofac;

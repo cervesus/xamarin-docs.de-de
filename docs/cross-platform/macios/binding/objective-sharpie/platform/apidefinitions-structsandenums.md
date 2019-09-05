@@ -1,36 +1,36 @@
 ---
-title: ApiDefinitions und StructsAndEnums-Dateien
-description: Dieses Dokument beschreibt die ApiDefinitions.cs und StructsAndEnums.cs-Dateien, die Ziel-Sharpie generiert. Diese Dateien werden dann verwendet, den Objective-C-Code aus den Zugriff auf C#.
+title: Apidefinitions-& struclanandenums-Dateien
+description: In diesem Dokument werden die von Target Sharpie generierten ApiDefinitions.cs-und StructsAndEnums.cs-Dateien beschrieben. Diese Dateien werden dann verwendet, um über auf den Ziel-C C#-Code zuzugreifen.
 ms.prod: xamarin
 ms.assetid: AC2087C0-BA54-46D8-B70C-6972941C8F73
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 3b991f6105c6053f473b049d195aaef63cbcdd57
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 950f9149744cb8aa2abaed60ccefb416405ab110
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977682"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290780"
 ---
-# <a name="apidefinitions--structsandenums-files"></a>ApiDefinitions und StructsAndEnums-Dateien
+# <a name="apidefinitions--structsandenums-files"></a>Apidefinitions-& struclanandenums-Dateien
 
-Wenn das Ziel Sharpie erfolgreich ausgeführt wurde, generiert er `Binding/ApiDefinitions.cs` und `Binding/StructsAndEnums.cs` Dateien.
-Diese zwei Dateien hinzugefügt, einer bindungsprojekt in Visual Studio für Mac oder direkt zu übergeben die `btouch` oder `bmac` Tools, um die letzte Bindung zu erstellen.
+Wenn der Ziel-Sharpie erfolgreich ausgeführt wurde, `Binding/ApiDefinitions.cs` werden `Binding/StructsAndEnums.cs` die-und-Dateien generiert.
+Diese beiden Dateien werden einem Bindungs Projekt in Visual Studio für Mac hinzugefügt oder direkt an das- `btouch` Tool `bmac` oder das-Tool übermittelt, um die endgültige Bindung zu schaffen.
 
-In *einige* Fällen diese generierten Dateien möglicherweise müssen Sie jedoch weitere häufig der Entwickler diese manuell bearbeiten muss, generierte Dateien, um Probleme zu beheben, die vom Tool (z. B. die gekennzeichneten nicht automatisch verarbeitet werden konnte mit einem [ `Verify` Attribut](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)).
+In *einigen* Fällen sind diese generierten Dateien möglicherweise nur erforderlich, aber häufig muss der Entwickler diese generierten Dateien manuell ändern, um Probleme zu beheben, die nicht automatisch vom Tool behandelt werden konnten (z. b. solche, die mit einem [ `Verify`-Attribut](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)).
 
-Zu den nächsten Schritten gehören:
+Einige der nächsten Schritte umfassen Folgendes:
 
-- **Anpassen der Namen**: Manchmal möchten Sie die Namen von Methoden und Klassen, die den .NET Framework-Entwurfsrichtlinien entsprechend anpassen.
-- **Methoden oder Eigenschaften**: Heuristik, die manchmal verwendet vom Ziel Sharpie erkennt eine Methode in eine Eigenschaft aktiviert werden. An diesem Punkt können Sie entscheiden, ob dies das beabsichtigte Verhalten oder nicht ist.
-- **Einbinden mit Ereignissen**: Könnten Sie verknüpfen die Klassen mit Ihrem-Delegatklasse und Ereignisse für diese automatisch zu generieren.
-- **Einbinden von Benachrichtigungen**: Es ist nicht möglich, um die API-Vertrag, der Benachrichtigungen aus den reinen Headerdateien zu extrahieren, dies erfordert, dass eine Reise nach der API-Dokumentation. Wenn Sie stark typisierte Benachrichtigungen werden sollen, müssen Sie das Ergebnis zu aktualisieren.
-- **API-Zusammenstellung**: An diesem Punkt empfiehlt sich bieten zusätzliche Konstruktoren, Methoden hinzufügen (ermöglichen C# Initialize-auf-Konstruktionssyntax), Operator überladen, und Implementieren eigener Schnittstellen für die zusätzliche Definitionen-Datei.
+- **Anpassen von Namen**: Manchmal möchten Sie die Namen von Methoden und Klassen so anpassen, dass Sie den .NET Framework Entwurfs Richtlinien entsprechen.
+- **Methoden oder Eigenschaften**: Die Heuristik, die von Ziel-Sharpie verwendet wird, wählt manchmal eine Methode aus, die in eine Eigenschaft umgewandelt werden soll. An diesem Punkt können Sie entscheiden, ob es sich um das beabsichtigte Verhalten handelt.
+- **Hook-up-Ereignisse**: Sie können Ihre Klassen mit ihren Delegatklassen verknüpfen und automatisch Ereignisse für diese generieren.
+- **Hook-Benachrichtigungen**: Es ist nicht möglich, den API-Vertrag von Benachrichtigungen aus den reinen Header Dateien zu extrahieren. Dies erfordert eine Fahrt zur API-Dokumentation. Wenn Sie Benachrichtigungen mit starker Typisierung wünschen, müssen Sie das Ergebnis aktualisieren.
+- **API**-Zusammenstellung: An dieser Stelle können Sie zusätzliche Konstruktoren bereitstellen, Methoden hinzufügen (um die Syntax C# initialisieren-bei der Erstellung zuzulassen), Operator Überladung und eigene Schnittstellen in der Datei mit zusätzlichen Definitionen implementieren.
 
-Finden Sie unter den [binden eine API](~/cross-platform/macios/binding/objective-c-libraries.md) Beschreibung sehen, wie diese Dateien in des Bindungsprozesses, wie im folgenden Diagramm dargestellt:
+Sehen Sie sich die Beschreibung der [Bindung einer API](~/cross-platform/macios/binding/objective-c-libraries.md) an, um zu sehen, wie diese Dateien in den Bindungsprozess passen, wie in der folgenden Abbildung dargestellt:
 
-![](apidefinitions-structsandenums-images/binding-flowchart.png "In diesem Diagramm wird der Bindungsprozess angezeigt.")
+![](apidefinitions-structsandenums-images/binding-flowchart.png "Der Bindungsprozess ist in diesem Diagramm dargestellt.")
 
-Finden Sie in der [Bindung Datentypreferenz](~/cross-platform/macios/binding/binding-types-reference.md) für Weitere Informationen zum Inhalt dieser Dateien.
+Weitere Informationen zum Inhalt dieser Dateien finden Sie in der [Bindungs Typen Referenz](~/cross-platform/macios/binding/binding-types-reference.md) .
 

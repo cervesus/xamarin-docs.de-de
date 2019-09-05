@@ -4,15 +4,15 @@ description: 'In diesem Dokument wird die Rückstellung in ios beschrieben: Anwe
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 1899ee225d0ea285a38ba7b4d341e5d3a4452639
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9fe508d5b0f8d15a26f02b110763cc8e3f4a2e25
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521391"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292133"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Einführung in die Hintergrundverarbeitung in iOS
 
@@ -35,11 +35,11 @@ Der Lebenszyklus der IOS-Anwendung ist eine Sammlung von Anwendungs Zuständen u
 - Wird **ausgeführt/aktiv** : die Anwendung befindet sich auf dem Bildschirm und führt Code im Vordergrund aus.
 - **Inaktiv** : die Anwendung wird durch einen eingehenden Telefonanruf, Text oder eine andere Unterbrechung unterbrochen.
 - **Kulisse** : die Anwendung wird in den Hintergrund verschoben und setzt die Ausführung von Hintergrund Code fort.
-- Angehalten: Wenn die Anwendung nicht über Code verfügt, der im Hintergrund ausgeführt wird, oder wenn der gesamte Code abgeschlossen ist, wird die APP vom Betriebssystem angehalten. Der Prozess einer angehaltenen Anwendung wird aktiv gehalten, aber die Anwendung kann keinen Code in diesem Zustand ausführen.
+- Angeh **alten: Wenn** die Anwendung nicht über Code verfügt, der im Hintergrund ausgeführt wird, oder wenn der gesamte Code abgeschlossen ist *, wird die APP vom Betriebs* System angehalten. Der Prozess einer angehaltenen Anwendung wird aktiv gehalten, aber die Anwendung kann keinen Code in diesem Zustand ausführen.
 - **Zurück zur Nichtausführung/Beendigung (selten)** : Gelegentlich wird der Prozess der Anwendung zerstört, und die Anwendung kehrt in den Zustand " *nicht ausgeführt* " zurück. Dies geschieht in Situationen mit geringem Arbeitsspeicher oder, wenn der Benutzer die Anwendung manuell beendet.
 
 
-Seit der Einführung der Multitasking-Unterstützung beendet IOS selten Anwendungen im Leerlauf und hält Ihre Prozesse stattdessen im Speicher angehalten. Wenn Sie den Prozess einer Anwendung beibehalten, wird sichergestellt, dass die Anwendung beim nächsten Öffnen des Benutzers schnell gestartet wird. Es bedeutet auch, dass Anwendungen ohne das Zeichnen auf Systemressourcen frei vom angehaltenen Zustand zurück in den Zustand mit *backstem* verschoben werden können. IOS 7 nutzt dieses Feature mit neuen APIs, die es Anwendungen ermöglichen, Hintergrundaufgaben anzuhalten, wenn das Gerät in den Standbymodus wechselt, Inhalte direkt aus dem Hintergrund ohne Benutzerinteraktion aktualisieren und vieles mehr. Wir behandeln die neuen APIs in [IOS-Hintergrund Techniken](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md).
+Seit der Einführung der Multitasking-Unterstützung beendet IOS selten *Anwendungen im Leerlauf* und hält Ihre Prozesse stattdessen im Speicher angehalten. Wenn Sie den Prozess einer Anwendung beibehalten, wird sichergestellt, dass die Anwendung beim nächsten Öffnen des Benutzers schnell gestartet wird. Es bedeutet auch, dass Anwendungen ohne das Zeichnen auf Systemressourcen frei vom angehaltenen *Zustand zurück in den Zustand mit* *backstem* verschoben werden können. IOS 7 nutzt dieses Feature mit neuen APIs, die es Anwendungen ermöglichen, Hintergrundaufgaben anzuhalten, wenn das Gerät in den Standbymodus wechselt, Inhalte direkt aus dem Hintergrund ohne Benutzerinteraktion aktualisieren und vieles mehr. Wir behandeln die neuen APIs in [IOS-Hintergrund Techniken](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md).
 
 ## <a name="application-lifecycle-methods"></a>Anwendungslebenszyklus-Methoden
 

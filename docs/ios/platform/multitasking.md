@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: c3f0130e96ae61838b9a7abcd68ccd219a327d4d
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 87de42504081374f830a4fe286476ad822eeed99
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198480"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280160"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Multitasking für iPad in xamarin. IOS
 

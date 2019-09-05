@@ -1,48 +1,48 @@
 ---
-title: Erstellen von NuGet über vorhandene Bibliotheksprojekte
-description: 'Dieses Dokument beschreibt die Vorgehensweise: erstellen ein NuGet-Pakets aus einem vorhandenen Library-Projekt, sodass der Code für andere Entwickler freigegeben werden.'
+title: Erstellen eines nuget aus vorhandenen Bibliotheks Projekten
+description: In diesem Dokument wird beschrieben, wie ein nuget-Paket aus einem vorhandenen Bibliotheksprojekt erstellt wird, sodass der Code für andere Entwickler freigegeben werden kann.
 ms.prod: xamarin
 ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2017
-ms.openlocfilehash: 6e043334d3ca45a573423ebdfdf1ec9149167b55
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f9d49fc4bff91939c9924dc42a11ef31ffd87362
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864692"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289222"
 ---
-# <a name="creating-a-nuget-from-existing-library-projects"></a>Erstellen von NuGet über vorhandene Bibliotheksprojekte
+# <a name="creating-a-nuget-from-existing-library-projects"></a>Erstellen eines nuget aus vorhandenen Bibliotheks Projekten
 
-Vorhandener Plc oder .NET Standard-Bibliotheken können aktiviert werden, in der NuGet-Pakete über die **Projektoptionen** Fenster:
+Vorhandene PCL-oder .NET Standard Bibliotheken können über das Fenster " **Projektoptionen** " in nugets umgewandelt werden:
 
-1. Mit der rechten Maustaste auf das Bibliotheksprojekt in der **Lösungspad** , und wählen Sie **Optionen**.
+1. Klicken Sie mit der rechten Maustaste auf das Bibliotheksprojekt im **Lösungspad** , und wählen Sie **Optionen**aus.
 
-2. Wechseln Sie zu der **NuGet-Pakets > Metadaten** aus, und geben Sie alle der [erforderlichen Informationen](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) in der **allgemeine** Registerkarte:
+2. Wechseln Sie zum Abschnitt **nuget-Paket > Metadaten** , und geben Sie alle [erforderlichen Informationen](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) auf der Registerkarte **Allgemein** ein:
 
-   [![](existing-library-images/existing-metadata-sml.png "Geben Sie die erforderlichen Metadaten")](existing-library-images/existing-metadata.png#lightbox)
+   [![](existing-library-images/existing-metadata-sml.png "Erforderliche Metadaten eingeben")](existing-library-images/existing-metadata.png#lightbox)
 
-3. Optional [Hinzufügen von zusätzlichen Metadaten](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) in die **Details** Registerkarte.
+3. [Fügen Sie optional zusätzliche Metadaten](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) auf der Registerkarte **Details** hinzu.
 
-4. Sobald die Metadaten konfiguriert ist, können Sie mit der rechten Maustaste auf das Projekt und wählen **NuGet-Paket erstellen** und die **NUPKG** werden im NuGet-Paketdatei gespeichert der **/bin /** Ordner (Debug oder Release, je nach Konfiguration).
+4. Nachdem die Metadaten konfiguriert wurden, können Sie mit der rechten Maustaste auf das Projekt klicken und **nuget-Paket erstellen** auswählen, und die **nupkg** -nuget-Paketdatei wird im Ordner **/bin/** (abhängig von der Konfiguration) gespeichert.
 
-   ![](existing-library-images/create-nuget-package.png "Wählen Sie mit der rechten Maustaste im NuGet-Paket erstellen")
+   ![](existing-library-images/create-nuget-package.png "Klicken Sie im Kontextmenü auf nuget-Paket erstellen.")
 
-5. Erstellen Sie das NuGet-Paket auf _jeder_ erstellen oder bereitstellen, navigieren Sie zu der **NuGet-Paket > Erstellen** Abschnitt und -Tick **erstellen Sie ein NuGet-Paket beim Erstellen des Projekts**:
+5. Um das nuget-Paket für _jeden_ Build oder jede Bereitstellung zu erstellen, wechseln Sie zum Abschnitt **nuget-Paket >** erstellen, und **Erstellen Sie ein nuget-Paket, wenn Sie das Projekt**erstellen:
 
-    [![](existing-library-images/existing-tickbox-sml.png "Aktivieren Sie zum Erstellen eines NuGet-Pakets")](existing-library-images/existing-tickbox.png#lightbox)
+    [![](existing-library-images/existing-tickbox-sml.png "Tick zum Erstellen eines nuget-Pakets")](existing-library-images/existing-tickbox.png#lightbox)
 
 > [!NOTE]
-> Erstellen des NuGet-Pakets kann den Buildprozess Pakets verlangsamen. Wenn Sie dieses Kontrollkästchen nicht ausgewählt ist, können Sie ein NuGet-Paket weiterhin manuell zu einem beliebigen Zeitpunkt im Kontextmenü "Projekt" (in Schritt 4 oben gezeigt) generieren.
+> Wenn Sie das nuget-Paket erstellen, kann der Buildprozess verlangsamt werden. Wenn dieses Kontrollkästchen nicht angezeigt wird, können Sie immer noch manuell ein nuget-Paket über das Projektkontext Menü (siehe Schritt 4 oben) generieren.
 
-## <a name="verifying-the-output"></a>Überprüfen Sie die Ausgabe
+## <a name="verifying-the-output"></a>Überprüfen der Ausgabe
 
-NuGet-Pakete sind auch die ZIP-Dateien, daher ist es möglich, die interne Struktur des generierten Pakets zu überprüfen.
+Nuget-Pakete sind auch ZIP-Dateien, sodass es möglich ist, die interne Struktur des generierten Pakets zu überprüfen.
 
-Dieser Screenshot zeigt den Inhalt eines PCL-basierten NuGet – nur eine einzelne PCL-Assembly enthalten ist:
+Dieser Screenshot zeigt den Inhalt eines PCL-basierten nuget-– es ist nur eine einzige PCL-Assembly enthalten:
 
-![](existing-library-images/nuget-output.png "Im NuGet-Paket enthaltenen Dateien")
+![](existing-library-images/nuget-output.png "Im nuget-Paket enthaltene Dateien")
 
 
 ## <a name="related-links"></a>Verwandte Links

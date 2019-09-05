@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Warnungen in einer xamarin.
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: c97006d1afb68d693e2792879788ea92907873fc
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 1e2ad12e7dc52b44bda079340638298b87ac5f65
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889543"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291215"
 ---
 # <a name="alerts-in-xamarinmac"></a>Warnungen in xamarin. Mac
 
@@ -72,7 +72,7 @@ Apple bietet verschiedene Eigenschaften, die verwendet werden können, um eine W
 - **InformativeText** : Hierbei handelt es sich um den Hauptteil der Warnung, bei der Sie die Situation eindeutig definieren und dem Benutzer die Möglichkeit zur Verfügung stellen müssen.
 - **Symbol** : Hiermit kann ein benutzerdefiniertes Symbol für den Benutzer angezeigt werden.
 - **Helpanchor** & **showshelp** : ermöglicht das Binden der Warnung in das Anwendungs helpbook und das Anzeigen der Hilfe für die Warnung.
-- Schaltflächen: Standardmäßig hat eine Warnung nur die Schaltfläche **OK** , aber mit der Auflistung **Buttons** können Sie je nach Bedarf weitere Optionen hinzufügen.
+- **Schaltflächen: Standard** mäßig hat eine Warnung nur die Schaltfläche **OK** , aber mit der Auflistung **Buttons** können Sie je nach Bedarf weitere Optionen hinzufügen.
 - **Showssuppressionbutton** -if `true` zeigt ein Kontrollkästchen an, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde.
 - **Accessoryview** : ermöglicht das Anfügen einer anderen unter Ansicht an die Warnung, um zusätzliche Informationen bereitzustellen, z. b. das Hinzufügen eines **Textfelds** für die Dateneingabe. Wenn Sie eine neue **accessoryview** festlegen oder eine vorhandene ändern, müssen Sie die `Layout()` -Methode zum Anpassen des sichtbaren Layouts der Warnung aufruft.
 

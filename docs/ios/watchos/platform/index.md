@@ -1,57 +1,57 @@
 ---
-title: WatchOS-Plattformfeatures
-description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die WatchOS-Plattformfeatures wie z. B. Apple Pay, Benachrichtigungen, Komplikationen, proaktive Vorschläge, Trainings-apps und vieles mehr zu beschreiben.
+title: watchos-Platt Form Features
+description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, in denen watchos-Platt Form Features beschrieben werden, z. b. Apple Pay, Benachrichtigungen, Komplikationen, proaktive Vorschläge, Workout-apps und mehr.
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 09200ba5968838edf829b30a50a8ad0f4a3ab3aa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2b987992bcb3dd4d2575a46e21a2302ed78d8d70
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61224559"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282288"
 ---
-# <a name="watchos-platform-features"></a>WatchOS-Plattformfeatures
+# <a name="watchos-platform-features"></a>watchos-Platt Form Features
 
 ## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[Einführung in watchOS 5](introduction-to-watchos5/index.md)
 
-Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte Features in WatchOS 5, die für die Verwendung verfügbar, beim Erstellen von WatchOS-apps mit Xamarin sind.
+Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte Features in watchos 5, die für die Erstellung von watchos-apps mit xamarin verfügbar sind.
 
 ## <a name="introduction-to-watchos-4introduction-to-watchos4md"></a>[Einführung in watchOS 4](introduction-to-watchos4.md)
 
-Dieses Dokument enthält eine allgemeine Übersicht über Features hinzugefügt und in WatchOS 4 aktualisiert.
+Dieses Dokument enthält eine allgemeine Übersicht über die in watchos 4 hinzugefügten und aktualisierten Features.
 
 ## <a name="introduction-to-watchos-3introduction-to-watchos3indexmd"></a>[Einführung in watchOS 3](introduction-to-watchos3/index.md)
 
-Dieser Artikel beschreibt die neuen und aktualisierten-APIs in WatchOS 3.
+In diesem Artikel werden neue und aktualisierte APIs in watchos 3 beschrieben.
 
-## <a name="apple-pay-enhancementsioswatchosplatformapple-paymd"></a>[Apple Pay-Verbesserungen](~/ios/watchos/platform/apple-pay.md)
+## <a name="apple-pay-enhancementsioswatchosplatformapple-paymd"></a>[Apple Pay Erweiterungen](~/ios/watchos/platform/apple-pay.md)
 
-In WatchOS 3 wurde das PassKit-Framework erweitert, um Unterstützung für sichere, in-app-Zahlungen (von sowohl physischen waren und Dienstleistungen) für die auf der Apple Watch-apps zu ermöglichen.
+In watchos 3 wurde das passkit-Framework erweitert, um Unterstützung für sichere, in-App-Zahlungen (sowohl physischer waren als auch Dienste) für die apps, die auf dem Apple Watch ausgeführt werden, zu ermöglichen.
 
 ## <a name="background-tasksioswatchosplatformbackground-tasksmd"></a>[Hintergrundaufgaben](~/ios/watchos/platform/background-tasks.md)
 
-WatchOS 3 führt mehrere Aufgaben im Hintergrund, die eine app verwenden können, aktualisieren Sie die zugehörigen Informationen stellt sicher, dass sie den Inhalt, die der Benutzer muss, bevor sie es öffnen.
+watchos 3 führt mehrere Hintergrundaufgaben ein, die eine APP zum Aktualisieren Ihrer Informationen verwenden kann, um sicherzustellen, dass Sie die Inhalte der Benutzer benötigt, bevor Sie Sie öffnen.
 
 ## <a name="notificationsnotificationsmd"></a>[Benachrichtigungen](notifications.md)
 
-Erfahren Sie, wie eine benutzerdefinierte Benachrichtigung behandeln in die Watch-app bereitzustellen.
+Erfahren Sie, wie Sie eine benutzerdefinierte Benachrichtigungs Behandlung in ihrer Watch-App bereitstellen
 
 ## <a name="complicationscomplicationsmd"></a>[Komplikationen](complications.md)
 
-Fügen Sie Komplikation-Unterstützung, um aktuelle Daten anzuzeigen, auf dem Zifferblatt Ihrer Apple Watch hinzu.
+Fügen Sie komplikationsunterstützung hinzu, um aktuelle Daten auf dem Überwachungs Gesicht anzuzeigen.
 
 ## <a name="proactive-suggestionsioswatchosplatformproactive-suggestionsmd"></a>[Proaktive Vorschläge](~/ios/watchos/platform/proactive-suggestions.md)
 
-WatchOS 3 ermöglicht der app, proaktiv Informationen für den Benutzer in präsentieren Kontexten angegeben. Zur Unterstützung dieser Funktion, die [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity) enthält jetzt die `MapItem` -Eigenschaft, die der app, die Informationen zum Speicherort für die spätere Verwendung von anderen apps bereitstellen kann.
+watchos 3 ermöglicht der APP, den Benutzern in den angegebenen Kontexten proaktiv Informationen zur Verfügung zu stellen. Zur Unterstützung dieser Funktion enthält [nsuseractivity](https://developer.apple.com/reference/foundation/nsuseractivity) nun die `MapItem` -Eigenschaft, mit der die APP Standortinformationen zur späteren Verwendung durch andere apps bereitstellen kann.
 
-## <a name="quick-interaction-techniquesioswatchosplatformquick-interaction-techniquesmd"></a>[Schnelle interaktionstechniken](~/ios/watchos/platform/quick-interaction-techniques.md)
+## <a name="quick-interaction-techniquesioswatchosplatformquick-interaction-techniquesmd"></a>[Techniken für die schnelle Interaktion](~/ios/watchos/platform/quick-interaction-techniques.md)
 
-Bereitstellung schnell Benutzerinteraktionen sind Bedeutung für die Erstellung, tolle apps für Apple Watch und Schwierigkeiten. Neue watchos 3, Apple wurde Unterstützung für Gesten Erkennungen, Zugriff auf die digitale Crown und neue Benutzerbenachrichtigung und Navigation-Methoden hinzugefügt. Auf diese, zusammen mit Unterstützung für SceneKit und SpriteKit, dem können Entwickler auf einfache Weise umfassende, glanceable Schnittstellen zu erstellen, die schnelle und reaktionsfähige sind.
+Das Bereitstellen von schnellen Benutzerinteraktionen ist wichtig für das Erstellen von überzeugenden Apple Watch apps und Komplikationen. Ab watchos 3 hat Apple Unterstützung für Gesten Erkennungs Tools, den Zugriff auf die Digital Crown und neue Benutzerbenachrichtigungs-und Navigationsverfahren hinzugefügt. Neben der zusätzlichen Unterstützung von scenekit und spritekit ermöglicht es dem Entwickler, problemlos umfangreiche, schnell zu erstellen, die schnell und reaktionsfähig sind.
 
-## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[Trainings-app-Erweiterungen](~/ios/watchos/platform/workout-apps.md)
+## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[Erweiterungen für App-Erweiterungen](~/ios/watchos/platform/workout-apps.md)
 
-Neue WatchOS 3 Trainings im Zusammenhang mit apps haben die Möglichkeit, im Hintergrund ausgeführt werden soll, klicken Sie auf der Apple Watch. Um dieses Feature aktivieren (und erhalten Zugriff auf Daten von HealthKit), muss die app enthalten die `WKBackgroundModes` -Schlüssel in der `Info.plist` Datei mit dem Wert `workout-processing`.
+Neu bei watchos 3: mit dem Training verbundene Apps können im Hintergrund des Apple Watch ausgeführt werden. Um dieses Feature zu aktivieren (und Zugriff auf healthkit-Daten zu erhalten), muss die `WKBackgroundModes` App den Schlüssel `Info.plist` in die Datei mit `workout-processing`dem Wert einschließen.

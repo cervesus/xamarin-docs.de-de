@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Siri-Verknüpfungen in IOS
 ms.prod: xamarin
 ms.assetid: 86424F79-3A7D-436E-927D-9A3267DA333B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/08/2018
-ms.openlocfilehash: f0927a6d6d5e3b9db6f203f779fbd50a026ce7e8
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: a2ae80946cb94b6c81b87a88c91cd9bf1706186f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226566"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291773"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Siri-Verknüpfungen in xamarin. IOS
 
@@ -20,7 +20,7 @@ In [IOS 10](~/ios/platform/sirikit/index.md)hat Apple das Sirikit eingeführt, d
 
 In [IOS 11](~/ios/platform/introduction-to-ios11/sirikit.md)hat das Sirikit Unterstützung für mehr App-Typen und mehr Flexibilität bei der Anpassung der Benutzeroberfläche erhalten.
 
-IOS 12 fügt Siri-Verknüpfungen hinzu, sodass alle App-Typen ihre Funktionalität für Siri verfügbar machen können. Siri erfährt, wenn bestimmte App-basierte Aufgaben für den Benutzer am relevantesten sind, und verwendet dieses wissen, umüber Verknüpfungen potenzielle Aktionen vorzuschlagen. Wenn Sie auf eine Verknüpfung tippen oder Sie mit einem Sprachbefehl aufrufen, wird eine APP geöffnet oder eine Hintergrundaufgabe ausgeführt.
+IOS 12 fügt Siri-Verknüpfungen hinzu, sodass alle App-Typen ihre Funktionalität für Siri verfügbar machen können. Siri erfährt, wenn bestimmte App-basierte Aufgaben für den Benutzer am relevantesten sind, und verwendet dieses wissen, um _über_Verknüpfungen potenzielle Aktionen vorzuschlagen. Wenn Sie auf eine Verknüpfung tippen oder Sie mit einem Sprachbefehl aufrufen, wird eine APP geöffnet oder eine Hintergrundaufgabe ausgeführt.
 
 Verknüpfungen sollten verwendet werden, um die Fähigkeit eines Benutzers zu beschleunigen, eine gängige Aufgabe zu erledigen – in vielen Fällen, ohne dass die betreffende APP überhaupt geöffnet wird.
 
@@ -206,7 +206,7 @@ Beachten Sie Folgendes:
 - Das Kontrollkästchen **Bestätigung** gibt an, ob Siri vor dem Ausführen der Aufgabe bestätigt werden muss. Für die " **Order Soup** Intent" in Suppe Chef ist diese Option aktiviert, da der Benutzer einen Einkauf durchführen kann.
 - Der **Parameter** Abschnitt der intentdefinition-Datei definiert die für eine Verknüpfung relevanten Parameter. Zum Platzieren einer Suppen Bestellung muss Suppe Chef den Typ der Suppe, seine Menge und alle zugehörigen Optionen kennen.
 Jeder Parameter weist einen Typ auf. Parameter, der nicht von einem vordefinierten Typ dargestellt werden kann, werden als **Benutzer**definiert festgelegt.
-- Die Schnittstelle für shortcutypen beschreibt die verschiedenen Parameterkombinationen, die Siri verwenden kann, wenn Sie die Verknüpfung vorschlagen. Mithilfe der zugehörigen **Titel** und unter **Titel** Abschnitte können Sie die Nachrichten definieren, die Siri beim präsentieren einer vorgeschlagenen Verknüpfung für den Benutzer verwendet.
+- Die Schnittstelle für **shortcutypen** beschreibt die verschiedenen Parameterkombinationen, die Siri verwenden kann, wenn Sie die Verknüpfung vorschlagen. Mithilfe der zugehörigen **Titel** und unter **Titel** Abschnitte können Sie die Nachrichten definieren, die Siri beim präsentieren einer vorgeschlagenen Verknüpfung für den Benutzer verwendet.
 - Das Kontrollkästchen **unterstützt die Hintergrund Ausführung** , sollte für alle Tastenkombinationen ausgewählt werden, die ausgeführt werden können, ohne dass die APP zur weiteren Benutzerinteraktion geöffnet wird.
 
 ### <a name="defining-custom-intent-responses"></a>Definieren von benutzerdefinierten Intent-Antworten
@@ -226,7 +226,7 @@ Durch das Erstellen des Xcode-Projekts, das diese benutzerdefinierte Intent-Defi
 
 So zeigen Sie den generierten Code an:
 
-- Öffnen Sie appdelegat **. m**.
+- Öffnen Sie **appdelegat. m**.
 - Fügen Sie der Header Datei der benutzerdefinierten Absicht einen Import hinzu:`#import "OrderSoupIntent.h"`
 - Fügen Sie in einer beliebigen Methode in der-Klasse einen `OrderSoupIntent`Verweis auf hinzu.
 - Klicken Sie mit der `OrderSoupIntent` rechten Maustaste auf, und wählen Sie **zu Definition springen**.
@@ -291,8 +291,8 @@ Wenn die statische Bibliothek und die C# Bindungs Definitionen erstellt wurden, 
 
 Beachten Sie insbesondere, dass dieses Projekt Folgendes umfasst:
 
-- **ApiDefinitions.cs** – eine Datei, die vom Ziel-Sharpie generiert und diesem Projekt hinzugefügt wurde. Die Buildaktion dieser Datei ist auf **objcbindingapidefinition**festgelegt.
-- **StructsAndEnums.cs** – eine andere Datei, die vom Ziel-Sharpie generiert und diesem Projekt hinzugefügt wurde. Die Buildaktion dieser Datei ist auf **objcbindingcoresource**festgelegt.
+- **ApiDefinitions.cs** – eine Datei, die vom Ziel-Sharpie generiert und diesem Projekt hinzugefügt wurde. Die **Buildaktion** dieser Datei ist auf **objcbindingapidefinition**festgelegt.
+- **StructsAndEnums.cs** – eine andere Datei, die vom Ziel-Sharpie generiert und diesem Projekt hinzugefügt wurde. Die **Buildaktion** dieser Datei ist auf **objcbindingcoresource**festgelegt.
 - Ein **nativer Verweis** auf **libordersoupintentstaticlib. a**, der oben erstellten statischen Bibliothek.
 
 > [!NOTE]

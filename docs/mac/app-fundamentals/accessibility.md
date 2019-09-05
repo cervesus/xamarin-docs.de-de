@@ -4,20 +4,20 @@ description: In diesem Dokument wird beschrieben, wie Sie in einer xamarin. Mac-
 ms.prod: xamarin
 ms.assetid: D7F4892B-501A-4271-A7E0-BDD1586B63AD
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 6d53cda17864a6afa8f8af187df7c4a07e9f8cbe
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: e92887dc54acc33e6d433aafe39ae7df9ea8ac71
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198622"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291652"
 ---
 # <a name="accessibility-on-macos"></a>Barrierefreiheit unter macOS
 
 Auf dieser Seite wird beschrieben, wie Sie die Eingabe Hilfen-APIs für die Eingabe Hilfen verwenden, um apps entsprechend der [Eincheck Checkliste](~/cross-platform/app-fundamentals/accessibility.md)
-Weitere Plattform-APIs finden Sie unter [Android-Barrierefreiheit](~/android/app-fundamentals/accessibility.md) und [IOS](~/ios/app-fundamentals/accessibility.md) -Barrierefreiheits Seiten.
+Weitere Plattform-APIs finden Sie unter [Android-Barrierefreiheit](~/android/app-fundamentals/accessibility.md) und [IOS-Barrierefreiheits](~/ios/app-fundamentals/accessibility.md) Seiten.
 
 Um zu verstehen, wie die Barrierefreiheits-APIs in macOS funktionieren (früher als OS x bezeichnet), überprüfen Sie zuerst das [OS x-Barrierefreiheits Modell](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXmodel.html).
 

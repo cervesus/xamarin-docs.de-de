@@ -4,15 +4,15 @@ description: In diesem Artikel wird erläutert, wie Sie mit den standardmäßige
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: e5868e2cfe9a054e84eeb67432a01c2d98b1c3e6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2701b1f8bf343c653da33fd587c9da3302f52335
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648346"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292234"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Standard Steuerelemente in xamarin. Mac
 
@@ -53,7 +53,7 @@ Es gibt eine Teilmenge von AppKit-Steuerelementen, die einen Anzeige Stil enthal
 
 [![](standard-controls-images/mailapp.png "Ein Mac-Fensterrahmen")](standard-controls-images/mailapp.png#lightbox)
 
-- **Runden** Sie die texturierten `NSButton` Schaltfläche mit einem `NSTexturedRoundedBezelStyle`Stil von.
+- **Runden Sie die texturierten Schaltfläche** `NSButton` mit einem `NSTexturedRoundedBezelStyle`Stil von.
 - **Segmentiertes, gerundetes segmentiertes Steuer** Element- `NSSegmentStyleTexturedRounded`A `NSSegmentedControl` mit einem Stil von.
 - **Segmentiertes, gerundetes segmentiertes Steuer** Element- `NSSegmentStyleSeparated`A `NSSegmentedControl` mit einem Stil von.
 - **Runden Sie das Popup Menü** `NSPopUpButton` `NSTexturedRoundedBezelStyle`mit dem Format.
@@ -97,13 +97,13 @@ Verwenden Sie den **roten I-Balken** um die außerhalb des **autoresisierungsfel
 
 [![](standard-controls-images/edit05.png "Bearbeiten einer Einschränkung")](standard-controls-images/edit05.png#lightbox)
 
-Gibt an, dass das ausgewählte Steuerelement & (im Schnittstellen Ansichts**Schnittstellen-Editor**) an der oberen und rechten Position des Fensters oder der Ansicht hängen bleibt, wenn die Größe geändert oder verschoben wird. 
+Gibt an, dass das ausgewählte Steuerelement (im Schnittstellen **Ansichts** & **Schnittstellen-Editor**) an der oberen und rechten Position des Fensters oder der Ansicht hängen bleibt, wenn die Größe geändert oder verschoben wird. 
 
 Andere Elemente der Editor-Steuerelement Eigenschaften, z. b. Höhe und Breite:
 
 [![](standard-controls-images/edit06.png "Festlegen der Höhe")](standard-controls-images/edit06.png#lightbox)
 
-Mit dem Ausrichtungs- **Editor**können Sie auch die Ausrichtung von Elementen mit Einschränkungen steuern:
+Mit dem **Ausrichtungs-Editor**können Sie auch die Ausrichtung von Elementen mit Einschränkungen steuern:
 
 [![](standard-controls-images/edit07.png "Der Ausrichtungs-Editor")](standard-controls-images/edit07.png#lightbox)
 
@@ -301,7 +301,7 @@ Dabei `NSCellStateValue` kann Folgendes sein:
 
 - Die Schaltfläche wird gedrückt, oder das Steuerelement ist ausgewählt (z. b. ein Kontrollkästchen Einchecken).
 - **Off** : die Schaltfläche wird nicht per pushübertragung oder das Steuerelement nicht ausgewählt.
-- **Gemischt** : eine Mischung aus **-und-** aus **-Zuständen.**
+- **Gemischt** : eine Mischung aus **-und-aus-** **Zuständen.**
 
 <a name="Mark-a-Button-as-Default-and-Set-Key-Equivalent" />
 
@@ -338,7 +338,7 @@ Dabei `NSCellStateValue` kann Folgendes sein:
 
 - Die Schaltfläche wird gedrückt, oder das Steuerelement ist ausgewählt (z. b. ein Kontrollkästchen Einchecken).
 - **Off** : die Schaltfläche wird nicht per pushübertragung oder das Steuerelement nicht ausgewählt.
-- **Gemischt** : eine Mischung aus **-und-** aus **-Zuständen.**
+- **Gemischt** : eine Mischung aus **-und-aus-** **Zuständen.**
 
 Zum Auswählen einer Schaltfläche in einer Optionsfeld Gruppe machen Sie das Optionsfeld für die Auswahl als **Outlet** verfügbar, `State` und legen Sie die zugehörige-Eigenschaft fest. Beispiel:
 
@@ -624,7 +624,7 @@ Wenn Sie mit einer Registerkarten Ansicht in der Interface Builder von Xcode arb
 
 [![](standard-controls-images/content08.png "Bearbeiten der Anzahl von Registerkarten")](standard-controls-images/content08.png#lightbox)
 
-Wählen Sie in der **Schnittstellen Hierarchie** jede Registerkarte aus, um deren **Titel** festzulegen, und fügen Sie Benutzeroberflächen Elemente zum Bereich hinzu
+Wählen Sie in der **Schnittstellen Hierarchie** jede Registerkarte aus, **um deren** **Titel** festzulegen, und fügen Sie Benutzeroberflächen Elemente zum Bereich hinzu
 
 [![](standard-controls-images/content09.png "Bearbeiten der Registerkarten in Xcode")](standard-controls-images/content09.png#lightbox)
 

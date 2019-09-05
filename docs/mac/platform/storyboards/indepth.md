@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit Storyboards in xam
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 2f3bdc70928dc06719bf7cfb775bf70fae9695a4
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 6aca181b2942bbde854df41c8f9741106cda6776
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227867"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279308"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Arbeiten mit Storyboards in xamarin. Mac
 
@@ -84,7 +84,7 @@ Daher sind Sie miteinander verknüpft, um Ereignisse wie Ausschneiden, kopieren 
 
 ### <a name="containment"></a>Kapselung
 
-In Storyboards können Ansichts Controller (z. b. der Split View Controller und der Registerkarten AnsichtsController) nun die Kapselung implementieren, sodass Sie andere Sub-View-Controller enthalten können:
+In Storyboards können Ansichts Controller (z. b. der Split View Controller und der Registerkarten Ansichts Controller) nun die Kapselung _implementieren,_ sodass Sie andere Sub-View-Controller enthalten können:
 
 [![Ein Beispiel für die Sicht Controller Kapselung](indepth-images/vc02.png)](indepth-images/vc02.png#lightbox)
 
@@ -108,7 +108,7 @@ Unter macOS gruppieren die meisten apps ihre Ansichten tendenziell innerhalb des
 
 ### <a name="presentation-segues"></a>Präsentations-Segues
 
-Bei den Tendenzen von macOS in Bezug auf die Kapselung gibt es Situationen, in denen _Präsentations_ Seiten verwendet werden, wie z. b. modale Fenster, Blatt Ansichten und popovers. macOS bietet die folgenden integrierten Enumerationstypen:
+Bei den Tendenzen von macOS in Bezug auf die _Kapselung_ gibt es Situationen, in denen Präsentationsseiten verwendet werden, wie z. b. modale Fenster, Blatt Ansichten und popovers. macOS bietet die folgenden integrierten Enumerationstypen:
 
 - **Anzeigen** : zeigt das Ziel des-Ziels als nicht modales Fenster an. Verwenden Sie z. b. diesen Typ von "log", um eine weitere Instanz eines Dokument Fensters in der APP darzustellen.
 - **Modal** : zeigt das Ziel des-Ziels als modales Fenster an. Verwenden Sie z. b. diesen Typ von "log", um das Fenster "Einstellungen" für Ihre APP darzustellen.
@@ -122,7 +122,7 @@ Wenn Sie präsentationsegues verwenden, können Sie `PrepareForSegue` die-Method
 
 ### <a name="triggered-segues"></a>Ausgelöste Trigger
 
-Ausgelöste Segues ermöglichen es Ihnen, benannte Segues (über deren Bezeichnereigenschaft in Interface Builder) anzugeben und Sie durch Ereignisse wie den Benutzer, der auf eine Schaltfläche klickt `PerformSegue` , oder durch Aufrufen der-Methode im Code auszulösen:
+Ausgelöste Segues ermöglichen es Ihnen, benannte Segues (über deren **Bezeichnereigenschaft** in Interface Builder) anzugeben und Sie durch Ereignisse wie den Benutzer, der auf eine Schaltfläche klickt `PerformSegue` , oder durch Aufrufen der-Methode im Code auszulösen:
 
 ```csharp
 // Display the Scene defined by the given Segue ID

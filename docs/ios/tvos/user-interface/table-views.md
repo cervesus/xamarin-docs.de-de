@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Entwerfen und arbeiten mit Tabellen Sich
 ms.prod: xamarin
 ms.assetid: D8F80FA9-6400-4DB7-AFC9-A28A54AD04E8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0d93978d6f7b3dff6d0d7ebf7c9f9afbe3572079
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 28dfdbd7837f87d003e5b949ea3f7421613997f7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199908"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288303"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Arbeiten mit tvos-Tabellen Ansichten in xamarin
 
@@ -98,10 +98,10 @@ Um zu beginnen, machen Sie Folgendes:
 1. Wählen Sie als nächstes die Tabellenansicht in der Designoberfläche aus, und passen Sie die Eigenschaften nach Bedarf an. Z. b. die Anzahl der **prototypzellen** und der **Stil** (einfach oder gruppiert): 
 
     [![](table-views-images/table11.png "Die Widget-Registerkarte")](table-views-images/table11.png#lightbox)
-1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen Bezeichner zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel `AttrCell`: 
+1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Bezeichner** zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel `AttrCell`: 
 
     [![](table-views-images/table12.png "Die Widget-Registerkarte")](table-views-images/table12.png#lightbox)
-1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über die Dropdown Liste Formatvorlagen angezeigt werden soll, oder Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
+1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über **die Dropdown** Liste Formatvorlagen angezeigt werden **soll, oder** Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
 
     [![](table-views-images/table13.png "Das Zellen Layout")](table-views-images/table13.png#lightbox)
 1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später C# im Code darauf zugreifen können: 
@@ -115,7 +115,7 @@ Um zu beginnen, machen Sie Folgendes:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Starten Sie in Visual Studio ein neues tvos-App-Projekt, und wählen Sie **tvos** > **Single View App** aus, und geben Sie einen Namen für Ihre APP ein. Klicken Sie auf die Schaltfläche OK, um eine neue Lösung zu erstellen: 
+1. Starten Sie in Visual Studio ein neues tvos-App-Projekt, und wählen Sie **tvos** > **Single View App** aus, und geben Sie einen Namen für Ihre APP ein. Klicken Sie **auf die Schalt** Fläche OK, um eine neue Lösung zu erstellen: 
 
     [![](table-views-images/table02-vs.png "Einzelansicht-App auswählen")](table-views-images/table02-vs.png#lightbox)
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, um Sie im IOS-Designer zu öffnen: 
@@ -139,10 +139,10 @@ Um zu beginnen, machen Sie Folgendes:
 1. Wählen Sie als nächstes die Tabellenansicht in der Designoberfläche aus, und passen Sie die Eigenschaften nach Bedarf an. Z. b. die Anzahl der **prototypzellen** und der **Stil** (einfach oder gruppiert): 
 
     [![](table-views-images/table11-vs.png "Die Widget-Registerkarte")](table-views-images/table11-vs.png#lightbox)
-1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen Bezeichner zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel `AttrCell`: 
+1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Bezeichner** zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel `AttrCell`: 
 
     [![](table-views-images/table12-vs.png "Zuweisen eines Bezeichners")](table-views-images/table12-vs.png#lightbox)
-1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über die Dropdown Liste Formatvorlagen angezeigt werden soll, oder Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
+1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über **die Dropdown** Liste Formatvorlagen angezeigt werden **soll, oder** Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
 
     [![](table-views-images/table13-vs.png "Die Dropdown Liste \"Style\"")](table-views-images/table13-vs.png#lightbox)
 1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später C# im Code darauf zugreifen können: 
@@ -172,7 +172,7 @@ Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Lösun
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie**Neues Element** **Hinzufügen** > ... aus. Wählen Sie **Klasse** aus `AttractionInformation` , geben Sie für den **Namen** ein, und klicken Sie auf die Schaltfläche 
+Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie**Neues Element** **Hinzufügen** > ... aus. Wählen Sie **Klasse** aus `AttractionInformation` , geben Sie für den **Namen** ein, und klicken Sie auf **die Schaltfläche** 
 
 [![](table-views-images/data01-vs.png "Wählen Sie Klasse aus, und geben Sie \"attractioninformation\" als Namen")](table-views-images/data01-vs.png#lightbox)
 
@@ -278,7 +278,7 @@ namespace tvTable
 }
 ```
 
-Diese Klasse enthält alle Informationen über eine Zielstadt,eine Sammlung von **Attraktionen** für diese Stadt und bietet zwei Hilfsmethoden (`AddAttraction`), um das Hinzufügen von Attraktionen zum Ort zu vereinfachen.
+Diese Klasse enthält alle Informationen über eine **Zielstadt**, eine Sammlung von **Attraktionen** für diese Stadt und bietet zwei Hilfsmethoden (`AddAttraction`), um das Hinzufügen von Attraktionen zum Ort zu vereinfachen.
 
 <a name="The-Table-Data-Source" />
 

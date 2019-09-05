@@ -1,44 +1,44 @@
 ---
-title: Übersicht über die Objective-C-Bindungen
-description: Dieses Dokument bietet einen Überblick über verschiedene Möglichkeiten zum Erstellen C# Bindungen für Objective-C-Code, einschließlich der Befehlszeilen-Bindungen, bindungsprojekte und Ziel Sharpie. Es wird auch erläutert, wie die Bindung funktioniert.
+title: Übersicht über Ziel-C-Bindungen
+description: Dieses Dokument bietet eine Übersicht über die verschiedenen Methoden zum C# Erstellen von Bindungen für den Ziel-C-Code, einschließlich Befehlszeilen Bindungen, Bindungs Projekten und Ziel-Sharpie. Außerdem wird erläutert, wie die Bindung funktioniert.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 93f90d2dad140f021c7e575afed44da1c5351eda
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 3b0e5d12f47ffb46ad009530bcc9c0b373496f63
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830518"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279789"
 ---
-# <a name="overview-of-objective-c-bindings"></a>Übersicht über die Objective-C-Bindungen
+# <a name="overview-of-objective-c-bindings"></a>Übersicht über Ziel-C-Bindungen
 
-_Details der Funktionsweise des Bindungsvorgangs_
+_Details zur Funktionsweise des Bindungs Prozesses_
 
-Binden eine Objective-C-Bibliothek für die Verwendung mit Xamarin verwendet drei Schritte:
+Das Binden einer Ziel-C-Bibliothek für die Verwendung mit xamarin führt drei Schritte aus:
 
-1. Schreiben einer C# "API-Definition" für beschrieben, wie die systemeigene API ist verfügbar gemacht in .NET, und wie sie die zugrunde liegenden Objective-c zugeordnet Dies erfolgt mit standardmäßigen C# Konstrukte wie `interface` und verschiedene Bindung **Attribute** (finden Sie in diesem [einfaches Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Schreiben Sie C# eine "API-Definition", um zu beschreiben, wie die Native API in .net verfügbar gemacht wird, und wie Sie dem zugrunde liegenden Ziel "-C" zugeordnet wird. Dies C# erfolgt über standardkonstrukte `interface` wie und verschiedene Bindungs **Attribute** (Weitere Informationen finden Sie in diesem [einfachen Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
-2. Nachdem Sie die "API-Definition", im geschrieben haben C#, Sie kompilieren, um eine "Bindung"-Assembly zu erzeugen. Dies kann erfolgen auf der [ **Befehlszeile** ](#commandline) oder eine [ **bindungsprojekt** ](#bindingproject) in Visual Studio für Mac oder Visual Studio.
+2. Nachdem Sie die "API-Definition" in C#geschrieben haben, kompilieren Sie Sie, um eine "Binding"-Assembly zu erstellen. Dies kann über die [**Befehlszeile**](#commandline) oder mithilfe eines [**Bindungs Projekts**](#bindingproject) in Visual Studio für Mac oder Visual Studio erfolgen.
 
-3. Die Assembly "Bindung" wird dann an Ihre Xamarin-Application-Projekt hinzugefügt, damit Sie die systemeigene Funktionalität, die mit der API, die Sie definiert zugreifen können.
-   Das bindungsprojekt erfolgt unabhängig von der Ihre Anwendungsprojekte.
+3. Diese "Binding"-Assembly wird dann dem xamarin-Anwendungsprojekt hinzugefügt, sodass Sie mit der von Ihnen definierten API auf die native Funktionalität zugreifen können.
+   Das Bindungs Projekt ist vollständig von den Anwendungsprojekten getrennt.
 
    > [!NOTE]
-   > Schritt 1 kann automatisiert werden, mit der Hilfe von [ **Ziel Sharpie**](#objectivesharpie). Er untersucht die Objective-C-API und generiert eine vorgeschlagene C# "API-Definition". Sie können anpassen, die Dateien vom Ziel Sharpie erstellt und sie in einem bindungsprojekt (oder in der Befehlszeile) die bindungsassembly zu erstellen. Objektive Sharpie erstellt keine Bindungen selbst, sondern lediglich ein optionaler Teil eines größeren Prozesses.
+   > Schritt 1 kann mit der Unterstützung des [**Ziels "Sharpie**](#objectivesharpie)" automatisiert werden. Die API untersucht die Ziel-C-API und C# generiert eine vorgeschlagene "API-Definition". Sie können die von Ziel-Sharpie erstellten Dateien anpassen und in einem Bindungs Projekt (oder in der Befehlszeile) verwenden, um die bindungsassembly zu erstellen. Der Ziel-Sharpie erstellt keine Bindungen allein, sondern lediglich einen optionalen Teil des größeren Prozesses.
 
-Lesen Sie auch weitere technische Details von [Funktionsweise](#howitworks), derer Sie Ihre Bindungen zu schreiben.
+Sie können auch weitere technische Details zur [Funktionsweise](#howitworks)lesen, die Sie beim Schreiben von Bindungen unterstützen.
 
 <a name="Command_Line_Bindings" /><a name="commandline" />
 
-## <a name="command-line-bindings"></a>Befehls-Line-Bindungen
+## <a name="command-line-bindings"></a>Befehlszeilen Bindungen
 
-Sie können die `btouch-native` für Xamarin.iOS (oder `bmac-native` bei Verwendung von Xamarin.Mac) Bindungen direkt zu erstellen. Dies erfolgt durch das Übergeben der C# -API-Definitionen, die Sie manuell erstellt haben (oder mit der Ziel-Sharpie), das Befehlszeilentool (`btouch-native` für iOS oder `bmac-native` für Mac).
+Sie können `btouch-native` für xamarin. IOS (oder `bmac-native` bei Verwendung von xamarin. Mac) verwenden, um Bindungen direkt zu erstellen. Dies funktioniert, indem die C# API-Definitionen, die Sie von Hand (oder mithilfe von Ziel-Sharpie) erstellt haben, an`btouch-native` das Befehlszeilen `bmac-native` Tool (für IOS oder für Mac) übergeben werden.
 
 
-Die allgemeine Syntax zum Aufrufen dieser Tools ist:
+Die allgemeine Syntax zum Aufrufen dieser Tools lautet wie folgt:
 
 ```csharp
 # Use this for Xamarin.iOS:
@@ -50,34 +50,34 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-Der obige Befehl generiert die Datei `cocos2d.dll` im aktuellen Verzeichnis, und es enthält die vollständig gebundene Bibliothek, die Sie in Ihrem Projekt verwenden können. Dies ist das Tool, das Visual Studio für Mac verwendet, um die Bindungen zu erstellen, bei der Verwendung von ein bindungsprojekt (beschrieben [unten](#bindingproject)).
+Der obige Befehl generiert die Datei `cocos2d.dll` im aktuellen Verzeichnis und enthält die vollständig gebundene Bibliothek, die Sie in Ihrem Projekt verwenden können. Dies ist das Tool, das Visual Studio für Mac verwendet, um die Bindungen zu erstellen, wenn Sie ein Bindungs Projekt verwenden (siehe [unten](#bindingproject)).
 
 
 <a name="bindingproject" />
 
-## <a name="binding-project"></a>Projekt wird gebunden
+## <a name="binding-project"></a>Bindungs Projekt
 
-Ein bindungsprojekt kann in Visual Studio für Mac oder Visual Studio (Visual Studio unterstützt nur iOS-Bindungen) erstellt werden, und erleichtert es, bearbeiten und Erstellen von API-Definitionen für die Bindung (und nicht über die Befehlszeile).
+Ein Bindungs Projekt kann in Visual Studio für Mac oder Visual Studio erstellt werden (Visual Studio unterstützt nur IOS-Bindungen) und erleichtert das Bearbeiten und Erstellen von API-Definitionen für die Bindung (im Gegensatz zur Verwendung der Befehlszeile).
 
-Gehen Sie folgendermaßen vor [Handbuch mit ersten Schritten](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) Informationen zum Erstellen und verwenden Sie ein bindungsprojekt, um eine Bindung zu erstellen.
+Befolgen Sie diese [Anleitung](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) für die ersten Schritte, um zu erfahren, wie Sie ein Bindungs Projekt erstellen und verwenden, um eine Bindung zu erstellen.
 
 <a name="objectivesharpie" />
 
 ## <a name="objective-sharpie"></a>Objektive Sharpie
 
-Objektive Sharpie ist ein weiterer, separate-Befehlszeilentools, die mit den ersten Schritten zum Erstellen einer Bindung unterstützen. Eine Bindung wird nicht von sich selbst erstellt, sondern den ersten Schritt zum Generieren von einer API-Definition für die native Zielbibliothek automatisiert.
+Ziel-Sharpie ist ein weiteres, separates Befehlszeilen Tool, das die ersten Phasen der Erstellung einer Bindung unterstützt. Er erstellt nicht allein eine Bindung, sondern automatisiert den ersten Schritt der Generierung einer API-Definition für die native Ziel Bibliothek.
 
-Lesen der [Ziel Sharpie-Dokumentation](~/cross-platform/macios/binding/objective-sharpie/index.md) zu erfahren, wie Sie native Bibliotheken, nativen Frameworks und CocoaPods in API-Definitionen zu analysieren, die in den Bindungen erstellt werden können.
+Lesen Sie die [Ziel-Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md) -Dokumentation, um zu erfahren, wie Sie Native Bibliotheken, Native Frameworks und cocoapods in API-Definitionen analysieren können, die in Bindungen integriert werden können.
 
 <a name="howitworks" />
 
 ## <a name="how-binding-works"></a>Funktionsweise der Bindung
 
-Es ist möglich, verwenden Sie die [[registrieren]](xref:Foundation.RegisterAttribute) Attribut [[Export]](xref:Foundation.ExportAttribute) -Attribut und [manuellen Objective-C-Selektor-Aufruf](~/ios/internals/objective-c-selectors.md) zusammen, um manuell neu (zuvor binden ungebunden) Objective-C-Typen.
+Es ist möglich, das Attribut [[Register]](xref:Foundation.RegisterAttribute) , [[Export]](xref:Foundation.ExportAttribute) und den [manuellen Aufruf der Ziel-c-Auswahl](~/ios/internals/objective-c-selectors.md) zu verwenden, um neue (zuvor nicht gebundene) Ziel-c-Typen manuell zu binden.
 
-Suchen Sie zunächst einen Typ, den Sie binden möchten. Diskussion zu (und Einfachheit), wird eine Bindung wird der [NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) Typ (die bereits im gebundenen [Foundation.NSEnumerator](xref:Foundation.NSEnumerator); die nachfolgende Implementierung ist einfach, z. B. Zwecke).
+Suchen Sie zuerst einen Typ, den Sie binden möchten. Zu Diskussions Zwecken (und Vereinfachung) binden wir den [nsenum](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) -Typ (der bereits in [Foundation. nsenübererator](xref:Foundation.NSEnumerator)gebunden wurde. die folgende Implementierung ist nur zu Beispiel Zwecken).
 
-Zweitens müssen wir erstellen den C# Typ. Wir möchten wahrscheinlich dies in einem Namespace platzieren; Da Objective-C-Namespaces nicht unterstützt, müssen wir verwenden die `[Register]` Attribut so ändern Sie den Typnamen, die Xamarin.iOS mit Objective-C-Laufzeit registriert werden. Die C# Typ muss auch eine Vererbung von [Foundation.NSObject](xref:Foundation.NSObject):
+Zweitens müssen wir den C# Typ erstellen. Wir möchten dies wahrscheinlich in einem Namespace platzieren. Da Ziel-c keine Namespaces unterstützt, müssen wir das `[Register]` -Attribut verwenden, um den Typnamen zu ändern, den xamarin. IOS bei der Ziel-c-Laufzeit registriert. Der C# Typ muss auch von [Foundation. NSObject](xref:Foundation.NSObject)erben:
 
 ```csharp
 namespace Example.Binding {
@@ -89,7 +89,7 @@ namespace Example.Binding {
 }
 ```
 
-Drittens: Überprüfen Sie die Objective-C-Dokumentation und erstellen Sie [ObjCRuntime.Selector](xref:ObjCRuntime.Selector) Instanzen für jede Auswahl, die Sie verwenden möchten. Platzieren Sie diese in den Text der Klasse:
+Überprüfen Sie die Ziel-C-Dokumentation, und erstellen Sie [objcruntime. Selector](xref:ObjCRuntime.Selector) -Instanzen für jede Auswahl, die Sie verwenden möchten. Platzieren Sie diese innerhalb des Klassen Texts:
 
 ```csharp
 static Selector selInit       = new Selector("init");
@@ -97,7 +97,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-Viertens: Ihr Typ müssen den Konstruktoren. Sie *müssen* Ihre Konstruktoraufruf an den Konstruktor der Basisklasse zu verketten. Die `[Export]` Attribute ermöglichen, Objective-C-Code aufrufen, die Konstruktoren, mit dem angegebenen Selektor-Namen:
+Viertens muss Ihr Typ Konstruktoren bereitstellen. Sie *müssen* den Konstruktoraufruf mit dem Basisklassenkonstruktor verketten. Die `[Export]` Attribute ermöglichen es dem Ziel-C-Code, die Konstruktoren mit dem angegebenen Auswahl Amen aufzurufen:
 
 ```csharp
 [Export("init")]
@@ -117,7 +117,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Fünfter, geben Sie, dass die Methoden für jede der Selektoren in Schritt 3 deklariert. Verwendet diese `objc_msgSend()` die Auswahl für das systemeigene Objekt aufzurufende. Beachten Sie die Verwendung von [Runtime.GetNSObject()](xref:ObjCRuntime.Runtime.GetNSObject*) konvertieren eine `IntPtr` in einem ordnungsgemäß typisierten `NSObject` (Sub)-Typ. Wenn Sie möchten, dass die Methode, die in Objective-C-Code, der Member aufgerufen werden können *müssen* werden **virtuellen**.
+Fünftens stellen Sie Methoden für jeden der in Schritt 3 deklarierten Selektoren bereit. Diese werden verwendet `objc_msgSend()` , um die Auswahl für das Native Objekt aufzurufen. Beachten Sie die Verwendung von [Runtime. getnsobject ()](xref:ObjCRuntime.Runtime.GetNSObject*) zum Konvertieren `IntPtr` eines in einen entsprechend `NSObject` typisierten (Sub-) Typ. Wenn Sie möchten, dass die Methode von Ziel-C-Code aufgerufen werden kann, *muss* der Member **virtuell**sein.
 
 ```csharp
 [Export("nextObject")]
@@ -139,7 +139,7 @@ public virtual NSArray AllObjects {
 }
 ```
 
-Zusammenfassung:
+Alles:
 
 ```csharp
 using System;

@@ -1,17 +1,17 @@
 ---
 title: Xamarin Inspector
-description: Dieses Dokument enthält Links zu Leitfäden, die beschreiben, wie zum Installieren und verwenden die Xamarin Inspector zum Untersuchen und Debuggen von Anwendungen.
+description: In diesem Dokument finden Sie Links zu Anleitungen, in denen beschrieben wird, wie Sie die-Xamarin Inspector zum untersuchen und Debuggen von Anwendungen
 ms.prod: xamarin
 ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 41111a0ae87b2b1c4a7b1c77bfeeeb3c9e5fa000
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5aa35c53af39df63f0b6e0f960432cbc43dadc8a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60895995"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292471"
 ---
 # <a name="xamarin-inspector"></a>Xamarin Inspector
 

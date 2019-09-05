@@ -3,15 +3,15 @@ title: 'Fallstudie für die plattformübergreifende App: Tasky'
 description: In diesem Dokument wird beschrieben, wie die Portable Beispielanwendung Tasky als plattformübergreifende Mobile Anwendung entworfen und erstellt wurde. Es werden die Anforderungen, die Schnittstelle, das Datenmodell, die Kernfunktionen, die Implementierung und vieles mehr der APP erläutert.
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 38f4e079529bec0dfc721d0c37686a6d90533b7e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 798dd1b5df2ea05eb428c9465e996d606c22009b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527018"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281211"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Fallstudie für die plattformübergreifende App: Tasky
 
@@ -318,7 +318,7 @@ Beachten Sie `OnTap` , dass die Attribute einen Methodennamen erfordern – dies
 
 Die Benutzeroberflächen Ebene besteht aus den folgenden Klassen:
 
-1. Appdelegat – enthält Aufrufe der Darstellungs-API, um die in der Anwendung verwendeten Schriftarten und Farben zu formatieren. Tasky ist eine einfache Anwendung, sodass keine anderen Initialisierungs Aufgaben in `FinishedLaunching` ausgeführt werden.
+1. **Appdelegat** – enthält Aufrufe der Darstellungs-API, um die in der Anwendung verwendeten Schriftarten und Farben zu formatieren. Tasky ist eine einfache Anwendung, sodass keine anderen Initialisierungs Aufgaben in `FinishedLaunching` ausgeführt werden.
 2. **Bildschirme** – Unterklassen `UIViewController` von, die die einzelnen Bildschirme und deren Verhalten definieren. Bildschirme verbinden die Benutzeroberfläche mit den Klassen der Anwendungsschicht und der `TaskItemManager` allgemeinen API (). In diesem Beispiel werden die Bildschirme im Code erstellt, aber Sie können mit der Interface Builder von Xcode oder dem Storyboard-Designer entworfen worden sein.
 3. **Bilder** – visuelle Elemente sind ein wichtiger Bestandteil jeder Anwendung. Tasky verfügt über Begrüßungsbildschirm-und Symbolbilder, die für IOS in regulärer und Retina-Auflösung bereitgestellt werden müssen.
 

@@ -3,44 +3,44 @@ title: Wie stufe ich ein NuGet-Paket herab?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 206336cbcdc85e5e2f3f010e947981cb96e7cd1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 33f542d0da48f0cd3f7e1bcb85ae06137d8be3cd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61344561"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288328"
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>Wie stufe ich ein NuGet-Paket herab?
 
-Visual Studio für Mac und Visual Studio haben die Features für ältere Versionen der Pakete auswählen und diese automatisch installiert werden; ähnlich wie das Aktualisieren von funktioniert Paketen. Diese Schritte werden unten beschrieben.
+Visual Studio für Mac & Visual Studio über Features verfügen, mit denen ältere Versionen von Paketen ausgewählt und automatisch installiert werden können. ähnlich wie das Aktualisieren von Paketen funktioniert. Diese Schritte werden im folgenden beschrieben.
 
 ## <a name="visual-studio"></a>Visual Studio
 
-1. Wechseln Sie zu **Tools > NuGet-Paket-Manager > Paket-Manager-Konsole**
-2. Legen Sie das Projekt unter **Standardprojekt**
-3. Mit der folgenden Syntax:
+1. Wechseln Sie zu Extras **> nuget-Paket-Manager > Paket-Manager-Konsole** .
+2. Legen Sie das Projekt unter dem **Standard Projekt** fest.
+3. Verwenden Sie die folgende Syntax:
 
-    > Install-Package [Paketname]-Version [Tab für Version Menü]
+    > Install-package [PackageName]-Version [Registerkarte für Versions Menü]
 
-Sie können auch kopieren und den exakten Befehl über die Paket NuGet-Seite einfügen. Beispiel für Xamarin.Forms: [https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
+Sie können auch den exakten Befehl auf der nuget-Seite des Pakets kopieren bzw. einfügen. Beispiel für xamarin. Forms:[https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
-1. Klicken Sie in Ihrem Projekt mit der rechten Maustaste in den Ordner "Pakete", und wählen Sie **Pakete hinzufügen**
-2. In der Searchbar können Sie die folgende Syntax für die erforderlichen Pakete zu suchen:
+1. Klicken Sie im Projekt mit der rechten Maustaste auf den Ordner Pakete & Wählen Sie **Pakete hinzufügen** aus.
+2. In der Suchleiste können Sie die folgende Syntax verwenden, um nach den erforderlichen Paketen zu suchen:
 
     `[PackageName] version:*`
 
 ### <a name="examples"></a>Beispiele 
-- Listet alle Xamarin.Forms-Pakete an: 
+- Listet alle xamarin. Forms-Pakete auf: 
 
     `Xamarin.Forms version:`
 
-- Listet alle Pakete von Xamarin.Forms-1.4.x installiert sein: 
+- Listet alle xamarin. Forms 1.4. x-Pakete auf: 
 
     `Xamarin.Forms version:1.4`
 
-*Hinweis: Wenn Sie ein Leerzeichen zwischen hinzufügen `version:` und die Versionsnummer, als ob keine Version angegeben wurde, kann die Suche verhält.*
+*Hinweis: Wenn Sie ein Leerzeichen zwischen `version:` & der Versionsnummer hinzufügen, verhält sich die Suche so, als ob keine Version angegeben wurde.*

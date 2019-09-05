@@ -4,15 +4,15 @@ description: In diesem Dokument wird coreml beschrieben, das Machine Learning un
 ms.prod: xamarin
 ms.assetid: BE1E2CA1-E3AE-4C90-914C-CFDBD1DCB82B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: c2092cd9e7beb233c9478869ebff91d85b5b30c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 96ea328901beede663c9ed3d8d42979544b041ea
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649603"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292646"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Einführung in coreml in xamarin. IOS
 
@@ -35,7 +35,7 @@ In den folgenden Schritten wird beschrieben, wie coreml einem IOS-Projekt hinzug
 
 Fügen Sie dem **Ressourcen** Verzeichnis des Projekts ein coreml-Modell (eine Datei mit der Erweiterung **. mlmodel** ) hinzu. 
 
-In den Eigenschaften der Modelldatei ist die Buildaktion auf **coremlmodel**festgelegt. Dies bedeutet, dass Sie beim Erstellen der Anwendung in eine **mlmodelc** -Datei kompiliert wird.
+In den Eigenschaften der Modelldatei ist die **Buildaktion** auf **coremlmodel**festgelegt. Dies bedeutet, dass Sie beim Erstellen der Anwendung in eine **mlmodelc** -Datei kompiliert wird.
 
 ### <a name="2-load-the-model"></a>2. Das des Modells
 
@@ -171,11 +171,11 @@ void HandleClassification(VNRequest request, NSError error){
 
 Es gibt drei zu Versuchs Bare coreml-Beispiele:
 
-* Das [Beispiel für das Mars-Habitat-Preis präditor](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/) enthält einfache numerische Eingaben und Ausgaben.
+- Das [Beispiel für das Mars-Habitat-Preis präditor](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/) enthält einfache numerische Eingaben und Ausgaben.
 
-* Das [Vision & coreml-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision) akzeptiert einen Image-Parameter und verwendet das Vision-Framework, um quadratische Bereiche im Bild zu identifizieren, die an ein coreml-Modell übergeben werden, das einzelne Ziffern erkennt.
+- Das [Vision & coreml-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision) akzeptiert einen Image-Parameter und verwendet das Vision-Framework, um quadratische Bereiche im Bild zu identifizieren, die an ein coreml-Modell übergeben werden, das einzelne Ziffern erkennt.
 
-* Zum Schluss verwendet das [coreml-Bild Erkennungs Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition) coreml, um Funktionen in einem Foto zu identifizieren. Standardmäßig wird das kleinere **presszenetmodell** (5 MB) verwendet, aber es wurde so geschrieben, dass Sie das größere **VGG16** -Modell (553mb) herunterladen und integrieren können. Weitere Informationen finden Sie in der Infodatei des [Beispiels.](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)
+- Zum Schluss verwendet das [coreml-Bild Erkennungs Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition) coreml, um Funktionen in einem Foto zu identifizieren. Standardmäßig wird das kleinere **presszenetmodell** (5 MB) verwendet, aber es wurde so geschrieben, dass Sie das größere **VGG16** -Modell (553mb) herunterladen und integrieren können. Weitere Informationen finden Sie in der Infodatei des [Beispiels.](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)
 
 ## <a name="related-links"></a>Verwandte Links
 

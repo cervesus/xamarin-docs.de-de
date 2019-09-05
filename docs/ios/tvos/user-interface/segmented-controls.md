@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit tvos segmentierte 
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 622960f73c96209c1a67a08a4f0abe27656331bf
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9ca931058f15c2ff6f1b46810196d9ea2bb964e0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200251"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291398"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Arbeiten mit tvos segmentierten Steuerelementen in xamarin
 
@@ -43,7 +43,7 @@ Sie können nicht sowohl Text als auch Symbole für ein bestimmtes Segment misch
 Apple nimmt die folgenden Vorschläge zum Arbeiten mit Segment Text vor:
 
 - **Verwenden Sie kurze, sinnvolle Nomen** . der Segment Titel sollte eindeutig den Inhaltstyp angeben, den der Benutzer bei der Auswahl des angegebenen Segments erwarten sollte. Beispiel: Musik oder Videos.
-- Groß-/Kleinschreibung von Groß-/Kleinschreibung **verwenden** : jedes Wort des Segment Titels sollte groß geschrieben werden, mit Ausnahme von Artikeln, ankreuzungen und Positionen von weniger als vier (4) Zeichen.
+- Groß-/Kleinschreibung von groß- **/Kleinschreibung verwenden** : jedes Wort des Segment Titels sollte groß geschrieben werden, mit Ausnahme von Artikeln, ankreuzungen und Positionen von weniger als vier (4) Zeichen.
 - **Verwenden Sie kurze, fokussierte Titel** : behalten Sie die Titel, kurz, und konzentrieren Sie sich auf den Inhaltstyp, der bei Auswahl des Segments zu erwarten ist.
 
 Auch hier können Sie nicht sowohl Text als auch Symbole für ein bestimmtes Segment mischen und vermeiden, Symbole und Text in einem einzelnen segmentierten Steuerelement zu mischen.

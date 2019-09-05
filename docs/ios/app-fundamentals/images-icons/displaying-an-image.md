@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Sie ein Image-Asset in eine
 ms.prod: xamarin
 ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/24/2018
-ms.openlocfilehash: 8082fc6ab2625e68d64ee9d42a9b630f885d9002
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 8e06b03e0acb129f1eb0c3c793d0b4a05c11ce2b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227746"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282374"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Anzeigen eines Bilds in xamarin. IOS
 
@@ -68,7 +68,7 @@ Gehen Sie folgendermaßen vor, um einen Bildsatz umzubenennen:
 2. Wählen Sie das umzubenennende **Bild** aus:
 
     ![](displaying-an-image-images/rename02.png "Wählen Sie das umzubenennende Bild aus.")
-3. Scrollen Sie im **Eigenschaften-Explorer**nach unten, und wählen Sie " **Name**" (im Abschnitt "Sonstige") aus:
+3. Scrollen Sie im **Eigenschaften-Explorer**nach unten, und wählen Sie " **Name**" ( **im Abschnitt "** Sonstige") aus:
 
     ![](displaying-an-image-images/rename03.png "Wählen Sie im Abschnitt Verschiedenes den Namen aus.")
 4. Geben Sie einen neuen **Namen** für die **Abbild Gruppe** ein, und speichern Sie die Änderungen.

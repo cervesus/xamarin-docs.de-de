@@ -4,15 +4,15 @@ description: In diesem Dokument werden verschiedene Möglichkeiten beschrieben, 
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 68200d5cde78628e23e6bdb5c4adf7a16b646bf0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2e0bb4fc0468f938e7a4403513fe101db2282561
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521296"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286991"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>Aktualisieren einer xamarin. IOS-App im Hintergrund
 
@@ -118,7 +118,7 @@ Legen Sie als nächstes `content-available` das Flag für die Pushbenachrichtigu
 }
 ```
 
-ÜberschreibenSie im appdelegat `DidReceiveRemoteNotification` die-Methode, um die Benachrichtigungs Nutzlast auf verfügbaren Inhalt zu überprüfen, und rufen Sie den entsprechenden Vervollständigungs Handler auf.
+Überschreiben Sie im *appdelegat*die `DidReceiveRemoteNotification` -Methode, um die Benachrichtigungs Nutzlast auf verfügbaren Inhalt zu überprüfen, und rufen Sie den entsprechenden Vervollständigungs Handler auf.
 
 ```csharp
 public override void DidReceiveRemoteNotification (UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)

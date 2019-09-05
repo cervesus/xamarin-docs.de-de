@@ -1,23 +1,23 @@
 ---
-title: 'Warum schlägt meine App-Übermittlung wie folgt fehl: Unzulässige Pfade (iTunesMetadata.plist) finden Sie unter...?'
+title: 'Warum schlägt meine App-Übermittlung wie folgt fehl: Unzulässige Pfade (itunesmetadata. plist) gefunden unter...?'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: AE1BBDC6-4D3A-4471-876B-FE28B6E59A24
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: a4d2769bb0cb4e119f1c90353657471b44eb6c7c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ad663c47520826cc549011c9e5fc7cbb078d6214
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420904"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291034"
 ---
-# <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--"></a>Warum schlägt meine App-Übermittlung wie folgt fehl: Unzulässige Pfade (iTunesMetadata.plist) finden Sie unter...?
+# <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--"></a>Warum schlägt meine App-Übermittlung wie folgt fehl: Unzulässige Pfade (itunesmetadata. plist) gefunden unter...?
 
-> FEHLER: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"
+> ZEIT FEHLER-ITMS-90047: "Unzulässige Pfade (" itunesmetadata. plist ") finden Sie unter: Nutzlast/iPhoneApp1. app "
 
-Dieser Fehler ist das Ergebnis einer Änderung im Apple App Store-Überprüfungsprozess verhindert, dass Benutzer Verbindungsprobleme auftreten, z. B. [Fehler 29180](https://bugzilla.xamarin.com/show_bug.cgi?id=29180). Dieser Fehler _nicht_ im Zusammenhang mit der bestimmten Version von Xamarin, die Sie installiert haben, wird also ein Downgrade _nicht_ helfen.
+Dieser Fehler ist das Ergebnis einer Änderung in der App Store-Überprüfung von Apple, um zu verhindern, dass Benutzer Probleme wie [Bug 29180](https://bugzilla.xamarin.com/show_bug.cgi?id=29180)haben. Dieser spezifische Fehler ist _nicht_ mit der bestimmten Version von xamarin verknüpft, die Sie installiert haben, sodass das Downgrade _nicht_ unterstützt wird.
 
-Finden Sie unter den Forumsdiskussion [hier](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) für Informationen zu problemumgehungen und die neuesten Updates für dieses Problem.
+Informationen zu Problem Umgehungen und den neuesten Updates für dieses Problem finden Sie in der [hier](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) aufgeführten Forumsdiskussion.

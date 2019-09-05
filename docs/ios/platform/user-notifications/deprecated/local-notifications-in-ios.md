@@ -4,15 +4,15 @@ description: In diesem Abschnitt wird gezeigt, wie lokale Benachrichtigungen in 
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 7f2619010a410cabc54074e669ff4f1ea24bd0fa
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eb8956e44a3148d79fff59d728cb63818b9bab60
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655492"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292751"
 ---
 # <a name="notifications-in-xamarinios"></a>Benachrichtigungen in xamarin. IOS
 
@@ -32,7 +32,7 @@ IOS bietet auch ein *Benachrichtigungs Center* , in dem alle lokalen und Remote 
 ## <a name="creating-local-notifications-in-ios"></a>Erstellen von lokalen Benachrichtigungen in ios
 
 mit IOS ist es recht einfach, lokale Benachrichtigungen zu erstellen und zu verarbeiten.
-Zuerst erfordert IOS 8, dass Anwendungen die Berechtigung des Benutzers zum Anzeigen von Benachrichtigungen anfordern. Fügen Sie der APP den folgenden Code hinzu, bevor Sie versuchen, eine lokale Benachrichtigung zu senden. die [angefügte Stichprobe](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications) platziert Sie in der **finishedstart** -Methode des appdelegaten.
+Zuerst erfordert IOS 8, dass Anwendungen die Berechtigung des Benutzers zum Anzeigen von Benachrichtigungen anfordern. Fügen Sie der APP den folgenden Code hinzu, bevor Sie versuchen, eine lokale Benachrichtigung zu senden. die [angefügte Stichprobe](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications) platziert Sie in der **finishedstart** -Methode des **appdelegaten**.
 
 ```csharp
 var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(

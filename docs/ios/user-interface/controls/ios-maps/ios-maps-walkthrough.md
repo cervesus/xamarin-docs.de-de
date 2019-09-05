@@ -4,15 +4,15 @@ description: Dieser Artikel enthält eine schrittweise exemplarische Vorgehenswe
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: c768003e2737fef191a1afb24b7ac50b28ace9b0
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 94ab5ca9fa34487457b93758dfac0ab514e702c8
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226267"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286289"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Anmerkungen und Überlagerungen in xamarin. IOS
 
@@ -102,7 +102,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
     }
     ```
 
-1. Schließlich müssen wir die Datei " **Info. plist** " Bearbeiten, um Benutzer über den Grund für die Anforderung Ihres Standorts zu informieren. Fügen Sie im quellmenü der Datei " **Info. plist**" den folgenden Schlüssel hinzu:
+1. Schließlich müssen wir die Datei " **Info. plist** " Bearbeiten, um Benutzer über den Grund für die Anforderung Ihres Standorts zu informieren. Fügen Sie im **quellmenü** der Datei " **Info. plist**" den folgenden Schlüssel hinzu:
 
     `NSLocationWhenInUseUsageDescription`
 

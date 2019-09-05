@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Tabellen Sichten in einer x
 ms.prod: xamarin
 ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 09e4ca561f962e46dfe4eccbaf1cf284f4bb2827
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 758134b0c5171e46c47ff6fd8071b13a44d5789b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120831"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291613"
 ---
 # <a name="table-views-in-xamarinmac"></a>Tabellen Ansichten in xamarin. Mac
 
@@ -74,7 +74,7 @@ Wählen Sie die Tabellenansicht in der **Schnittstellen Hierarchie** aus, und di
 - **Columns** : definiert die Anzahl der angezeigten Spalten.
 - **Headers** : Wenn `true`, enthalten die Spaltenheader.
 - **Neuanordnen** : Wenn `true`, kann der Benutzer die Reihenfolge der Spalten in der Tabelle verschieben.
-- Größenänderung: Wenn `true`, kann der Benutzer Spaltenüberschriften ziehen, um die Größe der Spalten zu ändern.
+- Größenänderung: Wenn `true`, kann der Benutzer Spaltenüberschriften ziehen, um **die Größe der** Spalten zu ändern.
 - **Spaltengröße** : steuert die automatische Größenanpassung von Spalten durch die Tabelle.
 - **Hervor** Hebung: steuert den Typ der Hervorhebung, die die Tabelle verwendet, wenn eine Zelle ausgewählt wird.
 - **Alternative Zeilen** : Wenn `true`, hat eine andere Zeile eine andere Hintergrundfarbe.

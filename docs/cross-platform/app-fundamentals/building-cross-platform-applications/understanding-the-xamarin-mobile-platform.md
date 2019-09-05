@@ -3,15 +3,15 @@ title: Teil 1 – Grundlegendes zur xamarin Mobile-Plattform
 description: In diesem Dokument wird die xamarin-Plattform auf hoher Ebene beschrieben. dabei werden der Kompilierungsprozess, der Zugriff auf das Plattform-SDK, die Freigabe von Code, die Erstellung von Benutzeroberflächen, visuelle Designer und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: e3a9afa2780f9cf5816427d282644fb2ac3c8dde
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 5398d99a64e7f6b75c8b9e418da252852aff1322
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526754"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288675"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>Teil 1 – Grundlegendes zur xamarin Mobile-Plattform
 
