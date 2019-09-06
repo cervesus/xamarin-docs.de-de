@@ -4,15 +4,15 @@ description: Dieser Artikel bietet einen Überblick über Ad-hoc-Verteilungstech
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: efa3c8cf4d2e64c6d8bccdfe6e6fec9602d17c73
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 35596d5231f7e485cf8217e35a5641277dcab11d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865851"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285600"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Ad-Hoc-Verteilung für Xamarin.iOS-Apps
 
@@ -51,15 +51,15 @@ Im nächste Abschnitt wird die Erstellung eines Verteilungszertifikats und eines
 3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Production* (Produktion) je nach Mitgliedschaft in einem Programm entweder **In-House and Ad Hoc** (interne Verteilung und Ad-hoc-Verteilung) oder **App Store- und Ad-hoc-Verteilung** aus:
 
-   [![](ad-hoc-distribution-images/cert-first-small.png "Wählen „Intern und Ad-hoc“ oder „App-Store und Ad-hoc“")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
+   [![Auswahl von „Intern und Ad-hoc“ oder „App-Store und Ad-hoc“](ad-hoc-distribution-images/cert-first-small.png)](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. Klicken Sie auf „Continue“ (Weiter), und befolgen Sie die Anweisungen zur Erstellung einer Zertifikatsignieranforderung (CSR) mithilfe des Keychain-Zugriffs:
 
-   [![](ad-hoc-distribution-images/createcertmanually02.png "Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
+   [![Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen](ad-hoc-distribution-images/createcertmanually02.png)](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. Sobald Sie die CSR wie beschrieben erstellt haben, klicken Sie auf „Continue“ (Weiter), und laden Sie die CSR in das Member Center hoch:
 
-   [![](ad-hoc-distribution-images/createcertmanually03.png "Zertifikatsignieranforderung in das Member Center hochladen")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
+   [![Zertifikatsignieranforderung in das Member Center hochladen](ad-hoc-distribution-images/createcertmanually03.png)](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf „Generate“ (Generieren), um das Zertifikat zu erstellen.
 8. Laden Sie das abgeschlossene Zertifikat herunter, und doppelklicken Sie auf die Datei, um sie zu installieren.
@@ -67,9 +67,9 @@ Im nächste Abschnitt wird die Erstellung eines Verteilungszertifikats und eines
 
 Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences“ (Einstellungen) in Xcode anzufordern. Führen Sie dazu folgende Schritte aus:
 
-1. Wählen Sie das Team aus, und klicken Sie auf **Manage Certificates…** (Zertifikate verwalten...):  [![](ad-hoc-distribution-images/selectteam.png "Auswählen des Teams")](ad-hoc-distribution-images/selectteam.png#lightbox)
+1. Wählen Sie das Team aus, und klicken Sie auf **Manage Certificates…** (Zertifikate verwalten...):  [![Auswählen des Teams](ad-hoc-distribution-images/selectteam.png)](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2. Klicken Sie anschließend auf die Schaltfläche **plus (+)** , und wählen Sie **iOS App Store** aus:  [![](ad-hoc-distribution-images/selectcert.png "Auswählen von iOS App Store")](ad-hoc-distribution-images/selectcert.png#lightbox)
+2. Klicken Sie anschließend auf die Schaltfläche **plus (+)** , und wählen Sie **iOS App Store** aus:  [![Auswählen von iOS App Store](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -91,23 +91,23 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 
 Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils haben, führen Sie die folgenden Schritte aus, um es zu erstellen:
 
-1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und klicken Sie auf **Bereitstellung > Verteilung**:  [![](ad-hoc-distribution-images/distribute01.png "Klicken Sie auf „Bereitstellung > Verteilung“")](ad-hoc-distribution-images/distribute01.png#lightbox)
+1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und klicken Sie auf **Bereitstellung > Verteilung**:  [![Auswahl von „Bereitstellung > Verteilung“](ad-hoc-distribution-images/distribute01.png)](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. Klicken Sie auf die Schaltfläche **+** , und wählen Sie den Verteilungsprofiltyp aus, den Sie **ad hoc** erstellen möchten:
 
-    [![](ad-hoc-distribution-images/distribute02.png "Erstellen des Verteilungstyps „Ad-hoc“")](ad-hoc-distribution-images/distribute02.png#lightbox)
+    [![Erstellen des Verteilungstyps „Ad-hoc“](ad-hoc-distribution-images/distribute02.png)](ad-hoc-distribution-images/distribute02.png#lightbox)
 
 3. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und wählen Sie aus der Dropdownliste die App-ID aus, für die Sie ein Verteilungsprofil erstellen möchten:
 
-    [![](ad-hoc-distribution-images/distribute03.png "Wählen Sie in der Dropdownliste „App-ID“ aus")](ad-hoc-distribution-images/distribute03.png#lightbox)
+    [![Auswahl von „App-ID“ in der Dropdownliste](ad-hoc-distribution-images/distribute03.png)](ad-hoc-distribution-images/distribute03.png#lightbox)
 
 4. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie ein Verteilungszertifikat zum Signieren der Anwendung aus:
 
-    [ ![](ad-hoc-distribution-images/distribute04.png "Wählen Sie ein zum Signieren der Anwendung erforderliches Verteilungszertifikat aus")](ad-hoc-distribution-images/distribute04.png#lightbox)
+    [![Auswählen eines zum Signieren der Anwendung erforderlichen Verteilungszertifikats](ad-hoc-distribution-images/distribute04.png)](ad-hoc-distribution-images/distribute04.png#lightbox)
 
 5. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
 
-    [![](ad-hoc-distribution-images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](ad-hoc-distribution-images/distribute06.png#lightbox)
+    [![Eingeben eines Namens für das neue Verteilungsprofil](ad-hoc-distribution-images/distribute06.png)](ad-hoc-distribution-images/distribute06.png#lightbox)
 
 6. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
@@ -134,13 +134,13 @@ Wenn Sie den endgültigen Build einer Xamarin.iOS-Anwendung erstellen möchten, 
 1. Doppelklicken Sie auf den Projektnamen im **Projektmappen-Explorer**, um das Projekt für die Bearbeitung zu öffnen.
 2. Wählen Sie aus der Dropdownliste **Konfiguration** **iOS-Bundle-Signierung** und den Buildtyp aus:
 
-    ![](ad-hoc-distribution-images/releasexs01.png "Wählen Sie in der Dropdownliste „Konfiguration“ den Buildtyp aus")
+    ![Auswählen des Buildtyps aus dem Konfigurationsdropdownmenü](ad-hoc-distribution-images/releasexs01.png)
 3. In den meisten Fällen kann für die **Signierungsidentität** und das **Bereitstellungsprofil** der Standardwert **Automatisch** beibehalten werden. Visual Studio für Mac wählt basierend auf dem Bündelbezeichner in der Datei „Info.plist“ das richtige Profil aus:
 
-    ![](ad-hoc-distribution-images/releasexs02.png "Die Signieridentität und das Bereitstellungsprofil sind auf den Standardwert „Automatisch“ festgelegt")
+    ![Signieridentität und Bereitstellungsprofil mit Standardwert „Automatisch“](ad-hoc-distribution-images/releasexs02.png)
 4. Wählen Sie bei Bedarf die Signierungsidentität und das (zuvor erstellte) Verteilungsprofil aus den Dropdownlisten aus:
 
-    ![](ad-hoc-distribution-images/releasexs03.png "Wählen Sie Signieridentität und Verteilungsprofil aus")
+    ![Auswählen der Signieridentität und des Verteilungsprofils](ad-hoc-distribution-images/releasexs03.png)
 5. Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -149,13 +149,13 @@ Wenn Sie den endgültigen Build einer Xamarin.iOS-Anwendung erstellen möchten, 
 1. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf den Projektnamen, und wählen Sie **Eigenschaften** aus, um das Projekt für die Bearbeitung zu öffnen.
 2. Wählen Sie aus der Dropdownliste **Konfiguration** **iOS-Bundle-Signierung** und den Buildtyp aus:
 
-    ![](ad-hoc-distribution-images/releasevs01.png "Wählen Sie in der Dropdownliste „Konfiguration“ den Buildtyp aus")
+    ![Auswählen des Buildtyps aus dem Konfigurationsdropdownmenü](ad-hoc-distribution-images/releasevs01.png)
 3. In den meisten Fällen kann für die **Signierungsidentität** und das **Bereitstellungsprofil** der Standardwert **Automatisch** beibehalten werden. Visual Studio wählt basierend auf dem Bündelbezeichner in der Datei „Info.plist“ das richtige Profil aus:
 
-    ![](ad-hoc-distribution-images/releasevs02.png "Die Signieridentität und das Bereitstellungsprofil sind auf den Standardwert „Automatisch“ festgelegt")
+    ![Signieridentität und Bereitstellungsprofil mit Standardwert „Automatisch“](ad-hoc-distribution-images/releasevs02.png)
 4. Wählen Sie bei Bedarf die Signierungsidentität und das (zuvor erstellte) Verteilungsprofil aus den Dropdownlisten aus:
 
-    ![](ad-hoc-distribution-images/releasevs03.png "Wählen Sie Signieridentität und Verteilungsprofil aus")
+    ![Auswählen der Signieridentität und des Verteilungsprofils](ad-hoc-distribution-images/releasevs03.png)
 5. Speichern Sie die Änderungen an den Projekteigenschaften.
 
 -----

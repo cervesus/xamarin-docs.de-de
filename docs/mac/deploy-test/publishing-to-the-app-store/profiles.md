@@ -4,15 +4,15 @@ description: Dieser Leitfaden enthält Informationen zum Erstellen der erforderl
 ms.prod: xamarin
 ms.assetid: bdff6c32-f7e3-4a97-a093-dbda48be8227
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: 2b5c6ed77d7bf1c60b9424a138786dafb7a86706
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c0a4766abf8ded591bf348f2c2a7ba2283cdde00
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108417"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290234"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Bereitstellungsprofile für Xamarin.Mac-Apps
 
@@ -33,31 +33,31 @@ Führen Sie folgende Schritte aus:
 
 1. Wählen Sie die Art des Bereitstellungsprofils aus, das Sie erstellen möchten, und klicken Sie auf die Schaltfläche **Weiter**: 
 
-     [![](profiles-images/certif14.png "Auswählen des Profiltyps")](profiles-images/certif14.png#lightbox)
+    [![](profiles-images/certif14.png "Auswählen des Profiltyps")](profiles-images/certif14.png#lightbox)
 2. Wählen Sie die ID der Anwendung aus, für die das Profil erstellt werden soll, und klicken Sie auf die Schaltfläche **Weiter**: 
 
-     [![](profiles-images/certif15.png "Auswählen der App-ID")](profiles-images/certif15.png#lightbox)
+    [![](profiles-images/certif15.png "Auswählen der App-ID")](profiles-images/certif15.png#lightbox)
 3. Wählen Sie die Entwickler-ID aus, die für das Signieren des Profils verwendet wurde, und klicken Sie auf **Weiter**: 
 
-     [![](profiles-images/certif16.png "Auswählen der Entwickler-ID")](profiles-images/certif16.png#lightbox)
+    [![](profiles-images/certif16.png "Auswählen der Entwickler-ID")](profiles-images/certif16.png#lightbox)
 4. Wählen Sie die Computer aus, auf denen dieses Profil verwendet werden kann, und klicken Sie auf **Weiter**: 
 
-     [![](profiles-images/certif17.png "Auswählen der zulässigen Computer")](profiles-images/certif17.png#lightbox)
+    [![](profiles-images/certif17.png "Auswählen der zulässigen Computer")](profiles-images/certif17.png#lightbox)
 5. Geben Sie nun einen **Profilnamen** ein, und klicken Sie auf die Schaltfläche **Generieren**: 
 
-     [![](profiles-images/certif18.png "Generieren des Profils")](profiles-images/certif18.png#lightbox)
+    [![](profiles-images/certif18.png "Generieren des Profils")](profiles-images/certif18.png#lightbox)
 6. Klicken Sie auf die Schaltfläche **Herunterladen**, um das neue Profil herunterzuladen: 
 
-     [![](profiles-images/certif19.png "Herunterladen des Profils")](profiles-images/certif19.png#lightbox)
+    [![](profiles-images/certif19.png "Herunterladen des Profils")](profiles-images/certif19.png#lightbox)
 7. Entwicklungsbereitstellungsprofile werden im Bereich „Profileinstellungen“ der Mac-Anwendung **Systemeinstellungen** installiert: 
 
-     [![](profiles-images/certif20.png "Installieren des Profils")](profiles-images/certif20.png#lightbox)
+    [![](profiles-images/certif20.png "Installieren des Profils")](profiles-images/certif20.png#lightbox)
 8. Im Bereich „Profileinstellungen“ werden nun alle installierten Profile angezeigt: 
 
-     [![](profiles-images/image47.png "Anzeigen aller installierten Profile")](profiles-images/image47.png#lightbox)
+    [![](profiles-images/image47.png "Anzeigen aller installierten Profile")](profiles-images/image47.png#lightbox)
 9. Das Profil wird ebenfalls im **Hilfsprogramm für Entwicklerzertifikate** angezeigt, falls es erneut heruntergeladen werden muss: 
 
-     [![](profiles-images/image48.png "Hilfsprogramm für das Entwicklerzertifikat")](profiles-images/image48.png#lightbox)
+    [![](profiles-images/image48.png "Hilfsprogramm für das Entwicklerzertifikat")](profiles-images/image48.png#lightbox)
 
 Ein neues Entwicklungsbereitstellungsprofil muss für jede neue App oder jeden neuen Computer, der für das Testen hinzugefügt wird, erstellt werden.
 
@@ -99,5 +99,5 @@ Wenn der Entwickler die von einer App-ID verwendeten Funktionen ändert (z.B. Ak
 - [Installation](~//mac/get-started/installation.md)
 - [„Hallo, Mac“-Beispiel](~//mac/get-started/hello-mac.md)
 - [Verteilen Ihrer Apps im Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
-- [Tools Guide : Code Signing Your App (Tool-Leitfaden: Codesignieren Ihrer App)](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
+- [Tool-Leitfaden: Codesignieren Ihrer App](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [Developer ID and GateKeeper (Entwickler-ID und Gatekeeper)](https://developer.apple.com/resources/developer-id/)

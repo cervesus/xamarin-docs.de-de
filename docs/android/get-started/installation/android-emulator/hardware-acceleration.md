@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 6f5a5512cef6ad870f60bca397404df450775de3
-ms.sourcegitcommit: ec99e64ee346adc3c338db13e93100bafee75460
+ms.openlocfilehash: 230c72539388028aaf8f05d200d8779105102644
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56331882"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225623"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Hardwarebeschleunigung für verbesserte Leistung des Emulators (Hyper-V und HAXM)
 
@@ -58,23 +58,23 @@ Hyper-V wird auf der Windows Hypervisor-Plattform ausgeführt. Ihr Computer muss
 
 - Ihre Computerhardware muss die folgenden Anforderungen erfüllen:
 
-    - Eine 64-Bit-CPU von Intel oder eine AMD Ryzen-CPU mit SLAT (Second Level Address Translation).
-    - CPU-Unterstützung für die Erweiterung für den VM-Überwachungsmodus (VT-c bei Intel-CPUs).
-    - Mindestens 4 GB Arbeitsspeicher.
+  - Eine 64-Bit-CPU von Intel oder eine AMD Ryzen-CPU mit SLAT (Second Level Address Translation).
+  - CPU-Unterstützung für die Erweiterung für den VM-Überwachungsmodus (VT-c bei Intel-CPUs).
+  - Mindestens 4 GB Arbeitsspeicher.
 
 - Im BIOS Ihres Computers müssen die folgenden Optionen aktiviert sein:
 
-    - Virtualisierungstechnologie (Bezeichnung kann je nach Motherboard-Hersteller variieren)
-    - Von Hardware erzwungene Datenausführungsverhinderung
+  - Virtualisierungstechnologie (Bezeichnung kann je nach Motherboard-Hersteller variieren)
+  - Von Hardware erzwungene Datenausführungsverhinderung
 
-- Ihr Computer muss auf das April 2018-Update von Windows 10 (Build 1803) oder höher aktualisiert sein. Sie können überprüfen, ob Ihre Windows-Version aktuell ist, indem Sie die folgenden Schritte ausführen: 
+- Ihr Computer muss auf das April 2018-Update von Windows 10 (Build 1803) oder höher aktualisiert sein. Sie können überprüfen, ob Ihre Windows-Version aktuell ist, indem Sie die folgenden Schritte ausführen:
 
-    1. Geben Sie **About** (Info) in das Windows-Suchfeld ein. 
-    2. Wählen Sie **PC-Infos** in den Suchergebnissen aus. 
-    3. Scrollen Sie im Dialogfeld **Info** nach unten zum Abschnitt **Windows-Spezifikationen**. 
-    4. Überprüfen Sie, ob mindestens **Version** 1803 vorhanden ist:
+  1. Geben Sie **About** (Info) in das Windows-Suchfeld ein.
+  2. Wählen Sie **PC-Infos** in den Suchergebnissen aus.
+  3. Scrollen Sie im Dialogfeld **Info** nach unten zum Abschnitt **Windows-Spezifikationen**.
+  4. Überprüfen Sie, ob mindestens **Version** 1803 vorhanden ist:
 
-        [![Windows-Spezifikationen](hardware-acceleration-images/win/01-about-windows-w10-sml.png)](hardware-acceleration-images/win/01-about-windows-w10.png#lightbox)
+      [![Windows-Spezifikationen](hardware-acceleration-images/win/01-about-windows-w10-sml.png)](hardware-acceleration-images/win/01-about-windows-w10.png#lightbox)
 
 Öffnen Sie eine Eingabeaufforderung und geben Sie den folgenden Befehl ein, um zu überprüfen, ob Ihre Computerhardware und -software mit Hyper-V kompatibel ist:
 
@@ -159,7 +159,7 @@ Ihnen stehen die folgenden Virtualisierungstechnologien zum Beschleunigen des An
 1. **Das Hypervisor-Framework von Apple**.
    [Hypervisor](https://developer.apple.com/documentation/hypervisor) ist ein Feature von macOS 10.10 und höher, das das Ausführen von virtuellen Computern auf einem Mac-Computer ermöglicht.
 
-2. **Intel Hardware Accelerated Execution Manager (HAXM)** 
+2. **Intel Hardware Accelerated Execution Manager (HAXM)**
    Bei [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) handelt es sich um eine Virtualisierungs-Engine für Computer mit Intel-CPUs.
 
 Für optimale Leistung wird empfohlen, dass Sie das Hypervisor-Framework zum Beschleunigen des Android-Emulators verwenden. Wenn das Hypervisor-Framework auf Ihrem Mac nicht verfügbar ist, können Sie HAXM verwenden. Der Android-Emulator verwendet die Hardwarebeschleunigung automatisch, wenn folgende Kriterien erfüllt sind:
@@ -169,7 +169,7 @@ Für optimale Leistung wird empfohlen, dass Sie das Hypervisor-Framework zum Bes
 - Der Emulator führt ein Systemimage aus, das für ein **x86**-basiertes virtuelles Gerät erstellt wurde.
 
 > [!IMPORTANT]
-> 
+>
 > Sie können einen Emulator mit VM-Beschleunigung nicht innerhalb einer anderen VM ausführen, z.B. einer VM, die von VirtualBox, VMware oder Docker gehostet wird. Sie müssen den Android-Emulator [direkt auf Ihrer Systemhardware](https://developer.android.com/studio/run/emulator-acceleration.html#extensions) ausführen.
 
 Weitere Informationen zum Starten und Debuggen von Apps mit dem Android-Emulator finden Sie unter [Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
@@ -206,7 +206,7 @@ Sie können überprüfen, ob HAXM bereits installiert ist, indem Sie die folgend
     ~/Library/Developer/Xamarin/android-sdk-macosx/tools/emulator -accel-check
     ```
 
-   Bei diesem Befehl wird davon ausgegangen, dass das Android SDK am Standardspeicherort installiert ist (**~/Library/Developer/Xamarin/android-sdk-macosx**). Falls dies nicht der Fall ist, passen Sie den obigen Pfad für den Speicherort des Android SDK auf Ihrem Mac-Computer entsprechend an.
+   Bei diesem Befehl wird davon ausgegangen, dass das Android SDK am Standardspeicherort installiert ist ( **~/Library/Developer/Xamarin/android-sdk-macosx**). Falls dies nicht der Fall ist, passen Sie den obigen Pfad für den Speicherort des Android SDK auf Ihrem Mac-Computer entsprechend an.
 
 2. Wenn HAXM installiert ist, gibt der obige Befehl eine Meldung zurück, die dem folgenden Ergebnis ähnelt:
 
